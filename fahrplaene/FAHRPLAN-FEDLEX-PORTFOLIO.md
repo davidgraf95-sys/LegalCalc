@@ -1013,3 +1013,36 @@ Befund und müsste zuerst an einem echten Fehlschlag gezeigt werden (§6.7).
 *Hinweis zur Herkunft: Zu diesem Punkt hat ein Sub-Agent am 2.8.2026 einen Task-Chip angelegt.
 Der Chip ist durch diesen Plan-Eintrag **ersetzt** (Vorgabe David: keine Chips) — massgeblich ist
 allein dieser §.*
+
+---
+
+## §18 · §14-Intake 3.8.2026 (`QS-FRIT-DRIFT`, `QS-CURRENCY-TESTS`)
+
+*Angelegt 3.8.2026 (Bauplan-QS). Beide sind reine Prüflogik ohne Snapshot-Schreiben —*
+*`Gegenpruefung: n/a`. Die Ursachenklärung der Kanonik-Wurzeln bleibt `QS-CURRENCY-KANON` (§17).*
+
+### §18.1 `QS-FRIT-DRIFT` — FR/IT-Drift-Wächter Stufe 1
+
+- **Anlass:** sämtliche Norm-Verifikationen vom 3.8.2026 liefen **nur auf DE**. Eine
+  französische oder italienische Fassung könnte längst abweichen, ohne dass ein Tor es sieht.
+- **Zu bauen:** im `normen-monitor.yml` je **~30 Kern-Erlass** die **eId-Mengen** der drei
+  Sprachfassungen über SPARQL abfragen und vergleichen; Abweichung ⇒ Meldung mit Erlass,
+  Sprache und Differenz-Menge. Vollausbau auf alle 227 Pins ist optional und folgt der Laufzeit.
+- **Ausdrücklich NICHT:** ein dreisprachiges Korpus. Dieser Schritt **vergleicht Mengen und
+  meldet** — er schreibt keinen Snapshot. Das Befüllen der `fr`/`it`-Fassungen ist ein eigener
+  Produktentscheid (Speicher, Pflege, §8-Ehrlichkeit) und liegt in **`W2·6-MEHRSPRACH`**.
+- **Fertig, wenn:** eine künstlich verfälschte Mengenliste den Wächter **einmal rot** zeigt
+  (§6.7) und der Grün-Fall über die 30 Kern-Erlasse reproduzierbar durchläuft.
+- **Dateien:** `.github/workflows/normen-monitor.yml`, `scripts/fedlex-versionen-pruefen.ts`.
+
+### §18.2 `QS-CURRENCY-TESTS` — Testbindung `cacheBefund` + Kanonik-Ausschluss
+
+- **Anlass (Gegenprüfung zu PR #420, Befund 1):** die neue Cache-Inhalts-Sonde und die
+  Kanonik-Ausschlussliste hängen an **keinem Test**. Ein Tor, das nicht scheitern kann, ist
+  gefährlicher als keines (§6.7).
+- **Zu bauen:** je einen Negativfall — (a) ein Cache-Eintrag mit falschem Inhalt muss
+  `cacheBefund` rot machen; (b) ein Erlass, der fälschlich auf der Ausschlussliste steht, muss
+  auffallen. Beide zuerst **rot gezeigt**, dann grün gestellt.
+- **Nicht hier:** re-pinnen, regenerieren oder Anker verifizieren — das ist Risikopfad und
+  liegt in `QS-CURRENCY-KANON` (§17). Dieser Schritt ändert **keinen Pin**.
+- **Dateien:** `scripts/fedlex-cache.sh`, `src/tests/`.

@@ -35,8 +35,7 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
   `usg`, `gwg`, `kag`, `fza`, `cmr`) + Stopp des Workflow-Selbstattests. **Gegenprüfung Durchgang 1
   widerlegte den Stand** → Fix → Durchgang 2 bestanden (Register `553bdc393`).
 - **#417 GESCHLOSSEN ohne Merge** — der Inhalt des `sleepy-mestorf`-Worktrees lag bereits über
-  #412/#413 auf `main` (`changed_files=0`). Worktree und Branch entfernt. Daraus der neue Schritt
-  `QS-AUTOMATIK-WT` (Verwaiste-Worktree-Sonde): Diff-leer gegen `main` = gelandet, nicht abgeräumt.
+  #412/#413 auf `main` (`changed_files=0`). Worktree und Branch entfernt.   `QS-AUTOMATIK-BERICHT` (Verwaiste-Worktree-Sonde; am selben Tag mit dem Wächter-Zustandsbericht fusioniert): Diff-leer gegen `main` = gelandet, nicht abgeräumt.
 - **#418 gelandet (`d18429d18`)** — Totcode-Entfernung: 142 `export`-Strips, 8 Definitionen,
   7 Re-Export-Zeilen, 5 CSS-Klassen; **knip 162 → 1** Meldung. Gegenprüfung bestanden, Beweis
   **8164 Prerender-Seiten byte-gleich** (Register `7a1e2fa46`) — von Hand geführt, daher der neue
@@ -67,11 +66,28 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
   (Ruleset-API 422, leeres Feature-Gate) — **David-Entscheid 3.8. abends: Verzicht**;
   `QS-BASIS-MQ` gestrichen (Chronik), `strict:true` + serielle Landung bleiben die Absicherung.
   Pflege-Routine aktiv (`trig_01WtC2EnU5y2BUN4SmpLhNP1`, Mo 06:45 UTC).
-- **Ehrliche Reste:** `QS-PERF` steht seit **1.7.2026** auf `wip` und wurde nie freigegeben — der
-  Marker trifft heute wieder zu (#421 baut den TBT-Posten), deckt das Anliegen aber nicht ab; im
-  Schritt vermerkt. **K4/K8/K9/K10** der CI-Diagnose tragen im Repo keinen Beleg und sind bewusst
+- **Bauplan-QS (Nachtrag ~22:00Z, Auftrag David «nochmals bauplan überarbeiten»)** — Qualitäts-Pass
+  über `ROADMAP.md` + alle 27 Fahrpläne, **keine** weitere Massenverschiebung. **1 Fusion**
+  (`QS-AUTOMATIK-WT` → `QS-AUTOMATIK-BERICHT`, gleiche Datei/Risiko-Klasse) · **3 Entdopplungen**
+  (Datenhaltung stand an drei Stellen: `QS-DATA` auf das VPS-David-Gate verengt, Bau bleibt
+  `W2·6-DATA`; `QS-BASIS`-Posten (a)/(b)/(d) an ihre Owner verwiesen; `R-RICHTER` Block B nur noch
+  bei `W2·6-FILTER`) · **5 tote `dep`** gelöst (`W2·10-UI-NAV-S/-V/-J/-J3/-O` warteten auf `W2·5d`,
+  obwohl §0.2 des Fahrplans nur Reader-Flächen sequenziert) · **2 tote `seq`-Verweise** auf das
+  erledigte `W2·5b` entfernt · **3 verbrannte Titel-Nummern** korrigiert (5e/5f zeigten auf IDs, die
+  es nie gab) · **10 einseitige Fahrplan-Links** geschlossen (die Schritte des §14-Intakes 3.8.
+  kannten ihren Fahrplan, kein Fahrplan kannte sie — je ein `ROADMAP-Spec`-§ ergänzt) ·
+  **42 Boilerplate-Zeilen** entfernt (Trailer + Session-Granularität), Regel je einmal im
+  Ausführungs-Protokoll. ROADMAP **100 384 → ~99 900 Bytes**, Ceiling 102 400 gehalten.
+  `QS-PERF` **wip → ready** (Anlass #421 gelandet), TBT-Posten abgehakt, e2e-Shard-Balance von
+  der gestrichenen Merge Queue entkoppelt. Stand-Notizen bei hartem Widerspruch:
+  `FAHRPLAN-BASIS-AUSBAU.md` A11 (Merge Queue gegenstandslos) · `FAHRPLAN-DATENHALTUNG.md` §13.
+- **Ehrliche Reste:** **K4/K8/K9/K10** der CI-Diagnose tragen im Repo keinen Beleg und sind bewusst
   nicht rekonstruiert. `QS-CURRENCY-KANON` bleibt offen: die 8 Wurzeln sind nachgeführt, die
-  **Ursache** ist es nicht.
+  **Ursache** ist es nicht. Aus dem Bauplan-QS unerledigt: `W3·10` zeigt weiter auf eine
+  **Archivdatei** (`archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md`, Stand 14.6.2026) — der einzige
+  Schritt ohne aktiven Fahrplan; die Restpunkte-Extraktion steht als erster Arbeitsschritt drin.
+  Die **W2·17-UI-BEFUNDE-Kette B3→B19** ist streng seriell verkettet (17 `dep`-Glieder) — bewusst,
+  aber es heisst: fällt B3 aus, steht die ganze Reihe.
 
 ## Session 2./3.8.2026 (Nacht) — Vorsorgeauftrag-Vollausbau W2·8/V9, PR #411 gelandet
 **Grundlage → Direktbau → 3 GP-Runden → Merge `12bc72521` (3.8. 08:17Z, Squash).**

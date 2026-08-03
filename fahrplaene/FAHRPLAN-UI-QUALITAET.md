@@ -215,3 +215,18 @@ W2·5h-GESETZ-UI(8b)]`.
   **DoD:** deckt die Funktionsmenge aus `W2·16-INVENTAR` **vollständig** ab (keine stille Auslassung, §8) ·
   Sprache nach §13 Ziff. 3 (Fach **und** Laie) · axe · golden byte-gleich.
   Trailer `Roadmap: W2·16-ANLEITUNG`.
+
+---
+
+## §11 · `QS-UI-WARNLINE` — `--warn-line`-Kontrast robust machen
+
+*Angelegt 3.8.2026 (Bauplan-QS).*
+
+- **Befund (Kontrast-Messung 3.8.2026):** `--warn-line` erreicht **3.008** gegen seinen
+  Hintergrund. Die Schwelle für nicht-textliche Kontraste liegt bei **3:1** — der Abstand von
+  0.008 liegt innerhalb jeder Mess-Streuung und jeder künftigen Token-Verschiebung.
+- **Zu bauen:** ein Token-Tick Abdunklung in `src/index.css`, sodass der Wert mit Reserve über
+  3:1 liegt. **Reine Token-Änderung, flip-reversibel** — keine Komponente wird angefasst.
+- **Fertig, wenn:** `check:farbwelt` und der axe-Lauf grün sind und der gemessene Wert im
+  Prüfskript dokumentiert ist (nicht nur der Token).
+- **Priorität niedrig** — kein Verstoss, sondern eine zu knappe Einhaltung. §13/DESIGN-REGLEMENT.

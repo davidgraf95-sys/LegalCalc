@@ -1670,6 +1670,70 @@ Herkunft (AP-3/AP-4) und die drei begründet im Root gebliebenen Dateien. Sie st
 
 ## Streichungen 3.8.2026 (Begründungen)
 
+### Bauplan-QS 3.8.2026 (zweiter Durchgang — Klarheit · Dedup · Zuteilung)
+
+*Auftrag David 3.8.2026: «nochmals bauplan überarbeiten, dass alles klar ist und nicht doppelt*
+*enthalten ist und alles sinnvoll zugeteilt ist.» Streich-/Fusions-Entscheide delegiert.*
+
+- **`QS-AUTOMATIK-WT` → fusioniert in `QS-AUTOMATIK-BERICHT`** — beide Schritte entstanden am
+  3.8.2026 im selben §14-Intake, bauen in **derselben Datei** (`scripts/check-ci-laeufe.ts`),
+  tragen dieselbe Risiko-Klasse (reine Prüflogik) und sind je ein Kleinposten. Skill `auftrag`
+  Ziff. 3 verlangt für diesen Fall Bündelung — «einmal bauen, prüfen, deployen». Beide Anlässe
+  (80 Läufe Run-Forensik ohne Übersicht · PR #417 verwaister Worktree) stehen im Wortlaut am
+  überlebenden Schritt; Bau-Spec `fahrplaene/FAHRPLAN-BASIS-AUSBAU.md` §3.1. Der überlebende
+  ist der besser verortete: der Zustandsbericht ist der Rahmen, die Worktree-Sonde ein Abschnitt
+  darin. ID aus `scripts/plan/inventar.ts` entfernt.
+
+- **`QS-DATA` — Geltungsbereich auf das VPS-David-Gate verengt** (keine Streichung des Schrittes).
+  Der Schritt führte den kompletten Datenhaltungs-Umfang ein zweites Mal neben `W2·6-DATA`: DB-
+  Artefakt als eine Quelle, Etappen, Datenhaltungs-Optimierung. `fahrplaene/FAHRPLAN-DATENHALTUNG.md`
+  §13 sagte im selben Absatz «Bau-Strang = W2·6-DATA» **und** «Serving-Bau bleibt QS-DATA» — zwei
+  Wahrheiten über denselben Bau (§5). **Nicht gestrichen**, weil er als einziger Schritt das
+  David-Gate `vps-bestellung-david` sichtbar hält (`plan:next` würde es sonst nur noch im
+  Blocker-Register führen). Er trägt jetzt genau das und nichts sonst; Stand-Notiz im Fahrplan §13.
+
+- **Datenhaltungs-Optimierung — von drei Stellen auf eine** (`QS-DATA` · `W2·6-DATA` (ii) ·
+  `QS-BASIS` (d)). Owner ist **`W2·6-DATA`**; die anderen beiden verweisen nur noch. `QS-BASIS`
+  (a) Turso-Wächter-Abdeckung wandert aus demselben Grund zu **`QS-AUTOMATIK`**, das sie ohnehin
+  als einzigen offenen Rest führte; (b) CI-Fehlläufe #30 ist mit PR #419 erledigt. Eigener
+  Bau-Umfang von `QS-BASIS` ist damit Posten (c) Tor-Parität plus die offenen B-Einheiten.
+
+- **`R-RICHTER` Block B — als offener Posten gestrichen.** Er stand gleichzeitig unter `W2·6`
+  («Block B offen, reines UI: Autocomplete-Facette + `?richter`-URL-Achse») und als Inhalt von
+  `W2·6-FILTER` («Richter-Facette aus R-RICHTER Block B»). Träger ist `W2·6-FILTER` — dort liegt
+  die gemeinsame Bau-Fläche mit den allgemeinen Facetten (Turso-Schema + `api/suche.ts`).
+  `R-RICHTER` behält nur den Beleg für Block A (gebaut 20.7.2026).
+
+- **36 `Trailer: Roadmap: <ID>`-Wiederholungen + 6 «Session-Granularität (AP-6)»-Zeilen entfernt.**
+  Beide sagten je Schritt dasselbe, was einmal gilt: der Trailer ist immer die `@meta id`
+  (Skill `auftrag`, Ziff. 5), die Schnitt-Begründung steht immer im `ROADMAP-Spec`-§ des
+  Fahrplans. Regel steht jetzt einmal im Ausführungs-Protokoll Ziff. 6. Ersparnis ~2,3 KB —
+  der Grund ist aber die Lesbarkeit, nicht die Grösse.
+
+- **`W3·10` — Archiv-Vorbehalt gekürzt** (7 Zeilen → 4). Wortlaut der ausführlichen Fassung:
+  «Für W3·10 gibt es **keinen aktiven Nachfolger** — die 20 §§ von
+  `fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md` decken PRODUKTAUSBAU/BURGGRABEN nicht ab, anders als
+  bei `W3·13`. Der Zeiger bleibt darum auf die Archivdatei; deren Kopf trägt **Stand 14.6.2026**
+  und ist nach §0 der Archiv-Restpunkte **teilweise stale**. Die Restpunkte-Extraktion
+  (Zustellfiktion, OR-Schwellen, IGE-Gebühren, kant. Gerichtsferien) **steht aus** und gehört in
+  den Bau-Batch dieses Schritts. Massgeblich ist bis dahin §P3, gelesen mit diesem Vorbehalt.»
+  (Endprüfungs-Fund R3-3/R3-11, deklariert 31.7.2026.) In der ROADMAP steht die Ausnahme jetzt
+  in vier Zeilen, mit der Extraktion als erstem Arbeitsschritt.
+
+- **`QS-PERF` — Wortlaut der `wip`-Prüfung vom 3.8.2026** (ersetzt, weil der Anlass erledigt ist):
+  «Der Marker steht seit **1.7.2026** (Einführung der @meta-Etiketten, `927f8c517`) und wurde
+  seither nie freigegeben — er belegt also nicht fünf Wochen Bauarbeit. Er bleibt trotzdem stehen,
+  weil er **heute** wieder zutrifft: die Runner-Robustheit auf `chore/runner-robustheit` baut den
+  TBT-Posten (Normierung) und die OR-e2e-Timeouts.» Mit der Landung von **PR #421 (`23f4be7fb`)**
+  ist dieser Grund entfallen; `QS-PERF` steht wieder auf `ready`. Ebenfalls erledigt und aus der
+  Liste genommen: der Posten «TBT-Deckel je Job normieren statt absolut prüfen» (David-Entscheid
+  3.8.2026, gebaut in #421 — normierter Wert, Budget 6500 ms unverändert, §6.7-Rot-Nachweis
+  erbracht).
+
+- **`npm audit`** — aus der Geparkt-Liste «Betriebs-Instrumente (später)» genommen: die
+  **Meldungs**-Variante wird als `QS-BASIS-DEPS` gebaut, geparkt bleibt nur die Stopper-Variante.
+  Ein Posten, der gleichzeitig geparkt und in Arbeit ist, steuert in zwei Richtungen.
+
 - **`QS-BASIS-MQ` (G7 Merge Queue)** — gestrichen 3.8.2026 auf **David-Entscheid (Verzicht)**: GitHub bietet Merge Queues nur für Organisations-Repos an; LexMetrik liegt auf dem persönlichen Account (Feature-Gate, Ruleset-API 422 beim Aktivierungsversuch 3.8. nach TBT-Landung #421). Absicherung bleibt `strict: true` (aktiv seit 3.8.) + serielle Landung nach Skill `landung`. Falls das Repo je in eine Organisation wandert, ist die Queue in `fahrplaene/FAHRPLAN-BASIS-AUSBAU.md` §2 beschrieben; der `merge_group`-Trigger in `ci.yml` bleibt stehen (schadet ohne Queue nicht).
 
 - **`26x-slot` (Blocker-Register)** — gestrichen 3.8.2026: seit 20.7.2026 ausdrücklich AUFGELÖST und von keinem Schritt mehr referenziert; die Slot-Kette steht im `@slot-kette`-Block der ROADMAP. Wortlaut: «FREI seit 3.7.2026 (E3 fertig), aber bis 20.7.2026 nicht zurückgegeben — 17 Tage grundlose Blockade von W3·12. Slot am 20.7.2026 per @slot-kette an W3·12 übergeben (Kanton-Gesetze, Leitprinzip 4 + Davids Reihenfolge-Entscheid 2.7.: «E3 zuerst, W3·12 danach»).»

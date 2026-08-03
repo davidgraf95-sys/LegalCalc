@@ -189,6 +189,16 @@ Design/Mechanik jetzt baubar; **scharf NACH B-2-Ziel** (sonst archiviert man auf
 keine Darstellungsänderung.
 
 ### A11 · B-12-Vorbereitung · GitHub Merge Queue vorbereiten  · **Aktivierung G7 (Kenntnisnahme)** · **ZULETZT, nach O-3.x**
+
+> **⛔ STAND 3.8.2026 — GEGENSTANDSLOS, nicht mehr bauen.** Der Schritt `QS-BASIS-MQ` ist am
+> 3.8.2026 auf **David-Entscheid (Verzicht)** gestrichen: GitHub bietet Merge Queues nur für
+> **Organisations-Repos** an, LexMetrik liegt auf dem persönlichen Account (Ruleset-API 422 beim
+> Aktivierungsversuch nach #421). Absicherung ist stattdessen `strict: true` (aktiv seit 3.8.) +
+> serielle Landung nach Skill `landung`. **A11, B-12 und das Gate G7 unten sind damit hinfällig**
+> und bleiben nur als Beschreibung stehen, falls das Repo je in eine Organisation wandert. Der
+> `merge_group`-Trigger in `ci.yml` schadet ohne Queue nicht und bleibt. Begründung:
+> `ROADMAP-CHRONIK.md` → Streichungen 3.8.2026.
+
 **Kern:** Parallel-Agenten-Sessions sind der Arbeitsmodus, aber es gibt nur Auto-merge ohne serialisiertes
 Gating — `strict=false` heisst: PRs mergen gegen veralteten `main`, Race-Merges können still Semantik brechen
 (Memory-Lektion git/Parallel-Sessions); die Queue ist der Multiplikator der Agenten-Fabrik.
@@ -421,3 +431,51 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
 *den Posten seither als Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
 >   **§14-Intake 20.7.2026 (David):** (a) **Turso-Wächter-Abdeckung** — alle relevanten Stellen prüfen, gekoppelt an die Tor-Echtheit (Wächter gegen UNABHÄNGIGE Grösse, nicht gegen die Sync-Marke; `cancelled`/`skipped` zählen als rot — Auslöser `turso-sync.yml` timeout-minutes: 20). (b) **CI-Fehlläufe** (#30) — Referenz auf Worktree `lm-ci`, hier NICHT duplizieren; Playbook-Eintrag «CI-Starvation» ist WIDERLEGT (Queue-Wartezeit 0,0–0,3 min über 10 Läufe gemessen), Kostentreiber sind Reruns (~72 % der Wanduhr). (c) **CI/lokal-Tor-Parität** — `check:seriell` fährt 36 Tore, CI 11; `check:tor-paritaet` friert die Lücke ein, das Schliessen ist offen. **Stand 20.7.2026 (PR `docs/bau-fundament`): 16/36 in CI** (Detail: `ROADMAP-CHRONIK.md` → QS-BASIS). Rest-Lücke 20 Tore, davon 9 mit Ersatz-Arbiter `fedlex-frische.yml` — **dessen Lauf ist rot (#37), solange das gilt, läuft diese Begründung leer.** (d) **Datenhaltungs-Optimierung** *(§14-Intake David 20.7.2026; im ersten Intake-Durchgang verloren gegangen und durch die adversariale Prüfung von PR #315 wiedergefunden — Nachtrag 20.7.)*: **inkrementeller Sync** (nicht bei jedem Lauf den Vollbestand schieben) · **contentless-FTS** (`content=''` statt external content, wo der Rohtext schon im Serving-Store liegt) · **Index-Strategie** (welche Spalten tragen die realen Query-Pfade aus `api/suche`) · **Heiss/Kalt-Gate** (was gehört in die 1-GB-Turso-Replika, was bleibt kalt) · **Korpus aus git ausgliedern (R6)** — gemessen 20./21.7.2026 als **moderate Kosten** (git status 25–80 ms, CI shallow; real: ~400 MB je Worktree-Checkout, 273 MB Pack, minimaler Churn) ⇒ **kein Dringlichkeits-Fall**, Vorstufe/Teil dieses serverlosen Korpus-Serving-Vorhabens, nicht als isolierter git-Eingriff (Detail `FAHRPLAN-DATENHALTUNG.md` §12.4). Detailquelle `FAHRPLAN-DATENHALTUNG.md`; Bau-Strang W2·6-DATA (E4-Nachbarschaft). Kein eigener FAHRPLAN.
+
+---
+
+## §3 · Kind-Schritte aus dem §14-Intake 3.8.2026 (`QS-AUTOMATIK-BERICHT`, `QS-BASIS-TOT`, `QS-BASIS-DEPS`)
+
+*Angelegt 3.8.2026 (Bauplan-QS). Anlass jedes Schrittes steht in `ROADMAP.md`; hier steht,*
+*was zu bauen ist und woran eine fremde Session erkennt, dass sie fertig ist.*
+
+### §3.1 `QS-AUTOMATIK-BERICHT` — Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde
+
+**Fusioniert 3.8.2026** aus den zwei getrennt aufgenommenen Schritten `QS-AUTOMATIK-BERICHT`
+(Übersicht) und `QS-AUTOMATIK-WT` (Worktree-Sonde) — dieselbe Datei, dieselbe Risiko-Klasse.
+
+- **Zu bauen:** ein Unterbefehl in `scripts/check-ci-laeufe.ts`, der zwei Abschnitte ausgibt.
+  **(a) Wächter-Zustand:** je Workflow in `.github/workflows/` der letzte Lauf mit Ergebnis,
+  Datum und **Alter in Tagen** — ein Wächter, der seit Wochen nicht lief, ist so sichtbar wie
+  einer, der rot ist. **(b) Verwaiste Worktrees:** für jeden Eintrag aus `git worktree list`
+  den Diff des zugehörigen Branches gegen `origin/main`; ist er **leer**, wird der Worktree als
+  «gelandet, nicht abgeräumt» gemeldet.
+- **Fertig, wenn:** der Befehl beide Abschnitte liefert, ein künstlich angelegter leerer
+  Worktree **einmal rot** erscheint (§6.7 — die Sonde muss scheitern können) und die
+  Zustandsliste gegen `gh run list` stichprobenweise stimmt.
+- **Nicht hier:** das Reparieren einzelner Workflows (das war PR #419, `QS-AUTOMATIK`) und
+  Wachstums-Schwellen der Turso-Wächter (bleibt am Dach-Schritt `QS-AUTOMATIK`).
+- **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+### §3.2 `QS-BASIS-TOT` — `check:tot` blockierend bei NEUEN Meldungen
+
+- **Zu bauen:** `--no-exit-code` aus dem knip-Aufruf entfernen und eine **deklarierte
+  Basislinie von 1 Meldung** setzen (`SkalaEintrag`, begründetes Falsch-Positiv). Jede weitere
+  Meldung macht das Tor rot.
+- **Fertig, wenn:** ein absichtlich eingefügtes totes Symbol das Tor **einmal rot** zeigt und
+  nach Entfernen wieder grün; die Basislinie ist im Repo begründet, nicht bloss gesetzt.
+- **Anlass-Beleg:** die Totcode-Welle PR #418/#420 senkte knip von 162 auf 1 Meldung — erst
+  dadurch ist eine harte Schranke überhaupt tragbar.
+- **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+### §3.3 `QS-BASIS-DEPS` — Dependency-Frische
+
+- **Zu bauen:** (a) `npm audit` als **Meldung, nie Stopper** in den Wächter-Bericht (§3.1)
+  einhängen; (b) die knip-Unlisted-Funde `playwright` und `react-router` sauber deklarieren;
+  (c) offene Major-Sprünge einzeln bewerten, nicht sammeln.
+- **ACHTUNG Lockfile:** jede Änderung an `package-lock.json` nur über `npx npm@10` — das lokal
+  installierte npm 11 erzeugt eine CI-inkompatible Lockfile-Fassung.
+- **Fertig, wenn:** Audit-Ausgabe läuft ohne Exit-Code-Wirkung, knip meldet kein Unlisted mehr,
+  und je Major-Sprung steht ein Ja/Nein mit Begründung.
+- **Abgrenzung:** der Geparkt-Entscheid «Betriebs-Instrumente später» betrifft nur die
+  **Stopper**-Variante; die Meldungs-Variante ist genau dieser Schritt.

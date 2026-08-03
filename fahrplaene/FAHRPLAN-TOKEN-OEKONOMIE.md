@@ -473,3 +473,34 @@ anthropic.com/engineering/multi-agent-research-system · github.com: ryoppippi/c
 ast-grep/ast-grep · yamadashy/repomix · aider.chat · arXiv 2602.11988 AGENTS.md (korr. aus
 2605.10039) · 2602.13170 Hotspots (korr. aus 2602.20478) · 2602.20478 Codified Context (→T8) · tembo.io/blog/claude-code-subagents · GitHub-Docs linguist-generated ·
 claude-code #23478/#22170 (rules-paths) · intern: 7 Berichte + 3 Lenses, Nachmessungen §1.
+
+---
+
+## §11 · §14-Intake 3.8.2026 (`QS-TOK-DECKEL`, `QS-TOK-AUFRAEUMEN`)
+
+*Angelegt 3.8.2026 (Bauplan-QS). Beide sind reine Doku-/Prozessarbeit ohne Code-Wirkung.*
+
+### §11.1 `QS-TOK-DECKEL` — Root-Markdown-Deckel 22 → ~20
+
+- **Regel:** Skill `auftrag`, Ziff. 1 setzt den Deckel auf «rund 20 Root-Markdown-Dateien».
+  Ist-Stand seit 31.7.2026: **22**. Ein Deckel, der überschritten und nie nachgezogen wird,
+  steuert nichts.
+- **Zu bauen:** die datierten Audit-/Backlog-Dateien im Repo-Wurzel identifizieren (Kandidaten
+  u. a. `BACKLOG-AUDIT-WERKZEUGE-2026-07.md`), nach `archiv/` verschieben und **alle Verweise
+  nachziehen** — ein toter Link ist teurer als eine Datei zu viel.
+- **Fertig, wenn:** die Zählung bei ≤ 20 liegt, kein Verweis ins Leere zeigt und
+  `check:plan` (Regel 7) grün bleibt.
+- **Nicht hier:** die `fahrplaene/`-Dateien — für die gilt der Link-Wächter, kein Deckel.
+
+### §11.2 `QS-TOK-AUFRAEUMEN` — Skill `aufraeumen`
+
+- **Anlass:** die Aufräum-Session vom 3.8.2026 hat ein wiederholbares Verfahren erzeugt, das
+  bisher nur im Kopf steht — die nächste Aufräumung würde es neu erfinden.
+- **Zu erfassen (Reihenfolge des Verfahrens):** (1) Ist-Messung über
+  `struktur-rotieren.py --check` · (2) Erledigtes wörtlich in `ROADMAP-CHRONIK.md` überführen,
+  nie zusammenfassen · (3) Streich-Massstab («steuert der Schritt noch etwas?») mit
+  Begründungszeile in der Chronik · (4) Fahrplan-Archivierung verify-then-archive · (5)
+  Tor-Reihenfolge `check:plan` → `check:struktur-konsistenz` → `struktur:aktuell` → plan-Tests.
+- **Fertig, wenn:** der Skill unter `.claude/skills/aufraeumen/` liegt, seine `description`
+  auf die echten Auslöser triggert und er auf die Ceilings verweist statt sie zu wiederholen.
+- **Leitplanke:** Prozedur gehört in einen Skill, nicht ins Reglement (CLAUDE.md-Kopf).

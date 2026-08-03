@@ -1026,6 +1026,13 @@ liegen lassen, nicht treiben.
 
 ## §13 · ROADMAP-Spec QS-DATA (wörtlich verschoben 31.7.2026)
 
+> **STAND 3.8.2026 — Geltungsbereich verengt (Bauplan-QS).** `QS-DATA` trägt seit 3.8.2026 **nur
+> noch das David-Gate** «VPS-Bestellung → E3-Serving + E4-UI-Panels». Der gesamte Datenhaltungs-Bau
+> — DB-Artefakt als eine Quelle, Etappen E0–E6b, Datenhaltungs-Optimierung — liegt in **`W2·6-DATA`**
+> (§14). Der Wortlaut unten stammt aus der Zeit davor und beschreibt beides; wo er «Bau-Strang =
+> W2·6-DATA» und «Serving-Bau bleibt QS-DATA» nebeneinander sagt, gilt die Verengung von heute.
+> Anlass: derselbe Umfang stand an drei Stellen (QS-DATA · W2·6-DATA · QS-BASIS (d)).
+
 > **→ Bau-Spec: «4. Tore», «5. Etappen» und «12. Datenhaltungs-Optimierung» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*

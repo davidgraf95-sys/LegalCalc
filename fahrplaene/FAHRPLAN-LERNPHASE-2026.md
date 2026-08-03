@@ -168,3 +168,34 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
     öffnet **keinen** 26×-Slot; ein daraus folgender Daten-Bulklauf (Korpus neu ziehen) ist ein
     26×-Asset → nur bei freiem Slot, nie zwei parallel (Leitprinzip 4). Korrekturen aus der Kampagne
     sind verhaltensändernd → golden-gegated (§6) + Push/Deploy nur auf Davids Ja (§9).
+
+---
+
+## §3 · Gegenprüfungs-Werkzeuge aus dem §14-Intake 3.8.2026 (`QS-GP-BEREICH`, `QS-GP-PRERENDER`)
+
+*Angelegt 3.8.2026 (Bauplan-QS). Beide sind Werkzeuge AM Beweis, nicht am Rechtsinhalt —*
+*reine Prüflogik (`Gegenpruefung: n/a`), aber beide müssen ihre Scheiterns-Fähigkeit zeigen (§6.7).*
+
+### §3.1 `QS-GP-BEREICH` — `gegenpruefung:ok --bereich A..B`
+
+- **Ist-Zustand:** `check:gegenpruefung` und `gegenpruefung:ok` sehen nur den **Working Tree**.
+  Wer auf einem Branch committet arbeitet, muss den Risiko-Diff darum mit einem **Hand-Hash**
+  nach dem `risikoDiffHash`-Schema quittieren — am 3.8.2026 dreimal an einem Tag.
+- **Zu bauen:** (a) `gegenpruefung:ok --bereich <A>..<B>` nimmt einen Commit-Bereich entgegen;
+  (b) `check:gegenpruefung` prüft zusätzlich `origin/main..HEAD`, nicht nur den Working Tree.
+  Das Hash-Schema bleibt unverändert — es wird nur über einen zweiten Eingang gefüttert.
+- **Fertig, wenn:** eine committete Risiko-Pfad-Änderung ohne Quittung das Tor **einmal rot**
+  zeigt und mit `--bereich`-Quittung grün wird; der Hand-Hash-Weg bleibt als Rückfall bestehen.
+- **Dateien:** `scripts/gegenpruefung-ok.ts`, `scripts/check-gegenpruefung.ts`,
+  `scripts/gegenpruefung/kern.ts` (`istRisikoPfad()` bleibt der Arbiter).
+
+### §3.2 `QS-GP-PRERENDER` — `check:prerender-golden` als Opt-in-Beweiswerkzeug
+
+- **Anlass:** der stärkste Beweis der Totcode-Gegenprüfung zu PR #418 — Byte-Gleichheit über
+  8164 prerenderte Seiten — war Handarbeit und damit nicht wiederholbar.
+- **Zu bauen:** ein **nicht** in `npm run gate` verdrahteter Befehl, der zwei Prerender-Läufe
+  byte-vergleicht und bei Differenz die betroffenen Dateien **benennt** (nicht nur zählt).
+- **Bewusst opt-in:** das Pflicht-Gate soll nicht um einen Voll-Prerender wachsen (§15); der
+  Befehl dient dem, der einen Verhaltensneutralitäts-Beweis nach §6 führen muss.
+- **Fertig, wenn:** eine absichtlich veränderte Seite **einmal rot** erscheint, ein
+  unveränderter Doppel-Lauf grün ist, und der Aufruf in Skill `refactoring` als Beweisweg steht.
