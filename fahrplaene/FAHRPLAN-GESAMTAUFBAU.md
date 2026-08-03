@@ -324,6 +324,32 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
 
 ---
 
+### Katalog-Tabelle (wörtlich verschoben 3.8.2026 aus ROADMAP.md)
+
+Quellen durchgehend amtlich (Art. 5 URG). Alle Werkzeuge **stateless**. «grenzwertig» =
+amtlich nutzbar mit harter Auflage. Die Kern-Auflagen je Werkzeug stehen oben in diesem §1.
+
+| Werkzeug | Welle | neu/vorh. | §2 | Quelle amtl. | Aufw. |
+|---|---|---|---|---|---|
+| Fristen-Cockpit (Vorw./Rückw./Stillstand) | 1 | Verpackung | ja | ja | M |
+| Streitwert + Grenzwert-Abgleich | 1 | Ausbau | ja | ja | S |
+| Zuständigkeits-/Verfahrensnavigator | 1 | Ausbau | ja | ja | S |
+| Rechtsmittel-/Eintretensprüfung | 1 | neu | teils | ja | M |
+| Prozesskosten-Cockpit (Risiko/Festsetz./Dispositiv) | 1/2 | Verpackung | ja | ja | L |
+| Norm→amtlicher Entscheid (Recherche) | 1/2 | Ausbau | ja | grenzwertig | M |
+| Mehrsprach-Vergleich DE/FR/IT | 2 | neu | ja | ja | L |
+| Verjährungs-/Gewährleistungs-Board | 2 | Ausbau | ja | ja | M |
+| Verzugs-/Forderungs-/Inkasso-Strecke | 2 | Verpackung | teils | ja | M |
+| Gerichts-/Behörden-Adressregister | 2 | Verpackung | ja | ja | M |
+| Gerichts-Baustein-Set (Rubrum + Zitierer) | 2 | Verpackung | ja | grenzwertig | M |
+| Schriften-/Eingaben-Baukasten | 2 | Ausbau | teils | ja | L |
+| Gesetzgebungs-/Rechtsetzungs-Tracking | 3 | neu | teils | ja | M |
+| Zustellfiktions-Engine | 3 | neu | ja | ja | M |
+| Gesellschafts-/Schwellen-Module | 3 | neu | teils | ja | L |
+| B2B-/Basis-Vertragsbaukasten | 3 | Ausbau | ja | grenzwertig | L |
+| Schutzrechts-Gebühren (IGE) | 3 | neu | ja | ja | M |
+| Normfassungs-/Geltungsstand-Prüfer | 3 | neu | teils | ja | L |
+
 ## §2 · ROADMAP-Spec Strang-Detailpunkte (wörtlich verschoben 31.7.2026)
 
 > **→ Bau-Spec: «Phase 0» … «Phase 7» dieser Datei** (chronologische Bau-Reihenfolge; Kurzfassung in «Übersichtstabelle», Reihenfolge-Auflagen in «Die 5 grössten Reihenfolge-Risiken»). Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln. *(Zeiger nachgetragen 31.7.2026, Endprüfungs-Fund R2-23: 33 der 35 ROADMAP-Spec-§§ trugen ihn, diese zwei nicht — ohne dokumentierte Begründung, obwohl GESAMTAUFBAU mit Phase 0…7 sehr wohl eine Bau-Spec in derselben Datei hat.)*
