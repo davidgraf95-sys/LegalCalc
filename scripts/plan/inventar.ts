@@ -78,6 +78,11 @@ export const INVENTAR: readonly string[] = [
   'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
   'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN', 'QS-UI-WARNLINE',
 
+  // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
+  // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
+  // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
+  'QS-KORPUS-BMV', 'W2·5k-LINIEN-KONZEPT', 'QS-KORPUS-SCOPE',
+
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
