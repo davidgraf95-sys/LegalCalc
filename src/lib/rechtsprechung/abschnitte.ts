@@ -92,6 +92,48 @@ export function gruppiereErwaegungen(bloecke: EntscheidBlock[]): ErwGruppe[] {
 }
 
 /**
+ * Ein Sprungziel der Erwägungs-Navigation (V5): Anker + amtliche Marke + Tiefe.
+ * `tiefe` = Anzahl Ziffern-Segmente − 1 (E. 2 ⇒ 0, E. 2.3 ⇒ 1, E. 2.3.1 ⇒ 2) und
+ * ist damit die EINRÜCKUNG, nicht eine Rangaussage.
+ */
+export interface ErwPunkt {
+  anker: string;
+  /** Amtliche Marke, wie sie im Text steht («2.3.1» bzw. «E. 2.3.1»). */
+  marke: string;
+  tiefe: number;
+}
+
+/**
+ * Gliederung der Erwägungen als flache, dokument-geordnete Sprungliste (V5,
+ * W2·10-UI-NAV). Dieselbe Anker-Wahrheit wie `ersteFundstelle`/`nennungsAnker`
+ * (§5 — alles läuft über `gruppiereErwaegungen`), nur anders projiziert.
+ *
+ * NUR Blöcke MIT Anker UND MIT amtlicher Marke werden Sprungziele: ein
+ * markenloser Block trägt keine zitierfähige Erwägungs-Nummer, und ein
+ * Inhaltsverzeichnis-Eintrag ohne Nummer wäre eine erfundene Gliederungsstufe
+ * (§8). Rein und deterministisch (§2).
+ */
+export function erwaegungsGliederung(abschnitte: EntscheidAbschnitt[]): ErwPunkt[] {
+  const erw = abschnitte.find((a) => a.typ === 'erwaegung');
+  if (!erw) return [];
+  const punkte: ErwPunkt[] = [];
+  for (const g of gruppiereErwaegungen(erw.bloecke)) {
+    if (g.kopf && g.kopfAnker && g.kopf.marke) {
+      punkte.push({ anker: g.kopfAnker, marke: g.kopf.marke, tiefe: 0 });
+    }
+    for (const s of g.subs) {
+      if (!s.anker || !s.block.marke) continue;
+      punkte.push({
+        anker: s.anker,
+        marke: s.block.marke,
+        tiefe: Math.max(0, segmente(s.block.marke).length - 1),
+      });
+    }
+  }
+  return punkte;
+}
+
+/**
  * Anker der ERSTEN Erwägung, deren Text den Ziel-Artikel zitiert (inkl. der
  * per «i.V.m.»-Kette propagierten Glieder, `normVerweiseImText`) — für den
  * Norm-Chip-Sprung im Entscheid-Kopf. Vergleich über die aufgelöste Fedlex-URL
