@@ -199,3 +199,23 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   Befehl dient dem, der einen Verhaltensneutralitäts-Beweis nach §6 führen muss.
 - **Fertig, wenn:** eine absichtlich veränderte Seite **einmal rot** erscheint, ein
   unveränderter Doppel-Lauf grün ist, und der Aufruf in Skill `refactoring` als Beweisweg steht.
+
+### §3.3 `QS-GP-PREPUSH` — Verdikt-Prüfung vor dem Push
+
+*Angelegt 3.8.2026 (Bau-Evaluation).*
+
+- **Anlass:** der CI-Lauf zu PR #422 (3.8.2026) brauchte 11 Minuten, um ein fehlendes
+  Gegenprüfungs-Verdikt zu melden — `check:gegenpruefung` hätte dasselbe lokal in Sekunden
+  gezeigt, wenn es vor dem Push gelaufen wäre. Die Feedback-Schleife gehört vor den Push,
+  nicht in die CI.
+- **Zu bauen:** `scripts/git-setup.sh` (npm `prepare`, läuft idempotent in jedem Clone und
+  Worktree) verdrahtet zusätzlich einen pre-push-Hook, der `check:gegenpruefung` im
+  Bereichs-Modus (`origin/main..HEAD`, §3.1) aufruft und den Push bei Risiko-Diff ohne
+  Quittung mit klarem Hinweis stoppt. Netz-frei, bei Nicht-Risiko-Diffs unter einer Sekunde;
+  `git push --no-verify` bleibt als bewusster, dokumentierter Ausweg.
+- **dep:** `QS-GP-BEREICH` — ohne die Bereichs-Prüfung sieht der Hook committete Arbeit nicht;
+  ein Hook, der nur den Working Tree prüft, würde genau den Regelfall (committeter Branch)
+  verfehlen, der den Anlass erzeugt hat.
+- **Fertig, wenn:** ein Push mit unquittiertem Risiko-Diff **einmal rot** stoppt (§6.7), ein
+  quittierter durchgeht, und ein reiner `.md`-Push den Hook ohne spürbare Verzögerung passiert.
+- **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.

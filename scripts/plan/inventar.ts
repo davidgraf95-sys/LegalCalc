@@ -82,4 +82,9 @@ export const INVENTAR: readonly string[] = [
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
   'QS-EXTQUELLEN',
+
+  // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
+  // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
+  // sie erweitert QS-AUTOMATIK-BERICHT (Bündelung, Skill `auftrag` Ziff. 3).
+  'QS-GP-PREPUSH', 'QS-BASIS-DOKU-CI',
 ];
