@@ -29,6 +29,7 @@ import { fileURLToPath } from 'node:url';
 import { sparqlBatch, type FetchImpl } from './fedlex-sparql.ts';
 import { lesePinsVoll } from './fedlex-pins.ts';
 import { loeseHtmlManifeste } from './fedlex-manifest.ts';
+import { anerkannteAufhebungNachEli } from '../src/lib/normtext/aufhebungen.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const REGISTER_JSON = resolve(wurzel, 'public/normtext/register.json');
@@ -50,8 +51,23 @@ export type UeberholtEintrag = { key: string; gepinnt: string; geltend: string }
 // G-AUFH-Follow-up (#259): ganz aufgehobener Erlass (jolux:dateNoLongerInForce
 // auf der ConsolidationAbstract). `aufgehobenSeit` = amtliches Aufhebungsdatum
 // (ISO); `kuenftig` = Aufhebung erst nach dem Laufdatum angekündigt.
+//
+// SSoT-Anschluss (#287-Nachzug, David-Entscheid 3.8.2026 «führe die BMV nach»):
+// `anerkannt` = der Repeal ist in src/lib/normtext/aufhebungen.ts DEKLARIERT und
+// deckt sich mit dem amtlichen Datum — der Erlass wird bewusst als historische
+// Fassung geführt (§8), die Massnahme ist ERLEDIGT. Ohne diesen Anschluss meldete
+// der Register-Block auch nachgeführte Aufhebungen unverändert als «Massnahme
+// nötig» — eine zweite, widersprechende Wahrheit neben check:fedlex-versionen,
+// das denselben Erlass zeitgleich als «OK (aufgehoben)» führt (§5). Die
+// Anerkennungs-Bedingung ist WÖRTLICH dieselbe wie im Tor
+// (fedlex-versionen-pruefen.ts): deklariert UND bereits wirksam UND Datums-
+// Identität. Ein UNDEKLARIERTER Repeal bleibt roh und laut (Sinn von G-AUFH).
 export type AufhebungEintrag = {
   key: string; sr: string; kuerzel: string; gepinnt: string; aufgehobenSeit: string; kuenftig: boolean;
+  /** Repeal in aufhebungen.ts deklariert UND wirksam UND datumsgleich (§5/§8). */
+  anerkannt: boolean;
+  /** Nachfolge-Erlass aus der Deklaration (nur bei `anerkannt`). */
+  nachfolger?: { sr: string; eli: string };
 };
 // Nachzug C (Gegenprüfung #414, Befund 4): ein Pin, der auf einer NICHT-
 // KANONISCHEN html-Manifestation klebt (Alias-URL / Alt-Revision desselben
@@ -155,14 +171,25 @@ SELECT ?abstract ?date ?noLonger WHERE {
     const gepinnt = isoAusToken(e.fassungsToken);
     // G-AUFH-Follow-up: Ganz-Aufhebung hat VORRANG — der Erlass wird als
     // Aufhebungs-Posten geführt, nicht als Frische-Wiedervorlage, und erhält
-    // KEINEN geprüft-Chip (§8). «Roh» gemeldet: ohne SSoT-Filter aus
-    // src/lib/normtext/aufhebungen.ts (liegt erst nach #287-Merge auf main —
-    // 1-Zeilen-Anschluss im PR-Body).
+    // KEINEN geprüft-Chip (§8). Der SSoT-Anschluss (#287-Nachzug) entscheidet
+    // nur über die DARSTELLUNG (erledigt vs. Massnahme nötig) — die Zeile bleibt
+    // in beiden Fällen sichtbar (§8: nicht wegglätten, nicht stillschweigend
+    // entfernen). Der geprüft-Chip bleibt in beiden Fällen aus.
     const noLonger = noLongerProEli.get(eli) ?? null;
     if (noLonger) {
+      const kuenftig = noLonger > datum;
+      // Identische Bedingung wie im Tor (fedlex-versionen-pruefen.ts): eine
+      // Deklaration, die vom amtlichen Datum abweicht oder eine noch nicht
+      // wirksame Aufhebung behauptet, gilt NICHT als anerkannt — sie ist dort
+      // ROT und darf hier nicht als «erledigt» erscheinen.
+      const dekl = anerkannteAufhebungNachEli(eli);
+      const anerkannt = !!dekl && !kuenftig && noLonger === dekl.seit;
       aufhebungen.push({
         key: e.key, sr: e.sr!, kuerzel: e.kuerzel, gepinnt,
-        aufgehobenSeit: noLonger, kuenftig: noLonger > datum,
+        aufgehobenSeit: noLonger, kuenftig, anerkannt,
+        ...(anerkannt && dekl?.nachfolger
+          ? { nachfolger: { sr: dekl.nachfolger.sr, eli: dekl.nachfolger.eli } }
+          : {}),
       });
       continue;
     }
@@ -210,9 +237,18 @@ export function baueAutoBlock(
   // Spalte KEIN Datum (→ verfall-parse: manueller Eintrag, nie «verfallen» —
   // die Massnahme ist Snapshot-Ersatz, nicht eine terminierte Frische-Prüfung);
   // eine künftig angekündigte Aufhebung trägt ihr Datum (→ terminierte Vorwarnung).
-  const aufhebungsZeilen = aufhebungen.map((a) =>
-    `| ${a.kuenftig ? 'Aufhebung angekündigt' : 'Aufgehoben'}: ${a.kuerzel} (SR ${a.sr}) | \`scripts/fedlex-cache.sh\` (${a.key}) | ${a.kuenftig ? `Aufhebung angekündigt per ${deDatum(a.aufgehobenSeit)}` : `aufgehoben seit ${deDatum(a.aufgehobenSeit)}`} | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | ${a.kuenftig ? `Aufhebung angekündigt ab ${deDatum(a.aufgehobenSeit)}` : 'Aufhebung erfolgt — Massnahme nötig'} |`,
-  );
+  // #287-Nachzug: eine ANERKANNTE Aufhebung ist nachgeführt — Fundstelle ist die
+  // Deklaration (aufhebungen.ts), Rhythmus «erledigt», letzte Spalte ohne Datum
+  // und ohne «Massnahme nötig». Sie bleibt sichtbar (§8), behauptet aber keine
+  // offene Pflicht mehr — sonst stünde sie im Widerspruch zu check:fedlex-
+  // versionen, das denselben Erlass als «OK (aufgehoben)» führt (§5).
+  const aufhebungsZeilen = aufhebungen.map((a) => {
+    if (a.anerkannt) {
+      const nf = a.nachfolger ? ` — Nachfolger SR ${a.nachfolger.sr} (\`${a.nachfolger.eli}\`)` : ' — kein Nachfolge-Erlass';
+      return `| Aufgehoben (anerkannt): ${a.kuerzel} (SR ${a.sr}) | \`src/lib/normtext/aufhebungen.ts\` (${a.key}) | aufgehoben seit ${deDatum(a.aufgehobenSeit)} | einmalig — erledigt | Nachgeführt: als historische Fassung geführt (§8)${nf} |`;
+    }
+    return `| ${a.kuenftig ? 'Aufhebung angekündigt' : 'Aufgehoben'}: ${a.kuerzel} (SR ${a.sr}) | \`scripts/fedlex-cache.sh\` (${a.key}) | ${a.kuenftig ? `Aufhebung angekündigt per ${deDatum(a.aufgehobenSeit)}` : `aufgehoben seit ${deDatum(a.aufgehobenSeit)}`} | einmalig — Snapshot ersetzen/entfernen (§7/§8), Nachfolge prüfen | ${a.kuenftig ? `Aufhebung angekündigt ab ${deDatum(a.aufgehobenSeit)}` : 'Aufhebung erfolgt — Massnahme nötig'} |`;
+  });
   const aufhebungsSektion = aufhebungen.length === 0 ? [] : [
     '',
     '### Aufgehobene und zur Aufhebung angekündigte Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)',
@@ -222,9 +258,20 @@ export function baueAutoBlock(
     'Zeile entweder bereits erfolgt («aufgehoben seit») oder erst amtlich',
     'angekündigt und bis dahin geltend («Aufhebung angekündigt per», §8). Der',
     'Snapshot bleibt allenfalls als historische Fassung nutzbar, darf aber nie mehr',
-    'als geltend dargestellt werden, sobald das Datum erreicht ist. Massnahme:',
-    'Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen. Roh gemeldet (ohne',
-    'SSoT-Filter aus `src/lib/normtext/aufhebungen.ts` — folgt mit #287).',
+    'als geltend dargestellt werden, sobald das Datum erreicht ist.',
+    '',
+    'Zwei Klassen, gefiltert über die SSoT `src/lib/normtext/aufhebungen.ts`',
+    '(#287-Nachzug):',
+    '',
+    '- **«Aufgehoben (anerkannt)»** — der Repeal ist deklariert und deckt sich mit',
+    '  dem amtlichen `dateNoLongerInForce`. Der Erlass wird bewusst als historische',
+    '  Fassung geführt (§8), Katalog/Reader zeigen das Aufgehoben-Badge und den',
+    '  Nachfolge-Link. Die Massnahme ist ERLEDIGT — dieselbe Beurteilung wie in',
+    '  `check:fedlex-versionen` («OK (aufgehoben)»), damit nicht zwei Register',
+    '  Gegenteiliges über denselben Erlass sagen (§5).',
+    '- **«Aufgehoben» / «Aufhebung angekündigt»** — noch NICHT deklariert. Massnahme',
+    '  offen: Snapshot ersetzen/entfernen, Nachfolge-Erlass prüfen, danach eine Zeile',
+    '  in `aufhebungen.ts` ergänzen.',
     '',
     '| Erlass (Aufhebungs-Posten) | Fundstelle | Aufhebungsdatum | Rhythmus | Nächste Prüfung |',
     '|---|---|---|---|---|',
@@ -342,9 +389,15 @@ async function main() {
   console.log(`  ${Object.keys(currency).length} Erlasse mit geprüft-Chip → public/normtext/currency.json`);
   console.log(`  davon ${Object.values(currency).filter((c) => c.naechsteFassungAb).length} mit naechsteFassungAb`);
   if (aufhebungen.length > 0) {
+    const offen = aufhebungen.filter((a) => !a.anerkannt);
+    const nachgefuehrt = aufhebungen.filter((a) => a.anerkannt);
     console.log(`  ⚠ ${aufhebungen.length} GANZ AUFGEHOBEN (Aufhebungs-Posten, kein geprüft-Chip; §8):`);
-    for (const a of aufhebungen) {
-      console.log(`      ${a.key}: aufgehoben ${a.kuenftig ? 'ab' : 'seit'} ${a.aufgehobenSeit} (SR ${a.sr})`);
+    for (const a of offen) {
+      console.log(`      ${a.key}: aufgehoben ${a.kuenftig ? 'ab' : 'seit'} ${a.aufgehobenSeit} (SR ${a.sr}) — Massnahme OFFEN`);
+    }
+    for (const a of nachgefuehrt) {
+      const nf = a.nachfolger ? `, Nachfolger SR ${a.nachfolger.sr} (${a.nachfolger.eli})` : '';
+      console.log(`      ${a.key}: aufgehoben seit ${a.aufgehobenSeit} (SR ${a.sr}) — anerkannt/nachgeführt${nf}`);
     }
   }
   if (ueberholt.length > 0) {
