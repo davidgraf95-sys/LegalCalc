@@ -150,6 +150,10 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   Referenz prüfen und seine Scheiterns-Fähigkeit an einem ECHTEN Aufruf belegen (§6 Ziff. 7).
   a/b sind reine Prüflogik (`Gegenpruefung: n/a`); der `chemrrv`-Re-Pin (a′) ist die Ausnahme —
   Extraktions-Risikopfad ⇒ eigener Commit mit `QS-GP`-Verdikt, kein Auto-Merge.
+  **Stand 3.8.2026 (PR #419, K1–K13):** die beiden toten Workflows laufen wieder, der Alarmpfad ist
+  gebaut (Monitor-Triage: Grün schliesst, 3× Rot eskaliert) und der Wächter zieht fehlende
+  Required-Kontexte nach. **Offen bleibt** die Turso-Wächter-Abdeckung samt Wachstums-Schwellen —
+  darum `ready` und nicht `done`. Diagnose-Übersicht: `bibliothek/ci-fehlerklassen-2026-08-03.md`.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1. Trailer `Roadmap: QS-AUTOMATIK`.
 - **SEO/A11y** *(SEO-A11Y-GOVERNANCE)*. A11y zahlt auf Bedienbarkeit ein → begleitendes Tor
   <!-- @meta id: SEO-A11Y · status: ready · of: ja · blocker: null · dep: [] · kollision: [public/normtext/register.json, src/lib/seo.ts, scripts/prerender.ts, vercel.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
@@ -166,6 +170,13 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   immer, §15). Reihenfolge a–e: a Tor `check:perf-budget` ✅ · b billige Quick-Wins ✅ · **c M-Daten-Pfad**
   (Idle-Defer, Suchindex in Worker/`export()`, `register.json` sharden) · **d Render-/Split-View-Feinschliff**
   · e CLS-Race-Härtung ✅. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+  **Zum `status: wip` (Prüfung 3.8.2026):** der Marker steht seit **1.7.2026** (Einführung der
+  @meta-Etiketten, `927f8c517`) und wurde seither nie freigegeben — er belegt also nicht fünf Wochen
+  Bauarbeit. Er bleibt trotzdem stehen, weil er **heute** wieder zutrifft: die Runner-Robustheit auf
+  `chore/runner-robustheit` baut den TBT-Posten (Normierung) und die OR-e2e-Timeouts. Sie deckt das
+  QS-PERF-Anliegen aber **nicht ab** — c (M-Daten-Pfad), d (Render-/Split-View-Feinschliff) und die
+  fünf offenen Befunde unten bleiben unberührt. Ein Querschnitt-Band-Schritt sollte `wip` ohnehin nur
+  für die Dauer einer Session tragen (Skill `auftrag`, Ziff. 2).
   - [~] **TBT-Deckel je Job normieren statt absolut prüfen** — 20.7.2026 gebaut, gemessen und
     **verworfen**; **David-Entscheid 3.8.2026: doch normieren** (Bau läuft auf `chore/runner-robustheit`).
     Bis zur Landung wird weiter der Rohwert assertiert, «TBT auf OR scharf» bleibt offen (§8).
