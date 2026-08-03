@@ -53,11 +53,13 @@ const GesetzLeser = lazyRetry(importGesetzLeser);
 // /rechtsprechung/:key ist client-lazy (SPA-Fallback). Routenzahl +1.
 const Rechtsprechung = lazyRetry(() => import('./pages/Rechtsprechung').then((m) => ({ default: m.Rechtsprechung })));
 const EntscheidLeser = lazyRetry(importEntscheidLeser);
-// Rubrik «International»: eigenständige Übersicht der für die Schweiz
-// massgeblichen Staatsverträge & des internationalen Rechts — alle Einträge
-// nur-live-link (amtliche Quelle), kein Volltext-Snapshot. Übersicht /international
-// wird prerendert (seo.ts). Routenzahl +1.
-const International = lazyRetry(() => import('./pages/International').then((m) => ({ default: m.International })));
+// Rubrik «International»: die Übersicht lebt kanonisch in der Gesetzes-Säule
+// /gesetze?ebene=international (IA-6 Stufe 2, FAHRPLAN-GESETZES-UX §11.4 Ziff. 3
+// / §11.8 Y-C, David-Go 3.8.2026). Die frühere Alias-Seite /international ist
+// AUFGELÖST — geblieben ist ihr Link-Erbe: dieser Redirect bildet die fünf
+// Sach-Anker auf die Säule ab (Server-Seite: 308 in vercel.json). Nicht mehr
+// prerendert, darum Routenzahl −1 (scripts/prerender.ts).
+const InternationalRedirect = lazyRetry(() => import('./pages/InternationalRedirect').then((m) => ({ default: m.InternationalRedirect })));
 // Rubrik «Materialien»: amtliche Ressourcen / Soft-Law (Kreisschreiben,
 // Wegleitungen, Leitfäden …) — alle nur-live-link (amtliche Quelle), kein
 // Volltext-Snapshot. Übersicht /materialien wird prerendert, Detail /materialien/:key
@@ -115,8 +117,8 @@ export function RouteSwitch({ location }: { location?: string }) {
       {/* Rubrik VI «Rechtsprechung»: Übersicht (prerendert) + Reader (SPA-Fallback) */}
       <Route path="/rechtsprechung" element={<Rechtsprechung />} />
       <Route path="/rechtsprechung/:key" element={<EntscheidLeser />} />
-      {/* Rubrik «International»: Übersicht (prerendert), nur-live-link-Karten */}
-      <Route path="/international" element={<International />} />
+      {/* Alt-Route «International» (IA-6 Stufe 2): Redirect auf die Säule, Anker abgebildet */}
+      <Route path="/international" element={<InternationalRedirect />} />
       {/* Rubrik «Materialien»: Übersicht (prerendert) + Detail (Metadaten/Live-Link) */}
       <Route path="/materialien" element={<Materialien />} />
       <Route path="/materialien/:key" element={<MaterialLeser />} />
