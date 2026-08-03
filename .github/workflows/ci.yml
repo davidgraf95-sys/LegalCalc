@@ -242,9 +242,22 @@ jobs:
       - name: Bibliotheks-Standards (S1–S10)
         if: needs.diff.outputs.art == 'code'
         run: npm run check:bibliothek
-      - name: Verfallsregister (Termine)
-        if: needs.diff.outputs.art == 'code'
-        run: npm run check:verfall
+      # ── check:verfall STEHT HIER BEWUSST NICHT MEHR (3.8.2026, K7) ──────────
+      # Es ist das einzige Tor im PR-Pfad, dessen Ergebnis von der WANDUHR
+      # abhängt statt vom Diff: `verfall-pruefen.ts` vergleicht das Register
+      # gegen `new Date()`. Läuft ein Registertermin ab, färbt es schlagartig
+      # ALLE offenen PRs rot — ohne dass einer davon etwas damit zu tun hätte.
+      # BELEG: Lauf 30764225649 (2.8.2026, Branch claude/sleepy-mestorf-5dbea7)
+      # scheiterte im Tore-Job an «VERFALLEN 2026-08-01 Künftige Fassung BüV /
+      # ZEMIS-V» — ein Rechtsstands-Befund, kein Fehler dieses PR.
+      #
+      # R1-ABGRENZUNG (Tore streichen ist die falsche Vereinfachung): Das Tor
+      # wird VERSCHOBEN, nicht gestrichen. Es läuft weiterhin
+      #   · wöchentlich in normen-monitor.yml (dort mit Vorlauf-Warnung),
+      #   · in fedlex-frische.yml vor jedem Reparatur-PR,
+      #   · und vor jedem Deploy lokal in `check:seriell`.
+      # check:tor-paritaet bleibt grün, weil es ALLE Workflows scannt, nicht
+      # nur ci.yml — der Nachweis der Abdeckung bleibt also maschinell.
       - name: Abnahme-Dossiers synchron zu den Schemas (§5-Projektion)
         if: needs.diff.outputs.art == 'code'
         run: npm run check:dossiers

@@ -59,7 +59,23 @@ jobs:
         run: npm run check:netz
 
       # ── Verfalls-/Frische-Tore (nicht in check:netz, wanduhr-abhängig) ──────
-      - name: Verfallsregister (Termine)
+      #
+      # SEIT 3.8.2026 (K7) ist das hier der PRIMÄRE Laufort von check:verfall:
+      # aus dem PR-Pfad (ci.yml, Job `tore`) wurde es entfernt, weil ein
+      # wanduhr-abhängiges Tor dort schlagartig alle offenen PRs rot färbt, die
+      # nichts damit zu tun haben (Lauf 30764225649 vom 2.8.2026). Der WÖCHENT-
+      # LICHE Takt ist der richtige: ein Registertermin ist ein Rechtsstands-
+      # Befund, kein Diff-Befund, und gehört zu den übrigen §7-Wachen.
+      #
+      # VORLAUF-WARNUNG ist eingebaut und braucht kein Flag: verfall-pruefen.ts
+      # druckt jeden Termin der nächsten VORLAUF_TAGE (= 45, Zeile ~35) als
+      # «FÄLLIG <Datum> <Label>» und zählt sie am Ende. Damit sieht dieser Lauf
+      # kommende Verfälle rund sechs Wochen im Voraus — deutlich mehr als der
+      # ursprünglich vorgesehene 14-Tage-Vorlauf, darum wurde die Schwelle NICHT
+      # angefasst (sie ist zudem bewusst mit VerfallUebersicht.tsx gespiegelt).
+      # `if: always()` bleibt: das Tor muss auch laufen, wenn check:netz oben
+      # bereits rot war — sonst verdeckt ein Netzfehler den Verfall.
+      - name: Verfallsregister (Termine · mit Vorlauf-Warnung ≤45 Tage)
         if: always()
         run: npm run check:verfall
       - name: LIK-Reihe frisch (BFS-Monatsindex, O-1.6)
