@@ -12,7 +12,11 @@ const ROUTEN = prerenderRouten();
 // Redirect-Routen (App.tsx) und Stub dürfen nie prerendered/gesitemapped werden.
 // /rechner ist seit der UI-Welle KEINE Redirect-, sondern eine Übersichtsseite
 // (prerendered) — daher hier NICHT mehr verboten. /recherche ist aufgelöst.
-const VERBOTEN = ['/pro', '/fachpersonen', '/recherche', '/rechner/fristenspiegel'];
+// IA-6 Stufe 2 (§11.8 Y-C, David-Go 3.8.2026): /international ist von der
+// Alias-SEITE zur Redirect-ROUTE geworden (308 in vercel.json + Client-Navigate)
+// und steht darum jetzt auf dieser Verbots-Liste — deklarierte fachliche
+// Änderung dieses Tests (§6.3, kein Refactoring).
+const VERBOTEN = ['/pro', '/fachpersonen', '/recherche', '/rechner/fristenspiegel', '/international'];
 
 describe('prerenderRouten()', () => {
   it('liefert alle Pfade verfügbarer Karten plus die statischen Seiten', () => {
@@ -24,15 +28,16 @@ describe('prerenderRouten()', () => {
     );
     for (const p of kartenPfade) expect(ROUTEN).toContain(p);
     // 11 statische Seiten inkl. /gesetze (Rubrik V Gesetzessammlung, 17.6.2026),
-    // /rechtsprechung (Rubrik Rechtsprechung, 23.6.2026), /international (Rubrik
-    // International, 24.6.2026), /materialien (Rubrik Materialien, 27.6.2026) und
-    // — seit der UI-Welle — /rechner + /vorlagen (Rubrik-Übersichten, lösen
-    // /recherche ab).
+    // /rechtsprechung (Rubrik Rechtsprechung, 23.6.2026), /materialien (Rubrik
+    // Materialien, 27.6.2026) und — seit der UI-Welle — /rechner + /vorlagen
+    // (Rubrik-Übersichten, lösen /recherche ab).
     // /suche kam mit UI-NAV S5 (11.7.2026) als Volltext-Ergebnisseite dazu.
-    for (const p of ['/', '/rechner', '/vorlagen', '/gesetze', '/rechtsprechung', '/international', '/materialien', '/methodik', '/ueber', '/kontakt', '/datenschutz', '/abdeckung', '/suche']) {
+    // /international ist mit IA-6 Stufe 2 (3.8.2026) ENTFALLEN — Redirect auf
+    // die Säule /gesetze?ebene=international (s. VERBOTEN).
+    for (const p of ['/', '/rechner', '/vorlagen', '/gesetze', '/rechtsprechung', '/materialien', '/methodik', '/ueber', '/kontakt', '/datenschutz', '/abdeckung', '/suche']) {
       expect(ROUTEN).toContain(p);
     }
-    expect(ROUTEN).toHaveLength(kartenPfade.size + 13);
+    expect(ROUTEN).toHaveLength(kartenPfade.size + 12);
   });
 
   it('enthält keine Duplikate, Hashes oder relativen Pfade', () => {
@@ -49,14 +54,6 @@ describe('prerenderRouten()', () => {
   });
 });
 
-// IA-6 Stufe 1 (FAHRPLAN-GESETZES-UX §11.4 Ziff. 3, W2·5d): /international ist
-// funktionale Alias-Seite; Kanonik = Säule /gesetze?ebene=international. Diese
-// EINE Route trägt darum ein Fremd-Canonical — deklarierte fachliche Änderung
-// dieses Tests (§6.3, kein Refactoring). Kein Redirect (Stufe 2 = separates Go).
-const CANONICAL_AUSNAHMEN: Record<string, string> = {
-  '/international': '/gesetze?ebene=international',
-};
-
 describe('metaFuerPfad()', () => {
   it('liefert für jede Prerender-Route Titel, Beschreibung und Canonical', () => {
     for (const p of ROUTEN) {
@@ -64,13 +61,17 @@ describe('metaFuerPfad()', () => {
       expect(meta, p).not.toBeNull();
       expect(meta!.titel.length, p).toBeGreaterThan(0);
       expect(meta!.beschreibung.length, p).toBeGreaterThan(0);
-      expect(meta!.canonical, p).toBe(SITE_URL + (CANONICAL_AUSNAHMEN[p] ?? p));
+      expect(meta!.canonical, p).toBe(SITE_URL + p);
     }
   });
 
-  it('IA-6: /international kanonisiert auf die Säule /gesetze?ebene=international', () => {
-    expect(metaFuerPfad('/international')!.canonical).toBe(`${SITE_URL}/gesetze?ebene=international`);
-    // Gegenprobe: die Säulen-Trägerroute selbst bleibt Self-Canonical.
+  // IA-6 Stufe 2 (§11.8 Y-C, 3.8.2026): Mit dem echten Redirect entfällt die
+  // Alias-Kanonik von Stufe 1 — es gibt wieder AUSNAHMSLOS Self-Canonical
+  // (oben mitgeprüft). Die Kette endet in einem Schritt beim Träger /gesetze;
+  // deklarierte fachliche Änderung dieses Tests (§6.3).
+  it('IA-6 Stufe 2: /international hat keine Metadaten mehr (Redirect statt Seite)', () => {
+    expect(metaFuerPfad('/international')).toBeNull();
+    // Gegenprobe: die Säulen-Trägerroute bleibt Self-Canonical.
     expect(metaFuerPfad('/gesetze')!.canonical).toBe(`${SITE_URL}/gesetze`);
   });
 
