@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-02",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "831.441.1",
   "titel": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge",
@@ -6301,7 +6301,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []

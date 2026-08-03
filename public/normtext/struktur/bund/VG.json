@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "170.32",
   "titel": "Bundesgesetz über die Verantwortlichkeit des Bundes sowie seiner Behördemitglieder und Beamten",
@@ -1524,7 +1524,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []

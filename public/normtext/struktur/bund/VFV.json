@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "831.111",
   "titel": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung",
@@ -1340,7 +1340,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []

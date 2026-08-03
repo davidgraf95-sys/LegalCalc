@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-07-27",
+ "erzeugt": "2026-08-03",
  "kopf": {
   "srNummer": "0.274.131",
   "titel": "Übereinkommen über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
@@ -387,7 +387,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []
@@ -396,7 +397,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []
@@ -405,7 +407,8 @@
    "gliederung": [
     {
      "ebene": 1,
-     "label": "Anhänge"
+     "label": "Anhänge",
+     "eId": "annex"
     }
    ],
    "marginalie": []
