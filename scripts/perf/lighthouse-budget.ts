@@ -520,7 +520,11 @@ async function main(): Promise<void> {
     for (const f of fehler) console.error(`  ✗ ${f}`);
     process.exit(1);
   }
-  console.log('check:perf-lighthouse GRÜN — Metrik-Schranken (CLS/LCP/TBT[normiert]/TTI/Score) eingehalten.');
+  // Die Schlusszeile benennt, WORAUF assertiert wurde — im Fallback ist das der
+  // Rohwert, und dann darf hier nicht «normiert» stehen (§8).
+  console.log(
+    `check:perf-lighthouse GRÜN — Metrik-Schranken (CLS/LCP/TBT[${bericht.kalibrierFaktor ? 'normiert' : 'roh, ohne Kalibrierung'}]/TTI/Score) eingehalten.`,
+  );
 }
 
 main().catch((e) => {
