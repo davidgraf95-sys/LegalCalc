@@ -10,7 +10,7 @@ import { stillstandsperioden } from '../../data/zpoFeiertage';
 // Vorlage); die Vorlage rendert nur, was die Konfiguration liefert.
 
 /** Überschneidet der Fristenlauf mindestens eine Stillstandsperiode? */
-export function stillstandBeruehrtLauf(e: ZpoErgebnis): boolean {
+function stillstandBeruehrtLauf(e: ZpoErgebnis): boolean {
   if (!e.stillstandAktiv) return false;
   const von = parseISO(e.ereignisISO);
   const bis = parseISO(e.diesAdQuemISO);

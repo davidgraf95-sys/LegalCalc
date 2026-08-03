@@ -12,7 +12,7 @@ import { BEGRUENDUNG_VORBEHALT } from '../begruendung';
 // Rechtsgebiets – gerendert wird ausschliesslich, was übergeben wird. Damit
 // ist Cross-Domain-Bleed strukturell ausgeschlossen.
 
-export type PdfSectionConfig = {
+type PdfSectionConfig = {
   titel: string;
   ergebnis: Berechnungsergebnis;
 };
@@ -47,7 +47,7 @@ export type PdfDocConfig = {
   disclaimer: string;                 // domänenspezifischer Disclaimer-Text
 };
 
-export type PdfBlock =
+type PdfBlock =
   | { art: 'kopf'; titel: string; rechtsgrundlage?: string; erstellt: string; aktenzeichen?: string }
   | { art: 'h2'; text: string }
   | { art: 'h3'; text: string }

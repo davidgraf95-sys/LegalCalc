@@ -124,7 +124,7 @@ export function EreignisFristenSektion({ ereignisse, id, zustellungVorgabe }: {
   );
 }
 
-export function EreignisFristen({ ereignisse, zustellungVorgabe }: {
+function EreignisFristen({ ereignisse, zustellungVorgabe }: {
   ereignisse: Ereignis[]; zustellungVorgabe?: string | null;
 }) {
   const erlaubt = EREIGNISSE.filter((e) => ereignisse.includes(e.code));

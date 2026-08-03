@@ -15,7 +15,7 @@ import { createContext, useContext, type RefObject } from 'react';
 // Container-Query-Klassen werden also schon in B-1 *geschrieben*, sind aber erst
 // erreichbar, wenn ein Pane (B-2) sie mit `imPane: true` montiert.
 
-export type PaneRolle = 'primaer' | 'sekundaer';
+type PaneRolle = 'primaer' | 'sekundaer';
 
 export interface PaneKontextWert {
   /** true ⇔ dieser Teilbaum läuft in einem Split-View-Pane (Container-Query-Modus). */

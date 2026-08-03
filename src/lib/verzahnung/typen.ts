@@ -10,14 +10,14 @@
 // kuratierte Normalfall bleibt nackt (kein Badge, §1.3); Badges markieren nur
 // Abweichungen.
 
-export type Zieltyp =
+type Zieltyp =
   | 'norm' | 'entscheid' | 'material' | 'werkzeug' | 'verwaltungsverordnung';
 
 /** §8-Herkunft der Kante — nie optional, nie verschwiegen. */
 export type Herkunft = 'amtlich' | 'kuratiert' | 'maschinell';
 
 /** E4-Konfidenz-Slot (V1 ungenutzt; V2 sichtbar am KantenChip). */
-export type Konfidenz = 'hoch' | 'niedrig' | 'unresolved';
+type Konfidenz = 'hoch' | 'niedrig' | 'unresolved';
 
 /** Q1 im Typsystem: Bandjahr-Datum wird NIE als Tagesdatum gerendert. */
 export type Datumspraezision = 'tag' | 'bandjahr' | 'unbekannt';

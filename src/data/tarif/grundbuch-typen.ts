@@ -24,7 +24,7 @@ export type GbEintragsartId =
 
 export type GbGruppe = 'eigentum' | 'pfand' | 'dienstbarkeit' | 'sonstige';
 
-export const GB_GRUPPEN_LABEL: Record<GbGruppe, string> = {
+const GB_GRUPPEN_LABEL: Record<GbGruppe, string> = {
   eigentum: 'Eigentumsübertragung',
   pfand: 'Grundpfand',
   dienstbarkeit: 'Dienstbarkeiten & Rechte',
@@ -44,7 +44,7 @@ export interface GbEintragsart {
   normBund: { artikel: string; bemerkung?: string }[];
 }
 
-export const GB_EINTRAGSARTEN: GbEintragsart[] = [
+const GB_EINTRAGSARTEN: GbEintragsart[] = [
   {
     id: 'eigentum_kauf', gruppe: 'eigentum', label: 'Eigentumsübertragung (Kauf)',
     beschreibung: 'Eintragung der Handänderung infolge Kaufvertrags (Eigentumsübertragung).',

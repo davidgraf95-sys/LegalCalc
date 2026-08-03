@@ -64,7 +64,7 @@ export const VERFAHRENSPHASEN: { wert: Verfahrensphase; label: string }[] = [
 export type Instanz = 'erstinstanz' | 'rechtsmittel' | 'handelsgericht' | 'bundesgericht';
 
 /** Kantone mit einem Handelsgericht (Art. 6 ZPO). */
-export const HANDELSGERICHT_KANTONE: readonly KantonCode[] = ['ZH', 'BE', 'AG', 'SG'];
+const HANDELSGERICHT_KANTONE: readonly KantonCode[] = ['ZH', 'BE', 'AG', 'SG'];
 
 /** Verfahrensart als Kosten-Modifikator (nur erste/Rechtsmittelinstanz, nicht BGer). */
 export type Verfahrensart = 'ordentlich' | 'vereinfacht' | 'summarisch';
@@ -96,7 +96,7 @@ export interface ProzesskostenEingabe {
 }
 
 /** Herkunfts-/Anzeige-Metadaten eines Tarifs (ohne die Regel selbst). */
-export interface TarifQuelle {
+interface TarifQuelle {
   erlassName: string;
   erlassNr: string;
   artikel: string;
@@ -310,7 +310,7 @@ export function berechneProzesskosten(e: ProzesskostenEingabe): ProzesskostenErg
 // Verteilung nach Ermessen (Art. 107, u. a. Familienrecht) und Art. 108 — daher
 // als Schätzung mit Hinweis. Ermessenstarife → Spanne (von/bis).
 
-export interface Spanne { vonChf: number; bisChf: number }
+interface Spanne { vonChf: number; bisChf: number }
 
 export interface Kostenrisiko {
   obsiegensquote: number; // 0..1
@@ -544,7 +544,7 @@ export interface InstanzenzugWahl {
   bundesgericht: boolean;
 }
 
-export interface InstanzStufe {
+interface InstanzStufe {
   schluessel: keyof InstanzenzugWahl;
   label: string;
   ergebnis: ProzesskostenErgebnis;

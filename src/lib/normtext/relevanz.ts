@@ -119,7 +119,7 @@ export function kantonKernRang(e: Pick<BrowseErlass, 'titel' | 'kuerzel'>): numb
 /** Relevanz-Vergleich für die Erlasse EINES Kantons (A14). Kern-Kategorie →
  *  Volltext → amtliche Systematik (Sachgebiets-Rang · SR-Vergleich) → Titel.
  *  `sys` = amtlicher Systematik-Baum des Kantons (für den Systematik-Tiebreak). */
-export function kantonRelevanzVergleich(
+function kantonRelevanzVergleich(
   sys: KantonSystematik | undefined,
 ): (a: BrowseErlass, b: BrowseErlass) => number {
   const rangTop = sachgebietRang(sys);

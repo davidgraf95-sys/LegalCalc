@@ -16,8 +16,6 @@ import { gbEintragsart, type GbEintragsartId } from '../data/tarif/grundbuch-typ
 import { GRUNDBUCH_EIGENTUM_KAUF, GRUNDBUCH_EINTRAG } from '../data/tarif/grundbuch';
 import { type NgQuelle, type NgPosten, ergebnisSpanne, ngPostenText } from './notariatGrundbuch';
 
-export type { NgQuelle, NgPosten };
-
 const quelle = (t: KantonalerTarif): NgQuelle => ({
   erlassName: t.erlassName, erlassNr: t.erlassNr, artikel: t.artikel,
   quelleUrl: t.quelleUrl, stand: t.stand, verifiziert: t.verifiziert, hinweis: t.hinweis,

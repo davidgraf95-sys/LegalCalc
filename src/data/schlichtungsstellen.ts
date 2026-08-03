@@ -92,7 +92,7 @@ export const VD_JDP_ZU_TA: Record<string, number> = {
   'Justice de paix Jura-Nord vaudois/Gros-de-Vaud': 3,
 };
 /** Amtliche Instanz-Suche des Kantons (Gemeinde/PLZ → zuständige Instanz). */
-export const VD_INSTANZSUCHE_URL = 'https://www.vd.ch/justice/le-pouvoir-judiciaire/recherche-de-linstance-judiciaire-competente';
+const VD_INSTANZSUCHE_URL = 'https://www.vd.ch/justice/le-pouvoir-judiciaire/recherche-de-linstance-judiciaire-competente';
 
 // NE: drei Standorte der zwei Tribunaux régionaux — SSoT (§5) für die
 // ordentliche Chambre de conciliation UND die paritätische Miet-Besetzung

@@ -56,7 +56,7 @@ export type VvGateErgebnis = { blocker: string[]; warnungen: string[]; hinweise:
 
 /** Höchstdauer-Vergleich als reine ISO-String-Arithmetik (Jahr + 10), keine
  *  Date-Objekte (Datums-Konvention; lexikografischer Vergleich genügt). */
-export function vvUeberHoechstdauer(datumISO: string, verzichtBisISO: string): boolean {
+function vvUeberHoechstdauer(datumISO: string, verzichtBisISO: string): boolean {
   if (!istGueltigesISO(datumISO) || !istGueltigesISO(verzichtBisISO)) return false;
   const max = `${Number(datumISO.slice(0, 4)) + 10}${datumISO.slice(4)}`;
   return verzichtBisISO > max;

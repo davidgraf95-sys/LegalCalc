@@ -58,7 +58,7 @@ const EBENEN_RANG: Record<'bund' | 'kanton', number> = { bund: 0, kanton: 1 };
 // Alltag am häufigsten gemeinten Grund-Kodifikationen (Plan S4). OR/ZGB =
 // Zivilrecht, StGB/StPO = Strafrecht/-verfahren, ZPO = Zivilverfahren, BV =
 // Verfassung, SchKG = Vollstreckung.
-export const KERNERLASSE: readonly string[] = ['OR', 'ZGB', 'STGB', 'ZPO', 'STPO', 'BV', 'SCHKG'];
+const KERNERLASSE: readonly string[] = ['OR', 'ZGB', 'STGB', 'ZPO', 'STPO', 'BV', 'SCHKG'];
 const KERN_RANG = new Map(KERNERLASSE.map((k, i) => [k, i]));
 const KERN_NICHT = KERNERLASSE.length; // Rang für Nicht-Kernerlasse (ganz hinten)
 

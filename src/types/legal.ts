@@ -38,13 +38,6 @@ export type Berechnungsergebnis = {
   normverweise: Normverweis[];
 };
 
-export interface Rechner<TInput> {
-  id: string;
-  titel: string;
-  beschreibung: string;
-  berechne(input: TInput): Berechnungsergebnis;
-}
-
 // ─── Module A: Lohnfortzahlung ────────────────────────────────────────────
 
 export type Kanton =
@@ -93,7 +86,7 @@ export type LohnfortzahlungInput = {
 
 // ─── Module B: Kündigungsfrist ────────────────────────────────────────────
 
-export type KuendigungsPartei = 'arbeitgeber' | 'arbeitnehmer';
+type KuendigungsPartei = 'arbeitgeber' | 'arbeitnehmer';
 
 export type KuendigungsfristInput = {
   vertragsbeginn: string;           // yyyy-MM-dd

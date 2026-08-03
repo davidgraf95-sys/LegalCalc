@@ -11,36 +11,16 @@ import type {
   Kuratierungsstatus, Leitcharakter, Gerichtstyp,
 } from './typen';
 
-/** Deklarierte Identität eines Entscheids (Single Source für die Übersicht). */
-export interface EntscheidRegistereintrag {
-  /** == Snapshot-Datei-Stamm, z.B. 'bund/bger/5A_1100_2025'. */
-  key: string;
-  gerichtstyp: Gerichtstyp;
-  gericht: string;
-  kanton: string;            // 'CH' für Bund
-  nummer: string;
-  bgeReferenz: string | null;
-  datum: string;
-  leitcharakter: Leitcharakter;
-  /** Kuratiertes Sachgebiet (deklariert, nie aus legal_area geraten). */
-  sachgebiet: Rechtsgebiet;
-  sprache: EntscheidSprache;
-  bestand: Bestandstatus;
-  kuratierung: Kuratierungsstatus;
-  quelle: Entscheidquelle;
-  quelleUrl: string;
-}
-
 /** Verweis-Eintrag: das vollständige Urteil zu einem BGE als eigene Übersichts-Karte,
  *  per Deep-Link auf die Detailseite des BGE mit voraktivierter Voll-Ansicht (kein Daten-Duplikat). */
-export interface VolltextVerweis {
+interface VolltextVerweis {
   zielKey: string;          // Snapshot-key des BGE (Detailseite)
   ansicht: 'voll';
   bgeReferenz: string;      // für das Karten-Label «… zu BGE 152 IV 14»
 }
 
 /** Rolle im Spruchkörper (amtlich namentlich, URG-Art.-5-frei). */
-export type RichterRolle = 'vorsitz' | 'mitglied' | 'gerichtsschreiber';
+type RichterRolle = 'vorsitz' | 'mitglied' | 'gerichtsschreiber';
 
 /**
  * Ein Spruchkörper-Mitglied im Manifest — bewusst auf zwei Ein-Zeichen-Schlüssel
@@ -57,7 +37,7 @@ export interface RichterRef {
 }
 
 /** Slug → Anzeigename + Korpus-Trefferzahl (eigene, schlanke Projektion). */
-export interface RichterRegisterEintrag {
+interface RichterRegisterEintrag {
   name: string;
   /** Zahl der Entscheide, in denen die Person als Richter:in mitwirkte (ohne GS). */
   count: number;

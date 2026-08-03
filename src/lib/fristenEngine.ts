@@ -21,7 +21,7 @@ import { istArbeitsfreierTag, naechsterWerktag } from '../data/zpoFeiertage';
 
 export type Periode = { key: string; von: Date; bis: Date };
 
-export type Endregel = 'ruhen_weiter' | 'verlaengerung_3wt' | 'nur_werktag';
+type Endregel = 'ruhen_weiter' | 'verlaengerung_3wt' | 'nur_werktag';
 
 export type Einheit = 'tage' | 'wochen' | 'monate' | 'jahre';
 
@@ -47,7 +47,7 @@ export const OHNE_STILLSTAND: Stillstand = {
 };
 
 /** Dauer einer Periode in Kalendertagen (inklusiv). */
-export function dauerTage(p: Periode): number {
+function dauerTage(p: Periode): number {
   return dauerTageInklusiv(p);
 }
 

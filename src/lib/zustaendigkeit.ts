@@ -74,10 +74,10 @@ export type Streitsache =
   | 'persoenlichkeit'  // Persönlichkeit/Datenschutz/Gegendarstellung, Art. 20 ZPO
   | 'gesellschaft'     // gesellschaftsrechtliche Verantwortlichkeit, Art. 40 Abs. 1 ZPO
   | 'ip_wettbewerb';   // Art. 5 ZPO: IP/Kartell/Firma/UWG — einzige kantonale Instanz
-export type Verfahrensart = 'vereinfacht' | 'ordentlich' | 'scheidungsverfahren';
+type Verfahrensart = 'vereinfacht' | 'ordentlich' | 'scheidungsverfahren';
 export type SchlichtungsbehoerdeTyp = 'ordentlich' | 'paritaetisch_miete' | 'paritaetisch_glg';
 /** Art der einleitenden Eingabe — steuert den Vorlagen-Verweis (Auftrag §8). */
-export type EingabeArt = 'schlichtungsgesuch' | 'klage_direkt' | 'scheidungsbegehren_oder_klage';
+type EingabeArt = 'schlichtungsgesuch' | 'klage_direkt' | 'scheidungsbegehren_oder_klage';
 
 // Miete-Unterfall steuert die «Schutzmaterie» (Hinterlegung, Missbrauchs-/
 // Kündigungsschutz, Erstreckung) → vereinfachtes Verfahren & Entscheidvorschlag
@@ -674,7 +674,7 @@ export const RECHTSMITTEL_SCHWELLEN = {
 } as const;
 
 /** Konkret aufgelöste Rechtsmittelfrist (eine Ebene). */
-export interface RechtsmittelFrist {
+interface RechtsmittelFrist {
   /** Fristlänge in Tagen; null = von einer offenen Weiche abhängig. */
   tage: number | null;
   text: string;

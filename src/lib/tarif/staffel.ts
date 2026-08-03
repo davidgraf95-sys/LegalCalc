@@ -34,7 +34,7 @@ export interface StaffelBand {
  *  Gebühren-RAHMEN [minChf, maxChf] (Festsetzung im Ermessen der Behörde nach
  *  ihren Kriterien — KEIN Punktwert, §2/§8). Häufigster Schweizer Tarif-Typ
  *  (z. B. BS § 5 GGR, BL, SO, BE, GE, SG). Letztes Band `grenzeChf: Infinity`. */
-export interface RahmenBand {
+interface RahmenBand {
   grenzeChf: number;
   /** Feste Untergrenze des Gebührenrahmens. `null`/weglassen, wenn keine
    *  Untergrenze gilt (z. B. Bemessung nach Zeitaufwand) oder eine
@@ -79,7 +79,7 @@ export interface SockelProzentBand {
  *  Überschuss). (Deterministisch, z. B. AG § 7 Abs. 1 GebührD.) Optionaler
  *  Mindest-/Höchstbetrag JE BAND (Schwellensatz-Tarife mit Stufen-Minima, z. B.
  *  UR Notariatstarif A, TI LTORF Art. 11/13). */
-export interface VollProzentBand {
+interface VollProzentBand {
   bisChf: number;
   fixChf: number;
   prozent: number;

@@ -19,7 +19,7 @@ import type { BrowseEntscheid } from '../rechtsprechung/register';
 import type { EntscheidAbschnitt, Leitcharakter } from '../rechtsprechung/typen';
 import { ersteTextFundstelle } from '../rechtsprechung/abschnitte';
 
-export interface ZitierteEntscheidKante {
+interface ZitierteEntscheidKante {
   /** Roh-Zitat aus dem Urteilstext («BGE 144 II 486»). */
   zitat: string;
   /** Aufgelöstes Korpus-Ziel oder null (nicht erfasst). */

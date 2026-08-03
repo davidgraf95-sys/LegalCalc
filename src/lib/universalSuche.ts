@@ -184,7 +184,7 @@ export function presetGruppe(eintraege: PresetIndexEintrag[] | null, kappung = K
  *  bleibt erhalten (nur spätere Dubletten fallen weg) — reine Projektion, keine
  *  Rechtslogik (§3). Wirkt nur in der SUCHE (gesetzGruppe), nicht im /gesetze-
  *  Browse (dort ist die volle Sammlungs-Liste gewollt). */
-export function dedupErlasse(treffer: BrowseErlass[]): BrowseErlass[] {
+function dedupErlasse(treffer: BrowseErlass[]): BrowseErlass[] {
   const schluessel = (e: BrowseErlass) => `${e.ebene}|${e.kanton ?? ''}|${e.titel.trim()}`;
   // Präfix-Rang: sr beginnt mit Ziffer (reine Zahl-Nummer) → 0, sonst (Präfix wie
   // «RiE », «GS », leer) → 1. So gewinnt die kantonale Kern-Nummer vor der Kopie.
@@ -245,7 +245,7 @@ export function entscheidGruppe(liste: BrowseEntscheid[] | null, q: string, kapp
   };
 }
 
-export function materialGruppe(liste: BrowseMaterial[] | null, q: string, kappung = KAPPUNG): SuchGruppe {
+function materialGruppe(liste: BrowseMaterial[] | null, q: string, kappung = KAPPUNG): SuchGruppe {
   if (liste === null) return { id: 'material', titel: 'Materialien', treffer: [], gesamt: 0, laedt: true };
   const getroffen = filtereMaterialien(liste, { suche: q }).sort(vergleicheGlobal);
   const treffer: SuchTreffer[] = getroffen.slice(0, kappung).map((m) => ({

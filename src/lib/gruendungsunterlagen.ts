@@ -30,9 +30,9 @@
 // Checklisten führen sie weiter → ausdrücklicher Hinweis in beiden Masken.
 
 export type Phase = 'vorbereitung' | 'beurkundung' | 'anmeldung' | 'nachEintrag';
-export type Ersteller = 'gruender' | 'notariat' | 'bank' | 'revisor';
+type Ersteller = 'gruender' | 'notariat' | 'bank' | 'revisor';
 
-export interface Unterlage {
+interface Unterlage {
   id: string;
   titel: string;
   /** Norm-Anker, z. B. 'Art. 71 Abs. 1 lit. a HRegV' (NormLink-tauglich). */
@@ -50,7 +50,7 @@ export interface Unterlage {
   entbehrlichWennInUrkunde?: string;
 }
 
-export interface StatutenKlauselZeile {
+interface StatutenKlauselZeile {
   klausel: string;
   norm: string;
   kern: string;

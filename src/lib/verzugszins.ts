@@ -31,7 +31,7 @@ export type VerzugszinsInput = {
   rueckstaendigeZinsforderung?: boolean; // Art. 105 Abs. 1 (Zins-/Rentenforderung)
 };
 
-export type VzSegment = {
+type VzSegment = {
   von: string; bis: string; tage: number; kapital: number; satz: number; zins: number;
 };
 

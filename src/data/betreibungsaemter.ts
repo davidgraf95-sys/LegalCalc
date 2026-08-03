@@ -32,7 +32,7 @@ export interface BetreibungsamtAdresse {
   url?: string;
 }
 
-export type BetreibungsamtAufloesung =
+type BetreibungsamtAufloesung =
   | { modus: 'einheitsamt'; amt: BetreibungsamtAdresse }
   | { modus: 'kreise'; aemter: BetreibungsamtAdresse[]; hinweis?: string }
   | { modus: 'verzeichnis'; beschreibung: string; url: string };

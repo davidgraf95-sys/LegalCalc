@@ -6,7 +6,6 @@
 import type { RefObject } from 'react';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import { romanFrei } from './helpers';
 
 // ─── Pane-Scoping-Helfer (B-2.5) — MODUL-Ebene = referenzstabil ────────────
 // Bewusst KEIN React Compiler im Projekt → in-Komponente definierte Funktionen
@@ -89,21 +88,6 @@ export function berechneSektionMeta(
   };
   sektionen.forEach(sammle);
   return meta;
-}
-
-// W2·5d G2b (Sticky Section-Kontextkopf): Sektions-ID → kompaktes Anzeige-Label
-// (der beschreibende Teil ohne «Erster Titel:»-Aufzähler, wie im TOC). EINMAL
-// bottom-up aus dem Gliederungsbaum; die Kopf-Zeile mappt aktivIds darüber (keine
-// neue Scroll-Infra). Reine Darstellung (§3).
-export function berechneSekLabelById(sektionen: Sektion[]): Map<string, string> {
-  const map = new Map<string, string>();
-  const walk = (s: Sektion) => {
-    const { rest } = romanFrei(s.label);
-    map.set(s.id, rest || s.label);
-    s.kinder.forEach(walk);
-  };
-  sektionen.forEach(walk);
-  return map;
 }
 
 // ─── E4/A36 (David 16.7.2026): TOC-Kuration — Anhangs-Wortlaute aus der Gliederung ───

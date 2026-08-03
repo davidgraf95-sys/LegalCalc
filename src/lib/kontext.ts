@@ -22,7 +22,7 @@ import { ladeKantenShard } from './materialien/kanten-shard';
 import type { BrowseMaterial } from './materialien/typen';
 import type { Herkunft } from './verzahnung/typen';
 
-export type { Werkzeug, MaterialBezug, EntscheidRef, LeitfallRef };
+export type { MaterialBezug, EntscheidRef };
 
 /** Quelle-Korpus des Readers, der das Panel zeigt. */
 export type KontextTyp = 'norm' | 'entscheid' | 'material';
