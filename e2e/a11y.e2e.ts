@@ -314,9 +314,12 @@ for (const [url, name] of HEADING_ROUTEN) {
 // (`.lc-chip` / `.lc-chip-zeile`) und die Leser-Werkzeugleiste
 // (`.lc-leiste-griff`). Der übrige Bestand ist noch NICHT nachgerüstet (gemessen
 // 3.8.2026: Zitat/Link 22.2 × 13.2, Fussnoten-Sup 6.7 × 18.1, Gliederungs-
-// Chevron 16 × 13.2, Sidebar-Chevron 18 × 18, Breadcrumb 45.2 × 16.8) und ist
-// als `W2·17-UI-BEFUNDE-B10` deklariert. Diese Liste darf nur SCHRUMPFEN: wer
-// eine Fläche nachrüstet, nimmt ihren Selektor hier auf.
+// Chevron 16 × 13.2, Sidebar-Chevron 18 × 18, Breadcrumb 45.2 × 16.8,
+// «‹ einklappen» 61.9 × 13.2, A−/A+ EntscheidLeser via rohem min-h-6 [F9-Form,
+// WCAG-konform 30.3 × 24.8]) und ist als `W2·17-UI-BEFUNDE-B10` deklariert.
+// Die NACHRÜST-Liste hier darf nur SCHRUMPFEN; die TAP_FLAECHEN-Liste darunter
+// darf nur WACHSEN: wer eine Fläche nachrüstet, streicht sie oben und nimmt
+// ihren Selektor unten auf.
 const TAP_FLAECHEN = [
   '.lc-chip',
   '.lc-leiste-griff',

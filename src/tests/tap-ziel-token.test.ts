@@ -40,7 +40,9 @@ describe('DESIGN-REGLEMENT F9 — Trefferflächen-Token', () => {
     // Kommentare vorher entfernen: sie zitieren die Zahl 24 legitim als Beleg
     // (Norm-Nachweis, §7) — verboten ist die Zahl in der DEKLARATION.
     const ohneKommentare = CSS.replace(/\/\*[\s\S]*?\*\//g, '')
-    const roh = [...ohneKommentare.matchAll(/min-(?:height|width)\s*:\s*([0-9.]+)(px|rem)/g)]
+    // B3 (Bug-Check #428): auch logische Properties und em — sonst schlüpft
+    // min-block-size/min-inline-size bzw. eine em-Zahl am Wächter vorbei.
+    const roh = [...ohneKommentare.matchAll(/min-(?:height|width|block-size|inline-size)\s*:\s*([0-9.]+)(px|rem|em)/g)]
       .map((t) => `min-…: ${t[1]}${t[2]}`)
     expect(
       roh,

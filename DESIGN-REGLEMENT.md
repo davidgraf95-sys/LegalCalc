@@ -235,8 +235,9 @@ Zweit-Bedienung). Maschinell erzwungen (E1) durch `src/tests/tap-ziel-token.test
 (Token-Existenz + Zahlen-Verbot in `src/index.css`) und den Trefferflächen-Block
 in `e2e/a11y.e2e.ts` (gemessene Hitboxen der Leser-Werkzeugleiste und der
 Kopf-Metazeilen, hell **und** dunkel). Der Bestand ist noch nicht flächendeckend
-nachgerüstet — die gemessene Nachrüst-Liste führt `W2·17-UI-BEFUNDE-B10`; sie
-darf nur schrumpfen, nie wachsen.
+nachgerüstet — die gemessene Nachrüst-Liste steht im Tor-Kommentar von
+`e2e/a11y.e2e.ts` (Block «Trefferflächen»); die Nachrüstung selbst ist
+`W2·17-UI-BEFUNDE-B10`. Die Liste darf nur schrumpfen, nie wachsen.
 
 **F2b — Farbwelt-Sollwerte (Mess-Tor `check:farbwelt`, FAHRPLAN-DESIGN-WAERME
 D-0).** F2 wird maschinell erzwungen: `scripts/check-farbwelt.ts` parst die
