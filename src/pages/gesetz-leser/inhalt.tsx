@@ -18,6 +18,9 @@ import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typ
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { passtAufSuche, pfadZu, grundartMeta } from './helpers';
 import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
+import { WeiterlesenChip } from './parts/WeiterlesenChip';
+import { LeserTastatur } from './parts/LeserTastatur';
+import { holeLesePosition, merkeLesePosition, vergissLesePosition, type LesePosition } from './lesePosition';
 import { beiLeerlauf } from '../../lib/leerlauf';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
@@ -496,6 +499,91 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     }, 110));
   }, [sektionen, basisPfad, istSekundaer, imPane, wurzel]);
 
+  // ═══ ABSCHNITT · R4 «Weiterlesen bei Art. X» + R8 Tastatur-Navigation ════════
+  // Beide brauchen dasselbe: «welcher Artikel ist gerade dran» als TOKEN. Der
+  // Scroll-Spy meldet den aktiven Artikel als LABEL (`aktArtikel`, entprellt) —
+  // das ist die Form, die Kopf und Reiter zeigen. Statt einen zweiten Beobachter
+  // aufzusetzen (ein zweites «wo bin ich» wäre genau die zweite Wahrheit, die §5
+  // verbietet — und ein zweiter Scroll-Listener, den §15 nicht hergibt), wird die
+  // vorhandene Token→Label-Karte einmal umgedreht. Sie ist injektiv genug: die
+  // Labels stammen aus `labelMitBereich(artikelLabel, token)` und sind je Erlass
+  // eindeutig; bei einer Kollision gewinnt das erste Vorkommen in Dokument-
+  // Reihenfolge, und ein nicht auflösbares Label liefert schlicht null (dann wird
+  // nichts gemerkt und j/k starten am Anfang — nie ein geratener Artikel, §8).
+  const tokenByLabel = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const [tok, lab] of artLabelByToken) if (!m.has(lab)) m.set(lab, tok);
+    return m;
+  }, [artLabelByToken]);
+  const aktivToken = aktArtikel ? tokenByLabel.get(aktArtikel) ?? null : null;
+  // R8: Artikel-Tokens in Dokument-Reihenfolge — die Liste, auf der j/k einen
+  // Schritt gehen. Aus `eintraege` (der Snapshot-Reihenfolge), nicht aus dem DOM:
+  // unter `content-visibility:auto` ist die DOM-Abfrage von der Renderreihenfolge
+  // abhängig, die Snapshot-Reihenfolge ist die des Gesetzes.
+  const artTokens = useMemo(() => (eintraege ?? []).map((e) => e.artikel), [eintraege]);
+
+  // R4 · Angebot beim Wiederkommen. EINMAL je Erlass gelesen (Ref-Riegel), bevor
+  // der Spy zu schreiben beginnt — sonst überschriebe die frisch geladene Seite
+  // die gemerkte Stelle, noch bevor sie jemand angeboten bekäme.
+  const [weiterlesen, setWeiterlesen] = useState<LesePosition | null>(null);
+  const weiterlesenGelesen = useRef<string | null>(null);
+  useEffect(() => {
+    const key = erlass?.key;
+    if (!key || !erlass || istSekundaer) return;
+    if (weiterlesenGelesen.current === key) return;
+    weiterlesenGelesen.current = key;
+    // Deep-Link: die Adresse nennt bereits ein Ziel. Wer einem Link auf Art. 5
+    // folgt, will Art. 5 — ein zweites Angebot daneben wäre Lärm (§8).
+    const tief = /^#art-/.test(location.hash);
+    const pos = tief ? null : holeLesePosition(key, erlass.stand);
+    // Nichts anbieten, was ohnehin schon gilt: steht die gemerkte Stelle am
+    // Dokumentanfang, verspräche der Chip eine Reise ans Ziel, an dem man steht.
+    const anfang = eintraege?.[0]?.artikel ?? null;
+    const angebot = pos && pos.token !== anfang ? pos : null;
+    // Über einen 0-ms-Timer statt synchron: ein setState direkt im Effektkörper
+    // erzeugt eine Kaskade (Muster wie `sucheDebounced` oben). `null` räumt
+    // zugleich das Angebot des zuvor gelesenen Erlasses ab.
+    const id = window.setTimeout(() => setWeiterlesen(angebot), 0);
+    return () => window.clearTimeout(id);
+  }, [erlass, istSekundaer, location.hash, eintraege]);
+
+  // R4 · Stelle fortschreiben. Hängt allein am (bereits entprellten) Spy-Ergebnis
+  // — kein eigener Scroll-Listener, kein Timer (§15): ein localStorage-Write je
+  // überschrittener Artikelgrenze, wie ihn der Reiter-Tracker längst macht.
+  // Nur die Primär-/Einzelansicht: ein sekundäres Pane ist nicht die adressierte
+  // Seite und darf die gemerkte Lesestelle nicht bestimmen (Muster A16-Anker).
+  useEffect(() => {
+    if (istSekundaer || !erlass || !aktArtikel || !aktivToken) return;
+    if (weiterlesenGelesen.current !== erlass.key) return; // erst nach dem Lesen schreiben
+    merkeLesePosition({ key: erlass.key, token: aktivToken, label: aktArtikel, stand: erlass.stand });
+  }, [istSekundaer, erlass, aktArtikel, aktivToken]);
+
+  // R4 · Verfall ohne Timer und ohne Listener: sobald der Spy einen ANDEREN
+  // Artikel meldet als beim Erscheinen des Chips, liest der Nutzer bereits selbst
+  // weiter — dann ist das Angebot beantwortet. (Ein Zeitablauf wäre willkürlich,
+  // ein Scroll-Schwellenwert eine Magic-Number.)
+  const weiterlesenStart = useRef<string | null>(null);
+  useEffect(() => {
+    if (!weiterlesen) { weiterlesenStart.current = null; return; }
+    if (aktivToken == null) return;
+    if (weiterlesenStart.current === null) { weiterlesenStart.current = aktivToken; return; }
+    if (aktivToken !== weiterlesenStart.current) setWeiterlesen(null);
+  }, [weiterlesen, aktivToken]);
+
+  const weiterlesenSprung = useCallback(() => {
+    // Sprung NEBEN dem Setter, nicht in ihm: ein State-Updater muss rein bleiben
+    // (StrictMode ruft ihn doppelt auf — der Sprung liefe sonst zweimal).
+    if (!weiterlesen) return;
+    const token = weiterlesen.token;
+    setWeiterlesen(null);
+    springeZuArtikel(token);
+  }, [weiterlesen, springeZuArtikel]);
+  const weiterlesenVerwerfen = useCallback(() => {
+    // Weggeklickt heisst «nicht wieder anbieten» — also auch aus dem Speicher.
+    if (erlass) vergissLesePosition(erlass.key);
+    setWeiterlesen(null);
+  }, [erlass]);
+
   // Sprung aus dem Gliederungs-Baum (TOC): Pfad öffnen, markieren, scrollen. Beim
   // Sprung den mobilen Drawer schliessen (analog Seitenleiste). Rank 4 (QS-PERF,
   // §15/4): useCallback [sektionen] — nur pfadZu liest sektionen, alle Setter/Refs
@@ -938,6 +1026,18 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // PaneKopf ausserhalb des Scroll-Containers → nur die pane-lokale Such-Leiste
       // (top 0.5rem, ~3.5rem) klebt (Muster --rsp-stick, Entscheid-Leser B3).
       style={{ '--nt-stick': imPane ? '3.5rem' : 'calc(4rem + 2.25rem)' } as CSSProperties}>
+      {/* W2·10-UI-NAV/R4 + R8 — beide hängen INNEN an `.lc-leser`, damit der Chip
+          den `--nt-stick`-Abstand erbt (N0c, EINE Quelle der Sticky-Höhe), und
+          beide rendern im Ruhezustand `null` ⇒ das prerenderte Markup bleibt
+          byte-gleich. Nur die Primär-/Einzelansicht: im sekundären Pane gäbe es
+          sonst einen ZWEITEN globalen keydown-Listener, der j/k doppelt auslöst. */}
+      {!istSekundaer && weiterlesen && (
+        <WeiterlesenChip label={weiterlesen.label}
+          onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen} />
+      )}
+      {!istSekundaer && (
+        <LeserTastatur tokens={artTokens} aktivToken={aktivToken} onSprung={springeZuArtikel} />
+      )}
       <LeserVolltextInhalt
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
