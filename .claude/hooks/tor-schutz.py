@@ -38,6 +38,10 @@ probleme = []
 TOR_MUSTER = re.compile(
     r"npm run lint|npm test\b|npx vitest|npx tsc|golden:vergleich"
     r"|golden-outputs|npm run check|npm run golden"
+    # §17-Nachtrag 4.8.2026: `npx playwright test … | tail` rutschte durch und
+    # verschluckte prompt 4 rote Specs (e2e-Re-Run der FRISTENKERN-Session) —
+    # e2e-Läufe sind Tore wie alle anderen.
+    r"|npx playwright test|npm run test:e2e"
 )
 # je Segment (getrennt durch && ; oder Zeilenende) prüfen, ob nach einem
 # Tor-Kommando noch eine Pipe folgt; '||' fängt auch das Schlucken via '|| true'

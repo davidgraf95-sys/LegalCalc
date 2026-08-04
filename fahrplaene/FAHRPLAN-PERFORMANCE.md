@@ -525,6 +525,33 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
 >     da 21.7.2026 — geparkt, gekoppelt an Davids Merge-Queue-Entscheid)*. Mit den weiteren offenen
 >     Perf-Posten (Mess-Forensik, Budget-Politur, Serif-Preload): **Detail:** diese Datei §1.
 
+### §1-N · ROADMAP-Spec QS-PERF — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, Schritt `QS-PERF` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). Der Wortlaut unten stand bis dahin in der ROADMAP und ist
+zwischen dem 31.7.2026 (Anlage von §1) und dem 4.8.2026 dort fortgeschrieben worden; er ist
+darum die **jüngere** Fassung gegenüber dem Blockzitat oben. In der ROADMAP bleiben Titel,
+`@meta`, der steuernde Kurzabsatz (a–e) und der Pointer auf diesen §. Steuert nicht —
+Spec-Heimat. **→ Bau-Spec: «Die priorisierte Abarbeitung» dieser Datei.***
+
+  **§14-Intake 20.7. + 24.7.2026 (David):** TBT-Budget `/gesetze/bund/OR` (#28) — Nullprobe +
+  Streuung VOR jeder Feature-Zuschreibung, Lighthouse-Median n≥3 · CI-Pfad-Filter für Doku-/Plan-PRs
+  mit **protokolliertem SKIP** (§6 Ziff. 7 lit. b), Tore-Job läuft immer.
+
+  **`wip` freigegeben 3.8.2026:** der Marker stand seit 1.7.2026 unbewegt und trug zuletzt die
+  Runner-Robustheit — die ist mit **PR #421 (`23f4be7fb`) gelandet**, der Anlass damit erledigt.
+  Offen bleiben c, d und die fünf Befunde unten; ein Querschnitt-Schritt trägt `wip` nur für die
+  Dauer einer Session (Skill `auftrag`, Ziff. 2). Wortlaut der Prüfung → `ROADMAP-CHRONIK.md`.
+  - [ ] **OR-LCP ist bimodal — Ursache offen** *(20.7.2026)* — ~3.5 s oder ~11.3–11.6 s, nichts dazwischen; Deckel 13500 bleibt bis zur verstandenen Bimodalität (§8).
+  - [ ] **Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau** *(26.7.2026)* — Client-Rebuild des Index, kein Flake.
+  - [ ] **Eager-Kette `Shell→Sidebar→lib/navigation→normtext/register` lädt ~276 KB roh auf JEDER Route** *(Code-Inventur 4.8.2026)* — die Sidebar braucht aus `register.ts` nur die `GEBIETE`-Labels, zieht aber das ganze 189-KB-Register plus `startseiteConfig` (87 KB) in den kritischen Pfad; Entry gemessen 52.1 KB gz = 87 % des Budgets (Einzelwert, dist älter als HEAD — vor Zuschreibung §3-Streuung). Suchindex-Monolith 45.9 MB roh / 9.5 MB gz als EIN fetch, Budget zu 91 % ausgeschöpft. Zahlen: `bibliothek/betrieb/code-inventur-2026-08-04.md`.
+  - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(26.7.2026)* — der Fehlschlag wird still geschluckt statt ausgewiesen.
+  - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB** *(26.7.2026)* — reine Kommentar-Korrektur (§5).
+  - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(26.7.2026)* — belastet jede gedrosselte Messung; Abschalt-Bedingung wäre verlustfrei.
+  - [x] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — Shards nach gemessener Wanduhr statt nach Datei-Zahl. **Entkoppelt 3.8.2026:** die frühere Kopplung «erst Merge Queue G7, dann packen» ist hinfällig — `QS-BASIS-MQ` ist am 3.8.2026 gestrichen (GitHub-Feature-Gate, nur Org-Repos; Chronik). **Gebaut 4.8.2026 (Bau-Evaluations-Session):** LPT-Neupackung aus den per-Spec-Dauern des grünen Laufs 30852386612 (63 Specs, 44.2 min) — Max-Gruppe von 8.5 auf 5.6 min Testzeit, alle 8 Gruppen ausgeglichen; Schieflage kam aus 8 seit dem 25.7. zugewachsenen Specs. Union-Wächter grün.
+
+---
+
 ## §2 · ROADMAP-Spec W2·15-CLS (wörtlich verschoben 31.7.2026)
 
 > **→ Bau-Spec: «Nachlese aus #312/#314 + echter CLS-Defekt» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
@@ -543,3 +570,14 @@ Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.
   sonst fällt derselbe Defekt beim nächsten Mal wieder durch.
   **DoD:** CLS auf `/gesetze` unter dem geltenden Deckel, gemessen unter 8× **und** 4× · `/gesetze` als
   gemessene Route im Tor verdrahtet · golden byte-gleich · axe. Trailer `Roadmap: W2·15-CLS`.
+
+### §2-N · ROADMAP-Spec W2·15-CLS — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·15-CLS` — AP-11 rückwirkend angewandt (ROADMAP-Diät
+Welle 3, 4.8.2026); der Wortlaut entstand am 3.8.2026, also nach Anlage von §2 (31.7.2026). In der
+ROADMAP bleiben Titel, `@meta`, Kurzabsatz und Pointer. Steuert nicht — Spec-Heimat.*
+
+> **Befund-Erweiterung 3.8.2026 (L-3-Nullprobe, §0.3):** Auch die **Erlass-Leser-Seiten** tragen
+> einen vorbestehenden CLS von **0.05–0.22** (3 Läufe, unverändertes A28-main; VMWG am höchsten,
+> STG schwankt ±0.12 zwischen Läufen) — unabhängig von den Linien. Wurzel-Fix hier miterledigen
+> oder als Messartefakt belegen (§17: nicht umschiffen).

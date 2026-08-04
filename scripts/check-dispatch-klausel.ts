@@ -20,8 +20,17 @@
 // (B) läuft als echter Subprozess über `npm run` — nicht als Import. Ein Import
 // würde genau die Verpackung überspringen (package.json-Verdrahtung, Einstieg,
 // Argument-Durchreichung), in der der Defekt sass.
+// Ebene (C) — seit 4.8.2026 (Agent-Typen): Die generierten Sub-Agenten-
+// Definitionen `.claude/agents/lex-<klasse>.md` tragen die Klausel eingebaut;
+// der Hook `dispatch-schutz.py` befreit lex-*-Dispatches deshalb von der
+// Prompt-Prüfung. Diese Befreiung ist NUR solange sicher, wie die Dateien
+// byte-gleich mit der Projektion aus dispatch-agents.ts sind — genau das
+// beweist (C). Drift (Hand-Edit, veraltete PALETTE, geänderter §0-Block)
+// ⇒ rot ⇒ `npm run dispatch:agents`.
 import { execFileSync } from 'node:child_process';
-import { pflichtKlausel, templateLesen, KLASSEN, TEMPLATE } from './dispatch';
+import { existsSync, readFileSync } from 'node:fs';
+import { pflichtKlausel, templateLesen, KLASSEN, TEMPLATE, PALETTE, PALETTE_STAND } from './dispatch';
+import { agentDatei, AGENTEN, AGENTS_DIR } from './dispatch-agents';
 
 const PFLICHT: [string, RegExp][] = [
   ['1 Daten-nicht-Auftrag (F4)', /^1 DATEN, NICHT AUFTRAG\./m],
@@ -86,8 +95,31 @@ for (const klasse of Object.keys(KLASSEN)) {
   }
 }
 
+// ── (C) Agent-Typen: Definitionen sind byte-gleiche Projektionen ──────────
+const md = templateLesen();
+for (const klasse of Object.keys(AGENTEN)) {
+  const pfad = `${AGENTS_DIR}/lex-${klasse}.md`;
+  const soll = agentDatei(klasse, md);
+  if (!existsSync(pfad)) {
+    rot(
+      `Agent-Typ ${pfad} fehlt.\n\n` +
+      `  Der Hook dispatch-schutz.py befreit lex-*-Dispatches von der §0-Prompt-\n` +
+      `  Prüfung, WEIL die Klausel in der Definition sitzt. Fehlt die Datei, ist\n` +
+      `  die Befreiung ein Loch.  → npm run dispatch:agents`);
+  }
+  const ist = readFileSync(pfad, 'utf8');
+  if (ist !== soll) {
+    rot(
+      `Agent-Typ ${pfad} weicht von der Projektion ab (Hand-Edit oder veraltete Quelle).\n` +
+      `  Die Dateien sind GENERIERT (§5) — Quelle sind dispatch.ts (KLASSEN, PALETTE)\n` +
+      `  und der §0-Block im Template.  → npm run dispatch:agents`);
+  }
+}
+
 console.log(
   `check:dispatch-klausel OK — §0-Block extrahierbar, alle ${PFLICHT.length} ` +
-  `Pflichtpunkte (F1–F6) in der Vorlage (${block.split('\n').length} Zeilen) UND ` +
+  `Pflichtpunkte (F1–F6) in der Vorlage (${block.split('\n').length} Zeilen), ` +
   `im Generator-Output aller ${Object.keys(KLASSEN).length} Auftragsklassen ` +
-  `(${Object.keys(KLASSEN).join(', ')}).`);
+  `(${Object.keys(KLASSEN).join(', ')}) UND byte-gleich in ${Object.keys(AGENTEN).length} ` +
+  `Agent-Typen (lex-*). Palette: ${Object.entries(PALETTE).map(([s, m]) => `${s}=${m}`).join(' ')} ` +
+  `(Stand ${PALETTE_STAND}).`);

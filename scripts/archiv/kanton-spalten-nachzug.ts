@@ -11,11 +11,11 @@
 // golden/normtext-snapshot.json nachgezogen. Idempotent (Blöcke mit `spalten`
 // werden übersprungen).
 //
-//   vite-node scripts/normtext/kanton-spalten-nachzug.ts -- NW-265.51 BS-154.810 …
+//   vite-node scripts/archiv/kanton-spalten-nachzug.ts -- NW-265.51 BS-154.810 …
 // Ohne Argumente: die G3b-Schritt-1-Liste (Klasse A: NW/BS/SO/VS).
 import { readFileSync, writeFileSync } from 'node:fs';
-import { typisiereSpalten } from './mehrspaltige-tabelle.ts';
-import { sha256Bloecke } from './sha-bloecke.ts';
+import { typisiereSpalten } from '../normtext/mehrspaltige-tabelle.ts';
+import { sha256Bloecke } from '../normtext/sha-bloecke.ts';
 import type { NormSnapshotDatei } from '../../src/lib/normtext/typen.ts';
 
 const KANTON_DIR = 'public/normtext/kanton';

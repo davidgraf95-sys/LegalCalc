@@ -26,32 +26,63 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // pruefeGates/Normtexte kommen als fertige Funktionsreferenzen aus src/lib.
 // Opt-in nur für LINEARE Standard-Briefe; Seiten mit Toggles, dynamischen
 // Labels, berechneten Live-Hinweisen oder Sonder-Props bleiben handgeschrieben.
+//
+// QS-CODE-ENTDOPPLUNG D1 (Tranche 1) — vier rückwärtskompatible Erweiterungen,
+// damit sechs weitere Seiten hier landen konnten. Die fünf Pilot-Seiten ändern
+// sich dadurch um exakt null Zeichen (alle vier sind optional bzw. per Default
+// deckungsgleich mit dem bisherigen Verhalten):
+//   • Typparameter `Z` — `zusammenstellen` darf neben `ergebnis` Rechenwerte
+//     liefern (Beendigungsdatum, Rückzahlungsfrist); sie erreichen Gates und
+//     Eingabe-Schritte über `ctx.z`, statt die Engine ein zweites Mal zu fahren.
+//   • `kopfSchalter` — der VariantenKopf (Untertyp/Detailgrad) über dem Stepper.
+//   • `fussnote` — durchgereicht an VorlagenWizardRahmen (Themen-Brücke).
+//   • `bestaetigungLabelCls` — hält die vorgefundene Trefferfläche der
+//     Bestätigungs-Zeile byte-gleich (siehe Feld-Kommentar).
+// NICHT hierher gehören Seiten, deren Eingabe-Schritt einen React-Hook braucht
+// (z. B. usePaneKlasse): `eingabeInhalt` läuft nur auf den Eingabe-Schritten,
+// ein Hook darin wechselte die Hook-Reihenfolge je Schritt.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
 
-/** Kontext für die Eingabe-Schritt-Renderer der Seite. */
-export interface SeiteCtx<T> {
+/** Mindest-Form des Assemble-Ergebnisses. Engines, die daneben Rechenwerte
+ *  liefern (Beendigungsdatum, Rückzahlungsfrist), tragen diese in `Z` — der
+ *  Rahmen reicht sie unverändert an Gates und Eingabe-Schritte durch. */
+type Zusammenstellung = { ergebnis: AssembleErgebnis };
+
+/** Kontext für die Eingabe-Schritt-Renderer der Seite. `z` ist das ungekürzte
+ *  Ergebnis von `zusammenstellen` — damit ein Schritt einen Engine-Rechenwert
+ *  anzeigen kann, OHNE die Engine ein zweites Mal zu fahren (§2/§15). */
+export interface SeiteCtx<T, Z = Zusammenstellung> {
   a: T;
   set: <K extends keyof T>(k: K, v: T[K]) => void;
+  z: Z;
 }
 
-export interface VorlagenSeitenConfig<T extends { ort: string; datum: string }> {
+export interface VorlagenSeitenConfig<
+  T extends { ort: string; datum: string },
+  Z extends Zusammenstellung = Zusammenstellung,
+> {
   /** Katalog-Id (startseiteConfig) — liefert rechtsgebiet, norms, modus/output. */
   cardId: string;
   defaults: T;
   speicherKey: string;
   /** Reine Engine-Referenzen (src/lib) — keine Logik in dieser Schicht. */
-  zusammenstellen: (a: T) => { ergebnis: AssembleErgebnis };
-  pruefeGates: (a: T) => VorlagenGates;
+  zusammenstellen: (a: T) => Z;
+  pruefeGates: (a: T, z: Z) => VorlagenGates;
   schritte: readonly { id: string; label: string }[];
   // Rahmen-Kopf
   overlineFallback: string;       // Rechtsgebiet-Fallback, falls Karte fehlt
   titel: string;
   intro: ReactNode;
   badge: string;
+  /** Segment-Schalter ÜBER dem Stepper (VariantenKopf: Untertyp/Detailgrad).
+   *  Funktion statt ReactNode, weil der Schalter `a`/`set` braucht. */
+  kopfSchalter?: (ctx: SeiteCtx<T, Z>) => ReactNode;
+  /** Statischer Block UNTER dem Wizard (z. B. ThemenEinstieg-Brücke). */
+  fussnote?: ReactNode;
   // Eingabe-Schritte (alle ausser dem letzten «pruefen»-Schritt)
-  eingabeInhalt: (ctx: SeiteCtx<T>, schritt: number) => ReactNode;
+  eingabeInhalt: (ctx: SeiteCtx<T, Z>, schritt: number) => ReactNode;
   /** Pflichtfeld-Fehler je Eingabe-Schritt (NICHT für den letzten Schritt).
    *  `gates` für Seiten, die schon in einem Eingabe-Schritt einen fachlichen
    *  Blocker spiegeln (z. B. Nichtbekanntgabe: Rechtsvorschlag-Voraussetzung). */
@@ -68,6 +99,13 @@ export interface VorlagenSeitenConfig<T extends { ort: string; datum: string }> 
   /** Inhalt der lc-highlight-Sektion ÜBER der Bestätigungs-Checkbox. */
   bestaetigung: ReactNode;
   bestaetigungLabel: ReactNode;
+  /** Klassen der Bestätigungs-Zeile. Default ist die Form der fünf Pilot-Seiten
+   *  (`gap-2`, kein Padding). Die handgeschriebenen Seiten tragen historisch
+   *  `gap-2.5 py-1.5` — die grössere Trefferfläche (DESIGN-REGLEMENT F9). Beim
+   *  Umzug auf den Rahmen bleibt die vorgefundene Form erhalten, statt sie still
+   *  zu verkleinern (§6). Die Vereinheitlichung ist eine SICHTBARE Änderung und
+   *  gehört in einen eigenen, deklarierten Schritt (W2·17-UI-BEFUNDE-B10). */
+  bestaetigungLabelCls?: string;
   // Export
   banner: PdfBanner;
   dateiBasis: string;             // z. B. 'Abtretungserklaerung' → .pdf/.docx
@@ -75,8 +113,11 @@ export interface VorlagenSeitenConfig<T extends { ort: string; datum: string }> 
   docxLabel: string;
 }
 
-export function VorlagenSeite<T extends { ort: string; datum: string }>(
-  { config }: { config: VorlagenSeitenConfig<T> },
+export function VorlagenSeite<
+  T extends { ort: string; datum: string },
+  Z extends Zusammenstellung = Zusammenstellung,
+>(
+  { config }: { config: VorlagenSeitenConfig<T, Z> },
 ) {
   const card = karte(config.cardId);
   // Profil-Prefill (Auftrag David): nur die SELBST-evidenten Absender-/Verfasser-
@@ -97,8 +138,10 @@ export function VorlagenSeite<T extends { ort: string; datum: string }>(
   const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
     useWizardState<T>({ defaults, speicherKey: config.speicherKey, prefill });
 
-  const { ergebnis } = useMemo(() => config.zusammenstellen(a), [a, config]);
-  const gates = useMemo(() => config.pruefeGates(a), [a, config]);
+  const z = useMemo(() => config.zusammenstellen(a), [a, config]);
+  const { ergebnis } = z;
+  const gates = useMemo(() => config.pruefeGates(a, z), [a, z, config]);
+  const ctx: SeiteCtx<T, Z> = { a, set, z };
 
   const letzter = config.schritte.length - 1;
 
@@ -143,7 +186,7 @@ export function VorlagenSeite<T extends { ort: string; datum: string }>(
 
       <section className="lc-highlight space-y-3">
         {config.bestaetigung}
-        <label className="flex items-start gap-2 text-body-s cursor-pointer text-ink-900 font-medium pt-1">
+        <label className={config.bestaetigungLabelCls ?? 'flex items-start gap-2 text-body-s cursor-pointer text-ink-900 font-medium pt-1'}>
           <input type="checkbox" className="mt-0.5" checked={bestaetigt} onChange={(e) => setBestaetigt(e.target.checked)} />
           {config.bestaetigungLabel}
         </label>
@@ -156,7 +199,7 @@ export function VorlagenSeite<T extends { ort: string; datum: string }>(
     </div>
   );
 
-  const inhalt = schritt === letzter ? pruefenInhalt : config.eingabeInhalt({ a, set }, schritt);
+  const inhalt = schritt === letzter ? pruefenInhalt : config.eingabeInhalt(ctx, schritt);
 
   return (
     <VorlagenWizardRahmen
@@ -168,7 +211,9 @@ export function VorlagenSeite<T extends { ort: string; datum: string }>(
       zuruecksetzen={zuruecksetzen}
       schritte={config.schritte} schritt={schritt} setSchritt={setSchritt}
       fehler={fehler}
+      kopfSchalter={config.kopfSchalter?.(ctx)}
       inhalt={inhalt}
+      fussnote={config.fussnote}
       vorschau={<VorschauPanel ergebnis={ergebnis} direktExport={{
         pdf: { label: 'PDF', banner: config.banner, dateiName: `${config.dateiBasis}.pdf` },
         docx: docxZiel('DOCX'),
