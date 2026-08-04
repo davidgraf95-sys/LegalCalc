@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { permalinkLesen } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { ZUST_LINK_SPEC } from './zustaendigkeitLinkSpecs';
 
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
@@ -46,10 +46,7 @@ export function useZustaendigkeitForm({ onRechtswegChange, rechtswegVorwahl }: {
   /** Vorauswahl aus dem URL-Hash der Katalog-Split-Karten (#schkg/#straf). */
   rechtswegVorwahl?: Rechtsweg;
 } = {}) {
-  const [ausLink] = useState<Partial<State> & { schritt?: number }>(() => {
-    try { return permalinkLesen(ZUST_LINK_SPEC, window.location.search) as Partial<State> & { schritt?: number }; }
-    catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(ZUST_LINK_SPEC) as Partial<State> & { schritt?: number };
   const [f, setF] = useState<State>(() => {
     const rest = { ...ausLink };
     delete rest.schritt;

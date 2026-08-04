@@ -14,7 +14,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -84,9 +85,7 @@ const MR_LINK_SPEC: PermalinkSpec<MrLink & Record<string, unknown>> = {
 
 export function MietrechtForm() {
   const pk = usePaneKlasse();
-  const [ausLink] = useState<Partial<MrLink>>(() => {
-    try { return permalinkLesen(MR_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(MR_LINK_SPEC);
   const [art, setArt] = useState<Kuendigungsart>((ausLink.art as Kuendigungsart | undefined) ?? 'ordentlich');
   const [objekt, setObjekt] = useState<Mietobjekt>((ausLink.objekt as Mietobjekt | undefined) ?? 'wohnung');
   const [partei, setPartei] = useState<MietPartei>((ausLink.partei as MietPartei | undefined) ?? 'mieter');

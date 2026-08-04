@@ -1,4 +1,5 @@
 import type { Kanton } from '../../types/legal';
+import { istRecord, pruefeJson, type JsonPruefer } from '../jsonSchutz';
 import { namensKandidaten, zhFriedensrichterFuer, type ZhAmt } from './zhAmt';
 import type { VdSchlichtungsStufe } from '../../lib/vdSchlichtung';
 import { VD_CHAMBRE_PATRIMONIALE, VD_JDP_ZU_TA, VD_PRUDHOMMES, VD_TRIBUNAUX } from '../schlichtungsstellen';
@@ -14,6 +15,27 @@ export type SchlichtungsAmt = ZhAmt;
 
 interface KantonsAemter { aemter: SchlichtungsAmt[]; gemeinden: Record<string, number> }
 let cache: Record<string, KantonsAemter> | null = null;
+
+/** Strukturform des Generator-Artefakts (plz-generieren.ts): Registerschlüssel
+ *  («XX» / «XX_MIETE») → { aemter, gemeinden }. Geteilt mit tiAmt.ts;
+ *  exportiert für die Vollprüfung in src/tests/datenAussenkanten.test.ts. */
+export const SCHLICHTUNG_AEMTER_PRUEFER: JsonPruefer = {
+  quelle: 'schlichtung/aemterKantone.json',
+  wurzel: (w) => (istRecord(w) ? null : 'Wurzel ist kein Objekt'),
+  eintrag: (_kanton, w) => {
+    if (!istRecord(w)) return 'Eintrag ist kein Objekt';
+    if (!Array.isArray(w.aemter)) return 'aemter ist kein Array';
+    for (const a of w.aemter) {
+      if (!istRecord(a) || typeof a.name !== 'string' || typeof a.strasse !== 'string' || typeof a.plzOrt !== 'string') {
+        return 'Amt hat nicht die Form { name, strasse, plzOrt }';
+      }
+    }
+    if (!istRecord(w.gemeinden) || Object.values(w.gemeinden).some((v) => typeof v !== 'number')) {
+      return 'gemeinden ist keine Gemeinde→Index-Record';
+    }
+    return null;
+  },
+};
 // Case-insensitiver Zweitindex (Bug-Check-Befund 5.6.2026: handgetipptes
 // «aarau» fand kein Amt). Einmalig je Kanton aufgebaut; KEIN Fuzzy-Matching —
 // nur exakte Namen in Kleinschreibung.
@@ -50,7 +72,7 @@ async function registerLookup(schluessel: string, kanton: Kanton, gemeinde: stri
   const g = gemeinde.trim();
   if (g === '') return null;
   if (!cache) {
-    cache = (await import('./aemterKantone.json')).default as unknown as Record<string, KantonsAemter>;
+    cache = pruefeJson<Record<string, KantonsAemter>>((await import('./aemterKantone.json')).default, SCHLICHTUNG_AEMTER_PRUEFER);
   }
   const d = cache[schluessel];
   if (!d) return null;

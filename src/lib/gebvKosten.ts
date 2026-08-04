@@ -1,6 +1,7 @@
 // Dossier: bibliothek/recherche/gebv-schkg-kostenrechner.md
 import type { Berechnungsergebnis, Normverweis, Rechenschritt } from '../types/legal';
 import { gebuehrZahlungsbefehl } from './schkgZustaendigkeit';
+import { chfBedingt } from './format';
 
 // ─── Betreibungskosten-Engine (GebV SchKG, SR 281.35, Stand 1.1.2026) ───────
 //
@@ -37,7 +38,6 @@ const N = (artikel: string, bemerkung?: string): Normverweis => ({ artikel, beme
 // verzugszins.ts); ob amtlich auf 0.05 zu runden wäre, ist als
 // Grundsatzfrage für David offengelegt (HANDLUNGSPLAN A.4).
 const round2 = (n: number) => Math.round(n * 100) / 100;
-const chf = (n: number) => `CHF ${n.toLocaleString('de-CH', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
 const pruefe = (n: number, was: string) => {
   if (!Number.isFinite(n) || n < 0) throw new Error(`${was}: Zahl ≥ 0 erforderlich.`);
 };
@@ -88,7 +88,7 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
     total += zb.gebuehrCHF;
     rechenweg.push({
       beschreibung: 'Zahlungsbefehl (Art. 16 Abs. 1 GebV SchKG)',
-      zwischenergebnis: `Forderung ${chf(input.forderungCHF)} (Band: ${zb.band}) → Gebühr ${chf(zb.gebuehrCHF)} (umfasst Erlass, doppelte Ausfertigung, Eintragung und Zustellung).`,
+      zwischenergebnis: `Forderung ${chfBedingt(input.forderungCHF)} (Band: ${zb.band}) → Gebühr ${chfBedingt(zb.gebuehrCHF)} (umfasst Erlass, doppelte Ausfertigung, Eintragung und Zustellung).`,
       normen: [N('Art. 16 Abs. 1 GebV SchKG')],
     });
     const weitere = input.zahlungsbefehl.weitereAusfertigungen ?? 0;
@@ -97,7 +97,7 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
       total += g;
       rechenweg.push({
         beschreibung: 'Weitere doppelte Ausfertigungen (Art. 16 Abs. 2)',
-        zwischenergebnis: `${weitere} × ${chf(zb.gebuehrCHF / 2)} (halbe Gebühr) = ${chf(g)}.`,
+        zwischenergebnis: `${weitere} × ${chfBedingt(zb.gebuehrCHF / 2)} (halbe Gebühr) = ${chfBedingt(g)}.`,
         normen: [N('Art. 16 Abs. 2 GebV SchKG')],
       });
     }
@@ -106,7 +106,7 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
       total += 7 * versuche;
       rechenweg.push({
         beschreibung: 'Zustellungsversuche (Art. 16 Abs. 3)',
-        zwischenergebnis: `${versuche} × CHF 7 = ${chf(7 * versuche)} je Zahlungsbefehl.`,
+        zwischenergebnis: `${versuche} × CHF 7 = ${chfBedingt(7 * versuche)} je Zahlungsbefehl.`,
         normen: [N('Art. 16 Abs. 3 GebV SchKG')],
       });
     }
@@ -120,10 +120,10 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
     rechenweg.push({
       beschreibung: 'Pfändung (Art. 20 GebV SchKG)',
       zwischenergebnis: a === 'vollzogen'
-        ? `Vollzug inkl. Pfändungsurkunde: ${chf(g)} (Forderung ${chf(input.forderungCHF)}).`
+        ? `Vollzug inkl. Pfändungsurkunde: ${chfBedingt(g)} (Forderung ${chfBedingt(input.forderungCHF)}).`
         : a === 'fruchtlos'
-          ? `FRUCHTLOSE Pfändung: halbe Gebühr (${chf(basis)} ÷ 2, mindestens CHF 10) = ${chf(g)}.`
-          : `Erfolgloser Pfändungsversuch: ${chf(10)}.`,
+          ? `FRUCHTLOSE Pfändung: halbe Gebühr (${chfBedingt(basis)} ÷ 2, mindestens CHF 10) = ${chfBedingt(g)}.`
+          : `Erfolgloser Pfändungsversuch: ${chfBedingt(10)}.`,
       normen: [N(a === 'vollzogen' ? 'Art. 20 Abs. 1 GebV SchKG' : 'Art. 20 Abs. 2 GebV SchKG')],
     });
     warnungen.push('Dauert der Pfändungsvollzug länger als eine Stunde, erhöht sich die Gebühr um CHF 40 je weitere halbe Stunde (Art. 20 Abs. 3 GebV SchKG) – hier nicht erfasst.');
@@ -135,11 +135,11 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
     let g: number; let text: string;
     if (v.keinErwerber) {
       g = Math.min(round2(gebuehrVerwertungRoh(v.betragCHF) / 2), 1_000);
-      text = `Kein Erwerber: Bemessung nach dem Schätzungswert ${chf(v.betragCHF)}, vermindert um die Hälfte, höchstens CHF 1 000 → ${chf(g)} (Art. 30 Abs. 4).`;
+      text = `Kein Erwerber: Bemessung nach dem Schätzungswert ${chfBedingt(v.betragCHF)}, vermindert um die Hälfte, höchstens CHF 1 000 → ${chfBedingt(g)} (Art. 30 Abs. 4).`;
     } else {
       const roh = gebuehrVerwertungRoh(v.betragCHF);
       g = Math.min(roh, v.betragCHF); // Abs. 3: nie höher als der Erlös
-      text = `Erlös ${chf(v.betragCHF)} → ${v.betragCHF > 100_000 ? '2 ‰' : 'Staffel'} = ${chf(roh)}${g < roh ? `, gekappt auf den Erlös (${chf(g)}, Art. 30 Abs. 3)` : ''}.`;
+      text = `Erlös ${chfBedingt(v.betragCHF)} → ${v.betragCHF > 100_000 ? '2 ‰' : 'Staffel'} = ${chfBedingt(roh)}${g < roh ? `, gekappt auf den Erlös (${chfBedingt(g)}, Art. 30 Abs. 3)` : ''}.`;
     }
     total += g;
     rechenweg.push({
@@ -154,7 +154,7 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
     total += g;
     rechenweg.push({
       beschreibung: 'Entgegennahme und Überweisung einer Zahlung (Art. 19)',
-      zwischenergebnis: `Summe ${chf(input.einzahlung.summeCHF)} → ${input.einzahlung.summeCHF <= 1_000 ? 'CHF 5' : `5 ‰, höchstens CHF 500`} = ${chf(g)}; Überweisungs-Auslagen zulasten des Gläubigers (Abs. 3).`,
+      zwischenergebnis: `Summe ${chfBedingt(input.einzahlung.summeCHF)} → ${input.einzahlung.summeCHF <= 1_000 ? 'CHF 5' : `5 ‰, höchstens CHF 500`} = ${chfBedingt(g)}; Überweisungs-Auslagen zulasten des Gläubigers (Abs. 3).`,
       normen: [N('Art. 19 GebV SchKG')],
     });
   }
@@ -163,7 +163,7 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
     bandbreite = rahmenEntscheidSummarsache(input.entscheidSummarsache.streitwertCHF);
     rechenweg.push({
       beschreibung: 'Gerichtlicher Entscheid in betreibungsrechtlicher Summarsache (Art. 48)',
-      zwischenergebnis: `Streitwert ${chf(input.entscheidSummarsache.streitwertCHF)} → RAHMENGEBÜHR ${chf(bandbreite.vonCHF)}–${chf(bandbreite.bisCHF)}; die konkrete Höhe setzt das Gericht im Ermessen fest (z. B. Rechtsöffnung).`,
+      zwischenergebnis: `Streitwert ${chfBedingt(input.entscheidSummarsache.streitwertCHF)} → RAHMENGEBÜHR ${chfBedingt(bandbreite.vonCHF)}–${chfBedingt(bandbreite.bisCHF)}; die konkrete Höhe setzt das Gericht im Ermessen fest (z. B. Rechtsöffnung).`,
       normen: [N('Art. 48 Abs. 1 GebV SchKG', 'Rahmen – kein Punktwert')],
     });
   }
@@ -177,8 +177,8 @@ export function berechneBetreibungskosten(input: GebvEingabe): GebvErgebnis {
 
   return {
     ergebnis:
-      (total > 0 ? `Amtliche Gebühren (Punktwerte): ${chf(total)}.` : 'Keine Punktwert-Gebühren gewählt.') +
-      (bandbreite ? ` Zusätzlich Entscheidgebühr im Rahmen ${chf(bandbreite.vonCHF)}–${chf(bandbreite.bisCHF)} (Art. 48 GebV SchKG).` : '') +
+      (total > 0 ? `Amtliche Gebühren (Punktwerte): ${chfBedingt(total)}.` : 'Keine Punktwert-Gebühren gewählt.') +
+      (bandbreite ? ` Zusätzlich Entscheidgebühr im Rahmen ${chfBedingt(bandbreite.vonCHF)}–${chfBedingt(bandbreite.bisCHF)} (Art. 48 GebV SchKG).` : '') +
       ' Der Schuldner trägt die Betreibungskosten; der Gläubiger schiesst sie vor und erhebt sie von den Zahlungen vorab (Art. 68 SchKG).',
     status: 'ok',
     rechenweg,

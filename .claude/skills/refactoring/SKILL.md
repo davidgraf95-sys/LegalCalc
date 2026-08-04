@@ -55,6 +55,14 @@ alte Modul wird zur schlanken Fassade (`export * from './geschwister'`),
 Konsumenten-Importpfade bleiben unverändert. Beweis ist **Byte-Identität des
 Outputs**, nicht nur ein grünes `tsc`.
 
+**Split einer Risiko-Datei ⇒ `istRisikoPfad()` mitprüfen (§17, 4.8.2026):**
+`scripts/gegenpruefung/kern.ts` klassifiziert teils über exakte Pfade bzw.
+`^src/lib/[^/]+\.ts$` — wandert Engine-Logik in einen Unterordner, verliert
+sie SONST still die Risiko-Klassifikation (nur noch die leere Fassade träfe).
+Beim Split empirisch belegen: neue Modul-Pfade → `RISIKO`; fehlt der
+Ordner-Zweig in `kern.ts`, gehört er in denselben PR. Zweifach belegt am
+4.8.2026 (besetzung- und zustaendigkeit-Split, unabhängig gefunden).
+
 **Geteilte Infrastruktur statt lokaler Kopie:** Zahl- und CHF-Parser,
 Datums-Formatter aus `lib/format.ts` (fachneutral), Datums-Rechnen und
 -Validierung aus `datumsUtils.ts`. Ausnahme nur, wenn die Semantik fachlich

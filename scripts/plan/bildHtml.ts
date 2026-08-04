@@ -1,0 +1,269 @@
+// scripts/plan/bildHtml.ts — Darstellungs-Bausteine des Lagebild-Generators
+// (Schritt QS-PLAN-BILD, Mehrseiten-Ausbau Go David 4.8.2026).
+//
+// Hier liegen die geteilten Bausteine ALLER vier Seiten: Design-Tokens/CSS,
+// Escaping, Navigations-Leiste, Dokument-Rahmen und die kleinen
+// Wiederhol-Bausteine (Kacheln, Tabellen-Container, Status-Punkte).
+// Keine Datenbeschaffung, keine Seiten-Inhalte — die liegen in
+// `bildDaten.ts` bzw. `bildSeiten.ts`.
+
+/** Text → HTML-Text. Einzige Escaping-Stelle des Generators. */
+export function esc(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ---------------------------------------------------------------------------
+// Seiten-Register — die vier Seiten und ihre Dateinamen
+// ---------------------------------------------------------------------------
+/** Die Index-Seite heisst IMMER `plan-bild.html` (bzw. der per `--out`
+ *  gewählte Name): App-Kachel und LaunchAgent zeigen auf diesen Anker. Die
+ *  drei Zusatzseiten hängen ihr Suffix an DENSELBEN Präfix — so bleiben die
+ *  Verweise relativ und funktionieren auch unter `file://`. */
+export const SEITEN = [
+  { schluessel: 'lagebild', suffix: '', titel: 'Lagebild' },
+  { schluessel: 'projekt', suffix: '-projekt', titel: 'Projekt & Produkt' },
+  { schluessel: 'geschichte', suffix: '-geschichte', titel: 'Geschichte' },
+  { schluessel: 'methode', suffix: '-methode', titel: 'Arbeitsweise' },
+] as const;
+
+export type SeitenSchluessel = (typeof SEITEN)[number]['schluessel'];
+
+/** Live-Plattform (Prod-Deploy von `main`; Beleg STRUKTUR.md, Prod-Re-Audit 2.8.2026). */
+export const LIVE_URL = 'https://lexmetrik.vercel.app';
+
+/** `tmp/plan-bild.html` → `tmp/plan-bild-projekt.html` usw. (voller Pfad). */
+export function seitenPfad(indexPfad: string, schluessel: SeitenSchluessel): string {
+  const suffix = SEITEN.find((s) => s.schluessel === schluessel)?.suffix ?? '';
+  const m = indexPfad.match(/^(.*?)(\.html?)$/i);
+  return m ? `${m[1]}${suffix}${m[2]}` : `${indexPfad}${suffix}`;
+}
+
+/** Nur der Dateiname — das ist der relative Verweis in der Navigations-Leiste. */
+export function seitenDatei(indexPfad: string, schluessel: SeitenSchluessel): string {
+  return seitenPfad(indexPfad, schluessel).replace(/^.*\//, '');
+}
+
+// ---------------------------------------------------------------------------
+// Design-Tokens + Stylesheet (unverändert aus der Ein-Seiten-Fassung
+// übernommen, ergänzt um Navigations-Leiste, Tabellen und Kanton-Raster)
+//
+// Zwei Regeln stehen hier ohne Kommentar im CSS und darum hier:
+//  * Gegen horizontales Scrollen wirkt AUSSCHLIESSLICH der `.tabelle`-Container
+//    (`overflow-x:auto`). Ein `overflow-x` auf `body` wurde bewusst verworfen:
+//    `hidden` erzeugt einen Scroll-Container und setzt die sticky
+//    Navigations-Leiste ausser Kraft, `clip` ist ein unnötiges Risiko am
+//    selben Ort. Jede breite Fläche gehört stattdessen in ihren eigenen
+//    Scroll-Container.
+//  * Im Template-Literal sind KEINE Backticks zulässig (sie beenden den
+//    String) — Kommentare zum CSS gehören deshalb hierher.
+// ---------------------------------------------------------------------------
+export const STIL = `
+  :root { --paper:#FCFAF6; --raised:#FFFEFC; --ink:#1C1A15; --soft:#4A463C; --faint:#7A7466;
+    --line:#E4DFD2; --gold:#8A6D1F; --gold-bg:#F5EEDA; --sage:#4E6B45; --sage-bg:#EAEBE2;
+    --slate:#4A5350; --slate-bg:#E9E9E5; --warn:#8A5417; --warn-bg:#F5EBDE; --danger:#A03A28; --danger-bg:#F2E5DD; }
+  @media (prefers-color-scheme: dark) { :root { --paper:#16150F; --raised:#201E17; --ink:#ECE8DD;
+    --soft:#B8B2A2; --faint:#857E6E; --line:#35311F; --gold:#C9A94E; --gold-bg:#2C2510;
+    --sage:#96B38C; --sage-bg:#22251B; --slate:#A9B3AE; --slate-bg:#21231F; --warn:#D9A75B;
+    --warn-bg:#312515; --danger:#D98A75; --danger-bg:#2C1D15; } }
+  * { box-sizing: border-box; }
+  body { background:var(--paper); color:var(--ink); margin:0; line-height:1.55;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
+  .wrap { max-width:1020px; margin:0 auto; padding:2.5rem 1.25rem 5rem; }
+  h1,h2,h3 { font-family:Charter,Georgia,Cambria,"Times New Roman",serif; text-wrap:balance; margin:0; }
+  h1 { font-size:2.1rem; } h2 { font-size:1.4rem; margin-bottom:.35rem; } h3 { font-size:1.05rem; }
+  p { margin:.4rem 0; } section { margin-top:3rem; }
+  .lede { color:var(--soft); max-width:46rem; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; font-weight:600; color:var(--gold); margin-bottom:.5rem; }
+  .sub { color:var(--faint); font-size:.82rem; } .quelle { font-size:.78rem; color:var(--faint); }
+  .id { font-size:.75rem; color:var(--faint); font-family:ui-monospace,"SF Mono",Menlo,monospace; }
+  header.top { border-bottom:3px double var(--line); padding-bottom:1.4rem; }
+  .stand { display:inline-block; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--faint);
+    border:1px solid var(--line); border-radius:999px; padding:.15rem .7rem; margin-bottom:.9rem; }
+  .lage { font-size:1.12rem; margin-top:.8rem; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.7rem; margin-top:1rem; }
+  .tile { background:var(--raised); border:1px solid var(--line); border-radius:6px; padding:.8rem .9rem; }
+  .tile b { display:block; font-size:1.5rem; font-variant-numeric:tabular-nums; font-family:Charter,Georgia,serif; }
+  .tile span { font-size:.8rem; color:var(--soft); }
+  .chip { display:inline-block; font-size:.72rem; font-weight:600; border-radius:999px; padding:.08rem .55rem; white-space:nowrap; vertical-align:middle; }
+  .chip.done{background:var(--sage-bg);color:var(--sage);} .chip.ready{background:var(--slate-bg);color:var(--slate);}
+  .chip.wip{background:var(--gold-bg);color:var(--gold);} .chip.block{background:var(--danger-bg);color:var(--danger);}
+  .chip.gold{background:var(--gold-bg);color:var(--gold);}
+  .panel { border:1px solid var(--warn); border-left-width:5px; border-radius:6px; background:var(--warn-bg); padding:1rem 1.2rem; margin-top:1rem; }
+  .panel h2 { color:var(--warn); } .panel ul { margin:.5rem 0 0; padding-left:1.2rem; } .panel li { margin:.5rem 0; }
+  .liste { list-style:none; margin:1rem 0 0; padding:0; display:flex; flex-direction:column; gap:.55rem; }
+  .liste li { background:var(--raised); border:1px solid var(--line); border-radius:6px; padding:.7rem .95rem; display:flex; gap:.6rem; align-items:baseline; }
+  ol.queue { margin:1rem 0 0; padding:0; list-style:none; counter-reset:q; display:flex; flex-direction:column; gap:.55rem; }
+  ol.queue li { background:var(--raised); border:1px solid var(--line); border-radius:6px; padding:.7rem .95rem .7rem 3rem; position:relative; counter-increment:q; }
+  ol.queue li::before { content:counter(q); position:absolute; left:.85rem; top:.72rem; width:1.5rem; height:1.5rem; border-radius:50%;
+    background:var(--gold-bg); color:var(--gold); font-weight:700; font-size:.85rem; display:flex; align-items:center; justify-content:center; }
+  .phasen { display:flex; flex-direction:column; margin-top:1rem; border-left:2px solid var(--line); }
+  .phase { display:grid; grid-template-columns:2rem 1fr; gap:.5rem; padding:.45rem .6rem .45rem 0; }
+  .phase .dot { width:.9rem; height:.9rem; border-radius:50%; border:2px solid var(--faint); background:var(--paper); margin-left:-.53rem; margin-top:.3rem; }
+  .phase.done .dot { background:var(--sage); border-color:var(--sage); }
+  .phase.now { background:var(--gold-bg); border-radius:0 6px 6px 0; }
+  .phase.now .dot { background:var(--gold); border-color:var(--gold); }
+  .phase .t { font-size:.92rem; } .phase .t .sub { display:block; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:.8rem; margin-top:1rem; }
+  .card { background:var(--raised); border:1px solid var(--line); border-radius:6px; padding:.95rem 1.05rem; display:flex; flex-direction:column; gap:.45rem; }
+  .card .kopf { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; }
+  .card .zweck { font-size:.88rem; color:var(--soft); flex:1; }
+  .bar { height:6px; border-radius:3px; background:var(--slate-bg); overflow:hidden; }
+  .bar i { display:block; height:100%; background:var(--sage); }
+  .fortschritt { font-size:.78rem; color:var(--faint); font-variant-numeric:tabular-nums; }
+  .card .next { font-size:.84rem; }
+  details { border-top:1px dashed var(--line); padding-top:.4rem; }
+  summary { cursor:pointer; font-size:.78rem; color:var(--faint); }
+  summary:focus-visible, .kopier:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  details ul { margin:.4rem 0 0; padding:0; list-style:none; font-size:.8rem; display:flex; flex-direction:column; gap:.25rem; }
+  details li { display:flex; gap:.45rem; align-items:baseline; }
+  .s { width:.55rem; height:.55rem; border-radius:50%; flex:none; position:relative; top:.05rem; }
+  .s.done{background:var(--sage);} .s.ready{background:var(--faint);opacity:.45;} .s.block{background:var(--danger);} .s.wip{background:var(--gold);}
+  .kopier { font:inherit; font-size:.72rem; font-weight:600; color:var(--gold); background:var(--gold-bg);
+    border:1px solid var(--gold); border-radius:999px; padding:.05rem .55rem; cursor:pointer; }
+  .kopier:hover { filter:brightness(1.05); }
+  footer { margin-top:3rem; border-top:1px solid var(--line); padding-top:1rem; font-size:.8rem; color:var(--faint); }
+  .hinweis { font-size:.82rem; color:var(--faint); margin-top:.6rem; }
+  #toast { position:fixed; bottom:1rem; left:50%; transform:translateX(-50%); background:var(--ink); color:var(--paper);
+    border-radius:6px; padding:.5rem 1rem; font-size:.85rem; opacity:0; transition:opacity .2s; pointer-events:none; }
+  a { color:var(--gold); text-decoration-thickness:1px; text-underline-offset:2px; }
+  a:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  .springen { font-size:.82rem; color:var(--faint); margin-top:.9rem; }
+  .springen a { color:var(--soft); }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+  #filter { font:inherit; font-size:.9rem; color:var(--ink); background:var(--raised); border:1px solid var(--line);
+    border-radius:6px; padding:.5rem .8rem; width:100%; max-width:26rem; margin-top:1rem; }
+  #filter:focus-visible { outline:2px solid var(--gold); outline-offset:1px; }
+  /* --- Navigations-Leiste (Mehrseiten-Ausbau 4.8.2026) --------------------- */
+  nav.haupt { position:sticky; top:0; z-index:10; background:var(--raised); border-bottom:1px solid var(--line); }
+  nav.haupt .inner { max-width:1020px; margin:0 auto; padding:.5rem 1.25rem; display:flex; flex-wrap:wrap;
+    align-items:center; gap:.35rem .5rem; }
+  nav.haupt .marke { font-family:Charter,Georgia,serif; font-weight:700; letter-spacing:.02em; margin-right:.5rem; }
+  nav.haupt a.seite { font-size:.85rem; color:var(--soft); text-decoration:none; border:1px solid transparent;
+    border-radius:999px; padding:.2rem .7rem; }
+  nav.haupt a.seite:hover { background:var(--slate-bg); }
+  nav.haupt a.seite[aria-current="page"] { color:var(--gold); background:var(--gold-bg); border-color:var(--gold); font-weight:600; }
+  nav.haupt a.live { margin-left:auto; font-size:.82rem; font-weight:600; color:var(--sage); background:var(--sage-bg);
+    border:1px solid var(--sage); border-radius:999px; padding:.2rem .8rem; text-decoration:none; }
+  nav.haupt a.live:hover { filter:brightness(1.05); }
+  /* --- Tabellen: immer im eigenen Scroll-Container, nie die Seite schieben -- */
+  .tabelle { overflow-x:auto; margin-top:.6rem; border:1px solid var(--line); border-radius:6px; background:var(--raised); }
+  .tabelle table { border-collapse:collapse; width:100%; font-size:.82rem; min-width:34rem; }
+  .tabelle th, .tabelle td { text-align:left; padding:.35rem .7rem; border-bottom:1px solid var(--line); white-space:nowrap; }
+  .tabelle th { color:var(--faint); font-weight:600; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; }
+  .tabelle td.titel { white-space:normal; min-width:16rem; }
+  .tabelle tr:last-child td { border-bottom:none; }
+  .tabelle td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  /* --- Kanton-Raster (26 Felder) ----------------------------------------- */
+  .kantone { display:grid; grid-template-columns:repeat(auto-fit,minmax(4.6rem,1fr)); gap:.35rem; margin-top:.8rem; }
+  .kantone div { background:var(--raised); border:1px solid var(--line); border-radius:5px; padding:.3rem .45rem; text-align:center; }
+  .kantone b { display:block; font-size:.95rem; font-variant-numeric:tabular-nums; }
+  .kantone span { font-size:.7rem; color:var(--faint); letter-spacing:.06em; }
+  .kantone div.leer b { color:var(--faint); opacity:.5; }
+  /* --- Gruppen-Listen (Werkzeug-Katalog, Zeitachse, Glossar) -------------- */
+  .gruppe { margin-top:1.2rem; }
+  .gruppe > h3 { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; border-bottom:1px solid var(--line); padding-bottom:.25rem; }
+  ul.eintraege { list-style:none; margin:.5rem 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(15rem,1fr)); gap:.2rem .8rem; font-size:.85rem; }
+  ul.eintraege li { display:flex; gap:.45rem; align-items:baseline; }
+  dl.glossar { margin:1rem 0 0; }
+  dl.glossar dt { font-weight:600; margin-top:.9rem; }
+  dl.glossar dd { margin:.1rem 0 0; color:var(--soft); font-size:.9rem; }
+  .zeitachse { margin-top:1rem; }
+  .monat { border-left:2px solid var(--line); padding:.15rem 0 .6rem 1rem; }
+  .monat > b { font-family:Charter,Georgia,serif; font-size:1rem; }
+  .monat ul { margin:.3rem 0 0; padding-left:1.1rem; font-size:.85rem; color:var(--soft); }
+  .monat ul li { margin:.12rem 0; }
+`;
+
+// ---------------------------------------------------------------------------
+// Dokument-Rahmen
+// ---------------------------------------------------------------------------
+/** Navigations-Leiste — vier relative Verweise + Live-Link, aktive Seite markiert. */
+export function navigation(indexPfad: string, aktiv: SeitenSchluessel): string {
+  const links = SEITEN.map((s) => {
+    const href = seitenDatei(indexPfad, s.schluessel);
+    const cur = s.schluessel === aktiv ? ' aria-current="page"' : '';
+    return `<a class="seite" href="${esc(href)}"${cur}>${esc(s.titel)}</a>`;
+  }).join('\n    ');
+  return `<nav class="haupt" aria-label="Seiten dieses Lagebilds">
+  <div class="inner">
+    <span class="marke">LexMetrik</span>
+    ${links}
+    <a class="live" href="${LIVE_URL}" target="_blank" rel="noopener">Zur Live-Plattform ↗</a>
+  </div>
+</nav>`;
+}
+
+export interface RahmenOpts {
+  /** Pfad der INDEX-Seite (`--out`) — Basis für alle relativen Verweise. */
+  indexPfad: string;
+  aktiv: SeitenSchluessel;
+  titel: string;
+  watch: number | null;
+  inhalt: string;
+  /** Optionales Seiten-Skript (nur die Index-Seite braucht eines). */
+  skript?: string;
+  /** Optionaler Zusatz direkt vor `</body>` (z. B. Toast-Element). */
+  nachSpann?: string;
+}
+
+/** Vollständiges HTML-Dokument mit Nav, Inhalt und gemeinsamer Fussnote. */
+export function rahmen(o: RahmenOpts): string {
+  const refresh = o.watch ? `<meta http-equiv="refresh" content="${Math.max(15, Math.min(o.watch, 300))}">` : '';
+  return `<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+${refresh}
+<title>${esc(o.titel)}</title>
+<style>${STIL}</style>
+</head>
+<body>
+${navigation(o.indexPfad, o.aktiv)}
+<div class="wrap">
+${o.inhalt}
+</div>
+${o.nachSpann ?? ''}
+${o.skript ? `<script>\n${o.skript}\n</script>` : ''}
+</body>
+</html>
+`;
+}
+
+// ---------------------------------------------------------------------------
+// Kleine Wiederhol-Bausteine
+// ---------------------------------------------------------------------------
+/** Kopfzeile einer Seite: Stand-Stempel, Titel, Einleitung, optionaler Zusatz. */
+export function seitenKopf(o: { stand: string; watch: number | null; marke: string; h1: string; lede: string; extra?: string }): string {
+  return `<header class="top">
+  <span class="stand">${esc(o.marke)} · erzeugt ${esc(o.stand)}${o.watch ? ' · aktualisiert sich selbst' : ''}</span>
+  <h1>${esc(o.h1)}</h1>
+  ${o.lede ? `<p class="lede">${o.lede}</p>` : ''}
+  ${o.extra ?? ''}
+</header>`;
+}
+
+/** Kachel-Reihe. `wert` ist bereits gezählt; `null` wird als «—» ehrlich gezeigt. */
+export function kacheln(items: { wert: number | string | null; label: string }[]): string {
+  const inner = items
+    .map((i) => `<div class="tile"><b>${esc(String(i.wert ?? '—'))}</b><span>${i.label}</span></div>`)
+    .join('\n    ');
+  return `<div class="tiles">\n    ${inner}\n  </div>`;
+}
+
+/** Tabelle in eigenem Scroll-Container (kein horizontales Scrollen der Seite). */
+export function tabelle(kopfzeilen: string[], zeilen: string[][], klassen: string[] = []): string {
+  const th = kopfzeilen.map((k) => `<th>${esc(k)}</th>`).join('');
+  const tr = zeilen
+    .map((z) => `<tr>${z.map((c, i) => `<td${klassen[i] ? ` class="${klassen[i]}"` : ''}>${esc(c)}</td>`).join('')}</tr>`)
+    .join('\n');
+  return `<div class="tabelle"><table><thead><tr>${th}</tr></thead><tbody>\n${tr}\n</tbody></table></div>`;
+}
+
+/** Deutsche Monatsbeschriftung aus «YYYY-MM». */
+const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+export function monatLabel(key: string): string {
+  const [jahr, monat] = key.split('-');
+  return `${MONATSNAMEN[Number(monat) - 1] ?? monat} ${jahr}`;
+}

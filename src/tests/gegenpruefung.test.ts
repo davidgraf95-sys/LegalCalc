@@ -152,6 +152,15 @@ describe('Risiko-/Prüflogik-Prädikate', () => {
     expect(istRisikoPfad('src/lib/pdf/frist-helfer.ts')).toBe(false);
   });
 
+  it('Fassaden-Splits: der Logik-Ordner bleibt Risiko, nicht nur die Fassade (§6.7)', () => {
+    // Rot-Beweis 4.8.2026: vor dem Ordner-Zweig war erstinstanz.ts false — der Split
+    // hätte die Rechenlogik still aus der Risiko-Klassifikation genommen.
+    expect(istRisikoPfad('src/lib/zustaendigkeit.ts')).toBe(true);
+    expect(istRisikoPfad('src/lib/zustaendigkeit/erstinstanz.ts')).toBe(true);
+    expect(istRisikoPfad('src/lib/zustaendigkeit/rechtsmittel.ts')).toBe(true);
+    expect(istRisikoPfad('src/lib/zustaendigkeit/gemeinsam.ts')).toBe(true);
+  });
+
   it('Extraktion: verschachtelte public/normtext-Snapshots werden erfasst', () => {
     expect(istRisikoPfad('public/normtext/bund/OR.json')).toBe(true);
     expect(istRisikoPfad('public/normtext/struktur/bund/OR.json')).toBe(true);

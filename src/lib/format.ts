@@ -59,6 +59,38 @@ export const chf = (n: number): string =>
  */
 export const chfGanz = (n: number): string => `CHF ${Math.round(n).toLocaleString('de-CH')}`;
 
+/**
+ * CHF-Betrag mit «CHF »-Präfix und BEDINGTEN Dezimalstellen: ganzzahlige Werte
+ * ohne Dezimalstellen, gebrochene mit genau zwei (`n % 1` als Wahrheitswert).
+ * BEWUSST verschieden von `chfGanz` (rundet IMMER auf ganze Franken, verwirft
+ * also Dezimalstellen) und von `chfPraefix`/`chf` (feste Dezimalstellen-Zahl):
+ * hier zeigt die Dezimalstelle selbst an, ob der Betrag glatt ist — Rappen-
+ * Bänder (2 ‰/5 ‰) brauchen genau das (§1, nicht zusammenführen). Zuvor
+ * wortgleich lokal in gebvKosten.ts (QS-CODE-ENTDOPPLUNG, 4.8.2026).
+ */
+export const chfBedingt = (n: number): string =>
+  `CHF ${n.toLocaleString('de-CH', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
+
+/**
+ * CHF-Betrag mit «CHF »-Präfix, UNGERUNDET mit den de-CH-Standard-Dezimalen
+ * (`toLocaleString` ohne explizite Fraction-Digit-Optionen). BEWUSST
+ * verschieden von `chfBedingt` (kappt auf max. 2 Dezimalen) und `chfGanz`
+ * (rundet auf ganze Franken): hier bleibt der Rohwert unverändert sichtbar —
+ * nicht zusammenführen (§1). Zuvor wortgleich lokal in streitwert.ts
+ * (QS-CODE-ENTDOPPLUNG, 4.8.2026).
+ */
+export const chfPraefix = (n: number): string => `CHF ${n.toLocaleString('de-CH')}`;
+
+/**
+ * Reine de-CH-Zahldarstellung OHNE «CHF »-Präfix und ohne Rundung
+ * (`toLocaleString` ohne explizite Fraction-Digit-Optionen). BEWUSST
+ * verschieden von `chfPraefix` (trägt den Präfix): hier steht das Wort «CHF»
+ * bereits im umgebenden Text des Aufrufers — ein zweiter Präfix wäre doppelt
+ * (§1, nicht zusammenführen). Zuvor wortgleich lokal in bgerRechtsweg.ts
+ * (QS-CODE-ENTDOPPLUNG, 4.8.2026).
+ */
+export const chfOhnePraefix = (n: number): string => n.toLocaleString('de-CH');
+
 /** Robuste Zahl aus Nutzereingabe (Apostroph/Komma toleriert) – sonst null. */
 export const zahl = (roh?: string): number | null => {
   const n = Number(String(roh ?? '').replace(/['’\s]/g, '').replace(',', '.'));

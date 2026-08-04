@@ -120,6 +120,13 @@ export function istRisikoPfad(p: string): boolean {
   if (p.startsWith('public/verzahnung/artikel-revisionen/')) return true;
   // Rechnen
   if (/^src\/lib\/[^/]+\.ts$/.test(p) && RECHNEN_RE.test(basename(p))) return true;
+  // Seit QS-CODE-SPLITS ist `zustaendigkeit.ts` eine reine Fassade; die tragende
+  // Rechenlogik (erstinstanz/rechtsmittel/gemeinsam) liegt im gleichnamigen Ordner.
+  // OHNE den Ordner-Zweig hätte der Split die Risiko-Klassifikation der eigentlichen
+  // Logik still verloren: die Fassade träfe weiter, ihr Inhalt nie — ein Tor, das
+  // genau dort nicht mehr scheitern kann, wo der teuerste Fehler sitzt (§6.7/§17;
+  // Gegenprüfungs-Befund 4.8.2026, Rot-Beweis: erstinstanz.ts=false vor diesem Zweig).
+  if (p.startsWith('src/lib/zustaendigkeit/')) return true;
   if (p.startsWith('src/lib/tarif/')) return true;
   if (p.startsWith('src/lib/fristenspiegel/')) return true;
   // Norm/Tarif

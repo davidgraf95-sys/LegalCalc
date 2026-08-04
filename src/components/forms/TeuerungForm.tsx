@@ -14,7 +14,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { usePaneKlasse } from '../layout/PaneKontext';
 
@@ -68,9 +69,7 @@ const TEU_LINK_SPEC: PermalinkSpec<TeuLink & Record<string, unknown>> = {
 
 export function TeuerungForm() {
   const pk = usePaneKlasse();
-  const [ausLink] = useState<Partial<TeuLink>>(() => {
-    try { return permalinkLesen(TEU_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(TEU_LINK_SPEC);
   const [modus, setModus] = useState<TeuerungModus>((ausLink.modus as TeuerungModus | undefined) ?? 'generisch');
   const [betrag, setBetrag] = useState(ausLink.betrag ?? '1000');
   const [von, setVon] = useState(ausLink.von ?? '2022-12');

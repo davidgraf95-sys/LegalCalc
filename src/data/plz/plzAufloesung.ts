@@ -1,4 +1,5 @@
 import type { Kanton } from '../../types/legal';
+import { istRecord, pruefeJson, type JsonPruefer } from '../jsonSchutz';
 
 // ─── Amtliche PLZ→Gemeinde/Kanton-Auflösung ─────────────────────────────────
 // Quelle: swisstopo «Amtliches Ortschaftenverzeichnis mit PLZ» (Abruf
@@ -20,10 +21,28 @@ export interface PlzTreffer {
 
 let cache: Record<string, [string, string, number][]> | null = null;
 
+/** Strukturform des Generator-Artefakts (plz-generieren.ts): PLZ → Tripel
+ *  [Gemeinde, Kanton, Adressenanteil %]. Exportiert für die Vollprüfung in
+ *  src/tests/datenAussenkanten.test.ts. */
+export const PLZ_VERZEICHNIS_PRUEFER: JsonPruefer = {
+  quelle: 'plz/plzVerzeichnis.json',
+  wurzel: (w) => (istRecord(w) ? null : 'Wurzel ist kein Objekt'),
+  eintrag: (_plz, w) => {
+    if (!Array.isArray(w) || w.length === 0) return 'Wert ist kein nicht-leeres Array';
+    for (const t of w) {
+      if (!Array.isArray(t) || t.length !== 3) return 'Treffer ist kein Tripel';
+      if (typeof t[0] !== 'string' || typeof t[1] !== 'string' || typeof t[2] !== 'number') {
+        return 'Tripel ist nicht [string, string, number]';
+      }
+    }
+    return null;
+  },
+};
+
 export async function plzAufloesen(plz: string): Promise<PlzTreffer[] | null> {
   if (!/^\d{4}$/.test(plz)) return null;
   if (!cache) {
-    cache = (await import('./plzVerzeichnis.json')).default as unknown as Record<string, [string, string, number][]>;
+    cache = pruefeJson<Record<string, [string, string, number][]>>((await import('./plzVerzeichnis.json')).default, PLZ_VERZEICHNIS_PRUEFER);
   }
   const treffer = cache[plz];
   if (!treffer) return null;

@@ -12,7 +12,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, istISO, istKanton, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, istISO, istKanton, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -39,9 +40,7 @@ const EF_LINK_SPEC: PermalinkSpec<EfLink & Record<string, unknown>> = {
 };
 
 export function ErbFristenForm() {
-  const [ausLink] = useState<Partial<EfLink>>(() => {
-    try { return permalinkLesen(EF_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(EF_LINK_SPEC);
   const [key, setKey] = useState<ErbFristKey>((ausLink.key as ErbFristKey | undefined) ?? 'ausschlagung_gesetzlich');
   const [trigger, setTrigger] = useState(ausLink.trigger ?? '2026-03-10');
   const [verschieben, setVerschieben] = useState(ausLink.verschieben ?? true);

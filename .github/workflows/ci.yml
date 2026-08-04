@@ -328,6 +328,14 @@ jobs:
       - name: Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)
         if: needs.diff.outputs.art == 'code'
         run: npm run check:design-tokens && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
+      # UI-Normzitate gegen den Korpus (QS-CODE-AUSSENKANTEN, 4.8.2026): die
+      # ~740 hart kodierten Art.-Zitate der Darstellungsschicht sind eine
+      # zweite Norm-Quelle — jedes muss im committeten Snapshot des zitierten
+      # Erlasses existieren. Offline, Basislinien-Modell, eingebauter §6.7-
+      # Selbsttest (synthetisches Falsch-Zitat muss rot werden).
+      - name: UI-Normzitate (Korpus-Abgleich)
+        if: needs.diff.outputs.art == 'code'
+        run: npm run check:ui-normzitate
       - name: Import-Zyklen
         if: needs.diff.outputs.art == 'code'
         run: npm run check:zyklen

@@ -19,7 +19,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
 
@@ -79,9 +80,7 @@ const GW_LINK_SPEC: PermalinkSpec<GwLink & Record<string, unknown>> = {
 };
 
 export function GewaehrleistungForm() {
-  const [ausLink] = useState<Partial<GwLink>>(() => {
-    try { return permalinkLesen(GW_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(GW_LINK_SPEC);
   const heute = format(new Date(), 'yyyy-MM-dd');
   const [typ, setTyp] = useState<GwVertragstyp>((ausLink.typ as GwVertragstyp | undefined) ?? 'fahrniskauf');
   const [vertragsdatum, setVertragsdatum] = useState(ausLink.vertragsdatum ?? '2026-02-01');

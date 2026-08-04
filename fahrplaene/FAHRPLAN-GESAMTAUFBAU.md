@@ -434,3 +434,18 @@ amtlich nutzbar mit harter Auflage. Die Kern-Auflagen je Werkzeug stehen oben in
 > >
 > > **Einzeln:** I1 + I2 ✅ in W2·5c gebaut · Merker Startseite ✅ entparkt → W2·5c. Wortlaut →
 > > `ROADMAP-CHRONIK.md` → Eingang-30.6. bzw. Steuerungs-Prosa (24.7.2026).
+
+---
+
+## §3 · ROADMAP-Spec-Nachzug `W3·10` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 3, Schritt `W3·10` — AP-11 rückwirkend angewandt (ROADMAP-Diät
+Welle 3, 4.8.2026). Der Schritt zeigt per `fahrplan:` auf `archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md`
+(deklarierte Ausnahme); die Begründung der Ausnahme steht darum hier, nicht in der Archivdatei.
+In der ROADMAP bleiben Titel, `@meta`, die Klingen-Aufzählung und der Ausnahme-Vermerk.
+Steuert nicht — Spec-Heimat.*
+
+> **`fahrplan: archiv/…` ist eine deklarierte Ausnahme** (31.7.2026): für W3·10 gibt es keinen
+> aktiven Nachfolger, die Archivdatei trägt Stand 14.6.2026 und ist teilweise stale. **Erster
+> Arbeitsschritt** ist darum die Restpunkte-Extraktion aus §P3 in einen aktiven Fahrplan.
+> Begründung wörtlich → `ROADMAP-CHRONIK.md` → W3·10 (3.8.2026).

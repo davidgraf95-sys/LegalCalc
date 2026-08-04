@@ -663,3 +663,13 @@ ungegated mit — genau die Vermischung von Risiko-Klassen, die §14.2 untersagt
 *Hinweis zur Herkunft: Zu diesem Punkt hat ein Sub-Agent am 2.8.2026 einen Task-Chip angelegt.
 Der Chip ist durch diesen Plan-Eintrag **ersetzt** (Vorgabe David: keine Chips) — massgeblich ist
 allein dieser §.*
+
+---
+
+## §3-N · ROADMAP-Spec `W2·13-KANTONE-DRIFT` — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Teilschritt `W2·13-KANTONE-DRIFT` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben Checkbox, Titel, `@meta`, der Anlass in
+Kurzform und der Pointer auf §3. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §3 dieser Datei.***
+
+> beim Bundes-Durchgang vom 2.8.2026 (`--nur=bund`) meldete der Drift-Abgleich **~28 kantonale Snapshots mit echter Inhaltsdrift** (u. a. BE 154.21 neue Fassung 1.8.2026, AG 291.150 neu aufgehobene Artikel) — bewusst ausgeklammert und **unverifiziert**: Zahl und Liste werden im Schritt neu erhoben (`check:normtext-netz`), nicht übernommen (§5/§7). Kanton-weise portioniert, je Erlass Quelle+Stand+Live-Link, `verified` nie automatisch. **Reihenfolge gegen `K-7` (3.8.2026 festgehalten):** für **PDF-Kantone** erst das Dehyphenations-Gate aus K-7, sonst zementiert der Nachzug genau die Extraktionsfehler, die K-7 beheben soll — K-7 sperrt jeden FR/VS/AR-PDF-Nachzug ausdrücklich. Nicht-PDF-Kantone sind davon frei.

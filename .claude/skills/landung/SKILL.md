@@ -101,6 +101,19 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    nur bei hängendem VERCEL-Kontext, er erzeugt KEINEN Actions-Lauf (kein
    Datei-Diff) und schiebt den Head von bereits grünen Check-Runs weg.
 
+   **Vercel-Tageslimit (Free-Tier ~100 Deploys/Tag) — David-Entscheid 4.8.2026
+   («lass vercel aus dem spiel»):** Reisst das Limit (Check-Meldung
+   «Deployment rate limited»), zählt der Required-Kontext «Vercel» NICHT als
+   Prüf-Rot. Massgeblich ist allein die volle Actions-Batterie; bei deren Grün
+   ist `gh pr merge --squash --admin` der freigegebene Weg (Interim, bis
+   QS-CI-VERCEL/#445 die Ursache behebt: md-only-Diffs sollen den Vercel-Build
+   gar nicht erst verbrauchen). Zwei Grenzen: (1) Der Override deckt NUR den
+   Limit-/Billing-Fall — ein Vercel-Rot mit Build-Fehler bleibt Rot. (2) An
+   landeintensiven Tagen frisst jedes `update-branch` einen Deploy — Kette
+   deshalb seriell und ohne überflüssige Zwischen-Pushes fahren. Realfall
+   4.8.2026 abends: >100 Deploys durch 16-PR-Tag, #455 blockierte trotz
+   vollständig grüner Batterie.
+
 6b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
    die **amtliche Quelle** prüfen und die Trefferquote im PR dokumentieren.
