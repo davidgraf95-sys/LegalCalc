@@ -63,7 +63,16 @@ function ueberSchatten(quelle: DatabaseSync, mitContent: boolean, ddl: string): 
     const ins = db.prepare(
       `INSERT INTO f${l.suffix} (${l.spalten.join(', ')}) VALUES (${l.spalten.map(() => '?').join(', ')})`,
     );
-    for (const w of l.werte) ins.run(...(w as Array<string | number | null | Uint8Array>));
+    // BLOBs vor dem Re-Insert KOPIEREN (Gegenprüfung 4./5.8.2026, Probe 9): auf Node
+    // 22.23.x bindet ein aus node:sqlite GELESENES Uint8Array(0) als SQL NULL
+    // («NOT NULL constraint failed: f_idx.term»), eine frische Kopie bindet korrekt —
+    // auf 22.23.1/22.23.2/24.16 verifiziert. Der Produktionspfad re-bindet nie via
+    // node:sqlite (Hrana-base64 über Buffer.from, sauber auf 22.23.1) — betroffen war
+    // ausschliesslich diese Test-Rekonstruktion.
+    for (const w of l.werte) {
+      const kopiert = w.map((v) => (v instanceof Uint8Array ? new Uint8Array(v) : v));
+      ins.run(...(kopiert as Array<string | number | null | Uint8Array>));
+    }
   }
   return db;
 }

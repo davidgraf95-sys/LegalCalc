@@ -51,10 +51,24 @@ export interface SchattenLadung {
 /** Shadow-Tabellen einer FTS5-Tabelle in LADE-Reihenfolge.
  *  `_content` fehlt bei contentless-Tabellen (`content=''`) — dort trägt der Index keinen
  *  Text, und die Tabelle wird von SQLite gar nicht erst angelegt. */
-const SCHATTEN_SPALTEN: Array<{ suffix: string; spalten: string[]; nurStandalone?: true }> = [
+const SCHATTEN_SPALTEN: Array<{
+  suffix: string;
+  spalten: string[];
+  nurStandalone?: true;
+  /** Spalten, die in der Quelle ZERO-LENGTH-BLOBs tragen können (empirische Inventur
+   *  4./5.8.2026: nur der erste `term` je Segment in `_idx`; `block`/`sz` nie leer).
+   *  Für sie läuft `typeof()` mit, und ein vom Treiber genulltes Feld wird als
+   *  `Uint8Array(0)` restauriert — DEFENSIV: ein Lese-null wurde auf Node
+   *  22.23.1/22.23.2/24.16 NICHT beobachtet (Gegenprüfung, Probe 9; die tatsächliche
+   *  Node-22-Wurzel des CI-Rots vom 4.8.2026 sass auf der BIND-Seite der
+   *  Test-Rekonstruktion, s. turso-fts-index.test.ts). Die Schicht bleibt, weil sie
+   *  nachweislich treu ist (feuert nur bei SQLite-typeof 'blob') und eine etwaige
+   *  Lese-Variante anderer Runtimes lautlos-korrekt decken würde. */
+  blobSpalten?: string[];
+}> = [
   { suffix: '_config', spalten: ['k', 'v'] },
-  { suffix: '_data', spalten: ['id', 'block'] },
-  { suffix: '_idx', spalten: ['segid', 'term', 'pgno'] },
+  { suffix: '_data', spalten: ['id', 'block'], blobSpalten: ['block'] },
+  { suffix: '_idx', spalten: ['segid', 'term', 'pgno'], blobSpalten: ['term'] },
   { suffix: '_docsize', spalten: ['id', 'sz'] },
   { suffix: '_content', spalten: ['id', 'c0', 'c1', 'c2', 'c3', 'c4'], nurStandalone: true },
 ];
@@ -82,17 +96,35 @@ export function* leseFtsSchatten(
   // ~64 MiB Blobs. Würden alle Ladungen zugleich aufgebaut, lägen sie auch alle zugleich im
   // Heap. So ist immer nur EINE Shadow-Tabelle materialisiert — dieselbe Grössenordnung, die
   // der Sync schon vorher hielt.
-  for (const { suffix, spalten, nurStandalone } of SCHATTEN_SPALTEN) {
+  for (const { suffix, spalten, nurStandalone, blobSpalten } of SCHATTEN_SPALTEN) {
     if (nurStandalone && !mitContent) continue;
     // `ORDER BY rowid` scheidet bei WITHOUT ROWID (`_idx`, `_config`) aus; die Reihenfolge
     // ist für die Ziel-Tabelle ohnehin unerheblich (gewöhnliche Tabellen mit eigenem
     // PRIMARY KEY). Sortiert wird trotzdem — nach dem Schlüssel —, damit der Lauf
     // deterministisch ist und zwei Sync-Läufe dieselben Requests erzeugen (§2).
     const ordnung = spalten[0] === 'segid' ? 'segid, term' : spalten[0];
+    // Für Leer-BLOB-Kandidaten läuft `typeof()` mit: nur wenn SQLite selbst 'blob' sagt,
+    // wird ein vom Treiber genulltes Feld als Uint8Array(0) restauriert — ein ECHTES
+    // SQL-NULL bliebe NULL und schlüge remote weiter laut fehl (kein stilles Glätten).
+    const typSpalten = (blobSpalten ?? [])
+      .map((s) => `, typeof(${s}) AS __typ_${s}`)
+      .join('');
     const rows = lokal
-      .prepare(`SELECT ${spalten.join(', ')} FROM ${tabelle}${suffix} ORDER BY ${ordnung}`)
+      .prepare(`SELECT ${spalten.join(', ')}${typSpalten} FROM ${tabelle}${suffix} ORDER BY ${ordnung}`)
       .all() as Array<Record<string, Wert>>;
-    yield { suffix, spalten, werte: rows.map((r) => spalten.map((s) => r[s] ?? null)) };
+    yield {
+      suffix,
+      spalten,
+      werte: rows.map((r) =>
+        spalten.map((s) => {
+          const wert = r[s] ?? null;
+          if (wert === null && blobSpalten?.includes(s) && r[`__typ_${s}`] === 'blob') {
+            return new Uint8Array(0);
+          }
+          return wert;
+        }),
+      ),
+    };
   }
 }
 
