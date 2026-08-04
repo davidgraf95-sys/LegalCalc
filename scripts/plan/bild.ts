@@ -16,6 +16,11 @@
 //          npm run plan:bild -- --watch [sek]     → alle N Sekunden neu erzeugen
 //                                                   (Default 60); Seite lädt sich
 //                                                   selbst nach. Kein Server (Spec).
+//          npm run plan:bild -- --pull            → vor jeder Erzeugung git pull
+//                                                   --ff-only (still; scheitert der
+//                                                   Pull — schmutzig/divergiert —,
+//                                                   wird der lokale Stand gezeigt).
+//                                                   Opt-in David 4.8.2026.
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -546,8 +551,13 @@ if (!process.env.VITEST) {
   const out = outIdx >= 0 ? argv[outIdx + 1] : 'tmp/plan-bild.html';
   const watchIdx = argv.indexOf('--watch');
   const watch = watchIdx >= 0 ? Number(argv[watchIdx + 1]) || 60 : null;
+  const pull = argv.includes('--pull');
 
   const schreib = () => {
+    // sh() schluckt Fehler: ist der Checkout schmutzig oder divergiert,
+    // unterbleibt der Pull still und die Seite zeigt den lokalen Stand —
+    // der Erzeugt-Zeitstempel bleibt der Wahrheitsanker.
+    if (pull) sh('git', ['pull', '--ff-only', '--quiet']);
     if (!existsSync(dirname(out))) mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, baueSeite({ watch }));
     console.log(`plan:bild → ${out}${watch ? ` (watch, alle ${watch} s)` : ''}`);

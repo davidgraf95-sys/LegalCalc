@@ -405,7 +405,10 @@ die Sektion mit sichtbarem Hinweis statt zu scheitern.
 abfragen. «Live» heisst hier: `npm run plan:bild -- --watch` regeneriert periodisch (z. B. alle
 60 s) und die Seite lädt sich selbst neu (Meta-Refresh/JS-Reload); der Erzeugungs-Zeitstempel
 steht sichtbar im Kopf, damit nie ein älterer Stand als aktuell durchgeht. Ein Dienst/Server
-wird dafür ausdrücklich NICHT gebaut.
+wird dafür ausdrücklich NICHT gebaut. Weil der Plan-Teil aus dem **lokalen** Checkout gelesen
+wird, gibt es das Opt-in-Flag `--pull` (David 4.8.2026): vor jeder Erzeugung ein stilles
+`git pull --ff-only` — scheitert es (schmutzig/divergiert), unterbleibt es folgenlos und die
+Seite zeigt den lokalen Stand.
 
 **Drei Konventionen (Reibungspunkte-Fix, Go David 4.8.2026):**
 
