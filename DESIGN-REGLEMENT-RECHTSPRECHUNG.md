@@ -225,6 +225,38 @@ vorhanden), kein horizontaler Scroll, Spalte ~minus Gutter. *Quelle:* Tufte
 Evidenz gemischt, kein etablierter Best-Practice. Weglassen. *Quelle:* uxdesign
 Pros/Cons; NN/g.
 
+### P0 — Nachtrag Informationshierarchie (QS-UI 8b Teil 2, 4.8.2026)
+
+**R23 · Das Verdikt eines Entscheids ist die Regeste — und es steht zuoberst.**
+Präzisierung zu Dach-§13.2 für diese Domäne, gemessen und gegatet am 4.8.2026
+(Messliste `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor
+`e2e/qsui-hierarchie.e2e.ts` I6/I7).
+
+1. **Verdikt = Regeste bzw. die als solche gekennzeichnete Zusammenfassung**
+   (R8, `[data-verdikt]`). Liefert die Quelle keine — bei kantonalen Entscheiden
+   ist `/structure` Bund-only —, tritt der erste Abschnitt des Urteilstexts an
+   ihre Stelle. Nie ein Etikett, das mehr behauptet als die Quelle trägt (R18/§8):
+   «Regeste» nur bei amtlicher Regeste, sonst «Zusammenfassung».
+2. **Die Regeste steht VOR dem Urteilstext und vor dem Provenienz-Fuss** — auch
+   auf schmalen Schirmen, wo Erwägungs-Rail und Sprungleiste vor der Lesespalte
+   liegen. Der Rail steht dort als eingeklappter Griff (eine Zeile) über dem
+   Text: eine Navigation hinter ihrem Ziel ist keine, eine aufgeklappte vor dem
+   Ziel drückt das Verdikt weg. Beides ist zu vermeiden, der Griff löst es.
+3. **Regressions-Schranke statt Wunschwert.** Gemessen über vier Entscheid-
+   Flächen: 0.56–0.62 Bildschirmhöhen Desktop, 0.68–0.83 mobil. Der Reader ist
+   damit die einzige Fläche der App, deren Verdikt auf Desktop im ersten
+   Viewport steht. Das Tor nagelt den Zustand bei 1.20 Bildschirmhöhen fest —
+   nicht als Ziel, sondern als Schwelle, ab der jemand etwas über die Regeste
+   geschoben hat.
+4. **Fliesstext hält die Lesespalte** (R1 + Dach-B2) — auch im Provenienz-Fuss
+   und im §8-Hinweis der Übersicht. Gerade die Ehrlichkeits-Zeilen sollen
+   gelesen werden; sie über die volle Breite laufen zu lassen, macht sie zur
+   Fussnote, die niemand liest.
+5. **Übersicht: Filter über den Resultaten bleibt richtig** (R15) — das ist
+   ausdrücklich das Soll und kein Hierarchie-Verstoss. Der gemessene Weg zum
+   ersten Treffer (0.89 Desktop / 1.27 mobil) ist ein Responsive-Thema
+   (`W3·14`), kein Ordnungs-Thema.
+
 ---
 
 ## Gliederung «Darstellungs-Reglement Rechtsprechung» (Repo-Gerüst)

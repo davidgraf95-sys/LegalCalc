@@ -32,7 +32,9 @@ export function KuendigungTimeline({ e }: { e: SperrfristenErgebnis }) {
   const endFarbe = nichtig ? 'var(--brass-500)' : 'var(--sage-500)';
 
   return (
-    <div className="lc-card p-5 lc-reveal space-y-3">
+    // data-ansicht: abgeleitete Ansicht (R4 Ziff. 3) — steht immer NACH dem
+    // Verdikt, vom Tor `e2e/qsui-hierarchie.e2e.ts` (I1) geprüft.
+    <div data-ansicht="kuendigung-zeitstrahl" className="lc-card p-5 lc-reveal space-y-3">
       <p className="lc-overline">Zeitstrahl</p>
       <div className="relative h-24" role="img" aria-label="Zeitstrahl der Kündigungsfrist mit Sperr-/Hemmungsphasen (Details in der Tabelle und im Rechenweg)">
         {/* Basislinie */}

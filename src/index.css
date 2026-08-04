@@ -171,11 +171,28 @@
        Im Dunkel bleibt brass-500 (dort hell genug) — siehe html.dark-Override.
        --focus speist auch --ring (lc-input-Doppelring) und :focus-visible. */
     --focus:var(--brass-700);
-    /* Linien-Töne für Akzent-/Notice-Borders: in Hell = die Status-Mitte
-       (-500), im Dunkel auf ≥3:1 gehoben, OHNE die -500-Mitte zu verschieben
-       (die speist die -bg-color-mix-Flächen). */
+    /* Linien-Töne für Akzent-/Notice-Borders: in Hell die Status-Mitte (-500),
+       im Dunkel auf ≥3:1 gehoben, OHNE die -500-Mitte zu verschieben (die
+       speist die -bg-color-mix-Flächen). */
     --brass-line:var(--brass-500);
-    --warn-line:var(--warn-500);
+    /* QS-UI-WARNLINE (FAHRPLAN-UI-QUALITAET.md §11): --warn-line ist als
+       EINZIGER Linien-Ton von seiner -500-Mitte entkoppelt. Grund ist eine
+       Messung, kein Geschmack — der echte Konsument ist `.lc-notice-warn`, das
+       seine Kante NICHT auf `--surface`, sondern auf der getönten `--warn-bg`
+       rendert (der strengere Grund). Dort mass `var(--warn-500)` am 3.8.2026
+       genau 3.008:1 gegen die 3:1-Schwelle für Nicht-Text-Kontraste
+       (WCAG 2.2 SC 1.4.11, w3.org/TR/WCAG22/#non-text-contrast, W3C
+       Recommendation 5.10.2023) — 0.008 Abstand liegt innerhalb jeder
+       Token-Rundung. Der Wert hier ist warn-500 in OKLCH um L −0.020
+       abgedunkelt (0.639→0.619), Hue und Chroma gehalten bis auf die
+       sRGB-Rundung (67.7°→68.0°, C 0.1327→0.1325): dieselbe Achse, eine Spur
+       tiefer. Neu gemessen (culori, deterministisch):
+       warn-line/warn-bg 3.264 hell · 3.948 dunkel · warn-line/surface 3.686 ·
+       4.566 — alle vier mit Reserve über 3:1 und darum seit QS-UI 8a harte
+       Pflichtpaare in check:farbwelt (vorher gar nicht auf -bg geprüft).
+       --warn-500 selbst ist UNVERÄNDERT: es speist --warn-bg und --warn-solid,
+       eine Verschiebung dort hätte die Fläche mitgezogen. */
+    --warn-line:#B9740D;
     --danger-line:var(--danger-500);
     /* D-1.3: sage/slate nach demselben Muster — Call-Sites greifen NIE mehr
        -500 direkt für Nicht-Text (Borders/Balken); die -500-Mitten bleiben
@@ -322,8 +339,9 @@
        dem dunklen Papier; brass-700 wäre als Outline zu hell/grell. */
     --focus:var(--brass-500);
     /* danger-500 (#9A3F30) erreicht auf dem dunklen Papier nur ~2.7:1 → der
-       Linien-Ton nutzt den hellen danger-700 (≥3:1). brass-/warn-line bleiben
-       auf -500 (dort bereits ≥3:1). */
+       Linien-Ton nutzt den hellen danger-700 (≥3:1). brass-line bleibt auf -500
+       (dort bereits ≥3:1); --warn-line trägt seit QS-UI-WARNLINE seinen eigenen,
+       modus-übergreifenden Wert (Begründung + Messwerte oben in :root). */
     --danger-line:var(--danger-700);
     /* D-1.3: sage/slate-Linien dunkel ebenfalls auf -700 heben — sage-500
        (3.84:1) und slate-500 (3.31:1) liegen dunkel nur knapp über 3:1;
@@ -550,8 +568,24 @@
 
     /* Chrome: klebende Topbar, Fuss, Navigation, Bedienelemente. Der
        Inhalts-Kopf (`main header`) ist bewusst NICHT dabei — er IST die
-       Fundstelle. */
-    header.lc-glass, footer, nav, button, .lc-btn, .lc-live { display: none !important; }
+       Fundstelle.
+
+       §9-Bug-Check zu PR #440, B1 (Wurzelfix): Die Liste nannte `.lc-btn` —
+       aber die Varianten `.lc-btn-outline/-primary/-ghost` sind über
+       `@apply lc-btn` gebaut, und `@apply` inlined DEKLARATIONEN, es vergibt
+       keine Klasse. Ein Element mit `class="lc-btn-outline"` trägt `lc-btn`
+       also NICHT und wurde von dieser Regel nie erfasst. Unauffällig blieb das,
+       weil fast alle Bedienelemente `<button>` sind und schon vom Tag-Selektor
+       fallen. Es traf genau die button-gestylten LINKS — gemessen vier
+       Call-Sites (`vorlagen/ui.tsx` Sprungmarke, `KuendigungSperrForm` 336b-
+       Anker, `VorlagenSprung`, `ZustErgebnisEinleitung`); `MaterialLeser`
+       schrieb `lc-btn lc-btn-outline` und fiel darum zufällig schon vorher.
+       Alle vier sind reine Navigation und gehören nach dem erklärten Zweck
+       dieser Regel («Navigation, Bedienelemente») nicht in eine Kanzlei-Akte.
+       `[class*='lc-btn']` schliesst die Fehlerklasse statt des Einzelfalls
+       (§17) — gemessen ändert es das Druckbild von genau diesen Elementen,
+       kein anderes `lc-btn*` überlebte den Druck ohnehin. */
+    header.lc-glass, footer, nav, button, [class*='lc-btn'], .lc-live { display: none !important; }
     body { background: #fff; }
     .lc-card, [class*='shadow'] { box-shadow: none !important; }
     .lc-reveal { animation: none !important; }

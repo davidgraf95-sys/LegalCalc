@@ -1782,3 +1782,12 @@ darum ist die Verzahnung Burggraben UND das Kriterium, nach dem neue Schritte ei
    entsteht; bei Konflikt gewinnt **immer die Treue** (§1-untergeordnet). Jede Optimierung trägt eine
    explizite Logikverlust-Bewertung. Operationalisiert durch das Tor **`check:perf-budget`** →
    Querschnitt **`QS-PERF`** / **`fahrplaene/FAHRPLAN-PERFORMANCE.md`**.
+
+## W2·5d — Stand-/Beschreibungs-Prosa des Dach-Schritts *(done, verschoben 4.8.2026)*
+
+Wörtlich aus ROADMAP.md überführt (Diät 4.8.2026):
+
+  **Stand 26.7.2026:** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28), E-Reihe A29–A40/E1–E7,
+  §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 gebaut — **offener Rest = EID-3** + Härtungs-/Politur-Posten.
+  UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art (Fedlex = Mindestlatte): EINE Linien-Sprache,
+  Lesespalte `max-w-reading`, Leser-Kopf-Optionen, je Grundart eine Designvorschrift; G3b ist Risiko-Pfad.

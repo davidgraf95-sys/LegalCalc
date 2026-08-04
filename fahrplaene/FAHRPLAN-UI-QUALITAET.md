@@ -62,6 +62,241 @@ Ist die Lesespalte gewahrt (`max-w-reading`) oder läuft Fliesstext über die vo
 Ergebnis je Fläche: eine Zeile **Ist → Soll → Einheit**. Flächen ohne Befund werden
 ausdrücklich als geprüft vermerkt, damit der nächste Durchgang sie überspringen kann.
 
+### §2.1 · Messliste des Durchgangs vom 4.8.2026 (QS-UI 8b)
+
+> **Umfang dieses Durchgangs: die Rechner-Flächen.** §2 verlangt den Durchgang über Rechner-,
+> Rechtsprechungs- **und** Vorlagen-Flächen. Gemessen und begradigt sind hier die 20
+> Rechner-Routen. **Rechtsprechung** (Entscheid-Leser) und **Vorlagen** (Wizard-Ausgabe,
+> Dokumentmappe) stehen noch aus — sie haben eigene Domänen-Reglemente und einen anderen
+> Ergebnisbegriff (ein Entscheid hat kein Verdikt der App, ein Wizard kein Live-Ergebnis).
+>
+> **Nachtrag 4.8.2026 (Teil 2, erledigt):** Rechtsprechung und Vorlagen sind gemessen und
+> begradigt — Messliste, Verdikt-Auslegung je Fläche und Restliste in **§2.2**. Damit ist
+> Teil-Schritt **(b) abgeschlossen** und der `seq-hart`-Vorbehalt von `W2·5h-GESETZ-UI` auf
+> «(a) + (b)» eingelöst. Das Tor in `e2e/qsui-hierarchie.e2e.ts` ist um einen zweiten Block
+> (I6–I10 + A9) erweitert; die Rechner-Invarianten I1–I5 bleiben unverändert auf
+> `[id^="lc-ergebnis"]` gefasst.
+
+Gemessen im gebauten `dist/` (Chromium, hell), zwei Breiten: **1280×800** und **390×844**.
+Kennzahl ist der Abstand vom Seitenanfang zum Verdikt-Satz, in **Bildschirmhöhen** — die
+Grösse, die «wie viele Blickwechsel bis zum Ergebnis» am ehesten abbildet. Zweite Kennzahl
+je Fläche: der Abstand **erste Eckdaten-Kachel → Verdikt** in px; er zeigt, ob sich zwischen
+den beiden etwas eingeschlichen hat, das dort nicht hingehört (R4). Genannt ist jeweils der
+Wert **nach** dem Pass; wo der Pass ihn bewegt hat, steht «vorher → nachher».
+
+| Fläche | Verdikt, Desktop | Verdikt, mobil | Kachel→Verdikt (Desktop) | Befund |
+|---|---|---|---|---|
+| `/rechner/erb-fristen` | 1.31 | 1.98 | 262 px | ohne Befund, geprüft |
+| `/rechner/teuerung` | 1.40 | 2.21 | 243 px | B2: Quellen-Mikrozeile 910 px → behoben |
+| `/rechner/verzugszins` | 1.65 | 2.50 | 244 px | ohne Befund, geprüft |
+| `/rechner/erbteilung` | **2.15 → 1.65** | **2.89 → 2.35** | **666 → 270 px** | R4 Ziff. 2 verletzt → behoben |
+| `/rechner/kuendigung` | 1.70 | 2.45 | —² | R4 Ziff. 1: keine Akzent-Kachel → behoben |
+| `/rechner/zpo-fristen` | 1.71 | 2.43 | 243 px | ohne Befund, geprüft |
+| `/rechner/mietrecht` | 1.73 | 2.52 | 243 px | ohne Befund, geprüft |
+| `/rechner/verjaehrung` | 1.83 | 2.39 | 260 px | ohne Befund, geprüft |
+| `/rechner/schkg-fristen` | 1.91 | 2.51 | 243 px | ohne Befund, geprüft |
+| `/rechner/bgg-fristen` | 1.93 | 3.01 | 262 px | ohne Befund, geprüft |
+| `/rechner/gewaehrleistung` | 1.97 | 3.02 | 283 px | ohne Befund, geprüft |
+| `/rechner/inkasso-strecke` | 2.82 | 4.45 | 244 px | ohne Befund; lange Eingabestrecke |
+| `/rechner/verjaehrung-board` | 3.14 | 4.50 | 282 px | ohne Befund; lange Eingabestrecke |
+| `/rechner/tagerechner` | 3.35¹ | 5.31¹ | 243 px | B2: Abgrenzungs-Hinweis 910 px → behoben |
+
+¹ Der Tagerechner trägt **zwei** Ergebnisblöcke. Der obere (Schnellrechner,
+`lc-ergebnis-einfach`) hat bewusst kein Verdikt und keine Eckdaten-Kacheln (R12 Ziff. 1); er
+beginnt bei rund 1.3 Bildschirmhöhen Desktop / 1.9 mobil. Die genannten 3.35 / 5.31 gelten
+für den unteren Block (`lc-ergebnis-allgemein`, Regime-Rechner) — die schlechtesten Werte
+der App. Ursache sind Preset-Suche und Regime-Tabs über dem zweiten Rechner, nicht die
+Ergebnis-Ordnung: Kachel→Verdikt liegt mit 243 px exakt auf dem Normwert. Siehe Restliste.
+
+² Der Kündigungsrechner öffnet auf dem Lohnfortzahlungs-Teil (Modul A), der keine
+Eckdaten-Kacheln trägt; die korrigierte Akzent-Kachel liegt im Sperrfristen-Teil (Modul B).
+
+Alle Zahlen der Spalte «nachher» sind gegenüber der Erstmessung um 0.01–0.02
+Bildschirmhöhen kleiner, weil der Ergebnisblock durch den Sprungmarken-Wurzelfix (unten)
+Innenabstand verloren hat. Isoliert gemessen (nur diese Änderung, Abstand Blockanfang →
+erste Eckdaten-Kachel auf `/rechner/verjaehrung`): **52 → 42 px auf 1280×800** und
+**63 → 47 px auf 390×844**, also 10 bzw. 16 px. Über die zwölf unveränderten Flächen
+gerechnet ergibt das 9–10 px Desktop und 16 px mobil — konstant, kein Effekt eines
+Einzelfixes.
+
+**Eingabe-gegatete Flächen** (kein Ergebnis ohne Eingabe — regelkonform, kein
+Hierarchie-Befund): `/rechner/streitwert`, `/rechner/prozesskosten`,
+`/rechner/betreibungskosten`, `/rechner/notariat-grundbuch`, `/rechner/gerichtszitat`,
+`/rechner/zustaendigkeit`. Befund hier war ein anderer: der Leerzustand-Platzhalter
+(`W2·10-UI-NAV/N0d·W1`) stand in **einer** von sechs — auf den übrigen blieb die Stelle des
+künftigen Ergebnisses leer. Behoben über den geteilten `ErgebnisPlatzhalter` (neu R13).
+
+**Der tragende Befund ist der systemische — und er bleibt offen.** Auf **keiner** der 14
+Flächen steht das Verdikt im ersten Viewport: Minimum 1.31 Bildschirmhöhen Desktop, 1.98
+mobil, Maximum 3.35 / 5.31. Dieser Pass hat die Ordnung **im** Ergebnisblock geradegezogen
+und die Abkürzung dorthin repariert; er hat die Seiten **nicht** verkürzt. Das wäre ein
+Eingriff in R1/R3 (Seiten- und Formular-Skelett) und damit ein anderer Schritt.
+
+Repariert wurde die Abkürzung: die Sprungmarke `ErgebnisSprung` trug `sm:hidden` — sie war
+auf allen 14 Desktop-Flächen im DOM und `display:none`. Sie gilt jetzt auf jeder Breite (im
+Split-Pane unverändert mobil-only, weil sie viewport-`fixed` ist).
+
+**Wurzelfix aus derselben Messung:** Die Marke lag IM `ErgebnisBlock`, dessen
+`lc-reveal`-Einblendung ein `transform` animiert — ein transformierter Vorfahr wird zum
+enthaltenden Block für `position: fixed`. Während der 220 ms Einblendung sass die Marke
+darum nicht in der Bildschirmecke. Der Befund kam nicht aus dem Auge, sondern daraus, dass
+das neue Tor zuerst nur «sichtbar» prüfte und dann auf Geometrie verschärft wurde — worauf
+es sofort rot wurde (§6.7). Die Marke steht jetzt **neben** dem Block. Zwei erwünschte
+Nebenwirkungen: sie liegt nicht mehr in der `aria-live`-Region (ihr Auftauchen war bisher
+eine Ergebnis-Ansage, obwohl sich am Ergebnis nichts ändert), und der Innenabstand im Block
+springt nicht mehr (gemessen 10 px Desktop / 16 px mobil), je nachdem ob die Marke gerade
+eingeblendet ist.
+
+**Zweiter Befund aus dem §9-Bug-Check zu diesem PR (B1, Druck-Wurzelfix):** Der Druckblock
+in `src/index.css` listete `.lc-btn` — die Varianten `.lc-btn-outline/-primary/-ghost`
+entstehen aber über `@apply lc-btn`, und `@apply` inlined Deklarationen, es vergibt keine
+Klasse. Der Selektor griff bei ihnen also nie. Unbemerkt blieb das, weil fast alle
+Bedienelemente `<button>` sind und schon am Tag-Selektor fallen; es traf genau die
+button-gestylten **Links** — vier Call-Sites, gemessen. Mit dem Wegfall von `sm:hidden`
+druckte die Sprungmarke damit auf jeder Breite mit (auf schmalen Schirmen schon vorher).
+Der Selektor lautet jetzt `[class*='lc-btn']` und schliesst die Fehlerklasse (§17); das Tor
+prüft das echte Druckmedium (I5), nicht die CSS-Quelle.
+
+**Nicht in diesem Durchgang** (Frage 3 des Katalogs oben, «Norm + Link + Stand am Wert»):
+Die Eckdaten-Kacheln tragen den massgeblichen Wert **ohne** Norm-Chip; die Normverweise
+stehen gesammelt am Fuss der ErgebnisAnzeige (R6 Ziff. 5). Das ist ein echter Befund gegen
+§13.5/D1 — aber sein Fix verlangt, je Rechner zu bestimmen, welche Norm den Hauptwert trägt.
+Das ist eine **fachliche** Zuordnung (§7/§1) und gehört nicht in eine Darstellungs-Einheit.
+Als eigener Schritt mit Abnahme durch David zu führen.
+
+**Restliste, nach Kanzlei-Nutzwert geordnet:**
+
+1. **Norm am Wert** (oben) — höchster Nutzwert, fachliche Einheit, Abnahme David.
+2. **Tagerechner, zweiter Block: 3.36 Desktop / 5.33 mobil** — Preset-Suche und Regime-Tabs
+   stehen über ihm. Das ist ein Seiten-Aufbau-Problem (R1/FE-1), kein Ergebnis-Ordnungs-
+   Problem; gehört zu `W3·14` (Responsive/Split), nicht in einen reinen Hierarchie-Pass.
+3. **`ZustErgebnisEinleitung`** — zwischen `<ErgebnisBlock>` und `<ErgebnisAnzeige>` liegen
+   440 Quelltextzeilen Behörden-Auflösung. Nach R12 gilt «ab dem Ergebnisblock R4
+   unverändert», also formal ein Verstoss; inhaltlich ist die aufgelöste Behörde dort
+   plausibel das Verdikt. Ohne Eingabe nicht messbar. Erst entscheiden, was hier das Verdikt
+   IST, dann bauen — sonst baut man die Hierarchie am Fall vorbei.
+4. **Akzent-Kachel fehlt** in `GewaehrleistungForm`, `StreitwertForm`, `SchkgZustaendigkeit-
+   Teil`, `StrafZustaendigkeitTeil`, `ZustErgebnisEinleitung`. Bei Kündigung war der Hauptwert
+   eindeutig (Beendigungsdatum) und wurde gesetzt; bei diesen fünf ist die Wahl fachlich
+   (welcher von mehreren Werten ist der massgebliche?) — mit Punkt 1 zusammen erledigen.
+5. **Verdikt-Kurzwert in der Sprungmarke** — die Marke sagt heute «↓ Ergebnis». Sie könnte den
+   massgeblichen Wert selbst tragen; die Information («welche Kachel ist `akzent`») liegt
+   bereits deklariert im Formular. Reine Darstellung, aber eigener Bau.
+
+### §2.2 · Messliste Teil 2 — Rechtsprechung und Vorlagen (4.8.2026, QS-UI 8b Teil 2)
+
+Damit ist der §2-Durchgang **vollständig**: Teil 1 nahm die 20 Rechner-Routen, dieser Teil
+die Rechtsprechungs- und die 30 Vorlagen-Routen. Der `seq-hart`-Vorbehalt von
+`W2·5h-GESETZ-UI` auf «(a) + (b)» ist damit eingelöst.
+
+**Was «Verdikt» je Fläche heisst** (Auslegung aus den Domänen-Reglementen, weil der
+Ergebnisbegriff hier ein anderer ist als beim Rechner):
+
+| Fläche | Verdikt | Grundlage |
+|---|---|---|
+| Entscheid-Leser | Regeste bzw. die als solche gekennzeichnete Zusammenfassung; fehlt sie der Quelle, der erste Abschnitt des Urteilstexts | `-RECHTSPRECHUNG` R8 («Regeste als abgesetzter Block»), R18/§8 für den Fallback |
+| Rechtsprechungs-Übersicht | die Trefferliste | R14/R15 (Karte + Facetten); Filter über den Resultaten ist dort ausdrücklich das Soll |
+| Vorlagen-Wizard / -Mappe | das **Dokument** (Vorschau-«Papier»), nicht das Formular | `-VORLAGEN` V1 «Ein Dokument, drei Renderer, eine Quelle» — das Dokument IST das Produkt |
+| Vorlagen-Formvorschrift | das Form-Badge im Kopf | V4 «Ehrlichkeit (§8)» + §8: die Form entscheidet über die Gültigkeit, sie darf nicht hinter der Eingabestrecke stehen |
+
+**Rechtsprechung** — Abstand Seitenanfang → Verdikt in Bildschirmhöhen, 1280×800 / 390×844:
+
+| Fläche | Desktop | Mobil | Befund |
+|---|---|---|---|
+| `/rechtsprechung/bge_146_III_1` (BGE mit Regeste) | 0.60 | 0.68 | ohne Hierarchie-Befund, geprüft; B2: Norm-Hinweis im Fuss 976 px → behoben |
+| `/rechtsprechung/bge_150_III_89` | 0.60 | 0.68 | wie oben |
+| `/rechtsprechung/bs_appellationsgericht_AK.2022.32` (kantonal, ohne Regeste) | 0.62 | 0.83 | wie oben |
+| `/rechtsprechung/ag_gerichte_HOR_2024_19` (kantonal) | 0.56 | 0.70 | wie oben |
+| `/rechtsprechung` (Übersicht, erster Treffer) | 0.89 | 1.27 | ohne Hierarchie-Befund; B2: §8-Fuss 728 px → behoben. Siehe Restliste Ziff. 2 |
+
+**Der Entscheid-Leser ist die beste Fläche der App.** Er ist die einzige, deren Verdikt auf
+Desktop im ersten Viewport steht — die 14 Rechner-Flächen aus Teil 1 liegen bei 1.31–3.35.
+Der Grund ist bauartlich: die Regeste steht direkt unter dem Kopf, ohne Eingabestrecke
+davor. Hier war also **nichts geradezuziehen**; der Wert dieses Teils liegt darin, den
+Zustand festzunageln (Tor I7), bevor der nächste Kopf-Ausbau ihn wegdrückt.
+
+**Vorlagen** — Abstand Seitenanfang → **Stelle des Dokuments** (Dokument, Platzhalter oder
+Griff des eingeklappten Vorschau-Blocks), 29 Routen mit Dokument-Ausgabe:
+
+| Familie | Desktop | Mobil | Bauart |
+|---|---|---|---|
+| Wizard-Flächen (26) | 0.65–1.08 | 1.50–2.61 | Desktop: klebende Vorschau-Spalte · mobil: eingeklappt + schwebender Sprung-Knopf |
+| Mappen-Flächen (2) | 2.50 / 5.09 | 4.24 / 8.25 | `/vorlagen/kapitalerhoehung` bzw. `/vorlagen/gmbh-gruendung`: Checkliste vor der Mappe |
+| `/vorlagen/kuendigung-vermieter` | — | — | reine Checkliste, kein Dokument (im Tor ausgewiesen) |
+
+Formvorschrift-Badge, alle 30 Routen: Desktop 0.46–0.62, mobil 0.54–0.88 Bildschirmhöhen —
+**ausnahmslos im ersten Viewport**. Kein Befund; ab jetzt gegatet (I10).
+
+**Die drei Befunde dieses Teils** — alle drei sind Wiederholungen von Fehlerklassen, die
+Teil 1 auf den Rechner-Flächen gefunden hat, was für sich schon die Aussage trägt, dass es
+Muster-Lücken und keine Einzelfälle sind:
+
+1. **Die Stelle des Dokuments war leer** (§8, R13-Analogie). `MappenAnsicht` gab ohne
+   Dokument `null` zurück; auf `/vorlagen/gmbh-gruendung` (4'537 px Desktop / 7'894 px
+   mobil) und `/vorlagen/kapitalerhoehung` stand an der Stelle des künftigen Verdikts
+   **nichts**. `/vorlagen/ag-gruendung` trug als einzige der drei bereits einen
+   Leerzustand — dieselbe «eine von sechs»-Lage wie beim `ErgebnisPlatzhalter` in Teil 1.
+   Behoben über denselben geteilten Baustein (`ErgebnisPlatzhalter`, neu mit `titel`).
+2. **Die Abkürzung zum Verdikt fehlte genau dort, wo der Weg am weitesten ist.** Alle 27
+   Wizard-Flächen tragen den schwebenden Sprung-Knopf; die zwei Mappen-Flächen — die
+   höchsten der Rubrik — trugen **keine Marke**. Gleiche Fehlerklasse wie das `sm:hidden`
+   der Rechner-Sprungmarke in Teil 1: die Abkürzung existierte, nur nicht hier. Behoben
+   über dieselbe `ErgebnisSprung`-Marke (neu mit `label`), nicht über eine Kopie.
+3. **B2/Lesespalte, sieben Fundstellen-Klassen.** Der Speicher-Hinweis im Wizard-Kopf
+   (976 px, 24 Flächen), der §8-Fuss der Rechtsprechungs-Übersicht (728 px), der
+   Norm-Hinweis im Entscheid-Fuss (976 px, 5'093 Seiten), die Notariats-/HR-Hinweise und
+   die Mappen-Blocker (900–926 px), die Phasen-Leads und die Amtliche-Vorlagen-Zeile der
+   GmbH-Gründung, der Termin-Hinweis der Vermieter-Kündigung.
+
+**Methodischer Fund, der über diese Einheit hinausreicht.** Die erste Messung meldete 21
+Lesespalten-Verstösse auf `/vorlagen/gmbh-gruendung`; echt waren **drei**. Der Rest lag in
+geschlossenen `<details>` — Chromium liefert dafür weiterhin `getBoundingClientRect`-Masse,
+weil `::details-content` mit `content-visibility: hidden` arbeitet. Wer nur die Rects
+prüft, misst Text, den niemand sieht. Das neue Tor prüft darum `checkVisibility()`; **das
+Tor aus Teil 1 (I3) tut das noch nicht** und hat damit dieselbe blinde Stelle — es ist
+heute grün, könnte aber einen Verstoss in einem offenen Aufklapper übersehen bzw. einen in
+einem geschlossenen fälschlich melden. Nachziehen: Restliste Ziff. 6.
+
+**Bewusst NICHT angefasst:**
+
+- **`LiveSuche` über der Trefferliste** (`/rechtsprechung`, 43 px Desktop / 61 px mobil).
+  Sie steht laut Code-Kommentar «prominent am Kopf der Ergebnis-Spalte (Auftrag David),
+  über der kuratierten Auswahl». Das ist ein dokumentierter Auftrag; ihn in einem
+  Darstellungs-Pass umzudrehen wäre ein fachlicher Entscheid, kein Hierarchie-Fix.
+  **Meldung, keine Änderung** — David entscheidet.
+- **`SeitenKopf`-Intro (976 px) und `Katalog`-Kategorie-Fussnote (976 px).** Beide sind
+  echte B2-Verstösse, beide liegen in app-weit geteilten Bausteinen (`SeitenKopf`: 14
+  Seiten, darunter `/gesetze`). Sie hier zu fassen hiesse, aus einer Domänen-Einheit in
+  die Gesetzes-Fläche (`W2·5h-GESETZ-UI`) hineinzugreifen. Im Tor als
+  `LESESPALTE_AUSWEIS` ausgewiesen, damit ein NEUER Verstoss trotzdem rot wird.
+- **Reader-Flächen aus `W2·10`** (Erwägungs-Rail, Lesemodus, Sprungleiste): unverändert.
+
+**§8-Wurzelfix am Rande, DOM-neutral.** `VorlagenSeite` rendert die Engine-Warnungen bis
+hierher nur bei gesetztem Opt-in `zeigeWarnungen`; drei der fünf Seiten auf diesem Rahmen
+setzten es nicht. Heute folgenlos — ihre Engines schreiben nie in `warnungen`, nachgeprüft
+in `lib/vorlagen/{forderungsabtretung,verjaehrungsverzicht,rubrum}.ts` — aber die erste
+Warnung, die eine von ihnen je ergänzt, wäre still verschwunden. Ein Flag, das Warnungen
+verstecken kann, ist gegen §8 gebaut; es ist entfernt (§17: Wurzel, nicht Umschiffung).
+
+**Restliste Teil 2, nach Kanzlei-Nutzwert:**
+
+1. **Norm am Wert** (aus Teil 1, unverändert höchster Nutzwert, Abnahme David).
+2. **`/rechtsprechung` mobil: 1.27 Bildschirmhöhen bis zum ersten Treffer.** Über der Liste
+   stehen Kopf (306 px, davon 234 px Intro), Sachgebiets-Band (45 px), `LiveSuche` (61 px)
+   und die Filterzeile (409 px). Kein Reglement-Verstoss — R15 will den Filter mobil über
+   den Resultaten —, aber die schlechteste Browse-Zahl der App. Der Hebel wäre ein mobil
+   eingeklappter Filter; das ist `W3·14` (Responsive), nicht Hierarchie.
+3. **Mappen-Flächen verkürzen** (`gmbh-gruendung` 8.25 Bildschirmhöhen mobil). Die
+   Checkliste VOR der Mappe ist Seiten-Aufbau (R1/FE-1) — dieselbe Grenzziehung wie beim
+   Tagerechner in Teil 1. Im Tor als `TIEF_AUSGEWIESEN` geführt, kompensiert durch die
+   neue Marke.
+4. **`SeitenKopf`/`Katalog`-Lesespalte** (oben) — app-weit, gehört in einen Fundament- oder
+   `W2·5h`-Schritt, dann den `LESESPALTE_AUSWEIS` im Tor leeren.
+5. **Verdikt-Kurzwert in der Marke** (aus Teil 1) — auf den Vorlagen-Flächen wäre das
+   Pendant «↓ Dokumente (3)».
+6. **I3 aus Teil 1 auf `checkVisibility()` nachziehen** (methodischer Fund oben). Klein,
+   verhaltensneutral, aber es macht ein bestehendes Tor erst zuverlässig.
+
 ## §3 · Navigations- und Muster-Konsistenz
 
 Gleiche Handlung, gleiches Muster — über alle Rubriken: ⌘K/Suche, Verlauf/«zuletzt verwendet»,
@@ -230,3 +465,13 @@ W2·5h-GESETZ-UI(8b)]`.
 - **Fertig, wenn:** `check:farbwelt` und der axe-Lauf grün sind und der gemessene Wert im
   Prüfskript dokumentiert ist (nicht nur der Token).
 - **Priorität niedrig** — kein Verstoss, sondern eine zu knappe Einhaltung. §13/DESIGN-REGLEMENT.
+
+**✅ Erledigt 4.8.2026 in QS-UI 8a (Fundament-Pass).** `--warn-line` ist als einziger
+Linien-Ton von seiner `-500`-Mitte entkoppelt und in OKLCH um **L −0.020** abgedunkelt
+(`#C07A1A`→`#B9740D`, Hue/Chroma gehalten); `--warn-500` blieb unverändert, weil es
+`--warn-bg`/`--warn-solid` speist. Gemessen und **im Prüfskript dokumentiert** (die
+Fertig-Bedingung oben): warn-line/warn-bg **3.264 hell · 3.948 dunkel** (vorher
+3.008 · 4.283), warn-line/surface 3.686 · 4.566. Damit trug der Wert genug Reserve,
+um den bis dahin offenen Punkt in `scripts/check-farbwelt.ts` aufzulösen: die vier
+Status-Kanten auf ihrer eigenen Tönungsfläche sind jetzt **harte Pflichtpaare** statt
+einer Fussnote. `check:farbwelt` und der axe-Lauf (hell + dunkel) grün.

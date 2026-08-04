@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { BeruehrtRahmen, Field, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, ErgebnisPlatzhalter, Field, inputCls } from '../vorlagen/ui';
 import { zahlBeliebig as zahl } from './eingabe';
 import { NormText } from '../NormText';
 import { KantonArtikelTrigger } from '../KantonQuelleLink';
@@ -237,6 +237,11 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
           </select>
         </Field>
       </div>
+
+      {/* QS-UI 8b: Ergebnisplatz auch im Leerzustand angesagt (W2·10-UI-NAV/N0d·W1). */}
+      {!ergebnis && (
+        <ErgebnisPlatzhalter was="Kanton und Streitwert wählen — hier erscheinen Gerichtskosten und Parteientschädigung mit ihrer Herleitung." />
+      )}
 
       {ergebnis && (
         <ErgebnisBlock>

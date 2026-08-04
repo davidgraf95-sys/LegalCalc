@@ -374,6 +374,60 @@ OKLCH entworfen + mit culori gemessen (F2):
   grün, Flächen-L-Leiter beide Modi grün. golden byte-gleich (reine CSS-Token). Die
   8 beratenden Warnungen (brass-Chroma, danger-Riss) sind Bestand, unverändert.
 
+**F2b-Nachtrag QS-UI 8a (4.8.2026) — Abdeckung statt neuer Schwellen
+(`FAHRPLAN-UI-QUALITAET.md` §4, Verschärfung Stufe 1).** Keine Schwelle und
+keine Regel ändert sich; geändert hat sich, **wie viel** von der Oberfläche F2
+überhaupt misst. Das Audit fand drei Lücken, die alle drei einen Verstoss stumm
+hätten passieren lassen — die Pflichtpaare wachsen darum von 48 auf 72
+(hell+dunkel):
+
+1. **`ink-900` war in keinem Pflichtpaar.** Der tragende Fliesstext-Ton der
+   ganzen App war ungeprüft (nur die Sekundär-/Tertiär-Tiers ink-600/500 waren
+   es). Neu gegatet auf allen vier Flächen: paper 16.68·14.80 · surface
+   16.99·13.94 · well 15.81·15.52 · paper-raised 17.25·13.50 (hell·dunkel).
+2. **Die Flächen-Rolle `--paper-raised` war ungeprüft.** Das Tor kannte nur
+   paper/surface/well, obwohl `bg-paper-raised` an 283 Stellen steht — Popover,
+   Dialog, Drawer, Menü, also die Fläche, auf der die Navigation stattfindet.
+   Neu gegatet: ink-600 7.61·7.53 · ink-500 5.27·5.04 · brass-700 5.60·9.11 ·
+   `--focus`-Ring 5.60·5.98.
+3. **Status-Kanten wurden auf `surface` gemessen statt auf ihrer eigenen
+   Tönungsfläche.** `.lc-notice-warn`/`-danger` zeichnen ihre Kante auf
+   `--warn-bg`/`--danger-bg` — der strengere Grund. Neu gegatet:
+   warn-line/warn-bg 3.26·3.95 · danger-line/danger-bg 5.54·6.69 ·
+   sage-line/sage-bg 4.02·8.44 · slate-line/slate-bg 4.63·7.77.
+
+Möglich wurde Punkt 3 erst durch **`QS-UI-WARNLINE`** (§11 desselben Fahrplans):
+`--warn-line` lag mit 3.008:1 nur 0.008 über der 3:1-Schwelle für Nicht-Text
+(WCAG 2.2 SC 1.4.11) — ein Tor auf dieser Messerschneide wäre bei der nächsten
+Token-Rundung gekippt. Der Token ist deshalb als **einziger** Linien-Ton von
+seiner `-500`-Mitte entkoppelt und um OKLCH **L −0.020** abgedunkelt
+(`#C07A1A`→`#B9740D`, Hue/Chroma gehalten); `--warn-500` selbst bleibt
+unverändert, weil es `--warn-bg`/`--warn-solid` speist. Sichtbare Wirkung: die
+3-px-Kante des Warn-Hinweises wird eine Spur tiefer — eine deklarierte,
+flip-reversible Darstellungsänderung.
+
+**Bewusst NICHT aufgenommen** (§8 — die Lücke steht sichtbar statt still):
+`placeholder/paper-raised` dunkel 4.53 gegen die 4.5-Schwelle (derselbe
+Messer-Rand, und der Platzhalter lebt ohnehin auf `--well`), sowie
+`brass-line/paper` hell 2.98 — für das Paar fand das Audit keinen Konsumenten
+(`.lc-notice`/`.lc-akzent-brass` zeichnen auf `--surface`), ein Riss-Eintrag
+ohne belegten Call-Site wäre ein erfundener Befund (§7).
+
+**Abdeckung von `axe` analog:** dunkel liefen bisher drei Prüfpunkte, hell
+dreizehn. Alle Hauptrouten laufen jetzt in **beiden** Modi (`e2e/a11y.e2e.ts`,
+Block «Dunkelmodus flächendeckend»). Belegt an einer injizierten
+Dunkel-Regression: 3 neue Dunkel-Prüfpunkte rot, ihre 7 Hell-Zwillinge grün.
+
+**F3-Präzisierung (gemessen, keine neue Regel).** Tailwinds Utility
+`outline-none` erzeugt `outline: 2px solid transparent` — eine Outline in Alpha
+0. Ein `focus:outline-none` ohne gleichwertigen Ersatz erfüllt F3 also **nicht**,
+auch wenn eine Outline-Breite messbar bleibt; ein Audit muss die Outline-**Farbe**
+prüfen, nicht ihre Breite. Der app-weite Sweep (9 Hauptrouten; Umfang einmalig erhoben,
+4.8.2026) fand auf den per Tab erreichbaren Flächen **null** Verstösse; die zwei
+Fundstellen lagen hinter Popover bzw. Split-View und sind gefixt (`Shell.tsx`
+Pane-Gutter, `BezugZeitWahl.tsx` Datumsfeld) — beide trugen im Fokus nur einen
+Farbwechsel, was F3 ausdrücklich verbietet.
+
 ## G · Rollen, Farb-Wörterbuch & Wärme-Architektur (D-2-Nachträge)
 
 Deklarierte §13-Nachträge aus FAHRPLAN-DESIGN-WAERME **D-2** (Rollen-Alias-

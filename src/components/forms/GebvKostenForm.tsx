@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { BeruehrtRahmen, Checkbox, FehlerBox, Field, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, Checkbox, ErgebnisPlatzhalter, FehlerBox, Field, inputCls } from '../vorlagen/ui';
 import { zahlBeliebig as zahl } from './eingabe';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
@@ -142,6 +142,11 @@ export function GebvKostenForm({ minimal = false }: { minimal?: boolean } = {}) 
       </div>
 
       {fehler && <FehlerBox fehler={[fehler]} />}
+
+      {/* QS-UI 8b: Ergebnisplatz auch im Leerzustand angesagt (W2·10-UI-NAV/N0d·W1). */}
+      {!ergebnis && !fehler && (
+        <ErgebnisPlatzhalter was="Forderungsbetrag eingeben — hier erscheinen die Betreibungskosten und ihre Herleitung." />
+      )}
 
       {ergebnis && (
         <ErgebnisBlock>

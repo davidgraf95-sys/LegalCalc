@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { BeruehrtRahmen, Field, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, ErgebnisPlatzhalter, Field, inputCls } from '../vorlagen/ui';
 import { zahlNichtNegativ as zahl } from './eingabe';
 import { NormText } from '../NormText';
 import { KantonArtikelTrigger } from '../KantonQuelleLink';
@@ -163,6 +163,11 @@ export function NotariatGrundbuchForm({ minimal = false }: { minimal?: boolean }
         <input type="checkbox" checked={steuer} onChange={(e) => setSteuer(e.target.checked)} className="mt-0.5" />
         <span>Handänderungssteuer einbeziehen (kantonale/kommunale Steuer)</span>
       </label>
+
+      {/* QS-UI 8b: Ergebnisplatz auch im Leerzustand angesagt (W2·10-UI-NAV/N0d·W1). */}
+      {!ergebnis && (
+        <ErgebnisPlatzhalter was="Kanton und Verkehrswert wählen — hier erscheinen die einzelnen Kostenposten und ihre Summe." />
+      )}
 
       {ergebnis && (
         <ErgebnisBlock>

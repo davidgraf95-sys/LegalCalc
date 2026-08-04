@@ -173,7 +173,10 @@ export function TeuerungForm() {
             <PdfExportButton config={pdfConfig} />
             <LinkTeilenButton query={() => permalinkKodieren(TEU_LINK_SPEC, { modus, betrag, von, bis, rundung: rundung || undefined })} />
           </div>
-          <p className="text-micro text-ink-500">
+          {/* QS-UI 8b (B2): Die Quellen-Mikrozeile (R4 Ziff. 7) lief über die volle
+              Kartenbreite — gemessen 910 px und 104 Zeichen je Zeile gegen die
+              640-px-Lesespalte. Nur Breite; Quellenangabe unverändert (§5/§7). */}
+          <p className="text-micro text-ink-500 max-w-reading">
             Quelle: {LIK_QUELLE} · {LIK_STAND} · freie Nutzung, Quellenangabe Pflicht (OPEN-BY)
             {basisAuto(von, bis) && ` · Basis automatisch gewählt`}
           </p>

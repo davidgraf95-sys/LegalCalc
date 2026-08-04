@@ -6,7 +6,7 @@ import {
   type GmbhStatutKlausel,
   type Phase,
 } from '../lib/gruendungsunterlagen';
-import { Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
+import { ErgebnisSprung, Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
 import { NormChip } from '../components/vorlagen/NormChip';
 import { NormText } from '../components/NormText';
 import { GmbhDokumentmappe } from '../components/vorlagen/GmbhDokumentmappe';
@@ -111,7 +111,7 @@ export function VorlageGmbhGruendung() {
           {(card?.norms ?? []).map((n) => (
             <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
           ))}
-          <span className="lc-badge lc-badge-warn">Checkliste + Dokumentmappe (Urkunde als Entwurf)</span>
+          <span data-formgate className="lc-badge lc-badge-warn">Checkliste + Dokumentmappe (Urkunde als Entwurf)</span>
         </div>
       </div>
 
@@ -176,7 +176,7 @@ export function VorlageGmbhGruendung() {
           <section key={ph.id} className="lc-card p-5 sm:p-6 space-y-3">
             <div>
               <GruppenTitel>{ph.titel}</GruppenTitel>
-              <p className="text-body-s text-ink-500">{ph.lead}</p>
+              <p className="text-body-s text-ink-500 max-w-reading">{ph.lead}</p>
             </div>
             <ul className="space-y-3">
               {zeilen.map((z) => (
@@ -226,7 +226,7 @@ export function VorlageGmbhGruendung() {
             <li key={h.slice(0, 40)}>{h}</li>
           ))}
         </ul>
-        <p className="text-xs text-ink-500">
+        <p className="text-xs text-ink-500 max-w-reading">
           Amtliche Vorlagen: Musterstatuten und Muster-Erklärungen beim Handelsregisteramt des Kantons Zürich
           (zh.ch, notariate-zh.ch), Lex-Koller-Formular beim jeweiligen kantonalen Handelsregisteramt;
           elektronischer Weg über EasyGov (die Beurkundung bleibt beim Notariat).
@@ -236,6 +236,13 @@ export function VorlageGmbhGruendung() {
       {/* Ausbaustufe 9b (7.6.2026): Volldokumente aus denselben Weichen */}
       <GmbhDokumentmappe weichen={eingaben}
         docxErlaubt={card?.modus === 'vorlage' && (card.output?.includes('docx') ?? false)} />
+
+      {/* Abkürzung zum Verdikt (QS-UI 8b Teil 2). Diese Fläche ist die höchste der
+          Vorlagen-Rubrik — 4'537 px Desktop / 7'894 px mobil — und der Dokumentblock
+          steht ganz unten. Eine Marke gab es hier als einziger Vorlagen-Fläche mit
+          Dokument-Ausgabe gar nicht (gemessen über alle 30 Routen). Dieselbe
+          `ErgebnisSprung`-Marke wie auf den Rechnern (§10). */}
+      <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />
     </div>
   );
 }
