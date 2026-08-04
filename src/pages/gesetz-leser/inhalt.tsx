@@ -529,7 +529,13 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   const weiterlesenGelesen = useRef<string | null>(null);
   useEffect(() => {
     const key = erlass?.key;
-    if (!key || !erlass || istSekundaer) return;
+    // `eintraege` MUSS stehen, bevor der Riegel fällt (§9-Bug-Check B2): der
+    // Effekt lief sonst schon im Zwischen-Render (Erlass geladen, Artikel noch
+    // nicht), verglich gegen einen Dokumentanfang, den er noch gar nicht kannte,
+    // und verriegelte sich danach gegen den Nachlauf — die Unterdrückung «nichts
+    // anbieten, was ohnehin gilt» griff damit NIE, und der Chip bot bei scrollY 0
+    // «Weiterlesen bei Art. 1» an.
+    if (!key || !erlass || istSekundaer || !eintraege) return;
     if (weiterlesenGelesen.current === key) return;
     weiterlesenGelesen.current = key;
     // Deep-Link: die Adresse nennt bereits ein Ziel. Wer einem Link auf Art. 5

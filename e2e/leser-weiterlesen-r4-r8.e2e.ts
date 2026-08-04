@@ -208,6 +208,62 @@ test('R8-Koexistenz: im Reader bleiben «/» und ⌘K die Suche, und j tippt im 
   expect(await page.evaluate(() => window.scrollY), 'kein Sprung aus dem Eingabefeld heraus').toBe(vorher)
 })
 
+test('R8/B1: bei OFFENEM «?»-Overlay navigiert j/k nicht — der Dialog-Guard nimmt sich nicht selbst aus', async ({ page }) => {
+  // §9-Bug-Check B1. Die erste Fassung nahm das EIGENE Overlay pauschal von
+  // Guard 3 aus, damit «?» ein Toggle bleibt — und liess damit auch j/k
+  // durchlaufen: das Dokument scrollte HINTER dem offenen Dialog (+318 px).
+  // Ein Modal hat eine Fokusfalle; was dahinter passiert, hat niemand gewollt.
+  await page.goto(ERLASS)
+  await readerBereit(page)
+  await leseBis(page, 12)
+
+  await page.keyboard.press('?')
+  const dialog = page.getByRole('dialog', { name: 'Tastatur-Kurzbefehle' })
+  await expect(dialog).toBeVisible()
+
+  const vorher = await page.evaluate(() => window.scrollY)
+  await page.keyboard.press('j')
+  await page.waitForTimeout(800) // dem Sprung Zeit geben, falls er fälschlich käme
+  expect(await page.evaluate(() => window.scrollY), 'j bewegt das Dokument hinter dem Dialog NICHT').toBe(vorher)
+  await page.keyboard.press('k')
+  await page.waitForTimeout(800)
+  expect(await page.evaluate(() => window.scrollY), 'k bewegt das Dokument hinter dem Dialog NICHT').toBe(vorher)
+
+  // «?» bleibt trotzdem ein Toggle — das war der Grund für die Ausnahme, und er
+  // muss ohne sie weiter tragen.
+  await page.keyboard.press('?')
+  await expect(dialog).toBeHidden()
+})
+
+test('R4/B2: kein Angebot, wenn die gemerkte Stelle der Dokumentanfang ist', async ({ page }) => {
+  // §9-Bug-Check B2. Der Lese-Effekt lief schon im Zwischen-Render
+  // (`erlass` da, `eintraege` noch null), setzte den Ref-Riegel und verglich
+  // gegen einen Dokumentanfang, den er noch gar nicht kannte — die
+  // Unterdrückung griff nie und der Chip bot «Weiterlesen bei Art. 1» an,
+  // während man bei scrollY 0 exakt dort stand.
+  await page.goto(ERLASS)
+  await readerBereit(page)
+  await leseBis(page, 12)
+
+  // Den gemerkten Eintrag auf den ERSTEN Artikel umschreiben. Gesät wird nur das
+  // Token/Label — der `stand` bleibt der echte, von der App selbst geschriebene
+  // Wert (sonst schlüge die Invalidierung zu und der Test bewiese nichts).
+  // Der Weg über echtes Scrollen führt hier nicht ans Ziel: am Dokumentanfang
+  // liegt der erste Artikel UNTER der Spy-Bezugslinie, der Spy meldet also
+  // zurecht gar keinen Artikel.
+  await page.evaluate((k) => {
+    const alle = JSON.parse(localStorage.getItem(k) ?? '[]')
+    const erster = (document.querySelector('[id^="art-"]') as HTMLElement).id.replace(/^art-/, '')
+    alle[0] = { ...alle[0], token: erster, label: `Art. ${erster}` }
+    localStorage.setItem(k, JSON.stringify(alle))
+  }, SPEICHER)
+
+  await page.goto(ERLASS)
+  await readerBereit(page)
+  await page.waitForTimeout(1500) // dem Chip Zeit geben, falls er fälschlich käme
+  await expect(page.locator('[data-weiterlesen]')).toHaveCount(0)
+})
+
 test('R8/A9: «?»-Overlay unter CPU-Drossel — flüssig und ohne Layout-Sprung (CLS 0)', async ({ page }) => {
   await page.goto(ERLASS)
   await readerBereit(page)

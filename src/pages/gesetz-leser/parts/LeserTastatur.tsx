@@ -91,15 +91,30 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       // Guard 2: Eingabefelder tippen Buchstaben, sie navigieren nicht.
       if (istEingabe(e.target)) return;
-      // Guard 3: hinter einem offenen modalen Dialog wird nicht navigiert. Das
-      // eigene Hilfe-Overlay ist ausgenommen — sonst liesse es sich nur noch per
-      // Escape schliessen und «?» wäre kein Toggle mehr.
-      const modal = document.querySelector('[role="dialog"][aria-modal="true"]');
-      if (modal && !dialogRef.current?.contains(modal) && modal !== dialogRef.current) return;
+      // «?» SCHLIESST das eigene Overlay — auch dann, wenn es selbst das offene
+      // Modal ist. Dieser eine Zweig steht vor Guard 3, weil er der einzige ist,
+      // der eine Selbst-Ausnahme rechtfertigt: er RÄUMT den Dialog weg, statt
+      // hinter ihm zu wirken. `dialogRef.current` ist nur gesetzt, solange das
+      // Overlay gemountet ist (geschlossen rendert die Komponente `null`).
+      //
+      // §9-Bug-Check B1: früher nahm Guard 3 das eigene Overlay PAUSCHAL aus —
+      // damit lief auch j/k weiter und scrollte das Dokument HINTER dem offenen
+      // Dialog. Ein Modal hat eine Fokusfalle; was dahinter passiert, hat
+      // niemand gewollt. Die Ausnahme gilt jetzt nur noch für die Taste, die
+      // den Dialog beendet.
+      if (e.key === '?' && dialogRef.current) {
+        e.preventDefault();
+        setHilfeOffen(false);
+        return;
+      }
+      // Guard 3: hinter einem offenen modalen Dialog wird nichts bedient — ohne
+      // Ausnahme, das eigene Overlay eingeschlossen (dasselbe Prinzip, nach dem
+      // `Shell.tsx` F6 sperrt).
+      if (document.querySelector('[role="dialog"][aria-modal="true"]')) return;
 
       if (e.key === '?') {
         e.preventDefault();
-        setHilfeOffen((o) => !o);
+        setHilfeOffen(true);
         return;
       }
       if (!NAVIGATION.has(e.key)) return;
