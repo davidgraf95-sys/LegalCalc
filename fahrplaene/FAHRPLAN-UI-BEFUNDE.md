@@ -701,3 +701,22 @@ als Satz in `src/index.css` beim Regelblock, nicht nur im Fahrplan.
   als Chip auftreten darf) — bleibt `FAHRPLAN-UI-QUALITAET.md` §3(c) / `W2·10-UI-NAV`. Ebenfalls
   bewusst aussen vor: die Startseiten-Chips (`start/GesetzeChips.tsx`), die auf keiner der vier
   LM-044-Routen liegen.
+
+---
+
+## §24 · ROADMAP-Spec-Nachzug `W2·17-UI-BEFUNDE` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·17-UI-BEFUNDE` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, das Triage-Ergebnis, die
+Queue-Regel, die Batch-Einzeiler B3…B19 und der Pointer auf §1. Steuert nicht — Spec-Heimat.
+**Davids Freigabe-Wortlaut ist unverändert übernommen.***
+
+> **Freigabe David 3.8.2026:** Kette B3→B19 läuft wie geplant seriell; stehende Erlaubnis, ein
+> blockiertes Glied zu überspringen und zu melden (Übersprungenes bleibt offen, Kette läuft weiter).
+
+### §24.1 `W2·17-UI-BEFUNDE-B4` — Grenz-Auflage im Wortlaut *(→ Bau-Spec: §5 dieser Datei)*
+
+*Herkunft: `ROADMAP.md` (verschoben 4.8.2026, ROADMAP-Diät Welle 3); dort bleibt der Grenz-Hinweis
+in Kurzform.*
+
+> **Grenze:** hier werden nur die 12 extern erhobenen Einzelbefunde abgearbeitet — der flächige UX-Pass derselben Seite ist `W2·5h-GESETZ-UI`, die Darstellungs-Vorschriften sind `W2·5d`. Kollisions-Precheck gegen beide vor dem Bau.

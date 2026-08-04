@@ -7,6 +7,12 @@
 // · W2·6-B · W2·6-NKEY · W2·6a-MAT · W2·7 · W2·7-BEZUG · W2·7-BEZUG-B7 · W2·12-HYGIENE · QS-PH
 // · QS-CURRENCY · W2·17-UI-BEFUNDE-B1/-B2/-B20/-N1 · W3·14-Responsive-Audit/-Defekte.
 // Entfernt (gestrichen, Begründung in der Chronik): QS-WISSEN.
+// DIÄT WELLE 2 (4.8.2026, Anlass: Wächter `struktur-rotieren.py --check` rot, ROADMAP.md 120.6 KB
+// über dem 100-KB-Ceiling): dieselbe Mechanik, 14 weitere erledigte Schritte → Chronik-Abschnitt
+// «Umschichtung 4.8.2026». Entfernt: QS-UI-WARNLINE · QS-PLAN-BILD · QS-CODE-FRISTENKERN
+// · W2·5d-EID3/-ANNEX/-SPY/-YC · W2·10-UI-NAV-VR/-R1/-R2/-URL/-R3/-R4/-Z.
+// NICHT entfernt, obwohl done: 'W2·5d' — zwei offene Schritte tragen `dep: [W2·5d]`, Regel 4
+// verlangt die Existenz jeder dep-ID im Plan.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·5d', 'W2·6', 'W2·8', 'W2·9',
@@ -44,11 +50,8 @@ export const INVENTAR: readonly string[] = [
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
   // Der jeweilige Elter behält sein @meta und bleibt das Dach.
-  'W2·5d-EID3', 'W2·5d-ANNEX', 'W2·5d-SPY', 'W2·5d-YC',
   'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
-  'W2·10-UI-NAV-S', 'W2·10-UI-NAV-V', 'W2·10-UI-NAV-VR', 'W2·10-UI-NAV-R1', 'W2·10-UI-NAV-R2',
-  'W2·10-UI-NAV-R3', 'W2·10-UI-NAV-R4', 'W2·10-UI-NAV-J', 'W2·10-UI-NAV-J3', 'W2·10-UI-NAV-O',
-  'W2·10-UI-NAV-Z',
+  'W2·10-UI-NAV-S', 'W2·10-UI-NAV-V', 'W2·10-UI-NAV-J', 'W2·10-UI-NAV-J3', 'W2·10-UI-NAV-O',
   'W2·11-DESIGN-D6', 'W2·11-DESIGN-D7', 'W2·11-DESIGN-D8a', 'W2·11-DESIGN-D8b', 'W2·11-DESIGN-D8c',
   'W2·13-KANTONE-K1', 'W2·13-KANTONE-K2', 'W2·13-KANTONE-K3', 'W2·13-KANTONE-K4',
   'W2·13-KANTONE-K5', 'W2·13-KANTONE-K6', 'W2·13-KANTONE-K7', 'W2·13-KANTONE-K8',
@@ -56,10 +59,6 @@ export const INVENTAR: readonly string[] = [
   'W2·13-KANTONE-K13', 'W2·13-KANTONE-K14',
   'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
   'W3·14-B3',
-
-  // §14-Intake 3.8.2026 (David-Entscheid abends, LM-202): «URL nur bei explizitem
-  // Klick/Teilen aktualisieren» — eigener kleiner Bau-Punkt unter W2·10-UI-NAV.
-  'W2·10-UI-NAV-URL',
 
   // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
   // UI-Befunde des Batches B1 entschieden (LM-048 verworfen, LM-041/LM-044 geöffnet) + zwei
@@ -76,7 +75,7 @@ export const INVENTAR: readonly string[] = [
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
   'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
-  'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN', 'QS-UI-WARNLINE',
+  'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN',
 
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
@@ -92,7 +91,7 @@ export const INVENTAR: readonly string[] = [
   // aus drei read-only Analysen; Befunde in bibliothek/betrieb/code-inventur-2026-08-04.md,
   // Bau-Specs in FAHRPLAN-CODE-VERBESSERUNG.md (§6 dort: Verortung der Befunde, die in
   // QS-PERF/QS-AUTOMATIK/QS-AUTOMATIK-PARITAET/QS-BASIS-DEPS geflossen sind).
-  'QS-CODE-TURSO', 'QS-CODE-FRISTENKERN', 'QS-CODE-AUSSENKANTEN', 'QS-CODE-ENTDOPPLUNG', 'QS-CODE-SPLITS',
+  'QS-CODE-TURSO', 'QS-CODE-AUSSENKANTEN', 'QS-CODE-ENTDOPPLUNG', 'QS-CODE-SPLITS',
 
   // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
@@ -104,11 +103,6 @@ export const INVENTAR: readonly string[] = [
   // ci.yml) ist gebaut; die Sonden-Schärfung + Evaluation der 5 übrigen
   // wächter-gedeckten Tore ist dieser Schritt.
   'QS-AUTOMATIK-PARITAET',
-
-  // Auftrag David 4.8.2026 («ja gefällt mir, leg plan:bild als roadmap-schritt an»):
-  // Lagebild-Generator auf dem bestehenden Parser; Spec in FAHRPLAN-PLAN-STEUERUNG.md
-  // §«Lagebild-Generator `plan:bild`».
-  'QS-PLAN-BILD',
 
   // §17-Vorfall 4.8.2026: Vercel-Free-Tier-Tageslimit (>100 Preview-Deployments)
   // blockierte den merge-pflichtigen Vercel-Check eines App-fremden Diffs (#443,
