@@ -48,6 +48,12 @@ function Fassung({ f }: { f: RegesteSprachfassung }) {
   return <Teil kopf={f.kopf} absaetze={f.absaetze} />;
 }
 
+/* `data-verdikt` (QS-UI 8b Teil 2): Auf einer Entscheid-Seite ist die Regeste bzw.
+ * die als solche gekennzeichnete Zusammenfassung die Kern-Antwort — das, was §13.2
+ * «Verdikt» nennt. Der Griff ist der Tor-Anker von `e2e/qsui-hierarchie.e2e.ts`
+ * (I6/I7); wo eine Quelle keine Regeste liefert (kantonal, `/structure` ist
+ * Bund-only), greift dort der erste Abschnitt des `EntscheidBody` als Auffangnetz —
+ * dieselbe Bauart wie `data-ansicht` + `table, svg` in Teil 1. */
 interface Props {
   regeste: EntscheidRegeste;
   amtlich: boolean;
@@ -66,7 +72,7 @@ export default function RegesteBlock({ regeste, amtlich, mitAnker = true }: Prop
     // Fallback: flacher Text (bisheriges Verhalten, §1: keine erfundene Struktur).
     const text = normalisiereRegeste(regeste.text);
     return (
-      <section {...anker} className="scroll-mt-[var(--rsp-stick,7rem)] lc-highlight space-y-2">
+      <section {...anker} data-verdikt className="scroll-mt-[var(--rsp-stick,7rem)] lc-highlight space-y-2">
         <p className="lc-overline text-brass-700">{amtlich ? 'Regeste' : 'Zusammenfassung'}</p>
         {/* break-words: gleiche Bug-Klasse wie im EntscheidBody (unumbrechbare
             Über-Token, z. B. lange URLs) — Mobil-Querscroll-Schutz (R21). */}
@@ -86,7 +92,7 @@ export default function RegesteBlock({ regeste, amtlich, mitAnker = true }: Prop
   const quelleUrl = primaer.quelleUrl;
 
   return (
-    <section {...anker} className="scroll-mt-[var(--rsp-stick,7rem)] lc-highlight space-y-3">
+    <section {...anker} data-verdikt className="scroll-mt-[var(--rsp-stick,7rem)] lc-highlight space-y-3">
       <p className="lc-overline text-brass-700">{amtlich ? 'Regeste' : 'Zusammenfassung'}</p>
 
       {/* Deutsch prominent. */}

@@ -237,11 +237,16 @@ export function EckdatenKachel({ label, wert, sub, num, akzent }: { label: strin
  *
  *  `was` beschreibt in einem Satz, welche Eingabe fehlt und was danach erscheint.
  *  Der Satz ist reine Navigation: er nennt keine Frist, keinen Schwellenwert und
- *  kein Ergebnis (§3 — Rechtsinhalt bleibt in Engine und Schema). */
-export function ErgebnisPlatzhalter({ was }: { was: React.ReactNode }) {
+ *  kein Ergebnis (§3 — Rechtsinhalt bleibt in Engine und Schema).
+ *
+ *  QS-UI 8b Teil 2 (4.8.2026): `titel` kam hinzu, weil derselbe Leerzustand auf den
+ *  Vorlagen-Dokumentmappen fehlte — dort heisst der künftige Inhalt nicht «Ergebnis»,
+ *  sondern «Dokumente». Default unverändert, also byte-gleich für die Rechner-Aufrufe.
+ *  `data-platzhalter` ist der Tor-Griff (qsui-hierarchie I8). */
+export function ErgebnisPlatzhalter({ was, titel = 'Ergebnis' }: { was: React.ReactNode; titel?: string }) {
   return (
-    <div className="lc-tile border-dashed min-h-40 flex flex-col justify-center gap-1.5 text-center">
-      <p className="lc-overline">Ergebnis</p>
+    <div data-platzhalter className="lc-tile border-dashed min-h-40 flex flex-col justify-center gap-1.5 text-center">
+      <p className="lc-overline">{titel}</p>
       <p className="text-body-s text-ink-500 max-w-reading mx-auto">{was}</p>
     </div>
   );
@@ -260,8 +265,13 @@ export function ErgebnisPlatzhalter({ was }: { was: React.ReactNode }) {
  *  war auf allen 14 im DOM, aber `display:none`. Sie gilt darum neu auf jeder
  *  Breite. IM PANE bleibt es beim bisherigen Verhalten: die Marke ist
  *  viewport-`fixed`, zwei nebeneinander liegende Panes würden zwei Marken
- *  übereinanderlegen (dieselbe Begründung wie bei `sprung={false}` oben). */
-export function ErgebnisSprung({ zielId }: { zielId: string }) {
+ *  übereinanderlegen (dieselbe Begründung wie bei `sprung={false}` oben).
+ *
+ *  QS-UI 8b Teil 2 (4.8.2026): `label` kam hinzu, damit die Vorlagen-Dokumentmappen
+ *  DIESELBE Marke benutzen statt einer Kopie (§10). Dort heisst das Ziel nicht
+ *  «Ergebnis», sondern «Dokumente». Default unverändert ⇒ die 14 Rechner-Aufrufe
+ *  rendern byte-gleich. */
+export function ErgebnisSprung({ zielId, label = '↓ Ergebnis' }: { zielId: string; label?: string }) {
   const { imPane } = usePaneKontext();
   const [zielSichtbar, setZielSichtbar] = useState(false);
   useEffect(() => {
@@ -284,9 +294,9 @@ export function ErgebnisSprung({ zielId }: { zielId: string }) {
     // darum das schlimmste (sie läge auf JEDER Seite über dem Inhalt). Die
     // Utility hängt am Element und überlebt jede künftige Umformulierung des
     // globalen Druckblocks. §9-Bug-Check zu PR #440, B1.
-    <a href={`#${zielId}`} className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-40 lc-btn-outline lc-btn-sm shadow-md bg-surface`}
+    <a href={`#${zielId}`} data-verdikt-sprung className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-40 lc-btn-outline lc-btn-sm shadow-md bg-surface`}
       onClick={(e) => { e.preventDefault(); document.getElementById(zielId)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
-      ↓ Ergebnis
+      {label}
     </a>
   );
 }

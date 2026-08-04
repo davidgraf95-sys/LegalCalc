@@ -806,7 +806,13 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           Regeste ist redaktionell. Diese Wiedergabe ersetzt die amtliche Fassung nicht und
           stellt keine Rechtsberatung dar — massgeblich ist stets die amtliche Quelle.
         </p>
-        <NormTextHinweis />
+        {/* B2/R1 (QS-UI 8b Teil 2): Der Norm-Hinweis lief als einziger Absatz des
+            Provenienz-Fusses mit 976 px über die volle Breite — auf allen 5'093
+            Entscheid-Seiten. Die beiden Absätze darüber halten `max-w-reading`
+            bereits; der Hinweis kommt aus einer geteilten Komponente und wird
+            darum HIER auf die Lesespalte gesetzt (kein Eingriff in die geteilte
+            Komponente, die auch der Gesetzes-Fläche gehört — W2·5h). */}
+        <div className="max-w-reading"><NormTextHinweis /></div>
       </footer>
 
       {/* Einheitliches Kontext-Panel (B3) — V1.3 (W2·7-VZUI §2.2): beide

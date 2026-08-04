@@ -94,6 +94,39 @@ byte-gleich. Reine Token-Umstellungen (Magic-Numbers → benannte Tokens mit
 identischem Wert) werden mit einem datums-/ID-bereinigten Render-Vergleich
 (PDF-Operatoren + DOCX `document.xml`) als byte-gleich bewiesen.
 
+## V7 · Informationshierarchie: das Dokument ist das Verdikt (QS-UI 8b Teil 2, 4.8.2026)
+
+Präzisierung zu Dach-§13.2 («Verdikt zuerst, Warum auf Abruf») für diese Domäne. Sie hält
+fest, was der Hierarchie-Pass vom 4.8.2026 gemessen und gegatet hat; Messliste und
+Begründungen in `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor `e2e/qsui-hierarchie.e2e.ts`
+(I8–I10, A9).
+
+1. **Verdikt = das Dokument, nicht das Formular.** Aus V1 folgt unmittelbar: das Produkt
+   dieser Rubrik ist der fertige Text, nicht die Eingabestrecke. Die Vorschau ist darum
+   kein Beiwerk, sondern die Antwort der Seite.
+2. **Die Stelle des Dokuments ist nie leer.** Steht noch kein Dokument (fehlende Angaben,
+   fachlicher Blocker), steht dort ein Platzhalter — der geteilte `ErgebnisPlatzhalter`
+   (`components/vorlagen/ui.tsx`, `titel="Dokumente"`) oder ein reicherer Leerzustand, der
+   zusätzlich die offenen Blocker nennt (so `/vorlagen/ag-gruendung`). Auf schmalen
+   Schirmen, wo der Vorschau-Block eingeklappt ist, ist der beschriftete Griff die Stelle.
+   Nie nichts: wer nicht sieht, dass dort etwas erscheint, wartet nicht darauf.
+3. **Ist das Dokument nicht im Bild und rückt es nicht von selbst hinein, gibt es eine
+   Abkürzung.** «Von selbst» heisst: die klebende Vorschau-Spalte auf breiten Schirmen —
+   dort wäre eine schwebende Marke ein Zeiger auf ohnehin Sichtbares. Sonst gilt die
+   geteilte `ErgebnisSprung`-Marke der Rechner-Domäne, mit eigenem Label («↓ Dokumente»),
+   **nicht** eine zweite Bauform (§10).
+4. **Die Formvorschrift steht im ersten Viewport.** Das Form-Badge im Kopf (V4
+   «Ehrlichkeit») trägt die Aussage, die über die Gültigkeit entscheidet — «Eigenhändig
+   abzuschreiben», «Papierform · eigenhändig unterzeichnen». Sie darf gedämpft sein, aber
+   nie hinter der Eingabestrecke stehen. Gemessen über alle 30 Routen: 0.46–0.88
+   Bildschirmhöhen.
+5. **Warnungen werden nie weggeschaltet.** Ein Rahmen, der Engine-Warnungen nur auf Opt-in
+   rendert, ist gegen §8 gebaut, auch wenn heute keine Engine welche liefert — die erste,
+   die es tut, verschwände still. `VorlagenSeite` rendert `gates.warnungen` darum
+   bedingungslos (Opt-in `zeigeWarnungen` entfernt 4.8.2026).
+6. **Fliesstext hält die Lesespalte** (Dach-B2/D-1.5). Ausgenommen ist das Vorschau-
+   «Papier»: dessen Mass regelt V2, nicht die Lesespalte der App.
+
 ## Prüfung (Checkliste vor Commit)
 
 1. `npm run golden:vergleich` byte-gleich (Inhalt unberührt — Hauptbeweis §6).

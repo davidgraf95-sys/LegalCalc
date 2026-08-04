@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
 import { Link } from 'react-router-dom';
-import { Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
+import { ErgebnisSprung, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
 import { NormChip } from '../components/vorlagen/NormChip';
 import { MappenAnsicht, MappenGates, NotariatsHinweis, HrAmtHinweis } from '../components/vorlagen/Dokumentmappe';
 import type { PdfBanner } from '../lib/vorlagen/banner';
@@ -120,7 +120,7 @@ export function VorlageKapitalerhoehung() {
           {(card?.norms ?? []).map((n) => (
             <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
           ))}
-          <span className="lc-badge lc-badge-warn">Beschluss-Urkunden als Entwurf</span>
+          <span data-formgate className="lc-badge lc-badge-warn">Beschluss-Urkunden als Entwurf</span>
         </div>
       </div>
 
@@ -284,6 +284,14 @@ export function VorlageKapitalerhoehung() {
           startDokId="gv-beschluss" bannerEntwurf={BANNER_ENTWURF}
           bannerFertig={BANNER_FERTIG} />
       </section>
+
+      {/* Abkürzung zum Verdikt (QS-UI 8b Teil 2). Diese Fläche misst 2'501 px
+          Desktop / 4'511 px mobil; der Dokumentblock liegt an ihrem Fuss und war
+          über KEINE Marke erreichbar — anders als jede Wizard-Vorlage, die den
+          «Vorschau ↓»-Knopf trägt. Gleiche Fehlerklasse wie das `sm:hidden` der
+          Rechner-Sprungmarke in Teil 1: die Abkürzung existierte, nur nicht hier.
+          Es ist DIESELBE `ErgebnisSprung`-Marke (§10), nicht eine zweite. */}
+      <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />
     </div>
   );
 }
