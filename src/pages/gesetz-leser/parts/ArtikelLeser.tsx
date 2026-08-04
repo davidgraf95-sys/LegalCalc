@@ -23,6 +23,8 @@ import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { BezuegeZeile } from './BezuegeZeile';
 import type { ArtikelBezuege } from '../bezuegeLaden';
+import { urlMitHash } from '../../../lib/liveUrlSync';
+import { usePaneKontext } from '../../../components/layout/PaneKontext';
 
 // Schaufenster-Chips: nur die zentralen Leitfälle direkt zeigen (Reihenfolge =
 // `gewicht` aus dem Shard), Rest hinter «+n weitere». V2·B-2 (David 10.7.2026,
@@ -141,6 +143,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   imTreffer?: boolean; onSpringe?: (token: string) => void;
 }) {
   const [kopiert, setKopiert] = useState<'' | 'zitat' | 'link'>('');
+  // LM-202: der Teilen-Knopf schreibt die Adresse — im SEKUNDÄREN Pane nicht
+  // (Herleitung unten bei `kopiere`; massgeblich ist die Rolle, nicht `imPane`).
+  // Ohne montierten Provider liefert der Kontext `rolle: 'primaer'` ⇒
+  // Einzelansicht/Prerender unverändert.
+  const { rolle } = usePaneKontext();
+  const istSekundaer = rolle === 'sekundaer';
   const label = labelMitBereich(e.artikelLabel, e.artikel);
   // KURZ-Zitat («Art. 957 OR») — Fundstellen-Signal für den Entscheid-Sprung
   // (LeitfallZeile `normZitat` → ?norm=). MUSS knapp bleiben, sonst matcht der
@@ -316,7 +324,19 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
     return out;
   })();
   const kopiere = (was: 'zitat' | 'link') => {
-    const permalink = `${typeof window !== 'undefined' ? window.location.origin : ''}${basisPfad}#art-${e.artikel}`;
+    // §5 — der Permalink wird mit DERSELBEN Funktion kodiert, die unten die
+    // Adresse schreibt (`urlMitHash`). Vorher stand hier ein handgebauter
+    // String, und die beiden gerieten bei 54 Artikel-Token auseinander: Tokens
+    // mit Leerzeichen oder Halbgeviert («22 a» in BS-215.400, «36–42» in
+    // AR-233.3, «10. 1» in BS-785.700) liefen als Kopie roh («#art-22 a»), als
+    // Adresse prozent-kodiert («#art-22%20a») aus dem Haus. Kopie ≠ Adresse ist
+    // genau das, was LM-202 abstellt — und ein Leerzeichen im Permalink bricht
+    // zusätzlich die Auto-Verlinkung in Mail- und Chat-Programmen.
+    // `origin` nur im Browser; `kopiere` läuft ausschliesslich aus einem
+    // onClick, der Zweig ohne `window` ist reine Absicherung (kein URL-Wurf).
+    const permalink = typeof window !== 'undefined'
+      ? urlMitHash(`${window.location.origin}${basisPfad}`, `art-${e.artikel}`)
+      : `${basisPfad}#art-${e.artikel}`;
     // B-6 (QS-BASIS): die Zitat-Kopie trägt jetzt den Stand-Ausweis (§7 a–d) —
     // `zitatVoll` (baueZitat) liefert bereits «… (Stand …)» = die Fassung, der
     // Baustein ergänzt Abrufdatum + Permalink (kein doppeltes Standdatum, §5).
@@ -335,6 +355,38 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
     void navigator.clipboard?.writeText(text).then(() => {
       setKopiert(was); window.setTimeout(() => setKopiert(''), 1500);
     });
+    // ── LM-202 (W2·10-UI-NAV-URL, David-Entscheid 3.8.2026) ──────────────────
+    // «Die URL ändert sich NUR bei explizitem Klick auf einen Artikel-Anker bzw.
+    // bei der Teilen-Aktion.» Der «Link»-Knopf IST die Teilen-Aktion — er legte
+    // den Permalink bisher in die Zwischenablage, während die Adressleiste auf
+    // dem zuletzt angesprungenen Anker stehen blieb. Wer den Link teilte und
+    // danach die Adresse las, sah zwei verschiedene Fundstellen (genau die
+    // LM-202-Beobachtung). Darum: der Teilen-Klick setzt den Anker auch in die
+    // Adresse — per `replaceState`, damit das Kopieren keinen «Zurück»-Schritt
+    // erzeugt (Verlaufs-Ökonomie wie LM-209).
+    //
+    // NUR beim «Link»-Knopf, nicht beim «Zitat»-Knopf: das Zitat wandert in
+    // einen Schriftsatz, es ist kein Ortswechsel.
+    //
+    // Und nur, wenn dieser Teilbaum die ADRESSIERTE Seite ist. Die Grenze heisst
+    // darum `!istSekundaer`, NICHT `!imPane` — die beiden fallen im Split-View
+    // auseinander: `Shell.tsx` montiert auch das PRIMÄRE Pane mit
+    // `imPane: true` (Container-Query-Modus), nur die Rolle unterscheidet die
+    // beiden. Mit `!imPane` schwieg der Teilen-Knopf im Split-View auf BEIDEN
+    // Seiten, während `springeZuArtikel` (inhalt.tsx) im primären Pane sehr wohl
+    // schrieb — das LM-202-Symptom (Kopie ≠ Adresse) überlebte dort also genau
+    // in der Ansicht, für die es gebaut wurde. `springeZuArtikel` zieht die
+    // Grenze seit je über `istSekundaer`; hier gilt dieselbe (§5, EINE Grenze).
+    // Sekundäres Pane bleibt aussen vor: es ist nicht die adressierte Seite und
+    // darf die Haupt-URL nie umschreiben (Konvention auch von `wechsleTab`).
+    //
+    // `?r=`-Instanz-Diskriminator: die Adresse behält ihn (er ist die Reiter-
+    // Identität), der KOPIERTE Link trägt ihn bewusst nicht — er ist rein lokal
+    // und hätte beim Empfänger keine Bedeutung. Ohne offene Zweitinstanz sind
+    // beide zeichengleich.
+    if (was === 'link' && !istSekundaer && typeof window !== 'undefined' && window.history) {
+      window.history.replaceState(window.history.state, '', urlMitHash(window.location.href, `art-${e.artikel}`));
+    }
   };
   // Aufhebungsnotiz (G16/#3): die amtliche «Aufgehoben durch … (AS …)»-Notiz eines
   // voll aufgehobenen Artikels liegt als artikel-Ebene-Fussnote im Snapshot

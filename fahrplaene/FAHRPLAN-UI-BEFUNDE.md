@@ -105,6 +105,60 @@ Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
   Klick/Teilen-Weg: `W2·10-UI-NAV-URL` (ROADMAP.md).
   Referenz: `FAHRPLAN-UI-NAVIGATION.md §Z Ziff. 7 (Z. 545–547): «Kontinuierlicher Scroll-Hash-Sync in der URL (#13-Teil) — kollidiert mit der empirisch begründeten…`
 
+  > **Stand — Ist-Aufnahme + Bau 4.8.2026 (`W2·10-UI-NAV-URL`).** Ein laufender
+  > Scroll→URL-Sync war **nicht vorhanden und musste darum nicht zurückgebaut
+  > werden** — der Auftrag hatte ihn als möglich unterstellt, der Code trug ihn
+  > nie. Belegt an allen drei Scroll-Pfaden des Lesers: `inhalt-hooks.tsx`
+  > schreibt den Leseort in die In-Memory-Registry (`scrollAnker.ts`) und
+  > entprellt in den Reiter-Tracker (`lib/tabs.ts` → localStorage),
+  > `App.tsx` in die Positions-Map; keiner ruft eine History-API. Der irreführend
+  > benannte `src/lib/liveUrlSync.ts` betraf nie den Leser, sondern den
+  > Rechner-Permalink (LM-205, Eingabe-Entprellung).
+  >
+  > **Gebaut wurde die zweite Hälfte des Entscheids: die Teilen-Aktion.** Der
+  > «Link»-Knopf am Artikel (R3) kopierte den Permalink, ohne die Adresse
+  > mitzuziehen — reproduziert 4.8.2026 (Zwischenablage `#art-31`, Adressleiste
+  > blieb `#art-5`). Genau das ist die LM-202-Beobachtung «Adresse `#art-257_d`,
+  > Breadcrumb Art. 400». Der Teilen-Klick setzt den Anker jetzt per
+  > `replaceState` auch in die Adresse. Beweise: `e2e/leser-adresse-lm202.e2e.ts`
+  > (15 Scroll-Schritte ⇒ URL byte-identisch · Anker-Klick ⇒ `#art-N` ohne
+  > Verlaufs-Spam · Teilen ⇒ kopierte URL == Adresse · Deep-Link unverändert)
+  > + `src/tests/leser-adresse-lm202.test.ts` (Quellen-Sonde gegen einen
+  > wieder eingezogenen Scroll-Sync; beide Tore einmal rot gezeigt, §6.7).
+  >
+  > **§9-Bug-Check 4.8.2026 — zwei Lücken vor dem Merge geschlossen:**
+  > **(B1)** Die Teilen-Grenze hiess `!imPane`. Falsch: `Shell.tsx` montiert im
+  > Split-View AUCH das primäre Pane mit `imPane: true` — unterschieden wird nur
+  > über `rolle`. Der Knopf schwieg damit im Split auf BEIDEN Seiten, während
+  > `springeZuArtikel` im primären Pane weiterschrieb; das LM-202-Symptom
+  > überlebte genau in der Ansicht, für die gebaut wurde. Reproduziert, dann auf
+  > `!istSekundaer` gezogen — dieselbe Grenze wie `springeZuArtikel` (§5).
+  > **(B2)** Der Permalink war handgebaut, die Adresse lief über `urlMitHash`.
+  > Bei **54** Artikel-Token mit Leerzeichen/Halbgeviert (gezählt über
+  > `public/normtext/**`; z. B. BS-215.400 «22 a», AR-233.3 «36–42») liefen Kopie
+  > («#art-22 a») und Adresse («#art-22%20a») auseinander — und ein Leerzeichen
+  > im Permalink bricht die Auto-Verlinkung in Mail/Chat. Jetzt EINE Kodierung.
+  > Kein Golden trug den alten Roh-Permalink; `golden:vergleich` blieb byte-gleich.
+  >
+  > **Vermerkt, nicht gebaut (Fundstellen für den Plan):**
+  > - **B3** — das `?r=`-Verhalten (Adresse behält den Instanz-Diskriminator, der
+  >   kopierte Link nicht) ist erklärter Vorsatz; e2e deckt bislang nur den Fall
+  >   mit leerer Query ab. Lücke, kein Defekt.
+  > - **B5** — `src/components/rechtsprechung/EntscheidBody.tsx:104` schreibt den
+  >   Hash handgerollt (`history.replaceState(null, '', \`#${anker}\`)`) und ohne
+  >   Pane-Wächter. Vorbestand ausserhalb dieses Deltas; dieselbe Fehlerklasse wie
+  >   B1+B2 an einer zweiten Stelle.
+  > - **B6** — der ABSATZ-Permalink (`ZitierMarke` in `ArtikelBody.tsx`, gespeist
+  >   aus `permalinkBasis` in `ArtikelLeser.tsx`) ist weiterhin handgebaut und
+  >   trägt darum bei denselben 54 Token die Roh-Form. Der Artikel-Permalink ist
+  >   gefixt, dieser nicht — eine Zeile, aber ausserhalb des Auftragsdeltas.
+  >
+  > **Nebenbefund für B11 (K-09b, §11), nicht hier gefixt:** die Trefferfläche
+  > des «Link»- und des «Zitat»-Knopfs misst 21 × 13 px — weit unter dem
+  > 44-px-Mass, das die übrigen A9-Tests anlegen. Der A9-Test hält den
+  > gemessenen Ist-Wert als Regressions-Boden fest und behauptet ausdrücklich
+  > nicht, das Tap-Ziel sei ausreichend (§8).
+
 ---
 
 ## §2 · B1 — Chips, Badges und Normzitate (K-05 + K-10)

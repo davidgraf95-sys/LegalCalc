@@ -24,14 +24,12 @@ import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 //
 // ABGRENZUNG (FAHRPLAN-UI-NAVIGATION §Z Ziff. 7): verworfen ist der laufende,
 // SCROLL-getriebene Hash-Sync. Hier ändert ausschliesslich ein diskreter Klick
-// die Adresse — kein Scroll-Ereignis schreibt je in die URL.
-
-/** Adresse mit gesetztem Abschnitts-Hash; Pfad und Query bleiben unberührt. */
-export function urlMitHash(href: string, anker: string): string {
-  const u = new URL(href);
-  u.hash = anker;
-  return u.toString();
-}
+// die Adresse — kein Scroll-Ereignis schreibt je in die URL. Mit dem
+// David-Entscheid vom 3.8.2026 (LM-202) gilt genau dieselbe Grenze für den
+// Gesetzes-Leser; die Regel selbst wohnt seither in `lib/liveUrlSync.ts` (§5,
+// EINE Adress-Wahrheit) und wird hier nur unverändert weitergereicht — die
+// bestehenden Aufrufer und Tests importieren sie weiter von hier.
+export { urlMitHash } from '../lib/liveUrlSync';
 
 // ── LM-210 · Lesemodus in der Adresse ───────────────────────────────────────
 //
