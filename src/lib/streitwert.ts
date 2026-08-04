@@ -1,5 +1,6 @@
 // Dossier: bibliothek/recherche/zpo-kosten-streitwert.md
 import type { Berechnungsergebnis, Normverweis, Rechenschritt } from '../types/legal';
+import { chfPraefix } from './format';
 
 // ─── Streitwert-Engine (Art. 91–94a ZPO, Konsolidierung 1.1.2025) ───────────
 //
@@ -58,8 +59,6 @@ const N92 = N('Art. 92 ZPO', 'Wiederkehrende Nutzungen/Leistungen: Kapitalwert')
 const N93 = N('Art. 93 ZPO', 'Klagenhäufung/Streitgenossenschaft: Zusammenrechnung');
 const N94 = N('Art. 94 ZPO', 'Widerklage');
 
-const chf = (n: number) => `CHF ${n.toLocaleString('de-CH')}`;
-
 const gueltigerBetrag = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n) && n >= 0;
 
 /** Wert eines einzelnen Begehrens — null = Ermessens-Weiche (kein Schätzen, §2). */
@@ -73,7 +72,7 @@ function begehrenWert(b: Begehren): { wert: number | null; text: string; normen:
   }
   if (b.typ === 'einmalig') {
     if (!gueltigerBetrag(b.betragCHF)) return { wert: null, text: 'Einmaliges Begehren ohne gültigen Betrag.', normen: [N91] };
-    return { wert: b.betragCHF, text: `Einmalig beziffertes Begehren: ${chf(b.betragCHF)} (Art. 91 Abs. 1 ZPO; Zinsen und Kosten werden nicht hinzugerechnet).`, normen: [N91] };
+    return { wert: b.betragCHF, text: `Einmalig beziffertes Begehren: ${chfPraefix(b.betragCHF)} (Art. 91 Abs. 1 ZPO; Zinsen und Kosten werden nicht hinzugerechnet).`, normen: [N91] };
   }
   // wiederkehrend
   if (b.dauer === 'leibrente') {
@@ -84,7 +83,7 @@ function begehrenWert(b: Begehren): { wert: number | null; text: string; normen:
         normen: [N92],
       };
     }
-    return { wert: b.barwertCHF, text: `Leibrente: eingegebener Barwert ${chf(b.barwertCHF)} (Art. 92 Abs. 2 ZPO).`, normen: [N92] };
+    return { wert: b.barwertCHF, text: `Leibrente: eingegebener Barwert ${chfPraefix(b.barwertCHF)} (Art. 92 Abs. 2 ZPO).`, normen: [N92] };
   }
   if (!gueltigerBetrag(b.jahresbetragCHF)) return { wert: null, text: 'Wiederkehrende Leistung ohne gültigen Jahresbetrag.', normen: [N92] };
   if (b.dauer === 'bestimmt') {
@@ -92,7 +91,7 @@ function begehrenWert(b: Begehren): { wert: number | null; text: string; normen:
     const wert = b.jahresbetragCHF * b.jahre!;
     return {
       wert,
-      text: `Wiederkehrende Leistung, bestimmte Dauer: Kapitalwert ${chf(b.jahresbetragCHF)} × ${b.jahre} Jahre = ${chf(wert)} (Art. 92 Abs. 1 ZPO).`,
+      text: `Wiederkehrende Leistung, bestimmte Dauer: Kapitalwert ${chfPraefix(b.jahresbetragCHF)} × ${b.jahre} Jahre = ${chfPraefix(wert)} (Art. 92 Abs. 1 ZPO).`,
       normen: [N92],
       warnung: 'Kapitalwert bei BESTIMMTER Dauer als ungeschmälerte Summe gerechnet (ohne Abdiskontierung) — ob ein Barwert-Abzug zulässig/geboten ist, ist zu verifizieren (Dossier-Vorbehalt).',
     };
@@ -101,7 +100,7 @@ function begehrenWert(b: Begehren): { wert: number | null; text: string; normen:
   const wert = b.jahresbetragCHF * 20;
   return {
     wert,
-    text: `Wiederkehrende Leistung, ungewisse/unbeschränkte Dauer: ${chf(b.jahresbetragCHF)} × 20 = ${chf(wert)} (Art. 92 Abs. 2 ZPO).`,
+    text: `Wiederkehrende Leistung, ungewisse/unbeschränkte Dauer: ${chfPraefix(b.jahresbetragCHF)} × 20 = ${chfPraefix(wert)} (Art. 92 Abs. 2 ZPO).`,
     normen: [N92],
   };
 }
@@ -142,14 +141,14 @@ export function berechneStreitwert(input: StreitwertInput): StreitwertErgebnis {
     haupt = Math.max(...(werte as number[]));
     rechenweg.push({
       beschreibung: 'Klagenhäufung — sich ausschliessende Begehren',
-      zwischenergebnis: `Die Begehren schliessen sich gegenseitig aus → KEINE Zusammenrechnung; massgeblich ist der höchste Einzelwert: ${chf(haupt)} (Art. 93 Abs. 1 ZPO e contrario).`,
+      zwischenergebnis: `Die Begehren schliessen sich gegenseitig aus → KEINE Zusammenrechnung; massgeblich ist der höchste Einzelwert: ${chfPraefix(haupt)} (Art. 93 Abs. 1 ZPO e contrario).`,
       normen: [N93],
     });
   } else {
     haupt = (werte as number[]).reduce((a, b) => a + b, 0);
     rechenweg.push({
       beschreibung: 'Klagenhäufung/Streitgenossenschaft — Zusammenrechnung',
-      zwischenergebnis: `Die geltend gemachten Ansprüche werden zusammengerechnet: ${chf(haupt)} (Art. 93 Abs. 1 ZPO). Bei einfacher Streitgenossenschaft bleibt die Verfahrensart trotz Zusammenrechnung erhalten (Abs. 2).`,
+      zwischenergebnis: `Die geltend gemachten Ansprüche werden zusammengerechnet: ${chfPraefix(haupt)} (Art. 93 Abs. 1 ZPO). Bei einfacher Streitgenossenschaft bleibt die Verfahrensart trotz Zusammenrechnung erhalten (Abs. 2).`,
       normen: [N93],
     });
   }
@@ -162,21 +161,21 @@ export function berechneStreitwert(input: StreitwertInput): StreitwertErgebnis {
     verfahren = Math.max(haupt, wk);
     rechenweg.push({
       beschreibung: 'Widerklage — Streitwert für Verfahren/Rechtsmittel',
-      zwischenergebnis: `Massgeblich ist das HÖHERE Rechtsbegehren: max(${chf(haupt)}, ${chf(wk)}) = ${chf(verfahren)} (Art. 94 Abs. 1 ZPO).`,
+      zwischenergebnis: `Massgeblich ist das HÖHERE Rechtsbegehren: max(${chfPraefix(haupt)}, ${chfPraefix(wk)}) = ${chfPraefix(verfahren)} (Art. 94 Abs. 1 ZPO).`,
       normen: [N94],
     });
     if (input.hauptklageIstTeilklage) {
       kosten = haupt;
       rechenweg.push({
         beschreibung: 'Prozesskosten bei Teilklage (Rev. 2025)',
-        zwischenergebnis: `Die Hauptklage ist eine TEILKLAGE: Die Prozesskosten werden ausschliesslich auf der Grundlage des Streitwerts der Hauptklage berechnet: ${chf(haupt)} (Art. 94 Abs. 3 ZPO, in Kraft seit 1.1.2025).`,
+        zwischenergebnis: `Die Hauptklage ist eine TEILKLAGE: Die Prozesskosten werden ausschliesslich auf der Grundlage des Streitwerts der Hauptklage berechnet: ${chfPraefix(haupt)} (Art. 94 Abs. 3 ZPO, in Kraft seit 1.1.2025).`,
         normen: [N('Art. 94 Abs. 3 ZPO', 'Teilklage: Kosten nur nach Hauptklage')],
       });
     } else if (input.widerklage.schliesstAus) {
       kosten = Math.max(haupt, wk);
       rechenweg.push({
         beschreibung: 'Prozesskosten — sich ausschliessende Klagen',
-        zwischenergebnis: `Klage und Widerklage schliessen sich gegenseitig aus → die Streitwerte werden NICHT zusammengerechnet (Art. 94 Abs. 2 ZPO); als Bemessungsgrundlage gilt der höhere Wert: ${chf(kosten)}.`,
+        zwischenergebnis: `Klage und Widerklage schliessen sich gegenseitig aus → die Streitwerte werden NICHT zusammengerechnet (Art. 94 Abs. 2 ZPO); als Bemessungsgrundlage gilt der höhere Wert: ${chfPraefix(kosten)}.`,
         normen: [N94],
       });
       warnungen.push('Kosten-Bemessung bei sich ausschliessenden Klagen: Art. 94 Abs. 2 ZPO schliesst nur die Zusammenrechnung aus; dass der HÖHERE Wert massgeblich ist, entspricht der herrschenden Lesart — zu verifizieren.');
@@ -184,7 +183,7 @@ export function berechneStreitwert(input: StreitwertInput): StreitwertErgebnis {
       kosten = haupt + wk;
       rechenweg.push({
         beschreibung: 'Prozesskosten — Zusammenrechnung',
-        zwischenergebnis: `Für die Prozesskosten werden die Streitwerte zusammengerechnet: ${chf(haupt)} + ${chf(wk)} = ${chf(kosten)} (Art. 94 Abs. 2 ZPO).`,
+        zwischenergebnis: `Für die Prozesskosten werden die Streitwerte zusammengerechnet: ${chfPraefix(haupt)} + ${chfPraefix(wk)} = ${chfPraefix(kosten)} (Art. 94 Abs. 2 ZPO).`,
         normen: [N94],
       });
     }
@@ -194,8 +193,8 @@ export function berechneStreitwert(input: StreitwertInput): StreitwertErgebnis {
   }
 
   const ergebnis = verfahren !== null
-    ? `Massgeblicher Streitwert (Verfahren/Rechtsmittel): ${chf(verfahren)}.` +
-      (kosten !== null && kosten !== verfahren ? ` Kosten-Bemessungsgrundlage: ${chf(kosten)} (Art. 94 ZPO).` : '')
+    ? `Massgeblicher Streitwert (Verfahren/Rechtsmittel): ${chfPraefix(verfahren)}.` +
+      (kosten !== null && kosten !== verfahren ? ` Kosten-Bemessungsgrundlage: ${chfPraefix(kosten)} (Art. 94 ZPO).` : '')
     : 'Der Streitwert ist nicht berechenbar — das Gericht setzt ihn fest (Art. 91 Abs. 2 ZPO); siehe Rechenweg.';
 
   return {
@@ -262,8 +261,8 @@ export function streitwertGrenzwerte(
     aussage: ermessen
       ? 'Streitwert nicht bezifferbar – das Gericht setzt ihn fest (Art. 91 Abs. 2 ZPO); danach steht die Verfahrensart fest.'
       : zpoErfuellt
-        ? `Streitwert bis ${chf(ZPO_VEREINFACHT_GRENZE_CHF)} → vereinfachtes Verfahren (Art. 243 Abs. 1 ZPO).`
-        : `Streitwert über ${chf(ZPO_VEREINFACHT_GRENZE_CHF)} → ordentliches Verfahren.`,
+        ? `Streitwert bis ${chfPraefix(ZPO_VEREINFACHT_GRENZE_CHF)} → vereinfachtes Verfahren (Art. 243 Abs. 1 ZPO).`
+        : `Streitwert über ${chfPraefix(ZPO_VEREINFACHT_GRENZE_CHF)} → ordentliches Verfahren.`,
     norm: N('Art. 243 ZPO', 'Vereinfachtes Verfahren bis CHF 30 000'),
     selbstPruefen: [
       'Art. 243 Abs. 2 ZPO: bestimmte Streitigkeiten (Gleichstellung, Gewaltschutz Art. 28b ZGB, mietrechtlicher Kündigungs-/Missbrauchsschutz u. a.) gelten OHNE Rücksicht auf den Streitwert als vereinfacht.',
@@ -282,8 +281,8 @@ export function streitwertGrenzwerte(
     aussage: ermessen
       ? 'Streitwert nicht bezifferbar – die Streitwertgrenze fürs Bundesgericht im Einzelfall bestimmen.'
       : bggErfuellt
-        ? `Streitwert ${chf(sw!)} ≥ ${chf(bggSchwelle)} → Streitwertgrenze erreicht (Art. 74 Abs. 1 ${bggLit} BGG).`
-        : `Streitwert ${chf(sw!)} unter ${chf(bggSchwelle)} → Streitwertgrenze NICHT erreicht (Art. 74 Abs. 1 ${bggLit} BGG).`,
+        ? `Streitwert ${chfPraefix(sw!)} ≥ ${chfPraefix(bggSchwelle)} → Streitwertgrenze erreicht (Art. 74 Abs. 1 ${bggLit} BGG).`
+        : `Streitwert ${chfPraefix(sw!)} unter ${chfPraefix(bggSchwelle)} → Streitwertgrenze NICHT erreicht (Art. 74 Abs. 1 ${bggLit} BGG).`,
     norm: N('Art. 74 BGG', 'Streitwertgrenze Beschwerde in Zivilsachen'),
     selbstPruefen: [
       'Der fürs Bundesgericht massgebliche Streitwert bestimmt sich EIGENSTÄNDIG nach Art. 51–53 BGG und kann vom ZPO-Streitwert abweichen.',

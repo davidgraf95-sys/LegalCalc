@@ -6,6 +6,7 @@ import type { Kanton, Berechnungsergebnis, Rechenschritt, Normverweis } from '..
 import { fristendeTage, normalisiereEnde, OHNE_STILLSTAND, type Stillstand } from './fristenEngine';
 import { stillstandsperioden, stillstandsperiodeFuer } from '../data/zpoFeiertage';
 import { formatDatum, istGueltigesISO } from './datumsUtils';
+import { chfOhnePraefix } from './format';
 
 // ─── BGer-Rechtsweg-Engine (BGG, SR 173.110) ─────────────────────────────────
 //
@@ -163,8 +164,6 @@ function sw51Satz(objekt: BgerObjekt): string {
   }
   return 'Massgeblich sind die vor der Vorinstanz streitig GEBLIEBENEN Begehren (Art. 51 Abs. 1 lit. a BGG).';
 }
-const chf = (n: number) => n.toLocaleString('de-CH');
-
 // ── Hauptfunktion ────────────────────────────────────────────────────────────
 
 export function berechneBgerRechtsweg(input: BgerInput): BgerErgebnis {
@@ -313,19 +312,19 @@ export function berechneBgerRechtsweg(input: BgerInput): BgerErgebnis {
       normverweise.push(N('Art. 74 Abs. 2 BGG'));
     } else if (gebiet === 'rechtsoeffnung' && sw !== null && sw < schwelle) {
       zulaessigkeit = 'schwelle_verfehlt';
-      zulText = `Streitwert CHF ${chf(sw)} unter der Grenze von CHF ${chf(schwelle)} (Art. 74 Abs. 1 lit. b BGG). Die Rechtsöffnung fällt unter keine der KATEGORISCHEN Streitwert-Ausnahmen des Abs. 2 lit. b–e (sie ist weder Aufsichts- noch Konkurseröffnungsentscheid) – offen bleiben die Rechtsfrage von grundsätzlicher Bedeutung (Abs. 2 lit. a, in der Beschwerde zu begründen, Art. 42 Abs. 2) oder die subsidiäre Verfassungsbeschwerde.`;
+      zulText = `Streitwert CHF ${chfOhnePraefix(sw)} unter der Grenze von CHF ${chfOhnePraefix(schwelle)} (Art. 74 Abs. 1 lit. b BGG). Die Rechtsöffnung fällt unter keine der KATEGORISCHEN Streitwert-Ausnahmen des Abs. 2 lit. b–e (sie ist weder Aufsichts- noch Konkurseröffnungsentscheid) – offen bleiben die Rechtsfrage von grundsätzlicher Bedeutung (Abs. 2 lit. a, in der Beschwerde zu begründen, Art. 42 Abs. 2) oder die subsidiäre Verfassungsbeschwerde.`;
       normverweise.push(N('Art. 74 BGG'), N('Art. 113 BGG'));
     } else if (sw === null) {
       zulaessigkeit = 'offen';
-      zulText = `Ohne bezifferten Streitwert nicht bestimmbar: Beschwerde in Zivilsachen ab CHF ${chf(schwelle)} (${mietArbeit ? 'arbeits-/mietrechtlicher Fall, Art. 74 Abs. 1 lit. a' : 'Art. 74 Abs. 1 lit. b'} BGG). ${sw51Satz(objekt)}`;
+      zulText = `Ohne bezifferten Streitwert nicht bestimmbar: Beschwerde in Zivilsachen ab CHF ${chfOhnePraefix(schwelle)} (${mietArbeit ? 'arbeits-/mietrechtlicher Fall, Art. 74 Abs. 1 lit. a' : 'Art. 74 Abs. 1 lit. b'} BGG). ${sw51Satz(objekt)}`;
       normverweise.push(N('Art. 74 Abs. 1 BGG'), N('Art. 51 BGG'));
     } else if (sw >= schwelle) {
       zulaessigkeit = 'zulaessig';
-      zulText = `Streitwert CHF ${chf(sw)} ≥ CHF ${chf(schwelle)} (${mietArbeit ? 'arbeits-/mietrechtlicher Fall, Art. 74 Abs. 1 lit. a' : 'Art. 74 Abs. 1 lit. b'} BGG) → Beschwerde in Zivilsachen zulässig.`;
+      zulText = `Streitwert CHF ${chfOhnePraefix(sw)} ≥ CHF ${chfOhnePraefix(schwelle)} (${mietArbeit ? 'arbeits-/mietrechtlicher Fall, Art. 74 Abs. 1 lit. a' : 'Art. 74 Abs. 1 lit. b'} BGG) → Beschwerde in Zivilsachen zulässig.`;
       normverweise.push(N('Art. 74 Abs. 1 BGG'));
     } else {
       zulaessigkeit = 'schwelle_verfehlt';
-      zulText = `Streitwert CHF ${chf(sw)} unter der Grenze von CHF ${chf(schwelle)} (${mietArbeit ? 'Art. 74 Abs. 1 lit. a' : 'Art. 74 Abs. 1 lit. b'} BGG). Streitwertunabhängig bleibt die Beschwerde zulässig bei einer Rechtsfrage von grundsätzlicher Bedeutung (Abs. 2 lit. a – in der Beschwerde zu begründen, Art. 42 Abs. 2) sowie in den übrigen Fällen des Abs. 2 (einzige kantonale Instanz · SchKG-Aufsicht · Konkurs-/Nachlassrichter · Bundespatentgericht).`;
+      zulText = `Streitwert CHF ${chfOhnePraefix(sw)} unter der Grenze von CHF ${chfOhnePraefix(schwelle)} (${mietArbeit ? 'Art. 74 Abs. 1 lit. a' : 'Art. 74 Abs. 1 lit. b'} BGG). Streitwertunabhängig bleibt die Beschwerde zulässig bei einer Rechtsfrage von grundsätzlicher Bedeutung (Abs. 2 lit. a – in der Beschwerde zu begründen, Art. 42 Abs. 2) sowie in den übrigen Fällen des Abs. 2 (einzige kantonale Instanz · SchKG-Aufsicht · Konkurs-/Nachlassrichter · Bundespatentgericht).`;
       normverweise.push(N('Art. 74 BGG'), N('Art. 113 BGG'));
     }
     rechenweg.push({ beschreibung: 'Zulässigkeit (Streitwert)', zwischenergebnis: zulText, normen: [N('Art. 74 BGG')] });
