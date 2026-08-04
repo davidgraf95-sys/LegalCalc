@@ -138,8 +138,9 @@ def budget_erweitern(karten, index_datum, rotate_idx, kopf, schwanz, budget):
     STRUKTUR.md nach der Alters-Rotation noch über `budget` liegt.
 
     Rotiert wird je Schritt die ÄLTESTE verbleibende DATIERTE Karte (Tie-Break bei
-    gleichem Datum: die im Dokument am weitesten unten stehende, also chronologisch
-    letzte jenes Tages). Harte Untergrenze MINDEST_BEHALT — danach Abbruch, auch wenn
+    gleichem Datum: die im Dokument am weitesten unten stehende — in der
+    newest-first-Kartenregion ist das die chronologisch ERSTE Session jenes Tages,
+    sie hält beim Archiv-Prepend die Ordnung kohärent; Befund Gegenprüfung 4.8.2026). Harte Untergrenze MINDEST_BEHALT — danach Abbruch, auch wenn
     das Budget dann gerissen bleibt (der Re-Akkumulations-Wächter warnt weiter).
     Undatierte Karten werden nie angefasst (konservativ, wie bei der Alters-Rotation).
     Deterministisch: gleiche Eingabe → gleiche Auswahl, keine Heuristik.
