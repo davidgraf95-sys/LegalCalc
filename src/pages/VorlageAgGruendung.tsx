@@ -50,8 +50,11 @@ export function VorlageAgGruendung() {
   const setzer = <K extends keyof AgStand>(k: K): Dispatch<SetStateAction<AgStand[K]>> => (v) =>
     setA((alt) => ({ ...alt, [k]: typeof v === 'function' ? (v as (vorher: AgStand[K]) => AgStand[K])(alt[k]) : v }));
 
-  // Zähler über den gespeicherten Stand heben: die Hydration vergibt je Liste
-  // die Keys 1…n neu — der Zähler startet oberhalb der längsten Liste.
+  // Zeilen-Keys: die Hydration vergibt je Liste 1…n neu, der Zähler startet
+  // strikt oberhalb der längsten Liste. Der früher persistierte Zählerstand
+  // entfällt BEWUSST (D6): Keys sind reine React-Identitäten; nach jedem
+  // Reload sind alle Listen-Keys ≤ maxLen, der Seed 1+maxLen liegt darüber
+  // und wächst in der Session monoton — kollisionsfrei (Gegenprüfung M1).
   const naechsterKey = useRef(1 + Math.max(0,
     ...[a.gruender, a.vr, a.vertretungen, a.sacheinlagen, a.verrechnungen, a.vorteile].map((l) => l.length)));
   const neuerKey = () => naechsterKey.current++;
@@ -181,7 +184,7 @@ export function VorlageAgGruendung() {
       }
       const slug = (a.firma.trim().toLowerCase()
         .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue')
-        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
         .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')) || 'ag';
       const blob = new Blob([zipSync(eintraege)], { type: 'application/zip' });
       const url = URL.createObjectURL(blob);
