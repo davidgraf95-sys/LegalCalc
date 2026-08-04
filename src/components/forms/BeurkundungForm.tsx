@@ -10,7 +10,8 @@ import { LinkTeilenButton } from '../LinkTeilenButton';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { PdfExportButton } from '../PdfExport';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
-import { permalinkKodieren, permalinkLesen, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { NotariatGrundbuchForm } from './NotariatGrundbuchForm';
 import { GrundbuchEintragForm } from './GrundbuchEintragForm';
 import {
@@ -257,10 +258,7 @@ const BEREICHE: { id: Bereich; label: string; hint: string }[] = [
 ];
 
 export function BeurkundungForm() {
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(BK_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(BK_LINK_SPEC);
   // Bereich aus dem Permalink ableiten: ?ga= → Beurkundung, ?ea= → Grundbuch.
   const startBereich: Bereich = ausLink.art ? 'beurkundung' : (typeof window !== 'undefined' && window.location.search.includes('ea=')) ? 'grundbuch' : 'kauf';
   const [bereich, setBereich] = useState<Bereich>(startBereich);

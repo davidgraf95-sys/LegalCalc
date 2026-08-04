@@ -1,5 +1,6 @@
 import type { Kanton } from '../../types/legal';
 import { BETREIBUNGSAEMTER, type BetreibungsamtAdresse } from '../betreibungsaemter';
+import { istRecord, pruefeJson, type JsonPruefer } from '../jsonSchutz';
 import { namensKandidaten } from '../schlichtung/zhAmt';
 
 // ─── Gemeinde → konkretes Betreibungsamt (Adresse) ──────────────────────────
@@ -13,6 +14,26 @@ import { namensKandidaten } from '../schlichtung/zhAmt';
 
 interface KantonsKarte { gemeinden: Record<string, number>; stadtKreise?: Record<string, number[]> }
 let cache: Record<string, KantonsKarte> | null = null;
+
+/** Strukturform des Generator-Artefakts (Betreibungs-Karten): Kanton →
+ *  { gemeinden, stadtKreise? }. Exportiert für die Vollprüfung in
+ *  src/tests/datenAussenkanten.test.ts. */
+export const BETREIBUNG_KARTEN_PRUEFER: JsonPruefer = {
+  quelle: 'betreibung/aemterKantone.json',
+  wurzel: (w) => (istRecord(w) ? null : 'Wurzel ist kein Objekt'),
+  eintrag: (_kanton, w) => {
+    if (!istRecord(w)) return 'Eintrag ist kein Objekt';
+    if (!istRecord(w.gemeinden) || Object.values(w.gemeinden).some((v) => typeof v !== 'number')) {
+      return 'gemeinden ist keine Gemeinde→Index-Record';
+    }
+    if (w.stadtKreise !== undefined) {
+      if (!istRecord(w.stadtKreise) || Object.values(w.stadtKreise).some((v) => !Array.isArray(v) || v.some((i) => typeof i !== 'number'))) {
+        return 'stadtKreise ist keine Stadt→Index-Listen-Record';
+      }
+    }
+    return null;
+  },
+};
 const kleinIndex = new Map<string, Map<string, number>>();
 function kleinFuer(kanton: string, d: KantonsKarte): Map<string, number> {
   let m = kleinIndex.get(kanton);
@@ -39,7 +60,7 @@ export async function betreibungsamtFuer(kanton: Kanton, gemeinde: string): Prom
   if (eintrag.aufloesung.modus !== 'kreise') return null;
   const aemter = eintrag.aufloesung.aemter;
   if (!cache) {
-    cache = (await import('./aemterKantone.json')).default as unknown as Record<string, KantonsKarte>;
+    cache = pruefeJson<Record<string, KantonsKarte>>((await import('./aemterKantone.json')).default, BETREIBUNG_KARTEN_PRUEFER);
   }
   const d = cache[kanton];
   if (!d) return null;

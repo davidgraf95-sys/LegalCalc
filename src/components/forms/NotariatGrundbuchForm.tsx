@@ -11,7 +11,8 @@ import { LinkTeilenButton } from '../LinkTeilenButton';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { PdfExportButton } from '../PdfExport';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
-import { permalinkKodieren, permalinkLesen, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import {
   berechneNotariatGrundbuch, vergleichNotariatGrundbuch, notariatGrundbuchBericht, ngPostenText, ergebnisSpanne,
   type NotariatGrundbuchErgebnis, type NgPosten, type Spanne,
@@ -83,10 +84,7 @@ function PostenKarte({ titel, posten, akzent }: { titel: string; posten: NgPoste
 // Vergleich, Teilen, PDF und Aktenzeichen bleiben dem Voll-Rechner vorbehalten
 // (dorthin wird im Schnellrechner verlinkt). Dieselbe Engine (§3/§5).
 export function NotariatGrundbuchForm({ minimal = false }: { minimal?: boolean } = {}) {
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(NG_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(NG_LINK_SPEC);
 
   const [kanton, setKanton] = useState<KantonCode>((ausLink.kanton as KantonCode) ?? getStandardKanton());
   const [kp, setKp] = useState<string>(ausLink.kp != null ? String(ausLink.kp) : '');

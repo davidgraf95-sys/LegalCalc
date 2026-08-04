@@ -151,3 +151,28 @@ Zweifel Gegenprüfung. `EntscheidLeser.tsx` kollidiert mit `QS-UI-HIGHLIGHT`
    «tariftext-freigabe stimmt — ins reglement heben») — als Konkretisierung in
    `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben; der Code-Kommentar in
    `ArtikelBody.tsx:257` ist damit reglementgedeckt.
+
+---
+
+## §8 · ROADMAP-Spec-Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, §14-Intake 4.8.2026 (Code-Inventur) — AP-11 rückwirkend
+angewandt (ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben je Schritt Checkbox, Titel,
+`@meta`, der **Anlass** (dort ausdrücklich verlangt) und der Pointer auf den jeweiligen §; die
+**Bau-Spec** steht unten und in den §§1–5. Steuert nicht — Spec-Heimat.*
+
+### §8.1 `QS-CODE-TURSO` — Bau-Spec im Wortlaut *(→ Bau-Spec: §1 dieser Datei)*
+
+> Batch/Rebuild/Dump-Varianten messen, dann umstellen; Ziel <15 min Voll-Sync bei inhaltsgleicher Tabelle. **Risikopfad** (`scripts/datenhaltung`) ⇒ Gegenprüfung. Abgrenzung: nur Durchsatz des bestehenden Syncs — Architektur bleibt `W2·6-DATA`, Wachstums-Schwellen bleiben `QS-AUTOMATIK`.
+
+### §8.2 `QS-CODE-AUSSENKANTEN` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3 dieser Datei)*
+
+> neues Tor gegen das Norm-Register (Meldungs-Phase → Basislinie → blockierend, einmal rot zeigen) + strukturelle Guards statt der 9 Blind-Casts. Verhaltensneutral.
+
+### §8.3 `QS-CODE-ENTDOPPLUNG` — Bau-Spec im Wortlaut *(→ Bau-Spec: §4 dieser Datei)*
+
+> §3-konforme Verkleinerung NUR in der Darstellungsschicht, je Posten ein PR (Reihenfolge D6→D1→D2→D4→D3→D5/D7), jede Einheit e2e-grün + golden byte-gleich; Nebengewinn `aria-pressed` auf 7 handgerollten Kacheln.
+
+### §8.4 `QS-CODE-SPLITS` — Bau-Spec im Wortlaut *(→ Bau-Spec: §5 dieser Datei)*
+
+> je Datei ein verhaltensneutraler Schritt nach Skill `refactoring` (Fassade, Golden byte-gleich, Tests unangepasst), **opportunistisch beim ohnehin anstehenden Bau an der Datei**, nie als Selbstzweck-Welle; `istRisikoPfad()` entscheidet über Gegenprüfung; `EntscheidLeser` mit `QS-UI-HIGHLIGHT` sequenzieren (gleiche Datei).

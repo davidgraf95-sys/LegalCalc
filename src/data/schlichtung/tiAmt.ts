@@ -10,6 +10,8 @@
 
 import type { ZhKreisAmt } from './zhAmt';
 import { namensKandidaten } from './zhAmt';
+import { pruefeJson } from '../jsonSchutz';
+import { SCHLICHTUNG_AEMTER_PRUEFER } from './amtAufloesung';
 
 /** Gemeinde → Kandidaten (Amts-Name wie in aemterKantone.json TI + die
  *  amtlich diesem Circolo zugeordneten Ortsteile/Quartiere). */
@@ -42,7 +44,7 @@ export async function tiKandidaten(gemeinde: string): Promise<ZhKreisAmt[] | nul
   const eintrag = namensKandidaten(gemeinde, 'TI')
     .map((k) => TI_MEHRDEUTIG[k] ?? klein.get(k.toLowerCase())).find((e) => e !== undefined);
   if (!eintrag) return null;
-  const daten = (await import('./aemterKantone.json')).default as unknown as Record<string, KantonsAemter>;
+  const daten = pruefeJson<Record<string, KantonsAemter>>((await import('./aemterKantone.json')).default, SCHLICHTUNG_AEMTER_PRUEFER);
   const proName = new Map(daten.TI.aemter.map((a) => [a.name, a]));
   const kandidaten: ZhKreisAmt[] = [];
   for (const { amtName, ortsteile } of eintrag) {
@@ -84,7 +86,7 @@ export async function tiMieteKandidaten(gemeinde: string): Promise<ZhKreisAmt[] 
   const eintrag = namensKandidaten(gemeinde, 'TI')
     .map((k) => TI_MIETE_MEHRDEUTIG[k] ?? klein.get(k.toLowerCase())).find((e) => e !== undefined);
   if (!eintrag) return null;
-  const daten = (await import('./aemterKantone.json')).default as unknown as Record<string, KantonsAemter>;
+  const daten = pruefeJson<Record<string, KantonsAemter>>((await import('./aemterKantone.json')).default, SCHLICHTUNG_AEMTER_PRUEFER);
   const proName = new Map(daten.TI_MIETE.aemter.map((a) => [a.name, a]));
   const kandidaten: ZhKreisAmt[] = [];
   for (const { amtName, ortsteile } of eintrag) {

@@ -9,7 +9,8 @@ import { LinkTeilenButton } from '../LinkTeilenButton';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { PdfExportButton } from '../PdfExport';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
-import { permalinkKodieren, permalinkLesen, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import {
   berechneGrundbuchgebuehr, vergleichGrundbuchgebuehr, grundbuchgebuehrBericht, gbSortwert, istWertbasiertGb,
 } from '../../lib/grundbuchgebuehren';
@@ -40,10 +41,7 @@ const DISCLAIMER =
 const ALLOWED: GbEintragsartId[] = GB_EINTRAGSART_IDS.filter((id) => id !== 'eigentum_kauf');
 
 export function GrundbuchEintragForm() {
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(GB_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(GB_LINK_SPEC);
   const startArt = (ausLink.art as GbEintragsartId);
   const [art, setArt] = useState<GbEintragsartId>(ALLOWED.includes(startArt) ? startArt : 'grundpfand');
   const [kanton, setKanton] = useState<KantonCode>((ausLink.kanton as KantonCode) ?? getStandardKanton());
