@@ -886,7 +886,16 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // «Sie sind hier»: reine Projektion des SCHON vorhandenen Scroll-Spy-Zustands
   // (aktivIds) auf die Gliederungs-Labels — keine zusätzliche Beobachtung (§15).
   const siePfad = useMemo(() => pfadLabels(sektionen, aktivIds), [sektionen, aktivIds]);
-  const siePfadArtikel = aktArtikel ? artLabelByToken.get(aktArtikel) ?? null : null;
+  // Fremdfund-Fix aus dem §9-Bug-Check (B5, echter main-Defekt seit #429): hier
+  // wurde ein LABEL in der TOKEN-Map nachgeschlagen (`artLabelByToken` ist
+  // token→label, `inhalt-hooks.tsx` setzt in `aktArtikel` aber bereits das
+  // fertige Label). Der Lookup ging darum IMMER ins Leere, `siePfadArtikel` war
+  // dauerhaft null und die Artikel-Angabe in «Sie sind hier» fehlte still — der
+  // Gliederungspfad allein füllte die Zeile, also fiel es nicht auf.
+  // `aktArtikel` IST das Anzeige-Label; die Umkehrkarte dient nur noch als
+  // Echtheitsprüfung: benannt wird ausschliesslich ein Label, das auf einen
+  // realen Artikel dieses Erlasses auflöst (§8).
+  const siePfadArtikel = aktArtikel && tokenByLabel.has(aktArtikel) ? aktArtikel : null;
 
   const sucheFeldLeer = suche.trim() === '';
   useEffect(() => {

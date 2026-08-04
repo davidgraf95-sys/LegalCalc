@@ -264,6 +264,23 @@ test('R4/B2: kein Angebot, wenn die gemerkte Stelle der Dokumentanfang ist', asy
   await expect(page.locator('[data-weiterlesen]')).toHaveCount(0)
 })
 
+test('B5 (Fremdfund #429): das Gliederungs-Sheet benennt den gelesenen Artikel in «Sie sind hier»', async ({ page }) => {
+  // `inhalt.tsx` schlug den vom Spy gemeldeten LABEL-Wert in der TOKEN-Map nach
+  // (`artLabelByToken.get(aktArtikel)`), während `inhalt-hooks.tsx` dort das
+  // fertige Label hineinsetzt. Ergebnis: `siePfadArtikel` war IMMER null und die
+  // Artikel-Angabe im Sheet fehlte seit #429 dauerhaft — still, weil der Pfad
+  // allein die Zeile schon füllt.
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto(ERLASS)
+  await readerBereit(page)
+  await leseBis(page, 12)
+
+  await page.getByRole('button', { name: /Gliederung/ }).first().click()
+  const sieHier = page.locator('[data-sie-sind-hier]')
+  await expect(sieHier).toBeVisible({ timeout: 20000 })
+  await expect(sieHier, '«Sie sind hier» nennt den gelesenen Artikel, nicht nur den Pfad').toContainText(/Art\.\s?\d/)
+})
+
 test('R8/A9: «?»-Overlay unter CPU-Drossel — flüssig und ohne Layout-Sprung (CLS 0)', async ({ page }) => {
   await page.goto(ERLASS)
   await readerBereit(page)
