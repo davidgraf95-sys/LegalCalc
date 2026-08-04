@@ -245,3 +245,15 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
 > >   (localStorage `lexmetrik-panes`), separater Store von den Tabs → Close-all muss `usePaneLayout`
 > >   mit-resetten. *(S1+S2 bündeln, gleiches Subsystem.)*
 
+
+---
+
+## §2 · ROADMAP-Spec-Nachzug `W3·14-S` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 3, Teilschritt `W3·14-S` — AP-11 rückwirkend angewandt (ROADMAP-Diät
+Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, der Einzeiler und der Pointer auf §1.
+Steuert nicht — Spec-Heimat.*
+
+> **S1** Breadcrumbs in der Pane laufen über globalen
+> Router-`<Link>` (`InhaltsKopf.tsx` Z.30) statt PaneKontext-Navigator → fixen · **S2** Tracker «alles
+> schliessen» muss auch `usePaneLayout` (Pane-Store) leeren. S1+S2 bündeln.

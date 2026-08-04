@@ -743,3 +743,18 @@ ausklappbarer **Rechenweg/«Warum»** an den Rechnern (Begründungs-Baustein), d
 Rechner-Lernpfad** (Schritt 2/6). Einbau jeweils im Mutter-Schritt, nicht als eigener Strang. Gilt
 sinngemäss für jeden fachfremden Rechtsanwender (Ämter/Steuerbehörden/Treuhänder — Nordstern 3.7.);
 Sprachregel bleibt CLAUDE.md §13.3 (klar für Fach UND Laie) — keine parallele «Nicht-Juristen-Layer» erfinden.
+
+---
+
+## §15 · ROADMAP-Spec-Nachzug `W2·6` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·6` — AP-11 rückwirkend angewandt (ROADMAP-Diät
+Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, die Teilschritt-Einzeiler und der
+Pointer auf §13. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §12/§13 dieser Datei.***
+
+**Teilschritt `R-RICHTER` (Richter-/Spruchkörper-Filter — Fundament), Wortlaut aus der ROADMAP:**
+
+>       **Block A (Daten) ✅ 20.7.2026** (Extraktion + Kanon + `richter.json` + Tor `check:besetzung`).
+>       **Block B (Facetten-UI) wird von `W2·6-FILTER` getragen** und hier nicht zweitgeführt
+>       (Entdopplung 3.8.2026 — er stand als offener Posten an beiden Stellen). Detail:
+>       diese Datei §12/§13.

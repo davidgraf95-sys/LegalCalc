@@ -258,3 +258,32 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   Parallel-Fall (zwei Branches, je neue Spec) konfliktfrei merged.
 - **Dateien:** `e2e/*.e2e.ts` (Annotationen), neuer Generator unter `scripts/`,
   `.gitattributes`, `scripts/e2e-shard-gruppen.mjs`.
+
+---
+
+## §4 · ROADMAP-Spec-Nachzug der §3-Kind-Schritte (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, §14-Intake 3.8./4.8.2026 — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben je Schritt Checkbox, Titel, `@meta`, der
+**Anlass** (dort ausdrücklich verlangt) und der Pointer auf den jeweiligen §; die **Bau-Spec** steht
+unten und in den §§3.1–3.5. Steuert nicht — Spec-Heimat.*
+
+### §4.1 `QS-GP-BEREICH` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.1 dieser Datei)*
+
+> Bereichs-Argument + Commit-Bereich-Diff, damit der Regelfall wieder mechanisch quittierbar ist. Tor-Code ohne Inhaltsänderung; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7).
+
+### §4.2 `QS-GP-PRERENDER` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.2 dieser Datei)*
+
+> ein **nicht** im Pflicht-Gate verdrahteter Befehl, der zwei Prerender-Läufe byte-vergleicht und die Differenz benennt; wer ihn ruft, bekommt denselben Beweis reproduzierbar.
+
+### §4.3 `QS-GP-PREPUSH` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.3 dieser Datei)*
+
+> `scripts/git-setup.sh` (npm `prepare`) verdrahtet einen pre-push-Hook, der bei Risiko-Diff in `origin/main..HEAD` ohne Quittung den Push mit Hinweis stoppt; `--no-verify` bleibt als bewusster Ausweg. Braucht die Bereichs-Prüfung aus `QS-GP-BEREICH`. Reine Prüflogik; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7).
+
+### §4.4 `QS-E2E-STABIL` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.4 dieser Datei)*
+
+> Budgets streuungs-begründet setzen bzw. Lauf teilen; keine CI-Änderung. **Mitnahme 4.8.2026 (Split-Welle):** drei weitere unabhängige Belege desselben Musters an EINEM Abend — `scripts/datenhaltung/suche.test.ts` (beforeAll 60 s) riss unter Parallellast bei drei Agenten, isoliert je grün in 17–34 s; Zeitbudget statt Arbeitsbudget ist die Wurzel (§17).
+
+### §4.5 `QS-E2E-SHARD-GEN` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.5 dieser Datei)*
+
+> Gruppen-Annotation im Spec-Kopf, JSON generiert ⇒ `merge=regen`-Treiber greift, Konflikt-Klasse entfällt; Union-Wächter bleibt scharf.

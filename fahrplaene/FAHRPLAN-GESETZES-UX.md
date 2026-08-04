@@ -2269,3 +2269,23 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
   Tarif-Tabellen · §15.1 (kein DOM-Entfernen; Ctrl+F und Print müssen vollständig bleiben) · Mobil @390.
   **Parkgrund, ehrlich:** kein technischer Blocker — David hat den Punkt am 20.7. ausdrücklich zurückgestellt.
   Umparken auf `ready` ist ein Einzeiler, sobald er ihn zieht. Trailer `Roadmap: W2·5j-TABELLEN`.
+
+### §18-N · ROADMAP-Spec W2·5j-TABELLEN — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·5j-TABELLEN` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). Der Wortlaut unten entstand nach Anlage von §18 (31.7.2026) und
+hebt den dort noch dokumentierten Parkgrund auf. In der ROADMAP bleiben Titel, `@meta`, der
+steuernde Kurzabsatz und der Pointer hierher. Steuert nicht — Spec-Heimat.
+**→ Bau-Spec: §18 dieser Datei + die drei Detailquellen unten.***
+
+  **Anlass der Entparkung:** der Blocker `david-spaeter-tabellen` war **kein technischer** — Daten und
+  Weg sind seit 20.7.2026 geklärt (656 `mehrspaltig`-Blöcke in 137 Erlassen); er hing allein an Davids
+  «später», und das ist am 3.8.2026 aufgehoben. Kein Bau-Vorlauf nötig.
+  **Grenze zu `W2·13-KANTONE-K7` (PDF-Werkstatt):** dieser Schritt macht **erkannte
+  `mehrspaltig`-Blöcke lesbar** (Tabellen-Semantik + Darstellung); K-7 repariert die **PDF-Extraktion
+  davor** (Dehyphenations-Gate, VD/SZ/ZH). Wer an `adapter-pdf.ts` die Texterkennung ändert, ist in
+  K-7, nicht hier.
+  **Detailquellen (fertige Implementation Plans, gestuft):**
+  [Stufe 1 · Füllpunkt-Zweispalter (SG)](../docs/superpowers/plans/2026-06-22-kantonale-tarif-tabellen.md) ·
+  [Stufe 2 · Mehrspalten-Tarif-Tabellen (ZH § 4 x-geometrisch, Klasse A NW/BS/SO/VS)](../docs/superpowers/plans/2026-06-22-mehrspalten-tarif-tabellen.md) ·
+  [Design-Spec (3 Defektklassen, Ansatz «Generator-Extrakt, gestuft» — von David gewählt)](../docs/superpowers/specs/2026-06-22-kantonale-tarif-tabellen-design.md).
