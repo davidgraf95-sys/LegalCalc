@@ -99,30 +99,63 @@ function sh(cmd: string, args: string[]): string | null {
   }
 }
 
-/** Klartext-Titel je Schritt: die Bold-Passage der zum @meta gehörenden Bullet-Zeile. */
-function titelAusRoadmap(md: string): Map<string, string> {
+interface SchrittInfo { titel: string; prosa: string; par: string | null }
+
+/** Markdown-Zeile(n) → Klartext (Links auf ihren Text, Auszeichnung weg). */
+function klartext(s: string): string {
+  return s
+    .replace(/<!--.*?-->/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[*`_]/g, '')
+    .replace(/^\s*-\s*\[.\]\s*/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Je Schritt aus ROADMAP.md: Klartext-Titel (Bold-Passage der Bullet-Zeile),
+ *  Auftrags-Wortlaut (Bullet-Zeile bis zum @meta, gekappt) und — wo der Block
+ *  einen «Detail: … §…»-Verweis trägt — der konkrete §-Anker für den
+ *  Slice-Befehl im Bau-Prompt. */
+function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
   const zeilen = md.split('\n');
-  const titel = new Map<string, string>();
+  const info = new Map<string, SchrittInfo>();
   for (let i = 0; i < zeilen.length; i++) {
     // Feld-Trenner ist « · » MIT Leerzeichen — die IDs selbst tragen den
     // Mittelpunkt (W2·13-…), er darf die Erfassung also nicht beenden.
     const m = zeilen[i].match(/@meta id:\s*(.+?)\s+·/);
     if (!m) continue;
     const id = m[1];
-    for (let j = i - 1; j >= Math.max(0, i - 4); j--) {
+    let titel = '';
+    let prosa = '';
+    let par: string | null = null;
+    for (let j = i - 1; j >= Math.max(0, i - 12); j--) {
       const fett = zeilen[j].match(/\*\*(.+?)\*\*/);
       if (!fett) continue;
-      const t = fett[1]
+      titel = fett[1]
         .replace(/`/g, '')
         .replace(new RegExp(`^${id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*·\\s*`), '')
         .replace(/^[^·]{1,18}·\s*/, '') // Kurz-ID-Präfix («5-PRAXIS · …»)
         .trim();
-      if (t) titel.set(id, t);
+      prosa = klartext(zeilen.slice(j, i).join(' '));
+      if (prosa.length > 700) prosa = `${prosa.slice(0, 700)} …`;
+      // §-Anker NUR aus dem eigenen Block (Bullet-Zeile bis @meta) und nur
+      // hinter einem ausdrücklichen «Detail:» — ein weiteres Fenster fischte
+      // im Test den §-Verweis des VORHERIGEN Schritts (W2·13 bekam «§20»).
+      const block = zeilen.slice(j, i).join(' ');
+      const teile = block.split(/\*\*Detail:\*\*|Detail:/);
+      if (teile.length > 1) {
+        const nachDetail = teile[teile.length - 1];
+        par = nachDetail.match(/§«([^»]+)»/)?.[1] ?? nachDetail.match(/§§?\s*(\d+(?:\.\d+)*)/)?.[1] ?? null;
+      }
       break;
     }
+    if (titel) info.set(id, { titel, prosa, par });
   }
-  for (const [id, t] of Object.entries(TITEL_OVERRIDE)) titel.set(id, t);
-  return titel;
+  for (const [id, t] of Object.entries(TITEL_OVERRIDE)) {
+    const alt = info.get(id);
+    info.set(id, { titel: t, prosa: alt?.prosa ?? '', par: alt?.par ?? null });
+  }
+  return info;
 }
 
 function zaehlDateien(pfad: string): number {
@@ -191,18 +224,22 @@ function worktreesUndBranches(): { worktrees: string[]; altBranches: number } {
 // ---------------------------------------------------------------------------
 // Bau-Prompt (Steuerpult-Auflage 1 — sechs Pflicht-Bestandteile, Spec)
 // ---------------------------------------------------------------------------
-function bauPrompt(e: Einheit, titel: string): string {
+function bauPrompt(e: Einheit, info: SchrittInfo | undefined): string {
   const fp = e.etikett.fahrplan ?? null;
+  const titel = info?.titel ?? e.id;
   const zeilen = [
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
+    ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
     `1. Lies CLAUDE.md und starte mit dem Skill \`auftrag\` (Aufnahme-Protokoll).`,
     `2. ERSTE Handlung: npm run plan:set -- ${e.id} status=wip && npm run check:plan — dann als Doku-Commit auf main pushen (sonst ist der Bau für parallele Sessions unsichtbar).`,
     e.etikett.worktree
       ? `3. Baue in einem EIGENEN git-Worktree (§12; Kollisionsflächen: ${e.etikett.kollision.join(', ') || '—'}).`
       : `3. Kein Worktree nötig (worktree: nein) — im Haupt-Checkout nur mit explizitem Pathspec committen (§12).`,
     fp
-      ? `4. Detail-Spec lesen: npm run fahrplan -- ${fp} <§> (Datei: ${fp}; den §-Verweis nennt der Schritt in ROADMAP.md).`
+      ? info?.par
+        ? `4. Detail-Spec lesen: npm run fahrplan -- ${fp} ${info.par}`
+        : `4. Detail-Spec lesen: npm run fahrplan -- ${fp} <§> (den §-Verweis nennt der Schritt in ROADMAP.md).`
       : `4. Detail steht direkt im Schritt-Wortlaut in ROADMAP.md (kein eigener Fahrplan).`,
     `5. Definition of Done (Skill \`auftrag\` Ziff. 4): npm run gate grün · berührt der Diff Risiko-Pfade (istRisikoPfad, scripts/gegenpruefung/kern.ts), Skill \`gegenpruefung\` fahren und Verdikt quittieren · verhaltensändernd ⇒ Golden byte-gleich · Status-Marker (§8) · npm run plan:set -- ${e.id} status=done && npm run check:plan · Session-Karte in STRUKTUR.md nachziehen.`,
     `6. Commits, die den Schritt erfüllen, tragen den Trailer: Roadmap: ${e.id}`,
@@ -223,8 +260,8 @@ function baueSeite(opts: { watch: number | null }): string {
   const md = readFileSync('ROADMAP.md', 'utf8');
   const { einheiten, queue } = parseRoadmap(md);
   const b: Buckets = resolve(einheiten, queue);
-  const titel = titelAusRoadmap(md);
-  const t = (id: string) => titel.get(id) ?? id;
+  const schritte = schrittInfoAusRoadmap(md);
+  const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
 
   const offen = einheiten.filter((e) => e.etikett.status !== 'done');
@@ -238,7 +275,7 @@ function baueSeite(opts: { watch: number | null }): string {
   const prompts: Record<string, string> = {};
   for (const id of baubar) {
     const e = byId.get(id);
-    if (e) prompts[id] = bauPrompt(e, t(id));
+    if (e) prompts[id] = bauPrompt(e, schritte.get(id));
   }
 
   // Baustellen-Gruppierung nach fahrplan:-Feld.
@@ -513,4 +550,4 @@ if (!process.env.VITEST) {
   if (watch) setInterval(schreib, watch * 1000);
 }
 
-export { baueSeite, bauPrompt, titelAusRoadmap };
+export { baueSeite, bauPrompt, schrittInfoAusRoadmap };
