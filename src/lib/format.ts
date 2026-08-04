@@ -94,15 +94,30 @@ export interface StandAusweis {
   abruf: string;
   /** Permalink: absolute URL inkl. origin, Pfad und #anker (domain-neutral aufgebaut). */
   permalink: string;
+  /** W2·10-UI-NAV/R3: amtlicher Deep-Link auf DIESELBE Stelle in der geltenden
+   *  Fassung (ELI-Form, z. B. Fedlex `…/de#art_957`). Optional — liegt er nicht
+   *  vor (Kanton, aufgehobener Artikel, Synthese-Suffix), bleibt die Zeile ohne
+   *  ihn (§8: lieber keine Quelle als eine erfundene). */
+  amtlich?: string;
 }
 
-/** Stand-Ausweis als eine Zeile: «Fassung vom … · abgerufen am … · <url>».
- *  Reihenfolge fest (§7 a–d); fehlende Fassung wird ehrlich ausgelassen (§8). */
+/** Stand-Ausweis als eine Zeile:
+ *  «Fassung vom … · abgerufen am … · <permalink> · amtliche Fassung: <url>».
+ *  Reihenfolge fest (§7 a–d); fehlende Fassung wird ehrlich ausgelassen (§8).
+ *
+ *  W2·10-UI-NAV/R3: die amtliche Quelle steht ZULETZT und ausdrücklich benannt.
+ *  Zwei URLs unkommentiert nebeneinander wären in einer Rechtsschrift nicht
+ *  auseinanderzuhalten — und §7 macht die amtliche Fassung zur massgeblichen:
+ *  der Permalink zeigt auf unsere Projektion, dieser Link auf das Original. Wer
+ *  das Zitat in eine Akte klebt, trägt damit beides bei sich (D1: Norm, Link,
+ *  Stand). Der Aufrufer liefert die fertige URL (verifizierLinkArtikel, im
+ *  Builder gegen den Snapshot validiert) — dieser Baustein bildet keine URL. */
 export function standAusweis(a: StandAusweis): string {
   const teile: string[] = [];
   if (a.fassung) teile.push(`Fassung vom ${fmtIsoStrict(a.fassung)}`);
   teile.push(`abgerufen am ${fmtIsoStrict(a.abruf)}`);
   if (a.permalink) teile.push(a.permalink);
+  if (a.amtlich) teile.push(`amtliche Fassung: ${a.amtlich}`);
   return teile.join(' · ');
 }
 

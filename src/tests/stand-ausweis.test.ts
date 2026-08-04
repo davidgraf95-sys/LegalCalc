@@ -14,6 +14,10 @@ import type { NormSnapshot } from '../lib/normtext/typen';
 
 const ABRUF = '2026-07-17';
 const PERMALINK = 'https://lexmetrik.vercel.app/gesetze/bund/OR#art-7';
+// W2·10-UI-NAV/R3: amtlicher Deep-Link in ELI-Form (Fedlex), wie ihn
+// `verifizierLinkArtikel` liefert — hier als Konstante, der Validator hat seine
+// eigene Prüfung (verifikationslink.test.ts).
+const AMTLICH = 'https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_7';
 
 describe('standAusweis (fachneutraler Baustein)', () => {
   it('mit Fassung: «Fassung vom … · abgerufen am … · <url>» in fester Reihenfolge', () => {
@@ -32,6 +36,26 @@ describe('standAusweis (fachneutraler Baustein)', () => {
     const [z1, z2] = s.split('\n');
     expect(z1).toBe('Art. 7 OR');
     expect(z2).toBe(`Fassung vom 01.01.2025 · abgerufen am 17.07.2026 · ${PERMALINK}`);
+  });
+
+  // ── W2·10-UI-NAV/R3: amtlicher Deep-Link als vierte, benannte Angabe ────────
+  it('mit amtlich: die amtliche Quelle steht ZULETZT und ausdrücklich benannt', () => {
+    const s = standAusweis({
+      fassung: '2025-01-01', abruf: ABRUF, permalink: PERMALINK, amtlich: AMTLICH,
+    });
+    expect(s).toBe(
+      `Fassung vom 01.01.2025 · abgerufen am 17.07.2026 · ${PERMALINK} · amtliche Fassung: ${AMTLICH}`,
+    );
+    // Die Reihenfolge ist der Punkt: der Permalink zeigt auf unsere Projektion,
+    // der amtliche Link auf das Original (§7 «massgeblich ist die amtliche Fassung»).
+    expect(s.indexOf(PERMALINK)).toBeLessThan(s.indexOf(AMTLICH));
+  });
+
+  it('ohne amtlich (Kanton/aufgehoben/Synthese): keine erfundene Quelle (§8)', () => {
+    const s = standAusweis({ fassung: '2025-01-01', abruf: ABRUF, permalink: PERMALINK });
+    expect(s).not.toContain('amtliche Fassung');
+    // …und der Rest bleibt byte-gleich zum Vorzustand (§6: kein Kollateralschaden).
+    expect(s).toBe(`Fassung vom 01.01.2025 · abgerufen am 17.07.2026 · ${PERMALINK}`);
   });
 
   it('heuteIso: Date-Eingabe → strenges ISO (YYYY-MM-DD), §2-konform', () => {

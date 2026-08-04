@@ -1,6 +1,7 @@
 import { memo, type ReactNode } from 'react';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { romanFrei, margLabel } from '../helpers';
+import { merkeRuecksprungVonDom } from '../scrollAnker';
 
 // §15.2 (CLS, 18.7.2026): die obersten STANDARD_OFFEN_TIEFE Gliederungs-Ebenen sind
 // ab dem ERSTEN Render offen (Default, kein State-Wechsel → kein Lade-Shift). Damit
@@ -41,8 +42,27 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({ sektionen, aktivPfa
           {hatKinder
             ? <button type="button" onClick={() => onToggle(s.id)} aria-label={auf ? 'Einklappen' : 'Aufklappen'} className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
             : <span className="shrink-0 w-4" aria-hidden />}
-          <button type="button" onClick={() => onSprung(s.id)} data-toc-aktiv={aktiv ? '1' : undefined} aria-current={aktiv ? 'true' : undefined}
-            className={`flex-1 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${tiefe === 0 ? 'text-body-s' : 'text-xs'} ${aktiv ? 'text-ink-900 font-medium bg-brass-100/40' : 'text-ink-600 hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
+          {/* W2·10-UI-NAV/R5: die verlassene Leseposition VOR dem Sprung vormerken.
+              Der TOC-Sprung erzeugt bewusst keinen History-Eintrag (LM-202) — ohne
+              diese Notiz gäbe es keinen Rückweg. Reine Lese-Operation auf dem DOM,
+              kein State, kein Re-Render: `onSprung` bleibt unverändert der
+              autoritative Sprung-Handler, hier hängt nur die Notiz davor. */}
+          <button type="button" onClick={() => { merkeRuecksprungVonDom(); onSprung(s.id); }} data-toc-aktiv={aktiv ? '1' : undefined} aria-current={aktiv ? 'true' : undefined}
+            // AKTIV-AUSZEICHNUNG HÖHENNEUTRAL (Wurzel des a9-CLS-Rests 0.001726…).
+            // Die Aktiv-Zeile trug zusätzlich `font-medium` — und der Fettschnitt
+            // ist keine reine Farbänderung: bei 256 px Spaltenbreite bricht er
+            // lange Labels um. Gemessen an derselben Zeile («1. Titel: Allgemeine
+            // Bestimmungen»): 42.5 px fett gegen 23.25 px normal, also 19.25 px
+            // Sprung. Wandert die Markierung beim Lesen weiter, schiebt das die
+            // ganze Gliederung darunter; fällt die Spy-Korrektur dabei aus dem
+            // 500-ms-`hadRecentInput`-Fenster (gemessen: Klick + 552 ms), zählt
+            // der Shift als unerwarteter CLS (§15.2).
+            // Ersetzt durch zwei Signale, die die Zeilenhöhe nicht anfassen:
+            // Tinte (ink-600 → ink-900) und Fläche (bg-brass-100/70). Das ist
+            // dieselbe Aktiv-Sprache wie im SprachUmschalter — bestehende Tokens,
+            // kein neuer Farb-Rohwert (§13/F7). Semantischer Träger bleibt
+            // unverändert `aria-current`, die Marker-Sprache `data-toc-aktiv`.
+            className={`flex-1 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${tiefe === 0 ? 'text-body-s' : 'text-xs'} ${aktiv ? 'text-ink-900 bg-brass-100/70' : 'text-ink-600 hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
             {pre ? <><span className="font-medium text-ink-700">{pre}:</span> {margLabel(rest)}</> : margLabel(s.label)}
           </button>
         </div>
