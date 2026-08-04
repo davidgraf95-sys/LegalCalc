@@ -109,4 +109,9 @@ export const INVENTAR: readonly string[] = [
   // Lagebild-Generator auf dem bestehenden Parser; Spec in FAHRPLAN-PLAN-STEUERUNG.md
   // §«Lagebild-Generator `plan:bild`».
   'QS-PLAN-BILD',
+
+  // §17-Vorfall 4.8.2026: Vercel-Free-Tier-Tageslimit (>100 Preview-Deployments)
+  // blockierte den merge-pflichtigen Vercel-Check eines App-fremden Diffs (#443,
+  // Admin-Bypass durch David). Wurzel-Fix: Ignored Build Step für App-fremde Diffs.
+  'QS-CI-VERCEL',
 ];
