@@ -322,7 +322,11 @@ TABU je Auftragsklasse (UI: Datenfläche tabu; Extraktion: Arbeitsfläche via To
 Whitelist-Erweiterungen; ≤2k = Richtwert, Fails/Befunde NIE kürzen. DoD: Template existiert +
 referenziert; 3 Probe-Dispatches halten das Schema.
 
-**T15 Modell-/Effort-Routing (mittel/S).** M: model+effort in JEDEM Task-Call explizit;
+**T15 Modell-/Effort-Routing (mittel/S).** *Stand 4.8.2026: Routing spricht seither
+semantische Stufen (spitze/stark/mittel/klein); Abbildung auf Modelle NUR in `PALETTE`
+(`scripts/dispatch.ts`), Regeln im Template §2 — u. a. Gegenprüfung bevorzugt spitze,
+Minimum stark/high (Entscheid David, Commit ef5a3a843). Der Rest dieses Absatzes ist
+der Planungsstand vom Juli 2026.* M: model+effort in JEDEM Task-Call explizit;
 Checkliste im T4; Risikopfade + Gegenprüfung fix Opus/high. E: bis −48…−76 % Output
 auf effort-gesenkten Schritten (Opus-4.5); Haiku = 1/5 Opus-Preis. **K:** mechanisch =
 deterministische Transformation, maschinell prüfbar (verschieben, formatieren, Log-Extrakt,
