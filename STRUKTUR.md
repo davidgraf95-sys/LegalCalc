@@ -28,6 +28,14 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 4.8.2026 (ganztags) — Code-Inventur → QS-CODE-Reihe: Intake, 10 Bau-Einheiten, Orchestrierungs-Modus
+**Fable-Session (ab Nachmittag reine Orchestrierung: Opus baut, Sonnet prüft, Haiku fegt — Anweisung David). Drei read-only Tiefenanalysen (Logik/Darstellung/Pipeline, Stand `2c4d97e54`) → §14-Intake `QS-CODE-{TURSO,FRISTENKERN,AUSSENKANTEN,ENTDOPPLUNG,SPLITS}` + FAHRPLAN-CODE-VERBESSERUNG + Bibliothek-Dossier (`b5518366b`); David-Entscheide verankert (Manifest-Nullzeilen gewollt · Tariftext-Freigabe → DESIGN-REGLEMENT-NORMTEXT §1, `94a9bfa35`).**
+
+- **Gelandet:** #442 FRISTENKERN (26-Fälle-Grenzwert-Batterie fristenEngine, Mutations-Rotprobe; `47fce63ad`) · #443 QS-PLAN-BILD (Fremd-PR, seriell mitgelandet) · `daten/poc` −6,7 GB (Freigabe David).
+- **Gebaut + adversarial geprüft, PRs offen (Batterie/Landung → Folgesession):** #451 AUSSENKANTEN (Tor `check:ui-normzitate`, Basislinie LEER 738/738, Suffix-Falle aus Gegenprüfung via `artikelToken` behoben + `jsonSchutz` für 9 Blindcasts; e2e-Verdikt GRÜN, **Auto-Merge scharf**) · #452 D6 (70 useState→AgStand, Migration alt-Format, 75/75 verlustfrei) · #450 D1/T1 (6 Seiten auf VorlagenSeite, Komfort-Delta deklariert) · #453 D2 (GerichtsWahlBlock, 720-Fälle-Byteprobe) · #446 D4 (usePermalinkFelder, 18 Formulare) · #444 fedlex-Split (Byte-Rekonstruktion identisch) · #447/#448 zust/besetzung-Splits (**Risikopfad — Merge-Schutz hält sie GEWOLLT rot** bis Gegenprüfungs-Quittung; kern.ts-Ordner-Zweig in #448, Blocker-Doku in #447) · #449 Kleinvieh (Archiv-One-Shots, coverage-v8 via npm@10, rsp-fs-idx-Migration, chf-Heimat).
+- **Prozess (§17 als Automatik, Anweisung David):** `tor-schutz.py` deckt jetzt playwright/e2e-Pipes (Rotprobe gezeigt) · Refactoring-Skill: Engine-Split ⇒ `istRisikoPfad()`-Abdeckung im selben PR (2× unabhängig belegt) · QS-E2E-STABIL-Mitnahme (suche.test-hookTimeout 3× belegt) · strict/BEHIND-Klemme diagnostiziert (update-branch; Wurzel-Fix `QS-CI-VERCEL`/#445 bei Parallel-Session) · Vercel-Tageslimit → dokumentierte Billing-Ausnahme-Landungen.
+- **Offen (Folgesession):** Batterien+Landungen der 9 PRs (Reihenfolge frei, #447/#448 nur mit Gegenprüfungs-Ritual) · TURSO (Stand siehe Branch/ROADMAP) · D1-T2–4 · D3/D5/D7 · Splits prozesskosten/zitat-extraktion/EntscheidLeser (mit QS-UI-HIGHLIGHT sequenzieren) · QS-PERF c.
+
 ## Session 4.8.2026 (abends) — QS-PLAN-BILD: Lagebild-Generator als Steuerpult (#443)
 **Fable-Session, Worktree qs-plan-bild: `npm run plan:bild` gebaut und gelandet (Squash `39c5cc6d1`, Admin-Bypass wegen Vercel-Tageslimit — Entscheid David; inhaltliche Tore lokal + CI-Vorlauf grün, Haupt-CI-Lauf auf `main` zum Kartenzeitpunkt laufend).**
 
