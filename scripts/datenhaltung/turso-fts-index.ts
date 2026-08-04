@@ -1,0 +1,83 @@
+// scripts/datenhaltung/turso-fts-index.ts
+// Liest den FERTIGEN lokalen FTS5-Index als Shadow-Tabellen aus, damit `turso-sync` ihn
+// überträgt, statt ihn auf der Gegenseite ein zweites Mal bauen zu lassen (QS-CODE-TURSO).
+//
+// WARUM ÜBERHAUPT (gemessen 4.8.2026, Wurzel des 22-Minuten-Engpasses). Der Sync schickte
+// bisher die ZEILEN in eine remote FTS5-Tabelle. Damit tokenisiert und indexiert die
+// Gegenseite denselben Text noch einmal, den `fts.ts` lokal längst indexiert hat — und
+// bezahlt zusätzlich den LSM-Preis von FTS5: jede Transaktion legt ein neues Segment an,
+// `automerge` schreibt die Segmente danach wieder und wieder um. Nullprobe über dieselbe
+// Nutzlast (200 Zeilen / 7,07 MiB, je n=3, Median):
+//   Zeilen → standalone FTS5 (heutiger Pfad) .... 19,9 s →  364 KiB/s
+//   Zeilen → GEWÖHNLICHE Tabelle (Nullprobe) ....  7,8 s →  946 KiB/s
+// Der Aufschlag ist also nicht der Transport, sondern der Schreibpfad von FTS5 — und er
+// wächst mit dem Index: dieselbe Messung ergab 437 KiB/s bei 500 Zeilen, aber nur 120 KiB/s
+// über den vollen Korpus (CI-Lauf 29757068566). Genau diese Superlinearität ist der Grund,
+// warum das Budget mit dem Korpus reisst und nicht bloss langsam wird.
+//
+// DIE WURZEL: der Index EXISTIERT bereits. `fts.ts` baut ihn beim `datenhaltung:build`
+// deterministisch in `daten/*.db`. Ihn auf der Gegenseite neu abzuleiten ist Doppelarbeit im
+// Sinn von §5 — die Replika ist eine Projektion des lokalen Artefakts, keine zweite Quelle.
+// Übertragen werden darum die Shadow-Tabellen (`_data`, `_idx`, `_docsize`, `_config` und bei
+// standalone zusätzlich `_content`). Das sind GEWÖHNLICHE SQLite-Tabellen; sie laufen mit
+// Plain-Tabellen-Durchsatz und die Gegenseite tokenisiert nichts mehr.
+//
+// PREIS, ehrlich benannt: es gehen MEHR Bytes über den Draht (der Index kommt zur Nutzlast
+// hinzu, Blobs zudem base64-kodiert, +33 %). Für die Entscheide sind das ~251 statt ~165 MiB.
+// Der Tausch lohnt, weil die zusätzlichen Bytes mit Plain-Durchsatz laufen und die
+// superlineare Indexarbeit ganz entfällt — Messwerte im Kopf von `turso-sync.ts`.
+//
+// FORMAT-TREUE ist kein Vertrauensakt (§7): der Sync prüft die geladene Tabelle vor dem
+// Tausch mit dem FTS5-eigenen `integrity-check`, der den Index gegen den Inhalt rechnet.
+// Was hier falsch ankäme, ginge nie live.
+import type { DatabaseSync } from 'node:sqlite';
+import type { Wert } from './turso-transport';
+
+/** Eine zu übertragende Shadow-Tabelle: Namens-Suffix, Spalten, fertige Wert-Tupel. */
+export interface SchattenLadung {
+  suffix: string;
+  spalten: string[];
+  werte: Wert[][];
+}
+
+/** Shadow-Tabellen einer FTS5-Tabelle in LADE-Reihenfolge.
+ *  `_content` fehlt bei contentless-Tabellen (`content=''`) — dort trägt der Index keinen
+ *  Text, und die Tabelle wird von SQLite gar nicht erst angelegt. */
+const SCHATTEN_SPALTEN: Array<{ suffix: string; spalten: string[]; nurStandalone?: true }> = [
+  { suffix: '_config', spalten: ['k', 'v'] },
+  { suffix: '_data', spalten: ['id', 'block'] },
+  { suffix: '_idx', spalten: ['segid', 'term', 'pgno'] },
+  { suffix: '_docsize', spalten: ['id', 'sz'] },
+  { suffix: '_content', spalten: ['id', 'c0', 'c1', 'c2', 'c3', 'c4'], nurStandalone: true },
+];
+
+/**
+ * Liest die Shadow-Tabellen des lokal gebauten FTS5-Index.
+ *
+ * @param lokal      Quell-DB (daten/normtext.db bzw. daten/rechtsprechung.db)
+ * @param tabelle    Name der lokalen FTS5-Tabelle
+ * @param mitContent `true` für standalone (Text physisch gespeichert, `_content` wandert mit),
+ *                   `false`, wenn die ZIEL-Tabelle contentless ist.
+ *
+ * `mitContent` beschreibt bewusst das ZIEL, nicht die Quelle. `fts_artikel` liegt lokal als
+ * external-content-Tabelle über `artikel` und remote als contentless — beide tragen denselben
+ * Index. Empirisch geprüft (4.8.2026): über denselben Text und dieselben rowids sind `_data`,
+ * `_idx`, `_docsize` und `_config` beider Bauarten BYTE-GLEICH; sie unterscheiden sich nur
+ * darin, ob eine `_content`-Tabelle daneben liegt. `turso-fts-index.test.ts` hält das fest.
+ */
+export function leseFtsSchatten(lokal: DatabaseSync, tabelle: string, mitContent: boolean): SchattenLadung[] {
+  const ladungen: SchattenLadung[] = [];
+  for (const { suffix, spalten, nurStandalone } of SCHATTEN_SPALTEN) {
+    if (nurStandalone && !mitContent) continue;
+    // `ORDER BY rowid` scheidet bei WITHOUT ROWID (`_idx`, `_config`) aus; die Reihenfolge
+    // ist für die Ziel-Tabelle ohnehin unerheblich (gewöhnliche Tabellen mit eigenem
+    // PRIMARY KEY). Sortiert wird trotzdem — nach dem Schlüssel —, damit der Lauf
+    // deterministisch ist und zwei Sync-Läufe dieselben Requests erzeugen (§2).
+    const ordnung = spalten[0] === 'segid' ? 'segid, term' : spalten[0];
+    const rows = lokal
+      .prepare(`SELECT ${spalten.join(', ')} FROM ${tabelle}${suffix} ORDER BY ${ordnung}`)
+      .all() as Array<Record<string, Wert>>;
+    ladungen.push({ suffix, spalten, werte: rows.map((r) => spalten.map((s) => r[s] ?? null)) });
+  }
+  return ladungen;
+}
