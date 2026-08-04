@@ -28,6 +28,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 4.8.2026 (Nacht) — Gross-Aufräumung: Branch-Bereinigung, Rotations-Wurzel-Fix #455, ROADMAP-Diät Wellen 2+3 #456 — beide Steuer-Doku-Wächter GRÜN
+**Fable-Orchestrator-Session (Auftrag David: «räum ganzen worktrees auf … prüf die branches und lösch die gelandeten … mach die rotation auch noch … beende session und räum alles auf»). Drei delegierte Bau-Einheiten (lex-bau/lex-synthese, Worktree-Isolation), adversariale Gegenprüfung, serielle Landung. main: `dc98c1c7b`.**
+
+- **Branch-Bereinigung:** 15 lokale Branches gelöscht (14 gelandete + `feat/l3-reaktivierung` auf expliziten David-Auftrag; je Branch belegt: lokale Spitze im gemergten PR-Stand, Squash-sicher via `gh api compare`, 0 ahead). Übrig: main + die 10 offenen QS-CODE-/CI-PR-Branches #444–#454.
+- **#455 Rotations-Wurzel-Fix (§17):** Doppel-Datum-Regex-Lücke (dokumentiert seit AP-Welle, nie gefixt) + budget-getriebene Nachrotation (`MINDEST_BEHALT=3`) in `.claude/hooks/struktur-rotieren.py`; §6.7-Rot-Beweis (vorher rotieren:0 trotz 7 überalterter Karten), Gegenprüfung BESTANDEN (Linsen: Byte-Erhalt exakt, Regex-Randfälle 14/14, Terminierung, Hook-No-op-Sicherheit, Doku-Treue; 2 Minor-Befunde behoben im Rotations-Commit `5f5422679`). Rotation vollzogen: STRUKTUR **75.0→57.8 KB**, 5 Karten byte-gleich ins Archiv, Archiv-Chronologie repariert.
+- **#456 ROADMAP-Diät Wellen 2+3:** W2 = 14 `done`-Schritte wörtlich in die Chronik (+Inventar-Nachzug); W3 = AP-11 rückwirkend, Spec-Prosa von 36 offenen Schritten in 19 Fahrpläne (je Nachzugs-§ mit Herkunftsvermerk). ROADMAP **120.6→97.4 KB**; Prosa-Bilanz mechanisch (824 Chunks, 0 verloren; ein Elidier-Fehler dadurch gefunden+behoben), `check:plan` grün, 143 Plan-Tests grün, `plan:next` steuerungs-neutral.
+- **Landungs-Lage:** Vercel-Free-Tageslimit machte den Required-Check «Vercel» rot → David-Entscheid im Chat («lass vercel aus dem spiel»): Merge per `--admin` bei grüner Actions-Batterie; #456-Shard-2-Flake (Runner 16m33s, Doku-Diff = eigene Nullprobe) per Rerun grün. Wurzel-Fix-Flächen existieren: QS-CI-VERCEL (#445, Test 5.8.) bzw. QS-E2E-STABIL.
+- **Offene David-Entscheide:** (1) `W2·5d` (done) bleibt im Plan — zwei offene Schritte tragen `dep: [W2·5d]`; Umzug in die Chronik wäre ein Steuer-Eingriff. (2) `QS-EXTQUELLEN`/`QS-CI-VERCEL` haben kein `fahrplan:`-Feld — grösste verbliebene ROADMAP-Prosa-Blöcke; für weitere Diät zuerst Feld vergeben. (3) README-Neufassung + Root-Audits-Archivierung weiter offen.
+
 ## Session 4.8.2026 (spät) — Delegations-System modernisiert: Agent-Typen lex-*, Stufen-Palette, Tor-Ebene C
 **Fable-Session, Prozessarbeit nach §17-Fünf-Schritten (Automatisierung von Stabilem). Anlass: freies Prozessmandat David 4.8.2026 («Prozesse des Arbeitens optimieren ist deine Aufgabe — offen ausserhalb bestehender Vorgaben»). Commit `ef5a3a843` direkt auf main; Tore grün (dispatch-klausel, gate:schnell, eslint).**
 
@@ -303,37 +312,6 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
   Offene Morgen-Vorlagen für David: LM-041-Sachgebiet-Tabelle (§7-Auflage), LM-112, LM-042 (Extraktion),
   OR-Leser-Default kantonal, W2·7-BEZUG-LADEN (§15), QS-CURRENCY-KANON, W2·13-KANTONE-DRIFT.
   (`feat/ui-befunde-b2` → `main`), kein Merge in diesem Auftrag.
-
-## Session 2.8.2026 — W2·17-UI-BEFUNDE-B1: Chips, Badges und Normzitate, 13/16 gebaut (Parallel-Worktree, Branch `claude/sleepy-mestorf-5dbea7`)
-**Auftrag:** Batch B1 (16 UI-Befunde, K-05+K-10, §2) in einem eigenen Worktree parallel zum
-Hauptzweig bauen — Prod-Re-Audit vor Baubeginn (§0.1), drei Lose (Fable 5 / Opus / Sonnet 5),
-Doku-Abschluss und PR dieser Session.
-- **Prod-Re-Audit 2.8.2026** (lexmetrik.vercel.app, DOM + `getComputedStyle`): **16/16
-  reproduziert** — 12 voll, 4 teilweise (LM-041/044/050/051; Fundort teils überholt, Grunddefekt
-  bestätigt).
-- **13 gebaut** (10 Commits): LM-101 Blocker (266l/266o nicht mehr uppercase-entstellt) ·
-  LM-103 (Normzitate `whitespace-nowrap`) · LM-107 (`margLabel`-`<sup>` vereinheitlicht) ·
-  LM-102+LM-106 (`normLabel()` löst via `ERLASS_REGISTER` auf, 60 Kürzel korrigiert, 19
-  Schreibweisen live gegen Fedlex-SPARQL verifiziert) · LM-105+LM-049+LM-051 (Aktenzeichen nur
-  bei Abweichung vom BGE-Zitat, «+N weitere», Trenner-Textknoten) · LM-040
-  (`.lc-chip-selected`, gefüllte Fläche + ✓) · LM-045+LM-046+LM-047 (Chip-Grammatik über
-  Container-Klasse `lc-chip-zeile`) · LM-050 (ZeichenLegende als Toggletip, B4-Wächter 32/32
-  grün, Test nicht angepasst).
-- **3 zurückgestellt** (Bestands-Entscheide, §0.2 — Öffnung nur per David-Entscheid): LM-041
-  (Facetten-Modell FAHRPLAN-VERZAHNUNG-UI.md §9/B1 abschliessend definiert, kein
-  Sachgebiet/Zitier-Rolle) · LM-044 (FAHRPLAN-GESETZES-UX.md §10.8 A25/C-3 ausdrücklich DEFER,
-  U-VERWEIS-Kollision) · LM-048 (`gewicht:null` = «nicht messbar», W2·7-BEZUG-Entscheid, R16-
-  Ampel gesperrt).
-- **Tore (2.8.2026):** tsc ok · vitest ok (4859, inkl. B4-Wächter) · `golden:vergleich`
-  byte-gleich · lint ok · `check` 39/40 — einzig `check:verfall` rot, und zwar als
-  **vorbestehender Bestandsdefekt** belegt (Nullprobe im sauberen `main`-Checkout am 2.8.2026
-  identisch rot: 10 «Künftige Fassung»-Termine per 1.8.2026 kalendarisch verfallen, unabhängig
-  von B1, separat geflaggt).
-- **Nebenbefund** (separat geflaggt, nicht Teil des PR): Prod zeigt auf `/gesetze/bund/OR` keine
-  kantonalen Bezüge mehr im OR-Leser und deckelt BGE-Gruppen — Spannung zum
-  W2·7-BEZUG-B7-Landungsvermerk, zu prüfen.
-- **PR:** dieser Commit/Push (`claude/sleepy-mestorf-5dbea7` → `main`), kein Merge in diesem
-  Auftrag — Landung ist ein eigener, nachgelagerter Schritt (Skill `landung`).
 
 ## Ältere Session-Karten und Chroniken — rotiert ins Archiv
 
