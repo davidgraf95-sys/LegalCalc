@@ -9,7 +9,8 @@ import { ladeIcs } from '../icsDownload';
 import { LinkTeilenButton } from '../LinkTeilenButton';
 import { KANTONE } from '../../lib/kantone';
 import { icsSammel } from '../../lib/icsExport';
-import { permalinkKodieren, permalinkLesen, istISO } from '../../lib/permalink';
+import { permalinkKodieren, istISO } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { FSP_LINK_SPEC } from '../../lib/rechnerPermalinks';
 import {
   berechneVermieterkuendigungsSpiegel, VK_KUENDIGUNGSARTEN,
@@ -129,10 +130,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
 }) {
   const erlaubt = EREIGNISSE.filter((e) => ereignisse.includes(e.code));
   // Vorbefüllung aus dem Permalink (Brücken-/Redirect-Ziel; SSR-sicher).
-  const start = useMemo(() => {
-    try { return permalinkLesen(FSP_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {}; }
-  }, []);
+  const start = usePermalinkFelder(FSP_LINK_SPEC);
 
   const [ereignis, setEreignis] = useState<Ereignis>(
     EREIGNIS_CODES.includes(start.ereignis as Ereignis) && ereignisse.includes(start.ereignis as Ereignis)
