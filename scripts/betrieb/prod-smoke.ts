@@ -64,6 +64,24 @@ async function pruefeHtmlRoute(pfad: string, marker = 'LexMetrik') {
   }
 }
 
+/** Alt-Route mit Link-Erbe: permanenter Redirect (308/301) auf das Ziel — nicht gefolgt,
+ *  damit Status UND Location beweisbar sind (IA-6 Stufe 2, vercel.json). */
+async function pruefeRedirect(pfad: string, ziel: string) {
+  try {
+    const res = await hole(pfad, { redirect: 'manual' });
+    if (res.status !== 308 && res.status !== 301) {
+      return hart(false, `Redirect ${pfad}`, `Status ${res.status} (erwartet 308/301)`);
+    }
+    const loc = res.headers.get('location') || '';
+    if (new URL(loc, BASE).pathname + new URL(loc, BASE).search !== ziel) {
+      return hart(false, `Redirect ${pfad}`, `Location «${loc}» (erwartet ${ziel})`);
+    }
+    hart(true, `Redirect ${pfad}`, `${res.status} → ${ziel}`);
+  } catch (e) {
+    hart(false, `Redirect ${pfad}`, `Netz-/Timeout-Fehler: ${(e as Error).message}`);
+  }
+}
+
 async function pruefeApiSuche() {
   const pfad = '/api/suche?q=miete';
   try {
@@ -144,9 +162,13 @@ async function pruefeSoft404() {
 async function main() {
   console.log(`Prod-Smoke gegen ${BASE}\n`);
   // Kernrouten (prerendered, öffentlich) — Reihenfolge stabil für lesbare Logs.
-  for (const pfad of ['/', '/gesetze', '/rechtsprechung', '/materialien', '/international', '/methodik', '/datenschutz']) {
+  for (const pfad of ['/', '/gesetze', '/rechtsprechung', '/materialien', '/methodik', '/datenschutz']) {
     await pruefeHtmlRoute(pfad);
   }
+  // IA-6 Stufe 2 (§11.8 Y-C, 3.8.2026): /international ist keine Seite mehr,
+  // sondern ein permanenter Redirect auf die Säule. Genau DAS wird hier geprüft —
+  // die vercel-Redirect-Ebene ist die einzige Schicht, die kein Repo-Tor sieht.
+  await pruefeRedirect('/international', '/gesetze?ebene=international');
   await pruefeApiSuche();
   await pruefeSitemap();
   await pruefeAsset('/og.png', 'image/');

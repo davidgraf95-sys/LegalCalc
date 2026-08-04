@@ -49,7 +49,44 @@
 // «tiefe Kodifikation» / «trägt-Dichte»), deckeln aber NICHTS mehr am Auto-Default.
 //
 // Gliederungstiefe (max. Sidecar-Verschachtelung) je Erlass, zur Einordnung:
-//   Tiefe 0: 900 (79 %)  ·  1: 64  ·  2: 98  ·  3: 58  ·  4: 12  ·  5: 3
+//   (renderTiefe, Stand 4.8.2026, 1416 Sidecars — Messbefehl: Verteilungs-Sonde
+//   des Bug-Checks #427): 0: 486 · 1: 520 · 2: 284 · 3: 93 · 4: 24 · 5: 9
+//
+// ── EID-3(b) · Tiefe primär aus der eId-Pfadlänge (§12.2, 3.8.2026) ───────────
+// `strukturTiefe` kam bisher allein aus der Sidecar-Rekursionstiefe, und die ist
+// eine hN-ABLEITUNG: der Struktur-Extraktor macht nur `h1`–`h5`-Überschriften zu
+// `gliederung`-Stufen (struktur-extrahiere.ts:259), ein amtlicher Container OHNE
+// hN-Überschrift fällt heraus. Fedlex selbst nummeriert seine Container-Pfade
+// kumulativ (`tit_3/lvl_u1/chap_2/lvl_I`) — die Segmentzahl ist damit die
+// direktere, robustere Aussage über die amtliche Verschachtelung als unsere
+// Ableitung. Seit EID-1 liegt sie je Stufe im Sidecar (`gliederung[].eId`).
+//
+// BELEGTER Abweichungsfall (korpusweit erhoben über 1416 Sidecars / 94 976
+// Gliederungsstufen, 3.8.2026): GENAU EIN Erlass weicht ab — SVG (SR 741.01),
+// 54 Stufen in 34 Artikeln, Tiefe 3 → 4. Ursache empirisch gegen die amtliche
+// Quelle belegt (Fedlex-HTML-Manifestation SR 741.01, Konsolidierung 20260701,
+// abgerufen 3.8.2026): `<section id="tit_3/lvl_u1">` trägt seine Überschrift
+// («Grundregel») als `div.heading` mit `aria-level="2"` statt als `h2` — 85
+// solcher `lvl_u*`-Container allein im SVG. Unsere hN-Ableitung sieht diese
+// Ebene nicht, der kumulative eId-Pfad der Kindstufe führt sie mit.
+// Alle übrigen 1415 Sidecars sind kongruent ⇒ ausser bei SVG ist KEINE sichtbare
+// Verhaltensänderung zu erwarten; und auch dort ändert sich nur die Kennzahl,
+// nicht die Darstellung (guideEbene/autoGuide bleiben identisch, s. u.).
+//
+// Zwei harte Auflagen, die den Umbau golden-neutral halten:
+//  (1) FALLBACK IST PFLICHT. 1202 der 1416 Sidecars tragen KEINE eId (13
+//      eId-lose Bundeserlasse + alle 1189 Kantons-Sidecars — kantonales Recht
+//      steht nicht in Fedlex). Ohne Positions-Fallback verlören sie ihre Tiefe
+//      und damit ihre Linien. Darum zählt jede Stufe MINDESTENS ihre eigene
+//      Position (`L + 1`); die eId kann die Tiefe nur ANHEBEN, nie senken.
+//      Das deckt zugleich den flachen `annex`-Wert ab (W2·5d-ANNEX, PR #425:
+//      `gliederung: [{ ebene: 1, label: 'Anhänge', eId: 'annex' }]` — ein
+//      Segment auf Position 0, also `max(1, 1) = 1`, keine Wirkung).
+//  (2) `guideEbene` BLEIBT AN DIE GERENDERTEN STUFEN GEBUNDEN. Es ist ein
+//      Render-INDEX in die Sektionsrekursion, kein Mass. Ein von Fedlex geerbtes
+//      Extra-Segment darf ihn nicht auf eine Ebene schieben, die der Reader gar
+//      nicht rendert (sonst zeigt «Linien AN» keinen Guide mehr). Er kommt
+//      darum weiterhin aus `renderTiefe` = max(`gliederung.length`).
 //
 // Referenz-Verdikte (im Tor `check:linien-kanon` gegated): autoGuide=false für ALLE
 // (ZGB/OR/ArG/Kurzerlass/Staatsvertrag/VMWG) — der Auto-Guide ist korpusweit aus;
@@ -59,7 +96,11 @@
 import type { StrukturMap } from '../../lib/normtext/browse';
 
 export interface LinienProfil {
-  /** Maximale Gliederungs-Verschachtelung des Erlasses (0 = flache Artikelliste). */
+  /** Maximale amtliche Gliederungs-Verschachtelung des Erlasses (0 = flache
+   *  Artikelliste). EID-3(b): primär die Segmentzahl des kumulativen Fedlex-
+   *  Container-eId-Pfads, mindestens aber die Sidecar-Position der Stufe
+   *  (Fallback für die 1202 eId-losen Sidecars). Kennzahl/Klassifikation —
+   *  NICHT der Render-Index des Guides, das ist `guideEbene`. */
   strukturTiefe: number;
   /** Sektions-tiefe (Rekursionstiefe in renderSektion), die den EINEN vertikalen
    *  Guide trägt, wenn Linien sichtbar sind — 0 oder 1; `null` = der Erlass hat
@@ -83,6 +124,21 @@ function median(werte: number[]): number {
 }
 
 /**
+ * EID-3(b): Verschachtelungstiefe, die ein kumulativer Fedlex-Container-eId-Pfad
+ * ausweist = Zahl seiner Segmente (`book_2/part_2/tit_7/chap_4/lvl_D` → 5).
+ * Leere Segmente werden verworfen (führender/doppelter Slash zählt nicht mit),
+ * ein flacher Wert ohne Slash ergibt 1 — namentlich `annex` (W2·5d-ANNEX).
+ * `undefined`/leer ⇒ 0, d. h. «keine Aussage»; der Aufrufer fällt dann auf die
+ * Sidecar-Position zurück. Rein deterministisch (§2), kein Zugriff nach aussen.
+ */
+export function eIdPfadTiefe(eId: string | undefined): number {
+  if (!eId) return 0;
+  let n = 0;
+  for (const seg of eId.split('/')) if (seg !== '') n++;
+  return n;
+}
+
+/**
  * Leitet das Linien-Aufbau-Profil eines Erlasses aus seinem Struktur-Sidecar ab
  * (die von `ladeStruktur` geladene StrukturMap). Deterministisch, seiteneffektfrei;
  * dieselbe Funktion nutzt der Reader (Laufzeit) UND das Tor (Korpus-Gegenprobe).
@@ -90,24 +146,34 @@ function median(werte: number[]): number {
 export function linienProfil(struktur: StrukturMap | null | undefined): LinienProfil {
   if (!struktur) return FLACH;
 
+  // renderTiefe = Zahl der TATSÄCHLICH gerenderten amtlichen Gliederungsstufen
+  // (Sidecar-Positionen). Bindet `guideEbene` (Auflage 2 im Kopfkommentar).
+  let renderTiefe = 0;
+  // strukturTiefe = amtliche Verschachtelung, eId-primär mit Positions-Fallback
+  // (Auflage 1). Die eId hebt an, senkt nie.
   let strukturTiefe = 0;
   // artProSektion[L] : voller Pfad-Präfix der Länge L+1 → Anzahl Artikel darunter.
   const artProSektion: Array<Map<string, number>> = [];
   for (const key in struktur) {
     const g = struktur[key].gliederung ?? [];
-    if (g.length > strukturTiefe) strukturTiefe = g.length;
+    if (g.length > renderTiefe) renderTiefe = g.length;
     for (let L = 0; L < g.length; L++) {
+      const tiefe = Math.max(L + 1, eIdPfadTiefe(g[L].eId));
+      if (tiefe > strukturTiefe) strukturTiefe = tiefe;
       const map = (artProSektion[L] ??= new Map());
       const pref = g.slice(0, L + 1).map((x) => x.label).join(' / ');
       map.set(pref, (map.get(pref) ?? 0) + 1);
     }
   }
-  if (strukturTiefe === 0) return FLACH;
+  if (renderTiefe === 0) return FLACH;
 
   // Der Guide markiert die INNERE Gruppierungsebene (Ebene 1), sofern vorhanden;
   // hat der Erlass nur EINE Ebene, sitzt er auf der äussersten (Ebene 0) — so wird
   // «die flache Ebene sichtbar» (Kurzerlass/Staatsvertrag mit einer Gliederung).
-  const guideEbene = Math.min(strukturTiefe - 1, 1);
+  // BEWUSST aus `renderTiefe`, nicht aus `strukturTiefe` (EID-3(b), Auflage 2):
+  // ein von Fedlex geerbtes Extra-Segment darf den Guide nie auf eine nicht
+  // gerenderte Ebene schieben.
+  const guideEbene = Math.min(renderTiefe - 1, 1);
   const dichteAmGuide = median([...(artProSektion[guideEbene]?.values() ?? [])]);
   // V2·A28 (David 12.7.2026, Live-Verdikt «funktioniert überhaupt nicht»): der Auto-
   // Guide wird KORPUSWEIT zurückgezogen — der Reader drängt die Linie NIE auf.

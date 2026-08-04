@@ -81,7 +81,7 @@ export const INVENTAR: readonly string[] = [
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
-  'QS-KORPUS-BMV', 'W2·5k-LINIEN-KONZEPT', 'QS-KORPUS-SCOPE',
+  'QS-KORPUS-BMV', 'W2·5k-LINIEN-KONZEPT', 'QS-KORPUS-SCOPE', 'QS-E2E-STABIL',
 
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
@@ -92,4 +92,10 @@ export const INVENTAR: readonly string[] = [
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
   // sie erweitert QS-AUTOMATIK-BERICHT (Bündelung, Skill `auftrag` Ziff. 3).
   'QS-GP-PREPUSH', 'QS-BASIS-DOKU-CI',
+
+  // F2b-Vorfall 4.8.2026 (#425 grün trotz Manifest-Drift): die Paritäts-Sonde
+  // zählte Wächter-Workflows als Deckung. Akuter Fix (check:datenhaltung in
+  // ci.yml) ist gebaut; die Sonden-Schärfung + Evaluation der 5 übrigen
+  // wächter-gedeckten Tore ist dieser Schritt.
+  'QS-AUTOMATIK-PARITAET',
 ];

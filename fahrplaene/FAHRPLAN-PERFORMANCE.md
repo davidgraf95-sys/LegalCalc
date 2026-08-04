@@ -312,6 +312,13 @@ benutzten Schnitte holt den Trade-off zurück. **Auflage: CLS vorher/nachher mes
 CLS wieder anhebt, ist keine Verbesserung, sondern ein Rückschritt mit Extra-Bytes.
 
 ### D · Der echte CLS-Defekt auf `/gesetze` — eigener Schritt `W2·15-CLS`
+
+> **Stand-Notiz 4.8.2026 (Bug-Checks W2·5d/W2·10, je per Nullprobe auf main verortet):**
+> drei kleine Rest-CLS-Quellen AUSSERHALB von `/gesetze`, alle **unter Budget** (Interaktions-
+> Deckel 0), darum kein eigener Schritt — beim Bau von `W2·15-CLS` mitzuprüfen:
+> Reader-Scroll BV 0.0067 / SVG 0.0010 @6× (EID3-Lauf; e2e-Scroll-Deckel dort bewusst 0.05) ·
+> Topbar rechter Bedien-Cluster 0.00157 @390/6× (R1-Lauf, ohne jede Interaktion) ·
+> Reader hell 0.0046–0.0062 @6× (R4-Lauf, Nullproben-Arm identisch).
 **Nicht Teil von `QS-PERF`, sondern Produktfehler mit eigener Einheit (§14.2).** `QS-PERF` ist Arbeit am
 **Tor**; dies ist ein Defekt, den Nutzer:innen sehen. Werden beide vermischt, verdeckt die
 Tor-Kalibrierung den Defekt — exakt das ist am 20.7. passiert.

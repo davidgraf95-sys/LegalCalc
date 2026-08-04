@@ -1777,7 +1777,8 @@ Je Einheit gilt die **A9-DoD-Zeile (§10.4) wörtlich** (CPU-Throttle 6×, CLS 0
 
 - **Y-A ✅ BEANTWORTET (David 16.7.2026, Auswahl-Dialog): JA** — Rechtsgebiet-Sicht wird von der 4. Einstiegskachel zu einem reinen Gliederungs-Modus demoted (A15 bleibt bindend: `?ansicht=rechtsgebiet` weiter erreichbar, nichts entfernt). **NICHT in IA-2 gebaut** (§14.2 kein Concern-Mix): IA-2 = Erfassungsgrad-Fläche (26er-Raster/Kanton-Übersicht); die Rechtsgebiet-Einstiegs-Kachel (`RechtsgebietEinstieg`) ist eine ANDERE Concern-Fläche der Rechtsgebiet-/IA-5-Linie (§11.4 Ziff. 2, Leitplanke E.1/§14.2: Rechtsinhalt/Rechtsgebiet ≠ reines Erfassungsgrad-UI). ⇒ als eigener Mini-Schritt der Rechtsgebiet-Fläche umzusetzen; hier nur protokolliert.
 - **Y-B ✅ BEANTWORTET (David 16.7.2026, Auswahl-Dialog): JA** — Default-Sortierung des 26er-Rasters auf «Erlass-Zahl» (Inhalt zuerst), Alphabet als Umschalter. **In IA-2 UMGESETZT** (`KantonAuswahl.tsx`: Default-State `sortierung='anzahl'`; A15-neutral, client-only, Prerender/Golden byte-gleich unberührt).
-- **Y-C:** `/international` Stufe 2 (echter Redirect mit Hash-Mapping) — erst nach Stufe-1-Betrieb.
+- **Y-C ✅ BEANTWORTET (David 3.8.2026, Nutzer-Turn «W2·5d fertigbauen»): JA** — `/international`
+  Stufe 2 (echter Redirect mit Hash-Mapping) nach Stufe-1-Betrieb freigegeben. **Gebaut**, s. §11.10.
 
 ### 11.9 · Bindende Entscheide (Zitat-Register aus plan-bestand — von JEDER Einheit zu respektieren)
 
@@ -1813,6 +1814,27 @@ Prerender-Markup byte-identisch (Kachel lebt im Client-JS).
 1 Sidebar-href + international.html-Head. Vormerkung Y-C: Canonical-Kette der Query-Säule.
 Nachtrag auf dem Branch: **A35-Clear-Prädikat 15s→45s** (deklarierte Infra-Kalibrierung —
 der Highlight-Clear braucht real ~16–17 s; Assertion unverändert scharf).
+
+**IA-6 Stufe 2 (Y-C) ✅ GEBAUT 3.8.2026 (Opus, Worktree `agent-a1d2deb`, PR #424) — offen nur
+noch der Merge.** `/international` ist keine Alias-Seite mehr: **zwei Redirect-Schichten** —
+`vercel.json` 308 permanent (Direktaufruf/Bookmark/Crawler; Vercel wertet `redirects` VOR dem
+Dateisystem aus) **und** `src/pages/InternationalRedirect.tsx` (interne react-router-Navigation
+erreicht den Server nie; dort wird der Hash EXPLIZIT abgebildet, `replace` → kein History-Rest).
+**Hash-Mapping 5/5** aus einer Quelle (`navigation.ts`), Ziele im Tor gegen die WIRKLICH
+gerenderten `<section id=…>` geprüft (§7; Rubrik-Daten dafür nach
+`src/lib/normtext/international-rubriken.ts` gezogen — react-refresh verbietet Konstanten-Export
+aus der Komponente); unbekannter Anker verliert den Hash statt ins Leere zu springen (§8).
+**Canonical-Kette (Y-C-Vormerkung) geschlossen:** Alias-Kanonik von Stufe 1 entfällt, wieder
+ausnahmslos Self-Canonical; `/international` ist keine Prerender-/Sitemap-Route mehr (62 statt
+63, kein `dist/international.html`) — Kette `/international` --308--> `?ebene=international`
+--canonical--> `/gesetze`, keine Schleife. **Wurzel-Fix §17:** Dauer-Tor
+`src/tests/international-redirect.test.ts` (keine Redirect-Quelle ist Prerender-Route, kein Ziel
+ist Quelle, `/suche` nie Quelle). **R-SCOPE-4:** Sidebar-Kopf UND alle 5 Anker zeigen direkt auf
+die Säule, Rückfall test-verboten. **Beweise:** Tor vor dem Fix rot (6/9); e2e 11/11 inkl. 5/5
+Anker im Viewport, zusätzlich 10/10 unter 6×-CPU-Drossel (30-Frame-Budget von `ScrollZuHash`
+trägt den Redirect-Hop → keine App.tsx-Änderung); a11y 29/29; 128 Regressions-e2e grün; Unit
+4967 grün; golden 256 byte-gleich; perf-budget/seo-index/zyklen/tor-paritaet/e2e-shards grün.
+Deklarierte Test-Anpassungen (§6.3): seo/navigation/a11y/prod-smoke. Roadmap W2·5d-YC.
 
 **IA-7 ✅ GEBAUT + GEMERGT 25.7.2026 (Fable 5, PR #355, Squash `da73c754`) — §11 DAMIT
 KOMPLETT (IA-1…IA-7 + Y-A/Y-B; offen nur Y-C Stufe 2).** Erlass-Zahl-Badges an den 26
