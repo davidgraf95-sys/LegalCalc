@@ -48,7 +48,21 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({ sektionen, aktivPfa
               kein State, kein Re-Render: `onSprung` bleibt unverändert der
               autoritative Sprung-Handler, hier hängt nur die Notiz davor. */}
           <button type="button" onClick={() => { merkeRuecksprungVonDom(); onSprung(s.id); }} data-toc-aktiv={aktiv ? '1' : undefined} aria-current={aktiv ? 'true' : undefined}
-            className={`flex-1 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${tiefe === 0 ? 'text-body-s' : 'text-xs'} ${aktiv ? 'text-ink-900 font-medium bg-brass-100/40' : 'text-ink-600 hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
+            // AKTIV-AUSZEICHNUNG HÖHENNEUTRAL (Wurzel des a9-CLS-Rests 0.001726…).
+            // Die Aktiv-Zeile trug zusätzlich `font-medium` — und der Fettschnitt
+            // ist keine reine Farbänderung: bei 256 px Spaltenbreite bricht er
+            // lange Labels um. Gemessen an derselben Zeile («1. Titel: Allgemeine
+            // Bestimmungen»): 42.5 px fett gegen 23.25 px normal, also 19.25 px
+            // Sprung. Wandert die Markierung beim Lesen weiter, schiebt das die
+            // ganze Gliederung darunter; fällt die Spy-Korrektur dabei aus dem
+            // 500-ms-`hadRecentInput`-Fenster (gemessen: Klick + 552 ms), zählt
+            // der Shift als unerwarteter CLS (§15.2).
+            // Ersetzt durch zwei Signale, die die Zeilenhöhe nicht anfassen:
+            // Tinte (ink-600 → ink-900) und Fläche (bg-brass-100/70). Das ist
+            // dieselbe Aktiv-Sprache wie im SprachUmschalter — bestehende Tokens,
+            // kein neuer Farb-Rohwert (§13/F7). Semantischer Träger bleibt
+            // unverändert `aria-current`, die Marker-Sprache `data-toc-aktiv`.
+            className={`flex-1 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${tiefe === 0 ? 'text-body-s' : 'text-xs'} ${aktiv ? 'text-ink-900 bg-brass-100/70' : 'text-ink-600 hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
             {pre ? <><span className="font-medium text-ink-700">{pre}:</span> {margLabel(rest)}</> : margLabel(s.label)}
           </button>
         </div>
