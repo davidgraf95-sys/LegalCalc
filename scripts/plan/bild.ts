@@ -212,7 +212,11 @@ function mainAmpel(): { gruen: boolean; name: string; wann: string } | null {
   if (raw === null) return null;
   try {
     const runs = JSON.parse(raw) as { conclusion: string | null; status: string; workflowName: string; updatedAt: string }[];
-    const fertig = runs.find((r) => r.status === 'completed' && r.conclusion);
+    // «cancelled» heisst «von einem neueren Push abgelöst», nicht «kaputt» —
+    // solche Läufe überspringen, sonst zeigt die Ampel nach jeder schnellen
+    // Push-Folge fälschlich rot (Befund David 4.8.2026, Ampel zeigte ROT bei
+    // grünem jüngstem Voll-Lauf). «skipped» analog.
+    const fertig = runs.find((r) => r.status === 'completed' && r.conclusion && !['cancelled', 'skipped'].includes(r.conclusion));
     if (!fertig) return null;
     return {
       gruen: fertig.conclusion === 'success',
