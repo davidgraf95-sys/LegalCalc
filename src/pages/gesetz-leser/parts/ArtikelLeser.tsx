@@ -23,6 +23,8 @@ import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { BezuegeZeile } from './BezuegeZeile';
 import type { ArtikelBezuege } from '../bezuegeLaden';
+import { urlMitHash } from '../../../lib/liveUrlSync';
+import { usePaneKontext } from '../../../components/layout/PaneKontext';
 
 // Schaufenster-Chips: nur die zentralen Leitfälle direkt zeigen (Reihenfolge =
 // `gewicht` aus dem Shard), Rest hinter «+n weitere». V2·B-2 (David 10.7.2026,
@@ -141,6 +143,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   imTreffer?: boolean; onSpringe?: (token: string) => void;
 }) {
   const [kopiert, setKopiert] = useState<'' | 'zitat' | 'link'>('');
+  // LM-202: der Teilen-Knopf schreibt die Adresse — im Pane NICHT (Herleitung
+  // unten bei `kopiere`). Ohne montierten Provider liefert der Kontext
+  // `imPane: false` ⇒ Einzelansicht/Prerender unverändert.
+  const { imPane } = usePaneKontext();
   const label = labelMitBereich(e.artikelLabel, e.artikel);
   // KURZ-Zitat («Art. 957 OR») — Fundstellen-Signal für den Entscheid-Sprung
   // (LeitfallZeile `normZitat` → ?norm=). MUSS knapp bleiben, sonst matcht der
@@ -335,6 +341,29 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
     void navigator.clipboard?.writeText(text).then(() => {
       setKopiert(was); window.setTimeout(() => setKopiert(''), 1500);
     });
+    // ── LM-202 (W2·10-UI-NAV-URL, David-Entscheid 3.8.2026) ──────────────────
+    // «Die URL ändert sich NUR bei explizitem Klick auf einen Artikel-Anker bzw.
+    // bei der Teilen-Aktion.» Der «Link»-Knopf IST die Teilen-Aktion — er legte
+    // den Permalink bisher in die Zwischenablage, während die Adressleiste auf
+    // dem zuletzt angesprungenen Anker stehen blieb. Wer den Link teilte und
+    // danach die Adresse las, sah zwei verschiedene Fundstellen (genau die
+    // LM-202-Beobachtung). Darum: der Teilen-Klick setzt den Anker auch in die
+    // Adresse — per `replaceState`, damit das Kopieren keinen «Zurück»-Schritt
+    // erzeugt (Verlaufs-Ökonomie wie LM-209).
+    //
+    // NUR beim «Link»-Knopf, nicht beim «Zitat»-Knopf: das Zitat wandert in
+    // einen Schriftsatz, es ist kein Ortswechsel. Und NUR ausserhalb eines
+    // Panes — ein Nebenpane ist nicht die adressierte Seite und darf die
+    // Haupt-URL nie umschreiben (dieselbe Grenze wie `springeZuArtikel` und
+    // `wechsleTab`).
+    //
+    // `?r=`-Instanz-Diskriminator: die Adresse behält ihn (er ist die Reiter-
+    // Identität), der KOPIERTE Link trägt ihn bewusst nicht — er ist rein lokal
+    // und hätte beim Empfänger keine Bedeutung. Ohne offene Zweitinstanz sind
+    // beide zeichengleich.
+    if (was === 'link' && !imPane && typeof window !== 'undefined' && window.history) {
+      window.history.replaceState(window.history.state, '', urlMitHash(window.location.href, `art-${e.artikel}`));
+    }
   };
   // Aufhebungsnotiz (G16/#3): die amtliche «Aufgehoben durch … (AS …)»-Notiz eines
   // voll aufgehobenen Artikels liegt als artikel-Ebene-Fussnote im Snapshot

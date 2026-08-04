@@ -1,5 +1,5 @@
 {
-  "_kommentar": "e2e-Shard-Balancing: 8 Gruppen, LPT-gepackt aus CI-GEMESSENEN Spec-Dauern (playwright-report-gruppe-*-Artefakte, Lauf 30852386612 vom 3.8.2026, 63 Specs, Summe 44.2 min; Max-Gruppe damit 5.6 min Testzeit statt 8.5 min der Vor-Packung vom 25.7. — deren Schieflage kam aus 8 seither zugewachsenen Specs, die regelgemäss nur in die jeweils leichteste Gruppe gestopft wurden). leser-spy-w25d.e2e.ts war im Mess-Lauf noch nicht enthalten und traegt den Median der leser-*-Specs (48 s) als Schaetzwert. Aendert NUR, welche Datei auf welchem Runner laeuft — kein Test/Assertion/Timeout/Umfang (§6.3). Union-Waechter: scripts/e2e-shard-gruppen.mjs --pruefen. Neue Spec → in die leichteste Gruppe packen, sonst Waechter rot. Neu packen (wenn Max-Gruppe wieder >~7 min): Dauern aus den playwright-report-gruppe-*-Artefakten eines gruenen Laufs aggregieren, LPT. Nachtrag 4.8.2026: leser-linien-eid3.e2e.ts (#427, nach dem Mess-Lauf entstanden) mit leser-Median-Schaetzwert in die leichteste Gruppe 3 gepackt.",
+  "_kommentar": "e2e-Shard-Balancing: 8 Gruppen, LPT-gepackt aus CI-GEMESSENEN Spec-Dauern (playwright-report-gruppe-*-Artefakte, Lauf 30852386612 vom 3.8.2026, 63 Specs, Summe 44.2 min; Max-Gruppe damit 5.6 min Testzeit statt 8.5 min der Vor-Packung vom 25.7. — deren Schieflage kam aus 8 seither zugewachsenen Specs, die regelgemäss nur in die jeweils leichteste Gruppe gestopft wurden). leser-spy-w25d.e2e.ts war im Mess-Lauf noch nicht enthalten und traegt den Median der leser-*-Specs (48 s) als Schaetzwert. Aendert NUR, welche Datei auf welchem Runner laeuft — kein Test/Assertion/Timeout/Umfang (§6.3). Union-Waechter: scripts/e2e-shard-gruppen.mjs --pruefen. Neue Spec → in die leichteste Gruppe packen, sonst Waechter rot. Neu packen (wenn Max-Gruppe wieder >~7 min): Dauern aus den playwright-report-gruppe-*-Artefakten eines gruenen Laufs aggregieren, LPT. Nachtrag 4.8.2026: leser-linien-eid3.e2e.ts (#427, nach dem Mess-Lauf entstanden) mit leser-Median-Schaetzwert in die leichteste Gruppe 3 gepackt. Nachtrag 4.8.2026 (URL): leser-adresse-lm202.e2e.ts (W2·10-UI-NAV-URL, nach dem Mess-Lauf entstanden) mit leser-Median-Schaetzwert in die damals leichteste Gruppe 3 gepackt.",
   "gruppen": {
     "1": [
       "ag-gruendung-wizard.e2e.ts",
@@ -23,6 +23,7 @@
     ],
     "3": [
       "gesetze-az-register.e2e.ts",
+      "leser-adresse-lm202.e2e.ts",
       "leser-breite-a37.e2e.ts",
       "leser-kontext-e4.e2e.ts",
       "leser-kopf-a9.e2e.ts",
