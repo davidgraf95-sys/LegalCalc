@@ -15,6 +15,14 @@
 // über den vollen Korpus (CI-Lauf 29757068566). Genau diese Superlinearität ist der Grund,
 // warum das Budget mit dem Korpus reisst und nicht bloss langsam wird.
 //
+// PAARMESSUNG über den VOLLEN Korpus (5093 Entscheide, gleiche Maschine und Leitung,
+// unmittelbar nacheinander, in Wegwerf-Tabellen `qsct_mess_*`):
+//   alter Pfad (Zeilen → FTS5) ..... 872,7 s / 165,4 MiB / 59 Requests   (n=1)
+//   neuer Pfad (Index-Transfer) .... 388,1 · 428,5 s / 254,3 MiB / 92 Req (n=2, Median 408 s)
+// Faktor ~2,1x — trotz 1,54x der Bytes, also ~3,3x je Byte. Und entscheidend für §6:
+// Trefferzahlen (beschwerde 4704 · verjahrung 250 · kundigung 322 · bundesgericht 4673),
+// bm25-Rangfolge und Snippets waren zwischen beiden Pfaden BYTE-IDENTISCH.
+//
 // DIE WURZEL: der Index EXISTIERT bereits. `fts.ts` baut ihn beim `datenhaltung:build`
 // deterministisch in `daten/*.db`. Ihn auf der Gegenseite neu abzuleiten ist Doppelarbeit im
 // Sinn von §5 — die Replika ist eine Projektion des lokalen Artefakts, keine zweite Quelle.
