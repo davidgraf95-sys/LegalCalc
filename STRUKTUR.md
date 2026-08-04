@@ -28,6 +28,14 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 4.8.2026 (spät) — Delegations-System modernisiert: Agent-Typen lex-*, Stufen-Palette, Tor-Ebene C
+**Fable-Session, Prozessarbeit nach §17-Fünf-Schritten (Automatisierung von Stabilem). Anlass: freies Prozessmandat David 4.8.2026 («Prozesse des Arbeitens optimieren ist deine Aufgabe — offen ausserhalb bestehender Vorgaben»). Commit `ef5a3a843` direkt auf main; Tore grün (dispatch-klausel, gate:schnell, eslint).**
+
+- **Agent-Typen `lex-<klasse>`** (bau · daten · pruefung · recherche · mechanisch[NEU] · synthese[NEU], `.claude/agents/`): generiert aus `scripts/dispatch-agents.ts`, §0-Klausel + TABU + Rückgabe-Schema + Modell-Default in der Definition — ~470 Tok Orchestrator-Output je Dispatch entfallen, Vergessen strukturell unmöglich; pruefung/recherche read-only. Freitext-Weg (`npm run dispatch`) bleibt Fallback.
+- **Zukunftstauglich:** Modellnamen nur noch in `PALETTE` (`scripts/dispatch.ts`; Stufen spitze/stark/mittel/klein, Stand 4.8.2026 = fable/opus/sonnet/haiku); Doku und Skill sprechen Stufen. Modellfamilien-Wechsel = Ein-Zeilen-Edit + `npm run dispatch:agents`.
+- **Tor + Hook:** `check:dispatch-klausel` Ebene C (Byte-Gleichheit der Agent-Dateien, §5-Projektion) — rot bei fehlender Datei UND bei Hand-Edit gezeigt, grün gezeigt (§6.7); `dispatch-schutz.py` befreit `lex-*` (4 stdin-Proben). argv-Guard-Falle beim Generator-Erstlauf reproduziert → CLI-Trennung nach dispatch-cli-Muster.
+- **Routing-Entscheide David verankert** (Template §2 + Skill `auftrag` Ziff. 6): Gegenprüfung bevorzugt spitze (Minimum stark/high, stets ≠ Bau-Modell) · enger nicht-riskanter Bau darf mittel · Cache-Bündel-Regel auf TTL-Fenster 1 h · Template §1.4 NEU: Agent-Weiterverwendung per SendMessage (nie Gegenprüfung, nie Klassen-Grenze).
+
 ## Session 4.8.2026 (ganztags) — Code-Inventur → QS-CODE-Reihe: Intake, 10 Bau-Einheiten, Orchestrierungs-Modus
 **Fable-Session (ab Nachmittag reine Orchestrierung: Opus baut, Sonnet prüft, Haiku fegt — Anweisung David). Drei read-only Tiefenanalysen (Logik/Darstellung/Pipeline, Stand `2c4d97e54`) → §14-Intake `QS-CODE-{TURSO,FRISTENKERN,AUSSENKANTEN,ENTDOPPLUNG,SPLITS}` + FAHRPLAN-CODE-VERBESSERUNG + Bibliothek-Dossier (`b5518366b`); David-Entscheide verankert (Manifest-Nullzeilen gewollt · Tariftext-Freigabe → DESIGN-REGLEMENT-NORMTEXT §1, `94a9bfa35`).**
 
