@@ -110,6 +110,33 @@ describe('FTS5-Shadow-Transport (turso-sync überträgt den fertigen Index statt
     expect(() => kopie.exec("INSERT INTO f(f) VALUES('integrity-check')")).toThrow();
   });
 
+  it('contentless (fts_artikel) überträgt sich gleich — Treffer, rowid-Spanne, integrity-check', () => {
+    // Eigener Fall, weil `fts_artikel` remote CONTENTLESS liegt: dort gibt es keine
+    // `_content`-Tabelle, gegen die der integrity-check rechnen könnte. Die Prüfung wäre
+    // also denkbar blind — sie ist es nicht (letzte Zusicherung unten), und die
+    // rowid-Spannweite, an der die Nachkontrolle des Syncs hängt, überlebt den Transport.
+    const contentless = `CREATE VIRTUAL TABLE f USING fts5(text, content='', tokenize='${TOKENIZER}')`;
+    const original = new DatabaseSync(':memory:');
+    original.exec(contentless);
+    const ins = original.prepare('INSERT INTO f(rowid, text) VALUES (?, ?)');
+    // rowids mit Lücken — genau wie `artikel.rowid` sie haben darf (Gegenprüfungs-Befund B2).
+    for (let i = 1; i <= 400; i++) ins.run(i * 3, `Verjährung Beschwerde Kündigung ${i} ${`fuell${i % 29} `.repeat(25)}`);
+
+    const kopie = ueberSchatten(original, false, contentless);
+    const spanne = (db: DatabaseSync) => JSON.stringify(db.prepare('SELECT min(rowid) AS a, max(rowid) AS b FROM f').get());
+    const treffer = (db: DatabaseSync) =>
+      (db.prepare(`SELECT count(*) AS n FROM f WHERE f MATCH '"verjahrung"'`).get() as { n: number }).n;
+    expect(kopie.prepare('SELECT count(*) AS n FROM f').get()).toEqual({ n: 400 });
+    expect(treffer(kopie)).toBe(treffer(original));
+    expect(treffer(kopie)).toBe(400);
+    expect(spanne(kopie)).toBe(spanne(original));
+    expect(spanne(kopie)).toBe('{"a":3,"b":1200}');
+    expect(() => kopie.exec("INSERT INTO f(f) VALUES('integrity-check')")).not.toThrow();
+    // Und er ist auch ohne `_content` nicht blind:
+    kopie.exec('DELETE FROM f_data WHERE id = (SELECT max(id) FROM f_data)');
+    expect(() => kopie.exec("INSERT INTO f(f) VALUES('integrity-check')")).toThrow();
+  });
+
   it('contentless und external content tragen BYTE-GLEICHE Index-Shadowtabellen', () => {
     // Trägt die Annahme, mit der `fts_artikel` übertragen wird: lokal liegt er als
     // external-content-Tabelle über `artikel`, remote als contentless. Kippt diese

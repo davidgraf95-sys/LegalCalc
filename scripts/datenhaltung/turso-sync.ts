@@ -31,20 +31,56 @@
 // `ladeWerte()`, warum das SQL mitgezählt werden muss. Kompression wurde geprüft und
 // VERWORFEN: der Endpunkt lehnt `Content-Encoding: gzip` mit HTTP 400 ab (empirisch).
 //
-// VERBLEIBENDER ENGPASS (gemessen 20.7.2026, CI-Lauf 29757068566): die Entscheid-Phase
-// braucht 22,3 der 32,8 Minuten — 5093 Zeilen / 165 MiB bei 4 Zeilen/s. Dieselbe Rate lokal
-// über eine Heim-Leitung, also KEIN Bandbreiten-Problem, sondern der Schreibpfad der
-// Gegenseite für grosse FTS5-Mehrzeilen-Inserts (~2,9 MiB je Request in ~22 s ≈ 128 KiB/s).
-// Ein schnellerer Runner hilft nicht. Wächst der Entscheid-Korpus deutlich, ist das der
-// Punkt, der als Nächstes reisst — dann greift eine der Weichen, die hier bewusst NICHT
-// gezogen wurden (inkrementeller Sync mit stabilen rowids, oder Entscheide in einen
-// eigenen, seltener laufenden Job). `timeout-minutes: 90` trägt ~3,7x den heutigen Korpus.
+// DER INDEX WANDERT, NICHT DIE ZEILEN (QS-CODE-TURSO, 4.8.2026 — Wurzel-Fix des Engpasses,
+// den die Fassung vom 20.7. noch als «verbleibend» stehen lassen musste).
+//
+// Der Befund damals: die Entscheid-Phase brauchte 22,3 der 32,8 Minuten (CI-Lauf
+// 29757068566) — 5093 Zeilen / 157 MiB bei ~120 KiB/s. Die Bandbreiten-Hypothese war schon
+// widerlegt (lokal identisch langsam), die Ursache aber nur vermutet. Sie ist jetzt gemessen,
+// mit einer NULLPROBE über dieselbe Nutzlast (200 Zeilen / 7,07 MiB, je n=3, Median):
+//   Zeilen → standalone FTS5 (der bisherige Pfad) .... 19,9 s →  364 KiB/s
+//   Zeilen → GEWÖHNLICHE Tabelle (Nullprobe) .........  7,8 s →  946 KiB/s
+// Der Aufschlag steckt also NICHT im Transport, sondern im FTS5-Schreibpfad der Gegenseite:
+// sie tokenisiert und indexiert denselben Text ein zweites Mal und zahlt obendrein den
+// LSM-Preis (jede Transaktion ein neues Segment, `automerge` schreibt sie wieder um).
+//
+// Und dieser Anteil ist SUPERLINEAR — das ist der eigentliche Grund für den Umbau. Derselbe
+// Pfad, drei Korpus-Grössen: 364 KiB/s bei 200 Zeilen · 437 KiB/s bei 500 · 120 KiB/s über
+// den vollen Korpus. Ein Budget, das an einer superlinearen Kurve hängt, wird nicht langsam,
+// es REISST.
+//
+// Die Wurzel: der Index EXISTIERT lokal bereits. `fts.ts` baut ihn bei jedem
+// `datenhaltung:build` deterministisch (empirisch geprüft: zwei Läufe → byte-gleiche
+// Shadow-Tabellen). Ihn auf der Gegenseite neu abzuleiten war Doppelarbeit im Sinn von §5 —
+// die Replika ist eine Projektion des lokalen Artefakts, keine zweite Quelle. Übertragen
+// werden darum die FTS5-Shadow-Tabellen (`_data`, `_idx`, `_docsize`, `_config`, bei
+// standalone zusätzlich `_content`); das sind gewöhnliche SQLite-Tabellen und laufen mit
+// Plain-Durchsatz. Detail und Messreihen: `turso-fts-index.ts`.
+//
+// PREIS, ehrlich benannt (§8) — und er fällt je Tabelle verschieden aus (exakt gerechnet mit
+// `zeilenBytes()` über den Korpus-Stand 21.7.2026):
+//   fts_entscheide_schaufenster ... 165,3 → 253,8 MiB (+54 %), weil `_content` denselben Text
+//                                   trägt wie bisher und der Index (base64, +33 %) dazukommt.
+//   fts_artikel .................... 32,6 →  18,8 MiB (−42 %), weil das Ziel CONTENTLESS ist:
+//                                   der Index ist kompakter als der Volltext, den der alte
+//                                   Pfad schicken musste, um ihn dort neu zu indexieren.
+// Wo mehr Bytes fliessen, lohnt es trotzdem: sie laufen mit Plain-Durchsatz, und die
+// superlineare Indexarbeit der Gegenseite entfällt ganz.
+//
+// RESTRISIKO und wie es entdeckt wird: der Transport setzt voraus, dass die Gegenseite (a)
+// Schreibzugriff auf Shadow-Tabellen zulässt und (b) dasselbe FTS5-Format liest, das lokal
+// geschrieben wurde (`_config.version` = 4). Beides ist empirisch geprüft, aber keine
+// Zusicherung von Turso — `node:sqlite` etwa verbietet (a) standardmässig
+// (SQLITE_DBCONFIG_DEFENSIVE), der libsql-Server nicht. Darum läuft VOR dem Tausch der
+// FTS5-eigene `integrity-check` über beide Indizes: er rechnet den Index gegen den Inhalt
+// nach, und was ihn nicht besteht, geht nie live. Eine Zeilenzahl könnte das nicht leisten —
+// sie bliebe bei fehlenden Index-Seiten RICHTIG, während die Suche still Treffer verlöre.
 //
 // HOT-Inhalt (§11.5): erlasse + erlass_fassungen + artikel + fts_artikel (contentless FTS5,
-// Text einmalig lokal aus bloecke_json extrahiert) und fts_entscheide_schaufenster
-// (standalone, ALLE Schaufenster-Entscheide der rechtsprechung.db — Stand 20.7.2026 sind
-// das 5093, nicht mehr die 342 der E2-Erstfassung; der Bau filtert bewusst nicht, siehe
-// fts.ts/baueFtsEntscheideSchaufenster).
+// lokal als external content über `artikel` gebaut — die Index-Shadowtabellen beider
+// Bauarten sind byte-gleich, festgehalten in turso-fts-index.test.ts) und
+// fts_entscheide_schaufenster (standalone, ALLE Schaufenster-Entscheide der
+// rechtsprechung.db; der Bau filtert bewusst nicht, siehe fts.ts).
 //
 // Transport: Hrana-HTTP-Pipeline (/v2/pipeline), dependency-frei via fetch — derselbe
 // Endpunkt, den api/suche.ts liest. Secrets: TURSO_AUTH_TOKEN aus Env oder
