@@ -236,7 +236,7 @@ Linien-Ton von seiner `-500`-Mitte entkoppelt und in OKLCH um **L −0.020** abg
 (`#C07A1A`→`#B9740D`, Hue/Chroma gehalten); `--warn-500` blieb unverändert, weil es
 `--warn-bg`/`--warn-solid` speist. Gemessen und **im Prüfskript dokumentiert** (die
 Fertig-Bedingung oben): warn-line/warn-bg **3.264 hell · 3.948 dunkel** (vorher
-3.008 · 4.296), warn-line/surface 3.686 · 4.566. Damit trug der Wert genug Reserve,
+3.008 · 4.283), warn-line/surface 3.686 · 4.566. Damit trug der Wert genug Reserve,
 um den bis dahin offenen Punkt in `scripts/check-farbwelt.ts` aufzulösen: die vier
 Status-Kanten auf ihrer eigenen Tönungsfläche sind jetzt **harte Pflichtpaare** statt
 einer Fussnote. `check:farbwelt` und der axe-Lauf (hell + dunkel) grün.

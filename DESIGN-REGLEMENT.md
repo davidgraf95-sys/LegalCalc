@@ -422,7 +422,7 @@ Dunkel-Regression: 3 neue Dunkel-Prüfpunkte rot, ihre 7 Hell-Zwillinge grün.
 `outline-none` erzeugt `outline: 2px solid transparent` — eine Outline in Alpha
 0. Ein `focus:outline-none` ohne gleichwertigen Ersatz erfüllt F3 also **nicht**,
 auch wenn eine Outline-Breite messbar bleibt; ein Audit muss die Outline-**Farbe**
-prüfen, nicht ihre Breite. Der app-weite Sweep (9 Hauptrouten, 557 Tab-Ziele,
+prüfen, nicht ihre Breite. Der app-weite Sweep (9 Hauptrouten; Umfang einmalig erhoben,
 4.8.2026) fand auf den per Tab erreichbaren Flächen **null** Verstösse; die zwei
 Fundstellen lagen hinter Popover bzw. Split-View und sind gefixt (`Shell.tsx`
 Pane-Gutter, `BezugZeitWahl.tsx` Datumsfeld) — beide trugen im Fokus nur einen

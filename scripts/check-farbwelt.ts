@@ -266,7 +266,7 @@ const PFLICHT: Paar[] = [
   // Tor-Politik, sondern des Tokens: QS-UI-WARNLINE (FAHRPLAN-UI-QUALITAET §11)
   // hat --warn-line um OKLCH L −0.020 abgedunkelt. Damit tragen alle vier
   // Status-Kanten Reserve und werden hart (culori, hell·dunkel):
-  //   warn-line/warn-bg   3.264 · 3.948   (vorher 3.008 · 4.296)
+  //   warn-line/warn-bg   3.264 · 3.948   (vorher 3.008 · 4.283)
   //   danger-line/danger-bg 5.538 · 6.685
   //   sage-line/sage-bg     4.022 · 8.441
   //   slate-line/slate-bg   4.625 · 7.768
