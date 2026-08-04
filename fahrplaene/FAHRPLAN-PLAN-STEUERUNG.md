@@ -382,6 +382,30 @@ plus als David-Frage markierte Posten) · `@queue` als nummerierte Liste in Klar
 Baustellen-Karten gruppiert nach `fahrplan:`-Feld (Fortschritt done/gesamt, nächster
 `ready`-Schritt, Blocker-Hinweis, `<details>` mit Einzelschritten) · Arbeitsweise-Fussnote.
 
+**Steuerpult-Auflage 1 — Bau-Prompt je baubarem Schritt (Go David 4.8.2026).** Jede Karte
+eines `ready`-Schritts trägt einen **Kopier-Knopf** (`navigator.clipboard`), der einen fertigen
+Bau-Auftrag für eine neue Session kopiert. Der Prompt wird mechanisch aus den Plan-Daten
+gebaut und enthält zwingend: Schritt-ID + Klartext-Titel · `npm run plan:set -- <id> status=wip`
+als erste Handlung (Skill `auftrag` Ziff. 2) · Worktree-Pflicht gemäss `worktree:`-Feld ·
+den Slice-Befehl `npm run fahrplan -- <fahrplan:-Feld> <§>` · Definition of Done
+(Skill `auftrag` Ziff. 4, inkl. Gegenprüfung falls Risikopfad) · die §14.7-Vertrauensklausel
+wörtlich. Kein Prompt für `blocked`-/`wip`-Schritte (dort stattdessen der Grund).
+
+**Steuerpult-Auflage 2 — Sektion «Gerade im Bau» (Go David 4.8.2026).** Eine eigene Sektion
+zeigt den Bau-Zustand **zum Erzeugungszeitpunkt**: (a) alle Schritte mit `status: wip`
+(die Wahrheit hierfür ist die wip-Disziplin aus Skill `auftrag` Ziff. 2 — die Sektion sagt das
+dazu); (b) offene PRs mit Titel, `Roadmap:`-Trailer-Zuordnung und CI-Status via
+`gh pr list/checks` (JSON); (c) aktive Worktrees/Feature-Branches (`git worktree list`,
+`git branch`). Fortschritts-Aussage je Bau: PR vorhanden? Checks grün? — mehr behauptet die
+Seite nicht (kein geschätzter Prozentwert, §8-Geist). Ist `gh` nicht verfügbar, degradiert
+die Sektion mit sichtbarem Hinweis statt zu scheitern.
+
+**«Live»-Grenze (ehrlich benannt):** Eine statische Seite kann den Repo-Zustand nicht selbst
+abfragen. «Live» heisst hier: `npm run plan:bild -- --watch` regeneriert periodisch (z. B. alle
+60 s) und die Seite lädt sich selbst neu (Meta-Refresh/JS-Reload); der Erzeugungs-Zeitstempel
+steht sichtbar im Kopf, damit nie ein älterer Stand als aktuell durchgeht. Ein Dienst/Server
+wird dafür ausdrücklich NICHT gebaut.
+
 **Grenzen/Auflagen:**
 
 - Reine Lese-/Werkzeug-Schicht: kein Code in `src/`, kein Artefakt in `public/`, kein
@@ -396,8 +420,11 @@ Baustellen-Karten gruppiert nach `fahrplan:`-Feld (Fortschritt done/gesamt, näc
 - Runner `vite-node`, Eintrag `"plan:bild"` in `package.json` neben `plan:next`/`plan:dump`.
 
 **Fertig, wenn** `npm run plan:bild` ohne Argumente eine vollständige HTML-Datei erzeugt, deren
-Kennzahlen mit `plan:next`/`plan:dump` übereinstimmen (Stichprobe im PR-Text belegt), und die
-Seite in hell/dunkel lesbar ist.
+Kennzahlen mit `plan:next`/`plan:dump` übereinstimmen (Stichprobe im PR-Text belegt), die Seite
+in hell/dunkel lesbar ist, ein kopierter Bau-Prompt alle sechs Pflicht-Bestandteile aus
+Auflage 1 enthält (an einem Beispiel-Schritt belegt) und die «Gerade im Bau»-Sektion einen
+laufenden `wip`-Schritt samt PR-Status korrekt zeigt (oder ihren Degradations-Hinweis, falls
+gerade nichts im Bau ist).
 
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 
