@@ -4,19 +4,15 @@ import {
   SB_DEFAULTS, sbZusammenstellen, sbMaengel, sbHinweise, type SbAntworten,
 } from '../lib/vorlagen/scheidungsbegehren';
 import { KV_GERICHTE_BS } from '../lib/vorlagen/klageVereinfacht';
-import { SgAdressatKachel } from '../components/vorlagen/SgBehoerdenWahl';
 import { ParteiEditor } from './VorlageKlageVereinfacht';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
-import { KvGerichtWahl } from '../components/vorlagen/KvGerichtWahl';
-import { KANTONE } from '../lib/kantone';
-import type { Kanton } from '../types/legal';
+import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { useWizardState } from '../components/vorlagen/useWizardState';
 import { VorlagenWizardRahmen, VorschauPanel, ExportLeiste } from '../components/vorlagen/wizard';
 import { karte } from '../lib/startseiteConfig';
-import { gerichtsErlass } from '../data/gerichtsorganisationErlasse';
 
 // ─── Vorlagen-Wizard: Gemeinsames Scheidungsbegehren (Art. 285/286 ZPO) ─────
 // Zweite Musterklagen-Maske Familienrecht (Bauspez. §3.2). Weiche
@@ -83,62 +79,27 @@ export function VorlageScheidungsbegehren() {
               onSelect={(code) => set('einigung', code)}
             />
           </Field>
-          <div className="space-y-3">
-            <Field label="Kanton" hint="zwingender Gerichtsstand: Wohnsitz einer Partei (Art. 23 Abs. 1 ZPO)">
-              <select className={inputCls} value={a.gerichtsKanton}
-                onChange={(e) => set('gerichtsKanton', e.target.value as Kanton)}>
-                {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
-              </select>
-            </Field>
-            {!a.gerichtManuellAktiv && (a.gerichtsKanton === 'BS' ? (
-              <SgAdressatKachel
-                zeilen={[KV_GERICHTE_BS.zivilgericht.name, KV_GERICHTE_BS.zivilgericht.strasse, KV_GERICHTE_BS.zivilgericht.plzOrt]}
-                url={KV_GERICHTE_BS.zivilgericht.url} />
-            ) : a.gerichtAufgeloest ? (
-              <SgAdressatKachel zeilen={a.gerichtAufgeloest.zeilen} url={a.gerichtAufgeloest.url} />
-            ) : (
-              <div className="lc-notice text-body-s">
-                Gericht unten über die kantonale Gerichtsschicht bestimmen — oder von Hand erfassen.
-              </div>
-            ))}
-            {(() => {
-              const e = gerichtsErlass(a.gerichtsKanton);
-              return (
-                <p className="text-xs text-ink-500">
-                  Rechtsgrundlage Gerichtsorganisation: {e.url
-                    ? <a href={e.url} target="_blank" rel="noreferrer" className="text-brass-700 underline">{e.abk} {a.gerichtsKanton} ({e.nummer}) ↗</a>
-                    : <>{e.abk} {a.gerichtsKanton} ({e.nummer})</>}
-                </p>
-              );
-            })()}
-            {a.gerichtsKanton !== 'BS' && !a.gerichtManuellAktiv && (
-              <KvGerichtWahl kanton={a.gerichtsKanton} materie=""
-                onAufgeloest={(z) => set('gerichtAufgeloest', z ?? undefined)} />
-            )}
-            <Checkbox
-              checked={a.gerichtManuellAktiv ?? false}
-              onChange={(v) => set('gerichtManuellAktiv', v || undefined)}
-              label={<><span>Adresse des Gerichts von Hand erfassen</span></>} />
-            {a.gerichtManuellAktiv && (
-              <div className="space-y-3 pl-6">
-                <Field label="Gericht">
-                  <input className={inputCls} value={a.gerichtManuell?.name ?? ''}
-                    onChange={(e) => set('gerichtManuell', { name: e.target.value, strasse: a.gerichtManuell?.strasse ?? '', plzOrt: a.gerichtManuell?.plzOrt ?? '' })}
-                    placeholder="z. B. Bezirksgericht X" />
-                </Field>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <Field label="Strasse und Hausnummer">
-                    <input className={inputCls} value={a.gerichtManuell?.strasse ?? ''}
-                      onChange={(e) => set('gerichtManuell', { name: a.gerichtManuell?.name ?? '', strasse: e.target.value, plzOrt: a.gerichtManuell?.plzOrt ?? '' })} />
-                  </Field>
-                  <Field label="PLZ und Ort">
-                    <input className={inputCls} value={a.gerichtManuell?.plzOrt ?? ''}
-                      onChange={(e) => set('gerichtManuell', { name: a.gerichtManuell?.name ?? '', strasse: a.gerichtManuell?.strasse ?? '', plzOrt: e.target.value })} />
-                  </Field>
-                </div>
-              </div>
-            )}
-          </div>
+          <GerichtsWahlBlock
+            layout="gestapelt"
+            kantonHinweis="zwingender Gerichtsstand: Wohnsitz einer Partei (Art. 23 Abs. 1 ZPO)"
+            kanton={a.gerichtsKanton} onKanton={(k) => set('gerichtsKanton', k)}
+            bsAdresse={{
+              zeilen: [KV_GERICHTE_BS.zivilgericht.name, KV_GERICHTE_BS.zivilgericht.strasse, KV_GERICHTE_BS.zivilgericht.plzOrt],
+              url: KV_GERICHTE_BS.zivilgericht.url,
+            }}
+            aufgeloest={a.gerichtAufgeloest}
+            ohneAdresseHinweis="Gericht unten über die kantonale Gerichtsschicht bestimmen — oder von Hand erfassen."
+            materie="" onAufgeloest={(z) => set('gerichtAufgeloest', z ?? undefined)}
+            manuellAktiv={a.gerichtManuellAktiv ?? false}
+            onManuellAktiv={(v) => set('gerichtManuellAktiv', v || undefined)}
+            uebersteuertHinweis={false}
+            manuell={a.gerichtManuell} onManuell={(g) => set('gerichtManuell', g)}
+            platzhalter={{ name: 'z. B. Bezirksgericht X' }}
+            // Diese Maske ist als einzige der fünf NICHT pane-adaptiv (kein
+            // usePaneKlasse). Entdopplung D2 hält den Ist-Zustand byte-gleich
+            // fest (§6) — die Angleichung wäre eine sichtbare Änderung und
+            // gehört in einen eigenen, deklarierten Schritt.
+            spaltenKlasse="grid grid-cols-1 sm:grid-cols-2 gap-3" />
         </div>
       );
 
