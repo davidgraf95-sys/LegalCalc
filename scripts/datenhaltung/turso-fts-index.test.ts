@@ -50,7 +50,11 @@ function ueberSchatten(quelle: DatabaseSync, mitContent: boolean, ddl: string): 
   // libsql-Server hinter Turso tut das nicht — dort laufen die Inserts (empirisch geprüft
   // 4.8.2026). Für diesen Test wird der Riegel darum lokal gelöst, damit er DENSELBEN
   // Ablauf nachstellt, den der Sync remote fährt.
-  db.enableDefensive(false);
+  // Feature-Guard (CI-Rot 4.8.2026): `enableDefensive()` existiert erst ab Node ≥23 —
+  // dort ist DEFENSIVE auch erst standardmässig EIN. Auf Node 22 (CI) fehlt beides:
+  // kein Riegel zu lösen, die Shadow-Inserts laufen direkt. Derselbe Test deckt so
+  // beide Runtimes, ohne den nachgestellten Sync-Ablauf zu verändern.
+  if (typeof db.enableDefensive === 'function') db.enableDefensive(false);
   // Eine frisch angelegte FTS5-Tabelle trägt bereits Zeilen in `_data` (averages + structure)
   // und `_config` (version). Ohne dieses Leeren kollidierten die PRIMARY KEYs beim Laden.
   db.exec('DELETE FROM f_data');
