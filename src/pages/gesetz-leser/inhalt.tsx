@@ -33,7 +33,7 @@ import {
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { LadeAnzeige, PdfEmbedAnsicht, LiveVerweisAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
-import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy } from './inhalt-hooks';
+import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
 
 // ═══ ABSCHNITT · Reine Rechenlogik ausgelagert (QS-TOK/P5, §6 Ziff. 6) ═══════
 // paneRoot/istAnhangToken/findeArt (Pane-Scoping, referenzstabil, KEIN React
@@ -489,7 +489,10 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     };
     window.requestAnimationFrame(() => window.setTimeout(() => {
       scrolle();
-      window.setTimeout(() => { scrolle(); jumpLock.current = false; }, 400);
+      // N2 (Bug-Check 3.8.2026): mit dem Lösen des Locks EINE Spy-Auswertung
+      // nachholen — sonst bliebe der Kopf ohne weiteres Scrollen auf dem Artikel
+      // vor dem Sprung stehen (Herleitung: inhalt-hooks.tsx bei `spyNachlauf`).
+      window.setTimeout(() => { scrolle(); jumpLock.current = false; loeseSpyNachlauf(); }, 400);
     }, 110));
   }, [sektionen, basisPfad, istSekundaer, imPane, wurzel]);
 
@@ -529,7 +532,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // unerwarteter CLS zählt. Unter CPU-Last läuft der Scroll spät ein, darum ein
       // Zeit- statt rAF-Fenster (wie springeZuArtikel); der Spy nimmt die Endposition
       // danach normal auf. Reine Timing-Steuerung (kein setState) → kein Re-Render.
-      window.setTimeout(() => { jumpLock.current = false; }, 500);
+      // N2: siehe springeZuArtikel — Lock lösen UND einmal nachwerten lassen.
+      window.setTimeout(() => { jumpLock.current = false; loeseSpyNachlauf(); }, 500);
     }));
   }, [sektionen]);
 

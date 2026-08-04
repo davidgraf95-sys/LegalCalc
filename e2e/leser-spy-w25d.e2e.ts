@@ -79,8 +79,12 @@ const norm = (s: string | null): string | null => (s == null ? null : s.replace(
 // content-visibility-Nachschätzung) verschwindet ohne weiteres Scrollen, eine
 // strukturelle bleibt. Gezählt wird nur die bleibende (§6.7: der Wächter soll den
 // Defekt fangen, nicht das Einschwingen).
+// N2 (Bug-Check 3.8.2026): `delta === 0` heisst BEWUSST «gar nicht scrollen» — der
+// Halt nach einem Sprung ist genau der Fall, in dem der Spy ohne Nutzerbewegung
+// entscheiden muss. Vorher stand hier ein 150-px-Scroll, der den fehlenden
+// Auslöser selbst lieferte und den Defekt verdeckte (§6.7).
 async function scrollProbe(page: Page, delta: number, warteMs: number): Promise<Probe> {
-  await page.evaluate((d) => window.scrollBy(0, d), delta)
+  if (delta !== 0) await page.evaluate((d) => window.scrollBy(0, d), delta)
   await page.waitForTimeout(warteMs)
   const p = await messen(page)
   if (p.ist && norm(p.ist) !== norm(p.soll)) {
@@ -94,6 +98,30 @@ function abweichungen(proben: Probe[]): string[] {
   return proben
     .filter((p) => p.ist && norm(p.ist) !== norm(p.soll))
     .map((p) => `y=${p.y}: Kopf zeigt «${p.ist}», an der Bezugslinie (${p.bezug}px) liegt «${p.soll}» (Oberkante ${p.ueber}px über der Linie)`)
+}
+
+// ── N4 (Wächter-Härte, Bug-Check 3.8.2026) ──────────────────────────────────
+// `abweichungen` lässt Proben mit `ist == null` bewusst durch: eine einzelne
+// Probe darf in die Entprellungslücke fallen (150-ms-`setAktArtikel`-Timer), und
+// beim Kopfzeilen-Umbau ist der Selektor kurz leer. Der Preis: fiele der Kopf
+// GANZ aus (Spy feuert nie, Label wird nie gesetzt, `nav .num` verschwindet),
+// wäre jede Probe `null` und der Wächter still grün — er misst dann nichts mehr.
+// Darum je Lauf zusätzlich eine Mindestquote gemessener Ist-Werte.
+// Schwelle 50 % — GEMESSEN begründet (4.8.2026, alle vier Tests dieser Datei mit
+// probeweise auf 1.0 gesetzter Schwelle gefahren: grün, also Quote 100 % — 30/30,
+// 24/24, 24/24, 10/10). 50 % lässt der Entprellung und dem Warmlauf also den
+// halben Lauf Luft und fängt trotzdem jeden Defekt, bei dem der Kopf dauerhaft
+// leer bleibt. Gegenprobe (§6.7, dass dieses Tor scheitern KANN): `ist` im
+// Seitenkontext hart auf null gesetzt ⇒ «nur 0/30 Proben mit Ist-Wert», während
+// `abweichungen` weiterhin [] lieferte — genau die Lücke, die N4 schliesst.
+const MIN_IST_QUOTE = 0.5
+
+function istQuote(proben: Probe[]): number {
+  return proben.length ? proben.filter((p) => p.ist != null).length / proben.length : 0
+}
+
+function quoteMeldung(proben: Probe[]): string {
+  return `nur ${proben.filter((p) => p.ist != null).length}/${proben.length} Proben mit Ist-Wert — zeigt die Kopfzeile überhaupt noch einen Artikel?`
 }
 
 test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Band', () => {
@@ -113,6 +141,7 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
     for (let i = 0; i < 30; i++) proben.push(await scrollProbe(page, 43, 450))
     // Der Lauf muss überhaupt durch Artikelgrenzen gegangen sein, sonst prüft er nichts.
     expect(new Set(proben.map((p) => p.soll)).size, 'Sonde hat keine Artikelgrenze überquert').toBeGreaterThan(2)
+    expect(istQuote(proben), quoteMeldung(proben)).toBeGreaterThanOrEqual(MIN_IST_QUOTE) // N4
     expect(abweichungen(proben), 'Kopf-Artikel weicht von der Bezugslinie ab').toEqual([])
     expect(fehler).toEqual([])
   })
@@ -131,6 +160,7 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
     const proben: Probe[] = []
     for (let i = 0; i < 24; i++) proben.push(await scrollProbe(page, 43, 450))
     expect(new Set(proben.map((p) => p.soll)).size, 'Sonde hat keine Artikelgrenze überquert').toBeGreaterThan(1)
+    expect(istQuote(proben), quoteMeldung(proben)).toBeGreaterThanOrEqual(MIN_IST_QUOTE) // N4
     expect(abweichungen(proben), 'Kopf-Artikel weicht von der Bezugslinie ab').toEqual([])
     expect(fehler).toEqual([])
   })
@@ -151,6 +181,7 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
 
     const proben: Probe[] = []
     for (let i = 0; i < 24; i++) proben.push(await scrollProbe(page, 31, 450))
+    expect(istQuote(proben), quoteMeldung(proben)).toBeGreaterThanOrEqual(MIN_IST_QUOTE) // N4
     expect(abweichungen(proben), 'Kopf-Artikel weicht von der Bezugslinie ab (Band verfehlt die Linie)').toEqual([])
     expect(fehler).toEqual([])
   })
@@ -182,6 +213,7 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
       if (p.ist && norm(p.ist) !== norm(p.soll)) { await page.waitForTimeout(900); proben.push(await messen(page)) }
       else proben.push(p)
     }
+    expect(istQuote(proben), quoteMeldung(proben)).toBeGreaterThanOrEqual(MIN_IST_QUOTE) // N4
     expect(abweichungen(proben), 'Kopf-Artikel weicht unter 6× Drossel von der Bezugslinie ab').toEqual([])
 
     // aria: der aktive Gliederungs-Eintrag ist als solcher ausgezeichnet.
@@ -202,8 +234,14 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
 
     // Und nach dem Sprung fängt der Spy wieder EXAKT an der Linie an — ein
     // Klick-Sprung darf ihn nicht dauerhaft entkoppeln (jumpLock-Übergabe).
-    const nachSprung = await scrollProbe(page, 150, 900)
-    expect(abweichungen([nachSprung]), 'nach dem Gliederungs-Sprung folgt der Kopf der Bezugslinie nicht mehr').toEqual([])
+    // N2: OHNE weiteres Scrollen (delta 0). Der jumpLock fällt 500 ms nach dem
+    // Sprung per Timer; wer erst die nächste Nutzerbewegung abwartet, prüft die
+    // Lock-Übergabe gar nicht. 900 ms Wartezeit > 500 ms Lock + Entprellung.
+    const nachSprung = await scrollProbe(page, 0, 900)
+    // N4: hier zwingend ein Ist — sonst prüfte `abweichungen` an einer leeren
+    // Kopfzeile vorbei und die N2-Aussage wäre leer.
+    expect(nachSprung.ist, 'nach dem Sprung zeigt die Kopfzeile gar keinen Artikel').not.toBeNull()
+    expect(abweichungen([nachSprung]), 'nach dem Gliederungs-Sprung folgt der Kopf der Bezugslinie nicht mehr (jumpLock ohne Nachlauf?)').toEqual([])
 
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 })
     // CLS-Budget wie im A9-Querschnitt der Reader-Specs (0.05, leser-gliederung-a33).
