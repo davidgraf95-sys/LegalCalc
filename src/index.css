@@ -568,8 +568,24 @@
 
     /* Chrome: klebende Topbar, Fuss, Navigation, Bedienelemente. Der
        Inhalts-Kopf (`main header`) ist bewusst NICHT dabei — er IST die
-       Fundstelle. */
-    header.lc-glass, footer, nav, button, .lc-btn, .lc-live { display: none !important; }
+       Fundstelle.
+
+       §9-Bug-Check zu PR #440, B1 (Wurzelfix): Die Liste nannte `.lc-btn` —
+       aber die Varianten `.lc-btn-outline/-primary/-ghost` sind über
+       `@apply lc-btn` gebaut, und `@apply` inlined DEKLARATIONEN, es vergibt
+       keine Klasse. Ein Element mit `class="lc-btn-outline"` trägt `lc-btn`
+       also NICHT und wurde von dieser Regel nie erfasst. Unauffällig blieb das,
+       weil fast alle Bedienelemente `<button>` sind und schon vom Tag-Selektor
+       fallen. Es traf genau die button-gestylten LINKS — gemessen vier
+       Call-Sites (`vorlagen/ui.tsx` Sprungmarke, `KuendigungSperrForm` 336b-
+       Anker, `VorlagenSprung`, `ZustErgebnisEinleitung`); `MaterialLeser`
+       schrieb `lc-btn lc-btn-outline` und fiel darum zufällig schon vorher.
+       Alle vier sind reine Navigation und gehören nach dem erklärten Zweck
+       dieser Regel («Navigation, Bedienelemente») nicht in eine Kanzlei-Akte.
+       `[class*='lc-btn']` schliesst die Fehlerklasse statt des Einzelfalls
+       (§17) — gemessen ändert es das Druckbild von genau diesen Elementen,
+       kein anderes `lc-btn*` überlebte den Druck ohnehin. */
+    header.lc-glass, footer, nav, button, [class*='lc-btn'], .lc-live { display: none !important; }
     body { background: #fff; }
     .lc-card, [class*='shadow'] { box-shadow: none !important; }
     .lc-reveal { animation: none !important; }

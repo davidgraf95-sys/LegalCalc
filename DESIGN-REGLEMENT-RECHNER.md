@@ -167,15 +167,69 @@ Link-Absätze auf Seitenebene.
 - **EinfacheFristForm** (Tagerechner-Schnellrechner, S-5a): bewusst
   minimal — keine Eckdaten-Kacheln, kein PDF (sein PDF-Fall ist der
   jeweilige Regime-Rechner). Er trägt aber denselben Ergebnis-Rahmen.
+  Sein Block `lc-ergebnis-einfach` ist damit der einzige ohne
+  ErgebnisAnzeige; das Tor `e2e/qsui-hierarchie.e2e.ts` führt genau
+  diese id in seiner Ausnahmeliste (zwei Orte, eine Regel — wer eine
+  weitere Ausnahme baut, trägt sie in beiden nach).
 - **EreignisFristenSektion**: Tabellenmuster (je Frist eine Zeile mit
   ICS), kein ErgebnisAnzeige-Verdikt — sie listet, sie urteilt nicht.
 - **Zuständigkeits-Trio** (zivil/schkg/straf): Wizard-Schritte statt
   einem Eingabe-Grid; ab dem Ergebnisblock gilt R4 unverändert.
 
+## R13 · Leerzustand des Ergebnisplatzes
+
+Ein Rechner, der ohne Eingabe kein Ergebnis zeigen kann, zeigt an
+dessen Stelle den geteilten `ErgebnisPlatzhalter` (`vorlagen/ui`):
+Overline «Ergebnis» + ein Satz, welche Eingabe fehlt und was danach
+erscheint. Er reserviert die Fläche (CLS, §15.2) und zeigt vor der
+ersten Eingabe keinen Fehler (C2). Der Satz ist reine Navigation — er
+nennt keine Frist, keinen Schwellenwert, kein Ergebnis (§3).
+
+Nicht betroffen sind Wizards, deren Ergebnis ein eigener Schritt ist
+(Zuständigkeits-Trio): dort trägt der Schritt selbst die Ansage.
+
 ## Prüfung
 
 Jeder neue oder geänderte Rechner besteht vor dem Commit die
-Checkliste R1–R12 (Bau-Begleitpflicht im WACHSTUM-REGLEMENT, Ziff. 4
+Checkliste R1–R13 (Bau-Begleitpflicht im WACHSTUM-REGLEMENT, Ziff. 4
 «Rahmen vorhanden»). Verstösse, die sich fachlich begründen, werden im
 Code an Ort kommentiert und hier als Ausnahme (R12) nachgeführt —
 stille Abweichungen sind Bugs.
+
+**Gegatet seit QS-UI 8b (4.8.2026):** `e2e/qsui-hierarchie.e2e.ts` misst
+auf 14 Rechner-Flächen × 2 Breiten fünf Punkte dieser Checkliste, die
+bis dahin nur auf Sichtprüfung beruhten — R4 Ziff. 2 (Verdikt vor
+Herleitung und vor jeder abgeleiteten Ansicht), R6 Ziff. 2 (Vorbehalte
+nahe am Verdikt), B2 (Lesespalte für Fliesstext im Ergebnisblock), die
+Erreichbarkeit der Sprungmarke auf jeder Breite und ihr Fernbleiben im
+Ausdruck. Der Anlass war ein realer Verstoss, den vier Monate
+Sichtprüfung nicht gefunden hatten: `ErbteilungForm` schob Tabelle und
+Quoten-Balken zwischen Eckdaten und Verdikt (gemessen 666 px Abstand
+gegen 243–283 px auf allen anderen Flächen).
+
+Was der §6.7-Rot-Beweis für jeden Punkt **genau** zeigt — die Zusage ist
+bewusst eng formuliert, weil ein zu weit gefasster Beweis dieselbe
+Scheinsicherheit erzeugt wie ein Tor, das nicht scheitern kann:
+
+- **R4 Ziff. 2:** rot mit der ErgebnisAnzeige unter dem `FristenKalender`
+  (`/rechner/zpo-fristen`). Genau dieser Fall lief zuvor **grün trotz
+  Verstoss** — das Tor erkannte Ansichten nur an `table, svg`, und
+  Kalender, Zeitstrahlen und Balken sind reine Divs. Sie tragen darum
+  jetzt `data-ansicht`; wer eine neue Ansicht baut, setzt es ebenfalls
+  (§9-Bug-Check zu PR #440, B2).
+- **R6 Ziff. 2:** Die Reglement-Schranke «eine Bildschirmhöhe» allein ist
+  **nicht falsifizierbar** — gemessen liegt der Abstand bei 48–213 px
+  gegen 800/844 px, Faktor 3.8. Rot gezeigt wird darum die daneben
+  stehende, gemessene Regressions-Schranke (320 px): ein 400-px-Einschub
+  zwischen Verdikt und Vorbehalte lässt die Reglement-Schranke
+  unberührt und feuert nur diese. Zusätzlich weist das Tor jeden
+  übersprungenen Fall aus — eine Fläche ohne Vorbehalte muss in seiner
+  Ausnahmeliste stehen, sonst ist sie rot (§8: still verschwundene
+  Warnungen sind der Fehler, gegen den die Regel steht).
+- **B2:** rot ohne `max-w-reading` am `BegruendungAbsatz`.
+- **Sprungmarke:** rot, sobald sie unsichtbar ist — und, nach
+  Verschärfung auf Geometrie, auch dann, wenn sie zwar sichtbar ist,
+  aber nicht in der Bildschirmecke sitzt. Diese Verschärfung deckte den
+  `transform`/`position:fixed`-Defekt überhaupt erst auf.
+- **Ausdruck:** rot mit der alten Druckregel `.lc-btn`, die die über
+  `@apply` gebauten Varianten nie erfasste.

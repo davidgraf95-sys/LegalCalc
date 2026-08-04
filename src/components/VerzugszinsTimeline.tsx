@@ -92,7 +92,9 @@ export function VerzugszinsTimeline({ e }: { e: VerzugszinsErgebnis }) {
   const kapAnteil = Math.max(0, Math.min(100, (e.kapitalOffen / total) * 100));
 
   return (
-    <div className="lc-card p-5 lc-reveal space-y-4">
+    // data-ansicht: abgeleitete Ansicht (R4 Ziff. 3) — steht immer NACH dem
+    // Verdikt, vom Tor `e2e/qsui-hierarchie.e2e.ts` (I1) geprüft.
+    <div data-ansicht="verzugszins-zeitstrahl" className="lc-card p-5 lc-reveal space-y-4">
       <p className="lc-overline">Zeitstrahl</p>
 
       {/* (A) Rate-Zeitstrahl */}

@@ -301,8 +301,20 @@ export function ErbteilungForm() {
               wert={nachlass != null ? `CHF ${fmtCHF(nachlass)}` : 'nur Quoten (keine Beträge erfasst)'} />
           </div>
 
-          {/* Erben-Tabelle */}
-          <div className="lc-card p-5 overflow-x-auto">
+          {/* QS-UI 8b (R4 Ziff. 2 / B1 «Verdikt zuerst»): Die ErgebnisAnzeige stand
+              hier bis 4.8.2026 NACH Erben-Tabelle und Quoten-Balken — als einziger
+              Rechner der App. Gemessen (1280×800): Abstand erste Eckdaten-Kachel →
+              Verdikt-Satz 666 px gegen 243–283 px auf allen anderen 13 Flächen; das
+              Verdikt lag bei 2.15 Bildschirmhöhen statt 1.4–1.7. R4 ordnet Verdikt
+              VOR jede abgeleitete Ansicht («Eckdaten beantworten die Frage, die
+              ErgebnisAnzeige trägt das rechtliche Verdikt samt Vorbehalten — beides
+              VOR Kalender/Timeline»). Tabelle und Balken sind genau solche
+              abgeleiteten Ansichten und folgen darum jetzt darunter. Reine
+              DOM-Reihenfolge: kein Text, kein Wert, keine Berechnung geändert. */}
+          <ErgebnisAnzeige titel="Erbteilung & Pflichtteil (Art. 457 ff., 462, 470 ff. ZGB)" ergebnis={ergebnis} />
+
+          {/* Erben-Tabelle — abgeleitete Ansicht (R4 Ziff. 3, `data-ansicht`). */}
+          <div data-ansicht="erben-tabelle" className="lc-card p-5 overflow-x-auto">
             <p className="lc-overline mb-3">Erbteile & Pflichtteile</p>
             <table className="w-full min-w-[42rem] text-body-s">
               <thead>
@@ -335,8 +347,9 @@ export function ErbteilungForm() {
             </table>
           </div>
 
-          {/* Quoten-Balken: gebundener Teil vs. verfügbare Quote */}
-          <div className="lc-card p-5">
+          {/* Quoten-Balken: gebundener Teil vs. verfügbare Quote — abgeleitete
+              Ansicht aus reinen Divs (R4 Ziff. 3, `data-ansicht`). */}
+          <div data-ansicht="quoten-balken" className="lc-card p-5">
             <p className="lc-overline mb-3">Gebundene vs. verfügbare Quote</p>
             <div className="flex h-7 rounded-md overflow-hidden border border-line">
               {ergebnis.erben.filter((e) => !istNull(e.pflichtteil)).map((e) => {
@@ -356,7 +369,6 @@ export function ErbteilungForm() {
             <p className="text-body-s text-ink-500 mt-2">Gelb: Pflichtteile (gebundene Quote) · Gold: frei verfügbar (Testament/Erbvertrag)</p>
           </div>
 
-          <ErgebnisAnzeige titel="Erbteilung & Pflichtteil (Art. 457 ff., 462, 470 ff. ZGB)" ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
           <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
           <div className="flex flex-wrap items-center gap-3">

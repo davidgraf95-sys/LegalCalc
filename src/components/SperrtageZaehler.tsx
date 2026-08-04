@@ -22,7 +22,9 @@ const fmtISO = (s: string) => (s ? s.split('-').reverse().join('.') : '–');
 export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<SperrfristenErgebnis['sperrtage']> }) {
   if (sperrtage.length === 0) return null;
   return (
-    <section aria-label="Sperrtage-Zähler" className="lc-card p-5 space-y-3">
+    // data-ansicht: abgeleitete Ansicht (R4 Ziff. 3) — steht immer NACH dem
+    // Verdikt, vom Tor `e2e/qsui-hierarchie.e2e.ts` (I1) geprüft.
+    <section data-ansicht="sperrtage-zaehler" aria-label="Sperrtage-Zähler" className="lc-card p-5 space-y-3">
       <div className="flex items-center gap-4">
         <h3 className="lc-overline text-ink-700">Sperrtage-Zähler</h3>
         <div className="flex-1 h-px bg-line" />
