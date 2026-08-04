@@ -51,9 +51,18 @@ KARTEN_ANKER = "<!-- KARTEN -->"
 ARCHIV = "archiv/STRUKTUR-SESSIONKARTEN.md"
 # Karten älter als so viele ARBEITSTAGE (Mo–Fr) gegenüber der jüngsten Karte rotieren.
 BEHALTE_ARBEITSTAGE = 2
+# Budget-getriebene Nachrotation (Fix 4.8.2026, s. FAHRPLAN-TOKEN-OEKONOMIE §Stand):
+# auch wenn STRUKTUR.md nach der Alters-Rotation noch über dem Budget liegt, bleiben
+# IMMER mindestens so viele Karten stehen — harte Untergrenze, danach nur noch Warnung.
+MINDEST_BEHALT = 3
 SESSION_RE = re.compile(r"^## Session ", re.MULTILINE)
 NICHT_SESSION_H2_RE = re.compile(r"^## (?!Session )", re.MULTILINE)
-DATUM_RE = re.compile(r"^## Session (\d{1,2})\.(\d{1,2})\.(\d{4})")
+# Erkennt sowohl Einzel-Datum («## Session 24.7.2026») als auch Doppel-Datum
+# («## Session 24./25.7.2026», Tag1./Tag2.Monat.Jahr, gleicher Monat). Bei Doppel-Datum
+# ist Gruppe 2 (Tag2) gesetzt — massgeblich ist dann das SPÄTESTE genannte Datum
+# (Fix 4.8.2026: vorher matchte die Doppel-Datum-Form gar nicht, Karte blieb
+# undatiert und rotierte NIE — Rot-Beweis in FAHRPLAN-TOKEN-OEKONOMIE §Stand).
+DATUM_RE = re.compile(r"^## Session (\d{1,2})\.(?:/(\d{1,2})\.)?(\d{1,2})\.(\d{4})")
 
 
 def repo_dir():
@@ -114,31 +123,67 @@ def karten_datum(block: str):
     m = DATUM_RE.match(block)
     if not m:
         return None
-    tag, monat, jahr = (int(x) for x in m.groups())
+    tag1, tag2, monat, jahr = m.groups()
+    # Doppel-Datum («24./25.7.2026»): Tag2 ist gesetzt und massgeblich — es ist
+    # im gleichen Monat stets das spätere der beiden genannten Daten.
+    tag = int(tag2) if tag2 else int(tag1)
     try:
-        return date(jahr, monat, tag)
+        return date(int(jahr), int(monat), tag)
     except ValueError:
         return None
 
 
-def plane_rotation(struktur: str):
+def budget_erweitern(karten, index_datum, rotate_idx, kopf, schwanz, budget):
+    """Erweitert `rotate_idx` (Alters-Rotation) um weitere Karten, solange
+    STRUKTUR.md nach der Alters-Rotation noch über `budget` liegt.
+
+    Rotiert wird je Schritt die ÄLTESTE verbleibende DATIERTE Karte (Tie-Break bei
+    gleichem Datum: die im Dokument am weitesten unten stehende, also chronologisch
+    letzte jenes Tages). Harte Untergrenze MINDEST_BEHALT — danach Abbruch, auch wenn
+    das Budget dann gerissen bleibt (der Re-Akkumulations-Wächter warnt weiter).
+    Undatierte Karten werden nie angefasst (konservativ, wie bei der Alters-Rotation).
+    Deterministisch: gleiche Eingabe → gleiche Auswahl, keine Heuristik.
+    """
+    rotate_idx = set(rotate_idx)
+    while True:
+        rest_idx = [i for i in range(len(karten)) if i not in rotate_idx]
+        if len(rest_idx) <= MINDEST_BEHALT:
+            break
+        text = anker_einfuegen(kopf, [karten[i] for i in rest_idx]) + schwanz
+        if len(text.encode("utf-8")) <= budget:
+            break
+        kandidaten = [(d, i) for i, d in index_datum if d is not None and i not in rotate_idx]
+        if not kandidaten:
+            break  # nur noch undatierte Karten übrig — konservativ stehen lassen
+        aeltestes = min(d for d, _ in kandidaten)
+        ziel = max(i for d, i in kandidaten if d == aeltestes)
+        rotate_idx.add(ziel)
+    return rotate_idx
+
+
+def plane_rotation(struktur: str, budget: int = None):
     """Gibt (behalten[list], rotieren[list], kopf, schwanz) zurück.
 
-    Rotiert werden Karten, die > BEHALTE_ARBEITSTAGE gegenüber der jüngsten
-    datierten Karte zurückliegen. Karten ohne parsebares Datum bleiben (konservativ).
+    Rotiert werden zuerst Karten, die > BEHALTE_ARBEITSTAGE gegenüber der jüngsten
+    datierten Karte zurückliegen (Alters-Rotation). Karten ohne parsebares Datum
+    bleiben (konservativ). Liegt STRUKTUR.md danach noch über `budget`, rotiert
+    zusätzlich `budget_erweitern()` — siehe dort.
     """
+    if budget is None:
+        budget = BUDGET["STRUKTUR.md"]
     kopf, karten, schwanz = parse_karten(struktur)
-    datierte = [d for d in (karten_datum(k) for k in karten) if d]
+    index_datum = [(i, karten_datum(k)) for i, k in enumerate(karten)]
+    datierte = [d for _, d in index_datum if d]
     if not datierte:
         return karten, [], kopf, schwanz
     referenz = max(datierte)
-    behalten, rotieren = [], []
-    for k in karten:
-        d = karten_datum(k)
-        if d and arbeitstage_abstand(d, referenz) > BEHALTE_ARBEITSTAGE:
-            rotieren.append(k)
-        else:
-            behalten.append(k)
+    rotate_idx = {
+        i for i, d in index_datum
+        if d and arbeitstage_abstand(d, referenz) > BEHALTE_ARBEITSTAGE
+    }
+    rotate_idx = budget_erweitern(karten, index_datum, rotate_idx, kopf, schwanz, budget)
+    behalten = [k for i, k in enumerate(karten) if i not in rotate_idx]
+    rotieren = [k for i, k in enumerate(karten) if i in rotate_idx]
     return behalten, rotieren, kopf, schwanz
 
 
