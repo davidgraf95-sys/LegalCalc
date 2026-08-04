@@ -202,11 +202,26 @@ function DatumMeta({ snap }: { snap: EntscheidSnapshot }) {
 
 // Lese-Schriftgrössen (R17, A−/A+); Index 1 = Default (1.08rem).
 const FS_STUFEN = [1.0, 1.08, 1.18, 1.3];
+// QS-CODE-AUSSENKANTEN: der Key hiess bis 4.8.2026 `rsp-fs-idx` — ausserhalb des
+// `lexmetrik.`-Präfix-Schemas und darum vom Einstellungen-Reset (RESET_PRAEFIXE)
+// nicht sicher erfasst. Neuer Key MIT Migrationslese: bestehende Werte unter dem
+// alten Key werden einmalig übernommen, unter dem neuen Key weitergeschrieben und
+// der alte Key gelöscht.
+const FS_IDX_KEY = 'lexmetrik.rsp-fs-idx';
+const FS_IDX_KEY_ALT = 'rsp-fs-idx';
 function ladeFsIdx(): number {
   try {
     // Null-Guard (D-1.1): `Number(null) === 0` liess jeden ERSTBESUCHER still auf
     // Stufe 0 (1.0rem) statt Default 1 (1.08rem) fallen — R2-Bruch ohne Symptom.
-    const roh = localStorage.getItem('rsp-fs-idx');
+    let roh = localStorage.getItem(FS_IDX_KEY);
+    if (roh === null) {
+      const alt = localStorage.getItem(FS_IDX_KEY_ALT);
+      if (alt !== null) {
+        roh = alt;
+        localStorage.setItem(FS_IDX_KEY, alt);
+        localStorage.removeItem(FS_IDX_KEY_ALT);
+      }
+    }
     if (roh !== null) {
       const v = Number(roh);
       if (Number.isInteger(v) && v >= 0 && v < FS_STUFEN.length) return v;
@@ -327,7 +342,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   const setFs = (i: number) => {
     const x = Math.max(0, Math.min(FS_STUFEN.length - 1, i));
     setFsIdx(x);
-    try { localStorage.setItem('rsp-fs-idx', String(x)); } catch { /* egal */ }
+    try { localStorage.setItem(FS_IDX_KEY, String(x)); } catch { /* egal */ }
   };
 
   useEffect(() => {
