@@ -23,6 +23,22 @@ hinzugefügte, unverlinkte Datei in `fahrplaene/` rot. Slicer-Aufruf:
 Neue Erkenntnisse gehen in `bibliothek/` (CLAUDE.md §11), nicht in einen neuen
 Fahrplan.
 
+**Lagebild-Konventionen (seit 4.8.2026, `QS-PLAN-BILD`)** — `npm run plan:bild`
+erzeugt Davids laienverständliche Übersicht mechanisch aus dem Plan; damit dort
+alles sichtbar ist, gilt beim Anlegen:
+
+- **Jeder neue Fahrplan** trägt direkt unter der Titelzeile
+  `<!-- @lagebild name: <Klartext-Name> · zweck: <1 Laien-Satz> -->` —
+  Name/Zweck leben bei der Datei (§5), fehlt die Zeile, zeigt das Lagebild nur
+  den rohen Dateinamen.
+- **Jeder neue Schritt** schreibt seinen Spec-Verweis als `**Detail:**
+  [Datei](…) §N` (bzw. `Bau-Spec:`) — diese Form wird maschinell gelesen und
+  macht den generierten Bau-Prompt konkret (`fahrplan -- <Datei> <§>`); ohne
+  sie bleibt im Prompt ein Platzhalter.
+- wip-/done-Disziplin (Ziff. 2 und 4) ist zugleich die Wahrheit der
+  Lagebild-Sektion «Gerade im Bau»; eine Sonde meldet Bau-Plätze ohne
+  wip-Meldung sichtbar an David.
+
 ## 2. Vor dem Start: Plan-Stand abfragen
 
 Nicht nur den eigenen Auftrag lesen, sondern den aktuellen Plan:

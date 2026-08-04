@@ -28,6 +28,25 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 4.8.2026 (abends) — QS-PLAN-BILD: Lagebild-Generator als Steuerpult (#443)
+**Fable-Session, Worktree qs-plan-bild: `npm run plan:bild` gebaut und gelandet (Squash `39c5cc6d1`, Admin-Bypass wegen Vercel-Tageslimit — Entscheid David; inhaltliche Tore lokal + CI-Vorlauf grün, Haupt-CI-Lauf auf `main` zum Kartenzeitpunkt laufend).**
+
+- **Generator** (`scripts/plan/bild.ts`, ~700 Z.): laienverständliches HTML-Lagebild aus
+  `parseRoadmap()`+`resolve()` (Kennzahlen == `plan:next`), Korpus-/Katalog-Zählungen, gh-PR-Status.
+  Sektionen: Lage-Satz · main-Ampel · Wartet-auf-David (mit Blocker-Alter) · Gerade im Bau
+  (wip + PRs + Worktrees, wip-Verstoss-Sonde) · Zuletzt gelandet · @queue + Parallel-Start-Box
+  (Resolver-Lane 1) · Phasen · Baustellen-Karten (@lagebild-Kopfzeilen aller 28 Fahrpläne) ·
+  Tipp-Filter. Je baubarem Schritt ein kopierbarer **Bau-Prompt** (wip-Setzen, Worktree, Slice-Befehl
+  mit verprobtem §-Anker [22/74], DoD, §14.7 wörtlich). Flags `--out/--open/--watch/--pull`.
+- **Konventionen verankert:** `@lagebild name/zweck` je Fahrplan · `**Detail:** … §N` maschinengelesen ·
+  beide + wip-Sonde im Skill `auftrag` Ziff. 1 nachgeführt (Spec: FAHRPLAN-PLAN-STEUERUNG §Lagebild).
+- **Davids Betriebs-Zugang (lokal, ausserhalb Repo):** LaunchAgent `ch.lexmetrik.planbild`
+  (`--watch 300 --pull`, Wrapper in `~/Library/Application Support/LexMetrik/`) + App
+  «LexMetrik Lagebild» in `/Applications` (Chrome-App-Fenster auf `tmp/plan-bild.html`).
+- **Plan/Prozess:** `QS-CI-VERCEL` angelegt (§17-Wurzel-Fix: Ignored Build Step, Anlass >100
+  Preview-Deployments/Tag blockierten den merge-pflichtigen Vercel-Check dieses App-fremden Diffs);
+  QS-PLAN-BILD done; wip-Sonde meldete live QS-CODE-AUSSENKANTEN → Parallel-Session zog wip nach.
+
 ## Session 3./4.8.2026 — W2·5d + W2·10-Reader-Kette + QS-UI 8a/8b (Orchestrierung, 16 PRs)
 **Orchestrier-Session (Fable), Worktree bauplan-review-095048: 12 PRs gebaut, geprüft, gelandet — W2·5d abgeschlossen, W2·10-Reader-Kette (VR/R1/R2/R3/R4/Z/URL) komplett.**
 
