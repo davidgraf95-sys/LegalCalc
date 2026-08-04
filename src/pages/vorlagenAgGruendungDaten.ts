@@ -1,9 +1,12 @@
-import type { Phase } from '../lib/gruendungsunterlagen';
+import type { EinlageArt, Phase } from '../lib/gruendungsunterlagen';
 import type { PdfBanner } from '../lib/vorlagen/banner';
-import type {
-  AgBereich, AgVrZeichnungsArt, AgVertretungsZeichnungsArt, AgGruenderZeile,
-  AgVrZeile, AgVertretungsZeile, AgSacheinlageZeile, AgVerrechnungZeile, AgVorteilZeile,
+import {
+  AG_DOK_DEFAULTS, AG_FREMDWAEHRUNGEN,
+  type AgBereich, type AgDokAntworten, type AgVrZeichnungsArt, type AgVertretungsZeichnungsArt,
+  type AgGruenderZeile, type AgVrZeile, type AgVertretungsZeile, type AgSacheinlageZeile,
+  type AgVerrechnungZeile, type AgVorteilZeile, type AgWaehrung,
 } from '../lib/vorlagen/gruendungAgDokumente';
+import { KANTONE } from '../lib/kantone';
 
 // §6-Datei-Schlankheit (19.6.2026): module-level Konstanten, Hydrations-Helfer und
 // Leer-Defaults aus VorlageAgGruendung.tsx ausgelagert (verhaltensneutral).
@@ -62,22 +65,6 @@ export const VERTRETUNGS_ZEICHNUNGS_OPTIONEN: { id: AgVertretungsZeichnungsArt; 
 // Defaults auffüllen, falsche Typen verwerfen — nie ungeprüft in den State).
 export const STORAGE_KEY = 'lexmetrik:ag-gruendung:v1';
 
-export function ladeStand(): Record<string, unknown> | null {
-  // Nackter localStorage-Zugriff wie useWizardState: im SSR-Smoke wirft er
-  // (ReferenceError) und wird gefangen; der Test-Stub liegt auf globalThis.
-  try {
-    const roh = localStorage.getItem(STORAGE_KEY);
-    if (!roh) return null;
-    const json: unknown = JSON.parse(roh);
-    if (!json || typeof json !== 'object') return null;
-    const o = json as { v?: unknown; stand?: unknown };
-    if (o.v !== 1 || !o.stand || typeof o.stand !== 'object' || Array.isArray(o.stand)) return null;
-    return o.stand as Record<string, unknown>;
-  } catch {
-    return null; // defekter/blockierter Speicher = wie «nichts gespeichert»
-  }
-}
-
 export const txt = (v: unknown, def: string) => (typeof v === 'string' ? v : def);
 export const bool = (v: unknown, def: boolean) => (typeof v === 'boolean' ? v : def);
 export const wahl = <T extends string>(v: unknown, erlaubt: readonly T[], def: T): T =>
@@ -107,6 +94,151 @@ export function zeilenGuard<T extends Record<string, string | boolean | undefine
       }
       return zeile as unknown as T & { key: number };
     });
+}
+
+// ─── D6 (QS-CODE-ENTDOPPLUNG, 4.8.2026): EIN Zustands-Objekt statt 70 useState ─
+// Die Maske hängt an useWizardState (geteilter Rahmen von 24 anderen Seiten);
+// AgStand ist ihr vollständiger persistierter Zustand. migriereAgStand ist die
+// Hydrations-Wahrheit: sie liest das ALTE Speicherformat {v:1, stand:{…}}
+// verlustfrei weiter (Entwürfe bleiben erhalten), verwirft fremde Versionen
+// (v ≠ 1 → Defaults, wie ladeStand zuvor) und wendet je Feld dieselben
+// Typ-Guards an wie die früheren Einzel-Initializer. Neu geschrieben wird
+// flach (useWizardState-Format). Orakel: agGruendungHydration.test.tsx.
+
+export interface AgStand {
+  einlageArt: EinlageArt; besondereVorteile: boolean; optingOut: boolean;
+  eigeneBueros: boolean; immobilienHauptzweck: boolean; inhaberaktien: boolean;
+  fremdwaehrung: boolean; bankInUrkunde: boolean; chVertretung: boolean; leistungen: string;
+  firma: string; sitz: string; kanton: string; zweck: string; zweckErweiterung: boolean;
+  statutenUmfang: AgDokAntworten['statutenUmfang']; vinkulierung: boolean; virtuelleGv: boolean;
+  inhaberKotiert: boolean; verwahrungsstelle: string;
+  schiedsklausel: boolean; schiedsOrt: string; kapitalband: boolean;
+  kbUntergrenze: string; kbObergrenze: string; kbEndeDatum: string;
+  kbRichtung: AgDokAntworten['kbRichtung']; bedingtesKapital: boolean; bkBetrag: string; bkKreis: string;
+  stichentscheidGv: boolean; gjErstesEnde: string; gjBeginn: string; gjEnde: string;
+  ak: string; anzahl: string; nennwert: string; liberierung: string; ausgabebetrag: string;
+  waehrung: AgWaehrung; kursChf: string; kursQuelle: string; bankName: string; bankOrt: string;
+  sacheinlagen: (AgSacheinlageZeile & { key: number })[];
+  verrechnungen: (AgVerrechnungZeile & { key: number })[];
+  vorteile: (AgVorteilZeile & { key: number })[];
+  revisorName: string;
+  gruender: (AgGruenderZeile & { key: number })[];
+  vr: (AgVrZeile & { key: number })[];
+  vertretungen: (AgVertretungsZeile & { key: number })[];
+  protokollfuehrer: string; sitzungBeginn: string; sitzungEnde: string; rsName: string; rsSitz: string;
+  rechtsdomizil: string; domizilhalterName: string; domizilhalterAdresse: string;
+  konstituierungInUrkunde: boolean; domizilNurAnmeldung: boolean; nachtragsbevollmaechtigter: string;
+  lkAusland: boolean; lkNeuerwerb: boolean; lkGrundstueck: boolean;
+  nachtragAktiv: boolean; ntGruendungsdatum: string; ntUrkundeZiffer: string; ntUrkundeText: string;
+  ntStatutenArtikel: string; ntStatutenAbsatz: string; ntStatutenText: string;
+  ort: string; datum: string;
+}
+
+/** Frische Defaults — identisch zu den früheren useState-Initialwerten.
+ *  Datum: «heute» in LOKALER Zeit (E2-1, toLocaleDateString 'sv-SE'). */
+export function agStandDefaults(): AgStand {
+  return {
+    einlageArt: 'bar', besondereVorteile: false, optingOut: true,
+    eigeneBueros: true, immobilienHauptzweck: false, inhaberaktien: false,
+    fremdwaehrung: false, bankInUrkunde: true, chVertretung: true, leistungen: '',
+    firma: '', sitz: '', kanton: 'ZH', zweck: '', zweckErweiterung: true,
+    statutenUmfang: 'kurz', vinkulierung: false, virtuelleGv: false,
+    inhaberKotiert: false, verwahrungsstelle: '',
+    schiedsklausel: false, schiedsOrt: '', kapitalband: false,
+    kbUntergrenze: '', kbObergrenze: '', kbEndeDatum: '',
+    kbRichtung: 'erhoehen', bedingtesKapital: false, bkBetrag: '', bkKreis: '',
+    stichentscheidGv: true, gjErstesEnde: '', gjBeginn: AG_DOK_DEFAULTS.gjBeginn, gjEnde: AG_DOK_DEFAULTS.gjEnde,
+    ak: AG_DOK_DEFAULTS.aktienkapitalChf, anzahl: AG_DOK_DEFAULTS.anzahlAktien,
+    nennwert: AG_DOK_DEFAULTS.nennwertChf, liberierung: AG_DOK_DEFAULTS.liberierungProzent,
+    ausgabebetrag: '', waehrung: 'EUR', kursChf: '', kursQuelle: '', bankName: '', bankOrt: '',
+    sacheinlagen: [], verrechnungen: [], vorteile: [], revisorName: '',
+    gruender: [], vr: [], vertretungen: [],
+    protokollfuehrer: '', sitzungBeginn: '', sitzungEnde: '', rsName: '', rsSitz: '',
+    rechtsdomizil: '', domizilhalterName: '', domizilhalterAdresse: '',
+    konstituierungInUrkunde: false, domizilNurAnmeldung: false, nachtragsbevollmaechtigter: '',
+    lkAusland: false, lkNeuerwerb: false, lkGrundstueck: false,
+    nachtragAktiv: false, ntGruendungsdatum: '', ntUrkundeZiffer: '', ntUrkundeText: '',
+    ntStatutenArtikel: '', ntStatutenAbsatz: '', ntStatutenText: '',
+    ort: '', datum: new Date().toLocaleDateString('sv-SE'),
+  };
+}
+
+/** Hydrations-/Migrations-Guard für useWizardState (siehe Kopfkommentar). */
+export function migriereAgStand(geladen: AgStand): AgStand {
+  const roh = geladen as unknown as Record<string, unknown>;
+  let q: Record<string, unknown>;
+  if ('stand' in roh || 'v' in roh) {
+    // Alt-Format: nur v === 1 mit Objekt-stand wird übernommen (wie ladeStand).
+    q = roh.v === 1 && roh.stand !== null && typeof roh.stand === 'object' && !Array.isArray(roh.stand)
+      ? (roh.stand as Record<string, unknown>)
+      : {};
+  } else {
+    q = roh; // flaches useWizardState-Format (bereits mit Defaults gemerged)
+  }
+  const d = agStandDefaults();
+  return {
+    einlageArt: wahl(q.einlageArt, ['bar', 'sacheinlage', 'verrechnung', 'gemischt'], d.einlageArt),
+    besondereVorteile: bool(q.besondereVorteile, d.besondereVorteile),
+    optingOut: bool(q.optingOut, d.optingOut),
+    eigeneBueros: bool(q.eigeneBueros, d.eigeneBueros),
+    immobilienHauptzweck: bool(q.immobilienHauptzweck, d.immobilienHauptzweck),
+    inhaberaktien: bool(q.inhaberaktien, d.inhaberaktien),
+    fremdwaehrung: bool(q.fremdwaehrung, d.fremdwaehrung),
+    bankInUrkunde: bool(q.bankInUrkunde, d.bankInUrkunde),
+    chVertretung: bool(q.chVertretung, d.chVertretung),
+    leistungen: txt(q.leistungen, d.leistungen),
+    firma: txt(q.firma, d.firma), sitz: txt(q.sitz, d.sitz),
+    kanton: wahl(q.kanton, KANTONE, 'ZH'),
+    zweck: txt(q.zweck, d.zweck), zweckErweiterung: bool(q.zweckErweiterung, d.zweckErweiterung),
+    statutenUmfang: wahl(q.statutenUmfang, ['kurz', 'lang'], d.statutenUmfang),
+    vinkulierung: bool(q.vinkulierung, d.vinkulierung), virtuelleGv: bool(q.virtuelleGv, d.virtuelleGv),
+    inhaberKotiert: bool(q.inhaberKotiert, d.inhaberKotiert),
+    verwahrungsstelle: txt(q.verwahrungsstelle, d.verwahrungsstelle),
+    schiedsklausel: bool(q.schiedsklausel, d.schiedsklausel), schiedsOrt: txt(q.schiedsOrt, d.schiedsOrt),
+    kapitalband: bool(q.kapitalband, d.kapitalband),
+    kbUntergrenze: txt(q.kbUntergrenze, d.kbUntergrenze), kbObergrenze: txt(q.kbObergrenze, d.kbObergrenze),
+    kbEndeDatum: txt(q.kbEndeDatum, d.kbEndeDatum),
+    kbRichtung: wahl(q.kbRichtung, ['erhoehen', 'beide'], d.kbRichtung),
+    bedingtesKapital: bool(q.bedingtesKapital, d.bedingtesKapital),
+    bkBetrag: txt(q.bkBetrag, d.bkBetrag), bkKreis: txt(q.bkKreis, d.bkKreis),
+    stichentscheidGv: bool(q.stichentscheidGv, d.stichentscheidGv),
+    gjErstesEnde: txt(q.gjErstesEnde, d.gjErstesEnde),
+    gjBeginn: txt(q.gjBeginn, d.gjBeginn), gjEnde: txt(q.gjEnde, d.gjEnde),
+    ak: txt(q.ak, d.ak), anzahl: txt(q.anzahl, d.anzahl), nennwert: txt(q.nennwert, d.nennwert),
+    liberierung: txt(q.liberierung, d.liberierung), ausgabebetrag: txt(q.ausgabebetrag, d.ausgabebetrag),
+    waehrung: wahl(q.waehrung, AG_FREMDWAEHRUNGEN, 'EUR'),
+    kursChf: txt(q.kursChf, d.kursChf), kursQuelle: txt(q.kursQuelle, d.kursQuelle),
+    bankName: txt(q.bankName, d.bankName), bankOrt: txt(q.bankOrt, d.bankOrt),
+    sacheinlagen: zeilenGuard<AgSacheinlageZeile>(q.sacheinlagen, SACHEINLAGE_LEER, { typ: ['sachgesamtheit', 'geschaeft'] }),
+    verrechnungen: zeilenGuard<AgVerrechnungZeile>(q.verrechnungen, VERRECHNUNG_LEER),
+    vorteile: zeilenGuard<AgVorteilZeile>(q.vorteile, VORTEIL_LEER),
+    revisorName: txt(q.revisorName, d.revisorName),
+    gruender: zeilenGuard<AgGruenderZeile>(q.gruender, GRUENDER_LEER),
+    vr: zeilenGuard<AgVrZeile>(q.vr, VR_LEER, { zeichnungsArt: VR_ZEICHNUNGS_OPTIONEN.map((o) => o.id) }),
+    vertretungen: zeilenGuard<AgVertretungsZeile>(q.vertretungen, VERTRETUNG_LEER, { zeichnungsArt: VERTRETUNGS_ZEICHNUNGS_OPTIONEN.map((o) => o.id) }),
+    protokollfuehrer: txt(q.protokollfuehrer, d.protokollfuehrer),
+    sitzungBeginn: txt(q.sitzungBeginn, d.sitzungBeginn), sitzungEnde: txt(q.sitzungEnde, d.sitzungEnde),
+    rsName: txt(q.rsName, d.rsName), rsSitz: txt(q.rsSitz, d.rsSitz),
+    rechtsdomizil: txt(q.rechtsdomizil, d.rechtsdomizil),
+    domizilhalterName: txt(q.domizilhalterName, d.domizilhalterName),
+    domizilhalterAdresse: txt(q.domizilhalterAdresse, d.domizilhalterAdresse),
+    konstituierungInUrkunde: bool(q.konstituierungInUrkunde, d.konstituierungInUrkunde),
+    domizilNurAnmeldung: bool(q.domizilNurAnmeldung, d.domizilNurAnmeldung),
+    nachtragsbevollmaechtigter: txt(q.nachtragsbevollmaechtigter, d.nachtragsbevollmaechtigter),
+    lkAusland: bool(q.lkAusland, d.lkAusland), lkNeuerwerb: bool(q.lkNeuerwerb, d.lkNeuerwerb),
+    lkGrundstueck: bool(q.lkGrundstueck, d.lkGrundstueck),
+    nachtragAktiv: bool(q.nachtragAktiv, d.nachtragAktiv),
+    ntGruendungsdatum: txt(q.ntGruendungsdatum, d.ntGruendungsdatum),
+    ntUrkundeZiffer: txt(q.ntUrkundeZiffer, d.ntUrkundeZiffer),
+    ntUrkundeText: txt(q.ntUrkundeText, d.ntUrkundeText),
+    ntStatutenArtikel: txt(q.ntStatutenArtikel, d.ntStatutenArtikel),
+    ntStatutenAbsatz: txt(q.ntStatutenAbsatz, d.ntStatutenAbsatz),
+    ntStatutenText: txt(q.ntStatutenText, d.ntStatutenText),
+    ort: txt(q.ort, d.ort),
+    // Punkt 7: Datum-Default «heute» NUR, wenn kein gespeicherter Wert vorliegt
+    // (leerer String zählt wie zuvor als «kein Wert»).
+    datum: txt(q.datum, '') || d.datum,
+  };
 }
 
 export const GRUENDER_LEER: Required<AgGruenderZeile> = { name: '', angaben: '', anzahl: '', liberierung: '' };
