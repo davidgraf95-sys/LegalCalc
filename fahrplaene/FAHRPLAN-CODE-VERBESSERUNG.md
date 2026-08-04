@@ -140,11 +140,13 @@ Zweifel Gegenprüfung. `EntscheidLeser.tsx` kollidiert mit `QS-UI-HIGHLIGHT`
 | e2e-Shard-Balance | erledigt | am 4.8.2026 bereits neu gepackt (QS-PERF-Unterpunkt ✅) |
 | 5 One-Shot-Skripte nach `scripts/archiv/` · `erfasste-keys.generated.ts`-Ortszuordnung · `'rsp-fs-idx'`-Key-Präfix · Formatter-Restdublette (`chf` 3×) | Kleinvieh | bei der nächsten Session auf der jeweiligen Fläche mitnehmen; kein eigener Schritt |
 
-## §7 Offene David-Entscheide
+## §7 David-Entscheide — beide beantwortet (Chat 4.8.2026)
 
-1. **Manifest-Nullzeilen:** Sind die 5 leeren Tabellen in `daten-manifest.json`
-   gewollte Ausbaustufe oder eine stille Lücke des Frische-Wächters?
-2. **`normalisiereTarifText`-Freigabe:** Der Code-Kommentar (`ArtikelBody.tsx:257`)
-   zitiert eine Freigabe «David 17.6.2026» — bestätigen und als Satz ins
-   Normtext-Domänen-Reglement heben, oder Normalisierung zurückbauen. Bis zum
-   Entscheid gilt der Kommentar als unbelegte Behauptung (§14.7-Geist).
+1. **Manifest-Nullzeilen: GEWOLLT** (David 4.8.2026, «nullzeilen sind gewollt») —
+   die 5 leeren Tabellen sind Ausbaustufe, keine Wächter-Lücke. Der
+   `QS-AUTOMATIK`-Mitnahme-Punkt (a) ist damit erledigt; beim Befüllen der
+   Tabellen zieht das Manifest ohnehin mechanisch nach.
+2. **`normalisiereTarifText`-Freigabe: BESTÄTIGT** (David 4.8.2026,
+   «tariftext-freigabe stimmt — ins reglement heben») — als Konkretisierung in
+   `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben; der Code-Kommentar in
+   `ArtikelBody.tsx:257` ist damit reglementgedeckt.

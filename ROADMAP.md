@@ -161,9 +161,8 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   darum `ready` und nicht `done`; sie ist zugleich Posten (a) des QS-BASIS-Intakes und wird
   **allein hier** gebaut (Abgrenzung 3.8.2026, Wächter gegen eine UNABHÄNGIGE Grösse, nie gegen
   die Sync-Marke). Diagnose-Übersicht: `bibliothek/ci-fehlerklassen-2026-08-03.md`.
-  **Mitnahme 4.8.2026 (Code-Inventur):** (a) `daten-manifest.json` führt 5 Tabellen mit 0 Zeilen
-  (Leerstring-sha) — `check:turso-frische` hält sie trivial für «frisch»; gewollte Ausbaustufe oder
-  Wächter-Lücke ist eine **David-Frage** (FAHRPLAN-CODE-VERBESSERUNG §7). (b) Prod-Smoke existiert
+  **Mitnahme 4.8.2026 (Code-Inventur):** (a) ~~Manifest-Nullzeilen~~ **geklärt — gewollt**
+  (Ausbaustufe, David 4.8.2026; keine Wächter-Lücke). (b) Prod-Smoke existiert
   doppelt (`.github/scripts/prod-smoke.sh` wöchentlich + `scripts/betrieb/prod-smoke.ts`
   6-stündlich, überlappende Prüfungen) — konsolidieren oder Schnitt dokumentieren.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
@@ -272,8 +271,9 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
 Pipeline-Schicht auf Auftrag David, «denk gross»).** Befunde mit Belegen:
 [code-inventur-2026-08-04.md](bibliothek/betrieb/code-inventur-2026-08-04.md) · Bau-Specs:
 [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) (§6 dort = Verortungs-
-Register der Befunde, die in bestehende Schritte geflossen sind; §7 = zwei offene David-Fragen:
-Manifest-Nullzeilen, `normalisiereTarifText`-Freigabe).
+Register der Befunde, die in bestehende Schritte geflossen sind; die zwei David-Fragen aus §7 sind
+am 4.8.2026 beantwortet: Manifest-Nullzeilen gewollt · `normalisiereTarifText`-Freigabe bestätigt
+und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
 
 - [ ] **`QS-CODE-TURSO` · Turso-Sync-Durchsatz: Wurzel-Fix des FTS-Insert-Pfads** *(Anlass: Code-Inventur 4.8.2026 — 22.3 von 32.8 min Sync entfallen auf zeilenweises Insert in `fts_entscheide_schaufenster` bei ~4 Zeilen/s; Timeout-Reserve trägt nur ~3.7× Korpusgrösse, kollidiert mit `W2·13-KANTONE`)* — Batch/Rebuild/Dump-Varianten messen, dann umstellen; Ziel <15 min Voll-Sync bei inhaltsgleicher Tabelle. **Risikopfad** (`scripts/datenhaltung`) ⇒ Gegenprüfung. Abgrenzung: nur Durchsatz des bestehenden Syncs — Architektur bleibt `W2·6-DATA`, Wachstums-Schwellen bleiben `QS-AUTOMATIK`. **Detail:** [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) §1.
   <!-- @meta id: QS-CODE-TURSO · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/datenhaltung, .github/workflows/turso-sync.yml] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md -->

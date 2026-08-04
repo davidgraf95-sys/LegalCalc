@@ -47,6 +47,12 @@ Daraus folgt die Tiefen-Steuerung jeder Entscheidung:
 
 - Der **amtliche Wortlaut wird nie verändert** — wir normalisieren nur die
   *Darstellung* (Einzug, Marker-Position, Strich-Logik, Abstände).
+- **Konkretisierung Tarif-/Anhangtext** (Freigabe David 17.6.2026, bestätigt
+  Chat 4.8.2026): In Tarif- und Anhangtext dürfen fehlende **Trenn-Leerzeichen**
+  zwischen Buchstabe↔Ziffer und ‰↔Ziffer für die Darstellung eingefügt werden —
+  das ist Typografie-Reparatur der Extraktion, kein Wortlaut-Eingriff. Kein
+  Zeichen des amtlichen Texts wird entfernt, ersetzt oder umgestellt.
+  Umsetzung: `normalisiereTarifText()` in `src/components/normtext/ArtikelBody.tsx`.
 - Eine Darstellungs-/Extraktions-Änderung, die den Sinn verschiebt, ist ein
   Bug, kein Feature. **Falsche Zitate sind schlimmer als gar keine.** Beispiel:
   verlorene Verschachtelungstiefe einer Aufzählung (Ziff. oben / lit. unten)

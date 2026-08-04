@@ -104,7 +104,7 @@ Schlamperei.
 - **`daten-manifest.json`: 5 Tabellen mit 0 Zeilen** (`norm_rangliste`,
   `norm_referenzen`, `entscheide`, `zitat_kanten`, soft-law ausser `dokument`)
   — sha des Leerstrings; `check:turso-frische` hält sie trivial für «frisch».
-  Absicht (Ausbaustufe) oder stille Wächter-Lücke: **offen, David-Frage.**
+  **Geklärt 4.8.2026: gewollt** (Ausbaustufe, David im Chat).
 - **Prod-Smoke doppelt:** `.github/scripts/prod-smoke.sh` (bash, wöchentlich in
   `normen-monitor.yml`) und `scripts/betrieb/prod-smoke.ts` (TS, 6-stündlich)
   prüfen überlappend Startseite + `/api/suche` + Korpus-JSON — echte Doppelung,
@@ -122,10 +122,10 @@ Schlamperei.
 
 ## 5. Offene Fragen
 
-1. `daten-manifest.json`-Nullzeilen: gewollt oder Frische-Wächter-Lücke? (David)
-2. Freigabe `normalisiereTarifText` (`ArtikelBody.tsx:257`, «David 17.6.2026»)
-   nur als Code-Kommentar belegt — bestätigen und in ein Reglement heben, oder
-   zurückbauen? (David)
+1. ~~`daten-manifest.json`-Nullzeilen~~ **beantwortet 4.8.2026: gewollt**
+   (Ausbaustufe, keine Wächter-Lücke — David im Chat).
+2. ~~Freigabe `normalisiereTarifText`~~ **beantwortet 4.8.2026: bestätigt**
+   und als Konkretisierung in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben.
 3. Prod-Smoke-Doppelung: bewusster Schnitt oder konsolidieren?
 4. `RESET_PRAEFIXE` in `Einstellungen.tsx` erfasst `'rsp-fs-idx'` nicht? (prüfbar)
 5. Bundle-Zahlen auf HEAD neu erheben (dist war 12 h älter; §3-Streuung nötig).
