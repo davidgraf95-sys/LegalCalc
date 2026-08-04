@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { KopfDaten } from './InhaltsKopfKontext';
+import { RuecksprungChip } from './RuecksprungChip';
+import { DeepLinkSkeleton } from './DeepLinkSkeleton';
 
 // ─── Inhalts-Kopf (Einzelansicht «analog Split-View», ohne Verschiebe-Optionen) ─
 //
@@ -158,6 +160,20 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
           </button>
         </div>
       </div>
+      {/* W2·10-UI-NAV/R5 + R7: die beiden Sprung-Rückmeldungen der Einzelansicht.
+          Sie hängen HIER, weil dieser Kopf die einzige Klammer ist, die über allen
+          Inhaltsseiten liegt und zugleich weiss, dass eine läuft — beide rendern
+          im Ruhezustand `null` und liegen ausserhalb des Layoutflusses, tragen
+          also weder zum Markup noch zum CLS dieser Leiste bei (§15). Verschieden
+          verankert, je nach Bezugspunkt: der Chip `fixed` am unteren Rand des
+          FENSTERS (er gehört dem Daumen), das Skeleton `absolute` an der
+          Unterkante DIESER Leiste (`top-full`) — so braucht es keine addierte
+          Pixelhöhe von Topbar + Leiste, die still veralten könnte.
+          Bewusst nur die Einzelansicht: im Split-View hat jede Pane ihren eigenen
+          Scroll-Container und ihre eigene lokale History (PaneKopf) — ein
+          fensterweiter Chip könnte dort nicht sagen, WELCHE Pane er meint. */}
+      <RuecksprungChip />
+      <DeepLinkSkeleton />
     </div>
   );
 }
