@@ -18,16 +18,16 @@
 // der Erwägungs-/Inhalts-sha bleiben byte-gleich (sha basiert nur auf Abschnitts-
 // text). Anzahl Entscheide vorher==nachher.
 //
-//   vite-node scripts/normtext/remap-sachgebiet.ts -- --schreiben [--datum=YYYY-MM-DD]
+//   vite-node scripts/archiv/remap-sachgebiet.ts -- --schreiben [--datum=YYYY-MM-DD]
 //
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   istMehrdeutigeOerAbteilung, normSignalSachgebiet, abteilungZuSachgebiet,
   kantonalSachgebiet, legalAreaZuSachgebiet,
-} from './entscheide-mapping';
-import { schreibeKorpus } from './entscheide-schreiben';
-import { alleSnapshots } from './snapshot-walker';
+} from '../normtext/entscheide-mapping';
+import { schreibeKorpus } from '../normtext/entscheide-schreiben';
+import { alleSnapshots } from '../normtext/snapshot-walker';
 import type { Rechtsgebiet } from '../../src/lib/normtext/register';
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
 
