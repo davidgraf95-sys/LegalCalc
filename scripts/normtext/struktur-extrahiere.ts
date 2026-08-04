@@ -22,14 +22,17 @@
  * IDENTISCH zum Snapshot-`artikel`-Token gebildet (sonst bräche der Join).
  */
 
-import { ankerZuToken, alleAnhangAnker, extrahiereAnhang } from './extrahiere-fedlex.ts';
+import { ankerZuToken, alleAnhangAnker, extrahiereAnhang, anhangContainerEId } from './extrahiere-fedlex.ts';
 
 export interface ArtikelStruktur {
   /** Amtliche Gliederung von aussen nach innen (Teil → Titel → Abschnitt …).
    *  EID-1 (W2·5d §12): `eId` = kumulative Fedlex-Container-eId der Ebene
    *  (`<section id="part_1/tit_1">`, AKN-Schema) — reine, bei jeder Regeneration
    *  neu erzeugte OUTBOUND-Daten für ELI-Deep-Links (`quelleUrl#<eId>`), NIE
-   *  eigene persistente Anker (revisions-brüchige Pfade, §12.1/§12.4, K2/R8). */
+   *  eigene persistente Anker (revisions-brüchige Pfade, §12.1/§12.4, K2/R8).
+   *  W2·5d-ANNEX: auf dem Anhang-Pfad trägt die eine Stufe «Anhänge» statt einer
+   *  Section-eId die Container-eId `annex` des `<div id="annex">` (s.
+   *  `extrahiereAnhangStruktur`) — dieselbe Rolle, anderer amtlicher Knoten. */
   gliederung: Array<{ ebene: number; label: string; eId?: string }>;
   /** Marginalien-Kette (Randtitel) von aussen nach innen. */
   marginalie: string[];
@@ -295,13 +298,26 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
  * entsprechen, die der Generator behält. Beide nutzen denselben Keep-Prädikat
  * (extrahiereAnhang ≠ null) → reine Gruppen-Überschriften ohne Body erscheinen
  * weder als Snapshot-Eintrag noch als Struktur-Schlüssel (kein verwaister Key).
+ *
+ * W2·5d-ANNEX (3.8.2026): schliesst die in §12.5 dokumentierte EID-1-Grenze
+ * «Annex-Sections noch ohne eId». EID-1 schnitt die Container-eIds NUR im
+ * div/article-Lauf von extrahiereStruktur mit; dieser separate Anhang-Pfad warf
+ * sie weg — messbar am Bestand vor dem Bau: 54 122 von 54 122 übrigen
+ * Gliederungsknoten trugen eine eId, ALLE 402 «Anhänge»-Knoten (136 Erlasse)
+ * keine. Der Zusatz ist rein additiv (EID-1-Muster): `ebene`/`label`/`marginalie`
+ * behalten Wert UND Reihenfolge, es kommt ausschliesslich das optionale `eId`
+ * hinzu. Herkunft und Auswahl-Begründung des Werts: `anhangContainerEId`.
  */
 export function extrahiereAnhangStruktur(html: string): Record<string, ArtikelStruktur> {
   const result: Record<string, ArtikelStruktur> = {};
+  const eId = anhangContainerEId(html);
   for (const anker of alleAnhangAnker(html)) {
     const ex = extrahiereAnhang(html, anker);
     if (!ex || ex.bloecke.length === 0) continue;
-    result[ankerZuToken(anker)] = { gliederung: [{ ebene: 1, label: 'Anhänge' }], marginalie: [] };
+    result[ankerZuToken(anker)] = {
+      gliederung: [{ ebene: 1, label: 'Anhänge', ...(eId ? { eId } : {}) }],
+      marginalie: [],
+    };
   }
   return result;
 }

@@ -246,8 +246,11 @@ test('Rechtsprechung — Entscheid-Reader', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'rechtsprechung-leser')
 })
 
+// IA-6 Stufe 2 (3.8.2026): Die International-Übersicht ist die Säule
+// ?ebene=international; /international leitet nur noch dorthin um. Geprüft wird
+// darum direkt die Säule (dieselbe Fläche, ohne Redirect-Zwischenschritt).
 test('International — Übersicht', async ({ page }, testInfo) => {
-  await oeffnen(page, '/international')
+  await oeffnen(page, '/gesetze?ebene=international')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await axePruefen(page, testInfo, 'international')
 })
@@ -283,7 +286,7 @@ const HEADING_ROUTEN: Array<[string, string]> = [
   ['/gesetze/bund/GEBV_HREG', 'gesetze-leser-bund'],
   ['/rechtsprechung', 'rechtsprechung-uebersicht'],
   ['/rechtsprechung/bger_1B_278_2022', 'entscheid-leser'],
-  ['/international', 'international'],
+  ['/gesetze?ebene=international', 'international'], // IA-6 Stufe 2: Säule statt Alias
   ['/materialien', 'materialien'],
 ]
 for (const [url, name] of HEADING_ROUTEN) {
@@ -297,3 +300,139 @@ for (const [url, name] of HEADING_ROUTEN) {
     ).toEqual([])
   })
 }
+
+// ═══ W2·10-UI-NAV-R4 (R6 + E4) — Trefferflächen und Tastatur-a11y ═══════════
+//
+// axe prüft SC 2.5.8 nicht (die Regel `target-size` ist experimentell und läuft
+// unter keinem der oben gefahrenen wcag2*-Tags). Die Trefferfläche muss darum
+// GEMESSEN werden — dieser Block ist das Tor zu DESIGN-REGLEMENT F9.
+//
+// Der Sollwert wird NICHT hier hartkodiert, sondern zur Laufzeit aus dem einen
+// Token `--tap-ziel` gelesen (src/index.css). Damit können Token und Tor nicht
+// auseinanderlaufen: wer den Token senkt, senkt nicht heimlich auch das Tor —
+// die WCAG-Untergrenze steht als eigene Assertion daneben.
+//
+// GELTUNGSBEREICH (bewusst eng, §14-Grenze der Einheit): gemessen werden die
+// W2·10-Bedienflächen, die die Regel schon trägt — die Kopf-Metazeilen
+// (`.lc-chip` / `.lc-chip-zeile`) und die Leser-Werkzeugleiste
+// (`.lc-leiste-griff`). Der übrige Bestand ist noch NICHT nachgerüstet (gemessen
+// 3.8.2026: Zitat/Link 22.2 × 13.2, Fussnoten-Sup 6.7 × 18.1, Gliederungs-
+// Chevron 16 × 13.2, Sidebar-Chevron 18 × 18, Breadcrumb 45.2 × 16.8,
+// «‹ einklappen» 61.9 × 13.2, A−/A+ EntscheidLeser via rohem min-h-6 [F9-Form,
+// WCAG-konform 30.3 × 24.8]) und ist als `W2·17-UI-BEFUNDE-B10` deklariert.
+// Die NACHRÜST-Liste hier darf nur SCHRUMPFEN; die TAP_FLAECHEN-Liste darunter
+// darf nur WACHSEN: wer eine Fläche nachrüstet, streicht sie oben und nimmt
+// ihren Selektor unten auf.
+const TAP_FLAECHEN = [
+  '.lc-chip',
+  '.lc-leiste-griff',
+  '.lc-chip-zeile a',
+  '.lc-chip-zeile button',
+  '.lc-chip-zeile [role="button"]',
+].join(', ')
+
+// Sub-Pixel-Toleranz: getBoundingClientRect liefert je nach Zoom/Rundung 23.99
+// statt 24.00 für eine korrekt gesetzte 24-px-Box. 0.5 px fängt das ab, ohne
+// eine echte Unterschreitung (die nächstkleinere reale Stufe wäre 20/18/16 px)
+// durchzulassen.
+const TAP_TOLERANZ = 0.5
+
+async function tapZielLesen(page: Page): Promise<number> {
+  const roh = await page.evaluate(() =>
+    getComputedStyle(document.documentElement).getPropertyValue('--tap-ziel').trim(),
+  )
+  const px = Number.parseFloat(roh)
+  // WCAG 2.2 SC 2.5.8 «Target Size (Minimum)», Konformitätsstufe AA
+  // (w3.org/TR/WCAG22/#target-size-minimum, W3C Recommendation 5.10.2023).
+  expect(px, `--tap-ziel ist gesetzt und erfüllt WCAG 2.5.8 (≥24px); gelesen: "${roh}"`)
+    .toBeGreaterThanOrEqual(24)
+  return px
+}
+
+async function tapFlaechenPruefen(page: Page, ziel: number, punkt: string) {
+  const zuKlein = await page.evaluate(
+    ({ sel, ziel, tol }) => {
+      const out: string[] = []
+      for (const el of document.querySelectorAll(sel)) {
+        const r = el.getBoundingClientRect()
+        if (r.width === 0 && r.height === 0) continue          // nicht gerendert
+        const cs = getComputedStyle(el)
+        if (cs.visibility === 'hidden' || cs.display === 'none') continue
+        if (r.width + tol < ziel || r.height + tol < ziel) {
+          const kl = typeof el.className === 'string' ? el.className : ''
+          out.push(`${r.width.toFixed(1)}×${r.height.toFixed(1)} <${el.tagName.toLowerCase()}.${kl.slice(0, 40)}> "${(el.textContent ?? '').trim().slice(0, 24)}"`)
+        }
+      }
+      return out
+    },
+    { sel: TAP_FLAECHEN, ziel, tol: TAP_TOLERANZ },
+  )
+  expect(
+    zuKlein,
+    `Trefferfläche ${punkt}: jede W2·10-Bedienfläche ≥ ${ziel}px in beiden Achsen (F9/WCAG 2.5.8)`,
+  ).toEqual([])
+}
+
+for (const thema of ['hell', 'dunkel'] as const) {
+  test(`Trefferflächen — Gesetz-Reader (${thema})`, async ({ page }) => {
+    await oeffnen(page, '/gesetze/bund/GEBV_HREG', thema)
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.locator('.lc-chip').first()).toBeVisible()
+    await tapFlaechenPruefen(page, await tapZielLesen(page), `gesetz-leser-bund/${thema}`)
+  })
+
+  test(`Trefferflächen — Entscheid-Reader (${thema})`, async ({ page }) => {
+    await oeffnen(page, '/rechtsprechung/bger_1B_278_2022', thema)
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await expect(page.locator('.lc-chip').first()).toBeVisible()
+    await tapFlaechenPruefen(page, await tapZielLesen(page), `entscheid-leser/${thema}`)
+  })
+}
+
+// ── E4 · Skip-Link (WCAG 2.4.1 «Bypass Blocks») ────────────────────────────
+// Prüfauftrag der Linsen, hier als Regressionsschutz festgenagelt: der
+// Skip-Link ist das ERSTE fokussierbare Element, wird beim Fokus sichtbar und
+// setzt den Fokus tatsächlich in den Hauptinhalt (nicht bloss den Scroll).
+// BEFUND 3.8.2026 (offen, → W2·17-UI-BEFUNDE-B10): fokussiert misst er
+// 151.1 × 25.6 px statt der 44 px seiner `lc-btn`-Anatomie — die Utility
+// `focus:not-sr-only` setzt `height:auto` und schlägt aus der Utilities-Ebene
+// die `height:44px` der Components-Ebene. Über der WCAG-Untergrenze (25.6 ≥ 24),
+// aber unter dem Komfort-Ziel; der Fix liegt in `Shell.tsx` und damit ausserhalb
+// dieser Einheit. Das Tor prüft darum die Untergrenze, nicht die 44.
+test('E4 — Skip-Link führt den Fokus in den Hauptinhalt', async ({ page }) => {
+  await oeffnen(page, '/gesetze/bund/GEBV_HREG')
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+  await page.keyboard.press('Tab')
+  const ziel = await tapZielLesen(page)
+  const aktiv = await page.evaluate(() => {
+    const a = document.activeElement as HTMLElement | null
+    const r = a?.getBoundingClientRect()
+    return { text: (a?.textContent ?? '').trim(), href: a?.getAttribute('href') ?? '', w: r?.width ?? 0, h: r?.height ?? 0 }
+  })
+  expect(aktiv.text, 'erstes Tab-Ziel ist der Skip-Link').toBe('Zum Inhalt springen')
+  expect(aktiv.href, 'Skip-Link zeigt auf den Hauptinhalt').toBe('#inhalt')
+  expect(aktiv.w + TAP_TOLERANZ, 'Skip-Link-Breite ≥ --tap-ziel (F9)').toBeGreaterThanOrEqual(ziel)
+  expect(aktiv.h + TAP_TOLERANZ, 'Skip-Link-Höhe ≥ --tap-ziel (F9)').toBeGreaterThanOrEqual(ziel)
+  await page.keyboard.press('Enter')
+  await expect
+    .poll(() => page.evaluate(() => `${document.activeElement?.tagName}#${document.activeElement?.id}`),
+      { message: 'nach Enter liegt der Fokus auf <main id="inhalt">' })
+    .toBe('MAIN#inhalt')
+})
+
+// ── E4 · aria-live-Bestätigung «✓ kopiert» ─────────────────────────────────
+// Der Entscheid-Leser meldet die Kopier-Bestätigung über eine sr-only
+// aria-live-Region (EntscheidBody.tsx) — ohne sie bliebe der Wechsel der
+// Knopf-Beschriftung für Screenreader stumm. Hier als Regressionsschutz.
+// BEFUND 3.8.2026 (offen, → W2·17-UI-BEFUNDE-B10): der GESETZES-Leser hat
+// keine solche Region — `ArtikelLeser.tsx` tauscht nur die Beschriftung
+// «Zitat» → «✓ kopiert» in situ. Die Fläche liegt ausserhalb dieser Einheit;
+// das Tor nagelt darum den gebauten Teil fest und behauptet nichts über den
+// offenen (§8).
+test('E4 — Kopier-Bestätigung ist eine aria-live-Region (Entscheid-Leser)', async ({ page }) => {
+  await oeffnen(page, '/rechtsprechung/bger_1B_278_2022')
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+  const anzahl = await page.locator('[aria-live="polite"].sr-only').count()
+  expect(anzahl, 'Entscheid-Leser hält eine sr-only aria-live-Region für «✓ kopiert» bereit')
+    .toBeGreaterThanOrEqual(1)
+})

@@ -28,7 +28,37 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 3.8.2026 (Spätabend) — Entscheide-Paket David: BMV-SSoT #422 gelandet, L-3-Versuch #423 verworfen
+## Session 3./4.8.2026 — Bau-Evaluation → Landungen, F2b-Manifest-Reparatur, Shard-Balance
+**Prozess-Session: 2 Plan-Landungen auf `main`, 1 Reparatur-PR (#430), 1 Bau-Branch bereit.**
+
+- **Bau-Evaluation (Auftrag David):** vier Befunde als Plan-Schritte verankert (`c614abe51`):
+  `QS-GP-PREPUSH` (Verdikt-Prüfung vor Push), `QS-BASIS-DOKU-CI` (blockiert, David-Gate
+  `david-entscheid-doku-kurzpfad-main`), `QS-AUTOMATIK-BERICHT` um Branch-/PR-Inventur erweitert.
+- **Landungen:** #422 (BMV) landete durch die wt-bmv-Session (mein Merge-Versuch No-op). #423
+  (L-3) war von David **verworfen** (`2c4d97e54`) — mein Head-Sync-Reopen versehentlich, sofort
+  rückgängig gemacht, Verwerfungs-Zustand wiederhergestellt.
+- **F2b-Vorfall #425:** 226 Annex-Sidecars ohne `daten-manifest.json`-Nachzug passierten das
+  PR-CI grün (`check:datenhaltung` lief nur post-merge in `turso-sync.yml`, Sync seit 21:52 rot).
+  Reparatur + Wurzelfix = **PR #430**: Manifest nachgezogen (Bisektion beweist Pin = exakt
+  #425-Wirkung, cross-env Node 22/24), `check:datenhaltung` in den ci.yml-Tore-Job (~21 s),
+  Gegenprüfung bestanden (Opus, unabhängige Kanonik-Nachrechnung aus git-Blobs). Sonden-Schärfung
+  als `QS-AUTOMATIK-PARITAET` angelegt (5 weitere Tore nur wächter-gedeckt).
+- **Shard-Balance (QS-PERF-Posten):** LPT-Neupackung aus gemessenen CI-Dauern (Lauf 30852386612,
+  63 Specs): Max-Gruppe 8.5 → 5.6 min, Branch `chore/e2e-shard-balance` bereit, landet nach #430.
+- **Betriebsnotiz:** zweimal in einer Nacht verschluckte GitHub Push-Events (#423, #430) — Mittel
+  laut Skill `landung`: sofortiger `gh workflow run ci.yml`, Wächter zieht täglich nach.
+
+## Session 4.8.2026 — Sichtung `musk-algorithm-skill` → §17-Fünf-Schritte-Reihenfolge im Skill `lehren`
+**Eine Doku-Landung auf `main`. Kein Bau.**
+
+- **Auftrag David:** externes Skill-Repo `malkreide/musk-algorithm-skill` (5-Schritte-Algorithmus,
+  Hayal Oezkan, MIT) auf LexMetrik-Tauglichkeit sichten. Befund: als Ganzes kollidiert es mit
+  §1/§4 («Vereinfachen/Löschen» vs. Korrektheit vor Eleganz); tragfähig ist nur der Prozess-Kern.
+- **Entscheid David («bau variante 3»):** KEIN neuer Skill — die zugeschnittene
+  Fünf-Schritte-Reihenfolge (hinterfragen → löschen → vereinfachen → beschleunigen →
+  automatisieren) als §17-Anhang im Skill `lehren`, Geltungsbereich hart auf Prozess/CI/Doku
+  begrenzt, `src/lib/` ausgeschlossen; Trigger in der Skill-Description ergänzt, Zeiger in der
+  CLAUDE.md-Skill-Tabelle nachgezogen. Provenienz (Repo, Lizenz, Datum) steht im Anhang selbst. — Entscheide-Paket David: BMV-SSoT #422 gelandet, L-3-Versuch #423 verworfen
 **Fortsetzung der Aufräum-Session (Orchestrator). Zwei PRs, fünf David-Entscheide, zwei neue Schritte.**
 
 - **David-Entscheide umgesetzt:** B3→B19-Kette freigegeben (seriell, Überspring-Erlaubnis) ·

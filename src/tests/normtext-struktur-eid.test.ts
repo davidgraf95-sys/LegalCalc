@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { extrahiereStruktur } from '../../scripts/normtext/struktur-extrahiere.ts';
+import { extrahiereStruktur, extrahiereAnhangStruktur } from '../../scripts/normtext/struktur-extrahiere.ts';
+import { anhangContainerEId } from '../../scripts/normtext/extrahiere-fedlex.ts';
 
 // EID-1 (W2·5d §12, FAHRPLAN-GESETZES-UX.md): Fedlex-Container tragen kumulative
 // AKN-Pfad-eIds als <section id="part_1/tit_1">. Der Extraktor schneidet sie
@@ -69,5 +70,59 @@ describe('extrahiereStruktur — Container-eIds im Sidecar (EID-1)', () => {
     const s = extrahiereStruktur(disp)['disp_u1_art_1'];
     expect(s).toBeDefined();
     expect(s.gliederung).toEqual([{ ebene: 2, label: 'Erster Abschnitt', eId: 'disp_u1/chap_1' }]);
+  });
+});
+
+// W2·5d-ANNEX: die in §12.5 dokumentierte EID-1-Grenze — der separate Anhang-Pfad
+// (extrahiereAnhangStruktur) warf die Container-eId weg. Fixture-Manier = reales
+// Fedlex-Muster (verifiziert 3.8.2026 an /tmp/chemrrv.html bzw. /tmp/gschv.html):
+// <div id="annex"> umschliesst flache <section id="annex_N">-Anhänge.
+describe('extrahiereAnhangStruktur — Container-eId des Anhang-Blocks (W2·5d-ANNEX)', () => {
+  const anhang = (inner: string) => `<div id="annex">${inner}</div>`;
+  const sektion = (id: string, titel: string) =>
+    `<section id="${id}"><h1 class="heading" role="heading" aria-level="1">`
+    + `<span class="display-icon"></span><a href="#${id}">${titel}</a></h1>`
+    + `<div class="collapseable"><p class="absatz">Inhalt ${titel}.</p></div></section>`;
+
+  it('hängt die Container-eId «annex» an die Gliederungsstufe «Anhänge»', () => {
+    const html = anhang(sektion('annex_1', 'Anhang 1') + sektion('annex_2', 'Anhang 2'));
+    const s = extrahiereAnhangStruktur(html);
+    expect(Object.keys(s).sort()).toEqual(['annex_1', 'annex_2']);
+    // Reiner Zusatz: ebene/label/marginalie unverändert, nur eId kommt dazu.
+    expect(s['annex_1']).toEqual({ gliederung: [{ ebene: 1, label: 'Anhänge', eId: 'annex' }], marginalie: [] });
+    expect(s['annex_2'].gliederung[0].eId).toBe('annex');
+  });
+
+  it('vergibt die eId auch im unnummerierten Ein-Anhang-Fall (annex_uN, BVG/KVG-Manier)', () => {
+    const html = anhang(sektion('annex_u1', 'Anhang'));
+    const s = extrahiereAnhangStruktur(html);
+    expect(s['annex_u1'].gliederung).toEqual([{ ebene: 1, label: 'Anhänge', eId: 'annex' }]);
+  });
+
+  it('nimmt NIE die eId eines einzelnen Anhangs an den Gruppen-Knoten', () => {
+    // Sonst zeigte der Sektions-Link für Anhang 2..n auf Anhang 1 (§8).
+    const html = anhang(sektion('annex_1', 'Anhang 1') + sektion('annex_2', 'Anhang 2'));
+    const eIds = Object.values(extrahiereAnhangStruktur(html)).map((v) => v.gliederung[0].eId);
+    expect(new Set(eIds)).toEqual(new Set(['annex']));
+  });
+
+  it('erfasst auch die Staatsvertrags-Sektionen NACH dem Container (offengelegte Unschärfe)', () => {
+    // 14 Staatsverträge tragen scope_u*/decl_u* als GESCHWISTER nach </div>;
+    // alleAnhangAnker sammelt sie mit, der Gruppen-Knoten trägt dieselbe eId.
+    // Der Test hält das Verhalten fest, damit es sichtbar bleibt statt still.
+    const html = anhang(sektion('annex_u1', 'Anhang')) + sektion('scope_u1', 'Geltungsbereich');
+    const s = extrahiereAnhangStruktur(html);
+    expect(Object.keys(s).sort()).toEqual(['annex_u1', 'scope_u1']);
+    expect(s['scope_u1'].gliederung).toEqual([{ ebene: 1, label: 'Anhänge', eId: 'annex' }]);
+  });
+
+  it('fabriziert nichts ohne amtlichen Container (§7)', () => {
+    expect(anhangContainerEId('<main><article id="art_1"><p>x</p></article></main>')).toBeUndefined();
+    // Ohne <div id="annex"> findet alleAnhangAnker ohnehin keinen Anhang.
+    expect(extrahiereAnhangStruktur(sektion('annex_1', 'Anhang 1'))).toEqual({});
+  });
+
+  it('liest die Container-eId aus dem HTML, statt sie zu konstruieren', () => {
+    expect(anhangContainerEId(anhang(sektion('annex_1', 'Anhang 1')))).toBe('annex');
   });
 });
