@@ -312,7 +312,10 @@ test('A9 — Teilen-Knopf: Tastatur/aria/Tap-Ziel, Scroll + Teilen unter 6× Dro
   // nicht noch kleiner wird, während B11 aussteht. Wird er in B11 vergrössert,
   // bleibt sie grün.
   expect(gemessen.hoehe, `Knopfhöhe ${gemessen.hoehe}px — Ist-Boden 13 px, offener B11-Befund`).toBeGreaterThanOrEqual(13)
-  expect(gemessen.breite, `Knopfbreite ${gemessen.breite}px — Ist-Boden 21 px, offener B11-Befund`).toBeGreaterThanOrEqual(21)
+  // Boden 20 statt lokal gemessener 21: der CI-Runner rendert die Beschriftung 1 px
+  // schmaler (Font-Metrik der Umgebung). Beide Werte dokumentieren denselben offenen
+  // B11-Befund (Soll wäre var(--tap-ziel) 24 bzw. 44); die Ratsche bleibt scharf.
+  expect(gemessen.breite, `Knopfbreite ${gemessen.breite}px — Ist-Boden 20 px, offener B11-Befund`).toBeGreaterThanOrEqual(20)
 
   // Tastatur: fokussierbar und mit Enter auslösbar — die Teilen-Aktion muss
   // ohne Maus zur selben Adresse führen.
