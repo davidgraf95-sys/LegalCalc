@@ -93,3 +93,6 @@ playwright-report.json
 COWORK.md
 COWORK-KURZ.md
 scripts/cowork/
+
+# Lagebild-Projektion (regenerierbar: npm run plan:bild) — nie einchecken (§5)
+tmp/
