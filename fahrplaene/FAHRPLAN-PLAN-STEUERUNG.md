@@ -431,6 +431,69 @@ Seite zeigt den lokalen Stand.
    die Zeile mit (diese Konvention gehört zur Fahrplan-Anlage, Skill
    `auftrag` Ziff. 1).
 
+**Mehrseiten-Ausbau (Go David 4.8.2026).** `plan:bild` erzeugt seither **vier** untereinander
+verlinkte Seiten statt einer — dieselben Design-Tokens, eine gemeinsame Navigations-Leiste mit
+markierter aktiver Seite, ein Knopf «Zur Live-Plattform» (`https://lexmetrik.vercel.app`) und der
+Erzeugungs-Zeitstempel im Kopf jeder Seite; im `--watch`-Modus tragen alle vier den Meta-Refresh:
+
+1. `plan-bild.html` — **Lagebild** (Einstieg): Plan-Stand wie bisher, ergänzt um Navigation,
+   Live-Link und einen Kurz-Teaser «Was ist LexMetrik?».
+2. `plan-bild-projekt.html` — **Projekt & Produkt**: Selbstbeschreibung, Werkzeug-Katalog nach
+   Sektionen mit Status je Karte, Gesetzes-Korpus (Bundes-Tabelle, 26er-Kantonsraster) und
+   Rechtsprechung (Zeitraum, Gerichtstypen, Sprachen).
+3. `plan-bild-geschichte.html` — **Geschichte & Bau-Statistik**: Chronik als Monats-Zeitachse
+   (Datierung = erste Datumsangabe im Eintrag, deklarierte Heuristik) plus Commits, gemergte PRs,
+   Prüf-Tore, Test-Dateien.
+4. `plan-bild-methode.html` — **Arbeitsweise & Glossar**: vier Bahnen, Landungs- und
+   Gegenprüfungs-Regeln, 26×-Slot, Rollenteilung, Begriffe je in einem Laien-Satz.
+
+**Der Dateiname der Index-Seite bleibt `plan-bild.html`** — App-Kachel und LaunchAgent zeigen auf
+diesen Anker. `--out` bezeichnet weiterhin die Index-Seite; die drei Zusatzseiten entstehen daneben
+mit demselben Präfix und werden relativ verlinkt (funktioniert unter `file://`). Aufbau nach §6.6:
+`bild.ts` (CLI/Zusammenbau) · `bildDaten.ts` (Sammler) · `bildHtml.ts` (Tokens/Rahmen/Navigation) ·
+`bildSeiten.ts` (die vier Inhalte).
+
+**Eine Zählweise über alle vier Seiten (§5).** Werkzeug-Zahlen kommen aus `ALLE_KARTEN`,
+Korpus-Zahlen aus `public/normtext/register.json` bzw. `public/rechtsprechung/register.json` —
+auch für die Bestand-Kacheln der Index-Seite. Die frühere Ein-Seiten-Fassung zählte dort Dateien
+im Ordner und `status:`-Literale in den Karten-Quelldateien; beides wich von der aufgeschlüsselten
+Darstellung ab (Befund 4.8.2026: 227/1232 statt 238/1231, 66/86 statt 53/81 — die Regex zählte die
+`szenarien`-Einträge konsolidierter Karten mit). Zwei verlinkte Seiten mit verschiedenen Zahlen zum
+selben Gegenstand sind eine zweite Wahrheit; die Register und der Katalog sind die SSoT.
+
+**Bau-Prompt-Härtung (adversariale Prüfung aller 70 Prompts, 4.8.2026).** Sechs Wurzel-Fixes:
+
+1. **Titel nur aus EINHEITEN-Zeilen.** Der Rückwärts-Scan nahm die erste `**fett**`-Passage jeder
+   Zeile, auch aus Fliesstext — `QS-PERF` hiess dadurch «protokolliertem SKIP». Der Scan
+   akzeptiert jetzt nur Listen-Bullets (`BULLET_RE` aus `parse.ts`, §5), Überschriften und den
+   **Kopf** eines Blockzitat-Dekrets (erste Zeile des Zitat-Absatzes, beginnt fett — die
+   Fortsetzungszeilen desselben Absatzes beginnen teils ebenfalls fett und gelten nicht).
+2. **Keine Doppelung im Wortlaut.** Die fette ID·Titel-Passage wird aus dem Wortlaut gestrippt;
+   sie steht bereits im Einleitungssatz.
+3. **Kappung sichtbar und praktisch abgeschafft.** Eine Kappung schneidet auf Wortgrenze und
+   trägt den Marker «… [gekürzt — der Schritt-Wortlaut in ROADMAP.md ist massgeblich …]». Die
+   Grenze ist **1600 Zeichen für alle Schritte** (längster Wortlaut im Plan: 1534 ⇒ kappt heute
+   nichts). Die frühere Grenze 700 beruhte auf der Annahme, ein `fahrplan:`-Feld trage das Detail
+   ohnehin doppelt — falsch: `QS-AUTOMATIK-PARITAET` HAT einen Fahrplan, aber der am 4.8.2026
+   nachgetragene Scope (`check:suchindex`, `check:rss-oc`, `check:confidence`) steht nur in
+   ROADMAP.md; `FAHRPLAN-BASIS-AUSBAU.md §3.5` kennt ihn nicht.
+4. **`**Befunde:**`/`**Dossier:**` sind maschinengelesen** — analog `Detail:`. Der Pfad wird als
+   eigene Zeile «Pflichtlektüre: `<pfad>`» in den Prompt gehoben, statt im Wortlaut unterzugehen.
+5. **§-Anker: Buchstaben erlaubt, Auflösung verprobt.** Neben `§N`/`§N.M`/`§«…»` greift
+   `§<Grossbuchstabe>…` (z. B. `§S`). **Jeder** Anker wird bei der Erzeugung mit `trefferFuer()`
+   aus `scripts/fahrplanSlicerKern.ts` gegen den Ziel-Fahrplan geprüft; löst er nicht auf, wird er
+   verworfen **und im Prompt benannt** (Fall `W2·5k` → «§L-3/A28» existiert in
+   `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` nicht — Plan-Datenfehler, im Prompt sichtbar statt still).
+6. **`dep:` steht im Prompt.** Nach der Worktree-Zeile: «Abhängigkeit: setzt `<ids>` voraus
+   (Stand bei Erzeugung: erfüllt/OFFEN — bei offen NICHT bauen, sondern melden)», Stand aus der
+   done-Menge des geparsten Plans.
+
+Nebenbefund desselben Fixes: `scripts/fahrplan-slice.ts` führte seine CLI **beim blossen Import**
+aus. Die Logik liegt seither in `scripts/fahrplanSlicerKern.ts` (ohne Seiteneffekt), die alte Datei
+ist CLI-Hülle mit `export *` — bestehende Importpfade und `npm run fahrplan` unverändert. Eine
+Einstiegspunkt-Weiche wäre kein Ersatz: unter `vite-node` steht der Skriptpfad nicht in
+`process.argv` (empirisch geprüft 4.8.2026).
+
 **Grenzen/Auflagen:**
 
 - Reine Lese-/Werkzeug-Schicht: kein Code in `src/`, kein Artefakt in `public/`, kein

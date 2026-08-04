@@ -47,7 +47,9 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 ## Session 4.8.2026 (abends) — QS-PLAN-BILD: Lagebild-Generator als Steuerpult (#443)
 **Fable-Session, Worktree qs-plan-bild: `npm run plan:bild` gebaut und gelandet (Squash `39c5cc6d1`, Admin-Bypass wegen Vercel-Tageslimit — Entscheid David; inhaltliche Tore lokal + CI-Vorlauf grün, Haupt-CI-Lauf auf `main` zum Kartenzeitpunkt laufend).**
 
-- **Generator** (`scripts/plan/bild.ts`, ~700 Z.): laienverständliches HTML-Lagebild aus
+- **Generator** (`scripts/plan/bild.ts` + `bildDaten/bildHtml/bildSeiten.ts`; seit dem
+  Mehrseiten-Ausbau 4.8.2026 vier verlinkte Seiten — s. FAHRPLAN-PLAN-STEUERUNG
+  §«Lagebild-Generator»): laienverständliches HTML-Lagebild aus
   `parseRoadmap()`+`resolve()` (Kennzahlen == `plan:next`), Korpus-/Katalog-Zählungen, gh-PR-Status.
   Sektionen: Lage-Satz · main-Ampel · Wartet-auf-David (mit Blocker-Alter) · Gerade im Bau
   (wip + PRs + Worktrees, wip-Verstoss-Sonde) · Zuletzt gelandet · @queue + Parallel-Start-Box
