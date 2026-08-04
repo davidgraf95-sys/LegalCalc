@@ -91,6 +91,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { DatabaseSync } from 'node:sqlite';
 import { manifestDb } from './manifest';
+import { TOKENIZER } from './fts';
 import { leseFtsSchatten, ftsDokumente } from './turso-fts-index';
 import {
   zeilenBytes,
@@ -395,7 +396,11 @@ async function integritaet(url: string, token: string, tabelle: string): Promise
   await pipeline(url, token, [{ sql: `INSERT INTO ${tabelle}(${tabelle}) VALUES('integrity-check')` }]);
 }
 
-const TOKENIZER = 'unicode61 remove_diacritics 2';
+// TOKENIZER kommt als Import aus fts.ts (SSoT) — eine lokale Kopie wäre seit dem
+// Umbau ein stiller Bruchvektor: bei Drift ginge der lokal gebaute Index in eine
+// Remote-Tabelle mit anderem Query-Tokenizer, contentless integrity-check und
+// Sync-Smoke blieben grün, jede Diakritik-Suche verlöre still alle Treffer
+// (Gegenprüfung 4.8.2026, Befund F1 mit empirischer Probe).
 
 async function main(): Promise<void> {
   const { url, token } = ladeZugang();
@@ -460,6 +465,11 @@ async function main(): Promise<void> {
   //      `manifest.ts/tabellen()` klammert die FTS-Tabellen bewusst aus (rebuildbare
   //      Ableitung). Ein Index aus einem ÄLTEREN Build läge also unbemerkt daneben und ginge
   //      live: gleiche Zeilenzahl, falsche Treffer. Darum hier hart gegen die Basis-Zahlen.
+  //      GRENZE (Gegenprüfung 4.8.2026, F2): Der Riegel prüft ZAHLEN, keine Inhalte — ein
+  //      veralteter Index mit gleicher Dokumentzahl passiert ihn, und für contentless ist
+  //      auch der Remote-integrity-check inhaltsblind. Real eng mitigiert, weil build.ts
+  //      Basis+Index in einem Zug baut und der Quell-Riegel die Basis per sha ans Manifest
+  //      bindet; das Restfenster ist eine handgebastelte DB.
   const indexRiegel: Array<[string, number, number]> = [
     ['fts_artikel', ftsDokumente(normtext, 'fts_artikel'), istNormtext['artikel']?.zeilen ?? -1],
     [

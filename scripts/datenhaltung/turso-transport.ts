@@ -42,7 +42,9 @@ export const MAX_BYTES_JE_REQUEST = 3 * 1024 * 1024;
 /** JSON-Gerüst EINES Hrana-Arguments ohne den Wert selbst.
  *  `{"type":"text","value":` = 23 B · `}` + `,` = 2 B → 25 B;
  *  `{"type":"null","value":null},` = 29 B;
- *  `{"type":"integer","value":"` = 27 B + `"}` + `,` = 3 B → 30 B. 32 deckt alle drei. */
+ *  `{"type":"integer","value":"` = 27 B + `"}` + `,` = 3 B → 30 B;
+ *  `{"type":"blob","base64":"` = 25 B + `"}` + `,` = 3 B → 28 B (Base64-Nutzlast zählt
+ *  `zeilenBytes()` über ceil(n/3)*4 exakt mit). 32 deckt alle vier. */
 const ARG_OVERHEAD = 32;
 /** JSON-Gerüst EINES `execute`-Schritts: `{"type":"execute","stmt":{"sql":"","args":[]}},`
  *  real ausgezählt 47 B. 64 lässt Reserve für Feld-Reihenfolge-Varianten. */
