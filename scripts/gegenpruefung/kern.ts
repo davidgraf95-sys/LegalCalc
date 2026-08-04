@@ -91,7 +91,15 @@ export function istRisikoPfad(p: string): boolean {
   // amtlich genannten Richter:innen scheidet. Ein Fehler hier verschmilzt zwei reale
   // Amtsträger zu einer Filter-Person oder de-anonymisiert eine Partei — beides
   // Risiko-Klasse, obwohl die Datei unter src/lib/ liegt.
+  //
+  // Seit QS-CODE-SPLITS ist `besetzung.ts` eine reine Fassade; die tragende Logik
+  // (Parser + Anonymisierungs-Guard in besetzung/parser.ts, Kanon-Pass in
+  // besetzung/kanon.ts) liegt im gleichnamigen Ordner. OHNE den Ordner-Zweig hätte
+  // der Split die Risiko-Klassifikation der eigentlichen Logik still verloren: die
+  // Fassade träfe weiter, ihr Inhalt nie — ein Tor, das genau dort nicht mehr
+  // scheitern kann, wo der teuerste Fehler sitzt (§6.7/§17).
   if (p === 'src/lib/rechtsprechung/besetzung.ts') return true;
+  if (p.startsWith('src/lib/rechtsprechung/besetzung/')) return true;
   if (p.startsWith('daten/')) return true;
   if (p === 'daten-manifest.json') return true;
   // rekursiv (nicht nur die 4 Top-Level-Index-JSONs) — Blocker Linse 2:
