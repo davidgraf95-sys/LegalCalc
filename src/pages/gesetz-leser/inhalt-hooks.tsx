@@ -39,6 +39,27 @@ type MeldeKopf = ReturnType<typeof useMeldeInhaltsKopf>;
 // höhen Vorlauf; deckt das Hin-und-Her (PageUp nach PageDown) verlässlich ab.
 const AUTO_ZU_NACHLAUF = 6;
 
+// ── N2 (§17-Wurzelfix, Bug-Check 3.8.2026): Spy-Nachlauf nach dem jumpLock ────
+// `auswerten` bricht ab, solange `jumpLock` steht (Klick-/TOC-Sprung, §15.2), und
+// plante bisher NICHTS nach. Der Lock fällt 400/500 ms nach dem Sprung per Timer —
+// ohne Scroll-Ereignis und ohne Observer-Meldung (der Sprung-Scroll ist da längst
+// eingelaufen) blieb der Kopf danach bis zur nächsten NUTZER-Bewegung auf dem
+// Artikel VOR dem Sprung stehen. Der Wächter sah das nicht, weil er nach dem
+// Sprung 150 px scrollte und damit selbst den fehlenden Auslöser lieferte.
+// Fix an der Wurzel: wer den Lock löst, meldet es hier — jeder montierte Spy holt
+// genau eine Auswertung nach (derselbe rAF-Kranz, also nie zwei pro Frame; ohne
+// Token-Wechsel erzeugt sie null Renders). Modul-lokale Registry statt neuem Ref
+// durch drei Signaturen: hält den Diff in `inhalt.tsx` auf die Lock-Stellen
+// begrenzt. Mehrere Instanzen (Split-View-Panes) registrieren sich einzeln; jede
+// prüft in `auswerten` ihren EIGENEN Lock, ein fremdes Lösen weckt sie höchstens
+// zu einer Neuberechnung ihres unveränderten Tokens (no-op).
+const spyNachlauf = new Set<() => void>();
+
+/** Nach dem Zurücksetzen von `jumpLock` aufrufen: plant je Spy eine Auswertung. */
+export function loeseSpyNachlauf(): void {
+  for (const planen of spyNachlauf) planen();
+}
+
 // ── Datenladung + Browser-Tab-Titel + Kopf-Aufräumen ─────────────────────────
 export function useLeserDaten(opts: {
   ebene: string;
@@ -379,7 +400,11 @@ export function useLeserSprungSpy(opts: {
       const sc = paneRoot(imPane, wurzel);
       const oben = sc ? sc.getBoundingClientRect().top : 0;
       const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      const bezug = oben + 5 * remPx + 8;
+      // N1 (§5, Bug-Check 3.8.2026): den Zahlenwert der Linie NICHT hier zweitmalig
+      // ausrechnen — `bezugslinie` (scrollAnker.ts) ist die eine Wahrheit, die auch
+      // die Anker-Auflösung (aufloeseAnkerY) und der Scroll-Offset unten (~Z. 632)
+      // benutzen. Ein Inline-Duplikat driftet lautlos, sobald sich die Linie ändert.
+      const bezug = bezugslinie(oben, remPx);
       const rects = [...sichtbar.values()]
         .filter((en) => en.isIntersecting)
         .map((en) => {
@@ -536,9 +561,13 @@ export function useLeserSprungSpy(opts: {
     const scrollZiel: HTMLElement | Window = paneRoot(imPane, wurzel) ?? window;
     const beiScroll = () => { if (!raf) raf = window.requestAnimationFrame(auswerten); };
     scrollZiel.addEventListener('scroll', beiScroll, { passive: true });
+    // N2: dritter Auslöser — das Lösen des jumpLock (Herleitung oben bei
+    // `spyNachlauf`). Derselbe rAF-Kranz wie Observer und Scroll.
+    spyNachlauf.add(beiScroll);
     return () => {
       io.disconnect();
       scrollZiel.removeEventListener('scroll', beiScroll);
+      spyNachlauf.delete(beiScroll);
       if (raf) cancelAnimationFrame(raf);
       if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);

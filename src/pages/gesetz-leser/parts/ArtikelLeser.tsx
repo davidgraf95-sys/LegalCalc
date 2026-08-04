@@ -6,9 +6,8 @@ import { trenneAenderungshistorie, labelMitBereich, artikelGanzAufgehoben } from
 import type { Fussnote } from '../../../lib/normtext/browse';
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
 import { NormChip } from '../../../components/vorlagen/NormChip';
-import { KantenChip } from '../../../components/verzahnung/KantenChip';
+import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { MehrKante } from '../../../components/verzahnung/MehrKante';
-import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
 import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
 import {
   klassifiziereFassungsBezug, entscheidDatum, type ArtikelRevision,
@@ -56,7 +55,6 @@ const LeitfallZeile = memo(function LeitfallZeile({ refs, normZitat, revision }:
   revision?: ArtikelRevision | null;
 }) {
   const [alleAuf, setAlleAuf] = useState(false);
-  const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
 
   // Wie die «Verweise»-Zeile: ohne Treffer GAR KEINE Zeile (kein reservierter
   // Leerraum, §15.2 — die grosse Mehrheit der Artikel hat keine Leitfälle; eine
@@ -84,19 +82,11 @@ const LeitfallZeile = memo(function LeitfallZeile({ refs, normZitat, revision }:
         const revidiert = klassifiziereFassungsBezug(entscheidDatum(r.datum, r.gericht), revision) === 'revidiert'
           ? (revision ?? null) : null;
         return (
-          <span key={r.key} className="inline-flex items-center">
-            <KantenChip to={ziel} label={r.zitierung} kategorie="entscheid"
-              leitentscheid={r.leitcharakter === 'leitentscheid'}
-              revidiert={revidiert}
-              titel={r.regesteKurz ?? r.zitierung} />
-            {kannOeffnen && !istOffen(ziel) && (
-              <button type="button" onClick={() => oeffneDaneben(ziel)}
-                title={`${r.zitierung} nebeneinander öffnen`} aria-label={`${r.zitierung} nebeneinander öffnen`}
-                className="ml-1 inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 hover:text-brass-700 hover:border-brass-400 transition-colors">
-                <span aria-hidden className="text-base leading-none">⧉</span>
-              </button>
-            )}
-          </span>
+          <KanteMitVorschau key={r.key} ziel={ziel} zitierung={r.zitierung}
+            kurztext={r.regesteKurz}
+            leitentscheid={r.leitcharakter === 'leitentscheid'}
+            revidiert={revidiert}
+            titel={r.regesteKurz ?? r.zitierung} />
         );
       })}
       <MehrKante rest={rest} offen={alleAuf} onOeffne={() => setAlleAuf(true)} />

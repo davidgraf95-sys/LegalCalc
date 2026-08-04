@@ -5,7 +5,8 @@ import { EntscheidBody } from '../components/rechtsprechung/EntscheidBody';
 import RegesteBlock from '../components/rechtsprechung/RegesteBlock';
 import { spracheBadgeTitel } from '../components/rechtsprechung/format';
 import { Tabs } from '../components/ui/Tabs';
-import { ABSCHNITT_TITEL, abschnittAnker, ersteFundstelle } from '../lib/rechtsprechung/abschnitte';
+import { ABSCHNITT_TITEL, abschnittAnker, ersteFundstelle, erwaegungsGliederung } from '../lib/rechtsprechung/abschnitte';
+import { ErwaegungsRail } from '../components/rechtsprechung/ErwaegungsRail';
 import { StatusBadge } from '../components/verzahnung/StatusBadge';
 import { entscheidDatum } from '../lib/verzahnung/artikel-revisionen';
 import { zitatMitAusweis, heuteIso } from '../lib/format';
@@ -19,11 +20,12 @@ import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
 import {
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
-  urlMitHash, urlMitLese, zaehleNennungen,
+  trefferInErwaegungen, urlMitHash, urlMitLese, zaehleNennungen, zaehleTreffer,
 } from './entscheidLeserRegeln';
+import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
 import { usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
-import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
+import type { EntscheidAbschnitt, EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
 
 // Provenienz-Fuss (§7): Daten-Label je Quelle — BS-Tranche §7.1 (vorher hart
 // «OpenCaseLaw», was für gerichte-bs falsch wäre). Deklariert, kein Raten.
@@ -139,6 +141,46 @@ const SYNTH_MARKER: Record<EntscheidSprache, string> = {
 
 // Reihenfolge der Sprung-Ziele (amtliche Gliederung); Regeste vorangestellt.
 const NAV_TYPEN: Abschnittstyp[] = ['regeste', 'sachverhalt', 'erwaegung', 'dispositiv'];
+
+// ── V5 · Rechen-Anschluss des Erwägungs-Rails ───────────────────────────────
+//
+// Die drei Ableitungen (Gliederung · Suchtreffer · Normen-Fundstellen) leben
+// HIER und nicht in `ErwaegungsRail`: sie sind Regeln des Lesers
+// (`entscheidLeserRegeln`, `abschnitte`), und die Rail-Komponente soll ein
+// reiner Renderer bleiben — dieselbe Arbeitsteilung wie Reader ↔ `BezuegeZeile`.
+// Eigene `memo`-Grenze, damit ein Tastendruck im Suchfeld nicht den ganzen
+// Leser (Kopf, Tabs, Fuss-Panel) neu rendert; die Ableitungen selbst hängen in
+// `useMemo` (React Compiler ist AUS, §15.4).
+const ErwRail = memo(function ErwRail({ abschnitte, zitierteNormen, suche, onSuche, springe, imPane }: {
+  abschnitte: EntscheidAbschnitt[];
+  zitierteNormen: string[];
+  suche: string;
+  onSuche: (v: string) => void;
+  springe: (anker: string) => void;
+  imPane: boolean;
+}) {
+  const gliederung = useMemo(() => erwaegungsGliederung(abschnitte), [abschnitte]);
+  const treffer = useMemo(() => trefferInErwaegungen(abschnitte, suche), [abschnitte, suche]);
+  const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, suche), [abschnitte, suche]);
+  // Angewandte Normen MIT wörtlicher Nennung in einer Erwägung. Ohne Fundstelle
+  // KEIN Chip: ein Sprungziel, das es nicht gibt, wird nicht angeboten (§8) —
+  // die Norm selbst bleibt im Fuss-Panel («Zitierte Normen») sichtbar.
+  const normen = useMemo(() => {
+    const out: { zitat: string; anker: string }[] = [];
+    const gesehen = new Set<string>();
+    for (const z of zitierteNormen) {
+      if (gesehen.has(z)) continue;
+      gesehen.add(z);
+      const anker = nennungsAnker(abschnitte, z)[0];
+      if (anker) out.push({ zitat: z, anker });
+    }
+    return out;
+  }, [abschnitte, zitierteNormen]);
+  return (
+    <ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={trefferGesamt}
+      normen={normen} suche={suche} onSuche={onSuche} springe={springe} imPane={imPane} />
+  );
+});
 
 // Datums-Aussage der Meta-Zeile — EINE Regel für Kopf UND Lesemodus (§5):
 // 1) datumUnbekannt (BS §7.2): die amtliche Quelle publiziert KEIN Entscheiddatum
@@ -277,6 +319,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   }, [imPane]);
   // Laufindex des «nächste Fundstelle»-Knopfes (LM-208), zyklisch über die Ziele.
   const [fundIdx, setFundIdx] = useState(0);
+  // V5 «Im Entscheid suchen» — komponenten-lokal wie die In-Gesetz-Suche vor
+  // ihrer Adress-Spiegelung: der Begriff ist eine Lesehilfe, kein Ort. Er kommt
+  // bewusst NICHT in die URL (kein Verlaufseintrag je Tastendruck, §Z Ziff. 7).
+  const [suche, setSuche] = useState('');
   const [fsIdx, setFsIdx] = useState<number>(ladeFsIdx);
   const setFs = (i: number) => {
     const x = Math.max(0, Math.min(FS_STUFEN.length - 1, i));
@@ -388,11 +434,21 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   // zeigt einen EIGENEN Body: dann Markierung zurücknehmen statt auf abgehängte
   // Knoten zeigen zu lassen.
   const koerperRef = useRef<HTMLElement>(null);
+  // V5: EINE Markierungs-Schicht im Lesetext. Die Highlight-API kennt je Namen
+  // genau eine Menge (`SUCH_HIGHLIGHT`, geteilt mit A35) — Suche und
+  // Herkunfts-Nennung können darum nicht gleichzeitig leuchten. Vorrang hat die
+  // SUCHE: sie ist die aktive Handlung des Lesers, die Herkunfts-Markierung ein
+  // Zustand aus dem Aufruf. Leert er das Feld, kehrt die Norm-Markierung zurück.
   useEffect(() => {
-    if (zustand !== 'da' || !normParam || lese) { loescheNennungen(); return; }
+    if (zustand !== 'da' || lese) { loescheNennungen(); return; }
+    if (suche.trim() !== '') {
+      setzeSuchHighlight(koerperRef.current, suche);
+      return () => loescheNennungen();
+    }
+    if (!normParam) { loescheNennungen(); return; }
     maleNennungen(koerperRef.current, normParam);
     return () => loescheNennungen();
-  }, [zustand, snap, normParam, lese, bodyTab]);
+  }, [zustand, snap, normParam, lese, bodyTab, suche]);
 
   useEffect(() => {
     if (zustand !== 'da' || typeof window === 'undefined') return;
@@ -686,26 +742,53 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         </p>
       )}
 
-      {/* Regeste prominent im Leitentscheid-Auszug (zeigeRegeste). Beim amtlich
-          publizierten BGE «Regeste», sonst maschinelle «Zusammenfassung» — ehrlich
-          gekennzeichnet (Abnahme-Kritik: kein Etikettenschwindel). */}
-      {zeigeRegeste && snap.regeste && (
-        /* D-1.4 (Befund 20): Regeste in die Lesespalte — vorher volle Breite
-           (~115–120 CPL im wichtigsten Textblock); jetzt dieselbe zentrierte
-           max-w-reading-Spalte wie der EntscheidBody darunter (Pfad 2 bei
-           Z.~630 liegt bereits in der Spalte). Box-Optik (brass) unverändert. */
-        <div className="mx-auto w-full max-w-reading">
-          <RegesteBlock regeste={snap.regeste} amtlich={snap.regesteAmtlich} />
+      {/* ── Lesefläche + Erwägungs-Rail (V5, W2·10-UI-NAV) ────────────────────
+          Ab `xl` zwei Spalten: links die unveränderte Lesespalte (Regeste +
+          EntscheidBody, weiterhin `max-w-reading`), rechts der sticky
+          Navigations-Rail. Darunter — und im Pane, wo keine zweite Spalte
+          hineinpasst — steht der Rail als aufklappbarer Block ÜBER dem Text
+          (`order`), nie darunter: eine Navigation hinter dem Ziel ist keine.
+          Regeste und Body liegen bewusst in DERSELBEN Spalte, sonst fluchtete
+          die Regeste-Box auf `xl` nicht mehr mit dem Text darunter.
+          Bei offenem Lesemodus entfällt NUR der `<article>` — der Overlay zeigt
+          denselben EntscheidBody, und doppelte Abschnitts-`id` wären ungültiges
+          HTML + brächen Anker-Sprünge. Die Regeste bleibt wie bisher im DOM
+          (ihr Anker `#abschnitt-regeste` ist Sprungziel der Leiste). */}
+      {(
+        <div className={imPane
+          ? 'flex flex-col gap-4'
+          : 'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:items-start xl:gap-8'}>
+          {/* B6 (§9-Bug-Check 4.8.2026): im LESEMODUS gibt es den Rail nicht.
+              Dort ist der Haupt-Body ausgehängt (der Overlay zeigt seinen
+              eigenen), die Treffer-Markierung ist abgeschaltet und jeder
+              Sprung liefe still ins Leere — eine Trefferzahl neben toten
+              Sprungzielen ist genau die Halb-Auskunft, die §8 verbietet.
+              Der Suchbegriff bleibt im State: wer den Lesemodus schliesst,
+              findet seine Suche unverändert vor. */}
+          {!lese && (
+            <ErwRail abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
+              suche={suche} onSuche={setSuche} springe={springeZuAbschnitt} imPane={imPane} />
+          )}
+          <div className={imPane ? 'order-2 min-w-0' : 'order-2 min-w-0 xl:order-1 xl:col-start-1 xl:row-start-1'}>
+            {/* Regeste prominent im Leitentscheid-Auszug (zeigeRegeste). Beim amtlich
+                publizierten BGE «Regeste», sonst maschinelle «Zusammenfassung» — ehrlich
+                gekennzeichnet (Abnahme-Kritik: kein Etikettenschwindel).
+                D-1.4 (Befund 20): Regeste in die Lesespalte — vorher volle Breite
+                (~115–120 CPL im wichtigsten Textblock); jetzt dieselbe zentrierte
+                max-w-reading-Spalte wie der EntscheidBody darunter. */}
+            {zeigeRegeste && snap.regeste && (
+              <div className="mx-auto mb-5 w-full max-w-reading">
+                <RegesteBlock regeste={snap.regeste} amtlich={snap.regesteAmtlich} />
+              </div>
+            )}
+            {/* Lesespalte 60–75 Zeichen (Reglement R1). */}
+            {!lese && (
+              <article ref={koerperRef} className="rsp-anker mx-auto w-full max-w-reading" style={{ '--rsp-fs': `${FS_STUFEN[fsIdx]}rem` } as CSSProperties}>
+                <EntscheidBody abschnitte={aktiveAbschnitte} zitierung={snap.zitierung} bgeReferenz={snap.bgeReferenz} />
+              </article>
+            )}
+          </div>
         </div>
-      )}
-
-      {/* Lesespalte 60–75 Zeichen (Reglement R1). Bei offenem Lesemodus NICHT rendern —
-          der Overlay zeigt denselben EntscheidBody; doppelte Abschnitts-`id` wären
-          ungültiges HTML + bräche Anker-Sprünge. */}
-      {!lese && (
-        <article ref={koerperRef} className="rsp-anker mx-auto w-full max-w-reading" style={{ '--rsp-fs': `${FS_STUFEN[fsIdx]}rem` } as CSSProperties}>
-          <EntscheidBody abschnitte={aktiveAbschnitte} zitierung={snap.zitierung} bgeReferenz={snap.bgeReferenz} />
-        </article>
       )}
 
       {/* Provenienz / Rechtslage (§7/§8) */}

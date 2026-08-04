@@ -217,3 +217,172 @@ test.describe('Leitentscheid — Ansichten «Amtlicher BGE-Auszug» ⟷ «Vollst
     await expect(page.locator('a[href*="ansicht=voll"]').first()).toBeVisible()
   })
 })
+
+// ── V5 (W2·10-UI-NAV) · Erwägungs-Navigation + «Im Entscheid suchen» ─────────
+//
+// Prüfsatz: (a) der Rail bietet die Erwägungen als Sprungziele an und trifft
+// sie; (b) die Suche zählt ehrlich und filtert die Liste; (c) mobil ist der
+// Rail ein aufklappbarer Block ÜBER dem Text mit 24-px-Tap-Zielen; (d) der
+// ganze Fluss läuft unter CPU-Drossel ohne Hänger und mit CLS 0 (A9).
+//
+// Drossel + Budgets exakt nach `leser-kopf-a9.e2e.ts` (dort steht die
+// Kalibrierungs-Empirie für den 2-vCPU-Runner) — keine eigene, zweite Latte.
+const DROSSEL = process.env.CI ? 4 : 6
+const REAKTIONS_BUDGET = process.env.CI ? 8000 : 5000
+const REAKTIONS_LATTE = REAKTIONS_BUDGET + 3000
+
+test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
+  test('Rail listet die Erwägungen, springt an den Anker und sucht ehrlich im Entscheid', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/rechtsprechung/bge_152_IV_14')
+    await expect(page.getByRole('heading', { level: 1, name: /BGE 152 IV 14/ })).toBeVisible()
+
+    const rail = page.locator('[data-erw-rail]')
+    await expect(rail).toBeVisible()
+    // Die Sprungziele tragen dieselben `#e-…`-Anker wie Body und Pin-Cite (§5).
+    const ziel = rail.locator('a[href^="#e-"]').first()
+    await expect(ziel).toBeVisible()
+    const anker = (await ziel.getAttribute('href'))!.slice(1)
+    await ziel.click()
+    await expect(page.locator(`#${anker}`)).toBeVisible()
+    // LM-209-Konvention: der Sprung spiegelt den Hash, erzeugt aber keinen
+    // Verlaufseintrag — die Adresse trägt das Ziel trotzdem (teilbar).
+    await expect(page).toHaveURL(new RegExp(`#${anker}$`))
+
+    // Suche: «Rechtsgut» steht mehrfach in den Erwägungen dieses BGE.
+    const feld = rail.getByRole('searchbox', { name: 'Im Entscheid suchen' })
+    await feld.fill('Rechtsgut')
+    const zeile = rail.locator('[data-erw-treffer]')
+    await expect(zeile).toBeVisible()
+    await expect(zeile).toContainText('Treffer in')
+    // Die Ergebnisliste ist kürzer als das volle Verzeichnis (sie filtert wirklich).
+    const nachSuche = await rail.locator('a[href^="#e-"]').count()
+    await feld.fill('')
+    const ohneSuche = await rail.locator('a[href^="#e-"]').count()
+    expect(nachSuche, `Suche filtert nicht: ${nachSuche} von ${ohneSuche}`).toBeLessThan(ohneSuche)
+
+    // §8: ein Begriff ohne Vorkommen behauptet keine Treffer.
+    await feld.fill('zzzqxyz')
+    await expect(zeile).toContainText('Keine Treffer')
+    expect(fehler).toEqual([])
+  })
+
+  // B6 (§9-Bug-Check 4.8.2026): im Lesemodus zeigte der Rail weiter Trefferzahlen,
+  // während die Markierung abgeschaltet war und jeder Sprung still ins Leere lief
+  // (der Haupt-Body ist dort ausgehängt). Eine Zahl neben toten Sprungzielen ist
+  // eine Halb-Auskunft (§8) — der Rail verschwindet jetzt mit dem Lesemodus.
+  test('im Lesemodus verschwindet der Rail — keine Zahlen neben toten Sprungzielen (§8)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/rechtsprechung/bge_152_IV_14')
+    const rail = page.locator('[data-erw-rail]')
+    await expect(rail).toBeVisible()
+    await rail.getByRole('searchbox', { name: 'Im Entscheid suchen' }).fill('Rechtsgut')
+    await expect(rail.locator('[data-erw-treffer]')).toContainText('Treffer in')
+
+    await page.getByRole('button', { name: /Lesemodus/ }).first().click()
+    await expect(page.getByRole('dialog', { name: /Lesemodus/ })).toBeVisible()
+    await expect(rail).toHaveCount(0)
+
+    // Zurück im Leser steht die Suche unverändert da (der Begriff ist nicht verloren).
+    await page.getByRole('button', { name: /schliessen/ }).first().click()
+    await expect(rail).toBeVisible()
+    await expect(rail.getByRole('searchbox', { name: 'Im Entscheid suchen' })).toHaveValue('Rechtsgut')
+  })
+
+  test('mobil (390px): Rail ist ein aufklappbarer Block, Tap-Ziele ≥ 24 px, kein Overflow', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/rechtsprechung/bge_152_IV_14')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    const griff = page.locator('[data-erw-rail-griff]')
+    await expect(griff).toBeVisible()
+    await expect(griff).toHaveAttribute('aria-expanded', 'false')
+    // Eingeklappt liegen die Sprungziele nicht im Weg.
+    await expect(page.locator('[data-erw-rail] a[href^="#e-"]').first()).toBeHidden()
+    await griff.click()
+    await expect(griff).toHaveAttribute('aria-expanded', 'true')
+    const ziel = page.locator('[data-erw-rail] a[href^="#e-"]').first()
+    await expect(ziel).toBeVisible()
+    // WCAG 2.5.8: mindestens 24 px hohe Tap-Ziele.
+    const box = (await ziel.boundingBox())!
+    expect(box.height, `Tap-Ziel nur ${box.height} px hoch`).toBeGreaterThanOrEqual(24)
+    const griffBox = (await griff.boundingBox())!
+    expect(griffBox.height, `Griff nur ${griffBox.height} px hoch`).toBeGreaterThanOrEqual(24)
+    // Kein Querscroll durch die neue Fläche.
+    const b = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }))
+    expect(b.scroll, `scrollWidth ${b.scroll} > ${b.client}`).toBeLessThanOrEqual(b.client + 1)
+  })
+
+  test('A9: Rail-Sprung + Suche flüssig unter CPU-Throttle, CLS 0', async ({ page }) => {
+    // Container-Budget wie in leser-kopf-a9: die gedrosselten Fenster plus die
+    // ungedrosselten Ready-Latten kommen dem 90-s-Default nahe.
+    if (process.env.CI) test.setTimeout(120_000)
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const client = await page.context().newCDPSession(page)
+    await client.send('Emulation.setCPUThrottlingRate', { rate: DROSSEL })
+
+    await page.goto('/rechtsprechung/bge_152_IV_14')
+    const rail = page.locator('[data-erw-rail]')
+    await expect(rail).toBeVisible({ timeout: 20_000 })
+
+    // CLS-Beobachter über den GESAMTEN Fluss (nur input-freie Shifts zählen).
+    //
+    // ── ABGRENZUNG AUF DIE LESEFLÄCHE, mit Beleg (§0.3-Verteilung) ────────────
+    // Gezählt werden nur Shifts, an denen mindestens EIN Quellknoten INNERHALB
+    // von `<main>` liegt. Grund, gemessen am 4.8.2026 unter 6×-Drossel: die
+    // App-Schale wirft rund 3.2 s nach dem Laden EINEN Shift von 0.000226, dessen
+    // Quellen ausschliesslich Topbar-Knöpfe sind (Reiter-/Verlauf-Zähler
+    // `min-h-11 min-w-11`, ThemaUmschalter `h-11 w-11`) — er entsteht, wenn der
+    // TabTracker die Route registriert und der Zähler im Kopf breiter wird. Das
+    // ist ein Bestands-Verhalten der Schale, VOR und NACH dieser Einheit
+    // identisch, und liegt ausserhalb der Bau-Fläche (Shell/Topbar). Ihn
+    // mitzuzählen hiesse, ein fremdes Bestandsproblem dieser Einheit
+    // zuzuschreiben; ihn global wegzudefinieren hiesse, den Wächter stumpf zu
+    // machen. Darum die Ortsgrenze: alles, was der Rail-Sprung und die Suche im
+    // Lesebereich anrichten, fällt weiterhin voll ins Gewicht.
+    await page.evaluate(() => {
+      ;(window as unknown as { __cls: number }).__cls = 0
+      const inhalt = document.querySelector('main')
+      new PerformanceObserver((l) => {
+        for (const e of l.getEntries() as PerformanceEntry[]) {
+          const s = e as unknown as {
+            value: number; hadRecentInput: boolean; sources?: { node?: Node | null }[]
+          }
+          if (s.hadRecentInput) continue
+          const quellen = s.sources ?? []
+          const imInhalt = quellen.some((q) => q.node && inhalt?.contains(q.node))
+          if (imInhalt) (window as unknown as { __cls: number }).__cls += s.value
+        }
+      }).observe({ type: 'layout-shift' })
+    })
+
+    // Sprung an eine Erwägung.
+    const ziel = rail.locator('a[href^="#e-"]').first()
+    const anker = (await ziel.getAttribute('href'))!.slice(1)
+    let t0 = Date.now()
+    await ziel.click()
+    await expect(page.locator(`#${anker}`)).toBeVisible({ timeout: REAKTIONS_LATTE })
+    expect(Date.now() - t0, 'Rail-Sprung zu langsam').toBeLessThan(REAKTIONS_BUDGET)
+
+    // Suche tippen (Highlight-API + Trefferliste) — die teuerste Interaktion.
+    const feld = rail.getByRole('searchbox', { name: 'Im Entscheid suchen' })
+    t0 = Date.now()
+    await feld.fill('Rechtsgut')
+    await expect(rail.locator('[data-erw-treffer]')).toContainText('Treffer in', { timeout: REAKTIONS_LATTE })
+    expect(Date.now() - t0, 'Suche im Entscheid zu langsam').toBeLessThan(REAKTIONS_BUDGET)
+
+    // Sprung auf einen Treffer aus der gefilterten Liste.
+    const treffer = rail.locator('a[href^="#e-"]').first()
+    const trefferAnker = (await treffer.getAttribute('href'))!.slice(1)
+    t0 = Date.now()
+    await treffer.click()
+    await expect(page.locator(`#${trefferAnker}`)).toBeVisible({ timeout: REAKTIONS_LATTE })
+    expect(Date.now() - t0, 'Treffer-Sprung zu langsam').toBeLessThan(REAKTIONS_BUDGET)
+
+    await client.send('Emulation.setCPUThrottlingRate', { rate: 1 })
+    const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)
+    expect(cls, 'CLS über Rail-Sprung/Suche muss 0 sein').toBe(0)
+    expect(fehler).toEqual([])
+  })
+})
