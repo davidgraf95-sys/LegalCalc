@@ -27,12 +27,35 @@ export function pflichtKlausel(md: string): string {
   return block;
 }
 
+/**
+ * Modell-PALETTE — die EINZIGE Stelle im Repo, an der konkrete Modellnamen
+ * für das Dispatch-Routing stehen (§5). Doku und Agent-Typen sprechen in
+ * semantischen STUFEN; ändert sich die Modellfamilie, wird nur diese Tabelle
+ * angepasst und `npm run dispatch:agents` neu gefahren (Tor: check:dispatch-
+ * klausel Ebene C). Stufen-Semantik:
+ *   spitze — stärkstes verfügbares Modell (Gegenprüfung Risikopfad, härtester Bau)
+ *   stark  — Standard-Bau und Risikopfad-Bau (Minimum für beide)
+ *   mittel — Recherche, Synthese, eng umrissener nicht-riskanter Bau
+ *   klein  — deterministische Mechanik
+ * Belegung Stand 4.8.2026 (Claude-5-Familie; Entscheid David 4.8.2026:
+ * Gegenprüfung darf auf fable, nicht-riskanter Bau darf auf sonnet).
+ */
+export const PALETTE_STAND = '2026-08-04';
+export const PALETTE: Record<'spitze' | 'stark' | 'mittel' | 'klein', string> = {
+  spitze: 'fable',
+  stark: 'opus',
+  mittel: 'sonnet',
+  klein: 'haiku',
+};
+
 /** Auftragsklassen-Zusatz: was diese Klasse ÜBER die Pflicht-Klausel hinaus braucht. */
 export const KLASSEN: Record<string, string> = {
   bau: 'TABU: kein Merge, kein Deploy, keine Änderung an .claude/ oder CLAUDE.md.\nRÜCKGABE: geänderte Dateien (absolute Pfade) · Tor-Ergebnisse mit Exit-Code · offene Punkte.',
   pruefung: 'TABU: nichts ändern — nur lesen, messen, berichten.\nRÜCKGABE: Befund je Fundstelle (Datei:Zeile) · Beleg · Schweregrad · was du NICHT prüfen konntest.',
   recherche: 'TABU: kein Code, keine Repo-Änderung.\nRÜCKGABE: je Fakt Quelle + Stand + Link; ungedeckte Fragen ausdrücklich als offen markieren.',
   daten: 'RISIKOPFAD: Gegenprüfung ist Pflicht (Skill »gegenpruefung«), Merge ist gesperrt (check:merge-schutz).\nMANIFEST: Nach jedem Generator-Lauf `npm run datenhaltung:manifest` mitregenerieren — F2b-Vorfall 4.8.2026: #425 landete mit Manifest-Drift, #430 musste heilen.\nRÜCKGABE: Stichprobe n≥10 mit Identitätsbeleg gegen die Amtsquelle + Trefferquote.',
+  mechanisch: 'NUR deterministische, per Byte-Diff oder Test maschinell prüfbare Transformation. Verschachtelte Steuer-Strukturen (@meta-Blöcke, Checkbox-Hierarchien) sind KEINE Mechanik — abbrechen und melden statt raten (Vorfall 4.8.2026). Verschiebe-Aufträge nur mit isolation: worktree; Cut und Paste im SELBEN Commit.\nRÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test), nichts Weiteres.',
+  synthese: 'Steuer-Doku: dieser Text lenkt Folge-Sessions. Ehrlich, mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.\nRÜCKGABE: der Text selbst + betroffene Pfade.',
 };
 
 /**

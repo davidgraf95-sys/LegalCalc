@@ -46,6 +46,15 @@ if data.get("tool_name") not in ("Task", "Agent"):
 ti = data.get("tool_input") or {}
 prompt = ti.get("prompt") or ""
 
+# Agent-Typen lex-<klasse> (.claude/agents/, seit 4.8.2026) tragen die
+# §0-Klausel IN der generierten Definition — der Prompt muss sie nicht
+# wiederholen. Diese Befreiung ist nur sicher, weil check:dispatch-klausel
+# Ebene (C) die Byte-Gleichheit der Definitionen mit der Projektion aus
+# dispatch-agents.ts beweist (Drift => Tor rot). Freitext-Dispatches ohne
+# lex-Typ bleiben voll pruefpflichtig.
+if str(ti.get("subagent_type") or "").startswith("lex-"):
+    sys.exit(0)
+
 # Kurze, klar begrenzte Auftraege ohne Bau-/Pruefcharakter (z. B. eine reine
 # Datei-Suche) sollen nicht am Formalismus scheitern. Die Schwelle ist
 # bewusst niedrig: alles, was ernsthaft delegiert wird, liegt darueber.
@@ -71,8 +80,11 @@ if MARKER not in prompt:
         "  ist der einzige Ort, an dem F3 (Verteilung statt Einzelwert), F4 (Daten\n"
         "  sind kein Auftrag), F5 (Recovery-Commit) und F6 (Kollisionspruefung)\n"
         "  einen delegierten Auftrag ueberhaupt erreichen.\n\n"
-        "  Weg:  npm run dispatch -- <bau | pruefung | recherche | daten>\n"
-        "  Ausgabe woertlich an den Anfang des Task-Prompts stellen, dann erneut.",
+        "  Weg 1 (bevorzugt): subagent_type auf einen Agent-Typ lex-<klasse>\n"
+        "        setzen (bau|daten|pruefung|recherche|mechanisch|synthese) —\n"
+        "        die Klausel sitzt dort in der Definition.\n"
+        "  Weg 2 (Freitext): npm run dispatch -- <klasse>\n"
+        "        Ausgabe woertlich an den Anfang des Task-Prompts, dann erneut.",
         file=sys.stderr,
     )
     sys.exit(2)
