@@ -28,8 +28,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 4.8.2026 (Nacht) — Gross-Aufräumung: Branch-Bereinigung, Rotations-Wurzel-Fix #455, ROADMAP-Diät Wellen 2+3 #456 — beide Steuer-Doku-Wächter GRÜN
-**Fable-Orchestrator-Session (Auftrag David: «räum ganzen worktrees auf … prüf die branches und lösch die gelandeten … mach die rotation auch noch … beende session und räum alles auf»). Drei delegierte Bau-Einheiten (lex-bau/lex-synthese, Worktree-Isolation), adversariale Gegenprüfung, serielle Landung. main: `dc98c1c7b`.**
+## Session 4./5.8.2026 (Nacht, ABSCHLUSS) — Gross-Aufräumung + «run till dry»: #455/#456 + komplette QS-CODE-Landekette 10/10, vier adversariale Gegenprüfungen, beide Steuer-Doku-Wächter GRÜN
+**Fable-Orchestrator-Session (Auftrag David: «räum ganzen worktrees auf … lösch die gelandeten … mach die rotation … alles aufräumen, run till dry — am Ende keine Worktrees, nur main, alles dokumentiert»). Sieben delegierte Einheiten (lex-bau/lex-synthese/4× lex-pruefung), serielle Landung mit Batterie-Wachen. main-Endstand: siehe letzter Commit dieser Karte.**
+
+- **QS-CODE-Landekette 10/10 gelandet** (#444, #446–#454): 6 Nicht-Risiko-PRs regulär; die 4 Risiko-PRs erst nach frisch gefahrenen adversarialen Gegenprüfungen (alle BESTANDEN, Register-Quittungen mit Hand-Hash): **#449** Rechnen-Re-Derivation BGG/GebV SchKG/ZPO blind, 59/59 · **#447** 8880er-Differential-Sweep alt==neu + kern.ts-Befund «Split verliert Risiko-Klassifikation» im Branch behoben (Ordner-Zweig + Test, Rot-Beweis) · **#448** Identitäts-Stichprobe 56/56 mit Wortgrenze gegen bger.ch (#309-Linse) · **#454** zwei Prüf-Runden: Runde 1 fand den Tokenizer-Drift-Vektor (F1, behoben), Runde 2 WIDERLEGTE meine Lese-null-Diagnose und verortete die echte Node-22-Wurzel auf der BIND-Seite der Test-Rekonstruktion (Kopier-Fix, auf 3 Node-Binaries verifiziert; CI-Node-22-Batterie als Umgebungs-Beweis GRÜN; Produktionspfad via Buffer.from→base64 nie betroffen). Erster echter Turso-Sync-Lauf per dispatch angestossen (Auflage).
+- **Vercel-Tageslimit-Regime:** David-Entscheid «lass vercel aus dem spiel» → Admin-Merge bei grüner Actions-Batterie, als Interim-Regel im Landung-Skill kodifiziert. Register-Konflikte je Landung lokal per union-Treiber aufgelöst (Server kennt keine Merge-Treiber). `druck-fundstellen-z2`-Flake traf 3× (Beleg in LERNPHASE §3.4).
+- **#445 Skip-Test versucht, NICHT abgeschlossen:** frischer Doku-only-Commit `513139312` lief erneut ins Rate-Limit (Ablehnung VOR ignoreCommand-Auswertung — im Limit-Zustand ist der Test unmöglich). Davids Tor gilt: Merge nur bei belegtem Skip=success; Übergabe an den Tag: EIN Doku-Commit bei freiem Kontingent entscheidet.
+- **§17-Prozessverbesserungen der Nacht:** Rotations-Wurzel-Fix #455 (Doppel-Datum-Regex + budget-getriebene Nachrotation — hat sich noch in derselben Session selbst bewährt) · Vercel-Limit-Regel + «fehlende Checks ≠ grün» im Landung-Skill (Realfall Wächter-False-Positive) · Dispatch-Template: Gegenprüfung sofort dispatchen, Landeschuld übernachtet nicht (Wurzel der 10 offenen PRs) · Git-Routine-Allow-Regeln in Projekt-Settings · neuer Schritt `QS-GP-NACHBEFUNDE` (drei Prüf-Nebenbefunde).
+
+*Ursprüngliche Karten-Fassung (erster Bogen der Nacht, main `dc98c1c7b`):*
 
 - **Branch-Bereinigung:** 15 lokale Branches gelöscht (14 gelandete + `feat/l3-reaktivierung` auf expliziten David-Auftrag; je Branch belegt: lokale Spitze im gemergten PR-Stand, Squash-sicher via `gh api compare`, 0 ahead). Übrig: main + die 10 offenen QS-CODE-/CI-PR-Branches #444–#454.
 - **#455 Rotations-Wurzel-Fix (§17):** Doppel-Datum-Regex-Lücke (dokumentiert seit AP-Welle, nie gefixt) + budget-getriebene Nachrotation (`MINDEST_BEHALT=3`) in `.claude/hooks/struktur-rotieren.py`; §6.7-Rot-Beweis (vorher rotieren:0 trotz 7 überalterter Karten), Gegenprüfung BESTANDEN (Linsen: Byte-Erhalt exakt, Regex-Randfälle 14/14, Terminierung, Hook-No-op-Sicherheit, Doku-Treue; 2 Minor-Befunde behoben im Rotations-Commit `5f5422679`). Rotation vollzogen: STRUKTUR **75.0→57.8 KB**, 5 Karten byte-gleich ins Archiv, Archiv-Chronologie repariert.
@@ -292,26 +299,6 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
   main rot, Isolation grün) · `check:fedlex-versionen` main-rot (3 Pins
   nicht-kanonisch, u.a. ZGB html-1→2 — eigener Risiko-Schritt) · BGE-Register
   41 unregistrierte Zitate (vorbestehend).
-
-## Session 2./3.8.2026 (Nacht) — fünf Landungen: Verfallsregister #410, B1 #408, Uppercase-Sweep #409, B2 #412, N1 #413
-**Kurzkarte der Nacht-Session-Kette (Details in den jeweiligen Einzelkarten/PRs).**
-- **#410 Verfallsregister** — 10 künftige Fassungen nachgeführt, Gegenprüfung bestanden, Squash `849581faa`.
-- **#408 W2·17-UI-BEFUNDE-B1** — 13 von 16 Befunden gebaut (Chips/Badges/Normzitate), 3 per
-  Bestands-Entscheid zurückgestellt; auto-squash-gelandet 22:55Z (Details: Karte unten).
-- **#409 Uppercase-Sweep** — Normzitat-Suffixe an 15 Stellen nicht mehr uppercase-entstellt
-  (Heimarbeitsvertrag + Sweep); auto-gelandet 23:11Z.
-- **#412 W2·17-UI-BEFUNDE-B2** — Verlauf und Zustand in der URL (K-20): 10 von 11 Befunden
-  gebaut in 4 Losen, LM-207 zurückgestellt (QS-PERF-Fläche, Nachmessung 3.8. abgespeckt negativ).
-  Kernstück: eine Zustands-Weiche `src/components/rechtsprechung/zustand.ts`
-  (Inhalt→URL/Darstellung→localStorage, durchgängig `replace`-Politik) erfüllt LM-200/203/206
-  und trägt den Dach-Befund LM-204 mit. Gate voll grün (tsc/vitest/golden/lint/check), Prod-Re-Audit
-  3.8.2026 vorab: 11/11 geprüft (8 voll, 2 teilweise, 1 unklar). Gelandet als Squash `ac44aa937`.
-- **#413 W2·17-UI-BEFUNDE-N1** — LM-044-Nachzug: `lc-chip-zeile`-Grammatik auf NormChip-/Materialien-/
-  Rechner-/Filter-Flächen ausgerollt (12 Dateien, `[role=button]`-Regel, `.lc-chip-selected` per `:not()`
-  geschützt); Metadatum-Achse bleibt bei W2·10-UI-NAV §3(c). Gelandet als Squash `e5b1fb8b5`.
-  Offene Morgen-Vorlagen für David: LM-041-Sachgebiet-Tabelle (§7-Auflage), LM-112, LM-042 (Extraktion),
-  OR-Leser-Default kantonal, W2·7-BEZUG-LADEN (§15), QS-CURRENCY-KANON, W2·13-KANTONE-DRIFT.
-  (`feat/ui-befunde-b2` → `main`), kein Merge in diesem Auftrag.
 
 ## Ältere Session-Karten und Chroniken — rotiert ins Archiv
 

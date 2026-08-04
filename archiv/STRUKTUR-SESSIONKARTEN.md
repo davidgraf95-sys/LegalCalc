@@ -8,6 +8,26 @@ Rotationen hängen NEUE Blöcke direkt unter diesem Kopf an.
 
 ---
 
+## Session 2./3.8.2026 (Nacht) — fünf Landungen: Verfallsregister #410, B1 #408, Uppercase-Sweep #409, B2 #412, N1 #413
+**Kurzkarte der Nacht-Session-Kette (Details in den jeweiligen Einzelkarten/PRs).**
+- **#410 Verfallsregister** — 10 künftige Fassungen nachgeführt, Gegenprüfung bestanden, Squash `849581faa`.
+- **#408 W2·17-UI-BEFUNDE-B1** — 13 von 16 Befunden gebaut (Chips/Badges/Normzitate), 3 per
+  Bestands-Entscheid zurückgestellt; auto-squash-gelandet 22:55Z (Details: Karte unten).
+- **#409 Uppercase-Sweep** — Normzitat-Suffixe an 15 Stellen nicht mehr uppercase-entstellt
+  (Heimarbeitsvertrag + Sweep); auto-gelandet 23:11Z.
+- **#412 W2·17-UI-BEFUNDE-B2** — Verlauf und Zustand in der URL (K-20): 10 von 11 Befunden
+  gebaut in 4 Losen, LM-207 zurückgestellt (QS-PERF-Fläche, Nachmessung 3.8. abgespeckt negativ).
+  Kernstück: eine Zustands-Weiche `src/components/rechtsprechung/zustand.ts`
+  (Inhalt→URL/Darstellung→localStorage, durchgängig `replace`-Politik) erfüllt LM-200/203/206
+  und trägt den Dach-Befund LM-204 mit. Gate voll grün (tsc/vitest/golden/lint/check), Prod-Re-Audit
+  3.8.2026 vorab: 11/11 geprüft (8 voll, 2 teilweise, 1 unklar). Gelandet als Squash `ac44aa937`.
+- **#413 W2·17-UI-BEFUNDE-N1** — LM-044-Nachzug: `lc-chip-zeile`-Grammatik auf NormChip-/Materialien-/
+  Rechner-/Filter-Flächen ausgerollt (12 Dateien, `[role=button]`-Regel, `.lc-chip-selected` per `:not()`
+  geschützt); Metadatum-Achse bleibt bei W2·10-UI-NAV §3(c). Gelandet als Squash `e5b1fb8b5`.
+  Offene Morgen-Vorlagen für David: LM-041-Sachgebiet-Tabelle (§7-Auflage), LM-112, LM-042 (Extraktion),
+  OR-Leser-Default kantonal, W2·7-BEZUG-LADEN (§15), QS-CURRENCY-KANON, W2·13-KANTONE-DRIFT.
+  (`feat/ui-befunde-b2` → `main`), kein Merge in diesem Auftrag.
+
 ## Session 2.8.2026 — W2·17-UI-BEFUNDE-B1: Chips, Badges und Normzitate, 13/16 gebaut (Parallel-Worktree, Branch `claude/sleepy-mestorf-5dbea7`)
 **Auftrag:** Batch B1 (16 UI-Befunde, K-05+K-10, §2) in einem eigenen Worktree parallel zum
 Hauptzweig bauen — Prod-Re-Audit vor Baubeginn (§0.1), drei Lose (Fable 5 / Opus / Sonnet 5),
