@@ -42,21 +42,34 @@ jobs:
     name: Build HOT-Artefakt · Turso-Sync · Live-Paritaet
     if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
-    # GEMESSEN AUF DIESEM RUNNER (workflow_dispatch 20.7.2026, Lauf 29757068566):
-    # 32,8 min gesamt, davon 22,3 min allein `fts_entscheide_schaufenster` (5093 Zeilen,
-    # 165 MiB) bei 4 Zeilen/s.
+    # AUSGANGSLAGE (workflow_dispatch 20.7.2026, Lauf 29757068566): 32,8 min gesamt, davon
+    # 22,3 min allein `fts_entscheide_schaufenster` (5093 Zeilen, 165 MiB) bei ~128 KiB/s.
+    # Dass die Phase lokal ueber eine Heim-Leitung EBENFALLS so langsam lief, schloss die
+    # Bandbreite als Ursache aus — die Ursache selbst blieb damals aber unbelegt.
     #
-    # WICHTIG, weil es die naheliegende Annahme widerlegt: dieselbe Phase lief lokal ueber
-    # eine Heim-Leitung EBENFALLS mit 4-8 Zeilen/s. Der Engpass ist also NICHT die
-    # Bandbreite des Ausfuehrenden, sondern der Schreibpfad der Gegenseite fuer grosse
-    # FTS5-Mehrzeilen-Inserts (~2,9 MiB je Request in ~22 s = ~128 KiB/s effektiv). Ein
-    # schnellerer Runner hilft hier nicht.
+    # SIE IST JETZT GEMESSEN UND BEHOBEN (QS-CODE-TURSO, 4.8.2026). Nullprobe ueber dieselbe
+    # Nutzlast (200 Zeilen / 7,07 MiB, je n=3, Median): Zeilen in eine standalone FTS5-Tabelle
+    # 19,9 s (364 KiB/s), dieselben Zeilen in eine GEWOEHNLICHE Tabelle 7,8 s (946 KiB/s).
+    # Der Aufschlag steckte also im FTS5-Schreibpfad der Gegenseite, die denselben Text ein
+    # zweites Mal tokenisierte und indexierte — und er wuchs mit dem Index (364 KiB/s bei
+    # 200 Zeilen, 437 bei 500, 120 ueber den vollen Korpus). Der Sync uebertraegt darum jetzt
+    # den lokal fertigen FTS5-Index statt der Zeilen. Herleitung und Riegel:
+    # scripts/datenhaltung/turso-fts-index.ts + turso-sync.ts.
     #
-    # Daraus das Budget: 90 min sind ~2,7x der gemessenen Laufzeit. Bei 45 min waeren es
-    # nur 1,37x gewesen — der Entscheid-Korpus haette um ~65 % wachsen koennen, bevor der
-    # Job wieder in denselben Timeout laeuft, und genau dieser Wiederholungsfall ist der
-    # Grund fuer diese Reparatur. Mit 90 min traegt es ~3,7x den heutigen Korpus.
-    # Der Timeout bleibt die Notbremse; die eigentliche Grenze ist der Durchsatz oben.
+    # PAARMESSUNG ueber den VOLLEN Korpus, gleiche Maschine/Leitung, unmittelbar nacheinander,
+    # in Wegwerf-Tabellen (`qsct_mess_*`, danach nachweislich gedroppt):
+    #   alter Pfad (Zeilen → FTS5) ..... 872,7 s          (n=1)
+    #   neuer Pfad (Index-Transfer) .... 388,1 / 428,5 s  (n=2, Median 408 s)
+    # → Faktor ~2,1x bei 254 statt 165 MiB Nutzlast; Trefferzahlen, bm25-Rangfolge und
+    # Snippets waren BYTE-IDENTISCH. Die Messung lief LOKAL — was der CI-Runner daraus macht,
+    # zeigt erst der naechste echte Lauf. Uebertraegt sich der Faktor, faellt die
+    # Entscheid-Phase von 22,3 auf ~10 min.
+    #
+    # `timeout-minutes: 90` bleibt UNVERAENDERT: der Timeout ist die Notbremse, nicht die
+    # Steuerung. Entscheidend ist nicht sein Wert, sondern dass die Reserve nicht mehr gegen
+    # eine SUPERLINEARE Kurve steht — der neue Pfad skaliert mit den Bytes, der alte wurde
+    # mit wachsendem Index ueberproportional langsamer. Genau das war der Grund, warum das
+    # Budget mit dem Korpus zu REISSEN drohte statt bloss langsamer zu werden.
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v5
