@@ -104,7 +104,13 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
     bandStatus(d) !== null || isSameDay(d, ereignis) || (aQuo != null && isSameDay(d, aQuo)) || isSameDay(d, adQuem);
 
   return (
-    <div className={`lc-card lc-reveal ${kompakt ? 'p-3.5' : 'p-5'}`}>
+    // data-ansicht (QS-UI 8b): markiert eine ABGELEITETE Ansicht im Sinne von
+    // DESIGN-REGLEMENT-RECHNER R4 Ziff. 3 — sie stellt dar, was die Engine
+    // bereits entschieden hat, und steht darum immer NACH dem Verdikt. Das Tor
+    // `e2e/qsui-hierarchie.e2e.ts` (I1) prüft gegen dieses Attribut. Vorher
+    // erkannte es Ansichten nur an `table, svg`; dieser Kalender ist aus reinen
+    // Divs gebaut und war für das Tor unsichtbar (§9-Bug-Check zu PR #440, B2).
+    <div data-ansicht="fristenkalender" className={`lc-card lc-reveal ${kompakt ? 'p-3.5' : 'p-5'}`}>
       <div className={`flex flex-wrap items-baseline justify-between gap-x-4 ${kompakt ? 'mb-2.5' : 'mb-4'}`}>
         <p className="lc-overline">Fristenlauf</p>
         {/* Feiertage-Kopf entfernt (Auftrag David 25.6.2026): redundant zur

@@ -94,9 +94,16 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           </p>
         </div>
 
-        {/* Warnungen / Vorbehalte – einklappbar, um das Ergebnis übersichtlich zu halten */}
+        {/* Warnungen / Vorbehalte – einklappbar, um das Ergebnis übersichtlich zu halten.
+            `data-vorbehalte` (QS-UI 8b): stabiler Griff für das Tor
+            `e2e/qsui-hierarchie.e2e.ts` (I2 — R6 Ziff. 2, Abstand zum Verdikt).
+            Vorher suchte das Tor über `[class*="bg-warn-bg"]` und griff damit
+            JEDE Fläche in Warn-Tönung — im Erbteilungs-Rechner traf es die
+            Segmente des Quoten-Balkens statt einer Warnung und mass einen
+            negativen «Abstand» (§9-Bug-Check zu PR #440, B3). Reines Test-Attribut,
+            keine Darstellungswirkung. */}
         {ergebnis.warnungen.length > 0 && (
-          <div className="rounded-md overflow-hidden" style={{ border: '1px solid var(--warn-500)' }}>
+          <div data-vorbehalte={ergebnis.warnungen.length} className="rounded-md overflow-hidden" style={{ border: '1px solid var(--warn-500)' }}>
             <button type="button" onClick={() => setWarnungenOffen(!warnungenOffen)}
               className="w-full flex items-center justify-between px-4 py-2.5 bg-warn-bg text-left transition-colors">
               <span className="lc-overline text-warn-700">Hinweise / Vorbehalte ({ergebnis.warnungen.length})</span>

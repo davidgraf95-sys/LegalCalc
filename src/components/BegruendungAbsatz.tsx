@@ -15,13 +15,20 @@ export function BegruendungAbsatz({ text }: { text: string }) {
       <summary className="cursor-pointer text-body-s font-medium text-ink-700">
         Für die Rechtsschrift — kopierfertiger Begründungs-Absatz
       </summary>
-      <p className="mt-3 text-body-s text-ink-900 leading-relaxed bg-paper-sunken rounded-md p-3 select-all">
+      {/* QS-UI 8b (B2 «gesetzte Lesespalte»): Beide Absätze liefen über die volle
+          Kartenbreite — gemessen 876 px gegen die 640-px-Lesespalte (`max-w-reading`,
+          40rem), auf allen 14 Rechner-Flächen, die diesen geteilten Baustein
+          rendern. B2 verbietet volle Fensterbreite für Fliesstext ausdrücklich; und
+          gerade DIESER Absatz wird gelesen, bevor er in die Rechtsschrift wandert.
+          Reine Breitenbegrenzung: Wortlaut und Kopier-Inhalt bleiben unberührt
+          (der Text kommt unverändert aus `lib/begruendung.ts`, §5). */}
+      <p className="mt-3 text-body-s text-ink-900 leading-relaxed bg-paper-sunken rounded-md p-3 select-all max-w-reading">
         {text}
       </p>
       <button type="button" className="lc-btn-outline lc-btn-sm mt-3" onClick={kopieren}>
         {kopiert ? 'Kopiert ✓' : 'Absatz kopieren'}
       </button>
-      <p className="text-xs text-ink-500 mt-2">
+      <p className="text-xs text-ink-500 mt-2 max-w-reading">
         {BEGRUENDUNG_VORBEHALT}
       </p>
     </details>

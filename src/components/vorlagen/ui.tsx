@@ -1,6 +1,7 @@
 import { cloneElement, createContext, isValidElement, useContext, useEffect, useId, useState } from 'react';
 import { fedlexLinkFuerArtikel } from '../../lib/fedlex';
 import { NormText } from '../NormText';
+import { usePaneKontext } from '../layout/PaneKontext';
 import { NormChip } from './NormChip';
 
 // Geteilte UI-Bausteine der Vorlagen-Wizards (Testament, Patientenverfügung, …).
@@ -225,12 +226,43 @@ export function EckdatenKachel({ label, wert, sub, num, akzent }: { label: strin
   );
 }
 
-/** Mobile Sprungmarke zum Live-Ergebnis (UX A7) — nur sichtbar, wenn ein
- *  Ergebnis existiert und der Schirm schmal ist; rein navigatorisch.
+/** Leerzustand des Ergebnisplatzes (W2·10-UI-NAV/N0d·W1) — reserviert die Fläche
+ *  mit fester Mindesthöhe (CLS-positiv, §15.2) und sagt an, WAS erscheint, ohne vor
+ *  der ersten Eingabe einen Fehler zu zeigen (C2/§13).
+ *
+ *  QS-UI 8b (4.8.2026): Aus `StreitwertForm` hierher gehoben (§10 — ein Muster statt
+ *  Einzellösungen). Das Audit fand ihn in genau EINER der sechs Rechner-Flächen, die
+ *  ohne Eingabe kein Ergebnis zeigen; auf den übrigen blieb an der Stelle des
+ *  künftigen Ergebnisses nichts — der Nutzer sah nicht, dass dort eines erscheint.
+ *
+ *  `was` beschreibt in einem Satz, welche Eingabe fehlt und was danach erscheint.
+ *  Der Satz ist reine Navigation: er nennt keine Frist, keinen Schwellenwert und
+ *  kein Ergebnis (§3 — Rechtsinhalt bleibt in Engine und Schema). */
+export function ErgebnisPlatzhalter({ was }: { was: React.ReactNode }) {
+  return (
+    <div className="lc-tile border-dashed min-h-40 flex flex-col justify-center gap-1.5 text-center">
+      <p className="lc-overline">Ergebnis</p>
+      <p className="text-body-s text-ink-500 max-w-reading mx-auto">{was}</p>
+    </div>
+  );
+}
+
+/** Sprungmarke zum Live-Ergebnis (UX A7) — nur sichtbar, wenn ein Ergebnis
+ *  existiert und noch nicht im Bild steht; rein navigatorisch.
  *  W2·10-UI-NAV/N0d·W5: blendet sich per IntersectionObserver aus, sobald das
  *  Ergebnis selbst im Viewport steht (kein FAB, der auf ohnehin Sichtbares zeigt);
- *  taucht beim Zurückscrollen zu den Eingaben wieder auf. Reine Navigation (§3). */
+ *  taucht beim Zurückscrollen zu den Eingaben wieder auf. Reine Navigation (§3).
+ *
+ *  QS-UI 8b (4.8.2026): Die Marke trug bis dahin `sm:hidden` — sie war also genau
+ *  dort abgeschaltet, wo sie ebenso gebraucht wird. Gemessen auf allen 14
+ *  Rechner-Flächen mit Sofort-Ergebnis (1280×800): das Verdikt steht bei 1.32 bis
+ *  3.15 Bildschirmhöhen, also auf KEINER Fläche im ersten Viewport — und die Marke
+ *  war auf allen 14 im DOM, aber `display:none`. Sie gilt darum neu auf jeder
+ *  Breite. IM PANE bleibt es beim bisherigen Verhalten: die Marke ist
+ *  viewport-`fixed`, zwei nebeneinander liegende Panes würden zwei Marken
+ *  übereinanderlegen (dieselbe Begründung wie bei `sprung={false}` oben). */
 export function ErgebnisSprung({ zielId }: { zielId: string }) {
+  const { imPane } = usePaneKontext();
   const [zielSichtbar, setZielSichtbar] = useState(false);
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
@@ -247,7 +279,12 @@ export function ErgebnisSprung({ zielId }: { zielId: string }) {
   }, [zielId]);
   if (zielSichtbar) return null;
   return (
-    <a href={`#${zielId}`} className="sm:hidden fixed bottom-4 right-4 z-40 lc-btn-outline lc-btn-sm shadow-md bg-surface"
+    // `print:hidden` zusätzlich zur Druckregel in `src/index.css`: die Marke ist
+    // als einziges Bedienelement viewport-`fixed`, ihr Fehlversagen im Druck ist
+    // darum das schlimmste (sie läge auf JEDER Seite über dem Inhalt). Die
+    // Utility hängt am Element und überlebt jede künftige Umformulierung des
+    // globalen Druckblocks. §9-Bug-Check zu PR #440, B1.
+    <a href={`#${zielId}`} className={`${imPane ? 'sm:hidden ' : ''}print:hidden fixed bottom-4 right-4 z-40 lc-btn-outline lc-btn-sm shadow-md bg-surface`}
       onClick={(e) => { e.preventDefault(); document.getElementById(zielId)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
       ↓ Ergebnis
     </a>
