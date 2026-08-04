@@ -1,5 +1,6 @@
 import type { Kanton } from '../../types/legal';
 import { strassenKandidaten } from './strassenKandidaten';
+import { istRecord, pruefeJson, type JsonPruefer } from '../jsonSchutz';
 
 // ─── Strasse (+ Hausnummer) → Gemeinde bei mehrdeutigen PLZ ─────────────────
 // Adress-Ausbau Stufe 2 (Entscheid David 12.6.2026): löst die Kachel-Wahl
@@ -24,9 +25,37 @@ let numCache: Record<string, Record<string, number>> | null = null;
 const kleinJePlz = new Map<string, Map<string, string>>();
 let grenzJePlz: Map<string, Map<string, string>> | null = null;
 
+/** Strukturform der beiden Generator-Artefakte (ch-strassen-generieren.ts).
+ *  Exportiert für die Vollprüfung in src/tests/datenAussenkanten.test.ts. */
+export const STRASSEN_VERZEICHNIS_PRUEFER: JsonPruefer = {
+  quelle: 'plz/strassenVerzeichnis.json',
+  wurzel: (w) => (istRecord(w) ? null : 'Wurzel ist kein Objekt'),
+  eintrag: (_plz, w) => {
+    if (!istRecord(w)) return 'Eintrag ist kein Objekt';
+    if (!Array.isArray(w.g) || w.g.some((p) => !Array.isArray(p) || p.length !== 2 || typeof p[0] !== 'string' || typeof p[1] !== 'string')) {
+      return 'g ist kein Array aus [Gemeinde, Kanton]-Paaren';
+    }
+    if (!istRecord(w.s) || Object.values(w.s).some((v) => typeof v !== 'number')) {
+      return 's ist keine Strasse→Index-Record';
+    }
+    return null;
+  },
+};
+
+export const STRASSEN_NUMMERN_PRUEFER: JsonPruefer = {
+  quelle: 'plz/strassenNummern.json',
+  wurzel: (w) => (istRecord(w) ? null : 'Wurzel ist kein Objekt'),
+  eintrag: (_schluessel, w) => {
+    if (!istRecord(w) || Object.values(w).some((v) => typeof v !== 'number')) {
+      return 'Eintrag ist keine Hausnummer→Index-Record';
+    }
+    return null;
+  },
+};
+
 async function lade(): Promise<[Record<string, PlzEintrag>, Record<string, Record<string, number>>]> {
-  if (!verzCache) verzCache = (await import('./strassenVerzeichnis.json')).default as unknown as Record<string, PlzEintrag>;
-  if (!numCache) numCache = (await import('./strassenNummern.json')).default as unknown as Record<string, Record<string, number>>;
+  if (!verzCache) verzCache = pruefeJson<Record<string, PlzEintrag>>((await import('./strassenVerzeichnis.json')).default, STRASSEN_VERZEICHNIS_PRUEFER);
+  if (!numCache) numCache = pruefeJson<Record<string, Record<string, number>>>((await import('./strassenNummern.json')).default, STRASSEN_NUMMERN_PRUEFER);
   return [verzCache, numCache];
 }
 
