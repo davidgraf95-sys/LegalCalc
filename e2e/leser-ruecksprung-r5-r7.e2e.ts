@@ -261,20 +261,42 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     const mitOverlay = proben.filter((p) => p.overlay);
     const standzeit = mitOverlay.length
       ? mitOverlay[mitOverlay.length - 1].t - mitOverlay[0].t : 0;
-    // Der Beleg: NACHDEM der Reader seine Artikel gerendert hat, darf das Overlay
-    // nur noch einen Wimpernschlag stehen (ein Prüf-Takt = 120 ms, plus Luft für
-    // den Render-Commit unter 6×-Drossel).
     const ersterMitArtikeln = proben.find((p) => p.artikel > 0);
     expect(ersterMitArtikeln, 'Reader hat Artikel gerendert').toBeTruthy();
+    const letzterOverlay = mitOverlay.length ? mitOverlay[mitOverlay.length - 1].t : 0;
     const nachRender = mitOverlay.filter((p) => p.t > (ersterMitArtikeln as P).t);
     const ueberhang = nachRender.length
       ? nachRender[nachRender.length - 1].t - (ersterMitArtikeln as P).t : 0;
+    const lage = `Überhang ${ueberhang} ms · Standzeit ${standzeit} ms · Artikel ab `
+      + `${(ersterMitArtikeln as P).t} ms · letztes Overlay-Frame ${letzterOverlay} ms`;
+
+    // ── Was hier NICHT geprüft wird, und warum (CI-Rot 30862485462) ───────────
+    // Die erste Fassung prüfte zusätzlich die GESAMT-Standzeit gegen 5000 ms. Das
+    // war ein Messfehler meinerseits: die Standzeit ist im Kern die LADEZEIT des
+    // Readers und damit eine Eigenschaft der Maschine, nicht des Features. Sie
+    // skaliert linear mit der Drossel — lokal gemessen 1673 ms (6×), 2814 ms
+    // (10×), 3708 ms (14×), auf dem 2-vCPU-Runner 5660/5648/5730 ms in drei
+    // Läufen. Eine Verteilungsgrösse gegen einen absoluten Schwellwert zu prüfen
+    // erzeugt genau dieses Rot: die Zahl misst den Runner, nicht den Fix.
+    //
+    // Der Fix wird von den beiden folgenden Grössen gemessen, und die sind
+    // maschinen-unabhängig, weil sie am Prüf-Takt hängen statt an der Ladezeit.
+
+    // (1) Das Overlay stand noch, ALS der Reader ankam. Ohne diese Bedingung
+    // könnte der Test auch dann grün sein, wenn die harte 6000-ms-Kappe das
+    // Overlay beendet hätte — dann bewiese er nichts über den Fix. Lokal über
+    // 6×/10×/14× durchgehend erfüllt.
     expect(
-      ueberhang,
-      `Overlay-Überhang nach Artikel-Render ${ueberhang} ms (Standzeit gesamt ${standzeit} ms)`,
-    ).toBeLessThan(1000);
-    // Und die harte Kappe darf gar nicht erst zum Zuge kommen.
-    expect(standzeit, `Overlay-Standzeit ${standzeit} ms`).toBeLessThan(5000);
+      letzterOverlay >= (ersterMitArtikeln as P).t,
+      `Overlay lebte beim Artikel-Render (sonst hat die Kappe beendet, nicht der Fix) — ${lage}`,
+    ).toBe(true);
+
+    // (2) …und gab dann binnen eines Wimpernschlags auf. Gebunden an den Prüf-
+    // Takt (120 ms) plus Render-Commit, darum flach über die Drossel-Stufen:
+    // 152/265/326 ms lokal, auf CI unter 1000 ms. Budget 1500 ms lässt dem
+    // langsamsten Runner Luft und hält zum Defekt (gemessen 4243 ms) noch immer
+    // Faktor 2.8 Abstand — die Regression fiele weiterhin klar durch.
+    expect(ueberhang, `Overlay-Überhang nach Artikel-Render — ${lage}`).toBeLessThan(1500);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
   });
 });
