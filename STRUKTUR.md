@@ -28,7 +28,7 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 3./4.8.2026 — W2·5d fertig + Reader-Kette W2·10 komplett (Orchestrierung, 12 PRs)
+## Session 3./4.8.2026 — W2·5d + W2·10-Reader-Kette + QS-UI 8a/8b (Orchestrierung, 16 PRs)
 **Orchestrier-Session (Fable), Worktree bauplan-review-095048: 12 PRs gebaut, geprüft, gelandet — W2·5d abgeschlossen, W2·10-Reader-Kette (VR/R1/R2/R3/R4/Z/URL) komplett.**
 
 - **W2·5d-Rest (4 Einheiten):** ANNEX #425 (eId auf Anhang-Pfad, Risikopfad, Gegenprüfung
@@ -51,6 +51,18 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
   um Landungs-Rollen-Ansage erweitert (externe Grün-Merges 3./4.8.); Rest-CLS-Messwerte als
   Stand-Notiz bei `W2·15-CLS`; Fahrplan-Stand §S in FAHRPLAN-UI-NAVIGATION. Offene David-Frage:
   ICS `TRANSP:TRANSPARENT` (bricht Golden-Anker — nur mit Go).
+- **Fortsetzung 4.8. (zweiter Bogen):** QS-UI 8a Fundament-Pass #439 (warn-line-Tick,
+  outline-none-Falle im Reglement, Gate-Stufe 1: 48→72 Farbwelt-Paare, axe-Dunkelabdeckung) ·
+  8b Hierarchie-Pass «Verdikt zuerst» Rechner #440 (Erbteilung 666→270 px; Druck-Wurzelfix
+  [class*='lc-btn']; Tor qsui-hierarchie, nach Check gehärtet) + Rechtsprechung/Vorlagen #441
+  (Tor 28→65 Fälle; §8-Wurzelfix zeigeWarnungen; alle 18 Vorlagen-Routen mit sichtbarem
+  Formvorschriften-Badge belegt) · ROADMAP-Diät #438 (ehrlicher Befund: done-Blöcke waren
+  schon schlank; Ceiling-Rest 109.8 KB bleibt beim QS-TOK-Posten) — **W2·5h-seq-hart damit
+  eingelöst; W2·5h ist der natürliche nächste Schritt.** QS-UI zurück auf ready (kontinuierlich).
+  Neu: QS-E2E-SHARD-GEN (5/6 Landekonflikte in shard-gruppen.json); Dispatch-Template-Kaveats
+  (mechanisch≠Haiku bei @meta-Strukturen + Worktree-Pflicht; Daten-Klasse: Manifest-Regen).
+  Offene David-Punkte: ICS TRANSP · LiveSuche-Platzierung Trefferliste · Vercel-Preview-Quota
+  (Label-Opt-in?) · Merge-Queue nur via Org-Transfer.
 - **Bekannter Rest:** Vercel-Preview-Quota war zeitweise erschöpft (rate limit) — Prod-Deploy
   des letzten Stands ggf. verzögert; Nachkontrolle beim nächsten Deploy-Blick. W2·10-Dach bleibt
   offen (-S/-V/-J/-J3/-O nicht beauftragt). W2·5h-GESETZ-UI als nächstes beauftragt.

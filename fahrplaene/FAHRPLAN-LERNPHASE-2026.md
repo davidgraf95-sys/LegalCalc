@@ -240,3 +240,20 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   QS-PERF Ziff. 5 — blosses Hochsetzen ohne Messreihe ist dort ausgeschlossen.
 - **Dateien:** `playwright.config.ts` / betroffene Specs, `scripts/datenhaltung/suche.test.ts`,
   `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`.
+
+### §3.5 `QS-E2E-SHARD-GEN` — Shard-Zuordnung in die Spec, JSON generieren
+
+- **Anlass (Landekette 4.8.2026):** `e2e/shard-gruppen.json` war die Konflikt-Fläche der
+  Nacht — 5 von 6 Nachzieh-Konflikten der seriellen Landung sassen in dieser einen Datei,
+  weil jeder PR mit neuer Spec dieselben Gruppen-Listen editiert (und #435 sie parallel
+  komplett neu packte). Jede Auflösung war trivial, aber jede kostete eine Runde.
+- **Wurzel-Fix:** die Gruppen-Zuordnung wandert als Kopf-Annotation in die Spec-Datei
+  selbst (z. B. `// @shard-gruppe: 3`), `shard-gruppen.json` wird daraus GENERIERT —
+  damit greift der bestehende `merge=regen`-Treiber (eigene Seite behalten, Generator
+  neu laufen) und die Konflikt-Klasse verschwindet; neue Specs ohne Annotation macht
+  der Union-Wächter weiterhin rot.
+- **Fertig, wenn:** Generator + Treiber-Eintrag stehen, der Union-Wächter unverändert
+  scharf ist (einmal rot gezeigt: Spec ohne Annotation), und ein simulierter
+  Parallel-Fall (zwei Branches, je neue Spec) konfliktfrei merged.
+- **Dateien:** `e2e/*.e2e.ts` (Annotationen), neuer Generator unter `scripts/`,
+  `.gitattributes`, `scripts/e2e-shard-gruppen.mjs`.

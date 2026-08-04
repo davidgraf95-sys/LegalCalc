@@ -196,6 +196,14 @@ im Spiel ist, ist es **Synthese** — und Synthese, die künftige Sessions steue
 läuft nie unter Sonnet. Die Wirkung des Routings sitzt primär auf den Reasoning-Anteilen; die
 konkreten Schwellen werden per T2-Baseline kalibriert.
 
+**Kaveat «mechanisch» (Vorfall 4.8.2026):** Eine Verschiebung durch VERSCHACHTELTE
+Steuer-Strukturen (@meta-Blöcke, Checkbox-Hierarchien) ist trotz Byte-Diff-Prüfbarkeit
+**mind. Sonnet** — ein Haiku-Lauf schnitt ROADMAP-Prosa aus, ohne das Chronik-Gegenstück
+anzulegen (stille Prosa-Vernichtung, Branch verworfen). Und: **Verschiebe-/Datei-Aufträge
+IMMER mit `isolation: worktree`** dispatchen — derselbe Lauf arbeitete sonst im
+Haupt-Checkout einer fremden Session (§12). Invariante für jeden Verschiebe-Auftrag:
+Cut und Paste im SELBEN Commit, jede Zwischenstufe verlustfrei.
+
 ---
 
 ## 3 · Pflicht-Rückgabe-Schema (T4)
