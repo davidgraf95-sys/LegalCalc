@@ -195,7 +195,6 @@ const CONFIG: VorlagenSeitenConfig<MaAntworten> = {
   badge: 'Zu unterzeichnen',
   eingabeInhalt,
   fehlerEingabe,
-  zeigeWarnungen: true,
   blockerImLetztenSchritt: false,
   ortDatumLabel: 'Ort und Datum der Erklärung',
   ortPlaceholder: 'z. B. Basel',

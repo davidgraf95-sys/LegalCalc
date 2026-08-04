@@ -493,7 +493,12 @@ export function VorlageAgGruendung() {
       </div>
     )
     : (
-      <div className="p-4 space-y-2">
+      // `data-dokument-platz` (QS-UI 8b Teil 2): Diese Fläche trug als EINZIGE der
+      // drei Dokumentmappen-Flächen bereits einen echten Leerzustand — sie behält
+      // ihn (er nennt zusätzlich die offenen Blocker und ist damit reicher als der
+      // geteilte `ErgebnisPlatzhalter`); sie bekommt nur den Griff, damit das Tor
+      // alle drei gleich prüft. Die anderen beiden zeigten an dieser Stelle nichts.
+      <div data-dokument-platz className="p-4 space-y-2">
         <p className="text-body-s font-medium text-ink-900">Noch keine Dokumente</p>
         <p className="text-body-s text-ink-600">
           Die Vorschau erscheint, sobald die Pflichtangaben vollständig sind:

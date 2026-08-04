@@ -91,6 +91,33 @@ const LESESPALTE_MAX = 16 * 41
 //     Regel — dieselbe Bauart wie die Budgets in `check:perf-budget`.
 const WARN_ABSTAND_REGRESSION = 320
 
+// ── I7-Schranke (Teil 2, Rechtsprechung) ────────────────────────────────────
+// Regressions-Schranke auf gemessener Grundlage, gleiche Bauart wie oben.
+// Gemessen 4.8.2026 über vier Entscheid-Flächen (BGE mit Regeste, BGE, BS,
+// AG), beide Breiten: 0.56–0.62 Bildschirmhöhen Desktop, 0.68–0.83 mobil.
+const VERDIKT_BH_REGRESSION = 1.2
+
+// ── I8-Schranken (Teil 2, Vorlagen) ─────────────────────────────────────────
+// Tiefe der «Stelle des Dokuments» in Bildschirmhöhen, gemessen 4.8.2026 über
+// alle 29 Vorlagen-Flächen mit Dokument-Ausgabe (Tabelle im Fahrplan §2.1).
+// Die Verteilung hat zwei klar getrennte Familien — darum zwei Schranken statt
+// einer, die beide durchwinken müsste und damit nichts mehr fände:
+//   Wizard-Flächen (26): Desktop 0.65–1.08 · mobil 1.50–2.61
+//   Mappen-Flächen (2):  Desktop 2.50/5.09 · mobil 4.24/8.25
+const DOKUMENT_BH_REGRESSION = { desktop: 1.2, mobil: 2.8 } as const
+
+// Die zwei Mappen-Flächen sind KONSTRUKTIONSBEDINGT tief: vor der Mappe steht
+// die Checkliste, die überhaupt erst bestimmt, welche Dokumente entstehen. Das
+// umzubauen wäre ein Eingriff in den Seiten-Aufbau (R1/FE-1) und damit ein
+// anderer Schritt — dieselbe Grenzziehung, die Teil 1 beim Tagerechner gezogen
+// hat. Ihre Kompensation ist die Sprungmarke, und die prüft I9 auf BEIDEN
+// Breiten. Gegenprobe: Wer hier steht und NICHT tief liegt, macht das Tor rot —
+// sonst verrottet der Ausweis still, sobald jemand die Seite doch verkürzt.
+const TIEF_AUSGEWIESEN: readonly string[] = [
+  '/vorlagen/gmbh-gruendung',
+  '/vorlagen/kapitalerhoehung',
+]
+
 // Flächen, deren Vorgabe-Eingabe KEINE Vorbehalte erzeugt — abschliessend und
 // gemessen (4.8.2026, beide Breiten). Der Ausweis ist die Gegenprobe zum Skip:
 // eine Fläche, die HIER NICHT steht und trotzdem ohne Vorbehalte kommt, macht
@@ -273,3 +300,381 @@ for (const [breite, hoehe, name] of [[1280, 800, 'Desktop'], [390, 844, 'Mobil']
     await page.emulateMedia({ media: 'screen' })
   })
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// TEIL 2 · Rechtsprechungs- und Vorlagen-Flächen (QS-UI 8b Teil 2, 4.8.2026)
+// ═══════════════════════════════════════════════════════════════════════════
+//
+// Teil 1 fasste dieses Tor bewusst auf Rechner-Blöcke (`[id^="lc-ergebnis"]`).
+// Rechtsprechung und Vorlagen haben einen ANDEREN Ergebnisbegriff, darum eigene
+// Invarianten statt einer gedehnten Fassung der alten:
+//
+//   Rechtsprechung — «Verdikt» ist die Kern-Antwort der Seite: die Regeste bzw.
+//     die als solche gekennzeichnete Zusammenfassung (`[data-verdikt]`,
+//     DESIGN-REGLEMENT-RECHTSPRECHUNG R8). Fehlt sie der Quelle (kantonal:
+//     `/structure` ist Bund-only), ist es der erste Abschnitt des Urteilstexts —
+//     Auffangnetz derselben Bauart wie `data-ansicht` + `table, svg` in Teil 1.
+//   Vorlagen — «Verdikt» ist das Dokument (`[data-dokument]`, das Vorschau-
+//     «Papier»), nicht das Formular. Steht es noch nicht, steht an seiner Stelle
+//     der Platzhalter (`[data-dokument-platz]`).
+//
+//  I6  B2/D-1.5 + R1 — Fliesstext hält die Lesespalte. Gleiche Regel wie I3,
+//      neue Flächen. WICHTIG und anders als I3: hier wird ECHTE Sichtbarkeit
+//      geprüft (`checkVisibility`). Ein geschlossenes `<details>` liefert in
+//      Chromium weiterhin Masse über `getBoundingClientRect` — ohne die Prüfung
+//      misst man Text, den niemand sieht. Beim Audit zu Teil 2 reproduziert:
+//      21 gemeldete Verstösse auf `/vorlagen/gmbh-gruendung` schrumpften auf 3
+//      echte, sobald die Sichtbarkeit geprüft wurde.
+//  I7  §13.2/R8 — Das Verdikt des Entscheid-Lesers steht VOR dem Urteilstext und
+//      vor dem Fuss, und der Weg dorthin bleibt kurz (Regressions-Schranke).
+//  I8  §8 · R13-Analogie — An der STELLE des Dokuments steht auf einer Vorlagen-
+//      Fläche mit Dokument-Ausgabe immer etwas: das Dokument selbst, ein
+//      Platzhalter, oder — auf schmalen Schirmen — der beschriftete Griff des
+//      eingeklappten Vorschau-Blocks. Nie nichts. Genau «nichts» war der Fall auf
+//      `/vorlagen/gmbh-gruendung` und `/vorlagen/kapitalerhoehung`
+//      (`MappenAnsicht` gab ohne Dokument `null` zurück); `/vorlagen/ag-gruendung`
+//      trug als einzige der drei bereits einen Leerzustand — dieselbe Eins-von-
+//      vielen-Lage wie beim `ErgebnisPlatzhalter` in Teil 1.
+//      Zusätzlich eine Regressions-Schranke auf die TIEFE dieser Stelle: sie ist
+//      das Desktop-Pendant zu I9 (dort gibt es keine Marke, sondern die klebende
+//      Vorschau-Spalte — eine Marke daneben zeigte auf ohnehin Sichtbares).
+//  I9  I4-Analogie, MOBIL — dort ist das Dokument zugeklappt und tief unten; die
+//      Abkürzung ist der schwebende Sprung-Knopf. Steht die Stelle des Dokuments
+//      nicht im Bild, muss er erreichbar sein: sichtbar, vollständig im Bild, am
+//      Klickpunkt frei, Tap-Ziel. `/vorlagen/gmbh-gruendung` (7'894 px mobil) und
+//      `/vorlagen/kapitalerhoehung` trugen als einzige Vorlagen-Flächen mit
+//      Dokument-Ausgabe gar keine Marke — dieselbe Fehlerklasse wie das `sm:hidden`
+//      der Rechner-Sprungmarke in Teil 1: die Abkürzung gab es, nur nicht hier.
+//  I10 §8 — Die Formvorschrift steht im ERSTEN Viewport, nicht hinter der
+//      Eingabestrecke. Sie entscheidet, ob ein Dokument überhaupt gültig
+//      zustande kommt («Eigenhändig abzuschreiben», «Papierform · eigenhändig
+//      unterzeichnen»); eine Vorlage, die das erst am Ende sagt, hat den Nutzer
+//      die halbe Strecke im Unklaren gelassen.
+//
+// Reine Darstellungs-Prüfung (§3): kein Wortlaut, kein Rechtswert, keine Frist.
+
+// Rechtsprechungs-Fläche. Der BGE-Schlüssel ist fest (amtliche Sammlung, stabil);
+// die kantonale Fläche wird aus der Übersicht ERMITTELT statt fest verdrahtet —
+// dort ist der Bestand ein wachsender Import (3'795 Einträge), ein fester Key
+// würde rotten und das Tor aus dem falschen Grund rot färben.
+const RSPR_BGE = '/rechtsprechung/bge_146_III_1'
+
+// Vorlagen-Flächen: 14 der 30 Routen, so gewählt, dass jede STRUKTURFAMILIE
+// einmal vorkommt — sonst prüft eine lange Liste vierzehnmal dasselbe Gerüst:
+//   • generischer `VorlagenSeite`-Rahmen: mahnung · rubrum · verjaehrungsverzicht
+//   • handgeschriebener Wizard: testament · vollmacht · nda · klage-vereinfacht
+//     · patientenverfuegung · arbeitsvertrag · schlichtungsgesuch-bs
+//   • mehrstufiger Wizard mit Mappe am Ende: ag-gruendung
+//   • Dokumentmappe ohne Wizard-Rahmen: gmbh-gruendung · kapitalerhoehung
+//   • Checkliste OHNE Dokument-Ausgabe: kuendigung-vermieter (I8/I9 gelten dort
+//     nicht — die Fläche verspricht kein Dokument; I10 gilt weiterhin)
+const VORLAGEN = [
+  '/vorlagen/testament',
+  '/vorlagen/vollmacht',
+  '/vorlagen/nda',
+  '/vorlagen/klage-vereinfacht',
+  '/vorlagen/patientenverfuegung',
+  '/vorlagen/arbeitsvertrag',
+  '/vorlagen/schlichtungsgesuch-bs',
+  '/vorlagen/mahnung',
+  '/vorlagen/rubrum',
+  '/vorlagen/verjaehrungsverzicht',
+  '/vorlagen/ag-gruendung',
+  '/vorlagen/gmbh-gruendung',
+  '/vorlagen/kapitalerhoehung',
+  '/vorlagen/kuendigung-vermieter',
+] as const
+
+// Flächen ohne Dokument-Ausgabe — abschliessend und begründet. Wer eine Fläche
+// hier einträgt, erklärt damit, dass sie NIE ein Dokument liefert; wer eine
+// Dokument-Fläche vergisst einzutragen, wird von I8 rot gestellt.
+const OHNE_DOKUMENT_ERLAUBT: readonly string[] = [
+  // Reine Checkliste, `startseiteConfig` ohne `output` ⇒ kein Export, kein
+  // Vorschau-«Papier». Das Badge sagt es auch so («Checkliste — kein Export»).
+  '/vorlagen/kuendigung-vermieter',
+]
+
+// I6-Ausweis: gemessene Lesespalten-Verstösse, die NICHT in dieser Einheit
+// liegen, weil sie aus app-weit geteilten Bausteinen kommen (§14.2 — eine
+// Domänen-Einheit fasst keinen Baustein an, der zugleich der Gesetzes-Fläche
+// gehört; das ist `W2·5h-GESETZ-UI` bzw. ein Fundament-Schritt). Der Ausweis
+// ist die Gegenprobe zum Weglassen: ein NEUER Verstoss macht das Tor rot.
+//   • `SeitenKopf`-Intro (14 Seiten, u. a. /gesetze) — 976 px gemessen
+//   • `Katalog`-Kategorie-Fussnote (Rechner- UND Vorlagen-Übersicht) — 976 px
+const LESESPALTE_AUSWEIS: readonly string[] = [
+  'Kuratierte Auswahl von Entscheiden des Bundesg',
+  'Verträge, Eingaben, Erklärungen und Dokumentma',
+  'Checklisten · Mandatsaufnahme-Formular · Öffen',
+]
+
+/** Prosa-Absätze über der Lesespalte — mit ECHTER Sichtbarkeitsprüfung (I6). */
+async function lesespalte(page: Page): Promise<string[]> {
+  return page.evaluate((max) => [...document.querySelectorAll('main p')]
+    .filter((p) => p.checkVisibility({ contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true }))
+    .filter((p) => (p.textContent || '').trim().length > 90)
+    // Kacheln, Tabellen und das Dokument-«Papier» sind ausgenommen (D-1.5; das
+    // Papier bildet ein Schriftbild ab, das PDF und DOCX teilen — seine Breite
+    // regelt DESIGN-REGLEMENT-VORLAGEN V2, nicht die Lesespalte der App).
+    .filter((p) => !p.closest('.lc-tile') && !p.closest('table') && !p.closest('[data-dokument]'))
+    .filter((p) => p.getBoundingClientRect().width > max)
+    .map((p) => (p.textContent || '').trim().slice(0, 46)), LESESPALTE_MAX)
+}
+
+for (const [breite, hoehe, name] of [[1280, 800, 'Desktop'], [390, 844, 'Mobil']] as const) {
+  test.describe(`Verdikt zuerst · Rechtsprechung — ${name}`, () => {
+    test('Übersicht: Lesespalte', async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await page.goto('/rechtsprechung')
+      await page.locator('main').first().waitFor()
+      await page.locator('a[href^="/rechtsprechung/"]').first().waitFor()
+      const ueber = await lesespalte(page)
+      expect(ueber.filter((t) => !LESESPALTE_AUSWEIS.includes(t)),
+        `B2/R1 · Fliesstext über der Lesespalte (${LESESPALTE_MAX} px) auf /rechtsprechung`).toEqual([])
+    })
+
+    test('Entscheid-Leser: Verdikt vor dem Urteilstext', async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await page.goto(RSPR_BGE)
+      await page.locator('[data-verdikt]').first().waitFor()
+      const b = await page.evaluate(() => {
+        const oben = (el: Element) => el.getBoundingClientRect().top + window.scrollY
+        const verdikt = document.querySelector('[data-verdikt]')
+        const koerper = document.querySelector('.rsp-anker')
+        const fuss = document.querySelector('footer')
+        return {
+          yVerdikt: verdikt ? oben(verdikt) : null,
+          yKoerper: koerper ? oben(koerper) : null,
+          yFuss: fuss ? oben(fuss) : null,
+        }
+      })
+      expect(b.yVerdikt, 'R8 · keine Regeste-/Zusammenfassungs-Box im Leser').not.toBeNull()
+      expect(b.yKoerper, 'Urteilstext (.rsp-anker) fehlt').not.toBeNull()
+      // I7 Ziff. 1 — das Verdikt steht VOR dem Urteilstext und vor dem Fuss.
+      expect(b.yVerdikt!, 'R8/§13.2 · Regeste steht NACH dem Urteilstext').toBeLessThan(b.yKoerper!)
+      expect(b.yVerdikt!, 'R8/§13.2 · Regeste steht NACH dem Provenienz-Fuss').toBeLessThan(b.yFuss!)
+      // I7 Ziff. 2 — Regressions-Schranke auf gemessener Grundlage (KEINE neue
+      // Regel, gleiche Bauart wie WARN_ABSTAND_REGRESSION in Teil 1). Gemessen
+      // 4.8.2026 über vier Entscheid-Flächen: 0.56–0.62 Bildschirmhöhen Desktop,
+      // 0.68–0.83 mobil. 1.20 lässt also rund eine halbe Bildschirmhöhe Kopf-
+      // Wachstum zu und feuert trotzdem, sobald ein Block zwischen Seitenanfang
+      // und Regeste geschoben wird — jede Karte, jede Kachelreihe misst mehr.
+      expect(b.yVerdikt! / hoehe,
+        'R8/§13.2 · Weg zum Verdikt über der Regressions-Schranke — steht etwas Neues über der Regeste?')
+        .toBeLessThanOrEqual(VERDIKT_BH_REGRESSION)
+      const ueber = await lesespalte(page)
+      expect(ueber.filter((t) => !LESESPALTE_AUSWEIS.includes(t)),
+        `B2/R1 · Fliesstext über der Lesespalte (${LESESPALTE_MAX} px) im Entscheid-Leser`).toEqual([])
+    })
+
+    test('Entscheid-Leser ohne amtliche Regeste: Urteilstext trägt das Verdikt', async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await page.goto('/rechtsprechung')
+      await page.locator('a[href^="/rechtsprechung/"]').first().waitFor()
+      // Erste kantonale Fläche aus der Übersicht — nicht fest verdrahtet (s. oben).
+      const ziel = await page.evaluate(() => {
+        const a = [...document.querySelectorAll('a[href^="/rechtsprechung/"]')]
+          .map((x) => (x as HTMLAnchorElement).getAttribute('href') || '')
+          .find((h) => h && !h.includes('/bge_'))
+        return a ?? null
+      })
+      expect(ziel, 'kein Nicht-BGE-Entscheid in der Übersicht verlinkt — Bestand oder Gruppierung geändert?').not.toBeNull()
+      await page.goto(ziel!)
+      await page.locator('.rsp-anker').first().waitFor()
+      const b = await page.evaluate(() => {
+        const oben = (el: Element) => el.getBoundingClientRect().top + window.scrollY
+        const verdikt = document.querySelector('[data-verdikt]')
+          || document.querySelector('.rsp-anker [id^="abschnitt-"]')
+        const fuss = document.querySelector('footer')
+        return { y: verdikt ? oben(verdikt) : null, yFuss: fuss ? oben(fuss) : null }
+      })
+      // §8: Auch ohne amtliche Regeste steht ein greifbares Verdikt oben — sonst
+      // beginnt die Seite mit Meta-Daten und der Nutzer sucht die Antwort selbst.
+      expect(b.y, 'weder Regeste noch Urteilstext-Abschnitt gefunden').not.toBeNull()
+      expect(b.y!, '§13.2 · Verdikt steht NACH dem Provenienz-Fuss').toBeLessThan(b.yFuss!)
+      expect(b.y! / hoehe, 'R8/§13.2 · Weg zum Verdikt über der Regressions-Schranke')
+        .toBeLessThanOrEqual(VERDIKT_BH_REGRESSION)
+    })
+  })
+
+  test.describe(`Verdikt zuerst · Vorlagen — ${name}`, () => {
+    for (const pfad of VORLAGEN) {
+      test(`${pfad}`, async ({ page }) => {
+        await page.setViewportSize({ width: breite, height: hoehe })
+        await page.goto(pfad)
+        await page.locator('h1').first().waitFor()
+        const b = await page.evaluate(() => {
+          const sicht = (el: Element) => el.checkVisibility(
+            { contentVisibilityAuto: true, opacityProperty: true, visibilityProperty: true })
+          const oben = (el: Element) => el.getBoundingClientRect().top + window.scrollY
+          // Das Dokument liegt zweimal im DOM (mobil einklappbar / Desktop klebend);
+          // gesucht ist die SICHTBARE Instanz, nicht die erste im Baum.
+          const dok = [...document.querySelectorAll('[data-dokument]')].find(sicht) ?? null
+          // Platzhalter ODER Griff des eingeklappten Vorschau-Blocks — beide
+          // markieren die STELLE des Dokuments (I8).
+          const platz = [...document.querySelectorAll('[data-dokument-platz]')].find(sicht) ?? null
+          const badge = [...document.querySelectorAll('[data-formgate]')].find(sicht) ?? null
+          const sprung = [...document.querySelectorAll('[data-verdikt-sprung]')].find(sicht) ?? null
+          let s: null | { hoehe: number; breite: number; imBild: boolean; frei: boolean } = null
+          if (sprung) {
+            const r = sprung.getBoundingClientRect()
+            const mx = r.left + r.width / 2
+            const my = r.top + r.height / 2
+            s = {
+              hoehe: Math.round(r.height), breite: Math.round(r.width),
+              imBild: r.top >= 0 && r.left >= 0 && r.bottom <= window.innerHeight + 1 && r.right <= window.innerWidth + 1,
+              frei: sprung.contains(document.elementFromPoint(mx, my)) || document.elementFromPoint(mx, my) === sprung,
+            }
+          }
+          // Die «Stelle des Dokuments» ist die OBERSTE der drei Erscheinungsformen.
+          const stelle = [dok, platz].filter((x): x is Element => !!x)
+            .sort((a, b) => oben(a) - oben(b))[0] ?? null
+          // Klebt die Stelle? Auf Desktop steht die Vorschau in einer `sticky`
+          // Spalte — sie rückt beim Scrollen von selbst ins Bild und braucht
+          // keine Marke. Geprüft wird die BERECHNETE Position der Vorfahren,
+          // nicht eine Klasse: `md:sticky` ist ein Klassenname, `position:
+          // sticky` ist die Wirkung, und nur die zählt.
+          let klebt = false
+          for (let el = stelle; el && el !== document.body; el = el.parentElement) {
+            if (getComputedStyle(el).position === 'sticky') { klebt = true; break }
+          }
+          return {
+            hatDok: !!dok, hatPlatz: !!platz, klebt,
+            yStelle: stelle ? oben(stelle) : null,
+            yBadge: badge ? oben(badge) : null,
+            sprung: s,
+          }
+        })
+
+        // I6 — Lesespalte.
+        const ueber = await lesespalte(page)
+        expect(ueber.filter((t) => !LESESPALTE_AUSWEIS.includes(t)),
+          `B2/D-1.5 · Fliesstext über der Lesespalte (${LESESPALTE_MAX} px) auf ${pfad}`).toEqual([])
+
+        // I10 — Formvorschrift im ersten Viewport (§8).
+        expect(b.yBadge, `§8 · kein Formvorschrift-Badge ([data-formgate]) auf ${pfad}`).not.toBeNull()
+        expect(b.yBadge! / hoehe,
+          `§8 · Formvorschrift steht erst bei ${(b.yBadge! / hoehe).toFixed(2)} Bildschirmhöhen — sie gehört in den ersten Viewport`)
+          .toBeLessThan(1)
+
+        if (OHNE_DOKUMENT_ERLAUBT.includes(pfad)) {
+          // Gegenprobe zum Ausweis: wer hier steht, darf auch KEIN Dokument
+          // zeigen — sonst ist der Eintrag falsch und gehört gestrichen.
+          expect(b.hatDok, `${pfad} steht in OHNE_DOKUMENT_ERLAUBT, zeigt aber ein Dokument — Eintrag streichen`).toBe(false)
+          return
+        }
+
+        // I8 Ziff. 1 — die Stelle des Dokuments ist nie leer.
+        expect(b.hatDok || b.hatPlatz,
+          `§8/R13 · Auf ${pfad} steht an der Stelle des Dokuments weder ein Dokument noch ein Platzhalter noch ein Griff — entweder Platzhalter ergänzen oder die Fläche in OHNE_DOKUMENT_ERLAUBT ausweisen`)
+          .toBe(true)
+
+        // I8 Ziff. 2 — Regressions-Schranke auf die Tiefe dieser Stelle (gemessene
+        // Grundlage, KEINE neue Regel; Bauart wie WARN_ABSTAND_REGRESSION).
+        const tiefe = b.yStelle! / hoehe
+        const schranke = breite >= 1024 ? DOKUMENT_BH_REGRESSION.desktop : DOKUMENT_BH_REGRESSION.mobil
+        if (TIEF_AUSGEWIESEN.includes(pfad)) {
+          // Gegenprobe zum Ausweis: eine ausgewiesene Fläche MUSS tief liegen.
+          expect(tiefe,
+            `${pfad} steht in TIEF_AUSGEWIESEN, liegt aber bei ${tiefe.toFixed(2)} Bildschirmhöhen — Ausweis streichen und die Fläche normal schranken`)
+            .toBeGreaterThan(schranke)
+        } else {
+          expect(tiefe,
+            `§13.2 · Die Stelle des Dokuments liegt auf ${pfad} bei ${tiefe.toFixed(2)} Bildschirmhöhen — über der Regressions-Schranke ${schranke}. Ist über dem Dokument etwas Neues eingeschoben worden?`)
+            .toBeLessThanOrEqual(schranke)
+        }
+
+        // I9 — die Abkürzung. Sie wird gebraucht, WENN die Stelle des Dokuments
+        // weder im Bild steht noch von selbst hineinrückt. Der zweite Fall ist
+        // die klebende Vorschau-Spalte auf Desktop: sie bleibt beim Scrollen
+        // stehen, eine schwebende Marke daneben zeigte auf ohnehin Sichtbares
+        // (dieselbe Begründung, aus der sich `ErgebnisSprung` per
+        // IntersectionObserver ausblendet). Genau diese Bedingung — und nicht
+        // «Desktop ja / mobil nein» — ist die Regel; darum wird sie geprüft und
+        // nicht die Breite.
+        if (b.yStelle! < hoehe || b.klebt) return
+        expect(b.sprung, `Abkürzung zum Dokument ([data-verdikt-sprung]) fehlt auf ${pfad} (${name}): die Stelle des Dokuments liegt bei ${tiefe.toFixed(2)} Bildschirmhöhen und klebt nicht`).not.toBeNull()
+        expect(b.sprung!.imBild, `Abkürzung auf ${pfad} liegt nicht vollständig im Bild`).toBe(true)
+        expect(b.sprung!.frei, `Abkürzung auf ${pfad} ist an ihrem Klickpunkt verdeckt`).toBe(true)
+        // A9 · Tap-Ziel — dieselben Schranken wie an der Rechner-Sprungmarke.
+        expect(b.sprung!.hoehe, `Tap-Ziel der Abkürzung auf ${pfad} zu flach`).toBeGreaterThanOrEqual(32)
+        expect(b.sprung!.breite, `Tap-Ziel der Abkürzung auf ${pfad} zu schmal`).toBeGreaterThanOrEqual(44)
+      })
+    }
+  })
+}
+
+// ── A9 · Bedienbarkeit und Flüssigkeit der neuen Abkürzung ──────────────────
+// Die zwei Bauteile dieser Einheit, die der Nutzer BEDIENT, sind die Abkürzung
+// zum Dokument (`ErgebnisSprung` auf den Mappen-Flächen; der «Vorschau ↓»-Knopf
+// im Wizard) und der Griff des eingeklappten Vorschau-Blocks. Geprüft wird beides
+// unter 6×-CPU-Drossel: Tastatur-Erreichbarkeit, Wirkung, Reaktionszeit, CLS.
+// Drossel/Budget-Konstanten wie in `rechtsprechung.e2e.ts` (CI langsamer).
+const A9_DROSSEL = process.env.CI ? 4 : 6
+const A9_BUDGET = process.env.CI ? 8000 : 5000
+const A9_LATTE = A9_BUDGET + 3000
+
+test('A9 · Abkürzung zum Dokument: Tastatur, Wirkung, Flüssigkeit, CLS 0', async ({ page }) => {
+  if (process.env.CI) test.setTimeout(120_000)
+  const konsolenfehler: string[] = []
+  page.on('pageerror', (e) => konsolenfehler.push(String(e)))
+  page.on('console', (m) => { if (m.type() === 'error') konsolenfehler.push(m.text()) })
+
+  await page.setViewportSize({ width: 390, height: 844 })
+  const client = await page.context().newCDPSession(page)
+  await client.send('Emulation.setCPUThrottlingRate', { rate: A9_DROSSEL })
+
+  // (1) Mappen-Fläche: die NEUE Marke. Sie ist ein <a> auf einen Anker — also
+  //     fokussierbar und mit Enter auslösbar, ohne dass die Spec das nachbaut.
+  await page.goto('/vorlagen/kapitalerhoehung')
+  const marke = page.locator('[data-verdikt-sprung]')
+  await expect(marke).toBeVisible({ timeout: A9_LATTE })
+  await page.evaluate(() => {
+    ;(window as unknown as { __cls: number }).__cls = 0
+    const inhalt = document.querySelector('main')
+    new PerformanceObserver((l) => {
+      for (const e of l.getEntries()) {
+        const s = e as unknown as { value: number; hadRecentInput: boolean; sources?: { node?: Node | null }[] }
+        if (s.hadRecentInput) continue
+        if ((s.sources ?? []).some((q) => q.node && inhalt?.contains(q.node))) {
+          ;(window as unknown as { __cls: number }).__cls += s.value
+        }
+      }
+    }).observe({ type: 'layout-shift' })
+  })
+  await marke.focus()
+  expect(await page.evaluate(() => document.activeElement?.getAttribute('data-verdikt-sprung') !== null),
+    'Abkürzung ist nicht per Tastatur fokussierbar').toBe(true)
+  let t0 = Date.now()
+  await page.keyboard.press('Enter')
+  // Wirkung: die Stelle des Dokuments steht danach im Bild.
+  await expect(page.locator('#vorlagen-dokumente')).toBeInViewport({ timeout: A9_LATTE })
+  expect(Date.now() - t0, 'Sprung zum Dokument zu langsam').toBeLessThan(A9_BUDGET)
+  const clsMappe = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)
+  expect(clsMappe, 'CLS über den Dokument-Sprung muss 0 sein').toBe(0)
+
+  // (2) Wizard-Fläche: Griff + schwebender Knopf klappen das Dokument auf.
+  await page.goto('/vorlagen/testament')
+  const knopf = page.locator('[data-verdikt-sprung]')
+  await expect(knopf).toBeVisible({ timeout: A9_LATTE })
+  await page.evaluate(() => { (window as unknown as { __cls: number }).__cls = 0 })
+  await page.evaluate(() => {
+    const inhalt = document.querySelector('main')
+    new PerformanceObserver((l) => {
+      for (const e of l.getEntries()) {
+        const s = e as unknown as { value: number; hadRecentInput: boolean; sources?: { node?: Node | null }[] }
+        if (s.hadRecentInput) continue
+        if ((s.sources ?? []).some((q) => q.node && inhalt?.contains(q.node))) {
+          ;(window as unknown as { __cls: number }).__cls += s.value
+        }
+      }
+    }).observe({ type: 'layout-shift' })
+  })
+  await knopf.focus()
+  t0 = Date.now()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('[data-dokument]').first()).toBeVisible({ timeout: A9_LATTE })
+  expect(Date.now() - t0, 'Aufklappen der Vorschau zu langsam').toBeLessThan(A9_BUDGET)
+
+  await client.send('Emulation.setCPUThrottlingRate', { rate: 1 })
+  expect(konsolenfehler, 'Konsolenfehler beim Bedienen der Abkürzung').toEqual([])
+})

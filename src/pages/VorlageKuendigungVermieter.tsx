@@ -68,7 +68,10 @@ export function VorlageKuendigungVermieter() {
           {(card?.norms ?? []).map((n) => (
             <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
           ))}
-          <span className="lc-badge lc-badge-warn">Checkliste — kein Export</span>
+          {/* `data-formgate` wie im geteilten Wizard-Kopf (QS-UI 8b Teil 2): drei
+              Vorlagen-Flächen bauen ihren Kopf von Hand und trugen darum keinen
+              Griff — dieselbe Aussage, drei Stellen. */}
+          <span data-formgate className="lc-badge lc-badge-warn">Checkliste — kein Export</span>
         </div>
       </div>
 
@@ -140,7 +143,7 @@ export function VorlageKuendigungVermieter() {
             </div>
           </div>
         )}
-        <p className="text-xs text-ink-500">
+        <p className="text-xs text-ink-500 max-w-reading">
           Ortsübliche Termine sind eine Tatfrage des konkreten Ortes; vertragliche Termine gehen vor.
           Vertiefte Berechnung (alle Kündigungsarten, Zahlungsverzug Art. 257d):{' '}
           <Link to="/rechner/mietrecht" className="text-brass-700 underline">Mietrecht-Fristenrechner</Link>.

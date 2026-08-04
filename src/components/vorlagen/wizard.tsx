@@ -103,7 +103,12 @@ export function VorlagenWizardRahmen({
           {norms.map((n) => (
             <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
           ))}
-          <span className="lc-badge lc-badge-warn">{badge}</span>
+          {/* `data-formgate`: Tor-Griff (qsui-hierarchie I10). Das Badge trägt die
+              Formvorschrift der Vorlage («Eigenhändig abzuschreiben», «Papierform ·
+              eigenhändig unterzeichnen») und ist damit die §8-Ansage, die NICHT
+              hinter der Eingabestrecke stehen darf. Es steht im Kopf, also im
+              ersten Viewport — das Tor nagelt genau das fest. */}
+          <span data-formgate className="lc-badge lc-badge-warn">{badge}</span>
         </div>
         {(zuruecksetzen || fussnote) && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
@@ -114,7 +119,10 @@ export function VorlagenWizardRahmen({
                 ↺ Eingaben zurücksetzen
               </button>
             )}
-            <p className="text-xs text-ink-500">
+            {/* B2/D-1.5 (QS-UI 8b Teil 2): Der Speicher-Hinweis lief mit 976 px über
+                die volle Spaltenbreite — gemessen auf 24 Vorlagen-Flächen. Prosa hält
+                die Lesespalte; Kacheln und Tabellen bleiben unbegrenzt. */}
+            <p className="text-xs text-ink-500 max-w-reading">
               {fussnote ?? 'Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen».'}
             </p>
           </div>
@@ -168,7 +176,12 @@ export function VorlagenWizardRahmen({
             zweimal platziert (kein Remount, wie bisheriger Funktionsaufruf) */}
         <details id="wizard-vorschau" className={`${pk('md:hidden', '@3xl/pane:hidden')} bg-surface border border-line rounded-xl scroll-mt-24`}
           open={vorschauOffen} onToggle={(e) => setVorschauOffen((e.currentTarget as HTMLDetailsElement).open)}>
-          <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-4 py-3 flex items-center justify-between text-body-s font-medium text-ink-700">
+          {/* `data-dokument-platz`: Auf schmalen Schirmen ist das Dokument
+              zugeklappt — die STELLE des Dokuments ist dann dieser beschriftete
+              Griff. Das Tor (qsui-hierarchie I8) prüft, dass an der Stelle des
+              Verdikts immer etwas steht: das Dokument, ein Platzhalter oder ein
+              benannter Griff — nie nichts. */}
+          <summary data-dokument-platz className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-4 py-3 flex items-center justify-between text-body-s font-medium text-ink-700">
             <span>Vorschau & Bausteinprotokoll</span>
             <span aria-hidden className="text-ink-500">▾</span>
           </summary>
@@ -189,8 +202,14 @@ export function VorlagenWizardRahmen({
           wo der Knopf über dem Vertragstyp-Raster schwebt, wie eine defekte
           Untertyp-Kachel (Responsive-Audit D1). Als gefülltes Pill ist er
           eindeutig ein schwebender Aktions-Knopf, keine Karte. */}
-      <button type="button" onClick={zurVorschau}
-        className={`${pk('md:hidden', '@3xl/pane:hidden')} fixed bottom-4 right-4 z-30 lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
+      {/* `data-verdikt-sprung`: derselbe Tor-Griff wie an der Rechner-Sprungmarke
+          (`ErgebnisSprung`) — eine Abkürzung zum Verdikt, zwei Bauformen, EIN Griff.
+          `print:hidden` aus derselben Fehlerklasse wie B1 in Teil 1: das Element ist
+          viewport-`fixed` und läge im Ausdruck sonst auf jeder Seite über dem Inhalt.
+          Der globale Druckblock greift hier zwar (es IST ein <button>), aber die
+          Utility am Element überlebt jede künftige Umformulierung des Blocks. */}
+      <button type="button" onClick={zurVorschau} data-verdikt-sprung
+        className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-30 lc-btn-primary lc-btn-sm rounded-full px-4 shadow-lg`}>
         Vorschau ↓
       </button>
     </div>
@@ -410,7 +429,9 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
       {/* Live-Vorschau als «Papier» – interpretiert dieselben Formatvorlagen
           (format + Absatz-Rollen) wie PDF und DOCX; der Stil-Umschalter wirkt
           identisch auf Vorschau und Export. */}
-      <section aria-label="Vorschau" className="bg-paper-raised border border-line rounded-lg shadow-md p-5 sm:p-9">
+      {/* `data-dokument`: Tor-Griff (qsui-hierarchie I8/I9) — DAS ist auf einer
+          Vorlagen-Fläche das Verdikt: das fertige Dokument, nicht die Eingabe. */}
+      <section data-dokument aria-label="Vorschau" className="bg-paper-raised border border-line rounded-lg shadow-md p-5 sm:p-9">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
           <p className="lc-overline">
             Vorschau · aktualisiert sich live

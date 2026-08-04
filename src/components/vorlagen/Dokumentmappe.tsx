@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { VorschauPanel, ExportLeiste } from './wizard';
+import { ErgebnisPlatzhalter } from './ui';
 import { NormText } from '../NormText';
 import { BANNER_MAPPE_FERTIG, type PdfBanner } from '../../lib/vorlagen/banner';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
@@ -20,14 +21,14 @@ export function NotariatsHinweis({ kanton }: { kanton: string }) {
   if (!n) return null;
   return (
     <div className="rounded-md bg-surface border border-line p-3 space-y-1">
-      <p className="text-body-s text-ink-700">
+      <p className="text-body-s text-ink-700 max-w-reading">
         <span className="font-medium text-ink-900">Beurkundung im Kanton {kanton}:</span>{' '}
         {NOTARIAT_SYSTEM_LABEL[n.system]} —{' '}
         <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:text-brass-600">{n.stelle}</a>
         {!n.urlBelegt && <span className="text-warn-700"> (Angabe ohne Gewähr)</span>}
       </p>
-      {n.hinweis && <p className="text-xs text-warn-700"><NormText text={n.hinweis} /></p>}
-      <p className="text-xs text-ink-500">{NOTARIAT_FREIZUEGIGKEIT}</p>
+      {n.hinweis && <p className="text-xs text-warn-700 max-w-reading"><NormText text={n.hinweis} /></p>}
+      <p className="text-xs text-ink-500 max-w-reading">{NOTARIAT_FREIZUEGIGKEIT}</p>
     </div>
   );
 }
@@ -39,30 +40,33 @@ export function HrAmtHinweis({ kanton }: { kanton: string }) {
   if (!a) return null;
   return (
     <div className="rounded-md bg-surface border border-line p-3 space-y-1">
-      <p className="text-body-s text-ink-700">
+      <p className="text-body-s text-ink-700 max-w-reading">
         <span className="font-medium text-ink-900">Anmeldung beim Handelsregisteramt ({kanton}):</span>{' '}
         <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:text-brass-600">{a.name}</a>
         {`, ${a.strasse}, ${a.plzOrt} · ${a.telefon}`}
       </p>
-      {a.hinweis && <p className="text-xs text-ink-500"><NormText text={a.hinweis} /></p>}
-      <p className="text-xs text-ink-500">
+      {a.hinweis && <p className="text-xs text-ink-500 max-w-reading"><NormText text={a.hinweis} /></p>}
+      <p className="text-xs text-ink-500 max-w-reading">
         {`Massgeblich ist der SITZ-Kanton der Gesellschaft (Art. 927 OR). Stand ${HR_AEMTER_STAND} (amtliche Kantonsseiten; zefix-Abgleich offen) – vor Einreichung kurz gegenprüfen.`}
       </p>
     </div>
   );
 }
 
-/** Blocker-Box + Warnungs-Hinweise einer Mappe. */
+/** Blocker-Box + Warnungs-Hinweise einer Mappe.
+ *  B2/D-1.5 (QS-UI 8b Teil 2): Blocker- und Warnungs-Prosa lief mit ~900 px über die
+ *  Lesespalte (gemessen auf `/vorlagen/gmbh-gruendung` und `/vorlagen/kapitalerhoehung`,
+ *  1280×800). `data-vorbehalte` ist derselbe Tor-Griff wie auf den Rechner-Flächen. */
 export function MappenGates({ gates }: { gates: { blocker: string[]; warnungen: string[] } }) {
   return (
     <>
       {gates.blocker.length > 0 && (
         <div className="rounded-md bg-danger-bg p-3 space-y-0.5">
-          {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={b} /></p>)}
+          {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700 max-w-reading">• <NormText text={b} /></p>)}
         </div>
       )}
       {gates.warnungen.map((w, i) => (
-        <div key={i} className="lc-notice-warn"><p className="text-body-s"><NormText text={w} /></p></div>
+        <div key={i} data-vorbehalte className="lc-notice-warn"><p className="text-body-s max-w-reading"><NormText text={w} /></p></div>
       ))}
     </>
   );
@@ -71,12 +75,14 @@ export function MappenGates({ gates }: { gates: { blocker: string[]; warnungen: 
 export type MappenDokument = { id: string; titel: string; dateiName: string; ergebnis: AssembleErgebnis };
 
 /** Dokument-Tabs + Export + Live-Vorschau (Entwurf-/Fertig-Banner je ausgabeArt). */
-export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_MAPPE_FERTIG, docxErlaubt, startDokId }: {
+export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_MAPPE_FERTIG, docxErlaubt, startDokId, zielId = 'vorlagen-dokumente' }: {
   dokumente: MappenDokument[];
   bannerEntwurf: PdfBanner;
   bannerFertig?: PdfBanner;
   docxErlaubt: boolean;
   startDokId?: string;
+  /** Sprungziel-`id` des Dokumentblocks — Ziel der `ErgebnisSprung`-Marke. */
+  zielId?: string;
 }) {
   const [aktivesDok, setAktivesDok] = useState<string>(startDokId ?? dokumente[0]?.id ?? '');
   const [kopiert, setKopiert] = useState(false);
@@ -88,7 +94,23 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
   const kopierTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => { if (kopierTimer.current) clearTimeout(kopierTimer.current); }, []);
 
-  if (!dok) return null;
+  // QS-UI 8b Teil 2 (§8 · R13-Analogie): Bisher `return null`. Auf
+  // `/vorlagen/gmbh-gruendung` und `/vorlagen/kapitalerhoehung` entsteht im
+  // Ausgangszustand noch kein Dokument (fehlende Angaben/Blocker) — die Stelle des
+  // künftigen Verdikts blieb damit vollständig LEER, und zwar auf einer 4'500 bzw.
+  // 7'900 px hohen Seite. Genau derselbe Befund wie bei den eingabe-gegateten
+  // Rechner-Flächen in Teil 1, dort über `ErgebnisPlatzhalter` behoben (R13). Hier
+  // greift dasselbe Muster statt einer zweiten Lösung (§10).
+  // Reine Navigation (§3): kein Rechtsinhalt, keine Frist, kein Schwellenwert —
+  // WELCHE Angabe fehlt, sagen weiterhin die Blocker aus `MappenGates` darüber.
+  if (!dok) {
+    return (
+      <div id={zielId} data-dokument-platz className="scroll-mt-24">
+        <ErgebnisPlatzhalter titel="Dokumente"
+          was="Sobald die Angaben oben vollständig sind, entstehen hier die Dokumente der Mappe — mit Live-Vorschau und Export." />
+      </div>
+    );
+  }
 
   const tabId = (id: string) => `${basisId}-tab-${id}`;
   const panelId = `${basisId}-panel`;
@@ -126,7 +148,9 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
 
   return (
     <>
-      <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Dokumente der Mappe">
+      {/* `id`/`data-dokument-platz` an DERSELBEN Stelle wie im Leerzustand: das
+          Sprungziel darf sich nicht verschieben, sobald die Dokumente entstehen. */}
+      <div id={zielId} data-dokument-platz className="flex flex-wrap gap-1.5 scroll-mt-24" role="tablist" aria-label="Dokumente der Mappe">
         {dokumente.map((d, i) => {
           const aktiv = d.id === dok.id;
           return (

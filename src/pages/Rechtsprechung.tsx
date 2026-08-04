@@ -293,7 +293,12 @@ export function Rechtsprechung() {
               <Liste liste={gefiltert} dichte={dichte} onNorm={waehleNorm} />
             )}
 
-            <p className="border-t border-line/60 pt-3 text-micro text-ink-500">
+            {/* B2/R1 (QS-UI 8b Teil 2): Der §8-Fuss lief mit 728 px über die
+                Lesespalte (41 rem ≙ 656 px, gemessen 1280×800). Gerade die
+                Ehrlichkeits-Zeile soll gelesen werden. Trennlinie und Text laufen
+                BEIDE in der Lesespalte (border-t sitzt am selben <p> — Bug-Check
+                #441 B1: der frühere Kommentar behauptete «volle Spalte»). */}
+            <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
               Keine Rechtsberatung. «ungeprüft» = maschinell erfasst, fachlich noch nicht abgenommen; massgeblich ist stets die amtliche Fassung (Link je Entscheid).
             </p>
           </div>

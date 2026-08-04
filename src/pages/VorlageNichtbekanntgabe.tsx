@@ -117,7 +117,6 @@ const CONFIG: VorlagenSeitenConfig<NbAntworten> = {
   badge: 'Zu unterzeichnen',
   eingabeInhalt,
   fehlerEingabe,
-  zeigeWarnungen: true,
   ortDatumLabel: 'Ort und Datum des Gesuchs',
   ortPlaceholder: 'z. B. Basel',
   ortFehler: 'Ort angeben.',

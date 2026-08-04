@@ -57,9 +57,6 @@ export interface VorlagenSeitenConfig<T extends { ort: string; datum: string }> 
    *  Blocker spiegeln (z. B. Nichtbekanntgabe: Rechtsvorschlag-Voraussetzung). */
   fehlerEingabe: (a: T, schritt: number, gates: VorlagenGates) => string[];
   // «pruefen»-Schritt
-  /** Im pruefen-Schritt zusätzlich gates.warnungen (lc-notice-warn) VOR den
-   *  Hinweisen rendern (nur Seiten, die das tun — z. B. Nichtbekanntgabe). */
-  zeigeWarnungen?: boolean;
   /** Ob der letzte-Schritt-Fehler die gates.blocker enthält (Default true).
    *  false z. B. bei Mahnung, deren Navigations-Fehler nur Ort/Datum prüft
    *  (Blocker sperren dort nur den Export, nicht die Fehlerbox). */
@@ -120,8 +117,18 @@ export function VorlagenSeite<T extends { ort: string; datum: string }>(
 
   const pruefenInhalt = (
     <div className="space-y-5">
-      {config.zeigeWarnungen && gates.warnungen.map((w, i) => (
-        <div key={`w${i}`} className="lc-notice-warn text-body-s"><NormText text={w} /></div>
+      {/* §8 (QS-UI 8b Teil 2): Bis hierher hing das Rendern der Engine-Warnungen an
+          einem Opt-in-Flag `zeigeWarnungen`. Drei der fünf Seiten auf diesem Rahmen
+          (Forderungsabtretung · Verjährungsverzicht · Rubrum) setzten es NICHT — heute
+          folgenlos, weil ihre Engines nie in `warnungen` schreiben (nachgeprüft in
+          `src/lib/vorlagen/{forderungsabtretung,verjaehrungsverzicht,rubrum}.ts`).
+          Genau das ist die Falle: die erste Warnung, die eine dieser Engines je
+          ergänzt, wäre still verschwunden — und §8 verbietet, eine Unsicherheit
+          wegzuglätten. Das Flag ist darum weg; Warnungen werden immer gezeigt.
+          DOM-neutral im Ist-Zustand (leere Liste rendert nichts).
+          `data-vorbehalte` ist derselbe Tor-Griff wie auf den Rechner-Flächen. */}
+      {gates.warnungen.map((w, i) => (
+        <div key={`w${i}`} data-vorbehalte className="lc-notice-warn text-body-s"><NormText text={w} /></div>
       ))}
       {gates.hinweise.map((h, i) => (
         <div key={i} className="lc-notice text-body-s"><NormText text={h} /></div>
