@@ -28,6 +28,33 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 3./4.8.2026 — W2·5d fertig + Reader-Kette W2·10 komplett (Orchestrierung, 12 PRs)
+**Orchestrier-Session (Fable), Worktree bauplan-review-095048: 12 PRs gebaut, geprüft, gelandet — W2·5d abgeschlossen, W2·10-Reader-Kette (VR/R1/R2/R3/R4/Z/URL) komplett.**
+
+- **W2·5d-Rest (4 Einheiten):** ANNEX #425 (eId auf Anhang-Pfad, Risikopfad, Gegenprüfung
+  bestanden — Nebenfund N2 → `QS-KORPUS-SCOPE`) · SPY #426 (H6 REPRODUZIERT: Band-statt-Linie
+  + 400%-Zoom-Fall; Frame-genauer Spy) · YC #424 (/international 308 + Hash 7/7 nach
+  Bug-Check-Fix) · EID3 #427 (Tiefe aus eId-Pfad, nur SVG ändert Kennzahl). W2·5d = done.
+- **Reader-Kette W2·10:** R4 #428 (Tap-Ziel-Token F9) · R1 #429 (In-Gesetz-Suche; Blocker
+  «Geister-Fundstellen» + §8-Fussnoten-Zähler im Check-Zyklus) · VR #432 (Kurztext-Popover +
+  Erwägungs-Rail; Esc-Fokus-Wurzel) · Spy-Mikro #433 (N1/N2/N4 + worktree-abgeleiteter
+  E2E-Port) · Z #434 (Print-Wurzelfix: Ausdrucke waren ohne Titel/SR/Stand/Banner; ICS-UID) ·
+  R2 #431 (Zitat/Rücksprung/Skeleton; VIER Wurzel-Fixes inkl. setInterval-Aushungerung→rAF und
+  font-medium-CLS [main-Vorbestand 0.0017 behoben]) · R3 #436 (Weiterlesen + j/k; Fremdfund
+  «Sie sind hier»-null aus #429 geheilt) · URL #437 (LM-202: Sync existierte nie — Teilen-Hälfte
+  gebaut; Split-View-Wächter + §5-Kodierung im Check-Zyklus).
+- **Methode:** je Einheit EIN Opus-Bauer (Worktree, §0-Klausel) + unabhängiger §9-Bug-Check
+  (Opus) + bei Risikopfad adversariale Gegenprüfung (Fable, eigene Re-Derivation byte-identisch);
+  Befunde als Fix-Schleifen an den Bauer zurück, Re-Verifikation bei Blockern. ~15 echte
+  Befunde vor Prod abgefangen (u. a. 681/425-Zähler, 6-s-Schleier, UID-Kollision, WCAG-2.4.3).
+- **Plan/Prozess:** `QS-KORPUS-SCOPE`, `QS-E2E-STABIL`, `QS-UI-HIGHLIGHT` angelegt; Landung-Skill
+  um Landungs-Rollen-Ansage erweitert (externe Grün-Merges 3./4.8.); Rest-CLS-Messwerte als
+  Stand-Notiz bei `W2·15-CLS`; Fahrplan-Stand §S in FAHRPLAN-UI-NAVIGATION. Offene David-Frage:
+  ICS `TRANSP:TRANSPARENT` (bricht Golden-Anker — nur mit Go).
+- **Bekannter Rest:** Vercel-Preview-Quota war zeitweise erschöpft (rate limit) — Prod-Deploy
+  des letzten Stands ggf. verzögert; Nachkontrolle beim nächsten Deploy-Blick. W2·10-Dach bleibt
+  offen (-S/-V/-J/-J3/-O nicht beauftragt). W2·5h-GESETZ-UI als nächstes beauftragt.
+
 ## Session 3./4.8.2026 — Bau-Evaluation → Landungen, F2b-Manifest-Reparatur, Shard-Balance
 **Prozess-Session: 2 Plan-Landungen auf `main`, 1 Reparatur-PR (#430), 1 Bau-Branch bereit.**
 

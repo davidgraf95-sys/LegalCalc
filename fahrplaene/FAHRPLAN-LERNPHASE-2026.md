@@ -232,4 +232,11 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   entlasten oder Budget begründet anheben. KEINE CI-Änderung (CI ist grün und gedämpft).
 - **Fertig, wenn:** fünf parallele Voll-Läufe lokal 0 Timeout-Flakes zeigen und die Budgets
   eine dokumentierte Streuungs-Begründung tragen (Messwerte im Kommentar).
-- **Dateien:** `playwright.config.ts` / betroffene Spec, `scripts/datenhaltung/suche.test.ts`.
+- **Nachträge 4.8.2026 (Landekette W2·10):** (c) `leser-gliederung-a33` lief in CI-Shard 1
+  einmal 6,5 min (Slow-file-Warnung); (d) `druck-fundstellen-z2` reisst ihr 30-s-Attach-Budget
+  DETERMINISTISCH auf langsamen Runnern — `.lc-leser` steht nicht im Prerender, der OR-Vollrender
+  (1686 Artikel, 1,9 MB) braucht schon ungedrosselt 9,1 s, kippt zwischen Drossel 1× und 6×
+  (Messreihe im PR-#436-Body); Wurzel-Fix: kleinerer Mess-Erlass ODER kalibriertes Budget nach
+  QS-PERF Ziff. 5 — blosses Hochsetzen ohne Messreihe ist dort ausgeschlossen.
+- **Dateien:** `playwright.config.ts` / betroffene Specs, `scripts/datenhaltung/suche.test.ts`,
+  `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`.

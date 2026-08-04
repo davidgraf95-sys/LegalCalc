@@ -553,6 +553,29 @@ präzisiert, nie autonom gekippt.
 
 ---
 
+## §S · Stand 4.8.2026 — Reader-Kette gelandet (Orchestrier-Session bauplan-review-095048)
+
+Gebaut und auf main (je EIN Opus-Bauer + unabhängiger §9-Bug-Check, teils Fix-Schleifen):
+**VR** #432 (V3 Kurztext-Popover + V5 Erwägungs-Rail; Esc-Fokus/aria-Wurzelfix) ·
+**R1** #429 (In-Gesetz-Suche/Quickjump/Sheet; Blocker «Geister-Fundstellen» + §8-Fussnoten-Zähler
+im Check-Zyklus behoben, RV6 via MutationObserver) · **R2** #431 (R3-ELI-Zitat, R5-Rücksprung,
+R7-Skeleton; vier Wurzel-Fixes: toter Anker, setInterval-Aushungerung→rAF, Chip-Clobber,
+font-medium-CLS [behob main-Vorbestand 0.0017]) · **R3** #436 (R4-Weiterlesen-Persistenz +
+R8-j/k/«?»; Fremdfund B5 aus #429 geheilt) · **R4** #428 (Tap-Ziel-Token + F9) · **Z** #434
+(Z1-Rest Tagerechner-ICS mit UID-Diskriminator, Z2-Print-Wurzelfix — Ausdrucke waren ohne
+Titel/SR/Stand/Banner) · **URL** #437 (LM-202: Scroll-Sync existierte nie [Bestand hatte ihn in
+§Z Ziff. 7 verworfen — vom Entscheid bestätigt]; gebaut wurde die fehlende Teilen-Hälfte).
+
+**Offene David-Frage (aus Z):** ICS ohne `TRANSP:TRANSPARENT` — Ganztages-Fristeintrag blockt
+in Outlook/Google den Tag als «beschäftigt»; Änderung bricht Golden-Anker `allg:ics` ⇒
+deklarierte Darstellungsänderung mit Test-Anpassung (§6.3), eigener Schritt nur mit David-Go.
+
+**Verbleibende Fundstellen für spätere Batches:** Link-/Zitat-Knopf-Trefferfläche 21×13 px →
+B11 (K-09b) · `EntscheidBody.tsx:104` handgerollter Adress-Schreiber ohne Pane-Wächter
+(Vorbestand, LM-202-Randfall) · Split-View-Verdacht «Sheet ohne aria-modal im Pane → j/k-Guard
+trifft nicht» (unreproduziert, PR-#436-Body) · Skip-Link-Höhe + stumme «✓ kopiert»-Ansage im
+Gesetzes-Leser → B10 (PR-#428-Body).
+
 ## §Q · Benchmark-Belege (Muster-Quellen der Recherche)
 
 - **Westlaw Precision:** History/Research Trail (thomsonreuters.com Hilfe «Searching/History»;
