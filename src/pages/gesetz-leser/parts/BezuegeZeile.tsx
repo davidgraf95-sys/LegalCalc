@@ -50,8 +50,7 @@
 // einzige Achse, die in allen vier Klassen wirklich messbar ist.
 
 import { memo, useRef, useState } from 'react';
-import { KantenChip } from '../../../components/verzahnung/KantenChip';
-import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
+import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../../../lib/verzahnung/facetten';
 import { STATUS_LABEL, STATUS_RANG } from '../../../lib/verzahnung/facetten';
@@ -96,7 +95,6 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
 }) {
   const [sichtbar, setSichtbar] = useState(PRO_SCHRITT);
   const linieRef = useRef<HTMLDivElement>(null);
-  const { oeffneDaneben, kannOeffnen, istOffen } = usePaneSteuerung();
   const anzahl = kanten.length;
 
   /**
@@ -174,19 +172,13 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
           const revidiert = klassifiziereFassungsBezug(entscheidDatum(b.datum, b.facetten.gericht), revision) === 'revidiert'
             ? (revision ?? null) : null;
           return (
-            <span key={b.key} className="inline-flex shrink-0 items-center">
-              <KantenChip to={ziel} label={b.zitierung} kategorie="entscheid"
-                leitentscheid={b.facetten.status === 'bge'}
-                revidiert={revidiert}
-                titel={b.regesteKurz ?? `${b.zitierung} — ${STATUS_LABEL[b.facetten.status]}`} />
-              {kannOeffnen && !istOffen(ziel) && (
-                <button type="button" onClick={() => oeffneDaneben(ziel)}
-                  title={`${b.zitierung} nebeneinander öffnen`} aria-label={`${b.zitierung} nebeneinander öffnen`}
-                  className="ml-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-line text-ink-500 hover:text-brass-700 hover:border-brass-400 transition-colors">
-                  <span aria-hidden className="text-base leading-none">⧉</span>
-                </button>
-              )}
-            </span>
+            <KanteMitVorschau key={b.key} ziel={ziel} zitierung={b.zitierung}
+              kurztext={b.regesteKurz}
+              leitentscheid={b.facetten.status === 'bge'}
+              revidiert={revidiert}
+              statusLabel={STATUS_LABEL[b.facetten.status]}
+              titel={b.regesteKurz ?? `${b.zitierung} — ${STATUS_LABEL[b.facetten.status]}`}
+              className="shrink-0" />
           );
         })}
         {/* ── «weitere 5» — das eine Klick-Element am Linienende ──────────────

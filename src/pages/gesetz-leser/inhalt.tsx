@@ -27,7 +27,10 @@ import {
   berechneSekPos, berechneSektionMeta, kuratiereTocSektionen,
 } from './berechnungen';
 import { GesetzFehlSeite } from './FehlSeite';
-import { setzeSuchHighlight } from './suchHighlight';
+import {
+  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, trefferProArtikel,
+} from './suchHighlight';
+import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { LadeAnzeige, PdfEmbedAnsicht, LiveVerweisAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
 import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
@@ -191,7 +194,40 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     });
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
-  const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Drawer offen?
+  const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
+  // W2·10-UI-NAV/R2: «beim Öffnen Hierarchie zur aktuellen Leseposition
+  // aufgeklappt + markiert». Markiert ist sie bereits (aktivIds → aktivPfad im
+  // Baum); aufgeklappt war sie es NICHT: im mobilen Sheet sind tiefe Zweige
+  // Default zu, und der Scroll-Spy führt sie erst beim nächsten Scroll nach —
+  // beim Öffnen sah man den gelesenen Zweig also gar nicht. Darum den aktiven
+  // Pfad beim ÖFFNEN einmalig aufklappen und wie einen Klick-Sprung als MANUELL
+  // behandeln (K): sonst klappte der Spy ihn sofort wieder zu.
+  //
+  // GENAU EINMAL je Öffnung (`pfadAufgeklapptRef`), aber MIT NACHLAUF: Bug-Check
+  // §9 vom 4.8.2026 (B5) — wer das Sheet öffnet, BEVOR der Scroll-Spy zum ersten
+  // Mal gefeuert hat (Deep-Link, sofortiges Antippen nach dem Laden), hatte
+  // `aktivIds === []`; der Effekt stieg aus und lief nie nach, weil `aktivIds`
+  // nicht in den Deps stand — das Sheet blieb ohne aufgeklappten Lesepfad. Jetzt
+  // ist `aktivIds` Dependency, und das Ref verhindert das wiederholte Aufklappen
+  // bei jedem Spy-Wechsel im offenen Sheet (kein Reflow im offenen Overlay =
+  // §15.2, und keine Endlos-Schleife: der Effekt setzt nur `tocBaum`, das seine
+  // eigene Dependency nicht ist). Das Ref wird beim Schliessen zurückgesetzt.
+  const pfadAufgeklapptRef = useRef(false);
+  useEffect(() => {
+    if (!tocAuf) { pfadAufgeklapptRef.current = false; return; }
+    if (pfadAufgeklapptRef.current || aktivIds.length === 0) return;
+    pfadAufgeklapptRef.current = true;
+    for (const id of aktivIds) {
+      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
+      manuellOffenRef.current.add(id); manuellZuRef.current.delete(id);
+    }
+    // Im rAF NACH dem Öffnungs-Paint: das Aufklappen ist damit demselben Klick
+    // zugerechnet (hadRecentInput ⇒ CLS-frei, §15.2) und der Effekt ruft kein
+    // setState synchron in seinem Rumpf (Kaskaden-Render-Regel).
+    const raf = window.requestAnimationFrame(() =>
+      setTocBaum((o) => ({ ...o, ...Object.fromEntries(aktivIds.map((id) => [id, true])) })));
+    return () => window.cancelAnimationFrame(raf);
+  }, [tocAuf, aktivIds]);
   const [tocOffen, setTocOffen] = useState(true); // ab lg: Gliederungsspalte ein-/ausklappen
   // 2-Spalten-Erkennung. R2 (Auftrag David 30.6.2026): Schwelle von 1280px auf
   // 1024px (Tailwind lg) gesenkt → die linke Gliederungsspalte erscheint schon auf
@@ -623,13 +659,108 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Handle auf den noch nicht gefeuerten Setz-rAF, damit ihn AUCH der Sofort-
   // Aufräumer unten abbestellen kann (React Compiler ist AUS, §15/4 → Ref).
   const highlightRaf = useRef<number | null>(null);
+  // W2·10-UI-NAV/R1: gemessene Fundstellen — GESAMT (Zähler in der Treffer-
+  // Leiste) und JE ARTIKEL (Zeile über dem Artikel). Beide kommen aus DERSELBEN
+  // Range-Menge, die auch die Hervorhebung malt (§5) — sonst zeigte der Zähler
+  // eine andere Zahl, als der Text Stellen leuchtet (§8). `null` = noch nicht
+  // gemessen; die Anzeige lässt den Platz reserviert und schreibt nichts
+  // Erfundenes hin (§15/2 CLS 0, §8).
+  // `begriff` ist der Gültigkeits-Schlüssel: die Messung eines FRÜHEREN Begriffs
+  // wird beim Render verworfen, statt sie im Effekt-Rumpf auf null zu setzen
+  // (kein Kaskaden-Render) — und es kann nie eine Zahl zum falschen Begriff
+  // stehenbleiben (§8).
+  const [fundstellen, setFundstellen] = useState<{ begriff: string; gesamt: number; proArtikel: Map<string, number> } | null>(null);
+  // Aktive Fundstelle der Vor/Zurück-Navigation (0-basiert; -1 = noch keine).
+  // Ref + State: der Ref trägt den Wert für den nächsten Klick (ohne Closure-
+  // Neuaufbau), der State treibt allein die Anzeige.
+  const [trefferPos, setTrefferPos] = useState(-1);
+  const trefferPosRef = useRef(-1);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (!treffer) { setzeSuchHighlight(null, ''); return; }
-    const id = window.requestAnimationFrame(() => setzeSuchHighlight(trefferRef.current, sucheTrim));
-    highlightRaf.current = id;
-    return () => { window.cancelAnimationFrame(id); highlightRaf.current = null; setzeSuchHighlight(null, ''); };
+    // EIN TreeWalker-Lauf für Malen + Zählen (§15/3: die Suche ist entprellt,
+    // also läuft er einmal je Such-Ruhephase, nicht je Tastendruck).
+    const messe = () => {
+      const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
+      setzeSuchHighlightRanges(ranges);
+      setFundstellen({ begriff: sucheTrim, gesamt: ranges.length, proArtikel: trefferProArtikel(ranges) });
+      // Die Menge ist neu — eine alte Laufnummer zeigte sonst auf eine andere Stelle.
+      trefferPosRef.current = -1;
+      setTrefferPos(-1);
+    };
+    const planen = () => {
+      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
+      highlightRaf.current = window.requestAnimationFrame(messe);
+    };
+    planen();
+    // Re-Verifikation §9 vom 4.8.2026 (RV6): Schaltet der Nutzer die Ansicht
+    // WÄHREND laufender Suche um (Fussnoten an/aus, Hist-Ansicht, …), ändert
+    // sich, was überhaupt malbar ist — die gemeldete Zahl überzeichnete bis zum
+    // nächsten Begriffs-Wechsel (gemeldet 111, anspringbar 80, Anzeige «80/111»).
+    // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
+    // («KEIN Artikel-Re-Render», leserOptionen.ts) — sie in React-State zu
+    // ziehen, würde genau diese §15-Zusage aufgeben (der OR-Reader reconciliert
+    // sonst 1686 Artikel je Toggle). Darum hier ein MutationObserver, der NUR im
+    // Suchmodus lebt und nur die Ansicht-Attribute beobachtet: er misst die EINE
+    // Range-Menge neu, sobald sich die Malbarkeit ändert. Der Beobachter kostet
+    // ausserhalb der Suche nichts (der Effekt steigt bei `!treffer` vorher aus),
+    // und im Suchmodus steht nur die kurze Trefferliste im Walker-Bereich.
+    const beob = new MutationObserver(planen);
+    beob.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-linien', 'data-verweise'],
+    });
+    return () => {
+      beob.disconnect();
+      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
+      highlightRaf.current = null;
+      setzeSuchHighlight(null, '');
+    };
   }, [treffer, sucheTrim]);
+
+  // R1 · Vor/Zurück-Sprungtasten zwischen den Fundstellen. Die Range-Menge wird
+  // bei JEDEM Sprung frisch gesammelt (nicht aus einem Ref recycelt): Ranges sind
+  // an konkrete Text-Knoten gebunden, und zwischen zwei Klicks kann der Reader
+  // Teilbäume neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Frisch
+  // sammeln ist deterministisch und kostet nur die (kurze) Trefferliste.
+  // Reines Scrollen + eine 2,4-s-Puls-Klasse am Ziel-Artikel — KEINE DOM-Mutation
+  // am Wortlaut, kein Reflow (CLS 0, §15/2).
+  // Puls am Ziel-Artikel: Element UND Timer-Handle zusammen halten (Bug-Check §9
+  // vom 4.8.2026, B6a). Beim Unmount wird der Timer abbestellt, sonst liefe der
+  // Callback nach dem Erlass-/Pane-Wechsel gegen ein abgehängtes Element. Das
+  // Element muss mitgeführt werden, weil ein schneller Folge-Klick den alten
+  // Timer verwirft — ohne diese Referenz bliebe die Puls-Klasse am vorherigen
+  // Artikel für immer stehen.
+  const blink = useRef<{ el: HTMLElement; id: number } | null>(null);
+  const blinkAus = useCallback(() => {
+    const b = blink.current;
+    if (!b) return;
+    window.clearTimeout(b.id);
+    b.el.classList.remove('lc-ziel-blink');
+    blink.current = null;
+  }, []);
+  useEffect(() => blinkAus, [blinkAus]);
+  const springeZuFundstelle = useCallback((delta: number) => {
+    if (typeof window === 'undefined') return;
+    const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
+    if (ranges.length === 0) return;
+    const jetzt = trefferPosRef.current;
+    // Noch keine aktive Fundstelle: «weiter» beginnt bei der ersten, «zurück»
+    // bei der letzten (Basis 0 bzw. -1, dann modulo).
+    const basis = jetzt < 0 ? (delta > 0 ? -1 : 0) : jetzt;
+    const n = ((basis + delta) % ranges.length + ranges.length) % ranges.length;
+    trefferPosRef.current = n;
+    setTrefferPos(n);
+    const start = ranges[n].startContainer;
+    const el = (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null;
+    el?.scrollIntoView({ block: 'center', behavior: 'auto' });
+    const art = el?.closest('article[id^="art-"]') as HTMLElement | null;
+    blinkAus();
+    if (art) {
+      art.classList.add('lc-ziel-blink');
+      blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
+    }
+  }, [sucheTrim, blinkAus]);
 
   // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der Highlight-
   // Registry hing bisher AUSSCHLIESSLICH am Effekt oben — und der läuft erst, wenn
@@ -650,6 +781,19 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Setz-Pfad hier). Wirkt für JEDEN Ausstieg aus dem Suchmodus (Feld leeren,
   // `springeZuArtikel`, Erlass-/Pane-Wechsel), unabhängig davon, welche Teilbäume
   // neu rendern. Der Effekt oben bleibt unverändert der einzige SETZENDE Pfad.
+  // ═══ ABSCHNITT · R2 · Quickjump «Art. N» + «Sie sind hier» ═══════════════════
+  // Quickjump: KEIN Index, KEIN Server — die Eingabe wird gegen die bereits
+  // geladene Token-Map des Erlasses aufgelöst (dieselbe, die Querverweise im
+  // Wortlaut auflöst, §5). Kein Treffer ⇒ null, und das Feld sagt es (§8).
+  const loeseArtikel = useCallback(
+    (eingabe: string) => (internRefs ? loeseArtikelEingabe(eingabe, internRefs.tokenMap) : null),
+    [internRefs],
+  );
+  // «Sie sind hier»: reine Projektion des SCHON vorhandenen Scroll-Spy-Zustands
+  // (aktivIds) auf die Gliederungs-Labels — keine zusätzliche Beobachtung (§15).
+  const siePfad = useMemo(() => pfadLabels(sektionen, aktivIds), [sektionen, aktivIds]);
+  const siePfadArtikel = aktArtikel ? artLabelByToken.get(aktArtikel) ?? null : null;
+
   const sucheFeldLeer = suche.trim() === '';
   useEffect(() => {
     if (typeof window === 'undefined' || !sucheFeldLeer) return;
@@ -804,6 +948,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         treffer={treffer} suche={suche} sucheDebounced={sucheDebounced} setSuche={setSuche}
         tocBaumEl={tocBaumEl} tocOffen={tocOffen} tocAuf={tocAuf} setTocOffen={setTocOffen} setTocAuf={setTocAuf}
         springeZuArtikel={springeZuArtikel}
+        // W2·10-UI-NAV/R1: Fundstellen-Zählung + Vor/Zurück-Sprungtasten.
+        fundstellen={treffer && fundstellen?.begriff === sucheTrim ? fundstellen : null}
+        trefferPos={trefferPos} springeZuFundstelle={springeZuFundstelle}
+        // W2·10-UI-NAV/R2: Quickjump + «Sie sind hier» des Gliederungs-Sheets.
+        loeseArtikel={loeseArtikel} siePfad={siePfad} siePfadArtikel={siePfadArtikel}
         bezuegeFuer={bezuegeFuer} revisionFuer={revisionFuer} historieFuer={historieFuer}
         kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
         bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}

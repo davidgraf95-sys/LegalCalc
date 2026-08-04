@@ -17,7 +17,11 @@ import type { Histogramm, Zeitbereich } from './bezugZeit';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { istAnhangToken } from './berechnungen';
+import { SUCH_META } from './suchHighlight';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
+import { TrefferLeiste } from './parts/TrefferLeiste';
+import { ArtikelSprungFeld } from './parts/ArtikelSprungFeld';
+import { GliederungSheet } from './parts/GliederungSheet';
 
 // ═══ ABSCHNITT · Volltext-Leseansicht — INNENinhalt (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationsschicht (Props rein, §3): der gesamte Innen-Render des
@@ -39,6 +43,8 @@ export function LeserVolltextInhalt({
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
+  fundstellen = null, trefferPos = -1, springeZuFundstelle,
+  loeseArtikel, siePfad = [], siePfadArtikel = null,
   leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [], klassenImErlass,
   bezugHistogramm, bezugBereich,
   reiterToast, setReiterToast, reiterToastTimerRef,
@@ -74,6 +80,21 @@ export function LeserVolltextInhalt({
   setTocOffen: Dispatch<SetStateAction<boolean>>;
   setTocAuf: Dispatch<SetStateAction<boolean>>;
   springeZuArtikel: (token: string) => void;
+  /** W2·10-UI-NAV/R1: am DOM gemessene Fundstellen (gesamt + je Artikel-Token).
+   *  null = noch nicht gemessen ⇒ die Anzeige hält den Platz frei und schreibt
+   *  nichts Erfundenes hin (§8/§15). OPTIONAL: ohne sie zeigt die Treffer-Leiste
+   *  die unveränderte Artikel-Zahl und keine Sprungtasten. */
+  fundstellen?: { gesamt: number; proArtikel: Map<string, number> } | null;
+  /** R1: 0-basierte aktive Fundstelle der Vor/Zurück-Navigation (-1 = keine). */
+  trefferPos?: number;
+  /** R1: Sprung um `delta` Fundstellen (zyklisch). Ohne Handler keine Tasten. */
+  springeZuFundstelle?: (delta: number) => void;
+  /** R2: Quickjump-Auflösung «Art. N» → Token (oder null). Ohne sie kein Feld. */
+  loeseArtikel?: (eingabe: string) => string | null;
+  /** R2: «Sie sind hier» — Gliederungspfad der aktuellen Leseposition. */
+  siePfad?: string[];
+  /** R2: «Sie sind hier» — Label des aktuell gelesenen Artikels. */
+  siePfadArtikel?: string | null;
   /** V1a-Leitfälle je Artikel. OPTIONAL und vom Reader NICHT MEHR gesetzt
    *  (W2·7-BEZUG/B4, Vorgabe David 28.7.2026): der Artikelfuss speist sich aus
    *  `bezuegeFuer`. Der Eingang bleibt für direkte Konsumenten offen. */
@@ -144,6 +165,12 @@ export function LeserVolltextInhalt({
       placeholder="Im Gesetz suchen …" aria-label="Im Gesetz suchen"
       className="lc-input h-9 py-0 text-body-s flex-1 min-w-0" />
   );
+  // W2·10-UI-NAV/R2: EIN Quickjump-Baustein (§5) — dasselbe Element im mobilen
+  // Gliederungs-Sheet UND im Desktop-TOC-Kopf. Ohne `loeseArtikel` (Aufrufer
+  // reicht sie nicht durch) entfällt er ersatzlos, statt ein totes Feld zu zeigen.
+  const quickjump = loeseArtikel
+    ? <ArtikelSprungFeld loese={loeseArtikel} onSprung={springeZuArtikel} />
+    : null;
   // E3/A34 + E5/A35: das «Ansicht»-Dropdown im SPLIT-VIEW (nur `imPane`). Es lebt in
   // der pane-lokalen STICKY Kopfzeilen-Such-Leiste (data-such-bar) statt im
   // wegscrollenden ErlassLeserKopf — so bleibt die Ansichtswahl beim Lesen im Pane
@@ -266,40 +293,29 @@ export function LeserVolltextInhalt({
           Spaltenbreite, die Gliederung sitzt als einklappbarer Drawer (wie mobil).
           So frisst die feste 16rem-TOC-Spalte erst, wenn genug Breite da ist —
           deckungsgleich mit der App-Seitenleiste (lg). Reine Darstellung (§3). */}
-      {/* Unter xl: die GLIEDERUNG als Overlay-Drawer (analog Seitenleiste), NUR auf
+      {/* Unter xl: die GLIEDERUNG als Overlay-Sheet (analog Seitenleiste), NUR auf
           Wunsch über den sticky ☰-Knopf geöffnet (Auftrag David 25.6.2026). A35: die
-          Suche ist NICHT mehr im Drawer — sie steht dauerhaft in der Kopfzeilen-Leiste
-          (oben). Der Drawer trägt jetzt allein den Gliederungsbaum; Sektionswahl
-          schliesst ihn (springeZuSektion). */}
+          Suche ist NICHT mehr darin — sie steht dauerhaft in der Kopfzeilen-Leiste
+          (oben). Sektionswahl schliesst es (springeZuSektion).
+          W2·10-UI-NAV/R2: aus dem OBEN angeschlagenen 60-vh-Drawer ist ein volles
+          BOTTOM-SHEET in der Daumenzone geworden (GliederungSheet) — mit «Sie sind
+          hier» aus dem bestehenden Scroll-Spy-Zustand und dem Quickjump «Art. N».
+          Rolle/Fokus/Esc/Portal-Verhalten unverändert (dieselbe tocDrawerRef, derselbe
+          useDialogFokus, dieselbe Overlay-Wurzel im Pane). */}
       {!istXl && tocAuf && sektionen.length > 0 && (() => {
         // Im Pane in die Overlay-Schicht portalieren + `absolute` (vom relative-
-        // Wrapper eingefangen) → der Drawer bleibt IM Pane statt als `position:fixed`
+        // Wrapper eingefangen) → das Sheet bleibt IM Pane statt als `position:fixed`
         // über beide Panes zu quellen (container-type fängt fixed nicht). Ausserhalb
-        // unverändert `fixed` an den Viewport (byte-gleich).
+        // unverändert `fixed` an den Viewport.
         const ziel = (imPane && overlayWurzel?.current) || null;
         const inPane = ziel != null;
-        const drawer = (
-          <>
-            <div className={inPane ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : `fixed inset-0 z-40 bg-ink-900/30 ${imPane ? '' : 'lg:hidden'}`}
-              onClick={() => setTocAuf(false)} aria-hidden />
-            {/* Kompakt (Wunsch David): begrenzte Höhe, fixer Kopf, NUR der
-                Gliederungsbaum scrollt darunter. In der Einzelansicht beginnt er UNTER
-                dem Inhalts-Kopf (Topbar 4rem + Kopf 2.25rem); im Pane in der Overlay-
-                Schicht ab dessen Oberkante. */}
-            <div ref={tocDrawerRef} tabIndex={-1} role="dialog" aria-modal={inPane ? undefined : true} aria-label="Gliederung"
-              className={`${inPane ? 'pointer-events-auto absolute inset-x-0 top-0 z-50 max-h-[75%]' : `fixed inset-x-0 z-50 max-h-[60vh] ${imPane ? '' : 'lg:hidden'}`} flex flex-col bg-paper-raised border-b border-line shadow-lg`}
-              style={inPane ? undefined : { top: 'calc(4rem + 2.25rem)' }}>
-              <div className="shrink-0 border-b border-line bg-paper-raised">
-                <div className="flex items-center justify-between px-4 pt-2.5 pb-2.5">
-                  <p className="lc-overline">Gliederung</p>
-                  <button type="button" onClick={() => setTocAuf(false)} className="text-micro text-ink-500 hover:text-brass-700">✕ schliessen</button>
-                </div>
-              </div>
-              <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-2 [scrollbar-width:thin]">{tocBaumEl}</div>
-            </div>
-          </>
+        const sheet = (
+          <GliederungSheet sheetRef={tocDrawerRef} inPane={inPane}
+            onSchliessen={() => setTocAuf(false)}
+            pfad={siePfad} aktArtikelLabel={siePfadArtikel}
+              sprungFeld={quickjump} baum={tocBaumEl} />
         );
-        return ziel ? createPortal(drawer, ziel) : drawer;
+        return ziel ? createPortal(sheet, ziel) : sheet;
       })()}
 
       {/* 2-Spalten-Gliederung: ab `istXl` — im Pane container-breitenabhängig
@@ -328,6 +344,13 @@ export function LeserVolltextInhalt({
               <p className="lc-overline">Gliederung</p>
               <button type="button" onClick={() => setTocOffen((v) => !v)} className="text-micro text-ink-500 hover:text-brass-700" title="Gliederung ein-/ausklappen">{tocOffen ? '‹ einklappen' : 'ausklappen ›'}</button>
             </div>
+            {/* R2: derselbe Quickjump-Baustein wie im mobilen Sheet, im TOC-KOPF
+                (Fahrplan R2 ausdrücklich: «derselbe Baustein auch im Desktop-TOC-
+                Kopf»). Er steht AUSSERHALB des [data-toc]-Scrollers, damit er beim
+                Blättern im Baum stehen bleibt und der A33-Mitscroll-/Scroll-Spy
+                den Scroller unverändert vorfindet. §15/2: fixe Höhe, ab dem ersten
+                Render da ⇒ kein Einwachsen, CLS 0. */}
+            {quickjump && <div className="mb-2 shrink-0">{quickjump}</div>}
             {/* A32 + E4-Korrektur (David 25.7.2026: «das kontextfenster soll
                 gliederung nicht abschneiden. sie soll einfach unten an der
                 gliederung stehen»): das Kontext-Panel steht IM FLUSS INNERHALB
@@ -373,9 +396,37 @@ export function LeserVolltextInhalt({
               erhalten — sie steht (identisches baueZitat-Voll-Zitat) je Artikel in
               der Artikelnummer-Zeile (ArtikelLeser). §15 Funktions-Treue gewahrt. */}
           {treffer ? (
-            <div ref={trefferRef} className="space-y-4">
-              <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{sucheDebounced.trim()}»</p>
-              {treffer.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
+            <div className="space-y-4">
+              {/* R1: die frühere nackte «N Treffer für «x»»-Zeile trägt jetzt
+                  zusätzlich die gemessene Fundstellen-Zahl und die Vor/Zurück-
+                  Sprungtasten (TrefferLeiste). Sie steht AUSSERHALB von
+                  `trefferRef` — sonst zählte der TreeWalker den Suchbegriff in
+                  der Kopfzeile als Fundstelle mit (§8: die Zahl muss die Stellen
+                  im GESETZESTEXT meinen). */}
+              <TrefferLeiste begriff={sucheDebounced.trim()} artikelAnzahl={treffer.length}
+                fundstellen={fundstellen?.gesamt ?? null} position={trefferPos}
+                onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)} />
+              <div ref={trefferRef} data-treffer-liste className="space-y-4">
+                {treffer.map((e) => {
+                  // R1 «Trefferzahl je Artikel»: gemessen aus derselben Range-Menge
+                  // wie die Hervorhebung. Der Zähler-Slot hat feste Höhe (h-4) und
+                  // steht ab dem ersten Render — die Zahl wächst hinein, nicht in
+                  // den Fluss (§15/2 CLS 0). Noch nicht gemessen ⇒ leer, nie geraten (§8).
+                  // `data-such-meta` (SUCH_META): diese Zeile ist BEDIENUNG, kein
+                  // Gesetzestext — der Treffer-Walker überspringt sie, sonst zählte
+                  // ein Begriff wie «stelle» die eigenen «N Fundstellen»-Zeilen mit
+                  // (Bug-Check §9 vom 4.8.2026, B1).
+                  const n = fundstellen?.proArtikel.get(e.artikel) ?? null;
+                  return (
+                    <div key={e.id} data-treffer-artikel={e.artikel}>
+                      <p {...{ [SUCH_META]: '' }} data-fundstellen-zahl={n ?? undefined} className="h-4 text-micro leading-4 text-ink-400">
+                        {n === null ? '' : <><span className="num">{n}</span>{n === 1 ? ' Fundstelle' : ' Fundstellen'}</>}
+                      </p>
+                      <ArtikelLeser e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />
+                    </div>
+                  );
+                })}
+              </div>
               {treffer.length === 0 && <p className="text-body-s text-ink-500">Kein Artikel gefunden.</p>}
             </div>
           ) : (
