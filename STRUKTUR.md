@@ -64,6 +64,19 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 - **Plan/Prozess:** `QS-CI-VERCEL` angelegt (§17-Wurzel-Fix: Ignored Build Step, Anlass >100
   Preview-Deployments/Tag blockierten den merge-pflichtigen Vercel-Check dieses App-fremden Diffs);
   QS-PLAN-BILD done; wip-Sonde meldete live QS-CODE-AUSSENKANTEN → Parallel-Session zog wip nach.
+- **Zweiter Bogen (spätabends, Go David «freie Bahn»):** Mehrseiten-Ausbau gelandet (`05ed90e07`,
+  direkt auf main wegen Vercel-Limit): vier verlinkte Seiten (Lagebild · Projekt & Produkt ·
+  Geschichte & Bau-Statistik · Arbeitsweise & Glossar), Aufteilung bild/bildDaten/bildHtml/
+  bildSeiten; Kacheln neu aus Register+ALLE_KARTEN (238/1231/53 nutzbar/81 geplant — §5 statt
+  Datei-Zählung). Bau: Opus-Agent · adversariale Prompt-Prüfung: Sonnet-Agent, 8 Befunde
+  (3 Blocker: QS-PERF-Titel-Fehlgriff, Kappungsverlust QS-EXTQUELLEN [Lizenzfrage!] und
+  QS-AUTOMATIK-PARITAET-Scope) → Fix-Schleife an den Bauer, alle an der Wurzel behoben, von der
+  Hauptsession einzeln nachverifiziert. §17-Beifang: fahrplan-slice-CLI ohne Import-Seiteneffekt
+  (`fahrplanSlicerKern.ts`). main-Ampel-Fix (cancelled ≠ rot); gh-Pfad im LaunchAgent-Wrapper.
+- **QS-CI-VERCEL Stand bei Session-Ende:** bewusst `wip` (PR #445 Testträger steht, App-Diff-
+  Testhälfte real erbracht, Shard-2-Flake per Rerun grün); morgen: Skip-Beweis nach Limit-Reset,
+  Merge nur bei «success» (Go David 4.8., Memory-Eintrag). main-CI zu `05ed90e07` lief bei
+  Session-Ende noch — Ampel im Lagebild zeigt das Ergebnis.
 
 ## Session 3./4.8.2026 — W2·5d + W2·10-Reader-Kette + QS-UI 8a/8b (Orchestrierung, 16 PRs)
 **Orchestrier-Session (Fable), Worktree bauplan-review-095048: 12 PRs gebaut, geprüft, gelandet — W2·5d abgeschlossen, W2·10-Reader-Kette (VR/R1/R2/R3/R4/Z/URL) komplett.**
