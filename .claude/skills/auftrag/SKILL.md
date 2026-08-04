@@ -135,10 +135,16 @@ Für den Dispatch gilt das Standard-Template
 kompaktes Pflicht-Rückgabe-Schema und `model` plus `effort` explizit in **jedem**
 Call. Beweis, Tore und Gegenprüfung bleiben davon unberührt.
 
-**Modellwahl:** Bauarbeit auf Opus 5. Für die Gegenprüfung auf Risiko-Pfaden ein
-**anderes** Modell als das bauende — der Wert liegt in der Unabhängigkeit des
-Zweitblicks, nicht in dessen Fähigkeit. Das gewählte Modell steht ohnehin im
-`Gegenpruefung:`-Trailer.
+**Rollenteilung (Anweisung David 4.8.2026):** Die Hauptsession **orchestriert
+nur** — sie zerlegt, dispatcht, prüft Rückgaben gegen prüfbare Artefakte,
+landet und pflegt den Plan. Bau- und Prüfarbeit gehen an Unteragenten.
+
+**Modellwahl nach Schwierigkeit** (je Call explizit, s. Dispatch-Template):
+anspruchsvoller Bau auf **Opus** · mechanische/leichte Arbeit (Umbenennen,
+Listen abarbeiten, Doku-Nachzug) auf **Sonnet** oder **Haiku** · Gegenprüfung
+auf Risiko-Pfaden stets auf einem **anderen** Modell als dem bauenden — der
+Wert liegt in der Unabhängigkeit des Zweitblicks, nicht in dessen Fähigkeit.
+Das gewählte Modell steht ohnehin im `Gegenpruefung:`-Trailer.
 
 ## 7. Vertrauensgrenze — wörtlich in jeden Sub-Agenten-Auftrag
 

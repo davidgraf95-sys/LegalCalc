@@ -289,6 +289,8 @@ function bauPrompt(e: Einheit, info: SchrittInfo | undefined): string {
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
     ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
+    `Arbeitsweise (Anweisung David 4.8.2026, Skill \`auftrag\` Ziff. 6): Diese Session ORCHESTRIERT nur — Bau- und Prüfarbeit gehen an Unteragenten (Dispatch-Template, je Call model+effort explizit). Modellwahl nach Schwierigkeit: anspruchsvoller Bau auf Opus, mechanische/leichte Arbeit auf Sonnet oder Haiku, Gegenprüfung stets auf einem ANDEREN Modell als dem bauenden. Die Hauptsession prüft Rückgaben gegen prüfbare Artefakte, landet und pflegt den Plan.`,
+    ``,
     `1. Lies CLAUDE.md und starte mit dem Skill \`auftrag\` (Aufnahme-Protokoll).`,
     `2. ERSTE Handlung: npm run plan:set -- ${e.id} status=wip && npm run check:plan — dann als Doku-Commit auf main pushen (sonst ist der Bau für parallele Sessions unsichtbar).`,
     e.etikett.worktree
