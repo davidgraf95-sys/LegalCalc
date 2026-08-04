@@ -9,7 +9,9 @@
 // nicht das Skript — die Weiche war immer falsch und der Sync wurde zum stillen No-op
 // (Exit 0, keine Ausgabe). Genau die Sorte lautloses Versagen, gegen die dieser PR antritt.
 // Reine Rechenlogik gehört deshalb in ein importierbares Modul ohne Seiteneffekte.
-export type Wert = string | number | null;
+/** `Uint8Array` seit QS-CODE-TURSO: der Sync überträgt die FTS5-Shadow-Tabellen, und deren
+ *  `block`/`term`/`sz`-Spalten sind BLOBs (Hrana kodiert sie base64). */
+export type Wert = string | number | null | Uint8Array;
 
 /** SQLite-Bind-Parameter je Statement. Hartes Limit ist SQLITE_MAX_VARIABLE_NUMBER (32766);
  *  8000 lässt Faktor 4 Luft und deckt jede Spaltenzahl unserer Tabellen ab. */
@@ -82,6 +84,9 @@ export function zeilenBytes(werte: Wert[]): number {
   for (const v of werte) {
     if (typeof v === 'string') n += Buffer.byteLength(JSON.stringify(v), 'utf8') + ARG_OVERHEAD;
     else if (typeof v === 'number') n += Buffer.byteLength(String(v), 'utf8') + ARG_OVERHEAD;
+    // BLOB: Hrana kodiert base64, das sind exakt ceil(n/3)*4 ASCII-Bytes — keine Schätzung,
+    // sondern die geschlossene Formel. Escaping entfällt (base64 ist JSON-sicher).
+    else if (v instanceof Uint8Array) n += Math.ceil(v.length / 3) * 4 + ARG_OVERHEAD;
     else n += ARG_OVERHEAD;
   }
   return n;

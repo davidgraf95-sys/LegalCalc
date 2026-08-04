@@ -65,8 +65,15 @@ const SCHATTEN_SPALTEN: Array<{ suffix: string; spalten: string[]; nurStandalone
  * `_idx`, `_docsize` und `_config` beider Bauarten BYTE-GLEICH; sie unterscheiden sich nur
  * darin, ob eine `_content`-Tabelle daneben liegt. `turso-fts-index.test.ts` hält das fest.
  */
-export function leseFtsSchatten(lokal: DatabaseSync, tabelle: string, mitContent: boolean): SchattenLadung[] {
-  const ladungen: SchattenLadung[] = [];
+export function* leseFtsSchatten(
+  lokal: DatabaseSync,
+  tabelle: string,
+  mitContent: boolean,
+): Generator<SchattenLadung> {
+  // GENERATOR, nicht Array: `_content` trägt bei den Entscheiden ~157 MiB Text und `_data`
+  // ~64 MiB Blobs. Würden alle Ladungen zugleich aufgebaut, lägen sie auch alle zugleich im
+  // Heap. So ist immer nur EINE Shadow-Tabelle materialisiert — dieselbe Grössenordnung, die
+  // der Sync schon vorher hielt.
   for (const { suffix, spalten, nurStandalone } of SCHATTEN_SPALTEN) {
     if (nurStandalone && !mitContent) continue;
     // `ORDER BY rowid` scheidet bei WITHOUT ROWID (`_idx`, `_config`) aus; die Reihenfolge
@@ -77,7 +84,12 @@ export function leseFtsSchatten(lokal: DatabaseSync, tabelle: string, mitContent
     const rows = lokal
       .prepare(`SELECT ${spalten.join(', ')} FROM ${tabelle}${suffix} ORDER BY ${ordnung}`)
       .all() as Array<Record<string, Wert>>;
-    ladungen.push({ suffix, spalten, werte: rows.map((r) => spalten.map((s) => r[s] ?? null)) });
+    yield { suffix, spalten, werte: rows.map((r) => spalten.map((s) => r[s] ?? null)) };
   }
-  return ladungen;
+}
+
+/** Dokumentzahl des lokalen Index — `_docsize` trägt genau eine Zeile je indexiertem
+ *  Dokument und ist damit die Soll-Zahl, gegen die der Sync die geladene Tabelle prüft. */
+export function ftsDokumente(lokal: DatabaseSync, tabelle: string): number {
+  return (lokal.prepare(`SELECT count(*) AS n FROM ${tabelle}_docsize`).get() as { n: number }).n;
 }

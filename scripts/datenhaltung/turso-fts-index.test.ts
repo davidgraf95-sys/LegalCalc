@@ -132,7 +132,7 @@ describe('FTS5-Shadow-Transport (turso-sync überträgt den fertigen Index statt
       iC.run(i * 3, text(i));
       iE.run(i * 3, text(i));
     }
-    const roh = (db: DatabaseSync) => JSON.stringify(leseFtsSchatten(db, 'f', false));
+    const roh = (db: DatabaseSync) => JSON.stringify([...leseFtsSchatten(db, 'f', false)]);
     expect(roh(extern)).toBe(roh(contentless));
   });
 });

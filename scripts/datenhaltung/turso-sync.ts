@@ -54,8 +54,8 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { DatabaseSync } from 'node:sqlite';
-import { bloeckeText } from './suche-kern';
 import { manifestDb } from './manifest';
+import { leseFtsSchatten, ftsDokumente } from './turso-fts-index';
 import {
   zeilenBytes,
   MAX_PARAM_JE_STMT,
@@ -64,6 +64,7 @@ import {
   STMT_OVERHEAD,
   TUPEL_TRENNER,
   REQUEST_OVERHEAD,
+  type Wert,
 } from './turso-transport';
 
 const URL_STD = 'libsql://lexmetrik-ravedave.aws-eu-west-1.turso.io';
@@ -79,7 +80,6 @@ const SCHATTEN = ['erlasse', 'erlass_fassungen', 'artikel', 'fts_artikel', 'fts_
 /** Teilmenge für `--nur-fts` (Basistabellen bleiben stehen). */
 const FTS_TABELLEN = ['fts_artikel', 'fts_entscheide_schaufenster'] as const;
 
-type Wert = string | number | null;
 interface Stmt {
   sql: string;
   args?: Wert[];
@@ -123,11 +123,11 @@ async function fetchRetry(input: string, init: RequestInit, versuche = 4): Promi
 }
 
 function kodiereArg(v: Wert) {
-  return v === null
-    ? { type: 'null' as const, value: null }
-    : typeof v === 'number'
-      ? { type: 'integer' as const, value: String(v) }
-      : { type: 'text' as const, value: v };
+  if (v === null) return { type: 'null' as const, value: null };
+  if (typeof v === 'number') return { type: 'integer' as const, value: String(v) };
+  // BLOB (FTS5-Shadow-Spalten `block`/`term`/`sz`): Hrana erwartet `base64`, NICHT `value`.
+  if (v instanceof Uint8Array) return { type: 'blob' as const, base64: Buffer.from(v).toString('base64') };
+  return { type: 'text' as const, value: v };
 }
 
 /** Ein Hrana-Request. `close: false` hält den Stream offen und liefert einen `baton`,
@@ -312,6 +312,53 @@ async function ladeWerte(
   return werteJeZeile.length;
 }
 
+/**
+ * Überträgt den FERTIGEN lokalen FTS5-Index in die (soeben angelegte, leere) Ziel-Tabelle,
+ * statt die Zeilen hineinzuschreiben und die Gegenseite neu indexieren zu lassen.
+ *
+ * Warum das der Wurzel-Fix des Durchsatzes ist, steht im Kopf von `turso-fts-index.ts`
+ * samt Nullprobe. Kurz: der Aufschlag lag nie am Transport, sondern am FTS5-Schreibpfad
+ * der Gegenseite — und der wächst mit dem Index, weshalb das Zeit-Budget mit dem Korpus
+ * REISST statt bloss langsamer zu werden.
+ *
+ * `mitContent` beschreibt die ZIEL-Tabelle: standalone (Text physisch gespeichert, native
+ * `snippet()`) trägt `_content` mit, contentless nicht.
+ * @returns Dokumentzahl des übertragenen Index (aus `_docsize` der lokalen Quelle).
+ */
+async function ladeFtsIndex(
+  url: string,
+  token: string,
+  lokal: DatabaseSync,
+  quellTabelle: string,
+  zielTabelle: string,
+  mitContent: boolean,
+): Promise<number> {
+  // Eine frisch per CREATE VIRTUAL TABLE angelegte FTS5-Tabelle ist NICHT leer: `_data` trägt
+  // die averages- und structure-Zeile, `_config` die Formatversion. Ohne dieses Leeren
+  // kollidierte das Laden an deren PRIMARY KEYs — und zwar erst mitten im Lauf.
+  await pipeline(url, token, [
+    { sql: `DELETE FROM ${zielTabelle}_data` },
+    { sql: `DELETE FROM ${zielTabelle}_config` },
+  ]);
+  for (const ladung of leseFtsSchatten(lokal, quellTabelle, mitContent)) {
+    await ladeWerte(url, token, `${zielTabelle}${ladung.suffix}`, ladung.spalten, ladung.werte);
+  }
+  return ftsDokumente(lokal, quellTabelle);
+}
+
+/**
+ * FTS5-eigener `integrity-check`: rechnet den Index gegen den gespeicherten Inhalt nach und
+ * schlägt fehl, wenn auch nur eine Index-Seite fehlt oder nicht zum Inhalt passt.
+ *
+ * Das ist die eigentliche Absicherung des Shadow-Transports — eine Zeilenzahl bewiese hier
+ * nichts: fehlte eine `_data`-Seite, blieben `count(*)` und die Dokumentzahl unverändert
+ * RICHTIG, während die Suche still Treffer verlöre. Genau diesen Fall zeigt
+ * `turso-fts-index.test.ts` einmal rot (§6.7).
+ */
+async function integritaet(url: string, token: string, tabelle: string): Promise<void> {
+  await pipeline(url, token, [{ sql: `INSERT INTO ${tabelle}(${tabelle}) VALUES('integrity-check')` }]);
+}
+
 const TOKENIZER = 'unicode61 remove_diacritics 2';
 
 async function main(): Promise<void> {
@@ -367,6 +414,36 @@ async function main(): Promise<void> {
   console.log(
     `  Quell-Riegel: lokaler Build == daten-manifest.json in Zeilenzahl UND sha (${zuPruefen
       .map(([n, ist]) => `${n} ${ist?.zeilen}`)
+      .join(' · ')}).`,
+  );
+
+  // 0a') INDEX-RIEGEL. Seit QS-CODE-TURSO wandert der FERTIGE lokale FTS5-Index über den
+  //      Draht statt der Zeilen. Damit gilt der Quell-Riegel oben nur noch für die halbe
+  //      Ladung: er prüft die BASIS-Tabellen gegen das Manifest, sagt aber nichts über den
+  //      Index, der aus ihnen abgeleitet wurde. Das Manifest kann ihn auch nicht abdecken —
+  //      `manifest.ts/tabellen()` klammert die FTS-Tabellen bewusst aus (rebuildbare
+  //      Ableitung). Ein Index aus einem ÄLTEREN Build läge also unbemerkt daneben und ginge
+  //      live: gleiche Zeilenzahl, falsche Treffer. Darum hier hart gegen die Basis-Zahlen.
+  const indexRiegel: Array<[string, number, number]> = [
+    ['fts_artikel', ftsDokumente(normtext, 'fts_artikel'), istNormtext['artikel']?.zeilen ?? -1],
+    [
+      'fts_entscheide_schaufenster',
+      ftsDokumente(rspr, 'fts_entscheide_schaufenster'),
+      istRspr['eintrag']?.zeilen ?? -1,
+    ],
+  ];
+  const indexFehler = indexRiegel.filter(([, ist, soll]) => ist !== soll);
+  if (indexFehler.length > 0) {
+    console.error('turso-sync ROT: lokaler FTS-Index passt nicht zu den lokalen Basis-Tabellen —');
+    for (const [name, ist, soll] of indexFehler) {
+      console.error(`  ${name}: Index ${ist} Dokumente · Basis ${soll} Zeilen`);
+    }
+    console.error('`npm run datenhaltung:build` neu fahren (er baut Basis UND Index in einem Zug).');
+    process.exit(1);
+  }
+  console.log(
+    `  Index-Riegel: lokaler FTS-Index deckt die Basis-Tabellen (${indexRiegel
+      .map(([n, ist]) => `${n} ${ist}`)
       .join(' · ')}).`,
   );
 
@@ -467,16 +544,16 @@ async function main(): Promise<void> {
   ]);
   }
 
-  // 3) FTS artikel: remote CONTENTLESS (content=''), rowid == artikel.rowid. Der indexierte
-  //    Text wird lokal aus bloecke_json extrahiert (identisch zu fts.ts/baueFtsArtikel) und
-  //    einmalig übertragen — es geht KEINE zweite strukturierte Textkopie über den Draht.
+  // 3) FTS artikel: remote CONTENTLESS (content=''), rowid == artikel.rowid. Übertragen wird
+  //    der FERTIGE lokale Index (fts.ts/baueFtsArtikel hat ihn beim `datenhaltung:build`
+  //    gebaut) — es geht weder eine zweite Textkopie über den Draht noch tokenisiert die
+  //    Gegenseite noch einmal. Lokal liegt `fts_artikel` als external-content-Tabelle über
+  //    `artikel`, das Ziel ist contentless; die Index-Shadowtabellen beider Bauarten sind
+  //    byte-gleich (empirisch, festgehalten in turso-fts-index.test.ts).
   await pipeline(url, token, [
     { sql: `CREATE VIRTUAL TABLE fts_artikel_neu USING fts5(text, content='', tokenize='${TOKENIZER}')` },
   ]);
-  const artikelTexte = (normtext
-    .prepare('SELECT rowid AS rowid, bloecke_json AS bj FROM artikel ORDER BY rowid')
-    .all() as Array<{ rowid: number; bj: string }>).map((r) => [r.rowid, bloeckeText(r.bj)] as Wert[]);
-  await ladeWerte(url, token, 'fts_artikel_neu', ['rowid', 'text'], artikelTexte);
+  const nFtsArtikel = await ladeFtsIndex(url, token, normtext, 'fts_artikel', 'fts_artikel_neu', false);
 
   // 4) FTS Schaufenster-Entscheide: standalone (Text physisch gespeichert, native snippet()).
   //    Umfang = ALLE Einträge der rechtsprechung.db (Stand 20.7.2026: 5093) — kein Filter,
@@ -487,18 +564,16 @@ async function main(): Promise<void> {
             regeste, text, quelle_url UNINDEXED, tokenize='${TOKENIZER}')`,
     },
   ]);
-  // `ORDER BY rowid` ausdrücklich: ohne ihn ist die Reihenfolge formal unbestimmt, obwohl
-  // sie faktisch stimmte. Determinismus soll aus der Abfrage folgen, nicht aus Glück
-  // (Gegenprüfungs-Befund B8).
-  const entscheide = rspr
-    .prepare('SELECT id, titel, regeste, text, quelle_url FROM fts_entscheide_schaufenster ORDER BY rowid')
-    .all() as Array<Record<string, Wert>>;
-  await ladeWerte(
+  //    Auch hier wandert der FERTIGE Index (inkl. `_content`, weil standalone) statt der
+  //    Zeilen. Das war die teuerste Phase des Syncs — 22,3 der 32,8 Minuten des CI-Laufs
+  //    29757068566 — und der Grund für diesen Umbau.
+  const nEntscheide = await ladeFtsIndex(
     url,
     token,
+    rspr,
+    'fts_entscheide_schaufenster',
     'fts_entscheide_schaufenster_neu',
-    ['id', 'titel', 'regeste', 'text', 'quelle_url'],
-    entscheide.map((r) => [r.id ?? null, r.titel ?? null, r.regeste ?? null, r.text ?? null, r.quelle_url ?? null]),
+    true,
   );
 
   // 5) Verifikation VOR dem Tausch — auf den Schatten-Tabellen. Was hier rot ist, geht nie
@@ -516,9 +591,9 @@ async function main(): Promise<void> {
     // ZEILENGLEICHHEIT fts_artikel == artikel ist die Invariante, an der der Such-Join
     // hängt — sie war bisher als einzige nirgends geprüft (Gegenprüfungs-Befund B5);
     // getestet wurde nur „MATCH liefert irgendwas". Jetzt hart gegen die Artikel-Zahl.
-    ['fts_artikel_neu (zeilengleich artikel)', 'SELECT count(*) FROM fts_artikel_neu', artikelTexte.length],
+    ['fts_artikel_neu (zeilengleich artikel)', 'SELECT count(*) FROM fts_artikel_neu', nFtsArtikel],
     ['fts_artikel_neu MATCH "und"', "SELECT count(*) FROM fts_artikel_neu WHERE fts_artikel_neu MATCH '\"und\"'", -1],
-    ['fts_entscheide_schaufenster_neu', 'SELECT count(*) FROM fts_entscheide_schaufenster_neu', entscheide.length],
+    ['fts_entscheide_schaufenster_neu', 'SELECT count(*) FROM fts_entscheide_schaufenster_neu', nEntscheide],
     [
       'smoke "verjahrung" (diakritik-gefaltet)',
       `SELECT count(*) FROM fts_artikel_neu WHERE fts_artikel_neu MATCH '"verjahrung"'`,
@@ -541,6 +616,20 @@ async function main(): Promise<void> {
     const ok = soll === -1 ? ist > 0 : ist === soll;
     if (!ok) rot = true;
     console.log(`  verify ${name}: remote=${ist}${soll >= 0 ? ` soll=${soll}` : ''} ${ok ? 'OK' : 'ROT'}`);
+  }
+  // FTS5-INTEGRITÄT der übertragenen Indizes. Zählungen und MATCH-Proben oben zeigen nur,
+  // DASS etwas ankam — sie könnten einen Index mit fehlenden Seiten nicht von einem
+  // vollständigen unterscheiden, weil `count(*)` aus `_docsize` kommt und eine MATCH-Probe
+  // schon bei einem einzigen Treffer grün wird. Erst `integrity-check` rechnet den Index
+  // gegen den Inhalt nach. Steht bewusst VOR dem Tausch: was hier reisst, geht nie live.
+  for (const t of ['fts_artikel_neu', 'fts_entscheide_schaufenster_neu']) {
+    try {
+      await integritaet(url, token, t);
+      console.log(`  verify ${t} integrity-check: OK`);
+    } catch (e) {
+      rot = true;
+      console.log(`  verify ${t} integrity-check: ROT (${e instanceof Error ? e.message : e})`);
+    }
   }
   if (rot) {
     console.error('turso-sync ROT: Schatten-Tabellen unvollständig — KEIN Tausch, Live-Stand bleibt unverändert.');
@@ -570,8 +659,8 @@ async function main(): Promise<void> {
   let nachRot = false;
   const nachChecks: Array<[string, string, number]> = [
     ['artikel', 'SELECT count(*) FROM artikel', nurFts ? -1 : nArtikel],
-    ['fts_artikel (zeilengleich artikel)', 'SELECT count(*) FROM fts_artikel', artikelTexte.length],
-    ['fts_entscheide_schaufenster', 'SELECT count(*) FROM fts_entscheide_schaufenster', entscheide.length],
+    ['fts_artikel (zeilengleich artikel)', 'SELECT count(*) FROM fts_artikel', nFtsArtikel],
+    ['fts_entscheide_schaufenster', 'SELECT count(*) FROM fts_entscheide_schaufenster', nEntscheide],
     ['fts_artikel MATCH "verjahrung"', `SELECT count(*) FROM fts_artikel WHERE fts_artikel MATCH '"verjahrung"'`, -1],
     [
       'fts_entscheide MATCH "beschwerde"',
