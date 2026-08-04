@@ -181,6 +181,67 @@ function katalogStatus(): Record<string, number> {
   return out;
 }
 
+function schrittIdInTitel(titel: string): string | null {
+  const m = titel.match(/\b(QS-[A-ZÄÖÜ0-9-]+|W\d·[\wÄÖÜäöü·-]+)\b/);
+  return m ? m[1] : null;
+}
+
+/** origin-Remote → https-Basis für PR-Links (null, wenn nicht ableitbar). */
+function repoWebUrl(): string | null {
+  const raw = sh('git', ['remote', 'get-url', 'origin']);
+  if (!raw) return null;
+  const m = raw.trim().match(/github\.com[:/](.+?)(?:\.git)?$/);
+  return m ? `https://github.com/${m[1]}` : null;
+}
+
+interface GelandetPr { number: number; title: string; mergedAt: string; roadmapId: string | null }
+function zuletztGelandet(): GelandetPr[] | null {
+  const raw = sh('gh', ['pr', 'list', '--state', 'merged', '--limit', '5', '--json', 'number,title,mergedAt']);
+  if (raw === null) return null;
+  try {
+    const prs = JSON.parse(raw) as { number: number; title: string; mergedAt: string }[];
+    return prs.map((p) => ({ ...p, roadmapId: schrittIdInTitel(p.title) }));
+  } catch {
+    return null;
+  }
+}
+
+/** Jüngster abgeschlossener Workflow-Lauf auf main — die «ist main gesund?»-Ampel. */
+function mainAmpel(): { gruen: boolean; name: string; wann: string } | null {
+  const raw = sh('gh', ['run', 'list', '--branch', 'main', '--limit', '10', '--json', 'conclusion,status,workflowName,updatedAt']);
+  if (raw === null) return null;
+  try {
+    const runs = JSON.parse(raw) as { conclusion: string | null; status: string; workflowName: string; updatedAt: string }[];
+    const fertig = runs.find((r) => r.status === 'completed' && r.conclusion);
+    if (!fertig) return null;
+    return {
+      gruen: fertig.conclusion === 'success',
+      name: fertig.workflowName,
+      wann: new Date(fertig.updatedAt).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' }),
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** Erledigt-Einträge im Chronik-Archiv (##-Blöcke) — das ehrliche Gegenstück
+ *  zu den kleinen done-Zahlen im Plan, der fast nur den offenen Rest führt. */
+function chronikErledigt(): number | null {
+  try {
+    return (readFileSync('ROADMAP-CHRONIK.md', 'utf8').match(/^## /gm) ?? []).length;
+  } catch {
+    return null;
+  }
+}
+
+/** Seit wie vielen Tagen ein Blocker-String in ROADMAP.md steht (git-Historie). */
+function blockerSeitTagen(blocker: string): number | null {
+  const raw = sh('git', ['log', '--format=%ct', '-S', blocker, '--', 'ROADMAP.md']);
+  const aeltester = raw?.trim().split('\n').filter(Boolean).pop();
+  if (!aeltester) return null;
+  return Math.floor((Date.now() / 1000 - Number(aeltester)) / 86400);
+}
+
 interface PrInfo { number: number; title: string; headRefName: string; roadmapId: string | null; checks: string }
 function offenePrs(): PrInfo[] | null {
   const raw = sh('gh', ['pr', 'list', '--state', 'open', '--json', 'number,title,headRefName,statusCheckRollup', '--limit', '30']);
@@ -192,8 +253,7 @@ function offenePrs(): PrInfo[] | null {
       const fertig = rollup.filter((c) => c.status === 'COMPLETED' || c.conclusion);
       const rot = rollup.some((c) => ['FAILURE', 'TIMED_OUT', 'CANCELLED'].includes(c.conclusion ?? ''));
       const checks = rollup.length === 0 ? 'keine Checks' : rot ? 'Checks ROT' : fertig.length === rollup.length ? 'Checks grün' : 'Checks laufen';
-      const rm = p.title.match(/\b(QS-[A-ZÄÖÜ0-9-]+|W\d·[\wÄÖÜäöü·-]+)\b/);
-      return { number: p.number, title: p.title, headRefName: p.headRefName, roadmapId: rm ? rm[1] : null, checks };
+      return { number: p.number, title: p.title, headRefName: p.headRefName, roadmapId: schrittIdInTitel(p.title), checks };
     });
   } catch {
     return null;
@@ -268,6 +328,11 @@ function baueSeite(opts: { watch: number | null }): string {
   const { worktrees, altBranches } = worktreesUndBranches();
   const kat = katalogStatus();
   const stand = new Date().toLocaleString('de-CH', { dateStyle: 'medium', timeStyle: 'short' });
+  const web = repoWebUrl();
+  const prLink = (n: number, text: string) => (web ? `<a href="${web}/pull/${n}">${esc(text)}</a>` : esc(text));
+  const gelandet = zuletztGelandet();
+  const ampel = mainAmpel();
+  const chronik = chronikErledigt();
 
   // Prompts je baubarem Schritt (JSON ins Dokument, Kopier-Knopf liest daraus).
   const prompts: Record<string, string> = {};
@@ -313,12 +378,27 @@ function baueSeite(opts: { watch: number | null }): string {
   const imBau: string[] = [];
   for (const id of b.inArbeit) {
     const pr = prs?.find((p) => p.roadmapId === id);
-    imBau.push(`<li><span class="s wip"></span><div><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span><br><span class="sub">${pr ? `PR #${pr.number} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
+    imBau.push(`<li><span class="s wip"></span><div><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span><br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
   }
   const fremdePrs = (prs ?? []).filter((p) => !b.inArbeit.includes(p.roadmapId ?? ''));
   for (const p of fremdePrs) {
-    imBau.push(`<li><span class="s wip"></span><div><b>PR #${p.number}: ${esc(p.title)}</b><br><span class="sub">${esc(p.checks)} · Branch ${esc(p.headRefName)}</span></div></li>`);
+    imBau.push(`<li><span class="s wip"></span><div><b>${prLink(p.number, `PR #${p.number}`)}: ${esc(p.title)}</b><br><span class="sub">${esc(p.checks)} · Branch ${esc(p.headRefName)}</span></div></li>`);
   }
+
+  const gelandetHtml = (gelandet ?? [])
+    .map((p) => {
+      const wann = new Date(p.mergedAt).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' });
+      const schritt = p.roadmapId ? ` <span class="id">${esc(p.roadmapId)}</span>` : '';
+      return `<li><span class="s done"></span><div>${prLink(p.number, `PR #${p.number}`)}: ${esc(p.title)}${schritt}<br><span class="sub">gelandet ${esc(wann)}</span></div></li>`;
+    })
+    .join('\n');
+
+  // Parallel-Start-Empfehlung: Lane 1 des Resolvers = untereinander
+  // kollisionsfreie ready-Schritte; @queue-Rang steht darin vorn.
+  const laneEmpfehlung = (b.lanes[0] ?? []).filter((id) => prompts[id]).slice(0, 4);
+  const laneHtml = laneEmpfehlung
+    .map((id) => `<li><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span> <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
+    .join('\n');
 
   const karten = kartenDaten
     .map((k) => {
@@ -363,7 +443,11 @@ function baueSeite(opts: { watch: number | null }): string {
     .join('\n');
 
   const davidHtml = [
-    ...b.blockiert.map((x) => `<li><b>${esc(t(x.id))}</b> <span class="id">${esc(x.id)}</span> — wartet auf: <b>${esc(x.blocker)}</b></li>`),
+    ...b.blockiert.map((x) => {
+      const tage = blockerSeitTagen(x.blocker);
+      const seit = tage !== null && tage > 0 ? ` <span class="quelle">— wartet seit ${tage} Tag${tage === 1 ? '' : 'en'}</span>` : '';
+      return `<li><b>${esc(t(x.id))}</b> <span class="id">${esc(x.id)}</span> — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
+    }),
     ...DAVID_FRAGEN.map((f) => `<li>${esc(f.frage)} <span class="quelle">(${esc(f.quelle)})</span></li>`),
   ].join('\n');
 
@@ -452,6 +536,15 @@ ${refresh}
   .hinweis { font-size:.82rem; color:var(--faint); margin-top:.6rem; }
   #toast { position:fixed; bottom:1rem; left:50%; transform:translateX(-50%); background:var(--ink); color:var(--paper);
     border-radius:6px; padding:.5rem 1rem; font-size:.85rem; opacity:0; transition:opacity .2s; pointer-events:none; }
+  a { color:var(--gold); text-decoration-thickness:1px; text-underline-offset:2px; }
+  a:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  .springen { font-size:.82rem; color:var(--faint); margin-top:.9rem; }
+  .springen a { color:var(--soft); }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+  #filter { font:inherit; font-size:.9rem; color:var(--ink); background:var(--raised); border:1px solid var(--line);
+    border-radius:6px; padding:.5rem .8rem; width:100%; max-width:26rem; margin-top:1rem; }
+  #filter:focus-visible { outline:2px solid var(--gold); outline-offset:1px; }
 </style>
 </head>
 <body>
@@ -464,9 +557,11 @@ ${refresh}
   <p class="lede">Ziel («Nordstern»): die eine Anlaufplattform für alle Rechtsanwender — nur amtliche Quellen,
   transparente Fundstellen, deterministische Werkzeuge. Diese Seite wird mechanisch aus dem Steuerplan erzeugt
   (dieselbe Logik wie <span class="id">npm run plan:next</span>).</p>
+  ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
+  <nav class="springen">Springen zu: <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>
 </header>
 
-<section>
+<section id="david">
   <p class="eyebrow">Engpass</p>
   <div class="panel">
     <h2>Wartet auf dich, David</h2>
@@ -474,7 +569,7 @@ ${refresh}
   </div>
 </section>
 
-<section>
+<section id="imbau">
   <p class="eyebrow">Gerade im Bau</p>
   <h2>Was jetzt läuft</h2>
   <ul class="liste">${imBau.join('\n') || '<li><span class="sub">Nichts im Bau (kein wip-Schritt, keine offenen PRs).</span></li>'}</ul>
@@ -483,15 +578,26 @@ ${refresh}
   <p class="hinweis">${prs === null ? '⚠ GitHub-CLI (gh) nicht verfügbar — PR-Status entfällt in dieser Ansicht. ' : ''}Die Anzeige ist so aktuell wie die wip-Disziplin: Sessions setzen ihren Schritt vor Baubeginn auf «wip».</p>
 </section>
 
-<section>
+<section id="gelandet">
+  <p class="eyebrow">Zuletzt gelandet</p>
+  <h2>Was kürzlich fertig wurde</h2>
+  <ul class="liste">${gelandetHtml || `<li><span class="sub">${gelandet === null ? '⚠ GitHub-CLI (gh) nicht verfügbar — Sektion entfällt.' : 'Keine kürzlich gemergten PRs.'}</span></li>`}</ul>
+</section>
+
+<section id="queue">
   <p class="eyebrow">Reihenfolge</p>
   <h2>Als Nächstes dran — deine Warteschlange</h2>
   <p class="lede">Mit «Bau-Prompt kopieren» holst du dir den fertigen Auftrag für eine neue Claude-Code-Session
   (enthält wip-Setzen, Worktree-Regel, Spec-Befehl, Definition of Done und die §14.7-Klausel).</p>
   <ol class="queue">${queueHtml}</ol>
+  ${laneEmpfehlung.length > 1 ? `<div class="panel" style="border-color:var(--sage);background:var(--sage-bg);margin-top:1.2rem">
+    <h3 style="color:var(--sage)">Jetzt parallel startbar — ohne Kollision</h3>
+    <p class="sub">Diese Schritte berühren getrennte Dateiflächen (Resolver-Lane 1): du kannst für jeden eine eigene Session starten, sie kommen sich nicht in die Quere.</p>
+    <ul class="liste" style="margin-top:.6rem">${laneHtml}</ul>
+  </div>` : ''}
 </section>
 
-<section>
+<section id="karte">
   <p class="eyebrow">Gesamtkarte</p>
   <h2>Wo wir auf dem Weg zum Nordstern stehen</h2>
   <p class="lede">Die Monatsangaben des Gesamtaufbau-Plans sind Reihenfolge, keine Termine.</p>
@@ -502,14 +608,16 @@ ${refresh}
     <div class="tile"><b>${(() => { try { return (JSON.parse(readFileSync('public/rechtsprechung/register.json', 'utf8')) as { entscheide: unknown[] }).entscheide.length; } catch { return '—'; } })()}</b><span>Gerichtsentscheide live</span></div>
     <div class="tile"><b>${werkzeuge || '—'}</b><span>Werkzeuge live (Status «Entwurf»)</span></div>
     <div class="tile"><b>${kat['geplant'] ?? '—'}</b><span>weitere Werkzeuge geplant</span></div>
+    ${chronik !== null ? `<div class="tile"><b>${chronik}</b><span>Arbeitspakete bereits erledigt &amp; archiviert (Chronik)</span></div>` : ''}
   </div>
 </section>
 
-<section>
+<section id="baustellen">
   <p class="eyebrow">Baustellen</p>
   <h2>Die Baustellen im Einzelnen</h2>
   <p class="lede">Sortiert: im Bau zuerst, dann nach Umfang. Der Balken zeigt nur die aktuell im Plan geführten
-  Schritte — ganze abgeschlossene Wellen liegen im Chronik-Archiv und drücken die Zahlen hier nicht mehr.</p>
+  Schritte — ${chronik !== null ? `die ${chronik} bereits erledigten Arbeitspakete liegen im Chronik-Archiv` : 'ganze abgeschlossene Wellen liegen im Chronik-Archiv'} und drücken die Zahlen hier nicht mehr.</p>
+  <input id="filter" type="search" placeholder="Baustellen filtern — z. B. «Gesetze», «Kanton», «Design» …" aria-label="Baustellen filtern">
   <div class="cards">${karten}</div>
 </section>
 
@@ -524,6 +632,13 @@ ${refresh}
 <script>
   const PROMPTS = ${json};
   let timer = null;
+  const filter = document.getElementById('filter');
+  if (filter) filter.addEventListener('input', () => {
+    const q = filter.value.trim().toLowerCase();
+    for (const card of document.querySelectorAll('.cards .card')) {
+      card.style.display = !q || card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    }
+  });
   document.addEventListener('click', (ev) => {
     const b = ev.target.closest('.kopier');
     if (!b) return;
