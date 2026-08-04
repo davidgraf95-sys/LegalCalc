@@ -475,3 +475,13 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
 >   §13, Normtext-Körper bleibt farbfrei, golden byte-gleich.
 >   **Detail:** diese Datei §5. Trailer `Roadmap: W2·11-DESIGN`.
 
+
+---
+
+## §6 · ROADMAP-Spec-Nachzug `W2·11-DESIGN-D8b` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Teilschritt `W2·11-DESIGN-D8b` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, der Einzeiler und der
+Grenz-Hinweis. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §2 (D-8.2) dieser Datei.***
+
+> **Grenze zu `W2·17-UI-BEFUNDE-B12`:** hier nur der Schriftart-Tausch (mono → Text), dort Verhalten und Zustände derselben Felder — nacheinander bauen, nicht gleichzeitig (`src/components/forms`, `DatumsFeld.tsx`, `BetragsFeld.tsx`).

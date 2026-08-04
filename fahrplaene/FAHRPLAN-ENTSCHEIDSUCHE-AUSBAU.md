@@ -250,3 +250,13 @@ Nachweis ist eine Erfindung.
   `check:gegenpruefung` **bestanden** (Opus, unabhängig gegen den Staatskalender) · golden byte-gleich.
   **Fundament zugleich für** `W3·15-RICHTER` und Davids «Kenne-deine-Prüfer»-Dossier.
   Trailer `Roadmap: W2·6-RNAME`.
+
+---
+
+## §9 · ROADMAP-Spec-Nachzug `W2·6-RNAME` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·6-RNAME` — AP-11 rückwirkend angewandt (ROADMAP-Diät
+Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, der Kurzabsatz und der Pointer auf §8.
+Steuert nicht — Spec-Heimat.*
+
+> ohne eindeutigen amtlichen Treffer bleibt die Abkürzung stehen (§8).

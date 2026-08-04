@@ -1093,3 +1093,17 @@ liegen lassen, nicht treiben.
       schweigen, «nur kuratierter Korpus durchsucht» ausweisen, oder kalt nachladen mit spürbarer Latenz.
       Ein stiller Teiltreffer wäre der Fehler aus PR #313 in neuer Form (dort servierte `api/suche` einen halben
       Index, **ohne je rot zu werden**). Entscheid gehört David; bis dahin nicht implementieren.
+
+---
+
+## §15 · ROADMAP-Spec-Nachzug `W2·6-DATA` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Teilschritt `W2·6-DATA` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, der Andockpunkt-Satz, das
+David-Gate der Heiss/Kalt-Grenze und der Pointer auf §14. Steuert nicht — Spec-Heimat.
+**→ Bau-Spec: Etappen E0–E6b dieser Datei.***
+
+>       **E0–E4 gebaut**; offen ist (i) VPS-gebunden E3-Serving + E4-UI-Panels (David-Gate
+>       `vps-bestellung-david`), (ii) frei baubar die Datenhaltungs-Optimierung, nachgelagert E5 (26×)/E6a/E6b.
+>       **Heiss/Kalt-Grenze bleibt DAVID-GATE** — was die Suche behaupten darf, wenn der Long-Tail kalt
+>       liegt, ist eine §8-Frage, nicht technisch entscheidbar; bis dahin nicht implementieren.
