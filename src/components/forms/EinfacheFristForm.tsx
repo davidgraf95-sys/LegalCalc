@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { berechneAllgemeineFrist, type Einheit } from '../../lib/allgemeineFrist';
 import { berechneFrist } from '../../lib/zpoFristen';
@@ -10,9 +10,11 @@ import { KANTONE } from '../../lib/kantone';
 import { stillstandsperioden } from '../../data/zpoFeiertage';
 import type { Kanton } from '../../types/legal';
 import { ErgebnisBlock } from '../ErgebnisBlock';
+import { IcsExportButton } from '../IcsExportButton';
 import type { FristMarkierung } from '../start/FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { EINHEITEN, FERIEN_OPTIONEN, icsTitelSchnellrechner, type Ferien } from './einfacheFristTexte';
 
 // ─── Einfacher Fristenrechner (S-5a FAHRPLAN-STRUKTUR-UMBAU) ────────────────
 //
@@ -24,31 +26,6 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 // eigene Rechtslogik. Die ZPO-/SchKG-Aufrufe nutzen offengelegte
 // Standard-Annahmen (Ergebnis zeigt sie); Sonderkonstellationen gehören in
 // die Voll-Rechner («verfeinern»-Link mit denselben Werten, §5-Kodierung).
-
-type Ferien = 'keine' | 'zpo' | 'schkg' | 'vwvg' | 'bgg';
-
-const FERIEN_OPTIONEN: { code: Ferien; label: string; sub: string }[] = [
-  // Bug-Check §9 (fachliche Lupe, MITTEL): Samstag-Verschiebung folgt dem
-  // Fristengesetz (SR 173.110.3, eidg. Recht) — bei reinen Vertragsfristen
-  // nicht zwingend; der Rechenweg nennt den Verschiebegrund.
-  { code: 'keine', label: 'Keine Ferien', sub: 'Vertrags-/Gesetzesfrist (Art. 77/78 OR) – Verschiebung bei Sa/So/Feiertag (Sa nach Fristengesetz; bei reinen Vertragsfristen nicht zwingend – im Zweifel vorher handeln)' },
-  { code: 'zpo', label: 'Gerichtsferien (ZPO)', sub: 'Stillstand nach Art. 145 ZPO – Annahme: ordentliches Verfahren, gesetzliche Frist' },
-  // Bug-Check §9 (fachliche Lupe, MITTEL): präzise Art.-63-Kurzform —
-  // dritter TAG NACH Ferienende, Sa/So/Feiertage nicht mitgezählt.
-  { code: 'schkg', label: 'Betreibungsferien (SchKG)', sub: 'Art. 56/63 SchKG – Fristende in den Ferien → Verlängerung bis zum 3. Tag nach Ferienende (Sa/So/Feiertage zählen nicht)' },
-  // Verwaltungs-/BGG-Stillstand (13.6.2026): gleiche drei Perioden wie die ZPO,
-  // ABER nur für nach Tagen bestimmte Fristen (Wochen/Monate/Jahre stehen nicht
-  // still) – die Engine legt das offen.
-  { code: 'vwvg', label: 'Verwaltungs-Stillstand (VwVG)', sub: 'Art. 22a VwVG – Stillstand (Ostern ± 7 · 15.7.–15.8. · 18.12.–2.1.) nur für nach Tagen bestimmte Fristen; nicht bei vorsorglichen Massnahmen / öffentlichen Beschaffungen' },
-  { code: 'bgg', label: 'BGG-Stillstand (Bundesgericht)', sub: 'Art. 46 BGG – Stillstand (gleiche drei Perioden) nur für nach Tagen bestimmte Fristen; Ausnahmen nach Abs. 2 (vorsorgliche Massnahmen, Wechselbetreibung, Stimmrecht …)' },
-];
-
-const EINHEITEN: { code: Einheit; label: string }[] = [
-  { code: 'tage', label: 'Tage' },
-  { code: 'wochen', label: 'Wochen' },
-  { code: 'monate', label: 'Monate' },
-  { code: 'jahre', label: 'Jahre' },
-];
 
 const istISOTag = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s);
 
@@ -169,11 +146,19 @@ export function EinfacheFristForm({ minimal = false, onErgebnis }: {
 
   // #7: Kalender-Markierung nach oben melden (Schnellrechner). Für ALLE Regimes,
   // damit der Kalender immer das Fristende zeigt (Auftrag David). Deterministisch.
+  //
+  // W2·10-UI-NAV-Z1: derselbe Wert trägt jetzt auch den ICS-Export (unten), darum
+  // EINMAL memoisiert statt zweimal gerechnet. Identische Eingaben, identische
+  // Auslöse-Bedingungen wie zuvor — verhaltensneutral (§6), und `baueMarkierung`
+  // ist rein (§2). Der Export liest hier nur ab, er rechnet nichts (§3).
+  const markierung = useMemo(
+    () => (gueltig ? baueMarkierung(start, laenge, einheitEffektiv, ferien, kanton) : null),
+    [gueltig, start, laenge, einheitEffektiv, ferien, kanton],
+  );
   useEffect(() => {
     if (!onErgebnis) return;
-    const m = gueltig ? baueMarkierung(start, laenge, einheitEffektiv, ferien, kanton) : null;
-    onErgebnis(m ? { markierung: m, kanton } : null);
-  }, [onErgebnis, gueltig, start, laenge, einheitEffektiv, ferien, kanton]);
+    onErgebnis(markierung ? { markierung, kanton } : null);
+  }, [onErgebnis, markierung, kanton]);
 
   const verfeinernZiel = ferien === 'zpo'
     ? zpoFristenLink({ ereignis: start, einheit: einheitEffektiv, laenge, verfahren: 'ordentlich', kanton, fristnatur: 'gesetzlich' })
@@ -280,6 +265,33 @@ export function EinfacheFristForm({ minimal = false, onErgebnis }: {
                 <Link to={verfeinernZiel} className="font-medium text-brass-700 hover:text-brass-600 no-underline">
                   Im {ferien === 'zpo' ? 'ZPO' : 'SchKG'}-Rechner verfeinern (Verfahren, Zustellart, Hemmung …) →
                 </Link>
+              </p>
+            )}
+            {/* W2·10-UI-NAV-Z1 (ICS-Rest): der Schnell-/Tagerechner war der einzige
+                Fristen-Ausgang OHNE Kalender-Ausleitung — alle Voll-Rechner tragen
+                den geteilten IcsExportButton seit FAHRPLAN-PRAXIS 1.1, und genau
+                dieser Rechner ist der meistbenutzte Einstieg (Startseite + /rechner).
+                Reine Ausleitung (§3): das ISO-Enddatum kommt unverändert aus
+                `markierung` (= dem Engine-Ergebnis, das schon den Kalender speist),
+                der Beschrieb übernimmt WÖRTLICH die angezeigten Formulierungen samt
+                Vorbehalten und Annahmen (§8) — er formuliert nichts neu. Die
+                zentrale «keine Rechtsberatung»-Fusszeile setzt lib/icsExport.ts. */}
+            {markierung?.endeISO && (
+              <p className="pt-1">
+                <IcsExportButton
+                  endISO={markierung.endeISO}
+                  /* Diskriminierender Titel — sonst kollidieren zwei fachlich
+                     verschiedene Fristen mit gleichem Endtag in EINER UID und
+                     der Kalender überschreibt stumm (§9-Bug-Check M-1, s. o.). */
+                  titel={icsTitelSchnellrechner(start, laenge, einheitEffektiv, ferien)}
+                  className="lc-btn-outline lc-btn-sm"
+                  beschreibung={[
+                    `Fristende: ${ende}`,
+                    `Fristenlauf: ${FERIEN_OPTIONEN.find((o) => o.code === ferien)?.label ?? ''}`,
+                    endeZusatz,
+                    ...zeilen,
+                  ].filter((z) => z.trim() !== '').join('\n')}
+                />
               </p>
             )}
           </div>

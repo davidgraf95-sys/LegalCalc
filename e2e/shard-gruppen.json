@@ -5,6 +5,7 @@
       "ag-gruendung-wizard.e2e.ts",
       "fussnote-absatz-altform.e2e.ts",
       "gesetze-ia4-scope.e2e.ts",
+      "ics-export-z1.e2e.ts",
       "leser-gliederung-a33.e2e.ts",
       "leser-optionen.e2e.ts",
       "leser-r1-r2.e2e.ts",
@@ -12,6 +13,7 @@
     ],
     "2": [
       "a31a-fussnote-inline.e2e.ts",
+      "druck-fundstellen-z2.e2e.ts",
       "entscheid-verweis-praezision.e2e.ts",
       "gesetze-rechtsgebiet-g6.e2e.ts",
       "gesetze-ux-9punkte.e2e.ts",
