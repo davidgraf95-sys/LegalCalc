@@ -28,7 +28,7 @@ const CHIP_KLASSE: Record<'norm' | 'entscheid', string> = {
   entscheid: 'lc-chip lc-chip-entscheid num no-underline hover:text-slate-700 hover:border-slate-700',
 };
 
-export const KantenChip = memo(function KantenChip({ to, label, sublabel, leitentscheid = false, revidiert, titel, kategorie = 'norm' }: {
+export const KantenChip = memo(function KantenChip({ to, label, sublabel, leitentscheid = false, revidiert, titel, kategorie = 'norm', ariaExpanded, ariaControls }: {
   to: string;
   /** Doktyp-Kürzel oder Zitierung, z. B. «OR» oder «BGE 147 III 209». */
   label: string;
@@ -46,12 +46,19 @@ export const KantenChip = memo(function KantenChip({ to, label, sublabel, leiten
   revidiert?: ArtikelRevision | null;
   /** Hover-/Screenreader-Titel des Chips (Default: `label`). */
   titel?: string;
+  /** V3/B2: trägt der Chip eine aufklappbare Vorschau, sagt er ihren Zustand an.
+   *  `undefined` (Default) ⇒ Attribut fehlt ⇒ Markup byte-identisch zum Bestand. */
+  ariaExpanded?: boolean;
+  /** Id des aufgeklappten Kastens — NUR im offenen Zustand setzen (eine
+   *  Referenz ins Leere ist ein a11y-Fehler, keine Auskunft). */
+  ariaControls?: string;
 }) {
   // Dichte-Regel: Sublabel gewinnt → ★ als Präfix; sonst ★ als Suffix.
   const sternPraefix = leitentscheid && !!sublabel;
   const sternSuffix = leitentscheid && !sublabel;
   return (
     <Link to={to} title={titel ?? label}
+      aria-expanded={ariaExpanded} aria-controls={ariaControls}
       className={CHIP_KLASSE[kategorie]}>
       {sternPraefix && <StatusBadge praedikat="leitentscheid" variant="glyph" className="mr-1" />}
       {label}
