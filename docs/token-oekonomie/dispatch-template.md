@@ -80,6 +80,15 @@ Verletzung am 3.8.2026 mehrfach Leerlauf erzeugte:
 - **`gh pr merge` führt der Orchestrator aus.** Der Berechtigungs-Klassifikator
   blockt Merges in Unteragenten grundsätzlich; ein Agent, der bis zum
   Merge-Kommando plant, scheitert planbar. Im Auftrag von Anfang an so verteilen.
+- **Gegenprüfung sofort dispatchen, nie stapeln (Lehre Nacht 4./5.8.2026).**
+  Liefert ein Bau-Agent mit «Gegenprüfung ausstehend» zurück, dispatcht der
+  Orchestrator den Prüf-Agenten SOFORT — parallel zum nächsten Bau, nicht
+  gesammelt am Session-Ende. Und: eine Orchestrierungs-Session ist erst fertig,
+  wenn ihre grünen PRs gelandet oder EXPLIZIT an eine Lande-Session übergeben
+  sind — Landeschuld übernachtet nicht stillschweigend. Realfall: 10 QS-CODE-PRs
+  vom 4.8. blieben offen (4 davon ohne je dispatchte Gegenprüfung), die
+  Nacht-Session musste Prüfung + Landung komplett nachholen (§17). Die
+  §0-Klausel 6 bleibt unverändert — sie bindet den Agenten, nicht die Session.
 
 ### Was der Block kostet — ehrliche Bilanz (Korrektur 20.7.2026)
 

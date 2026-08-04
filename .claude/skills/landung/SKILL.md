@@ -90,6 +90,13 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    **`cancelled` und `skipped` zählen als ROT**, nicht als «nicht rot» — ein
    abgebrochener Lauf hat nichts bewiesen. (Realfall 20.7.2026: 5 stumm
    abgebrochene `turso-sync`-Läufe, der Suchindex veraltete unbemerkt.)
+   **Und: FEHLENDE Checks zählen als PENDING, nie als grün.** Im Fenster
+   direkt nach einem Push sind die Checks des neuen Heads noch nicht
+   registriert — wer dann «kein pending, kein fail» als grün liest, merged
+   ungeprüft. Vor der Bewertung die Präsenz der Kern-Batterie verifizieren
+   (Tore + Bau + letzter Playwright-Shard). (Realfall 4./5.8.2026: Wächter
+   meldete GRÜN, während Bau/Tore noch gar nicht liefen — nur der
+   Verifikations-Zwischenschritt vor dem Merge fing es ab.)
 
    **Wenn nach einem Push KEIN `pull_request`-Lauf erscheint** (Realfälle
    3.8.2026, PRs #414/#417): erst die Ursache prüfen, dann das passende Mittel —

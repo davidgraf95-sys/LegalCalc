@@ -239,8 +239,15 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   (1686 Artikel, 1,9 MB) braucht schon ungedrosselt 9,1 s, kippt zwischen Drossel 1× und 6×
   (Messreihe im PR-#436-Body); Wurzel-Fix: kleinerer Mess-Erlass ODER kalibriertes Budget nach
   QS-PERF Ziff. 5 — blosses Hochsetzen ohne Messreihe ist dort ausgeschlossen.
+- **Nachtrag Nacht-Landekette 4./5.8.2026 (Dringlichkeit steigt):** (d) traf DREIMAL in einer
+  Nacht — Shard 2/8 rot auf PR #456 (Doku-Diff = eigene Nullprobe, Runner 16m33s statt ~9m,
+  zusätzlich `leser-ruecksprung-r5-r7` R7-Overlay-Überhang 4375 ms gegen 1500er-Budget unter
+  CPU-Drossel), erneut auf PR #449 (chf-Formatter-Diff) und auf PR #454 (Turso-Sync-Diff) —
+  die Reader-Druckstrecke war in allen drei Diffs unberührt. Alle per Rerun/Neubasierung
+  grün; Kosten je Vorfall ~1 Batterie-Zyklus (~18 min).
 - **Dateien:** `playwright.config.ts` / betroffene Specs, `scripts/datenhaltung/suche.test.ts`,
-  `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`.
+  `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`,
+  `e2e/leser-ruecksprung-r5-r7.e2e.ts`.
 
 ### §3.5 `QS-E2E-SHARD-GEN` — Shard-Zuordnung in die Spec, JSON generieren
 
@@ -258,6 +265,34 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   Parallel-Fall (zwei Branches, je neue Spec) konfliktfrei merged.
 - **Dateien:** `e2e/*.e2e.ts` (Annotationen), neuer Generator unter `scripts/`,
   `.gitattributes`, `scripts/e2e-shard-gruppen.mjs`.
+
+### §3.6 `QS-GP-NACHBEFUNDE` — Nebenbefunde der Gegenprüfungs-Nacht 4./5.8.2026 (drei Härtungen)
+
+Drei nicht-blockierende Befunde aus den adversarialen Prüfungen der QS-CODE-Landekette
+(PRs #447/#448, Verdikte im Gegenprüfungs-Register 2026-08-04), gebündelt als eine
+Bau-Einheit — gleiche Risiko-Klasse (Prüf-/Klassifikations-Härtung), keine Vermischung:
+
+1. **fedlex-Fläche in `istRisikoPfad()` aufnehmen** *(Prüfung #447, Befund 2 — Bestand aus
+   main, nicht PR-verursacht)*: `src/lib/fedlex.ts` war NIE Risiko-klassiert, und seit dem
+   #444-Split gilt dasselbe für `src/lib/fedlex/` — die Fedlex-Extraktionsschicht läuft ohne
+   Gegenprüfungs-Tor, während `scripts/fedlex-*` längst klassiert ist. Fix: beide Pfade in
+   `scripts/gegenpruefung/kern.ts` aufnehmen, Test analog zum `zustaendigkeit/`-Zweig
+   (Rot-Beweis: heutiges `false` je Pfad festhalten, §6.7). BEWUSSTE FOLGE: künftige
+   fedlex-Edits brauchen ein Verdikt — das ist der Zweck, nicht ein Nebeneffekt.
+2. **`leakErkannt` bekommt einen Pipeline-Konsumenten** *(Prüfung #448, Befund 1, niedrig)*:
+   der Anonymisierungs-Leak-Flag des Besetzungs-Parsers wird ausserhalb der Tests nirgends
+   ausgewertet (`scripts/normtext/entscheide-schreiben.ts` liest nur `res.richter`).
+   Fix: Leak-Fälle beim Schreiben zählen und im `check:besetzung`-Bericht ausweisen.
+3. **`trenneInterneTitel` darf `PARTEI_RE` nicht unterlaufen** *(Prüfung #448, Befund 2,
+   niedrig-mittel; empirische Probe: «A.________, vertreten durch Rechtsanwalt Dr. Jürg
+   Krumm» → Teilsegment «Dr. Jürg Krumm» passiert den Partei-Filter)*: Segment verwerfen,
+   wenn schon das URSPRUNGS-Segment vor der Titel-Trennung `PARTEI_RE` trifft.
+   Regressionstest mit genau dieser Probe.
+
+- **Risikopfad** (kern.ts-Klassifizierer ist Prüflogik, Punkte 2–3 berühren
+  `src/lib/rechtsprechung/besetzung/` = Risiko) ⇒ Gegenprüfung für Punkte 2–3.
+- **Fertig, wenn:** je Punkt Rot-Beweis/Regressionstest vorhanden, `check:besetzung` und
+  Gegenprüfungs-Suite grün, Verdikt im Register.
 
 ---
 

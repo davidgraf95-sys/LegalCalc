@@ -82,6 +82,10 @@ export const INVENTAR: readonly string[] = [
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
   'QS-KORPUS-BMV', 'W2·5k-LINIEN-KONZEPT', 'QS-KORPUS-SCOPE', 'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
 
+  // §14-Intake 4./5.8.2026 (Nacht-Landekette): Nebenbefunde der adversarialen Gegenprüfungen
+  // zu PR #447/#448 — fedlex-Risiko-Klassifikation, leakErkannt-Konsument, PARTEI_RE-Härtung.
+  'QS-GP-NACHBEFUNDE',
+
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
