@@ -519,13 +519,86 @@
 
   /* Druck: UI-Chrome ausblenden, Inhalt auf Weiss — Juristinnen drucken.
      (Rechenweg/Annahmen vor dem Drucken aufklappen; PDF-Export bleibt der
-     präzisere Weg.) */
+     präzisere Weg.)
+
+     ── W2·10-UI-NAV-Z2 · «Print-CSS für Fundstellen» ────────────────────────
+     Belegter Ausgangsbefund (reproduziert in `e2e/druck-fundstellen-z2.e2e.ts`
+     über `page.emulateMedia({ media: 'print' })`, 3 von 4 Prüfungen rot):
+
+     1. Der Pauschal-Selektor `header` traf nicht nur die klebende Topbar,
+        sondern AUCH `ErlassLeserKopf` und den Entscheid-Kopf — also genau die
+        Fundstelle: Titel, SR-Nummer, **Stand-Zeile**, Ur-Inkrafttreten, der
+        Link auf die geltende Fassung (ELI) und im Aufhebungsfall das
+        §8-Banner «Aufgehoben per …». Ein Ausdruck ohne Stand-Zeile ist als
+        Aktenstück wertlos; einer ohne Aufhebungs-Hinweis ist irreführend
+        (§8-Ehrlichkeit gilt auf Papier wie am Bildschirm).
+     2. Externe Quell-Links druckten als blosser Text («↗ geltende Fassung») —
+        die Fundstelle ging beim Drucken verloren.
+     3. `content-visibility: auto` (`.nt-art-cv`, 1686 Artikel allein im OR)
+        und die Scroll-Panes des Split-Views schnitten den Ausdruck auf den
+        gerade sichtbaren Ausschnitt zu.
+
+     Ausgeblendet wird darum jetzt gezielt die klebende Topbar über
+     `header.lc-glass` — der einzige Glas-Header der App. Damit diese Kopplung
+     nicht still bricht, hält `src/tests/druck-fundstellen.test.ts` beide
+     Enden fest (Topbar trägt `lc-glass`; die Druckregel führt keinen nackten
+     `header`-Selektor mehr). Keine Rechtslogik berührt (§3) — reine
+     Darstellungsschicht, und keine rohe Trefferflächen-Zahl (F9). ── */
   @media print {
-    header, footer, nav, button, .lc-btn, .lc-live { display: none !important; }
+    /* Seitenrand des Ausdrucks: Kanzlei-Akte wird gelocht/geheftet. */
+    @page { margin: 1.6cm; }
+
+    /* Chrome: klebende Topbar, Fuss, Navigation, Bedienelemente. Der
+       Inhalts-Kopf (`main header`) ist bewusst NICHT dabei — er IST die
+       Fundstelle. */
+    header.lc-glass, footer, nav, button, .lc-btn, .lc-live { display: none !important; }
     body { background: #fff; }
     .lc-card, [class*='shadow'] { box-shadow: none !important; }
     .lc-reveal { animation: none !important; }
     a { color: inherit; text-decoration: none; }
+
+    /* Fundstelle mitdrucken: absolute Quell-URLs (Fedlex-ELI, amtliches PDF,
+       entscheidsuche) treten als Text neben den Linktext. Interne SPA-Links
+       bleiben unangetastet — deren relative Pfade wären nur Rauschen (D1:
+       jeder Rechtswert mit Norm, Link und Stand). */
+    a[href^="http"]::after {
+      content: ' <' attr(href) '>';
+      font-size: .85em;
+      overflow-wrap: anywhere;
+    }
+
+    /* Nichts wird auf den sichtbaren Ausschnitt zugeschnitten: weder durch
+       ausgelagertes Rendering (content-visibility) noch durch die
+       Scroll-Panes/Overlays des Split-Views.
+
+       §9-Bug-Check M-3: Die erste Fassung dieser Regeln war auf `main …`
+       gescopt und griff im Split-View DESHALB ins Leere — die Höhenbegrenzung
+       sitzt dort nämlich gar nicht unter `<main>`, sondern (a) am
+       Multipane-Rahmen `h-dvh` (Shell.tsx, eine Ebene ÜBER main) und (b) am
+       Pane-`<main>` SELBST (`absolute inset-0 overflow-y-auto`), das ein
+       Nachfahren-Selektor per Definition nicht trifft. Gemessen: 653 988 px
+       des Primär-Panes wurden abgeschnitten, der Split-Ausdruck endete nach
+       einer Seite. Die Selektoren stehen darum jetzt ungescopt — im Druck ist
+       das Chrome ohnehin ausgeblendet, es bleibt der Inhalt. Belegt in
+       e2e/druck-fundstellen-z2.e2e.ts («Split-View-Ausdruck …», öffnet einen
+       zweiten Pane real und misst Pane-Überhang + Dokumenthöhe). */
+    .nt-art-cv { content-visibility: visible !important; contain-intrinsic-size: none !important; }
+    [class*='overflow-y-auto'], [class*='overflow-x-auto'], [class*='overflow-auto'],
+    [class*='h-dvh'], [class*='h-screen'], [class*='max-h-'] {
+      overflow: visible !important;
+      height: auto !important;
+      /* `auto` statt einer Zahl — F9 verbietet rohe min-height-Werte. */
+      min-height: auto !important;
+      max-height: none !important;
+    }
+    [class*='inset-0'], [class*='sticky'], .sticky {
+      position: static !important;
+    }
+
+    /* Umbruch-Hygiene: Überschrift bleibt bei ihrem Text, Tabellen-Zeilen und
+       Listenpunkte werden nicht mitten durchgeschnitten. */
+    h1, h2, h3, h4, .lc-overline { break-after: avoid-page; }
+    tr, li, blockquote, .lc-notice, .lc-notice-danger { break-inside: avoid; }
   }
 }
 
