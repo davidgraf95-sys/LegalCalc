@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  abonniereRuecksprung, ermittleLesePosition, setzeRuecksprung, springeZurueck,
-  type Ruecksprung,
+  abonniereRuecksprung, ermittleLesePosition, leseRuecksprung, setzeRuecksprung,
+  springeZurueck, type Ruecksprung,
 } from '../../pages/gesetz-leser/scrollAnker';
 
 // ─── W2·10-UI-NAV/R5 · «↩ zurück zu Art. X» ──────────────────────────────────
@@ -70,7 +70,18 @@ export function RuecksprungChip() {
   // Frist neu (der vorige Timer wird über den Cleanup verworfen).
   useEffect(() => {
     if (!ziel) return;
-    const t = window.setTimeout(() => { setzeRuecksprung(null); setZiel(null); }, LEBENSDAUER_MS);
+    const t = window.setTimeout(() => {
+      // Die Registry nur leeren, wenn sie NOCH diesen Rücksprung führt. Sonst
+      // löscht der Verfall des alten Chips einen inzwischen vorgemerkten neuen
+      // — und mit ihm dessen noch schwebendes Einschwing-Fenster im Abo oben,
+      // sodass der neue Chip nie erscheint. Beobachtet auf CI und lokal
+      // nachgestellt: ein zweiter TOC-Sprung im ~700-ms-Fenster VOR dem Verfall
+      // (Abstand 7300 ms von 8000 ms) verlor seinen Rückweg vollständig,
+      // während 2000 ms und 7800 ms ihn zeigten. Identitätsvergleich genügt:
+      // jedes `merkeRuecksprungVonDom` legt ein neues Objekt ab.
+      if (leseRuecksprung() === ziel) setzeRuecksprung(null);
+      setZiel(null);
+    }, LEBENSDAUER_MS);
     return () => window.clearTimeout(t);
   }, [ziel]);
 

@@ -132,6 +132,28 @@ test.describe('R5 — Rücksprung-Chip', () => {
     await page.waitForTimeout(2000);
     await expect(chip(page)).toHaveCount(0);
   });
+
+  // Regression (CI-Rot 30870125582 → Produkt-Defekt, nicht Testartefakt):
+  // Der Verfall des ALTEN Chips leerte die Registry bedingungslos und löschte
+  // damit das noch schwebende Einschwing-Fenster eines inzwischen vorgemerkten
+  // NEUEN Sprungs — wer im ~700-ms-Fenster kurz vor Ablauf erneut sprang, verlor
+  // seinen Rückweg ganz. Lokal nachgestellt: Abstand 2000 ms → Chip da,
+  // 7300 ms → Chip FEHLTE, 7800 ms → Chip da. Der Test setzt genau in dieses
+  // Fenster; die Wartezeit ist darum load-bearing und keine Bequemlichkeit.
+  test('Zweiter Sprung kurz vor Ablauf des ersten Chips bekommt trotzdem einen', async ({ page }) => {
+    test.slow();
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await warteReader(page, '/gesetze/bund/BV');
+    await page.locator('#art-8').scrollIntoViewIfNeeded();
+    await page.waitForTimeout(400);
+
+    await tocSprung(page).last().click();
+    await expect(chip(page)).toBeVisible({ timeout: 8000 });
+    // Kurz VOR die 8-s-Frist zielen (ab Sichtbarkeit gerechnet, nicht ab Klick).
+    await page.waitForTimeout(7300);
+    await tocSprung(page).first().click();
+    await expect(chip(page), 'neuer Sprung behält seinen Rückweg').toBeVisible({ timeout: 8000 });
+  });
 });
 
 // ── R7 · Deep-Link-Einsprung ─────────────────────────────────────────────────
@@ -338,21 +360,17 @@ test('A9 — Chip: Tastatur/aria/Tap-Ziel, und der TOC-Sprung bleibt unter 6× D
   // Tap-Ziel ≥ 44 px (WCAG 2.5.8 / R6-Mass) — er wird auf dem Daumen bedient.
   expect(gemessen.hoehe, `Chip-Höhe ${gemessen.hoehe}px`).toBeGreaterThanOrEqual(44);
 
-  // Tastatur an einem FRISCHEN Chip. Grund (CI-Rot 30867800070, «element was
-  // detached from the DOM»): auf dem gesättigten Runner vergingen zwischen dem
-  // Erscheinen des Chips und dieser Stelle mehr als seine 8-s-Lebensdauer — der
-  // Test verlor damit gegen die Verfallsfrist, die er selbst prüft. Ein zweiter
-  // Sprung (anderer Abschnitt, bewegt also) setzt die Frist neu und macht den
-  // Tastatur-Teil unabhängig vom Maschinentempo.
-  await tocSprung(page).first().click();
-  await page.waitForTimeout(1400);
-  const frisch = chip(page);
-  await expect(frisch).toBeVisible();
-  await frisch.focus();
-  await expect(frisch).toBeFocused();
+  // Tastatur DIREKT danach, am selben Chip: per Tab erreichbar, mit Enter
+  // auslösbar. Die Zwischenfassung holte sich hier einen zweiten, «frischen»
+  // Chip, um der 8-s-Frist auszuweichen — das war der falsche Weg (CI-Rot
+  // 30870125582) und hat den Test bloss von einer Zeitkopplung in die nächste
+  // gehängt. Richtig ist, zwischen «Chip steht» und «wir bedienen ihn» so wenig
+  // Wanduhr wie möglich zu verbrauchen: ein evaluate, dann sofort focus.
+  await c.focus();
+  await expect(c).toBeFocused();
   await page.keyboard.press('Enter');
   await page.waitForTimeout(400);
-  await expect(frisch).toHaveCount(0);
+  await expect(c).toHaveCount(0);
 
   const { cls, bericht } = await clsAuslesen(page);
   // Chip und Overlay liegen ausserhalb des Layoutflusses (fixed/absolute) — sie

@@ -27,18 +27,10 @@ const ART_HASH = /^#art-(.+)$/;
  *  statt zu behaupten, es käme noch etwas (§8). Den Regelfall entscheidet der
  *  Takt unten, nicht diese Kappe. */
 const KAPPE_MS = 6000;
-/** Toleranz um die Leselinie (`--nt-stick` ≈ 4rem + 2.25rem), ab der der Sprung
- *  als gelandet gilt. Grosszügig: es geht um «ist er dort», nicht um Pixel. */
-const LANDE_TOLERANZ_PX = 140;
 
 export function DeepLinkSkeleton() {
   const { hash, pathname } = useLocation();
   const [aktiv, setAktiv] = useState(false);
-  // Etikett des Ziels, sobald es lesbar ist. Bis dahin bleibt der Text neutral:
-  // aus dem Token lässt es sich NICHT ableiten (der Token ist opak, K2/R8, und
-  // die Etikett-Regel — Art./§, bis/ter-Suffixe — lebt in den Artikel-Daten,
-  // §5). Lieber «die verlinkte Stelle» als eine erfundene Artikelnummer (§8).
-  const [label, setLabel] = useState('');
 
   useEffect(() => {
     const m = ART_HASH.exec(hash);
@@ -105,24 +97,39 @@ export function DeepLinkSkeleton() {
         // content-visibility-Materialisierung); «irgendein Artikel da» ist damit
         // ein verlässliches «der Reader steht». Dann: aufhören und den Blick auf
         // das Dokument freigeben — der Reader selbst behandelt den unbekannten
-        // Anker weiter wie bisher.
+        // Anker weiter wie bisher. (Der Satz «die Lande-Bedingung könnte nie
+        // eintreten» galt der früheren Warteschleife; seit der Übergabe unten
+        // beim ersten Sichten des Ziels bleibt hier der Fall «Ziel kommt nie».)
         if (document.querySelector('article[id^="art-"]')) { schliesse(); return; }
-        setAktiv(true); setLabel('');
+        setAktiv(true);
         raf = window.requestAnimationFrame(pruefe);
         return;
       }
-      const top = el.getBoundingClientRect().top;
-      // Etikett nachziehen, sobald der Anker da ist (sein Textinhalt IST das
-      // Label — der Fussnoten-Marker steht ausserhalb des <a>).
-      const a = el.querySelector<HTMLElement>(`a[href="#${CSS.escape(id)}"]`);
-      const txt = a?.textContent?.trim();
-      if (txt) setLabel(txt);
-      // Gelandet = das Ziel steht im oberen Lesebereich. Erst dann weg, sonst
-      // bliebe der Dokumentanfang in der Lücke zwischen «Element da» und
-      // «Sprung ausgeführt» doch wieder sichtbar (im Audit ~1 s).
-      if (top >= -LANDE_TOLERANZ_PX && top <= LANDE_TOLERANZ_PX) { schliesse(); return; }
-      setAktiv(true);
-      raf = window.requestAnimationFrame(pruefe);
+      // Ziel ist da ⇒ Übergabe an den Reader. Der Vorgänger wartete hier noch
+      // ab, bis das Ziel an der Leselinie STAND («Lande-Bedingung») — das war
+      // ein Fehlschluss aus meiner eigenen Messung und hat echten Schaden
+      // angerichtet:
+      //
+      //  · Das Prod-Re-Audit zeigt, dass der Dokumentanfang BEREITS NICHT MEHR
+      //    sichtbar ist, wenn das Ziel in den DOM kommt (Anfang sichtbar bis
+      //    1788/2424/2839 ms, Ziel im DOM ab 3687/4331/4751 ms). Die Lücke, die
+      //    das Warten schliessen sollte, existiert gar nicht. Nachgemessen mit
+      //    dieser Fassung: null Frames mit sichtbarem Dokumentanfang nach dem
+      //    Schliessen, bei 6× und 14× Drossel.
+      //  · Bezahlt wurde das Warten mit einer NUTZERSICHTBAREN REGRESSION: das
+      //    länger stehende Overlay samt seiner Rect-Lesung je Frame brachte den
+      //    Scroll-Spy des Readers um seine erste Markierung — nach einem
+      //    Deep-Link-Einsprung blieb die Gliederung unmarkiert, bis der Leser
+      //    zum ersten Mal scrollte (A/B belegt: mit Overlay 0 markierte
+      //    Einträge, ohne Overlay 2; Bestands-Spec leser-kopf-a9 lief darauf
+      //    auf). Ein Ladehinweis darf die Sicht, die er überbrückt, nicht
+      //    beschädigen (§1 vor §15, und §8: nichts verschlechtern).
+      //
+      // Darum: sobald das Ziel steht, ist die Aufgabe erledigt. Ohne Rect-
+      // Lesung, ohne Warteschleife — das erspart nebenbei das erzwungene Layout
+      // je Frame in genau der Sekunde, in der die Seite ohnehin am meisten zu
+      // tun hat (§15).
+      schliesse();
     };
     // Erste Prüfung sofort im nächsten Frame — das Overlay soll im selben
     // Wimpernschlag stehen wie der leere Dokumentanfang, den es ersetzt.
@@ -135,7 +142,6 @@ export function DeepLinkSkeleton() {
   }, [hash, pathname]);
 
   if (!aktiv) return null;
-  const ziel = label || 'die verlinkte Stelle';
   return (
     <div role="status" aria-live="polite"
       // Positioniert wird RELATIV zum Inhalts-Kopf (`top-full`), nicht über eine
@@ -146,7 +152,14 @@ export function DeepLinkSkeleton() {
       // ich». Verdeckt wird nur der Dokumentanfang, der hier nichts zu suchen hat.
       className="pointer-events-none absolute inset-x-0 top-full z-30 flex h-screen justify-center bg-paper px-5">
       <div className="w-full max-w-3xl pt-8">
-        <p className="text-body-s text-ink-600">Springe zu <span className="font-medium text-ink-800">{ziel}</span> …</p>
+        {/* Ohne Artikel-Etikett: es steht erst im DOM, wenn das Ziel da ist —
+            und dann ist das Overlay schon weg. Aus dem opaken Anker-Token
+            liesse es sich nicht ableiten (K2/R8), und eine geratene
+            Artikelnummer wäre schlimmer als keine (§8). Die frühere Fassung
+            setzte den Platzhalter in denselben Satzbau wie ein Etikett und
+            erzeugte damit «Springe zu die verlinkte Stelle» — grammatisch
+            falsch und im CI-Report nachlesbar. */}
+        <p className="text-body-s text-ink-600">Springe zur verlinkten Stelle …</p>
         {/* Platzhalter-Zeilen: sie sagen «hier kommt Text», ohne Text zu
             behaupten. `aria-hidden`, die Ansage steckt im Satz darüber. */}
         <div aria-hidden className="mt-6 animate-pulse space-y-3">
