@@ -1,4 +1,5 @@
 # FAHRPLAN — Kantonale Gesetze: 3-Tier-Import + Confidence-Quarantäne
+<!-- @lagebild name: Kanton-Gesetze-Bündel · zweck: Breitenimport kantonaler Gesetze (26×-Slot, seriell). -->
 
 **Heimat: ROADMAP-Schritt `W3·12`.**
 

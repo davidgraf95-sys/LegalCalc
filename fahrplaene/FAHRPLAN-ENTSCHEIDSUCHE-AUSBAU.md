@@ -1,4 +1,5 @@
 # Fahrplan — entscheidsuche voll ausschöpfen (Teil-B-Ausbau)
+<!-- @lagebild name: Entscheide filtern · zweck: Filter nach Gericht und Facetten; Richternamen-Auflösung (Risikopfad). -->
 
 **Heimat: ROADMAP-Schritte `W2·6-FILTER` und `W2·6-RNAME`.**
 

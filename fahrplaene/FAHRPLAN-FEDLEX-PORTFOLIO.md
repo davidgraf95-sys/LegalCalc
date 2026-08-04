@@ -1,4 +1,5 @@
 # FAHRPLAN-FEDLEX-PORTFOLIO — Nützliche Fedlex-Datenarten für LexMetrik
+<!-- @lagebild name: Bundesrecht aktuell halten · zweck: Wächter gegen Abweichungen zur amtlichen Quelle; Korpus-Lücken schliessen; Watchlist. -->
 
 **Heimat: ROADMAP-Schritte `QS-CURRENCY`, `W2·14-SIGNAL`, `W2·14-SIGNAL-B1`,
 `W2·14-SIGNAL-B2`, `W2·14-SIGNAL-GER`** (je Paket am Ende dieses Dokuments benannt).

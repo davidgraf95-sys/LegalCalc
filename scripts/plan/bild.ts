@@ -23,39 +23,25 @@ import { parseRoadmap, type Einheit } from './parse';
 import { resolve, type Buckets } from './aufloesen';
 
 // ---------------------------------------------------------------------------
-// Klartext-Schicht (Übersetzungen, von Hand gepflegt — neue Fahrpläne fallen
-// auf den Dateinamen zurück, die Seite bleibt also nie leer).
+// Klartext-Schicht: jeder Fahrplan beschreibt sich selbst über eine
+// @lagebild-Kopfzeile (SSoT §5 — die Namen leben bei ihrer Datei, neue
+// Fahrpläne bringen sie mit). Fallback ist der aufbereitete Dateiname,
+// die Seite bleibt also nie leer.
 // ---------------------------------------------------------------------------
-const BAUSTELLEN: Record<string, { name: string; zweck: string }> = {
-  'FAHRPLAN-GESETZES-UX.md': { name: 'Gesetze lesen', zweck: 'Der Gesetzes-Leser: Bundesrecht bequem lesen — Inhaltsverzeichnis, Suche im Gesetz, Anhänge, Druck.' },
-  'FAHRPLAN-UI-NAVIGATION.md': { name: 'Suchen & Navigieren', zweck: 'App-weite Suche und Wege zwischen Gesetzen, Entscheiden und Werkzeugen.' },
-  'FAHRPLAN-UI-BEFUNDE.md': { name: 'Feinschliff-Befundliste', zweck: 'Abarbeitung der 210 Befunde einer externen Sichtprüfung (29.7.2026) in Paket-Kette.' },
-  'FAHRPLAN-KANTONE.md': { name: 'Kantonale Gesetze', zweck: 'Die kantonalen Erlasse so sauber darstellen und sichern wie das Bundesrecht.' },
-  'FAHRPLAN-RECHTSPRECHUNG.md': { name: 'Gerichtsentscheide', zweck: 'Rechtsprechungs-Korpus: präzisere Verweise, Mehrsprachigkeit, Übersicht.' },
-  'FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md': { name: 'Entscheide filtern', zweck: 'Filter nach Gericht und Facetten; Richternamen-Auflösung (Risikopfad).' },
-  'FAHRPLAN-DESIGN-WAERME.md': { name: 'Design & Atmosphäre', zweck: 'Wärmeres, ruhigeres Erscheinungsbild — Token-Schicht, dann Anwendung.' },
-  'FAHRPLAN-VERZAHNUNG-UI.md': { name: 'Verzahnung sichtbar machen', zweck: 'Das Alleinstellungsmerkmal: Gesetz ↔ Entscheid ↔ Werkzeug verknüpft anzeigen.' },
-  'FAHRPLAN-PROZESSKOSTEN-COCKPIT.md': { name: 'Prozesskosten-Cockpit', zweck: 'Der Haupt-Rechner: Restbau plus Verzahnung Frist × Kosten.' },
-  'FAHRPLAN-VORLAGEN-AUSBAU.md': { name: 'Schriften-Baukasten', zweck: 'Vorlagen für Berufung, BGG-Beschwerde, Sistierung, Beweisverzeichnis.' },
-  'FAHRPLAN-SPLIT-VIEW.md': { name: 'Split-View', zweck: 'Gesetz, Rechner und Entscheid nebeneinander wie Browser-Fenster.' },
-  'FAHRPLAN-GESETZESDARSTELLUNG-V2.md': { name: 'Norm-Zeitmaschine', zweck: 'Frühere Gesetzes-Fassungen ansehen, Fassungs-Unterschiede, Linien-Konzept.' },
-  'FAHRPLAN-FEDLEX-PORTFOLIO.md': { name: 'Bundesrecht aktuell halten', zweck: 'Wächter gegen Abweichungen zur amtlichen Quelle; Korpus-Lücken schliessen; Watchlist.' },
-  'FAHRPLAN-MATERIALIEN-VERZAHNUNG.md': { name: 'Amtliche Materialien', zweck: 'Botschaften, Rundschreiben & Co. einbinden und mit den Normen verzahnen.' },
-  'FAHRPLAN-DATENHALTUNG.md': { name: 'Eigene Datenbank / Server', zweck: 'Fundament für Selbst-Hosting und «DB = die eine Wahrheit».' },
-  'FAHRPLAN-PERFORMANCE.md': { name: 'Tempo', zweck: 'Geräte-Last und Ladezeit, ohne Logikverlust (§15).' },
-  'FAHRPLAN-UI-QUALITAET.md': { name: 'Oberflächen-Qualität & Anleitung', zweck: 'Laufender UI-Qualitäts-Pass; später Funktions-Inventar und Bedienungsanleitung.' },
-  'FAHRPLAN-TOKEN-OEKONOMIE.md': { name: 'Arbeitskosten senken', zweck: 'Doku und Prozesse verschlanken, damit jede Bau-Session weniger Tokens verbraucht.' },
-  'FAHRPLAN-LERNPHASE-2026.md': { name: 'Prüfwerkzeuge schärfen', zweck: 'Gegenprüfung schneller melden, Tests stabiler, Beweis-Werkzeuge.' },
-  'FAHRPLAN-BASIS-AUSBAU.md': { name: 'CI & Wächter', zweck: 'Zustandsberichte, tote Abhängigkeiten, Paritäts-Sonden — hält den Bau sicher.' },
-  'FAHRPLAN-CODE-VERBESSERUNG.md': { name: 'Code-Aufräumung', zweck: 'Entdopplung und Struktur, ohne Verhaltensänderung (golden-gesichert).' },
-  'FAHRPLAN-SEO-A11Y-GOVERNANCE.md': { name: 'SEO & Barrierefreiheit', zweck: 'Auffindbarkeit in Suchmaschinen und Zugänglichkeit, mit Regeln statt Einzelfixes.' },
-  'FAHRPLAN-OPTIMIERUNG-2026-07.md': { name: 'Betriebs-Optimierung', zweck: 'Kleinere Betriebs- und Auslieferungs-Verbesserungen.' },
-  'FAHRPLAN-ARCHIV-RESTPUNKTE.md': { name: 'Archiv-Restpunkte', zweck: 'Übriggebliebene Einzelposten älterer Aufträge.' },
-  'FAHRPLAN-GESETZE-IMPORT-3TIER.md': { name: 'Kanton-Gesetze-Bündel', zweck: 'Breitenimport kantonaler Gesetze (26×-Slot, seriell).' },
-  'FAHRPLAN-PLAN-STEUERUNG.md': { name: 'Plan-Steuerung', zweck: 'Werkzeuge, mit denen der Plan selbst geführt wird (plan:next, dieses Lagebild).' },
-  'FAHRPLAN-NORMTEXT-DARSTELLUNG.md': { name: 'Normtext-Darstellung', zweck: 'Treue Darstellung der Gesetzestexte im Leser.' },
-};
 const OHNE_FAHRPLAN = { name: 'Einzelposten ohne Fahrplan', zweck: 'Schritte, deren Detail direkt im Plan steht.' };
+
+/** Liest `<!-- @lagebild name: … · zweck: … -->` aus dem Kopf der Fahrplan-Datei. */
+function baustellenInfo(fahrplanPfad: string): { name: string; zweck: string } {
+  const basis = fahrplanPfad.replace(/^.*\//, '');
+  const fallback = { name: basis.replace(/^FAHRPLAN-|\.md$/g, '').replace(/-/g, ' '), zweck: `Detailplan: ${basis}` };
+  try {
+    const kopf = readFileSync(fahrplanPfad, 'utf8').split('\n').slice(0, 12).join('\n');
+    const m = kopf.match(/<!--\s*@lagebild\s+name:\s*(.+?)\s*·\s*zweck:\s*(.+?)\s*-->/);
+    return m ? { name: m[1], zweck: m[2] } : fallback;
+  } catch {
+    return fallback;
+  }
+}
 
 // Titel-Overrides für Schritte, deren ROADMAP-Block kein normales
 // «Checkbox-Zeile mit Bold-Titel direkt über dem @meta»-Format hat
@@ -139,13 +125,20 @@ function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
       prosa = klartext(zeilen.slice(j, i).join(' '));
       if (prosa.length > 700) prosa = `${prosa.slice(0, 700)} …`;
       // §-Anker NUR aus dem eigenen Block (Bullet-Zeile bis @meta) und nur
-      // hinter einem ausdrücklichen «Detail:» — ein weiteres Fenster fischte
-      // im Test den §-Verweis des VORHERIGEN Schritts (W2·13 bekam «§20»).
+      // hinter einem ausdrücklichen «Detail:»/«Bau-Spec:» — ein weiteres
+      // Fenster fischte im Test den §-Verweis des VORHERIGEN Schritts
+      // (W2·13 bekam «§20»). Die Schreibweise «**Detail:** [Datei](…) §N»
+      // ist Konvention (FAHRPLAN-PLAN-STEUERUNG.md, Lagebild-§): sie wird
+      // hier maschinell gelesen und macht den Bau-Prompt konkret.
       const block = zeilen.slice(j, i).join(' ');
-      const teile = block.split(/\*\*Detail:\*\*|Detail:/);
+      const teile = block.split(/\*\*(?:Detail|Bau-Spec):\*\*|(?:Detail|Bau-Spec):/);
       if (teile.length > 1) {
         const nachDetail = teile[teile.length - 1];
-        par = nachDetail.match(/§«([^»]+)»/)?.[1] ?? nachDetail.match(/§§?\s*(\d+(?:\.\d+)*)/)?.[1] ?? null;
+        // §§-Bereiche («§§3–§7») nicht auf den ersten § verkürzen — dann
+        // lieber der ehrliche Platzhalter als ein irreführender Teil-Slice.
+        if (!/§§|–\s*§/.test(nachDetail)) {
+          par = nachDetail.match(/§«([^»]+)»/)?.[1] ?? nachDetail.match(/§\s*(\d+(?:\.\d+)*)/)?.[1] ?? null;
+        }
       }
       break;
     }
@@ -281,13 +274,13 @@ function baueSeite(opts: { watch: number | null }): string {
   // Baustellen-Gruppierung nach fahrplan:-Feld.
   const gruppen = new Map<string, Einheit[]>();
   for (const e of einheiten) {
-    const key = e.etikett.fahrplan?.replace(/^.*\//, '') ?? '—';
+    const key = e.etikett.fahrplan ?? '—';
     if (!gruppen.has(key)) gruppen.set(key, []);
     gruppen.get(key)!.push(e);
   }
   const kartenDaten = [...gruppen.entries()]
     .map(([fp, es]) => {
-      const info = fp === '—' ? OHNE_FAHRPLAN : (BAUSTELLEN[fp] ?? { name: fp.replace(/^FAHRPLAN-|\.md$/g, '').replace(/-/g, ' '), zweck: `Detailplan: ${fp}` });
+      const info = fp === '—' ? OHNE_FAHRPLAN : baustellenInfo(fp);
       const done = es.filter((e) => e.etikett.status === 'done').length;
       const wip = es.filter((e) => e.etikett.status === 'wip');
       const blockiert = es.filter((e) => e.etikett.status === 'blocked');
@@ -298,6 +291,19 @@ function baueSeite(opts: { watch: number | null }): string {
     .sort((a, b2) => (b2.wip.length - a.wip.length) || (b2.offen - a.offen));
 
   const statusPunkt = (s: string) => (s === 'done' ? 'done' : s === 'wip' ? 'wip' : s === 'blocked' ? 'block' : 'ready');
+
+  // wip-Verstoss-Sonde: ein Bau-Platz (Worktree/Branch), dessen Name zu einem
+  // Schritt passt, der NICHT auf wip steht, deutet auf unangemeldeten Bau —
+  // genau die Lücke, die diese Anzeige sonst still falsch aussehen lässt.
+  const slug = (id: string) => id.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const alleNamen = [...worktrees, ...((sh('git', ['branch', '--format=%(refname:short)']) ?? '').split('\n').filter(Boolean))];
+  const unangemeldet: string[] = [];
+  for (const e of einheiten) {
+    if (e.etikett.status === 'wip' || e.etikett.status === 'done') continue;
+    const s = slug(e.id);
+    const treffer = alleNamen.find((n) => n.toLowerCase().includes(s));
+    if (treffer) unangemeldet.push(`${e.id} (Bau-Platz «${treffer}», Status «${e.etikett.status}»)`);
+  }
 
   const imBau: string[] = [];
   for (const id of b.inArbeit) {
@@ -468,6 +474,7 @@ ${refresh}
   <h2>Was jetzt läuft</h2>
   <ul class="liste">${imBau.join('\n') || '<li><span class="sub">Nichts im Bau (kein wip-Schritt, keine offenen PRs).</span></li>'}</ul>
   ${worktrees.length ? `<p class="hinweis">Aktive Bau-Plätze (Worktrees): ${esc(worktrees.join(' · '))}${altBranches ? ` · dazu ${altBranches} ältere Branches ohne Bau-Platz (Aufräum-Kandidaten)` : ''}</p>` : ''}
+  ${unangemeldet.length ? `<p class="hinweis" style="color:var(--warn)">⚠ Möglicherweise unangemeldeter Bau (Bau-Platz existiert, Schritt steht nicht auf «wip»): ${esc(unangemeldet.join(' · '))} — die bauende Session sollte <span class="id">plan:set … status=wip</span> nachholen.</p>` : ''}
   <p class="hinweis">${prs === null ? '⚠ GitHub-CLI (gh) nicht verfügbar — PR-Status entfällt in dieser Ansicht. ' : ''}Die Anzeige ist so aktuell wie die wip-Disziplin: Sessions setzen ihren Schritt vor Baubeginn auf «wip».</p>
 </section>
 

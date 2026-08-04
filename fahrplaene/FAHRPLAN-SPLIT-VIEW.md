@@ -1,4 +1,5 @@
 # FAHRPLAN — Multi-Pane / Split-View (+ Breiten-Umschalter)
+<!-- @lagebild name: Split-View · zweck: Gesetz, Rechner und Entscheid nebeneinander wie Browser-Fenster. -->
 
 **Heimat: ROADMAP-Schritte `W3·14` und `W3·14-B3`.**
 

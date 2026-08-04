@@ -1,4 +1,5 @@
 # FAHRPLAN VORLAGEN-AUSBAU — Verträge-Rahmen, P1-Vorlagen, Rechner-Erweiterungen
+<!-- @lagebild name: Schriften-Baukasten · zweck: Vorlagen für Berufung, BGG-Beschwerde, Sistierung, Beweisverzeichnis. -->
 
 **Heimat: ROADMAP-Schritt `W2·8`.** (Der separat genannte `ROADMAP-Anker: W3·13`
 unten betrifft nur die hier mitgeführte Bürgschaft/Ehevertrag/ABV-Planung, nicht

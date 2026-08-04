@@ -1,4 +1,5 @@
 # FAHRPLAN — Geräte-Last / Performance (Detailquelle)
+<!-- @lagebild name: Tempo · zweck: Geräte-Last und Ladezeit, ohne Logikverlust (§15). -->
 
 > **Heimat:** Verlinkt aus `ROADMAP.md` → Querschnitt-Band **`QS-PERF`**. Diese Datei ist
 > **nur Detailquelle**, nie zweiter Einstieg (CLAUDE.md §14). Der Bau-Grundsatz steht
