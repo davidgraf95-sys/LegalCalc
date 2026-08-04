@@ -192,6 +192,40 @@ type Paar = { fg: string; bg: string; min: number; art: 'Text' | 'Nicht-Text'; q
 const TEXT = (fg: string, bg: string, quelle: string): Paar => ({ fg, bg, min: 4.5, art: 'Text', quelle });
 const NICHT = (fg: string, bg: string, quelle: string): Paar => ({ fg, bg, min: 3.0, art: 'Nicht-Text', quelle });
 const PFLICHT: Paar[] = [
+  // ── QS-UI 8a, Verschärfung Stufe 1a: Fliesstext-Basis ───────────────────────
+  // Befund des Audits (4.8.2026): ink-900 — der TRAGENDE Fliesstext-Ton der
+  // ganzen App — war in keinem einzigen Pflichtpaar vertreten. Geprüft waren
+  // nur die Sekundär-/Tertiär-Tiers (ink-600/500). Eine Verschiebung von
+  // ink-900 wäre also stumm durch das Tor gegangen. Gemessen (culori, alle weit
+  // über 4.5:1): paper 16.68·14.80 · surface 16.99·13.94 · well 15.81·15.52 ·
+  // paper-raised 17.25·13.50 (hell·dunkel).
+  TEXT('ink-900', 'paper', 'QS-UI 8a: Fliesstext auf Papier — Basis-Lesefläche'),
+  TEXT('ink-900', 'surface', 'QS-UI 8a: Fliesstext auf Karte'),
+  TEXT('ink-900', 'well', 'QS-UI 8a: Fliesstext auf Eingabefeld (.lc-input)'),
+  TEXT('ink-900', 'paper-raised', 'QS-UI 8a: Fliesstext auf erhabener Fläche (Popover/Dialog)'),
+  // ── QS-UI 8a, Verschärfung Stufe 1b: die Fläche --paper-raised ─────────────
+  // Zweiter Audit-Befund: die Pflichtpaare kannten nur paper/surface/well. Die
+  // vierte Flächen-Rolle --paper-raised (Popover, Dialog, Drawer, Menü) war
+  // ungeprüft, obwohl `bg-paper-raised` an 283 Stellen in 13+ Komponenten steht
+  // (u. a. Shell-Drawer, Reiter-/Verlauf-Übersicht, LeserAnsichtMenu,
+  // GliederungSheet). Das ist die Fläche, auf der die Navigation stattfindet.
+  // Gemessen: ink-600 7.61·7.53 · ink-500 5.27·5.04 · brass-700 5.60·9.11.
+  TEXT('ink-600', 'paper-raised', 'QS-UI 8a: Sekundärtext im Popover/Dialog'),
+  TEXT('ink-500', 'paper-raised', 'QS-UI 8a: Tertiärtext im Popover/Dialog'),
+  TEXT('brass-700', 'paper-raised', 'QS-UI 8a: Link/Akzent im Popover/Dialog'),
+  NICHT('focus', 'paper-raised', 'QS-UI 8a: --focus-Ring auf erhabener Fläche (5.60·5.98)'),
+  // NICHT aufgenommen — bewusst, mit Grund (§8-Ehrlichkeit statt stiller Lücke):
+  //   · placeholder/paper-raised dunkel = 4.532 gegen die 4.5-Schwelle. Derselbe
+  //     Messer-Rand, den §11 für warn-line beschreibt (0.032 Abstand). Ein
+  //     Platzhalter steht ausserdem in `.lc-input` (= --well), nicht auf
+  //     paper-raised; das Paar wäre ein konstruierter Grund. → offen, in der
+  //     Restliste des PR.
+  //   · brass-line/paper-raised hell = 3.084, brass-line/paper hell = 2.982.
+  //     Der zweite Wert läge unter der Schwelle — für BEIDE fand das Audit
+  //     aber keinen Call-Site: `.lc-notice` und `.lc-akzent-brass` zeichnen
+  //     ihre brass-Kante auf `--surface` (dort 3.28, seit je Pflichtpaar). Ein
+  //     Riss-Eintrag ohne belegten Konsumenten wäre ein erfundener Befund (§7),
+  //     darum bleibt es ein Messwert in der Audit-Liste, kein Tor-Eintrag.
   // Sekundär-/Meta-/Feinschrift-Basis (lc-overline/lc-fineprint/lc-notice = ink-600)
   TEXT('ink-600', 'well', 'lc-overline/lc-fineprint (index.css:350/374)'),
   TEXT('ink-600', 'paper', 'ink-600 Sekundärtext'),
@@ -223,14 +257,23 @@ const PFLICHT: Paar[] = [
   NICHT('brass-line', 'surface', 'lc-akzent-brass (index.css:583) / lc-notice-Kante (index.css:885)'),
   NICHT('warn-line', 'surface', 'warn-line auf Karte — konservativer Boden, echter Konsument ist lc-notice-warn (index.css:886)'),
   NICHT('danger-line', 'surface', 'border-t-danger-line auf lc-tile/lc-card (KuendigungSperrForm:228, VorlageKuendigungArbeitgeber:92, StrafZustaendigkeitTeil:479)'),
-  // OFFENER PUNKT (David): lc-notice-warn/-danger rendern ihre Kante NICHT auf
-  // «surface», sondern auf der getönten Fläche warn-bg/danger-bg — das ist der
-  // strengere Grund. Gemessen 3.8.2026: warn-line/warn-bg 3.008 (hell) · 4.283
-  // (dunkel), danger-line/danger-bg 5.538 · 6.685 — alle über der 3.0-Schwelle.
-  // Als Pflichtpaare aufgenommen wären sie bestanden, aber warn-line/warn-bg
-  // läge 0.008 über der Grenze: jede Token-Rundung kippt das Tor. Ob dieser
-  // Messer-Rand ein Dauer-Tor sein soll, ist eine Design-Entscheidung und wurde
-  // hier bewusst NICHT im Alleingang gesetzt.
+  // ── QS-UI 8a, Verschärfung Stufe 1c: Status-Kanten auf IHRER Tönungsfläche ──
+  // ERLEDIGT der bis 3.8.2026 hier stehende OFFENE PUNKT. Er lautete: die
+  // lc-notice-/Badge-Kanten rendern NICHT auf «surface», sondern auf der
+  // getönten Fläche -bg (der strengere Grund) — aber warn-line/warn-bg lag mit
+  // 3.008 nur 0.008 über der Schwelle, und ein Tor auf dieser Messerschneide
+  // wäre bei jeder Token-Rundung gekippt. Genau deshalb war es keine Frage der
+  // Tor-Politik, sondern des Tokens: QS-UI-WARNLINE (FAHRPLAN-UI-QUALITAET §11)
+  // hat --warn-line um OKLCH L −0.020 abgedunkelt. Damit tragen alle vier
+  // Status-Kanten Reserve und werden hart (culori, hell·dunkel):
+  //   warn-line/warn-bg   3.264 · 3.948   (vorher 3.008 · 4.296)
+  //   danger-line/danger-bg 5.538 · 6.685
+  //   sage-line/sage-bg     4.022 · 8.441
+  //   slate-line/slate-bg   4.625 · 7.768
+  NICHT('warn-line', 'warn-bg', 'QS-UI 8a/§11: lc-notice-warn-Kante auf ihrer Tönungsfläche (index.css:974)'),
+  NICHT('danger-line', 'danger-bg', 'QS-UI 8a: lc-notice-danger-Kante auf ihrer Tönungsfläche (index.css:975)'),
+  NICHT('sage-line', 'sage-bg', 'QS-UI 8a: sage-Kante/Balken auf sage-Tönung'),
+  NICHT('slate-line', 'slate-bg', 'QS-UI 8a: slate-Kante/Balken auf slate-Tönung'),
   // D-1.3: sage/slate-Linien-Aliasse (dunkel auf -700 gehoben) — Nicht-Text-
   // Kanten/Balken greifen den Alias, nie -500 direkt.
   NICHT('sage-line', 'surface', 'D-1.3 border-sage-line (Patientenverfügung u. a.)'),
@@ -288,7 +331,15 @@ for (const [fam, val] of Object.entries(twColors)) {
   else CONFIG_TOKENS.add(fam);
 }
 // Semantische :root-Aliase, die bewusst kein Utility sind (nur via var() genutzt).
-const ALIAS = new Set(['focus', 'placeholder', 'brass-line', 'warn-line', 'danger-line', 'auf-gold']);
+// QS-UI 8a: `warn-line` und `danger-line` standen hier, EXISTIEREN aber als
+// Utility (tailwind.config.js:51/52, `warn.line`/`danger.line` → border-warn-line).
+// Die Ausnahme war damit breiter als ihre eigene Begründung und nahm genau die
+// zwei Linien-Token aus dem No-op-Wächter heraus, die QS-UI 8a neu als
+// Pflichtpaare führt — der Wächter hätte ihr Verschwinden aus der Config nicht
+// gemeldet (F6/F7: eine Ausnahme, die nicht mehr stimmt, ist ein stiller Riss).
+// Geprüft 4.8.2026 gegen die Config: nur die vier hier verbliebenen Namen sind
+// tatsächlich reine :root-Aliase ohne Utility.
+const ALIAS = new Set(['focus', 'placeholder', 'brass-line', 'auf-gold']);
 function pruefeConfig(token: string) {
   if (ALIAS.has(token) || CONFIG_TOKENS.has(token)) return;
   fehler.push(`Config-Drift: Token «${token}» wird geprüft, fehlt aber in tailwind.config.js (stiller Utility-No-op, F7).`);

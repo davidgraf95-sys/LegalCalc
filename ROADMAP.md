@@ -214,8 +214,8 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   **Kein Einzel-Redesign und kein Reihenfolge-Slot**, sondern ein **kontinuierlicher Oberflächen-Pass**
   app-weit (Fundament → Hierarchie → Politur), der VOR den flächigen Gesetzes-UI-Schritten läuft.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
-  - [ ] **UI-WARNLINE · `--warn-line`-Kontrast 3.008 minimal abdunkeln** *(Anlass: Kontrast-Messung 3.8.2026 — der Wert liegt 0.008 über der 3:1-Schwelle für nicht-textliche Kontraste, also innerhalb jeder Mess-Streuung; ein Token-Tick Abdunklung macht die Einhaltung robust)* — reine Token-Änderung, `check:farbwelt` + axe, flip-reversibel. Priorität **niedrig**. **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §11. §13/DESIGN-REGLEMENT.
-    <!-- @meta id: QS-UI-WARNLINE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css, scripts/check-farbwelt.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+  - [x] **UI-WARNLINE · `--warn-line`-Kontrast 3.008 minimal abdunkeln** *(Anlass: Kontrast-Messung 3.8.2026 — der Wert liegt 0.008 über der 3:1-Schwelle für nicht-textliche Kontraste, also innerhalb jeder Mess-Streuung; ein Token-Tick Abdunklung macht die Einhaltung robust)* — reine Token-Änderung, `check:farbwelt` + axe, flip-reversibel. Priorität **niedrig**. **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §11. §13/DESIGN-REGLEMENT.
+    <!-- @meta id: QS-UI-WARNLINE · status: done · of: ja · blocker: null · dep: [] · kollision: [src/index.css, scripts/check-farbwelt.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
 
 **§14-Intake 3.8.2026 (Aufräum-Session — Nebenfunde der CI-Diagnose, der Totcode-Welle und der
 Gegenprüfungen des Tages).** Alle `[OF]`, alle klein; je Schritt steht der **Anlass** dabei, damit

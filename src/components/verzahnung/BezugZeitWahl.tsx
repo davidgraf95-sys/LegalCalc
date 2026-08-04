@@ -251,7 +251,16 @@ function DatumsFeld({ label, wert, titel, onWert }: {
         value={wert}
         data-zeit-feld={label}
         onChange={(e) => onWert(e.target.value)}
-        className="num min-w-0 flex-1 rounded border border-line bg-paper px-1.5 py-0.5 text-xs text-ink-900 focus:border-brass-400 focus:outline-none"
+        /* QS-UI 8a (F3): `focus:outline-none` entfernt. Tailwind setzt darunter
+           `outline:2px solid transparent` — gemessen 3.8.2026 hatte das Feld im
+           Tastatur-Fokus einen 2-px-Perimeter in Alpha 0, also KEINEN sichtbaren
+           Ring; erkennbar war der Fokus allein am 1-px-Rahmenwechsel
+           (border-line → brass-400). F3 verlangt ≥2 px Perimeter und verbietet
+           einen Fokus, der nur die Farbe wechselt. Ohne die Utility greift die
+           Basis-Regel `:focus-visible { outline:2px solid var(--focus) }`
+           (index.css) — der Maus-Fokus bleibt still, weil
+           `:focus:not(:focus-visible)` die Outline dort weiterhin abräumt. */
+        className="num min-w-0 flex-1 rounded border border-line bg-paper px-1.5 py-0.5 text-xs text-ink-900 focus:border-brass-400"
       />
     </label>
   );
