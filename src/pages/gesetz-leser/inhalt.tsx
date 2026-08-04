@@ -1026,18 +1026,6 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // PaneKopf ausserhalb des Scroll-Containers → nur die pane-lokale Such-Leiste
       // (top 0.5rem, ~3.5rem) klebt (Muster --rsp-stick, Entscheid-Leser B3).
       style={{ '--nt-stick': imPane ? '3.5rem' : 'calc(4rem + 2.25rem)' } as CSSProperties}>
-      {/* W2·10-UI-NAV/R4 + R8 — beide hängen INNEN an `.lc-leser`, damit der Chip
-          den `--nt-stick`-Abstand erbt (N0c, EINE Quelle der Sticky-Höhe), und
-          beide rendern im Ruhezustand `null` ⇒ das prerenderte Markup bleibt
-          byte-gleich. Nur die Primär-/Einzelansicht: im sekundären Pane gäbe es
-          sonst einen ZWEITEN globalen keydown-Listener, der j/k doppelt auslöst. */}
-      {!istSekundaer && weiterlesen && (
-        <WeiterlesenChip label={weiterlesen.label}
-          onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen} />
-      )}
-      {!istSekundaer && (
-        <LeserTastatur tokens={artTokens} aktivToken={aktivToken} onSprung={springeZuArtikel} />
-      )}
       <LeserVolltextInhalt
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
@@ -1059,6 +1047,29 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
         tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
       />
+      {/* W2·10-UI-NAV/R4 + R8. Beide hängen INNEN an `.lc-leser`: der Chip erbt
+          von dort `--nt-stick` (N0c, die EINE Quelle der realen Sticky-Höhe), und
+          beide rendern im Ruhezustand `null` ⇒ prerendertes Markup byte-gleich.
+          Nur die Primär-/Einzelansicht — im sekundären Pane liefe sonst ein
+          ZWEITER globaler keydown-Listener und j/k sprängen doppelt.
+
+          `display: contents` am Träger ist hier keine Kosmetik, sondern der Fix
+          eines gemessenen 20-px-Shifts: `.lc-leser` trägt `space-y-5`, und dessen
+          Regel `> * + *` hätte dem Lese-Inhalt einen Margin gegeben, sobald ein
+          zweites Kind danebensteht — obwohl beide Overlays `position: fixed` sind
+          und gar keinen Platz brauchen. Ein Träger ohne eigene Box nimmt den
+          Margin entgegen und wirft ihn weg; der Rhythmus der Lesespalte bleibt
+          exakt der vor dieser Einheit (belegt in leser-weiterlesen-r4-r8.e2e.ts,
+          «Entfernen bewegt nichts»). */}
+      <div className="contents">
+        {!istSekundaer && weiterlesen && (
+          <WeiterlesenChip label={weiterlesen.label}
+            onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen} />
+        )}
+        {!istSekundaer && (
+          <LeserTastatur tokens={artTokens} aktivToken={aktivToken} onSprung={springeZuArtikel} />
+        )}
+      </div>
     </div>
   );
 }
