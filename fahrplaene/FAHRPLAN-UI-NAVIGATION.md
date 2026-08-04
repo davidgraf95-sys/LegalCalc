@@ -697,3 +697,30 @@ main@38e1300c− → §0.1 gilt vor jedem Schnitt.*
 >   und Auffindbarkeit über alle Oberflächen, reine Darstellungsschicht (§3), keine Rechtslogik.
 >   **Detail:** diese Datei §8. Trailer `Roadmap: W2·10-UI-NAV`.
 
+
+---
+
+### §8-N · ROADMAP-Spec W2·10-UI-NAV — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·10-UI-NAV` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). Der Wortlaut unten entstand nach Anlage von §8 (31.7.2026)
+und ist darum die jüngere Fassung. In der ROADMAP bleiben Titel, `@meta`, der steuernde
+Kurzabsatz, die Teilschritt-Einzeiler und der Pointer hierher. Steuert nicht — Spec-Heimat.
+**→ Bau-Spec: §0–§7b und «§R · Empfohlene Bau-Reihenfolge» dieser Datei.***
+
+  **`dep`-Korrektur 3.8.2026:** §0.2 des Fahrplans sequenziert nur die **Reader-Flächen**
+  (`parts.tsx`/`inhalt.tsx`/`ArtikelBody.tsx`/`index.css`) hart hinter die A-Restposten von `W2·5d`
+  und nennt Suche-/Rechtsprechungs-/Sidebar-Einheiten ausdrücklich «weitgehend kollisionsfrei und
+  zuerst schneidbar». Die Teilschritte **-S · -V · -J · -J3 · -O** trugen trotzdem `dep: [W2·5d]`
+  und standen damit hinter einem Dach-Schritt, dessen offener Rest (EID-3, Härtung) sie gar nicht
+  berührt — die dep ist dort gestrichen. Reader-Flächen (**-VR · -R1 · -R2 · -R3 · -R4 · -Z**)
+  behalten sie. **Diät Welle 2 (4.8.2026):** diese sechs Teilschritte sind erledigt und stehen
+  samt `-URL` wörtlich in [`ROADMAP-CHRONIK.md`](../ROADMAP-CHRONIK.md) → «Umschichtung 4.8.2026»;
+  hier bleiben nur die offenen **-S · -V · -J · -J3 · -O**.
+
+### §S-N · ROADMAP-Spec `QS-UI-HIGHLIGHT` — Bau-Spec im Wortlaut (verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, §14-Intake 4.8.2026. In der ROADMAP bleiben Titel,
+`@meta`, der Anlass und der Pointer auf §S. Steuert nicht — Spec-Heimat.*
+
+> Highlight-Name je Pane/Leser-Instanz, alle drei Schreiber umstellen; Beweis: beide Suchen gleichzeitig markiert. Reine Darstellung.

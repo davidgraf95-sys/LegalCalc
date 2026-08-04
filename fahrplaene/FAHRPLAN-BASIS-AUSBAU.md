@@ -398,6 +398,28 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
   ist die **Ausnahme** — Extraktions-Risikopfad ⇒ eigener Commit mit `QS-GP`-Verdikt, kein Auto-Merge.
   Trailer `Roadmap: QS-AUTOMATIK`.
 
+### §1-N · ROADMAP-Spec QS-AUTOMATIK — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, Schritt `QS-AUTOMATIK` — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). Der Wortlaut unten entstand grösstenteils nach Anlage von §1
+(31.7.2026). In der ROADMAP bleiben Titel, `@meta`, der steuernde Kurzabsatz und der Pointer
+hierher. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §1 dieser Datei (a/b/a′).***
+
+  **Leitplanke:** jedes Tor gegen eine *unabhängige*
+  Referenz prüfen und seine Scheiterns-Fähigkeit an einem ECHTEN Aufruf belegen (§6 Ziff. 7).
+  a/b sind reine Prüflogik (`Gegenpruefung: n/a`); der `chemrrv`-Re-Pin (a′) ist die Ausnahme —
+  Extraktions-Risikopfad ⇒ eigener Commit mit `QS-GP`-Verdikt, kein Auto-Merge.
+  **Stand 3.8.2026 (PR #419, K1–K13):** die beiden toten Workflows laufen wieder, der Alarmpfad ist
+  gebaut (Monitor-Triage: Grün schliesst, 3× Rot eskaliert) und der Wächter zieht fehlende
+  Required-Kontexte nach. **Offen bleibt** die Turso-Wächter-Abdeckung samt Wachstums-Schwellen —
+  darum `ready` und nicht `done`; sie ist zugleich Posten (a) des QS-BASIS-Intakes und wird
+  **allein hier** gebaut (Abgrenzung 3.8.2026, Wächter gegen eine UNABHÄNGIGE Grösse, nie gegen
+  die Sync-Marke). Diagnose-Übersicht: `bibliothek/ci-fehlerklassen-2026-08-03.md`.
+  **Mitnahme 4.8.2026 (Code-Inventur):** (a) ~~Manifest-Nullzeilen~~ **geklärt — gewollt**
+  (Ausbaustufe, David 4.8.2026; keine Wächter-Lücke). (b) Prod-Smoke existiert
+  doppelt (`.github/scripts/prod-smoke.sh` wöchentlich + `scripts/betrieb/prod-smoke.ts`
+  6-stündlich, überlappende Prüfungen) — konsolidieren oder Schnitt dokumentieren.
+
 ---
 
 ## §2 · ROADMAP-Spec QS-BASIS (wörtlich verschoben 31.7.2026)
@@ -533,3 +555,33 @@ Vorfall trotz Gegenmittel ⇒ Gegenmittel schärfen, keine Regel danebenlegen).*
   genau die 5 Tore meldend), nach (b) grün; kein seriell-Tor mehr stillschweigend nur
   wächter-gedeckt.
 - **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+---
+
+## §3-N · ROADMAP-Spec-Nachzug der §3-Kind-Schritte (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, §14-Intake 3.8./4.8.2026 — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben je Schritt Checkbox, Titel, `@meta`, der
+**Anlass** (dort ausdrücklich verlangt: «je Schritt steht der Anlass dabei, damit später prüfbar
+bleibt, warum es ihn gibt») und der Pointer auf den jeweiligen §. Die **Bau-Spec** steht unten und
+in den §§3.1–3.5. Steuert nicht — Spec-Heimat.*
+
+### §3-N.1 `QS-AUTOMATIK-BERICHT` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.1 dieser Datei)*
+
+> **ein** Befehl in `scripts/check-ci-laeufe.ts`, der (a) je Wächter/Workflow letzten Lauf, Ergebnis und Alter ausgibt und (b) meldet, wenn ein Worktree-/Branch-Diff gegen `main` **leer** ist (gelandet, aber nicht abgeräumt). **Fusioniert 3.8.2026** aus `QS-AUTOMATIK-BERICHT` + `QS-AUTOMATIK-WT`: dieselbe Datei, dieselbe Risiko-Klasse (reine Prüflogik), zweimal denselben Bericht anzufassen wäre doppelte Arbeit (Skill `auftrag`, Ziff. 3). **Erweitert 3.8.2026 (Bau-Evaluation):** Sonde (b) gleicht zusätzlich Branches ohne Worktree (lokal wie `origin/*`) gegen offene PRs ab und meldet Worktrees ausserhalb des Repo-Verzeichnisses (Scratchpad-Pfade beendeter Sessions) — Ist-Befund: 9 Worktrees, 6 Feature-Branches; die manuelle Rest-Inventur skaliert nicht über parallele Sessions.
+
+### §3-N.2 `QS-BASIS-TOT` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.2 dieser Datei)*
+
+> Basislinie = **1 Falsch-Positiv (`SkalaEintrag`)**, deklariert und begründet; alles darüber ist rot. `--no-exit-code` fällt damit weg. Reine Prüflogik.
+
+### §3-N.3 `QS-BASIS-DEPS` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.3 dieser Datei)*
+
+> Audit als **Meldung, nie Stopper** (Geparkt-Entscheid Betriebs-Instrumente bleibt), Major-Sprünge einzeln bewertet. **Mitnahme 4.8.2026 (Code-Inventur):** `@vitest/coverage-v8` ist die einzige echt ungenutzte devDependency (kein Import, kein `--coverage`, kein Workflow) — entfernen; `linkedom` trotz POC-Kommentar behalten (5 produktive Nutzer). **ACHTUNG Lockfile:** Änderungen nur über `npx npm@10` — lokales npm 11 erzeugt eine CI-inkompatible `package-lock.json`.
+
+### §3-N.4 `QS-BASIS-DOKU-CI` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.4 dieser Datei)*
+
+> die Diff-Klassierung aus `ci.yml` auf `push`-Events nach `main` ausweiten, gleiche konservative Regeln (nur reine `.md`-Diffs; im Zweifel Volllauf). **Blockiert**, weil es den dokumentierten Grundsatz «ein Deploy-Stand wird nie nach Dateiendungen abgekürzt» (ci.yml, Diff-Klassierung) lockert — das entscheidet David, nicht eine Session.
+
+### §3-N.5 `QS-AUTOMATIK-PARITAET` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.5 dieser Datei)*
+
+> Regel (1) der Sonde auf `ci.yml`-Deckung schärfen; die 5 heute nur wächter-gedeckten Tore (`check:verfall`, `check:normtext`, `check:struktur-konsistenz`, `check:verklebung`, `check:paritaet`) je einzeln evaluieren: PR-CI-Verdrahtung oder begründeter Allowlist-Eintrag mit benanntem Ersatz-Arbiter (Regel 3 bindet den Verweis maschinell). Schärfung **einmal rot zeigen** (§6.7). **Erweitert 4.8.2026 (Code-Inventur):** zusätzlich die drei NIRGENDS laufenden Tore `check:suchindex` (Artefakt gitignored, besonders drift-anfällig!), `check:rss-oc`, `check:confidence` einbeziehen — verdrahten oder mit Begründung streichen.

@@ -672,3 +672,24 @@ Sektionen weiter oben.
   Datei-Kopf «Status: reiner Plan. Noch nichts umgesetzt.» ist seit dem 26.6.2026 stale und bleibt
   im Archiv nur historisch stehen — die Status-Wahrheit trägt die Session-Karte
   `archiv/STRUKTUR-SESSIONKARTEN.md` («16/20 live + D-Teil + 2 Pläne»).
+
+---
+
+## §21 · ROADMAP-Spec-Nachzug `W2·9` / `W3·13` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md` — AP-11 rückwirkend angewandt (ROADMAP-Diät Welle 3, 4.8.2026). In der
+ROADMAP bleiben je Schritt Titel, `@meta`, Kurzabsatz und Pointer. Steuert nicht — Spec-Heimat.*
+
+### §21.1 `W2·9` — Zeiger-Wortlaut *(→ Bau-Spec: §20 dieser Datei)*
+
+> die Archivdatei `archiv/FAHRPLAN-UX-PUNKTELISTE.md` trägt die überholte
+> 20-Punkte-Liste). Herkunft der Verengung und die Abgrenzung zur Bedienungsanleitung (Träger sind
+> `W2·16-INVENTAR`/`W2·16-ANLEITUNG`, nicht dieser Schritt) → `ROADMAP-CHRONIK.md` → W2·9 (3.8.2026).
+
+### §21.2 `W3·13` — Zeiger-Wortlaut *(→ Bau-Spec: §10 + §11 dieser Datei)*
+
+> *(Zeiger 31.7.2026
+> umgestellt, Endprüfungs-Fund R2-14/R2-19: `fahrplan:` zeigte auf `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md`
+> und lieferte damit die archivierte Vollfassung statt der massgeblichen Restpunkte — dieselbe
+> Lage und dieselbe Begründung wie bei `W2·9`; §0 der Archiv-Restpunkte erklärt die archivierten
+> Köpfe ausdrücklich für teilweise stale.)*
