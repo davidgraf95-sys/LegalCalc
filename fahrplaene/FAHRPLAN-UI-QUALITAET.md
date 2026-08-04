@@ -1,4 +1,5 @@
 # FAHRPLAN — Oberflächen-Qualität app-weit (`QS-UI`)
+<!-- @lagebild name: Oberflächen-Qualität & Anleitung · zweck: Laufender UI-Qualitäts-Pass; später Funktions-Inventar und Bedienungsanleitung. -->
 
 > **ROADMAP-Schritt:** `QS-UI` (Querschnitt-Band — **kontinuierlich, kein Reihenfolge-Slot**).
 > **Anlass:** Ideen-Intake 20.7.2026, Idee 8a («UI app-weit optimieren»); die Gesetzes-Fläche

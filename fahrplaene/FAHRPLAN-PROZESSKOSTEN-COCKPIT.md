@@ -1,4 +1,5 @@
 # FAHRPLAN — Prozesskosten-Cockpit (Vertiefung & Ausbau)
+<!-- @lagebild name: Prozesskosten-Cockpit · zweck: Der Haupt-Rechner: Restbau plus Verzahnung Frist und Kosten. -->
 
 **Heimat: ROADMAP-Schritte `W1·4` und `W1·5-PRAXIS`.**
 

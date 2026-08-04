@@ -1,4 +1,5 @@
 # FAHRPLAN-GESETZESDARSTELLUNG-V2 — Nützlicher, fehlerfreier, farbiger
+<!-- @lagebild name: Norm-Zeitmaschine · zweck: Frühere Gesetzes-Fassungen ansehen, Fassungs-Unterschiede, Linien-Konzept. -->
 
 **Heimat: ROADMAP-Schritte `W2·5g-ZEIT` und `W2·5i-HIST-ANSICHT`.**
 

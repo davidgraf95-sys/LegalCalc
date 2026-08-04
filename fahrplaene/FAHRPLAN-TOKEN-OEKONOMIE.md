@@ -1,4 +1,5 @@
 # FAHRPLAN — Token-Ökonomie des Agenten-Baus (Detailquelle)
+<!-- @lagebild name: Arbeitskosten senken · zweck: Doku und Prozesse verschlanken, damit jede Bau-Session weniger Tokens verbraucht. -->
 
 > **Heimat:** `ROADMAP.md` → **oberster offener Schritt** der «Geordneten Abarbeitung» (`QS-TOK`);
 > nur Detailquelle (§14); einziger Repo-Eingriff; selbst §-sliceable.

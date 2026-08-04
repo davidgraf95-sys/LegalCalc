@@ -1,4 +1,5 @@
 # FAHRPLAN — Kantonale Gesetze & Darstellung (Ultracode-Synthese 12.7.2026)
+<!-- @lagebild name: Kantonale Gesetze · zweck: Die kantonalen Erlasse so sauber darstellen und sichern wie das Bundesrecht. -->
 
 > **ROADMAP-Schritt:** `W2·13-KANTONE` (Welle 2, hinter den laufenden Reader-/Verzahnungs-Strängen).
 > **Auftrag David 12.7.2026 (wörtlich):** «recherche mit ultracode zu kantonalen gesetze und

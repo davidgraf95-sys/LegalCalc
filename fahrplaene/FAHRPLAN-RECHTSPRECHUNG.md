@@ -1,4 +1,5 @@
 # FAHRPLAN-RECHTSPRECHUNG.md
+<!-- @lagebild name: Gerichtsentscheide · zweck: Rechtsprechungs-Korpus: präzisere Verweise, Mehrsprachigkeit, Übersicht. -->
 
 **Heimat: ROADMAP-Schritte `W2·6` und `W3·15-RICHTER`** (Detail auch für
 `R-RICHTER`/Direktauftrag, §12/§13).

@@ -1,4 +1,5 @@
 # FAHRPLAN-CODE-VERBESSERUNG — Bau-Specs der Code-Inventur 4.8.2026
+<!-- @lagebild name: Code-Aufräumung · zweck: Entdopplung und Struktur, ohne Verhaltensänderung (golden-gesichert). -->
 
 **Herkunft:** Drei read-only Explore-Analysen am Stand `2c4d97e54` (Auftrag
 David 4.8.2026, «plane Verbesserung des Codes, denk gross»; Einbau-Anordnung

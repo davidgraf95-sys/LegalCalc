@@ -1,4 +1,5 @@
 # FAHRPLAN — Plan-Steuerung «ein Etikett pro Schritt» (Detailquelle)
+<!-- @lagebild name: Plan-Steuerung · zweck: Werkzeuge, mit denen der Plan selbst geführt wird (plan:next, dieses Lagebild). -->
 
 > **Stand 1.7.2026.** Detailquelle zum Querschnitt **`QS-PH`** (Plan-Hygiene-Wächter) in
 > `ROADMAP.md`. Verlinkt aus dem `QS-PH`-Eintrag des Querschnitt-Bands (Pflicht §14.1; das Tor
@@ -404,7 +405,31 @@ die Sektion mit sichtbarem Hinweis statt zu scheitern.
 abfragen. «Live» heisst hier: `npm run plan:bild -- --watch` regeneriert periodisch (z. B. alle
 60 s) und die Seite lädt sich selbst neu (Meta-Refresh/JS-Reload); der Erzeugungs-Zeitstempel
 steht sichtbar im Kopf, damit nie ein älterer Stand als aktuell durchgeht. Ein Dienst/Server
-wird dafür ausdrücklich NICHT gebaut.
+wird dafür ausdrücklich NICHT gebaut. Weil der Plan-Teil aus dem **lokalen** Checkout gelesen
+wird, gibt es das Opt-in-Flag `--pull` (David 4.8.2026): vor jeder Erzeugung ein stilles
+`git pull --ff-only` — scheitert es (schmutzig/divergiert), unterbleibt es folgenlos und die
+Seite zeigt den lokalen Stand.
+
+**Drei Konventionen (Reibungspunkte-Fix, Go David 4.8.2026):**
+
+1. **«Detail:»-Schreibweise ist maschinengelesen.** Die bestehende Form
+   `**Detail:** [Datei](…) §N` (auch `Bau-Spec:`) ist die eine Quelle des
+   §-Ankers im Bau-Prompt — bewusst KEIN eigenes @meta-Feld (das wäre eine
+   zweite, drift-fähige Wahrheit neben der Prosa, §5). Schritte, die einen
+   konkreten Slice-Befehl im Prompt wollen, schreiben den Verweis in dieser
+   Form; §§-Bereiche bleiben Platzhalter (ein Teil-Slice führte irre).
+2. **wip-Verstoss-Sonde.** Existiert ein Worktree/Branch, dessen Name zur
+   Schritt-ID passt (Slug-Vergleich), während der Schritt nicht auf `wip`
+   steht, zeigt die Sektion «Gerade im Bau» eine sichtbare Warnung samt
+   Handlungsanweisung (`plan:set … status=wip`). Die Sonde ersetzt die
+   Disziplin nicht — sie macht den Verstoss sichtbar statt die Anzeige still
+   falsch.
+3. **`@lagebild`-Kopfzeile je Fahrplan.** Jede `fahrplaene/FAHRPLAN-*.md`
+   trägt nach der Titelzeile `<!-- @lagebild name: … · zweck: … -->` —
+   Klartext-Name und Laien-Zweck leben bei ihrer Datei (SSoT §5), nicht im
+   Generator; der hält nur den Dateinamen-Fallback. Neue Fahrpläne bringen
+   die Zeile mit (diese Konvention gehört zur Fahrplan-Anlage, Skill
+   `auftrag` Ziff. 1).
 
 **Grenzen/Auflagen:**
 

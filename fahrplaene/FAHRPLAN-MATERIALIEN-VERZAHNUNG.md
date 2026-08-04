@@ -1,4 +1,5 @@
 # FAHRPLAN-MATERIALIEN-VERZAHNUNG — E6a Stufe 1 vorgezogen
+<!-- @lagebild name: Amtliche Materialien · zweck: Botschaften, Rundschreiben und Co. einbinden und mit den Normen verzahnen. -->
 
 **Heimat: ROADMAP-Schritte `W2·6a-MAT` und `W2·6b-MAT-FINMA`.**
 

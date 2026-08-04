@@ -1,4 +1,5 @@
 # FAHRPLAN Gesetzes-UX — Darstellungs-Reglement, Leser-Kopf, Übersichten, Klassifikation
+<!-- @lagebild name: Gesetze lesen · zweck: Der Gesetzes-Leser: Bundesrecht bequem lesen — Inhaltsverzeichnis, Suche im Gesetz, Anhänge, Druck. -->
 
 Stand: 4.7.2026 · Auftrag David «Gesetzesdarstellung & UX». Leitlinie: **User
 Experience, State-of-the-Art-Webdesign — Fedlex ist die Mindestlatte, nicht die

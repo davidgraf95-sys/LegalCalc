@@ -1,4 +1,5 @@
 # FAHRPLAN-DATENHALTUNG — DB als die EINE Wahrheit, Projektion, Massen-Korpus, Edge-Suche
+<!-- @lagebild name: Eigene Datenbank / Server · zweck: Fundament für Selbst-Hosting und «DB = die eine Wahrheit». -->
 
 > **Rolle (§14):** Detailquelle zu `ROADMAP.md` → Querschnitt **QS-DATA** + Bau-Schritt
 > **W2·6-DATA**. Nie zweiter Einstieg. **Council-Entscheid 2.7.2026** (Richtung entschieden,

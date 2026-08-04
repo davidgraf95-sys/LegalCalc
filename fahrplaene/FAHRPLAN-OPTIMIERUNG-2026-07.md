@@ -1,4 +1,5 @@
 # FAHRPLAN — Optimierungs-Research Juli 2026 (Ablage, Stand 12.7.2026)
+<!-- @lagebild name: Betriebs-Optimierung · zweck: Kleinere Betriebs- und Auslieferungs-Verbesserungen. -->
 
 > **Nur Plan, kein Bau.** Ergebnis des allgemeinen Ultracode-Optimierungs-Research
 > (Auftrag David 12.7.2026) nach adversarialer Kritik-Filterung (10 Stichproben

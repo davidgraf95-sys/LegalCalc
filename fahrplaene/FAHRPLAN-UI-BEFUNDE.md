@@ -1,4 +1,5 @@
 # FAHRPLAN — UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)
+<!-- @lagebild name: Feinschliff-Befundliste · zweck: Abarbeitung der 210 Befunde einer externen Sichtprüfung (29.7.2026) in Paket-Kette. -->
 
 **Heimat: ROADMAP-Schritt `W2·17-UI-BEFUNDE`** · Stand 31.7.2026 (Anlage AP-9, QS-TOK-Aufräumwelle).
 

@@ -1,4 +1,5 @@
 # FAHRPLAN-DESIGN-WAERME — Farbklima, Wärme, Atmosphäre, Typografie
+<!-- @lagebild name: Design & Atmosphäre · zweck: Wärmeres, ruhigeres Erscheinungsbild — Token-Schicht, dann Anwendung. -->
 
 Stand: 11.7.2026 · Auftrag David (wörtlich): «ultracode recherche zu design und plan
 erstellen. also hinsichtlich farbe und wärme und so weiter» + «direkt umsetzen wenn

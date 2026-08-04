@@ -1,4 +1,5 @@
 # FAHRPLAN — Webseite verbessern mit SEO / A11y / Skill-Governance (Stand 25.6.2026)
+<!-- @lagebild name: SEO & Barrierefreiheit · zweck: Auffindbarkeit in Suchmaschinen und Zugänglichkeit, mit Regeln statt Einzelfixes. -->
 
 **Heimat: ROADMAP-Schritt `SEO-A11Y`.**
 

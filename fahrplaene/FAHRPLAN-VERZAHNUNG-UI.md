@@ -1,4 +1,5 @@
 # FAHRPLAN-VERZAHNUNG-UI — Die Verzahnung sichtbar machen (V1 vor VPS · V2 Masse · V3 Soft-Law)
+<!-- @lagebild name: Verzahnung sichtbar machen · zweck: Das Alleinstellungsmerkmal: Gesetz, Entscheid und Werkzeug verknüpft anzeigen. -->
 
 **Stand:** 3.7.2026 · **Auftrag:** David 3.7.2026 («Verzahnung sichtbar machen») · **Erarbeitet:** Fable (Konzept + adversariale Gegenprüfung eingearbeitet) · **Rolle:** Detailquelle der `ROADMAP.md` für Schritt **W2·7-VZUI** (§14 — die ROADMAP bleibt die eine Steuerungsquelle, dieser Fahrplan trägt das Wie).
 

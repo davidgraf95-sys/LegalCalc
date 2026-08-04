@@ -1,4 +1,5 @@
 # Fahrplan — Gesetzesdarstellung Bund/DE (Normtext-Umbau)
+<!-- @lagebild name: Normtext-Darstellung · zweck: Treue Darstellung der Gesetzestexte im Leser. -->
 
 **Heimat: ROADMAP «Querschnitt-Band»** — Quell-Architektur-Entscheid + Intake
 («Informations-Nutzung der Gesetze») verlinkt aus `W2·5d`; SIDECAR-Spec (§M14)
