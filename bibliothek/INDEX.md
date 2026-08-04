@@ -340,6 +340,8 @@ im Verfallsregister («Amtliche Muster-Suiten»).
 
 ## betrieb/ — Betrieb, Infrastruktur, Prüf-Forensik
 
+- [Code-Inventur 4.8.2026 — Logik/Darstellung/Pipeline (QS-CODE-\*)](betrieb/code-inventur-2026-08-04.md) — drei read-only Explore-Analysen am Stand `2c4d97e54`: Bestand strukturell gesund (0× `any`, kein §3-Verstoss, Infra zentralisiert); Hebel: Turso-FTS-Durchsatz (~3.7× Reserve), Suchindex-Monolith 45.9 MB (Budget 91 %), `fristenEngine` mit 6 Testfällen, Entdopplung Darstellungsschicht (D1–D7), 6 Grossdatei-Splits. Bau-Specs: `fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md`. **Status: entwurf** — zwei David-Fragen offen (Manifest-Nullzeilen, `normalisiereTarifText`-Freigabe).
+
 - [VPS-Bestell-Dossier (QS-BASIS B-5)](betrieb/vps-bestell-dossier-2026-07-17.md) — 3 live-verifizierte Angebote (17.7.2026), Empfehlung netcup RS 4000 G12; entsperrt E3-Serving/E4-Zitatgraph. **Blocker: Bestellung durch David.**
 - [e2e-Flake-Forensik — drei 2-vCPU-Rotfälle (QS-PERF)](betrieb/e2e-flake-forensik-2026-07-26.md) — **Erstrecherche 26.7.2026:** je 4 gemessene Läufe im CI-Zweig zu den drei als 2-vCPU-flaky belegten e2e-Tests. Zwei Deckel kalibriert (`leser-kopf-a9` 5000 → 8000 ms nach der `QS-PERF`-Ziff.-5-Politik, mit Sabotage-Probe rot gezeigt; `gesetze-ia-v2-walks`-Kopfzeile 10 → 30 s, Wartezeit gemessen 11.4–12.2 s). **Dritter Fall als Flake WIDERLEGT:** `norm-sprung` A9 zeigt einen reproduzierbaren **bimodalen ~48-s-Stall** (≈12 s un-gedrosselt) ohne jede Contention, Test-Instrumentierung per Gegenprobe als Ursache ausgeschlossen — **nicht gehärtet**, Ursache offen; Signatur-Hypothese: dieselbe Wurzel wie der offene `QS-PERF`-Befund «OR-LCP ist bimodal»
 

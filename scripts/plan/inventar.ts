@@ -88,6 +88,12 @@ export const INVENTAR: readonly string[] = [
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
   'QS-EXTQUELLEN',
 
+  // §14-Intake 4.8.2026 (Code-Inventur, Anordnung David «ok baue es ein»): fünf Schritte
+  // aus drei read-only Analysen; Befunde in bibliothek/betrieb/code-inventur-2026-08-04.md,
+  // Bau-Specs in FAHRPLAN-CODE-VERBESSERUNG.md (§6 dort: Verortung der Befunde, die in
+  // QS-PERF/QS-AUTOMATIK/QS-AUTOMATIK-PARITAET/QS-BASIS-DEPS geflossen sind).
+  'QS-CODE-TURSO', 'QS-CODE-FRISTENKERN', 'QS-CODE-AUSSENKANTEN', 'QS-CODE-ENTDOPPLUNG', 'QS-CODE-SPLITS',
+
   // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
   // sie erweitert QS-AUTOMATIK-BERICHT (Bündelung, Skill `auftrag` Ziff. 3).
