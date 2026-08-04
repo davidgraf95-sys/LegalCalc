@@ -22,13 +22,10 @@ import { useLocation } from 'react-router-dom';
 /** Der Hash muss dem BESTEHENDEN Ankerraum entsprechen (`#art-<token>`, K2/R8:
  *  überall derselbe, opake Token). Kein neuer Ankerraum, keine eigene Grammatik. */
 const ART_HASH = /^#art-(.+)$/;
-/** Takt der Landeprüfung. Bewusst Intervall statt MutationObserver: der Reader
- *  mutiert während der Hydration tausendfach — ein Subtree-Observer auf dem
- *  Dokument wäre genau in der Sekunde teuer, in der es auf Tempo ankommt (§15). */
-const TAKT_MS = 120;
-/** Harte Obergrenze. Was bis dahin nicht gelandet ist, landet nicht mehr (toter
- *  Anker, fremdes Dokument) — dann verschwindet das Overlay, statt zu behaupten,
- *  es käme noch etwas (§8). */
+/** Harte Obergrenze als BACKSTOP. Was bis dahin nicht gelandet ist, landet nicht
+ *  mehr (fremdes Dokument, Reader lädt gar nicht) — dann verschwindet das Overlay,
+ *  statt zu behaupten, es käme noch etwas (§8). Den Regelfall entscheidet der
+ *  Takt unten, nicht diese Kappe. */
 const KAPPE_MS = 6000;
 /** Toleranz um die Leselinie (`--nt-stick` ≈ 4rem + 2.25rem), ab der der Sprung
  *  als gelandet gilt. Grosszügig: es geht um «ist er dort», nicht um Pixel. */
@@ -56,25 +53,44 @@ export function DeepLinkSkeleton() {
     // oder klickt, navigiert nicht mehr «hin» — ein Schleier mit «Springe zu …»
     // über der eigenen Bewegung wäre schlicht falsch.
     const uebernahme = ['wheel', 'touchstart', 'keydown', 'pointerdown'] as const;
-    let takt = 0;
+    let raf = 0;
     let kappe = 0;
-    let sofort = 0;
     let weg = false;
     const schliesse = () => {
       if (weg) return;
       weg = true;
-      window.clearInterval(takt);
+      window.cancelAnimationFrame(raf);
       window.clearTimeout(kappe);
-      window.clearTimeout(sofort);
       for (const ev of uebernahme) window.removeEventListener(ev, schliesse);
       setAktiv(false);
     };
     for (const ev of uebernahme) window.addEventListener(ev, schliesse, { passive: true, once: true });
 
-    // EINE Prüfung des äusseren Zustands (DOM + Sprung-Landung), getaktet
+    // EINE Prüfung des äusseren Zustands (DOM + Sprung-Landung), je Frame
     // aufgerufen. Auch das Einschalten passiert hier und nicht im Effekt-Rumpf:
     // ob das Overlay gebraucht wird, entscheidet nicht React, sondern der
     // Ladezustand des Dokuments — der Effekt abonniert ihn nur.
+    //
+    // ── WARUM rAF UND NICHT setInterval (CI-Rot 30867800070) ──────────────────
+    // Die erste Fassung taktete mit `setInterval(120ms)`, ausdrücklich um billiger
+    // zu sein als ein Observer. Das war die falsche Abwägung: Blink priorisiert
+    // unter Haupt-Thread-Sättigung die Rendering-Schritte und hungert die
+    // Timer-Queue aus. Gemessen auf dieser Seite (Takt-Feuerungen statt der bei
+    // 120 ms erwarteten Zahl, und die grösste Lücke zwischen zwei Feuerungen):
+    //     6× Drossel:  6 Takte, grösste Lücke  636 ms
+    //    14× Drossel:  7 Takte, grösste Lücke 1490 ms
+    //    20× Drossel:  8 Takte, grösste Lücke 2154 ms
+    // Auf dem gesättigten 2-vCPU-CI-Runner wuchs die Lücke auf ~4.4 s — das
+    // Overlay stand also nach dem Artikel-Render noch 4.4 s, obwohl der Ausstieg
+    // gebaut war: er kam schlicht nicht zum Zug. rAF lief in derselben Zeit
+    // durch (der Mess-Sampler der e2e-Spec zeichnete Frames über die ganze
+    // Strecke auf). Die Latenz React-Entscheid → DOM lag bei 3–110 ms, war also
+    // nie das Problem.
+    //
+    // rAF ist hier auch sachlich das richtige Werkzeug: gefragt ist «steht das
+    // Ziel schon an der Leselinie», also eine Frage an das GERENDERTE Bild. Die
+    // Schleife lebt nur, solange das Overlay lebt (Sekundenbruchteile bis
+    // wenige Sekunden), und pausiert im Hintergrund-Tab von selbst (§15).
     const pruefe = () => {
       const el = document.getElementById(id);
       if (!el) {
@@ -91,7 +107,9 @@ export function DeepLinkSkeleton() {
         // das Dokument freigeben — der Reader selbst behandelt den unbekannten
         // Anker weiter wie bisher.
         if (document.querySelector('article[id^="art-"]')) { schliesse(); return; }
-        setAktiv(true); setLabel(''); return;
+        setAktiv(true); setLabel('');
+        raf = window.requestAnimationFrame(pruefe);
+        return;
       }
       const top = el.getBoundingClientRect().top;
       // Etikett nachziehen, sobald der Anker da ist (sein Textinhalt IST das
@@ -102,13 +120,13 @@ export function DeepLinkSkeleton() {
       // Gelandet = das Ziel steht im oberen Lesebereich. Erst dann weg, sonst
       // bliebe der Dokumentanfang in der Lücke zwischen «Element da» und
       // «Sprung ausgeführt» doch wieder sichtbar (im Audit ~1 s).
-      if (top >= -LANDE_TOLERANZ_PX && top <= LANDE_TOLERANZ_PX) schliesse();
-      else setAktiv(true);
+      if (top >= -LANDE_TOLERANZ_PX && top <= LANDE_TOLERANZ_PX) { schliesse(); return; }
+      setAktiv(true);
+      raf = window.requestAnimationFrame(pruefe);
     };
-    takt = window.setInterval(pruefe, TAKT_MS);
-    // Erste Prüfung ohne Wartetakt — das Overlay soll im selben Wimpernschlag
-    // stehen wie der leere Dokumentanfang, den es ersetzt.
-    sofort = window.setTimeout(pruefe, 0);
+    // Erste Prüfung sofort im nächsten Frame — das Overlay soll im selben
+    // Wimpernschlag stehen wie der leere Dokumentanfang, den es ersetzt.
+    raf = window.requestAnimationFrame(pruefe);
     kappe = window.setTimeout(schliesse, KAPPE_MS);
 
     return schliesse;

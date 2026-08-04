@@ -172,7 +172,13 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
       requestAnimationFrame(tick);
     });
 
-    await page.goto('/gesetze/bund/OR#art-957');
+    // BV statt OR (CI-Kosten): das OR ist der grösste Erlass im Korpus, dieser
+    // Test brauchte damit auf dem 2-vCPU-Runner 175–275 s und riss einmal das
+    // 270-s-Budget. Bewiesen wird hier der EINSPRUNG von aussen, nicht ein
+    // bestimmter Erlass — und auch auf BV entsteht der Reader erst im Client
+    // (Overlay-Standzeit unter 6×-Drossel gemessen: 1673 ms). Die Aussage bleibt,
+    // die Rechnung für den Shard wird ein Vielfaches kleiner.
+    await page.goto('/gesetze/bund/BV#art-8');
     const overlay = page.getByRole('status').filter({ hasText: /Springe zu/ });
     // Es verschwindet von selbst, sobald der Sprung gelandet ist.
     await expect(overlay).toHaveCount(0, { timeout: 25000 });
@@ -190,7 +196,7 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     // … und dann steht das Ziel wirklich oben (der Sprung ist nicht bloss
     // «weg-animiert» worden).
     const top = await page.evaluate(() => {
-      const el = document.getElementById('art-957');
+      const el = document.getElementById('art-8');
       return el ? Math.round(el.getBoundingClientRect().top) : null;
     });
     expect(top, 'Ziel im DOM').not.toBeNull();
@@ -209,7 +215,7 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     await page.setViewportSize({ width: 1440, height: 900 });
     const cdp = await page.context().newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 6 });
-    await page.goto('/gesetze/bund/OR#art-957');
+    await page.goto('/gesetze/bund/BV#art-8'); // BV statt OR — Shard-Kosten, s. o.
     const overlay = page.getByRole('status').filter({ hasText: /Springe zu/ });
     await expect(overlay).toBeVisible({ timeout: 10000 });
     await page.mouse.wheel(0, 300); // Nutzer übernimmt
@@ -320,21 +326,33 @@ test('A9 — Chip: Tastatur/aria/Tap-Ziel, und der TOC-Sprung bleibt unter 6× D
   const c = chip(page);
   await expect(c).toBeVisible();
 
-  // aria: der Chip erscheint ohne Fokuswechsel → er muss angesagt werden.
-  const live = page.locator('[aria-live="polite"]').filter({ has: c });
-  await expect(live).toHaveCount(1);
+  // aria + Tap-Ziel in EINEM Zugriff. Der Chip ist flüchtig (8 s), darum wird
+  // zwischen «er steht» und «wir messen ihn» so wenig Wanduhr wie möglich
+  // verbraucht — jeder Playwright-Roundtrip zählt auf einem gesättigten Runner.
+  const gemessen = await c.evaluate((el) => ({
+    hoehe: Math.round(el.getBoundingClientRect().height),
+    imLiveBereich: !!el.closest('[aria-live="polite"]'),
+  }));
+  // Er erscheint ohne Fokuswechsel → er muss angesagt werden.
+  expect(gemessen.imLiveBereich, 'Chip liegt in einer aria-live-Region').toBe(true);
+  // Tap-Ziel ≥ 44 px (WCAG 2.5.8 / R6-Mass) — er wird auf dem Daumen bedient.
+  expect(gemessen.hoehe, `Chip-Höhe ${gemessen.hoehe}px`).toBeGreaterThanOrEqual(44);
 
-  // Tap-Ziel ≥ 44 px (WCAG 2.5.8 / R6-Mass) — der Chip wird auf dem Daumen bedient.
-  const box = await c.boundingBox();
-  expect(box, 'Chip hat eine Box').not.toBeNull();
-  expect(box!.height, `Chip-Höhe ${box!.height}px`).toBeGreaterThanOrEqual(44);
-
-  // Tastatur: der Chip ist per Tab erreichbar und per Enter auslösbar.
-  await c.focus();
-  await expect(c).toBeFocused();
+  // Tastatur an einem FRISCHEN Chip. Grund (CI-Rot 30867800070, «element was
+  // detached from the DOM»): auf dem gesättigten Runner vergingen zwischen dem
+  // Erscheinen des Chips und dieser Stelle mehr als seine 8-s-Lebensdauer — der
+  // Test verlor damit gegen die Verfallsfrist, die er selbst prüft. Ein zweiter
+  // Sprung (anderer Abschnitt, bewegt also) setzt die Frist neu und macht den
+  // Tastatur-Teil unabhängig vom Maschinentempo.
+  await tocSprung(page).first().click();
+  await page.waitForTimeout(1400);
+  const frisch = chip(page);
+  await expect(frisch).toBeVisible();
+  await frisch.focus();
+  await expect(frisch).toBeFocused();
   await page.keyboard.press('Enter');
   await page.waitForTimeout(400);
-  await expect(c).toHaveCount(0);
+  await expect(frisch).toHaveCount(0);
 
   const { cls, bericht } = await clsAuslesen(page);
   // Chip und Overlay liegen ausserhalb des Layoutflusses (fixed/absolute) — sie
