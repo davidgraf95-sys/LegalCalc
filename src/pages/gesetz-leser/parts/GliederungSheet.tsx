@@ -1,0 +1,100 @@
+import type { ReactNode, RefObject } from 'react';
+
+// ─── W2·10-UI-NAV/R2 · Mobile Gliederung als volles Bottom-Sheet ───────────────
+//
+// Fahrplan R2: «Sheet in voller Höhe (Daumenzone) · beim Öffnen Hierarchie zur
+// aktuellen Leseposition aufgeklappt + markiert (Scroll-Spy-State existiert,
+// A3 nutzt ihn) · Quickjump-Feld ‹Art. N› zuoberst».
+//
+// Vorher war die mobile Gliederung ein OBEN angeschlagener Drawer (max-h-60vh,
+// `top: calc(4rem + 2.25rem)`): der Baum begann direkt unter dem Kopf, also am
+// weitesten weg vom Daumen, und endete nach 60 % Höhe — bei ZGB/OR sah man
+// wenige Zweige. Jetzt: von unten, bis knapp unter den Kopf, Bediengriffe
+// (Schliessen, Quickjump) ZUOBERST, Baum darunter scrollend.
+//
+// Aufbau (von oben nach unten):
+//   1. Griffleiste + Titel + ✕ (44 px Tap-Ziel)
+//   2. «Sie sind hier» — der vom Scroll-Spy gelieferte Gliederungspfad + der
+//      aktuell gelesene Artikel. Reine Projektion bestehenden Zustands (§3/§5):
+//      es wird nichts zusätzlich beobachtet. Ohne Pfad steht die Zeile NICHT da
+//      (kein «unbekannt»-Platzhalter, §8) — die Höhe ist dennoch reserviert.
+//   3. Quickjump «Art. N» (ArtikelSprungFeld, derselbe Baustein wie im Desktop-
+//      TOC-Kopf, §5)
+//   4. Gliederungsbaum (einziger Scroller; `overscroll-contain`, damit Wischen
+//      im Sheet nicht die Seite dahinter mitzieht)
+//
+// §15/2 CLS 0: das Sheet ist `fixed`/`absolute` und aus dem Fluss genommen — es
+// verschiebt nichts. Alle vier Zonen haben feste bzw. flex-verteilte Höhen; der
+// Baum bekommt `flex-1 min-h-0`, kein Inhalt wächst in einen Nachbarn ein.
+// §3: keine Rechtslogik — Props rein, Sprünge macht der Reader.
+
+export function GliederungSheet({
+  sheetRef, inPane, onSchliessen, pfad, aktArtikelLabel, sprungFeld, baum,
+}: {
+  /** Fokus-/Dialog-Ref des Readers (useDialogFokus: Esc, Fokusfang, Rückgabe). */
+  sheetRef: RefObject<HTMLDivElement | null>;
+  /** Im Split-View-Pane: `absolute` in der Overlay-Schicht statt `fixed`. */
+  inPane: boolean;
+  onSchliessen: () => void;
+  /** «Sie sind hier»: Gliederungspfad der aktuellen Leseposition (kann leer sein). */
+  pfad: string[];
+  /** «Sie sind hier»: Label des aktuell gelesenen Artikels (kann null sein). */
+  aktArtikelLabel: string | null;
+  sprungFeld: ReactNode;
+  baum: ReactNode;
+}) {
+  return (
+    <>
+      <div className={inPane ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : 'fixed inset-0 z-40 bg-ink-900/30'}
+        onClick={onSchliessen} aria-hidden />
+      <div ref={sheetRef} tabIndex={-1} role="dialog" aria-modal={inPane ? undefined : true} aria-label="Gliederung"
+        data-gliederung-sheet
+        // Volle Höhe in der Daumenzone: unten angeschlagen, oben bis knapp unter
+        // den Inhalts-Kopf (Topbar 4rem + Kopf 2.25rem) bzw. bis knapp unter die
+        // Pane-Oberkante. `dvh` statt `vh`, damit die mobile Browser-Leiste das
+        // Sheet nicht unter den Rand schiebt.
+        className={`${inPane
+          ? 'pointer-events-auto absolute inset-x-0 bottom-0 top-8 z-50 rounded-t-xl'
+          : 'fixed inset-x-0 bottom-0 z-50 rounded-t-xl'} flex flex-col border-t border-line bg-paper-raised shadow-lg`}
+        style={inPane ? undefined : { top: 'calc(4rem + 2.25rem)', maxHeight: 'calc(100dvh - 4rem - 2.25rem)' }}>
+        {/* 1 · Griffleiste + Titel + Schliessen */}
+        <div className="shrink-0 border-b border-line">
+          <div aria-hidden className="mx-auto mt-2 h-1 w-10 rounded-full bg-line" />
+          <div className="flex items-center justify-between px-4 py-1.5">
+            <p className="lc-overline">Gliederung</p>
+            <button type="button" onClick={onSchliessen} aria-label="Gliederung schliessen"
+              className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-500 hover:text-brass-700">
+              <span aria-hidden className="text-base leading-none">✕</span>
+            </button>
+          </div>
+        </div>
+        {/* 2 · «Sie sind hier» — Pfad + gelesener Artikel (nur wenn bekannt, §8) */}
+        <div data-sie-sind-hier className="shrink-0 border-b border-line px-4 py-2">
+          <p className="lc-overline mb-0.5">Sie sind hier</p>
+          {pfad.length > 0 || aktArtikelLabel ? (
+            <p className="text-micro leading-snug text-ink-600">
+              {pfad.map((l, i) => (
+                <span key={`${l}-${i}`}>
+                  {i > 0 && <span aria-hidden className="mx-1 text-ink-300">›</span>}
+                  {l}
+                </span>
+              ))}
+              {aktArtikelLabel && (
+                <>
+                  {pfad.length > 0 && <span aria-hidden className="mx-1 text-ink-300">›</span>}
+                  <span className="font-medium text-ink-900">{aktArtikelLabel}</span>
+                </>
+              )}
+            </p>
+          ) : (
+            <p className="text-micro leading-snug text-ink-400">Noch keine Leseposition erfasst.</p>
+          )}
+        </div>
+        {/* 3 · Quickjump «Art. N» */}
+        <div className="shrink-0 border-b border-line px-4 py-2">{sprungFeld}</div>
+        {/* 4 · Gliederungsbaum — einziger Scroller des Sheets */}
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-2 [scrollbar-width:thin]">{baum}</div>
+      </div>
+    </>
+  );
+}

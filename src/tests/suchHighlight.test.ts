@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findeVorkommen, SUCH_HIGHLIGHT } from '../pages/gesetz-leser/suchHighlight';
+import { findeVorkommen, SUCH_HIGHLIGHT, SUCH_META } from '../pages/gesetz-leser/suchHighlight';
 
 // A35 (David 16.7.2026): Treffer-Highlight in der In-Gesetz-Suche. Hier die reine
 // Offset-Findung (die DOM-/Highlight-API-Verdrahtung deckt e2e ab, Chromium).
@@ -29,5 +29,14 @@ describe('findeVorkommen — case-insensitive Teilstring-Offsets', () => {
 
   it('exportiert den kanonischen Highlight-Namen (mit index.css gekoppelt)', () => {
     expect(SUCH_HIGHLIGHT).toBe('lc-such-treffer');
+  });
+
+  // Bug-Check §9 vom 4.8.2026 (B1): das Marker-Attribut, mit dem die
+  // Trefferliste ihre eigenen Bedien-/Zähler-Zeilen aus dem Walker-Bereich
+  // nimmt. Der Name ist ein VERTRAG zwischen suchHighlight.ts (Ausschluss) und
+  // inhalt-volltext.tsx (Setzen) — driftet er, zählt der Zähler wieder sich
+  // selbst mit. Die DOM-Wirkung deckt e2e/leser-r1-r2.e2e.ts ab (node-Env hier).
+  it('exportiert das kanonische Meta-Marker-Attribut', () => {
+    expect(SUCH_META).toBe('data-such-meta');
   });
 });
