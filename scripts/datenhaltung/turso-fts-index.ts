@@ -89,7 +89,18 @@ export function* leseFtsSchatten(
 }
 
 /** Dokumentzahl des lokalen Index — `_docsize` trägt genau eine Zeile je indexiertem
- *  Dokument und ist damit die Soll-Zahl, gegen die der Sync die geladene Tabelle prüft. */
+ *  Dokument und ist damit die Soll-Zahl, gegen die der Sync die geladene Tabelle prüft.
+ *
+ *  Fehlt der Index ganz, ist die nackte SQLite-Meldung («no such table:
+ *  fts_artikel_docsize») zwar korrekt, aber sie nennt die Abhilfe nicht — und sie fiele
+ *  ausgerechnet dem in die Hände, der die DB von Hand zusammengesucht hat. Darum übersetzt. */
 export function ftsDokumente(lokal: DatabaseSync, tabelle: string): number {
-  return (lokal.prepare(`SELECT count(*) AS n FROM ${tabelle}_docsize`).get() as { n: number }).n;
+  try {
+    return (lokal.prepare(`SELECT count(*) AS n FROM ${tabelle}_docsize`).get() as { n: number }).n;
+  } catch {
+    throw new Error(
+      `FTS-Index «${tabelle}» fehlt in der lokalen DB. Der Sync überträgt den fertigen Index; ` +
+        'er entsteht in `npm run datenhaltung:build` (fts.ts). Erst bauen, dann synchronisieren.',
+    );
+  }
 }
