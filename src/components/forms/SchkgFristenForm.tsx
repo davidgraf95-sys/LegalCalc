@@ -18,8 +18,9 @@ import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { fristbeginnZusatz } from '../../lib/begruendung';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
-import { SCHKG_LINK_SPEC, type SchkgLink } from '../../lib/rechnerPermalinks';
+import { permalinkKodieren } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
+import { SCHKG_LINK_SPEC } from '../../lib/rechnerPermalinks';
 import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -79,9 +80,7 @@ const DEFAULTS: FormState = {
 // Form liest/teilt, der Preset-Index des Tagerechners baut dieselben Links).
 
 export function SchkgFristenForm() {
-  const [ausLink] = useState<Partial<SchkgLink>>(() => {
-    try { return permalinkLesen(SCHKG_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(SCHKG_LINK_SPEC);
   const [form, setForm] = useState<FormState>(() => ({
     ...DEFAULTS,
     kanton: getStandardKanton(), // Standard-Kanton (Einstellungen); Permalink unten geht vor
