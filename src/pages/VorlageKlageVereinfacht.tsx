@@ -11,17 +11,13 @@ import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
-import { KvGerichtWahl } from '../components/vorlagen/KvGerichtWahl';
-import { SgAdressatKachel } from '../components/vorlagen/SgBehoerdenWahl';
-import { KANTONE } from '../lib/kantone';
-import type { Kanton } from '../types/legal';
+import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { useWizardState } from '../components/vorlagen/useWizardState';
 import { ZefixSuche } from '../components/vorlagen/ZefixSuche';
 import { uidGueltig, uidNormalisieren } from '../lib/uid';
 import { kvPrefillLesen } from '../lib/vorlagen/klageVereinfacht';
 import { VorlagenWizardRahmen, VorschauPanel, ExportLeiste } from '../components/vorlagen/wizard';
 import { karte } from '../lib/startseiteConfig';
-import { gerichtsErlass } from '../data/gerichtsorganisationErlasse';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Klage im vereinfachten Verfahren (BS-Pilot) ───────────
@@ -136,71 +132,25 @@ export function VorlageKlageVereinfacht() {
           {/* Kantonsausbau 10.6.2026 (Auftrag David): Gericht je Kanton.
               BS = abgenommenes GOG-Routing; übrige Kantone über die zweifach
               geprüfte Recherche-Schicht (KvGerichtWahl) bzw. Handeingabe. */}
-          <div className="space-y-3">
-            <GruppenTitel>Zuständiges Gericht</GruppenTitel>
-            <div className="grid grid-cols-[8rem_1fr] gap-3 items-start">
-              <Field label="Kanton">
-                <select className={inputCls} value={a.gerichtsKanton}
-                  onChange={(e) => set('gerichtsKanton', e.target.value as Kanton)}>
-                  {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
-                </select>
-              </Field>
-              {!a.gerichtManuellAktiv && (() => {
-                if (a.gerichtsKanton === 'BS') {
-                  const g = routing?.anwendbar && routing.gericht !== 'kantonal'
-                    ? KV_GERICHTE_BS[routing.gericht] : KV_GERICHTE_BS.zivilgericht;
-                  return <SgAdressatKachel zeilen={[g.name, g.strasse, g.plzOrt]} url={g.url} />;
-                }
-                if (a.gerichtAufgeloest) return <SgAdressatKachel zeilen={a.gerichtAufgeloest.zeilen} url={a.gerichtAufgeloest.url} />;
-                return (
-                  <div className="lc-notice text-body-s">
-                    Gericht wird unten über die kantonale Gerichtsschicht bestimmt — oder von Hand erfassen.
-                  </div>
-                );
-              })()}
-            </div>
-            {(() => {
-              const e = gerichtsErlass(a.gerichtsKanton);
-              return (
-                <p className="text-xs text-ink-500">
-                  Rechtsgrundlage Gerichtsorganisation: {e.url
-                    ? <a href={e.url} target="_blank" rel="noreferrer" className="text-brass-700 underline">{e.abk} {a.gerichtsKanton} ({e.nummer}) ↗</a>
-                    : <>{e.abk} {a.gerichtsKanton} ({e.nummer})</>}
-                </p>
-              );
+          {/* BS-Adressat routing-abhängig (§ 71 GOG BS): Arbeitsgericht bzw.
+              Zivilgericht — die Schwester-Masken adressieren fest das
+              Zivilgericht, deshalb bleibt die Auflösung hier bei der Seite. */}
+          <GerichtsWahlBlock
+            layout="nebeneinander" gruppenTitel="Zuständiges Gericht"
+            kanton={a.gerichtsKanton} onKanton={(k) => set('gerichtsKanton', k)}
+            bsAdresse={(() => {
+              const g = routing?.anwendbar && routing.gericht !== 'kantonal'
+                ? KV_GERICHTE_BS[routing.gericht] : KV_GERICHTE_BS.zivilgericht;
+              return { zeilen: [g.name, g.strasse, g.plzOrt], url: g.url };
             })()}
-            {a.gerichtsKanton !== 'BS' && !a.gerichtManuellAktiv && (
-              <KvGerichtWahl kanton={a.gerichtsKanton} materie={a.materie}
-                onAufgeloest={(z) => set('gerichtAufgeloest', z ?? undefined)} />
-            )}
-            <Checkbox
-              checked={a.gerichtManuellAktiv ?? false}
-              onChange={(v) => set('gerichtManuellAktiv', v || undefined)}
-              label={<><span>Adresse des Gerichts von Hand erfassen <span className="text-ink-500">(übersteuert die hinterlegte Anschrift)</span></span></>} />
-            {a.gerichtManuellAktiv && (
-              // Layout 11.6.2026 (Auftrag David, einheitlich mit dem
-              // Schlichtungsgesuch): Name volle Breite, Strasse + PLZ zweispaltig.
-              (<div className="space-y-3 pl-6">
-                <Field label="Gericht">
-                  <input className={inputCls} value={a.gerichtManuell?.name ?? ''}
-                    onChange={(e) => set('gerichtManuell', { name: e.target.value, strasse: a.gerichtManuell?.strasse ?? '', plzOrt: a.gerichtManuell?.plzOrt ?? '' })}
-                    placeholder="z. B. Bezirksgericht X" />
-                </Field>
-                <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-3')}>
-                  <Field label="Strasse und Hausnummer">
-                    <input className={inputCls} value={a.gerichtManuell?.strasse ?? ''}
-                      onChange={(e) => set('gerichtManuell', { name: a.gerichtManuell?.name ?? '', strasse: e.target.value, plzOrt: a.gerichtManuell?.plzOrt ?? '' })}
-                      placeholder="z. B. Gerichtsgasse 1" />
-                  </Field>
-                  <Field label="PLZ und Ort">
-                    <input className={inputCls} value={a.gerichtManuell?.plzOrt ?? ''}
-                      onChange={(e) => set('gerichtManuell', { name: a.gerichtManuell?.name ?? '', strasse: a.gerichtManuell?.strasse ?? '', plzOrt: e.target.value })}
-                      placeholder="z. B. 8001 Zürich" />
-                  </Field>
-                </div>
-              </div>)
-            )}
-          </div>
+            aufgeloest={a.gerichtAufgeloest}
+            ohneAdresseHinweis="Gericht wird unten über die kantonale Gerichtsschicht bestimmt — oder von Hand erfassen."
+            materie={a.materie} onAufgeloest={(z) => set('gerichtAufgeloest', z ?? undefined)}
+            manuellAktiv={a.gerichtManuellAktiv ?? false}
+            onManuellAktiv={(v) => set('gerichtManuellAktiv', v || undefined)}
+            uebersteuertHinweis
+            manuell={a.gerichtManuell} onManuell={(g) => set('gerichtManuell', g)}
+            platzhalter={{ name: 'z. B. Bezirksgericht X', strasse: 'z. B. Gerichtsgasse 1', plzOrt: 'z. B. 8001 Zürich' }} />
           <SelectionGrid
             className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}
             items={KV_MATERIEN.map((m) => ({ code: m.id, label: m.label, sub: m.hint }))}
