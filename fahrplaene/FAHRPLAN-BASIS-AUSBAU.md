@@ -508,3 +508,27 @@ E3/E4 seit 3.7. lokal fertig, einziger Blocker VPS-Bestellung als blosse Memory-
   läuft, ein gemischter Push den Volllauf **einmal** gezeigt behält (§6.7), und der
   ci.yml-Kopf den gelockerten Grundsatz samt David-Entscheid-Datum dokumentiert.
 - **Risiko-Klasse:** reine CI-/Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+### §3.5 `QS-AUTOMATIK-PARITAET` — Paritäts-Sonde: PR-Deckung ≠ Wächter-Deckung
+
+*Angelegt 4.8.2026 (F2b-Vorfall #425, Skill `lehren` Register-Regel 5: zweiter
+Vorfall trotz Gegenmittel ⇒ Gegenmittel schärfen, keine Regel danebenlegen).*
+
+- **Anlass:** #425 änderte 226 Normtext-Snapshots ohne `daten-manifest.json`-Nachzug und
+  passierte das PR-CI grün. `check:tor-paritaet` Regel (1) zählte `check:datenhaltung` als
+  «gedeckt», weil es in `turso-sync.yml` läuft — einem POST-merge-Wächter, der keinen Merge
+  verhindern kann. Die Drift meldete erst der rote Sync um 21:52, der Serving-Sync stand
+  danach still. Der akute Fix (Manifest-Nachzug + `check:datenhaltung` im ci.yml-Tore-Job)
+  ist am 4.8.2026 gebaut; dieser Schritt schärft die Sonde selbst.
+- **Zu bauen:** (a) Regel (1) in `scripts/check-tor-paritaet.ts` unterscheidet
+  **PR-Deckung** (Workflow mit `pull_request`-Trigger, heute nur `ci.yml`) von
+  **Wächter-Deckung** (schedule/push-Workflows); nur PR-Deckung befreit vom
+  Allowlist-Zwang. (b) Die 5 heute nur wächter-gedeckten Tore je einzeln evaluieren —
+  `check:verfall`, `check:normtext`, `check:struktur-konsistenz`, `check:verklebung`,
+  `check:paritaet`: entweder in den ci.yml-Tore-Job (Kosten messen!) oder begründeter
+  Allowlist-Eintrag mit dem Wächter als benanntem Ersatz-Arbiter (Regel 3 bindet den
+  Workflow-Verweis bereits maschinell).
+- **Fertig, wenn:** die geschärfte Sonde auf dem Stand VOR (b) **einmal rot** ist (§6.7 —
+  genau die 5 Tore meldend), nach (b) grün; kein seriell-Tor mehr stillschweigend nur
+  wächter-gedeckt.
+- **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
