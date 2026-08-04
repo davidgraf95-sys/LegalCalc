@@ -55,6 +55,19 @@ Byte-stabil halten — der Block wird maschinell eingefügt: `npm run dispatch -
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 ```
 
+### §0 über Agent-Typen (seit 4.8.2026 der bevorzugte Weg)
+
+Die generierten Sub-Agenten-Typen **`lex-<klasse>`** (`.claude/agents/`, Quelle
+`scripts/dispatch-agents.ts`) tragen die Klausel **in der Definition** — als
+System-Prompt des Sub-Agenten. Wirkung: der Orchestrator schreibt die ~470
+Token nicht mehr als Output je Dispatch, und Vergessen ist unmöglich. Der Hook
+`dispatch-schutz.py` befreit `subagent_type: lex-*` deshalb von der
+Prompt-Prüfung; die Befreiung ist durch `check:dispatch-klausel` Ebene (C)
+gedeckt (Byte-Gleichheit der Definitionen mit der Projektion, Drift ⇒ rot).
+**Freitext-Dispatches bleiben voll prüfpflichtig** und `npm run dispatch --
+<klasse>` bleibt der harness-unabhängige Fallback, falls ein künftiger Harness
+`.claude/agents/` nicht kennt.
+
 ### Arbeitsteilung Orchestrator ↔ Agent (Lehren 3.8.2026)
 
 Zwei Regeln gehören zusätzlich in jeden Landungs-nahen Auftrag, weil ihre
@@ -172,23 +185,46 @@ Dispatch die zuständigen §§ und lässt den Agenten `npm run fahrplan -- fahrp
 (druckt Kopf + §0 + Ziel-§ + das komplette ##/###-Inventar als ToC). Der Orchestrator nennt
 **alle** zuständigen §§; bei echter Unklarheit über den Querkontext bleibt die Ganzdatei erlaubt.
 
+### 1.4 · Agent weiterverwenden statt neu spawnen (4.8.2026)
+
+Für **Folge-Slices auf derselben Bau-Fläche** wird ein bestehender Agent per
+SendMessage fortgesetzt statt ein frischer gespawnt — sein Kontext (Slice,
+Whitelist, gelesene Dateien) bleibt erhalten, die Explorations-Runde
+(~5–15k Tok) entfällt komplett. Zwei harte Grenzen:
+
+- **NIE für die Gegenprüfung.** Ein Prüf-Agent ist immer ein frischer Agent
+  auf einem anderen Modell — die Fortsetzung des Bau-Agenten wäre Common-Mode
+  in Reinform (er prüfte seine eigene Ableitung).
+- **NIE über Klassen-Grenzen.** Ein Bau-Agent wird nicht als Mechanik- oder
+  Synthese-Agent weiterbenutzt (anderes TABU, anderes Rückgabe-Schema).
+  Bei Zweifel: frisch spawnen — die Ersparnis rechtfertigt nie eine
+  verwischte Auftragsgrenze.
+
 ---
 
 ## 2 · Modell-/Effort-Routing (T15)
 
-**`model` und `effort` sind in JEDEM Task-Call explizit gesetzt.** Ohne Angabe fällt der Harness
-auf ein Default-Modell zurück (Davids Dauer-Direktive: Task klassifizieren → passendes Modell;
-Risikopfade IMMER Opus/high). Wirkung: bis −48…−76 % Output auf effort-gesenkten Schritten;
-Haiku ≈ 1/5 des Opus-Preises. Output ist laut T2-Baseline der eigentliche $-Hebel (Opus-Output
-≈ 5× Input, in Typ-O-Sessions 494k Tok/Session) — hier wirkt Effort-Senkung direkt.
+**`model` und `effort` sind in JEDEM Task-Call explizit gesetzt** — bei den Agent-Typen
+`lex-*` liefert die Definition den Default, Abweichungen setzt der Call. Wirkung: bis
+−48…−76 % Output auf effort-gesenkten Schritten; die Klein-Stufe ≈ 1/5 des Preises der
+Stark-Stufe. Output ist laut T2-Baseline der eigentliche $-Hebel (Stark-Output ≈ 5× Input,
+in Typ-O-Sessions 494k Tok/Session) — hier wirkt Effort-Senkung direkt.
 
-| Aufgaben-Charakter | Beispiele | Routing |
+**Zukunftstaugliche Stufen statt Modellnamen (4.8.2026):** Dieses Routing spricht in vier
+semantischen Stufen. Die Abbildung Stufe → konkretes Modell steht **ausschliesslich** in
+`PALETTE` (`scripts/dispatch.ts`) und wird bei jedem Modellfamilien-Wechsel dort — und nur
+dort — nachgeführt (`npm run dispatch:agents` regeneriert die Typen, das Tor beweist es).
+Belegung Stand 4.8.2026: **spitze**=fable · **stark**=opus · **mittel**=sonnet ·
+**klein**=haiku. Weicht diese Doku-Zeile je von `PALETTE` ab, gilt `PALETTE`.
+
+| Aufgaben-Charakter | Beispiele | Routing (Stufe / Effort) |
 |---|---|---|
-| **Risikopfad** (Rechnen / Extraktion / Norm-Tarif) **und jede Gegenprüfung** | Tarif-Engine, normtext-Extraktion, `check:gegenpruefung`-Zweitdurchgang | **Opus / high — fix, nicht senkbar** |
-| **Bau** (Feature-Code, nicht-trivial) | UI-Komponente, Reader-Logik, Skript | **Opus** (Default-Bau), Effort nach Reasoning-Tiefe |
-| **Synthese** (lenkt Folge-Sessions!) | Session-Karten, Handoffs, Vermerke, Register-Einträge, Zusammenfassungen | **mind. Sonnet** — oder der bauende Opus; **nie darunter** |
-| **Mechanisch** (deterministische, maschinell prüfbare Transformation) | Verschieben, Formatieren, Log-Extrakt, Fertigtext einsetzen, Umbenennen | **Haiku / low** |
-| **Sehr einfach + klar** | eng umrissener, eindeutiger Ein-Datei-Fix | Sonnet |
+| **Gegenprüfung** (jede, insb. Risikopfad) | `check:gegenpruefung`-Zweitdurchgang, adversariale Verdikte | **spitze / high bevorzugt** (Entscheid David 4.8.2026), Minimum stark / high — stets ein **anderes** Modell als das bauende |
+| **Risikopfad-Bau** (Rechnen / Extraktion / Norm-Tarif) | Tarif-Engine, normtext-Extraktion | **stark / high — Minimum, nicht senkbar**; bei aussergewöhnlich harter Extraktion spitze |
+| **Bau** (Feature-Code, nicht-trivial) | UI-Komponente, Reader-Logik, Skript | **stark** (Default-Bau), Effort nach Reasoning-Tiefe; **eng umrissener, nicht-riskanter Bau darf mittel** (Entscheid David 4.8.2026 — Tore + golden sind das Netz) |
+| **Synthese** (lenkt Folge-Sessions!) | Session-Karten, Handoffs, Vermerke, Register-Einträge, Zusammenfassungen | **mind. mittel** — oder der bauende Stark-Agent; **nie darunter** |
+| **Mechanisch** (deterministische, maschinell prüfbare Transformation) | Verschieben, Formatieren, Log-Extrakt, Fertigtext einsetzen, Umbenennen | **klein / low** |
+| **Sehr einfach + klar** | eng umrissener, eindeutiger Ein-Datei-Fix | mittel |
 
 **Trennschärfe (K):** „mechanisch" = das Ergebnis ist eine **deterministische Transformation, die
 sich maschinell nachprüfen lässt** (Byte-Diff, Test). Sobald Urteil, Auswahl oder Formulierung
@@ -291,8 +327,12 @@ grösste Preisposten. Regeln:
    **T1**/`struktur-rotieren.py` — siehe §7 „Offen".)*
 2. **`CLAUDE.md` nicht mitten in einer Kampagne editieren** — jede Änderung invalidiert den
    Präfix für alle Folge-Turns. Struktur-Edits an CLAUDE.md gebündelt an Schritt-Grenzen.
-3. **Agenten-Läufe dicht bündeln** (Cache-TTL ~5 Min): mehrere Sub-Agenten desselben Präfixes
-   zeitnah starten, nicht über Stunden verteilt.
+3. **Agenten-Läufe innerhalb des TTL-Fensters bündeln.** Die Prompt-Cache-TTL ist
+   umgebungsabhängig — Stand 4.8.2026 (Claude-5-Harness): **1 Stunde**, unter
+   Überlast-Fallback 5 Min. Das frühere strikte 5-Minuten-Bündeln ist damit
+   überholt: Sub-Agenten desselben Präfixes dürfen über bis zu einer Stunde
+   verteilt starten. Die Regel bleibt dem Prinzip nach (im TTL-Fenster starten),
+   die Zahl kommt aus der jeweils aktuellen Harness-Angabe, nicht aus dieser Datei.
 
 Wirkung ist **dollar-seitig** (höhere cacheRead-Quote), das Token-*Volumen* bleibt gleich.
 
@@ -314,6 +354,9 @@ Wirkung ist **dollar-seitig** (höhere cacheRead-Quote), das Token-*Volumen* ble
 
 Zehn Muster-Dispatch-Köpfe über die realen Auftragsklassen. **Jeder** trägt `model`+`effort`
 explizit (DoD T15: Stichprobe 10/10 = 100 % explizit) und hält das Schema aus §1/§3.
+*(Beispiele vom Juli 2026, vor der Stufen-Umstellung: `opus` lies als Stufe stark, `sonnet`
+als mittel, `haiku` als klein — massgeblich ist `PALETTE`. Heute laufen dieselben Aufträge
+bevorzugt über die Agent-Typen `lex-*`, §0.)*
 
 1. **UI-Bau** — Reader-Randtitel-Fix.
    `model=opus effort=high` · §-Slice `fahrplan -- FAHRPLAN-GESETZES-UX §10` ·

@@ -135,10 +135,29 @@ Für den Dispatch gilt das Standard-Template
 kompaktes Pflicht-Rückgabe-Schema und `model` plus `effort` explizit in **jedem**
 Call. Beweis, Tore und Gegenprüfung bleiben davon unberührt.
 
-**Modellwahl:** Bauarbeit auf Opus 5. Für die Gegenprüfung auf Risiko-Pfaden ein
-**anderes** Modell als das bauende — der Wert liegt in der Unabhängigkeit des
-Zweitblicks, nicht in dessen Fähigkeit. Das gewählte Modell steht ohnehin im
-`Gegenpruefung:`-Trailer.
+**Bevorzugter Dispatch-Weg (seit 4.8.2026):** die generierten Agent-Typen
+**`lex-<klasse>`** (bau · daten · pruefung · recherche · mechanisch · synthese,
+`.claude/agents/`) — §0-Klausel, TABU, Rückgabe-Schema und Modell-Default
+stecken in der Definition; `npm run dispatch:agents` regeneriert, das Tor
+`check:dispatch-klausel` beweist Byte-Gleichheit. Freitext-Dispatch
+(`npm run dispatch -- <klasse>`) bleibt der Fallback.
+
+**Rollenteilung (Anweisung David 4.8.2026):** Die Hauptsession **orchestriert
+nur** — sie zerlegt, dispatcht, prüft Rückgaben gegen prüfbare Artefakte,
+landet und pflegt den Plan. Bau- und Prüfarbeit gehen an Unteragenten.
+
+**Modellwahl nach Schwierigkeit** (Stufen statt Modellnamen — die Abbildung
+Stufe → Modell steht einzig in `PALETTE`, `scripts/dispatch.ts`):
+anspruchsvoller Bau auf Stufe **stark** · eng umrissener, nicht-riskanter Bau
+darf **mittel** · Mechanik auf **klein** · Synthese mind. **mittel** ·
+Gegenprüfung bevorzugt **spitze** (Entscheid David 4.8.2026), Minimum
+stark/high, stets auf einem **anderen** Modell als dem bauenden — die
+Unabhängigkeit des Zweitblicks ist Pflicht, die Fähigkeit seither auch
+gehoben. Das gewählte Modell steht ohnehin im `Gegenpruefung:`-Trailer.
+
+**Folge-Slices derselben Bau-Fläche:** bestehenden Agenten per SendMessage
+fortsetzen statt neu spawnen (Template §1.4) — **nie** für die Gegenprüfung
+und nie über Klassen-Grenzen.
 
 ## 7. Vertrauensgrenze — wörtlich in jeden Sub-Agenten-Auftrag
 

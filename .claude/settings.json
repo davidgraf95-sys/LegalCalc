@@ -31,6 +31,12 @@
       "Bash(curl -s https://www.fedlex.admin.ch/*)",
       "Bash(curl -s https://fedlex.data.admin.ch/*)",
       "Bash(curl -s http://localhost:*)",
+      "Bash(git fetch *)",
+      "Bash(git fetch)",
+      "Bash(git pull *)",
+      "Bash(git pull)",
+      "Bash(git branch *)",
+      "Bash(git worktree *)",
       "mcp__Claude_Preview__preview_screenshot"
     ]
   },

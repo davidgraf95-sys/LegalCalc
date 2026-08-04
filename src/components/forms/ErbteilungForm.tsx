@@ -15,7 +15,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { usePaneKlasse } from '../layout/PaneKontext';
 
 const ERB_DISCLAIMER =
@@ -74,9 +75,7 @@ const ET_LINK_SPEC: PermalinkSpec<EtLink & Record<string, unknown>> = {
 
 export function ErbteilungForm() {
   const pk = usePaneKlasse();
-  const [ausLink] = useState<Partial<EtLink>>(() => {
-    try { return permalinkLesen(ET_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(ET_LINK_SPEC);
   const [todesdatum, setTodesdatum] = useState(ausLink.todesdatum ?? '2025-06-01');
   const [zivilstand, setZivilstand] = useState<Zivilstand>((ausLink.zivilstand as Zivilstand | undefined) ?? 'verheiratet');
   const [scheidung, setScheidung] = useState(ausLink.scheidung ?? false);

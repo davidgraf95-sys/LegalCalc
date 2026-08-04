@@ -9,7 +9,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { berechneBetreibungskosten, type GebvErgebnis } from '../../lib/gebvKosten';
 
@@ -35,10 +36,7 @@ const GK_DISCLAIMER =
   'Auslagen (Art. 13: Porti, Sachverständige) kommen effektiv hinzu und werden nicht beziffert. Der Schuldner trägt die Kosten; der Gläubiger schiesst sie vor (Art. 68 SchKG).';
 
 export function GebvKostenForm({ minimal = false }: { minimal?: boolean } = {}) {
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(GK_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(GK_LINK_SPEC);
 
   const [forderung, setForderung] = useState<string>(ausLink.forderung != null ? String(ausLink.forderung) : '');
   const [zb, setZb] = useState<boolean>((ausLink.zb as boolean) ?? true);

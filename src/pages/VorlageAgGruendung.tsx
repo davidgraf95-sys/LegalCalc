@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { agGruendungsunterlagen, type EinlageArt, finmaBegriffsTreffer } from '../lib/gruendungsunterlagen';
+import { useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'react';
+import { agGruendungsunterlagen, finmaBegriffsTreffer } from '../lib/gruendungsunterlagen';
 import { Field, inputCls } from '../components/vorlagen/ui';
 import { NormText } from '../components/NormText';
 import { VorlagenWizardRahmen, VorschauPanel } from '../components/vorlagen/wizard';
+import { useWizardState } from '../components/vorlagen/useWizardState';
 import { karte } from '../lib/startseiteConfig';
 import { BANNER_MAPPE_FERTIG } from '../lib/vorlagen/banner';
 import { getAusgabeStil } from '../components/vorlagen/ausgabeStil';
@@ -11,15 +12,7 @@ import {
   AG_DOK_DEFAULTS,
   AG_FREMDWAEHRUNGEN,
   type AgDokAntworten,
-  type AgGruenderZeile,
-  type AgVrZeile,
-  type AgVertretungsZeile,
-  type AgSacheinlageZeile,
-  type AgVerrechnungZeile,
-  type AgVorteilZeile,
-  type AgWaehrung,
 } from '../lib/vorlagen/gruendungAgDokumente';
-import { KANTONE } from '../lib/kantone';
 
 // ─── Maske: AG-Gründung als WIZARD (Auftrag David 7.6.2026) ──────────────────
 // Durchklickbar analog der anderen Vorlagen-Masken (VorlagenWizardRahmen):
@@ -27,8 +20,16 @@ import { KANTONE } from '../lib/kantone';
 // Dokumente (Checkliste + Mappe + Sammel-Download). Rechtslogik vollständig
 // in lib/vorlagen/gruendungAgDokumente.ts und lib/gruendungsunterlagen.ts
 // (§3/§5); hier nur Darstellung und Eingabesammlung.
+//
+// D6 (QS-CODE-ENTDOPPLUNG, 4.8.2026): der Eingabe-Zustand liegt in EINEM
+// AgStand-Objekt hinter useWizardState (geteilter Rahmen, Punkt-7-Speicherung
+// inklusive) statt in ~70 Einzel-useState mit handgepflegter Serialisierung.
+// Hydration/Migration des alten {v:1, stand}-Formats: migriereAgStand
+// (vorlagenAgGruendungDaten.ts). Die ctx-Schnittstelle der Schritt-Renderer
+// bleibt UNVERÄNDERT (Einzelwerte + Dispatch-Setter) — die Geschwister-
+// Dateien unter vorlage-ag-gruendung/ sind byte-identisch geblieben.
 
-import { SCHRITTE, BEREICH_SCHRITT, BANNER_ENTWURF, VR_ZEICHNUNGS_OPTIONEN, VERTRETUNGS_ZEICHNUNGS_OPTIONEN, STORAGE_KEY, ladeStand, txt, bool, wahl, zeilenGuard, GRUENDER_LEER, VR_LEER, VERTRETUNG_LEER, SACHEINLAGE_LEER, VERRECHNUNG_LEER, VORTEIL_LEER } from './vorlagenAgGruendungDaten';
+import { SCHRITTE, BEREICH_SCHRITT, BANNER_ENTWURF, STORAGE_KEY, agStandDefaults, migriereAgStand, type AgStand } from './vorlagenAgGruendungDaten';
 import type { AgSchrittCtx } from './vorlage-ag-gruendung/ctx';
 import { SchrittKonstellation, SchrittGesellschaft, SchrittKapital, SchrittPersonen, SchrittWeiteres } from './vorlage-ag-gruendung/schritte-eingabe';
 import { SchrittDokumente } from './vorlage-ag-gruendung/schritte-dokumente';
@@ -36,183 +37,86 @@ import { SchrittDokumente } from './vorlage-ag-gruendung/schritte-dokumente';
 export function VorlageAgGruendung() {
   const card = karte('ag-gruendung');
 
-  // Punkt 7: gespeicherter Stand wird GENAU EINMAL gelesen (Lazy-Init);
-  // alle Eingabe-States hydratisieren daraus mit Typ-Guards.
-  const [stand] = useState(ladeStand);
+  // Punkt 7: gespeicherter Stand wird GENAU EINMAL gelesen (Lazy-Init im
+  // Hook); migriereAgStand hydratisiert mit Typ-Guards je Feld.
+  const { a, setA, schritt, setSchritt } = useWizardState<AgStand>({
+    defaults: agStandDefaults(),
+    speicherKey: STORAGE_KEY,
+    normalisieren: migriereAgStand,
+  });
 
-  // ── Schritt-Navigation ──
-  const [schritt, setSchritt] = useState(0);
+  // Feld-Setter in der Signatur der früheren useState-Setter — damit bleibt
+  // die AgSchrittCtx-Schnittstelle (Dispatch<SetStateAction<…>>) unverändert.
+  const setzer = <K extends keyof AgStand>(k: K): Dispatch<SetStateAction<AgStand[K]>> => (v) =>
+    setA((alt) => ({ ...alt, [k]: typeof v === 'function' ? (v as (vorher: AgStand[K]) => AgStand[K])(alt[k]) : v }));
 
-  // ── Konstellation (Checklisten-Weichen, §5) ──
-  const [einlageArt, setEinlageArt] = useState<EinlageArt>(() => wahl(stand?.einlageArt, ['bar', 'sacheinlage', 'verrechnung', 'gemischt'], 'bar'));
-  const [besondereVorteile, setBesondereVorteile] = useState(() => bool(stand?.besondereVorteile, false));
-  const [optingOut, setOptingOut] = useState(() => bool(stand?.optingOut, true));
-  const [eigeneBueros, setEigeneBueros] = useState(() => bool(stand?.eigeneBueros, true));
-  const [immobilienHauptzweck, setImmobilienHauptzweck] = useState(() => bool(stand?.immobilienHauptzweck, false));
-  const [inhaberaktien, setInhaberaktien] = useState(() => bool(stand?.inhaberaktien, false));
-  const [fremdwaehrung, setFremdwaehrung] = useState(() => bool(stand?.fremdwaehrung, false));
-  const [bankInUrkunde, setBankInUrkunde] = useState(() => bool(stand?.bankInUrkunde, true));
-  const [chVertretung, setChVertretung] = useState(() => bool(stand?.chVertretung, true));
-  const [leistungen, setLeistungen] = useState(() => txt(stand?.leistungen, ''));
-
-  // ── Gesellschaft & Statuten ──
-  const [firma, setFirma] = useState(() => txt(stand?.firma, ''));
-  const [sitz, setSitz] = useState(() => txt(stand?.sitz, ''));
-  const [kanton, setKanton] = useState<string>(() => wahl(stand?.kanton, KANTONE, 'ZH'));
-  const [zweck, setZweck] = useState(() => txt(stand?.zweck, ''));
-  const [zweckErweiterung, setZweckErweiterung] = useState(() => bool(stand?.zweckErweiterung, true));
-  const [statutenUmfang, setStatutenUmfang] = useState<AgDokAntworten['statutenUmfang']>(() => wahl(stand?.statutenUmfang, ['kurz', 'lang'], 'kurz'));
-  const [vinkulierung, setVinkulierung] = useState(() => bool(stand?.vinkulierung, false));
-  const [virtuelleGv, setVirtuelleGv] = useState(() => bool(stand?.virtuelleGv, false));
-  // Stufe 2 P2: Inhaberaktien-Voraussetzung (Art. 622 Abs. 1bis OR).
-  const [inhaberKotiert, setInhaberKotiert] = useState(() => bool(stand?.inhaberKotiert, false));
-  const [verwahrungsstelle, setVerwahrungsstelle] = useState(() => txt(stand?.verwahrungsstelle, ''));
-  // Stufe 2 P3: Statuten-Zusatzklauseln.
-  const [schiedsklausel, setSchiedsklausel] = useState(() => bool(stand?.schiedsklausel, false));
-  const [schiedsOrt, setSchiedsOrt] = useState(() => txt(stand?.schiedsOrt, ''));
-  const [kapitalband, setKapitalband] = useState(() => bool(stand?.kapitalband, false));
-  const [kbUntergrenze, setKbUntergrenze] = useState(() => txt(stand?.kbUntergrenze, ''));
-  const [kbObergrenze, setKbObergrenze] = useState(() => txt(stand?.kbObergrenze, ''));
-  const [kbEndeDatum, setKbEndeDatum] = useState(() => txt(stand?.kbEndeDatum, ''));
-  const [kbRichtung, setKbRichtung] = useState<AgDokAntworten['kbRichtung']>(() => wahl(stand?.kbRichtung, ['erhoehen', 'beide'], 'erhoehen'));
-  const [bedingtesKapital, setBedingtesKapital] = useState(() => bool(stand?.bedingtesKapital, false));
-  const [bkBetrag, setBkBetrag] = useState(() => txt(stand?.bkBetrag, ''));
-  const [bkKreis, setBkKreis] = useState(() => txt(stand?.bkKreis, ''));
-  const [stichentscheidGv, setStichentscheidGv] = useState(() => bool(stand?.stichentscheidGv, true));
-  const [gjErstesEnde, setGjErstesEnde] = useState(() => txt(stand?.gjErstesEnde, ''));
-  const [gjBeginn, setGjBeginn] = useState(() => txt(stand?.gjBeginn, AG_DOK_DEFAULTS.gjBeginn));
-  const [gjEnde, setGjEnde] = useState(() => txt(stand?.gjEnde, AG_DOK_DEFAULTS.gjEnde));
-
-  // ── Kapital & Einlagen ──
-  const [ak, setAk] = useState(() => txt(stand?.ak, AG_DOK_DEFAULTS.aktienkapitalChf));
-  const [anzahl, setAnzahl] = useState(() => txt(stand?.anzahl, AG_DOK_DEFAULTS.anzahlAktien));
-  const [nennwert, setNennwert] = useState(() => txt(stand?.nennwert, AG_DOK_DEFAULTS.nennwertChf));
-  const [liberierung, setLiberierung] = useState(() => txt(stand?.liberierung, AG_DOK_DEFAULTS.liberierungProzent));
-  const [ausgabebetrag, setAusgabebetrag] = useState(() => txt(stand?.ausgabebetrag, ''));
-  const [waehrung, setWaehrung] = useState<AgWaehrung>(() => wahl(stand?.waehrung, AG_FREMDWAEHRUNGEN, 'EUR'));
-  const [kursChf, setKursChf] = useState(() => txt(stand?.kursChf, ''));
-  const [kursQuelle, setKursQuelle] = useState(() => txt(stand?.kursQuelle, ''));
-  const [bankName, setBankName] = useState(() => txt(stand?.bankName, ''));
-  const [bankOrt, setBankOrt] = useState(() => txt(stand?.bankOrt, ''));
-  const [sacheinlagen, setSacheinlagen] = useState<(AgSacheinlageZeile & { key: number })[]>(
-    () => zeilenGuard<AgSacheinlageZeile>(stand?.sacheinlagen, SACHEINLAGE_LEER, { typ: ['sachgesamtheit', 'geschaeft'] }));
-  const [verrechnungen, setVerrechnungen] = useState<(AgVerrechnungZeile & { key: number })[]>(
-    () => zeilenGuard<AgVerrechnungZeile>(stand?.verrechnungen, VERRECHNUNG_LEER));
-  const [vorteile, setVorteile] = useState<(AgVorteilZeile & { key: number })[]>(
-    () => zeilenGuard<AgVorteilZeile>(stand?.vorteile, VORTEIL_LEER));
-  const [revisorName, setRevisorName] = useState(() => txt(stand?.revisorName, ''));
-
-  // ── Personen & Organe ──
-  const [gruender, setGruender] = useState<(AgGruenderZeile & { key: number })[]>(
-    () => zeilenGuard<AgGruenderZeile>(stand?.gruender, GRUENDER_LEER));
-  const [vr, setVr] = useState<(AgVrZeile & { key: number })[]>(
-    () => zeilenGuard<AgVrZeile>(stand?.vr, VR_LEER, { zeichnungsArt: VR_ZEICHNUNGS_OPTIONEN.map((o) => o.id) }));
-  const [vertretungen, setVertretungen] = useState<(AgVertretungsZeile & { key: number })[]>(
-    () => zeilenGuard<AgVertretungsZeile>(stand?.vertretungen, VERTRETUNG_LEER, { zeichnungsArt: VERTRETUNGS_ZEICHNUNGS_OPTIONEN.map((o) => o.id) }));
-  const [protokollfuehrer, setProtokollfuehrer] = useState(() => txt(stand?.protokollfuehrer, ''));
-  const [sitzungBeginn, setSitzungBeginn] = useState(() => txt(stand?.sitzungBeginn, ''));
-  const [sitzungEnde, setSitzungEnde] = useState(() => txt(stand?.sitzungEnde, ''));
-  const [rsName, setRsName] = useState(() => txt(stand?.rsName, ''));
-  const [rsSitz, setRsSitz] = useState(() => txt(stand?.rsSitz, ''));
-
-  // ── Domizil & Optionen ──
-  const [rechtsdomizil, setRechtsdomizil] = useState(() => txt(stand?.rechtsdomizil, ''));
-  const [domizilhalterName, setDomizilhalterName] = useState(() => txt(stand?.domizilhalterName, ''));
-  const [domizilhalterAdresse, setDomizilhalterAdresse] = useState(() => txt(stand?.domizilhalterAdresse, ''));
-  const [konstituierungInUrkunde, setKonstituierungInUrkunde] = useState(() => bool(stand?.konstituierungInUrkunde, false));
-  const [domizilNurAnmeldung, setDomizilNurAnmeldung] = useState(() => bool(stand?.domizilNurAnmeldung, false));
-  const [nachtragsbevollmaechtigter, setNachtragsbevollmaechtigter] = useState(() => txt(stand?.nachtragsbevollmaechtigter, ''));
-  const [lkAusland, setLkAusland] = useState(() => bool(stand?.lkAusland, false));
-  const [lkNeuerwerb, setLkNeuerwerb] = useState(() => bool(stand?.lkNeuerwerb, false));
-  const [lkGrundstueck, setLkGrundstueck] = useState(() => bool(stand?.lkGrundstueck, false));
-  const [nachtragAktiv, setNachtragAktiv] = useState(() => bool(stand?.nachtragAktiv, false));
-  const [ntGruendungsdatum, setNtGruendungsdatum] = useState(() => txt(stand?.ntGruendungsdatum, ''));
-  const [ntUrkundeZiffer, setNtUrkundeZiffer] = useState(() => txt(stand?.ntUrkundeZiffer, ''));
-  const [ntUrkundeText, setNtUrkundeText] = useState(() => txt(stand?.ntUrkundeText, ''));
-  const [ntStatutenArtikel, setNtStatutenArtikel] = useState(() => txt(stand?.ntStatutenArtikel, ''));
-  const [ntStatutenAbsatz, setNtStatutenAbsatz] = useState(() => txt(stand?.ntStatutenAbsatz, ''));
-  const [ntStatutenText, setNtStatutenText] = useState(() => txt(stand?.ntStatutenText, ''));
-  const [ort, setOrt] = useState(() => txt(stand?.ort, ''));
-  // Punkt 7: Datum-Default «heute» NUR, wenn kein gespeicherter Wert vorliegt.
-  // E2-1: LOKALE Zeit (toLocaleDateString 'sv-SE') statt toISOString (UTC) — sonst
-  // zwischen 00:00 und 01/02:00 Schweizer Zeit der Vortag beim Beurkundungsdatum.
-  const [datum, setDatum] = useState(() => txt(stand?.datum, '') || new Date().toLocaleDateString('sv-SE'));
-
-  // Zähler über den gespeicherten Stand heben: Hydration vergibt je Liste die
-  // Keys 1…n neu, der Zähler startet darum oberhalb der längsten Liste (und
-  // mindestens beim gespeicherten Zählerstand).
-  const naechsterKey = useRef(Math.max(
-    typeof stand?.naechsterKey === 'number' && Number.isInteger(stand.naechsterKey) ? stand.naechsterKey : 1,
-    1 + Math.max(0, ...[stand?.gruender, stand?.vr, stand?.vertretungen, stand?.sacheinlagen, stand?.verrechnungen, stand?.vorteile]
-      .map((a) => (Array.isArray(a) ? a.length : 0))),
-  ));
+  // Zeilen-Keys: die Hydration vergibt je Liste 1…n neu, der Zähler startet
+  // strikt oberhalb der längsten Liste. Der früher persistierte Zählerstand
+  // entfällt BEWUSST (D6): Keys sind reine React-Identitäten; nach jedem
+  // Reload sind alle Listen-Keys ≤ maxLen, der Seed 1+maxLen liegt darüber
+  // und wächst in der Session monoton — kollisionsfrei (Gegenprüfung M1).
+  const naechsterKey = useRef(1 + Math.max(0,
+    ...[a.gruender, a.vr, a.vertretungen, a.sacheinlagen, a.verrechnungen, a.vorteile].map((l) => l.length)));
   const neuerKey = () => naechsterKey.current++;
 
   const weichen = useMemo(() => {
-    const betrag = Number(leistungen.replace(/['’\s]/g, ''));
+    const betrag = Number(a.leistungen.replace(/['’\s]/g, ''));
     return {
-      einlageArt,
-      besondereVorteile,
-      optingOut,
-      eigeneBueros,
-      immobilienHauptzweck,
-      inhaberaktien,
-      fremdwaehrung,
-      bankInUrkundeGenannt: bankInUrkunde,
-      chWohnsitzVertretung: chVertretung,
-      leistungenChf: leistungen.trim() === '' || Number.isNaN(betrag) ? undefined : betrag,
+      einlageArt: a.einlageArt,
+      besondereVorteile: a.besondereVorteile,
+      optingOut: a.optingOut,
+      eigeneBueros: a.eigeneBueros,
+      immobilienHauptzweck: a.immobilienHauptzweck,
+      inhaberaktien: a.inhaberaktien,
+      fremdwaehrung: a.fremdwaehrung,
+      bankInUrkundeGenannt: a.bankInUrkunde,
+      chWohnsitzVertretung: a.chVertretung,
+      leistungenChf: a.leistungen.trim() === '' || Number.isNaN(betrag) ? undefined : betrag,
     };
-  }, [einlageArt, besondereVorteile, optingOut, eigeneBueros, immobilienHauptzweck, inhaberaktien, fremdwaehrung, bankInUrkunde, chVertretung, leistungen]);
+  }, [a.einlageArt, a.besondereVorteile, a.optingOut, a.eigeneBueros, a.immobilienHauptzweck, a.inhaberaktien, a.fremdwaehrung, a.bankInUrkunde, a.chVertretung, a.leistungen]);
 
   const checkliste = useMemo(() => agGruendungsunterlagen(weichen), [weichen]);
 
   const antworten: AgDokAntworten = useMemo(() => ({
     ...weichen,
     ...AG_DOK_DEFAULTS,
-    firma, sitz, kanton, zweck, zweckErweiterung,
-    aktienkapitalChf: ak, anzahlAktien: anzahl, nennwertChf: nennwert,
-    liberierungProzent: liberierung, ausgabebetragChf: ausgabebetrag,
-    gruender, verwaltungsraete: vr, weitereVertretungen: vertretungen,
-    protokollfuehrerName: protokollfuehrer,
-    bankName, bankOrt, rechtsdomizilAdresse: rechtsdomizil,
-    domizilhalterName, domizilhalterAdresse,
-    revisionsstelleName: rsName, revisionsstelleSitz: rsSitz,
-    vinkulierung, virtuelleGv, statutenUmfang, gjBeginn, gjEnde,
-    inhaberKotiert, verwahrungsstelle,
-    schiedsklausel, schiedsOrt, kapitalband, kbUntergrenze, kbObergrenze,
-    kbEndeDatum, kbRichtung, bedingtesKapital, bkBetrag, bkKreis,
-    stichentscheidGv, gjErstesEnde,
-    sitzungBeginn, sitzungEnde, nachtragsbevollmaechtigter,
-    waehrung, kursChf, kursQuelle,
-    lexKollerAuslandBeteiligt: lkAusland, lexKollerNeuerwerb: lkNeuerwerb, lexKollerGrundstueckErwerb: lkGrundstueck,
-    konstituierungInUrkunde, domizilNurAnmeldung,
-    nachtragAktiv, nachtragGruendungsdatum: ntGruendungsdatum,
-    nachtragUrkundeZiffer: ntUrkundeZiffer, nachtragUrkundeText: ntUrkundeText,
-    nachtragStatutenArtikel: ntStatutenArtikel, nachtragStatutenAbsatz: ntStatutenAbsatz, nachtragStatutenText: ntStatutenText,
-    sacheinlagen, verrechnungen, vorteile, revisorName, ort, datum,
-  }), [weichen, firma, sitz, kanton, zweck, zweckErweiterung, ak, anzahl, nennwert, liberierung,
-    gruender, vr, vertretungen, protokollfuehrer, bankName, bankOrt, rechtsdomizil,
-    domizilhalterName, domizilhalterAdresse, rsName, rsSitz, vinkulierung, virtuelleGv,
-    inhaberKotiert, verwahrungsstelle,
-    schiedsklausel, schiedsOrt, kapitalband, kbUntergrenze, kbObergrenze,
-    kbEndeDatum, kbRichtung, bedingtesKapital, bkBetrag, bkKreis,
-    stichentscheidGv, gjErstesEnde,
-    statutenUmfang, gjBeginn, gjEnde, sitzungBeginn, sitzungEnde, nachtragsbevollmaechtigter,
-    waehrung, kursChf, kursQuelle, lkAusland, lkNeuerwerb, lkGrundstueck,
-    ausgabebetrag, konstituierungInUrkunde, domizilNurAnmeldung,
-    nachtragAktiv, ntGruendungsdatum, ntUrkundeZiffer, ntUrkundeText,
-    ntStatutenArtikel, ntStatutenAbsatz, ntStatutenText,
-    sacheinlagen, verrechnungen, vorteile, revisorName, ort, datum]);
+    firma: a.firma, sitz: a.sitz, kanton: a.kanton, zweck: a.zweck, zweckErweiterung: a.zweckErweiterung,
+    aktienkapitalChf: a.ak, anzahlAktien: a.anzahl, nennwertChf: a.nennwert,
+    liberierungProzent: a.liberierung, ausgabebetragChf: a.ausgabebetrag,
+    gruender: a.gruender, verwaltungsraete: a.vr, weitereVertretungen: a.vertretungen,
+    protokollfuehrerName: a.protokollfuehrer,
+    bankName: a.bankName, bankOrt: a.bankOrt, rechtsdomizilAdresse: a.rechtsdomizil,
+    domizilhalterName: a.domizilhalterName, domizilhalterAdresse: a.domizilhalterAdresse,
+    revisionsstelleName: a.rsName, revisionsstelleSitz: a.rsSitz,
+    vinkulierung: a.vinkulierung, virtuelleGv: a.virtuelleGv, statutenUmfang: a.statutenUmfang,
+    gjBeginn: a.gjBeginn, gjEnde: a.gjEnde,
+    inhaberKotiert: a.inhaberKotiert, verwahrungsstelle: a.verwahrungsstelle,
+    schiedsklausel: a.schiedsklausel, schiedsOrt: a.schiedsOrt, kapitalband: a.kapitalband,
+    kbUntergrenze: a.kbUntergrenze, kbObergrenze: a.kbObergrenze,
+    kbEndeDatum: a.kbEndeDatum, kbRichtung: a.kbRichtung,
+    bedingtesKapital: a.bedingtesKapital, bkBetrag: a.bkBetrag, bkKreis: a.bkKreis,
+    stichentscheidGv: a.stichentscheidGv, gjErstesEnde: a.gjErstesEnde,
+    sitzungBeginn: a.sitzungBeginn, sitzungEnde: a.sitzungEnde,
+    nachtragsbevollmaechtigter: a.nachtragsbevollmaechtigter,
+    waehrung: a.waehrung, kursChf: a.kursChf, kursQuelle: a.kursQuelle,
+    lexKollerAuslandBeteiligt: a.lkAusland, lexKollerNeuerwerb: a.lkNeuerwerb, lexKollerGrundstueckErwerb: a.lkGrundstueck,
+    konstituierungInUrkunde: a.konstituierungInUrkunde, domizilNurAnmeldung: a.domizilNurAnmeldung,
+    nachtragAktiv: a.nachtragAktiv, nachtragGruendungsdatum: a.ntGruendungsdatum,
+    nachtragUrkundeZiffer: a.ntUrkundeZiffer, nachtragUrkundeText: a.ntUrkundeText,
+    nachtragStatutenArtikel: a.ntStatutenArtikel, nachtragStatutenAbsatz: a.ntStatutenAbsatz, nachtragStatutenText: a.ntStatutenText,
+    sacheinlagen: a.sacheinlagen, verrechnungen: a.verrechnungen, vorteile: a.vorteile,
+    revisorName: a.revisorName, ort: a.ort, datum: a.datum,
+  }), [weichen, a]);
 
   const mappe = useMemo(() => agDokumentmappe(antworten), [antworten]);
 
   // Stufe 2 P1a: Beträge der qualifizierten Gründung sind Beträge in der
   // KAPITALWÄHRUNG — die Feld-Labels führen den wirksamen Währungscode.
-  const wc = fremdwaehrung && (AG_FREMDWAEHRUNGEN as readonly string[]).includes(waehrung) ? waehrung : 'CHF';
+  const wc = a.fremdwaehrung && (AG_FREMDWAEHRUNGEN as readonly string[]).includes(a.waehrung) ? a.waehrung : 'CHF';
 
   // Etappe 5/D23: FINMA-Wortprüfung über Firma + Zweck — Regel lebt in der
   // Engine-Schicht (gruendungsunterlagen.finmaBegriffsTreffer, §3).
-  const finmaTreffer = useMemo(() => finmaBegriffsTreffer(firma, zweck), [firma, zweck]);
+  const finmaTreffer = useMemo(() => finmaBegriffsTreffer(a.firma, a.zweck), [a.firma, a.zweck]);
 
   // Praxis-Runde (Auftrag David): Blocker klickbar — Klick springt zum
   // Schritt, in dem die Eingabe liegt (Bereichs-Tag aus den Engine-Gates).
@@ -228,37 +132,6 @@ export function VorlageAgGruendung() {
       ))}
     </div>
   );
-
-  // Punkt 7: ALLE Eingabe-States (inkl. Weichen, Arrays und Key-Zähler) als
-  // versioniertes JSON zwischenspeichern. Läuft nach jedem Render — jeder
-  // Tastendruck rendert ohnehin, das Schreiben ist günstig und idempotent.
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({
-        v: 1,
-        stand: {
-          einlageArt, besondereVorteile, optingOut, eigeneBueros, immobilienHauptzweck,
-          inhaberaktien, fremdwaehrung, bankInUrkunde, chVertretung, leistungen,
-          firma, sitz, kanton, zweck, zweckErweiterung, statutenUmfang, vinkulierung,
-          virtuelleGv, gjBeginn, gjEnde, inhaberKotiert, verwahrungsstelle,
-          schiedsklausel, schiedsOrt, kapitalband, kbUntergrenze, kbObergrenze,
-          kbEndeDatum, kbRichtung, bedingtesKapital, bkBetrag, bkKreis,
-          stichentscheidGv, gjErstesEnde,
-          ak, anzahl, nennwert, liberierung, ausgabebetrag, waehrung, kursChf, kursQuelle,
-          bankName, bankOrt, sacheinlagen, verrechnungen, vorteile, revisorName,
-          gruender, vr, vertretungen, protokollfuehrer, sitzungBeginn, sitzungEnde, rsName, rsSitz,
-          rechtsdomizil, domizilhalterName, domizilhalterAdresse, konstituierungInUrkunde,
-          domizilNurAnmeldung, nachtragsbevollmaechtigter, lkAusland, lkNeuerwerb, lkGrundstueck,
-          nachtragAktiv, ntGruendungsdatum, ntUrkundeZiffer, ntUrkundeText,
-          ntStatutenArtikel, ntStatutenAbsatz, ntStatutenText, ort, datum,
-          naechsterKey: naechsterKey.current,
-        },
-      }));
-    } catch {
-      // Speicher blockiert/voll → Zwischenspeicherung still aus; die Maske
-      // funktioniert unverändert (nichts verlässt den Browser, §8).
-    }
-  });
 
   // Punkt 6 (Perfektion): Sammel-Download als EIN ZIP — alle Dokumente der
   // Mappe via vorlagenPdfDokument (jsPDF-Doc, NICHT …Erzeugen) zu
@@ -309,16 +182,16 @@ export function VorlageAgGruendung() {
           }
         }
       }
-      const slug = (firma.trim().toLowerCase()
+      const slug = (a.firma.trim().toLowerCase()
         .replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue')
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
         .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')) || 'ag';
       const blob = new Blob([zipSync(eintraege)], { type: 'application/zip' });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `gruendung-${slug}.zip`;
-      a.click();
+      const anker = document.createElement('a');
+      anker.href = url;
+      anker.download = `gruendung-${slug}.zip`;
+      anker.click();
       URL.revokeObjectURL(url);
       const docxHinweis = docxUebersprungen.length > 0
         ? `, Word übersprungen für: ${docxUebersprungen.join(', ')}`
@@ -346,43 +219,48 @@ export function VorlageAgGruendung() {
   // Werte aus dem Golden-Fall ag:gemischt-qualifiziert (scripts/golden-
   // outputs.ts): gemischte qualifizierte Gründung mit Sacheinlage
   // (Geschäft, Grundstück), Verrechnung, besonderen Vorteilen, c/o-Domizil,
-  // Revisionsstelle und Lex Koller.
+  // Revisionsstelle und Lex Koller. Teil-Update wie zuvor: nicht genannte
+  // Felder (z. B. kb*/bk*/nt*, Währungsangaben) behalten ihren Wert.
   const musterdatenFuellen = () => {
-    setEinlageArt('gemischt'); setBesondereVorteile(true); setOptingOut(false);
-    setEigeneBueros(false); setImmobilienHauptzweck(true); setInhaberaktien(false);
-    setFremdwaehrung(false); setBankInUrkunde(true); setChVertretung(true); setLeistungen('');
-    setFirma('Golden Muster AG'); setSitz('Zürich'); setKanton('ZH'); setZweck('Beteiligungen');
-    setZweckErweiterung(true); setStatutenUmfang('kurz'); setVinkulierung(false); setVirtuelleGv(false);
-    setInhaberKotiert(false); setVerwahrungsstelle('');
-    setSchiedsklausel(false); setSchiedsOrt(''); setKapitalband(false); setBedingtesKapital(false);
-    setGjBeginn(AG_DOK_DEFAULTS.gjBeginn); setGjEnde(AG_DOK_DEFAULTS.gjEnde); setGjErstesEnde('');
-    setAk("400'000"); setAnzahl('400'); setNennwert("1'000"); setLiberierung('100'); setAusgabebetrag('');
-    setBankName('Zürcher Kantonalbank'); setBankOrt('Zürich');
-    setGruender([
+    // Zeilen-Keys VOR dem Updater vergeben (Updater bleiben pur).
+    const muster: Partial<AgStand> = {
+      einlageArt: 'gemischt', besondereVorteile: true, optingOut: false,
+    eigeneBueros: false, immobilienHauptzweck: true, inhaberaktien: false,
+    fremdwaehrung: false, bankInUrkunde: true, chVertretung: true, leistungen: '',
+    firma: 'Golden Muster AG', sitz: 'Zürich', kanton: 'ZH', zweck: 'Beteiligungen',
+    zweckErweiterung: true, statutenUmfang: 'kurz', vinkulierung: false, virtuelleGv: false,
+    inhaberKotiert: false, verwahrungsstelle: '',
+    schiedsklausel: false, schiedsOrt: '', kapitalband: false, bedingtesKapital: false,
+    gjBeginn: AG_DOK_DEFAULTS.gjBeginn, gjEnde: AG_DOK_DEFAULTS.gjEnde, gjErstesEnde: '',
+    ak: "400'000", anzahl: '400', nennwert: "1'000", liberierung: '100', ausgabebetrag: '',
+    bankName: 'Zürcher Kantonalbank', bankOrt: 'Zürich',
+    gruender: [
       { key: neuerKey(), name: 'Anna Muster', angaben: 'von Basel, in Zürich', anzahl: '300', liberierung: '' },
       { key: neuerKey(), name: 'Beat Beispiel', angaben: 'von Bern, in Bern', anzahl: '100', liberierung: '' },
-    ]);
-    setVr([
+    ],
+    vr: [
       { key: neuerKey(), name: 'Anna Muster', herkunft: 'Basel', wohnort: 'Zürich', adresse: 'W 1', praesident: true, zeichnungsArt: 'einzelunterschrift' },
       { key: neuerKey(), name: 'Beat Beispiel', herkunft: 'Bern', wohnort: 'Bern', adresse: 'W 2', praesident: false, zeichnungsArt: 'kollektivzuzweien' },
-    ]);
-    setVertretungen([]);
-    setSacheinlagen([{
+    ],
+    vertretungen: [],
+    sacheinlagen: [{
       key: neuerKey(), typ: 'geschaeft', bezeichnung: 'Werkbau Muster', belegDatum: '2025-12-31',
       wertChf: "110'000", grundstueck: true, einlegerName: 'Anna Muster', aktienAnzahl: '100',
       gutschriftChf: "10'000", zustand: 'Liegenschaft zum Fortführungswert; Maschinenpark gemäss Anlagespiegel.',
       imHrEingetragen: true, cheNr: 'CHE-111.222.333', aktivenChf: "260'000", passivenChf: "150'000",
       rueckwirkungDatum: '2026-01-01',
-    }]);
-    setVerrechnungen([{ key: neuerKey(), glaeubigerName: 'Beat Beispiel', forderungChf: "50'000", aktienAnzahl: '50', begruendungTxt: 'Darlehen vom 01.02.2025, valutiert und fällig.' }]);
-    setVorteile([{ key: neuerKey(), beguenstigter: 'Anna Muster', inhalt: 'Vorkaufsrecht an der Werkhalle zum Verkehrswert', wertChf: "5'000", begruendungTxt: 'Abgeltung der Aufbauarbeit.' }]);
-    setRevisorName('Revisia AG'); setRsName('Revisia AG'); setRsSitz('Zürich');
-    setProtokollfuehrer(''); setSitzungBeginn('11.00'); setSitzungEnde('11.30');
-    setRechtsdomizil(''); setDomizilhalterName('Treuhand Muster AG'); setDomizilhalterAdresse('Bahnhofstrasse 10, 8001 Zürich');
-    setKonstituierungInUrkunde(false); setDomizilNurAnmeldung(false); setNachtragsbevollmaechtigter('');
-    setLkAusland(false); setLkNeuerwerb(false); setLkGrundstueck(true);
-    setNachtragAktiv(false);
-    setOrt('Zürich'); setDatum('2026-06-15');
+    }],
+    verrechnungen: [{ key: neuerKey(), glaeubigerName: 'Beat Beispiel', forderungChf: "50'000", aktienAnzahl: '50', begruendungTxt: 'Darlehen vom 01.02.2025, valutiert und fällig.' }],
+    vorteile: [{ key: neuerKey(), beguenstigter: 'Anna Muster', inhalt: 'Vorkaufsrecht an der Werkhalle zum Verkehrswert', wertChf: "5'000", begruendungTxt: 'Abgeltung der Aufbauarbeit.' }],
+    revisorName: 'Revisia AG', rsName: 'Revisia AG', rsSitz: 'Zürich',
+    protokollfuehrer: '', sitzungBeginn: '11.00', sitzungEnde: '11.30',
+    rechtsdomizil: '', domizilhalterName: 'Treuhand Muster AG', domizilhalterAdresse: 'Bahnhofstrasse 10, 8001 Zürich',
+    konstituierungInUrkunde: false, domizilNurAnmeldung: false, nachtragsbevollmaechtigter: '',
+    lkAusland: false, lkNeuerwerb: false, lkGrundstueck: true,
+    nachtragAktiv: false,
+    ort: 'Zürich', datum: '2026-06-15',
+    };
+    setA((alt) => ({ ...alt, ...muster }));
   };
 
   // ── Schritt-Inhalte ──
@@ -392,42 +270,80 @@ export function VorlageAgGruendung() {
   // die Render-Funktionen durchgereicht — reine Darstellung (§3), die JSX-
   // Bodies bleiben byte-identisch.
   const ctx: AgSchrittCtx = {
-    einlageArt, setEinlageArt, besondereVorteile, setBesondereVorteile,
-    optingOut, setOptingOut, eigeneBueros, setEigeneBueros,
-    immobilienHauptzweck, setImmobilienHauptzweck, inhaberaktien, setInhaberaktien,
-    fremdwaehrung, setFremdwaehrung, bankInUrkunde, setBankInUrkunde,
-    chVertretung, setChVertretung, leistungen, setLeistungen,
-    firma, setFirma, sitz, setSitz, kanton, setKanton, zweck, setZweck,
-    zweckErweiterung, setZweckErweiterung, statutenUmfang, setStatutenUmfang,
-    vinkulierung, setVinkulierung, virtuelleGv, setVirtuelleGv,
-    inhaberKotiert, setInhaberKotiert, verwahrungsstelle, setVerwahrungsstelle,
-    schiedsklausel, setSchiedsklausel, schiedsOrt, setSchiedsOrt,
-    kapitalband, setKapitalband, kbUntergrenze, setKbUntergrenze,
-    kbObergrenze, setKbObergrenze, kbEndeDatum, setKbEndeDatum,
-    kbRichtung, setKbRichtung, bedingtesKapital, setBedingtesKapital,
-    bkBetrag, setBkBetrag, bkKreis, setBkKreis,
-    stichentscheidGv, setStichentscheidGv, gjErstesEnde, setGjErstesEnde,
-    gjBeginn, setGjBeginn, gjEnde, setGjEnde,
-    ak, setAk, anzahl, setAnzahl, nennwert, setNennwert,
-    liberierung, setLiberierung, ausgabebetrag, setAusgabebetrag,
-    waehrung, setWaehrung, kursChf, setKursChf, kursQuelle, setKursQuelle,
-    bankName, setBankName, bankOrt, setBankOrt,
-    sacheinlagen, setSacheinlagen, verrechnungen, setVerrechnungen,
-    vorteile, setVorteile, revisorName, setRevisorName,
-    gruender, setGruender, vr, setVr, vertretungen, setVertretungen,
-    protokollfuehrer, setProtokollfuehrer, sitzungBeginn, setSitzungBeginn,
-    sitzungEnde, setSitzungEnde, rsName, setRsName, rsSitz, setRsSitz,
-    rechtsdomizil, setRechtsdomizil, domizilhalterName, setDomizilhalterName,
-    domizilhalterAdresse, setDomizilhalterAdresse,
-    konstituierungInUrkunde, setKonstituierungInUrkunde,
-    domizilNurAnmeldung, setDomizilNurAnmeldung,
-    nachtragsbevollmaechtigter, setNachtragsbevollmaechtigter,
-    lkAusland, setLkAusland, lkNeuerwerb, setLkNeuerwerb,
-    lkGrundstueck, setLkGrundstueck, nachtragAktiv, setNachtragAktiv,
-    ntGruendungsdatum, setNtGruendungsdatum, ntUrkundeZiffer, setNtUrkundeZiffer,
-    ntUrkundeText, setNtUrkundeText, ntStatutenArtikel, setNtStatutenArtikel,
-    ntStatutenAbsatz, setNtStatutenAbsatz, ntStatutenText, setNtStatutenText,
-    ort, setOrt, datum, setDatum,
+    einlageArt: a.einlageArt, setEinlageArt: setzer('einlageArt'),
+    besondereVorteile: a.besondereVorteile, setBesondereVorteile: setzer('besondereVorteile'),
+    optingOut: a.optingOut, setOptingOut: setzer('optingOut'),
+    eigeneBueros: a.eigeneBueros, setEigeneBueros: setzer('eigeneBueros'),
+    immobilienHauptzweck: a.immobilienHauptzweck, setImmobilienHauptzweck: setzer('immobilienHauptzweck'),
+    inhaberaktien: a.inhaberaktien, setInhaberaktien: setzer('inhaberaktien'),
+    fremdwaehrung: a.fremdwaehrung, setFremdwaehrung: setzer('fremdwaehrung'),
+    bankInUrkunde: a.bankInUrkunde, setBankInUrkunde: setzer('bankInUrkunde'),
+    chVertretung: a.chVertretung, setChVertretung: setzer('chVertretung'),
+    leistungen: a.leistungen, setLeistungen: setzer('leistungen'),
+    firma: a.firma, setFirma: setzer('firma'),
+    sitz: a.sitz, setSitz: setzer('sitz'),
+    kanton: a.kanton, setKanton: setzer('kanton'),
+    zweck: a.zweck, setZweck: setzer('zweck'),
+    zweckErweiterung: a.zweckErweiterung, setZweckErweiterung: setzer('zweckErweiterung'),
+    statutenUmfang: a.statutenUmfang, setStatutenUmfang: setzer('statutenUmfang'),
+    vinkulierung: a.vinkulierung, setVinkulierung: setzer('vinkulierung'),
+    virtuelleGv: a.virtuelleGv, setVirtuelleGv: setzer('virtuelleGv'),
+    inhaberKotiert: a.inhaberKotiert, setInhaberKotiert: setzer('inhaberKotiert'),
+    verwahrungsstelle: a.verwahrungsstelle, setVerwahrungsstelle: setzer('verwahrungsstelle'),
+    schiedsklausel: a.schiedsklausel, setSchiedsklausel: setzer('schiedsklausel'),
+    schiedsOrt: a.schiedsOrt, setSchiedsOrt: setzer('schiedsOrt'),
+    kapitalband: a.kapitalband, setKapitalband: setzer('kapitalband'),
+    kbUntergrenze: a.kbUntergrenze, setKbUntergrenze: setzer('kbUntergrenze'),
+    kbObergrenze: a.kbObergrenze, setKbObergrenze: setzer('kbObergrenze'),
+    kbEndeDatum: a.kbEndeDatum, setKbEndeDatum: setzer('kbEndeDatum'),
+    kbRichtung: a.kbRichtung, setKbRichtung: setzer('kbRichtung'),
+    bedingtesKapital: a.bedingtesKapital, setBedingtesKapital: setzer('bedingtesKapital'),
+    bkBetrag: a.bkBetrag, setBkBetrag: setzer('bkBetrag'),
+    bkKreis: a.bkKreis, setBkKreis: setzer('bkKreis'),
+    stichentscheidGv: a.stichentscheidGv, setStichentscheidGv: setzer('stichentscheidGv'),
+    gjErstesEnde: a.gjErstesEnde, setGjErstesEnde: setzer('gjErstesEnde'),
+    gjBeginn: a.gjBeginn, setGjBeginn: setzer('gjBeginn'),
+    gjEnde: a.gjEnde, setGjEnde: setzer('gjEnde'),
+    ak: a.ak, setAk: setzer('ak'),
+    anzahl: a.anzahl, setAnzahl: setzer('anzahl'),
+    nennwert: a.nennwert, setNennwert: setzer('nennwert'),
+    liberierung: a.liberierung, setLiberierung: setzer('liberierung'),
+    ausgabebetrag: a.ausgabebetrag, setAusgabebetrag: setzer('ausgabebetrag'),
+    waehrung: a.waehrung, setWaehrung: setzer('waehrung'),
+    kursChf: a.kursChf, setKursChf: setzer('kursChf'),
+    kursQuelle: a.kursQuelle, setKursQuelle: setzer('kursQuelle'),
+    bankName: a.bankName, setBankName: setzer('bankName'),
+    bankOrt: a.bankOrt, setBankOrt: setzer('bankOrt'),
+    sacheinlagen: a.sacheinlagen, setSacheinlagen: setzer('sacheinlagen'),
+    verrechnungen: a.verrechnungen, setVerrechnungen: setzer('verrechnungen'),
+    vorteile: a.vorteile, setVorteile: setzer('vorteile'),
+    revisorName: a.revisorName, setRevisorName: setzer('revisorName'),
+    gruender: a.gruender, setGruender: setzer('gruender'),
+    vr: a.vr, setVr: setzer('vr'),
+    vertretungen: a.vertretungen, setVertretungen: setzer('vertretungen'),
+    protokollfuehrer: a.protokollfuehrer, setProtokollfuehrer: setzer('protokollfuehrer'),
+    sitzungBeginn: a.sitzungBeginn, setSitzungBeginn: setzer('sitzungBeginn'),
+    sitzungEnde: a.sitzungEnde, setSitzungEnde: setzer('sitzungEnde'),
+    rsName: a.rsName, setRsName: setzer('rsName'),
+    rsSitz: a.rsSitz, setRsSitz: setzer('rsSitz'),
+    rechtsdomizil: a.rechtsdomizil, setRechtsdomizil: setzer('rechtsdomizil'),
+    domizilhalterName: a.domizilhalterName, setDomizilhalterName: setzer('domizilhalterName'),
+    domizilhalterAdresse: a.domizilhalterAdresse, setDomizilhalterAdresse: setzer('domizilhalterAdresse'),
+    konstituierungInUrkunde: a.konstituierungInUrkunde, setKonstituierungInUrkunde: setzer('konstituierungInUrkunde'),
+    domizilNurAnmeldung: a.domizilNurAnmeldung, setDomizilNurAnmeldung: setzer('domizilNurAnmeldung'),
+    nachtragsbevollmaechtigter: a.nachtragsbevollmaechtigter, setNachtragsbevollmaechtigter: setzer('nachtragsbevollmaechtigter'),
+    lkAusland: a.lkAusland, setLkAusland: setzer('lkAusland'),
+    lkNeuerwerb: a.lkNeuerwerb, setLkNeuerwerb: setzer('lkNeuerwerb'),
+    lkGrundstueck: a.lkGrundstueck, setLkGrundstueck: setzer('lkGrundstueck'),
+    nachtragAktiv: a.nachtragAktiv, setNachtragAktiv: setzer('nachtragAktiv'),
+    ntGruendungsdatum: a.ntGruendungsdatum, setNtGruendungsdatum: setzer('ntGruendungsdatum'),
+    ntUrkundeZiffer: a.ntUrkundeZiffer, setNtUrkundeZiffer: setzer('ntUrkundeZiffer'),
+    ntUrkundeText: a.ntUrkundeText, setNtUrkundeText: setzer('ntUrkundeText'),
+    ntStatutenArtikel: a.ntStatutenArtikel, setNtStatutenArtikel: setzer('ntStatutenArtikel'),
+    ntStatutenAbsatz: a.ntStatutenAbsatz, setNtStatutenAbsatz: setzer('ntStatutenAbsatz'),
+    ntStatutenText: a.ntStatutenText, setNtStatutenText: setzer('ntStatutenText'),
+    ort: a.ort, setOrt: setzer('ort'),
+    datum: a.datum, setDatum: setzer('datum'),
     wc, finmaTreffer, checkliste, mappe, card, neuerKey,
     musterdatenFuellen, blockerKlickbar, alleHerunterladen, batchLaeuft, batchMeldung,
   };
