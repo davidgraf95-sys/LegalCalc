@@ -338,11 +338,7 @@ Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkte
 ### Welle 2 — Griff (Auffindbarkeit) + Konsultieren + mehr Klingen
 
 - [x] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
-  **Stand 26.7.2026:** G0–G6, A1–A18, A19–A25 (ohne zurückgezogenes L-3/A28), E-Reihe A29–A40/E1–E7,
-  §11 IA-1–IA-7, EID-1/EID-2 und FN-5/M14 gebaut — **offener Rest = EID-3** + Härtungs-/Politur-Posten.
   <!-- @meta id: W2·5d · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
-  UX/Lesbarkeit des Gesetz-Lesers auf State-of-the-Art (Fedlex = Mindestlatte): EINE Linien-Sprache,
-  Lesespalte `max-w-reading`, Leser-Kopf-Optionen, je Grundart eine Designvorschrift; G3b ist Risiko-Pfad.
   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16.
   - [x] **5d-EID3 · EID-3 Teil (b): Linien-Tiefe aus der eId-Pfadlänge** — Guide-/Einzugstiefe aus dem kumulativen eId-Pfad statt aus der Sidecar-Rekursionstiefe; golden-neutral, Tor `check:linien-kanon`.
     <!-- @meta id: W2·5d-EID3 · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
