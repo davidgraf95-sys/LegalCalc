@@ -357,6 +357,48 @@ Nach der Erst-Befüllung gilt: **Plan == Realität**, und der Wächter hält es 
 
 ---
 
+## Lagebild-Generator `plan:bild` (Schritt `QS-PLAN-BILD`, Auftrag David 4.8.2026)
+
+**Zweck.** Ein Befehl `npm run plan:bild`, der aus dem Plan-Bestand eine **laienverständliche**
+HTML-Übersichtsseite erzeugt — «wo steht der Aufbau, was ist offen, was wartet auf wen» — für
+David und Aussenstehende, ohne dass jemand ROADMAP/Fahrpläne lesen muss. Referenz-Vorlage ist
+das handgebaute Lagebild der Session vom 4.8.2026 (von David abgenommen); dessen Gliederung ist
+verbindlicher Ausgangspunkt, nicht Pixel-Vorgabe.
+
+**Datenquellen (alle bestehend, nur lesen):**
+
+1. `scripts/plan/parse.ts` — Schritte mit `status`, `dep`, `blocker`, `26x`, `fahrplan:`-Feld
+   (KEINE Duplikation der Parse-Logik; das Skript importiert den Parser, Befund-Klasse §5/SSoT).
+2. `ROADMAP.md` — Bold-Titel je Schritt (Klartext), `@queue`-Zeile.
+3. `fahrplaene/FAHRPLAN-GESAMTAUFBAU.md` — Phasen-Namen für die Zeitleiste (statisch
+   nachgeführt genügt; die Phasen ändern sich selten).
+4. Korpus-/Katalog-Zählungen: `public/normtext/bund` + `kanton` (Dateizahl),
+   `public/rechtsprechung/register.json` (`entscheide.length`), `status:`-Verteilung der
+   Startseiten-Karten (`src/lib/startseiteKarten*.ts`, `startseiteVorlagen.ts`).
+
+**Seiten-Gliederung (Vorlage 4.8.2026):** Kopf mit Stand-Datum · Bestand-Kacheln (live-Zahlen) ·
+Phasen-Zeitleiste mit Positions-Marker · Kasten «Wartet auf David» (alle `blocker:`-Einträge
+plus als David-Frage markierte Posten) · `@queue` als nummerierte Liste in Klartext ·
+Baustellen-Karten gruppiert nach `fahrplan:`-Feld (Fortschritt done/gesamt, nächster
+`ready`-Schritt, Blocker-Hinweis, `<details>` mit Einzelschritten) · Arbeitsweise-Fussnote.
+
+**Grenzen/Auflagen:**
+
+- Reine Lese-/Werkzeug-Schicht: kein Code in `src/`, kein Artefakt in `public/`, kein
+  Deploy-Gegenstand. Ausgabepfad per Argument (Default ausserhalb des Repos oder gitignored) —
+  keine zweite eingecheckte Wahrheit neben ROADMAP (§5).
+- Klartext-Übersetzungen der Schritt-Titel sind zulässig, aber **keine neuen Behauptungen**:
+  jede Zahl kommt aus einer der vier Quellen oben; das Stand-Datum ist Systemdatum
+  (Werkzeug-Schicht, §2 gilt nur für Rechenlogik).
+- «Erledigt»-Zählungen ehrlich beschriften: der Plan führt fast nur den offenen Rest,
+  abgeschlossene Wellen liegen in der Chronik — das Bild sagt das dazu (Fussnote), statt
+  kleine done-Zahlen als Gesamtfortschritt auszugeben (§8-Geist).
+- Runner `vite-node`, Eintrag `"plan:bild"` in `package.json` neben `plan:next`/`plan:dump`.
+
+**Fertig, wenn** `npm run plan:bild` ohne Argumente eine vollständige HTML-Datei erzeugt, deren
+Kennzahlen mit `plan:next`/`plan:dump` übereinstimmen (Stichprobe im PR-Text belegt), und die
+Seite in hell/dunkel lesbar ist.
+
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 
 Der AP-8-Umzug nach `fahrplaene/` hat in den Fahrplänen selbst Links hinterlassen, die auf die
