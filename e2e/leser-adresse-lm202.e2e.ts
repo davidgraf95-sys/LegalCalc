@@ -31,10 +31,22 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
+// Boot-Budget des Lesers. 20 s reichen für MWSTG, aber NICHT für das OR unter
+// Parallel-Last: im gemeinsamen Lauf mit den fünf Nachbar-Specs (5 Worker
+// lokal) lief `warteReader('/gesetze/bund/OR#art-257_d')` reproduzierbar in den
+// 20-s-Timeout, isoliert bootete dieselbe Seite in ~3 s. Das OR ist der
+// schwerste Erlass des Korpus (~150 000 px), und der Scroll-Beweis unten
+// braucht genau ihn — der Befund LM-202 wurde auf `/gesetze/bund/OR` erhoben.
+// Darum ein grosszügiges LADE-Budget (§6.3: reine Infrastruktur, kein `expect`
+// und kein Prüfschritt wird berührt; greift nur bei Überschreitung und
+// verlangsamt grüne Läufe nicht — dieselbe Politik wie die Timeouts in
+// `playwright.config.ts`).
+const BOOT_MS = 45_000
+
 async function warteReader(page: Page, url: string): Promise<void> {
   await page.goto(url)
-  await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 })
-  await expect(page.locator('#art-1').first()).toBeVisible({ timeout: 20000 })
+  await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: BOOT_MS })
+  await expect(page.locator('#art-1').first()).toBeVisible({ timeout: BOOT_MS })
 }
 
 // ── Ziff. 1 · Scrollen ändert die Adresse NIE ────────────────────────────────
@@ -45,7 +57,7 @@ test.describe('LM-202 — Scroll schreibt nie in die Adresse', () => {
     // Einstieg MIT stehendem Anker — das ist der LM-202-Ausgangszustand: der
     // Deep-Link-Hash steht in der Adresse, gelesen wird danach woanders.
     await warteReader(page, '/gesetze/bund/OR#art-257_d')
-    await expect(page.locator('#art-257_d')).toBeInViewport({ timeout: 20000 })
+    await expect(page.locator('#art-257_d')).toBeInViewport({ timeout: BOOT_MS })
 
     const vorher = page.url()
     const verlaufVorher = await page.evaluate(() => history.length)
@@ -149,6 +161,97 @@ test.describe('LM-202 — Einsprung liest den Hash weiter', () => {
     await expect(page.locator('#art-31')).toBeInViewport({ timeout: 20000 })
     await expect(page).toHaveURL(/\/gesetze\/bund\/MWSTG#art-31$/)
   })
+})
+
+// ── Ziff. 3b · Split-View: das PRIMÄRE Pane ist die adressierte Seite ───────
+//
+// B1 (§9-Bug-Check 4.8.2026). Die erste Fassung zog die Grenze über `!imPane`.
+// Das ist falsch: `Shell.tsx` montiert im Split-View AUCH das primäre Pane mit
+// `imPane: true` (Container-Query-Modus) — unterschieden werden die beiden nur
+// über `rolle`. Folge: der Teilen-Knopf schwieg im Split-View auf BEIDEN Seiten,
+// während `springeZuArtikel` (inhalt.tsx, prüft `istSekundaer`) im primären Pane
+// weiterschrieb. Das LM-202-Symptom überlebte also genau in der Ansicht, für die
+// die Bau-Einheit gebaut wurde. Der Split wird über den teilbaren `?p=`-Seed
+// geöffnet (B-5); `usePaneLayout` streift den Parameter nach dem Übernehmen ab.
+test.describe('LM-202 — Teilen im Split-View (B1)', () => {
+  test('primäres Pane: Teilen zieht die Haupt-Adresse mit', async ({ page, context }) => {
+    test.slow()
+    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    await page.setViewportSize({ width: 1600, height: 900 })
+    await page.goto('/gesetze/bund/MWSTG?p=%2Fgesetze%2Fbund%2FZGB#art-5')
+    const primaer = page.locator('[data-pane="primaer"]')
+    const sekundaer = page.locator('[data-pane="sekundaer"]')
+    await expect(primaer).toBeVisible({ timeout: 20000 })
+    await expect(sekundaer).toBeVisible({ timeout: 20000 })
+    // Vorbedingung: der Seed ist abgestreift, die Adresse steht auf dem Einstieg.
+    await expect(page).toHaveURL(/\/gesetze\/bund\/MWSTG#art-5$/, { timeout: 15000 })
+
+    const art31 = primaer.locator('#art-31')
+    await expect(art31).toBeAttached({ timeout: 20000 })
+    await art31.scrollIntoViewIfNeeded()
+    await page.waitForTimeout(400)
+    await art31.getByRole('button', { name: 'Permalink kopieren' }).click()
+
+    // Der Kern von B1 — vor dem Fix blieb die Adresse auf «#art-5» stehen.
+    await expect(page).toHaveURL(/#art-31$/, { timeout: 10000 })
+    const clip = await page.evaluate(() => navigator.clipboard.readText())
+    expect(clip, 'kopierte URL ≠ Adresse im Split-View').toBe(page.url())
+  })
+
+  test('sekundäres Pane: Teilen lässt die Haupt-Adresse in Ruhe', async ({ page, context }) => {
+    test.slow()
+    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    await page.setViewportSize({ width: 1600, height: 900 })
+    await page.goto('/gesetze/bund/MWSTG?p=%2Fgesetze%2Fbund%2FZGB#art-5')
+    const sekundaer = page.locator('[data-pane="sekundaer"]')
+    await expect(sekundaer).toBeVisible({ timeout: 20000 })
+    await expect(page).toHaveURL(/\/gesetze\/bund\/MWSTG#art-5$/, { timeout: 15000 })
+
+    // Ein Nebenpane ist nicht die adressierte Seite: es kopiert seinen eigenen
+    // Permalink, schreibt die Haupt-Adresse aber nicht um (dieselbe Grenze wie
+    // `springeZuArtikel`/`wechsleTab`).
+    const zgbArt = sekundaer.locator('#art-8')
+    await expect(zgbArt).toBeAttached({ timeout: 20000 })
+    await zgbArt.scrollIntoViewIfNeeded()
+    await page.waitForTimeout(400)
+    const adresseVorher = page.url()
+    await zgbArt.getByRole('button', { name: 'Permalink kopieren' }).click()
+
+    const clip = await page.evaluate(() => navigator.clipboard.readText())
+    expect(clip, 'Nebenpane kopiert seinen eigenen Permalink').toMatch(/\/gesetze\/bund\/ZGB#art-8$/)
+    await page.waitForTimeout(400)
+    expect(page.url(), 'Nebenpane hat die Haupt-Adresse umgeschrieben').toBe(adresseVorher)
+  })
+})
+
+// ── Ziff. 3c · Sonderzeichen-Token: Kopie == Adresse, zeichengenau ──────────
+//
+// B2 (§9-Bug-Check 4.8.2026, §5). Der Permalink war handgebaut
+// (`#art-${e.artikel}`), die Adresse lief über `urlMitHash`. Bei 54 Artikel-
+// Token im Bestand (gezählt 4.8.2026 über `public/normtext/**`) enthält der
+// Token Leerzeichen oder ein Halbgeviert — dort lieferte die Kopie den rohen
+// String («#art-22 a»), die Adresse den prozent-kodierten («#art-22%20a»).
+// Zusätzlich bricht ein Leerzeichen im Permalink die Auto-Verlinkung in Mail-
+// und Chat-Programmen. Referenz-Fall: BS-215.400 § 22a (Token «22 a»).
+test('LM-202/B2 — Leerzeichen-Token: kopierter Permalink ist zeichengleich mit der Adresse', async ({ page, context }) => {
+  test.slow()
+  await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.goto('/gesetze/kanton/BS-215.400')
+  // Attribut-Selektor: die id trägt ein Leerzeichen, `#art-22 a` wäre CSS-seitig
+  // ein Nachfahren-Kombinator.
+  const art = page.locator('[id="art-22 a"]')
+  await expect(art).toBeAttached({ timeout: 20000 })
+  await art.scrollIntoViewIfNeeded()
+  await page.waitForTimeout(400)
+
+  await art.getByRole('button', { name: 'Permalink kopieren' }).click()
+  await expect(page).toHaveURL(/#art-22%20a$/, { timeout: 10000 })
+  const clip = await page.evaluate(() => navigator.clipboard.readText())
+  // Vor dem Fix: Kopie «…#art-22 a» (roh), Adresse «…#art-22%20a».
+  expect(clip, 'kopierte URL ≠ Adresse bei Leerzeichen-Token').toBe(page.url())
+  expect(clip).toMatch(/#art-22%20a$/)
+  expect(clip, 'Leerzeichen im Permalink bricht die Auto-Verlinkung').not.toContain(' ')
 })
 
 // ── Ziff. 5 · A9-DoD — Bedienbarkeit und Flüssigkeit unter CPU-Drossel ───────
