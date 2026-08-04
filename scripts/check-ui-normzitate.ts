@@ -18,7 +18,13 @@
 // Grenzen (offengelegt, §8): geprüft wird nur, was der Parser auflöst —
 // Bundes-Erlasse der FEDLEX-Tabelle mit vorhandenem Korpus-Snapshot.
 // Kantonale «§»-Zitate und nicht erfasste Erlasse sind ausserhalb (Zähler
-// «nicht prüfbar» weist sie aus). Existenz ≠ inhaltliche Richtigkeit.
+// «nicht prüfbar» weist sie aus). Der Parser (NORM_IM_TEXT) endet bei
+// «sexies» — Zitate mit septies…decies sowie Aufzählungen («Art. 1, 2 und
+// 3 OR»), ff.-Spannen und kleingeschriebenes «art.» erreichen das Tor gar
+// nicht (auch nicht als «nicht prüfbar»); Gegenprüfungs-Befund 4.8.2026.
+// Existenz ≠ inhaltliche Richtigkeit; aufgehobene Artikel fehlen im
+// Snapshot und würden als historische Zitate rot → Basislinie mit
+// Begründung dulden.
 //
 // Scheiterns-Fähigkeit (§6.7): der eingebaute Selbsttest jagt bei JEDEM Lauf
 // ein synthetisches Falsch-Zitat («Art. 9999 OR») durch dieselbe Pipeline —
@@ -29,7 +35,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { normVerweiseImText, erkenneFedlexGesetz } from '../src/lib/fedlex';
+import { normVerweiseImText, erkenneFedlexGesetz, artikelToken } from '../src/lib/fedlex';
 
 const WURZEL = process.cwd();
 const BASISLINIE_PFAD = join(WURZEL, 'scripts', 'ui-normzitate-basislinie.json');
@@ -74,15 +80,14 @@ function artikelSet(kuerzel: string): Set<string> | null {
   return set;
 }
 
-const ART_NR = /Art\.\s*(\d+[a-z]?(?:bis|ter|quater|quinquies|sexies|septies|octies)?)/i;
-
-/** Zitat-Schreibweise («324a», «329gbis») → Snapshot-eId-Stil («324_a»,
- *  «329_g_bis»), wie ihn die artikel-Felder der Korpus-Snapshots führen. */
-function artikelZuEid(roh: string): string | null {
-  const m = /^(\d+)([a-z])?(bis|ter|quater|quinquies|sexies|septies|octies)?$/.exec(roh.toLowerCase());
-  if (!m) return null;
-  return [m[1], m[2], m[3]].filter((t): t is string => t !== undefined).join('_');
-}
+// Nummern-Extraktion: `\d+[a-z]*` nimmt den GANZEN angehängten Buchstaben-
+// lauf («172ter», «329gbis», «335c»); die Zerlegung in den Snapshot-eId-Stil
+// («172_ter», «329_g_bis», «324_a») macht ausschliesslich artikelToken aus
+// fedlex.ts — EINE Ableitung (§5). Gegenprüfungs-Befund 4.8.2026 (MAJOR):
+// eine eigene `[a-z]?(?:bis|…)?`-Regex frass hier das «t» von «ter»
+// (172ter → 172_t: korrekte Zitate rot, kaputte bis-Zitate still grün) —
+// exakt die in fedlex.ts dreifach dokumentierte Backtracking-Falle.
+const ART_NR = /Art\.\s*(\d+[a-z]*)/i;
 
 interface Befund { datei: string; zeile: number; zitat: string; erlass: string; artikel: string }
 
@@ -102,9 +107,9 @@ function pruefeText(text: string, datei: string, zaehler: { geprueft: number; ni
     const set = artikelSet(kuerzel);
     if (!set) { zaehler.nichtPruefbar += 1; continue; }
     const m = ART_NR.exec(span.artikel);
-    const artikel = m ? artikelZuEid(m[1]) : null;
-    if (artikel === null) { zaehler.nichtPruefbar += 1; continue; }
+    if (!m) { zaehler.nichtPruefbar += 1; continue; }
     zaehler.geprueft += 1;
+    const artikel = artikelToken(m[1]);
     if (!set.has(artikel)) {
       befunde.push({ datei, zeile: zeileFuerOffset(text, span.start), zitat: span.artikel, erlass: kuerzel, artikel });
     }
@@ -121,6 +126,17 @@ function selbsttest(): void {
   if (befunde.length !== 1 || befunde[0].artikel !== '9999') {
     console.error('check:ui-normzitate ROT (Selbsttest): das synthetische Falsch-Zitat «Art. 9999 OR» wurde NICHT erkannt — das Tor kann nicht scheitern (§6.7).');
     process.exit(1);
+  }
+  // Regressions-Anker Gegenprüfung 4.8.2026 (Suffix-Falle): die Nummern-
+  // Normalisierung muss lateinische Suffixe ganz erhalten, nie abschneiden.
+  const proben: [string, string][] = [['172ter', '172_ter'], ['89bis', '89_bis'], ['329gbis', '329_g_bis'], ['335c', '335_c']];
+  for (const [roh, soll] of proben) {
+    const m = ART_NR.exec(`Art. ${roh}`);
+    const ist = m ? artikelToken(m[1]) : '<kein Treffer>';
+    if (ist !== soll) {
+      console.error(`check:ui-normzitate ROT (Selbsttest): Nummern-Normalisierung «${roh}» → «${ist}», erwartet «${soll}» (Suffix-Falle).`);
+      process.exit(1);
+    }
   }
 }
 
