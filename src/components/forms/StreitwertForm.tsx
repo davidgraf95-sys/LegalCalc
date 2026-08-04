@@ -9,7 +9,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { berechneStreitwert, streitwertGrenzwerte, type Begehren, type BegehrenTyp, type WiederkehrDauer, type StreitwertErgebnis, type StreitwertGebiet } from '../../lib/streitwert';
 
@@ -67,10 +68,7 @@ const SW_DISCLAIMER =
   'Vor Bundesgericht gilt die eigene Streitwertordnung der Art. 51–53 BGG.';
 
 export function StreitwertForm() {
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(SW_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(SW_LINK_SPEC);
 
   const [begehren, setBegehren] = useState<BegehrenRoh[]>(() => normalisiereBegehren(ausLink.begehren));
   const [ausschliessend, setAusschliessend] = useState<boolean>((ausLink.ausschliessend as boolean) ?? false);

@@ -11,7 +11,8 @@ import { LinkTeilenButton } from '../LinkTeilenButton';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { PdfExportButton } from '../PdfExport';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
-import { permalinkKodieren, permalinkLesen, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import {
   berechneProzesskosten, berechneKostenrisiko, berechneKostenvorschuss, berechneMwstParteientschaedigung,
   berechneInstanzenzug, berechneSicherheitsleistung, verfahrensausgang, prozesskostenBericht,
@@ -95,10 +96,7 @@ function PostenKarte({ titel, posten }: { titel: string; posten: PostenErgebnis 
 
 export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {}) {
   const pk = usePaneKlasse();
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(PK_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(PK_LINK_SPEC);
 
   const [kanton, setKanton] = useState<KantonCode>((ausLink.kanton as KantonCode) ?? getStandardKanton());
   const [sw, setSw] = useState<string>(ausLink.sw != null ? String(ausLink.sw) : '');

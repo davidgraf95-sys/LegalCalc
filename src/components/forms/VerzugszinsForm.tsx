@@ -13,7 +13,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { VerzugszinsTimeline } from '../VerzugszinsTimeline';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -95,9 +96,7 @@ const VZ_LINK_SPEC: PermalinkSpec<VzLink> = {
 
 export function VerzugszinsForm() {
   const pk = usePaneKlasse();
-  const [ausLink] = useState<Partial<VzLink>>(() => {
-    try { return permalinkLesen(VZ_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(VZ_LINK_SPEC);
   const [form, setForm] = useState<VerzugszinsInput>(() => {
     const rest = { ...ausLink };
     delete rest.rows; delete rest.zinsforderung;

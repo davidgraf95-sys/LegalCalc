@@ -16,8 +16,9 @@ import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { fristbeginnZusatz } from '../../lib/begruendung';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
-import { ZPO_LINK_SPEC, type ZpoLink } from '../../lib/rechnerPermalinks';
+import { permalinkKodieren } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
+import { ZPO_LINK_SPEC } from '../../lib/rechnerPermalinks';
 import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { PHASEN, PRESETS, MATERIELL_WARNUNG, type ZpoPhase, type ZpoPreset } from '../../lib/zpoPresets';
@@ -72,9 +73,7 @@ const DEFAULTS: ZpoInput = {
 export function ZpoFristenForm() {
   const pk = usePaneKlasse();
   // Permalink einmalig lesen (lazy, validiert) — speist die Initialwerte.
-  const [ausLink] = useState<Partial<ZpoLink>>(() => {
-    try { return permalinkLesen(ZPO_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(ZPO_LINK_SPEC);
   const [form, setForm] = useState<ZpoInput>(() => ({
     ...DEFAULTS,
     kanton: getStandardKanton(), // Standard-Kanton (Einstellungen); Permalink unten geht vor

@@ -18,7 +18,8 @@ import { PdfExportButton } from '../PdfExport';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -98,9 +99,7 @@ const VJ_LINK_SPEC: PermalinkSpec<VjLink & Record<string, unknown>> = {
 
 export function VerjaehrungForm() {
   const pk = usePaneKlasse();
-  const [ausLink] = useState<Partial<VjLink>>(() => {
-    try { return permalinkLesen(VJ_LINK_SPEC, window.location.search); } catch { return {}; }
-  });
+  const ausLink = usePermalinkFelder(VJ_LINK_SPEC);
   const heute = format(new Date(), 'yyyy-MM-dd');
   const [regime, setRegime] = useState<VerjaehrungRegime>((ausLink.regime as VerjaehrungRegime | undefined) ?? 'ordentlich');
   const [beginnRelativ, setBeginnRelativ] = useState(ausLink.beginnRelativ ?? '2024-03-01');
