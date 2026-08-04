@@ -255,6 +255,92 @@ test('International — Übersicht', async ({ page }, testInfo) => {
   await axePruefen(page, testInfo, 'international')
 })
 
+// ═══ QS-UI 8a · Gate-Verschärfung Stufe 1: Dunkelmodus flächendeckend ═══════
+//
+// FAHRPLAN-UI-QUALITAET.md §4 Ziff. 2 verlangt «axe von Stichprobe auf
+// Flächendeckung — alle Hauptrouten in Hell UND Dunkel». Der Bestand prüfte
+// dunkel nur DREI Punkte (die zwei Reader unten + BS-Reader oben); die übrigen
+// zehn Prüfpunkte liefen ausschliesslich hell. Eine Kontrast-Regression, die
+// nur im Dunkelmodus auftritt — genau die Klasse, die W3.6 auf den Readern
+// gefunden hat — wäre auf Startseite, Rechnern, Vorlagen, Suche, Gesetzes- und
+// Rechtsprechungs-Übersicht ungebremst durchs Tor gegangen.
+//
+// Die Tabelle spiegelt die Hell-Prüfpunkte 1:1: gleicher `punkt`-Schlüssel,
+// gleiche Vorbereitung, gleiche BEKANNTE_BEFUNDE. Neu ist allein das Thema.
+// Deshalb KEIN Assertion-Change an den Hell-Tests (§6.3) — die bleiben
+// unangetastet daneben stehen.
+const DUNKEL_PUNKTE: Array<{
+  titel: string
+  punkt: string
+  url: string
+  budget?: number
+  /** vor `oeffnen` (addInitScript muss vor dem ersten Skript-Lauf sitzen) */
+  seeden?: (page: Page) => Promise<void>
+  /** nach `oeffnen` — die Interaktion, die den geprüften Zustand herstellt */
+  herstellen?: (page: Page) => Promise<void>
+}> = [
+  { titel: 'Startseite', punkt: 'startseite', url: '/' },
+  {
+    titel: 'Startseite mit offener Universal-Suche', punkt: 'startseite-suche', url: '/',
+    herstellen: async (page) => {
+      await page.locator('section[role="search"] input[type="search"]').fill('kündigung')
+      await page.locator('section[role="search"] .lc-card').waitFor({ state: 'visible' })
+    },
+  },
+  { titel: 'Tagerechner', punkt: 'tagerechner', url: '/rechner/tagerechner' },
+  {
+    titel: 'Tagerechner mit offenem Kalender-Popover', punkt: 'tagerechner-kalender', url: '/rechner/tagerechner',
+    herstellen: async (page) => {
+      await page.getByRole('button', { name: 'Kalender öffnen' }).first().click()
+      await expect(page.getByRole('dialog', { name: 'Kalender' })).toBeVisible()
+    },
+  },
+  {
+    titel: 'Reiter-Übersicht mit zwei offenen Reitern', punkt: 'tab-streifen', url: '/rechner/tagerechner',
+    seeden: async (page) => {
+      await page.addInitScript(() => {
+        try {
+          localStorage.setItem('lexmetrik-tabs', JSON.stringify([
+            { path: '/rechner/tagerechner' }, { path: '/rechner/verzugszins' },
+          ]))
+        } catch { /* privater Modus */ }
+      })
+    },
+    herstellen: async (page) => {
+      const trigger = page.getByRole('button', { name: 'Alle geöffneten Reiter' })
+      await trigger.waitFor({ state: 'visible' })
+      await trigger.click()
+      await page.getByRole('dialog', { name: 'Alle geöffneten Reiter' }).waitFor({ state: 'visible' })
+    },
+  },
+  { titel: 'Vorlage Arbeitsvertrag', punkt: 'vorlage-arbeitsvertrag', url: '/vorlagen/arbeitsvertrag' },
+  {
+    titel: 'Zuständigkeit mit PLZ-Auswahl-Kacheln', punkt: 'zustaendigkeit-plz-wahl', url: '/rechner/zustaendigkeit#schkg',
+    herstellen: async (page) => {
+      await page.getByLabel('Postleitzahl des Betreibungsortes').fill('1041')
+      await expect(page.getByRole('button', { name: /Bottens/ })).toBeVisible()
+    },
+  },
+  { titel: 'Gesetze — Kanton BS (eingeklappt)', punkt: 'gesetze-kanton-BS', url: '/gesetze?ebene=kanton&kt=BS' },
+  { titel: 'Gesetze — Reader Bund (GebV-HReg)', punkt: 'gesetze-leser-bund', url: '/gesetze/bund/GEBV_HREG' },
+  // Budget wie beim Hell-Zwilling (Z. 195 ff.): der gedrosselte CI-Runner
+  // braucht für axe.analyze auf der Übersicht mehr als die 60-s-Voreinstellung.
+  { titel: 'Rechtsprechung — Übersicht', punkt: 'rechtsprechung-uebersicht', url: '/rechtsprechung', budget: 120_000 },
+  { titel: 'Suche — Ergebnisseite (S5)', punkt: 'suche-seite', url: '/suche?q=Miete' },
+  { titel: 'International — Übersicht', punkt: 'international', url: '/gesetze?ebene=international' },
+]
+
+for (const p of DUNKEL_PUNKTE) {
+  test(`Dunkel — ${p.titel}`, async ({ page }, testInfo) => {
+    if (p.budget) testInfo.setTimeout(p.budget)
+    await p.seeden?.(page)
+    await oeffnen(page, p.url, 'dunkel')
+    await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible()
+    await p.herstellen?.(page)
+    await axePruefen(page, testInfo, p.punkt)
+  })
+}
+
 // Dunkelmodus-Abdeckung (§13/F2): dieselben Reader-Prüfpunkte explizit in
 // 'dunkel' — fängt Kontrast-Verstösse, die nur im Dunkel auftreten (z. B. der
 // gedämpfte «aufgehoben»-Tier), unabhängig von der Uhrzeit/zeitThema.

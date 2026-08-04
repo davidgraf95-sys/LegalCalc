@@ -408,7 +408,16 @@ export function Shell({ children }: { children: ReactNode }) {
                   <div role="separator" aria-orientation="vertical" aria-label="Pane-Breite anpassen"
                     aria-valuenow={gutterWert(i).now} aria-valuemin={gutterWert(i).min} aria-valuemax={gutterWert(i).max} tabIndex={0}
                     onPointerDown={ziehGutter(i)} onKeyDown={gutterTaste(i)}
-                    className="hidden lg:block shrink-0 w-1.5 -mx-0.5 z-10 cursor-col-resize bg-transparent transition-colors hover:bg-brass-300/60 focus-visible:bg-brass-400 focus-visible:outline-none" />
+                    /* QS-UI 8a (F3): `focus-visible:outline-none` entfernt. Der
+                       Gutter ist per tabIndex/Pfeiltasten bedienbar, trug im
+                       Fokus aber nur `bg-brass-400` — gemessen 3.8.2026 eine
+                       2-px-Outline in Alpha 0, also ein reiner Farbwechsel. F3
+                       verbietet genau das («kein Fokus, der nur die Farbe
+                       wechselt»). Ohne die Utility zeichnet die Basis-Regel den
+                       --focus-Ring (gemessen rgb(130,98,37) = brass-700 hell);
+                       die Flächenfärbung bleibt als zweites, redundantes
+                       Signal stehen. */
+                    className="hidden lg:block shrink-0 w-1.5 -mx-0.5 z-10 cursor-col-resize bg-transparent transition-colors hover:bg-brass-300/60 focus-visible:bg-brass-400" />
                   <SekundaerPane pfad={pfad} {...titelVon(livePfad(i))} style={wachstum(i + 1)}
                     onNavigiert={meldeLive}
                     onSchliessen={() => schliesseUndFokus(i)}
