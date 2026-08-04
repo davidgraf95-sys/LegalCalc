@@ -1,5 +1,5 @@
-import { gruppiereErwaegungen } from '../lib/rechtsprechung/abschnitte';
-import { SUCH_HIGHLIGHT } from './gesetz-leser/suchHighlight';
+import { gruppiereErwaegungen, segmente } from '../lib/rechtsprechung/abschnitte';
+import { SUCH_HIGHLIGHT, findeVorkommen } from './gesetz-leser/suchHighlight';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 
 // ─── Reine Regeln des Entscheid-Lesers (W2·17-UI-BEFUNDE-B2, Los E) ──────────
@@ -135,6 +135,67 @@ export function nennungsAnker(abschnitte: EntscheidAbschnitt[], zitat: string): 
     }
   }
   return ziele;
+}
+
+// ── V5 · «Im Entscheid suchen» — dieselbe Substring-Regel wie im Gesetz ──────
+//
+// Pendant zur In-Gesetz-Suche (A35). Die Treffer-Semantik kommt aus DERSELBEN
+// Funktion (`findeVorkommen`, suchHighlight.ts): schlichter, akzenttreuer,
+// case-insensitiver Teilstring-Vergleich (§5 — keine zweite Suchwahrheit im
+// Entscheid-Leser). Bewusst NICHT `zitatMuster`: das ist die WÖRTLICHE
+// Zitat-Erkennung des Herkunfts-Sprungs (case-sensitiv, mit Wortgrenzen) und
+// beantwortet eine andere Frage.
+//
+// Die Trefferliste zeigt nur ERWÄGUNGEN, weil nur sie zitierfähige Anker tragen
+// (§8: kein Sprungziel anbieten, das es nicht gibt). Die Gesamtzahl zählt
+// dagegen über ALLE Abschnitte der sichtbaren Fassung — sonst behauptete die
+// Zeile «3 Treffer», wo im Sachverhalt fünf weitere stehen.
+
+/** Ein Treffer-Bündel: eine anspringbare Erwägung + Anzahl Vorkommen darin. */
+export interface SuchTreffer {
+  anker: string;
+  /** Amtliche Erwägungs-Marke («2.3.1») für die Beschriftung des Sprungziels. */
+  marke: string;
+  /** Einrückungstiefe (Ziffern-Segmente − 1). */
+  tiefe: number;
+  anzahl: number;
+}
+
+/**
+ * Erwägungen mit Vorkommen des Suchbegriffs, in Dokument-Reihenfolge.
+ * Leerer Begriff ⇒ leere Liste. Rein/deterministisch (§2).
+ */
+export function trefferInErwaegungen(abschnitte: EntscheidAbschnitt[], begriff: string): SuchTreffer[] {
+  const b = begriff.trim();
+  if (b === '') return [];
+  const erw = abschnitte.find((a) => a.typ === 'erwaegung');
+  if (!erw) return [];
+  const out: SuchTreffer[] = [];
+  for (const g of gruppiereErwaegungen(erw.bloecke)) {
+    const eintraege: { text: string; anker: string; marke: string | null }[] = [];
+    if (g.kopf && g.kopfAnker) eintraege.push({ text: g.kopf.text, anker: g.kopfAnker, marke: g.kopf.marke });
+    for (const s of g.subs) if (s.anker) eintraege.push({ text: s.block.text, anker: s.anker, marke: s.block.marke });
+    for (const e of eintraege) {
+      const n = findeVorkommen(e.text, b).length;
+      if (n === 0) continue;
+      out.push({
+        anker: e.anker,
+        marke: e.marke ?? '',
+        tiefe: e.marke ? Math.max(0, segmente(e.marke).length - 1) : 0,
+        anzahl: n,
+      });
+    }
+  }
+  return out;
+}
+
+/** Vorkommen des Begriffs in der GANZEN sichtbaren Fassung (alle Abschnitte). */
+export function zaehleTreffer(abschnitte: EntscheidAbschnitt[], begriff: string): number {
+  const b = begriff.trim();
+  if (b === '') return 0;
+  let n = 0;
+  for (const a of abschnitte) for (const bl of a.bloecke) n += findeVorkommen(bl.text, b).length;
+  return n;
 }
 
 // ── Optische Markierung im gerenderten Lesetext ─────────────────────────────

@@ -360,7 +360,21 @@ describe('B4 · nur Auflistung, wenn aktiviert (Vorgabe David 28.7.2026)', () =>
     expect(s).toContain('data-bezug-gruppe="bge"');
     // Kein Aufklapp-Schalter und keine Zusammenfassungs-Zeile mehr.
     expect(s).not.toContain('data-bezuege-schalter');
-    expect(s).not.toContain('aria-expanded');
+    // ── §6.3-DEKLARATION (4.8.2026, W2·10-UI-NAV-VR/V3) ──────────────────────
+    // Diese Zeile lautete `not.toContain('aria-expanded')` und war ein ZWEITER,
+    // breiterer Stellvertreter für dieselbe Aussage wie die Zeile darüber: «hier
+    // steht kein Aufklapp-Schalter». Mit V3 trägt jeder Entscheid-Chip MIT
+    // Kurztext-Vorschau ein eigenes `aria-expanded` — es sagt einer Tastatur-
+    // /Screenreader-Bedienung, dass an diesem Chip etwas aufklappbar ist und ob
+    // es offen steht (WAI-ARIA-Muster für ein aufklappbares Element). Der
+    // ursprüngliche Stellvertreter würde damit etwas messen, das er nie meinte.
+    // Der GEPRÜFTE SACHVERHALT bleibt exakt derselbe — es gibt keinen
+    // Zeilen-Schalter und keine Zusammenfassungs-Zeile —, er wird nur nicht mehr
+    // über ein Attribut gemessen, das inzwischen einer anderen Sache gehört:
+    // geprüft wird jetzt, dass kein Chip sich als OFFEN ausgibt (im Serverrender
+    // ist nie ein Kasten offen) und dass kein Schalter-Element existiert.
+    expect(s).not.toContain('aria-expanded="true"');
+    expect(s).not.toContain('<button type="button" aria-expanded');
   });
 
   it('keine Kante ⇒ NICHTS: null Pixel Verzahnungs-UI unter dem Artikel', () => {
