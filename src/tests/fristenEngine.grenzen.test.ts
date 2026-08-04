@@ -63,6 +63,8 @@ describe('Fristen-Engine – Monatsend-Klemmung (Art. 142 Abs. 2 ZPO)', () => {
   });
 
   it('Jahresfrist ab Schalttag: 29.2.2024 + 1 Jahr → 28.2.2025', () => {
+    // Art. 142 Abs. 2 ZPO nennt wörtlich nur Monatsfristen; die Anwendung auf
+    // Jahresfristen ist gefestigte analoge Praxis (wie bestehender Fall T4).
     const r = fristendeKalender(parseISO('2024-02-29'), 'jahre', 1, OHNE_STILLSTAND, false);
     expect(iso(r.ende)).toBe('2025-02-28');
   });
@@ -125,7 +127,9 @@ describe('Fristen-Engine – ZPO-Stillstand (Art. 145/146 ZPO)', () => {
   });
 
   it('Ereignis IM Stillstand → dies a quo am Periodenende (Art. 146 Abs. 1)', () => {
-    // Zustellung 20.7.2025 (in den Sommerferien): Monatsfrist läuft ab 15.8.
+    // Zustellung 20.7.2025 (in den Sommerferien): Engine-Konvention setzt den
+    // fingierten Ereignistag (diesAQuo) auf das Periodenende 15.8.; der Lauf
+    // beginnt nach Art. 146 Abs. 1 ZPO am ersten Tag danach (wie T8a/T8b).
     const r = fristendeKalender(parseISO('2025-07-20'), 'monate', 1, ZPO, false);
     expect(iso(r.diesAQuo)).toBe('2025-08-15');
     expect(iso(r.ende)).toBe('2025-09-15'); // Mo, bleibt
