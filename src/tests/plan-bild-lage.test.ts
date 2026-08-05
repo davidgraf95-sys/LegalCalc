@@ -4,7 +4,9 @@
 // Kein echter git-Aufruf: `bauPlaetze`/`letzteCommits` bekommen ihren
 // Kommando-Runner injiziert, `wasGeradePassiert`/`flaechenKlartext` sind rein.
 // Sonst prüfte der Test die Maschine, auf der er läuft, statt den Code.
-import { bauPlaetze, letzteCommits, schrittInfoAusRoadmap } from '../../scripts/plan/bildDaten';
+import { bauPlaetze, letzteCommits, schrittInfoAusRoadmap, type SchrittInfo } from '../../scripts/plan/bildDaten';
+import type { Etikett } from '../../scripts/plan/etikett';
+import type { Einheit } from '../../scripts/plan/parse';
 import {
   BEREICH_ERKLAERUNG,
   UEBRIGE_TECHNIK,
@@ -15,7 +17,7 @@ import {
   wirkungsbereiche,
   type WasPassiert,
 } from '../../scripts/plan/bildHtml';
-import { methodeSeite } from '../../scripts/plan/bildSeiten';
+import { bauPrompt, methodeSeite } from '../../scripts/plan/bildSeiten';
 import type { Laufe } from '../../scripts/plan/lage';
 
 /** Runner-Attrappe: liefert je Kommando einen festen Text oder wirft. */
@@ -351,5 +353,73 @@ describe('methodeSeite — Legenden für Sessions und Laien', () => {
     for (const b of WIRKUNGSBEREICHE) expect(html).toContain(b.replace('&', '&amp;'));
     expect(html).toContain(UEBRIGE_TECHNIK);
     expect(html).toContain('gemeinsame Sprache der Bau-Sessions');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Bau-Prompt — Skill-Auslöser (Schritt QS-SESSION-ZYKLUS, Auftrag David 5.8.2026)
+//
+// Der Zyklus einer Bau-Session (Einstieg, Prüfung, Landung, Aufräumen) steht im
+// Skill `bauschritt`; der Prompt muss ihn AUSLÖSEN. Steht die Auslöse-Zeile
+// nicht ganz oben, liest eine Session sie erst nach Baubeginn — oder gar nicht.
+// Darum wird die ERSTE Zeile geprüft, nicht blosse Präsenz irgendwo im Text.
+// ---------------------------------------------------------------------------
+const SKILL_ZEILE = 'Nutze den Skill `bauschritt` für den ganzen Session-Zyklus. Schritt: QS-TEST-1.';
+
+function einheit(p: Partial<Etikett> = {}): Einheit {
+  return {
+    id: 'QS-TEST-1',
+    checkbox: '[ ]',
+    sektion: 'Querschnitt',
+    pos: 3,
+    etikett: {
+      id: 'QS-TEST-1',
+      status: 'ready',
+      statusAgent: null,
+      of: false,
+      blocker: null,
+      dep: [],
+      kollision: ['scripts/plan/**'],
+      seqHart: [],
+      seqWeich: [],
+      worktree: true,
+      asset26x: false,
+      fahrplan: 'fahrplaene/FAHRPLAN-X.md',
+      ...p,
+    },
+  };
+}
+
+const SCHRITT: SchrittInfo = {
+  titel: 'Testschritt',
+  prosa: 'Wortlaut aus der ROADMAP.',
+  par: '4',
+  pflicht: [],
+  ankerDefekt: null,
+  gekuerzt: false,
+};
+
+describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
+  it('beginnt mit der Skill-Zeile und nennt die Schritt-ID darin', () => {
+    expect(bauPrompt(einheit(), SCHRITT).split('\n')[0]).toBe(SKILL_ZEILE);
+  });
+
+  it('trägt die Zeile auch ohne SchrittInfo und ohne Fahrplan (Minimalfall)', () => {
+    expect(bauPrompt(einheit({ fahrplan: null }), undefined).split('\n')[0]).toBe(SKILL_ZEILE);
+  });
+
+  it('lässt die bestehenden Härtungen unangetastet — Auftrag, dep-Stopp, Pflichtlektüre, Vertrauensgrenze', () => {
+    const p = bauPrompt(einheit({ dep: ['QS-VOR-1'] }), { ...SCHRITT, pflicht: ['bibliothek/X.md'] }, new Set());
+    expect(p).toContain('Baue den LexMetrik-ROADMAP-Schritt QS-TEST-1');
+    expect(p).toContain('Stand bei Erzeugung: OFFEN (QS-VOR-1)');
+    expect(p).toContain('Pflichtlektüre: bibliothek/X.md');
+    expect(p).toContain('npm run fahrplan -- fahrplaene/FAHRPLAN-X.md 4');
+    expect(p).toContain('Vertrauensgrenze (§14.7, wörtlich)');
+  });
+
+  it('meldet den defekten Anker weiterhin — die Skill-Zeile verdrängt keine Warnung', () => {
+    expect(bauPrompt(einheit(), { ...SCHRITT, par: null, ankerDefekt: '9' })).toContain(
+      'existiert in dieser Datei NICHT',
+    );
   });
 });

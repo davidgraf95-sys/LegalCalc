@@ -118,6 +118,11 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     : [];
   const pflichtZeilen = (info?.pflicht ?? []).map((p) => `   Pflichtlektüre: ${p}`);
   const zeilen = [
+    // Erste Zeile = Skill-Auslöser: der Zyklus (Einstieg, Prüfung, Landung,
+    // Aufräumen) steht im Skill `bauschritt`, nicht im Prompt. So bleibt der
+    // Prompt kurz und der Ablauf an EINER Stelle pflegbar (§5).
+    `Nutze den Skill \`bauschritt\` für den ganzen Session-Zyklus. Schritt: ${e.id}.`,
+    ``,
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
     ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
