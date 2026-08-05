@@ -1,6 +1,6 @@
 ---
 name: aufraeumen
-description: Verwenden, wenn Roadmap/Struktur aufgeräumt werden sollen — Trigger «räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken» — oder wenn `npm run struktur:aktuell` bzw. der Re-Akkumulations-Wächter ein Steuerdokument über Budget meldet.
+description: Verwenden, wenn Roadmap/Struktur aufgeräumt werden sollen — Trigger «räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken» — oder wenn der Re-Akkumulations-Wächter (`struktur-rotieren.py --check`) ein Steuerdokument über Budget meldet.
 ---
 
 # Roadmap/Struktur aufräumen
@@ -31,21 +31,37 @@ tun ist.
 
 ## 2 · Erledigtes wörtlich nach `ROADMAP-CHRONIK.md`
 
-Jeder `[x]`-Schritt (und jede datierte ✅-Teilerfolgs-Prosa aus einem noch
-offenen Schritt, Konvention 22.7.2026) wandert **byte-genau** in
-`ROADMAP-CHRONIK.md`, angehängt in Wellen-Ordnung unter
-`<!-- CHRONIK-EINTRAEGE -->`. In `ROADMAP.md` bleibt nur: Checkbox +
-`@meta`-Etikett + Einzeiler + Pointer (`**Chronik:** ROADMAP-CHRONIK.md →
-<ID>`).
+**Geltende Fassung (`ROADMAP.md` ▶ Ausführungs-Protokoll Ziff. 6, seit
+3.8.2026):** ein abgeschlossener Schritt wandert **vollständig** nach
+`ROADMAP-CHRONIK.md` — Checkbox, `@meta`-Zeile und Prosa zusammen. In
+`ROADMAP.md` bleibt **nichts** von ihm stehen: «die ROADMAP führt nur, was
+noch steuert». (Die frühere Fassung — im Plan bleibt Checkbox + `@meta` +
+Einzeiler + Pointer — ist in `ROADMAP-CHRONIK.md` selbst als **«abgelöste
+Fassung (verschoben 3.8.2026)»** archiviert; sie nicht wieder anwenden.)
+Ausnahme bleibt die Konvention vom 22.7.2026: **datierte ✅-Teilerfolgs-Prosa
+aus einem noch OFFENEN Schritt** wandert ebenfalls wörtlich in die Chronik,
+im Plan bleibt dort ein ✅-Einzeiler + Pointer — der Schritt selbst ist ja
+nicht `done`.
+
+**Ablageort (Präzedenz `793e9aee3` sowie die Wellen 4.8./5.8.2026):** ein
+neuer, datierter Block wird an das **Dateiende** angehängt, z. B. `# Umschichtung
+<Datum> — erledigte Schritte aus dem Steuerungsplan`; darunter jeder Schritt
+einzeln als `## <ID> — <Titel> *(<Status>, verschoben <Datum>)*`, gefolgt vom
+kompletten Original-Wortlaut samt `@meta`-Kommentar. Nicht in die ursprüngliche
+Wellen-Ordnung am Kopf der Datei einsortieren — das war die Ablageform der
+allerersten Übernahme (10.7.2026), seither wächst die Datei am Ende weiter.
 
 **Nie zusammenfassen.** Zusammenfassen ist ~40 % Retrieval-Verlust — die
-Chronik ist ein Archiv, kein Extrakt. Formatvorbild: die bestehenden
-Einträge in `ROADMAP-CHRONIK.md` (`## <ID> — <Titel> *(<Etikett>, done)*`,
-danach der vollständige Original-Wortlaut inkl. Datum, PR-Nummern, Tor-Belegen).
+Chronik ist ein Archiv, kein Extrakt.
 
-`@meta`-Etiketten selbst sind **unantastbar** — sie steuern `check:plan`,
-`plan:next` und die Queue; beim Umschichten wird nur die Prosa verschoben,
-nie das Etikett verändert oder gelöscht.
+**Zwingender Zweitschritt: `scripts/plan/inventar.ts`.** Mit dem `@meta` aus
+`ROADMAP.md` verschwindet die ID auch aus der kanonischen Inventar-Liste —
+sonst meldet `check:plan` Regel 1 „Inventar-ID … hat kein @meta“. Jede
+entfernte ID gehört zusätzlich als Kommentarzeile in den Datei-Kopf von
+`inventar.ts` (Vorbild: die Blöcke „AUFRÄUMUNG 3.8.2026“ / „DIÄT WELLE 2“ /
+„ZIFF-6-VOLLZUG 5.8.2026“ dort), damit nachvollziehbar bleibt, wohin eine ID
+verschwunden ist. Ohne diesen Schritt ist Schritt 2 nicht abgeschlossen,
+auch wenn `ROADMAP.md` schon schlank aussieht.
 
 ## 3 · Streich-Massstab
 
@@ -82,23 +98,47 @@ Reihenfolge, sonst wird QS-PH/`check:plan` rot:
    Regel 7 gar nicht mehr (sie scannt nur `fahrplaene/`), und ein
    verbliebener toter `fahrplan:`-Zeiger fiele sofort unter Regel 9 auf.
 
-Ein Fahrplan mit weiterhin lebendem Verweis wird NICHT archiviert, auch wenn
-sein Bau-Schritt `done` ist — die Doku bleibt als Nachschlagewerk, bis nichts
-mehr auf sie zeigt.
+Ein Fahrplan mit weiterhin lebendem Verweis wird in der Regel NICHT
+archiviert, auch wenn sein Bau-Schritt `done` ist — die Doku bleibt als
+Nachschlagewerk, bis nichts mehr auf sie zeigt. **Deklarierte Ausnahme**
+(Präzedenz `W3·10`, 31.7.2026, `ROADMAP.md`): Regel 9 prüft nur, dass der
+`fahrplan:`-Pfad EXISTIERT, nicht dass er unter `fahrplaene/` liegt. Bleibt
+ein Schritt aktiv, obwohl sein Fahrplan bereits archiviert gehört, ist die
+Alternative zum Blockieren, den `fahrplan:`-Zeiger selbst auf den neuen
+`archiv/…`-Pfad umzuschreiben (statt die Archivierung zu unterlassen) — dann
+aber sofort sichtbar markieren, dass Restpunkte aus dem archivierten Stand
+noch in einen aktiven Fahrplan zu extrahieren sind, sonst verwaist die
+Steuerung.
 
 ## 5 · Tor-Reihenfolge
 
-Strikt in dieser Reihenfolge, jedes grün bevor das nächste läuft:
+**Abweichung von der ursprünglichen Spec-Formulierung (§7-Prinzip: empirisch
+gegen die Repo-Realität geprüft, abweichend umgesetzt, Abweichung offengelegt):**
+`FAHRPLAN-TOKEN-OEKONOMIE.md` §11.2 nennt `check:struktur-konsistenz` und
+`struktur:aktuell` als Tor-Schritte. Geprüft gegen den Code: `check:struktur-
+konsistenz` (`scripts/normtext/check-struktur-konsistenz.ts`) prüft Snapshot ↔
+Struktur-Sidecar der **Normtext-Korpora** — mit Steuer-Doku-Aufräumen sachlich
+nicht verwandt. `struktur:aktuell` (`.claude/hooks/struktur-aktuell.py`) ist ein
+reines **On-Demand-Lag-Audit** ohne Budget-Logik (meldet nur, wie weit
+`STRUKTUR.md` hinter HEAD zurückliegt) und kann nicht scheitern — ein Tor, das
+nicht rot werden kann, ist gefährlicher als keines (§6.7). Massgeblich ist
+darum die real im Präzedenz-Commit `793e9aee3` gefahrene, belegte Kette:
 
 1. `npm run check:plan`
-2. `npm run check:struktur-konsistenz`
-3. `npm run struktur:aktuell`
-4. Plan-Tests (`vitest` auf `plan-*` + `fahrplanSlice`)
+2. `python3 .claude/hooks/struktur-rotieren.py --check`
+3. Plan-Tests (`vitest` auf `src/tests/plan-*.test.ts` + `fahrplanSlice`)
 
-Ein Zwischenstand nach Schritt 2 der Chronik-Überführung (Roadmap schlank,
-Chronik noch nicht committet, oder umgekehrt) ist per Konstruktion rot —
-darum Chronik-Überführung, Streichung und Archivierung in **einem** Commit
-bündeln (Vorbild `793e9aee3`), nicht über mehrere Zwischenstände strecken.
+`npm run struktur:aktuell` bleibt sinnvoll als **informatives** Lag-Audit
+danach (kein Gate, kein Blocker) — es zeigt, ob `STRUKTUR.md` seinerseits
+Session-Karten-Nachzug braucht.
+
+**Bündelungsgrund** (wörtlich aus `793e9aee3`): Chronik-Überführung, Streichung
+und Fahrplan-Archivierung gehören in **einen** Commit, weil `check:plan`
+Regel 9 (jeder `fahrplan:`-Zeiger muss existieren) und Regel 7 (jede Datei
+unter `fahrplaene/` muss verlinkt sein) mechanisch gekoppelt sind — kein Tor
+liest `ROADMAP-CHRONIK.md` selbst. Ein Zwischenstand, in dem eine Datei schon
+nach `archiv/` verschoben, aber ihr `fahrplan:`-Zeiger noch nicht nachgezogen
+ist (oder umgekehrt), wäre unter Regel 9 bzw. 7 rot.
 
 ## Nachbar-Skills
 
