@@ -468,9 +468,15 @@ Kasten zu §Stand 31.7.2026 — jeder Eintrag nennt den Stand, für den er gilt,
 3. **Bedingt:** T11 nach Fedlex-P1a/b · T19 nach T1 · T8 nach T4 · T16 nach T1/T3/T7 + Probelauf ·
    T10 nach Machbarkeits-Verifikation · T13 ausserhalb aktiver Worktree-Flächen ·
    T14-Stufe-1 nach U-Kette + T2-Frequenz-Beleg.
-4. **Nicht ohne separates Go David:** T12-Stufe-2 (Required-Gefüge) · T14 (L) · T16 (CLAUDE.md) ·
-   T10 (Account-Ebene) · **T20 je Einsatz** (Opt-in «ultracode» bzw. ausdrücklicher
-   Workflow-Auftrag; stehende Freigabe gibt es nicht).
+4. **Go erteilt (David 27.7.2026), Massgaben bleiben:** T12-Stufe-2 (Required-Gefüge) · T14 (L) ·
+   T16 (CLAUDE.md) · T10 (Account-Ebene) sind freigegeben — die frühere Fassung dieser Ziffer
+   («nicht ohne separates Go David») war seit dem 27.7.2026 überholt und widersprach dem
+   Stand-Block dieser Datei (Z. 123–125: «Go David 27.7.2026 erteilt», bestätigt durch die
+   Pauschal-Freigabe vom 3.8.2026) sowie dem QS-TOK-Block der ROADMAP; korrigiert 5.8.2026,
+   Bauplan-Review-Befund B2. **Die Massgaben je Posten bleiben unverändert bestehen:** T16 nur
+   in frischer Session (T19-Vorbedingung) · T12-Stufe-2 mit neu bewerteter
+   Weglassungs-Begründung · T10 erst nach Machbarkeits-Verifikation. Weiterhin **ohne stehende
+   Freigabe**: **T20 je Einsatz** (Opt-in «ultracode» bzw. ausdrücklicher Workflow-Auftrag).
 5. Kein Punkt ändert Gate-Semantik/Prüfpflichten; Auto-Merge gilt je PR.
 
 ## §9 Verworfen

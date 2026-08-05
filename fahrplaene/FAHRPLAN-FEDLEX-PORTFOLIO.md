@@ -1048,7 +1048,7 @@ allein dieser §.*
   liegt in `QS-CURRENCY-KANON` (§17). Dieser Schritt ändert **keinen Pin**.
 - **Dateien:** `scripts/fedlex-cache.sh`, `src/tests/`.
 
-### §19 `QS-KORPUS-SCOPE` — scope/decl-Sektionen ohne annex-Container ingestieren
+## §19 `QS-KORPUS-SCOPE` — scope/decl-Sektionen ohne annex-Container ingestieren
 
 - **Anlass (Gegenprüfung zu PR #425 / `W2·5d-ANNEX`, Nebenbefund N2, 3.8.2026):** 12
   Staatsverträge (cedaw, cisg, eaue, hbewue, huvue, krk, montreal, pvue, uno_antifolter,
@@ -1091,7 +1091,12 @@ den §§17–19. Steuert nicht — Spec-Heimat.*
 
 > je einen Negativfall bauen, der die Sonde und den Ausschluss **einmal rot** zeigt, dann grün. Reine Prüflogik (`Gegenpruefung: n/a`) — **die Ursachenklärung der `fza`/`cmr`-Wurzeln ist Risikopfad und liegt in `QS-CURRENCY-KANON`**; hier wird nur die Scheiterns-Fähigkeit der Sonde gebaut, kein Pin geändert.
 
-### §20.4 `QS-KORPUS-BMV` — Bau-Spec im Wortlaut *(→ Bau-Spec: §17 dieser Datei)*
+### §20.4 `QS-KORPUS-BMV` — Bau-Spec im Wortlaut
+
+*(Kein Weiterzeiger: anders als §20.1/§20.3/§20.5 hat `QS-KORPUS-BMV` keinen eigenen
+Befund-§ weiter oben — §17 behandelt ausschliesslich die `fza`/`cmr`-Kanonik. **Dieser
+Abschnitt IST die Bau-Spec**; der frühere Verweis «→ §17» war ein Copy-Paste-Erbe von
+§20.1 und zeigte auf einen fremden Gegenstand, Bauplan-Review 4.8.2026, Befund B1.)*
 
 > regulärer Bundeserlass-Ingest nach Skill `korpus-werkstatt` (Pin, Snapshot, Sidecar, Register; neuer Register-Key neben dem historischen `bmv`), §7-Verifikation, Risikopfad ⇒ Gegenprüfung. Amtsbeleg: AKN `eli/cc/2025/408/20260301`, Art. 34 (Aufhebung alt) / Art. 36 (Inkrafttreten 1.3.2026).
 

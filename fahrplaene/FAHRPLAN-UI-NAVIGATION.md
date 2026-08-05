@@ -724,3 +724,56 @@ Kurzabsatz, die Teilschritt-Einzeiler und der Pointer hierher. Steuert nicht —
 `@meta`, der Anlass und der Pointer auf §S. Steuert nicht — Spec-Heimat.*
 
 > Highlight-Name je Pane/Leser-Instanz, alle drei Schreiber umstellen; Beweis: beide Suchen gleichzeitig markiert. Reine Darstellung.
+
+---
+
+## §9 · ROADMAP-Spec `QS-UI-HIGHLIGHT` — `::highlight()`-Registry je Leser-Instanz
+
+*Angelegt 5.8.2026 (Bauplan-Review 4.8.2026, Befund B1). Der ROADMAP-Anker zeigte bis dahin
+auf §S — das ist eine Stand-Chronik und trägt keine Bau-Spec; §S-N hält nur den ROADMAP-Wortlaut.
+Dieser § ist die Bau-Spec. Reine Darstellung (`Gegenpruefung: n/a`).*
+
+### §9.1 Befund (Bug-Check zu PR #432, Befund B3)
+
+Die CSS Custom Highlight API führt ihre Registry **global am `CSS.highlights`-Objekt**, nicht am
+DOM-Knoten. Im Repo existiert genau **ein** Highlight-Name `lc-such-treffer`, und **drei**
+unabhängige Schreiber setzen ihn:
+
+- `src/pages/gesetz-leser/inhalt.tsx` (In-Gesetz-Suche, R1)
+- `src/pages/entscheidLeserRegeln.ts`
+- `src/pages/EntscheidLeser.tsx` (dritter Schreiber, mit #432 dazugekommen)
+
+Jeder Schreiber ruft `CSS.highlights.set('lc-such-treffer', …)` mit **seinen** Ranges und
+überschreibt damit die Ranges der anderen. Im **Split-View** ist das direkt sichtbar: jeder
+Tastendruck im Rail-Suchfeld löscht die Markierung des Nachbar-Panes — **gemessen 190 → 1 Ranges**.
+Es ist ein **Vorbestand** (zwei Schreiber genügten bereits), den der dritte Schreiber verschärft
+hat, weil Split-View die beiden Leser erst gleichzeitig sichtbar macht.
+
+### §9.2 Bau-Ziel — zwei gangbare Wege, Wahl beim Bau
+
+Die Registry muss aufhören, ein globaler Einzelplatz zu sein. Beide Wege lösen das; welcher
+gewählt wird, entscheidet die bauende Session am Code (die Entscheidung ist hier **bewusst offen**,
+weil sie von der Lebensdauer der Leser-Instanzen abhängt, die erst im Bau messbar ist):
+
+1. **Registry je Leser-Instanz.** Jede Leser-Instanz hält ihre eigene Highlight-Registrierung und
+   räumt sie beim Unmount ab. Sauberste Kapselung, verlangt aber einen Instanz-Träger (Context
+   oder Ref), den heute nicht alle drei Schreiber haben.
+2. **Instanz-namespaced Keys.** Der Highlight-Name bekommt einen Instanz-Diskriminator
+   (`lc-such-treffer-<paneId>`), die CSS-Regel `::highlight()` wird entsprechend je Pane erzeugt
+   bzw. auf die Namensfamilie gezogen. Kleinerer Eingriff, dafür muss das Abräumen verwaister
+   Namen explizit passieren, sonst wächst die globale Registry über die Session.
+
+Unabhängig vom Weg gilt: **alle drei Schreiber werden umgestellt** — bleibt einer global, ist der
+Bug nur verschoben. Amtliche Substanz und Trefferlogik bleiben unangetastet; geändert wird
+ausschliesslich, **wo** die Markierung registriert wird.
+
+### §9.3 Fertig, wenn
+
+- **Split-View-Beweis:** In zwei gleichzeitig sichtbaren Panes sind beide Suchen markiert;
+  Tippen im Rail-Suchfeld des einen Panes lässt die Markierung des Nachbar-Panes **unverändert**
+  (Range-Zahl vorher/nachher gleich, nicht 190 → 1).
+- **Scheiterns-Fähigkeit einmal gezeigt (§6.7):** ein Test bzw. e2e-Fall, der auf dem Stand VOR
+  dem Fix rot ist (er misst die Range-Zahl des Nachbar-Panes nach einem Tastendruck) und danach
+  grün — ein Tor, das nicht scheitern kann, ist gefährlicher als keines.
+- Alle drei Schreiber umgestellt, keine verwaisten Registry-Einträge nach Unmount.
+- Golden byte-gleich (reine Darstellung, keine prerenderte Fläche berührt).
