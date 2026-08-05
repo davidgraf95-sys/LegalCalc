@@ -1877,6 +1877,14 @@ Wörtlich aus ROADMAP.md überführt (Diät 4.8.2026):
 
 ## Übernahme 5.8.2026 — Ziff.-6-Vollzug (QS-PLAN-REVIEW)
 
+### Abschluss QS-PLAN-BILD-LAGE (5.8.2026 nachmittags, wörtlich aus ROADMAP.md)
+
+Lagebild in Laiensprache (Auftrag David 5.8.2026): Block «Was gerade passiert» (Bau/fertig/wartet-auf-David), Wirkungsbereich-Etiketten aus kollision:-Globs, Titel-zuerst an sechs Stellen, Kürzel-Legende + Bereichs-Definitionen auf der Methode-Seite, Namensregel im Skill auftrag. 42 neue Tests, Byte-Rückrechnung identisch, check:schlankheit-Split bildMethode.ts.
+
+- [x] **`QS-PLAN-BILD-LAGE` · Lagebild-Einstieg: Block «Was gerade passiert» in Laiensprache** *(Anlass: Auftrag David 5.8.2026 — «ich brauche einfachere Sprache um zu verstehen was gerade passiert»)* — Der Einstieg `plan-bild.html` trägt zuoberst drei Fragen ohne Fachsprache: woran gerade gebaut wird (belegte Flächen über eine statische Pfad→Alltagsbegriff-Tabelle), was zuletzt auf `main` gelandet ist, und was namentlich bei David liegt. **Alle Sätze statisch im Code**, nur die Werte mechanisch gefüllt (kein Modell zur Laufzeit, §2); die Fachsektionen darunter bleiben unverändert. **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) §Laien-Block.
+  <!-- @meta id: QS-PLAN-BILD-LAGE · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/plan] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+
+
 ### Abschluss QS-CI-VERCEL (5.8.2026 vormittags, wörtlich aus ROADMAP.md)
 
 PR #445 gemergt 5.8.2026 08:11Z (Auto-Squash; Skip=success-Beweis: Doku-Diff «Canceled by Ignored Build Step» mit Check-State success, App-Diff-Build DEPLOYED — Merge-Go David 4.8., Bedingung erfüllt).

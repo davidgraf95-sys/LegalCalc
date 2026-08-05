@@ -19,6 +19,10 @@ Strukturverbesserung.
    PDF-Modell, Warnungen): Snapshot bzw. Vergleichslauf **vor** dem Umbau.
 3. **Umbauen.**
 4. **Nachher beweisen.** `npm run golden:vergleich` byte-gleich, Gate grün.
+   Vor jedem Kontrolllauf, der Code austauscht (`git checkout <ref> -- <pfad>`,
+   `stash`, Branch-Wechsel): `git status --short` muss **leer** sein — sonst
+   überschreibt der Vergleich uncommittete Arbeit (Vorfall 5.8.2026: drei
+   Nachträge eines Bau-Agenten verloren und neu geschrieben).
 
 ## 2. Die zwei nicht verhandelbaren Sätze
 

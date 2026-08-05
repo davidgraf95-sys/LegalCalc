@@ -30,7 +30,7 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
 ## Session 5.8.2026 (Nacht II, ABSCHLUSS) — QS-PLAN-REVIEW komplett: Bauplan-Review-Befunde gefixt, Spec-Bindungs-Tor + Lage-Block gelandet, #445 eingereiht
 
-**Orchestrier-Session (Fable), 4 Bau-Agenten in Worktrees; Auftrag David «fixe alle befunde … du orchestrierst, unter-sessions bauen».** Vier-Agenten-Review (Zuordnung/Realität/Hygiene/Koordination) → alle Befunde B1–B5 gefixt: 3+4 falsche §-Anker (drei alte, zwei Neubefunde des Tors, zwei vom Fix selbst erzeugte — das Tor biss sofort), stale Steuerungs-Prosa (@queue-Kommentar, Ceiling-Satz datumsfrei), Ziff.-6-Vollzug (5 done-Blöcke → Chronik, deps bereinigt). **Prävention gelandet:** `check:plan` Regel 11 «Spec-Bindung» (§-Anker muss auflösen UND der §-Abschnitt die Schritt-ID tragen; Geburtsbeweis dreifach rot auf `d316f5884`, Allowlist 1 Eintrag, 25 Tests) · `plan:next` **Lage-Block** (belegte Flächen wip+kollision, Worktree/Branch-Slug-Zuordnung, `--prs`; Ersatz für SessionStart-Hook gemäss T19-Cache-Entscheid) · Skill `auftrag` Ziff. 2: `parked`+`grund: pr-NNN` statt still `ready`, Branch/Worktree tragen Schritt-Slug. Neue Schritte: `W2·5l-NORMTEXT-B2` (B2/M13/M14 war verwaist), `QS-PLAN-REVIEW` (done, Chronik). **QS-CI-VERCEL:** Doku-Diff nach Limit-Reset → Vercel `success` («Canceled by Ignored Build Step»), Merge-Bedingung erfüllt, #445 per Auto-Squash eingereiht und am Vormittag nach Branch-Nachzug GEMERGT (5.8. 08:11Z; Merge-Go David 4.8., Bedingung Skip=success erfüllt) — QS-CI-VERCEL done, Chronik. Tore: check:plan/tsc/eslint/92 Plan-Tests grün. Details: FAHRPLAN-PLAN-STEUERUNG § «Bauplan-Review 4.8.2026», Endstand-Block.
+**Orchestrier-Session (Fable), 4 Bau-Agenten in Worktrees; Auftrag David «fixe alle befunde … du orchestrierst, unter-sessions bauen».** Vier-Agenten-Review (Zuordnung/Realität/Hygiene/Koordination) → alle Befunde B1–B5 gefixt: 3+4 falsche §-Anker (drei alte, zwei Neubefunde des Tors, zwei vom Fix selbst erzeugte — das Tor biss sofort), stale Steuerungs-Prosa (@queue-Kommentar, Ceiling-Satz datumsfrei), Ziff.-6-Vollzug (5 done-Blöcke → Chronik, deps bereinigt). **Prävention gelandet:** `check:plan` Regel 11 «Spec-Bindung» (§-Anker muss auflösen UND der §-Abschnitt die Schritt-ID tragen; Geburtsbeweis dreifach rot auf `d316f5884`, Allowlist 1 Eintrag, 25 Tests) · `plan:next` **Lage-Block** (belegte Flächen wip+kollision, Worktree/Branch-Slug-Zuordnung, `--prs`; Ersatz für SessionStart-Hook gemäss T19-Cache-Entscheid) · Skill `auftrag` Ziff. 2: `parked`+`grund: pr-NNN` statt still `ready`, Branch/Worktree tragen Schritt-Slug. Neue Schritte: `W2·5l-NORMTEXT-B2` (B2/M13/M14 war verwaist), `QS-PLAN-REVIEW` (done, Chronik). **QS-CI-VERCEL:** Doku-Diff nach Limit-Reset → Vercel `success` («Canceled by Ignored Build Step»), Merge-Bedingung erfüllt, #445 per Auto-Squash eingereiht und am Vormittag nach Branch-Nachzug GEMERGT (5.8. 08:11Z; Merge-Go David 4.8., Bedingung Skip=success erfüllt) — QS-CI-VERCEL done, Chronik. **Nachmittag (Fortsetzung):** Kommunikationsregel für David (Laiensprache, global) + Lagebild-Ausbau QS-PLAN-BILD-LAGE gelandet — «Was gerade passiert», Wirkungsbereich-Etiketten (6 Kategorien aus kollision:-Globs), Titel-zuerst, Kürzel-Legende; Namensregel neuer Schritte im Skill auftrag; refactoring-Skill: kein Code-austauschender Kontrolllauf bei uncommitteter Arbeit. Tore: check:plan/tsc/eslint/92 Plan-Tests grün. Details: FAHRPLAN-PLAN-STEUERUNG § «Bauplan-Review 4.8.2026», Endstand-Block.
 
 ## Session 4./5.8.2026 (Nacht, ABSCHLUSS) — Gross-Aufräumung + «run till dry»: #455/#456 + komplette QS-CODE-Landekette 10/10, vier adversariale Gegenprüfungen, beide Steuer-Doku-Wächter GRÜN
 **Fable-Orchestrator-Session (Auftrag David: «räum ganzen worktrees auf … lösch die gelandeten … mach die rotation … alles aufräumen, run till dry — am Ende keine Worktrees, nur main, alles dokumentiert»). Sieben delegierte Einheiten (lex-bau/lex-synthese/4× lex-pruefung), serielle Landung mit Batterie-Wachen. main-Endstand: siehe letzter Commit dieser Karte.**
@@ -270,39 +270,6 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
   Schritt ohne aktiven Fahrplan; die Restpunkte-Extraktion steht als erster Arbeitsschritt drin.
   Die **W2·17-UI-BEFUNDE-Kette B3→B19** ist streng seriell verkettet (17 `dep`-Glieder) — bewusst,
   aber es heisst: fällt B3 aus, steht die ganze Reihe.
-
-## Session 2./3.8.2026 (Nacht) — Vorsorgeauftrag-Vollausbau W2·8/V9, PR #411 gelandet
-**Grundlage → Direktbau → 3 GP-Runden → Merge `12bc72521` (3.8. 08:17Z, Squash).**
-- **Fachliche Grundlage** [bibliothek/recherche/vorsorgeauftrag-inhalte.md] (PV-Vorbild):
-  Art. 360–369 am Snapshot verifiziert, Befundregister V-1…V-10 — darunter 2× SCHWER:
-  der alte Personensorge-Blocker zitierte Art. 360 Abs. 1 ZGB **contra legem**
-  (Wortlaut erlaubt jur. Personen ausdrücklich); Registrierung amtlich belegt
-  (Art. 23a ZStV, Anhang 1 Ziff. 23 ZStGV: **CHF 75 Fixtarif**, «+30» gestrichen).
-- **Engine** `vorsorgeauftrag.ts` v1.1.0: Ersatzpersonen mit `typ`/`bereiche` ·
-  Vertretungsregel einzeln/gemeinsam (V02c/V02d) · V13 spricht Widerruf aus
-  (Art. 362 Abs. 1+3) + Ergänzungs-Klausel V13b · Datums-Warnung · Interessen-
-  kollisions-Hinweis (Art. 365) · **Gate-Herabstufung** jur. Person→Hinweis/
-  Medizin-Warnung (als Lehre gekennzeichnet) · 10 Zitat-Korrekturen.
-- **SSoT:** `beurkundungsHinweis()` gestrichen (3 belegte Abweichungen TG/BE/SG) →
-  UI aus `NOTARIATE` + `berechneBeurkundung` (Norm/Stand/Link, D1).
-- **Beweis:** Golden 254→255 (additiv + je Commit deklariert, kein Nicht-VA-Fall) ·
-  **Gegenprüfung 3 Opus-Runden** (R1: B1–B7 · R2: B8+L1–L5 · R3 bestanden),
-  Register-Zeile 2026-08-03 mit Hand-Hash (Tool working-tree-gebunden) ·
-  Gate voll + e2e 352 + perf-budget grün · CI inkl. Merge-Schutz grün.
-- **Offen (David):** fachliche Abnahme (Dossier unabgehakt, Herabstufung V-1/V-2
-  rückholbar) · Fahrplan §V9.1–V9.5 vertagt (Beiblatt, BGE 151 III 81,
-  formel_extern-Minimum, ZStGV-Drift-Pin, GP-Nebenfunde N1–N4).
-- **Nachzug-Session 3.8. (vormittags), gelandet #415 `accbf09d6` + #416 `2a0bb2133`:**
-  V9.5 gebaut (GP bestanden + Delta-Runde; Golden 256) · V9.2 BGE 151 III 81 am
-  Entscheid verifiziert (E. 3.5.5/3.6; neue Status-Stufe `quelleGeprueft`, Abnahme
-  offen) · Dossier-Drift geheilt + Wächter `check:dossiers` (CI) · V9.4 ZStGV:
-  Fakten gesichert, Pin bewusst zurück — **David-Entscheid Weg A/B**
-  (`bibliothek/normen/zstgv-drift-erkennung-2026-08-03.md`; Frist 15.10.2026) ·
-  Dependabot #13 dismissed (RSC-only, ungenutzt, belegt) · Lighthouse grün
-  (OR CLS 0.009). Befunde: e2e `leser-kopf-a9` flakt im Voll-Lauf (Nullprobe auf
-  main rot, Isolation grün) · `check:fedlex-versionen` main-rot (3 Pins
-  nicht-kanonisch, u.a. ZGB html-1→2 — eigener Risiko-Schritt) · BGE-Register
-  41 unregistrierte Zitate (vorbestehend).
 
 ## Ältere Session-Karten und Chroniken — rotiert ins Archiv
 

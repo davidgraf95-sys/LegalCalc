@@ -120,5 +120,4 @@ export const INVENTAR: readonly string[] = [
 
   // Auftrag David 5.8.2026 (Nutzer-Turn): der Lagebild-Einstieg soll «einfachere Sprache»
   // tragen — ein Laien-Block zuoberst auf `plan-bild.html`.
-  'QS-PLAN-BILD-LAGE',
 ];
