@@ -32,6 +32,10 @@ Landung, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem Zyklus.
 3. **Grössen-Check** (die Session-Fixkosten — Startlektüre, `plan:next`,
    Spec-Slice — müssen sich lohnen):
    - **Zu klein** (reine Doku, Einzeiler, geschätzt < ~1 h Bau): die
+   Ausgangspunkt ist die `Grösse:`-Angabe im Bau-Prompt bzw. das `groesse:`-Feld
+   im `@meta` (S/M/L, geschätzt); weicht die eigene Einschätzung ab, gilt die
+   eigene — dann die Schätzung im Plan per `plan:set` korrigieren (Beobachtung
+   zurückschreiben, damit die nächste Session die bessere Zahl sieht).
      `ready-now`-Liste auf **1–2 bündelbare Nachbarn** prüfen — gleiche Fläche
      bzw. gleicher Fahrplan, **gleiche Risikoklasse**, laut Lanes kollisionsfrei
      — und mitbauen (je eigener Commit mit eigenem Trailer; Bündelungsregel

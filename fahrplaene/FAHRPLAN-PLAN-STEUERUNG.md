@@ -830,6 +830,14 @@ aus den e2e-Shards · Rückfall-Zähler je F-Klasse des Lehren-Registers. Andock
 `scripts/check-ci-laeufe.ts`. Fertig, wenn die Zeitreihe zwei reale Läufe trägt und
 das Lagebild sie zeigt; Scheiterns-Fähigkeit einmal gezeigt (§6.7).
 
+**Ent-Regulierung — gleichwertige Stufe (Auftrag David 5.8.2026):** Die Session prüft
+bestehende Sicherungen mit dem offiziellen Anthropic-Löschkriterium («would removing this
+cause mistakes? If not, cut it») und der Zeitreihe als Beleg: ein Tor, das seit Geburt nie
+rot war, aber Laufzeit kostet, ist Streichkandidat — vorher Provenienz klären (Skill
+`lehren`, Fünf-Schritte: Hinterfragen → Löschen zuerst). Cherny-Muster als Rhythmus-Idee:
+periodisches radikales Entrümpel-Review von CLAUDE.md/Skills/Hooks, weil viele Regeln
+Patches für Schwächen des DAMALIGEN Modells sind. Belege: Runde 2 der Recherche.
+
 **Stufe 2 — dann deuten, manuell:** `npm run retro:17`
 liest NUR Zeitreihe + Chronik und formuliert einen als ENTWURF markierten
 ROADMAP-Vorschlagsblock (kein Auto-Commit, kein Auto-PR); die startende Session
