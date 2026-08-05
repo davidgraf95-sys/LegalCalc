@@ -5,7 +5,7 @@
 // rot, (3) eine stabile Bestands-Datei bleibt grün. Zusätzlich die Rand- und
 // Hinweis-Fälle (Toleranz-Grenze, Unterschreitung, gelöschte Baseline-Datei).
 import { describe, it, expect } from 'vitest';
-import { pruefeSchlankheit } from './check-schlankheit';
+import { pruefeSchlankheit, globZuRegex, generiertMusterAusGitattributes } from './check-schlankheit';
 
 describe('pruefeSchlankheit — Kernlogik (§6.6 mechanisiert)', () => {
   it('neue Datei über der Schwelle, nicht in der Baseline → rot', () => {
@@ -80,5 +80,54 @@ describe('pruefeSchlankheit — Kernlogik (§6.6 mechanisiert)', () => {
     expect(rot).toHaveLength(2);
     expect(rot.some((z) => z.includes('b.ts'))).toBe(true);
     expect(rot.some((z) => z.includes('c.ts'))).toBe(true);
+  });
+});
+
+describe('globZuRegex — Review-Befund 2 (5.8.2026): slash-lose Muster matchen auf jeder Pfadebene', () => {
+  it('ein slash-loses Muster matcht die Datei an der Wurzel UND in Unterordnern (Repro: massendaten.ts)', () => {
+    const re = globZuRegex('massendaten.ts');
+    expect(re.test('massendaten.ts')).toBe(true);
+    expect(re.test('src/lib/massendaten.ts')).toBe(true);
+    expect(re.test('src/lib/normtext/massendaten.ts')).toBe(true);
+  });
+
+  it('ein slash-loses Muster matcht NICHT als blosser Suffix ohne Verzeichnisgrenze', () => {
+    const re = globZuRegex('massendaten.ts');
+    expect(re.test('src/lib/andere-massendaten.ts')).toBe(false);
+  });
+
+  it('ein Muster MIT Slash bleibt an der Repo-Wurzel verankert (unverändertes Verhalten)', () => {
+    const re = globZuRegex('golden/*.json');
+    expect(re.test('golden/lexmetrik-golden.json')).toBe(true);
+    expect(re.test('src/golden/lexmetrik-golden.json')).toBe(false);
+  });
+
+  it('Review-Befund 6: ein slash-loses *.generated.ts matcht auch mehrere Ebenen tief', () => {
+    const re = globZuRegex('*.generated.ts');
+    expect(re.test('foo.generated.ts')).toBe(true);
+    expect(re.test('src/lib/normtext/foo.generated.ts')).toBe(true);
+  });
+
+  it('Review-Befund 6: "?" matcht genau ein Zeichen, kein "/" — kein Regex-Quantor-Leck', () => {
+    const re = globZuRegex('a?.ts');
+    expect(re.test('ab.ts')).toBe(true);
+    expect(re.test('a.ts')).toBe(false); // "?" verlangt GENAU ein Zeichen, nicht "kein oder eins"
+    expect(re.test('a/x.ts')).toBe(false); // "?" darf keine Verzeichnisgrenze verschlucken
+  });
+});
+
+describe('generiertMusterAusGitattributes — Review-Befund 3 (5.8.2026): linguist-generated=true gleichwertig zum nackten Token', () => {
+  it('akzeptiert sowohl das nackte Token als auch die explizite =true-Form, lehnt =false ab', () => {
+    const inhalt = [
+      'a.ts linguist-generated',
+      'b.ts linguist-generated=true',
+      'c.ts linguist-generated=false',
+      'd.ts -diff', // anderes Attribut, kein linguist-generated → kein Muster
+    ].join('\n');
+    const muster = generiertMusterAusGitattributes(inhalt);
+    expect(muster.some((m) => m.test('a.ts'))).toBe(true);
+    expect(muster.some((m) => m.test('b.ts'))).toBe(true);
+    expect(muster.some((m) => m.test('c.ts'))).toBe(false);
+    expect(muster.some((m) => m.test('d.ts'))).toBe(false);
   });
 });

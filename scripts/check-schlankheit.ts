@@ -50,11 +50,12 @@
  * Lesens).
  *
  * Lauf: `npm run check:schlankheit` (reines fs+Zeilenzählen, kein Build,
- * keine Netz-Zugriffe — Laufzeit < 1 s). BEWUSST NICHT in `check:seriell`/
- * `gate` verdrahtet: `check:seriell` erzwingt über `check:tor-paritaet`
- * entweder eine CI-Verdrahtung oder einen begründeten Allowlist-Eintrag in
- * `scripts/check-tor-paritaet.ts` — beides ausserhalb dieses Auftrags
- * (QS-TOK). Bis zu diesem Folge-Entscheid läuft es eigenständig.
+ * keine Netz-Zugriffe — Laufzeit < 1 s). Seit e24b97b80 Teil von
+ * `check:seriell` (package.json) und damit von `npm run check`/`npm run gate`
+ * — BEWUSST NICHT CI-Required: ein begründeter Allowlist-Eintrag in
+ * `scripts/check-tor-paritaet.ts` hält es lokal-warnend, damit ein
+ * Bestands-Regrowth fremde PRs nicht blockiert (Eskalationsweg dort:
+ * `npm run schlankheit:update` mit Commit-Begründung).
  */
 import { readFileSync, readdirSync, statSync, existsSync, writeFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
@@ -76,8 +77,34 @@ const REGEX_SONDERZEICHEN = new Set(['.', '+', '^', '$', '{', '}', '(', ')', '|'
  * escape-dann-Platzhalter-Zwischenschritt über String-Ersetzung), damit keine
  * Zwischenform nötig ist, die Regex-Metazeichen mit Steuerzeichen verwechseln
  * könnte.
+ *
+ * ANKER (Review-Befund 2, 5.8.2026): git matcht ein Muster OHNE `/` auf JEDER
+ * Pfadebene (wie `.gitignore` — effektiv `**‌/muster`), ein Muster MIT `/` nur
+ * relativ zum Verzeichnis der `.gitattributes` (hier die Repo-Wurzel, also ab
+ * Pfadanfang). Reproduziert: `massendaten.ts linguist-generated` schloss
+ * `src/lib/massendaten.ts` vorher NICHT aus, weil `^massendaten\.ts$` nur auf
+ * der Wurzel selbst gematcht hätte. Slash-lose Muster ankern jetzt an
+ * `(^|/)` statt `^` — das deckt zugleich Review-Befund 6 mit ab: ein
+ * slash-loses `*.generated.ts` matcht damit automatisch auch in
+ * Unterordnern (`[^/]*\.generated\.ts` hinter `(^|/)`).
+ *
+ * `?` (Review-Befund 6): git-Glob-Semantik ist «genau ein Zeichen, kein `/`»
+ * — als `[^/]` übersetzt, NICHT als literales `?` stehen gelassen (ein
+ * rohes `?` im Regex ist ein Quantor auf dem VORHERGEHENDEN Atom, nicht
+ * «ein beliebiges Zeichen»; als erstes Zeichen eines Musters wäre es sogar
+ * eine ungültige Regex).
+ *
+ * `**` (Review-Befund 6, bewusste Teil-Abdeckung): wird als `.*` übersetzt —
+ * eine Übersetzung, die auch über Verzeichnisgrenzen hinweg matcht und damit
+ * ein Superset von gits «null oder mehr Verzeichnisebenen» ist. Für den
+ * Ausschluss-Zweck hier (§5: was gematcht wird, FLIEGT aus der Zeilenmessung
+ * raus) ist ein zu weites Match das sichere Risiko — es kann höchstens eine
+ * Datei zu Unrecht ausschliessen, nie eine Churn-Regrowth-Datei unentdeckt
+ * durchlassen. Heute nutzt `.gitattributes` kein `**` ohne Slash und keine
+ * mehrfachen `**` in einem Muster; diese Fälle sind NICHT gegen echtes
+ * git-Verhalten verifiziert, nur gegen die hier vorkommenden Formen.
  */
-function globZuRegex(glob: string): RegExp {
+export function globZuRegex(glob: string): RegExp {
   let regex = '';
   for (let i = 0; i < glob.length; i++) {
     const zeichen = glob[i];
@@ -86,40 +113,82 @@ function globZuRegex(glob: string): RegExp {
       i += 1; // zweites '*' des Paars wurde mitverbraucht
     } else if (zeichen === '*') {
       regex += '[^/]*';
+    } else if (zeichen === '?') {
+      regex += '[^/]';
     } else if (REGEX_SONDERZEICHEN.has(zeichen)) {
       regex += '\\' + zeichen;
     } else {
       regex += zeichen;
     }
   }
-  return new RegExp('^' + regex + '$');
+  const anker = glob.includes('/') ? '^' : '(^|/)';
+  return new RegExp(anker + regex + '$');
 }
 
-/** Liest alle `linguist-generated`-Muster aus `.gitattributes` (§5-Projektion:
- *  was GitHub schon als generiert einklappt, ist kein Handschrift-Signal). */
-function leseGeneriertMuster(): RegExp[] {
-  const pfad = join(WURZEL, '.gitattributes');
-  if (!existsSync(pfad)) return [];
+/**
+ * Reine Parse-Funktion (fs-frei, testbar): liest `linguist-generated`-Muster
+ * aus dem TEXT-Inhalt einer `.gitattributes`-Datei (§5-Projektion: was GitHub
+ * schon als generiert einklappt, ist kein Handschrift-Signal).
+ *
+ * ATTRIBUT-FORM (Review-Befund 3, 5.8.2026): git akzeptiert sowohl das nackte
+ * Token `linguist-generated` (implizit `=true`) als auch die explizite Form
+ * `linguist-generated=true`. `linguist-generated=false` ist eine bewusste
+ * Nicht-Setzung (z. B. um ein geerbtes Attribut aus einem übergeordneten
+ * Muster wieder abzuschalten) und zählt NICHT als gesetzt.
+ */
+export function generiertMusterAusGitattributes(inhalt: string): RegExp[] {
   const muster: RegExp[] = [];
-  for (const zeile of readFileSync(pfad, 'utf8').split('\n')) {
+  for (const zeile of inhalt.split('\n')) {
     const getrimmt = zeile.trim();
     if (!getrimmt || getrimmt.startsWith('#')) continue;
     const teile = getrimmt.split(/\s+/);
     const [glob, ...attribute] = teile;
-    if (attribute.includes('linguist-generated')) muster.push(globZuRegex(glob));
+    const generiertAttr = attribute.find((a) => a === 'linguist-generated' || a.startsWith('linguist-generated='));
+    if (!generiertAttr) continue;
+    const wert = generiertAttr.includes('=') ? generiertAttr.slice(generiertAttr.indexOf('=') + 1) : 'true';
+    if (wert === 'true') muster.push(globZuRegex(glob));
   }
   return muster;
 }
 
+/** Liest die `linguist-generated`-Muster aus der committeten `.gitattributes`. */
+function leseGeneriertMuster(): RegExp[] {
+  const pfad = join(WURZEL, '.gitattributes');
+  if (!existsSync(pfad)) return [];
+  return generiertMusterAusGitattributes(readFileSync(pfad, 'utf8'));
+}
+
 function istAusgeschlossen(relPfad: string, generiertMuster: RegExp[]): boolean {
   if (/\.generated\.tsx?$/.test(relPfad)) return true;
-  if (relPfad.startsWith(`src${sep}tests${sep}fixtures${sep}`)) return true;
+  // Review-Befund 5 (5.8.2026): relPfad ist bereits auf '/' normalisiert
+  // (sammleDateien: `.split(sep).join('/')`) — der Vergleich MUSS also
+  // ebenfalls '/' verwenden, nicht das OS-`sep` (auf POSIX identisch, auf
+  // Windows wäre `sep` `\\` und der Vergleich hätte still nie gegriffen).
+  if (relPfad.startsWith('src/tests/fixtures/')) return true;
   return generiertMuster.some((m) => m.test(relPfad));
 }
 
 // ─── Sammeln ────────────────────────────────────────────────────────────────
 
+/**
+ * Review-Befund 4 (5.8.2026, §6.7-Klasse): der `readdirSync`-Fehlschlag wurde
+ * bisher UNTERSCHIEDSLOS geschluckt — sowohl für eine fehlende Scan-WURZEL
+ * (`src/` oder `scripts/` existiert nicht, z. B. falsches `cwd`) als auch für
+ * eine tiefer liegende, harmlose Race/Berechtigungs-Lücke. Im ersten Fall
+ * lieferte das Tor still «0 Datei(en) geprüft» mit Exit 0 — ein Tor, das bei
+ * kaputter Konfiguration grün meldet, ist gefährlicher als keines. Die
+ * Scan-WURZEL wird jetzt VOR dem Rekursions-Einstieg geprüft und wirft hart;
+ * der `try/catch` in `gehen()` bleibt NUR für tiefere Ebenen (dort ist ein
+ * stiller Rückzug vertretbar: das schlimmste Ergebnis ist eine übersehene
+ * Unterdatei, nicht ein leerer Gesamt-Scan).
+ */
 function sammleDateien(startVerzeichnis: string, generiertMuster: RegExp[]): string[] {
+  const wurzelPfad = join(WURZEL, startVerzeichnis);
+  if (!existsSync(wurzelPfad)) {
+    throw new Error(
+      `Scan-Wurzel fehlt: '${startVerzeichnis}/' (erwartet unter ${wurzelPfad}) — ` +
+      `check:schlankheit muss VOR jedem Zeilen-Urteil wissen, dass es wirklich gescannt hat.`);
+  }
   const treffer: string[] = [];
   const gehen = (verz: string): void => {
     let eintraege: string[];
@@ -140,7 +209,7 @@ function sammleDateien(startVerzeichnis: string, generiertMuster: RegExp[]): str
       }
     }
   };
-  gehen(join(WURZEL, startVerzeichnis));
+  gehen(wurzelPfad);
   return treffer;
 }
 
@@ -240,7 +309,27 @@ function schreibeBaseline(bestand: ReadonlyMap<string, number>): void {
 
 function main(): void {
   const update = process.argv.includes('--update');
-  const bestand = messeBestand();
+
+  let bestand: Map<string, number>;
+  try {
+    bestand = messeBestand();
+  } catch (fehler) {
+    console.error(`check:schlankheit ROT — ${(fehler as Error).message}`);
+    process.exit(1);
+  }
+
+  // Review-Befund 4, zweiter Teil: Plausibilitäts-Guard zusätzlich zum
+  // harten Wurzel-Fehler oben — falls beide Scan-Wurzeln existieren, aber aus
+  // irgendeinem anderen Grund (z. B. ein künftiger Ausschluss-Bug, der ALLES
+  // matcht) kein einziger Treffer zustande kommt, ist «0 Dateien geprüft»
+  // ebenso kein plausibler Repo-Zustand wie eine fehlende Wurzel.
+  if (bestand.size === 0) {
+    console.error(
+      'check:schlankheit ROT — 0 Dateien geprüft. Kein plausibler Repo-Zustand ' +
+      '(§6.7: ein Tor, das bei leerem Scan still grün meldet, ist gefährlicher als keines). ' +
+      'Scan-Wurzeln (src/, scripts/) und Ausschluss-Muster prüfen.');
+    process.exit(1);
+  }
 
   if (update) {
     const vorher = ladeBaseline();
