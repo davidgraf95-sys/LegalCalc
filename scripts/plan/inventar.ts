@@ -112,4 +112,10 @@ export const INVENTAR: readonly string[] = [
   // blockierte den merge-pflichtigen Vercel-Check eines App-fremden Diffs (#443,
   // Admin-Bypass durch David). Wurzel-Fix: Ignored Build Step für App-fremde Diffs.
   'QS-CI-VERCEL',
+
+  // Bauplan-Review 4.8.2026 (Auftrag David, vier read-only-Prüfagenten): der Review selbst
+  // als Schritt (Befund-Fixes + die zwei Präventionen Spec-Bindungs-Tor und plan:next-Lage-
+  // Block) sowie der bis dahin ungesteuerte B2-Pass des Normtext-Fahrplans (Befund B5:
+  // «Nächste Arbeit» seit 29.6.2026, aber kein Schritt — für plan:next unsichtbar).
+  'QS-PLAN-REVIEW', 'W2·5l-NORMTEXT-B2',
 ];

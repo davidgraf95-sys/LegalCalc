@@ -48,7 +48,9 @@ M5/G11/M10/G15/#9) ist gelandet+gegated. Engine-Golden `lexmetrik-golden.json` �
 Batch byte-gleich; golden/normtext-snapshot.json nur durch BGERR (HEAD-Commit `4e236412`) bewusst
 neu gesegnet, die Sidecar-Cluster (M5/G11/G15) golden-neutral. **`npm run gate` (voll) grün.**
 Adversarial reviewt (2 Opus-Agenten) + Playwright-Sichtprüfung (ZGB/BV/OR, Hell/Dunkel/Mobil).
-**Nächste Arbeit = B2:** M13 Schlusstitel/UeB/Anhänge (eigener additiver Re-Bless, disp_/annex_-
+**Nächste Arbeit = B2** *(gesteuert durch `W2·5l-NORMTEXT-B2`, ROADMAP — bis 5.8.2026 trug diese
+Arbeit keinen Schritt und war für `plan:next` unsichtbar, Bauplan-Review 4.8.2026, Befund B5)**:**
+M13 Schlusstitel/UeB/Anhänge (eigener additiver Re-Bless, disp_/annex_-
 Token-Namespace, Token-Kollisions-Falle disp_u1/art_1) + M14 wortgenaue Fussnoten (G14, Sidecar
 Wort-Offsets, baut auf dem tag-bewussten clean() aus G15 auf). Danach **B3** (#2 Versionierung, FR/IT).
 **Bekannter Rest aus B1 (für B2/G14):** der Inline-Marker-Strip in `entferneTags` (`<tag>`→' ')
