@@ -2,6 +2,21 @@
 export type Status = 'ready' | 'wip' | 'blocked' | 'done' | 'parked';
 export const STATUS_WERTE: readonly Status[] = ['ready', 'wip', 'blocked', 'done', 'parked'];
 
+/**
+ * Geschätzter Bau-Umfang eines Schritts (Auftrag David 5.8.2026: «nicht zu grosse
+ * oder kleine nehmen»). Bedeutung der drei Werte: Fahrplan-§ «Etikett — Feld
+ * `groesse`» in `fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md`.
+ *
+ * Die Angabe ist eine **Heuristik und Steuerhilfe, nie ein Tor-Kriterium** — kein
+ * `check:*` leitet aus ihr ein Verdikt ab, und ein Schritt ohne Feld ist zulässig
+ * (er zeigt im Lagebild «Grösse ungeschätzt», statt dass der Renderer rät).
+ */
+export type Groesse = 'S' | 'M' | 'L';
+export const GROESSE_WERTE: readonly Groesse[] = ['S', 'M', 'L'];
+export function istGroesse(v: string | null): v is Groesse {
+  return v !== null && (GROESSE_WERTE as readonly string[]).includes(v);
+}
+
 export interface Etikett {
   id: string;
   status: Status;
@@ -16,6 +31,18 @@ export interface Etikett {
   seqWeich: string[];
   worktree: boolean;
   asset26x: boolean;
+  /**
+   * Geschätzte Bau-Grösse, **roh** wie in der ROADMAP notiert; `null` = Feld fehlt.
+   *
+   * Bewusst `string | null` statt `Groesse | null`: `parseEtikett` wirft hier NICHT
+   * bei unbekanntem Vokabular, anders als bei `status` und `slot`. Grund ist die
+   * Rolle des Felds — es steuert nichts, es ist eine Lese-Hilfe. Ein Tippfehler
+   * (`groesse: XL`) darf darum nicht die ganze Plan-Werkzeugkette lahmlegen
+   * (`plan:next`, `plan:set`, `plan:bild` parsen alle dieselbe Zeile); er gehört als
+   * EINE benannte Meldung ins Tor. Die Vokabular-Prüfung macht deshalb `check.ts`
+   * Regel 12, und wer den Wert typisiert braucht, filtert mit `istGroesse()`.
+   */
+  groesse: string | null;
   fahrplan: string | null;
   slot?: 'inhaber' | null;
 }
@@ -67,6 +94,7 @@ export function parseEtikett(line: string): Etikett {
     seqWeich: 'seq-weich' in feld ? liste(feld['seq-weich']) : [],
     worktree: ja(feld.worktree),
     asset26x: ja(feld['26x']),
+    groesse: 'groesse' in feld ? nullbar(feld.groesse) : null,
     fahrplan: 'fahrplan' in feld ? nullbar(feld.fahrplan) : null,
     slot: slotRaw as 'inhaber' | null,
   };
@@ -90,6 +118,10 @@ export function serializeEtikett(e: Etikett, indent: string): string {
     `worktree: ${e.worktree ? 'ja' : 'nein'}`,
     `26x: ${e.asset26x ? 'ja' : 'nein'}`,
   );
+  // Position wie im Bestand der ROADMAP: nach `26x`, vor `fahrplan`. Wie bei
+  // `seq-hart` gilt — falsche Position heisst nicht-byte-gleicher Round-Trip und
+  // damit Diff-Rauschen bei jedem `plan:set`-Aufruf.
+  if (e.groesse) teile.push(`groesse: ${e.groesse}`);
   if (e.fahrplan) teile.push(`fahrplan: ${e.fahrplan}`);
   if (e.slot) teile.push(`slot: ${e.slot}`);
   return `${indent}<!-- @meta ${teile.join(' · ')} -->`;

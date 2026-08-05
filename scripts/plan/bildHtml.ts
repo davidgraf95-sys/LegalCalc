@@ -489,6 +489,53 @@ export function bereichsBadges(globs: string[]): string {
 }
 
 /**
+ * Klartext einer geschätzten Bau-Grösse: Badge-Text, Titel (Tooltip) und die
+ * Chip-Klasse. EINE Tabelle für alle Anzeigeorte (§5) — das Wort steht nicht
+ * dreimal im Markup.
+ *
+ * Farbwahl aus den BESTEHENDEN Chip-Klassen, ohne Stylesheet-Zusatz (dieselbe
+ * Begründung wie bei `bereichsBadges`: ein neuer Selektor änderte alle vier
+ * Seiten). Die Unterscheidung trägt darum der TEXT, nicht die Farbe — «Grösse L»
+ * und «im Bau» sind beide gold, lesen sich aber nicht verwechselbar.
+ */
+const GROESSE_TEXT: Record<string, { badge: string; titel: string; klasse: string }> = {
+  S: {
+    badge: 'Grösse S — nur gebündelt nehmen',
+    titel: 'Geschätzt: trägt keine eigene Session. Der Skill «bauschritt» bündelt sie in Station A mit 1–2 kollisionsfreien Nachbarn gleicher Risikoklasse.',
+    klasse: 'ready',
+  },
+  M: {
+    badge: 'Grösse M — sessionfüllend',
+    titel: 'Geschätzt: füllt eine Bau-Session — der Normalfall, ohne Zusatz-Handgriff.',
+    klasse: 'done',
+  },
+  L: {
+    badge: 'Grösse L — erst in Teilschritte schneiden',
+    titel: 'Geschätzt: zu gross für eine Session. Vor dem Bau in sessionfüllende Teilschritte schneiden (AP-6-Muster); bei Dach-Schritten läuft der Bau ohnehin über die Unterschritte.',
+    klasse: 'wip',
+  },
+};
+
+/**
+ * Die geschätzte Bau-Grösse als Badge — Steuerhilfe für Davids Auswahl («nicht zu
+ * grosse oder kleine nehmen», Auftrag 5.8.2026).
+ *
+ * Fehlt das `groesse:`-Feld, steht hier **«Grösse ungeschätzt»** statt einer
+ * geratenen Einstufung. Aus Kollisionszahl oder Prosalänge eine Grösse abzuleiten
+ * wäre genau die stille Zweitwahrheit, die §8 verbietet: die Schätzung ist ein
+ * URTEIL und gehört ins `@meta`, nicht in den Renderer. Ein unbekanntes Vokabular
+ * wird ebenso als «ungeschätzt» gezeigt — rot gemeldet hat es dann schon
+ * `check:plan` Regel 12, und die Anzeige soll dabei nicht zusätzlich raten.
+ */
+export function groesseBadge(groesse: string | null): string {
+  const g = groesse !== null ? GROESSE_TEXT[groesse] : undefined;
+  if (!g) {
+    return ` <span class="chip ready" title="Für diesen Schritt ist keine Grösse geschätzt (das @meta-Feld «groesse» fehlt) — hier wird nicht geraten.">Grösse ungeschätzt</span>`;
+  }
+  return ` <span class="chip ${g.klasse}" title="${esc(g.titel)}">${esc(g.badge)}</span>`;
+}
+
+/**
  * Ein Schritt in der Anzeige: **Klartext-Titel zuerst**, das Kürzel danach in
  * Klammern (Auftrag David 5.8.2026 — nie mehr ID-first).
  *

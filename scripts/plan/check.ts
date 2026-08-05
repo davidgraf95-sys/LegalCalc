@@ -2,7 +2,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, type Einheit } from './parse';
 import { resolve } from './aufloesen';
-import { parseEtikett, type Status } from './etikett';
+import { parseEtikett, istGroesse, GROESSE_WERTE, type Status } from './etikett';
 import { INVENTAR } from './inventar';
 import { pruefeSpecBindung } from './specBindung';
 import { obersterMarkerId } from './marker';
@@ -146,6 +146,22 @@ export function pruefe(
     // Slicers, ohne dass ein Tor rot wird (Endprüfungs-Funde 11/21, 31.7.2026).
     if (t.fahrplan && !fileExists(t.fahrplan)) {
       probleme.push({ id: e.id, meldung: `fahrplan "${t.fahrplan}" existiert nicht` });
+    }
+    // (12) `groesse`-Vokabular — und NUR das Vokabular.
+    //
+    // Die Grösse ist eine Schätzhilfe für die Auswahl («nicht zu grosse oder kleine
+    // nehmen», Auftrag David 5.8.2026), kein Tor-Kriterium: das Tor prüft nie, OB
+    // ein Schritt eine Grösse trägt (Fehlen ist zulässig und wird im Lagebild als
+    // «Grösse ungeschätzt» ausgewiesen, §8) und nie, ob die Schätzung stimmt — nur,
+    // dass ein gesetzter Wert aus dem vereinbarten Vokabular stammt. Ohne diese
+    // Regel bliebe ein `groesse: gross` still stehen: `parseEtikett` lässt den Wert
+    // bewusst durch (Begründung dort), und die Anzeige zeigt fortan ein Badge, das
+    // niemand als Fehler erkennt.
+    if (t.groesse !== null && !istGroesse(t.groesse)) {
+      probleme.push({
+        id: e.id,
+        meldung: `groesse "${t.groesse}" ist kein gültiger Wert — erlaubt sind ${GROESSE_WERTE.join(', ')} (oder das Feld ganz weglassen)`,
+      });
     }
   }
   // (10) Checkbox-Bullet ohne gebundenes @meta — der Nullfall von Regel 2.
