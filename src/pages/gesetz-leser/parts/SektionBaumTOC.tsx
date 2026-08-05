@@ -3,15 +3,16 @@ import type { Sektion } from '../../../lib/normtext/browse';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
 
-// §15.2 (CLS, 18.7.2026): die obersten STANDARD_OFFEN_TIEFE Gliederungs-Ebenen sind
-// ab dem ERSTEN Render offen (Default, kein State-Wechsel → kein Lade-Shift). Damit
-// klappt der Scroll-Spy beim Lesen nur noch TIEFE Blatt-Zweige auf/zu (wenige Zeilen)
-// statt eines ganzen Mehr-Ebenen-Pfades — der grosse, un-input-zugerechnete Reflow
-// (auf 2-vCPU-CI ~0.06–0.09 CLS) entfällt, die Struktur-Übersicht bleibt (mehr Inhalt
-// sichtbar, §15.2: nie WENIGER). Tiefere Ebenen bleiben Default zu und werden vom
-// Scroll-Spy automatisch nachgeführt (K, David 26.6.). Manuelles Zu-/Aufklappen
-// (tocBaum) überschreibt den Default je Knoten.
-const STANDARD_OFFEN_TIEFE = 2;
+// Entscheid David 5.8.2026 (Chat, «gliederung … standardmässig zugeklappt und erst
+// auf klicken öffnen»): ALLE Gliederungs-Ebenen starten zu — STANDARD_OFFEN_TIEFE 0.
+// Das ersetzt den Wert 2 vom 18.7.2026 (§15.2-CLS-Fix: oberste Ebenen offen, damit
+// der Scroll-Spy keine Mehr-Ebenen-Pfade un-input-zugerechnet aufklappt, auf
+// 2-vCPU-CI ~0.06–0.09 CLS). Der Konflikt ist BEWUSST entschieden: Davids
+// UI-Entscheid gilt; die Spy-Nachführung (K, David 26.6.) bleibt unverändert, und
+// das Perf-Budget-Tor misst den CLS nach — wird es rot, ist die Feinarbeit
+// (Spy-Aufklappen nur input-zugerechnet) der nächste Schritt, nicht die Rücknahme
+// dieses Entscheids. Manuelles Zu-/Aufklappen (tocBaum) überschreibt den Default.
+const STANDARD_OFFEN_TIEFE = 0;
 
 // TOC-Gliederungsbaum: jede Stufe einklappbar (geteilter Zustand mit dem
 // Fliesstext); Dreieck klappt, Label springt.
