@@ -54,6 +54,13 @@ allerersten Übernahme (10.7.2026), seither wächst die Datei am Ende weiter.
 **Nie zusammenfassen.** Zusammenfassen ist ~40 % Retrieval-Verlust — die
 Chronik ist ein Archiv, kein Extrakt.
 
+**`@meta`-Etiketten LEBENDER Schritte sind unantastbar.** Nur das `@meta`
+eines Schrittes, der tatsächlich in die Chronik wandert (`done`, bzw. der
+✅-Teilerfolgs-Fall oben), wird verschoben. Jedes `@meta` eines offenen
+Schrittes — Status, `dep`, `blocker`, `fahrplan:` — steuert `check:plan`,
+`plan:next` und die Queue und wird bei einer Aufräum-Session nie verändert
+oder gelöscht, auch nicht formatierend.
+
 **Zwingender Zweitschritt: `scripts/plan/inventar.ts`.** Mit dem `@meta` aus
 `ROADMAP.md` verschwindet die ID auch aus der kanonischen Inventar-Liste —
 sonst meldet `check:plan` Regel 1 „Inventar-ID … hat kein @meta“. Jede
@@ -91,9 +98,14 @@ existierende Datei zeigen.
 
 Reihenfolge, sonst wird QS-PH/`check:plan` rot:
 
-1. **Verify.** `grep -rn <Basename> ROADMAP.md ROADMAP-CHRONIK.md` — kein
-   lebender `fahrplan:`-Zeiger und keine aktive Prosa-Referenz mehr? Nur dann
-   weiter.
+1. **Verify.** `grep -rn <Basename> ROADMAP.md fahrplaene/` — kein lebender
+   `fahrplan:`-Zeiger und keine aktive Prosa-Referenz mehr? Nur dann weiter.
+   **Bewusst NICHT gegen `ROADMAP-CHRONIK.md` grepen:** erledigte Schritte
+   wandern samt ihrer `@meta`-Zeile (und damit ihrem historischen
+   `fahrplan:`-Zeiger) dorthin (Schritt 2) — ein Treffer dort ist ein toter,
+   archivierter Verweis, kein lebender. Weder Regel 7 noch Regel 9 lesen die
+   Chronik (s. u.), ein Chronik-Treffer würde jede Archivierung grundlos
+   blockieren.
 2. **Archive.** `git mv fahrplaene/FAHRPLAN-X.md archiv/` — danach greift
    Regel 7 gar nicht mehr (sie scannt nur `fahrplaene/`), und ein
    verbliebener toter `fahrplan:`-Zeiger fiele sofort unter Regel 9 auf.
@@ -132,7 +144,8 @@ darum die real im Präzedenz-Commit `793e9aee3` gefahrene, belegte Kette:
 danach (kein Gate, kein Blocker) — es zeigt, ob `STRUKTUR.md` seinerseits
 Session-Karten-Nachzug braucht.
 
-**Bündelungsgrund** (wörtlich aus `793e9aee3`): Chronik-Überführung, Streichung
+**Bündelungsgrund** (abgeleitet aus `793e9aee3`, keine wörtliche Zitierung):
+Chronik-Überführung, Streichung
 und Fahrplan-Archivierung gehören in **einen** Commit, weil `check:plan`
 Regel 9 (jeder `fahrplan:`-Zeiger muss existieren) und Regel 7 (jede Datei
 unter `fahrplaene/` muss verlinkt sein) mechanisch gekoppelt sind — kein Tor
