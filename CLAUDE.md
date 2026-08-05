@@ -199,7 +199,11 @@ Wer ein Merge-, CI- oder Prozessproblem **erkennt**, behebt es **an der Wurzel**
 oder legt einen konkreten Roadmap-Schritt mit Wurzel-Fix an — nie nur umschiffen.
 Ein Workaround ohne hinterlegten Wurzel-Fix ist ein offener Mangel, kein
 erledigter Vorfall. Massstab: Dieselbe Störung darf einer künftigen Session
-nicht noch einmal Arbeitszeit kosten. Belegter Anlass: Am 3.8.2026 kosteten
+nicht noch einmal Arbeitszeit kosten. Das gilt **in jeder Session, laufend und
+ohne Rückfrage** (Mandat David 4./5.8.2026): Wo im Bau eine Lehre aufkommt, wird
+sie noch in derselben Session nach der Formregel des Skills `lehren` verankert
+(Tor > Dispatch-§0 > Skill > Prosa) — eine Lehre, die nur im Chat existiert,
+gilt als nicht gezogen; vor dem Session-Abschluss wird das einmal geprüft. Belegter Anlass: Am 3.8.2026 kosteten
 sieben lange bekannte, je einzeln «umschiffte» CI-Defekte (u. a. ein seit Anlage
 nie grüner Wächter, wochenlang nicht-kanonische Pins, Bot-PRs ohne CI-Lauf)
 zusammen einen ganzen Arbeitstag. Grenzen unverändert: Risiko-Pfade nur mit

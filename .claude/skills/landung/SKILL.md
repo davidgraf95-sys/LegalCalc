@@ -60,6 +60,13 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    anderer offener PR dieselben Dateien/dasselbe Subsystem berührt
    (Doppelarbeit/Kollision). Bei Überschneidung: erst den anderen landen,
    dann diesen rebasen (Schritt 8). Nie zwei kollidierende PRs gleichzeitig.
+   **Scharfer Auto-Merge ist keine Landung:** bei `mergeStateStatus: BEHIND`
+   (Branch hinter main, Required «up to date») feuert er NIE von selbst —
+   nach jeder main-Landung die verbleibenden Auto-Merge-PRs per
+   `gh pr view <n> --json mergeStateStatus` prüfen und bei BEHIND
+   `gh pr update-branch` fahren. Realfall #445 (5.8.2026): 16 h scharf,
+   alle Checks grün, kein Merge — Ursache waren fünf zwischenzeitliche
+   main-Landungen.
 
 3. **origin/main einziehen.** `git fetch origin` → dann in den Feature-Branch
    `git merge origin/main` (oder `git rebase origin/main`). Hier greifen die
