@@ -394,6 +394,7 @@ export function lagebildSeite(o: SeitenOpts): string {
     wartetAufDavid: b.blockiert
       .filter((x) => x.blocker.toLowerCase().includes('david'))
       .map((x) => ({ titel: t(x.id), blocker: x.blocker })),
+    weitereBlockierte: b.blockiert.filter((x) => !x.blocker.toLowerCase().includes('david')).length,
     methodeDatei: seitenDatei(o.indexPfad, 'methode'),
   });
 

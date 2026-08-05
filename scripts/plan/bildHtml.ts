@@ -308,6 +308,7 @@ export const FLAECHEN_KLARTEXT: readonly (readonly [string, string])[] = [
   ['bibliothek', 'abgelegtes Recherche-Wissen'],
   ['ROADMAP', 'der Projektplan'],
   ['STRUKTUR.md', 'die Projekt-Landkarte'],
+  ['CLAUDE.md', 'die Grundregeln des Projekts'],
   ['DESIGN-REGLEMENT.md', 'die Gestaltungsregeln'],
   ['.claude', 'Arbeitsregeln der KI-Sessions'],
   ['.github', 'die Prüfstrasse (automatische Kontrollen)'],
@@ -358,8 +359,20 @@ export interface WasPassiert {
   bauplaetze: number | null;
   /** Letzte `main`-Commits; `null` = git nicht abfragbar. */
   gelandet: { datum: string; betreff: string }[] | null;
-  /** Schritte, deren Blocker auf David zeigt. */
+  /** Schritte, deren Blocker-NAME David nennt. */
   wartetAufDavid: { titel: string; blocker: string }[];
+  /**
+   * Übrige blockierte Schritte — Blocker-Name ohne «david».
+   *
+   * Sie werden GEZÄHLT statt verschwiegen: die Kopfzeile derselben Seite nennt
+   * die Gesamtzahl der Blockierten, und ein Block, der weniger zeigt, sähe nach
+   * einem Widerspruch aus. Belegter Fall 5.8.2026 — `richter-analytik-gate`
+   * verlangt laut `@blockers`-Register ausdrücklich «bewusste Freigabe Davids»,
+   * trägt seinen Namen aber ohne «david». Die Namens-Erkennung untertreibt hier
+   * also; die Zahl macht das sichtbar, ohne dass der Generator raten müsste,
+   * was ein David-Gate ist (§8).
+   */
+  weitereBlockierte: number;
   /** Relativer Verweis auf die Seite «Arbeitsweise & Glossar». */
   methodeDatei: string;
 }
@@ -418,7 +431,7 @@ export function wasGeradePassiert(d: WasPassiert): string {
 
   <h3>Wartet auf David</h3>
   <ul class="liste">${david}</ul>
-  <p class="hinweis">Stand: beim letzten <span class="id">npm run plan:bild</span>-Lauf.
+  ${d.weitereBlockierte > 0 ? `<p class="hinweis">Dazu ${d.weitereBlockierte === 1 ? 'wartet 1 weiteres Arbeitspaket' : `warten ${d.weitereBlockierte} weitere Arbeitspakete`} auf eine Klärung, die nicht schon im Namen bei dir liegt — vollständig unter <a href="#david">Wartet auf dich, David</a>.</p>\n  ` : ''}<p class="hinweis">Stand: beim letzten <span class="id">npm run plan:bild</span>-Lauf.
   Jeden Fachbegriff dieser Seite erklärt die Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> in je einem Satz.</p>
 </section>`;
 }

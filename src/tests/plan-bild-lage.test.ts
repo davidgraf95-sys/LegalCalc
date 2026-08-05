@@ -37,6 +37,7 @@ function daten(p: Partial<WasPassiert> = {}): WasPassiert {
     bauplaetze: 0,
     gelandet: [],
     wartetAufDavid: [],
+    weitereBlockierte: 0,
     methodeDatei: 'plan-bild-methode.html',
     ...p,
   };
@@ -168,6 +169,16 @@ describe('wasGeradePassiert — Formatierung', () => {
     expect(html).toContain('<b>Datenhaltung / VPS-Gate</b>');
     expect(html).toContain('wartet auf deine Entscheidung: vps-bestellung-david');
     expect(wasGeradePassiert(daten())).toContain('Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.');
+  });
+
+  it('zählt Blockierte OHNE «david» im Namen mit, statt sie zu verschweigen', () => {
+    expect(wasGeradePassiert(daten({ weitereBlockierte: 0 }))).not.toContain('auf eine Klärung');
+    expect(wasGeradePassiert(daten({ weitereBlockierte: 1 }))).toContain('Dazu wartet 1 weiteres Arbeitspaket auf eine Klärung');
+    expect(wasGeradePassiert(daten({ weitereBlockierte: 2 }))).toContain('Dazu warten 2 weitere Arbeitspakete auf eine Klärung');
+  });
+
+  it('übersetzt CLAUDE.md — im Bestand belegte Fläche', () => {
+    expect(flaechenKlartext(['CLAUDE.md'])).toEqual(['die Grundregeln des Projekts']);
   });
 
   it('trägt den statischen Stand-Satz und den Glossar-Verweis', () => {

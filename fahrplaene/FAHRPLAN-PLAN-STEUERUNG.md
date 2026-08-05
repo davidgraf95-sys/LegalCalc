@@ -524,6 +524,59 @@ Auflage 1 enthält (an einem Beispiel-Schritt belegt) und die «Gerade im Bau»-
 laufenden `wip`-Schritt samt PR-Status korrekt zeigt (oder ihren Degradations-Hinweis, falls
 gerade nichts im Bau ist).
 
+### §Laien-Block «Was gerade passiert» (Schritt `QS-PLAN-BILD-LAGE`, Auftrag David 5.8.2026)
+
+**Anlass, wörtlich.** «ich brauche einfachere Sprache um zu verstehen was gerade passiert».
+Die vier Seiten sind laienverständlich gemeint, ihr Einstieg beginnt aber mit Plan-Vokabular
+(`wip`, `dep`, Baustellen, `@queue`). Der Block beantwortet drei Fragen davor — ohne dass
+irgendwo ein Fachbegriff vorausgesetzt wird.
+
+**Ort.** Oberster Inhalt von `plan-bild.html`, direkt nach dem Kopf und **vor** allen
+Fachsektionen (Sprungmarke `#jetzt`, in der «Springen zu»-Leiste an erster Stelle). Die drei
+übrigen Seiten bleiben unberührt — der Block bringt **keine eigenen Design-Tokens** mit,
+sondern nutzt ausschliesslich bestehende Klassen aus `STIL`; sonst änderten sich alle vier
+Seiten mit.
+
+**Drei Unterteile, alle Sätze statisch:**
+
+1. **«Gerade im Bau»** — je `wip`-Schritt der Klartext-Titel plus seine belegten Flächen,
+   übersetzt über eine **statische Zuordnungstabelle Pfad → Alltagsbegriff**
+   (`scripts/plan` → «Werkzeuge der Bau-Planung», `public/normtext` → «gespeicherte
+   Gesetzestexte», `.claude` → «Arbeitsregeln der KI-Sessions» …). Getroffen wird der
+   längste passende Präfix **an einer Trennstelle**; ein unbekannter Pfad bleibt
+   unübersetzt stehen, statt einen erfundenen Oberbegriff zu bekommen (§8). Dazu ein Satz
+   zur Zahl paralleler Bau-Plätze aus `git worktree list`.
+2. **«Zuletzt fertig geworden»** — die letzten fünf Betreffzeilen von `main` mit Datum,
+   **im Wortlaut unverändert** unter einer Laien-Überschrift, die sagt, dass es Fachtitel
+   sind. Gelesen wird `main` und nicht `HEAD`: fertig ist, was gelandet ist (§9).
+3. **«Wartet auf David»** — Schritte, deren `blocker:`-NAME «david» enthält, je mit Titel
+   und Blocker-Namen. Übrige blockierte Schritte werden **gezählt** und mit einem Verweis
+   auf die Fachsektion `#david` ausgewiesen, sonst widerspräche der Block der Gesamtzahl
+   in der Kopfzeile derselben Seite (belegter Fall: `richter-analytik-gate` verlangt laut
+   Register Davids Freigabe, trägt «david» aber nicht im Namen). Abschliessend der
+   statische Verweis auf «Arbeitsweise & Glossar» für alle Fachbegriffe.
+
+**Determinismus (§2).** Jeder Satz steht im Code, gefüllt werden nur Werte — kein Modell zur
+Laufzeit, keine Formulierung aus Repo-Prosa. Insbesondere werden die `Anlass:`-Texte der
+ROADMAP **nicht** übernommen: sie sind Fachprosa und verfehlten den Zweck. Der Block trägt
+den statischen Hinweis «Stand: beim letzten `npm run plan:bild`-Lauf».
+
+**Degradation statt Absturz (§8).** Beide git-Sammler (`bauPlaetze`, `letzteCommits` in
+`bildDaten.ts`) laufen über den Runner **mit hartem Timeout** aus `lage.ts` (`laufeEcht`) und
+liefern bei Ausfall `null` — die Anzeige setzt dann eine Hinweiszeile, statt eine leere Liste
+als «nichts ist fertig geworden» misszuverstehen. Der Runner ist injizierbar, damit die
+Fehlerpfade ohne echtes git prüfbar sind.
+
+**Aufbau (§6.6).** Sammler in `bildDaten.ts` (Wiederverwendung von `parseWorktrees`/`laufeEcht`
+aus `lage.ts`, kein zweiter Regex, §5) · Tabelle und reiner Formatierer `wasGeradePassiert()`
+in `bildHtml.ts` · Verdrahtung in `lagebildSeite()` aus **denselben** Resolver-Daten wie die
+Fachsektionen darunter — der Block übersetzt, er zählt nicht neu.
+
+**Fertig, wenn** `npm run plan:bild` den Block erzeugt, die drei übrigen Seiten **byte-gleich**
+bleiben und der Diff der Index-Seite nur die neue Sektion und die Sprungleiste trifft; die
+Formatierung mit injizierten Daten getestet ist (wip-Liste, Commit-Liste, David-Blocker,
+Übersetzungstabelle inklusive unbekanntem Pfad, Fehlerpfad git) und `check:plan` grün ist.
+
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 
 Der AP-8-Umzug nach `fahrplaene/` hat in den Fahrplänen selbst Links hinterlassen, die auf die
