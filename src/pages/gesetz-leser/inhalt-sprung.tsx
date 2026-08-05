@@ -101,8 +101,12 @@ export function useSektionSprung(opts: {
       // N2: siehe springeZuArtikel — Lock lösen UND einmal nachwerten lassen.
       window.setTimeout(() => { jumpLockRef.current = false; loeseSpyNachlauf(); }, 500);
     }));
-    // Deps byte-gleich zum Inline-Stand (§6): alle übrigen Werte sind stabile
-    // Setter/Refs, `sektionen` ist der einzige gelesene Zustand.
+    // Bewusst draussen: setOffen/setTocBaum/setAktivIds/setTocAuf (useState-Setter,
+    // stabil) und jumpLockRef/autoOffenRef/autoTickRef/manuellOffenRef/
+    // manuellZuRef/tocBaumTimer/sekRefs (useRef-Objekte, identisch über die
+    // Lebenszeit). `sektionen` ist der einzige gelesene Zustand. Als Hook-Argumente
+    // kann die Regel die Stabilität nicht mehr belegen; Deps bleiben byte-gleich
+    // zum Inline-Stand (Aufnahme wäre eine stille Verhaltens-Änderung, §6).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sektionen]);
 
@@ -159,8 +163,9 @@ export function useSektionSprung(opts: {
       scrollVorSucheRef.current = null;
       window.requestAnimationFrame(() => setze(y));
     }
-    // Deps byte-gleich zum Inline-Stand (§6); `scrollVorSuche`/`sucheVorher`
-    // sind stabile Refs.
+    // Bewusst draussen: nur scrollVorSucheRef und sucheVorherRef — useRef-Objekte,
+    // über die Lebenszeit identisch; als Hook-Argumente kann die Regel das nicht
+    // mehr sehen. Deps byte-gleich zum Inline-Stand (§6).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sucheDebounced, imPane, wurzel]);
 

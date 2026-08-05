@@ -178,8 +178,12 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // vor dem Sprung stehen (Herleitung: inhalt-hooks.tsx bei `spyNachlauf`).
       window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
     }, 110));
-    // Deps byte-gleich zum Stand vor dem T14-Split (alle übrigen Werte sind
-    // stabile Setter/Refs aus ./inhalt-zustand).
+    // Bewusst draussen: setSuche/setOffen/setAktivIds/setTocBaum (useState-Setter,
+    // von React als stabil garantiert) und scrollVorSucheRef/manuellZuRef/
+    // tocBaumTimer/jumpLockRef (useRef-Objekte, über die Lebenszeit identisch).
+    // Seit dem T14-Split kommen sie aus ./inhalt-zustand herein, wo die Regel
+    // ihre Stabilität nicht mehr sehen kann — Deps darum byte-gleich zum Stand
+    // vor dem Split (Aufnahme wäre eine stille Verhaltens-Änderung, §6).
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sektionen, basisPfad, istSekundaer, imPane, wurzel]);
 
