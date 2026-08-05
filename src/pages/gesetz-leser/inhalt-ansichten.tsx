@@ -1,11 +1,13 @@
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { InternRefs } from '../../components/NormText';
-import type { BrowseErlass } from '../../lib/normtext/browse-typen';
+import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { CurrencyMap, ErlassKopf } from '../../lib/normtext/browse';
 import { KontextPanel } from '../../components/kontext/KontextPanel';
 import { formatiereDatum } from './helpers';
 import { ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
+import { GesetzFehlSeite } from './FehlSeite';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationskomponenten (Props rein, §3) — aus GesetzLeserInhalt
@@ -116,4 +118,52 @@ export function LiveVerweisAnsicht({ erlass, currency }: {
       </nav>
     </div>
   );
+}
+
+// ── Ansichts-Weiche VOR dem Volltext-Zweig (§6.6-Split, QS-TOK/T14) ──────────
+// Die vier frühen Rückgaben aus GesetzLeserInhalt in DERSELBEN Reihenfolge und
+// mit denselben Bedingungen; `null` heisst «keine Weiche greift, weiter zum
+// Volltext». Kein Hook, keine Rechtsregel — reine Präsentationswahl (§3).
+// Der Lade-Guard `!erlass || !eintraege` bleibt bewusst im Aufrufer: er ist dort
+// zugleich die TypeScript-Verengung, von der der ganze Volltext-Zweig lebt.
+export function FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, kopf, internRefs }: {
+  fehler: boolean;
+  schluessel: string;
+  manifest: BrowseManifest | null;
+  erlass: BrowseErlass | null;
+  currency: CurrencyMap | null;
+  kopf: ErlassKopf | null;
+  internRefs: InternRefs | undefined;
+}): ReactNode | null {
+  if (fehler) {
+    // W2·10-UI-NAV/N0b: hilfreiche Fehlseite (angefragter Key + Fuzzy-Vorschläge +
+    // eingebettetes Erlass-Suchfeld) statt der nackten «nicht verfügbar»-Notiz.
+    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} />;
+  }
+  // ── A9 §15.2-Pin: Currency-Chips NICHT nachträglich einwachsen lassen ────────
+  // Die Kopf-Chips «geltend geprüft am … / nächste Fassung ab …» (ErlassLeserKopf)
+  // stehen im Prerender (erlassVolltextHtml projiziert currency.json build-time).
+  // Der Client lädt currency aber async (ladeCurrency, eigener Fetch). Rendert ein
+  // Kopf-Pfad die Kopfzeile schon VOR dem Currency-Fetch, wachsen die zwei
+  // whitespace-nowrap-Chips nachträglich in die flex-wrap-Meta-Zeile ein und
+  // schieben Ingress + 2-Spalten-Grid ~30 px nach unten (Lade-Shift, auf dem
+  // 2-vCPU-Runner voll gezählt: CLS ~0.10, lokal repro unter 6× Drossel + langsamem
+  // Netz = 0.086). Darum ALLE Kopf-tragenden Render-Pfade (pdf-embed / nur-live-link
+  // / Volltext) auf den AUFGELÖSTEN Currency-Stand pinnen (§15.2 «Client-Initialstate
+  // auf den Server-Zustand pinnen»): solange `currency === null`, bleibt der
+  // reservierte Lade-Platzhalter stehen — kein Inhalt versteckt (§15/2). `ladeCurrency`
+  // löst IMMER auf (Fetch-Fehler ⇒ {}), i. d. R. lange vor dem grossen eintraege-Fetch
+  // ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
+  if (erlass && currency === null) {
+    return <LadeAnzeige />;
+  }
+  // ── pdf-embed: amtliches PDF in-app (kein extrahierbarer Volltext-HTML) ──────
+  if (erlass && erlass.status === 'pdf-embed' && erlass.pdfPfad) {
+    return <PdfEmbedAnsicht erlass={erlass} currency={currency} kopf={kopf} internRefs={internRefs} />;
+  }
+  // ── ⑧ LIVE_VERWEIS: kein In-App-Volltext — ehrliche Verweiskarte (§8) ────────
+  if (erlass && erlass.status === 'nur-live-link') {
+    return <LiveVerweisAnsicht erlass={erlass} currency={currency} />;
+  }
+  return null;
 }

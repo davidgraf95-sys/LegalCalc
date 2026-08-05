@@ -1,0 +1,195 @@
+import {
+  useCallback, useEffect, useMemo, useRef,
+  type Dispatch, type MutableRefObject, type RefObject, type SetStateAction,
+} from 'react';
+import { flushSync } from 'react-dom';
+import type { NavigateFunction } from 'react-router-dom';
+import type { InternRefs } from '../../components/NormText';
+import type { Sektion } from '../../lib/normtext/browse';
+import type { NormSnapshot } from '../../lib/normtext/typen';
+import { pfadZu } from './helpers';
+import { istHashVerbraucht } from './scrollAnker';
+import { paneRoot } from './berechnungen';
+import { loeseSpyNachlauf } from './inhalt-hooks';
+
+// ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
+// QS-TOK/T14) ════════════════════════════════════════════════════════════════
+// Aus GesetzLeserInhalt ausgelagert. VERHALTENSNEUTRAL: Rümpfe und Dependency-
+// Listen byte-identisch, Hook-Reihenfolge erhalten (jeder Hook kapselt einen
+// kontiguen Block und wird an derselben Position gerufen). Keine Rechtsregel (§3).
+//
+// NICHT hier: `springeZuArtikel` bleibt in `inhalt.tsx`. Die LM-202-Quellensonde
+// (`src/tests/leser-adresse-lm202.test.ts`, «Die zwei erlaubten Adress-Schreiber»)
+// liest den Aufruf `window.history.replaceState(null, '', ziel)` im Quelltext
+// GENAU dieser Datei; ihn wegzuziehen hiesse, den Test anzupassen — und das
+// verbietet §6 Ziff. 2 bei einem Refactoring.
+
+type SekRefs = MutableRefObject<Map<string, HTMLElement>>;
+type PaneWurzel = RefObject<HTMLElement | null> | null;
+
+// ─── Sprung aus dem Gliederungs-Baum + Instanz-Navigation + Such-Scroll ──────
+export function useSektionSprung(opts: {
+  sektionen: Sektion[];
+  sekRefs: SekRefs;
+  location: { key: string; hash: string };
+  istSekundaer: boolean;
+  imPane: boolean;
+  wurzel: PaneWurzel;
+  sucheDebounced: string;
+  springeZuArtikel: (token: string) => void;
+  setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
+  setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
+  setAktivIds: Dispatch<SetStateAction<string[]>>;
+  setTocAuf: Dispatch<SetStateAction<boolean>>;
+  scrollVorSucheRef: MutableRefObject<number | null>;
+  sucheVorherRef: MutableRefObject<string>;
+  refs: {
+    jumpLockRef: MutableRefObject<boolean>;
+    autoOffenRef: MutableRefObject<Set<string>>;
+    autoTickRef: MutableRefObject<Map<string, number>>;
+    manuellOffenRef: MutableRefObject<Set<string>>;
+    manuellZuRef: MutableRefObject<Set<string>>;
+    tocBaumTimer: MutableRefObject<number | null>;
+  };
+}) {
+  const {
+    sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
+    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
+  } = opts;
+
+  // Sprung aus dem Gliederungs-Baum (TOC): Pfad öffnen, markieren, scrollen. Beim
+  // Sprung den mobilen Drawer schliessen (analog Seitenleiste). Rank 4 (QS-PERF,
+  // §15/4): useCallback [sektionen] — nur pfadZu liest sektionen, alle Setter/Refs
+  // stabil → SektionBaumTOC (React.memo) re-rendert nur bei aktivPfad-/offen-Wechsel.
+  // Muss ÜBER dem early-return (`!erlass || !eintraege`) stehen, sonst wäre der Hook
+  // bedingt (Rules of Hooks) — das war der in Batch 1 zurückgestellte Reorder.
+  const springeZuSektion = useCallback((id: string) => {
+    const ids = pfadZu(sektionen, (s) => s.id === id) ?? [id];
+    jumpLockRef.current = true;
+    // F3: schwebenden Auto-Akkordeon-Timer verwerfen (Klick-Sprung ist autoritativ).
+    if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
+    // Sprung-Ziel als MANUELL behandeln (K): in manuellOffenRef aufnehmen und aus
+    // dem Auto-Set nehmen, damit der Scroll-Spy den angesprungenen Zweig nicht
+    // gleich wieder zuklappt.
+    for (const x of ids) { autoOffenRef.current.delete(x); autoTickRef.current.delete(x); manuellOffenRef.current.add(x); manuellZuRef.current.delete(x); }
+    // §15.2: der Klick öffnet den TOC-Zweig — diese Höhenänderung SYNCHRON im
+    // Klick-Task committen (flushSync), damit der Layout-Shift des einwachsenden
+    // Gliederungs-Zweigs dem Input zugerechnet wird (hadRecentInput ⇒ CLS-frei).
+    // Ohne flushSync verzögert React unter CPU-Last (CI: 6 parallele Tore-Jobs)
+    // den Commit über das 500-ms-Input-Fenster hinaus → der Shift zählt als
+    // unerwartet (leser-kopf-a9 «Breadcrumb-Fluss» Mikro-CLS).
+    flushSync(() => {
+      setAktivIds(ids);
+      setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((x) => [x, true])) }));
+      setOffen((o) => ({ ...o, ...Object.fromEntries(ids.map((x) => [x, true])) }));
+      setTocAuf(false); // mobilen Drawer schliessen
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      sekRefs.current.get(id)?.scrollIntoView({ block: 'start', behavior: 'auto' });
+      // §15.2: den Scroll-Spy bis NACH dem Einschwingen des programmatischen Scrolls
+      // gesperrt halten (jumpLock). Sonst feuert der IntersectionObserver, sobald der
+      // Sprung-Scroll einläuft, und klappt den aktiven TOC-Zweig auf/zu — eine
+      // Höhenänderung im Sticky-Gliederungsbaum, die (nicht input-nah) als
+      // unerwarteter CLS zählt. Unter CPU-Last läuft der Scroll spät ein, darum ein
+      // Zeit- statt rAF-Fenster (wie springeZuArtikel); der Spy nimmt die Endposition
+      // danach normal auf. Reine Timing-Steuerung (kein setState) → kein Re-Render.
+      // N2: siehe springeZuArtikel — Lock lösen UND einmal nachwerten lassen.
+      window.setTimeout(() => { jumpLockRef.current = false; loeseSpyNachlauf(); }, 500);
+    }));
+    // Deps byte-gleich zum Inline-Stand (§6): alle übrigen Werte sind stabile
+    // Setter/Refs, `sektionen` ist der einzige gelesene Zustand.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sektionen]);
+
+  // Wechsel zwischen zwei Instanzen DESSELBEN Gesetzes (?r) bzw. ein Tab-Klick mit
+  // #art-Anker remountet den Reader nicht (gleicher pathname) — darum bei jeder
+  // Navigation mit Artikel-Anker gezielt dorthin springen (Auftrag David: Klick
+  // auf den Reiter führt zum gemerkten Artikel der Instanz).
+  const letzteNavKey = useRef<string | null>(null);
+  useEffect(() => {
+    if (!sektionen.length || typeof window === 'undefined') return;
+    if (istSekundaer) return; // sekundäres Pane: location.key ist fix («default»), kein Instanz-Wechsel
+    // Nur bei ECHTER Navigation (location.key wechselt), nicht wenn sektionen
+    // nachlädt. Den Initial-Load (erster key) deckt der Lade-Hash-Effekt ab →
+    // kein doppelter Sprung/Blink. Dieser Effekt trägt nur den Instanz-Wechsel
+    // (gleicher pathname, nur ?r/#).
+    if (letzteNavKey.current === location.key) return;
+    const erstmalig = letzteNavKey.current === null;
+    letzteNavKey.current = location.key;
+    if (erstmalig) return;
+    // LM-199 (W2·17-UI-BEFUNDE-B2): verbrauchter Einstiegs-Hash (Browser-Zurück
+    // über eine Reiter-Identitätsgrenze, z. B. ?r-Instanzwechsel ohne Remount) —
+    // die A16-Anker-Restauration (App.tsx) übernimmt, kein Hash-Sprung.
+    if (istHashVerbraucht()) return;
+    const m = location.hash.match(/^#art-(.+)$/);
+    if (!m) return;
+    const token = decodeURIComponent(m[1]);
+    const id = window.requestAnimationFrame(() => springeZuArtikel(token));
+    return () => window.cancelAnimationFrame(id);
+  }, [location.key, location.hash, sektionen, springeZuArtikel, istSekundaer]);
+
+  // Suche aktivieren → an den Anfang scrollen; Suche schliessen/leeren → an die
+  // Scrollposition VOR der Suche zurück (Auftrag David). Grund fürs Hoch-Scrollen
+  // beim Aktivieren (Bug David 26.6.2026): die Trefferliste ist kürzer als der
+  // Volltext — war man tief gescrollt, rutschte der sticky-Container (Suchleiste +
+  // Gliederung) mit seinem geschrumpften Inhalt über den Viewport hinaus und war
+  // «aus dem Bild». Nach oben scrollen holt Suchleiste + Gliederung zurück ins
+  // Sichtfeld. Reine Scroll-Steuerung (kein setState) → keine Render-Kaskade.
+  useEffect(() => {
+    // An `sucheDebounced` gekoppelt (nicht `suche`): der Ansichtswechsel Volltext↔
+    // Trefferliste erfolgt über `treffer` (aus sucheDebounced), darum muss die
+    // Scroll-Rettung/-Rückgabe mit genau diesem Moment fluchten (Rank 9).
+    const war = sucheVorherRef.current;
+    sucheVorherRef.current = sucheDebounced;
+    if (typeof window === 'undefined') return;
+    // Im Pane scrollt der Pane-Container, nicht das Fenster (B-2.5).
+    const sc = paneRoot(imPane, wurzel);
+    const hole = () => sc ? sc.scrollTop : window.scrollY;
+    const setze = (y: number) => sc ? sc.scrollTo(0, y) : window.scrollTo(0, y);
+    if (!war && sucheDebounced) {
+      scrollVorSucheRef.current = hole();
+      window.requestAnimationFrame(() => setze(0));
+    } else if (war && !sucheDebounced && scrollVorSucheRef.current != null) {
+      const y = scrollVorSucheRef.current;
+      scrollVorSucheRef.current = null;
+      window.requestAnimationFrame(() => setze(y));
+    }
+    // Deps byte-gleich zum Inline-Stand (§6); `scrollVorSuche`/`sucheVorher`
+    // sind stabile Refs.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sucheDebounced, imPane, wurzel]);
+
+  return springeZuSektion;
+}
+
+// ─── Token-Auflösung für bare Artikelverweise im Wortlaut ────────────────────
+export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate }: {
+  eintraege: NormSnapshot[] | null;
+  basisPfad: string;
+  springeZuArtikel: (token: string) => void;
+  istSekundaer: boolean;
+  navigate: NavigateFunction;
+}) {
+  // Token-Auflösung für bare Artikelverweise (normalisiert «6a» → Token «6_a»).
+  return useMemo<InternRefs | undefined>(() => {
+    if (!eintraege) return undefined;
+    const tokenMap = new Map<string, string>();
+    for (const e of eintraege) tokenMap.set(e.artikel.toLowerCase().replace(/[^a-z0-9]/g, ''), e.artikel);
+    // W2·5d U-POSITION/A16: ein Klick auf einen Verweis IM Text ist nutzer-initiiert
+    // und soll einen echten History-Eintrag anlegen, damit Browser-/UI-Zurück exakt
+    // an den Ausgangs-Artikel zurückkehrt. In der PRIMÄR-/Einzelansicht darum über
+    // den Router navigieren (react-router besitzt die History; der letzteNavKey-
+    // Effekt führt den eigentlichen Sprung aus, ScrollWiederherstellung/ScrollZuHash
+    // stellt beim Zurück die Ausgangsstelle her — Anker bei hashlosem Ausgang,
+    // #art-Hash bei Hash-Ausgang). Ein MANUELLES pushState würde react-router
+    // desynchronisieren (Zurück löste dann keinen Location-Wechsel aus → kein
+    // Rück-Sprung). Im SEKUNDÄREN Pane bleibt der direkte Sprung (eigene Pane-
+    // History, scrollt den Pane-Container; kein globaler Router-Eingriff, B-2.5).
+    const springeZuRef = (t: string) => {
+      if (istSekundaer) { springeZuArtikel(t); return; }
+      navigate(`${basisPfad}${window.location.search}#art-${t}`);
+    };
+    return { tokenMap, basisPfad, springeZu: springeZuRef };
+  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate]);
+}
