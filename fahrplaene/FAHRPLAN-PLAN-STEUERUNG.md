@@ -136,6 +136,16 @@ Fortschritts-Block. Diese sind **narrative Historie**. Die Erst-Befüllung löst
 in `@meta`+Checkboxen auf und entfernt ihn; Blockquote und Schritt-Prosa bleiben als Geschichte stehen,
 sind aber per dieser Regel ausdrücklich nicht-autoritativ.
 
+**Folgeregel für Stand-Prosa (5.8.2026, Bauplan-Review-Befund B2): einen gemessenen Wert nennt
+die Prosa nie als Zahl, sondern als Messwerkzeug.** Statt «das Ceiling ist wieder eingehalten»
+oder «Ist-Stand 110.0 KB» gehört dorthin der Befehl, der die Zahl im Moment des Lesens liefert
+(hier `python3 .claude/hooks/struktur-rotieren.py --check`). Anlass: der QS-TOK-Satz «Das
+ROADMAP-Ceiling ist am 3.8.2026 wieder eingehalten» war rund **drei Stunden** wahr — beim
+nächsten Doku-Commit war er falsch und blieb es tagelang, ohne dass ein Tor ihn sehen konnte.
+Ein Momentwert in nicht-autoritativer Prosa altert unbemerkt und wird trotzdem gelesen; der
+Messbefehl altert nicht. Wo ein historischer Zahlenstand belegt werden soll, gehört er in einen
+**datierten** Beleg-Satz («Stand 31.7.2026: 110.0 KB»), nie in eine Gegenwarts-Aussage.
+
 ### Checkbox ↔ Status (Befund #2, #5)
 
 Wo eine Einheit eine Checkbox hat, gilt die Kopplung — und **nur dort**:
@@ -616,6 +626,30 @@ Kopfzahlen 238/1231/53/81 exakt) — die Fehler sitzen dort, wo das Tor blind is
 **Nicht gebaut wird:** Prosa-Frische-Heuristik (Über-Regulierung; die Klasse B2
 schrumpft mit dem Ziff.-6-Vollzug von selbst) und jedes neue Zustandsfile.
 
-**Offen bis Rotations-Landung:** @meta-Schritt `QS-PLAN-REVIEW` in ROADMAP.md
-nachtragen (Querschnitt-Band, `fahrplan:` → dieser §); bis dahin ist dieser §
-bewusst der einzige Träger — Vermerk dazu liegt im Session-Memory.
+### Stand 5.8.2026 — Befunde B3/B4 erledigt, Schritt 1 gebaut
+
+- **B4 (Rotations-Regex) ✅ erledigt** — die Nacht-Session 4./5.8.2026 hat `DATUM_RE` in
+  `.claude/hooks/struktur-rotieren.py` um das Übernacht-Format `T./T.M.JJJJ` erweitert; die
+  zuvor nie rotierenden Karten rotieren. Damit ist der Wurzel-Fix des Budget-Risses gebaut
+  (§17), nicht umschifft.
+- **B3 (geparkte Arbeit unsichtbar) ✅ erledigt** — dieselbe Nacht-Session hat die Landekette
+  **10/10** abgearbeitet; die QS-CODE-Reihe steht nicht mehr `ready` neben offenen PRs, sondern
+  `done`. Die **Prävention** zu B3 ist damit nicht erledigt, sondern in Ziff. 4 unten verortet:
+  Lage-Block, Namenskonvention und die `parked`-Regel im Skill `auftrag` Ziff. 2 (letztere ist
+  am 5.8.2026 geschrieben, samt der Branch-/Worktree-Slug-Regel).
+- **Schritt 1 (Sofort-Korrekturen ROADMAP/Fahrpläne) ✅ gebaut** — Branch
+  `feat/qs-plan-review-doku`, 14 Korrekturen: die drei falschen Anker aus B1 (`QS-KORPUS-BMV`
+  → §20.4 · `QS-UI-HIGHLIGHT` → neue Bau-Spec `FAHRPLAN-UI-NAVIGATION.md` §9 ·
+  `W2·5k-LINIEN-KONZEPT` → GESETZESDARSTELLUNG-V2 §2/F4 + GESETZES-UX §10.9), die stale
+  Steuerungs-Prosa aus B2 (@queue-Kommentar, Ceiling-Satz, TOKEN-OEKONOMIE §8 Ziff. 4), die
+  B5-Kleinteile (Dach-Präfix-Liste samt deklarierter `fahrplan:`-Ausnahme, LERNPHASE-§3-Titel,
+  FEDLEX §19 als `##` statt `###`) und die zwei fehlenden Schritte
+  (`W2·5l-NORMTEXT-B2`, `QS-PLAN-REVIEW`).
+- **Offen — der eigentliche Präventions-Bau:** Ziff. 3 (Tor-Erweiterung `check:plan` auf
+  Spec-Bindung, **Geburtsbeweis nur noch auf dem Stand VOR Schritt 1 führbar** — also gegen
+  `main@d316f5884` oder den Elter-Commit dieses Branches, nicht gegen den heutigen Stand) und
+  Ziff. 4a/4b (Lage-Block in `plan:next`, Namenskonvention im Dispatch-§0 Ziff. 5).
+- **Nachtrag zu B1:** `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` §9.2 trägt denselben toten Anker
+  «→ Bau-Spec: §L-3/A28 dieser Datei» wie zuvor die ROADMAP. Er ist **nicht** mitkorrigiert
+  (lag ausserhalb der Bau-Whitelist) und bleibt ein offener B1-Rest — das
+  Spec-Bindungs-Tor aus Ziff. 3 muss ihn erwischen.
