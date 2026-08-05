@@ -351,16 +351,168 @@ export function flaechenKlartext(globs: string[]): string[] {
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// Wirkungsbereiche — «welchen Teil des Projekts berührt dieser Schritt?»
+// (Auftrag David 5.8.2026: «klassifiziere in themenbereiche» · «sessions
+// kommunizieren mit diesen bezeichnungen»)
+//
+// Abgeleitet wird MECHANISCH aus denselben `kollision:`-Globs wie
+// `flaechenKlartext` — eine Wahrheit, zwei Auflösungsgrade (§5): der
+// Alltagsbegriff sagt, WAS die Datei ist, der Wirkungsbereich, in welches der
+// sechs Themenfelder sie fällt. Eine gepflegte Zweitliste je Schritt gäbe es
+// nicht, weil sie still veralten würde.
+// ---------------------------------------------------------------------------
+
+/** Auffangkategorie für Pfade ohne Zuordnung — ehrlich benannt statt geraten (§8). */
+export const UEBRIGE_TECHNIK = 'Übrige Technik';
+
+/**
+ * Die sechs Wirkungsbereiche in KANONISCHER Reihenfolge. Sie bestimmt zugleich
+ * die Reihenfolge der Badges: sonst entschiede die zufällige Reihenfolge der
+ * `kollision:`-Globs darüber, wie ein Schritt beschriftet aussieht (§2).
+ */
+export const WIRKUNGSBEREICHE = [
+  'Benutzeroberfläche',
+  'Rechtslogik & Berechnungen',
+  'Gesetzes- & Urteilsdaten',
+  'Datenhaltung',
+  'Auslieferung & Prüfstrasse',
+  'KI-Arbeitsprozesse',
+] as const;
+
+export type Wirkungsbereich = (typeof WIRKUNGSBEREICHE)[number] | typeof UEBRIGE_TECHNIK;
+
+/** Je Bereich ein Laien-Satz — die Definition für die Glossar-Seite. */
+export const BEREICH_ERKLAERUNG: readonly (readonly [Wirkungsbereich, string])[] = [
+  ['Benutzeroberfläche', 'Alles, was man auf dem Bildschirm sieht und anklickt: Seiten, Formulare, Navigation, Erscheinungsbild.'],
+  ['Rechtslogik & Berechnungen', 'Die Rechenkerne der Werkzeuge — Fristen, Streitwerte, Tarife, Vorlagen-Inhalte. Ein Fehler hier wird zu einer falschen Rechtsauskunft.'],
+  ['Gesetzes- & Urteilsdaten', 'Das Beschaffen, Speichern und Überwachen der Gesetzestexte und Gerichtsentscheide aus den amtlichen Quellen.'],
+  ['Datenhaltung', 'Wo die Daten liegen und wie sie dorthin kommen: Datenbank, Abgleich-Läufe, eingefrorene Vergleichsstände.'],
+  ['Auslieferung & Prüfstrasse', 'Der Weg vom fertigen Code zur öffentlichen Plattform — samt den automatischen Prüfungen, die vorher bestehen müssen.'],
+  ['KI-Arbeitsprozesse', 'Wie gebaut wird statt was: Projektplan, Detailpläne, Arbeitsregeln der KI-Sessions, abgelegtes Recherche-Wissen.'],
+  [UEBRIGE_TECHNIK, 'Technische Flächen, die in keines der sechs Felder fallen — bewusst nicht eingeordnet, statt eine Einordnung zu erfinden.'],
+];
+
+/**
+ * Pfadpräfix → Wirkungsbereich. Längster Präfix gewinnt (dieselbe Trennstellen-
+ * Regel wie `flaechenKlartext`), Mehrfach-Zuordnung eines Schritts ist normal.
+ *
+ * Zwei Abgrenzungen sind bewusst gesetzt und stehen darum hier:
+ *  * `src/lib/normtext` und `src/lib/rechtsprechung` zählen zu den DATEN, nicht
+ *    zur Rechtslogik — dort wird geladen und dargestellt, nicht gerechnet.
+ *    Jeder andere `src/lib`-Pfad gilt im Zweifel als Rechtslogik, weil eine
+ *    zu Unrecht als harmlos einsortierte Rechenfläche der teurere Fehler wäre.
+ *  * `scripts/check-*` ist Prüfstrasse, `scripts/plan` Arbeitsprozess,
+ *    `scripts/fedlex*`/`scripts/normtext` Daten — «scripts» allein sagt nichts.
+ */
+export const BEREICH_PFADE: readonly (readonly [string, Wirkungsbereich])[] = [
+  ['src/pages', 'Benutzeroberfläche'],
+  ['src/components', 'Benutzeroberfläche'],
+  ['src/index.css', 'Benutzeroberfläche'],
+  ['index.html', 'Benutzeroberfläche'],
+  ['tailwind.config.js', 'Benutzeroberfläche'],
+  ['DESIGN-REGLEMENT', 'Benutzeroberfläche'],
+
+  ['src/lib', 'Rechtslogik & Berechnungen'],
+  ['src/data', 'Rechtslogik & Berechnungen'],
+
+  ['src/lib/normtext', 'Gesetzes- & Urteilsdaten'],
+  ['src/lib/rechtsprechung', 'Gesetzes- & Urteilsdaten'],
+  ['public/normtext', 'Gesetzes- & Urteilsdaten'],
+  ['public/rechtsprechung', 'Gesetzes- & Urteilsdaten'],
+  ['scripts/normtext', 'Gesetzes- & Urteilsdaten'],
+  ['scripts/rechtsprechung', 'Gesetzes- & Urteilsdaten'],
+  ['scripts/fedlex', 'Gesetzes- & Urteilsdaten'],
+  ['daten', 'Gesetzes- & Urteilsdaten'],
+
+  ['scripts/datenhaltung', 'Datenhaltung'],
+  ['turso', 'Datenhaltung'],
+  ['golden', 'Datenhaltung'],
+
+  ['.github', 'Auslieferung & Prüfstrasse'],
+  ['vercel.json', 'Auslieferung & Prüfstrasse'],
+  ['package.json', 'Auslieferung & Prüfstrasse'],
+  ['package-lock.json', 'Auslieferung & Prüfstrasse'],
+  ['knip.json', 'Auslieferung & Prüfstrasse'],
+  ['scripts/check', 'Auslieferung & Prüfstrasse'],
+  ['scripts/gegenpruefung', 'Auslieferung & Prüfstrasse'],
+  ['e2e', 'Auslieferung & Prüfstrasse'],
+  ['src/tests', 'Auslieferung & Prüfstrasse'],
+
+  ['.claude', 'KI-Arbeitsprozesse'],
+  ['scripts/plan', 'KI-Arbeitsprozesse'],
+  ['ROADMAP', 'KI-Arbeitsprozesse'],
+  ['STRUKTUR.md', 'KI-Arbeitsprozesse'],
+  ['CLAUDE.md', 'KI-Arbeitsprozesse'],
+  ['fahrplaene', 'KI-Arbeitsprozesse'],
+  ['archiv', 'KI-Arbeitsprozesse'],
+  ['bibliothek', 'KI-Arbeitsprozesse'],
+];
+
+/**
+ * `kollision:`-Globs → Wirkungsbereiche, ohne Wiederholung und in kanonischer
+ * Reihenfolge. Ein Schritt darf mehrere tragen; ein nicht zuordenbarer Pfad
+ * erzeugt «Übrige Technik». Ohne Globs bleibt die Liste LEER — «keine Fläche
+ * deklariert» ist etwas anderes als «keinem Bereich zuzuordnen» (§8).
+ */
+export function wirkungsbereiche(globs: string[]): Wirkungsbereich[] {
+  const gefunden = new Set<Wirkungsbereich>();
+  for (const glob of globs) {
+    const pfad = glob.replace(/[*?{[].*$/, '').replace(/\/+$/, '');
+    let treffer: Wirkungsbereich | null = null;
+    let laenge = -1;
+    for (const [praefix, bereich] of BEREICH_PFADE) {
+      if (deckt(pfad, praefix) && praefix.length > laenge) {
+        treffer = bereich;
+        laenge = praefix.length;
+      }
+    }
+    gefunden.add(treffer ?? UEBRIGE_TECHNIK);
+  }
+  const out: Wirkungsbereich[] = WIRKUNGSBEREICHE.filter((b) => gefunden.has(b));
+  if (gefunden.has(UEBRIGE_TECHNIK)) out.push(UEBRIGE_TECHNIK);
+  return out;
+}
+
+/**
+ * Wirkungsbereiche als Badge-Reihe.
+ *
+ * Bewusst OHNE eigene CSS-Klasse: die bestehende `.chip ready` reicht, und ein
+ * Zusatz im gemeinsamen Stylesheet änderte alle vier Seiten (die drei anderen
+ * sollen byte-gleich bleiben). Die Unterscheidung trägt hier der Text, nicht
+ * die Farbe — was zugleich farbunabhängig lesbar ist.
+ */
+export function bereichsBadges(globs: string[]): string {
+  const b = wirkungsbereiche(globs);
+  if (!b.length) return '';
+  return ` ${b.map((x) => `<span class="chip ready" title="Wirkungsbereich">${esc(x)}</span>`).join(' ')}`;
+}
+
+/**
+ * Ein Schritt in der Anzeige: **Klartext-Titel zuerst**, das Kürzel danach in
+ * Klammern (Auftrag David 5.8.2026 — nie mehr ID-first).
+ *
+ * Warum übersetzen statt umbenennen: die Kürzel sind projektweite Verweis-Anker
+ * (ROADMAP, Fahrpläne, Commit-Trailer, Branch-Namen). Sie umzubenennen liesse
+ * hunderte Bestandsverweise auf das Falsche zeigen — dieselbe Fehlerklasse, die
+ * CLAUDE.md §16 für Paragraphen-Nummern festhält. Sie bleiben also stehen wie
+ * Hausnummern und bekommen nur ein lesbares Schild davor.
+ */
+export function schrittLabel(titel: string, id: string, fett = true): string {
+  const t = esc(titel);
+  return `${fett ? `<b>${t}</b>` : t} <span class="id">(${esc(id)})</span>`;
+}
+
 /** Was der Block anzeigt. Alle Felder sind bereits erhoben — die Funktion rechnet nicht. */
 export interface WasPassiert {
-  /** Schritte auf `wip`: Klartext-Titel + ihre `kollision:`-Globs (roh). */
-  imBau: { titel: string; flaechen: string[] }[];
+  /** Schritte auf `wip`: Klartext-Titel, Kürzel und ihre `kollision:`-Globs (roh). */
+  imBau: { titel: string; id: string; flaechen: string[] }[];
   /** Parallele Bau-Plätze (Worktrees ohne Haupt-Repo); `null` = nicht abfragbar. */
   bauplaetze: number | null;
   /** Letzte `main`-Commits; `null` = git nicht abfragbar. */
   gelandet: { datum: string; betreff: string }[] | null;
   /** Schritte, deren Blocker-NAME David nennt. */
-  wartetAufDavid: { titel: string; blocker: string }[];
+  wartetAufDavid: { titel: string; id: string; blocker: string; flaechen: string[] }[];
   /**
    * Übrige blockierte Schritte — Blocker-Name ohne «david».
    *
@@ -375,6 +527,8 @@ export interface WasPassiert {
   weitereBlockierte: number;
   /** Relativer Verweis auf die Seite «Arbeitsweise & Glossar». */
   methodeDatei: string;
+  /** Erzeugungs-Zeitpunkt im Klartext — der Wahrheitsanker der ganzen Seite. */
+  stand: string;
 }
 
 /** Ein Satz über die parallelen Bau-Plätze — die drei Fälle sind fest formuliert. */
@@ -394,7 +548,7 @@ export function wasGeradePassiert(d: WasPassiert): string {
           const betrifft = worte.length
             ? `Betrifft: ${esc(worte.join(' · '))}`
             : 'Betrifft: das ganze Projekt — für dieses Arbeitspaket ist kein Bereich eingegrenzt.';
-          return `<li><span class="s wip"></span><div><b>${esc(s.titel)}</b><br><span class="sub">${betrifft}</span></div></li>`;
+          return `<li><span class="s wip"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.flaechen)}<br><span class="sub">${betrifft}</span></div></li>`;
         })
         .join('\n')
     : '<li><span class="s ready"></span><div>An keinem Arbeitspaket wird gerade gebaut.</div></li>';
@@ -410,15 +564,18 @@ export function wasGeradePassiert(d: WasPassiert): string {
 
   const david = d.wartetAufDavid.length
     ? d.wartetAufDavid
-        .map((s) => `<li><span class="s block"></span><div><b>${esc(s.titel)}</b><br><span class="sub">wartet auf deine Entscheidung: ${esc(s.blocker)}</span></div></li>`)
+        .map((s) => `<li><span class="s block"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.flaechen)}<br><span class="sub">wartet auf deine Entscheidung: ${esc(s.blocker)}</span></div></li>`)
         .join('\n')
     : '<li><span class="s done"></span><div>Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.</div></li>';
 
   return `<section id="jetzt">
   <p class="eyebrow">In einfachen Worten</p>
   <h2>Was gerade passiert</h2>
+  <p class="lage"><b>Stand: ${esc(d.stand)}</b></p>
   <p class="lede">Drei Fragen, ohne Fachsprache beantwortet: Woran wird gerade gearbeitet, was ist zuletzt
-  fertig geworden, und was liegt bei dir. Die Fachfassung derselben Lage steht weiter unten auf dieser Seite.</p>
+  fertig geworden, und was liegt bei dir. Die Fachfassung derselben Lage steht weiter unten auf dieser Seite.
+  Die grauen Schilder nennen den <b>Wirkungsbereich</b> — welchen Teil des Projekts ein Arbeitspaket berührt;
+  alle sechs sind auf der Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> erklärt.</p>
 
   <h3>Gerade im Bau</h3>
   <ul class="liste">${imBau}</ul>
@@ -431,7 +588,7 @@ export function wasGeradePassiert(d: WasPassiert): string {
 
   <h3>Wartet auf David</h3>
   <ul class="liste">${david}</ul>
-  ${d.weitereBlockierte > 0 ? `<p class="hinweis">Dazu ${d.weitereBlockierte === 1 ? 'wartet 1 weiteres Arbeitspaket' : `warten ${d.weitereBlockierte} weitere Arbeitspakete`} auf eine Klärung, die nicht schon im Namen bei dir liegt — vollständig unter <a href="#david">Wartet auf dich, David</a>.</p>\n  ` : ''}<p class="hinweis">Stand: beim letzten <span class="id">npm run plan:bild</span>-Lauf.
+  ${d.weitereBlockierte > 0 ? `<p class="hinweis">Dazu ${d.weitereBlockierte === 1 ? 'wartet 1 weiteres Arbeitspaket' : `warten ${d.weitereBlockierte} weitere Arbeitspakete`} auf eine Klärung, die nicht schon im Namen bei dir liegt — vollständig unter <a href="#david">Wartet auf dich, David</a>.</p>\n  ` : ''}<p class="hinweis">Diese Angaben stammen vom letzten <span class="id">npm run plan:bild</span>-Lauf (${esc(d.stand)}).
   Jeden Fachbegriff dieser Seite erklärt die Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> in je einem Satz.</p>
 </section>`;
 }

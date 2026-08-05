@@ -4,8 +4,18 @@
 // Kein echter git-Aufruf: `bauPlaetze`/`letzteCommits` bekommen ihren
 // Kommando-Runner injiziert, `wasGeradePassiert`/`flaechenKlartext` sind rein.
 // Sonst prüfte der Test die Maschine, auf der er läuft, statt den Code.
-import { bauPlaetze, letzteCommits } from '../../scripts/plan/bildDaten';
-import { flaechenKlartext, wasGeradePassiert, type WasPassiert } from '../../scripts/plan/bildHtml';
+import { bauPlaetze, letzteCommits, schrittInfoAusRoadmap } from '../../scripts/plan/bildDaten';
+import {
+  BEREICH_ERKLAERUNG,
+  UEBRIGE_TECHNIK,
+  WIRKUNGSBEREICHE,
+  flaechenKlartext,
+  schrittLabel,
+  wasGeradePassiert,
+  wirkungsbereiche,
+  type WasPassiert,
+} from '../../scripts/plan/bildHtml';
+import { methodeSeite } from '../../scripts/plan/bildSeiten';
 import type { Laufe } from '../../scripts/plan/lage';
 
 /** Runner-Attrappe: liefert je Kommando einen festen Text oder wirft. */
@@ -39,6 +49,7 @@ function daten(p: Partial<WasPassiert> = {}): WasPassiert {
     wartetAufDavid: [],
     weitereBlockierte: 0,
     methodeDatei: 'plan-bild-methode.html',
+    stand: '5. Aug. 2026, 16:30',
     ...p,
   };
 }
@@ -128,8 +139,8 @@ describe('wasGeradePassiert — Formatierung', () => {
     const html = wasGeradePassiert(
       daten({
         imBau: [
-          { titel: 'Lagebild-Einstieg in Laiensprache', flaechen: ['scripts/plan'] },
-          { titel: 'Token-Verbrauch minimieren', flaechen: [] },
+          { titel: 'Lagebild-Einstieg in Laiensprache', id: 'QS-PLAN-BILD-LAGE', flaechen: ['scripts/plan'] },
+          { titel: 'Token-Verbrauch minimieren', id: 'QS-TOK', flaechen: [] },
         ],
       }),
     );
@@ -165,7 +176,7 @@ describe('wasGeradePassiert — Formatierung', () => {
   });
 
   it('David-Blocker mit Titel und Blocker-Name; leer → ehrlicher Satz', () => {
-    const html = wasGeradePassiert(daten({ wartetAufDavid: [{ titel: 'Datenhaltung / VPS-Gate', blocker: 'vps-bestellung-david' }] }));
+    const html = wasGeradePassiert(daten({ wartetAufDavid: [{ titel: 'Datenhaltung / VPS-Gate', id: 'QS-DATA', blocker: 'vps-bestellung-david', flaechen: [] }] }));
     expect(html).toContain('<b>Datenhaltung / VPS-Gate</b>');
     expect(html).toContain('wartet auf deine Entscheidung: vps-bestellung-david');
     expect(wasGeradePassiert(daten())).toContain('Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.');
@@ -181,16 +192,38 @@ describe('wasGeradePassiert — Formatierung', () => {
     expect(flaechenKlartext(['CLAUDE.md'])).toEqual(['die Grundregeln des Projekts']);
   });
 
-  it('trägt den statischen Stand-Satz und den Glossar-Verweis', () => {
-    const html = wasGeradePassiert(daten({ methodeDatei: 'plan-bild-methode.html' }));
-    expect(html).toContain('Stand: beim letzten <span class="id">npm run plan:bild</span>-Lauf.');
+  it('trägt die Stand-Zeile oben sichtbar und den Glossar-Verweis', () => {
+    const html = wasGeradePassiert(daten({ methodeDatei: 'plan-bild-methode.html', stand: '5. Aug. 2026, 16:30' }));
+    // Prominent oben: eigene Zeile in .lage, VOR der ersten Unterüberschrift.
+    expect(html).toContain('<p class="lage"><b>Stand: 5. Aug. 2026, 16:30</b></p>');
+    expect(html.indexOf('Stand: 5. Aug. 2026')).toBeLessThan(html.indexOf('<h3>Gerade im Bau</h3>'));
+    expect(html).toContain('Diese Angaben stammen vom letzten <span class="id">npm run plan:bild</span>-Lauf (5. Aug. 2026, 16:30).');
     expect(html).toContain('<a href="plan-bild-methode.html">Arbeitsweise &amp; Glossar</a>');
+  });
+
+  it('zeigt Titel zuerst, Kürzel in Klammern dahinter — nie ID-first', () => {
+    const html = wasGeradePassiert(
+      daten({ imBau: [{ titel: 'Lagebild-Einstieg in Laiensprache', id: 'QS-PLAN-BILD-LAGE', flaechen: [] }] }),
+    );
+    expect(html).toContain('<b>Lagebild-Einstieg in Laiensprache</b> <span class="id">(QS-PLAN-BILD-LAGE)</span>');
+    expect(html.indexOf('Lagebild-Einstieg')).toBeLessThan(html.indexOf('QS-PLAN-BILD-LAGE'));
+  });
+
+  it('setzt Wirkungsbereich-Badges an «Gerade im Bau» und «Wartet auf David»', () => {
+    const html = wasGeradePassiert(
+      daten({
+        imBau: [{ titel: 'A', id: 'QS-A', flaechen: ['src/pages/**'] }],
+        wartetAufDavid: [{ titel: 'B', id: 'QS-B', blocker: 'entscheid-david', flaechen: ['.github'] }],
+      }),
+    );
+    expect(html).toContain('<span class="chip ready" title="Wirkungsbereich">Benutzeroberfläche</span>');
+    expect(html).toContain('<span class="chip ready" title="Wirkungsbereich">Auslieferung &amp; Prüfstrasse</span>');
   });
 
   it('escapt Fremdtext aus Titel und Betreff (HTML-Injektion)', () => {
     const html = wasGeradePassiert(
       daten({
-        imBau: [{ titel: '<script>alert(1)</script>', flaechen: [] }],
+        imBau: [{ titel: '<script>alert(1)</script>', id: 'QS-X', flaechen: [] }],
         gelandet: [{ datum: '01.01.2026', betreff: 'fix: A & B <b>' }],
       }),
     );
@@ -200,15 +233,123 @@ describe('wasGeradePassiert — Formatierung', () => {
 
   it('bleibt bei gleichen Daten byte-gleich (Determinismus, §2)', () => {
     const d = daten({
-      imBau: [{ titel: 'A', flaechen: ['src/lib/**'] }],
+      imBau: [{ titel: 'A', id: 'QS-A', flaechen: ['src/lib/**'] }],
       bauplaetze: 2,
       gelandet: [{ datum: '05.08.2026', betreff: 'B' }],
-      wartetAufDavid: [{ titel: 'C', blocker: 'entscheid-david' }],
+      wartetAufDavid: [{ titel: 'C', id: 'QS-C', blocker: 'entscheid-david', flaechen: ['.github'] }],
     });
     expect(wasGeradePassiert(d)).toBe(wasGeradePassiert(d));
   });
 
   it('steht als eigene Sektion mit Sprungmarke #jetzt', () => {
     expect(wasGeradePassiert(daten()).startsWith('<section id="jetzt">')).toBe(true);
+  });
+});
+
+describe('wirkungsbereiche — Kategorien aus den kollision:-Globs', () => {
+  it('je Kategorie ein belegter Fall', () => {
+    expect(wirkungsbereiche(['src/pages/**'])).toEqual(['Benutzeroberfläche']);
+    expect(wirkungsbereiche(['src/lib/verjaehrung'])).toEqual(['Rechtslogik & Berechnungen']);
+    expect(wirkungsbereiche(['public/normtext/bund'])).toEqual(['Gesetzes- & Urteilsdaten']);
+    expect(wirkungsbereiche(['scripts/datenhaltung/check-turso-frische.ts'])).toEqual(['Datenhaltung']);
+    expect(wirkungsbereiche(['.github/workflows/ci.yml'])).toEqual(['Auslieferung & Prüfstrasse']);
+    expect(wirkungsbereiche(['scripts/plan'])).toEqual(['KI-Arbeitsprozesse']);
+  });
+
+  it('src/lib/normtext zählt zu den DATEN, jedes andere src/lib zur Rechtslogik', () => {
+    expect(wirkungsbereiche(['src/lib/normtext/laden.ts'])).toEqual(['Gesetzes- & Urteilsdaten']);
+    expect(wirkungsbereiche(['src/lib/rechtsprechung/besetzung'])).toEqual(['Gesetzes- & Urteilsdaten']);
+    expect(wirkungsbereiche(['src/lib/tarif'])).toEqual(['Rechtslogik & Berechnungen']);
+  });
+
+  it('scripts allein sagt nichts — die Unterordner entscheiden', () => {
+    expect(wirkungsbereiche(['scripts/fedlex-cache.sh'])).toEqual(['Gesetzes- & Urteilsdaten']);
+    expect(wirkungsbereiche(['scripts/check-tor-paritaet.ts'])).toEqual(['Auslieferung & Prüfstrasse']);
+    expect(wirkungsbereiche(['scripts/prerender.ts'])).toEqual([UEBRIGE_TECHNIK]);
+  });
+
+  it('Mehrfach-Zuordnung in KANONISCHER Reihenfolge, nicht in Glob-Reihenfolge', () => {
+    expect(wirkungsbereiche(['.claude', 'src/pages', '.github'])).toEqual([
+      'Benutzeroberfläche',
+      'Auslieferung & Prüfstrasse',
+      'KI-Arbeitsprozesse',
+    ]);
+  });
+
+  it('nicht zuordenbarer Pfad → «Übrige Technik», immer zuletzt', () => {
+    expect(wirkungsbereiche(['irgendwas/neues'])).toEqual([UEBRIGE_TECHNIK]);
+    expect(wirkungsbereiche(['irgendwas/neues', 'src/pages'])).toEqual(['Benutzeroberfläche', UEBRIGE_TECHNIK]);
+  });
+
+  it('ohne Globs bleibt die Liste leer — «nichts deklariert» ≠ «nicht zuordenbar»', () => {
+    expect(wirkungsbereiche([])).toEqual([]);
+  });
+
+  it('dieselbe Kategorie doppelt ergibt EINEN Eintrag', () => {
+    expect(wirkungsbereiche(['src/pages/**', 'src/components/x.tsx', 'src/index.css'])).toEqual(['Benutzeroberfläche']);
+  });
+
+  it('jede der sechs Kategorien trägt einen Laien-Satz, dazu die Auffangkategorie', () => {
+    const erklaert = BEREICH_ERKLAERUNG.map(([name]) => name);
+    for (const b of WIRKUNGSBEREICHE) expect(erklaert).toContain(b);
+    expect(erklaert).toContain(UEBRIGE_TECHNIK);
+    for (const [, satz] of BEREICH_ERKLAERUNG) expect(satz.length).toBeGreaterThan(40);
+  });
+});
+
+describe('schrittLabel — Titel zuerst, Kürzel in Klammern', () => {
+  it('fett und mager, beide mit Klammer-Kürzel dahinter', () => {
+    expect(schrittLabel('Kantone in der Breite', 'W2·13-KANTONE')).toBe(
+      '<b>Kantone in der Breite</b> <span class="id">(W2·13-KANTONE)</span>',
+    );
+    expect(schrittLabel('Kantone in der Breite', 'W2·13-KANTONE', false)).toBe(
+      'Kantone in der Breite <span class="id">(W2·13-KANTONE)</span>',
+    );
+  });
+
+  it('escapt Titel und Kürzel', () => {
+    expect(schrittLabel('A & B', '<x>')).toContain('A &amp; B');
+    expect(schrittLabel('A & B', '<x>')).toContain('(&lt;x&gt;)');
+  });
+});
+
+describe('schrittInfoAusRoadmap — Klartext-Titel aus der ROADMAP-Zeile', () => {
+  const MD = [
+    '- [ ] **`QS-BEISPIEL` · Ein sprechender Titel für Laien** *(Anlass: Test)* — Prosa dazu.',
+    '  <!-- @meta id: QS-BEISPIEL · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/plan] · worktree: ja · 26x: nein -->',
+  ].join('\n');
+
+  it('nimmt den Fettdruck-Titel und streift die vorangestellte ID ab', () => {
+    expect(schrittInfoAusRoadmap(MD).get('QS-BEISPIEL')?.titel).toBe('Ein sprechender Titel für Laien');
+  });
+
+  it('Titel ohne ID-Präfix bleibt unverändert', () => {
+    const md = [
+      '- **Geräte-Last / Performance** *(QS-PERF)*.',
+      '  <!-- @meta id: QS-PERF · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+    expect(schrittInfoAusRoadmap(md).get('QS-PERF')?.titel).toBe('Geräte-Last / Performance');
+  });
+});
+
+describe('methodeSeite — Legenden für Sessions und Laien', () => {
+  const html = methodeSeite({ indexPfad: 'tmp/plan-bild.html', watch: null, stand: '5. Aug. 2026, 16:30' });
+
+  it('erklärt die Kürzel-Bestandteile in Laiensätzen', () => {
+    expect(html).toContain('So liest du die Kürzel');
+    expect(html).toContain('Welle 2');
+    expect(html).toContain('Klinge des Taschenmessers');
+    expect(html).toContain('Quer- und Qualitätsarbeit ohne festen Platz in der Reihenfolge');
+    expect(html).toContain('TOK Token-Sparen');
+  });
+
+  it('begründet, warum die Kürzel stehen bleiben (Verweis-Anker)', () => {
+    expect(html).toContain('Hausnummern des');
+  });
+
+  it('führt alle sechs Wirkungsbereiche samt Auffangkategorie auf', () => {
+    for (const b of WIRKUNGSBEREICHE) expect(html).toContain(b.replace('&', '&amp;'));
+    expect(html).toContain(UEBRIGE_TECHNIK);
+    expect(html).toContain('gemeinsame Sprache der Bau-Sessions');
   });
 });

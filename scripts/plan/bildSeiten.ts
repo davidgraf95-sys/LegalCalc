@@ -41,7 +41,19 @@ import {
   type NormErlass,
   type SchrittInfo,
 } from './bildDaten';
-import { esc, kacheln, monatLabel, rahmen, seitenDatei, seitenKopf, tabelle, wasGeradePassiert } from './bildHtml';
+import {
+  BEREICH_ERKLAERUNG,
+  bereichsBadges,
+  esc,
+  kacheln,
+  monatLabel,
+  rahmen,
+  schrittLabel,
+  seitenDatei,
+  seitenKopf,
+  tabelle,
+  wasGeradePassiert,
+} from './bildHtml';
 
 export interface SeitenOpts {
   /** Pfad der Index-Seite (`--out`) — Basis der relativen Verweise. */
@@ -93,6 +105,25 @@ const BAHNEN: { name: string; text: string }[] = [
   { name: 'Rechtsprechung', text: 'Gerichtsentscheide einlesen, normalisieren und mit den zitierten Normen verknüpfen. Eigene Import- und Registerdateien.' },
   { name: 'Werkzeuge & Vorlagen', text: 'Rechner und Dokumentvorlagen: Rechenkern, Formulare, Ausgabe als PDF und Word. Eigene Engine- und Schema-Dateien.' },
   { name: 'Querschnitt', text: 'Darstellung, Navigation, Tempo, Barrierefreiheit, Prüf-Automatik. Berührt vieles flach statt weniges tief.' },
+];
+
+/**
+ * Kürzel-Legende (Auftrag David 5.8.2026: «bauplan verständlicher — bezeichnung
+ * und nummerierung»). Statischer Text: er erklärt ein Namensschema, keinen
+ * Messwert.
+ *
+ * Warum die Kürzel BLEIBEN und nur übersetzt werden: sie sind projektweite
+ * Verweis-Anker (ROADMAP, Fahrpläne, Commit-Trailer, Branch- und Worktree-Namen,
+ * `@queue`). Ein Umbenennen liesse hunderte Bestandsverweise auf das Falsche
+ * zeigen — dieselbe Fehlerklasse, die CLAUDE.md §16 für Paragraphen-Nummern
+ * festhält. Also: Hausnummern behalten, lesbares Schild davor.
+ */
+const KUERZEL_LEGENDE: { teil: string; erklaerung: string }[] = [
+  { teil: 'W2', erklaerung: 'Welle 2 — die zweite grosse Bauetappe des Projekts. Die Wellennummer sagt, in welcher Etappe ein Arbeitspaket geplant wurde, nicht wie wichtig es ist.' },
+  { teil: '·5, ·6, ·13 …', erklaerung: 'Die Zahl nach dem Mittelpunkt ist die Klinge des Taschenmessers, also der Themenbereich — zum Beispiel ·5 Gesetze lesen, ·6 Rechtsprechung, ·13 Kantone.' },
+  { teil: '-KANTONE, -K7, -B3 …', erklaerung: 'Der Namensteil dahinter bezeichnet den Teilschritt innerhalb des Themas. Buchstabe plus Zahl heisst meist: einer von vielen gleichartigen Batches.' },
+  { teil: 'QS-…', erklaerung: 'Quer- und Qualitätsarbeit ohne festen Platz in der Reihenfolge — jederzeit einschiebbar, weil sie keine Etappe blockiert.' },
+  { teil: 'QS-TOK, QS-KORPUS, QS-GP …', erklaerung: 'Der Namensteil nach QS nennt das Thema: TOK Token-Sparen, KORPUS Gesetzes-Sammlung, GP Gegenprüfung, BASIS Fundament, AUTOMATIK Prüf-Automatik, PLAN Bau-Planung.' },
 ];
 
 /** Glossar — je ein Laien-Satz, projektbezogen (statisch). */
@@ -268,7 +299,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   const imBau: string[] = [];
   for (const id of b.inArbeit) {
     const pr = prs?.find((p) => p.roadmapId === id);
-    imBau.push(`<li><span class="s wip"></span><div><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span><br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
+    imBau.push(`<li><span class="s wip"></span><div>${schrittLabel(t(id), id)}${bereichsBadges(byId.get(id)?.etikett.kollision ?? [])}<br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
   }
   const fremdePrs = (prs ?? []).filter((p) => !b.inArbeit.includes(p.roadmapId ?? ''));
   for (const p of fremdePrs) {
@@ -279,7 +310,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   const gelandetHtml = (gelandet ?? [])
     .map((p) => {
       const wann = new Date(p.mergedAt).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' });
-      const schritt = p.roadmapId ? ` <span class="id">${esc(p.roadmapId)}</span>` : '';
+      const schritt = p.roadmapId ? ` <span class="id">(${esc(p.roadmapId)})</span>` : '';
       return `<li><span class="s done"></span><div>${prLink(p.number, `PR #${p.number}`)}: ${esc(p.title)}${schritt}<br><span class="sub">gelandet ${esc(wann)}</span></div></li>`;
     })
     .join('\n');
@@ -288,7 +319,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   // kollisionsfreie ready-Schritte; @queue-Rang steht darin vorn.
   const laneEmpfehlung = (b.lanes[0] ?? []).filter((id) => prompts[id]).slice(0, 4);
   const laneHtml = laneEmpfehlung
-    .map((id) => `<li><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span> <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
+    .map((id) => `<li>${schrittLabel(t(id), id)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
     .join('\n');
 
   const karten = kartenDaten
@@ -310,7 +341,7 @@ export function lagebildSeite(o: SeitenOpts): string {
               : e.etikett.status === 'wip'
                 ? ' <span class="sub">🔨 im Bau</span>'
                 : '';
-          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${esc(t(e.id))} <span class="id">${esc(e.id)}</span>${knopf}</div></li>`;
+          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${knopf}</div></li>`;
         })
         .join('\n');
       return `<div class="card">
@@ -329,7 +360,7 @@ export function lagebildSeite(o: SeitenOpts): string {
       const e = byId.get(id);
       const st = e?.etikett.status ?? '?';
       const zusatz = st === 'wip' ? ' <span class="chip wip">im Bau</span>' : baubar.has(id) ? ` <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button>` : '';
-      return `<li><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span>${zusatz}</li>`;
+      return `<li>${schrittLabel(t(id), id)}${zusatz}</li>`;
     })
     .join('\n');
 
@@ -337,7 +368,7 @@ export function lagebildSeite(o: SeitenOpts): string {
     ...b.blockiert.map((x) => {
       const tage = blockerSeitTagen(x.blocker);
       const seit = tage !== null && tage > 0 ? ` <span class="quelle">— wartet seit ${tage} Tag${tage === 1 ? '' : 'en'}</span>` : '';
-      return `<li><b>${esc(t(x.id))}</b> <span class="id">${esc(x.id)}</span> — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
+      return `<li>${schrittLabel(t(x.id), x.id)}${bereichsBadges(byId.get(x.id)?.etikett.kollision ?? [])} — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
     }),
     ...DAVID_FRAGEN.map((f) => `<li>${esc(f.frage)} <span class="quelle">(${esc(f.quelle)})</span></li>`),
   ].join('\n');
@@ -388,14 +419,15 @@ export function lagebildSeite(o: SeitenOpts): string {
   // Die kuratierten DAVID_FRAGEN bleiben bewusst draussen: sie tragen keinen
   // Schritt-Titel und stehen vollständig in der Sektion `#david` darunter.
   const jetzt = wasGeradePassiert({
-    imBau: b.inArbeit.map((id) => ({ titel: t(id), flaechen: byId.get(id)?.etikett.kollision ?? [] })),
+    imBau: b.inArbeit.map((id) => ({ titel: t(id), id, flaechen: byId.get(id)?.etikett.kollision ?? [] })),
     bauplaetze: bauPlaetze(),
     gelandet: letzteCommits(5),
     wartetAufDavid: b.blockiert
       .filter((x) => x.blocker.toLowerCase().includes('david'))
-      .map((x) => ({ titel: t(x.id), blocker: x.blocker })),
+      .map((x) => ({ titel: t(x.id), id: x.id, blocker: x.blocker, flaechen: byId.get(x.id)?.etikett.kollision ?? [] })),
     weitereBlockierte: b.blockiert.filter((x) => !x.blocker.toLowerCase().includes('david')).length,
     methodeDatei: seitenDatei(o.indexPfad, 'methode'),
+    stand: o.stand,
   });
 
   const inhalt = `${kopf}
@@ -834,6 +866,16 @@ export function methodeSeite(o: SeitenOpts): string {
     (g) => `<dt>${esc(g.begriff)}</dt><dd>${esc(g.erklaerung)}</dd>`,
   ).join('\n');
 
+  // Wirkungsbereiche: dieselbe Liste, aus der die Badges auf dem Lagebild
+  // entstehen (§5) — die Seite erklärt genau die Schilder, die dort stehen.
+  const bereiche = BEREICH_ERKLAERUNG.map(
+    ([name, satz]) => `<li><span class="chip ready">${esc(name)}</span><div>${esc(satz)}</div></li>`,
+  ).join('\n');
+
+  const kuerzel = KUERZEL_LEGENDE.map(
+    (k) => `<dt><span class="id">${esc(k.teil)}</span></dt><dd>${esc(k.erklaerung)}</dd>`,
+  ).join('\n');
+
   const inhalt = `${kopf}
 
 <section id="bahnen">
@@ -878,6 +920,29 @@ export function methodeSeite(o: SeitenOpts): string {
   Tor-Ausgabe; alles andere gilt als nicht erfolgt.</p>
   <p class="lede">Fachliche Abnahmen, Budget-Entscheide und der Status «geprüft» bleiben beim Projekteigner und werden
   nie automatisch gesetzt.</p>
+</section>
+
+<section id="bereiche">
+  <p class="eyebrow">Wirkungsbereiche</p>
+  <h2>Welchen Teil des Projekts ein Arbeitspaket berührt</h2>
+  <p class="lede">Jedes Arbeitspaket im Plan nennt die Dateiflächen, die es anfasst. Daraus wird maschinell einer
+  von sechs Bereichen abgeleitet — dieselben Schilder, die auf dem <a href="${esc(seitenDatei(o.indexPfad, 'lagebild'))}">Lagebild</a>
+  neben den Titeln stehen. Ein Arbeitspaket kann mehrere Bereiche tragen; das ist der Normalfall, kein Fehler.</p>
+  <ul class="liste">${bereiche}</ul>
+  <p class="hinweis">Diese Bezeichnungen sind auch die gemeinsame Sprache der Bau-Sessions: Wer einen Auftrag
+  formuliert oder ein Ergebnis meldet, nennt den Wirkungsbereich — nicht den Dateipfad.</p>
+</section>
+
+<section id="kuerzel">
+  <p class="eyebrow">Kürzel</p>
+  <h2>So liest du die Kürzel</h2>
+  <p class="lede">Die Arbeitspakete tragen kurze Kennzeichen wie <span class="id">W2·13-KANTONE-K7</span> oder
+  <span class="id">QS-TOK</span>. Sie sind aus Teilen zusammengesetzt, die sich einzeln lesen lassen.</p>
+  <dl class="glossar">${kuerzel}</dl>
+  <p class="hinweis">Warum die Kürzel nicht einfach durch Klartext ersetzt werden: Sie sind die Hausnummern des
+  Projekts — der Plan, die Detailpläne, die Änderungsvermerke und die Arbeitskopien verweisen alle darauf.
+  Ein Umbenennen liesse hunderte bestehende Verweise auf das Falsche zeigen. Deshalb steht überall der
+  Klartext-Titel vorn und das Kürzel in Klammern dahinter.</p>
 </section>
 
 <section id="glossar">
