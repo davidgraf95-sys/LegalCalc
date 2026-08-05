@@ -275,10 +275,11 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `QS-TOK`.** Steht am Kopf der `@queue` (Priorisierung David
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`.** Der Queue-Kopf `QS-TOK` ist seit
+> 5.8.2026 **`wip`** (Bau in der Orchestrierungs-Session; Priorisierung David
 > 10.7.2026, Wortlaut «oberster schritt soll sein den token verbrauch zu minimieren»); die
-> Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut, der Schritt daher wieder
-> **`ready`** statt `wip`. Offener Rest: **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
+> Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut.
+> Offener Rest: **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
 > 27.7.2026 erteilt; T16 nur in frischer Session). Das ROADMAP-Ceiling misst
 > `python3 .claude/hooks/struktur-rotieren.py --check` — **allein dieser Befehl** sagt, ob es
 > gerade eingehalten ist; ein Momentwert wird hier bewusst **nicht** zweitgeführt (jede fixe
@@ -287,7 +288,7 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
 > mit der Rotation vom 5.8.2026 behoben.
 > **Bau-Spec: [`fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md`](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §§3–§7, Reihenfolge §8; Stand/Belege: §Stand 31.7.2026.**
 > Danach folgt `W2·10-UI-NAV` gemäss `@queue` (zweiter Eintrag der Zeile oben).
-> <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
+> <!-- @meta id: QS-TOK · status: wip · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
 > Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
 > deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
 > **Leitplanke (nicht verhandelbar):** keine Massnahme kürzt Beweis, Tor oder Prüfung —
