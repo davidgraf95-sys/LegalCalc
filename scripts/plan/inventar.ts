@@ -111,7 +111,6 @@ export const INVENTAR: readonly string[] = [
   // §17-Vorfall 4.8.2026: Vercel-Free-Tier-Tageslimit (>100 Preview-Deployments)
   // blockierte den merge-pflichtigen Vercel-Check eines App-fremden Diffs (#443,
   // Admin-Bypass durch David). Wurzel-Fix: Ignored Build Step für App-fremde Diffs.
-  'QS-CI-VERCEL',
 
   // Bauplan-Review 4.8.2026 (Auftrag David, vier read-only-Prüfagenten): der Review selbst
   // als Schritt (Befund-Fixes + die zwei Präventionen Spec-Bindungs-Tor und plan:next-Lage-
