@@ -37,3 +37,23 @@
 
 **Fazit:** T10-Machbarkeit = **negativ auf Projekt-Ebene** (Account-gebunden); dokumentiert,
 nicht ausgeführt. Kein Namenslisten-Delta im Repo möglich.
+
+## Verifikation 5.8.2026
+
+Zweiter, unabhängiger Verifikationslauf (QS-TOK-Rest-Abschluss, Orchestrierungs-Session) —
+bestätigt den Befund vom 10.7.2026 mit direkter Quellenprüfung statt Ableitung:
+
+1. **Keine projektseitige MCP-Konfiguration.** `.mcp.json` existiert im Repo-Root nicht
+   (`ls .mcp.json` → *No such file or directory*).
+2. **Keine Deaktivierungs-Felder in den Projekt-Settings.** `.claude/settings.json` und
+   `.claude/settings.local.json` enthalten ausschliesslich `permissions.allow` — kein Feld
+   zur selektiven Konnektor-Deaktivierung.
+3. **Amtliche Doku bestätigt: die Felder existieren nur für Projekt-MCP-Server.** Geprüft
+   gegen `docs.anthropic.com/en/docs/claude-code/mcp` und
+   `docs.anthropic.com/en/docs/claude-code/settings` (Stand 5.8.2026): `enabledMcpServers`/
+   `disabledMcpServers` steuern ausschliesslich Server, die in `.mcp.json` deklariert sind.
+   Für Account-Konnektoren (claude.ai-Ebene) gibt es dort kein projektseitiges Äquivalent.
+
+**Verdikt unverändert:** selektive Deaktivierung bleibt Account-Ebene = David-Entscheid.
+T10 ist damit repo-seitig mit diesem Negativ-Befund **abgeschlossen**, kein weiterer
+Bau-Bedarf.
