@@ -1877,6 +1877,24 @@ Wörtlich aus ROADMAP.md überführt (Diät 4.8.2026):
 
 ## Übernahme 5.8.2026 — Ziff.-6-Vollzug (QS-PLAN-REVIEW)
 
+### Abschluss QS-SESSION-ZYKLUS (5.8.2026 abends)
+
+Skill `bauschritt` (107 Z., dünne Klammer über auftrag/gegenpruefung/landung/lehren):
+Standard-Lebenszyklus Einstieg→Bau→Prüfung→Landung→Abschluss mit Grössen-Check
+(sessionfüllend, Bündeln/Schneiden) und Token-Regel-Kasten; jeder Lagebild-Bau-Prompt
+beginnt mit der Auslöse-Zeile samt Schritt-ID (70/70 verifiziert, Erste-Zeile-Test).
+Anlass: Auftrag David («Session immer gleich anfangen … am Ende aufräumen; mein
+einziger Input ist der Einzelschritt-Prompt»). Bau feat/qs-session-zyklus, 46 Tests.
+
+- [x] **`QS-SESSION-ZYKLUS` · Standard-Lebenszyklus als Skill `bauschritt` + Lagebild-Auslöser**
+  <!-- @meta id: QS-SESSION-ZYKLUS · status: done · of: ja · blocker: null · dep: [] · kollision: [.claude/skills, scripts/plan] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+
+### Abschluss QS-PLAN-WIP-FRISCHE (5.8.2026 abends, wörtlich aus ROADMAP.md)
+
+- [x] **`QS-PLAN-WIP-FRISCHE` · `plan:next` warnt vor `wip`-Marken ohne Bau-Spur** *(Anlass: 5.8.2026 baute eine Session `QS-TOK` + `QS-TOK-AUFRAEUMEN` fertig, landete #457/#458 und endete, **ohne die wip-Marke freizugeben** — das Lagebild zeigte stundenlang «im Bau», was auf `main` lag, bis David nachfragte; **zweiter Fall** desselben Musters nach dem 10-wip-Vorfall vom ~20.7.2026 ⇒ Eskalation Prosa→Maschine, Skill `lehren` Regel 5)* — Der Lage-Block prüft je `wip`-Schritt, ob eine **Bau-Spur** existiert (Worktree oder lokaler Branch mit seinem Slug; mit `--prs` zusätzlich ein offener PR über `headRefName`/Titel) und meldet sonst eine Freigabe-Zeile. Kein neues Zustandsfile, keine Zeit-Heuristik; bei **nicht abfragbarer** git-Lage wird **nicht** gewarnt («nicht prüfbar» ist nicht «stale»). Reine Werkzeug-Schicht, kein `src/`-Code. **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) §Frische-Warnung.
+  <!-- @meta id: QS-PLAN-WIP-FRISCHE · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/plan] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+
+
 ### Abschluss QS-TOK (5.8.2026, Dekret-Block wörtlich aus ROADMAP.md)
 
 Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20 gelandet (PRs #457/#458, QS-TOK-Session 5.8. vormittags); wip-Marke nach Session-Ende offen geblieben, Abschluss-Nachzug durch die Orchestrier-Session. Übrige §§4–§7-Pakete des Fahrplans sind eigenständiger Backlog, nicht Teil des Schritt-Rests.

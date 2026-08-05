@@ -127,5 +127,4 @@ export const INVENTAR: readonly string[] = [
 
   // §17-Eskalation 5.8.2026 (zweiter Fall nach dem 10-wip-Vorfall vom ~20.7.): `plan:next`
   // warnt vor `wip`-Marken ohne Bau-Spur, statt sie stumm als «im Bau» auszuweisen.
-  'QS-PLAN-WIP-FRISCHE',
 ];

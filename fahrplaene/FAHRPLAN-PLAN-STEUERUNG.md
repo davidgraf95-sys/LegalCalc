@@ -807,3 +807,15 @@ ROADMAP-Vorschlagsblock (kein Auto-Commit, kein Auto-PR); die startende Session
 entscheidet über Übernahme. Hebung zu einem geplanten Agenten (Safe-Outputs-Muster)
 erst nach Bewährung und mit David-Entscheid — §17-Fünf-Schritte: Automatisieren
 zuletzt. Ausdrücklich ausgenommen bleiben Rechtslogik, Engines und Korpus (§1/§2/§7).
+
+
+## QS-SESSION-ZYKLUS — der Skill `bauschritt` und sein Auslöser (done 5.8.2026)
+
+Der Session-Ablauf lag verstreut (Bau-Prompt, `auftrag`, `landung`, Gewohnheit);
+jetzt liegt er an EINER Stelle (§5): `.claude/skills/bauschritt/SKILL.md` — fünf
+Stationen A–E, Grössen-Check in A (sessionfüllend: zu klein ⇒ bündeln, zu gross ⇒
+AP-6-Schnitt), Token-Regel-Kasten; Obergrenze ~120 Zeilen, Verweis-Architektur.
+Ausgelöst durch die ERSTE Zeile jedes Lagebild-Bau-Prompts («Nutze den Skill
+`bauschritt` … Schritt: <ID>», `bauPrompt` in scripts/plan/bildSeiten.ts);
+Erste-Zeile-Zusicherung + Bestands-Härtungen testgesichert
+(src/tests/plan-bild-lage.test.ts, Rot-Beweis geführt).
