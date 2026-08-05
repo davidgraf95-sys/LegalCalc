@@ -242,8 +242,6 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   <!-- @meta id: QS-AUTOMATIK-PARITAET · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/check-tor-paritaet.ts, .github/workflows] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
 - [ ] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** *(Anlass: der Deckel «rund 20 Root-Markdown-Dateien» steht seit 31.7.2026 im Skill `auftrag`, der Ist-Stand liegt bei 22 — ein Deckel, der überschritten und nie nachgezogen wird, ist keiner)* — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.1.
   <!-- @meta id: QS-TOK-DECKEL · status: ready · of: ja · blocker: null · dep: [] · kollision: [archiv] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
-- [~] **`QS-TOK-AUFRAEUMEN` · Skill `aufraeumen` (Playbook der Session vom 3.8.2026)** *(Anlass: die Aufräum-Session hat ein wiederholbares Verfahren erzeugt — Rotation, Chronik-Überführung, Streich-Massstab, Fahrplan-Archivierung, Tor-Reihenfolge —, das heute nur im Kopf steht)* — als Skill ablegen, damit die nächste Aufräumung nicht wieder erfunden wird. Prozedur gehört in einen Skill, nicht ins Reglement (CLAUDE.md-Kopf). **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.2.
-  <!-- @meta id: QS-TOK-AUFRAEUMEN · status: wip · of: ja · blocker: null · dep: [] · kollision: [.claude/skills] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
 - [ ] **`QS-EXTQUELLEN` · Externe Quellen/APIs/Repos — Befundliste bewerten und verorten** *(Recherche 3.8.2026 auf Auftrag David, ~60 Abfragen und 7 live geprüfte Endpunkte; **die Bewertung ist ausdrücklich OFFEN gelassen — dieser Schritt IST die Neubewertung**, Anordnung David: «baue es einfach als findings ein, andere session soll es dann nochmals neu evaluieren»)* — Vier Befunde **stützen Bestehendes**: (a) unabhängige Feiertags-Zweitquelle mit kantonalen Normzitaten gegen das BJ-Verzeichnis **Stand 1.1.2011**, das `src/data/zpoFeiertage.ts` und damit sämtliche Fristen-Engines trägt — die Zweitquelle deckt heute aber nur ZH/TI; (b) unabhängiger Normtext-Zweitbestand als **Diff-Orakel** für `check:fedlex-versionen`/`currency.json` (ein Ein-Quellen-Check kann «aktuell» nicht von «konsistent stale» unterscheiden); (c) BFS-Gemeindeverzeichnis historisiert (HTTP 200, eCH-0071, Stichtags-Parameter) als amtlich prüfbare Ortseingabe für `zustaendigkeit.ts`/`schkgZustaendigkeit.ts`; (d) kantonale Amtskreis-Geodaten als letzte Meile der SchKG-Zuständigkeit — **nur BE/ZH/SO/LU/TG, kein nationales Register**. Geparkt, weil erweiternd statt stützend: SHAB-API, QR-Rechnung, eSchKG 2.2.01, PDF/A (BEKJ 1.7.2027). **Fertig, wenn** je Befund entschieden ist — eigener Schritt, an einen bestehenden angedockt (Kandidaten: `QS-CURRENCY-KANON`, `QS-FRIT-DRIFT`, `W2·13-KANTONE-DRIFT`) oder verworfen — und die fünf offenen Fragen aus §5 des Dossiers beantwortet sind, darunter **eine an David** (kommerzieller Betrieb? davon hängt ab, ob `droid-f/fedlex` unter CC BY-NC-SA überhaupt berührt werden darf). **Befunde:** [externe-quellen-repos-2026-08-03.md](bibliothek/recherche/externe-quellen-repos-2026-08-03.md).
   <!-- @meta id: QS-EXTQUELLEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [bibliothek/recherche] · worktree: nein · 26x: nein -->
 
@@ -266,7 +264,7 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
 > [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md). Der frühere Wächter-Schritt
 > `QS-PH` ist darin aufgegangen (erledigt; Wortlaut → `ROADMAP-CHRONIK.md`, 3.8.2026).
 
-<!-- @queue: QS-TOK, W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -275,30 +273,12 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`.** Der Queue-Kopf `QS-TOK` ist seit
-> 5.8.2026 **`wip`** (Bau in der Orchestrierungs-Session; Priorisierung David
-> 10.7.2026, Wortlaut «oberster schritt soll sein den token verbrauch zu minimieren»); die
-> Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut.
-> Rest am 5.8.2026 abgeschlossen (Stand-Block im Fahrplan, §Stand 5.8.2026); Landung via
-> PR `feat/qs-tok` + `feat/qs-tok-t14`. Das ROADMAP-Ceiling misst
-> `python3 .claude/hooks/struktur-rotieren.py --check` — **allein dieser Befehl** sagt, ob es
-> gerade eingehalten ist; ein Momentwert wird hier bewusst **nicht** zweitgeführt (jede fixe
-> Zahl war binnen Stunden überholt, Endprüfungs-Funde 6/12/31, zuletzt Bauplan-Review-Befund B2).
-> Hebel bei einem Riss ist die Rotation samt Chronik-Überführung — so wurde der Riss vom 4.8.2026
-> mit der Rotation vom 5.8.2026 behoben.
-> **Bau-Spec: [`fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md`](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §§3–§7, Reihenfolge §8; Stand/Belege: §Stand 31.7.2026.**
-> Danach folgt `W2·10-UI-NAV` gemäss `@queue` (zweiter Eintrag der Zeile oben).
-> <!-- @meta id: QS-TOK · status: wip · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
-> Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
-> deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
-> **Leitplanke (nicht verhandelbar):** keine Massnahme kürzt Beweis, Tor oder Prüfung —
-> Gegenprüfung/Doppel-Verifikation/iterative Bug-Checks/golden byte-gleich bleiben unangetastet.
-> Die Feature-Reihenfolge steht in der **`@queue`-Zeile oben** (SSoT); abgelöste Fassung wörtlich
-> → `ROADMAP-CHRONIK.md` → Steuerungs-Prosa (24.7.2026).
-> **Stand 31.7.2026:** autonomer Bau-Rest der Pakete T1–T19 ist gebaut; offen bleiben die fünf
-> Posten oben (Go David 27.7.2026) plus das ROADMAP-Ceiling. Nachmess-Beleg und die drei Massgaben
-> (T16 nur in frischer Session · T12-Stufe-2 Weglassungs-Begründung neu bewerten · T20 ist ein
-> stehendes Instrument, kein Einmal-Bau) wörtlich → `ROADMAP-CHRONIK.md` → QS-TOK (3.8.2026).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** (Queue-Kopf; Fokus-Dekret 24.7.2026 unten).
+> `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
+> gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
+> Dekret-Blocks → `ROADMAP-CHRONIK.md` → QS-TOK-Abschluss 5.8.2026). Das ROADMAP-Ceiling misst
+> weiterhin allein `python3 .claude/hooks/struktur-rotieren.py --check`; Hebel bei einem Riss
+> ist die Rotation samt Chronik-Überführung.
 
 > **■ Fokus-Dekret 24.7.2026 (David, §14-Intake): die Gesetzesdarstellung steht im Vordergrund.**
 > Reihenfolge **(1)** verhaltensneutrale Code-Anpassungen, die die Gesetzes-Strecke einfacher machen →

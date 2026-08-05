@@ -175,8 +175,8 @@ zusätzlich zur Alters-Rotation via Budget-Nachrotation) und führte STRUKTUR.md
 rechnerisch ~57.8 KB — unter das 60-KB-Budget, bei 11 verbleibenden Karten (weit über der
 Untergrenze 3).
 
-**Offener QS-TOK-Rest — unverändert:** **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
-27.7.2026 erteilt; T16 nur in frischer Session gem. T19-Vorbedingung).
+**QS-TOK-Rest ERLEDIGT (Stand 5.8.2026, s. §Stand oben):** T10 · T12-Stufe-2 · T14 (Stufe 1)
+· T16 · T20 sind gebaut (PRs #457/#458); offen bleiben nur die §§4–§7-Pakete je Reihenfolge §8.
 **Pauschal-Freigabe David 3.8.2026** — baubar ohne weitere Rückfrage, Reihenfolge frei.
 **Neu offen:** ROADMAP
 von **110.0 KB** (Stand Fix-Runde 1, 31.7.2026 — Ist-Zahl immer aus

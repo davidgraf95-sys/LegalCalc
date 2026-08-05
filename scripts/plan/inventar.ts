@@ -19,7 +19,7 @@ export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
   'W3·10', 'W3·11', 'W3·12', 'W3·13', 'W3·14',
-  'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA', 'QS-TOK',
+  'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA',
   'W2·6-DATA', 'W2·7-VZUI', 'W2·10-UI-NAV', 'W2·11-DESIGN',
   'W3·14-S', 'W3·14-a11y',
   'QS-OPT', 'QS-BASIS',
@@ -77,7 +77,7 @@ export const INVENTAR: readonly string[] = [
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
   'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
-  'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN',
+  'QS-TOK-DECKEL',
 
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —

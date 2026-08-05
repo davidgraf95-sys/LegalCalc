@@ -1877,6 +1877,44 @@ Wörtlich aus ROADMAP.md überführt (Diät 4.8.2026):
 
 ## Übernahme 5.8.2026 — Ziff.-6-Vollzug (QS-PLAN-REVIEW)
 
+### Abschluss QS-TOK (5.8.2026, Dekret-Block wörtlich aus ROADMAP.md)
+
+Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20 gelandet (PRs #457/#458, QS-TOK-Session 5.8. vormittags); wip-Marke nach Session-Ende offen geblieben, Abschluss-Nachzug durch die Orchestrier-Session. Übrige §§4–§7-Pakete des Fahrplans sind eigenständiger Backlog, nicht Teil des Schritt-Rests.
+
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`.** Der Queue-Kopf `QS-TOK` ist seit
+> 5.8.2026 **`wip`** (Bau in der Orchestrierungs-Session; Priorisierung David
+> 10.7.2026, Wortlaut «oberster schritt soll sein den token verbrauch zu minimieren»); die
+> Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut.
+> Rest am 5.8.2026 abgeschlossen (Stand-Block im Fahrplan, §Stand 5.8.2026); Landung via
+> PR `feat/qs-tok` + `feat/qs-tok-t14`. Das ROADMAP-Ceiling misst
+> `python3 .claude/hooks/struktur-rotieren.py --check` — **allein dieser Befehl** sagt, ob es
+> gerade eingehalten ist; ein Momentwert wird hier bewusst **nicht** zweitgeführt (jede fixe
+> Zahl war binnen Stunden überholt, Endprüfungs-Funde 6/12/31, zuletzt Bauplan-Review-Befund B2).
+> Hebel bei einem Riss ist die Rotation samt Chronik-Überführung — so wurde der Riss vom 4.8.2026
+> mit der Rotation vom 5.8.2026 behoben.
+> **Bau-Spec: [`fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md`](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §§3–§7, Reihenfolge §8; Stand/Belege: §Stand 31.7.2026.**
+> Danach folgt `W2·10-UI-NAV` gemäss `@queue` (zweiter Eintrag der Zeile oben).
+> <!-- @meta id: QS-TOK · status: done · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
+> Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
+> deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
+> **Leitplanke (nicht verhandelbar):** keine Massnahme kürzt Beweis, Tor oder Prüfung —
+> Gegenprüfung/Doppel-Verifikation/iterative Bug-Checks/golden byte-gleich bleiben unangetastet.
+> Die Feature-Reihenfolge steht in der **`@queue`-Zeile oben** (SSoT); abgelöste Fassung wörtlich
+> → `ROADMAP-CHRONIK.md` → Steuerungs-Prosa (24.7.2026).
+> **Stand 31.7.2026:** autonomer Bau-Rest der Pakete T1–T19 ist gebaut; offen bleiben die fünf
+> Posten oben (Go David 27.7.2026) plus das ROADMAP-Ceiling. Nachmess-Beleg und die drei Massgaben
+> (T16 nur in frischer Session · T12-Stufe-2 Weglassungs-Begründung neu bewerten · T20 ist ein
+> stehendes Instrument, kein Einmal-Bau) wörtlich → `ROADMAP-CHRONIK.md` → QS-TOK (3.8.2026).
+
+
+### Abschluss QS-TOK-AUFRAEUMEN (5.8.2026, wörtlich aus ROADMAP.md)
+
+Skill `aufraeumen` gebaut, gelandet und zweifach re-reviewt (d710c8208 · ea1764007 · 5bbb5ad2a); wip-Marke stand nach Session-Ende noch, Freigabe-Nachzug durch die Orchestrier-Session.
+
+- [x] **`QS-TOK-AUFRAEUMEN` · Skill `aufraeumen` (Playbook der Session vom 3.8.2026)** *(Anlass: die Aufräum-Session hat ein wiederholbares Verfahren erzeugt — Rotation, Chronik-Überführung, Streich-Massstab, Fahrplan-Archivierung, Tor-Reihenfolge —, das heute nur im Kopf steht)* — als Skill ablegen, damit die nächste Aufräumung nicht wieder erfunden wird. Prozedur gehört in einen Skill, nicht ins Reglement (CLAUDE.md-Kopf). **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.2.
+  <!-- @meta id: QS-TOK-AUFRAEUMEN · status: done · of: ja · blocker: null · dep: [] · kollision: [.claude/skills] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
+
+
 ### Abschluss QS-PLAN-BILD-LAGE (5.8.2026 nachmittags, wörtlich aus ROADMAP.md)
 
 Lagebild in Laiensprache (Auftrag David 5.8.2026): Block «Was gerade passiert» (Bau/fertig/wartet-auf-David), Wirkungsbereich-Etiketten aus kollision:-Globs, Titel-zuerst an sechs Stellen, Kürzel-Legende + Bereichs-Definitionen auf der Methode-Seite, Namensregel im Skill auftrag. 42 neue Tests, Byte-Rückrechnung identisch, check:schlankheit-Split bildMethode.ts.
