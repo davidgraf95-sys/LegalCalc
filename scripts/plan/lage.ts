@@ -16,6 +16,11 @@
 //    `plan:next`-Ausgabe angehängt; zieht man die neuen Zeilen ab, ist sie
 //    byte-identisch zu vorher.
 //
+// Seit 5.8.2026 (`QS-PLAN-WIP-FRISCHE`) beantwortet der Block eine zweite Frage:
+// nicht nur «was ist im Bau», sondern «stimmt das noch» — s. `staleWip()` unten.
+// Die drei Bauregeln gelten dort unverändert, insbesondere die erste: eine nicht
+// abfragbare git-Lage erzeugt KEINE Warnung, nur die Hinweiszeile.
+//
 // Warum eigener Kommando-Runner statt `sh()` aus bildDaten.ts: (a) dieser Block
 // braucht ein hartes Timeout (`gh` ohne Netz hängt sonst am Pflicht-Einstieg),
 // das `sh()` nicht kennt; (b) `plan:next` bliebe sonst nicht mehr importfrei

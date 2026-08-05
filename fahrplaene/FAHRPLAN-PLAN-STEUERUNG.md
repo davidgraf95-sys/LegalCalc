@@ -586,6 +586,11 @@ zeigte stundenlang «im Bau», was längst auf `main` lag — bis David nachfrag
 nicht gehalten ⇒ Eskalation Prosa→Maschine (Skill `lehren`, Regel 5): Was eine Session vergessen
 kann, muss der Pflicht-Einstieg `plan:next` von sich aus sagen.
 
+**Verhältnis zur Prosa-Seite (§5, keine zweite Wahrheit).** Derselbe Vorfall hat am 5.8.2026 die
+Prozess-Seite erzeugt: Skill `landung` Schritt 9 («wip verlässt die Session nie») und der
+F6-Registernachtrag im Skill `lehren`. Diese Spec beschreibt **nur die Maschine**; sie ist das
+Netz, nicht der Prozess. Wer den Prozess sucht, liest den Landung-Skill.
+
 **Regel.** Für jeden `wip`-Schritt sucht der Lage-Block eine **Bau-Spur** — einen Namen, den die
 bestehende Zuordnung `schrittFuerNamen()` auf diesen Schritt abbildet:
 
