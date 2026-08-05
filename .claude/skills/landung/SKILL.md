@@ -108,18 +108,19 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    nur bei hängendem VERCEL-Kontext, er erzeugt KEINEN Actions-Lauf (kein
    Datei-Diff) und schiebt den Head von bereits grünen Check-Runs weg.
 
-   **Vercel-Tageslimit (Free-Tier ~100 Deploys/Tag) — David-Entscheid 4.8.2026
-   («lass vercel aus dem spiel»):** Reisst das Limit (Check-Meldung
-   «Deployment rate limited»), zählt der Required-Kontext «Vercel» NICHT als
-   Prüf-Rot. Massgeblich ist allein die volle Actions-Batterie; bei deren Grün
-   ist `gh pr merge --squash --admin` der freigegebene Weg (Interim, bis
-   QS-CI-VERCEL/#445 die Ursache behebt: md-only-Diffs sollen den Vercel-Build
-   gar nicht erst verbrauchen). Zwei Grenzen: (1) Der Override deckt NUR den
-   Limit-/Billing-Fall — ein Vercel-Rot mit Build-Fehler bleibt Rot. (2) An
-   landeintensiven Tagen frisst jedes `update-branch` einen Deploy — Kette
-   deshalb seriell und ohne überflüssige Zwischen-Pushes fahren. Realfall
-   4.8.2026 abends: >100 Deploys durch 16-PR-Tag, #455 blockierte trotz
-   vollständig grüner Batterie.
+   **Vercel-Tageslimit (Free-Tier ~100 Deploys/Tag):** Die Wurzel ist seit dem
+   #445-Merge (5.8.2026, QS-CI-VERCEL) behoben — der Ignored Build Step lässt
+   App-fremde Diffs den Vercel-Build gar nicht erst verbrauchen; ein
+   übersprungener Build meldet den Check als `success` («Canceled by Ignored
+   Build Step») und ist mergefähig. Das frühere Admin-Bypass-Interim
+   («lass vercel aus dem spiel», David 4.8.2026) ist damit GESTRICHEN: Reisst
+   das Limit trotzdem (App-Diff-Ketten), ist das kein Bypass-Fall mehr,
+   sondern Warten/Re-Trigger nach Reset — ein leerer Commit auf den Branch
+   genügt als Vercel-Re-Trigger (er erzeugt keinen Actions-Lauf, schiebt aber
+   den Head; Realfall 5.8.2026: #445 selbst so gelandet). Unverändert gilt:
+   ein Vercel-Rot mit echtem Build-Fehler bleibt Rot, und an landeintensiven
+   Tagen frisst jedes `update-branch` einen App-Deploy — Kette seriell und
+   ohne überflüssige Zwischen-Pushes fahren.
 
 6b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
