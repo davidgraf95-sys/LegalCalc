@@ -83,6 +83,8 @@
     "entscheide:bs": "vite-node scripts/rechtsprechung/bs-import.ts --",
     "renormalisiere:entscheide": "vite-node scripts/normtext/renormalisiere-bestand.ts --",
     "check:confidence": "vite-node scripts/normtext/check-confidence.ts",
+    "check:schlankheit": "vite-node scripts/check-schlankheit.ts",
+    "schlankheit:update": "vite-node scripts/check-schlankheit.ts -- --update",
     "golden": "vite-node scripts/golden-outputs.ts",
     "golden:vergleich": "vite-node scripts/golden-outputs.ts vergleich",
     "golden:diff": "vite-node scripts/golden-outputs.ts diff",
