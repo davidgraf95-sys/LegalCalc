@@ -593,6 +593,34 @@ export function wasGeradePassiert(d: WasPassiert): string {
 </section>`;
 }
 
+// ---------------------------------------------------------------------------
+// Gemeinsames der Seiten-Module
+//
+// `SeitenOpts` und `fussnote` lagen bis 5.8.2026 in `bildSeiten.ts`. Seit die
+// Methode-Seite ein eigenes Modul hat (§6.6-Split, s. bildMethode.ts), brauchen
+// sie ZWEI Seiten-Module — und zwei Kopien wären zwei Wahrheiten (§5). Sie
+// gehören ohnehin hierher: der eine ist der Vertrag jeder Seiten-Funktion, der
+// andere ein Wiederhol-Baustein wie `kacheln` oder `tabelle`.
+// ---------------------------------------------------------------------------
+
+/** Aufruf-Vertrag jeder Seiten-Funktion. */
+export interface SeitenOpts {
+  /** Pfad der Index-Seite (`--out`) — Basis der relativen Verweise. */
+  indexPfad: string;
+  watch: number | null;
+  /** Erzeugungs-Zeitstempel; für alle vier Seiten eines Laufs identisch. */
+  stand: string;
+}
+
+/** Gemeinsame Fussnote aller vier Seiten; `zusatz` nennt die Quellen der Seite. */
+export function fussnote(zusatz: string): string {
+  return `<footer>
+  <p>Erzeugt von <span class="id">npm run plan:bild</span> aus ROADMAP.md (Parser und Resolver von <span class="id">plan:next</span>),
+  den Korpus-Registern, git und gh. ${zusatz}
+  Diese Dateien sind git-ignoriert — sie sind eine Projektion, nie eine zweite Wahrheit (§5).</p>
+</footer>`;
+}
+
 /** Deutsche Monatsbeschriftung aus «YYYY-MM». */
 const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 export function monatLabel(key: string): string {
