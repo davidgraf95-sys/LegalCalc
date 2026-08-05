@@ -201,13 +201,18 @@ später prüfbar bleibt, warum es ihn gibt. Sie stehen im Querschnitt-Band, weil
 Reihenfolge-Slot** brauchen (klein, jederzeit einschiebbar), nicht weil sie dauerhaft mitlaufen;
 ihr **Dach-Schritt** steht im ID-Präfix (`QS-AUTOMATIK-*` → Automatik-Gesundheit · `QS-BASIS-*` →
 Basis-Ausbau · `QS-GP-*` → Gegenprüfung · `QS-TOK-*` → Token-Ökonomie · `QS-CURRENCY-*` →
-Fedlex-Currency). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkten Fahrplans.
+Fedlex-Currency · `QS-CODE-*` → Code-Verbesserung · `QS-KORPUS-*` → Fedlex-Portfolio
+(Korpus-Pflege) · `QS-FRIT-*` → Fedlex-Drift · `QS-E2E-*` → Lernphase
+(Verifikations-Infrastruktur)). Jeder trägt seine Bau-Spec im `ROADMAP-Spec`-§ des verlinkten
+Fahrplans — **deklarierte Ausnahme:** reine Bewertungs-/Recherche-Schritte, deren Substanz
+vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben, tragen kein
+`fahrplan:`-Feld und zeigen stattdessen auf ihr Dossier (aktuell `QS-EXTQUELLEN`).
 
 - [ ] **`QS-FRIT-DRIFT` · FR/IT-Drift-Wächter Stufe 1 (eId-Mengenvergleich DE/FR/IT)** *(Anlass: sämtliche Norm-Verifikationen vom 3.8.2026 liefen **nur auf DE** — eine französische oder italienische Fassung könnte längst abweichen, ohne dass ein Tor es sieht)* — **Ausdrücklich KEIN dreisprachiges Korpus**; das Befüllen der `fr`/`it`-Fassungen ist **`W2·6-MEHRSPRACH`** und bleibt dort. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §18.
   <!-- @meta id: QS-FRIT-DRIFT · status: ready · of: ja · blocker: null · dep: [] · kollision: [.github/workflows/normen-monitor.yml, scripts/fedlex-versionen-pruefen.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - [ ] **`QS-CURRENCY-TESTS` · Testbindung `cacheBefund` + Kanonik-Ausschluss** *(Anlass: Gegenprüfung zu PR #420, Befund 1 — die neue Cache-Inhalts-Sonde und die Kanonik-Ausschlussliste hängen an keinem Test; ein Tor, das nicht scheitern kann, ist gefährlicher als keines, §6.7)* — Reine Prüflogik (`Gegenpruefung: n/a`) — **die Ursachenklärung der `fza`/`cmr`-Wurzeln ist Risikopfad und liegt in `QS-CURRENCY-KANON`**; hier wird kein Pin geändert. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §18.2.
   <!-- @meta id: QS-CURRENCY-TESTS · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, src/tests] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
-- [ ] **`QS-KORPUS-BMV` · Geltende BMV (Totalrevision `cc/2025/408`) in den Korpus aufnehmen** *(Anlass: BMV-Nachführung 3.8.2026, PR #422 — die alte BMV ist korrekt als aufgehoben markiert, aber die seit 1.3.2026 GELTENDE Nachfolge-Verordnung gleicher SR 412.103.1 fehlt; Nutzer finden nur den historischen Text plus Fedlex-Link)* — Risikopfad ⇒ Gegenprüfung. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17.
+- [ ] **`QS-KORPUS-BMV` · Geltende BMV (Totalrevision `cc/2025/408`) in den Korpus aufnehmen** *(Anlass: BMV-Nachführung 3.8.2026, PR #422 — die alte BMV ist korrekt als aufgehoben markiert, aber die seit 1.3.2026 GELTENDE Nachfolge-Verordnung gleicher SR 412.103.1 fehlt; Nutzer finden nur den historischen Text plus Fedlex-Link)* — Risikopfad ⇒ Gegenprüfung. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §20.4.
   <!-- @meta id: QS-KORPUS-BMV · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, public/normtext/bund, src/lib/normtext/aufhebungen.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 - [ ] **`QS-E2E-SHARD-GEN` · Shard-Zuordnung in die Spec, JSON generieren** *(Anlass: Landekette 4.8.2026 — 5 von 6 Nachzieh-Konflikten sassen in `e2e/shard-gruppen.json`, weil jede neue Spec dieselben Listen editiert)* — **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.5.
   <!-- @meta id: QS-E2E-SHARD-GEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [e2e, scripts/e2e-shard-gruppen.mjs, .gitattributes] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
@@ -278,19 +283,21 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
      ändern, nicht Prosa. Begründung je Schritt in den Dekret-Blöcken darunter.
      Präzedenz QS-TOK vor Gesetzesdarstellung: von David BESTÄTIGT (Chat 24.7.2026, «nein
-     passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5d` an den Kopf dieser
-     Zeile setzen (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
+     passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
+     dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
 > **⬆ OBERSTER OFFENER SCHRITT: `QS-TOK`.** Steht am Kopf der `@queue` (Priorisierung David
 > 10.7.2026, Wortlaut «oberster schritt soll sein den token verbrauch zu minimieren»); die
 > Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut, der Schritt daher wieder
 > **`ready`** statt `wip`. Offener Rest: **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
-> 27.7.2026 erteilt; T16 nur in frischer Session). Das ROADMAP-Ceiling ist am **3.8.2026 wieder
-> eingehalten** (Aufräumwelle: erledigte Schritte in die Chronik überführt); die Ist-Zahl liefert
-> `python3 .claude/hooks/struktur-rotieren.py --check` und wird hier bewusst **nicht**
-> zweitgeführt — die frühere fixe Zahl war überholt, Endprüfungs-Funde 6/12/31.
+> 27.7.2026 erteilt; T16 nur in frischer Session). Das ROADMAP-Ceiling misst
+> `python3 .claude/hooks/struktur-rotieren.py --check` — **allein dieser Befehl** sagt, ob es
+> gerade eingehalten ist; ein Momentwert wird hier bewusst **nicht** zweitgeführt (jede fixe
+> Zahl war binnen Stunden überholt, Endprüfungs-Funde 6/12/31, zuletzt Bauplan-Review-Befund B2).
+> Hebel bei einem Riss ist die Rotation samt Chronik-Überführung — so wurde der Riss vom 4.8.2026
+> mit der Rotation vom 5.8.2026 behoben.
 > **Bau-Spec: [`fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md`](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §§3–§7, Reihenfolge §8; Stand/Belege: §Stand 31.7.2026.**
-> Danach folgt `W2·5d` gemäss `@queue`.
+> Danach folgt `W2·10-UI-NAV` gemäss `@queue` (zweiter Eintrag der Zeile oben).
 > <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts, .claude, CLAUDE.md, ROADMAP.md, STRUKTUR.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
 > Bau verbraucht **weniger Tokens** — nur über Effizienz (gezielter lesen, kompakter übergeben,
 > deterministisch statt modellgetrieben, cachen, indizieren); Einmal-Investitionen ok.
@@ -398,7 +405,9 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
   Urteil verworfen)* — **KONZEPT-Schritt, kein Bau**, **zur David-Abnahme VOR jedem Vollbau**.
   Harte Regel aus der Lehre: dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr**
   gelöst. **Detail:**
-  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §L-3/A28.
+  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §2
+  (Massnahme F4 «Liniengliederung reparieren», Posten L-3 samt Bau- und Rücknahme-Vermerk);
+  Vorgeschichte A28: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §10.9.
   <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **6 · Konsultieren-Klingen** *(`[OF]`, amtlich)*:
   <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
