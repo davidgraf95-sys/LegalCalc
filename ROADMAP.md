@@ -265,6 +265,14 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
 > **Etikett-System (`@meta`/`@queue`/`@blockers`), Tor-Regeln und Geltungsbereich der IDs:**
 > [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md). Der frühere Wächter-Schritt
 > `QS-PH` ist darin aufgegangen (erledigt; Wortlaut → `ROADMAP-CHRONIK.md`, 3.8.2026).
+>
+> **`groesse: S|M|L` schätzt den Bau-Umfang** (Auftrag David 5.8.2026, damit die Auswahl im Lagebild
+> «nicht zu grosse oder kleine» trifft): **S** trägt keine eigene Session und wird nur gebündelt
+> genommen · **M** ist sessionfüllend, der Normalfall · **L** wird vor dem Bau in Teilschritte
+> geschnitten (bei Dach-Schritten: den Unterschritt nehmen). Die Angabe ist eine **Schätzung und
+> kein Tor-Kriterium** — sie steuert weder Reihenfolge noch Baubarkeit, und `check:plan` prüft nur
+> ihr Vokabular; Fehlen ist zulässig und zeigt «Grösse ungeschätzt». Definition und Schätzgrundlage:
+> [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Feld `groesse`».
 
 <!-- @queue: W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der

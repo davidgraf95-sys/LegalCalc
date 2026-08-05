@@ -384,6 +384,7 @@ function einheit(p: Partial<Etikett> = {}): Einheit {
       seqWeich: [],
       worktree: true,
       asset26x: false,
+      groesse: null,
       fahrplan: 'fahrplaene/FAHRPLAN-X.md',
       ...p,
     },

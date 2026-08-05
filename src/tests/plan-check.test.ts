@@ -243,7 +243,7 @@ describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
     const { resolve } = await import('../../scripts/plan/next');
     const qs = {
       id: 'QS-X', checkbox: null, sektion: 'Querschnitt-Band (läuft begleitend', pos: 0,
-      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, fahrplan: null },
+      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, groesse: null, fahrplan: null },
     };
     const b = resolve([qs]);
     expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);

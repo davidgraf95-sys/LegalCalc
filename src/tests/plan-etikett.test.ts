@@ -50,6 +50,13 @@ describe('parseEtikett — Robustheit', () => {
     const e = parseEtikett('<!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [W1,] · kollision: [] · worktree: nein · 26x: nein -->');
     expect(e.dep).toEqual(['W1']);
   });
+  it('das optionale `groesse` überlebt den Round-Trip an seiner Bestands-Position', () => {
+    // Wie bei `seq-hart` (Fund R2-16): ein Feld, das serializeEtikett verwirft oder
+    // umstellt, geht bei jedem `plan:set` still verloren bzw. erzeugt Diff-Rauschen.
+    const mit = ZEILE.replace('26x: nein', '26x: nein · groesse: M');
+    expect(serializeEtikett(parseEtikett(mit), '  ')).toBe(mit);
+    expect(parseEtikett(ZEILE).groesse).toBeNull();
+  });
   it('wip() leere Klammer → statusAgent null (round-trip stabil)', () => {
     const e = parseEtikett('<!-- @meta id: A · status: wip() · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->');
     expect(e.statusAgent).toBeNull();
