@@ -305,7 +305,7 @@ je Schritt Titel, `@meta`, Anlass/Kurzabsatz und der Pointer. Steuert nicht — 
 > `§Intake`) → **(c)** Bau. Vor (c) je Kandidat das POC-Ergebnis vorlegen (§8: kein Fassungs-Diff auf
 > geratener Historie).
 
-### §9.2 `W2·5k-LINIEN-KONZEPT` — Bau-Spec im Wortlaut *(→ Bau-Spec: §2, Lehre F4/L-3 dieser Datei; Vorgeschichte A28: `FAHRPLAN-GESETZES-UX.md` §10.9)*
+### §9.2 `W2·5k-LINIEN-KONZEPT` — Bau-Spec im Wortlaut *(→ Bau-Spec: §2, Lehre F4/L-3 dieser Datei; Vorgeschichte A28: `FAHRPLAN-GESETZES-UX.md` Ziff. 10.9)*
 
 > **KONZEPT-Schritt, kein Bau**: 2–3 Varianten entwerfen (z.B. Linie je
 > aktiver Verschachtelungsebene, Sticky-Gliederungs-Kontext, Hover-/Fokus-Guides), als klickbare

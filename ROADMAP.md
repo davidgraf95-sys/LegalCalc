@@ -396,9 +396,9 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
   Urteil verworfen)* — **KONZEPT-Schritt, kein Bau**, **zur David-Abnahme VOR jedem Vollbau**.
   Harte Regel aus der Lehre: dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr**
   gelöst. **Detail:**
-  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §2
-  (Massnahme F4 «Liniengliederung reparieren», Posten L-3 samt Bau- und Rücknahme-Vermerk);
-  Vorgeschichte A28: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §10.9.
+  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.2
+  (Spec-Wortlaut; Sachstand: §2, Massnahme F4 «Liniengliederung reparieren», Posten L-3 samt Bau-
+  und Rücknahme-Vermerk); Vorgeschichte A28: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) Ziff. 10.9.
   <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** *(Anlass:
   Bauplan-Review 4.8.2026, Befund B5 — `FAHRPLAN-NORMTEXT-DARSTELLUNG.md` führt B2 seit dem
@@ -428,7 +428,7 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
     - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; Kantons-Ausweitung setzt den Resolver voraus (darum `dep`). §13.
       <!-- @meta id: W2·6-UEBERSICHT · status: ready · of: ja · blocker: null · dep: [W2·6-RESOLVER] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
     - [~] **Richter-/Spruchkörper-Filter — Fundament** *(`R-RICHTER`, Direktauftrag David 20.7.2026)*:
-      Block A ✅, Block B trägt `W2·6-FILTER`. Detail: `fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md` §12/§13.
+      Block A ✅, Block B trägt `W2·6-FILTER`. Detail: `fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md` §13 (Spec); Richter-Filter: Ziff. 12.
     *— Datenausbau-Unterschritte (Quellen → DB → Korpus = Fundament der Verzahnung):*
     - [ ] **Datenhaltung-Bau: DB-Artefakt + Massen-Korpus + Edge-Suche** *(W2·6-DATA; Council 2.7.2026 — löst die drei OCL-Abbau-„DAVID-ENTSCHEID"-Punkte auf)*.
       <!-- @meta id: W2·6-DATA · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext-snapshot.ts, scripts/prerender.ts, public/normtext/register.json] · worktree: ja · 26x: ja · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
@@ -553,7 +553,7 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
   Externe Sichtprüfung, geschnitten nach Bauteil K-01…K-20; Triage 31.7.2026: **45 NEIN · 144 VERDACHT ·
   15 BEREITS-GEBAUT · 6 SICHER**, davon **20 Batches** (19 Bau-Batches mit 189 Befunden + 1 Prüf-Batch, 15).
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue;
-  Freigabe-Wortlaut David 3.8.2026: **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §1.
+  Freigabe-Wortlaut David 3.8.2026: **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §24 (Spec; Triage: §1).
   - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
     <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). **Grenze** zu `W2·5h-GESETZ-UI`/`W2·5d` beachten. §5.
