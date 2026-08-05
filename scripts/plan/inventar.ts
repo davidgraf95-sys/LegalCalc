@@ -117,4 +117,8 @@ export const INVENTAR: readonly string[] = [
   // Block) sowie der bis dahin ungesteuerte B2-Pass des Normtext-Fahrplans (Befund B5:
   // «Nächste Arbeit» seit 29.6.2026, aber kein Schritt — für plan:next unsichtbar).
   'W2·5l-NORMTEXT-B2',
+
+  // Auftrag David 5.8.2026 (Nutzer-Turn): der Lagebild-Einstieg soll «einfachere Sprache»
+  // tragen — ein Laien-Block zuoberst auf `plan-bild.html`.
+  'QS-PLAN-BILD-LAGE',
 ];

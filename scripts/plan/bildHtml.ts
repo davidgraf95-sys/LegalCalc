@@ -261,6 +261,366 @@ export function tabelle(kopfzeilen: string[], zeilen: string[][], klassen: strin
   return `<div class="tabelle"><table><thead><tr>${th}</tr></thead><tbody>\n${tr}\n</tbody></table></div>`;
 }
 
+// ---------------------------------------------------------------------------
+// Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
+// 5.8.2026: «ich brauche einfachere Sprache um zu verstehen was gerade passiert»)
+//
+// Drei Bauregeln dieses Blocks:
+//
+//  * **Jeder Satz steht hier statisch im Code**, gefüllt werden nur die Werte.
+//    Kein Modell zur Laufzeit, keine Formulierung aus Repo-Prosa — gleicher
+//    Repo-Stand ergibt gleichen Text (§2). Insbesondere werden die `Anlass:`-
+//    Texte der ROADMAP NICHT übernommen: sie sind Fachprosa und würden den
+//    Zweck des Blocks (Laiensprache) genau verfehlen.
+//  * **Keine eigenen Design-Tokens.** Der Block nutzt ausschliesslich
+//    bestehende Klassen aus `STIL`. Würde er das Stylesheet ergänzen, änderten
+//    sich alle vier Seiten — die drei anderen sollen byte-gleich bleiben.
+//  * **Zweitanzeige, nicht zweite Wahrheit (§5).** «Wartet auf David» erscheint
+//    weiter unten auch fachlich (Sektion `#david`); beide Fassungen entstehen
+//    aus demselben Resolver-Ergebnis, dieser Block verweist auf jene Sektion.
+// ---------------------------------------------------------------------------
+
+/**
+ * Datei-Fläche → Alltagsbegriff. Statische Zuordnung, längster Präfix gewinnt;
+ * ein unbekannter Pfad bleibt UNÜBERSETZT stehen (lieber ein technischer Pfad
+ * als ein erfundener Oberbegriff, §8).
+ *
+ * Die Tabelle beschreibt, was ein Bereich für den Nutzer BEDEUTET, nicht was
+ * er technisch enthält — «src/lib» heisst darum «Rechen- und Rechtslogik» und
+ * nicht «Bibliotheks-Verzeichnis».
+ */
+export const FLAECHEN_KLARTEXT: readonly (readonly [string, string])[] = [
+  ['scripts/plan', 'Werkzeuge der Bau-Planung'],
+  ['scripts/gegenpruefung', 'Werkzeuge der Gegenprüfung'],
+  ['scripts', 'Hilfsprogramme hinter den Kulissen'],
+  ['src/pages', 'sichtbare Seiten der App'],
+  ['src/components', 'Bausteine der Benutzeroberfläche'],
+  ['src/lib', 'Rechen- und Rechtslogik'],
+  ['src/tests', 'automatische Tests'],
+  ['src/index.css', 'Erscheinungsbild der App'],
+  ['e2e', 'Klick-Tests im Browser'],
+  ['public/normtext', 'gespeicherte Gesetzestexte'],
+  ['public/rechtsprechung', 'gespeicherte Gerichtsentscheide'],
+  ['public', 'ausgelieferte Dateien'],
+  ['daten', 'Rohdaten-Ablage'],
+  ['fahrplaene', 'Detailpläne der Baustellen'],
+  ['archiv', 'archivierte Detailpläne'],
+  ['bibliothek', 'abgelegtes Recherche-Wissen'],
+  ['ROADMAP', 'der Projektplan'],
+  ['STRUKTUR.md', 'die Projekt-Landkarte'],
+  ['CLAUDE.md', 'die Grundregeln des Projekts'],
+  ['DESIGN-REGLEMENT.md', 'die Gestaltungsregeln'],
+  ['.claude', 'Arbeitsregeln der KI-Sessions'],
+  ['.github', 'die Prüfstrasse (automatische Kontrollen)'],
+  ['vercel.json', 'die Auslieferung ins Internet'],
+  ['package.json', 'die Bau- und Prüfbefehle'],
+];
+
+/**
+ * Deckt der Tabellen-Eintrag diesen Pfad? Nur an einer TRENNSTELLE — hinter dem
+ * Präfix steht das Pfad-Ende oder eines von `/ . -`. Ohne diese Bedingung
+ * schluckte «scripts» auch ein künftiges `scriptsammlung/`; mit ihr trägt
+ * «ROADMAP» weiterhin `ROADMAP.md` UND `ROADMAP-CHRONIK.md`.
+ */
+function deckt(pfad: string, praefix: string): boolean {
+  if (!pfad.startsWith(praefix)) return false;
+  const nach = pfad[praefix.length];
+  return nach === undefined || nach === '/' || nach === '.' || nach === '-';
+}
+
+/**
+ * `kollision:`-Globs → Alltagsbegriffe, ohne Wiederholung und in der
+ * Reihenfolge ihres ersten Auftretens. Zwei Globs desselben Bereichs
+ * (`src/pages/**` und `src/pages/gesetze.tsx`) ergeben EINEN Eintrag.
+ */
+export function flaechenKlartext(globs: string[]): string[] {
+  const out: string[] = [];
+  for (const glob of globs) {
+    const pfad = glob.replace(/[*?{[].*$/, '').replace(/\/+$/, '');
+    let treffer: string | null = null;
+    let laenge = -1;
+    for (const [praefix, wort] of FLAECHEN_KLARTEXT) {
+      if (deckt(pfad, praefix) && praefix.length > laenge) {
+        treffer = wort;
+        laenge = praefix.length;
+      }
+    }
+    const wort = treffer ?? glob;
+    if (!out.includes(wort)) out.push(wort);
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// Wirkungsbereiche — «welchen Teil des Projekts berührt dieser Schritt?»
+// (Auftrag David 5.8.2026: «klassifiziere in themenbereiche» · «sessions
+// kommunizieren mit diesen bezeichnungen»)
+//
+// Abgeleitet wird MECHANISCH aus denselben `kollision:`-Globs wie
+// `flaechenKlartext` — eine Wahrheit, zwei Auflösungsgrade (§5): der
+// Alltagsbegriff sagt, WAS die Datei ist, der Wirkungsbereich, in welches der
+// sechs Themenfelder sie fällt. Eine gepflegte Zweitliste je Schritt gäbe es
+// nicht, weil sie still veralten würde.
+// ---------------------------------------------------------------------------
+
+/** Auffangkategorie für Pfade ohne Zuordnung — ehrlich benannt statt geraten (§8). */
+export const UEBRIGE_TECHNIK = 'Übrige Technik';
+
+/**
+ * Die sechs Wirkungsbereiche in KANONISCHER Reihenfolge. Sie bestimmt zugleich
+ * die Reihenfolge der Badges: sonst entschiede die zufällige Reihenfolge der
+ * `kollision:`-Globs darüber, wie ein Schritt beschriftet aussieht (§2).
+ */
+export const WIRKUNGSBEREICHE = [
+  'Benutzeroberfläche',
+  'Rechtslogik & Berechnungen',
+  'Gesetzes- & Urteilsdaten',
+  'Datenhaltung',
+  'Auslieferung & Prüfstrasse',
+  'KI-Arbeitsprozesse',
+] as const;
+
+export type Wirkungsbereich = (typeof WIRKUNGSBEREICHE)[number] | typeof UEBRIGE_TECHNIK;
+
+/** Je Bereich ein Laien-Satz — die Definition für die Glossar-Seite. */
+export const BEREICH_ERKLAERUNG: readonly (readonly [Wirkungsbereich, string])[] = [
+  ['Benutzeroberfläche', 'Alles, was man auf dem Bildschirm sieht und anklickt: Seiten, Formulare, Navigation, Erscheinungsbild.'],
+  ['Rechtslogik & Berechnungen', 'Die Rechenkerne der Werkzeuge — Fristen, Streitwerte, Tarife, Vorlagen-Inhalte. Ein Fehler hier wird zu einer falschen Rechtsauskunft.'],
+  ['Gesetzes- & Urteilsdaten', 'Das Beschaffen, Speichern und Überwachen der Gesetzestexte und Gerichtsentscheide aus den amtlichen Quellen.'],
+  ['Datenhaltung', 'Wo die Daten liegen und wie sie dorthin kommen: Datenbank, Abgleich-Läufe, eingefrorene Vergleichsstände.'],
+  ['Auslieferung & Prüfstrasse', 'Der Weg vom fertigen Code zur öffentlichen Plattform — samt den automatischen Prüfungen, die vorher bestehen müssen.'],
+  ['KI-Arbeitsprozesse', 'Wie gebaut wird statt was: Projektplan, Detailpläne, Arbeitsregeln der KI-Sessions, abgelegtes Recherche-Wissen.'],
+  [UEBRIGE_TECHNIK, 'Technische Flächen, die in keines der sechs Felder fallen — bewusst nicht eingeordnet, statt eine Einordnung zu erfinden.'],
+];
+
+/**
+ * Pfadpräfix → Wirkungsbereich. Längster Präfix gewinnt (dieselbe Trennstellen-
+ * Regel wie `flaechenKlartext`), Mehrfach-Zuordnung eines Schritts ist normal.
+ *
+ * Zwei Abgrenzungen sind bewusst gesetzt und stehen darum hier:
+ *  * `src/lib/normtext` und `src/lib/rechtsprechung` zählen zu den DATEN, nicht
+ *    zur Rechtslogik — dort wird geladen und dargestellt, nicht gerechnet.
+ *    Jeder andere `src/lib`-Pfad gilt im Zweifel als Rechtslogik, weil eine
+ *    zu Unrecht als harmlos einsortierte Rechenfläche der teurere Fehler wäre.
+ *  * `scripts/check-*` ist Prüfstrasse, `scripts/plan` Arbeitsprozess,
+ *    `scripts/fedlex*`/`scripts/normtext` Daten — «scripts» allein sagt nichts.
+ */
+export const BEREICH_PFADE: readonly (readonly [string, Wirkungsbereich])[] = [
+  ['src/pages', 'Benutzeroberfläche'],
+  ['src/components', 'Benutzeroberfläche'],
+  ['src/index.css', 'Benutzeroberfläche'],
+  ['index.html', 'Benutzeroberfläche'],
+  ['tailwind.config.js', 'Benutzeroberfläche'],
+  ['DESIGN-REGLEMENT', 'Benutzeroberfläche'],
+
+  ['src/lib', 'Rechtslogik & Berechnungen'],
+  ['src/data', 'Rechtslogik & Berechnungen'],
+
+  ['src/lib/normtext', 'Gesetzes- & Urteilsdaten'],
+  ['src/lib/rechtsprechung', 'Gesetzes- & Urteilsdaten'],
+  ['public/normtext', 'Gesetzes- & Urteilsdaten'],
+  ['public/rechtsprechung', 'Gesetzes- & Urteilsdaten'],
+  ['scripts/normtext', 'Gesetzes- & Urteilsdaten'],
+  ['scripts/rechtsprechung', 'Gesetzes- & Urteilsdaten'],
+  ['scripts/fedlex', 'Gesetzes- & Urteilsdaten'],
+  ['daten', 'Gesetzes- & Urteilsdaten'],
+
+  ['scripts/datenhaltung', 'Datenhaltung'],
+  ['turso', 'Datenhaltung'],
+  ['golden', 'Datenhaltung'],
+
+  ['.github', 'Auslieferung & Prüfstrasse'],
+  ['vercel.json', 'Auslieferung & Prüfstrasse'],
+  ['package.json', 'Auslieferung & Prüfstrasse'],
+  ['package-lock.json', 'Auslieferung & Prüfstrasse'],
+  ['knip.json', 'Auslieferung & Prüfstrasse'],
+  ['scripts/check', 'Auslieferung & Prüfstrasse'],
+  ['scripts/gegenpruefung', 'Auslieferung & Prüfstrasse'],
+  ['e2e', 'Auslieferung & Prüfstrasse'],
+  ['src/tests', 'Auslieferung & Prüfstrasse'],
+
+  ['.claude', 'KI-Arbeitsprozesse'],
+  ['scripts/plan', 'KI-Arbeitsprozesse'],
+  ['ROADMAP', 'KI-Arbeitsprozesse'],
+  ['STRUKTUR.md', 'KI-Arbeitsprozesse'],
+  ['CLAUDE.md', 'KI-Arbeitsprozesse'],
+  ['fahrplaene', 'KI-Arbeitsprozesse'],
+  ['archiv', 'KI-Arbeitsprozesse'],
+  ['bibliothek', 'KI-Arbeitsprozesse'],
+];
+
+/**
+ * `kollision:`-Globs → Wirkungsbereiche, ohne Wiederholung und in kanonischer
+ * Reihenfolge. Ein Schritt darf mehrere tragen; ein nicht zuordenbarer Pfad
+ * erzeugt «Übrige Technik». Ohne Globs bleibt die Liste LEER — «keine Fläche
+ * deklariert» ist etwas anderes als «keinem Bereich zuzuordnen» (§8).
+ */
+export function wirkungsbereiche(globs: string[]): Wirkungsbereich[] {
+  const gefunden = new Set<Wirkungsbereich>();
+  for (const glob of globs) {
+    const pfad = glob.replace(/[*?{[].*$/, '').replace(/\/+$/, '');
+    let treffer: Wirkungsbereich | null = null;
+    let laenge = -1;
+    for (const [praefix, bereich] of BEREICH_PFADE) {
+      if (deckt(pfad, praefix) && praefix.length > laenge) {
+        treffer = bereich;
+        laenge = praefix.length;
+      }
+    }
+    gefunden.add(treffer ?? UEBRIGE_TECHNIK);
+  }
+  const out: Wirkungsbereich[] = WIRKUNGSBEREICHE.filter((b) => gefunden.has(b));
+  if (gefunden.has(UEBRIGE_TECHNIK)) out.push(UEBRIGE_TECHNIK);
+  return out;
+}
+
+/**
+ * Wirkungsbereiche als Badge-Reihe.
+ *
+ * Bewusst OHNE eigene CSS-Klasse: die bestehende `.chip ready` reicht, und ein
+ * Zusatz im gemeinsamen Stylesheet änderte alle vier Seiten (die drei anderen
+ * sollen byte-gleich bleiben). Die Unterscheidung trägt hier der Text, nicht
+ * die Farbe — was zugleich farbunabhängig lesbar ist.
+ */
+export function bereichsBadges(globs: string[]): string {
+  const b = wirkungsbereiche(globs);
+  if (!b.length) return '';
+  return ` ${b.map((x) => `<span class="chip ready" title="Wirkungsbereich">${esc(x)}</span>`).join(' ')}`;
+}
+
+/**
+ * Ein Schritt in der Anzeige: **Klartext-Titel zuerst**, das Kürzel danach in
+ * Klammern (Auftrag David 5.8.2026 — nie mehr ID-first).
+ *
+ * Warum übersetzen statt umbenennen: die Kürzel sind projektweite Verweis-Anker
+ * (ROADMAP, Fahrpläne, Commit-Trailer, Branch-Namen). Sie umzubenennen liesse
+ * hunderte Bestandsverweise auf das Falsche zeigen — dieselbe Fehlerklasse, die
+ * CLAUDE.md §16 für Paragraphen-Nummern festhält. Sie bleiben also stehen wie
+ * Hausnummern und bekommen nur ein lesbares Schild davor.
+ */
+export function schrittLabel(titel: string, id: string, fett = true): string {
+  const t = esc(titel);
+  return `${fett ? `<b>${t}</b>` : t} <span class="id">(${esc(id)})</span>`;
+}
+
+/** Was der Block anzeigt. Alle Felder sind bereits erhoben — die Funktion rechnet nicht. */
+export interface WasPassiert {
+  /** Schritte auf `wip`: Klartext-Titel, Kürzel und ihre `kollision:`-Globs (roh). */
+  imBau: { titel: string; id: string; flaechen: string[] }[];
+  /** Parallele Bau-Plätze (Worktrees ohne Haupt-Repo); `null` = nicht abfragbar. */
+  bauplaetze: number | null;
+  /** Letzte `main`-Commits; `null` = git nicht abfragbar. */
+  gelandet: { datum: string; betreff: string }[] | null;
+  /** Schritte, deren Blocker-NAME David nennt. */
+  wartetAufDavid: { titel: string; id: string; blocker: string; flaechen: string[] }[];
+  /**
+   * Übrige blockierte Schritte — Blocker-Name ohne «david».
+   *
+   * Sie werden GEZÄHLT statt verschwiegen: die Kopfzeile derselben Seite nennt
+   * die Gesamtzahl der Blockierten, und ein Block, der weniger zeigt, sähe nach
+   * einem Widerspruch aus. Belegter Fall 5.8.2026 — `richter-analytik-gate`
+   * verlangt laut `@blockers`-Register ausdrücklich «bewusste Freigabe Davids»,
+   * trägt seinen Namen aber ohne «david». Die Namens-Erkennung untertreibt hier
+   * also; die Zahl macht das sichtbar, ohne dass der Generator raten müsste,
+   * was ein David-Gate ist (§8).
+   */
+  weitereBlockierte: number;
+  /** Relativer Verweis auf die Seite «Arbeitsweise & Glossar». */
+  methodeDatei: string;
+  /** Erzeugungs-Zeitpunkt im Klartext — der Wahrheitsanker der ganzen Seite. */
+  stand: string;
+}
+
+/** Ein Satz über die parallelen Bau-Plätze — die drei Fälle sind fest formuliert. */
+function bauplatzSatz(n: number | null): string {
+  if (n === null) return 'Wie viele Bauplätze gerade offen sind, lässt sich auf diesem Rechner nicht abfragen.';
+  if (n === 0) return 'Sonst keine parallelen Bauplätze — es läuft höchstens eine Arbeit auf einmal.';
+  if (n === 1) return '1 weiterer Bauplatz ist aktiv: dort wird gleichzeitig an etwas anderem gearbeitet.';
+  return `${n} weitere Bauplätze sind aktiv: dort wird gleichzeitig an anderem gearbeitet.`;
+}
+
+/** Der Block «Was gerade passiert» — reine Funktion über bereits erhobenen Daten. */
+export function wasGeradePassiert(d: WasPassiert): string {
+  const imBau = d.imBau.length
+    ? d.imBau
+        .map((s) => {
+          const worte = flaechenKlartext(s.flaechen);
+          const betrifft = worte.length
+            ? `Betrifft: ${esc(worte.join(' · '))}`
+            : 'Betrifft: das ganze Projekt — für dieses Arbeitspaket ist kein Bereich eingegrenzt.';
+          return `<li><span class="s wip"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.flaechen)}<br><span class="sub">${betrifft}</span></div></li>`;
+        })
+        .join('\n')
+    : '<li><span class="s ready"></span><div>An keinem Arbeitspaket wird gerade gebaut.</div></li>';
+
+  const gelandet =
+    d.gelandet === null
+      ? '<li><span class="s ready"></span><div>Die Projekt-Geschichte lässt sich auf diesem Rechner gerade nicht abfragen (git nicht verfügbar).</div></li>'
+      : d.gelandet.length === 0
+        ? '<li><span class="s ready"></span><div>Noch nichts fertig geworden.</div></li>'
+        : d.gelandet
+            .map((c) => `<li><span class="s done"></span><div>${esc(c.betreff)}<br><span class="sub">fertig am ${esc(c.datum)}</span></div></li>`)
+            .join('\n');
+
+  const david = d.wartetAufDavid.length
+    ? d.wartetAufDavid
+        .map((s) => `<li><span class="s block"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.flaechen)}<br><span class="sub">wartet auf deine Entscheidung: ${esc(s.blocker)}</span></div></li>`)
+        .join('\n')
+    : '<li><span class="s done"></span><div>Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.</div></li>';
+
+  return `<section id="jetzt">
+  <p class="eyebrow">In einfachen Worten</p>
+  <h2>Was gerade passiert</h2>
+  <p class="lage"><b>Stand: ${esc(d.stand)}</b></p>
+  <p class="lede">Drei Fragen, ohne Fachsprache beantwortet: Woran wird gerade gearbeitet, was ist zuletzt
+  fertig geworden, und was liegt bei dir. Die Fachfassung derselben Lage steht weiter unten auf dieser Seite.
+  Die grauen Schilder nennen den <b>Wirkungsbereich</b> — welchen Teil des Projekts ein Arbeitspaket berührt;
+  alle sechs sind auf der Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> erklärt.</p>
+
+  <h3>Gerade im Bau</h3>
+  <ul class="liste">${imBau}</ul>
+  <p class="hinweis">${esc(bauplatzSatz(d.bauplaetze))} Ein «Bauplatz» ist eine eigene Arbeitskopie des Projekts:
+  zwei Arbeiten laufen darin gleichzeitig, ohne sich in die Dateien zu greifen.</p>
+
+  <h3>Zuletzt fertig geworden</h3>
+  <p class="sub">Die letzten fünf gelandeten Arbeitspakete — die Titel sind Fachtitel und stehen unverändert da.</p>
+  <ul class="liste">${gelandet}</ul>
+
+  <h3>Wartet auf David</h3>
+  <ul class="liste">${david}</ul>
+  ${d.weitereBlockierte > 0 ? `<p class="hinweis">Dazu ${d.weitereBlockierte === 1 ? 'wartet 1 weiteres Arbeitspaket' : `warten ${d.weitereBlockierte} weitere Arbeitspakete`} auf eine Klärung, die nicht schon im Namen bei dir liegt — vollständig unter <a href="#david">Wartet auf dich, David</a>.</p>\n  ` : ''}<p class="hinweis">Diese Angaben stammen vom letzten <span class="id">npm run plan:bild</span>-Lauf (${esc(d.stand)}).
+  Jeden Fachbegriff dieser Seite erklärt die Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> in je einem Satz.</p>
+</section>`;
+}
+
+// ---------------------------------------------------------------------------
+// Gemeinsames der Seiten-Module
+//
+// `SeitenOpts` und `fussnote` lagen bis 5.8.2026 in `bildSeiten.ts`. Seit die
+// Methode-Seite ein eigenes Modul hat (§6.6-Split, s. bildMethode.ts), brauchen
+// sie ZWEI Seiten-Module — und zwei Kopien wären zwei Wahrheiten (§5). Sie
+// gehören ohnehin hierher: der eine ist der Vertrag jeder Seiten-Funktion, der
+// andere ein Wiederhol-Baustein wie `kacheln` oder `tabelle`.
+// ---------------------------------------------------------------------------
+
+/** Aufruf-Vertrag jeder Seiten-Funktion. */
+export interface SeitenOpts {
+  /** Pfad der Index-Seite (`--out`) — Basis der relativen Verweise. */
+  indexPfad: string;
+  watch: number | null;
+  /** Erzeugungs-Zeitstempel; für alle vier Seiten eines Laufs identisch. */
+  stand: string;
+}
+
+/** Gemeinsame Fussnote aller vier Seiten; `zusatz` nennt die Quellen der Seite. */
+export function fussnote(zusatz: string): string {
+  return `<footer>
+  <p>Erzeugt von <span class="id">npm run plan:bild</span> aus ROADMAP.md (Parser und Resolver von <span class="id">plan:next</span>),
+  den Korpus-Registern, git und gh. ${zusatz}
+  Diese Dateien sind git-ignoriert — sie sind eine Projektion, nie eine zweite Wahrheit (§5).</p>
+</footer>`;
+}
+
 /** Deutsche Monatsbeschriftung aus «YYYY-MM». */
 const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 export function monatLabel(key: string): string {

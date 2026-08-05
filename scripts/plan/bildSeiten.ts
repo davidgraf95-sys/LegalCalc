@@ -17,10 +17,12 @@ import { resolve, type Buckets } from './aufloesen';
 import {
   KANTONE,
   OHNE_FAHRPLAN,
+  bauPlaetze,
   bauStatistik,
   baustellenInfo,
   blockerSeitTagen,
   branchNamen,
+  letzteCommits,
   chronikErledigt,
   chronikMeilensteine,
   katalogGruppen,
@@ -39,15 +41,20 @@ import {
   type NormErlass,
   type SchrittInfo,
 } from './bildDaten';
-import { esc, kacheln, monatLabel, rahmen, seitenDatei, seitenKopf, tabelle } from './bildHtml';
-
-export interface SeitenOpts {
-  /** Pfad der Index-Seite (`--out`) — Basis der relativen Verweise. */
-  indexPfad: string;
-  watch: number | null;
-  /** Erzeugungs-Zeitstempel; für alle vier Seiten eines Laufs identisch. */
-  stand: string;
-}
+import {
+  bereichsBadges,
+  esc,
+  fussnote,
+  kacheln,
+  monatLabel,
+  rahmen,
+  schrittLabel,
+  seitenDatei,
+  seitenKopf,
+  tabelle,
+  wasGeradePassiert,
+  type SeitenOpts,
+} from './bildHtml';
 
 // ---------------------------------------------------------------------------
 // Statische Passagen
@@ -84,35 +91,6 @@ urheberrechtsfreien Quellen; jede Rechtsangabe trägt Norm, Link und Stand.`;
 
 const STATUS_SATZ = `«Entwurf» heisst: gebaut, getestet, nutzbar — die fachliche Einzelabnahme durch den
 Projekteigner folgt planmässig ab Dezember 2026.`;
-
-/** Arbeitsweise — vier Bahnen, Landung, Gegenprüfung, 26×-Slot, Rollenteilung. */
-const BAHNEN: { name: string; text: string }[] = [
-  { name: 'Daten & Gesetzes-Korpus', text: 'Erlasse von der amtlichen Quelle holen, treu speichern, auf Änderungen überwachen. Berührt die Extraktions- und Registerdateien.' },
-  { name: 'Rechtsprechung', text: 'Gerichtsentscheide einlesen, normalisieren und mit den zitierten Normen verknüpfen. Eigene Import- und Registerdateien.' },
-  { name: 'Werkzeuge & Vorlagen', text: 'Rechner und Dokumentvorlagen: Rechenkern, Formulare, Ausgabe als PDF und Word. Eigene Engine- und Schema-Dateien.' },
-  { name: 'Querschnitt', text: 'Darstellung, Navigation, Tempo, Barrierefreiheit, Prüf-Automatik. Berührt vieles flach statt weniges tief.' },
-];
-
-/** Glossar — je ein Laien-Satz, projektbezogen (statisch). */
-const GLOSSAR: { begriff: string; erklaerung: string }[] = [
-  { begriff: 'PR (Pull Request)', erklaerung: 'Ein Änderungsvorschlag am Programm-Code: alle Änderungen eines Arbeitspakets gebündelt, Zeile für Zeile nebeneinandergestellt und erst nach bestandener Prüfung übernommen.' },
-  { begriff: 'CI (fortlaufende Integration)', erklaerung: 'Der Prüf-Automat bei GitHub: Er nimmt jede eingereichte Änderung, baut die Plattform damit neu und lässt sämtliche Prüfungen laufen — ohne dass jemand daran denken muss.' },
-  { begriff: 'Tor (englisch «check»)', erklaerung: 'Eine automatische Prüfung, die eine Landung blockiert, solange sie rot ist — etwa «zeigen alle Norm-Verweise noch auf den richtigen Artikel?» oder «rechnet die Fristen-Engine unverändert?».' },
-  { begriff: 'Golden', erklaerung: 'Eingefrorene Beispiel-Ergebnisse (fertige Dokumente, Rechenausgaben). Ein Umbau darf sie nicht um ein einziges Zeichen verändern — sonst war es kein Umbau, sondern eine inhaltliche Änderung.' },
-  { begriff: 'Worktree (Arbeitskopie)', erklaerung: 'Eine zweite, vollständige Kopie des Projekts auf derselben Festplatte. Zwei Baustellen laufen darin gleichzeitig, ohne sich gegenseitig in die Dateien zu greifen.' },
-  { begriff: 'Branch (Zweig)', erklaerung: 'Eine benannte Abzweigung der Projekt-Geschichte. Auf ihr wird gebaut; erst beim Zusammenführen fliesst die Arbeit in den Hauptstand zurück.' },
-  { begriff: 'main (Hauptzweig)', erklaerung: 'Der Stand, der ausgeliefert wird. Was hier ankommt, ist wenige Minuten später öffentlich sichtbar.' },
-  { begriff: 'wip (englisch «work in progress»)', erklaerung: 'Der Vermerk am Plan-Schritt «hieran wird gerade gebaut». Er verhindert, dass zwei Sessions unwissentlich dieselbe Arbeit doppelt machen.' },
-  { begriff: 'Gegenprüfung', erklaerung: 'Eine bewusst feindselige Zweitprüfung durch ein anderes KI-Modell als das bauende: Es sucht gezielt den Fehler, statt die eigene Arbeit zu bestätigen.' },
-  { begriff: 'Risikopfad', erklaerung: 'Alle Programmteile, die Rechtsinhalte berechnen oder aus Gesetzestexten herauslösen. Ein Fehler dort wird zu einer falschen Rechtsauskunft — deshalb gilt hier die Gegenprüfungs-Pflicht.' },
-  { begriff: 'Deploy (Auslieferung)', erklaerung: 'Die Veröffentlichung an alle Nutzer. In diesem Projekt gibt es dafür keinen eigenen Knopf: Was in den Hauptzweig aufgenommen wird, geht automatisch live.' },
-  { begriff: '26×-Slot', erklaerung: 'Ein Einbahn-Ticket für Arbeiten, die alle 26 Kantone betreffen. Nur eine solche Arbeit darf gleichzeitig laufen — sonst kollidieren zwei Sessions in denselben 26 Datenbeständen.' },
-  { begriff: 'Status «Entwurf»', erklaerung: 'Das Werkzeug ist gebaut, automatisch getestet und benutzbar — die fachliche Einzelabnahme durch den Projekteigner steht noch aus.' },
-  { begriff: 'Status «geprüft»', erklaerung: 'Der Projekteigner hat den Inhalt Norm für Norm abgenommen. Diese Stufe wird nie automatisch vergeben; heute trägt sie noch kein Eintrag.' },
-  { begriff: 'Status «geplant»', erklaerung: 'Vorgesehen, aber noch nicht gebaut. Auf der Plattform als «In Vorbereitung» gekennzeichnet und ohne Norm-Angaben — damit nichts Unfertiges nach Substanz aussieht.' },
-  { begriff: '@queue (Warteschlange)', erklaerung: 'Die eine Prioritätsliste des Projekts: Sie legt fest, welcher offene Schritt als Nächstes gebaut wird. Ohne sie entschiede die Tagesform.' },
-  { begriff: 'Fahrplan / Baustelle', erklaerung: 'Eine «Baustelle» bündelt zusammengehörige Schritte; ihr «Fahrplan» ist das Detaildokument dazu — von der Begründung über die einzelnen Bauschritte bis zur Abnahme-Bedingung.' },
-];
 
 // ---------------------------------------------------------------------------
 // Bau-Prompt (Steuerpult-Auflage 1 — sechs Pflicht-Bestandteile, Spec)
@@ -170,14 +148,6 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
 // ---------------------------------------------------------------------------
 // Gemeinsame Bausteine der Seiten
 // ---------------------------------------------------------------------------
-function fussnote(zusatz: string): string {
-  return `<footer>
-  <p>Erzeugt von <span class="id">npm run plan:bild</span> aus ROADMAP.md (Parser und Resolver von <span class="id">plan:next</span>),
-  den Korpus-Registern, git und gh. ${zusatz}
-  Diese Dateien sind git-ignoriert — sie sind eine Projektion, nie eine zweite Wahrheit (§5).</p>
-</footer>`;
-}
-
 /** Status-Punkt-Klasse + Klartext-Etikett einer Katalog-Karte. */
 function kartenStatus(status: string): { punkt: string; text: string } {
   if (status === 'entwurf') return { punkt: 'done', text: 'nutzbar (Entwurf)' };
@@ -266,7 +236,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   const imBau: string[] = [];
   for (const id of b.inArbeit) {
     const pr = prs?.find((p) => p.roadmapId === id);
-    imBau.push(`<li><span class="s wip"></span><div><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span><br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
+    imBau.push(`<li><span class="s wip"></span><div>${schrittLabel(t(id), id)}${bereichsBadges(byId.get(id)?.etikett.kollision ?? [])}<br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
   }
   const fremdePrs = (prs ?? []).filter((p) => !b.inArbeit.includes(p.roadmapId ?? ''));
   for (const p of fremdePrs) {
@@ -277,7 +247,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   const gelandetHtml = (gelandet ?? [])
     .map((p) => {
       const wann = new Date(p.mergedAt).toLocaleString('de-CH', { dateStyle: 'short', timeStyle: 'short' });
-      const schritt = p.roadmapId ? ` <span class="id">${esc(p.roadmapId)}</span>` : '';
+      const schritt = p.roadmapId ? ` <span class="id">(${esc(p.roadmapId)})</span>` : '';
       return `<li><span class="s done"></span><div>${prLink(p.number, `PR #${p.number}`)}: ${esc(p.title)}${schritt}<br><span class="sub">gelandet ${esc(wann)}</span></div></li>`;
     })
     .join('\n');
@@ -286,7 +256,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   // kollisionsfreie ready-Schritte; @queue-Rang steht darin vorn.
   const laneEmpfehlung = (b.lanes[0] ?? []).filter((id) => prompts[id]).slice(0, 4);
   const laneHtml = laneEmpfehlung
-    .map((id) => `<li><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span> <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
+    .map((id) => `<li>${schrittLabel(t(id), id)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
     .join('\n');
 
   const karten = kartenDaten
@@ -308,7 +278,7 @@ export function lagebildSeite(o: SeitenOpts): string {
               : e.etikett.status === 'wip'
                 ? ' <span class="sub">🔨 im Bau</span>'
                 : '';
-          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${esc(t(e.id))} <span class="id">${esc(e.id)}</span>${knopf}</div></li>`;
+          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${knopf}</div></li>`;
         })
         .join('\n');
       return `<div class="card">
@@ -327,7 +297,7 @@ export function lagebildSeite(o: SeitenOpts): string {
       const e = byId.get(id);
       const st = e?.etikett.status ?? '?';
       const zusatz = st === 'wip' ? ' <span class="chip wip">im Bau</span>' : baubar.has(id) ? ` <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button>` : '';
-      return `<li><b>${esc(t(id))}</b> <span class="id">${esc(id)}</span>${zusatz}</li>`;
+      return `<li>${schrittLabel(t(id), id)}${zusatz}</li>`;
     })
     .join('\n');
 
@@ -335,7 +305,7 @@ export function lagebildSeite(o: SeitenOpts): string {
     ...b.blockiert.map((x) => {
       const tage = blockerSeitTagen(x.blocker);
       const seit = tage !== null && tage > 0 ? ` <span class="quelle">— wartet seit ${tage} Tag${tage === 1 ? '' : 'en'}</span>` : '';
-      return `<li><b>${esc(t(x.id))}</b> <span class="id">${esc(x.id)}</span> — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
+      return `<li>${schrittLabel(t(x.id), x.id)}${bereichsBadges(byId.get(x.id)?.etikett.kollision ?? [])} — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
     }),
     ...DAVID_FRAGEN.map((f) => `<li>${esc(f.frage)} <span class="quelle">(${esc(f.quelle)})</span></li>`),
   ].join('\n');
@@ -372,10 +342,34 @@ export function lagebildSeite(o: SeitenOpts): string {
   (dieselbe Logik wie <span class="id">npm run plan:next</span>).`,
     extra: `<p class="lage"><b>${esc(lageSatz)}</b></p>
   ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
-  <nav class="springen">Springen zu: <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>`,
+  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>`,
+  });
+
+  // Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
+  // 5.8.2026). Er steht VOR allen Fachsektionen und speist sich aus DENSELBEN
+  // Resolver-Daten wie sie — er übersetzt, er zählt nicht neu (§5).
+  //
+  // «Wartet auf David» ist mechanisch bestimmt: der Blocker-NAME enthält
+  // «david». Das ist die Register-Konvention der `@blockers`-Zeile
+  // (`vps-bestellung-david`, `entscheid-david-…`) und darum prüfbar — im
+  // Unterschied zu einer gepflegten Zweitliste, die still veralten würde.
+  // Die kuratierten DAVID_FRAGEN bleiben bewusst draussen: sie tragen keinen
+  // Schritt-Titel und stehen vollständig in der Sektion `#david` darunter.
+  const jetzt = wasGeradePassiert({
+    imBau: b.inArbeit.map((id) => ({ titel: t(id), id, flaechen: byId.get(id)?.etikett.kollision ?? [] })),
+    bauplaetze: bauPlaetze(),
+    gelandet: letzteCommits(5),
+    wartetAufDavid: b.blockiert
+      .filter((x) => x.blocker.toLowerCase().includes('david'))
+      .map((x) => ({ titel: t(x.id), id: x.id, blocker: x.blocker, flaechen: byId.get(x.id)?.etikett.kollision ?? [] })),
+    weitereBlockierte: b.blockiert.filter((x) => !x.blocker.toLowerCase().includes('david')).length,
+    methodeDatei: seitenDatei(o.indexPfad, 'methode'),
+    stand: o.stand,
   });
 
   const inhalt = `${kopf}
+
+${jetzt}
 
 <section id="david">
   <p class="eyebrow">Engpass</p>
@@ -792,76 +786,8 @@ function offeneSchritte(): number | null {
 // ===========================================================================
 // 4. Arbeitsweise & Glossar — plan-bild-methode.html
 // ===========================================================================
-export function methodeSeite(o: SeitenOpts): string {
-  const kopf = seitenKopf({
-    stand: o.stand,
-    watch: o.watch,
-    marke: 'Arbeitsweise',
-    h1: 'Wie an LexMetrik gebaut wird',
-    lede: 'Diese Seite erklärt das Verfahren — nicht den Stand. Sie ändert sich nur, wenn sich die Arbeitsweise ändert.',
-  });
-
-  const bahnen = BAHNEN.map(
-    (b) => `<div class="card"><div class="kopf"><h3>${esc(b.name)}</h3></div><p class="zweck">${esc(b.text)}</p></div>`,
-  ).join('\n');
-
-  const glossar = GLOSSAR.map(
-    (g) => `<dt>${esc(g.begriff)}</dt><dd>${esc(g.erklaerung)}</dd>`,
-  ).join('\n');
-
-  const inhalt = `${kopf}
-
-<section id="bahnen">
-  <p class="eyebrow">Vier Bahnen</p>
-  <h2>Warum mehrere Baustellen gleichzeitig laufen</h2>
-  <p class="lede">Die Arbeit ist in vier Bahnen geschnitten, die weitgehend <b>getrennte Dateiflächen</b> berühren.
-  Genau deshalb können mehrere Baustellen gleichzeitig laufen, ohne sich gegenseitig zu überschreiben — jede Session
-  arbeitet dabei in einem eigenen Worktree, also einer eigenen vollständigen Arbeitskopie des Projekts.</p>
-  <div class="cards">${bahnen}</div>
-</section>
-
-<section id="landung">
-  <p class="eyebrow">Landung</p>
-  <h2>Kein Merge ohne grüne Tore</h2>
-  <ul class="liste">
-    <li><span class="s done"></span><div><b>Kein Merge ohne grüne Tore.</b> Erst wenn sämtliche automatischen Prüfungen
-    bestanden sind, darf ein Arbeitspaket in den Hauptzweig.</div></li>
-    <li><span class="s done"></span><div><b>Struktur-Umbauten müssen byte-gleiche Ergebnisse beweisen (Golden).</b>
-    Wer nur die Ordnung des Codes ändert, muss zeigen, dass sich kein einziges Zeichen am Ergebnis geändert hat —
-    behaupten genügt nicht.</div></li>
-    <li><span class="s done"></span><div><b>Ein Merge nach <span class="id">main</span> ist zugleich der Live-Deploy.</b>
-    Es gibt keinen zweiten Knopf: Was aufgenommen wird, ist wenige Minuten später öffentlich.</div></li>
-  </ul>
-</section>
-
-<section id="gegenpruefung">
-  <p class="eyebrow">Gegenprüfung</p>
-  <h2>Rechtsinhalte werden feindselig gegengelesen</h2>
-  <p class="lede">Alles, was Rechtsinhalte berechnet oder aus Gesetzestexten extrahiert (der sogenannte
-  <b>Risikopfad</b>), wird vor der Landung von einem <b>unabhängigen Modell adversarial gegengeprüft</b> — also von
-  einer anderen KI als der bauenden, mit dem ausdrücklichen Auftrag, den Fehler zu finden statt die Arbeit zu bestätigen.
-  Ohne quittiertes Verdikt bleibt die Landung gesperrt.</p>
-  <p class="lede">Arbeiten, die <b>alle 26 Kantone</b> betreffen, laufen strikt nacheinander: Es gibt genau einen
-  «26×-Slot», und wer ihn hält, arbeitet allein — sonst kollidieren zwei Sessions in denselben 26 Datenbeständen.</p>
-</section>
-
-<section id="rollen">
-  <p class="eyebrow">Rollenteilung</p>
-  <h2>Wer was macht</h2>
-  <p class="lede">Die Hauptsession orchestriert; Unteragenten bauen und prüfen, Modellwahl nach Schwierigkeit.
-  Die Hauptsession nimmt keine Erfolgsmeldung ohne prüfbares Artefakt an — Commit-Nummer, PR-Nummer oder
-  Tor-Ausgabe; alles andere gilt als nicht erfolgt.</p>
-  <p class="lede">Fachliche Abnahmen, Budget-Entscheide und der Status «geprüft» bleiben beim Projekteigner und werden
-  nie automatisch gesetzt.</p>
-</section>
-
-<section id="glossar">
-  <p class="eyebrow">Glossar</p>
-  <h2>Die Begriffe in einem Satz</h2>
-  <dl class="glossar">${glossar}</dl>
-</section>
-
-${fussnote('Diese Seite ist bewusst statischer Text: Sie beschreibt das Verfahren, nicht den Messstand.')}`;
-
-  return rahmen({ indexPfad: o.indexPfad, aktiv: 'methode', titel: `LexMetrik — Arbeitsweise ${o.stand}`, watch: o.watch, inhalt });
-}
+// Liegt seit dem §6.6-Split vom 5.8.2026 in `bildMethode.ts` (rein statische
+// Seite, keine Datenquelle). Hier nur die Fassade, damit der bestehende Import
+// in `bild.ts` unverändert gültig bleibt.
+export { methodeSeite } from './bildMethode';
+export type { SeitenOpts } from './bildHtml';

@@ -14,6 +14,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import { laufeEcht, parseWorktrees, type Laufe } from './lage';
 import { BULLET_RE } from './parse';
 import { headings, trefferFuer } from '../fahrplanSlicerKern';
 import { ALLE_KARTEN } from '../../src/lib/startseiteConfig';
@@ -339,6 +340,68 @@ export function worktreesUndBranches(): { worktrees: string[]; altBranches: numb
 /** Alle lokalen Branch-Namen (für die wip-Verstoss-Sonde). */
 export function branchNamen(): string[] {
   return (sh('git', ['branch', '--format=%(refname:short)']) ?? '').split('\n').filter(Boolean);
+}
+
+// ---------------------------------------------------------------------------
+// Laien-Block «Was gerade passiert» — Zulieferung (Schritt QS-PLAN-BILD-LAGE)
+//
+// Beide Sammler nehmen ihren Kommando-Runner als Parameter und laufen per
+// Default mit `laufeEcht` aus lage.ts — DEM Runner mit hartem Timeout (5 s).
+// Zwei Gründe, warum hier nicht `sh()` genügt: (a) der Block steht ganz oben
+// auf der Einstiegsseite, ein hängendes git dürfte sie nicht blockieren;
+// (b) ein injizierbarer Runner macht die Sammler ohne echtes git testbar
+// (§6.7 — ein Fehlerpfad, der nur auf einer kaputten Maschine auftritt, wird
+// nie geprüft). Die Worktree-Zerlegung kommt aus `parseWorktrees` derselben
+// Datei, nicht aus einem zweiten Regex (§5).
+// ---------------------------------------------------------------------------
+
+/**
+ * Zahl paralleler Bau-Plätze (Worktrees ohne das Haupt-Repo).
+ *
+ * `null` heisst «nicht abfragbar», nie «keine» — `worktreesUndBranches()`
+ * kann das nicht unterscheiden (`sh()` liefert dort bei Ausfall `''`, was zu
+ * einer leeren Liste zerfällt). Für einen Laien-Satz ist der Unterschied
+ * zwischen «keine parallelen Bauplätze» und «weiss ich gerade nicht» aber
+ * genau der zwischen Aussage und Falschaussage (§8).
+ */
+export function bauPlaetze(laufe: Laufe = laufeEcht): number | null {
+  try {
+    return parseWorktrees(laufe('git', ['worktree', 'list', '--porcelain'])).filter((w) => !w.haupt).length;
+  } catch {
+    return null;
+  }
+}
+
+/** Ein gelandeter Commit auf `main`: Datum (TT.MM.JJJJ) und Betreffzeile im Wortlaut. */
+export interface MainCommit {
+  datum: string;
+  betreff: string;
+}
+
+/**
+ * Die letzten `anzahl` Commits auf `main` — Datum + Betreff, sonst nichts.
+ *
+ * Gelesen wird `main` und nicht `HEAD`: die Frage des Blocks ist «was ist
+ * FERTIG geworden», und fertig ist im Projekt, was auf `main` liegt (§9 —
+ * Merge nach main IST der Deploy). In einem Feature-Worktree zeigte `HEAD`
+ * dagegen auf unfertige eigene Arbeit.
+ *
+ * `null` heisst «git nicht abfragbar» (fehlt, Timeout, kein `main`) — die
+ * Anzeige setzt dafür eine Hinweiszeile, statt eine leere Liste als «nichts
+ * ist fertig geworden» misszuverstehen.
+ */
+export function letzteCommits(anzahl = 5, laufe: Laufe = laufeEcht): MainCommit[] | null {
+  try {
+    const roh = laufe('git', ['log', `-n${anzahl}`, '--date=format:%d.%m.%Y', '--format=%ad%x09%s', 'main']);
+    const zeilen = roh.split('\n').filter((z) => z.includes('\t'));
+    if (zeilen.length === 0) return null;
+    return zeilen.map((z) => {
+      const tab = z.indexOf('\t');
+      return { datum: z.slice(0, tab), betreff: z.slice(tab + 1) };
+    });
+  } catch {
+    return null;
+  }
 }
 
 // ---------------------------------------------------------------------------
