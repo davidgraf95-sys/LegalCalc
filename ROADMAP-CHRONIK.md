@@ -1874,3 +1874,22 @@ Wörtlich aus ROADMAP.md überführt (Diät 4.8.2026):
 
   - [x] **UI-NAV-Z · Zusatzposten Ausleitung (Z1 + Z2)** — ICS-/Kalender-Export der Fristergebnisse + Print-CSS für Fundstellen; Ist-Stand vor dem Bau erheben. §7.
     <!-- @meta id: W2·10-UI-NAV-Z · status: done · of: ja · blocker: null · dep: [W2·5d] · kollision: [src/lib/icsExport.ts, src/index.css] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## Übernahme 5.8.2026 — Ziff.-6-Vollzug (QS-PLAN-REVIEW)
+
+### Querschnitt-Band: Code-Inventur (§14-Intake 4.8.2026) — vier Strukturmassnahmen *(Befunde, done)*
+
+- [x] **`QS-CODE-TURSO` · Turso-Sync-Durchsatz: Wurzel-Fix des FTS-Insert-Pfads** *(Anlass: Code-Inventur 4.8.2026 — 22.3 von 32.8 min Sync entfallen auf zeilenweises Insert in `fts_entscheide_schaufenster` bei ~4 Zeilen/s; Timeout-Reserve trägt nur ~3.7× Korpusgrösse, kollidiert mit `W2·13-KANTONE`)* — **Risikopfad** (`scripts/datenhaltung`) ⇒ Gegenprüfung. Abgrenzung: nur Durchsatz des bestehenden Syncs — Architektur bleibt `W2·6-DATA`, Wachstums-Schwellen bleiben `QS-AUTOMATIK`. **Detail:** [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) §1.
+  <!-- @meta id: QS-CODE-TURSO · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/datenhaltung, .github/workflows/turso-sync.yml] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md -->
+- [x] **`QS-CODE-AUSSENKANTEN` · Unbewachte Aussenkanten: Tor `check:ui-normzitate` + typisierte JSON-Kanten** *(Anlass: Code-Inventur 4.8.2026 — 1'141 hart kodierte `Art.`-Zitate in 107 UI-Dateien sind eine zweite Norm-Quelle ohne Tor gegen das Register; 9× `as unknown as` an JSON-Importen in `src/data` lassen Struktur-Drift compiler-stumm)* — Verhaltensneutral. **Detail:** [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) §3.
+  <!-- @meta id: QS-CODE-AUSSENKANTEN · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts, src/data, package.json] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md -->
+- [x] **`QS-CODE-ENTDOPPLUNG` · Entdopplungs-Programm Darstellungsschicht (D1–D7)** *(Anlass: Code-Inventur 4.8.2026 — 24 von 29 Vorlagen-Seiten rollen von Hand, was der existierende Rahmen `VorlagenSeite.tsx` kann; `VorlageAgGruendung` hält 55 Einzel-useState neben dem 24-fach genutzten `useWizardState`; Gerichtswahl-Block 6×, Kantonsvergleichs-Tabelle 4×, Permalink-Einlesen 17× kopiert)* — §3-konforme Verkleinerung NUR in der Darstellungsschicht. **Detail:** [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) §4.
+  <!-- @meta id: QS-CODE-ENTDOPPLUNG · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages, src/components/vorlagen, src/components/forms] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md -->
+- [x] **`QS-CODE-SPLITS` · Grossdatei-Aufteilungen mit dokumentiertem Schnitt** *(Anlass: Code-Inventur 4.8.2026 — sechs Misch-Dateien mit klarem Trenner: `fedlex.ts` 1'017 Z/4 Achsen, `zustaendigkeit.ts` 986 Z/2 Engines, `besetzung.ts` 874 Z Parser↔Kanon, `prozesskosten.ts`, `zitat-extraktion.ts`, `EntscheidLeser.tsx` 893-Z-Monolith neben dem in 28 Dateien zerlegten Gesetz-Leser)* — je Datei ein verhaltensneutraler Schritt nach Skill `refactoring`, **opportunistisch beim ohnehin anstehenden Bau an der Datei**, nie als Selbstzweck-Welle. **Detail:** [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) §5.
+  <!-- @meta id: QS-CODE-SPLITS · status: done · of: ja · blocker: null · dep: [] · kollision: [src/lib/fedlex.ts, src/lib/zustaendigkeit.ts, src/lib/rechtsprechung, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md -->
+
+### Welle 2·5d — Gesetzes-UX & Darstellungs-Reglement *(done, verschoben 5.8.2026)*
+
+- [x] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
+  <!-- @meta id: W2·5d · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16.

@@ -11,11 +11,13 @@
 // über dem 100-KB-Ceiling): dieselbe Mechanik, 14 weitere erledigte Schritte → Chronik-Abschnitt
 // «Umschichtung 4.8.2026». Entfernt: QS-UI-WARNLINE · QS-PLAN-BILD · QS-CODE-FRISTENKERN
 // · W2·5d-EID3/-ANNEX/-SPY/-YC · W2·10-UI-NAV-VR/-R1/-R2/-URL/-R3/-R4/-Z.
-// NICHT entfernt, obwohl done: 'W2·5d' — zwei offene Schritte tragen `dep: [W2·5d]`, Regel 4
-// verlangt die Existenz jeder dep-ID im Plan.
+// ZIFF-6-VOLLZUG 5.8.2026 (Chronik-Überführung): fünf erledigte Schritte → ROADMAP-CHRONIK.md
+// § «Übernahme 5.8.2026». Entfernt: QS-CODE-TURSO · QS-CODE-AUSSENKANTEN · QS-CODE-ENTDOPPLUNG
+// · QS-CODE-SPLITS · W2·5d. Der Kommentar zur W2·5d-Bindung unten entfällt: die dep-Einträge
+// in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
 export const INVENTAR: readonly string[] = [
   'W1·4',
-  'W2·5d', 'W2·6', 'W2·8', 'W2·9',
+  'W2·6', 'W2·8', 'W2·9',
   'W3·10', 'W3·11', 'W3·12', 'W3·13', 'W3·14',
   'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA', 'QS-TOK',
   'W2·6-DATA', 'W2·7-VZUI', 'W2·10-UI-NAV', 'W2·11-DESIGN',
@@ -91,11 +93,9 @@ export const INVENTAR: readonly string[] = [
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
   'QS-EXTQUELLEN',
 
-  // §14-Intake 4.8.2026 (Code-Inventur, Anordnung David «ok baue es ein»): fünf Schritte
-  // aus drei read-only Analysen; Befunde in bibliothek/betrieb/code-inventur-2026-08-04.md,
-  // Bau-Specs in FAHRPLAN-CODE-VERBESSERUNG.md (§6 dort: Verortung der Befunde, die in
-  // QS-PERF/QS-AUTOMATIK/QS-AUTOMATIK-PARITAET/QS-BASIS-DEPS geflossen sind).
-  'QS-CODE-TURSO', 'QS-CODE-AUSSENKANTEN', 'QS-CODE-ENTDOPPLUNG', 'QS-CODE-SPLITS',
+  // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
+  // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
+  // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)
 
   // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
