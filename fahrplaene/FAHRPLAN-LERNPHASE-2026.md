@@ -172,7 +172,7 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 
 ---
 
-## §3 · Gegenprüfungs-Werkzeuge aus dem §14-Intake 3.8.2026 (`QS-GP-BEREICH`, `QS-GP-PRERENDER`)
+## §3 · Gegenprüfungs- und Verifikations-Werkzeuge (§14-Intake 3.8.2026 + Nachbefunde, §3.1–§3.6)
 
 *Angelegt 3.8.2026 (Bauplan-QS). Beide sind Werkzeuge AM Beweis, nicht am Rechtsinhalt —*
 *reine Prüflogik (`Gegenpruefung: n/a`), aber beide müssen ihre Scheiterns-Fähigkeit zeigen (§6.7).*
