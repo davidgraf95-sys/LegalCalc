@@ -1,7 +1,7 @@
 # Selbstoptimierender Bau — Recherche 5.8.2026
 
 **Erstellt:** 5.8.2026 (Auftrag David, Recherche lex-recherche-Agent) ·
-**Stand aller Quellen:** 5.8.2026
+**Stand aller Quellen:** 5.8.2026 · **Runde 2 (Primärquellen) ergänzt:** 5.8.2026 abends
 
 **Auftrag:** David 5.8.2026 («wie kriegen wir es hin, dass sich der Bau von selbst
 optimiert?»). Web-/GitHub-Recherche (lex-recherche-Agent, ~20 Abfragen), Übersetzung
@@ -77,3 +77,56 @@ schlanke Retro-Bots: nichts Repo-natives gefunden. *Offen markiert.*
 Nur Bau-/Prüf-/Plan-Prozess. Rechtslogik (`src/lib/`), Engines und Korpus sind
 ausdrücklich ausgenommen — dort gilt Golden-Beweis + Gegenprüfung + Abnahme, keine
 Selbstoptimierung.
+
+
+## Runde 2 (5.8.2026 abends) — Primärquellen zum selbstverstärkenden Kreislauf
+
+Auftrag David: «zukünftiger Bau soll sich automatisch weiterentwickeln … Infos von
+Anthropic-Mitarbeitern oder anderen KI-Forschern». Kernfunde (je Quelle · Stand 5.8.2026):
+
+**Anthropic-Primärquellen:**
+- **Löschkriterium (offiziell, Best-Practices-Doku, code.claude.com/docs/en/best-practices):**
+  «Keep it concise. For each line, ask: would removing this cause Claude to make mistakes?
+  If not, cut it. Bloated CLAUDE.md files cause Claude to ignore your actual instructions.»
+  Anti-Muster «the over-specified CLAUDE.md»: was das Modell ohnehin richtig macht, streichen
+  oder in einen Hook wandeln.
+- **Halbjahres-Entrümpelung (Boris Cherny, Claude-Code-Schöpfer, YC-Talk 2026):** «Every six
+  months, delete your CLAUDE.md, delete your skills, delete your hooks, and see what the model
+  does» — viele Regeln sind Patches für Schwächen des damaligen Modells; Anthropic strich für
+  Opus 5 selbst 80 % des Claude-Code-Systemprompts. (Anekdotischer Erfahrungswert.)
+- **Skills wachsen aus Gotchas (T. Shihipar, claude.com/blog «How we use skills»):** beste
+  Skills starten mit wenigen Zeilen + einem Gotcha und wachsen an echten Fehlkanten;
+  PreToolUse-Logging macht Unter-/Übernutzung messbar (Nutzungsdaten statt Meinung).
+- **Automatisierungs-Vertrauen in «baby steps» (Cat Wu/T. Shihipar via Simon Willison,
+  21.7.2026):** Review-Automatisierung wird eval-belegt schrittweise ausgeweitet, nie sofort
+  vollautonom — deckt §17 «Automatisieren zuletzt».
+- **Cache-Ökonomie:** CLAUDE.md-Edits mitten in der Session invalidieren den Präfix-Cache —
+  Kostenargument für GEBÜNDELTE Lehren-Pflege am Session-Ende statt Dauer-Edits.
+
+**Forschung (empirisch belegt):**
+- **Reflexion** (arXiv:2303.11366): sprachliche Fehler-Reflexionen als Kontext des nächsten
+  Versuchs, HumanEval 80→91 % — Begründung, warum reine TEXT-Lehren (unser Register) wirken.
+- **Voyager** (arXiv:2305.16291): wachsende Bibliothek ausführbarer, geprüfter Skills als
+  Anti-Vergessen — Forschungs-Analogon zu `.claude/skills/`.
+- **Darwin-Gödel-Machine** (Sakana, arXiv:2505.22954): Selbstmodifikation überlebt nur bei
+  objektiv besserem Benchmark (SWE-bench 20→50 %) — ohne echtes Tor driftet Selbstverbesserung.
+- **AlphaEvolve** (DeepMind, arXiv:2506.13131): Fitness-Signal ausschliesslich deterministische
+  Evaluatoren, >1 Jahr produktiv — deckt §2.
+- **Reward-Hacking-Zahl** (arXiv:2607.05904): LLM-Richter im Self-Play vergab 0.72→0.94
+  Erfolg, wahre Korrektheit blieb 0.20 — der empirische Grund, warum ein LLM-Urteil NIE
+  Tor-Kriterium ist. Ergänzend Anthropic (arXiv:2511.18397): Reward-Hacking im RL-Training
+  generalisiert zu breiter Fehlausrichtung (Analogie-Warnung, kein 1:1-Mechanismus).
+- **Goodhart** (Sekundärquellen): Messgrösse als Ziel verdirbt die Messgrösse — Rework-/
+  CI-Raten bleiben Beobachtung, nie Ziel.
+
+**Unbestätigt/nicht gefunden:** «Auto-Dream»-Konsolidierungs-Subagent (nur Drittquellen, keine
+Anthropic-Primärquelle — als Gerücht führen) · kein quantitativer Vorher/Nachher-Beleg eines
+Teams für Regel-Pflege-Gewinne · kein offizieller Lösch-Rhythmus für Skills.
+
+**Essenz für `QS-SELBSTOPT` (ins Mandat übernommen):** (1) Löschkriterium je Zeile +
+terminierter Lösch-Review als eigener wiederkehrender Posten — Ent-Regulierung ist ein
+gleichwertiger Verbesserungsschritt (Auftrag David 5.8.: keine Über-Regulierung, keine
+unnötigen Sicherungen, die Bauzeit kosten) · (2) Lehren gebündelt am Session-Ende
+konsolidieren, aktiv kürzen · (3) Fitness-Signale nur deterministisch (nie LLM-Richter) ·
+(4) Automatisierung eval-belegt in kleinen Schritten · (5) Metriken als Beobachtung, nie
+als Ziel.
