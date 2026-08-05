@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 
-// Seite «Über» – Entstehungsgeschichte mit persönlichem Bezug.
+// Seite «Über» – Entstehungsgeschichte, Grundsätze und ehrliche Grenzen.
 export function Ueber() {
   return (
     <div className="space-y-10 max-w-reading">
@@ -19,22 +19,64 @@ export function Ueber() {
         <p>
           Das hat mich überrascht, denn eine Frist kennt kein Ermessen. Sie ergibt sich aus dem
           Gesetz und einigen Entscheiden, und am Ende steht ein einziges richtiges Datum. Wer es
-          verpasst, verliert das Recht. Eine solche Berechnung sollte verlässlich sein und sich
-          überprüfen lassen – nicht von der Tagesform eines Sprachmodells abhängen.
+          verpasst, verliert das Recht. Eine solche Berechnung darf nicht von der Tagesform eines
+          Sprachmodells abhängen – sie muss verlässlich sein und sich überprüfen lassen.
+        </p>
+
+        <h2 className="text-ink-900 font-medium pt-2">Was LexMetrik heute ist</h2>
+        <p>
+          Aus dem Fristenrechner ist eine Arbeitsplattform für Schweizer Recht geworden – gedacht
+          als Taschenmesser für den juristischen Alltag:
+        </p>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <span className="text-ink-900">Werkzeuge</span>, die Fristen, Beträge und Quoten nach
+            festen Regeln berechnen und Rechtsdokumente aus strukturierten Textbausteinen
+            zusammenstellen – jeder Rechenschritt wird angezeigt und ist mit der Norm belegt.
+          </li>
+          <li>
+            <span className="text-ink-900">Gesetzestexte</span> des Bundes und der Kantone im
+            Volltext – jede Bestimmung mit Link auf die geltende amtliche Fassung; die
+            gespeicherten Texte werden automatisch gegen die Quelle abgeglichen, damit keine
+            veraltete Fassung stehen bleibt.
+          </li>
+          <li>
+            <span className="text-ink-900">Rechtsprechung und Materialien</span> – Leitentscheide
+            und Gesetzgebungsunterlagen aus amtlichen Quellen, durchsuchbar neben den Normen.
+          </li>
+        </ul>
+
+        <h2 className="text-ink-900 font-medium pt-2">Wonach LexMetrik gebaut ist</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            <span className="text-ink-900">Feste Regeln statt Schätzung.</span> Dieselbe Eingabe
+            führt immer zum selben Ergebnis. In den Berechnungen rechnet kein Sprachmodell mit –
+            nirgends.
+          </li>
+          <li>
+            <span className="text-ink-900">Jede Angabe belegt.</span> Rechtswerte tragen die Norm,
+            den Link auf die geltende amtliche Fassung und den Stand. Massgeblich ist immer die
+            amtliche Fassung, nie die Kopie.
+          </li>
+          <li>
+            <span className="text-ink-900">Nur amtliche, urheberrechtsfreie Quellen.</span> Keine
+            Kommentarliteratur, keine Inhalte unklarer Herkunft.
+          </li>
+          <li>
+            <span className="text-ink-900">Ehrlicher Prüfstand.</span> Jeder Inhalt deklariert
+            offen, wie weit er geprüft ist; Unsicherheiten und offene Punkte werden angezeigt
+            statt geglättet.
+          </li>
+        </ul>
+        <p>
+          Offen gesagt wird auch, wie gebaut wird: LexMetrik entsteht mit Hilfe von KI – aber
+          gegen strenge, maschinelle Prüfungen. Jede Rechtsregel ist testgesichert, und kein Umbau
+          gelangt in den Betrieb, ohne zu beweisen, dass er kein Ergebnis verändert hat. Die KI
+          hilft beim Bauen; gerechnet wird ohne sie.
         </p>
         <p>
-          Genau dafür ist LexMetrik gebaut. Es rechnet nicht nach Wahrscheinlichkeit, sondern
-          wendet feste Regeln an – dieselbe Eingabe führt immer zum selben Ergebnis. Jeden Schritt
-          legt es offen und belegt ihn mit der Norm, dem Link auf die geltende amtliche Fassung und
-          dem Stand. Die juristische Prüfung nimmt es niemandem ab. Aber es liefert eine Grundlage,
-          die sich in Minuten kontrollieren lässt.
-        </p>
-        <p>
-          Aus dem Fristenrechner ist inzwischen eine Arbeitsplattform geworden. Werkzeuge berechnen
-          Fristen, Beträge und Quoten und stellen Rechtsdokumente aus festen, strukturierten
-          Textbausteinen zusammen. Gesetzestexte des Bundes und der Kantone stehen im Volltext bereit, ergänzt um
-          Leitentscheide und Gesetzesmaterialien. Alles stammt ausschliesslich aus amtlichen,
-          urheberrechtsfreien Quellen – und jeder Inhalt deklariert offen, wie weit er geprüft ist.
+          Die juristische Prüfung nimmt LexMetrik niemandem ab, und es ersetzt keine
+          Rechtsberatung. Aber es liefert eine Grundlage, die sich in Minuten kontrollieren lässt.
           Was in welcher Tiefe abgedeckt ist, zeigt die Seite{' '}
           <Link to="/abdeckung" className="text-brass-700 hover:text-brass-600">Abdeckung</Link>,
           die Arbeitsweise im Detail die Seite{' '}
