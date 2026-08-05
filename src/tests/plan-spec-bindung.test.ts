@@ -135,6 +135,42 @@ describe('Regel 11 — Stufe (b): ID-Bindung', () => {
   });
 });
 
+// Ein Schritt trägt genau EINEN Bau-Spec-Zeiger; weitere §-Verweise seiner Prosa
+// sind Kontext (Vorgeschichte, Referenz-§, Herkunftsbeleg). Im Bestand belegt an
+// `W2·5k-LINIEN-KONZEPT`: «**Detail:** … V2 §2 … ; Vorgeschichte A28:
+// FAHRPLAN-GESETZES-UX.md §10.9». Ein historischer Abschnitt muss die heutige
+// Schritt-ID nicht kennen — Stufe (b) auf ihn anzuwenden, triebe nur die
+// Allowlist auf. Stufe (a) gilt auch dort: ein toter Zeiger ist immer falsch.
+describe('Regel 11 — Bau-Spec-Zeiger vs. Kontext-Verweis', () => {
+  const zweiVerweise = (zweiter: string) =>
+    [
+      '## Die geordnete Abarbeitung',
+      '<!-- @blockers',
+      'b1: grund',
+      '-->',
+      `- [ ] **1 · Alpha** — **Detail:** ${verweis('§2')}`,
+      `  Vorgeschichte: [FAHRPLAN-ZIEL.md](${ZIEL_PFAD}) ${zweiter}.`,
+      `  ${META('W9·1-ALPHA')}`,
+      '',
+      'Siehe FAHRPLAN-PLAN-STEUERUNG.md.',
+      '',
+    ].join('\n');
+
+  it('Kontext-Verweis auf einen § ohne die Schritt-ID → kein Problem (Stufe b greift nicht)', () => {
+    expect(lauf(zweiVerweise('§1'), ['W9·1-ALPHA'])).toEqual([]);
+  });
+
+  it('NEGATIV: toter Kontext-Verweis → Problem (Stufe a gilt uneingeschränkt)', () => {
+    const p = lauf(zweiVerweise('§9'), ['W9·1-ALPHA']);
+    expect(p.some((x) => /Spec-Anker §9 .* nicht auf/.test(x.meldung))).toBe(true);
+  });
+
+  it('NEGATIV: der ERSTE Verweis bleibt ID-pflichtig, auch wenn ein zweiter folgt', () => {
+    const md = zweiVerweise('§2').replace(`**Detail:** ${verweis('§2')}`, `**Detail:** ${verweis('§1')}`);
+    expect(lauf(md, ['W9·1-ALPHA']).some((x) => /nennt "W9·1-ALPHA" nicht/.test(x.meldung))).toBe(true);
+  });
+});
+
 describe('Regel 11 — Allowlist', () => {
   // Der einzige Bestands-Eintrag: W3·10 zeigt in einen ARCHIVIERTEN Fahrplan aus
   // der Zeit vor der §-Überschriften-Konvention (`## P3` ohne §-Sigel, Schritt-ID

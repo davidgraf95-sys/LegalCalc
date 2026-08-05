@@ -23,6 +23,8 @@
 //       Überschrift gleicher oder höherer Ebene) muss die Schritt-ID wörtlich
 //       nennen. Damit wird die Intake-Regel «Bau-Spec im ROADMAP-Spec-§ des
 //       verlinkten Fahrplans» maschinell prüfbar statt bloss verabredet.
+// Stufe (a) trifft JEDEN Verweis, Stufe (b) den Bau-Spec-Zeiger — den ersten
+// §-Verweis der Schritt-Prosa (Begründung an der Prüfschleife unten).
 //
 // EHRLICHE GRENZEN (§8) — gemessen 5.8.2026 an ROADMAP.md: die Regel erfasst 66
 // von 68 Verweisen. Zwei Formen liegen bewusst ausserhalb, damit niemand mehr
@@ -245,7 +247,17 @@ function abschnitte(dateiText: string, anker: string): string[] {
 export function pruefeSpecBindung(md: string, leseDatei: (pfad: string) => string | null): SpecProblem[] {
   const probleme: SpecProblem[] = [];
   const cache = new Map<string, string | null>();
+  const gesehen = new Set<string>();
   for (const v of sammleVerweise(md)) {
+    // Stufe (b) gilt dem BAU-SPEC-Zeiger, und den gibt es je Schritt einmal: dem
+    // ersten §-Verweis seiner Prosa. Was danach folgt, ist Kontext — Vorgeschichte,
+    // Referenz-§, Herkunftsbeleg (im Bestand z. B. «Vorgeschichte A28:
+    // FAHRPLAN-GESETZES-UX.md §10.9» bei W2·5k-LINIEN-KONZEPT). Ein historischer
+    // Abschnitt muss die heutige Schritt-ID nicht kennen; ihn trotzdem zu binden,
+    // triebe nur die Allowlist auf. Stufe (a) gilt UNEINGESCHRÄNKT weiter: ein
+    // toter Zeiger ist auch als Kontext-Zeiger falsch.
+    const istSpecZeiger = !gesehen.has(v.id);
+    gesehen.add(v.id);
     const grund = SPEC_BINDUNG_AUSNAHMEN.get(`${v.id} ${v.anker}`);
     if (grund) continue;
     if (!cache.has(v.datei)) cache.set(v.datei, leseDatei(v.datei));
@@ -267,6 +279,7 @@ export function pruefeSpecBindung(md: string, leseDatei: (pfad: string) => strin
     // (b) ID-Bindung: der Verbund muss die Schritt-ID nennen — bei mehreren
     //     Einzel-Ankern genügt EINER, denn eine Bereichsangabe verteilt die Spec
     //     bewusst über mehrere §§ und nennt die ID dort, wo sie hingehört.
+    if (!istSpecZeiger) continue;
     const gebunden = v.teile.some((t) => abschnitte(text, t).some((a) => idTrifft(a, v.id)));
     if (!gebunden) {
       probleme.push({ id: v.id, meldung: `Spec-§ "${v.datei} ${v.anker}" (Z.${v.zeile}) nennt "${v.id}" nicht — der Anker löst auf, trifft aber die falsche Spec` });
