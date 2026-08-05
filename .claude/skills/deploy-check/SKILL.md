@@ -190,6 +190,8 @@ Geist verletzen.
 3. Kernrouten auf HTTP 200: `/`, `/rechner/tagerechner`,
    `/rechner/zustaendigkeit`, `/rechner/verjaehrung`,
    `/rechner/mietrecht`, `/vorlagen`, eine Vorlagen-Detailroute.
+   Prod-URL ist https://lexmetrik.vercel.app (eine Custom-Domain
+   lexmetrik.ch existiert NICHT — Fehlversuch 5.8.2026, curl exit 6).
 4. Lighthouse-Metriken manuell messen (QS-PERF/§15): CLS/LCP/TBT auf
    `/gesetze/bund/OR` unter 4× CPU — Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md`;
    bleibt manuell, bis ein CI-Chrome verdrahtet ist.

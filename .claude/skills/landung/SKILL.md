@@ -90,6 +90,16 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    **`cancelled` und `skipped` zählen als ROT**, nicht als «nicht rot» — ein
    abgebrochener Lauf hat nichts bewiesen. (Realfall 20.7.2026: 5 stumm
    abgebrochene `turso-sync`-Läufe, der Suchindex veraltete unbemerkt.)
+   **Ausnahme — DESIGNTE konditionale Jobs:** `Perf-Budget (§15 — nur bei
+   grüner Treue)` skippt auf JEDEM `pull_request`-Lauf per
+   `if: github.event_name != 'pull_request'` (ci.yml, Entscheid David
+   26.7.2026 — gemessen wird nach dem Merge auf main); dieser Skip ist
+   mergefähig, die §15-Substanz wird lokal per `npm run check:perf-budget`
+   auf dem gemergten Stand belegt. Gleiches gilt für Vercel «Canceled by
+   Ignored Build Step» = success (#445). Massstab: Ein Skip zählt nur dann
+   als erfüllt, wenn seine Bedingung DOKUMENTIERT designt ist UND die
+   Substanz anderweitig belegt wurde — jeder andere skipped/cancelled
+   bleibt ROT.
    **Und: FEHLENDE Checks zählen als PENDING, nie als grün.** Im Fenster
    direkt nach einem Push sind die Checks des neuen Heads noch nicht
    registriert — wer dann «kein pending, kein fail» als grün liest, merged

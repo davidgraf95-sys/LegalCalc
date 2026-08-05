@@ -252,6 +252,9 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   Regression; CI verdeckt ihn per `workers=1` + Retries. Vermutete Wurzel: dieselbe
   Zeitbudget-Klasse wie (a)–(d) — das 400-ms-Fenster der Scroll-Spy-Kopfzeile rennt gegen
   den 30-s-Attach-Timeout des Containers unter 6×-Drossel.
+  Ebenfalls lastfragil (5.8.2026, T14-Bau): scripts/datenhaltung/suche.test.ts —
+  beforeAll-Timeout 60 s, isoliert 30,4 s (nur Faktor-2-Luft); unter Parallel-Last
+  (Builds + e2e) reisst es reproduzierbar. Gleiche Fehlerklasse, gleicher Fix-Ort.
 - **Dateien:** `playwright.config.ts` / betroffene Specs, `scripts/datenhaltung/suche.test.ts`,
   `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`,
   `e2e/leser-ruecksprung-r5-r7.e2e.ts`, `e2e/leser-kopf-a9.e2e.ts`.
