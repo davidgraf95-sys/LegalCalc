@@ -245,9 +245,16 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   CPU-Drossel), erneut auf PR #449 (chf-Formatter-Diff) und auf PR #454 (Turso-Sync-Diff) —
   die Reader-Druckstrecke war in allen drei Diffs unberührt. Alle per Rerun/Neubasierung
   grün; Kosten je Vorfall ~1 Batterie-Zyklus (~18 min).
+- **Nachtrag 5.8.2026 (QS-TOK-Rest-Session, §17-Nebenfund, NICHT gefixt — nur dokumentiert):**
+  (e) `e2e/leser-kopf-a9.e2e.ts:63` fällt lokal unter Parallel-Last **reproduzierbar** —
+  Nullprobe auf `HEAD~1` (unveränderter main-Stand, drei Wiederholungen) 3/3 rot, dieselbe
+  Baseline zusätzlich 1× `leser-linien-eid3`. Defekt **vorbestehend auf main**, keine
+  Regression; CI verdeckt ihn per `workers=1` + Retries. Vermutete Wurzel: dieselbe
+  Zeitbudget-Klasse wie (a)–(d) — das 400-ms-Fenster der Scroll-Spy-Kopfzeile rennt gegen
+  den 30-s-Attach-Timeout des Containers unter 6×-Drossel.
 - **Dateien:** `playwright.config.ts` / betroffene Specs, `scripts/datenhaltung/suche.test.ts`,
   `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`,
-  `e2e/leser-ruecksprung-r5-r7.e2e.ts`.
+  `e2e/leser-ruecksprung-r5-r7.e2e.ts`, `e2e/leser-kopf-a9.e2e.ts`.
 
 ### §3.5 `QS-E2E-SHARD-GEN` — Shard-Zuordnung in die Spec, JSON generieren
 
