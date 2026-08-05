@@ -109,12 +109,41 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet (S0, Q
 | `slot` | 26×-Slot-Inhaberschaft (optional) | `inhaber` oder leer |
 | `seq-hart` | Harte Reihenfolge auf geteilten Dateien, §12 (optional) | Liste, z. B. `[QS-PERF(ArtikelBody.tsx)]` |
 | `seq-weich` | Weiche Reihenfolge-Empfehlung (optional) | Liste, analog |
+| `groesse` | Geschätzter Bau-Umfang (optional, s. u.) | `S` · `M` · `L` oder leer |
 
-*(Die drei optionalen Felder standen faktisch längst im Bestand; `seq-hart`/`seq-weich` kannte
+*(Die vier optionalen Felder standen faktisch längst im Bestand; `seq-hart`/`seq-weich` kannte
 der Etikett-Typ bis zum 31.7.2026 aber nicht und `serializeEtikett` verwarf sie beim
 Neu-Schreiben — `plan:set` löschte die Kollisionsreihenfolge damit still mit, Endprüfungs-Fund
 R2-16. Seither Teil des Typs, byte-treuer Round-Trip. **Die Tabellen-Überschrift «9 Felder» ist
-die historische Zählung der Pflichtfelder + `fahrplan`; die drei optionalen kommen hinzu.**)*
+die historische Zählung der Pflichtfelder + `fahrplan`; die optionalen kommen hinzu.**)*
+
+### Feld `groesse` — die Auswahl-Hilfe (Auftrag David 5.8.2026)
+
+**Anlass, wörtlich:** David wählt auf der Lagebild-Übersicht Bau-Prompts aus und will dabei
+«nicht zu grosse oder kleine nehmen». Bis dahin sah die Übersicht jedem Schritt gleich gross aus:
+ein Einzeiler-Doku-Posten und ein Dach-Schritt über 19 Batches trugen denselben Knopf.
+
+| Wert | Bedeutung | Was daraus folgt |
+|---|---|---|
+| `S` | Trägt **keine eigene Session** — die Fixkosten (Startlektüre, `plan:next`, Spec-Slice) lohnen sich allein nicht. | Nur **gebündelt** nehmen. Der Skill `bauschritt` bündelt in Station A mit 1–2 kollisionsfreien Nachbarn gleicher Risikoklasse. |
+| `M` | **Sessionfüllend** — der Normalfall. | Ohne Zusatz-Handgriff bauen. |
+| `L` | Voraussichtlich **zu gross** für eine Session. | **Vor** dem Bau in sessionfüllende Teilschritte schneiden (AP-6-Muster). Bei Dach-Schritten läuft der Bau ohnehin über die Unterschritte — dort den Unterschritt nehmen. |
+
+**Die Schätzung ist Heuristik und Steuerhilfe, nie ein Tor-Kriterium.** Kein `check:*` leitet aus
+ihr ein Verdikt ab; sie steuert weder Reihenfolge (`@queue`) noch Baubarkeit (`dep`/`blocker`).
+Weicht der Befund im Bau ab, wird das Feld korrigiert — die Abweichung ist ein Datum, kein Verstoss.
+
+**Schätzgrundlage** (so ist der Bestand am 5.8.2026 befüllt worden — 14× `S`, 60× `M`, 36× `L`):
+Anlass-/Spec-Text · Zahl der `kollision`-Flächen · Risikopfad bzw. Gegenprüfungspflicht ·
+erwarteter Golden-Re-Bless. **Im Zweifel `M`.** Ausgewiesene Konzept- und Entscheid-Schritte sowie
+reine Doku-Posten sind `S`; Dach-Schritte mit eigenen Unterschritten sind `L`.
+
+**Fehlen ist zulässig.** Ein Schritt ohne Feld zeigt im Lagebild «Grösse ungeschätzt» — die Anzeige
+rät **nicht** aus Kollisionszahl oder Prosalänge (§8). `check:plan` Regel 12 prüft ausschliesslich
+das **Vokabular** eines gesetzten Werts, nie dessen Vorhandensein und nie dessen Richtigkeit.
+Entsprechend wirft `parseEtikett` bei unbekanntem Wert bewusst **nicht** (anders als bei `status`
+und `slot`): ein Tippfehler in einer Lese-Hilfe darf nicht die ganze Plan-Werkzeugkette lahmlegen,
+er gehört als eine benannte Tor-Meldung ins `check:plan`.
 
 **Status-Grammatik (Befund #11):** `status := <wert> ('(' <agent/worktree> ')')?`. Der Schema-Check
 prüft nur den `<wert>` vor der Klammer gegen die erlaubte Menge; die optionale Klammer-Annotation hält

@@ -45,6 +45,7 @@ import {
   bereichsBadges,
   esc,
   fussnote,
+  groesseBadge,
   kacheln,
   monatLabel,
   rahmen,
@@ -117,6 +118,17 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
       })()
     : [];
   const pflichtZeilen = (info?.pflicht ?? []).map((p) => `   Pflichtlektüre: ${p}`);
+  // Die Grösse gehört in den PROMPT, nicht nur auf die Seite: der Grössen-Check in
+  // Station A des Skills `bauschritt` ist der einzige Ort, der aus ihr eine Handlung
+  // ableitet (bündeln bzw. schneiden), und `plan:next` gibt das Feld nicht aus. Stünde
+  // die Schätzung allein im Lagebild, ginge sie beim Kopieren des Auftrags verloren —
+  // die Session sähe genau das nicht, wofür geschätzt wurde.
+  const groesseZeile = {
+    S: ['Geschätzte Grösse: S — trägt keine eigene Session. Im Grössen-Check (Skill `bauschritt`, Station A) 1–2 kollisionsfreie Nachbarn gleicher Risikoklasse aus `ready-now` dazunehmen, je eigener Commit und Trailer.'],
+    M: ['Geschätzte Grösse: M — sessionfüllend, der Normalfall. Kein Zusatz-Handgriff im Grössen-Check.'],
+    L: ['Geschätzte Grösse: L — voraussichtlich zu gross für eine Session. VOR dem Bau in sessionfüllende Teilschritte schneiden (AP-6-Muster); bei einem Dach-Schritt stattdessen den passenden Unterschritt bauen.'],
+  }[e.etikett.groesse ?? ''] ?? ['Geschätzte Grösse: ungeschätzt — für diesen Schritt liegt keine Schätzung vor; den Umfang im Grössen-Check selbst beurteilen.'];
+  groesseZeile.push('Die Grösse ist eine Schätzung und kein Tor-Kriterium: weicht der Befund im Bau davon ab, das `groesse:`-Feld im @meta korrigieren und die Abweichung melden.', '');
   const zeilen = [
     // Erste Zeile = Skill-Auslöser: der Zyklus (Einstieg, Prüfung, Landung,
     // Aufräumen) steht im Skill `bauschritt`, nicht im Prompt. So bleibt der
@@ -126,6 +138,7 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
     ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
+    ...groesseZeile,
     `Arbeitsweise (Anweisung David 4.8.2026, Skill \`auftrag\` Ziff. 6): Diese Session ORCHESTRIERT nur — Bau- und Prüfarbeit gehen an Unteragenten (Dispatch-Template, je Call model+effort explizit). Modellwahl nach Schwierigkeit: anspruchsvoller Bau auf Opus, mechanische/leichte Arbeit auf Sonnet oder Haiku, Gegenprüfung stets auf einem ANDEREN Modell als dem bauenden. Die Hauptsession prüft Rückgaben gegen prüfbare Artefakte, landet und pflegt den Plan.`,
     ``,
     `1. Lies CLAUDE.md und starte mit dem Skill \`auftrag\` (Aufnahme-Protokoll).`,
@@ -261,7 +274,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   // kollisionsfreie ready-Schritte; @queue-Rang steht darin vorn.
   const laneEmpfehlung = (b.lanes[0] ?? []).filter((id) => prompts[id]).slice(0, 4);
   const laneHtml = laneEmpfehlung
-    .map((id) => `<li>${schrittLabel(t(id), id)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
+    .map((id) => `<li>${schrittLabel(t(id), id)}${groesseBadge(byId.get(id)?.etikett.groesse ?? null)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
     .join('\n');
 
   const karten = kartenDaten
@@ -283,7 +296,7 @@ export function lagebildSeite(o: SeitenOpts): string {
               : e.etikett.status === 'wip'
                 ? ' <span class="sub">🔨 im Bau</span>'
                 : '';
-          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${knopf}</div></li>`;
+          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${knopf}</div></li>`;
         })
         .join('\n');
       return `<div class="card">
@@ -291,7 +304,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   <p class="zweck">${esc(k.info.zweck)}</p>
   <div class="bar"><i style="width:${pct}%"></i></div>
   <span class="fortschritt">${k.done} von ${k.es.length} im Plan geführten Schritten erledigt${k.wip.length ? ` · ${k.wip.length} im Bau` : ''}</span>
-  ${k.naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(k.naechster.id))} <button class="kopier" data-id="${esc(k.naechster.id)}">Bau-Prompt kopieren</button></p>` : ''}
+  ${k.naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(k.naechster.id))}${groesseBadge(k.naechster.etikett.groesse)} <button class="kopier" data-id="${esc(k.naechster.id)}">Bau-Prompt kopieren</button></p>` : ''}
   <details><summary>Einzelschritte (${k.es.length})</summary><ul>${einzel}</ul></details>
 </div>`;
     })
@@ -302,9 +315,20 @@ export function lagebildSeite(o: SeitenOpts): string {
       const e = byId.get(id);
       const st = e?.etikett.status ?? '?';
       const zusatz = st === 'wip' ? ' <span class="chip wip">im Bau</span>' : baubar.has(id) ? ` <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button>` : '';
-      return `<li>${schrittLabel(t(id), id)}${zusatz}</li>`;
+      return `<li>${schrittLabel(t(id), id)}${groesseBadge(e?.etikett.groesse ?? null)}${zusatz}</li>`;
     })
     .join('\n');
+
+  // «Empfohlener nächster Bau» — der MECHANISCH oberste Schritt, also derselbe Wert,
+  // den `plan:next` als «OBERSTER offener Schritt» ausgibt (`resolve().readyNow[0]`),
+  // nicht `queue[0]`. Der Unterschied ist bewusst: ein Queue-Kopf, der blockiert oder
+  // dep-wartend wird, bliebe hier sonst als Empfehlung stehen, obwohl ihn niemand
+  // bauen kann — genau die Drift, die `check:plan` Regel 8.4 an der Prosa verhindert.
+  // Zwei Quellen für «der nächste Schritt» wären zwei Wahrheiten (§5).
+  const empfohlen = b.readyNow[0] ?? null;
+  const empfohlenHtml = empfohlen
+    ? `<p class="lage"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${groesseBadge(byId.get(empfohlen)?.etikett.groesse ?? null)}${prompts[empfohlen] ? ` <button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button>` : ''}<br><span class="sub">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span>. Die Grösse ist eine Schätzung und kein Tor: <b>S</b> lohnt keine eigene Session (gebündelt nehmen), <b>M</b> ist der Normalfall, <b>L</b> vor dem Bau in Teilschritte schneiden.</span></p>`
+    : '<p class="lage"><b>Empfohlener nächster Bau:</b> keiner — kein Schritt ist gerade baubar.</p>';
 
   const davidHtml = [
     ...b.blockiert.map((x) => {
@@ -413,6 +437,7 @@ ${jetzt}
   <h2>Als Nächstes dran — deine Warteschlange</h2>
   <p class="lede">Mit «Bau-Prompt kopieren» holst du dir den fertigen Auftrag für eine neue Claude-Code-Session
   (enthält wip-Setzen, Worktree-Regel, Spec-Befehl, Definition of Done und die §14.7-Klausel).</p>
+  ${empfohlenHtml}
   <ol class="queue">${queueHtml}</ol>
   ${laneEmpfehlung.length > 1 ? `<div class="panel" style="border-color:var(--sage);background:var(--sage-bg);margin-top:1.2rem">
     <h3 style="color:var(--sage)">Jetzt parallel startbar — ohne Kollision</h3>
