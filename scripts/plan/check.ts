@@ -5,6 +5,7 @@ import { resolve } from './aufloesen';
 import { parseEtikett, type Status } from './etikett';
 import { INVENTAR } from './inventar';
 import { pruefeSpecBindung } from './specBindung';
+import { obersterMarkerId } from './marker';
 
 // (5c) Status, die den 26×-Slot halten, ohne ihn je zurückzugeben. next.ts sperrt
 // über `t.asset26x && inhaber26x && e.id !== inhaber26x` JEDEN anderen 26×-Schritt,
@@ -23,6 +24,11 @@ const SLOT_STILLSTAND: readonly Status[] = ['done', 'parked', 'blocked'];
 const QUEUE_STALE: readonly Status[] = ['done', 'parked', 'blocked'];
 
 export interface Problem { id: string | null; meldung: string }
+
+// `obersterMarkerId` liegt seit 5.8.2026 (§17-Wurzel-Fix) in marker.ts — check.ts
+// und set.ts brauchen dieselbe Extraktion, und zwei Kopien wären zwei Wahrheiten
+// (§5). Begründung für die eigene Datei statt eines direkten Imports aus check.ts:
+// Kommentarkopf von marker.ts.
 
 // Archiv-Backlog: FAHRPLAN-*.md, die (noch) nicht aus ROADMAP.md verlinkt sind. Grandfathered,
 // damit der Link-Check NEU hinzugefügte/referenzierte unverlinkte FAHRPLAN rot meldet, ohne einen
@@ -254,10 +260,7 @@ export function pruefe(
   // Härtung nach adversarialem Verify-Befund vom selben Tag).
   const obersterZeile = md.split(/\r?\n/).find((z) => z.includes('⬆ OBERSTER OFFENER SCHRITT'));
   if (obersterZeile) {
-    // ID = erstes Backtick-Token NACH dem Marker (nicht der Zeile) — sonst bindet der
-    // Guard an ein zufälliges früheres `…`-Fragment statt an die Schritt-ID.
-    const nachMarker = obersterZeile.slice(obersterZeile.indexOf('⬆ OBERSTER OFFENER SCHRITT'));
-    const idImText = nachMarker.match(/`([^`]+)`/)?.[1] ?? null;
+    const idImText = obersterMarkerId(md);
     if (!queue.length) {
       probleme.push({ id: null, meldung: `Prosa behauptet einen obersten Schritt («⬆ OBERSTER OFFENER SCHRITT»), aber es gibt keine @queue` });
     } else if (idImText) {

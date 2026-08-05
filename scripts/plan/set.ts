@@ -1,7 +1,9 @@
 // scripts/plan/set.ts
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseEtikett, serializeEtikett } from './etikett';
-import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS } from './parse';
+import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS, parseRoadmap } from './parse';
+import { resolve } from './aufloesen';
+import { obersterMarkerId } from './marker';
 
 const FELDER = new Set(['id', 'status', 'of', 'blocker', 'dep', 'kollision', 'seq-hart', 'seq-weich', 'worktree', '26x', 'fahrplan', 'slot']);
 // Marke, die ein Statuswechsel setzt, WENN die bestehende nicht schon passt.
@@ -75,6 +77,34 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   return zeilen.join('\n');
 }
 
+// §17-Wurzel-Fix (Anlass 5.8.2026): `npm run plan:set -- QS-TOK status=wip` setzte
+// den Queue-Kopf auf `wip`, liess den Prosa-Marker «⬆ OBERSTER OFFENER SCHRITT»
+// aber unverändert stehen — ein `wip`-Schritt fällt aus `resolve().readyNow`
+// (aufloesen.ts), also driftete der Marker sofort gegen `plan:next`, und
+// `check:plan` Regel 8.4 (check.ts) wurde erst im NÄCHSTEN Lauf rot. Der
+// Bediener musste die Ursache selbst ausgraben, statt sie am Ort des Setzens
+// zu sehen. Reine BEOBACHTUNG, kein Auto-Rewrite: Prosa ist Menschentext, also
+// nur ein Hinweis, kein Schreibzugriff auf den Fliesstext.
+//
+// Extraktions-Logik wird mit check.ts über marker.ts geteilt (`obersterMarkerId`)
+// statt kopiert — zwei Kopien derselben Regel wären zwei Wahrheiten (§5). Direkt
+// aus check.ts importieren geht NICHT: dessen CLI-Block liefe als Nebenwirkung
+// mit (Kommentarkopf marker.ts).
+//
+// `null`, wenn kein Marker vorkommt oder er bereits mit `plan:next` übereinstimmt.
+export function prosaMarkerDriftHinweis(md: string): string | null {
+  const idImText = obersterMarkerId(md);
+  if (idImText === null) return null;
+  const { einheiten, queue } = parseRoadmap(md);
+  const readyNow0 = resolve(einheiten, queue).readyNow[0] ?? null;
+  if (idImText === readyNow0) return null;
+  return (
+    `Hinweis: Prosa-Marker nennt \`${idImText}\`, plan:next liefert nun \`${readyNow0 ?? '—'}\` — ` +
+    `ROADMAP-Prosa nachziehen, sonst check:plan rot (Regel 8.4). Muster: Marker auf \`${readyNow0 ?? '—'}\` ` +
+    `setzen und den wip-Schritt im Satz danach nennen (Präzedenz 28.7.2026 W2·7-BEZUG).`
+  );
+}
+
 // CLI: vite-node scripts/plan/set.ts -- <id> <feld>=<wert>
 if (!process.env.VITEST) {
   const arg = process.argv.slice(2);
@@ -87,4 +117,6 @@ if (!process.env.VITEST) {
   const out = setField(readFileSync('ROADMAP.md', 'utf8'), id, feld, wert);
   writeFileSync('ROADMAP.md', out);
   console.log(`gesetzt: ${id} ${feld}=${wert}`);
+  const drift = prosaMarkerDriftHinweis(out);
+  if (drift) console.log(drift);
 }

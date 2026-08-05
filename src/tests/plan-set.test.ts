@@ -1,5 +1,5 @@
 // src/tests/plan-set.test.ts
-import { setField } from '../../scripts/plan/set';
+import { setField, prosaMarkerDriftHinweis } from '../../scripts/plan/set';
 
 const MD = `- [ ] **6 · Konsultieren**
   <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
@@ -269,5 +269,48 @@ describe('setField — seq-hart/seq-weich überleben den Round-Trip (Fund R2-16)
     const out = setField(MD_5D, 'W2·5d', 'seq-hart', '[QS-PERF(ArtikelBody.tsx), W2·5b-L0(x)]');
     expect(out).toContain('seq-hart: [QS-PERF(ArtikelBody.tsx), W2·5b-L0(x)]');
     expect(out).toContain('seq-weich: [W2·5b-L0(scripts/normtext, nur U-PDF)]');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// §17-Wurzel-Fix (Anlass 5.8.2026): `npm run plan:set -- QS-TOK status=wip`
+// setzte den Queue-Kopf auf `wip`, liess den Prosa-Marker «⬆ OBERSTER OFFENER
+// SCHRITT» unverändert — der wip-Schritt fällt aus `resolve().readyNow`
+// (aufloesen.ts), also driftete der Marker sofort gegen `plan:next`, und
+// check:plan Regel 8.4 wurde erst im NÄCHSTEN Lauf rot (check.ts). Die neue
+// Beobachtungsfunktion `prosaMarkerDriftHinweis` prüft dieselbe Lage sofort
+// nach dem Setzen, ohne die Prosa selbst anzufassen.
+// ---------------------------------------------------------------------------
+describe('prosaMarkerDriftHinweis (§17-Wurzel-Fix)', () => {
+  const mitQueue = (queueIds: string, marker: string) =>
+    [
+      `<!-- @queue: ${queueIds} -->`,
+      marker,
+      '- [ ] **4 · D**',
+      '  <!-- @meta id: W1·4 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '- [ ] **5 · E**',
+      '  <!-- @meta id: W1·5 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    ].join('\n');
+
+  it('Marker nennt X, X wird wip → Hinweis enthält beide IDs', () => {
+    const md = mitQueue('W1·4, W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.');
+    const out = setField(md, 'W1·4', 'status', 'wip');
+    const hinweis = prosaMarkerDriftHinweis(out);
+    expect(hinweis).not.toBeNull();
+    expect(hinweis).toContain('`W1·4`');
+    expect(hinweis).toContain('`W1·5`');
+    expect(hinweis).toContain('Regel 8.4');
+  });
+
+  it('Marker stimmt weiterhin mit plan:next überein → kein Hinweis', () => {
+    const md = mitQueue('W1·4, W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.');
+    const out = setField(md, 'W1·5', 'blocker', 'irrelevant-fuer-marker');
+    expect(prosaMarkerDriftHinweis(out)).toBeNull();
+  });
+
+  it('kein Marker vorhanden → kein Hinweis', () => {
+    const md = mitQueue('W1·4, W1·5', '');
+    const out = setField(md, 'W1·4', 'status', 'wip');
+    expect(prosaMarkerDriftHinweis(out)).toBeNull();
   });
 });
