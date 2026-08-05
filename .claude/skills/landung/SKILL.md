@@ -156,3 +156,10 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
 8. **Nächste PR erst danach.** Erst wenn diese PR auf main ist, die nächste
    auf das neue main rebasen (zurück zu Schritt 1). So kollidiert nie eine
    zweite Landung mit einer schwebenden.
+
+9. **Schritt-Status schliessen — wip verlässt die Session nie.** Nach der
+   letzten Landung SOFORT `plan:set <id> status=done|ready|parked` setzen und
+   committen (done ⇒ Block per Ziff. 6 in die Chronik). Realfall 5.8.2026:
+   `QS-TOK`/`QS-TOK-AUFRAEUMEN` blieben nach Session-Ende stundenlang `wip`,
+   das Lagebild zeigte falschen Bau — seither warnt `plan:next` bei wip ohne
+   Bau-Spur, aber die Warnung ist das Netz, nicht der Prozess.
