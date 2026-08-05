@@ -109,6 +109,13 @@ Prüf-Fläche berührt sind: einmal bauen, prüfen, deployen.
 in einer Einheit, §1/§3). Die Einheit bleibt klein genug für ein sauberes Gate
 und golden byte-gleich. Nie zwei 26×-Assets parallel.
 
+**Sessionfüllend schneiden (David 5.8.2026):** Jede Session trägt Fixkosten
+(Startlektüre: CLAUDE.md, plan:next, Spec-Slice) — eine Bau-Einheit muss gross
+genug sein, dass diese Fixkosten ein kleiner Bruchteil bleiben (Faustregel: ein
+trivialer Kleinschritt < ~1 h trägt keine eigene Session ⇒ mit 1–2 Nachbarn
+gleicher Fläche und Risikoklasse bündeln), und klein genug, dass sie in EINER
+Session fertig wird und landet (AP-6-Muster; zu gross ⇒ erst schneiden).
+
 Bei Überschneidung **zusammenführen statt daneben** — kein Parallel-Schritt für
 dieselbe Bau-Fläche.
 
