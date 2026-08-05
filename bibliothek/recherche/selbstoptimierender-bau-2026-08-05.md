@@ -1,5 +1,8 @@
 # Selbstoptimierender Bau — Recherche 5.8.2026
 
+**Erstellt:** 5.8.2026 (Auftrag David, Recherche lex-recherche-Agent) ·
+**Stand aller Quellen:** 5.8.2026
+
 **Auftrag:** David 5.8.2026 («wie kriegen wir es hin, dass sich der Bau von selbst
 optimiert?»). Web-/GitHub-Recherche (lex-recherche-Agent, ~20 Abfragen), Übersetzung
 auf das LexMetrik-System. **Abnahme-Status: Recherche-Entwurf** — Vorschläge 1–3/5

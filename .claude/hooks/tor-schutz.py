@@ -42,6 +42,11 @@ TOR_MUSTER = re.compile(
     # verschluckte prompt 4 rote Specs (e2e-Re-Run der FRISTENKERN-Session) —
     # e2e-Läufe sind Tore wie alle anderen.
     r"|npx playwright test|npm run test:e2e"
+    # §17-Nachtrag 5.8.2026: Direktaufrufe der Tor-Skripte rutschten durch —
+    # `bash scripts/bibliothek-check.sh | tail` verschluckte 2 Verstösse, der
+    # Commit ging trotz rotem Tor raus (Realfall Bibliotheks-Recherche 5.8.).
+    # Tor bleibt Tor, egal ob via npm-Alias oder Skript-Pfad aufgerufen.
+    r"|bibliothek-check\.sh|scripts/check-[a-z-]+\.(?:ts|sh)|struktur-rotieren\.py --check"
 )
 # je Segment (getrennt durch && ; oder Zeilenende) prüfen, ob nach einem
 # Tor-Kommando noch eine Pipe folgt; '||' fängt auch das Schlucken via '|| true'
