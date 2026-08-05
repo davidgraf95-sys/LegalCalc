@@ -188,6 +188,16 @@ stecken in der Definition; `npm run dispatch:agents` regeneriert, das Tor
 nur** — sie zerlegt, dispatcht, prüft Rückgaben gegen prüfbare Artefakte,
 landet und pflegt den Plan. Bau- und Prüfarbeit gehen an Unteragenten.
 
+**Zwei Orchestrator-Fallen (belegt 5.8.2026):** (a) Nachrichten an Agenten:
+Empfänger-ID vor dem Senden verifizieren, nie Probe-/Testnachrichten — jede
+Nachricht an einen beendeten Agenten weckt ihn mit vollem Kontext (real:
+~160k Tokens für ein «bitte ignorieren»). (b) Die Kollisions-Disziplin gilt
+auch für den Orchestrator selbst: bevor er Steuer-Dateien (ROADMAP, Inventar,
+Fahrpläne) auf main editiert, prüft er, ob ein laufender Agent dieselben
+Dateien auf einem Branch hat — sonst erzeugt er den Merge-Konflikt, den die
+Lanes gerade verhindern sollten (real: ROADMAP-Konflikt bei der
+QS-SELBSTOPT-Aufnahme parallel zum Frische-Agenten).
+
 **Modellwahl nach Schwierigkeit** (Stufen statt Modellnamen — die Abbildung
 Stufe → Modell steht einzig in `PALETTE`, `scripts/dispatch.ts`):
 anspruchsvoller Bau auf Stufe **stark** · eng umrissener, nicht-riskanter Bau
