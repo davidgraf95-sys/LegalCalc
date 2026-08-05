@@ -4,6 +4,7 @@ import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHEC
 import { resolve } from './aufloesen';
 import { parseEtikett, type Status } from './etikett';
 import { INVENTAR } from './inventar';
+import { pruefeSpecBindung } from './specBindung';
 
 // (5c) Status, die den 26×-Slot halten, ohne ihn je zurückzugeben. next.ts sperrt
 // über `t.asset26x && inhaber26x && e.id !== inhaber26x` JEDEN anderen 26×-Schritt,
@@ -75,11 +76,15 @@ function zyklus(einheiten: Einheit[]): string | null {
   return fund;
 }
 
+/** Datei-Leser für Regel 11 (Spec-Bindung): Inhalt oder `null`, wenn nicht lesbar. */
+export const dateiLeser = (p: string): string | null => (existsSync(p) ? readFileSync(p, 'utf8') : null);
+
 export function pruefe(
   md: string,
   fahrplanDateien: string[],
   fileExists: (p: string) => boolean,
   inventar: readonly string[] = INVENTAR,
+  leseDatei: (p: string) => string | null = dateiLeser,
 ): Problem[] {
   const probleme: Problem[] = [];
   const { einheiten, blockers, queue } = parseRoadmap(md);
@@ -190,6 +195,13 @@ export function pruefe(
       }
     }
   }
+
+  // (11) Spec-Bindung — Regel und Begründung in scripts/plan/specBindung.ts.
+  // Regel 9 prüft die Existenz des Fahrplan-CONTAINERS, Regel 11 den Zeiger auf
+  // die Bau-Spec DARIN. Ohne sie ist ein Anker, der auflöst und trotzdem den
+  // falschen Abschnitt trifft, für jedes Tor unsichtbar (Befund B1 des
+  // Bauplan-Reviews 4.8.2026; F2-Familie: geprüft wurde der Container, nicht der Inhalt).
+  probleme.push(...pruefeSpecBindung(md, leseDatei));
 
   // (4b) Azyklie
   const z = zyklus(einheiten);
