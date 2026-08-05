@@ -1,5 +1,3 @@
-# Vercel-Skip-Test (QS-CI-VERCEL)
+Vercel-Skip-Testdatei (QS-CI-VERCEL, PR #445).
 
-Doku-only-Commit als empirischer Skip-Beweis — wird vor dem Merge wieder entfernt.
-
-Zweiter Skip-Beweis 5.8.2026, 00:20 — frisches Kontingent nach der Limit-Phase vom 4.8.
+Test-Trigger 5.8.2026 (Orchestrier-Session): Doku-Diff nach Limit-Reset — erwartet: ignoreCommand Exit 0, Build uebersprungen.
