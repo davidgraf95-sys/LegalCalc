@@ -261,6 +261,168 @@ export function tabelle(kopfzeilen: string[], zeilen: string[][], klassen: strin
   return `<div class="tabelle"><table><thead><tr>${th}</tr></thead><tbody>\n${tr}\n</tbody></table></div>`;
 }
 
+// ---------------------------------------------------------------------------
+// Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
+// 5.8.2026: «ich brauche einfachere Sprache um zu verstehen was gerade passiert»)
+//
+// Drei Bauregeln dieses Blocks:
+//
+//  * **Jeder Satz steht hier statisch im Code**, gefüllt werden nur die Werte.
+//    Kein Modell zur Laufzeit, keine Formulierung aus Repo-Prosa — gleicher
+//    Repo-Stand ergibt gleichen Text (§2). Insbesondere werden die `Anlass:`-
+//    Texte der ROADMAP NICHT übernommen: sie sind Fachprosa und würden den
+//    Zweck des Blocks (Laiensprache) genau verfehlen.
+//  * **Keine eigenen Design-Tokens.** Der Block nutzt ausschliesslich
+//    bestehende Klassen aus `STIL`. Würde er das Stylesheet ergänzen, änderten
+//    sich alle vier Seiten — die drei anderen sollen byte-gleich bleiben.
+//  * **Zweitanzeige, nicht zweite Wahrheit (§5).** «Wartet auf David» erscheint
+//    weiter unten auch fachlich (Sektion `#david`); beide Fassungen entstehen
+//    aus demselben Resolver-Ergebnis, dieser Block verweist auf jene Sektion.
+// ---------------------------------------------------------------------------
+
+/**
+ * Datei-Fläche → Alltagsbegriff. Statische Zuordnung, längster Präfix gewinnt;
+ * ein unbekannter Pfad bleibt UNÜBERSETZT stehen (lieber ein technischer Pfad
+ * als ein erfundener Oberbegriff, §8).
+ *
+ * Die Tabelle beschreibt, was ein Bereich für den Nutzer BEDEUTET, nicht was
+ * er technisch enthält — «src/lib» heisst darum «Rechen- und Rechtslogik» und
+ * nicht «Bibliotheks-Verzeichnis».
+ */
+export const FLAECHEN_KLARTEXT: readonly (readonly [string, string])[] = [
+  ['scripts/plan', 'Werkzeuge der Bau-Planung'],
+  ['scripts/gegenpruefung', 'Werkzeuge der Gegenprüfung'],
+  ['scripts', 'Hilfsprogramme hinter den Kulissen'],
+  ['src/pages', 'sichtbare Seiten der App'],
+  ['src/components', 'Bausteine der Benutzeroberfläche'],
+  ['src/lib', 'Rechen- und Rechtslogik'],
+  ['src/tests', 'automatische Tests'],
+  ['src/index.css', 'Erscheinungsbild der App'],
+  ['e2e', 'Klick-Tests im Browser'],
+  ['public/normtext', 'gespeicherte Gesetzestexte'],
+  ['public/rechtsprechung', 'gespeicherte Gerichtsentscheide'],
+  ['public', 'ausgelieferte Dateien'],
+  ['daten', 'Rohdaten-Ablage'],
+  ['fahrplaene', 'Detailpläne der Baustellen'],
+  ['archiv', 'archivierte Detailpläne'],
+  ['bibliothek', 'abgelegtes Recherche-Wissen'],
+  ['ROADMAP', 'der Projektplan'],
+  ['STRUKTUR.md', 'die Projekt-Landkarte'],
+  ['DESIGN-REGLEMENT.md', 'die Gestaltungsregeln'],
+  ['.claude', 'Arbeitsregeln der KI-Sessions'],
+  ['.github', 'die Prüfstrasse (automatische Kontrollen)'],
+  ['vercel.json', 'die Auslieferung ins Internet'],
+  ['package.json', 'die Bau- und Prüfbefehle'],
+];
+
+/**
+ * Deckt der Tabellen-Eintrag diesen Pfad? Nur an einer TRENNSTELLE — hinter dem
+ * Präfix steht das Pfad-Ende oder eines von `/ . -`. Ohne diese Bedingung
+ * schluckte «scripts» auch ein künftiges `scriptsammlung/`; mit ihr trägt
+ * «ROADMAP» weiterhin `ROADMAP.md` UND `ROADMAP-CHRONIK.md`.
+ */
+function deckt(pfad: string, praefix: string): boolean {
+  if (!pfad.startsWith(praefix)) return false;
+  const nach = pfad[praefix.length];
+  return nach === undefined || nach === '/' || nach === '.' || nach === '-';
+}
+
+/**
+ * `kollision:`-Globs → Alltagsbegriffe, ohne Wiederholung und in der
+ * Reihenfolge ihres ersten Auftretens. Zwei Globs desselben Bereichs
+ * (`src/pages/**` und `src/pages/gesetze.tsx`) ergeben EINEN Eintrag.
+ */
+export function flaechenKlartext(globs: string[]): string[] {
+  const out: string[] = [];
+  for (const glob of globs) {
+    const pfad = glob.replace(/[*?{[].*$/, '').replace(/\/+$/, '');
+    let treffer: string | null = null;
+    let laenge = -1;
+    for (const [praefix, wort] of FLAECHEN_KLARTEXT) {
+      if (deckt(pfad, praefix) && praefix.length > laenge) {
+        treffer = wort;
+        laenge = praefix.length;
+      }
+    }
+    const wort = treffer ?? glob;
+    if (!out.includes(wort)) out.push(wort);
+  }
+  return out;
+}
+
+/** Was der Block anzeigt. Alle Felder sind bereits erhoben — die Funktion rechnet nicht. */
+export interface WasPassiert {
+  /** Schritte auf `wip`: Klartext-Titel + ihre `kollision:`-Globs (roh). */
+  imBau: { titel: string; flaechen: string[] }[];
+  /** Parallele Bau-Plätze (Worktrees ohne Haupt-Repo); `null` = nicht abfragbar. */
+  bauplaetze: number | null;
+  /** Letzte `main`-Commits; `null` = git nicht abfragbar. */
+  gelandet: { datum: string; betreff: string }[] | null;
+  /** Schritte, deren Blocker auf David zeigt. */
+  wartetAufDavid: { titel: string; blocker: string }[];
+  /** Relativer Verweis auf die Seite «Arbeitsweise & Glossar». */
+  methodeDatei: string;
+}
+
+/** Ein Satz über die parallelen Bau-Plätze — die drei Fälle sind fest formuliert. */
+function bauplatzSatz(n: number | null): string {
+  if (n === null) return 'Wie viele Bauplätze gerade offen sind, lässt sich auf diesem Rechner nicht abfragen.';
+  if (n === 0) return 'Sonst keine parallelen Bauplätze — es läuft höchstens eine Arbeit auf einmal.';
+  if (n === 1) return '1 weiterer Bauplatz ist aktiv: dort wird gleichzeitig an etwas anderem gearbeitet.';
+  return `${n} weitere Bauplätze sind aktiv: dort wird gleichzeitig an anderem gearbeitet.`;
+}
+
+/** Der Block «Was gerade passiert» — reine Funktion über bereits erhobenen Daten. */
+export function wasGeradePassiert(d: WasPassiert): string {
+  const imBau = d.imBau.length
+    ? d.imBau
+        .map((s) => {
+          const worte = flaechenKlartext(s.flaechen);
+          const betrifft = worte.length
+            ? `Betrifft: ${esc(worte.join(' · '))}`
+            : 'Betrifft: das ganze Projekt — für dieses Arbeitspaket ist kein Bereich eingegrenzt.';
+          return `<li><span class="s wip"></span><div><b>${esc(s.titel)}</b><br><span class="sub">${betrifft}</span></div></li>`;
+        })
+        .join('\n')
+    : '<li><span class="s ready"></span><div>An keinem Arbeitspaket wird gerade gebaut.</div></li>';
+
+  const gelandet =
+    d.gelandet === null
+      ? '<li><span class="s ready"></span><div>Die Projekt-Geschichte lässt sich auf diesem Rechner gerade nicht abfragen (git nicht verfügbar).</div></li>'
+      : d.gelandet.length === 0
+        ? '<li><span class="s ready"></span><div>Noch nichts fertig geworden.</div></li>'
+        : d.gelandet
+            .map((c) => `<li><span class="s done"></span><div>${esc(c.betreff)}<br><span class="sub">fertig am ${esc(c.datum)}</span></div></li>`)
+            .join('\n');
+
+  const david = d.wartetAufDavid.length
+    ? d.wartetAufDavid
+        .map((s) => `<li><span class="s block"></span><div><b>${esc(s.titel)}</b><br><span class="sub">wartet auf deine Entscheidung: ${esc(s.blocker)}</span></div></li>`)
+        .join('\n')
+    : '<li><span class="s done"></span><div>Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.</div></li>';
+
+  return `<section id="jetzt">
+  <p class="eyebrow">In einfachen Worten</p>
+  <h2>Was gerade passiert</h2>
+  <p class="lede">Drei Fragen, ohne Fachsprache beantwortet: Woran wird gerade gearbeitet, was ist zuletzt
+  fertig geworden, und was liegt bei dir. Die Fachfassung derselben Lage steht weiter unten auf dieser Seite.</p>
+
+  <h3>Gerade im Bau</h3>
+  <ul class="liste">${imBau}</ul>
+  <p class="hinweis">${esc(bauplatzSatz(d.bauplaetze))} Ein «Bauplatz» ist eine eigene Arbeitskopie des Projekts:
+  zwei Arbeiten laufen darin gleichzeitig, ohne sich in die Dateien zu greifen.</p>
+
+  <h3>Zuletzt fertig geworden</h3>
+  <p class="sub">Die letzten fünf gelandeten Arbeitspakete — die Titel sind Fachtitel und stehen unverändert da.</p>
+  <ul class="liste">${gelandet}</ul>
+
+  <h3>Wartet auf David</h3>
+  <ul class="liste">${david}</ul>
+  <p class="hinweis">Stand: beim letzten <span class="id">npm run plan:bild</span>-Lauf.
+  Jeden Fachbegriff dieser Seite erklärt die Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> in je einem Satz.</p>
+</section>`;
+}
+
 /** Deutsche Monatsbeschriftung aus «YYYY-MM». */
 const MONATSNAMEN = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
 export function monatLabel(key: string): string {

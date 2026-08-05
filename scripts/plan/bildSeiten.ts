@@ -17,10 +17,12 @@ import { resolve, type Buckets } from './aufloesen';
 import {
   KANTONE,
   OHNE_FAHRPLAN,
+  bauPlaetze,
   bauStatistik,
   baustellenInfo,
   blockerSeitTagen,
   branchNamen,
+  letzteCommits,
   chronikErledigt,
   chronikMeilensteine,
   katalogGruppen,
@@ -39,7 +41,7 @@ import {
   type NormErlass,
   type SchrittInfo,
 } from './bildDaten';
-import { esc, kacheln, monatLabel, rahmen, seitenDatei, seitenKopf, tabelle } from './bildHtml';
+import { esc, kacheln, monatLabel, rahmen, seitenDatei, seitenKopf, tabelle, wasGeradePassiert } from './bildHtml';
 
 export interface SeitenOpts {
   /** Pfad der Index-Seite (`--out`) — Basis der relativen Verweise. */
@@ -372,10 +374,32 @@ export function lagebildSeite(o: SeitenOpts): string {
   (dieselbe Logik wie <span class="id">npm run plan:next</span>).`,
     extra: `<p class="lage"><b>${esc(lageSatz)}</b></p>
   ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
-  <nav class="springen">Springen zu: <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>`,
+  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>`,
+  });
+
+  // Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
+  // 5.8.2026). Er steht VOR allen Fachsektionen und speist sich aus DENSELBEN
+  // Resolver-Daten wie sie — er übersetzt, er zählt nicht neu (§5).
+  //
+  // «Wartet auf David» ist mechanisch bestimmt: der Blocker-NAME enthält
+  // «david». Das ist die Register-Konvention der `@blockers`-Zeile
+  // (`vps-bestellung-david`, `entscheid-david-…`) und darum prüfbar — im
+  // Unterschied zu einer gepflegten Zweitliste, die still veralten würde.
+  // Die kuratierten DAVID_FRAGEN bleiben bewusst draussen: sie tragen keinen
+  // Schritt-Titel und stehen vollständig in der Sektion `#david` darunter.
+  const jetzt = wasGeradePassiert({
+    imBau: b.inArbeit.map((id) => ({ titel: t(id), flaechen: byId.get(id)?.etikett.kollision ?? [] })),
+    bauplaetze: bauPlaetze(),
+    gelandet: letzteCommits(5),
+    wartetAufDavid: b.blockiert
+      .filter((x) => x.blocker.toLowerCase().includes('david'))
+      .map((x) => ({ titel: t(x.id), blocker: x.blocker })),
+    methodeDatei: seitenDatei(o.indexPfad, 'methode'),
   });
 
   const inhalt = `${kopf}
+
+${jetzt}
 
 <section id="david">
   <p class="eyebrow">Engpass</p>
