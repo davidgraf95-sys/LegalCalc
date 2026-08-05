@@ -20,9 +20,13 @@ import { loeseSpyNachlauf } from './inhalt-hooks';
 //
 // NICHT hier: `springeZuArtikel` bleibt in `inhalt.tsx`. Die LM-202-Quellensonde
 // (`src/tests/leser-adresse-lm202.test.ts`, «Die zwei erlaubten Adress-Schreiber»)
-// liest den Aufruf `window.history.replaceState(null, '', ziel)` im Quelltext
-// GENAU dieser Datei; ihn wegzuziehen hiesse, den Test anzupassen — und das
-// verbietet §6 Ziff. 2 bei einem Refactoring.
+// liest den einzigen erlaubten Adress-Schreiber — den replaceState-Aufruf auf
+// `ziel` — im Quelltext von `inhalt.tsx`; ihn wegzuziehen hiesse, den Test
+// anzupassen, und das verbietet §6 Ziff. 2 bei einem Refactoring.
+// Der Aufruf ist hier BEWUSST nicht wörtlich zitiert: dieselbe Sonde verbietet
+// jede History-API in diesem Modul und liest den ROHEN Quelltext — ein Zitat im
+// Kommentar färbte den Wächter rot, und ein Wächter, der an Kommentaren
+// scheitert, wird bald abgeschaltet (§6.7).
 
 type SekRefs = MutableRefObject<Map<string, HTMLElement>>;
 type PaneWurzel = RefObject<HTMLElement | null> | null;
