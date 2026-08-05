@@ -38,6 +38,23 @@ alles sichtbar ist, gilt beim Anlegen:
 - wip-/done-Disziplin (Ziff. 2 und 4) ist zugleich die Wahrheit der
   Lagebild-Sektion «Gerade im Bau»; eine Sonde meldet Bau-Plätze ohne
   wip-Meldung sichtbar an David.
+- **Jede neue Schritt-ID trägt einen sprechenden Namensteil** (`QS-KORPUS-BMV`,
+  `W2·13-KANTONE-DRIFT`) — nie nur Welle plus Buchstabe wie `W2·5l`. Und **jeder
+  Schritt trägt einen Klartext-Titel, der ohne das Kürzel verständlich ist**: er
+  ist die Zeile, die auf dem Lagebild vorn steht, während das Kürzel nur noch in
+  Klammern dahinter erscheint (Auftrag David 5.8.2026 «bauplan verständlicher —
+  bezeichnung und nummerierung»). Bestehende Kürzel werden dabei **nie
+  umbenannt**: sie sind Verweis-Anker in Plan, Fahrplänen, Commit-Trailern und
+  Branch-Namen — dieselbe Anker-Logik wie bei den Paragraphen-Nummern
+  (CLAUDE.md §16). Übersetzen statt umbenennen.
+- **`kollision:` ist zugleich die Themen-Klassierung.** Aus den Globs leitet das
+  Lagebild mechanisch den **Wirkungsbereich** ab (Benutzeroberfläche ·
+  Rechtslogik & Berechnungen · Gesetzes- & Urteilsdaten · Datenhaltung ·
+  Auslieferung & Prüfstrasse · KI-Arbeitsprozesse; sonst «Übrige Technik»).
+  Sessions benennen diese Bereiche im Auftrag und im Bericht statt Dateipfade.
+  Ein Schritt ohne `kollision:` erscheint darum ohne Bereich — ein weiterer
+  Grund, die Fläche zu deklarieren. Definitionen: Lagebild-Seite
+  «Arbeitsweise & Glossar», Abschnitt «Wirkungsbereiche».
 
 ## 2. Vor dem Start: Plan-Stand abfragen
 
