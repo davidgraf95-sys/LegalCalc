@@ -577,6 +577,51 @@ bleiben und der Diff der Index-Seite nur die neue Sektion und die Sprungleiste t
 Formatierung mit injizierten Daten getestet ist (wip-Liste, Commit-Liste, David-Blocker,
 Übersetzungstabelle inklusive unbekanntem Pfad, Fehlerpfad git) und `check:plan` grün ist.
 
+### §Frische-Warnung «stale wip» (Schritt `QS-PLAN-WIP-FRISCHE`, 5.8.2026)
+
+**Anlass, belegt.** Am 5.8.2026 baute eine Session `QS-TOK` und `QS-TOK-AUFRAEUMEN` fertig,
+landete die PRs (#457/#458) und beendete sich, **ohne die wip-Marke freizugeben**. Das Lagebild
+zeigte stundenlang «im Bau», was längst auf `main` lag — bis David nachfragte. Das ist der
+**zweite** Fall desselben Musters nach dem 10-wip-Vorfall vom ~20.7.2026. Zweimal Prosa, zweimal
+nicht gehalten ⇒ Eskalation Prosa→Maschine (Skill `lehren`, Regel 5): Was eine Session vergessen
+kann, muss der Pflicht-Einstieg `plan:next` von sich aus sagen.
+
+**Verhältnis zur Prosa-Seite (§5, keine zweite Wahrheit).** Derselbe Vorfall hat am 5.8.2026 die
+Prozess-Seite erzeugt: Skill `landung` Schritt 9 («wip verlässt die Session nie») und der
+F6-Registernachtrag im Skill `lehren`. Diese Spec beschreibt **nur die Maschine**; sie ist das
+Netz, nicht der Prozess. Wer den Prozess sucht, liest den Landung-Skill.
+
+**Regel.** Für jeden `wip`-Schritt sucht der Lage-Block eine **Bau-Spur** — einen Namen, den die
+bestehende Zuordnung `schrittFuerNamen()` auf diesen Schritt abbildet:
+
+1. ein **Bau-Platz** aus `git worktree list` (Platzname UND ausgecheckter Branch, wie in der
+   Worktree-Zeile), oder
+2. ein **lokaler Branch** aus `git branch`, oder
+3. — nur mit `--prs` — ein **offener PR**, über `headRefName` oder über einen
+   **Wortgrenzen**-Treffer der ID im Titel (`idTrifft` aus `specBindung.ts`, geteilt statt
+   kopiert, §5; blosse Substring-Präsenz liesse «QS-TOK» in «QS-TOK-AUFRAEUMEN» als Spur gelten).
+
+Findet sich keine, erscheint je Schritt eine WARN-Zeile mit ID und dem Freigabe-Befehl
+(`plan:set <ID> status=ready|done|parked`). Ohne `--prs` trägt sie den Zusatz «offene PRs nicht
+geprüft — netzfrei», und zwar **genau dann, wenn mindestens eine Warnung erscheint** (§8: die
+Warnung darf sich nicht sicherer lesen, als sie ist; ohne Warnung wäre der Zusatz Rauschen).
+
+**«Nicht prüfbar» ist nicht «stale».** Fällt `git worktree list` oder `git branch` aus, wird
+**nicht** gewarnt — es bleibt bei der vorhandenen Ausfall-Hinweiszeile. Eine Warnung aus
+fehlenden Daten forderte zum Freigeben einer möglicherweise belegten Fläche auf; das ist
+schädlicher als gar keine Warnung. Kein neues Zustandsfile, keine Zeit-Heuristik («seit X
+Stunden»): beides wurde für den Lage-Block bereits verworfen und bleibt verworfen.
+
+**Aufbau (§6.6).** Reine Funktion `staleWip(roh, ids)` in `lage.ts`, aufgerufen aus
+`lageZeilen()` nach den Bestandszeilen und **vor** der Ausfall-Zeile. Keine neue Erhebung —
+gearbeitet wird ausschliesslich auf `LageRoh`, das bereits erhoben ist; `plan:next` bleibt
+netzfrei und importfrei gegenüber dem `startseiteConfig`-Graphen.
+
+**Fertig, wenn** die fünf Fälle mit injizierten Daten getestet sind (Spur vorhanden · ohne Spur ·
+PR-Treffer bei `--prs` · git-Ausfall ohne Warnung · zwei stale wip in stabiler Reihenfolge), eine
+Mutation den Test rot zeigt (§6.7), die Bestandszeilen des Blocks unverändert sind und
+`check:plan` grün ist.
+
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 
 Der AP-8-Umzug nach `fahrplaene/` hat in den Fahrplänen selbst Links hinterlassen, die auf die

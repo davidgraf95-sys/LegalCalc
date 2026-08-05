@@ -124,4 +124,8 @@ export const INVENTAR: readonly string[] = [
 
   // Auftrag David 5.8.2026 (Nutzer-Turn): der Lagebild-Einstieg soll «einfachere Sprache»
   // tragen — ein Laien-Block zuoberst auf `plan-bild.html`.
+
+  // §17-Eskalation 5.8.2026 (zweiter Fall nach dem 10-wip-Vorfall vom ~20.7.): `plan:next`
+  // warnt vor `wip`-Marken ohne Bau-Spur, statt sie stumm als «im Bau» auszuweisen.
+  'QS-PLAN-WIP-FRISCHE',
 ];
