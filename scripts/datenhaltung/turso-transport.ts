@@ -9,7 +9,9 @@
 // nicht das Skript — die Weiche war immer falsch und der Sync wurde zum stillen No-op
 // (Exit 0, keine Ausgabe). Genau die Sorte lautloses Versagen, gegen die dieser PR antritt.
 // Reine Rechenlogik gehört deshalb in ein importierbares Modul ohne Seiteneffekte.
-export type Wert = string | number | null;
+/** `Uint8Array` seit QS-CODE-TURSO: der Sync überträgt die FTS5-Shadow-Tabellen, und deren
+ *  `block`/`term`/`sz`-Spalten sind BLOBs (Hrana kodiert sie base64). */
+export type Wert = string | number | null | Uint8Array;
 
 /** SQLite-Bind-Parameter je Statement. Hartes Limit ist SQLITE_MAX_VARIABLE_NUMBER (32766);
  *  8000 lässt Faktor 4 Luft und deckt jede Spaltenzahl unserer Tabellen ab. */
@@ -40,7 +42,9 @@ export const MAX_BYTES_JE_REQUEST = 3 * 1024 * 1024;
 /** JSON-Gerüst EINES Hrana-Arguments ohne den Wert selbst.
  *  `{"type":"text","value":` = 23 B · `}` + `,` = 2 B → 25 B;
  *  `{"type":"null","value":null},` = 29 B;
- *  `{"type":"integer","value":"` = 27 B + `"}` + `,` = 3 B → 30 B. 32 deckt alle drei. */
+ *  `{"type":"integer","value":"` = 27 B + `"}` + `,` = 3 B → 30 B;
+ *  `{"type":"blob","base64":"` = 25 B + `"}` + `,` = 3 B → 28 B (Base64-Nutzlast zählt
+ *  `zeilenBytes()` über ceil(n/3)*4 exakt mit). 32 deckt alle vier. */
 const ARG_OVERHEAD = 32;
 /** JSON-Gerüst EINES `execute`-Schritts: `{"type":"execute","stmt":{"sql":"","args":[]}},`
  *  real ausgezählt 47 B. 64 lässt Reserve für Feld-Reihenfolge-Varianten. */
@@ -82,6 +86,9 @@ export function zeilenBytes(werte: Wert[]): number {
   for (const v of werte) {
     if (typeof v === 'string') n += Buffer.byteLength(JSON.stringify(v), 'utf8') + ARG_OVERHEAD;
     else if (typeof v === 'number') n += Buffer.byteLength(String(v), 'utf8') + ARG_OVERHEAD;
+    // BLOB: Hrana kodiert base64, das sind exakt ceil(n/3)*4 ASCII-Bytes — keine Schätzung,
+    // sondern die geschlossene Formel. Escaping entfällt (base64 ist JSON-sicher).
+    else if (v instanceof Uint8Array) n += Math.ceil(v.length / 3) * 4 + ARG_OVERHEAD;
     else n += ARG_OVERHEAD;
   }
   return n;

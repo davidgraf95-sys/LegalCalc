@@ -6,6 +6,7 @@
 // vollständige Liste; den massgeblichen Stadtkreis kennt nur der Nutzer.
 
 import { strassenKandidaten } from '../plz/strassenKandidaten';
+import { istRecord, pruefeJson, type JsonPruefer } from '../jsonSchutz';
 
 export interface ZhAmt { name: string; strasse: string; plzOrt: string; url?: string }
 export interface ZhKreisAmt extends ZhAmt { kreise: string }
@@ -45,8 +46,34 @@ interface ZhDaten {
 }
 let cache: ZhDaten | null = null;
 
+const istAmt = (a: unknown): boolean =>
+  istRecord(a) && typeof a.name === 'string' && typeof a.strasse === 'string' && typeof a.plzOrt === 'string';
+
+/** Strukturform des Generator-Artefakts (plz-generieren.ts / zh-kreise-
+ *  generieren.ts). Exportiert für die Vollprüfung in
+ *  src/tests/datenAussenkanten.test.ts — dort werden ALLE Gemeinden geprüft,
+ *  hier zur Ladezeit die Wurzel samt Kreis-Liste. */
+export const ZH_FRIEDENSRICHTER_PRUEFER: JsonPruefer = {
+  quelle: 'schlichtung/zhFriedensrichter.json',
+  wurzel: (w) => {
+    if (!istRecord(w)) return 'Wurzel ist kein Objekt';
+    if (!istRecord(w.gemeinden)) return 'gemeinden ist keine Record';
+    if (!Array.isArray(w.zuerichKreise) || w.zuerichKreise.length === 0) return 'zuerichKreise ist kein nicht-leeres Array';
+    if (w.zuerichKreise.some((k) => !istAmt(k) || typeof (k as Record<string, unknown>).kreise !== 'string')) {
+      return 'zuerichKreise-Eintrag hat nicht die Form { name, strasse, plzOrt, kreise }';
+    }
+    if (!istRecord(w.zuerichPlzKreise)) return 'zuerichPlzKreise ist keine Record';
+    return null;
+  },
+  eintrag: undefined,
+};
+
+/** Eintrag-Prüfung der gemeinden-Record (für die Voll-Testbatterie). */
+export const zhGemeindeEintragBefund = (wert: unknown): string | null =>
+  (istAmt(wert) ? null : 'Gemeinde-Amt hat nicht die Form { name, strasse, plzOrt }');
+
 async function lade(): Promise<ZhDaten> {
-  if (!cache) cache = (await import('./zhFriedensrichter.json')).default as unknown as ZhDaten;
+  if (!cache) cache = pruefeJson<ZhDaten>((await import('./zhFriedensrichter.json')).default, ZH_FRIEDENSRICHTER_PRUEFER);
   return cache;
 }
 
@@ -115,8 +142,26 @@ interface ZhStrassenDaten {
 let strassenCache: ZhStrassenDaten | null = null;
 let strassenKlein: Map<string, string> | null = null;
 
+/** Strukturform des Strassen-Artefakts (zh-strassen-generieren.ts). */
+export const ZH_STRASSEN_PRUEFER: JsonPruefer = {
+  quelle: 'schlichtung/zhStrassen.json',
+  wurzel: (w) => {
+    if (!istRecord(w)) return 'Wurzel ist kein Objekt';
+    if (!istRecord(w.strassen)) return 'strassen ist keine Record';
+    if (!istRecord(w.nummern)) return 'nummern ist keine Record';
+    return null;
+  },
+  eintrag: undefined,
+};
+
+/** Eintrag-Prüfungen der beiden Unter-Records (Voll-Testbatterie). */
+export const zhStrasseEintragBefund = (wert: unknown): string | null =>
+  (Array.isArray(wert) && wert.every((k) => typeof k === 'string') ? null : 'Strassen-Eintrag ist keine Kreis-Namensliste');
+export const zhNummernEintragBefund = (wert: unknown): string | null =>
+  (istRecord(wert) && Object.values(wert).every((v) => typeof v === 'string') ? null : 'Nummern-Eintrag ist keine Hausnummer→Kreis-Record');
+
 async function ladeStrassen(): Promise<ZhStrassenDaten> {
-  if (!strassenCache) strassenCache = (await import('./zhStrassen.json')).default as unknown as ZhStrassenDaten;
+  if (!strassenCache) strassenCache = pruefeJson<ZhStrassenDaten>((await import('./zhStrassen.json')).default, ZH_STRASSEN_PRUEFER);
   return strassenCache;
 }
 

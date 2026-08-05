@@ -284,3 +284,32 @@ wirksam und gilt danach fort.
   `bibliothek/recherche/norm-zeitmaschine-poc.md`. Timeline-Detail `FAHRPLAN-NORMTEXT-DARSTELLUNG.md §Intake`.
   **DoD:** POC-Verdikt + David-GO **vor** Bau · `check:normtext`/`check:normtext-netz` ·
   `check:gegenpruefung` · §7 a–d je Fassung · golden byte-gleich. Trailer `Roadmap: W2·5g-ZEIT`.
+
+---
+
+## §9 · ROADMAP-Spec-Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2 — AP-11 rückwirkend angewandt (ROADMAP-Diät Welle 3, 4.8.2026).
+Beide Wortlaute entstanden am 3.8.2026, also nach Anlage von §8 (31.7.2026). In der ROADMAP bleiben
+je Schritt Titel, `@meta`, Anlass/Kurzabsatz und der Pointer. Steuert nicht — Spec-Heimat.*
+
+### §9.1 `W2·5g-ZEIT` — Entparkung und Bau-Reihenfolge im Wortlaut *(→ Bau-Spec: §6 und §8 dieser Datei)*
+
+> **Anlass der Entparkung:** der Blocker `zeit-historik-poc` war kein fremdes Gate, sondern der erste
+> Arbeitsschritt des Schrittes selbst. Er ist gestrichen; die Vorbedingungen bleiben als **harte
+> Bau-Reihenfolge** erhalten: **(a) POC** historische Fedlex-Konsolidierungs-Extraktion (auf Platte
+> liegt nur die geltende Fassung; `dateApplicability` per SPARQL vorhanden, Durchlauf gross) →
+> **(b)** AKN-XML Phase 1 (Quell-Architektur-Entscheid Council 30.6.2026, schaltet M16 frei) und
+> **G-HIST** als Daten-Unterbau — beide sind **keine getrackten Schritte** und darum nicht als `dep`
+> abbildbar (Wortlaut: [FAHRPLAN-NORMTEXT-DARSTELLUNG.md](FAHRPLAN-NORMTEXT-DARSTELLUNG.md)
+> `§Intake`) → **(c)** Bau. Vor (c) je Kandidat das POC-Ergebnis vorlegen (§8: kein Fassungs-Diff auf
+> geratener Historie).
+
+### §9.2 `W2·5k-LINIEN-KONZEPT` — Bau-Spec im Wortlaut *(→ Bau-Spec: §2, Lehre F4/L-3 dieser Datei; Vorgeschichte A28: `FAHRPLAN-GESETZES-UX.md` Ziff. 10.9)*
+
+> **KONZEPT-Schritt, kein Bau**: 2–3 Varianten entwerfen (z.B. Linie je
+> aktiver Verschachtelungsebene, Sticky-Gliederungs-Kontext, Hover-/Fokus-Guides), als klickbare
+> Prototypen (Preview-Deploy) **zur David-Abnahme VOR jedem Vollbau**. Harte Regel aus der Lehre:
+> dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr** gelöst. A28 (Auto-Guide
+> aus, manuell einschaltbar) bleibt bis zur Abnahme der Live-Stand. Referenz-Baustand des
+> verworfenen Versuchs: geschlossener PR #423 (`fd44b37b3`, mit Beweisen).

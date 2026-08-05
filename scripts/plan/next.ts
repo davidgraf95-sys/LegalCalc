@@ -2,6 +2,7 @@
 import { readFileSync } from 'node:fs';
 import { parseRoadmap } from './parse';
 import { resolve } from './aufloesen';
+import { lageBlock } from './lage';
 export { resolve, type Buckets } from './aufloesen';
 
 // CLI
@@ -20,4 +21,7 @@ if (!process.env.VITEST) {
   if (b.inArbeit.length) z(`🔨 in Arbeit (wip): ${b.inArbeit.join(', ')}`);
   if (b.wartet26xSlot.length) z(`⏸️  wartet auf 26×-Slot: ${b.wartet26xSlot.join(', ')}`);
   if (b.slot26xBelegtVon) z(`📦 26×-Slot belegt von: ${b.slot26xBelegtVon}`);
+  // Lage-Block ANGEHÄNGT (nie dazwischen): zieht man ihn ab, ist die Ausgabe
+  // oben byte-identisch zum Stand vor QS-PLAN-REVIEW/4a.
+  for (const zeile of lageBlock(einheiten, b.inArbeit, { prs: process.argv.includes('--prs') })) z(zeile);
 }

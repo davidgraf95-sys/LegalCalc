@@ -1048,7 +1048,7 @@ allein dieser §.*
   liegt in `QS-CURRENCY-KANON` (§17). Dieser Schritt ändert **keinen Pin**.
 - **Dateien:** `scripts/fedlex-cache.sh`, `src/tests/`.
 
-### §19 `QS-KORPUS-SCOPE` — scope/decl-Sektionen ohne annex-Container ingestieren
+## §19 `QS-KORPUS-SCOPE` — scope/decl-Sektionen ohne annex-Container ingestieren
 
 - **Anlass (Gegenprüfung zu PR #425 / `W2·5d-ANNEX`, Nebenbefund N2, 3.8.2026):** 12
   Staatsverträge (cedaw, cisg, eaue, hbewue, huvue, krk, montreal, pvue, uno_antifolter,
@@ -1069,3 +1069,37 @@ allein dieser §.*
   über den textuellen Snapshot-Diff.
 - **Dateien:** `scripts/normtext/extrahiere-fedlex.ts`, `scripts/normtext/struktur-extrahiere.ts`,
   `public/normtext/bund` (nur via Generator-Lauf).
+
+---
+
+## §20 · ROADMAP-Spec-Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band — AP-11 rückwirkend angewandt (ROADMAP-Diät Welle 3,
+4.8.2026). In der ROADMAP bleiben je Schritt Checkbox, Titel, `@meta`, der **Anlass** (dort
+ausdrücklich verlangt) und der Pointer auf den jeweiligen §; die **Bau-Spec** steht unten und in
+den §§17–19. Steuert nicht — Spec-Heimat.*
+
+### §20.1 `QS-CURRENCY-KANON` — Bau-Spec im Wortlaut *(→ Bau-Spec: §17 dieser Datei)*
+
+> `check:fedlex-versionen` meldet im Kanonik-Arbiter beide Staatsverträge mit falscher `html-N`-Wurzel (`fza` html-5 statt html-9 · `cmr` html-3 statt html-6); die **Fassung** ist aktuell, die **Wurzel** nicht. *(Anmerkung 3.8.2026: die Kanonik-Wurzeln von acht Pins — `zgb`,`mwstg`,`bbg`,`usg`,`gwg`,`kag`,`fza`,`cmr` — sind mit PR #414 nachgeführt; dieser Schritt bleibt offen, bis die Ursache belegt und die Anker §7-verifiziert sind.)*
+
+### §20.2 `QS-FRIT-DRIFT` — Bau-Spec im Wortlaut *(→ Bau-Spec: §18.1 dieser Datei)*
+
+> im Monitor je **~30 Kern-Erlass** die eId-**Mengen** der drei Sprachfassungen vergleichen und Abweichungen melden; Vollausbau auf alle 227 optional. **Ausdrücklich KEIN dreisprachiges Korpus** — dieser Schritt vergleicht nur MENGEN und meldet; das Befüllen der `fr`/`it`-Fassungen ist **`W2·6-MEHRSPRACH`** und bleibt dort. Reine Prüflogik, kein Snapshot-Schreiben. **Fertig, wenn** der Monitor je Kern-Erlass drei eId-Mengen vergleicht und eine künstlich eingebaute Abweichung **einmal rot** zeigt (§6.7).
+
+### §20.3 `QS-CURRENCY-TESTS` — Bau-Spec im Wortlaut *(→ Bau-Spec: §18.2 dieser Datei)*
+
+> je einen Negativfall bauen, der die Sonde und den Ausschluss **einmal rot** zeigt, dann grün. Reine Prüflogik (`Gegenpruefung: n/a`) — **die Ursachenklärung der `fza`/`cmr`-Wurzeln ist Risikopfad und liegt in `QS-CURRENCY-KANON`**; hier wird nur die Scheiterns-Fähigkeit der Sonde gebaut, kein Pin geändert.
+
+### §20.4 `QS-KORPUS-BMV` — Bau-Spec im Wortlaut
+
+*(Kein Weiterzeiger: anders als §20.1/§20.3/§20.5 hat `QS-KORPUS-BMV` keinen eigenen
+Befund-§ weiter oben — §17 behandelt ausschliesslich die `fza`/`cmr`-Kanonik. **Dieser
+Abschnitt IST die Bau-Spec**; der frühere Verweis «→ §17» war ein Copy-Paste-Erbe von
+§20.1 und zeigte auf einen fremden Gegenstand, Bauplan-Review 4.8.2026, Befund B1.)*
+
+> regulärer Bundeserlass-Ingest nach Skill `korpus-werkstatt` (Pin, Snapshot, Sidecar, Register; neuer Register-Key neben dem historischen `bmv`), §7-Verifikation, Risikopfad ⇒ Gegenprüfung. Amtsbeleg: AKN `eli/cc/2025/408/20260301`, Art. 34 (Aufhebung alt) / Art. 36 (Inkrafttreten 1.3.2026).
+
+### §20.5 `QS-KORPUS-SCOPE` — Bau-Spec im Wortlaut *(→ Bau-Spec: §19 dieser Datei)*
+
+> Extraktor-Erweiterung + Regeneration der 12 Erlasse, §7-Verifikation; Mitnahme N1 (ANNEX_CONTAINER-Regex-Härtung, gleiche Datei). **Risikopfad** ⇒ Gegenprüfung; golden-Diff erwartet (neue amtliche Substanz).

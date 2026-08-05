@@ -16,11 +16,11 @@
 // neu berechnet und der Golden-Merge-Basis-Index golden/normtext-snapshot.json
 // nachgezogen.
 //
-//   vite-node scripts/normtext/kanton-fuellpunkt-nachzug.ts -- SG-3849 SG-2935 SG-2808
+//   vite-node scripts/archiv/kanton-fuellpunkt-nachzug.ts -- SG-3849 SG-2935 SG-2808
 // Ohne Argumente: die G3b-Schritt-3-Liste (SG-Füllpunkt-Rest).
 import { readFileSync, writeFileSync } from 'node:fs';
-import { reichereTabellen, type PdfBlock } from './adapter-pdf.ts';
-import { sha256Bloecke } from './sha-bloecke.ts';
+import { reichereTabellen, type PdfBlock } from '../normtext/adapter-pdf.ts';
+import { sha256Bloecke } from '../normtext/sha-bloecke.ts';
 import type { NormSnapshotDatei } from '../../src/lib/normtext/typen.ts';
 
 const KANTON_DIR = 'public/normtext/kanton';

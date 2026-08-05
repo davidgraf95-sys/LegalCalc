@@ -13,7 +13,8 @@ import { IcsExportButton } from '../IcsExportButton';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { LinkTeilenButton } from '../LinkTeilenButton';
-import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
+import { permalinkKodieren } from '../../lib/permalink';
+import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { BGER_LINK_SPEC } from '../../lib/rechnerPermalinks';
 import { SelectionGrid } from '../ui/SelectionGrid';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -80,10 +81,7 @@ const BGER_DISCLAIMER =
 
 export function BgerRechtswegForm() {
   const pk = usePaneKlasse();
-  const ausLink = useMemo(() => {
-    try { return permalinkLesen(BGER_LINK_SPEC, typeof window === 'undefined' ? '' : window.location.search); }
-    catch { return {} as Record<string, unknown>; }
-  }, []);
+  const ausLink = usePermalinkFelder(BGER_LINK_SPEC);
 
   const [weg, setWeg] = useState<BgerWeg>((ausLink.weg as BgerWeg) ?? 'zivil');
   const [gebiet, setGebiet] = useState<BgerZivilgebiet>((ausLink.zivilGebiet as BgerZivilgebiet) ?? 'schuldrecht');

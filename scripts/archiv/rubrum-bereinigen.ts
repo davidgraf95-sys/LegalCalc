@@ -10,12 +10,12 @@
 // gewahrt, register.json/norm-index.json hängen nicht am Rubrum.
 //
 // Flags:  --schreiben (sonst dry-run)  ·  --nur=<id-prefix>
-//   vite-node scripts/normtext/rubrum-bereinigen.ts -- [--schreiben] [--nur=bund/bge]
+//   vite-node scripts/archiv/rubrum-bereinigen.ts -- [--schreiben] [--nur=bund/bge]
 //
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { rubrumAusAmtlichemStrukturfeld, rubrumFeldPlausibel, type RubrumFeld } from '../../src/lib/rechtsprechung/rubrum';
-import { alleSnapshots } from './snapshot-walker';
+import { alleSnapshots } from '../normtext/snapshot-walker';
 import type { EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 
 const PUB = join(process.cwd(), 'public', 'rechtsprechung');

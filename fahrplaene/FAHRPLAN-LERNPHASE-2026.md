@@ -172,7 +172,7 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 
 ---
 
-## §3 · Gegenprüfungs-Werkzeuge aus dem §14-Intake 3.8.2026 (`QS-GP-BEREICH`, `QS-GP-PRERENDER`)
+## §3 · Gegenprüfungs- und Verifikations-Werkzeuge (§14-Intake 3.8.2026 + Nachbefunde, §3.1–§3.6)
 
 *Angelegt 3.8.2026 (Bauplan-QS). Beide sind Werkzeuge AM Beweis, nicht am Rechtsinhalt —*
 *reine Prüflogik (`Gegenpruefung: n/a`), aber beide müssen ihre Scheiterns-Fähigkeit zeigen (§6.7).*
@@ -239,8 +239,15 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   (1686 Artikel, 1,9 MB) braucht schon ungedrosselt 9,1 s, kippt zwischen Drossel 1× und 6×
   (Messreihe im PR-#436-Body); Wurzel-Fix: kleinerer Mess-Erlass ODER kalibriertes Budget nach
   QS-PERF Ziff. 5 — blosses Hochsetzen ohne Messreihe ist dort ausgeschlossen.
+- **Nachtrag Nacht-Landekette 4./5.8.2026 (Dringlichkeit steigt):** (d) traf DREIMAL in einer
+  Nacht — Shard 2/8 rot auf PR #456 (Doku-Diff = eigene Nullprobe, Runner 16m33s statt ~9m,
+  zusätzlich `leser-ruecksprung-r5-r7` R7-Overlay-Überhang 4375 ms gegen 1500er-Budget unter
+  CPU-Drossel), erneut auf PR #449 (chf-Formatter-Diff) und auf PR #454 (Turso-Sync-Diff) —
+  die Reader-Druckstrecke war in allen drei Diffs unberührt. Alle per Rerun/Neubasierung
+  grün; Kosten je Vorfall ~1 Batterie-Zyklus (~18 min).
 - **Dateien:** `playwright.config.ts` / betroffene Specs, `scripts/datenhaltung/suche.test.ts`,
-  `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`.
+  `e2e/druck-fundstellen-z2.e2e.ts`, `e2e/leser-gliederung-a33.e2e.ts`,
+  `e2e/leser-ruecksprung-r5-r7.e2e.ts`.
 
 ### §3.5 `QS-E2E-SHARD-GEN` — Shard-Zuordnung in die Spec, JSON generieren
 
@@ -258,3 +265,60 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
   Parallel-Fall (zwei Branches, je neue Spec) konfliktfrei merged.
 - **Dateien:** `e2e/*.e2e.ts` (Annotationen), neuer Generator unter `scripts/`,
   `.gitattributes`, `scripts/e2e-shard-gruppen.mjs`.
+
+### §3.6 `QS-GP-NACHBEFUNDE` — Nebenbefunde der Gegenprüfungs-Nacht 4./5.8.2026 (drei Härtungen)
+
+Drei nicht-blockierende Befunde aus den adversarialen Prüfungen der QS-CODE-Landekette
+(PRs #447/#448, Verdikte im Gegenprüfungs-Register 2026-08-04), gebündelt als eine
+Bau-Einheit — gleiche Risiko-Klasse (Prüf-/Klassifikations-Härtung), keine Vermischung:
+
+1. **fedlex-Fläche in `istRisikoPfad()` aufnehmen** *(Prüfung #447, Befund 2 — Bestand aus
+   main, nicht PR-verursacht)*: `src/lib/fedlex.ts` war NIE Risiko-klassiert, und seit dem
+   #444-Split gilt dasselbe für `src/lib/fedlex/` — die Fedlex-Extraktionsschicht läuft ohne
+   Gegenprüfungs-Tor, während `scripts/fedlex-*` längst klassiert ist. Fix: beide Pfade in
+   `scripts/gegenpruefung/kern.ts` aufnehmen, Test analog zum `zustaendigkeit/`-Zweig
+   (Rot-Beweis: heutiges `false` je Pfad festhalten, §6.7). BEWUSSTE FOLGE: künftige
+   fedlex-Edits brauchen ein Verdikt — das ist der Zweck, nicht ein Nebeneffekt.
+2. **`leakErkannt` bekommt einen Pipeline-Konsumenten** *(Prüfung #448, Befund 1, niedrig)*:
+   der Anonymisierungs-Leak-Flag des Besetzungs-Parsers wird ausserhalb der Tests nirgends
+   ausgewertet (`scripts/normtext/entscheide-schreiben.ts` liest nur `res.richter`).
+   Fix: Leak-Fälle beim Schreiben zählen und im `check:besetzung`-Bericht ausweisen.
+3. **`trenneInterneTitel` darf `PARTEI_RE` nicht unterlaufen** *(Prüfung #448, Befund 2,
+   niedrig-mittel; empirische Probe: «A.________, vertreten durch Rechtsanwalt Dr. Jürg
+   Krumm» → Teilsegment «Dr. Jürg Krumm» passiert den Partei-Filter)*: Segment verwerfen,
+   wenn schon das URSPRUNGS-Segment vor der Titel-Trennung `PARTEI_RE` trifft.
+   Regressionstest mit genau dieser Probe.
+
+- **Risikopfad** (kern.ts-Klassifizierer ist Prüflogik, Punkte 2–3 berühren
+  `src/lib/rechtsprechung/besetzung/` = Risiko) ⇒ Gegenprüfung für Punkte 2–3.
+- **Fertig, wenn:** je Punkt Rot-Beweis/Regressionstest vorhanden, `check:besetzung` und
+  Gegenprüfungs-Suite grün, Verdikt im Register.
+
+---
+
+## §4 · ROADMAP-Spec-Nachzug der §3-Kind-Schritte (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Querschnitt-Band, §14-Intake 3.8./4.8.2026 — AP-11 rückwirkend angewandt
+(ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben je Schritt Checkbox, Titel, `@meta`, der
+**Anlass** (dort ausdrücklich verlangt) und der Pointer auf den jeweiligen §; die **Bau-Spec** steht
+unten und in den §§3.1–3.5. Steuert nicht — Spec-Heimat.*
+
+### §4.1 `QS-GP-BEREICH` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.1 dieser Datei)*
+
+> Bereichs-Argument + Commit-Bereich-Diff, damit der Regelfall wieder mechanisch quittierbar ist. Tor-Code ohne Inhaltsänderung; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7).
+
+### §4.2 `QS-GP-PRERENDER` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.2 dieser Datei)*
+
+> ein **nicht** im Pflicht-Gate verdrahteter Befehl, der zwei Prerender-Läufe byte-vergleicht und die Differenz benennt; wer ihn ruft, bekommt denselben Beweis reproduzierbar.
+
+### §4.3 `QS-GP-PREPUSH` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.3 dieser Datei)*
+
+> `scripts/git-setup.sh` (npm `prepare`) verdrahtet einen pre-push-Hook, der bei Risiko-Diff in `origin/main..HEAD` ohne Quittung den Push mit Hinweis stoppt; `--no-verify` bleibt als bewusster Ausweg. Braucht die Bereichs-Prüfung aus `QS-GP-BEREICH`. Reine Prüflogik; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7).
+
+### §4.4 `QS-E2E-STABIL` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.4 dieser Datei)*
+
+> Budgets streuungs-begründet setzen bzw. Lauf teilen; keine CI-Änderung. **Mitnahme 4.8.2026 (Split-Welle):** drei weitere unabhängige Belege desselben Musters an EINEM Abend — `scripts/datenhaltung/suche.test.ts` (beforeAll 60 s) riss unter Parallellast bei drei Agenten, isoliert je grün in 17–34 s; Zeitbudget statt Arbeitsbudget ist die Wurzel (§17).
+
+### §4.5 `QS-E2E-SHARD-GEN` — Bau-Spec im Wortlaut *(→ Bau-Spec: §3.5 dieser Datei)*
+
+> Gruppen-Annotation im Spec-Kopf, JSON generiert ⇒ `merge=regen`-Treiber greift, Konflikt-Klasse entfällt; Union-Wächter bleibt scharf.

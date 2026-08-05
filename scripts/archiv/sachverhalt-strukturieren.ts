@@ -12,13 +12,13 @@
 // Entscheid übersprungen (kein stiller Textverlust).
 //
 // Flags:  --schreiben (sonst dry-run)  ·  --nur=<id-prefix>
-//   vite-node scripts/normtext/sachverhalt-strukturieren.ts -- [--schreiben] [--nur=bund/bge]
+//   vite-node scripts/archiv/sachverhalt-strukturieren.ts -- [--schreiben] [--nur=bund/bge]
 //
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { teileSachverhalt, entrauscheSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
-import { sha256EntscheidBloecke } from './sha-entscheide';
-import { alleSnapshots } from './snapshot-walker';
+import { sha256EntscheidBloecke } from '../normtext/sha-entscheide';
+import { alleSnapshots } from '../normtext/snapshot-walker';
 import type { EntscheidBlock, EntscheidSnapshot, EntscheidSnapshotDatei } from '../../src/lib/rechtsprechung/typen';
 
 const PUB = join(process.cwd(), 'public', 'rechtsprechung');

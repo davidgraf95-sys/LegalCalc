@@ -192,3 +192,20 @@ Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
   beim Bau, kein Blocker. Detail: diese Datei §Verzahnung. **DoD:** §6-/§9-Tore
   grün · **golden byte-gleich** (Engines bleiben unberührt) · `check:gegenpruefung` nur, falls doch ein
   Risiko-Glob berührt wird — sauberes Chaining vermeidet das. Trailer `Roadmap: W1·5-PRAXIS`.
+
+---
+
+## §2 · ROADMAP-Spec-Nachzug `W1·4` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 1, Schritt `W1·4` — AP-11 rückwirkend angewandt (ROADMAP-Diät
+Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`, die Reihenfolge a→b→c, der Slot-Vermerk
+und der Pointer hierher. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §1 dieser Datei.***
+
+> **Anlass der Entparkung:** der Blocker `wbqdyap3x` trug seine eigene Auflösung im Register —
+> «kein David-Gate, die Recherche ist `[OF]` und selbst Teil von W1·4; sonst bleibt der Hauptmoat
+> dauerhaft geparkt». Er ist gestrichen; die Recherche ist jetzt **Arbeitsschritt (a)** dieses Schrittes.
+> **Reihenfolge:** (a) Recherche Schlichtungs-/Reduktions-/Rechtsmittel-Modifikatoren an amtlichen
+> Tarifen belegen (Norm + Link + Stand, §7 — Risikopfad ⇒ `QS-GP`) → (b) **I2** damit bauen →
+> (c) Festsetzung/Dispositiv. **I4 ✅** (1.7.2026, Bemessungskriterien 25 GK + 26 PE, §7-belegt,
+> QS-GP bestanden) · **I9-Rest ✅** (Notariats-/Grundbuch-Querverweis) — Wortlaut →
+> `ROADMAP-CHRONIK.md` → W1·4 (22.7.2026).

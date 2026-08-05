@@ -64,6 +64,24 @@ verliert er die Steuerungswirkung. Erlebter Schaden: zehn Schritte gleichzeitig
 freigegeben, wenn nicht weitergebaut wird); zwei Sessions fixten parallel
 denselben Defekt.
 
+**Geparkte Arbeit heisst `parked`, nie `ready`.** Wer beim Sessionende ein `wip`
+freigibt, während die Arbeit fertig gebaut in einem offenen PR liegt, setzt
+`status: parked` + `grund: pr-NNN` — **nicht** stillschweigend `ready`. Sonst
+bietet `plan:next` einen Schritt als baubar an, den jemand gerade schon gebaut
+hat. Beleg: die QS-CODE-Reihe stand am 4./5.8.2026 auf `ready`, obwohl sie
+vollständig in **zehn offenen PRs** (#444, #446–448, #450–454) lag; für
+`plan:next` war davon nichts sichtbar — Doppelbau-Risiko, Fehlerklasse F6
+(Bauplan-Review 4.8.2026, Befund B3). `ready` heisst «niemand baut das gerade»,
+und diese Zusage muss stimmen.
+
+**Branch- und Worktree-Namen tragen den Schritt-ID-Slug** — `feat/qs-korpus-bmv`
+zu `QS-KORPUS-BMV`, nicht `worktree-agent-<hash>`. Der Name ist kein Kosmetikum,
+sondern die Datenquelle der wip-Verstoss-Sonde im Lagebild
+(`scripts/plan/bildSeiten.ts`): sie erkennt an ihm, dass ein fremder Bau auf
+einem Schritt läuft. Opake Namen sind für sie unsichtbar, und ein unsichtbarer
+Bau ist derselbe F6-Mechanismus wie ein fehlendes `wip`. Gegenstück im Dispatch:
+§0 Ziff. 5 (drei Sonden + Früh-Push).
+
 ## 3. Bündeln — aber nicht über-bündeln
 
 **Bündeln**, wenn ein verwandter oder überlappender Schritt existiert oder
@@ -135,16 +153,29 @@ Für den Dispatch gilt das Standard-Template
 kompaktes Pflicht-Rückgabe-Schema und `model` plus `effort` explizit in **jedem**
 Call. Beweis, Tore und Gegenprüfung bleiben davon unberührt.
 
+**Bevorzugter Dispatch-Weg (seit 4.8.2026):** die generierten Agent-Typen
+**`lex-<klasse>`** (bau · daten · pruefung · recherche · mechanisch · synthese,
+`.claude/agents/`) — §0-Klausel, TABU, Rückgabe-Schema und Modell-Default
+stecken in der Definition; `npm run dispatch:agents` regeneriert, das Tor
+`check:dispatch-klausel` beweist Byte-Gleichheit. Freitext-Dispatch
+(`npm run dispatch -- <klasse>`) bleibt der Fallback.
+
 **Rollenteilung (Anweisung David 4.8.2026):** Die Hauptsession **orchestriert
 nur** — sie zerlegt, dispatcht, prüft Rückgaben gegen prüfbare Artefakte,
 landet und pflegt den Plan. Bau- und Prüfarbeit gehen an Unteragenten.
 
-**Modellwahl nach Schwierigkeit** (je Call explizit, s. Dispatch-Template):
-anspruchsvoller Bau auf **Opus** · mechanische/leichte Arbeit (Umbenennen,
-Listen abarbeiten, Doku-Nachzug) auf **Sonnet** oder **Haiku** · Gegenprüfung
-auf Risiko-Pfaden stets auf einem **anderen** Modell als dem bauenden — der
-Wert liegt in der Unabhängigkeit des Zweitblicks, nicht in dessen Fähigkeit.
-Das gewählte Modell steht ohnehin im `Gegenpruefung:`-Trailer.
+**Modellwahl nach Schwierigkeit** (Stufen statt Modellnamen — die Abbildung
+Stufe → Modell steht einzig in `PALETTE`, `scripts/dispatch.ts`):
+anspruchsvoller Bau auf Stufe **stark** · eng umrissener, nicht-riskanter Bau
+darf **mittel** · Mechanik auf **klein** · Synthese mind. **mittel** ·
+Gegenprüfung bevorzugt **spitze** (Entscheid David 4.8.2026), Minimum
+stark/high, stets auf einem **anderen** Modell als dem bauenden — die
+Unabhängigkeit des Zweitblicks ist Pflicht, die Fähigkeit seither auch
+gehoben. Das gewählte Modell steht ohnehin im `Gegenpruefung:`-Trailer.
+
+**Folge-Slices derselben Bau-Fläche:** bestehenden Agenten per SendMessage
+fortsetzen statt neu spawnen (Template §1.4) — **nie** für die Gegenprüfung
+und nie über Klassen-Grenzen.
 
 ## 7. Vertrauensgrenze — wörtlich in jeden Sub-Agenten-Auftrag
 

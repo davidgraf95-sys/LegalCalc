@@ -629,3 +629,37 @@ die Form von Unehrlichkeit, gegen die §8 steht — und sie führt die nächste 
 **Referenz:** §9/B4 (Filter-UI, «Default konservativ») und §9/B7 (Voll-Auflistung ohne Deckel) —
 dort liegt die Begründungslinie beider Wege. **Risiko-Klasse:** Weg 1 = Verhaltensänderung,
 golden-gegated + Perf-Messung; Weg 2 = reine Doku. **Gegenprüfung:** `n/a` (kein Risiko-Pfad).
+
+---
+
+## §14 · ROADMAP-Spec-Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritte `W2·7-VZUI` und `W2·7-VZUI-SACHGEBIET` — AP-11
+rückwirkend angewandt (ROADMAP-Diät Welle 3, 4.8.2026). In der ROADMAP bleiben Titel, `@meta`,
+Kurzabsatz und Pointer. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §11 bzw. §12 dieser Datei.***
+
+### §14.1 `W2·7-VZUI` — Stand-Wortlaut *(→ Bau-Spec: §11 dieser Datei)*
+
+> (Fundament/Vereinheitlichung · Normrevisions-Ehrlichkeit · E4-Rangliste; Gegenprüfungen bestanden; Wortlaut → `ROADMAP-CHRONIK.md` → W2·7-VZUI, 24.7.2026)
+
+### §14.2 `W2·7-VZUI-SACHGEBIET` — Bau-Spec im Wortlaut *(→ Bau-Spec: §12 dieser Datei)*
+
+> Darstellung als **Filter** im «Rechtsprechung ▾», nicht als zweiter Chip-Zusatz (Dichteregel §1.2 bleibt). Die Zitier-**Rolle** bleibt ausdrücklich zu (nicht deterministisch ableitbar).
+
+### §14.3 `W2·6-ZNETZ` — Merkposten LM-042 im Wortlaut *(→ Bau-Spec: §10 dieser Datei)*
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·6-ZNETZ` (verschoben 4.8.2026, ROADMAP-Diät Welle 3);
+dort bleibt der Merkposten als Auflage-Einzeiler.*
+
+> **Merkposten (LM-042, UI-Befunde B20, Prod-Nachmessung 3.8.2026):** Sammelzitate («ff.») werden
+> nicht kenntlich gemacht — `zitat-extraktion.ts` GLIED_KOPF fängt Sub-Marker/ff. bewusst nicht
+> (fliesst nie in den Norm-Key), das Artefakt trägt kein `ff.`-Flag. Fix liegt in der
+> Zitat-Extraktion, nicht in der Darstellung (§0.3 Risiko-Klasse) — bei diesem Schritt als Auflage
+> mitführen, kein eigener Posten.
+
+### §14.4 `W2·7-BEZUG-LADEN` — Bau-Spec im Wortlaut *(→ Bau-Spec: §13 dieser Datei)*
+
+*Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·7-BEZUG-LADEN` (verschoben 4.8.2026, ROADMAP-Diät
+Welle 3); dort bleiben Titel, `@meta`, Befund-Kern und der Entscheid-Zwang.*
+
+> tatsächlich lädt der Default beide Shards und rendert immer `BezuegeZeile`, `istErweitert()` steuert nur die Menü-Optik. Zwei Wege: **(1)** Code auf das Versprechen zurückbauen (Verhaltensänderung ⇒ §15-Logikverlust-Bewertung, Skill `perf`, golden-gegated) ODER **(2)** Doku/Kommentare nachführen.

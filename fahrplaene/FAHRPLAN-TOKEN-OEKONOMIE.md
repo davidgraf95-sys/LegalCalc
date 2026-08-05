@@ -96,15 +96,29 @@ Link-Tors · AP-10/11 Stand-Nachführung + Nachhalte-Konvention.
 **22** `.md` gesenkt. Das Link-Tor (`check:plan` Regel 7) scannt seit AP-8 den Ordner statt den
 Repo-Wurzel; der Negativ-Beweis (unverlinkte Datei ⇒ rot) ist in `d7aa4e1` protokolliert.
 
-**Lücke im Rotations-Regex (dokumentiert, nicht gefixt).** `.claude/hooks/struktur-rotieren.py`
-liest das Kartendatum mit `DATUM_RE = ^## Session (\d{1,2})\.(\d{1,2})\.(\d{4})`. Karten mit
-**Doppel-Datum** im Titel («`## Session 24./25.7.2026 …`») matchen nicht; `plane_rotation()`
-behält undatierte Karten bewusst konservativ — sie rotieren daher **nie**. Betroffen sind
-aktuell **3** Karten, die dauerhaft in der Karten-Region von `STRUKTUR.md` liegen bleiben. Kein
-Datenverlust (die Leitplanke «verschieben, nie zusammenfassen» ist unberührt), aber ein
-stiller Boden unter der Rotation. Fix-Skizze für eine spätere Etappe: zweites Muster
-`(\d{1,2})\.(?:/\d{1,2}\.)?(\d{1,2})\.(\d{4})` oder Rückfall auf das **späteste** im Titel
-genannte Datum; vorher einmal rot zeigen (§6.7).
+**Lücke im Rotations-Regex — gefixt 4.8.2026** (Branch `feat/qs-tok-rotation-fix`, §17-Wurzel-Fix).
+`.claude/hooks/struktur-rotieren.py` erkannte mit `DATUM_RE = ^## Session (\d{1,2})\.(\d{1,2})\.(\d{4})`
+Karten mit **Doppel-Datum** im Titel («`## Session 24./25.7.2026 …`») nicht; `plane_rotation()`
+behielt undatierte Karten konservativ — sie rotierten **nie**. Rot-Beweis vor dem Fix (Session
+4.8.2026, 7 betroffene Karten statt der ursprünglich notierten 3 — zwei weitere Doppel-Datum-
+Titel kamen seither hinzu): `python3 .claude/hooks/struktur-rotieren.py --dry-run` zeigte
+`rotieren: 0` bei 75.0 KB, obwohl die 24./25.7.- und 31.7.2026-Karten weit über
+`BEHALTE_ARBEITSTAGE` hinaus waren. **Mechanik:** `DATUM_RE` erweitert um eine optionale
+Tag2-Gruppe (`(\d{1,2})\.(?:/(\d{1,2})\.)?(\d{1,2})\.(\d{4})`); ist sie gesetzt, gilt sie als
+massgebliches (späteres) Datum — Einzel-Datum-Titel bleiben byte-identisch im Verhalten.
+
+**Budget-getriebene Nachrotation (gleicher Fix, gleicher Anlass).** Die reine Alters-Rotation
+(`BEHALTE_ARBEITSTAGE = 2`) kann an bau-intensiven Tagen das 60-KB-Budget reissen lassen, ohne
+dass je nachrotiert wird — der Wächter warnt dann dauerhaft, ohne Wirkung. Neu: liegt
+STRUKTUR.md nach der Alters-Rotation weiterhin über dem Budget, rotiert `budget_erweitern()`
+zusätzlich schrittweise die jeweils **älteste verbleibende datierte Karte** (Tie-Break bei
+gleichem Datum: die im Dokument am weitesten unten stehende), bis das Budget eingehalten ist
+oder die harte Untergrenze `MINDEST_BEHALT = 3` erreicht ist — dann bricht die Nachrotation ab
+und der Wächter warnt weiter. Undatierte Karten bleiben wie bisher unangetastet. Grün-Beweis:
+derselbe `--dry-run`-Lauf rotierte nach dem Fix 5 Karten (2× 31.7.2026, 3× 24./25.7.2026,
+zusätzlich zur Alters-Rotation via Budget-Nachrotation) und führte STRUKTUR.md von 75.0 KB auf
+rechnerisch ~57.8 KB — unter das 60-KB-Budget, bei 11 verbleibenden Karten (weit über der
+Untergrenze 3).
 
 **Offener QS-TOK-Rest — unverändert:** **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
 27.7.2026 erteilt; T16 nur in frischer Session gem. T19-Vorbedingung).
@@ -322,7 +336,11 @@ TABU je Auftragsklasse (UI: Datenfläche tabu; Extraktion: Arbeitsfläche via To
 Whitelist-Erweiterungen; ≤2k = Richtwert, Fails/Befunde NIE kürzen. DoD: Template existiert +
 referenziert; 3 Probe-Dispatches halten das Schema.
 
-**T15 Modell-/Effort-Routing (mittel/S).** M: model+effort in JEDEM Task-Call explizit;
+**T15 Modell-/Effort-Routing (mittel/S).** *Stand 4.8.2026: Routing spricht seither
+semantische Stufen (spitze/stark/mittel/klein); Abbildung auf Modelle NUR in `PALETTE`
+(`scripts/dispatch.ts`), Regeln im Template §2 — u. a. Gegenprüfung bevorzugt spitze,
+Minimum stark/high (Entscheid David, Commit ef5a3a843). Der Rest dieses Absatzes ist
+der Planungsstand vom Juli 2026.* M: model+effort in JEDEM Task-Call explizit;
 Checkliste im T4; Risikopfade + Gegenprüfung fix Opus/high. E: bis −48…−76 % Output
 auf effort-gesenkten Schritten (Opus-4.5); Haiku = 1/5 Opus-Preis. **K:** mechanisch =
 deterministische Transformation, maschinell prüfbar (verschieben, formatieren, Log-Extrakt,
@@ -450,9 +468,15 @@ Kasten zu §Stand 31.7.2026 — jeder Eintrag nennt den Stand, für den er gilt,
 3. **Bedingt:** T11 nach Fedlex-P1a/b · T19 nach T1 · T8 nach T4 · T16 nach T1/T3/T7 + Probelauf ·
    T10 nach Machbarkeits-Verifikation · T13 ausserhalb aktiver Worktree-Flächen ·
    T14-Stufe-1 nach U-Kette + T2-Frequenz-Beleg.
-4. **Nicht ohne separates Go David:** T12-Stufe-2 (Required-Gefüge) · T14 (L) · T16 (CLAUDE.md) ·
-   T10 (Account-Ebene) · **T20 je Einsatz** (Opt-in «ultracode» bzw. ausdrücklicher
-   Workflow-Auftrag; stehende Freigabe gibt es nicht).
+4. **Go erteilt (David 27.7.2026), Massgaben bleiben:** T12-Stufe-2 (Required-Gefüge) · T14 (L) ·
+   T16 (CLAUDE.md) · T10 (Account-Ebene) sind freigegeben — die frühere Fassung dieser Ziffer
+   («nicht ohne separates Go David») war seit dem 27.7.2026 überholt und widersprach dem
+   Stand-Block dieser Datei (Z. 123–125: «Go David 27.7.2026 erteilt», bestätigt durch die
+   Pauschal-Freigabe vom 3.8.2026) sowie dem QS-TOK-Block der ROADMAP; korrigiert 5.8.2026,
+   Bauplan-Review-Befund B2. **Die Massgaben je Posten bleiben unverändert bestehen:** T16 nur
+   in frischer Session (T19-Vorbedingung) · T12-Stufe-2 mit neu bewerteter
+   Weglassungs-Begründung · T10 erst nach Machbarkeits-Verifikation. Weiterhin **ohne stehende
+   Freigabe**: **T20 je Einsatz** (Opt-in «ultracode» bzw. ausdrücklicher Workflow-Auftrag).
 5. Kein Punkt ändert Gate-Semantik/Prüfpflichten; Auto-Merge gilt je PR.
 
 ## §9 Verworfen

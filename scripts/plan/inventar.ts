@@ -7,9 +7,17 @@
 // · W2·6-B · W2·6-NKEY · W2·6a-MAT · W2·7 · W2·7-BEZUG · W2·7-BEZUG-B7 · W2·12-HYGIENE · QS-PH
 // · QS-CURRENCY · W2·17-UI-BEFUNDE-B1/-B2/-B20/-N1 · W3·14-Responsive-Audit/-Defekte.
 // Entfernt (gestrichen, Begründung in der Chronik): QS-WISSEN.
+// DIÄT WELLE 2 (4.8.2026, Anlass: Wächter `struktur-rotieren.py --check` rot, ROADMAP.md 120.6 KB
+// über dem 100-KB-Ceiling): dieselbe Mechanik, 14 weitere erledigte Schritte → Chronik-Abschnitt
+// «Umschichtung 4.8.2026». Entfernt: QS-UI-WARNLINE · QS-PLAN-BILD · QS-CODE-FRISTENKERN
+// · W2·5d-EID3/-ANNEX/-SPY/-YC · W2·10-UI-NAV-VR/-R1/-R2/-URL/-R3/-R4/-Z.
+// ZIFF-6-VOLLZUG 5.8.2026 (Chronik-Überführung): fünf erledigte Schritte → ROADMAP-CHRONIK.md
+// § «Übernahme 5.8.2026». Entfernt: QS-CODE-TURSO · QS-CODE-AUSSENKANTEN · QS-CODE-ENTDOPPLUNG
+// · QS-CODE-SPLITS · W2·5d. Der Kommentar zur W2·5d-Bindung unten entfällt: die dep-Einträge
+// in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
 export const INVENTAR: readonly string[] = [
   'W1·4',
-  'W2·5d', 'W2·6', 'W2·8', 'W2·9',
+  'W2·6', 'W2·8', 'W2·9',
   'W3·10', 'W3·11', 'W3·12', 'W3·13', 'W3·14',
   'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA', 'QS-TOK',
   'W2·6-DATA', 'W2·7-VZUI', 'W2·10-UI-NAV', 'W2·11-DESIGN',
@@ -44,11 +52,8 @@ export const INVENTAR: readonly string[] = [
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
   // Der jeweilige Elter behält sein @meta und bleibt das Dach.
-  'W2·5d-EID3', 'W2·5d-ANNEX', 'W2·5d-SPY', 'W2·5d-YC',
   'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
-  'W2·10-UI-NAV-S', 'W2·10-UI-NAV-V', 'W2·10-UI-NAV-VR', 'W2·10-UI-NAV-R1', 'W2·10-UI-NAV-R2',
-  'W2·10-UI-NAV-R3', 'W2·10-UI-NAV-R4', 'W2·10-UI-NAV-J', 'W2·10-UI-NAV-J3', 'W2·10-UI-NAV-O',
-  'W2·10-UI-NAV-Z',
+  'W2·10-UI-NAV-S', 'W2·10-UI-NAV-V', 'W2·10-UI-NAV-J', 'W2·10-UI-NAV-J3', 'W2·10-UI-NAV-O',
   'W2·11-DESIGN-D6', 'W2·11-DESIGN-D7', 'W2·11-DESIGN-D8a', 'W2·11-DESIGN-D8b', 'W2·11-DESIGN-D8c',
   'W2·13-KANTONE-K1', 'W2·13-KANTONE-K2', 'W2·13-KANTONE-K3', 'W2·13-KANTONE-K4',
   'W2·13-KANTONE-K5', 'W2·13-KANTONE-K6', 'W2·13-KANTONE-K7', 'W2·13-KANTONE-K8',
@@ -56,10 +61,6 @@ export const INVENTAR: readonly string[] = [
   'W2·13-KANTONE-K13', 'W2·13-KANTONE-K14',
   'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
   'W3·14-B3',
-
-  // §14-Intake 3.8.2026 (David-Entscheid abends, LM-202): «URL nur bei explizitem
-  // Klick/Teilen aktualisieren» — eigener kleiner Bau-Punkt unter W2·10-UI-NAV.
-  'W2·10-UI-NAV-URL',
 
   // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
   // UI-Befunde des Batches B1 entschieden (LM-048 verworfen, LM-041/LM-044 geöffnet) + zwei
@@ -76,23 +77,25 @@ export const INVENTAR: readonly string[] = [
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
   'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
-  'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN', 'QS-UI-WARNLINE',
+  'QS-TOK-DECKEL', 'QS-TOK-AUFRAEUMEN',
 
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
   'QS-KORPUS-BMV', 'W2·5k-LINIEN-KONZEPT', 'QS-KORPUS-SCOPE', 'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
 
+  // §14-Intake 4./5.8.2026 (Nacht-Landekette): Nebenbefunde der adversarialen Gegenprüfungen
+  // zu PR #447/#448 — fedlex-Risiko-Klassifikation, leakErkannt-Konsument, PARTEI_RE-Härtung.
+  'QS-GP-NACHBEFUNDE',
+
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
   'QS-EXTQUELLEN',
 
-  // §14-Intake 4.8.2026 (Code-Inventur, Anordnung David «ok baue es ein»): fünf Schritte
-  // aus drei read-only Analysen; Befunde in bibliothek/betrieb/code-inventur-2026-08-04.md,
-  // Bau-Specs in FAHRPLAN-CODE-VERBESSERUNG.md (§6 dort: Verortung der Befunde, die in
-  // QS-PERF/QS-AUTOMATIK/QS-AUTOMATIK-PARITAET/QS-BASIS-DEPS geflossen sind).
-  'QS-CODE-TURSO', 'QS-CODE-FRISTENKERN', 'QS-CODE-AUSSENKANTEN', 'QS-CODE-ENTDOPPLUNG', 'QS-CODE-SPLITS',
+  // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
+  // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
+  // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)
 
   // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
@@ -105,13 +108,14 @@ export const INVENTAR: readonly string[] = [
   // wächter-gedeckten Tore ist dieser Schritt.
   'QS-AUTOMATIK-PARITAET',
 
-  // Auftrag David 4.8.2026 («ja gefällt mir, leg plan:bild als roadmap-schritt an»):
-  // Lagebild-Generator auf dem bestehenden Parser; Spec in FAHRPLAN-PLAN-STEUERUNG.md
-  // §«Lagebild-Generator `plan:bild`».
-  'QS-PLAN-BILD',
-
   // §17-Vorfall 4.8.2026: Vercel-Free-Tier-Tageslimit (>100 Preview-Deployments)
   // blockierte den merge-pflichtigen Vercel-Check eines App-fremden Diffs (#443,
   // Admin-Bypass durch David). Wurzel-Fix: Ignored Build Step für App-fremde Diffs.
   'QS-CI-VERCEL',
+
+  // Bauplan-Review 4.8.2026 (Auftrag David, vier read-only-Prüfagenten): der Review selbst
+  // als Schritt (Befund-Fixes + die zwei Präventionen Spec-Bindungs-Tor und plan:next-Lage-
+  // Block) sowie der bis dahin ungesteuerte B2-Pass des Normtext-Fahrplans (Befund B5:
+  // «Nächste Arbeit» seit 29.6.2026, aber kein Schritt — für plan:next unsichtbar).
+  'W2·5l-NORMTEXT-B2',
 ];

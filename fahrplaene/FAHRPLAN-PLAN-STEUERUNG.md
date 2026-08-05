@@ -136,6 +136,16 @@ Fortschritts-Block. Diese sind **narrative Historie**. Die Erst-Befüllung löst
 in `@meta`+Checkboxen auf und entfernt ihn; Blockquote und Schritt-Prosa bleiben als Geschichte stehen,
 sind aber per dieser Regel ausdrücklich nicht-autoritativ.
 
+**Folgeregel für Stand-Prosa (5.8.2026, Bauplan-Review-Befund B2): einen gemessenen Wert nennt
+die Prosa nie als Zahl, sondern als Messwerkzeug.** Statt «das Ceiling ist wieder eingehalten»
+oder «Ist-Stand 110.0 KB» gehört dorthin der Befehl, der die Zahl im Moment des Lesens liefert
+(hier `python3 .claude/hooks/struktur-rotieren.py --check`). Anlass: der QS-TOK-Satz «Das
+ROADMAP-Ceiling ist am 3.8.2026 wieder eingehalten» war rund **drei Stunden** wahr — beim
+nächsten Doku-Commit war er falsch und blieb es tagelang, ohne dass ein Tor ihn sehen konnte.
+Ein Momentwert in nicht-autoritativer Prosa altert unbemerkt und wird trotzdem gelesen; der
+Messbefehl altert nicht. Wo ein historischer Zahlenstand belegt werden soll, gehört er in einen
+**datierten** Beleg-Satz («Stand 31.7.2026: 110.0 KB»), nie in eine Gegenwarts-Aussage.
+
 ### Checkbox ↔ Status (Befund #2, #5)
 
 Wo eine Einheit eine Checkbox hat, gilt die Kopplung — und **nur dort**:
@@ -431,6 +441,69 @@ Seite zeigt den lokalen Stand.
    die Zeile mit (diese Konvention gehört zur Fahrplan-Anlage, Skill
    `auftrag` Ziff. 1).
 
+**Mehrseiten-Ausbau (Go David 4.8.2026).** `plan:bild` erzeugt seither **vier** untereinander
+verlinkte Seiten statt einer — dieselben Design-Tokens, eine gemeinsame Navigations-Leiste mit
+markierter aktiver Seite, ein Knopf «Zur Live-Plattform» (`https://lexmetrik.vercel.app`) und der
+Erzeugungs-Zeitstempel im Kopf jeder Seite; im `--watch`-Modus tragen alle vier den Meta-Refresh:
+
+1. `plan-bild.html` — **Lagebild** (Einstieg): Plan-Stand wie bisher, ergänzt um Navigation,
+   Live-Link und einen Kurz-Teaser «Was ist LexMetrik?».
+2. `plan-bild-projekt.html` — **Projekt & Produkt**: Selbstbeschreibung, Werkzeug-Katalog nach
+   Sektionen mit Status je Karte, Gesetzes-Korpus (Bundes-Tabelle, 26er-Kantonsraster) und
+   Rechtsprechung (Zeitraum, Gerichtstypen, Sprachen).
+3. `plan-bild-geschichte.html` — **Geschichte & Bau-Statistik**: Chronik als Monats-Zeitachse
+   (Datierung = erste Datumsangabe im Eintrag, deklarierte Heuristik) plus Commits, gemergte PRs,
+   Prüf-Tore, Test-Dateien.
+4. `plan-bild-methode.html` — **Arbeitsweise & Glossar**: vier Bahnen, Landungs- und
+   Gegenprüfungs-Regeln, 26×-Slot, Rollenteilung, Begriffe je in einem Laien-Satz.
+
+**Der Dateiname der Index-Seite bleibt `plan-bild.html`** — App-Kachel und LaunchAgent zeigen auf
+diesen Anker. `--out` bezeichnet weiterhin die Index-Seite; die drei Zusatzseiten entstehen daneben
+mit demselben Präfix und werden relativ verlinkt (funktioniert unter `file://`). Aufbau nach §6.6:
+`bild.ts` (CLI/Zusammenbau) · `bildDaten.ts` (Sammler) · `bildHtml.ts` (Tokens/Rahmen/Navigation) ·
+`bildSeiten.ts` (die vier Inhalte).
+
+**Eine Zählweise über alle vier Seiten (§5).** Werkzeug-Zahlen kommen aus `ALLE_KARTEN`,
+Korpus-Zahlen aus `public/normtext/register.json` bzw. `public/rechtsprechung/register.json` —
+auch für die Bestand-Kacheln der Index-Seite. Die frühere Ein-Seiten-Fassung zählte dort Dateien
+im Ordner und `status:`-Literale in den Karten-Quelldateien; beides wich von der aufgeschlüsselten
+Darstellung ab (Befund 4.8.2026: 227/1232 statt 238/1231, 66/86 statt 53/81 — die Regex zählte die
+`szenarien`-Einträge konsolidierter Karten mit). Zwei verlinkte Seiten mit verschiedenen Zahlen zum
+selben Gegenstand sind eine zweite Wahrheit; die Register und der Katalog sind die SSoT.
+
+**Bau-Prompt-Härtung (adversariale Prüfung aller 70 Prompts, 4.8.2026).** Sechs Wurzel-Fixes:
+
+1. **Titel nur aus EINHEITEN-Zeilen.** Der Rückwärts-Scan nahm die erste `**fett**`-Passage jeder
+   Zeile, auch aus Fliesstext — `QS-PERF` hiess dadurch «protokolliertem SKIP». Der Scan
+   akzeptiert jetzt nur Listen-Bullets (`BULLET_RE` aus `parse.ts`, §5), Überschriften und den
+   **Kopf** eines Blockzitat-Dekrets (erste Zeile des Zitat-Absatzes, beginnt fett — die
+   Fortsetzungszeilen desselben Absatzes beginnen teils ebenfalls fett und gelten nicht).
+2. **Keine Doppelung im Wortlaut.** Die fette ID·Titel-Passage wird aus dem Wortlaut gestrippt;
+   sie steht bereits im Einleitungssatz.
+3. **Kappung sichtbar und praktisch abgeschafft.** Eine Kappung schneidet auf Wortgrenze und
+   trägt den Marker «… [gekürzt — der Schritt-Wortlaut in ROADMAP.md ist massgeblich …]». Die
+   Grenze ist **1600 Zeichen für alle Schritte** (längster Wortlaut im Plan: 1534 ⇒ kappt heute
+   nichts). Die frühere Grenze 700 beruhte auf der Annahme, ein `fahrplan:`-Feld trage das Detail
+   ohnehin doppelt — falsch: `QS-AUTOMATIK-PARITAET` HAT einen Fahrplan, aber der am 4.8.2026
+   nachgetragene Scope (`check:suchindex`, `check:rss-oc`, `check:confidence`) steht nur in
+   ROADMAP.md; `FAHRPLAN-BASIS-AUSBAU.md §3.5` kennt ihn nicht.
+4. **`**Befunde:**`/`**Dossier:**` sind maschinengelesen** — analog `Detail:`. Der Pfad wird als
+   eigene Zeile «Pflichtlektüre: `<pfad>`» in den Prompt gehoben, statt im Wortlaut unterzugehen.
+5. **§-Anker: Buchstaben erlaubt, Auflösung verprobt.** Neben `§N`/`§N.M`/`§«…»` greift
+   `§<Grossbuchstabe>…` (z. B. `§S`). **Jeder** Anker wird bei der Erzeugung mit `trefferFuer()`
+   aus `scripts/fahrplanSlicerKern.ts` gegen den Ziel-Fahrplan geprüft; löst er nicht auf, wird er
+   verworfen **und im Prompt benannt** (Fall `W2·5k` → «§L-3/A28» existiert in
+   `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` nicht — Plan-Datenfehler, im Prompt sichtbar statt still).
+6. **`dep:` steht im Prompt.** Nach der Worktree-Zeile: «Abhängigkeit: setzt `<ids>` voraus
+   (Stand bei Erzeugung: erfüllt/OFFEN — bei offen NICHT bauen, sondern melden)», Stand aus der
+   done-Menge des geparsten Plans.
+
+Nebenbefund desselben Fixes: `scripts/fahrplan-slice.ts` führte seine CLI **beim blossen Import**
+aus. Die Logik liegt seither in `scripts/fahrplanSlicerKern.ts` (ohne Seiteneffekt), die alte Datei
+ist CLI-Hülle mit `export *` — bestehende Importpfade und `npm run fahrplan` unverändert. Eine
+Einstiegspunkt-Weiche wäre kein Ersatz: unter `vite-node` steht der Skriptpfad nicht in
+`process.argv` (empirisch geprüft 4.8.2026).
+
 **Grenzen/Auflagen:**
 
 - Reine Lese-/Werkzeug-Schicht: kein Code in `src/`, kein Artefakt in `public/`, kein
@@ -479,3 +552,132 @@ Status die jeweils andere Form hat.
 FEDLEX-Portfolio-Inkonsistenz auf Form 1 vereinheitlicht. Ein flächiger Durchgang über alle
 Fahrpläne ist **nicht** gelaufen und wird nicht behauptet; er läuft mit, wenn eine Datei ohnehin
 angefasst wird.
+
+## Bauplan-Review 4.8.2026 — Befunde, Umsetzung, Prävention (Spec-§ für `QS-PLAN-REVIEW`)
+
+**Anlass:** Auftrag David 4.8.2026 abends («schau dir den bauplan an … was könnte man
+verbessern? ist alles richtig zugeordnet» + «überlege … was zukünftig solche fehler
+vermeidet»). Vier unabhängige read-only-Prüfagenten (Zuordnung, Realitäts-Abgleich,
+Hygiene, Koordination) über ROADMAP.md, alle 28 Fahrpläne, git-Historie und offene PRs.
+Gesamtbild: mechanisch sauber (`check:plan` grün, kein falsches `done`, Blockaden gültig,
+Kopfzahlen 238/1231/53/81 exakt) — die Fehler sitzen dort, wo das Tor blind ist.
+
+### Befunde (Kurzform, Stand main 036675654)
+
+- **B1 — Anker falsch (3 von ~80):** `W2·5k-LINIEN-KONZEPT` → GESETZESDARSTELLUNG-V2
+  «§L-3/A28» (existiert nicht; richtig: §2/F4 bzw. GESETZES-UX §10.9) ·
+  `QS-KORPUS-BMV` → FEDLEX-PORTFOLIO §17 (behandelt nur fza/cmr; BMV-Spec existiert
+  nirgends) · `QS-UI-HIGHLIGHT` → UI-NAVIGATION §S (Stand-Chronik, keine Bau-Spec).
+  Fehlerklasse: Anker löst auf, trifft aber das Falsche — für Tor-Regel 6 unsichtbar.
+- **B2 — Stale Steuerungs-Prosa:** ROADMAP-Empfehlung «danach W2·5d» (done; gemeint
+  heute W2·5h-GESETZ-UI) · QS-TOK-Stand behauptet «Ceiling eingehalten» (seit 3.8.
+  ~23:35 falsch) · TOKEN-OEKONOMIE §8 widerspricht dem eigenen Stand-Block (Go 27.7.).
+- **B3 — Geparkte Arbeit unsichtbar:** QS-CODE-Reihe steht `ready`, obwohl fertig
+  gebaut in 10 offenen PRs (#444, #446–448, #450–454); #454 in keinem Stand-Dokument.
+  Frische Session baut doppelt (F6-Nachbarschaft).
+- **B4 — Rotations-Regex-Bug:** `.claude/hooks/struktur-rotieren.py` DATUM_RE parst
+  nur `## Session T.M.JJJJ`, nicht das Übernacht-Format `T./T.M.JJJJ` — 7 von 16
+  Karten rotieren nie (89 % des STRUKTUR-Budget-Risses, 13.4 von 15 KB).
+- **B5 — Kleineres:** verwaiste B2-Arbeit (M13/M14) in FAHRPLAN-NORMTEXT-DARSTELLUNG
+  ohne steuernden Schritt · `QS-EXTQUELLEN`/`QS-CI-VERCEL` ohne `fahrplan:`-Feld ·
+  done-Blöcke (QS-PLAN-BILD, QS-CODE-FRISTENKERN u. a.) nicht in die Chronik migriert ·
+  Dach-Präfix-Liste des Intake-Kopfs unvollständig · `plan:next` ohne Priorisierung
+  (45 ready + 16 Lanes ungefiltert).
+
+### Umsetzung (Reihenfolge nach §17-Fünf-Schritten, Skill `lehren`)
+
+1. **Sofort-Korrekturen ROADMAP/Fahrpläne** (B1, B2, B3-Vermerk, B5-Kleinteile):
+   reine Doku-Edits, EIN Commit — **erst nach Landung der laufenden
+   STRUKTUR-Rotation** (Parallel-Session 4.8.), um Merge-Konflikte auf den
+   Steuer-Doku zu vermeiden. QS-CODE-Reihe: Status auf `parked`,
+   `grund: pr-444ff-offen`, damit `plan:next` sie nicht mehr als baubar anbietet.
+2. **Regex-Fix Rotation** (B4): DATUM_RE um `T./T.M.JJJJ` erweitern (zweites Datum
+   als Referenz), Testfall mit Übernacht-Karte. Wurzel-Fix des Budget-Risses —
+   mit der Rotations-Session koordinieren, nicht parallel anfassen.
+3. **Tor-Erweiterung `check:plan` — Spec-Bindung** (Prävention B1, Formregel: Tor
+   vor Prosa): neue Regel prüft je `fahrplan:`-Verweis mit §-Anker, dass (a) der
+   §-Anker als Überschrift in der Zieldatei auflöst und (b) der §-Abschnitt die
+   Schritt-ID wörtlich enthält (Intake-Regel «Bau-Spec im ROADMAP-Spec-§ des
+   verlinkten Fahrplans» wird damit prüfbar). Sonderformen (Archiv-Ausnahme
+   W3·10→§P3, «STRANG B», Weiterzeiger-§§) über begründete Allowlist analog
+   `ARCHIV_BACKLOG`. **Geburtsbeweis:** Das Tor MUSS auf dem Stand vor Schritt 1
+   dreifach rot sein (B1) — damit ist §6.7 (einmal rot) by construction erfüllt;
+   nach Schritt 1 grün zeigen. Danach Registereintrag im Skill `lehren`
+   (F2-Familie: Tor prüfte Container-Existenz, nicht Inhalt).
+4. **Sichtbarkeit für Parallel-Sessions** (Prävention B3 + Auftrag «andere
+   Sessions wissen, was im Bau ist»): KEIN SessionStart-Hook (Entscheid
+   QS-TOK/T19: git-zustandsabhängiger SessionStart-Text zerstört den
+   Prompt-Cache — bleibt stehen) und KEINE Claim-Registry (zweimal verworfen,
+   Skill `lehren`; Eskalation erst beim dritten F6-Vorfall). Stattdessen:
+   (a) `plan:next` bekommt einen **Lage-Block** — wip-Schritte mit ihren
+   `kollision:`-Globs, `git worktree list`, dazu Flag `--prs` für
+   `gh pr list` (offline-Default bleibt netzfrei). plan:next ist laut CLAUDE.md
+   ohnehin der Pflicht-Einstieg jeder Session — 0 Zusatzkosten im Cache.
+   (b) **Namenskonvention** Branch/Worktree trägt den Schritt-ID-Slug — macht
+   die bestehende wip-Verstoss-Sonde im Lagebild (bildSeiten) treffsicher;
+   Heimat: Dispatch-§0 Ziff. 5 (dort steht schon der Früh-Push) + Skill
+   `auftrag` Ziff. 2. (c) Skill `auftrag` Ziff. 2 ergänzen: Wer bei Sessionende
+   `wip` freigibt, während die Arbeit in einem offenen PR parkt, setzt
+   `parked` + `grund: pr-NNN` statt stillschweigend `ready`.
+5. **Nice-to-have, eigener Schritt, nicht Teil dieses §:** `plan:next`-Top-N/
+   `--phase`-Filter gegen die 45er-Wand; B2-Arbeit M13/M14 entweder als Schritt
+   anlegen oder im Fahrplan als bewusst-ungesteuert markieren.
+
+**Nicht gebaut wird:** Prosa-Frische-Heuristik (Über-Regulierung; die Klasse B2
+schrumpft mit dem Ziff.-6-Vollzug von selbst) und jedes neue Zustandsfile.
+
+### Stand 5.8.2026 — Befunde B3/B4 erledigt, Schritt 1 gebaut
+
+- **B4 (Rotations-Regex) ✅ erledigt** — die Nacht-Session 4./5.8.2026 hat `DATUM_RE` in
+  `.claude/hooks/struktur-rotieren.py` um das Übernacht-Format `T./T.M.JJJJ` erweitert; die
+  zuvor nie rotierenden Karten rotieren. Damit ist der Wurzel-Fix des Budget-Risses gebaut
+  (§17), nicht umschifft.
+- **B3 (geparkte Arbeit unsichtbar) ✅ erledigt** — dieselbe Nacht-Session hat die Landekette
+  **10/10** abgearbeitet; die QS-CODE-Reihe steht nicht mehr `ready` neben offenen PRs, sondern
+  `done`. Die **Prävention** zu B3 ist damit nicht erledigt, sondern in Ziff. 4 unten verortet:
+  Lage-Block, Namenskonvention und die `parked`-Regel im Skill `auftrag` Ziff. 2 (letztere ist
+  am 5.8.2026 geschrieben, samt der Branch-/Worktree-Slug-Regel).
+- **Schritt 1 (Sofort-Korrekturen ROADMAP/Fahrpläne) ✅ gebaut** — Branch
+  `feat/qs-plan-review-doku`, 14 Korrekturen: die drei falschen Anker aus B1 (`QS-KORPUS-BMV`
+  → §20.4 · `QS-UI-HIGHLIGHT` → neue Bau-Spec `FAHRPLAN-UI-NAVIGATION.md` §9 ·
+  `W2·5k-LINIEN-KONZEPT` → GESETZESDARSTELLUNG-V2 §2/F4 + GESETZES-UX §10.9), die stale
+  Steuerungs-Prosa aus B2 (@queue-Kommentar, Ceiling-Satz, TOKEN-OEKONOMIE §8 Ziff. 4), die
+  B5-Kleinteile (Dach-Präfix-Liste samt deklarierter `fahrplan:`-Ausnahme, LERNPHASE-§3-Titel,
+  FEDLEX §19 als `##` statt `###`) und die zwei fehlenden Schritte
+  (`W2·5l-NORMTEXT-B2`, `QS-PLAN-REVIEW`).
+- **Offen — der eigentliche Präventions-Bau:** Ziff. 3 (Tor-Erweiterung `check:plan` auf
+  Spec-Bindung, **Geburtsbeweis nur noch auf dem Stand VOR Schritt 1 führbar** — also gegen
+  `main@d316f5884` oder den Elter-Commit dieses Branches, nicht gegen den heutigen Stand) und
+  Ziff. 4a/4b (Lage-Block in `plan:next`, Namenskonvention im Dispatch-§0 Ziff. 5).
+- **Nachtrag zu B1:** `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` §9.2 trägt denselben toten Anker
+  «→ Bau-Spec: §L-3/A28 dieser Datei» wie zuvor die ROADMAP. Er ist **nicht** mitkorrigiert
+  (lag ausserhalb der Bau-Whitelist) und bleibt ein offener B1-Rest — das
+  Spec-Bindungs-Tor aus Ziff. 3 muss ihn erwischen.
+
+### Endstand 5.8.2026 nachts — alle Befunde gefixt, beide Präventionen gelandet (Schritt done)
+
+Serielle Landung durch die Orchestrier-Session (David: «fixe alle befunde … du orchestrierst,
+unter-sessions bauen»), vier Bau-Agenten in Worktrees:
+
+- **Ziff. 3 Tor gelandet** — `check:plan` Regel 11 «Spec-Bindung» (`scripts/plan/specBindung.ts`,
+  25 Tests). **Geburtsbeweis geführt:** auf `d316f5884` dreifach rot wie gefordert PLUS zwei
+  Neubefunde (`W2·6` →`§12` löst nicht auf · `W2·17-UI-BEFUNDE` →`§1` statt §24) — auch der
+  V2-§9.2-Nachtrag und zwei vom Doku-Fix selbst erzeugte Fehl-Anker (`§10.9`, `§2` ohne
+  ID-Bindung) wurden vom Tor erwischt und sind korrigiert (Ziff.-Schreibweise für
+  Überschriften ohne §-Sigel). Allowlist: genau 1 Eintrag (`W3·10 §P3`, Archiv-Ausnahme,
+  Schlüssel id+anker). Auf dem Endstand: **grün.**
+- **Ziff. 4a Lage-Block gelandet** — `plan:next` zeigt belegte Flächen (wip+`kollision:`),
+  Worktrees/Branches mit Slug→Schritt-Zuordnung («ohne Schritt-Bezug» = unangemeldeter Bau),
+  `--prs` optional netzbehaftet; bestehende Ausgabe byte-identisch (cmp-Beweis), 17 Tests.
+- **Ziff.-6-Vollzug** — die 5 verbliebenen done-Blöcke (QS-CODE-Reihe, W2·5d) wörtlich in die
+  Chronik, `dep: [W2·5d]` zweifach als erfüllt entfernt, Inventar nachgezogen; plan:next
+  vorher/nachher byte-identisch.
+- **QS-CI-VERCEL-Testplan vollzogen** — Doku-Diff nach Limit-Reset: Vercel-Check
+  `success` («Canceled by Ignored Build Step») ⇒ Merge-Bedingung Skip=success erfüllt,
+  #445 per Auto-Squash eingereiht (Merge-Go David 4.8.).
+
+**Offene Kleinposten (bewusst, je klein — kein eigener Roadmap-Schritt, Mitnahme beim
+nächsten Bau an `scripts/plan/`):** (a) Regel 11 prüft Blockquote-Prosa ohne Bullet-Block
+nicht (einziger Bestandsfall: `QS-TOK`) und keine `§§3–§7`-Bereiche — beide Grenzen im Code
+mit Test dokumentiert; (b) `bildSeiten.ts` hält eine lokale Slug-Kopie, die `slug()` aus
+`lage.ts` importieren sollte (Entdopplungs-Richtung: schwer importiert leicht).

@@ -90,6 +90,13 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    **`cancelled` und `skipped` zählen als ROT**, nicht als «nicht rot» — ein
    abgebrochener Lauf hat nichts bewiesen. (Realfall 20.7.2026: 5 stumm
    abgebrochene `turso-sync`-Läufe, der Suchindex veraltete unbemerkt.)
+   **Und: FEHLENDE Checks zählen als PENDING, nie als grün.** Im Fenster
+   direkt nach einem Push sind die Checks des neuen Heads noch nicht
+   registriert — wer dann «kein pending, kein fail» als grün liest, merged
+   ungeprüft. Vor der Bewertung die Präsenz der Kern-Batterie verifizieren
+   (Tore + Bau + letzter Playwright-Shard). (Realfall 4./5.8.2026: Wächter
+   meldete GRÜN, während Bau/Tore noch gar nicht liefen — nur der
+   Verifikations-Zwischenschritt vor dem Merge fing es ab.)
 
    **Wenn nach einem Push KEIN `pull_request`-Lauf erscheint** (Realfälle
    3.8.2026, PRs #414/#417): erst die Ursache prüfen, dann das passende Mittel —
@@ -100,6 +107,19 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    `gh workflow run ci.yml --ref <branch>` sofort; (c) ein leerer Commit hilft
    nur bei hängendem VERCEL-Kontext, er erzeugt KEINEN Actions-Lauf (kein
    Datei-Diff) und schiebt den Head von bereits grünen Check-Runs weg.
+
+   **Vercel-Tageslimit (Free-Tier ~100 Deploys/Tag) — David-Entscheid 4.8.2026
+   («lass vercel aus dem spiel»):** Reisst das Limit (Check-Meldung
+   «Deployment rate limited»), zählt der Required-Kontext «Vercel» NICHT als
+   Prüf-Rot. Massgeblich ist allein die volle Actions-Batterie; bei deren Grün
+   ist `gh pr merge --squash --admin` der freigegebene Weg (Interim, bis
+   QS-CI-VERCEL/#445 die Ursache behebt: md-only-Diffs sollen den Vercel-Build
+   gar nicht erst verbrauchen). Zwei Grenzen: (1) Der Override deckt NUR den
+   Limit-/Billing-Fall — ein Vercel-Rot mit Build-Fehler bleibt Rot. (2) An
+   landeintensiven Tagen frisst jedes `update-branch` einen Deploy — Kette
+   deshalb seriell und ohne überflüssige Zwischen-Pushes fahren. Realfall
+   4.8.2026 abends: >100 Deploys durch 16-PR-Tag, #455 blockierte trotz
+   vollständig grüner Batterie.
 
 6b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
