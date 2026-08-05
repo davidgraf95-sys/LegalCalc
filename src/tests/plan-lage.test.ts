@@ -9,6 +9,7 @@ import {
   parseWorktrees,
   wipFlaechen,
   sammleLage,
+  staleWip,
   lageZeilen,
   lageBlock,
   type Laufe,
@@ -153,6 +154,13 @@ describe('lageZeilen — Formatierung', () => {
       '🌿 weitere Branches (ohne Worktree): chore/aufraeumen → ohne Schritt-Bezug · feat/qs-code-turso-fts → QS-CODE-TURSO',
       '🔀 offene PRs:',
       '   #445 feat/qs-ci-vercel-ignore → ohne Schritt-Bezug — Ignored Build Step',
+      // ERWARTUNG ERWEITERT (QS-PLAN-WIP-FRISCHE, 5.8.2026) — deklarierte fachliche
+      // Änderung, kein stilles Test-Nachziehen (§6.3): dieselbe Fixtur trägt jetzt
+      // die Frische-Warnung. `QS-CODE` steht auf wip, aber kein Bau-Platz, kein
+      // Branch und kein PR trägt seinen Slug — `feat/qs-code-turso-fts` gehört
+      // `QS-CODE-TURSO` (längster Slug gewinnt) und ist deshalb KEINE Spur für
+      // `QS-CODE`. `QS-PLAN-REVIEW` hat seinen Worktree und wird nicht gewarnt.
+      '⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (kein Branch/Bauplatz): QS-CODE — freigeben (plan:set QS-CODE status=ready|done|parked) oder Bau wieder aufnehmen.',
     ]);
   });
 
@@ -181,6 +189,81 @@ describe('lageZeilen — Formatierung', () => {
 
   it('erste Zeile ist leer — der Block hängt an, statt Bestehendes zu verschieben', () => {
     expect(lageZeilen(rohStandard(), IDS)[0]).toBe('');
+  });
+});
+
+// Frische-Warnung «stale wip» (QS-PLAN-WIP-FRISCHE). Anlass: eine Session baute
+// QS-TOK/QS-TOK-AUFRAEUMEN fertig, landete die PRs und endete, ohne die wip-Marke
+// freizugeben — das Lagebild zeigte stundenlang «im Bau», was frei war.
+describe('staleWip — wip ohne Bau-Spur', () => {
+  const wip = (...ids: string[]) => ids.map((id) => ({ id, kollision: [] }));
+
+  it('wip MIT Branch-Spur → keine Warnung', () => {
+    const roh = rohStandard({ wip: wip('QS-CODE-TURSO'), worktrees: [], branches: ['main', 'feat/qs-code-turso-fts'] });
+    expect(staleWip(roh, IDS)).toEqual([]);
+    expect(lageZeilen(roh, IDS).filter((z) => z.startsWith('⚠️'))).toEqual([]);
+  });
+
+  it('wip MIT Worktree-Spur (Slug im Branch des Platzes) → keine Warnung', () => {
+    const roh = rohStandard({ wip: wip('QS-PLAN-REVIEW'), worktrees: parseWorktrees(PORCELAIN), branches: ['main'] });
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+
+  it('wip OHNE Spur → Warnung mit ID und plan:set-Hinweis', () => {
+    const roh = rohStandard({ wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main', 'chore/aufraeumen'] });
+    expect(staleWip(roh, IDS)).toEqual(['QS-PLAN-REVIEW']);
+    expect(lageZeilen(roh, IDS)).toContain(
+      '⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (kein Branch/Bauplatz): QS-PLAN-REVIEW — freigeben (plan:set QS-PLAN-REVIEW status=ready|done|parked) oder Bau wieder aufnehmen.',
+    );
+  });
+
+  it('ohne --prs trägt die Warnung den Zusatz «netzfrei» — und nur dann, wenn sie erscheint', () => {
+    const stale = rohStandard({ wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main'] });
+    expect(lageZeilen(stale, IDS)).toContain('   (offene PRs nicht geprüft — netzfrei)');
+    const sauber = rohStandard({ wip: wip('QS-CODE-TURSO'), worktrees: [], branches: ['main', 'feat/qs-code-turso-fts'] });
+    expect(lageZeilen(sauber, IDS).some((z) => z.includes('netzfrei)'))).toBe(false);
+  });
+
+  it('wip ohne Branch, aber PR-Treffer bei --prs → keine Warnung (headRefName wie Titel)', () => {
+    const perBranch = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main'], prsGewuenscht: true,
+      prs: [{ number: 460, headRefName: 'feat/qs-plan-review-lage', titel: 'Lage-Block' }],
+    });
+    expect(staleWip(perBranch, IDS)).toEqual([]);
+    const perTitel = rohStandard({
+      wip: wip('QS-PLAN-REVIEW'), worktrees: [], branches: ['main'], prsGewuenscht: true,
+      prs: [{ number: 461, headRefName: 'agent-4f2a9c', titel: 'QS-PLAN-REVIEW Stufe 2' }],
+    });
+    expect(staleWip(perTitel, IDS)).toEqual([]);
+  });
+
+  it('PR-Titel bindet mit WORTGRENZE — «QS-CODE-TURSO» ist keine Spur für «QS-CODE»', () => {
+    const roh = rohStandard({
+      wip: wip('QS-CODE'), worktrees: [], branches: ['main'], prsGewuenscht: true,
+      prs: [{ number: 462, headRefName: 'agent-abc', titel: 'QS-CODE-TURSO T3: FTS-Index' }],
+    });
+    expect(staleWip(roh, IDS)).toEqual(['QS-CODE']);
+  });
+
+  it('git-Ausfall → KEINE Warnung («nicht prüfbar» ist nicht «stale»), nur die Hinweiszeile', () => {
+    const roh = rohStandard({ wip: wip('QS-PLAN-REVIEW', 'QS-CODE'), worktrees: null, branches: null, ausfaelle: ['git worktree list', 'git branch'] });
+    expect(staleWip(roh, IDS)).toEqual([]);
+    expect(lageZeilen(roh, IDS).filter((z) => z.startsWith('⚠️'))).toEqual([
+      '⚠️  Lage unvollständig — nicht abfragbar: git worktree list · git branch (kein Fehler des Plans)',
+    ]);
+  });
+
+  it('halber Ausfall (nur Branches abfragbar) warnt ebenfalls nicht — der Bau-Platz bliebe ungesehen', () => {
+    const roh = rohStandard({ wip: wip('QS-PLAN-REVIEW'), worktrees: null, branches: ['main'], ausfaelle: ['git worktree list'] });
+    expect(staleWip(roh, IDS)).toEqual([]);
+  });
+
+  it('zwei stale wip → stabile Reihenfolge, unabhängig von der Eingabefolge', () => {
+    const basis = { worktrees: [], branches: ['main'] };
+    const a = staleWip(rohStandard({ ...basis, wip: wip('QS-PLAN-REVIEW', 'QS-CODE') }), IDS);
+    const b = staleWip(rohStandard({ ...basis, wip: wip('QS-CODE', 'QS-PLAN-REVIEW') }), IDS);
+    expect(a).toEqual(['QS-CODE', 'QS-PLAN-REVIEW']);
+    expect(b).toEqual(a);
   });
 });
 

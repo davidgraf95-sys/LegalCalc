@@ -26,6 +26,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { type Einheit } from './parse';
+import { idTrifft } from './specBindung';
 
 /** Ein `wip`-Schritt mit den von ihm belegten Flächen (`kollision:`-Globs). */
 export interface WipFlaeche {
@@ -166,6 +167,55 @@ export function sammleLage(
 
 const TRENNER = ' · ';
 
+/**
+ * **Frische-Prüfung «stale wip»** (Schritt `QS-PLAN-WIP-FRISCHE`).
+ *
+ * Liefert die `wip`-Schritte OHNE Bau-Spur, sortiert — leer, wenn die Lage
+ * dazu nichts hergibt.
+ *
+ * Anlass (Realfall 5.8.2026, zweiter seines Musters nach dem 10-wip-Vorfall vom
+ * ~20.7.2026): Eine Session baute `QS-TOK` und `QS-TOK-AUFRAEUMEN` fertig,
+ * landete die PRs und endete, ohne die wip-Marke freizugeben. Das Lagebild zeigte
+ * stundenlang «im Bau», was nicht mehr im Bau war — jede Folge-Session las eine
+ * belegte Fläche, die frei war. Prosa hat das zweimal nicht verhindert, also
+ * prüft es jetzt die Maschine (Eskalation Prosa→Maschine, Skill `lehren` Regel 5).
+ *
+ * **Bau-Spur** ist ein Name, den die bestehende Zuordnungs-Mechanik
+ * (`schrittFuerNamen`) auf DIESEN Schritt abbildet: ein Bau-Platz (Worktree,
+ * über Platzname UND Branch — genau wie in der Worktree-Zeile), ein lokaler
+ * Branch, oder — nur mit `--prs` — ein offener PR über `headRefName` bzw. seinen
+ * Titel. Beim Titel entscheidet ein Wortgrenzen-Treffer der ID (`idTrifft`,
+ * geteilt mit Regel 11 statt kopiert, §5): blosse Substring-Präsenz liesse
+ * «QS-TOK» in «QS-TOK-AUFRAEUMEN» als Spur durchgehen.
+ *
+ * **«Nicht prüfbar» ist nicht «stale».** Fallen `git worktree list` ODER
+ * `git branch` aus, ist über die Branch-Lage nichts bekannt — dann wird NICHT
+ * gewarnt (die vorhandene Ausfall-Hinweiszeile sagt bereits, dass die Lage
+ * unvollständig ist). Eine Warnung aus fehlenden Daten wäre schlimmer als keine:
+ * sie fordert zum Freigeben einer Fläche auf, die belegt sein kann.
+ */
+export function staleWip(roh: LageRoh, ids: string[]): string[] {
+  if (roh.worktrees === null || roh.branches === null) return [];
+  const spuren = new Set<string>();
+  for (const w of roh.worktrees) {
+    if (w.haupt) continue;
+    const t = schrittFuerNamen(`${w.name}${w.branch ? ` [${w.branch}]` : ''}`, ids);
+    if (t) spuren.add(t);
+  }
+  for (const b of roh.branches) {
+    const t = schrittFuerNamen(b, ids);
+    if (t) spuren.add(t);
+  }
+  for (const p of roh.prs ?? []) {
+    const t = schrittFuerNamen(p.headRefName, ids);
+    if (t) spuren.add(t);
+    for (const id of ids) if (idTrifft(p.titel, id)) spuren.add(id);
+  }
+  // Stabile Reihenfolge ohne Locale-Abhängigkeit (§2): `sort()` vergleicht
+  // Code-Einheiten, `localeCompare` das Gebietsschema der Maschine.
+  return roh.wip.map((w) => w.id).filter((id) => !spuren.has(id)).sort();
+}
+
 function bezug(name: string, ids: string[]): string {
   const id = schrittFuerNamen(name, ids);
   return id ? `${name} → ${id}` : `${name} → ohne Schritt-Bezug`;
@@ -224,6 +274,22 @@ export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
   } else {
     z.push('🔀 offene PRs:');
     for (const p of roh.prs) z.push(`   #${p.number} ${bezug(p.headRefName, ids)} — ${p.titel}`);
+  }
+
+  // Frische-Warnung: die Schlussfolgerung aus allem darüber, deshalb danach —
+  // und VOR der Ausfall-Zeile, die den Block abschliesst.
+  const stale = staleWip(roh, ids);
+  for (const id of stale) {
+    z.push(
+      `⚠️  Als «in Arbeit» markiert, aber ohne Bau-Spur (kein Branch/Bauplatz): ${id}` +
+        ` — freigeben (plan:set ${id} status=ready|done|parked) oder Bau wieder aufnehmen.`,
+    );
+  }
+  if (stale.length && roh.prs === null) {
+    // Ehrliche Reichweite (§8): ein offener PR wäre eine Bau-Spur, gesehen hat
+    // ihn hier aber niemand. Ohne diesen Zusatz läse sich die Warnung sicherer,
+    // als sie ist. Nur bei mindestens einer Warnung — sonst wäre es Rauschen.
+    z.push(roh.prsGewuenscht ? '   (offene PRs nicht geprüft — Abfrage ausgefallen)' : '   (offene PRs nicht geprüft — netzfrei)');
   }
 
   if (roh.ausfaelle.length) {
