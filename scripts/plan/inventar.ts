@@ -117,5 +117,5 @@ export const INVENTAR: readonly string[] = [
   // als Schritt (Befund-Fixes + die zwei Präventionen Spec-Bindungs-Tor und plan:next-Lage-
   // Block) sowie der bis dahin ungesteuerte B2-Pass des Normtext-Fahrplans (Befund B5:
   // «Nächste Arbeit» seit 29.6.2026, aber kein Schritt — für plan:next unsichtbar).
-  'QS-PLAN-REVIEW', 'W2·5l-NORMTEXT-B2',
+  'W2·5l-NORMTEXT-B2',
 ];

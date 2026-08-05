@@ -653,3 +653,31 @@ schrumpft mit dem Ziff.-6-Vollzug von selbst) und jedes neue Zustandsfile.
   «→ Bau-Spec: §L-3/A28 dieser Datei» wie zuvor die ROADMAP. Er ist **nicht** mitkorrigiert
   (lag ausserhalb der Bau-Whitelist) und bleibt ein offener B1-Rest — das
   Spec-Bindungs-Tor aus Ziff. 3 muss ihn erwischen.
+
+### Endstand 5.8.2026 nachts — alle Befunde gefixt, beide Präventionen gelandet (Schritt done)
+
+Serielle Landung durch die Orchestrier-Session (David: «fixe alle befunde … du orchestrierst,
+unter-sessions bauen»), vier Bau-Agenten in Worktrees:
+
+- **Ziff. 3 Tor gelandet** — `check:plan` Regel 11 «Spec-Bindung» (`scripts/plan/specBindung.ts`,
+  25 Tests). **Geburtsbeweis geführt:** auf `d316f5884` dreifach rot wie gefordert PLUS zwei
+  Neubefunde (`W2·6` →`§12` löst nicht auf · `W2·17-UI-BEFUNDE` →`§1` statt §24) — auch der
+  V2-§9.2-Nachtrag und zwei vom Doku-Fix selbst erzeugte Fehl-Anker (`§10.9`, `§2` ohne
+  ID-Bindung) wurden vom Tor erwischt und sind korrigiert (Ziff.-Schreibweise für
+  Überschriften ohne §-Sigel). Allowlist: genau 1 Eintrag (`W3·10 §P3`, Archiv-Ausnahme,
+  Schlüssel id+anker). Auf dem Endstand: **grün.**
+- **Ziff. 4a Lage-Block gelandet** — `plan:next` zeigt belegte Flächen (wip+`kollision:`),
+  Worktrees/Branches mit Slug→Schritt-Zuordnung («ohne Schritt-Bezug» = unangemeldeter Bau),
+  `--prs` optional netzbehaftet; bestehende Ausgabe byte-identisch (cmp-Beweis), 17 Tests.
+- **Ziff.-6-Vollzug** — die 5 verbliebenen done-Blöcke (QS-CODE-Reihe, W2·5d) wörtlich in die
+  Chronik, `dep: [W2·5d]` zweifach als erfüllt entfernt, Inventar nachgezogen; plan:next
+  vorher/nachher byte-identisch.
+- **QS-CI-VERCEL-Testplan vollzogen** — Doku-Diff nach Limit-Reset: Vercel-Check
+  `success` («Canceled by Ignored Build Step») ⇒ Merge-Bedingung Skip=success erfüllt,
+  #445 per Auto-Squash eingereiht (Merge-Go David 4.8.).
+
+**Offene Kleinposten (bewusst, je klein — kein eigener Roadmap-Schritt, Mitnahme beim
+nächsten Bau an `scripts/plan/`):** (a) Regel 11 prüft Blockquote-Prosa ohne Bullet-Block
+nicht (einziger Bestandsfall: `QS-TOK`) und keine `§§3–§7`-Bereiche — beide Grenzen im Code
+mit Test dokumentiert; (b) `bildSeiten.ts` hält eine lokale Slug-Kopie, die `slug()` aus
+`lage.ts` importieren sollte (Entdopplungs-Richtung: schwer importiert leicht).

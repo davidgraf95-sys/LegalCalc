@@ -1877,6 +1877,12 @@ Wörtlich aus ROADMAP.md überführt (Diät 4.8.2026):
 
 ## Übernahme 5.8.2026 — Ziff.-6-Vollzug (QS-PLAN-REVIEW)
 
+### Abschluss QS-PLAN-REVIEW (5.8.2026 nachts, wörtlich aus ROADMAP.md)
+
+- [x] **`QS-PLAN-REVIEW` · Bauplan-Review 4.8.2026 — Befund-Fixes + Prävention (Spec-Bindungs-Tor, Lage-Block)** *(Anlass: Auftrag David 4.8.2026 abends, «schau dir den bauplan an … fixe alle befunde»; vier unabhängige read-only-Prüfagenten über ROADMAP, alle 28 Fahrpläne, git-Historie und offene PRs. Gesamtbild: mechanisch sauber — `check:plan` grün, kein falsches `done` —, **die Fehler sitzen dort, wo das Tor blind ist**: Anker, die auflösen aber das Falsche treffen (B1) · Steuerungs-Prosa, die von der Wirklichkeit überholt wurde (B2) · fertig gebaute Arbeit, die als `ready` in offenen PRs parkt und darum doppelt gebaut werden kann (B3, F6-Nachbarschaft))* — Doku-Fixes + zwei Präventionen: **Tor-Erweiterung `check:plan` auf Spec-Bindung** (je `fahrplan:`-Verweis mit §-Anker prüfen, dass der Anker auflöst UND der §-Abschnitt die Schritt-ID wörtlich enthält; **Geburtsbeweis:** auf dem Stand vor den Fixes dreifach rot, §6.7) und **Lage-Block in `plan:next`** (wip-Schritte mit `kollision:`-Globs + `git worktree list`, Flag `--prs` für `gh pr list`; offline-Default bleibt netzfrei). Ausdrücklich **nicht** gebaut: SessionStart-Hook (zerstört den Prompt-Cache, Entscheid QS-TOK/T19), Claim-Registry (zweimal verworfen), Prosa-Frische-Heuristik, jedes neue Zustandsfile. **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Bauplan-Review 4.8.2026».
+  <!-- @meta id: QS-PLAN-REVIEW · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/plan, .claude/hooks, fahrplaene, ROADMAP.md] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+
+
 ### Querschnitt-Band: Code-Inventur (§14-Intake 4.8.2026) — vier Strukturmassnahmen *(Befunde, done)*
 
 - [x] **`QS-CODE-TURSO` · Turso-Sync-Durchsatz: Wurzel-Fix des FTS-Insert-Pfads** *(Anlass: Code-Inventur 4.8.2026 — 22.3 von 32.8 min Sync entfallen auf zeilenweises Insert in `fts_entscheide_schaufenster` bei ~4 Zeilen/s; Timeout-Reserve trägt nur ~3.7× Korpusgrösse, kollidiert mit `W2·13-KANTONE`)* — **Risikopfad** (`scripts/datenhaltung`) ⇒ Gegenprüfung. Abgrenzung: nur Durchsatz des bestehenden Syncs — Architektur bleibt `W2·6-DATA`, Wachstums-Schwellen bleiben `QS-AUTOMATIK`. **Detail:** [FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) §1.
