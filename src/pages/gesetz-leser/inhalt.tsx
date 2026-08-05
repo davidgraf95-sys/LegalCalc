@@ -1,343 +1,72 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { flushSync } from 'react-dom';
+import { useCallback, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../lib/tabs';
-import { useDialogFokus } from '../../components/layout/useDialogFokus';
-import { usePaneKontext } from '../../components/layout/PaneKontext';
-import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
-import type { InternRefs } from '../../components/NormText';
-import { labelMitBereich, randtitelKnoten } from '../../lib/normtext/darstellung';
-import {
-  baueGliederungsbaum, type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
-} from '../../lib/normtext/browse';
-import { type KantonSystematik } from '../../lib/normtext/systematik';
+import { baueGliederungsbaum, type Sektion } from '../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../lib/normtext/verifikationslink';
 import { linienProfil } from './linienAufbau';
-import { istHashVerbraucht } from './scrollAnker';
-import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
-import type { NormSnapshot } from '../../lib/normtext/typen';
-import { passtAufSuche, pfadZu, grundartMeta } from './helpers';
+import { pfadZu, grundartMeta } from './helpers';
 import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
-import { WeiterlesenChip } from './parts/WeiterlesenChip';
-import { LeserTastatur } from './parts/LeserTastatur';
-import { holeLesePosition, merkeLesePosition, vergissLesePosition, type LesePosition } from './lesePosition';
-import { beiLeerlauf } from '../../lib/leerlauf';
-import { useBezuege } from './bezuegeLaden';
-import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
-import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
 import {
-  paneRoot, istAnhangToken, findeArt,
-  berechneSekPos, berechneSektionMeta, kuratiereTocSektionen,
+  paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
 } from './berechnungen';
-import { GesetzFehlSeite } from './FehlSeite';
-import {
-  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, trefferProArtikel,
-} from './suchHighlight';
-import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
-import { LadeAnzeige, PdfEmbedAnsicht, LiveVerweisAnsicht } from './inhalt-ansichten';
+import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
 import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
+import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from './inhalt-zustand';
+import { useArtikelAbleitungen, useArtikelTokens, useTrefferUndNachbarn } from './inhalt-ableitungen';
+import { useSektionSprung, useInternRefs } from './inhalt-sprung';
+import { useWeiterlesen } from './inhalt-weiterlesen';
+import { LeserOverlays } from './inhalt-overlays';
+import { useSuchTreffer } from './inhalt-suchtreffer';
 
-// ═══ ABSCHNITT · Reine Rechenlogik ausgelagert (QS-TOK/P5, §6 Ziff. 6) ═══════
-// paneRoot/istAnhangToken/findeArt (Pane-Scoping, referenzstabil, KEIN React
-// Compiler → Modulfunktionen), sekPos/sektionMeta/sekLabelById-Ableitungen und
-// der Download-Text leben jetzt in ./berechnungen.ts. §6.6-Split (W2·12-HYGIENE/
-// B24): die Nicht-Volltext-Ansichten (./inhalt-ansichten), die Volltext-Ansicht
-// (./inhalt-volltext) und die side-effect-reinen Effekt-Hooks (./inhalt-hooks)
-// leben jetzt in Geschwister-Dateien — verhaltensneutral, Hook-Reihenfolge und
-// Markup byte-gleich. Ab hier NUR die zustandsbehaftete Reader-Komponente
-// (Hooks, Effekte, Delegation an die Ansichts-Komponenten).
+// ═══ ABSCHNITT · Zusammenführende Reader-Datei (§6.6-Fassade) ════════════════
+// Reine Rechenlogik lebt in ./berechnungen (QS-TOK/P5). Der §6.6-Split
+// (W2·12-HYGIENE/B24) hat die Nicht-Volltext-Ansichten (./inhalt-ansichten), die
+// Volltext-Ansicht (./inhalt-volltext) und die Effekt-Hooks (./inhalt-hooks)
+// ausgelagert; QS-TOK/T14 hat den seither zurückgewachsenen Rest in vier weitere
+// Aspekt-Module geschnitten: ./inhalt-zustand (State/Refs/Pane-Viewport),
+// ./inhalt-ableitungen (useMemo-Ableitungen), ./inhalt-sprung (Sektions-Sprung,
+// Instanz-Navigation, Such-Scroll, InternRefs), ./inhalt-weiterlesen +
+// ./inhalt-overlays (R4/R8) und ./inhalt-suchtreffer (A35-Highlight,
+// R1-Fundstellen, R2-Quickjump).
+//
+// VERHALTENSNEUTRAL: die HOOK-REIHENFOLGE ist unverändert, weil jeder ausgelagerte
+// Hook einen KONTIGUEN Block kapselt und an exakt derselben Position gerufen wird.
+//
+// Was hier bleiben MUSS und warum:
+//  · `linienProfil()`, `linien.guideEbene` (renderSektion) und `data-guide-auto`
+//    am .lc-leser-Root — `check:linien-kanon` (Teil B0) liest sie im Quelltext
+//    GENAU dieser Datei und meldet den Aufbau-Default sonst als abgeklemmt.
+//  · `springeZuArtikel` mit `window.history.replaceState(null, '', ziel)` — die
+//    LM-202-Quellensonde (src/tests/leser-adresse-lm202.test.ts) prüft den einen
+//    erlaubten Adress-Schreiber in dieser Datei. Ihn zu verschieben hiesse, einen
+//    Test anzupassen, und das verbietet §6 Ziff. 2 bei einem Refactoring.
+// Ab hier NUR noch: Zusammenführung der Hooks, die Ansichts-Weichen und der
+// Volltext-Render (renderSektion + reader-root-Hülle).
 
 export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schluessel: string }) {
   const basisPfad = `/gesetze/${ebene}/${encodeURIComponent(schluessel)}`;
   const navigate = useNavigate();
   const location = useLocation();
-  const [erlass, setErlass] = useState<BrowseErlass | null>(null);
-  const [eintraege, setEintraege] = useState<NormSnapshot[] | null>(null);
-  const [struktur, setStruktur] = useState<StrukturMap | null>(null);
-  const [kopf, setKopf] = useState<ErlassKopf | null>(null);
-  const [manifest, setManifest] = useState<BrowseManifest | null>(null);
-  // P1-d: Currency-Sidecar (geltend-geprüft-Datum + angekündigte Fassung je Erlass-Key).
-  const [currency, setCurrency] = useState<CurrencyMap | null>(null);
-  // W2·7-BEZUG/B4: der frühere Leitfall-Shard-Zustand (V1a) ist ENTFALLEN. Der
-  // Artikelfuss zeigt seit der Vorgabe David 28.7.2026 ausschliesslich die
-  // facettierte Auflistung aus dem Bezugs-Shard (`useBezuege`) — dieser ist die
-  // Obermenge, der schlanke Shard also überflüssig geworden. Sind alle Facetten
-  // abgewählt, wird nichts geladen und nichts gerendert.
-  // Revisions-Shard des Erlasses (V1c): Artikel-Token → Datum der letzten Text-
-  // änderung + AS-Fundstelle. EIN idle-Fetch auf Reader-Ebene wie der Leitfall-
-  // Shard; klassifiziert je Leitfall-Kante, ob sich die Norm SEIT dem Entscheid
-  // revidiert hat (Normrevisions-Ehrlichkeit, §V1c).
-  const [revisionShard, setRevisionShard] = useState<{ key: string; shard: RevisionShard | null } | null>(null);
-  // G-HIST-UI: Per-Artikel-Historie-Shard des Erlasses. EIN idle-Fetch auf Reader-
-  // Ebene (wie Leitfall-/Revisions-Shard); der Artikel-Eintrag wird als Prop
-  // durchgereicht (die ArtikelHistorieZeile ist ein reiner Renderer). An den Erlass-
-  // Key gebunden — ein Pane-/Erlass-Wechsel liefert nie fremde Historie.
-  const [historieShard, setHistorieShard] = useState<{ key: string; shard: HistorieShard | null } | null>(null);
-  // W2·7-BEZUG/B4: facettierte Bezüge. `useBezuege` lädt den (deutlich grösseren)
-  // Bezugs-Shard NUR im erweiterten Facetten-Zustand und im Leerlauf — im
-  // Grundzustand fasst der Reader ihn nie an (§15). `erweitert` steuert zugleich,
-  // ob der schlanke Leitfall-Shard überhaupt noch geladen wird (Entweder/Oder, §5).
-  const {
-    aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
-    bereich: bezugBereich,
-  } = useBezuege(erlass?.key);
-  const [fehler, setFehler] = useState(false);
-  // W2·10-UI-NAV/N0d·O3: kurze Bestätigung nach «In neuem Reiter» — der Reader
-  // wird bei der ?r-Instanz-Navigation NICHT neu gemountet (gleicher key=schluessel),
-  // darum überlebt dieser Zustand den Soft-Nav und weist zum Reiter-Tracker (☰).
-  const [reiterToast, setReiterToast] = useState(false);
-  const reiterToastTimer = useRef<number | null>(null);
-  useEffect(() => () => { if (reiterToastTimer.current) window.clearTimeout(reiterToastTimer.current); }, []);
-  const [suche, setSuche] = useState('');
-  // Rank 9 (QS-PERF, §15/3): entprellter Suchwert. Das Eingabefeld bleibt sofort
-  // responsiv (`suche`), aber die TEUREN Ableitungen — Treffer-Filter über ~1000
-  // Artikel + IntersectionObserver-Neuaufbau — laufen erst ~200 ms nach dem letzten
-  // Tastendruck über `sucheDebounced` statt bei JEDEM Zeichen (Jank auf schwacher
-  // CPU). LEEREN wirkt SOFORT (kein Lag beim Suche-Verlassen / Treffer→Artikel-Sprung,
-  // `springeZuArtikel` setzt setSuche('')). Reine Timing-Optimierung (§6.4): ändert
-  // nur WANN gefiltert wird, nie WAS (dieselbe passtAufSuche-Menge, dieselbe Ansicht).
-  const [sucheDebounced, setSucheDebounced] = useState('');
-  useEffect(() => {
-    // Leeren: 0 ms (praktisch sofort, ein Tick — kein Lag beim Suche-Verlassen /
-    // Treffer→Artikel-Sprung). Tippen: 200 ms entprellt. Beide über setTimeout,
-    // damit kein synchrones set-state-in-effect entsteht (Muster wie UniversalSuche).
-    const id = window.setTimeout(() => setSucheDebounced(suche), suche === '' ? 0 : 200);
-    return () => window.clearTimeout(id);
-  }, [suche]);
-  // Scrollposition VOR der Suche merken → beim Leeren der Suche dorthin zurück,
-  // statt an den Anfang zu springen (Auftrag David). Ein Treffer-Klick nullt das
-  // (springt stattdessen zum Artikel).
-  const scrollVorSuche = useRef<number | null>(null);
-  const sucheVorher = useRef('');
-  // Auf-/Zu-Zustand des FLIESSTEXTS (Sektionen im Lesefluss). Default OFFEN
-  // (renderSektion mit defOpen=true) — Fedlex-treu der ganze Erlass lesbar; jede
-  // Stufe ist per SektionKopf-Toggle einzeln einklappbar. Eigener State, vom TOC
-  // entkoppelt (D, Auftrag David 26.6.2026).
-  useEffect(() => {
-    const key = erlass?.key;
-    if (!key) return;
-    let lebt = true;
-    const abbrechen = beiLeerlauf(() => {
-      // W2·7-BEZUG/B4: der Artikelfuss speist sich AUSSCHLIESSLICH aus dem
-      // Bezugs-Shard (`useBezuege`) — der schlanke Leitfall-Shard wird hier
-      // nicht mehr geholt. Er ist dessen Teilmenge (Abgrenzung in bezuege.ts);
-      // beide zu laden brächte dieselben BGE-Kanten zweimal über die Leitung
-      // und liesse die Zeile zweimal einwachsen (zweiter Layout-Sprung,
-      // §15/CLS). Sind ALLE Facetten aus, lädt auch `useBezuege` nichts — dann
-      // steht unter dem Artikel nichts und es kostet null Byte (Vorgabe David
-      // 28.7.2026). Das KontextPanel lädt den norm-index-Shard weiterhin für
-      // seinen eigenen Zweck — siehe `bezuegeLaden.ts`.
-      void ladeRevisionShard(key).then((shard) => { if (lebt) setRevisionShard({ key, shard }); });
-      // G-HIST-UI: Historie-Shard (Bund; Kanton 404 → null → still kein Badge, §8).
-      void ladeHistorieShard(key).then((shard) => { if (lebt) setHistorieShard({ key, shard }); });
-    });
-    return () => { lebt = false; abbrechen(); };
-  }, [erlass?.key, bezuegeAktiv]);
-  // Revision r(a) des AKTUELLEN Erlass-Artikels (§V1c): undefined = Shard
-  // fehlt/lädt/Erlass nicht abgedeckt (⇒ 'unbekannt'); null = Urfassung (⇒ 'gleich');
-  // Objekt = letzte Textänderung. Stabile Referenz aus dem Shard → memo-freundlich.
-  const revisionFuer = useCallback((artikel: string) => (
-    erlass && revisionShard?.key === erlass.key
-      ? revisionFuerToken(revisionShard.shard, artikel)
-      : undefined
-  ), [erlass, revisionShard]);
-  // G-HIST-UI: Artikel-Token → Fassungshistorie des AKTUELLEN Erlasses (sonst
-  // undefined = kein Badge). Direkter Roh-Token-Lookup (Snapshot/Shard gleiche
-  // Extraktion). Stabile Referenz aus dem Shard → memo-freundlich.
-  const historieFuer = useCallback((artikel: string) => (
-    erlass && historieShard?.key === erlass.key
-      ? historieFuerArtikel(historieShard.shard, artikel)
-      : undefined
-  ), [erlass, historieShard]);
 
-  const [offen, setOffen] = useState<Record<string, boolean>>({});
-  // Eigener Auf-/Zu-Zustand NUR für den TOC-Baum (entkoppelt vom Fliesstext).
-  // Default ZU (SektionBaumTOC: `?? false`); beim Scrollen klappt der Spy die
-  // aktive Sektion auf und beim Verlassen wieder zu (K) — manuell geöffnete
-  // Zweige bleiben offen (autoOffenRef).
-  const [tocBaum, setTocBaum] = useState<Record<string, boolean>>({});
-  // Während eines Klick-Sprungs den Scroll-Spy stilllegen, damit der Baum nicht
-  // durch die durchscrollten Zwischen-Sektionen flackert (auf/zu).
-  const jumpLock = useRef(false);
-  // K (Auftrag David 26.6.2026): Zweige, die der Scroll-Spy AUTOMATISCH geöffnet
-  // hat. Nur diese darf der Spy wieder zuklappen, sobald die Leseposition den
-  // Zweig verlässt — manuell (Klick) geöffnete Zweige bleiben offen, weil sie
-  // nicht in diesem Set stehen (tocToggle/springeZuSektion nehmen sie heraus).
-  const autoOffenRef = useRef<Set<string>>(new Set());
-  // §15.2-Nachlauf (18.7.2026): Tick des letzten Aktiv-Vorkommens je Auto-Zweig +
-  // monotoner Pfadwechsel-Zähler. Der Spy klappt einen Auto-Zweig erst zu, wenn er
-  // AUTO_ZU_NACHLAUF Pfadwechsel aus dem aktiven Pfad heraus ist (dann off-screen →
-  // CLS-frei); verhindert das sichtbare Auf-/Zuklappen beim Hin-und-Her-Scrollen.
-  const autoTickRef = useRef<Map<string, number>>(new Map());
-  const autoTickNowRef = useRef(0);
-  // Zweige, die der NUTZER selbst aufgeklappt hat (Klick/Sprung). Der Scroll-Spy
-  // darf diese NIE ins Auto-Set adoptieren und NIE auto-zuklappen — auch dann
-  // nicht, wenn die Leseposition durch sie hindurchscrollt (David: «nur was
-  // automatisch geöffnet wurde, geht wieder zu»).
-  const manuellOffenRef = useRef<Set<string>>(new Set());
-  // Zweige, die der NUTZER selbst zugeklappt hat — auch wenn sie im aktiven
-  // Lesepfad liegen. Der Scroll-Spy darf sie NICHT wieder auto-aufklappen,
-  // solange der Nutzer sie nicht selbst wieder öffnet (sonst überschreibt der
-  // Spy das explizite Einklappen des gerade gelesenen Zweigs).
-  const manuellZuRef = useRef<Set<string>>(new Set());
-  // Manuelles Auf-/Zuklappen im TOC: beim Öffnen in manuellOffenRef aufnehmen
-  // (bleibt offen) + aus manuellZuRef nehmen; beim Schliessen umgekehrt (in
-  // manuellZuRef, aus manuellOffenRef); nie im Auto-Set (K).
-  // Rank 4 (QS-PERF, §15/4): useCallback ([] — liest nur setTocBaum + stabile Refs),
-  // sonst hätte onToggle bei jedem Parent-Render neue Identität und die React.memo-
-  // Wrapper von SektionBaumTOC liefe bei jeder Scroll-Spy-Aktualisierung leer.
-  const tocToggle = useCallback((id: string) => {
-    setTocBaum((o) => {
-      const offenJetzt = !o[id];
-      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      if (offenJetzt) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
-      else { manuellOffenRef.current.delete(id); manuellZuRef.current.add(id); }
-      return { ...o, [id]: offenJetzt };
-    });
-  }, []);
-  const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
-  const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
-  // W2·10-UI-NAV/R2: «beim Öffnen Hierarchie zur aktuellen Leseposition
-  // aufgeklappt + markiert». Markiert ist sie bereits (aktivIds → aktivPfad im
-  // Baum); aufgeklappt war sie es NICHT: im mobilen Sheet sind tiefe Zweige
-  // Default zu, und der Scroll-Spy führt sie erst beim nächsten Scroll nach —
-  // beim Öffnen sah man den gelesenen Zweig also gar nicht. Darum den aktiven
-  // Pfad beim ÖFFNEN einmalig aufklappen und wie einen Klick-Sprung als MANUELL
-  // behandeln (K): sonst klappte der Spy ihn sofort wieder zu.
-  //
-  // GENAU EINMAL je Öffnung (`pfadAufgeklapptRef`), aber MIT NACHLAUF: Bug-Check
-  // §9 vom 4.8.2026 (B5) — wer das Sheet öffnet, BEVOR der Scroll-Spy zum ersten
-  // Mal gefeuert hat (Deep-Link, sofortiges Antippen nach dem Laden), hatte
-  // `aktivIds === []`; der Effekt stieg aus und lief nie nach, weil `aktivIds`
-  // nicht in den Deps stand — das Sheet blieb ohne aufgeklappten Lesepfad. Jetzt
-  // ist `aktivIds` Dependency, und das Ref verhindert das wiederholte Aufklappen
-  // bei jedem Spy-Wechsel im offenen Sheet (kein Reflow im offenen Overlay =
-  // §15.2, und keine Endlos-Schleife: der Effekt setzt nur `tocBaum`, das seine
-  // eigene Dependency nicht ist). Das Ref wird beim Schliessen zurückgesetzt.
-  const pfadAufgeklapptRef = useRef(false);
-  useEffect(() => {
-    if (!tocAuf) { pfadAufgeklapptRef.current = false; return; }
-    if (pfadAufgeklapptRef.current || aktivIds.length === 0) return;
-    pfadAufgeklapptRef.current = true;
-    for (const id of aktivIds) {
-      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      manuellOffenRef.current.add(id); manuellZuRef.current.delete(id);
-    }
-    // Im rAF NACH dem Öffnungs-Paint: das Aufklappen ist damit demselben Klick
-    // zugerechnet (hadRecentInput ⇒ CLS-frei, §15.2) und der Effekt ruft kein
-    // setState synchron in seinem Rumpf (Kaskaden-Render-Regel).
-    const raf = window.requestAnimationFrame(() =>
-      setTocBaum((o) => ({ ...o, ...Object.fromEntries(aktivIds.map((id) => [id, true])) })));
-    return () => window.cancelAnimationFrame(raf);
-  }, [tocAuf, aktivIds]);
-  const [tocOffen, setTocOffen] = useState(true); // ab lg: Gliederungsspalte ein-/ausklappen
-  // 2-Spalten-Erkennung. R2 (Auftrag David 30.6.2026): Schwelle von 1280px auf
-  // 1024px (Tailwind lg) gesenkt → die linke Gliederungsspalte erscheint schon auf
-  // kleineren Laptops «grundsätzlich», nicht erst ab 1280px. 1024px deckt sich mit
-  // der Schwelle der persistenten App-Seitenleiste (lg) UND mit PANE_BREIT_PX (1024)
-  // des Pane-Pfads → unter lg sind sowohl Seitenleiste als auch Gliederung Drawer
-  // (kohärent, «nur bei echt-zu-klein in den Drawer»). Die Lesespalte bleibt nutzbar:
-  // Inhaltsbreite ist auf max-w-content (70rem) gedeckelt, abzüglich 16rem TOC + gap-8
-  // läuft der Fliesstext (max-w-normtext 42rem, E6/A37) nie unter ~26rem. SSR-Default false =
-  // mobil-Layout (byte-gleich). Ohne diese Erkennung behandelte der Code «tocOffen»
-  // fälschlich als 2-Spalten-aktiv → der Gliederungs-Zugang verschwand beim Scrollen.
-  // §15.2 «Client-Initialstate auf den Server-Zustand pinnen»: den WAHREN
-  // Viewport-Stand schon im ERSTEN Client-Render lesen (lazy Initializer),
-  // nicht erst per useEffect nach dem Mount. Sonst rendert der Client (der per
-  // createRoot frisch mountet, kein hydrateRoot — §15.5) zuerst mit `false`
-  // = 1-Spalten-Layout und flippt danach auf `true` = 2-Spalten-Grid
-  // (`grid-cols-[16rem_…]`) → die gesamte Lesespalte reflowt = grosser Layout-
-  // Shift. Unter CPU-Last (CI: 6 parallele Tore-Jobs) verlor dieser useEffect
-  // das Rennen gegen den Snapshot-Fetch: die Artikel rendern 1-spaltig, DANN
-  // flippt der Effekt → byte-identischer 0,49-CLS (verweis-u «Plural-Sprung»).
-  // SSR/Prerender: `window` ist undefiniert → `false` (Mobil-Layout,
-  // renderToString byte-gleich; die Erlass-Detailseiten kommen ohnehin aus dem
-  // separaten String-Builder `erlassVolltextHtml`, nicht aus dieser Komponente).
-  const [istXlVp, setIstXlVp] = useState(() =>
-    typeof window !== 'undefined' && typeof window.matchMedia === 'function'
-      && window.matchMedia('(min-width: 1024px)').matches);
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px)');
-    const upd = () => setIstXlVp(mq.matches);
-    upd();
-    mq.addEventListener('change', upd);
-    return () => mq.removeEventListener('change', upd);
-  }, []);
-  const { imPane, rolle, wurzel, overlayWurzel } = usePaneKontext();
-  // Split-View E (Container-responsiv): ein Pane wählt sein Layout nach SEINER
-  // Breite, nicht nach dem Viewport. `istXl` (treibt 2-Spalten-Gliederung + Drawer-
-  // vs-Sidebar) kommt im Pane aus einem ResizeObserver auf der Pane-Wurzel (Schwelle
-  // PANE_BREIT_PX = 1024), sonst aus matchMedia (1024px, R2) — beide Pfade ab 1024.
-  // Reines @container-CSS reicht hier NICHT: istXl steuert bedingtes Rendering
-  // (Vollbar/Kompaktknopf, Existenz des Drawers), das CSS nicht schalten kann.
-  const PANE_BREIT_PX = 1024;
-  const [istBreit, setIstBreit] = useState(false);
-  useEffect(() => {
-    // Kein Reset bei !imPane nötig: istXl ignoriert istBreit dann ohnehin.
-    if (!imPane || !wurzel?.current || typeof ResizeObserver === 'undefined') return;
-    const el = wurzel.current;
-    const ro = new ResizeObserver((eintraege) => {
-      // border-box (inkl. Scrollbar) → die Scrollbarbreite verschiebt den
-      // Schwellenvergleich nicht (kein Flackern an der 1024px-Grenze).
-      for (const e of eintraege) {
-        const w = e.borderBoxSize?.[0]?.inlineSize ?? e.contentRect.width;
-        setIstBreit(w >= PANE_BREIT_PX);
-      }
-    });
-    ro.observe(el, { box: 'border-box' });
-    return () => ro.disconnect();
-  }, [imPane, wurzel]);
-  const istXl = imPane ? istBreit : istXlVp;
-  // A3: aktuell gelesener Artikel (live) für den Einzelansicht-Kopf. Nur in der
-  // Einzelansicht (!imPane) gepflegt; im Split-View trägt der PaneKopf den Titel.
-  const meldeInhaltsKopf = useMeldeInhaltsKopf();
-  const [aktArtikel, setAktArtikel] = useState<string | null>(null);
-  // B-2.5: In einem Pane scopen wir DOM-Queries + Scroll auf die Pane-Wurzel
-  // (sonst kollidieren doppelte `art-`-IDs / trifft der Scroll das falsche Pane).
-  // NUR ein SEKUNDÄRES Pane unterdrückt globale URL-/Reiter-Writes — das primäre
-  // Pane IST die URL und pflegt sie wie heute. Ausserhalb eines Panes alles wie bisher.
-  const istSekundaer = rolle === 'sekundaer';
-  // W2·5d G2b (Fussnoten-Unifizierung): der frühere `fussnotenAuf`-React-Schalter
-  // (Such-Leiste, Default AUS) entfällt — die Fussnoten-Bedienung ist jetzt EINE
-  // (der data-fussnoten-Toggle der Options-Leiste, Default AN). Marker + Apparat
-  // liegen IMMER im DOM (R9/§8, Ctrl+F/Print/Screenreader); «AUS» dämpft rein per
-  // CSS (index.css), versteckt nie. Kein React-State-Zweig mehr im Artikel-Baum.
-  // W2·5d G2a: Die Gruppierungs-/Gliederungslinien werden nicht mehr per
-  // component-local useState geschaltet (das rendert die Artikelliste neu, §15),
-  // sondern über den globalen data-linien-Toggle der Options-Leiste
-  // (leserOptionen.tsx) rein per CSS. renderSektion emittiert Guide + Einzug
-  // darum IMMER (wie der frühere Default AN → Markup byte-gleich); `[data-linien
-  // ="aus"]` blendet Guide + Einzug per CSS aus (index.css, gescopt auf .lc-leser).
-  // N13: amtliche Kanton-Systematik (lazy) — liefert das echte Sachgebiet eines
-  // kantonalen Erlasses für die Reader-Overline (statt Einheits-«Öffentliches Recht»).
-  const [kantonSys, setKantonSys] = useState<Record<string, KantonSystematik>>({});
-  // BGer-Entscheide/Materialien/Werkzeuge zu diesem Erlass: das einheitliche
-  // KontextPanel (B3) lädt + zeigt sie selbst (Single Source, §5) — am Leseende.
-  const sekRefs = useRef<Map<string, HTMLElement>>(new Map());
-  // Mobiler Suche-&-Gliederung-Drawer (role=dialog): Esc-Schliessen, Fokus
-  // setzen + fangen, Fokus-Rückgabe an den Auslöser über den geteilten Hook (§5).
-  const tocDrawerRef = useRef<HTMLDivElement | null>(null);
-  useDialogFokus(!istXl && tocAuf, tocDrawerRef, () => setTocAuf(false));
-  // Live-Label des aktiven Reiters beim Scrollen entprellen (Trailing-Debounce):
-  // sonst ein localStorage-Write + globales TABS_EVENT pro überschrittener
-  // Artikelgrenze (Scroll-Jank auf langen Erlassen). Reine Timing-Optimierung (§6.4).
-  const tabArtikelTimer = useRef<number | null>(null);
-  // Entprellt die Kopf-Artikel-Meldung: beim schnellen Durchscrollen sonst ein
-  // setKopfDaten (Shell) pro Artikelgrenze → unnötige Re-Renders der übrigen Panes.
-  const aktArtikelTimer = useRef<number | null>(null);
-  // E7/A33-F3 (RC2): das automatische Auf-/Zuklappen des aktiven Zweigs (K) wird
-  // entprellt — analog aktArtikelTimer/tabArtikelTimer. Beim schnellen Durchscrollen
-  // sonst eine dichte Reflow-Folge des Gliederungsbaums (Δ~100 px pro Zweigwechsel),
-  // die den TOC in Eigenbewegung versetzt («Gliederung springt umher», David 16.7.).
-  const tocBaumTimer = useRef<number | null>(null);
-  // E7/A33-F2 (RC1b): Zeitstempel der letzten NUTZER-Bedienung des TOC (wheel/
-  // pointerdown/touchstart). Solange der Nutzer die Gliederung aktiv durchblättert,
-  // pausiert das automatische Nachführen (Mitscroll-Effekt) — sonst reisst eine
-  // verspätete Rückhol-Bewegung das manuelle Erkunden zurück (Symptom 3). Kein
-  // `scroll`-Event als Auslöser: der eigene programmatische Scroll würde den Guard
-  // sonst selbst armieren.
-  const tocTouchRef = useRef(0);
+  // ═══ ABSCHNITT · Zustand (./inhalt-zustand, drei kontigue Blöcke) ═══════════
+  const {
+    erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
+    manifest, setManifest, currency, setCurrency,
+    bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
+    fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
+    suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
+    revisionFuer, historieFuer,
+  } = useLeserZustand();
+  const {
+    offen, setOffen, tocBaum, setTocBaum, tocToggle, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
+  } = useLeserTocZustand();
+  const {
+    tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
+    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys,
+    sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
+  } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
   // §6.6-Split: Datenladung (Manifest/Currency/Struktur/Kopf/Kanton-Systematik/
   // Erlass/Einträge, Case-Redirect N0b, pdf-embed/nur-live-link) + Browser-Tab-Titel
@@ -348,8 +77,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
   });
 
-  // ═══ ABSCHNITT · Abgeleitete Werte (Gliederungsbaum, Linien-Profil, Sektions-
-  // Positionen/-Meta/-Labels, Randtitel) — useMemo, Rechenkerne in ./berechnungen.ts ═══
+  // ═══ ABSCHNITT · Abgeleitete Werte ═══════════════════════════════════════════
   const { sektionen, ohneGliederung } = useMemo(
     () => (eintraege ? baueGliederungsbaum(eintraege, struktur) : { sektionen: [], ohneGliederung: [] }),
     [eintraege, struktur],
@@ -359,7 +87,6 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Lesespalte (renderSektion unten) arbeitet weiter auf dem vollen `sektionen`
   // (§15-Treue: Inhalt/Anker/Ctrl+F/Print vollständig; reine TOC-Kuration).
   const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
-
 
   // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
   // aus dem TATSÄCHLICHEN Aufbau des Erlasses ab (Struktur-Sidecar: Gliederungstiefe
@@ -389,66 +116,20 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
   });
 
-  // Dokument-Position (Index des ersten enthaltenen Artikels) je Sektion — EINMAL
-  // bottom-up berechnet, damit renderSektion die Kinder + direkten Artikel eines
-  // Knotens in Dokument-Reihenfolge mischen kann, ohne pro Scroll-Render erneut den
-  // Teilbaum zu durchlaufen (6b: Knoten tragen seit der Randtitel-Promotion oft
-  // beides). Reine Darstellung (§3).
-  const sekPos = useMemo(() => berechneSekPos(sektionen, eintraege), [sektionen, eintraege]);
+  // Sektions-Positionen/-Meta/-Labels + Randtitel-Anzeige (./inhalt-ableitungen).
+  const { sekPos, artIndex, sektionMeta, artLabelByToken, margAnzeige } = useArtikelAbleitungen({
+    sektionen, eintraege, struktur,
+  });
 
-  // Dokument-Position je Artikel-Token (für den Artikel-Bereich «Art. 1–10» in den
-  // Sektionsüberschriften).
-  const artIndex = useMemo(() => {
-    const map = new Map<string, number>();
-    (eintraege ?? []).forEach((e, i) => map.set(e.artikel, i));
-    return map;
-  }, [eintraege]);
-
-  // Rank 4 (QS-PERF, §6.4): Sektions-Bereichslabel («Art. 1–10») + Artikelzahl
-  // EINMAL bottom-up vorberechnen — statt 2× O(Subtree) je Sektion je Scroll-Render
-  // (bisher rief renderSektion sekBereich(s) UND sammleArtikel(s).length je Knoten,
-  // jeweils den Teilbaum sammelnd). Deps [sektionen, artIndex] → nur bei echtem
-  // Gliederungs-/Index-Wechsel neu. Die Label-Logik ist byte-identisch zur früheren
-  // sekBereich/sammleArtikel (golden/struktur-konsistenz grün). Reine Darstellung (§3).
-  const sektionMeta = useMemo(() => berechneSektionMeta(sektionen, artIndex), [sektionen, artIndex]);
-
-  // M13: Token → korrektes Anzeige-Label («Art. 3», «Art. 31–32») für den
-  // Scroll-Spy-/Reiter-Kopf. Schlusstitel-Token («disp_u1_art_3») lassen sich
-  // NICHT heuristisch aus dem Token ableiten — hier den echten artikelLabel des
-  // Eintrags nehmen (Haupttext byte-gleich: dort ist es ohnehin «Art. <token>»).
-  const artLabelByToken = useMemo(() => {
-    const map = new Map<string, string>();
-    (eintraege ?? []).forEach((e) => map.set(e.artikel, labelMitBereich(e.artikelLabel, e.artikel)));
-    return map;
-  }, [eintraege]);
-
-  // Ueberschrift je Artikel im FLIESSTEXT: nur noch die artikel-EIGENE
-  // Sachueberschrift (das Randtitel-Blatt). Die uebergeordneten, von mehreren
-  // Artikeln geteilten Randtitel-Gruppierungen (A. ... -> II. ...) sind seit 6b
-  // eigene, einklappbare Gliederungs-Knoten (baueGliederungsbaum) und erscheinen
-  // als Sektions-Ueberschriften -- sie hier zusaetzlich je Artikel zu wiederholen,
-  // waere die vom Auftrag gewarnte Doppel-Darstellung. Hat der Artikel keine eigene
-  // Sachueberschrift (blatt = null, z. B. aufgehoben), faellt ArtikelLeser auf
-  // e.titel zurueck. Form wie die Such-/Volltextsicht erwartet ({ teile, ab }); das
-  // Blatt wird ueber margStufeStil(_, istBlatt=true) prominent gesetzt. Reine
-  // Darstellung (Sektions-Knoten zur Laufzeit abgeleitet, Sidecars unberuehrt).
-  const margAnzeige = useMemo(() => {
-    const map = new Map<string, { teile: string[]; ab: number }>();
-    for (const e of eintraege ?? []) {
-      const { blatt } = randtitelKnoten(struktur?.[e.artikel]?.marginalie ?? []);
-      map.set(e.artikel, { teile: blatt ? [blatt] : [], ab: 0 });
-    }
-    return map;
-  }, [eintraege, struktur]);
-
+  // ═══ ABSCHNITT · Navigation & Sprünge (Artikel/Sektion, Hash, Permalink) ════
   // Interner Artikel-Sprung (Querverweise im Wortlaut): Vorfahren öffnen, scrollen,
-  // Permalink setzen — derselbe Mechanismus wie der Hash-Sprung.
-  // ═══ ABSCHNITT · Navigation & Sprünge (Artikel/Sektion, Hash, Permalink, Scroll-Spy) ═══
+  // Permalink setzen — derselbe Mechanismus wie der Hash-Sprung. Bleibt HIER, weil
+  // die LM-202-Quellensonde den `replaceState`-Aufruf in dieser Datei prüft.
   const springeZuArtikel = useCallback((token: string) => {
     // Im Suchmodus erst die Suche verlassen, sonst ist das Ziel nicht im DOM
     // (nur Treffer gerendert) → Permalink änderte sich ohne Sprung. Kein Zurück
     // zur Vor-Such-Position (wir springen ja gezielt zum Artikel).
-    scrollVorSuche.current = null;
+    scrollVorSucheRef.current = null;
     setSuche('');
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
@@ -465,7 +146,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
       setAktivIds(ids);
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((id) => [id, true])) }));
-      jumpLock.current = true;
+      jumpLockRef.current = true;
     }
     if (typeof window === 'undefined') return;
     // ?search (Instanz-Diskriminator ?r) erhalten, sonst verliert ein Mehrfach-
@@ -495,218 +176,35 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // N2 (Bug-Check 3.8.2026): mit dem Lösen des Locks EINE Spy-Auswertung
       // nachholen — sonst bliebe der Kopf ohne weiteres Scrollen auf dem Artikel
       // vor dem Sprung stehen (Herleitung: inhalt-hooks.tsx bei `spyNachlauf`).
-      window.setTimeout(() => { scrolle(); jumpLock.current = false; loeseSpyNachlauf(); }, 400);
+      window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
     }, 110));
+    // Bewusst draussen: setSuche/setOffen/setAktivIds/setTocBaum (useState-Setter,
+    // von React als stabil garantiert) und scrollVorSucheRef/manuellZuRef/
+    // tocBaumTimer/jumpLockRef (useRef-Objekte, über die Lebenszeit identisch).
+    // Seit dem T14-Split kommen sie aus ./inhalt-zustand herein, wo die Regel
+    // ihre Stabilität nicht mehr sehen kann — Deps darum byte-gleich zum Stand
+    // vor dem Split (Aufnahme wäre eine stille Verhaltens-Änderung, §6).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sektionen, basisPfad, istSekundaer, imPane, wurzel]);
 
-  // ═══ ABSCHNITT · R4 «Weiterlesen bei Art. X» + R8 Tastatur-Navigation ════════
-  // Beide brauchen dasselbe: «welcher Artikel ist gerade dran» als TOKEN. Der
-  // Scroll-Spy meldet den aktiven Artikel als LABEL (`aktArtikel`, entprellt) —
-  // das ist die Form, die Kopf und Reiter zeigen. Statt einen zweiten Beobachter
-  // aufzusetzen (ein zweites «wo bin ich» wäre genau die zweite Wahrheit, die §5
-  // verbietet — und ein zweiter Scroll-Listener, den §15 nicht hergibt), wird die
-  // vorhandene Token→Label-Karte einmal umgedreht. Sie ist injektiv genug: die
-  // Labels stammen aus `labelMitBereich(artikelLabel, token)` und sind je Erlass
-  // eindeutig; bei einer Kollision gewinnt das erste Vorkommen in Dokument-
-  // Reihenfolge, und ein nicht auflösbares Label liefert schlicht null (dann wird
-  // nichts gemerkt und j/k starten am Anfang — nie ein geratener Artikel, §8).
-  const tokenByLabel = useMemo(() => {
-    const m = new Map<string, string>();
-    for (const [tok, lab] of artLabelByToken) if (!m.has(lab)) m.set(lab, tok);
-    return m;
-  }, [artLabelByToken]);
-  const aktivToken = aktArtikel ? tokenByLabel.get(aktArtikel) ?? null : null;
-  // R8: Artikel-Tokens in Dokument-Reihenfolge — die Liste, auf der j/k einen
-  // Schritt gehen. Aus `eintraege` (der Snapshot-Reihenfolge), nicht aus dem DOM:
-  // unter `content-visibility:auto` ist die DOM-Abfrage von der Renderreihenfolge
-  // abhängig, die Snapshot-Reihenfolge ist die des Gesetzes.
-  const artTokens = useMemo(() => (eintraege ?? []).map((e) => e.artikel), [eintraege]);
+  // R4 «Weiterlesen» + R8 Tastatur brauchen den aktiven Artikel als TOKEN
+  // (./inhalt-ableitungen); der Angebots-Zustand liegt in ./inhalt-weiterlesen,
+  // das Markup der beiden Overlays in ./inhalt-overlays.
+  const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
+  const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
+    erlass, eintraege, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
+  });
 
-  // R4 · Angebot beim Wiederkommen. EINMAL je Erlass gelesen (Ref-Riegel), bevor
-  // der Spy zu schreiben beginnt — sonst überschriebe die frisch geladene Seite
-  // die gemerkte Stelle, noch bevor sie jemand angeboten bekäme.
-  const [weiterlesen, setWeiterlesen] = useState<LesePosition | null>(null);
-  const weiterlesenGelesen = useRef<string | null>(null);
-  useEffect(() => {
-    const key = erlass?.key;
-    // `eintraege` MUSS stehen, bevor der Riegel fällt (§9-Bug-Check B2): der
-    // Effekt lief sonst schon im Zwischen-Render (Erlass geladen, Artikel noch
-    // nicht), verglich gegen einen Dokumentanfang, den er noch gar nicht kannte,
-    // und verriegelte sich danach gegen den Nachlauf — die Unterdrückung «nichts
-    // anbieten, was ohnehin gilt» griff damit NIE, und der Chip bot bei scrollY 0
-    // «Weiterlesen bei Art. 1» an.
-    if (!key || !erlass || istSekundaer || !eintraege) return;
-    if (weiterlesenGelesen.current === key) return;
-    weiterlesenGelesen.current = key;
-    // Deep-Link: die Adresse nennt bereits ein Ziel. Wer einem Link auf Art. 5
-    // folgt, will Art. 5 — ein zweites Angebot daneben wäre Lärm (§8).
-    const tief = /^#art-/.test(location.hash);
-    const pos = tief ? null : holeLesePosition(key, erlass.stand);
-    // Nichts anbieten, was ohnehin schon gilt: steht die gemerkte Stelle am
-    // Dokumentanfang, verspräche der Chip eine Reise ans Ziel, an dem man steht.
-    const anfang = eintraege?.[0]?.artikel ?? null;
-    const angebot = pos && pos.token !== anfang ? pos : null;
-    // Über einen 0-ms-Timer statt synchron: ein setState direkt im Effektkörper
-    // erzeugt eine Kaskade (Muster wie `sucheDebounced` oben). `null` räumt
-    // zugleich das Angebot des zuvor gelesenen Erlasses ab.
-    const id = window.setTimeout(() => setWeiterlesen(angebot), 0);
-    return () => window.clearTimeout(id);
-  }, [erlass, istSekundaer, location.hash, eintraege]);
+  // Sektions-Sprung (TOC) + Instanz-Navigation (?r/#art-) + Such-Scroll-Rettung
+  // — verhaltensneutral in ./inhalt-sprung (vier Hooks, unveränderte Reihenfolge).
+  // Muss ÜBER dem early-return stehen, sonst wären die Hooks bedingt.
+  const springeZuSektion = useSektionSprung({
+    sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
+    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
+  });
 
-  // R4 · Stelle fortschreiben. Hängt allein am (bereits entprellten) Spy-Ergebnis
-  // — kein eigener Scroll-Listener, kein Timer (§15): ein localStorage-Write je
-  // überschrittener Artikelgrenze, wie ihn der Reiter-Tracker längst macht.
-  // Nur die Primär-/Einzelansicht: ein sekundäres Pane ist nicht die adressierte
-  // Seite und darf die gemerkte Lesestelle nicht bestimmen (Muster A16-Anker).
-  useEffect(() => {
-    if (istSekundaer || !erlass || !aktArtikel || !aktivToken) return;
-    if (weiterlesenGelesen.current !== erlass.key) return; // erst nach dem Lesen schreiben
-    merkeLesePosition({ key: erlass.key, token: aktivToken, label: aktArtikel, stand: erlass.stand });
-  }, [istSekundaer, erlass, aktArtikel, aktivToken]);
-
-  // R4 · Verfall ohne Timer und ohne Listener: sobald der Spy einen ANDEREN
-  // Artikel meldet als beim Erscheinen des Chips, liest der Nutzer bereits selbst
-  // weiter — dann ist das Angebot beantwortet. (Ein Zeitablauf wäre willkürlich,
-  // ein Scroll-Schwellenwert eine Magic-Number.)
-  const weiterlesenStart = useRef<string | null>(null);
-  useEffect(() => {
-    if (!weiterlesen) { weiterlesenStart.current = null; return; }
-    if (aktivToken == null) return;
-    if (weiterlesenStart.current === null) { weiterlesenStart.current = aktivToken; return; }
-    if (aktivToken !== weiterlesenStart.current) setWeiterlesen(null);
-  }, [weiterlesen, aktivToken]);
-
-  const weiterlesenSprung = useCallback(() => {
-    // Sprung NEBEN dem Setter, nicht in ihm: ein State-Updater muss rein bleiben
-    // (StrictMode ruft ihn doppelt auf — der Sprung liefe sonst zweimal).
-    if (!weiterlesen) return;
-    const token = weiterlesen.token;
-    setWeiterlesen(null);
-    springeZuArtikel(token);
-  }, [weiterlesen, springeZuArtikel]);
-  const weiterlesenVerwerfen = useCallback(() => {
-    // Weggeklickt heisst «nicht wieder anbieten» — also auch aus dem Speicher.
-    if (erlass) vergissLesePosition(erlass.key);
-    setWeiterlesen(null);
-  }, [erlass]);
-
-  // Sprung aus dem Gliederungs-Baum (TOC): Pfad öffnen, markieren, scrollen. Beim
-  // Sprung den mobilen Drawer schliessen (analog Seitenleiste). Rank 4 (QS-PERF,
-  // §15/4): useCallback [sektionen] — nur pfadZu liest sektionen, alle Setter/Refs
-  // stabil → SektionBaumTOC (React.memo) re-rendert nur bei aktivPfad-/offen-Wechsel.
-  // Muss ÜBER dem early-return (`!erlass || !eintraege`) stehen, sonst wäre der Hook
-  // bedingt (Rules of Hooks) — das war der in Batch 1 zurückgestellte Reorder.
-  const springeZuSektion = useCallback((id: string) => {
-    const ids = pfadZu(sektionen, (s) => s.id === id) ?? [id];
-    jumpLock.current = true;
-    // F3: schwebenden Auto-Akkordeon-Timer verwerfen (Klick-Sprung ist autoritativ).
-    if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
-    // Sprung-Ziel als MANUELL behandeln (K): in manuellOffenRef aufnehmen und aus
-    // dem Auto-Set nehmen, damit der Scroll-Spy den angesprungenen Zweig nicht
-    // gleich wieder zuklappt.
-    for (const x of ids) { autoOffenRef.current.delete(x); autoTickRef.current.delete(x); manuellOffenRef.current.add(x); manuellZuRef.current.delete(x); }
-    // §15.2: der Klick öffnet den TOC-Zweig — diese Höhenänderung SYNCHRON im
-    // Klick-Task committen (flushSync), damit der Layout-Shift des einwachsenden
-    // Gliederungs-Zweigs dem Input zugerechnet wird (hadRecentInput ⇒ CLS-frei).
-    // Ohne flushSync verzögert React unter CPU-Last (CI: 6 parallele Tore-Jobs)
-    // den Commit über das 500-ms-Input-Fenster hinaus → der Shift zählt als
-    // unerwartet (leser-kopf-a9 «Breadcrumb-Fluss» Mikro-CLS).
-    flushSync(() => {
-      setAktivIds(ids);
-      setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((x) => [x, true])) }));
-      setOffen((o) => ({ ...o, ...Object.fromEntries(ids.map((x) => [x, true])) }));
-      setTocAuf(false); // mobilen Drawer schliessen
-    });
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      sekRefs.current.get(id)?.scrollIntoView({ block: 'start', behavior: 'auto' });
-      // §15.2: den Scroll-Spy bis NACH dem Einschwingen des programmatischen Scrolls
-      // gesperrt halten (jumpLock). Sonst feuert der IntersectionObserver, sobald der
-      // Sprung-Scroll einläuft, und klappt den aktiven TOC-Zweig auf/zu — eine
-      // Höhenänderung im Sticky-Gliederungsbaum, die (nicht input-nah) als
-      // unerwarteter CLS zählt. Unter CPU-Last läuft der Scroll spät ein, darum ein
-      // Zeit- statt rAF-Fenster (wie springeZuArtikel); der Spy nimmt die Endposition
-      // danach normal auf. Reine Timing-Steuerung (kein setState) → kein Re-Render.
-      // N2: siehe springeZuArtikel — Lock lösen UND einmal nachwerten lassen.
-      window.setTimeout(() => { jumpLock.current = false; loeseSpyNachlauf(); }, 500);
-    }));
-  }, [sektionen]);
-
-  // Wechsel zwischen zwei Instanzen DESSELBEN Gesetzes (?r) bzw. ein Tab-Klick mit
-  // #art-Anker remountet den Reader nicht (gleicher pathname) — darum bei jeder
-  // Navigation mit Artikel-Anker gezielt dorthin springen (Auftrag David: Klick
-  // auf den Reiter führt zum gemerkten Artikel der Instanz).
-  const letzteNavKey = useRef<string | null>(null);
-  useEffect(() => {
-    if (!sektionen.length || typeof window === 'undefined') return;
-    if (istSekundaer) return; // sekundäres Pane: location.key ist fix («default»), kein Instanz-Wechsel
-    // Nur bei ECHTER Navigation (location.key wechselt), nicht wenn sektionen
-    // nachlädt. Den Initial-Load (erster key) deckt der Lade-Hash-Effekt ab →
-    // kein doppelter Sprung/Blink. Dieser Effekt trägt nur den Instanz-Wechsel
-    // (gleicher pathname, nur ?r/#).
-    if (letzteNavKey.current === location.key) return;
-    const erstmalig = letzteNavKey.current === null;
-    letzteNavKey.current = location.key;
-    if (erstmalig) return;
-    // LM-199 (W2·17-UI-BEFUNDE-B2): verbrauchter Einstiegs-Hash (Browser-Zurück
-    // über eine Reiter-Identitätsgrenze, z. B. ?r-Instanzwechsel ohne Remount) —
-    // die A16-Anker-Restauration (App.tsx) übernimmt, kein Hash-Sprung.
-    if (istHashVerbraucht()) return;
-    const m = location.hash.match(/^#art-(.+)$/);
-    if (!m) return;
-    const token = decodeURIComponent(m[1]);
-    const id = window.requestAnimationFrame(() => springeZuArtikel(token));
-    return () => window.cancelAnimationFrame(id);
-  }, [location.key, location.hash, sektionen, springeZuArtikel, istSekundaer]);
-
-  // Suche aktivieren → an den Anfang scrollen; Suche schliessen/leeren → an die
-  // Scrollposition VOR der Suche zurück (Auftrag David). Grund fürs Hoch-Scrollen
-  // beim Aktivieren (Bug David 26.6.2026): die Trefferliste ist kürzer als der
-  // Volltext — war man tief gescrollt, rutschte der sticky-Container (Suchleiste +
-  // Gliederung) mit seinem geschrumpften Inhalt über den Viewport hinaus und war
-  // «aus dem Bild». Nach oben scrollen holt Suchleiste + Gliederung zurück ins
-  // Sichtfeld. Reine Scroll-Steuerung (kein setState) → keine Render-Kaskade.
-  useEffect(() => {
-    // An `sucheDebounced` gekoppelt (nicht `suche`): der Ansichtswechsel Volltext↔
-    // Trefferliste erfolgt über `treffer` (aus sucheDebounced), darum muss die
-    // Scroll-Rettung/-Rückgabe mit genau diesem Moment fluchten (Rank 9).
-    const war = sucheVorher.current;
-    sucheVorher.current = sucheDebounced;
-    if (typeof window === 'undefined') return;
-    // Im Pane scrollt der Pane-Container, nicht das Fenster (B-2.5).
-    const sc = paneRoot(imPane, wurzel);
-    const hole = () => sc ? sc.scrollTop : window.scrollY;
-    const setze = (y: number) => sc ? sc.scrollTo(0, y) : window.scrollTo(0, y);
-    if (!war && sucheDebounced) {
-      scrollVorSuche.current = hole();
-      window.requestAnimationFrame(() => setze(0));
-    } else if (war && !sucheDebounced && scrollVorSuche.current != null) {
-      const y = scrollVorSuche.current;
-      scrollVorSuche.current = null;
-      window.requestAnimationFrame(() => setze(y));
-    }
-  }, [sucheDebounced, imPane, wurzel]);
-
-  // Token-Auflösung für bare Artikelverweise (normalisiert «6a» → Token «6_a»).
-  const internRefs = useMemo<InternRefs | undefined>(() => {
-    if (!eintraege) return undefined;
-    const tokenMap = new Map<string, string>();
-    for (const e of eintraege) tokenMap.set(e.artikel.toLowerCase().replace(/[^a-z0-9]/g, ''), e.artikel);
-    // W2·5d U-POSITION/A16: ein Klick auf einen Verweis IM Text ist nutzer-initiiert
-    // und soll einen echten History-Eintrag anlegen, damit Browser-/UI-Zurück exakt
-    // an den Ausgangs-Artikel zurückkehrt. In der PRIMÄR-/Einzelansicht darum über
-    // den Router navigieren (react-router besitzt die History; der letzteNavKey-
-    // Effekt führt den eigentlichen Sprung aus, ScrollWiederherstellung/ScrollZuHash
-    // stellt beim Zurück die Ausgangsstelle her — Anker bei hashlosem Ausgang,
-    // #art-Hash bei Hash-Ausgang). Ein MANUELLES pushState würde react-router
-    // desynchronisieren (Zurück löste dann keinen Location-Wechsel aus → kein
-    // Rück-Sprung). Im SEKUNDÄREN Pane bleibt der direkte Sprung (eigene Pane-
-    // History, scrollt den Pane-Container; kein globaler Router-Eingriff, B-2.5).
-    const springeZuRef = (t: string) => {
-      if (istSekundaer) { springeZuArtikel(t); return; }
-      navigate(`${basisPfad}${window.location.search}#art-${t}`);
-    };
-    return { tokenMap, basisPfad, springeZu: springeZuRef };
-  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate]);
+  const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
 
   // §6.6-Split: der FLIESSTEXT-Offen-Zustand (istOffen/toggle) lebt jetzt in der
   // Volltext-Ansicht (./inhalt-volltext), `oeffnePfad` im Sprung-/Spy-Hook
@@ -722,223 +220,28 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     paneLocationHash: location.hash, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
     istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
     refs: {
-      jumpLock, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
+      jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
       tocBaumTimer, tabArtikelTimer, aktArtikelTimer, tocTouchRef,
     },
   });
 
-
+  // ═══ ABSCHNITT · In-Gesetz-Suche & Treffer ═══════════════════════════════════
   const sucheTrim = sucheDebounced.trim().toLowerCase(); // Rank 9: entprellt (nicht `suche`)
-  // ═══ ABSCHNITT · In-Gesetz-Suche & Treffer ═══
-  const treffer = useMemo(
-    () => (eintraege && sucheTrim ? eintraege.filter((e) => passtAufSuche(e, sucheTrim)) : null),
-    [eintraege, sucheTrim],
-  );
-
-  const { vorher, nachher } = useMemo(() => {
-    if (!manifest || !erlass) return { vorher: null as BrowseErlass | null, nachher: null as BrowseErlass | null };
-    const g = manifest.erlasse.filter((e) => e.ebene === erlass.ebene && e.status === 'snapshot');
-    const i = g.findIndex((e) => e.key === erlass.key);
-    return { vorher: i > 0 ? g[i - 1] : null, nachher: i >= 0 && i < g.length - 1 ? g[i + 1] : null };
-  }, [manifest, erlass]);
-
-  // A35 (David 16.7.2026): Suchtreffer im Text markieren. Wenn die Trefferliste
-  // steht, den Suchbegriff als reine Paint-Schicht (CSS Custom Highlight API,
-  // suchHighlight.ts) über die gerenderten Artikel legen — keine DOM-Mutation,
-  // kein Reflow (CLS 0), keine Berührung von Autolinks/Fussnoten/Zitat-Marken.
-  // rAF: erst NACH dem Treffer-Render (Artikel im DOM); Cleanup löscht die
-  // Highlight-Menge (Suche verlassen / Erlass wechseln). Ausser-Bestand-neutral,
-  // da `treffer===null` (kein Suchmodus) sofort löscht.
-  const trefferRef = useRef<HTMLDivElement | null>(null);
-  // Handle auf den noch nicht gefeuerten Setz-rAF, damit ihn AUCH der Sofort-
-  // Aufräumer unten abbestellen kann (React Compiler ist AUS, §15/4 → Ref).
-  const highlightRaf = useRef<number | null>(null);
-  // W2·10-UI-NAV/R1: gemessene Fundstellen — GESAMT (Zähler in der Treffer-
-  // Leiste) und JE ARTIKEL (Zeile über dem Artikel). Beide kommen aus DERSELBEN
-  // Range-Menge, die auch die Hervorhebung malt (§5) — sonst zeigte der Zähler
-  // eine andere Zahl, als der Text Stellen leuchtet (§8). `null` = noch nicht
-  // gemessen; die Anzeige lässt den Platz reserviert und schreibt nichts
-  // Erfundenes hin (§15/2 CLS 0, §8).
-  // `begriff` ist der Gültigkeits-Schlüssel: die Messung eines FRÜHEREN Begriffs
-  // wird beim Render verworfen, statt sie im Effekt-Rumpf auf null zu setzen
-  // (kein Kaskaden-Render) — und es kann nie eine Zahl zum falschen Begriff
-  // stehenbleiben (§8).
-  const [fundstellen, setFundstellen] = useState<{ begriff: string; gesamt: number; proArtikel: Map<string, number> } | null>(null);
-  // Aktive Fundstelle der Vor/Zurück-Navigation (0-basiert; -1 = noch keine).
-  // Ref + State: der Ref trägt den Wert für den nächsten Klick (ohne Closure-
-  // Neuaufbau), der State treibt allein die Anzeige.
-  const [trefferPos, setTrefferPos] = useState(-1);
-  const trefferPosRef = useRef(-1);
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!treffer) { setzeSuchHighlight(null, ''); return; }
-    // EIN TreeWalker-Lauf für Malen + Zählen (§15/3: die Suche ist entprellt,
-    // also läuft er einmal je Such-Ruhephase, nicht je Tastendruck).
-    const messe = () => {
-      const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
-      setzeSuchHighlightRanges(ranges);
-      setFundstellen({ begriff: sucheTrim, gesamt: ranges.length, proArtikel: trefferProArtikel(ranges) });
-      // Die Menge ist neu — eine alte Laufnummer zeigte sonst auf eine andere Stelle.
-      trefferPosRef.current = -1;
-      setTrefferPos(-1);
-    };
-    const planen = () => {
-      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
-      highlightRaf.current = window.requestAnimationFrame(messe);
-    };
-    planen();
-    // Re-Verifikation §9 vom 4.8.2026 (RV6): Schaltet der Nutzer die Ansicht
-    // WÄHREND laufender Suche um (Fussnoten an/aus, Hist-Ansicht, …), ändert
-    // sich, was überhaupt malbar ist — die gemeldete Zahl überzeichnete bis zum
-    // nächsten Begriffs-Wechsel (gemeldet 111, anspringbar 80, Anzeige «80/111»).
-    // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
-    // («KEIN Artikel-Re-Render», leserOptionen.ts) — sie in React-State zu
-    // ziehen, würde genau diese §15-Zusage aufgeben (der OR-Reader reconciliert
-    // sonst 1686 Artikel je Toggle). Darum hier ein MutationObserver, der NUR im
-    // Suchmodus lebt und nur die Ansicht-Attribute beobachtet: er misst die EINE
-    // Range-Menge neu, sobald sich die Malbarkeit ändert. Der Beobachter kostet
-    // ausserhalb der Suche nichts (der Effekt steigt bei `!treffer` vorher aus),
-    // und im Suchmodus steht nur die kurze Trefferliste im Walker-Bereich.
-    const beob = new MutationObserver(planen);
-    beob.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-linien', 'data-verweise'],
-    });
-    return () => {
-      beob.disconnect();
-      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
-      highlightRaf.current = null;
-      setzeSuchHighlight(null, '');
-    };
-  }, [treffer, sucheTrim]);
-
-  // R1 · Vor/Zurück-Sprungtasten zwischen den Fundstellen. Die Range-Menge wird
-  // bei JEDEM Sprung frisch gesammelt (nicht aus einem Ref recycelt): Ranges sind
-  // an konkrete Text-Knoten gebunden, und zwischen zwei Klicks kann der Reader
-  // Teilbäume neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Frisch
-  // sammeln ist deterministisch und kostet nur die (kurze) Trefferliste.
-  // Reines Scrollen + eine 2,4-s-Puls-Klasse am Ziel-Artikel — KEINE DOM-Mutation
-  // am Wortlaut, kein Reflow (CLS 0, §15/2).
-  // Puls am Ziel-Artikel: Element UND Timer-Handle zusammen halten (Bug-Check §9
-  // vom 4.8.2026, B6a). Beim Unmount wird der Timer abbestellt, sonst liefe der
-  // Callback nach dem Erlass-/Pane-Wechsel gegen ein abgehängtes Element. Das
-  // Element muss mitgeführt werden, weil ein schneller Folge-Klick den alten
-  // Timer verwirft — ohne diese Referenz bliebe die Puls-Klasse am vorherigen
-  // Artikel für immer stehen.
-  const blink = useRef<{ el: HTMLElement; id: number } | null>(null);
-  const blinkAus = useCallback(() => {
-    const b = blink.current;
-    if (!b) return;
-    window.clearTimeout(b.id);
-    b.el.classList.remove('lc-ziel-blink');
-    blink.current = null;
-  }, []);
-  useEffect(() => blinkAus, [blinkAus]);
-  const springeZuFundstelle = useCallback((delta: number) => {
-    if (typeof window === 'undefined') return;
-    const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
-    if (ranges.length === 0) return;
-    const jetzt = trefferPosRef.current;
-    // Noch keine aktive Fundstelle: «weiter» beginnt bei der ersten, «zurück»
-    // bei der letzten (Basis 0 bzw. -1, dann modulo).
-    const basis = jetzt < 0 ? (delta > 0 ? -1 : 0) : jetzt;
-    const n = ((basis + delta) % ranges.length + ranges.length) % ranges.length;
-    trefferPosRef.current = n;
-    setTrefferPos(n);
-    const start = ranges[n].startContainer;
-    const el = (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null;
-    el?.scrollIntoView({ block: 'center', behavior: 'auto' });
-    const art = el?.closest('article[id^="art-"]') as HTMLElement | null;
-    blinkAus();
-    if (art) {
-      art.classList.add('lc-ziel-blink');
-      blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
-    }
-  }, [sucheTrim, blinkAus]);
-
-  // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der Highlight-
-  // Registry hing bisher AUSSCHLIESSLICH am Effekt oben — und der läuft erst, wenn
-  // `treffer` über den ENTPRELLTEN `sucheTrim` auf null kippt. Genau dieser Commit
-  // ist der teuerste des Readers: die Trefferliste weicht dem vollständigen
-  // Volltext-Baum (OR: 1686 Artikel-Knoten neu gemountet). Gemessen von der Leerung
-  // des Feldes bis zum `CSS.highlights.delete`: ~2,4 s ohne Drossel, 9,8 s bei 4×,
-  // 21,9 s bei 8× CPU-Drossel — auf dem 2-vCPU-Runner reisst das reihum das
-  // 15-s-Prüfbudget des A35-Specs, und der Nutzer sieht die Markierung sekundenlang
-  // weiterleuchten, obwohl das Suchfeld leer ist (§8: die Anzeige lügt über den
-  // Zustand). Latenz-Kopplung, KEIN Leck: der Eintrag verschwand am Ende immer.
-  //
-  // Darum das Aufräumen vom teuren Commit ENTKOPPELN: es hängt am ROHEN Feldwert,
-  // nicht am entprellten. Der Render, der `suche` leert, ist billig (die memoisierten
-  // ArtikelLeser der noch stehenden Trefferliste steigen aus der Reconciliation aus),
-  // also feuert dieser Effekt im nächsten Frame. Nur der boolesche Kipp-Punkt ist
-  // Dependency — beim Tippen läuft KEIN zusätzlicher TreeWalker (§15/3, kein
-  // Setz-Pfad hier). Wirkt für JEDEN Ausstieg aus dem Suchmodus (Feld leeren,
-  // `springeZuArtikel`, Erlass-/Pane-Wechsel), unabhängig davon, welche Teilbäume
-  // neu rendern. Der Effekt oben bleibt unverändert der einzige SETZENDE Pfad.
-  // ═══ ABSCHNITT · R2 · Quickjump «Art. N» + «Sie sind hier» ═══════════════════
-  // Quickjump: KEIN Index, KEIN Server — die Eingabe wird gegen die bereits
-  // geladene Token-Map des Erlasses aufgelöst (dieselbe, die Querverweise im
-  // Wortlaut auflöst, §5). Kein Treffer ⇒ null, und das Feld sagt es (§8).
-  const loeseArtikel = useCallback(
-    (eingabe: string) => (internRefs ? loeseArtikelEingabe(eingabe, internRefs.tokenMap) : null),
-    [internRefs],
-  );
-  // «Sie sind hier»: reine Projektion des SCHON vorhandenen Scroll-Spy-Zustands
-  // (aktivIds) auf die Gliederungs-Labels — keine zusätzliche Beobachtung (§15).
-  const siePfad = useMemo(() => pfadLabels(sektionen, aktivIds), [sektionen, aktivIds]);
-  // Fremdfund-Fix aus dem §9-Bug-Check (B5, echter main-Defekt seit #429): hier
-  // wurde ein LABEL in der TOKEN-Map nachgeschlagen (`artLabelByToken` ist
-  // token→label, `inhalt-hooks.tsx` setzt in `aktArtikel` aber bereits das
-  // fertige Label). Der Lookup ging darum IMMER ins Leere, `siePfadArtikel` war
-  // dauerhaft null und die Artikel-Angabe in «Sie sind hier» fehlte still — der
-  // Gliederungspfad allein füllte die Zeile, also fiel es nicht auf.
-  // `aktArtikel` IST das Anzeige-Label; die Umkehrkarte dient nur noch als
-  // Echtheitsprüfung: benannt wird ausschliesslich ein Label, das auf einen
-  // realen Artikel dieses Erlasses auflöst (§8).
-  const siePfadArtikel = aktArtikel && tokenByLabel.has(aktArtikel) ? aktArtikel : null;
-
+  const { treffer, vorher, nachher } = useTrefferUndNachbarn({ eintraege, sucheTrim, manifest, erlass });
   const sucheFeldLeer = suche.trim() === '';
-  useEffect(() => {
-    if (typeof window === 'undefined' || !sucheFeldLeer) return;
-    if (highlightRaf.current !== null) {
-      window.cancelAnimationFrame(highlightRaf.current);
-      highlightRaf.current = null;
-    }
-    setzeSuchHighlight(null, '');
-  }, [sucheFeldLeer]);
+  // A35-Hervorhebung, R1-Fundstellen-Navigation, R2-Quickjump + «Sie sind hier»
+  // — verhaltensneutral in ./inhalt-suchtreffer (ein kontiguer Hook-Block).
+  const {
+    trefferRef, fundstellen, trefferPos, springeZuFundstelle, loeseArtikel, siePfad, siePfadArtikel,
+  } = useSuchTreffer({
+    treffer, sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
+  });
 
-  if (fehler) {
-    // W2·10-UI-NAV/N0b: hilfreiche Fehlseite (angefragter Key + Fuzzy-Vorschläge +
-    // eingebettetes Erlass-Suchfeld) statt der nackten «nicht verfügbar»-Notiz.
-    return <GesetzFehlSeite schluessel={schluessel} manifest={manifest} />;
-  }
-  // ── A9 §15.2-Pin: Currency-Chips NICHT nachträglich einwachsen lassen ────────
-  // Die Kopf-Chips «geltend geprüft am … / nächste Fassung ab …» (ErlassLeserKopf)
-  // stehen im Prerender (erlassVolltextHtml projiziert currency.json build-time).
-  // Der Client lädt currency aber async (ladeCurrency, eigener Fetch). Rendert ein
-  // Kopf-Pfad die Kopfzeile schon VOR dem Currency-Fetch, wachsen die zwei
-  // whitespace-nowrap-Chips nachträglich in die flex-wrap-Meta-Zeile ein und
-  // schieben Ingress + 2-Spalten-Grid ~30 px nach unten (Lade-Shift, auf dem
-  // 2-vCPU-Runner voll gezählt: CLS ~0.10, lokal repro unter 6× Drossel + langsamem
-  // Netz = 0.086). Darum ALLE Kopf-tragenden Render-Pfade (pdf-embed / nur-live-link
-  // / Volltext) auf den AUFGELÖSTEN Currency-Stand pinnen (§15.2 «Client-Initialstate
-  // auf den Server-Zustand pinnen»): solange `currency === null`, bleibt der
-  // reservierte Lade-Platzhalter stehen — kein Inhalt versteckt (§15/2). `ladeCurrency`
-  // löst IMMER auf (Fetch-Fehler ⇒ {}), i. d. R. lange vor dem grossen eintraege-Fetch
-  // ⇒ kein LCP-Verlust, und die Kopfzeile kann den Reader nicht aufhängen.
-  if (erlass && currency === null) {
-    return <LadeAnzeige />;
-  }
-  // ── pdf-embed: amtliches PDF in-app (kein extrahierbarer Volltext-HTML) ──────
-  // Reine Präsentation in ./inhalt-ansichten (§6.6-Split), Markup byte-gleich.
-  if (erlass && erlass.status === 'pdf-embed' && erlass.pdfPfad) {
-    return <PdfEmbedAnsicht erlass={erlass} currency={currency} kopf={kopf} internRefs={internRefs} />;
-  }
-  // ── ⑧ LIVE_VERWEIS: kein In-App-Volltext — ehrliche Verweiskarte (§8) ────────
-  // Reine Präsentation in ./inhalt-ansichten (§6.6-Split), Markup byte-gleich.
-  if (erlass && erlass.status === 'nur-live-link') {
-    return <LiveVerweisAnsicht erlass={erlass} currency={currency} />;
-  }
+  // ═══ ABSCHNITT · Ansichts-Weichen vor dem Volltext-Zweig ════════════════════
+  // Fehlseite · Currency-Pin · pdf-embed · nur-live-link — in ./inhalt-ansichten,
+  // gleiche Reihenfolge, gleiche Bedingungen (`null` = weiter zum Volltext).
+  const frueheAnsicht = FruehAnsicht({ fehler, schluessel, manifest, erlass, currency, kopf, internRefs });
+  if (frueheAnsicht) return frueheAnsicht;
   if (!erlass || !eintraege) {
     // Mindesthöhe reserviert die volle Lesehöhe, solange Snapshot/Struktur async
     // laden: ohne sie kollabiert das (bei Bund prerenderte) Volltext-Dokument auf
@@ -1062,29 +365,9 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
         tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
       />
-      {/* W2·10-UI-NAV/R4 + R8. Beide hängen INNEN an `.lc-leser`: der Chip erbt
-          von dort `--nt-stick` (N0c, die EINE Quelle der realen Sticky-Höhe), und
-          beide rendern im Ruhezustand `null` ⇒ prerendertes Markup byte-gleich.
-          Nur die Primär-/Einzelansicht — im sekundären Pane liefe sonst ein
-          ZWEITER globaler keydown-Listener und j/k sprängen doppelt.
-
-          `display: contents` am Träger ist hier keine Kosmetik, sondern der Fix
-          eines gemessenen 20-px-Shifts: `.lc-leser` trägt `space-y-5`, und dessen
-          Regel `> * + *` hätte dem Lese-Inhalt einen Margin gegeben, sobald ein
-          zweites Kind danebensteht — obwohl beide Overlays `position: fixed` sind
-          und gar keinen Platz brauchen. Ein Träger ohne eigene Box nimmt den
-          Margin entgegen und wirft ihn weg; der Rhythmus der Lesespalte bleibt
-          exakt der vor dieser Einheit (belegt in leser-weiterlesen-r4-r8.e2e.ts,
-          «Entfernen bewegt nichts»). */}
-      <div className="contents">
-        {!istSekundaer && weiterlesen && (
-          <WeiterlesenChip label={weiterlesen.label}
-            onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen} />
-        )}
-        {!istSekundaer && (
-          <LeserTastatur tokens={artTokens} aktivToken={aktivToken} onSprung={springeZuArtikel} />
-        )}
-      </div>
+      <LeserOverlays istSekundaer={istSekundaer}
+        weiterlesen={weiterlesen} onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen}
+        artTokens={artTokens} aktivToken={aktivToken} onSprung={springeZuArtikel} />
     </div>
   );
 }

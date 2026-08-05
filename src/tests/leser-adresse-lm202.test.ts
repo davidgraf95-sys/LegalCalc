@@ -33,6 +33,22 @@ const INHALT = 'src/pages/gesetz-leser/inhalt.tsx';
 // nicht unter der Sonde — ein dort eingezogener Adress-Sync wäre unbemerkt
 // geblieben. Jetzt mitbewacht.
 const APP = 'src/App.tsx';
+// Gegenprüfungs-Befund 1 (QS-TOK/T14, 5.8.2026): Der §6.6-Split hat den
+// scroll-reaktiven Reader-Code aus `inhalt.tsx` in Aspekt-Module gezogen — die
+// Such-Scroll-Rettung und den Sektions-/Instanz-Sprung nach `inhalt-sprung.tsx`,
+// den Fundstellen-Sprung nach `inhalt-suchtreffer.tsx`. Die Sonde bewachte
+// danach eine Datei, in der dieser Code nicht mehr steht: ein dort eingezogener
+// Adress-Sync wäre unbemerkt geblieben — exakt die Lücke, die B4 für `App.tsx`
+// geschlossen hat. Deklarierte Prüf-VERSTÄRKUNG, keine Aufweichung: kein
+// bestehender Satz ist gelockert, es kommen nur Dateien unter dieselben Verbote.
+const SPLIT_MODULE = [
+  'src/pages/gesetz-leser/inhalt-sprung.tsx',
+  'src/pages/gesetz-leser/inhalt-suchtreffer.tsx',
+  'src/pages/gesetz-leser/inhalt-zustand.tsx',
+  'src/pages/gesetz-leser/inhalt-ableitungen.tsx',
+  'src/pages/gesetz-leser/inhalt-weiterlesen.tsx',
+  'src/pages/gesetz-leser/inhalt-overlays.tsx',
+];
 
 // Boolesche Sonden statt `toMatch` auf der ganzen Datei: ein Fehlschlag soll
 // «erwartet true» melden und nicht 60 kB Quelltext ins Protokoll kippen.
@@ -84,6 +100,28 @@ describe('Scroll-Pfade des Lesers schreiben nie in die Adresse (LM-202)', () => 
     const quelle = LIES(HOOKS);
     expect(traegt(quelle, /aktualisiereTabArtikel\(tabZiel\)/), 'Reiter-Meldung verloren').toBe(true);
     expect(traegt(quelle, /window\.location\.hash\s*=/), 'direkte Hash-Zuweisung im Scroll-Pfad').toBe(false);
+  });
+
+  it('die T14-Split-Module fassen die Adresse nicht an (Gegenprüfungs-Befund 1)', () => {
+    for (const datei of SPLIT_MODULE) {
+      // `readFileSync` wirft, wenn ein Modul umbenannt/entfernt wird — die
+      // Sonde wird dann ROT und nicht still grün (§6.7 b).
+      const quelle = LIES(datei);
+      expect(traegt(quelle, /history\.replaceState\(/), `replaceState in ${datei}`).toBe(false);
+      expect(traegt(quelle, /history\.pushState\(/), `pushState in ${datei}`).toBe(false);
+      expect(traegt(quelle, /window\.location\.hash\s*=/), `direkte Hash-Zuweisung in ${datei}`).toBe(false);
+    }
+  });
+
+  it('… und die Sonde greift dabei nicht ins Leere: der scroll-reaktive Code liegt wirklich dort (§6.7)', () => {
+    // Positiv-Sonden zu den drei bewachten Stellen. Wandert der Code zurück
+    // oder weiter, meldet GENAU diese Zeile es — statt dass das Verbot oben
+    // gegen leere Dateien gewinnt.
+    const sprung = LIES('src/pages/gesetz-leser/inhalt-sprung.tsx');
+    expect(traegt(sprung, /scrollVorSucheRef\.current = hole\(\)/), 'Such-Scroll-Rettung nicht mehr in inhalt-sprung.tsx').toBe(true);
+    expect(traegt(sprung, /sekRefs\.current\.get\(id\)\?\.scrollIntoView\(/), 'Sektions-Sprung nicht mehr in inhalt-sprung.tsx').toBe(true);
+    const treffer = LIES('src/pages/gesetz-leser/inhalt-suchtreffer.tsx');
+    expect(traegt(treffer, /el\?\.scrollIntoView\(/), 'Fundstellen-Sprung nicht mehr in inhalt-suchtreffer.tsx').toBe(true);
   });
 
   it('App.tsx speichert die Scrollposition in einer Map — ohne die Adresse anzufassen (B4)', () => {
