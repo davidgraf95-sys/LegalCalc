@@ -734,3 +734,31 @@ nächsten Bau an `scripts/plan/`):** (a) Regel 11 prüft Blockquote-Prosa ohne B
 nicht (einziger Bestandsfall: `QS-TOK`) und keine `§§3–§7`-Bereiche — beide Grenzen im Code
 mit Test dokumentiert; (b) `bildSeiten.ts` hält eine lokale Slug-Kopie, die `slug()` aus
 `lage.ts` importieren sollte (Entdopplungs-Richtung: schwer importiert leicht).
+
+
+## Selbstoptimierender Bau (`QS-SELBSTOPT` — EIN Schritt, eine ganze Session, ergebnisoffen)
+
+**Anlass:** Auftrag David 5.8.2026; Recherche mit allen Quellen und drei bewussten
+Absagen (SaaS/§5 · Auto-Merge/§17 · Rechtslogik nie selbstoptimierend):
+`bibliothek/recherche/selbstoptimierender-bau-2026-08-05.md`.
+
+**Mandat:** Entscheid David 5.8.2026 — der Schritt ist bewusst EIN Gesamtschritt: eine
+ganze Session widmet sich der Selbstoptimierung und entscheidet ergebnisoffen, was den
+Bau am meisten verbessert. Der folgende Zwei-Stufen-Pfad ist Empfehlung, kein Korsett.
+
+**Stufe 1 — erst messen:** Ein generiertes JSON (reine
+§5-Projektion, nie handgepflegt) sammelt je Zeitpunkt: Tor-Rot-Ereignisse je
+`check:*` · CI-Failure-Rate/Rerun-Rate aus der nativen GitHub-Actions-Metrics-API
+(GA seit 3/2025, kein Fremddienst) · Rework-Heuristik (Folge-Commits kurzer Frist
+auf denselben Dateien — Beobachtungsgrösse, nie Tor-Kriterium) · Flaky-Retry-Zähler
+aus den e2e-Shards · Rückfall-Zähler je F-Klasse des Lehren-Registers. Andockt an
+`scripts/plan/lage.ts` (Anzeige im Lagebild) und das Muster von
+`scripts/check-ci-laeufe.ts`. Fertig, wenn die Zeitreihe zwei reale Läufe trägt und
+das Lagebild sie zeigt; Scheiterns-Fähigkeit einmal gezeigt (§6.7).
+
+**Stufe 2 — dann deuten, manuell:** `npm run retro:17`
+liest NUR Zeitreihe + Chronik und formuliert einen als ENTWURF markierten
+ROADMAP-Vorschlagsblock (kein Auto-Commit, kein Auto-PR); die startende Session
+entscheidet über Übernahme. Hebung zu einem geplanten Agenten (Safe-Outputs-Muster)
+erst nach Bewährung und mit David-Entscheid — §17-Fünf-Schritte: Automatisieren
+zuletzt. Ausdrücklich ausgenommen bleiben Rechtslogik, Engines und Korpus (§1/§2/§7).

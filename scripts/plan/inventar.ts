@@ -93,6 +93,10 @@ export const INVENTAR: readonly string[] = [
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
   'QS-EXTQUELLEN',
 
+  // §14-Intake 5.8.2026 (Recherche selbstoptimierender Bau, Auftrag David):
+  // EIN ergebnisoffener Gesamtschritt (Entscheid David: ganze Session), Pfad im Fahrplan-§.
+  'QS-SELBSTOPT',
+
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
   // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)
