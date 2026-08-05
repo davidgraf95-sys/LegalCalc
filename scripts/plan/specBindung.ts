@@ -210,7 +210,7 @@ function ankerTrifft(zeile: string, anker: string): boolean {
 
 /** Wortgrenzen-Treffer einer Schritt-ID im Abschnittstext (nie blosse Substring-Präsenz). */
 export function idTrifft(text: string, id: string): boolean {
-  const grenze = /[0-9A-Za-zÀ-ÖØ-öø-ÿ·\-]/;
+  const grenze = /[0-9A-Za-zÀ-ÖØ-öø-ÿ·-]/;
   for (let i = text.indexOf(id); i >= 0; i = text.indexOf(id, i + 1)) {
     const vor = text[i - 1];
     const nach = text[i + id.length];
