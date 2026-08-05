@@ -30,6 +30,61 @@ token verbrauch zu minimieren.»** Damit P0–P5 freigegeben; Start = **P0/T2 To
 Tok ≈ Bytes÷4; Zahlen = Schätzung bis T2 misst; Umsetzung Opus, gate-grün, je PR.
 Notation: M Mechanik · E Ersparnis+Herleitung · R Risiko→Gegenmittel · **K adversariale Korrektur (Spec-Pflicht)** · DoD messbar.
 
+### Stand 5.8.2026 — QS-TOK-Rest abgeschlossen (T10/T12-Stufe-2/T14/T16/T20)
+
+Fünf offene Posten aus dem 27.7.2026-Go abgearbeitet, alle mit den drei Massgaben David
+(T16 nur in frischer Session · T12-Stufe-2 Weglassungs-Begründung neu bewerten · T20 ist
+stehendes Instrument). Worktree `LexMetrik-qs-tok` (Branch `feat/qs-tok`), Bau-Details
+`LexMetrik-qs-tok-t14` (Branch `feat/qs-tok-t14`).
+
+- **T10 (Massgabe: Verifikation vor Ausführung erfüllt).** Selektive Deaktivierung der
+  Account-Konnektoren ist projektseitig **NICHT möglich**: `.mcp.json` existiert nicht;
+  `.claude/settings.json`/`settings.local.json` kennen nur `permissions.allow`, kein
+  Deaktivierungs-Feld; die offizielle Doku (`docs.anthropic.com/en/docs/claude-code/mcp`,
+  `docs.anthropic.com/en/docs/claude-code/settings`) kennt `enabledMcpServers`/
+  `disabledMcpServers` nur für Projekt-MCP-Server in `.mcp.json`, nicht für
+  Account-Konnektoren. Verdikt bleibt Account-Ebene = David-Entscheid. Repo-seitig mit
+  diesem Negativ-Befund **abgeschlossen** (DoD «Verifikations-Notiz» erfüllt). Nachtrag:
+  [fixkosten-audit-t10.md](../docs/token-oekonomie/fixkosten-audit-t10.md) §«Verifikation 5.8.2026».
+- **T12-Stufe-2 (Massgabe: neu bewertet).** `npm run token:baseline`, Fenster
+  11.7.–5.8.2026, 115 Sessions (O 64 / B 21 / M 30): cacheRead 96,6 % · output 0,42 %
+  (Alt-Baseline 10.7.: 95,8 % / 0,54 % — Output-Anteil **gesunken**, keine Materialität).
+  CI-Rot ist häufig (36/200 Runs, ~13–18 %), aber Stufe 1 (`ci:log`) deckt diese Vorfälle
+  bereits mit −61…−92 % Log-Bytes. Verdikt: Weglassung trägt weiter; Stufe 2 bleibt nur
+  offen, falls eine künftige Messung materielle Log-Rest-Kosten zeigt.
+- **T14 — Stufe 1 GEBAUT.** Commit `3097e5ae3` (Branch `feat/qs-tok-t14`, PR folgt):
+  `inhalt.tsx` 1090→369 Z. (Fassade, Importpfade unverändert) + 6 neue Aspekt-Module
+  (`inhalt-zustand` 351 · `inhalt-sprung` 195 · `inhalt-suchtreffer` 194 ·
+  `inhalt-ableitungen` 132 · `inhalt-weiterlesen` 92 · `inhalt-overlays` 44;
+  `inhalt-ansichten` 119→169). gate vorher/nachher **GRÜN**, golden **byte-gleich**, 55 e2e
+  grün. Zwei Blöcke bewusst in der Fassade belassen (Quelltext-Sonden
+  `scripts/check-linien-kanon.ts` und `leser-adresse-lm202.test.ts`, §6.3).
+  Frequenz-Beleg der Vorbedingung: +40 % Regrowth in 12 Tagen (781→1090 Z. seit
+  `b56b9193f`), 9 Commits/12 Tage; U-Kette frei. **Stufe 2** (`extrahiere-fedlex.ts` 1
+  Commit, `ingest.ts` 0 seit 31.7.) hat **KEINE Frequenz** → begründet weggelassen,
+  die T13-Anker-Route genügt dort.
+- **T16 — OBSOLET durch Umbau (Massgabe: frische Session erfüllt).** Die §7-Elaboration
+  wanderte am 25.7.2026 (Commit `b2fa14dda`, A4-Kürzung 384→202 Z.) in den Skill
+  `.claude/skills/korpus-werkstatt/SKILL.md` (§7-Abschnitt dort 6410 Bytes); `CLAUDE.md`
+  §7 misst heute 935 Bytes (Kernsatz + Zitat-Ausnahme + Skill-Verweis). Eine zusätzliche
+  `paths`-Rule wäre eine zweite Ladewahrheit (§5-widrig), und der Rule-Mechanismus lädt
+  ohnehin nicht bei Write/Create (bekannter Bug, Fahrplan K1). **Abweichung von der Spec
+  offengelegt:** erfüllt über die Skill-Route statt der spezifizierten `paths`-Rule;
+  `.claude/rules/` wurde nie angelegt.
+- **T20 — bereits erfüllt.** Konvention steht in §5 dieses Fahrplans, Verweis steht in
+  `docs/token-oekonomie/dispatch-template.md` §8 «Ultracode-Workflows (T20)» (Z. 408–416).
+  Ereignisabhängiger DoD-Rest («nächster ultracode-Einsatz belegt budget+Schema im
+  Report») bleibt stehende Anweisung, kein Bau.
+
+**§17-Wurzel-Fixe im Zug dieses Schritts** (zwei Bauten auf `feat/qs-tok`, nicht Teil der
+fünf Posten oben, sondern §17-Handlungsauftrag bei Gelegenheit erkannter Prozessmängel):
+`811fe6a78` **`plan:set` warnt bei Prosa-Marker-Drift** (Regel 8.4; Anlass: `wip`-Setzen
+des Queue-Kopfs machte `check:plan` rot, ohne den Grund zu nennen) · `0bfa2b6b1` +
+`c29230ed9` + `e24b97b80` **neues Tor `check:schlankheit`** (Zeilen-Wächter §6.6:
+Schwelle 800 Z., Baseline 18 Bestands-Dateien grandfathered, rot bei neuer Datei >800 Z.
+oder Bestand +10 %; eingehängt in `check:seriell`, Tor-Paritäts-Allowlist «lokal, nicht
+Required» mit Begründung; Rot-Beweis §6.7 erbracht).
+
 ### Stand 31.7.2026 — T7-Fortsetzung «QS-TOK-Aufräumwelle» (PR #407, AP-0…AP-11)
 
 Eine Session-Welle auf `feat/qs-tok-aufraeumwelle`. **Gemessene Endstände**, Stand **Fix-Runde 3

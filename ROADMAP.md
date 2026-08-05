@@ -279,8 +279,8 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
 > 5.8.2026 **`wip`** (Bau in der Orchestrierungs-Session; Priorisierung David
 > 10.7.2026, Wortlaut «oberster schritt soll sein den token verbrauch zu minimieren»); die
 > Aufräumwelle vom 31.7.2026 (AP-0…AP-11, PR #407) ist gebaut.
-> Offener Rest: **T10 · T12-Stufe-2 · T14 · T16 · T20** (Go David
-> 27.7.2026 erteilt; T16 nur in frischer Session). Das ROADMAP-Ceiling misst
+> Rest am 5.8.2026 abgeschlossen (Stand-Block im Fahrplan, §Stand 5.8.2026); Landung via
+> PR `feat/qs-tok` + `feat/qs-tok-t14`. Das ROADMAP-Ceiling misst
 > `python3 .claude/hooks/struktur-rotieren.py --check` — **allein dieser Befehl** sagt, ob es
 > gerade eingehalten ist; ein Momentwert wird hier bewusst **nicht** zweitgeführt (jede fixe
 > Zahl war binnen Stunden überholt, Endprüfungs-Funde 6/12/31, zuletzt Bauplan-Review-Befund B2).
