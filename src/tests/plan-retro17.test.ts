@@ -13,7 +13,7 @@ import {
   befunde,
   bericht,
   chronikTreffer,
-} from '../../scripts/plan/retro-17';
+} from '../../scripts/plan/retro17Kern';
 import { GENERIERT_MARKE, type Snapshot, type TorAggregat, type Zeitreihe } from '../../scripts/plan/selbstoptKern';
 
 function aggregat(je: Record<string, { gesamt: number; rot: number }>): TorAggregat {
@@ -34,6 +34,7 @@ function snapshot(p: Partial<Snapshot> = {}): Snapshot {
     ci: null,
     rework: null,
     flaky: null,
+    tokens: null,
     fKlassen: {},
     ausfaelle: [],
     ...p,

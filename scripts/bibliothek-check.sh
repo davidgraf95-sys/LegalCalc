@@ -23,7 +23,14 @@ done
 grep -rhoE '\]\([a-zA-Z0-9./_-]+\.md\)' --include="*.md" . \
   | sed -E 's/\]\((.*)\)/\1/' | sort -u | while read -r l; do
   ok=0
-  for base in . recherche behoerden normen kosten register rechtsprechung muster materialien normtext quellen seo werkzeuge; do
+  # `betrieb` ergänzt 7.8.2026 (QS-SELBSTOPT): den Ordner gibt es seit dem
+  # VPS-Dossier (17.7.2026), in dieser Liste stand er nie. Jeder relative Link
+  # INNERHALB von betrieb/ galt darum als tot, obwohl er auflöst — belegt an
+  # `betrieb/claude-md-gutachten-2026-08-07.md` → `entregulierung-2026-08-07.md`
+  # (Datei liegt gleich daneben, Link stimmt, Tor meldete «toter Link»). Ein
+  # Tor, das Fehlalarme produziert, wird bald ignoriert: dieselbe Wirkung wie
+  # eines, das nie rot wird (§6.7), nur von der anderen Seite.
+  for base in . recherche behoerden normen kosten register rechtsprechung muster materialien normtext quellen seo werkzeuge betrieb; do
     [ -f "$base/$l" ] && ok=1 && break
   done
   [ "$ok" = "0" ] && echo "VERSTOSS [S7] toter Link: $l"

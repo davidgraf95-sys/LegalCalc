@@ -48,8 +48,16 @@ export const EREIGNIS_DATEI = '.selbstopt-ereignisse.jsonl';
 export const GENERIERT_MARKE =
   'scripts/plan/selbstopt-erheben.ts — nie von Hand editieren';
 
-/** Schema-Version. Wird die Struktur je unverträglich geändert, zählt sie hoch. */
-export const SCHEMA_VERSION = 1;
+/**
+ * Schema-Version. Wird die Struktur je unverträglich geändert, zählt sie hoch.
+ *
+ * **2** seit 7.8.2026: neues Pflichtfeld `tokens` (Token-/Kostenmessung). Ältere
+ * Snapshots bekommen es beim nächsten Sammler-Lauf verlustfrei als `null`
+ * nachgetragen — s. `migriere()` in `selbstopt-erheben.ts`. Das ist kein
+ * Umschreiben von Messwerten: nachgetragen wird ausschliesslich die Aussage
+ * «nicht gemessen», und die ist für jene Snapshots wahr.
+ */
+export const SCHEMA_VERSION = 2;
 
 // ───────────────────────────── Tor-Ereignisse ─────────────────────────────
 
@@ -451,6 +459,113 @@ export function ciKennzahl(laeufe: CiLauf[]): CiKennzahl {
   };
 }
 
+// ─────────────────────────── Token-/Kosten-Messung ───────────────────────────
+
+/**
+ * Endpunkt des LOKALEN Prometheus-Exports von Claude Code
+ * (`OTEL_METRICS_EXPORTER=prometheus`). Kein Fremddienst und keine Telemetrie
+ * nach aussen: der Prozess exportiert auf einen Port DIESER Maschine, und der
+ * Sammler liest ihn. Ist die Umgebungsvariable nicht gesetzt, antwortet dort
+ * nichts — dann bleibt `tokens: null`. Beleg und Quellenlage:
+ * `bibliothek/recherche/state-of-the-art-abgleich-2026-08-07.md`.
+ */
+export const TOKEN_ENDPUNKT = 'http://localhost:9464/metrics';
+
+/** Timeout des Abrufs. Kurz: ein Messwert darf keine Erhebung aufhalten. */
+export const TOKEN_TIMEOUT_MS = 2000;
+
+export interface TokenKennzahl {
+  /** Summe aller `claude_code`-Token-Zähler. */
+  gesamt: number;
+  /** Aufschlüsselung nach dem Typ-Label (input/output/cacheRead/…), sortiert. */
+  jeTyp: Record<string, number>;
+  /** Summe der Kosten-Zähler in USD, `null` wenn keine Kosten-Metrik da war. */
+  kostenUsd: number | null;
+  /**
+   * Die tatsächlich gefundenen Metriknamen.
+   *
+   * Absicht (§7): Dieser Parser ist gegen die Prometheus-Textformat-SPEZIFIKATION
+   * gebaut, nicht gegen eine gesehene Ausgabe — beim Bau war der Export nicht
+   * aktiviert (die Env-Variable wartet auf David). Die Namensliste macht den
+   * ersten realen Lauf selbst-belegend: wer sie im Snapshot sieht, weiss, worauf
+   * die Zahlen beruhen, statt es zu glauben. Sie ist der eingebaute Auftrag,
+   * die Annahme gegen die Wirklichkeit zu prüfen.
+   */
+  metriken: string[];
+}
+
+/** Eine Zeile im Prometheus-Textformat: `name{label="wert",…} 12.3 [ts]`. */
+const PROM_ZEILE = /^([a-zA-Z_:][a-zA-Z0-9_:]*)(?:\{([^}]*)\})?[ \t]+([^ \t]+)(?:[ \t]+[0-9]+)?[ \t]*$/;
+
+/** Label-Schlüssel, unter denen der Token-Typ auftreten kann. */
+const TYP_LABEL = ['type', 'token_type', 'tokentype'];
+
+/**
+ * Parst den Prometheus-Text und verdichtet die `claude_code`-Zähler.
+ *
+ * ROBUST GEGEN NAMENS- UND LABEL-VARIANTEN, mit Absicht: Der OTel-Prometheus-
+ * Exporter hängt je nach Version Einheiten- und `_total`-Suffixe an
+ * (`claude_code_token_usage`, `…_tokens`, `…_tokens_total` sind alle plausibel),
+ * und der Typ steht mal unter `type`, mal unter `token_type`. Statt einen Namen
+ * zu raten und bei der nächsten Exporter-Version still 0 zu liefern, greift der
+ * Parser auf SUBSTRING-Ebene (`claude_code` plus `token` bzw. `cost`) und
+ * probiert mehrere Label-Schlüssel. Ein unbekanntes Typ-Label landet unter
+ * «ohne_typ» — sichtbar, statt verschwiegen.
+ *
+ * `null` heisst «keine claude_code-Metrik gefunden», nicht «null Token». Der
+ * Unterschied ist derselbe wie überall in dieser Datei (§8).
+ */
+export function parseTokenMetriken(text: string): TokenKennzahl | null {
+  const jeTyp: Record<string, number> = {};
+  const metriken = new Set<string>();
+  let gesamt = 0;
+  let kosten = 0;
+  let kostenGesehen = false;
+
+  for (const zeile of text.split('\n')) {
+    const s = zeile.trim();
+    if (!s || s.startsWith('#')) continue;
+    const m = PROM_ZEILE.exec(s);
+    if (!m) continue;
+    const [, name, labelRoh, wertRoh] = m;
+    if (!name.startsWith('claude_code')) continue;
+    const wert = Number(wertRoh);
+    // `NaN`/`+Inf` sind im Format zulässig, als Messwert aber unbrauchbar.
+    if (!Number.isFinite(wert)) continue;
+
+    const labels = parseLabels(labelRoh ?? '');
+    if (/token/.test(name)) {
+      metriken.add(name);
+      gesamt += wert;
+      const typ = TYP_LABEL.map((k) => labels[k]).find((v) => v !== undefined) ?? 'ohne_typ';
+      jeTyp[typ] = (jeTyp[typ] ?? 0) + wert;
+    } else if (/cost/.test(name)) {
+      metriken.add(name);
+      kosten += wert;
+      kostenGesehen = true;
+    }
+  }
+
+  if (metriken.size === 0) return null;
+  const sortiert: Record<string, number> = {};
+  for (const k of Object.keys(jeTyp).sort()) sortiert[k] = runde(jeTyp[k]);
+  return {
+    gesamt: runde(gesamt),
+    jeTyp: sortiert,
+    kostenUsd: kostenGesehen ? runde(kosten) : null,
+    metriken: [...metriken].sort(),
+  };
+}
+
+/** `a="1",b="x\"y"` → Objekt (Schlüssel kleingeschrieben). Escape-fest. */
+function parseLabels(roh: string): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const m of roh.matchAll(/([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*"((?:[^"\\]|\\.)*)"/g)) {
+    out[m[1].toLowerCase()] = m[2].replace(/\\(.)/g, '$1');
+  }
+  return out;
+}
+
 // ──────────────────────────────── Flaky-Zähler ────────────────────────────────
 
 /**
@@ -510,6 +625,12 @@ export interface Snapshot {
    */
   rework: { alle: ReworkKennzahl; handschrift: ReworkKennzahl } | null;
   flaky: { specs: number } | null;
+  /**
+   * Token- und Kostenverbrauch aus dem lokalen OTel-Export. `null`, solange der
+   * Export nicht aktiviert ist (Env-Variable, wartet auf David) — dann steht der
+   * Grund in `ausfaelle`. Snapshots vor dem 7.8.2026 kennen das Feld nicht.
+   */
+  tokens: TokenKennzahl | null;
   fKlassen: Record<string, number>;
   /** Namen der ausgefallenen Quellen — Degradations-Muster wie `sammleLage()`. */
   ausfaelle: string[];
@@ -626,11 +747,11 @@ export function pruefeZeitreihe(roh: string | null): string[] {
     if (!istZahlenRegister(sn.fKlassen)) {
       fehler.push(`${wo}: "fKlassen" fehlt oder ist kein Register Klasse→Zahl`);
     }
-    // Die drei Ausfall-Felder: `null` ist zulässig (Quelle nicht erhoben),
+    // Die vier Ausfall-Felder: `null` ist zulässig (Quelle nicht erhoben),
     // Fehlen nicht. Der Unterschied ist der ganze Punkt — «nicht gemessen»
     // muss im Artefakt stehen und darf nicht durch Abwesenheit ausgedrückt
     // werden, sonst liest jeder Konsument sie als 0 oder stürzt ab.
-    for (const feld of ['ci', 'rework', 'flaky'] as const) {
+    for (const feld of ['ci', 'rework', 'flaky', 'tokens'] as const) {
       const w = sn[feld];
       if (w === undefined) {
         fehler.push(`${wo}: "${feld}" fehlt — bei nicht erhobener Quelle gehört ausdrücklich null hierher`);

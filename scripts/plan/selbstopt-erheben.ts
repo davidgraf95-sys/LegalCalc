@@ -34,6 +34,8 @@ import {
   REWORK_FENSTER_TAGE,
   REWORK_NACHFASS_STUNDEN,
   SCHEMA_VERSION,
+  TOKEN_ENDPUNKT,
+  TOKEN_TIMEOUT_MS,
   ZEITREIHE_DATEI,
   addiereAggregat,
   aggregiereTore,
@@ -42,6 +44,7 @@ import {
   letzterSnapshot,
   parseEreignisseMitRest,
   parseFKlassen,
+  parseTokenMetriken,
   pruefeZeitreihe,
   quoteText,
   reworkKennzahl,
@@ -49,6 +52,7 @@ import {
   type CiLauf,
   type RwCommit,
   type Snapshot,
+  type TokenKennzahl,
   type Zeitreihe,
 } from './selbstoptKern';
 
@@ -78,6 +82,43 @@ function sh(cmd: string, args: string[]): string | null {
 
 function lies(pfad: string): string | null {
   return existsSync(pfad) ? readFileSync(pfad, 'utf8') : null;
+}
+
+/**
+ * Holt den lokalen Prometheus-Text von Claude Code. `null` bei jedem Problem —
+ * Endpunkt tot (Export nicht aktiviert), Timeout, Fehlerstatus.
+ *
+ * Ausdrücklich KEIN Fremddienst: die Adresse ist `localhost`, der Export läuft im
+ * Claude-Code-Prozess DIESER Maschine. Der kurze Timeout ist Absicht — eine
+ * Messgrösse darf die Erhebung nie aufhalten, und ein nicht aktivierter Export
+ * ist derzeit der Normalfall, nicht der Störfall.
+ */
+async function holeTokenText(): Promise<string | null> {
+  try {
+    const antwort = await fetch(TOKEN_ENDPUNKT, { signal: AbortSignal.timeout(TOKEN_TIMEOUT_MS) });
+    if (!antwort.ok) return null;
+    return await antwort.text();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Hebt eine ältere Zeitreihe auf das aktuelle Schema.
+ *
+ * Verlustfrei und ausdrücklich eng: nachgetragen wird NUR das seit Schema 2
+ * verlangte `tokens`-Feld, und zwar als `null` — die Aussage «für diesen
+ * Snapshot wurde nichts gemessen», die für alle Snapshots vor dem 7.8.2026
+ * schlicht zutrifft. Kein einziger gemessener Wert wird angefasst: eine
+ * Messreihe, die man rückwirkend überschreibt, belegt nichts mehr (dieselbe
+ * Linie wie beim Definitions-Bruch bei `ci`/`fKlassen`, s. Snapshot-Docstring).
+ */
+export function migriere(z: Zeitreihe): Zeitreihe {
+  return {
+    ...z,
+    schema: SCHEMA_VERSION,
+    snapshots: z.snapshots.map((s) => (s.tokens === undefined ? { ...s, tokens: null } : s)),
+  };
 }
 
 // ───────────────────────────────── Beschaffung ─────────────────────────────────
@@ -128,23 +169,41 @@ function holeCiLaeufe(): CiLauf[] | null {
 
 // ───────────────────────────────── Erhebung ─────────────────────────────────
 
-export function erhebe(): { zeitreihe: Zeitreihe; snapshot: Snapshot } {
+export async function erhebe(): Promise<{ zeitreihe: Zeitreihe; snapshot: Snapshot }> {
   const ausfaelle: string[] = [];
 
-  // (0) Bisherige Zeitreihe. Ist sie defekt, wird sie NICHT stillschweigend
-  //     ersetzt: eine kaputte Messreihe zu überschreiben hiesse, den einzigen
-  //     Beleg für ihren Defekt zu vernichten.
+  // (0) Bisherige Zeitreihe: lesen, auf das aktuelle Schema heben, PRÜFEN.
+  //
+  //     Reihenfolge mit Absicht — geprüft wird die MIGRIERTE Reihe. Andernfalls
+  //     würde jede Datei aus der Zeit vor Schema 2 am fehlenden `tokens`-Feld
+  //     scheitern, obwohl genau dieser Lauf es nachträgt; die Erhebung wäre für
+  //     ein Formproblem gesperrt, das sie selbst behebt.
+  //
+  //     Ist sie darüber hinaus defekt, wird sie NICHT stillschweigend ersetzt:
+  //     eine kaputte Messreihe zu überschreiben hiesse, den einzigen Beleg für
+  //     ihren Defekt zu vernichten.
   const vorhanden = lies(ZEITREIHE_DATEI);
-  const beanstandet = pruefeZeitreihe(vorhanden);
-  if (beanstandet.length) {
-    throw new Error(
-      `Bestehende Zeitreihe ist nicht schema-valide — erst reparieren (dieselben Befunde meldet \`npm run check:plan\`):\n  - ` +
-        beanstandet.join('\n  - '),
-    );
+  let zeitreihe: Zeitreihe;
+  if (vorhanden === null) {
+    zeitreihe = { _generiert: GENERIERT_MARKE, schema: SCHEMA_VERSION, snapshots: [] };
+  } else {
+    let roh: unknown;
+    try {
+      roh = JSON.parse(vorhanden);
+    } catch (e) {
+      throw new Error(`Bestehende Zeitreihe ist kein gültiges JSON — ${(e as Error).message}`, { cause: e });
+    }
+    const grobOk =
+      !!roh && typeof roh === 'object' && Array.isArray((roh as Partial<Zeitreihe>).snapshots);
+    zeitreihe = grobOk ? migriere(roh as Zeitreihe) : (roh as Zeitreihe);
+    const beanstandet = pruefeZeitreihe(JSON.stringify(zeitreihe));
+    if (beanstandet.length) {
+      throw new Error(
+        `Bestehende Zeitreihe ist nicht schema-valide — erst reparieren (dieselben Befunde meldet \`npm run check:plan\`):\n  - ` +
+          beanstandet.join('\n  - '),
+      );
+    }
   }
-  const zeitreihe: Zeitreihe = vorhanden
-    ? (JSON.parse(vorhanden) as Zeitreihe)
-    : { _generiert: GENERIERT_MARKE, schema: SCHEMA_VERSION, snapshots: [] };
   const vorig = letzterSnapshot(zeitreihe);
 
   // (0b) DEN ZEITSTEMPEL JETZT SETZEN, nicht am Ende (Gegenprüfung 7.8.2026).
@@ -206,6 +265,19 @@ export function erhebe(): { zeitreihe: Zeitreihe; snapshot: Snapshot } {
   if (registerRoh === null) ausfaelle.push(LEHREN_REGISTER);
   const fKlassen = registerRoh === null ? {} : parseFKlassen(registerRoh);
 
+  // (7) Token-/Kostenverbrauch aus dem lokalen OTel-Export.
+  const tokenText = await holeTokenText();
+  let tokens: TokenKennzahl | null = null;
+  if (tokenText === null) {
+    ausfaelle.push(`${TOKEN_ENDPUNKT} (OTel-Export nicht aktiv — OTEL_METRICS_EXPORTER=prometheus)`);
+  } else {
+    tokens = parseTokenMetriken(tokenText);
+    // Antwort da, aber keine claude_code-Metrik darin: das ist NICHT dasselbe
+    // wie ein toter Endpunkt und wird darum eigens vermerkt — es hiesse, dass
+    // dort etwas anderes lauscht oder die Metriknamen sich geändert haben.
+    if (tokens === null) ausfaelle.push(`${TOKEN_ENDPUNKT} (erreichbar, aber keine claude_code-Metrik gefunden)`);
+  }
+
   const snapshot: Snapshot = {
     erhobenAm,
     headCommit,
@@ -213,6 +285,7 @@ export function erhebe(): { zeitreihe: Zeitreihe; snapshot: Snapshot } {
     ci,
     rework,
     flaky,
+    tokens,
     fKlassen,
     ausfaelle,
   };
@@ -233,7 +306,7 @@ if (!process.env.VITEST) {
   const trocken = process.argv.includes('--trocken');
   let ergebnis: { zeitreihe: Zeitreihe; snapshot: Snapshot };
   try {
-    ergebnis = erhebe();
+    ergebnis = await erhebe();
   } catch (e) {
     console.error(`selbstopt:erheben ROT — ${(e as Error).message}`);
     process.exit(1);
@@ -263,6 +336,13 @@ if (!process.env.VITEST) {
       : '  Rework: — (nicht erhoben)',
   );
   console.log(`  Flaky-Specs: ${s.flaky ? s.flaky.specs : '— (nicht erhoben)'}`);
+  console.log(
+    s.tokens
+      ? `  Token: ${s.tokens.gesamt.toLocaleString('de-CH')} gesamt (${Object.entries(s.tokens.jeTyp).map(([k, v]) => `${k} ${v.toLocaleString('de-CH')}`).join(' · ')})` +
+        `${s.tokens.kostenUsd !== null ? ` · Kosten ${s.tokens.kostenUsd} USD` : ''}` +
+        `\n         Metriken (beim ersten realen Lauf gegen die Ausgabe prüfen): ${s.tokens.metriken.join(', ')}`
+      : '  Token: — (nicht erhoben)',
+  );
   console.log(
     `  Fehlerklassen — datierte Vorfälle in der Spalte «Was passierte» (Fix-Daten zählen nicht): ` +
       `${Object.entries(s.fKlassen).map(([k, v]) => `${k}=${v}`).join(' · ') || '—'}`,

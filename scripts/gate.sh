@@ -3,6 +3,14 @@
 # Aufruf:  npm run gate          (volle Fünferkette)
 #          npm run gate:schnell  (nur tsc · vitest · golden, ~36 s — gemessen
 #                                 7.8.2026, 10-Kern: 35.9 s / 35.5 s in zwei Läufen)
+#
+# WER DIESES GATE IN EINEN Stop-HOOK HÄNGT, muss eines wissen: Claude Code
+# übersteuert einen Stop-Hook nach 8 Blockierungen in Folge (Quelle:
+# code.claude.com/docs/en/best-practices, Abruf 7.8.2026). Ein Stop-Hook ist
+# damit ein BREMSKLOTZ, kein Zaun — er kostet die neunte Wiederholung nichts.
+# Harte Sperren bleiben deshalb `PreToolUse` (blockiert den Aufruf selbst, s.
+# .claude/hooks/tor-schutz.py) und das Berechtigungssystem; ein Stop-Hook darf
+# nur bequemer machen, was ohnehin schon erzwungen ist.
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1
 

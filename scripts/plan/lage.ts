@@ -40,6 +40,9 @@ import {
   quoteText,
   type Zeitreihe,
 } from './selbstoptKern';
+// Nur der KERN (rein) — nie `retro-17.ts`: dessen CLI läuft beim Import und
+// druckte den ganzen Bericht in die plan:next-Ausgabe (s. Kopf von retro17Kern.ts).
+import { MIN_SNAPSHOTS, befunde } from './retro17Kern';
 
 /** Ein `wip`-Schritt mit den von ihm belegten Flächen (`kollision:`-Globs). */
 export interface WipFlaeche {
@@ -339,6 +342,40 @@ export function selbstoptZeile(z: Zeitreihe | null): string[] {
   return [
     `📈 Bau-Messreihe (Stand ${tag}, ${z?.snapshots.length ?? 0} Snapshots): ${ci} · seit dem vorigen Snapshot ${tore}` +
       ` — Beobachtung, kein Tor-Kriterium.`,
+    ...vorschlagsZeile(z),
+  ];
+}
+
+/**
+ * **Vorschlagslage** — die zweite Hälfte des Deutungs-Kreises.
+ *
+ * Stufe 2 (`retro:17`) nützt nur, wenn eine Session weiss, DASS es etwas zu
+ * lesen gibt. Diese Zeile sagt es beim Pflicht-Einstieg: entweder «N Vorschläge
+ * offen» oder, solange zu wenig gemessen wurde, den Zählerstand der Datenlage.
+ *
+ * **Warum ohne Chronik.** `befunde()` nimmt den Chronik-Text nur, um den
+ * `anlass`-TEXT anzureichern («die Chronik nennt X 3×») — auf die ANZAHL der
+ * Befunde hat er keinen Einfluss. Für eine blosse Zahl ist das Einlesen der
+ * ~186 KB grossen `ROADMAP-CHRONIK.md` samt einem Regex-Lauf je Tor-Name also
+ * reine Arbeit ohne Ertrag. `plan:next` ist der Pflicht-Einstieg JEDER Session;
+ * dort zählt jede Zehntelsekunde, und der Block darf keine Netz- oder
+ * gh-Aufrufe kennen. Deshalb `''` — identische Zahl, kein Dateizugriff.
+ *
+ * Bei leerer oder defekter Zeitreihe entfällt die Zeile still: `leseZeitreihe`
+ * liefert dann `null`, und die Zeile darüber hat schon gesagt, dass es keine
+ * Messreihe gibt. Zweimal dieselbe Nachricht wäre Rauschen.
+ */
+export function vorschlagsZeile(z: Zeitreihe | null): string[] {
+  if (!z || !Array.isArray(z.snapshots) || z.snapshots.length === 0) return [];
+  const n = z.snapshots.length;
+  if (n < MIN_SNAPSHOTS) {
+    return [`   Selbstopt: Datenlage ${n}/${MIN_SNAPSHOTS} Snapshots — für Streich-Vorschläge noch zu dünn.`];
+  }
+  const anzahl = befunde(z, '').length;
+  return [
+    anzahl === 0
+      ? '   Selbstopt: keine Vorschläge über den Schwellen (`npm run retro:17` zeigt die Schwellen).'
+      : `   Selbstopt: ${anzahl} Vorschlag${anzahl === 1 ? '' : 'sblöcke'} offen — \`npm run retro:17\` (ENTWURF, Übernahme entscheidest du).`,
   ];
 }
 

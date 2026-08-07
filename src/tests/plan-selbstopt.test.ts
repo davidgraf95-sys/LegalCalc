@@ -15,6 +15,7 @@ import {
   parseEreignisse,
   parseEreignisseMitRest,
   parseFKlassen,
+  parseTokenMetriken,
   pruefeZeitreihe,
   quoteText,
   reworkKennzahl,
@@ -23,7 +24,8 @@ import {
   type Snapshot,
   type Zeitreihe,
 } from '../../scripts/plan/selbstoptKern';
-import { lageBlock, selbstoptZeile } from '../../scripts/plan/lage';
+import { lageBlock, selbstoptZeile, vorschlagsZeile } from '../../scripts/plan/lage';
+import { MIN_SNAPSHOTS, befunde } from '../../scripts/plan/retro17Kern';
 import type { Einheit } from '../../scripts/plan/parse';
 
 // ───────────────────────────── Tor-Ereignisse ─────────────────────────────
@@ -291,6 +293,86 @@ describe('ciKennzahl', () => {
   });
 });
 
+// ─────────────────────────── Token-/Kosten-Messung ───────────────────────────
+
+describe('parseTokenMetriken', () => {
+  // ACHTUNG, ausdrücklich (§7): Diese Fixture ist nach der
+  // Prometheus-TEXTFORMAT-SPEZIFIKATION gebaut, NICHT von einem laufenden
+  // Endpunkt abgeschrieben — beim Bau war der OTel-Export nicht aktiviert (die
+  // Env-Variable wartet auf David). Metrik- und Labelnamen sind damit eine
+  // begründete Annahme, keine Beobachtung. Sie sind beim ERSTEN REALEN LAUF
+  // gegen die echte Ausgabe von localhost:9464/metrics zu verifizieren; das
+  // Snapshot-Feld `metriken` führt die tatsächlich gefundenen Namen mit, damit
+  // das ohne Zusatzaufwand möglich ist. Weicht die Wirklichkeit ab, wird DIESE
+  // Fixture korrigiert — nicht der Parser aufgeweicht, bis er zufällig passt.
+  const FIXTURE = [
+    '# HELP claude_code_token_usage_tokens_total Number of tokens used',
+    '# TYPE claude_code_token_usage_tokens_total counter',
+    'claude_code_token_usage_tokens_total{type="input",model="claude-opus-5"} 1200',
+    'claude_code_token_usage_tokens_total{type="output",model="claude-opus-5"} 340',
+    'claude_code_token_usage_tokens_total{type="cacheRead",model="claude-opus-5"} 98000',
+    'claude_code_token_usage_tokens_total{type="cacheCreation",model="claude-opus-5"} 5000',
+    '# HELP claude_code_cost_usage_USD_total Cost in USD',
+    '# TYPE claude_code_cost_usage_USD_total counter',
+    'claude_code_cost_usage_USD_total{model="claude-opus-5"} 0.4231',
+    '# fremde Metriken desselben Endpunkts',
+    'process_cpu_seconds_total 1234.5',
+    'go_goroutines 42',
+  ].join('\n');
+
+  it('summiert die Token-Zähler und schlüsselt nach Typ auf', () => {
+    const k = parseTokenMetriken(FIXTURE)!;
+    expect(k.gesamt).toBe(1200 + 340 + 98000 + 5000);
+    expect(k.jeTyp).toEqual({ cacheCreation: 5000, cacheRead: 98000, input: 1200, output: 340 });
+  });
+
+  it('liest die Kosten und ignoriert fremde Metriken', () => {
+    const k = parseTokenMetriken(FIXTURE)!;
+    expect(k.kostenUsd).toBe(0.4231);
+    expect(k.metriken).toEqual(['claude_code_cost_usage_USD_total', 'claude_code_token_usage_tokens_total']);
+  });
+
+  it('kommt mit abweichenden Metrik- und Label-Namen zurecht', () => {
+    // Der Exporter hängt je nach Version andere Suffixe an, und der Typ kann
+    // unter `token_type` stehen. Beides darf den Parser nicht auf 0 werfen —
+    // genau dieses stille 0 wäre der teuerste Ausgang.
+    const k = parseTokenMetriken(
+      ['claude_code_token_usage{token_type="input"} 10', 'claude_code_token_usage{token_type="output"} 20'].join('\n'),
+    )!;
+    expect(k.gesamt).toBe(30);
+    expect(k.jeTyp).toEqual({ input: 10, output: 20 });
+  });
+
+  it('macht ein fehlendes Typ-Label sichtbar, statt es zu verschweigen', () => {
+    const k = parseTokenMetriken('claude_code_token_usage_total 77')!;
+    expect(k.jeTyp).toEqual({ ohne_typ: 77 });
+    expect(k.gesamt).toBe(77);
+  });
+
+  it('null heisst «keine claude_code-Metrik», nicht «null Token»', () => {
+    expect(parseTokenMetriken('process_cpu_seconds_total 1')).toBeNull();
+    expect(parseTokenMetriken('')).toBeNull();
+    expect(parseTokenMetriken('# nur Kommentare\n')).toBeNull();
+  });
+
+  it('überspringt unbrauchbare Werte und kaputte Zeilen', () => {
+    const k = parseTokenMetriken(
+      ['claude_code_token_usage{type="input"} NaN', 'claude_code_token_usage{type="output"} 5', 'völliger Unsinn'].join('\n'),
+    )!;
+    expect(k.gesamt).toBe(5);
+    expect(k.jeTyp).toEqual({ output: 5 });
+  });
+
+  it('kommt mit Zeitstempel-Spalte und escapten Labelwerten zurecht', () => {
+    const k = parseTokenMetriken('claude_code_token_usage{type="in\\"put"} 3 1700000000000')!;
+    expect(k.jeTyp).toEqual({ 'in"put': 3 });
+  });
+
+  it('kostenUsd bleibt null, wenn es keine Kosten-Metrik gibt', () => {
+    expect(parseTokenMetriken('claude_code_token_usage{type="input"} 1')!.kostenUsd).toBeNull();
+  });
+});
+
 // ──────────────────────────────── Flaky-Zähler ────────────────────────────────
 
 describe('zaehleFlakySpecs', () => {
@@ -324,6 +406,7 @@ function snapshot(p: Partial<Snapshot> = {}): Snapshot {
     ci: null,
     rework: null,
     flaky: null,
+    tokens: null,
     fKlassen: {},
     ausfaelle: [],
     ...p,
@@ -387,15 +470,15 @@ describe('pruefeZeitreihe', () => {
     expect(pruefeZeitreihe(reihe([falsch])).join('\n')).toContain('fKlassen');
   });
 
-  it('verlangt ci/rework/flaky ausdrücklich — null ja, fehlend nein', () => {
-    for (const feld of ['ci', 'rework', 'flaky'] as const) {
+  it('verlangt ci/rework/flaky/tokens ausdrücklich — null ja, fehlend nein', () => {
+    for (const feld of ['ci', 'rework', 'flaky', 'tokens'] as const) {
       const ohne = { ...snapshot() } as Partial<Snapshot>;
       delete ohne[feld];
       const befunde = pruefeZeitreihe(reihe([ohne as Snapshot])).join('\n');
       expect(befunde).toContain(`"${feld}" fehlt`);
     }
     // null bleibt zulässig: das IST die Ausfall-Semantik.
-    expect(pruefeZeitreihe(reihe([snapshot({ ci: null, rework: null, flaky: null })]))).toEqual([]);
+    expect(pruefeZeitreihe(reihe([snapshot({ ci: null, rework: null, flaky: null, tokens: null })]))).toEqual([]);
   });
 
   // Gegenprüfung 7.8.2026 (B6): Zonen-Offsets sind verboten, weil die
@@ -463,6 +546,57 @@ describe('selbstoptZeile', () => {
   });
 });
 
+describe('vorschlagsZeile', () => {
+  /** N Snapshots mit aufsteigenden Zeitstempeln; der letzte trägt die Daten. */
+  const reiheMit = (n: number, letzter: Partial<Snapshot> = {}): Zeitreihe => ({
+    _generiert: GENERIERT_MARKE,
+    schema: 2,
+    snapshots: Array.from({ length: n }, (_, i) =>
+      snapshot({
+        erhobenAm: `2026-08-${String(i + 1).padStart(2, '0')}T10:00:00.000Z`,
+        ...(i === n - 1 ? letzter : {}),
+      }),
+    ),
+  });
+
+  it('schweigt still, wenn es keine (brauchbare) Zeitreihe gibt', () => {
+    expect(vorschlagsZeile(null)).toEqual([]);
+    expect(vorschlagsZeile(reiheMit(0))).toEqual([]);
+  });
+
+  it('nennt bei dünner Datenlage den Zählerstand', () => {
+    const zeile = vorschlagsZeile(reiheMit(2))[0];
+    expect(zeile).toContain(`Datenlage 2/${MIN_SNAPSHOTS}`);
+    expect(zeile).toContain('zu dünn');
+  });
+
+  it('zählt ab genügender Datenlage die offenen Vorschläge', () => {
+    const z = reiheMit(MIN_SNAPSHOTS, {
+      ci: { laeufe: 50, verdikte: 50, failureRate: 0.9, cancelledRate: 0, rerunRate: 0.9, je: {} },
+    });
+    const zeile = vorschlagsZeile(z)[0];
+    expect(zeile).toContain('2 Vorschlagsblöcke offen'); // ci-failure + ci-rerun
+    expect(zeile).toContain('retro:17');
+  });
+
+  it('sagt es, wenn nichts über den Schwellen liegt', () => {
+    expect(vorschlagsZeile(reiheMit(MIN_SNAPSHOTS))[0]).toContain('keine Vorschläge über den Schwellen');
+  });
+
+  // Der Pflicht-Einstieg darf keine Chronik lesen (~186 KB, Regex je Tor-Name).
+  // Die Zahl hängt nicht davon ab — das ist die Voraussetzung dafür, sie
+  // wegzulassen, und wird hier festgenagelt statt bloss behauptet.
+  it('die Vorschlagszahl ist unabhängig vom Chronik-Text', () => {
+    const z = reiheMit(MIN_SNAPSHOTS, {
+      torRot: {
+        seitLetztem: { gesamt: 0, rot: 0, je: {} },
+        kumuliert: { gesamt: 20, rot: 5, je: { 'check:wackel': { gesamt: 20, rot: 5 } } },
+      },
+    });
+    expect(befunde(z, '').length).toBe(befunde(z, 'check:wackel wurde am 1.1.2026 gebaut').length);
+  });
+});
+
 describe('lageBlock — Andock-Muster', () => {
   let pos = 0;
   const einheit = (id: string): Einheit => ({
@@ -478,13 +612,32 @@ describe('lageBlock — Andock-Muster', () => {
     expect(zeilen[zeilen.length - 1]).toBe(treffer[0]);
   });
 
-  it('zieht man die neue Zeile ab, ist der Block wie vorher', () => {
+  /** Alle von QS-SELBSTOPT angehängten Zeilen — Messreihe und Vorschlagslage. */
+  const ohneSelbstopt = (zeilen: string[]): string[] =>
+    zeilen.filter((z) => !z.startsWith('📈') && !z.trimStart().startsWith('Selbstopt:'));
+
+  it('zieht man die neuen Zeilen ab, ist der Block wie vorher', () => {
     const opt = { prs: false, laufe: kaputt } as const;
-    const ohne = lageBlock([einheit('QS-A')], [], { ...opt, zeitreihe: () => null }).filter((z) => !z.startsWith('📈'));
-    const mit = lageBlock([einheit('QS-A')], [], {
-      ...opt,
-      zeitreihe: () => ({ _generiert: GENERIERT_MARKE, schema: 1, snapshots: [snapshot()] }),
-    }).filter((z) => !z.startsWith('📈'));
+    const ohne = ohneSelbstopt(lageBlock([einheit('QS-A')], [], { ...opt, zeitreihe: () => null }));
+    const mit = ohneSelbstopt(
+      lageBlock([einheit('QS-A')], [], {
+        ...opt,
+        zeitreihe: () => ({ _generiert: GENERIERT_MARKE, schema: 2, snapshots: [snapshot()] }),
+      }),
+    );
     expect(mit).toEqual(ohne);
+  });
+
+  it('die Vorschlagszeile hängt unter der Messreihen-Zeile, nie dazwischen', () => {
+    const zeilen = lageBlock([einheit('QS-B')], [], {
+      prs: false,
+      laufe: kaputt,
+      zeitreihe: () => ({ _generiert: GENERIERT_MARKE, schema: 2, snapshots: [snapshot()] }),
+    });
+    const iMess = zeilen.findIndex((z) => z.startsWith('📈'));
+    const iVor = zeilen.findIndex((z) => z.trimStart().startsWith('Selbstopt:'));
+    expect(iMess).toBeGreaterThanOrEqual(0);
+    expect(iVor).toBe(iMess + 1);
+    expect(iVor).toBe(zeilen.length - 1);
   });
 });
