@@ -23,6 +23,39 @@
 //  - Bewusst NICHT im Hash: die X/Y-Statuscodes / der Staging-Zustand → nach der
 //    Quittung bloss `git add` lässt den Hash unverändert (Pending bleibt gültig);
 //    erst eine echte Byte-Änderung kippt ihn (Selbstauflösung, Spec Z. 52-54).
+//
+// ─── ZWEITER EINGANG: der committete Bereich (QS-GP-BEREICH, 8.8.2026) ──────
+// `risikoBereichHash()` füttert DASSELBE Hash-Schema aus einem Commit-Bereich
+// statt aus dem Working Tree. Anlass: `git status` ist nach dem Commit sauber —
+// wer auf einem Branch committet arbeitet, konnte den Risiko-Diff nur per
+// HAND-Hash quittieren (viermal binnen fünf Tagen: 3× 3.8.2026, 1× 7.8.2026,
+// Register-Zeilen). Schlimmer: das Tor konnte in genau diesem Regelfall nicht
+// mehr scheitern (§6.7) — Vorher-Beweis 8.8.2026 im selben Repo: committete
+// Änderung an `src/lib/tarif/…` bei sauberem Baum ⇒ «check:gegenpruefung grün —
+// keine Risiko-Datei … im Working-Tree geändert», `gegenpruefung:ok` ⇒ «nichts
+// zu quittieren» (Exit 1).
+//
+// Das Schema bleibt WÖRTLICH das der Hand-Hash-Präzedenz (Register 2026-07-28
+// ff., zuletzt 2026-08-03/2026-08-07): `behalten()`-Filter über
+// `git diff --name-only <basis>..<spitze>`, byte-sortierte Pfade, je Pfad
+// `pfad NUL art NUL sha256(Blob@<spitze>) NUL`. Damit bleiben die bestehenden
+// Hand-Hash-Zeilen rückwirkend nachrechenbar — und ein Diff, der einmal als
+// Working Tree und einmal als Commit vorliegt, ergibt denselben Hash.
+//
+// ARBEITS-TEILUNG MIT `check:merge-schutz` (KEINE Doppelung der Beweisform):
+//  - Beide Tore klassifizieren die GLEICHE Menge über denselben `behalten()`
+//    und dieselbe merge-base-Referenz — es gibt nur einen Arbiter der
+//    Risiko-Frage (§5). Nur der BEWEIS unterscheidet sich:
+//  - `check:merge-schutz` (läuft in CI, ci.yml): verlangt COMMITTETE, für
+//    Dritte sichtbare Artefakte — `Gegenpruefung:`-Trailer in prüfbarer Form
+//    PLUS Wachstum des committeten Registers. Das ist der Merge-Arbiter.
+//  - `check:gegenpruefung --bereich` (läuft nur LOKAL, CI-Selbstschutz unten):
+//    verlangt die inhaltsgebundene Quittung `bibliothek/.gegenpruefung-pending`
+//    mit genau diesem Hash. Das ist die schnelle Rückmeldung VOR Commit/Push
+//    und die Selbstauflösung bei jeder Byte-Änderung.
+//  - Kein Widerspruch möglich: der lokale Weg prüft nie Trailer/Register, der
+//    CI-Weg nie das Pending. Beide werden nur zusammen grün, wenn dieselben
+//    Risiko-Dateien geprüft wurden — verschiedene Fragen an dieselbe Menge.
 
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -48,7 +81,9 @@ export interface DiffErgebnis {
    * vermischte zwei völlig verschiedene Ursachen: der CI-Selbstschutz ist ein
    * bewusster Entscheid, ein kaputtes Git-Verzeichnis ist ein Defekt.
    */
-  grund?: 'ci-selbstschutz' | 'kein-git';
+  grund?: 'ci-selbstschutz' | 'kein-git' | 'keine-basis';
+  /** nur im Bereichs-Modus: die aufgelöste merge-base..spitze-Referenz (für Meldungen). */
+  bereich?: string;
   /** null = Git vorhanden, aber keine Risiko-Datei geändert (grün, «nichts zu beweisen»). */
   hash: string | null;
   /** die behaltenen (Risiko ∖ Prüflogik) Pfade, byte-sortiert. */
@@ -259,6 +294,18 @@ export function risikoDiffHash(
     throw new Error(`Unerwarteter Dateityp in Risiko-Menge: ${pfad}`);
   });
 
+  return { kontext: true, ...hashEintraege(eintraege) };
+}
+
+/**
+ * Das EINE Hash-Schema (Working Tree wie Commit-Bereich rechnen hierüber):
+ * byte-sortierte Pfade, je Eintrag `pfad NUL art NUL wert NUL`.
+ * Bis 8.8.2026 stand dieser Block inline in `risikoDiffHash()`; herausgezogen,
+ * damit der zweite Eingang nicht dieselbe Kanonik ein zweites Mal formuliert
+ * (§5 — sonst driften die beiden Wege irgendwann auseinander und die
+ * Hand-Hash-Präzedenz wäre nicht mehr rückwirkend nachrechenbar).
+ */
+function hashEintraege(eintraege: Eintrag[]): { hash: string; dateien: string[] } {
   // Byte-Sortierung der UTF-8-Pfade (maschinen-/locale-unabhängig).
   eintraege.sort((a, b) => Buffer.compare(Buffer.from(a.pfad, 'utf8'), Buffer.from(b.pfad, 'utf8')));
 
@@ -271,5 +318,133 @@ export function risikoDiffHash(
     h.update(e.wert);
     h.update(NUL);
   }
-  return { kontext: true, hash: h.digest('hex'), dateien: eintraege.map((e) => e.pfad) };
+  return { hash: h.digest('hex'), dateien: eintraege.map((e) => e.pfad) };
+}
+
+// ─── Zweiter Eingang: Commit-Bereich ────────────────────────────────────────
+
+/** `A..B` → {basisRef:'A', spitze:'B'}; `A..` / `..B` / '' füllen mit den Defaults. */
+export function parseBereich(
+  spec: string | undefined,
+  standard = { basisRef: 'origin/main', spitze: 'HEAD' },
+): { basisRef: string; spitze: string } {
+  if (!spec || !spec.trim()) return { ...standard };
+  const roh = spec.trim();
+  if (roh.includes('...')) {
+    // Drei-Punkt-Form ist git-seitig etwas anderes (symmetrische Differenz).
+    // Nicht still umdeuten — der Aufrufer soll die Form sehen, die er meint.
+    throw new Error(`Bereich «${roh}»: Drei-Punkt-Form nicht unterstützt, bitte <basis>..<spitze>.`);
+  }
+  const i = roh.indexOf('..');
+  if (i < 0) {
+    // Nur eine Referenz = Basis; Spitze bleibt HEAD (häufigster Tippfehler-Fall).
+    return { basisRef: roh, spitze: standard.spitze };
+  }
+  const basisRef = roh.slice(0, i).trim() || standard.basisRef;
+  const spitze = roh.slice(i + 2).trim() || standard.spitze;
+  return { basisRef, spitze };
+}
+
+/** ls-tree-Info je Pfad an der Spitze (fehlender Pfad = an der Spitze gelöscht). */
+function baumEintraege(root: string, spitze: string, dateien: string[]): Eintrag[] {
+  const info = new Map<string, { modus: string; blob: string }>();
+  // In Blöcken, damit sehr breite Diffs die Argumentliste nicht sprengen.
+  for (let i = 0; i < dateien.length; i += 200) {
+    const block = dateien.slice(i, i + 200);
+    const out = execFileSync('git', ['-C', root, 'ls-tree', '-z', spitze, '--', ...block], {
+      stdio: ['ignore', 'pipe', 'ignore'],
+      maxBuffer: 64 * 1024 * 1024,
+    });
+    for (const satz of splitNul(out)) {
+      // «<modus> <typ> <blob>\t<pfad>» — Pfad roh (bei -z nie gequotet).
+      const text = satz.toString('utf8');
+      const tab = text.indexOf('\t');
+      if (tab < 0) continue;
+      const kopf = text.slice(0, tab).split(/\s+/);
+      if (kopf.length < 3 || kopf[1] !== 'blob') continue; // Submodul/Baum: unten hart
+      info.set(text.slice(tab + 1), { modus: kopf[0], blob: kopf[2] });
+    }
+  }
+
+  return dateien.map((pfad) => {
+    const e = info.get(pfad);
+    if (!e) return { pfad, art: 'geloescht', wert: '' };
+    const inhalt = execFileSync('git', ['-C', root, 'cat-file', 'blob', e.blob], {
+      stdio: ['ignore', 'pipe', 'ignore'],
+      maxBuffer: 512 * 1024 * 1024,
+    });
+    // Symlink-Blob = der Zielpfad als Inhalt → gleiche Byte-Bindung wie lstat/readlink
+    // im Working-Tree-Weg, nur `art` trennt die Fälle (wie dort).
+    return { pfad, art: e.modus === '120000' ? 'symlink' : 'datei', wert: sha256(inhalt) };
+  });
+}
+
+/**
+ * Diff-gebundener sha256 über die im COMMIT-BEREICH geänderten Risiko-Inhalte.
+ * Gleiches Schema wie `risikoDiffHash()` — nur der Diff-Bereich ist ein anderer.
+ *
+ * @param opts.cwd       Arbeitsverzeichnis (Default process.cwd()).
+ * @param opts.bereich   `<basis>..<spitze>`; Default `origin/main..HEAD`.
+ * @param opts.behalten  Klassifizierer (Default `behalten`) — nur für Tests injizierbar.
+ *
+ * Kanten, die KEIN Falsch-Rot erzeugen dürfen:
+ *  - frisch geforkter Branch ohne eigene Commits ⇒ leerer Diff ⇒ hash null (grün);
+ *  - Branch, dessen Basis HINTER origin/main liegt ⇒ `git merge-base` statt
+ *    stumpfem `origin/main..HEAD`, sonst zählten fremde main-Commits mit;
+ *  - Referenz nicht auflösbar (kein Remote, frischer Clone ohne fetch) ⇒
+ *    kontext:false/`keine-basis` ⇒ der Aufrufer meldet SKIP statt still grün
+ *    (§6 Ziff. 7 lit. b). Der harte Arbiter bleibt dort `check:merge-schutz`,
+ *    das in diesem Fall ROT wird.
+ */
+export function risikoBereichHash(
+  opts: { cwd?: string; bereich?: string; behalten?: (p: string) => boolean } = {},
+): DiffErgebnis {
+  const cwd = opts.cwd ?? process.cwd();
+  const behaltenFn = opts.behalten ?? behalten;
+
+  // CI-Selbstschutz identisch zum Working-Tree-Weg: in CI ist `check:merge-schutz`
+  // der Arbiter des committeten Bereichs. Liefe dieses Tor dort mit, verlangte es
+  // ein Pending, das (gitignored/lokal) in CI gar nicht existieren kann — ein
+  // strukturelles Falsch-Rot und ein Widerspruch zu merge-schutz.
+  if (process.env.CI || process.env.GITHUB_ACTIONS) {
+    return { kontext: false, grund: 'ci-selbstschutz', hash: null, dateien: [] };
+  }
+
+  const root = toplevel(cwd);
+  if (!root || !hatHead(root)) {
+    return { kontext: false, grund: 'kein-git', hash: null, dateien: [] };
+  }
+
+  const { basisRef, spitze } = parseBereich(opts.bereich);
+  let basis: string;
+  try {
+    basis = execFileSync('git', ['-C', root, 'merge-base', basisRef, spitze], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+  } catch {
+    return { kontext: false, grund: 'keine-basis', hash: null, dateien: [], bereich: `${basisRef}..${spitze}` };
+  }
+
+  const bereich = `${basis.slice(0, 8)}..${spitze}`;
+  let out: Buffer;
+  try {
+    out = execFileSync(
+      'git',
+      // -z: rohe Pfade (kein core.quotepath-Quoting) — dieselbe Byte-Treue wie
+      // beim status-Weg. --no-renames: jede Änderung als Einzel-Pfad.
+      ['-C', root, 'diff', '--name-only', '-z', '--no-renames', `${basis}..${spitze}`],
+      { stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 * 1024 * 1024 },
+    );
+  } catch {
+    return { kontext: false, grund: 'keine-basis', hash: null, dateien: [], bereich };
+  }
+
+  const dateien = splitNul(out)
+    .map((b) => b.toString('utf8'))
+    .filter((p) => p.length > 0)
+    .filter(behaltenFn);
+  if (dateien.length === 0) return { kontext: true, hash: null, dateien: [], bereich };
+
+  return { kontext: true, ...hashEintraege(baumEintraege(root, spitze, dateien)), bereich };
 }
