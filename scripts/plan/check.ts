@@ -6,6 +6,7 @@ import { parseEtikett, istGroesse, GROESSE_WERTE, type Status } from './etikett'
 import { INVENTAR } from './inventar';
 import { pruefeSpecBindung } from './specBindung';
 import { obersterMarkerId } from './marker';
+import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
 
 // (5c) Status, die den 26×-Slot halten, ohne ihn je zurückzugeben. next.ts sperrt
 // über `t.asset26x && inhaber26x && e.id !== inhaber26x` JEDEN anderen 26×-Schritt,
@@ -224,6 +225,25 @@ export function pruefe(
   // falschen Abschnitt trifft, für jedes Tor unsichtbar (Befund B1 des
   // Bauplan-Reviews 4.8.2026; F2-Familie: geprüft wurde der Container, nicht der Inhalt).
   probleme.push(...pruefeSpecBindung(md, leseDatei));
+
+  // (13) Selbstoptimierungs-Zeitreihe — FORM, nie WERTE (Schritt QS-SELBSTOPT).
+  //
+  // `messwerte/selbstopt-zeitreihe.json` ist eine generierte §5-Projektion von
+  // `npm run selbstopt:erheben`. Fehlt sie, ist das kein Fehler (Regel greift
+  // nur, wenn die Datei da ist — ein frischer Baum ohne Messreihe bleibt grün).
+  // Ist sie da, muss sie tragen, was jede Auswertung von ihr voraussetzt:
+  // Generat-Marke, Pflichtfelder, echt aufsteigende Zeitstempel. Ohne diese
+  // Regel wäre eine von Hand «korrigierte» oder halb geschriebene Messreihe für
+  // jedes Tor unsichtbar — und eine kaputte Messreihe ist schlimmer als keine,
+  // weil sie wie eine gültige aussieht.
+  //
+  // BEWUSST NICHT geprüft werden die WERTE (Failure-Rate, Rework-Quote, Anzahl
+  // roter Tore). Ein Tor über sie wäre der Punkt, an dem die Messung anfinge,
+  // den Bau zu steuern statt ihn zu beschreiben — Rework und Flaky sind
+  // ausdrücklich Beobachtungsgrössen und nie Tor-Kriterium (Fahrplan-Spec).
+  for (const meldung of pruefeZeitreihe(leseDatei(ZEITREIHE_DATEI))) {
+    probleme.push({ id: null, meldung });
+  }
 
   // (4b) Azyklie
   const z = zyklus(einheiten);

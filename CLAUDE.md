@@ -5,13 +5,13 @@ fachlich falsches Ergebnis erzeugt. Prozeduren stehen nicht hier, sondern in
 Skills — sie laden, wenn die Tätigkeit ansteht.
 
 **Die Paragraphen-Nummern bleiben unverändert.** Wo ein Paragraph in einen Skill
-umgezogen ist, steht hier eine Zeile mit dem Ziel. So lösen die rund 200
-bestehenden §-Verweise in Skills, Fahrplänen und Code-Kommentaren weiterhin auf.
+umgezogen ist, steht hier eine Zeile mit dem Ziel. So lösen die bestehenden
+§-Verweise in Skills, Fahrplänen und Code-Kommentaren weiterhin auf (der
+Bestand ist vierstellig — Zahl nie von Hand führen, bei Bedarf messen;
+Reglement-Audit 7.8.2026).
 
-**Aktueller Stand und nächster Schritt:** `npm run plan:next` (oberster offener
-Schritt, Abhängigkeiten, was bereits `wip` ist), danach der Detail-Slice per
-`npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>` (Datei aus dem
-`fahrplan:`-Feld des Schritts). `ROADMAP.md` und `STRUKTUR.md` sind
+**Aktueller Stand und nächster Schritt:** `npm run plan:next`, Detail-Slice per
+`npm run fahrplan` (Schlusstabelle). `ROADMAP.md`/`STRUKTUR.md` sind
 Nachschlagewerke, keine Pflichtlektüre.
 
 **Leitbild:** «Schweizer Taschenmesser für Juristen» — die eine Anlaufplattform
@@ -45,7 +45,8 @@ Produktversprechen.
   Speicherung — und keine Rechtslogik: keine Fristberechnung, keine
   Schwellenwerte, keine Normtexte ausserhalb von Schema oder Engine.
 - Verkleinerungen (Entdopplung, Hooks, generische Rahmen) finden deshalb in der
-  Darstellungsschicht statt. Die Logikschicht wird dabei nie berührt.
+  Darstellungsschicht statt. Umbauten der Logikschicht laufen ausschliesslich
+  über das Protokoll von §4/§6, nie beiläufig im Zuge einer UI-Verkleinerung.
 
 ## §4 Eine Engine pro Rechtsgebiet
 
@@ -181,17 +182,10 @@ Messung: Skill **`perf`**.
 
 ## §16 — entfällt (Entscheid David 25.7.2026)
 
-Die frühere Regel «Framework-APIs live nachschlagen statt aus Modellwissen» ist
-**gestrichen, nicht verschoben** — und das mit Absicht: Sie gehört in die
-Beschreibung des Werkzeugs, mit dem man nachschlägt, nicht ins Reglement. Dort
-steht sie auch. Ein Reglement, das Werkzeug-Bedienung mitführt, veraltet mit dem
-Werkzeug.
-
-**Die Nummer 16 wird nicht neu belegt.** Sonst zeigte jeder Bestandsverweis auf
-§16 still auf eine andere Regel — dieselbe Fehlerklasse wie eine Unternummer,
-die ins Leere läuft, nur in umgekehrter Richtung: nicht ein toter Verweis,
-sondern ein lebender, der das Falsche trifft. Eine künftige Regel bekommt §17
-oder höher.
+Die frühere Nachschlage-Regel ist gestrichen, nicht verschoben — sie gehört in
+die Doku des Werkzeugs, mit dem man nachschlägt. **Die Nummer 16 wird nicht neu
+belegt**, damit Bestandsverweise nicht still auf eine andere Regel zeigen; eine
+künftige Regel bekommt §17 oder höher.
 
 ## §17 Konstante Prozessverbesserung (Handlungsauftrag David 3.8.2026)
 
@@ -203,12 +197,19 @@ nicht noch einmal Arbeitszeit kosten. Das gilt **in jeder Session, laufend und
 ohne Rückfrage** (Mandat David 4./5.8.2026): Wo im Bau eine Lehre aufkommt, wird
 sie noch in derselben Session nach der Formregel des Skills `lehren` verankert
 (Tor > Dispatch-§0 > Skill > Prosa) — eine Lehre, die nur im Chat existiert,
-gilt als nicht gezogen; vor dem Session-Abschluss wird das einmal geprüft. Belegter Anlass: Am 3.8.2026 kosteten
-sieben lange bekannte, je einzeln «umschiffte» CI-Defekte (u. a. ein seit Anlage
-nie grüner Wächter, wochenlang nicht-kanonische Pins, Bot-PRs ohne CI-Lauf)
-zusammen einen ganzen Arbeitstag. Grenzen unverändert: Risiko-Pfade nur mit
-Gegenprüfung, Budget-/Schwellen-Entscheide (§15) und fachliche Abnahme bleiben
-bei David.
+gilt als nicht gezogen; vor dem Session-Abschluss wird das einmal geprüft.
+Belegter Anlass: 3.8.2026, sieben einzeln «umschiffte» CI-Defekte = ein
+verlorener Arbeitstag (Detail: Skill `lehren`). Grenzen unverändert:
+Risiko-Pfade nur mit Gegenprüfung, Budget-/Schwellen-Entscheide (§15) und
+fachliche Abnahme bleiben bei David.
+
+## §18 Geheimnisse bleiben draussen (Gutachten-Befund 7.8.2026)
+
+API-Schlüssel, Tokens und andere Zugangsdaten erscheinen nie im Repo, in Logs,
+in Commit-Messages oder in Sub-Agenten-Aufträgen; Konfiguration ausschliesslich
+über Umgebung/gitignorte Dateien. Ein doch committetes Geheimnis gilt als
+kompromittiert und wird rotiert, nicht nur entfernt. (Sicherheitsregel — lädt
+wie §14.7 immer, nie lazy.)
 
 ---
 
@@ -224,6 +225,8 @@ bei David.
 | Postmortem, Fehlerklassen, wo eine Regel hingehört, §17-Fünf-Schritte | Skill `lehren` |
 | Deploy, Merge-Schutz, Risikopfade | Skill `deploy-check` |
 | Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` |
+| Session-Lebenszyklus Einstieg → Bau → Landung → Abschluss | Skill `bauschritt` |
+| Plan-/Struktur-Rotation, Chronik-Überführung, Deckel | Skill `aufraeumen` |
 | Geräte-Last, Performance | Skill `perf` |
 | Design, Tokens, Sprache, UI-Zustände | `DESIGN-REGLEMENT.md` + Domänen-Reglemente |
 | Aktueller Bau-Stand | `npm run plan:next` · `npm run fahrplan` |

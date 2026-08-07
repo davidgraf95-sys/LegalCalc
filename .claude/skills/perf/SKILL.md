@@ -58,9 +58,13 @@ kürzt, ist Logikverlust.
 
 ## Messung
 
-Das Tor `check:perf-budget` (Lighthouse-CI auf `/gesetze/bund/OR` und Startseite
-unter 4× CPU) läuft **nur in CI**, nicht in der lokalen `gate`-Kette. **Lokal
-grün beweist also kein Perf-Budget.**
+Zwei getrennte Tore (Faktenkorrektur 7.8.2026, Reglement-Audit — die frühere
+Beschreibung vermischte sie): **`check:perf-budget`** prüft gzip-Bundle-Budgets
+(`scripts/check-perf-budget.ts`, Chrome-frei, läuft auch lokal);
+**`check:perf-lighthouse`** fährt die Lighthouse-Messung
+(`scripts/perf/lighthouse-budget.ts`) und läuft in CI nach dem Merge auf main
+(ci.yml, designt: nicht auf PR-Läufen). **Ein lokales Grün ohne
+`check:perf-lighthouse` beweist also keine Lighthouse-Werte.**
 
 Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
 `check:struktur-konsistenz`: **Tempo zählt nur, wenn die Treue grün bleibt.**

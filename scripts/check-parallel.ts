@@ -17,11 +17,41 @@
  * Diagnose-Ausgabe (kein Tor-Verdikt, keine Persistenz).
  *
  * Fallback: `npm run check:seriell` läuft weiterhin die klassische serielle Kette.
+ *
+ * ─── Tor-Ereignis-Log (Schritt QS-SELBSTOPT, Stufe 1 «erst messen») ──────────
+ *
+ * Seit 7.8.2026 hinterlässt jeder Sub-Check eine JSONL-Zeile `{ts, tor, ok}` in
+ * `.selbstopt-ereignisse.jsonl` (gitignoriert). Damit hat die Messreihe die
+ * geforderte Granularität JE `check:*` — und zwar an der Stelle, an der die
+ * Tore tatsächlich einzeln laufen.
+ *
+ * WARUM HIER UND NICHT IN EINEM NEUEN RUNNER FÜR `check:seriell`. Der Auftrag
+ * sah vor, die `&&`-Kette von `check:seriell` durch einen eigenen Runner zu
+ * ersetzen. Das wäre hier ein Rückschritt gewesen, und zwar aus einem
+ * überprüfbaren Grund: `check:seriell` ist im Repo nicht bloss eine Kette,
+ * sondern die **Single Source of Truth über die Tor-Menge**. ZWEI Stellen lesen
+ * den String und zerlegen ihn per Regex auf `npm run <tor>` —
+ * `leseCheckKette()` hier und `seriellTore()` in `scripts/check-tor-paritaet.ts`
+ * (Fehlerklasse F2b: friert die Lücke zwischen lokalen und CI-Toren ein). Ein
+ * Runner-Aufruf statt der Kette hätte beiden die Datengrundlage entzogen: der
+ * Paritäts-Wächter hätte NULL serielle Tore gesehen und wäre still grün
+ * geworden — genau die Attrappe, vor der §6.7 warnt, und ausgerechnet an dem
+ * Tor, das Blindheit melden soll.
+ *
+ * Der Umweg über eine zweite Tor-Liste im Runner wäre eine zweite Wahrheit
+ * (§5). Also: Kette unverändert, Protokollierung dort, wo der Prozess ohnehin
+ * je Tor verzweigt. `npm run gate` fährt `npm run check` und damit diesen
+ * Runner — der Alltagspfad ist vollständig abgedeckt. NICHT abgedeckt bleibt
+ * der Fallback-Pfad `npm run check:seriell` (die rohe `&&`-Kette): wer ihn
+ * direkt fährt, erzeugt keine Ereignisse. Das ist eine bewusst offengelegte
+ * Lücke (§8), keine unbemerkte: sie kostet nichts ausser fehlenden Messpunkten,
+ * und ein Tor hängt an dieser Zeitreihe ohnehin nie.
  */
 import { spawn } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { appendFileSync, readFileSync } from 'node:fs';
 import { cpus } from 'node:os';
 import { performance } from 'node:perf_hooks';
+import { EREIGNIS_DATEI } from './plan/selbstoptKern';
 
 interface CheckErgebnis {
   name: string;
@@ -49,6 +79,21 @@ function leseCheckKette(): string[] {
     process.exit(1);
   }
   return namen;
+}
+
+/**
+ * Ein Tor-Ereignis anhängen. **Kann den Runner nicht rot machen:** ein voller
+ * oder schreibgeschützter Baum darf keine Prüfung kosten, und ein Messwert ist
+ * nie wichtiger als das Verdikt, das er misst. Deshalb schluckt der `catch`
+ * bewusst alles — sichtbar wird der Ausfall trotzdem, weil `selbstopt:erheben`
+ * die fehlenden Ereignisse als Lücke ausweist.
+ */
+function protokolliere(name: string, ok: boolean): void {
+  try {
+    appendFileSync(EREIGNIS_DATEI, `${JSON.stringify({ ts: new Date().toISOString(), tor: name, ok })}\n`);
+  } catch {
+    /* Messung darf das Tor nie kosten. */
+  }
 }
 
 function laufeCheck(name: string): Promise<CheckErgebnis> {
@@ -86,6 +131,7 @@ async function main(): Promise<void> {
       const name = kette[i];
       const e = await laufeCheck(name);
       ergebnisse.set(name, e);
+      protokolliere(name, e.code === 0);
       // Live-Fortschritt (kompakt bei grün, Markierung bei rot).
       const s = (e.dauerMs / 1000).toFixed(1);
       console.log(`${e.code === 0 ? '  ✓' : '  ✗'} ${name.padEnd(28)} ${s.padStart(5)}s`);
