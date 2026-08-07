@@ -23,8 +23,41 @@ function deDatum(iso: string): string {
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
 }
 
+/**
+ * Ein Streifen-Eintrag: der Entscheid plus die VORAB aufgelösten Norm-Kürzel.
+ *
+ * Die Labels werden im dynamischen `import()` unten mitberechnet und hier
+ * mitgeführt, statt `normLabel` statisch zu importieren: `browse.ts` zieht das
+ * ERLASS_REGISTER nach sich und gehört darum nicht in das Startseiten-Bundle
+ * (§15 — der Streifen lädt das Register ohnehin schon lazy).
+ */
+interface StreifenEintrag {
+  e: BrowseEntscheid;
+  /** Anzeigename des Rechtsgebiets (aus GEBIET_LABEL, im lazy Chunk aufgelöst). */
+  gebiet: string;
+  /** Kürzel der in der Regeste zitierten Kernnormen (leer, wenn keine erfasst). */
+  normen: string[];
+}
+
+/** Aufeinanderfolgende Einträge gleichen Datums zu einer Gruppe bündeln.
+ *
+ *  J4 «Datum-Dedupe»: die Liste ist nach Datum absteigend sortiert (`nachDatum`),
+ *  gleiche Daten stehen also zusammen. Statt dasselbe «07.08.2026» auf drei
+ *  Karten nebeneinander zu wiederholen, trägt es die GRUPPE einmal als
+ *  Überschrift. Rein darstellend (§3), keine Umsortierung — die Reihenfolge der
+ *  Einträge bleibt exakt die der Quelle. */
+function nachDatumGruppiert(liste: StreifenEintrag[]): { datum: string; eintraege: StreifenEintrag[] }[] {
+  const gruppen: { datum: string; eintraege: StreifenEintrag[] }[] = [];
+  for (const eintrag of liste) {
+    const letzte = gruppen[gruppen.length - 1];
+    if (letzte && letzte.datum === eintrag.e.datum) letzte.eintraege.push(eintrag);
+    else gruppen.push({ datum: eintrag.e.datum, eintraege: [eintrag] });
+  }
+  return gruppen;
+}
+
 export function NewsHeader() {
-  const [news, setNews] = useState<BrowseEntscheid[] | null>(null);
+  const [news, setNews] = useState<StreifenEintrag[] | null>(null);
   const streifenRef = useRef<HTMLDivElement>(null);
 
   // #9: per Klick durch die Entscheide blättern — scrollt den Streifen um EINE
@@ -41,6 +74,13 @@ export function NewsHeader() {
     let lebt = true;
     import('../../lib/rechtsprechung/browse')
       .then(async (m) => {
+        // Gebiets-Labels aus DEMSELBEN lazy Chunk: `browse.ts` hängt ohnehin an
+        // `normtext/register`, die beiden liegen also im gleichen Bündel — der
+        // dynamische Zugriff kostet darum kein zusätzliches Startseiten-Gewicht.
+        // Ein STATISCHER Import wäre hier falsch: die Startseiten-Bausteine
+        // meiden das Erlass-Register bewusst (GesetzeChips führt die Kürzel
+        // deshalb als eigene Liste).
+        const { GEBIET_LABEL } = await import('../../lib/normtext/register');
         const manifest = await m.ladeEntscheidManifest();
         if (!lebt) return;
         // `!e.verweis`: Volltext-Verweise sind Redirect-Stubs auf einen echten
@@ -48,7 +88,17 @@ export function NewsHeader() {
         // (Rechtsprechung.tsx) zählt/listet sie durchgängig als `!e.verweis`.
         // Ohne diesen Filter doppelte der Ticker dieselbe BGE als eigene Karte.
         const bund = (manifest?.entscheide ?? []).filter((e) => e.gerichtstyp === 'bundesgericht' && !e.verweis);
-        setNews(m.nachDatum(bund).slice(0, MAX)); // neueste zuerst
+        // Norm-Kürzel gleich hier auflösen — `normLabel` stammt aus demselben
+        // lazy geladenen Modul und kostet darum kein zusätzliches Bundle-Gewicht.
+        // Sie sind der §8-KONFORME Ersatz für eine fehlende Regeste: die im
+        // Entscheid angewandten Normen stehen so im Korpus. Es wird NIE ein
+        // generiertes Kurz-Résumé erzeugt (§8) — fehlt beides, bleibt die Karte
+        // schlicht ohne Beschreibungszeile.
+        setNews(m.nachDatum(bund).slice(0, MAX).map((e) => ({ // neueste zuerst
+          e,
+          gebiet: GEBIET_LABEL[e.sachgebiet] ?? e.sachgebiet,
+          normen: e.normKeys.slice(0, 3).map((k) => m.normLabel(k)),
+        })));
       })
       .catch(() => { if (lebt) setNews([]); });
     return () => { lebt = false; };
@@ -93,19 +143,45 @@ export function NewsHeader() {
       {/* Block-Scrollcontainer (klippt zuverlässig) + w-max-Flex innen — so
           verbreitert der Streifen die Seite nicht (Mobil-Overflow-Tor 390px). */}
       <div ref={streifenRef} className="overflow-x-auto pb-1.5">
-      <ul className="flex gap-3 w-max max-w-full snap-x snap-mandatory">
-        {news.map((e) => (
-          <li key={e.key} className="snap-start shrink-0 w-[clamp(12rem,72vw,18rem)]">
-            <Link to={`/rechtsprechung/${encodeURIComponent(e.key)}`}
-              className="group flex h-full flex-col gap-1 lc-card p-3.5 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none hover:shadow-lg hover:-translate-y-0.5">
-              <span className="flex items-center gap-2">
-                <span className="num text-xs text-ink-500">{deDatum(e.datum)}</span>
-                {e.leitcharakter === 'leitentscheid' && <span className="lc-badge lc-badge-ok shrink-0">Leitentscheid</span>}
-              </span>
-              <span className="font-sans font-medium text-ink-900 text-body-s leading-snug group-hover:text-brass-800 transition-colors">{e.zitierung}</span>
-              {e.regesteKurz && <span className="text-body-s text-ink-500 leading-snug line-clamp-2">{e.regesteKurz}</span>}
-              <span className="mt-auto pt-1 text-xs text-ink-600 truncate">{e.gerichtName}</span>
-            </Link>
+      {/* J4 · Datum-Dedupe: gruppiert nach Entscheiddatum. Das Datum steht EINMAL
+          als Gruppen-Überschrift über seinen Karten, statt auf jeder Karte
+          derselben Sitzung zu wiederholen. Jede Karte bleibt damit unter einem
+          sichtbaren Datum — kein Eintrag verliert seine zeitliche Einordnung. */}
+      <ul className="flex gap-5 w-max max-w-full snap-x snap-mandatory">
+        {nachDatumGruppiert(news).map((g) => (
+          <li key={g.datum} className="snap-start shrink-0">
+            <p className="num mb-1.5 text-xs text-ink-500">{deDatum(g.datum)}</p>
+            <div className="flex gap-3">
+              {g.eintraege.map(({ e, gebiet, normen }) => (
+                <Link key={e.key} to={`/rechtsprechung/${encodeURIComponent(e.key)}`}
+                  className="group flex h-full w-[clamp(12rem,72vw,18rem)] shrink-0 flex-col gap-1 lc-card p-3.5 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none hover:shadow-lg hover:-translate-y-0.5">
+                  {/* J4 · Rechtsgebiet-Badge statt der «Bundesgericht»-Fusszeile.
+                      Es ist das DETERMINISTISCH im Korpus erfasste `sachgebiet`
+                      (dasselbe Feld, das Liste, Karte und Sachgebiets-Rail
+                      benutzen — §5, eine Quelle). Bewusst NICHT aus einem
+                      Abteilungskürzel abgeleitet: das Manifest führt gar kein
+                      `abteilung`-Feld, eine zweite Herleitung wäre also eine
+                      erfundene Achse neben der bestehenden (Befund 8.8.2026).
+                      Die frühere Fusszeile «Bundesgericht» entfällt ersatzlos —
+                      sie wiederholte nur den Titel des Streifens. */}
+                  <span className="flex items-center gap-2">
+                    <span className="lc-overline shrink-0 text-brass-700">{gebiet}</span>
+                    {e.leitcharakter === 'leitentscheid' && <span className="lc-badge lc-badge-ok shrink-0">Leitentscheid</span>}
+                  </span>
+                  <span className="font-sans font-medium text-ink-900 text-body-s leading-snug group-hover:text-brass-800 transition-colors">{e.zitierung}</span>
+                  {/* Beschreibung: amtliche Kurz-Regeste, sonst die im Entscheid
+                      angewandten Kernnormen aus dem Korpus (§8: belegte Angabe,
+                      kein generiertes Résumé). Fehlt beides, bleibt die Zeile weg. */}
+                  {e.regesteKurz
+                    ? <span className="text-body-s text-ink-500 leading-snug line-clamp-2">{e.regesteKurz}</span>
+                    : normen.length > 0 && (
+                      <span className="text-body-s text-ink-500 leading-snug line-clamp-2">
+                        Angewandt: {normen.join(' · ')}
+                      </span>
+                    )}
+                </Link>
+              ))}
+            </div>
           </li>
         ))}
       </ul>
