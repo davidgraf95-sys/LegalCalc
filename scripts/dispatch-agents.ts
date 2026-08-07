@@ -20,7 +20,7 @@
 // die deterministische Projektion, `check:dispatch-klausel` Ebene (C) beweist
 // Byte-Gleichheit. Drift ⇒ Tor rot ⇒ `npm run dispatch:agents` neu laufen.
 import { writeFileSync, mkdirSync } from 'node:fs';
-import { pflichtKlausel, templateLesen, KLASSEN, PALETTE } from './dispatch';
+import { pflichtKlausel, templateLesen, KLASSEN, PALETTE, varianteVon } from './dispatch';
 
 export const AGENTS_DIR = '.claude/agents';
 
@@ -109,7 +109,10 @@ export function agentDatei(klasse: string, md: string): string {
     '',
     spez.rolle,
     '',
-    pflichtKlausel(md),
+    // Variante nach Klasse (§0a): read-only-Klassen tragen nur die Punkte 1–3.
+    // Die Zuordnung steht EINMAL in dispatch.ts (VARIANTE) und gilt für den
+    // Freitext-Weg `npm run dispatch` und die Agent-Typen gleichermassen.
+    pflichtKlausel(md, varianteVon(klasse)),
     '',
     KLASSEN[klasse],
     ...(spez.zusatz ? ['', spez.zusatz] : []),
