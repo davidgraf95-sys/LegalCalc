@@ -11,18 +11,48 @@ import { readFileSync } from 'node:fs';
 
 export const TEMPLATE = 'docs/token-oekonomie/dispatch-template.md';
 
-/** Liest den §0-Block aus dem einzigen ```text-Fence unterhalb der §0-Überschrift. */
-export function pflichtKlausel(md: string): string {
-  const ab = md.indexOf('## 0 · Pflicht-Klausel');
-  if (ab < 0) throw new Error(`§0-Abschnitt fehlt in ${TEMPLATE}`);
+/**
+ * Die zwei Fassungen der §0-Klausel.
+ *   voll     — alle sechs Punkte; für Klassen, die schreiben.
+ *   pruefung — nur die Punkte 1–3, wörtlich identisch; für read-only-Klassen.
+ * WARUM zwei: Die Punkte 4 (Recovery-COMMIT), 5 (Kollisionssonden vor
+ * BAUBEGINN) und 6 (kein MERGE im BAU-Auftrag) setzen alle voraus, dass der
+ * Agent schreiben darf. `pruefung`/`recherche` dürfen es nicht — ihr eigenes
+ * TABU lautet «nichts ändern». Punkt 4 widersprach dem TABU im selben Prompt
+ * sogar offen (Befund Ent-Regulierung 7.8.2026, Freigabe David 7.8.2026).
+ * Die Punkte 1–3 tragen die Fehlerklassen F4/F2d/F3 und sind für eine Prüfung
+ * die tragenden — sie bleiben wörtlich; Ebene (A) des Tors vergleicht sie
+ * byte-gleich gegen den Voll-Block (§5: eine Quelle, zwei Projektionen).
+ */
+export type Klauselvariante = 'voll' | 'pruefung';
+
+/** Anker der beiden Fences im Template + erwartete Kopfzeile je Variante. */
+const FENCE: Record<Klauselvariante, { ueberschrift: string; kopf: RegExp }> = {
+  voll: { ueberschrift: '## 0 · Pflicht-Klausel', kopf: /^§0 PFLICHT-KLAUSEL \(wörtlich/ },
+  pruefung: { ueberschrift: '### 0a · Pflicht-Klausel', kopf: /^§0 PFLICHT-KLAUSEL \(PRÜFUNG/ },
+};
+
+/**
+ * Liest den §0-Block aus dem ```text-Fence unterhalb der Überschrift der
+ * gewünschten Variante. Default `voll` — rückwärtskompatibel für Aufrufer,
+ * die die Variante nicht kennen (der Voll-Block ist nie zu wenig, nur zu viel).
+ */
+export function pflichtKlausel(md: string, variante: Klauselvariante = 'voll'): string {
+  const { ueberschrift, kopf } = FENCE[variante];
+  if (!kopf) throw new Error(`Unbekannte Klausel-Variante '${variante}'`);
+  const ab = md.indexOf(ueberschrift);
+  if (ab < 0) throw new Error(`§0-Abschnitt '${ueberschrift}' (Variante ${variante}) fehlt in ${TEMPLATE}`);
   const start = md.indexOf('```text', ab);
-  if (start < 0) throw new Error(`§0-Codeblock (\`\`\`text) fehlt in ${TEMPLATE}`);
+  if (start < 0) throw new Error(`§0-Codeblock (\`\`\`text) der Variante ${variante} fehlt in ${TEMPLATE}`);
   const von = md.indexOf('\n', start) + 1;
   const bis = md.indexOf('```', von);
-  if (bis < 0) throw new Error(`§0-Codeblock nicht geschlossen in ${TEMPLATE}`);
+  if (bis < 0) throw new Error(`§0-Codeblock der Variante ${variante} nicht geschlossen in ${TEMPLATE}`);
   const block = md.slice(von, bis).trimEnd();
-  if (!/^§0 PFLICHT-KLAUSEL/.test(block)) {
-    throw new Error(`§0-Codeblock beginnt nicht mit der Klausel-Kopfzeile`);
+  if (!kopf.test(block)) {
+    throw new Error(
+      `§0-Codeblock der Variante ${variante} trägt nicht die erwartete Kopfzeile ${kopf}.\n` +
+      `  Erste Zeile ist: ${block.split('\n')[0] || '(leer)'}\n` +
+      `  Verwechselte Fences liefern still die falsche Fassung — darum die Prüfung hier.`);
   }
   return block;
 }
@@ -59,6 +89,28 @@ export const KLASSEN: Record<string, string> = {
 };
 
 /**
+ * Welche Klausel-Variante eine Auftragsklasse trägt (§5: die eine Zuordnung).
+ * read-only-Klassen bekommen die Prüf-Fassung, alle schreibenden den Voll-Block.
+ * Eine neue Klasse OHNE Eintrag hier fällt fail-safe auf `voll` zurück (zu viel
+ * Klausel ist nie falsch, nur teuer) — und wird trotzdem rot: Vitest
+ * (dispatch-klausel.test.ts) und `check:dispatch-klausel` Ebene (B) verlangen
+ * beide, dass jede KLASSEN-Klasse hier steht.
+ */
+export const VARIANTE: Record<string, Klauselvariante> = {
+  bau: 'voll',
+  daten: 'voll',
+  mechanisch: 'voll',
+  synthese: 'voll',
+  pruefung: 'pruefung',
+  recherche: 'pruefung',
+};
+
+/** Variante einer Klasse, fail-safe auf `voll`. */
+export function varianteVon(klasse: string): Klauselvariante {
+  return VARIANTE[klasse] ?? 'voll';
+}
+
+/**
  * Reine Text-Erzeugung (testbar, ohne Prozess-Seiteneffekte).
  * @throws wenn die Klasse unbekannt ist — der Aufrufer entscheidet über den Exit.
  */
@@ -66,7 +118,7 @@ export function dispatchText(klasse: string, md: string): string {
   if (!(klasse in KLASSEN)) {
     throw new Error(`Unbekannte Auftragsklasse '${klasse}'. Bekannt: ${Object.keys(KLASSEN).join(' | ')}`);
   }
-  return `${pflichtKlausel(md)}\n\n${KLASSEN[klasse]}`;
+  return `${pflichtKlausel(md, varianteVon(klasse))}\n\n${KLASSEN[klasse]}`;
 }
 
 /** Marker, an dem Hook und Tor den eingebauten §0-Block wiedererkennen. */
