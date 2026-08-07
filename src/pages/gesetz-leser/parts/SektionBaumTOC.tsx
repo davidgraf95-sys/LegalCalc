@@ -75,8 +75,28 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({ sektionen, aktivPfa
             Input-Fenster hinaus, zählt jeder Frame als unerwarteter CLS (leser-kopf-a9).
             Sofortiges Umschalten = EIN input-zugerechneter Reflow (flushSync im
             Reader), CLS-frei. Reine Darstellung (§3); der Baum bleibt vollständig. */}
+        {/* `invisible` (visibility:hidden) am ZUGEKLAPPTEN Ast — QS-E2E-STABIL, 7.8.2026.
+            Die grid-rows-Technik klappt nur die HÖHE auf 0 und klemmt den Rest per
+            overflow-hidden ab. Die Kind-Knöpfe blieben dabei vollwertige, bedienbare
+            Bedienelemente: eigene Bounding-Box, in der Tab-Reihenfolge, im
+            Accessibility-Baum. Auf /gesetze/bund/BV gemessen (Default zugeklappt seit
+            5.8.): 39 Sprung-Knöpfe, davon 30 unsichtbar — und ALLE 39 fokussierbar.
+            Ein Tastatur- oder Screenreader-Nutzer lief also durch 30 Bedienelemente,
+            die für das Auge nicht existieren; das Panel behauptete Bedienbarkeit, die
+            es nicht gab (§8). visibility:hidden nimmt sie aus Hit-Testing, Fokus-
+            Reihenfolge und a11y-Baum.
+            Bewusst NICHT display:none: visibility:hidden lässt die Geometrie
+            unangetastet, also bleiben die Rect-Messungen des Scroll-Spy
+            (inhalt-hooks.tsx, «sichtbare Äste werden nicht zugeklappt») Bit für Bit
+            dieselben — die Zustandsführung ändert sich nicht (§6). Kinder bleiben
+            gemountet wie bisher, die Höhe ist unverändert 0, also kein CLS-Effekt
+            (§15.2 unberührt).
+            Zweitwirkung, deretwegen der Befund überhaupt auffiel: ein Playwright-
+            Klick auf so einen Knopf konnte NIE landen (die Box lag hinter einem
+            anderen Knopf) und lief in Endlos-Retry bis zum 270-s-Budget — vier Tests
+            à drei Versuche = 1 h 2 min Shard 2/8 am 7.8.2026. */}
         {hatKinder && (
-          <div className={`grid ${auf ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+          <div className={`grid ${auf ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] invisible'}`}>
             <div className="overflow-hidden min-h-0">
               <ul className="space-y-0.5 mt-0.5">{s.kinder.map((k) => zeile(k, tiefe + 1))}</ul>
             </div>
