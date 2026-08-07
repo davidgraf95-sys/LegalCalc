@@ -340,6 +340,8 @@ im Verfallsregister («Amtliche Muster-Suiten»).
 
 ## betrieb/ — Betrieb, Infrastruktur, Prüf-Forensik
 
+- [Ent-Regulierungs-Analyse 7.8.2026 (QS-SELBSTOPT)](betrieb/entregulierung-2026-08-07.md) — Tore/Hooks/Regelwerk gegen das Löschkriterium «würde das Fehlen einen realen Fehler verursachen?» geprüft, mit Laufzeitmessung (43 seriell-Tore parallel: 16,0 s; `gate:schnell`: 37,7 s statt dokumentierter ~7 s) und Provenienz-Pflicht. Umgesetzt: `report:tot`, `check:rss-oc` verdrahtet, `gate.sh`-Doku, §6.6-Split. Zwei Streich-Prämissen am Ist-Zustand widerlegt (`check:confidence` kein Waise, `check:suchindex`-Verdrahtung wäre F2a). **Vier Posten warten auf David** (Stop-Hook-Frequenz, `tor-schutz.py`-Patch, §16-Kurzform, Dispatch-§0-Prüfvariante). **Status: einfach belegt.**
+
 - [Code-Inventur 4.8.2026 — Logik/Darstellung/Pipeline (QS-CODE-\*)](betrieb/code-inventur-2026-08-04.md) — drei read-only Explore-Analysen am Stand `2c4d97e54`: Bestand strukturell gesund (0× `any`, kein §3-Verstoss, Infra zentralisiert); Hebel: Turso-FTS-Durchsatz (~3.7× Reserve), Suchindex-Monolith 45.9 MB (Budget 91 %), `fristenEngine` mit 6 Testfällen, Entdopplung Darstellungsschicht (D1–D7), 6 Grossdatei-Splits. Bau-Specs: `fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md`. **Status: entwurf** — zwei David-Fragen offen (Manifest-Nullzeilen, `normalisiereTarifText`-Freigabe).
 
 - [VPS-Bestell-Dossier (QS-BASIS B-5)](betrieb/vps-bestell-dossier-2026-07-17.md) — 3 live-verifizierte Angebote (17.7.2026), Empfehlung netcup RS 4000 G12; entsperrt E3-Serving/E4-Zitatgraph. **Blocker: Bestellung durch David.**
