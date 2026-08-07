@@ -13,6 +13,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { jahrVon, bandVon, zaehleBaender, istChronologisch } from '../components/rechtsprechung/baender';
+import { zaehleAktiveFilter } from '../components/rechtsprechung/zustand';
 import type { BrowseEntscheid } from '../lib/rechtsprechung/register';
 
 function e(teil: Partial<BrowseEntscheid> & { key: string }): BrowseEntscheid {
@@ -113,5 +114,34 @@ describe('istChronologisch', () => {
       e({ key: 'b', datum: '2025-01-01' }),
       e({ key: 'c', datum: '2026-02-02' }),
     ]))).toBe(false);
+  });
+});
+
+// ── J2 · Zahl im «Filter (n)»-Auslöser ──────────────────────────────────────
+//
+// Die Zahl darf nur zählen, was der Auslöser auch VERBIRGT. Sachgebiet (Rail)
+// und Suchbegriff bleiben mobil sichtbar — stünden sie in der Zahl, verspräche
+// sie verborgene Filter, die der Nutzer vor sich sieht (§8).
+
+describe('zaehleAktiveFilter', () => {
+  it('zählt null bei leerem Filterzustand', () => {
+    expect(zaehleAktiveFilter({})).toBe(0);
+  });
+
+  it('zählt jede verborgene Achse einzeln', () => {
+    expect(zaehleAktiveFilter({ kanton: 'BS', sprache: 'de', gericht: 'bger' })).toBe(3);
+  });
+
+  it('zählt «nur Leitentscheide» mit, aber nur wenn gesetzt', () => {
+    expect(zaehleAktiveFilter({ nurLeitentscheide: true })).toBe(1);
+    expect(zaehleAktiveFilter({ nurLeitentscheide: false })).toBe(0);
+  });
+
+  it('zählt Sachgebiet und Suchbegriff NICHT mit (bleiben mobil sichtbar)', () => {
+    expect(zaehleAktiveFilter({ sachgebiet: 'privat', q: 'Kündigung' })).toBe(0);
+  });
+
+  it('ignoriert auf null gesetzte Achsen', () => {
+    expect(zaehleAktiveFilter({ kanton: null, sprache: null, norm: 'OR-266' })).toBe(1);
   });
 });

@@ -15,10 +15,11 @@ import {
 import {
   achsenDiff, leseFilterAusUrl, lokaleWerte, wendeAchsenAn,
   leseDichte, schreibeDichte, leseSort, schreibeSort, leseKlappe, schreibeKlappe,
-  leseDeckel, schreibeDeckel,
+  leseDeckel, schreibeDeckel, zaehleAktiveFilter,
   type Dichte, type UrlAchse,
 } from '../components/rechtsprechung/zustand';
 import { zaehleBaender, istChronologisch, type BandGruppe } from '../components/rechtsprechung/baender';
+import { FilterSheet } from '../components/rechtsprechung/FilterSheet';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
@@ -279,7 +280,7 @@ export function Rechtsprechung() {
       <SeitenKopf
         overline="Bundesgericht & Kantone"
         titel="Rechtsprechung"
-        intro="Kuratierte Auswahl von Entscheiden des Bundesgerichts und kantonaler Gerichte — Leitentscheide und Sachfrage zuerst, verzahnt mit der angewandten Norm. Daten: OpenCaseLaw und amtliche Gerichts-Portale (z. B. Basel-Stadt). Massgeblich bleibt stets die amtliche Fassung."
+        intro="Entscheide des Bundesgerichts und kantonaler Gerichte, verzahnt mit der angewandten Norm."
       />
 
       {fehler && (
@@ -319,18 +320,23 @@ export function Rechtsprechung() {
                 Kopf der Ergebnis-Spalte (Auftrag David), über der kuratierten Auswahl. */}
             <LiveSuche initialQ={werte.q ?? ''} />
 
-            <EntscheidFilter
-              werte={werte}
-              onChange={onFilter}
-              bestand={alle}
-              richterRegister={richterRegister}
-              sort={sort}
-              onSort={setzeSort}
-              dichte={dichte}
-              onDichte={setzeDichte}
-              klappeOffen={klappeOffen}
-              onKlappe={setzeKlappe}
-            />
+            {/* J2: mobil hinter einem «Filter (n)»-Auslöser im Bottom-Sheet,
+                ab lg unverändert inline — damit die Treffer auf 390 px nicht
+                erst unter der ganzen Steuerleiste beginnen. */}
+            <FilterSheet anzahl={zaehleAktiveFilter(werte)}>
+              <EntscheidFilter
+                werte={werte}
+                onChange={onFilter}
+                bestand={alle}
+                richterRegister={richterRegister}
+                sort={sort}
+                onSort={setzeSort}
+                dichte={dichte}
+                onDichte={setzeDichte}
+                klappeOffen={klappeOffen}
+                onKlappe={setzeKlappe}
+              />
+            </FilterSheet>
 
             {/* Norm-Kontextstreifen — der explizite Pfad «Rechtsprechung zu Art. X». */}
             {norm && (

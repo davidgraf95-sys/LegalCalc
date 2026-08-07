@@ -239,6 +239,25 @@ export function schreibeKlappe(offen: boolean): void {
   schreib(KLAPPE_KEY, offen ? AN : '0');
 }
 
+/**
+ * Zahl der AKTIVEN Filter für die Beschriftung «Filter (3)» (W2·10-UI-NAV/J2).
+ *
+ * Gezählt wird, was die Treffermenge einschränkt — und zwar genau die Achsen,
+ * die der mobile Auslöser auch verbirgt. NICHT mitgezählt:
+ *   · `sachgebiet` — steuert die Rail, die mobil als eigenes Chip-Band SICHTBAR
+ *     über der Liste steht und gar nie im Sheet verschwindet.
+ *   · `q` — steht im Suchfeld, das mobil ebenfalls sichtbar bleibt.
+ * Sonst verspräche die Zahl dem Nutzer verborgene Filter, die er vor sich sieht
+ * (§8). Rein deterministisch (§2), darum direkt unit-testbar.
+ */
+export function zaehleAktiveFilter(werte: EntscheidFilterWerte): number {
+  const achsen = [
+    werte.norm, werte.richter, werte.ebene, werte.kanton, werte.gerichtstyp,
+    werte.sprache, werte.gericht, werte.datumVon, werte.datumBis,
+  ];
+  return achsen.filter(Boolean).length + (werte.nurLeitentscheide ? 1 : 0);
+}
+
 // ── NAVIGATION: sessionStorage (Listen-Deckel je Liste) ─────────────────────
 //
 // W2·10-UI-NAV/J1. Die dritte Zustands-Klasse dieser Seite, und sie gehört
