@@ -98,8 +98,15 @@ existierende Datei zeigen.
 
 Reihenfolge, sonst wird QS-PH/`check:plan` rot:
 
-1. **Verify.** `grep -rn <Basename> ROADMAP.md fahrplaene/` — kein lebender
-   `fahrplan:`-Zeiger und keine aktive Prosa-Referenz mehr? Nur dann weiter.
+1. **Verify.** `grep -rn <Basename> ROADMAP.md fahrplaene/ bibliothek/ docs/ *.md`
+   — kein lebender `fahrplan:`-Zeiger und keine aktive Prosa-Referenz mehr? Nur
+   dann weiter. Treffer ausserhalb der Steuer-Doku (z. B. `bibliothek/`) beim
+   Archivieren auf den `archiv/…`-Pfad umschreiben und `npm run check:bibliothek`
+   lokal grün zeigen, BEVOR der Doku-Commit gepusht wird — Doku-Pushes auf main
+   laufen an der CI vorbei, ein toter Link [S7] macht sonst main rot und
+   blockiert fremde Landungen. *(Vorfall 7.8.2026: Rotation `2a890c50d`
+   archivierte FAHRPLAN-CODE-VERBESSERUNG, `bibliothek/betrieb/code-inventur-…`
+   zeigte weiter auf `fahrplaene/` — Heilung `57ebeca56`.)*
    **Bewusst NICHT gegen `ROADMAP-CHRONIK.md` grepen:** erledigte Schritte
    wandern samt ihrer `@meta`-Zeile (und damit ihrem historischen
    `fahrplan:`-Zeiger) dorthin (Schritt 2) — ein Treffer dort ist ein toter,
