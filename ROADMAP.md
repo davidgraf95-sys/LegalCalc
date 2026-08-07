@@ -301,7 +301,8 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** (Queue-Kopf; Fokus-Dekret 24.7.2026 unten).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·5h-GESETZ-UI`** (Queue-Kopf; Fokus-Dekret 24.7.2026 unten).
+> `W2·10-UI-NAV` ist seit 7.8.2026 wip (Bau-Session; Teilschritte -S/-V/-O zuerst, -J/-J3 bleiben ready).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
 > Dekret-Blocks → `ROADMAP-CHRONIK.md` → QS-TOK-Abschluss 5.8.2026). Das ROADMAP-Ceiling misst
@@ -343,8 +344,8 @@ und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
     #161, David freigegeben); L-4 entfällt. V2 §2 F4.
     - [ ] **L-3** (Auto-Default-Umkehr): weiterhin **hinter David/Council-Gate** —
       NICHT in feat/v2-l1-l2 gebaut. V2 §2 F4.
-- [ ] **10-UI-NAV · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
-  <!-- @meta id: W2·10-UI-NAV · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/suche, src/lib/suche, src/lib/universalSuche.ts, src/components/layout, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, src/pages/gesetz-leser, src/pages/GesetzLeser.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+- [~] **10-UI-NAV · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
+  <!-- @meta id: W2·10-UI-NAV · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/components/suche, src/lib/suche, src/lib/universalSuche.ts, src/components/layout, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, src/pages/gesetz-leser, src/pages/GesetzLeser.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
   Priorisierter UI-Plan aus 60 empirischen Befunden + 3 Kritik-Linsen — Suche, Navigation und
   Auffindbarkeit über alle Oberflächen; reine Darstellungsschicht (§3), keine Rechtslogik.
   Offen sind nur noch **-S · -V · -J · -J3 · -O**; `dep`-Korrektur und Diät-Herkunft:
