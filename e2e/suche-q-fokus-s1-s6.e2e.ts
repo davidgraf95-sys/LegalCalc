@@ -61,6 +61,44 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
     await expect(page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })).toHaveValue('Kündigung')
     await expect(page).toHaveURL(/[?&]rg=zpo/)
   })
+
+  // Gegenprüfungs-Befund 7.8.2026 (ERNST): die Merkung des selbst gespiegelten
+  // Werts galt unbegrenzt — die Zurück-Taste führte auf die alte Adresse, das
+  // Feld behielt den neuen Begriff, und der Spiegel schrieb die History-Position
+  // 300 ms später wieder um. Die Zustandslogik dahinter ist in
+  // src/tests/useSucheAusUrl.test.ts einzeln festgenagelt.
+  test('Zurück-Taste stellt den früheren Begriff wieder her und bleibt stehen', async ({ page }) => {
+    await page.goto('/rechtsprechung')
+    const feld = page.getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })
+    await feld.fill('miete')
+    await expect(page).toHaveURL(/[?&]q=miete/)
+    // Fremde Adressänderung auf denselben Achsen (Header-Sprung-Äquivalent).
+    await page.goto('/rechtsprechung?q=recht')
+    await expect(feld).toHaveValue('recht')
+    await page.goBack()
+    await expect(page).toHaveURL(/[?&]q=miete/)
+    await expect(feld).toHaveValue('miete')
+    // …und der Spiegel schreibt die History-Position NICHT wieder um.
+    await page.waitForTimeout(600)
+    await expect(page).toHaveURL(/[?&]q=miete/)
+  })
+
+  // Gegenprüfungs-Befund 7.8.2026 (§8-Zählparität): Header dedupliziert die
+  // Gemeinde-Doppel, die Zielseite tat es nicht — «alle 73 →» landete auf «74».
+  test('«alle N →» und die Trefferzahl der Zielseite nennen dieselbe Zahl (§8)', async ({ page }) => {
+    await page.goto('/')
+    const feld = sucheFeld(page)
+    await feld.click()
+    await feld.fill('recht')
+    const box = listbox(page)
+    await expect(box).toBeVisible()
+    const gesetzGruppe = box.getByRole('group', { name: 'Gesetze' })
+    const mehr = gesetzGruppe.getByRole('option', { name: /alle \d+ Treffer anzeigen/ })
+    const kopfZahl = Number(/\d+/.exec((await mehr.textContent()) ?? '')![0])
+    await mehr.click()
+    const seitenZahl = Number(/\d+/.exec((await page.getByText(/Treffer für «recht»/).textContent()) ?? '')![0])
+    expect(seitenZahl).toBe(kopfZahl)
+  })
 })
 
 test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
@@ -89,9 +127,17 @@ test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
     // Das Feld gewinnt die frei gewordene Breite.
     const nachher = (await feld.boundingBox())!.width
     expect(nachher).toBeGreaterThan(vorher)
+    // Ziel-Komfortmass der Zone: 44 px (min-h-11/min-w-11), wie die übrigen
+    // Streifen-Knöpfe — 36 px lagen darunter (Gegenprüfungs-Befund 7.8.2026).
+    const kasten = (await schliessen.boundingBox())!
+    expect(kasten.height).toBeGreaterThanOrEqual(44)
+    expect(kasten.width).toBeGreaterThanOrEqual(44)
     await schliessen.click()
     await expect(logo).toBeVisible()
     await expect(schliessen).toBeHidden()
+    // Fokus kehrt gezielt in den Streifen zurück, nicht auf <body>
+    // (Gegenprüfungs-Befund 7.8.2026, Tastatur-/Screenreader-Position).
+    await expect(page.getByRole('button', { name: 'Navigation öffnen' })).toBeFocused()
   })
 
   test('getippte Query bleibt im Feld sichtbar (nicht abgeschnitten)', async ({ page }) => {

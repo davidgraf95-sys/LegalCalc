@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 // ─── `?q=` als geteilte Suchbegriff-Achse der Browse-Seiten (UI-NAV S1) ──────
@@ -31,6 +31,59 @@ export interface SucheAusUrlOptionen {
   verzoegerung?: number;
 }
 
+// ── Reine Zustandslogik (§3, direkt unit-testbar) ───────────────────────────
+//
+// Das Feld und die Adresse schreiben BEIDE, darum braucht es eine Regel, wessen
+// Änderung gerade gilt. Sie steht hier als reine Übergangsfunktion und nicht im
+// Hook, damit sie ohne DOM durchgespielt werden kann (Muster: zustand.ts).
+
+export interface Feldstand {
+  /** Was im Eingabefeld steht — die Wahrheit über den Begriff. */
+  wert: string;
+  /** Zuletzt verarbeiteter Adress-Stand; die Kante, an der ein Wechsel auffällt. */
+  gesehen: string;
+  /**
+   * Wert, den DIESER Hook zuletzt selbst in die Adresse geschrieben hat, solange
+   * sein Echo noch aussteht — sonst null. Ohne die Merkung schlüge das eigene
+   * (entprellte) Zurückschreiben als «fremde» Änderung ins Feld zurück und
+   * überschriebe die inzwischen weitergetippten Zeichen.
+   */
+  selbstGeschrieben: string | null;
+}
+
+export function anfangsStand(urlQ: string): Feldstand {
+  return { wert: urlQ, gesehen: urlQ, selbstGeschrieben: null };
+}
+
+/**
+ * Adresse hat sich geändert → neuer Feldstand.
+ *
+ * Die Merkung `selbstGeschrieben` gilt für GENAU EIN Echo und verfällt, sobald
+ * es eingetroffen ist. Das ist der Kern: bliebe sie stehen, würde jede spätere
+ * fremde Adressänderung auf denselben Wert als eigenes Echo missdeutet — die
+ * Zurück-Taste führte dann zwar auf die alte Adresse, das Feld behielte aber den
+ * neuen Begriff, und der Spiegel schriebe die History-Position kurz darauf
+ * wieder um (Gegenprüfungs-Befund 7.8.2026, Repro in useSucheAusUrl.test.ts).
+ */
+export function nachAdresse(stand: Feldstand, urlQ: string): Feldstand {
+  if (urlQ === stand.gesehen) return stand;
+  if (stand.selbstGeschrieben !== null && urlQ === stand.selbstGeschrieben) {
+    // Eigenes Echo: Feld unverändert lassen, Merkung verbrauchen.
+    return { ...stand, gesehen: urlQ, selbstGeschrieben: null };
+  }
+  // Fremde Änderung (Link, Header-Sprung, Zurück-Taste) gewinnt über das Feld.
+  return { wert: urlQ, gesehen: urlQ, selbstGeschrieben: null };
+}
+
+/** Der Hook hat soeben selbst `?q=ziel` geschrieben — Echo ankündigen. */
+export function nachEigenemSchreiben(stand: Feldstand, ziel: string): Feldstand {
+  return { ...stand, selbstGeschrieben: ziel };
+}
+
+export function mitWert(stand: Feldstand, wert: string): Feldstand {
+  return { ...stand, wert };
+}
+
 /**
  * Suchbegriff-Feldzustand, an `?q=` gekoppelt.
  *
@@ -43,31 +96,19 @@ export function useSucheAusUrl(
 ): [string, (wert: string) => void] {
   const [params, setParams] = useSearchParams();
   const urlQ = params.get('q') ?? '';
-  const [wert, setWert] = useState(urlQ);
+  const [stand, setStand] = useState<Feldstand>(() => anfangsStand(urlQ));
 
-  // Zuletzt SELBST geschriebener Wert. Ohne diese Merkung schlüge das eigene
-  // (entprellte) Zurückschreiben als «fremde» Adressänderung zurück ins Feld und
-  // überschriebe die inzwischen weitergetippten Zeichen. Bewusst State und keine
-  // Ref: der Abgleich unten läuft in der RENDER-Phase, und eine Ref darf dort
-  // nicht gelesen werden (react-hooks/refs). Beide Setzer stehen im selben
-  // Effekt und werden gebatcht — der Vergleich sieht nie einen halben Stand.
-  const [selbstGeschrieben, setSelbstGeschrieben] = useState<string | null>(null);
-
-  // Fremde Adressänderung übernehmen — Render-Phasen-Abgleich statt Effekt
-  // (Repo-Muster «adjust state during render»): kein Zwischenbild mit dem alten
-  // Wert.
-  const [gesehen, setGesehen] = useState(urlQ);
-  if (urlQ !== gesehen) {
-    setGesehen(urlQ);
-    if (urlQ !== selbstGeschrieben) setWert(urlQ);
-  }
+  // Adressänderung im RENDER verarbeiten (Repo-Muster «adjust state during
+  // render»): kein Zwischenbild mit dem alten Wert. Die Bedingung wird durch
+  // `gesehen` sicher falsch — kein Render-Loop.
+  if (urlQ !== stand.gesehen) setStand((s) => nachAdresse(s, urlQ));
 
   useEffect(() => {
     if (!spiegeln) return;
-    const ziel = wert.trim();
+    const ziel = stand.wert.trim();
     if (ziel === (params.get('q') ?? '')) return;
     const id = setTimeout(() => {
-      setSelbstGeschrieben(ziel);
+      setStand((s) => nachEigenemSchreiben(s, ziel));
       // Funktionale Form: baut auf dem AKTUELLEN Stand der Adresse auf, nicht auf
       // dem beim Tippen eingefangenen `params`. Sonst nähme ein gleichzeitiger
       // Facetten-Klick (eigener Schreibvorgang) den anderen zurück — dieselbe
@@ -79,7 +120,9 @@ export function useSucheAusUrl(
       }, { replace: true });
     }, verzoegerung);
     return () => clearTimeout(id);
-  }, [wert, spiegeln, verzoegerung, params, setParams]);
+  }, [stand.wert, spiegeln, verzoegerung, params, setParams]);
 
-  return [wert, setWert];
+  const setWert = useCallback((wert: string) => setStand((s) => mitWert(s, wert)), []);
+
+  return [stand.wert, setWert];
 }

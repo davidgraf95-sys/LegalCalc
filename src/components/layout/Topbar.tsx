@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { HeaderSuche } from './HeaderSuche';
@@ -30,6 +30,21 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
   // Eine Klasse, drei Fundorte — `hidden` statt Unmount: die Knöpfe behalten
   // ihren Zustand (Verlauf/Reiter-Panels) und der Streifen springt nicht.
   const weicht = sucheBreit ? 'hidden' : '';
+  // Fokus-Ziel beim Verlassen des Fokusmodus: der ☰-Schalter ist das erste
+  // Bedienelement des Streifens und mobil immer da — die Tastatur landet damit
+  // am Anfang derselben Zone statt auf <body>.
+  const menuKnopf = useRef<HTMLButtonElement>(null);
+  // Der Wunsch wird im ✕-Klick gemeldet, ausgeführt wird er erst NACH dem
+  // Re-Render: solange der Fokusmodus läuft, trägt der Schalter `hidden` und ein
+  // display:none-Element nimmt keinen Fokus an. Der Effekt feuert genau auf der
+  // Flanke «Fokusmodus endet» — nicht beim Verlassen über einen Treffer (dort
+  // wird kein Wunsch gesetzt und die Navigation behält ihren eigenen Fokus).
+  const fokusWunsch = useRef(false);
+  useEffect(() => {
+    if (sucheBreit || !fokusWunsch.current) return;
+    fokusWunsch.current = false;
+    menuKnopf.current?.focus();
+  }, [sucheBreit]);
   return (
     <header
       className="sticky top-0 z-20 border-b border-line lc-glass"
@@ -38,6 +53,7 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
         {/* Mobil: Schublade öffnen — auf Desktop trägt die persistente Leiste. */}
         <button
           type="button"
+          ref={menuKnopf}
           className={`lc-btn lc-btn-ghost lc-btn-sm lg:hidden shrink-0 min-h-11 min-w-11 ${weicht}`}
           aria-label="Navigation öffnen"
           aria-controls="seitenleisten-schublade"
@@ -101,7 +117,7 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
         {/* max-w-xl deckelt die Feldbreite auf Desktop; im mobilen Fokusmodus ist
             der Viewport ohnehin schmaler, das Feld füllt also den Streifen. */}
         <div className="flex-1 min-w-0 max-w-xl">
-          <HeaderSuche onFokusModus={setSucheBreit} />
+          <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
         <div className={`shrink-0 flex items-center gap-1.5 sm:gap-2 ${weicht}`}>

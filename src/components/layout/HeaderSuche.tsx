@@ -17,10 +17,12 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 // nicht mehr in einer eigenen ⌘K-Palette — der Hook liefert die Sprung-Gruppe als
 // obersten Treffer, Enter springt. «/» UND ⌘K/Ctrl-K fokussieren das Feld global
 // (die frühere Befehls-Palette ist entfallen); mobil reicht das sichtbare Feld.
-export function HeaderSuche({ onFokusModus }: {
+export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   /** S6: meldet dem Top-Streifen, dass das Feld mobil die volle Breite braucht
    *  (Logo/Werkzeuge weichen so lange). Nur mobil je true. */
   onFokusModus?: (aktiv: boolean) => void;
+  /** Fokus-Ziel nach dem ✕: der Streifen sagt, wohin die Tastatur zurückkehrt. */
+  onFokusZurueck?: () => void;
 } = {}) {
   const navigate = useNavigate();
   const listboxId = useId();
@@ -220,8 +222,20 @@ export function HeaderSuche({ onFokusModus }: {
         <button
           type="button"
           aria-label="Suche schliessen"
-          onClick={() => { setOffen(false); feld.current?.blur(); }}
-          className="absolute right-1 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-ink-900"
+          onClick={() => {
+            setOffen(false);
+            feld.current?.blur();
+            // Fokus GEZIELT zurückgeben: dieser Knopf verlässt beim Schliessen das
+            // DOM, ein blosses blur() setzt die Tastatur sonst auf <body> zurück
+            // und Screenreader-Nutzer verlieren ihre Position (Gegenprüfungs-
+            // Befund 7.8.2026). Hier wird nur der WUNSCH gemeldet — das Ziel ist
+            // in diesem Moment noch ausgeblendet und damit nicht fokussierbar;
+            // der Streifen setzt den Fokus, sobald es wieder sichtbar ist.
+            onFokusZurueck?.();
+          }}
+          // 44 px wie alle übrigen Bedienelemente dieser Zone (min-h-11/min-w-11);
+          // 36 px lagen unter dem Komfortmuster des Streifens.
+          className="absolute right-1 top-1/2 flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-ink-900"
         >
           <span aria-hidden className="text-base leading-none">✕</span>
         </button>

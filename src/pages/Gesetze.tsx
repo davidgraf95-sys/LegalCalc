@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useLocation, Link } from 'react-router-dom';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
+import { dedupErlasse } from '../lib/universalSuche';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { InternationalRubriken } from '../components/normtext/InternationalRubriken';
 import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
@@ -390,7 +391,14 @@ export function Gesetze() {
           {suche.trim() && (() => {
             const aufKanton = filterScope.art === 'kanton';
             const basis = scopeBasis(erlasse, filterScope);
-            const treffer = filtern(basis, suche);
+            // §8-Zählparität mit der Universal-Suche (Gegenprüfungs-Befund
+            // 7.8.2026): das Header-Dropdown kollabiert die Gemeinde-Doppel
+            // (Riehen/Bettingen führen denselben BS-Erlass unter eigenem Präfix)
+            // über dedupErlasse, diese Seite tat es nicht — «alle 73 →» landete
+            // auf «74 Treffer», q=«zivil» 30 gegen 31. Zwei Zahlen für dieselbe
+            // Menge sind ein §8-Verstoss; dedupliziert ist die ehrliche, weil ein
+            // Doppel kein zweiter Erlass ist. EINE Funktion für beide Wege (§5).
+            const treffer = dedupErlasse(filtern(basis, suche));
             const bund = treffer.filter((e) => e.ebene === 'bund' && !istIntl(e));
             const kant = treffer.filter((e) => e.ebene === 'kanton');
             const intl = treffer.filter(istIntl);
