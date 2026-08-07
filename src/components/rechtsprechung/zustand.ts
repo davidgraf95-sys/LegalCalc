@@ -246,7 +246,10 @@ export function schreibeKlappe(offen: boolean): void {
  * die der mobile Auslöser auch verbirgt. NICHT mitgezählt:
  *   · `sachgebiet` — steuert die Rail, die mobil als eigenes Chip-Band SICHTBAR
  *     über der Liste steht und gar nie im Sheet verschwindet.
- *   · `q` — steht im Suchfeld, das mobil ebenfalls sichtbar bleibt.
+ * `q` WIRD mitgezählt: seit J2 liegt das Suchfeld mobil IM Sheet — bei
+ * geschlossenem Sheet wirkt ein getippter Begriff sonst unsichtbar (§8;
+ * Schlussdurchgangs-Befund 8.8.2026, davor stand das Feld sichtbar über der
+ * Liste und war zu Recht ausgenommen).
  * Sonst verspräche die Zahl dem Nutzer verborgene Filter, die er vor sich sieht
  * (§8). Rein deterministisch (§2), darum direkt unit-testbar.
  */
@@ -255,7 +258,8 @@ export function zaehleAktiveFilter(werte: EntscheidFilterWerte): number {
     werte.norm, werte.richter, werte.ebene, werte.kanton, werte.gerichtstyp,
     werte.sprache, werte.gericht, werte.datumVon, werte.datumBis,
   ];
-  return achsen.filter(Boolean).length + (werte.nurLeitentscheide ? 1 : 0);
+  return achsen.filter(Boolean).length + (werte.nurLeitentscheide ? 1 : 0)
+    + ((werte.q ?? '').trim() ? 1 : 0);
 }
 
 // ── NAVIGATION: sessionStorage (Listen-Deckel je Liste) ─────────────────────

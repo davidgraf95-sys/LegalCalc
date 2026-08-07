@@ -137,8 +137,10 @@ describe('zaehleAktiveFilter', () => {
     expect(zaehleAktiveFilter({ nurLeitentscheide: false })).toBe(0);
   });
 
-  it('zählt Sachgebiet und Suchbegriff NICHT mit (bleiben mobil sichtbar)', () => {
-    expect(zaehleAktiveFilter({ sachgebiet: 'privat', q: 'Kündigung' })).toBe(0);
+  it('zählt Sachgebiet NICHT (Rail bleibt mobil sichtbar), Suchbegriff aber SCHON (liegt seit J2 im Sheet)', () => {
+    expect(zaehleAktiveFilter({ sachgebiet: 'privat' })).toBe(0);
+    expect(zaehleAktiveFilter({ sachgebiet: 'privat', q: 'Kündigung' })).toBe(1);
+    expect(zaehleAktiveFilter({ q: '   ' })).toBe(0);
   });
 
   it('ignoriert auf null gesetzte Achsen', () => {
