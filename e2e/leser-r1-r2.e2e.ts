@@ -16,6 +16,38 @@
 //
 // Läuft gegen `vite preview` (dist). Zeitbudget wie die A35-Suite: der OR-Reader
 // kettet mehrere 15–20-s-Latches, auf dem 2-vCPU-Runner unter Drossel mehr.
+//
+// ─── §11-Verankerung · MESSUNG 8.8.2026 zum CI-Erstversuch-Flake ──────────────
+// Anlass: QS-E2E-STABIL notiert für diese Datei, alle 7 R1-Suche-Fälle scheiterten
+// im CI-Lauf 31220026058 im Erstversuch an `[data-treffer-leiste]` (>20 s), Retry
+// grün; als vermutete Wurzel stand dort «die Leser-Suche rendert alle Treffer-
+// Artikel auf einmal» (inhalt-volltext.tsx). Diese Vermutung ist WIDERLEGT —
+// bitte nicht auf ihr aufbauen (weder Chunking noch «Weitere Treffer»-Batching
+// beseitigt die 20-s-Klasse):
+//
+//  (a) Der Suchmodus VERKLEINERT den Baum, er vergrössert ihn nicht: OR geht beim
+//      Eintritt in «Vertrag» von 1686 auf 282 `article[id^="art-"]`-Knoten.
+//  (b) Zeit vom `fill()` bis zur sichtbaren Leiste, lokal, je 3 Läufe (Median):
+//      ohne Drossel 421 ms · 4× 1078 ms · 6× 1433 ms · 8× 1931 ms · 12× 3.0 s ·
+//      20× 5.1 s. Der längste blockierende Task des Eintritts liegt bei 415 ms
+//      (6×) bzw. 3.8 s (20×) — nirgends in der Nähe von 20 s.
+//  (c) Die Sekunden des OR-Pfads liegen VOR dem Suchmodus, im Erst-Render:
+//      goto → `#art-1` sichtbar kostet 3.6 s (6×), 7.1 s (12×), 12.5 s (20×),
+//      davon 83 % Long-Tasks; danach laufen ~1.0–3.0 s Nachlade-Shards.
+//  (d) CI-Signatur, aus playwright-report-gruppe-1 des Laufs 31220026058
+//      rekonstruiert (Attempts chronologisch, `workerIndex`): der Fehler ist
+//      «element(s) not found», nicht «zu spät sichtbar» — und er trifft einen
+//      Desktop-OR-Suchfall AUSNAHMSLOS dann, wenn er NICHT der erste Test seines
+//      (frischen) Workers ist. Jeder Retry lief als erster Test eines neuen
+//      Workers und war grün; die vier Nicht-Desktop-OR-Suchfälle am Dateiende
+//      (R2-Sheet, Quickjump, Desktop-TOC, A9/BV) liefen als 2.–5. Test desselben
+//      Workers w7 und waren ebenfalls grün.
+//  ⇒ Die Wurzel liegt damit im BROWSER-/WORKER-übergreifenden Zustand des
+//      zweiten schweren OR-Readers je Chromium-Prozess, nicht in der Menge der
+//      gerenderten Treffer. Lokal (Faktor ~10 schneller als der Runner) liess
+//      sich der Fehlschlag bis 20× CPU-Drossel und mit vier OR-Vorladungen im
+//      selben Browser NICHT auslösen — er braucht die CI-Umgebung.
+// Nicht zulässig bleibt in jedem Fall das Anheben der 20-s-Budgets (Maskierung).
 import { test, expect, type Page } from '@playwright/test';
 
 test.describe.configure({ timeout: 120_000 });
