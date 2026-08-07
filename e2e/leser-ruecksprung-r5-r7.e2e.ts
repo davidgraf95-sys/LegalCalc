@@ -367,7 +367,7 @@ test('A11y-Wächter: kein unsichtbarer Gliederungs-Knopf liegt in der Tab-Reihen
     // Wächter auf checkVisibility wäre gegen das defekte Markup grün geblieben
     // (ausprobiert am 7.8.2026), also ein Tor, das nicht scheitern kann (§6.7).
     const restflaeche = (el: HTMLElement): number => {
-      let r = el.getBoundingClientRect();
+      const r = el.getBoundingClientRect();
       let l = r.left, o = r.top, re = r.right, u = r.bottom;
       for (let a = el.parentElement; a; a = a.parentElement) {
         const st = getComputedStyle(a);
