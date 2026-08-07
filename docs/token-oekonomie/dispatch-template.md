@@ -83,8 +83,14 @@ Prüfung. Ihr Wortlaut wird nicht umformuliert (Fehlerklassen F4/F2d/F3), und
 `check:dispatch-klausel` Ebene (A) vergleicht ihn **byte-gleich** gegen den
 Voll-Block — beide Fences haben damit nur eine Quelle (§5).
 
-Ersparnis ≈ 150 Token je Prüf-/Recherche-Dispatch. Entscheid David 7.8.2026
-(Ent-Regulierung, `bibliothek/betrieb/entregulierung-2026-08-07.md` Punkt 4).
+**Ersparnis, gemessen 7.8.2026** (Zeichen beider Fassungen über
+`pflichtKlausel()`): Voll-Block 1 607 Zeichen / 23 Zeilen, Prüf-Block 920
+Zeichen / 14 Zeilen — **Delta 687 Zeichen / 9 Zeilen ≈ 200 Token** je Prüf-
+oder Recherche-Dispatch, und zwar frischer, ungecachter Input zum Vollpreis
+(Bilanz weiter unten). Der Befund veranschlagte ~150 Token; die Messung liegt
+höher, weil der Voll-Block seit jener Bilanz von 20 auf 23 Zeilen gewachsen ist.
+Entscheid David 7.8.2026 (Ent-Regulierung,
+`bibliothek/betrieb/entregulierung-2026-08-07.md` Punkt 4).
 
 ```text
 §0 PFLICHT-KLAUSEL (PRÜFUNG — read-only)
