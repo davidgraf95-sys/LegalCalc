@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 // ─── `?q=` als geteilte Suchbegriff-Achse der Browse-Seiten (UI-NAV S1) ──────
@@ -47,17 +47,19 @@ export function useSucheAusUrl(
 
   // Zuletzt SELBST geschriebener Wert. Ohne diese Merkung schlüge das eigene
   // (entprellte) Zurückschreiben als «fremde» Adressänderung zurück ins Feld und
-  // überschriebe die inzwischen weitergetippten Zeichen.
-  const selbstGeschrieben = useRef<string | null>(null);
+  // überschriebe die inzwischen weitergetippten Zeichen. Bewusst State und keine
+  // Ref: der Abgleich unten läuft in der RENDER-Phase, und eine Ref darf dort
+  // nicht gelesen werden (react-hooks/refs). Beide Setzer stehen im selben
+  // Effekt und werden gebatcht — der Vergleich sieht nie einen halben Stand.
+  const [selbstGeschrieben, setSelbstGeschrieben] = useState<string | null>(null);
 
   // Fremde Adressänderung übernehmen — Render-Phasen-Abgleich statt Effekt
   // (Repo-Muster «adjust state during render»): kein Zwischenbild mit dem alten
-  // Wert. Kein React-Compiler aktiv → die Ref wird nur gelesen, nie im Render
-  // geschrieben.
+  // Wert.
   const [gesehen, setGesehen] = useState(urlQ);
   if (urlQ !== gesehen) {
     setGesehen(urlQ);
-    if (urlQ !== selbstGeschrieben.current) setWert(urlQ);
+    if (urlQ !== selbstGeschrieben) setWert(urlQ);
   }
 
   useEffect(() => {
@@ -65,7 +67,7 @@ export function useSucheAusUrl(
     const ziel = wert.trim();
     if (ziel === (params.get('q') ?? '')) return;
     const id = setTimeout(() => {
-      selbstGeschrieben.current = ziel;
+      setSelbstGeschrieben(ziel);
       // Funktionale Form: baut auf dem AKTUELLEN Stand der Adresse auf, nicht auf
       // dem beim Tippen eingefangenen `params`. Sonst nähme ein gleichzeitiger
       // Facetten-Klick (eigener Schreibvorgang) den anderen zurück — dieselbe
