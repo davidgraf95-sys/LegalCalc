@@ -213,6 +213,16 @@ function dedupErlasse(treffer: BrowseErlass[]): BrowseErlass[] {
   return out;
 }
 
+/** Ziel des «alle N →»-Sprungs: die Browse-Seite MIT dem Suchbegriff (UI-NAV S1).
+ *  Ohne die Query landete man auf der ungefilterten Übersicht und müsste den
+ *  Begriff neu tippen — der Sprung verspräche «alle N», lieferte aber die ganze
+ *  Rubrik (§8). Die Zielseiten lesen `?q=` über useSucheAusUrl. Leerer Begriff ⇒
+ *  blanker Pfad (kein `?q=`-Rauschen in der Adresse). */
+function mehrZiel(pfad: string, q: string): string {
+  const t = q.trim();
+  return t === '' ? pfad : `${pfad}?q=${encodeURIComponent(t)}`;
+}
+
 export function gesetzGruppe(erlasse: BrowseErlass[] | null, q: string, kappung = KAPPUNG): SuchGruppe {
   if (erlasse === null) return { id: 'gesetz', titel: 'Gesetze', treffer: [], gesamt: 0, laedt: true };
   const getroffen = dedupErlasse(filtern(erlasse, q));
@@ -225,7 +235,7 @@ export function gesetzGruppe(erlasse: BrowseErlass[] | null, q: string, kappung 
   }));
   return {
     id: 'gesetz', titel: 'Gesetze', treffer, gesamt: getroffen.length,
-    mehrHref: getroffen.length > kappung ? '/gesetze' : undefined,
+    mehrHref: getroffen.length > kappung ? mehrZiel('/gesetze', q) : undefined,
   };
 }
 
@@ -241,7 +251,7 @@ export function entscheidGruppe(liste: BrowseEntscheid[] | null, q: string, kapp
   }));
   return {
     id: 'entscheid', titel: 'Rechtsprechung', treffer, gesamt: getroffen.length,
-    mehrHref: getroffen.length > kappung ? '/rechtsprechung' : undefined,
+    mehrHref: getroffen.length > kappung ? mehrZiel('/rechtsprechung', q) : undefined,
   };
 }
 
@@ -257,7 +267,7 @@ function materialGruppe(liste: BrowseMaterial[] | null, q: string, kappung = KAP
   }));
   return {
     id: 'material', titel: 'Materialien', treffer, gesamt: getroffen.length,
-    mehrHref: getroffen.length > kappung ? '/materialien' : undefined,
+    mehrHref: getroffen.length > kappung ? mehrZiel('/materialien', q) : undefined,
   };
 }
 

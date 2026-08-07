@@ -19,6 +19,7 @@ import {
 } from '../components/rechtsprechung/zustand';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
+import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 
 // Übersicht der Rubrik «Rechtsprechung» — kuratierter Einstieg (Sachgebiets-Rail,
 // Leitentscheide-first, Norm-Verzahnung), bessere Übersicht als eine flache
@@ -100,8 +101,13 @@ export function Rechtsprechung() {
   const [richterRegister, setRichterRegister] = useState<RichterRegister | null>(null);
   const [fehler, setFehler] = useState(false);
   const [params, setParams] = useSearchParams();
-  // Nur der Suchbegriff bleibt lokal (S1 baut ihn eigens, entprellt) — alle
-  // übrigen Filter stehen in der URL, s. zustand.ts.
+  // Der Suchbegriff steht seit UI-NAV S1 EBENFALLS in der Adresse (`?q=`), aber
+  // über einen eigenen, ENTPRELLTEN Weg: ein Facetten-Klick ist ein Ereignis, ein
+  // getippter Begriff sind zehn — jede Taste sofort in die URL zu schreiben wäre
+  // ein anderes Problem als der Klick (s. zustand.ts). Darum bleibt `q` aus
+  // URL_ACHSEN/`achsenDiff` heraus und läuft über useSucheAusUrl.
+  const [suchQ, setSuchQ] = useSucheAusUrl({ spiegeln: true });
+  // Der übrige lokale Rest (heute leer — alle anderen Filter liegen in der URL).
   const [rest, setRest] = useState<EntscheidFilterWerte>({});
   const [sort, setSortState] = useState<SortModus>(leseSort);
   const [dichte, setDichte] = useState<Dichte>(leseDichte);
@@ -116,8 +122,11 @@ export function Rechtsprechung() {
   // Immer GEMEINSAM schreiben: zwei getrennte Schreibvorgänge im selben Handler
   // bauen beide auf demselben — im laufenden Render bereits veralteten — `params`
   // auf (Begründung und Fundstelle in zustand.ts/wendeAchsenAn).
+  // Funktionale Form: baut auf dem AKTUELLEN Stand der Adresse auf. Seit S1
+  // schreibt auch die entprellte `?q=`-Spiegelung — ein Facetten-Klick, der auf
+  // dem beim Render eingefangenen `params` aufbaut, nähme sie sonst zurück.
   const setzeUrlAchsen = (achsen: Partial<Record<UrlAchse, string | null>>) => {
-    setParams(wendeAchsenAn(params, achsen), { replace: true });
+    setParams((vorher) => wendeAchsenAn(vorher, achsen), { replace: true });
   };
   const setzeUrl = (schluessel: UrlAchse, wert: string | null) => setzeUrlAchsen({ [schluessel]: wert });
   // Darstellungs-Zustände: State + localStorage im Gleichschritt (drei gleiche
@@ -138,9 +147,11 @@ export function Rechtsprechung() {
     return () => { lebt = false; };
   }, []);
 
-  // URL-Achsen + lokaler Rest (Suchbegriff) zusammenführen.
+  // URL-Achsen + lokaler Rest + Suchbegriff zusammenführen. `q` zuletzt: das
+  // Feld ist die Wahrheit über den Begriff, die Adresse folgt ihm entprellt
+  // (sonst überschriebe der nachhängende URL-Stand die eben getippten Zeichen).
   const werte: EntscheidFilterWerte = useMemo(
-    () => ({ ...rest, ...urlWerte }), [rest, urlWerte]);
+    () => ({ ...rest, ...urlWerte, q: suchQ }), [rest, urlWerte, suchQ]);
 
   // Rail-Zähler über den vollen Bestand minus Sachgebiet (sonst zeigt die nicht
   // gewählte Kachel «0»); restliche Filter (Suche/Norm/…) dürfen die Zähler aber
@@ -175,7 +186,9 @@ export function Rechtsprechung() {
     // vergessen wird (genau so entstand die Asymmetrie aus LM-200/203/206).
     const achsen = achsenDiff(w, params);
     if (Object.keys(achsen).length > 0) setzeUrlAchsen(achsen);
-    setRest(lokaleWerte(w));
+    const { q: neuQ, ...uebrig } = lokaleWerte(w);
+    setSuchQ(neuQ ?? '');
+    setRest(uebrig);
   };
   const waehleSachgebiet = (g: Rechtsgebiet | null) => setzeUrl('rg', g);
   const waehleNorm = (k: string) => setzeUrl('norm', k);

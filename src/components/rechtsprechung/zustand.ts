@@ -26,11 +26,13 @@
 // Schritt her, indem er die Asymmetrie beseitigt, nicht indem er die
 // History-Politik wechselt (ein Push je Filterklick flutet den Rückweg).
 //
-// EINZIGE VERBLEIBENDE LÜCKE: der Suchbegriff `q` bleibt lokal. Er ist als
-// eigener, noch offener Schritt geführt (FAHRPLAN-UI-NAVIGATION §2/S1,
-// debounced `replaceState`) und wird hier bewusst nicht vorweggenommen —
-// jede Tastatureingabe in die URL zu schreiben ist ein anderes Problem als
-// ein Facetten-Klick und braucht die dort geplante Entprellung.
+// SUCHBEGRIFF `q`: seit UI-NAV S1 ebenfalls in der Adresse — aber bewusst NICHT
+// über diese Tabelle. Ein Facetten-Klick ist EIN Ereignis, ein getippter Begriff
+// sind zehn; `q` läuft darum über den entprellten Weg in
+// components/suche/useSucheAusUrl.ts (`spiegeln: true`) und bleibt aus
+// URL_ACHSEN/`achsenDiff` heraus, damit kein Tastendruck synchron schreibt.
+// `lokaleWerte` liefert ihn weiterhin als «Rest» zurück; die Seite reicht ihn an
+// den Spiegel-Hook durch statt ihn in lokalem State zu vergraben.
 //
 // Reine Darstellungsschicht (§3): keine Rechtslogik, kein React — deterministisch
 // (§2) und darum direkt unit-testbar (src/tests/rechtsprechung-zustand.test.ts).

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
+import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { MaterialKarte } from '../components/materialien/MaterialKarte';
 import {
   ladeMaterialManifest, gruppiereNachBehoerde, filtere, vorhandeneDoktypen,
@@ -23,7 +24,9 @@ export function Materialien() {
   const [fehler, setFehler] = useState(false);
   const [behoerde, setBehoerde] = useState<BehoerdeId | ''>('');
   const [doktyp, setDoktyp] = useState<DoktypId | ''>('');
-  const [suche, setSuche] = useState('');
+  // ?q= aus dem «alle N →»-Sprung der Universal-Suche (UI-NAV S1) füllt das
+  // Filterfeld vor — sonst landete man auf der ungefilterten Rubrik (§8).
+  const [suche, setSuche] = useSucheAusUrl();
   const pk = usePaneKlasse();
 
   useEffect(() => {

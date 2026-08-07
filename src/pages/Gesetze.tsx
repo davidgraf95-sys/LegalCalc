@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useLocation, Link } from 'react-router-dom';
+import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { InternationalRubriken } from '../components/normtext/InternationalRubriken';
 import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
@@ -150,10 +151,11 @@ export function Gesetze() {
   const [erlasse, setErlasse] = useState<BrowseErlass[] | null>(null);
   const [systematik, setSystematik] = useState<Record<string, KantonSystematikBaum>>({});
   const [fehler, setFehler] = useState(false);
-  // ?q= (z.B. aus der Startseiten-Rubrik «Gesetze», #6) füllt die Suche vor —
-  // SSR-sicher als Lazy-Init (Prerender hat keine Query → leer).
-  const [suche, setSuche] = useState(() =>
-    typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('q') ?? '');
+  // ?q= (Startseiten-Rubrik «Gesetze» #6, «alle N →» aus der Universal-Suche
+  // UI-NAV S1) füllt die Suche vor. Über useSucheAusUrl statt Lazy-Init: der
+  // Lazy-Init griff nur beim MOUNT — stand man bereits auf /gesetze, kam die
+  // Query des Header-Sprungs nie im Feld an (SPA-Navigation ohne Remount).
+  const [suche, setSuche] = useSucheAusUrl();
   // IA-4 (§11.5, verallgemeinert N6): der Filter-Scope folgt der aktiven Ebene
   // (Säule bzw. gewählter Kanton — auf der BS-Seite erwartet man BS-Treffer,
   // nicht Bund + alle 25 anderen Kantone). Der Chip «auf alle Ebenen erweitern»

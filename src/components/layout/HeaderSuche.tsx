@@ -17,7 +17,11 @@ import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref
 // nicht mehr in einer eigenen ⌘K-Palette — der Hook liefert die Sprung-Gruppe als
 // obersten Treffer, Enter springt. «/» UND ⌘K/Ctrl-K fokussieren das Feld global
 // (die frühere Befehls-Palette ist entfallen); mobil reicht das sichtbare Feld.
-export function HeaderSuche() {
+export function HeaderSuche({ onFokusModus }: {
+  /** S6: meldet dem Top-Streifen, dass das Feld mobil die volle Breite braucht
+   *  (Logo/Werkzeuge weichen so lange). Nur mobil je true. */
+  onFokusModus?: (aktiv: boolean) => void;
+} = {}) {
   const navigate = useNavigate();
   const listboxId = useId();
   const [wert, setWert] = useState('');
@@ -25,6 +29,21 @@ export function HeaderSuche() {
   const [offen, setOffen] = useState(false);
   const feld = useRef<HTMLInputElement>(null);
   const huelle = useRef<HTMLDivElement>(null);
+
+  // S6 — MOBILER SUCH-FOKUSMODUS. Auf 390 px teilt sich das Feld den Streifen mit
+  // Logo, Menü-Schalter und vier Werkzeug-Knöpfen; es blieben ~40 % der Breite,
+  // in denen eine getippte Query («arbeitsvertrag kündigung») nie ganz lesbar
+  // war. Solange die Suche offen ist, weichen die Nachbarn (Topbar) und ein ✕
+  // führt zurück. Die Grenze ist dieselbe sm-Schwelle (640 px) wie im übrigen
+  // Layout und folgt Rotation/Resize (Muster AzRegister).
+  const [istMobil, setIstMobil] = useState(() =>
+    typeof window === 'undefined' ? false : !window.matchMedia('(min-width: 640px)').matches);
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 640px)');
+    const auf = () => setIstMobil(!mq.matches);
+    mq.addEventListener('change', auf);
+    return () => mq.removeEventListener('change', auf);
+  }, []);
 
   // Debounce: Eingabe → Such-Query (~120 ms) — stösst zugleich das Lazy-Laden an.
   useEffect(() => {
@@ -63,6 +82,15 @@ export function HeaderSuche() {
   const feldLeer = wert.trim() === '';
   const zeigtPanel = offen && !feldLeer;
   const zeigtLeer = offen && feldLeer;
+  // Fokusmodus = mobil UND Suche offen. Bewusst an `offen` gekoppelt statt an ein
+  // eigenes onFocus/onBlur: ein Blur feuert auch beim Antippen eines Treffers —
+  // der Streifen würde mitten im Tap neu umbrechen und den Tap verschieben.
+  // `offen` endet dagegen genau dort, wo die Suche endet (✕, Escape, Klick
+  // ausserhalb, Trefferwahl).
+  const breit = istMobil && offen;
+  useEffect(() => { onFokusModus?.(breit); }, [breit, onFokusModus]);
+  // Beim Verlassen der Komponente den Streifen nicht im Fokusmodus zurücklassen.
+  useEffect(() => () => onFokusModus?.(false), [onFokusModus]);
   const aktivId = zeigtPanel && aktivPos >= 0 ? flach[aktivPos].oid : undefined;
 
   // Globale Fokus-Shortcuts: «/» UND ⌘K/Ctrl-K fokussieren das Feld (A5 — die
@@ -165,8 +193,13 @@ export function HeaderSuche() {
         onChange={(e) => { setWert(e.target.value); setOffen(true); setEnterQ(null); }}
         onFocus={() => setOffen(true)}
         onKeyDown={aufTaste}
-        placeholder="Suchen oder Norm springen (z. B. «OR 257d») …"
-        className="lc-input h-11 py-0 text-body-s w-full pr-3 lg:pr-14"
+        // Mobil kurz: der lange Satz war auf 390 px ohnehin abgeschnitten und
+        // verriet gerade das Sprung-Beispiel nicht mehr, auf das es ankommt.
+        placeholder={istMobil ? 'Suche · OR 257d …' : 'Suchen oder Norm springen (z. B. «OR 257d») …'}
+        // text-base (16 px) UNTER sm: alles darunter löst in iOS Safari beim
+        // Fokus einen Seiten-Zoom aus, aus dem der Nutzer von Hand wieder
+        // herausfinden muss (S6). Ab sm bleibt die kompakte Streifen-Grösse.
+        className={`lc-input h-11 py-0 text-base sm:text-body-s w-full lg:pr-14 ${breit ? 'pr-11' : 'pr-3'}`}
         aria-label="LexMetrik durchsuchen oder zur Norm springen"
         aria-keyshortcuts="/ Meta+K Control+K"
         autoComplete="off"
@@ -180,6 +213,19 @@ export function HeaderSuche() {
           nicht interaktiv (pointer-events-none) — die Bedienung ist das Feld
           selbst, mobil reicht es ohne Hinweis (A5). */}
       <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 num text-micro font-medium tracking-tight text-ink-600 lg:inline">⌘K</kbd>
+      {/* S6: Ausstieg aus dem mobilen Fokusmodus — dieselbe Wirkung wie Escape
+          (Panel zu, Feld unfokussiert), aber mit dem Finger erreichbar. Nur im
+          Fokusmodus im DOM, damit er ausserhalb keine Tab-Station belegt. */}
+      {breit && (
+        <button
+          type="button"
+          aria-label="Suche schliessen"
+          onClick={() => { setOffen(false); feld.current?.blur(); }}
+          className="absolute right-1 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-ink-900"
+        >
+          <span aria-hidden className="text-base leading-none">✕</span>
+        </button>
+      )}
       {(zeigtPanel || zeigtLeer) && (
         // Im Header intern scrollbar (David 28.6.): die geöffnete Trefferfläche
         // wächst sonst unbegrenzt aus dem Top-Streifen heraus. max-h + eigener
