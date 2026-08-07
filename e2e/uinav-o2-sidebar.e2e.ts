@@ -11,6 +11,16 @@
 //   3. Davids Auflage bleibt gewahrt: eine bewusst zugeklappte Gruppe bleibt
 //      zu, auch wenn ein Kind aktiv ist (nur die steigende Flanke expandiert).
 // Läuft gegen `vite preview` (dist).
+//
+// TIMING-REGEL dieser Spec (Lehre aus der Gegenprüfung zu W2·10-UI-NAV-O):
+// Die Flanken-Erkennung der Seitenleiste vergleicht den aktuellen mit dem
+// zuletzt COMMITTETEN Standort. Eine Adress-Zusicherung (`toHaveURL`) ist
+// darum kein Beleg dafür, dass die Zwischenseite je gerendert wurde — sie
+// erfüllt sich bereits beim pushState. Wo diese Spec einen Zwischenschritt
+// braucht, riegelt sie ihn mit einem gerenderten Merkmal ab (`aria-current`).
+// Gemessen 7.8.2026 mit einem MutationObserver auf der Seitenleiste: ohne
+// Riegel verzeichnet der Beobachter für die ganze Hin-und-Zurück-Folge KEINE
+// einzige Mutation — React committet die Zwischen-Fassung nie.
 import { test, expect, type Page } from '@playwright/test'
 
 function fehlerSammeln(page: Page): string[] {
@@ -87,14 +97,25 @@ test.describe('O2 · Sidebar-Konsistenz', () => {
 
     // … ein SPA-Wechsel auf eine fremde Seite lässt sie zu (das aktive Kind
     // verschwindet — keine steigende Flanke, keine Bevormundung).
-    await leiste.getByRole('link', { name: 'Methodik', exact: true }).click()
-    await expect(page).toHaveURL(/\/methodik$/)
+    const methodik = leiste.getByRole('link', { name: 'Methodik', exact: true })
+    await methodik.click()
+    // COMMIT-BEWEIS, nicht nur Adress-Beweis (Härtung nach Gegenprüfung B1):
+    // `toHaveURL` erfüllt sich schon beim pushState. Ohne diesen Riegel liegen
+    // Hin- und Rückweg in EINEM React-Batch, die /methodik-Fassung wird nie
+    // committet — der Standort kehrt zum Ausgangswert zurück, ohne dass je
+    // etwas anderes auf dem Schirm stand. `aria-current` sitzt auf der
+    // gerenderten Seitenleiste und beweist damit den vollzogenen Commit.
+    await expect(methodik).toHaveAttribute('aria-current', 'page')
     await expect(chevron).toHaveAttribute('aria-expanded', 'false')
 
     // Zurück-Taste AUF das Werkzeug ist wieder eine steigende Flanke → offen
     // (Back/Forward-Fall, Lehren-Register F7).
+    // Adress-Regex OHNE `$` (Härtung nach Gegenprüfung E1): der Verjährungs-
+    // Rechner spiegelt seinen Eingabe-Zustand per replaceState in die Query
+    // (`?re=…&br=…`). Der wiederhergestellte History-Eintrag trägt sie je nach
+    // Verweildauer mit — der Pfad ist hier das Prüfobjekt, nicht die Query.
     await page.goBack()
-    await expect(page).toHaveURL(/\/rechner\/verjaehrung$/)
+    await expect(page).toHaveURL(/\/rechner\/verjaehrung(\?|$)/)
     await expect(chevron).toHaveAttribute('aria-expanded', 'true')
 
     expect(fehler, fehler.join('\n')).toEqual([])

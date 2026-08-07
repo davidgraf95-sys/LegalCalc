@@ -10,7 +10,7 @@
 //  3. Landet man per Deep-Link auf einem Werkzeug, ist dessen Gruppe in der
 //     Seitenleiste offen (Auto-Expandieren, Mount-Fall). Der Klick-Fall
 //     (Standortwechsel ohne Remount) hängt an einem Effekt und ist darum in
-//     e2e/sidebar-o2-konsistenz.e2e.ts belegt — SSR führt keine Effekte aus.
+//     e2e/uinav-o2-sidebar.e2e.ts belegt — SSR führt keine Effekte aus.
 //
 // SSR-Strings statt jsdom: dieselbe Prüftechnik wie katalog.test.tsx /
 // zuletztVerwendetChips.test.tsx (das Repo hat kein Testing-Library-Setup).
