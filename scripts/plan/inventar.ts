@@ -91,6 +91,9 @@ export const INVENTAR: readonly string[] = [
   'QS-GP-NACHBEFUNDE',
   // §17-Wurzel-Fix 7.8.2026 (W2·10-UI-NAV-V): Quittungs-Werkzeug/Tor sehen committete Risiko-Diffs
   'QS-GP-COMMITDIFF',
+  // Verbesserungs-Runde David 7./8.8.2026: CI-Wartezeit (Shard-Neu-Packung, in-Session gebaut)
+  // + Eigenschafts-Tests für die Engines (vermerkt, Invarianten-Katalog mit Abnahme).
+  'QS-E2E-TEMPO', 'QS-CODE-PROP',
 
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die

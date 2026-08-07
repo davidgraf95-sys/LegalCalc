@@ -1,92 +1,92 @@
 {
-  "_kommentar": "e2e-Shard-Balancing: 8 Gruppen, LPT-gepackt aus CI-GEMESSENEN Spec-Dauern (playwright-report-gruppe-*-Artefakte, Lauf 30852386612 vom 3.8.2026, 63 Specs, Summe 44.2 min; Max-Gruppe damit 5.6 min Testzeit statt 8.5 min der Vor-Packung vom 25.7. — deren Schieflage kam aus 8 seither zugewachsenen Specs, die regelgemäss nur in die jeweils leichteste Gruppe gestopft wurden). leser-spy-w25d.e2e.ts war im Mess-Lauf noch nicht enthalten und traegt den Median der leser-*-Specs (48 s) als Schaetzwert. Aendert NUR, welche Datei auf welchem Runner laeuft — kein Test/Assertion/Timeout/Umfang (§6.3). Union-Waechter: scripts/e2e-shard-gruppen.mjs --pruefen. Neue Spec → in die leichteste Gruppe packen, sonst Waechter rot. Neu packen (wenn Max-Gruppe wieder >~7 min): Dauern aus den playwright-report-gruppe-*-Artefakten eines gruenen Laufs aggregieren, LPT. Nachtrag 4.8.2026: leser-linien-eid3.e2e.ts (#427, nach dem Mess-Lauf entstanden) mit leser-Median-Schaetzwert in die leichteste Gruppe 3 gepackt. Nachtrag 4.8.2026 (URL): leser-adresse-lm202.e2e.ts (W2·10-UI-NAV-URL, nach dem Mess-Lauf entstanden) mit leser-Median-Schaetzwert in die damals leichteste Gruppe 3 gepackt. Nachtrag 4.8.2026 (QS-UI 8b): qsui-hierarchie.e2e.ts in die damals leichteste Gruppe 1 gepackt — lokal gemessen 4.5 s fuer 28 Faelle (kein Schaetzwert noetig: die Spec laedt nur Rechner-Seiten und misst Geometrie, sie klickt sich durch nichts). Nachtrag 4.8.2026 (QS-UI 8b Teil 2): dieselbe Spec um die Rechtsprechungs- und Vorlagen-Invarianten (I6-I10) und einen A9-Drossel-Fall gewachsen — lokal 13.4 s fuer 65 Faelle statt 4.5 s fuer 28. GRUPPE UNVERAENDERT: +9 s liegen weit unter der Streuung der Gruppe (Max-Gruppe 5.6 min Testzeit), ein Umpacken waere Praezision ohne Wirkung. Wenn die naechste LPT-Packung faellig wird (Max-Gruppe >~7 min), traegt diese Spec ihre neue gemessene Dauer.",
-  "gruppen": {
-    "1": [
-      "ag-gruendung-wizard.e2e.ts",
-      "fussnote-absatz-altform.e2e.ts",
-      "gesetze-ia4-scope.e2e.ts",
-      "ics-export-z1.e2e.ts",
-      "leser-gliederung-a33.e2e.ts",
-      "leser-optionen.e2e.ts",
-      "leser-r1-r2.e2e.ts",
-      "qsui-hierarchie.e2e.ts",
-      "rechtsprechung-besetzung-links.e2e.ts"
-    ],
-    "2": [
-      "a31a-fussnote-inline.e2e.ts",
-      "druck-fundstellen-z2.e2e.ts",
-      "entscheid-verweis-praezision.e2e.ts",
-      "gesetze-rechtsgebiet-g6.e2e.ts",
-      "gesetze-ux-9punkte.e2e.ts",
-      "hist-ansicht-w25i.e2e.ts",
-      "leser-kopf-v2.e2e.ts",
-      "leser-ruecksprung-r5-r7.e2e.ts"
-    ],
-    "3": [
-      "gesetze-az-register.e2e.ts",
-      "leser-adresse-lm202.e2e.ts",
-      "leser-breite-a37.e2e.ts",
-      "leser-kontext-e4.e2e.ts",
-      "leser-kopf-a9.e2e.ts",
-      "leser-linien-eid3.e2e.ts",
-      "leser-weiterlesen-r4-r8.e2e.ts",
-      "materialien-m2-seco.e2e.ts",
-      "materialien-m5-verzahnung.e2e.ts"
-    ],
-    "4": [
-      "bezuege-zeitstrahl-b5.e2e.ts",
-      "gesetze-ia5-rechtsgebiet-kanon.e2e.ts",
-      "gesetze-marginalie.e2e.ts",
-      "gesetze-pdf-download.e2e.ts",
-      "gesetze-ux-g3b-anhang.e2e.ts",
-      "leser-history-hash.e2e.ts",
-      "leser-spy-w25d.e2e.ts",
-      "verlauf-o1.e2e.ts",
-      "zustaendigkeit-fluss.e2e.ts"
-    ],
-    "5": [
-      "bezuege-facetten-b4.e2e.ts",
-      "bild-block-items.e2e.ts",
-      "gesetze-ia-v2-walks.e2e.ts",
-      "gesetze-kanton-g5.e2e.ts",
-      "gesetze.e2e.ts",
-      "international-kanonik-ia6.e2e.ts",
-      "leser-linien-kanon.e2e.ts",
-      "leser-suche-a35-a40-a41.e2e.ts",
-      "materialien-m3-edoeb.e2e.ts"
-    ],
-    "6": [
-      "a11y.e2e.ts",
-      "fn5-wortposition.e2e.ts",
-      "fremdgesetz-verweis-aig.e2e.ts",
-      "gesetze-footer-cls.e2e.ts",
-      "leser-position-u.e2e.ts",
-      "materialien-m4-estv-ks.e2e.ts",
-      "rechtsprechung.e2e.ts",
-      "smoke.e2e.ts",
-      "split-view-a34.e2e.ts"
-    ],
-    "7": [
-      "gesetze-ia7-sidebar-badges.e2e.ts",
-      "gesetze-randtitel-6b.e2e.ts",
-      "gesetze-uebersicht-u.e2e.ts",
-      "leser-lesemass.e2e.ts",
-      "normrevision-badge.e2e.ts",
-      "plz-wahl.e2e.ts",
-      "rechtsprechung-richter.e2e.ts",
-      "tastatur.e2e.ts",
-      "verweis-u.e2e.ts"
-    ],
-    "8": [
-      "gesetze-historie-badge.e2e.ts",
-      "gesetze-ux-g3a.e2e.ts",
-      "leitfaelle-chips.e2e.ts",
-      "leser-kopf-g2b.e2e.ts",
-      "materialien-m1-estv-mwst.e2e.ts",
-      "norm-sprung.e2e.ts",
-      "schnellrechner-kalender.e2e.ts",
-      "suche-seite.e2e.ts",
-      "verzahnung.e2e.ts"
-    ]
-  }
+ "_kommentar": "e2e-Shard-Balancing: 8 Gruppen, LPT-gepackt aus CI-GEMESSENEN Spec-Dauern (playwright-report-gruppe-*-Artefakte, Lauf 31220026058 vom 7.8.2026, 71 Specs, Summe 38.4 min; Neu-Packung 8.8.2026 ausgelöst durch die dokumentierte Schwelle Max-Gruppe >~7 min: die Gruppe 1 der Vor-Packung vom 3.8. lief real 9–16 min, weil leser-r1-r2.e2e.ts auf 687 s angewachsen ist — davon ~230 s SYSTEMATISCHE Erstversuch-Fehlschläge aller 7 R1-Suche-Fälle ([data-treffer-leiste] >20 s, Retry grün; Befund vermerkt bei QS-E2E-STABIL, Wurzel-Fläche W2·10-UI-NAV). Max-Gruppe jetzt 11.5 min = leser-r1-r2 ALLEIN (unteilbar auf Datei-Ebene), übrige sieben Gruppen je ~3.8–3.9 min. Sinkt leser-r1-r2 nach dem Flake-Fix auf ~7.6 min grün, bleibt die Packung gültig — nur seine Solo-Gruppe wird leichter. Ändert NUR, welche Datei auf welchem Runner läuft — kein Test/Assertion/Timeout/Umfang (§6.3). Union-Wächter: scripts/e2e-shard-gruppen.mjs --pruefen. Neue Spec → in die leichteste Gruppe packen, sonst Wächter rot. Neu packen (wenn Max-Gruppe wieder >~7 min ohne Solo-Ausreisser-Grund): Dauern aus den playwright-report-gruppe-*-Artefakten eines grünen Laufs aggregieren, LPT.",
+ "gruppen": {
+  "1": [
+   "leser-r1-r2.e2e.ts"
+  ],
+  "2": [
+   "a11y.e2e.ts",
+   "gesetze-ia4-scope.e2e.ts",
+   "gesetze-ia5-rechtsgebiet-kanon.e2e.ts",
+   "hist-ansicht-w25i.e2e.ts",
+   "ics-export-z1.e2e.ts",
+   "leser-gliederung-a33.e2e.ts",
+   "leser-position-u.e2e.ts",
+   "materialien-m3-edoeb.e2e.ts"
+  ],
+  "3": [
+   "a31a-fussnote-inline.e2e.ts",
+   "fn5-wortposition.e2e.ts",
+   "gesetze-historie-badge.e2e.ts",
+   "gesetze-pdf-download.e2e.ts",
+   "leser-kopf-a9.e2e.ts",
+   "leser-suche-a35-a40-a41.e2e.ts",
+   "materialien-m4-estv-ks.e2e.ts",
+   "tastatur.e2e.ts"
+  ],
+  "4": [
+   "bild-block-items.e2e.ts",
+   "druck-fundstellen-z2.e2e.ts",
+   "gesetze-randtitel-6b.e2e.ts",
+   "gesetze-rechtsgebiet-g6.e2e.ts",
+   "gesetze-uebersicht-u.e2e.ts",
+   "gesetze-ux-g3b-anhang.e2e.ts",
+   "leser-breite-a37.e2e.ts",
+   "materialien-m1-estv-mwst.e2e.ts",
+   "norm-sprung.e2e.ts",
+   "verzahnung.e2e.ts"
+  ],
+  "5": [
+   "bezuege-facetten-b4.e2e.ts",
+   "gesetze-ia-v2-walks.e2e.ts",
+   "gesetze-ia7-sidebar-badges.e2e.ts",
+   "gesetze-marginalie.e2e.ts",
+   "gesetze.e2e.ts",
+   "leser-adresse-lm202.e2e.ts",
+   "leser-kopf-g2b.e2e.ts",
+   "leser-kopf-v2.e2e.ts",
+   "leser-linien-kanon.e2e.ts",
+   "plz-wahl.e2e.ts",
+   "verlauf-o1.e2e.ts"
+  ],
+  "6": [
+   "fremdgesetz-verweis-aig.e2e.ts",
+   "gesetze-footer-cls.e2e.ts",
+   "gesetze-ux-9punkte.e2e.ts",
+   "international-kanonik-ia6.e2e.ts",
+   "leitfaelle-chips.e2e.ts",
+   "leser-ruecksprung-r5-r7.e2e.ts",
+   "normrevision-badge.e2e.ts",
+   "rechtsprechung-richter.e2e.ts",
+   "rechtsprechung.e2e.ts",
+   "smoke.e2e.ts",
+   "zustaendigkeit-fluss.e2e.ts"
+  ],
+  "7": [
+   "entscheid-verweis-praezision.e2e.ts",
+   "leser-kontext-e4.e2e.ts",
+   "leser-lesemass.e2e.ts",
+   "leser-linien-eid3.e2e.ts",
+   "leser-optionen.e2e.ts",
+   "leser-weiterlesen-r4-r8.e2e.ts",
+   "materialien-m2-seco.e2e.ts",
+   "qsui-hierarchie.e2e.ts",
+   "rechtsprechung-besetzung-links.e2e.ts",
+   "schnellrechner-kalender.e2e.ts",
+   "suche-seite.e2e.ts"
+  ],
+  "8": [
+   "ag-gruendung-wizard.e2e.ts",
+   "bezuege-zeitstrahl-b5.e2e.ts",
+   "fussnote-absatz-altform.e2e.ts",
+   "gesetze-az-register.e2e.ts",
+   "gesetze-kanton-g5.e2e.ts",
+   "gesetze-ux-g3a.e2e.ts",
+   "leser-history-hash.e2e.ts",
+   "leser-spy-w25d.e2e.ts",
+   "materialien-m5-verzahnung.e2e.ts",
+   "split-view-a34.e2e.ts",
+   "verweis-u.e2e.ts"
+  ]
+ }
 }
