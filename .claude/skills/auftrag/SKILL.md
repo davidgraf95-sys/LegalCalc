@@ -184,9 +184,19 @@ stecken in der Definition; `npm run dispatch:agents` regeneriert, das Tor
 `check:dispatch-klausel` beweist Byte-Gleichheit. Freitext-Dispatch
 (`npm run dispatch -- <klasse>`) bleibt der Fallback.
 
-**Rollenteilung (Anweisung David 4.8.2026):** Die Hauptsession **orchestriert
-nur** — sie zerlegt, dispatcht, prüft Rückgaben gegen prüfbare Artefakte,
-landet und pflegt den Plan. Bau- und Prüfarbeit gehen an Unteragenten.
+**Rollenteilung (Anweisung David 4.8.2026, kalibriert durch Entscheid David
+7.8.2026 — Wortlaut freigegeben):** Der Orchestrator delegiert Bau- und
+Prüfarbeit — macht aber **selbst**: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
+kleine verifizierte Fixes unter ~30 Minuten ohne tiefen Code-Kontext, und
+Flächen, die Agenten korrekt verweigern (Konfig/CLAUDE.md, mit Davids
+Freigabe). **Massstab:** Übersteigt der Übergabe-Aufwand (Auftrag schreiben +
+Bericht lesen) die Arbeit selbst, ist Delegation Pseudo-Disziplin.
+**Unverändert delegationspflichtig:** Gegenprüfung (Unabhängigkeit des
+Zweitblicks), Risiko-Pfad-Bau, alles Parallelisierbare oder Kontext-Schwere
+(viel Datei-Lektüre gehört in den Agenten-Kontext, nicht in den eigenen).
+*(Anlass der Kalibrierung: QS-SELBSTOPT-Session 7.8.2026 — kleine Fixes
+kosteten als Dispatch mehr als die Sache; Agenten mussten Konfig-Flächen
+dreifach ablehnen, die der Orchestrator mit Freigabe selbst ändern darf.)*
 
 **Zwei Orchestrator-Fallen (belegt 5.8.2026):** (a) Nachrichten an Agenten:
 Empfänger-ID vor dem Senden verifizieren, nie Probe-/Testnachrichten — jede
