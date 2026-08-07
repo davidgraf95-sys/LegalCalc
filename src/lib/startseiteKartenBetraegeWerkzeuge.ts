@@ -20,7 +20,7 @@ export const KARTEN_BETRAEGE_WERKZEUGE: Record<string, CalculatorCard> = {
     ],
     href: '/rechner/verzugszins',
     keywords: ['Rechnung', 'Verzug', 'Zins', 'Mahnung', 'offene Forderung', '5 Prozent'],
-    related: ['schkg-fristen', 'darlehensvertrag'],
+    related: ['schkg-fristen', 'darlehensvertrag', 'mahnung'],
     icon: 'percent',
   },
   // Forderungs-/Inkasso-Strecke (Verzahnungs-Klinge, ROADMAP W2·7): stateless
@@ -89,7 +89,7 @@ export const KARTEN_BETRAEGE_WERKZEUGE: Record<string, CalculatorCard> = {
       { label: 'Art. 114 ZPO', url: fedlexUrl('ZPO', '114'), verified: false },
     ],
     href: '/rechner/prozesskosten',
-    related: ['streitwert', 'zustaendigkeit', 'betreibungskosten', 'bgg-fristen'],
+    related: ['streitwert', 'zustaendigkeit', 'betreibungskosten', 'bgg-fristen', 'klage-vereinfacht', 'klage-ordentlich'],
     keywords: ['Prozesskosten', 'Gerichtskosten', 'Gerichtsgebühr', 'Parteientschädigung', 'Anwaltskosten', 'Was kostet ein Prozess', 'Kostenrisiko', 'Entscheidgebühr', 'Honorar', 'kantonaler Tarif', 'Streitwert'],
     icon: 'percent',
   },
@@ -122,7 +122,7 @@ export const KARTEN_BETRAEGE_WERKZEUGE: Record<string, CalculatorCard> = {
       { label: 'Art. 94 ZPO', url: fedlexUrl('ZPO', '94'), verified: false },
     ],
     href: '/rechner/streitwert',
-    related: ['zustaendigkeit', 'zpo-fristen', 'kostenvorschuss'],
+    related: ['zustaendigkeit', 'zpo-fristen', 'kostenvorschuss', 'klage-vereinfacht', 'klage-ordentlich', 'prozesskosten'],
     keywords: ['Streitwert', 'Rechtsbegehren', 'Kapitalisierung', 'Widerklage', 'Teilklage', 'Klagenhäufung', 'wiederkehrende Leistung', 'Art. 92', 'Verbandsklage'],
   },
   'arbeit-entschaedigung': {
