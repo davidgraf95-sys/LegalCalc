@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { ALLE_KARTEN } from '../lib/startseiteConfig';
-import { passendeRechner, karteIdFuerPfad } from '../components/vorlagen/PassendeRechner';
+import { passendeRechner, karteIdFuerPfad } from '../components/vorlagen/passendeRechnerDaten';
 
 // ─── W2·10-UI-NAV · V6 · Vorlage↔Rechner-Kreuzlinks (symmetrisch) ───────────
 //

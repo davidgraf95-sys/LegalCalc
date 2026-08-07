@@ -9,6 +9,7 @@ import { artikelSachtitel } from '../../lib/normtext/darstellung';
 import { naechsterFokus } from '../../lib/normtext/fokus';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { NormPopover } from '../NormPopover';
+import { readerHrefFuerRef } from './chipZiel';
 import { HOVER_OEFFNEN_MS, HOVER_SCHLIESSEN_MS, istHoverZeiger } from '../hoverVorschau';
 
 // Geteilter Fedlex-Norm-Chip (Code-Review #6, 7.6.2026: Kopien dieses
@@ -48,18 +49,6 @@ import { HOVER_OEFFNEN_MS, HOVER_SCHLIESSEN_MS, istHoverZeiger } from '../hoverV
 // keine Zyklus-Beteiligung) und werden von hier importiert.
 const CHIP_LINK_CLASS = 'lc-chip no-underline hover:text-brass-700 hover:border-brass-400';
 
-/**
- * V4 (W2·10-UI-NAV): interner Reader-Pfad zu einem Bund-Snapshot-Bezug.
- *
- * Spiegelt die Ableitung im NormPopover-Fuss («Im Gesetz öffnen ›»): Bund-
- * Snapshots liegen unter `/gesetze/bund/<quelle>`, der Artikel-Anker ist der
- * Snapshot-Token ohne `art_`-Präfix. Reine Adressierung (§3) — kein Normtext,
- * keine Regel; exportiert, damit der Pfad ohne DOM prüfbar ist.
- */
-export function readerHrefFuerRef(ref: { quelle: string; token: string }): string {
-  return `/gesetze/bund/${encodeURIComponent(ref.quelle)}#art-${ref.token.replace(/^art_/, '')}`;
-}
-
 export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CHIP_LINK_CLASS }: {
   /** Norm-Text für die Snapshot-Auflösung (bundSnapshotRef) + Fallback-URL. */
   artikel: string;
@@ -94,7 +83,10 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   // Beides in refs: kein React-Compiler im Projekt, also nie auf Memoisierung
   // verlassen; refs überleben jedes Re-Render (Projekt-Lektion 'React-Compiler aus').
   const uhr = useRef<number | undefined>(undefined);
-  const perHover = useRef(false);
+  // «kam per Hover» wird IM Render gelesen (autoFokus/modal) — also State, nicht
+  // ref: ein ref-Wert löst kein Re-Render aus und wäre beim ersten Paint der
+  // Karte noch der alte (Lint-Regel react-hooks/refs, Fund im Tor 7.8.2026).
+  const [perHover, setPerHover] = useState(false);
   const stoppUhr = () => {
     if (uhr.current !== undefined) { window.clearTimeout(uhr.current); uhr.current = undefined; }
   };
@@ -128,7 +120,7 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   const oeffne = (perZeiger: boolean) => {
     if (!ref) return;
     stoppUhr();
-    perHover.current = perZeiger;
+    setPerHover(perZeiger);
     setSnapshot('laedt');
     setSachtitel(undefined);
     setOffen(true);
@@ -164,7 +156,7 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
     stoppUhr();
     // Vor dem Öffnen: nur die Uhr stoppen. Nach dem Öffnen: nur schliessen, wenn
     // die Karte per Hover kam — eine angeklickte Karte bleibt stehen.
-    if (offen && perHover.current) uhr.current = window.setTimeout(() => setOffen(false), HOVER_SCHLIESSEN_MS);
+    if (offen && perHover) uhr.current = window.setTimeout(() => setOffen(false), HOVER_SCHLIESSEN_MS);
   };
   const beiZeigerRueck = (e: React.PointerEvent<HTMLElement>) => {
     if (!istHoverZeiger(e.pointerType)) return;
@@ -176,8 +168,8 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
     setOffen(false);
     // Fokus nur zurückgeben, wenn er auch genommen wurde (Klick-Weg). Beim
     // Hover-Weg stand er nie im Dialog — ein focus() risse ihn dem Nutzer weg.
-    if (!perHover.current) triggerRef.current?.focus();
-    perHover.current = false;
+    if (!perHover) triggerRef.current?.focus();
+    setPerHover(false);
   };
 
   return (
@@ -196,11 +188,11 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
       </a>
       {offen && (
         <NormPopoverOverlay onClose={schliessen} triggerRef={triggerRef}
-          modal={!perHover.current}
+          modal={!perHover}
           onZeigerRein={beiZeigerRueck} onZeigerRaus={beiZeigerRaus}>
           {snapshot && snapshot !== 'laedt'
-            ? <NormPopover snapshot={snapshot} passus={{ absatz: ref?.absatz ?? null, lit: ref?.lit, ziff: ref?.ziff }} sachtitel={sachtitel} autoFokus={!perHover.current} onClose={schliessen} />
-            : <NormPopoverHuelle zustand={snapshot === 'laedt' ? 'laedt' : 'fehlt'} url={url} artikel={artikel} autoFokus={!perHover.current} onClose={schliessen} />}
+            ? <NormPopover snapshot={snapshot} passus={{ absatz: ref?.absatz ?? null, lit: ref?.lit, ziff: ref?.ziff }} sachtitel={sachtitel} autoFokus={!perHover} onClose={schliessen} />
+            : <NormPopoverHuelle zustand={snapshot === 'laedt' ? 'laedt' : 'fehlt'} url={url} artikel={artikel} autoFokus={!perHover} onClose={schliessen} />}
         </NormPopoverOverlay>
       )}
     </>

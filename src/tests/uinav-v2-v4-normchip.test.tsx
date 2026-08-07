@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import { NormChip, readerHrefFuerRef } from '../components/vorlagen/NormChip';
+import { NormChip } from '../components/vorlagen/NormChip';
+import { readerHrefFuerRef } from '../components/vorlagen/chipZiel';
 import { LocaleProvider } from '../components/locale';
 import { HOVER_OEFFNEN_MS, HOVER_SCHLIESSEN_MS, istHoverZeiger } from '../components/hoverVorschau';
 import { bundSnapshotRef } from '../lib/normtext/bundRef';
