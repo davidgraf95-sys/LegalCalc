@@ -26,7 +26,7 @@ function formatiereDatum(iso: string): string {
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
 }
 
-export function NormPopover({ snapshot, passus, sachtitel, onClose }: {
+export function NormPopover({ snapshot, passus, sachtitel, autoFokus = true, onClose }: {
   snapshot: NormSnapshot;
   passus: { absatz: string | null; lit?: string; ziff?: string };
   /** M11 (W2·5b): amtliche Artikel-Sachüberschrift (Randtitel-Blatt aus dem
@@ -34,6 +34,12 @@ export function NormPopover({ snapshot, passus, sachtitel, onClose }: {
    *  «Art. N ERLASS – <Sachtitel>». Fehlt sie (kein Randtitel / Altdaten), bleibt
    *  der Kopf byte-gleich zum bisherigen «Art. N ERLASS». */
   sachtitel?: string;
+  /** V2 (W2·10-UI-NAV): false = Fokus NICHT auf den Schliess-Knopf ziehen.
+   *  Gesetzt nur vom Hover-Weg: eine Karte, die der Zeiger nur streift, darf
+   *  dem Nutzer nicht die Tastatur wegnehmen (WCAG 1.4.13 / 2.4.3 — Fokus folgt
+   *  einer Absicht, nicht einer Zeiger-Bewegung). Default true ⇒ Klick-Weg und
+   *  alle Bestands-Aufrufer verhalten sich unverändert. */
+  autoFokus?: boolean;
   onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -50,11 +56,11 @@ export function NormPopover({ snapshot, passus, sachtitel, onClose }: {
   // im Browser — useEffect läuft im SSR/Prerender nicht, window-Zugriff bleibt
   // also gekapselt.
   useEffect(() => {
-    schliessRef.current?.focus();
+    if (autoFokus) schliessRef.current?.focus();
     const onKey = (e: KeyboardEvent) => { if (istSchliessTaste(e)) onClose(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [onClose]);
+  }, [onClose, autoFokus]);
 
   // Markierte Stelle ins Sichtfeld scrollen (block:'center', sofort/auto).
   // Läuft unabhängig vom Fokus-Effekt; scrollIntoView ohne focus() — Fokus
