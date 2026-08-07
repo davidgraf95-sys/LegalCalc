@@ -26,7 +26,7 @@ function formatiereDatum(iso: string): string {
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
 }
 
-export function NormPopover({ snapshot, passus, sachtitel, autoFokus = true, onClose }: {
+export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onClose }: {
   snapshot: NormSnapshot;
   passus: { absatz: string | null; lit?: string; ziff?: string };
   /** M11 (W2·5b): amtliche Artikel-Sachüberschrift (Randtitel-Blatt aus dem
@@ -34,12 +34,20 @@ export function NormPopover({ snapshot, passus, sachtitel, autoFokus = true, onC
    *  «Art. N ERLASS – <Sachtitel>». Fehlt sie (kein Randtitel / Altdaten), bleibt
    *  der Kopf byte-gleich zum bisherigen «Art. N ERLASS». */
   sachtitel?: string;
-  /** V2 (W2·10-UI-NAV): false = Fokus NICHT auf den Schliess-Knopf ziehen.
-   *  Gesetzt nur vom Hover-Weg: eine Karte, die der Zeiger nur streift, darf
-   *  dem Nutzer nicht die Tastatur wegnehmen (WCAG 1.4.13 / 2.4.3 — Fokus folgt
-   *  einer Absicht, nicht einer Zeiger-Bewegung). Default true ⇒ Klick-Weg und
-   *  alle Bestands-Aufrufer verhalten sich unverändert. */
-  autoFokus?: boolean;
+  /** V2 (W2·10-UI-NAV): Ist das ein angeklickter DIALOG oder eine
+   *  Hover-VORSCHAU? Die Frage entscheidet dreierlei gemeinsam, darum EIN Prop:
+   *   (a) Fokus-Griff — eine Karte, die der Zeiger nur streift, darf dem Nutzer
+   *       nicht die Tastatur wegnehmen (WCAG 2.4.3);
+   *   (b) `role` — B2 der Gegenprüfung 7.8.2026: `role="dialog"` +
+   *       `aria-modal="true"` VERSPRICHT assistiver Technik Fokus-Fang und einen
+   *       inerten Hintergrund. Die Hover-Fläche löst beides bewusst nicht ein
+   *       (sie geht auf Hover auf, lässt sich weghovern, der Text dahinter
+   *       bleibt bedienbar) — das Versprechen wäre also falsch. Sie ist eine
+   *       benannte Gruppe. Exakt dieselbe Korrektur wurde am 4.8.2026 am
+   *       RegestePopover vorgenommen (dortiger Kommentar §9-Bug-Check B2);
+   *   (c) `aria-modal` entfällt entsprechend.
+   *  Default true ⇒ Klick-Weg und alle Bestands-Aufrufer unverändert. */
+  alsDialog?: boolean;
   onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -56,11 +64,11 @@ export function NormPopover({ snapshot, passus, sachtitel, autoFokus = true, onC
   // im Browser — useEffect läuft im SSR/Prerender nicht, window-Zugriff bleibt
   // also gekapselt.
   useEffect(() => {
-    if (autoFokus) schliessRef.current?.focus();
+    if (alsDialog) schliessRef.current?.focus();
     const onKey = (e: KeyboardEvent) => { if (istSchliessTaste(e)) onClose(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [onClose, autoFokus]);
+  }, [onClose, alsDialog]);
 
   // Markierte Stelle ins Sichtfeld scrollen (block:'center', sofort/auto).
   // Läuft unabhängig vom Fokus-Effekt; scrollIntoView ohne focus() — Fokus
@@ -102,10 +110,12 @@ export function NormPopover({ snapshot, passus, sachtitel, autoFokus = true, onC
   return (
     <div
       ref={dialogRef}
-      role="dialog"
-      aria-modal="true"
-      aria-label={titel}
-      tabIndex={-1}
+      // Tor-Griff für die e2e (Hausform wie data-formgate/data-regeste-popover):
+      // EIN stabiler Selektor für beide Ausprägungen (Dialog wie Vorschau).
+      data-norm-vorschau
+      role={alsDialog ? 'dialog' : 'group'}
+      {...(alsDialog ? { 'aria-modal': true as const, tabIndex: -1 } : {})}
+      aria-label={alsDialog ? titel : `Norm-Vorschau ${titel}`}
       className="lc-card w-full max-w-xl max-h-[80vh] overflow-y-auto p-0 text-left"
     >
       {/* Kopf */}

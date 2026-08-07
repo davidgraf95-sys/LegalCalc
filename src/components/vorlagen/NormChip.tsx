@@ -54,8 +54,18 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   artikel: string;
   /** Anzeigetext im Chip (Default: artikel). */
   anzeige?: React.ReactNode;
-  /** Bereits aufgelöste/lokalisierte Fallback-URL; wenn gesetzt, exakt diese
-   *  nutzen (z. B. wenn die Strecke n.url aus den Schema-Daten kennt). */
+  /** Bereits aufgelöste/lokalisierte **Fedlex-Fallback-URL**; wenn gesetzt,
+   *  exakt diese nutzen (z. B. wenn die Strecke n.url aus den Schema-Daten
+   *  kennt).
+   *
+   *  VORRANG (B5 der Gegenprüfung 7.8.2026 — bis dahin unausgesprochen): Der
+   *  Wert überschreibt NUR die abgeleitete Fedlex-URL, NICHT das Chip-Ziel.
+   *  Existiert ein Bund-Snapshot und ist `zielIntern` gesetzt, gewinnt der
+   *  interne Reader-Pfad — genau das ist V4, und ein Aufrufer, der eine
+   *  lokalisierte Fedlex-URL mitgibt, will damit die Sprachfassung des
+   *  AMTLICHEN Zweitlinks bestimmen, nicht den Chip nach draussen zwingen.
+   *  Wer wirklich nach Fedlex zeigen muss, setzt `zielIntern={false}`.
+   *  Der übergebene Wert bleibt in beiden Fällen der Zweitlink der Hülle. */
   hrefOverride?: string;
   /** title-Attribut — NUR rendern, wenn gesetzt (SSR-Byte-Gleichheit der
    *  title-losen Einbaustellen). */
@@ -205,8 +215,8 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
           modal={!perHover}
           onZeigerRein={beiZeigerRueck} onZeigerRaus={beiZeigerRaus}>
           {snapshot && snapshot !== 'laedt'
-            ? <NormPopover snapshot={snapshot} passus={{ absatz: ref?.absatz ?? null, lit: ref?.lit, ziff: ref?.ziff }} sachtitel={sachtitel} autoFokus={!perHover} onClose={schliessen} />
-            : <NormPopoverHuelle zustand={snapshot === 'laedt' ? 'laedt' : 'fehlt'} url={url} artikel={artikel} autoFokus={!perHover} onClose={schliessen} />}
+            ? <NormPopover snapshot={snapshot} passus={{ absatz: ref?.absatz ?? null, lit: ref?.lit, ziff: ref?.ziff }} sachtitel={sachtitel} alsDialog={!perHover} onClose={schliessen} />
+            : <NormPopoverHuelle zustand={snapshot === 'laedt' ? 'laedt' : 'fehlt'} url={url} artikel={artikel} alsDialog={!perHover} onClose={schliessen} />}
         </NormPopoverOverlay>
       )}
     </>
@@ -268,7 +278,7 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
 }) {
   const dialogContainerRef = useRef<HTMLDivElement>(null);
   // Verankerte Position (am Trigger). null = noch nicht berechnet/kein Trigger.
-  const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
+  const [pos, setPos] = useState<{ top: number; left: number; maxH?: number } | null>(null);
 
   // Position aus dem Trigger-Rect ableiten: bevorzugt UNTER dem Trigger, sonst
   // darüber; horizontal an den Viewport geklemmt. useLayoutEffect misst die
@@ -296,6 +306,27 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
       const vh = window.innerHeight;
       const m = 8; // Sicherheitsabstand zum Rand
       const left = Math.min(Math.max(m, t.left), Math.max(m, vw - kw - m));
+      if (!modal) {
+        // HOVER-WEG: die Karte darf ihren eigenen Trigger NIEMALS überdecken.
+        // Sonst ist der Chip nicht mehr anklickbar (Rest-Symptom von Blocker B1,
+        // gemessen am 7.8.2026: die Karte kippte auf kurzen Viewports nach oben
+        // und legte sich über den Chip — «Klick öffnet den Dialog» schlug fehl,
+        // weil der Klick in der Karte landete). Der Klick-Weg behält seine
+        // Platzierung unverändert (unten), er DARF überlappen: dort ist der
+        // Trigger ohnehin gesperrt und der Backdrop fängt den Klick.
+        // Regel: die grössere der beiden Lücken gewinnt, und die Karte wird auf
+        // genau diese Lücke gedeckelt (sie scrollt dann in sich, statt zu
+        // wandern). Kein Magic-Number-Zuwachs — `m`/6 sind die bestehenden Masse.
+        const platzUnten = vh - t.bottom - 6 - m;
+        const platzOben = t.top - 6 - m;
+        if (platzUnten >= platzOben) {
+          setPos({ top: t.bottom + 6, left, maxH: Math.max(0, platzUnten) });
+        } else {
+          const hoehe = Math.min(kh, Math.max(0, platzOben));
+          setPos({ top: t.top - 6 - hoehe, left, maxH: Math.max(0, platzOben) });
+        }
+        return;
+      }
       let top = t.bottom + 6;
       if (top + kh + m > vh) {
         const oben = t.top - kh - 6;
@@ -318,7 +349,7 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
       window.removeEventListener('scroll', beiScroll, true);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, [triggerRef, children]);
+  }, [triggerRef, children, modal]);
 
   // Fokus-Falle: hält Tab/Shift+Tab innerhalb des Dialogs (zyklisch). Die reine
   // Index-Berechnung liegt in naechsterFokus (testbar); hier nur DOM-Zugriff.
@@ -356,6 +387,50 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
 
   if (typeof document === 'undefined') return null; // SSR/Prerender: kein Overlay
   const verankert = triggerRef != null;
+
+  // Die Karte selbst — in beiden Wegen dieselbe, verankert per fixen Koordinaten.
+  const karte = (
+    <div
+      ref={dialogContainerRef}
+      onClick={(e) => e.stopPropagation()}
+      onPointerEnter={onZeigerRein}
+      onPointerLeave={onZeigerRaus}
+      style={verankert
+        // Breite als EIN Inline-Wert (36rem = max-w-xl), damit offsetWidth die
+        // echte Kartenbreite misst — s. Befund oben (sonst Klemmung auf left=8).
+        // z-index nur auf dem Hover-Weg: dort trägt die Karte ihn selbst, weil
+        // sie ohne den Backdrop-Rahmen im Portal steht (Blocker B1 unten).
+        ? {
+          position: 'fixed', top: pos?.top ?? 0, left: pos?.left ?? 0,
+          width: 'min(36rem, calc(100vw - 16px))',
+          visibility: pos ? 'visible' : 'hidden',
+          // Hover-Weg: eigener z-index (kein Backdrop-Rahmen mehr) + Deckel auf
+          // die verfügbare Lücke; der Inhalt scrollt darin, statt den Trigger
+          // zu überdecken.
+          ...(modal ? {} : { zIndex: 50, maxHeight: pos?.maxH, overflowY: 'auto' as const }),
+        }
+        : undefined}
+      className="w-full max-w-xl"
+    >
+      {children}
+    </div>
+  );
+
+  // ── BLOCKER B1 (Gegenprüfung 7.8.2026): KEIN Klick-Fänger auf dem Hover-Weg ─
+  // Der verankerte Backdrop (`fixed inset-0 z-50` + `onClick={onClose}`) ist auf
+  // dem KLICK-Weg richtig: er schliesst den Dialog beim Danebenklicken. Auf dem
+  // HOVER-Weg war er der Defekt — er legte sich über die ganze Seite, also auch
+  // über den Chip. Zwei belegte Folgen: (1) der Chip verlor den Zeiger
+  // (`pointerleave`) und die Karte schoss sich nach 180 ms selbst ab, um sofort
+  // wieder aufzugehen — Flackern; (2) JEDER Klick traf den Backdrop, ein Klick
+  // auf den Chip öffnete das Popover also nicht mehr (Spec «Klick-Verhalten
+  // unverändert» verletzt). Der Hover-Weg rendert die Karte darum NACKT ins
+  // Portal — genau die Bauart des V3-`RegestePopover`. Geschlossen wird dort
+  // ausschliesslich über Chip-/Karten-Verlassen (der Aufrufer, s. `onZeigerRaus`).
+  // Tor: `e2e/uinav-v2-v4-normchip.e2e.ts` (g) misst die Ursache — kein
+  // viewport-füllendes, klick-empfangendes Fixed-Element, solange die Karte steht.
+  if (!modal) return createPortal(karte, document.body);
+
   return createPortal(
     <div
       // Verankert: transparenter Klick-Fänger (kein Dim, Popover-Charakter).
@@ -364,20 +439,7 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
       onClick={onClose}
     >
       {/* Klicks im Dialog dürfen nicht zum Backdrop durchschlagen. */}
-      <div
-        ref={dialogContainerRef}
-        onClick={(e) => e.stopPropagation()}
-        onPointerEnter={onZeigerRein}
-        onPointerLeave={onZeigerRaus}
-        style={verankert
-          // Breite als EIN Inline-Wert (36rem = max-w-xl), damit offsetWidth die
-          // echte Kartenbreite misst — s. Befund oben (sonst Klemmung auf left=8).
-          ? { position: 'fixed', top: pos?.top ?? 0, left: pos?.left ?? 0, width: 'min(36rem, calc(100vw - 16px))', visibility: pos ? 'visible' : 'hidden' }
-          : undefined}
-        className="w-full max-w-xl"
-      >
-        {children}
-      </div>
+      {karte}
     </div>,
     document.body,
   );
@@ -385,21 +447,24 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
 
 // Lade-/Fallback-Inhalt, wenn (noch) kein Snapshot vorliegt. Esc + Fokus wie im
 // NormPopover; bei 'fehlt' der sichtbare Live-Link (§8) statt Volltext.
-export function NormPopoverHuelle({ zustand, url, artikel, autoFokus = true, onClose }: {
+export function NormPopoverHuelle({ zustand, url, artikel, alsDialog = true, onClose }: {
   zustand: 'laedt' | 'fehlt'; url: string; artikel: string;
-  /** V2: false = Hover-Weg, kein Fokus-Griff (s. NormPopover.autoFokus). */
-  autoFokus?: boolean;
+  /** V2: false = Hover-Vorschau statt Dialog (s. NormPopover.alsDialog) —
+   *  kein Fokus-Griff, `role="group"` statt `dialog`/`aria-modal`. */
+  alsDialog?: boolean;
   onClose: () => void;
 }) {
   const schliessRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    if (autoFokus) schliessRef.current?.focus();
+    if (alsDialog) schliessRef.current?.focus();
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape' || e.key === 'Esc') onClose(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [onClose, autoFokus]);
+  }, [onClose, alsDialog]);
   return (
-    <div role="dialog" aria-modal="true" aria-label={`Norm-Vorschau ${artikel}`} tabIndex={-1}
+    <div data-norm-vorschau role={alsDialog ? 'dialog' : 'group'}
+      {...(alsDialog ? { 'aria-modal': true as const, tabIndex: -1 } : {})}
+      aria-label={`Norm-Vorschau ${artikel}`}
       className="lc-card w-full max-w-xl p-0 text-left">
       <div className="flex items-start justify-between gap-3 border-b border-line px-5 py-3">
         <div className="min-w-0">
