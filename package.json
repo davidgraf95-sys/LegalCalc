@@ -128,6 +128,7 @@
     "plan:bild": "vite-node scripts/plan/bild.ts",
     "check:plan": "vite-node scripts/plan/check.ts",
     "selbstopt:erheben": "vite-node scripts/plan/selbstopt-erheben.ts",
+    "retro:17": "vite-node scripts/plan/retro-17.ts",
     "struktur:rotieren": "python3 .claude/hooks/struktur-rotieren.py",
     "struktur:aktuell": "python3 .claude/hooks/struktur-aktuell.py",
     "fahrplan": "vite-node scripts/fahrplan-slice.ts",
