@@ -69,9 +69,35 @@ export default defineConfig({
   // Assertion-Zeitbudget grosszügig auf 10 s heben (greift nur bei Überschreitung,
   // verlangsamt grüne Tests nicht) — Assertions inhaltlich unverändert (§6.3).
   expect: { timeout: 10_000 },
+  // ── Fail-fast gegen den SYSTEMISCHEN Hänger (QS-E2E-STABIL, Beleg 7.8.2026) ──
+  // Am 7.8.2026 brannte Shard 2/8 1 h 2 min, weil VIER Tests derselben Datei je
+  // dreimal (retries:2) voll ins 270-s-Budget liefen — 12 Attempts à ~272 s. Die
+  // Wurzel war EIN Defekt (unklickbarer TOC-Knopf, s. SektionBaumTOC.tsx); die
+  // elf Wiederholungen haben nichts Neues erzählt und die Merge-Kette blockiert.
+  // `maxFailures` beendet den Shard, sobald so viele Tests ENDGÜLTIG (also nach
+  // ihren Retries) gescheitert sind — bei 3 deckelt das denselben Vorfall auf
+  // ~41 min statt unbegrenzt; den Rest fängt der Job-Deckel in ci.yml
+  // (`timeout-minutes`) ab.
+  // ROT BLEIBT ROT: `maxFailures` unterdrückt keinen Fehlschlag, es beendet den
+  // Lauf früher — der Exit-Code bleibt 1, die gemeldeten Fehler stehen vollständig
+  // im Report. Kein Test wird übersprungen, kein `expect`, kein Timeout berührt
+  // (§6.3). LOKAL aus: dort sind Retries 0 und die Läufe kurz — ein vorzeitiger
+  // Abbruch verstellt nur die Diagnose.
+  maxFailures: process.env.CI ? 3 : 0,
   use: {
     baseURL: `http://localhost:${E2E_PORT}`,
-    trace: 'retain-on-failure',
+    // Traces: LOKAL `retain-on-failure` — lokal ist `retries` 0, `on-first-retry`
+    // zeichnete hier also NIE etwas auf und verschlechterte die lokale Diagnose.
+    // AUF CI `on-first-retry`: der erste Versuch läuft ohne Aufzeichnungs-Overhead
+    // (2-vCPU-Runner, §15), der zweite liefert den Trace. Für die Hänger-Klasse
+    // kostet das nichts — die drei Attempts vom 7.8.2026 waren im Call-Log
+    // zeichengleich, der Retry dokumentiert denselben Stall.
+    // Der eigentliche Mangel war nicht die Aufzeichnung, sondern die ABLAGE: die
+    // Traces entstanden auf dem Runner und wurden mit ihm weggeworfen (ci.yml lud
+    // nur `playwright-report.json` hoch). Genau deshalb musste der Hänger vom
+    // 7.8. lokal nachgestellt werden, statt ihn aus dem Artefakt zu lesen. Der
+    // Upload-Schritt in ci.yml schliesst das.
+    trace: process.env.CI ? 'on-first-retry' : 'retain-on-failure',
   },
   // ── Test-Timeout-Politik (O-3.3, CPU-Drossel-Forensik 17.7.; Runner-Budgets 19.7.) ─
   // LOKAL bleibt der Test-Timeout bei Playwrights Default (30 s), schwere Specs

@@ -374,6 +374,15 @@ jobs:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
     needs: [diff, bau]
     runs-on: ubuntu-latest
+    # Harter Deckel je Shard (QS-E2E-STABIL, Beleg 7.8.2026). Ohne Angabe gilt der
+    # GitHub-Default von 360 min — ein systemisch hängender Shard hätte also bis zu
+    # SECHS Stunden Runner-Zeit gebrannt und die Merge-Kette so lange blockiert.
+    # Gemessen: ein grüner Shard braucht ~5.4–6.4 min Testzeit plus ~4 min Rüstzeit
+    # (npm ci, Chromium, dist-Download). 25 min lassen dem langsamsten Runner das
+    # Doppelte an Luft und schlagen erst zu, wenn etwas grundsätzlich klemmt.
+    # ROT BLEIBT ROT: der Deckel bricht ab und meldet FEHLGESCHLAGEN — er macht
+    # nichts grün, er kürzt nur die Brenndauer (§17: Wurzel-Deckel statt Umschiffen).
+    timeout-minutes: 25
     env:
       TZ: Europe/Zurich
     strategy:
@@ -438,6 +447,27 @@ jobs:
           path: playwright-report.json
           retention-days: 7
           if-no-files-found: warn
+      # Playwright-Traces sichern — NUR bei rotem Shard (QS-E2E-STABIL, 7.8.2026).
+      # Bisher zeichnete Playwright Traces auf, legte sie unter `test-results/` ab
+      # und warf sie mit dem Runner weg. Beim Hänger vom 7.8. blieb darum nur der
+      # JSON-Report; der Stall musste lokal nachgestellt werden, um überhaupt zu
+      # sehen, WORAUF der Klick wartete. Mit diesem Schritt dokumentiert sich der
+      # nächste Hänger selbst: `npx playwright show-trace <zip>` zeigt DOM-Snapshot,
+      # Netzwerk und Call-Log jedes Versuchs.
+      # Grössen-Folgen (lokal gemessen am Vorfall): ~12 MB je hängendem Test, also
+      # ~50 MB für einen Shard mit vier Hängern. `trace: 'on-first-retry'` (siehe
+      # playwright.config.ts) beschränkt das auf Wiederholungen, `maxFailures: 3`
+      # auf höchstens drei Tests, `if: failure()` auf rote Läufe. Ein grüner Lauf
+      # lädt NICHTS hoch. Retention 7 Tage wie beim Report — lang genug für die
+      # Diagnose, kurz genug fürs Speicherkonto.
+      - name: Playwright-Traces ablegen (nur bei rotem Shard)
+        if: failure() && needs.diff.outputs.art == 'code'
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces-gruppe-${{ matrix.gruppe }}
+          path: test-results/
+          retention-days: 7
+          if-no-files-found: ignore
 
   perf:
     name: Perf-Budget (§15 — nur bei grüner Treue)
