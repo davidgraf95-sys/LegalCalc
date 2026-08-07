@@ -1971,3 +1971,33 @@ PR #445 gemergt 5.8.2026 08:11Z (Auto-Squash; Skip=success-Beweis: Doku-Diff «C
 - [x] **5d · Gesetzes-UX & Darstellungs-Reglement** *(GESETZES-UX, `[OF]`, eigener Worktree; Auftrag David 4.7.)*:
   <!-- @meta id: W2·5d · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   **Detail (Spec wörtlich, inkl. Nachzug-Wellen A19–A25/A29–A40, IA-Reihe §11, eId-Reihe §12):** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §16.
+
+
+# Umschichtung 7.8.2026 — erledigte Schritte aus dem Steuerungsplan
+
+(QS-SELBSTOPT-Abschluss-Session; Session-Karte in STRUKTUR.md bzw. archiv/STRUKTUR-SESSIONKARTEN.md.)
+
+## QS-SELBSTOPT — Selbstoptimierender Bau — eine ganze Session, ergebnisoffen *(done, verschoben 7.8.2026)*
+
+- [x] **`QS-SELBSTOPT` · Selbstoptimierender Bau — eine ganze Session, ergebnisoffen** *(Anlass: Auftrag David 5.8.2026 «wie kriegen wir es hin, dass sich der Bau von selbst optimiert? … insgesamt als eigener schritt. eine ganze session soll der selbstoptimierung gewidmet sein. dabei ist sie offen. … ziel: jeder bau soll besser sein als der vorherige in sachen sicherheit, tokenverbrauch etc.»; Recherche mit Quellen und drei bewussten Absagen: [selbstoptimierender-bau-2026-08-05.md](bibliothek/recherche/selbstoptimierender-bau-2026-08-05.md))* — Die Session entscheidet selbst, was den Bau am meisten verbessert; empfohlener Pfad (Fahrplan-§): erst **messen** (generierte Zeitreihe: Tor-Rot je `check:*`, CI-Raten aus der nativen Actions-API, Rework-/Flaky-Beobachtung, Rückfall-Zähler je Lehren-F-Klasse, Anzeige im Lagebild), dann **deuten** (manuelles `retro:17`, Entwurfs-Vorschläge). **Gleichwertiger Auftrag ist die ENT-Regulierung** (David 5.8.2026: «nicht überregulieren, keine unnötigen Sicherungen, die Bauzeit kosten»): je Regel/Sicherung das Anthropic-Löschkriterium («würde das Fehlen einen realen Fehler verursachen? sonst streichen») und die Zeitreihe als Streich-Beleg (Tor seit Geburt nie rot + kostet Laufzeit = Kandidat; vorher Provenienz klären, Chesterton's Fence). Harte Grenzen bleiben: kein Fremddienst (§5) · kein Automat, der Planänderungen selbst beschliesst (§17: Automatisieren zuletzt; Hebung nur mit David-Entscheid) · Rechtslogik/Engines/Korpus nie selbstoptimierend (§1/§2/§7) · Fitness-Signale nur deterministisch, nie LLM-Urteil (Beleg: Reward-Hacking 0.94 vs. wahre 0.20, Runde 2 der Recherche). **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
+  <!-- @meta id: QS-SELBSTOPT · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/plan, scripts/gate.sh, scripts/check-parallel.ts, messwerte] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+
+## QS-ENTREG-KONFIG — Vorbereitete Konfig-Entlastungen *(done, verschoben 7.8.2026)*
+
+- [x] **`QS-ENTREG-KONFIG` · Vorbereitete Konfig-Entlastungen — Anwendung/Commit nur durch David** *(Anlass: Ent-Regulierung QS-SELBSTOPT 7.8.2026. **ERLEDIGT 7.8. abends:** alle vier Posten angewandt und gelandet — a per David-cp `de3d7fa0c`, b+c per David-Commit `464e00986`, d aktiviert in ~/.zshrc; Details im Dossier-Pflegeabschnitt)* — Posten: (a) `gate-stopp.py` Grün-Fingerabdruck — fertige Vorschlagsdatei `scripts/hooks-vorschlag-gate-stopp.py` (Stop-Hook misst ~36–38 s und feuert nach jeder Antwort; Fingerabdruck überspringt nur bereits grün geprüfte identische Zustände, null Schutzverlust), Anwendung per `cp` laut Datei-Kopf; (b) `tor-schutz.py`-Präzisions-Patch (angewandt, Probe a–g); (c) CLAUDE.md §16 Kurzform (angewandt); (d) Token-Messung aktivieren: `OTEL_METRICS_EXPORTER=prometheus` in Davids Claude-Code-Umgebung setzen, damit der Sammler das lokale `tokens`-Feld füllen kann (kein Fremddienst). **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+  <!-- @meta id: QS-ENTREG-KONFIG · status: done · of: ja · blocker: null · dep: [] · kollision: [.claude/hooks, CLAUDE.md] · worktree: nein · 26x: nein · groesse: S -->
+
+## QS-DISPATCH-P0-PRUEF — Dispatch-§0-Prüfvariante für read-only-Klassen *(done, verschoben 7.8.2026)*
+
+- [x] **`QS-DISPATCH-P0-PRUEF` · Dispatch-§0 bekommt eine Prüf-Variante für read-only-Klassen** *(Anlass: Ent-Regulierung QS-SELBSTOPT 7.8.2026 — pruefung/recherche-Agenten tragen heute inapplikable Bau-Pflichten (Commits, Sonden, Merge-Verbot) im direkten Widerspruch zu ihrem eigenen read-only-TABU, ~150 Token je Prüf-Dispatch)* — Variant-Fähigkeit in Generator (`scripts/dispatch.ts`, `dispatch:agents`), `dispatch-schutz.py` UND `check:dispatch-klausel` (zweiter Sollwert, sonst wird der Byte-Gleichheits-Wächter zur Attrappe); übernommene Ziffern im Wortlaut unverändert, nur Inapplikables weglassen; Wächter einmal rot zeigen (§6.7). Blockiert, weil der Umbau die Pflichtklausel-Durchsetzung selbst berührt — Freigabe durch David. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+  <!-- @meta id: QS-DISPATCH-P0-PRUEF · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/dispatch.ts, scripts/check-dispatch-klausel.ts, .claude/agents] · worktree: ja · 26x: nein · groesse: M -->
+
+## Intake-Prosa Code-Inventur 4.8.2026 *(erledigt, verschoben 7.8.2026 — QS-CODE-Reihe komplett gelandet 4./5.8., beide David-Fragen beantwortet)*
+
+**§14-Intake 4.8.2026 (Code-Inventur — drei read-only Analysen der Logik-, Darstellungs- und
+Pipeline-Schicht auf Auftrag David, «denk gross»).** Befunde mit Belegen:
+[code-inventur-2026-08-04.md](bibliothek/betrieb/code-inventur-2026-08-04.md) · Bau-Specs:
+[FAHRPLAN-CODE-VERBESSERUNG.md](fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md) (§6 dort = Verortungs-
+Register der Befunde, die in bestehende Schritte geflossen sind; die zwei David-Fragen aus §7 sind
+am 4.8.2026 beantwortet: Manifest-Nullzeilen gewollt · `normalisiereTarifText`-Freigabe bestätigt
+und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).

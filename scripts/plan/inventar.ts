@@ -15,6 +15,8 @@
 // § «Übernahme 5.8.2026». Entfernt: QS-CODE-TURSO · QS-CODE-AUSSENKANTEN · QS-CODE-ENTDOPPLUNG
 // · QS-CODE-SPLITS · W2·5d. Der Kommentar zur W2·5d-Bindung unten entfällt: die dep-Einträge
 // in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
+// UMSCHICHTUNG 7.8.2026 (QS-SELBSTOPT-Abschluss): drei erledigte Schritte → Chronik
+// «Umschichtung 7.8.2026». Entfernt: QS-SELBSTOPT · QS-ENTREG-KONFIG · QS-DISPATCH-P0-PRUEF.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
@@ -95,13 +97,12 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 5.8.2026 (Recherche selbstoptimierender Bau, Auftrag David):
   // EIN ergebnisoffener Gesamtschritt (Entscheid David: ganze Session), Pfad im Fahrplan-§.
-  'QS-SELBSTOPT',
 
   // §14-Intake 7.8.2026 (Ent-Regulierung QS-SELBSTOPT, Dossier
   // bibliothek/betrieb/entregulierung-2026-08-07.md): zwei David-Gates (Konfig/Regelwerk
   // bleibt beim Menschen — Agenten-§0 und Berechtigungssystem sperren es für Sessions)
   // plus ein baubarer Ehrlichkeits-Fix am Confidence-Werkzeug.
-  'QS-ENTREG-KONFIG', 'QS-DISPATCH-P0-PRUEF', 'QS-CONFIDENCE-EHRLICH',
+  'QS-CONFIDENCE-EHRLICH',
 
   // Entscheid David 7.8.2026 («stufe 1 ja», nach Aufklärung über die drei Autopilot-Stufen):
   // Vorschlags-Autopilot freigegeben, gebunden an ≥5 Snapshots (Blocker zeitreihe-5-snapshots).
