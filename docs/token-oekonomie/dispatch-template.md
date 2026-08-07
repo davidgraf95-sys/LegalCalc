@@ -159,17 +159,32 @@ beide in dieselbe Richtung:
    von der Kürzung um **exakt 0 Token**.
 
 Dagegen ist der §0-Block **frischer, ungecachter Input bei jedem Dispatch, zum
-Vollpreis**. Gemessen: Block 20 Zeilen / 1 397 Zeichen; voller Generator-Output
-23 Zeilen / 1 529–1 584 Zeichen je Klasse. Der Plan veranschlagte «~13 Zeilen
-≈ 150 Token» — real sind es **≈ 425–470 Token, rund das 2,8-Fache**.
+Vollpreis**. Der Plan veranschlagte «~13 Zeilen ≈ 150 Token» — real ist es ein
+Vielfaches.
+
+**Zahlen nachgemessen am 7.8.2026** (die Fassung vom 20.7.2026 nannte 20 Zeilen /
+1 397 Zeichen für den Block und 1 529–1 584 Zeichen für den Generator-Output;
+beides ist seither gewachsen — nachrechnen, nicht abschreiben):
+
+| gemessen 7.8.2026 | Zeichen | Zeilen |
+|---|---|---|
+| §0-Block, Fassung `voll` | 1 607 | 23 |
+| §0-Block, Fassung `pruefung` (§0a) | 920 | 14 |
+| Generator-Output, schreibende Klassen | 1 775–1 993 | 26–27 |
+| Generator-Output, read-only-Klassen | 1 052–1 072 | 17 |
 
 | | wirkt | Häufigkeit | Preis |
 |---|---|---|---|
 | `CLAUDE.md` −1 839 Zeichen | Orchestrator | 1× je Session | ~10 % (Cache) → ≈ −55 Tok |
-| §0-Block +1 397 Zeichen | jeder Sub-Agent | N× je Session | 100 % (frisch) → ≈ +425 Tok |
+| §0-Block `voll` +1 607 Zeichen | schreibender Sub-Agent | N× je Session | 100 % (frisch) → ≈ +470 Tok |
+| §0-Block `pruefung` +920 Zeichen | read-only-Sub-Agent | N× je Session | 100 % (frisch) → ≈ +270 Tok |
 
-Bei 20 Dispatches je Session lautet die reale Bilanz rund **+8 500 frische Token
-pro Session** — das **umgekehrte Vorzeichen** der Behauptung.
+Token-Schätzung durchgehend mit ~3,4 Zeichen je Token für deutschen Fliesstext;
+die Zeichenzahlen sind die harte, jederzeit nachrechenbare Grösse. Bei 20
+Dispatches je Session liegt die reale Bilanz weiterhin bei **rund +8 000 bis
++9 000 frischen Token pro Session** — das **umgekehrte Vorzeichen** der
+ursprünglichen Behauptung, und die §0a-Variante senkt den Posten nur dort, wo
+die Punkte 4–6 ohnehin ins Leere greifen.
 
 **Das ist kein Argument gegen den Block, sondern gegen die falsche Begründung.**
 Der Block ist eine bewusst gekaufte Versicherung gegen F1/F3/F4/F5/F6: ein

@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
 import {
   pflichtKlausel, dispatchText, templateLesen, KLASSEN, VARIANTE, varianteVon,
   type Klauselvariante,
@@ -148,6 +149,39 @@ describe('VARIANTE — Zuordnung Klasse → Fassung', () => {
 
   it('varianteVon fällt bei unbekannter Klasse fail-safe auf voll', () => {
     expect(varianteVon('gibtsnicht')).toBe('voll');
+  });
+});
+
+// Befund B3 der Gegenprüfung 7.8.2026: Die Soll-Liste lebte NUR im Test. Eine
+// Herabstufung (daten → pruefung) samt Regeneration war in sich konsistent —
+// Tabelle, Wrapper, Generator, Projektion — und ging grün durchs Tor. Sie steht
+// seither auch in check-dispatch-klausel.ts. Befund B1: der Hook-Vorschlag
+// erkennt einen echten Prüf-Dispatch am read-only-TABU der Klasse, zitiert
+// wörtlich aus KLASSEN. Beide Kopplungen werden hier festgehalten.
+describe('Kopplungen ausserhalb dieses Moduls (B1/B3)', () => {
+  const tor = readFileSync('scripts/check-dispatch-klausel.ts', 'utf8');
+  const hook = readFileSync('scripts/hooks-vorschlag-dispatch-schutz.py', 'utf8');
+
+  it('das Tor führt dieselbe Soll-Liste read-only wie dieser Test', () => {
+    expect(tor).toContain("const READONLY_SOLL = ['pruefung', 'recherche'] as const");
+  });
+
+  it('der Hook zitiert das read-only-TABU beider Klassen wörtlich aus KLASSEN', () => {
+    for (const klasse of ['pruefung', 'recherche']) {
+      const tabuZeile = KLASSEN[klasse].split('\n')[0];
+      expect(tabuZeile, klasse).toMatch(/^TABU: /);
+      // Der Hook trägt einen Präfix dieser Zeile — lang genug, um die Klasse
+      // zu identifizieren, kurz genug, um Satzende-Kosmetik zu überleben.
+      const praefix = tabuZeile.slice(0, 20);
+      expect(hook, `${klasse}: «${praefix}…»`).toContain(praefix);
+    }
+  });
+
+  it('der Hook verlangt bei der Prüf-Kopfzeile ein zweites Merkmal', () => {
+    // Ohne das käme ein Bau-Auftrag, der die Kopfzeile nur ZITIERT, mit drei
+    // Punkten durch (gemessene Proben b/g der Gegenprüfung: exit 0 statt 2).
+    expect(hook).toContain('PRUEF_TABU');
+    expect(hook).toContain('ist_pruefung = kopf_da and tabu_da');
   });
 });
 

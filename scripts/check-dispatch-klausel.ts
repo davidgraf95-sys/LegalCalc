@@ -136,6 +136,89 @@ if (wrapperDrift.length) {
     `  Der Wrapper darf NUR für unbekannte Klassen auf 'voll' fallen, nie für bekannte.`);
 }
 
+/**
+ * (B0c) SOLL-LISTE der read-only-Klassen — die einzige Menge, die je die
+ * verkürzte Klausel tragen darf.
+ *
+ * WARUM ALS KONSTANTE HIER (Befund B3 der Gegenprüfung 7.8.2026): Die Erwartung
+ * lebte nur im Vitest. Stuft jemand eine SCHREIBENDE Klasse auf 'pruefung' herab
+ * (Probe: daten → pruefung) und regeneriert die Agent-Dateien, wird alles
+ * konsistent — Tabelle, Wrapper, Generator, Projektion — und das Tor meldete
+ * GRÜN. Konsistenz ist eben kein Beleg für Richtigkeit: `daten` ist der
+ * Risikopfad, und ihm die Punkte 4/5/6 zu nehmen (Recovery, Kollisionssonden,
+ * Merge-Verbot) ist genau die Änderung, die niemand mechanisch durchwinken darf.
+ * Die Liste steht darum im TOR und nicht nur im Test: eine Herabstufung ist ein
+ * bewusster Reglement-Entscheid und muss hier sichtbar mitgeändert werden.
+ */
+const READONLY_SOLL = ['pruefung', 'recherche'] as const;
+
+const unerlaubtHerabgestuft = Object.keys(VARIANTE)
+  .filter((k) => VARIANTE[k] === 'pruefung' && !(READONLY_SOLL as readonly string[]).includes(k));
+if (unerlaubtHerabgestuft.length) {
+  rot(
+    `Klasse(n) auf die Prüf-Variante herabgestuft, die nicht in der Soll-Liste stehen: ` +
+    `${unerlaubtHerabgestuft.join(', ')}\n\n` +
+    `  Soll-Liste read-only: ${READONLY_SOLL.join(', ')}\n` +
+    `  Die Prüf-Fassung nimmt einer Klasse die Punkte 4 (Recovery-Commit),\n` +
+    `  5 (Kollisionssonden) und 6 (kein Merge im Bau-Auftrag). Das ist nur\n` +
+    `  zulässig, wenn die Klasse WIRKLICH nicht schreiben darf (Werkzeug-Liste\n` +
+    `  in dispatch-agents.ts, TABU in KLASSEN). Eine Herabstufung ist nie\n` +
+    `  mechanisch — sie ist ein Reglement-Entscheid und wird HIER mitgeführt.`);
+}
+
+const unerlaubtHochgestuft = (READONLY_SOLL as readonly string[])
+  .filter((k) => k in VARIANTE && VARIANTE[k] !== 'pruefung');
+if (unerlaubtHochgestuft.length) {
+  rot(
+    `Read-only-Klasse(n) tragen wieder den Voll-Block: ${unerlaubtHochgestuft.join(', ')}\n` +
+    `  Das ist ungefährlich (zu viel Klausel, nie zu wenig), aber unbeabsichtigt:\n` +
+    `  Punkt 4 verlangt von ihnen Commits, die ihr eigenes TABU verbietet.\n` +
+    `  → VARIANTE in scripts/dispatch.ts oder die Soll-Liste hier angleichen.`);
+}
+
+/**
+ * (B0d) Der Hook-Vorschlag erkennt die Prüf-Fassung an Kopfzeile UND dem
+ * read-only-TABU der Klasse (Härtung zu Befund B1). Diese zweite Bedingung ist
+ * ein WÖRTLICHES Zitat aus KLASSEN — wird das TABU dort umformuliert, erkennt
+ * der Hook echte Prüf-Dispatches nicht mehr. Das ist fail-safe (er verlangt dann
+ * sechs Punkte), aber es entwertet die Variante still. Darum hier festgenagelt.
+ */
+const HOOK_TABU: Record<string, string> = {
+  pruefung: 'TABU: nichts ändern',
+  recherche: 'TABU: kein Code, keine Repo-Änderung',
+};
+// Geprüft wird jede Hook-Datei, die die Varianten-Erkennung SCHON KENNT
+// (Marker `PRUEF_KOPF`). Der aktive Hook unter .claude/ hinkt bewusst nach —
+// er ist bis zu Davids `cp` die strengere Vorgängerfassung und darf das Tor
+// nicht rot machen; sobald er die neue Logik trägt, gilt die Prüfung auch dort.
+const HOOK_DATEIEN = ['scripts/hooks-vorschlag-dispatch-schutz.py', '.claude/hooks/dispatch-schutz.py'];
+const HOOK_MARKER = 'PRUEF_KOPF';
+
+for (const [klasse, tabu] of Object.entries(HOOK_TABU)) {
+  if (!KLASSEN[klasse]?.startsWith(tabu)) {
+    rot(
+      `Das read-only-TABU der Klasse '${klasse}' beginnt nicht mehr mit «${tabu}».\n` +
+      `  Ist:  ${(KLASSEN[klasse] ?? '(Klasse fehlt)').split('\n')[0]}\n\n` +
+      `  Der Hook-Vorschlag erkennt einen echten Prüf-Dispatch an genau diesem\n` +
+      `  Wortlaut (zweites Merkmal neben der Kopfzeile, Befund B1). Wortlaut in\n` +
+      `  KLASSEN geändert ⇒ HOOK_TABU hier und PRUEF_TABU im Hook nachziehen.`);
+  }
+}
+const hookGeprueft: string[] = [];
+for (const datei of HOOK_DATEIEN.filter((d) => existsSync(d))) {
+  const inhalt = readFileSync(datei, 'utf8');
+  if (!inhalt.includes(HOOK_MARKER)) continue;   // Vorgängerfassung, s. o.
+  hookGeprueft.push(datei);
+  const fehlt = Object.values(HOOK_TABU).filter((t) => !inhalt.includes(t));
+  if (fehlt.length) {
+    rot(
+      `${datei} kennt ${fehlt.length} read-only-TABU nicht mehr:\n` +
+      `${fehlt.map((t) => `  - «${t}»`).join('\n')}\n` +
+      `  Ohne das zweite Merkmal senkt eine bloss ZITIERTE Prüf-Kopfzeile das\n` +
+      `  Pflicht-Set auf drei Punkte (Befund B1 der Gegenprüfung 7.8.2026).`);
+  }
+}
+
 // ── (B) Wirkung: der vorgeschriebene Aufrufweg liefert den Block wirklich ──
 for (const klasse of Object.keys(KLASSEN)) {
   // ERWARTUNG aus der Tabelle, nicht aus varianteVon() — s. Lektion II oben.
@@ -209,6 +292,9 @@ console.log(
   `pruefung (${bloecke.pruefung.split('\n').length} Zeilen, Punkte 1–3 byte-gleich zum Voll-Block). ` +
   `Generator-Output stimmt für alle ${Object.keys(KLASSEN).length} Auftragsklassen ` +
   `(${Object.keys(KLASSEN).join(', ')}); read-only ⇒ Prüf-Fassung: ${pruefKlassen.join(', ')}. ` +
+  `Soll-Liste read-only unverletzt (${READONLY_SOLL.join(', ')}); ` +
+  `Hook-TABU-Zitat geprüft in ${hookGeprueft.length} Datei(en)` +
+  `${hookGeprueft.length ? ` (${hookGeprueft.join(', ')})` : ''}. ` +
   `Byte-gleich in ${Object.keys(AGENTEN).length} Agent-Typen (lex-*). ` +
   `Palette: ${Object.entries(PALETTE).map(([s, m]) => `${s}=${m}`).join(' ')} ` +
   `(Stand ${PALETTE_STAND}).`);
