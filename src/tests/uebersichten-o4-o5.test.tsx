@@ -70,7 +70,7 @@ describe('O5 · Scope-Label des lokalen Filterfelds (/materialien)', () => {
 describe('Beifang · kein iOS-Fokus-Zoom an den kompakten Feldern', () => {
   // Safari iOS zoomt beim Fokus jedes Felds unter 16 px. `.lc-input-sm` trug
   // .875rem — dieselbe Falle, die S6 am Kopf-Feld behoben hat.
-  const block = CSS.match(/@media not all and \(min-width: theme\('screens\.sm'\)\)\s*\{([\s\S]*?)\n  \}/);
+  const block = CSS.match(/@media not all and \(min-width: theme\('screens\.sm'\)\)\s*\{([\s\S]*?)\n {2}\}/);
 
   it('es gibt genau eine Unter-sm-Regel, und sie hängt am Breakpoint-Token', () => {
     expect(block, 'Unter-sm-Block fehlt oder benutzt eine rohe Pixelzahl').not.toBeNull();
