@@ -306,29 +306,19 @@ Bau-Einheit — gleiche Risiko-Klasse (Prüf-/Klassifikations-Härtung), keine V
 
 ---
 
-### §3.7 `QS-GP-COMMITDIFF` — Quittungs-Werkzeug sieht committete Risiko-Diffs
+### §3.7 — fusioniert in §3.1 (`QS-GP-BEREICH`), 8.8.2026
 
-**Anlass (7.8.2026, W2·10-UI-NAV-V):** Ein Bau-Agent committete einen Risiko-Diff
-(`src/lib/startseiteKartenFristen.ts`, via `/frist/i` klassiert) mit der — falschen —
-Aussage «kein Risikopfad»; `check:gegenpruefung` blieb grün, weil Tor UND Quittungs-Tool
-(`gegenpruefung:ok`, `risikoDiffHash()`) nur den **Working Tree** lesen: nach dem Commit
-kann das Tor lokal nicht mehr rot werden (§6.7), und die Quittung ist nicht mehr setzbar
-(«keine Risiko-Datei im Working-Tree geändert»). Der committete Bereich ist in CI zwar
-durch `check:merge-schutz` abgedeckt, lokal aber blind; die Praxis behilft sich seit
-28.7.2026 mit Hand-Register-Zeilen samt selbst gerechnetem Branch-Diff-Hash (Präzedenz
-2026-07-28 ff., zuletzt 2026-08-07) — genau diese Handarbeit gehört ins Werkzeug.
-
-**Bau:** `gegenpruefung:ok` (und die Hash-Kernfunktion) um einen Branch-Modus erweitern —
-Risiko-Diff über `origin/main...HEAD` (merge-base) statt nur `git status`, gleiche
-Klassifizierer/Schema (`pfad NUL art NUL sha256(inhalt@HEAD) NUL`, byte-sortiert), damit
-Quittungen für committete Arbeit regulär entstehen; das lokale Tor meldet einen
-unquittierten committeten Risiko-Diff des Branches als rot. Rot-Beweis: heutiges
-Verhalten (clean tree ⇒ «nichts zu quittieren» trotz Risiko-Commit) als Test festhalten.
-
-- **Reine Prüflogik** (`Gegenpruefung: n/a — reine Prüflogik`), kein Inhalts-Risiko.
-- **Fertig, wenn:** Branch-Modus quittiert committete Risiko-Diffs; Tor rot bei
-  unquittiertem Commit-Diff (Rot-Beweis §6.7); Präzedenz-Absatz im Skill
-  `gegenpruefung` auf den Werkzeug-Weg umgestellt.
+Der hier am 7.8.2026 kurzzeitig angelegte Schritt `QS-GP-COMMITDIFF` war ein
+unbeabsichtigtes Duplikat von §3.1 `QS-GP-BEREICH` (gleiche Fläche
+`gegenpruefung-ok.ts`/`kern.ts`/Tor, gleiches Ziel: committete Branch-Diffs
+quittier- und prüfbar machen) — zusammengeführt statt daneben (Skill `auftrag`
+Ziff. 3). Sein Beitrag bleibt als 2. Anlass in §3.1 erhalten: Vorfall
+W2·10-UI-NAV-V vom 7.8.2026 — vierte Hand-Hash-Quittung (Register-Zeile
+2026-08-07, dort noch mit dem alten Schritt-Namen), und eine falsche
+«kein Risikopfad»-Bau-Aussage blieb lokal unbemerkt, weil das Tor nach dem
+Commit nicht mehr scheitern kann (§6.7). Zusätzliche Bau-Anforderung aus dem
+Vorfall an §3.1: Rot-Beweis ausdrücklich für den Fall «clean tree, Risiko-Diff
+nur committet» führen.
 
 ---
 
