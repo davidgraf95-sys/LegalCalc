@@ -238,3 +238,56 @@ export function leseKlappe(): boolean {
 export function schreibeKlappe(offen: boolean): void {
   schreib(KLAPPE_KEY, offen ? AN : '0');
 }
+
+// ── NAVIGATION: sessionStorage (Listen-Deckel je Liste) ─────────────────────
+//
+// W2·10-UI-NAV/J1. Die dritte Zustands-Klasse dieser Seite, und sie gehört
+// bewusst WEDER in die URL NOCH in localStorage:
+//
+//   · Nicht in die URL: wie viele Batches jemand nachgeladen hat, ist kein
+//     Bestandteil dessen, was er verschickt. Ein geteilter Link soll die
+//     Treffermenge tragen, nicht die Scroll-Historie des Absenders.
+//   · Nicht in localStorage: die Zahl gilt für DIESEN Besuch dieser Liste.
+//     Wer morgen wiederkommt, will oben anfangen, nicht bei Eintrag 900.
+//
+// Zweck ist ausschliesslich die WIEDERHERSTELLBARKEIT des Rückwegs
+// (Fahrplan-Prüfpunkt J1: «Treffer → Detail → zurück darf nicht brechen»).
+// Ohne sie stimmt die Scroll-Position zwar noch, aber die Liste ist wieder auf
+// den Grunddeckel geschrumpft — die gespeicherte Position liegt dann jenseits
+// des Dokumentendes und die zentrale Wiederherstellung in App.tsx landet
+// zwangsläufig zu weit oben. Der Deckel muss darum schon beim ERSTEN Render
+// nach der Rückkehr stehen (lazy useState-Initialisierung), nicht erst in einem
+// Effekt — sonst ist das Dokument im entscheidenden Frame noch zu kurz.
+//
+// Reine Render-Menge, kein Logikverlust (§15): der Deckel begrenzt, wie viele
+// Einträge im DOM stehen, nie welche Entscheide es gibt. Zähler und Facetten
+// laufen unverändert über den Gesamtbestand.
+
+export const DECKEL_PRAEFIX = 'rsp:deckel:';
+
+/** sessionStorage fehlt beim Prerender (und in abgeschotteten Kontexten). */
+function liesSitzung(key: string): string | null {
+  try {
+    if (typeof sessionStorage === 'undefined') return null;
+    return sessionStorage.getItem(key);
+  } catch { return null; }
+}
+
+/**
+ * Gespeicherten Deckel lesen. `grund` ist der Grundwert (LISTE_DECKEL) und
+ * zugleich die Untergrenze: ein kleinerer oder unplausibler gespeicherter Wert
+ * wird verworfen, statt die Liste unter den Grundzustand zu drücken.
+ */
+export function leseDeckel(key: string, grund: number): number {
+  const roh = liesSitzung(DECKEL_PRAEFIX + key);
+  if (roh === null) return grund;
+  const n = Number.parseInt(roh, 10);
+  return Number.isSafeInteger(n) && n > grund ? n : grund;
+}
+
+export function schreibeDeckel(key: string, wert: number): void {
+  try {
+    if (typeof sessionStorage === 'undefined') return;
+    sessionStorage.setItem(DECKEL_PRAEFIX + key, String(wert));
+  } catch { /* Speicher voll oder gesperrt — der Deckel ist dann nur nicht wiederherstellbar */ }
+}
