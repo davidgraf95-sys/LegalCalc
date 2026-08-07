@@ -49,7 +49,7 @@ import { HOVER_OEFFNEN_MS, HOVER_SCHLIESSEN_MS, istHoverZeiger } from '../hoverV
 // keine Zyklus-Beteiligung) und werden von hier importiert.
 const CHIP_LINK_CLASS = 'lc-chip no-underline hover:text-brass-700 hover:border-brass-400';
 
-export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CHIP_LINK_CLASS }: {
+export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CHIP_LINK_CLASS, zielIntern = true }: {
   /** Norm-Text für die Snapshot-Auflösung (bundSnapshotRef) + Fallback-URL. */
   artikel: string;
   /** Anzeigetext im Chip (Default: artikel). */
@@ -63,6 +63,20 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   /** className des Link-<a>. Default = Pillen-Chip; NormText übergibt einen
    *  dezenten Inline-Stil (gleiche Popover-Logik, andere Darstellung). */
   linkClass?: string;
+  /** V4 (W2·10-UI-NAV): `href` auf den eigenen Reader zeigen, wo ein Snapshot
+   *  existiert. Default true = die Chip-Flächen (Rechner-/Vorlagen-Köpfe,
+   *  Entscheid-Zitate) — dort ist der Prüfpunkt der Spec verankert.
+   *
+   *  Der Inline-Auto-Linker im Normtext (NormText) setzt bewusst `false`:
+   *  Seine Fedlex-Deep-Links sind mit einer ganzen Klasse von Zusicherungen
+   *  verzahnt, die «kein Self-Link» am href-ANKER festmachen (`#art_52` ja,
+   *  `#art-52` nein). Ein interner Pfad trägt genau diesen `#art-52` legitim
+   *  im Ziel-Erlass — die Wächter könnten den echten Self-Link-Bug dann nicht
+   *  mehr von der Normallage unterscheiden (§6.7). Diese Umstellung braucht
+   *  darum eine eigene, deklarierte Runde, in der die 16 Zusicherungen auf
+   *  «Ziel-Erlass» statt «Anker-Schreibweise» umgestellt werden — nicht ein
+   *  beiläufiges Mitziehen (offener Rest, an den Orchestrator gemeldet). */
+  zielIntern?: boolean;
 }) {
   const { locale } = useLocale();
   const inhalt = anzeige ?? artikel;
@@ -108,7 +122,7 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   // Rückverfolgbarkeit (§7/§8) bleibt sichtbar: das Popover führt den Zweitlink
   // «↗ geltende Fassung» auf Fedlex, die Hülle ebenso. Ohne Snapshot bleibt der
   // Chip unverändert der Fedlex-<a> (Fallback, SSR/PDF-Pfad byte-gleich).
-  const internHref = ref ? readerHrefFuerRef(ref) : null;
+  const internHref = ref && zielIntern ? readerHrefFuerRef(ref) : null;
   const href = internHref ?? url;
   // §8-Ehrlichkeit: Bestands-Aufrufer geben «… auf Fedlex öffnen» als title mit.
   // Zeigt der Chip intern, wäre das eine falsche Ansage — dann sagt der Tooltip,
