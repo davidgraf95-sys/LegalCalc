@@ -8,10 +8,8 @@ Skills — sie laden, wenn die Tätigkeit ansteht.
 umgezogen ist, steht hier eine Zeile mit dem Ziel. So lösen die rund 200
 bestehenden §-Verweise in Skills, Fahrplänen und Code-Kommentaren weiterhin auf.
 
-**Aktueller Stand und nächster Schritt:** `npm run plan:next` (oberster offener
-Schritt, Abhängigkeiten, was bereits `wip` ist), danach der Detail-Slice per
-`npm run fahrplan -- fahrplaene/FAHRPLAN-<X>.md <§>` (Datei aus dem
-`fahrplan:`-Feld des Schritts). `ROADMAP.md` und `STRUKTUR.md` sind
+**Aktueller Stand und nächster Schritt:** `npm run plan:next`, Detail-Slice per
+`npm run fahrplan` (Schlusstabelle). `ROADMAP.md`/`STRUKTUR.md` sind
 Nachschlagewerke, keine Pflichtlektüre.
 
 **Leitbild:** «Schweizer Taschenmesser für Juristen» — die eine Anlaufplattform
@@ -45,7 +43,8 @@ Produktversprechen.
   Speicherung — und keine Rechtslogik: keine Fristberechnung, keine
   Schwellenwerte, keine Normtexte ausserhalb von Schema oder Engine.
 - Verkleinerungen (Entdopplung, Hooks, generische Rahmen) finden deshalb in der
-  Darstellungsschicht statt. Die Logikschicht wird dabei nie berührt.
+  Darstellungsschicht statt. Umbauten der Logikschicht laufen ausschliesslich
+  über das Protokoll von §4/§6, nie beiläufig im Zuge einer UI-Verkleinerung.
 
 ## §4 Eine Engine pro Rechtsgebiet
 
@@ -196,12 +195,19 @@ nicht noch einmal Arbeitszeit kosten. Das gilt **in jeder Session, laufend und
 ohne Rückfrage** (Mandat David 4./5.8.2026): Wo im Bau eine Lehre aufkommt, wird
 sie noch in derselben Session nach der Formregel des Skills `lehren` verankert
 (Tor > Dispatch-§0 > Skill > Prosa) — eine Lehre, die nur im Chat existiert,
-gilt als nicht gezogen; vor dem Session-Abschluss wird das einmal geprüft. Belegter Anlass: Am 3.8.2026 kosteten
-sieben lange bekannte, je einzeln «umschiffte» CI-Defekte (u. a. ein seit Anlage
-nie grüner Wächter, wochenlang nicht-kanonische Pins, Bot-PRs ohne CI-Lauf)
-zusammen einen ganzen Arbeitstag. Grenzen unverändert: Risiko-Pfade nur mit
-Gegenprüfung, Budget-/Schwellen-Entscheide (§15) und fachliche Abnahme bleiben
-bei David.
+gilt als nicht gezogen; vor dem Session-Abschluss wird das einmal geprüft.
+Belegter Anlass: 3.8.2026, sieben einzeln «umschiffte» CI-Defekte = ein
+verlorener Arbeitstag (Detail: Skill `lehren`). Grenzen unverändert:
+Risiko-Pfade nur mit Gegenprüfung, Budget-/Schwellen-Entscheide (§15) und
+fachliche Abnahme bleiben bei David.
+
+## §18 Geheimnisse bleiben draussen (Gutachten-Befund 7.8.2026)
+
+API-Schlüssel, Tokens und andere Zugangsdaten erscheinen nie im Repo, in Logs,
+in Commit-Messages oder in Sub-Agenten-Aufträgen; Konfiguration ausschliesslich
+über Umgebung/gitignorte Dateien. Ein doch committetes Geheimnis gilt als
+kompromittiert und wird rotiert, nicht nur entfernt. (Sicherheitsregel — lädt
+wie §14.7 immer, nie lazy.)
 
 ---
 
