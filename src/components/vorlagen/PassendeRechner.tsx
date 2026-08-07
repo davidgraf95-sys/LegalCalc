@@ -11,7 +11,15 @@ export function PassendeRechner() {
   const rechner = id ? passendeRechner(id) : [];
   if (rechner.length === 0) return null;
   return (
-    <p className="text-body-s text-ink-600">
+    // `max-w-reading`: Diese Zeile ist FLIESSTEXT mit eingebetteten Links, keine
+    // Kachel und keine Tabelle — damit gilt für sie die Lesespalten-Regel
+    // (DESIGN-REGLEMENT B2/D-1.5: «NUR Prosa-<p>; Kacheln/lc-tile/Tabellen
+    // bleiben unbegrenzt»), gegatet von e2e/qsui-hierarchie (I3). Ohne die
+    // Begrenzung lief sie auf 1280 px über die Lesespalte und riss das Tor auf
+    // /vorlagen/arbeitsvertrag und /vorlagen/klage-vereinfacht (Gegenprüfungs-
+    // Befund B7). Massgeblich ist das Reglement, nicht der neue Chip: die Regel
+    // gilt seit 11.6.2026 für jeden Prosa-Absatz der App, V6 ist keine Ausnahme.
+    <p className="text-body-s text-ink-600 max-w-reading">
       <span className="font-medium text-ink-900">Zuerst rechnen:</span>{' '}
       {rechner.map((r, i) => (
         <span key={r.id}>
