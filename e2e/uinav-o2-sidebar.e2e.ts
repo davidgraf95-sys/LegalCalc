@@ -99,4 +99,32 @@ test.describe('O2 · Sidebar-Konsistenz', () => {
 
     expect(fehler, fehler.join('\n')).toEqual([])
   })
+
+  // O5/Beifang derselben Fläche — der sichtbare Beweis, den SSR nicht führen
+  // kann (die Filterzeile erscheint erst nach dem Manifest-Ladevorgang).
+  test('O5/Beifang: /materialien-Filterfeld erklärt seinen Scope und zoomt mobil nicht', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/materialien')
+
+    const feld = page.getByPlaceholder('Titel, Nummer oder Behörde suchen …')
+    await expect(feld).toBeVisible()
+    // Scope-Label sichtbar UND programmatisch verknüpft.
+    const beschreibung = page.locator('#materialien-filter-scope')
+    await expect(beschreibung).toBeVisible()
+    await expect(feld).toHaveAttribute('aria-describedby', 'materialien-filter-scope')
+    await expect(beschreibung).toContainText('Nur Titel, Nummer, Behörde und Dokumenttyp dieser Rubrik')
+
+    // Beifang: iOS Safari zoomt beim Fokus jedes Felds unter 16 px. Auf 390 px
+    // muss die effektive Schriftgrösse darum ≥ 16 px sein.
+    const px = await feld.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))
+    expect(px, 'unter 16 px zoomt iOS Safari beim Fokus').toBeGreaterThanOrEqual(16)
+
+    // Ab sm bleibt es bei der kompakten Stufe (der Fix ist ein Unter-sm-Zusatz).
+    await page.setViewportSize({ width: 1280, height: 900 })
+    const pxDesktop = await feld.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))
+    expect(pxDesktop).toBeLessThan(16)
+
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
 })

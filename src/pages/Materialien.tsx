@@ -99,15 +99,28 @@ export function Materialien() {
                 {doktypOptionen.map((d) => <option key={d.id} value={d.id}>{d.label}</option>)}
               </select>
             </label>
-            <label className="flex flex-wrap items-center gap-2 text-body-s text-ink-600 flex-1 min-w-[12rem]">
+            {/* O5 (W2·10-UI-NAV-O): das lokale Feld erklärt seinen Scope. Ohne
+                Label sah es aus wie die App-Suche im Kopf und weckte die falsche
+                Erwartung, es fände Gesetzesartikel — es filtert aber nur die
+                Felder dieser Rubrik. Der Wortlaut nennt genau, worüber `filtere`
+                in lib/materialien/browse.ts sucht (Titel · Nummer · Behörde ·
+                Dokumenttyp), und zeigt den Weg zur grossen Suche. Von Anfang an
+                im Layout (§15.2, kein CLS) und programmatisch mit dem Feld
+                verknüpft (aria-describedby) — dieselbe Anatomie wie das
+                Scope-Label auf /gesetze (§5). */}
+            <label className="flex flex-col gap-1.5 text-body-s text-ink-600 flex-1 min-w-[12rem]">
               <span className="sr-only">Suche</span>
               <input
                 type="search"
                 value={suche}
                 onChange={(e) => setSuche(e.target.value)}
                 placeholder="Titel, Nummer oder Behörde suchen …"
+                aria-describedby="materialien-filter-scope"
                 className="lc-input lc-input-sm w-full"
               />
+              <span id="materialien-filter-scope" className="block min-h-5 text-xs text-ink-500">
+                Nur Titel, Nummer, Behörde und Dokumenttyp dieser Rubrik — Gesetzes- und Entscheidtext über die Suche oben.
+              </span>
             </label>
           </div>
 
