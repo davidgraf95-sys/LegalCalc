@@ -5,8 +5,10 @@ fachlich falsches Ergebnis erzeugt. Prozeduren stehen nicht hier, sondern in
 Skills — sie laden, wenn die Tätigkeit ansteht.
 
 **Die Paragraphen-Nummern bleiben unverändert.** Wo ein Paragraph in einen Skill
-umgezogen ist, steht hier eine Zeile mit dem Ziel. So lösen die rund 200
-bestehenden §-Verweise in Skills, Fahrplänen und Code-Kommentaren weiterhin auf.
+umgezogen ist, steht hier eine Zeile mit dem Ziel. So lösen die bestehenden
+§-Verweise in Skills, Fahrplänen und Code-Kommentaren weiterhin auf (der
+Bestand ist vierstellig — Zahl nie von Hand führen, bei Bedarf messen;
+Reglement-Audit 7.8.2026).
 
 **Aktueller Stand und nächster Schritt:** `npm run plan:next`, Detail-Slice per
 `npm run fahrplan` (Schlusstabelle). `ROADMAP.md`/`STRUKTUR.md` sind
@@ -223,6 +225,8 @@ wie §14.7 immer, nie lazy.)
 | Postmortem, Fehlerklassen, wo eine Regel hingehört, §17-Fünf-Schritte | Skill `lehren` |
 | Deploy, Merge-Schutz, Risikopfade | Skill `deploy-check` |
 | Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` |
+| Session-Lebenszyklus Einstieg → Bau → Landung → Abschluss | Skill `bauschritt` |
+| Plan-/Struktur-Rotation, Chronik-Überführung, Deckel | Skill `aufraeumen` |
 | Geräte-Last, Performance | Skill `perf` |
 | Design, Tokens, Sprache, UI-Zustände | `DESIGN-REGLEMENT.md` + Domänen-Reglemente |
 | Aktueller Bau-Stand | `npm run plan:next` · `npm run fahrplan` |

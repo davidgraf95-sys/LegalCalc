@@ -192,9 +192,11 @@ Geist verletzen.
    `/rechner/mietrecht`, `/vorlagen`, eine Vorlagen-Detailroute.
    Prod-URL ist https://lexmetrik.vercel.app (eine Custom-Domain
    lexmetrik.ch existiert NICHT — Fehlversuch 5.8.2026, curl exit 6).
-4. Lighthouse-Metriken manuell messen (QS-PERF/§15): CLS/LCP/TBT auf
-   `/gesetze/bund/OR` unter 4× CPU — Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md`;
-   bleibt manuell, bis ein CI-Chrome verdrahtet ist.
+4. Lighthouse-Metriken (QS-PERF/§15): CLS/LCP/TBT auf `/gesetze/bund/OR` —
+   Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md`. Läuft seit dem CI-Ausbau
+   **automatisiert** als `check:perf-lighthouse` nach dem Merge auf main
+   (ci.yml; Faktenkorrektur 7.8.2026, Reglement-Audit — «manuell bis CI-Chrome»
+   war überholt). Manuell nur noch bei Verdacht zwischen zwei Läufen.
 5. Aufräumen: gemergten Branch + zugehörigen Worktree entfernen
    (Daueranweisung 30.6.).
 6. STRUKTUR.md / ROADMAP.md spiegeln (deployter Stand, Commit-Hash) —

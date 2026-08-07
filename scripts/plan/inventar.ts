@@ -112,6 +112,10 @@ export const INVENTAR: readonly string[] = [
   // Hook-/Konfig-Ausbauten, gesperrte Fläche ⇒ blocked bis David-Freigabe.
   'QS-HOOKS-AUSBAU',
 
+  // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
+  // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
+  'QS-SKILL-DIAET', 'QS-AUDIT-VERWEISE',
+
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
   // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)
