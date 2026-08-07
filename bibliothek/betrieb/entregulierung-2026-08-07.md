@@ -50,6 +50,15 @@ eigenständige Prüfungen (vier `--netz`-Zwillinge, zwei Ketten).
 
 ## Wartet auf David (Konfig-/Regelwerk-Ebene — Agenten- und Berechtigungssystem sperren sie korrekt für Sessions)
 
+> **Pflege-Stand 7.8.2026 abends:** Posten 1–3 sind ERLEDIGT — (1) gate-stopp
+> Grün-Fingerabdruck von David angewandt und committet (`de3d7fa0c`),
+> (2) tor-schutz-Patch angewandt (`464e00986`, Probe a–g 7/7), (3) §16-Kurzform
+> committet (ebd.). Zusätzlich aktiviert: `OTEL_METRICS_EXPORTER=prometheus`
+> (Token-Messung, QS-ENTREG-KONFIG Posten d). OFFEN nur noch Posten 4
+> (Dispatch-§0-Prüfvariante) — in Bau auf `feat/qs-dispatch-p0-pruef`
+> (Freigabe David im Chat, Schritt `QS-DISPATCH-P0-PRUEF` wip; Hook-Anteil
+> wieder als Vorschlagsdatei für Davids cp).
+
 1. **`gate-stopp.py`-Frequenz** — von David am 11.6. angelegt («0 Tokens bei Grün»,
    damals ~7 s); heute 37,7 s nach **jeder** Antwort mit schmutzigem `src/`/`scripts/`.
    Nutzen (Rot früh sehen) ist real, die Frequenz passt zur Prüfung pro *Commit*,
