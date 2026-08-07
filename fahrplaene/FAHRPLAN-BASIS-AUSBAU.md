@@ -467,6 +467,15 @@ hierher. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §1 dieser Datei (a/b/a�
 **Fusioniert 3.8.2026** aus den zwei getrennt aufgenommenen Schritten `QS-AUTOMATIK-BERICHT`
 (Übersicht) und `QS-AUTOMATIK-WT` (Worktree-Sonde) — dieselbe Datei, dieselbe Risiko-Klasse.
 
+**Angedockt 7.8.2026: `QS-MERGE-AUTOZUG`** (Entscheid David, eigener Schritt, gleiche
+Fläche `.github/workflows`): kleiner Workflow (Cron ~10 min + Trigger nach main-Push),
+der offene PRs mit scharfem Auto-Merge (`autoMergeRequest` gesetzt) und
+`mergeStateStatus: BEHIND` per `gh pr update-branch` nachzieht — **seriell, max. 1 PR
+je Lauf, ältester zuerst**, Log-Zeile je Aktion, §6.7 einmal real gezeigt. Anlass: die
+QS-SELBSTOPT-Landekette verlor am 7.8. drei Zyklen à ~15 min ans manuelle Nachziehen
+(#445-Fall: Auto-Merge feuert bei BEHIND nie); die native Merge Queue ist auf
+User-Konten nicht verfügbar (→ `QS-ORG-UMZUG`, geparkter David-Entscheid).
+
 - **Zu bauen:** ein Unterbefehl in `scripts/check-ci-laeufe.ts`, der zwei Abschnitte ausgibt.
   **(a) Wächter-Zustand:** je Workflow in `.github/workflows/` der letzte Lauf mit Ergebnis,
   Datum und **Alter in Tagen** — ein Wächter, der seit Wochen nicht lief, ist so sichtbar wie

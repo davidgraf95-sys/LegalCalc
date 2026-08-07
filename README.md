@@ -106,3 +106,10 @@ Abweichende GAV-/Vertrags-/Versicherungslösungen, der genaue Sachverhalt
 sowie alle Norm- und Rechtsprechungsverweise sind im Einzelfall zu prüfen.
 Die Lohnfortzahlungsskalen sind Gerichtspraxis und vor Produktiveinsatz
 gegen die aktuelle kantonale Praxis abzugleichen.
+
+## Lizenz
+
+Kein Open-Source-Projekt: © David Graf, alle Rechte vorbehalten. Der Code
+ist öffentlich einsehbar, jede Nutzung, Vervielfältigung oder
+Weiterentwicklung bedarf der schriftlichen Zustimmung — Details in
+[LICENSE](LICENSE).

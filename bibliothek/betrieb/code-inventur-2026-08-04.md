@@ -5,7 +5,7 @@ David «plane Verbesserung des Codes, denk gross»), erhoben am Stand
 `2c4d97e54` (3.8.2026); Bundle-Zahlen aus `dist/` vom 3.8. 11:22 (älter als
 HEAD, Näherungswerte). **Abnahme-Status: entwurf** — Befunde belegt, Bewertung
 durch David offen. Bau-Specs der daraus abgeleiteten Schritte:
-[FAHRPLAN-CODE-VERBESSERUNG.md](../../fahrplaene/FAHRPLAN-CODE-VERBESSERUNG.md).
+[FAHRPLAN-CODE-VERBESSERUNG.md](../../archiv/FAHRPLAN-CODE-VERBESSERUNG.md) (archiviert 7.8.2026).
 
 ## 1. Gesamtbild
 

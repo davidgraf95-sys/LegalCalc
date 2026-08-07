@@ -28,248 +28,26 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 5.8.2026 (Nacht II, ABSCHLUSS) — QS-PLAN-REVIEW komplett: Bauplan-Review-Befunde gefixt, Spec-Bindungs-Tor + Lage-Block gelandet, #445 eingereiht
+## Session 7./8.8.2026 (kurz) — Schutzvermerk (LICENSE) + QS-E2E-TEMPO: e2e-Shard-Neu-Packung nach CI-Messwerten
 
-**Orchestrier-Session (Fable), 4 Bau-Agenten in Worktrees; Auftrag David «fixe alle befunde … du orchestrierst, unter-sessions bauen».** Vier-Agenten-Review (Zuordnung/Realität/Hygiene/Koordination) → alle Befunde B1–B5 gefixt: 3+4 falsche §-Anker (drei alte, zwei Neubefunde des Tors, zwei vom Fix selbst erzeugte — das Tor biss sofort), stale Steuerungs-Prosa (@queue-Kommentar, Ceiling-Satz datumsfrei), Ziff.-6-Vollzug (5 done-Blöcke → Chronik, deps bereinigt). **Prävention gelandet:** `check:plan` Regel 11 «Spec-Bindung» (§-Anker muss auflösen UND der §-Abschnitt die Schritt-ID tragen; Geburtsbeweis dreifach rot auf `d316f5884`, Allowlist 1 Eintrag, 25 Tests) · `plan:next` **Lage-Block** (belegte Flächen wip+kollision, Worktree/Branch-Slug-Zuordnung, `--prs`; Ersatz für SessionStart-Hook gemäss T19-Cache-Entscheid) · Skill `auftrag` Ziff. 2: `parked`+`grund: pr-NNN` statt still `ready`, Branch/Worktree tragen Schritt-Slug. Neue Schritte: `W2·5l-NORMTEXT-B2` (B2/M13/M14 war verwaist), `QS-PLAN-REVIEW` (done, Chronik). **QS-CI-VERCEL:** Doku-Diff nach Limit-Reset → Vercel `success` («Canceled by Ignored Build Step»), Merge-Bedingung erfüllt, #445 per Auto-Squash eingereiht und am Vormittag nach Branch-Nachzug GEMERGT (5.8. 08:11Z; Merge-Go David 4.8., Bedingung Skip=success erfüllt) — QS-CI-VERCEL done, Chronik. **Nachmittag (Fortsetzung):** Kommunikationsregel für David (Laiensprache, global) + Lagebild-Ausbau QS-PLAN-BILD-LAGE gelandet — «Was gerade passiert», Wirkungsbereich-Etiketten (6 Kategorien aus kollision:-Globs), Titel-zuerst, Kürzel-Legende; Namensregel neuer Schritte im Skill auftrag; refactoring-Skill: kein Code-austauschender Kontrolllauf bei uncommitteter Arbeit. **Abend (run till dry, Auftrag David «System soll sich selbst verbessern»):** QS-SELBSTOPT als ergebnisoffener Gesamtschritt aufgenommen (Ziel: jeder Bau besser als der vorherige; ENT-Regulierung gleichwertig — Löschkriterium, Zeitreihen-Streich-Beleg) · zwei Recherche-Runden in der Bibliothek (GitHub-native Metrics; Anthropic-Primärquellen: Löschkriterium, Cherny-Entrümpelung, Reward-Hacking 0.94-vs-0.20) · Stale-wip-Warnung in plan:next (QS-PLAN-WIP-FRISCHE, Eskalation Prosa→Maschine nach 2. Vorfall) · Skill `bauschritt` = Standard-Lebenszyklus, jeder Lagebild-Prompt löst ihn aus (QS-SESSION-ZYKLUS) · Grössen-Schätzung S/M/L an allen 110 Schritten + Badges (14 S · 60 M · 36 L) · tor-schutz deckt Tor-Skript-Direktaufrufe · auftrag: sessionfüllend schneiden + zwei Orchestrator-Fallen · Kommunikationsregel global (Laiensprache, Wirkungsbereiche). Tore: check:plan/tsc/eslint/92 Plan-Tests grün. Details: FAHRPLAN-PLAN-STEUERUNG § «Bauplan-Review 4.8.2026», Endstand-Block.
+**Fable-Orchestrator, direkt auf main (keine Risiko-Pfade, keine offene Landekette).** Anlass: Davids Fragen «kann jeder LexMetrik klauen?» und «Prüfstrasse beschleunigen».
 
-## Session 4./5.8.2026 (Nacht, ABSCHLUSS) — Gross-Aufräumung + «run till dry»: #455/#456 + komplette QS-CODE-Landekette 10/10, vier adversariale Gegenprüfungen, beide Steuer-Doku-Wächter GRÜN
-**Fable-Orchestrator-Session (Auftrag David: «räum ganzen worktrees auf … lösch die gelandeten … mach die rotation … alles aufräumen, run till dry — am Ende keine Worktrees, nur main, alles dokumentiert»). Sieben delegierte Einheiten (lex-bau/lex-synthese/4× lex-pruefung), serielle Landung mit Batterie-Wachen. main-Endstand: siehe letzter Commit dieser Karte.**
+- **Schutzvermerk (`3e500258a`):** Repo bleibt öffentlich (Entscheid David — CI-Gratis-Minuten, ~11'800 min/Monat wären privat ~80–90 Fr.); `LICENSE` «alle Rechte vorbehalten» (Art. 2 Abs. 3 URG, Abgrenzung Art. 5 URG) + README-Abschnitt.
+- **QS-E2E-TEMPO (done):** Messung der letzten 8 grünen Läufe — 7 von 8 e2e-Gruppen ~5–7 min, Gruppe 1 konsistent 9–16 min ⇒ dokumentierte Neu-Pack-Schwelle (>~7 min) gerissen. LPT-Neu-Packung aus den Report-Artefakten (Lauf 31220026058, 71 Specs, 38.4 min): sieben Gruppen ~3.9 min, `leser-r1-r2` solo 11.5 min. Union-Wächter grün, reine Verteilung (§6.3). Erwartung: Voll-Lauf-Wartezeit ~15 → ~13 min; nach r1-r2-Fix ~11.
+- **Befund (→ `QS-E2E-STABIL`-Text):** `leser-r1-r2` — alle 7 R1-Suche-Fälle scheitern im CI SYSTEMATISCH im Erstversuch (`[data-treffer-leiste]` >20 s, Retry grün, ~230 s/Lauf verschenkt); Wurzel im Leser-Suchpfad (Render aller Treffer-Artikel), Fläche `W2·10-UI-NAV` — dort fixen, nicht per Timeout maskieren. Grösster verbleibender CI-Hebel (≈ −4 min/Lauf).
+- **Vermerkt:** `QS-CODE-PROP` (Eigenschafts-Tests für Engines, Entscheid David; Invarianten-Katalog mit Abnahme). Offen: ROADMAP.md über KB-Budget (Wächter meldet; Chronik-Überführung per Skill `aufraeumen` fällig, bewusst nicht parallel zur offenen W2·10-Landung).
 
-- **QS-CODE-Landekette 10/10 gelandet** (#444, #446–#454): 6 Nicht-Risiko-PRs regulär; die 4 Risiko-PRs erst nach frisch gefahrenen adversarialen Gegenprüfungen (alle BESTANDEN, Register-Quittungen mit Hand-Hash): **#449** Rechnen-Re-Derivation BGG/GebV SchKG/ZPO blind, 59/59 · **#447** 8880er-Differential-Sweep alt==neu + kern.ts-Befund «Split verliert Risiko-Klassifikation» im Branch behoben (Ordner-Zweig + Test, Rot-Beweis) · **#448** Identitäts-Stichprobe 56/56 mit Wortgrenze gegen bger.ch (#309-Linse) · **#454** zwei Prüf-Runden: Runde 1 fand den Tokenizer-Drift-Vektor (F1, behoben), Runde 2 WIDERLEGTE meine Lese-null-Diagnose und verortete die echte Node-22-Wurzel auf der BIND-Seite der Test-Rekonstruktion (Kopier-Fix, auf 3 Node-Binaries verifiziert; CI-Node-22-Batterie als Umgebungs-Beweis GRÜN; Produktionspfad via Buffer.from→base64 nie betroffen). Erster echter Turso-Sync-Lauf per dispatch angestossen (Auflage).
-- **Vercel-Tageslimit-Regime:** David-Entscheid «lass vercel aus dem spiel» → Admin-Merge bei grüner Actions-Batterie, als Interim-Regel im Landung-Skill kodifiziert. Register-Konflikte je Landung lokal per union-Treiber aufgelöst (Server kennt keine Merge-Treiber). `druck-fundstellen-z2`-Flake traf 3× (Beleg in LERNPHASE §3.4).
-- **#445 Skip-Test versucht, NICHT abgeschlossen:** frischer Doku-only-Commit `513139312` lief erneut ins Rate-Limit (Ablehnung VOR ignoreCommand-Auswertung — im Limit-Zustand ist der Test unmöglich). Davids Tor gilt: Merge nur bei belegtem Skip=success; Übergabe an den Tag: EIN Doku-Commit bei freiem Kontingent entscheidet.
-- **§17-Prozessverbesserungen der Nacht:** Rotations-Wurzel-Fix #455 (Doppel-Datum-Regex + budget-getriebene Nachrotation — hat sich noch in derselben Session selbst bewährt) · Vercel-Limit-Regel + «fehlende Checks ≠ grün» im Landung-Skill (Realfall Wächter-False-Positive) · Dispatch-Template: Gegenprüfung sofort dispatchen, Landeschuld übernachtet nicht (Wurzel der 10 offenen PRs) · Git-Routine-Allow-Regeln in Projekt-Settings · neuer Schritt `QS-GP-NACHBEFUNDE` (drei Prüf-Nebenbefunde).
+## Session 7.8.2026 (Ganztag, ABSCHLUSS) — QS-SELBSTOPT komplett: Messreihe + retro:17 + Ent-Regulierung, Dispatch-P0-Prüfvariante, e2e-Stall-Wurzel gefixt (#459/#461/#462)
 
-*Ursprüngliche Karten-Fassung (erster Bogen der Nacht, main `dc98c1c7b`):*
+**Fable-Orchestrator-Session (Bau-Prompt QS-SELBSTOPT «eine ganze Session, ergebnisoffen»; im Verlauf David-Freigaben «freie Fahrt», CLAUDE.md-Änderung, Autopilot Stufe 1, Rollenteilungs-Kalibrierung). 6 delegierte Agenten (2× lex-bau Opus, 2× lex-pruefung Fable, 1× lex-pruefung Opus, 1× lex-recherche Opus + 1 Sonnet-Recherche), 3 PRs seriell gelandet.**
 
-- **Branch-Bereinigung:** 15 lokale Branches gelöscht (14 gelandete + `feat/l3-reaktivierung` auf expliziten David-Auftrag; je Branch belegt: lokale Spitze im gemergten PR-Stand, Squash-sicher via `gh api compare`, 0 ahead). Übrig: main + die 10 offenen QS-CODE-/CI-PR-Branches #444–#454.
-- **#455 Rotations-Wurzel-Fix (§17):** Doppel-Datum-Regex-Lücke (dokumentiert seit AP-Welle, nie gefixt) + budget-getriebene Nachrotation (`MINDEST_BEHALT=3`) in `.claude/hooks/struktur-rotieren.py`; §6.7-Rot-Beweis (vorher rotieren:0 trotz 7 überalterter Karten), Gegenprüfung BESTANDEN (Linsen: Byte-Erhalt exakt, Regex-Randfälle 14/14, Terminierung, Hook-No-op-Sicherheit, Doku-Treue; 2 Minor-Befunde behoben im Rotations-Commit `5f5422679`). Rotation vollzogen: STRUKTUR **75.0→57.8 KB**, 5 Karten byte-gleich ins Archiv, Archiv-Chronologie repariert.
-- **#456 ROADMAP-Diät Wellen 2+3:** W2 = 14 `done`-Schritte wörtlich in die Chronik (+Inventar-Nachzug); W3 = AP-11 rückwirkend, Spec-Prosa von 36 offenen Schritten in 19 Fahrpläne (je Nachzugs-§ mit Herkunftsvermerk). ROADMAP **120.6→97.4 KB**; Prosa-Bilanz mechanisch (824 Chunks, 0 verloren; ein Elidier-Fehler dadurch gefunden+behoben), `check:plan` grün, 143 Plan-Tests grün, `plan:next` steuerungs-neutral.
-- **Landungs-Lage:** Vercel-Free-Tageslimit machte den Required-Check «Vercel» rot → David-Entscheid im Chat («lass vercel aus dem spiel»): Merge per `--admin` bei grüner Actions-Batterie; #456-Shard-2-Flake (Runner 16m33s, Doku-Diff = eigene Nullprobe) per Rerun grün. Wurzel-Fix-Flächen existieren: QS-CI-VERCEL (#445, Test 5.8.) bzw. QS-E2E-STABIL.
-- **Offene David-Entscheide:** (1) `W2·5d` (done) bleibt im Plan — zwei offene Schritte tragen `dep: [W2·5d]`; Umzug in die Chronik wäre ein Steuer-Eingriff. (2) `QS-EXTQUELLEN`/`QS-CI-VERCEL` haben kein `fahrplan:`-Feld — grösste verbliebene ROADMAP-Prosa-Blöcke; für weitere Diät zuerst Feld vergeben. (3) README-Neufassung + Root-Audits-Archivierung weiter offen.
-
-## Session 4.8.2026 (spät) — Delegations-System modernisiert: Agent-Typen lex-*, Stufen-Palette, Tor-Ebene C
-**Fable-Session, Prozessarbeit nach §17-Fünf-Schritten (Automatisierung von Stabilem). Anlass: freies Prozessmandat David 4.8.2026 («Prozesse des Arbeitens optimieren ist deine Aufgabe — offen ausserhalb bestehender Vorgaben»). Commit `ef5a3a843` direkt auf main; Tore grün (dispatch-klausel, gate:schnell, eslint).**
-
-- **Agent-Typen `lex-<klasse>`** (bau · daten · pruefung · recherche · mechanisch[NEU] · synthese[NEU], `.claude/agents/`): generiert aus `scripts/dispatch-agents.ts`, §0-Klausel + TABU + Rückgabe-Schema + Modell-Default in der Definition — ~470 Tok Orchestrator-Output je Dispatch entfallen, Vergessen strukturell unmöglich; pruefung/recherche read-only. Freitext-Weg (`npm run dispatch`) bleibt Fallback.
-- **Zukunftstauglich:** Modellnamen nur noch in `PALETTE` (`scripts/dispatch.ts`; Stufen spitze/stark/mittel/klein, Stand 4.8.2026 = fable/opus/sonnet/haiku); Doku und Skill sprechen Stufen. Modellfamilien-Wechsel = Ein-Zeilen-Edit + `npm run dispatch:agents`.
-- **Tor + Hook:** `check:dispatch-klausel` Ebene C (Byte-Gleichheit der Agent-Dateien, §5-Projektion) — rot bei fehlender Datei UND bei Hand-Edit gezeigt, grün gezeigt (§6.7); `dispatch-schutz.py` befreit `lex-*` (4 stdin-Proben). argv-Guard-Falle beim Generator-Erstlauf reproduziert → CLI-Trennung nach dispatch-cli-Muster.
-- **Routing-Entscheide David verankert** (Template §2 + Skill `auftrag` Ziff. 6): Gegenprüfung bevorzugt spitze (Minimum stark/high, stets ≠ Bau-Modell) · enger nicht-riskanter Bau darf mittel · Cache-Bündel-Regel auf TTL-Fenster 1 h · Template §1.4 NEU: Agent-Weiterverwendung per SendMessage (nie Gegenprüfung, nie Klassen-Grenze).
-
-## Session 4.8.2026 (ganztags) — Code-Inventur → QS-CODE-Reihe: Intake, 10 Bau-Einheiten, Orchestrierungs-Modus
-**Fable-Session (ab Nachmittag reine Orchestrierung: Opus baut, Sonnet prüft, Haiku fegt — Anweisung David). Drei read-only Tiefenanalysen (Logik/Darstellung/Pipeline, Stand `2c4d97e54`) → §14-Intake `QS-CODE-{TURSO,FRISTENKERN,AUSSENKANTEN,ENTDOPPLUNG,SPLITS}` + FAHRPLAN-CODE-VERBESSERUNG + Bibliothek-Dossier (`b5518366b`); David-Entscheide verankert (Manifest-Nullzeilen gewollt · Tariftext-Freigabe → DESIGN-REGLEMENT-NORMTEXT §1, `94a9bfa35`).**
-
-- **Gelandet:** #442 FRISTENKERN (26-Fälle-Grenzwert-Batterie fristenEngine, Mutations-Rotprobe; `47fce63ad`) · #443 QS-PLAN-BILD (Fremd-PR, seriell mitgelandet) · `daten/poc` −6,7 GB (Freigabe David).
-- **Gebaut + adversarial geprüft, PRs offen (Batterie/Landung → Folgesession):** #451 AUSSENKANTEN (Tor `check:ui-normzitate`, Basislinie LEER 738/738, Suffix-Falle aus Gegenprüfung via `artikelToken` behoben + `jsonSchutz` für 9 Blindcasts; e2e-Verdikt GRÜN, **Auto-Merge scharf**) · #452 D6 (70 useState→AgStand, Migration alt-Format, 75/75 verlustfrei) · #450 D1/T1 (6 Seiten auf VorlagenSeite, Komfort-Delta deklariert) · #453 D2 (GerichtsWahlBlock, 720-Fälle-Byteprobe) · #446 D4 (usePermalinkFelder, 18 Formulare) · #444 fedlex-Split (Byte-Rekonstruktion identisch) · #447/#448 zust/besetzung-Splits (**Risikopfad — Merge-Schutz hält sie GEWOLLT rot** bis Gegenprüfungs-Quittung; kern.ts-Ordner-Zweig in #448, Blocker-Doku in #447) · #449 Kleinvieh (Archiv-One-Shots, coverage-v8 via npm@10, rsp-fs-idx-Migration, chf-Heimat).
-- **Prozess (§17 als Automatik, Anweisung David):** `tor-schutz.py` deckt jetzt playwright/e2e-Pipes (Rotprobe gezeigt) · Refactoring-Skill: Engine-Split ⇒ `istRisikoPfad()`-Abdeckung im selben PR (2× unabhängig belegt) · QS-E2E-STABIL-Mitnahme (suche.test-hookTimeout 3× belegt) · strict/BEHIND-Klemme diagnostiziert (update-branch; Wurzel-Fix `QS-CI-VERCEL`/#445 bei Parallel-Session) · Vercel-Tageslimit → dokumentierte Billing-Ausnahme-Landungen.
-- **Offen (Folgesession):** Batterien+Landungen der 9 PRs (Reihenfolge frei, #447/#448 nur mit Gegenprüfungs-Ritual) · TURSO (Stand siehe Branch/ROADMAP) · D1-T2–4 · D3/D5/D7 · Splits prozesskosten/zitat-extraktion/EntscheidLeser (mit QS-UI-HIGHLIGHT sequenzieren) · QS-PERF c.
-
-## Session 4.8.2026 (abends) — QS-PLAN-BILD: Lagebild-Generator als Steuerpult (#443)
-**Fable-Session, Worktree qs-plan-bild: `npm run plan:bild` gebaut und gelandet (Squash `39c5cc6d1`, Admin-Bypass wegen Vercel-Tageslimit — Entscheid David; inhaltliche Tore lokal + CI-Vorlauf grün, Haupt-CI-Lauf auf `main` zum Kartenzeitpunkt laufend).**
-
-- **Generator** (`scripts/plan/bild.ts` + `bildDaten/bildHtml/bildSeiten.ts`; seit dem
-  Mehrseiten-Ausbau 4.8.2026 vier verlinkte Seiten — s. FAHRPLAN-PLAN-STEUERUNG
-  §«Lagebild-Generator»): laienverständliches HTML-Lagebild aus
-  `parseRoadmap()`+`resolve()` (Kennzahlen == `plan:next`), Korpus-/Katalog-Zählungen, gh-PR-Status.
-  Sektionen: Lage-Satz · main-Ampel · Wartet-auf-David (mit Blocker-Alter) · Gerade im Bau
-  (wip + PRs + Worktrees, wip-Verstoss-Sonde) · Zuletzt gelandet · @queue + Parallel-Start-Box
-  (Resolver-Lane 1) · Phasen · Baustellen-Karten (@lagebild-Kopfzeilen aller 28 Fahrpläne) ·
-  Tipp-Filter. Je baubarem Schritt ein kopierbarer **Bau-Prompt** (wip-Setzen, Worktree, Slice-Befehl
-  mit verprobtem §-Anker [22/74], DoD, §14.7 wörtlich). Flags `--out/--open/--watch/--pull`.
-- **Konventionen verankert:** `@lagebild name/zweck` je Fahrplan · `**Detail:** … §N` maschinengelesen ·
-  beide + wip-Sonde im Skill `auftrag` Ziff. 1 nachgeführt (Spec: FAHRPLAN-PLAN-STEUERUNG §Lagebild).
-- **Davids Betriebs-Zugang (lokal, ausserhalb Repo):** LaunchAgent `ch.lexmetrik.planbild`
-  (`--watch 300 --pull`, Wrapper in `~/Library/Application Support/LexMetrik/`) + App
-  «LexMetrik Lagebild» in `/Applications` (Chrome-App-Fenster auf `tmp/plan-bild.html`).
-- **Plan/Prozess:** `QS-CI-VERCEL` angelegt (§17-Wurzel-Fix: Ignored Build Step, Anlass >100
-  Preview-Deployments/Tag blockierten den merge-pflichtigen Vercel-Check dieses App-fremden Diffs);
-  QS-PLAN-BILD done; wip-Sonde meldete live QS-CODE-AUSSENKANTEN → Parallel-Session zog wip nach.
-- **Zweiter Bogen (spätabends, Go David «freie Bahn»):** Mehrseiten-Ausbau gelandet (`05ed90e07`,
-  direkt auf main wegen Vercel-Limit): vier verlinkte Seiten (Lagebild · Projekt & Produkt ·
-  Geschichte & Bau-Statistik · Arbeitsweise & Glossar), Aufteilung bild/bildDaten/bildHtml/
-  bildSeiten; Kacheln neu aus Register+ALLE_KARTEN (238/1231/53 nutzbar/81 geplant — §5 statt
-  Datei-Zählung). Bau: Opus-Agent · adversariale Prompt-Prüfung: Sonnet-Agent, 8 Befunde
-  (3 Blocker: QS-PERF-Titel-Fehlgriff, Kappungsverlust QS-EXTQUELLEN [Lizenzfrage!] und
-  QS-AUTOMATIK-PARITAET-Scope) → Fix-Schleife an den Bauer, alle an der Wurzel behoben, von der
-  Hauptsession einzeln nachverifiziert. §17-Beifang: fahrplan-slice-CLI ohne Import-Seiteneffekt
-  (`fahrplanSlicerKern.ts`). main-Ampel-Fix (cancelled ≠ rot); gh-Pfad im LaunchAgent-Wrapper.
-- **QS-CI-VERCEL Stand bei Session-Ende:** bewusst `wip` (PR #445 Testträger steht, App-Diff-
-  Testhälfte real erbracht, Shard-2-Flake per Rerun grün); morgen: Skip-Beweis nach Limit-Reset,
-  Merge nur bei «success» (Go David 4.8., Memory-Eintrag). main-CI zu `05ed90e07` lief bei
-  Session-Ende noch — Ampel im Lagebild zeigt das Ergebnis.
-
-## Session 3./4.8.2026 — W2·5d + W2·10-Reader-Kette + QS-UI 8a/8b (Orchestrierung, 16 PRs)
-**Orchestrier-Session (Fable), Worktree bauplan-review-095048: 12 PRs gebaut, geprüft, gelandet — W2·5d abgeschlossen, W2·10-Reader-Kette (VR/R1/R2/R3/R4/Z/URL) komplett.**
-
-- **W2·5d-Rest (4 Einheiten):** ANNEX #425 (eId auf Anhang-Pfad, Risikopfad, Gegenprüfung
-  bestanden — Nebenfund N2 → `QS-KORPUS-SCOPE`) · SPY #426 (H6 REPRODUZIERT: Band-statt-Linie
-  + 400%-Zoom-Fall; Frame-genauer Spy) · YC #424 (/international 308 + Hash 7/7 nach
-  Bug-Check-Fix) · EID3 #427 (Tiefe aus eId-Pfad, nur SVG ändert Kennzahl). W2·5d = done.
-- **Reader-Kette W2·10:** R4 #428 (Tap-Ziel-Token F9) · R1 #429 (In-Gesetz-Suche; Blocker
-  «Geister-Fundstellen» + §8-Fussnoten-Zähler im Check-Zyklus) · VR #432 (Kurztext-Popover +
-  Erwägungs-Rail; Esc-Fokus-Wurzel) · Spy-Mikro #433 (N1/N2/N4 + worktree-abgeleiteter
-  E2E-Port) · Z #434 (Print-Wurzelfix: Ausdrucke waren ohne Titel/SR/Stand/Banner; ICS-UID) ·
-  R2 #431 (Zitat/Rücksprung/Skeleton; VIER Wurzel-Fixes inkl. setInterval-Aushungerung→rAF und
-  font-medium-CLS [main-Vorbestand 0.0017 behoben]) · R3 #436 (Weiterlesen + j/k; Fremdfund
-  «Sie sind hier»-null aus #429 geheilt) · URL #437 (LM-202: Sync existierte nie — Teilen-Hälfte
-  gebaut; Split-View-Wächter + §5-Kodierung im Check-Zyklus).
-- **Methode:** je Einheit EIN Opus-Bauer (Worktree, §0-Klausel) + unabhängiger §9-Bug-Check
-  (Opus) + bei Risikopfad adversariale Gegenprüfung (Fable, eigene Re-Derivation byte-identisch);
-  Befunde als Fix-Schleifen an den Bauer zurück, Re-Verifikation bei Blockern. ~15 echte
-  Befunde vor Prod abgefangen (u. a. 681/425-Zähler, 6-s-Schleier, UID-Kollision, WCAG-2.4.3).
-- **Plan/Prozess:** `QS-KORPUS-SCOPE`, `QS-E2E-STABIL`, `QS-UI-HIGHLIGHT` angelegt; Landung-Skill
-  um Landungs-Rollen-Ansage erweitert (externe Grün-Merges 3./4.8.); Rest-CLS-Messwerte als
-  Stand-Notiz bei `W2·15-CLS`; Fahrplan-Stand §S in FAHRPLAN-UI-NAVIGATION. Offene David-Frage:
-  ICS `TRANSP:TRANSPARENT` (bricht Golden-Anker — nur mit Go).
-- **Fortsetzung 4.8. (zweiter Bogen):** QS-UI 8a Fundament-Pass #439 (warn-line-Tick,
-  outline-none-Falle im Reglement, Gate-Stufe 1: 48→72 Farbwelt-Paare, axe-Dunkelabdeckung) ·
-  8b Hierarchie-Pass «Verdikt zuerst» Rechner #440 (Erbteilung 666→270 px; Druck-Wurzelfix
-  [class*='lc-btn']; Tor qsui-hierarchie, nach Check gehärtet) + Rechtsprechung/Vorlagen #441
-  (Tor 28→65 Fälle; §8-Wurzelfix zeigeWarnungen; alle 18 Vorlagen-Routen mit sichtbarem
-  Formvorschriften-Badge belegt) · ROADMAP-Diät #438 (ehrlicher Befund: done-Blöcke waren
-  schon schlank; Ceiling-Rest 109.8 KB bleibt beim QS-TOK-Posten) — **W2·5h-seq-hart damit
-  eingelöst; W2·5h ist der natürliche nächste Schritt.** QS-UI zurück auf ready (kontinuierlich).
-  Neu: QS-E2E-SHARD-GEN (5/6 Landekonflikte in shard-gruppen.json); Dispatch-Template-Kaveats
-  (mechanisch≠Haiku bei @meta-Strukturen + Worktree-Pflicht; Daten-Klasse: Manifest-Regen).
-  Offene David-Punkte: ICS TRANSP · LiveSuche-Platzierung Trefferliste · Vercel-Preview-Quota
-  (Label-Opt-in?) · Merge-Queue nur via Org-Transfer.
-- **Bekannter Rest:** Vercel-Preview-Quota war zeitweise erschöpft (rate limit) — Prod-Deploy
-  des letzten Stands ggf. verzögert; Nachkontrolle beim nächsten Deploy-Blick. W2·10-Dach bleibt
-  offen (-S/-V/-J/-J3/-O nicht beauftragt). W2·5h-GESETZ-UI als nächstes beauftragt.
-
-## Session 3./4.8.2026 — Bau-Evaluation → Landungen, F2b-Manifest-Reparatur, Shard-Balance
-**Prozess-Session: 2 Plan-Landungen auf `main`, 1 Reparatur-PR (#430), 1 Bau-Branch bereit.**
-
-- **Bau-Evaluation (Auftrag David):** vier Befunde als Plan-Schritte verankert (`c614abe51`):
-  `QS-GP-PREPUSH` (Verdikt-Prüfung vor Push), `QS-BASIS-DOKU-CI` (blockiert, David-Gate
-  `david-entscheid-doku-kurzpfad-main`), `QS-AUTOMATIK-BERICHT` um Branch-/PR-Inventur erweitert.
-- **Landungen:** #422 (BMV) landete durch die wt-bmv-Session (mein Merge-Versuch No-op). #423
-  (L-3) war von David **verworfen** (`2c4d97e54`) — mein Head-Sync-Reopen versehentlich, sofort
-  rückgängig gemacht, Verwerfungs-Zustand wiederhergestellt.
-- **F2b-Vorfall #425:** 226 Annex-Sidecars ohne `daten-manifest.json`-Nachzug passierten das
-  PR-CI grün (`check:datenhaltung` lief nur post-merge in `turso-sync.yml`, Sync seit 21:52 rot).
-  Reparatur + Wurzelfix = **PR #430**: Manifest nachgezogen (Bisektion beweist Pin = exakt
-  #425-Wirkung, cross-env Node 22/24), `check:datenhaltung` in den ci.yml-Tore-Job (~21 s),
-  Gegenprüfung bestanden (Opus, unabhängige Kanonik-Nachrechnung aus git-Blobs). Sonden-Schärfung
-  als `QS-AUTOMATIK-PARITAET` angelegt (5 weitere Tore nur wächter-gedeckt).
-- **Shard-Balance (QS-PERF-Posten):** LPT-Neupackung aus gemessenen CI-Dauern (Lauf 30852386612,
-  63 Specs): Max-Gruppe 8.5 → 5.6 min, Branch `chore/e2e-shard-balance` bereit, landet nach #430.
-- **Betriebsnotiz:** zweimal in einer Nacht verschluckte GitHub Push-Events (#423, #430) — Mittel
-  laut Skill `landung`: sofortiger `gh workflow run ci.yml`, Wächter zieht täglich nach.
-
-## Session 4.8.2026 — Sichtung `musk-algorithm-skill` → §17-Fünf-Schritte-Reihenfolge im Skill `lehren`
-**Eine Doku-Landung auf `main`. Kein Bau.**
-
-- **Auftrag David:** externes Skill-Repo `malkreide/musk-algorithm-skill` (5-Schritte-Algorithmus,
-  Hayal Oezkan, MIT) auf LexMetrik-Tauglichkeit sichten. Befund: als Ganzes kollidiert es mit
-  §1/§4 («Vereinfachen/Löschen» vs. Korrektheit vor Eleganz); tragfähig ist nur der Prozess-Kern.
-- **Entscheid David («bau variante 3»):** KEIN neuer Skill — die zugeschnittene
-  Fünf-Schritte-Reihenfolge (hinterfragen → löschen → vereinfachen → beschleunigen →
-  automatisieren) als §17-Anhang im Skill `lehren`, Geltungsbereich hart auf Prozess/CI/Doku
-  begrenzt, `src/lib/` ausgeschlossen; Trigger in der Skill-Description ergänzt, Zeiger in der
-  CLAUDE.md-Skill-Tabelle nachgezogen. Provenienz (Repo, Lizenz, Datum) steht im Anhang selbst. — Entscheide-Paket David: BMV-SSoT #422 gelandet, L-3-Versuch #423 verworfen
-**Fortsetzung der Aufräum-Session (Orchestrator). Zwei PRs, fünf David-Entscheide, zwei neue Schritte.**
-
-- **David-Entscheide umgesetzt:** B3→B19-Kette freigegeben (seriell, Überspring-Erlaubnis) ·
-  LM-202 entschieden → Schritt `W2·10-UI-NAV-URL` · QS-TOK-Reste pauschal frei · BMV nachführen ·
-  L-3 reaktivieren (s.u., am Live-Blick gescheitert).
-- **#422 gelandet (`373d73f7f`):** BMV-SSoT-Wurzelfix — Verfallsregister-Generator keyt gegen dieselbe
-  Aufhebungs-Deklaration wie das Tor (§5/§17); die Aufhebung selbst war seit #287 nachgeführt, der
-  Auftragstext beruhte auf dem Register-Widerspruch. Gegenprüfung Durchgang 1 **widerlegte** eine
-  Testlücke (Mutations-Matrix: 3/4 Guards ungebunden), Fix `856d87c21` (R4/R5), Durchgang 2 bestanden
-  (Register `f4755e386`). Amtlich doppelt belegt: Nachfolge-Totalrevision `cc/2025/408` gleiche SR,
-  in Kraft 1.3.2026 — **fehlt im Korpus** → neuer Schritt `QS-KORPUS-BMV`.
-- **#423 GESCHLOSSEN, nicht gelandet:** L-3-Reaktivierung war voll gebaut+bewiesen (Tor erst rot,
-  840 Auto-Guides, Golden byte-gleich, 15/15 e2e) — Davids Preview-Blick aufs ZGB bestätigte sein
-  12.7.-Urteil («eine einzige linie und unbrauchbar»). A28 bleibt der Stand; neuer KONZEPT-Schritt
-  `W2·5k-LINIEN-KONZEPT` (Prototypen zur David-Abnahme VOR Vollbau, nie wieder blosse Default-Umkehr).
-  Nebenbefunde des Versuchs verwertet: vorbestehender Erlass-Leser-CLS 0.05–0.22 → in `W2·15-CLS`.
-- **Koordination:** 3 Parallel-Sessions aktiv (W2·5d-Lanes + Bauplan-Review); Flächen abgeglichen,
-  Linien-Fläche nach #423-Schliessung freigemeldet. `strict:true` bewährte sich (beide Landungen
-  per update-branch). VPS-Bestellanleitung an David; Memory konsolidiert (10→8), globale
-  Memory-Grundsätze in `~/.claude/CLAUDE.md` angelegt.
-
-## Session 3.8.2026 (Abend) — Recherche externe Quellen, als Befundliste in den Plan gehoben
-**Eine Doku-Landung auf `main` (`233eb8923`). Kein Bau, keine Bewertung.**
-
-- **Auftrag David, dreistufig:** zwei Repos bewerten (`benjamin-arfa/swiss-law`,
-  `rnckp/awesome-open-legal-switzerland`) → «suche weiter … Liste möglicher Funktionen» →
-  Einschränkung «es soll hauptsächlich Bestehendes unterstützen» → «baue es einfach als findings
-  ein, andere session soll es dann nochmals neu evaluieren».
-- **Ergebnis:** [`bibliothek/recherche/externe-quellen-repos-2026-08-03.md`](bibliothek/recherche/externe-quellen-repos-2026-08-03.md)
-  (~60 Abfragen, 7 Endpunkte live geprüft, HTTP-Code je Zeile) + **ein** Roadmap-Schritt
-  `QS-EXTQUELLEN` im Querschnitt-Band. Vier Befunde stützen Bestehendes (Feiertags-Zweitquelle ·
-  Normtext-Diff-Orakel · BFS-Gemeindeverzeichnis · kantonale Amtskreise), vier sind erweiternd
-  und geparkt (SHAB-API · QR-Rechnung · eSchKG 2.2.01 · PDF/A ab BEKJ 1.7.2027), sechs
-  Negativbefunde nach S5.
-- **Bewusst NICHT getan:** die Befunde an bestehende Schritte angedockt oder in Bau-Schritte
-  zerlegt — das ist Gegenstand von `QS-EXTQUELLEN` selbst (Anordnung David). Fünf offene Fragen
-  im Dossier §5, eine davon an David: kommerzieller Betrieb? Davon hängt ab, ob `droid-f/fedlex`
-  unter CC BY-NC-SA überhaupt berührt werden darf.
-- **Offener Mangel, ehrlich:** `ROADMAP.md` liegt bereits über dem QS-TOK-Budget (100 KB); dieser
-  Eintrag hat sie um rund 2 KB verlängert. Bewusst auf zwei Zeilen begrenzt, die Substanz liegt
-  im Dossier — der Rückbau bleibt Sache von `QS-TOK`.
-
-## Session 3.8.2026 (Tag) — Aufräum-Tag: CI-Härtung, Totcode, Roadmap-Verschlankung
-**Vier Landungen auf `main`, ein Doku-Finale, ein PR im Anflug. Kein Feature-Bau.**
-
-- **#414 gelandet (`9c63c647a`)** — Fedlex-Frische + Kanonik-Fix an 8 Pins (`zgb`, `mwstg`, `bbg`,
-  `usg`, `gwg`, `kag`, `fza`, `cmr`) + Stopp des Workflow-Selbstattests. **Gegenprüfung Durchgang 1
-  widerlegte den Stand** → Fix → Durchgang 2 bestanden (Register `553bdc393`).
-- **#417 GESCHLOSSEN ohne Merge** — der Inhalt des `sleepy-mestorf`-Worktrees lag bereits über
-  #412/#413 auf `main` (`changed_files=0`). Worktree und Branch entfernt.   `QS-AUTOMATIK-BERICHT` (Verwaiste-Worktree-Sonde; am selben Tag mit dem Wächter-Zustandsbericht fusioniert): Diff-leer gegen `main` = gelandet, nicht abgeräumt.
-- **#418 gelandet (`d18429d18`)** — Totcode-Entfernung: 142 `export`-Strips, 8 Definitionen,
-  7 Re-Export-Zeilen, 5 CSS-Klassen; **knip 162 → 1** Meldung. Gegenprüfung bestanden, Beweis
-  **8164 Prerender-Seiten byte-gleich** (Register `7a1e2fa46`) — von Hand geführt, daher der neue
-  Schritt `QS-GP-PRERENDER`.
-- **#419 gelandet (`02df51a0a`)** — CI-Härtung **K1–K13**: Wächter-Selbstverriegelung gelöst (war
-  15/15 rot), `ci.yml`-Umbau mit Diff-Klassierung statt Zwilling (`ci-doku-noop.yml` gelöscht),
-  Kontext-Selbstheilung, Bot-PR-CI-Dispatch, Kanonik-Selbstheilung im Wochenlauf, `fedlex-cache.sh`
-  scheitert laut statt still (Alt-Repro: OR bekam falschen Text mit Wortdiff), Monitor-Triage,
-  `check:verfall` raus aus dem PR-Pfad, Actions v5. Gegenprüfung bestanden (Register `b377330f9`).
-- **Prozess-Doku direkt (`437e92950` + `4e9ab9eb2`)** — CLAUDE.md §17, PR-Template mit DoD,
-  Dispatch-Template-Arbeitsteilung, Lehren F2e + F3-Update, Landung-Skill-Notiz, `launch.json`.
-- **#420 gelandet (`d864a9caa`)** — Nachzug-Bündel: Rest-Totcode (dabei erwies sich der
-  `fmtCHF`-Re-Export als **LEBEND** — Prüferbefund aus #418 korrigiert), Cache-Inhalts-Sonde,
-  Wiedervorlage-Kanonik. Gegenprüfung bestanden (Register `860352850`/`212e22609`).
-- **Doku-Finale (diese Session)** — **ROADMAP 117.4 → ~97 KB**, wieder unter dem 100-KB-Ceiling:
-  24 erledigte Schritte vollständig in `ROADMAP-CHRONIK.md` überführt (wörtlich, nie
-  zusammengefasst), **6 Streichungen** je mit Begründungszeile in der Chronik, 2 Fahrpläne nach
-  `archiv/` (29 → 27). **Entparkt** (David 3.8.): `W1·4` · `W2·5g-ZEIT` · `W2·5j-TABELLEN` — die drei
-  Blocker trugen ihre Auflösung selbst im Register, die Vorbedingungen leben als Bau-Reihenfolge im
-  Schritt weiter. **12 neue Schritte** (§14-Intake 3.8.), je mit Anlass-Satz. Neu in der Bibliothek:
-  `ci-fehlerklassen-2026-08-03.md` (K1–K13, Abnahme-Status entwurf).
-- **David-Entscheide 3.8.:** `strict:true` AKTIV (per API) · Secret `AUTOMERGE_TOKEN` angelegt
-  (17:54Z) · TBT-Bewertung → **normiert** · Merge Queue **G7 JA**, Aktivierung nach TBT-Landung
-  (`QS-BASIS-MQ`) · Pflege-Routine wöchentlich JA.
-- **Nachtrag 20:55Z:** PR #421 «Runner-Robustheit» ist **gelandet** (`23f4be7fb`, TBT-Bewertung
-  normiert + OR-e2e-Timeouts runner-fest). Merge Queue **G7 nicht aktivierbar**: GitHub bietet
-  Merge Queues nur für **Organisations**-Repos an, LexMetrik liegt auf dem persönlichen Account
-  (Ruleset-API 422, leeres Feature-Gate) — **David-Entscheid 3.8. abends: Verzicht**;
-  `QS-BASIS-MQ` gestrichen (Chronik), `strict:true` + serielle Landung bleiben die Absicherung.
-  Pflege-Routine aktiv (`trig_01WtC2EnU5y2BUN4SmpLhNP1`, Mo 06:45 UTC).
-- **Bauplan-QS (Nachtrag ~22:00Z, Auftrag David «nochmals bauplan überarbeiten»)** — Qualitäts-Pass
-  über `ROADMAP.md` + alle 27 Fahrpläne, **keine** weitere Massenverschiebung. **1 Fusion**
-  (`QS-AUTOMATIK-WT` → `QS-AUTOMATIK-BERICHT`, gleiche Datei/Risiko-Klasse) · **3 Entdopplungen**
-  (Datenhaltung stand an drei Stellen: `QS-DATA` auf das VPS-David-Gate verengt, Bau bleibt
-  `W2·6-DATA`; `QS-BASIS`-Posten (a)/(b)/(d) an ihre Owner verwiesen; `R-RICHTER` Block B nur noch
-  bei `W2·6-FILTER`) · **5 tote `dep`** gelöst (`W2·10-UI-NAV-S/-V/-J/-J3/-O` warteten auf `W2·5d`,
-  obwohl §0.2 des Fahrplans nur Reader-Flächen sequenziert) · **2 tote `seq`-Verweise** auf das
-  erledigte `W2·5b` entfernt · **3 verbrannte Titel-Nummern** korrigiert (5e/5f zeigten auf IDs, die
-  es nie gab) · **10 einseitige Fahrplan-Links** geschlossen (die Schritte des §14-Intakes 3.8.
-  kannten ihren Fahrplan, kein Fahrplan kannte sie — je ein `ROADMAP-Spec`-§ ergänzt) ·
-  **42 Boilerplate-Zeilen** entfernt (Trailer + Session-Granularität), Regel je einmal im
-  Ausführungs-Protokoll. ROADMAP **100 384 → ~99 900 Bytes**, Ceiling 102 400 gehalten.
-  `QS-PERF` **wip → ready** (Anlass #421 gelandet), TBT-Posten abgehakt, e2e-Shard-Balance von
-  der gestrichenen Merge Queue entkoppelt. Stand-Notizen bei hartem Widerspruch:
-  `FAHRPLAN-BASIS-AUSBAU.md` A11 (Merge Queue gegenstandslos) · `FAHRPLAN-DATENHALTUNG.md` §13.
-- **Ehrliche Reste:** **K4/K8/K9/K10** der CI-Diagnose tragen im Repo keinen Beleg und sind bewusst
-  nicht rekonstruiert. `QS-CURRENCY-KANON` bleibt offen: die 8 Wurzeln sind nachgeführt, die
-  **Ursache** ist es nicht. Aus dem Bauplan-QS unerledigt: `W3·10` zeigt weiter auf eine
-  **Archivdatei** (`archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md`, Stand 14.6.2026) — der einzige
-  Schritt ohne aktiven Fahrplan; die Restpunkte-Extraktion steht als erster Arbeitsschritt drin.
-  Die **W2·17-UI-BEFUNDE-Kette B3→B19** ist streng seriell verkettet (17 `dep`-Glieder) — bewusst,
-  aber es heisst: fällt B3 aus, steht die ganze Reihe.
+- **Stufe 1 gebaut (#459):** deterministische Messreihe `messwerte/selbstopt-zeitreihe.json` (Tor-Rot je check:* via gate.sh/check-parallel-Ereignislog · CI-Failure/Rerun über Verdikte, cancelled separat · Rework alle/handschrift · fKlassen spaltengenau aus dem Lehren-Register · tokens via lokalem OTel, aktiviert) + Anzeige in plan:next-Lage und Lagebild + Schema-Regel 13 in check:plan (§6.7 rot gezeigt). **Stufe 2:** `retro:17` (liest nur Zeitreihe+Chronik, ENTWURF-Block, verweigert bei <5 Snapshots). **Gegenprüfung (Fable): bestanden mit Auflagen — 2 major** (cancelled≠failure: echte Rate 23 % statt 46 %; fKlassen zählte Fix-Daten als Rückfälle) **+ 5 minor, alle behoben**; alte Snapshots bewusst NICHT rückwirkend korrigiert (Schema-2-Migration, nur `null` nachgetragen).
+- **Ent-Regulierung (gleichwertiger Auftrag):** 43 seriell-Tore parallel = 16 s — NICHT der Kostentreiber; der war der Stop-Hook (37,7 s/Turn statt dokumentierter ~7 s). Umgesetzt: `report:tot` (nie-rot-fähiges «Tor» ehrlich benannt) · `check:rss-oc` verdrahtet · gate.sh-Doku · §6.6-Split bildSeiten (heilte seit 5.8. rotes check:schlankheit) · gate-stopp **Grün-Fingerabdruck** (David-cp `de3d7fa0c`) · tor-schutz-Präzision (grep-Suchmuster, Probe 7/7; David-Commit `464e00986`) · CLAUDE.md §16-Kurzform. **Zwei Streich-Prämissen der Analyse am Ist-Stand WIDERLEGT** (check:confidence kein Waise → QS-CONFIDENCE-EHRLICH; check:suchindex-Verdrahtung wäre F2a) — Provenienz-Pflicht wirkt. Dossier: `bibliothek/betrieb/entregulierung-2026-08-07.md`.
+- **Drei konvergierende Audits an EINEM Tag** (Ent-Reg-Analyse · unbefangenes CLAUDE.md-Gutachten Fable «nahe an optimal», 15/18 §§ behalten · Reglement-Audit #460 einer Parallel-Session): Spitzenfund aller drei = gegenpruefung-Skill lag nur in ~/.claude → **ins Repo eingecheckt**; §3↔§4-Widerspruch aufgelöst, **§18 Geheimnisse** neu, §17 gestrafft, 3 Skill-Faktenfehler korrigiert (perf beschrieb falsches Tor), Präambel-Zahl pflegefrei (Verweis-Bestand real vierstellig, nicht ~200). Audit-Restpunkte → `QS-AUDIT-VERWEISE` (L); Prosa-Diät → `QS-SKILL-DIAET` (Entscheid David nach Überregulierungs-Frage).
+- **Dispatch-P0-Prüfvariante (#462):** read-only-Klassen (pruefung/recherche) tragen jetzt §0-Punkte 1–3 byte-gleich statt inapplikabler Bau-Pflichten (~200 Tok/Dispatch); Wächter variant-fähig (Ebenen A/B/B0/B0b/C; Bau-Agent fand und schloss eigene F2a-Blindheit), Hook-Härtung als Vorschlagsdatei (Proben 12/12; **Davids cp steht aus**). Gegenprüfung (Fable): bestanden mit Auflagen, alle umgesetzt.
+- **e2e-Stall-Wurzel (#461, Reihenfolge-Invertierung David):** Shard-2-Hänger (2× main 5.8., 3× PR — >1 h/Lauf) war DETERMINISTISCH: `90df6d494` (Gliederung startet zugeklappt) legte a11y-Defekt frei — zugeklappte TOC-Äste nur overflow-geclippt, **37 von 48 Bedienelementen unsichtbar fokussier-/klickbar**. Fix `invisible` (bewusst nicht display:none — darfZuklappen misst Rects), A11y-Restflächen-Wächter (erste Fassung war selbst Schein-Tor, ertappt), Druck-Budget-Fix (30 s massen die Maschine; Leser lädt 9,5 MB register.json → **QS-PERF-Befund**). Eindämmung: maxFailures 3 · Job-Deckel 25 min (vorher GitHub-Default 360!) · Trace-Artefakte. Messbar: CI-Failure 46 % roh (morgens) → 18 % der Verdikte (abends, unter retro-Schwelle).
+- **Entscheide David (alle im Plan verankert):** Autopilot **Stufe 1 freigegeben** ab ≥5 Snapshots (`QS-AUTOPILOT-STUFE1`, Stufe 2/3 ausdrücklich nicht) · Rollenteilung kalibriert (Orchestrator macht Kleines/Buchhaltung/Konfig selbst; `a5d7a3d56`) · `QS-MERGE-AUTOZUG` ready + `QS-ORG-UMZUG` geparkt (Merge Queue nur für Org-Repos; 3 BEHIND-Zyklen an einem Tag) · Effizienz-Anweisung (Memory).
+- **Lehren verankert (§17, Formregel):** Langläufer-Deckel/Weck-Termin/Prämissen-Propagation (Dispatch-Vorlage; Anlass ~1 h verwaiste Beweis-Schleifen) · Orchestrator-Falle c: keine main-Commits bei offener Landekette (auftrag-Skill) · State-of-the-Art-Abgleich als Dossier (OTel lokal, SubagentStop-Kandidat → `QS-HOOKS-AUSBAU` blocked). **Offen/wartet auf David:** Dispatch-Hook-cp · QS-HOOKS-AUSBAU · QS-ORG-UMZUG · Audit Punkt 8 (Abnahme-Domäne) · Dependabot 1 high/1 moderate (QS-BASIS-DEPS priorisiert).
 
 ## Ältere Session-Karten und Chroniken — rotiert ins Archiv
 

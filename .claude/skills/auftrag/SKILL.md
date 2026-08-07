@@ -198,7 +198,11 @@ Zweitblicks), Risiko-Pfad-Bau, alles Parallelisierbare oder Kontext-Schwere
 kosteten als Dispatch mehr als die Sache; Agenten mussten Konfig-Flächen
 dreifach ablehnen, die der Orchestrator mit Freigabe selbst ändern darf.)*
 
-**Zwei Orchestrator-Fallen (belegt 5.8.2026):** (a) Nachrichten an Agenten:
+**Drei Orchestrator-Fallen (belegt 5./7.8.2026):** (c) **Keine main-Commits,
+solange eine eigene Landekette offen ist** — jeder main-Push macht die
+wartenden grünen PRs BEHIND, Auto-Merge feuert dann nie, und jedes Nachziehen
+kostet einen vollen CI-Lauf (real 7.8.2026: drei Zyklen à ~15 min an einem
+Tag; Doku-Commits bis nach der letzten Landung sammeln). Die zwei älteren: (a) Nachrichten an Agenten:
 Empfänger-ID vor dem Senden verifizieren, nie Probe-/Testnachrichten — jede
 Nachricht an einen beendeten Agenten weckt ihn mit vollem Kontext (real:
 ~160k Tokens für ein «bitte ignorieren»). (b) Die Kollisions-Disziplin gilt

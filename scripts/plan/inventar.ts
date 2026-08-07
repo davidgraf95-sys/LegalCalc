@@ -15,6 +15,8 @@
 // § «Übernahme 5.8.2026». Entfernt: QS-CODE-TURSO · QS-CODE-AUSSENKANTEN · QS-CODE-ENTDOPPLUNG
 // · QS-CODE-SPLITS · W2·5d. Der Kommentar zur W2·5d-Bindung unten entfällt: die dep-Einträge
 // in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
+// UMSCHICHTUNG 7.8.2026 (QS-SELBSTOPT-Abschluss): drei erledigte Schritte → Chronik
+// «Umschichtung 7.8.2026». Entfernt: QS-SELBSTOPT · QS-ENTREG-KONFIG · QS-DISPATCH-P0-PRUEF.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
@@ -87,6 +89,12 @@ export const INVENTAR: readonly string[] = [
   // §14-Intake 4./5.8.2026 (Nacht-Landekette): Nebenbefunde der adversarialen Gegenprüfungen
   // zu PR #447/#448 — fedlex-Risiko-Klassifikation, leakErkannt-Konsument, PARTEI_RE-Härtung.
   'QS-GP-NACHBEFUNDE',
+  // QS-GP-COMMITDIFF (7.8.2026) am 8.8. als Duplikat in QS-GP-BEREICH fusioniert (Fahrplan §3.7→§3.1).
+  // Gegenprüfungs-Befund B6 der J-Runde 8.8.2026: Korpus-Datumsfehler (bge_151_II_475 = 1999).
+  'QS-KORPUS-RSPR-DATUM',
+  // Verbesserungs-Runde David 7./8.8.2026: CI-Wartezeit (Shard-Neu-Packung, in-Session gebaut)
+  // + Eigenschafts-Tests für die Engines (vermerkt, Invarianten-Katalog mit Abnahme).
+  'QS-E2E-TEMPO', 'QS-CODE-PROP',
 
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
@@ -95,13 +103,12 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 5.8.2026 (Recherche selbstoptimierender Bau, Auftrag David):
   // EIN ergebnisoffener Gesamtschritt (Entscheid David: ganze Session), Pfad im Fahrplan-§.
-  'QS-SELBSTOPT',
 
   // §14-Intake 7.8.2026 (Ent-Regulierung QS-SELBSTOPT, Dossier
   // bibliothek/betrieb/entregulierung-2026-08-07.md): zwei David-Gates (Konfig/Regelwerk
   // bleibt beim Menschen — Agenten-§0 und Berechtigungssystem sperren es für Sessions)
   // plus ein baubarer Ehrlichkeits-Fix am Confidence-Werkzeug.
-  'QS-ENTREG-KONFIG', 'QS-DISPATCH-P0-PRUEF', 'QS-CONFIDENCE-EHRLICH',
+  'QS-CONFIDENCE-EHRLICH',
 
   // Entscheid David 7.8.2026 («stufe 1 ja», nach Aufklärung über die drei Autopilot-Stufen):
   // Vorschlags-Autopilot freigegeben, gebunden an ≥5 Snapshots (Blocker zeitreihe-5-snapshots).
@@ -115,6 +122,10 @@ export const INVENTAR: readonly string[] = [
   // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
   'QS-SKILL-DIAET', 'QS-AUDIT-VERWEISE',
+
+  // Entscheid David 7.8.2026 abends («B als Schritt, A parken» — BEHIND-Kosten
+  // der QS-SELBSTOPT-Landekette, 3 manuelle Nachzieh-Zyklen an einem Tag):
+  'QS-MERGE-AUTOZUG', 'QS-ORG-UMZUG',
 
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.

@@ -172,7 +172,7 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 
 ---
 
-## §3 · Gegenprüfungs- und Verifikations-Werkzeuge (§14-Intake 3.8.2026 + Nachbefunde, §3.1–§3.6)
+## §3 · Gegenprüfungs- und Verifikations-Werkzeuge (§14-Intake 3.8.2026 + Nachbefunde, §3.1–§3.7)
 
 *Angelegt 3.8.2026 (Bauplan-QS). Beide sind Werkzeuge AM Beweis, nicht am Rechtsinhalt —*
 *reine Prüflogik (`Gegenpruefung: n/a`), aber beide müssen ihre Scheiterns-Fähigkeit zeigen (§6.7).*
@@ -303,6 +303,22 @@ Bau-Einheit — gleiche Risiko-Klasse (Prüf-/Klassifikations-Härtung), keine V
   `src/lib/rechtsprechung/besetzung/` = Risiko) ⇒ Gegenprüfung für Punkte 2–3.
 - **Fertig, wenn:** je Punkt Rot-Beweis/Regressionstest vorhanden, `check:besetzung` und
   Gegenprüfungs-Suite grün, Verdikt im Register.
+
+---
+
+### §3.7 — fusioniert in §3.1 (`QS-GP-BEREICH`), 8.8.2026
+
+Der hier am 7.8.2026 kurzzeitig angelegte Schritt `QS-GP-COMMITDIFF` war ein
+unbeabsichtigtes Duplikat von §3.1 `QS-GP-BEREICH` (gleiche Fläche
+`gegenpruefung-ok.ts`/`kern.ts`/Tor, gleiches Ziel: committete Branch-Diffs
+quittier- und prüfbar machen) — zusammengeführt statt daneben (Skill `auftrag`
+Ziff. 3). Sein Beitrag bleibt als 2. Anlass in §3.1 erhalten: Vorfall
+W2·10-UI-NAV-V vom 7.8.2026 — vierte Hand-Hash-Quittung (Register-Zeile
+2026-08-07, dort noch mit dem alten Schritt-Namen), und eine falsche
+«kein Risikopfad»-Bau-Aussage blieb lokal unbemerkt, weil das Tor nach dem
+Commit nicht mehr scheitern kann (§6.7). Zusätzliche Bau-Anforderung aus dem
+Vorfall an §3.1: Rot-Beweis ausdrücklich für den Fall «clean tree, Risiko-Diff
+nur committet» führen.
 
 ---
 
