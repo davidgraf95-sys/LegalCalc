@@ -1,25 +1,15 @@
 #!/usr/bin/env bash
 # scripts/gate.sh — Prüf-Gates: leise bei Grün, volle Ausgabe nur bei Rot.
 # Aufruf:  npm run gate          (volle Fünferkette)
-#          npm run gate:schnell  (nur tsc · vitest · golden, ~7 s)
+#          npm run gate:schnell  (nur tsc · vitest · golden, ~36 s — gemessen
+#                                 7.8.2026, 10-Kern: 35.9 s / 35.5 s in zwei Läufen)
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1
 
-# Zeitzone festnageln (26.7.2026). Die Golden-Basis ist in Europe/Zurich erzeugt,
-# und `berechneKuendigungsfrist` liefert lokale Tagesgrenzen — auf einer
-# UTC-Maschine meldet `golden:vergleich` darum zwangsläufig `kuendigung:dj1` und
-# `kuendigung:dj10` als abweichend, obwohl der Code identisch ist (reproduziert:
-# ohne TZ genau dieses Fallpaar, mit TZ «IDENTISCH — 249 Fälle byte-gleich»).
-# `ci.yml` setzt TZ je Job aus demselben Grund; wer das Gate lokal auf einer
-# UTC-Maschine oder in einem Container fährt, bekam sonst ein falsches Rot —
-# und ein Tor, das aus Umgebungsgründen rot ist, wird bald ignoriert.
-# Dasselbe Rot hat am 20.7.2026 den Auftakt-Lauf von fedlex-frische.yml gekostet.
-#
-# BEDINGUNGSLOS, nicht `${TZ:-…}`: `ci.yml` setzt die Zone je Job ebenso
-# unbedingt, und wer TZ im Profil exportiert hat (Container-Images oft `UTC`),
-# liefe sonst genau in das falsche Rot, das diese Zeile beseitigen soll.
-# Absichtliche TZ-Experimente laufen weiterhin am Gate vorbei, direkt über
-# `TZ=<zone> npm run golden:vergleich`.
+# Zeitzone BEDINGUNGSLOS festnageln (26.7.2026): die Golden-Basis ist in
+# Europe/Zurich erzeugt, auf einer UTC-Maschine meldet `golden:vergleich` sonst
+# `kuendigung:dj1`/`dj10` falsch-rot (kostete am 20.7. den Auftakt von
+# fedlex-frische.yml). Absichtliche TZ-Proben: `TZ=<zone> npm run golden:vergleich`.
 export TZ=Europe/Zurich
 
 mode="${1:-voll}"
