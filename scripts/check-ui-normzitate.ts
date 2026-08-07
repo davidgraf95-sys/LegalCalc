@@ -10,7 +10,7 @@
 //      (normVerweiseImText, src/lib/fedlex.ts — §5: keine zweite Regex-Wahrheit).
 //   3. Je Zitat den Artikel gegen den committeten Korpus-Snapshot des Erlasses
 //      prüfen (public/normtext/bund/<ERLASS>.json, Feld artikel).
-//   4. Basislinien-Modell wie check:tot (QS-BASIS-TOT): deklarierter Bestand
+//   4. Basislinien-Modell wie report:tot (QS-BASIS-TOT): deklarierter Bestand
 //      in scripts/ui-normzitate-basislinie.json ist geduldet, jeder NEUE
 //      Verstoss ist rot. Abgebaute Basislinien-Einträge werden gemeldet
 //      (Basislinie nachziehen), reissen das Tor aber nicht.

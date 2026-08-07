@@ -494,6 +494,13 @@ hierher. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §1 dieser Datei (a/b/a�
   nach Entfernen wieder grün; die Basislinie ist im Repo begründet, nicht bloss gesetzt.
 - **Anlass-Beleg:** die Totcode-Welle PR #418/#420 senkte knip von 162 auf 1 Meldung — erst
   dadurch ist eine harte Schranke überhaupt tragbar.
+- **Umbenannt 7.8.2026 (QS-SELBSTOPT, Ent-Regulierung):** Das npm-Skript heisst jetzt
+  **`report:tot`**, nicht mehr `check:tot`. Grund: `knip --no-exit-code` kann bauartbedingt nie
+  rot werden, und ein `check:`-Präfix behauptet ein Tor, wo keines ist (§6.7 — «ein Tor, das
+  nicht scheitern kann, ist gefährlicher als keines»; das Tor-Audit vom 20.7.2026 führt es
+  selbst als «bewusst zahnlos, KEIN Tor»). Wer diesen Schritt baut, benennt es beim Entfernen
+  von `--no-exit-code` zurück auf `check:tot` — dann trägt der Name wieder, was er verspricht,
+  und die Umbenennung ist der sichtbare Beleg des Übergangs.
 - **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
 
 ### §3.3 `QS-BASIS-DEPS` — Dependency-Frische

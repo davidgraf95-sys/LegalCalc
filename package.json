@@ -109,7 +109,7 @@
     "check:fedlex-abk-netz": "vite-node scripts/normtext/abk-aliase-generieren.ts -- --check",
     "check:pdf-quellen": "vite-node scripts/normtext/check-pdf-quellen.ts",
     "check:pdf-quellen-netz": "vite-node scripts/normtext/check-pdf-quellen.ts -- --netz",
-    "check:tot": "knip --no-exit-code",
+    "report:tot": "knip --no-exit-code",
     "check:ui-normzitate": "vite-node scripts/check-ui-normzitate.ts",
     "check:perf-budget": "vite-node scripts/check-perf-budget.ts",
     "check:perf-lighthouse": "vite-node scripts/perf/lighthouse-budget.ts",
