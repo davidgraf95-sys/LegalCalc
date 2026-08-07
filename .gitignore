@@ -104,3 +104,6 @@ tmp/
 # Merge-Konflikt-Generator. Was davon dauerhaft gilt, hält der jeweilige
 # Snapshot in der committeten messwerte/selbstopt-zeitreihe.json fest.
 .selbstopt-ereignisse.jsonl
+
+# gate-stopp Grün-Fingerabdruck (Vorschlag QS-SELBSTOPT 7.8.2026)
+.gate-stopp-gruen
