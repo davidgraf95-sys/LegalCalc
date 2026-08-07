@@ -103,6 +103,11 @@ export const INVENTAR: readonly string[] = [
   // plus ein baubarer Ehrlichkeits-Fix am Confidence-Werkzeug.
   'QS-ENTREG-KONFIG', 'QS-DISPATCH-P0-PRUEF', 'QS-CONFIDENCE-EHRLICH',
 
+  // Entscheid David 7.8.2026 («stufe 1 ja», nach Aufklärung über die drei Autopilot-Stufen):
+  // Vorschlags-Autopilot freigegeben, gebunden an ≥5 Snapshots (Blocker zeitreihe-5-snapshots).
+  // Stufe 2/3 ausdrücklich NICHT freigegeben — je eigener künftiger David-Entscheid.
+  'QS-AUTOPILOT-STUFE1',
+
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
   // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)

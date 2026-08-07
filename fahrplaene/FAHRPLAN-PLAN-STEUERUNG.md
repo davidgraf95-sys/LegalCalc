@@ -845,6 +845,14 @@ entscheidet über Übernahme. Hebung zu einem geplanten Agenten (Safe-Outputs-Mu
 erst nach Bewährung und mit David-Entscheid — §17-Fünf-Schritte: Automatisieren
 zuletzt. Ausdrücklich ausgenommen bleiben Rechtslogik, Engines und Korpus (§1/§2/§7).
 
+**Entscheid David 7.8.2026 («stufe 1 ja»):** Der Vorschlags-Autopilot — Stufe 1 der
+drei aufgeklärten Autopilot-Stufen: Cron-Lauf führt `retro:17` aus und eröffnet bei
+Befunden einen Entwurfs-PR, kein Auto-Merge — ist **freigegeben**, gebunden an die
+Mindestdatenlage ≥ 5 Snapshots (Schritt `QS-AUTOPILOT-STUFE1`, Blocker
+`zeitreihe-5-snapshots`). Stufe 2 (autonome Umsetzung auf Prozess-Fläche) und
+Stufe 3 (autonomer Bau) sind ausdrücklich NICHT freigegeben — je eigener künftiger
+David-Entscheid.
+
 
 ## QS-SESSION-ZYKLUS — der Skill `bauschritt` und sein Auslöser (done 5.8.2026)
 
