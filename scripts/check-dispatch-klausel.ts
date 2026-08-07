@@ -117,9 +117,29 @@ if (ohneVariante.length) {
     `  Jede Klasse in KLASSEN braucht eine ausdrückliche Zuordnung 'voll' | 'pruefung'.`);
 }
 
+// (B0b) `varianteVon()` ist der fail-safe Wrapper um VARIANTE — er darf von der
+// Tabelle nicht abweichen.
+//
+// SELBSTVALIDIERUNGS-LEKTION II (7.8.2026, Rotprobe zu diesem Umbau): Ebene (B)
+// leitete ihre ERWARTUNG zuerst aus `varianteVon()` ab — also aus genau der
+// Funktion, die sie prüfen soll. In der Sabotage-Probe (`varianteVon` gibt immer
+// 'voll' zurück) meldete das Tor darum GRÜN, obwohl die Varianten-Wahl komplett
+// tot war: es fragte den Defekt, was er erwarte, und bekam Zustimmung. Dieselbe
+// Fehlerklasse F2(a) wie am 20.7.2026, eine Ebene höher. Seither kommt die
+// Erwartung aus der DEKLARATIVEN Tabelle VARIANTE, und der Wrapper wird
+// zusätzlich hier gegen sie geprüft.
+const wrapperDrift = Object.keys(VARIANTE).filter((k) => varianteVon(k) !== VARIANTE[k]);
+if (wrapperDrift.length) {
+  rot(
+    `varianteVon() weicht von der Tabelle VARIANTE ab: ${wrapperDrift.join(', ')}\n` +
+    `${wrapperDrift.map((k) => `  - ${k}: Tabelle '${VARIANTE[k]}', Funktion '${varianteVon(k)}'`).join('\n')}\n` +
+    `  Der Wrapper darf NUR für unbekannte Klassen auf 'voll' fallen, nie für bekannte.`);
+}
+
 // ── (B) Wirkung: der vorgeschriebene Aufrufweg liefert den Block wirklich ──
 for (const klasse of Object.keys(KLASSEN)) {
-  const variante = varianteVon(klasse);
+  // ERWARTUNG aus der Tabelle, nicht aus varianteVon() — s. Lektion II oben.
+  const variante = VARIANTE[klasse];
   let ausgabe = '';
   try {
     ausgabe = execFileSync('npm', ['run', '--silent', 'dispatch', '--', klasse], {
@@ -182,7 +202,7 @@ for (const klasse of Object.keys(AGENTEN)) {
   }
 }
 
-const pruefKlassen = Object.keys(KLASSEN).filter((k) => varianteVon(k) === 'pruefung');
+const pruefKlassen = Object.keys(KLASSEN).filter((k) => VARIANTE[k] === 'pruefung');
 console.log(
   `check:dispatch-klausel OK — beide §0-Fences extrahierbar: voll ` +
   `(${bloecke.voll.split('\n').length} Zeilen, alle ${PFLICHT.voll.length} Punkte F1–F6), ` +
