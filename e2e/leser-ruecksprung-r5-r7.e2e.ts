@@ -27,8 +27,20 @@ const chip = (page: Page) => page.getByRole('button', { name: /zurück zu/ });
 // «nebeneinander öffnen»-Knöpfe der Leitfall-Chips; beide tragen ein aria-label,
 // der Sprung-Knopf trägt keines. Ohne diese Eingrenzung trifft `.last()` einen
 // Leitfall-Chip, der gar nicht springt (Fehlgriff der ersten Fassung).
+//
+// `:visible` ist seit 7.8.2026 load-bearing und KEINE Abschwächung (QS-E2E-STABIL).
+// Die Gliederung startet seit dem 5.8.2026 komplett zugeklappt (Entscheid David,
+// SektionBaumTOC.tsx `STANDARD_OFFEN_TIEFE = 0`), die Kinder eines zugeklappten
+// Astes bleiben aber im DOM: auf /gesetze/bund/BV sind das 30 von 39 Sprung-
+// Knöpfen. `.last()` griff damit einen Knopf, den kein Nutzer klicken kann — und
+// Playwright versuchte es bis zum 270-s-Budget (Shard 2/8 am 7.8.2026: 1 h 2 min).
+// Der Produkt-Defekt dahinter — unsichtbar, aber bedienbar und in der Tab-Reihen-
+// folge — ist im selben Schritt behoben; `:visible` bringt diesen Helfer auf die
+// Aussage, die er immer meinte: ein Sprung-Ziel, das die Nutzerin auch anklicken
+// kann. Geprüft wird unverändert dasselbe, und `.last()` bleibt der weitest
+// entfernte Abschnitt.
 const tocSprung = (page: Page) =>
-  page.locator('[data-toc] li[data-sektion-id] button:not([aria-label])');
+  page.locator('[data-toc] li[data-sektion-id] button:not([aria-label]):visible');
 
 // ── R3 · Die Kopie trägt den amtlichen Deep-Link ─────────────────────────────
 test.describe('R3 — zitierfähige Referenz', () => {
@@ -327,6 +339,73 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     expect(ueberhang, `Overlay-Überhang nach Artikel-Render — ${lage}`).toBeLessThan(1500);
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 1 });
   });
+});
+
+// ── A11y-Wächter zum Vorfall vom 7.8.2026 (QS-E2E-STABIL) ────────────────────
+// Der Defekt, der Shard 2/8 eine Stunde kostete, war KEIN Testartefakt: die
+// Gliederung klappt ihre Äste nur per grid-rows auf 0 Höhe und schneidet den Rest
+// mit overflow-hidden ab. Die Knöpfe darin blieben vollwertige Bedienelemente —
+// eigene Box, in der Tab-Reihenfolge, im Accessibility-Baum. Gemessen auf
+// /gesetze/bund/BV nach dem Zuklapp-Entscheid vom 5.8.: 39 Sprung-Knöpfe, davon
+// 30 unsichtbar, und ALLE 39 fokussierbar. Wer mit Tastatur oder Screenreader
+// navigiert, lief also durch 30 Bedienelemente, die es für das Auge nicht gibt.
+//
+// Dieser Wächter prüft die Klasse, nicht den Einzelfall: KEIN unsichtbarer Knopf
+// der Gliederung darf erreichbar sein — gleich ob Sprung-Knopf oder Klapp-Chevron,
+// gleich welche Technik ihn versteckt. Damit fällt derselbe Fehler künftig als
+// gezielte a11y-Aussage durch statt als 270-s-Hänger (§17: die Lehre wird ein Tor,
+// keine Prosa). Einmal rot gezeigt (§6.7): gegen das alte Markup (`grid-rows-[0fr]`
+// ohne `invisible`) meldet er «37 von 48» — Sprung-Knöpfe UND Klapp-Chevrons.
+test('A11y-Wächter: kein unsichtbarer Gliederungs-Knopf liegt in der Tab-Reihenfolge', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await warteReader(page, '/gesetze/bund/BV');
+
+  const befund = await page.evaluate(() => {
+    // Sichtbare Restfläche NACH allen abschneidenden Vorfahren. `checkVisibility`
+    // taugt hier NICHT: es kennt display/visibility/opacity, aber KEIN Clipping
+    // durch overflow — und genau damit versteckt die Gliederung ihre Äste. Ein
+    // Wächter auf checkVisibility wäre gegen das defekte Markup grün geblieben
+    // (ausprobiert am 7.8.2026), also ein Tor, das nicht scheitern kann (§6.7).
+    const restflaeche = (el: HTMLElement): number => {
+      let r = el.getBoundingClientRect();
+      let l = r.left, o = r.top, re = r.right, u = r.bottom;
+      for (let a = el.parentElement; a; a = a.parentElement) {
+        const st = getComputedStyle(a);
+        if (st.overflowX === 'visible' && st.overflowY === 'visible') continue;
+        const ar = a.getBoundingClientRect();
+        l = Math.max(l, ar.left); o = Math.max(o, ar.top);
+        re = Math.min(re, ar.right); u = Math.min(u, ar.bottom);
+      }
+      return Math.max(0, re - l) * Math.max(0, u - o);
+    };
+
+    const knoepfe = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-toc] li[data-sektion-id] button'),
+    );
+    const unsichtbarAberErreichbar: string[] = [];
+    for (const el of knoepfe) {
+      el.focus();
+      // Nicht fokussierbar ⇒ nicht in der Tab-Reihenfolge ⇒ in Ordnung.
+      if (document.activeElement !== el) continue;
+      // `focus()` scrollt in Chromium selbst an die Stelle. Wer JETZT noch keine
+      // Restfläche hat, ist auch durch Scrollen nicht erreichbar — der Fokus steht
+      // auf einem Bedienelement, das für das Auge nicht existiert. Ein Knopf, der
+      // bloss unterhalb des Gliederungs-Sichtbands liegt, wird durch dieses
+      // Scrollen sichtbar und zählt darum korrekt NICHT als Treffer.
+      if (restflaeche(el) > 0) continue;
+      unsichtbarAberErreichbar.push((el.textContent ?? '').trim().slice(0, 40) || '(Chevron)');
+    }
+    return { gesamt: knoepfe.length, treffer: unsichtbarAberErreichbar };
+  });
+
+  // Der Baum steht überhaupt — sonst prüfte der Wächter die leere Menge und wäre
+  // ein Tor, das nicht scheitern kann (§6.7).
+  expect(befund.gesamt, 'der Gliederungs-Baum ist gerendert').toBeGreaterThan(10);
+  expect(
+    befund.treffer,
+    `unsichtbar, aber per Tab erreichbar: ${befund.treffer.length} von ${befund.gesamt} — `
+      + JSON.stringify(befund.treffer.slice(0, 5)),
+  ).toEqual([]);
 });
 
 // ── A9-DoD: Bedienbarkeit + Flüssigkeit unter CPU-Drossel ────────────────────
