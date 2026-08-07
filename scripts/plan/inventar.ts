@@ -97,6 +97,25 @@ export const INVENTAR: readonly string[] = [
   // EIN ergebnisoffener Gesamtschritt (Entscheid David: ganze Session), Pfad im Fahrplan-§.
   'QS-SELBSTOPT',
 
+  // §14-Intake 7.8.2026 (Ent-Regulierung QS-SELBSTOPT, Dossier
+  // bibliothek/betrieb/entregulierung-2026-08-07.md): zwei David-Gates (Konfig/Regelwerk
+  // bleibt beim Menschen — Agenten-§0 und Berechtigungssystem sperren es für Sessions)
+  // plus ein baubarer Ehrlichkeits-Fix am Confidence-Werkzeug.
+  'QS-ENTREG-KONFIG', 'QS-DISPATCH-P0-PRUEF', 'QS-CONFIDENCE-EHRLICH',
+
+  // Entscheid David 7.8.2026 («stufe 1 ja», nach Aufklärung über die drei Autopilot-Stufen):
+  // Vorschlags-Autopilot freigegeben, gebunden an ≥5 Snapshots (Blocker zeitreihe-5-snapshots).
+  // Stufe 2/3 ausdrücklich NICHT freigegeben — je eigener künftiger David-Entscheid.
+  'QS-AUTOPILOT-STUFE1',
+
+  // State-of-the-Art-Abgleich 7.8.2026 (Web-Recherche gegen Anthropic-Doku):
+  // Hook-/Konfig-Ausbauten, gesperrte Fläche ⇒ blocked bis David-Freigabe.
+  'QS-HOOKS-AUSBAU',
+
+  // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
+  // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
+  'QS-SKILL-DIAET', 'QS-AUDIT-VERWEISE',
+
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
   // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)

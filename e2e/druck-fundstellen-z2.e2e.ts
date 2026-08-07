@@ -60,8 +60,28 @@ test.describe('Z2 · Druck der Fundstelle', () => {
     // `toBeAttached` statt `toBeVisible`: gemessen werden berechnete Stile, nicht
     // Sichtbarkeit — und der OR-Leser braucht unter Worker-Konkurrenz länger, bis
     // der Wrapper im Layout steht (Muster aus split-view-a34.e2e.ts).
-    await expect(page.locator('.lc-leser')).toBeAttached({ timeout: 30_000 })
-    await expect(page.locator('#art-1')).toBeAttached({ timeout: 30_000 })
+    //
+    // CI-Budget 90 s statt 30 s (QS-E2E-STABIL, Beleg 7.8.2026, Lauf 31204889639).
+    // Das 30-s-Fenster war zu knapp bemessen und riss auf einem gestarveten
+    // 2-vCPU-Runner: `.lc-leser` war nach 30 s noch nicht im DOM, die Seite stand
+    // auf «Wird geladen …». Der Trace weist den Fehlschlag eindeutig als LADEZEIT
+    // aus, nicht als Defekt — alle 36 Anfragen kamen mit 200 zurück, keine
+    // Konsolen- oder Netzwerkfehler. Dass es lange dauert, ist auf dieser Seite
+    // erklärbar: der OR-Leser zieht 1.9 MB OR-Volltext, 1.4 MB Struktur und
+    // 9.5 MB `rechtsprechung/register.json`, die alle geparst sein wollen.
+    // Eigene Messreihe auf 10-Kern-Maschine (je 3 Läufe): 1.0 s ungedrosselt,
+    // 2.6 s bei 4×, 3.9 s bei 6× — der CI-Runner liegt also nochmals um ein
+    // Vielfaches darunter, und ein Deckel bei 30 s misst dort die Maschine statt
+    // die Sache (dieselbe Fehlerklasse wie der Standzeit-Deckel in
+    // leser-ruecksprung-r5-r7, dort schon einmal als Messfehler erkannt).
+    // Das ist ein ZEITBUDGET, keine Assertion (§6.3): geprüft wird unverändert,
+    // dass kein Container clippt und kein Artikel via content-visibility
+    // ungerendert bleibt. `test.slow()` gibt 270 s Gesamtbudget, 90 s passen hinein.
+    // LOKAL bleiben 30 s — dort ist die Seite in ~1 s da, und ein weites Fenster
+    // würde einen echten Ladefehler nur verzögert sichtbar machen.
+    const ladeBudget = process.env.CI ? 90_000 : 30_000
+    await expect(page.locator('.lc-leser')).toBeAttached({ timeout: ladeBudget })
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: ladeBudget })
     await page.emulateMedia({ media: 'print' })
 
     // (a) Scroll-Panes dürfen im Druck nicht clippen — sonst endet der Ausdruck

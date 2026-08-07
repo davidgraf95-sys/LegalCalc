@@ -18,13 +18,11 @@ import {
   KANTONE,
   OHNE_FAHRPLAN,
   bauPlaetze,
-  bauStatistik,
   baustellenInfo,
   blockerSeitTagen,
   branchNamen,
   letzteCommits,
   chronikErledigt,
-  chronikMeilensteine,
   katalogGruppen,
   katalogZaehlung,
   mainAmpel,
@@ -35,6 +33,7 @@ import {
   rechtsprechungRegister,
   repoWebUrl,
   schrittInfoAusRoadmap,
+  selbstoptKennzahlen,
   worktreesUndBranches,
   zaehleNach,
   zuletztGelandet,
@@ -47,7 +46,6 @@ import {
   fussnote,
   groesseBadge,
   kacheln,
-  monatLabel,
   rahmen,
   schrittLabel,
   seitenDatei,
@@ -355,6 +353,34 @@ export function lagebildSeite(o: SeitenOpts): string {
   const kantonZahl = norm ? norm.erlasse.filter((e) => e.ebene === 'kanton').length : null;
   const werkzeugeLive = kat.entwurf + kat['geprüft'];
 
+  // Bau-Messreihe (Schritt QS-SELBSTOPT, Stufe 1 «erst messen»). Zeigt den
+  // letzten Snapshot von `messwerte/selbstopt-zeitreihe.json`.
+  //
+  // Der erklärende Satz darunter ist Absicht, nicht Zierde: eine Kachel mit
+  // einer Prozentzahl liest sich sonst wie eine Bewertung. Diese Zahlen SIND
+  // keine Bewertung — sie sind Beobachtungsgrössen und ausdrücklich nie ein
+  // Tor-Kriterium (Fahrplan-Spec). Wer das auf der Seite nicht dazuschreibt,
+  // erzeugt genau den Druck, das Gemessene statt der Sache zu verbessern.
+  const messreihe = selbstoptKennzahlen();
+  const messreiheHtml = messreihe
+    ? `${kacheln([
+        { wert: messreihe.ciFailure, label: 'der CI-Läufe MIT Ergebnis sind gescheitert' },
+        { wert: messreihe.ciAbgebrochen, label: 'der CI-Läufe wurden abgebrochen (ohne Ergebnis)' },
+        { wert: messreihe.ciRerun, label: 'der CI-Läufe waren Wiederholungen' },
+        { wert: `${messreihe.torRot}/${messreihe.torGesamt}`, label: 'Tor-Läufe rot seit der vorigen Messung' },
+        { wert: messreihe.rework, label: 'Quelltext-Commits mit Nacharbeit binnen 48 h' },
+        { wert: messreihe.snapshots, label: 'Messpunkte in der Reihe' },
+      ])}
+  <p class="hinweis">Stand ${esc(messreihe.stand)} · Quelle <span class="id">messwerte/selbstopt-zeitreihe.json</span>,
+  erhoben mit <span class="id">npm run selbstopt:erheben</span> aus git, der GitHub-API und dem lokalen Tor-Protokoll.
+  <b>Diese Zahlen bewerten nichts.</b> Sie sind Beobachtung: kein Prüf-Tor hängt an ihnen, und keines wird je an ihnen hängen —
+  sonst würde der Bau die Messung verbessern statt die Sache.${
+    messreihe.ausfaelle.length
+      ? ` <br>⚠ Bei der letzten Erhebung nicht verfügbar: ${esc(messreihe.ausfaelle.join(' · '))} (kein Fehler des Bau-Stands).`
+      : ''
+  }</p>`
+    : `<p class="hinweis">Noch keine Messreihe erhoben — <span class="id">npm run selbstopt:erheben</span> legt den ersten Messpunkt an.</p>`;
+
   const lageSatz = `${offen.length} Schritte offen — ${baubar.size} davon sofort baubar, ${b.inArbeit.length} gerade im Bau, ${b.blockiert.length} warten auf dich.`;
 
   const projektLink = esc(seitenDatei(o.indexPfad, 'projekt'));
@@ -371,7 +397,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   (dieselbe Logik wie <span class="id">npm run plan:next</span>).`,
     extra: `<p class="lage"><b>${esc(lageSatz)}</b></p>
   ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
-  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>`,
+  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
   });
 
   // Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
@@ -471,6 +497,15 @@ ${jetzt}
   Schritte — ${chronik !== null ? `die ${chronik} bereits erledigten Arbeitspakete liegen im <a href="${geschichteLink}">Chronik-Archiv</a>` : 'ganze abgeschlossene Wellen liegen im Chronik-Archiv'} und drücken die Zahlen hier nicht mehr.</p>
   <input id="filter" type="search" placeholder="Baustellen filtern — z. B. «Gesetze», «Kanton», «Design» …" aria-label="Baustellen filtern">
   <div class="cards">${karten}</div>
+</section>
+
+<section id="messreihe">
+  <p class="eyebrow">Bau-Messreihe</p>
+  <h2>Wie rund der Bau läuft</h2>
+  <p class="lede">Seit August 2026 misst der Bau sich selbst: bei jedem Prüflauf wird festgehalten, welches Tor grün oder rot war,
+  und in Abständen kommen die Zahlen aus der Bau-Prüfstrasse (CI) und der Versionsgeschichte dazu. So lässt sich später belegen,
+  ob eine Prozessänderung etwas gebracht hat — statt es zu vermuten.</p>
+  ${messreiheHtml}
 </section>
 
 ${fussnote('Klartext-Namen der Baustellen sind gepflegte Übersetzungen (@lagebild-Kopfzeile der Fahrpläne); alle Zahlen sind mechanisch.')}`;
@@ -713,105 +748,11 @@ ${fussnote('Werkzeug-Zahlen aus dem Katalog, Korpus-Zahlen aus den beiden Regist
 // ===========================================================================
 // 3. Geschichte & Bau-Statistik — plan-bild-geschichte.html
 // ===========================================================================
-export function geschichteSeite(o: SeitenOpts): string {
-  const meilensteine = chronikMeilensteine();
-  const stat = bauStatistik();
-  const chronik = chronikErledigt();
-
-  let zeitachse: string;
-  if (!meilensteine) {
-    zeitachse = '<p class="hinweis">⚠ <span class="id">ROADMAP-CHRONIK.md</span> nicht lesbar — die Zeitachse entfällt.</p>';
-  } else {
-    const ohneDatum = meilensteine.filter((m) => !m.monat);
-    const nachMonat = new Map<string, string[]>();
-    for (const m of meilensteine) {
-      if (!m.monat) continue;
-      if (!nachMonat.has(m.monat)) nachMonat.set(m.monat, []);
-      nachMonat.get(m.monat)!.push(m.titel);
-    }
-    const monate = [...nachMonat.entries()].sort((a, b) => b[0].localeCompare(a[0]));
-    const bloecke = monate
-      .map(([key, titel]) => {
-        const liste = `<ul>${titel.map((t) => `<li>${esc(t)}</li>`).join('\n')}</ul>`;
-        const inhalt = titel.length > 5
-          ? `<details><summary>alle ${titel.length} Arbeitspakete anzeigen</summary>${liste}</details>`
-          : liste;
-        return `<div class="monat"><b>${esc(monatLabel(key))}</b> <span class="fortschritt">${titel.length} Arbeitspaket${titel.length === 1 ? '' : 'e'}</span>
-  ${inhalt}
-</div>`;
-      })
-      .join('\n');
-    const summe = monate.reduce((a, [, t]) => a + t.length, 0);
-    zeitachse = `<div class="zeitachse">${bloecke}
-  <div class="monat"><b>ohne Datumsangabe</b> <span class="fortschritt">${ohneDatum.length}</span>
-  ${ohneDatum.length ? `<ul>${ohneDatum.map((m) => `<li>${esc(m.titel)}</li>`).join('\n')}</ul>` : '<p class="sub">—</p>'}
-  </div>
-</div>
-<p class="hinweis">Zählprobe: ${summe} datierte + ${ohneDatum.length} undatierte = ${summe + ohneDatum.length} Chronik-Einträge insgesamt.
-<b>Datierung:</b> erste Datumsangabe im Chronik-Eintrag (Überschrift und die folgenden 15 Zeilen) — eine deklarierte
-Heuristik, kein gepflegtes Datumsfeld. Einträge ohne jede Datumsangabe stehen deshalb getrennt und werden keinem Monat zugeschlagen.</p>`;
-  }
-
-  const anzahl = meilensteine?.length ?? chronik;
-  const kopf = seitenKopf({
-    stand: o.stand,
-    watch: o.watch,
-    marke: 'Geschichte',
-    h1: 'Was bereits gebaut wurde',
-    lede: anzahl !== null
-      ? `${anzahl} abgeschlossene Arbeitspakete seit Projektbeginn — verschoben ins Chronik-Archiv, hier als Zeitachse.`
-      : 'Die Chronik ist derzeit nicht lesbar.',
-  });
-
-  const inhalt = `${kopf}
-
-<section id="zeitachse">
-  <p class="eyebrow">Meilensteine</p>
-  <h2>Zeitachse — neueste zuoberst</h2>
-  <p class="lede">Der laufende Plan führt fast nur den offenen Rest. Alles Erledigte wandert in ein eigenes Archiv;
-  diese Zeitachse liest es Monat für Monat zurück.</p>
-  ${zeitachse}
-</section>
-
-<section id="statistik">
-  <p class="eyebrow">Bau-Statistik</p>
-  <h2>Der Bau in Zahlen</h2>
-  ${kacheln([
-    { wert: stat.commits?.toLocaleString('de-CH') ?? null, label: 'Änderungsschritte (Commits)' },
-    { wert: stat.gemergtePrs, label: 'übernommene Änderungsvorschläge (PRs)' },
-    { wert: stat.pruefTore, label: 'automatische Prüf-Tore' },
-    { wert: stat.testDateien, label: 'Test-Dateien' },
-    { wert: chronik, label: 'erledigte Arbeitspakete (Chronik)' },
-    { wert: offeneSchritte(), label: 'offene Schritte im Plan' },
-  ])}
-  <p class="hinweis"><b>So wurde gezählt.</b>
-  Commits: <span class="id">git rev-list --count HEAD</span> (alle Änderungsschritte der Projekt-Historie).
-  PRs: Anzahl Einträge aus <span class="id">gh pr list --state merged --limit 1000</span> — bei mehr als 1000
-  gemergten PRs wäre diese Zahl gedeckelt.
-  Prüf-Tore: Anzahl der <span class="id">check:</span>-Skripte in <span class="id">package.json</span>
-  (ein Skript kann mehrere Einzelprüfungen bündeln).
-  Test-Dateien: Dateien unter <span class="id">src/tests/</span> und <span class="id">e2e/</span> mit Endung
-  <span class="id">.test.ts</span> oder <span class="id">.e2e.ts</span> — gezählt werden Dateien, nicht einzelne Testfälle;
-  die Zahl der Testfälle liegt deutlich höher.
-  Offene Schritte: Einheiten in <span class="id">ROADMAP.md</span>, deren Status nicht «done» ist (derselbe Parser wie
-  <span class="id">plan:next</span>).
-  ${stat.gemergtePrs === null || stat.commits === null ? '<b>⚠ Mindestens eine Quelle war nicht abfragbar</b> — die betroffene Kachel zeigt «—» statt einer geschätzten Zahl.' : ''}</p>
-</section>
-
-${fussnote('Die Zeitachse liest ROADMAP-CHRONIK.md, die Statistik git, gh und package.json.')}`;
-
-  return rahmen({ indexPfad: o.indexPfad, aktiv: 'geschichte', titel: `LexMetrik — Geschichte ${o.stand}`, watch: o.watch, inhalt });
-}
-
-/** Offene Plan-Schritte (Status ≠ done) — dieselbe Parser-Wahrheit wie plan:next. */
-function offeneSchritte(): number | null {
-  try {
-    const { einheiten } = parseRoadmap(readFileSync('ROADMAP.md', 'utf8'));
-    return einheiten.filter((e) => e.etikett.status !== 'done').length;
-  } catch {
-    return null;
-  }
-}
+// Liegt seit dem §6.6-Split vom 7.8.2026 in `bildGeschichte.ts` (liest nur
+// rückwärts: Chronik, git-Historie, Zähler). Hier nur die Fassade, damit der
+// bestehende Import in `bild.ts` unverändert gültig bleibt — dasselbe Muster
+// wie bei `methodeSeite` darunter.
+export { geschichteSeite } from './bildGeschichte';
 
 // ===========================================================================
 // 4. Arbeitsweise & Glossar — plan-bild-methode.html

@@ -1,29 +1,66 @@
 #!/usr/bin/env bash
 # scripts/gate.sh — Prüf-Gates: leise bei Grün, volle Ausgabe nur bei Rot.
 # Aufruf:  npm run gate          (volle Fünferkette)
-#          npm run gate:schnell  (nur tsc · vitest · golden, ~7 s)
+#          npm run gate:schnell  (nur tsc · vitest · golden, ~36 s — gemessen
+#                                 7.8.2026, 10-Kern: 35.9 s / 35.5 s in zwei Läufen)
+#
+# WER DIESES GATE IN EINEN Stop-HOOK HÄNGT, muss eines wissen: Claude Code
+# übersteuert einen Stop-Hook nach 8 Blockierungen in Folge (Quelle:
+# code.claude.com/docs/en/best-practices, Abruf 7.8.2026). Ein Stop-Hook ist
+# damit ein BREMSKLOTZ, kein Zaun — er kostet die neunte Wiederholung nichts.
+# Harte Sperren bleiben deshalb `PreToolUse` (blockiert den Aufruf selbst, s.
+# .claude/hooks/tor-schutz.py) und das Berechtigungssystem; ein Stop-Hook darf
+# nur bequemer machen, was ohnehin schon erzwungen ist.
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 1
 
-# Zeitzone festnageln (26.7.2026). Die Golden-Basis ist in Europe/Zurich erzeugt,
-# und `berechneKuendigungsfrist` liefert lokale Tagesgrenzen — auf einer
-# UTC-Maschine meldet `golden:vergleich` darum zwangsläufig `kuendigung:dj1` und
-# `kuendigung:dj10` als abweichend, obwohl der Code identisch ist (reproduziert:
-# ohne TZ genau dieses Fallpaar, mit TZ «IDENTISCH — 249 Fälle byte-gleich»).
-# `ci.yml` setzt TZ je Job aus demselben Grund; wer das Gate lokal auf einer
-# UTC-Maschine oder in einem Container fährt, bekam sonst ein falsches Rot —
-# und ein Tor, das aus Umgebungsgründen rot ist, wird bald ignoriert.
-# Dasselbe Rot hat am 20.7.2026 den Auftakt-Lauf von fedlex-frische.yml gekostet.
-#
-# BEDINGUNGSLOS, nicht `${TZ:-…}`: `ci.yml` setzt die Zone je Job ebenso
-# unbedingt, und wer TZ im Profil exportiert hat (Container-Images oft `UTC`),
-# liefe sonst genau in das falsche Rot, das diese Zeile beseitigen soll.
-# Absichtliche TZ-Experimente laufen weiterhin am Gate vorbei, direkt über
-# `TZ=<zone> npm run golden:vergleich`.
+# Zeitzone BEDINGUNGSLOS festnageln (26.7.2026): die Golden-Basis ist in
+# Europe/Zurich erzeugt, auf einer UTC-Maschine meldet `golden:vergleich` sonst
+# `kuendigung:dj1`/`dj10` falsch-rot (kostete am 20.7. den Auftakt von
+# fedlex-frische.yml). Absichtliche TZ-Proben: `TZ=<zone> npm run golden:vergleich`.
 export TZ=Europe/Zurich
 
 mode="${1:-voll}"
 fail=0
+
+# ─── Tor-Ereignis-Log (Schritt QS-SELBSTOPT, Stufe 1 «erst messen») ──────────
+# Jeder Gate-Schritt hinterlässt eine JSONL-Zeile {ts, tor, ok} in
+# `.selbstopt-ereignisse.jsonl` (gitignoriert, je Maschine eigen). Ohne diese
+# Spur gibt es keine Antwort auf «welches Tor kostet uns wie oft Zeit» — die
+# Tor-Läufe waren bisher flüchtig, jeder rote Lauf verschwand mit dem Terminal.
+# Ausgewertet wird sie von `npm run selbstopt:erheben`.
+#
+# DREI EIGENSCHAFTEN, die nicht verhandelbar sind:
+#  * Das Logging ist ein NEBENEFFEKT. Es schreibt nichts nach stdout/stderr, es
+#    ändert keinen Exit-Code, und es läuft nach der Verdikt-Bildung. Zieht man
+#    die Zeile ab, ist gate.sh byte-gleich zu vorher.
+#  * Es kann das Gate NICHT rot machen: `|| true` am Ende. Ein volles
+#    Dateisystem oder ein schreibgeschützter Baum darf keine Prüfung kosten.
+#  * `set -uo pipefail` ist gesetzt, aber kein `-e` — der Schreibfehler bräche
+#    also ohnehin nicht ab; das `|| true` sagt es trotzdem ausdrücklich.
+# Die Tor-Namen hier sind fest verdrahtete Literale ohne Anführungszeichen —
+# es gibt also nichts zu escapen.
+#
+# ECHTE MILLISEKUNDEN, nicht fingierte (Gegenprüfung 7.8.2026): Die erste
+# Fassung hängte hart `.000Z` an. Der Sammler schneidet Ereignisse aber mit
+# `e.ts > letzterSnapshot` (String-Vergleich) — ein Gate-Ereignis aus DERSELBEN
+# Sekunde wie ein Snapshot fiel damit unter das Watermark und war verloren.
+# BSD-`date` (macOS) kennt kein `%N`, GNU-`date` schon; statt auf die Plattform
+# zu wetten, stempelt python3. Die Kosten fallen nicht ins Gewicht: höchstens
+# fünf Aufrufe je Gate-Lauf (ein Gate-Schritt dauert Sekunden bis Minuten), und
+# das Repo setzt python3 ohnehin voraus (`struktur:rotieren`, die Hooks).
+# Fehlt python3 wider Erwarten, greift der `date`-Rückfall mit
+# Sekunden-Auflösung — dann kann im Grenzfall EIN Ereignis je Snapshot
+# verlorengehen, was ein Verlaufs-Signal nicht umwirft.
+EREIGNIS_LOG=".selbstopt-ereignisse.jsonl"
+jetzt_iso() {
+  python3 -c 'import datetime as d; print(d.datetime.now(d.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z")' 2>/dev/null \
+    || date -u +%Y-%m-%dT%H:%M:%S.000Z
+}
+ereignis() {
+  printf '{"ts":"%s","tor":"%s","ok":%s}\n' \
+    "$(jetzt_iso)" "$1" "$2" >> "$EREIGNIS_LOG" 2>/dev/null || true
+}
 
 run() {
   local name="$1"; shift
@@ -36,6 +73,12 @@ run() {
     printf '  ROT  %s (exit %s)\n' "$name" "$code"
     printf '%s\n' "$log"   # volle Ausgabe NUR für das rote Gate
   fi
+  # Präfix `gate:` trennt den Gate-SCHRITT vom einzelnen Tor: `npm run check`
+  # erscheint hier als `gate:check`, seine 43 Sub-Tore protokolliert
+  # check-parallel.ts einzeln unter ihrem eigenen `check:*`-Namen. Ohne den
+  # Präfix zählte der Sammelschritt in derselben Namensmenge wie die Tore, die
+  # er enthält — und jede Aggregation wäre doppelt.
+  if [ "$code" -eq 0 ]; then ereignis "gate:$name" true; else ereignis "gate:$name" false; fi
 }
 
 echo "Gates (${mode}):"
