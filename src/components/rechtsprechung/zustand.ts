@@ -293,20 +293,51 @@ function liesSitzung(key: string): string | null {
 }
 
 /**
- * Gespeicherten Deckel lesen. `grund` ist der Grundwert (LISTE_DECKEL) und
- * zugleich die Untergrenze: ein kleinerer oder unplausibler gespeicherter Wert
- * wird verworfen, statt die Liste unter den Grundzustand zu drücken.
+ * Sichtfenster einer Liste: die Einträge [von, bis) werden gerendert.
+ *
+ * WARUM EIN FENSTER UND KEIN BLOSSER DECKEL (Gegenprüfungs-Befund B2, 8.8.2026):
+ * Ein von 0 gemessener Deckel muss beim Sprung auf den ältesten Jahrgang bis zu
+ * dessen Index wachsen — bei 3'765 BS-Einträgen also ~3'800 Zeilen in EINEM
+ * Render, genau der DOM-Umfang, den LISTE_DECKEL laut axe-Timeout-Lektion
+ * verhindern soll (und Richtung 195k wäre der Pfad unhaltbar). Das Fenster
+ * verschiebt sich stattdessen MIT: der Sprung setzt es auf die Batch-Grenze um
+ * das Ziel, oberhalb führt ein «Frühere anzeigen»-Anker zurück. Damit rendert
+ * KEIN einzelner Klick mehr als eine Batch-Breite nach.
  */
-export function leseDeckel(key: string, grund: number): number {
-  const roh = liesSitzung(DECKEL_PRAEFIX + key);
-  if (roh === null) return grund;
-  const n = Number.parseInt(roh, 10);
-  return Number.isSafeInteger(n) && n > grund ? n : grund;
+export interface Fenster {
+  /** Index des ersten gerenderten Eintrags (0 = Listenanfang). */
+  von: number;
+  /** Index NACH dem letzten gerenderten Eintrag. */
+  bis: number;
 }
 
-export function schreibeDeckel(key: string, wert: number): void {
+/**
+ * Gespeichertes Fenster lesen und PLAUSIBILISIEREN. `grund` ist die Batch-
+ * Breite, `maxSpanne` die harte Obergrenze der gerenderten Zeilen.
+ *
+ * Die Plausibilisierung ist kein Zierrat: sessionStorage ist vom Nutzer (und
+ * von fremdem Skript auf derselben Herkunft) schreibbar. Ohne Schranke liesse
+ * sich über einen präparierten Wert ein beliebig grosses DOM erzwingen — genau
+ * die Last, gegen die das Fenster gebaut ist. Unplausibles fällt darum still
+ * auf den Grundzustand zurück, statt teilweise übernommen zu werden.
+ */
+export function leseFenster(key: string, grund: number, maxSpanne: number): Fenster {
+  const grundFenster: Fenster = { von: 0, bis: grund };
+  const roh = liesSitzung(DECKEL_PRAEFIX + key);
+  if (roh === null) return grundFenster;
+  const teile = roh.split(':');
+  if (teile.length !== 2) return grundFenster;
+  const von = Number.parseInt(teile[0], 10);
+  const bis = Number.parseInt(teile[1], 10);
+  if (!Number.isSafeInteger(von) || !Number.isSafeInteger(bis)) return grundFenster;
+  if (von < 0 || bis <= von) return grundFenster;
+  if (bis - von > maxSpanne) return grundFenster;
+  return { von, bis };
+}
+
+export function schreibeFenster(key: string, f: Fenster): void {
   try {
     if (typeof sessionStorage === 'undefined') return;
-    sessionStorage.setItem(DECKEL_PRAEFIX + key, String(wert));
-  } catch { /* Speicher voll oder gesperrt — der Deckel ist dann nur nicht wiederherstellbar */ }
+    sessionStorage.setItem(DECKEL_PRAEFIX + key, `${f.von}:${f.bis}`);
+  } catch { /* Speicher voll oder gesperrt — das Fenster ist dann nur nicht wiederherstellbar */ }
 }

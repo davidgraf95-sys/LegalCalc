@@ -61,13 +61,28 @@ export function NewsHeader() {
   const streifenRef = useRef<HTMLDivElement>(null);
 
   // #9: per Klick durch die Entscheide blättern — scrollt den Streifen um EINE
-  // Karte (deren Breite + gap), in beide Richtungen.
+  // Karte, in beide Richtungen.
+  //
+  // Die Schrittweite wird GEMESSEN, nicht angenommen (Gegenprüfungs-Befund B3):
+  // seit der Datums-Gruppierung (J4) ist ein `li` eine GRUPPE von Karten, nicht
+  // mehr eine Karte, und der Abstand zwischen Karten ist keine feste Konstante
+  // mehr. Beides aus dem Layout ablesen statt hart zu setzen — dann stimmt der
+  // Schritt auch, wenn sich Kartenbreite (`clamp`) oder Abstand später ändern.
   const blaettere = (richtung: -1 | 1) => {
     const el = streifenRef.current;
     if (!el) return;
-    const karte = el.querySelector('li');
-    const schritt = karte ? (karte as HTMLElement).offsetWidth + 12 : el.clientWidth * 0.8;
-    el.scrollBy({ left: richtung * schritt, behavior: 'smooth' });
+    const karten = el.querySelectorAll<HTMLElement>('li a');
+    const erste = karten[0];
+    // Abstand aus den Positionen zweier benachbarter Karten ableiten; gibt es
+    // nur eine, genügt ihre Breite. Ohne jede Karte: knapp ein Sichtfenster.
+    let schritt = erste ? erste.offsetWidth : el.clientWidth * 0.8;
+    if (erste && karten[1]) {
+      const abstand = karten[1].getBoundingClientRect().left - erste.getBoundingClientRect().left;
+      if (abstand > 0) schritt = abstand;
+    }
+    // Nie weiter als ein Sichtfenster springen — sonst überspringt ein Klick auf
+    // schmalen Geräten Karten, statt zur nächsten zu führen.
+    el.scrollBy({ left: richtung * Math.min(schritt, el.clientWidth), behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -147,14 +162,19 @@ export function NewsHeader() {
           als Gruppen-Überschrift über seinen Karten, statt auf jeder Karte
           derselben Sitzung zu wiederholen. Jede Karte bleibt damit unter einem
           sichtbaren Datum — kein Eintrag verliert seine zeitliche Einordnung. */}
+      {/* Snap-Ziel ist die KARTE, nicht die Gruppe (Gegenprüfungs-Befund B3):
+          geblättert wird kartenweise, also muss auch dort eingerastet werden —
+          sonst überspränge ein Klick innerhalb einer mehrtägigen Gruppe das
+          Einrasten ganz. Die Datums-Überschrift steht über ihrer Kartenreihe und
+          bleibt sichtbar, solange eine Karte der Gruppe im Blickfeld ist. */}
       <ul className="flex gap-5 w-max max-w-full snap-x snap-mandatory">
         {nachDatumGruppiert(news).map((g) => (
-          <li key={g.datum} className="snap-start shrink-0">
+          <li key={g.datum} className="shrink-0">
             <p className="num mb-1.5 text-xs text-ink-500">{deDatum(g.datum)}</p>
             <div className="flex gap-3">
               {g.eintraege.map(({ e, gebiet, normen }) => (
                 <Link key={e.key} to={`/rechtsprechung/${encodeURIComponent(e.key)}`}
-                  className="group flex h-full w-[clamp(12rem,72vw,18rem)] shrink-0 flex-col gap-1 lc-card p-3.5 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none hover:shadow-lg hover:-translate-y-0.5">
+                  className="group flex h-full w-[clamp(12rem,72vw,18rem)] shrink-0 snap-start flex-col gap-1 lc-card p-3.5 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none hover:shadow-lg hover:-translate-y-0.5">
                   {/* J4 · Rechtsgebiet-Badge statt der «Bundesgericht»-Fusszeile.
                       Es ist das DETERMINISTISCH im Korpus erfasste `sachgebiet`
                       (dasselbe Feld, das Liste, Karte und Sachgebiets-Rail

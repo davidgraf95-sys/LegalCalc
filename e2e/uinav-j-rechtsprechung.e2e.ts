@@ -35,7 +35,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
   test('Treffer → Detail → zurück: geladene Menge UND Position überleben', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     // «Neueste zuerst» erzwingt den EINEN Strom (statt der Sektions-Ansicht) und
-    // damit genau die Liste, die Deckel und Sprungleiste trägt.
+    // damit genau die Liste, die Fenster und Sprungleiste trägt.
     await uebersicht(page, '?kanton=BS')
     await page.getByLabel('Sortierung').selectOption('neu')
 
@@ -50,7 +50,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     const nachgeladen = await zeilen.count()
     expect(nachgeladen, 'der Batch muss die Liste wirklich verlängern').toBeGreaterThan(vorher)
 
-    // Tief scrollen und einen Treffer JENSEITS des Grunddeckels öffnen.
+    // Tief scrollen und einen Treffer JENSEITS des Grundfensters öffnen.
     const ziel = zeilen.nth(nachgeladen - 5)
     await ziel.scrollIntoViewIfNeeded()
     const y = await page.evaluate(() => window.scrollY)
@@ -61,17 +61,51 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     // Detailseite warten, sonst liegt der Rückweg im selben React-Batch.
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 
+    // ── HÄRTUNG (Gegenprüfungs-Befund B5, 8.8.2026) ───────────────────────────
+    // Ohne diesen Reload bewies der Fall NICHTS: bei kurzer Verweildauer auf der
+    // Detailseite überlebt der Übersichts-Baum in einem verzögerten Unmount-
+    // Fenster, der Fenster-Zustand liegt dann noch im lebenden `useState` — der
+    // Fall bestand darum auch mit ausgehängter Wiederherstellung. Der Reload
+    // zerstört den React-Baum HART und deterministisch (kein Warten auf ein
+    // Zeitfenster): danach ist sessionStorage die EINZIGE verbliebene Quelle,
+    // aus der das Fenster zurückkommen kann. Genau der Pfad, den J1 gebaut hat.
+    await page.reload()
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+
     await page.goBack()
     await expect(page).toHaveURL(/\/rechtsprechung(\?|$)/)
 
-    // (a) Die geladene MENGE ist wieder da — ohne den Sitzungs-Deckel wäre die
-    //     Liste auf den Grundwert geschrumpft und die Position unerreichbar.
+    // (a) DER MECHANISMUS: die geladene Menge ist wieder da — allein aus
+    //     sessionStorage, denn der Baum von vorhin existiert nicht mehr.
     await expect(zeilen).toHaveCount(nachgeladen)
-    // (b) Die POSITION ist wieder da (Toleranz für Nachlade-Konvergenz).
+    // (b) Und damit ist die frühere Position überhaupt wieder ERREICHBAR: das
+    //     Dokument ist mindestens so hoch wie der Scrollwert von vorhin. Das ist
+    //     der eigentliche Schaden, den J1 behebt — ohne wiederhergestelltes
+    //     Fenster wäre die Liste auf eine Batch-Breite geschrumpft und die
+    //     gespeicherte Position läge jenseits des Dokumentendes.
+    //     Der konkrete scrollY wird hier bewusst NICHT geprüft: die
+    //     Positions-Tabelle in App.tsx lebt im Arbeitsspeicher und ist nach
+    //     einem echten Reload naturgemäss fort. Diesen Teil deckt Leg 2 ab.
+    const hoehe = await page.evaluate(() => document.documentElement.scrollHeight)
+    expect(hoehe, `Dokumenthöhe ${hoehe} muss die frühere Position ${y} tragen`).toBeGreaterThanOrEqual(y)
+
+    // ── Leg 2 · Position innerhalb DERSELBEN Sitzung (ohne Reload) ────────────
+    // Hier ist die Positions-Tabelle in App.tsx noch da; geprüft wird ihr
+    // Zusammenspiel mit dem wiederhergestellten Fenster.
+    await page.evaluate(() => window.scrollTo(0, 0))
+    const ziel2 = zeilen.nth(nachgeladen - 5)
+    await ziel2.scrollIntoViewIfNeeded()
+    const y2 = await page.evaluate(() => window.scrollY)
+    expect(y2).toBeGreaterThan(500)
+    await ziel2.click()
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+    await page.goBack()
+    await expect(page).toHaveURL(/\/rechtsprechung(\?|$)/)
+    await expect(zeilen).toHaveCount(nachgeladen)
     await expect.poll(
       () => page.evaluate(() => window.scrollY),
       { message: 'Scrollposition nach Rückkehr' },
-    ).toBeGreaterThan(y * 0.5)
+    ).toBeGreaterThan(y2 * 0.5)
 
     expect(fehler, fehler.join('\n')).toEqual([])
   })
@@ -98,10 +132,19 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     const vorher = await page.locator('a[href^="/rechtsprechung/"]').count()
     await letzter.click()
 
-    // Nachgeladen: der Zielbereich steht jetzt im DOM.
+    // ── B2 · DAS FENSTER SPRINGT MIT, es wächst nicht auf ────────────────────
+    // Der ÄLTESTE Jahrgang liegt am Ende einer mehrtausendzeiligen Liste. Würde
+    // der Deckel bis dorthin wachsen, stünden hier Tausende Zeilen im DOM —
+    // genau die Last, gegen die LISTE_DECKEL gebaut ist. Geprüft wird darum
+    // nicht «mehr geladen», sondern «gleich viel geladen wie vorher»: der
+    // Sprung an das Listenende kostet dasselbe DOM wie jeder andere.
     await expect
-      .poll(() => page.locator('a[href^="/rechtsprechung/"]').count(), { message: 'geladene Einträge' })
-      .toBeGreaterThan(vorher)
+      .poll(() => page.locator('a[href^="/rechtsprechung/"]').count(), { message: 'gerenderte Einträge' })
+      .toBeLessThanOrEqual(vorher)
+
+    // Der Weg zurück nach oben bleibt offen — sonst wäre der Teil der Liste
+    // über dem Fenster unerreichbar (§8).
+    await expect(page.getByRole('button', { name: /Frühere anzeigen/ })).toBeVisible()
 
     // Und wir sind dort GELANDET: das Element am oberen Rand des Blickfelds
     // trägt das gesuchte Jahr. Geprüft wird die Datums-Spalte der Zeile, die

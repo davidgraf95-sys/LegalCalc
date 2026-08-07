@@ -11,9 +11,9 @@
 // `ersterIndex` ist der Vertrag zum Batching: das Sprungziel muss geladen sein,
 // bevor dorthin gescrollt werden kann.
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
 import { jahrVon, bandVon, zaehleBaender, istChronologisch } from '../components/rechtsprechung/baender';
-import { zaehleAktiveFilter } from '../components/rechtsprechung/zustand';
+import { zaehleAktiveFilter, leseFenster, schreibeFenster, DECKEL_PRAEFIX } from '../components/rechtsprechung/zustand';
 import type { BrowseEntscheid } from '../lib/rechtsprechung/register';
 
 function e(teil: Partial<BrowseEntscheid> & { key: string }): BrowseEntscheid {
@@ -143,5 +143,73 @@ describe('zaehleAktiveFilter', () => {
 
   it('ignoriert auf null gesetzte Achsen', () => {
     expect(zaehleAktiveFilter({ kanton: null, sprache: null, norm: 'OR-266' })).toBe(1);
+  });
+});
+
+// ── B2 · Plausibilisierung des wiederhergestellten Sichtfensters ────────────
+//
+// sessionStorage ist von der Seite (und von fremdem Skript gleicher Herkunft)
+// schreibbar. Ohne Schranke liesse sich über einen präparierten Wert ein
+// beliebig grosses DOM erzwingen — genau die Last, gegen die das Fenster gebaut
+// ist. Unplausibles fällt darum GANZ auf den Grundzustand zurück.
+
+// Die Suite läuft im node-Environment (vite.config.ts) — es gibt kein
+// sessionStorage. Minimal-Speicher als Global, wie in rechtsprechung-zustand.
+const sitzung = new Map<string, string>();
+const sitzungAttrappe: Storage = {
+  getItem: (k) => sitzung.get(k) ?? null,
+  setItem: (k, v) => { sitzung.set(k, String(v)); },
+  removeItem: (k) => { sitzung.delete(k); },
+  clear: () => { sitzung.clear(); },
+  key: (i) => [...sitzung.keys()][i] ?? null,
+  get length() { return sitzung.size; },
+};
+
+describe('leseFenster · Plausibilisierung', () => {
+  const KEY = 'test-fenster';
+  const GRUND = 100;
+  const MAX = 2000;
+  const grundFenster = { von: 0, bis: GRUND };
+
+  beforeAll(() => {
+    Object.defineProperty(globalThis, 'sessionStorage', { value: sitzungAttrappe, configurable: true });
+  });
+  afterAll(() => { Reflect.deleteProperty(globalThis, 'sessionStorage'); });
+  beforeEach(() => { sitzung.clear(); });
+
+  it('ohne sessionStorage (Prerender) gilt still der Grundzustand', () => {
+    Reflect.deleteProperty(globalThis, 'sessionStorage');
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+    Object.defineProperty(globalThis, 'sessionStorage', { value: sitzungAttrappe, configurable: true });
+  });
+
+  it('liefert den Grundzustand, wenn nichts gespeichert ist', () => {
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+  });
+
+  it('stellt ein plausibles Fenster wieder her', () => {
+    schreibeFenster(KEY, { von: 300, bis: 500 });
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual({ von: 300, bis: 500 });
+  });
+
+  it('verwirft ein Fenster über der harten Spannen-Grenze', () => {
+    schreibeFenster(KEY, { von: 0, bis: MAX + 1 });
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+  });
+
+  it('verwirft negative und verdrehte Grenzen', () => {
+    sitzungAttrappe.setItem(DECKEL_PRAEFIX + KEY, '-5:100');
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+    sitzungAttrappe.setItem(DECKEL_PRAEFIX + KEY, '500:300');
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+    sitzungAttrappe.setItem(DECKEL_PRAEFIX + KEY, '100:100');
+    expect(leseFenster(KEY, GRUND, MAX)).toEqual(grundFenster);
+  });
+
+  it('verwirft Unsinn statt ihn teilweise zu übernehmen', () => {
+    for (const roh of ['', 'abc', '100', '1:2:3', 'NaN:200', '1e999:1e999']) {
+      sitzungAttrappe.setItem(DECKEL_PRAEFIX + KEY, roh);
+      expect(leseFenster(KEY, GRUND, MAX), `Rohwert «${roh}»`).toEqual(grundFenster);
+    }
   });
 });

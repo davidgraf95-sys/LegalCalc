@@ -15,7 +15,7 @@ import {
 import {
   achsenDiff, leseFilterAusUrl, lokaleWerte, wendeAchsenAn,
   leseDichte, schreibeDichte, leseSort, schreibeSort, leseKlappe, schreibeKlappe,
-  leseDeckel, schreibeDeckel, zaehleAktiveFilter,
+  leseFenster, schreibeFenster, zaehleAktiveFilter, type Fenster,
   type Dichte, type UrlAchse,
 } from '../components/rechtsprechung/zustand';
 import { zaehleBaender, istChronologisch, type BandGruppe } from '../components/rechtsprechung/baender';
@@ -43,40 +43,51 @@ import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 // Normtext (§15.1 unberührt); jeder Entscheid bleibt als Datei vollständig.
 const LISTE_DECKEL = 100;
 
+// Harte Obergrenze der GERENDERTEN Zeilen je Liste (Gegenprüfungs-Befund B2).
+// Sie begrenzt, was ein wiederhergestelltes Fenster aufziehen darf; im Betrieb
+// wächst das Fenster ohnehin nur batchweise auf Klick. 20 Batches sind weit
+// jenseits dessen, was jemand durchblättert, und halten das DOM trotzdem in der
+// Grössenordnung, in der axe und die Scroll-Restauration gemessen wurden.
+const FENSTER_MAX = LISTE_DECKEL * 20;
+
 // Eine Treffer-Liste je Dichte rendern (geteilte Datenquelle, nur Darstellung).
 //
 // `speicherKey` identifiziert DIESE Liste innerhalb der Seite (jede Sektion hat
-// ihren eigenen Deckel). `mitSprungleiste` schaltet die Band-/Jahr-Leiste zu —
+// ihr eigenes Fenster). `mitSprungleiste` schaltet die Band-/Jahr-Leiste zu —
 // nur der EINE Strom bekommt sie, nicht die Sektions-Ansicht (dort ordnet
 // bereits die Sektion, und dieselbe Jahreszahl käme je Sektion erneut vor).
 function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   liste: BrowseEntscheid[]; dichte: Dichte; onNorm: (k: string) => void;
   speicherKey: string; mitSprungleiste?: boolean;
 }) {
-  // Deckel aus der Sitzung wiederherstellen — LAZY, also schon im ersten Render
+  // Fenster aus der Sitzung wiederherstellen — LAZY, also schon im ersten Render
   // (J1-Prüfpunkt: nach «zurück» muss das Dokument sofort wieder so hoch sein,
   // sonst greift die zentrale Scroll-Wiederherstellung in App.tsx ins Leere).
-  const [max, setMax] = useState(() => leseDeckel(speicherKey, LISTE_DECKEL));
-  // Bei neuer Datenbasis (Filterwechsel) auf den Deckel zurücksetzen — offizielles
+  const [fenster, setFenster] = useState<Fenster>(
+    () => leseFenster(speicherKey, LISTE_DECKEL, FENSTER_MAX));
+  // Bei neuer Datenbasis (Filterwechsel) auf den Anfang zurücksetzen — offizielles
   // «adjust state during render»-Muster (kein Effekt-Flackern, kein Ref im Render).
   // Beim MOUNT greift das nicht (gleiche Referenz) — der wiederhergestellte Wert
   // überlebt die Rückkehr also, ein Filterwechsel setzt ihn zurück.
   const [vorherListe, setVorherListe] = useState(liste);
-  if (vorherListe !== liste) { setVorherListe(liste); setMax(LISTE_DECKEL); }
-  const behalteMax = (neu: number) => { setMax(neu); schreibeDeckel(speicherKey, neu); };
+  if (vorherListe !== liste) { setVorherListe(liste); setFenster({ von: 0, bis: LISTE_DECKEL }); }
+  const behalteFenster = (f: Fenster) => { setFenster(f); schreibeFenster(speicherKey, f); };
 
   const behaelterRef = useRef<HTMLDivElement>(null);
   // Sprungziel als Index in `liste`; wird erst NACH dem Render aufgelöst, damit
-  // der Eintrag garantiert im DOM steht (er kann jenseits des alten Deckels liegen).
-  // Das Ziel selbst liegt in einer REF, nicht im State: es wird im Effekt
-  // verbraucht, und ein setState dort löste eine Kaskaden-Renderung aus
+  // der Eintrag garantiert im DOM steht (er kann ausserhalb des alten Fensters
+  // liegen). Das Ziel selbst liegt in einer REF, nicht im State: es wird im
+  // Effekt verbraucht, und ein setState dort löste eine Kaskaden-Renderung aus
   // (react-hooks/set-state-in-effect). Der Zähler ist die Auslöse-Flanke und
   // wird ausschliesslich im Klick-Handler gesetzt. Kein React Compiler (§15.4).
   const sprungRef = useRef<number | null>(null);
   const [sprungTick, setSprungTick] = useState(0);
 
-  const sichtbar = liste.length > max ? liste.slice(0, max) : liste;
-  const mehr = liste.length - sichtbar.length;
+  const von = Math.min(fenster.von, Math.max(0, liste.length - 1));
+  const bis = Math.min(fenster.bis, liste.length);
+  const sichtbar = liste.slice(von, bis);
+  const mehr = liste.length - bis;      // noch ungerendert UNTERHALB des Fensters
+  const frueher = von;                  // noch ungerendert OBERHALB des Fensters
 
   // Gruppen über die GANZE Liste (nicht nur den sichtbaren Teil): die Leiste soll
   // auch auf Jahre zeigen, die noch nicht geladen sind — der Sprung lädt nach.
@@ -84,23 +95,28 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
     () => (mitSprungleiste ? zaehleBaender(liste) : []), [mitSprungleiste, liste]);
   const leisteZeigen = gruppen.length > 1 && istChronologisch(gruppen);
 
-  // Nach dem Klick: erst genug Batches laden (Render), dann scrollen. Der Effekt
-  // läuft nach dem Commit, `children[i]` existiert dann.
+  // Nach dem Klick: erst das Fenster verschieben (Render), dann scrollen. Der
+  // Effekt läuft nach dem Commit, der Eintrag existiert dann im DOM.
   useEffect(() => {
     const ziel = sprungRef.current;
     if (ziel === null) return;
-    if (ziel >= max) return;                 // wartet auf den Render mit höherem Deckel
+    if (ziel < von || ziel >= bis) return;   // wartet auf den Render mit neuem Fenster
     sprungRef.current = null;                // Ref-Schreiben im Effekt, kein setState
-    const el = behaelterRef.current?.children[ziel] as HTMLElement | undefined;
+    // Der Behälter rendert erst ab `von` — der DOM-Index ist entsprechend versetzt.
+    const el = behaelterRef.current?.children[ziel - von] as HTMLElement | undefined;
     el?.scrollIntoView({ block: 'start', behavior: 'instant' as ScrollBehavior });
-  }, [sprungTick, max]);
+  }, [sprungTick, von, bis]);
 
   const springe = (g: BandGruppe) => {
-    // Deckel so weit heben, dass das Ziel gerendert ist — auf die nächste volle
-    // Batch-Grenze, damit auch der Kontext darunter mitkommt.
+    // Das Fenster SPRINGT MIT, statt von 0 bis zum Ziel aufzuwachsen: es beginnt
+    // an der Batch-Grenze vor dem Ziel und ist genau eine Batch-Breite hoch.
+    // Damit rendert ein Sprung auf den ältesten Jahrgang gleich viele Zeilen wie
+    // einer auf den jüngsten — unabhängig von der Länge der Liste (B2).
     sprungRef.current = g.ersterIndex;
-    const noetig = Math.ceil((g.ersterIndex + 1) / LISTE_DECKEL) * LISTE_DECKEL;
-    if (noetig > max) behalteMax(noetig);
+    const neuVon = Math.floor(g.ersterIndex / LISTE_DECKEL) * LISTE_DECKEL;
+    if (g.ersterIndex < von || g.ersterIndex >= bis) {
+      behalteFenster({ von: neuVon, bis: neuVon + LISTE_DECKEL });
+    }
     setSprungTick((t) => t + 1);
   };
 
@@ -120,8 +136,27 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
     </nav>
   );
 
+  // Anker nach OBEN — nötig, seit das Fenster mitspringt: sonst wäre der Teil
+  // der Liste über dem Fenster nur über die Sprungleiste erreichbar, und in der
+  // Sektions-Ansicht (ohne Leiste) gar nicht. Zeigt ehrlich, wie viele Einträge
+  // oberhalb stehen (§8 — kein stiller Listenanfang mitten im Bestand).
+  const frueherKnopf = frueher > 0 && (
+    <button type="button"
+      onClick={() => behalteFenster({ von: Math.max(0, von - LISTE_DECKEL), bis })}
+      className="lc-chip mx-auto mb-3 block hover:border-brass-400 hover:text-brass-700">
+      Frühere anzeigen (<span className="num">{frueher}</span> darüber)
+    </button>
+  );
+
   const mehrKnopf = mehr > 0 && (
-    <button type="button" onClick={() => behalteMax(max + LISTE_DECKEL)}
+    <button type="button"
+      // Wächst das Fenster über die harte Grenze, rückt die Oberkante mit —
+      // das DOM bleibt gedeckelt, und «Frühere anzeigen» führt zurück.
+      onClick={() => {
+        const neuBis = bis + LISTE_DECKEL;
+        const neuVon = Math.max(von, neuBis - FENSTER_MAX);
+        behalteFenster({ von: neuVon, bis: neuBis });
+      }}
       className="lc-chip mx-auto mt-3 block hover:border-brass-400 hover:text-brass-700">
       Weitere anzeigen (<span className="num">{mehr}</span> weitere)
     </button>
@@ -130,6 +165,7 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
     return (
       <div>
         {sprungleiste}
+        {frueherKnopf}
         <div ref={behaelterRef} className="grid grid-cols-1 gap-3 xl:grid-cols-2">
           {sichtbar.map((e) => <EntscheidKarte key={e.key} e={e} onNorm={onNorm} />)}
         </div>
@@ -140,6 +176,7 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   return (
     <div>
       {sprungleiste}
+      {frueherKnopf}
       <div ref={behaelterRef} className="lc-panel divide-y divide-line overflow-hidden">
         {sichtbar.map((e) => <EntscheidZeile key={e.key} e={e} onNorm={onNorm} />)}
       </div>
@@ -272,7 +309,13 @@ export function Rechtsprechung() {
   // über einen geteilten Link frisch geöffnete, ganz andere Treffermenge den
   // Deckel der zuvor besuchten. Innerhalb derselben Adresse ist der Schlüssel
   // stabil, und genau das trägt den Rückweg Treffer → Detail → zurück.
-  const deckelBasis = params.toString();
+  // `sort` MUSS mit hinein (Gegenprüfungs-Befund B4): die Sortierung liegt in
+  // localStorage, nicht in der Adresse — ohne sie im Schlüssel erbte eine nach
+  // «Älteste zuerst» sortierte Liste das Fenster der Datums-absteigenden, und
+  // nach einem Neuladen stünde der Nutzer an einer Stelle, die er in DIESER
+  // Ordnung nie besucht hat. Die Dichte gehört NICHT hinein: sie ändert die
+  // Darstellung der Einträge, nicht deren Reihenfolge oder Zahl.
+  const deckelBasis = `${params.toString()}|${sort}`;
   const deckelKey = (rolle: string) => `${deckelBasis}|${rolle}`;
 
   return (
