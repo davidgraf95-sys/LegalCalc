@@ -116,6 +116,10 @@ export const INVENTAR: readonly string[] = [
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
   'QS-SKILL-DIAET', 'QS-AUDIT-VERWEISE',
 
+  // Entscheid David 7.8.2026 abends («B als Schritt, A parken» — BEHIND-Kosten
+  // der QS-SELBSTOPT-Landekette, 3 manuelle Nachzieh-Zyklen an einem Tag):
+  'QS-MERGE-AUTOZUG', 'QS-ORG-UMZUG',
+
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
   // Der fünfte Befund floss in andere Schritte QS-PERF/QS-AUTOMATIK/etc., wird dort gebaut.)

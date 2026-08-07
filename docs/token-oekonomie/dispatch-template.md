@@ -134,6 +134,16 @@ Verletzung am 3.8.2026 mehrfach Leerlauf erzeugte:
 - **`gh pr merge` führt der Orchestrator aus.** Der Berechtigungs-Klassifikator
   blockt Merges in Unteragenten grundsätzlich; ein Agent, der bis zum
   Merge-Kommando plant, scheitert planbar. Im Auftrag von Anfang an so verteilen.
+- **Langläufer bekommen einen Deckel** (Lehre 7.8.2026: ~1 h verwaiste
+  Beweis-Schleifen, während die CI längst entschieden hatte): Jeder Auftrag mit
+  Schleifen/Messreihen/Regressionen nennt ein **Zeitbudget** und die Regel «bei
+  Überschreitung: Zwischenstand melden statt weiterlaufen».
+- **Weck-Termin statt Warten:** Agenten melden sich nur beim STOPP, nie
+  währenddessen — läuft einer >~20 min ohne Signal, fasst der Orchestrator
+  aktiv nach (Branch-Stand prüfen schlägt Nachfragen).
+- **Prämissen-Propagation:** Jedes Ereignis, das einen laufenden Auftrag
+  entwertet (Merge vollzogen, Lauf abgebrochen, Annahme widerlegt), geht
+  SOFORT per Nachricht an den Agenten — sonst beweist er Überholtes weiter.
 - **Gegenprüfung sofort dispatchen, nie stapeln (Lehre Nacht 4./5.8.2026).**
   Liefert ein Bau-Agent mit «Gegenprüfung ausstehend» zurück, dispatcht der
   Orchestrator den Prüf-Agenten SOFORT — parallel zum nächsten Bau, nicht
