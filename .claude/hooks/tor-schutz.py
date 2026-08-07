@@ -48,9 +48,26 @@ TOR_MUSTER = re.compile(
     # Tor bleibt Tor, egal ob via npm-Alias oder Skript-Pfad aufgerufen.
     r"|bibliothek-check\.sh|scripts/check-[a-z-]+\.(?:ts|sh)|struktur-rotieren\.py --check"
 )
+# §17-Nachtrag 7.8.2026 (QS-SELBSTOPT, Ent-Regulierung; Freigabe David im Chat):
+# der Hook blockierte Tor-Namen, die nur als SUCHMUSTER vorkamen —
+# `grep -n "npm run check" f | head` ist kein Tor-Lauf (Fehlalarm zweifach belegt,
+# u. a. am Prüfskript des Befunds selbst). Bei grep/rg/ag werden darum die
+# zitierten Argumente vor der Prüfung entfernt; Pipes und Tor-Kommandos
+# AUSSERHALB der Quotes bleiben voll erfasst (beidseitig getestet).
+GREP_KOPF = re.compile(r"^\s*(?:[A-Za-z_]\w*=\S+\s+)*(?:grep|egrep|fgrep|rg|ag|ack)\b")
+
+
+def ohne_suchmuster(seg: str) -> str:
+    """Bei grep/rg/ag die ZITIERTEN Argumente entfernen: dort steht ein
+    Suchmuster, kein ausgefuehrtes Kommando. Pipes ausserhalb der Quotes
+    bleiben stehen — `grep "x" f | npm run lint | tail` blockiert weiter."""
+    return re.sub(r"'[^']*'|\"[^\"]*\"", " ", seg) if GREP_KOPF.match(seg) else seg
+
+
 # je Segment (getrennt durch && ; oder Zeilenende) prüfen, ob nach einem
 # Tor-Kommando noch eine Pipe folgt; '||' fängt auch das Schlucken via '|| true'
 for seg in re.split(r"&&|;|\n", cmd):
+    seg = ohne_suchmuster(seg)
     m = TOR_MUSTER.search(seg)
     if m and "|" in seg[m.end():]:
         probleme.append(

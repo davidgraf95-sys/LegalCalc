@@ -181,17 +181,10 @@ Messung: Skill **`perf`**.
 
 ## §16 — entfällt (Entscheid David 25.7.2026)
 
-Die frühere Regel «Framework-APIs live nachschlagen statt aus Modellwissen» ist
-**gestrichen, nicht verschoben** — und das mit Absicht: Sie gehört in die
-Beschreibung des Werkzeugs, mit dem man nachschlägt, nicht ins Reglement. Dort
-steht sie auch. Ein Reglement, das Werkzeug-Bedienung mitführt, veraltet mit dem
-Werkzeug.
-
-**Die Nummer 16 wird nicht neu belegt.** Sonst zeigte jeder Bestandsverweis auf
-§16 still auf eine andere Regel — dieselbe Fehlerklasse wie eine Unternummer,
-die ins Leere läuft, nur in umgekehrter Richtung: nicht ein toter Verweis,
-sondern ein lebender, der das Falsche trifft. Eine künftige Regel bekommt §17
-oder höher.
+Die frühere Nachschlage-Regel ist gestrichen, nicht verschoben — sie gehört in
+die Doku des Werkzeugs, mit dem man nachschlägt. **Die Nummer 16 wird nicht neu
+belegt**, damit Bestandsverweise nicht still auf eine andere Regel zeigen; eine
+künftige Regel bekommt §17 oder höher.
 
 ## §17 Konstante Prozessverbesserung (Handlungsauftrag David 3.8.2026)
 
