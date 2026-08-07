@@ -127,6 +127,7 @@
     "plan:dump": "vite-node scripts/plan/dump.ts",
     "plan:bild": "vite-node scripts/plan/bild.ts",
     "check:plan": "vite-node scripts/plan/check.ts",
+    "selbstopt:erheben": "vite-node scripts/plan/selbstopt-erheben.ts",
     "struktur:rotieren": "python3 .claude/hooks/struktur-rotieren.py",
     "struktur:aktuell": "python3 .claude/hooks/struktur-aktuell.py",
     "fahrplan": "vite-node scripts/fahrplan-slice.ts",

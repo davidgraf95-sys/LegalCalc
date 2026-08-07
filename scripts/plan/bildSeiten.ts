@@ -35,6 +35,7 @@ import {
   rechtsprechungRegister,
   repoWebUrl,
   schrittInfoAusRoadmap,
+  selbstoptKennzahlen,
   worktreesUndBranches,
   zaehleNach,
   zuletztGelandet,
@@ -355,6 +356,33 @@ export function lagebildSeite(o: SeitenOpts): string {
   const kantonZahl = norm ? norm.erlasse.filter((e) => e.ebene === 'kanton').length : null;
   const werkzeugeLive = kat.entwurf + kat['geprüft'];
 
+  // Bau-Messreihe (Schritt QS-SELBSTOPT, Stufe 1 «erst messen»). Zeigt den
+  // letzten Snapshot von `messwerte/selbstopt-zeitreihe.json`.
+  //
+  // Der erklärende Satz darunter ist Absicht, nicht Zierde: eine Kachel mit
+  // einer Prozentzahl liest sich sonst wie eine Bewertung. Diese Zahlen SIND
+  // keine Bewertung — sie sind Beobachtungsgrössen und ausdrücklich nie ein
+  // Tor-Kriterium (Fahrplan-Spec). Wer das auf der Seite nicht dazuschreibt,
+  // erzeugt genau den Druck, das Gemessene statt der Sache zu verbessern.
+  const messreihe = selbstoptKennzahlen();
+  const messreiheHtml = messreihe
+    ? `${kacheln([
+        { wert: messreihe.ciFailure, label: 'der letzten CI-Läufe nicht erfolgreich' },
+        { wert: messreihe.ciRerun, label: 'der CI-Läufe waren Wiederholungen' },
+        { wert: `${messreihe.torRot}/${messreihe.torGesamt}`, label: 'Tor-Läufe rot seit der vorigen Messung' },
+        { wert: messreihe.rework, label: 'Quelltext-Commits mit Nacharbeit binnen 48 h' },
+        { wert: messreihe.snapshots, label: 'Messpunkte in der Reihe' },
+      ])}
+  <p class="hinweis">Stand ${esc(messreihe.stand)} · Quelle <span class="id">messwerte/selbstopt-zeitreihe.json</span>,
+  erhoben mit <span class="id">npm run selbstopt:erheben</span> aus git, der GitHub-API und dem lokalen Tor-Protokoll.
+  <b>Diese Zahlen bewerten nichts.</b> Sie sind Beobachtung: kein Prüf-Tor hängt an ihnen, und keines wird je an ihnen hängen —
+  sonst würde der Bau die Messung verbessern statt die Sache.${
+    messreihe.ausfaelle.length
+      ? ` <br>⚠ Bei der letzten Erhebung nicht verfügbar: ${esc(messreihe.ausfaelle.join(' · '))} (kein Fehler des Bau-Stands).`
+      : ''
+  }</p>`
+    : `<p class="hinweis">Noch keine Messreihe erhoben — <span class="id">npm run selbstopt:erheben</span> legt den ersten Messpunkt an.</p>`;
+
   const lageSatz = `${offen.length} Schritte offen — ${baubar.size} davon sofort baubar, ${b.inArbeit.length} gerade im Bau, ${b.blockiert.length} warten auf dich.`;
 
   const projektLink = esc(seitenDatei(o.indexPfad, 'projekt'));
@@ -371,7 +399,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   (dieselbe Logik wie <span class="id">npm run plan:next</span>).`,
     extra: `<p class="lage"><b>${esc(lageSatz)}</b></p>
   ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
-  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a></nav>`,
+  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
   });
 
   // Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
@@ -471,6 +499,15 @@ ${jetzt}
   Schritte — ${chronik !== null ? `die ${chronik} bereits erledigten Arbeitspakete liegen im <a href="${geschichteLink}">Chronik-Archiv</a>` : 'ganze abgeschlossene Wellen liegen im Chronik-Archiv'} und drücken die Zahlen hier nicht mehr.</p>
   <input id="filter" type="search" placeholder="Baustellen filtern — z. B. «Gesetze», «Kanton», «Design» …" aria-label="Baustellen filtern">
   <div class="cards">${karten}</div>
+</section>
+
+<section id="messreihe">
+  <p class="eyebrow">Bau-Messreihe</p>
+  <h2>Wie rund der Bau läuft</h2>
+  <p class="lede">Seit August 2026 misst der Bau sich selbst: bei jedem Prüflauf wird festgehalten, welches Tor grün oder rot war,
+  und in Abständen kommen die Zahlen aus der Bau-Prüfstrasse (CI) und der Versionsgeschichte dazu. So lässt sich später belegen,
+  ob eine Prozessänderung etwas gebracht hat — statt es zu vermuten.</p>
+  ${messreiheHtml}
 </section>
 
 ${fussnote('Klartext-Namen der Baustellen sind gepflegte Übersetzungen (@lagebild-Kopfzeile der Fahrpläne); alle Zahlen sind mechanisch.')}`;

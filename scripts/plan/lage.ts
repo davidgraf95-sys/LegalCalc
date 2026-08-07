@@ -30,8 +30,16 @@
 // Schritt-Daten kommen unverändert aus parse.ts/aufloesen.ts.
 
 import { execFileSync } from 'node:child_process';
+import { existsSync, readFileSync } from 'node:fs';
 import { type Einheit } from './parse';
 import { idTrifft } from './specBindung';
+import {
+  ZEITREIHE_DATEI,
+  letzterSnapshot,
+  pruefeZeitreihe,
+  quoteText,
+  type Zeitreihe,
+} from './selbstoptKern';
 
 /** Ein `wip`-Schritt mit den von ihm belegten Flächen (`kollision:`-Globs). */
 export interface WipFlaeche {
@@ -303,12 +311,66 @@ export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
   return z;
 }
 
-/** Ein Aufruf für die CLI: erheben und formatieren. */
+/**
+ * **Messreihen-Zeile** (Schritt `QS-SELBSTOPT`, Stufe 1 «erst messen»).
+ *
+ * Eine Zeile über den letzten Snapshot von `messwerte/selbstopt-zeitreihe.json`:
+ * wann zuletzt gemessen wurde, wie die CI-Failure-Rate stand, wie viele
+ * Tor-Läufe seit dem vorletzten Snapshot rot waren. Reine Funktion über die
+ * Zeitreihe — im Test ohne Dateisystem prüfbar, genau wie `lageZeilen`.
+ *
+ * **Nie eine Warnung, nie ein Verdikt.** Der Block sagt, was gemessen wurde,
+ * und nichts darüber, ob das gut ist: die Werte sind Beobachtungsgrössen (§8,
+ * Fahrplan-Spec). Fehlt die Zeitreihe, steht das als Tatsache da, nicht als
+ * Mangel — eine frisch geklonte Arbeitskopie hat sie schlicht noch nicht.
+ */
+export function selbstoptZeile(z: Zeitreihe | null): string[] {
+  const s = letzterSnapshot(z);
+  if (!s) {
+    return [`📈 Bau-Messreihe: noch keine Zeitreihe (\`npm run selbstopt:erheben\` erhebt den ersten Snapshot)`];
+  }
+  const tag = s.erhobenAm.slice(0, 10);
+  const ci = s.ci ? `CI-Failure-Rate ${quoteText(s.ci.failureRate)} (${s.ci.laeufe} Läufe)` : 'CI-Rate nicht erhoben';
+  const tore = `${s.torRot.seitLetztem.rot} von ${s.torRot.seitLetztem.gesamt} Tor-Läufen rot`;
+  return [
+    `📈 Bau-Messreihe (Stand ${tag}, ${z?.snapshots.length ?? 0} Snapshots): ${ci} · seit dem vorigen Snapshot ${tore}` +
+      ` — Beobachtung, kein Tor-Kriterium.`,
+  ];
+}
+
+/**
+ * Zeitreihe von der Platte lesen. Wie überall in dieser Datei gilt: **nie
+ * werfen.** Fehlt die Datei oder ist sie defekt, ist das Ergebnis `null` und die
+ * Anzeige sagt «noch keine Zeitreihe» — der Pflicht-Einstieg `plan:next` darf an
+ * einem kaputten Messwert nicht scheitern. Dass sie defekt IST, meldet das
+ * zuständige Tor (`check:plan`, Regel 13), nicht diese Anzeige.
+ */
+export function leseZeitreihe(pfad: string = ZEITREIHE_DATEI): Zeitreihe | null {
+  try {
+    if (!existsSync(pfad)) return null;
+    const roh = readFileSync(pfad, 'utf8');
+    if (pruefeZeitreihe(roh).length) return null;
+    return JSON.parse(roh) as Zeitreihe;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Ein Aufruf für die CLI: erheben und formatieren.
+ *
+ * Die Messreihen-Zeile wird ANGEHÄNGT (dasselbe Andock-Muster wie der ganze
+ * Block gegenüber `plan:next`): zieht man sie ab, ist die Ausgabe von
+ * `lageZeilen` byte-identisch zum Stand vor QS-SELBSTOPT.
+ */
 export function lageBlock(
   einheiten: Einheit[],
   inArbeit: string[],
-  opt: { prs: boolean; laufe?: Laufe },
+  opt: { prs: boolean; laufe?: Laufe; zeitreihe?: () => Zeitreihe | null },
 ): string[] {
   const roh = sammleLage(wipFlaechen(einheiten, inArbeit), opt);
-  return lageZeilen(roh, einheiten.map((e) => e.id));
+  return [
+    ...lageZeilen(roh, einheiten.map((e) => e.id)),
+    ...selbstoptZeile((opt.zeitreihe ?? leseZeitreihe)()),
+  ];
 }
