@@ -32,10 +32,26 @@ fail=0
 #    also ohnehin nicht ab; das `|| true` sagt es trotzdem ausdrücklich.
 # Die Tor-Namen hier sind fest verdrahtete Literale ohne Anführungszeichen —
 # es gibt also nichts zu escapen.
+#
+# ECHTE MILLISEKUNDEN, nicht fingierte (Gegenprüfung 7.8.2026): Die erste
+# Fassung hängte hart `.000Z` an. Der Sammler schneidet Ereignisse aber mit
+# `e.ts > letzterSnapshot` (String-Vergleich) — ein Gate-Ereignis aus DERSELBEN
+# Sekunde wie ein Snapshot fiel damit unter das Watermark und war verloren.
+# BSD-`date` (macOS) kennt kein `%N`, GNU-`date` schon; statt auf die Plattform
+# zu wetten, stempelt python3. Die Kosten fallen nicht ins Gewicht: höchstens
+# fünf Aufrufe je Gate-Lauf (ein Gate-Schritt dauert Sekunden bis Minuten), und
+# das Repo setzt python3 ohnehin voraus (`struktur:rotieren`, die Hooks).
+# Fehlt python3 wider Erwarten, greift der `date`-Rückfall mit
+# Sekunden-Auflösung — dann kann im Grenzfall EIN Ereignis je Snapshot
+# verlorengehen, was ein Verlaufs-Signal nicht umwirft.
 EREIGNIS_LOG=".selbstopt-ereignisse.jsonl"
+jetzt_iso() {
+  python3 -c 'import datetime as d; print(d.datetime.now(d.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z")' 2>/dev/null \
+    || date -u +%Y-%m-%dT%H:%M:%S.000Z
+}
 ereignis() {
   printf '{"ts":"%s","tor":"%s","ok":%s}\n' \
-    "$(date -u +%Y-%m-%dT%H:%M:%S.000Z)" "$1" "$2" >> "$EREIGNIS_LOG" 2>/dev/null || true
+    "$(jetzt_iso)" "$1" "$2" >> "$EREIGNIS_LOG" 2>/dev/null || true
 }
 
 run() {

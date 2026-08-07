@@ -9,6 +9,22 @@
 // mitbenutzen, ohne den Sammler samt seiner Prozess-Aufrufe zu importieren (§5:
 // eine Definition des Schemas, nicht zwei).
 //
+// BEKANNTE GRENZEN DER MESSUNG (Gegenprüfung 7.8.2026 — hier notiert, weil eine
+// Grenze, die nur der Autor kennt, keine dokumentierte Grenze ist):
+//
+//  * **Die Reihe ist maschinen-lückenhaft.** Das Ereignis-Log
+//    (`.selbstopt-ereignisse.jsonl`) ist gitignoriert und je Maschine eigen, die
+//    Zeitreihe wird committet. Erhebt Maschine A einen Snapshot, wandern DEREN
+//    Tor-Läufe hinein; die zwischenzeitlichen Läufe auf Maschine B sind für
+//    immer verloren, weil A das Watermark vorschiebt. `torRot` ist deshalb «was
+//    diese Maschinen gesehen haben», nie «was gelaufen ist». Für ein
+//    Verlaufs-Signal reicht das; für eine Absolutaussage über Tor-Läufe nicht.
+//  * **Zeitstempel-Auflösung.** `check-parallel.ts` stempelt mit echten
+//    Millisekunden (`toISOString()`), `gate.sh` ebenso (s. dort). Ein Stempel
+//    ohne Millisekunden liesse Ereignisse derselben Sekunde unter das Watermark
+//    fallen (`e.ts > seit`) — deshalb ist die Auflösung an beiden Schreibstellen
+//    zugesichert und nicht dem Zufall der Plattform überlassen.
+//
 // WAS DIESE ZAHLEN SIND — UND WAS NICHT. Alle Grössen hier sind
 // **Beobachtungsgrössen**. Keine davon ist ein Tor-Kriterium, und keine darf je
 // eines werden (Fahrplan-Spec: «Rework-Heuristik … Beobachtungsgrösse, nie
@@ -145,18 +161,38 @@ function sortiereSchluessel(je: Record<string, TorZaehler>): Record<string, TorZ
 // ─────────────────────────── Fehlerklassen F1–F6 ───────────────────────────
 
 /**
- * Zählt je Fehlerklasse des Lehren-Registers die DATIERTEN Belege.
+ * Zählt je Fehlerklasse die datierten **Ereignisse** — nur aus der Spalte
+ * «Was passierte», nie aus der Gegenmittel-Spalte.
  *
  * Quelle (§5) bleibt die Markdown-Tabelle «Register der belegten Fehlerklassen»
  * in `.claude/skills/lehren/SKILL.md`; dieser Parser ist ihre Projektion und
- * pflegt nichts nach. Gezählt werden die VERSCHIEDENEN Datumsangaben in einer
- * Registerzeile (Muster `T.M.JJJJ`), weil genau so ein Rückfall dort sichtbar
- * wird: F6 trägt heute «28.7.2026» und «5.8.2026» neben dem Ur-Vorfall — jede
- * Eskalation datiert ihren Anlass. Ein Datumsbereich wie «18.–20.7.2026» zählt
- * als die dort ausgeschriebenen Daten (hier eines), nicht als Spanne.
+ * pflegt nichts nach.
  *
- * Bewusst NICHT gezählt wird die Schwere; das Register führt sie nicht mit, und
- * eine geschätzte Gewichtung wäre keine Messung mehr (§2).
+ * WARUM SPALTENGENAU — Befund der Gegenprüfung 7.8.2026, nachgemessen. Die
+ * erste Fassung zählte alle Datumsangaben der GANZEN Registerzeile. Damit
+ * zählte sie **Reparaturdaten als Vorfälle**:
+ *
+ *   * F2e: «Anlage 20.7.2026» (Ereignis) + «Fix 3.8.2026, PR #419» (Gegenmittel)
+ *     ⇒ gemeldet als 2, tatsächlich 1 Ereignis und 0 Rückfälle.
+ *   * F3: gar kein Ereignis-Datum, nur «3.8.2026» im Gegenmittel ⇒ gemeldet
+ *     als 1, tatsächlich 0.
+ *
+ * Die Wirkung war nicht bloss kosmetisch: `retro:17` schlägt bei steigendem
+ * Zähler «Gegenmittel greift nicht» vor. Ein künftiger Eintrag «Fix 9.9.2026»
+ * hätte damit einen Rückfall erfunden — und der Bau hätte auf eine Reparatur
+ * mit einer Eskalation geantwortet. Genau falsch herum.
+ *
+ * BEKANNTE GRENZE, bewusst in Kauf genommen: Ein Rückfall, der ausnahmsweise
+ * NUR in der Gegenmittel-Spalte erzählt wird (heute: die «Eskalation 5.8.2026»
+ * bei F6), wird nicht gezählt. Untererfassung ist hier das kleinere Übel —
+ * ein zu niedriger Zähler unterlässt einen Vorschlag, ein zu hoher erzeugt
+ * einen falschen. Die Register-Konvention sieht Vorfälle ohnehin in «Was
+ * passierte» vor.
+ *
+ * Ein Datumsbereich wie «18.–20.7.2026» zählt als die ausgeschriebenen Daten
+ * (hier eines), nicht als Spanne. Bewusst NICHT gezählt wird die Schwere; das
+ * Register führt sie nicht mit, und eine geschätzte Gewichtung wäre keine
+ * Messung mehr (§2).
  */
 export function parseFKlassen(md: string): Record<string, number> {
   const out: Record<string, number> = {};
@@ -169,13 +205,22 @@ export function parseFKlassen(md: string): Record<string, number> {
   const abschnitt = ende < 0 ? rest : rest.slice(0, ende);
 
   for (const zeile of abschnitt.split('\n')) {
-    const m = /^\|\s*\*\*(F\d[a-z]?)\*\*\s*\|/.exec(zeile.trim());
-    if (!m) continue;
+    const getrimmt = zeile.trim();
+    if (!/^\|\s*\*\*(F\d[a-z]?)\*\*\s*\|/.test(getrimmt)) continue;
+    // Spalten der Registertabelle: | # | Klasse | Was passierte | Gegenmittel |
+    // Der führende Pipe erzeugt eine leere Zelle 0, die Klasse steht in 1,
+    // das EREIGNIS in 3. Fehlt die Spalte (umgebaute Tabelle), wird die Klasse
+    // übersprungen statt geraten — ein stiller Fehlwert wäre schlimmer als eine
+    // fehlende Klasse, und der Bindungs-Test schlägt dann an.
+    const zellen = getrimmt.split('|');
+    if (zellen.length < 5) continue;
+    const klasse = /\*\*(F\d[a-z]?)\*\*/.exec(zellen[1])?.[1];
+    if (!klasse) continue;
     const daten = new Set<string>();
-    for (const d of zeile.matchAll(/\b(\d{1,2})\.(\d{1,2})\.(\d{4})\b/g)) {
+    for (const d of zellen[3].matchAll(/\b(\d{1,2})\.(\d{1,2})\.(\d{4})\b/g)) {
       daten.add(`${d[3]}-${d[2].padStart(2, '0')}-${d[1].padStart(2, '0')}`);
     }
-    out[m[1]] = daten.size;
+    out[klasse] = daten.size;
   }
   const sortiert: Record<string, number> = {};
   for (const k of Object.keys(out).sort()) sortiert[k] = out[k];
@@ -328,11 +373,22 @@ export interface CiLauf {
   status: string;
 }
 
+/**
+ * Abschlüsse, die KEIN Urteil über den Bau-Stand sind: der Lauf wurde beendet,
+ * bevor er etwas prüfen konnte. Sie gehören darum weder in den Zähler noch in
+ * den Nenner der Ausfallquote.
+ */
+const OHNE_VERDIKT = new Set(['cancelled', 'skipped']);
+
 export interface CiKennzahl {
-  /** Beurteilte (abgeschlossene) Läufe. */
+  /** Abgeschlossene Läufe insgesamt (inkl. abgebrochener). */
   laeufe: number;
-  /** Anteil NICHT-`success` unter den abgeschlossenen Läufen. */
+  /** Davon solche mit echtem Verdikt (weder `cancelled` noch `skipped`). */
+  verdikte: number;
+  /** Anteil NICHT-`success` **unter den Verdikten** — die eigentliche Ausfallquote. */
   failureRate: number;
+  /** Anteil abgebrochener/übersprungener Läufe an allen abgeschlossenen. */
+  cancelledRate: number;
   /** Anteil Läufe mit `run_attempt > 1` (also Wiederholungen). */
   rerunRate: number;
   /** Roh-Aufschlüsselung je `conclusion` — damit nichts hinter einer Quote verschwindet. */
@@ -342,22 +398,44 @@ export interface CiKennzahl {
 /**
  * CI-Kennzahlen über die abgeschlossenen Läufe eines Workflows.
  *
- * **`failureRate` zählt jedes NICHT-`success` als Ausfall** — also auch
- * `cancelled` und `timed_out`. Das ist der Hauslehrsatz aus Fehlerklasse F2c
- * («GitHub färbt einen abgebrochenen Lauf grau, nicht rot»); eine Quote, die
- * graue Läufe wegzählte, wäre genau der Blindfleck, der dort eine Woche
- * unbemerkter Veralterung gekostet hat. Damit nichts hinter der Quote
- * verschwindet, trägt `je` zusätzlich die rohe Aufschlüsselung.
+ * **`cancelled` ist kein Ausfall** — Korrektur nach der Gegenprüfung vom
+ * 7.8.2026. Die erste Fassung zählte jedes Nicht-`success` als Ausfall und
+ * berief sich dafür auf Fehlerklasse F2c. Die Berufung war falsch, und der
+ * Unterschied ist gross: nachgemessen an den letzten 50 CI-Läufen lagen **11
+ * der 15 abgebrochenen Läufe auf `main`** — Verdrängung wartender Läufe durch
+ * die Concurrency-Gruppe, also gewolltes Verhalten. Die übrigen 4 sind
+ * designtes cancel-in-progress auf PRs. Als «Ausfall» gerechnet ergab das eine
+ * Quote von 46 %, wo die echte bei 23 % liegt (8 Ausfälle auf 35 Verdikte).
+ *
+ * **Was F2c wirklich sagt:** «`cancelled` zählt als ROT» gilt dort für einen
+ * GEPLANTEN Wächter-Lauf — wenn `turso-sync.yml` in den Timeout läuft, ist der
+ * Suchindex nicht synchronisiert, und der graue Lauf verdeckt genau das. Bei
+ * einem verdrängten `main`-Lauf ist nichts unterblieben: der verdrängende Lauf
+ * prüft denselben oder einen neueren Stand. Dieselbe Farbe, zwei Sachverhalte —
+ * die Lehre auf beide anzuwenden hiesse, sie zu verwechseln.
+ *
+ * Verschwiegen wird deshalb nichts: `cancelledRate` steht als eigenes Feld
+ * daneben, und `je` trägt weiterhin die rohe Aufschlüsselung.
+ *
+ * `timed_out`, `action_required` und Konsorten zählen unverändert als Ausfall —
+ * sie hatten ihre Gelegenheit zu prüfen und haben sie nicht bestanden.
  */
 export function ciKennzahl(laeufe: CiLauf[]): CiKennzahl {
   const fertig = laeufe.filter((l) => l.status === 'completed');
   const je: Record<string, number> = {};
-  let nichtErfolg = 0;
+  let verdikte = 0;
+  let ausfaelle = 0;
+  let abgebrochen = 0;
   let reruns = 0;
   for (const l of fertig) {
     const k = l.conclusion ?? 'unbekannt';
     je[k] = (je[k] ?? 0) + 1;
-    if (l.conclusion !== 'success') nichtErfolg++;
+    if (OHNE_VERDIKT.has(k)) {
+      abgebrochen++;
+    } else {
+      verdikte++;
+      if (k !== 'success') ausfaelle++;
+    }
     if ((l.attempt ?? 1) > 1) reruns++;
   }
   const n = fertig.length;
@@ -365,7 +443,9 @@ export function ciKennzahl(laeufe: CiLauf[]): CiKennzahl {
   for (const k of Object.keys(je).sort()) sortiert[k] = je[k];
   return {
     laeufe: n,
-    failureRate: n === 0 ? 0 : runde(nichtErfolg / n),
+    verdikte,
+    failureRate: verdikte === 0 ? 0 : runde(ausfaelle / verdikte),
+    cancelledRate: n === 0 ? 0 : runde(abgebrochen / n),
     rerunRate: n === 0 ? 0 : runde(reruns / n),
     je: sortiert,
   };
@@ -399,6 +479,23 @@ export function zaehleFlakySpecs(report: unknown): number {
 
 // ──────────────────────────────── Zeitreihe ────────────────────────────────
 
+/**
+ * Ein Messpunkt.
+ *
+ * **Definitions-Bruch am 7.8.2026 — beim Lesen der Reihe zu beachten.** Die
+ * Snapshots 1–3 entstanden vor der Gegenprüfung und tragen deshalb zwei Werte
+ * nach überholten Definitionen:
+ *
+ *   * `ci.failureRate` zählte abgebrochene Läufe als Ausfall (46 % statt 23 %);
+ *     `ci.verdikte` und `ci.cancelledRate` fehlen dort ganz — daran sind alte
+ *     Snapshots erkennbar, und ein Verlaufsvergleich der Ausfallquote über
+ *     diesen Bruch hinweg ist unzulässig.
+ *   * `fKlassen` zählte Reparaturdaten als Vorfälle (F2e=2 statt 1, F3=1 statt 0).
+ *
+ * Die alten Werte werden NICHT nachträglich korrigiert: eine Messreihe, die man
+ * rückwirkend überschreibt, belegt nichts mehr. Der Bruch ist stattdessen hier
+ * und im Dossier `bibliothek/betrieb/entregulierung-2026-08-07.md` vermerkt.
+ */
 export interface Snapshot {
   erhobenAm: string;
   headCommit: string;
@@ -429,7 +526,25 @@ export function leereZeitreihe(): Zeitreihe {
   return { _generiert: GENERIERT_MARKE, schema: SCHEMA_VERSION, snapshots: [] };
 }
 
-const ISO_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+/**
+ * Zeitstempel-Form: **nur UTC mit `Z`**, keine Zonen-Offsets.
+ *
+ * Befund der Gegenprüfung 7.8.2026: Die erste Fassung liess `+02:00` &c. zu,
+ * verglich die Stempel aber lexikografisch (`a > b` auf Strings). Für zwei
+ * Stempel verschiedener Zone ist das schlicht falsch — `2026-08-07T09:00:00Z`
+ * ist SPÄTER als `2026-08-07T10:30:00+02:00`, die Zeichenkette sagt das
+ * Gegenteil. Betroffen wären die Chronologie-Prüfung hier und der
+ * Watermark-Schnitt in `aggregiereTore`.
+ *
+ * Von zwei möglichen Reparaturen — `Date.parse`-Vergleich oder Offsets
+ * verbieten — ist die zweite die tragfähigere: der Sammler schreibt
+ * ausschliesslich `toISOString()` (immer `Z`), `gate.sh` ebenso. Ein Offset
+ * könnte also nur von Hand hineinkommen — und Handschrift ist in dieser Datei
+ * ohnehin verboten (Generat-Marke). Ein enges Format, das die Reihenfolge
+ * lexikografisch entscheidbar macht, ist dem Nachrüsten von Zeitzonen-Arithmetik
+ * an vier Vergleichsstellen vorzuziehen.
+ */
+const ISO_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$/;
 const SHA_RE = /^[0-9a-f]{7,40}$/;
 
 /**
@@ -444,6 +559,14 @@ const SHA_RE = /^[0-9a-f]{7,40}$/;
  * Zeitstempel echt aufsteigend. Ein Tor über die WERTE (etwa «Failure-Rate darf
  * nicht steigen») wäre der Punkt, an dem die Messung anfinge, den Bau zu
  * steuern, statt ihn zu beschreiben.
+ *
+ * **Die Prüfung deckt, was die Leser voraussetzen** — Befund der Gegenprüfung
+ * 7.8.2026: Eine Datei ohne `fKlassen` galt als schema-valide, `check:plan`
+ * blieb grün, und `retro:17` starb an `Object.keys(undefined)`. Ein Schema-Tor,
+ * das weniger prüft als seine Konsumenten annehmen, verlagert den Fehler bloss
+ * von der Prüfung in den Betrieb. Darum sind seither ALLE Snapshot-Felder
+ * Pflicht — `ci`, `rework` und `flaky` dürfen `null` sein (das ist ihre
+ * Ausfall-Semantik), aber nicht fehlen.
  */
 export function pruefeZeitreihe(roh: string | null): string[] {
   if (roh === null) return [];
@@ -498,6 +621,23 @@ export function pruefeZeitreihe(roh: string | null): string[] {
     if (!Array.isArray(sn.ausfaelle)) {
       fehler.push(`${wo}: "ausfaelle" fehlt oder ist keine Liste`);
     }
+    // `fKlassen` ist Pflicht und muss ein Zahlen-Register sein: `retro:17`
+    // iteriert darüber (Object.keys) und rechnet mit den Werten.
+    if (!istZahlenRegister(sn.fKlassen)) {
+      fehler.push(`${wo}: "fKlassen" fehlt oder ist kein Register Klasse→Zahl`);
+    }
+    // Die drei Ausfall-Felder: `null` ist zulässig (Quelle nicht erhoben),
+    // Fehlen nicht. Der Unterschied ist der ganze Punkt — «nicht gemessen»
+    // muss im Artefakt stehen und darf nicht durch Abwesenheit ausgedrückt
+    // werden, sonst liest jeder Konsument sie als 0 oder stürzt ab.
+    for (const feld of ['ci', 'rework', 'flaky'] as const) {
+      const w = sn[feld];
+      if (w === undefined) {
+        fehler.push(`${wo}: "${feld}" fehlt — bei nicht erhobener Quelle gehört ausdrücklich null hierher`);
+      } else if (w !== null && typeof w !== 'object') {
+        fehler.push(`${wo}: "${feld}" ist weder null noch ein Objekt (${typeof w})`);
+      }
+    }
   });
 
   return fehler;
@@ -506,6 +646,11 @@ export function pruefeZeitreihe(roh: string | null): string[] {
 function istAggregat(a: unknown): a is TorAggregat {
   const o = a as Partial<TorAggregat> | null;
   return !!o && typeof o === 'object' && typeof o.gesamt === 'number' && typeof o.rot === 'number' && !!o.je && typeof o.je === 'object';
+}
+
+function istZahlenRegister(a: unknown): a is Record<string, number> {
+  if (!a || typeof a !== 'object' || Array.isArray(a)) return false;
+  return Object.values(a as Record<string, unknown>).every((v) => typeof v === 'number');
 }
 
 /** Letzter Snapshot oder `null` — die Anzeige-Seiten fragen nur danach. */

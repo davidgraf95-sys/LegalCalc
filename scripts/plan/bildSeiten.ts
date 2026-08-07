@@ -364,7 +364,8 @@ export function lagebildSeite(o: SeitenOpts): string {
   const messreihe = selbstoptKennzahlen();
   const messreiheHtml = messreihe
     ? `${kacheln([
-        { wert: messreihe.ciFailure, label: 'der letzten CI-Läufe nicht erfolgreich' },
+        { wert: messreihe.ciFailure, label: 'der CI-Läufe MIT Ergebnis sind gescheitert' },
+        { wert: messreihe.ciAbgebrochen, label: 'der CI-Läufe wurden abgebrochen (ohne Ergebnis)' },
         { wert: messreihe.ciRerun, label: 'der CI-Läufe waren Wiederholungen' },
         { wert: `${messreihe.torRot}/${messreihe.torGesamt}`, label: 'Tor-Läufe rot seit der vorigen Messung' },
         { wert: messreihe.rework, label: 'Quelltext-Commits mit Nacharbeit binnen 48 h' },

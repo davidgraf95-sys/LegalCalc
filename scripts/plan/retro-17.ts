@@ -132,10 +132,12 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
         art: 'ci-failure',
         titel: 'CI-Ausfallquote senken — Ursachen der roten Läufe auszählen',
         anlass:
-          `Failure-Rate ${quoteText(letzter.ci.failureRate)} über ${letzter.ci.laeufe} abgeschlossene Läufe ` +
-          `(Schwelle ${quoteText(CI_FAILURE_SCHWELLE)}); Aufschlüsselung: ${aufschluesselung(letzter)}`,
+          `Failure-Rate ${quoteText(letzter.ci.failureRate)} über ${letzter.ci.verdikte} Läufe MIT Verdikt ` +
+          `(von ${letzter.ci.laeufe} abgeschlossenen; Schwelle ${quoteText(CI_FAILURE_SCHWELLE)}); ` +
+          `Aufschlüsselung: ${aufschluesselung(letzter)}`,
         hinweis:
-          'Nicht-`success` zählt hier jedes Nicht-Grün, auch `cancelled` und `timed_out` (Fehlerklasse F2c). ' +
+          'Abgebrochene Läufe (`cancelled`/`skipped`) sind hier weder Zähler noch Nenner — sie hatten nie ' +
+          'Gelegenheit zu prüfen. `timed_out` und Konsorten zählen als Ausfall. ' +
           'Vor jeder Zuschreibung an ein Feature: Nullprobe und Streuung (Dispatch-§0 Ziff. 3).',
       });
     }
@@ -153,18 +155,29 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
     }
   }
 
-  // (4) F-Klassen-Rückfälle: Anstieg zwischen erstem und letztem Snapshot.
+  // (4) F-Klassen: ein NEUER datierter Vorfall zwischen erstem und letztem
+  //     Snapshot. Gezählt wird nur die Spalte «Was passierte» (s. `parseFKlassen`)
+  //     — ein nachgetragenes FIX-Datum darf hier nichts auslösen, sonst
+  //     antwortete der Bau auf eine Reparatur mit einer Eskalation.
+  //
+  //     `?? {}`: die Schema-Prüfung verlangt `fKlassen` inzwischen, aber diese
+  //     Funktion wird auch über Fremd-Dateien (`--datei`) gefahren. Ein
+  //     Absturz an dieser Stelle wäre der teuerste denkbare Ausgang eines
+  //     Werkzeugs, das nur berichten soll.
   const erster = snaps[0];
-  for (const k of Object.keys(letzter.fKlassen).sort()) {
-    const jetzt = letzter.fKlassen[k];
-    const vorher = erster.fKlassen[k] ?? 0;
+  const jetztAlle = letzter.fKlassen ?? {};
+  const vorherAlle = erster.fKlassen ?? {};
+  for (const k of Object.keys(jetztAlle).sort()) {
+    const jetzt = jetztAlle[k];
+    const vorher = vorherAlle[k] ?? 0;
     if (jetzt <= vorher) continue;
     out.push({
       art: 'f-klasse',
       titel: `Fehlerklasse ${k} eskalieren — Gegenmittel greift nicht`,
       anlass:
-        `datierte Rückfälle ${vorher} → ${jetzt} zwischen dem ersten (${erster.erhobenAm.slice(0, 10)}) ` +
-        `und dem letzten Snapshot (${letzter.erhobenAm.slice(0, 10)}), Quelle: Register im Skill \`lehren\``,
+        `datierte Vorfälle ${vorher} → ${jetzt} zwischen dem ersten (${erster.erhobenAm.slice(0, 10)}) ` +
+        `und dem letzten Snapshot (${letzter.erhobenAm.slice(0, 10)}); Quelle: Spalte «Was passierte» ` +
+        `des Registers im Skill \`lehren\` — Reparaturdaten zählen dort nicht mit`,
       hinweis:
         'Regel 5 des Skills `lehren`: zweimal trotz Gegenmittel ⇒ Form eskalieren (Prosa → Dispatch → Tor). ' +
         'Keine neue Regel danebenlegen, das bestehende Gegenmittel verschärfen.',

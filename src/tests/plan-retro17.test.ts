@@ -129,7 +129,7 @@ describe('befunde — «nie rot»', () => {
 describe('befunde — CI-Quoten', () => {
   it('meldet Failure- und Rerun-Rate ab Schwelle', () => {
     const z = dickeReihe({
-      ci: { laeufe: 50, failureRate: CI_FAILURE_SCHWELLE, rerunRate: CI_RERUN_SCHWELLE, je: { failure: 10, success: 40 } },
+      ci: { laeufe: 50, verdikte: 50, failureRate: CI_FAILURE_SCHWELLE, cancelledRate: 0, rerunRate: CI_RERUN_SCHWELLE, je: { failure: 10, success: 40 } },
     });
     const arten = befunde(z, '').map((x) => x.art);
     expect(arten).toContain('ci-failure');
@@ -137,7 +137,7 @@ describe('befunde — CI-Quoten', () => {
   });
 
   it('schweigt unter der Schwelle', () => {
-    const z = dickeReihe({ ci: { laeufe: 50, failureRate: 0.01, rerunRate: 0.01, je: {} } });
+    const z = dickeReihe({ ci: { laeufe: 50, verdikte: 50, failureRate: 0.01, cancelledRate: 0, rerunRate: 0.01, je: {} } });
     expect(befunde(z, '').filter((x) => x.art.startsWith('ci-'))).toHaveLength(0);
   });
 
@@ -186,7 +186,7 @@ describe('bericht', () => {
   it('markiert JEDE Vorschlagszeile als ENTWURF und vergibt kein @meta', () => {
     const z = dickeReihe({
       torRot: { seitLetztem: aggregat({}), kumuliert: aggregat({ 'check:wackel': { gesamt: 20, rot: 5 } }) },
-      ci: { laeufe: 50, failureRate: 0.5, rerunRate: 0.5, je: {} },
+      ci: { laeufe: 50, verdikte: 50, failureRate: 0.5, cancelledRate: 0, rerunRate: 0.5, je: {} },
     });
     const zeilen = bericht(z, '');
     const vorschlaege = zeilen.filter((l) => l.startsWith('- [ ] **'));

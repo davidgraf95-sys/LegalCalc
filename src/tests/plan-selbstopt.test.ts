@@ -117,22 +117,37 @@ describe('parseFKlassen', () => {
     '| # | Klasse | Was passierte | Gegenmittel |',
     '|---|---|---|---|',
     '| **F1** | Merge vor Prüfung | PR #309, kein Datum in der Zeile | Hook |',
-    '| **F2a** | Selbstvalidierung | Rückfall 3.8.2026, erneut 5.8.2026 | Wächter |',
+    '| **F2a** | Selbstvalidierung | Vorfall 3.8.2026, erneut 5.8.2026 | Wächter, Fix 9.8.2026 |',
     '| **F6** | Doppelarbeit | 28.7.2026 und nochmals 28.7.2026 | Sonden |',
+    '| **F9** | Nur repariert | keine Datumsangabe im Ereignis | Fix 1.1.2027, PR #999 |',
     '',
     '## Eine neue Lehre ablegen',
     '',
     'Hier steht 9.9.2026 und darf NICHT mitzählen.',
   ].join('\n');
 
-  it('zählt datierte Belege je Klasse', () => {
-    expect(parseFKlassen(FIXTURE)).toEqual({ F1: 0, F2a: 2, F6: 1 });
+  it('zählt datierte Vorfälle je Klasse', () => {
+    expect(parseFKlassen(FIXTURE)).toEqual({ F1: 0, F2a: 2, F6: 1, F9: 0 });
+  });
+
+  // Der Befund der Gegenprüfung 7.8.2026: Reparaturdaten sind keine Vorfälle.
+  // Zählte man sie mit, schlüge retro:17 nach jedem Fix eine Eskalation vor —
+  // der Bau antwortete auf eine Reparatur mit «Gegenmittel greift nicht».
+  it('zählt Daten aus der Gegenmittel-Spalte NICHT mit', () => {
+    const out = parseFKlassen(FIXTURE);
+    expect(out.F9).toBe(0); // «Fix 1.1.2027» steht nur im Gegenmittel
+    expect(out.F2a).toBe(2); // 3.8. + 5.8. im Ereignis; «Fix 9.8.» bleibt draussen
   });
 
   it('zählt dasselbe Datum nur einmal und hört am nächsten Abschnitt auf', () => {
     const out = parseFKlassen(FIXTURE);
-    expect(out.F6).toBe(1); // zweimal 28.7.2026 = ein Beleg
-    expect(Object.keys(out)).toEqual(['F1', 'F2a', 'F6']); // nichts aus dem Folgeabschnitt
+    expect(out.F6).toBe(1); // zweimal 28.7.2026 = ein Vorfall
+    expect(Object.keys(out)).toEqual(['F1', 'F2a', 'F6', 'F9']); // nichts aus dem Folgeabschnitt
+  });
+
+  it('überspringt Zeilen ohne Ereignis-Spalte, statt zu raten', () => {
+    const kaputt = ['## Register der belegten Fehlerklassen', '', '| **F1** | nur zwei Spalten |', ''].join('\n');
+    expect(parseFKlassen(kaputt)).toEqual({});
   });
 
   it('liefert leer, wenn es den Registerabschnitt nicht gibt', () => {
@@ -141,14 +156,26 @@ describe('parseFKlassen', () => {
 
   // §5-Bindung an die echte Quelle: der Parser ist eine Projektion des
   // Lehren-Registers. Ändert dort die Tabellenform, liefert er still `{}` und
-  // die Messreihe verlöre eine Grösse, ohne dass irgendetwas rot würde. Dieser
-  // Test bindet ihn an die Wirklichkeit, statt nur an eine Fixture.
+  // die Messreihe verlöre eine Grösse, ohne dass irgendetwas rot würde.
   it('findet die echten Klassen im Lehren-Register', () => {
     const md = readFileSync('.claude/skills/lehren/SKILL.md', 'utf8');
     const out = parseFKlassen(md);
     for (const k of ['F1', 'F2a', 'F2b', 'F2c', 'F2d', 'F2e', 'F2f', 'F3', 'F4', 'F5', 'F6']) {
       expect(Object.keys(out)).toContain(k);
     }
+  });
+
+  // Präsenz der Schlüssel genügt NICHT (Gegenprüfung 7.8.2026): eine Umstellung
+  // des Registers auf ISO-Daten würde jeden Zähler still auf 0 setzen, und der
+  // Test oben bliebe grün. Es MUSS also mindestens ein datierter Vorfall
+  // gefunden werden — heute belegt durch F2e («Anlage 20.7.2026»), F2f
+  // («Bauplan-Review 4./5.8.2026») und F6 («2. Vorfall 28.7.2026»).
+  it('findet im echten Register mindestens die bekannt datierten Vorfälle', () => {
+    const md = readFileSync('.claude/skills/lehren/SKILL.md', 'utf8');
+    const out = parseFKlassen(md);
+    const summe = Object.values(out).reduce((a, b) => a + b, 0);
+    expect(summe).toBeGreaterThanOrEqual(3);
+    for (const k of ['F2e', 'F2f', 'F6']) expect(out[k]).toBeGreaterThanOrEqual(1);
   });
 });
 
@@ -224,21 +251,43 @@ describe('istHandschrift', () => {
 // ─────────────────────────────── CI-Kennzahlen ───────────────────────────────
 
 describe('ciKennzahl', () => {
-  it('zählt jedes Nicht-success als Ausfall (Fehlerklasse F2c: grau ist nicht grün)', () => {
+  // Gegenprüfung 7.8.2026: `cancelled` ist KEIN Ausfall — nachgemessen lagen
+  // 11 der 15 abgebrochenen Läufe auf `main` (Concurrency-Verdrängung).
+  it('nimmt abgebrochene Läufe aus Zähler UND Nenner der Ausfallquote', () => {
     const k = ciKennzahl([
       { attempt: 1, conclusion: 'success', status: 'completed' },
       { attempt: 2, conclusion: 'failure', status: 'completed' },
       { attempt: 1, conclusion: 'cancelled', status: 'completed' },
+      { attempt: 1, conclusion: 'skipped', status: 'completed' },
       { attempt: 1, conclusion: null, status: 'in_progress' }, // zählt nicht mit
     ]);
-    expect(k.laeufe).toBe(3);
-    expect(k.failureRate).toBe(0.6667);
-    expect(k.rerunRate).toBe(0.3333);
-    expect(k.je).toEqual({ cancelled: 1, failure: 1, success: 1 });
+    expect(k.laeufe).toBe(4);
+    expect(k.verdikte).toBe(2); // success + failure
+    expect(k.failureRate).toBe(0.5); // 1 von 2 Verdikten — nicht 3 von 4
+    expect(k.cancelledRate).toBe(0.5); // 2 von 4 abgeschlossenen
+    expect(k.rerunRate).toBe(0.25); // 1 von 4
+    expect(k.je).toEqual({ cancelled: 1, failure: 1, skipped: 1, success: 1 });
+  });
+
+  it('zählt timed_out weiterhin als Ausfall — der Lauf hatte seine Gelegenheit', () => {
+    const k = ciKennzahl([
+      { attempt: 1, conclusion: 'success', status: 'completed' },
+      { attempt: 1, conclusion: 'timed_out', status: 'completed' },
+    ]);
+    expect(k.verdikte).toBe(2);
+    expect(k.failureRate).toBe(0.5);
+    expect(k.cancelledRate).toBe(0);
+  });
+
+  it('nur abgebrochene Läufe ⇒ Ausfallquote 0, nicht 1 (kein Verdikt heisst kein Ausfall)', () => {
+    const k = ciKennzahl([{ attempt: 1, conclusion: 'cancelled', status: 'completed' }]);
+    expect(k.verdikte).toBe(0);
+    expect(k.failureRate).toBe(0);
+    expect(k.cancelledRate).toBe(1);
   });
 
   it('ohne abgeschlossene Läufe keine Division durch null', () => {
-    expect(ciKennzahl([])).toMatchObject({ laeufe: 0, failureRate: 0, rerunRate: 0 });
+    expect(ciKennzahl([])).toMatchObject({ laeufe: 0, verdikte: 0, failureRate: 0, cancelledRate: 0, rerunRate: 0 });
   });
 });
 
@@ -323,6 +372,44 @@ describe('pruefeZeitreihe', () => {
   it('meldet fehlende snapshots-Liste', () => {
     expect(pruefeZeitreihe(JSON.stringify({ _generiert: GENERIERT_MARKE, schema: 1 })).join('\n')).toContain('snapshots');
   });
+
+  // Gegenprüfung 7.8.2026: Die Prüfung deckte weniger, als ihre Konsumenten
+  // voraussetzen. Eine Datei ohne `fKlassen` galt als valide, check:plan blieb
+  // grün — und retro:17 starb an `Object.keys(undefined)`.
+  it('meldet fehlendes fKlassen — retro:17 iteriert darüber', () => {
+    const ohne = { ...snapshot() } as Partial<Snapshot>;
+    delete ohne.fKlassen;
+    expect(pruefeZeitreihe(reihe([ohne as Snapshot])).join('\n')).toContain('fKlassen');
+  });
+
+  it('meldet fKlassen, das kein Zahlen-Register ist', () => {
+    const falsch = snapshot({ fKlassen: { F1: 'viele' } as unknown as Record<string, number> });
+    expect(pruefeZeitreihe(reihe([falsch])).join('\n')).toContain('fKlassen');
+  });
+
+  it('verlangt ci/rework/flaky ausdrücklich — null ja, fehlend nein', () => {
+    for (const feld of ['ci', 'rework', 'flaky'] as const) {
+      const ohne = { ...snapshot() } as Partial<Snapshot>;
+      delete ohne[feld];
+      const befunde = pruefeZeitreihe(reihe([ohne as Snapshot])).join('\n');
+      expect(befunde).toContain(`"${feld}" fehlt`);
+    }
+    // null bleibt zulässig: das IST die Ausfall-Semantik.
+    expect(pruefeZeitreihe(reihe([snapshot({ ci: null, rework: null, flaky: null })]))).toEqual([]);
+  });
+
+  // Gegenprüfung 7.8.2026 (B6): Zonen-Offsets sind verboten, weil die
+  // Chronologie lexikografisch entschieden wird. `…T09:00:00Z` ist SPÄTER als
+  // `…T10:30:00+02:00`, die Zeichenkette behauptet das Gegenteil.
+  it('lehnt Zeitstempel mit Zonen-Offset ab', () => {
+    const mitOffset = snapshot({ erhobenAm: '2026-08-07T10:30:00+02:00' });
+    expect(pruefeZeitreihe(reihe([mitOffset])).join('\n')).toContain('erhobenAm');
+  });
+
+  it('akzeptiert Z-Stempel mit und ohne Millisekunden', () => {
+    expect(pruefeZeitreihe(reihe([snapshot({ erhobenAm: '2026-08-07T10:00:00Z' })]))).toEqual([]);
+    expect(pruefeZeitreihe(reihe([snapshot({ erhobenAm: '2026-08-07T10:00:00.123Z' })]))).toEqual([]);
+  });
 });
 
 // ────────────────────────────────── Anzeige ──────────────────────────────────
@@ -354,14 +441,17 @@ describe('selbstoptZeile', () => {
       snapshots: [
         snapshot({
           erhobenAm: '2026-08-07T12:00:00.000Z',
-          ci: { laeufe: 50, failureRate: 0.46, rerunRate: 0.06, je: {} },
+          ci: { laeufe: 50, verdikte: 35, failureRate: 0.23, cancelledRate: 0.3, rerunRate: 0.06, je: {} },
           torRot: { seitLetztem: { gesamt: 44, rot: 3, je: {} }, kumuliert: { gesamt: 44, rot: 3, je: {} } },
         }),
       ],
     };
     const zeile = selbstoptZeile(z)[0];
     expect(zeile).toContain('2026-08-07');
-    expect(zeile).toContain('46 %');
+    expect(zeile).toContain('23 %');
+    // Die Basis muss dastehen: 23 % von 35 Verdikten ist eine andere Aussage
+    // als 23 % von 50 Läufen — und genau daran ist die erste Fassung gescheitert.
+    expect(zeile).toContain('35 von 50');
     expect(zeile).toContain('3 von 44');
     // Der Zusatz ist nicht Zierde: ohne ihn liest sich die Zahl wie ein Urteil.
     expect(zeile).toContain('kein Tor-Kriterium');

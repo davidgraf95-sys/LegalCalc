@@ -92,8 +92,22 @@ eigenständige Prüfungen (vier `--netz`-Zwillinge, zwei Ketten).
   frischem Klon/CI wirkungslos; Schweregrad mittel.
 - §11 ohne Bagatell-Schwelle; `check:lik-frische` ohne Commit-Erwähnung (ungemessen);
   `check:ci-laeufe` doppelt verdrahtet (nach #419 nicht defekt, Redundanz ungeprüft).
-- CI-Läufe (letzte 50): success 27 · cancelled 15 · failure 8 — Deutung offen
-  (cancelled ≠ failure, F2c); Messreihe trägt die Aufschlüsselung.
+- CI-Läufe (letzte 50): success 27 · cancelled 15 · failure 8. **Deutung
+  entschieden (7.8.2026, Gegenprüfung):** `cancelled` ist **kein** Ausfall. Von
+  den 15 abgebrochenen Läufen liegen **11 auf `main`** (Verdrängung wartender
+  Läufe durch die Concurrency-Gruppe, gewolltes Verhalten), 4 sind designtes
+  cancel-in-progress auf PRs. Die Ausfallquote rechnet seither nur über Läufe
+  **mit Verdikt**: 8 von 35 = **23 %**, nicht 46 %. Die Berufung auf F2c war
+  falsch — dort geht es um einen GEPLANTEN Wächter-Lauf, dessen Abbruch eine
+  unterlassene Prüfung verdeckt; ein verdrängter `main`-Lauf unterlässt nichts,
+  weil der verdrängende Lauf denselben oder einen neueren Stand prüft.
+  `cancelledRate` steht als eigenes Feld in der Messreihe, `je` trägt weiterhin
+  die rohe Aufschlüsselung.
+- **Nebenfund daraus:** 11 abgebrochene `main`-Läufe sind 11 Deploy-Stände ohne
+  eigenes CI-Verdikt. Das ist kein Defekt (der nachfolgende Lauf deckt den
+  neueren Stand), aber ein Hinschau-Anlass — verwandt mit `QS-BASIS-DOKU-CI`,
+  wo es ebenfalls um die Frage geht, welche `main`-Pushes ein eigenes Verdikt
+  bekommen. Nicht in diesem Schritt entschieden.
 
 **Nachweislich tragend (Gegenprobe, nicht anfassen):** `tor-schutz.py` als Hook
 (F1, drei belegte Realfälle) · `check:tor-paritaet` (F2b, 21 widerlegte

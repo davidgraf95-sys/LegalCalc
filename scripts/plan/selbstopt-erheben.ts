@@ -147,6 +147,18 @@ export function erhebe(): { zeitreihe: Zeitreihe; snapshot: Snapshot } {
     : { _generiert: GENERIERT_MARKE, schema: SCHEMA_VERSION, snapshots: [] };
   const vorig = letzterSnapshot(zeitreihe);
 
+  // (0b) DEN ZEITSTEMPEL JETZT SETZEN, nicht am Ende (Gegenprüfung 7.8.2026).
+  //
+  // `erhobenAm` ist nicht bloss Anzeige: es ist das WATERMARK, ab dem der
+  // nächste Snapshot Ereignisse zählt. Wurde es erst nach der Beschaffung
+  // gestempelt, deckte es einen Zeitraum ab, den dieser Snapshot gar nicht
+  // gelesen hat — `gh` und `git` dürfen zusammen bis zu zwei Minuten brauchen.
+  // Jedes Tor-Ereignis in diesem Fenster fiel unter den Tisch: vom nächsten
+  // Snapshot als «vor dem Watermark» verworfen, von diesem nie gesehen.
+  // Vorher stempeln kann höchstens dazu führen, dass ein Ereignis EINEN
+  // Snapshot später gezählt wird — verlieren kann es nichts mehr.
+  const erhobenAm = new Date().toISOString();
+
   // (1) HEAD-Commit.
   const headRoh = sh('git', ['rev-parse', 'HEAD']);
   const headCommit = headRoh?.trim() ?? '';
@@ -195,7 +207,7 @@ export function erhebe(): { zeitreihe: Zeitreihe; snapshot: Snapshot } {
   const fKlassen = registerRoh === null ? {} : parseFKlassen(registerRoh);
 
   const snapshot: Snapshot = {
-    erhobenAm: new Date().toISOString(),
+    erhobenAm,
     headCommit,
     torRot: { seitLetztem, kumuliert },
     ci,
@@ -238,7 +250,9 @@ if (!process.env.VITEST) {
   );
   console.log(
     s.ci
-      ? `  CI (${CI_WORKFLOW}, ${s.ci.laeufe} Läufe): Failure-Rate ${quoteText(s.ci.failureRate)} · Rerun-Rate ${quoteText(s.ci.rerunRate)}`
+      ? `  CI (${CI_WORKFLOW}, ${s.ci.laeufe} Läufe): Failure-Rate ${quoteText(s.ci.failureRate)} ` +
+        `von ${s.ci.verdikte} Verdikten · abgebrochen ${quoteText(s.ci.cancelledRate)} (kein Verdikt) · ` +
+        `Rerun-Rate ${quoteText(s.ci.rerunRate)}`
       : '  CI: — (nicht erhoben)',
   );
   console.log(
@@ -250,7 +264,7 @@ if (!process.env.VITEST) {
   );
   console.log(`  Flaky-Specs: ${s.flaky ? s.flaky.specs : '— (nicht erhoben)'}`);
   console.log(
-    `  Fehlerklassen — datierte Rückfälle über den Ur-Vorfall hinaus: ` +
+    `  Fehlerklassen — datierte Vorfälle in der Spalte «Was passierte» (Fix-Daten zählen nicht): ` +
       `${Object.entries(s.fKlassen).map(([k, v]) => `${k}=${v}`).join(' · ') || '—'}`,
   );
   if (s.ausfaelle.length) console.log(`  ⚠️  nicht erhoben: ${s.ausfaelle.join(' · ')} (kein Fehler des Sammlers)`);

@@ -586,8 +586,10 @@ export interface SelbstoptKennzahlen {
   snapshots: number;
   /** Tag der letzten Erhebung (`YYYY-MM-DD`). */
   stand: string;
-  /** CI-Failure-Rate in Prozent-Text, oder «—» wenn nicht erhoben. */
+  /** Ausfallquote unter den Läufen MIT Verdikt, Prozent-Text, oder «—». */
   ciFailure: string;
+  /** Anteil abgebrochener Läufe (kein Verdikt), Prozent-Text, oder «—». */
+  ciAbgebrochen: string;
   /** Rerun-Rate in Prozent-Text, oder «—». */
   ciRerun: string;
   /** Rote Tor-Läufe seit dem vorigen Snapshot. */
@@ -616,6 +618,7 @@ export function selbstoptKennzahlen(): SelbstoptKennzahlen | null {
     snapshots: z.snapshots.length,
     stand: s.erhobenAm.slice(0, 10),
     ciFailure: s.ci ? quoteText(s.ci.failureRate) : '—',
+    ciAbgebrochen: s.ci ? quoteText(s.ci.cancelledRate) : '—',
     ciRerun: s.ci ? quoteText(s.ci.rerunRate) : '—',
     torRot: s.torRot.seitLetztem.rot,
     torGesamt: s.torRot.seitLetztem.gesamt,

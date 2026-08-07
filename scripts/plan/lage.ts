@@ -330,7 +330,11 @@ export function selbstoptZeile(z: Zeitreihe | null): string[] {
     return [`📈 Bau-Messreihe: noch keine Zeitreihe (\`npm run selbstopt:erheben\` erhebt den ersten Snapshot)`];
   }
   const tag = s.erhobenAm.slice(0, 10);
-  const ci = s.ci ? `CI-Failure-Rate ${quoteText(s.ci.failureRate)} (${s.ci.laeufe} Läufe)` : 'CI-Rate nicht erhoben';
+  // Die Basis wird MITGENANNT: eine Quote ohne Nenner lädt zur Fehldeutung ein,
+  // und der Nenner ist hier gerade der Punkt — abgebrochene Läufe zählen nicht.
+  const ci = s.ci
+    ? `CI-Failure-Rate ${quoteText(s.ci.failureRate)} (${s.ci.verdikte} von ${s.ci.laeufe} Läufen mit Verdikt)`
+    : 'CI-Rate nicht erhoben';
   const tore = `${s.torRot.seitLetztem.rot} von ${s.torRot.seitLetztem.gesamt} Tor-Läufen rot`;
   return [
     `📈 Bau-Messreihe (Stand ${tag}, ${z?.snapshots.length ?? 0} Snapshots): ${ci} · seit dem vorigen Snapshot ${tore}` +
