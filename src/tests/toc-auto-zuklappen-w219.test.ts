@@ -27,7 +27,7 @@
  * nachgebildet; alles andere wäre Kulisse, die nichts beweist.
  */
 import { describe, it, expect } from 'vitest';
-import { planeZuklappen, AUTO_ZU_NACHLAUF, F2_SICHERHEITSSAUM } from '../pages/gesetz-leser/tocAutoZuklappen';
+import { planeZuklappen, AUTO_ZU_NACHLAUF, F2_SICHERHEITSSAUM, F2_OBERHALB } from '../pages/gesetz-leser/tocAutoZuklappen';
 
 interface ZeilenBau {
   /** Ids, die diese Zeile trägt (verdichtete Kette: mehrere). */
@@ -78,6 +78,11 @@ function baueToc(contTop: number, contBottom: number, zeilen: ZeilenBau[]): HTML
 
 /** Ticks so setzen, dass jede Id das Nachlauf-Fenster überschritten hat. */
 const alt = (ids: string[]): Map<string, number> => new Map(ids.map((id) => [id, 0]));
+// Die Oberhalb-Richtung ist in der Produktion per Fallback ABGESCHALTET
+// (F2_OBERHALB = false, Herleitung dort). Die REGEL bleibt implementiert und
+// geprüft — sie wird gebraucht, sobald der Nachfolge-Mechanismus steht. Wo ein
+// Fall sie prüft, wird sie darum ausdrücklich eingeschaltet.
+const MIT_OBEN = { oberhalbErlaubt: true } as const;
 const TICK = AUTO_ZU_NACHLAUF + 5;
 
 // Sichtband des Containers in dieser Datei: y = 100 … 500.
@@ -97,7 +102,7 @@ describe('S5 — Sichtband-Wächter: was zugeklappt werden darf', () => {
 
   it('OBERHALB: klappt zu UND meldet die verschwindende Höhe zur Kompensation', () => {
     const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: OBEN }]);
-    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
+    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']), ...MIT_OBEN });
     expect(plan.schliessen).toEqual(['sek-1']);
     expect(plan.kompensation).toBe(200); // -300 … -100
   });
@@ -139,7 +144,7 @@ describe('S5 — Sichtband-Wächter: was zugeklappt werden darf', () => {
     const knappUnten = { top: 520, bottom: 900 };  // 20 px unter der Bandunterkante
     for (const ast of [knappOben, knappUnten]) {
       const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast }]);
-      const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
+      const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']), ...MIT_OBEN });
       expect(plan.schliessen, `Ast ${JSON.stringify(ast)} liegt im Saum und darf nicht zuklappen`).toEqual([]);
       expect(plan.kompensation).toBe(0);
     }
@@ -150,7 +155,7 @@ describe('S5 — Sichtband-Wächter: was zugeklappt werden darf', () => {
       [{ top: 500 + F2_SICHERHEITSSAUM, bottom: 900 }, 'unten'],
     ] as const) {
       const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast }]);
-      const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
+      const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']), ...MIT_OBEN });
       expect(plan.schliessen, `${was}: exakt am Saum muss zuklappen`).toEqual(['sek-1']);
     }
   });
@@ -169,14 +174,14 @@ describe('S5 — Sichtband-Wächter: was zugeklappt werden darf', () => {
 describe('S5 — wer geschützt bleibt', () => {
   it('der aktive Pfad klappt nie zu, egal wie alt der Tick ist', () => {
     const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: OBEN }]);
-    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: ['sek-1'], tick: TICK, ticks: alt(['sek-1']) });
+    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: ['sek-1'], tick: TICK, ticks: alt(['sek-1']), ...MIT_OBEN });
     expect(plan.schliessen).toEqual([]);
   });
 
   it('innerhalb des Nachlauf-Fensters passiert nichts — die Kante liegt bei > NACHLAUF', () => {
     const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: OBEN }]);
     const bau = (tick: number) => planeZuklappen({
-      tocCont: toc, auto: ['sek-1'], aktivIds: [], tick, ticks: new Map([['sek-1', 0]]),
+      tocCont: toc, auto: ['sek-1'], aktivIds: [], tick, ticks: new Map([['sek-1', 0]]), ...MIT_OBEN,
     });
     expect(bau(AUTO_ZU_NACHLAUF).schliessen).toEqual([]);      // genau am Fenster
     expect(bau(AUTO_ZU_NACHLAUF + 1).schliessen).toEqual(['sek-1']); // eins darüber
@@ -185,7 +190,7 @@ describe('S5 — wer geschützt bleibt', () => {
   it('eine verdichtete Kette wird über JEDE ihrer Ids gefunden (data-sektion-ids~=)', () => {
     const toc = baueToc(100, 500, [{ ids: ['sek-7', 'sek-8', 'sek-9'], ast: OBEN }]);
     for (const id of ['sek-7', 'sek-8', 'sek-9']) {
-      const plan = planeZuklappen({ tocCont: toc, auto: [id], aktivIds: [], tick: TICK, ticks: alt([id]) });
+      const plan = planeZuklappen({ tocCont: toc, auto: [id], aktivIds: [], tick: TICK, ticks: alt([id]), ...MIT_OBEN });
       expect(plan.schliessen, `${id} muss die Zeile treffen`).toEqual([id]);
       expect(plan.kompensation).toBe(200);
     }
@@ -195,14 +200,25 @@ describe('S5 — wer geschützt bleibt', () => {
     expect(planeZuklappen({ tocCont: null, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) }))
       .toEqual({ schliessen: [], kompensation: 0 });
     const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: OBEN }]);
-    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-fremd'], aktivIds: [], tick: TICK, ticks: alt(['sek-fremd']) });
+    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-fremd'], aktivIds: [], tick: TICK, ticks: alt(['sek-fremd']), ...MIT_OBEN });
     expect(plan.schliessen).toEqual([]);
   });
 
   it('eine Zeile ohne offenen Ast liefert nichts zu schliessen', () => {
     const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: null }]);
-    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
+    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']), ...MIT_OBEN });
     expect(plan.schliessen).toEqual([]);
+  });
+
+  it('PRODUKTIONS-DEFAULT ist der gezogene Fallback: oberhalb wird NICHT zugeklappt', () => {
+    // Der Schalter steht nach dem a33-Rotlauf auf `false` (Herleitung dort).
+    // Dieser Fall hält den Ist-Zustand fest, damit ein Wiedereinschalten eine
+    // BEWUSSTE Änderung ist und nicht unbemerkt mitläuft.
+    expect(F2_OBERHALB).toBe(false);
+    const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: OBEN }, { ids: ['sek-2'], ast: UNTEN }]);
+    const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']) });
+    expect(plan.schliessen).toEqual(['sek-2']);
+    expect(plan.kompensation).toBe(0);
   });
 });
 
@@ -216,7 +232,7 @@ describe('S5 — Kompensation zählt nur die äussersten Äste', () => {
       { ids: ['sek-2'], ast: { top: -300, bottom: -200 } },
     ]);
     const plan = planeZuklappen({
-      tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']),
+      tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']), ...MIT_OBEN,
     });
     expect(plan.schliessen.sort()).toEqual(['sek-1', 'sek-2']);
     expect(plan.kompensation).toBe(300); // NUR sek-1, nicht 300 + 100
@@ -228,7 +244,7 @@ describe('S5 — Kompensation zählt nur die äussersten Äste', () => {
       { ids: ['sek-2'], ast: { top: -250, bottom: -100 } },
     ]);
     const plan = planeZuklappen({
-      tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']),
+      tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']), ...MIT_OBEN,
     });
     expect(plan.kompensation).toBe(100 + 150);
   });
@@ -239,7 +255,7 @@ describe('S5 — Kompensation zählt nur die äussersten Äste', () => {
       { ids: ['sek-2'], ast: UNTEN },
     ]);
     const plan = planeZuklappen({
-      tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']),
+      tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']), ...MIT_OBEN,
     });
     expect(plan.schliessen.sort()).toEqual(['sek-1', 'sek-2']);
     expect(plan.kompensation).toBe(200); // nur der Oberhalb-Ast

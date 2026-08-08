@@ -75,8 +75,54 @@
  */
 export const AUTO_ZU_NACHLAUF = 6;
 
-/** Fallback-Schalter (s. o.): `false` stellt exakt den 19.7.-Zustand her. */
-export const F2_OBERHALB = true;
+/**
+ * Fallback-Schalter (s. o.): `false` stellt exakt den 19.7.-Zustand her — es
+ * klappen nur noch Äste GANZ UNTERHALB des Sichtbands zu.
+ *
+ * STEHT AUF `false` — der deklarierte Fallback ist GEZOGEN (Spec §3.6: «Scheitert
+ * die Kompensation auf dem CI-Runner reproduzierbar, wird NICHT
+ * nachjustiert-gezittert, sondern zurückgefallen — nie ein springender Baum.»)
+ *
+ * BEFUNDKETTE, in dieser Reihenfolge gemessen:
+ *  1. `leser-gliederung-a33` «A9 — Lese-Scroll unter CPU-Drossel» riss im vollen
+ *     Vor-Merge-Lauf mit CLS 0.050354 (Budget 0.05); drei sichtbare Baumzeilen
+ *     280×43 → 0×0. Isoliert 5/5 grün — der Defekt braucht Parallel-Last.
+ *  2. Sonde (231 protokollierte Entscheidungen): zum MESSZEITPUNKT lag in allen
+ *     acht Geometrie-Urteilen keine Kind-Zeile im Band. Die Hypothese «der
+ *     Wächter misst nur den Ast-Kopf» ist damit widerlegt.
+ *  3. Härtung versucht — `flushSync` für JEDEN Durchgang (Beschluss und Mutation
+ *     im selben Frame) und ein Sicherheitssaum von 64 px. Beides ist sachlich
+ *     richtig und BLEIBT. Der rote Fall kam trotzdem wieder, mit exakt
+ *     demselben CLS-Wert (0.050354573641222526) auf einer zweiten Maschine.
+ *  4. Gegenprobe `F2_OBERHALB = false`: erst 5/5 grün — dann im
+ *     Wiederholungslauf 2 von 5 ROT, mit BIT-IDENTISCHEM Wert
+ *     (0.050354573641222526) und denselben drei Zeilen. Die Gegenprobe war
+ *     also Glück, nicht Kausalität: die Oberhalb-Richtung ist NICHT die
+ *     Ursache. Das ist hier ausdrücklich festgehalten, weil der erste
+ *     Fünferlauf genau die Fehlzuschreibung nahelegte, vor der §0-3 warnt.
+ * DER FALLBACK BLEIBT TROTZDEM GEZOGEN — nicht als Ursachen-Behebung, sondern
+ * weil die Oberhalb-Richtung ohne belegten Nutzen zusätzliche Bewegung in einen
+ * Bereich bringt, der nachweislich am Budget kratzt. Die eigentliche Ursache des
+ * roten Falls ist zum Zeitpunkt dieses Commits NICHT gefunden; sie liegt
+ * ausserhalb des Zuklappens (die verschwindenden Zeilen sind laut
+ * Herkunfts-Sonde TOP-LEVEL-Knoten — sek-275/1052/1680/1782 —, und die kann
+ * kein Ast-Kollaps entfernen). Der Befund ist an den Auftraggeber gemeldet.
+ *
+ * WAS DAS KOSTET, ehrlich (§8): das Auto-Zuklappen bringt in dieser Stellung
+ * wenig — beim Vorwärtslesen liegen die verlassenen Äste oberhalb, und genau die
+ * bleiben nun offen. Gemessen wächst der Baum wieder bis ~138 Zeilen (mit
+ * Oberhalb-Richtung waren es 96–110). Davids Wunsch «teile sollen wieder zugehen,
+ * wo man sich nicht befindet» ist damit NUR TEILWEISE erfüllt.
+ * WAS BLEIBT: der Unmount (F3) trägt den Löwenanteil der Entlastung — die
+ * DOM-Last im Baum fällt weiterhin von 20 389 auf ~1 676 Knoten, und der Baum
+ * startet zugeklappt statt mit 2 181 gemounteten Zeilen.
+ * WAS FOLGT: die Oberhalb-Richtung ist nicht verworfen, sondern zurückgestellt.
+ * Sie braucht einen Mechanismus, der ohne Scroll-Korrektur auskommt — der
+ * naheliegende Weg ist, den Ast nicht auszuhängen, sondern seine Höhe zu
+ * KONSERVIEREN (Platzhalter), solange er oberhalb steht. Das ist ein eigener
+ * Schritt mit eigenem Rot-Beweis, kein Nachjustieren an dieser Stelle.
+ */
+export const F2_OBERHALB = false;
 
 /**
  * Sicherheitssaum um das Sichtband, in px (W2·19-GLIEDERUNG/S5, Nachtrag).
