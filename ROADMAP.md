@@ -132,7 +132,6 @@ david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organis
 <!-- @david-fragen
 kalender-transp: Kalender-Export: Termine als «frei» statt «beschäftigt» markieren (TRANSP:TRANSPARENT)? Bricht einen Golden-Anker — nur mit Go. · quelle: Session-Karte 3./4.8.2026 (archiv/STRUKTUR-SESSIONKARTEN.md)
 kommerz-lizenz: Kommerzieller Betrieb ja/nein? Entscheidet, ob eine CC-BY-NC-SA-Zweitquelle berührt werden darf. · quelle: ROADMAP.md, QS-EXTQUELLEN
-lm155-tiefenfuehrung: UI-Befund LM-155 will die Gliederungs-Tiefenführung im Gesetzes-Leser zurück, die du am 12.7. abgeschaltet hast («funktioniert überhaupt nicht») — Befund verwerfen oder Neubau freigeben? · quelle: FAHRPLAN-UI-BEFUNDE.md §5 (B4, 8.8.2026)
 -->
 <!-- ^ Offene Fragen an David OHNE eigenen blockierten Schritt (sonst gehören sie in @blockers).
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
@@ -550,7 +549,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   Zwang. Sessionfüllende Batches à mehrere Positionen, alles reine Darstellungsschicht (kein
   Risikopfad), je Position eigener Commit mit Trailer `Roadmap: W2·17-UI-BEFUNDE`.
   - [x] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4. ✅ 8.8.2026, PR #471.
-  - [x] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). ✅ 8.8.2026, PR #472 (10/12: LM-155 wartet auf David — 12.7.-Entscheid Tiefenführung; LM-158 → `W2·5h-GESETZ-UI` K6 gemäss Grenz-Auflage §24.1). §5.
+  - [x] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). ✅ 8.8.2026, PR #472 (LM-155 von David verworfen 8.8.2026 — 12.7.-Entscheid Tiefenführung bestätigt; LM-158 → `W2·5h-GESETZ-UI` K6 gemäss Grenz-Auflage §24.1; Rest gebaut/überholt). §5.
   - [ ] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). §6.
   - [ ] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). §7.
   - [ ] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). §8.
