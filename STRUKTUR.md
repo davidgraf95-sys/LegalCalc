@@ -28,6 +28,10 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 (Weiterbau 4, leichter Pfad) — UI-Befunde Batch B4: Leseansicht Gesetz, 10/12 (W2·17-UI-BEFUNDE, PR #472)
+
+B4/K-14 (Bau delegiert, Sonnet; Grenz-Auflage §24.1 eingehalten): TOC-a11y inkl. Skip-Link über 2887 Tabstopps (LM-147, Blocker) · Ingress-Fluchtlinie · Chronologie-Trennzeichen · Chip-Überhang · Apparat-Farben · Fedlex-Verweise als Links · Deep-Link-Sync von Gliederung/Breadcrumb (LM-157) · **echter Bug LM-156**: aktive Gliederungszeile war unsichtbar, weil Tailwind-Deckkraft-Suffixe (`bg-…/70`) keine CSS-Regel erzeugen — Infrastruktur-Dimension als neue Position **DESIGN-D0** in `W2·11-DESIGN` verortet (Agent-Chip zurückgezogen, Regel «keine Chips»). 2 überholt (LM-146/148, am Stand belegt) · **LM-155 wartet auf David** (kollidiert mit seinem 12.7.-Entscheid; Frage im Lagebild-Frageblock) · LM-158 → W2·5h. Golden byte-gleich · gate voll · CI 8/8; lokale Drossel-Trias isoliert 3/3 grün (bekanntes Contention-Muster).
+
 ## Session 8.8.2026 (Weiterbau 3, leichter Pfad) — UI-Befunde Batch B3: Klebende Leisten, 7/7 (W2·17-UI-BEFUNDE, PR #471)
 
 **Erstlauf des leichten Pfads** (sortenreiner Nicht-Risiko-Fix-Batch, Freigabe David 3.8.2026): B3/K-01 komplett — Topbar volldeckend (LM-001/006, Blocker), Sprungziel-scroll-margin (LM-002, Blocker), Pane-Leiste flach (LM-003/004), Aktiv-Chip per IntersectionObserver (LM-005), Dichte-Angleich (LM-007). Bau delegiert (Sonnet, Vintage-Regel je Befund reproduziert); Orchestrator-Verifikation entkräftete zwei Agent-Fehlbefunde (7 «Vorbestand»-qsui-Rotfälle = stale dist, nach frischem Build 65/65; CLS-Einzelriss = Font-Lade-Contention, 12/13 isoliert grün, main identisch, CI 8/8 sauber). Golden 256/256 byte-gleich · gate voll · CI-Batterie grün. Dach offen: 16 Batches (B4–B19).
