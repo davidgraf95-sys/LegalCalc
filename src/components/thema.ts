@@ -32,21 +32,15 @@ export function systemThema(): Thema {
   }
 }
 
-/** Zeitbasierte Vorgabe (Auftrag David 19.6.2026): abends 20:00 bis morgens
- *  08:00 automatisch dunkel, sonst hell. SSR-sicher (new Date() im Build ist
- *  unkritisch — main.tsx wendet beim Client-Mount neu an). */
-function zeitThema(): Thema {
-  const h = new Date().getHours();
-  return h >= 20 || h < 8 ? 'dunkel' : 'hell';
-}
-
 /** Wahl → tatsächlich anzuwendendes Thema: 'auto' folgt dem System, 'hell'/
- *  'dunkel' direkt; ohne Wahl die zeitbasierte Vorgabe (bisheriges Verhalten). */
+ *  'dunkel' direkt; ohne Wahl ebenfalls die System-Präferenz (Entscheid David
+ *  8.8.2026, LM-174/B5-N1 — revidiert den zeitbasierten Default vom 19.6.2026:
+ *  Erstbesuch folgt jetzt prefers-color-scheme, nicht mehr der Uhrzeit). */
 export function effektivesThema(): Thema {
   const w = gespeicherteWahl();
   if (w === 'auto') return systemThema();
   if (w === 'hell' || w === 'dunkel') return w;
-  return zeitThema();
+  return systemThema();
 }
 
 /** Wendet das Thema auf das Dokument an (Klasse + color-scheme + Browser-Chrome). */

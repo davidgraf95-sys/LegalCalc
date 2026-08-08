@@ -19,8 +19,9 @@ const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']
 // fg #78786f statt ink-500). Die CSS respektiert prefers-reduced-motion
 // (index.css); test.use({reducedMotion}) griff hier nicht → explizit
 // emulieren, VOR der Interaktion, die die Animation auslöst.
-// Theme DETERMINISTISCH pinnen (26.6.2026): ohne gespeicherte Wahl folgt die App
-// zeitThema (nach 20:00 dunkel) → axe mass je nach Uhrzeit hell ODER dunkel, also
+// Theme DETERMINISTISCH pinnen (26.6.2026; Default seit 8.8.2026 systembasiert,
+// LM-174): ohne gespeicherte Wahl folgt die App prefers-color-scheme der
+// Prüfmaschine → axe mass je nach Maschine hell ODER dunkel, also
 // flaky. Wir setzen die Wahl per localStorage VOR dem ersten Skript-Lauf und
 // emulieren das passende color-scheme. Default 'hell' (Referenzmodus); die
 // Reader-Prüfpunkte laufen zusätzlich in 'dunkel' (Kontrast in BEIDEN Modi, §13/F2).
@@ -343,7 +344,7 @@ for (const p of DUNKEL_PUNKTE) {
 
 // Dunkelmodus-Abdeckung (§13/F2): dieselben Reader-Prüfpunkte explizit in
 // 'dunkel' — fängt Kontrast-Verstösse, die nur im Dunkel auftreten (z. B. der
-// gedämpfte «aufgehoben»-Tier), unabhängig von der Uhrzeit/zeitThema.
+// gedämpfte «aufgehoben»-Tier), unabhängig von Maschinen-Präferenz/Default.
 test('Gesetze — Reader BS-640.100 (dunkel)', async ({ page }, testInfo) => {
   await oeffnen(page, '/gesetze/kanton/BS-640.100', 'dunkel')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()

@@ -11,11 +11,11 @@ const META: Record<ThemaWahl, { icon: string; label: string }> = {
   dunkel: { icon: '☾', label: 'Dunkler Modus' },
   auto: { icon: '◐', label: 'Automatisch (System)' },
 };
-// Pristine-Zustand (noch keine ausdrückliche Wahl): zeitbasierter Standard
-// (Auftrag David 19.6.2026, zeitThema). EHRLICH gelabelt als «Tageszeit», NICHT
-// als «System» — sonst verspräche das Icon ein System-Verhalten, das hier (noch)
-// nicht greift (§8 Ehrlichkeit: Anzeige = Verhalten).
-const PRISTINE_META = { icon: '◐', label: 'Automatisch (Tageszeit)' };
+// Pristine-Zustand (noch keine ausdrückliche Wahl): folgt seit dem Entscheid
+// David 8.8.2026 (LM-174/B5-N1) der System-Präferenz — verhaltensgleich mit der
+// Wahl 'auto', darum auch gleich beschriftet (§8: Anzeige = Verhalten; der
+// frühere zeitbasierte Default vom 19.6.2026 ist revidiert).
+const PRISTINE_META = { icon: '◐', label: 'Automatisch (System)' };
 
 export function ThemaUmschalter() {
   // Geteilter Store (synchron mit dem Einstellungen-Segment). null = noch keine
@@ -25,15 +25,13 @@ export function ThemaUmschalter() {
   const wahl = useThemaWahl();
 
   useEffect(() => {
-    // 'hell'/'dunkel' direkt; 'auto' folgt dem System (Live-Listener unten); ohne
-    // Wahl der zeitbasierte Standard (effektivesThema — identisch zum Pre-React-
-    // Paint in main.tsx, daher kein Flash). Anzeige unten ist darauf abgestimmt.
+    // 'hell'/'dunkel' direkt; 'auto' UND der Pristine-Zustand folgen dem System
+    // (effektivesThema — identisch zum Pre-React-Paint in main.tsx, daher kein
+    // Flash; Entscheid David 8.8.2026, LM-174). Anzeige unten ist darauf abgestimmt.
     const aufgeloest: Thema =
-      wahl === 'hell' || wahl === 'dunkel' ? wahl
-      : wahl === 'auto' ? systemThema()
-      : effektivesThema();
+      wahl === 'hell' || wahl === 'dunkel' ? wahl : effektivesThema();
     wendeThemaAn(aufgeloest);
-    if (wahl !== 'auto') return; // nur die Wahl 'auto' reagiert live auf System-Wechsel
+    if (wahl !== 'auto' && wahl !== null) return; // 'auto' UND pristine reagieren live auf System-Wechsel
     let mql: MediaQueryList;
     try { mql = window.matchMedia('(prefers-color-scheme: dark)'); } catch { return; }
     const onChange = () => wendeThemaAn(systemThema());
