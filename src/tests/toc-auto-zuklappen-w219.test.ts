@@ -27,7 +27,7 @@
  * nachgebildet; alles andere wäre Kulisse, die nichts beweist.
  */
 import { describe, it, expect } from 'vitest';
-import { planeZuklappen, AUTO_ZU_NACHLAUF } from '../pages/gesetz-leser/tocAutoZuklappen';
+import { planeZuklappen, AUTO_ZU_NACHLAUF, F2_SICHERHEITSSAUM } from '../pages/gesetz-leser/tocAutoZuklappen';
 
 interface ZeilenBau {
   /** Ids, die diese Zeile trägt (verdichtete Kette: mehrere). */
@@ -114,6 +114,44 @@ describe('S5 — Sichtband-Wächter: was zugeklappt werden darf', () => {
       const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast }]);
       const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
       expect(plan.schliessen, `Ast ${JSON.stringify(ast)} darf nicht zuklappen`).toEqual([]);
+    }
+  });
+
+  it('KNAPP DANEBEN bleibt offen — der Sicherheitssaum (Regression a33-Rotlauf)', () => {
+    // DER FALL, DER GEFEHLT HAT. Der rote a33-Lauf (CLS 0.050354, drei sichtbare
+    // Zeilen 280×43 → 0×0) entstand NICHT daran, dass der Wächter die Ausdehnung
+    // falsch mass — eine Sonde im gebauten Stand hat für alle acht beobachteten
+    // Geometrie-Urteile belegt, dass zum Messzeitpunkt keine Kind-Zeile im Band
+    // lag. Er entstand daran, dass «gerade eben draussen» als sicher galt: bis
+    // die Mutation committet war, hatte sich der Scroller weiterbewegt, und der
+    // Ast stand im Band. Ein Ast, der nur um wenige Pixel am Band vorbeischrammt,
+    // darf darum nicht mehr zuklappen. Gegen den Stand VOR dieser Regel ist genau
+    // dieser Fall rot — dort zählte jeder Pixel jenseits der Kante als «draussen».
+    // ABSOLUTE Werte, bewusst nicht aus der Konstanten abgeleitet: dieser Fall
+    // beschreibt die REALE Gefahr (ein Ast, der nur 10–20 px am Band vorbeizieht
+    // und bis zum Commit hineinrutscht), nicht die jeweils eingestellte Kante.
+    // Würde er aus `F2_SICHERHEITSSAUM` rechnen, wanderte er mit jeder Änderung
+    // der Konstanten mit — und könnte den Rückbau des Saums nicht mehr rot
+    // zeigen. Genau das ist beim ersten Entwurf passiert (mit Saum 0 blieb er
+    // grün, weil die Fixtures mitrutschten); die Kanten-Fälle unten dürfen die
+    // Konstante lesen, dieser hier nicht.
+    const knappOben = { top: -300, bottom: 90 };   // 10 px über der Bandoberkante
+    const knappUnten = { top: 520, bottom: 900 };  // 20 px unter der Bandunterkante
+    for (const ast of [knappOben, knappUnten]) {
+      const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast }]);
+      const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
+      expect(plan.schliessen, `Ast ${JSON.stringify(ast)} liegt im Saum und darf nicht zuklappen`).toEqual([]);
+      expect(plan.kompensation).toBe(0);
+    }
+    // Einen Pixel weiter draussen greift die Regel wieder — der Saum ist eine
+    // Kante, keine Abschaltung.
+    for (const [ast, was] of [
+      [{ top: -300, bottom: 100 - F2_SICHERHEITSSAUM }, 'oben'],
+      [{ top: 500 + F2_SICHERHEITSSAUM, bottom: 900 }, 'unten'],
+    ] as const) {
+      const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast }]);
+      const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1'], aktivIds: [], tick: TICK, ticks: alt(['sek-1']) });
+      expect(plan.schliessen, `${was}: exakt am Saum muss zuklappen`).toEqual(['sek-1']);
     }
   });
 

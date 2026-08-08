@@ -525,37 +525,38 @@ export function useLeserSprungSpy(opts: {
           for (const id of schliessen) if (n[id]) { n[id] = false; geaendert = true; }
           return geaendert ? n : o; // identische Referenz, wenn nichts ändert → kein Re-Render
         };
-        if (kompensation > 0 && tocCont) {
-          // FRAME-GLEICHE KOMPENSATION. `flushSync` committet den Kollaps
-          // synchron in DIESEM Task; die Korrektur von `scrollTop` folgt
-          // unmittelbar danach — der Browser paintet beides zusammen, es gibt
-          // keinen Zwischenzustand zu sehen und keinen zu zählen. Ohne
-          // `flushSync` läge zwischen Kollaps und Korrektur ein Paint, und genau
-          // der wäre der Layout-Shift, den der 19.7.-Wächter verhindern sollte.
-          // (Dasselbe Mittel benutzt der Klick-Sprung, inhalt-sprung.tsx.)
+        if (schliessen.length > 0 && tocCont) {
+          // BESCHLUSS UND MUTATION IM SELBEN FRAME — der Wurzelfix des roten
+          // a33-Laufs (CLS 0.0504, drei SICHTBARE Baumzeilen 280×43 → 0×0).
           //
-          // EHRLICHER MESSBEFUND (§8/§0-3): die WIRKUNG dieser Kompensation ist
-          // in der vorliegenden Messreihe NICHT von der Streuung zu trennen.
-          // Gegenproben am gebauten Stand (OR, 4× Drossel, 60 Scroll-Schritte,
-          // CLS-Anteil im [data-toc]):
-          //   mit Kompensation   0.060 … 0.19
-          //   ohne Kompensation  0.061 … 0.092
-          //   zusätzlich ohne Browser-Scroll-Anchoring   0.153 … 0.200
-          //   Vorzustand ganz ohne Zuklappen (1bbb00e26) 0.060
-          // Die naheliegende Erklärung ist, dass Chromium den Fall über sein
-          // eigenes Scroll-Anchoring ohnehin abfängt — der Kommentar am
-          // 19.7.-Wächter sagte das schon damals («vom Scroll-Anchoring
-          // verschluckt»), und nur das Abschalten des Anchorings hebt den Wert
-          // sichtbar an. Die Kompensation BLEIBT trotzdem, aus drei Gründen:
-          // die Bau-Spec §3.6 verlangt sie ausdrücklich als GARANTIE, statt sich
-          // auf eine Browser-Heuristik zu verlassen; ihr Preis ist null, solange
-          // nichts kollabiert (`kompensation > 0` ist der einzige Pfad zu
-          // `flushSync`); und sie ist die Voraussetzung dafür, dass der
-          // Fallback-Schalter überhaupt eine Bedeutung hat. Belegt ist damit
-          // NICHT, dass sie hilft — belegt ist, dass sie nicht schadet.
+          // Bis hierher lief nur der kompensierte Fall («Ast oberhalb») durch
+          // `flushSync`; ein Ast UNTERHALB wurde per gewöhnlichem setState
+          // geschlossen. React committet das später — unter 4× Drossel und
+          // paralleler Last deutlich später —, und in der Zwischenzeit scrollt
+          // der Leser weiter und der Mitscroll-Nudge verschiebt den Scroller.
+          // Der Beschluss «dieser Ast ist ausserhalb des Sichtbands» beruhte
+          // dann auf einer Geometrie, die es beim Aushängen nicht mehr gab: die
+          // Zeilen verschwanden sichtbar. Die Sonde hat das ausgeschlossen, was
+          // sonst naheläge — zum MESSZEITPUNKT lag in allen acht beobachteten
+          // Fällen keine Kind-Zeile im Band (Beleg bei F2_SICHERHEITSSAUM).
+          // Deshalb: was gemessen wurde, wird auch sofort mutiert. `flushSync`
+          // ist hier keine Optimierung, sondern die Bedingung dafür, dass die
+          // Messung überhaupt gilt.
           const vorher = tocCont.scrollTop;
           flushSync(() => setTocBaum(aktualisieren));
-          tocCont.scrollTop = Math.max(0, vorher - kompensation);
+          if (kompensation > 0) {
+            // Chromium korrigiert `scrollTop` beim Wegfall von Inhalt oberhalb
+            // oft selbst (Scroll-Anchoring — der 19.7.-Kommentar sagte das
+            // schon). Deshalb wird NICHT blind gegengerechnet: hat der Browser
+            // den Wert bereits angefasst, bleibt es dabei; nur wenn er
+            // unverändert ist, greift die eigene Korrektur. Das schliesst die
+            // Doppelkompensation aus, die eine frühere Messreihe nahegelegt
+            // hatte, und lässt zugleich den Nudge in Ruhe, der während des
+            // Flushes gelaufen sein kann.
+            if (tocCont.scrollTop === vorher) {
+              tocCont.scrollTop = Math.max(0, vorher - kompensation);
+            }
+          }
         } else {
           setTocBaum(aktualisieren);
         }

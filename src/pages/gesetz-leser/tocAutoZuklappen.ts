@@ -78,6 +78,42 @@ export const AUTO_ZU_NACHLAUF = 6;
 /** Fallback-Schalter (s. o.): `false` stellt exakt den 19.7.-Zustand her. */
 export const F2_OBERHALB = true;
 
+/**
+ * Sicherheitssaum um das Sichtband, in px (W2·19-GLIEDERUNG/S5, Nachtrag).
+ *
+ * ANLASS — ein roter a33-Lauf, keine Vermutung. Im vollen Vor-Merge-Lauf (520
+ * Fälle parallel, 4× CPU-Drossel) riss «A9 — Lese-Scroll unter CPU-Drossel» mit
+ * CLS 0.050354 gegen das Budget 0.05. Das Protokoll nannte drei
+ * Gliederungszeilen bei y = 251 / 306 / 360, je 280×43 → 0×0: drei SICHTBARE
+ * Zeilen wurden vom Auto-Zuklappen ausgehängt.
+ *
+ * WAS DIE MESSUNG SAGT (Sonde im gebauten Stand, OR, 4× Drossel, 110
+ * Scroll-Schritte, jede Entscheidung protokolliert): 231 Entscheidungen, davon 8
+ * mit Geometrie-Urteil — und in ALLEN acht lag zum MESSZEITPUNKT keine einzige
+ * Kind-Zeile im Sichtband (`imBand: 0`; Ast-Unterkanten −199 … −876 px gegen eine
+ * Bandoberkante von 123 px). Die naheliegende Erklärung «der Wächter misst nur
+ * den Ast-Kopf statt der Ausdehnung des Teilbaums» ist damit WIDERLEGT: gemessen
+ * wird der Kind-Container, und der spannt den ganzen gerenderten Teilbaum auf.
+ *
+ * WAS BLEIBT: zwischen Messen und Mutieren kann sich die Geometrie ändern. Der
+ * Beschluss entsteht im 200-ms-Timer; die Mutation lief für den Fall «Ast
+ * unterhalb» als GEWÖHNLICHES setState — React committet das später, unter Last
+ * deutlich später, und inzwischen scrollt der Nutzer weiter und der
+ * Mitscroll-Nudge verschiebt den Scroller. Ein Ast, der beim Messen sauber
+ * ausserhalb lag, kann beim Aushängen im Band stehen. Darum zwei Änderungen:
+ *   1. Beschluss und Mutation liegen jetzt IMMER im selben Frame (`flushSync`,
+ *      s. inhalt-hooks) — nicht mehr nur dann, wenn kompensiert wird.
+ *   2. Dieser Saum: ein Ast muss um mindestens eine Zeilenhöhe am Band VORBEI
+ *      sein, nicht haarscharf daneben. 64 px ≈ 1½ Baumzeilen (gemessen 43 px) —
+ *      genug für den Restweg eines Frames unter Drossel, wenig genug, dass das
+ *      Zuklappen wirksam bleibt (in derselben Sonde lagen alle acht Fälle
+ *      199–876 px daneben, also weit jenseits des Saums).
+ * §15/§0-3: der Saum kostet im Zweifel ein paar nicht zugeklappte Äste — die
+ * Alternative kostet einen sichtbaren Sprung. Die Richtung gibt die Spec vor
+ * («nie ein springender Baum», §3.6).
+ */
+export const F2_SICHERHEITSSAUM = 64;
+
 export interface ZuklappPlan {
   /** Ids, deren Ast zugeklappt werden darf (Reihenfolge unerheblich). */
   schliessen: string[];
@@ -121,10 +157,13 @@ export function planeZuklappen(opts: {
   ticks: Map<string, number>;
   nachlauf?: number;
   oberhalbErlaubt?: boolean;
+  /** Sicherheitssaum um das Sichtband (px), s. F2_SICHERHEITSSAUM. */
+  saum?: number;
 }): ZuklappPlan {
   const { tocCont, auto, aktivIds, tick, ticks } = opts;
   const nachlauf = opts.nachlauf ?? AUTO_ZU_NACHLAUF;
   const oberhalb = opts.oberhalbErlaubt ?? F2_OBERHALB;
+  const saum = opts.saum ?? F2_SICHERHEITSSAUM;
   const leer: ZuklappPlan = { schliessen: [], kompensation: 0 };
   if (!tocCont) return leer; // kein Container ⇒ nichts anfassen (keine Blind-Aktion)
   const contRect = tocCont.getBoundingClientRect();
@@ -132,9 +171,14 @@ export function planeZuklappen(opts: {
   const lageVon = (ast: HTMLElement): Lage => {
     const r = ast.getBoundingClientRect();
     if (r.height === 0) return null;
-    if (r.top >= contRect.bottom) return 'unten';
-    if (oberhalb && r.bottom <= contRect.top) return 'oben';
-    return null; // berührt das Sichtband ⇒ offen lassen (19.7.-Wächter)
+    // Der Saum weitet das Sichtband nach beiden Seiten: nicht «gerade eben
+    // draussen» zählt, sondern «mit Abstand draussen» (Herleitung bei
+    // F2_SICHERHEITSSAUM — ein roter a33-Lauf mit drei ausgehängten SICHTBAREN
+    // Zeilen). Ohne den Saum entscheidet der letzte Pixel, und der überlebt den
+    // Weg von der Messung bis zur Mutation unter Last nicht zuverlässig.
+    if (r.top >= contRect.bottom + saum) return 'unten';
+    if (oberhalb && r.bottom <= contRect.top - saum) return 'oben';
+    return null; // berührt das Sichtband (samt Saum) ⇒ offen lassen
   };
 
   const schliessen: string[] = [];
