@@ -127,7 +127,9 @@ bis ein Gegenprüfungs-Verdikt vorliegt. Ablauf, Ausnahmen und Red Flags: Skill
 
 Neue Vorlagen und Rechner nutzen die bestehenden geteilten Bausteine statt
 Kopien. Fehlt ein Rahmen, wird erst der Rahmen gebaut, dann das Feature darauf.
-Detail: Skill **`auftrag`**, Ziff. 8.
+Detail: Skill **`auftrag`**, Ziff. 8. *(Chesterton-Prüfung 8.8.2026: bewusst
+vorbeugendes Prinzip aus dem Leitbild, ohne Vorfalls-Anlass — Behalt-Entscheid,
+weil jede neue Vorlage die Regel real konsumiert.)*
 
 ## §11 Erforschtes Wissen wird geordnet abgelegt
 
