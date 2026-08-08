@@ -258,7 +258,7 @@ export function LeserVolltextInhalt({
           unterschiedlicher Höhe, deren X-Bereiche sich überschneiden. Die leere erste
           Zelle hält nur den Platz der TOC-Spalte frei (kein Inhalt, aria-hidden);
           `ErlassKopfBlock` zentriert sich selbst per `mx-auto w-full max-w-normtext`
-          identisch zur Lesespalte (`.group/lese`). */}
+          identisch zur Lesespalte (`#lc-lesespalte`). */}
       {kopf && (
         <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[16rem_minmax(0,1fr)] gap-8' : ''}>
           {istXl && sektionen.length > 0 && tocOffen && <div aria-hidden />}
@@ -432,7 +432,14 @@ export function LeserVolltextInhalt({
             Artikel-Kopfzeile (Art. N · Zitat/Link) UND der Fliesstext (ArtikelBody /
             Ingress) teilen sich dieselbe Breite `max-w-normtext` → «Zitat» fluchtet
             bündig mit der rechten Textkante statt in den Leerraum zu wandern. */}
-        <div id="lc-lesespalte" className="group/lese mx-auto w-full max-w-normtext">
+        {/* W2·19-GLIEDERUNG/F1: die benannte Gruppe `group/lese` ist mit dem
+            Hover-Spotlight entfallen (ArtikelLeser.tsx, ausführliche Begründung
+            dort). Sie hatte GENAU EINEN Konsumenten — die dortige
+            `group-has-[[data-lese]:hover]/lese:opacity-80`-Kette; ohne ihn wäre
+            die Klasse eine tote Marke, die eine Wirkung behauptet, die es nicht
+            mehr gibt. Die Identität der Lesespalte trägt unverändert die id
+            `#lc-lesespalte` (Skip-Link-Ziel, oben referenziert). */}
+        <div id="lc-lesespalte" className="mx-auto w-full max-w-normtext">
           {/* A27 (David 12.7.2026): der Sticky Section-Kontextkopf «Titel › … ›
               Art. N › ⧉ Zitat» ist ENTFERNT. Seit A26 (#198) trägt der immer
               sichtbare Inhalts-Kopf (InhaltsKopf, Brotkrümel + Live-Artikel) die
