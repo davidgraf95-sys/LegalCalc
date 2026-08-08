@@ -121,7 +121,7 @@ export function ErbFristenForm() {
               wert={`${preset.laenge} ${preset.einheit === 'monate' ? 'Monat(e)' : 'Jahr(e)'}`}
               sub={preset.norm} />
             <EckdatenKachel label="Verschoben" wert={ergebnis.resultat.verschoben ? 'ja' : 'nein'}
-              sub={ergebnis.resultat.verschoben ? ergebnis.resultat.verschiebeGruende.join(' · ') : 'Fristende ist Werktag bzw. Verschiebung aus'} />
+              sub={ergebnis.resultat.verschoben ? ergebnis.resultat.verschiebeGruende.join(' · ') : 'Fristende ist Werktag bzw. Verschiebung ist ausgeschaltet'} />
           </div>
           <ErgebnisAnzeige titel={`Erb-Frist: ${preset.label}`} ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
