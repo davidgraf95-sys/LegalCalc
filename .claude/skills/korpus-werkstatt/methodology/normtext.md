@@ -188,14 +188,14 @@ Adapter-Priorität: **LexWork → HTM → HTML → PDF → Live-Link** (§7 Quel
 *Warum:* je strukturierter die Quelle, desto treuer die Extraktion und desto
 kleiner das Render-Risiko (Tabellen-Drop, Spaltenmerge).
 
-**Treue-Gate (Verifikations-Mandat).** `npm run check:confidence`
+**Treue-Gate (Verifikations-Mandat).** `npm run report:confidence`
 (`confidence-logik.ts`) misst **maschinell die Extraktions-TREUE zur Quelle** —
 NICHT die juristische Korrektheit (die bleibt Davids Abnahme, §7/§8) — über
 Min-Score + harte Vetos. Hohe Confidence → Snapshot bleibt Status «entwurf» (NIE
 «geprüft»/«verified» ohne David, §8). Unter der Schwelle → Quarantäne-Liste bzw.
 ehrlicher Tier-C-pdf-embed-Fallback (§8 statt erfundener Werte).
 
-**Realität: ~25–40 % Pflicht-Review bleiben** (LexFind-Dossier). `check:confidence`
+**Realität: ~25–40 % Pflicht-Review bleiben** (LexFind-Dossier). `report:confidence`
 filtert maschinell vor, der Mensch prüft nur Erlasse mit score < Schwelle — der
 «0-Check»-Import ist unerreichbar. Der §11-Ablage-Schritt (oben Schritt 7) gilt
 für kantonale Erlasse analog, mit dem Abnahme-Status ehrlich auf «Erstrecherche».

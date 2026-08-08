@@ -58,7 +58,7 @@ nicht halben Korpus schreiben (§8).
 - **`npm run check:vollstaendigkeit`** — Kanton-Zitat-Abdeckung + Manifest-Konsistenz (deckt auch
   die kantonalen pdf-embed-Quellen ab; dafür **nicht** `check:pdf` rufen — das prüft die
   internationalen pdf-embed-Erlasse EMRK/NYÜ).
-- **`npm run check:confidence -- --schwelle=0.95 [--schreibe]`** — Treue-Gate der kantonalen
+- **`npm run report:confidence -- --schwelle=0.95 [--schreibe]`** — Treue-Gate der kantonalen
   Extraktion (misst maschinelle **Treue zur Quelle**, NICHT juristische Korrektheit; die bleibt
   Davids Abnahme, §7/§8). Unter Schwelle → Confidence-Quarantäne / Pflicht-Review.
 - **`npm run check:entscheide`** — Integritäts-Tor Rechtsprechung (BUDGET_MB-Deckel, Invarianten).
@@ -169,7 +169,7 @@ Je Fall eine Sofortmassnahme; kein Duplikat der §§ (Details dort).
 3. **Quelle / OCL nicht erreichbar** (Rechtsprechung) → **Lauf abbrechen statt halben Korpus
    schreiben**; offline über `npm run entscheide:seed -- --datum=$(date +%F)` (Fixtures)
    weiterarbeiten; ehrlicher **§8-Fallback-Status** statt erfundener Werte.
-4. **`check:confidence` unter Schwelle** (Kanton) → Confidence-Quarantäne / manueller Pflicht-Review
+4. **`report:confidence` unter Schwelle** (Kanton) → Confidence-Quarantäne / manueller Pflicht-Review
    (~25–40 % bleiben); kein Snapshot auf «geprüft»/«verified» ohne Davids Abnahme (§8). Unter der
    Schwelle bleibend → ehrlicher PDF-embed-Fallback (Tier C).
 5. **SR-Kollision** (Pflicht-Anker/SR-Sonde schlägt an) → Quarantäne; Identität über den Eintrag in

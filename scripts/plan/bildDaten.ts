@@ -122,10 +122,10 @@ function ankerLoestAuf(fahrplanPfad: string, anker: string): boolean {
  *  Die frühere Grenze 700 kappte acht Einheiten. Sie beruhte auf der Annahme,
  *  ein `fahrplan:`-Feld trage das Detail ohnehin ein zweites Mal. Die Annahme
  *  ist falsch: `QS-AUTOMATIK-PARITAET` HAT einen Fahrplan, aber der am
- *  4.8.2026 nachgetragene Scope (die drei nirgends laufenden Tore
- *  `check:suchindex`, `check:rss-oc`, `check:confidence`) steht NUR in
- *  ROADMAP.md — `FAHRPLAN-BASIS-AUSBAU.md §3.5` kennt ihn nicht (geprüft
- *  4.8.2026). Ein Prompt, der ihn wegschneidet, baut am Auftrag vorbei.
+ *  4.8.2026 nachgetragene Scope (`check:suchindex`, `check:rss-oc`,
+ *  `report:confidence`) stand damals NUR in ROADMAP.md (geprüft 4.8.2026;
+ *  seither in `FAHRPLAN-BASIS-AUSBAU.md` §3-N.5 übernommen — Faktenkorrektur
+ *  8.8.2026). Ein Prompt, der ihn wegschneidet, baut am Auftrag vorbei.
  *
  *  1600 ist kein Kompromiss, sondern gemessen: der längste Wortlaut im
  *  gesamten Plan hat 1534 Zeichen (QS-CI-VERCEL), die Grenze kappt heute
