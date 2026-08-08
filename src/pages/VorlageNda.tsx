@@ -79,8 +79,14 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
 
     case 'inhalt': return (
       <div className="space-y-4">
+        {/* LM-165 (B6/K-15): aria-invalid rollt dieselbe Feld-Markierung wie in den
+            Fristen-Rechnern aus (§8) — sicher pristine, weil dieser Schritt nur nach
+            dem gate-gesperrten Schritt 0 erreichbar ist (VorlagenSeite/wizard.tsx),
+            «berührt» also längst true ist, bevor diese Felder je sichtbar werden. */}
         <Field label="Zweck der Offenlegung" hint="erscheint im Vertragstext und begrenzt die Verwendung">
-          <textarea className={inputCls + ' min-h-[4.5rem]'} value={a.zweck} onChange={(e) => set('zweck', e.target.value)} placeholder="z. B. Prüfung einer möglichen Zusammenarbeit im Bereich Softwareentwicklung" />
+          <textarea className={inputCls + ' min-h-[4.5rem]'} value={a.zweck}
+            aria-invalid={!a.zweck.trim()}
+            onChange={(e) => set('zweck', e.target.value)} placeholder="z. B. Prüfung einer möglichen Zusammenarbeit im Bereich Softwareentwicklung" />
         </Field>
         <Field label="Konkretisierung der vertraulichen Informationen" optional hint="zusätzlich zur allgemeinen Definition">
           <input className={inputCls} value={a.infoBeschrieb} onChange={(e) => set('infoBeschrieb', e.target.value)} placeholder="z. B. Quellcode, Kundenlisten, Preiskalkulationen" />
@@ -91,7 +97,9 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
           label={<><span><strong>Nachwirkungsfrist</strong> vereinbaren (Geheimhaltung gilt N Jahre über das Vorhaben hinaus)</span></>} />
         {a.dauerErfassen && (
           <Field label="Dauer nach Beendigung (Jahre)">
-            <input className={inputCls + ' sm:max-w-[8rem]'} inputMode="numeric" value={a.dauerJahre} onChange={(e) => set('dauerJahre', e.target.value)} placeholder="z. B. 3" />
+            <input className={inputCls + ' sm:max-w-[8rem]'} inputMode="numeric" value={a.dauerJahre}
+              aria-invalid={zahl(a.dauerJahre) === null || zahl(a.dauerJahre)! <= 0}
+              onChange={(e) => set('dauerJahre', e.target.value)} placeholder="z. B. 3" />
           </Field>
         )}
         <Checkbox
@@ -104,7 +112,9 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
           label={<><span><strong>Konventionalstrafe</strong> vereinbaren <span className="text-ink-500"><NormText text={`(verfällt auch ohne Schaden; übermässige setzt der Richter herab, Art. 163 Abs. 3 OR)`} /></span></span></>} />
         {a.konventionalstrafe && (
           <Field label="Konventionalstrafe je Verletzung (CHF)">
-            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.strafeCHF} onChange={(e) => set('strafeCHF', e.target.value)} placeholder="z. B. 20000.00" />
+            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.strafeCHF}
+              aria-invalid={zahl(a.strafeCHF) === null}
+              onChange={(e) => set('strafeCHF', e.target.value)} placeholder="z. B. 20000.00" />
           </Field>
         )}
       </div>

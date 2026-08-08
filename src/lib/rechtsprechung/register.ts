@@ -114,10 +114,26 @@ export function normalisiereRegeste(roh: string): string {
     .trim();
 }
 
-/** Kurzfassung der Regeste für die Karte (erste sinnvolle Zeilen, hart gekappt). */
+/** Kurzfassung der Regeste für die Karte (erste sinnvolle Zeilen, hart gekappt).
+ *  LM-168 (W2·17-UI-BEFUNDE B6, K-15): schnitt bisher stur bei `max` Zeichen —
+ *  mitten im Wort, z. B. unter dem pdf-embed-PDF sichtbar («… im Anwendungsbe»).
+ *  Springt darum bei einem Schnitt IM Wort zur letzten Wortgrenze davor zurück;
+ *  bleibt eine solche Grenze im sinnvollen Rest (> die Hälfte von `max`), sonst
+ *  hart bei `max` (ein einzelnes überlanges „Wort" soll die Kürzung nicht
+ *  aushebeln). Reiner Anzeige-Bug, keine Rechtsregel — unit-getestet. */
 export function kuerzeRegeste(text: string, max = 240): string {
   const eine = text.replace(/\s+/g, ' ').trim();
-  return eine.length <= max ? eine : eine.slice(0, max - 1).trimEnd() + '…';
+  if (eine.length <= max) return eine;
+  const geschnitten = eine.slice(0, max - 1);
+  // Schneidet der harte Schnitt MITTEN in einem Wort (nächstes Zeichen ist kein
+  // Leerzeichen)? Dann zur letzten Wortgrenze zurück, sofern die noch genug Text
+  // übrig lässt — sonst bliebe von einem einzelnen langen Token fast nichts.
+  const naechstesZeichen = eine[max - 1];
+  if (naechstesZeichen !== undefined && naechstesZeichen !== ' ') {
+    const letzteGrenze = geschnitten.lastIndexOf(' ');
+    if (letzteGrenze > max / 2) return geschnitten.slice(0, letzteGrenze).trimEnd() + '…';
+  }
+  return geschnitten.trimEnd() + '…';
 }
 
 /**

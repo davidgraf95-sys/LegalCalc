@@ -61,6 +61,25 @@ describe('kuerzeRegeste', () => {
     expect(t.length).toBe(50);
     expect(t.endsWith('…')).toBe(true);
   });
+
+  // LM-168 (W2·17-UI-BEFUNDE B6, K-15): fachliche Erweiterung — der Schnitt darf
+  // kein Wort zerreissen, wenn eine Wortgrenze nah genug vor `max` liegt.
+  it('schneidet an der letzten Wortgrenze, nicht mitten im Wort', () => {
+    const t = kuerzeRegeste('Die Beschwerde wird im Anwendungsbereich der Bestimmung abgewiesen, soweit darauf einzutreten ist', 50);
+    expect(t.endsWith('…')).toBe(true);
+    const ohneEllipse = t.slice(0, -1);
+    expect(ohneEllipse.endsWith(' ')).toBe(false);
+    // Der Rest muss ein vollständiges letztes Wort sein — kein abgeschnittenes
+    // Fragment eines Wortes, das im Original an dieser Stelle weiterläuft.
+    const letztesWort = ohneEllipse.split(' ').pop()!;
+    expect('Die Beschwerde wird im Anwendungsbereich der Bestimmung abgewiesen, soweit darauf einzutreten ist')
+      .toMatch(new RegExp(`\\b${letztesWort.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`));
+  });
+
+  it('fällt bei einem einzelnen überlangen Token auf den harten Schnitt zurück (kein Rückschritt bis 0)', () => {
+    const t = kuerzeRegeste('x'.repeat(300), 50);
+    expect(t.length).toBe(50);
+  });
 });
 
 describe('citedRefZuId', () => {

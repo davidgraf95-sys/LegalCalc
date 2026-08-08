@@ -208,6 +208,16 @@ export function LeserRechtsprechungMenu({
 
           {opt.leitfaelle === 'an' ? (
             <>
+              {/* LM-168 (B6/K-15, Hoch): der Vorbehalt zur maschinellen Zuordnung
+                  stand bisher nur als unsichtbares `title`-Tooltip an der Leitfall-
+                  Zeile (ArtikelLeser.tsx) bzw. gar nicht (BezuegeZeile.tsx) — pro
+                  Artikel wiederholt wäre er Lärm (Minimalismus-Vorgabe David
+                  28.7.2026, §13 F4); EINMAL hier im steuernden Panel, in lesbarer
+                  Grösse (text-micro = 11px, wie unter dem PDF), erfüllt §8, ohne
+                  die Artikel-Zeilen zu verdichten. */}
+              <p className="px-2.5 pb-1.5 text-micro leading-snug text-ink-500">
+                Maschinell aus den zitierten Normen zugeordnet — keine redaktionelle Präjudizienauswahl.
+              </p>
               <BezugFacettenWahl
                 klassen={klassen}
                 kantone={kantone}

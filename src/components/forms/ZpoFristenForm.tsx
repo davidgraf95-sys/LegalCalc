@@ -218,7 +218,11 @@ export function ZpoFristenForm() {
 
         <Field label="Fristtyp & Länge">
           <div className="flex gap-2">
+            {/* LM-160 (B6/K-15): aria-invalid rollt das Muster aus AllgemeineFristForm
+                aus — das Feld selbst markiert den Eingabefehler, statt ihn nur ~400 px
+                weiter unten in der FehlerBox stehen zu lassen (§8). */}
             <input type="number" inputMode="decimal" min={1} step={1} value={form.laenge}
+              aria-invalid={!Number.isInteger(form.laenge) || form.laenge <= 0}
               onChange={(e) => set('laenge', Number(e.target.value))} className={inputCls + ' w-24'} />
             <select value={form.einheit} onChange={(e) => set('einheit', e.target.value as ZpoEinheit)} className={inputCls}>
               {EINHEITEN.map((u) => <option key={u.code} value={u.code}>{u.label}</option>)}

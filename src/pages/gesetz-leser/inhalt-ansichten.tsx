@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { InternRefs } from '../../components/NormText';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
@@ -44,6 +44,15 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
   kopf: ErlassKopf | null;
   internRefs: InternRefs | undefined;
 }) {
+  // LM-159 (B6/K-15, Blocker): der iframe zeigte bis zum ersten Zeichnen des
+  // Browser-PDF-Viewers eine unbeschriftete, grosse schwarze Fläche (kein Hinweis,
+  // keine Ersatzdarstellung). `pdfBereit` schaltet einen Ladezustand ab — derselbe
+  // Spinner-Platzhalter wie `LadeAnzeige` oben (EIN Lade-Motiv für alle Lade-Pfade,
+  // §15.2-Kommentar). Der iframe bleibt dabei die ganze Zeit gemountet (kein
+  // Remount, kein doppeltes Laden), der Platzhalter liegt nur optisch darüber und
+  // verschwindet mit `onLoad`. Rahmen und Fallback-Link (LM-159-Dedup-Notiz: schon
+  // gebaut) bleiben unverändert.
+  const [pdfBereit, setPdfBereit] = useState(false);
   return (
     <div className="space-y-5">
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf bzw. PaneKopf) — kein Inline-Dup.
@@ -59,15 +68,39 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
       {/* M5: Erlass-Kopf-Slot auch im pdf-embed-Pfad (für PDF-Erlasse ohne
           Struktur-Sidecar bleibt kopf=null → nichts gerendert). */}
       {kopf && <ErlassKopfBlock kopf={kopf} intern={internRefs} />}
+      {/* LM-167 (B6/K-15, Hoch): am eingebetteten PDF fehlen «Im Gesetz suchen»,
+          «§ Rechtsprechung» und «Ansicht» aus der Volltext-Werkzeugleiste ganz —
+          bewusst (G2b: keine toten Steuerelemente, §13 F4, s. o.). Ohne einen Hinweis
+          sah die Leiste aber schlicht vergessen aus (§8: fehlende Werkzeuge werden
+          benannt, nicht kommentarlos weggelassen — Ergänzung des G2b-Entscheids,
+          kein Bugfix, Dedup-Referenz FAHRPLAN-GESETZES-UX.md G2b-Ausführungsvermerk). */}
+      <p className="text-micro text-ink-500">
+        «Im Gesetz suchen», «§ Rechtsprechung» und «Ansicht» stehen hier nicht zur Verfügung — der Text liegt nur als amtliches PDF vor, nicht als durchsuchbarer Volltext.
+      </p>
       {/* Eingebettetes amtliches PDF (same-origin → Browser-Viewer mit nativer
           Suche/Zoom/Druck). iframe ist für Inline-PDF am zuverlässigsten; darunter
           ein sichtbarer Fallback-Link für Browser ohne PDF-Viewer. */}
-      {/* ⑦ PDF-Rahmen (W2·5d G3a): der iframe-Rahmen nutzt die benannte Struktur-
-          Linie (border-rule-struktur) statt der Ad-hoc border-line — konsistent mit
-          dem Linien-Kanon (§2.2⑦). Das PDF IST die amtliche Fassung (§7/§8). */}
-      <iframe src={`/normtext/${erlass.pdfPfad}#view=FitH`} title={`${erlass.kuerzel} — amtliches PDF`}
-        className="w-full rounded-lg border border-rule-struktur bg-paper-sunken/30"
-        style={{ height: 'min(82vh, 1100px)' }} />
+      <div className="space-y-1.5">
+        {/* Sichtbare Rahmenbeschriftung (LM-159): das `title`-Attribut am iframe
+            bleibt für Screenreader, ist aber visuell unsichtbar — dieselbe Auskunft
+            steht hier zusätzlich als Text, dauerhaft, nicht nur während des Ladens. */}
+        <p className="lc-overline">Amtliches PDF — {erlass.kuerzel}</p>
+        {/* ⑦ PDF-Rahmen (W2·5d G3a): der iframe-Rahmen nutzt die benannte Struktur-
+            Linie (border-rule-struktur) statt der Ad-hoc border-line — konsistent mit
+            dem Linien-Kanon (§2.2⑦). Das PDF IST die amtliche Fassung (§7/§8). */}
+        <div className="relative">
+          {!pdfBereit && (
+            <div aria-hidden className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 rounded-lg border border-rule-struktur bg-paper-sunken py-12 text-center">
+              <div className="scale-rule max-w-[200px]" />
+              <p className="text-body-s text-ink-500">Amtliches PDF wird geladen …</p>
+            </div>
+          )}
+          <iframe src={`/normtext/${erlass.pdfPfad}#view=FitH`} title={`${erlass.kuerzel} — amtliches PDF`}
+            onLoad={() => setPdfBereit(true)}
+            className="w-full rounded-lg border border-rule-struktur bg-paper-sunken"
+            style={{ height: 'min(82vh, 1100px)' }} />
+        </div>
+      </div>
       {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} />
