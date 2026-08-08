@@ -514,7 +514,7 @@ selben Gegenstand sind eine zweite Wahrheit; die Register und der Katalog sind d
    Grenze ist **1600 Zeichen für alle Schritte** (längster Wortlaut im Plan: 1534 ⇒ kappt heute
    nichts). Die frühere Grenze 700 beruhte auf der Annahme, ein `fahrplan:`-Feld trage das Detail
    ohnehin doppelt — falsch: `QS-AUTOMATIK-PARITAET` HAT einen Fahrplan, aber der am 4.8.2026
-   nachgetragene Scope (`check:suchindex`, `check:rss-oc`, `check:confidence`) steht nur in
+   nachgetragene Scope (`check:suchindex`, `check:rss-oc`, `report:confidence`) steht nur in
    ROADMAP.md; `FAHRPLAN-BASIS-AUSBAU.md §3.5` kennt ihn nicht.
 4. **`**Befunde:**`/`**Dossier:**` sind maschinengelesen** — analog `Detail:`. Der Pfad wird als
    eigene Zeile «Pflichtlektüre: `<pfad>`» in den Prompt gehoben, statt im Wortlaut unterzugehen.

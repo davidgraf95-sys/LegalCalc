@@ -1,14 +1,22 @@
 /**
- * check-confidence — läuft die Treue-Gates (confidence-logik.ts) über die
+ * report:confidence — läuft die Treue-Gates (confidence-logik.ts) über die
  * bestehenden Norm-Snapshots und erzeugt einen Confidence-Report + Quarantäne-
- * Liste. Zweck (FAHRPLAN-GESETZE-IMPORT-3TIER §3): den Korpus-Review-Fan-out
+ * Liste.
+ *
+ * Ehrliche Benennung (QS-CONFIDENCE-EHRLICH, 8.8.2026): das npm-Skript heisst
+ * `report:confidence`, nicht mehr `check:confidence` — der Lauf kann bauart-
+ * bedingt nie rot werden (Quarantäne ist erwarteter Normalzustand, der Mensch
+ * liest den Report), und ein `check:`-Präfix ohne Scheiter-Fähigkeit verletzt
+ * §6.7 (Präzedenz `check:tot` → `report:tot`, QS-SELBSTOPT 7.8.2026). Der
+ * DATEINAME bleibt als grep-Anker unverändert (Verweis-Logik wie CLAUDE.md §16:
+ * übersetzen statt umbenennen). Zweck (FAHRPLAN-GESETZE-IMPORT-3TIER §3): den Korpus-Review-Fan-out
  * (1 Agent pro Gesetz) durch maschinelle Vorfilterung ersetzen — der Mensch sieht
  * nur noch Erlasse mit score < Schwelle.
  *
  * Doppelnutzen: über den HEUTIGEN Korpus gelaufen ist dies der Kalibrierungs-
  * Akzeptanztest — findet das Gate die bekannten Befunde (22.6.: 58/150) wieder?
  *
- * Aufruf:  vite-node scripts/normtext/check-confidence.ts [-- --schwelle=0.95] [--datum=YYYY-MM-DD] [--schreibe]
+ * Aufruf:  npm run report:confidence  (vite-node scripts/normtext/check-confidence.ts) [-- --schwelle=0.95] [--datum=YYYY-MM-DD] [--schreibe]
  * §2: die Bewertung ist rein (confidence-logik); dieser Runner ist nur FS-Hülle.
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';

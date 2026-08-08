@@ -123,7 +123,7 @@ function ankerLoestAuf(fahrplanPfad: string, anker: string): boolean {
  *  ein `fahrplan:`-Feld trage das Detail ohnehin ein zweites Mal. Die Annahme
  *  ist falsch: `QS-AUTOMATIK-PARITAET` HAT einen Fahrplan, aber der am
  *  4.8.2026 nachgetragene Scope (die drei nirgends laufenden Tore
- *  `check:suchindex`, `check:rss-oc`, `check:confidence`) steht NUR in
+ *  `check:suchindex`, `check:rss-oc`, `report:confidence`) steht NUR in
  *  ROADMAP.md — `FAHRPLAN-BASIS-AUSBAU.md §3.5` kennt ihn nicht (geprüft
  *  4.8.2026). Ein Prompt, der ihn wegschneidet, baut am Auftrag vorbei.
  *

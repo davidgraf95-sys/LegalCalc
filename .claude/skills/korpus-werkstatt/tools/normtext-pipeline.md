@@ -234,19 +234,19 @@ Roh-Kürzel statt der Abkürzung — den key in **beiden** (Register **und**
 ## Kanton — eigener Tor-Block
 
 Die Bund-Tore reichen kantonal **nicht**. Der Struktur-Sidecar ist kantonal ein
-**anderer** Befehl, und das Treue-Gate (`check:confidence`) tritt hinzu.
+**anderer** Befehl, und das Treue-Gate (`report:confidence`) tritt hinzu.
 
 ```
 npm run normtext -- --nur=kanton --kanton=<KT> --discovery   # bzw. --nur=zh  (regeneriert nur die Ziel-Kantone)
 npm run normtext:struktur-kanton -- --datum=$(date +%F)      # NICHT normtext:struktur (= Bund)
-npm run check:confidence -- --schwelle=0.95 --schreibe       # Treue-Gate / Confidence-Quarantaene
+npm run report:confidence -- --schwelle=0.95 --schreibe       # Treue-Gate / Confidence-Quarantaene
 npm run check:vollstaendigkeit                               # Kanton-Zitat-Abdeckung + Manifest-Konsistenz
 npm run gate
 ```
 
 Belege: alle Befehle sind npm-Scripts in `package.json` (`normtext`,
 `normtext:struktur-kanton`, `normtext:struktur` [= Bund-Variante],
-`check:confidence`, `check:vollstaendigkeit`, `gate`). Den `--nur=kanton`-Handler
+`report:confidence`, `check:vollstaendigkeit`, `gate`). Den `--nur=kanton`-Handler
 trägt der Zweig `if (process.argv.includes('--nur=kanton'))` in `main()` von
 `scripts/normtext-snapshot.ts` (verlangt `--kanton=XX[,YY]` via `throw '--nur=kanton
 verlangt --kanton=XX[,YY]'`; `--discovery` — Zweig `if (discovery)` mit
@@ -259,7 +259,7 @@ tarif-zitierter Erlasse); `--nur=zh` ist der Zweig
   Altbestand fehlgeschlagener Kantone** (kein stiller Verlust, §8 — der
   `istErsetzbar`-Filter + die WARN-Ausgabe «Ziel-Kantone OHNE neue Snapshots …
   ihr Golden-Altbestand bleibt UNVERÄNDERT» im `--nur=kanton`-Zweig).
-- **`check:confidence`** misst maschinell die Extraktions-**TREUE** zur Quelle —
+- **`report:confidence`** misst maschinell die Extraktions-**TREUE** zur Quelle —
   **nicht** die juristische Korrektheit (die bleibt Davids Abnahme, §7/§8). Flags
   in `scripts/normtext/check-confidence.ts`: `--schwelle=` (Default 0.95, via
   `Number(arg('schwelle') ?? '0.95')`), `--schreibe` (schreibt

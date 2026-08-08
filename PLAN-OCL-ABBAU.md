@@ -319,13 +319,13 @@ Nummerierung W0–W13. Reihenfolge ist die empfohlene Abarbeitung.
     (Fussnoten/NBSP wie heute verwerfen).
 - **Dateien:** `scripts/normtext/adapter-lexwork.ts:587-656` (Endpunkt `…/texts_of_law/{id}`→`…/show_as_json`, Feld
   `xhtml_tol`→`json_content`; Signatur `LexWorkErgebnis:53-67` unverändert bei (c)); `src/lib/normtext/typen.ts:3-87`
-  (bei (a) neues `fussnoten`-Feld in `bloecke`); `check:confidence`-Kalibrierung für die sauberere Quelle;
+  (bei (a) neues `fussnoten`-Feld in `bloecke`); `report:confidence`-Kalibrierung für die sauberere Quelle;
   `version_uid`/`version_dates_str` im json_content-Pfad bestätigen (`check-drift.ts:191`).
 - **Extract-how:** typisierter Baum `text_of_law.selected_version.json_content.document.content`
   (title/article/paragraph/enumeration); eId `uid`→flacher `artikel`-Token/`items[].marke`+`tiefe` kollisionsfrei;
   `enumeration_item` an CSS-Klasse erkennen, **nicht** als Datentabelle behandeln (POC-Caveat 1).
 - **Integrate-how:** Downstream (`erzeugeKantonsSnapshots`) unberührt; echten DOM-Parser (cheerio/linkedom) statt Regex.
-- **Verifikation:** `normtext:struktur-kanton` → `check:confidence` (0.95) → `check:vollstaendigkeit` →
+- **Verifikation:** `normtext:struktur-kanton` → `report:confidence` (0.95) → `check:vollstaendigkeit` →
   `check:struktur-konsistenz` → `normtext:register` → `gate`; **Review-Quote gegen jetzige LexFind/`xhtml_tol`-Extraktion messen**.
 - **Risiko/Gate:** **RP·GC (bei (a) massiv)** ⇒ **Gegenprüfung Pflicht**; POC 1 Kanton end-to-end zuerst (Fidelity gegen amtliches
   Portal), dann Ausrollen. Isoliert im eigenen Worktree.
@@ -362,7 +362,7 @@ Nummerierung W0–W13. Reihenfolge ist die empfohlene Abarbeitung.
 | W6 (Instanzenzug) | `check:gegenpruefung`, `check:entscheide` | **Ja** (Zug-Kette) | ja (neues Feld) |
 | W7 (Zitationsgraph) | `check:gegenpruefung`, `check:entscheide` | Ja (Kanten-Stichprobe) | ja |
 | W10 (Rechtsetzungs-Tracking) | `check:gegenpruefung`, `check:fedlex-versionen` | Ja (publizierte Werte) | evtl. |
-| W11 (LexWork json_content) | `check:gegenpruefung`, `check:confidence`, `check:struktur-konsistenz` | **Ja** (Fidelity 1 Kanton POC → Ausrollen) | **massiv bei (a)** |
+| W11 (LexWork json_content) | `check:gegenpruefung`, `report:confidence`, `check:struktur-konsistenz` | **Ja** (Fidelity 1 Kanton POC → Ausrollen) | **massiv bei (a)** |
 | W12 (Bulk-Parquet) | `check:gegenpruefung`, `check:entscheide` | Ja | ja |
 | W8/W9/W13 | reine Prüf-/Suchlogik | nein (Nicht-Load-Bearing) | byte-gleich |
 
