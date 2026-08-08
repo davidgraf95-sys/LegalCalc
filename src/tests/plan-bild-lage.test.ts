@@ -442,6 +442,13 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
       'existiert in dieser Datei NICHT',
     );
   });
+
+  it('trägt die Weiterbau-Klausel (Entscheid David 8.8.2026) mit Sortenrein- und Kontext-Grenze', () => {
+    const p = bauPrompt(einheit(), SCHRITT);
+    expect(p).toContain('7. WEITERBAU');
+    expect(p).toContain('NIE sortenrein-widrig auf Risikopfade wechseln');
+    expect(p).toContain('bevor der Kontext zur Neige geht');
+  });
 });
 
 describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)', () => {
