@@ -2074,3 +2074,12 @@ Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
   vor der ersten Bau-Zeile. Rückstände vollständig entfernt (Schritt, @queue-Rang 3, Inventar);
   einzige Spuren sind die Commits `249556afc`/`f09980ed9` und dieser Eintrag. Falls der Wunsch
   wiederkommt: Das Design stand im Schritt-Wortlaut (Commit `249556afc`).
+
+# Umschichtung 8.8.2026, zweite Welle — QS-SKILL-DIAET-Abschluss
+
+## QS-SKILL-DIAET — Landungs-Prozeduren: vier Skills auf zwei konsolidieren *(done, verschoben 8.8.2026)*
+
+- [x] **`QS-SKILL-DIAET` · Landungs-Prozeduren: vier Skills auf zwei konsolidieren** *(Entscheid David 7.8.2026 nach Überregulierungs-Frage; bauschritt-D/E, landung, deploy-check, aufraeumen regeln denselben Übergang vierfach, ~1500 Z.)* — kein Regelverlust, Löschkriterium je Zeile; Grundsatz seither: neue Regeln nur als Tor/Hook, nie als Prosa. **Zugleich baut die Konsolidierung den leichten Pfad ein (Entscheid David 8.8.2026, Entstückelung):** für sortenreine Nicht-Risiko-Fix-Batches ein verkürzter Session-Zyklus (kurzer Einstieg: plan-Stand + wip; kurzer Abschluss: eine Karten-Zeile) — die Tore laufen in beiden Pfaden identisch, verschlankt wird nur Prozedur-Prosa. **Und sie kodifiziert die Weiterbau-Regel (Entscheid David 8.8.2026):** Nach gelandetem Schritt baut eine tragfähige Session automatisch weiter — (a) selbe Dach-Checkliste, (b) sonst oberster ready-Schritt gleicher Risikoklasse im selben Wirkungsbereich, (c) sonst Abschluss; je Weiterbau wip + volle Sorgfalt + eigener Trailer, Schluss bevor der Kontext zur Neige geht (bis zur Diät-Landung trägt der generierte Bau-Prompt die Regel als Ziff. 7). **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+  <!-- @meta id: QS-SKILL-DIAET · status: done · of: ja · blocker: null · dep: [] · kollision: [.claude/skills] · worktree: nein · 26x: nein · groesse: M -->
+
+*Umsetzung: PR #468 (Merge f14c1f25a, 8.8.2026) — Konsolidierungs-Protokoll mit Zeilen-Konkordanz: `bibliothek/betrieb/skill-diaet-2026-08-08.md`; Gegenprüfung (Opus, high): bestanden unter vier Auflagen, alle umgesetzt.*

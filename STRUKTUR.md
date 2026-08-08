@@ -28,6 +28,16 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 — Skill-Diät: vier Landungs-Skills auf zwei (QS-SKILL-DIAET, PR #468)
+
+**Gebaut und gelandet (Merge f14c1f25a):** `landung` trägt jetzt §12 UND §9 in einem Text (deploy-check aufgegangen; dokumentierter `--auto`-Widerspruch der beiden Alt-Texte versöhnt: manuell mergen, solange der Required-Handschritt offen ist), `bauschritt` trägt Pfadwahl (leichter Pfad für sortenreine Nicht-Risiko-Fix-Batches — Tore identisch, nur Prosa verschlankt), Station W (Weiterbau-Regel a/b/c) und `aufraeumen.md` als On-Demand-Referenzdatei (aufraeumen aufgegangen; lädt nur bei gerissenem Budget). Interims-Ziff.-7 aus dem Bau-Prompt-Generator entfernt; neues Test-Tor prüft Station W positiv (Regel kann nicht mehr still verschwinden).
+
+- **Beleg:** Zeilen-Konkordanz mit Löschkriterium je Zeile in `bibliothek/betrieb/skill-diaet-2026-08-08.md` (realer Bestand 663 Z., nicht ~1500 wie im Schritt geschätzt — §7 offengelegt). Gegenprüfung `lex-pruefung` (**Opus**, high, Linse «kein Regelverlust»): **bestanden unter vier Auflagen**; alle 7 Befunde (u. a. `gh pr create` fehlte, stash/amend-Verengung, leichter Pfad ohne STOPP-Regel/Rotations-Check) noch in der Session umgesetzt (`6935faf3b`).
+- **Tore:** gate voll GRÜN · build · e2e 521/521 · perf-budget · golden byte-gleich · CI-Batterie am PR vollständig grün. Chronik-Überführung des Schritts inkl. Inventar-Nachzug in dieser Session (check:plan + Rotations-Wächter grün).
+- **§17-Wurzel-Fix nebenbei:** `.scratch/` (gitignorierte Wegwerf-Skripte) machte das Gate über eslint rot — jetzt in `eslint.config.js` ausgenommen, mit Begründungs-Kommentar.
+- **Beobachtung §12:** Während des Baus landete ein fremder Commit (`d69e84fbd`, CI-Heilung der Lagebild-Session) im geteilten Checkout auf dem Feature-Branch und auf main — folgenlos (disjunkte Dateien), aber Beleg, warum Parallel-Sessions in Worktrees gehören.
+- **Weiterbau geprüft (Station W, erstmals nach eigener Regel):** (a) keine Dach-Checkliste · (b) `QS-CONFIDENCE-EHRLICH` berührt `scripts/normtext` (Risikopfad — sortenrein-widrig), `QS-AUDIT-VERWEISE` ist L (erst schneiden) und der Session-Kontext neigt sich · ⇒ (c) regulärer Abschluss.
+
 ## Session 8.8.2026 — Entstückelung: Ketten → Dach-Checklisten · Fehlerbuch · Bündel-Regel (Entscheid David 7./8.8.2026)
 
 **Strategie-Session mit David (Priorisierung/Verlangsamung), danach direkter Plan-Umbau auf main (kein Risikopfad, keine offene Landekette).** Nordstern festgehalten (Memory: in 1 Jahr von Juristen gern genutzte Website; David selbst ist der Nutzer), Mitdenk-Klausel in die globale CLAUDE.md. **Prioritäts-Entscheid am Nachmittag REVIDIERT (David, Wortlaut im Memory): Prozess geht grundsätzlich vor Produkt** — die vormittags ausgerufene Produkt-Phase gilt nicht; Umsetzung: Prozess-Schritte an der @queue-Spitze (QS-SKILL-DIAET → QS-CONFIDENCE-EHRLICH → QS-AUDIT-VERWEISE), gequeuete Querschnitt-Schritte steigen seither in die Hauptreihenfolge auf (`aufloesen.ts` + Test).
