@@ -2064,3 +2064,13 @@ Konvention 22.7.2026. Die Kopfzeile trug die Teilerfolge und nannte die offenen 
 Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
 
 - [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — **V1a ✅ 3.7. · V1c ✅ 4.7. · V1b ✅ 4.7.2026 GEBAUT** · **offen: V2 (E3-Serving) · V3 (E6a)**:
+
+## Streichung 8.8.2026 — `QS-COCKPIT` (nie gebaut)
+
+- **`QS-COCKPIT` · Lagebild wird Steuerpult (Klick «Bau starten» öffnet die Session)** — auf
+  Davids Auftrag am 8.8.2026 als Schritt angelegt (lokaler 127.0.0.1-Server, `/bau`-Endpunkt,
+  osascript→Terminal→`claude`) und **~30 Minuten später auf Davids Entscheid gestrichen**
+  (Wortlaut: «machen wir das nicht … das Lagebild mit Prompt kopieren ist ausreichend»), noch
+  vor der ersten Bau-Zeile. Rückstände vollständig entfernt (Schritt, @queue-Rang 3, Inventar);
+  einzige Spuren sind die Commits `249556afc`/`f09980ed9` und dieser Eintrag. Falls der Wunsch
+  wiederkommt: Das Design stand im Schritt-Wortlaut (Commit `249556afc`).

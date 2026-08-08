@@ -15,6 +15,9 @@
 // § «Übernahme 5.8.2026». Entfernt: QS-CODE-TURSO · QS-CODE-AUSSENKANTEN · QS-CODE-ENTDOPPLUNG
 // · QS-CODE-SPLITS · W2·5d. Der Kommentar zur W2·5d-Bindung unten entfällt: die dep-Einträge
 // in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
+// GESTRICHEN 8.8.2026 (Entscheid David, «machen wir das nicht»): QS-COCKPIT — Lagebild sollte
+// Sessions per Klick starten; nach ~30 Min wieder entfernt, «Prompt kopieren» ist ausreichend.
+// Begründung/Wortlaut in ROADMAP-CHRONIK.md § «Streichung 8.8.2026». Nie gebaut.
 // ENTSTÜCKELUNG 8.8.2026 (Entscheid David): Ketten-Unterschritte sind Checklisten-Zeilen im
 // Dach-Schritt, keine eigenen IDs mehr. Entfernt: W2·17-UI-BEFUNDE-B3…B19 · W2·11-DESIGN-D6…D8c
 // · W2·13-KANTONE-K1…K14 (aufgeteilt auf W2·13-KANTONE [Darstellung] und neu
@@ -55,7 +58,7 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 31.7.2026 (AP-9, QS-TOK-Aufräumwelle): externe UI-Befundliste (Cowork 29.7.2026,
   // 210 Befunde) — Dachschritt + 20 Batches (19 Bau + 1 Prüf-Batch), Fahrplan FAHRPLAN-UI-BEFUNDE.md.
-  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH', 'QS-COCKPIT',
+  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH',
 
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
