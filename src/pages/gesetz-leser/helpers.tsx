@@ -278,7 +278,19 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
           className="text-brass-700/90 hover:text-brass-700 hover:underline decoration-dotted underline-offset-2">{kinder}</Link>
       );
     }
-    return <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="text-brass-700/90 hover:text-brass-700 hover:underline">{kinder}</a>;
+    // LM-154 (W2·17-UI-BEFUNDE-B4): reine Fedlex-Verweise (BBl/AS ohne SR-Treffer)
+    // trugen nur `hover:underline` (ohne Hover also unsichtbar als Link) und keinen
+    // Hinweis auf den externen Tab-Wechsel — anders als die Normverweise im
+    // Fliesstext (NormText.tsx `INLINE_CLASS`: persistente gepunktete Unterlinie).
+    // Dieselbe Auszeichnung hier: `underline decoration-dotted` bleibt SICHTBAR statt
+    // nur bei Hover; `title` nennt amtliche Quelle + Tab-Wechsel (§8, wie bei den
+    // übrigen externen Aktionen dieser Datei — AmtlichesPdf/«In neuem Reiter» tragen
+    // ebenfalls ein `title` statt eines Icons je Einzel-Fundstelle, da ein Apparat
+    // mehrere Zitate in einer dichten Zeile aneinanderreiht).
+    return (
+      <a key={i} href={url} target="_blank" rel="noopener noreferrer" title="Amtliche Fedlex-Quelle – öffnet in neuem Tab"
+        className="text-brass-700/90 underline decoration-dotted underline-offset-2 hover:text-brass-700">{kinder}</a>
+    );
   });
 }
 
