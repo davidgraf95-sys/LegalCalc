@@ -2036,3 +2036,31 @@ Wortlaut unverändert übernommen, Ausführungs-Protokoll Ziff. 6.)
 
   - [x] **UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5)** — Sidebar-Konsistenz · Kantons-Einstieg mit Abdeckung vor dem Klick · Scope-Labels der lokalen Suchfelder; alle drei S. §6.
     <!-- @meta id: W2·10-UI-NAV-O · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components/layout/Sidebar.tsx, src/pages/Gesetze.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## QS-E2E-STABIL — datierte ✅-Teilerfolge *(Schritt bleibt OFFEN; Prosa verschoben 8.8.2026)*
+
+Konvention 22.7.2026: datierte Teilerfolgs-Prosa aus einem noch offenen Schritt wandert
+wörtlich hierher, im Plan bleibt ein ✅-Einzeiler mit Pointer. Wortlaut wie am 8.8.2026
+in `ROADMAP.md` gestanden:
+
+- [ ] **`QS-E2E-STABIL` · Lokale e2e-/Test-Budgets an gemessene Streuung binden** *(Anlass 3./4.8.: BS-640.100-axe 60 s lokal, suche.test.ts-Hook-Timeout. **7.8., #461:** Stall-Wurzel GEFIXT — a11y-Defekt zugeklappter TOC-Äste — samt Druck-Budget + CI-Eindämmung [maxFailures 3, 25-min-Deckel, Traces]. Restkern: Budgets an 4 Stellen CI/lokal gegabelt → Budget-Modul `e2e/helpers/`; norm-sprung-Forensik offen, Verdacht 9,5-MB-Register → QS-PERF. **8.8., QS-E2E-TEMPO-Messung:** `leser-r1-r2` — alle 7 R1-Suche-Fälle scheitern im CI SYSTEMATISCH im Erstversuch [Lauf 31220026058: 687 s statt ~456 s grün]. **Wurzel-KORREKTUR 8.8. nachts [Messung, Branch `feat/w2-10-ui-nav-leser-suche`, Commit 0b482aebe]:** die Vermutung «Leser-Suche rendert alle Treffer-Artikel» ist WIDERLEGT [Suchmodus rendert 282 statt 1686 Knoten; fill→Leiste ≤5 s selbst bei 20×-Drossel]. Echte CI-Signatur: Fehler ist «element not found» — der Suchmodus wird NIE betreten, und es trifft ausnahmslos den ZWEITEN schweren OR-Reader im selben Chromium-Worker [jeder grüne Retry = frischer Worker]; lokal bis 20×-Drossel nicht reproduzierbar, braucht die CI-Umgebung. Nächster Schritt: CI-Forensik [trace:'on' für diese Datei bzw. Experiment Worker-Neustart je Test], KEIN UI-Bau ins Blaue und weiterhin NICHT per Timeout maskieren; Nebenbefund Erst-Render OR-Leser [12,5 s bei 20×, 83 % Long-Tasks] → `QS-PERF`-Fläche)* — keine CI-Änderung. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.4.
+
+## W2·5d-Residuum — abgelöste Plan-Fassung aufgelöst *(verschoben 8.8.2026)*
+
+Der erledigte Elter `5d` stand seit der Übernahme 5.8.2026 nur noch als Pointer-Zeile im Plan —
+die Form der **abgelösten** Fassung (Ziff. 6 verlangt: im Plan bleibt nichts). Aufgelöst, das
+offene `L-3` ist auf die Ebene gehoben. Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
+
+- [x] **5d · Gesetzes-UX & Darstellungs-Reglement** — erledigt, verschoben in `ROADMAP-CHRONIK.md` § «Übernahme 5.8.2026».
+  - [~] **A24** (L-1+L-2+L-3): Linien-Reparatur, Auto-Default-Umkehr ZGB/OR (Umkehr
+    #161, David freigegeben); L-4 entfällt. V2 §2 F4.
+    - [ ] **L-3** (Auto-Default-Umkehr): weiterhin **hinter David/Council-Gate** —
+      NICHT in feat/v2-l1-l2 gebaut. V2 §2 F4.
+
+## W2·7-VZUI — datierte ✅-Teilerfolge *(Schritt bleibt OFFEN; Prosa verschoben 8.8.2026)*
+
+Konvention 22.7.2026. Die Kopfzeile trug die Teilerfolge und nannte die offenen Punkte doppelt
+(Kopf + Prosa darunter); im Plan bleibt der ✅-Einzeiler, die Offen-Nennung nur noch einmal.
+Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
+
+- [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — **V1a ✅ 3.7. · V1c ✅ 4.7. · V1b ✅ 4.7.2026 GEBAUT** · **offen: V2 (E3-Serving) · V3 (E6a)**:
