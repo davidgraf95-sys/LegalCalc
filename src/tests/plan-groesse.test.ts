@@ -134,7 +134,7 @@ function einheit(groesse: string | null): Einheit {
   };
   return { id: 'QS-TEST-1', checkbox: '[ ]', sektion: 'Querschnitt', pos: 3, etikett };
 }
-const SCHRITT: SchrittInfo = { titel: 'Testschritt', prosa: 'Wortlaut.', par: '4', pflicht: [], ankerDefekt: null, gekuerzt: false };
+const SCHRITT: SchrittInfo = { titel: 'Testschritt', prosa: 'Wortlaut.', par: '4', pflicht: [], ankerDefekt: null, gekuerzt: false, checkliste: null };
 
 describe('bauPrompt — die Schätzung reist mit', () => {
   // Ohne diese Zeile sähe die bauende Session die Schätzung nie: der
