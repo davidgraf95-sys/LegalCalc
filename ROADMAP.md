@@ -292,7 +292,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
 > ihr Vokabular; Fehlen ist zulässig und zeigt «Grösse ungeschätzt». Definition und Schätzgrundlage:
 > [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Feld `groesse`».
 
-<!-- @queue: W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·19-GLIEDERUNG, W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ Prozess-Schritte stehen vorn (Entscheid David 8.8.2026: «prozess soll grundsätzlich
      vorgehen» — revidiert die Produkt-Phase vom Vormittag). Gequeuete Querschnitt-Schritte
      steigen seit demselben Datum in die Hauptreihenfolge auf (aufloesen.ts). -->
@@ -304,7 +304,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Am 8.8.2026 gelandet → Chronik: `QS-SKILL-DIAET` (PR #468), `QS-CONFIDENCE-EHRLICH` (PR #469), `QS-AUDIT-VERWEISE` (PR #470, alle 8 Checklisten-Positionen).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·19-GLIEDERUNG`** (Davids Gliederungs-Paket, eigene Session — Diagnose liegt als Bau-Spec bereit; danach `W2·10-UI-NAV`) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Am 8.8.2026 gelandet → Chronik: `QS-SKILL-DIAET` (PR #468), `QS-CONFIDENCE-EHRLICH` (PR #469), `QS-AUDIT-VERWEISE` (PR #470, alle 8 Checklisten-Positionen).
 > Stand 8.8.2026: Teilschritte -S/-V/-O/-J sind gelandet (PR #464), vom Dach offen ist nur noch `-J3` (Risikopfad, eigene Session).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
@@ -541,8 +541,8 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   Davids Vorgabe wörtlich: **«erst wenn es Sinn ergibt»** — die Anleitung folgt dem Inventar, nicht
   umgekehrt (`dep: [W2·16-INVENTAR]`); bewusst spät, damit sie nichts beschreibt, was sich noch bewegt.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §10.
-- [~] **17 · UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(Auftrag David 31.7.2026, Lieferung einer externen Sichtprüfung vom 29.7.)*
-  <!-- @meta id: W2·17-UI-BEFUNDE · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages, src/index.css] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+- [ ] **17 · UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(Auftrag David 31.7.2026, Lieferung einer externen Sichtprüfung vom 29.7.)*
+  <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages, src/index.css] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil K-01…K-20; Triage 31.7.2026: **45 NEIN · 144 VERDACHT ·
   15 BEREITS-GEBAUT · 6 SICHER**, davon **20 Batches** (19 Bau-Batches mit 189 Befunden + 1 Prüf-Batch, 15).
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue;
@@ -570,9 +570,12 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). §18.
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
+- [ ] **19-GLIEDERUNG · Gesetzes-Gliederung: flüssig, ruhig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026 abends, Diagnose noch am selben Abend — eigene Session auf Davids Wunsch: «neue session soll sich mit der gliederung alleine beschäftigen»)*
+  <!-- @meta id: W2·19-GLIEDERUNG · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css] · worktree: ja · 26x: nein · groesse: M -->
+  Die Diagnose ([Dossier — ZUERST LESEN, es ist die Bau-Spec](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md)) hat die Wurzeln vermessen: Haupt-Bremser ist der Hover-Dimm-Effekt der LESESPALTE (1686 simultane Transitionen, TBT 8.9 s @4×; Davids Dimm-Effekt vom 18.6. bleibt, nur die transition fällt — F1a), dazu das konstruktiv tote Auto-Zuklappen (0 Ereignisse; Wiederherstellung von Davids Auftrag K 26.6. mit Frame-gleicher scrollTop-Kompensation, CLS-Beweis = bestehende a9/a33-Tests unverändert grün — F2), unmemoisiertes Baum-Rendering (11'075 Knoten dauerhaft gemountet, Klick 231 ms @4× — F3: memoisierte Zeilen, zugeklappte Äste unmounten; der Baum ist KEIN Normtext, §15-Virtualisierungsverbot greift nicht), ungedrosselter Scroll-Listener `App.tsx:97` (F4: rAF wie der A16-Nachbar) und die missglückte Hervorhebung (sechsfaches `aria-current` = §8-Falschaussage; F5: EINE Positionsmarke, 2-px-Kante brass-500 statt Goldfläche, Sidebar-Muster, beide Themes ≥3:1). NICHT bauen ohne David: F1b (Scrim-Dimmen — ändert das Mittel seines 18.6-Effekts). Nachmessen gegen die Dossier-Tabelle ist Teil der DoD; danach LM-163 (B6 §7) gegen die neue Lage prüfen. Golden byte-gleich; e2e-Dateien nicht anfassen — gewollte Test-Konflikte melden.
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
-  - [ ] **Gliederung im Gesetzes-Leser «funktioniert immer noch sehr harzig … springt komisch und ist nicht flüssig» (David, 8.8.2026 abends)** — dazu Davids Feature-Wunsch: nicht-aktive Äste sollen automatisch zuklappen (nur der aktive Pfad offen — zugleich Perf-Hebel: weniger gerenderte Knoten)); und die Aktiv-Hervorhebung ist «missglückt, das geht schöner» (David 8.8. — die in B4/LM-156 sichtbar gemachte goldene Hinterlegung braucht eine ruhigere, reglement-konforme Form). Bedienung/Scrollen der Gliederung zäh. **Diagnose 8.8. abends abgeschlossen** ([Dossier](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md)): Wurzel ist der Hover-Dimm-Effekt der Lesespalte (nicht der Baum), dazu totes Auto-Zuklappen (⇒ Sprünge) und unmemoisiertes Baum-Rendering; Fix-Paket F1a/F2–F5 im Bau (feat/w2-17-gliederung); verwandte offene Befunde: LM-163 (Leerfläche bei schnellem Scroll, B6 §7), «bimodaler Stall» (e2e-flake-forensik 26.7./QS-PERF), lokale Drossel-Trias-Flakes. §15-Bauregeln beachten (keine DOM-entfernende Virtualisierung von NORMTEXT — der Baum ist kein Normtext, dort wäre Virtualisierung zulässig; Logikverlust-Bewertung Pflicht).
+  - [x] **Gliederung im Gesetzes-Leser (Davids Befunde 8.8.2026 abends)** — ✅ überführt: Diagnose im [Dossier](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md), Bau als eigener Schritt `W2·19-GLIEDERUNG` (Queue-Spitze, eigene Session auf Davids Wunsch).
   - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Breite der Brotkrume-Leiste angleichen** — strukturelle Lücke zwischen Kopfzeile und Brotkrume auf jeder Seite mit Brotkrume (Befund B7 8.8.2026, bewusst zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
   - [ ] `check:design-tokens` scannt Kommentartext mit — ein Kommentar mit Utility-Platzhalter (`text-ink-*`) macht das Tor rot und kostet je Vorfall einen Tor-Zyklus; Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund B4-N1 8.8.2026 — nicht Davids Fund, hier verortet als kleinste passende Sammelstelle.)*
   David sammelt Fehler aus der täglichen Nutzung formlos hier als `- [ ]`-Zeile (oder meldet sie im

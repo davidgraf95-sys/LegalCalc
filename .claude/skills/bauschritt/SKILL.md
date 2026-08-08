@@ -97,6 +97,11 @@ Alles andere — inkl. jeder Bau mit Risikopfad-Berührung — fährt den Normal
 
 - Die im Bau-Prompt und in der Spec genannten **Tore nackt fahren** (kein
   `--silent`, keine Filter, volle Ausgabe lesen); Abschluss `npm run gate`.
+- **Rot-Beweise (§6.7) nur mit sauberem Index fahren:** erst die eigenen neuen
+  Dateien committen, DANN den Wegwerf-Probe-Commit anlegen und verwerfen — ein
+  `git reset --hard` nach der Probe verschluckt sonst untracked Neu-Dateien
+  und uncommitted Nachbar-Änderungen (Vorfall 8.8.2026, QS-AUDIT-VERWEISE:
+  Testdatei + package.json/ci.yml-Einträge mussten rekonstruiert werden).
 - Berührt der Diff einen **Risiko-Pfad** (`istRisikoPfad`,
   `scripts/gegenpruefung/kern.ts`): Skill **`gegenpruefung`** ist **Pflicht**,
   der Merge bleibt gesperrt, bis ein Verdikt vorliegt.

@@ -61,7 +61,7 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 31.7.2026 (AP-9, QS-TOK-Aufräumwelle): externe UI-Befundliste (Cowork 29.7.2026,
   // 210 Befunde) — Dachschritt + 20 Batches (19 Bau + 1 Prüf-Batch), Fahrplan FAHRPLAN-UI-BEFUNDE.md.
-  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH',
+  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH', 'W2·19-GLIEDERUNG',
 
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
