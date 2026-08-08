@@ -238,6 +238,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   useLeserSprungSpy({
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
+    gliederungsKnoten: modell.knoten,
     istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
     refs: {
       jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,

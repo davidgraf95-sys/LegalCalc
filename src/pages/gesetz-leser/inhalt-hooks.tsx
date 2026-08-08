@@ -1,4 +1,5 @@
 import { useEffect, useRef, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
+import { flushSync } from 'react-dom';
 import type { NavigateFunction } from 'react-router-dom';
 import { aktualisiereTabArtikel, tabSchluessel } from '../../lib/tabs';
 import { merkeAnker, bezugslinie, istHashVerbraucht } from './scrollAnker';
@@ -16,6 +17,8 @@ import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
+import { findeSynthPfad, type GliederungsKnoten } from './gliederungsModell';
+import { planeZuklappen } from './tocAutoZuklappen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { LinienProfil } from './linienAufbau';
@@ -31,13 +34,9 @@ import type { LinienProfil } from './linienAufbau';
 
 type MeldeKopf = ReturnType<typeof useMeldeInhaltsKopf>;
 
-// §15.2: Nachlauf-Fenster (in Pfadwechseln) fürs Auto-ZUklappen des TOC-Baums. Ein
-// automatisch geöffneter Zweig bleibt so lange offen, bis die Leseposition ihn um so
-// viele distinkte Pfadwechsel hinter sich gelassen hat — dann ist er sicher aus dem
-// sichtbaren TOC-Fenster gescrollt und sein Zuklappen erzeugt keinen sichtbaren Layout-
-// Shift (off-screen bzw. vom Scroll-Anchoring verschluckt). 6 ≈ mehrere TOC-Bildschirm-
-// höhen Vorlauf; deckt das Hin-und-Her (PageUp nach PageDown) verlässlich ab.
-const AUTO_ZU_NACHLAUF = 6;
+// Auto-Zuklappen des Gliederungsbaums (F2): Nachlauf-Fenster, Fallback-Schalter
+// und die Lage-Entscheidung leben seit W2·19-GLIEDERUNG/S5 in ./tocAutoZuklappen —
+// mitsamt der Provenienz des 19.7.-Wächters und den Messreihen dahinter.
 
 // ── N2 (§17-Wurzelfix, Bug-Check 3.8.2026): Spy-Nachlauf nach dem jumpLock ────
 // `auswerten` bricht ab, solange `jumpLock` steht (Klick-/TOC-Sprung, §15.2), und
@@ -271,6 +270,9 @@ export function useLeserSprungSpy(opts: {
   sucheDebounced: string;
   aktivIds: string[];
   tocBaum: Record<string, boolean>;
+  /** W2·19-GLIEDERUNG/S5: die gerenderten Zeilen des Modells — nur zum Auflösen
+   *  der SYNTHETISCHEN Zeilen (Vorspann/Nachspann/Anhänge), s. findeSynthPfad. */
+  gliederungsKnoten: GliederungsKnoten[];
   istXl: boolean;
   tocOffen: boolean;
   artLabelByToken: Map<string, string>;
@@ -293,7 +295,7 @@ export function useLeserSprungSpy(opts: {
 }): void {
   const {
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
-    paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, istXl, tocOffen,
+    paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, gliederungsKnoten, istXl, tocOffen,
     artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum, refs,
   } = opts;
   const {
@@ -467,7 +469,21 @@ export function useLeserSprungSpy(opts: {
       //     manuell geöffnete bleiben offen. Der Mitscroll-Effekt hält den
       //     aktiven Eintrag dann im TOC-Container sichtbar.
       const ids = pfadZu(sektionen, (s) => s.artikel.some((x) => x.artikel === token)) ?? [];
-      if (!ids.length) return;
+      if (!ids.length) {
+        // W2·19-GLIEDERUNG/S5 (Spec §3.4): der Artikel gehört zu KEINER amtlichen
+        // Sektion — er liegt im Vorspann, im Nachspann oder im Anhang-Ast. Bis
+        // hierher endete die Auswertung an dieser Stelle stumm, und die Leiste
+        // markierte gar nichts: beim RBUE betrifft das 47 von 49 Artikeln, also
+        // 96 % des Texts. Der Leser sass mitten im Erlass vor einer Gliederung,
+        // die behauptete, er sei nirgends (§8). Welche Zeile den Artikel deckt,
+        // weiss das Modell (`findeSynthPfad`) — hier wird nichts zweitmalig
+        // zugeordnet (§5). Kein Auto-Akkordeon für diesen Fall: synthetische
+        // Zeilen haben keine `sek-N`-Buchhaltung, und ihr Ast (Anhänge) folgt
+        // seiner eigenen Start-Regel.
+        const synth = findeSynthPfad(gliederungsKnoten, token);
+        if (synth) setAktivIds((prev) => prev.length === synth.length && prev.every((v, i) => v === synth[i]) ? prev : synth);
+        return;
+      }
       // F3 (RC2, Auftrag David 16.7. «Gliederung springt umher»): den (a)-Block
       // (Markierung + Auto-Akkordeon) TRAILING entprellen (~200 ms, analog aktArtikel/
       // tabArtikel oben). Der Timer verarbeitet stets das ZULETZT gemeldete `ids` (jeder
@@ -493,46 +509,56 @@ export function useLeserSprungSpy(opts: {
         // gar nicht auto-aufklappen (explizites Einklappen des aktiven Zweigs gewinnt).
         // Jedes Aktiv-Vorkommen (inkl. Vorfahren aus pfadZu) frischt den Nachlauf-Tick.
         for (const id of ids) if (!manuellOffenRef.current.has(id) && !manuellZuRef.current.has(id)) { auto.add(id); autoTickRef.current.set(id, tick); }
-        // BEFUND 3 (A9-Forensik 19.7.2026): der bisherige «nur off-screen»-Wächter
-        // (BEFUND 2) prüfte auf ÜBERLAPPUNG mit dem [data-toc]-Sichtband und klappte
-        // jeden NICHT-überlappenden Ast zu — also auch Äste OBERHALB des Bandes. Genau
-        // das riss auf dem 2-vCPU-Runner das Budget: kollabiert ein Ast oberhalb der
-        // sichtbaren Zeilen, rückt der GESAMTE sichtbare Inhalt DARUNTER nach oben — ein
-        // gezählter Layout-Shift (das gemeldete li 248×195→0×0 ist ein Kind eines
-        // solchen oberhalb-Astes). §15.2-treuer Fix: einen Ast NUR zuklappen, wenn er
-        // GANZ UNTERHALB des Sichtbandes liegt (r.top ≥ contRect.bottom) — dann bewegt
-        // sein Kollaps ausschliesslich off-screen-Inhalt (der Ast selbst + alles darunter
-        // sind unsichtbar), nie eine sichtbare Zeile. Äste im Band ODER darüber bleiben
-        // offen. Das ist strikt KONSERVATIVER als zuvor (klappt eine Teilmenge der
-        // bisherigen Äste zu) → kann keinen NEUEN Shift erzeugen. Auto-Akkordeon (Auftrag
-        // K) bleibt: beim Zurück-nach-oben-Scrollen verlassene (jetzt unterhalb liegende)
-        // Äste klappen weiterhin zu; beim Weiterlesen nach unten bleiben die überholten
-        // (oberhalb liegenden) Äste ruhig offen statt sichtbar zu springen (deckt sich mit
-        // Davids Kernwunsch «Gliederung springt nicht umher», 16.7.). `getBoundingClientRect`
-        // ist reine Lese-Messung (kein Reflow-Trigger, im Timer nach dem Settle).
+        // F2-Wurzelfix (W2·19-GLIEDERUNG/S5, Bau-Spec §3.6): welche Äste zugehen
+        // dürfen und wie viel Höhe dabei OBERHALB des Sichtbands verschwindet,
+        // entscheidet `planeZuklappen` — Herleitung, Provenienz des 19.7.-Wächters
+        // und die Messreihen stehen dort (./tocAutoZuklappen).
         const tocCont = (paneRoot(imPane, wurzel) ?? document).querySelector('[data-toc]') as HTMLElement | null;
-        const contRect = tocCont?.getBoundingClientRect();
-        const darfZuklappen = (id: string): boolean => {
-          if (!tocCont || !contRect) return false; // kein Container/Mass ⇒ sicherheitshalber NICHT zuklappen
-          const el = tocCont.querySelector(`[data-sektion-id="${CSS.escape(id)}"]`) as HTMLElement | null;
-          if (!el) return false; // nicht gefunden ⇒ nicht zuklappen (keine Blind-Aktion)
-          const r = el.getBoundingClientRect();
-          return r.top >= contRect.bottom; // NUR wenn der Ast komplett unter dem Sichtband sitzt
-        };
-        const schliessen: string[] = [];
-        for (const id of [...auto]) {
-          if (ids.includes(id)) continue; // im aktiven Pfad → offen halten
-          if (tick - (autoTickRef.current.get(id) ?? 0) <= AUTO_ZU_NACHLAUF) continue; // noch im Nachlauf-Fenster
-          if (!darfZuklappen(id)) continue; // nur Äste GANZ UNTERHALB des Sichtbands (sonst sichtbarer Reflow)
-          auto.delete(id); autoTickRef.current.delete(id); schliessen.push(id);
-        }
-        setTocBaum((o) => {
+        const { schliessen, kompensation } = planeZuklappen({
+          tocCont, auto, aktivIds: ids, tick, ticks: autoTickRef.current,
+        });
+        for (const id of schliessen) { auto.delete(id); autoTickRef.current.delete(id); }
+        const aktualisieren = (o: Record<string, boolean>): Record<string, boolean> => {
           let geaendert = false;
           const n = { ...o };
           for (const id of ids) if (!n[id] && !manuellZuRef.current.has(id)) { n[id] = true; geaendert = true; }
           for (const id of schliessen) if (n[id]) { n[id] = false; geaendert = true; }
           return geaendert ? n : o; // identische Referenz, wenn nichts ändert → kein Re-Render
-        });
+        };
+        if (kompensation > 0 && tocCont) {
+          // FRAME-GLEICHE KOMPENSATION. `flushSync` committet den Kollaps
+          // synchron in DIESEM Task; die Korrektur von `scrollTop` folgt
+          // unmittelbar danach — der Browser paintet beides zusammen, es gibt
+          // keinen Zwischenzustand zu sehen und keinen zu zählen. Ohne
+          // `flushSync` läge zwischen Kollaps und Korrektur ein Paint, und genau
+          // der wäre der Layout-Shift, den der 19.7.-Wächter verhindern sollte.
+          // (Dasselbe Mittel benutzt der Klick-Sprung, inhalt-sprung.tsx.)
+          //
+          // EHRLICHER MESSBEFUND (§8/§0-3): die WIRKUNG dieser Kompensation ist
+          // in der vorliegenden Messreihe NICHT von der Streuung zu trennen.
+          // Gegenproben am gebauten Stand (OR, 4× Drossel, 60 Scroll-Schritte,
+          // CLS-Anteil im [data-toc]):
+          //   mit Kompensation   0.060 … 0.19
+          //   ohne Kompensation  0.061 … 0.092
+          //   zusätzlich ohne Browser-Scroll-Anchoring   0.153 … 0.200
+          //   Vorzustand ganz ohne Zuklappen (1bbb00e26) 0.060
+          // Die naheliegende Erklärung ist, dass Chromium den Fall über sein
+          // eigenes Scroll-Anchoring ohnehin abfängt — der Kommentar am
+          // 19.7.-Wächter sagte das schon damals («vom Scroll-Anchoring
+          // verschluckt»), und nur das Abschalten des Anchorings hebt den Wert
+          // sichtbar an. Die Kompensation BLEIBT trotzdem, aus drei Gründen:
+          // die Bau-Spec §3.6 verlangt sie ausdrücklich als GARANTIE, statt sich
+          // auf eine Browser-Heuristik zu verlassen; ihr Preis ist null, solange
+          // nichts kollabiert (`kompensation > 0` ist der einzige Pfad zu
+          // `flushSync`); und sie ist die Voraussetzung dafür, dass der
+          // Fallback-Schalter überhaupt eine Bedeutung hat. Belegt ist damit
+          // NICHT, dass sie hilft — belegt ist, dass sie nicht schadet.
+          const vorher = tocCont.scrollTop;
+          flushSync(() => setTocBaum(aktualisieren));
+          tocCont.scrollTop = Math.max(0, vorher - kompensation);
+        } else {
+          setTocBaum(aktualisieren);
+        }
       }, 200);
     };
     const io = new IntersectionObserver((entries) => {
@@ -606,7 +632,10 @@ export function useLeserSprungSpy(opts: {
     // Refs/Setter (jumpLock/…/setAktivIds) + artLabelByToken sind stabil bzw. bewusst
     // ausgelassen; Deps byte-identisch zum früheren Inline-Effekt (Rank 9-Kopplung).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, ohneGliederung, basisPfad, paneLocationSearch, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
+    // S5: `gliederungsKnoten` kommt aus demselben useMemo-Takt wie `sektionen`
+    // (Modell-Deps: kuratierter Baum + Snapshot + Sidecar) — der Effekt läuft
+    // dadurch nicht öfter neu als zuvor, sieht aber nie eine veraltete Zuordnung.
+  }, [sektionen, ohneGliederung, gliederungsKnoten, basisPfad, paneLocationSearch, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
 
   // Aktiven Eintrag im TOC sichtbar halten — sanft, nur den TOC-Container, nie die
   // Seite scrollen. Läuft bei JEDEM Wechsel des aktiven Pfads (aktivIds) UND nach

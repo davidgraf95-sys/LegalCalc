@@ -201,7 +201,15 @@ const Zeile = memo(function Zeile({
     // (inhalt-hooks) misst darüber die Lage eines Astes im Sichtfenster des
     // [data-toc]-Containers. Synthetische Zeilen (Vorspann/Anhänge) haben keine
     // `sek-N`-Identität — sie hier zu erfinden, wäre eine zweite Wahrheit (§5).
-    <li data-sektion-id={k.art === 'sektion' ? k.id : undefined}>
+    // `data-sektion-ids` (S5): ALLE Ids dieser Zeile, leerzeichengetrennt — der
+    // Auto-Zuklapp-Pfad schlägt darüber Id → gerendertes Element nach
+    // (`[data-sektion-ids~="sek-8"]`). Eine verdichtete Einzelkind-Kette hat für
+    // ihre INNEREN Stufen kein eigenes Element; ein Sonder-DOM dafür wäre eine
+    // zweite Wahrheit über den Baum (§5) — ein Attribut an der Zeile, die die
+    // Stufe ohnehin trägt, sagt dasselbe ehrlicher. `data-sektion-id` bleibt
+    // unverändert der äussere Schlüssel (Bestandssonden, e2e).
+    <li data-sektion-id={k.art === 'sektion' ? k.id : undefined}
+      data-sektion-ids={k.art === 'sektion' ? k.ids.join(' ') : undefined}>
       <div className={`flex items-start ${takt}`} style={{ paddingLeft: `${einzugFuerTiefe(k.tiefe)}rem` }}>
         {hatKinder
           ? (
@@ -278,15 +286,27 @@ const Zeile = memo(function Zeile({
           </span>
         )}
       </div>
-      {/* Auf-/Zuklappen via grid-rows (0fr↔1fr) — Kinder bleiben in S4 gemountet;
-          der Unmount ist S5 (F3, zweite Hälfte). §15.2: KEINE Höhen-ANIMATION —
-          eine animierte Höhenänderung reflowt Frame für Frame die Geschwister
-          und zählt, wenn sie der Spy auslöst, als unerwarteter CLS.
-          `invisible` am zugeklappten Ast (QS-E2E-STABIL 7.8.2026): die
-          grid-rows-Technik klappt nur die HÖHE auf 0; die Kind-Knöpfe blieben
-          sonst fokussierbar und Playwright-klickbar, obwohl unsichtbar. */}
-      {hatKinder && (
-        <div className={`grid ${auf ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] invisible'}`}>
+      {/* ── F3, zweite Hälfte (S5): zugeklappte Äste werden UNMOUNTET ──────────
+          Bis S4 blieben sie gemountet und wurden nur per `grid-rows-[0fr]` auf
+          Höhe 0 geklemmt. Gemessen (Perf-Diagnose 8.8.2026, U3): 11 075
+          dauerhaft gemountete Knoten beim OR, Klick-Latenz @4× 231 ms gegen
+          33 ms beim BGFA. Ein Baum, dessen zugeklappte Teile nicht existieren,
+          kostet nur noch den offenen Pfad.
+          §15-Abgrenzung: der Baum ist KEIN Normtext. Das Virtualisierungsverbot
+          schützt die Lesespalte (Anker, Ctrl+F, Druck, Screenreader-Vollzugriff
+          auf den amtlichen Text) — die Gliederung ist ein Verzeichnis, und der
+          zugeklappte Ast ist auch für den Nutzer nicht da.
+          Die 7.8.-Lehre (`invisible` am zugeklappten Ast, weil die Kind-Knöpfe
+          sonst fokussierbar und Playwright-klickbar blieben, obwohl unsichtbar)
+          wird damit GEGENSTANDSLOS und ist entfernt: was nicht im DOM ist, liegt
+          weder in der Tab-Reihenfolge noch im a11y-Baum noch im Hit-Testing.
+          `e2e/leser-ruecksprung-r5-r7.ts` bewacht genau das weiterhin
+          («kein unsichtbarer Gliederungs-Knopf in der Tab-Reihenfolge»).
+          §15.2: weiterhin KEINE Höhen-Animation — eine animierte Höhenänderung
+          reflowt Frame für Frame die Geschwister und zählt, wenn der Spy sie
+          auslöst, als unerwarteter CLS. Das Umschalten bleibt ein Schritt. */}
+      {hatKinder && auf && (
+        <div className="grid grid-rows-[1fr]">
           <div className="overflow-hidden min-h-0">
             <ul className="space-y-0.5 mt-0.5">
               {k.kinder.map((kind, i) => (

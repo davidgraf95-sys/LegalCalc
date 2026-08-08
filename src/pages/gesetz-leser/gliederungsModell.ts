@@ -131,6 +131,19 @@ export interface GliederungsKnoten {
   anhang: boolean;
   /** Ausnahme-Vorgabe gegen die Tiefen-Regel (nur die dominante Anhang-Wurzel setzt sie). */
   startOffen?: boolean;
+  /**
+   * Artikel-Tokens, die DIESE Zeile unmittelbar deckt — nur an synthetischen
+   * Zeilen (Vorspann/Nachspann/Anhang). Sektionszeilen brauchen es nicht: für
+   * sie liefert `pfadZu` den Pfad aus dem Rohbaum.
+   *
+   * W2·19-GLIEDERUNG/S5: ohne dieses Feld kann der Scroll-Spy den Zustand «vor
+   * dem ersten Knoten» (Spec §3.4) nicht melden. Beim RBUE liegen 47 von 49
+   * Artikeln im Vorspann; `pfadZu` findet für sie nichts, die Leiste blieb
+   * unmarkiert, während der Leser mitten im Text stand. Die Zuordnung gehört
+   * ins Modell und nicht in den Hook — sonst entstünde eine zweite Wahrheit
+   * darüber, welcher Artikel zu welcher Zeile gehört (§5).
+   */
+  tokens?: string[];
 }
 
 export interface GliederungsModell {
@@ -299,6 +312,7 @@ function baueSynth(
     tiefe,
     randtitel: false,
     kinder,
+    tokens: arts.map((a) => a.artikel),
     artikelAnzahl: gesamt,
     eigeneArtikel: eigen,
     gemischt: eigen > 0 && kinder.length > 0,
@@ -522,4 +536,24 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
 /** Alle Zeilen des Modells in Renderreihenfolge (Testhilfe und Zählwerk). */
 export function flacheZeilen(knoten: GliederungsKnoten[]): GliederungsKnoten[] {
   return knoten.flatMap((k) => [k, ...flacheZeilen(k.kinder)]);
+}
+
+/**
+ * Pfad (Wurzel → Zeile) zu der SYNTHETISCHEN Zeile, die diesen Artikel deckt —
+ * oder `null`, wenn der Artikel in der amtlichen Gliederung liegt (dann ist
+ * `pfadZu` über den Rohbaum zuständig, §5: eine Quelle je Frage).
+ *
+ * W2·19-GLIEDERUNG/S5, Spec §3.4 «Scroll-Spy kennt den Zustand ‹vor dem ersten
+ * Knoten› und markiert ihn». Ohne diese Auflösung liest man beim RBUE 47 von 49
+ * Artikeln, ohne dass die Leiste irgendetwas markiert.
+ */
+export function findeSynthPfad(knoten: GliederungsKnoten[], token: string): string[] | null {
+  for (const k of knoten) {
+    if (k.art !== 'sektion') {
+      if (k.tokens?.includes(token)) return [k.id];
+      const tiefer = findeSynthPfad(k.kinder, token);
+      if (tiefer) return [k.id, ...tiefer];
+    }
+  }
+  return null;
 }
