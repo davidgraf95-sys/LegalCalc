@@ -77,7 +77,9 @@ function eingabeInhalt({ a, set }: SeiteCtx<WvAntworten>, schritt: number) {
                 onClick={() => set('werkArt', w.id)}
                 className={`rounded-lg border px-3 py-2 text-left text-body-s ${a.werkArt === w.id ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
                 <span className="font-medium block">{w.label}</span>
-                <span className="text-ink-500 text-xs">{w.hint}</span>
+                {/* LM-176 (Fahrplan B5, §6): ink-500 auf gewählter bg-brass-100
+                    lag bei 4.37:1 (unter WCAG AA) — Muster wie VorlageNda.tsx. */}
+                <span className="text-ink-600 text-xs">{w.hint}</span>
               </button>
             ))}
           </div>
