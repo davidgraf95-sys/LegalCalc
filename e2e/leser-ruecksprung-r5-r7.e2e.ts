@@ -39,8 +39,17 @@ const chip = (page: Page) => page.getByRole('button', { name: /zurück zu/ });
 // Aussage, die er immer meinte: ein Sprung-Ziel, das die Nutzerin auch anklicken
 // kann. Geprüft wird unverändert dasselbe, und `.last()` bleibt der weitest
 // entfernte Abschnitt.
+// W2·19-GLIEDERUNG/S4 — deklarierte Selektor-Nachführung (Bau-Spec §3.3/§10,
+// e2e-Freigabe David 8.8.2026): `:not([aria-label])` unterschied den Sprungknopf
+// vom Chevron, weil NUR das Chevron ein `aria-label` trug. Seit S4 trägt auch der
+// Sprungknopf eines — er muss es tragen: sein sichtbares Label ist auf zwei
+// Zeilen geklammert (`line-clamp-2`, Labels bis 280 Zeichen), und ohne den vollen
+// Text im zugänglichen Namen wäre der Rest für Screenreader still verloren (§8).
+// Das trennscharfe Merkmal ist jetzt `aria-expanded`: das hat das Chevron (und
+// nur das), weil es einen Auf-/Zu-Zustand ansagt. Geprüft wird unverändert
+// dasselbe — ein sichtbarer, anklickbarer Sprungknopf einer Baumzeile.
 const tocSprung = (page: Page) =>
-  page.locator('[data-toc] li[data-sektion-id] button:not([aria-label]):visible');
+  page.locator('[data-toc] li[data-sektion-id] button:not([aria-expanded]):visible');
 
 // ── R3 · Die Kopie trägt den amtlichen Deep-Link ─────────────────────────────
 test.describe('R3 — zitierfähige Referenz', () => {

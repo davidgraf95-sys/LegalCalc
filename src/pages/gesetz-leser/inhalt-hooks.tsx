@@ -628,11 +628,24 @@ export function useLeserSprungSpy(opts: {
     // Guards führt also erst der NÄCHSTE Artikelwechsel wieder nach — keine verspätete
     // Rückhol-Bewegung, die das Erkunden abbricht.
     if (Date.now() - tocTouchRef.current < 1500) return;
-    const aktive = cont.querySelectorAll('[data-toc-aktiv]');
-    const el = aktive[aktive.length - 1] as HTMLElement | undefined;
+    // W2·19-GLIEDERUNG/S4 (F5): bis hierher trugen ALLE Vorfahren des aktiven Pfads
+    // `data-toc-aktiv`, und diese Stelle nahm den LETZTEN Treffer in Dokumentordnung,
+    // also den tiefsten. Seit F5 gibt es nur noch EINE Marke (Bau-Spec §3.5) — die
+    // Auswahl entfällt. `querySelector` statt `[length-1]` ist dabei kein Stil,
+    // sondern die Probe auf die Invariante: gäbe es doch mehrere Treffer, wäre der
+    // erste der OBERSTE, das Sichtfenster spränge zum Wurzelknoten statt zur
+    // Leseposition — der Fehler fiele sofort auf, statt sich zu verstecken.
+    const el = cont.querySelector('[data-toc-aktiv]') as HTMLElement | null;
     if (!el) return;
     const cr = cont.getBoundingClientRect();
     const er = el.getBoundingClientRect();
+    // Zone A (Standort-Pfad + Quickjump) klebt seit S4 INNERHALB dieses Scrollers und
+    // verdeckt dessen oberste Pixel. Rechnete der Nudge weiter gegen `cr.top`, schöbe
+    // er die aktive Zeile exakt unter diesen Sockel und meldete «sichtbar», was
+    // niemand sieht. Die Höhe wird GEMESSEN, nicht angenommen — sie hängt daran, ob
+    // der Erlass einen Quickjump hat (ohne `loeseArtikel` entfällt er).
+    const zoneA = cont.querySelector('[data-toc-zone-a]') as HTMLElement | null;
+    const deckel = zoneA?.getBoundingClientRect().height ?? 0;
     // F1 (RC1a): minimaler Rand-NUDGE statt Zentrieren, INSTANT statt smooth. Nur so
     // weit scrollen, dass der aktive Eintrag knapp in das 8-px-Dead-Band am jeweiligen
     // Rand rückt (Auslöseschwelle == Zielposition → kein Re-Trigger); Delta ≈ eine
@@ -640,7 +653,7 @@ export function useLeserSprungSpy(opts: {
     // Bewusst KEIN scrollIntoView({block:'nearest'}): das kann Ancestor/Seite mitscrollen
     // (E-Regression, Kommentar oben «nie die Seite scrollen»). Kein `smooth`: beseitigt
     // den Klickziel-Hazard (Buttons wandern nicht mehr unter dem Cursor weg).
-    const dOben = er.top - (cr.top + 8);
+    const dOben = er.top - (cr.top + deckel + 8);
     const dUnten = er.bottom - (cr.bottom - 8);
     if (dOben < 0) cont.scrollTo({ top: cont.scrollTop + dOben });
     else if (dUnten > 0) cont.scrollTo({ top: cont.scrollTop + dUnten });

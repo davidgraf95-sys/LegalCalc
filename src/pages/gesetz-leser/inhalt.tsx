@@ -9,6 +9,7 @@ import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
 } from './berechnungen';
+import { baueGliederungsModell } from './gliederungsModell';
 import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
 import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
@@ -87,6 +88,25 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Lesespalte (renderSektion unten) arbeitet weiter auf dem vollen `sektionen`
   // (§15-Treue: Inhalt/Anker/Ctrl+F/Print vollständig; reine TOC-Kuration).
   const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
+
+  // W2·19-GLIEDERUNG/S4: das Gliederungs-MODELL (S3) ist seit hier die Eingabe der
+  // Leiste — Modus, Zählwerte, Bereiche, Einzelkind-Verdichtung, Vorspann- und
+  // Anhang-Knoten kommen aus der reinen, unit-getesteten Ableitung statt aus der
+  // Render-Rekursion (§3 Schichtentrennung).
+  //
+  // `startSichtbarGo: true` — Davids Entscheid vom 8.8.2026 (Bau-Spec §11 Ziff. 1,
+  // Entscheid-Protokoll: «1 = Ja, sichtbar»). Er MODULIERT den 5.8.-Entscheid
+  // «alles zu», er hebt ihn nicht auf: kleine Bäume (≤ 40 Zeilen) und der
+  // Artikel-Index starten sichtbar, grosse Kodifikationen (OR/ZGB) bleiben
+  // unverändert zugeklappt — die Unterscheidung trifft das Modell an der
+  // Zeilenzahl (gliederungsModell.ts, `startOffeneTiefe`).
+  const modell = useMemo(
+    () => baueGliederungsModell({
+      sektionen: tocSektionen, ohneGliederung, eintraege: eintraege ?? [], struktur,
+      startSichtbarGo: true,
+    }),
+    [tocSektionen, ohneGliederung, eintraege, struktur],
+  );
 
   // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
   // aus dem TATSÄCHLICHEN Aufbau des Erlasses ab (Struktur-Sidecar: Gliederungstiefe
@@ -323,10 +343,14 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggle` sind
   // oben als useCallback definiert (über dem early-return, Rank 4).
   const tocBaumEl = (
-    // A36: kuratierter Baum (tocSektionen) — Sprung-/Toggle-Handler arbeiten
-    // weiter über IDs des vollen Baums (Teilmenge, pfadZu findet sie identisch).
-    <SektionBaumTOC sektionen={tocSektionen} aktivPfad={aktivIds} offen={tocBaum}
-      onToggle={tocToggle} onSprung={springeZuSektion} />
+    // A36: das Modell ist auf dem KURATIERTEN Baum gebaut (tocSektionen) —
+    // Sprung-/Toggle-Handler arbeiten weiter über die Ids des vollen Baums
+    // (Teilmenge, pfadZu findet sie identisch). `onSprungArtikel` bedient die
+    // synthetischen Zeilen (Vorspann/Anhänge), die keine `sek-N`-Identität
+    // haben und darum über ihren ersten Artikel-Token springen.
+    <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} offen={tocBaum}
+      startOffeneTiefe={modell.startOffeneTiefe}
+      onToggle={tocToggle} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
   );
 
   return (

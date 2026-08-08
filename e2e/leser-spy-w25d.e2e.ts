@@ -217,13 +217,27 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
     expect(abweichungen(proben), 'Kopf-Artikel weicht unter 6× Drossel von der Bezugslinie ab').toEqual([])
 
     // aria: der aktive Gliederungs-Eintrag ist als solcher ausgezeichnet.
-    const aktiv = page.locator('[data-toc] [aria-current="true"]')
-    expect(await aktiv.count(), 'kein aria-current im Gliederungsbaum').toBeGreaterThan(0)
+    // W2·19-GLIEDERUNG/S4 (F5) — deklarierte Anpassung, und zwar eine
+    // VERSCHÄRFUNG (Bau-Spec §3.5, e2e-Freigabe David 8.8.2026). Bisher trugen
+    // ALLE Vorfahren des Lesepfads `aria-current="true"`; ein Screenreader
+    // meldete damit bis zu sechs gleichzeitige Standorte — eine Falschaussage
+    // (§8), weshalb hier auch nur «mehr als null» geprüft werden konnte. Seit F5
+    // trägt GENAU EINER die Marke, und zwar mit dem Wert `location`: es ist eine
+    // Stelle im Dokument, keine Seite. Der Test prüft jetzt beides — Wert und
+    // Anzahl — statt nur die blosse Anwesenheit.
+    const aktiv = page.locator('[data-toc] [aria-current="location"]')
+    expect(await aktiv.count(), 'genau EIN aria-current="location" im Gliederungsbaum').toBe(1)
+    expect(await page.locator('[data-toc] [aria-current]').count(), 'kein zweites aria-current').toBe(1)
 
     // Tastatur-Bedienung: ein Gliederungs-Eintrag ist fokussierbar und springt per
     // Enter (bewusst der ERSTE Eintrag — der aktive läge schon am Ziel und der
-    // Sprung wäre kein Beweis).
-    const ziel = page.locator('[data-toc] button[aria-current], [data-toc] button').first()
+    // Sprung wäre kein Beweis). S4: auf den ersten SPRUNG-Knopf einer Baumzeile
+    // gescopt. Zwei Gründe, beide aus dieser Slice: seit Zone A im Scroller
+    // klebt, wäre der erste Knopf in `[data-toc]` der Quickjump (Enter auf leerem
+    // Feld bewegt zu Recht nichts), und innerhalb einer Zeile steht das Chevron
+    // vor dem Sprungknopf — das Chevron klappt nur auf. `:not([aria-expanded])`
+    // trifft genau den Knopf, den der Test immer meinte.
+    const ziel = page.locator('[data-toc] li[data-sektion-id] button:not([aria-expanded])').first()
     await ziel.focus()
     await expect(ziel).toBeFocused()
     const vorher = await page.evaluate(() => Math.round(window.scrollY))

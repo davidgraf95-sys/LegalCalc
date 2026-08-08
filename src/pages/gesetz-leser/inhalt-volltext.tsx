@@ -171,6 +171,19 @@ export function LeserVolltextInhalt({
   const quickjump = loeseArtikel
     ? <ArtikelSprungFeld loese={loeseArtikel} onSprung={springeZuArtikel} />
     : null;
+  // W2·19-GLIEDERUNG/S4 · Zone-A-Pfadzeile (Bau-Spec §2). Sie ist die Antwort auf
+  // die T1-Sorge, die F5 aufwirft: seit der Positionsmarke trägt im Baum nur noch
+  // EINE Zeile die Markierung, und bei einer fünfstufigen Kodifikation (ZGB/OR)
+  // ist «der tiefste Knoten» allein keine Verortung. Der volle Pfad steht darum
+  // hier — einzeilig, dieselben Daten wie das mobile Sheet (§5, siePfad kommt aus
+  // dem bestehenden Scroll-Spy, es wird nichts zusätzlich beobachtet).
+  // Kurzform: die tiefsten ZWEI Stufen ausgeschrieben, davor «…». Der volle Pfad
+  // bleibt über title/aria-label erreichbar — nie stiller Verlust (§8).
+  const sieHierGlieder = [...siePfad, ...(siePfadArtikel ? [siePfadArtikel] : [])];
+  const sieHierVoll = sieHierGlieder.length > 0 ? sieHierGlieder.join(' › ') : 'Noch keine Leseposition erfasst';
+  const sieHierKurz = sieHierGlieder.length === 0
+    ? 'Noch keine Leseposition erfasst'
+    : (sieHierGlieder.length > 2 ? '… › ' : '') + sieHierGlieder.slice(-2).join(' › ');
   // E3/A34 + E5/A35: das «Ansicht»-Dropdown im SPLIT-VIEW (nur `imPane`). Es lebt in
   // der pane-lokalen STICKY Kopfzeilen-Such-Leiste (data-such-bar) statt im
   // wegscrollenden ErlassLeserKopf — so bleibt die Ansichtswahl beim Lesen im Pane
@@ -405,13 +418,6 @@ export function LeserVolltextInhalt({
               <p className="lc-overline">Gliederung</p>
               <button type="button" onClick={() => setTocOffen((v) => !v)} className="text-micro text-ink-500 hover:text-brass-700" title="Gliederung ein-/ausklappen">{tocOffen ? '‹ einklappen' : 'ausklappen ›'}</button>
             </div>
-            {/* R2: derselbe Quickjump-Baustein wie im mobilen Sheet, im TOC-KOPF
-                (Fahrplan R2 ausdrücklich: «derselbe Baustein auch im Desktop-TOC-
-                Kopf»). Er steht AUSSERHALB des [data-toc]-Scrollers, damit er beim
-                Blättern im Baum stehen bleibt und der A33-Mitscroll-/Scroll-Spy
-                den Scroller unverändert vorfindet. §15/2: fixe Höhe, ab dem ersten
-                Render da ⇒ kein Einwachsen, CLS 0. */}
-            {quickjump && <div className="mb-2 shrink-0">{quickjump}</div>}
             {/* A32 + E4-Korrektur (David 25.7.2026: «das kontextfenster soll
                 gliederung nicht abschneiden. sie soll einfach unten an der
                 gliederung stehen»): das Kontext-Panel steht IM FLUSS INNERHALB
@@ -428,6 +434,28 @@ export function LeserVolltextInhalt({
                 höhe, verschiebt aber kein sichtbares Element (CLS 0, Beweis neu
                 geführt in e2e/leser-kontext-e4.e2e.ts). */}
             <div data-toc className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
+              {/* ── Zone A (W2·19-GLIEDERUNG/S4, Bau-Spec §2) ──────────────────
+                  Standort-Sockel: «Sie sind hier»-Pfadzeile + Quickjump, sticky
+                  INNERHALB des [data-toc]-Scrollers.
+                  WARUM INNERHALB und nicht darüber: die E4-Assertion misst
+                  `tocClient > aside · 0.85` — jedes Element, das ausserhalb des
+                  Scrollers über ihm sitzt, zehrt direkt von diesem Verhältnis.
+                  Der Quickjump stand bisher genau dort (R2-Kommentar: «damit er
+                  beim Blättern stehen bleibt»); sticky im Scroller leistet
+                  dasselbe, ohne die 85 % anzugreifen — er bleibt beim Blättern
+                  ebenso stehen, zählt aber zum Scroller.
+                  §15.2 CLS 0: beide Zeilen stehen ab dem ERSTEN Render da und
+                  haben feste Höhe — die Pfadzeile ist einzeilig (`truncate`,
+                  nie umbrechend) und zeigt ohne bekannte Leseposition einen
+                  ehrlichen Platzhalter statt zu verschwinden (§8). `bg-paper`
+                  deckt die durchlaufenden Baumzeilen ab. */}
+              <div data-toc-zone-a className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
+                <p data-toc-pfad className="truncate text-micro leading-snug text-ink-500"
+                  title={sieHierVoll} aria-label={`Sie sind hier: ${sieHierVoll}`}>
+                  {sieHierKurz}
+                </p>
+                {quickjump && <div className="mt-1.5">{quickjump}</div>}
+              </div>
               {tocBaumEl}
               {kontextImToc && (
                 <div data-toc-kontext className="mt-4 border-t border-line pt-3">
