@@ -561,3 +561,39 @@ Provenienz §7 verletzt hätte. B2/D2/E1 sind damit maschinell abgesichert.
 > Reine Disziplin-Befunde (A2b) und domänenbedingte Ausnahmen (2-spaltiges
 > Normtext-Layout, Druckbild-`em`-Grössen in `vorschauStil.ts`) sind bewusst
 > KEINE Pflicht-Fixes, sondern dokumentierte, vertretbare Abweichungen.
+
+---
+
+## §-Konkordanz (für Alt-Verweise im Bestand)
+
+`CLAUDE.md` §13 führte bis zum A4-Umzug (25.7.2026, `b2fa14dda`) eine eigene
+operative Liste **§13.1–§13.7**. Sie ist dort ersatzlos weggefallen; §13 verweist
+seither auf dieses Reglement, das mit **Buchstaben-Codes** zählt (A–G, F2b-Nach-
+träge). Rund zwei Dutzend Verweise im Bestand — Code-Kommentare, Fahrpläne,
+E2E-Tests — zeigen weiterhin auf die alten Ziffern und lösen hier auf. Auch die
+Schreibweise «§13 Ziff. 3» meint §13.3.
+
+| Alt (`CLAUDE.md` §13.x) | Neu (dieses Reglement) |
+|---|---|
+| §13.1 Tokens statt Magic-Numbers (keine `text-sm`/`text-[…px]`, keine Ad-hoc-Farben, kein Hex in Komponenten) | **D2** (Grundsatz) · **B2** (Typo-Skala) · **B3** (Status-Familien statt Ad-hoc-Farben) · **F1** (Abstand) · **F7** (Farb-Token, erzwungen durch `check:farbwelt`) |
+| §13.2 Verdikt zuerst, Warum auf Abruf; Fliesstext in der Lesespalte | **B1** (Verdikt zuerst) · **B2** (`max-w-reading`, volle Fensterbreite verboten) |
+| §13.3 Sprache: aktiv, kurz, kein ALL-CAPS-Fliesstext, klar für Fach **und** Laie | **A1–A3** (dazu **A4**: kein Lesbarkeits-Score als Gütesiegel) |
+| §13.5 Jeder Rechtswert mit Norm + Link + Stand | **D1** (verzahnt mit `CLAUDE.md` §7) |
+| §13.7 UI-Design: Block F gilt vollständig | **Block F** (F1–F9) samt F2b-Nachträgen; F7 erzwingt `check:farbwelt` |
+| §13.4 (leeres Formular zeigt keine Fehler) und §13.6 (maschinell Prüfbares gehört in Code) — im Bestand nicht mehr zitiert | **C2** (verzahnt mit **F4**) bzw. **E1** (dazu **E2**: CH-Evidenz-Lücke) |
+
+**Über §13.7 hinaus gab es nie eine Ziffer** — ein Verweis auf §13.8+ ist ein
+Tippfehler, kein Umzugsverlust.
+
+Zwei Fallen beim Auflösen:
+
+- Die Codes sind **feiner** als die alten Ziffern: eine Alt-Ziffer trifft
+  regelmässig mehrere Codes (§13.1). Wer eine Alt-Nummer auflöst, prüft alle
+  genannten Codes, nicht nur den ersten.
+- Der Namensraum ist **nicht exklusiv**: Fahrpläne vergeben eigene §-Nummern.
+  `FAHRPLAN-UI-QUALITAET.md:9` zeigt auf «`FAHRPLAN-GESETZES-UX.md` §13.1» —
+  diese Zieldatei hat gar keinen §13, das ist kein Verweis auf diese Tabelle.
+
+Verweise werden **nicht umgeschrieben** — die Anker-Logik hält die alten Nummern
+stabil, diese Tabelle löst sie auf (gleiches Muster: Skill `auftrag` Ziff. 9 für
+§14.x, Skill `refactoring` Ziff. 8 für §6.x, Skill `perf` für §15.x).
