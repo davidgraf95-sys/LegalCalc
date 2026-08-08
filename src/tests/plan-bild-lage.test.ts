@@ -398,6 +398,7 @@ const SCHRITT: SchrittInfo = {
   pflicht: [],
   ankerDefekt: null,
   gekuerzt: false,
+  checkliste: null,
 };
 
 describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
@@ -422,5 +423,54 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
     expect(bauPrompt(einheit(), { ...SCHRITT, par: null, ankerDefekt: '9' })).toContain(
       'existiert in dieser Datei NICHT',
     );
+  });
+});
+
+describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)', () => {
+  const dach: SchrittInfo = { ...SCHRITT, checkliste: { offen: 3, gesamt: 5, offenTexte: ['A', 'B', 'C'] } };
+
+  it('nennt offene Positionen, die Sortenrein-Regel und ersetzt den L-Schneide-Rat', () => {
+    const p = bauPrompt(einheit({ groesse: 'L' }), dach);
+    expect(p).toContain('Dach-Schritt mit Checkliste: 3 von 5 Positionen offen');
+    expect(p).toContain('SORTENREIN');
+    expect(p).not.toContain('in sessionfüllende Teilschritte schneiden');
+  });
+
+  it('koppelt status=done an die leere Checkliste', () => {
+    expect(bauPrompt(einheit(), dach)).toContain('NUR wenn danach keine Position mehr offen ist');
+  });
+
+  it('ohne offene Positionen bleibt der Prompt der Normalfall', () => {
+    const leer: SchrittInfo = { ...SCHRITT, checkliste: { offen: 0, gesamt: 5, offenTexte: [] } };
+    const p = bauPrompt(einheit({ groesse: 'L' }), leer);
+    expect(p).not.toContain('Dach-Schritt mit Checkliste:');
+    expect(p).toContain('in sessionfüllende Teilschritte schneiden');
+  });
+});
+
+describe('schrittInfoAusRoadmap — Nachblock und Checkliste (Entstückelung 8.8.2026)', () => {
+  const MD_DACH = [
+    '- [ ] **QS-DACH · Ein Dach mit Positionen** *(Zusatz)*',
+    '  <!-- @meta id: QS-DACH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/x] · worktree: nein · 26x: nein · groesse: L -->',
+    '  Beschreibung NACH dem Etikett — sie gehört in den Wortlaut.',
+    '  - [ ] **P1 · Erste Position** — offen.',
+    '  - [x] **P2 · Zweite Position** — erledigt.',
+    '  - [ ] **P3 · Dritte Position** — offen.',
+    '- [ ] **QS-NAECHSTER · Nächste Einheit**',
+    '  <!-- @meta id: QS-NAECHSTER · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+  ].join('\n');
+
+  it('zählt offene und gesamte Positionen und stoppt an der nächsten Einheit', () => {
+    const info = schrittInfoAusRoadmap(MD_DACH);
+    expect(info.get('QS-DACH')?.checkliste).toEqual({
+      offen: 2,
+      gesamt: 3,
+      offenTexte: ['P1 · Erste Position — offen.', 'P3 · Dritte Position — offen.'],
+    });
+    expect(info.get('QS-NAECHSTER')?.checkliste).toBeNull();
+  });
+
+  it('nimmt die Beschreibung nach dem Etikett in den Auftrags-Wortlaut auf', () => {
+    expect(schrittInfoAusRoadmap(MD_DACH).get('QS-DACH')?.prosa).toContain('Beschreibung NACH dem Etikett');
   });
 });

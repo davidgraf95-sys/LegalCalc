@@ -69,6 +69,11 @@ export interface SchrittInfo {
   ankerDefekt: string | null;
   /** true, wenn der Wortlaut gekappt wurde (der Prompt sagt das dann dazu). */
   gekuerzt: boolean;
+  /** Checkliste eines Dach-Schritts (Entstückelung 8.8.2026): `- [ ]`-Positionen
+   *  UNTER dem @meta. Ohne diese Erfassung wüsste weder Prompt noch Lagebild,
+   *  dass ein Schritt aus Positionen besteht — der Prompt riete dann zu
+   *  «Unterschritt bauen», den es nicht mehr gibt. */
+  checkliste: { offen: number; gesamt: number; offenTexte: string[] } | null;
 }
 
 /** Marker, der eine Kappung im Prompt UNÜBERSEHBAR macht. Ein blosses «…»
@@ -175,6 +180,7 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
     let pflicht: string[] = [];
     let gekuerzt = false;
     let ankerDefekt: string | null = null;
+    let checkliste: SchrittInfo['checkliste'] = null;
     for (let j = i - 1; j >= Math.max(0, i - 12); j--) {
       if (!istEinheitenZeile(zeilen, j)) continue;
       const fett = zeilen[j].match(/\*\*(.+?)\*\*/);
@@ -185,7 +191,34 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
         .replace(/^[^·]{1,18}·\s*/, '') // Kurz-ID-Präfix («5-PRAXIS · …»)
         .replace(/^\+\s*/, '') // Fortsetzungs-Plus («+ Auftrags-Eingang …», W3·14-S)
         .trim();
-      const block = zeilen.slice(j, i).join(' ');
+      // NACHBLOCK (Entstückelung 8.8.2026): Beschreibung, Detail-Anker und
+      // Checkliste eines Dach-Schritts stehen NACH dem @meta. Der frühere
+      // Nur-Vorblock-Scan lieferte für solche Schritte einen fast leeren
+      // «Auftrags-Wortlaut» (nur den Klammer-Zusatz der Titelzeile) — der
+      // Prompt baute damit am Auftrag vorbei. Grenzen: nächstes @meta,
+      // nächste Top-Level-Einheit, etikettierter Unterschritt, Überschrift.
+      const nachProsa: string[] = [];
+      let chkOffen = 0;
+      let chkGesamt = 0;
+      const chkOffenTexte: string[] = [];
+      for (let k = i + 1; k < Math.min(zeilen.length, i + 60); k++) {
+        const z = zeilen[k];
+        if (/^\s*<!-- @meta/.test(z)) break;
+        if (/^#{1,6}\s/.test(z) || /^---/.test(z) || /^- /.test(z)) break;
+        if (/^\s+- /.test(z) && /@meta id:/.test(zeilen[k + 1] ?? '')) break;
+        const chk = z.match(/^\s+-\s\[([ xX])\]\s*(.*)$/);
+        if (chk) {
+          chkGesamt++;
+          if (chk[1] === ' ') {
+            chkOffen++;
+            if (chkOffenTexte.length < 12) chkOffenTexte.push(klartext(chk[2]));
+          }
+          continue;
+        }
+        if (z.trim()) nachProsa.push(z);
+      }
+      checkliste = chkGesamt > 0 ? { offen: chkOffen, gesamt: chkGesamt, offenTexte: chkOffenTexte } : null;
+      const block = [...zeilen.slice(j, i), ...nachProsa].join(' ');
       // Die fette ID·Titel-Passage steht bereits im Einleitungssatz des
       // Bau-Prompts. Sie ein zweites Mal im Wortlaut mitzuschleppen kostete
       // bis zu 90 Zeichen der Kappungsgrenze — bei QS-EXTQUELLEN genau die,
@@ -227,7 +260,7 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
       pflicht = [...block.matchAll(/(?:\*\*)?(?:Befunde|Dossier):(?:\*\*)?\s*\[[^\]]*\]\(([^)]+)\)/g)].map((x) => x[1]);
       break;
     }
-    if (titel) info.set(id, { titel, prosa, par, pflicht, gekuerzt, ankerDefekt });
+    if (titel) info.set(id, { titel, prosa, par, pflicht, gekuerzt, ankerDefekt, checkliste });
   }
   for (const [id, t] of Object.entries(TITEL_OVERRIDE)) {
     const alt = info.get(id);
@@ -238,6 +271,7 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
       pflicht: alt?.pflicht ?? [],
       gekuerzt: alt?.gekuerzt ?? false,
       ankerDefekt: alt?.ankerDefekt ?? null,
+      checkliste: alt?.checkliste ?? null,
     });
   }
   return info;

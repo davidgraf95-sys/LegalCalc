@@ -121,10 +121,13 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
   // ableitet (bündeln bzw. schneiden), und `plan:next` gibt das Feld nicht aus. Stünde
   // die Schätzung allein im Lagebild, ginge sie beim Kopieren des Auftrags verloren —
   // die Session sähe genau das nicht, wofür geschätzt wurde.
-  const groesseZeile = {
+  const istDach = (info?.checkliste?.offen ?? 0) > 0;
+  const groesseZeile = istDach
+    ? [`Geschätzte Grösse: ${e.etikett.groesse ?? 'ungeschätzt'} — Dach-Schritt mit Checkliste: NICHT alles auf einmal bauen, sondern eine sessionfüllende Auswahl offener Positionen (sortenrein).`]
+    : {
     S: ['Geschätzte Grösse: S — trägt keine eigene Session. Im Grössen-Check (Skill `bauschritt`, Station A) 1–2 kollisionsfreie Nachbarn gleicher Risikoklasse aus `ready-now` dazunehmen, je eigener Commit und Trailer.'],
     M: ['Geschätzte Grösse: M — sessionfüllend, der Normalfall. Kein Zusatz-Handgriff im Grössen-Check.'],
-    L: ['Geschätzte Grösse: L — voraussichtlich zu gross für eine Session. VOR dem Bau in sessionfüllende Teilschritte schneiden (AP-6-Muster); bei einem Dach-Schritt stattdessen den passenden Unterschritt bauen.'],
+    L: ['Geschätzte Grösse: L — voraussichtlich zu gross für eine Session. VOR dem Bau in sessionfüllende Teilschritte schneiden (AP-6-Muster).'],
   }[e.etikett.groesse ?? ''] ?? ['Geschätzte Grösse: ungeschätzt — für diesen Schritt liegt keine Schätzung vor; den Umfang im Grössen-Check selbst beurteilen.'];
   groesseZeile.push('Die Grösse ist eine Schätzung und kein Tor-Kriterium: weicht der Befund im Bau davon ab, das `groesse:`-Feld im @meta korrigieren und die Abweichung melden.', '');
   const zeilen = [
@@ -136,8 +139,11 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
     ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
+    ...(istDach
+      ? [`Dach-Schritt mit Checkliste: ${info!.checkliste!.offen} von ${info!.checkliste!.gesamt} Positionen offen (die Zeilen stehen in ROADMAP.md unter dem Schritt). Sessionfüllend viele Positionen SORTENREIN abarbeiten — Risiko- und Nicht-Risiko-Positionen nie im selben Paket —, je Position ein eigener Commit, erledigte Positionen in ROADMAP.md abhaken.`, ``]
+      : []),
     ...groesseZeile,
-    `Arbeitsweise (Anweisung David 4.8.2026, Skill \`auftrag\` Ziff. 6): Diese Session ORCHESTRIERT nur — Bau- und Prüfarbeit gehen an Unteragenten (Dispatch-Template, je Call model+effort explizit). Modellwahl nach Schwierigkeit: anspruchsvoller Bau auf Opus, mechanische/leichte Arbeit auf Sonnet oder Haiku, Gegenprüfung stets auf einem ANDEREN Modell als dem bauenden. Die Hauptsession prüft Rückgaben gegen prüfbare Artefakte, landet und pflegt den Plan.`,
+    `Arbeitsweise (Entscheid David 7./8.8.2026, Skill \`auftrag\` Ziff. 6): Die Session delegiert die schwere Arbeit — grosser, riskanter oder parallelisierbarer Bau und JEDE Gegenprüfung gehen an Unteragenten (je Call model+effort explizit; Gegenprüfung stets auf einem ANDEREN Modell als dem bauenden). Kleine verifizierte Fixes ohne tiefen Code-Kontext sowie Plan-/Doku-Buchhaltung macht sie selbst — Massstab: Übersteigt der Übergabe-Aufwand die Arbeit selbst, nicht delegieren. Rückgaben stets gegen prüfbare Artefakte prüfen.`,
     ``,
     `1. Lies CLAUDE.md und starte mit dem Skill \`auftrag\` (Aufnahme-Protokoll).`,
     `2. ERSTE Handlung: npm run plan:set -- ${e.id} status=wip && npm run check:plan — dann als Doku-Commit auf main pushen (sonst ist der Bau für parallele Sessions unsichtbar).`,
@@ -153,7 +159,7 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
           : `4. Detail-Spec lesen: npm run fahrplan -- ${fp} <§> (den §-Verweis nennt der Schritt in ROADMAP.md).`
       : `4. Detail steht direkt im Schritt-Wortlaut in ROADMAP.md (kein eigener Fahrplan) — lies den Block dort VOLLSTÄNDIG.`,
     ...pflichtZeilen,
-    `5. Definition of Done (Skill \`auftrag\` Ziff. 4): npm run gate grün · berührt der Diff Risiko-Pfade (istRisikoPfad, scripts/gegenpruefung/kern.ts), Skill \`gegenpruefung\` fahren und Verdikt quittieren · verhaltensändernd ⇒ Golden byte-gleich · Status-Marker (§8) · npm run plan:set -- ${e.id} status=done && npm run check:plan · Session-Karte in STRUKTUR.md nachziehen.`,
+    `5. Definition of Done (Skill \`auftrag\` Ziff. 4): npm run gate grün · berührt der Diff Risiko-Pfade (istRisikoPfad, scripts/gegenpruefung/kern.ts), Skill \`gegenpruefung\` fahren und Verdikt quittieren · verhaltensändernd ⇒ Golden byte-gleich · Status-Marker (§8) · ${istDach ? `Häkchen der gebauten Positionen in ROADMAP.md setzen; npm run plan:set -- ${e.id} status=done NUR wenn danach keine Position mehr offen ist, sonst Status wieder freigeben (ready bzw. parked bei offenem PR)` : `npm run plan:set -- ${e.id} status=done`}; danach npm run check:plan · Session-Karte in STRUKTUR.md nachziehen.`,
     `6. Commits, die den Schritt erfüllen, tragen den Trailer: Roadmap: ${e.id}`,
     ``,
     `Vertrauensgrenze (§14.7, wörtlich): ${VERTRAUENSGRENZE}`,
@@ -328,6 +334,23 @@ export function lagebildSeite(o: SeitenOpts): string {
     ? `<p class="lage"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${groesseBadge(byId.get(empfohlen)?.etikett.groesse ?? null)}${prompts[empfohlen] ? ` <button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button>` : ''}<br><span class="sub">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span>. Die Grösse ist eine Schätzung und kein Tor: <b>S</b> lohnt keine eigene Session (gebündelt nehmen), <b>M</b> ist der Normalfall, <b>L</b> vor dem Bau in Teilschritte schneiden.</span></p>`
     : '<p class="lage"><b>Empfohlener nächster Bau:</b> keiner — kein Schritt ist gerade baubar.</p>';
 
+  // Fehlerbuch-Kasten (Entscheid David 8.8.2026): W2·18-FEHLERBUCH ist der
+  // stehende Sammel-Schritt für Alltags-Fehlerfunde — der Kasten zeigt die
+  // offenen Positionen bzw. erklärt den Melde-Weg, damit der Sammel-Mechanismus
+  // ohne ROADMAP-Lektüre nutzbar ist.
+  const fb = schritte.get('W2·18-FEHLERBUCH')?.checkliste ?? null;
+  const fbOffen = fb?.offen ?? 0;
+  const fehlerbuchHtml = `<div class="panel" style="margin-top:1.2rem">
+    <h3>Dein Fehlerbuch (W2·18-FEHLERBUCH)</h3>
+    ${
+      fbOffen > 0
+        ? `<p class="sub">${fbOffen} offene Position${fbOffen === 1 ? '' : 'en'} aus deiner täglichen Nutzung — eine Fix-Batch-Session arbeitet sie gebündelt ab (ein Branch, einmal Tore, eine Landung).</p>
+    <ul class="liste" style="margin-top:.6rem">${(fb?.offenTexte ?? []).map((x) => `<li><span class="s ready"></span><div>${esc(x)}</div></li>`).join('\n')}${fbOffen > (fb?.offenTexte.length ?? 0) ? `<li><span class="sub">… und ${fbOffen - (fb?.offenTexte.length ?? 0)} weitere in ROADMAP.md</span></li>` : ''}</ul>
+    ${prompts['W2·18-FEHLERBUCH'] ? `<p class="next"><button class="kopier" data-id="W2·18-FEHLERBUCH">Fix-Batch-Prompt kopieren</button></p>` : ''}`
+        : `<p class="sub">Keine offenen Positionen. Fällt dir bei der täglichen Nutzung ein Fehler auf, melde ihn einfach im Chat — die Session trägt ihn hier ein; behoben wird gebündelt statt einzeln.</p>`
+    }
+  </div>`;
+
   const davidHtml = [
     ...b.blockiert.map((x) => {
       const tage = blockerSeitTagen(x.blocker);
@@ -336,22 +359,6 @@ export function lagebildSeite(o: SeitenOpts): string {
     }),
     ...DAVID_FRAGEN.map((f) => `<li>${esc(f.frage)} <span class="quelle">(${esc(f.quelle)})</span></li>`),
   ].join('\n');
-
-  const phasenHtml = PHASEN.map(
-    (p) => `<div class="phase ${p.stand}"><span class="dot"></span><span class="t"><b>${esc(p.name)}</b>${p.stand === 'now' ? ' <span class="chip gold">hier stehen wir</span>' : p.stand === 'done' ? ' <span class="chip done">erledigt</span>' : ''}<span class="sub">${esc(p.kurz)}</span></span></div>`,
-  ).join('\n');
-
-  // Bestand-Kacheln: DIESELBEN Quellen wie die Seite «Projekt & Produkt»
-  // (Norm-Register, Rechtsprechungs-Register, `ALLE_KARTEN`) — vier Seiten,
-  // eine Zählweise (§5). Die frühere Ein-Seiten-Fassung zählte Dateien im
-  // Ordner bzw. `status:`-Literale in den Karten-Quelldateien und wich
-  // dadurch von der aufgeschlüsselten Darstellung ab (Befund 4.8.2026).
-  const norm = normRegister();
-  const rspr = rechtsprechungRegister();
-  const kat = katalogZaehlung();
-  const bundZahl = norm ? norm.erlasse.filter((e) => e.ebene === 'bund').length : null;
-  const kantonZahl = norm ? norm.erlasse.filter((e) => e.ebene === 'kanton').length : null;
-  const werkzeugeLive = kat.entwurf + kat['geprüft'];
 
   // Bau-Messreihe (Schritt QS-SELBSTOPT, Stufe 1 «erst messen»). Zeigt den
   // letzten Snapshot von `messwerte/selbstopt-zeitreihe.json`.
@@ -392,12 +399,13 @@ export function lagebildSeite(o: SeitenOpts): string {
     watch: o.watch,
     marke: 'Lagebild',
     h1: 'LexMetrik — wo der Aufbau steht',
-    lede: `Ziel («Nordstern»): die eine Anlaufplattform für alle Rechtsanwender — nur amtliche Quellen,
-  transparente Fundstellen, deterministische Werkzeuge. Diese Seite wird mechanisch aus dem Steuerplan erzeugt
-  (dieselbe Logik wie <span class="id">npm run plan:next</span>).`,
+    lede: `Bau-Steuerpult: mechanisch aus dem Steuerplan erzeugt (dieselbe Logik wie
+  <span class="id">npm run plan:next</span>) — nur bautechnische Information (Vorgabe David 8.8.2026).
+  Allgemeines zum Projekt: <a href="${projektLink}">Projekt &amp; Produkt</a> (dort auch die Gesamtkarte)
+  · <a href="${geschichteLink}">Geschichte</a> · <a href="${methodeLink}">Arbeitsweise &amp; Glossar</a>.`,
     extra: `<p class="lage"><b>${esc(lageSatz)}</b></p>
   ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
-  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#karte">Gesamtkarte</a> · <a href="#baustellen">Baustellen</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
+  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#baustellen">Baustellen</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
   });
 
   // Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
@@ -434,15 +442,6 @@ ${jetzt}
   </div>
 </section>
 
-<section id="was">
-  <p class="eyebrow">Was ist LexMetrik?</p>
-  <h2>Kurz gesagt</h2>
-  <p class="lede">${WAS_IST_LEXMETRIK}</p>
-  <p class="lede">${esc(STATUS_SATZ)}</p>
-  <p class="hinweis">Ausführlich: <a href="${projektLink}">Projekt &amp; Produkt</a> (Werkzeuge, Gesetzes-Korpus, Rechtsprechung)
-  · <a href="${geschichteLink}">Geschichte</a> (Zeitachse und Bau-Statistik) · <a href="${methodeLink}">Arbeitsweise</a> (wie gebaut wird, Glossar).</p>
-</section>
-
 <section id="imbau">
   <p class="eyebrow">Gerade im Bau</p>
   <h2>Was jetzt läuft</h2>
@@ -464,30 +463,13 @@ ${jetzt}
   <p class="lede">Mit «Bau-Prompt kopieren» holst du dir den fertigen Auftrag für eine neue Claude-Code-Session
   (enthält wip-Setzen, Worktree-Regel, Spec-Befehl, Definition of Done und die §14.7-Klausel).</p>
   ${empfohlenHtml}
+  ${fehlerbuchHtml}
   <ol class="queue">${queueHtml}</ol>
   ${laneEmpfehlung.length > 1 ? `<div class="panel" style="border-color:var(--sage);background:var(--sage-bg);margin-top:1.2rem">
     <h3 style="color:var(--sage)">Jetzt parallel startbar — ohne Kollision</h3>
     <p class="sub">Diese Schritte berühren getrennte Dateiflächen (Resolver-Lane 1): du kannst für jeden eine eigene Session starten, sie kommen sich nicht in die Quere.</p>
     <ul class="liste" style="margin-top:.6rem">${laneHtml}</ul>
   </div>` : ''}
-</section>
-
-<section id="karte">
-  <p class="eyebrow">Gesamtkarte</p>
-  <h2>Wo wir auf dem Weg zum Nordstern stehen</h2>
-  <p class="lede">Die Monatsangaben des Gesamtaufbau-Plans sind Reihenfolge, keine Termine.</p>
-  <div class="phasen">${phasenHtml}</div>
-  ${kacheln([
-    { wert: bundZahl, label: 'Bundeserlasse live' },
-    { wert: kantonZahl, label: 'kantonale Erlasse live' },
-    { wert: rspr ? rspr.entscheide.length : null, label: 'Gerichtsentscheide live' },
-    { wert: werkzeugeLive || null, label: 'Werkzeuge live (Status «Entwurf»)' },
-    { wert: kat.geplant || null, label: 'weitere Werkzeuge geplant' },
-    ...(chronik !== null ? [{ wert: chronik, label: 'Arbeitspakete bereits erledigt &amp; archiviert (Chronik)' }] : []),
-  ])}
-  <p class="hinweis">Zählweise: Erlasse aus <span class="id">public/normtext/register.json</span>, Entscheide aus
-  <span class="id">public/rechtsprechung/register.json</span>, Werkzeuge aus dem Katalog <span class="id">ALLE_KARTEN</span> —
-  dieselben Quellen wie auf <a href="${projektLink}">Projekt &amp; Produkt</a>, wo sie aufgeschlüsselt sind.</p>
 </section>
 
 <section id="baustellen">
@@ -732,6 +714,16 @@ export function projektSeite(o: SeitenOpts): string {
   <p class="lede">${esc(STATUS_SATZ)}</p>
   <p class="hinweis">Wie dabei gearbeitet wird — Bahnen, Prüfungen, Begriffe — steht auf
   <a href="${esc(seitenDatei(o.indexPfad, 'methode'))}">Arbeitsweise &amp; Glossar</a>.</p>
+</section>
+
+<section id="karte">
+  <p class="eyebrow">Gesamtkarte</p>
+  <h2>Wo wir auf dem Weg zum Nordstern stehen</h2>
+  <p class="lede">Die Monatsangaben des Gesamtaufbau-Plans sind Reihenfolge, keine Termine.
+  <span class="sub">(Hierher gezogen vom Lagebild — dort stehen seit 8.8.2026 nur noch bautechnische Angaben.)</span></p>
+  <div class="phasen">${PHASEN.map(
+    (p) => `<div class="phase ${p.stand}"><span class="dot"></span><span class="t"><b>${esc(p.name)}</b>${p.stand === 'now' ? ' <span class="chip gold">hier stehen wir</span>' : p.stand === 'done' ? ' <span class="chip done">erledigt</span>' : ''}<span class="sub">${esc(p.kurz)}</span></span></div>`,
+  ).join('\n')}</div>
 </section>
 
 ${werkzeugeAbschnitt}
