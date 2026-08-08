@@ -319,12 +319,17 @@ export function lagebildSeite(o: SeitenOpts): string {
           : blockiert
             ? '<span class="chip block">teils blockiert</span>'
             : '';
-      const naechster = es.find((e) => baubar.has(e.id));
+      // Kopf-Knopf nie auf einen S-Schritt (Auftrag David 8.8.2026, «Prompts
+      // entfernen, die ich nicht verwenden soll»): S trägt keine eigene Session
+      // — ein prominenter Start-Knopf dafür wäre eine Falle. Sein Prompt bleibt
+      // in der Einzelschritt-Liste (fürs bewusste Bündeln).
+      const naechster = es.find((e) => baubar.has(e.id) && e.etikett.groesse !== 'S');
+      const nurKlein = !naechster && es.some((e) => baubar.has(e.id));
       return `<div class="card bz ${bereichKlasse(bz)}">
   <div class="kopf"><h3>${esc(bz)}</h3>${chip}</div>
   <p class="zweck">${esc(bereichsErklaerung.get(bz) ?? '')}</p>
   <span class="fortschritt">${es.length} Schritt${es.length === 1 ? '' : 'e'} offen · ${sofort} sofort baubar${wip ? ` · ${wip} im Bau` : ''}${blockiert ? ` · ${blockiert} blockiert` : ''}</span>
-  ${naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(naechster.id))}${groesseBadge(naechster.etikett.groesse)} <button class="kopier" data-id="${esc(naechster.id)}">Bau-Prompt kopieren</button></p>` : ''}
+  ${naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(naechster.id))}${groesseBadge(naechster.etikett.groesse)} <button class="kopier" data-id="${esc(naechster.id)}">Bau-Prompt kopieren</button></p>` : nurKlein ? `<p class="next sub">Nur Klein-Schritte (Grösse S) übrig — allein keine Session wert; zum Bündeln stehen ihre Prompts in der Einzelschritt-Liste.</p>` : ''}
   <details><summary>Einzelschritte (${es.length})</summary><ul>${es.map(schrittZeile).join('\n')}</ul></details>
 </div>`;
     })
