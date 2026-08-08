@@ -28,6 +28,10 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 (Weiterbau 3, leichter Pfad) — UI-Befunde Batch B3: Klebende Leisten, 7/7 (W2·17-UI-BEFUNDE, PR #471)
+
+**Erstlauf des leichten Pfads** (sortenreiner Nicht-Risiko-Fix-Batch, Freigabe David 3.8.2026): B3/K-01 komplett — Topbar volldeckend (LM-001/006, Blocker), Sprungziel-scroll-margin (LM-002, Blocker), Pane-Leiste flach (LM-003/004), Aktiv-Chip per IntersectionObserver (LM-005), Dichte-Angleich (LM-007). Bau delegiert (Sonnet, Vintage-Regel je Befund reproduziert); Orchestrator-Verifikation entkräftete zwei Agent-Fehlbefunde (7 «Vorbestand»-qsui-Rotfälle = stale dist, nach frischem Build 65/65; CLS-Einzelriss = Font-Lade-Contention, 12/13 isoliert grün, main identisch, CI 8/8 sauber). Golden 256/256 byte-gleich · gate voll · CI-Batterie grün. Dach offen: 16 Batches (B4–B19).
+
 ## Session 8.8.2026 (Weiterbau 2) — Reglement-Audit-Vollzug: Konkordanzen, zwei Tore, Wächter-Budget (QS-AUDIT-VERWEISE, PR #470)
 
 **L-Schritt am selben Tag zum Dach geschnitten (Entstückelungs-Muster) und alle 8 Positionen gelandet** (Merge `791dee94e`): §15-/§13-/§12.2-Konkordanzen (gut 150 + 24 + 5 tote Alt-Verweise lösen wieder auf; Bau delegiert an Opus-Agenten, Tabellen adversarial auf **Sonnet** gegengeprüft — bestanden, Alt-Stand `b2fa14dda^` selbst geholt) · fixkosten-§16-Anker · **`check:testtreue`** (§6.3: refactor-Commits ändern keine Tests; merge-base-Muster, in CI, rot live gezeigt) · **§3-ESLint-Regel** (date-fns-Arithmetik in pages/components gesperrt, DatumsFeld begründet gegrandfathert, rot gezeigt) · **CLAUDE.md-Budget 14 KB** im struktur-rotieren-Wächter (rot gezeigt) · §10-Chesterton (Behalt mit Provenienz).

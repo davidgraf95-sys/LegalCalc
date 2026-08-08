@@ -547,7 +547,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   (Blocker zuerst); die frühere `dep`-Kette B3→B19 war reine Abarbeitungsordnung, kein fachlicher
   Zwang. Sessionfüllende Batches à mehrere Positionen, alles reine Darstellungsschicht (kein
   Risikopfad), je Position eigener Commit mit Trailer `Roadmap: W2·17-UI-BEFUNDE`.
-  - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
+  - [x] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4. ✅ 8.8.2026, PR #471.
   - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). **Grenze** zu `W2·5h-GESETZ-UI`/`W2·5d` beachten. §5.
   - [ ] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). §6.
   - [ ] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). §7.
