@@ -16,7 +16,6 @@ import { parseRoadmap, type Einheit } from './parse';
 import { resolve, type Buckets } from './aufloesen';
 import {
   KANTONE,
-  OHNE_FAHRPLAN,
   bauPlaetze,
   baustellenInfo,
   blockerSeitTagen,
@@ -41,6 +40,9 @@ import {
   type SchrittInfo,
 } from './bildDaten';
 import {
+  BEREICH_ERKLAERUNG,
+  UEBRIGE_TECHNIK,
+  WIRKUNGSBEREICHE,
   bereichsBadges,
   esc,
   fussnote,
@@ -52,6 +54,7 @@ import {
   seitenKopf,
   tabelle,
   wasGeradePassiert,
+  wirkungsbereiche,
   type SeitenOpts,
 } from './bildHtml';
 
@@ -221,24 +224,22 @@ export function lagebildSeite(o: SeitenOpts): string {
     if (e) prompts[id] = bauPrompt(e, schritte.get(id), erledigt);
   }
 
-  // Baustellen-Gruppierung nach fahrplan:-Feld.
-  const gruppen = new Map<string, Einheit[]>();
-  for (const e of einheiten) {
-    const key = e.etikett.fahrplan ?? '—';
-    if (!gruppen.has(key)) gruppen.set(key, []);
-    gruppen.get(key)!.push(e);
+  // Bau-Bereiche (Auftrag David 8.8.2026, «grundlegend besser eingeteilt»):
+  // Gliederung nach Wirkungsbereich — DERSELBEN Ableitung wie die Badges
+  // (`wirkungsbereiche()`, §5), keine zweite Taxonomie. Ein Schritt mit
+  // mehreren Flächen zählt bei seinem HAUPT-Bereich (erste Fläche der
+  // Ableitungs-Reihenfolge); Schritte OHNE `kollision:` bilden einen eigenen,
+  // ehrlichen Eimer (§8) statt still in «Übrige Technik» zu fallen.
+  const OHNE_FLAECHE = 'Ohne deklarierte Fläche';
+  const bereichVon = (e: Einheit): string => wirkungsbereiche(e.etikett.kollision)[0] ?? OHNE_FLAECHE;
+  const nachBereich = new Map<string, Einheit[]>();
+  for (const e of offen) {
+    const bz = bereichVon(e);
+    if (!nachBereich.has(bz)) nachBereich.set(bz, []);
+    nachBereich.get(bz)!.push(e);
   }
-  const kartenDaten = [...gruppen.entries()]
-    .map(([fp, es]) => {
-      const info = fp === '—' ? OHNE_FAHRPLAN : baustellenInfo(fp);
-      const done = es.filter((e) => e.etikett.status === 'done').length;
-      const wip = es.filter((e) => e.etikett.status === 'wip');
-      const blockiert = es.filter((e) => e.etikett.status === 'blocked');
-      const naechster = es.find((e) => baubar.has(e.id));
-      return { fp, info, es, done, wip, blockiert, naechster, offen: es.length - done };
-    })
-    .filter((k) => k.offen > 0)
-    .sort((a, b2) => (b2.wip.length - a.wip.length) || (b2.offen - a.offen));
+  const bereichsErklaerung = new Map<string, string>(BEREICH_ERKLAERUNG);
+  bereichsErklaerung.set(OHNE_FLAECHE, 'Schritte ohne kollision:-Angabe im Etikett — Fläche deklarieren, dann ordnen sie sich mechanisch ein.');
 
   const statusPunkt = (s: string) => (s === 'done' ? 'done' : s === 'wip' ? 'wip' : s === 'blocked' ? 'block' : 'ready');
 
@@ -281,35 +282,43 @@ export function lagebildSeite(o: SeitenOpts): string {
     .map((id) => `<li>${schrittLabel(t(id), id)}${groesseBadge(byId.get(id)?.etikett.groesse ?? null)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
     .join('\n');
 
-  const karten = kartenDaten
-    .map((k) => {
-      const pct = Math.round((k.done / k.es.length) * 100);
-      const chip = k.wip.length
+  const schrittZeile = (e: Einheit) => {
+    const knopf = baubar.has(e.id)
+      ? ` <button class="kopier" data-id="${esc(e.id)}" title="Bau-Auftrag für eine neue Session kopieren">Bau-Prompt kopieren</button>`
+      : e.etikett.status === 'blocked'
+        ? ` <span class="sub">⛔ ${esc(e.etikett.blocker ?? 'blockiert')}</span>`
+        : e.etikett.status === 'wip'
+          ? ' <span class="sub">🔨 im Bau</span>'
+          : e.etikett.status === 'parked'
+            ? ' <span class="sub">⏸ geparkt</span>'
+            : '';
+    const chk = schritte.get(e.id)?.checkliste;
+    const chkText = chk && chk.offen > 0 ? ` <span class="sub">Checkliste: ${chk.offen} offen</span>` : '';
+    const fpName = e.etikett.fahrplan ? baustellenInfo(e.etikett.fahrplan).name : null;
+    return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${chkText}${knopf}${fpName ? `<br><span class="sub">Baustelle: ${esc(fpName)}</span>` : ''}</div></li>`;
+  };
+  const statusRang = (e: Einheit) => (e.etikett.status === 'wip' ? 0 : baubar.has(e.id) ? 1 : e.etikett.status === 'parked' ? 2 : e.etikett.status === 'blocked' ? 3 : 2);
+  const karten = [...WIRKUNGSBEREICHE, UEBRIGE_TECHNIK, OHNE_FLAECHE]
+    .filter((bz) => nachBereich.has(bz))
+    .map((bz) => {
+      const es = [...nachBereich.get(bz)!].sort((a, b2) => statusRang(a) - statusRang(b2));
+      const wip = es.filter((e) => e.etikett.status === 'wip').length;
+      const sofort = es.filter((e) => baubar.has(e.id)).length;
+      const blockiert = es.filter((e) => e.etikett.status === 'blocked').length;
+      const chip = wip
         ? '<span class="chip wip">im Bau</span>'
-        : k.blockiert.length
-          ? '<span class="chip block">teils blockiert</span>'
-          : k.done > 0
-            ? '<span class="chip done">läuft</span>'
-            : '<span class="chip ready">bereit</span>';
-      const einzel = k.es
-        .map((e) => {
-          const knopf = baubar.has(e.id)
-            ? ` <button class="kopier" data-id="${esc(e.id)}" title="Bau-Auftrag für eine neue Session kopieren">Bau-Prompt kopieren</button>`
-            : e.etikett.status === 'blocked'
-              ? ` <span class="sub">⛔ ${esc(e.etikett.blocker ?? 'blockiert')}</span>`
-              : e.etikett.status === 'wip'
-                ? ' <span class="sub">🔨 im Bau</span>'
-                : '';
-          return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${knopf}</div></li>`;
-        })
-        .join('\n');
+        : sofort
+          ? '<span class="chip ready">bereit</span>'
+          : blockiert
+            ? '<span class="chip block">teils blockiert</span>'
+            : '';
+      const naechster = es.find((e) => baubar.has(e.id));
       return `<div class="card">
-  <div class="kopf"><h3>${esc(k.info.name)}</h3>${chip}</div>
-  <p class="zweck">${esc(k.info.zweck)}</p>
-  <div class="bar"><i style="width:${pct}%"></i></div>
-  <span class="fortschritt">${k.done} von ${k.es.length} im Plan geführten Schritten erledigt${k.wip.length ? ` · ${k.wip.length} im Bau` : ''}</span>
-  ${k.naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(k.naechster.id))}${groesseBadge(k.naechster.etikett.groesse)} <button class="kopier" data-id="${esc(k.naechster.id)}">Bau-Prompt kopieren</button></p>` : ''}
-  <details><summary>Einzelschritte (${k.es.length})</summary><ul>${einzel}</ul></details>
+  <div class="kopf"><h3>${esc(bz)}</h3>${chip}</div>
+  <p class="zweck">${esc(bereichsErklaerung.get(bz) ?? '')}</p>
+  <span class="fortschritt">${es.length} Schritt${es.length === 1 ? '' : 'e'} offen · ${sofort} sofort baubar${wip ? ` · ${wip} im Bau` : ''}${blockiert ? ` · ${blockiert} blockiert` : ''}</span>
+  ${naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(naechster.id))}${groesseBadge(naechster.etikett.groesse)} <button class="kopier" data-id="${esc(naechster.id)}">Bau-Prompt kopieren</button></p>` : ''}
+  <details><summary>Einzelschritte (${es.length})</summary><ul>${es.map(schrittZeile).join('\n')}</ul></details>
 </div>`;
     })
     .join('\n');
@@ -405,7 +414,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   · <a href="${geschichteLink}">Geschichte</a> · <a href="${methodeLink}">Arbeitsweise &amp; Glossar</a>.`,
     extra: `<p class="lage"><b>${esc(lageSatz)}</b></p>
   ${ampel ? `<p>${ampel.gruen ? '<span class="chip done">✓ main gesund</span>' : '<span class="chip block">✗ main ROT</span>'} <span class="sub">letzter Lauf «${esc(ampel.name)}» ${esc(ampel.wann)}</span></p>` : ''}
-  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#baustellen">Baustellen</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
+  <nav class="springen">Springen zu: <a href="#jetzt">Was gerade passiert</a> · <a href="#david">Wartet auf dich</a> · <a href="#imbau">Im Bau</a> · <a href="#gelandet">Zuletzt gelandet</a> · <a href="#queue">Warteschlange</a> · <a href="#baustellen">Bau-Bereiche</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
   });
 
   // Laien-Block «Was gerade passiert» (Schritt QS-PLAN-BILD-LAGE, Auftrag David
@@ -473,11 +482,12 @@ ${jetzt}
 </section>
 
 <section id="baustellen">
-  <p class="eyebrow">Baustellen</p>
-  <h2>Die Baustellen im Einzelnen</h2>
-  <p class="lede">Sortiert: im Bau zuerst, dann nach Umfang. Der Balken zeigt nur die aktuell im Plan geführten
-  Schritte — ${chronik !== null ? `die ${chronik} bereits erledigten Arbeitspakete liegen im <a href="${geschichteLink}">Chronik-Archiv</a>` : 'ganze abgeschlossene Wellen liegen im Chronik-Archiv'} und drücken die Zahlen hier nicht mehr.</p>
-  <input id="filter" type="search" placeholder="Baustellen filtern — z. B. «Gesetze», «Kanton», «Design» …" aria-label="Baustellen filtern">
+  <p class="eyebrow">Bau-Bereiche</p>
+  <h2>Alle offenen Schritte, nach Bereich gegliedert</h2>
+  <p class="lede">Dieselbe Einteilung wie die Bereichs-Badges (mechanisch aus den deklarierten Dateiflächen abgeleitet);
+  ein Schritt mit mehreren Flächen steht bei seinem Hauptbereich. Innerhalb: im Bau zuerst, dann sofort Baubares.
+  ${chronik !== null ? `Die ${chronik} bereits erledigten Arbeitspakete liegen im <a href="${geschichteLink}">Chronik-Archiv</a> und erscheinen hier nicht mehr.` : ''}</p>
+  <input id="filter" type="search" placeholder="Schritte filtern — z. B. «Kanton», «Design», «Suche» …" aria-label="Schritte filtern">
   <div class="cards">${karten}</div>
 </section>
 
