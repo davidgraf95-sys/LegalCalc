@@ -79,50 +79,33 @@ export const AUTO_ZU_NACHLAUF = 6;
  * Fallback-Schalter (s. o.): `false` stellt exakt den 19.7.-Zustand her — es
  * klappen nur noch Äste GANZ UNTERHALB des Sichtbands zu.
  *
- * STEHT AUF `false` — der deklarierte Fallback ist GEZOGEN (Spec §3.6: «Scheitert
- * die Kompensation auf dem CI-Runner reproduzierbar, wird NICHT
- * nachjustiert-gezittert, sondern zurückgefallen — nie ein springender Baum.»)
+ * STEHT AUF `true`. Der Fallback wurde am 9.8.2026 kurzzeitig GEZOGEN und nach
+ * einer Nullprobe wieder gelöst — die Begründung dafür ist lehrreich genug, um
+ * sie hier zu behalten:
  *
- * BEFUNDKETTE, in dieser Reihenfolge gemessen:
  *  1. `leser-gliederung-a33` «A9 — Lese-Scroll unter CPU-Drossel» riss im vollen
  *     Vor-Merge-Lauf mit CLS 0.050354 (Budget 0.05); drei sichtbare Baumzeilen
- *     280×43 → 0×0. Isoliert 5/5 grün — der Defekt braucht Parallel-Last.
+ *     280×43 → 0×0. Isoliert 5/5 grün — der Fall braucht Parallel-Last.
  *  2. Sonde (231 protokollierte Entscheidungen): zum MESSZEITPUNKT lag in allen
- *     acht Geometrie-Urteilen keine Kind-Zeile im Band. Die Hypothese «der
- *     Wächter misst nur den Ast-Kopf» ist damit widerlegt.
- *  3. Härtung versucht — `flushSync` für JEDEN Durchgang (Beschluss und Mutation
- *     im selben Frame) und ein Sicherheitssaum von 64 px. Beides ist sachlich
- *     richtig und BLEIBT. Der rote Fall kam trotzdem wieder, mit exakt
- *     demselben CLS-Wert (0.050354573641222526) auf einer zweiten Maschine.
- *  4. Gegenprobe `F2_OBERHALB = false`: erst 5/5 grün — dann im
- *     Wiederholungslauf 2 von 5 ROT, mit BIT-IDENTISCHEM Wert
- *     (0.050354573641222526) und denselben drei Zeilen. Die Gegenprobe war
- *     also Glück, nicht Kausalität: die Oberhalb-Richtung ist NICHT die
- *     Ursache. Das ist hier ausdrücklich festgehalten, weil der erste
- *     Fünferlauf genau die Fehlzuschreibung nahelegte, vor der §0-3 warnt.
- * DER FALLBACK BLEIBT TROTZDEM GEZOGEN — nicht als Ursachen-Behebung, sondern
- * weil die Oberhalb-Richtung ohne belegten Nutzen zusätzliche Bewegung in einen
- * Bereich bringt, der nachweislich am Budget kratzt. Die eigentliche Ursache des
- * roten Falls ist zum Zeitpunkt dieses Commits NICHT gefunden; sie liegt
- * ausserhalb des Zuklappens (die verschwindenden Zeilen sind laut
- * Herkunfts-Sonde TOP-LEVEL-Knoten — sek-275/1052/1680/1782 —, und die kann
- * kein Ast-Kollaps entfernen). Der Befund ist an den Auftraggeber gemeldet.
+ *     acht Geometrie-Urteilen KEINE Kind-Zeile im Band. Die Hypothese «der
+ *     Wächter misst nur den Ast-Kopf» war damit widerlegt.
+ *  3. `F2_OBERHALB = false` → erst 5/5 grün, dann 2/5 rot mit BIT-IDENTISCHEM
+ *     Wert. Also nicht die Ursache; der erste Fünferlauf war Glück.
+ *  4. Unmount zurückgebaut → 3/10 rot, gleiche Signatur. Auch nicht die Ursache.
+ *  5. NULLPROBE gegen den Stand VOR dieser Slice (1bbb00e26, S4): 1/10 rot —
+ *     gleiche drei Zeilen, gleicher Wert 0.06495/0.050354. Der Defekt ist ÄLTER
+ *     als das Auto-Zuklappen und hat mit ihm nichts zu tun.
+ * Konsequenz: der Schalter bleibt in der gebauten Stellung, weil kein Befund
+ * gegen ihn spricht. Die Ursache des a33-Falls ist NICHT gefunden und ist als
+ * eigener Befund gemeldet — sie liegt in S4 oder davor (die verschwindenden
+ * Zeilen sind laut Herkunfts-Sonde TOP-LEVEL-Knoten sek-275/1052/1680/1782, und
+ * die kann kein Ast-Kollaps entfernen).
  *
- * WAS DAS KOSTET, ehrlich (§8): das Auto-Zuklappen bringt in dieser Stellung
- * wenig — beim Vorwärtslesen liegen die verlassenen Äste oberhalb, und genau die
- * bleiben nun offen. Gemessen wächst der Baum wieder bis ~138 Zeilen (mit
- * Oberhalb-Richtung waren es 96–110). Davids Wunsch «teile sollen wieder zugehen,
- * wo man sich nicht befindet» ist damit NUR TEILWEISE erfüllt.
- * WAS BLEIBT: der Unmount (F3) trägt den Löwenanteil der Entlastung — die
- * DOM-Last im Baum fällt weiterhin von 20 389 auf ~1 676 Knoten, und der Baum
- * startet zugeklappt statt mit 2 181 gemounteten Zeilen.
- * WAS FOLGT: die Oberhalb-Richtung ist nicht verworfen, sondern zurückgestellt.
- * Sie braucht einen Mechanismus, der ohne Scroll-Korrektur auskommt — der
- * naheliegende Weg ist, den Ast nicht auszuhängen, sondern seine Höhe zu
- * KONSERVIEREN (Platzhalter), solange er oberhalb steht. Das ist ein eigener
- * Schritt mit eigenem Rot-Beweis, kein Nachjustieren an dieser Stelle.
+ * §0-3 in Reinform: vier Hypothesen, jede durch eine Messung widerlegt, und die
+ * eine Messung, die alles entschieden hat, war die Nullprobe. Sie hätte am
+ * Anfang stehen müssen, nicht am Ende.
  */
-export const F2_OBERHALB = false;
+export const F2_OBERHALB = true;
 
 /**
  * Sicherheitssaum um das Sichtband, in px (W2·19-GLIEDERUNG/S5, Nachtrag).
@@ -246,8 +229,18 @@ export function planeZuklappen(opts: {
   // bereits in der des Oberastes. Summierte man beide, überkompensierte der
   // Scroll und der Baum spränge in die andere Richtung — derselbe Schaden, nur
   // mit umgekehrtem Vorzeichen.
-  const kompensation = obenAeste
-    .filter((a) => !obenAeste.some((b) => b !== a && b.contains(a)))
+  // B1 (Bug-Check 9.8.2026, HOCH): erst DEDUPLIZIEREN, dann summieren. Eine
+  // verdichtete Einzelkind-Kette trägt alle ihre Ids an DERSELBEN Zeile — steht
+  // mehr als eine davon im Auto-Set, liefert `zeileZu` für jede dasselbe
+  // Element, und `obenAeste` enthielt denselben Ast mehrfach. Der
+  // Verschachtelungs-Filter unten fängt das NICHT ab: er vergleicht `b !== a`,
+  // und bei identischer Referenz ist das falsch, beide bleiben stehen. Die Höhe
+  // wäre n-fach in die Kompensation eingegangen und der Baum in die
+  // GEGENRICHTUNG gesprungen — schlimmer als gar keine Korrektur. Betroffen
+  // sind genau die Erlasse mit Ketten (ZGB, BS-211.100, BS-640.100).
+  const einmalig = [...new Set(obenAeste)];
+  const kompensation = einmalig
+    .filter((a) => !einmalig.some((b) => b !== a && b.contains(a)))
     .reduce((n, a) => n + a.getBoundingClientRect().height, 0);
   return { schliessen, kompensation };
 }

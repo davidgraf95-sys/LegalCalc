@@ -266,12 +266,16 @@ const Zeile = memo(function Zeile({
                 sichtbar davor, sonst behauptete die Zeile eine Ebene, die es
                 nicht gibt. Gedämpft, damit der Sachtitel führt. */}
             {k.labelKette.length > 1 && (
-              <span className="text-ink-400"> ({k.labelKette.slice(0, -1).join(' › ')})</span>
+              // B5 (Bug-Check 9.8.2026): `text-ink-400` misst hell 3.30:1 gegen
+              // `paper` und reisst damit WCAG AA für Text (4.5:1). ink-500 ist
+              // der nächste tor-geprüfte Ton, der die Dämpfung behält.
+              <span className="text-ink-500"> ({k.labelKette.slice(0, -1).join(' › ')})</span>
             )}
           </span>
           {/* Aufgehoben-Signal (§3.3, Inventar C «heute klappt man blind auf»):
               sichtbarer Text, nicht nur `title`. Statisch je Knoten ⇒ kein CLS. */}
-          {k.aufgehoben && <span className="ml-1 text-micro text-ink-400">aufgehoben</span>}
+          {/* B5: s. o. — auch dieser Zusatz ist TEXT und braucht 4.5:1. */}
+          {k.aufgehoben && <span className="ml-1 text-micro text-ink-500">aufgehoben</span>}
         </button>
         {/* Adaptiver Zählwert (§3.3): zugeklappt «Art. 1–40 · 14», aufgeklappt
             nur «14». Der Bereich wird beim Aufklappen NICHT entfernt, sondern

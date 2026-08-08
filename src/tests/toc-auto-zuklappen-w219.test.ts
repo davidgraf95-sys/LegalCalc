@@ -45,7 +45,15 @@ function baueToc(contTop: number, contBottom: number, zeilen: ZeilenBau[]): HTML
     if (z.ast) aeste.set(z.ids[0], { rect: z.ast, enthaelt: z.enthaelt ?? [] });
   }
 
+  // Der echte DOM liefert für dieselbe Zeile IMMER dasselbe Element. Das Double
+  // muss das nachbilden, sonst kann es Referenz-Identität nicht prüfen — und
+  // genau darauf beruht die Dedup-Regel (B1). Ohne diesen Cache gäbe jeder
+  // Aufruf ein neues Objekt, und der Test bewiese eine Eigenschaft des Doubles
+  // statt eine des Codes.
+  const astCache = new Map<string, HTMLElement>();
   const astEl = (schluessel: string): HTMLElement => {
+    const zwischen = astCache.get(schluessel);
+    if (zwischen) return zwischen;
     const eintrag = aeste.get(schluessel)!;
     const el = {
       __id: schluessel,
@@ -57,7 +65,9 @@ function baueToc(contTop: number, contBottom: number, zeilen: ZeilenBau[]): HTML
       contains: (anderer: { __id?: string }) =>
         anderer?.__id !== undefined && eintrag.enthaelt.includes(anderer.__id),
     };
-    return el as unknown as HTMLElement;
+    const fertig = el as unknown as HTMLElement;
+    astCache.set(schluessel, fertig);
+    return fertig;
   };
 
   const zeileEl = (z: ZeilenBau): HTMLElement => ({
@@ -210,15 +220,16 @@ describe('S5 — wer geschützt bleibt', () => {
     expect(plan.schliessen).toEqual([]);
   });
 
-  it('PRODUKTIONS-DEFAULT ist der gezogene Fallback: oberhalb wird NICHT zugeklappt', () => {
-    // Der Schalter steht nach dem a33-Rotlauf auf `false` (Herleitung dort).
-    // Dieser Fall hält den Ist-Zustand fest, damit ein Wiedereinschalten eine
-    // BEWUSSTE Änderung ist und nicht unbemerkt mitläuft.
-    expect(F2_OBERHALB).toBe(false);
+  it('PRODUKTIONS-DEFAULT festgehalten: die Oberhalb-Richtung ist AKTIV', () => {
+    // Hält den Ist-Zustand des Fallback-Schalters fest, damit ein Umlegen eine
+    // BEWUSSTE Änderung ist und nicht unbemerkt mitläuft. Er stand am 9.8.2026
+    // kurzzeitig auf `false`; die Nullprobe hat gezeigt, dass der rote a33-Fall
+    // älter ist als diese Slice, und den Schalter wieder freigegeben.
+    expect(F2_OBERHALB).toBe(true);
     const toc = baueToc(100, 500, [{ ids: ['sek-1'], ast: OBEN }, { ids: ['sek-2'], ast: UNTEN }]);
     const plan = planeZuklappen({ tocCont: toc, auto: ['sek-1', 'sek-2'], aktivIds: [], tick: TICK, ticks: alt(['sek-1', 'sek-2']) });
-    expect(plan.schliessen).toEqual(['sek-2']);
-    expect(plan.kompensation).toBe(0);
+    expect(plan.schliessen.sort()).toEqual(['sek-1', 'sek-2']);
+    expect(plan.kompensation).toBe(200);
   });
 });
 
@@ -236,6 +247,23 @@ describe('S5 — Kompensation zählt nur die äussersten Äste', () => {
     });
     expect(plan.schliessen.sort()).toEqual(['sek-1', 'sek-2']);
     expect(plan.kompensation).toBe(300); // NUR sek-1, nicht 300 + 100
+  });
+
+  it('B1 — eine verdichtete Kette zählt EINMAL, auch wenn alle ihre Ids im Auto-Set stehen', () => {
+    // DER FALL, DEN B1 MELDET. `sek-7/8/9` sind eine verdichtete Kette und
+    // teilen sich EINE gerenderte Zeile. Stehen alle drei im Auto-Set, liefert
+    // der Id-Lookup dreimal dasselbe Element. Vor dem Dedup ging seine Höhe
+    // dreifach in die Kompensation ein (600 statt 200), der Scroll wurde um das
+    // Dreifache zurückgenommen und der Baum sprang in die Gegenrichtung —
+    // schlimmer als gar keine Korrektur. Gegen den Stand ohne `new Set` ist
+    // dieser Fall rot.
+    const toc = baueToc(100, 500, [{ ids: ['sek-7', 'sek-8', 'sek-9'], ast: OBEN }]);
+    const plan = planeZuklappen({
+      tocCont: toc, auto: ['sek-7', 'sek-8', 'sek-9'], aktivIds: [], tick: TICK,
+      ticks: alt(['sek-7', 'sek-8', 'sek-9']), ...MIT_OBEN,
+    });
+    expect(plan.kompensation, 'Höhe der EINEN Zeile, nicht dreimal').toBe(200);
+    expect(plan.schliessen.sort()).toEqual(['sek-7', 'sek-8', 'sek-9']);
   });
 
   it('nebeneinanderliegende Oberhalb-Äste werden addiert', () => {
