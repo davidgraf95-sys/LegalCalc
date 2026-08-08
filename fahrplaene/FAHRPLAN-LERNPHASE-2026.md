@@ -276,7 +276,7 @@ Dieses Dokument ist Planung; noch nicht committet/gepusht.*
 - **Dateien:** `e2e/*.e2e.ts` (Annotationen), neuer Generator unter `scripts/`,
   `.gitattributes`, `scripts/e2e-shard-gruppen.mjs`.
 
-### §3.6 `QS-GP-NACHBEFUNDE` — Nebenbefunde der Gegenprüfungs-Nacht 4./5.8.2026 (drei Härtungen)
+### §3.6 `QS-GP-NACHBEFUNDE` — Nebenbefunde der Gegenprüfungs-Nächte 4./5. und 8.8.2026 (vier Härtungen)
 
 Drei nicht-blockierende Befunde aus den adversarialen Prüfungen der QS-CODE-Landekette
 (PRs #447/#448, Verdikte im Gegenprüfungs-Register 2026-08-04), gebündelt als eine
@@ -298,6 +298,14 @@ Bau-Einheit — gleiche Risiko-Klasse (Prüf-/Klassifikations-Härtung), keine V
    Krumm» → Teilsegment «Dr. Jürg Krumm» passiert den Partei-Filter)*: Segment verwerfen,
    wenn schon das URSPRUNGS-Segment vor der Titel-Trennung `PARTEI_RE` trifft.
    Regressionstest mit genau dieser Probe.
+
+4. **`check-merge-schutz.ts` Diff-Härtung** *(Nachbefund der QS-GP-BEREICH-Gegenprüfung
+   8.8.2026, Befund B4)*: der Risiko-Diff wird ohne `-z`/`--no-renames` erhoben — ein
+   Nicht-ASCII-Risiko-Pfad käme C-quoted an, `behalten()` träfe nie ⇒ latentes
+   CI-Falsch-Grün (heute alle Risiko-Pfade ASCII; das lokale Bereichs-Tor aus PR #466
+   nutzt `-z` und ist strenger). Rename risk→nonrisk divergiert analog. Fix: Diff-Erhebung
+   auf `-z --no-renames` umstellen (Muster `risikoDiffHash`), Rot-Beweis mit einem
+   Test-Pfad mit Umlaut (§6.7).
 
 - **Risikopfad** (kern.ts-Klassifizierer ist Prüflogik, Punkte 2–3 berühren
   `src/lib/rechtsprechung/besetzung/` = Risiko) ⇒ Gegenprüfung für Punkte 2–3.
