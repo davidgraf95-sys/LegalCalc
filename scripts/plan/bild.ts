@@ -31,6 +31,18 @@
 //                                                   (Default 60); alle vier Seiten
 //                                                   laden sich selbst nach.
 //                                                   Kein Server (Spec).
+//                                                   ACHTUNG (Lehre 8.8.2026): der
+//                                                   Watch-Prozess rendert dauerhaft
+//                                                   mit dem CODE-Stand seines Starts
+//                                                   (Module bleiben geladen; --pull
+//                                                   erneuert nur die Daten). Für
+//                                                   Hintergrund-Betrieb darum NIE
+//                                                   --watch, sondern je Durchlauf
+//                                                   einen frischen Prozess — so der
+//                                                   LaunchAgent ch.lexmetrik.planbild
+//                                                   (planbild-watch.sh, Schleife)
+//                                                   seit 8.8.2026. Anlass: Lagebild
+//                                                   zeigte 4 Tage eine alte Fassung.
 //          npm run plan:bild -- --pull            → vor jeder Erzeugung git pull
 //                                                   --ff-only (still; scheitert der
 //                                                   Pull — schmutzig/divergiert —,
