@@ -147,6 +147,34 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
     return () => document.removeEventListener('pointerdown', klick);
   }, [offen]);
 
+  // LM-009 (§8 B7): Scrollen und Fenstergrössenänderung schliessen ebenfalls.
+  // Der Trigger sitzt in der KLEBENDEN Positionsleiste (§4 B3/K-01) — beim
+  // Scrollen im Gesetzestext blieb das Panel bisher an der Leiste kleben statt
+  // zu schliessen und lag mitten im Fliesstext.
+  //
+  // NICHT das generische `scroll`-Event (Regression, gefunden über die
+  // A9-CPU-Throttle-Probe `leser-kopf-a9.e2e.ts`, Nullprobe §0 Ziff. 3 gegen
+  // den Stand vor diesem Commit: dort grün, hier rot ⇒ eigene Ursache): ein
+  // Fussnoten-/Linien-Toggle verändert die Höhe des Fliesstexts UNTER dem
+  // sichtbaren Ausschnitt, der Browser gleicht das per naitver Scroll-
+  // Anchoring aus — das feuert ein `scroll`-Ereignis OHNE jede Nutzer-Geste
+  // und schloss das eben erst geöffnete Menü, noch bevor der Switch-Klick
+  // ausgewertet war. `wheel`/`touchmove` sind dagegen NUR bei einer echten
+  // Scroll-GESTE der Nutzerin da (Maus/Trackpad bzw. Touch) — Scroll-Anchoring
+  // trifft sie nicht, weil es kein Eingabe-Ereignis auslöst.
+  useEffect(() => {
+    if (!offen) return;
+    const schliesse = () => setOffen(false);
+    window.addEventListener('wheel', schliesse, { passive: true });
+    window.addEventListener('touchmove', schliesse, { passive: true });
+    window.addEventListener('resize', schliesse);
+    return () => {
+      window.removeEventListener('wheel', schliesse);
+      window.removeEventListener('touchmove', schliesse);
+      window.removeEventListener('resize', schliesse);
+    };
+  }, [offen]);
+
   // Effektiver Linien-Zustand: expliziter Nutzer-Wunsch schlägt den Aufbau-Default;
   // im Default 'auto' folgt er dem Aufbau (linienAutoAn).
   const linienEffektivAn = opt.linien === 'an' || (opt.linien === 'auto' && linienAutoAn);

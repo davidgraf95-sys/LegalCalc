@@ -246,12 +246,23 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         // Scroll + overscroll-contain (kein Durchscrollen auf die Seite). Nur der
         // HEADER-Pfad ist gekappt; der Hero nutzt dieselbe SuchResultate ungekappt.
         //
-        // Desktop (sm+): unter dem Feld verankert (absolute, Feldbreite). Mobil
-        // (A5 — die Suchleiste trägt jetzt auch den Norm-Sprung): das Feld ist im
-        // Top-Streifen schmal, ein feldbreites Dropdown würde die Treffer bis zur
-        // Unlesbarkeit kappen. Darum mobil viewport-verankert (fixed, feste
-        // Seitenränder inset-x-2) → lesbare Breite OHNE horizontalen Overflow.
-        <div className="absolute left-0 right-0 top-full mt-2 z-30 max-h-[70vh] overflow-y-auto overscroll-contain rounded-lg max-sm:fixed max-sm:inset-x-2 max-sm:left-2 max-sm:right-2 max-sm:top-[3.75rem] max-sm:mt-0">
+        // Ab 1400 px (LM-008): unter dem Feld verankert (absolute, Feldbreite) —
+        // dort ist das Feld selbst breit genug. Darunter, inkl. des ganzen
+        // «schmal, aber schon Desktop»-Bereichs 640–1400 px (Dedup-Notiz LM-008:
+        // dort erbte das Panel bisher die Feldbreite von ~250–300 px, Titel und
+        // Snippets wurden auf ein bis zwei Wörter beschnitten, Badges lagen über
+        // dem Text) UND mobil (A5 — die Suchleiste trägt den Norm-Sprung): das
+        // Panel ist viewport-verankert (fixed, feste Seitenränder inset-x-2) →
+        // lesbare Breite OHNE horizontalen Overflow, unabhängig von der Feldbreite.
+        // LM-018 (§8 B7): die Trefferzahl-Zeile (SuchResultate) sitzt bewusst
+        // AUSSERHALB der `.lc-card` — im Hero und auf /suche liegt sie damit einfach
+        // auf der Papier-Fläche der Seite (§5, geteilte Komponente, dort kein Bug).
+        // Hier im Header-Dropdown überlagert dasselbe Markup aber fremden Inhalt
+        // (Positions-/Brotkrumleiste dahinter) — ohne eigenen Hintergrund schien
+        // dieser durch die transparente Zeile hindurch. `bg-paper` schliesst NUR
+        // diesen Fundort, ohne SuchResultate selbst (und damit Hero/`/suche`)
+        // anzufassen.
+        <div className="absolute left-0 right-0 top-full mt-2 z-30 max-h-[70vh] overflow-y-auto overscroll-contain rounded-lg bg-paper max-[1400px]:fixed max-[1400px]:inset-x-2 max-[1400px]:left-2 max-[1400px]:right-2 max-[1400px]:top-[3.75rem] max-[1400px]:mt-0">
           {zeigtLeer
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
             ? <SucheLeerzustand onAuswahl={auswahl} />
