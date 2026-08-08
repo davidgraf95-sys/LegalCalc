@@ -8,7 +8,10 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 export default defineConfig([
   // .claude: Agent-Worktrees (isolierte Arbeitskopien) nicht mitlinten —
   // sonst kippen Läufe durch halbfertige Stände fremder Sessions (6.6.2026).
-  globalIgnores(['dist', '.claude']),
+  // .scratch: gitignorierte Wegwerf-Skripte/Messläufe — machten das Gate rot,
+  // obwohl sie nie deployt werden (8.8.2026, QS-SKILL-DIAET-Session; eslint
+  // liest .gitignore nicht von selbst).
+  globalIgnores(['dist', '.claude', '.scratch']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
