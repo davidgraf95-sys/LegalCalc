@@ -25,7 +25,8 @@
 // UMSCHICHTUNG 7.8.2026 (QS-SELBSTOPT-Abschluss): drei erledigte Schritte → Chronik
 // «Umschichtung 7.8.2026». Entfernt: QS-SELBSTOPT · QS-ENTREG-KONFIG · QS-DISPATCH-P0-PRUEF.
 // UMSCHICHTUNG 8.8.2026, zweite Welle (QS-SKILL-DIAET-Abschluss): der erledigte Schritt
-// → Chronik-Abschnitt «Umschichtung 8.8.2026, zweite Welle». Entfernt: QS-SKILL-DIAET.
+// → Chronik-Abschnitt «Umschichtung 8.8.2026, zweite Welle». Entfernt: QS-SKILL-DIAET · QS-CONFIDENCE-EHRLICH
+// (dessen Block dort direkt anschliesst).
 // UMSCHICHTUNG 8.8.2026 (Aufräum-Session, Anlass: Wächter `struktur-rotieren.py --check` rot,
 // ROADMAP.md 104.8 KB über dem 100-KB-Ceiling): sechs erledigte Schritte → Chronik-Abschnitt
 // «Umschichtung 8.8.2026». Entfernt: QS-E2E-TEMPO · QS-GP-BEREICH · W2·10-UI-NAV-S/-V/-J/-O.
@@ -115,7 +116,6 @@ export const INVENTAR: readonly string[] = [
   // bibliothek/betrieb/entregulierung-2026-08-07.md): zwei David-Gates (Konfig/Regelwerk
   // bleibt beim Menschen — Agenten-§0 und Berechtigungssystem sperren es für Sessions)
   // plus ein baubarer Ehrlichkeits-Fix am Confidence-Werkzeug.
-  'QS-CONFIDENCE-EHRLICH',
 
   // Entscheid David 7.8.2026 («stufe 1 ja», nach Aufklärung über die drei Autopilot-Stufen):
   // Vorschlags-Autopilot freigegeben, gebunden an ≥5 Snapshots (Blocker zeitreihe-5-snapshots).

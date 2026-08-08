@@ -2083,3 +2083,10 @@ Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
   <!-- @meta id: QS-SKILL-DIAET · status: done · of: ja · blocker: null · dep: [] · kollision: [.claude/skills] · worktree: nein · 26x: nein · groesse: M -->
 
 *Umsetzung: PR #468 (Merge f14c1f25a, 8.8.2026) — Konsolidierungs-Protokoll mit Zeilen-Konkordanz: `bibliothek/betrieb/skill-diaet-2026-08-08.md`; Gegenprüfung (Opus, high): bestanden unter vier Auflagen, alle umgesetzt.*
+
+## QS-CONFIDENCE-EHRLICH — Confidence-Prüfung bekommt einen echten Exit-Code *(done, verschoben 8.8.2026)*
+
+- [x] **`QS-CONFIDENCE-EHRLICH` · Confidence-Prüfung bekommt einen echten Exit-Code** *(Ent-Regulierung 7.8.2026: `check:`-Präfix, kann nie rot werden, ist aber Pflichtschritt der Kantons-Pipeline — §6.7 an einem Risikopfad-Werkzeug)* — echter Exit ODER `report:`-Umbenennung mit Nachzug (~14 Referenzen); Gegenprüfungs-Skill beachten. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+  <!-- @meta id: QS-CONFIDENCE-EHRLICH · status: done · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts/normtext] · worktree: ja · 26x: nein · groesse: S -->
+
+*Umsetzung: PR #469 (Merge 48f0ec29d, 8.8.2026) — gewählt wurde die `report:`-Umbenennung (Präzedenz check:tot → report:tot): Quarantäne ist erwarteter Normalzustand, ein erzwungener Exit-Code wäre dauer-rot oder bräuchte eine erfundene Schwellen-Politik. Dateiname bleibt als grep-Anker. Gegenprüfung (Opus, high): bestanden; 4 Doku-Befunde in Folge-Commit 5b681a964 adressiert.*

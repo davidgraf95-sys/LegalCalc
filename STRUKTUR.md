@@ -28,6 +28,10 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 (Weiterbau) — report:confidence: nie-rot-fähiger Report ehrlich benannt (QS-CONFIDENCE-EHRLICH, PR #469)
+
+**Erste Anwendung der Station-W-Weiterbau-Regel aus der frisch gelandeten Skill-Diät** (dieselbe Session, eigener Worktree wegen Risikofläche `scripts/normtext`). Entscheid am Objekt: `report:`-Umbenennung statt erzwungener Exit-Code (Quarantäne ist Normalzustand — Mensch liest den Report; Präzedenz `report:tot`); Dateiname bleibt grep-Anker. Verdrahtungs-Beweis: war in keiner Kette (check:seriell/netz, gate.sh, ci.yml). Lebende Referenzen nachgezogen, Archiv/Dossiers unangetastet. Gegenprüfung (Opus, high, adversarial): **bestanden**, 4 Doku-Befunde sofort adressiert (u. a. QS-AUTOMATIK-PARITAET-Spec von erledigtem Posten befreit). Tore: gate voll · build · e2e 521/521 · perf-budget · CI-Batterie grün; Landung manuell (kein `--auto`, Risikofläche). Lockfile-Rewrite durch lokales npm 11 im Worktree erkannt und verworfen (bekannte Falle, Memory).
+
 ## Session 8.8.2026 — Skill-Diät: vier Landungs-Skills auf zwei (QS-SKILL-DIAET, PR #468)
 
 **Gebaut und gelandet (Merge f14c1f25a):** `landung` trägt jetzt §12 UND §9 in einem Text (deploy-check aufgegangen; dokumentierter `--auto`-Widerspruch der beiden Alt-Texte versöhnt: manuell mergen, solange der Required-Handschritt offen ist), `bauschritt` trägt Pfadwahl (leichter Pfad für sortenreine Nicht-Risiko-Fix-Batches — Tore identisch, nur Prosa verschlankt), Station W (Weiterbau-Regel a/b/c) und `aufraeumen.md` als On-Demand-Referenzdatei (aufraeumen aufgegangen; lädt nur bei gerissenem Budget). Interims-Ziff.-7 aus dem Bau-Prompt-Generator entfernt; neues Test-Tor prüft Station W positiv (Regel kann nicht mehr still verschwinden).

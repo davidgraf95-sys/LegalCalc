@@ -264,8 +264,6 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   <!-- @meta id: QS-HOOKS-AUSBAU · status: blocked · of: ja · blocker: david-freigabe-hooks-ausbau · dep: [] · kollision: [.claude/hooks, CLAUDE.md] · worktree: nein · 26x: nein · groesse: M -->
 - [ ] **`QS-AUDIT-VERWEISE` · Reglement-Audit 7.8.: Konkordanzen, zwei Tore, Restpunkte** *(PR #460; Punkte 1+7, §16/§17, Präambel am 7.8. in QS-SELBSTOPT erledigt — Erledigt-Stand am Dossier prüfen)* — offen: §15-/§13-Konkordanzen (~125 tote Unternummern), §12.2-Kollision, §6.3-Diff-Tor + §3-ESLint-Tor (je rot+grün, §6.7), CLAUDE.md-Zeilen-Budget erwägen, §10-Chesterton-Prüfung, landung-Skill-Merge-Politik-Altstand. Punkt 8 bleibt bei David. **Detail:** [AUDIT-CLAUDE-MD-REGLEMENT-2026-08-07.md](bibliothek/register/AUDIT-CLAUDE-MD-REGLEMENT-2026-08-07.md) § «Massnahmen-Rangfolge».
   <!-- @meta id: QS-AUDIT-VERWEISE · status: ready · of: ja · blocker: null · dep: [] · kollision: [CLAUDE.md, .claude/skills, fahrplaene] · worktree: ja · 26x: nein · groesse: L -->
-- [~] **`QS-CONFIDENCE-EHRLICH` · Confidence-Prüfung bekommt einen echten Exit-Code** *(Ent-Regulierung 7.8.2026: `check:`-Präfix, kann nie rot werden, ist aber Pflichtschritt der Kantons-Pipeline — §6.7 an einem Risikopfad-Werkzeug)* — echter Exit ODER `report:`-Umbenennung mit Nachzug (~14 Referenzen); Gegenprüfungs-Skill beachten. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
-  <!-- @meta id: QS-CONFIDENCE-EHRLICH · status: wip · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts/normtext] · worktree: ja · 26x: nein · groesse: S -->
 - [ ] **`QS-AUTOPILOT-STUFE1` · Vorschlags-Autopilot: geplanter Agent erzeugt Entwurfs-PRs aus der Messreihe** *(Entscheid David 7.8.2026 «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 ausdrücklich NICHT freigegeben — je eigener David-Entscheid)* — Safe-Outputs: Cron fährt `retro:17`, eröffnet Entwurfs-PR, kein Auto-Merge; §17-Grenzen unverändert. **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
   <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: blocked · of: ja · blocker: zeitreihe-5-snapshots · dep: [] · kollision: [.github/workflows, scripts/plan] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
 - [ ] **`QS-MERGE-AUTOZUG` · Wächter zieht BEHIND-PRs mit scharfem Auto-Merge automatisch nach** *(Entscheid David 7.8.2026; Anlass: 3 manuelle Nachzieh-Zyklen à ~15 min an einem Tag, #445-Fall — Auto-Merge feuert bei BEHIND nie; Merge Queue auf User-Konten nicht verfügbar → `QS-ORG-UMZUG`)* — seriell, max. 1 PR/Lauf, §6.7 einmal real. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.1.
@@ -293,7 +291,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
 > ihr Vokabular; Fehlen ist zulässig und zeigt «Grösse ungeschätzt». Definition und Schätzgrundlage:
 > [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Feld `groesse`».
 
-<!-- @queue: QS-CONFIDENCE-EHRLICH, QS-AUDIT-VERWEISE, W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-AUDIT-VERWEISE, W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ Prozess-Schritte stehen vorn (Entscheid David 8.8.2026: «prozess soll grundsätzlich
      vorgehen» — revidiert die Produkt-Phase vom Vormittag). Gequeuete Querschnitt-Schritte
      steigen seit demselben Datum in die Hauptreihenfolge auf (aufloesen.ts). -->
@@ -305,7 +303,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `QS-AUDIT-VERWEISE`** (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). `QS-CONFIDENCE-EHRLICH` ist im Bau (wip, Session 8.8.2026); `QS-SKILL-DIAET` ist gelandet (PR #468, 8.8.2026 → Chronik).
+> **⬆ OBERSTER OFFENER SCHRITT: `QS-AUDIT-VERWEISE`** (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). `QS-SKILL-DIAET` (PR #468) und `QS-CONFIDENCE-EHRLICH` (PR #469) sind am 8.8.2026 gelandet → Chronik.
 > Stand 8.8.2026: Teilschritte -S/-V/-O/-J sind gelandet (PR #464), vom Dach offen ist nur noch `-J3` (Risikopfad, eigene Session).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
