@@ -416,8 +416,23 @@ export function Shell({ children }: { children: ReactNode }) {
                        wechselt»). Ohne die Utility zeichnet die Basis-Regel den
                        --focus-Ring (gemessen rgb(130,98,37) = brass-700 hell);
                        die Flächenfärbung bleibt als zweites, redundantes
-                       Signal stehen. */
-                    className="hidden lg:block shrink-0 w-1.5 -mx-0.5 z-10 cursor-col-resize bg-transparent transition-colors hover:bg-brass-300/60 focus-visible:bg-brass-400" />
+                       Signal stehen.
+
+                       LM-178 (Fahrplan B5, §6): Ruhezustand war `bg-transparent`
+                       — der Griff war NUR über den Mauszeiger (cursor-col-resize)
+                       erkennbar, auf Touch/ohne Hover gar nicht (Befund: «6 px
+                       breiter Ziehgriff, der ausschliesslich über den Mauszeiger
+                       erkennbar ist»). `bg-line-strong` zeichnet ihn jetzt auch
+                       im Ruhezustand als schwache, aber sichtbare Trennlinie
+                       (dieselbe Stärke wie der oberste Struktur-Trenner, §Linien-
+                       Kanon). Der Hover-Ton wechselt zusätzlich von
+                       `bg-brass-300/60` auf `bg-brass-300`: die Deckkraft-Suffix-
+                       Klasse erzeugte keine CSS-Regel (DESIGN-D0, `--brass-300`
+                       ist ein opaker Hex-Wert, kein RGB-Tripel — Tailwind kann
+                       darauf keine Alpha-Variante bauen; Wurzel-Fix bleibt
+                       W2·11-DESIGN, tailwind.config.js ist hier TABU) — der Hover
+                       wirkte dadurch bislang gar nicht. */
+                    className="hidden lg:block shrink-0 w-1.5 -mx-0.5 z-10 cursor-col-resize bg-line-strong transition-colors hover:bg-brass-300 focus-visible:bg-brass-400" />
                   <SekundaerPane pfad={pfad} {...titelVon(livePfad(i))} style={wachstum(i + 1)}
                     onNavigiert={meldeLive}
                     onSchliessen={() => schliesseUndFokus(i)}
