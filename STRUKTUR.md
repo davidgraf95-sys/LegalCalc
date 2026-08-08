@@ -28,6 +28,14 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 (Weiterbau 2) — Reglement-Audit-Vollzug: Konkordanzen, zwei Tore, Wächter-Budget (QS-AUDIT-VERWEISE, PR #470)
+
+**L-Schritt am selben Tag zum Dach geschnitten (Entstückelungs-Muster) und alle 8 Positionen gelandet** (Merge `791dee94e`): §15-/§13-/§12.2-Konkordanzen (gut 150 + 24 + 5 tote Alt-Verweise lösen wieder auf; Bau delegiert an Opus-Agenten, Tabellen adversarial auf **Sonnet** gegengeprüft — bestanden, Alt-Stand `b2fa14dda^` selbst geholt) · fixkosten-§16-Anker · **`check:testtreue`** (§6.3: refactor-Commits ändern keine Tests; merge-base-Muster, in CI, rot live gezeigt) · **§3-ESLint-Regel** (date-fns-Arithmetik in pages/components gesperrt, DatumsFeld begründet gegrandfathert, rot gezeigt) · **CLAUDE.md-Budget 14 KB** im struktur-rotieren-Wächter (rot gezeigt) · §10-Chesterton (Behalt mit Provenienz).
+
+- **§17-Wurzel-Fix, live erwischt:** `plan:set` toggelte bei Dach-Schritten die letzte Checklisten-Zeile statt der Schritt-Checkbox (`bindeCheckbox` band die dem @meta nächste Checkbox). Fix in der einen geteilten Implementierung + 2 Regressionstests (Plan-Batterie 177/177) + Dach-Normalform der Daten (@meta direkt unter der Bullet, Regel 10).
+- **e2e-Verdikt mit Beleg:** CI 8/8 Shards grün auf dem Diff; lokale Voll-Läufe zeigten ROTIERENDE Einzelfälle der dokumentierten A9-CPU-Drossel-Familie (jeder isoliert grün: 25.1/15.3/18.2 s; kein App-Code im Diff) — Flake-Forensik-Dossier bestätigt, Stabilisierung bleibt `QS-E2E-STABIL`.
+- Offen aus der Rangfolge nur Punkt 8 (wartet auf David: §7-Abnahme-Gate rot zeigen, fachliche Status-Hebungen, Budget-Entscheide).
+
 ## Session 8.8.2026 (Weiterbau) — report:confidence: nie-rot-fähiger Report ehrlich benannt (QS-CONFIDENCE-EHRLICH, PR #469)
 
 **Erste Anwendung der Station-W-Weiterbau-Regel aus der frisch gelandeten Skill-Diät** (dieselbe Session, eigener Worktree wegen Risikofläche `scripts/normtext`). Entscheid am Objekt: `report:`-Umbenennung statt erzwungener Exit-Code (Quarantäne ist Normalzustand — Mensch liest den Report; Präzedenz `report:tot`); Dateiname bleibt grep-Anker. Verdrahtungs-Beweis: war in keiner Kette (check:seriell/netz, gate.sh, ci.yml). Lebende Referenzen nachgezogen, Archiv/Dossiers unangetastet. Gegenprüfung (Opus, high, adversarial): **bestanden**, 4 Doku-Befunde sofort adressiert (u. a. QS-AUTOMATIK-PARITAET-Spec von erledigtem Posten befreit). Tore: gate voll · build · e2e 521/521 · perf-budget · CI-Batterie grün; Landung manuell (kein `--auto`, Risikofläche). Lockfile-Rewrite durch lokales npm 11 im Worktree erkannt und verworfen (bekannte Falle, Memory).

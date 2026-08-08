@@ -25,7 +25,7 @@
 // UMSCHICHTUNG 7.8.2026 (QS-SELBSTOPT-Abschluss): drei erledigte Schritte → Chronik
 // «Umschichtung 7.8.2026». Entfernt: QS-SELBSTOPT · QS-ENTREG-KONFIG · QS-DISPATCH-P0-PRUEF.
 // UMSCHICHTUNG 8.8.2026, zweite Welle (QS-SKILL-DIAET-Abschluss): der erledigte Schritt
-// → Chronik-Abschnitt «Umschichtung 8.8.2026, zweite Welle». Entfernt: QS-SKILL-DIAET · QS-CONFIDENCE-EHRLICH
+// → Chronik-Abschnitt «Umschichtung 8.8.2026, zweite Welle». Entfernt: QS-SKILL-DIAET · QS-CONFIDENCE-EHRLICH · QS-AUDIT-VERWEISE
 // (dessen Block dort direkt anschliesst).
 // UMSCHICHTUNG 8.8.2026 (Aufräum-Session, Anlass: Wächter `struktur-rotieren.py --check` rot,
 // ROADMAP.md 104.8 KB über dem 100-KB-Ceiling): sechs erledigte Schritte → Chronik-Abschnitt
@@ -128,7 +128,6 @@ export const INVENTAR: readonly string[] = [
 
   // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
-  'QS-AUDIT-VERWEISE',
 
   // Entscheid David 7.8.2026 abends («B als Schritt, A parken» — BEHIND-Kosten
   // der QS-SELBSTOPT-Landekette, 3 manuelle Nachzieh-Zyklen an einem Tag):

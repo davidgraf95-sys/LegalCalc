@@ -2090,3 +2090,18 @@ Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
   <!-- @meta id: QS-CONFIDENCE-EHRLICH · status: done · of: ja · blocker: null · dep: [] · kollision: [package.json, scripts/normtext] · worktree: ja · 26x: nein · groesse: S -->
 
 *Umsetzung: PR #469 (Merge 48f0ec29d, 8.8.2026) — gewählt wurde die `report:`-Umbenennung (Präzedenz check:tot → report:tot): Quarantäne ist erwarteter Normalzustand, ein erzwungener Exit-Code wäre dauer-rot oder bräuchte eine erfundene Schwellen-Politik. Dateiname bleibt als grep-Anker. Gegenprüfung (Opus, high): bestanden; 4 Doku-Befunde in Folge-Commit 5b681a964 adressiert.*
+
+## QS-AUDIT-VERWEISE — Reglement-Audit 7.8.: Konkordanzen, zwei Tore, Restpunkte *(done, verschoben 8.8.2026)*
+
+- [x] **`QS-AUDIT-VERWEISE` · Reglement-Audit 7.8.: Konkordanzen, zwei Tore, Restpunkte** *(Dach-Schritt mit Checkliste seit 8.8.2026 — Entstückelungs-Schnitt der L-Einheit; PR #460; Punkte 1+7, §16/§17, Präambel am 7.8. in QS-SELBSTOPT erledigt; landung-Merge-Politik-Altstand am 8.8. in QS-SKILL-DIAET versöhnt)* — sortenrein checklisten-weise abarbeiten, alles Nicht-Risiko; Punkt 8 der Rangfolge bleibt bei David. **Detail:** [AUDIT-CLAUDE-MD-REGLEMENT-2026-08-07.md](bibliothek/register/AUDIT-CLAUDE-MD-REGLEMENT-2026-08-07.md) § «Massnahmen-Rangfolge».
+  <!-- @meta id: QS-AUDIT-VERWEISE · status: done · of: ja · blocker: null · dep: [] · kollision: [CLAUDE.md, .claude/skills, fahrplaene, eslint.config.js, .claude/hooks] · worktree: ja · 26x: nein · groesse: L -->
+  - [x] §15-Konkordanz: ~111 tote §15.x-Unternummern-Verweise lösen im Skill `perf` auf (Muster: `auftrag` Ziff. 9)
+  - [x] §13-Konkordanz: ~12 tote §13.x-Verweise (Ziel: DESIGN-REGLEMENT-Dach)
+  - [x] §12.2-Anker-Kollision auflösen
+  - [x] `fixkosten-audit-t10.md:33` bereinigen (Rest aus Rangfolge-Punkt 2)
+  - [x] §6.3-Diff-Tor bauen (~30 Z., einmal rot zeigen, §6.7)
+  - [x] §3-ESLint-Tor: §2-Muster auf `src/pages`+`src/components` übertragen, Bestand grandfathern, einmal rot zeigen
+  - [x] CLAUDE.md-Zeilen-Budget im struktur-rotieren-Wächter (Drift ist strukturell; Ceiling-Zahl nur im Skript-Kopf)
+  - [x] §10-Chesterton-Prüfung: streichen mit Nummern-Sperre (§16-Muster) oder Anlass benennen
+
+*Umsetzung: PR #470 (Merge 791dee94e, 8.8.2026), alle 8 Positionen in einer Session (Dach-Schnitt am selben Tag). Neu: check:testtreue (§6.3) · §3-ESLint-Regel · CLAUDE.md-Budget im Wächter · Konkordanzen §15/§13/§12.2. §17-Wurzel-Fix: bindeCheckbox × Dach-Checklisten (plan:set toggelte falsche Checkbox). Gegenprüfung Konkordanzen: Sonnet, bestanden. Rangfolge-Punkt 8 (Abnahme-Domäne) bleibt bei David.*
