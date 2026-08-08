@@ -253,7 +253,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   <!-- @meta id: QS-EXTQUELLEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [bibliothek/recherche] · worktree: nein · 26x: nein · groesse: S -->
 - [ ] **`QS-HOOKS-AUSBAU` · Vier Hook-/Konfig-Ausbauten aus dem State-of-the-Art-Abgleich** *(Web-Recherche 7.8.2026 gegen Anthropic-Doku)* — (a) `SubagentStop` macht §14.7 durchsetzbar (+ Langläufer-Timer-Kandidat 7.8.); (b) `.claude/rules/`-Pfad-Scoping, CLAUDE.md < 200 Z.; (c) `SessionEnd`-Lehren-Check + `ConfigChange`; (d) `/sandbox` prüfen. Konfig-Fläche ⇒ mit David. **Detail:** [state-of-the-art-abgleich-2026-08-07.md](bibliothek/recherche/state-of-the-art-abgleich-2026-08-07.md) § «Lücken».
   <!-- @meta id: QS-HOOKS-AUSBAU · status: blocked · of: ja · blocker: david-freigabe-hooks-ausbau · dep: [] · kollision: [.claude/hooks, CLAUDE.md] · worktree: nein · 26x: nein · groesse: M -->
-- [ ] **`QS-SKILL-DIAET` · Landungs-Prozeduren: vier Skills auf zwei konsolidieren** *(Entscheid David 7.8.2026 nach Überregulierungs-Frage; bauschritt-D/E, landung, deploy-check, aufraeumen regeln denselben Übergang vierfach, ~1500 Z.)* — kein Regelverlust, Löschkriterium je Zeile; Grundsatz seither: neue Regeln nur als Tor/Hook, nie als Prosa. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+- [ ] **`QS-SKILL-DIAET` · Landungs-Prozeduren: vier Skills auf zwei konsolidieren** *(Entscheid David 7.8.2026 nach Überregulierungs-Frage; bauschritt-D/E, landung, deploy-check, aufraeumen regeln denselben Übergang vierfach, ~1500 Z.)* — kein Regelverlust, Löschkriterium je Zeile; Grundsatz seither: neue Regeln nur als Tor/Hook, nie als Prosa. **Zugleich baut die Konsolidierung den leichten Pfad ein (Entscheid David 8.8.2026, Entstückelung):** für sortenreine Nicht-Risiko-Fix-Batches ein verkürzter Session-Zyklus (kurzer Einstieg: plan-Stand + wip; kurzer Abschluss: eine Karten-Zeile) — die Tore laufen in beiden Pfaden identisch, verschlankt wird nur Prozedur-Prosa. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
   <!-- @meta id: QS-SKILL-DIAET · status: ready · of: ja · blocker: null · dep: [] · kollision: [.claude/skills] · worktree: nein · 26x: nein · groesse: M -->
 - [ ] **`QS-AUDIT-VERWEISE` · Reglement-Audit 7.8.: Konkordanzen, zwei Tore, Restpunkte** *(PR #460; Punkte 1+7, §16/§17, Präambel am 7.8. in QS-SELBSTOPT erledigt — Erledigt-Stand am Dossier prüfen)* — offen: §15-/§13-Konkordanzen (~125 tote Unternummern), §12.2-Kollision, §6.3-Diff-Tor + §3-ESLint-Tor (je rot+grün, §6.7), CLAUDE.md-Zeilen-Budget erwägen, §10-Chesterton-Prüfung, landung-Skill-Merge-Politik-Altstand. Punkt 8 bleibt bei David. **Detail:** [AUDIT-CLAUDE-MD-REGLEMENT-2026-08-07.md](bibliothek/register/AUDIT-CLAUDE-MD-REGLEMENT-2026-08-07.md) § «Massnahmen-Rangfolge».
   <!-- @meta id: QS-AUDIT-VERWEISE · status: ready · of: ja · blocker: null · dep: [] · kollision: [CLAUDE.md, .claude/skills, fahrplaene] · worktree: ja · 26x: nein · groesse: L -->
@@ -345,20 +345,19 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **UI-NAV-J3 · Sachgebiets-Pipeline verfeinern (J3)** — **bewusst allein**, weil Risiko-Pfad: `QS-GP` Pflicht + golden byte-gleich, eigene Gegenprüfungs-Runde. §6.
     <!-- @meta id: W2·10-UI-NAV-J3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json, src/lib/normtext/browse.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
 - [ ] **11-DESIGN · Design-Wärme & Atmosphäre (Ultracode-Synthese 11.7.)** *(`[OF]`, reine Darstellung/Token-Schicht)*:
-  <!-- @meta id: W2·11-DESIGN · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css, tailwind.config.js, DESIGN-REGLEMENT.md, scripts/check-design-tokens.ts, src/components/rechtsprechung, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
+  <!-- @meta id: W2·11-DESIGN · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css, tailwind.config.js, DESIGN-REGLEMENT.md, scripts/check-design-tokens.ts, src/components/rechtsprechung, src/pages/EntscheidLeser.tsx, src/components/forms, src/components/DatumsFeld.tsx, src/components/BetragsFeld.tsx, src/pages/Startseite.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
   Farbklima/Wärme/Typografie-Plan aus 48 Ultracode-Befunden + 3 Kritik-Linsen — Token-Schicht nach
   §13, Normtext-Körper bleibt farbfrei, golden byte-gleich.
+  **Dach-Schritt mit Checkliste (entstückelt 8.8.2026, Entscheid David):** Abarbeitung von oben
+  (Token-Schicht vor Anwendungs-Schicht), sessionfüllende Batches, je Position eigener Commit; die
+  frühere `dep`-Kette D6→D8c war Reihenfolge-Empfehlung, kein fachlicher Zwang — zwingende
+  Binnenfolgen stehen an der Zeile.
   **Detail:** [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5.
   - [ ] **DESIGN-D6 · Dunkel-Paket: Elevation, Schatten, Scrims (EIN PR)** — surface dunkel heben · warme Schattenbasis · Lichtkante · Scrim-Audit; Token-only, flip-reversibel, `check:farbwelt` + axe dunkel. §2 (D-6).
-    <!-- @meta id: W2·11-DESIGN-D6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/index.css] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
   - [ ] **DESIGN-D7 · Ein Lese-Register (`--reading-ink`, `--lese-fs`/`--lese-lh`)** — Lese-Basis + Entscheid-Stepper als Multiplikatoren, CPL-Messung, Regel in beide Domänen-Reglemente; golden neutral. §2 (D-7).
-    <!-- @meta id: W2·11-DESIGN-D7 · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D6] · kollision: [src/index.css, src/pages/EntscheidLeser.tsx, src/components/rechtsprechung, DESIGN-REGLEMENT.md] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
   - [ ] **DESIGN-D8a · Wörterbuch auf die Fläche: slate auf Entscheid-Flächen (D-8.1)** — Entscheid-Leser-Chrome und Rubrik-Label auf die Rollen-Schicht ziehen; Playwright-Screens in die Abnahme-Mappe.
-    <!-- @meta id: W2·11-DESIGN-D8a · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D7] · kollision: [src/components/rechtsprechung, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
-  - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann mechanischer Rest (D-8.2)** — ~50 verteilte Fundstellen; **Pilot zuerst** (Startseite + 1 Rechner) mit Vorher/Nachher-Screens, danach der Rest. Nicht flip-reversibel. **Grenze zu `W2·17-UI-BEFUNDE-B12`** beachten (§5 dort).
-    <!-- @meta id: W2·11-DESIGN-D8b · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D8a] · kollision: [src/components/forms, src/components/DatumsFeld.tsx, src/components/BetragsFeld.tsx, src/pages/Startseite.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
-  - [ ] **DESIGN-D8c · Motiv-Katalog (D-8.3)** — `scale-rule`-Motiv an 2–3 Sektions-Orten, Abschluss der Anwendungs-Schicht.
-    <!-- @meta id: W2·11-DESIGN-D8c · status: ready · of: ja · blocker: null · dep: [W2·11-DESIGN-D8b] · kollision: [src/components/start, src/index.css] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
+  - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann mechanischer Rest (D-8.2)** — ~50 verteilte Fundstellen; **Pilot zuerst** (Startseite + 1 Rechner) mit Vorher/Nachher-Screens, danach der Rest. Nicht flip-reversibel; **nach D8a**. **Grenze zu `W2·17-UI-BEFUNDE` Position B12** beachten (§5 dort).
+  - [ ] **DESIGN-D8c · Motiv-Katalog (D-8.3)** — `scale-rule`-Motiv an 2–3 Sektions-Orten, Abschluss der Anwendungs-Schicht; **nach D8b**.
 
 - [ ] **5g-ZEIT · Norm-Zeitmaschine + Fassungs-Diff** *(Ideen-Intake 20.7.2026 · Extraktion, `QS-GP`)* — **ENTPARKT 3.8.2026 (David).**
   <!-- @meta id: W2·5g-ZEIT · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, src/lib/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
@@ -476,39 +475,33 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   (Status-Hoheit), darum steht `status` unverändert auf `ready`.
   **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §20 (massgebliche
   Fassung samt Herkunftsbeleg). Herkunft der Verengung → `ROADMAP-CHRONIK.md` → W2·9 (3.8.2026).
-- [ ] **13 · Kantonale Gesetze & Darstellung** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit
-  <!-- @meta id: W2·13-KANTONE · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, src/pages/gesetz-leser/inhalt.tsx, src/pages/GesetzLeser.tsx, src/components/NormText.tsx, src/lib/suche/onlineVolltext.ts, src/lib/normtext/relevanz.ts, public/normtext/kanton] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  44 Befunde + 3 Kritik-Linsen (10 live an Amtsquellen re-verifiziert) — **14 sofort baubare Einheiten
-  K-1…K-14**; Extraktions-Anteile sind Risikopfad ⇒ `QS-GP` + golden byte-gleich.
+- [ ] **13 · Kantonale Gesetze — Darstellung & Suche** *(Auftrag David 12.7.2026, `[OF]`; Ultracode-Audit: 44 Befunde + 3 Kritik-Linsen, 10 live an Amtsquellen re-verifiziert)*
+  <!-- @meta id: W2·13-KANTONE · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/NormText.tsx, src/components/kontext/KontextPanel.tsx, src/lib/suche/onlineVolltext.ts, api/suche.ts, src/components/suche, src/lib/normtext/relevanz.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+  **Aufgeteilt 8.8.2026 (Entscheid David, sortenrein):** hier die NICHT-Risiko-Einheiten (reine
+  Darstellung/Suche/Anzeige); Extraktion & Daten → `W2·13-KANTONE-DATEN`. Dach-Schritt mit
+  Checkliste — die frühere `dep`-Kette K-1→K-14 war Abarbeitungsordnung, kein fachlicher Zwang;
+  sessionfüllende Batches, je Position eigener Commit.
   **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
   - [ ] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5, M)* — Lesereihenfolge, Doppel-Decode, «SR»-Label, Titel-Dopplung, Fussnoten-Stern-Strip, A14-Relevanz fr/it; reine Display-Schicht. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K1 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/gesetz-leser/inhalt-volltext.tsx, src/pages/GesetzLeser.tsx, src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx, src/lib/normtext/relevanz.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest, S–M)* — zweistufiger Currency-Chip, Kanton-Hinweis im KontextPanel, Abdeckungs-Kontextzeile, «Stand unbekannt», Systematik-Hinweis; reine Anzeige. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K2 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K1] · kollision: [src/components/kontext/KontextPanel.tsx, src/components/NormText.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36, S)* — Edge-DTO um `ebene`/`kanton`, Treffer-Href auf `/gesetze/<ebene>/…`, Kanton-Marke, Reader-Redirect. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K3 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K2] · kollision: [src/lib/suche/onlineVolltext.ts, api/suche.ts, src/components/suche] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **K-4 · Einzel-Nachzüge Stand/Currency** *(F14/F9 + SO-Lektion, S — **Risikopfad**, `QS-GP`)* — ZG-161.7 nachziehen, SZ-Stand klären, Invariante «stand ≤ Generierungsdatum» ins Tor `check:normtext`, Vollständigkeits-Invariante gegen den strukturell blinden Drift-Check. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K4 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K3] · kollision: [scripts/normtext/check-drift.ts, public/normtext/kanton] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42, M)* — **EINE Einheit (gleiche Datei)**, golden-neutral; harte Binnenfolge **F41 vor F40** (sonst fehlt der Ersatz), F42 nachrangig. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K5 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K4] · kollision: [src/components/NormText.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe** *(F7/F8/F15/F11/F25-Keys/F22, M — **Risikopfad**, `QS-GP`)* — **pro Kanton eine Tranche**; Binnenfolge K-6a (Dedupe) vor K-6d (GL-Key-Migration). §1-A.
-    <!-- @meta id: W2·13-KANTONE-K6 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K5] · kollision: [public/normtext/kanton, scripts/normtext/lexfind-discovery.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** *(F20-GATE/F17a/F18/F16/F19/F23/F13, M — **Risikopfad**, `QS-GP` + pdfplumber-Gegenprobe)* — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K7 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K6] · kollision: [scripts/normtext, public/normtext/kanton] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **K-8 · xhtml-`<p>`-Strukturerhalt** *(F21, M)* — `parseSegment` im LexWork-Adapter, Schema nur additiv, Golden-Diff korpusweit offline. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K8 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K7] · kollision: [scripts/normtext/adapter-lexwork.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **K-9 · Erlass→Werkzeug-Brücke Kanton** *(F38, M)* — Build-Zeit-Inversion der Tarif-`quelleUrl`s zu `KANTON_ERLASS_WERKZEUGE` + Konsistenz-Tor; reine Metadaten. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K9 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K8] · kollision: [src/lib/startseiteConfig.ts, public/normtext/register.json] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
-  - [ ] **K-10 · AR-Sidecar-Batch** *(F30-AR, M)* — 263 der 314 fehlenden Struktur-Sidecars sind AR; nur amtliche Überschriften, **Einzel-Erlass-POC vor dem Batch**; 1 Kanton = slot-frei. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K10 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K9] · kollision: [public/normtext/struktur, scripts/normtext/struktur-extrahiere.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-11 · Kanton-Reader-Performance profilieren** *(F32, M)* — **erst messen**: `check:perf-budget` um den Kanton-Leserpfad erweitern, nichts «fixen» vor dem Profil (Ursache unbewiesen). §1-A.
-    <!-- @meta id: W2·13-KANTONE-K11 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K10] · kollision: [src/pages/gesetz-leser] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+- [ ] **13-DATEN · Kantonale Gesetze — Daten & Extraktion (Risikopfad)** *(Aufteilung 8.8.2026 aus `W2·13-KANTONE`, sortenrein)*:
+  <!-- @meta id: W2·13-KANTONE-DATEN · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/kanton, public/normtext/struktur, public/normtext/register.json, public/normtext/kanton-systematik.json, src/lib/startseiteConfig.ts, scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+  Extraktions- und Datenanteile der Kantons-Arbeit — durchgehend **Risikopfad** ⇒ Skill
+  `korpus-werkstatt` + `QS-GP` + golden byte-gleich; Batches klein genug für eine saubere
+  Gegenprüfung, zwingende Binnenfolgen stehen an der Zeile. Dach-Schritt mit Checkliste.
+  **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
+  - [ ] **K-4 · Einzel-Nachzüge Stand/Currency** *(F14/F9 + SO-Lektion, S — **Risikopfad**, `QS-GP`)* — ZG-161.7 nachziehen, SZ-Stand klären, Invariante «stand ≤ Generierungsdatum» ins Tor `check:normtext`, Vollständigkeits-Invariante gegen den strukturell blinden Drift-Check. §1-A.
+  - [ ] **K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe** *(F7/F8/F15/F11/F25-Keys/F22, M — **Risikopfad**, `QS-GP`)* — **pro Kanton eine Tranche**; Binnenfolge K-6a (Dedupe) vor K-6d (GL-Key-Migration). §1-A.
+  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** *(F20-GATE/F17a/F18/F16/F19/F23/F13, M — **Risikopfad**, `QS-GP` + pdfplumber-Gegenprobe)* — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A.
+  - [ ] **K-8 · xhtml-`<p>`-Strukturerhalt** *(F21, M)* — `parseSegment` im LexWork-Adapter, Schema nur additiv, Golden-Diff korpusweit offline. §1-A.
+  - [ ] **K-9 · Erlass→Werkzeug-Brücke Kanton** *(F38, M)* — Build-Zeit-Inversion der Tarif-`quelleUrl`s zu `KANTON_ERLASS_WERKZEUGE` + Konsistenz-Tor; reine Metadaten. §1-A.
+  - [ ] **K-10 · AR-Sidecar-Batch** *(F30-AR, M)* — 263 der 314 fehlenden Struktur-Sidecars sind AR; nur amtliche Überschriften, **Einzel-Erlass-POC vor dem Batch**; 1 Kanton = slot-frei. §1-A.
   - [ ] **K-12 · Reports & kuratierte Listen** *(F3-Report/F4-Liste/F33-Daten, S–M)* — lesend/planend; K-12b ist reine Planung ohne Fetch, K-12a-AR-Anteile erst nach dem F20-Gate aus K-7. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K12 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K11] · kollision: [scripts/normtext/inventar-kanton.ts, scripts/normtext/lexfind-discovery.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-13 · Systematik-Bäume 7 Kantone** *(F6≡F43, M)* — ZH/GE/VD/TI/SZ/NE/JU fehlen (19 von 26 vorhanden); Quell-Erhebung je Kanton empirisch und browserlos, kantons-einzeln frei. §1-A.
-    <!-- @meta id: W2·13-KANTONE-K13 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K12] · kollision: [scripts/normtext/kanton-systematik-run.ts, public/normtext/kanton-systematik.json] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **K-14 · Kantonales Zitat-Vokabular — POC** *(F39, L — **Risikopfad**, `QS-GP`)* — POC über 5 Gerichts-Kantone × 6 Entscheide, nur exakte Sammlungsnummer-Matches, additiver Extraktions-Pass. **Prämisse «Entscheid-`normKeys` sind Bund-only» vor dem Bau gegen `W2·6-NKEY` nachmessen.** §1-A.
-    <!-- @meta id: W2·13-KANTONE-K14 · status: ready · of: ja · blocker: null · dep: [W2·13-KANTONE-K13] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   - [ ] **KANTONE-DRIFT · Kantonale Snapshots gegen die Quellen nachführen** *(Befund 2.8.2026, **Risikopfad**, Skill `korpus-werkstatt` + `QS-GP`)* — beim Bundes-Durchgang vom 2.8.2026 (`--nur=bund`) meldete der Drift-Abgleich **~28 kantonale Snapshots mit echter Inhaltsdrift** — bewusst ausgeklammert und **unverifiziert**. **Reihenfolge gegen `K-7`** beachten. **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §3.
     <!-- @meta id: W2·13-KANTONE-DRIFT · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/kanton] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
 - [ ] **14-SIGNAL · Watchlist & Änderungs-Signale** *(Ideen-Intake 20.7.2026 · Infra/UI, kein Rechtsinhalt)*:
@@ -544,40 +537,35 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   15 BEREITS-GEBAUT · 6 SICHER**, davon **20 Batches** (19 Bau-Batches mit 189 Befunden + 1 Prüf-Batch, 15).
   **Reihenfolge-Freigabe (`@queue`) bleibt Davids Entscheid** — darum bewusst NICHT in der Queue;
   Freigabe-Wortlaut David 3.8.2026: **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §24 (Spec; Triage: §1).
+  **Dach-Schritt mit Checkliste (entstückelt 8.8.2026, Entscheid David):** Reihenfolge = Priorität
+  (Blocker zuerst); die frühere `dep`-Kette B3→B19 war reine Abarbeitungsordnung, kein fachlicher
+  Zwang. Sessionfüllende Batches à mehrere Positionen, alles reine Darstellungsschicht (kein
+  Risikopfad), je Position eigener Commit mit Trailer `Roadmap: W2·17-UI-BEFUNDE`.
   - [ ] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B3 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components/layout, src/index.css] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). **Grenze** zu `W2·5h-GESETZ-UI`/`W2·5d` beachten. §5.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B4 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B3] · kollision: [src/pages/gesetz-leser, src/components/NormText.tsx, src/components/normtext] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). §6.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B5 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B4] · kollision: [src/index.css, src/components/layout/Pane.tsx, src/components/layout/TabPanel.tsx, src/components/layout/ThemaUmschalter.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). §7.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B6 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B5] · kollision: [src/components/fehlermeldung.ts, src/components/ErrorBoundary.tsx, src/components/suche/SucheLeerzustand.tsx, src/pages/NotFound.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). §8.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B7 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B6] · kollision: [src/components/layout/HeaderSuche.tsx, src/components/layout/ReiterUebersicht.tsx, src/components/layout/VerlaufUebersicht.tsx, src/components/suche] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B8 · Menüinhalt, Zustandsanzeige und Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B8 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B7] · kollision: [src/components/layout, src/components/forms, src/index.css] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B9 · Textsatz und Umbruch (K-12)** — 12 Befunde (Blocker 1 · Hoch 2). §10.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B9 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B8] · kollision: [src/components/typografie.tsx, src/index.css, src/components/NormText.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B10 · Aktions-Anker, Symbolknöpfe und Trefferflächen (K-09b)** — 7 Befunde (Blocker 1 · Hoch 1). §11.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B10 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B9] · kollision: [src/components/ui, src/pages/gesetz-leser, src/components/rechtsprechung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B11 · Karten (K-04)** — 13 Befunde (Blocker 0 · Hoch 4). §12.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B11 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B10] · kollision: [src/components/Katalog.tsx, src/components/start, src/components/ui] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B12 · Eingabe- und Auswahlfelder — Blocker bis Mittel (K-08a)** — 11 Befunde (Blocker 0 · Hoch 4). §13.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B12 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B11] · kollision: [src/components/forms, src/components/DatumsFeld.tsx, src/components/BetragsFeld.tsx, src/components/ui] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B13 · Zahlen-, Datums- und Zählformate (K-11)** — 12 Befunde (Blocker 0 · Hoch 3). §14.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B13 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B12] · kollision: [src/components/locale.tsx, src/components/ErgebnisAnzeige.tsx, src/components/forms] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B14 · Brotkrume, Kopfzeilen und Seitenmeta (K-19a)** — 8 Befunde (Blocker 0 · Hoch 3). §15.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B14 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B13] · kollision: [src/components/layout/InhaltsKopf.tsx, src/components/RouteMeta.tsx, src/pages/Materialien.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B15 · Umschalter, Tabs und Akkordeons (K-06)** — 9 Befunde (Blocker 0 · Hoch 2). §16.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B15 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B14] · kollision: [src/components/ui, src/components/layout/TabPanel.tsx, src/components/forms] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B16 · Seitengerüst und Inhaltsbreite (K-13)** — 8 Befunde (Blocker 0 · Hoch 2). §17.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B16 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B15] · kollision: [src/components/layout/Shell.tsx, src/components/layout/Footer.tsx, src/index.css] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). §18.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B17 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B16] · kollision: [src/components/ui, src/index.css, src/components/vorlagen] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B18 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B17] · kollision: [src/pages/Gesetze.tsx, src/components/suche, src/lib/suche] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
-    <!-- @meta id: W2·17-UI-BEFUNDE-B19 · status: ready · of: ja · blocker: null · dep: [W2·17-UI-BEFUNDE-B18] · kollision: [src/components/forms, src/components/ui] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+- [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
+  <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
+  David sammelt Fehler aus der täglichen Nutzung formlos hier als `- [ ]`-Zeile (oder meldet sie im
+  Chat — die Session trägt sie ein). Eine Fix-Batch-Session arbeitet mehrere Positionen sortenrein
+  ab: ein Branch, einmal Tore, eine Landung. **Risikopfad-Funde gehören NICHT hierher**, sondern als
+  Position in den passenden Risiko-Dach-Schritt (`QS-GP` Pflicht). Der Schritt bleibt stehen (nie
+  `done`); erledigte Positionen werden abgehakt und periodisch in die Chronik geräumt.
+  *(noch keine offenen Positionen — neue Funde als `- [ ]`-Zeile hier anfügen)*
 
 ### Welle 3 — Tiefe / Breite (opportunistisch)
 

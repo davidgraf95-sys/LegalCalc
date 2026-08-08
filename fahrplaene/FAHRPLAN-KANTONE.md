@@ -513,7 +513,14 @@ Dokument-/Engine-Änderung) · Tore grün. Trailer `Roadmap: W2·13-KANTONE`.
 
 ---
 
-## §2 · ROADMAP-Spec W2·13-KANTONE (wörtlich verschoben 31.7.2026)
+## §2 · ROADMAP-Spec W2·13-KANTONE + W2·13-KANTONE-DATEN (wörtlich verschoben 31.7.2026; Aufteilung Darstellung/Daten 8.8.2026)
+
+> **Aufteilung 8.8.2026 (Entscheid David, Entstückelung):** Die 14 Einheiten K-1…K-14 sind in der
+> ROADMAP neu auf zwei sortenreine Dach-Schritte verteilt — `W2·13-KANTONE` (Darstellung & Suche,
+> Nicht-Risiko: K-1, K-2, K-3, K-5, K-11) und `W2·13-KANTONE-DATEN` (Daten & Extraktion,
+> Risikopfad: K-4, K-6, K-7, K-8, K-9, K-10, K-12, K-13, K-14). Die Bau-Spezifikation der
+> Einheiten bleibt unverändert §1-A dieser Datei; die frühere serielle `dep`-Kette war
+> Abarbeitungsordnung, kein fachlicher Zwang.
 
 > **→ Bau-Spec: «§1-A · SOFORT BAUBARE EINHEITEN» (K-1…K-14), dazu §1-B/§1-C/§1-D dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 

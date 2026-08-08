@@ -15,6 +15,10 @@
 // § «Übernahme 5.8.2026». Entfernt: QS-CODE-TURSO · QS-CODE-AUSSENKANTEN · QS-CODE-ENTDOPPLUNG
 // · QS-CODE-SPLITS · W2·5d. Der Kommentar zur W2·5d-Bindung unten entfällt: die dep-Einträge
 // in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
+// ENTSTÜCKELUNG 8.8.2026 (Entscheid David): Ketten-Unterschritte sind Checklisten-Zeilen im
+// Dach-Schritt, keine eigenen IDs mehr. Entfernt: W2·17-UI-BEFUNDE-B3…B19 · W2·11-DESIGN-D6…D8c
+// · W2·13-KANTONE-K1…K14 (aufgeteilt auf W2·13-KANTONE [Darstellung] und neu
+// W2·13-KANTONE-DATEN [Risikopfad]). Neu: W2·18-FEHLERBUCH (stehender Sammel-Schritt).
 // UMSCHICHTUNG 7.8.2026 (QS-SELBSTOPT-Abschluss): drei erledigte Schritte → Chronik
 // «Umschichtung 7.8.2026». Entfernt: QS-SELBSTOPT · QS-ENTREG-KONFIG · QS-DISPATCH-P0-PRUEF.
 // UMSCHICHTUNG 8.8.2026 (Aufräum-Session, Anlass: Wächter `struktur-rotieren.py --check` rot,
@@ -51,22 +55,14 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 31.7.2026 (AP-9, QS-TOK-Aufräumwelle): externe UI-Befundliste (Cowork 29.7.2026,
   // 210 Befunde) — Dachschritt + 20 Batches (19 Bau + 1 Prüf-Batch), Fahrplan FAHRPLAN-UI-BEFUNDE.md.
-  'W2·17-UI-BEFUNDE', 'W2·17-UI-BEFUNDE-B3',
-  'W2·17-UI-BEFUNDE-B4', 'W2·17-UI-BEFUNDE-B5', 'W2·17-UI-BEFUNDE-B6', 'W2·17-UI-BEFUNDE-B7',
-  'W2·17-UI-BEFUNDE-B8', 'W2·17-UI-BEFUNDE-B9', 'W2·17-UI-BEFUNDE-B10', 'W2·17-UI-BEFUNDE-B11',
-  'W2·17-UI-BEFUNDE-B12', 'W2·17-UI-BEFUNDE-B13', 'W2·17-UI-BEFUNDE-B14', 'W2·17-UI-BEFUNDE-B15',
-  'W2·17-UI-BEFUNDE-B16', 'W2·17-UI-BEFUNDE-B17', 'W2·17-UI-BEFUNDE-B18', 'W2·17-UI-BEFUNDE-B19',
+  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH',
 
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
   // Der jeweilige Elter behält sein @meta und bleibt das Dach.
   'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
   'W2·10-UI-NAV-J3',
-  'W2·11-DESIGN-D6', 'W2·11-DESIGN-D7', 'W2·11-DESIGN-D8a', 'W2·11-DESIGN-D8b', 'W2·11-DESIGN-D8c',
-  'W2·13-KANTONE-K1', 'W2·13-KANTONE-K2', 'W2·13-KANTONE-K3', 'W2·13-KANTONE-K4',
-  'W2·13-KANTONE-K5', 'W2·13-KANTONE-K6', 'W2·13-KANTONE-K7', 'W2·13-KANTONE-K8',
-  'W2·13-KANTONE-K9', 'W2·13-KANTONE-K10', 'W2·13-KANTONE-K11', 'W2·13-KANTONE-K12',
-  'W2·13-KANTONE-K13', 'W2·13-KANTONE-K14',
+  'W2·13-KANTONE-DATEN',
   'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
   'W3·14-B3',
 

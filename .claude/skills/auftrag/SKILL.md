@@ -116,6 +116,15 @@ trivialer Kleinschritt < ~1 h trägt keine eigene Session ⇒ mit 1–2 Nachbarn
 gleicher Fläche und Risikoklasse bündeln), und klein genug, dass sie in EINER
 Session fertig wird und landet (AP-6-Muster; zu gross ⇒ erst schneiden).
 
+**Kleinbefunde werden Checklisten-Zeilen, keine Schritte (Entscheid David
+8.8.2026, Entstückelung):** Ein neuer Befund unterhalb Sessiongrösse wird als
+`- [ ]`-Zeile in den passenden bestehenden Dach-Schritt eingetragen (Davids
+Alltags-Fehlerfunde: `W2·18-FEHLERBUCH`), **nie** als eigener Roadmap-Schritt
+mit eigenem `@meta`. Anlass: Die Ketten-Stückelung (17 dep-verkettete
+Unterschritte à ein Session-Sockel) war Haupttreiber der Verlangsamung;
+serielle `dep`-Ketten nur noch bei echtem fachlichem Zwang. Abgearbeitet wird
+checklisten-weise in sortenreinen, sessionfüllenden Batches.
+
 Bei Überschneidung **zusammenführen statt daneben** — kein Parallel-Schritt für
 dieselbe Bau-Fläche.
 
@@ -220,6 +229,13 @@ Gegenprüfung bevorzugt **spitze** (Entscheid David 4.8.2026), Minimum
 stark/high, stets auf einem **anderen** Modell als dem bauenden — die
 Unabhängigkeit des Zweitblicks ist Pflicht, die Fähigkeit seither auch
 gehoben. Das gewählte Modell steht ohnehin im `Gegenpruefung:`-Trailer.
+
+**Recherche-Sparsamkeit und Prüf-Proportionalität (David 8.8.2026):** Erst
+EIN Recherche-Agent, bei Lücken nachfassen (SendMessage) statt parallel
+doppeln; Mehrfach-Sweeps nur bei echt unbekannter Fläche. Der Prüfaufwand
+skaliert mit Risiko × Umfang — ein Einzeiler auf unkritischem Pfad braucht
+keine Maximal-Maschinerie; die Gegenprüfungspflicht auf Risikopfaden bleibt
+davon unberührt.
 
 **Folge-Slices derselben Bau-Fläche:** bestehenden Agenten per SendMessage
 fortsetzen statt neu spawnen (Template §1.4) — **nie** für die Gegenprüfung

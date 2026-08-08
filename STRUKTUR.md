@@ -28,6 +28,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 — Entstückelung: Ketten → Dach-Checklisten · Fehlerbuch · Bündel-Regel (Entscheid David 7./8.8.2026)
+
+**Strategie-Session mit David (Priorisierung/Verlangsamung), danach direkter Plan-Umbau auf main (kein Risikopfad, keine offene Landekette).** Nordstern festgehalten (Memory: in 1 Jahr von Juristen gern genutzte Website; Produkt vor Prozess, David selbst ist der Nutzer), Mitdenk-Klausel in die globale CLAUDE.md.
+
+- **ROADMAP entstückelt:** 36 dep-verkettete Unterschritte (UI-BEFUNDE B3–B19 · KANTONE K1–K14 · DESIGN D6–D8c) sind jetzt Checklisten-Zeilen in ihren Dach-Schritten — die Ketten waren Abarbeitungsordnung, kein fachlicher Zwang. KANTONE dabei **sortenrein geteilt**: `W2·13-KANTONE` (Darstellung/Suche) + neu `W2·13-KANTONE-DATEN` (Extraktion, Risikopfad). Neu `W2·18-FEHLERBUCH` (stehender Sammel-Schritt für Davids Alltags-Fehlerfunde, Fix-Batch-Abarbeitung). Inventar + `FAHRPLAN-KANTONE.md` §2 nachgezogen; `check:plan` grün · 46 Lagebild-Tests grün · Re-Akkumulations-Wächter grün.
+- **Skill `auftrag`:** Bündel-Regel (Kleinbefund = Checklisten-Zeile im Dach, nie eigener Schritt mit `@meta`) · Recherche-Sparsamkeit (erst EIN Agent, nachfassen statt doppeln) · Prüf-Proportionalität (Risiko × Umfang; Gegenprüfungspflicht unberührt).
+- **Leichter Session-Pfad** für sortenreine Nicht-Risiko-Batches → ins Mandat von `QS-SKILL-DIAET` integriert (statt Parallel-Bau an denselben Skills).
+- **Rote Linien unverändert:** Tore/Golden nie verschlankt · Gegenprüfung pfadbasiert · Bündel sortenrein · §12-Isolation. Plan-Dossier: `~/.claude/plans/aktuell-baut-der-lageplan-recursive-rabin.md`.
+
 ## Session 7.–8.8.2026 (Nacht) — W2·10-UI-NAV -S/-V/-O/-J gelandet + QS-GP-BEREICH + 3 Sicherheits-Patches (#463–#467)
 
 **Fable-Orchestrator, entschleunigter Zyklus je Einheit: Opus-Bau → adversariale Gegenprüfung (anderes Modell, read-only) → Auflagen-Fix → nächste; adversarialer Schlussdurchgang vor der Landung; serielle Landekette #464→#463→#465→#466→#467, alle gemergt.**
