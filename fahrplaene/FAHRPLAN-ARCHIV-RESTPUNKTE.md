@@ -448,7 +448,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
   Wert wird in `src/` **nirgends geladen**, und alle 859 BS-Registereinträge tragen
   ununterscheidbar `status:'snapshot'` — ein ungeprüfter Auto-Import sieht damit aus wie ein
   abgenommener (§8). Offen: `report:confidence` (`scripts/normtext/check-confidence.ts`,
-  `package.json:84`) auf alle 859 BS ausweiten, Ergebnis in `browse.ts` laden, Marker «automatisch
+  `package.json:85`) auf alle 859 BS ausweiten, Ergebnis in `browse.ts` laden, Marker «automatisch
   importiert · fachlich nicht abgenommen» vs. «abgenommen» in SysZeile + Leser-Kopf. **Nicht
   deckungsgleich** mit dem Currency-Chip (`W2·13-KANTONE` K-2a = Geltungs-, nicht
   Extraktions-Konfidenz). Heimat `archiv/FAHRPLAN-BS-VORBILDKANTON.md` §D3. `[OF]`
