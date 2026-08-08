@@ -258,11 +258,22 @@ export function LeserVolltextInhalt({
           width Such-Leiste entfällt dort rückstandsfrei (kein toter Code, §Aufräumen).
           Diese `data-such-bar` bleibt NUR im SPLIT-VIEW (`imPane`): dort gibt es keinen
           InhaltsKopf, also trägt die pane-lokale sticky Leiste weiterhin ☰ + Suchfeld +
-          Ansicht-Menü. Sticky direkt unter der Pane-Oberkante. */}
+          Ansicht-Menü. Sticky direkt unter der Pane-Oberkante.
+          LM-003/LM-004 (W2·17-UI-BEFUNDE-B3, K-01): `top: '0.5rem'` liess einen
+          8-px-Streifen (Einzelreiter) bzw. bis zu 44 px (mehrzeiliger PaneKopf)
+          zwischen dem PaneKopf (Pane.tsx — ECHTE Leiste, ausserhalb des
+          Scroll-Containers) und dieser sticky Leiste offen, durch den Gesetzestext
+          sichtbar durchlief; exakt reproduziert (PaneKopf-Unterkante 101 px,
+          Leiste fixierte auf 109 px). `shadow-sm` liess sie zugleich wie einen
+          eigenen schwebenden Kasten über dem Text wirken (LM-004) statt wie ein
+          Fortsatz des PaneKopfs. Fix: `top: 0` (flach an den PaneKopf
+          anschliessend, kein Streifen mehr möglich) + kein Schatten (liest sich
+          als EIN zusammenhängender Kopfblock, nicht als zwei versetzte Karten).
+          Die TOC-Spalte weiter unten verrechnet denselben Offset (0.5rem-Term
+          dort entsprechend entfernt). */}
       {imPane && (
-        <div data-such-bar className="sticky z-[16] mb-4 rounded-lg bg-paper"
-          style={{ top: '0.5rem' }}>
-          <div className="flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-2 shadow-sm">
+        <div data-such-bar className="sticky top-0 z-[16] mb-4 rounded-lg bg-paper">
+          <div className="flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-2">
             {istXl ? (
               // ab lg (breites Pane): ☰ nur wenn die Gliederungsspalte EINGEKLAPPT ist.
               sektionen.length > 0 && !tocOffen && (
@@ -333,11 +344,17 @@ export function LeserVolltextInhalt({
             // wieder direkt unter dem Kopf (Topbar 4rem + Inhalts-Kopf 2.25rem), ohne
             // den früheren +3.5rem-Such-Leisten-Vorhalt. Im Pane bleibt die pane-lokale
             // Such-Leiste (+3.5rem), also dort unverändert.
+            // LM-003 (W2·17-UI-BEFUNDE-B3): der frühere `0.5rem`-Term war der
+            // Streifen-Offset der Such-Leiste (jetzt `top: 0`, s. o.) — mitgezogen,
+            // sonst klebte die Gliederungsspalte 0.5rem zu tief. `maxHeight` brauchte
+            // KEINE Anpassung: sie rechnete den 0.5rem-Streifen nie mit (10.75rem
+            // Abzug deckte bisher nur Topbar+PaneKopf+Leistenhöhe+mb-4 — mit dem
+            // Streifen-Wegfall stimmt die Summe jetzt exakt).
             style={imPane
               // Im Pane: an die SICHTBARE Pane-Höhe binden (Topbar 4rem + PaneKopf
               // 2.25rem ab), nicht an die indefinite Grid-Zeile (calc(100%) löste
               // gegen content-Höhe → kein interner Scroll, sticky brach).
-              ? { top: 'calc(0.5rem + 3.5rem)', maxHeight: 'calc(100dvh - 4rem - 2.25rem - 3.5rem - 1rem)' }
+              ? { top: '3.5rem', maxHeight: 'calc(100dvh - 4rem - 2.25rem - 3.5rem - 1rem)' }
               : { top: 'calc(4rem + 2.25rem)', maxHeight: 'calc(100vh - 4rem - 2.25rem - 1.5rem)' }}
             className={`mb-0 sticky flex-col ${tocOffen ? 'flex' : 'hidden'}`}>
             <div className="mb-2 flex items-baseline justify-between shrink-0">
