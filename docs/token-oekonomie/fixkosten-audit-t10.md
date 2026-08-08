@@ -30,7 +30,9 @@
   (kein projektseitiger Konnektor, den man abschalten könnte).
 - **Falls David die Fixlast senken will** (optional, sein Go, Konto-Ebene): pro-Projekt nur die
   im Bau tatsächlich gebrauchten Konnektoren aktiv lassen. **Nie abschalten:** `context7`
-  (§16 Framework-Doku), `claude-in-chrome`/Playwright (Reader-Verifikation, T18), `vercel`-Deploy
+  (Framework-Doku live nachschlagen — die Begründung lautete hier bis 25.7.2026 «CLAUDE.md §16»;
+  diese Regel ist seither **gestrichen und die Nummer gesperrt**, die Praxis selbst bleibt),
+  `claude-in-chrome`/Playwright (Reader-Verifikation, T18), `vercel`-Deploy
   (§9). **Referenz-Plugins** (SEO/a11y/legal-builder-hub) nie löschen — sie sind Nachschlage-Referenz.
 - Der grössere, projektseitig **erreichbare** Hebel liegt ohnehin nicht bei den Fixkosten, sondern
   bei den in P1–P4 gebauten Massnahmen (Doku-Diät, Slice, Sonde, Dispatch, Map, Log-Diät).
