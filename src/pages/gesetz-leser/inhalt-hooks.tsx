@@ -260,6 +260,12 @@ export function useLeserSprungSpy(opts: {
   imPane: boolean;
   wurzel: RefObject<HTMLElement | null> | null;
   paneLocationHash: string;
+  /** LM-179 (Fahrplan B5, §6): pane-eigenes `location.search` (aus dem Pane-
+   *  internen Navigator, `UNSAFE_NavigationContext` in Pane.tsx) statt
+   *  `window.location.search`, das im Sekundär-Pane immer die Haupt-URL
+   *  liefert — bei einer Zweitinstanz (`?r=2`) also den falschen Reiter
+   *  träfe. */
+  paneLocationSearch: string;
   basisPfad: string;
   offen: Record<string, boolean>;
   sucheDebounced: string;
@@ -287,7 +293,7 @@ export function useLeserSprungSpy(opts: {
 }): void {
   const {
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
-    paneLocationHash, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, istXl, tocOffen,
+    paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, istXl, tocOffen,
     artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum, refs,
   } = opts;
   const {
@@ -440,12 +446,21 @@ export function useLeserSprungSpy(opts: {
       //     aktualisiereTabArtikel ist idempotent + no-op ohne passenden Reiter.
       //     Entprellt (trailing): beim schnellen Durchscrollen sonst ein
       //     localStorage-Write + globales TABS_EVENT pro Artikelgrenze.
-      // Sekundäres Pane treibt den globalen Reiter-Tracker NICHT (es ist nicht die URL).
-      if (!istSekundaer) {
-        const tabZiel = `${basisPfad}${window.location.search}#art-${token}`;
-        if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
-        tabArtikelTimer.current = window.setTimeout(() => aktualisiereTabArtikel(tabZiel), 200);
-      }
+      //
+      // LM-179 (Fahrplan B5, §6): Sekundäre Panes waren hier komplett
+      // ausgenommen («treibt den globalen Reiter-Tracker NICHT, es ist nicht
+      // die URL») — dieselbe Fläche wie der Erlass IST aber trotzdem als
+      // Reiter offen (Split-View öffnet ihn danaben, schliesst den
+      // ursprünglichen Reiter nicht), und dessen Positionsangabe im
+      // Reiter-Menü blieb dadurch auf dem Stand VOR dem Öffnen des Panes
+      // stehen (gemessen: «Art. 366» im Menü vs. «Art. 269d» im live
+      // gescrollten Pane-Kopf). `paneLocationSearch` (pane-eigenes
+      // `location.search`, s. o.) macht auch für das Sekundär-Pane den
+      // richtigen Reiter-Treffer möglich — ohne window.location zu lesen,
+      // bleibt die Änderung rein pane-lokal/darstellend (§3).
+      const tabZiel = `${basisPfad}${paneLocationSearch}#art-${token}`;
+      if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
+      tabArtikelTimer.current = window.setTimeout(() => aktualisiereTabArtikel(tabZiel), 200);
       // (a) Gliederung: aktiven Pfad markieren + den Zweig automatisch AUFklappen
       //     und beim Verlassen wieder ZUklappen (K, Auftrag David 26.6.2026) —
       //     aber nur Zweige, die der Spy selbst geöffnet hat (autoOffenRef);
@@ -591,7 +606,7 @@ export function useLeserSprungSpy(opts: {
     // Refs/Setter (jumpLock/…/setAktivIds) + artLabelByToken sind stabil bzw. bewusst
     // ausgelassen; Deps byte-identisch zum früheren Inline-Effekt (Rank 9-Kopplung).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, ohneGliederung, basisPfad, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
+  }, [sektionen, ohneGliederung, basisPfad, paneLocationSearch, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
 
   // Aktiven Eintrag im TOC sichtbar halten — sanft, nur den TOC-Container, nie die
   // Seite scrollen. Läuft bei JEDEM Wechsel des aktiven Pfads (aktivIds) UND nach

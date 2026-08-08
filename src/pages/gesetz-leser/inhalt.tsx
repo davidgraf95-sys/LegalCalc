@@ -217,7 +217,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // damit tocToggle/springeZuArtikel/springeZuSektion weiter dieselben Refs treffen.
   useLeserSprungSpy({
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
-    paneLocationHash: location.hash, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
+    paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
     istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
     refs: {
       jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
