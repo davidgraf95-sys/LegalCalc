@@ -17,6 +17,12 @@
 // in W2·10-UI-NAV und W2·5h-GESETZ-UI sind bereinigt (Ziff. 4), Regel 4 ist erfüllt.
 // UMSCHICHTUNG 7.8.2026 (QS-SELBSTOPT-Abschluss): drei erledigte Schritte → Chronik
 // «Umschichtung 7.8.2026». Entfernt: QS-SELBSTOPT · QS-ENTREG-KONFIG · QS-DISPATCH-P0-PRUEF.
+// UMSCHICHTUNG 8.8.2026 (Aufräum-Session, Anlass: Wächter `struktur-rotieren.py --check` rot,
+// ROADMAP.md 104.8 KB über dem 100-KB-Ceiling): sechs erledigte Schritte → Chronik-Abschnitt
+// «Umschichtung 8.8.2026». Entfernt: QS-E2E-TEMPO · QS-GP-BEREICH · W2·10-UI-NAV-S/-V/-J/-O.
+// Das Dach W2·10-UI-NAV bleibt (status ready) — offen ist dort nur noch -J3.
+// Folge-Bereinigung nach Regel 4 (Präzedenz 5.8.2026): `dep: [QS-GP-BEREICH]` in QS-GP-PREPUSH
+// geleert, weil die Vorbedingung erledigt und ihr @meta mit in die Chronik gewandert ist.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
@@ -55,7 +61,7 @@ export const INVENTAR: readonly string[] = [
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
   // Der jeweilige Elter behält sein @meta und bleibt das Dach.
   'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
-  'W2·10-UI-NAV-S', 'W2·10-UI-NAV-V', 'W2·10-UI-NAV-J', 'W2·10-UI-NAV-J3', 'W2·10-UI-NAV-O',
+  'W2·10-UI-NAV-J3',
   'W2·11-DESIGN-D6', 'W2·11-DESIGN-D7', 'W2·11-DESIGN-D8a', 'W2·11-DESIGN-D8b', 'W2·11-DESIGN-D8c',
   'W2·13-KANTONE-K1', 'W2·13-KANTONE-K2', 'W2·13-KANTONE-K3', 'W2·13-KANTONE-K4',
   'W2·13-KANTONE-K5', 'W2·13-KANTONE-K6', 'W2·13-KANTONE-K7', 'W2·13-KANTONE-K8',
@@ -74,7 +80,7 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 3.8.2026 (Aufräum-Session): Nebenfunde der CI-Diagnose (K1–K13), der Totcode-Welle
   // (#418/#420) und der Gegenprüfungen des Tages — alle klein, alle mit Anlass-Satz in der ROADMAP.
-  'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', 'QS-GP-BEREICH', 'QS-GP-PRERENDER',
+  'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', 'QS-GP-PRERENDER',
   // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
@@ -94,7 +100,7 @@ export const INVENTAR: readonly string[] = [
   'QS-KORPUS-RSPR-DATUM',
   // Verbesserungs-Runde David 7./8.8.2026: CI-Wartezeit (Shard-Neu-Packung, in-Session gebaut)
   // + Eigenschafts-Tests für die Engines (vermerkt, Invarianten-Katalog mit Abnahme).
-  'QS-E2E-TEMPO', 'QS-CODE-PROP',
+  'QS-CODE-PROP',
 
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die

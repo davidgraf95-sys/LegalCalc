@@ -2001,3 +2001,38 @@ Pipeline-Schicht auf Auftrag David, «denk gross»).** Befunde mit Belegen:
 Register der Befunde, die in bestehende Schritte geflossen sind; die zwei David-Fragen aus §7 sind
 am 4.8.2026 beantwortet: Manifest-Nullzeilen gewollt · `normalisiereTarifText`-Freigabe bestätigt
 und in `DESIGN-REGLEMENT-NORMTEXT.md` §1 gehoben).
+
+# Umschichtung 8.8.2026 — erledigte Schritte aus dem Steuerungsplan
+
+(Aufräum-Session nach `struktur-rotieren.py --check` rot [ROADMAP.md 104.8 KB > 100 KB];
+Wortlaut unverändert übernommen, Ausführungs-Protokoll Ziff. 6.)
+
+## QS-E2E-TEMPO — CI-Wartezeit pro Push senken: Shard-Packung nach CI-Messwerten erneuert *(done, verschoben 8.8.2026)*
+
+- [x] **`QS-E2E-TEMPO` · CI-Wartezeit pro Push senken: Shard-Packung nach CI-Messwerten erneuert** *(Anlass: Auftrag David 7.8.2026 «Prüfstrasse beschleunigen» — Messung der letzten 8 grünen Läufe: 7 von 8 e2e-Gruppen ~5–7 min, Gruppe 1 konsistent 9–16 min; die dokumentierte Neu-Pack-Schwelle der Packung vom 3.8. [Max-Gruppe >~7 min] war gerissen)* — **Gebaut 8.8. (inline, kein Fahrplan):** LPT-Neu-Packung aus den Report-Artefakten von Lauf 31220026058 (71 Specs, 38.4 min Summe) → sieben Gruppen je ~3.9 min, `leser-r1-r2` solo (11.5 min, unteilbar auf Datei-Ebene; sein Erstversuch-Flake-Befund → `QS-E2E-STABIL`, Wurzel-Fläche `W2·10-UI-NAV`). Union-Wächter grün, reine Verteilung (§6.3), `Gegenpruefung: n/a`. **Verbleibende Hebel, bewusst NICHT gebaut:** (a) grösster Hebel ist der r1-r2-Wurzel-Fix (≈ −4 min/Lauf), liegt auf fremder wip-Fläche; (b) Rüstzeit der Shards (~4 min: npm ci + Chromium) via node_modules-Cache; (c) `needs: bau`-Entkopplung der Shards — b/c erst prüfen, wenn a gelandet ist.
+  <!-- @meta id: QS-E2E-TEMPO · status: done · of: ja · blocker: null · dep: [] · kollision: [e2e/shard-gruppen.json] · worktree: nein · 26x: nein · groesse: S -->
+
+## QS-GP-BEREICH — `gegenpruefung:ok --bereich A..B` + `check:gegenpruefung` prüft auch `origin/main..HEAD` *(done, verschoben 8.8.2026)*
+
+- [x] **`QS-GP-BEREICH` · `gegenpruefung:ok --bereich A..B` + `check:gegenpruefung` prüft auch `origin/main..HEAD`** *(Anlass: drei Hand-Hash-Quittungen an einem Tag — 3.8.2026 —, weil das Tor nur den Working Tree sieht; committete Branch-Arbeit muss heute per Hand-Hash quittiert werden. 2. Anlass 7.8.2026, W2·10-UI-NAV-V: vierte Hand-Hash-Quittung, und eine falsche «kein Risikopfad»-Bau-Aussage blieb lokal unbemerkt, weil das Tor nach dem Commit nicht mehr scheitern kann — das kurzlebige Duplikat `QS-GP-COMMITDIFF` vom 7.8. ist hier fusioniert, Detail §3.7→§3.1)* — Tor-Code ohne Inhaltsänderung; **Scheiterns-Fähigkeit einmal rot zeigen** (§6.7). **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.1.
+  <!-- @meta id: QS-GP-BEREICH · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/gegenpruefung-ok.ts, scripts/check-gegenpruefung.ts, scripts/gegenpruefung/kern.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
+
+## W2·10-UI-NAV-S — UI-NAV-S · Suche-Rest (S1 + S6) *(done, verschoben 8.8.2026)*
+
+  - [x] **UI-NAV-S · Suche-Rest (S1 + S6)** — Query-Durchreichung `?q=` in die Browse-Pages + mobiler Such-Fokusmodus (≥16 px gegen iOS-Zoom). §2.
+    <!-- @meta id: W2·10-UI-NAV-S · status: done · of: ja · blocker: null · dep: [] · kollision: [src/lib/universalSuche.ts, src/components/suche, src/components/layout/HeaderSuche.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## W2·10-UI-NAV-V — UI-NAV-V · Verzahnung ohne Reader-Fläche (V2 + V4 + V6) *(done, verschoben 8.8.2026)*
+
+  - [x] **UI-NAV-V · Verzahnung ohne Reader-Fläche (V2 + V4 + V6)** — Hover-Trigger am bestehenden NormPopover · NormChip-`href` intern (Cmd-Klick landet intern) · Vorlage↔Rechner-Kreuzlinks. §3.
+    <!-- @meta id: W2·10-UI-NAV-V · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components/NormPopover.tsx, src/lib/vorlagen] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## W2·10-UI-NAV-J — UI-NAV-J · Rechtsprechungs-Seiten (J1 + J2 + J4) *(done, verschoben 8.8.2026)*
+
+  - [x] **UI-NAV-J · Rechtsprechungs-Seiten (J1 + J2 + J4)** — Browse-Liste mit Batching und Band-Sprungleiste · Mobil-Filter als Bottom-Sheet · «Neues vom Bundesgericht»-Karten. **Grenze zu `W2·6-UEBERSICHT` (gleiche Seite!):** hier die **Darstellung** der Liste (Batching, Sprungleiste, Sheet), dort die **Korpus-Breite** dahinter (SG-Regeste-Rest, Facetten-Umfang, Kantons-Ausweitung). Wer zuerst baut, macht den Kollisions-Precheck. §6.
+    <!-- @meta id: W2·10-UI-NAV-J · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## W2·10-UI-NAV-O — UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5) *(done, verschoben 8.8.2026)*
+
+  - [x] **UI-NAV-O · Übersichten und Sidebar (O2 + O4 + O5)** — Sidebar-Konsistenz · Kantons-Einstieg mit Abdeckung vor dem Klick · Scope-Labels der lokalen Suchfelder; alle drei S. §6.
+    <!-- @meta id: W2·10-UI-NAV-O · status: done · of: ja · blocker: null · dep: [] · kollision: [src/components/layout/Sidebar.tsx, src/pages/Gesetze.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
