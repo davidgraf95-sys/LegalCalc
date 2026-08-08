@@ -89,8 +89,12 @@ export const INVENTAR: readonly string[] = [
   // §14-Intake 4./5.8.2026 (Nacht-Landekette): Nebenbefunde der adversarialen Gegenprüfungen
   // zu PR #447/#448 — fedlex-Risiko-Klassifikation, leakErkannt-Konsument, PARTEI_RE-Härtung.
   'QS-GP-NACHBEFUNDE',
-  // §17-Wurzel-Fix 7.8.2026 (W2·10-UI-NAV-V): Quittungs-Werkzeug/Tor sehen committete Risiko-Diffs
-  'QS-GP-COMMITDIFF',
+  // QS-GP-COMMITDIFF (7.8.2026) am 8.8. als Duplikat in QS-GP-BEREICH fusioniert (Fahrplan §3.7→§3.1).
+  // Gegenprüfungs-Befund B6 der J-Runde 8.8.2026: Korpus-Datumsfehler (bge_151_II_475 = 1999).
+  'QS-KORPUS-RSPR-DATUM',
+  // Verbesserungs-Runde David 7./8.8.2026: CI-Wartezeit (Shard-Neu-Packung, in-Session gebaut)
+  // + Eigenschafts-Tests für die Engines (vermerkt, Invarianten-Katalog mit Abnahme).
+  'QS-E2E-TEMPO', 'QS-CODE-PROP',
 
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die

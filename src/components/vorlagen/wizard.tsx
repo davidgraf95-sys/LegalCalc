@@ -2,6 +2,7 @@ import { useState, type Dispatch, type ReactNode, type SetStateAction } from 're
 import { Link } from 'react-router-dom';
 import { FehlerBox, NormLink, Stepper } from './ui';
 import { NormChip } from './NormChip';
+import { PassendeRechner } from './PassendeRechner';
 import { NormText } from '../NormText';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -110,6 +111,11 @@ export function VorlagenWizardRahmen({
               ersten Viewport — das Tor nagelt genau das fest. */}
           <span data-formgate className="lc-badge lc-badge-warn">{badge}</span>
         </div>
+        {/* V6 (W2·10-UI-NAV): Weg zum passenden Rechner — «Frist zuerst
+            rechnen». Rendert nur, wenn die Registry für DIESE Vorlage eine
+            Rechner-Kante führt; sonst gibt die Komponente null zurück und der
+            Kopf bleibt byte-gleich. */}
+        <PassendeRechner />
         {(zuruecksetzen || fussnote) && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
             {zuruecksetzen && (
