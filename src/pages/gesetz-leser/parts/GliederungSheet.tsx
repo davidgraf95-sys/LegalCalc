@@ -56,7 +56,12 @@ export function GliederungSheet({
         className={`${inPane
           ? 'pointer-events-auto absolute inset-x-0 bottom-0 top-8 z-50 rounded-t-xl'
           : 'fixed inset-x-0 bottom-0 z-50 rounded-t-xl'} flex flex-col border-t border-line bg-paper-raised shadow-lg`}
-        style={inPane ? undefined : { top: 'calc(4rem + 2.25rem)', maxHeight: 'calc(100dvh - 4rem - 2.25rem)' }}>
+        // W2·19-GLIEDERUNG/S2: Kopf-Höhe aus `--leser-kopf-h` (gesetzt an genau
+        // einer Stelle, `.lc-leser` in inhalt.tsx). Dieser Zweig rendert IMMER im
+        // Fluss unterhalb von `.lc-leser` (nur der inPane-Zweig portaliert in die
+        // Overlay-Wurzel, und der trägt hier gar kein style) — die Variable erbt
+        // also zuverlässig. Rechnerisch unverändert 6.25rem / 100dvh − 6.25rem.
+        style={inPane ? undefined : { top: 'var(--leser-kopf-h)', maxHeight: 'calc(100dvh - var(--leser-kopf-h))' }}>
         {/* 1 · Griffleiste + Titel + Schliessen */}
         <div className="shrink-0 border-b border-line">
           <div aria-hidden className="mx-auto mt-2 h-1 w-10 rounded-full bg-line" />

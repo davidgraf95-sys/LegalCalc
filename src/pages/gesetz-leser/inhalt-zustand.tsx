@@ -243,8 +243,17 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // der Schwelle der persistenten App-Seitenleiste (lg) UND mit PANE_BREIT_PX (1024)
   // des Pane-Pfads → unter lg sind sowohl Seitenleiste als auch Gliederung Drawer
   // (kohärent, «nur bei echt-zu-klein in den Drawer»). Die Lesespalte bleibt nutzbar:
-  // Inhaltsbreite ist auf max-w-content (70rem) gedeckelt, abzüglich 16rem TOC + gap-8
-  // läuft der Fliesstext (max-w-normtext 42rem, E6/A37) nie unter ~26rem. SSR-Default false =
+  // Inhaltsbreite ist auf max-w-content (70rem) gedeckelt, abzüglich 18rem TOC + gap-8
+  // läuft der Fliesstext (max-w-normtext 42rem, E6/A37) nie unter ~25rem.
+  // W2·19-GLIEDERUNG/S2 (16rem → 18rem): am ENGSTEN Punkt gemessen statt gerechnet
+  // (Bau-Spec §2). Chromium, Reader OR/ZGB, Lesespalte `#lc-lesespalte`:
+  //   @1024px  432 → 400 px (OR 41 → 35 ch, ZGB 37 → 33 ch)
+  //   @1100px  508 → 476 px (OR 48 → 45 ch)
+  //   @1280px  672 → 656 px (OR 68 → 63 ch)
+  //   @1440px+ 672 → 672 px — unverändert, weil `max-w-normtext` (42rem) deckelt
+  // Horizontaler Overflow in ALLEN Fällen 0. Die 32-px-Einbusse trifft also nur
+  // das Fenster 1024–~1264 px; die a37-Assertion (@1440: Spalte exakt 672 px) und
+  // das R5-Lesemass (≤ 75 ch @1440, ≥ 30 ch @390) bleiben unberührt. SSR-Default false =
   // mobil-Layout (byte-gleich). Ohne diese Erkennung behandelte der Code «tocOffen»
   // fälschlich als 2-Spalten-aktiv → der Gliederungs-Zugang verschwand beim Scrollen.
   // §15.2 «Client-Initialstate auf den Server-Zustand pinnen»: den WAHREN
@@ -252,7 +261,7 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // nicht erst per useEffect nach dem Mount. Sonst rendert der Client (der per
   // createRoot frisch mountet, kein hydrateRoot — §15.5) zuerst mit `false`
   // = 1-Spalten-Layout und flippt danach auf `true` = 2-Spalten-Grid
-  // (`grid-cols-[16rem_…]`) → die gesamte Lesespalte reflowt = grosser Layout-
+  // (`grid-cols-[18rem_…]`) → die gesamte Lesespalte reflowt = grosser Layout-
   // Shift. Unter CPU-Last (CI: 6 parallele Tore-Jobs) verlor dieser useEffect
   // das Rennen gegen den Snapshot-Fetch: die Artikel rendern 1-spaltig, DANN
   // flippt der Effekt → byte-identischer 0,49-CLS (verweis-u «Plural-Sprung»).

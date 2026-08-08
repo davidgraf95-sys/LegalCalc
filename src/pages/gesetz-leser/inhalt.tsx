@@ -343,7 +343,30 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // (~3rem) entfiel mit A35 (Suchfeld jetzt IM Inhalts-Kopf). Im Pane liegen Topbar/
       // PaneKopf ausserhalb des Scroll-Containers → nur die pane-lokale Such-Leiste
       // (top 0.5rem, ~3.5rem) klebt (Muster --rsp-stick, Entscheid-Leser B3).
-      style={{ '--nt-stick': imPane ? '3.5rem' : 'calc(4rem + 2.25rem)' } as CSSProperties}>
+      //
+      // W2·19-GLIEDERUNG/S2 (§2 Bau-Spec, §17-Wurzelfix der LM-003/LM-004-Klasse):
+      // Die Kopf-Höhen standen bis hierher SECHSMAL ausgeschrieben (hier, die
+      // TOC-Spalte in inhalt-volltext.tsx, das GliederungSheet) — jede
+      // Kopf-Änderung musste an allen Stellen von Hand nachgezogen werden, und
+      // genau dieses Nachziehen wurde bei LM-003 vergessen (0.5rem-Streifen).
+      // Ab jetzt gibt es GENAU EINE Stelle, an der die Zahlen stehen:
+      //   --leser-kopf-h  Chrome OBERHALB des Lesebereichs, in beiden Ansichten
+      //                   gleich hoch: Topbar 4rem + Inhalts-Kopf bzw. PaneKopf
+      //                   2.25rem = 6.25rem. Einzelansicht: beide kleben und
+      //                   verdecken den Text. Im Pane: beide liegen AUSSERHALB
+      //                   des Pane-Scrollers, verkürzen aber die sichtbare
+      //                   Pane-Höhe um denselben Betrag.
+      //   --leser-sub-h   pane-lokale Such-Leiste ([data-such-bar], sticky top-0
+      //                   INNERHALB des Pane-Scrollers) — nur im Pane > 0.
+      // `--nt-stick` (die reale Sticky-Höhe für Sprünge) speist sich daraus und
+      // bleibt der EINE Konsument-Anker: Einzelansicht = --leser-kopf-h, im Pane
+      // = --leser-sub-h (Topbar/PaneKopf scrollen dort nicht mit dem Text).
+      // Rechnerisch byte-gleich zum Vorzustand (6.25rem bzw. 3.5rem).
+      style={{
+        '--leser-kopf-h': 'calc(4rem + 2.25rem)',
+        '--leser-sub-h': imPane ? '3.5rem' : '0rem',
+        '--nt-stick': imPane ? 'var(--leser-sub-h)' : 'var(--leser-kopf-h)',
+      } as CSSProperties}>
       <LeserVolltextInhalt
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
