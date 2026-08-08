@@ -28,6 +28,10 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 (Weiterbau 7, leichter Pfad) — UI-Befunde Batch B6: Fehler-, Leer- und Ladezustände, 10/14 (W2·17-UI-BEFUNDE, PR #476)
+
+B6/K-15 (Bau delegiert, Sonnet): PDF-Einbettung mit Ladezustand statt schwarzer Fläche (Blocker) · Regeste-Wortgrenzen-Kürzung (`kuerzeRegeste`, unit-getestet; Register-Projektion-Neuerzeugung bei QS-KORPUS-RSPR-DATUM vermerkt) · Feldnahe Eingabefehler (C2-treu) · Leerzustände/Redundanzen in 5 Rechnern. **4 korrekt verweigert:** LM-162/LM-164 kippen dokumentierte Entscheide (→ @david-fragen), LM-166 Risikopfad, LM-163 Browser-Rendering. check:merge-schutz: kein Risikopfad; Golden byte-gleich · gate voll · CI 8/8 · Drossel-Trias isoliert grün.
+
 ## Session 8.8.2026 (Weiterbau 5+6, leichter Pfad) — B5 Druck/Schema/Split (PR #473) · System-Farbschema (PR #474) · Tiefenführungs-Neubau (PR #475)
 
 Drei weitere Landungen der W2·17-Kette: **B5** 7/8 (Druck-Rechenweg, Kontraste dunkel + 4 Vorlagen-Routen, Split-Ziehgriff, Reiter-Fixes; 2 nachgemessen-überholt) · **B5-N1/LM-174** nach Davids Umentscheid (revidiert 19.6.): Erstbesuch folgt `prefers-color-scheme`, Label «Automatisch (System)», pristine reagiert live · **B4-N1/LM-155** nach Davids Revision seiner eigenen Verwerfung: Gliederungs-Tiefenführung neu gebaut GEGEN die A28-Scheiter-Gründe (nur im Baum, Ebenen-Stimmen statt Guide-Linie; Schrittweite 9.6px-konstant → 14/14/10…, Typo-Signaturen 2/7 → 4/7; Opus-Bau, gemessen vorher/nachher). Alle drei: Golden byte-gleich, gate voll, CI-Batterie grün; lokale Contention-Flakes (Drossel-Duo/Trias + einmal Such-I/O) stets isoliert grün belegt. Zwei Davids-Entscheide desselben Tags im Plan verankert; design-tokens-Kommentar-Scan-Fund als Fehlerbuch-Zeile.
