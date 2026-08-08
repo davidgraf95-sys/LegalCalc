@@ -28,6 +28,10 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 8.8.2026 (Weiterbau 8, leichter Pfad) — UI-Befunde Batch B7: Overlays und Menüfenster, 5/8 (W2·17-UI-BEFUNDE, PR #477)
+
+B7/K-02 (Bau delegiert, Sonnet): Suchergebnis-Fenster breitenunabhängig + blickdicht (Blocker LM-008/018) · «Ansicht»-Menü schliesst bei echtem Scrollen — Erstfassung per Selbst-Korrektur nachgebessert (Fussnoten-Toggle feuerte falsches scroll-Signal → wheel/touchmove) · Lesemodus zeigt Rubrum, doppeltes H1 weg. **Korrekt eskaliert:** Scrim-Frage LM-010/015 (Minimalismus-Vorgabe 28.7.) → @david-fragen; LM-016 (Topbar/Brotkrume-Breite) → Fehlerbuch als eigener Schritt. §0-Lehre verankert: programmatischer Scroll feuert keine echten Events. e2e-Sonderfall: 9 Suite-Rotfälle fielen in die Parallel-Last der laufenden Gliederungs-Perf-Diagnose — alle 9 isoliert grün belegt, CI 8/8 sauber. **Parallel läuft:** Gliederungs-Perf-Diagnose (Davids Harzig-/Sprung-/Zuklapp-/Hervorhebungs-Befunde, Fehlerbuch).
+
 ## Session 8.8.2026 (Weiterbau 7, leichter Pfad) — UI-Befunde Batch B6: Fehler-, Leer- und Ladezustände, 10/14 (W2·17-UI-BEFUNDE, PR #476)
 
 B6/K-15 (Bau delegiert, Sonnet): PDF-Einbettung mit Ladezustand statt schwarzer Fläche (Blocker) · Regeste-Wortgrenzen-Kürzung (`kuerzeRegeste`, unit-getestet; Register-Projektion-Neuerzeugung bei QS-KORPUS-RSPR-DATUM vermerkt) · Feldnahe Eingabefehler (C2-treu) · Leerzustände/Redundanzen in 5 Rechnern. **4 korrekt verweigert:** LM-162/LM-164 kippen dokumentierte Entscheide (→ @david-fragen), LM-166 Risikopfad, LM-163 Browser-Rendering. check:merge-schutz: kein Risikopfad; Golden byte-gleich · gate voll · CI 8/8 · Drossel-Trias isoliert grün.

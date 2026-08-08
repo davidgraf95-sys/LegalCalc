@@ -43,7 +43,13 @@ Substring-Treffer) — nie «UI-Fix», sondern eigener Nachweis; **§1-nahe Logi
 Formate, die in eine Engine laufen); **Risiko-Pfade** nach `istRisikoPfad()` →
 `npm run check:gegenpruefung`. Die Risiko-Klasse steht in der Fussnote jedes Batches.
 
-**§0.4 SSoT.** Wortlaut ausschliesslich in `docs/ui-befunde-2026-07/`. Der Fortschritt
+**§0.4 Werkzeug-Falle Scroll-Prüfung (B7-Lehre, 8.8.2026).** Programmatisches
+Scrollen (`window.scrollBy`, CDP-Scroll) feuert KEINE echten Browser-Events —
+wer Scroll-VERHALTEN (Menü-Schliessen, Listener) prüft, muss echte
+`wheel`/`touchmove`-Eingaben senden (Playwright `mouse.wheel`), sonst täuscht
+die Probe. Kostete in B7 eine Fehlrunde an LM-009.
+
+**§0.5 SSoT.** Wortlaut ausschliesslich in `docs/ui-befunde-2026-07/`. Der Fortschritt
 ausschliesslich hier (Checkboxen) und in `ROADMAP.md` (`@meta status`). Kein Feld doppelt.
 
 ---

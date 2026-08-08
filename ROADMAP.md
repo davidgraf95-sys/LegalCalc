@@ -132,6 +132,7 @@ david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organis
 <!-- @david-fragen
 kalender-transp: Kalender-Export: Termine als «frei» statt «beschäftigt» markieren (TRANSP:TRANSPARENT)? Bricht einen Golden-Anker — nur mit Go. · quelle: Session-Karte 3./4.8.2026 (archiv/STRUKTUR-SESSIONKARTEN.md)
 kommerz-lizenz: Kommerzieller Betrieb ja/nein? Entscheidet, ob eine CC-BY-NC-SA-Zweitquelle berührt werden darf. · quelle: ROADMAP.md, QS-EXTQUELLEN
+lm010-scrim: UI-Befunde LM-010/LM-015 wollen einen abdunkelnden Hintergrund (Scrim) hinter Overlays — kollidiert mit deiner Minimalismus-Vorgabe vom 28.7.2026. Scrim einführen oder Befunde verwerfen? · quelle: FAHRPLAN-UI-BEFUNDE.md §8 (B7, 8.8.2026)
 lm162-ergebnisbox: UI-Befund LM-162 will den Ergebniskasten mitwachsen lassen — kippt den dokumentierten CLS-Festhöhen-Entscheid. Befund verwerfen oder umentscheiden? · quelle: FAHRPLAN-UI-BEFUNDE.md §7 (B6, 8.8.2026)
 lm164-nicht-erfasst: UI-Befund LM-164 will «nicht erfasst» explizit ausweisen — kippt die Doktrin «Default bleibt nackt». Befund verwerfen oder umentscheiden? · quelle: FAHRPLAN-UI-BEFUNDE.md §7 (B6, 8.8.2026)
 -->
@@ -556,7 +557,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [x] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). ✅ 8.8.2026, PR #473 (7/8 + LM-174: David hat am 8.8.2026 auf System-Schema umentschieden — 19.6.-Entscheid «Tageszeit» revidiert, Bau-Position B5-N1; Rest gebaut/nachgemessen-überholt). §6.
   - [x] **B5-N1 · LM-174-Umbau: Farbschema folgt beim Erstbesuch dem System** — Entscheid David 8.8.2026 (revidiert 19.6.2026). ✅ 8.8.2026, PR #474 (pristine liest prefers-color-scheme, Label «Automatisch (System)», Live-Listener auch pristine). §6 (LM-174).
   - [x] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). ✅ 8.8.2026, PR #476 (10/14; übersprungen mit Begründung in §7: LM-162/LM-164 warten auf David, LM-166 Risikopfad → Daten-Session, LM-163 Browser-Rendering — eigene Untersuchung). §7.
-  - [ ] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). §8.
+  - [x] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). ✅ 8.8.2026, PR #477 (5/8: LM-010/LM-015 Scrim-Frage → @david-fragen; LM-016 eigener Schritt → Fehlerbuch). §8.
   - [ ] **B8 · Menüinhalt, Zustandsanzeige und Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9.
   - [ ] **B9 · Textsatz und Umbruch (K-12)** — 12 Befunde (Blocker 1 · Hoch 2). §10.
   - [ ] **B10 · Aktions-Anker, Symbolknöpfe und Trefferflächen (K-09b)** — 7 Befunde (Blocker 1 · Hoch 1). §11.
@@ -572,6 +573,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
   - [ ] **Gliederung im Gesetzes-Leser «funktioniert immer noch sehr harzig … springt komisch und ist nicht flüssig» (David, 8.8.2026 abends)** — dazu Davids Feature-Wunsch: nicht-aktive Äste sollen automatisch zuklappen (nur der aktive Pfad offen — zugleich Perf-Hebel: weniger gerenderte Knoten)); und die Aktiv-Hervorhebung ist «missglückt, das geht schöner» (David 8.8. — die in B4/LM-156 sichtbar gemachte goldene Hinterlegung braucht eine ruhigere, reglement-konforme Form). Bedienung/Scrollen der Gliederung zäh trotz gelandeter B3/B4/B4-N1-Fixes. Dedizierte Perf-Untersuchung eingeplant (Session 8.8., nach B7): messen am OR-Baum (2181 Einträge), Verdacht Scroll-Spy-/Re-Render-Pfad; verwandte offene Befunde: LM-163 (Leerfläche bei schnellem Scroll, B6 §7), «bimodaler Stall» (e2e-flake-forensik 26.7./QS-PERF), lokale Drossel-Trias-Flakes. §15-Bauregeln beachten (keine DOM-entfernende Virtualisierung von NORMTEXT — der Baum ist kein Normtext, dort wäre Virtualisierung zulässig; Logikverlust-Bewertung Pflicht).
+  - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Breite der Brotkrume-Leiste angleichen** — strukturelle Lücke zwischen Kopfzeile und Brotkrume auf jeder Seite mit Brotkrume (Befund B7 8.8.2026, bewusst zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
   - [ ] `check:design-tokens` scannt Kommentartext mit — ein Kommentar mit Utility-Platzhalter (`text-ink-*`) macht das Tor rot und kostet je Vorfall einen Tor-Zyklus; Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund B4-N1 8.8.2026 — nicht Davids Fund, hier verortet als kleinste passende Sammelstelle.)*
   David sammelt Fehler aus der täglichen Nutzung formlos hier als `- [ ]`-Zeile (oder meldet sie im
   Chat — die Session trägt sie ein). Eine Fix-Batch-Session arbeitet mehrere Positionen sortenrein
