@@ -228,13 +228,13 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **7 Befunde** · Blocker 2 · Hoch 4 · Mittel 1 · Detail 0 · `W2·17-UI-BEFUNDE-B3`
 
-- [ ] **LM-001** · Blocker · Die Kopfleiste ist nicht blickdicht. Beim Scrollen läuft der Seiteninhalt sichtbar … [Verdacht → FAHRPLAN-GESETZES-UX.md Z.597–600 + Z.613–616 (G2b-Ausführungsvermerk); src/index.css:783–786 (…]
-- [ ] **LM-002** · Blocker · Die klebende Leiste «Sachverhalt | Erwägungen | Dispositiv» deckt die Überschrift … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §1 N0c (Z.74–81); FAHRPLAN-GESETZES-UX.md §15 K5 (Z.2055–2061); src/p…]
-- [ ] **LM-003** · Hoch · Zwischen der klebenden Reiter-Kopfzeile und der darunter klebenden Werkzeugleiste bleibt ein … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9 B6 (Werkzeugleisten-Gesamtüberarbeitung, gebaut 29.7.2026 PR #405…]
-- [ ] **LM-004** · Hoch · Die Werkzeugleiste jedes Reiters schwebt als eigener Kasten über dem Textbereich … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9 B6; FAHRPLAN-GESETZES-UX.md §10.10 E3/A34; src/pages/gesetz-leser/…]
-- [ ] **LM-005** · Hoch · Die Leiste mit den drei Abschnitten bleibt sichtbar, auch wenn keiner … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §3 V5 (Erwägungs-Navigation im Entscheid-Leser, Z.258–266); src/pages…]
-- [ ] **LM-006** · Hoch · Während des Scrollens bleibt ein grosser Teil des Fensters für einen … [Verdacht → src/index.css:783–786 (.lc-glass backdrop-filter) = dieselbe Fläche wie LM-001; Abgrenzung: FAH…]
-- [ ] **LM-007** · Mittel · Kopfleiste, Breadcrumb und zwei Tab-Ebenen kleben gleichzeitig und belegen zusammen rund … [Verdacht → FAHRPLAN-VERZAHNUNG-UI.md §9 B6; FAHRPLAN-GESETZES-UX.md §15 K6 (Z.2062–2064); src/pages/Entsch…]
+- [x] **LM-001** · Blocker · gebaut (8.8.2026, `72e84e441`) — reproduziert (96 %-Deckkraft liess den Seiteninhalt am oberen Rand der Topbar sichtbar durchlaufen); `.lc-glass` volldeckend, `backdrop-filter` entfernt (G2b-Aufschub begründet geschlossen, §0.2).
+- [x] **LM-002** · Blocker · gebaut (8.8.2026, `63d6ce8d9`) — reproduziert (`#kontext-titel` ohne scroll-margin-top landete unter der Sprung-Leiste); in dieselbe `.rsp-anker [id]`-Regel aufgenommen.
+- [x] **LM-003** · Hoch · gebaut (8.8.2026, `5ba7aa185`) — exakt reproduziert (PaneKopf-Unterkante 101 px, Leiste fixiert auf 109 px); `top: 0` statt `0.5rem`.
+- [x] **LM-004** · Hoch · gebaut (8.8.2026, `5ba7aa185`) — dieselbe Stelle wie LM-003 (`data-such-bar`); `shadow-sm` entfernt, liest sich als Fortsatz des PaneKopfs statt als schwebender Kasten.
+- [x] **LM-005** · Hoch · gebaut (8.8.2026, `63d6ce8d9`) — reproduziert (reine `.lc-chip`-Anker ohne Scroll-Spy, gemeldete Aktivmarkierung war der :focus-Ring); IntersectionObserver + `.lc-chip-aktuell` ergänzt, tritt bei keinem sichtbaren Abschnitt zurück.
+- [x] **LM-006** · Hoch · gebaut (8.8.2026, `72e84e441`) — dieselbe Fläche wie LM-001 (`.lc-glass backdrop-filter`, Repaint-Verdacht laut Dedup-Notiz); mit dem `backdrop-filter`-Entfall mitbehoben, Flash-Artefakt selbst nicht unabhängig nachmessbar (Sandbox ohne GPU-Kompositierung, s. Bau-Bericht).
+- [x] **LM-007** · Mittel · gebaut (8.8.2026, `63d6ce8d9`) — B6-Minimalismus-Muster übernommen (`py-1.5`, `groesse="s"`), `--rsp-stick` bewusst grosszügig belassen statt neu vermessen.
 
 **Code-Flächen (grob, aus den Routen):** `src/components/layout`, `src/index.css`.
 **Risiko-Klasse:** reines UI (CSS/Layout).
