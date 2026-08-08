@@ -60,7 +60,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     revisionFuer, historieFuer,
   } = useLeserZustand();
   const {
-    offen, setOffen, tocBaum, setTocBaum, tocToggle, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = useLeserTocZustand();
   const {
@@ -234,11 +234,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // TOC-Mitscroll + Nutzer-Interaktions-Guard + Scroll-Anker — verhaltensneutral in
   // ./inhalt-hooks. Acht Hooks (2 useRef + 6 useEffect) in EXAKT der bisherigen
   // Reihenfolge; alle geteilten Refs/Setter/abgeleiteten Werte werden durchgereicht,
-  // damit tocToggle/springeZuArtikel/springeZuSektion weiter dieselben Refs treffen.
+  // damit tocToggleGruppe/springeZuArtikel/springeZuSektion weiter dieselben Refs treffen.
   useLeserSprungSpy({
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
-    gliederungsKnoten: modell.knoten,
+    gliederungsKnoten: modell.knoten, umhaengPraefix: modell.umhaengPraefix,
     istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
     refs: {
       jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
@@ -341,7 +341,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   };
 
   // Gliederungs-Baum EINMAL beschreiben (genutzt in der xl-Spalte UND im mobilen
-  // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggle` sind
+  // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggleGruppe` sind
   // oben als useCallback definiert (über dem early-return, Rank 4).
   const tocBaumEl = (
     // A36: das Modell ist auf dem KURATIERTEN Baum gebaut (tocSektionen) —
@@ -351,7 +351,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     // haben und darum über ihren ersten Artikel-Token springen.
     <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} offen={tocBaum}
       startOffeneTiefe={modell.startOffeneTiefe}
-      onToggle={tocToggle} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
+      onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
   );
 
   return (

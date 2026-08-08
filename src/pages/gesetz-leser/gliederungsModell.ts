@@ -56,6 +56,12 @@ export const ANHANG_DOMINANZ = 0.5;
 export const ID_VORSPANN = 'gm-vorspann';
 export const ID_NACHSPANN = 'gm-nachspann';
 export const ID_ANHANG = 'gm-anhang';
+/**
+ * Mittelgruppe (Bug-Check 9.8.2026, B2) — freie Artikel ZWISCHEN zwei
+ * Baumknoten. Präfix + laufender Roh-Index des vorangehenden Stamm-Knotens,
+ * damit mehrere Lücken im selben Erlass kollisionsfrei bleiben.
+ */
+export const ID_MITTE = 'gm-mitte';
 
 export type GliederungsModus = 'b4-mini' | 'b3-leer' | 'b2-index' | 'b1-offen' | 'b1-kompakt';
 
@@ -93,7 +99,7 @@ export interface GliederungsKennzahlen {
 export interface GliederungsKnoten {
   /** Sektions-Id (`sek-N`) bzw. eine der synthetischen Ids. Der EINZIGE Schlüssel. */
   id: string;
-  art: 'sektion' | 'vorspann' | 'nachspann' | 'anhang';
+  art: 'sektion' | 'vorspann' | 'nachspann' | 'mitte' | 'anhang';
   /**
    * Alle Sektions-Ids, die diese EINE Zeile trägt — bei verdichteten
    * Einzelkind-Ketten mehr als eine (`[sek-7, sek-8, sek-9]`). Der Scroll-Spy
@@ -158,7 +164,33 @@ export interface GliederungsModell {
   startOffeneTiefe: number;
   /** B4: die Leiste startet eingeklappt, die Lesespalte bekommt die volle Breite. */
   leisteStartetZu: boolean;
+  /**
+   * Rohpfad→Modellpfad, EINE Übersetzungsstelle (§5). Roh-Sektions-Id → Präfix
+   * der synthetischen Zeilen, unter die ihr Ast im Modell umgehängt wurde
+   * (heute ausschliesslich `['gm-anhang']`).
+   *
+   * WOZU: der Scroll-Spy bestimmt den aktiven Pfad über den ROHBAUM
+   * (`pfadZu`) — er kennt das Modell nicht und soll es auch nicht nachbauen.
+   * Ein reiner Anhang-Ast ist im Rohbaum Top-Level, im Modell aber Kind der
+   * Wurzel «Anhänge». Ohne Übersetzung sucht die Marken-Suche den Roh-Id auf
+   * der obersten Modell-Ebene, findet nichts und gibt auf: keine
+   * Positionsmarke, kein `aria-current`, kein Mitscroll (Bug-Check 9.8.2026,
+   * B4 — belegt an AIG/ASYLG/KKV, korpusweit 136 Erlasse mit Anhang-Ast).
+   * Leer, solange nichts umgehängt wurde.
+   */
+  umhaengPraefix: Record<string, string[]>;
   kennzahlen: GliederungsKennzahlen;
+}
+
+/**
+ * Übersetzt einen Rohpfad (Sektions-Ids aus `pfadZu`) in den Modellpfad, indem
+ * das Umhäng-Präfix vorangestellt wird. Rein, deterministisch, ohne Kopie der
+ * Umhäng-Regel — die lebt allein in `baueGliederungsModell` (§5).
+ */
+export function uebersetzeRohPfad(umhaengPraefix: Record<string, string[]>, roh: string[]): string[] {
+  if (roh.length === 0) return roh;
+  const praefix = umhaengPraefix[roh[0]];
+  return praefix === undefined ? roh : [...praefix, ...roh];
 }
 
 // ─── Randtitel-Dichte ────────────────────────────────────────────────────────
@@ -458,12 +490,48 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
   const freieArtikel = ohneGliederung.filter((e) => !istAnhangEintrag(e));
   const vorspann = freieArtikel.filter((e) => (artPos.get(e.artikel) ?? 0) < ersteBaumPos);
   const nachspann = freieArtikel.filter((e) => (artPos.get(e.artikel) ?? 0) > letzteBaumPos);
+  // B2 (Bug-Check 9.8.2026): freie Artikel liegen nicht nur VOR und NACH dem
+  // Baum, sondern auch MITTENDRIN — und die fielen bis hierher aus BEIDEN Filtern
+  // und damit aus dem Modell. Belegt am committeten Korpus: BS-569.500 5 von 10
+  // Artikeln, ZG-641.1 2 von 14, KKV 1 von 211; in allen drei Fällen wird die
+  // Leiste gerendert, die Artikel waren über sie schlicht unerreichbar. Zweit-
+  // wirkung: `findeSynthPfad` lieferte für sie `null`, der Scroll-Spy stieg
+  // stumm aus und die Positionsmarke behauptete weiter den zuletzt bekannten
+  // Standort — eine Falschaussage (§8), nicht nur eine Lücke.
+  const mittelfrei = freieArtikel.filter((e) => {
+    const p = artPos.get(e.artikel) ?? 0;
+    return p > ersteBaumPos && p < letzteBaumPos;
+  });
   const anhangFrei = ohneGliederung.filter(istAnhangEintrag);
 
   // 3 · Reine Anhang-Teilbäume wandern ans Ende unter die Anhang-Wurzel
   //     (ChemRRV/AIG: die Anhänge stehen dort IM Sidecar-Baum).
   const anhangAeste = sektionsKnoten.filter((k) => k.anhang);
-  const stammKnoten = sektionsKnoten.filter((k) => !k.anhang);
+  // B4: die EINE Übersetzungstabelle Rohpfad→Modellpfad (Herleitung am Feld
+  // `umhaengPraefix`). Alle Ids der umgehängten Zeile — auch die inneren Stufen
+  // einer verdichteten Kette — zeigen auf dieselbe neue Elternzeile.
+  const umhaengPraefix: Record<string, string[]> = {};
+  for (const ast of anhangAeste) for (const id of ast.ids) umhaengPraefix[id] = [ID_ANHANG];
+
+  // B2: Zuordnung der Mittelgruppen. Massgeblich ist allein die Dokument-
+  // reihenfolge: eine Gruppe hängt hinter dem letzten Stamm-Knoten, der VOR ihr
+  // endet. Nichts wird geraten und nichts einer Sektion zugeschlagen, zu der der
+  // Artikel amtlich nicht gehört (§8) — die Gruppe ist ein eigener, ehrlich
+  // benannter Knoten «Ohne Abschnitt», genau wie Vor- und Nachspann.
+  const letztePosJeWurzel = sektionen.map((s) =>
+    sammleArtikel(s).reduce((m, a) => Math.max(m, artPos.get(a.artikel) ?? -1), -1));
+  const mittelTopf = new Map<number, NormSnapshot[]>();
+  for (const a of mittelfrei) {
+    const p = artPos.get(a.artikel) ?? 0;
+    let idx = -1;
+    for (let i = 0; i < sektionsKnoten.length; i++) {
+      if (sektionsKnoten[i].anhang) continue;
+      if (letztePosJeWurzel[i] < p) idx = i;
+    }
+    if (idx < 0) continue; // vor jedem Stamm-Knoten ⇒ deckt bereits der Vorspann
+    const topf = mittelTopf.get(idx);
+    if (topf) topf.push(a); else mittelTopf.set(idx, [a]);
+  }
 
   const anhangAnteil = eintraege.length > 0 ? anhangAlle.length / eintraege.length : 0;
   const dominant = anhangAnteil > ANHANG_DOMINANZ;
@@ -483,6 +551,13 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
     anhangWurzel.artikelAnzahl = anhangWurzel.kinder.reduce((n, k) => n + k.artikelAnzahl, 0);
     anhangWurzel.aufgehoben = anhangWurzel.artikelAnzahl > 0
       && anhangWurzel.kinder.every((k) => k.aufgehoben);
+    // B7 (Bug-Check 9.8.2026): die Wurzel «Anhänge» ist ein Sprungziel wie jede
+    // andere Zeile — ihr Knopf ruft `onSprungArtikel(k.ersterArtikel)`. Wo der
+    // Anhang vollständig IM Sidecar-Baum steht (AIG, ASYLG, KKV …), gibt es
+    // keine freien Anhang-Artikel, aus denen `baueSynth` den Wert hätte ziehen
+    // können: der Knopf blieb feedbacklos. Der erste Artikel des ersten Kindes
+    // ist die Dokumentreihenfolge, nichts Geratenes.
+    anhangWurzel.ersterArtikel ??= anhangWurzel.kinder.find((k) => k.ersterArtikel)?.ersterArtikel;
   }
 
   // Der Vorspann-Knoten hängt daran, dass es ÜBERHAUPT einen Baum gibt — nicht
@@ -496,7 +571,14 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
   if (vorspann.length > 0 && hatBaum) {
     knoten.push(baueSynth(ID_VORSPANN, 'vorspann', 'Ohne Abschnitt', vorspann, 0));
   }
-  knoten.push(...stammKnoten);
+  // Stamm-Knoten in Dokumentreihenfolge; jede Mittelgruppe steht direkt hinter
+  // dem Knoten, nach dem sie im Text folgt (B2, Herleitung bei `mittelfrei`).
+  sektionsKnoten.forEach((k, i) => {
+    if (k.anhang) return; // reiner Anhang-Ast: hängt unten unter «Anhänge»
+    knoten.push(k);
+    const topf = mittelTopf.get(i);
+    if (topf) knoten.push(baueSynth(`${ID_MITTE}:${i}`, 'mitte', 'Ohne Abschnitt', topf, 0));
+  });
   if (nachspann.length > 0 && hatBaum) {
     knoten.push(baueSynth(ID_NACHSPANN, 'nachspann', 'Ohne Abschnitt', nachspann, 0));
   }
@@ -529,9 +611,51 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
     knoten: modus === 'b3-leer' ? [] : knoten,
     startOffeneTiefe,
     leisteStartetZu: modus === 'b4-mini',
+    umhaengPraefix,
     kennzahlen,
   };
 }
+
+/**
+ * Ist die Zeile aufgeklappt? Eine explizite Angabe (Klick oder Scroll-Spy) für
+ * IRGENDEINE ihrer Ids gewinnt gegen den Modus-Default; liegt keine vor,
+ * entscheidet die Ausnahme des Knotens (Anhang-Dominanz) bzw. die Start-Tiefe.
+ */
+export function zeileIstOffen(k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number): boolean {
+  const zustaende = k.ids.map((id) => offen[id]).filter((v): v is boolean => v !== undefined);
+  if (zustaende.length > 0) return zustaende.some(Boolean);
+  return k.startOffen ?? k.tiefe < startOffeneTiefe;
+}
+
+/**
+ * F5: welche EINE Zeile trägt die Positionsmarke?
+ *
+ * Die Spec sagt «der tiefste aktive Knoten». Das genügt als Regel nicht ganz,
+ * denn der Nutzer darf einen Ast, in dem er gerade liest, von Hand zuklappen
+ * (`manuellZuRef` — der Spy reisst ihn dann bewusst NICHT wieder auf). Läge die
+ * Marke stur am tiefsten Knoten, verschwände sie in diesem Fall aus der
+ * sichtbaren Leiste: der Leser stünde ohne Standort da, und der Selektor
+ * `[data-toc] [data-toc-aktiv]` (a9-Sprungziel, a33-Ruhe-Messung) fände nichts
+ * Bedienbares mehr. Darum: der tiefste aktive Knoten, der noch SICHTBAR ist —
+ * man steigt den Aktiv-Pfad hinab, solange die Äste offen sind. Bei ganz
+ * geöffnetem Pfad ist das exakt der tiefste Knoten (der Normalfall), sonst der
+ * letzte sichtbare Vorfahre. In beiden Fällen genau EINE Marke.
+ */
+export function findeMarke(
+  knoten: GliederungsKnoten[], aktivPfad: string[], offen: Record<string, boolean>, startOffeneTiefe: number,
+): string | null {
+  if (aktivPfad.length === 0) return null;
+  let marke: string | null = null;
+  let liste = knoten;
+  for (;;) {
+    const treffer = liste.find((k) => k.ids.some((id) => aktivPfad.includes(id)));
+    if (!treffer) return marke;
+    marke = treffer.id;
+    if (treffer.kinder.length === 0 || !zeileIstOffen(treffer, offen, startOffeneTiefe)) return marke;
+    liste = treffer.kinder;
+  }
+}
+
 
 /** Alle Zeilen des Modells in Renderreihenfolge (Testhilfe und Zählwerk). */
 export function flacheZeilen(knoten: GliederungsKnoten[]): GliederungsKnoten[] {

@@ -10,6 +10,7 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
+import { klappZeile } from './tocAutoZuklappen';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
 // Aus GesetzLeserInhalt ausgelagerte Zustands-Hooks: Daten-/Shard-/Such-Zustand,
@@ -156,7 +157,7 @@ export function useLeserTocZustand() {
   // K (Auftrag David 26.6.2026): Zweige, die der Scroll-Spy AUTOMATISCH geöffnet
   // hat. Nur diese darf der Spy wieder zuklappen, sobald die Leseposition den
   // Zweig verlässt — manuell (Klick) geöffnete Zweige bleiben offen, weil sie
-  // nicht in diesem Set stehen (tocToggle/springeZuSektion nehmen sie heraus).
+  // nicht in diesem Set stehen (tocToggleGruppe/springeZuSektion nehmen sie heraus).
   const autoOffenRef = useRef<Set<string>>(new Set());
   // §15.2-Nachlauf (18.7.2026): Tick des letzten Aktiv-Vorkommens je Auto-Zweig +
   // monotoner Pfadwechsel-Zähler. Der Spy klappt einen Auto-Zweig erst zu, wenn er
@@ -180,14 +181,31 @@ export function useLeserTocZustand() {
   // Rank 4 (QS-PERF, §15/4): useCallback ([] — liest nur setTocBaum + stabile Refs),
   // sonst hätte onToggle bei jedem Parent-Render neue Identität und die React.memo-
   // Wrapper von SektionBaumTOC liefe bei jeder Scroll-Spy-Aktualisierung leer.
-  const tocToggle = useCallback((id: string) => {
-    setTocBaum((o) => {
-      const offenJetzt = !o[id];
+  //
+  // EINE ZEILE, EIN ZIELWERT (B3, Bug-Check 9.8.2026). Eine verdichtete
+  // Einzelkind-Kette ist EINE Zeile mit MEHREREN Sektions-Ids («§ 3 › I. › 1.»).
+  // Bis hierher rief der Chevron `k.ids.forEach(tocToggle)` und kippte jede Id
+  // EINZELN: standen sie nicht im gleichen Zustand — und genau das hinterlässt
+  // ein Sektions-Sprung, der nur die äussere Id öffnet —, kam nach dem Flip ein
+  // GEMISCHTER Zustand heraus. Die Zeile gilt als offen, sobald IRGENDEINE ihrer
+  // Ids offen ist (`istOffen`, `.some(Boolean)`): der Ast liess sich nie wieder
+  // schliessen, `aria-expanded` blieb dauerhaft `true`, und weil dabei auch
+  // `manuellOffenRef`/`manuellZuRef` gemischt befüllt wurden, half kein Scrollen
+  // und kein zweiter Klick. Betroffen sind alle Zeilen mit Verdichtung UND
+  // Kindern (ZGB, VVG, KOV, mehrere BS-Erlasse).
+  //
+  // Der Aufrufer gibt den SICHTBAREN Zustand mit (`istOffen`), statt ihn hier aus
+  // `tocBaum` zu erraten: die Zeile kennt zusätzlich `startOffen` und
+  // `startOffeneTiefe` (Modell), und eine Zeile, die ohne Eintrag in `tocBaum`
+  // offen startet, liesse sich sonst mit dem ersten Klick nicht schliessen.
+  const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean) => {
+    const ziel = !istOffen;
+    for (const id of ids) {
       autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      if (offenJetzt) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
+      if (ziel) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
       else { manuellOffenRef.current.delete(id); manuellZuRef.current.add(id); }
-      return { ...o, [id]: offenJetzt };
-    });
+    }
+    setTocBaum((o) => klappZeile(o, ids, istOffen));
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
   const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
@@ -226,7 +244,7 @@ export function useLeserTocZustand() {
   }, [tocAuf, aktivIds]);
 
   return {
-    offen, setOffen, tocBaum, setTocBaum, tocToggle, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   };
 }

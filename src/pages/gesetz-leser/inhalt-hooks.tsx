@@ -17,7 +17,7 @@ import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
-import { findeSynthPfad, type GliederungsKnoten } from './gliederungsModell';
+import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
 import { planeZuklappen } from './tocAutoZuklappen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
@@ -271,8 +271,11 @@ export function useLeserSprungSpy(opts: {
   aktivIds: string[];
   tocBaum: Record<string, boolean>;
   /** W2·19-GLIEDERUNG/S5: die gerenderten Zeilen des Modells — nur zum Auflösen
-   *  der SYNTHETISCHEN Zeilen (Vorspann/Nachspann/Anhänge), s. findeSynthPfad. */
+   *  der SYNTHETISCHEN Zeilen (Vorspann/Nachspann/Mittelgruppen/Anhänge), s.
+   *  findeSynthPfad. */
   gliederungsKnoten: GliederungsKnoten[];
+  /** B4: Rohpfad→Modellpfad des Modells (`GliederungsModell.umhaengPraefix`). */
+  umhaengPraefix: Record<string, string[]>;
   istXl: boolean;
   tocOffen: boolean;
   artLabelByToken: Map<string, string>;
@@ -295,7 +298,7 @@ export function useLeserSprungSpy(opts: {
 }): void {
   const {
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
-    paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, gliederungsKnoten, istXl, tocOffen,
+    paneLocationHash, paneLocationSearch, basisPfad, offen, sucheDebounced, aktivIds, tocBaum, gliederungsKnoten, umhaengPraefix, istXl, tocOffen,
     artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum, refs,
   } = opts;
   const {
@@ -468,7 +471,19 @@ export function useLeserSprungSpy(opts: {
       //     aber nur Zweige, die der Spy selbst geöffnet hat (autoOffenRef);
       //     manuell geöffnete bleiben offen. Der Mitscroll-Effekt hält den
       //     aktiven Eintrag dann im TOC-Container sichtbar.
-      const ids = pfadZu(sektionen, (s) => s.artikel.some((x) => x.artikel === token)) ?? [];
+      // B4 (Bug-Check 9.8.2026): `pfadZu` liefert den ROHPFAD. Ein reiner
+      // Anhang-Ast steht im Rohbaum Top-Level, im Modell aber unter der Wurzel
+      // «Anhänge» — ohne Übersetzung suchte die Marken-Suche den Roh-Id auf der
+      // obersten Modell-Ebene, fand nichts und die Leiste blieb unmarkiert
+      // (AIG/ASYLG/KKV, korpusweit 136 Erlasse mit Anhang-Ast). Die Regel, WAS
+      // wohin umgehängt wurde, kennt allein das Modell (§5); hier wird sie nur
+      // angewandt. Nebenwirkung mit Absicht: `gm-anhang` steht damit im aktiven
+      // Pfad und wird vom Auto-Akkordeon aufgeklappt — sonst zeigte die Marke
+      // auf eine Zeile in einem zugeklappten Ast.
+      const ids = uebersetzeRohPfad(
+        umhaengPraefix,
+        pfadZu(sektionen, (s) => s.artikel.some((x) => x.artikel === token)) ?? [],
+      );
       if (!ids.length) {
         // W2·19-GLIEDERUNG/S5 (Spec §3.4): der Artikel gehört zu KEINER amtlichen
         // Sektion — er liegt im Vorspann, im Nachspann oder im Anhang-Ast. Bis
@@ -480,6 +495,15 @@ export function useLeserSprungSpy(opts: {
         // zugeordnet (§5). Kein Auto-Akkordeon für diesen Fall: synthetische
         // Zeilen haben keine `sek-N`-Buchhaltung, und ihr Ast (Anhänge) folgt
         // seiner eigenen Start-Regel.
+        // B6 (Bug-Check 9.8.2026): der schwebende Auto-Akkordeon-Timer wird auch
+        // hier verworfen. Dieser Zweig ist eine AUTORITATIVE Meldung «der Leser
+        // steht jetzt auf einer synthetischen Zeile» — lief noch ein Timer aus
+        // einem früheren Artikel, überschrieb er `aktivIds` gleich wieder mit
+        // dessen Sektions-Pfad, und die Dedup-Sperre (`prev === ids`) zementierte
+        // die Falschmarkierung bis zum nächsten Artikelwechsel. Alle anderen
+        // autoritativen Schreiber (Klick-Sprung, Sektions-Sprung) räumen den
+        // Timer bereits; nur dieser tat es nicht.
+        if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
         const synth = findeSynthPfad(gliederungsKnoten, token);
         if (synth) setAktivIds((prev) => prev.length === synth.length && prev.every((v, i) => v === synth[i]) ? prev : synth);
         return;
@@ -636,7 +660,7 @@ export function useLeserSprungSpy(opts: {
     // S5: `gliederungsKnoten` kommt aus demselben useMemo-Takt wie `sektionen`
     // (Modell-Deps: kuratierter Baum + Snapshot + Sidecar) — der Effekt läuft
     // dadurch nicht öfter neu als zuvor, sieht aber nie eine veraltete Zuordnung.
-  }, [sektionen, ohneGliederung, gliederungsKnoten, basisPfad, paneLocationSearch, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
+  }, [sektionen, ohneGliederung, gliederungsKnoten, umhaengPraefix, basisPfad, paneLocationSearch, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
 
   // Aktiven Eintrag im TOC sichtbar halten — sanft, nur den TOC-Container, nie die
   // Seite scrollen. Läuft bei JEDEM Wechsel des aktiven Pfads (aktivIds) UND nach

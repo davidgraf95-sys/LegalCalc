@@ -68,8 +68,16 @@ export function useSektionSprung(opts: {
   // stabil → SektionBaumTOC (React.memo) re-rendert nur bei aktivPfad-/offen-Wechsel.
   // Muss ÜBER dem early-return (`!erlass || !eintraege`) stehen, sonst wäre der Hook
   // bedingt (Rules of Hooks) — das war der in Batch 1 zurückgestellte Reorder.
-  const springeZuSektion = useCallback((id: string) => {
-    const ids = pfadZu(sektionen, (s) => s.id === id) ?? [id];
+  const springeZuSektion = useCallback((zeilenIds: string[]) => {
+    // B3 (Bug-Check 9.8.2026), zweiter Hebel: eine verdichtete Einzelkind-Kette
+    // ist EINE Zeile mit mehreren Sektions-Ids. `pfadZu` findet nur die
+    // ÄUSSERSTE (sie trägt die Zeile) und lieferte damit einen Pfad, in dem die
+    // inneren Stufen fehlten — der Sprung öffnete die Zeile halb und hinterliess
+    // genau den Mischzustand, an dem der Chevron danach hängenblieb. Die Zeile
+    // gibt ihre Ids jetzt selbst mit; behandelt werden sie alle gleich.
+    const id = zeilenIds[0];
+    const pfad = pfadZu(sektionen, (s) => s.id === id) ?? [id];
+    const ids = [...new Set([...pfad, ...zeilenIds])];
     jumpLockRef.current = true;
     // F3: schwebenden Auto-Akkordeon-Timer verwerfen (Klick-Sprung ist autoritativ).
     if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);

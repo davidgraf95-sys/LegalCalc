@@ -1,7 +1,7 @@
 import { memo, type ReactNode } from 'react';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
-import type { GliederungsKnoten } from '../gliederungsModell';
+import { zeileIstOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
 //
@@ -98,45 +98,13 @@ const AHNEN_TINTE: Record<string, string> = {
   'text-ink-800': 'text-ink-800',
 };
 
-/**
- * Ist die Zeile aufgeklappt? Eine explizite Angabe (Klick oder Scroll-Spy) für
- * IRGENDEINE ihrer Ids gewinnt gegen den Modus-Default; liegt keine vor,
- * entscheidet die Ausnahme des Knotens (Anhang-Dominanz) bzw. die Start-Tiefe.
- */
-function istOffen(k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number): boolean {
-  const zustaende = k.ids.map((id) => offen[id]).filter((v): v is boolean => v !== undefined);
-  if (zustaende.length > 0) return zustaende.some(Boolean);
-  return k.startOffen ?? k.tiefe < startOffeneTiefe;
-}
-
-/**
- * F5: welche EINE Zeile trägt die Positionsmarke?
- *
- * Die Spec sagt «der tiefste aktive Knoten». Das genügt als Regel nicht ganz,
- * denn der Nutzer darf einen Ast, in dem er gerade liest, von Hand zuklappen
- * (`manuellZuRef` — der Spy reisst ihn dann bewusst NICHT wieder auf). Läge die
- * Marke stur am tiefsten Knoten, verschwände sie in diesem Fall aus der
- * sichtbaren Leiste: der Leser stünde ohne Standort da, und der Selektor
- * `[data-toc] [data-toc-aktiv]` (a9-Sprungziel, a33-Ruhe-Messung) fände nichts
- * Bedienbares mehr. Darum: der tiefste aktive Knoten, der noch SICHTBAR ist —
- * man steigt den Aktiv-Pfad hinab, solange die Äste offen sind. Bei ganz
- * geöffnetem Pfad ist das exakt der tiefste Knoten (der Normalfall), sonst der
- * letzte sichtbare Vorfahre. In beiden Fällen genau EINE Marke.
- */
-function findeMarke(
-  knoten: GliederungsKnoten[], aktivPfad: string[], offen: Record<string, boolean>, startOffeneTiefe: number,
-): string | null {
-  if (aktivPfad.length === 0) return null;
-  let marke: string | null = null;
-  let liste = knoten;
-  for (;;) {
-    const treffer = liste.find((k) => k.ids.some((id) => aktivPfad.includes(id)));
-    if (!treffer) return marke;
-    marke = treffer.id;
-    if (treffer.kinder.length === 0 || !istOffen(treffer, offen, startOffeneTiefe)) return marke;
-    liste = treffer.kinder;
-  }
-}
+// `zeileIstOffen` und `findeMarke` sind seit dem Bug-Check 9.8.2026 KEINE
+// lokalen Helfer mehr, sondern Teil des Modells (`gliederungsModell.ts`). Beide
+// sind reine Ableitungen aus dem Knoten und dem Klapp-Zustand — sie gehören zur
+// Schicht, die entscheidet, WAS die Leiste zeigt, nicht zu der, die es malt
+// (§3). Der Auslöser war praktisch: die Marken-Regel war nur über einen DOM-Lauf
+// prüfbar, und genau deshalb blieb B4 (Marke verschwindet im Anhang) unentdeckt,
+// obwohl es eine reine Modell-Frage ist. Jetzt trägt sie ein Unit-Fall.
 
 /** Zählwert-Text für `aria-label`/`title` (die Optik baut die Zeile selbst). */
 function zaehlwertText(k: GliederungsKnoten, auf: boolean): string {
@@ -155,8 +123,10 @@ interface ZeilenProps {
   markeId: string | null;
   offen: Record<string, boolean>;
   startOffeneTiefe: number;
-  onToggle: (id: string) => void;
-  onSprung: (id: string) => void;
+  /** B3: EINE Zeile, EIN Zielwert — alle Ids der Zeile plus ihr sichtbarer Zustand. */
+  onToggle: (ids: string[], istOffen: boolean) => void;
+  /** B3: die Sprungzeile gibt ALLE ihre Ids mit, nicht nur die äusserste. */
+  onSprung: (ids: string[]) => void;
   onSprungArtikel: (token: string) => void;
 }
 
@@ -178,7 +148,7 @@ interface ZeilenProps {
 const Zeile = memo(function Zeile({
   k, erster, aktivPfad, markeId, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
 }: ZeilenProps): ReactNode {
-  const auf = istOffen(k, offen, startOffeneTiefe);
+  const auf = zeileIstOffen(k, offen, startOffeneTiefe);
   const hatKinder = k.kinder.length > 0;
   const istMarke = markeId !== null && k.id === markeId;
   const aufPfad = !istMarke && k.ids.some((id) => aktivPfad.includes(id));
@@ -215,10 +185,16 @@ const Zeile = memo(function Zeile({
           ? (
             <button
               type="button"
-              // Die Zeile klappt über ALLE ihre Ids — sonst bliebe bei einer
-              // verdichteten Kette die innere Stufe aus der Buchhaltung heraus
-              // und der Spy klappte gegen den Nutzer an.
-              onClick={() => k.ids.forEach(onToggle)}
+              // Die Zeile klappt über ALLE ihre Ids auf EINEN gemeinsamen
+              // Zielwert. Bis zum Bug-Check 9.8.2026 (B3) stand hier
+              // `k.ids.forEach(onToggle)` — n EINZEL-Flips. Waren die Ids nicht
+              // im gleichen Zustand (ein Sektions-Sprung öffnet nur die äussere),
+              // entstand ein Mischzustand, und weil `istOffen` `.some(Boolean)`
+              // ist, liess sich der Ast danach NIE wieder schliessen. Der
+              // sichtbare Zustand `auf` geht mit, damit auch eine Zeile ohne
+              // Eintrag in `tocBaum` (Start-offen per Modell) mit dem ersten
+              // Klick zugeht.
+              onClick={() => onToggle(k.ids, auf)}
               aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'}
               className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
           )
@@ -244,7 +220,7 @@ const Zeile = memo(function Zeile({
             // vormerken — der TOC-Sprung erzeugt bewusst keinen History-Eintrag
             // (LM-202), ohne diese Notiz gäbe es keinen Rückweg.
             merkeRuecksprungVonDom();
-            if (k.art === 'sektion') onSprung(k.id);
+            if (k.art === 'sektion') onSprung(k.ids);
             else if (k.ersterArtikel) onSprungArtikel(k.ersterArtikel);
           }}
           // F5: GENAU EINE Zeile trägt die Marke — der tiefste aktive Knoten.
@@ -340,8 +316,8 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
   aktivPfad: string[]; // Sektions-Ids des aktiven Pfads, Wurzel → tiefster Knoten
   offen: Record<string, boolean>;
   startOffeneTiefe: number;
-  onToggle: (id: string) => void;
-  onSprung: (id: string) => void;
+  onToggle: (ids: string[], istOffen: boolean) => void;
+  onSprung: (ids: string[]) => void;
   onSprungArtikel: (token: string) => void;
 }) {
   // Genau EINE Marke je gerendertem Baum — die Invariante, auf die sich a9

@@ -450,9 +450,21 @@ export function LeserVolltextInhalt({
                   ehrlichen Platzhalter statt zu verschwinden (§8). `bg-paper`
                   deckt die durchlaufenden Baumzeilen ab. */}
               <div data-toc-zone-a className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
-                <p data-toc-pfad className="truncate text-micro leading-snug text-ink-500"
-                  title={sieHierVoll} aria-label={`Sie sind hier: ${sieHierVoll}`}>
-                  {sieHierKurz}
+                {/* B10 (Bug-Check 9.8.2026): `aria-label` auf einem `<p>` ist nach
+                    ARIA 1.2 unzulässig — die Rolle `paragraph` gehört zu den
+                    Rollen ohne Namensberechtigung, und eine spec-treue
+                    Hilfstechnik DARF den Namen ignorieren. Chromium berechnet
+                    ihn trotzdem, darum blieb der Fehler unsichtbar (axe legt den
+                    Fall bei Text-Inhalt unter `incomplete`, nicht `violations` —
+                    das Tor konnte ihn gar nicht finden). Statt eines Namens am
+                    Absatz stehen jetzt beide Fassungen als TEXT nebeneinander:
+                    die gekürzte sichtbar, aber `aria-hidden` (sie sagt mit «…»
+                    nichts Verlässliches), der volle Pfad `sr-only`. Die
+                    Hilfstechnik liest damit denselben Wortlaut wie zuvor, ohne
+                    verbotenes Attribut; `title` bleibt für die Maus. */}
+                <p data-toc-pfad className="truncate text-micro leading-snug text-ink-500" title={sieHierVoll}>
+                  <span aria-hidden>{sieHierKurz}</span>
+                  <span className="sr-only">Sie sind hier: {sieHierVoll}</span>
                 </p>
                 {quickjump && <div className="mt-1.5">{quickjump}</div>}
               </div>

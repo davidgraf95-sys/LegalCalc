@@ -143,6 +143,33 @@ export const F2_OBERHALB = true;
  */
 export const F2_SICHERHEITSSAUM = 64;
 
+/**
+ * B3 (Bug-Check 9.8.2026) — EINE ZEILE, EIN ZIELWERT.
+ *
+ * Eine verdichtete Einzelkind-Kette ist EINE Baumzeile mit MEHREREN
+ * Sektions-Ids. Der Chevron kippte sie bis hierher EINZELN
+ * (`k.ids.forEach(tocToggle)`). Standen die Ids nicht im gleichen Zustand — und
+ * genau das hinterlässt ein Sektions-Sprung, der nur die äusserste Id öffnet —,
+ * kam ein GEMISCHTER Zustand heraus. Weil eine Zeile als offen gilt, sobald
+ * IRGENDEINE ihrer Ids offen ist (`zeileIstOffen`, `.some(Boolean)`), liess sich
+ * der Ast danach nie wieder schliessen: `aria-expanded` blieb dauerhaft `true`,
+ * und der Nutzer hatte keinen Ausweg. Betroffen sind alle Zeilen mit
+ * Verdichtung UND Kindern (ZGB, VVG, KOV, mehrere BS-Erlasse).
+ *
+ * Die Regel steht HIER und nicht im Zustands-Hook, damit sie ohne React und
+ * ohne DOM prüfbar ist (§6.7: das Tor muss den Fall rot zeigen können).
+ * `istOffen` kommt vom Aufrufer, weil die Zeile ihren sichtbaren Zustand auch
+ * aus dem Modell beziehen kann (`startOffen`, `startOffeneTiefe`) — eine Zeile
+ * ohne Eintrag in der Karte liesse sich sonst mit dem ersten Klick nicht
+ * schliessen.
+ */
+export function klappZeile(
+  offen: Record<string, boolean>, ids: string[], istOffen: boolean,
+): Record<string, boolean> {
+  const ziel = !istOffen;
+  return { ...offen, ...Object.fromEntries(ids.map((id) => [id, ziel])) };
+}
+
 export interface ZuklappPlan {
   /** Ids, deren Ast zugeklappt werden darf (Reihenfolge unerheblich). */
   schliessen: string[];
