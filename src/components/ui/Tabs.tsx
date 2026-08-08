@@ -35,11 +35,19 @@ export function Tabs<T extends string>({
   mode?: 'tab' | 'pressed';
   ariaLabel?: string;
 }) {
+  // LM-173 (Fahrplan B5, §6): alle Optionen sind <button> und verschwinden im
+  // Druck über die Pauschalregel `button { display:none }` (index.css) — der
+  // Rahmen bleibt dann als leerer, fast unsichtbarer Streifen stehen (z. B.
+  // «Verfahrensphase wählen» im ZPO-Rechner). `print:hidden` blendet die
+  // Gruppe im Ausdruck ganz aus; die einzeilige Klartext-Zeile danach zeigt
+  // dieselbe Information ohne Interaktions-Chrome.
+  const aktivesItem = items.find((it) => it.code === value);
   return (
+    <>
     <div
       role={mode === 'tab' ? 'tablist' : undefined}
       aria-label={ariaLabel}
-      className={`flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto`}
+      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto`}
     >
       {items.map((it, i) => {
         const aktiv = value === it.code;
@@ -80,5 +88,13 @@ export function Tabs<T extends string>({
         );
       })}
     </div>
+    {/* Nur im Ausdruck sichtbar (Gegenstück zu print:hidden oben) — Klartext
+        statt Button-Gruppe, damit die getroffene Wahl im Ausdruck lesbar
+        bleibt, ohne die Bildschirm-Optik zu berühren (byte-gleich bei
+        Bildschirm-Medien, da `hidden` dort weiterhin greift). */}
+    <p className="hidden print:block text-body-s text-ink-700">
+      {ariaLabel ? `${ariaLabel}: ` : ''}{aktivesItem?.label}
+    </p>
+    </>
   );
 }

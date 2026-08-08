@@ -591,6 +591,20 @@
     .lc-reveal { animation: none !important; }
     a { color: inherit; text-decoration: none; }
 
+    /* LM-173 (Fahrplan B5, §6): der Pauschal-Selektor oben trifft auch die
+       Akkordeon-Köpfe («Rechenweg», «Annahmen», «Hinweise/Vorbehalte» in
+       ErgebnisAnzeige.tsx) und die Verfahrensphase-Auswahl (Tabs.tsx,
+       `mode="pressed"`) — beide sind `<button>`. Ohne Ausnahme verschwindet
+       die EINZIGE Beschriftung, welcher Abschnitt/welche Phase gedruckt wird,
+       und der umschliessende Rahmen bleibt als leerer Strich stehen (leer,
+       weil bei geschlossenem Akkordeon der Inhalt zusätzlich noch gar nicht
+       im DOM ist — siehe ErgebnisAnzeige.tsx, `usePrintErzwingtOffen`).
+       `.lc-druck-kopf` macht den Akkordeon-Kopf wieder sichtbar (Layout wie
+       auf dem Bildschirm, nur ohne Hover/Klick-Optik); die reine
+       Auf/Zu-Pfeil-Deko (`.lc-druck-chevron`) bleibt weiterhin verborgen. */
+    button.lc-druck-kopf { display: flex !important; }
+    .lc-druck-chevron { display: none !important; }
+
     /* Fundstelle mitdrucken: absolute Quell-URLs (Fedlex-ELI, amtliches PDF,
        entscheidsuche) treten als Text neben den Linktext. Interne SPA-Links
        bleiben unangetastet — deren relative Pfade wären nur Rauschen (D1:

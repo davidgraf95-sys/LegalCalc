@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Berechnungsergebnis, BerechnungsStatus } from '../types/legal';
 import { sansAmp } from './typografie';
 import { RechtsprechungAnker } from './RechtsprechungLink';
@@ -33,6 +33,36 @@ type Props = {
   ergebnis: Berechnungsergebnis;
 };
 
+// LM-173 (Fahrplan B5, §6): Rechenweg/Annahmen/Hinweise sind einklappbar und
+// standardmässig oft ZU — der Inhalt ist dann gar nicht im DOM (React
+// conditional render), ein reines Druck-CSS kann ihn also nicht «wieder
+// sichtbar» machen. `window.matchMedia('print')` erzwingt statt dessen den
+// offenen Zustand NUR für den Druckdurchgang, ohne die eigentliche
+// UI-Wahl des Nutzers zu verändern (kein setState auf den echten offen-
+// Flags). SSR-sicher (matchMedia existiert nicht im Prerender → Default
+// false, byte-gleich zum bisherigen ersten Render, §6). Cross-Browser
+// über matchMedia statt beforeprint/afterprint (in Firefox nicht immer
+// verlässlich) — dieselbe Technik, mit der `page.emulateMedia({ media:
+// 'print' })` in den e2e-Specs geprüft werden kann (kein Sonderfall nur
+// für echte Drucker-Dialoge).
+function useDruckErzwingtOffen(): boolean {
+  // Lazy-Init statt setState im Effect-Body (react-hooks/set-state-in-effect,
+  // vermeidet einen kaskadierenden Extra-Render): der Initialwert liest
+  // matchMedia synchron im ERSTEN Client-Render — SSR-sicher, da window dort
+  // fehlt und der try/catch auf false fällt.
+  const [drucktGerade, setDrucktGerade] = useState(() => {
+    try { return window.matchMedia('print').matches; } catch { return false; }
+  });
+  useEffect(() => {
+    let mql: MediaQueryList;
+    try { mql = window.matchMedia('print'); } catch { return; }
+    const auf = () => setDrucktGerade(mql.matches);
+    mql.addEventListener('change', auf);
+    return () => mql.removeEventListener('change', auf);
+  }, []);
+  return drucktGerade;
+}
+
 function ergebnisAlsText(titel: string, e: Berechnungsergebnis): string {
   const z: string[] = [titel, '', e.ergebnis, '', 'Rechenweg:'];
   e.rechenweg.forEach((s, i) => z.push(`${i + 1}. ${s.beschreibung}: ${s.zwischenergebnis}`));
@@ -50,6 +80,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
   // Wahl des Nutzers unangetastet).
   const [warnungenOffen, setWarnungenOffen] = useState(() => ergebnis.status !== 'ok');
   const [kopiert, setKopiert] = useState(false);
+  const druckErzwingtOffen = useDruckErzwingtOffen();
   const cfg = STATUS_CONFIG[ergebnis.status];
 
   const kopieren = () => {
@@ -105,11 +136,11 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
         {ergebnis.warnungen.length > 0 && (
           <div data-vorbehalte={ergebnis.warnungen.length} className="rounded-md overflow-hidden" style={{ border: '1px solid var(--warn-500)' }}>
             <button type="button" onClick={() => setWarnungenOffen(!warnungenOffen)}
-              className="w-full flex items-center justify-between px-4 py-2.5 bg-warn-bg text-left transition-colors">
+              className="lc-druck-kopf w-full flex items-center justify-between px-4 py-2.5 bg-warn-bg text-left transition-colors">
               <span className="lc-overline text-warn-700">Hinweise / Vorbehalte ({ergebnis.warnungen.length})</span>
-              <span className="text-warn-700">{warnungenOffen ? '▲' : '▼'}</span>
+              <span className="lc-druck-chevron text-warn-700">{warnungenOffen ? '▲' : '▼'}</span>
             </button>
-            {warnungenOffen && (
+            {(warnungenOffen || druckErzwingtOffen) && (
               <div className="bg-warn-bg px-4 pb-3 space-y-1">
                 {/* Norm- UND Entscheid-Zitate in Warnungen verlinkt (Web-Anzeige; Text unverändert) */}
                 {ergebnis.warnungen.map((w, i) => <p key={i} className="text-body-s text-warn-700 max-w-reading"><NormText text={w} /></p>)}
@@ -123,12 +154,12 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
         <div className={`border border-line rounded-md overflow-hidden ${rechenWegOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
           <button type="button"
             onClick={() => setRechenWegOffen(!rechenWegOffen)}
-            className="w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
+            className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
           >
             <span className="text-body-s font-medium text-ink-700">Rechenweg ({ergebnis.rechenweg.length} Schritte)</span>
-            <span className="text-ink-500">{rechenWegOffen ? '▲' : '▼'}</span>
+            <span className="lc-druck-chevron text-ink-500">{rechenWegOffen ? '▲' : '▼'}</span>
           </button>
-          {rechenWegOffen && (
+          {(rechenWegOffen || druckErzwingtOffen) && (
             <div className="divide-y divide-line">
               {ergebnis.rechenweg.map((schritt, i) => (
                 <div key={i} className="px-4 py-3 space-y-2">
@@ -162,12 +193,12 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           <div className={`border border-line rounded-md overflow-hidden ${annahmenOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
             <button type="button"
               onClick={() => setAnnahmenOffen(!annahmenOffen)}
-              className="w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
+              className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
             >
               <span className="text-body-s font-medium text-ink-700">Annahmen ({ergebnis.annahmen.length})</span>
-              <span className="text-ink-500">{annahmenOffen ? '▲' : '▼'}</span>
+              <span className="lc-druck-chevron text-ink-500">{annahmenOffen ? '▲' : '▼'}</span>
             </button>
-            {annahmenOffen && (
+            {(annahmenOffen || druckErzwingtOffen) && (
               <ul className="px-4 py-3 space-y-1">
                 {ergebnis.annahmen.map((a, i) => (
                   <li key={i} className="text-body-s text-ink-600">• <NormText text={a} /></li>
