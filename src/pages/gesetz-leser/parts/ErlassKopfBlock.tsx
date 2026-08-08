@@ -43,7 +43,7 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
     return 'font-serif text-body-l leading-[1.65] text-ink-700';
   };
   return (
-    <section aria-label="Ingress" className="max-w-normtext space-y-3 border-b border-rule-struktur pb-5">
+    <section aria-label="Ingress" className="mx-auto w-full max-w-normtext space-y-3 border-b border-rule-struktur pb-5">
       {kopf.erlassdatum && (
         <p className="font-serif text-body-s text-ink-500">{kopf.erlassdatum}</p>
       )}
@@ -90,11 +90,11 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
               Apparat (ArtikelLeser). Nummernlose Zeilen (nr='') tragen keinen Anker. */}
           {kopf.fussnoten.map((fn, i) => (
             <p key={i} id={fn.nr ? `fn-kopf-${fn.nr}` : undefined} className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
-              {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden),
-                  darum ink-500 statt ink-300 — ink-300 ist ein Deko-Token (~2.3:1, axe serious).
-                  ink-500 ≥4.8:1 hell / ≥5.2:1 dunkel auf allen Reader-Flächen (Zeile ist ink-500).
-                  Latenter 17.6.-Defekt, sichtbar durch #255, Fix 18.7. */}
-              {fn.nr && <span className="num mr-1 text-ink-500">{fn.nr}</span>}
+              {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
+                  LM-153 (W2·17-UI-BEFUNDE-B4): brass-700 statt ink-500 — dieselbe
+                  Auszeichnung wie die Marke im Fliesstext (FnRef, ArtikelBody.tsx),
+                  analog zum Artikel-Apparat (ArtikelLeser.tsx). */}
+              {fn.nr && <span className="num mr-1 text-brass-700">{fn.nr}</span>}
               {fnTextMitLinks(fn)}
             </p>
           ))}
