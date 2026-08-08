@@ -240,9 +240,12 @@ function ladeFsIdx(): number {
 // der normale Linksklick wird jedoch selbst bedient: scrollen + Hash per
 // `replaceState` — dasselbe Muster wie die `?ansicht=`-Spiegelung (N0d·J5).
 // Modifier-/Mittelklicks bleiben dem Browser überlassen (neuer Tab/Fenster).
-function SprungNavigation({ ziele, springe }: {
+function SprungNavigation({ ziele, springe, aktiv }: {
   ziele: { anker: string; label: string }[];
   springe: (anker: string) => void;
+  /** LM-005: der Anker des Abschnitts an der Scroll-Position, oder null (kein
+   *  Abschnitt sichtbar ⇒ keine Chip-Auszeichnung, die Leiste «tritt zurück»). */
+  aktiv: string | null;
 }) {
   if (ziele.length === 0) return null;
   return (
@@ -251,12 +254,13 @@ function SprungNavigation({ ziele, springe }: {
       <div className="flex gap-2 overflow-x-auto pb-0.5 -mb-0.5 pr-5 sm:pr-0 sm:flex-wrap sm:overflow-visible [scrollbar-width:thin]">
         {ziele.map((z) => (
           <a key={z.anker} href={`#${z.anker}`}
+            aria-current={aktiv === z.anker ? 'true' : undefined}
             onClick={(e) => {
               if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
               e.preventDefault();
               springe(z.anker);
             }}
-            className="lc-chip shrink-0 whitespace-nowrap no-underline hover:text-brass-700 hover:border-brass-400">
+            className={`lc-chip shrink-0 whitespace-nowrap no-underline hover:text-brass-700 hover:border-brass-400 ${aktiv === z.anker ? 'lc-chip-aktuell' : ''}`}>
             {z.label}
           </a>
         ))}
@@ -449,6 +453,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   // zeigt einen EIGENEN Body: dann Markierung zurücknehmen statt auf abgehängte
   // Knoten zeigen zu lassen.
   const koerperRef = useRef<HTMLElement>(null);
+  // LM-005: misst die tatsächlich gerenderte Höhe des sticky Kopf-Blocks
+  // (Umschalter + Sprung-Chips) für den Scroll-Spy weiter unten — kein
+  // zweiter Rem-Konstanten-Pfad neben `--rsp-stick`.
+  const stickLeisteRef = useRef<HTMLDivElement>(null);
   // V5: EINE Markierungs-Schicht im Lesetext. Die Highlight-API kennt je Namen
   // genau eine Menge (`SUCH_HIGHLIGHT`, geteilt mit A35) — Suche und
   // Herkunfts-Nennung können darum nicht gleichzeitig leuchten. Vorrang hat die
@@ -477,6 +485,43 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     });
     return () => cancelAnimationFrame(raf);
   }, [zustand, schluessel, hashRoh]);
+
+  // LM-005 (W2·17-UI-BEFUNDE-B3, K-01): `SprungNavigation` («Sachverhalt |
+  // Erwägungen | Dispositiv») trug KEINE Aktivmarkierung — reine `.lc-chip`-
+  // Anker ohne Scroll-Spy. Der gemeldete «Sachverhalt bleibt aktiv markiert,
+  // auch wenn nichts mehr sichtbar ist» stammte nachweislich nicht aus einem
+  // Spy-Zustand, sondern aus dem :focus-Ring des zuletzt geklickten Chips
+  // (Dedup-Notiz, Befundliste). Echter Scroll-Spy: IntersectionObserver auf
+  // die Abschnitts-Anker (`[id^="abschnitt-"]` innerhalb des Lesekörpers),
+  // Root-Margin um die GEMESSENE sticky Leisten-Höhe (`stickLeisteRef`, nicht
+  // der `--rsp-stick`-Rem-Wert — vermeidet ein zweites Duplikat derselben
+  // switcherSichtbar/hatAuszug-Herleitung vor dem `zustand`-Guard unten, §5).
+  // Kein Abschnitt sichtbar (Kontext-Panel/Fusszeile erreicht, oder Lesemodus)
+  // ⇒ aktivAnker=null — die Leiste «tritt zurück» (Erwartet-Text des Befunds).
+  // Muss VOR den frühen `return`s stehen (Hook-Reihenfolge); die eigentliche
+  // Ziel-Liste hängt an post-Guard-Werten (`snap`) und wird darum ERST im
+  // Effekt-Rumpf per DOM-Abfrage gelesen, nicht aus `navZiele` (unten, §Hooks).
+  const [aktivAnker, setAktivAnker] = useState<string | null>(null);
+  useEffect(() => {
+    if (zustand !== 'da' || lese || typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      setAktivAnker(null);
+      return;
+    }
+    const wurzelEl = koerperRef.current;
+    if (!wurzelEl) { setAktivAnker(null); return; }
+    const elemente = Array.from(wurzelEl.querySelectorAll<HTMLElement>('[id^="abschnitt-"]'));
+    if (elemente.length === 0) { setAktivAnker(null); return; }
+    const root = imPane ? wurzel?.current ?? null : null;
+    const stickPx = Math.ceil(stickLeisteRef.current?.getBoundingClientRect().height ?? 0);
+    const sichtbar = new Map<Element, boolean>();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => sichtbar.set(en.target, en.isIntersecting));
+      const oben = elemente.find((el) => sichtbar.get(el));
+      setAktivAnker(oben?.id ?? null);
+    }, { root, rootMargin: `-${stickPx}px 0px -60% 0px`, threshold: 0 });
+    elemente.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [zustand, snap, bodyTab, lese, imPane, wurzel]);
 
   if (zustand === 'fehlt') {
     return (
@@ -582,8 +627,15 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       {/* Anker-Sektionen des EntscheidBody tragen ein festes scroll-mt-[7rem]; hier
           auf die tatsächliche sticky-Höhe (--rsp-stick) heben, damit ein angesprungener
           Abschnitt nicht hinter dem gemeinsamen Kopf-Block verschwindet. Greift nur im
-          Haupt-Body (.rsp-anker), nicht im Lesemodus-Overlay (eigene schlanke Leiste). */}
-      <style>{`.rsp-anker [id]{scroll-margin-top:var(--rsp-stick,7rem)}`}</style>
+          Haupt-Body (.rsp-anker), nicht im Lesemodus-Overlay (eigene schlanke Leiste).
+          LM-002 (W2·17-UI-BEFUNDE-B3, K-01): `#kontext-titel` (KontextPanel-
+          Überschrift «Kontext») liegt AUSSERHALB von `.rsp-anker` (nach dem
+          `<footer>`, s. u.) — aber innerhalb DIESES Wrappers, der `--rsp-stick`
+          trägt, darum hier reichbar. Ohne eigene scroll-margin landete ein
+          gezielter Sprung/eine Find-Landung dorthin unter der klebenden
+          Sachverhalt/Erwägungen/Dispositiv-Leiste (nur die unterste Pixelreihe
+          der Überschrift blieb sichtbar) — reproduziert exakt wie gemeldet. */}
+      <style>{`.rsp-anker [id],#kontext-titel{scroll-margin-top:var(--rsp-stick,7rem)}`}</style>
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf in der Einzelansicht, PaneKopf im
           Split-View) — kein Inline-Dup mehr (Parität zum Gesetz-Leser). */}
       <header className="space-y-2.5 border-b border-line pb-5">
@@ -721,10 +773,18 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       {/* Gemeinsamer sticky Kopf-Block (§13-Bug-Fix: EIN sticky-Element statt zweier
           sich überlagernder). Oben — beim BGE mit Volltext — der Fassungs-Umschalter
           (§8: «Amtlicher BGE-Auszug» ⟷ «Vollständiges Urteil»), darunter die Sprung-Chips.
-          Die App-Topbar liegt mit z-20 darüber, dieser Block mit z-[15] darunter. */}
+          Die App-Topbar liegt mit z-20 darüber, dieser Block mit z-[15] darunter.
+          LM-007 (W2·17-UI-BEFUNDE-B3, K-01, Mittel): Topbar + dieser Block belegten
+          beim BGE-Volltext (Umschalter sichtbar) rund 190 px dauerhaft sichtbare
+          Höhe. B6 (FAHRPLAN-VERZAHNUNG-UI.md §9, «minimalistischer») als Muster
+          übernommen — kein Feature-Abbau, nur knapperes Mass: `py-2`→`py-1.5`,
+          `space-y-2`→`space-y-1.5`, Umschalter-Tabs `groesse="s"` (h-10/h-8 statt
+          h-11/h-9). `stickHoehe` bleibt bewusst UNVERÄNDERT (grosszügig statt knapp
+          bemessen) — die Sprung-Ziele landen weiterhin sicher unterhalb der Leiste,
+          nur mit etwas mehr Luft als nötig statt zu wenig. */}
       {(switcherSichtbar || navZiele.length > 0) && (
-        <div style={{ top: imPane ? '0.5rem' : 'calc(4rem + 2.25rem)' }}
-          className="sticky z-[15] -mx-5 sm:-mx-6 px-5 sm:px-6 py-2 bg-paper border-b border-line space-y-2">
+        <div ref={stickLeisteRef} style={{ top: imPane ? '0.5rem' : 'calc(4rem + 2.25rem)' }}
+          className="sticky z-[15] -mx-5 sm:-mx-6 px-5 sm:px-6 py-1.5 bg-paper border-b border-line space-y-1.5">
           {switcherSichtbar && (
             <Tabs
               items={[
@@ -734,10 +794,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               value={bodyTab}
               onChange={wechsleTab}
               mode="tab"
+              groesse="s"
               ariaLabel="Textfassung des Entscheids"
             />
           )}
-          <SprungNavigation ziele={navZiele} springe={springeZuAbschnitt} />
+          <SprungNavigation ziele={navZiele} springe={springeZuAbschnitt} aktiv={aktivAnker} />
         </div>
       )}
 
