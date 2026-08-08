@@ -89,7 +89,13 @@ export interface ZuklappPlan {
  *  einer verdichteten Einzelkind-Kette (S3/S4): sie haben kein eigenes Element,
  *  werden aber von der Zeile getragen, die sie zeigt. */
 function zeileZu(tocCont: HTMLElement, id: string): HTMLElement | null {
-  return tocCont.querySelector(`[data-sektion-ids~="${CSS.escape(id)}"]`);
+  // `CSS.escape` nur, wo es existiert — dasselbe Muster wie `findeArt`
+  // (berechnungen.ts). Ohne diese Klammer wirft das Modul in jeder Umgebung ohne
+  // `CSS`-Global, und genau daran ist der erste Lauf des Unit-Tors gescheitert
+  // (§6.7: das Tor hat beim ersten Mal etwas gefunden). Die `sek-N`-Ids brauchen
+  // die Maskierung nicht; sie steht für den Fall, dass die Id-Vergabe je ändert.
+  const sicher = typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id;
+  return tocCont.querySelector(`[data-sektion-ids~="${sicher}"]`);
 }
 
 /** Der KIND-Container einer Zeile — das, was beim Zuklappen verschwindet. Die
