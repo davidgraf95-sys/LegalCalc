@@ -14,7 +14,7 @@ import { ZitierteNormenGruppe, ZitiertGruppe } from '../components/rechtsprechun
 import { NormText } from '../components/NormText';
 import { KontextPanel } from '../components/kontext/KontextPanel';
 import { ladeEntscheidEintrag, ladeEntscheid } from '../lib/rechtsprechung/browse';
-import { kopfModell, type KopfLabelKey } from '../lib/rechtsprechung/kopf';
+import { kopfModell, type KopfLabelKey, type KopfModell } from '../lib/rechtsprechung/kopf';
 import { normalisiereRegeste, type BrowseEntscheid, type RichterRef } from '../lib/rechtsprechung/register';
 import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
@@ -645,8 +645,15 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           {snap.abteilung && <span className="text-ink-500"> · {snap.abteilung}</span>}
           <span className="text-brass-700"> · {GEBIET_LABEL[snap.sachgebiet]}</span>
         </p>
-        {/* 2 Zitierung = Identitäts-Anker (stets, prominent) */}
-        <h1 className="text-h2 sm:text-h1 font-display font-semibold text-ink-900 num">{snap.zitierung}</h1>
+        {/* 2 Zitierung = Identitäts-Anker (stets, prominent). LM-019 (§8 B7): bei
+            offenem Lesemodus blendet NUR der `<article>`-Body aus (weiter unten,
+            `{!lese && …}`) — dieser Kopf inkl. H1 blieb bisher im DOM, während das
+            Overlay (LesemodusOverlay, `createPortal`) DENSELBEN Titel als EIGENES
+            H1 zeigt: zwei H1 mit identischem Text gleichzeitig im Dokument (axe/
+            WCAG 1.3.1, Doppel-Landmarke). `hidden` (display:none) nimmt dieses H1
+            aus dem Accessibility-Baum, solange das Overlay-H1 die Rolle trägt —
+            visuell ohnehin unter dem opaken Vollbild-Overlay verdeckt. */}
+        <h1 className={`text-h2 sm:text-h1 font-display font-semibold text-ink-900 num${lese ? ' hidden' : ''}`}>{snap.zitierung}</h1>
 
         {/* 3 Abgeleitete Sachgebiets-Leitzeile — nur wenn weder ein Rubrum-Gegenstand
             noch die Regeste-Box das Thema trägt (kopf.ts entscheidet, §3/§5). Nüchtern +
@@ -924,7 +931,13 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         <LesemodusOverlay snap={snap} abschnitte={aktiveAbschnitte}
           regesteText={zeigeRegeste ? regesteText : null}
           massgeblicheUrl={massgeblicheUrl} massgeblichTitel={massgeblichTitel} massgeblichFehlt={massgeblichFehlt}
-          fsIdx={fsIdx} setFs={setFs} onClose={closeLese} />
+          fsIdx={fsIdx} setFs={setFs} onClose={closeLese}
+          // LM-014 (§8 B7): der Lesemodus liess Gegenstand/Besetzung weg — dieselbe
+          // Weiche wie die Voll-Ansicht oben (kopf/kopfLabel sind reine Ableitungen
+          // aus snap, §5 EINE Quelle; nur `eintrag.richter` ist Seiten-State und
+          // muss darum als Prop durchgereicht werden, die Regel selbst bleibt in
+          // kopfModell()/besetzungsTeile()).
+          zeigeRubrum={zeigeRubrum} kopf={kopf} kopfLabel={kopfLabel} richterRefs={eintrag?.richter} />
       )}
     </div>
   );
@@ -935,7 +948,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
 // Weissraum), blendet die App-Shell aus. Wiederverwendung des EntscheidBody +
 // der Regeste (keine Duplizierung der Rechtsdarstellung, §3/§5). Provenienz/
 // massgebliche Fassung bleibt sichtbar (§8). ESC schliesst, Body-Scroll gesperrt.
-function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, massgeblichTitel, massgeblichFehlt, fsIdx, setFs, onClose }: {
+function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, massgeblichTitel, massgeblichFehlt, fsIdx, setFs, onClose, zeigeRubrum, kopf, kopfLabel, richterRefs }: {
   snap: EntscheidSnapshot;
   abschnitte: EntscheidSnapshot['abschnitte'];
   // Bereits an der Ansicht ausgerichtet (null = im vollständigen Urteil keine Regeste oben);
@@ -947,6 +960,12 @@ function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, mass
   fsIdx: number;
   setFs: (i: number) => void;
   onClose: () => void;
+  /** LM-014: dieselben Rubrum-Zeilen (Gegenstand/Parteien/Vorinstanz/Besetzung)
+   *  wie die Voll-Ansicht — Ableitung bleibt in kopfModell() (§5), hier nur Render. */
+  zeigeRubrum: boolean;
+  kopf: KopfModell;
+  kopfLabel: Record<KopfLabelKey, string>;
+  richterRefs: RichterRef[] | undefined;
 }) {
   const schliessRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -1011,6 +1030,24 @@ function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, mass
           {snap.bgeReferenz && <> · <span className="num">{snap.bgeReferenz}</span></>}
           {snap.nummerSekundaer && <> · <span className="num" title="Parallele Geschäftsnummer desselben Verfahrens">({snap.nummerSekundaer})</span></>}
         </p>
+
+        {/* LM-014 (§8 B7): dieselben 4 Rubrum-Zeilen wie die Voll-Ansicht (Art. 112
+            BGG) — der Lesemodus liess sie bisher weg, obwohl er denselben Kopf
+            zitiert. Identisches Markup zur Voll-Ansicht (oben, `zeigeRubrum`-Block). */}
+        {zeigeRubrum && (
+          <dl className="mt-4 grid grid-cols-1 sm:grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-1.5 border-t border-line/60 pt-3 text-body-s">
+            {kopf.rubrumZeilen.map((z) => (
+              <div key={z.label} className="contents">
+                <dt className="lc-overline pt-0.5">{kopfLabel[z.label]}</dt>
+                <dd className={z.label === 'gegenstand' ? 'text-ink-800' : 'text-ink-700'}>
+                  {z.label === 'besetzung'
+                    ? <BesetzungWert freitext={z.wert} gericht={snap.gericht} refs={richterRefs} />
+                    : z.wert}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
 
         {regesteText && snap.regeste && (
           <div className="mt-7">
