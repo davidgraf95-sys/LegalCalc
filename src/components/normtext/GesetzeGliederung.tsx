@@ -118,7 +118,14 @@ export function KantonGebietGruppen({ erlasse }: { erlasse: BrowseErlass[] }) {
           <div className="flex items-baseline gap-3">
             <h3 className="lc-overline text-brass-700">{g.label}</h3>
             <span className="num text-xs text-ink-500">{g.items.length}</span>
-            <span aria-hidden className="flex-1 h-px bg-line/70" />
+            {/* DESIGN-D0 (Wurzel-Fix W2·11-DESIGN, hier symptomatisch gelöst,
+                Fund Fahrplan B5): `bg-line/70` erzeugt keine CSS-Regel —
+                Tailwinds Deckkraft-Suffix trägt nicht auf `--line`
+                (bereits ein color-mix-Halbtransparenz-Wert). Alle ~20
+                gleichartigen Trenner der App (Katalog.tsx,
+                RechtsgebietSicht.tsx u. a.) nutzen darum das
+                unsuffixierte `bg-line` — hier angeglichen. */}
+            <span aria-hidden className="flex-1 h-px bg-line" />
           </div>
           <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>
             {g.items.map((e) => <SysZeile key={e.key} e={e} />)}

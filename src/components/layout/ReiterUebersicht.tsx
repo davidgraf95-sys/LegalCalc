@@ -174,9 +174,16 @@ export function ReiterUebersicht() {
           />
           {tabs.length > 1 && (
             <div className="mt-1 border-t border-line pt-1">
+              {/* LM-180 (Fahrplan B5, §6): reiner Text mit Hover-Fläche las sich
+                  nicht als Button (Befund). `lc-btn-outline lc-btn-sm` nutzt die
+                  geteilte Button-Familie (§13 Token statt Ad-hoc-Stil) statt
+                  eigener Optik. Nebenbei behoben: `hover:bg-paper-sunken/60`
+                  erzeugte keine CSS-Regel (DESIGN-D0, Deckkraft-Suffix auf
+                  opakem Hex-Token — Wurzel-Fix bleibt W2·11-DESIGN); der Hover
+                  wirkte dadurch bislang gar nicht. */}
               <button type="button"
                 onClick={() => { leereTabs(); navigate('/'); setPanelOffen(false); }}
-                className="w-full rounded px-2 py-1.5 text-left text-body-s text-ink-600 hover:bg-paper-sunken/60 hover:text-brass-700 transition-colors">
+                className="lc-btn-outline lc-btn-sm w-full">
                 Alle schliessen
               </button>
             </div>
