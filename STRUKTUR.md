@@ -56,7 +56,7 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 - **Schutzvermerk (`3e500258a`):** Repo bleibt öffentlich (Entscheid David — CI-Gratis-Minuten, ~11'800 min/Monat wären privat ~80–90 Fr.); `LICENSE` «alle Rechte vorbehalten» (Art. 2 Abs. 3 URG, Abgrenzung Art. 5 URG) + README-Abschnitt.
 - **QS-E2E-TEMPO (done):** Messung der letzten 8 grünen Läufe — 7 von 8 e2e-Gruppen ~5–7 min, Gruppe 1 konsistent 9–16 min ⇒ dokumentierte Neu-Pack-Schwelle (>~7 min) gerissen. LPT-Neu-Packung aus den Report-Artefakten (Lauf 31220026058, 71 Specs, 38.4 min): sieben Gruppen ~3.9 min, `leser-r1-r2` solo 11.5 min. Union-Wächter grün, reine Verteilung (§6.3). Erwartung: Voll-Lauf-Wartezeit ~15 → ~13 min; nach r1-r2-Fix ~11.
 - **Befund (→ `QS-E2E-STABIL`-Text):** `leser-r1-r2` — alle 7 R1-Suche-Fälle scheitern im CI SYSTEMATISCH im Erstversuch (`[data-treffer-leiste]` >20 s, Retry grün, ~230 s/Lauf verschenkt); Wurzel im Leser-Suchpfad (Render aller Treffer-Artikel), Fläche `W2·10-UI-NAV` — dort fixen, nicht per Timeout maskieren. Grösster verbleibender CI-Hebel (≈ −4 min/Lauf).
-- **Vermerkt:** `QS-CODE-PROP` (Eigenschafts-Tests für Engines, Entscheid David; Invarianten-Katalog mit Abnahme). Offen: ROADMAP.md über KB-Budget (Wächter meldet; Chronik-Überführung per Skill `aufraeumen` fällig, bewusst nicht parallel zur offenen W2·10-Landung).
+- **Vermerkt:** `QS-CODE-PROP` (Eigenschafts-Tests für Engines, Entscheid David; Invarianten-Katalog mit Abnahme). Offen: ROADMAP.md über KB-Budget (Wächter meldet; Chronik-Überführung per Skill `bauschritt`, Datei `aufraeumen.md`, fällig, bewusst nicht parallel zur offenen W2·10-Landung).
 
 ## Session 7.8.2026 (Ganztag, ABSCHLUSS) — QS-SELBSTOPT komplett: Messreihe + retro:17 + Ent-Regulierung, Dispatch-P0-Prüfvariante, e2e-Stall-Wurzel gefixt (#459/#461/#462)
 
@@ -94,7 +94,7 @@ grün + 2 skipped (78 Dateien) ✓ · tsc STRICT · Golden 104/104 byte-gleich �
 `gate:schnell` pro Iteration; leise bei Grün, volle Ausgabe nur für rote
 Tore, CLAUDE.md §6 Ziff. 1/5); `npm run check` für die Offline-Checks,
 `npm run check:netz` für Fedlex; vor Deploys unabhängige Review-Agents
-(Skill `deploy-check`).
+(Skill `landung`).
 
 **Informationsbibliothek: `bibliothek/INDEX.md`** — Quellen-Register
 (verifizierte Fedlex-Stände inkl. ZPO-Revision 2025), Parameter-

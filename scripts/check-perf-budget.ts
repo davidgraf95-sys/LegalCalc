@@ -9,8 +9,8 @@
 // gebautes `dist/` — wie der e2e-Lauf gehört es in den DEPLOY-Pfad (nach
 // `npm run build`), NICHT in den schnellen `gate` (der nicht baut). Die
 // Lighthouse-Metrik-Schranken (CLS/LCP/TBT auf /gesetze/bund/OR unter 4× CPU)
-// bleiben der manuelle Mess-Schritt im Deploy-Ritual (deploy-check), bis ein
-// CI-Chrome verdrahtet ist.
+// laufen automatisiert als `check:perf-lighthouse` nach dem Merge auf main
+// (ci.yml; Nachkontrolle: Skill `landung`).
 //
 // Budgets als gzip-Bytes (Auslieferungsgröße). Headroom bewusst eng genug, dass
 // ein Zurückrutschen von react-dom/react-router in den Entry rot wird.

@@ -177,5 +177,5 @@ führen (datiertes wandert zusätzlich ins Verfallsregister, **S6**). Ein **Nega
 «geprüft, nichts gefunden» — wird aktiv dokumentiert, nicht verschwiegen (**S5**).
 
 **Abschluss-Regel:** Bei einem roten Tor (Stand-Drift Exit 1, Gate rot) **kein Push, keine
-Übergabe an `deploy-check`** (§9). `review.md` deckt auf und korrigiert; Release bleibt bei
-`deploy-check`, die fachliche Abnahme bei `abnahme` — kein Duplikat (§5).
+Übergabe an `landung`** (§9). `review.md` deckt auf und korrigiert; Release bleibt bei
+`landung`, die fachliche Abnahme bei `abnahme` — kein Duplikat (§5).

@@ -287,5 +287,5 @@ tarif-zitierter Erlasse); `--nur=zh` ist der Zweig
   …): `review.md`.
 - Grenzen: `CLAUDE.md` §2 (Determinismus), §5 (SSoT), §7 (Normen verifizieren),
   §8 (Status/Ehrlichkeit); `bibliothek/STANDARDS.md` S2/S5/S6/S8. Release →
-  `deploy-check`, fachliche Abnahme → `abnahme`. Diese Pipeline löst **weder
+  `landung`, fachliche Abnahme → `abnahme`. Diese Pipeline löst **weder
   Deploy noch Abnahme** aus.

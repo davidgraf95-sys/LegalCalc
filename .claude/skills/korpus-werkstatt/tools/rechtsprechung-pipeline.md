@@ -221,6 +221,6 @@ mehr, eine maschinelle/kantonale Regeste begründet keinen amtlichen Leitstatus)
 - **`check:entscheide` rot** → Meldung lesen (Manifest⊇Snapshots · Provenienz · sha-Drift · Norm-Index-Refs ·
   BUDGET_MB). Bei BUDGET-Überschreitung Deckel-Ort bewusst nachziehen (Quirk 9), bei sha-Drift Snapshot neu
   generieren — **nie die JSON von Hand editieren** (§7).
-- **Abschluss-Regel:** bei rotem Tor kein Push, keine Übergabe an `deploy-check` (§9). DoD: §14.4-Pflicht-
+- **Abschluss-Regel:** bei rotem Tor kein Push, keine Übergabe an `landung` (§9). DoD: §14.4-Pflicht-
   Gegenprüfung + §14.5-Trailer + §11-Ablage (`bge-register.md`) + STRUKTUR-Karte (siehe
   `methodology/rechtsprechung.md`).

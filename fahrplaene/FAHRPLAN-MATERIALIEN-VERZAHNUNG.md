@@ -285,7 +285,7 @@ Delta (M5, ~½–1 Tag):
 
 **Summe ehrlich: ~7–10 Tage** (inkl. gegenpruefung-Läufe je Etappe). M0→M1→M2→M3→M4 seriell (je 1 PR,
 Auto-Merge bei grüner CI); M5 asynchron am V1a-Gate. Eigener Worktree (§12); Push/Deploy §9
-(`deploy-check`-Skill).
+(`landung`-Skill).
 
 **Ausführungsvermerk M0 (3.7.2026):** M0 gebaut und gemergt (Gegenprüfung bestanden — unabhängiger
 Opus-Adversarial, 2 Linsen: alle 10 Cutoff-Norm-Fakten gegen Fedlex-SPARQL/ELI verifiziert, 0

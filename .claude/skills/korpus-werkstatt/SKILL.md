@@ -8,7 +8,7 @@ description: "Verwenden bei «neuen Bundeserlass/Kantonserlass hinzufügen», «
 Die Orchestrierungs- und Verifikations-Schicht VOR Abnahme und Deploy: einen
 neuen Erlass/Entscheid extrahieren, jeden Wert mit Norm+Link+Stand belegen,
 Render und Extraktion adversarial prüfen. Sie übernimmt weder das §9-Deploy-Tor
-(→ `deploy-check`) noch die fachliche Abnahme (→ `abnahme`), sondern bringt den
+(→ `landung`) noch die fachliche Abnahme (→ `abnahme`), sondern bringt den
 Korpus prüffertig bis zu deren Eingang.
 
 Dieser Skill wird **selten** aufgerufen — er setzt darum nichts voraus und
@@ -79,7 +79,7 @@ die Rückfrage.
   ERSTRECHERCHE / ZWEIFACH GEPRÜFT / ABGENOMMEN, koppelt an `verifiziert`/«geprüft»),
   **S5** (Negativbefunde sind Pflicht), **S6** (Datiertes sofort ins
   Verfallsregister), **S8** (Korrektur-Protokoll am eigenen Bestand).
-- **Übergabe:** Release → Skill `deploy-check` (§9-Ritual). Fachliche Abnahme →
+- **Übergabe:** Release → Skill `landung` (§9-Ritual). Fachliche Abnahme →
   Skill `abnahme` (Status-Hebung auf «geprüft»/`verified:true`).
 - **Nicht-Ziele:** kein Endnutzer-Feature, keine LLM-Schicht in der App
   («deterministisch statt KI», §2); keine Tarife/Vorlagen (späterer Ausbau);
@@ -197,7 +197,7 @@ Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
    einzeln (`npx vitest run src/tests/<datei>`), `npm run golden:diff -- <id>`;
    **nie `dist`/`golden`/Lock direkt lesen**.
 
-**Abschluss-Regel:** Bei rotem Tor **kein Push, keine Übergabe an `deploy-check`**
+**Abschluss-Regel:** Bei rotem Tor **kein Push, keine Übergabe an `landung`**
 (§9). Die exakten Fehlerfall-Verweise (die vier Fälle oben) stehen ausführlich
 in `tools/verifikation.md` — damit der seltene Aufrufer keinen Vorwissen-Sprung
 machen muss.

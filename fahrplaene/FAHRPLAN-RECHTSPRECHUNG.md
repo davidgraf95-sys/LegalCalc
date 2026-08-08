@@ -514,7 +514,7 @@ Wir spiegeln nur die **bereits anonymisierte amtliche Fassung**, bauen **keinen 
 ### 9.5 Wartung (`.github/workflows/rechtsprechung-sync.yml`)
 Eigener Workflow (nicht in `normen-monitor.yml`): täglich `npm run normtext -- --nur=entscheide --datum=$(date +%F)` (Atom-Delta) → `check:entscheide` → `check:entscheide-netz` (gedrosselt) → bei Diff **Auto-PR, kein Auto-Merge/Deploy** (§9). Drosselung ≤1–2 req/s (esuche „be kind"), hoher Timeout (≥120 s). **Erst-Backfill von P0 läuft lokal, nicht im CI** (Request-Last, Abschnitt 11 R5).
 
-### 9.6 Deploy-Ritual (`deploy-check`-Skill)
+### 9.6 Deploy-Ritual (Skill `landung`)
 Tore laufen automatisch (in `check` eingehängt) + e2e. Bug-Check-Agents auf das Delta, Fokus auf bekannte Bug-Klassen (HTML-Leak in Regeste, zerrissene Aktenzeichen, falsche Leitentscheid-Erkennung, Tabellen-Drop, mobile Lesbarkeit). **Adversariale Agents Pflicht** (fingen real Tabellen-Drop/Leak/bis-ter-Verlust). Playwright-Screenshot der Live-Routen via Bash (nicht MCP). STRUKTUR.md nachziehen.
 
 ---
