@@ -107,13 +107,13 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
       if (fremdEffektiv) {
         linkSpans.push({
           start: g.start, end: g.end,
-          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${fremdEffektiv}`} anzeige={g.roh} linkClass={INLINE_CLASS} />,
+          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${fremdEffektiv}`} anzeige={g.roh} linkClass={INLINE_CLASS} zielIntern={false} />,
         });
       } else if (intern.fremdKuerzel) {
         // M6-D: bare Plural-Glied im Fremdgesetz-Chapeau → aufs Zielgesetz (NormChip).
         linkSpans.push({
           start: g.start, end: g.end,
-          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${intern.fremdKuerzel}`} anzeige={g.roh} linkClass={INLINE_CLASS} />,
+          node: <NormChip key={gk} artikel={`Art. ${g.roh} ${intern.fremdKuerzel}`} anzeige={g.roh} linkClass={INLINE_CLASS} zielIntern={false} />,
         });
       } else {
         const token = intern.tokenMap.get(normRef(g.roh));
@@ -170,7 +170,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
         const gk = g.erst ? `${key}-f${start}` : `${key}-f${start}-${g.start}`;
         if (!g.erst && g.start > cur) out.push(<RechtsprechungText key={`${key}-rg${start}-${cur}`} text={rest.slice(cur, g.start)} />);
         out.push(g.linkbar
-          ? <NormChip key={gk} artikel={g.artikel} anzeige={anzeige} linkClass={INLINE_CLASS} />
+          ? <NormChip key={gk} artikel={g.artikel} anzeige={anzeige} linkClass={INLINE_CLASS} zielIntern={false} />
           : <RechtsprechungText key={`${gk}-t`} text={anzeige} />);
         if (!g.erst) cur = g.end;
       }
@@ -211,7 +211,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // unbekanntem Ziel) — dieselbe Kette wie ein voll zitierter Fremdverweis (§5).
     if (intern.fremdKuerzel) {
       if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);
-      out.push(<NormChip key={`${key}-x${start}`} artikel={`Art. ${m[1]} ${intern.fremdKuerzel}`} anzeige={m[0]} linkClass={INLINE_CLASS} />);
+      out.push(<NormChip key={`${key}-x${start}`} artikel={`Art. ${m[1]} ${intern.fremdKuerzel}`} anzeige={m[0]} linkClass={INLINE_CLASS} zielIntern={false} />);
       last = start + m[0].length;
       continue;
     }
@@ -254,7 +254,7 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     // Glied-Text (zeichenidentisch, §1), Auflösung über das synthetisierte Ziel.
     teile.push(
       <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
-        anzeige={s.propagiert ? s.anzeige : undefined} linkClass={INLINE_CLASS} />,
+        anzeige={s.propagiert ? s.anzeige : undefined} linkClass={INLINE_CLASS} zielIntern={false} />,
     );
     zuletzt = s.end;
   }

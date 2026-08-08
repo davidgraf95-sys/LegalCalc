@@ -774,6 +774,23 @@
   select.lc-input.lc-input-sm, .lc-select.lc-input-sm {
     padding-top: 0; padding-bottom: 0; font-size: .875rem; line-height: 1.2;
   }
+  /* iOS-Fokus-Zoom (Auflage aus der S-Gegenprüfung, W2·10-UI-NAV-O): Safari auf
+     iOS zoomt die Seite beim Fokus JEDES Felds, dessen Schrift unter 16 px
+     liegt. Genau das war der S6-Befund am Kopf-Feld (dort per
+     `text-base sm:text-body-s` behoben) — `.lc-input-sm` trägt mit .875rem
+     dieselbe Falle und sitzt an den Filterfeldern von /gesetze, /materialien
+     und den Rechtsprechungs-Filtern.
+     Unter `sm` darum die Skalen-Stufe `base` (1rem = 16 px, Tailwind-Default-
+     fontSize — keine Magic-Number); ab `sm` bleibt alles bei `body-s`. Die
+     Breakpoint-Grenze kommt aus `theme()`, nicht aus einer getippten Pixelzahl,
+     und ist damit dieselbe wie beim `sm:`-Präfix.
+     CLS-neutral: die Höhe der Variante bleibt fest bei 36 px, es wächst nur der
+     Glyphenkasten INNERHALB des Feldes. */
+  @media not all and (min-width: theme('screens.sm')) {
+    .lc-input-sm,
+    select.lc-input.lc-input-sm,
+    .lc-select.lc-input-sm { font-size: 1rem; }
+  }
 
   .lc-btn {
     @apply inline-flex items-center justify-center rounded-md font-semibold transition-colors;

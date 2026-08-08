@@ -208,6 +208,15 @@ test.describe('/rechtsprechung — Richter-Facette', () => {
   test('kein horizontaler Overflow bei 390px mit geöffneter Liste', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/rechtsprechung')
+    // §6.3-FACHÄNDERUNG (W2·10-UI-NAV-J2, 8.8.2026): Unter 1024 px wohnt der
+    // Filterblock seit J2 im «Filter»-Bottom-Sheet, damit die Treffer mobil
+    // nicht erst unter der ganzen Steuerleiste beginnen. Das Richter-Feld ist
+    // dort also erst NACH dem Öffnen erreichbar — das Verhalten hat sich
+    // gewollt geändert, darum wird dieser Schritt hier ergänzt und nicht die
+    // Zusicherung aufgeweicht. GEPRÜFT WIRD UNVERÄNDERT DASSELBE: dass die
+    // geöffnete Vorschlagsliste bei 390 px keinen Seitwärts-Überlauf erzeugt.
+    await page.getByRole('button', { name: /^Filter/ }).click()
+    await expect(page.getByRole('dialog', { name: 'Filter' })).toBeVisible()
     await feld(page).click()
     await feld(page).fill(RICHTER_NAME)
     await expect(optionen(page).first()).toBeVisible()

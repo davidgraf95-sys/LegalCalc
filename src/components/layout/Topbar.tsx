@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 import { HeaderSuche } from './HeaderSuche';
@@ -21,6 +22,29 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
   /** Globale Schriftskala (A−/A+), R3 — ersetzt den früheren Breiten-Umschalter. */
   schrift: Schriftskala;
 }) {
+  // S6 — mobiler Such-Fokusmodus: solange die Suche auf schmalem Schirm offen
+  // ist, weichen Menü-Schalter, Logo und die Werkzeug-Knöpfe, damit das Feld die
+  // volle Streifenbreite bekommt (getippte Query bleibt lesbar). HeaderSuche
+  // meldet den Zustand; sie setzt ihn nur mobil (Desktop bleibt unberührt).
+  const [sucheBreit, setSucheBreit] = useState(false);
+  // Eine Klasse, drei Fundorte — `hidden` statt Unmount: die Knöpfe behalten
+  // ihren Zustand (Verlauf/Reiter-Panels) und der Streifen springt nicht.
+  const weicht = sucheBreit ? 'hidden' : '';
+  // Fokus-Ziel beim Verlassen des Fokusmodus: der ☰-Schalter ist das erste
+  // Bedienelement des Streifens und mobil immer da — die Tastatur landet damit
+  // am Anfang derselben Zone statt auf <body>.
+  const menuKnopf = useRef<HTMLButtonElement>(null);
+  // Der Wunsch wird im ✕-Klick gemeldet, ausgeführt wird er erst NACH dem
+  // Re-Render: solange der Fokusmodus läuft, trägt der Schalter `hidden` und ein
+  // display:none-Element nimmt keinen Fokus an. Der Effekt feuert genau auf der
+  // Flanke «Fokusmodus endet» — nicht beim Verlassen über einen Treffer (dort
+  // wird kein Wunsch gesetzt und die Navigation behält ihren eigenen Fokus).
+  const fokusWunsch = useRef(false);
+  useEffect(() => {
+    if (sucheBreit || !fokusWunsch.current) return;
+    fokusWunsch.current = false;
+    menuKnopf.current?.focus();
+  }, [sucheBreit]);
   return (
     <header
       className="sticky top-0 z-20 border-b border-line lc-glass"
@@ -29,7 +53,8 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
         {/* Mobil: Schublade öffnen — auf Desktop trägt die persistente Leiste. */}
         <button
           type="button"
-          className="lc-btn lc-btn-ghost lc-btn-sm lg:hidden shrink-0 min-h-11 min-w-11"
+          ref={menuKnopf}
+          className={`lc-btn lc-btn-ghost lc-btn-sm lg:hidden shrink-0 min-h-11 min-w-11 ${weicht}`}
           aria-label="Navigation öffnen"
           aria-controls="seitenleisten-schublade"
           onClick={onMenu}
@@ -83,17 +108,19 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
         </div>
 
         {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke. */}
-        <Link to="/" className="lg:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1" aria-label="LexMetrik – Startseite">
+        <Link to="/" className={`lg:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
           <LexMetrikSiegel size={30} />
           {/* Wortmarke ab sm — auf schmalen Schirmen trägt die Suche die Mitte. */}
           <LexMetrikWortmarke className="hidden sm:block text-h3" />
         </Link>
 
+        {/* max-w-xl deckelt die Feldbreite auf Desktop; im mobilen Fokusmodus ist
+            der Viewport ohnehin schmaler, das Feld füllt also den Streifen. */}
         <div className="flex-1 min-w-0 max-w-xl">
-          <HeaderSuche />
+          <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
-        <div className="shrink-0 flex items-center gap-1.5 sm:gap-2">
+        <div className={`shrink-0 flex items-center gap-1.5 sm:gap-2 ${weicht}`}>
           {/* A5 (David 5.7.2026): kein eigener Palette-Knopf mehr — die
               HeaderSuche trägt den Norm-Sprung selbst; ⌘K/Ctrl-K und «/»
               fokussieren ihr Feld (Hinweis-kbd sitzt im Feld). */}

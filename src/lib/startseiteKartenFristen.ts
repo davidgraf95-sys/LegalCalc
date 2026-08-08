@@ -183,7 +183,7 @@ export const KARTEN_FRISTEN: Record<string, CalculatorCard> = {
     href: '/rechner/verjaehrung',
     keywords: ['Verjährung', 'verjährt', 'Frist', 'Forderung', 'unerlaubte Handlung', 'Bereicherung', 'Unterbrechung', 'Verzicht', 'Einrede',
       'Art. 127 OR', 'Art. 128 OR'],
-    related: ['verzugszins', 'rechtsoeffnungsbegehren'],
+    related: ['verzugszins', 'rechtsoeffnungsbegehren', 'verjaehrungsverzicht'],
     icon: 'clock',
   },
   gewaehrleistung: {
