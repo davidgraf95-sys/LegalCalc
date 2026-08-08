@@ -43,6 +43,29 @@ const MAX_BOTSCHAFTEN = 8;
 const MAX_REVISIONEN = 10;
 const MAX_VERNEHMLASSUNGEN = 8;
 
+// LM-168 (W2·17-UI-BEFUNDE B6, K-15): Anzeige-Absicherung gegen mitten im Wort
+// abgeschnittene Regeste-Kurztexte (unter dem pdf-embed-PDF beobachtet, z. B.
+// «… im Anwendungsbe…»). Ursache war `kuerzeRegeste` (src/lib/rechtsprechung/
+// register.ts) — dort seit diesem Batch wortgrenzen-sicher (§5 SSoT). Das
+// bereits generierte `public/rechtsprechung/register.json` trägt die alten,
+// mitten im Wort geschnittenen Kurztexte aber weiter (Regenerierung ist ein
+// Daten-/Build-Schritt über scripts/normtext/, ausserhalb dieses reinen
+// UI-Batches — TABU/Risikopfad, siehe Rückgabe). Bis zum nächsten Daten-Build
+// schneidet diese Anzeige-Sicherung darum ausnahmsweise noch einmal nach: nur
+// wenn eine Ellipse vorliegt UND der Rückschritt zur letzten Wortgrenze klein
+// bleibt (≤ 20 % der Länge) — ein bereits sauber geschnittener Text wird nicht
+// unnötig kürzer gemacht.
+function absicherWortgrenze(kurz: string): string {
+  if (!kurz.endsWith('…')) return kurz;
+  const ohneEllipse = kurz.slice(0, -1);
+  if (ohneEllipse.length === 0 || ohneEllipse.endsWith(' ')) return kurz;
+  const grenze = ohneEllipse.lastIndexOf(' ');
+  if (grenze <= 0) return kurz;
+  const ruecksprung = ohneEllipse.length - grenze;
+  if (ruecksprung > ohneEllipse.length * 0.2) return kurz;
+  return ohneEllipse.slice(0, grenze).trimEnd() + '…';
+}
+
 /** Korpus-Artikel-Token → Anzeige ('20_a' → '20a'). */
 function anzeigeArtikel(token: string): string {
   return token.replace(/_/g, '');
@@ -537,7 +560,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                             {artikel && (
                               <span className="num text-micro text-ink-500"> · via Art. {artikel}</span>
                             )}
-                            {r.regesteKurz && <span className="text-ink-500"> — {r.regesteKurz}</span>}
+                            {r.regesteKurz && <span className="text-ink-500"> — {absicherWortgrenze(r.regesteKurz)}</span>}
                           </Link>
                           {kannOeffnen && !istOffen(ziel) && (
                             <DanebenKnopf ziel={ziel} label={r.zitierung} oeffneDaneben={oeffneDaneben} className="ml-1 align-middle" />
