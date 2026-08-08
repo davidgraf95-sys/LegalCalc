@@ -572,11 +572,22 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
   **Bau-Spec:** [FAHRPLAN-W2-19-SEITENLEISTE.md](fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md) §9
   (Ultracode-Fundament 8.8.2026: 4 Bestandes-Berichte, 3 unabhängige Konzepte, Jury 3:0,
-  Synthese; Slices S1–S10). **Erweiterung David 8.8.2026 (Chat):** ganze Seitenleiste inkl.
-  Suche und Kontext, Ziel Nützlichkeit, Erlass-Arten-Fundament, Fliesstext darf bearbeitet
-  werden; e2e-Anpassung in deklarierten Commits erlaubt; Kontext = Erlass-Übersicht +
-  Artikel-Kontext; Suche = Trefferliste in der Leiste. **Drei §11-Entscheide David 8.8.2026
-  spät (Protokoll in der Spec):** kleine Erlasse ab Start sichtbar · SG-3849 sofort ehrlicher
+  Synthese; Slices S1–S10). **Erweiterung David 8.8.2026 (Chat, Session-Start):** «offen in der
+  Umsetzung — die ganze Seitenleiste überarbeiten, inkl. Suche und Kontext; Ziel ist
+  Nützlichkeit; Gliederung und Übersicht sind sehr wichtig; verschiedene Arten von
+  Gesetzen/Verordnungen beachten, damit das Grundfundament stimmt; als erstes Fundament bauen,
+  dann Detailfragen; auch Gesetzes-Fliesstext darf bearbeitet werden.» Drei Rückfragen
+  entschieden: **(a)** e2e-Tests DÜRFEN in deklarierten eigenen Commits an das neue Verhalten
+  angepasst werden (ersetzt das frühere «nicht anfassen»); **(b)** Kontext-Bereich zeigt BEIDES
+  — Erlass-Übersicht (Stand, Art, Umfang, amtliche Quelle) und artikelbezogenen Kontext
+  (Rechtsprechung, Verweise, Historie); **(c)** Suche wird Trefferliste in der Seitenleiste mit
+  Textausschnitten — die Lesespalte bleibt vollständig und springt zum Treffer. Grösse darum
+  M→L. **Zusatz-Auftrag David (gleicher Chat):** überlegen, welche Informationen im Bestand
+  vorhanden sind (Struktur-Sidecar, Bezüge/Rechtsprechung, Revisionen/Historie, Fussnoten,
+  Randtitel, eId/ELI-Links, Currency, Grundart-Register, …) und sie so einsetzen, dass «die
+  nützlichste und gleichzeitig übersichtlichste Gesetzesdarstellung» entsteht —
+  Informations-Inventar ist Teil des Fundaments. **Drei §11-Entscheide David 8.8.2026 spät
+  (Protokoll in der Spec):** kleine Erlasse ab Start sichtbar · SG-3849 sofort ehrlicher
   §8-Hinweis + Korpus-Prüfauftrag · Sidecar-Nachzug 42 Kantonserlasse als eigener
   gegenprüfungspflichtiger Folge-Schritt.
   Die Diagnose ([Dossier — ZUERST LESEN, es ist die Bau-Spec](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md)) hat die Wurzeln vermessen: Haupt-Bremser ist der Hover-Dimm-Effekt der LESESPALTE (1686 simultane Transitionen, TBT 8.9 s @4×; Davids Dimm-Effekt vom 18.6. bleibt, nur die transition fällt — F1a), dazu das konstruktiv tote Auto-Zuklappen (0 Ereignisse; Wiederherstellung von Davids Auftrag K 26.6. mit Frame-gleicher scrollTop-Kompensation, CLS-Beweis = bestehende a9/a33-Tests unverändert grün — F2), unmemoisiertes Baum-Rendering (11'075 Knoten dauerhaft gemountet, Klick 231 ms @4× — F3: memoisierte Zeilen, zugeklappte Äste unmounten; der Baum ist KEIN Normtext, §15-Virtualisierungsverbot greift nicht), ungedrosselter Scroll-Listener `App.tsx:97` (F4: rAF wie der A16-Nachbar) und die missglückte Hervorhebung (sechsfaches `aria-current` = §8-Falschaussage; F5: EINE Positionsmarke, 2-px-Kante brass-500 statt Goldfläche, Sidebar-Muster, beide Themes ≥3:1). **Entscheid David 8.8.2026 spät: der Dimm-Effekt vom 18.6. «kann auch weg — Gliederung ist wichtiger»** ⇒ F1 = Hover-Dimmen der Lesespalte ERSATZLOS entfernen (Transition UND :has-Ketten — schnellster Weg auf den gemessenen 300-ms-Boden); F1b entfällt damit. Nachmessen gegen die Dossier-Tabelle ist Teil der DoD; danach LM-163 (B6 §7) gegen die neue Lage prüfen. Golden byte-gleich; e2e-Dateien nicht anfassen — gewollte Test-Konflikte melden.
