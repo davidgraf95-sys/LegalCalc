@@ -284,7 +284,10 @@ export function BeurkundungForm() {
           ))}
         </div>
 
-        {bereich === 'kauf' && <NotariatGrundbuchForm />}
+        {/* LM-170 (B6/K-15): der «RECHTLICHER HINWEIS»-Balken steht bereits oben
+            für alle drei Tabs (Zeile 272) — ohneDisclaimer verhindert den
+            zweiten, direkt unter der Tab-Leiste (s. NotariatGrundbuchForm). */}
+        {bereich === 'kauf' && <NotariatGrundbuchForm ohneDisclaimer />}
         {bereich === 'beurkundung' && (
           <div className="space-y-4">
             <GeschaeftsartWahl value={art} onChange={setArt} />

@@ -83,7 +83,15 @@ function PostenKarte({ titel, posten, akzent }: { titel: string; posten: NgPoste
 // Kernresultat (Beurkundung + Grundbuch + Total). Grundpfand, interkantonaler
 // Vergleich, Teilen, PDF und Aktenzeichen bleiben dem Voll-Rechner vorbehalten
 // (dorthin wird im Schnellrechner verlinkt). Dieselbe Engine (§3/§5).
-export function NotariatGrundbuchForm({ minimal = false }: { minimal?: boolean } = {}) {
+//
+// `ohneDisclaimer` (LM-170, B6/K-15): eigener Schalter, NICHT an `minimal`
+// gekoppelt. BeurkundungForm zeigt den «RECHTLICHER HINWEIS»-Balken bereits
+// EINMAL für alle drei Tabs (Grundstückkauf/Beurkundung/Grundbuch) oberhalb der
+// Tab-Leiste; ohne diesen Schalter renderte der Grundstückkauf-Tab ihn ein
+// zweites Mal, 8 px statt der sonst üblichen ~24 px unter dem ersten. `minimal`
+// selbst bleibt unberührt: es schaltet Grundpfand/Vergleich/Teilen/PDF ab, was
+// im Voll-Rechner-Tab falsch wäre — hier soll NUR der doppelte Balken weg.
+export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false }: { minimal?: boolean; ohneDisclaimer?: boolean } = {}) {
   const ausLink = usePermalinkFelder(NG_LINK_SPEC);
 
   const [kanton, setKanton] = useState<KantonCode>((ausLink.kanton as KantonCode) ?? getStandardKanton());
@@ -130,8 +138,10 @@ export function NotariatGrundbuchForm({ minimal = false }: { minimal?: boolean }
   return (
     <BeruehrtRahmen>
     <div className="space-y-6">
-      {/* minimal = Startseite-Schnellrechner: globaler Pflicht-Hinweis dort (§8). */}
-      {!minimal && <PflichtDisclaimer kurz="Beurkundung + Grundbuch (+ Grundpfand) + Handänderungssteuer nach kantonalem Tarif; Rahmentarife als Spanne." text={DISCLAIMER} />}
+      {/* minimal = Startseite-Schnellrechner: globaler Pflicht-Hinweis dort (§8).
+          ohneDisclaimer = Grundstückkauf-Tab in BeurkundungForm: der Hinweis
+          steht dort bereits oberhalb der Tab-Leiste (LM-170, s. o.). */}
+      {!minimal && !ohneDisclaimer && <PflichtDisclaimer kurz="Beurkundung + Grundbuch (+ Grundpfand) + Handänderungssteuer nach kantonalem Tarif; Rahmentarife als Spanne." text={DISCLAIMER} />}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Kanton">
