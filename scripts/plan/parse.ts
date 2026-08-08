@@ -69,6 +69,7 @@ export function bulletEinzug(zeile: string): number {
  * darum auch am Bestand folgenlos.)
  */
 export function bindeCheckbox(zeilen: string[], metaIdx: number): { checkbox: Checkbox; zeile: number | null } {
+  const metaEinzug = (zeilen[metaIdx].match(/^[ \t]*/) ?? [''])[0].length;
   let leerFolge = 0;
   for (let j = metaIdx - 1; j >= 0; j--) {
     const z = zeilen[j];
@@ -79,6 +80,16 @@ export function bindeCheckbox(zeilen: string[], metaIdx: number): { checkbox: Ch
     leerFolge = 0;
     if (/^[ \t]*(?:>[ \t]*)*#{1,6}[ \t]/.test(z)) break; // Überschrift
     if (BULLET_RE.test(z)) {
+      // Entstückelungs-Folgefehler (8.8.2026, QS-AUDIT-VERWEISE): Dach-Schritte
+      // tragen EINGERÜCKTE Checklisten-Positionen zwischen Schritt-Checkbox und
+      // @meta — Checkbox-Bullets auf @meta-Tiefe. Die dem @meta nächste Checkbox
+      // ist dann eine Position; plan:set toggelte real die letzte Checklisten-
+      // Zeile statt der Schritt-Checkbox. Die Besitzer-Bullet liegt immer eine
+      // Stufe ÜBER dem @meta (Konvention: @meta = Bullet-Einzug + 2). Darum:
+      // Checkbox-Bullets auf oder unter @meta-Tiefe überspringen; checkbox-lose
+      // Bullets kappen die Bindung weiterhin (Regel-10-Semantik unverändert).
+      const einzug = (z.match(/^[ \t]*/) ?? [''])[0].length;
+      if (einzug >= metaEinzug && checkboxAus(z)) continue;
       const cb = checkboxAus(z);
       return cb ? { checkbox: cb, zeile: j } : { checkbox: null, zeile: null };
     }

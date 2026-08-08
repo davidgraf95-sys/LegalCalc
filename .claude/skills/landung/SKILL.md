@@ -50,6 +50,15 @@ zerstört. Darum:
    `rerere` ist aktiv. Die Treiber greifen nur bei **lokalen** Merges und
    Rebases, nie beim GitHub-Server-Merge.
 
+**Anker-Konkordanz «§12.x»** (Audit-Befund 7.8.2026, Kollision; QS-AUDIT-VERWEISE):
+Alt-Verweise «CLAUDE.md §12.2» meinen **Ziff. 2** dieser Liste (Pathspec-Commits,
+kein stash/amend), «§12.3» **Ziff. 3** (Deploy nur aus sauberem HEAD-Worktree).
+Achtung Verwechslungsgefahr: Fahrpläne nummerieren ihre EIGENEN Abschnitte
+dateiintern ebenfalls «§12.x» (z. B. `FAHRPLAN-VERZAHNUNG-UI.md` §12.2
+«Herleitung», `FAHRPLAN-GESETZES-UX.md` §12.x) — solche Verweise sind stets
+dateigebunden und nie Reglement-Anker; im Zweifel entscheidet der Kontext
+(«diese Datei §…» = Fahrplan-Anker).
+
 ---
 
 ## 0 · Vorbedingungen

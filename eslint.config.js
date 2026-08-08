@@ -45,6 +45,28 @@ export default defineConfig([
       ],
     },
   },
+  // §3 Schichtentrennung mechanisch gesperrt (QS-AUDIT-VERWEISE 8.8.2026,
+  // Übertragung des §2-Musters): Darstellungsschicht rechnet keine Fristen —
+  // Datums-Arithmetik gehört in src/lib (eine Rechtsregel, eine Stelle).
+  // Bestand beim Bau: einzig DatumsFeld.tsx (Kalender-Raster-Navigation,
+  // begründet per Inline-Ausnahme gegrandfathert).
+  {
+    files: ['src/pages/**/*.{ts,tsx}', 'src/components/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': ['error', {
+        paths: [{
+          name: 'date-fns',
+          importNames: [
+            'addDays', 'addBusinessDays', 'addWeeks', 'addMonths', 'addYears',
+            'subDays', 'subWeeks', 'subMonths', 'subYears',
+            'differenceInDays', 'differenceInCalendarDays', 'differenceInBusinessDays',
+            'differenceInMonths', 'differenceInYears',
+          ],
+          message: '§3 Schichtentrennung: Datums-Arithmetik ist Rechtslogik-nah und lebt in src/lib (Engine/fristen) — die Darstellungsschicht rendert Ergebnisse, sie rechnet keine.',
+        }],
+      }],
+    },
+  },
   // R2 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Typo-Skala): der Normtext-Reader
   // verwendet KEINE arbitrary rem-basierte `max-w-[…rem]` mehr — die Lesespalte
   // kommt ausschliesslich aus den Tokens `max-w-reading` (40rem) bzw.

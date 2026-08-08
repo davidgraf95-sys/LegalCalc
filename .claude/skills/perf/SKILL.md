@@ -70,3 +70,38 @@ Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
 `check:struktur-konsistenz`: **Tempo zählt nur, wenn die Treue grün bleibt.**
 
 Detail-Begründungen je Regel: `fahrplaene/FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).
+
+## §-Konkordanz (für Alt-Verweise im Bestand)
+
+Die Unterparagraphen von §15 sind seit dem A4-Umzug (25.7.2026, `b2fa14dda`)
+hierher gezogen. Gut 150 Verweise im Bestand zeigen weiterhin auf die alten
+Nummern — sie lösen hier auf. Die Reihenfolge ist 1:1 erhalten: die Ziffer der
+Bauregel ist die Ziffer der alten Unternummer.
+
+| Alt (`CLAUDE.md` §15) | Neu (dieser Skill) |
+|---|---|
+| §15.1 Keine DOM-entfernende Virtualisierung von Normtext | Bauregel 1 |
+| §15.2 CLS = 0 durch reservierten Platz, nie durch weniger Inhalt | Bauregel 2 |
+| §15.3 Schwere Features lazy und off-critical-path, nie eager-Korpus | Bauregel 3 |
+| §15.4 Memoisierung ist Pflicht (React Compiler aus) | Bauregel 4 |
+| §15.5 Render-then-replace bleibt; kein naives `hydrateRoot` | Bauregel 5 |
+| §15.6 Long-Tail on demand bleibt inhaltsvollständig | Bauregel 6 |
+| §15 bar zitiert (Grundsatz, Logikverlust-Begriff, Perf-Tor) | bleibt `CLAUDE.md` §15; Wortlaut hier im Kopf, «Was ‹Logikverlust› heisst» und «Messung» |
+
+**Über §15.6 hinaus gab es nie eine Unternummer** — ein Verweis auf §15.7+ ist
+ein Tippfehler, kein Umzugsverlust.
+
+Zwei Stellen sind beim Auflösen zu beachten:
+
+- Die alten Nummern waren schon vor dem Umzug **Kurzschrift**: die Vor-A4-Fassung
+  (`git show b2fa14dda^:CLAUDE.md`, Z. 352 ff.) zählte «1.–6.» ohne §-Anker. Der
+  Umzug hat den Verweis nicht verschoben, sondern die Kurzschrift zur Sackgasse
+  gemacht.
+- Verweise auf das **Tor** im alten §15-Schluss (`check:perf-budget` als
+  Lighthouse-Lauf) treffen einen überholten Sachverhalt: seit der Faktenkorrektur
+  vom 7.8.2026 sind es zwei getrennte Tore, siehe «Messung». Massgeblich ist dort
+  der heutige Text, nicht die Alt-Formulierung.
+
+Verweise werden **nicht umgeschrieben** — die Anker-Logik hält die alten Nummern
+stabil, diese Tabelle löst sie auf (gleiches Muster: Skill `auftrag` Ziff. 9 für
+§14.x, Skill `refactoring` Ziff. 8 für §6.x).

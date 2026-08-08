@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+// eslint-disable-next-line no-restricted-imports -- §3-Ausnahme (gegrandfathert 8.8.2026, QS-AUDIT-VERWEISE): addDays navigiert hier nur das Kalender-Raster (Darstellung), es berechnet keine Frist.
 import { addDays, format, isValid, parse, parseISO } from 'date-fns';
 
 // Eigenes Datumsfeld im LexMetrik-Look: Texteingabe (TT.MM.JJJJ) plus

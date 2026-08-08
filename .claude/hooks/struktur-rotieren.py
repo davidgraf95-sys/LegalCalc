@@ -43,9 +43,17 @@ from datetime import date
 #    Auslagerung offen, s. FAHRPLAN-TOKEN-OEKONOMIE §Stand) — aber das ist T7-/ROADMAP-
 #    Gebiet und kollidiert mit aktiven Parallel-Schreibern; der Wächter nörgelt darum
 #    nicht auf dem bekannten Rest, sondern schlägt erst bei neuem Wachstum an.
+#  · CLAUDE.md 14 KB = Drift-Wächter (QS-AUDIT-VERWEISE 8.8.2026; Audit 7.8.:
+#    36 von 38 Commits vergrössern die Datei, Kürzungen in 5–11 Tagen wieder
+#    aufgeholt — Drift ist strukturell). Ist beim Setzen: ~11.8 KB / 234 Z.;
+#    ~2 KB Luft = Platz für Pflege, Alarm bei neuem Prosa-Anbau. Reisst das
+#    Ceiling, ist der Weg NICHT «Ceiling anheben», sondern Regel als Tor/Hook
+#    verankern und Prosa in den tragenden Skill (Grundsatz Entscheid David
+#    7.8.2026: neue Regeln nur als Tor/Hook, nie als Prosa).
 BUDGET = {
     "STRUKTUR.md": 60 * 1024,
     "ROADMAP.md": 100 * 1024,
+    "CLAUDE.md": 14 * 1024,
 }
 KARTEN_ANKER = "<!-- KARTEN -->"
 ARCHIV = "archiv/STRUKTUR-SESSIONKARTEN.md"

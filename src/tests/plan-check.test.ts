@@ -428,3 +428,33 @@ describe('Regel 8.3 — Stale-Guard deckt auch blocked', () => {
     expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
   });
 });
+
+// ── bindeCheckbox × Dach-Checklisten (Wurzel-Fix 8.8.2026, QS-AUDIT-VERWEISE) ──
+// plan:set toggelte bei Dach-Schritten real die LETZTE Checklisten-Zeile statt
+// der Schritt-Checkbox (die dem @meta nächste Checkbox ist bei Dächern eine
+// eingerückte Position). Eingerückte Bullets werden jetzt übersprungen.
+describe('bindeCheckbox — Dach-Schritt mit eingerückter Checkliste', () => {
+  it('bindet die Schritt-Checkbox (Spalte 0), nie eine Checklisten-Position', async () => {
+    const { bindeCheckbox } = await import('../../scripts/plan/parse');
+    const zeilen = [
+      '- [ ] **`W9·9-DACH` · Titel** — Prosa.',
+      '  - [ ] Position eins',
+      '  - [x] Position zwei',
+      '  <!-- @meta id: W9·9-DACH · status: ready · of: ja · blocker: null · dep: [] -->',
+    ];
+    const b = bindeCheckbox(zeilen, 3);
+    expect(b.zeile).toBe(0);
+    expect(b.checkbox).toBe('[ ]');
+  });
+
+  it('ohne Checkliste unverändert: nächste Spalte-0-Checkbox wird gebunden', async () => {
+    const { bindeCheckbox } = await import('../../scripts/plan/parse');
+    const zeilen = [
+      '- [x] **`W9·8` · Titel** — Prosa.',
+      '  <!-- @meta id: W9·8 · status: done · of: ja · blocker: null · dep: [] -->',
+    ];
+    const b = bindeCheckbox(zeilen, 1);
+    expect(b.zeile).toBe(0);
+    expect(b.checkbox).toBe('[x]');
+  });
+});

@@ -223,6 +223,8 @@ jobs:
       #     weil check:plan nirgends in CI lief.
       - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
         run: npm run check:merge-schutz
+      - name: Testtreue (§6.3 — refactor-Commits ändern keine Tests)
+        run: npm run check:testtreue
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan
       # tsc -b läuft im bau-Job (Teil von npm run build). KEIN dist-Download
