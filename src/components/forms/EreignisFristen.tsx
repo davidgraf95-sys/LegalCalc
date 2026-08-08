@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Checkbox, Field, inputCls, NormLink } from '../vorlagen/ui';
+import { Checkbox, ErgebnisPlatzhalter, Field, inputCls, NormLink } from '../vorlagen/ui';
 import { NormText } from '../NormText';
 import { DatumsFeld } from '../DatumsFeld';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
@@ -296,7 +296,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
         ) : (
           <>
             <Field label={ereignis === 'agkuendigung' ? 'Ende der Kündigungsfrist' : 'Ereignisdatum'}
-              hint={ereignis === 'zahlungsbefehl' ? 'Zustellung des Zahlungsbefehls'
+              hint={ereignis === 'zahlungsbefehl' ? 'Löst Fristen für Rechtsvorschlag (Art. 74 SchKG) und Fortsetzungsbegehren (Art. 88 SchKG) aus'
                 : ereignis === 'klagebewilligung' ? 'Eröffnung/Zustellung der Klagebewilligung'
                 : ereignis === 'agkuendigung' ? 'Beendigung des Arbeitsverhältnisses — im Sperrfristen-Rechner berechnen'
                 : erbenstellung === 'gesetzlich' ? 'Kenntnis vom Tod des Erblassers (Art. 567 Abs. 2 ZGB)'
@@ -321,7 +321,7 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
             )}
             {ereignis !== 'agkuendigung' && (
               <Field label="Kanton"
-                hint={ereignis === 'zahlungsbefehl' ? 'staatlich anerkannte Feiertage (Endregel)' : 'Feiertage für die Werktags-/Endregel'}>
+                hint={ereignis === 'zahlungsbefehl' ? 'Staatlich anerkannte Feiertage (Endregel)' : 'Feiertage für die Werktags-/Endregel'}>
                 <select value={kanton} onChange={(e) => setKanton(e.target.value as Kanton)} className={inputCls}>
                   {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
                 </select>
@@ -330,6 +330,15 @@ function EreignisFristen({ ereignisse, zustellungVorgabe }: {
           </>
         )}
       </div>
+
+      {/* LM-169 (B6/K-15): ohne Ereignisdatum blieb eine leere Fläche vor dem
+          Footer stehen — der Block kündigt eine Tabelle an, ohne zu sagen, dass
+          sie noch fehlt (§8). Geteilter Baustein (§5/§10), wie am Streitwert-
+          Rechner. Betrifft alle vier Fach-Rechner, die diese Sektion einbetten
+          (ZPO-/SchKG-/Erb-Fristen, Kündigung — s. o., EIN Fundort). */}
+      {!ergebnis && (
+        <ErgebnisPlatzhalter was="Ereignisdatum eingeben — hier erscheinen alle daraus ausgelösten Fristen als Tabelle." />
+      )}
 
       {ergebnis && (
         <div className="space-y-4">
