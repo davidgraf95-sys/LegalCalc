@@ -508,6 +508,23 @@ export function useLeserSprungSpy(opts: {
         if (synth) setAktivIds((prev) => prev.length === synth.length && prev.every((v, i) => v === synth[i]) ? prev : synth);
         return;
       }
+      // ── OFFENER ALT-MANGEL (gemessen 9.8.2026, NICHT aus dieser Slice) ──
+      // Der Aufklapp unten reisst beim ersten Artikelwechsel den ganzen
+      // Aktiv-Pfad in EINEM Commit auf (~21 Zeilen / ~780 px) und schiebt die
+      // folgenden Top-Level-Zeilen aus dem Sichtfeld des `[data-toc]`-Scrollers.
+      // Das ist der rote a33-Fall «A9 — Lese-Scroll unter CPU-Drossel»: der
+      // Shift passiert IMMER (8/8 Sonden-Läufe, bitgleich 0.0504); ob er zählt,
+      // entscheidet allein Chromiums 500-ms-`hadRecentInput`-Fenster (3/8
+      // verworfen ⇒ grün, 5/8 gezählt ⇒ rot). Nullprobe gegen 657880411^ (VOR
+      // W2·19, also main): 4/20 rot — dieselbe Rate wie hier, der Mangel ist
+      // ÄLTER. `flushSync` auch im Aufklapp-Zweig: 2/20 statt 4/20, gegen die
+      // Streuung nicht unterscheidbar ⇒ keine Ursachen-Behebung (Spec §3.6
+      // verbietet das Nachjustieren). Auflösbar ist der Widerspruch nur über das
+      // VERHALTEN — Auftrag K (David 26.6.2026, «Zweig automatisch aufklappen»)
+      // gegen den a33-Kontrakt «Lese-Scroll = CLS 0»; ein Scroll-Ausgleich hilft
+      // nicht, weil die neuen Zeilen INNERHALB des Sichtbands entstehen. Das ist
+      // Davids Entscheid. Vollständige Messreihe im Commit-Body.
+      //
       // F3 (RC2, Auftrag David 16.7. «Gliederung springt umher»): den (a)-Block
       // (Markierung + Auto-Akkordeon) TRAILING entprellen (~200 ms, analog aktArtikel/
       // tabArtikel oben). Der Timer verarbeitet stets das ZULETZT gemeldete `ids` (jeder
