@@ -40,8 +40,13 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({ sektionen, aktivPfa
       // sichtbare Äste werden NICHT zugeklappt (§15.2, kein On-Screen-Reflow).
       <li key={s.id} data-sektion-id={s.id}>
         <div className="flex items-start" style={{ paddingLeft: `${tiefe * 0.6}rem` }}>
+          {/* LM-147 (W2·17-UI-BEFUNDE-B4): `aria-expanded` fehlte am Klappknopf — ein
+              Screenreader kündigte weder den Zustand noch dessen Wechsel an
+              (`aria-label` allein sagt nur die NÄCHSTE Aktion, nicht den IST-Zustand,
+              WAI-ARIA-Disclosure-Muster). Rein deklarativ (`auf`, bereits vorhanden),
+              kein Verhaltens-/Render-Einfluss. */}
           {hatKinder
-            ? <button type="button" onClick={() => onToggle(s.id)} aria-label={auf ? 'Einklappen' : 'Aufklappen'} className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
+            ? <button type="button" onClick={() => onToggle(s.id)} aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'} className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
             : <span className="shrink-0 w-4" aria-hidden />}
           {/* W2·10-UI-NAV/R5: die verlassene Leseposition VOR dem Sprung vormerken.
               Der TOC-Sprung erzeugt bewusst keinen History-Eintrag (LM-202) — ohne
@@ -59,11 +64,27 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({ sektionen, aktivPfa
             // 500-ms-`hadRecentInput`-Fenster (gemessen: Klick + 552 ms), zählt
             // der Shift als unerwarteter CLS (§15.2).
             // Ersetzt durch zwei Signale, die die Zeilenhöhe nicht anfassen:
-            // Tinte (ink-600 → ink-900) und Fläche (bg-brass-100/70). Das ist
+            // Tinte (ink-600 → ink-900) und Fläche (bg-brass-100). Das ist
             // dieselbe Aktiv-Sprache wie im SprachUmschalter — bestehende Tokens,
             // kein neuer Farb-Rohwert (§13/F7). Semantischer Träger bleibt
             // unverändert `aria-current`, die Marker-Sprache `data-toc-aktiv`.
-            className={`flex-1 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${tiefe === 0 ? 'text-body-s' : 'text-xs'} ${aktiv ? 'text-ink-900 bg-brass-100/70' : 'text-ink-600 hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
+            // LM-156 (W2·17-UI-BEFUNDE-B4): `bg-brass-100/70` (Opazitäts-Modifikator
+            // auf einer `var(--brass-100)`-Custom-Property) erzeugt bei diesem
+            // Tailwind-Stand KEINE Utility-Regel — geprüft im kompilierten CSS
+            // (`dist/assets/*.css`): nur das nackte `bg-brass-100` existiert, die
+            // `/70`-Variante fehlt vollständig. Die «Fläche» war dadurch bislang
+            // UNSICHTBAR (0 % statt 70 % Deckkraft) — die aktive Zeile trug in
+            // Wirklichkeit nur die Tinten-Änderung, der zweite der beiden im
+            // Kommentar oben versprochenen Signale griff nicht. Fix hier: das
+            // bereits VORHANDENE, tor-geprüfte Vollfarb-Token `bg-brass-100` (wie
+            // `.lc-badge-massgeblich`/`.lc-chip-selected`, index.css) — keine neue
+            // Farbe, nur der funktionierende statt der stillschweigend leer
+            // laufenden Opazitäts-Variante. Die generelle Opazitäts-Modifikator-
+            // Lücke (jedes `text-*/NN`/`bg-*/NN` auf `var(--x)`-Farben) ist eine
+            // Tailwind-Config-Frage (`tailwind.config.js`, ausserhalb src/ und
+            // damit ausserhalb dieses Auftrags) — als Nebenfund gemeldet, nicht
+            // hier gelöst.
+            className={`flex-1 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${tiefe === 0 ? 'text-body-s' : 'text-xs'} ${aktiv ? 'text-ink-900 bg-brass-100' : 'text-ink-600 hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
             {pre ? <><span className="font-medium text-ink-700">{pre}:</span> {margLabel(rest)}</> : margLabel(s.label)}
           </button>
         </div>
