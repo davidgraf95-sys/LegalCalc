@@ -638,8 +638,16 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     <span className="num lc-overline shrink-0 text-ink-600" title={g.beleg}>{g.label}</span>
                     {g.werkzeuge.map((w) => (
                       <span key={w.id} className="inline-flex items-center">
+                        {/* LM-152 (W2·17-UI-BEFUNDE-B4): in der schmalen `seitenleiste`
+                            (TOC-Spalte, 256 px) zwang `whitespace-nowrap` lange
+                            Werkzeug-Titel («Mietvertrag (Wohnen · Geschäft ·
+                            Untermiete)») über die Spaltenbreite hinaus (374 px Inhalt
+                            bei 245 px Sicht, gemessen) — horizontaler Überhang trotz
+                            `flex-wrap` auf dem Eltern-`<li>`, weil das einzelne Chip-
+                            Label selbst nicht umbrach. In `lesespalte` (breite
+                            Hauptspalte) bleibt das bewährte Einzeilen-Chip erhalten. */}
                         <Link to={w.href}
-                          className="lc-chip whitespace-nowrap no-underline hover:text-brass-700 hover:border-brass-400">
+                          className={`lc-chip no-underline hover:text-brass-700 hover:border-brass-400 ${seitenleiste ? '' : 'whitespace-nowrap'}`}>
                           <span className="text-ink-500 mr-1" aria-hidden>{w.modus === 'rechner' ? '⊞' : '▤'}</span>{w.titel}
                         </Link>
                         {kannOeffnen && !istOffen(w.href) && (
@@ -659,12 +667,22 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
           {!zeigeArtikelWerkzeuge && werkzeuge.length > 0 && (
             <KontextGruppe titel="Passende Werkzeuge" anzahl={werkzeuge.length}
               hinweis="Aus den verknüpften Normen abgeleitet (grobe Zuordnung, keine kuratierte Empfehlung).">
-              {/* Mobil eine scrollbare Chip-Reihe, ab sm normaler Umbruch. */}
-              <ul className="flex gap-2 overflow-x-auto pb-1 -mb-1 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0 [scrollbar-width:thin]">
+              {/* Mobil eine scrollbare Chip-Reihe, ab sm normaler Umbruch. LM-152:
+                  `seitenleiste` erzwingt IMMER Umbruch (nie horizontal-scrollend) —
+                  sonst ein zweiter Scroll-Richtungswechsel innerhalb der bereits
+                  vertikal scrollenden 256-px-TOC-Spalte. */}
+              <ul className={seitenleiste
+                ? 'flex flex-wrap gap-2'
+                : 'flex gap-2 overflow-x-auto pb-1 -mb-1 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0 [scrollbar-width:thin]'}>
                 {werkzeuge.map((w) => (
-                  <li key={w.id} className="shrink-0 inline-flex items-center">
+                  <li key={w.id} className={seitenleiste ? 'inline-flex items-center' : 'shrink-0 inline-flex items-center'}>
+                    {/* LM-152: dieselbe Umbruch-Ausnahme wie oben (Werkzeuge zu
+                        einzelnen Artikeln) — `seitenleiste` bricht lange Titel um
+                        statt die 256-px-TOC-Spalte horizontal zu überhängen; `shrink-0`
+                        entfällt dort ebenfalls, sonst hielte das `<li>` seine
+                        Inhaltsbreite gegen den Umbruch. */}
                     <Link to={w.href}
-                      className="lc-chip whitespace-nowrap no-underline hover:text-brass-700 hover:border-brass-400">
+                      className={`lc-chip no-underline hover:text-brass-700 hover:border-brass-400 ${seitenleiste ? '' : 'whitespace-nowrap'}`}>
                       <span className="text-ink-500 mr-1" aria-hidden>{w.modus === 'rechner' ? '⊞' : '▤'}</span>{w.titel}
                     </Link>
                     {/* «daneben öffnen»: Norm bleibt links, Werkzeug erscheint

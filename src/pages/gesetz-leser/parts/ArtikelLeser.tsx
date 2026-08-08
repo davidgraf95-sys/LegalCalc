@@ -570,12 +570,16 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               {fussAnzeige.map((fn, i) => (
                 <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} data-fn-klasse={fn.kl}
                   className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
-                  {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden),
-                      darum ink-500 statt ink-300 — ink-300 ist ein Deko-Token (~2.3:1, axe serious).
-                      ink-500 ≥4.8:1 hell / ≥5.2:1 dunkel auf allen Reader-Flächen, deckt den
-                      Farbwert der Zeile (die Zeile ist bereits ink-500). Latenter 17.6.-Defekt,
-                      sichtbar durch #255, Fix 18.7. */}
-                  {fn.nr && <span className="num mr-1 text-ink-500">{fn.nr}</span>}
+                  {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
+                      LM-153 (W2·17-UI-BEFUNDE-B4): die Marke im Fliesstext (FnRef,
+                      ArtikelBody.tsx) ist hochgestellt UND brass-700; der Apparat-Eintrag
+                      stand bisher als ink-500-Zahl auf der Grundlinie — andere Auszeichnung,
+                      dieselbe Referenz. Baseline/Grösse bleiben (eine Liste aus hochgestellten
+                      Mini-Ziffern wäre unlesbar), aber die FARBE wird auf dieselbe brass-700-
+                      Familie gehoben — der Leser verbindet Marke↔Eintrag über die Farbe, wie
+                      im Fliesstext. brass-700 ist bereits an der Marke selbst AA-geprüft
+                      (kleinere Schrift, 0.62em) und trägt hier bei 12px erst recht. */}
+                  {fn.nr && <span className="num mr-1 text-brass-700">{fn.nr}</span>}
                   {fnTextMitLinks(fn)}
                 </p>
               ))}
@@ -596,14 +600,25 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       auch in die Chronologie-Zeile. Ohne sie ist der Marker im Wortlaut
                       (¹¹⁶) keinem Eintrag mehr zuzuordnen — der Leser sieht eine
                       Datumsliste ohne Anschluss an den Text. Gleiche Darstellung wie im
-                      Apparat (`num`, ink-500), damit die Zuordnung optisch trägt. */}
-                  {fn.fn.nr && <span className="num mr-1 text-ink-500">{fn.fn.nr}</span>}
+                      Apparat (`num`, ink-500), damit die Zuordnung optisch trägt.
+                      LM-151 (W2·17-UI-BEFUNDE-B4): drei Bestandteile (Nummer/Sortier-
+                      Datum/Fussnotentext) liefen ohne TEXTLICHEN Trenner ineinander
+                      («1061. Oktober 2025Eingefügt …») — `mr-1`/`mr-1.5` setzen nur
+                      CSS-Abstand, kein Zeichen; für Text-Selektion/Screenreader blieb
+                      kein Zwischenraum. Explizite Trenn-Zeichen (` · `, `: `) statt
+                      reiner Margin schliessen die Lücke, ohne den amtlichen
+                      Fussnotentext (`fn.fn.text`) anzutasten (§1/§7). LM-153: Nummer
+                      brass-700 statt ink-500 — dieselbe Farbfamilie wie die Marke im
+                      Fliesstext (FnRef), gleiche Begründung wie im Apparat oben. */}
+                  {fn.fn.nr && <span className="num mr-1 text-brass-700">{fn.fn.nr}</span>}
                   {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
                       §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
                       undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
-                  <span data-hist-datum={fn.iso ?? ''} className="num mr-1.5 tabular-nums text-ink-600">
+                  {fn.fn.nr && <span aria-hidden className="text-ink-300 mr-1">·</span>}
+                  <span data-hist-datum={fn.iso ?? ''} className="num tabular-nums text-ink-600">
                     {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
                   </span>
+                  <span aria-hidden className="mr-1.5">:</span>
                   {fnTextMitLinks(fn.fn)}
                 </li>
               ))}

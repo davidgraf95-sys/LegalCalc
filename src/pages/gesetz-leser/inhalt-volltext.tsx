@@ -250,8 +250,21 @@ export function LeserVolltextInhalt({
         } />
 
       {/* M5: Erlass-Kopf (Ingress/Erlassformel bzw. materielle Präambel + Erlass-
-          datum + Kopf-Fussnoten) — Fedlex-Fundiertheits-Floor (§2), bisher verworfen. */}
-      {kopf && <ErlassKopfBlock kopf={kopf} intern={internRefs} />}
+          datum + Kopf-Fussnoten) — Fedlex-Fundiertheits-Floor (§2), bisher verworfen.
+          LM-149 (W2·17-UI-BEFUNDE-B4, §5 DESIGN-REGLEMENT-NORMTEXT §4b): dieselbe
+          16rem+gap-Spaltenaufteilung wie die Lesespalte weiter unten (Zeile ~338) —
+          sonst sitzt der Ingress-Abschluss (border-rule-struktur) flush-left, während
+          die Lesespalte im Grid nach rechts zentriert ist: zwei Trennlinien auf
+          unterschiedlicher Höhe, deren X-Bereiche sich überschneiden. Die leere erste
+          Zelle hält nur den Platz der TOC-Spalte frei (kein Inhalt, aria-hidden);
+          `ErlassKopfBlock` zentriert sich selbst per `mx-auto w-full max-w-normtext`
+          identisch zur Lesespalte (`.group/lese`). */}
+      {kopf && (
+        <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[16rem_minmax(0,1fr)] gap-8' : ''}>
+          {istXl && sektionen.length > 0 && tocOffen && <div aria-hidden />}
+          <ErlassKopfBlock kopf={kopf} intern={internRefs} />
+        </div>
+      )}
 
       {/* A35 (David 19.7.2026): das In-Gesetz-Suchfeld ist in der EINZELansicht in den
           Inhalts-Kopf (oben, neben «Ansicht»/Stand/✕) gewandert — die frühere full-
@@ -339,6 +352,12 @@ export function LeserVolltextInhalt({
             Nur wenn istXl; darunter Overlay-Drawer über den sticky ☰-Knopf. */}
         {istXl && sektionen.length > 0 && (
           <aside
+            // LM-147 (W2·17-UI-BEFUNDE-B4): `<aside>` ohne `role`/`aria-label` — ein
+            // Screenreader kündigte den Gliederungsbaum nicht als Navigationsbereich
+            // an; `role="navigation"` ist bei `<aside>` (nicht implizit `navigation`,
+            // anders als `<nav>`) explizit nötig. Reine a11y-Auszeichnung, kein
+            // Markup-/Verhaltens-Wechsel.
+            role="navigation" aria-label="Gliederung"
             // A35 (David 19.7.2026): in der EINZELansicht entfiel die full-width Such-
             // Leiste (Suchfeld jetzt IM Inhalts-Kopf) → die Gliederungsspalte klebt
             // wieder direkt unter dem Kopf (Topbar 4rem + Inhalts-Kopf 2.25rem), ohne
@@ -357,6 +376,15 @@ export function LeserVolltextInhalt({
               ? { top: '3.5rem', maxHeight: 'calc(100dvh - 4rem - 2.25rem - 3.5rem - 1rem)' }
               : { top: 'calc(4rem + 2.25rem)', maxHeight: 'calc(100vh - 4rem - 2.25rem - 1.5rem)' }}
             className={`mb-0 sticky flex-col ${tocOffen ? 'flex' : 'hidden'}`}>
+            {/* LM-147 (W2·17-UI-BEFUNDE-B4): «per Tastatur überspringbar» — bei einem
+                tiefen Kodex (OR: 2887 Tabstopps allein im Baum) gab es keinen Weg, die
+                Gliederung per Tab zu umgehen. Derselbe sr-only/focus:not-sr-only-Skip-
+                Link wie der globale «Zum Inhalt springen» (Shell.tsx) — unsichtbar bis
+                fokussiert, springt zur Lesespalte (`#lc-lesespalte`, oben vergeben). */}
+            <a href="#lc-lesespalte"
+              className="lc-btn lc-btn-primary sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50">
+              Gliederung überspringen
+            </a>
             <div className="mb-2 flex items-baseline justify-between shrink-0">
               <p className="lc-overline">Gliederung</p>
               <button type="button" onClick={() => setTocOffen((v) => !v)} className="text-micro text-ink-500 hover:text-brass-700" title="Gliederung ein-/ausklappen">{tocOffen ? '‹ einklappen' : 'ausklappen ›'}</button>
@@ -404,7 +432,7 @@ export function LeserVolltextInhalt({
             Artikel-Kopfzeile (Art. N · Zitat/Link) UND der Fliesstext (ArtikelBody /
             Ingress) teilen sich dieselbe Breite `max-w-normtext` → «Zitat» fluchtet
             bündig mit der rechten Textkante statt in den Leerraum zu wandern. */}
-        <div className="group/lese mx-auto w-full max-w-normtext">
+        <div id="lc-lesespalte" className="group/lese mx-auto w-full max-w-normtext">
           {/* A27 (David 12.7.2026): der Sticky Section-Kontextkopf «Titel › … ›
               Art. N › ⧉ Zitat» ist ENTFERNT. Seit A26 (#198) trägt der immer
               sichtbare Inhalts-Kopf (InhaltsKopf, Brotkrümel + Live-Artikel) die

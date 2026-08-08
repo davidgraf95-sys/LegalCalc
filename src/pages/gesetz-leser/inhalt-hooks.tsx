@@ -341,6 +341,21 @@ export function useLeserSprungSpy(opts: {
     if (!istSekundaer) aktualisiereTabArtikel(window.location.pathname + window.location.search + window.location.hash);
     const token = decodeURIComponent(m[1]);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    // LM-157 (W2·17-UI-BEFUNDE-B4): der Seed-Sprung öffnete den TOC-Pfad
+    // (`oeffnePfad`) und scrollte den Text, setzte aber nie `aktivIds`/`aktArtikel`
+    // selbst — beides blieb dem IntersectionObserver-Scroll-Spy weiter unten
+    // überlassen. Bei einem frischen Aufruf mit `#art-…`-Anker beobachtete der Spy
+    // den programmatischen Sprung nicht zuverlässig (Ziel ist im selben Frame noch
+    // nicht am Bezugspunkt), darum blieben Gliederung UND Breadcrumb auf dem
+    // Dokumentanfang stehen, bis von Hand gescrollt wurde. Fix: dieselben zwei
+    // State-Setter, die auch der Klick-Sprung (springeZuSektion) und der laufende
+    // Scroll-Spy (unten, Z. ~421/453) verwenden — hier synchron mit dem Seed statt
+    // erst nach dem ersten manuellen Scroll.
+    if (ids.length) {
+      setAktivIds(ids);
+      const artLabel = artLabelByToken.get(token) ?? `Art. ${token.replace(/_/g, '')}`;
+      setAktArtikel(artLabel);
+    }
     window.requestAnimationFrame(() => {
       if (ids.length) oeffnePfad(ids);
       window.setTimeout(() => {
