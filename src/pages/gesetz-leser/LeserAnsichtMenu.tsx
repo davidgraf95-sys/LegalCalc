@@ -147,6 +147,25 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
     return () => document.removeEventListener('pointerdown', klick);
   }, [offen]);
 
+  // LM-009 (§8 B7): Scrollen und Fenstergrössenänderung schliessen ebenfalls.
+  // Der Trigger sitzt in der KLEBENDEN Positionsleiste (§4 B3/K-01) — beim
+  // Scrollen im Gesetzestext blieb das Panel bisher an der Leiste kleben statt
+  // zu schliessen und lag mitten im Fliesstext. `capture: true` fängt auch
+  // Scroll-Ereignisse innerer scrollbarer Vorfahren (die nicht bis ans window
+  // bubbeln), identisch zum Repositionierungs-Muster in VerlaufUebersicht/
+  // ReiterUebersicht — hier aber zum SCHLIESSEN statt Nachführen, weil dieses
+  // Panel dokumentfest (nicht portaliert) am Trigger hängt.
+  useEffect(() => {
+    if (!offen) return;
+    const schliesse = () => setOffen(false);
+    window.addEventListener('scroll', schliesse, true);
+    window.addEventListener('resize', schliesse);
+    return () => {
+      window.removeEventListener('scroll', schliesse, true);
+      window.removeEventListener('resize', schliesse);
+    };
+  }, [offen]);
+
   // Effektiver Linien-Zustand: expliziter Nutzer-Wunsch schlägt den Aufbau-Default;
   // im Default 'auto' folgt er dem Aufbau (linienAutoAn).
   const linienEffektivAn = opt.linien === 'an' || (opt.linien === 'auto' && linienAutoAn);
