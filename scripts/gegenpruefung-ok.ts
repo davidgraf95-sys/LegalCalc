@@ -3,7 +3,8 @@
 // Baustein c — Quittier-Helfer `npm run gegenpruefung:ok` (kein Hand-Hashing).
 // Berechnet den aktuellen Risiko-Diff-Hash über DIESELBE Kernfunktion wie das
 // Tor (eine Quelle der Wahrheit), übernimmt Verdikt + Quelle-Pin + Datum,
-// schreibt bibliothek/.gegenpruefung-pending (gitignored) und hängt einen
+// schreibt bibliothek/.gegenpruefung-pending (LOKAL, nicht getrackt — die Datei
+// war von 28.7. bis 8.8.2026 versehentlich committet, siehe kern.ts) und hängt einen
 // Eintrag ans Register bibliothek/register/gegenpruefung-register.md.
 //
 // Aufruf (vom Skill »gegenpruefung« bei Verdikt bestanden):
@@ -23,6 +24,12 @@
 // Commit ist `git status` sauber, und dieses Werkzeug antwortete «nichts zu
 // quittieren» (Exit 1) — viermal binnen fünf Tagen musste der Hash darum von
 // HAND gerechnet werden (Register 3.8.2026 ×3, 7.8.2026 ×1).
+//
+// WAS DIE QUITTUNG BINDET (Auflage B1, Herleitung im Kopf von kern.ts): die
+// DATEI-MENGE und ihren Endinhalt an der Spitze — NICHT die eingegebene Spanne.
+// Eine enge `--bereich=HEAD~1..HEAD`-Quittung kann darum den Voll-Bereich
+// mitdecken, wenn beide dieselbe Datei-Menge ergeben. Das Werkzeug rechnet das
+// aus und schreibt es in Ausgabe UND Register-Zeile, statt es zu verschweigen.
 //
 // Das Hash-Schema ist UNVERÄNDERT (kern.ts) — der Hand-Hash-Weg bleibt darum
 // als Rückfall gültig und die bestehenden Register-Zeilen bleiben nachrechenbar.
@@ -99,6 +106,37 @@ if (r.hash === null) {
   process.exit(1);
 }
 
+// ─── B1: ehrliche Bereichs-Semantik ────────────────────────────────────────
+// Der Hash bindet die Datei-MENGE und deren Endinhalt an der Spitze — NICHT die
+// eingegebene Spanne (Herleitung im Kopf von kern.ts). Wer eine enge Spanne
+// eingibt, quittiert darum unter Umständen auch den Voll-Bereich mit. Statt das
+// zu verschweigen, wird es hier ausgerechnet und benannt: Nutzer-Eingabe,
+// effektiv gedeckter Voll-Bereich und — falls dieser MEHR Dateien enthält —
+// eine ausdrückliche Warnung, dass das Tor dafür rot bleibt.
+let deckung = '';
+let vollHinweis: string[] = [];
+if (modus === 'bereich') {
+  const voll = risikoBereichHash(); // Default: merge-base(origin/main)..HEAD
+  if (voll.kontext && voll.hash === r.hash) {
+    deckung = `deckt ${voll.bereich} vollständig (gleiche Datei-Menge, gleicher Endinhalt)`;
+    vollHinweis = [
+      `  Gedeckt ist damit auch der Voll-Bereich ${voll.bereich} — der Hash bindet die`,
+      '  Datei-Menge und ihren Endinhalt, NICHT die eingegebene Spanne.',
+    ];
+  } else if (voll.kontext && voll.hash !== null) {
+    const mehr = voll.dateien.filter((d) => !r.dateien.includes(d));
+    deckung = `deckt NUR die genannten Dateien; Voll-Bereich ${voll.bereich} hat ${voll.dateien.length} Risiko-Datei(en)`;
+    vollHinweis = [
+      `  ACHTUNG: der Voll-Bereich ${voll.bereich} enthält ${voll.dateien.length} Risiko-Datei(en)` +
+        (mehr.length ? `, davon ${mehr.length} hier NICHT quittiert:` : ' mit anderem Endinhalt.'),
+      ...mehr.slice(0, 8).map((d) => `    - ${d}`),
+      '  Das Tor bleibt für den Voll-Bereich ROT, bis auch er quittiert ist.',
+    ];
+  } else {
+    deckung = 'Voll-Bereich nicht bestimmbar (keine origin/main-Referenz)';
+  }
+}
+
 const verdikt = arg('verdikt') ?? 'bestanden';
 const engine = arg('engine') ?? r.dateien.join(', ');
 const quelle = arg('quelle') ?? '';
@@ -116,6 +154,8 @@ type PendingEintrag = {
   dateien: string[];
   modus: 'baum' | 'bereich';
   bereich?: string;
+  bereichEingabe?: string;
+  deckung?: string;
 };
 function bestandLesen(): PendingEintrag[] {
   if (!existsSync(PENDING)) return [];
@@ -140,7 +180,9 @@ const neu: PendingEintrag = {
   datum,
   dateien: r.dateien,
   modus,
-  ...(modus === 'bereich' ? { bereich: r.bereich } : {}),
+  ...(modus === 'bereich'
+    ? { bereich: r.bereich, bereichEingabe: bereichArg || 'origin/main..HEAD', deckung }
+    : {}),
 };
 const eintraege = [...bestandLesen().filter((e) => (e.modus ?? 'baum') !== modus), neu];
 writeFileSync(PENDING, JSON.stringify({ eintraege }, null, 2) + '\n', 'utf8');
@@ -150,7 +192,14 @@ if (!existsSync(REGISTER)) {
   console.error(`gegenpruefung:ok: Register fehlt (${REGISTER}).`);
   process.exit(1);
 }
-const engineZelle = modus === 'bereich' ? `${engine} (committeter Bereich ${r.bereich})` : engine;
+// Die Register-Zeile nennt den EFFEKTIV gedeckten Bereich, nicht bloss die
+// Nutzer-Eingabe (Auflage B1): «HEAD~1..HEAD» im Register liest sich wie EIN
+// Commit, gedeckt ist aber der Endinhalt der genannten Dateien am Branch-Kopf.
+const engineZelle =
+  modus === 'bereich'
+    ? `${engine} (committeter Bereich, Eingabe «${bereichArg || 'origin/main..HEAD'}», aufgelöst ${r.bereich}; ` +
+      `Hash bindet Datei-Menge + Endinhalt, nicht die Spanne — ${deckung})`
+    : engine;
 const zeile = `| ${datum} | ${zelle(engineZelle)} | ${r.hash} | ${zelle(verdikt)} | ${zelle(quelle)} | ${zelle(notiz)} |\n`;
 // Sicherstellen, dass die Tabelle auf einer neuen Zeile beginnt.
 const bestand = readFileSync(REGISTER, 'utf8');
@@ -163,9 +212,10 @@ console.log(
 console.log(`  Pending: ${PENDING} (${eintraege.length} Eintrag/Einträge)`);
 console.log(`  Register-Zeile angehängt (${datum} · ${engineZelle}).`);
 if (modus === 'bereich') {
+  for (const z of vollHinweis) console.log(z);
   console.log(
     '  Hinweis: check:merge-schutz (CI) verlangt zusätzlich einen «Gegenpruefung:»-Trailer\n' +
-      '  im Commit und die committete Register-Zeile — andere Beweisform, gleiche Menge.',
+      '  im Commit und die committete Register-Zeile — andere Beweisform, gleicher Klassifizierer.',
   );
 }
 if (verdikt !== 'bestanden') {

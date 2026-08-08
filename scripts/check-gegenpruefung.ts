@@ -23,11 +23,18 @@
 // entscheidet, nicht der Eingang) — das Hash-Schema ist unverändert.
 //
 // ARBEITS-TEILUNG zu `check:merge-schutz` (ausführlich im Kopf von
-// scripts/gegenpruefung/kern.ts): gleiche Risiko-Menge, gleicher `behalten()`,
-// gleiche merge-base — aber verschiedene BEWEISFORM. merge-schutz (CI) verlangt
+// scripts/gegenpruefung/kern.ts): gleicher KLASSIFIZIERER `behalten()`, gleiche
+// merge-base — aber verschiedene BEWEISFORM. merge-schutz (CI) verlangt
 // committete, für Dritte sichtbare Artefakte (Trailer + Register-Wachstum);
 // dieses Tor (nur lokal, CI-Selbstschutz) verlangt die inhaltsgebundene
 // Pending-Quittung und meldet Sekunden statt Minuten. Keine doppelte Ladung.
+// Die MENGEN sind nicht byte-identisch: merge-schutz diffft ohne `-z`/
+// `--no-renames` und sieht Nicht-ASCII-Pfade gequotet sowie Renames als
+// Zwei-Feld-Sätze — an diesen Kanten ist dieses Tor strenger als CI. Die
+// Härtung von check-merge-schutz.ts ist ein eigener Plan-Schritt.
+//
+// WAS DIE QUITTUNG BINDET: Datei-Menge + Endinhalt am Branch-Kopf, NICHT die
+// eingegebene Commit-Spanne (Auflage B1, Herleitung im Kopf von kern.ts).
 
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -49,6 +56,10 @@ export type Pending = {
   modus?: Eingang;
   /** nur Bereichs-Quittungen: die aufgelöste Bereichs-Referenz (Doku, nicht Prüfstoff). */
   bereich?: string;
+  /** nur Bereichs-Quittungen: die rohe Nutzer-Eingabe (Doku, nicht Prüfstoff). */
+  bereichEingabe?: string;
+  /** nur Bereichs-Quittungen: Klartext, was der Hash effektiv deckt (Doku). */
+  deckung?: string;
 };
 
 /** Pending-Datei seit 8.8.2026: Liste (ein Eintrag je Eingang). Alt-Form = ein Objekt. */
@@ -86,6 +97,9 @@ function rotText(grund: string, dateien: string[], eingang: Eingang, bereich?: s
     '    — das bindet den Nachweis an genau diesen Diff (bibliothek/.gegenpruefung-pending).',
     ...(eingang === 'bereich'
       ? [
+          '  Die Quittung bindet die oben gelisteten DATEIEN und ihren Endinhalt am',
+          '    Branch-Kopf — NICHT die angegebene Commit-Spanne. Eine engere Spanne mit',
+          '    derselben Datei-Menge deckt darum denselben Nachweis ab.',
           '  Rückfall unverändert: Hand-Hash nach dem risikoDiffHash-Schema ins Register',
           '    (pfad NUL art NUL sha256(Blob@HEAD) NUL, byte-sortiert) — dasselbe Schema.',
         ]
@@ -160,10 +174,22 @@ function quittungPruefen(
   }
   const passend = eintraege.filter((p) => p.hash === hash);
   if (passend.length === 0) {
+    // B3 — Diagnose-Ehrlichkeit (Auflage 8.8.2026): «Hash-Mismatch — Dateien
+    // nach der Quittung geändert?» ist eine BEHAUPTUNG über die Vorgeschichte.
+    // Sie stimmt nur, wenn für DIESEN Eingang überhaupt je quittiert wurde.
+    // Lag bloss eine Quittung des anderen Eingangs (oder ein Alt-Eintrag ohne
+    // `modus`) vor, schickte die Meldung den Leser auf die falsche Fährte — er
+    // sucht eine Byte-Änderung, die es nie gab. Belegt: die bis 8.8.2026
+    // getrackte Alt-Pending-Datei (B2) erzeugte genau diese Fehl-Diagnose in
+    // jedem frischen Worktree.
+    const eigene = eintraege.filter((p) => (p.modus ?? 'baum') === eingang);
     return {
       gruen: false,
       meldung: rotText(
-        'der Nachweis passt nicht zum aktuellen Diff (Hash-Mismatch — Dateien nach der Quittung geändert?).',
+        eigene.length === 0
+          ? `kein Nachweis für diesen Eingang (${eingang === 'bereich' ? 'committeter Bereich' : 'Working Tree'}) — ` +
+            `${eintraege.length} Quittung(en) vorhanden, aber keine für ihn.`
+          : 'der Nachweis passt nicht zum aktuellen Diff (Hash-Mismatch — Dateien nach der Quittung geändert?).',
         r.dateien,
         eingang,
         r.bereich,
@@ -185,7 +211,9 @@ function quittungPruefen(
     gruen: true,
     meldung:
       eingang === 'bereich'
-        ? `check:gegenpruefung grün — committeter Bereich ${r.bereich ?? ''}: Gegenprüfung bestanden, an Diff-Hash gebunden (${hash.slice(0, 12)}…).`
+        ? `check:gegenpruefung grün — committeter Bereich ${r.bereich ?? ''}: Gegenprüfung bestanden, ` +
+          `an Diff-Hash gebunden (${hash.slice(0, 12)}…, ${r.dateien.length} Datei(en); der Hash bindet ` +
+          `Datei-Menge + Endinhalt, nicht die Spanne).`
         : `check:gegenpruefung grün — Gegenprüfung bestanden, an Diff-Hash gebunden (${hash.slice(0, 12)}…).`,
   };
 }

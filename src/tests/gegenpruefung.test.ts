@@ -548,3 +548,107 @@ describe('Pending-Datei: Liste seit 8.8.2026, Alt-Form bleibt gültig', () => {
     expect(bewerteBereich(ber, nurBaum).gruen).toBe(false);
   });
 });
+
+// ─── Auflagen der Gegenprüfung vom 8.8.2026 (B1/B3/B5) ──────────────────────
+describe('B1 — was der Bereichs-Hash bindet (Datei-Menge + Endinhalt, nicht die Spanne)', () => {
+  it('enge und weite Spanne mit GLEICHER Datei-Menge ergeben denselben Hash', () => {
+    // Live-Befund der Gegenprüfung: zwei Risiko-Commits A+B auf derselben Datei;
+    // eine Quittung über HEAD~1..HEAD macht auch origin/main..HEAD grün. Das ist
+    // sachlich richtig (der geprüfte Endzustand ist derselbe) und wird jetzt
+    // AUSGESPROCHEN statt verschwiegen — dieser Test friert die Semantik ein,
+    // damit sie niemand versehentlich als Loch «repariert».
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'A');
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 2;\n');
+    commitAlles(root, 'B');
+
+    const eng = risikoBereichHash({ cwd: root, bereich: 'HEAD~1..HEAD' });
+    const weit = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    expect(eng.dateien).toEqual(weit.dateien);
+    expect(eng.hash).toBe(weit.hash);
+  });
+
+  it('enge Spanne mit KLEINERER Datei-Menge deckt den Voll-Bereich NICHT', () => {
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'A');
+    schreib(root, 'src/data/tarif/y.ts', 'export const b = 2;\n');
+    commitAlles(root, 'B');
+
+    const eng = risikoBereichHash({ cwd: root, bereich: 'HEAD~1..HEAD' });
+    const weit = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    expect(eng.dateien).toEqual(['src/data/tarif/y.ts']);
+    expect(weit.dateien).toEqual(['src/data/tarif/y.ts', 'src/lib/tarif/x.ts']);
+    expect(eng.hash).not.toBe(weit.hash);
+    // Quittung der engen Spanne lässt den Voll-Bereich rot.
+    const quittung = [{ hash: eng.hash!, verdikt: 'bestanden', modus: 'bereich' as const }];
+    expect(bewerteBereich(weit, quittung).gruen).toBe(false);
+  });
+
+  it('Rot-Meldung benennt die Bindung ausdrücklich', () => {
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'A');
+    const m = bewerteBereich(risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' }), null).meldung;
+    expect(m).toContain('NICHT die angegebene Commit-Spanne');
+  });
+});
+
+describe('B3 — Diagnose-Ehrlichkeit: fehlender Nachweis ≠ Hash-Mismatch', () => {
+  it('nur Quittung des ANDEREN Eingangs → «kein Nachweis für diesen Eingang»', () => {
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'committet');
+    const ber = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    const nurBaum = [{ hash: 'ab'.repeat(32), verdikt: 'bestanden', modus: 'baum' as const }];
+    const m = bewerteBereich(ber, nurBaum);
+    expect(m.gruen).toBe(false);
+    expect(m.meldung).toContain('kein Nachweis für diesen Eingang');
+    expect(m.meldung).not.toContain('Hash-Mismatch');
+  });
+
+  it('Alt-Eintrag ohne modus zählt als Baum-Quittung → Bereich meldet «kein Nachweis»', () => {
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'committet');
+    const ber = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    const alt = { hash: 'cd'.repeat(32), verdikt: 'bestanden' }; // Form vor 8.8.2026
+    expect(bewerteBereich(ber, alt).meldung).toContain('kein Nachweis für diesen Eingang');
+  });
+
+  it('echte Nachträglich-geändert-Lage bleibt «Hash-Mismatch»', () => {
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'A');
+    const alt = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 2;\n');
+    commitAlles(root, 'B');
+    const neu = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    const m = bewerteBereich(neu, [
+      { hash: alt.hash!, verdikt: 'bestanden', modus: 'bereich' as const },
+    ]);
+    expect(m.gruen).toBe(false);
+    expect(m.meldung).toContain('Hash-Mismatch');
+  });
+
+  it('gar keine Quittung → «Pending fehlt» (unverändert)', () => {
+    const root = repoMitZweig();
+    schreib(root, 'src/lib/tarif/x.ts', 'export const a = 1;\n');
+    commitAlles(root, 'A');
+    const m = bewerteBereich(risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' }), null);
+    expect(m.meldung).toContain('.gegenpruefung-pending fehlt');
+  });
+});
+
+describe('B5 — Nicht-Blob im Risiko-Pfad scheitert hart statt still «gelöscht»', () => {
+  it('Gitlink (Submodul) auf einem Risiko-Pfad wirft', () => {
+    const root = repoMitZweig();
+    // Gitlink ohne echtes Submodul-Repo direkt in den Index schreiben
+    // (Zeiger auf einen existierenden Commit — git prüft die Objekt-Id).
+    const sha = git(root, 'rev-parse', 'HEAD').trim();
+    git(root, 'update-index', '--add', '--cacheinfo', `160000,${sha},src/lib/tarif/sub`);
+    git(root, 'commit', '-q', '-m', 'gitlink');
+    expect(() => risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' })).toThrow(/kein Blob/);
+  });
+});

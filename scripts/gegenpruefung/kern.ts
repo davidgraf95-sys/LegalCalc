@@ -42,10 +42,37 @@
 // Hand-Hash-Zeilen rückwirkend nachrechenbar — und ein Diff, der einmal als
 // Working Tree und einmal als Commit vorliegt, ergibt denselben Hash.
 //
+// ─── WAS DER BEREICHS-HASH BINDET — UND WAS NICHT (Auflage B1, 8.8.2026) ────
+// Der Hash ist `f(Datei-MENGE, Endinhalt an der Spitze)`. Die angegebene
+// Spanne fliesst NICHT in den Hash ein; sie WÄHLT nur AUS, welche Dateien in
+// die Menge kommen. Live belegt in der Gegenprüfung vom 8.8.2026: zwei
+// Risiko-Commits A und B, die DIESELBE Datei anfassen, ergeben für
+// `HEAD~1..HEAD` und für `origin/main..HEAD` dieselbe Menge und damit denselben
+// Hash — eine Quittung über die enge Spanne macht das Tor auch für die weite
+// grün. Das ist KEIN Loch im Nachweis (der geprüfte Endzustand der Datei ist
+// derselbe, und genau er ist der Prüfgegenstand), aber es ist eine FALLE FÜR
+// DIE LESART: Wer «HEAD~1..HEAD» im Register liest, denkt an EINEN Commit;
+// gedeckt ist der Endinhalt der genannten Dateien im ganzen Branch. Darum
+// benennen Werkzeug, Tor und Register-Zeile die gedeckten DATEIEN und den
+// effektiv gedeckten Voll-Bereich, nicht bloss die Nutzer-Eingabe.
+//
+// BEWUSST NICHT GEBAUT: die Basis in den Hash einbinden. Das brächte
+// Falsch-Rots ohne Erkenntnisgewinn — jedes `git fetch`, jedes update-branch
+// und jeder Merge-Nachzug verschiebt die merge-base und würde eine sachlich
+// unveränderte Quittung entwerten, obwohl weder Datei-Menge noch Inhalt sich
+// bewegt haben. Der Nachweis soll sich an INHALT auflösen (Selbstauflösung),
+// nicht an Topologie.
+//
 // ARBEITS-TEILUNG MIT `check:merge-schutz` (KEINE Doppelung der Beweisform):
-//  - Beide Tore klassifizieren die GLEICHE Menge über denselben `behalten()`
-//    und dieselbe merge-base-Referenz — es gibt nur einen Arbiter der
-//    Risiko-Frage (§5). Nur der BEWEIS unterscheidet sich:
+//  - Beide Tore benutzen denselben KLASSIFIZIERER `behalten()` und dieselbe
+//    merge-base-Referenz — es gibt nur einen Arbiter der Risiko-FRAGE (§5).
+//    Die resultierenden Mengen sind aber nicht byte-identisch:
+//    `check-merge-schutz.ts` diffft ohne `-z`/`--no-renames`, seine Pfade
+//    kommen also gequotet (core.quotepath) und Renames als Zwei-Feld-Sätze.
+//    An Nicht-ASCII- und Rename-Kanten divergieren die Mengen darum — dieses
+//    Tor ist dort STRENGER als CI (es sieht die Pfade roh). Die Härtung von
+//    check-merge-schutz.ts ist ein eigener Plan-Schritt und wird hier bewusst
+//    NICHT mitgemacht (fremde Fläche). Nur der BEWEIS unterscheidet sich:
 //  - `check:merge-schutz` (läuft in CI, ci.yml): verlangt COMMITTETE, für
 //    Dritte sichtbare Artefakte — `Gegenpruefung:`-Trailer in prüfbarer Form
 //    PLUS Wachstum des committeten Registers. Das ist der Merge-Arbiter.
@@ -54,8 +81,7 @@
 //    mit genau diesem Hash. Das ist die schnelle Rückmeldung VOR Commit/Push
 //    und die Selbstauflösung bei jeder Byte-Änderung.
 //  - Kein Widerspruch möglich: der lokale Weg prüft nie Trailer/Register, der
-//    CI-Weg nie das Pending. Beide werden nur zusammen grün, wenn dieselben
-//    Risiko-Dateien geprüft wurden — verschiedene Fragen an dieselbe Menge.
+//    CI-Weg nie das Pending — verschiedene Fragen an dieselbe Fläche.
 
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -361,8 +387,22 @@ function baumEintraege(root: string, spitze: string, dateien: string[]): Eintrag
       const tab = text.indexOf('\t');
       if (tab < 0) continue;
       const kopf = text.slice(0, tab).split(/\s+/);
-      if (kopf.length < 3 || kopf[1] !== 'blob') continue; // Submodul/Baum: unten hart
-      info.set(text.slice(tab + 1), { modus: kopf[0], blob: kopf[2] });
+      const pfad = text.slice(tab + 1);
+      // B5 (Auflage 8.8.2026): Nicht-Blob (Gitlink/Submodul, Baum) HART
+      // scheitern statt überspringen. Vorher stand hier `continue` mit dem
+      // Kommentar «unten hart» — der Satz war falsch: ein übersprungener Pfad
+      // landet unten im `!e`-Zweig und bekäme den Hash einer GELÖSCHTEN Datei.
+      // Ein Submodul-Zeiger auf einen Risiko-Pfad wäre damit still als «weg»
+      // quittiert worden. Lieber laut scheitern: der Fall existiert im Repo
+      // heute nicht, und wenn er je entsteht, muss ein Mensch entscheiden,
+      // was er bedeutet.
+      if (kopf.length < 3 || kopf[1] !== 'blob') {
+        throw new Error(
+          `Risiko-Pfad ist kein Blob (${kopf[1] ?? '?'}) im Bereich: ${pfad} — ` +
+            `Submodul/Gitlink wird nicht still als gelöscht gehasht.`,
+        );
+      }
+      info.set(pfad, { modus: kopf[0], blob: kopf[2] });
     }
   }
 
@@ -404,8 +444,16 @@ export function risikoBereichHash(
 
   // CI-Selbstschutz identisch zum Working-Tree-Weg: in CI ist `check:merge-schutz`
   // der Arbiter des committeten Bereichs. Liefe dieses Tor dort mit, verlangte es
-  // ein Pending, das (gitignored/lokal) in CI gar nicht existieren kann — ein
-  // strukturelles Falsch-Rot und ein Widerspruch zu merge-schutz.
+  // ein Pending, das in CI keinen Nachweis führen kann — ein strukturelles
+  // Falsch-Rot und ein Widerspruch zu merge-schutz.
+  //
+  // KORREKTUR 8.8.2026 (Auflage B2): Hier stand «(gitignored/lokal)». Das war
+  // faktisch falsch — `bibliothek/.gegenpruefung-pending` war seit d47234add
+  // (28.7.2026) GETRACKT; .gitignore Z. 56 wirkt auf bereits Getracktes nicht.
+  // Folge: eine FREMDE Alt-Quittung reiste in jeden Klon und jeden Worktree und
+  // machte aus «kein Nachweis» ein irreführendes «Hash-Mismatch» (genau die
+  // Fehl-Diagnose, die B3 unten abstellt). Im selben Zug per `git rm --cached`
+  // behoben; die Datei ist ab jetzt wirklich lokal.
   if (process.env.CI || process.env.GITHUB_ACTIONS) {
     return { kontext: false, grund: 'ci-selbstschutz', hash: null, dateien: [] };
   }

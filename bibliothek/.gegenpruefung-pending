@@ -1,9 +1,0 @@
-{
-  "hash": "7b40c3cf23162f4b3b97198368a2b9c269002d8def228644f9ac448121e5a6de",
-  "verdikt": "bestanden",
-  "quellePin": "fedlex sparql jolux:titleShort 20260728 + bger.ch amtliche Volltexte 20260728",
-  "datum": "2026-07-28",
-  "dateien": [
-    "daten-manifest.json"
-  ]
-}
