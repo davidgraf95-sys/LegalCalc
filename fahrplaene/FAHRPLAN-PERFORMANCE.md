@@ -144,7 +144,7 @@ React Compiler ist **aus** → Memoisierung ist manuell (Scroll-Spy re-rendert ~
 
 ---
 
-## Bau-Grundsatz (verbindlich — Kurzfassung, voll in CLAUDE.md §15)
+## Bau-Grundsatz (verbindlich — Kurzfassung, voll im Skill `perf` (§15-Träger seit A4, 25.7.2026))
 
 **Lexmetrik wird so gebaut, dass es den Computer nicht merklich langsamer macht — SOLANGE
 daraus kein Logikverlust entsteht. Bei Konflikt gewinnt IMMER die Treue.** «Logikverlust» =
