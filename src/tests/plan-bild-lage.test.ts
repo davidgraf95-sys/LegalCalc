@@ -218,8 +218,9 @@ describe('wasGeradePassiert — Formatierung', () => {
         wartetAufDavid: [{ titel: 'B', id: 'QS-B', blocker: 'entscheid-david', flaechen: ['.github'] }],
       }),
     );
-    expect(html).toContain('<span class="chip ready" title="Wirkungsbereich">Benutzeroberfläche</span>');
-    expect(html).toContain('<span class="chip ready" title="Wirkungsbereich">Auslieferung &amp; Prüfstrasse</span>');
+    // Farbcodierung je Bereich seit 8.8.2026 (Auftrag David «visuell klarer»).
+    expect(html).toContain('<span class="chip bz bz-ui" title="Wirkungsbereich">Benutzeroberfläche</span>');
+    expect(html).toContain('<span class="chip bz bz-ausl" title="Wirkungsbereich">Auslieferung &amp; Prüfstrasse</span>');
   });
 
   it('escapt Fremdtext aus Titel und Betreff (HTML-Injektion)', () => {

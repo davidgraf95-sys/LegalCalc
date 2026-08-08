@@ -77,7 +77,11 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
     // Querschnitt-Filter erst NACH of/dep: ein Querschnitt-Schritt mit offener
     // Voraussetzung gehört in wartetDep/wartetFachzeit, nicht still in «begleitend»
     // (Verify-Befund 24.7.2026 — «begleitend» heisst «jetzt mitlaufbar»).
-    if (e.sektion.startsWith(QUERSCHNITT_PRAEFIX)) { begleitend.push(e.id); continue; }
+    // AUSNAHME (Entscheid David 8.8.2026, «Prozess geht grundsätzlich vor»):
+    // Ein ausdrücklich in die @queue gestellter Querschnitt-Schritt steigt in
+    // die Hauptreihenfolge auf — die @queue ist SSoT der Bau-Reihenfolge, und
+    // ohne diese Ausnahme könnte sie Prozess-Schritten keinen Rang geben.
+    if (e.sektion.startsWith(QUERSCHNITT_PRAEFIX) && !queue.includes(e.id)) { begleitend.push(e.id); continue; }
     if (t.asset26x && inhaber26x && e.id !== inhaber26x) { wartet26xSlot.push(e.id); continue; }
     if (t.asset26x && !inhaber26x && (slot26xBelegtVon || ready26xAdmitted)) { wartet26xSlot.push(e.id); continue; }
     if (t.asset26x) ready26xAdmitted = true;

@@ -43,6 +43,7 @@ import {
   BEREICH_ERKLAERUNG,
   UEBRIGE_TECHNIK,
   WIRKUNGSBEREICHE,
+  bereichKlasse,
   bereichsBadges,
   esc,
   fussnote,
@@ -216,7 +217,9 @@ export function lagebildSeite(o: SeitenOpts): string {
   const chronik = chronikErledigt();
 
   // Prompts je baubarem Schritt (JSON ins Dokument, Kopier-Knopf liest daraus).
-  // Die done-Menge speist die dep-Zeile des Prompts (KLEIN 6).
+  // Priorität seit 8.8.2026 (Entscheid David, revidiert die Produkt-Phase vom
+  // Vormittag): PROZESS geht grundsätzlich vor — das Querschnitt-Band behält
+  // darum seine Kopier-Knöpfe. Die done-Menge speist die dep-Zeile (KLEIN 6).
   const erledigt = new Set(einheiten.filter((e) => e.etikett.status === 'done').map((e) => e.id));
   const prompts: Record<string, string> = {};
   for (const id of baubar) {
@@ -313,7 +316,7 @@ export function lagebildSeite(o: SeitenOpts): string {
             ? '<span class="chip block">teils blockiert</span>'
             : '';
       const naechster = es.find((e) => baubar.has(e.id));
-      return `<div class="card">
+      return `<div class="card bz ${bereichKlasse(bz)}">
   <div class="kopf"><h3>${esc(bz)}</h3>${chip}</div>
   <p class="zweck">${esc(bereichsErklaerung.get(bz) ?? '')}</p>
   <span class="fortschritt">${es.length} Schritt${es.length === 1 ? '' : 'e'} offen · ${sofort} sofort baubar${wip ? ` · ${wip} im Bau` : ''}${blockiert ? ` · ${blockiert} blockiert` : ''}</span>
@@ -328,7 +331,7 @@ export function lagebildSeite(o: SeitenOpts): string {
       const e = byId.get(id);
       const st = e?.etikett.status ?? '?';
       const zusatz = st === 'wip' ? ' <span class="chip wip">im Bau</span>' : baubar.has(id) ? ` <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button>` : '';
-      return `<li>${schrittLabel(t(id), id)}${groesseBadge(e?.etikett.groesse ?? null)}${zusatz}</li>`;
+      return `<li>${schrittLabel(t(id), id)}${groesseBadge(e?.etikett.groesse ?? null)}${bereichsBadges(e?.etikett.kollision ?? [])}${zusatz}</li>`;
     })
     .join('\n');
 
@@ -340,7 +343,9 @@ export function lagebildSeite(o: SeitenOpts): string {
   // Zwei Quellen für «der nächste Schritt» wären zwei Wahrheiten (§5).
   const empfohlen = b.readyNow[0] ?? null;
   const empfohlenHtml = empfohlen
-    ? `<p class="lage"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${groesseBadge(byId.get(empfohlen)?.etikett.groesse ?? null)}${prompts[empfohlen] ? ` <button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button>` : ''}<br><span class="sub">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span>. Die Grösse ist eine Schätzung und kein Tor: <b>S</b> lohnt keine eigene Session (gebündelt nehmen), <b>M</b> ist der Normalfall, <b>L</b> vor dem Bau in Teilschritte schneiden.</span></p>`
+    ? `<div class="empfehlung"><p class="lage" style="margin-top:0"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${groesseBadge(byId.get(empfohlen)?.etikett.groesse ?? null)}${bereichsBadges(byId.get(empfohlen)?.etikett.kollision ?? [])}</p>
+  ${prompts[empfohlen] ? `<p style="margin:.5rem 0 0"><button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button></p>` : ''}
+  <p class="sub" style="margin-top:.5rem">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span> — Prozess-Schritte stehen seit 8.8.2026 vorn (Entscheid David). Die Grösse ist eine Schätzung und kein Tor: <b>S</b> lohnt keine eigene Session (gebündelt nehmen), <b>M</b> ist der Normalfall, <b>L</b> vor dem Bau in Teilschritte schneiden bzw. beim Dach eine Checklisten-Auswahl nehmen.</p></div>`
     : '<p class="lage"><b>Empfohlener nächster Bau:</b> keiner — kein Schritt ist gerade baubar.</p>';
 
   // Fehlerbuch-Kasten (Entscheid David 8.8.2026): W2·18-FEHLERBUCH ist der
@@ -349,7 +354,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   // ohne ROADMAP-Lektüre nutzbar ist.
   const fb = schritte.get('W2·18-FEHLERBUCH')?.checkliste ?? null;
   const fbOffen = fb?.offen ?? 0;
-  const fehlerbuchHtml = `<div class="panel" style="margin-top:1.2rem">
+  const fehlerbuchHtml = `<div class="panel" style="margin-top:1.2rem;border-color:var(--slate);background:var(--slate-bg)">
     <h3>Dein Fehlerbuch (W2·18-FEHLERBUCH)</h3>
     ${
       fbOffen > 0

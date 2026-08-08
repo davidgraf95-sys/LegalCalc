@@ -286,7 +286,10 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
 > ihr Vokabular; Fehlen ist zulässig und zeigt «Grösse ungeschätzt». Definition und Schätzgrundlage:
 > [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Feld `groesse`».
 
-<!-- @queue: W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: QS-SKILL-DIAET, QS-CONFIDENCE-EHRLICH, QS-AUDIT-VERWEISE, W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- ^ Prozess-Schritte stehen vorn (Entscheid David 8.8.2026: «prozess soll grundsätzlich
+     vorgehen» — revidiert die Produkt-Phase vom Vormittag). Gequeuete Querschnitt-Schritte
+     steigen seit demselben Datum in die Hauptreihenfolge auf (aufloesen.ts). -->
 <!-- ^ SSoT der Bau-Reihenfolge (Einbau 24.7.2026): plan:next wertet die @queue VOR der
      Dokumentreihenfolge aus; Integrität erzwingt check:plan Regel 8 (tote/erledigte IDs rot,
      Prosa-«OBERSTER» muss dem Queue-Kopf entsprechen). Priorität ändern = NUR diese Zeile
@@ -295,7 +298,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** (Queue-Kopf; Fokus-Dekret 24.7.2026 unten).
+> **⬆ OBERSTER OFFENER SCHRITT: `QS-SKILL-DIAET`** (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten).
 > Stand 8.8.2026: Teilschritte -S/-V/-O/-J sind gelandet (PR #464), vom Dach offen ist nur noch `-J3` (Risikopfad, eigene Session).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des

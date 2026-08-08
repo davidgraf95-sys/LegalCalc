@@ -151,6 +151,12 @@ describe('resolve — @queue-Rang + Querschnitt-Filter', () => {
     expect(b.begleitend).toEqual(['QS']);
     expect(b.readyNow).toEqual(['W']);
   });
+  it('AUSNAHME: ein gequeueter Querschnitt-Schritt steigt in die Hauptreihenfolge auf (Entscheid David 8.8.2026, Prozess zuerst)', () => {
+    const qs: Einheit = { ...einheit('QS-P'), sektion: 'Querschnitt-Band (läuft begleitend' };
+    const b = resolve([einheit('W'), qs], ['QS-P']);
+    expect(b.readyNow).toEqual(['QS-P', 'W']);
+    expect(b.begleitend).toEqual([]);
+  });
   it('ohne Queue bleibt die pos-Ordnung unverändert (Rückwärtskompatibilität)', () => {
     const b = resolve([einheit('E1'), einheit('E2')]);
     expect(b.readyNow).toEqual(['E1', 'E2']);

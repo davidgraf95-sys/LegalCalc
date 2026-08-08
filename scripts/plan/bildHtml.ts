@@ -119,16 +119,36 @@ export const STIL = `
   .s { width:.55rem; height:.55rem; border-radius:50%; flex:none; position:relative; top:.05rem; }
   .s.done{background:var(--sage);} .s.ready{background:var(--faint);opacity:.45;} .s.block{background:var(--danger);} .s.wip{background:var(--gold);}
   .kopier { font:inherit; font-size:.72rem; font-weight:600; color:var(--gold); background:var(--gold-bg);
-    border:1px solid var(--gold); border-radius:999px; padding:.05rem .55rem; cursor:pointer; }
-  .kopier:hover { filter:brightness(1.05); }
+    border:1px solid var(--gold); border-radius:999px; padding:.12rem .65rem; cursor:pointer; transition:background .12s,color .12s; }
+  .kopier:hover { background:var(--gold); color:var(--paper); }
+  .empfehlung { border:1px solid var(--sage); border-left-width:5px; border-radius:6px; background:var(--sage-bg); padding:1rem 1.2rem; margin-top:1rem; }
+  .empfehlung .kopier { font-size:.85rem; padding:.3rem .95rem; }
+  .card { box-shadow:0 1px 2px rgba(0,0,0,.05); transition:box-shadow .15s; }
+  .card:hover { box-shadow:0 3px 12px rgba(0,0,0,.09); }
+  /* Wirkungsbereich-Farben (Auftrag David 8.8.2026: Zugehörigkeit sichtbar machen).
+     Je Bereich EIN Variablen-Paar; Chips und Karten lesen dieselben Variablen. */
+  .bz-ui{--bz:#31597B;--bz-bg:#E4EDF5;} .bz-logik{--bz:#8A3040;--bz-bg:#F5E3E6;}
+  .bz-daten{--bz:#3F6B2F;--bz-bg:#E7F0DF;} .bz-halt{--bz:#5C4A80;--bz-bg:#ECE6F4;}
+  .bz-ausl{--bz:#2E6B64;--bz-bg:#E0EFEC;} .bz-ki{--bz:#8A6D1F;--bz-bg:#F5EEDA;}
+  .bz-rest{--bz:#4A5350;--bz-bg:#E9E9E5;}
+  @media (prefers-color-scheme: dark) {
+    .bz-ui{--bz:#8FB6D6;--bz-bg:#1A2530;} .bz-logik{--bz:#D9909C;--bz-bg:#2C171B;}
+    .bz-daten{--bz:#9CC287;--bz-bg:#1F2718;} .bz-halt{--bz:#B5A5D8;--bz-bg:#241E30;}
+    .bz-ausl{--bz:#8EC4BC;--bz-bg:#17302C;} .bz-ki{--bz:#C9A94E;--bz-bg:#2C2510;}
+    .bz-rest{--bz:#A9B3AE;--bz-bg:#21231F;}
+  }
+  .chip.bz { background:var(--bz-bg); color:var(--bz); }
+  .card.bz { border-left:4px solid var(--bz); }
+  .card.bz h3 { color:var(--bz); }
   footer { margin-top:3rem; border-top:1px solid var(--line); padding-top:1rem; font-size:.8rem; color:var(--faint); }
   .hinweis { font-size:.82rem; color:var(--faint); margin-top:.6rem; }
   #toast { position:fixed; bottom:1rem; left:50%; transform:translateX(-50%); background:var(--ink); color:var(--paper);
     border-radius:6px; padding:.5rem 1rem; font-size:.85rem; opacity:0; transition:opacity .2s; pointer-events:none; }
   a { color:var(--gold); text-decoration-thickness:1px; text-underline-offset:2px; }
   a:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
-  .springen { font-size:.82rem; color:var(--faint); margin-top:.9rem; }
-  .springen a { color:var(--soft); }
+  .springen { font-size:.82rem; color:var(--faint); margin-top:.9rem; display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
+  .springen a { color:var(--soft); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:.12rem .65rem; background:var(--raised); }
+  .springen a:hover { border-color:var(--gold); color:var(--gold); }
   html { scroll-behavior:smooth; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
   #filter { font:inherit; font-size:.9rem; color:var(--ink); background:var(--raised); border:1px solid var(--line);
@@ -474,18 +494,29 @@ export function wirkungsbereiche(globs: string[]): Wirkungsbereich[] {
   return out;
 }
 
+/** CSS-Klasse eines Wirkungsbereichs — Farbzuordnung (Auftrag David 8.8.2026,
+ *  «visuell klarer, was zu was gehört»). EINE Tabelle für Chips und Karten. */
+export function bereichKlasse(b: Wirkungsbereich | string): string {
+  switch (b) {
+    case 'Benutzeroberfläche': return 'bz-ui';
+    case 'Rechtslogik & Berechnungen': return 'bz-logik';
+    case 'Gesetzes- & Urteilsdaten': return 'bz-daten';
+    case 'Datenhaltung': return 'bz-halt';
+    case 'Auslieferung & Prüfstrasse': return 'bz-ausl';
+    case 'KI-Arbeitsprozesse': return 'bz-ki';
+    default: return 'bz-rest';
+  }
+}
+
 /**
- * Wirkungsbereiche als Badge-Reihe.
- *
- * Bewusst OHNE eigene CSS-Klasse: die bestehende `.chip ready` reicht, und ein
- * Zusatz im gemeinsamen Stylesheet änderte alle vier Seiten (die drei anderen
- * sollen byte-gleich bleiben). Die Unterscheidung trägt hier der Text, nicht
- * die Farbe — was zugleich farbunabhängig lesbar ist.
+ * Wirkungsbereiche als Badge-Reihe — seit 8.8.2026 farbcodiert (Auftrag David;
+ * vorher bewusst farblos, um die Seiten byte-gleich zu halten). Der Text bleibt
+ * die primäre Unterscheidung, die Farbe kommt dazu — farbunabhängig lesbar.
  */
 export function bereichsBadges(globs: string[]): string {
   const b = wirkungsbereiche(globs);
   if (!b.length) return '';
-  return ` ${b.map((x) => `<span class="chip ready" title="Wirkungsbereich">${esc(x)}</span>`).join(' ')}`;
+  return ` ${b.map((x) => `<span class="chip bz ${bereichKlasse(x)}" title="Wirkungsbereich">${esc(x)}</span>`).join(' ')}`;
 }
 
 /**
@@ -621,7 +652,7 @@ export function wasGeradePassiert(d: WasPassiert): string {
   <p class="lage"><b>Stand: ${esc(d.stand)}</b></p>
   <p class="lede">Drei Fragen, ohne Fachsprache beantwortet: Woran wird gerade gearbeitet, was ist zuletzt
   fertig geworden, und was liegt bei dir. Die Fachfassung derselben Lage steht weiter unten auf dieser Seite.
-  Die grauen Schilder nennen den <b>Wirkungsbereich</b> — welchen Teil des Projekts ein Arbeitspaket berührt;
+  Die farbigen Schilder nennen den <b>Wirkungsbereich</b> — welchen Teil des Projekts ein Arbeitspaket berührt (je Bereich eine Farbe);
   alle sechs sind auf der Seite <a href="${esc(d.methodeDatei)}">Arbeitsweise &amp; Glossar</a> erklärt.</p>
 
   <h3>Gerade im Bau</h3>
