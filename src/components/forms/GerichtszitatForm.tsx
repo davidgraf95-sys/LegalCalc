@@ -4,7 +4,7 @@ import {
   type GerichtszitatInput, type BgeTeil,
 } from '../../lib/gerichtszitat';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
-import { Field, inputCls, FehlerBox } from '../vorlagen/ui';
+import { ErgebnisPlatzhalter, Field, inputCls, FehlerBox } from '../vorlagen/ui';
 import { SelectionGrid } from '../ui/SelectionGrid';
 import { DatumsFeld } from '../DatumsFeld';
 import { NormText } from '../NormText';
@@ -102,6 +102,15 @@ export function GerichtszitatForm() {
       </Field>
 
       {beruehrt && ergebnis.status === 'unzulaessig' && <FehlerBox fehler={ergebnis.fehler} />}
+
+      {/* LM-161 (B6/K-15): der Ausgangszustand endete bisher direkt hier — kein
+          Ergebnisblock, kein Platzhalter, kein Hinweis (anders als z. B. der
+          Streitwert-Rechner, W2·10-UI-NAV/N0d·W1). Geteilter Baustein (§5/§10),
+          gezeigt genau dann, wenn weder die FehlerBox noch die Fundstelle
+          darunter greift — nie gleichzeitig mit einer der beiden. */}
+      {!(beruehrt && ergebnis.status === 'unzulaessig') && !(ergebnis.status === 'ok' && ergebnis.zitat) && (
+        <ErgebnisPlatzhalter was="Band und Seite (bzw. Geschäftsnummer und Datum) eingeben — hier erscheint die formatierte Fundstelle." />
+      )}
 
       {ergebnis.status === 'ok' && ergebnis.zitat && (
         <div className="lc-panel p-4 space-y-3">
