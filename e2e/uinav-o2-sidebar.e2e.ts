@@ -1,0 +1,151 @@
+// O2 · Sidebar-Konsistenz (W2·10-UI-NAV-O). Drei Versprechen, die nur im echten
+// Browser beweisbar sind (SSR führt keine Effekte aus, kennt keine Klicks):
+//   1. Das Label einer Rechner-/Vorlagen-Gruppe NAVIGIERT (und landet auf dem
+//      Übersichtsanker), der Chevron daneben KLAPPT — zwei getrennte Gesten in
+//      einer Zeile, wie schon bei Bund/Kantone.
+//   2. Auto-Expandieren bei Navigation: wechselt der Standort auf ein Werkzeug,
+//      dessen Sidebar-Eintrag in einer ZUGEKLAPPTEN Gruppe liegt, klappt die
+//      Gruppe auf und die Aktiv-Markierung wird sichtbar. Das ist der
+//      Effekt-Pfad ohne Remount — der Fall, den der Mount-Anfangszustand nicht
+//      abdeckte.
+//   3. Davids Auflage bleibt gewahrt: eine bewusst zugeklappte Gruppe bleibt
+//      zu, auch wenn ein Kind aktiv ist (nur die steigende Flanke expandiert).
+// Läuft gegen `vite preview` (dist).
+//
+// TIMING-REGEL dieser Spec (Lehre aus der Gegenprüfung zu W2·10-UI-NAV-O):
+// Die Flanken-Erkennung der Seitenleiste vergleicht den aktuellen mit dem
+// zuletzt COMMITTETEN Standort. Eine Adress-Zusicherung (`toHaveURL`) ist
+// darum kein Beleg dafür, dass die Zwischenseite je gerendert wurde — sie
+// erfüllt sich bereits beim pushState. Wo diese Spec einen Zwischenschritt
+// braucht, riegelt sie ihn mit einem gerenderten Merkmal ab (`aria-current`).
+// Gemessen 7.8.2026 mit einem MutationObserver auf der Seitenleiste: ohne
+// Riegel verzeichnet der Beobachter für die ganze Hin-und-Zurück-Folge KEINE
+// einzige Mutation — React committet die Zwischen-Fassung nie.
+import { test, expect, type Page } from '@playwright/test'
+
+function fehlerSammeln(page: Page): string[] {
+  const fehler: string[] = []
+  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
+  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
+  return fehler
+}
+
+const nav = (page: Page) => page.getByRole('navigation', { name: 'Hauptnavigation' })
+
+test.describe('O2 · Sidebar-Konsistenz', () => {
+  test('Gruppen-Label navigiert auf den Übersichtsanker, der Chevron klappt', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.goto('/')
+    const leiste = nav(page)
+
+    // «Fristen» ist eine Rechner-Oberkategorie; ihre Zeile trägt jetzt Link + Chevron.
+    const chevron = leiste.getByRole('button', { name: /^Fristen (auf|ein)klappen$/ })
+    await expect(chevron).toHaveAttribute('aria-expanded', 'false')
+
+    // Chevron klappt NUR auf — die Adresse bleibt, wo sie war.
+    await chevron.click()
+    await expect(chevron).toHaveAttribute('aria-expanded', 'true')
+    expect(new URL(page.url()).pathname).toBe('/')
+
+    // Das Label navigiert — auf den Übersichtsanker der Kategorie.
+    await leiste.getByRole('link', { name: 'Fristen', exact: true }).click()
+    await expect(page).toHaveURL(/\/rechner#register-fristen$/)
+    // Der Anker existiert wirklich und ist im Blickfeld (kein toter Sprung).
+    await expect(page.locator('#register-fristen')).toBeVisible()
+
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('Auto-Expandieren: Navigation in eine zugeklappte Gruppe öffnet sie', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.goto('/')
+    const leiste = nav(page)
+
+    // Ausgangslage: «Fristen» ist zu, das Kind «Verjährung» darum nicht sichtbar.
+    const chevron = leiste.getByRole('button', { name: /^Fristen (auf|ein)klappen$/ })
+    await expect(chevron).toHaveAttribute('aria-expanded', 'false')
+    const kind = leiste.getByRole('link', { name: 'Verjährung', exact: true })
+    await expect(kind).toHaveCount(0)
+
+    // Standortwechsel OHNE Sidebar-Klick (Kopf-Suche/Deep-Link-Ersatz: ein
+    // In-App-Link auf der Seite selbst) — hier über die Rechner-Übersicht.
+    await page.goto('/rechner')
+    await page.getByRole('link', { name: /Verjährung/ }).first().click()
+    await expect(page).toHaveURL(/\/rechner\/verjaehrung/)
+
+    // Die Gruppe hat sich geöffnet, das aktive Kind ist sichtbar und markiert.
+    await expect(chevron).toHaveAttribute('aria-expanded', 'true')
+    await expect(kind).toBeVisible()
+    await expect(kind).toHaveAttribute('aria-current', 'page')
+
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('bewusst zugeklappt bleibt zu; Zurück/Vorwärts verhalten sich wie erwartet', async ({ page }) => {
+    // Alles in EINER Sitzung ohne Vollreload — ein page.goto würde die
+    // Seitenleiste remounten und den Nutzer-Entscheid ohnehin verwerfen.
+    const fehler = fehlerSammeln(page)
+    await page.goto('/rechner/verjaehrung')
+    const leiste = nav(page)
+    const chevron = leiste.getByRole('button', { name: /^Fristen (auf|ein)klappen$/ })
+    // Beim Laden offen (aktives Kind).
+    await expect(chevron).toHaveAttribute('aria-expanded', 'true')
+
+    // Nutzer klappt bewusst zu (Auflage David «Kategorien einklappbar») …
+    await chevron.click()
+    await expect(chevron).toHaveAttribute('aria-expanded', 'false')
+
+    // … ein SPA-Wechsel auf eine fremde Seite lässt sie zu (das aktive Kind
+    // verschwindet — keine steigende Flanke, keine Bevormundung).
+    const methodik = leiste.getByRole('link', { name: 'Methodik', exact: true })
+    await methodik.click()
+    // COMMIT-BEWEIS, nicht nur Adress-Beweis (Härtung nach Gegenprüfung B1):
+    // `toHaveURL` erfüllt sich schon beim pushState. Ohne diesen Riegel liegen
+    // Hin- und Rückweg in EINEM React-Batch, die /methodik-Fassung wird nie
+    // committet — der Standort kehrt zum Ausgangswert zurück, ohne dass je
+    // etwas anderes auf dem Schirm stand. `aria-current` sitzt auf der
+    // gerenderten Seitenleiste und beweist damit den vollzogenen Commit.
+    await expect(methodik).toHaveAttribute('aria-current', 'page')
+    await expect(chevron).toHaveAttribute('aria-expanded', 'false')
+
+    // Zurück-Taste AUF das Werkzeug ist wieder eine steigende Flanke → offen
+    // (Back/Forward-Fall, Lehren-Register F7).
+    // Adress-Regex OHNE `$` (Härtung nach Gegenprüfung E1): der Verjährungs-
+    // Rechner spiegelt seinen Eingabe-Zustand per replaceState in die Query
+    // (`?re=…&br=…`). Der wiederhergestellte History-Eintrag trägt sie je nach
+    // Verweildauer mit — der Pfad ist hier das Prüfobjekt, nicht die Query.
+    await page.goBack()
+    await expect(page).toHaveURL(/\/rechner\/verjaehrung(\?|$)/)
+    await expect(chevron).toHaveAttribute('aria-expanded', 'true')
+
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  // O5/Beifang derselben Fläche — der sichtbare Beweis, den SSR nicht führen
+  // kann (die Filterzeile erscheint erst nach dem Manifest-Ladevorgang).
+  test('O5/Beifang: /materialien-Filterfeld erklärt seinen Scope und zoomt mobil nicht', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/materialien')
+
+    const feld = page.getByPlaceholder('Titel, Nummer oder Behörde suchen …')
+    await expect(feld).toBeVisible()
+    // Scope-Label sichtbar UND programmatisch verknüpft.
+    const beschreibung = page.locator('#materialien-filter-scope')
+    await expect(beschreibung).toBeVisible()
+    await expect(feld).toHaveAttribute('aria-describedby', 'materialien-filter-scope')
+    await expect(beschreibung).toContainText('Nur Titel, Nummer, Behörde und Dokumenttyp dieser Rubrik')
+
+    // Beifang: iOS Safari zoomt beim Fokus jedes Felds unter 16 px. Auf 390 px
+    // muss die effektive Schriftgrösse darum ≥ 16 px sein.
+    const px = await feld.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))
+    expect(px, 'unter 16 px zoomt iOS Safari beim Fokus').toBeGreaterThanOrEqual(16)
+
+    // Ab sm bleibt es bei der kompakten Stufe (der Fix ist ein Unter-sm-Zusatz).
+    await page.setViewportSize({ width: 1280, height: 900 })
+    const pxDesktop = await feld.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))
+    expect(pxDesktop).toBeLessThan(16)
+
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+})

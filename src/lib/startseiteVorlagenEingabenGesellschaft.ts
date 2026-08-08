@@ -61,7 +61,7 @@ export const VORLAGEN_EINGABEN_GESELLSCHAFT: Record<string, VorlageCard> = {
     formvorschrift: 'Unterschreiben und im Doppel einreichen (Art. 131 ZPO)',
     output: ['pdf', 'docx'],
     keywords: ['Klage', 'vereinfachtes Verfahren', 'Art. 244 ZPO', 'Klagebewilligung', 'Arbeitsgericht', 'Rechtsbegehren', 'Basel'],
-    related: ['schlichtungsgesuch', 'zustaendigkeit', 'zpo-fristen'],
+    related: ['schlichtungsgesuch', 'zustaendigkeit', 'zpo-fristen', 'streitwert', 'prozesskosten'],
     icon: 'document',
   },
   'klage-ordentlich': {
@@ -83,7 +83,7 @@ export const VORLAGEN_EINGABEN_GESELLSCHAFT: Record<string, VorlageCard> = {
       { label: 'Art. 209 ZPO', url: fedlexUrl('ZPO', '209'), verified: false },
     ],
     keywords: ['Klage', 'ordentliches Verfahren', 'Klageschrift', 'Rechtsbegehren'],
-    related: ['klage-vereinfacht', 'schlichtungsgesuch', 'zustaendigkeit', 'streitwert'],
+    related: ['klage-vereinfacht', 'schlichtungsgesuch', 'zustaendigkeit', 'streitwert', 'prozesskosten'],
     icon: 'document',
   },
   einsprache: {
