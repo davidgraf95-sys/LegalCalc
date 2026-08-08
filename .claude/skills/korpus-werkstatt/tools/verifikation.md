@@ -29,8 +29,8 @@ beheben — niemals `npm run golden` (Neuschreiben der Goldens) oder einen Test 
 
 **Wann was:** `gate:schnell` ist der Takt **während** der Extraktion/Korrektur. `gate` ist das
 Schluss-Tor; es zieht zusätzlich `lint` und das Sammeltor `check`. Erst wenn `gate` grün ist, geht
-es weiter zur Pflicht-Gegenprüfung (unten) und danach an `deploy-check` — **bei rotem Tor kein
-Push, keine Übergabe an `deploy-check`** (§9).
+es weiter zur Pflicht-Gegenprüfung (unten) und danach an `landung` — **bei rotem Tor kein
+Push, keine Übergabe an `landung`** (§9).
 
 ---
 
@@ -176,4 +176,4 @@ Je Fall eine Sofortmassnahme; kein Duplikat der §§ (Details dort).
    `ERLASS_REGISTER` (`src/lib/normtext/register.ts`, Feld `fedlexKey`) + die `FEDLEX`-Schlüsselkarte
    in `src/lib/fedlex.ts` klären (Identität ≠ Normtext); erst dann Snapshot.
 
-**Abschluss-Regel:** bei rotem Tor **kein Push, keine Übergabe an `deploy-check`** (§9).
+**Abschluss-Regel:** bei rotem Tor **kein Push, keine Übergabe an `landung`** (§9).

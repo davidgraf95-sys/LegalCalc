@@ -443,11 +443,10 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
     );
   });
 
-  it('trägt die Weiterbau-Klausel (Entscheid David 8.8.2026) mit Sortenrein- und Kontext-Grenze', () => {
+  it('trägt KEINE Weiterbau-Prompt-Kopie mehr — die Regel lebt als Station W im Skill bauschritt (QS-SKILL-DIAET, §5)', () => {
     const p = bauPrompt(einheit(), SCHRITT);
-    expect(p).toContain('7. WEITERBAU');
-    expect(p).toContain('NIE sortenrein-widrig auf Risikopfade wechseln');
-    expect(p).toContain('bevor der Kontext zur Neige geht');
+    expect(p).not.toContain('WEITERBAU');
+    expect(p).toContain('Nutze den Skill `bauschritt`');
   });
 });
 

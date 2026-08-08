@@ -281,7 +281,7 @@ Check in den Branch-Regeln · kantonale Verifikationen ausserhalb BS.
   Drift-Tore · Turso-HOT-Budget beobachten (Ist ~652 MiB von
   1'024 MiB).
 - **Kontext-/Token-Ökonomie**: Skills in `.claude/skills/` (abnahme,
-  deploy-check, korpus-werkstatt, landung, lehren, gegenpruefung),
+  bauschritt, korpus-werkstatt, landung, lehren, gegenpruefung),
   Hooks in `.claude/hooks/` (tor-schutz, lese-schutz,
   struktur-aktuell/-rotieren), Dispatch-Template für Sub-Agenten
   (`docs/token-oekonomie/dispatch-template.md`).

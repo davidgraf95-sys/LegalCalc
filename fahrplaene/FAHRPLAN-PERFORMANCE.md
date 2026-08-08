@@ -40,7 +40,7 @@ explizite Logikverlust-Bewertung.
   (§13-Konflikt); korrekt nur via Build-time-News-Prerender (M) → bleibt als nächster CLS-Schritt.
 
 **30.6.2026 — Tor `check:perf-budget` (Item 0, Bundle-Teil) gebaut** (`scripts/check-perf-budget.ts`,
-in `package.json` + deploy-check-Ritual nach dem Build, Chrome-frei/CI-tauglich): sichert die
+in `package.json` + landung-Ritual nach dem Build, Chrome-frei/CI-tauglich): sichert die
 vendor-react-Topologie (ein stabiler Chunk), die gzip-Budgets (Entry ≤ 60 KB, vendor-react ≤ 90 KB)
 und den Doppel-React-Schutz (react-dom darf nur im vendor-Chunk liegen). Negativtests grün→rot→grün.
 Offen am Tor: die **Lighthouse-Metrik-Schranken** (CLS/LCP/TBT unter 4× CPU) — bleiben vorerst

@@ -101,7 +101,7 @@ Legende Strategie: **C**=consume-data · **P**=port-technique (nach TS nachbauen
 | D2 | **`quality/checks/` ~65 deterministische Checks** (Datum: `docket_year_plausibility`, `publication_before_decision`; Dedup: `court_docket_collisions`, `bge_egmr_count_range`; Text: `control_chars`, `excessive_whitespace`; Graph: `resolution_rate`, `top_cited_known_leader`-Plausibilitätsorakel) | P/Ref | erweitert `check:entscheide`=`scripts/normtext/check-entscheide.ts`, `check:invarianten`, `check:vollstaendigkeit` | – | ★★★★ |
 | D3 | **Precision-Proxy-Idee** (Millionen Kanten billig via Datums-Sanity + Self-Cite-Rate + Confidence-Verteilung statt Handlabeling) | Ref | Verifikations-Idee für C2/C5-Kanten im Massstab | – | ★★★ |
 | D4 | **`coverage_report.py` / `coverage_targets`** — Vollständigkeit = erwartete-Menge minus tatsächliche | Ref | `check:vollstaendigkeit`=`scripts/normtext/check-vollstaendigkeit.ts` | – | ★★ |
-| D5 | **`docs/decision_rules.md` + `docs/db_contract.md`** — «kein stiller Rollback nach Emission»; atomarer Swap + `user_version`-Bump; Risiko-Änderung=Zweitpass | Ref | Disziplin-Vorbild für Gate/Deploy-Ritual (`deploy-check`); §9 | – | ★★ |
+| D5 | **`docs/decision_rules.md` + `docs/db_contract.md`** — «kein stiller Rollback nach Emission»; atomarer Swap + `user_version`-Bump; Risiko-Änderung=Zweitpass | Ref | Disziplin-Vorbild für Gate/Deploy-Ritual (`landung`); §9 | – | ★★ |
 | D6 | **`publish_dag.py` Pipeline-Form** — ein kanonischer Index → enrich → **QC-Gate vor jeder Emission** → export | Ref | Vorbild `scripts/gate.sh`-Kettenform; nichts zu porten | – | ★ |
 
 ### E. Suche / Vokabular (handkuratierte Daten, kein LLM)

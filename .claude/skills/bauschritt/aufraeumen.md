@@ -1,16 +1,18 @@
----
-name: aufraeumen
-description: Verwenden, wenn Roadmap/Struktur aufgeräumt werden sollen — Trigger «räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken» — oder wenn der Re-Akkumulations-Wächter (`struktur-rotieren.py --check`) ein Steuerdokument über Budget meldet.
----
+# Roadmap/Struktur aufräumen (Referenzdatei des Skills `bauschritt`)
 
-# Roadmap/Struktur aufräumen
+**Laden, wenn** die Steuer-Doku aufgeräumt werden soll — «räum die Roadmap
+auf», «Ceiling gerissen», `struktur-rotieren.py --check` rot, «ROADMAP zu
+gross», «Chronik-Überführung», «Fahrplan archivieren» — oder wenn der
+Re-Akkumulations-Wächter ein Steuerdokument über Budget meldet. *(Bis zur
+Skill-Diät 8.8.2026 war das der eigenständige Skill `aufraeumen`; Inhalt
+unverändert hierher gezogen, QS-SKILL-DIAET.)*
 
 Playbook der Aufräum-Session vom 3.8.2026 (`793e9aee3`, «Roadmap-Verschlankung:
 24 erledigte Schritte in die Chronik, 6 Streichungen, 2 Fahrpläne archiviert
 — 117.4 → 97.7 KB»). Ziel: `ROADMAP.md` bleibt schlanker Session-Einstieg,
 Erledigtes verschwindet nicht, sondern zieht wörtlich um.
 
-**Leitplanke:** dieser Skill trägt die Prozedur. Zahlen (Ceilings, Ist-Werte)
+**Leitplanke:** diese Datei trägt die Prozedur. Zahlen (Ceilings, Ist-Werte)
 stehen NIE hier — nur `.claude/hooks/struktur-rotieren.py` misst sie. Ein
 Zahlen-Zweitstand hier würde beim nächsten Ceiling-Wechsel veralten, ohne dass
 es auffällt (§5-Fehlerklasse).
@@ -160,7 +162,7 @@ liest `ROADMAP-CHRONIK.md` selbst. Ein Zwischenstand, in dem eine Datei schon
 nach `archiv/` verschoben, aber ihr `fahrplan:`-Zeiger noch nicht nachgezogen
 ist (oder umgekehrt), wäre unter Regel 9 bzw. 7 rot.
 
-## Nachbar-Skills
+## Nachbar-Instrumente
 
 - **`lehren`** — wenn die Aufräum-Session ein wiederkehrendes Prozessproblem
   freilegt (z. B. ein Tor, das die Drift nicht sieht), gehört die Lehre dort

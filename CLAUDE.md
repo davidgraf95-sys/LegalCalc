@@ -114,13 +114,14 @@ in der UI offengelegt, nicht weggeglättet. Keine Rechtsberatung.
 Formvorschriften (Eigenhändigkeit, Beurkundung) bestimmen, welche Exportformate
 überhaupt angeboten werden.
 
-## §9 Deploy-Disziplin → Skill `deploy-check`
+## §9 Deploy-Disziplin → Skill `landung`
 
 Merge nach `main` **ist** der Deploy (Vercel liefert `main` automatisch aus).
 Die §9-Sorgfalt — Tore grün, Bug-Check, Golden byte-gleich — gilt **vor** dem
 Merge. Push ist stehend freigegeben. Auf Risiko-Pfaden ist Auto-Merge gesperrt,
 bis ein Gegenprüfungs-Verdikt vorliegt. Ablauf, Ausnahmen und Red Flags: Skill
-**`deploy-check`**.
+**`landung`** (trägt seit der Skill-Diät 8.8.2026 auch den früheren Skill
+`deploy-check`).
 
 ## §10 Wachstum folgt dem Rahmen → Skill `auftrag`
 
@@ -223,10 +224,9 @@ wie §14.7 immer, nie lazy.)
 | Fachliche Abnahme, Status-Hebung | Skill `abnahme` |
 | Adversariale Gegenprüfung auf Risiko-Pfaden | Skill `gegenpruefung` |
 | Postmortem, Fehlerklassen, wo eine Regel hingehört, §17-Fünf-Schritte | Skill `lehren` |
-| Deploy, Merge-Schutz, Risikopfade | Skill `deploy-check` |
-| Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` |
-| Session-Lebenszyklus Einstieg → Bau → Landung → Abschluss | Skill `bauschritt` |
-| Plan-/Struktur-Rotation, Chronik-Überführung, Deckel | Skill `aufraeumen` |
+| Deploy, Merge-Schutz, Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` (§9 + §12) |
+| Session-Lebenszyklus Einstieg → Bau → Landung → Weiterbau → Abschluss, leichter Pfad | Skill `bauschritt` |
+| Plan-/Struktur-Rotation, Chronik-Überführung, Deckel | Skill `bauschritt`, Datei `aufraeumen.md` |
 | Geräte-Last, Performance | Skill `perf` |
 | Design, Tokens, Sprache, UI-Zustände | `DESIGN-REGLEMENT.md` + Domänen-Reglemente |
 | Aktueller Bau-Stand | `npm run plan:next` · `npm run fahrplan` |

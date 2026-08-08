@@ -1,18 +1,28 @@
 ---
 name: landung
-description: Verwenden, wenn ein fertiger Feature-PR nach main gelandet werden soll — Trigger «landen», «Landung», «PR mergen», «einsammeln», «rebasen auf main», «Merge-Kette abarbeiten» — oder wenn mehrere offene PRs seriell nach main gebracht werden. Kodifiziert die serielle Landung + Merge-Treiber-Politik (§12) gegen wiederkehrende Konflikte.
+description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «landen», «Landung», «PR mergen», «einsammeln», «rebasen auf main», «Merge-Kette abarbeiten», «Push», «Deploy», «Live-Gang», «bring das auf Prod», «Release-Stand prüfen». Kodifiziert §12 (serielle Landung, Merge-Treiber) UND §9 (Merge nach main IST der Deploy — Vercel liefert main automatisch aus); der frühere Skill deploy-check ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
 ---
 
-# Serielle Landung eines PR nach main
+# Landung nach main = Deploy (§12 + §9, «Weg 1»)
 
-Ziel: Konflikte paralleler PRs entschärfen, indem **EINE** PR aufs Mal
-gelandet wird und generierte Dateien nie von Hand gemischt werden. Die
-Deploy-Sorgfalt gilt weiterhin **vor** dem Merge (Skill `deploy-check`);
-dieser Skill ist die Merge-Mechanik davor.
+**Dieser Skill trägt §12 UND §9.** Seit dem A4-Umzug (25.7.2026) stehen beide
+Paragraphen ausserhalb des Reglements, `CLAUDE.md` zeigt nur noch hierher; seit
+der Skill-Diät (QS-SKILL-DIAET, 8.8.2026) ist auch der frühere Skill
+`deploy-check` hier aufgegangen. Bei einem Widerspruch zwischen diesem Text und
+einer älteren §9-/§12-/deploy-check-Erinnerung gewinnt **dieser Text** — wer
+sich an einen ausführlichen §9 in `CLAUDE.md` oder an einen eigenen
+deploy-check-Skill erinnert, erinnert einen Altstand.
 
-**Dieser Skill trägt §12** (Parallel-Sessions nur isoliert). Seit dem
-A4-Umzug (25.7.2026) steht der Paragraph hier, `CLAUDE.md` §12 zeigt nur
-noch hierher.
+**Kernmodell (Weg 1):** Vercel liefert `main` automatisch auf Prod aus.
+**Der Merge nach `main` IST der Deploy.** Es gibt keinen separaten
+`vercel --prod`-Handschritt. Darum liegt die gesamte §9-Sorgfalt (Tore grün,
+Bug-Check, Golden byte-gleich, doppelt verifiziert) zwingend **VOR dem
+Merge/Push auf main**. Unverändert übergeordnet bleiben die Invarianten in
+`CLAUDE.md`, insbesondere §1 (Korrektheit), §6 (Verhaltensneutralität, Golden)
+und §8 (Ehrlichkeit).
+
+Ziel der Merge-Mechanik: Konflikte paralleler PRs entschärfen, indem **EINE**
+PR aufs Mal gelandet wird und generierte Dateien nie von Hand gemischt werden.
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -30,7 +40,7 @@ zerstört. Darum:
    - **kein** `git commit --amend` (der Hook `tor-schutz.py` blockiert es)
    - nach jedem Commit die `--stat`-Dateizahl gegen die eigene add-Liste prüfen
 3. **Deploys nie aus dem Arbeitsverzeichnis**, immer aus einem sauberen
-   HEAD-Worktree (Skill `deploy-check`).
+   HEAD-Worktree (einziger Fall: Ausnahme «manueller Deploy» unten).
 4. **Merge-Treiber-Politik** (`.gitattributes`, aktiv pro Clone via `prepare` →
    `scripts/git-setup.sh`): Append-Register `merge=union`; generierte
    Projektionen (`daten-manifest.json`, `*.generated.ts`,
@@ -42,13 +52,61 @@ zerstört. Darum:
 
 ---
 
-## Ablauf
+## 0 · Vorbedingungen
 
-Voraussetzung einmal pro Clone/Worktree: `npm install` lief (setzt via
-`prepare` → `scripts/git-setup.sh` den `regen`-Treiber + rerere). Sonst
-`bash scripts/git-setup.sh` von Hand.
+Einmal pro Clone/Worktree: `npm install` lief (setzt via `prepare` →
+`scripts/git-setup.sh` den `regen`-Treiber + rerere), sonst
+`bash scripts/git-setup.sh` von Hand. Jedes Tor-Kommando NACKT laufen lassen
+(keine Pipes — der PreToolUse-Hook blockiert sie ohnehin), volle Ausgabe
+lesen, Exit-Code prüfen. Dann:
 
-Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
+1. `git status` — fremden WIP einer Parallel-Session identifizieren; es gelten
+   die §12-Regeln oben (Pathspec, kein stash, kein amend).
+2. Review-Schrott räumen: `find src -name '__*'` muss leer sein
+   (Repro-Dateien von Review-Agents brechen Suite/Lint).
+3. Untracked Ballast im Root prüfen (PDFs, Bücher) — darf nie **committet**
+   werden. Der Git-Deploy baut nur committete Inhalte; die Gefahr ist ein
+   versehentliches `git add -A`, nicht mehr ein Verzeichnis-Upload.
+
+## 1 · Tore vor dem Merge (alle grün, volle Ausgabe)
+
+```
+npx tsc -b
+npm test
+npm run lint        # nie tail/Pipe — hat schon 8 Fehler verschluckt
+npm run build
+npm run golden:vergleich   # byte-gleich; Exit-Code prüfen!
+npm run check       # check:seriell-Kette (Sweep, Smoke, Register u. a.)
+npm run test:e2e    # Playwright (a11y/axe beide Theme-Modi + Funktions-Smokes);
+                    # braucht dist (nach build), startet vite preview selbst.
+npm run check:perf-budget  # QS-PERF: Bundle-Topologie/-Budget + Single-React;
+                    # liest das gebaute dist (nach build), Chrome-frei.
+```
+
+- **`test:e2e` zwingend vor jedem Merge nach main** — es ist bewusst NICHT im
+  schnellen `gate` (build+Browser, zu langsam pro Iteration); ohne diesen Lauf
+  rottet die Suite (axe-Befunde, veraltete Locator). Die a11y-Prüfpunkte pinnen
+  das Theme (hell + Reader zusätzlich dunkel) → uhrzeitunabhängig deterministisch.
+- **`check:perf-budget` zwingend vor jedem Merge nach main** (QS-PERF/§15):
+  sichert die vendor-react-Topologie (ein stabiler Chunk, kein Doppel-React) und
+  die gzip-Budgets; deterministisch, braucht das gebaute `dist` → nur hier, nicht
+  im schnellen `gate`. Die Lighthouse-Metrik-Schranken bleiben der Mess-Schritt
+  in der Nachkontrolle (unten, Punkt 4).
+- Golden-Abweichungen ERST den interleaved Commits der Parallel-Session
+  zuordnen, dann erst über Neu-Schreiben entscheiden (nur deklariert).
+- Falls zusätzlich `check:netz`/`check:zitate` gefahren wird: vorher den
+  Anker-Count der /tmp-Fedlex-Caches verifizieren — Workflow-/Review-Agents
+  überschreiben sie.
+
+## 2 · Bug-Check §9
+
+Unabhängige Review-Agents über das Deploy-Delta (`git log <letzter
+Deploy>..HEAD`): mindestens 2 Agents (Code-Lupe + empirische
+vite-node-Repros); bei grossen Deltas das bewährte Workflow-Muster
+«6 Strang-Finder × 2 adversariale Lupen». Bestätigte Befunde fixen,
+Regressionstests dazu, danach Tore aus Schritt 1 erneut.
+
+## 3 · Serielle Landung — strikt der Reihe nach, EIN Kommando aufs Mal
 
 1. **Landungs-Rolle ansagen.** Vor Landungs-Beginn einen PR-Kommentar setzen
    («Landung übernommen — Session/Worktree <name>»); wer an einem PR einen
@@ -67,11 +125,9 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    `gh pr update-branch` fahren. Realfall #445 (5.8.2026): 16 h scharf,
    alle Checks grün, kein Merge — Ursache waren fünf zwischenzeitliche
    main-Landungen.
-
 3. **origin/main einziehen.** `git fetch origin` → dann in den Feature-Branch
    `git merge origin/main` (oder `git rebase origin/main`). Hier greifen die
    lokalen Merge-Treiber aus `.gitattributes`.
-
 4. **Konflikte auflösen — nie von Hand mischen.**
    - **Generierte Datei** (`daten-manifest.json`, `*.generated.ts`,
      `public/rechtsprechung/*index*`): der `regen`-Treiber hat schon die
@@ -88,10 +144,8 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
      Gegenprüfung (Drop/Leak), nie blind eine Seite nehmen.
    - **STRUKTUR.md / ROADMAP.md / FAHRPLAN-* / INDEX.md**: in-place, von Hand
      auflösen (beide Beiträge behalten). rerere merkt sich die Auflösung.
-
 5. **Gate.** `npm run gate` (grün Pflicht). Das erzwingt die Regeneration aus
-   Schritt 3: ein vergessener Generator-Neulauf fällt als rotes `check:*` auf.
-
+   Schritt 4: ein vergessener Generator-Neulauf fällt als rotes `check:*` auf.
 6. **CI-Grün verifizieren.** Push (`git push`), dann `gh pr checks <nr> --watch`
    bis grün. Billing-rot bei lokal-grün = OK (§9).
    **`cancelled` und `skipped` zählen als ROT**, nicht als «nicht rot» — ein
@@ -143,15 +197,37 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
    die **amtliche Quelle** prüfen und die Trefferquote im PR dokumentieren.
    Belege sind **Identitäts-Treffer mit Wortgrenze**, nie Substring-Präsenz.
-   *Warum als eigener Schritt und nicht als Verweis: PR #309 hat genau hier
-   versagt — 11 erfundene Amtsträger:innen gingen ~1 h auf prod, weil der
-   Verweis auf den Gegenprüfungs-Skill beim Abarbeiten der Liste übersprungen
-   wurde. Maschinelle Rückendeckung: `check:merge-schutz` blockiert den Merge
-   auf Risiko-Pfaden ohne Verdikt.*
+   *Warum als eigener Schritt und nicht als Verweis: der Vorfall PR #309
+   (unten, Risiko-Sperre) ist genau hier passiert.*
 
-7. **Manuell mergen.** `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange
-   die Required Checks nicht neu gesetzt sind (David-Handschritt offen).
-   Danach Worktree/Branch aufräumen (`git worktree remove …`, Branch löschen).
+7. **Push + Merge = Deploy.** **Push ist stehend freigegeben** (Daueranweisung
+   David 2.7.2026: «immer ja zum push» — `git push` + PR + Auto-Merge ohne
+   Einzel-Nachfrage). KEINE gesonderte Push-Bestätigung mehr einholen; Davids
+   Deploy-/Merge-Verlangen («bring das auf Prod», Batch-Freigabe) deckt den
+   Push mit ab. **Der Live-Gang-Entscheid ist die Freigabe zum Merge nach
+   `main`** — Vercel baut und liefert den gemergten Commit automatisch aus.
+
+   Merge manuell: `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange die
+   Required Checks nicht neu gesetzt sind (David-Handschritt offen). Wo
+   `--auto` grundsätzlich zulässig ist (Daueranweisung 30.6.), gilt:
+   **`--auto` ist der Deploy-Zünder — erst scharf machen, wenn die Schritte
+   0–2 komplett abgeschlossen sind.** Ein früh gesetztes `--auto` merged
+   (= deployt) automatisch, sobald die CI grün ist, auch wenn lokale Tore
+   (test:e2e, perf-budget, Bug-Check) noch laufen oder nie liefen. Grüne CI
+   ist Merge-Voraussetzung, sie ERSETZT die Schritte 0–2 nicht.
+
+   Nie einen roten PR mergen (Billing-roter Check + lokal grün = OK). Arbeit
+   direkt auf `main`: `git push origin main` löst den Prod-Deploy unmittelbar
+   aus — darum müssen die Schritte 0–2 **vor diesem Push** abgeschlossen sein.
+
+   **Verboten im Normalfall:** `npx vercel --prod`, jeder `/tmp`-Worktree-
+   Deploy, jeder zweite Deploy-Pfad neben dem Git-Auto-Deploy. Ein
+   zusätzlicher manueller Prod-Deploy raced mit dem Git-Deploy: der langsamere
+   Build überschreibt den korrekten, und wenn lokal HEAD ≠ `origin/main`
+   (Parallel-Session-Commits), geht ein ANDERER Commit live als der gemergte.
+
+   **Bewusste Grenze:** nichts mergen, was Tore rot lässt oder nicht doppelt
+   verifiziert ist. Rot = Stopp, kein «mergen und nachbessern».
 
 8. **Nächste PR erst danach.** Erst wenn diese PR auf main ist, die nächste
    auf das neue main rebasen (zurück zu Schritt 1). So kollidiert nie eine
@@ -163,3 +239,99 @@ Strikt der Reihe nach, EIN Kommando aufs Mal, volle Ausgabe lesen:
    `QS-TOK`/`QS-TOK-AUFRAEUMEN` blieben nach Session-Ende stundenlang `wip`,
    das Lagebild zeigte falschen Bau — seither warnt `plan:next` bei wip ohne
    Bau-Spur, aber die Warnung ist das Netz, nicht der Prozess.
+
+### Auto-Merge ist auf Risiko-Pfaden gesperrt
+
+Auf Risiko-Pfaden (Extraktion, Rechnen, Norm-Tarif — Definition über
+`istRisikoPfad()` in `scripts/gegenpruefung/kern.ts`) wird **erst nach
+vorliegendem Gegenprüfungs-Verdikt** gemergt. `--auto` ist dort **ganz
+gesperrt**: Es prüft nur den Stand beim Aktivieren, nicht den beim Mergen.
+
+Das Verdikt braucht eine prüfbare Form **und** einen Zuwachs im committeten
+Gegenprüfungs-Register. Ein Trailer allein ist eine Behauptung über eine
+Prüfung, kein Nachweis.
+
+Maschinelle Rückendeckung, dreifach:
+
+- `check:merge-schutz` als dedizierter CI-Job «Merge-Schutz
+  (Required-Kontext)», gesetzt als **Required Check** in den Branch-Regeln —
+  ein entfernter Job hinterlässt einen «expected»-Block.
+- derselbe Check im Hook `tor-schutz.py` vor jedem Merge-Kommando (erste
+  Verteidigungslinie, lokal).
+- `check:gegenpruefung` blockiert `npm run gate`, bis für den Diff ein
+  `bestanden`-Nachweis vorliegt.
+
+**Vorfall, der das erzwungen hat:** PR #309 — elf erfundene Amtsträger:innen
+gingen rund eine Stunde auf Prod, weil der Verweis auf die Gegenprüfung beim
+Abarbeiten der Liste übersprungen wurde.
+
+### Einzige Ausnahme — manueller Deploy
+
+Nur wenn GENAU EINES dieser zwei beobachtbaren Prädikate erfüllt ist (oder
+beide):
+
+- David ordnet einen manuellen Deploy AUSDRÜCKLICH an, ODER
+- der Vercel-Git-Deploy läuft nachweislich nicht (Dashboard bzw.
+  `npx vercel ls` zeigt für den Merge-Commit keinen Build).
+
+Nur dann: erst `git fetch` und verifizieren, dass der zu deployende Stand
+== `origin/main` ist, dann aus einem sauberen HEAD-Worktree deployen
+(`git worktree add /tmp/lexmetrik-deploy origin/main` ·
+`cp -R .vercel /tmp/lexmetrik-deploy/` · `npm ci && npx vercel --prod` ·
+danach `git worktree remove /tmp/lexmetrik-deploy`), nie aus dem
+Arbeitsverzeichnis.
+
+### Rationalisierungen (alle schon vorgekommen oder naheliegend)
+
+| Ausrede | Realität |
+|---|---|
+| «In `CLAUDE.md` §9 steht der ausführliche Deploy-Ablauf — ich halte mich daran.» | Seit 25.7.2026 steht dort nur noch der Kern plus ein Zeiger hierher. Wer einen ausführlichen §9 erinnert, erinnert einen Altstand. Dieser Skill ist der Text. |
+| «Für den Deploy gibt es den Skill `deploy-check` — den lade ich.» | Seit 8.8.2026 (QS-SKILL-DIAET) hier aufgegangen; dieser Skill ist der einzige Landungs-/Deploy-Text. |
+| «§9 nennt selbst ‹Prod: npx vercel --prod› — der Handschritt ist gedeckt.» | Diese alte Prod-Zeile wurde am 17.7.2026 gestrichen; Weg 1 «Merge = Deploy» ist der einzige verbindliche Pfad. Wer sich an ‹npx vercel --prod› erinnert, erinnert einen Altstand. |
+| «Die Gegenprüfung lief, ich habe den Trailer gesetzt — `--auto` kann scharf.» | Auf Risiko-Pfaden ist `--auto` ganz gesperrt, und ein Trailer ohne Registerzuwachs ist eine Behauptung, kein Nachweis. Vorfall PR #309. |
+| «Doppelt hält besser — ein zusätzlicher vercel --prod aus sauberem Worktree schadet nicht.» | Doppel-Deploy = Race. Der langsamere Build überschreibt den korrekten; bei HEAD ≠ origin/main geht ein falscher Commit live. |
+| «Die GitHub-CI ist grün — das ersetzt die lokalen Tore, ich kann --auto schon mal setzen.» | Grüne CI ist Merge-Voraussetzung, nicht Ersatz für Schritte 0–2. `--auto` vor Abschluss von 0–2 = unkontrollierter Prod-Deploy bei nächstem grünen CI-Lauf. |
+| «David hat nur den Deploy verlangt, den Push nicht wörtlich — also Push einzeln bestätigen lassen.» | Push ist stehend freigegeben (2.7.2026); die Einzel-Nachfrage ist abgeschafft. «Bring das auf Prod» deckt Push + Merge. |
+| «Der /tmp-Worktree schützt vor dem Hochladen von untracked Ballast.» | Der Git-Deploy baut nur Committetes — untracked erreicht Vercel gar nicht. Die echte Gefahr ist versehentliches Committen (Schritt 0.3). |
+| «Nur ein flakiger Test rot / fast grün — mergen und nachbessern.» | Bewusste Grenze (Schritt 7): nichts mergen, was Tore rot lässt oder nicht doppelt verifiziert ist. |
+
+### Red Flags — STOP
+
+- Du bist dabei, `npx vercel --prod` zu tippen, ohne dass ein Ausnahme-Prädikat
+  (ausdrückliche Anordnung ODER nachweislich ausgefallener Git-Deploy) erfüllt ist.
+- Du legst `/tmp/lexmetrik-deploy` für einen Normalfall-Deploy an.
+- Du setzt `gh pr merge --auto`, bevor die Schritte 0–2 abgeschlossen sind.
+- Du willst David für den Push separat um Bestätigung bitten.
+- Du willst mergen, obwohl ein Tor aus Schritt 1 rot oder Schritt 2 offen ist.
+- Du berufst dich auf die alte, am 17.7.2026 gestrichene §9-Zeile «Prod: `npx vercel --prod`» als Freibrief für einen Handschritt.
+- Nach dem Merge willst du «zur Sicherheit» zusätzlich manuell deployen.
+
+**Buchstabe = Geist:** Ein zweiter Prod-Deploy-Pfad, der «technisch kein
+`vercel --prod` ist» (z. B. `vercel deploy --prebuilt`, `vercel promote` bzw.
+der Dashboard-Klick «Promote to Production» auf einem Preview-Deploy, das
+Vercel-MCP-Tool `deploy_to_vercel`, ein Redeploy-Klick im Dashboard), ist
+derselbe verbotene racende Doppel-Deploy. Den Buchstaben umgehen heisst den
+Geist verletzen.
+
+## 4 · Nachkontrolle
+
+1. Prod-Deploy dem Merge-Commit zuordnen: das Vercel-Prod-Deployment muss den
+   gemergten Commit bauen (PR-Deploy-Status bzw. `npx vercel ls`); warten,
+   bis es Ready ist — nicht durch einen manuellen Deploy «beschleunigen».
+2. Asset-Hash live = lokal (index.html der Prod-URL gegen `dist/` des
+   gemergten Stands).
+3. Kernrouten auf HTTP 200: `/`, `/rechner/tagerechner`,
+   `/rechner/zustaendigkeit`, `/rechner/verjaehrung`,
+   `/rechner/mietrecht`, `/vorlagen`, eine Vorlagen-Detailroute.
+   Prod-URL ist https://lexmetrik.vercel.app (eine Custom-Domain
+   lexmetrik.ch existiert NICHT — Fehlversuch 5.8.2026, curl exit 6).
+4. Lighthouse-Metriken (QS-PERF/§15): CLS/LCP/TBT auf `/gesetze/bund/OR` —
+   Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md`. Läuft seit dem CI-Ausbau
+   **automatisiert** als `check:perf-lighthouse` nach dem Merge auf main
+   (ci.yml; Faktenkorrektur 7.8.2026, Reglement-Audit — «manuell bis CI-Chrome»
+   war überholt). Manuell nur noch bei Verdacht zwischen zwei Läufen.
+5. Aufräumen: gemergten Branch + zugehörigen Worktree entfernen
+   (`git worktree remove …`, Branch lokal + remote löschen; Daueranweisung
+   30.6.).
+6. STRUKTUR.md / ROADMAP.md spiegeln (deployter Stand, Commit-Hash) —
+   STRUKTUR-Pflicht: Skill `auftrag`, Ziff. 4a.

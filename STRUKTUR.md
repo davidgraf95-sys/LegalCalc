@@ -94,7 +94,7 @@ grün + 2 skipped (78 Dateien) ✓ · tsc STRICT · Golden 104/104 byte-gleich �
 `gate:schnell` pro Iteration; leise bei Grün, volle Ausgabe nur für rote
 Tore, CLAUDE.md §6 Ziff. 1/5); `npm run check` für die Offline-Checks,
 `npm run check:netz` für Fedlex; vor Deploys unabhängige Review-Agents
-(Skill `deploy-check`).
+(Skill `landung`).
 
 **Informationsbibliothek: `bibliothek/INDEX.md`** — Quellen-Register
 (verifizierte Fedlex-Stände inkl. ZPO-Revision 2025), Parameter-

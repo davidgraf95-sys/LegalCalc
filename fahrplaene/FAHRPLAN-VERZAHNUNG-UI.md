@@ -188,7 +188,7 @@ V2 refactored auf die Registry (dann gerechtfertigt); V3 fügt `verwaltungsveror
 - a11y: jedes Badge/jeder ★-Glyph hat `aria-label`; Glossar-Tooltips fokussier- und touch-bedienbar; Screenreader-Stichprobe.
 - **Wortfeld-Tor:** `grep -rn "geprüft\|gegengeprüft\|verifiziert" src/lib/verzahnung src/components/verzahnung` = 0 Treffer in Nutzertexten.
 - e2e (Playwright via Bash, nie MCP): die 5 Leit-Testfälle (§4).
-- §9 vor Push/Deploy (deploy-check-Skill).
+- §9 vor Push/Deploy (landung-Skill).
 
 ### V1c — Normrevisions-Ehrlichkeit (David-Input 3.7.2026, §1-Korrektheitsthema)
 

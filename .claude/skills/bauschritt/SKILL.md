@@ -1,6 +1,6 @@
 ---
 name: bauschritt
-description: Verwenden, wenn ein Lagebild-Bau-Prompt eingefügt wird oder ein einzelner Roadmap-Schritt gebaut werden soll — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», ein eingefügter Bau-Auftrag aus plan-bild.html. Kodifiziert den kompletten Session-Zyklus Einstieg → Bau → Prüfung → Landung → Abschluss, damit jede Bau-Session gleich anfängt und gleich aufräumt.
+description: Verwenden, wenn ein Lagebild-Bau-Prompt eingefügt wird oder ein einzelner Roadmap-Schritt gebaut werden soll — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», ein eingefügter Bau-Auftrag aus plan-bild.html. Kodifiziert den kompletten Session-Zyklus Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss (inkl. leichtem Pfad für sortenreine Nicht-Risiko-Fix-Batches) sowie — als Referenzdatei aufraeumen.md — das Aufräumen der Steuer-Doku («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «Chronik-Überführung», «Fahrplan archivieren»); der frühere Skill aufraeumen ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
 ---
 
 # Bauschritt — der Standard-Lebenszyklus einer Bau-Session
@@ -10,12 +10,36 @@ wann* dran ist; *wie* es geht, steht im jeweiligen Instrument, und nur dort
 (§5 — kein Fachinhalt an zwei Stellen). Wer hier eine Anleitung vermisst, hat
 den Verweis noch nicht geöffnet — er gehört nicht hierher kopiert.
 
-**Eine Session = ein Arbeitspaket.** Ein Schritt wird angefangen, geprüft,
-gelandet und abgeschlossen. Kommt unterwegs etwas Neues auf: in den Plan, nicht
-in diese Session (Station B).
+**Eine Bau-Einheit = ein Schritt:** angefangen, geprüft, gelandet, Status
+geschlossen. Kommt unterwegs etwas Neues auf: in den Plan, nicht in diese
+Session (Station B). Nach einer Landung baut eine tragfähige Session
+automatisch weiter (Station W) — abgeschlossen wird erst, wenn nichts
+Sinnvolles mehr ansteht oder der Kontext zur Neige geht.
 
 Davids einziger Input ist der Bau-Prompt. Alles Übrige — Einstieg, Prüfung,
-Landung, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem Zyklus.
+Landung, Weiterbau, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem
+Zyklus.
+
+## Pfadwahl: Normalpfad oder leichter Pfad
+
+**Leichter Pfad (Entscheid David 8.8.2026, Entstückelung):** für **sortenreine
+Nicht-Risiko-Fix-Batches** — typisch das checklisten-weise Abarbeiten eines
+Dach-Schritts (`W2·17`, `W2·18`), kein Risikopfad im Diff, keine neue
+Architektur. Verschlankt wird **nur Prozedur-Prosa**; die **Tore laufen in
+beiden Pfaden identisch** (Station C und Skill `landung` gelten unverändert,
+ebenso §14.7 und §18).
+
+- **Kurzer Einstieg:** `npm run plan:next` lesen (Kollisionen!), `plan:set …
+  status=wip` + `check:plan`, wip-Commit pushen, Branch `feat/<slug>` — fertig
+  (Grössen-Prosa und Spec-Slice entfallen: die Checklisten-Zeile ist die Spec).
+- **Kurzer Abschluss:** Status schliessen (Station D Schluss), **eine
+  Karten-Zeile** in `STRUKTUR.md` statt voller Session-Karte, `npm run
+  plan:bild`, Bau-Flächen abräumen. §17 bleibt bedingt: ist eine Lehre
+  aufgekommen, wird sie verankert; sonst entfällt der Posten. Die übrigen
+  Station-E-Posten entfallen.
+
+Alles andere — inkl. jeder Bau mit Risikopfad-Berührung — fährt den Normalpfad
+(Stationen A–E).
 
 ---
 
@@ -30,12 +54,12 @@ Landung, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem Zyklus.
    **STOPP, melden, nicht bauen.** Der Prompt ist eine Momentaufnahme, `plan:next`
    ist der Ist-Stand.
 3. **Grössen-Check** (die Session-Fixkosten — Startlektüre, `plan:next`,
-   Spec-Slice — müssen sich lohnen):
+   Spec-Slice — müssen sich lohnen): Ausgangspunkt ist die `Grösse:`-Angabe im
+   Bau-Prompt bzw. das `groesse:`-Feld im `@meta` (S/M/L, geschätzt); weicht
+   die eigene Einschätzung ab, gilt die eigene — dann die Schätzung im Plan per
+   `plan:set` korrigieren (Beobachtung zurückschreiben, damit die nächste
+   Session die bessere Zahl sieht).
    - **Zu klein** (reine Doku, Einzeiler, geschätzt < ~1 h Bau): die
-   Ausgangspunkt ist die `Grösse:`-Angabe im Bau-Prompt bzw. das `groesse:`-Feld
-   im `@meta` (S/M/L, geschätzt); weicht die eigene Einschätzung ab, gilt die
-   eigene — dann die Schätzung im Plan per `plan:set` korrigieren (Beobachtung
-   zurückschreiben, damit die nächste Session die bessere Zahl sieht).
      `ready-now`-Liste auf **1–2 bündelbare Nachbarn** prüfen — gleiche Fläche
      bzw. gleicher Fahrplan, **gleiche Risikoklasse**, laut Lanes kollisionsfrei
      — und mitbauen (je eigener Commit mit eigenem Trailer; Bündelungsregel
@@ -60,7 +84,9 @@ Landung, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem Zyklus.
 - **WIP-Commit nach jedem abgeschlossenen Teilschritt** (F5) — nie über längere
   Arbeit hinweg uncommittet bleiben.
 - **Nebenfunde gehen in den Plan**, nicht in diese Session und nicht in Chips:
-  ROADMAP-Schritt vorschlagen oder anlegen, weiterbauen.
+  Kleinbefund als Checklisten-Zeile in den passenden Dach-Schritt, sonst
+  ROADMAP-Schritt vorschlagen oder anlegen (Skill `auftrag`, Ziff. 3),
+  weiterbauen.
 
 ## Station C — Prüfung
 
@@ -73,17 +99,37 @@ Landung, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem Zyklus.
 
 ## Station D — Landung
 
-Skill **`landung`** Schritt für Schritt (serielle Landung, Merge-Treiber, CI-Grün
-verifizieren, manuell mergen). Danach — und das verlässt die Session nie offen:
+Skill **`landung`** Schritt für Schritt — er trägt die komplette Merge- UND
+Deploy-Disziplin (§12 + §9: Tore vor dem Merge, Bug-Check, serielle Landung,
+CI-Grün, Nachkontrolle) samt dem Schlusspunkt, der die Session nie offen
+verlässt: **Status schliessen** (`plan:set <id> status=done` bzw.
+`ready`/`parked`, `check:plan`, committen, pushen).
 
-**Status schliessen.** `npm run plan:set -- <id> status=done && npm run check:plan`,
-committen, pushen. Ein `wip`, das die Session überlebt, blockiert die nächste.
+## Station W — Weiterbau (Entscheid David 8.8.2026)
+
+«Automatisch weiterarbeiten, ohne dass ich es sagen muss»: Ist der Schritt
+gelandet und die Session noch tragfähig, **NICHT abschliessen**, sondern direkt
+weiterbauen. Reihenfolge:
+
+- **(a)** nächste offene Position derselben Dach-Checkliste;
+- **(b)** sonst oberster `ready`-Schritt **gleicher Risikoklasse** im selben
+  Wirkungsbereich (`npm run plan:next` + Kollisionsprüfung gegen fremde
+  wip/Worktrees);
+- **(c)** nichts Sinnvolles mehr ⇒ regulär abschliessen (Station E).
+
+Je Weiterbau gilt der volle Zyklus im Kleinen: `status=wip` setzen, volle
+Sorgfalt (Tore, ggf. Gegenprüfung), eigener Commit mit eigenem
+Roadmap-Trailer. **NIE sortenrein-widrig auf Risikopfade wechseln**, und
+Schluss **spätestens bevor der Kontext zur Neige geht** — lieber sauber landen
+als einen Schritt anreissen.
 
 ## Station E — Abschluss (Checkliste, keine Kür)
 
-- [ ] **Session-Karte in `STRUKTUR.md`** — kurz: was gebaut, was belegt, was offen.
-- [ ] `python3 .claude/hooks/struktur-rotieren.py --check` — bei Rot rotieren
-      (Skill `aufraeumen`).
+- [ ] **Session-Karte in `STRUKTUR.md`** — kurz: was gebaut, was belegt, was
+      offen (im leichten Pfad: eine Karten-Zeile).
+- [ ] `python3 .claude/hooks/struktur-rotieren.py --check` — bei Rot die
+      Steuer-Doku aufräumen: Prozedur in **[aufraeumen.md](aufraeumen.md)**
+      (Chronik-Überführung, Streich-Massstab, Fahrplan-Archivierung).
 - [ ] `npm run plan:bild` — Davids Dock-Datei auf frischem Stand.
 - [ ] **Bau-Flächen abräumen:** Worktree entfernen, Feature-Branch löschen
       (lokal + remote), `git worktree prune`, Scratch-Dateien weg.

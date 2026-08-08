@@ -116,7 +116,7 @@ Skill `auftrag`, Ziff. 4/5):
 - STRUKTUR.md-Session-Karte nachgezogen.
 - §14.5-Trailer am Commit: `Roadmap: <ID>` + auf dem Risiko-Pfad
   `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`.
-- Bei rotem Tor: kein Push, keine Übergabe an `deploy-check`.
+- Bei rotem Tor: kein Push, keine Übergabe an `landung`.
 
 **7 — §11 Wissensablage (Pflicht, `CLAUDE.md` §11).** Den produzierten Erlass in
 einer kurzen `bibliothek/`-Liste eintragen und in `bibliothek/INDEX.md`
@@ -217,5 +217,5 @@ für kantonale Erlasse analog, mit dem Abnahme-Status ehrlich auf «Erstrecherch
 Festhalten: SR-Nr + ELI + gepinnte Konsolidierung, die geänderten
 Editier-Stellen (`cache.sh`/`register.ts`), die durchlaufenen Tore mit Status, das
 Gegenprüfungs-Verdikt (Risiko-Pfad) und den §11-Ablage-Eintrag mit
-Abnahme-Status. Übergabe an `deploy-check` (Release) bzw. `abnahme` (fachliche
+Abnahme-Status. Übergabe an `landung` (Release) bzw. `abnahme` (fachliche
 Abnahme) — dieser Skill löst weder das eine noch das andere aus.
