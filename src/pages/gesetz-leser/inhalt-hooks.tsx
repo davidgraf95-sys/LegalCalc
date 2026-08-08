@@ -525,6 +525,13 @@ export function useLeserSprungSpy(opts: {
       // nicht, weil die neuen Zeilen INNERHALB des Sichtbands entstehen. Das ist
       // Davids Entscheid. Vollständige Messreihe im Commit-Body.
       //
+      // MESSBEDINGUNG MITSCHREIBEN, sonst misst man Zufall: derselbe Stand
+      // ergibt 2/20 rot direkt nach `npm run build` (kalter preview-Server) und
+      // 0/40 rot, wenn kurz zuvor die volle e2e-Suite lief (warm). Wer «grün»
+      // meldet, ohne die Bedingung zu nennen, meldet nichts — genau daran ist
+      // am 9.8.2026 schon eine Ursachen-Zuschreibung gescheitert (5/5 grün, das
+      // Glück war). Belastbar ist nur der KALTE Lauf.
+      //
       // F3 (RC2, Auftrag David 16.7. «Gliederung springt umher»): den (a)-Block
       // (Markierung + Auto-Akkordeon) TRAILING entprellen (~200 ms, analog aktArtikel/
       // tabArtikel oben). Der Timer verarbeitet stets das ZULETZT gemeldete `ids` (jeder
