@@ -112,7 +112,13 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
                     <span aria-hidden className="num text-xs text-brass-700 shrink-0">{u.sub}</span>
                     <h4 className="lc-overline text-brass-700">{u.titel}</h4>
                     <span className="text-ink-500 text-xs">· {u.items.length}</span>
-                    <span aria-hidden className="flex-1 h-px bg-line/70" />
+                    {/* DESIGN-D0 (Wurzel-Fix W2·11-DESIGN, hier symptomatisch
+                        gelöst, Fund Fahrplan B5): `bg-line/70` erzeugt keine
+                        CSS-Regel (Tailwind-Deckkraft-Suffix trägt nicht auf
+                        `--line`, bereits ein color-mix-Halbtransparenzwert).
+                        Auf das unsuffixierte `bg-line` angeglichen wie ~20
+                        gleichartige Trenner der App. */}
+                    <span aria-hidden className="flex-1 h-px bg-line" />
                   </div>
                 )}
                 <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>

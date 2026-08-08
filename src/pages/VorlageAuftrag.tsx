@@ -55,7 +55,9 @@ function MandatWahl({ wert, onWahl }: { wert: AfMandatstyp; onWahl: (v: AfMandat
           onClick={() => onWahl(m.id)}
           className={`rounded-lg border px-3 py-2 text-left text-body-s ${wert === m.id ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
           <span className="font-medium block">{m.label}</span>
-          <span className="text-ink-500 text-xs">{m.hint}</span>
+          {/* LM-176 (Fahrplan B5, §6): ink-500 auf gewählter bg-brass-100 lag
+              bei 4.37:1 (unter WCAG AA) — Muster wie VorlageNda.tsx. */}
+          <span className="text-ink-600 text-xs">{m.hint}</span>
         </button>
       ))}
     </div>

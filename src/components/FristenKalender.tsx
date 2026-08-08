@@ -181,7 +181,16 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                     const rundR = col === 6 || d.getDate() === anzahl || bandStatus(folgetag) !== band;
 
                     // Marker-Ebene: runde Schlüsseltage über dem Band
-                    let marker = frei ? 'text-ink-500' : 'text-ink-700'; // W3.6 (25.6.2026): frei-Tage ink-400→ink-500 für AA in beiden Modi (≥4.5:1); Sa/So zusätzlich über title+Legende
+                    // W3.6 (25.6.2026): frei-Tage ink-400→ink-500 für AA in beiden Modi (≥4.5:1)
+                    // gegen --paper — das gilt aber nur AUSSERHALB des Bandes. LM-175
+                    // (Fahrplan B5, §6): innerhalb der laufenden Frist liegt darunter
+                    // `bg-brass-100`, im Dunkelmodus #2C2616 (sehr dunkel) statt #F1E8D6
+                    // (hell) — ink-500 (#918D83) erreicht dort nur noch 4.54:1 (gemessen,
+                    // computed styles), technisch AA, aber am Rand und «kaum lesbar»
+                    // (Befund). ink-600 (#B2AEA4) hebt es auf 6.79:1, ohne die Sa/So-
+                    // Abschwächung ausserhalb des Bandes (der dokumentierte 25.6.-Entscheid)
+                    // anzutasten.
+                    let marker = frei ? (band === 'frist' ? 'text-ink-600' : 'text-ink-500') : 'text-ink-700';
                     let title = frei ? 'arbeitsfrei (Sa/So/Feiertag)' : '';
                     if (isAdQuem) { marker = 'bg-sage-500 text-paper font-semibold rounded-full lc-termin-ring'; title = L.adquem; }
                     else if (isAQuo) { marker = 'bg-brass-500 text-ink-900 font-semibold rounded-full'; title = L.aquo; }

@@ -41,12 +41,24 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
             <button type="button" onClick={() => set('gegenseitig', true)}
               className={`rounded-lg border px-3 py-2 text-left text-body-s ${a.gegenseitig ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
               <span className="font-medium block">Gegenseitig</span>
-              <span className="text-ink-500 text-xs">beide Parteien verpflichtet</span>
+              {/* LM-176 (Fahrplan B5, §6): text-ink-500 auf getönter bg-brass-100
+                  (gewählter Zustand) lag bei 4.37:1 — knapp unter WCAG AA
+                  (gemessen, computed styles). ink-600 hebt auf 6.3:1, ohne
+                  den Präzedenzfall (Auftrag David 25.6.2026, .lc-fineprint
+                  ink-500→ink-600) zu verlassen; im unmarkierten (weissen)
+                  Zustand bleibt der Kontrast ebenfalls unverändert gut. */}
+              <span className="text-ink-600 text-xs">beide Parteien verpflichtet</span>
             </button>
             <button type="button" onClick={() => set('gegenseitig', false)}
               className={`rounded-lg border px-3 py-2 text-left text-body-s ${!a.gegenseitig ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
               <span className="font-medium block">Einseitig</span>
-              <span className="text-ink-500 text-xs">nur Partei B verpflichtet</span>
+              {/* LM-176 (Fahrplan B5, §6): text-ink-500 auf getönter bg-brass-100
+                  (gewählter Zustand) lag bei 4.37:1 — knapp unter WCAG AA
+                  (gemessen, computed styles). ink-600 hebt auf 6.3:1, ohne
+                  den Präzedenzfall (Auftrag David 25.6.2026, .lc-fineprint
+                  ink-500→ink-600) zu verlassen; im unmarkierten (weissen)
+                  Zustand bleibt der Kontrast ebenfalls unverändert gut. */}
+              <span className="text-ink-600 text-xs">nur Partei B verpflichtet</span>
             </button>
           </div>
         </Field>
