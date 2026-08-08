@@ -1,6 +1,6 @@
 ---
 name: bauschritt
-description: Verwenden, wenn ein Lagebild-Bau-Prompt eingefügt wird oder ein einzelner Roadmap-Schritt gebaut werden soll — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», ein eingefügter Bau-Auftrag aus plan-bild.html. Kodifiziert den kompletten Session-Zyklus Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss (inkl. leichtem Pfad für sortenreine Nicht-Risiko-Fix-Batches) sowie — als Referenzdatei aufraeumen.md — das Aufräumen der Steuer-Doku («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «Chronik-Überführung», «Fahrplan archivieren»); der frühere Skill aufraeumen ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
+description: Verwenden, wenn ein Lagebild-Bau-Prompt eingefügt wird oder ein einzelner Roadmap-Schritt gebaut werden soll — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», ein eingefügter Bau-Auftrag aus plan-bild.html. Kodifiziert den kompletten Session-Zyklus Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss (inkl. leichtem Pfad für sortenreine Nicht-Risiko-Fix-Batches) sowie — als Referenzdatei aufraeumen.md — das Aufräumen der Steuer-Doku («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken»); der frühere Skill aufraeumen ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
 ---
 
 # Bauschritt — der Standard-Lebenszyklus einer Bau-Session
@@ -29,14 +29,19 @@ Architektur. Verschlankt wird **nur Prozedur-Prosa**; die **Tore laufen in
 beiden Pfaden identisch** (Station C und Skill `landung` gelten unverändert,
 ebenso §14.7 und §18).
 
-- **Kurzer Einstieg:** `npm run plan:next` lesen (Kollisionen!), `plan:set …
-  status=wip` + `check:plan`, wip-Commit pushen, Branch `feat/<slug>` — fertig
-  (Grössen-Prosa und Spec-Slice entfallen: die Checklisten-Zeile ist die Spec).
+- **Kurzer Einstieg:** `npm run plan:next` lesen (Kollisionen!) — die
+  STOPP-Regel aus Station A Ziff. 2 gilt unverändert (ID nicht in `ready-now`
+  ⇒ melden, nicht bauen) —, dann `plan:set … status=wip` + `check:plan`,
+  wip-Commit pushen, Branch `feat/<slug>` — fertig (nur Grössen-Prosa und
+  Spec-Slice entfallen: die Checklisten-Zeile ist die Spec).
 - **Kurzer Abschluss:** Status schliessen (Station D Schluss), **eine
-  Karten-Zeile** in `STRUKTUR.md` statt voller Session-Karte, `npm run
-  plan:bild`, Bau-Flächen abräumen. §17 bleibt bedingt: ist eine Lehre
-  aufgekommen, wird sie verankert; sonst entfällt der Posten. Die übrigen
-  Station-E-Posten entfallen.
+  Karten-Zeile** in `STRUKTUR.md` statt voller Session-Karte,
+  `python3 .claude/hooks/struktur-rotieren.py --check` (exit-1-fähig — Tore
+  bleiben identisch), `npm run plan:bild`, Bau-Flächen abräumen, kurzer
+  Klartext-Schluss an David. §17 bleibt bedingt: ist eine Lehre aufgekommen,
+  wird sie verankert; sonst entfällt der Posten. Ausdrücklich entfallen nur
+  die Prosa-Posten: volle Session-Karte, Memory-Hygiene-Durchsicht,
+  ausführlicher Schlusssatz.
 
 Alles andere — inkl. jeder Bau mit Risikopfad-Berührung — fährt den Normalpfad
 (Stationen A–E).

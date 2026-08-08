@@ -60,8 +60,10 @@ Einmal pro Clone/Worktree: `npm install` lief (setzt via `prepare` →
 (keine Pipes — der PreToolUse-Hook blockiert sie ohnehin), volle Ausgabe
 lesen, Exit-Code prüfen. Dann:
 
-1. `git status` — fremden WIP einer Parallel-Session identifizieren; es gelten
-   die §12-Regeln oben (Pathspec, kein stash, kein amend).
+1. `git status` — fremden WIP einer Parallel-Session identifizieren.
+   Eigene Commits IMMER mit explizitem Pathspec:
+   `git commit -m "…" -- <dateien>`. Im Landungs-Kontext gilt verschärft und
+   ohne Bedingung: NIE `git stash`, NIE `--amend` (§12.2 ist das Minimum).
 2. Review-Schrott räumen: `find src -name '__*'` muss leer sein
    (Repro-Dateien von Review-Agents brechen Suite/Lint).
 3. Untracked Ballast im Root prüfen (PDFs, Bücher) — darf nie **committet**
@@ -207,6 +209,8 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    Push mit ab. **Der Live-Gang-Entscheid ist die Freigabe zum Merge nach
    `main`** — Vercel baut und liefert den gemergten Commit automatisch aus.
 
+   Falls noch kein PR existiert: `gh pr create …` (der Branch ist durch den
+   Früh-Push aus Station A des Skills `bauschritt` bereits auf origin).
    Merge manuell: `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange die
    Required Checks nicht neu gesetzt sind (David-Handschritt offen). Wo
    `--auto` grundsätzlich zulässig ist (Daueranweisung 30.6.), gilt:

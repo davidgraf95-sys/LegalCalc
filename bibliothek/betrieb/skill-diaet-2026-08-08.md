@@ -27,16 +27,24 @@ nie als Prosa.**
 ## Neu kodifiziert (Zuwachs, kein Umzug)
 
 - **Leichter Pfad** (`bauschritt` ▶ Pfadwahl): sortenreine
-  Nicht-Risiko-Fix-Batches fahren kurzen Einstieg (plan-Stand + wip + Branch)
-  und kurzen Abschluss (eine Karten-Zeile, plan:bild, Flächen abräumen);
-  **Tore identisch in beiden Pfaden**, verschlankt wird nur Prozedur-Prosa.
+  Nicht-Risiko-Fix-Batches fahren kurzen Einstieg (plan-Stand inkl.
+  ready-now-STOPP-Regel + wip + Branch) und kurzen Abschluss (Karten-Zeile,
+  Rotations-Check, plan:bild, Flächen abräumen, kurzer Klartext-Schluss);
+  **Tore identisch in beiden Pfaden** — auch `struktur-rotieren.py --check`
+  bleibt (Gegenprüfungs-Befunde 3/4). Ausdrücklich entfallen NUR Prosa-Posten:
+  Grössen-Prosa, Spec-Slice (Checklisten-Zeile ist die Spec), volle
+  Session-Karte, Memory-Hygiene-Durchsicht, ausführlicher Schlusssatz;
+  §17 bleibt bedingt (Lehre aufgekommen ⇒ verankern).
 - **Weiterbau-Regel** (`bauschritt` ▶ Station W): (a) selbe Dach-Checkliste ·
   (b) oberster ready-Schritt gleicher Risikoklasse im selben Wirkungsbereich ·
   (c) Abschluss; je Weiterbau wip + volle Sorgfalt + eigener Trailer, Schluss
   bevor der Kontext zur Neige geht. Der generierte Bau-Prompt trug die Regel
   interimistisch als Ziff. 7 (`scripts/plan/bildSeiten.ts`); mit dieser
   Landung ist die Interims-Klausel dort entfernt — der Skill ist die eine
-  Quelle (§5).
+  Quelle (§5). **Tor statt Prosa-Vertrauen** (Gegenprüfungs-Befund 7): ein
+  Test in `src/tests/plan-bild-lage.test.ts` prüft positiv, dass Station W
+  alle Regel-Elemente trägt — die Prompt-Streichung kann nicht mehr still
+  zum Regelverlust werden.
 
 ## Zeilen-Konkordanz (Löschkriterium je Zeile)
 
@@ -52,12 +60,12 @@ Aufgeführte ist 1:1 verschoben.
 | Frontmatter/Trigger | in `landung`-description fusioniert |
 | Kopf «Dieser Skill IST §9» + Altstand-Warnung | verschoben (jetzt «§12 UND §9», Altstand-Warnung um deploy-check-Erinnerung erweitert) |
 | Kernmodell Weg 1 | verschoben (Kopf) |
-| 0.1 `git status`/Pathspec/kein stash/kein amend | **dedupliziert:** wortgleiche Regeln stehen in §12.2 desselben Zieltexts; Vorbedingung 1 verweist darauf |
+| 0.1 `git status`/Pathspec/kein stash/kein amend | verschoben (Vorbedingung 1) — nach Gegenprüfungs-Befund 2 wieder **unbedingt** formuliert («NIE stash, NIE amend»), §12.2 (bedingte Fassung) ist das Minimum |
 | 0.2 Review-Schrott · 0.3 untracked Ballast | verschoben (Vorbedingungen 2–3) |
 | 1 Tore-Batterie samt vier Anmerkungen | verschoben (Abschnitt 1) — Lighthouse-Verweis «Schritt 4 Punkt 4» redaktionell auf «Nachkontrolle Punkt 4» angepasst |
 | 2 Bug-Check §9 | verschoben (Abschnitt 2) |
 | 3 Push-Freigabe, Live-Gang-Entscheid, --auto-Zünder, rote-PR-Verbot, main-Direktpush, Doppel-Deploy-Verbot, bewusste Grenze | verschoben (Schritt 7 der seriellen Landung) |
-| 3 Befehlsblock «gh pr merge --auto --merge (Daueranweisung 30.6.)» | **abgelöst/versöhnt:** stand im dokumentierten Widerspruch zu landung-alt Schritt 7 «KEIN --auto, solange Required Checks nicht neu gesetzt» (Reglement-Audit 7.8.2026, Befund «Altstände»). Zieltext trägt beide Regeln mit Vorrang: manuell mergen, solange der David-Handschritt offen ist; wo --auto zulässig ist, gilt die Zünder-Regel unverändert |
+| 3 Befehlsblock «gh pr merge --auto --merge (Daueranweisung 30.6.)» | **abgelöst/versöhnt:** stand im dokumentierten Widerspruch zu landung-alt Schritt 7 «KEIN --auto, solange Required Checks nicht neu gesetzt» (Reglement-Audit 7.8.2026, Befund «Altstände»). Zieltext trägt beide Regeln mit Vorrang: manuell mergen, solange der David-Handschritt offen ist; wo --auto zulässig ist, gilt die Zünder-Regel unverändert. `gh pr create` (Gegenprüfungs-Befund 1) verschoben in Schritt 7 |
 | Risiko-Pfad-Sperre + dreifache Rückendeckung + Vorfall #309 | verschoben (eigener Abschnitt); #309-Erzählung **dedupliziert** (stand doppelt: hier + landung-alt 6b) |
 | Ausnahme manueller Deploy | verschoben |
 | Rationalisierungen-Tabelle (8 Zeilen) | verschoben; +1 neue Zeile (deploy-check-Erinnerung = Altstand) |
@@ -79,7 +87,7 @@ Aufgeführte ist 1:1 verschoben.
 
 | Quelle | Verbleib |
 |---|---|
-| Frontmatter/Trigger | in `bauschritt`-description fusioniert; Lade-Anlass zusätzlich im Datei-Kopf |
+| Frontmatter/Trigger | in `bauschritt`-description fusioniert — nach Gegenprüfungs-Befund 5 vollständig, inkl. «ROADMAP zu gross» und «Steuer-Doku verschlanken»; Lade-Anlass zusätzlich im Datei-Kopf |
 | Kopf, Abschnitte 1–5, Nachbar-Skills, Wann NICHT | verschoben, wörtlich; nur redaktionell: «dieser Skill» → «diese Datei», Abschnittstitel «Nachbar-Skills» → «Nachbar-Instrumente» |
 
 ### `bauschritt/SKILL.md` alt (111 Z.) → neu
@@ -108,5 +116,8 @@ beschreiben vergangene Stände; ein Treffer dort ist ein archivierter Verweis,
 kein lebender (Analogie: Chronik-Regel in `bauschritt/aufraeumen.md` §4).
 
 **Pflegebedarf:** keiner — die zwei Zieltexte sind die alleinige Quelle.
-**Abnahme-Status:** einfach belegt (adversariale Gegenprüfung «kein
-Regelverlust» in derselben Session, Verdikt im PR).
+**Abnahme-Status:** einfach belegt — adversariale Gegenprüfung «kein
+Regelverlust» (Opus, high, read-only) in derselben Session: Verdikt
+**bestanden unter vier Auflagen**; alle sieben Befunde (4 Auflagen + 3
+Kleinfunde) noch in der Session umgesetzt (dieser Stand). Toter
+STRUKTUR-Zeiger auf Skill `aufraeumen` geheilt (Befund 6).

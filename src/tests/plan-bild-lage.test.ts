@@ -18,6 +18,7 @@ import {
   type WasPassiert,
 } from '../../scripts/plan/bildHtml';
 import { bauPrompt, methodeSeite } from '../../scripts/plan/bildSeiten';
+import { readFileSync } from 'node:fs';
 import type { Laufe } from '../../scripts/plan/lage';
 
 /** Runner-Attrappe: liefert je Kommando einen festen Text oder wirft. */
@@ -447,6 +448,16 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
     const p = bauPrompt(einheit(), SCHRITT);
     expect(p).not.toContain('WEITERBAU');
     expect(p).toContain('Nutze den Skill `bauschritt`');
+  });
+
+  it('Tor: Station W im Skill bauschritt trägt die Weiterbau-Regel vollständig — sonst wäre die Prompt-Streichung ein Regelverlust', () => {
+    const skill = readFileSync(new URL('../../.claude/skills/bauschritt/SKILL.md', import.meta.url), 'utf8');
+    expect(skill).toContain('Station W — Weiterbau');
+    expect(skill).toContain('nächste offene Position derselben Dach-Checkliste');
+    expect(skill).toContain('gleicher Risikoklasse');
+    expect(skill).toContain('Roadmap-Trailer');
+    expect(skill).toContain('NIE sortenrein-widrig auf Risikopfade wechseln');
+    expect(skill).toContain('bevor der Kontext zur Neige geht');
   });
 });
 
