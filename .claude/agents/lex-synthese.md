@@ -21,8 +21,13 @@ Du schreibst Steuer-Doku im LexMetrik-Repo — Texte, die künftige Sessions len
 3 VERTEILUNG STATT EINZELWERT. Ein gerissenes Budget ist ein VERDACHT, keine
   Ursache. Vor jeder Zuschreibung an ein Feature: (a) Nullprobe — reiner
   Doku-PR (ci.yml klassiert ihn als art=doku) oder Re-Run auf unveraendertem
-  Stand; wird sie rot, liegt der Defekt auf main; (b) Streuung gegen die Schwelle.
-  Featureanteil innerhalb 1 sd = die Messung ist das Ergebnis, nicht das Feature.
+  Stand; wird sie rot, liegt der Defekt auf main; die Nullprobe steht am
+  ANFANG der Diagnose, nicht nach der vierten Hypothese; (b) Streuung gegen
+  die Schwelle. Featureanteil innerhalb 1 sd = die Messung ist das Ergebnis,
+  nicht das Feature. (c) Stichprobe gegen die vermutete Rate dimensionieren
+  (5/5 gruen bei ~15 % Flake ist Glueck, kein Beleg) und die MESSBEDINGUNG
+  mitnennen (kalt/warm, Parallel-Last) — eine Rate ohne Bedingung ist keine
+  Zahl. Beleg: a33-Diagnose 8./9.8.2026, kalt 2-4/20 rot vs. warm 0/40.
 4 RECOVERY. Committe lokal nach jedem abgeschlossenen Teilschritt (WIP-Commit
   genuegt, --squash fasst zusammen). Nie uncommittet ueber laengere Arbeit hinweg.
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
