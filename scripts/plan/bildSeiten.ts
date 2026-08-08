@@ -297,10 +297,18 @@ export function lagebildSeite(o: SeitenOpts): string {
     return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${chkText}${knopf}${fpName ? `<br><span class="sub">Baustelle: ${esc(fpName)}</span>` : ''}</div></li>`;
   };
   const statusRang = (e: Einheit) => (e.etikett.status === 'wip' ? 0 : baubar.has(e.id) ? 1 : e.etikett.status === 'parked' ? 2 : e.etikett.status === 'blocked' ? 3 : 2);
+  // Innerhalb eines Bereichs zählt die QUEUE-Reihenfolge (readyNow-Rang), nicht
+  // die Dokument-Reihenfolge — sonst nennt eine Bereichs-Karte einen anderen
+  // «Nächsten Schritt» als die Empfehlung oben (zwei Wahrheiten, §5; Befund
+  // David 8.8.2026: KI-Karte bot den S-Schritt QS-TOK-DECKEL an, obwohl
+  // QS-SKILL-DIAET Queue-Spitze war).
+  const rangReady = new Map(b.readyNow.map((id, i) => [id, i]));
   const karten = [...WIRKUNGSBEREICHE, UEBRIGE_TECHNIK, OHNE_FLAECHE]
     .filter((bz) => nachBereich.has(bz))
     .map((bz) => {
-      const es = [...nachBereich.get(bz)!].sort((a, b2) => statusRang(a) - statusRang(b2));
+      const es = [...nachBereich.get(bz)!].sort(
+        (a, b2) => statusRang(a) - statusRang(b2) || (rangReady.get(a.id) ?? Infinity) - (rangReady.get(b2.id) ?? Infinity),
+      );
       const wip = es.filter((e) => e.etikett.status === 'wip').length;
       const sofort = es.filter((e) => baubar.has(e.id)).length;
       const blockiert = es.filter((e) => e.etikett.status === 'blocked').length;
