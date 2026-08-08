@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams, useLocation, Link } from 'react-router-dom';
+import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
+import { dedupErlasse } from '../lib/universalSuche';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { InternationalRubriken } from '../components/normtext/InternationalRubriken';
 import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
@@ -150,10 +152,11 @@ export function Gesetze() {
   const [erlasse, setErlasse] = useState<BrowseErlass[] | null>(null);
   const [systematik, setSystematik] = useState<Record<string, KantonSystematikBaum>>({});
   const [fehler, setFehler] = useState(false);
-  // ?q= (z.B. aus der Startseiten-Rubrik «Gesetze», #6) füllt die Suche vor —
-  // SSR-sicher als Lazy-Init (Prerender hat keine Query → leer).
-  const [suche, setSuche] = useState(() =>
-    typeof window === 'undefined' ? '' : new URLSearchParams(window.location.search).get('q') ?? '');
+  // ?q= (Startseiten-Rubrik «Gesetze» #6, «alle N →» aus der Universal-Suche
+  // UI-NAV S1) füllt die Suche vor. Über useSucheAusUrl statt Lazy-Init: der
+  // Lazy-Init griff nur beim MOUNT — stand man bereits auf /gesetze, kam die
+  // Query des Header-Sprungs nie im Feld an (SPA-Navigation ohne Remount).
+  const [suche, setSuche] = useSucheAusUrl();
   // IA-4 (§11.5, verallgemeinert N6): der Filter-Scope folgt der aktiven Ebene
   // (Säule bzw. gewählter Kanton — auf der BS-Seite erwartet man BS-Treffer,
   // nicht Bund + alle 25 anderen Kantone). Der Chip «auf alle Ebenen erweitern»
@@ -388,7 +391,14 @@ export function Gesetze() {
           {suche.trim() && (() => {
             const aufKanton = filterScope.art === 'kanton';
             const basis = scopeBasis(erlasse, filterScope);
-            const treffer = filtern(basis, suche);
+            // §8-Zählparität mit der Universal-Suche (Gegenprüfungs-Befund
+            // 7.8.2026): das Header-Dropdown kollabiert die Gemeinde-Doppel
+            // (Riehen/Bettingen führen denselben BS-Erlass unter eigenem Präfix)
+            // über dedupErlasse, diese Seite tat es nicht — «alle 73 →» landete
+            // auf «74 Treffer», q=«zivil» 30 gegen 31. Zwei Zahlen für dieselbe
+            // Menge sind ein §8-Verstoss; dedupliziert ist die ehrliche, weil ein
+            // Doppel kein zweiter Erlass ist. EINE Funktion für beide Wege (§5).
+            const treffer = dedupErlasse(filtern(basis, suche));
             const bund = treffer.filter((e) => e.ebene === 'bund' && !istIntl(e));
             const kant = treffer.filter((e) => e.ebene === 'kanton');
             const intl = treffer.filter(istIntl);

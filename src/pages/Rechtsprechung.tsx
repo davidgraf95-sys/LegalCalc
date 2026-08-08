@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
@@ -15,10 +15,14 @@ import {
 import {
   achsenDiff, leseFilterAusUrl, lokaleWerte, wendeAchsenAn,
   leseDichte, schreibeDichte, leseSort, schreibeSort, leseKlappe, schreibeKlappe,
+  leseFenster, schreibeFenster, zaehleAktiveFilter, type Fenster,
   type Dichte, type UrlAchse,
 } from '../components/rechtsprechung/zustand';
+import { zaehleBaender, istChronologisch, type BandGruppe } from '../components/rechtsprechung/baender';
+import { FilterSheet } from '../components/rechtsprechung/FilterSheet';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
+import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 
 // Übersicht der Rubrik «Rechtsprechung» — kuratierter Einstieg (Sachgebiets-Rail,
 // Leitentscheide-first, Norm-Verzahnung), bessere Übersicht als eine flache
@@ -39,17 +43,120 @@ import type { Rechtsgebiet } from '../lib/normtext/register';
 // Normtext (§15.1 unberührt); jeder Entscheid bleibt als Datei vollständig.
 const LISTE_DECKEL = 100;
 
+// Harte Obergrenze der GERENDERTEN Zeilen je Liste (Gegenprüfungs-Befund B2).
+// Sie begrenzt, was ein wiederhergestelltes Fenster aufziehen darf; im Betrieb
+// wächst das Fenster ohnehin nur batchweise auf Klick. 20 Batches sind weit
+// jenseits dessen, was jemand durchblättert, und halten das DOM trotzdem in der
+// Grössenordnung, in der axe und die Scroll-Restauration gemessen wurden.
+const FENSTER_MAX = LISTE_DECKEL * 20;
+
 // Eine Treffer-Liste je Dichte rendern (geteilte Datenquelle, nur Darstellung).
-function Liste({ liste, dichte, onNorm }: { liste: BrowseEntscheid[]; dichte: Dichte; onNorm: (k: string) => void }) {
-  const [max, setMax] = useState(LISTE_DECKEL);
-  // Bei neuer Datenbasis (Filterwechsel) auf den Deckel zurücksetzen — offizielles
+//
+// `speicherKey` identifiziert DIESE Liste innerhalb der Seite (jede Sektion hat
+// ihr eigenes Fenster). `mitSprungleiste` schaltet die Band-/Jahr-Leiste zu —
+// nur der EINE Strom bekommt sie, nicht die Sektions-Ansicht (dort ordnet
+// bereits die Sektion, und dieselbe Jahreszahl käme je Sektion erneut vor).
+function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
+  liste: BrowseEntscheid[]; dichte: Dichte; onNorm: (k: string) => void;
+  speicherKey: string; mitSprungleiste?: boolean;
+}) {
+  // Fenster aus der Sitzung wiederherstellen — LAZY, also schon im ersten Render
+  // (J1-Prüfpunkt: nach «zurück» muss das Dokument sofort wieder so hoch sein,
+  // sonst greift die zentrale Scroll-Wiederherstellung in App.tsx ins Leere).
+  const [fenster, setFenster] = useState<Fenster>(
+    () => leseFenster(speicherKey, LISTE_DECKEL, FENSTER_MAX));
+  // Bei neuer Datenbasis (Filterwechsel) auf den Anfang zurücksetzen — offizielles
   // «adjust state during render»-Muster (kein Effekt-Flackern, kein Ref im Render).
+  // Beim MOUNT greift das nicht (gleiche Referenz) — der wiederhergestellte Wert
+  // überlebt die Rückkehr also, ein Filterwechsel setzt ihn zurück.
   const [vorherListe, setVorherListe] = useState(liste);
-  if (vorherListe !== liste) { setVorherListe(liste); setMax(LISTE_DECKEL); }
-  const sichtbar = liste.length > max ? liste.slice(0, max) : liste;
-  const mehr = liste.length - sichtbar.length;
+  if (vorherListe !== liste) { setVorherListe(liste); setFenster({ von: 0, bis: LISTE_DECKEL }); }
+  const behalteFenster = (f: Fenster) => { setFenster(f); schreibeFenster(speicherKey, f); };
+
+  const behaelterRef = useRef<HTMLDivElement>(null);
+  // Sprungziel als Index in `liste`; wird erst NACH dem Render aufgelöst, damit
+  // der Eintrag garantiert im DOM steht (er kann ausserhalb des alten Fensters
+  // liegen). Das Ziel selbst liegt in einer REF, nicht im State: es wird im
+  // Effekt verbraucht, und ein setState dort löste eine Kaskaden-Renderung aus
+  // (react-hooks/set-state-in-effect). Der Zähler ist die Auslöse-Flanke und
+  // wird ausschliesslich im Klick-Handler gesetzt. Kein React Compiler (§15.4).
+  const sprungRef = useRef<number | null>(null);
+  const [sprungTick, setSprungTick] = useState(0);
+
+  const von = Math.min(fenster.von, Math.max(0, liste.length - 1));
+  const bis = Math.min(fenster.bis, liste.length);
+  const sichtbar = liste.slice(von, bis);
+  const mehr = liste.length - bis;      // noch ungerendert UNTERHALB des Fensters
+  const frueher = von;                  // noch ungerendert OBERHALB des Fensters
+
+  // Gruppen über die GANZE Liste (nicht nur den sichtbaren Teil): die Leiste soll
+  // auch auf Jahre zeigen, die noch nicht geladen sind — der Sprung lädt nach.
+  const gruppen = useMemo(
+    () => (mitSprungleiste ? zaehleBaender(liste) : []), [mitSprungleiste, liste]);
+  const leisteZeigen = gruppen.length > 1 && istChronologisch(gruppen);
+
+  // Nach dem Klick: erst das Fenster verschieben (Render), dann scrollen. Der
+  // Effekt läuft nach dem Commit, der Eintrag existiert dann im DOM.
+  useEffect(() => {
+    const ziel = sprungRef.current;
+    if (ziel === null) return;
+    if (ziel < von || ziel >= bis) return;   // wartet auf den Render mit neuem Fenster
+    sprungRef.current = null;                // Ref-Schreiben im Effekt, kein setState
+    // Der Behälter rendert erst ab `von` — der DOM-Index ist entsprechend versetzt.
+    const el = behaelterRef.current?.children[ziel - von] as HTMLElement | undefined;
+    el?.scrollIntoView({ block: 'start', behavior: 'instant' as ScrollBehavior });
+  }, [sprungTick, von, bis]);
+
+  const springe = (g: BandGruppe) => {
+    // Das Fenster SPRINGT MIT, statt von 0 bis zum Ziel aufzuwachsen: es beginnt
+    // an der Batch-Grenze vor dem Ziel und ist genau eine Batch-Breite hoch.
+    // Damit rendert ein Sprung auf den ältesten Jahrgang gleich viele Zeilen wie
+    // einer auf den jüngsten — unabhängig von der Länge der Liste (B2).
+    sprungRef.current = g.ersterIndex;
+    const neuVon = Math.floor(g.ersterIndex / LISTE_DECKEL) * LISTE_DECKEL;
+    if (g.ersterIndex < von || g.ersterIndex >= bis) {
+      behalteFenster({ von: neuVon, bis: neuVon + LISTE_DECKEL });
+    }
+    setSprungTick((t) => t + 1);
+  };
+
+  const sprungleiste = leisteZeigen && (
+    // Juristen denken in Bänden: die Leiste führt direkt auf den Jahrgang, statt
+    // ihn über wiederholtes «Weitere anzeigen» zu erscrollen (J1).
+    <nav aria-label="Nach Jahrgang springen"
+      className="lc-chip-zeile mb-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span aria-hidden className="lc-overline shrink-0">Jahrgang</span>
+      {gruppen.map((g) => (
+        <button key={g.jahr} type="button" onClick={() => springe(g)}
+          aria-label={`Zu Jahrgang ${g.label} springen (${g.count})`}
+          className="lc-chip hover:border-brass-400 hover:text-brass-700">
+          {g.label}{' '}<span className="num ml-1.5 text-ink-600">{g.count}</span>
+        </button>
+      ))}
+    </nav>
+  );
+
+  // Anker nach OBEN — nötig, seit das Fenster mitspringt: sonst wäre der Teil
+  // der Liste über dem Fenster nur über die Sprungleiste erreichbar, und in der
+  // Sektions-Ansicht (ohne Leiste) gar nicht. Zeigt ehrlich, wie viele Einträge
+  // oberhalb stehen (§8 — kein stiller Listenanfang mitten im Bestand).
+  const frueherKnopf = frueher > 0 && (
+    <button type="button"
+      onClick={() => behalteFenster({ von: Math.max(0, von - LISTE_DECKEL), bis })}
+      className="lc-chip mx-auto mb-3 block hover:border-brass-400 hover:text-brass-700">
+      Frühere anzeigen (<span className="num">{frueher}</span> darüber)
+    </button>
+  );
+
   const mehrKnopf = mehr > 0 && (
-    <button type="button" onClick={() => setMax((m) => m + LISTE_DECKEL)}
+    <button type="button"
+      // Wächst das Fenster über die harte Grenze, rückt die Oberkante mit —
+      // das DOM bleibt gedeckelt, und «Frühere anzeigen» führt zurück.
+      onClick={() => {
+        const neuBis = bis + LISTE_DECKEL;
+        const neuVon = Math.max(von, neuBis - FENSTER_MAX);
+        behalteFenster({ von: neuVon, bis: neuBis });
+      }}
       className="lc-chip mx-auto mt-3 block hover:border-brass-400 hover:text-brass-700">
       Weitere anzeigen (<span className="num">{mehr}</span> weitere)
     </button>
@@ -57,7 +164,9 @@ function Liste({ liste, dichte, onNorm }: { liste: BrowseEntscheid[]; dichte: Di
   if (dichte === 'karten') {
     return (
       <div>
-        <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+        {sprungleiste}
+        {frueherKnopf}
+        <div ref={behaelterRef} className="grid grid-cols-1 gap-3 xl:grid-cols-2">
           {sichtbar.map((e) => <EntscheidKarte key={e.key} e={e} onNorm={onNorm} />)}
         </div>
         {mehrKnopf}
@@ -66,7 +175,9 @@ function Liste({ liste, dichte, onNorm }: { liste: BrowseEntscheid[]; dichte: Di
   }
   return (
     <div>
-      <div className="lc-panel divide-y divide-line overflow-hidden">
+      {sprungleiste}
+      {frueherKnopf}
+      <div ref={behaelterRef} className="lc-panel divide-y divide-line overflow-hidden">
         {sichtbar.map((e) => <EntscheidZeile key={e.key} e={e} onNorm={onNorm} />)}
       </div>
       {mehrKnopf}
@@ -74,8 +185,9 @@ function Liste({ liste, dichte, onNorm }: { liste: BrowseEntscheid[]; dichte: Di
   );
 }
 
-function Sektion({ titel, liste, dichte, onNorm }: {
+function Sektion({ titel, liste, dichte, onNorm, speicherKey }: {
   titel: string; liste: BrowseEntscheid[]; dichte: Dichte; onNorm: (k: string) => void;
+  speicherKey: string;
 }) {
   if (!liste.length) return null;
   return (
@@ -84,7 +196,7 @@ function Sektion({ titel, liste, dichte, onNorm }: {
         {titel}<span className="num text-ink-500">{liste.length}</span>
         <span aria-hidden className="h-px flex-1 bg-line" />
       </h2>
-      <Liste liste={liste} dichte={dichte} onNorm={onNorm} />
+      <Liste liste={liste} dichte={dichte} onNorm={onNorm} speicherKey={speicherKey} />
     </section>
   );
 }
@@ -100,8 +212,13 @@ export function Rechtsprechung() {
   const [richterRegister, setRichterRegister] = useState<RichterRegister | null>(null);
   const [fehler, setFehler] = useState(false);
   const [params, setParams] = useSearchParams();
-  // Nur der Suchbegriff bleibt lokal (S1 baut ihn eigens, entprellt) — alle
-  // übrigen Filter stehen in der URL, s. zustand.ts.
+  // Der Suchbegriff steht seit UI-NAV S1 EBENFALLS in der Adresse (`?q=`), aber
+  // über einen eigenen, ENTPRELLTEN Weg: ein Facetten-Klick ist ein Ereignis, ein
+  // getippter Begriff sind zehn — jede Taste sofort in die URL zu schreiben wäre
+  // ein anderes Problem als der Klick (s. zustand.ts). Darum bleibt `q` aus
+  // URL_ACHSEN/`achsenDiff` heraus und läuft über useSucheAusUrl.
+  const [suchQ, setSuchQ] = useSucheAusUrl({ spiegeln: true });
+  // Der übrige lokale Rest (heute leer — alle anderen Filter liegen in der URL).
   const [rest, setRest] = useState<EntscheidFilterWerte>({});
   const [sort, setSortState] = useState<SortModus>(leseSort);
   const [dichte, setDichte] = useState<Dichte>(leseDichte);
@@ -116,8 +233,11 @@ export function Rechtsprechung() {
   // Immer GEMEINSAM schreiben: zwei getrennte Schreibvorgänge im selben Handler
   // bauen beide auf demselben — im laufenden Render bereits veralteten — `params`
   // auf (Begründung und Fundstelle in zustand.ts/wendeAchsenAn).
+  // Funktionale Form: baut auf dem AKTUELLEN Stand der Adresse auf. Seit S1
+  // schreibt auch die entprellte `?q=`-Spiegelung — ein Facetten-Klick, der auf
+  // dem beim Render eingefangenen `params` aufbaut, nähme sie sonst zurück.
   const setzeUrlAchsen = (achsen: Partial<Record<UrlAchse, string | null>>) => {
-    setParams(wendeAchsenAn(params, achsen), { replace: true });
+    setParams((vorher) => wendeAchsenAn(vorher, achsen), { replace: true });
   };
   const setzeUrl = (schluessel: UrlAchse, wert: string | null) => setzeUrlAchsen({ [schluessel]: wert });
   // Darstellungs-Zustände: State + localStorage im Gleichschritt (drei gleiche
@@ -138,9 +258,11 @@ export function Rechtsprechung() {
     return () => { lebt = false; };
   }, []);
 
-  // URL-Achsen + lokaler Rest (Suchbegriff) zusammenführen.
+  // URL-Achsen + lokaler Rest + Suchbegriff zusammenführen. `q` zuletzt: das
+  // Feld ist die Wahrheit über den Begriff, die Adresse folgt ihm entprellt
+  // (sonst überschriebe der nachhängende URL-Stand die eben getippten Zeichen).
   const werte: EntscheidFilterWerte = useMemo(
-    () => ({ ...rest, ...urlWerte }), [rest, urlWerte]);
+    () => ({ ...rest, ...urlWerte, q: suchQ }), [rest, urlWerte, suchQ]);
 
   // Rail-Zähler über den vollen Bestand minus Sachgebiet (sonst zeigt die nicht
   // gewählte Kachel «0»); restliche Filter (Suche/Norm/…) dürfen die Zähler aber
@@ -175,17 +297,33 @@ export function Rechtsprechung() {
     // vergessen wird (genau so entstand die Asymmetrie aus LM-200/203/206).
     const achsen = achsenDiff(w, params);
     if (Object.keys(achsen).length > 0) setzeUrlAchsen(achsen);
-    setRest(lokaleWerte(w));
+    const { q: neuQ, ...uebrig } = lokaleWerte(w);
+    setSuchQ(neuQ ?? '');
+    setRest(uebrig);
   };
   const waehleSachgebiet = (g: Rechtsgebiet | null) => setzeUrl('rg', g);
   const waehleNorm = (k: string) => setzeUrl('norm', k);
+
+  // Identität einer Liste für den Sitzungs-Deckel (J1): Filterzustand + Rolle der
+  // Liste auf der Seite. Der Filterzustand MUSS mit hinein — sonst erbte eine
+  // über einen geteilten Link frisch geöffnete, ganz andere Treffermenge den
+  // Deckel der zuvor besuchten. Innerhalb derselben Adresse ist der Schlüssel
+  // stabil, und genau das trägt den Rückweg Treffer → Detail → zurück.
+  // `sort` MUSS mit hinein (Gegenprüfungs-Befund B4): die Sortierung liegt in
+  // localStorage, nicht in der Adresse — ohne sie im Schlüssel erbte eine nach
+  // «Älteste zuerst» sortierte Liste das Fenster der Datums-absteigenden, und
+  // nach einem Neuladen stünde der Nutzer an einer Stelle, die er in DIESER
+  // Ordnung nie besucht hat. Die Dichte gehört NICHT hinein: sie ändert die
+  // Darstellung der Einträge, nicht deren Reihenfolge oder Zahl.
+  const deckelBasis = `${params.toString()}|${sort}`;
+  const deckelKey = (rolle: string) => `${deckelBasis}|${rolle}`;
 
   return (
     <div className="space-y-6">
       <SeitenKopf
         overline="Bundesgericht & Kantone"
         titel="Rechtsprechung"
-        intro="Kuratierte Auswahl von Entscheiden des Bundesgerichts und kantonaler Gerichte — Leitentscheide und Sachfrage zuerst, verzahnt mit der angewandten Norm. Daten: OpenCaseLaw und amtliche Gerichts-Portale (z. B. Basel-Stadt). Massgeblich bleibt stets die amtliche Fassung."
+        intro="Entscheide des Bundesgerichts und kantonaler Gerichte, verzahnt mit der angewandten Norm."
       />
 
       {fehler && (
@@ -225,18 +363,23 @@ export function Rechtsprechung() {
                 Kopf der Ergebnis-Spalte (Auftrag David), über der kuratierten Auswahl. */}
             <LiveSuche initialQ={werte.q ?? ''} />
 
-            <EntscheidFilter
-              werte={werte}
-              onChange={onFilter}
-              bestand={alle}
-              richterRegister={richterRegister}
-              sort={sort}
-              onSort={setzeSort}
-              dichte={dichte}
-              onDichte={setzeDichte}
-              klappeOffen={klappeOffen}
-              onKlappe={setzeKlappe}
-            />
+            {/* J2: mobil hinter einem «Filter (n)»-Auslöser im Bottom-Sheet,
+                ab lg unverändert inline — damit die Treffer auf 390 px nicht
+                erst unter der ganzen Steuerleiste beginnen. */}
+            <FilterSheet anzahl={zaehleAktiveFilter(werte)}>
+              <EntscheidFilter
+                werte={werte}
+                onChange={onFilter}
+                bestand={alle}
+                richterRegister={richterRegister}
+                sort={sort}
+                onSort={setzeSort}
+                dichte={dichte}
+                onDichte={setzeDichte}
+                klappeOffen={klappeOffen}
+                onKlappe={setzeKlappe}
+              />
+            </FilterSheet>
 
             {/* Norm-Kontextstreifen — der explizite Pfad «Rechtsprechung zu Art. X». */}
             {norm && (
@@ -265,9 +408,9 @@ export function Rechtsprechung() {
               <div className="lc-notice">Kein Entscheid gefunden. Filter anpassen oder zurücksetzen.</div>
             ) : alsSektionen ? (
               <div className="space-y-8">
-                <Sektion titel="Amtliche Leitentscheide (BGE)" liste={gruppen.leitentscheide} dichte={dichte} onNorm={waehleNorm} />
+                <Sektion titel="Amtliche Leitentscheide (BGE)" liste={gruppen.leitentscheide} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey('leit')} />
                 {gruppen.volltexte.length > 0 && (
-                  <Sektion titel="Vollständige Urteile zu den Leitentscheiden" liste={gruppen.volltexte} dichte={dichte} onNorm={waehleNorm} />
+                  <Sektion titel="Vollständige Urteile zu den Leitentscheiden" liste={gruppen.volltexte} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey('volltexte')} />
                 )}
                 {/* A3-Regel 5: Urteile ausserhalb der amtlichen BGE-Sammlung als eigene
                     Voll-Urteil-Zeilen, GRUPPIERT UNTER IHRER INSTANZ (gerichtstyp). Die
@@ -284,13 +427,13 @@ export function Rechtsprechung() {
                       <span aria-hidden className="h-px flex-1 bg-line" />
                     </h2>
                     {gruppiereNachInstanz(gruppen.weitere).map((g) => (
-                      <Sektion key={g.typ} titel={g.label} liste={g.liste} dichte={dichte} onNorm={waehleNorm} />
+                      <Sektion key={g.typ} titel={g.label} liste={g.liste} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey(`instanz:${g.typ}`)} />
                     ))}
                   </div>
                 )}
               </div>
             ) : (
-              <Liste liste={gefiltert} dichte={dichte} onNorm={waehleNorm} />
+              <Liste liste={gefiltert} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey('strom')} mitSprungleiste />
             )}
 
             {/* B2/R1 (QS-UI 8b Teil 2): Der §8-Fuss lief mit 728 px über die

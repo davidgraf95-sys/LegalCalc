@@ -58,7 +58,12 @@ function ZeileInhalt({ t, sprung, q }: { t: SuchTreffer; sprung?: boolean; q: st
   return (
     <>
       <span className="min-w-0 flex-1">
-        <span className="block truncate text-body-s font-medium text-ink-900 transition-colors group-hover/z:text-brass-800">{t.label}</span>
+        {/* S6: mobil zweizeilig statt einzeilig abgeschnitten. Die Labels tragen
+            das unterscheidende Merkmal vorn (Kürzel «OR ·», Zitierung «BGE 148
+            III 57», Behörde+Nummer «ESTV 12 ·»), der Titel folgt — auf 390 px
+            fiel dieser Titel bisher ganz weg, zwei Zeilen bringen ihn zurück.
+            Ab sm bleibt die einzeilige Kappung (Streifen-Höhe, §15.2). */}
+        <span className="block max-sm:line-clamp-2 sm:truncate text-body-s font-medium text-ink-900 transition-colors group-hover/z:text-brass-800">{t.label}</span>
         {/* Zweizeiliges Snippet mit Highlight (S3/#56) statt einzeiligem Abschnitt. */}
         {t.untertitel && <span className="line-clamp-2 text-body-s text-ink-500">{markiere(t.untertitel, q)}</span>}
       </span>

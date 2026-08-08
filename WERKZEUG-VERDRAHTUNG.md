@@ -155,3 +155,29 @@ Baut/wartet die Tore selbst → tor-zentriert. IST (laut Memory-Stand): `gate.sh
 - **§8-/Status-Ehrlichkeit:** Niemals `verifiziert:true`/`'geprüft'`/`verified`/`kuratierung:'geprueft'` ohne Davids Abnahme. Shell-Verträge nie als „Volltext"; Sondersätze als Spanne/„nach Vereinbarung". Kein maschineller/council-Doppelcheck ersetzt das Fachurteil — er erzeugt höchstens eine `'recherche'`-Hypothese. Diese Marker sind harte Gates, kein Stil.
 - **Test-/Tor-Integrität:** Keinen Test aufweichen und kein Tor blind ausliefern (muss nachweislich einmal rot gewesen sein). Anonymisierungs-Invariante (AHV-Regex) nie aufheben.
 - **Fremd-Skills:** Jeder community-Skill nur nach `legal-builder-hub:skill-installer` Security-Scan + `legal-builder-hub:skills-qa`-Ampel; nie ungescannt laufen lassen.
+
+## 7. Produkt-Verdrahtung Vorlage ↔ Rechner (W2·10-UI-NAV/V6, 7.8.2026)
+
+Dieses Dokument führt sonst Werkzeug-Ketten des BAUS; die eine Ausnahme ist der
+vom Fahrplan hierher verwiesene Kreuzlink zwischen den beiden Werkzeug-Familien
+des Produkts. Fixiert, damit kein späterer Schnitt eine zweite Quelle anlegt:
+
+- **Die Kante lebt in `related`** (`src/lib/startseiteConfigTypen.ts`), einem seit
+  jeher **modusübergreifenden** Feld der Katalog-Karte — Rechner und Vorlagen in
+  EINER Liste. Das von der V6-Spec vorgeschlagene Zusatzfeld `passendeRechner`
+  ist **bewusst NICHT gebaut**: es hätte dieselbe Aussage ein zweites Mal
+  gepflegt (§5). Wer eine neue Kante braucht, ergänzt `related` — auf **beiden**
+  Karten, sonst entsteht eine Einbahn.
+- **Beide Richtungen haben je eine eigene Fläche:** Rechner → Vorlage über
+  `ThemenEinstieg` unter der Werkzeug-Karte (Bestand seit der Konsolidierung
+  7.6.2026); Vorlage → Rechner über `vorlagen/PassendeRechner.tsx` im
+  Wizard-Kopf (neu, V6). Die Vorlagen-Seite wird dabei **nicht** angefasst: die
+  Komponente löst ihre Karte über den Routenpfad auf (`href` der Karte = Route,
+  festgehalten von `check:inventur`). So kann keine der ~50 Vorlagen-Seiten die
+  Verdrahtung vergessen.
+- **Tore:** `check:inventur` meldet kaputte `related`-Ziele und Einbahnen als
+  Hinweis; die Mindest-Paare der Spec (verjaehrungsverzicht↔verjaehrung ·
+  mahnung↔verzugszins · klage-vereinfacht/-ordentlich↔streitwert/prozesskosten)
+  sind in `src/tests/uinav-v6-kreuzlinks.test.ts` **symmetrisch** festgenagelt.
+- **§8:** Verlinkt wird nur auf aktive Karten mit `href`; auf «In Vorbereitung»
+  führt kein Kreuzlink (ein toter Weg ist schlechter als kein Weg).

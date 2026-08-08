@@ -98,11 +98,19 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle }: {
 
   return (
     <div className="space-y-5">
-      {/* §4.3.1 — Kontext-Zeile: Mengen-Asymmetrie ehrlich erklären (§8). */}
+      {/* §4.3.1 — Kontext-Zeile: Mengen-Asymmetrie ehrlich erklären (§8).
+          O4 (W2·10-UI-NAV-O): der Satz versprach die Systematik-Gliederung für
+          JEDEN Kanton. Sie hängt aber am amtlichen Systematik-Baum
+          (public/normtext/kanton-systematik.json), den nicht jeder Kanton
+          liefert — wo er fehlt, bündelt KantonSystematik.tsx die Erlasse
+          ehrlich unter «Nicht systematisiert». Zwei Versprechen für dieselbe
+          Sache waren ein §8-Verstoss; jetzt steht die Einschränkung VOR dem
+          Klick, nicht erst danach. */}
       <p className="text-body-s text-ink-500 max-w-reading">
         Erfasst sind die in LexMetrik verwendeten kantonalen Erlasse — nicht die
         vollständige kantonale Gesetzessammlung. Kanton wählen: die Erlasse werden
-        dann nach der amtlichen Systematik des Kantons (Sachgebiete) gegliedert.
+        dann nach der amtlichen Systematik des Kantons (Sachgebiete) gegliedert,
+        soweit sie hinterlegt ist — sonst stehen sie unter «Nicht systematisiert».
       </p>
 
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">

@@ -90,19 +90,39 @@ const katVon = (k: typeof KATALOG_KARTEN[number]) => kategorieFuer(k) ?? 'vorlag
 const werkzeugeFuer = (pruefen: (k: typeof KATALOG_KARTEN[number]) => boolean): NavLink[] =>
   KATALOG_KARTEN.filter((k) => istVerfuegbar(k) && !!k.href && pruefen(k)).map((k) => link(k.title, k.href!));
 
-const werkzeugGruppe = (label: string, kinder: NavLink[]): NavGruppe =>
-  ({ art: 'gruppe', label, aufklappbar: true, standardOffen: false, kinder });
+const werkzeugGruppe = (label: string, kinder: NavLink[], ziel?: string): NavGruppe =>
+  ({ art: 'gruppe', label, ziel, aufklappbar: true, standardOffen: false, kinder });
+
+// O2 (W2·10-UI-NAV-O · Sidebar-Konsistenz): Rechner- und Vorlagen-Gruppen tragen
+// jetzt ebenfalls ein `ziel` — wie Bund/Kantone/International. Das Gruppen-Label
+// navigiert damit ÜBERALL, der Chevron klappt überall. Sprungziel ist der
+// Übersichtsanker der jeweiligen Rubrikseite; beide Anker existierten bereits
+// und waren bis hierher unerreichbar:
+//   · `register-<kat.id>` — Katalog.tsx `KategorieSektion` (scroll-mt-28)
+//   · `vorlage-<sektion.id>` — Katalog.tsx `VorlagenRegister` (scroll-mt-24;
+//     der Kommentar dort nannte die Seitenleiste schon als Absender)
+// Den Sprung führt ScrollZuHash (App.tsx) aus — kein neuer Mechanismus (§5).
+const RECHNER_ANKER = (katId: string) => `/rechner#register-${katId}`;
+const VORLAGEN_ANKER = (sektionId: string) => `/vorlagen#vorlage-${sektionId}`;
 
 // Rechner: die drei Aufgaben-Oberkategorien ausser «Vorlagen» — je als
 // aufklappbare Gruppe mit ihren Rechnern.
 const RECHNER_KINDER: NavKnoten[] = OBERKATEGORIEN
   .filter((k) => k.id !== 'vorlagen')
-  .map((kat) => werkzeugGruppe(kat.titel, werkzeugeFuer((k) => !istVorlage(k) && katVon(k) === kat.id)));
+  .map((kat) => werkzeugGruppe(
+    kat.titel,
+    werkzeugeFuer((k) => !istVorlage(k) && katVon(k) === kat.id),
+    RECHNER_ANKER(kat.id),
+  ));
 
 // Vorlagen: die fünf Dokument-Gruppen — je als aufklappbare Gruppe mit ihren
 // Vorlagen (nach Dokument-Typ `art`).
 const VORLAGEN_KINDER: NavKnoten[] = VORLAGE_SEKTIONEN
-  .map((s) => werkzeugGruppe(s.title, werkzeugeFuer((k) => istVorlage(k) && k.art === s.art)));
+  .map((s) => werkzeugGruppe(
+    s.title,
+    werkzeugeFuer((k) => istVorlage(k) && k.art === s.art),
+    VORLAGEN_ANKER(s.id),
+  ));
 
 // ─── International: Kanonik + Anker-Abbildung (IA-6 Stufe 2, §11.8 Y-C) ─────
 //

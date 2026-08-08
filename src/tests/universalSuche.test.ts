@@ -84,6 +84,23 @@ describe('universalSuche: Gesetze-Gruppe', () => {
     const g = gesetzGruppe(erlasse, 'Einführungsgesetz');
     expect(g.treffer[0].marke?.text).toBe('ZH');
   });
+
+  // UI-NAV S1: «alle N →» trägt die Query mit. Ohne sie landete der Sprung auf
+  // der ungefilterten Rubrik — er verspräche N Treffer und lieferte alle (§8).
+  it('«alle N →» trägt den Suchbegriff als ?q= mit (S1)', () => {
+    const g = gesetzGruppe(erlasse, 'e', 1); // Kappung 1, beide Erlasse treffen
+    expect(g.gesamt).toBe(2);
+    expect(g.mehrHref).toBe('/gesetze?q=e');
+  });
+
+  it('kodiert Sonderzeichen im ?q= und trimmt (S1)', () => {
+    const g = gesetzGruppe(erlasse, '  e ', 1);
+    expect(g.mehrHref).toBe('/gesetze?q=e');
+  });
+
+  it('ohne Kappungsüberschuss KEIN «alle N →» (unverändert)', () => {
+    expect(gesetzGruppe(erlasse, 'Obligationen').mehrHref).toBeUndefined();
+  });
 });
 
 describe('universalSuche: Treffer-Dedup (IA-1)', () => {
@@ -146,6 +163,12 @@ describe('universalSuche: Rechtsprechung-Gruppe', () => {
     expect(g.treffer[0].id).toBe('bge-1');
     expect(g.treffer[0].marke?.text).toBe('Leitentscheid');
     expect(g.treffer[0].href).toBe('/rechtsprechung/bge-1');
+  });
+
+  it('«alle N →» trägt den Suchbegriff als ?q= mit (S1)', () => {
+    const g = entscheidGruppe(liste, '1', 1); // «1» steht in beiden Zitierungen
+    expect(g.gesamt).toBe(2);
+    expect(g.mehrHref).toBe('/rechtsprechung?q=1');
   });
 });
 

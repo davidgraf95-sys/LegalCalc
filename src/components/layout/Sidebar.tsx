@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, type Location } from 'react-router-dom';
 import {
   NAVIGATION, NAVIGATION_META, alleNavLinks, type NavKnoten, type NavGruppe, type NavLink as NavLinkT,
@@ -92,6 +92,27 @@ function Knoten({ k, loc, onNavigate }: { k: NavKnoten; loc: Location; onNavigat
   return <Gruppe k={k} loc={loc} onNavigate={onNavigate} />;
 }
 
+/** Auf-/Zuklapp-Chevron — EINE Form für Abschnitts- und Gruppen-Zeilen (O2).
+ *  Vorher trug die `<details>`-Variante der Gruppen stattdessen das globale
+ *  `details > summary::after`-Dreieck: zwei Zeichen für dieselbe Geste. */
+function Chevron({ offen }: { offen: boolean }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden
+      className={`transition-transform ${offen ? 'rotate-90' : ''}`}>
+      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// ─── Gruppe (W2·10-UI-NAV-O · O2 «Sidebar-Konsistenz») ──────────────────────
+//
+// EINE Zeilen-Anatomie für ALLE Untergruppen (vorher zwei, je nachdem ob die
+// Gruppe ein `ziel` trug):
+//  · mit `ziel`  → Label ist ein Link auf die Übersicht, der Chevron klappt.
+//  · ohne `ziel` → die ganze Zeile ist der Klapp-Schalter (das frühere native
+//    <details>/<summary>), aber mit demselben Chevron und derselben Polsterung.
+// Das Label ist damit überall bedienbar und nirgends tot; der Chevron bedeutet
+// überall dasselbe. Chevron-Hitbox bleibt R6 (nicht dieser Schritt).
 function Gruppe({ k, loc, onNavigate }: { k: NavGruppe; loc: Location; onNavigate?: () => void }) {
   // Offen-Zustand LOKAL gesteuert (nicht controlled über `open`), damit der
   // Nutzer jede Gruppe frei zu-/aufklappen kann — auch wenn ein Kind aktiv ist
@@ -100,54 +121,57 @@ function Gruppe({ k, loc, onNavigate }: { k: NavGruppe; loc: Location; onNavigat
   const kindAktiv = k.kinder.some((kk) => kk.art === 'link' && istAktiv(kk.ziel, loc));
   const [offen, setOffen] = useState(!!k.standardOffen || kindAktiv);
 
-  // Mit `ziel` (z.B. Bund/Kantone): die Überschrift navigiert zur Übersicht
-  // (Auftrag David), ein separater Chevron klappt die Kinder. KEIN natives
-  // <details> — ein Link in <summary> würde beim Klick zugleich navigieren UND
-  // umschalten.
-  if (k.ziel) {
-    const aktiv = istAktiv(k.ziel, loc);
-    return (
-      <div className="flex flex-col">
-        <div className="flex items-center gap-1 rounded-md px-2.5 py-2 hover:bg-brass-100/40">
-          <Link to={k.ziel} onClick={onNavigate} aria-current={aktiv ? 'page' : undefined}
-            className={`flex-1 leading-snug text-body-s font-medium no-underline transition-colors ${aktiv ? 'text-brass-700' : 'text-ink-600 hover:text-ink-900'}`}
-            title={k.label}>{k.label}</Link>
-          <button type="button" onClick={() => setOffen((o) => !o)} aria-expanded={offen}
-            aria-label={`${k.label} ${offen ? 'einklappen' : 'aufklappen'}`}
-            className="shrink-0 p-0.5 text-ink-500 hover:text-brass-700 transition-colors">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden
-              className={`transition-transform ${offen ? 'rotate-90' : ''}`}>
-              <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
-        {offen && (
-          <div className="mt-0.5 ml-3.5 pl-2 border-l border-line flex flex-col gap-0.5">
-            {k.kinder.map((kk, i) => (
-              kk.art === 'link'
-                ? <Blatt key={i} k={kk} loc={loc} onNavigate={onNavigate} klein />
-                : <Knoten key={i} k={kk} loc={loc} onNavigate={onNavigate} />
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
+  // O2 · Auto-Expandieren bei Navigation. Der Anfangszustand griff nur beim
+  // MOUNT — wer über Kopfsuche, Deep-Link oder Zurück-Taste auf einer Seite
+  // landete, deren Sidebar-Eintrag in einer zugeklappten Gruppe liegt, sah die
+  // Aktiv-Markierung nicht (der Weg dorthin blieb verborgen). Nur die STEIGENDE
+  // Flanke wirkt: wer eine Gruppe mit aktivem Kind bewusst zuklappt, behält sie
+  // zu — Davids «Kategorien einklappbar» bleibt gewahrt.
+  // Kein React-Compiler im Projekt → der Vorher-Wert liegt in einem eigenen
+  // useRef, nicht in einer memoisierten Ableitung.
+  const warKindAktiv = useRef(kindAktiv);
+  useEffect(() => {
+    if (kindAktiv && !warKindAktiv.current) setOffen(true);
+    warKindAktiv.current = kindAktiv;
+  }, [kindAktiv]);
+
+  const aktiv = k.ziel != null && istAktiv(k.ziel, loc);
+  const kinder = (
+    <div className="mt-0.5 ml-3.5 pl-2 border-l border-line flex flex-col gap-0.5">
+      {k.kinder.map((kk, i) => (
+        kk.art === 'link'
+          ? <Blatt key={i} k={kk} loc={loc} onNavigate={onNavigate} klein />
+          : <Knoten key={i} k={kk} loc={loc} onNavigate={onNavigate} />
+      ))}
+    </div>
+  );
 
   return (
-    <details className="group" open={offen} onToggle={(e) => setOffen((e.currentTarget as HTMLDetailsElement).open)}>
-      {/* Disclosure-Dreieck liefert der globale details>summary::after (index.css). */}
-      <summary className="flex items-center gap-2 cursor-pointer select-none rounded-md px-2.5 py-2 text-body-s font-medium text-ink-600 hover:text-ink-900 hover:bg-brass-100/40">
-        <span className="flex-1 leading-snug" title={k.label}>{k.label}</span>
-      </summary>
-      <div className="mt-0.5 ml-3.5 pl-2 border-l border-line flex flex-col gap-0.5">
-        {k.kinder.map((kk, i) => (
-          kk.art === 'link'
-            ? <Blatt key={i} k={kk} loc={loc} onNavigate={onNavigate} klein />
-            : <Knoten key={i} k={kk} loc={loc} onNavigate={onNavigate} />
-        ))}
+    <div className="flex flex-col">
+      <div className="flex items-center gap-1 rounded-md px-2.5 py-2 hover:bg-brass-100/40">
+        {k.ziel ? (
+          <>
+            {/* KEIN natives <details>: ein Link in <summary> würde beim Klick
+                zugleich navigieren UND umschalten. */}
+            <Link to={k.ziel} onClick={onNavigate} aria-current={aktiv ? 'page' : undefined}
+              className={`flex-1 leading-snug text-body-s font-medium no-underline transition-colors ${aktiv ? 'text-brass-700' : 'text-ink-600 hover:text-ink-900'}`}
+              title={k.label}>{k.label}</Link>
+            <button type="button" onClick={() => setOffen((o) => !o)} aria-expanded={offen}
+              aria-label={`${k.label} ${offen ? 'einklappen' : 'aufklappen'}`}
+              className="shrink-0 p-0.5 text-ink-500 hover:text-brass-700 transition-colors">
+              <Chevron offen={offen} />
+            </button>
+          </>
+        ) : (
+          <button type="button" onClick={() => setOffen((o) => !o)} aria-expanded={offen}
+            className="flex flex-1 items-center gap-1 text-left text-body-s font-medium text-ink-600 hover:text-ink-900 transition-colors">
+            <span className="flex-1 leading-snug" title={k.label}>{k.label}</span>
+            <span className="shrink-0 p-0.5 text-ink-500"><Chevron offen={offen} /></span>
+          </button>
+        )}
       </div>
-    </details>
+      {offen && kinder}
+    </div>
   );
 }
 
@@ -184,10 +208,7 @@ function Abschnitt({ a, loc, onNavigate }: { a: typeof NAVIGATION[number]; loc: 
         <button type="button" onClick={() => setOffen((o) => !o)} aria-expanded={offen}
           aria-label={`${a.titel} ${offen ? 'einklappen' : 'aufklappen'}`}
           className="shrink-0 p-0.5 text-ink-500 hover:text-brass-700 transition-colors">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden
-            className={`transition-transform ${offen ? 'rotate-90' : ''}`}>
-            <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <Chevron offen={offen} />
         </button>
       </div>
       {offen && (

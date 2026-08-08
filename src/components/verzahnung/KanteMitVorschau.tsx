@@ -2,6 +2,7 @@ import { memo, useCallback, useId, useRef, useState, lazy, Suspense } from 'reac
 import { KantenChip } from './KantenChip';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import type { ArtikelRevision } from '../../lib/verzahnung/artikel-revisionen';
+import { HOVER_OEFFNEN_MS, HOVER_SCHLIESSEN_MS, istHoverZeiger } from '../hoverVorschau';
 
 // ─── V3 · EINE Kanten-Zelle: Chip + ⧉ + Kurztext-Vorschau (W2·10-UI-NAV) ─────
 //
@@ -44,12 +45,11 @@ import type { ArtikelRevision } from '../../lib/verzahnung/artikel-revisionen';
 // Esc UND `onClose` gemeinsam benutzen.
 const RegestePopover = lazy(() => import('./RegestePopover').then((m) => ({ default: m.RegestePopover })));
 
-// Hover-Verzögerung: erst nach ruhendem Zeiger. Ohne sie feuerte jedes
-// Vorbeifahren über eine 5-Chip-Linie fünf Popover-Mounts (Zeiger-Rauschen).
-const OEFFNEN_MS = 450;
-// Nachlauf beim Verlassen: der Zeiger muss vom Chip in den Kasten wandern
-// können (WCAG 1.4.13 «hoverable»), ohne dass er unterwegs zuklappt.
-const SCHLIESSEN_MS = 180;
+// Hover-Anatomie (Verzögerung/Nachlauf/Zeiger-Regel) liegt seit V2 EINMAL in
+// `components/hoverVorschau.ts` — dieselben Werte tragen jetzt auch die
+// Norm-Chip-Vorschau (§5, keine zwei driftenden Kopien). Werte unverändert.
+const OEFFNEN_MS = HOVER_OEFFNEN_MS;
+const SCHLIESSEN_MS = HOVER_SCHLIESSEN_MS;
 
 export const KanteMitVorschau = memo(function KanteMitVorschau({
   ziel, zitierung, kurztext, leitentscheid = false, revidiert, titel, statusLabel, className = '',
@@ -118,12 +118,12 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
         // ein Synthese-Ereignis DES TAPS — dort bleibt es beim Klick (die Zelle
         // navigiert), sonst öffnete sich der Kasten genau im Moment der
         // Navigation und flackerte über den Seitenwechsel.
-        if (e.pointerType === 'touch') return;
+        if (!istHoverZeiger(e.pointerType)) return;
         stoppUhr();
         uhr.current = window.setTimeout(() => oeffne(false), OEFFNEN_MS);
       }}
       onPointerLeave={(e) => {
-        if (e.pointerType === 'touch') return;
+        if (!istHoverZeiger(e.pointerType)) return;
         stoppUhr();
         uhr.current = window.setTimeout(() => schliesse(false), SCHLIESSEN_MS);
       }}

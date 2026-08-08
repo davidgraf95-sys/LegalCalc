@@ -54,7 +54,7 @@ export function KantonNormText({ text, quelle }: {
     if (fedlexLinkFuerArtikel(roh) == null) continue;
     treffer.push({
       start: m.index, end: m.index + roh.length,
-      node: <NormChip key={`b${m.index}`} artikel={roh} linkClass={INLINE_CLASS} />,
+      node: <NormChip key={`b${m.index}`} artikel={roh} linkClass={INLINE_CLASS} zielIntern={false} />,
     });
   }
 
