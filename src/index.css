@@ -854,6 +854,17 @@
     color: var(--brass-800);
   }
   .lc-chip-selected::before { content: '✓'; margin-right: .375em; font-weight: 600; }
+  /* «Aktuelle Position»-Zustand für Sprung-Anker (LM-005, W2·17-UI-BEFUNDE-B3,
+     K-01): dasselbe tor-geprüfte Farbpaar wie `.lc-chip-selected` (brass-100/
+     brass-700/brass-800, F2b-Pflichtpaar) — aber OHNE das ✓-Präfix, das dort
+     eine Toggle-AUSWAHL markiert. Hier ist nichts ausgewählt, nur die aktuelle
+     Scroll-Position innerhalb eines Abschnitts nachgezogen (aria-current, kein
+     aria-pressed) — ein Häkchen wäre eine falsche Zusatzbehauptung (§8). */
+  .lc-chip-aktuell {
+    background: var(--brass-100);
+    border-left-color: var(--brass-700);
+    color: var(--brass-800);
+  }
   /* ─── Chip-Grammatik der Kopf-Metazeilen (W2·17-UI-BEFUNDE-B1: LM-045/046/047) ──
      In den Metazeilen von Erlass- und Entscheid-Kopf trägt derselbe `.lc-chip`
      drei verschiedene Dinge: externen Link (↗ geltende/massgebliche Fassung,
@@ -994,11 +1005,20 @@
   .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
   .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
 
-  /* Glas-Effekt für sticky Chrome (Topbar/TabStreifen) — eine Quelle statt
-     byte-identischem Inline-Style an zwei Stellen. */
+  /* Sticky-Chrome-Kopf (Topbar) — LM-001/LM-006 (W2·17-UI-BEFUNDE-B3, K-01):
+     vormals ein «Glas»-Effekt (96 % Deckkraft + blur(12px)). FAHRPLAN-GESETZES-UX.md
+     §G2b machte die Reader-Sticky-Chrome bewusst durchgehend OPAK und hielt die
+     globale Topbar ausdrücklich als einzige Rest-Transluzenz aufgeschoben
+     («bewusst NICHT angefasst … ausser Datei-/PR-Scope»). Extern gemessen (Cowork
+     29.7.2026, LM-001, Blocker): beim Scrollen läuft der Seiteninhalt sichtbar
+     durch den oberen Rand der Kopfleiste — der Aufschub ist mit diesem Batch
+     (K-01/B3) explizit in Scope und wird hiermit geschlossen (§0.2: Entscheid
+     begründet geändert, nicht still gekippt). Volldeckend statt 96 % + Blur;
+     `backdrop-filter` entfällt gleich mit (ohne Transparenz wirkungslos UND
+     Verdachtsursache des Scroll-Repaint-Flackerns LM-006, dieselbe Fläche). Der
+     Klassenname bleibt (Druckregel `header.lc-glass`, druck-fundstellen.test.ts). */
   .lc-glass {
-    background: color-mix(in oklab, var(--paper) 96%, transparent);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background: var(--paper);
   }
   .lc-badge {
     @apply inline-flex items-center rounded-full;
