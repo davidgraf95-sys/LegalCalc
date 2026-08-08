@@ -76,6 +76,21 @@ export interface SchrittInfo {
   checkliste: { offen: number; gesamt: number; offenTexte: string[] } | null;
 }
 
+/** Offene Fragen an David aus dem `@david-fragen`-Block der ROADMAP.
+ *  Bis 8.8.2026 waren diese Fragen als Konstante im Seiten-Code gepflegt —
+ *  eine zweite Wahrheit (§5): beantwortet blieb dort stehen, bis jemand den
+ *  Code anfasste. Jetzt gilt: Zeile im Plan gelöscht = Frage weg von der Seite. */
+export function davidFragen(md: string): { frage: string; quelle: string }[] {
+  const block = md.match(/<!--\s*@david-fragen\n([\s\S]*?)-->/);
+  if (!block) return [];
+  const out: { frage: string; quelle: string }[] = [];
+  for (const zeile of block[1].split('\n')) {
+    const m = zeile.match(/^\s*[\w§ÄÖÜäöü-]+:\s*(.+?)\s*·\s*quelle:\s*(.+?)\s*$/);
+    if (m) out.push({ frage: m[1], quelle: m[2] });
+  }
+  return out;
+}
+
 /** Marker, der eine Kappung im Prompt UNÜBERSEHBAR macht. Ein blosses «…»
  *  las sich wie ein Auslassungszeichen im Zitat — der Prüf-Agent 4.8.2026
  *  bemerkte darum nicht, dass QS-EXTQUELLEN die David-Lizenzfrage und

@@ -129,6 +129,15 @@ david-freigabe-hooks-ausbau: QS-HOOKS-AUSBAU baut an Hooks/.claude/rules/CLAUDE.
 david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organisation für die native Merge Queue (User-Konten haben keine); Infrastruktur-Entscheid mit ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets). Erst prüfen, ob QS-MERGE-AUTOZUG den BEHIND-Schmerz ausreichend dämpft (Entscheid David 7.8.2026: «B als Schritt, A parken»)
 -->
 
+<!-- @david-fragen
+kalender-transp: Kalender-Export: Termine als «frei» statt «beschäftigt» markieren (TRANSP:TRANSPARENT)? Bricht einen Golden-Anker — nur mit Go. · quelle: Session-Karte 3./4.8.2026 (archiv/STRUKTUR-SESSIONKARTEN.md)
+kommerz-lizenz: Kommerzieller Betrieb ja/nein? Entscheidet, ob eine CC-BY-NC-SA-Zweitquelle berührt werden darf. · quelle: ROADMAP.md, QS-EXTQUELLEN
+-->
+<!-- ^ Offene Fragen an David OHNE eigenen blockierten Schritt (sonst gehören sie in @blockers).
+     Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
+     beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5; Umzug aus dem
+     Generator-Code 8.8.2026, dort waren sie eine hartkodierte zweite Wahrheit). -->
+
 <!-- @slot-kette (dokumentarisch; harte Prüfung via @meta-Feld `slot: inhaber`, check.ts 5b)
 inhaber: W3·12 (Kanton-Gesetze, übergeben 20.7.2026 — E3 war seit 3.7.2026 fertig, der Slot nur nie zurückgegeben)
 kette: ~~E3(W2·6-DATA) ✅ 3.7.2026~~ · W3·12(Kanton-Gesetze) ← JETZT · Tarif-Bündel(W1·4) · E5(Kanton-Rechtsprechung, W2·6-DATA) · Gerichtsferien-Matrix

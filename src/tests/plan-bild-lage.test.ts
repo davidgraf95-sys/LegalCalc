@@ -4,7 +4,7 @@
 // Kein echter git-Aufruf: `bauPlaetze`/`letzteCommits` bekommen ihren
 // Kommando-Runner injiziert, `wasGeradePassiert`/`flaechenKlartext` sind rein.
 // Sonst prüfte der Test die Maschine, auf der er läuft, statt den Code.
-import { bauPlaetze, letzteCommits, schrittInfoAusRoadmap, type SchrittInfo } from '../../scripts/plan/bildDaten';
+import { bauPlaetze, davidFragen, letzteCommits, schrittInfoAusRoadmap, type SchrittInfo } from '../../scripts/plan/bildDaten';
 import type { Etikett } from '../../scripts/plan/etikett';
 import type { Einheit } from '../../scripts/plan/parse';
 import {
@@ -313,6 +313,23 @@ describe('schrittLabel — Titel zuerst, Kürzel in Klammern', () => {
   it('escapt Titel und Kürzel', () => {
     expect(schrittLabel('A & B', '<x>')).toContain('A &amp; B');
     expect(schrittLabel('A & B', '<x>')).toContain('(&lt;x&gt;)');
+  });
+});
+
+describe('davidFragen — @david-fragen-Block statt hartkodierter Liste (§5, 8.8.2026)', () => {
+  it('liest Frage und Quelle aus dem Block', () => {
+    const md = ['<!-- @david-fragen', 'f1: Frage eins? · quelle: Quelle A', 'f2: Frage zwei? · quelle: Quelle B', '-->'].join('\n');
+    expect(davidFragen(md)).toEqual([
+      { frage: 'Frage eins?', quelle: 'Quelle A' },
+      { frage: 'Frage zwei?', quelle: 'Quelle B' },
+    ]);
+  });
+  it('ohne Block: leere Liste (keine Erfindung)', () => {
+    expect(davidFragen('# Plan ohne Fragen')).toEqual([]);
+  });
+  it('Zeilen ohne quelle-Feld werden nicht halb geraten, sondern ausgelassen', () => {
+    const md = ['<!-- @david-fragen', 'kaputt: Frage ohne Quelle', '-->'].join('\n');
+    expect(davidFragen(md)).toEqual([]);
   });
 });
 
