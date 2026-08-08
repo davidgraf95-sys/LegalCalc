@@ -568,8 +568,22 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). §18.
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
-- [~] **19-GLIEDERUNG · Gesetzes-Gliederung: flüssig, ruhig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026 abends, Diagnose noch am selben Abend — eigene Session auf Davids Wunsch: «neue session soll sich mit der gliederung alleine beschäftigen»)*
-  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css] · worktree: ja · 26x: nein · groesse: M -->
+- [~] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026 abends, Diagnose noch am selben Abend — eigene Session auf Davids Wunsch: «neue session soll sich mit der gliederung alleine beschäftigen»)*
+  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L -->
+  **Erweiterung David 8.8.2026 (Chat, Session-Start):** «offen in der Umsetzung — die ganze
+  Seitenleiste überarbeiten, inkl. Suche und Kontext; Ziel ist Nützlichkeit; Gliederung und
+  Übersicht sind sehr wichtig; verschiedene Arten von Gesetzen/Verordnungen beachten, damit das
+  Grundfundament stimmt; als erstes Fundament bauen, dann Detailfragen; auch Gesetzes-Fliesstext
+  darf bearbeitet werden.» Drei Rückfragen entschieden: **(a)** e2e-Tests DÜRFEN in deklarierten
+  eigenen Commits an das neue Verhalten angepasst werden (ersetzt das frühere «nicht anfassen»);
+  **(b)** Kontext-Bereich zeigt BEIDES — Erlass-Übersicht (Stand, Art, Umfang, amtliche Quelle)
+  und artikelbezogenen Kontext (Rechtsprechung, Verweise, Historie); **(c)** Suche wird
+  Trefferliste in der Seitenleiste mit Textausschnitten — die Lesespalte bleibt vollständig und
+  springt zum Treffer. Grösse darum M→L. **Zusatz-Auftrag David (gleicher Chat):** überlegen,
+  welche Informationen im Bestand vorhanden sind (Struktur-Sidecar, Bezüge/Rechtsprechung,
+  Revisionen/Historie, Fussnoten, Randtitel, eId/ELI-Links, Currency, Grundart-Register, …) und
+  sie so einsetzen, dass «die nützlichste und gleichzeitig übersichtlichste Gesetzesdarstellung»
+  entsteht — Informations-Inventar ist Teil des Fundaments.
   Die Diagnose ([Dossier — ZUERST LESEN, es ist die Bau-Spec](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md)) hat die Wurzeln vermessen: Haupt-Bremser ist der Hover-Dimm-Effekt der LESESPALTE (1686 simultane Transitionen, TBT 8.9 s @4×; Davids Dimm-Effekt vom 18.6. bleibt, nur die transition fällt — F1a), dazu das konstruktiv tote Auto-Zuklappen (0 Ereignisse; Wiederherstellung von Davids Auftrag K 26.6. mit Frame-gleicher scrollTop-Kompensation, CLS-Beweis = bestehende a9/a33-Tests unverändert grün — F2), unmemoisiertes Baum-Rendering (11'075 Knoten dauerhaft gemountet, Klick 231 ms @4× — F3: memoisierte Zeilen, zugeklappte Äste unmounten; der Baum ist KEIN Normtext, §15-Virtualisierungsverbot greift nicht), ungedrosselter Scroll-Listener `App.tsx:97` (F4: rAF wie der A16-Nachbar) und die missglückte Hervorhebung (sechsfaches `aria-current` = §8-Falschaussage; F5: EINE Positionsmarke, 2-px-Kante brass-500 statt Goldfläche, Sidebar-Muster, beide Themes ≥3:1). **Entscheid David 8.8.2026 spät: der Dimm-Effekt vom 18.6. «kann auch weg — Gliederung ist wichtiger»** ⇒ F1 = Hover-Dimmen der Lesespalte ERSATZLOS entfernen (Transition UND :has-Ketten — schnellster Weg auf den gemessenen 300-ms-Boden); F1b entfällt damit. Nachmessen gegen die Dossier-Tabelle ist Teil der DoD; danach LM-163 (B6 §7) gegen die neue Lage prüfen. Golden byte-gleich; e2e-Dateien nicht anfassen — gewollte Test-Konflikte melden.
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
