@@ -267,14 +267,50 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 
 **8 Befunde** · Blocker 2 · Hoch 2 · Mittel 3 · Detail 1 · `W2·17-UI-BEFUNDE-B5`
 
-- [ ] **LM-173** · Blocker · Die Akkordeons «Hinweise/Vorbehalte», «Rechenweg (6 Schritte)» und «Annahmen» erscheinen als leere … [Verdacht → FAHRPLAN-UI-NAVIGATION.md §7 Z2 (Print-CSS für Fundstellen, «S–M, Reader-Fläche nach §0.2») + C…]
-- [ ] **LM-174** · Blocker · Bei prefers-color-scheme dark bleibt die Wurzelklasse auf «light». Manuelles Umschalten funktioniert. [neu]
-- [ ] **LM-175** · Hoch · Sa/So sind als «abgeschwächt» dunkelgrau auf dunkler Pille gesetzt und kaum … [Verdacht → FAHRPLAN-UI-QUALITAET.md §4 Ziff. 2 (axe von Stichprobe auf Flächendeckung, alle Hauptrouten he…]
-- [ ] **LM-176** · Mittel · Graue Hilfetexte (#6F6B61, 11–12 px) auf getönten Kartenflächen liegen bei rund … [Verdacht → FAHRPLAN-UI-QUALITAET.md §4 Ziff. 1 (Farbwelt-Baseline enger ziehen, Ausnahmen abbauen) + Präze…]
-- [ ] **LM-177** · Hoch · Unterhalb von etwa 1024 px verschwindet der zweite Reiter ersatzlos. Er … [Verdacht → FAHRPLAN-SPLIT-VIEW.md B-4 Mobil-Faltung (✅ FERTIG, Commit 3587d1fd: «< lg → 1 Pane + Reiter-Um…]
-- [ ] **LM-178** · Mittel · Zwischen den Reitern liegt ein 6 px breiter Ziehgriff, der ausschliesslich … [neu]
-- [ ] **LM-179** · Mittel · Die Positionsangabe je Reiter ist veraltet: der OR-Reiter wird mit «Art. … [Verdacht → FAHRPLAN-SPLIT-VIEW.md B-2.5 Ziff. 4 (merkeTab/aktualisiereTabArtikel aus basisPfad statt windo…]
-- [ ] **LM-180** · Detail · «Alle schliessen» ist reiner Text ohne Button-Look. Rechtsprechung und Rechner haben … [neu]
+- [x] **LM-173** · Blocker · gebaut — Ursache am Prod-Stand mit computed styles belegt (Rechenweg/Annahmen/Hinweise
+  drucken leer: Inhalt bei geschlossenem Akkordeon gar nicht im DOM + Kopf-`<button>` von der pauschalen
+  Druck-Regel verschluckt; Phase-Tabs kollabieren auf ~6×6px). Fix: `ErgebnisAnzeige.tsx` erzwingt via
+  `matchMedia('print')` den offenen Zustand nur für den Druck, `.lc-druck-kopf`/`.lc-druck-chevron` (index.css)
+  halten den Akkordeon-Kopf sichtbar; `Tabs.tsx` blendet die Button-Gruppe im Druck aus und zeigt die Wahl als
+  Klartext. Titel/Quelle-Link druckten bereits (Z2-Regel `a[href^=http]::after`). Seitenzahl/Datum bewusst NICHT
+  gebaut (Golden-/SSR-Determinismus-Risiko bzw. unverifizierbar mit `page.emulateMedia` — offener Punkt, s. Bericht).
+- [ ] **LM-174** · Blocker · übersprungen — reproduziert (pristine Zustand bleibt bei dunklem OS-Farbschema hell,
+  computed: `html.className === 'light'`), ABER Befund widerspricht direkt einem dokumentierten Entscheid (Auftrag
+  David 19.6.2026, `src/components/thema.ts`: Pristine-Default ist bewusst ZEITbasiert, nicht system-basiert, und
+  extra als «Automatisch (Tageszeit)» statt «(System)» gelabelt, damit das UI nichts verspricht, was es nicht
+  hält — §8). Explizite Wahl «Automatisch» (nach Klick durch den 3er-Zyklus) folgt dem System korrekt (verifiziert).
+  §0.2: nicht still gekippt — Entscheid David nötig, s. Bericht.
+- [x] **LM-175** · Hoch · gebaut — Kontrast von Sa/So-Ziffern auf der `bg-brass-100`-Frist-Bande im Dunkelmodus
+  gemessen 4.54:1 (computed styles, technisch AA, aber am Rand — «kaum lesbar» plausibel). `FristenKalender.tsx`:
+  `text-ink-600` statt `text-ink-500` NUR für `frei && band==='frist'` → 6.79:1; die dokumentierte 25.6.-Kalibrierung
+  ausserhalb des Bandes bleibt unberührt. Legenden-Swatch-Farbmismatch NICHT reproduzierbar (Pixel-Sample: Swatch
+  und Bande exakt identisch #2C2616 im Dunkelmodus) — vermutlich Wahrnehmungs-Artefakt der Sichtprüfung.
+- [x] **LM-176** · Mittel · gebaut — «beide Parteien verpflichtet» auf gewählter `bg-brass-100`-Kachel gemessen
+  4.37:1 (computed styles, unter AA). `text-ink-500`→`text-ink-600` (Präzedenz-Muster 25.6.2026) in `VorlageNda.tsx`
+  UND — dieselbe Fehlerklasse, mechanisch identisch gefunden — `VorlageWerkvertrag.tsx`, `VorlageArbeitsvertrag.tsx`,
+  `VorlageAuftrag.tsx` (Auswahlkacheln mit Hilfetext, §17 Wurzel-Fix statt Einzelfall).
+- [x] **LM-177** · Hoch · erledigt (überholt) — Kernaussage «Reiter verschwindet ersatzlos» widerlegt: Playwright-
+  Messung zeigt den zweiten Pane per horizontalem Snap-Scroll erreichbar (`scrollWidth` 1800 vs. `clientWidth` 900,
+  Scroll bringt ihn vollständig in den Viewport) — B-4 (Commit 3587d1fd) trägt wie dokumentiert (§0.2). Erwartet-
+  Kriterium («erreichbar, notfalls über Umschalter») damit erfüllt. Restbefund («kein sichtbarer Hinweis auf ein
+  zweites Dokument») real, aber vom Erwartet-Text nicht verlangt — als Anregung im Bericht vermerkt, nicht gebaut.
+- [x] **LM-178** · Mittel · gebaut — Ziehgriff war `bg-transparent` im Ruhezustand (nur Cursor erkennbar, belegt).
+  `Shell.tsx`: Ruhezustand jetzt `bg-line-strong` (sichtbare, aber dezente Linie); Hover-Ton von `bg-brass-300/60`
+  (DESIGN-D0: Deckkraft-Suffix auf opakem Hex-Token erzeugte keine Regel) auf `bg-brass-300` korrigiert.
+- [x] **LM-179** · Mittel · gebaut — Ursache exakt lokalisiert: `inhalt-hooks.tsx` unterdrückte die Reiter-Live-
+  Positions-Aktualisierung für Sekundär-Panes vollständig (`if (!istSekundaer)`, dokumentiert als bewusste
+  Vereinfachung, aber laut Dedup-Notiz als «konkreter Defekt» zur Reproduktion freigegeben). Fix: Guard entfernt,
+  `window.location.search` durch pane-eigenes `location.search` (`paneLocationSearch`, neuer Prop analog
+  `paneLocationHash`) ersetzt. Playwright-Reproduktion: OR-Reiter vorbelegt mit veralteter `#art-366`-Position,
+  nach Scroll im Sekundär-Pane zu Art. 684 aktualisiert sich der Reiter-Eintrag live auf `#art-683`. Der separate,
+  deutlich fragilere Seed-Hash-Effekt (A34/A17/LM-199, Zeile ~347) bewusst NICHT angefasst — deckt nicht das
+  gemeldete Szenario (Scrollen im bereits offenen Pane) und trägt drei gestapelte Bugfix-Historien.
+- [x] **LM-180** · Detail · gebaut (teilweise) — «Alle schliessen» war ein `<button>` ohne Button-Optik (belegt,
+  Screenshot); `ReiterUebersicht.tsx` nutzt jetzt `lc-btn-outline lc-btn-sm` (geteilte Button-Familie statt Ad-hoc-
+  Stil) statt `hover:bg-paper-sunken/60` (DESIGN-D0, wirkungslos). Die zwei weiteren Teilbefunde NICHT
+  reproduzierbar: Icon-Inkonsistenz Gesetze/Rechtsprechung/Rechner (Playwright-Screenshot zeigt Schweizerkreuz UND
+  ∑-Pikto gleichermassen sichtbar) und Platzverschwendung beim abgeschnittenen Reiternamen (gemessen: Zeile exakt
+  ausgefüllt, kein Slack — `li` 294px = Navigations-Button 216px + vier Aktions-Icons).
 
 **Code-Flächen (grob, aus den Routen):** `src/index.css`, `src/components/layout/Pane.tsx`, `src/components/layout/TabPanel.tsx`, `src/components/layout/ThemaUmschalter.tsx`.
 **Risiko-Klasse:** reines UI (CSS/Layout).
