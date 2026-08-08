@@ -274,7 +274,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
   halten den Akkordeon-Kopf sichtbar; `Tabs.tsx` blendet die Button-Gruppe im Druck aus und zeigt die Wahl als
   Klartext. Titel/Quelle-Link druckten bereits (Z2-Regel `a[href^=http]::after`). Seitenzahl/Datum bewusst NICHT
   gebaut (Golden-/SSR-Determinismus-Risiko bzw. unverifizierbar mit `page.emulateMedia` — offener Punkt, s. Bericht).
-- [ ] **LM-174** · Blocker · übersprungen — reproduziert (pristine Zustand bleibt bei dunklem OS-Farbschema hell,
+- [x] **LM-174** · Blocker · übersprungen — reproduziert (pristine Zustand bleibt bei dunklem OS-Farbschema hell, — **Umentschieden David 8.8.2026 (System-Schema), gebaut PR #474 (B5-N1)**; 19.6.-Entscheid revidiert.
   computed: `html.className === 'light'`), ABER Befund widerspricht direkt einem dokumentierten Entscheid (Auftrag
   David 19.6.2026, `src/components/thema.ts`: Pristine-Default ist bewusst ZEITbasiert, nicht system-basiert, und
   extra als «Automatisch (Tageszeit)» statt «(System)» gelabelt, damit das UI nichts verspricht, was es nicht

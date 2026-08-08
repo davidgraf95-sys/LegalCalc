@@ -132,7 +132,6 @@ david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organis
 <!-- @david-fragen
 kalender-transp: Kalender-Export: Termine als «frei» statt «beschäftigt» markieren (TRANSP:TRANSPARENT)? Bricht einen Golden-Anker — nur mit Go. · quelle: Session-Karte 3./4.8.2026 (archiv/STRUKTUR-SESSIONKARTEN.md)
 kommerz-lizenz: Kommerzieller Betrieb ja/nein? Entscheidet, ob eine CC-BY-NC-SA-Zweitquelle berührt werden darf. · quelle: ROADMAP.md, QS-EXTQUELLEN
-lm174-farbschema: UI-Befund LM-174: Dunkelmodus folgt beim ersten Aufruf nicht dem Betriebssystem — dein Entscheid 19.6.2026 sagt bewusst «Automatisch (Tageszeit)» statt System-Schema. Befund schliessen oder auf systembasiert umentscheiden? · quelle: FAHRPLAN-UI-BEFUNDE.md §6 (B5, 8.8.2026)
 -->
 <!-- ^ Offene Fragen an David OHNE eigenen blockierten Schritt (sonst gehören sie in @blockers).
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
@@ -551,8 +550,9 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   Risikopfad), je Position eigener Commit mit Trailer `Roadmap: W2·17-UI-BEFUNDE`.
   - [x] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4. ✅ 8.8.2026, PR #471.
   - [x] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). ✅ 8.8.2026, PR #472 (LM-155: Verwerfen-Entscheid von David am 8.8.2026 REVIDIERT — Neubau freigegeben, siehe Position B4-N1; LM-158 → `W2·5h-GESETZ-UI` K6 gemäss Grenz-Auflage §24.1; Rest gebaut/überholt). §5.
-  - [ ] **B4-N1 · LM-155-Neubau: Gliederungs-Tiefenführung im Gesetzes-Leser** — Freigabe David 8.8.2026 («du darfst neubauen»; ersetzt die 12.7.-Abschaltung «funktioniert überhaupt nicht» — diesmal design-sorgfältig, DESIGN-REGLEMENT-Dach, e2e-gesichert). §5 (LM-155).
-  - [x] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). ✅ 8.8.2026, PR #473 (7/8: LM-174 wartet auf David — 19.6.-Entscheid «Automatisch (Tageszeit)»; Rest gebaut/nachgemessen-überholt). §6.
+  - [x] **B4-N1 · LM-155-Neubau: Gliederungs-Tiefenführung im Gesetzes-Leser** — Freigabe David 8.8.2026. ✅ 8.8.2026, PR #475 (Baum-Ebenen typografisch + per gestufter Schrittweite unterscheidbar; Entwurf gegen die A28-Scheiter-Gründe begründet, nur SektionBaumTOC). §5 (LM-155).
+  - [x] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). ✅ 8.8.2026, PR #473 (7/8 + LM-174: David hat am 8.8.2026 auf System-Schema umentschieden — 19.6.-Entscheid «Tageszeit» revidiert, Bau-Position B5-N1; Rest gebaut/nachgemessen-überholt). §6.
+  - [x] **B5-N1 · LM-174-Umbau: Farbschema folgt beim Erstbesuch dem System** — Entscheid David 8.8.2026 (revidiert 19.6.2026). ✅ 8.8.2026, PR #474 (pristine liest prefers-color-scheme, Label «Automatisch (System)», Live-Listener auch pristine). §6 (LM-174).
   - [ ] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). §7.
   - [ ] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). §8.
   - [ ] **B8 · Menüinhalt, Zustandsanzeige und Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9.
@@ -569,6 +569,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
+  - [ ] `check:design-tokens` scannt Kommentartext mit — ein Kommentar mit Utility-Platzhalter (`text-ink-*`) macht das Tor rot und kostet je Vorfall einen Tor-Zyklus; Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund B4-N1 8.8.2026 — nicht Davids Fund, hier verortet als kleinste passende Sammelstelle.)*
   David sammelt Fehler aus der täglichen Nutzung formlos hier als `- [ ]`-Zeile (oder meldet sie im
   Chat — die Session trägt sie ein). Eine Fix-Batch-Session arbeitet mehrere Positionen sortenrein
   ab: ein Branch, einmal Tore, eine Landung. **Risikopfad-Funde gehören NICHT hierher**, sondern als
