@@ -203,8 +203,7 @@ export function LeserVolltextInhalt({
   // S8 die gefilterte Liste stand. Es gibt zu jedem Zeitpunkt GENAU EINE
   // Trefferliste (§5); eine zweite in einem versteckten Container wäre die
   // Doppelwahrheit, die a32 für das Kontext-Panel schon einmal ausgeschlossen
-  // hat. Die eigenständige mobile Overlay-Fassung (Spec §4.5 letzter Punkt)
-  // gehört in die Mobil-Slice S10 und ist dort deklariert.
+  // hat.
   const listeInLeiste = istXl && hatLeiste && tocOffen;
   const trefferListeEl = sucheAktiv ? (
     <TrefferListe treffer={treffer} begriff={sucheAktivTrim} fundstellen={fundstellen}
@@ -212,6 +211,25 @@ export function LeserVolltextInhalt({
       onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)}
       onSprung={(token) => springeZuTreffer?.(token)} />
   ) : null;
+  // W2·19-GLIEDERUNG/S10 (S8-Restpunkt, Bau-Spec §4.5 «Mobil: Trefferliste im
+  // bestehenden Such-Overlay unter dem Feld; Tap schliesst und springt»):
+  // eigene Fassung NUR für den mobilen Schwebe-Fall — mit einem onSprung, der
+  // ZUSÄTZLICH die Suche leert (`setSuche('')`). Das ist bewusst ANDERS als
+  // die Leisten-Fassung oben (dort BLEIBT die Suche stehen, Entscheid David
+  // (c) 8.8.2026, §4.5) — auf einem Telefon gibt es keine daneben stehende
+  // Leiste, die den Suchzustand weiter zeigt; ein Overlay, das nach dem
+  // Antippen offen über dem Text schwebt, wäre nur im Weg.
+  const trefferListeMobilEl = sucheAktiv ? (
+    <TrefferListe treffer={treffer} begriff={sucheAktivTrim} fundstellen={fundstellen}
+      fussnotenAus={fussnotenAus} position={trefferPos} aktivToken={trefferAktivToken}
+      onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)}
+      onSprung={(token) => { springeZuTreffer?.(token); setSuche(''); }} />
+  ) : null;
+  // Unter `xl` (echtes Mobil UND schmales Pane — §7 «Pane schmal: wie mobil»)
+  // schwebt die Liste; ab `xl` bleibt sie in der Leiste (`listeInLeiste`) oder,
+  // im unbenannten Rand-Fall einer eingeklappten/leiste-losen Spalte, unten im
+  // Fluss (Inline-Zweig weiter unten, unverändert seit S8).
+  const trefferOverlayMobil = sucheAktiv && !listeInLeiste && !istXl;
 
   // E4/A32 (David 16.7.2026): das Kontext-Panel sass am Gesetzes-ENDE der Lese-
   // spalte und war «schwer sichtbar/auffindbar». Neuer Platz: unterhalb der
@@ -430,6 +448,33 @@ export function LeserVolltextInhalt({
           </div>
         </div>
       )}
+
+      {/* W2·19-GLIEDERUNG/S10 (S8-Restpunkt, Bau-Spec §4.5): mobile
+          Overlay-Trefferliste — schwebt direkt unter dem Kopf, drückt NICHTS
+          in den Lesefluss (anders als der alte Inline-Zweig, den sie unter
+          `xl` ablöst). `fixed` ausserhalb des Panes (an den Viewport, wie das
+          Gliederungs-Sheet), `absolute` + Portal IM Pane (dieselbe
+          `overlayWurzel`-Technik wie das Sheet direkt darunter, §5 — kein
+          zweiter Positionierungs-Mechanismus). `top` bindet an dieselben
+          Kopf-Höhen-Variablen wie Zone A/die TOC-Spalte (`--leser-kopf-h` /
+          `--leser-sub-h`, inhalt.tsx) — EINE Quelle für «wie hoch ist der
+          Kopf», kein drittes hartkodiertes Mass. `role="status"`, weil die
+          Liste eine LEBENDE Antwort auf die Eingabe ist (aria-live wäre hier
+          zu geschwätzig bei jedem Tastenanschlag — der Zähler in TrefferListe
+          trägt bereits `aria-live="polite"` für die laufende Position). */}
+      {trefferOverlayMobil && (() => {
+        const ziel = (imPane && overlayWurzel?.current) || null;
+        const inPane = ziel != null;
+        const panel = (
+          <div role="status" className={`${inPane ? 'absolute' : 'fixed'} inset-x-3 z-30`}
+            style={{ top: inPane ? 'var(--leser-sub-h)' : 'var(--leser-kopf-h)' }}>
+            <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-line bg-paper-raised p-1 shadow-lg">
+              {trefferListeMobilEl}
+            </div>
+          </div>
+        );
+        return ziel ? createPortal(panel, ziel) : panel;
+      })()}
 
       {/* 2-Spalten (Gliederungs-Sidebar links, Inhalt rechts) ab lg (1024px, R2) —
           darunter (mobil / sehr schmale Fenster) bekommt der Normtext die volle
@@ -661,7 +706,15 @@ export function LeserVolltextInhalt({
               Commit des Readers (Trefferliste → 1686 Artikel neu mounten,
               gemessen bis 21,9 s bei 8× Drossel) findet nicht mehr statt — der
               Volltext-Baum steht die ganze Zeit. */}
-          {sucheAktiv && !listeInLeiste && (
+          {/* W2·19-GLIEDERUNG/S10 (S8-Restpunkt, Bau-Spec §4.5 letzter Punkt
+              «Mobil: Trefferliste im bestehenden Such-Overlay unter dem Feld»):
+              unter `xl` schwebt die Liste als Overlay unmittelbar unter dem
+              Kopf statt in den Lesefluss zu drücken (`trefferOverlayMobil`,
+              weiter unten VOR der Lesespalte gerendert — sie gehört nicht in
+              den Dokumentfluss). Bleibt `istXl`, aber die Spalte ist
+              eingeklappt/ohne Leiste (Rand-Fall, von der Spec nicht benannt),
+              bleibt die alte, unauffällige Inline-Einblendung. */}
+          {sucheAktiv && !listeInLeiste && istXl && (
             <div className="mb-8 border-b border-line pb-4">{trefferListeEl}</div>
           )}
           <div className="space-y-2">
