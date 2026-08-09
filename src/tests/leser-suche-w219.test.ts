@@ -215,6 +215,23 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
     expect(versetzt.length, 'kein Artikel mit versetztem malRang — Testfall trägt nicht').toBeGreaterThan(0);
   });
 
+  // ── B1: derselbe Betrag, drei Schreibweisen, EINE Trefferzahl ────────────
+  // Beleg aus dem committeten Korpus: die AHVV speichert «16 800 Franken»
+  // (Art. 6quater) bzw. «10 100 Franken» (Art. 21) mit LEERZEICHEN, die
+  // Lesespalte malt sie mit Apostroph. Wer «16'800» tippte, bekam vor dem Fix
+  // NULL Treffer gemeldet — und sah die Stelle im Text trotzdem leuchten.
+  it('B1 — «16 800», «16\'800» und «16800» finden dieselben Stellen (AHVV)', () => {
+    const ix = index('AHVV');
+    const mitLuecke = sucheImErlass(ix, '16 800');
+    const mitApostroph = sucheImErlass(ix, "16'800");
+    const blank = sucheImErlass(ix, '16800');
+    expect(mitLuecke.length, 'Testfall trägt nicht — AHVV kennt «16 800» nicht mehr').toBeGreaterThan(0);
+    const signatur = (ts: ReturnType<typeof sucheImErlass>) =>
+      ts.map((t) => `${t.token}:${t.fundstellen}`).join('|');
+    expect(signatur(mitApostroph)).toBe(signatur(mitLuecke));
+    expect(signatur(blank)).toBe(signatur(mitLuecke));
+  });
+
   it('B5 — bei ausgeblendetem Apparat zählen Fussnoten-Stellen nicht als malbar', () => {
     // Der Apparat ist per CSS ausgeblendet; `sammleTrefferRanges` überspringt
     // ihn dann (`istGerendert`). Wer den malbaren Rang unabhängig davon zählte,
