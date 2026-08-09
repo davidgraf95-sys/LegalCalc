@@ -128,6 +128,42 @@ describe('S7/Bug-Check — B1: kein nackter Hash-Anker zur Werkzeug-Gruppe', () 
   });
 });
 
+// ── CI-Befund 9.8.2026 (PR #479, Shard 7/8) ────────────────────────────────
+// Der Wegweiser stand INNERHALB des Seitenleisten-Lade-Gatings. Der CI-Snapshot
+// zum Fehlerzeitpunkt zeigte die OR-Seite nach 30 s vollständig — Kopf,
+// Gliederung, Erlass-Übersicht — und daneben unverändert «Kontext wird
+// geladen …». Fachlich hängt der Wegweiser an keinem der fünf Feeds; er wird aus
+// Daten gebaut, die der Leser ohnehin hält. Das war ein NUTZER-Problem (§8), kein
+// Test-Problem: auf jedem langsamen Gerät blieb die sofort verfügbare Auskunft
+// minutenlang unsichtbar.
+//
+// Diese Tests nageln beide Hälften fest. Sie sind billig zu haben, weil SSR den
+// Lade-Zustand exakt abbildet: `useEffect` läuft dort nicht, also sind ALLE fünf
+// async-Gruppen unaufgelöst — genau die CI-Lage.
+describe('S7/CI — der Wegweiser steht VOR dem Lade-Gating der Querverweis-Gruppen', () => {
+  it('Seitenleiste im Lade-Zustand: Wegweiser da, Platzhalter daneben', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL, variante: 'seitenleiste' });
+    expect(html).toContain('Kontext wird geladen');       // Gating aktiv …
+    expect(html).toContain('data-artikel-kontext');       // … und der Wegweiser trotzdem da
+    expect(html).toContain('Zu Art. 41');
+  });
+
+  it('Der Werkzeug-Sprung wird erst angeboten, wenn sein Ziel im DOM steht', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL, variante: 'seitenleiste' });
+    // Ziel liegt hinter dem Gating ⇒ noch kein Knopf (kein toter Knopf, §13/F4) …
+    expect(html).not.toContain('id="kontext-werkzeuge"');
+    expect(html).not.toContain('<button');
+    // … aber die AUSKUNFT steht, und die Zeile bleibt einzeilig (Höhe konstant).
+    expect(html).toContain('Rechner/Vorlagen zu');
+  });
+
+  it('Lesespalten-Variante hat kein Gating — dort ist alles sofort da', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    expect(html).not.toContain('Kontext wird geladen');
+    expect(html).toContain('data-artikel-kontext');
+  });
+});
+
 describe('S7/Bug-Check — B2: amtliche Auszeichnung wird gerendert, nicht getippt', () => {
   it('«SR <b>822.11</b>» erscheint als Auszeichnung, nicht als sichtbarer Tag', () => {
     const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });

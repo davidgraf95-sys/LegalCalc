@@ -295,8 +295,12 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   // Prop versehentlich setzte (Gürtel und Hosenträger, Bau-Spec §5.2).
   const artikelKtx = typ === 'norm' ? artikelKontext : null;
 
+  // `istLeer` spricht über die QUERVERWEIS-Gruppen (Entscheide/Materialien/
+  // Werkzeuge) — der Wegweiser steht seit dem CI-Befund ausserhalb und ist keine
+  // solche Menge; er darf die Leer-Aussage darunter darum weder auslösen noch
+  // unterdrücken.
   const hatSync = normen.length > 0 || alleMaterialien.length > 0 || werkzeuge.length > 0 || zeigeArtikelWerkzeuge;
-  const istLeer = !zusatzGruppen && !artikelKtx && !hatSync && !entscheideLaden && !softLawLaden
+  const istLeer = !zusatzGruppen && !hatSync && !entscheideLaden && !softLawLaden
     && !botschaftenLaden && !botschaftenFehler && botschaften.length === 0
     && !revLaden && !revFehler && alleRevisionen.length === 0
     && !vernehmlassungenLaden && !vernehmlassungenFehler && vernehmlassungen.length === 0
@@ -307,6 +311,11 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   const seitenleiste = variante === 'seitenleiste';
   const laedtNoch = entscheideLaden || softLawLaden || botschaftenLaden
     || revLaden || vernehmlassungenLaden;
+  // Verdeckt das Gating die Querverweis-Gruppen gerade? Der Wegweiser braucht
+  // die Antwort, weil sein Werkzeug-Sprung auf eine dieser Gruppen zielt: ein
+  // Knopf, dessen Ziel noch gar nicht im DOM steht, wäre ein toter Knopf
+  // (§13/F4) — dieselbe Regel, die der Bug-Check als B4 aufgestellt hat.
+  const gruppenVerdeckt = seitenleiste && laedtNoch;
 
   return (
     <section aria-labelledby="kontext-titel"
@@ -316,7 +325,42 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
         <span aria-hidden className="h-px flex-1 bg-line" />
       </div>
 
-      {seitenleiste && laedtNoch ? (
+      {/* W2·19-GLIEDERUNG/S7 — «Zu Art. X»: der Wegweiser zur Leseposition
+          (Bau-Spec §5.2). Er beantwortet vier Fragen und springt für das Detail
+          dorthin, wo es ohnehin steht: Artikelfuss (Praxis) bzw. Werkzeug-Gruppe
+          weiter unten (§5 SSoT — nie eine zweite Liste derselben Sachen).
+
+          AUSSERHALB DES LADE-GATINGS, und das ist ein Produkt-Entscheid mit
+          Messbeleg (CI-Rot Shard 7/8, PR #479, 9.8.2026): der Wegweiser stand
+          zuerst INNERHALB des `laedtNoch`-Zweigs. Der Seiten-Snapshot zum
+          Fehlerzeitpunkt zeigt, was das heisst — die OR-Seite war nach 30 s
+          vollständig da (Kopf, Gliederung, Erlass-Übersicht), aber das Panel
+          stand unverändert auf «Kontext wird geladen …», weil einer der FÜNF
+          async-Feeds (Entscheide · Soft-Law · Botschaften · Revisionen ·
+          Vernehmlassungen) auf dem Runner so lange braucht.
+          Fachlich hängt der Wegweiser an KEINEM dieser Feeds: er wird aus
+          Daten gebaut, die der Leser ohnehin hält. Ihn hinter deren
+          Alles-oder-nichts-Gating zu hängen, hiess auf jedem langsamen Gerät:
+          minutenlang «wird geladen», obwohl die Auskunft sofort bereitsteht.
+          Das war kein Test-, sondern ein Nutzer-Problem (§8).
+
+          §15.2 bleibt gewahrt — im Gegenteil: der Block ist HÖHENFEST
+          (`lc-artikelkontext`, vier Zeilen) und sein Titel einzeilig, er hat
+          also von der ersten Zeichnung an seine Endhöhe. Was später einwächst,
+          steht DARUNTER, und darunter steht im Scroller nichts (dasselbe
+          Argument, das die E4-Geometrie schon trägt). */}
+      {artikelKtx && (
+        <KontextGruppe punkt="norm" rolle="wegweiser"
+          titel={artikelKtx.label ? `Zu ${artikelKtx.label}` : 'Zur Leseposition'}>
+          <div data-artikel-kontext className="lc-artikelkontext flex flex-col text-micro leading-snug text-ink-600">
+            {!artikelKtx.token ? (
+              <p className="truncate">Noch keine Leseposition erfasst.</p>
+            ) : <ArtikelKontextZeilen k={artikelKtx} werkzeugZielBereit={zeigeArtikelWerkzeuge && !gruppenVerdeckt} />}
+          </div>
+        </KontextGruppe>
+      )}
+
+      {gruppenVerdeckt ? (
         <p className="text-body-s text-ink-500">Kontext wird geladen …</p>
       ) : istLeer ? (
         <p className="text-body-s text-ink-500">
@@ -324,26 +368,6 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
         </p>
       ) : (
         <div className="space-y-5">
-          {/* W2·19-GLIEDERUNG/S7 — «Zu Art. X»: der Wegweiser zur Leseposition,
-              als ERSTE Gruppe (Bau-Spec §5.2). Er beantwortet vier Fragen und
-              springt für das Detail dorthin, wo es ohnehin steht: Artikelfuss
-              (Praxis) bzw. Werkzeug-Gruppe weiter unten (§5 SSoT — nie eine
-              zweite Liste derselben Sachen).
-              §15.2: der Block hat eine FESTE Höhe (`lc-artikelkontext`, vier
-              Zeilen) und rendert IMMER dieselben vier Rollen — jede mit ihrem
-              ehrlichen Leer-Satz (§8). Ein Artikelwechsel tauscht damit nur Text
-              in Zeilen, die schon stehen; er kann nichts verschieben. Genau das
-              misst die erweiterte E4-Spec (CLS 0 auch beim Artikelwechsel). */}
-          {artikelKtx && (
-            <KontextGruppe punkt="norm" rolle="wegweiser"
-              titel={artikelKtx.label ? `Zu ${artikelKtx.label}` : 'Zur Leseposition'}>
-              <div data-artikel-kontext className="lc-artikelkontext flex flex-col text-micro leading-snug text-ink-600">
-                {!artikelKtx.token ? (
-                  <p className="truncate">Noch keine Leseposition erfasst.</p>
-                ) : <ArtikelKontextZeilen k={artikelKtx} />}
-              </div>
-            </KontextGruppe>
-          )}
           {/* Reader-eigene Gruppen zuerst (V1.3: Entscheid-Richtungen am Fuss). */}
           {zusatzGruppen}
 

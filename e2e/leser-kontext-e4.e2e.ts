@@ -152,12 +152,50 @@ test('S7: Artikel-Kontext wechselt beim Lesen den Inhalt — Höhe und CLS bleib
   await page.goto('/gesetze/bund/OR#art-41');
   const block = page.locator('[data-artikel-kontext]');
   await expect(block).toBeAttached({ timeout: 30000 });
-  // Panel-Anfang ins Sichtfeld holen — nur ein SICHTBARER Sprung zählt als CLS.
-  await page.evaluate(() => {
-    const t = document.querySelector('[data-toc]');
-    const k = document.querySelector('[data-toc-kontext]');
-    if (t && k) t.scrollTop += k.getBoundingClientRect().top - t.getBoundingClientRect().top - 240;
-  });
+  // ── VORBEDINGUNG der Messung, nicht die Messung selbst ─────────────────────
+  // Gemessen wird gleich, ob der Block beim Lesen SEINE HÖHE hält und im
+  // Kontextfenster nichts verrutscht. Dafür muss er sichtbar sein — ein Shift
+  // ausserhalb des Sichtfelds zählt nicht als CLS. Genau diese Vorbedingung war
+  // zweimal brüchig: erst eine Rechnung mit fester 240-px-Marge auf den
+  // Panel-Anfang (traf nicht mehr, seit der Wegweiser VOR dem Lade-Gating
+  // rendert), dann ein einmaliges `scrollIntoViewIfNeeded` (die sticky
+  // Aside-Spalte und der innere [data-toc]-Scroller brauchen beide eine
+  // Bewegung, und die Seite schwingt nach dem Hash-Sprung noch nach).
+  //
+  // Dieselbe Lehre wie beim Popover-Wurzelfix (§17): nicht prüfen-dann-handeln,
+  // sondern die HANDLUNG wiederholen, bis die Bedingung hält. Jede Runde rückt
+  // beide Scroller nach; die Assertions darunter sind unverändert.
+  // WER DEN SCROLLER BESITZT: nicht der Test, sondern der Scroll-Spy. Er führt
+  // `[data-toc]` dem aktiven Baumknoten nach (Mitscroll/Nudge, gemessen von
+  // a33-F1) und zieht damit alles zurück, was weiter unten im selben Scroller
+  // steht — auch diesen Block. Genau daran scheiterte die Vorbedingung im
+  // Shard-Kontext deterministisch (3/3 Läufe erster Versuch), während sie
+  // isoliert immer hielt: dort war die Seite längst ausgeschwungen, bevor der
+  // Test scrollte.
+  // Der Reader hat für diesen Konflikt eine eigene Regel — `tocTouchRef`: eine
+  // NUTZER-Bedienung des Scrollers (wheel/pointerdown/touchstart) pausiert das
+  // automatische Nachführen. Der Test bedient sich derselben Mechanik, statt
+  // gegen sie anzuscrollen; a33 armiert den Guard für seine F2/V1-Messung
+  // genauso. Kein Produkt-Eingriff, keine abgeschwächte Assertion — nur die
+  // Vorbedingung wird auf die Art hergestellt, die der Reader vorsieht.
+  await expect.poll(async () => {
+    await page.evaluate(() => {
+      const t = document.querySelector('[data-toc]');
+      if (!t) return;
+      t.dispatchEvent(new WheelEvent('wheel', { bubbles: true, deltaY: 1 }));
+      const b = document.querySelector('[data-artikel-kontext]');
+      if (b) t.scrollTop += b.getBoundingClientRect().top - t.getBoundingClientRect().top - 8;
+    });
+    // Ausschwingen lassen UND danach prüfen: nur was den Nachlauf überlebt,
+    // ist wirklich sichtbar (Handlung wiederholen statt prüfen-dann-handeln).
+    await page.waitForTimeout(700);
+    return page.evaluate(() => {
+      const b = document.querySelector('[data-artikel-kontext]');
+      if (!b) return false;
+      const r = b.getBoundingClientRect();
+      return r.bottom > 0 && r.top < window.innerHeight && r.right > 0 && r.left < window.innerWidth;
+    });
+  }, { timeout: 45_000, message: 'Artikel-Kontext nie im Sichtfeld — CLS wäre nicht messbar' }).toBe(true);
   await page.waitForTimeout(600);
   await expect(block).toBeInViewport();
 
@@ -208,7 +246,17 @@ test('S7: Artikel-Kontext wechselt beim Lesen den Inhalt — Höhe und CLS bleib
   // nach). `mouse.wheel` erzeugt keinen `hadRecentInput`-Ausschluss für Shifts
   // ausserhalb des 500-ms-Fensters; wir warten darum je Schritt lange genug.
   for (const ziel of ['art-52', 'art-62', 'art-97']) {
-    await page.evaluate((id) => document.getElementById(id)?.scrollIntoView({ block: 'start' }), ziel);
+    await page.evaluate((id) => {
+      document.getElementById(id)?.scrollIntoView({ block: 'start' });
+      // Guard nachziehen (s. o.) und den Block im Blick behalten — gemessen wird
+      // seine HÖHE, und die ist nur an einem sichtbaren Element aussagekräftig.
+      const t = document.querySelector('[data-toc]');
+      const b = document.querySelector('[data-artikel-kontext]');
+      if (t) {
+        t.dispatchEvent(new WheelEvent('wheel', { bubbles: true, deltaY: 1 }));
+        if (b) t.scrollTop += b.getBoundingClientRect().top - t.getBoundingClientRect().top - 8;
+      }
+    }, ziel);
     await page.waitForTimeout(900);
     expect(await hoehe(), `Höhe des Artikel-Kontexts wandert bei ${ziel}`).toBe(hoeheVorher);
   }
@@ -234,6 +282,11 @@ test('S7/B1: Werkzeug-Sprung ohne Verlaufseintrag und ohne den #art-Deeplink zu 
   await page.setViewportSize({ width: 1440, height: 900 });
   // OR Art. 127 trägt eine artikelscharfe Werkzeug-Gruppe (Verjährung).
   await page.goto('/gesetze/bund/OR#art-127');
+  // Der Knopf erscheint erst, wenn sein Sprungziel wirklich im DOM steht (das
+  // Panel gibt die Affordanz erst dann frei — CI-Befund 9.8.2026). Auf einem
+  // langsamen Runner kann das dauern; die Wartezeit ist Infrastruktur, die
+  // Prüfaussage unverändert.
+  await expect(page.locator('#kontext-werkzeuge')).toBeAttached({ timeout: 60000 });
   const knopf = page.getByRole('button', { name: /Rechner\/Vorlagen zu/ });
   await expect(knopf).toBeVisible({ timeout: 30000 });
 

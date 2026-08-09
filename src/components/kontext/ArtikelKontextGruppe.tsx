@@ -24,7 +24,22 @@ import { richText, ohneMarkup } from '../../pages/gesetz-leser/helpers';
 // Beweis: e2e/leser-kontext-e4.e2e.ts, Prüfschritt «S7» (Höhe konstant über
 // vier gelesene Artikel + CLS 0 im Kontextfenster).
 
-export function ArtikelKontextZeilen({ k }: { k: ArtikelKontextAnsicht }) {
+export function ArtikelKontextZeilen({ k, werkzeugZielBereit = true }: {
+  k: ArtikelKontextAnsicht;
+  /**
+   * Steht die Werkzeug-Gruppe, auf die der Sprung zielt, schon im DOM?
+   *
+   * CI-Befund 9.8.2026 (PR #479, Shard 7/8): der Wegweiser rendert seit dem
+   * Produkt-Fix VOR dem Lade-Gating der Querverweis-Gruppen — sein Sprungziel
+   * `#kontext-werkzeuge` entsteht aber erst MIT ihnen. Ohne diese Prop böte die
+   * Zeile in genau dem Fenster einen Knopf an, dessen Ziel es nicht gibt: ein
+   * toter Knopf (§13/F4), und dieselbe Klasse Versprechen-ins-Leere, die der
+   * Bug-Check als B4 gerügt hat.
+   * Der Text der Zeile bleibt in beiden Zuständen einzeilig — die Höhe des
+   * Blocks ändert sich also nicht (§15.2).
+   */
+  werkzeugZielBereit?: boolean;
+}) {
   // ── B5 (Bug-Check 9.8.2026): «lädt» ist nicht «nichts» ─────────────────────
   // `undefined` heisst laut `lib/kontext.ts` ausdrücklich «Shard nicht geladen»,
   // `0` heisst «nichts erfasst». Beides fiel hier zusammen, und weil das
@@ -114,8 +129,8 @@ export function ArtikelKontextZeilen({ k }: { k: ArtikelKontextAnsicht }) {
           und sonst gar keine (§8: lieber nicht springen als falsch springen). */}
       <p className="truncate">
         <span className="text-ink-500">Werkzeuge: </span>
-        {k.werkzeugGruppe
-          ? (
+        {!k.werkzeugGruppe ? 'keines zu diesem Artikel'
+          : werkzeugZielBereit ? (
             <button type="button"
               onClick={(e) => {
                 const panel = e.currentTarget.closest('section[aria-labelledby="kontext-titel"]');
@@ -125,7 +140,8 @@ export function ArtikelKontextZeilen({ k }: { k: ArtikelKontextAnsicht }) {
               Rechner/Vorlagen zu {k.werkzeugGruppe} ↓
             </button>
           )
-          : 'keines zu diesem Artikel'}
+          // Ziel noch nicht im DOM: die Auskunft steht, die Affordanz nicht.
+          : <>Rechner/Vorlagen zu {k.werkzeugGruppe}</>}
       </p>
     </>
   );
