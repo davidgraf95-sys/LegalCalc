@@ -126,7 +126,10 @@ export function TrefferListe({
           return (
             <Fragment key={t.token}>
               {kopf !== null && (
-                <li aria-hidden className="lc-overline px-1 pb-0.5 pt-3 text-ink-500">
+                // `lc-overline` trägt die kalibrierte ink-600-Basis; ein
+                // Dimm-Override wäre bei 11 px ein AA-Fail (check:design-tokens,
+                // D-1.2/E1).
+                <li aria-hidden className="lc-overline px-1 pb-0.5 pt-3">
                   <span className="line-clamp-1" title={kopf}>{kopf}</span>
                 </li>
               )}
