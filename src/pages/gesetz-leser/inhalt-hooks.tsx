@@ -2,7 +2,7 @@ import { useEffect, useRef, type Dispatch, type MutableRefObject, type RefObject
 import { flushSync } from 'react-dom';
 import type { NavigateFunction } from 'react-router-dom';
 import { aktualisiereTabArtikel, tabSchluessel } from '../../lib/tabs';
-import { merkeAnker, bezugslinie, istHashVerbraucht } from './scrollAnker';
+import { merkeAnker, bezugslinie, ankerLandepunkt, istHashVerbraucht } from './scrollAnker';
 import { aktiverArtikel } from '../../lib/normtext/aktuellerArtikel';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import {
@@ -417,27 +417,38 @@ export function useLeserSprungSpy(opts: {
       // mehr die Mitte, sondern eine Linie nahe dem oberen Lese-Rand, damit der zuoberst
       // angeschnittene Artikel «dran» ist. Im Pane relativ zur Pane-Oberkante, sonst
       // zum Fenster (B-2.5).
-      // KRITISCH (R1×R3): Der Klick-/Anker-Sprung landet den Artikel über die
-      // `.nt-anker`-scroll-margin (= 5rem, index.css) genau 5rem unter dem
-      // Container-Oberrand. Die Bezugslinie MUSS denselben Offset treffen, sonst
-      // markiert der Spy nach dem Sprung den Vorgänger. Darum FIXER rem-Offset (5rem
-      // + Epsilon), NICHT ein Höhen-Prozent: rem-basiert skaliert er mit der
-      // R3-Schriftskala mit und ist unabhängig von der Viewport-Höhe/vom Zoom.
+      // KRITISCH (R1×R3): Der Sprung landet den Artikel über die
+      // `.nt-anker`-scroll-margin (`var(--nt-stick)`) unter dem Container-
+      // Oberrand; die Bezugslinie MUSS denselben Offset treffen, sonst markiert
+      // der Spy nach dem Sprung den Vorgänger. Der Offset wird darum am Anker
+      // SELBST gemessen (`ankerLandepunkt`) statt als `5rem` nachgerechnet — die
+      // Nachrechnung war 12 px zu klein und die Wurzel des 9.8.-Befunds
+      // (Herleitung in scrollAnker.ts). N1 (§5): den Zahlenwert der Linie NICHT
+      // hier zweitmalig bilden. Probe = irgendein beobachteter Artikel DIESES
+      // Roots (alle tragen `.nt-anker`, der Observer sieht nur den eigenen Pane).
       const sc = paneRoot(imPane, wurzel);
       const oben = sc ? sc.getBoundingClientRect().top : 0;
-      const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      // N1 (§5, Bug-Check 3.8.2026): den Zahlenwert der Linie NICHT hier zweitmalig
-      // ausrechnen — `bezugslinie` (scrollAnker.ts) ist die eine Wahrheit, die auch
-      // die Anker-Auflösung (aufloeseAnkerY) und der Scroll-Offset unten (~Z. 632)
-      // benutzen. Ein Inline-Duplikat driftet lautlos, sobald sich die Linie ändert.
-      const bezug = bezugslinie(oben, remPx);
+      const probe = (sichtbar.keys().next().value as Element | undefined)
+        ?? (sc ?? document).querySelector('[id^="art-"]');
+      const bezug = bezugslinie(oben, ankerLandepunkt(probe));
       const rects = [...sichtbar.values()]
         .filter((en) => en.isIntersecting)
         .map((en) => {
           const r = en.target.getBoundingClientRect();
           return { token: (en.target as HTMLElement).id.replace(/^art-/, ''), top: r.top, bottom: r.bottom };
         });
-      const token = aktiverArtikel(rects, bezug);
+      // ZWISCHENRAUM-REGEL (Befund David 9.8.2026, zweite Hälfte; Messprotokoll im
+      // Kopf von e2e/leser-toc-sprung.e2e.ts). Zwischen zwei Artikeln steht die
+      // Gliederungs-ÜBERSCHRIFT — beim OR bis 290 px hoch. Lag die Linie in einem
+      // solchen Zwischenraum, wählte `aktiverArtikel` nach reiner Distanz den
+      // Artikel DAVOR: der Leser stand sichtbar am Anfang des neuen Abschnitts,
+      // die Leiste markierte den alten. Eine Überschrift eröffnet, was FOLGT —
+      // Artikel, die oberhalb der Linie bereits GEENDET haben, zählen darum nicht
+      // mehr mit, solange darunter einer folgt. Bewusst HIER, nicht in
+      // `aktiverArtikel`: die reine Funktion beantwortet «welches Rechteck liegt
+      // an der Linie» (§2); WELCHE zur Wahl stehen, ist Darstellung (§3).
+      const nochOffen = rects.filter((r) => r.bottom > bezug);
+      const token = aktiverArtikel(nochOffen.length > 0 ? nochOffen : rects, bezug);
       if (!token || token === letzterArtToken.current) return; // dedup: nur bei Wechsel
       letzterArtToken.current = token;
       // A3/F: aktuellen Artikel an den Kopf melden (Einzelansicht-Kopf ODER PaneKopf),
@@ -778,8 +789,7 @@ export function useLeserSprungSpy(opts: {
       if (!token) return;
       const el = findeArt(null, token);
       if (!el) return;
-      const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-      const offset = Math.max(0, Math.round(bezugslinie(0, remPx) - el.getBoundingClientRect().top));
+      const offset = Math.max(0, Math.round(bezugslinie(0, ankerLandepunkt(el)) - el.getBoundingClientRect().top));
       merkeAnker(tabSchluessel(basisPfad + window.location.search), { token, offset });
     };
     const onScroll = () => { if (!raf) raf = window.requestAnimationFrame(erfasse); };

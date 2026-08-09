@@ -99,6 +99,24 @@ export function useSektionSprung(opts: {
     });
     requestAnimationFrame(() => requestAnimationFrame(() => {
       sekRefs.current.get(id)?.scrollIntoView({ block: 'start', behavior: 'auto' });
+      // KORREKTUR-SCROLL (Befund David 9.8.2026, erste Hälfte). Der Sprung hatte
+      // bis hierher GENAU EINEN Scroll, zwei Frames nach dem Aufklappen — und der
+      // trifft unter `content-visibility:auto` nicht. Die Zielposition wird aus den
+      // geschätzten Platzhalterhöhen (`schaetzeArtikelHoehe`) der noch nie
+      // gerenderten Artikel VOR dem Ziel berechnet; sobald die echten Höhen
+      // materialisieren, wandert das Ziel. Gemessen am OR (Sprung auf «Dritte
+      // Abteilung», 1686 Artikel): der Abschnittskopf lag erst bei 100 px und
+      // driftete auf 16 px — vollständig hinter den 100 px hohen Sticky-Kopf, der
+      // Leser sah den Kopf gar nicht mehr, sondern nur noch den Text darunter.
+      // `springeZuArtikel` (inhalt.tsx) hatte diesen zweiten Scroll seit je
+      // («grosse Sektionen wachsen beim Aufklappen → nach Settle ein Korrektur-
+      // Scroll»); dass der Sektions-Sprung ihn nicht hatte, war die Lücke. Ein
+      // Korrektur-Scroll genügt: gemessen konvergiert die Lage danach (ein dritter
+      // Scroll bewegt nichts mehr). Er liegt INNERHALB des jumpLock-Fensters
+      // (500 ms), damit der Spy die Zwischenlage nicht auswertet.
+      window.setTimeout(() => {
+        sekRefs.current.get(id)?.scrollIntoView({ block: 'start', behavior: 'auto' });
+      }, 400);
       // §15.2: den Scroll-Spy bis NACH dem Einschwingen des programmatischen Scrolls
       // gesperrt halten (jumpLock). Sonst feuert der IntersectionObserver, sobald der
       // Sprung-Scroll einläuft, und klappt den aktiven TOC-Zweig auf/zu — eine

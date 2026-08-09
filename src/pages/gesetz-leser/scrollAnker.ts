@@ -56,13 +56,46 @@ export function istHashVerbraucht(): boolean {
 }
 
 /**
- * Bezugslinie (px ab Container-Oberkante), an der «der oberste angeschnittene
- * Artikel» gemessen wird — deckungsgleich mit dem Scroll-Spy (`inhalt.tsx`) und
- * dem `.nt-anker`-scroll-margin (index.css: 5rem). rem-basiert ⇒ skaliert mit der
- * Schriftskala (R3) mit. `containerTop` = 0 für das Fenster, sonst Pane-Oberkante.
+ * Landepunkt eines Sprungs (px ab Container-Oberkante) — die REALE Sticky-Höhe
+ * des Reader-Kopfs. Nicht nachgerechnet, sondern dort gelesen, wo sie ohnehin
+ * steht: im `scroll-margin-top` eines `.nt-anker` (index.css: `var(--nt-stick)`,
+ * gesetzt am Reader-Root in inhalt.tsx). Damit gibt es GENAU EINE Zahl (§5), und
+ * sie ist per Konstruktion dieselbe, die `scrollIntoView` benutzt.
+ *
+ * §17-WURZELFIX (Diagnose 9.8.2026, Befund David «der Sprung landet im Abschnitt
+ * davor»): hier stand bis dahin die Konstante `5 * remPx` = 80 px, und die
+ * Kommentare in dieser Datei wie in `inhalt-hooks.tsx` behaupteten beide, sie sei
+ * mit dem Landepunkt «deckungsgleich». Sie war es nicht: `--nt-stick` ist
+ * `calc(4rem + 2.25rem)` = 100 px, gemessen am gebauten Reader. Die 12 px
+ * Differenz (Linie 88 gegen Landepunkt 100) liessen die Linie nach einem
+ * Sektions-Sprung NOCH IM letzten Artikel des VORIGEN Abschnitts liegen
+ * (OR: Art. 551, Unterkante 92 px) — der Spy meldete darum den Vorgänger,
+ * sobald der Sprung-Lock fiel. Ein Zahlen-Duplikat, das lautlos driftet, ist
+ * genau der Fall, vor dem §5 warnt.
+ *
+ * Ohne Anker-Element (SSR, leeres Dokument) bleibt der bisherige 5-rem-Wert als
+ * Rückfall — er ist dann so gut oder schlecht wie zuvor, aber nie schlechter.
  */
-export function bezugslinie(containerTop: number, remPx: number): number {
-  return containerTop + 5 * remPx + 8;
+export function ankerLandepunkt(el: Element | null | undefined): number {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return 80;
+  const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+  if (!el) return 5 * remPx;
+  const wert = parseFloat(getComputedStyle(el).scrollMarginTop);
+  return Number.isFinite(wert) && wert > 0 ? wert : 5 * remPx;
+}
+
+/**
+ * Bezugslinie (px ab Container-Oberkante), an der «der oberste angeschnittene
+ * Artikel» gemessen wird — deckungsgleich mit dem Scroll-Spy (`inhalt-hooks.tsx`)
+ * und dem `.nt-anker`-scroll-margin. `containerTop` = 0 für das Fenster, sonst
+ * Pane-Oberkante; `landepunkt` kommt aus `ankerLandepunkt`.
+ *
+ * Das Epsilon von 8 px bleibt: die Linie soll nach einem Sprung INNERHALB des
+ * angesprungenen Elements liegen, nicht exakt auf seiner Oberkante — sonst
+ * entscheidet Rundung darüber, ob das Ziel als «erreicht» gilt.
+ */
+export function bezugslinie(containerTop: number, landepunkt: number): number {
+  return containerTop + landepunkt + 8;
 }
 
 /**
@@ -78,8 +111,8 @@ export function aufloeseAnkerY(key: string): number | null {
   if (!a) return null;
   const el = document.getElementById(`art-${a.token}`);
   if (!el) return null;
-  const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-  const bezug = bezugslinie(0, remPx);
+  // Der Artikel IST ein `.nt-anker` — sein scroll-margin-top ist der Landepunkt.
+  const bezug = bezugslinie(0, ankerLandepunkt(el));
   const top = el.getBoundingClientRect().top;
   // Ziel-scrollY so, dass die Artikel-Oberkante wieder `offset` px über der
   // Bezugslinie liegt: scrollY + (top - (bezug - offset)).
@@ -146,8 +179,7 @@ export function ermittleLesePosition(): Ruecksprung | null {
   if (typeof document === 'undefined' || typeof window === 'undefined') return null;
   const arts = document.querySelectorAll<HTMLElement>('article[id^="art-"]');
   if (arts.length === 0) return null;
-  const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-  const bezug = bezugslinie(0, remPx);
+  const bezug = bezugslinie(0, ankerLandepunkt(arts[0]));
   let treffer: HTMLElement | null = null;
   for (const el of arts) {
     // `<=` statt `<`: ein Artikel, der GENAU auf der Linie sitzt (der Normalfall
