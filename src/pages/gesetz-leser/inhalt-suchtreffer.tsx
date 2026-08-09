@@ -109,6 +109,12 @@ export function useSuchTreffer({
   // vereinigt. `sammleTrefferRanges` bleibt die einzige Treffer-Semantik des
   // DOM (§5): dieselbe Funktion malt, dieselbe Funktion misst den Sprung.
   const rangesRef = useRef<Map<string, Range[]>>(new Map());
+  /** Vereinigt die je Artikel gehaltenen Ranges zur EINEN Highlight-Menge. */
+  const male = useCallback(() => {
+    const alle: Range[] = [];
+    for (const rs of rangesRef.current.values()) alle.push(...rs);
+    setzeSuchHighlightRanges(alle);
+  }, []);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const wurzel = leseRef.current;
@@ -117,11 +123,6 @@ export function useSuchTreffer({
       setzeSuchHighlight(null, '');
       return;
     }
-    const male = () => {
-      const alle: Range[] = [];
-      for (const rs of rangesRef.current.values()) alle.push(...rs);
-      setzeSuchHighlightRanges(alle);
-    };
     const beob = new IntersectionObserver((eintraegeIo) => {
       let geaendert = false;
       for (const e of eintraegeIo) {
@@ -148,7 +149,7 @@ export function useSuchTreffer({
     };
     // `ansichtTick`: ein Ansicht-Toggle ändert die MALBARKEIT (Fussnoten-Apparat
     // display:none) — die Ranges müssen dann neu entstehen (RV6).
-  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege]);
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, male]);
 
   // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
   // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.
@@ -209,6 +210,13 @@ export function useSuchTreffer({
     // (Gliederungspfad, Bild-Alt, ausgeblendeter Apparat), gibt es keinen
     // Range: dann bleibt es beim Artikel, statt eine Stelle zu behaupten (§8).
     const ranges = sammleTrefferRanges(art, sucheTrim);
+    // Das SPRUNGZIEL wird immer gemalt (§4.5) — unabhängig davon, ob der
+    // IntersectionObserver es schon gemeldet hat. Ohne diesen Schritt landete
+    // man auf einer Fundstelle, die erst im nächsten Beobachter-Zyklus
+    // aufleuchtet; bei einem Ziel ausserhalb des bisherigen Sichtbands wäre das
+    // sichtbar zu spät.
+    rangesRef.current.set(art.id, ranges);
+    male();
     const start = ranges[eintrag.rang]?.startContainer;
     const el = (start
       ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
@@ -217,7 +225,7 @@ export function useSuchTreffer({
     blinkAus();
     art.classList.add('lc-ziel-blink');
     blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
-  }, [blinkAus, folge, sucheTrim]);
+  }, [blinkAus, folge, male, sucheTrim]);
 
   const springeZuFundstelle = useCallback((delta: number) => {
     const len = folge.length;

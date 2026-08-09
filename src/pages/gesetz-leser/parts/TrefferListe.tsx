@@ -79,16 +79,22 @@ export function TrefferListe({
           e2e-Sonden auf denselben Sachverhalt zeigen.
           §15.2 CLS 0: feste Zeilenhöhe, ab dem ersten Render vorhanden; der
           Zähler ist datenseitig und steht sofort — es wächst nichts nach. */}
+      {/* ZWEI Zeilen statt einer: in der 18-rem-Leiste (Spec §2) bleiben neben
+          zwei 44-px-Tap-Zielen und der Positionsanzeige keine 10 rem für
+          «11 Artikel · 17 Fundstellen» — gemessen im Bau brach der Zähler auf
+          «17 Fundste…» um. Eine abgekürzte Zahl wäre §8-widrig (der Zähler IST
+          die Aussage), ein kleineres Tap-Ziel a11y-widrig (A9-DoD). Also
+          bekommt jede der beiden Angaben ihre Zeile. */}
       <div data-treffer-leiste
-        className="sticky top-0 z-10 flex min-h-9 items-center justify-between gap-2 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
-        <p className="min-w-0 truncate">
+        className="sticky top-0 z-10 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
+        <p className="min-h-5 truncate">
           <span className="num">{treffer.length}</span> Artikel
           <span aria-hidden className="mx-1 text-ink-300">·</span>
           <span className="num">{fundstellen}</span>
           {fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}
         </p>
         {hatSprung && (
-          <div className="flex shrink-0 items-center gap-0.5">
+          <div className="flex items-center justify-end gap-1">
             <span data-treffer-position role="status" aria-live="polite"
               className="text-micro tabular-nums text-ink-500">
               <span className="num">{anzeige}</span>/<span className="num">{fundstellen}</span>

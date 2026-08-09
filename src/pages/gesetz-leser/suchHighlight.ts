@@ -73,6 +73,40 @@ function highlightApi(): { reg: Map<string, object>; Ctor: HighlightCtor } | nul
 export const SUCH_META = 'data-such-meta';
 
 /**
+ * Der hochgestellte Fussnoten-MARKER im Wortlaut (`data-fn-marker`, gesetzt in
+ * `ArtikelBody`/`ArtikelLeser`) wird vom Walker ebenfalls übersprungen.
+ *
+ * W2·19-GLIEDERUNG/S8, Bau-Spec §4.4: der Marker ist ein VERWEISZEICHEN, kein
+ * Wortlaut — dieselbe Einordnung, die ihn schon beim Schalter «Fussnoten aus»
+ * mit dem Apparat verschwinden lässt (index.css). Er trägt die Fussnoten-Nummer
+ * ein zweites Mal, an einer Stelle, die im Gesetz keine zweite Fundstelle ist.
+ * Gemessen am BGFA: eine Suche nach «1» malte 130 Stellen, während der
+ * datenseitige Zähler 124 nannte — die sechs Zusätzlichen waren ausnahmslos
+ * Marker-Ziffern. Ohne diesen Ausschluss ist «gemalte ≤ gezählte» für
+ * Ziffern-Suchen nicht haltbar, und eine Markierung auf einer hochgestellten
+ * Verweisziffer sagt dem Leser ohnehin nichts (§8).
+ */
+export const FN_MARKER = 'data-fn-marker';
+
+/**
+ * Marker-Erkennung, exakt wie index.css sie führt.
+ *
+ * Der Ansicht-Schalter «Fussnoten aus» blendet die Verweiszeichen über ZWEI
+ * Selektoren aus: `[data-fn-marker]` (die Träger-Spans, die `ArtikelLeser` um
+ * Randtitel-Marker legt) UND `button[aria-label^="Fussnote"]` (die Marker im
+ * Fliesstext selbst — `FnRef` in `components/normtext/ArtikelBody.tsx` trägt
+ * kein `data-fn-marker`). Der Walker benutzt dieselben beiden Merkmale statt
+ * eigener: eine zweite Definition davon, was ein Marker ist, wäre die
+ * §5-Doppelwahrheit, an der sich solche Regeln später auseinanderentwickeln.
+ * Am BGFA belegt: ohne den zweiten Selektor blieben drei gemalte Marker-Ziffern
+ * über der gezählten Menge stehen.
+ */
+function istFussnotenMarker(el: Element): boolean {
+  if (el.hasAttribute(FN_MARKER)) return true;
+  return el.tagName === 'BUTTON' && (el.getAttribute('aria-label') ?? '').startsWith('Fussnote');
+}
+
+/**
  * Ist der Teilbaum dieses Elements überhaupt darstellbar?
  *
  * Bug-Check §9 vom 4.8.2026 (B2): der Walker hatte keinen Sichtbarkeitsfilter.
@@ -102,8 +136,11 @@ function istGerendert(el: Element): boolean {
  * REIHENFOLGE (TreeWalker). Leerer Begriff / kein Container ⇒ leere Liste.
  *
  * Übersprungen werden (jeweils der GANZE Teilbaum): `[data-such-meta]`-Knoten
- * der Trefferliste selbst und alles, was nicht gerendert ist. Damit gilt für
- * jeden Toggle-Zustand: gezählte == gemalte == anspringbare Menge.
+ * (Bedienung statt Gesetzestext), `[data-fn-marker]`-Verweiszeichen und alles,
+ * was nicht gerendert ist. Damit gilt für jeden Toggle-Zustand: die gemalte
+ * Menge ist die anspringbare — und sie ist eine Teilmenge der datenseitig
+ * gezählten (W2·19-GLIEDERUNG/S8, Bau-Spec §4.4; bis dahin galt Gleichheit,
+ * was mit nie gemalten Feldern strukturell unhaltbar war).
  *
  * W2·10-UI-NAV/R1: dieser Walker war bisher in `setzeSuchHighlight` eingebacken.
  * Er ist jetzt exportiert, weil die Treffer-NAVIGATION (Vor/Zurück-Sprungtasten)
@@ -124,7 +161,7 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
     acceptNode(k) {
       if (k.nodeType !== Node.ELEMENT_NODE) return NodeFilter.FILTER_ACCEPT;
       const el = k as Element;
-      if (el.hasAttribute(SUCH_META) || !istGerendert(el)) return NodeFilter.FILTER_REJECT;
+      if (el.hasAttribute(SUCH_META) || istFussnotenMarker(el) || !istGerendert(el)) return NodeFilter.FILTER_REJECT;
       // Das Element selbst trägt keinen Text — nur seine Kinder besuchen.
       return NodeFilter.FILTER_SKIP;
     },

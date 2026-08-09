@@ -205,8 +205,18 @@ export function baueLeserSuchIndex(
     // 5 · Wortlaut + Aufzählungspunkte, dann Tabellen und Bild-Alt desselben
     //     Blocks (so bleibt die Dokument-Reihenfolge erhalten).
     for (const b of e.bloecke) {
+      // Absatz- und lit./Ziff.-MARKEN zählen zum Fliesstext: sie sind amtlicher
+      // Bestandteil der Bestimmung («Abs. 2», «lit. a») und werden als hängende
+      // Marke gerendert. Ohne sie zählte eine Ziffern-Suche weniger, als die
+      // Lesespalte malt — der §4.4-Vertrag «gemalte ≤ gezählte» wäre für
+      // genau diese Suchen gebrochen (am BGFA vor dieser Zeile gemessen:
+      // «2» → 164 gezählt gegen 184 gemalt).
+      schiebe(segmente, 't', 'Fliesstext', 'immer', b.absatz);
       schiebe(segmente, 't', 'Fliesstext', 'immer', b.text);
-      for (const it of b.items ?? []) schiebe(segmente, 't', 'Fliesstext', 'immer', it.text);
+      for (const it of b.items ?? []) {
+        schiebe(segmente, 't', 'Fliesstext', 'immer', it.marke);
+        schiebe(segmente, 't', 'Fliesstext', 'immer', it.text);
+      }
       for (const z of b.tabelle ?? []) {
         schiebe(segmente, 'tb', 'Tabelle', 'immer', z.beschreibung);
         schiebe(segmente, 'tb', 'Tabelle', 'immer', z.betrag);
