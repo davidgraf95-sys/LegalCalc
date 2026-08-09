@@ -132,7 +132,12 @@ test.describe('Lesesicht (über Klick aus der Übersicht)', () => {
   // Regression: flacher Fallback (Erlass OHNE Gliederung/Struktur) darf die Lese-
   // spalte NICHT kollabieren. Vorher landete der einzige Grid-Inhalt in der 16rem-
   // TOC-Spalte → Body ~0 → ein Wort pro Zeile («alles verzogen»).
-  test('flacher Reader (ohne TOC) behält volle Lesebreite', async ({ page }) => {
+  // DEKLARIERTE ANPASSUNG (W2·19/S9, e2e-Freigabe David 8.8.2026): sektionslose
+  // Erlasse haben seither BEWUSST eine Leiste (Erlass-Übersicht · Kontext ·
+  // Trefferliste, Spec §2/§3.2 B3) — die frühere «kein TOC»-Assertion pinnte das
+  // alte Loch (Schwachstelle 8). Die Substanz der Regression bleibt geprüft:
+  // die Lesespalte kollabiert nicht.
+  test('flacher Reader (mit Leiste seit S9) behält gesunde Lesebreite', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1280, height: 1000 })
     await page.goto('/gesetze/kanton/ZH-243')
@@ -141,8 +146,8 @@ test.describe('Lesesicht (über Klick aus der Übersicht)', () => {
     const breite = (await ersterAbsatz.boundingBox())?.width ?? 0
     // Kollabiert wären ~115px; gesund ist die Lesespalte deutlich breiter.
     expect(breite).toBeGreaterThan(360)
-    // Kein TOC bei fehlender Gliederung.
-    await expect(page.getByText('Gliederung', { exact: true })).toHaveCount(0)
+    // NEU: die Leiste existiert auch ohne Gliederung (ehrlicher Zustand statt nichts).
+    await expect(page.locator('[data-toc]')).toBeVisible()
     expect(fehler).toEqual([])
   })
 })
