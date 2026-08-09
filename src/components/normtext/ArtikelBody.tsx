@@ -8,6 +8,13 @@ import { chapeauZielFremdgesetz } from '../../lib/fedlex';
 import { BildFigur, BildKacheln, type BildDaten, type BildKachel } from './BildElemente';
 import { zitatMitAusweis, heuteIso } from '../../lib/format';
 import { WJ } from './wortverbinder';
+// B2 (Bug-Check §9 zu W2·19-S8): der Aufhebungs-Platzhalter ist BEDIENUNG, kein
+// Wortlaut — er trägt darum dasselbe Meta-Attribut wie Zähler und Verweis-Chips.
+// Die Konstante wird IMPORTIERT statt abgeschrieben: die Ausgrenzung lebt in
+// `sammleTrefferRanges` und nur dort (§5). Ein `src/components`→`src/pages`-Import
+// ist im Haus etabliert (RuecksprungChip, BezugFacettenWahl, BezugZeitWahl,
+// ArtikelKontextGruppe) und erzeugt keinen Zyklus (check:zyklen).
+import { SUCH_META } from '../../pages/gesetz-leser/suchHighlight';
 
 // Bild-/Kachel-Felder eines Blocks (bild/bildKacheln) sind neu im Snapshot-Daten-
 // format; die Render-Schicht liest sie über diese lokale Erweiterung des
@@ -649,8 +656,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                     und LEEREM Text gespeichert (kein fabrizierter «Aufgehoben.»-
                     Text, §7). Leeren Item-Text wie eine Aufhebung gedämpft
                     zeigen — die Marke bleibt links sichtbar (Lücke geschlossen). */}
+                {/* B2: Ersatztext, kein Wortlaut → `data-such-meta` (s. Import). */}
                 {it.text.trim() === '' || istAufgehoben(it.text)
-                  ? <span className="italic text-ink-500">aufgehoben</span>
+                  ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">aufgehoben</span>
                   : (() => {
                       // Tarif-Staffel auch in Items als Tabelle (viele
                       // Notariats-/Grundbuchtarife stehen als lit./Ziff.).
@@ -851,7 +859,8 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 // «aufgehoben» fälschlich über der Liste stehen (Bug 22.6., 232 Blöcke,
                 // z.B. VWVG Art. 1). tabelle/mehrspaltig haben oben bereits Early-Return.
                 const hatItems = b.items != null && b.items.length > 0;
-                if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return <span className="italic text-ink-500">aufgehoben</span>;
+                // B2: Ersatztext, kein Wortlaut → `data-such-meta` (s. Import).
+                if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">aufgehoben</span>;
                 if (!anzeige.trim()) return null;
                 const zeilen = staffelZeilen(anzeige);
                 // Tausender-Gruppierung NUR in Geld-Kontext (§3, FIX 2 — 22.6.2026):
