@@ -173,12 +173,58 @@ describe('S8 §4.4 — findbar/malbar: der Zähler ist datenseitig, die Badges s
 
   it('die Fundstellen-Folge deckt sich mit dem Zähler (↑↓-Navigation, §4.3)', () => {
     const treffer = sucheImErlass(index('BGFA'), 'Anwalt');
-    const folge = fundstellenFolge(treffer);
+    const folge = fundstellenFolge(treffer, false);
     expect(folge.length).toBe(zaehleTreffer(treffer).fundstellen);
     // Die Ränge laufen je Artikel lückenlos von 0 hoch.
     const ersterToken = treffer[0].token;
     expect(folge.filter((f) => f.token === ersterToken).map((f) => f.rang))
       .toEqual([...Array(treffer[0].fundstellen).keys()]);
+  });
+
+  // ── B5 (Bug-Check §9 zu S8): der Sprung indexierte GEMALTE Stellen mit dem
+  // DATENSEITIGEN Rang. Beides ist dieselbe Zahl nur, solange jede Fundstelle
+  // eines Artikels malbar ist — der Modulkommentar nannte das den «Regelfall»,
+  // empirisch ist es das nicht (im OR trifft es 235+ Artikel). Sobald ein
+  // Artikel eine NIE malbare Fundstelle trägt (Gliederungspfad, Bild-Alt),
+  // verschiebt sich die Zuordnung um genau deren Zahl.
+  // Der Folge-Eintrag führt darum zusätzlich `malRang`: die Position unter den
+  // MALBAREN Stellen desselben Artikels, in derselben Reihenfolge, in der
+  // `sammleTrefferRanges` sie im DOM findet. Nicht malbar ⇒ `null`, und der
+  // Sprung bleibt designkonform beim Artikel, statt eine Stelle zu behaupten (§8).
+  it('B5 — malRang zählt nur die malbaren Stellen, in Dokument-Reihenfolge', () => {
+    const treffer = sucheImErlass(index('BGFA'), 'Anwalt');
+    const folge = fundstellenFolge(treffer, false);
+    // Vertrag 1: je Artikel sind die malRänge lückenlos 0..k-1 — genau so
+    // indexiert der Sprung in die Range-Liste.
+    for (const t of treffer) {
+      const raenge = folge.filter((f) => f.token === t.token && f.malRang !== null).map((f) => f.malRang);
+      expect(raenge, `malRang-Folge von ${t.token}`).toEqual([...Array(raenge.length).keys()]);
+    }
+    // Vertrag 2: jede Fundstelle hat entweder einen malRang oder ist als nicht
+    // malbar ausgewiesen — nie beides, nie keines.
+    for (const f of folge) expect(f.malRang === null || f.malRang >= 0).toBe(true);
+  });
+
+  it('B5 — ein Artikel mit NICHT malbarer Fundstelle bekommt einen versetzten malRang', () => {
+    // «Anwältinnen» steht im BGFA auch im Gliederungspfad (`g`, malbar «nie»).
+    // Dort trennen sich datenseitiger Rang und malbarer Rang — vor dem Fix gab
+    // es die Unterscheidung gar nicht.
+    const treffer = sucheImErlass(index('BGFA'), 'Anwältinnen');
+    const folge = fundstellenFolge(treffer, false);
+    const versetzt = folge.filter((f) => f.malRang !== null && f.malRang !== f.rang);
+    expect(versetzt.length, 'kein Artikel mit versetztem malRang — Testfall trägt nicht').toBeGreaterThan(0);
+  });
+
+  it('B5 — bei ausgeblendetem Apparat zählen Fussnoten-Stellen nicht als malbar', () => {
+    // Der Apparat ist per CSS ausgeblendet; `sammleTrefferRanges` überspringt
+    // ihn dann (`istGerendert`). Wer den malbaren Rang unabhängig davon zählte,
+    // verschöbe die Zuordnung genau um die Fussnoten-Treffer.
+    const treffer = sucheImErlass(index('BGFA'), 'Fassung');
+    const mitFn = treffer.filter((t) => t.felder.some((f) => f.malbar === 'fussnoten'));
+    expect(mitFn.length, 'BGFA trägt Fussnoten-Treffer für «Fassung»').toBeGreaterThan(0);
+    const an = fundstellenFolge(treffer, false).filter((f) => f.malRang !== null).length;
+    const aus = fundstellenFolge(treffer, true).filter((f) => f.malRang !== null).length;
+    expect(aus, 'ausgeblendeter Apparat ⇒ weniger malbare Stellen').toBeLessThan(an);
   });
 });
 

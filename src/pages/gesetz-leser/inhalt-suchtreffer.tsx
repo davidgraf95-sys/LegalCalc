@@ -114,7 +114,10 @@ export function useSuchTreffer({
   );
   const treffer = useMemo(() => sucheImErlass(index, sucheTrim), [index, sucheTrim]);
   const { artikel: artikelAnzahl, fundstellen } = useMemo(() => zaehleTreffer(treffer), [treffer]);
-  const folge = useMemo(() => fundstellenFolge(treffer), [treffer]);
+  // B5: der Ansicht-Schalter gehört IN die Folge, nicht daneben — bei
+  // ausgeblendetem Apparat sind Fussnoten-Stellen nicht malbar, und ein Rang,
+  // der sie mitzählte, verschöbe den Sprung um genau sie (Herleitung dort).
+  const folge = useMemo(() => fundstellenFolge(treffer, fussnotenAus), [treffer, fussnotenAus]);
 
   // ─── Artikelweise Hervorhebung, IntersectionObserver-getrieben (§4.5) ──────
   // Die Ranges werden je Artikel gehalten und zur EINEN Highlight-Menge
@@ -225,12 +228,15 @@ export function useSuchTreffer({
       // Teilbäume neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Der
       // Lauf kostet genau EINEN Artikel.
       //
-      // `ranges[rang]` ist die Zuordnung datenseitige Fundstelle → gemalte
-      // Stelle. Sie geht auf, solange alle Fundstellen des Artikels malbar sind
-      // (der Regelfall: Wortlaut-Treffer) — die Segment-Reihenfolge des Index
-      // folgt bewusst der Dokument-Reihenfolge. Ist die Fundstelle NICHT malbar
-      // (Gliederungspfad, Bild-Alt, ausgeblendeter Apparat), gibt es keinen
-      // Range: dann bleibt es beim Artikel, statt eine Stelle zu behaupten (§8).
+      // `ranges[malRang]` ist die Zuordnung Fundstelle → gemalte Stelle. B5
+      // (Bug-Check §9 zu S8): hier stand `ranges[rang]`, also der DATENSEITIGE
+      // Rang — der deckt sich mit dem malbaren nur, wenn JEDE Fundstelle des
+      // Artikels malbar ist. Der frühere Kommentar nannte das den «Regelfall»;
+      // im OR trifft es 235+ Artikel nicht zu. Den malbaren Rang führt jetzt die
+      // Folge selbst mit (`malRang`, leserSuche.ts) — dort und nur dort (§5).
+      // Ist die Fundstelle NICHT malbar (Gliederungspfad, Bild-Alt,
+      // ausgeblendeter Apparat), ist `malRang` null: dann bleibt es beim
+      // Artikel, statt eine Stelle zu behaupten (§8).
       const ranges = sammleTrefferRanges(art, sucheTrim);
       // Das SPRUNGZIEL wird immer gemalt (§4.5) — unabhängig davon, ob der
       // IntersectionObserver es schon gemeldet hat. Ohne diesen Schritt landete
@@ -239,7 +245,7 @@ export function useSuchTreffer({
       // das sichtbar zu spät.
       rangesRef.current.set(art.id, ranges);
       male();
-      const start = ranges[eintrag.rang]?.startContainer;
+      const start = eintrag.malRang === null ? undefined : ranges[eintrag.malRang]?.startContainer;
       const el = (start
         ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
         : art);

@@ -294,6 +294,11 @@ export interface LeserTreffer {
   topFeld: SuchFeld;
   /** Getroffene Felder in Feldgewicht-Reihenfolge, je mit Anzahl und Malbarkeit. */
   felder: TrefferFeld[];
+  /** B5: Malbarkeit JE FUNDSTELLE, in Segment- und damit Dokument-Reihenfolge —
+   *  Länge == `fundstellen`. `felder` taugt dafür nicht: es ist nach Feldgewicht
+   *  sortiert und je Quelle aggregiert und verliert damit genau die Reihenfolge,
+   *  in der `sammleTrefferRanges` die gemalten Stellen im DOM aufsammelt. */
+  malbarkeiten: Malbarkeit[];
   /** Textausschnitt um die erste Fundstelle (Entscheid c). `null` nie im Normalfall. */
   ausschnitt: Ausschnitt | null;
 }
@@ -339,6 +344,9 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
     // und der Badge die Quelle nennt, die Sortierung aber das Feld braucht.
     const proQuelle = new Map<string, TrefferFeld>();
     let gesamt = 0;
+    // B5: eine Marke JE Fundstelle, in Segment-Reihenfolge — das ist zugleich
+    // die Dokument-Reihenfolge (s. Aufbau der Segmente oben).
+    const malbarkeiten: Malbarkeit[] = [];
     let ausschnitt: Ausschnitt | null = null;
     let ausschnittGewicht = -1;
 
@@ -346,6 +354,7 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
       const stellen = findeVorkommen(seg.text, b);
       if (stellen.length === 0) continue;
       gesamt += stellen.length;
+      for (let i = 0; i < stellen.length; i++) malbarkeiten.push(seg.malbar);
       const schluessel = `${seg.feld}|${seg.quelle}`;
       const vorhanden = proQuelle.get(schluessel);
       if (vorhanden) vorhanden.anzahl += stellen.length;
@@ -364,7 +373,7 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
     const felder = [...proQuelle.values()].sort((x, y) => FELD_GEWICHT[y.feld] - FELD_GEWICHT[x.feld]);
     treffer.push({
       token: a.token, label: a.label, randtitel: a.randtitel, gruppe: a.gruppe, pos: a.pos,
-      fundstellen: gesamt, topFeld: felder[0].feld, felder, ausschnitt,
+      fundstellen: gesamt, topFeld: felder[0].feld, felder, malbarkeiten, ausschnitt,
     });
   }
 
@@ -402,19 +411,57 @@ export function badgesFuer(t: LeserTreffer, fussnotenAus: boolean): string[] {
   return out;
 }
 
+/** Ein Schritt der ↑↓-Navigation. */
+export interface FundstellenSchritt {
+  token: string;
+  /** 0-basierter Rang unter ALLEN Fundstellen dieses Artikels (der Zähler). */
+  rang: number;
+  /** B5: 0-basierter Rang unter den MALBAREN Stellen desselben Artikels — der
+   *  Index in die Range-Liste von `sammleTrefferRanges`. `null`, wenn diese
+   *  Fundstelle im DOM gar nicht erscheint. */
+  malRang: number | null;
+}
+
 /**
  * Flache Fundstellen-Folge über alle Treffer, in Listen-Reihenfolge — die
  * Grundlage der ↑↓-Navigation (Spec §4.3 «Position x/M»).
  *
- * Jeder Eintrag nennt den Artikel und den 0-basierten Rang der Fundstelle
- * INNERHALB dieses Artikels. Der Sprung nutzt beides: den Token, um zum Artikel
- * zu scrollen, und den Rang, um innerhalb des Artikels die entsprechende
- * gemalte Stelle anzusteuern, wenn es sie gibt. Gibt es sie nicht (Fundstelle
- * in einem nicht malbaren Feld, §4.4), bleibt es beim Artikel — nie wird ein
- * Sprung an eine erfundene Stelle behauptet (§8).
+ * Jeder Eintrag nennt den Artikel und ZWEI Ränge, weil es zwei Mengen gibt: den
+ * datenseitigen Rang (`rang`, er trägt die Anzeige «x/M») und den malbaren Rang
+ * (`malRang`, er trägt den Sprung ins DOM).
+ *
+ * B5 (Bug-Check §9 zu S8) — WARUM DAS NICHT DIESELBE ZAHL IST. Der Sprung
+ * indexierte die gemalten Ranges mit dem datenseitigen Rang. Das geht auf,
+ * solange JEDE Fundstelle eines Artikels malbar ist; der Kommentar an der
+ * Sprungstelle nannte das den «Regelfall», und genau das ist empirisch falsch
+ * (im OR betrifft es 235+ Artikel). Trägt ein Artikel eine nie malbare
+ * Fundstelle — Gliederungspfad, Bild-Alt —, verschiebt sich die Zuordnung um
+ * deren Zahl, und der Sprung landet auf einer anderen Stelle als der gezählten.
+ * Sichtbar wurde das bisher kaum, weil je Artikel dieselbe MULTIMENGE besucht
+ * wird; mit B1/B2 ziehen gemalte und gezählte Menge aber auseinander, und dann
+ * bricht auch diese Deckung.
+ *
+ * `fussnotenAus` gehört in die Rechnung, nicht daneben: ist der Apparat
+ * ausgeblendet, überspringt `sammleTrefferRanges` ihn (`istGerendert`) — seine
+ * Stellen sind dann NICHT malbar, und ein Rang, der sie mitzählte, verschöbe
+ * die Zuordnung um genau sie. Rein und deterministisch (§2): gleiche Treffer +
+ * gleicher Schalter ⇒ gleiche Folge.
+ *
+ * Ohne malbare Entsprechung bleibt es beim Artikel — nie wird ein Sprung an eine
+ * erfundene Stelle behauptet (§8).
  */
-export function fundstellenFolge(treffer: readonly LeserTreffer[]): Array<{ token: string; rang: number }> {
-  const out: Array<{ token: string; rang: number }> = [];
-  for (const t of treffer) for (let i = 0; i < t.fundstellen; i++) out.push({ token: t.token, rang: i });
+export function fundstellenFolge(
+  treffer: readonly LeserTreffer[],
+  fussnotenAus: boolean,
+): FundstellenSchritt[] {
+  const out: FundstellenSchritt[] = [];
+  for (const t of treffer) {
+    let malbarBisher = 0;
+    for (let i = 0; i < t.fundstellen; i++) {
+      const mb = t.malbarkeiten[i];
+      const malbar = mb === 'immer' || (mb === 'fussnoten' && !fussnotenAus);
+      out.push({ token: t.token, rang: i, malRang: malbar ? malbarBisher++ : null });
+    }
+  }
   return out;
 }
