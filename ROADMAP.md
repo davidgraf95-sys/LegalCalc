@@ -299,7 +299,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — `W2·19-GLIEDERUNG` ist wieder `wip` (Auftrag David 9.8.2026 «alles fertigmachen»: S8-Landung via PR #480 läuft, danach S9/S10; S1–S7 live via #478/#479) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Landungen 8.8.2026 → Chronik (#468–#470).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — `W2·19-GLIEDERUNG` ist ABGESCHLOSSEN 9.8.2026 (S1–S10 live via PRs #478–#481; Folge: `W2·19B-KORPUS` ready) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Landungen 8.8.2026 → Chronik (#468–#470).
 > Stand 8.8.2026: Teilschritte -S/-V/-O/-J sind gelandet (PR #464), vom Dach offen ist nur noch `-J3` (Risikopfad, eigene Session).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
@@ -562,8 +562,8 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). §18.
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
-- [~] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026; erweitert im Chat 8.8. auf die ganze Seitenleiste — Wortlaut, Entscheide (a)(b)(c) und drei §11-Entscheide: Spec §9-Kopf/§11)*
-  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
+- [x] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026; erweitert im Chat 8.8. auf die ganze Seitenleiste — Wortlaut, Entscheide (a)(b)(c) und drei §11-Entscheide: Spec §9-Kopf/§11)*
+  <!-- @meta id: W2·19-GLIEDERUNG · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
   **Bau-Spec:** [FAHRPLAN-W2-19-SEITENLEISTE.md](fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md) §9
   (Ultracode-Fundament, Slices S1–S10); Diagnose: [Dossier 8.8.](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md).
   **Stand 9.8.2026:** S1–S7 gelandet (PRs #478/#479) · **S8 in Landung (PR #480)** · S9–S10 offen (Modi/T11/Anhang ·
@@ -578,6 +578,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
   - [ ] **Kalender-Export: Termine als «frei» markieren (TRANSP:TRANSPARENT)** — Go David 8.8.2026 («frei ok»); bricht deklariert einen Golden-Anker ⇒ fachliche Änderung mit Golden-Neuschrieb im eigenen Commit (Herkunft: Session-Karte 3./4.8.2026, archiv/STRUKTUR-SESSIONKARTEN.md).
+  - [ ] **ZPO-Typ: Artikel-Sachtitel als unterste Klapp-Ebene in der Gliederung (David 9.8.2026 «umgekehrt»):** OR/ZGB zeigen Artikel-Granularität, weil ihre Randtitel BAUM-Knoten sind (OR 2'181 Zeilen); ZPO hat 94 % Sachtitel-Dichte, aber nur 138 Kapitel-Knoten — Titel stehen nur in der Lesespalte. Fix: B1-Erlasse mit hoher Titel-Dichte ohne Randtitel-Knoten bekommen die Artikel (mit Sachtitel) als unterste Klapp-Ebene je Kapitel; Messzahlen 9.8.2026 (modus-Sonde): OR b1/2181 · ZPO b1/139 · VWVG b2-index.
   - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Brotkrume-Breite angleichen** (Befund B7 8.8.2026, zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
   - [ ] `check:design-tokens` scannt Kommentartext mit (Utility-Platzhalter im Kommentar = rotes Tor, je Vorfall ein Zyklus); Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund 8.8.2026.)*
   - [x] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt:** ✅ Entscheid David 9.8.2026 = Weg a (Aufklappen erst bei Scroll-Ruhe), umgesetzt in PR #480 — a33 kalt 20/20 grün (vorher 2–4/20); ~39-Zeilen-Ziel von David als überholt gestrichen («kein Wuchern genügt»). Dossier nachgeführt.
