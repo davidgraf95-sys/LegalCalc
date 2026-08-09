@@ -106,14 +106,24 @@ const AHNEN_TINTE: Record<string, string> = {
 // prüfbar, und genau deshalb blieb B4 (Marke verschwindet im Anhang) unentdeckt,
 // obwohl es eine reine Modell-Frage ist. Jetzt trägt sie ein Unit-Fall.
 
-/** Zählwert-Text für `aria-label`/`title` (die Optik baut die Zeile selbst). */
-function zaehlwertText(k: GliederungsKnoten, auf: boolean): string {
-  if (k.artikelAnzahl === 0) return '';
-  const hatKinder = k.kinder.length > 0;
-  if (!hatKinder) return k.bereich ?? `${k.artikelAnzahl}`;
-  if (auf) return `${k.artikelAnzahl} Artikel`;
-  return k.bereich ? `${k.bereich} · ${k.artikelAnzahl} Artikel` : `${k.artikelAnzahl} Artikel`;
-}
+// ─── ENTSCHEID DAVID 9.8.2026: KEINE ZÄHLWERTE AN DER ZEILE ─────────────────
+// «keine relevante Information». Die Zeile trägt seither nur noch ihr Etikett
+// (plus das Aufgehoben-Signal) — der adaptive Zählwert («Art. 1–40 · 14»
+// zugeklappt, «14» aufgeklappt) ist ersatzlos gestrichen, sichtbar wie in
+// `aria-label`/`title`: eine Zahl, die nur der Screenreader hört, wäre keine
+// Ehrlichkeit (§8), sondern eine zweite, ungeprüfte Fassung der Zeile.
+//
+// DAS MODELL BEHÄLT DIE KENNZAHLEN. `artikelAnzahl`, `eigeneArtikel` und
+// `bereich` bleiben in `gliederungsModell.ts` unverändert und unit-getestet —
+// die Erlass-Übersicht (Zone C, S6) rechnet weiter mit ihnen. Gestrichen ist
+// allein die ANZEIGE an der Baumzeile (§3: Darstellung, nicht Ableitung).
+//
+// Was mit der Streichung gegenstandslos wird: die `invisible`-Klemme, die den
+// Bereich beim Aufklappen nur unsichtbar schaltete, statt ihn zu entfernen
+// (sie hielt die Box-Breite konstant, weil ein Breitenwechsel ein grenzwertiges
+// Label von einer auf zwei Zeilen kippen liess — §15.2/a9). Ohne Zählwert gibt
+// es keine wechselnde Box mehr; die Zeile ist jetzt in beiden Klapp-Zuständen
+// gleich breit, also von sich aus shift-frei.
 
 interface ZeilenProps {
   k: GliederungsKnoten;
@@ -159,12 +169,11 @@ const Zeile = memo(function Zeile({
   // Layout-Shift zur Laufzeit (§15.2).
   const takt = erster ? '' : k.tiefe === 0 ? 'mt-3' : k.tiefe === 1 && !k.randtitel ? 'mt-1.5' : '';
   const { pre, rest } = romanFrei(k.labelKette[k.labelKette.length - 1]);
-  const zaehler = zaehlwertText(k, auf);
   // Vollständiger Text für Screenreader und Tooltip: der sichtbare Label ist auf
   // zwei Zeilen geklammert (Labels bis 280 Zeichen sind belegt) — ohne diesen
-  // Vollwert wäre der Rest still verloren (§8). Der Zählwert steht mit drin,
-  // damit `aria-label` die sichtbare Zeile nicht ärmer macht, als sie ist.
-  const voll = [k.label, zaehler, k.aufgehoben ? 'aufgehoben' : ''].filter(Boolean).join(' — ');
+  // Vollwert wäre der Rest still verloren (§8). Er nennt genau das, was die Zeile
+  // auch zeigt: Etikett und, wenn zutreffend, das Aufgehoben-Signal.
+  const voll = [k.label, k.aufgehoben ? 'aufgehoben' : ''].filter(Boolean).join(' — ');
 
   return (
     // data-sektion-id nur an echten Sektionszeilen: der Auto-Zuklapp-Pfad
@@ -253,18 +262,8 @@ const Zeile = memo(function Zeile({
           {/* B5: s. o. — auch dieser Zusatz ist TEXT und braucht 4.5:1. */}
           {k.aufgehoben && <span className="ml-1 text-micro text-ink-500">aufgehoben</span>}
         </button>
-        {/* Adaptiver Zählwert (§3.3): zugeklappt «Art. 1–40 · 14», aufgeklappt
-            nur «14». Der Bereich wird beim Aufklappen NICHT entfernt, sondern
-            `invisible` — er behält seine Box. Sonst änderte sich die Breite des
-            Label-Feldes, ein grenzwertiges Label kippte von einer auf zwei
-            Zeilen, und weil der Scroll-Spy auch OHNE Klick aufklappt, zählte
-            dieser Sprung als unerwarteter Layout-Shift (§15.2, a9). */}
-        {zaehler !== '' && (
-          <span className="shrink-0 self-start pl-1.5 pt-0.5 text-micro leading-snug tabular-nums text-ink-500">
-            {k.bereich && <span className={hatKinder && auf ? 'invisible' : ''}>{k.bereich}{hatKinder ? ' · ' : ''}</span>}
-            {hatKinder && <span>{k.artikelAnzahl}</span>}
-          </span>
-        )}
+        {/* Hier stand bis zum 9.8.2026 der adaptive Zählwert — gestrichen auf
+            Entscheid David («keine relevante Information»), Herleitung oben. */}
       </div>
       {/* ── F3, zweite Hälfte (S5): zugeklappte Äste werden UNMOUNTET ──────────
           Bis S4 blieben sie gemountet und wurden nur per `grid-rows-[0fr]` auf
