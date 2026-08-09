@@ -715,6 +715,20 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
           return (
             <p
               key={i}
+              // W2·19-GLIEDERUNG/S9 (Bau-Spec §3.4/§6·2 «Anhang-Zwischentitel in
+              // der Lesespalte erhalten Anker, damit der Ast hineinzielen
+              // kann»): bis hierher war dieser Zwischentitel NICHT anspringbar
+              // — bei ChemRRV tragen 40 von 69 Artikeln solche Titel-Blöcke
+              // (empirisch geprüft, §7), viele mehrfach je Artikel. Die Anhang-
+              // Ast-Zeilen der Leiste (gliederungsModell.ts) bleiben in DIESER
+              // Slice auf Artikel-Granularität — der Anker macht die Zwischen-
+              // titel-Ebene erreichbar (Deep-Link, Ctrl+F-Landung), OHNE die
+              // Baum-Granularität zu erweitern (deklarierte Grenze). Nur im
+              // eigentlichen Lese-Pfad (`!zitierKontext`, keine Zitat-Vorschau)
+              // — im Popover wäre die Id doppelt vergeben (§7: kein Anker, der
+              // zweimal im DOM steht). Index i ist die stabile Block-Position
+              // im Snapshot (deterministisch, §2).
+              id={zitierKontext ? undefined : `anh-${artikel}-${i}`}
               className={`${zitierKontext ? '' : 'text-body-s '}font-semibold text-ink-800 ${flach ? 'mt-3' : 'mt-2'} ${zk ? 'pl-9 [text-indent:0]' : ''}`}
             >
               {b.text}

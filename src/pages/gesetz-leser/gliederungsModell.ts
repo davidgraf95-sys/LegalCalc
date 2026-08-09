@@ -32,6 +32,7 @@
 
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { artikelSachtitel } from '../../lib/normtext/darstellung';
 import { berechneSektionMeta, istAnhangToken } from './berechnungen';
 
 // ─── Schwellen der Modus-Kette (§3.2) ───────────────────────────────────────
@@ -180,6 +181,86 @@ export interface GliederungsModell {
    */
   umhaengPraefix: Record<string, string[]>;
   kennzahlen: GliederungsKennzahlen;
+  /**
+   * W2·19-GLIEDERUNG/S9 (Bau-Spec §3.2/§8, T3/T4-Fälle): der ARTIKEL-scharfe
+   * Index für `b2-index` UND `b4-mini` — «Art. N — Randtitel», vorhandene
+   * amtliche Abschnitte als nicht klappbare Zwischenköpfe (§3.2 B2-Zeile).
+   * Leer in jedem anderen Modus (billig: nichts wird umsonst gebaut). Der
+   * SEKTIONS-Baum (`knoten`) kennt keine einzelnen Artikel — nur er kann sie
+   * liefern, darum eine eigene, zweite Ableitung statt eines Render-Tricks
+   * über `knoten` (§3 Schichtentrennung: die Entscheidung, WELCHE Artikel wo
+   * stehen, ist Modell, keine Darstellung).
+   */
+  artikelIndex: ArtikelIndexGruppe[];
+}
+
+/** Eine Zeile des Artikel-Index (§3.2 B2): «Art. N — Randtitel». */
+export interface ArtikelIndexZeile {
+  /** Artikel-Token — Sprungziel (`onSprungArtikel`) und React-Key. */
+  token: string;
+  /** Amtliches Etikett («Art. 7», «§ 12»), nie geraten (`artikelLabel`). */
+  label: string;
+  /** Artikel-eigene Sachüberschrift (Randtitel-Blatt) oder `titel` (Kanton-
+   *  Fallback, dieselbe Quelle wie `hatRandtitel`) — `null` = keine vorhanden. */
+  randtitel: string | null;
+  aufgehoben: boolean;
+}
+
+/**
+ * Eine Gruppe des Artikel-Index: `kopf` ist die nicht klappbare amtliche
+ * Abschnitts-Überschrift (Spec §3.2 «vorhandene Abschnitte als Zwischenköpfe»)
+ * — `null`, wo der Erlass gar keine hat (T4: NHG/VMWG) oder wo Artikel
+ * ausserhalb jedes Abschnitts liegen (dieselbe Ehrlichkeit wie Vor-/Nachspann,
+ * §3.4 — nichts wird stillschweigend einer Überschrift zugeschlagen, zu der
+ * es amtlich nicht gehört).
+ */
+export interface ArtikelIndexGruppe {
+  kopf: string | null;
+  zeilen: ArtikelIndexZeile[];
+}
+
+/**
+ * Baut den Artikel-Index für B2/B4 (§3.2). Rein, deterministisch — arbeitet
+ * auf denselben Eingaben wie der Sektionsbaum, aber auf ARTIKEL-Ebene: die
+ * `knoten`-Ableitung zählt nur Bereiche, nie einzelne Artikel (§3 — zwei
+ * verschiedene Fragen, zwei Funktionen, keine gemeinsame Wahrheit erzwungen).
+ * Anhang-Einträge bleiben aussen vor — sie stehen unter der Anhang-Wurzel des
+ * Sektionsbaums (`knoten`), die der Renderer UNTER den Index hängt (§5: der
+ * Index dupliziert die Anhang-Erkennung nicht neu).
+ */
+function baueArtikelIndex(
+  sektionen: Sektion[], ohneGliederung: NormSnapshot[], eintraege: NormSnapshot[], struktur: StrukturMap | null,
+): ArtikelIndexGruppe[] {
+  // WARUM `artikelSachtitel`, NICHT `randtitelKnoten(…).blatt`: `blatt` ist
+  // `null`, sobald die LETZTE Marginalien-Stufe selbst einen Aufzähler trägt
+  // («1.») — dann wird sie im Baum zur (ggf. einzelartikligen) Ast-Zeile statt
+  // zum Blatt (§3.4, Auftrag David 28.6.2026). Bei VwVG trifft das auf ALLE
+  // 93 Artikel zu (empirisch geprüft, §7) — `blatt` wäre für den ganzen Erlass
+  // durchgehend `null`, obwohl die Spec genau «Art. N — Randtitel» für VwVG
+  // verlangt (§3.2/§8 T3). `artikelSachtitel` liefert IMMER die artikel-eigene
+  // Sachüberschrift (letzte Marginalien-Stufe, Aufzähler gestrippt) — dieselbe
+  // Quelle, die das Verweis-Popover (M11) für denselben Zweck nutzt.
+  const randtitelVon = (e: NormSnapshot): string | null =>
+    artikelSachtitel(struktur?.[e.artikel]?.marginalie ?? []) ?? (e.titel?.trim() || null);
+  const zeileFuer = (e: NormSnapshot): ArtikelIndexZeile => ({
+    token: e.artikel, label: e.artikelLabel, randtitel: randtitelVon(e), aufgehoben: e.aufgehoben === true,
+  });
+  const gruppen: ArtikelIndexGruppe[] = [];
+  if (sektionen.length > 0) {
+    // Top-Level-Abschnitte als Zwischenköpfe; ihr GANZER Teilbaum (inkl. tiefer
+    // randtitel-promoteter Untergruppen) liefert die Artikel dokumentlinear —
+    // der Index zeigt die flache Liste, keine zweite Verschachtelung (§3.2).
+    for (const s of sektionen) {
+      const arts = sammleArtikel(s).filter((a) => !istAnhangEintrag(a));
+      if (arts.length > 0) gruppen.push({ kopf: s.label, zeilen: arts.map(zeileFuer) });
+    }
+    const frei = ohneGliederung.filter((a) => !istAnhangEintrag(a));
+    if (frei.length > 0) gruppen.push({ kopf: null, zeilen: frei.map(zeileFuer) });
+  } else {
+    const arts = eintraege.filter((a) => !istAnhangEintrag(a));
+    if (arts.length > 0) gruppen.push({ kopf: null, zeilen: arts.map(zeileFuer) });
+  }
+  return gruppen;
 }
 
 /**
@@ -605,6 +686,14 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
     : modus === 'b1-offen' && ein.startSichtbarGo === true ? Number.POSITIVE_INFINITY
       : 0;
 
+  // S9: der Artikel-Index wird NUR gebaut, wo ihn ein Modus zeigt (B2 und B4 —
+  // ein geöffneter Mini-Erlass braucht dieselbe flache Liste, sonst öffnet ☰
+  // auf eine leere Fläche, §8). Für B1/B3 bleibt er leer statt umsonst über
+  // 1'686 OR-Artikel zu laufen (§15).
+  const artikelIndex = modus === 'b2-index' || modus === 'b4-mini'
+    ? baueArtikelIndex(sektionen, ohneGliederung, eintraege, struktur)
+    : [];
+
   return {
     modus,
     // B3 ist die ehrliche Leere: kein Baum, keine Ersatz-Konstruktion (§8).
@@ -613,6 +702,7 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
     leisteStartetZu: modus === 'b4-mini',
     umhaengPraefix,
     kennzahlen,
+    artikelIndex,
   };
 }
 

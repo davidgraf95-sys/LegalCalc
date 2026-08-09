@@ -1,4 +1,4 @@
-import { useCallback, useMemo, type CSSProperties, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, type CSSProperties, type ReactNode } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { baueGliederungsbaum, type Sektion } from '../../lib/normtext/browse';
@@ -6,6 +6,7 @@ import { verifizierLinkSektion } from '../../lib/normtext/verifikationslink';
 import { linienProfil } from './linienAufbau';
 import { pfadZu, grundartMeta } from './helpers';
 import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
+import { ArtikelIndex } from './parts/ArtikelIndex';
 import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
 } from './berechnungen';
@@ -109,6 +110,24 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     [tocSektionen, ohneGliederung, eintraege, struktur],
   );
 
+  // W2·19-GLIEDERUNG/S9 (Bau-Spec §3.2/§9-S9 «Mini-Collapse»): B4 startet
+  // eingeklappt (`modell.leisteStartetZu`) — der `tocOffen`-State selbst lebt
+  // in ./inhalt-zustand mit `useState(true)` (fester Anfangswert, weil er VOR
+  // jeder Modell-Berechnung existieren muss). Sobald der Modus für DIESEN
+  // Erlass feststeht, wird er hier einmal auf den modus-eigenen Startwert
+  // gezogen — `erlass?.key` in den Deps, damit ein Wechsel zum nächsten Erlass
+  // (derselbe Reader-Mount, ?r-Instanz) den Schalter neu setzt, ein blosses
+  // Re-Render desselben Erlasses ihn aber nicht gegen einen manuellen Klick
+  // zurückdreht. `eintraege` MUSS geladen sein: solange der Snapshot noch
+  // fehlt, rechnet `modell` auf dem `?? []`-Leerstand (Zeile oben) — dort
+  // stünde `artikelAnzahl=0` und damit transient IMMER b4-mini, auch für eine
+  // grosse Kodifikation. Ohne diese Wache kollabierte die Leiste kurz und
+  // sprang beim Eintreffen der echten Daten wieder auf (Lade-Flacker).
+  useEffect(() => {
+    if (eintraege && modell.leisteStartetZu) setTocOffen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [erlass?.key, eintraege, modell.leisteStartetZu]);
+
   // W2·19-GLIEDERUNG/S6: Eingabe des Erfassungsgrads (§8, erfassungsgrad.ts) —
   // die in LexMetrik ERFASSTE Erlass-Zahl des Kantons dieses Erlasses, gezählt
   // aus dem ohnehin geladenen Browse-Manifest (§5: keine zweite Zählung, keine
@@ -139,12 +158,15 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   }, [struktur]);
 
   // §6.6-Split: Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht-/Such-Slot)
-  // — verhaltensneutral in ./inhalt-hooks (EIN useEffect, identische Deps). Steht
-  // NACH `linien`/`fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
+  // — verhaltensneutral in ./inhalt-hooks (EIN useEffect). Steht NACH
+  // `linien`/`fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
+  // W2·19-GLIEDERUNG/S9: `sektionen` fällt hier weg — der ☰-Knopf hängt seit
+  // dem Schwachstelle-8-Fix an `eintraege` (hatLeiste-Logik), nicht mehr an
+  // der amtlichen Gliederung (inhalt-hooks.tsx, `zeigeGliederung`).
   useInhaltsKopfMeldung({
     erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
     kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
-    suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
+    suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf,
   });
 
   // Sektions-Positionen/-Meta/-Labels + Randtitel-Anzeige (./inhalt-ableitungen).
@@ -335,12 +357,19 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Ein Knoten kann seit 6b DIREKTE Artikel UND Unter-Knoten tragen (z. B.
   // «II. Handlungsfähigkeit» enthält Art. 12 direkt und die Untergruppe
   // «2. Voraussetzungen») — beide werden in Dokument-Reihenfolge gemischt.
-  const renderSektion = (s: Sektion, defOpen: boolean, tiefe: number): ReactNode => {
+  // W2·19-GLIEDERUNG/S9: `randTiefe` zählt NUR innerhalb einer randtitel-Kette
+  // («A.»=0, «I.»=1, «1.»=2) — sie startet bei 0 sobald ein amtlicher Knoten
+  // (nicht randtitel) folgt, sonst zählt sie am Elternwert weiter (Herleitung:
+  // SektionKopf.tsx `randTiefe`-Doku). Optionaler 4. Parameter, Default 0 —
+  // der bestehende Aufrufer in inhalt-volltext.tsx (`renderSektion(s, true, 0)`)
+  // bleibt unverändert lauffähig (§6: kein Test angefasst).
+  const renderSektion = (s: Sektion, defOpen: boolean, tiefe: number, randTiefe = 0): ReactNode => {
     const auf = istOffen(s.id, defOpen);
+    const kinderRandTiefe = s.randtitel ? randTiefe + 1 : 0;
     // Kinder + direkte Artikel in EINER nach Dokument-Position sortierten Liste.
     const inhalt = auf
       ? [
-          ...s.kinder.map((k) => ({ pos: sekPos.get(k.id) ?? Infinity, el: renderSektion(k, true, tiefe + 1) })),
+          ...s.kinder.map((k) => ({ pos: sekPos.get(k.id) ?? Infinity, el: renderSektion(k, true, tiefe + 1, kinderRandTiefe) })),
           ...s.artikel.map((e) => ({
             pos: artIndex.get(e.artikel) ?? 0,
             el: <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />,
@@ -373,7 +402,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
           // EID-2 (W2·5d §12): Sektions-Deep-Link zur amtlichen Fassung — nur wenn
           // das EID-1-Sidecar eine Container-eId trägt UND der Erlass eine ELI-
           // Quelle hat (Builder liefert sonst null ⇒ kein Link, §8).
-          amtlichUrl={verifizierLinkSektion(erlass, s.eId) ?? undefined} />
+          amtlichUrl={verifizierLinkSektion(erlass, s.eId) ?? undefined}
+          randTiefe={randTiefe} />
         {auf && <div className="space-y-5">{inhalt.map((x) => x.el)}</div>}
       </section>
     );
@@ -382,16 +412,43 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Gliederungs-Baum EINMAL beschreiben (genutzt in der xl-Spalte UND im mobilen
   // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggleGruppe` sind
   // oben als useCallback definiert (über dem early-return, Rank 4).
-  const tocBaumEl = (
-    // A36: das Modell ist auf dem KURATIERTEN Baum gebaut (tocSektionen) —
-    // Sprung-/Toggle-Handler arbeiten weiter über die Ids des vollen Baums
-    // (Teilmenge, pfadZu findet sie identisch). `onSprungArtikel` bedient die
-    // synthetischen Zeilen (Vorspann/Anhänge), die keine `sek-N`-Identität
-    // haben und darum über ihren ersten Artikel-Token springen.
-    <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} offen={tocBaum}
-      startOffeneTiefe={modell.startOffeneTiefe}
-      onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
-  );
+  // W2·19-GLIEDERUNG/S9 (Bau-Spec §3.2, §9-S9): Zone B ist seit hier MODUS-
+  // abhängig, nicht mehr ausschliesslich der Sektionsbaum.
+  //   · b3-leer  — ehrliche Leerzeile (§8); der Quickjump steht bereits in
+  //     Zone A (inhalt-volltext.tsx), hier kommt nichts Zweites dazu (§5).
+  //   · b2-index / b4-mini — der flache Artikel-Index (S9, gliederungsModell.ts
+  //     `artikelIndex`); ein Mini-Erlass böte sonst beim Öffnen von ☰ eine
+  //     leere Fläche (`knoten` bleibt für ihn praktisch leer, s. dort).
+  //   · b1-offen / b1-kompakt — unverändert der Sektionsbaum (S4).
+  // In JEDEM Fall der Anhang-Ast, falls vorhanden (`knoten` trägt ihn immer
+  // ausser in b3-leer, §3.4) — Index und Baum sind zwei verschiedene Fragen
+  // (Artikel vs. Bereiche), der Anhang bleibt eine Sache des Baum-Renderers.
+  const anhangAst = modell.knoten.filter((k) => k.art === 'anhang');
+  const anhangEl = anhangAst.length > 0
+    ? (
+      <SektionBaumTOC knoten={anhangAst} aktivPfad={aktivIds} offen={tocBaum}
+        startOffeneTiefe={modell.startOffeneTiefe}
+        onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
+    )
+    : undefined;
+  const tocBaumEl = modell.modus === 'b3-leer'
+    ? (
+      <p className="text-micro leading-snug text-ink-500 [overflow-wrap:anywhere]">
+        Für diesen Erlass ist keine Gliederung erfasst.
+      </p>
+    )
+    : modell.modus === 'b2-index' || modell.modus === 'b4-mini'
+      ? <ArtikelIndex gruppen={modell.artikelIndex} aktivToken={aktivToken} onSprung={springeZuArtikel} anhang={anhangEl} />
+      : (
+        // A36: das Modell ist auf dem KURATIERTEN Baum gebaut (tocSektionen) —
+        // Sprung-/Toggle-Handler arbeiten weiter über die Ids des vollen Baums
+        // (Teilmenge, pfadZu findet sie identisch). `onSprungArtikel` bedient die
+        // synthetischen Zeilen (Vorspann/Anhänge), die keine `sek-N`-Identität
+        // haben und darum über ihren ersten Artikel-Token springen.
+        <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} offen={tocBaum}
+          startOffeneTiefe={modell.startOffeneTiefe}
+          onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
+      );
 
   return (
     // `lc-leser`: Scope-Anker für die G2a-Options-CSS (index.css) — die

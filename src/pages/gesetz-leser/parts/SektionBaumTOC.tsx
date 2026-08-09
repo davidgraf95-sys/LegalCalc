@@ -244,8 +244,12 @@ const Zeile = memo(function Zeile({
           className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 hover:bg-paper-sunken/60'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen
-              Baum. Der volle Text bleibt über title/aria-label erreichbar. */}
-          <span className="line-clamp-2">
+              Baum. Der volle Text bleibt über title/aria-label erreichbar.
+              `[overflow-wrap:anywhere]` (Zusatzpunkt David 9.8.2026): ein
+              langes, leerzeichenloses Etikett (Anhang-Ziffern, SR-Nummern)
+              würde sonst trotz line-clamp die Zeile — und damit den
+              [data-toc]-Scroller — horizontal aufreissen statt umzubrechen. */}
+          <span className="line-clamp-2 [overflow-wrap:anywhere]">
             {pre ? <><span className={stimme.pre}>{pre}:</span> {margLabel(rest)}</> : margLabel(k.labelKette[k.labelKette.length - 1])}
             {/* Verdichtete Einzelkind-Kette: die übersprungenen Stufen stehen
                 sichtbar davor, sonst behauptete die Zeile eine Ebene, die es

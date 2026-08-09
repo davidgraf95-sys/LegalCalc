@@ -53,7 +53,10 @@ function Ausschnitt({ t }: { t: LeserTreffer }) {
   const a = t.ausschnitt;
   if (!a) return null;
   return (
-    <p className="lc-such-ausschnitt mt-0.5 text-micro leading-snug text-ink-600">
+    // Zusatzpunkt David 9.8.2026: der Ausschnitt ist echter Fliesstext-Auszug,
+    // kein kontrolliertes Label — `[overflow-wrap:anywhere]` schützt den
+    // [data-toc]-Scroller vor einem unbrechbaren Lauftext-Fragment.
+    <p className="lc-such-ausschnitt mt-0.5 text-micro leading-snug text-ink-600 [overflow-wrap:anywhere]">
       {a.vor}<mark>{a.treffer}</mark>{a.nach}
     </p>
   );
