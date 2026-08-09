@@ -13,8 +13,8 @@
  * (AIG, ASYLG, KKV). Erfundene Bäume prüften hier nur die eigene Annahme.
  */
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync } from 'node:fs';
-import { baueGliederungsbaum, type StrukturMap, type Sektion } from '../lib/normtext/browse';
+import { baueGliederungsbaum, type Sektion } from '../lib/normtext/browse';
+import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import { pfadZu } from '../pages/gesetz-leser/helpers';
@@ -28,13 +28,7 @@ import {
 function lade(ebene: 'bund' | 'kanton', key: string): GliederungsModell & {
   eintraege: NormSnapshot[]; sektionen: Sektion[];
 } {
-  const eintraege = (JSON.parse(readFileSync(`public/normtext/${ebene}/${key}.json`, 'utf8')) as {
-    eintraege: NormSnapshot[];
-  }).eintraege;
-  const strPfad = `public/normtext/struktur/${ebene}/${key}.json`;
-  const struktur: StrukturMap | null = existsSync(strPfad)
-    ? (JSON.parse(readFileSync(strPfad, 'utf8')) as { artikel: StrukturMap }).artikel
-    : null;
+  const { eintraege, struktur } = ladeNormFixture(ebene, key);
   const roh = baueGliederungsbaum(eintraege, struktur);
   const sektionen = kuratiereTocSektionen(roh.sektionen);
   const modell = baueGliederungsModell({
@@ -186,7 +180,7 @@ describe('B3 — die verdichtete Zeile lässt sich wieder schliessen', () => {
     // mitgegebenen `istOffen` läse ein Toggle aus der leeren Karte «zu» und
     // öffnete eine bereits offene Zeile ein zweites Mal — der erste Klick täte
     // dann nichts.
-    const m = lade('bund', 'ChemRRV'); // b1-offen, Anhang-Wurzel mit startOffen
+    const m = lade('bund', 'CHEMRRV'); // b1-offen, Anhang-Wurzel mit startOffen
     const k = flacheZeilen(m.knoten).find((x) => x.kinder.length > 0);
     expect(k, 'kein Knoten mit Kindern im Referenz-Erlass').toBeTruthy();
     const sichtbar = zeileIstOffen(k!, {}, m.startOffeneTiefe);

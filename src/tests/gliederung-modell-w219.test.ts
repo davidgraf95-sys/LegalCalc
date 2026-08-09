@@ -18,8 +18,8 @@
  * AR-145.312 (T5 Mini) — die drei belegen Kanten, die sonst ungeprüft blieben.
  */
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync } from 'node:fs';
 import { baueGliederungsbaum, type StrukturMap, type Sektion } from '../lib/normtext/browse';
+import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import {
@@ -32,13 +32,7 @@ import {
 function lade(ebene: 'bund' | 'kanton', key: string, go = false): GliederungsModell & {
   eintraege: NormSnapshot[]; struktur: StrukturMap | null; sektionen: Sektion[];
 } {
-  const eintraege = (JSON.parse(readFileSync(`public/normtext/${ebene}/${key}.json`, 'utf8')) as {
-    eintraege: NormSnapshot[];
-  }).eintraege;
-  const strPfad = `public/normtext/struktur/${ebene}/${key}.json`;
-  const struktur: StrukturMap | null = existsSync(strPfad)
-    ? (JSON.parse(readFileSync(strPfad, 'utf8')) as { artikel: StrukturMap }).artikel
-    : null;
+  const { eintraege, struktur } = ladeNormFixture(ebene, key);
   const roh = baueGliederungsbaum(eintraege, struktur);
   // Der Reader füttert das Modell mit dem KURATIERTEN Baum (A36) — hier genauso,
   // sonst prüften die Zeilenzahlen einen Baum, den niemand rendert.
@@ -70,12 +64,7 @@ describe('S3 — Modus-Kette an den Referenz-Erlassen', () => {
     // «Wortlaut der früheren Bestimmungen …» mit seinen 7 amtlichen Knoten aus
     // der Gliederung). Das Modell muss die Zahl des GEZEIGTEN Baums führen,
     // sonst zählte die Leiste Knoten mit, die niemand sieht (§8).
-    const eintraege = (JSON.parse(readFileSync('public/normtext/bund/ZGB.json', 'utf8')) as {
-      eintraege: NormSnapshot[];
-    }).eintraege;
-    const struktur = (JSON.parse(readFileSync('public/normtext/struktur/bund/ZGB.json', 'utf8')) as {
-      artikel: StrukturMap;
-    }).artikel;
+    const { eintraege, struktur } = ladeNormFixture('bund', 'ZGB');
     const roh = baueGliederungsbaum(eintraege, struktur);
     expect(zaehleRoh(roh.sektionen, (s) => s.randtitel !== true)).toBe(134);
 
@@ -96,7 +85,7 @@ describe('S3 — Modus-Kette an den Referenz-Erlassen', () => {
   });
 
   it('T3 VwVG: 5 amtliche Knoten bei 93 Artikeln, 100 % Randtitel → B2 Artikel-Index', () => {
-    const m = lade('bund', 'VwVG');
+    const m = lade('bund', 'VWVG');
     expect(m.kennzahlen.amtlicheKnoten).toBe(5);
     expect(m.kennzahlen.amtlicheKnoten).toBeLessThan(INDEX_MAX_AMTLICHE_KNOTEN);
     expect(m.kennzahlen.marginalienDichte).toBe(1);
@@ -369,7 +358,7 @@ describe('S3 — Anhänge bekommen einen eigenen Ast am Baumende', () => {
   });
 
   it('ChemRRV: 58 % Anhang-Anteil → der Ast startet aufgeklappt (Dominanz-Regel)', () => {
-    const m = lade('bund', 'ChemRRV');
+    const m = lade('bund', 'CHEMRRV');
     expect(m.kennzahlen.anhangAnteil).toBeGreaterThan(0.5);
     expect(m.knoten.at(-1)?.id).toBe(ID_ANHANG);
     expect(m.knoten.at(-1)?.startOffen).toBe(true);
@@ -407,7 +396,7 @@ describe('S3 — Anhänge bekommen einen eigenen Ast am Baumende', () => {
 // ═══ 7 · Randtitel-Dichte aus beiden Korpus-Quellen ══════════════════════════
 describe('S3 — Randtitel-Dichte liest Sidecar UND Snapshot', () => {
   it('Bund: die Dichte kommt aus der Sidecar-Marginalie (titel ist dort leer)', () => {
-    const m = lade('bund', 'VwVG');
+    const m = lade('bund', 'VWVG');
     expect(m.eintraege.every((e) => (e.titel ?? '') === '')).toBe(true);
     expect(m.kennzahlen.marginalienDichte).toBe(1);
     expect(m.eintraege.every((e) => hatRandtitel(e, m.struktur))).toBe(true);
