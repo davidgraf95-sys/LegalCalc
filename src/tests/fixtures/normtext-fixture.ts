@@ -82,7 +82,7 @@ export function ladeNormFixture(ebene: 'bund' | 'kanton', key: string): {
   const eintraege = (JSON.parse(readFileSync(`public/normtext/${ebene}/${key}.json`, 'utf8')) as {
     eintraege: NormSnapshot[];
   }).eintraege;
-  let struktur: StrukturMap | null = null;
+  let struktur: StrukturMap | null;
   try {
     struktur = (JSON.parse(readFileSync(`public/normtext/struktur/${ebene}/${key}.json`, 'utf8')) as {
       artikel: StrukturMap;
