@@ -62,8 +62,29 @@ test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', ()
     const suche = inGesetzSuche(page);
     await expect(suche).toBeVisible({ timeout: 20000 });
     await suche.fill('Vertrag');
-    // Trefferliste steht.
-    await expect(page.getByText(/Treffer für/)).toBeVisible({ timeout: 15000 });
+    // ── §6.3-DEKLARATION (9.8.2026, W2·19-GLIEDERUNG/S8) ────────────────────
+    // Freigabe David 8.8.2026 («e2e-Anpassungen in deklarierten Commits
+    // erlaubt», Bau-Spec §10 Entscheid (a)) und Entscheid (c) desselben Tages:
+    // die Trefferliste ist in die Seitenleiste gezogen, die Lesespalte bleibt
+    // vollständig. Der A35-Auftrag vom 16.7.2026 («Suchtreffer im Text
+    // markieren») ist UNBERÜHRT — genau er wird unten weiter geprüft. Auch die
+    // FELD-Assertions des Falls darüber (Kopf-Sitz, `ancestor::aside == 0`)
+    // bleiben wörtlich stehen.
+    // GEÄNDERT ist nur der Anker auf die Trefferliste: sie hiess «N Treffer für
+    // «x»» und heisst jetzt «N Artikel · M Fundstellen» (der Zähler ist
+    // datenseitig geworden, §4.4). Statt an einem Wortlaut hängt der Test
+    // seither am stabilen `[data-treffer-leiste]` — dieselbe Sache, robuster
+    // adressiert.
+    await expect(page.locator('[data-treffer-leiste]')).toBeVisible({ timeout: 15000 });
+
+    // Die Markierung entsteht seit S8 ARTIKELWEISE für das Sichtband (§4.5) —
+    // ein Voll-Lauf über 1686 OR-Artikel je Such-Ruhephase wäre mit der jetzt
+    // vollständigen Lesespalte nicht mehr vertretbar. Der Test scrollt darum
+    // zuerst an einen Treffer und prüft dann, was A35 zusagt: dort leuchtet es.
+    const ersterTreffer = page.locator('[data-treffer-artikel]').first();
+    await expect(ersterTreffer).toBeVisible({ timeout: 15000 });
+    const token = await ersterTreffer.getAttribute('data-treffer-artikel');
+    await page.locator(`#art-${token}`).scrollIntoViewIfNeeded();
     // Highlight-Menge ist gesetzt (Paint-Schicht, keine DOM-Mutation).
     await expect.poll(async () => page.evaluate(() => {
       const reg = (globalThis as unknown as { CSS?: { highlights?: Map<string, { size: number }> } }).CSS?.highlights;
