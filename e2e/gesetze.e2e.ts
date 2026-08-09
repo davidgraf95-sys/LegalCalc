@@ -99,9 +99,17 @@ test.describe('Lesesicht (über Klick aus der Übersicht)', () => {
     // Inhaltsverzeichnis (data-toc-aktiv).
     await page.evaluate(() => window.scrollTo(0, 1200))
     await expect(page.locator('[data-toc-aktiv]').first()).toBeVisible({ timeout: 15000 })
-    // In-Gesetz-Suche filtert (VGKE Art. 1 «Die Kosten der Verfahren …»).
+    // In-Gesetz-Suche liefert eine Trefferliste (VGKE Art. 1 «Die Kosten der
+    // Verfahren …»).
+    // §6.3-DEKLARATION (9.8.2026, W2·19-GLIEDERUNG/S8; Freigabe David 8.8.2026,
+    // Bau-Spec §10 Entscheid (a)): der Anker auf die Trefferliste wandert, die
+    // geprüfte Sache nicht. Die Liste hiess «N Treffer für «x»» und heisst seit
+    // Entscheid (c) «N Artikel · M Fundstellen»; sie steht in der Seitenleiste,
+    // und die Lesespalte wird NICHT mehr gefiltert — das Wort «filtert» im
+    // bisherigen Kommentar war damit ebenfalls überholt. Der Test hängt seither
+    // am stabilen `[data-treffer-leiste]` statt an einem Wortlaut.
     await suche.fill('Kosten')
-    await expect(page.getByText(/Treffer für/)).toBeVisible({ timeout: 15000 })
+    await expect(page.locator('[data-treffer-leiste]')).toBeVisible({ timeout: 15000 })
     expect(fehler).toEqual([])
   })
 

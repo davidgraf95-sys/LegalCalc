@@ -4,7 +4,6 @@ import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { berechneSekPos, berechneSektionMeta } from './berechnungen';
-import { passtAufSuche } from './helpers';
 
 // ═══ ABSCHNITT · Abgeleitete Reader-Werte (§6.6-Split, QS-TOK/T14) ═══════════
 // Reine useMemo-Ableitungen aus GesetzLeserInhalt — keine Effekte, kein Zustand,
@@ -109,18 +108,25 @@ export function useArtikelTokens({ artLabelByToken, eintraege, aktArtikel }: {
   return { tokenByLabel, aktivToken, artTokens };
 }
 
-// ─── In-Gesetz-Trefferliste + Nachbar-Erlasse des Manifests ──────────────────
-export function useTrefferUndNachbarn({ eintraege, sucheTrim, manifest, erlass }: {
-  eintraege: NormSnapshot[] | null;
-  sucheTrim: string;
+// ─── Nachbar-Erlasse des Manifests ───────────────────────────────────────────
+//
+// W2·19-GLIEDERUNG/S8 (Bau-Spec §4.5, Entscheid David (c) 8.8.2026): der
+// LESESPALTEN-FILTER IST HIER ENTFALLEN. Bis S8 stand hier
+//
+//     eintraege.filter((e) => passtAufSuche(e, sucheTrim))
+//
+// und die Volltext-Ansicht rendert das Ergebnis ANSTELLE des Gesetzestexts —
+// im Suchmodus war der amtliche Text also unvollständig. David hat das am
+// 8.8.2026 umentschieden: «Suche = Trefferliste in der Seitenleiste mit
+// Textausschnitten, die Lesespalte bleibt vollständig und springt». Die
+// Trefferliste kommt seither aus `leserSuche.ts` (alle sechs Feldklassen,
+// eigene Sortierung) und lebt in Zone B der Leiste; `passtAufSuche` ist damit
+// ersatzlos entfallen und aus `helpers.tsx` entfernt — eine Filterregel ohne
+// Konsument wäre tote Wahrheit neben der neuen (§5).
+export function useNachbarn({ manifest, erlass }: {
   manifest: BrowseManifest | null;
   erlass: BrowseErlass | null;
 }) {
-  const treffer = useMemo(
-    () => (eintraege && sucheTrim ? eintraege.filter((e) => passtAufSuche(e, sucheTrim)) : null),
-    [eintraege, sucheTrim],
-  );
-
   const { vorher, nachher } = useMemo(() => {
     if (!manifest || !erlass) return { vorher: null as BrowseErlass | null, nachher: null as BrowseErlass | null };
     const g = manifest.erlasse.filter((e) => e.ebene === erlass.ebene && e.status === 'snapshot');
@@ -128,5 +134,5 @@ export function useTrefferUndNachbarn({ eintraege, sucheTrim, manifest, erlass }
     return { vorher: i > 0 ? g[i - 1] : null, nachher: i >= 0 && i < g.length - 1 ? g[i + 1] : null };
   }, [manifest, erlass]);
 
-  return { treffer, vorher, nachher };
+  return { vorher, nachher };
 }

@@ -46,6 +46,12 @@
 // wird NICHT an ihr nachjustiert, sondern die Oberhalb-Richtung wieder
 // abgeschaltet (`F2_OBERHALB = false`, eine Zeile) — dann gilt exakt der
 // 19.7.-Zustand. Nie ein springender Baum.
+//
+// ── NACHTRAG 9.8.2026: DIE ANDERE RICHTUNG (AUFklappen) ──────────────────────
+// Dieses Modul heisst nach dem Zuklappen, führt seit Davids Entscheid (a) vom
+// 9.8.2026 aber die Regel für BEIDE Richtungen — «wann darf sich das Akkordeon
+// von selbst bewegen» ist EINE Frage, und zwei Häuser für eine Frage sind ein
+// §5-Duplikat. Die Zuklapp-Regel selbst bleibt davon unberührt (s. u.).
 
 /**
  * Nachlauf-Fenster in Pfadwechseln: ein automatisch geöffneter Zweig bleibt so
@@ -74,6 +80,49 @@
  * DOM-Last im Baum fällt von 20 389 auf ~1 300–1 500 Knoten.
  */
 export const AUTO_ZU_NACHLAUF = 6;
+
+/**
+ * Ruhefenster des Auto-AUFklapps in Millisekunden (Entscheid David 9.8.2026,
+ * Punkt (a)): der spy-getriebene Aufklapp des aktiven Zweigs feuert erst, wenn
+ * seit dem letzten Scroll-Ereignis des Dokuments so lange nichts mehr passiert
+ * ist. Er bewegt den Baum damit NICHT mehr mitten im Scrollen.
+ *
+ * WARUM DAS DEN ZIELKONFLIKT AN DER WURZEL LÖST. Der Aufklapp reisst beim ersten
+ * Artikelwechsel den ganzen Aktiv-Pfad in EINEM Commit auf (~21 Zeilen, ~780 px)
+ * — und zwar INNERHALB des Sichtbands des `[data-toc]`-Scrollers, weshalb kein
+ * Scroll-Ausgleich hilft (anders als beim Zuklappen oberhalb, s. o.). Damit
+ * stand Auftrag K (David 26.6.2026, «Zweig automatisch aufklappen») gegen den
+ * a33-Kontrakt «Lese-Scroll = CLS 0»: der Shift trat in 8/8 Sonden-Läufen auf
+ * (bitgleich 0.0504), und ob er als unerwartet ZÄHLTE, entschied allein
+ * Chromiums 500-ms-`hadRecentInput`-Fenster — daher die 2–4/20-Flake-Rate, die
+ * die Nullprobe gegen main als ÄLTER als W2·19 ausgewiesen hat (Dossier
+ * bibliothek/betrieb/a33-lesescroll-cls-altflake-2026-08-09.md).
+ * Wartet der Aufklapp auf Scroll-Ruhe, entsteht das Wachstum nicht mehr während
+ * des Scrollens: es gibt keinen Shift mehr, den ein Zeitfenster zufällig
+ * verwerfen oder zählen könnte. Der Konflikt ist damit aufgelöst, nicht
+ * abgemildert — und zwar über das VERHALTEN, wie es die Diagnose als einzigen
+ * Weg benannt hatte.
+ *
+ * WERT 200 ms: David hat 150–300 ms vorgegeben. 200 ist der Wert, den der
+ * (a)-Block ohnehin schon als Trailing-Entprellung trägt (F3, 16.7.2026) — eine
+ * zweite, abweichende Zahl daneben wäre eine Quelle mehr, die driften kann.
+ *
+ * WAS SICH NICHT ÄNDERT: das Auto-ZUklappen (F2/S5, oben) — weder seine Regel
+ * noch sein Takt. Der Nachlauf-Tick (`AUTO_ZU_NACHLAUF`) wird beim Warten auf
+ * Ruhe ausdrücklich NICHT weitergezählt, sonst alterten die Äste im Leerlauf und
+ * das Zuklappen käme früher als bisher.
+ */
+export const AUTO_AUF_RUHE_MS = 200;
+
+/**
+ * Ruht der Dokument-Scroll? Rein und zeitfrei (§2): der Aufrufer reicht beide
+ * Zeitpunkte herein, damit die Regel ohne Uhr prüfbar ist. `letzterScrollMs = 0`
+ * heisst «seit dem Aufsetzen des Beobachters kein Scroll» und gilt als Ruhe —
+ * sonst bliebe der Zweig beim Einstieg über einen Deep-Link ewig zu.
+ */
+export function scrollRuht(letzterScrollMs: number, jetztMs: number): boolean {
+  return letzterScrollMs === 0 || jetztMs - letzterScrollMs >= AUTO_AUF_RUHE_MS;
+}
 
 /**
  * Fallback-Schalter (s. o.): `false` stellt exakt den 19.7.-Zustand her — es

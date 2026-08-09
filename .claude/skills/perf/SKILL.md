@@ -71,12 +71,26 @@ Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
 
 Detail-Begründungen je Regel: `fahrplaene/FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).
 
-**Werkzeug-Falle IntersectionObserver (9.8.2026, W2·19/S8):** In der versteckten
-Browser-Pane feuern IO-Callbacks GAR NICHT — auch nicht für handgebaute Observer;
-das sieht wie ein Produktfehler aus (hat real ~20 Min. Diagnose gekostet). Wer
-IO-/Sichtbarkeits-Verhalten prüft, tut das in Playwright, nie in der Pane.
-*(Hinweis: PR #480 trägt im selben Abschnitt einen Mess-Hygiene-Block aus derselben
-Session — beim Rebase beide behalten.)*
+**Mess-Hygiene für Hand-Messreihen** (Lehren 8./9.8.2026, W2·19 — zwei Sessions sind
+nacheinander in dieselben Fallen gelaufen):
+
+1. **Keine Zahl ohne Kadenz.** Dieselbe Seite misst @4× je nach Scroll-Kadenz 232 ms
+   (Burst) oder 10'196 ms TBT (Lese-Kadenz mit Spy-Durchlauf) — Kadenz gehört in die
+   Kopfzeile jeder Tabelle, verglichen wird nur gleiche gegen gleiche.
+2. **Jede Paint-/Layout-Aussage braucht einen Ruhe-Kontrolllauf an derselben
+   Scrollposition** — sonst misst man Layout (echte Leerfläche) als Paint-Fehler.
+3. **Synthetische Scroll-Messungen deklarieren, ob sie das Seitenende überschreiten.**
+   `mouse.wheel` über das Ende hinaus erzeugt im Headless-Compositor 40–60 % Leer-Frames
+   auf JEDER Seite (auf einer nackten HTML-Kontrollseite belegt, LM-163-Prüfung 9.8.2026)
+   — Tastatur-/`scrollTo`-Kadenz nehmen oder vor dem Ende stoppen.
+4. **`page.screenshot` erzwingt einen Paint** und maskiert Compositor-Befunde — für
+   Paint-Fragen CDP `Page.startScreencast` (komponierte Frames) verwenden.
+5. **Flake-Raten ohne Messbedingung (kalt/warm, Parallel-Last, Stichprobengrösse gegen
+   die vermutete Rate) sind keine Zahlen** — Dispatch-§0 Ziff. 3c.
+6. **Werkzeug-Falle IntersectionObserver:** In der versteckten Browser-Pane feuern
+   IO-Callbacks GAR NICHT — auch nicht für handgebaute Observer; das sieht wie ein
+   Produktfehler aus (real ~20 Min. Diagnose gekostet, W2·19/S8). IO-/Sichtbarkeits-
+   Verhalten in Playwright prüfen, nie in der Pane.
 
 ## §-Konkordanz (für Alt-Verweise im Bestand)
 

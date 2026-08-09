@@ -1,4 +1,4 @@
-import type { ComponentProps, Dispatch, MutableRefObject, ReactNode, RefObject, SetStateAction } from 'react';
+import { useCallback, type ComponentProps, type Dispatch, type MutableRefObject, type ReactNode, type RefObject, type SetStateAction } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, type NavigateFunction } from 'react-router-dom';
 import { naechsteInstanz, merkeTab } from '../../lib/tabs';
@@ -17,9 +17,9 @@ import type { Histogramm, Zeitbereich } from './bezugZeit';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { istAnhangToken } from './berechnungen';
-import { SUCH_META } from './suchHighlight';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
-import { TrefferLeiste } from './parts/TrefferLeiste';
+import { TrefferListe } from './parts/TrefferListe';
+import type { LeserTreffer } from './leserSuche';
 import { ArtikelSprungFeld } from './parts/ArtikelSprungFeld';
 import { GliederungSheet } from './parts/GliederungSheet';
 import { ErlassUebersicht } from './parts/ErlassUebersicht';
@@ -46,12 +46,13 @@ export function LeserVolltextInhalt({
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
-  fundstellen = null, trefferPos = -1, springeZuFundstelle,
+  fundstellen = 0, fussnotenAus = false, trefferPos = -1, trefferAktivToken = null,
+  springeZuFundstelle, springeZuTreffer,
   loeseArtikel, siePfad = [], siePfadArtikel = null,
   leitfaelleFuer, bezuegeFuer = () => undefined, revisionFuer, historieFuer, kantoneVerfuegbar = [], klassenImErlass,
   bezugHistogramm, bezugBereich,
   reiterToast, setReiterToast, reiterToastTimerRef,
-  tocDrawerRef, trefferRef, navigate,
+  tocDrawerRef, leseRef, navigate,
   kennzahlen = null, kantonErlassAnzahl = null, nichtKonsolidiert = false,
   artikelKontext = null,
 }: {
@@ -75,7 +76,10 @@ export function LeserVolltextInhalt({
   imPane: boolean;
   istXl: boolean;
   overlayWurzel: RefObject<HTMLElement | null> | null;
-  treffer: NormSnapshot[] | null;
+  /** W2·19-GLIEDERUNG/S8: Treffer der erlass-lokalen Suche (`leserSuche.ts`).
+   *  Leer = kein Suchmodus; die Lesespalte zeigt IMMER den vollständigen Text
+   *  (Entscheid David (c) 8.8.2026) — es wird nichts mehr weggefiltert. */
+  treffer: LeserTreffer[];
   suche: string;
   sucheDebounced: string;
   setSuche: Dispatch<SetStateAction<string>>;
@@ -85,15 +89,23 @@ export function LeserVolltextInhalt({
   setTocOffen: Dispatch<SetStateAction<boolean>>;
   setTocAuf: Dispatch<SetStateAction<boolean>>;
   springeZuArtikel: (token: string) => void;
-  /** W2·10-UI-NAV/R1: am DOM gemessene Fundstellen (gesamt + je Artikel-Token).
-   *  null = noch nicht gemessen ⇒ die Anzeige hält den Platz frei und schreibt
-   *  nichts Erfundenes hin (§8/§15). OPTIONAL: ohne sie zeigt die Treffer-Leiste
-   *  die unveränderte Artikel-Zahl und keine Sprungtasten. */
-  fundstellen?: { gesamt: number; proArtikel: Map<string, number> } | null;
+  /** S8 (§4.4 Ziff. 1): DATENSEITIGE Gesamtzahl der Fundstellen — die eine
+   *  Wahrheit, unabhängig von Ansicht-Schaltern. Sie steht ab dem ersten Render
+   *  (nichts wächst nach, §15/2) und braucht darum kein `null` mehr. */
+  fundstellen?: number;
+  /** S8 (§4.4 Ziff. 2): `html[data-fussnoten="aus"]` — steuert ALLEIN die
+   *  Badge-Ehrlichkeit («Fussnote (ausgeblendet)»), nie den Zähler. */
+  fussnotenAus?: boolean;
   /** R1: 0-basierte aktive Fundstelle der Vor/Zurück-Navigation (-1 = keine). */
   trefferPos?: number;
+  /** S8: Artikel-Token der laufenden Fundstelle — markiert die Zeile der Liste. */
+  trefferAktivToken?: string | null;
   /** R1: Sprung um `delta` Fundstellen (zyklisch). Ohne Handler keine Tasten. */
   springeZuFundstelle?: (delta: number) => void;
+  /** S8: Klick auf einen Treffer-Eintrag — springt in der VOLLSTÄNDIGEN
+   *  Lesespalte zur ersten Fundstelle dieses Artikels, ohne die Suche zu
+   *  verlassen (Entscheid c). */
+  springeZuTreffer?: (token: string) => void;
   /** R2: Quickjump-Auflösung «Art. N» → Token (oder null). Ohne sie kein Feld. */
   loeseArtikel?: (eingabe: string) => string | null;
   /** R2: «Sie sind hier» — Gliederungspfad der aktuellen Leseposition. */
@@ -125,7 +137,10 @@ export function LeserVolltextInhalt({
   setReiterToast: Dispatch<SetStateAction<boolean>>;
   reiterToastTimerRef: MutableRefObject<number | null>;
   tocDrawerRef: RefObject<HTMLDivElement | null>;
-  trefferRef: RefObject<HTMLDivElement | null>;
+  /** S8: Wurzel der Lesespalte — Beobachtungsraum des artikelweisen Highlights
+   *  (§4.5). Hiess bis S8 `trefferRef` und zeigte auf den gefilterten
+   *  Treffer-Block; den gibt es nicht mehr. */
+  leseRef: RefObject<HTMLDivElement | null>;
   navigate: NavigateFunction;
   /** W2·19-GLIEDERUNG/S6: Kennzahlen des Gliederungs-Modells (S3) — speisen die
    *  Umfang-Zeile der Erlass-Übersicht (Anhang ja/nein, Sidecar vorhanden).
@@ -143,8 +158,47 @@ export function LeserVolltextInhalt({
    *  Bau-Spec §5.2). `null` = keine Gruppe. */
   artikelKontext?: ArtikelKontextAnsicht | null;
 }) {
+  // B6: Zone A misst sich selbst und legt ihre Höhe als `--toc-deckel` auf den
+  // [data-toc]-Scroller. Alles, was unter ihr kleben soll (Trefferlisten-Kopf),
+  // liest die Marke; der TOC-Nudge (inhalt-hooks.tsx) liest dieselbe. Reine
+  // Darstellungs-Geometrie, kein State ⇒ kein Re-Render (§15).
+  const zoneARef = useCallback((el: HTMLDivElement | null) => {
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ziel = el.closest('[data-toc]') as HTMLElement | null;
+    if (!ziel) return;
+    const setze = () => ziel.style.setProperty('--toc-deckel', `${Math.round(el.getBoundingClientRect().height)}px`);
+    setze();
+    const ro = new ResizeObserver(setze);
+    ro.observe(el);
+    // Kein Cleanup-Rückgabewert: ein Callback-Ref darf keinen liefern. Der
+    // Observer stirbt mit dem Element (er hält nur eine schwache Beobachtung auf
+    // einen Knoten desselben Teilbaums) — und beim Unmount ruft React den
+    // Callback ohnehin mit `null`, worauf hier nichts Neues entsteht.
+  }, []);
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
+
+  // ── W2·19-GLIEDERUNG/S8 · Zone B: Trefferliste statt Baum, solange gesucht
+  //    wird (Bau-Spec §2/§4.3). Der Baum verschwindet nicht, er tritt zurück:
+  //    verlässt man die Suche, steht er unverändert wieder da (derselbe
+  //    Klapp-Zustand, kein Remount des Modells).
+  const sucheAktivTrim = sucheDebounced.trim();
+  const sucheAktiv = sucheAktivTrim !== '';
+  // Die Leiste trägt die Liste nur, wo es sie überhaupt gibt: ab `istXl`, mit
+  // Gliederung, aufgeklappt. Sonst (mobil, schmales Pane, eingeklappte Spalte,
+  // Erlass ohne Sektionen) steht sie ÜBER der Lesespalte — genau dort, wo bis
+  // S8 die gefilterte Liste stand. Es gibt zu jedem Zeitpunkt GENAU EINE
+  // Trefferliste (§5); eine zweite in einem versteckten Container wäre die
+  // Doppelwahrheit, die a32 für das Kontext-Panel schon einmal ausgeschlossen
+  // hat. Die eigenständige mobile Overlay-Fassung (Spec §4.5 letzter Punkt)
+  // gehört in die Mobil-Slice S10 und ist dort deklariert.
+  const listeInLeiste = istXl && sektionen.length > 0 && tocOffen;
+  const trefferListeEl = sucheAktiv ? (
+    <TrefferListe treffer={treffer} begriff={sucheAktivTrim} fundstellen={fundstellen}
+      fussnotenAus={fussnotenAus} position={trefferPos} aktivToken={trefferAktivToken}
+      onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)}
+      onSprung={(token) => springeZuTreffer?.(token)} />
+  ) : null;
 
   // E4/A32 (David 16.7.2026): das Kontext-Panel sass am Gesetzes-ENDE der Lese-
   // spalte und war «schwer sichtbar/auffindbar». Neuer Platz: unterhalb der
@@ -484,7 +538,21 @@ export function LeserVolltextInhalt({
                   nie umbrechend) und zeigt ohne bekannte Leseposition einen
                   ehrlichen Platzhalter statt zu verschwinden (§8). `bg-paper`
                   deckt die durchlaufenden Baumzeilen ab. */}
-              <div data-toc-zone-a className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
+              {/* B6 (Bug-Check §9 zu S8) — STICKY-KOLLISION. Zone A und der Kopf
+                  der Trefferliste klebten beide mit `top-0 z-10` im SELBEN
+                  Scroller; die Liste steht später im DOM und übermalte damit
+                  Quickjump und «Sie sind hier» vollständig — beides war während
+                  einer Suche unbedienbar (mit Playwright belegt).
+                  Zwei Zeilen lösen es: Zone A liegt eine Stufe höher (`z-20`)
+                  und publiziert ihre gemessene Höhe als `--toc-deckel`; der
+                  Trefferlisten-Kopf klebt an dieser Marke statt an 0. Gemessen
+                  statt angenommen, weil die Höhe davon abhängt, ob der Erlass
+                  einen Quickjump trägt — dieselbe Grösse, die der TOC-Nudge in
+                  inhalt-hooks.tsx als «deckel» braucht, jetzt an EINER Stelle
+                  bestimmt (§5). `ResizeObserver` statt Effekt-Takt: die Höhe
+                  ändert sich mit der Schriftskala (R3) und mit dem Erscheinen
+                  des Quickjumps, nicht mit dem React-Zustand. */}
+              <div data-toc-zone-a ref={zoneARef} className="sticky top-0 z-20 -mt-0.5 bg-paper pb-2 pt-0.5">
                 {/* B10 (Bug-Check 9.8.2026): `aria-label` auf einem `<p>` ist nach
                     ARIA 1.2 unzulässig — die Rolle `paragraph` gehört zu den
                     Rollen ohne Namensberechtigung, und eine spec-treue
@@ -503,7 +571,14 @@ export function LeserVolltextInhalt({
                 </p>
                 {quickjump && <div className="mt-1.5">{quickjump}</div>}
               </div>
-              {tocBaumEl}
+              {/* ── Zone B (W2·19-GLIEDERUNG/S4 + S8, Bau-Spec §2) ────────────
+                  Standard: der Gliederungsbaum. Suche aktiv: die Trefferliste
+                  mit Textausschnitten (Entscheid David (c) 8.8.2026) — sie
+                  ERSETZT den Baum im selben Scroller, statt ihn zu verdrängen
+                  oder unter ihn zu wachsen. Grund: die E4-Assertion misst
+                  `tocClient > aside · 0.85`; zwei gleichzeitige Zone-B-Inhalte
+                  hälfteten das Sichtfenster beider. */}
+              {sucheAktiv && listeInLeiste ? trefferListeEl : tocBaumEl}
               {/* ── Zone C (W2·19-GLIEDERUNG/S6, Bau-Spec §2) ──────────────────
                   Erlass-Übersicht als Sockel, DARUNTER erst das Kontext-Panel:
                   «Was ist das für ein Erlass» kommt vor «Was hängt an ihm».
@@ -542,7 +617,11 @@ export function LeserVolltextInhalt({
             die Klasse eine tote Marke, die eine Wirkung behauptet, die es nicht
             mehr gibt. Die Identität der Lesespalte trägt unverändert die id
             `#lc-lesespalte` (Skip-Link-Ziel, oben referenziert). */}
-        <div id="lc-lesespalte" className="mx-auto w-full max-w-normtext">
+        {/* S8: `leseRef` ist der Beobachtungsraum des artikelweisen Highlights
+            (§4.5) — der IntersectionObserver hängt an den `<article>`-Knoten
+            DIESER Spalte. Bis S8 zeigte der Ref auf den gefilterten
+            Treffer-Block; den gibt es nicht mehr. */}
+        <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-normtext">
           {/* A27 (David 12.7.2026): der Sticky Section-Kontextkopf «Titel › … ›
               Art. N › ⧉ Zitat» ist ENTFERNT. Seit A26 (#198) trägt der immer
               sichtbare Inhalts-Kopf (InhaltsKopf, Brotkrümel + Live-Artikel) die
@@ -550,50 +629,29 @@ export function LeserVolltextInhalt({
               «nicht notwendig». Die «Zitat kopieren»-Aktion bleibt vollständig
               erhalten — sie steht (identisches baueZitat-Voll-Zitat) je Artikel in
               der Artikelnummer-Zeile (ArtikelLeser). §15 Funktions-Treue gewahrt. */}
-          {treffer ? (
-            <div className="space-y-4">
-              {/* R1: die frühere nackte «N Treffer für «x»»-Zeile trägt jetzt
-                  zusätzlich die gemessene Fundstellen-Zahl und die Vor/Zurück-
-                  Sprungtasten (TrefferLeiste). Sie steht AUSSERHALB von
-                  `trefferRef` — sonst zählte der TreeWalker den Suchbegriff in
-                  der Kopfzeile als Fundstelle mit (§8: die Zahl muss die Stellen
-                  im GESETZESTEXT meinen). */}
-              <TrefferLeiste begriff={sucheDebounced.trim()} artikelAnzahl={treffer.length}
-                fundstellen={fundstellen?.gesamt ?? null} position={trefferPos}
-                onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)} />
-              <div ref={trefferRef} data-treffer-liste className="space-y-4">
-                {treffer.map((e) => {
-                  // R1 «Trefferzahl je Artikel»: gemessen aus derselben Range-Menge
-                  // wie die Hervorhebung. Der Zähler-Slot hat feste Höhe (h-4) und
-                  // steht ab dem ersten Render — die Zahl wächst hinein, nicht in
-                  // den Fluss (§15/2 CLS 0). Noch nicht gemessen ⇒ leer, nie geraten (§8).
-                  // `data-such-meta` (SUCH_META): diese Zeile ist BEDIENUNG, kein
-                  // Gesetzestext — der Treffer-Walker überspringt sie, sonst zählte
-                  // ein Begriff wie «stelle» die eigenen «N Fundstellen»-Zeilen mit
-                  // (Bug-Check §9 vom 4.8.2026, B1).
-                  const n = fundstellen?.proArtikel.get(e.artikel) ?? null;
-                  return (
-                    <div key={e.id} data-treffer-artikel={e.artikel}>
-                      <p {...{ [SUCH_META]: '' }} data-fundstellen-zahl={n ?? undefined} className="h-4 text-micro leading-4 text-ink-400">
-                        {n === null ? '' : <><span className="num">{n}</span>{n === 1 ? ' Fundstelle' : ' Fundstellen'}</>}
-                      </p>
-                      <ArtikelLeser e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={struktur?.[e.artikel]?.marginalie} imTreffer onSpringe={springeZuArtikel} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />
-                    </div>
-                  );
-                })}
-              </div>
-              {treffer.length === 0 && <p className="text-body-s text-ink-500">Kein Artikel gefunden.</p>}
-            </div>
-          ) : (
-            <div className="space-y-2">
-              {ohneGliederung.length > 0 && (
-                <div className="space-y-5 mb-6">
-                  {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
-                </div>
-              )}
-              {sektionen.map((s) => renderSektion(s, true, 0))}
-            </div>
+          {/* ── W2·19-GLIEDERUNG/S8 · die Lesespalte wird NICHT MEHR GEFILTERT ──
+              Bis S8 stand hier eine Weiche: mit Treffern rendert die Spalte die
+              Treffer-Artikel, sonst den Gesetzestext. Der amtliche Text war im
+              Suchmodus also unvollständig — man konnte nicht weiterlesen, und
+              jeder Sprung musste erst die Suche verlassen. Entscheid David (c)
+              vom 8.8.2026: «die Lesespalte bleibt vollständig und springt». Die
+              Weiche ist ersatzlos weg; das Verzeichnis steht in Zone B der
+              Leiste (bzw. darüber, wo es keine Leiste gibt).
+              Nebenwirkung, die dieselbe Entscheidung mitträgt: der teuerste
+              Commit des Readers (Trefferliste → 1686 Artikel neu mounten,
+              gemessen bis 21,9 s bei 8× Drossel) findet nicht mehr statt — der
+              Volltext-Baum steht die ganze Zeit. */}
+          {sucheAktiv && !listeInLeiste && (
+            <div className="mb-8 border-b border-line pb-4">{trefferListeEl}</div>
           )}
+          <div className="space-y-2">
+            {ohneGliederung.length > 0 && (
+              <div className="space-y-5 mb-6">
+                {ohneGliederung.map((e) => <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)} intern={internRefs} marg={margAnzeige.get(e.artikel)?.teile} margBasis={margAnzeige.get(e.artikel)?.ab} leitfaelle={leitfaelleFuer?.(e.artikel)} bezuege={bezuegeFuer(e.artikel)} revision={revisionFuer(e.artikel)} historie={historieFuer(e.artikel)} istAnhang={istAnhangToken(e.artikel)} />)}
+              </div>
+            )}
+            {sektionen.map((s) => renderSektion(s, true, 0))}
+          </div>
 
           {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
               diesem Erlass — Norm ↔ Entscheid ↔ Material ↔ Werkzeug an einer Stelle

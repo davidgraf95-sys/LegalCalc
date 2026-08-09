@@ -1,21 +1,61 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useCallback, useEffect, useMemo, useRef, useState,
+  type Dispatch, type RefObject, type SetStateAction,
+} from 'react';
 import type { InternRefs } from '../../components/NormText';
-import type { Sektion } from '../../lib/normtext/browse';
+import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import {
-  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, trefferProArtikel,
+  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges,
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
+import { pfadZu } from './helpers';
+import { paneRoot } from './berechnungen';
+import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } from './leserSuche';
 
-// ═══ ABSCHNITT · Such-Hervorhebung, Fundstellen-Navigation, Quickjump ════════
-// (§6.6-Split, QS-TOK/T14) — aus GesetzLeserInhalt ausgelagert: A35 (Highlight),
-// W2·10-UI-NAV/R1 (Fundstellen-Zähler + Vor/Zurück) und R2 (Quickjump «Art. N» +
-// «Sie sind hier»). VERHALTENSNEUTRAL: Effekt-/Callback-Rümpfe und Dependency-
-// Listen byte-identisch, Hook-Reihenfolge erhalten (ein kontiguer Block, an
-// derselben Position gerufen). Keine Rechtsregel, kein Normtext (§3).
+// ═══ ABSCHNITT · In-Gesetz-Suche: Treffer, Hervorhebung, Quickjump ═══════════
+//
+// Ursprung: §6.6-Split (QS-TOK/T14) — A35 (Highlight), W2·10-UI-NAV/R1
+// (Fundstellen-Zähler + Vor/Zurück) und R2 (Quickjump «Art. N» + «Sie sind
+// hier»). Keine Rechtsregel, kein Normtext (§3).
+//
+// ─── W2·19-GLIEDERUNG/S8 · was sich hier ändert und warum ────────────────────
+// Bau-Spec fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md §4; Entscheid David (c)
+// vom 8.8.2026: die Trefferliste zieht mit Textausschnitten in die Seitenleiste,
+// die Lesespalte bleibt VOLLSTÄNDIG und springt.
+//
+// 1 · TREFFER KOMMEN AUS DEN DATEN, nicht mehr aus einer Filterzeile. Bis S8
+//     war die Trefferliste `eintraege.filter(passtAufSuche)` — eine Regel, die
+//     nur `artikelLabel` und `bloecke[].text`/`items[].text` las. `leserSuche.ts`
+//     durchsucht alle sechs Feldklassen und liefert Reihenfolge, Zahlen,
+//     Ausschnitte und Herkunft fertig; hier wird nichts nachgerechnet (§5).
+//
+// 2 · DER TREEWALKER LÄUFT NIE MEHR ÜBER DAS GANZE DOKUMENT (§4.5, Bericht 2).
+//     Er sammelte bisher die Ranges der ganzen Trefferliste in einem Zug. Da die
+//     Lesespalte jetzt vollständig bleibt, wäre das beim OR ein Lauf über 1686
+//     Artikel — je Such-Ruhephase. Stattdessen treibt ein IntersectionObserver:
+//     gemalt wird artikelweise, für Artikel im (grosszügig gefassten) Sichtband
+//     und für das Sprungziel. Was nie im Blick war, kostet nichts.
+//
+// 3 · DER ZÄHLER IST DATENSEITIG (§4.4 Ziff. 1). Der alte Vertrag «gemeldete
+//     Zahl == DOM-sichtbare Fundstellen» ist mit Feldern, die nie gemalt werden
+//     (Gliederungspfad, Bild-Alt) oder per CSS-Toggle unsichtbar sind,
+//     strukturell unhaltbar. Neu gilt: der Kopf-Zähler zählt den ERLASS, die
+//     Hervorhebung malt den SICHTBAREN DOM, und «gemalte ≤ gezählte» ist
+//     konstruktiv wahr — jeder malbare Baustein steht auch im Index
+//     (`leserSuche.ts`, `Malbarkeit`). Die Ehrlichkeitslücke wird nicht
+//     versteckt, sondern benannt: jeder Nicht-Fliesstext-Treffer trägt einen
+//     Herkunfts-Badge, bei ausgeschaltetem Apparat mit dem Zusatz
+//     «(ausgeblendet)» (§8) — statt dass der Sprung die Ansicht still umschaltet.
 
-export function useSuchTreffer({ treffer, sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel }: {
-  treffer: NormSnapshot[] | null;
+export function useSuchTreffer({
+  erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
+  internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
+}: {
+  /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
+  erlassKey: string | null;
+  eintraege: NormSnapshot[] | null;
+  struktur: StrukturMap | null;
   sucheTrim: string;
   sucheFeldLeer: boolean;
   sektionen: Sektion[];
@@ -23,84 +63,149 @@ export function useSuchTreffer({ treffer, sucheTrim, sucheFeldLeer, sektionen, a
   internRefs: InternRefs | undefined;
   aktArtikel: string | null;
   tokenByLabel: Map<string, string>;
+  /** Klapp-Zustand der LESESPALTE (B3/B4): welche Sektionen aufgeklappt sind.
+   *  Der Sprung braucht `setOffen`, um ein Ziel in einem zugeklappten Ast
+   *  überhaupt erreichbar zu machen; der Markierungs-Beobachter braucht `offen`
+   *  in seinen Deps, weil ein Aufklapp neue Artikel ins DOM bringt, die er sonst
+   *  nie beobachtet. Es ist derselbe Zustand, den der Reader ohnehin führt — kein
+   *  zweiter (§5). */
+  offen: Record<string, boolean>;
+  setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
+  /** B7: im Split-View scrollt der PANE-Container, nicht das Fenster. Ohne
+   *  `root` misst der Beobachter gegen den Viewport, und sein 300-px-Vorlauf
+   *  greift dort ins Leere — die Markierung liefe dem Leser sichtbar hinterher. */
+  imPane: boolean;
+  wurzel: RefObject<HTMLElement | null> | null;
 }) {
-  // A35 (David 16.7.2026): Suchtreffer im Text markieren. Wenn die Trefferliste
-  // steht, den Suchbegriff als reine Paint-Schicht (CSS Custom Highlight API,
-  // suchHighlight.ts) über die gerenderten Artikel legen — keine DOM-Mutation,
-  // kein Reflow (CLS 0), keine Berührung von Autolinks/Fussnoten/Zitat-Marken.
-  // rAF: erst NACH dem Treffer-Render (Artikel im DOM); Cleanup löscht die
-  // Highlight-Menge (Suche verlassen / Erlass wechseln). Ausser-Bestand-neutral,
-  // da `treffer===null` (kein Suchmodus) sofort löscht.
-  const trefferRef = useRef<HTMLDivElement | null>(null);
-  // Handle auf den noch nicht gefeuerten Setz-rAF, damit ihn AUCH der Sofort-
-  // Aufräumer unten abbestellen kann (React Compiler ist AUS, §15/4 → Ref).
-  const highlightRaf = useRef<number | null>(null);
-  // W2·10-UI-NAV/R1: gemessene Fundstellen — GESAMT (Zähler in der Treffer-
-  // Leiste) und JE ARTIKEL (Zeile über dem Artikel). Beide kommen aus DERSELBEN
-  // Range-Menge, die auch die Hervorhebung malt (§5) — sonst zeigte der Zähler
-  // eine andere Zahl, als der Text Stellen leuchtet (§8). `null` = noch nicht
-  // gemessen; die Anzeige lässt den Platz reserviert und schreibt nichts
-  // Erfundenes hin (§15/2 CLS 0, §8).
-  // `begriff` ist der Gültigkeits-Schlüssel: die Messung eines FRÜHEREN Begriffs
-  // wird beim Render verworfen, statt sie im Effekt-Rumpf auf null zu setzen
-  // (kein Kaskaden-Render) — und es kann nie eine Zahl zum falschen Begriff
-  // stehenbleiben (§8).
-  const [fundstellen, setFundstellen] = useState<{ begriff: string; gesamt: number; proArtikel: Map<string, number> } | null>(null);
-  // Aktive Fundstelle der Vor/Zurück-Navigation (0-basiert; -1 = noch keine).
-  // Ref + State: der Ref trägt den Wert für den nächsten Klick (ohne Closure-
-  // Neuaufbau), der State treibt allein die Anzeige.
-  const [trefferPos, setTrefferPos] = useState(-1);
-  const trefferPosRef = useRef(-1);
+  // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
+  // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
+  // vollständig bleibt, ist es die Lesespalte selbst.
+  const leseRef = useRef<HTMLDivElement | null>(null);
+
+  // ─── Ansicht-Schalter beobachten ───────────────────────────────────────────
+  // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
+  // («KEIN Artikel-Re-Render», leserOptionen.ts) — sie in React-State zu ziehen
+  // würde genau diese §15-Zusage aufgeben (der OR-Reader reconciliert sonst
+  // 1686 Artikel je Toggle). Ein MutationObserver liest sie darum ab, statt sie
+  // zu besitzen. Er treibt zwei Dinge: die Badge-Ehrlichkeit (`fussnotenAus`)
+  // und ein Neu-Sammeln der gemalten Ranges (`ansichtTick`), weil sich mit
+  // jedem Toggle ändert, was überhaupt malbar ist (RV6, 4.8.2026).
+  const [fussnotenAus, setFussnotenAus] = useState(false);
+  const [ansichtTick, setAnsichtTick] = useState(0);
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!treffer) { setzeSuchHighlight(null, ''); return; }
-    // EIN TreeWalker-Lauf für Malen + Zählen (§15/3: die Suche ist entprellt,
-    // also läuft er einmal je Such-Ruhephase, nicht je Tastendruck).
-    const messe = () => {
-      const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
-      setzeSuchHighlightRanges(ranges);
-      setFundstellen({ begriff: sucheTrim, gesamt: ranges.length, proArtikel: trefferProArtikel(ranges) });
-      // Die Menge ist neu — eine alte Laufnummer zeigte sonst auf eine andere Stelle.
-      trefferPosRef.current = -1;
-      setTrefferPos(-1);
-    };
-    const planen = () => {
-      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
-      highlightRaf.current = window.requestAnimationFrame(messe);
-    };
-    planen();
-    // Re-Verifikation §9 vom 4.8.2026 (RV6): Schaltet der Nutzer die Ansicht
-    // WÄHREND laufender Suche um (Fussnoten an/aus, Hist-Ansicht, …), ändert
-    // sich, was überhaupt malbar ist — die gemeldete Zahl überzeichnete bis zum
-    // nächsten Begriffs-Wechsel (gemeldet 111, anspringbar 80, Anzeige «80/111»).
-    // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
-    // («KEIN Artikel-Re-Render», leserOptionen.ts) — sie in React-State zu
-    // ziehen, würde genau diese §15-Zusage aufgeben (der OR-Reader reconciliert
-    // sonst 1686 Artikel je Toggle). Darum hier ein MutationObserver, der NUR im
-    // Suchmodus lebt und nur die Ansicht-Attribute beobachtet: er misst die EINE
-    // Range-Menge neu, sobald sich die Malbarkeit ändert. Der Beobachter kostet
-    // ausserhalb der Suche nichts (der Effekt steigt bei `!treffer` vorher aus),
-    // und im Suchmodus steht nur die kurze Trefferliste im Walker-Bereich.
-    const beob = new MutationObserver(planen);
+    if (typeof document === 'undefined') return;
+    const lies = () => setFussnotenAus(document.documentElement.dataset.fussnoten === 'aus');
+    lies();
+    const beob = new MutationObserver(() => { lies(); setAnsichtTick((n) => n + 1); });
     beob.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-linien', 'data-verweise'],
     });
+    return () => beob.disconnect();
+  }, []);
+
+  // ─── Index + Treffer (§4.1/§4.2) ───────────────────────────────────────────
+  const sucheAktiv = sucheTrim !== '';
+  // CACHE-GRENZE (§4.1, [W:jurist]): `useMemo` hält je Pane GENAU EINEN Index.
+  // Er entsteht LAZY — erst wenn wirklich gesucht wird, nicht beim Laden des
+  // Erlasses — und wird beim Erlasswechsel wie beim Pane-Unmount mit dem Memo
+  // freigegeben. Split-View OR+ZGB hält damit höchstens zwei Sätze, nie mehr.
+  // Kosten, gemessen (Node, ungedrosselt): OR 1686 Artikel → 15 993 Segmente,
+  // Aufbau 3.7 ms, Suche 2.2 ms; ZGB 4.8/1.1 ms. Ein Neuaufbau nach dem
+  // Verlassen der Suche ist damit billiger als eine Ref-Buchhaltung, die den
+  // Index über den Erlasswechsel hinweg am Leben hielte.
+  const index = useMemo(
+    () => (sucheAktiv && erlassKey && eintraege ? baueLeserSuchIndex(erlassKey, eintraege, struktur) : null),
+    [sucheAktiv, erlassKey, eintraege, struktur],
+  );
+  const treffer = useMemo(() => sucheImErlass(index, sucheTrim), [index, sucheTrim]);
+  const { artikel: artikelAnzahl, fundstellen } = useMemo(() => zaehleTreffer(treffer), [treffer]);
+  // B5: der Ansicht-Schalter gehört IN die Folge, nicht daneben — bei
+  // ausgeblendetem Apparat sind Fussnoten-Stellen nicht malbar, und ein Rang,
+  // der sie mitzählte, verschöbe den Sprung um genau sie (Herleitung dort).
+  const folge = useMemo(() => fundstellenFolge(treffer, fussnotenAus), [treffer, fussnotenAus]);
+
+  // ─── Artikelweise Hervorhebung, IntersectionObserver-getrieben (§4.5) ──────
+  // Die Ranges werden je Artikel gehalten und zur EINEN Highlight-Menge
+  // vereinigt. `sammleTrefferRanges` bleibt die einzige Treffer-Semantik des
+  // DOM (§5): dieselbe Funktion malt, dieselbe Funktion misst den Sprung.
+  const rangesRef = useRef<Map<string, Range[]>>(new Map());
+  /** Vereinigt die je Artikel gehaltenen Ranges zur EINEN Highlight-Menge. */
+  const male = useCallback(() => {
+    const alle: Range[] = [];
+    for (const rs of rangesRef.current.values()) alle.push(...rs);
+    setzeSuchHighlightRanges(alle);
+  }, []);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    // `leseWurzel` statt `wurzel`: seit B7 trägt die Prop `wurzel` den
+    // PANE-Container. Zwei verschiedene Wurzeln unter einem Namen wären genau
+    // die Verwechslung, die B7 überhaupt erst erzeugt hat.
+    const leseWurzel = leseRef.current;
+    rangesRef.current = new Map();
+    if (!sucheAktiv || !leseWurzel || typeof IntersectionObserver === 'undefined') {
+      setzeSuchHighlight(null, '');
+      return;
+    }
+    const beob = new IntersectionObserver((eintraegeIo) => {
+      let geaendert = false;
+      for (const e of eintraegeIo) {
+        const el = e.target as HTMLElement;
+        if (e.isIntersecting) {
+          rangesRef.current.set(el.id, sammleTrefferRanges(el, sucheTrim));
+          geaendert = true;
+        } else if (rangesRef.current.delete(el.id)) {
+          geaendert = true;
+        }
+      }
+      if (geaendert) male();
+    }, {
+      // B7 (Bug-Check §9 zu S8): der Scroll-Container DIESES Panes ist die
+      // Bezugsfläche — im Split-View scrollt nicht das Fenster (B-2.5, Muster
+      // inhalt-hooks.tsx). Ohne `root` mass der Beobachter gegen den Viewport,
+      // und der Vorlauf unten griff im Pane ins Leere. `null` = Fenster, also
+      // in der Einzelansicht unverändert.
+      root: paneRoot(imPane, wurzel),
+      // Vorlauf über das Sichtband hinaus: wer scrollt, sieht die Markierung
+      // bereits stehen, statt sie einlaufen zu sehen. Rein visuell — es wird
+      // kein Knoten erzeugt oder bewegt (CLS 0, §15/2).
+      rootMargin: '300px 0px',
+    });
+    for (const art of leseWurzel.querySelectorAll('article[id^="art-"]')) beob.observe(art);
     return () => {
       beob.disconnect();
-      if (highlightRaf.current !== null) window.cancelAnimationFrame(highlightRaf.current);
-      highlightRaf.current = null;
+      rangesRef.current = new Map();
       setzeSuchHighlight(null, '');
     };
-  }, [treffer, sucheTrim]);
+    // `ansichtTick`: ein Ansicht-Toggle ändert die MALBARKEIT (Fussnoten-Apparat
+    // display:none) — die Ranges müssen dann neu entstehen (RV6).
+    // `offen` (B4, Bug-Check §9 zu S8): ein Auf-/Zuklapp im Fliesstext ÄNDERT DIE
+    // ARTIKELMENGE im DOM. Ohne diese Dep beobachtete der Observer nur die beim
+    // Effekt-Lauf vorhandenen Artikel; alles, was danach aufgeklappt wurde, blieb
+    // unmarkiert — der Leser sah einen Treffer-Artikel ohne eine einzige
+    // leuchtende Stelle (§8). Der Scroll-Spy führt `offen` aus genau diesem Grund
+    // schon in seiner Liste (inhalt-hooks.tsx).
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male]);
 
-  // R1 · Vor/Zurück-Sprungtasten zwischen den Fundstellen. Die Range-Menge wird
-  // bei JEDEM Sprung frisch gesammelt (nicht aus einem Ref recycelt): Ranges sind
-  // an konkrete Text-Knoten gebunden, und zwischen zwei Klicks kann der Reader
-  // Teilbäume neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Frisch
-  // sammeln ist deterministisch und kostet nur die (kurze) Trefferliste.
-  // Reines Scrollen + eine 2,4-s-Puls-Klasse am Ziel-Artikel — KEINE DOM-Mutation
-  // am Wortlaut, kein Reflow (CLS 0, §15/2).
+  // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
+  // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.
+  // Der Sprung führt zum Artikel und — wo die Fundstelle malbar ist — zur
+  // entsprechenden Stelle darin. Ist sie es nicht (Gliederungspfad, Bild-Alt,
+  // ausgeblendeter Apparat), bleibt es beim Artikel; der Badge in der Liste hat
+  // vorher gesagt, warum (§8). Nie wird ein Sprung an eine erfundene Stelle
+  // behauptet.
+  // `begriff` ist der Gültigkeits-Schlüssel des Navigations-Zustands: die
+  // Laufnummer eines FRÜHEREN Begriffs wird beim Render verworfen, statt sie in
+  // einem Effekt zurückzusetzen (kein Kaskaden-Render, react-hooks/set-state-
+  // in-effect). Damit kann nie eine Position zum falschen Begriff stehenbleiben
+  // (§8) — dasselbe Muster, mit dem bis S8 die gemessene Fundstellenzahl
+  // gültig gehalten wurde.
+  const [nav, setNav] = useState<{ begriff: string; pos: number; token: string | null }>(
+    { begriff: '', pos: -1, token: null });
+  const gueltig = nav.begriff === sucheTrim;
+  const trefferPos = gueltig ? nav.pos : -1;
+  const aktivToken = gueltig ? nav.token : null;
+
   // Puls am Ziel-Artikel: Element UND Timer-Handle zusammen halten (Bug-Check §9
   // vom 4.8.2026, B6a). Beim Unmount wird der Timer abbestellt, sonst liefe der
   // Callback nach dem Erlass-/Pane-Wechsel gegen ein abgehängtes Element. Das
@@ -116,27 +221,90 @@ export function useSuchTreffer({ treffer, sucheTrim, sucheFeldLeer, sektionen, a
     blink.current = null;
   }, []);
   useEffect(() => blinkAus, [blinkAus]);
-  const springeZuFundstelle = useCallback((delta: number) => {
-    if (typeof window === 'undefined') return;
-    const ranges = sammleTrefferRanges(trefferRef.current, sucheTrim);
-    if (ranges.length === 0) return;
-    const jetzt = trefferPosRef.current;
-    // Noch keine aktive Fundstelle: «weiter» beginnt bei der ersten, «zurück»
-    // bei der letzten (Basis 0 bzw. -1, dann modulo).
-    const basis = jetzt < 0 ? (delta > 0 ? -1 : 0) : jetzt;
-    const n = ((basis + delta) % ranges.length + ranges.length) % ranges.length;
-    trefferPosRef.current = n;
-    setTrefferPos(n);
-    const start = ranges[n].startContainer;
-    const el = (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null;
-    el?.scrollIntoView({ block: 'center', behavior: 'auto' });
-    const art = el?.closest('article[id^="art-"]') as HTMLElement | null;
-    blinkAus();
-    if (art) {
+
+  /** Scrollt zur n-ten Fundstelle der Folge und markiert ihren Artikel. */
+  const zeigeFundstelle = useCallback((n: number) => {
+    const eintrag = folge[n];
+    if (!eintrag || typeof window === 'undefined') return;
+    // B3 (Bug-Check §9 zu S8): den FORTSCHRITT festhalten, BEVOR ein Ausstieg
+    // möglich ist. Bis hierher stand `setNav` HINTER der DOM-Suche — lag der
+    // Zielartikel in einer zugeklappten Sektion, blieb `nav.pos` stehen, und
+    // jeder weitere ↑↓-Druck berechnete daraus dieselbe Position: die Folge kam
+    // nicht vom Fleck, der Klick blieb ohne jede Rückmeldung (§8).
+    setNav({ begriff: sucheTrim, pos: n, token: eintrag.token });
+    const id = `art-${eintrag.token}`;
+    // CSS.escape: ein Artikel-Token mit Sonderzeichen (belegt: «22 a», «36–42»)
+    // darf den Selektor nicht sprengen — dieselbe Vorsicht wie `findeArt`.
+    const finde = () => (leseRef.current ?? document).querySelector<HTMLElement>(
+      `#${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id}`);
+    const zeige = (art: HTMLElement) => {
+      // Frisch sammeln (nicht aus `rangesRef` recyceln): Ranges hängen an
+      // konkreten Text-Knoten, und zwischen zwei Klicks kann der Reader
+      // Teilbäume neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Der
+      // Lauf kostet genau EINEN Artikel.
+      //
+      // `ranges[malRang]` ist die Zuordnung Fundstelle → gemalte Stelle. B5
+      // (Bug-Check §9 zu S8): hier stand `ranges[rang]`, also der DATENSEITIGE
+      // Rang — der deckt sich mit dem malbaren nur, wenn JEDE Fundstelle des
+      // Artikels malbar ist. Der frühere Kommentar nannte das den «Regelfall»;
+      // im OR trifft es 235+ Artikel nicht zu. Den malbaren Rang führt jetzt die
+      // Folge selbst mit (`malRang`, leserSuche.ts) — dort und nur dort (§5).
+      // Ist die Fundstelle NICHT malbar (Gliederungspfad, Bild-Alt,
+      // ausgeblendeter Apparat), ist `malRang` null: dann bleibt es beim
+      // Artikel, statt eine Stelle zu behaupten (§8).
+      const ranges = sammleTrefferRanges(art, sucheTrim);
+      // Das SPRUNGZIEL wird immer gemalt (§4.5) — unabhängig davon, ob der
+      // IntersectionObserver es schon gemeldet hat. Ohne diesen Schritt landete
+      // man auf einer Fundstelle, die erst im nächsten Beobachter-Zyklus
+      // aufleuchtet; bei einem Ziel ausserhalb des bisherigen Sichtbands wäre
+      // das sichtbar zu spät.
+      rangesRef.current.set(art.id, ranges);
+      male();
+      const start = eintrag.malRang === null ? undefined : ranges[eintrag.malRang]?.startContainer;
+      const el = (start
+        ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
+        : art);
+      el?.scrollIntoView({ block: 'center', behavior: 'auto' });
+      blinkAus();
       art.classList.add('lc-ziel-blink');
       blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
-    }
-  }, [sucheTrim, blinkAus]);
+    };
+    const da = finde();
+    if (da) { zeige(da); return; }
+    // ZIEL IN EINER ZUGEKLAPPTEN SEKTION (B3, zweite Hälfte). Die Lesespalte
+    // bleibt seit S8 vollständig, aber sie bleibt auch klappbar — ein
+    // Sektionskopf-Klick genügt, und der Zielartikel ist nicht im DOM. Der
+    // Artikel-Sprung (`springeZuArtikel`, inhalt.tsx) öffnet seine Vorfahren
+    // seit je selbst; dieser Pfad tat es nicht und war damit für einen Teil
+    // seiner EIGENEN Trefferliste tot. Dieselbe Mechanik, dieselbe Quelle:
+    // `pfadZu` über die Sektionen, dann `setOffen` — hier wird nichts
+    // zweitmalig zugeordnet (§5).
+    const pfad = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === eintrag.token)) ?? [];
+    if (!pfad.length) return;
+    setOffen((o) => { const naechst = { ...o }; for (const sid of pfad) naechst[sid] = true; return naechst; });
+    // Der Artikel entsteht erst im Commit des Aufklapps. Zwei Frames später
+    // steht er samt Layout — dieselbe Zweistufigkeit wie beim Sektions-Sprung
+    // (inhalt-sprung.tsx). Erst dann darf gemessen und gescrollt werden.
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      const el = finde();
+      if (el) zeige(el);
+    }));
+  }, [blinkAus, folge, male, sucheTrim, sektionen, setOffen]);
+
+  const springeZuFundstelle = useCallback((delta: number) => {
+    const len = folge.length;
+    if (len === 0) return;
+    // Noch keine aktive Fundstelle: «weiter» beginnt bei der ersten, «zurück»
+    // bei der letzten (Basis 0 bzw. -1, dann modulo).
+    const basis = trefferPos < 0 ? (delta > 0 ? -1 : 0) : trefferPos;
+    zeigeFundstelle(((basis + delta) % len + len) % len);
+  }, [folge, trefferPos, zeigeFundstelle]);
+
+  /** Klick auf einen Treffer-Eintrag: zur ERSTEN Fundstelle dieses Artikels. */
+  const springeZuTreffer = useCallback((token: string) => {
+    const n = folge.findIndex((f) => f.token === token);
+    if (n >= 0) zeigeFundstelle(n);
+  }, [folge, zeigeFundstelle]);
 
   // ═══ ABSCHNITT · R2 · Quickjump «Art. N» + «Sie sind hier» ═══════════════════
   // Quickjump: KEIN Index, KEIN Server — die Eingabe wird gegen die bereits
@@ -160,35 +328,26 @@ export function useSuchTreffer({ treffer, sucheTrim, sucheFeldLeer, sektionen, a
   // realen Artikel dieses Erlasses auflöst (§8).
   const siePfadArtikel = aktArtikel && tokenByLabel.has(aktArtikel) ? aktArtikel : null;
 
-  // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der Highlight-
-  // Registry hing bisher AUSSCHLIESSLICH am Effekt oben — und der läuft erst, wenn
-  // `treffer` über den ENTPRELLTEN `sucheTrim` auf null kippt. Genau dieser Commit
-  // ist der teuerste des Readers: die Trefferliste weicht dem vollständigen
-  // Volltext-Baum (OR: 1686 Artikel-Knoten neu gemountet). Gemessen von der Leerung
-  // des Feldes bis zum `CSS.highlights.delete`: ~2,4 s ohne Drossel, 9,8 s bei 4×,
-  // 21,9 s bei 8× CPU-Drossel — auf dem 2-vCPU-Runner reisst das reihum das
-  // 15-s-Prüfbudget des A35-Specs, und der Nutzer sieht die Markierung sekundenlang
-  // weiterleuchten, obwohl das Suchfeld leer ist (§8: die Anzeige lügt über den
-  // Zustand). Latenz-Kopplung, KEIN Leck: der Eintrag verschwand am Ende immer.
-  //
-  // Darum das Aufräumen vom teuren Commit ENTKOPPELN: es hängt am ROHEN Feldwert,
-  // nicht am entprellten. Der Render, der `suche` leert, ist billig (die memoisierten
-  // ArtikelLeser der noch stehenden Trefferliste steigen aus der Reconciliation aus),
-  // also feuert dieser Effekt im nächsten Frame. Nur der boolesche Kipp-Punkt ist
-  // Dependency — beim Tippen läuft KEIN zusätzlicher TreeWalker (§15/3, kein
-  // Setz-Pfad hier). Wirkt für JEDEN Ausstieg aus dem Suchmodus (Feld leeren,
-  // `springeZuArtikel`, Erlass-/Pane-Wechsel), unabhängig davon, welche Teilbäume
-  // neu rendern. Der Effekt oben bleibt unverändert der einzige SETZENDE Pfad.
-  // (T14: der Kommentar stand zuvor mehrere Blöcke über seinem Effekt — beim
-  // §6.6-Split an ihn herangerückt, reine Kommentar-Umstellung.)
+  // A35-Sofort-Aufräumer (Befund 20.7.2026, Shard 3/3). Das Löschen der
+  // Highlight-Registry hing ursprünglich AUSSCHLIESSLICH am Effekt oben — und
+  // der läuft erst, wenn `sucheTrim` über den ENTPRELLTEN Wert kippt. Bis S8 war
+  // genau dieser Commit der teuerste des Readers (der volle Volltext-Baum kam
+  // zurück: OR 1686 Artikel neu gemountet), gemessen ~2,4 s ohne Drossel bis
+  // 21,9 s bei 8× — und der Nutzer sah die Markierung sekundenlang
+  // weiterleuchten, obwohl das Suchfeld leer war (§8: die Anzeige lügt über den
+  // Zustand). Seit S8 fällt dieser Remount weg (die Lesespalte bleibt stehen),
+  // die Entprellung bleibt aber: das Aufräumen hängt darum weiterhin am ROHEN
+  // Feldwert, nicht am entprellten — es ist der billige und sofort wirksame
+  // Pfad, und er deckt JEDEN Ausstieg aus dem Suchmodus ab (Feld leeren,
+  // Erlass-/Pane-Wechsel). Der Effekt oben bleibt der einzige SETZENDE Pfad.
   useEffect(() => {
     if (typeof window === 'undefined' || !sucheFeldLeer) return;
-    if (highlightRaf.current !== null) {
-      window.cancelAnimationFrame(highlightRaf.current);
-      highlightRaf.current = null;
-    }
     setzeSuchHighlight(null, '');
   }, [sucheFeldLeer]);
 
-  return { trefferRef, fundstellen, trefferPos, springeZuFundstelle, loeseArtikel, siePfad, siePfadArtikel };
+  return {
+    leseRef, treffer, artikelAnzahl, fundstellen, fussnotenAus,
+    trefferPos, aktivToken, springeZuFundstelle, springeZuTreffer,
+    loeseArtikel, siePfad, siePfadArtikel,
+  };
 }

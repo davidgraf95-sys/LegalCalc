@@ -68,12 +68,12 @@ function render({ istXl, tocOffen, nichtKonsolidiert = false, aufgehoben = false
         internRefs={undefined} margAnzeige={new Map()} kantonSys={{}}
         basisPfad="/gesetze/bund/ZGB" renderSektion={() => null}
         imPane={false} istXl={istXl} overlayWurzel={null}
-        treffer={null} suche="" sucheDebounced="" setSuche={noop}
+        treffer={[]} suche="" sucheDebounced="" setSuche={noop}
         tocBaumEl={<span>BAUM</span>} tocOffen={tocOffen} tocAuf={false}
         setTocOffen={noop} setTocAuf={noop} springeZuArtikel={noop}
         leitfaelleFuer={() => undefined} revisionFuer={() => undefined} historieFuer={() => undefined}
         reiterToast={false} setReiterToast={noop} reiterToastTimerRef={{ current: null }}
-        tocDrawerRef={{ current: null }} trefferRef={{ current: null }}
+        tocDrawerRef={{ current: null }} leseRef={{ current: null }}
         navigate={noop as NavigateFunction}
         nichtKonsolidiert={nichtKonsolidiert}
       />

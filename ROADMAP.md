@@ -118,7 +118,6 @@ maschinelles Tor.* Glieder-Aufzählung und Code-Bestands-Inventar (kontext.ts/Ko
   `W1·4`** (Entparkung 3.8.2026, David): sie ist der erste Arbeitsschritt des Schrittes, kein Wartegrund.
 
 <!-- @blockers
-pr-480-landung-s9-s10: W2·19 geparkt (9.8.2026): S8 fertig in Draft-PR #480 — vor Merge fehlen Batterie + §9-Bug-Check (Skill landung); danach S9/S10. KEIN David-Gate, jede Bau-Session kann übernehmen (Branch feat/w2-19-s8-s10)
 §4-lizenz: Live-Rechtsprechung — CC-BY-SA vs. Art. 5 URG, CORS/Rate-Limits unbestätigt
 vps-bestellung-david: E3-Serving + E4-UI hängen an einer VPS-Bestellung (David, ~15 Min; Entscheid David 8.8.2026: «mach ich erst wenn UI noch optimierter wird» — bewusst zurückgestellt, nicht vergessen) — Dossier `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md` (PR #271). ECHTES David-Gate, kein Bau-Blocker. Bis dahin sind QS-DATA/W2·6-DATA nur im NICHT-VPS-Teil baubar (E0–E4 sind lokal fertig). Befund 20.7.2026: dieser Blocker stand bisher NUR im Fliesstext («🔒 BLOCKER»), das @meta trug `blocker: null` — für `check:plan` unsichtbar.
 richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE (20.7.2026): Filtern/Facette/Verlinkung sind FREI und gebaut (#309/#311); gesperrt bleiben allein RANKING und PROGNOSE. Nur deskriptiv; bewusste Freigabe Davids erforderlich (heikel: Standesrecht, Persönlichkeitsschutz, richterliche Unabhängigkeit)
@@ -300,7 +299,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — `W2·19-GLIEDERUNG` (Davids Gliederungs-Paket) ist `parked` (S1–S7 live via PR #478/#479, S8 fertig in Draft-PR #480 — Landung + S9/S10 in der Folge-Session) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Landungen 8.8.2026 → Chronik (#468–#470).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — `W2·19-GLIEDERUNG` ist wieder `wip` (Auftrag David 9.8.2026 «alles fertigmachen»: S8-Landung via PR #480 läuft, danach S9/S10; S1–S7 live via #478/#479) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Landungen 8.8.2026 → Chronik (#468–#470).
 > Stand 8.8.2026: Teilschritte -S/-V/-O/-J sind gelandet (PR #464), vom Dach offen ist nur noch `-J3` (Risikopfad, eigene Session).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
@@ -563,12 +562,11 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). §18.
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
-- [ ] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026; erweitert im Chat 8.8. auf die ganze Seitenleiste — Wortlaut, Entscheide (a)(b)(c) und drei §11-Entscheide: Spec §9-Kopf/§11)*
-  <!-- @meta id: W2·19-GLIEDERUNG · status: parked · blocker: pr-480-landung-s9-s10 · of: ja · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
+- [~] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026; erweitert im Chat 8.8. auf die ganze Seitenleiste — Wortlaut, Entscheide (a)(b)(c) und drei §11-Entscheide: Spec §9-Kopf/§11)*
+  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
   **Bau-Spec:** [FAHRPLAN-W2-19-SEITENLEISTE.md](fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md) §9
   (Ultracode-Fundament, Slices S1–S10); Diagnose: [Dossier 8.8.](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md).
-  **Stand 9.8.2026:** S1–S7 gelandet (PRs #478/#479) · **S8 fertig, GEPARKT in Draft-PR
-  #480** (Bau grün; vor Merge: Batterie + §9-Bug-Check) · S9–S10 offen (Modi/T11/Anhang ·
+  **Stand 9.8.2026:** S1–S7 gelandet (PRs #478/#479) · **S8 in Landung (PR #480)** · S9–S10 offen (Modi/T11/Anhang ·
   Mobile/Pane, Zonen-Komponenten, Roadmap-Nachträge inkl. Sidecar-Nachzug + SG-3849-Prüfauftrag).
   **DoD-Beleg:** Perf-Nachmessung 9.8.2026 (Datei kommt mit PR #480: bibliothek/betrieb/gliederung-perf-nachmessung-2026-08-09.md; Kernziele erreicht; Restposten als W2·18-Zeilen/David-Entscheide); LM-163 geprüft:
   Verdacht widerlegt (FAHRPLAN-UI-BEFUNDE Z. 334).

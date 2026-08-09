@@ -17,13 +17,69 @@
 /** Kanonischer Highlight-Name (mit der `::highlight()`-Regel in index.css). */
 export const SUCH_HIGHLIGHT = 'lc-such-treffer';
 
-/** Substring-Vorkommen (case-insensitiv) als [start, end)-Offsetpaare. Rein —
- *  dieselbe Semantik wie `passtAufSuche` (helpers.tsx): schlichter, akzenttreuer
- *  Teilstring-Vergleich über `toLowerCase`. Vitest-getestet. */
+// ─── B1 · Faltung der Tausender-Schreibweisen ────────────────────────────────
+//
+// Bug-Check §9 zu W2·19-S8. Dieselbe Zahl steht im Haus in DREI Schreibweisen:
+// gespeichert mit Leerzeichen («16 800 Franken», AHVV Art. 6quater — allein in
+// der AHVV 46 solche Gruppen), gemalt mit dem Schweizer Apostroph («16'800»,
+// `gruppiereBetraege`), und getippt so, wie der Jurist es gewohnt ist. Der
+// Vergleich lief roh: je nach Schreibweise fand entweder der Index nichts,
+// während die Lesespalte malte — die VERBOTENE Richtung des §4.4-Vertrags, für
+// den Leser ein Selbstwiderspruch («Kein Artikel gefunden» bei leuchtender
+// Stelle) —, oder umgekehrt: Treffer in der Liste, aber nichts leuchtet.
+//
+// Antwort: EINE Faltung, angewandt auf BEIDE Seiten JEDES Vergleichs. Sie lebt
+// hier, weil hier der einzige Vergleich des Hauses liegt — `findeVorkommen`
+// bedient den Index (leserSuche.ts) UND den DOM-Walker unten. Ein zweiter
+// Faltungsort wäre eine zweite Wahrheit (§5).
+//
+// DIE REGEL SPIEGELT DIE DARSTELLUNG, sie erfindet nichts: ein Trenner fällt
+// genau dann, wenn links eine Ziffer steht und rechts eine Gruppe von GENAU
+// DREI Ziffern folgt, auf die keine weitere Ziffer folgt — Zeichen für Zeichen
+// die Bedingung aus `gruppiereTausender` (src/lib/normtext/darstellung.ts,
+// Pass 1). Damit bleiben «Art. 1 2» zwei Zahlen, «1 2345» unberührt und
+// «10 Mio.» unangetastet, während «1'234'567», «1 234 567» und «1234567»
+// dieselbe Zeichenkette werden. Kein Ziffernwert wird verändert (§1) — die
+// Faltung existiert ausschliesslich im Vergleich, nie im gespeicherten und nie
+// im gezeigten Text.
+//
+// LÄNGENTREUE ÜBER EINE KARTE, nicht über gleich lange Ersetzung: die Offsets
+// dieser Funktion adressieren Text-Knoten (Range-Grenzen) und Ausschnitte, sie
+// MÜSSEN also auf den rohen Text zeigen. `karte[i]` hält zu jedem gefalteten
+// Zeichen seinen ursprünglichen Index.
+const TRENNER = new Set(["'", '’', '‘', '´', '`', ' ', ' ', ' ', ' ']);
+
+function istZiffer(z: string | undefined): boolean {
+  return z !== undefined && z >= '0' && z <= '9';
+}
+
+/** Tausendertrenner aus dem Vergleich nehmen; `karte` bildet nach roh zurück. */
+export function falteZahlgruppen(text: string): { gefaltet: string; karte: number[] } {
+  let gefaltet = '';
+  const karte: number[] = [];
+  for (let i = 0; i < text.length; i++) {
+    if (
+      TRENNER.has(text[i])
+      && istZiffer(text[i - 1])
+      && istZiffer(text[i + 1]) && istZiffer(text[i + 2]) && istZiffer(text[i + 3])
+      && !istZiffer(text[i + 4])
+    ) continue; // Tausendertrenner — fällt aus dem Vergleich
+    gefaltet += text[i];
+    karte.push(i);
+  }
+  return { gefaltet, karte };
+}
+
+/** Substring-Vorkommen (case-insensitiv) als [start, end)-Offsetpaare IM ROHEN
+ *  Text. Rein und vitest-getestet. Vergleichsgrundlage ist der akzenttreue
+ *  Teilstring über `toLowerCase` — wie `passtAufSuche` (helpers.tsx) — ZUZÜGLICH
+ *  der Tausender-Faltung oben, die `passtAufSuche` bewusst NICHT kennt: dort
+ *  geht es um Katalog-/Listenfilter, hier um den Abgleich zwischen Index und
+ *  gemaltem Wortlaut, und nur dieser trägt den §4.4-Vertrag. */
 export function findeVorkommen(text: string, begriff: string): Array<[number, number]> {
-  const b = begriff.toLowerCase();
+  const b = falteZahlgruppen(begriff.toLowerCase()).gefaltet;
   if (b === '') return [];
-  const hay = text.toLowerCase();
+  const { gefaltet: hay, karte } = falteZahlgruppen(text.toLowerCase());
   const treffer: Array<[number, number]> = [];
   let ab = 0;
   // indexOf-Schleife statt Regex: der Begriff ist frei (Sonderzeichen), und ein
@@ -31,7 +87,8 @@ export function findeVorkommen(text: string, begriff: string): Array<[number, nu
   for (;;) {
     const i = hay.indexOf(b, ab);
     if (i < 0) break;
-    treffer.push([i, i + b.length]);
+    // Zurück in den ROHEN Text: Anfang des ersten, Ende des letzten Zeichens.
+    treffer.push([karte[i], karte[i + b.length - 1] + 1]);
     ab = i + b.length;
   }
   return treffer;
@@ -73,6 +130,40 @@ function highlightApi(): { reg: Map<string, object>; Ctor: HighlightCtor } | nul
 export const SUCH_META = 'data-such-meta';
 
 /**
+ * Der hochgestellte Fussnoten-MARKER im Wortlaut (`data-fn-marker`, gesetzt in
+ * `ArtikelBody`/`ArtikelLeser`) wird vom Walker ebenfalls übersprungen.
+ *
+ * W2·19-GLIEDERUNG/S8, Bau-Spec §4.4: der Marker ist ein VERWEISZEICHEN, kein
+ * Wortlaut — dieselbe Einordnung, die ihn schon beim Schalter «Fussnoten aus»
+ * mit dem Apparat verschwinden lässt (index.css). Er trägt die Fussnoten-Nummer
+ * ein zweites Mal, an einer Stelle, die im Gesetz keine zweite Fundstelle ist.
+ * Gemessen am BGFA: eine Suche nach «1» malte 130 Stellen, während der
+ * datenseitige Zähler 124 nannte — die sechs Zusätzlichen waren ausnahmslos
+ * Marker-Ziffern. Ohne diesen Ausschluss ist «gemalte ≤ gezählte» für
+ * Ziffern-Suchen nicht haltbar, und eine Markierung auf einer hochgestellten
+ * Verweisziffer sagt dem Leser ohnehin nichts (§8).
+ */
+export const FN_MARKER = 'data-fn-marker';
+
+/**
+ * Marker-Erkennung, exakt wie index.css sie führt.
+ *
+ * Der Ansicht-Schalter «Fussnoten aus» blendet die Verweiszeichen über ZWEI
+ * Selektoren aus: `[data-fn-marker]` (die Träger-Spans, die `ArtikelLeser` um
+ * Randtitel-Marker legt) UND `button[aria-label^="Fussnote"]` (die Marker im
+ * Fliesstext selbst — `FnRef` in `components/normtext/ArtikelBody.tsx` trägt
+ * kein `data-fn-marker`). Der Walker benutzt dieselben beiden Merkmale statt
+ * eigener: eine zweite Definition davon, was ein Marker ist, wäre die
+ * §5-Doppelwahrheit, an der sich solche Regeln später auseinanderentwickeln.
+ * Am BGFA belegt: ohne den zweiten Selektor blieben drei gemalte Marker-Ziffern
+ * über der gezählten Menge stehen.
+ */
+function istFussnotenMarker(el: Element): boolean {
+  if (el.hasAttribute(FN_MARKER)) return true;
+  return el.tagName === 'BUTTON' && (el.getAttribute('aria-label') ?? '').startsWith('Fussnote');
+}
+
+/**
  * Ist der Teilbaum dieses Elements überhaupt darstellbar?
  *
  * Bug-Check §9 vom 4.8.2026 (B2): der Walker hatte keinen Sichtbarkeitsfilter.
@@ -102,8 +193,11 @@ function istGerendert(el: Element): boolean {
  * REIHENFOLGE (TreeWalker). Leerer Begriff / kein Container ⇒ leere Liste.
  *
  * Übersprungen werden (jeweils der GANZE Teilbaum): `[data-such-meta]`-Knoten
- * der Trefferliste selbst und alles, was nicht gerendert ist. Damit gilt für
- * jeden Toggle-Zustand: gezählte == gemalte == anspringbare Menge.
+ * (Bedienung statt Gesetzestext), `[data-fn-marker]`-Verweiszeichen und alles,
+ * was nicht gerendert ist. Damit gilt für jeden Toggle-Zustand: die gemalte
+ * Menge ist die anspringbare — und sie ist eine Teilmenge der datenseitig
+ * gezählten (W2·19-GLIEDERUNG/S8, Bau-Spec §4.4; bis dahin galt Gleichheit,
+ * was mit nie gemalten Feldern strukturell unhaltbar war).
  *
  * W2·10-UI-NAV/R1: dieser Walker war bisher in `setzeSuchHighlight` eingebacken.
  * Er ist jetzt exportiert, weil die Treffer-NAVIGATION (Vor/Zurück-Sprungtasten)
@@ -124,7 +218,7 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
     acceptNode(k) {
       if (k.nodeType !== Node.ELEMENT_NODE) return NodeFilter.FILTER_ACCEPT;
       const el = k as Element;
-      if (el.hasAttribute(SUCH_META) || !istGerendert(el)) return NodeFilter.FILTER_REJECT;
+      if (el.hasAttribute(SUCH_META) || istFussnotenMarker(el) || !istGerendert(el)) return NodeFilter.FILTER_REJECT;
       // Das Element selbst trägt keinen Text — nur seine Kinder besuchen.
       return NodeFilter.FILTER_SKIP;
     },
@@ -132,16 +226,16 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
     const text = n.nodeValue ?? '';
     if (text === '') continue;
-    const hay = text.toLowerCase();
-    let ab = 0;
-    for (;;) {
-      const i = hay.indexOf(b, ab);
-      if (i < 0) break;
+    // B1: DIESELBE Vergleichsfunktion wie der Index — nicht ein zweiter
+    // indexOf daneben. Bis hierher lief hier eine eigene Schleife, und genau
+    // deshalb konnte der DOM eine Schreibweise finden, die der Index nicht
+    // kannte (und umgekehrt). `findeVorkommen` liefert Offsets im ROHEN Text,
+    // also taugen sie unverändert als Range-Grenzen.
+    for (const [von, bis] of findeVorkommen(text, b)) {
       const r = document.createRange();
-      r.setStart(n, i);
-      r.setEnd(n, i + b.length);
+      r.setStart(n, von);
+      r.setEnd(n, bis);
       ranges.push(r);
-      ab = i + b.length;
     }
   }
   return ranges;

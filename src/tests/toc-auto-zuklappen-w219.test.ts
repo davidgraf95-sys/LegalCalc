@@ -27,7 +27,9 @@
  * nachgebildet; alles andere wäre Kulisse, die nichts beweist.
  */
 import { describe, it, expect } from 'vitest';
-import { planeZuklappen, AUTO_ZU_NACHLAUF, F2_SICHERHEITSSAUM, F2_OBERHALB } from '../pages/gesetz-leser/tocAutoZuklappen';
+import {
+  planeZuklappen, scrollRuht, AUTO_ZU_NACHLAUF, AUTO_AUF_RUHE_MS, F2_SICHERHEITSSAUM, F2_OBERHALB,
+} from '../pages/gesetz-leser/tocAutoZuklappen';
 
 interface ZeilenBau {
   /** Ids, die diese Zeile trägt (verdichtete Kette: mehrere). */
@@ -287,5 +289,40 @@ describe('S5 — Kompensation zählt nur die äussersten Äste', () => {
     });
     expect(plan.schliessen.sort()).toEqual(['sek-1', 'sek-2']);
     expect(plan.kompensation).toBe(200); // nur der Oberhalb-Ast
+  });
+});
+
+// ═══ Ruhe-Tor des Auto-AUFklapps (Entscheid David 9.8.2026, Punkt a) ═════════
+//
+// WARUM DAS EIN EIGENER, PRÜFBARER SATZ IST. Der Zielkonflikt, den dieses Tor
+// auflöst, war über e2e NICHT sauber fassbar: der a33-Fall «Lese-Scroll unter
+// CPU-Drossel» reisst mit 2–4/20, weil der Shift IMMER entsteht und allein
+// Chromiums 500-ms-`hadRecentInput`-Fenster darüber entscheidet, ob er gezählt
+// wird (Dossier a33-lesescroll-cls-altflake-2026-08-09.md). Ein Wächter, dessen
+// Rot-Zustand vom Zufall abhängt, ist keiner (§6.7). Die REGEL dagegen — «der
+// Aufklapp feuert erst, wenn der Scroll ruht» — ist eine reine Funktion und hier
+// deterministisch festgenagelt. Die e2e-Seite belegt danach nur noch, dass der
+// gemessene Flake verschwindet.
+describe('Ruhe-Tor — wann darf der aktive Zweig von selbst aufgehen', () => {
+  it('mitten im Scrollen: Aufklapp wartet', () => {
+    expect(scrollRuht(1_000, 1_000)).toBe(false);
+    expect(scrollRuht(1_000, 1_000 + AUTO_AUF_RUHE_MS - 1)).toBe(false);
+  });
+
+  it('nach dem Ruhefenster: Aufklapp darf', () => {
+    expect(scrollRuht(1_000, 1_000 + AUTO_AUF_RUHE_MS)).toBe(true);
+    expect(scrollRuht(1_000, 5_000)).toBe(true);
+  });
+
+  it('noch nie gescrollt (Deep-Link-Einstieg) gilt als Ruhe — sonst bliebe der Zweig ewig zu', () => {
+    expect(scrollRuht(0, 0)).toBe(true);
+    expect(scrollRuht(0, 12)).toBe(true);
+  });
+
+  it('Ruhefenster liegt in Davids Vorgabe 150–300 ms', () => {
+    // Der Wert ist ein Entscheid, keine Ableitung — er gehört darum festgenagelt,
+    // damit ein späteres «kurz nachjustieren» sichtbar wird statt still zu gelten.
+    expect(AUTO_AUF_RUHE_MS).toBeGreaterThanOrEqual(150);
+    expect(AUTO_AUF_RUHE_MS).toBeLessThanOrEqual(300);
   });
 });

@@ -7,14 +7,18 @@
 // statt an festen Artikelnummern.
 //
 // Prüf-Eigenschaft (eine einzige, scharfe): Der Reader zeigt als «aktuellen
-// Artikel» IMMER den Artikel an der Bezugslinie. Die Bezugslinie ist
-// `5rem + 8 px` unter der Container-Oberkante (`scrollAnker.ts:bezugslinie`,
-// deckungsgleich mit `.nt-anker`-scroll-margin); die Auswahl ist
-// «Artikel, dessen Intervall die Linie enthält, sonst kleinste Distanz»
-// (`src/lib/normtext/aktuellerArtikel.ts`). Der Test rechnet dieses Soll bei
-// jedem Halt über ALLE Artikel im DOM aus und vergleicht es mit dem Ist der
-// Kopfzeile. Er kennt darum keinen Artikel auswendig und überlebt jede
-// Korpus-Regeneration.
+// Artikel» IMMER den Artikel an der Bezugslinie. Die Bezugslinie liegt 8 px unter
+// dem Landepunkt eines Sprungs, und der Landepunkt wird GELESEN, nicht
+// nachgerechnet (`.nt-anker`-scroll-margin = `var(--nt-stick)`,
+// `scrollAnker.ts:ankerLandepunkt`); die Auswahl ist «Artikel, dessen Intervall
+// die Linie enthält, sonst kleinste Distanz» (`src/lib/normtext/aktuellerArtikel.ts`)
+// über die Kandidaten, die an der Linie noch nicht zu Ende sind
+// (Zwischenraum-Regel, `inhalt-hooks.tsx`). Der Test rechnet dieses Soll bei jedem
+// Halt über ALLE Artikel im DOM aus und vergleicht es mit dem Ist der Kopfzeile.
+// Er kennt darum keinen Artikel auswendig und überlebt jede Korpus-Regeneration.
+//
+// NACHTRAG 9.8.2026 (Sprung-Fix, deklarierte Änderung): zwei Zeilen der Sonde
+// sind mitgezogen — Linie und Kandidatensatz. Herleitung unten bei `messen`.
 //
 // Vor dem Fix rot (gemessen 3.8.2026 gegen `origin/main`, vite preview):
 //   H6-b «Auslöser sitzt am Band, nicht an der Linie» — der Observer meldete nur
@@ -43,19 +47,46 @@ interface Probe {
 // Eine Messung im Seitenkontext: Soll (aus dem DOM) gegen Ist (Kopfzeile).
 async function messen(page: Page): Promise<Probe> {
   return page.evaluate(() => {
-    // Bezugslinie EXAKT wie `scrollAnker.ts:bezugslinie(0, remPx)` und wie der
-    // Spy sie in `inhalt-hooks.tsx` bildet.
-    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
-    const bezug = 5 * remPx + 8
     const rects = [...document.querySelectorAll('[id^="art-"]')].map((el) => {
       const r = el.getBoundingClientRect()
       return { token: el.id.replace(/^art-/, ''), top: r.top, bottom: r.bottom }
     })
+    // Bezugslinie EXAKT wie `scrollAnker.ts:bezugslinie(0, ankerLandepunkt(el))`
+    // und wie der Spy sie in `inhalt-hooks.tsx` bildet.
+    // GEÄNDERT 9.8.2026 (deklariert, zusammen mit dem Sprung-Fix): hier stand
+    // `5 * remPx + 8` — eine dritte Kopie einer Zahl, die im Produktivcode nie
+    // 5 rem war. Der Landepunkt ist `var(--nt-stick)` (am gebauten Reader 100 px).
+    // Weil dieser Wächter die Linie NACHRECHNETE statt sie zu LESEN, bestätigte
+    // er die 12-px-Fehlstellung, statt sie zu zeigen. Jetzt wird derselbe Wert
+    // gelesen, den auch `scrollIntoView` benutzt: der `scroll-margin-top` des
+    // `.nt-anker`. Damit ist die Sonde gegen jede künftige Kopfhöhe immun.
+    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
+    const artEl = document.querySelector('[id^="art-"]')
+    const landepunkt = artEl ? (parseFloat(getComputedStyle(artEl).scrollMarginTop) || 5 * remPx) : 5 * remPx
+    const bezug = landepunkt + 8
     // Auswahl wie `aktiverArtikel` — hier bewusst über ALLE Artikel (das Soll),
     // während der Spy nur seine beobachtete Teilmenge sieht (das war H6-a).
+    // GEÄNDERT 9.8.2026: davor die ZWISCHENRAUM-REGEL des Readers
+    // (inhalt-hooks.tsx) — ein Artikel, der oberhalb der Linie bereits GEENDET
+    // hat, ist nicht mehr «dran», solange darunter einer folgt; der Zwischenraum
+    // gehört der Gliederungs-Überschrift, und die eröffnet, was FOLGT. Ohne diese
+    // Zeile verlangte der Wächter am Abschnittskopf weiterhin den Vorgänger —
+    // also genau den Zustand, den David am 9.8.2026 als Fehler gemeldet hat.
+    // `e.top < hoehe` bildet den Kandidatensatz des Readers nach: dessen Auswahl
+    // läuft über die vom IntersectionObserver gemeldeten Artikel, und was
+    // vollständig UNTER dem Sichtfeld liegt, ist darin nicht enthalten. Bei
+    // 320×200 (400 % Zoom, H6-a) kann der Zwischenraum einer Gliederungs-
+    // Überschrift höher sein als das ganze Sichtfeld — dann gibt es unterhalb der
+    // Linie gar keinen sichtbaren Artikel mehr, und der zuletzt geendete bleibt
+    // die einzige ehrliche Antwort. Ohne diese Bedingung verlangte die Sonde einen
+    // Artikel, den der Leser nachweislich nicht sieht (gemessen: 40_a, Oberkante
+    // 149 px UNTER der Linie in einem 200 px hohen Sichtfeld).
+    const hoehe = document.documentElement.clientHeight
+    const kandidaten = rects.filter((e) => e.bottom > bezug && e.top < hoehe)
+    const wahl = kandidaten.length > 0 ? kandidaten : rects
     let soll: string | null = null
     let besteDist = Infinity
-    for (const e of rects) {
+    for (const e of wahl) {
       const dist = bezug < e.top ? e.top - bezug : bezug > e.bottom ? bezug - e.bottom : 0
       if (dist === 0) { soll = e.token; break }
       if (dist < besteDist) { besteDist = dist; soll = e.token }

@@ -1,7 +1,6 @@
 import { Fragment, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { Sektion, Fussnote } from '../../lib/normtext/browse';
-import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import { ERLASS_REGISTER, type ErlassTyp, type Grundart } from '../../lib/normtext/register';
 import { GRUNDART_SEED } from '../../lib/normtext/grundart.generated';
@@ -144,11 +143,14 @@ export function kopfOverline(
   return zusatz ? `${basis} · ${zusatz}` : basis;
 }
 
-export function passtAufSuche(e: NormSnapshot, s: string): boolean {
-  if (e.artikelLabel.toLowerCase().includes(s)) return true;
-  return e.bloecke.some((b) =>
-    b.text.toLowerCase().includes(s) || (b.items ?? []).some((it) => it.text.toLowerCase().includes(s)));
-}
+// W2·19-GLIEDERUNG/S8: `passtAufSuche` ist hier ENTFALLEN. Sie war die
+// Filterregel der alten, lesespalten-filternden In-Gesetz-Suche und las
+// ausschliesslich `artikelLabel` und `bloecke[].text`/`items[].text`. Seit S8
+// sucht `leserSuche.ts` über alle sechs Feldklassen und liefert zusätzlich
+// Reihenfolge, Herkunft und Ausschnitt; die alte Regel hätte daneben eine
+// zweite, ärmere Treffer-Wahrheit behauptet (§5). Ersatzlos entfernt statt
+// stehen gelassen — toter Code, der eine Wirkung suggeriert, ist die teuerste
+// Sorte (§Aufräumen).
 
 // «Erster Titel: Die Entstehung …» → {pre:'Erster Titel', rest:'Die Entstehung …'}
 export function romanFrei(label: string): { pre: string; rest: string } {

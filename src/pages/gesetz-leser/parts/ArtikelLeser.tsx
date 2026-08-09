@@ -19,6 +19,7 @@ import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
 import { extrahiereFussnotenRevision, kanonArtikelToken } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
+import { SUCH_META } from '../suchHighlight';
 import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
 import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
 import { BezuegeZeile } from './BezuegeZeile';
@@ -503,9 +504,18 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             </span>
             {/* aufgehoben gedämpft, aber ink-500 (WCAG 4.5:1 hell+dunkel) statt
                 ink-400 (3.2–3.6:1) — essentieller Link-Text, kein incidental. */}
-            {ganzAufgehoben && <span className="text-xs italic text-ink-500">· aufgehoben</span>}
+            {ganzAufgehoben && <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500">· aufgehoben</span>}
             {artOffen && (
-              <span className="ml-auto flex shrink-0 gap-3 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-100">
+              // W2·19-GLIEDERUNG/S8 (Bau-Spec §4.4): `data-such-meta` — die
+              // Aktions-Zeile ist BEDIENUNG, kein Gesetzestext. Ohne die Marke
+              // malte die Suche nach «Zitat» oder «Link» in JEDEM Artikel eine
+              // Fundstelle, die der datenseitige Zähler zu Recht nicht kennt
+              // (gemessen am BGFA: 0 gezählt gegen 39 gemalt) — und weil die
+              // Zeile bis zum Hover `opacity-0` trägt, wären es 39 UNSICHTBARE
+              // Markierungen. Genau der Fall, für den SUCH_META gebaut wurde
+              // (Bug-Check §9 vom 4.8.2026, B1).
+              <span {...{ [SUCH_META]: '' }}
+                className="ml-auto flex shrink-0 gap-3 opacity-0 transition-opacity focus-within:opacity-100 group-hover:opacity-100 [@media(hover:none)]:opacity-100">
                 <button type="button" onClick={() => kopiere('zitat')} className="text-micro text-ink-500 hover:text-brass-700" aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
                 <button type="button" onClick={() => kopiere('link')} className="text-micro text-ink-500 hover:text-brass-700" aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
                 {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
@@ -552,8 +562,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             intern={intern}
             className="space-y-3.5 font-serif text-body-l leading-[1.65] text-ink-800" />
           {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
+          {/* S8: Verweis-Chips sind Wegweiser, kein Wortlaut — `data-such-meta`,
+              damit die Suche nach «Verweise» oder einer Chip-Beschriftung nicht
+              eine Fundstelle malt, die es im Gesetzestext nicht gibt (§4.4). */}
           {verweise.length > 0 && (
-            <div className="mt-4 flex flex-wrap items-center gap-2">
+            <div {...{ [SUCH_META]: '' }} className="mt-4 flex flex-wrap items-center gap-2">
               <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Verweise</span>
               {verweise.map((v) => <NormChip key={v} artikel={v} />)}
             </div>
@@ -568,11 +581,16 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               BGE zweimal am Artikel. Ist keine Facette aktiv, ist `bezuege`
               undefined UND `leitfaelle` ungesetzt ⇒ unter dem Artikel steht
               nichts (Vorgabe David 28.7.2026). */}
-          {bezuege
-            ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
-                zeitAktiv={bezuege.zeitAktiv} kantonAktiv={bezuege.kantonAktiv}
-                normZitat={zitat} revision={revision} />
-            : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
+          {/* S8: die Rechtsprechungs-Zeile am Artikelfuss ist Referenzschicht,
+              kein Normtext (§4.4) — sie zählt nicht zu den Fundstellen und
+              wird darum auch nicht markiert. */}
+          <div {...{ [SUCH_META]: '' }}>
+            {bezuege
+              ? <BezuegeZeile kanten={bezuege.kanten} gesamt={bezuege.gesamt}
+                  zeitAktiv={bezuege.zeitAktiv} kantonAktiv={bezuege.kantonAktiv}
+                  normZitat={zitat} revision={revision} />
+              : <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />}
+          </div>
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
               Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem
@@ -582,7 +600,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               zu schieben (Messung 20.7.: sonst CLS 0.0227 statt 0.0002 unter 6×). Der
               Aussenabstand sitzt hier am Slot, nicht in der Zeile — sonst fallen
               reservierte und gefüllte Höhe auseinander. */}
-          <div className="mt-4 min-h-hist-zeile">
+          {/* S8: «Gilt seit»-Badge und Fassungs-Timeline sind abgeleitete
+              Metadaten, kein Wortlaut (§4.4) — `data-such-meta`. */}
+          <div {...{ [SUCH_META]: '' }} className="mt-4 min-h-hist-zeile">
             <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
           </div>
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
@@ -639,7 +659,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
                       undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
                   {fn.fn.nr && <span aria-hidden className="text-ink-300 mr-1">·</span>}
-                  <span data-hist-datum={fn.iso ?? ''} className="num tabular-nums text-ink-600">
+                  {/* S8: das Sortier-Datum ist von UNS gesetzter Anzeigetext,
+                      nicht amtlicher Fussnotenwortlaut — `data-such-meta`,
+                      damit es keine Fundstelle malt, die niemand zählt (§4.4). */}
+                  <span {...{ [SUCH_META]: '' }} data-hist-datum={fn.iso ?? ''} className="num tabular-nums text-ink-600">
                     {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
                   </span>
                   <span aria-hidden className="mr-1.5">:</span>
