@@ -10,6 +10,7 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
+import { klappZeile } from './tocAutoZuklappen';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
 // Aus GesetzLeserInhalt ausgelagerte Zustands-Hooks: Daten-/Shard-/Such-Zustand,
@@ -156,7 +157,7 @@ export function useLeserTocZustand() {
   // K (Auftrag David 26.6.2026): Zweige, die der Scroll-Spy AUTOMATISCH geöffnet
   // hat. Nur diese darf der Spy wieder zuklappen, sobald die Leseposition den
   // Zweig verlässt — manuell (Klick) geöffnete Zweige bleiben offen, weil sie
-  // nicht in diesem Set stehen (tocToggle/springeZuSektion nehmen sie heraus).
+  // nicht in diesem Set stehen (tocToggleGruppe/springeZuSektion nehmen sie heraus).
   const autoOffenRef = useRef<Set<string>>(new Set());
   // §15.2-Nachlauf (18.7.2026): Tick des letzten Aktiv-Vorkommens je Auto-Zweig +
   // monotoner Pfadwechsel-Zähler. Der Spy klappt einen Auto-Zweig erst zu, wenn er
@@ -180,14 +181,31 @@ export function useLeserTocZustand() {
   // Rank 4 (QS-PERF, §15/4): useCallback ([] — liest nur setTocBaum + stabile Refs),
   // sonst hätte onToggle bei jedem Parent-Render neue Identität und die React.memo-
   // Wrapper von SektionBaumTOC liefe bei jeder Scroll-Spy-Aktualisierung leer.
-  const tocToggle = useCallback((id: string) => {
-    setTocBaum((o) => {
-      const offenJetzt = !o[id];
+  //
+  // EINE ZEILE, EIN ZIELWERT (B3, Bug-Check 9.8.2026). Eine verdichtete
+  // Einzelkind-Kette ist EINE Zeile mit MEHREREN Sektions-Ids («§ 3 › I. › 1.»).
+  // Bis hierher rief der Chevron `k.ids.forEach(tocToggle)` und kippte jede Id
+  // EINZELN: standen sie nicht im gleichen Zustand — und genau das hinterlässt
+  // ein Sektions-Sprung, der nur die äussere Id öffnet —, kam nach dem Flip ein
+  // GEMISCHTER Zustand heraus. Die Zeile gilt als offen, sobald IRGENDEINE ihrer
+  // Ids offen ist (`istOffen`, `.some(Boolean)`): der Ast liess sich nie wieder
+  // schliessen, `aria-expanded` blieb dauerhaft `true`, und weil dabei auch
+  // `manuellOffenRef`/`manuellZuRef` gemischt befüllt wurden, half kein Scrollen
+  // und kein zweiter Klick. Betroffen sind alle Zeilen mit Verdichtung UND
+  // Kindern (ZGB, VVG, KOV, mehrere BS-Erlasse).
+  //
+  // Der Aufrufer gibt den SICHTBAREN Zustand mit (`istOffen`), statt ihn hier aus
+  // `tocBaum` zu erraten: die Zeile kennt zusätzlich `startOffen` und
+  // `startOffeneTiefe` (Modell), und eine Zeile, die ohne Eintrag in `tocBaum`
+  // offen startet, liesse sich sonst mit dem ersten Klick nicht schliessen.
+  const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean) => {
+    const ziel = !istOffen;
+    for (const id of ids) {
       autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      if (offenJetzt) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
+      if (ziel) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
       else { manuellOffenRef.current.delete(id); manuellZuRef.current.add(id); }
-      return { ...o, [id]: offenJetzt };
-    });
+    }
+    setTocBaum((o) => klappZeile(o, ids, istOffen));
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
   const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
@@ -226,7 +244,7 @@ export function useLeserTocZustand() {
   }, [tocAuf, aktivIds]);
 
   return {
-    offen, setOffen, tocBaum, setTocBaum, tocToggle, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   };
 }
@@ -243,8 +261,17 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // der Schwelle der persistenten App-Seitenleiste (lg) UND mit PANE_BREIT_PX (1024)
   // des Pane-Pfads → unter lg sind sowohl Seitenleiste als auch Gliederung Drawer
   // (kohärent, «nur bei echt-zu-klein in den Drawer»). Die Lesespalte bleibt nutzbar:
-  // Inhaltsbreite ist auf max-w-content (70rem) gedeckelt, abzüglich 16rem TOC + gap-8
-  // läuft der Fliesstext (max-w-normtext 42rem, E6/A37) nie unter ~26rem. SSR-Default false =
+  // Inhaltsbreite ist auf max-w-content (70rem) gedeckelt, abzüglich 18rem TOC + gap-8
+  // läuft der Fliesstext (max-w-normtext 42rem, E6/A37) nie unter ~25rem.
+  // W2·19-GLIEDERUNG/S2 (16rem → 18rem): am ENGSTEN Punkt gemessen statt gerechnet
+  // (Bau-Spec §2). Chromium, Reader OR/ZGB, Lesespalte `#lc-lesespalte`:
+  //   @1024px  432 → 400 px (OR 41 → 35 ch, ZGB 37 → 33 ch)
+  //   @1100px  508 → 476 px (OR 48 → 45 ch)
+  //   @1280px  672 → 656 px (OR 68 → 63 ch)
+  //   @1440px+ 672 → 672 px — unverändert, weil `max-w-normtext` (42rem) deckelt
+  // Horizontaler Overflow in ALLEN Fällen 0. Die 32-px-Einbusse trifft also nur
+  // das Fenster 1024–~1264 px; die a37-Assertion (@1440: Spalte exakt 672 px) und
+  // das R5-Lesemass (≤ 75 ch @1440, ≥ 30 ch @390) bleiben unberührt. SSR-Default false =
   // mobil-Layout (byte-gleich). Ohne diese Erkennung behandelte der Code «tocOffen»
   // fälschlich als 2-Spalten-aktiv → der Gliederungs-Zugang verschwand beim Scrollen.
   // §15.2 «Client-Initialstate auf den Server-Zustand pinnen»: den WAHREN
@@ -252,7 +279,7 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // nicht erst per useEffect nach dem Mount. Sonst rendert der Client (der per
   // createRoot frisch mountet, kein hydrateRoot — §15.5) zuerst mit `false`
   // = 1-Spalten-Layout und flippt danach auf `true` = 2-Spalten-Grid
-  // (`grid-cols-[16rem_…]`) → die gesamte Lesespalte reflowt = grosser Layout-
+  // (`grid-cols-[18rem_…]`) → die gesamte Lesespalte reflowt = grosser Layout-
   // Shift. Unter CPU-Last (CI: 6 parallele Tore-Jobs) verlor dieser useEffect
   // das Rennen gegen den Snapshot-Fetch: die Artikel rendern 1-spaltig, DANN
   // flippt der Effekt → byte-identischer 0,49-CLS (verweis-u «Plural-Sprung»).

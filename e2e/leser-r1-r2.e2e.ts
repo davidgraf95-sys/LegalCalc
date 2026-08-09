@@ -446,9 +446,22 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
     await expect(feld).toBeVisible({ timeout: 20_000 });
     // Genau EINES (kein Doppel aus Sheet + Spalte).
     await expect(feld).toHaveCount(1);
-    // Es steht im TOC-Kopf, NICHT im [data-toc]-Scroller (bleibt beim Blättern stehen).
+    // W2·19-GLIEDERUNG/S4 — deklarierte Umkehrung EINER Assertion (Bau-Spec §2,
+    // e2e-Freigabe David 8.8.2026). Bisher stand hier: das Feld liegt im
+    // TOC-Kopf, aber NICHT im [data-toc]-Scroller — mit der Begründung «bleibt
+    // beim Blättern stehen». Seit S4 bildet es zusammen mit der «Sie sind
+    // hier»-Pfadzeile die Zone A und klebt sticky INNERHALB des Scrollers. Grund
+    // (Spec §2, [W:technik]): die E4-Assertion misst `tocClient > aside · 0.85`;
+    // alles, was ausserhalb des Scrollers über ihm sitzt, zehrt direkt von diesem
+    // Verhältnis, und Zone A soll wachsen (Pfadzeile kommt hinzu), nicht zehren.
+    // Die GEPRÜFTE EIGENSCHAFT bleibt dieselbe und wird sogar strenger: das Feld
+    // bleibt beim Blättern stehen — vorher als «ausserhalb des Scrollers»
+    // behauptet, jetzt als `position: sticky` BEWIESEN.
     await expect(feld.locator('xpath=ancestor::aside')).toHaveCount(1);
-    await expect(feld.locator('xpath=ancestor::*[@data-toc]')).toHaveCount(0);
+    await expect(feld.locator('xpath=ancestor::*[@data-toc]')).toHaveCount(1);
+    const zoneA = feld.locator('xpath=ancestor::*[@data-toc-zone-a]');
+    await expect(zoneA).toHaveCount(1);
+    expect(await zoneA.evaluate((el) => getComputedStyle(el).position)).toBe('sticky');
 
     await feld.fill('110');
     await feld.press('Enter');

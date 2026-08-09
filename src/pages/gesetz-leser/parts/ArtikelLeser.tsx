@@ -408,7 +408,31 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
       // Scrollbalken wird proportional. `content-visibility:auto` (Klasse) bleibt;
       // reiner Platzhalter-Schätzwert, kein DOM-/Inhalts-Eingriff (§15/1).
       style={{ containIntrinsicSize: `auto ${schaetzeArtikelHoehe(e)}px` }}
-      className={`nt-art-cv group relative z-0 nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0 transition duration-200 group-has-[[data-lese]:hover]/lese:opacity-80 has-[[data-lese]:hover]:!opacity-100 has-[[data-lese]:hover]:z-[5]`}>
+      // ─── W2·19-GLIEDERUNG / F1: Hover-Spotlight ERSATZLOS entfernt ──────────
+      // WAR: `transition duration-200 group-has-[[data-lese]:hover]/lese:opacity-80
+      //       has-[[data-lese]:hover]:!opacity-100 has-[[data-lese]:hover]:z-[5]`
+      // (Commit 820db9dc1, 18.6.2026 — «andere Artikel dimmen», Davids Wunsch).
+      //
+      // WARUM WEG (Messung, bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md):
+      // die Kette hing an JEDEM der 1686 <article> des OR. Jedes Hover-Kippen beim
+      // Scrollen startete 1686 gleichzeitige Opazitäts-Transitionen (4 Ereignisse je
+      // Element) — gemessen 142 208 Transition-Ereignisse je 60-Schritt-Scroll,
+      // React-Root-Dispatcher 284 499 Aufrufe/7 s. Anteil an der Blockierzeit ~78 %
+      // (U1); die verbleibenden ~20 % (U2) sind die `:has()`-Invalidierung über die
+      // ganze Lesespalte, die mit der Kette ebenfalls entfällt. Belegte Wirkung:
+      // Frame-Median 33.3 → 16.7 ms (30 → 60 fps) @1×, TBT @4× 8845–9003 ms →
+      // Boden 283–297 ms (Maus-am-Rand-Referenzmessung).
+      //
+      // ERSATZLOS auf Entscheid David 8.8.2026 abends: «der Dimm-Effekt kann auch weg
+      // — Gliederung ist wichtiger». Damit entfällt auch der im Dossier aufgeschobene
+      // Scrim-Ersatz (F1b); es wird KEIN anderes Mittel eingesetzt.
+      //
+      // WAS BLEIBT: `group` (der Aktions-Slot der Kopfzeile hängt mit
+      // `group-hover:opacity-100` daran, s. u.), `relative z-0` (unveränderte
+      // Stapelordnung des Ruhezustands — nur der Hover-Sprung auf z-[5] fällt weg).
+      // §15-Logikverlust: keiner — reine Darstellung (§3), Normtext, Anker, Ctrl+F,
+      // Druck und Golden-Ausgaben sind unberührt.
+      className={`nt-art-cv group relative z-0 nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
       {/* Fedlex-Stil (Auftrag David): «Art. N» + Randtitel/Sachüberschrift stehen
           IMMER OBERHALB des Absatztextes (keine seitliche Randspalte mehr), damit
           der Normtext die volle Lesespaltenbreite bekommt. Reine Darstellung (§3). */}

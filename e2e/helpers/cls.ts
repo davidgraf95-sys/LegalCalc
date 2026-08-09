@@ -110,7 +110,8 @@ export async function clsBeobachtenInstallieren(
     // Misst die Höhe (+y) der DOM-Kette OBERHALB des 2-Spalten-Lese-Grids. Der
     // Wachser ist das Kind, dessen Höhe zum Shift-Zeitpunkt springt. Robust gegen
     // fehlende Knoten (früh im Lade-Pfad) und den Inhalts-Kopf-Grid (grid-cols-
-    // [1fr_auto_1fr]) — es zählt allein das Lese-Grid (className enthält «16rem»).
+    // [1fr_auto_1fr]) — es zählt allein das Lese-Grid (className enthält die
+    // TOC-Spaltenbreite, s. leseGrid).
     const hy = (el: Element | null): { h: number; y: number } => {
       if (!el) return { h: -1, y: -1 }
       const r = el.getBoundingClientRect()
@@ -118,7 +119,14 @@ export async function clsBeobachtenInstallieren(
     }
     const leseGrid = (): Element | null => {
       const grids = document.querySelectorAll('div[class*="grid-cols-"]')
-      for (const g of Array.from(grids)) if (/16rem/.test((g as HTMLElement).className)) return g
+      // W2·19-GLIEDERUNG/S2+S4: die TOC-Spalte ist von 16rem auf 18rem gewachsen.
+      // Der Sampler suchte hart nach «16rem» und fand seit S2 GAR NICHTS mehr —
+      // er wurde nicht rot, er wurde BLIND (`grid: {h:-1,y:-1}` in jedem
+      // Diagnose-Ring). Ein Messwerkzeug, das stillschweigend nichts misst, ist
+      // schlimmer als keines. Die Weite deckt beide Werte ab, damit derselbe
+      // Helfer auch gegen einen älteren Stand läuft; entscheidend bleibt der
+      // Ausschluss des Inhalts-Kopf-Grids (grid-cols-[1fr_auto_1fr]).
+      for (const g of Array.from(grids)) if (/1[68]rem/.test((g as HTMLElement).className)) return g
       return null
     }
     const obenSnapshot = (): Oben => {
@@ -220,7 +228,14 @@ export async function clsHoehenSamplerVorabInstallieren(page: Page): Promise<voi
     }
     const leseGrid = (): Element | null => {
       const grids = document.querySelectorAll('div[class*="grid-cols-"]')
-      for (const g of Array.from(grids)) if (/16rem/.test((g as HTMLElement).className)) return g
+      // W2·19-GLIEDERUNG/S2+S4: die TOC-Spalte ist von 16rem auf 18rem gewachsen.
+      // Der Sampler suchte hart nach «16rem» und fand seit S2 GAR NICHTS mehr —
+      // er wurde nicht rot, er wurde BLIND (`grid: {h:-1,y:-1}` in jedem
+      // Diagnose-Ring). Ein Messwerkzeug, das stillschweigend nichts misst, ist
+      // schlimmer als keines. Die Weite deckt beide Werte ab, damit derselbe
+      // Helfer auch gegen einen älteren Stand läuft; entscheidend bleibt der
+      // Ausschluss des Inhalts-Kopf-Grids (grid-cols-[1fr_auto_1fr]).
+      for (const g of Array.from(grids)) if (/1[68]rem/.test((g as HTMLElement).className)) return g
       return null
     }
     const obenSnapshot = (): Oben => {

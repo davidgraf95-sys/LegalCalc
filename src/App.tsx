@@ -93,11 +93,26 @@ function ScrollWiederherstellung({ hashVerbraucht }: { hashVerbraucht: boolean }
   // und NICHT auf Anker-Routen (#hash → der Anker-Offset gehört nicht als Pfad-
   // Position gespeichert, sonst landet ein späterer hashloser Besuch am Anker).
   useEffect(() => {
+    // W2·19/F4: window.scrollY NIE direkt im Scroll-Event lesen — das erzwang je
+    // Ereignis einen Layout-Flush (Perf-Diagnose 8.8.2026: 9.9 ms @1×, 75.5 ms
+    // @4× je Event). rAF bündelt alle Events eines Frames zu EINEM Lesen im
+    // Render-Takt (Muster des A16-Nachbarn unten). Die Guards laufen bewusst
+    // erst IM Frame-Callback: beginnt zwischen Event und Frame eine Wieder-
+    // herstellung oder ein Reiterwechsel (useIsoLayoutEffect setzt beides
+    // synchron), gehört der Zwischenwert keinem Reiter mehr zugeschrieben.
+    let raf: number | null = null;
     const onScroll = () => {
-      if (!wiederherstellend.current && aktiv.current) positionen.current.set(aktiv.current, window.scrollY);
+      if (raf != null) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        if (!wiederherstellend.current && aktiv.current) positionen.current.set(aktiv.current, window.scrollY);
+      });
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (raf != null) cancelAnimationFrame(raf);
+    };
   }, []);
   // ENDGÜLTIGER Fix Scroll-Reset (Auftrag David 25.6.2026): Pfadwechsel + Sperre
   // SYNCHRON im Commit setzen — VOR dem ersten Paint und damit vor dem

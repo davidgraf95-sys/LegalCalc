@@ -332,7 +332,20 @@ test.describe('A33 — Ruhige Gliederung (Scroll-Spy / TOC)', () => {
     // Einen Top-Level-Gliederungs-Sprungknopf anklicken (nicht das Chevron).
     const eintrag = toc.locator('button[data-toc-aktiv], button[aria-current]').first()
     // Falls (noch) kein aktiver Eintrag: irgendeinen Sprungknopf mit Label nehmen.
-    const ziel = (await eintrag.count()) > 0 ? eintrag : toc.getByRole('button').nth(1)
+    // W2·19-GLIEDERUNG/S4 — deklarierte Anpassung (Bau-Spec §2/§10, e2e-Freigabe
+    // David 8.8.2026): der Fallback war `toc.getByRole('button').nth(1)` und traf
+    // damit den zweiten Knopf im GANZEN Scroller. Seit S4 sitzt Zone A
+    // (Standort-Pfad + Quickjump) sticky INNERHALB von `[data-toc]`, der
+    // Quickjump-Absendeknopf steht also an Position 0 — `nth(1)` war folglich das
+    // CHEVRON der ersten Baumzeile. Ein Chevron klappt nur auf, es springt nicht:
+    // der Test wartete danach vergeblich auf eine Positionsmarke (rot gesehen,
+    // dann nachgezogen). Der Fallback zielt jetzt in die BAUMZEILEN
+    // (`li[data-sektion-id]`; nth(1) = Sprungknopf der ersten Zeile nach ihrem
+    // Chevron) — dieselbe Absicht wie zuvor, nur unabhängig davon, was sonst noch
+    // im Scroller steht. Die geprüfte Invariante bleibt unverändert.
+    const ziel = (await eintrag.count()) > 0
+      ? eintrag
+      : toc.locator('li[data-sektion-id] button').nth(1)
     await ziel.scrollIntoViewIfNeeded()
     const box1 = await ziel.boundingBox()
     await ziel.click()

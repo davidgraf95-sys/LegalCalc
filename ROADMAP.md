@@ -569,21 +569,27 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
 - [~] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026 abends, Diagnose noch am selben Abend — eigene Session auf Davids Wunsch: «neue session soll sich mit der gliederung alleine beschäftigen»)*
-  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L -->
-  **Erweiterung David 8.8.2026 (Chat, Session-Start):** «offen in der Umsetzung — die ganze
-  Seitenleiste überarbeiten, inkl. Suche und Kontext; Ziel ist Nützlichkeit; Gliederung und
-  Übersicht sind sehr wichtig; verschiedene Arten von Gesetzen/Verordnungen beachten, damit das
-  Grundfundament stimmt; als erstes Fundament bauen, dann Detailfragen; auch Gesetzes-Fliesstext
-  darf bearbeitet werden.» Drei Rückfragen entschieden: **(a)** e2e-Tests DÜRFEN in deklarierten
-  eigenen Commits an das neue Verhalten angepasst werden (ersetzt das frühere «nicht anfassen»);
-  **(b)** Kontext-Bereich zeigt BEIDES — Erlass-Übersicht (Stand, Art, Umfang, amtliche Quelle)
-  und artikelbezogenen Kontext (Rechtsprechung, Verweise, Historie); **(c)** Suche wird
-  Trefferliste in der Seitenleiste mit Textausschnitten — die Lesespalte bleibt vollständig und
-  springt zum Treffer. Grösse darum M→L. **Zusatz-Auftrag David (gleicher Chat):** überlegen,
-  welche Informationen im Bestand vorhanden sind (Struktur-Sidecar, Bezüge/Rechtsprechung,
-  Revisionen/Historie, Fussnoten, Randtitel, eId/ELI-Links, Currency, Grundart-Register, …) und
-  sie so einsetzen, dass «die nützlichste und gleichzeitig übersichtlichste Gesetzesdarstellung»
-  entsteht — Informations-Inventar ist Teil des Fundaments.
+  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
+  **Bau-Spec:** [FAHRPLAN-W2-19-SEITENLEISTE.md](fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md) §9
+  (Ultracode-Fundament 8.8.2026: 4 Bestandes-Berichte, 3 unabhängige Konzepte, Jury 3:0,
+  Synthese; Slices S1–S10). **Erweiterung David 8.8.2026 (Chat, Session-Start):** «offen in der
+  Umsetzung — die ganze Seitenleiste überarbeiten, inkl. Suche und Kontext; Ziel ist
+  Nützlichkeit; Gliederung und Übersicht sind sehr wichtig; verschiedene Arten von
+  Gesetzen/Verordnungen beachten, damit das Grundfundament stimmt; als erstes Fundament bauen,
+  dann Detailfragen; auch Gesetzes-Fliesstext darf bearbeitet werden.» Drei Rückfragen
+  entschieden: **(a)** e2e-Tests DÜRFEN in deklarierten eigenen Commits an das neue Verhalten
+  angepasst werden (ersetzt das frühere «nicht anfassen»); **(b)** Kontext-Bereich zeigt BEIDES
+  — Erlass-Übersicht (Stand, Art, Umfang, amtliche Quelle) und artikelbezogenen Kontext
+  (Rechtsprechung, Verweise, Historie); **(c)** Suche wird Trefferliste in der Seitenleiste mit
+  Textausschnitten — die Lesespalte bleibt vollständig und springt zum Treffer. Grösse darum
+  M→L. **Zusatz-Auftrag David (gleicher Chat):** überlegen, welche Informationen im Bestand
+  vorhanden sind (Struktur-Sidecar, Bezüge/Rechtsprechung, Revisionen/Historie, Fussnoten,
+  Randtitel, eId/ELI-Links, Currency, Grundart-Register, …) und sie so einsetzen, dass «die
+  nützlichste und gleichzeitig übersichtlichste Gesetzesdarstellung» entsteht —
+  Informations-Inventar ist Teil des Fundaments. **Drei §11-Entscheide David 8.8.2026 spät
+  (Protokoll in der Spec):** kleine Erlasse ab Start sichtbar · SG-3849 sofort ehrlicher
+  §8-Hinweis + Korpus-Prüfauftrag · Sidecar-Nachzug 42 Kantonserlasse als eigener
+  gegenprüfungspflichtiger Folge-Schritt.
   Die Diagnose ([Dossier — ZUERST LESEN, es ist die Bau-Spec](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md)) hat die Wurzeln vermessen: Haupt-Bremser ist der Hover-Dimm-Effekt der LESESPALTE (1686 simultane Transitionen, TBT 8.9 s @4×; Davids Dimm-Effekt vom 18.6. bleibt, nur die transition fällt — F1a), dazu das konstruktiv tote Auto-Zuklappen (0 Ereignisse; Wiederherstellung von Davids Auftrag K 26.6. mit Frame-gleicher scrollTop-Kompensation, CLS-Beweis = bestehende a9/a33-Tests unverändert grün — F2), unmemoisiertes Baum-Rendering (11'075 Knoten dauerhaft gemountet, Klick 231 ms @4× — F3: memoisierte Zeilen, zugeklappte Äste unmounten; der Baum ist KEIN Normtext, §15-Virtualisierungsverbot greift nicht), ungedrosselter Scroll-Listener `App.tsx:97` (F4: rAF wie der A16-Nachbar) und die missglückte Hervorhebung (sechsfaches `aria-current` = §8-Falschaussage; F5: EINE Positionsmarke, 2-px-Kante brass-500 statt Goldfläche, Sidebar-Muster, beide Themes ≥3:1). **Entscheid David 8.8.2026 spät: der Dimm-Effekt vom 18.6. «kann auch weg — Gliederung ist wichtiger»** ⇒ F1 = Hover-Dimmen der Lesespalte ERSATZLOS entfernen (Transition UND :has-Ketten — schnellster Weg auf den gemessenen 300-ms-Boden); F1b entfällt damit. Nachmessen gegen die Dossier-Tabelle ist Teil der DoD; danach LM-163 (B6 §7) gegen die neue Lage prüfen. Golden byte-gleich; e2e-Dateien nicht anfassen — gewollte Test-Konflikte melden.
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
@@ -591,6 +597,9 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [x] **Gliederung im Gesetzes-Leser (Davids Befunde 8.8.2026 abends)** — ✅ überführt: Diagnose im [Dossier](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md), Bau als eigener Schritt `W2·19-GLIEDERUNG` (Queue-Spitze, eigene Session auf Davids Wunsch).
   - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Breite der Brotkrume-Leiste angleichen** — strukturelle Lücke zwischen Kopfzeile und Brotkrume auf jeder Seite mit Brotkrume (Befund B7 8.8.2026, bewusst zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
   - [ ] `check:design-tokens` scannt Kommentartext mit — ein Kommentar mit Utility-Platzhalter (`text-ink-*`) macht das Tor rot und kostet je Vorfall einen Tor-Zyklus; Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund B4-N1 8.8.2026 — nicht Davids Fund, hier verortet als kleinste passende Sammelstelle.)*
+  - [ ] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt — wartet auf David:** Auftrag K (26.6.) lässt den Baum beim Lese-Scroll im Sichtband wachsen; Chromiums Input-Fenster macht daraus eine Timing-Los-Flake (~10–20 % kalt). Drei Wege (a: kein Aufklapp während Lese-Scroll · b: Aufklapp beim Laden · c: Kontrakt neu fassen), alle ändern Zugesagtes. Dossier: [a33-Alt-Flake](bibliothek/betrieb/a33-lesescroll-cls-altflake-2026-08-09.md); danach Fix mit Rot-Beweis. *(W2·19-Bug-Check 9.8.2026 — Alt-Mangel auf main, keine Regression.)*
+  - [ ] **Baum-Fokus beim Auto-Zuklappen retten (B8, WCAG 2.4.3):** liegt `document.activeElement` in einem zu schliessenden Ast (schmaler Pfad: Taste t, dann j/k/Rad), Fokus vor `setTocBaum` auf die Elternzeile setzen — ~10–15 Zeilen um `inhalt-hooks.tsx:528–546`. *(W2·19-Bug-Check 9.8.2026, bewusst zurückgestellt.)*
+  - [ ] **Beobachtungsposten `verzahnung.e2e.ts:201`:** Popover-boundingBox null unter Voll-Last (1× 9.8.2026, isoliert 6/6 grün) — gleiche Bauart wie die a33-Flake; bei erneutem Auftreten Messbedingung (kalt/warm, Parallel-Last) protokollieren, nicht als Zufall abtun.
   David sammelt Fehler aus der täglichen Nutzung formlos hier als `- [ ]`-Zeile (oder meldet sie im
   Chat — die Session trägt sie ein). Eine Fix-Batch-Session arbeitet mehrere Positionen sortenrein
   ab: ein Branch, einmal Tore, eine Landung. **Risikopfad-Funde gehören NICHT hierher**, sondern als

@@ -171,6 +171,19 @@ export function LeserVolltextInhalt({
   const quickjump = loeseArtikel
     ? <ArtikelSprungFeld loese={loeseArtikel} onSprung={springeZuArtikel} />
     : null;
+  // W2·19-GLIEDERUNG/S4 · Zone-A-Pfadzeile (Bau-Spec §2). Sie ist die Antwort auf
+  // die T1-Sorge, die F5 aufwirft: seit der Positionsmarke trägt im Baum nur noch
+  // EINE Zeile die Markierung, und bei einer fünfstufigen Kodifikation (ZGB/OR)
+  // ist «der tiefste Knoten» allein keine Verortung. Der volle Pfad steht darum
+  // hier — einzeilig, dieselben Daten wie das mobile Sheet (§5, siePfad kommt aus
+  // dem bestehenden Scroll-Spy, es wird nichts zusätzlich beobachtet).
+  // Kurzform: die tiefsten ZWEI Stufen ausgeschrieben, davor «…». Der volle Pfad
+  // bleibt über title/aria-label erreichbar — nie stiller Verlust (§8).
+  const sieHierGlieder = [...siePfad, ...(siePfadArtikel ? [siePfadArtikel] : [])];
+  const sieHierVoll = sieHierGlieder.length > 0 ? sieHierGlieder.join(' › ') : 'Noch keine Leseposition erfasst';
+  const sieHierKurz = sieHierGlieder.length === 0
+    ? 'Noch keine Leseposition erfasst'
+    : (sieHierGlieder.length > 2 ? '… › ' : '') + sieHierGlieder.slice(-2).join(' › ');
   // E3/A34 + E5/A35: das «Ansicht»-Dropdown im SPLIT-VIEW (nur `imPane`). Es lebt in
   // der pane-lokalen STICKY Kopfzeilen-Such-Leiste (data-such-bar) statt im
   // wegscrollenden ErlassLeserKopf — so bleibt die Ansichtswahl beim Lesen im Pane
@@ -252,15 +265,19 @@ export function LeserVolltextInhalt({
       {/* M5: Erlass-Kopf (Ingress/Erlassformel bzw. materielle Präambel + Erlass-
           datum + Kopf-Fussnoten) — Fedlex-Fundiertheits-Floor (§2), bisher verworfen.
           LM-149 (W2·17-UI-BEFUNDE-B4, §5 DESIGN-REGLEMENT-NORMTEXT §4b): dieselbe
-          16rem+gap-Spaltenaufteilung wie die Lesespalte weiter unten (Zeile ~338) —
+          18rem+gap-Spaltenaufteilung wie die Lesespalte weiter unten (Zeile ~338) —
           sonst sitzt der Ingress-Abschluss (border-rule-struktur) flush-left, während
           die Lesespalte im Grid nach rechts zentriert ist: zwei Trennlinien auf
           unterschiedlicher Höhe, deren X-Bereiche sich überschneiden. Die leere erste
           Zelle hält nur den Platz der TOC-Spalte frei (kein Inhalt, aria-hidden);
           `ErlassKopfBlock` zentriert sich selbst per `mx-auto w-full max-w-normtext`
-          identisch zur Lesespalte (`.group/lese`). */}
+          identisch zur Lesespalte (`#lc-lesespalte`). */}
       {kopf && (
-        <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[16rem_minmax(0,1fr)] gap-8' : ''}>
+        // W2·19-GLIEDERUNG/S2: 16rem → 18rem. BEIDE Grids (hier UND die Lesespalte
+        // weiter unten) ändern sich im selben Commit — wer die Kopf-Zelle vergisst,
+        // reproduziert LM-149 (versetzte Trennlinien). Rechnung (Bau-Spec §2):
+        // 18 + 2 (gap-8) + 42 (max-w-normtext) = 62rem < max-w-content 70rem.
+        <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
           {istXl && sektionen.length > 0 && tocOffen && <div aria-hidden />}
           <ErlassKopfBlock kopf={kopf} intern={internRefs} />
         </div>
@@ -315,7 +332,7 @@ export function LeserVolltextInhalt({
       {/* 2-Spalten (Gliederungs-Sidebar links, Inhalt rechts) ab lg (1024px, R2) —
           darunter (mobil / sehr schmale Fenster) bekommt der Normtext die volle
           Spaltenbreite, die Gliederung sitzt als einklappbarer Drawer (wie mobil).
-          So frisst die feste 16rem-TOC-Spalte erst, wenn genug Breite da ist —
+          So frisst die feste 18rem-TOC-Spalte erst, wenn genug Breite da ist —
           deckungsgleich mit der App-Seitenleiste (lg). Reine Darstellung (§3). */}
       {/* Unter xl: die GLIEDERUNG als Overlay-Sheet (analog Seitenleiste), NUR auf
           Wunsch über den sticky ☰-Knopf geöffnet (Auftrag David 25.6.2026). A35: die
@@ -346,7 +363,7 @@ export function LeserVolltextInhalt({
           (ResizeObserver), sonst viewport-xl. istXl treibt die Klassen direkt
           (kein xl:-Prefix), damit ein BREITES Pane denselben Aufbau wie der
           Einzelbildschirm bekommt. */}
-      <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[16rem_minmax(0,1fr)] gap-8' : ''}>
+      <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
         {/* TOC-Spalte (nur der Gliederungsbaum, sticky). A35: das Suchfeld lebt nicht
             mehr hier «oberhalb der Gliederung», sondern in der Kopfzeilen-Leiste (oben).
             Nur wenn istXl; darunter Overlay-Drawer über den sticky ☰-Knopf. */}
@@ -369,12 +386,24 @@ export function LeserVolltextInhalt({
             // KEINE Anpassung: sie rechnete den 0.5rem-Streifen nie mit (10.75rem
             // Abzug deckte bisher nur Topbar+PaneKopf+Leistenhöhe+mb-4 — mit dem
             // Streifen-Wegfall stimmt die Summe jetzt exakt).
-            style={imPane
-              // Im Pane: an die SICHTBARE Pane-Höhe binden (Topbar 4rem + PaneKopf
-              // 2.25rem ab), nicht an die indefinite Grid-Zeile (calc(100%) löste
-              // gegen content-Höhe → kein interner Scroll, sticky brach).
-              ? { top: '3.5rem', maxHeight: 'calc(100dvh - 4rem - 2.25rem - 3.5rem - 1rem)' }
-              : { top: 'calc(4rem + 2.25rem)', maxHeight: 'calc(100vh - 4rem - 2.25rem - 1.5rem)' }}
+            // W2·19-GLIEDERUNG/S2: die vier ausgeschriebenen Kopf-Höhen sind auf die
+            // beiden Variablen aus inhalt.tsx umgestellt (--leser-kopf-h = Topbar +
+            // Inhalts-/PaneKopf = 6.25rem, --leser-sub-h = pane-lokale Such-Leiste
+            // = 3.5rem bzw. 0). Der Sticky-Anschlag ist damit in BEIDEN Ansichten
+            // derselbe Ausdruck wie der Sprung-Offset der Anker (--nt-stick) —
+            // ein Auseinanderlaufen wie bei LM-003 ist konstruktiv nicht mehr
+            // möglich. Rechnerisch unverändert: Pane 3.5rem / 100dvh − 10.75rem,
+            // Einzelansicht 6.25rem / 100vh − 7.75rem.
+            style={{
+              top: 'var(--nt-stick)',
+              // Im Pane: an die SICHTBARE Pane-Höhe binden (Topbar + PaneKopf ab),
+              // nicht an die indefinite Grid-Zeile (calc(100%) löste gegen
+              // content-Höhe → kein interner Scroll, sticky brach). Die 1rem sind
+              // das mb-4 der Such-Leiste, die 1.5rem der Fussabstand aussen.
+              maxHeight: imPane
+                ? 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)'
+                : 'calc(100vh - var(--leser-kopf-h) - 1.5rem)',
+            }}
             className={`mb-0 sticky flex-col ${tocOffen ? 'flex' : 'hidden'}`}>
             {/* LM-147 (W2·17-UI-BEFUNDE-B4): «per Tastatur überspringbar» — bei einem
                 tiefen Kodex (OR: 2887 Tabstopps allein im Baum) gab es keinen Weg, die
@@ -389,13 +418,6 @@ export function LeserVolltextInhalt({
               <p className="lc-overline">Gliederung</p>
               <button type="button" onClick={() => setTocOffen((v) => !v)} className="text-micro text-ink-500 hover:text-brass-700" title="Gliederung ein-/ausklappen">{tocOffen ? '‹ einklappen' : 'ausklappen ›'}</button>
             </div>
-            {/* R2: derselbe Quickjump-Baustein wie im mobilen Sheet, im TOC-KOPF
-                (Fahrplan R2 ausdrücklich: «derselbe Baustein auch im Desktop-TOC-
-                Kopf»). Er steht AUSSERHALB des [data-toc]-Scrollers, damit er beim
-                Blättern im Baum stehen bleibt und der A33-Mitscroll-/Scroll-Spy
-                den Scroller unverändert vorfindet. §15/2: fixe Höhe, ab dem ersten
-                Render da ⇒ kein Einwachsen, CLS 0. */}
-            {quickjump && <div className="mb-2 shrink-0">{quickjump}</div>}
             {/* A32 + E4-Korrektur (David 25.7.2026: «das kontextfenster soll
                 gliederung nicht abschneiden. sie soll einfach unten an der
                 gliederung stehen»): das Kontext-Panel steht IM FLUSS INNERHALB
@@ -412,6 +434,40 @@ export function LeserVolltextInhalt({
                 höhe, verschiebt aber kein sichtbares Element (CLS 0, Beweis neu
                 geführt in e2e/leser-kontext-e4.e2e.ts). */}
             <div data-toc className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
+              {/* ── Zone A (W2·19-GLIEDERUNG/S4, Bau-Spec §2) ──────────────────
+                  Standort-Sockel: «Sie sind hier»-Pfadzeile + Quickjump, sticky
+                  INNERHALB des [data-toc]-Scrollers.
+                  WARUM INNERHALB und nicht darüber: die E4-Assertion misst
+                  `tocClient > aside · 0.85` — jedes Element, das ausserhalb des
+                  Scrollers über ihm sitzt, zehrt direkt von diesem Verhältnis.
+                  Der Quickjump stand bisher genau dort (R2-Kommentar: «damit er
+                  beim Blättern stehen bleibt»); sticky im Scroller leistet
+                  dasselbe, ohne die 85 % anzugreifen — er bleibt beim Blättern
+                  ebenso stehen, zählt aber zum Scroller.
+                  §15.2 CLS 0: beide Zeilen stehen ab dem ERSTEN Render da und
+                  haben feste Höhe — die Pfadzeile ist einzeilig (`truncate`,
+                  nie umbrechend) und zeigt ohne bekannte Leseposition einen
+                  ehrlichen Platzhalter statt zu verschwinden (§8). `bg-paper`
+                  deckt die durchlaufenden Baumzeilen ab. */}
+              <div data-toc-zone-a className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
+                {/* B10 (Bug-Check 9.8.2026): `aria-label` auf einem `<p>` ist nach
+                    ARIA 1.2 unzulässig — die Rolle `paragraph` gehört zu den
+                    Rollen ohne Namensberechtigung, und eine spec-treue
+                    Hilfstechnik DARF den Namen ignorieren. Chromium berechnet
+                    ihn trotzdem, darum blieb der Fehler unsichtbar (axe legt den
+                    Fall bei Text-Inhalt unter `incomplete`, nicht `violations` —
+                    das Tor konnte ihn gar nicht finden). Statt eines Namens am
+                    Absatz stehen jetzt beide Fassungen als TEXT nebeneinander:
+                    die gekürzte sichtbar, aber `aria-hidden` (sie sagt mit «…»
+                    nichts Verlässliches), der volle Pfad `sr-only`. Die
+                    Hilfstechnik liest damit denselben Wortlaut wie zuvor, ohne
+                    verbotenes Attribut; `title` bleibt für die Maus. */}
+                <p data-toc-pfad className="truncate text-micro leading-snug text-ink-500" title={sieHierVoll}>
+                  <span aria-hidden>{sieHierKurz}</span>
+                  <span className="sr-only">Sie sind hier: {sieHierVoll}</span>
+                </p>
+                {quickjump && <div className="mt-1.5">{quickjump}</div>}
+              </div>
               {tocBaumEl}
               {kontextImToc && (
                 <div data-toc-kontext className="mt-4 border-t border-line pt-3">
@@ -432,7 +488,14 @@ export function LeserVolltextInhalt({
             Artikel-Kopfzeile (Art. N · Zitat/Link) UND der Fliesstext (ArtikelBody /
             Ingress) teilen sich dieselbe Breite `max-w-normtext` → «Zitat» fluchtet
             bündig mit der rechten Textkante statt in den Leerraum zu wandern. */}
-        <div id="lc-lesespalte" className="group/lese mx-auto w-full max-w-normtext">
+        {/* W2·19-GLIEDERUNG/F1: die benannte Gruppe `group/lese` ist mit dem
+            Hover-Spotlight entfallen (ArtikelLeser.tsx, ausführliche Begründung
+            dort). Sie hatte GENAU EINEN Konsumenten — die dortige
+            `group-has-[[data-lese]:hover]/lese:opacity-80`-Kette; ohne ihn wäre
+            die Klasse eine tote Marke, die eine Wirkung behauptet, die es nicht
+            mehr gibt. Die Identität der Lesespalte trägt unverändert die id
+            `#lc-lesespalte` (Skip-Link-Ziel, oben referenziert). */}
+        <div id="lc-lesespalte" className="mx-auto w-full max-w-normtext">
           {/* A27 (David 12.7.2026): der Sticky Section-Kontextkopf «Titel › … ›
               Art. N › ⧉ Zitat» ist ENTFERNT. Seit A26 (#198) trägt der immer
               sichtbare Inhalts-Kopf (InhaltsKopf, Brotkrümel + Live-Artikel) die

@@ -41,7 +41,16 @@ async function ersterArtikelGeo(page: Page) {
     );
     const gruppe = btn?.parentElement ?? null; // der ml-auto-Aktions-Span
     const body = art.querySelector('.max-w-normtext');
-    const spalte = art.closest('.group\\/lese') ?? document.querySelector('[class*="group/lese"]');
+    // W2·19-GLIEDERUNG — Sonden-Nachzug (Bau-Spec §10 «Anker, die MITWANDERN»).
+    // Diese Sonde suchte die Lesespalte über die benannte Tailwind-Gruppe
+    // `group/lese`. Die ist mit dem Hover-Spotlight ersatzlos entfallen (Commit
+    // 657880411, F1) — der Nachzug hier fehlte, seither lief die Sonde ins Leere
+    // (`geo === null`) und die Spec war rot, ohne dass sich an der GEMESSENEN
+    // Sache etwas geändert hätte. Der F1-Commit nennt selbst den Nachfolger:
+    // «die Identität der Lesespalte trägt unverändert `#lc-lesespalte`» — es ist
+    // dasselbe Element, nur ohne die tote Klasse. Eine id ist als Anker zudem
+    // haltbarer als eine Utility-Klasse.
+    const spalte = art.closest('#lc-lesespalte') ?? document.querySelector('#lc-lesespalte');
     const R = (el: Element | null) => (el ? el.getBoundingClientRect() : null);
     const g = R(gruppe);
     const b = R(body);

@@ -9,6 +9,7 @@ import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
 } from './berechnungen';
+import { baueGliederungsModell } from './gliederungsModell';
 import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
 import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
@@ -59,7 +60,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     revisionFuer, historieFuer,
   } = useLeserZustand();
   const {
-    offen, setOffen, tocBaum, setTocBaum, tocToggle, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = useLeserTocZustand();
   const {
@@ -87,6 +88,25 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Lesespalte (renderSektion unten) arbeitet weiter auf dem vollen `sektionen`
   // (§15-Treue: Inhalt/Anker/Ctrl+F/Print vollständig; reine TOC-Kuration).
   const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
+
+  // W2·19-GLIEDERUNG/S4: das Gliederungs-MODELL (S3) ist seit hier die Eingabe der
+  // Leiste — Modus, Zählwerte, Bereiche, Einzelkind-Verdichtung, Vorspann- und
+  // Anhang-Knoten kommen aus der reinen, unit-getesteten Ableitung statt aus der
+  // Render-Rekursion (§3 Schichtentrennung).
+  //
+  // `startSichtbarGo: true` — Davids Entscheid vom 8.8.2026 (Bau-Spec §11 Ziff. 1,
+  // Entscheid-Protokoll: «1 = Ja, sichtbar»). Er MODULIERT den 5.8.-Entscheid
+  // «alles zu», er hebt ihn nicht auf: kleine Bäume (≤ 40 Zeilen) und der
+  // Artikel-Index starten sichtbar, grosse Kodifikationen (OR/ZGB) bleiben
+  // unverändert zugeklappt — die Unterscheidung trifft das Modell an der
+  // Zeilenzahl (gliederungsModell.ts, `startOffeneTiefe`).
+  const modell = useMemo(
+    () => baueGliederungsModell({
+      sektionen: tocSektionen, ohneGliederung, eintraege: eintraege ?? [], struktur,
+      startSichtbarGo: true,
+    }),
+    [tocSektionen, ohneGliederung, eintraege, struktur],
+  );
 
   // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
   // aus dem TATSÄCHLICHEN Aufbau des Erlasses ab (Struktur-Sidecar: Gliederungstiefe
@@ -214,10 +234,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // TOC-Mitscroll + Nutzer-Interaktions-Guard + Scroll-Anker — verhaltensneutral in
   // ./inhalt-hooks. Acht Hooks (2 useRef + 6 useEffect) in EXAKT der bisherigen
   // Reihenfolge; alle geteilten Refs/Setter/abgeleiteten Werte werden durchgereicht,
-  // damit tocToggle/springeZuArtikel/springeZuSektion weiter dieselben Refs treffen.
+  // damit tocToggleGruppe/springeZuArtikel/springeZuSektion weiter dieselben Refs treffen.
   useLeserSprungSpy({
     ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad, offen, sucheDebounced, aktivIds, tocBaum,
+    gliederungsKnoten: modell.knoten, umhaengPraefix: modell.umhaengPraefix,
     istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
     refs: {
       jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
@@ -320,13 +341,17 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   };
 
   // Gliederungs-Baum EINMAL beschreiben (genutzt in der xl-Spalte UND im mobilen
-  // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggle` sind
+  // Drawer, §5 — kein doppelter onSprung). `springeZuSektion`/`tocToggleGruppe` sind
   // oben als useCallback definiert (über dem early-return, Rank 4).
   const tocBaumEl = (
-    // A36: kuratierter Baum (tocSektionen) — Sprung-/Toggle-Handler arbeiten
-    // weiter über IDs des vollen Baums (Teilmenge, pfadZu findet sie identisch).
-    <SektionBaumTOC sektionen={tocSektionen} aktivPfad={aktivIds} offen={tocBaum}
-      onToggle={tocToggle} onSprung={springeZuSektion} />
+    // A36: das Modell ist auf dem KURATIERTEN Baum gebaut (tocSektionen) —
+    // Sprung-/Toggle-Handler arbeiten weiter über die Ids des vollen Baums
+    // (Teilmenge, pfadZu findet sie identisch). `onSprungArtikel` bedient die
+    // synthetischen Zeilen (Vorspann/Anhänge), die keine `sek-N`-Identität
+    // haben und darum über ihren ersten Artikel-Token springen.
+    <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} offen={tocBaum}
+      startOffeneTiefe={modell.startOffeneTiefe}
+      onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
   );
 
   return (
@@ -343,7 +368,30 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // (~3rem) entfiel mit A35 (Suchfeld jetzt IM Inhalts-Kopf). Im Pane liegen Topbar/
       // PaneKopf ausserhalb des Scroll-Containers → nur die pane-lokale Such-Leiste
       // (top 0.5rem, ~3.5rem) klebt (Muster --rsp-stick, Entscheid-Leser B3).
-      style={{ '--nt-stick': imPane ? '3.5rem' : 'calc(4rem + 2.25rem)' } as CSSProperties}>
+      //
+      // W2·19-GLIEDERUNG/S2 (§2 Bau-Spec, §17-Wurzelfix der LM-003/LM-004-Klasse):
+      // Die Kopf-Höhen standen bis hierher SECHSMAL ausgeschrieben (hier, die
+      // TOC-Spalte in inhalt-volltext.tsx, das GliederungSheet) — jede
+      // Kopf-Änderung musste an allen Stellen von Hand nachgezogen werden, und
+      // genau dieses Nachziehen wurde bei LM-003 vergessen (0.5rem-Streifen).
+      // Ab jetzt gibt es GENAU EINE Stelle, an der die Zahlen stehen:
+      //   --leser-kopf-h  Chrome OBERHALB des Lesebereichs, in beiden Ansichten
+      //                   gleich hoch: Topbar 4rem + Inhalts-Kopf bzw. PaneKopf
+      //                   2.25rem = 6.25rem. Einzelansicht: beide kleben und
+      //                   verdecken den Text. Im Pane: beide liegen AUSSERHALB
+      //                   des Pane-Scrollers, verkürzen aber die sichtbare
+      //                   Pane-Höhe um denselben Betrag.
+      //   --leser-sub-h   pane-lokale Such-Leiste ([data-such-bar], sticky top-0
+      //                   INNERHALB des Pane-Scrollers) — nur im Pane > 0.
+      // `--nt-stick` (die reale Sticky-Höhe für Sprünge) speist sich daraus und
+      // bleibt der EINE Konsument-Anker: Einzelansicht = --leser-kopf-h, im Pane
+      // = --leser-sub-h (Topbar/PaneKopf scrollen dort nicht mit dem Text).
+      // Rechnerisch byte-gleich zum Vorzustand (6.25rem bzw. 3.5rem).
+      style={{
+        '--leser-kopf-h': 'calc(4rem + 2.25rem)',
+        '--leser-sub-h': imPane ? '3.5rem' : '0rem',
+        '--nt-stick': imPane ? 'var(--leser-sub-h)' : 'var(--leser-kopf-h)',
+      } as CSSProperties}>
       <LeserVolltextInhalt
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
