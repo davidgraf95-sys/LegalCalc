@@ -71,6 +71,23 @@ Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
 
 Detail-Begründungen je Regel: `fahrplaene/FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).
 
+**Mess-Hygiene für Hand-Messreihen** (Lehren 8./9.8.2026, W2·19 — zwei Sessions sind
+nacheinander in dieselben Fallen gelaufen):
+
+1. **Keine Zahl ohne Kadenz.** Dieselbe Seite misst @4× je nach Scroll-Kadenz 232 ms
+   (Burst) oder 10'196 ms TBT (Lese-Kadenz mit Spy-Durchlauf) — Kadenz gehört in die
+   Kopfzeile jeder Tabelle, verglichen wird nur gleiche gegen gleiche.
+2. **Jede Paint-/Layout-Aussage braucht einen Ruhe-Kontrolllauf an derselben
+   Scrollposition** — sonst misst man Layout (echte Leerfläche) als Paint-Fehler.
+3. **Synthetische Scroll-Messungen deklarieren, ob sie das Seitenende überschreiten.**
+   `mouse.wheel` über das Ende hinaus erzeugt im Headless-Compositor 40–60 % Leer-Frames
+   auf JEDER Seite (auf einer nackten HTML-Kontrollseite belegt, LM-163-Prüfung 9.8.2026)
+   — Tastatur-/`scrollTo`-Kadenz nehmen oder vor dem Ende stoppen.
+4. **`page.screenshot` erzwingt einen Paint** und maskiert Compositor-Befunde — für
+   Paint-Fragen CDP `Page.startScreencast` (komponierte Frames) verwenden.
+5. **Flake-Raten ohne Messbedingung (kalt/warm, Parallel-Last, Stichprobengrösse gegen
+   die vermutete Rate) sind keine Zahlen** — Dispatch-§0 Ziff. 3c.
+
 ## §-Konkordanz (für Alt-Verweise im Bestand)
 
 Die Unterparagraphen von §15 sind seit dem A4-Umzug (25.7.2026, `b2fa14dda`)
