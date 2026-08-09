@@ -57,8 +57,12 @@ export function ErlassUebersicht({
   kopf: ErlassKopf | null;
   currency?: CurrencyEintrag;
   erlassTyp?: ErlassTyp;
-  /** Gezählte Artikel des Snapshots — dieselbe Zahl wie im Erlass-Kopf (§5). */
-  artikelAnzahl: number;
+  /** Gezählte Artikel des Snapshots — dieselbe Zahl wie im Erlass-Kopf (§5).
+   *  W2·19-GLIEDERUNG/S9: `null` = KEIN Snapshot geladen (T11 nur-live-link/
+   *  pdf-embed — dort gibt es keine `eintraege`, nicht «0 Artikel»). Die
+   *  «Umfang»-Zeile entfällt dann ersatzlos statt eine falsche Null zu zeigen
+   *  (§8: nichts behaupten, was wir nicht wissen). */
+  artikelAnzahl: number | null;
   bestimmungsWort?: 'Artikel' | 'Paragraphen';
   /** K6: kantonale Etiketten sind teils Entwurf — bleibt sichtbar (§8). */
   bestimmungsEtikettStatus?: 'entwurf';
@@ -175,13 +179,15 @@ export function ErlassUebersicht({
         )}
       </Zeile>
 
-      <Zeile label="Umfang:">
-        <span className="num">{artikelAnzahl}</span> {bestimmungsWort}
-        {gliederungsTiefe > 0 && (
-          <>{PUNKT}<span className="num">{gliederungsTiefe}</span> Gliederungsebene{gliederungsTiefe === 1 ? '' : 'n'}</>
-        )}
-        {hatAnhang && <>{PUNKT}Anhang</>}
-      </Zeile>
+      {artikelAnzahl !== null && (
+        <Zeile label="Umfang:">
+          <span className="num">{artikelAnzahl}</span> {bestimmungsWort}
+          {gliederungsTiefe > 0 && (
+            <>{PUNKT}<span className="num">{gliederungsTiefe}</span> Gliederungsebene{gliederungsTiefe === 1 ? '' : 'n'}</>
+          )}
+          {hatAnhang && <>{PUNKT}Anhang</>}
+        </Zeile>
+      )}
 
       {/* Quelle: die breiteste Provenienz-Zeile (§7 b/c) — der Live-Link auf die
           geltende Fassung und, wo vorhanden, das amtliche PDF der gepinnten

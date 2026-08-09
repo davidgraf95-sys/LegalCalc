@@ -77,7 +77,7 @@ export function GliederungSheet({
         <div data-sie-sind-hier className="shrink-0 border-b border-line px-4 py-2">
           <p className="lc-overline mb-0.5">Sie sind hier</p>
           {pfad.length > 0 || aktArtikelLabel ? (
-            <p className="text-micro leading-snug text-ink-600">
+            <p className="text-micro leading-snug text-ink-600 [overflow-wrap:anywhere]">
               {pfad.map((l, i) => (
                 <span key={`${l}-${i}`}>
                   {i > 0 && <span aria-hidden className="mx-1 text-ink-300">›</span>}
@@ -97,8 +97,11 @@ export function GliederungSheet({
         </div>
         {/* 3 · Quickjump «Art. N» */}
         <div className="shrink-0 border-b border-line px-4 py-2">{sprungFeld}</div>
-        {/* 4 · Gliederungsbaum — einziger Scroller des Sheets */}
-        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-2 [scrollbar-width:thin]">{baum}</div>
+        {/* 4 · Gliederungsbaum — einziger Scroller des Sheets. `overflow-x-hidden`
+            (Zusatzpunkt David 9.8.2026, W2·19-GLIEDERUNG/S9): dieselbe Garantie
+            wie in der Desktop-Spalte ([data-toc], inhalt-volltext.tsx) — kein
+            horizontales Scrollen, lange Etikette brechen um. */}
+        <div data-gliederung-baum-scroll className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain px-3 py-2 [scrollbar-width:thin]">{baum}</div>
       </div>
     </>
   );

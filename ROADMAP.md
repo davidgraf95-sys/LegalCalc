@@ -570,12 +570,17 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   Mobile/Pane, Zonen-Komponenten, Roadmap-Nachträge inkl. Sidecar-Nachzug + SG-3849-Prüfauftrag).
   **DoD-Beleg:** Perf-Nachmessung 9.8.2026 (Datei kommt mit PR #480: bibliothek/betrieb/gliederung-perf-nachmessung-2026-08-09.md; Kernziele erreicht; Restposten als W2·18-Zeilen/David-Entscheide); LM-163 geprüft:
   Verdacht widerlegt (FAHRPLAN-UI-BEFUNDE Z. 334).
+- [ ] **19b · Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19)** *(S10-Nachträge 9.8.2026)*
+  <!-- @meta id: W2·19B-KORPUS · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: M -->
+  Beides Extraktions-Risikopfad ⇒ Skill `gegenpruefung` Pflicht, Merge gesperrt bis Verdikt:
+  - [ ] **Sidecar-Nachzug der 42 Kantonserlasse ohne Gliederungs-Sidecar** — bis dahin zeigt die Leiste dort ehrlich den Artikel-Index (B3/B2, W2·19-S9).
+  - [ ] **Korpus-Prüfauftrag SG-3849** (teilerfasst, Artikel-Folge lückenhaft; §8-Hinweis steht seit S6 in der Erlass-Übersicht) — Lücke gegen die amtliche Quelle klären, dann Hinweis auflösen oder präzisieren.
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
   - [ ] **Kalender-Export: Termine als «frei» markieren (TRANSP:TRANSPARENT)** — Go David 8.8.2026 («frei ok»); bricht deklariert einen Golden-Anker ⇒ fachliche Änderung mit Golden-Neuschrieb im eigenen Commit (Herkunft: Session-Karte 3./4.8.2026, archiv/STRUKTUR-SESSIONKARTEN.md).
   - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Brotkrume-Breite angleichen** (Befund B7 8.8.2026, zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
   - [ ] `check:design-tokens` scannt Kommentartext mit (Utility-Platzhalter im Kommentar = rotes Tor, je Vorfall ein Zyklus); Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund 8.8.2026.)*
-  - [ ] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt — wartet auf David (a/b/c):** drei Wege im [a33-Dossier](bibliothek/betrieb/a33-lesescroll-cls-altflake-2026-08-09.md); danach Fix mit Rot-Beweis. *(Alt-Mangel auf main, keine W2·19-Regression.)*
+  - [x] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt:** ✅ Entscheid David 9.8.2026 = Weg a (Aufklappen erst bei Scroll-Ruhe), umgesetzt in PR #480 — a33 kalt 20/20 grün (vorher 2–4/20); ~39-Zeilen-Ziel von David als überholt gestrichen («kein Wuchern genügt»). Dossier nachgeführt.
   - [ ] **Baum-Fokus beim Auto-Zuklappen retten (B8, WCAG 2.4.3):** Fokus vor `setTocBaum` auf die Elternzeile, ~10–15 Zeilen um `inhalt-hooks.tsx:528–546`. *(W2·19-Bug-Check, zurückgestellt.)*
   - [ ] **Alt-Flake `qsui-hierarchie.e2e.ts` (Vorlagen-Block, ~25 %/Fall, Nullprobe-belegt 25/84 auf main):** Wurzel-Fix mit Mandat; Familie + Zahlen im a33-Dossier-Nachtrag (PR #480).
   - [ ] **Alt-Flake `leser-weiterlesen-r4-r8` (Shard-Kontext, vorbestehend, Befund 9.8.2026):** gleiche Familie; Wurzel-Fix mit Mandat, Messbedingung protokollieren.

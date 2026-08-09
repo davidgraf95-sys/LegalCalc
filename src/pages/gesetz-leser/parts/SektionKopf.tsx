@@ -4,7 +4,7 @@ import { romanFrei, margLabel } from '../helpers';
 
 // Gliederungs-Überschrift im Fliesstext: klappbar (Fedlex-analog), volle
 // Bezeichnung, nach Ebene abgestuft.
-export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel, amtlichUrl }: {
+export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel, amtlichUrl, randTiefe = 0 }: {
   s: Sektion; refCb: (el: HTMLElement | null) => void; offen: boolean; onToggle: () => void; bereich?: string;
   /** Die Sektion umfasst genau EINEN Artikel (Bereich = «Art. N», keine Spanne). */
   bereichEinzel?: boolean;
@@ -13,6 +13,19 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
    *  verifikationslink.ts). undefined = kein Link (Kanton/Randtitel/Alt-Sidecar,
    *  §8 — nie ein toter Link). Reines Outbound-Chrome, kein eigener Anker (§12.4). */
   amtlichUrl?: string;
+  /**
+   * W2·19-GLIEDERUNG/S9 (Bau-Spec §6/3 «Randtitel-Stufung T1»): Position DIESES
+   * Knotens innerhalb seiner eigenen Marginalien-Kette («A.»=0, «I.»=1, «1.»=2)
+   * — NICHT `s.ebene` (die zählt ab der amtlichen Wurzel und wäre bei einer
+   * fünfstufigen Kodifikation wie ZGB/OR nie klein). Nur an randtitel-Knoten
+   * wirksam; amtliche Stufen stufen weiterhin über `s.ebene` (unverändert).
+   * Bis hierher trugen ALLE randtitel-Knoten dieselbe Grösse/dasselbe Gewicht
+   * — eine dreistufige Kette («A. / I. / 1.») blieb damit optisch flach, obwohl
+   * der Einzug (renderSektion) sie längst verschachtelt zeigte. Reine Typo-
+   * Abstufung, keine Farbe/Box (NORMTEXT §4b), 0-indiziert und bei 2 gedeckelt
+   * (tiefere Ketten sind im Referenzbestand nicht belegt, §7 — nichts geraten).
+   */
+  randTiefe?: number;
 }) {
   const { pre, rest } = romanFrei(s.label);
   // Vollwertige Abschnitts-Überschrift im Fliesstext: feine Overline mit dem
@@ -34,8 +47,13 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
   // Titelgrösse nach Tiefe (E, Auftrag David 26.6.2026): Fedlex-artig abgestuft —
   // oberste Stufe prominent (h2), dann h3, body-l, sonst base. font-semibold liegt
   // am Titel-Span (unten). Nur existierende Tokens (§13).
-  const titelStil = s.randtitel ? 'text-base' : s.ebene === 0 ? 'text-h2' : s.ebene === 1 ? 'text-h3' : s.ebene === 2 ? 'text-body-l' : 'text-base';
-  const titelFont = s.randtitel ? 'font-serif font-semibold text-ink-800' : 'font-display font-semibold text-ink-900';
+  const randStufe = Math.min(randTiefe, 2);
+  const titelStil = s.randtitel
+    ? (randStufe === 0 ? 'text-base' : randStufe === 1 ? 'text-body-s' : 'text-micro')
+    : s.ebene === 0 ? 'text-h2' : s.ebene === 1 ? 'text-h3' : s.ebene === 2 ? 'text-body-l' : 'text-base';
+  const titelFont = s.randtitel
+    ? `font-serif ${randStufe === 2 ? 'font-medium' : 'font-semibold'} text-ink-800`
+    : 'font-display font-semibold text-ink-900';
   // G11: section-heading-Fussnoten-Marker. FnRef ist selbst ein <button> und darf
   // NICHT im Toggle-<button> liegen (verschachtelte Buttons) → der Marker sitzt als
   // Geschwister NEBEN dem Toggle in derselben Titelzeile. Nur zeigen, wenn der

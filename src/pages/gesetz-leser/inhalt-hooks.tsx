@@ -10,18 +10,12 @@ import {
   type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
 } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
-import { formatiereDatum, pfadZu } from './helpers';
-import { LeserMenuPaar } from './LeserMenuPaar';
-import type { Histogramm, Zeitbereich } from './bezugZeit';
-import type { BezugStatus } from '../../lib/verzahnung/facetten';
-import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
-import { InGesetzSuche } from './parts/InGesetzSuche';
+import { pfadZu } from './helpers';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
 import { planeZuklappen, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import type { LinienProfil } from './linienAufbau';
 
 // ═══ ABSCHNITT · Reader-Effekt-Hooks (§6.6-Split, W2·12-HYGIENE/B24) ═════════
 // Aus GesetzLeserInhalt ausgelagerte, side-effect-reine Custom-Hooks: die
@@ -144,108 +138,13 @@ export function useLeserDaten(opts: {
 }
 
 // ── Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht + Suche) ───────
-export function useInhaltsKopfMeldung(opts: {
-  erlass: BrowseErlass | null;
-  aktArtikel: string | null;
-  meldeInhaltsKopf: MeldeKopf;
-  imPane: boolean;
-  eintraege: NormSnapshot[] | null;
-  linien: LinienProfil;
-  fussnotenAnzahl: number | null;
-  /** W2·7-BEZUG/B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter).
-   *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
-  kantoneVerfuegbar?: string[];
-  /** B7/c: Kanten je Instanz-Klasse in diesem Erlass (Zahl am Instanz-Schalter). */
-  klassenImErlass?: Partial<Record<BezugStatus, KlassenZahlen>>;
-  /** W2·7-BEZUG/B5: Jahres-Verteilung der Kanten (Zeitstrahl im Dropdown).
-   *  OPTIONAL: leer = noch kein Shard ⇒ der Streifen sagt das ehrlich. */
-  bezugHistogramm?: Histogramm;
-  /** W2·7-BEZUG/B5: aktiver Von-Bis-Bereich. OPTIONAL: Default = offen. */
-  bezugBereich?: Zeitbereich;
-  suche: string;
-  setSuche: Dispatch<SetStateAction<string>>;
-  istXl: boolean;
-  tocOffen: boolean;
-  tocAuf: boolean;
-  setTocOffen: Dispatch<SetStateAction<boolean>>;
-  setTocAuf: Dispatch<SetStateAction<boolean>>;
-  sektionen: Sektion[];
-}): void {
-  const {
-    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl, kantoneVerfuegbar = [], klassenImErlass,
-    bezugHistogramm, bezugBereich,
-    suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf, sektionen,
-  } = opts;
-
-  // A/A2/A3/F + A26: Kopf melden (Breadcrumb Gesetze › Ebene › Kürzel · Stand ·
-  // aktueller Artikel · «Ansicht»-Dropdown). Wird vom NÄCHSTEN Provider gefangen:
-  // Einzelansicht → Inhalts-Kopf (Shell); Split-View → der jeweilige PaneKopf.
-  // Live-Artikel kommt aus dem IntersectionObserver.
-  // A26 (David 11.7.2026): NUR die Einzelansicht (!imPane) trägt das «Ansicht»-
-  // Dropdown im immer sichtbaren Inhalts-Kopf mit — im Split-View bleibt es (ohne
-  // PaneKopf-Umbau/Stacking-Risiko) im Erlass-Kopf. `eintraege` (Volltext-Snapshot)
-  // grenzt pdf-embed/nur-live-link aus (dort wären die Optionen wirkungslos, §13 F4).
-  useEffect(() => {
-    if (!erlass) return;
-    const ebeneLabel = erlass.rechtsgebiet === 'international'
-      ? 'International'
-      : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`;
-    // Ebene-Segment klickbar → gefilterte Gesetzes-Übersicht (?ebene=/?kt=).
-    const ebeneTo = erlass.rechtsgebiet === 'international'
-      ? '/gesetze?ebene=international'
-      : erlass.ebene === 'bund' ? '/gesetze'
-        : `/gesetze?ebene=kanton&kt=${encodeURIComponent(erlass.kanton ?? '')}`;
-    // A35 (David 19.7.2026): ☰-Gliederungsknopf, den das In-Gesetz-Suchfeld im Kopf
-    // mitführt (löst die frühere `data-such-bar`-Position ab, die in der Einzelansicht
-    // entfällt). Desktop (istXl): nur als Wiedereinblender, wenn die Gliederungsspalte
-    // EINGEKLAPPT ist. Mobil: öffnet die Gliederung als Overlay-Drawer. Ohne Sektionen
-    // (flacher Erlass) kein Knopf.
-    const zeigeGliederung = !imPane && sektionen.length > 0 && (istXl ? !tocOffen : true);
-    const gliederungKnopf = zeigeGliederung ? (
-      <button type="button" aria-expanded={istXl ? tocOffen : tocAuf}
-        onClick={() => { if (istXl) setTocOffen(true); else setTocAuf((v) => !v); }}
-        title="Gliederung" aria-label="Gliederung"
-        // B6: gemeinsame Leisten-Anatomie statt eigenem bordierten Kästchen.
-        // Das Wort «Gliederung» erscheint ab xl — eine Stufe SPÄTER als die
-        // beiden Menü-Wörter (md), damit das Paar «Rechtsprechung ▾ · Ansicht ▾»
-        // die einzige beschriftete Gruppe der mittleren Breiten bleibt und der
-        // Riegel nicht drei Wörter nebeneinander trägt.
-        className="lc-leiste-griff">
-        <span aria-hidden>☰</span><span className="hidden xl:inline">Gliederung</span>
-      </button>
-    ) : undefined;
-    meldeInhaltsKopf({
-      breadcrumb: [{ label: 'Gesetze', to: '/gesetze' }, { label: ebeneLabel, to: ebeneTo }, { label: erlass.kuerzel }],
-      stand: erlass.stand ? formatiereDatum(erlass.stand) : null,
-      // Hinter dem laufenden Artikel die Gesetzesabkürzung (z. B. «Art. 7 OR»).
-      artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
-      ansichtSlot: !imPane && eintraege
-        ? (
-          // W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): «Rechtsprechung ▾» als
-          // EIGENES Dropdown der Werkzeugleiste, links von «Ansicht ▾». Beide
-          // gehen in denselben `ansichtSlot` — der Kopf (components/layout)
-          // rendert ihn opak, die Layer-Trennung bleibt also unberührt.
-          // B6: die Paarung selbst liegt in `LeserMenuPaar` (§5) — sie stand
-          // vorher als identisches Fragment an ZWEI Stellen (hier und in der
-          // Pane-Suchleiste) und lief in den Label-Schwellen auseinander.
-          <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
-            bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
-            linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
-        )
-        : undefined,
-      // A35: das In-Gesetz-Suchfeld nur in der Einzelansicht (im Split-View trägt es
-      // weiter die pane-lokale `data-such-bar`, da dort kein InhaltsKopf existiert).
-      sucheSlot: !imPane && eintraege
-        ? <InGesetzSuche value={suche} onChange={setSuche} gliederung={gliederungKnopf} />
-        : undefined,
-    });
-    // Setter (setSuche/setTocOffen/setTocAuf) sind stabil; Deps byte-identisch zum
-    // früheren Inline-Effekt.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
-      kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
-      suche, istXl, tocOffen, tocAuf, sektionen.length]);
-}
+// W2·19-GLIEDERUNG/S9 (§6.6-Split, Schlankheits-Schwelle): nach dem
+// Schwachstelle-8-Fix (`zeigeGliederung` auf `eintraege.length` statt
+// `sektionen.length`) stand diese Datei bei 804/800 Zeilen. Der Hook ist
+// unverändert byte-gleich — nur ausgelagert nach ./inhalt-kopfmeldung.tsx
+// (Fassade, Begründung dort). Re-Export hält den Importpfad `from
+// './inhalt-hooks'` in inhalt.tsx stabil.
+export { useInhaltsKopfMeldung } from './inhalt-kopfmeldung';
 
 // ── Hash-Sprung-Seed + geteilter Aktiv-Artikel-Beobachter (Scroll-Spy) + TOC-
 //    Mitscroll + Nutzer-Interaktions-Guard + Scroll-Anker ──────────────────────

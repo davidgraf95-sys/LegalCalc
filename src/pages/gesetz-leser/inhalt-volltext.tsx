@@ -184,21 +184,52 @@ export function LeserVolltextInhalt({
   //    Klapp-Zustand, kein Remount des Modells).
   const sucheAktivTrim = sucheDebounced.trim();
   const sucheAktiv = sucheAktivTrim !== '';
+  // W2·19-GLIEDERUNG/S9 (Bau-Spec §7 «☰-Knopf und Kontext-Zugang existieren
+  // künftig auch bei sektionen.length === 0» — behebt Schwachstelle 8, «heute
+  // verschwindet die ganze Leiste ersatzlos»): JEDER geladene Erlass hat seit
+  // S3 einen Modus (b1…b4) und damit IMMER etwas, das die Leiste zeigen kann —
+  // den Baum, den Artikel-Index (S9) oder die ehrliche B3-Leerzeile. Die frühere
+  // Bedingung `sektionen.length > 0` blendete ☰, die TOC-Spalte, das mobile
+  // Sheet UND Zone C (Übersicht/Kontext) komplett aus, sobald ein Erlass KEINE
+  // amtliche Gliederung hatte — genau die 486 T4-Erlasse plus alle T10/T3-Fälle,
+  // die B2/B3 überhaupt erst betreffen. `hatLeiste` ersetzt sie an jeder Stelle,
+  // an der bisher `sektionen.length > 0` stand (§5, EINE Bedingung). Die einzige
+  // verbleibende Schranke ist ein wirklich leerer Snapshot (praktisch nie, aber
+  // §8-ehrlich statt einer Leiste ohne jeden Inhalt).
+  const hatLeiste = eintraege.length > 0;
   // Die Leiste trägt die Liste nur, wo es sie überhaupt gibt: ab `istXl`, mit
   // Gliederung, aufgeklappt. Sonst (mobil, schmales Pane, eingeklappte Spalte,
   // Erlass ohne Sektionen) steht sie ÜBER der Lesespalte — genau dort, wo bis
   // S8 die gefilterte Liste stand. Es gibt zu jedem Zeitpunkt GENAU EINE
   // Trefferliste (§5); eine zweite in einem versteckten Container wäre die
   // Doppelwahrheit, die a32 für das Kontext-Panel schon einmal ausgeschlossen
-  // hat. Die eigenständige mobile Overlay-Fassung (Spec §4.5 letzter Punkt)
-  // gehört in die Mobil-Slice S10 und ist dort deklariert.
-  const listeInLeiste = istXl && sektionen.length > 0 && tocOffen;
+  // hat.
+  const listeInLeiste = istXl && hatLeiste && tocOffen;
   const trefferListeEl = sucheAktiv ? (
     <TrefferListe treffer={treffer} begriff={sucheAktivTrim} fundstellen={fundstellen}
       fussnotenAus={fussnotenAus} position={trefferPos} aktivToken={trefferAktivToken}
       onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)}
       onSprung={(token) => springeZuTreffer?.(token)} />
   ) : null;
+  // W2·19-GLIEDERUNG/S10 (S8-Restpunkt, Bau-Spec §4.5 «Mobil: Trefferliste im
+  // bestehenden Such-Overlay unter dem Feld; Tap schliesst und springt»):
+  // eigene Fassung NUR für den mobilen Schwebe-Fall — mit einem onSprung, der
+  // ZUSÄTZLICH die Suche leert (`setSuche('')`). Das ist bewusst ANDERS als
+  // die Leisten-Fassung oben (dort BLEIBT die Suche stehen, Entscheid David
+  // (c) 8.8.2026, §4.5) — auf einem Telefon gibt es keine daneben stehende
+  // Leiste, die den Suchzustand weiter zeigt; ein Overlay, das nach dem
+  // Antippen offen über dem Text schwebt, wäre nur im Weg.
+  const trefferListeMobilEl = sucheAktiv ? (
+    <TrefferListe treffer={treffer} begriff={sucheAktivTrim} fundstellen={fundstellen}
+      fussnotenAus={fussnotenAus} position={trefferPos} aktivToken={trefferAktivToken}
+      onZurueck={() => springeZuFundstelle?.(-1)} onVor={() => springeZuFundstelle?.(1)}
+      onSprung={(token) => { springeZuTreffer?.(token); setSuche(''); }} />
+  ) : null;
+  // Unter `xl` (echtes Mobil UND schmales Pane — §7 «Pane schmal: wie mobil»)
+  // schwebt die Liste; ab `xl` bleibt sie in der Leiste (`listeInLeiste`) oder,
+  // im unbenannten Rand-Fall einer eingeklappten/leiste-losen Spalte, unten im
+  // Fluss (Inline-Zweig weiter unten, unverändert seit S8).
+  const trefferOverlayMobil = sucheAktiv && !listeInLeiste && !istXl;
 
   // E4/A32 (David 16.7.2026): das Kontext-Panel sass am Gesetzes-ENDE der Lese-
   // spalte und war «schwer sichtbar/auffindbar». Neuer Platz: unterhalb der
@@ -208,7 +239,7 @@ export function LeserVolltextInhalt({
   // Pane: Gliederung ist Drawer — dort NICHT verstecken; Spalte eingeklappt)
   // bleibt der ehrlich sichtbare Platz das LESEENDE wie bisher. Es rendert
   // stets genau EIN Panel (nie doppelt, nie eines in einem hidden-Container).
-  const kontextImToc = istXl && sektionen.length > 0 && tocOffen;
+  const kontextImToc = istXl && hatLeiste && tocOffen;
   const kontextPanelLesespalte = kontextImToc ? null
     : <KontextPanel typ="norm" normKeys={[erlass.key]} artikelKontext={artikelKontext} />;
   // W2·19-GLIEDERUNG/S6 (Bau-Spec §2 Zone C, §5.1): der Übersichts-Sockel wird
@@ -366,8 +397,8 @@ export function LeserVolltextInhalt({
         // weiter unten) ändern sich im selben Commit — wer die Kopf-Zelle vergisst,
         // reproduziert LM-149 (versetzte Trennlinien). Rechnung (Bau-Spec §2):
         // 18 + 2 (gap-8) + 42 (max-w-normtext) = 62rem < max-w-content 70rem.
-        <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
-          {istXl && sektionen.length > 0 && tocOffen && <div aria-hidden />}
+        <div className={istXl && hatLeiste && tocOffen ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
+          {istXl && hatLeiste && tocOffen && <div aria-hidden />}
           <ErlassKopfBlock kopf={kopf} intern={internRefs} />
         </div>
       )}
@@ -395,7 +426,7 @@ export function LeserVolltextInhalt({
           <div className="flex items-center gap-2 rounded-lg border border-line bg-paper px-3 py-2">
             {istXl ? (
               // ab lg (breites Pane): ☰ nur wenn die Gliederungsspalte EINGEKLAPPT ist.
-              sektionen.length > 0 && !tocOffen && (
+              hatLeiste && !tocOffen && (
                 <button type="button" aria-expanded={tocOffen} onClick={() => setTocOffen(true)}
                   title="Gliederung einblenden" className="shrink-0 inline-flex items-center gap-1 rounded-md border border-line px-2 py-1 text-micro font-medium text-ink-600 hover:text-brass-700 hover:border-brass-300 transition-colors">
                   <span aria-hidden>☰</span><span className="hidden sm:inline">Gliederung</span>
@@ -403,7 +434,7 @@ export function LeserVolltextInhalt({
               )
             ) : (
               // schmales Pane: ☰ öffnet die Gliederung als Overlay-Drawer.
-              sektionen.length > 0 && (
+              hatLeiste && (
                 <button type="button" aria-expanded={tocAuf} onClick={() => setTocAuf((v) => !v)}
                   title="Gliederung" className="shrink-0 inline-flex items-center gap-1 rounded-md border border-line px-2 py-1 text-micro font-medium text-ink-600 hover:text-brass-700 hover:border-brass-300 transition-colors">
                   <span aria-hidden>☰</span><span className="hidden sm:inline">Gliederung</span>
@@ -417,6 +448,33 @@ export function LeserVolltextInhalt({
           </div>
         </div>
       )}
+
+      {/* W2·19-GLIEDERUNG/S10 (S8-Restpunkt, Bau-Spec §4.5): mobile
+          Overlay-Trefferliste — schwebt direkt unter dem Kopf, drückt NICHTS
+          in den Lesefluss (anders als der alte Inline-Zweig, den sie unter
+          `xl` ablöst). `fixed` ausserhalb des Panes (an den Viewport, wie das
+          Gliederungs-Sheet), `absolute` + Portal IM Pane (dieselbe
+          `overlayWurzel`-Technik wie das Sheet direkt darunter, §5 — kein
+          zweiter Positionierungs-Mechanismus). `top` bindet an dieselben
+          Kopf-Höhen-Variablen wie Zone A/die TOC-Spalte (`--leser-kopf-h` /
+          `--leser-sub-h`, inhalt.tsx) — EINE Quelle für «wie hoch ist der
+          Kopf», kein drittes hartkodiertes Mass. `role="status"`, weil die
+          Liste eine LEBENDE Antwort auf die Eingabe ist (aria-live wäre hier
+          zu geschwätzig bei jedem Tastenanschlag — der Zähler in TrefferListe
+          trägt bereits `aria-live="polite"` für die laufende Position). */}
+      {trefferOverlayMobil && (() => {
+        const ziel = (imPane && overlayWurzel?.current) || null;
+        const inPane = ziel != null;
+        const panel = (
+          <div role="status" className={`${inPane ? 'absolute' : 'fixed'} inset-x-3 z-30`}
+            style={{ top: inPane ? 'var(--leser-sub-h)' : 'var(--leser-kopf-h)' }}>
+            <div className="max-h-[60vh] overflow-y-auto rounded-lg border border-line bg-paper-raised p-1 shadow-lg">
+              {trefferListeMobilEl}
+            </div>
+          </div>
+        );
+        return ziel ? createPortal(panel, ziel) : panel;
+      })()}
 
       {/* 2-Spalten (Gliederungs-Sidebar links, Inhalt rechts) ab lg (1024px, R2) —
           darunter (mobil / sehr schmale Fenster) bekommt der Normtext die volle
@@ -432,7 +490,7 @@ export function LeserVolltextInhalt({
           hier» aus dem bestehenden Scroll-Spy-Zustand und dem Quickjump «Art. N».
           Rolle/Fokus/Esc/Portal-Verhalten unverändert (dieselbe tocDrawerRef, derselbe
           useDialogFokus, dieselbe Overlay-Wurzel im Pane). */}
-      {!istXl && tocAuf && sektionen.length > 0 && (() => {
+      {!istXl && tocAuf && hatLeiste && (() => {
         // Im Pane in die Overlay-Schicht portalieren + `absolute` (vom relative-
         // Wrapper eingefangen) → das Sheet bleibt IM Pane statt als `position:fixed`
         // über beide Panes zu quellen (container-type fängt fixed nicht). Ausserhalb
@@ -452,11 +510,11 @@ export function LeserVolltextInhalt({
           (ResizeObserver), sonst viewport-xl. istXl treibt die Klassen direkt
           (kein xl:-Prefix), damit ein BREITES Pane denselben Aufbau wie der
           Einzelbildschirm bekommt. */}
-      <div className={istXl && sektionen.length > 0 && tocOffen ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
+      <div className={istXl && hatLeiste && tocOffen ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
         {/* TOC-Spalte (nur der Gliederungsbaum, sticky). A35: das Suchfeld lebt nicht
             mehr hier «oberhalb der Gliederung», sondern in der Kopfzeilen-Leiste (oben).
             Nur wenn istXl; darunter Overlay-Drawer über den sticky ☰-Knopf. */}
-        {istXl && sektionen.length > 0 && (
+        {istXl && hatLeiste && (
           <aside
             // LM-147 (W2·17-UI-BEFUNDE-B4): `<aside>` ohne `role`/`aria-label` — ein
             // Screenreader kündigte den Gliederungsbaum nicht als Navigationsbereich
@@ -522,7 +580,14 @@ export function LeserVolltextInhalt({
                 im Scroller nichts — das Einwachsen vergrössert nur die Scroll-
                 höhe, verschiebt aber kein sichtbares Element (CLS 0, Beweis neu
                 geführt in e2e/leser-kontext-e4.e2e.ts). */}
-            <div data-toc className="flex-1 min-h-0 overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
+            {/* W2·19-GLIEDERUNG/S9 (Zusatzpunkt David 9.8.2026): die Leiste darf
+                NIE horizontal scrollbar werden — lange Etikette (HAdoptÜ-Anhang,
+                tief verschachtelte ZGB/OR-Zweige) brechen um statt zu über-
+                laufen. `overflow-x-hidden` ist die harte Garantie am EINEN
+                Scroller (Baum, Trefferliste UND Zone A/C liegen alle darin);
+                die Zeilen selbst tragen zusätzlich `min-w-0`/`line-clamp`, damit
+                nichts tatsächlich abgeschnitten werden MUSS. */}
+            <div data-toc className="flex-1 min-h-0 overflow-x-hidden overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
               {/* ── Zone A (W2·19-GLIEDERUNG/S4, Bau-Spec §2) ──────────────────
                   Standort-Sockel: «Sie sind hier»-Pfadzeile + Quickjump, sticky
                   INNERHALB des [data-toc]-Scrollers.
@@ -641,7 +706,15 @@ export function LeserVolltextInhalt({
               Commit des Readers (Trefferliste → 1686 Artikel neu mounten,
               gemessen bis 21,9 s bei 8× Drossel) findet nicht mehr statt — der
               Volltext-Baum steht die ganze Zeit. */}
-          {sucheAktiv && !listeInLeiste && (
+          {/* W2·19-GLIEDERUNG/S10 (S8-Restpunkt, Bau-Spec §4.5 letzter Punkt
+              «Mobil: Trefferliste im bestehenden Such-Overlay unter dem Feld»):
+              unter `xl` schwebt die Liste als Overlay unmittelbar unter dem
+              Kopf statt in den Lesefluss zu drücken (`trefferOverlayMobil`,
+              weiter unten VOR der Lesespalte gerendert — sie gehört nicht in
+              den Dokumentfluss). Bleibt `istXl`, aber die Spalte ist
+              eingeklappt/ohne Leiste (Rand-Fall, von der Spec nicht benannt),
+              bleibt die alte, unauffällige Inline-Einblendung. */}
+          {sucheAktiv && !listeInLeiste && istXl && (
             <div className="mb-8 border-b border-line pb-4">{trefferListeEl}</div>
           )}
           <div className="space-y-2">

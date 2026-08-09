@@ -7,6 +7,7 @@ import { KontextPanel } from '../../components/kontext/KontextPanel';
 import { formatiereDatum } from './helpers';
 import { ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
+import { ErlassUebersicht } from './parts/ErlassUebersicht';
 import { GesetzFehlSeite } from './FehlSeite';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
@@ -101,6 +102,12 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
             style={{ height: 'min(82vh, 1100px)' }} />
         </div>
       </div>
+      {/* W2·19-GLIEDERUNG/S9 (Bau-Spec §8 T11 «EINE Fläche: Erlass-Übersicht +
+          amtlicher Link/PDF-Viewer; keine leeren Gerüste»): dieselbe Übersicht
+          wie im Volltext-Reader (S6), OBERHALB des Panels (§5-Reihenfolge).
+          `artikelAnzahl={null}` — pdf-embed hat keinen Snapshot, «Umfang»
+          entfällt ehrlich statt eine erfundene Zahl zu zeigen. */}
+      <ErlassUebersicht erlass={erlass} kopf={kopf} currency={currency?.[erlass.key]} artikelAnzahl={null} />
       {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} />
@@ -142,6 +149,10 @@ export function LiveVerweisAnsicht({ erlass, currency }: {
           <p className="text-micro text-ink-500">Stand der zuletzt erfassten Referenz: <span className="num">{formatiereDatum(erlass.stand)}</span></p>
         )}
       </section>
+      {/* W2·19-GLIEDERUNG/S9: dieselbe Übersicht wie im pdf-embed-Pfad (s. o.),
+          OBERHALB des Panels — kein Kopf-Sidecar in diesem Pfad, `kopf={null}`
+          ist der ehrliche, bereits vom Typ getragene Fall. */}
+      <ErlassUebersicht erlass={erlass} kopf={null} currency={currency?.[erlass.key]} artikelAnzahl={null} />
       {/* Einheitliches Kontext-Panel (B3) auch hier: Entscheide/Materialien/
           Werkzeuge zu diesem Erlass (Single Source, §5). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} />
