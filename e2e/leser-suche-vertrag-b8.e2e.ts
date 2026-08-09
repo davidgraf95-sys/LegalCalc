@@ -130,6 +130,34 @@ test.describe('B8 — der §4.4-Vertrag an den Klassen, die ihn wirklich brachen
     expect(await gemalt(page, t.token), 'gemalte ≤ gezählte').toBeLessThanOrEqual(t.gezaehlt)
   })
 
+  // ── B10: die Liste ist gedeckelt, die Zählung nicht ──────────────────────
+  // «der» im OR ergab 1146 Zeilen und ~16'700 DOM-Knoten in demselben Scroller,
+  // in dem S1–S7 den Gliederungsbaum gerade auf ~1'300 gedrückt hatten. Gemalt
+  // werden jetzt 200 Zeilen; der Rest kommt auf Knopfdruck. Was NICHT gedeckelt
+  // ist: der Kopf-Zähler und die ↑↓-Folge — sonst verschwände Information (§8).
+  test('B10 — die Trefferliste ist gedeckelt, Zähler und Navigation nicht (OR)', async ({ page }) => {
+    await oeffne(page, '/gesetze/bund/OR')
+    await inGesetzSuche(page).fill('der')
+    await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 20_000 })
+
+    const gezeigt = await page.locator('[data-treffer-artikel]').count()
+    expect(gezeigt, 'Liste ungedeckelt gemalt').toBeLessThanOrEqual(200)
+
+    // Der KOPF nennt weiterhin die volle Menge — der Deckel ist eine Frage der
+    // Anzeige, nicht der Suche.
+    const kopf = await page.locator('[data-treffer-leiste]').innerText()
+    const artikel = Number(kopf.match(/(\d+)\s+Artikel/)?.[1] ?? -1)
+    expect(artikel, `Kopf-Zähler: ${kopf}`).toBeGreaterThan(gezeigt)
+
+    // Und der Knopf sagt ehrlich, wie viele noch kommen, und holt sie.
+    const mehr = page.locator('[data-treffer-mehr]')
+    await expect(mehr).toBeVisible()
+    await expect(mehr).toContainText(String(artikel - gezeigt))
+    await mehr.click()
+    await expect.poll(async () => page.locator('[data-treffer-artikel]').count(), { timeout: 20_000 })
+      .toBeGreaterThan(gezeigt)
+  })
+
   test('Ein «weiter»-Schritt landet auf einer wirklich gemalten Stelle', async ({ page }) => {
     await oeffne(page, '/gesetze/bund/BGFA')
     await inGesetzSuche(page).fill('Berufsregeln')

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
 import { badgesFuer, type LeserTreffer } from '../leserSuche';
 
@@ -26,6 +26,9 @@ import { badgesFuer, type LeserTreffer } from '../leserSuche';
 // Gesetzestext. Der Highlight-Walker überspringt solche Teilbäume vollständig —
 // sonst zählte ein Begriff seine eigenen Ausschnitte mit (Bug-Check §9 vom
 // 4.8.2026, B1: gemeldet 425, beim Sprung 681).
+
+/** B10: so viele Treffer-Zeilen malt die Leiste auf einmal (Herleitung unten). */
+export const TREFFER_DECKEL = 200;
 
 export interface TrefferListeProps {
   treffer: LeserTreffer[];
@@ -67,8 +70,36 @@ export function TrefferListe({
   // Kapitel kann darum mehrfach auftauchen. Das ist die ehrliche Darstellung
   // der Rangfolge; die Alternative (einmalige Kapitelblöcke) hiesse, die
   // Sortierung stillschweigend umzustellen.
-  const zeilen = treffer.map((t, i) => ({
-    t, kopf: t.gruppe !== null && t.gruppe !== (treffer[i - 1]?.gruppe ?? null) ? t.gruppe : null,
+  // ── B10 (Bug-Check §9 zu S8): die Liste ist gedeckelt ──────────────────────
+  // «der» im OR ergibt 1146 Treffer-Artikel und damit rund 16'700 DOM-Knoten in
+  // demselben Scroller, in dem S1–S7 den Gliederungsbaum gerade auf ~1'300
+  // gedrückt haben (Unmount zugeklappter Äste) — und jede ↑↓-Navigation rendert
+  // sie neu. Datenseitig ist das harmlos (gemessen ≤ 5 ms) und immer noch klar
+  // besser als der Vor-S8-Zustand (voller Lesespalten-Remount), aber es reisst
+  // die Knotenzahl-Lehre desselben Slices im selben Scroller.
+  //
+  // GEDECKELT WIRD DIE ANZEIGE, NICHT DIE SUCHE: der Kopf-Zähler nennt weiter
+  // ALLE Artikel und ALLE Fundstellen, und die ↑↓-Navigation läuft unverändert
+  // über die volle Folge — sie hängt an `fundstellenFolge`, nicht an dieser
+  // Liste. Es verschwindet also keine Information, es wird nur später gemalt
+  // (§8: der Knopf sagt, wie viele noch kommen).
+  //
+  // 200 Zeilen: darüber ist eine Leiste ohnehin kein Verzeichnis mehr, das man
+  // überblickt, und der Deckel liegt weit über dem, was eine gezielte
+  // Juristen-Suche liefert (BGFA «Berufsregeln»: 6). Der Zustand hängt am
+  // BEGRIFF — eine neue Anfrage fängt wieder bei 200 an, sonst bliebe eine
+  // einmal aufgeklappte Riesenliste für den Rest der Sitzung stehen.
+  // `begriff` ist der GÜLTIGKEITS-SCHLÜSSEL des Deckels — derselbe Kniff, mit
+  // dem `nav` in inhalt-suchtreffer.tsx seine Position gültig hält: ein Deckel
+  // zu einem FRÜHEREN Begriff wird beim Render verworfen, statt ihn in einem
+  // Effekt zurückzusetzen. Das vermeidet den Kaskaden-Render, den
+  // `react-hooks/set-state-in-effect` im Haus verbietet.
+  const [gemerkt, setGemerkt] = useState<{ begriff: string; n: number }>({ begriff, n: TREFFER_DECKEL });
+  const deckel = gemerkt.begriff === begriff ? gemerkt.n : TREFFER_DECKEL;
+  const sichtbar = treffer.slice(0, deckel);
+  const rest = treffer.length - sichtbar.length;
+  const zeilen = sichtbar.map((t, i) => ({
+    t, kopf: t.gruppe !== null && t.gruppe !== (sichtbar[i - 1]?.gruppe ?? null) ? t.gruppe : null,
   }));
 
   return (
@@ -167,6 +198,15 @@ export function TrefferListe({
           );
         })}
       </ul>
+
+      {rest > 0 && (
+        // §8: die Zahl steht dran — der Leser weiss, dass da noch etwas ist,
+        // und wie viel. 44-px-Tap-Ziel wie die Navigationsknöpfe (A9-DoD).
+        <button type="button" data-treffer-mehr onClick={() => setGemerkt({ begriff, n: deckel + TREFFER_DECKEL })}
+          className="mt-2 flex min-h-11 w-full items-center justify-center rounded-md px-2 text-body-s text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
+          {rest} weitere anzeigen
+        </button>
+      )}
     </div>
   );
 }
