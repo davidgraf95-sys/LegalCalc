@@ -293,6 +293,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     // Scroll-Spy führen — der Sprung muss ein zugeklapptes Ziel öffnen können,
     // und der Markierungs-Beobachter muss von neuen Artikeln erfahren.
     offen, setOffen,
+    // B7: die Bezugsfläche des Beobachters — im Split-View scrollt der Pane.
+    imPane, wurzel,
   });
 
   // ═══ ABSCHNITT · Ansichts-Weichen vor dem Volltext-Zweig ════════════════════

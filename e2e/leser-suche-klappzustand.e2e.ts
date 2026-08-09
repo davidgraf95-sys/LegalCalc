@@ -40,7 +40,7 @@ async function oeffneUndSuche(page: Page): Promise<string> {
   await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 })
   // Auf die Gliederung warten (B9): der Index ist erst mit dem Struktur-Sidecar
   // vollständig — vorher misst der Fall eine halbe Datenlage.
-  await page.locator('[data-sektion-id]').first().waitFor({ timeout: 20_000 })
+  await page.locator('[data-sek]').first().waitFor({ timeout: 20_000 })
   await inGesetzSuche(page).fill(BEGRIFF)
   await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 20_000 })
   const ersteZeile = page.locator('[data-treffer-artikel]').first()

@@ -331,8 +331,18 @@ function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuel
  *  2. Fundstellenzahl absteigend
  *  3. Artikelreihenfolge (Dokument-Position) aufsteigend
  * Alle drei Stufen sind total und deterministisch — bei gleicher Eingabe kommt
- * dieselbe Liste heraus (§2). Stufe 3 ist strikt (Position ist eindeutig), es
- * gibt also keinen Rest-Tie-Break, der von der Engine-Sortierstabilität abhinge.
+ * dieselbe Liste heraus (§2).
+ *
+ * B11 (Bug-Check §9 zu S8) — EHRLICHKEIT ZU STUFE 3. Hier stand, Stufe 3 mache
+ * die Ordnung strikt und mache damit die Sortierstabilität der Engine
+ * unerheblich. Das ist der Sache nach richtig, aber es ist keine PRÜFBARE
+ * Aussage: die Artikel kommen bereits in Dokument-Reihenfolge aus dem Index,
+ * `pos` ist also aufsteigend, und ein `sort` ohne Stufe 3 verhielte sich in
+ * jeder stabilen Implementierung beobachtungsgleich. Kein Black-Box-Test kann
+ * die Mutante töten — der zugehörige Testname behauptete darum mehr, als er
+ * zeigt, und ist mitkorrigiert. Stufe 3 bleibt: sie ist eine BEWUSSTE
+ * §2-Redundanz, die die Ordnung unabhängig von einer Engine-Zusage festnagelt,
+ * und keine Zeile, die man wegkürzen sollte, weil ein Tor sie nicht sieht.
  */
 export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): LeserTreffer[] {
   const b = begriff.trim();

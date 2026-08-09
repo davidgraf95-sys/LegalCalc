@@ -729,8 +729,12 @@ export function useLeserSprungSpy(opts: {
     // er die aktive Zeile exakt unter diesen Sockel und meldete «sichtbar», was
     // niemand sieht. Die Höhe wird GEMESSEN, nicht angenommen — sie hängt daran, ob
     // der Erlass einen Quickjump hat (ohne `loeseArtikel` entfällt er).
+    // B6: die Höhe steht als `--toc-deckel` am Scroller (Zone A setzt sie selbst,
+    // inhalt-volltext.tsx) — EINE Messung für den Nudge hier UND den
+    // Trefferlisten-Kopf (§5); die eigene bleibt Rückfall.
+    const marke = parseFloat(getComputedStyle(cont).getPropertyValue('--toc-deckel'));
     const zoneA = cont.querySelector('[data-toc-zone-a]') as HTMLElement | null;
-    const deckel = zoneA?.getBoundingClientRect().height ?? 0;
+    const deckel = Number.isFinite(marke) && marke > 0 ? marke : (zoneA?.getBoundingClientRect().height ?? 0);
     // F1 (RC1a): minimaler Rand-NUDGE statt Zentrieren, INSTANT statt smooth. Nur so
     // weit scrollen, dass der aktive Eintrag knapp in das 8-px-Dead-Band am jeweiligen
     // Rand rückt (Auslöseschwelle == Zielposition → kein Re-Trigger); Delta ≈ eine

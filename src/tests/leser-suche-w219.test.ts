@@ -80,7 +80,11 @@ describe('S8 §4.2 — erlass-lokale Sortierung (eigene Regel, KEIN rangiere()-R
     expect(treffer.find((t) => t.token === '3')!.fundstellen).toBe(3);
   });
 
-  it('bei gleichem Feld entscheidet die Fundstellenzahl, dann die Artikelreihenfolge', () => {
+  // B11: der Name nannte früher auch die dritte Stufe als GEPRÜFT. Beobachtbar
+  // ist hier nur die zweite (Fundstellenzahl); die Artikelreihenfolge kommt
+  // schon aus dem Index und wäre auch ohne Stufe 3 dieselbe (Herleitung im
+  // Modulkommentar von leserSuche.ts). Der Test prüft, was er prüfen kann.
+  it('bei gleichem Feld entscheidet die Fundstellenzahl (Stufe 2)', () => {
     const { eintraege, struktur } = kunstErlass();
     // Zwei zusätzliche reine Fliesstext-Artikel: einer mit zwei Fundstellen
     // (später im Dokument), einer mit einer (früher).

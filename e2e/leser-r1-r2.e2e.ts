@@ -126,6 +126,22 @@ async function oeffneLeser(page: Page, pfad: string, breite = 1440, hoehe = 900)
   await page.setViewportSize({ width: breite, height: hoehe });
   await page.goto(pfad);
   await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
+  // B9 (Bug-Check §9 zu S8) — SIDECAR-RACE, deklarierte Härtung, KEIN
+  // Assertion-Change (§6.3): `#art-1` steht, sobald der Snapshot da ist; der
+  // Suchindex speist sich aber ZUSÄTZLICH aus dem parallel geladenen
+  // Struktur-Sidecar (Randtitel, Gliederungspfad). Wer dazwischen misst, sieht
+  // eine halbe Datenlage — der Zähler für «Berufsregeln» springt am BGFA von 6
+  // auf 17, und weil fünf Fälle ihn EINMALIG einfrieren, gab das ein 20-s-Rot
+  // mit grünem Retry: genau die Flake-Klasse, die die Neuschrift dieser Datei
+  // per §17 schliessen sollte.
+  // GEWARTET WIRD AUF `[data-sek]` (Sektionskopf im FLIESSTEXT), NICHT auf
+  // `[data-sektion-id]` (Gliederungs-Zeile in der Leiste): die Leiste ist
+  // breitenabhängig: bei Mobil-Viewport lebt sie im Bottom-Sheet und ist
+  // ungemountet, solange das Sheet zu ist — ein Wartepunkt dort hängt in genau
+  // den R2-Fällen, die das Sheet erst öffnen wollen (hier beim Bau gemessen).
+  // Der Sektionskopf im Fliesstext speist sich aus demselben Sidecar, steht in
+  // jeder Breite und ist damit das breitenneutrale Signal.
+  await page.locator('[data-sek]').first().waitFor({ timeout: 20_000 });
 }
 
 // ── CLS-Beobachter, GESCOPT auf die R1/R2-Flächen (Reader-Wurzel `.lc-leser`,

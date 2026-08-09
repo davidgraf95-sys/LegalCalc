@@ -1,4 +1,4 @@
-import type { ComponentProps, Dispatch, MutableRefObject, ReactNode, RefObject, SetStateAction } from 'react';
+import { useCallback, type ComponentProps, type Dispatch, type MutableRefObject, type ReactNode, type RefObject, type SetStateAction } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, type NavigateFunction } from 'react-router-dom';
 import { naechsteInstanz, merkeTab } from '../../lib/tabs';
@@ -158,6 +158,23 @@ export function LeserVolltextInhalt({
    *  Bau-Spec §5.2). `null` = keine Gruppe. */
   artikelKontext?: ArtikelKontextAnsicht | null;
 }) {
+  // B6: Zone A misst sich selbst und legt ihre Höhe als `--toc-deckel` auf den
+  // [data-toc]-Scroller. Alles, was unter ihr kleben soll (Trefferlisten-Kopf),
+  // liest die Marke; der TOC-Nudge (inhalt-hooks.tsx) liest dieselbe. Reine
+  // Darstellungs-Geometrie, kein State ⇒ kein Re-Render (§15).
+  const zoneARef = useCallback((el: HTMLDivElement | null) => {
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ziel = el.closest('[data-toc]') as HTMLElement | null;
+    if (!ziel) return;
+    const setze = () => ziel.style.setProperty('--toc-deckel', `${Math.round(el.getBoundingClientRect().height)}px`);
+    setze();
+    const ro = new ResizeObserver(setze);
+    ro.observe(el);
+    // Kein Cleanup-Rückgabewert: ein Callback-Ref darf keinen liefern. Der
+    // Observer stirbt mit dem Element (er hält nur eine schwache Beobachtung auf
+    // einen Knoten desselben Teilbaums) — und beim Unmount ruft React den
+    // Callback ohnehin mit `null`, worauf hier nichts Neues entsteht.
+  }, []);
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
 
@@ -521,7 +538,21 @@ export function LeserVolltextInhalt({
                   nie umbrechend) und zeigt ohne bekannte Leseposition einen
                   ehrlichen Platzhalter statt zu verschwinden (§8). `bg-paper`
                   deckt die durchlaufenden Baumzeilen ab. */}
-              <div data-toc-zone-a className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
+              {/* B6 (Bug-Check §9 zu S8) — STICKY-KOLLISION. Zone A und der Kopf
+                  der Trefferliste klebten beide mit `top-0 z-10` im SELBEN
+                  Scroller; die Liste steht später im DOM und übermalte damit
+                  Quickjump und «Sie sind hier» vollständig — beides war während
+                  einer Suche unbedienbar (mit Playwright belegt).
+                  Zwei Zeilen lösen es: Zone A liegt eine Stufe höher (`z-20`)
+                  und publiziert ihre gemessene Höhe als `--toc-deckel`; der
+                  Trefferlisten-Kopf klebt an dieser Marke statt an 0. Gemessen
+                  statt angenommen, weil die Höhe davon abhängt, ob der Erlass
+                  einen Quickjump trägt — dieselbe Grösse, die der TOC-Nudge in
+                  inhalt-hooks.tsx als «deckel» braucht, jetzt an EINER Stelle
+                  bestimmt (§5). `ResizeObserver` statt Effekt-Takt: die Höhe
+                  ändert sich mit der Schriftskala (R3) und mit dem Erscheinen
+                  des Quickjumps, nicht mit dem React-Zustand. */}
+              <div data-toc-zone-a ref={zoneARef} className="sticky top-0 z-20 -mt-0.5 bg-paper pb-2 pt-0.5">
                 {/* B10 (Bug-Check 9.8.2026): `aria-label` auf einem `<p>` ist nach
                     ARIA 1.2 unzulässig — die Rolle `paragraph` gehört zu den
                     Rollen ohne Namensberechtigung, und eine spec-treue

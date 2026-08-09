@@ -1,6 +1,6 @@
 import {
   useCallback, useEffect, useMemo, useRef, useState,
-  type Dispatch, type SetStateAction,
+  type Dispatch, type RefObject, type SetStateAction,
 } from 'react';
 import type { InternRefs } from '../../components/NormText';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
@@ -10,6 +10,7 @@ import {
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
+import { paneRoot } from './berechnungen';
 import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } from './leserSuche';
 
 // ═══ ABSCHNITT · In-Gesetz-Suche: Treffer, Hervorhebung, Quickjump ═══════════
@@ -49,7 +50,7 @@ import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } fr
 
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
-  internRefs, aktArtikel, tokenByLabel, offen, setOffen,
+  internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -70,6 +71,11 @@ export function useSuchTreffer({
    *  zweiter (§5). */
   offen: Record<string, boolean>;
   setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
+  /** B7: im Split-View scrollt der PANE-Container, nicht das Fenster. Ohne
+   *  `root` misst der Beobachter gegen den Viewport, und sein 300-px-Vorlauf
+   *  greift dort ins Leere — die Markierung liefe dem Leser sichtbar hinterher. */
+  imPane: boolean;
+  wurzel: RefObject<HTMLElement | null> | null;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
@@ -132,9 +138,12 @@ export function useSuchTreffer({
   }, []);
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const wurzel = leseRef.current;
+    // `leseWurzel` statt `wurzel`: seit B7 trägt die Prop `wurzel` den
+    // PANE-Container. Zwei verschiedene Wurzeln unter einem Namen wären genau
+    // die Verwechslung, die B7 überhaupt erst erzeugt hat.
+    const leseWurzel = leseRef.current;
     rangesRef.current = new Map();
-    if (!sucheAktiv || !wurzel || typeof IntersectionObserver === 'undefined') {
+    if (!sucheAktiv || !leseWurzel || typeof IntersectionObserver === 'undefined') {
       setzeSuchHighlight(null, '');
       return;
     }
@@ -151,12 +160,18 @@ export function useSuchTreffer({
       }
       if (geaendert) male();
     }, {
+      // B7 (Bug-Check §9 zu S8): der Scroll-Container DIESES Panes ist die
+      // Bezugsfläche — im Split-View scrollt nicht das Fenster (B-2.5, Muster
+      // inhalt-hooks.tsx). Ohne `root` mass der Beobachter gegen den Viewport,
+      // und der Vorlauf unten griff im Pane ins Leere. `null` = Fenster, also
+      // in der Einzelansicht unverändert.
+      root: paneRoot(imPane, wurzel),
       // Vorlauf über das Sichtband hinaus: wer scrollt, sieht die Markierung
       // bereits stehen, statt sie einlaufen zu sehen. Rein visuell — es wird
       // kein Knoten erzeugt oder bewegt (CLS 0, §15/2).
       rootMargin: '300px 0px',
     });
-    for (const art of wurzel.querySelectorAll('article[id^="art-"]')) beob.observe(art);
+    for (const art of leseWurzel.querySelectorAll('article[id^="art-"]')) beob.observe(art);
     return () => {
       beob.disconnect();
       rangesRef.current = new Map();
@@ -170,7 +185,7 @@ export function useSuchTreffer({
     // unmarkiert — der Leser sah einen Treffer-Artikel ohne eine einzige
     // leuchtende Stelle (§8). Der Scroll-Spy führt `offen` aus genau diesem Grund
     // schon in seiner Liste (inhalt-hooks.tsx).
-  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, male]);
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male]);
 
   // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
   // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.
