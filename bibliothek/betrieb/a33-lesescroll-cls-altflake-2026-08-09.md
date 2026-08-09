@@ -58,7 +58,13 @@ vorher 2/3 rot, nachher 15/15 und 52/52 grün); (3) `qsui-hierarchie.e2e.ts` Vor
 («kein Formvorschrift-Badge») — Nullprobe: main 25/84 rot vs. Branch 18/84 (workers=1,
 Testdatei byte-identisch, Fläche im Delta unberührt) ⇒ Alt-Flake, offen (Fehlerbuch-Zeile,
 braucht eigenes Mandat). Gemeinsames Muster: einmaliges DOM-Lesen ohne Wiederholung, die
-Fehlermeldung beschuldigt das Produkt für eine Zeitbedingung. Tor-Idee gegen die Familie:
+Fehlermeldung beschuldigt das Produkt für eine Zeitbedingung. Viertes Mitglied
+9.8.2026: `leser-weiterlesen-r4-r8` (R8 j/k, Shard-Kontext, vorbestehend). Und die
+Gegen-Lehre aus dem S7-CI-Rot (PR #479): ein e2e-Timeout auf einem LANGSAMEN Runner ist
+zuerst ein Verdacht auf ein Geräteklassen-/Produkt-Problem, nicht auf einen Testfehler —
+dort verbarg sich hinter der «Flake»-Signatur ein echter Fehler (Artikel-Kontext hing
+hinter fünf fachfremden Ladequellen; Fix `c113ea955`). Erst reproduzieren, dann deuten —
+in BEIDE Richtungen. Tor-Idee gegen die Familie:
 Fehlerbuch-Zeile W2·18 (9.8.2026).
 
 **Abnahme-Status:** einfach belegt (Messreihen mit Rohwerten in den Commit-Bodies);
