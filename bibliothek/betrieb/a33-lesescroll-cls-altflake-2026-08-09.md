@@ -51,5 +51,15 @@ aktualisieren (Status → behoben) und die Flake-Beobachtung schliessen. Verwand
 Beobachtungsposten: `verzahnung.e2e.ts:201` (Popover-boundingBox null unter Voll-Last,
 gleiche Bauart, 1× gesehen 9.8.2026, isoliert 6/6 grün).
 
+**Nachtrag 9.8.2026 — die Flake-Familie hat drei belegte Mitglieder:**
+(1) dieser a33-Fall; (2) `verzahnung.e2e.ts:201` (Popover) — Wurzel `boundingBox()!` ohne
+Stabilitäts-Wartung, GEFIXT in `ea1fcedf3` (atomare Poll-Messung; 8 Worker + repeat-each:
+vorher 2/3 rot, nachher 15/15 und 52/52 grün); (3) `qsui-hierarchie.e2e.ts` Vorlagen-Block
+(«kein Formvorschrift-Badge») — Nullprobe: main 25/84 rot vs. Branch 18/84 (workers=1,
+Testdatei byte-identisch, Fläche im Delta unberührt) ⇒ Alt-Flake, offen (Fehlerbuch-Zeile,
+braucht eigenes Mandat). Gemeinsames Muster: einmaliges DOM-Lesen ohne Wiederholung, die
+Fehlermeldung beschuldigt das Produkt für eine Zeitbedingung. Tor-Idee gegen die Familie:
+Fehlerbuch-Zeile W2·18 (9.8.2026).
+
 **Abnahme-Status:** einfach belegt (Messreihen mit Rohwerten in den Commit-Bodies);
 fachliche Abnahme n/a (Betriebs-/Prozessbefund, kein Rechtsinhalt).
