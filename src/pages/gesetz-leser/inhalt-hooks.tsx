@@ -18,7 +18,7 @@ import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { InGesetzSuche } from './parts/InGesetzSuche';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
-import { planeZuklappen } from './tocAutoZuklappen';
+import { planeZuklappen, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { LinienProfil } from './linienAufbau';
@@ -410,6 +410,9 @@ export function useLeserSprungSpy(opts: {
     if ((!sektionen.length && !ohneGliederung.length) || typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') return;
     const sichtbar = new Map<Element, IntersectionObserverEntry>();
     let raf = 0;
+    // Zeitstempel des letzten ECHTEN Scroll-Ereignisses — das Ruhe-Tor des
+    // Auto-Aufklapps liest ihn (s. u.). 0 = seit dem Aufsetzen kein Scroll.
+    let letzterScroll = 0;
     const auswerten = () => {
       raf = 0;
       if (jumpLock.current) return; // während eines Klick-Sprungs nicht dazwischenfunken
@@ -519,40 +522,25 @@ export function useLeserSprungSpy(opts: {
         if (synth) setAktivIds((prev) => prev.length === synth.length && prev.every((v, i) => v === synth[i]) ? prev : synth);
         return;
       }
-      // ── OFFENER ALT-MANGEL (gemessen 9.8.2026, NICHT aus dieser Slice) ──
-      // Der Aufklapp unten reisst beim ersten Artikelwechsel den ganzen
-      // Aktiv-Pfad in EINEM Commit auf (~21 Zeilen / ~780 px) und schiebt die
-      // folgenden Top-Level-Zeilen aus dem Sichtfeld des `[data-toc]`-Scrollers.
-      // Das ist der rote a33-Fall «A9 — Lese-Scroll unter CPU-Drossel»: der
-      // Shift passiert IMMER (8/8 Sonden-Läufe, bitgleich 0.0504); ob er zählt,
-      // entscheidet allein Chromiums 500-ms-`hadRecentInput`-Fenster (3/8
-      // verworfen ⇒ grün, 5/8 gezählt ⇒ rot). Nullprobe gegen 657880411^ (VOR
-      // W2·19, also main): 4/20 rot — dieselbe Rate wie hier, der Mangel ist
-      // ÄLTER. `flushSync` auch im Aufklapp-Zweig: 2/20 statt 4/20, gegen die
-      // Streuung nicht unterscheidbar ⇒ keine Ursachen-Behebung (Spec §3.6
-      // verbietet das Nachjustieren). Auflösbar ist der Widerspruch nur über das
-      // VERHALTEN — Auftrag K (David 26.6.2026, «Zweig automatisch aufklappen»)
-      // gegen den a33-Kontrakt «Lese-Scroll = CLS 0»; ein Scroll-Ausgleich hilft
-      // nicht, weil die neuen Zeilen INNERHALB des Sichtbands entstehen. Das ist
-      // Davids Entscheid. Vollständige Messreihe im Commit-Body.
-      //
-      // MESSBEDINGUNG MITSCHREIBEN, sonst misst man Zufall: derselbe Stand
-      // ergibt 2/20 rot direkt nach `npm run build` (kalter preview-Server) und
-      // 0/40 rot, wenn kurz zuvor die volle e2e-Suite lief (warm). Wer «grün»
-      // meldet, ohne die Bedingung zu nennen, meldet nichts — genau daran ist
-      // am 9.8.2026 schon eine Ursachen-Zuschreibung gescheitert (5/5 grün, das
-      // Glück war). Belastbar ist nur der KALTE Lauf.
-      //
       // F3 (RC2, Auftrag David 16.7. «Gliederung springt umher»): den (a)-Block
       // (Markierung + Auto-Akkordeon) TRAILING entprellen (~200 ms, analog aktArtikel/
       // tabArtikel oben). Der Timer verarbeitet stets das ZULETZT gemeldete `ids` (jeder
       // neue Frame löscht den vorigen Timer). Wirkung: beim schnellen Durchscrollen EIN
-      // Auf/Zu statt einer dichten Reflow-Folge des Baums. Das Verhalten (Auto-Auf-/
-      // Zuklappen, Auftrag K 26.6.) bleibt — nur seine Frequenz sinkt. Der Klick-Sprung-
-      // Pfad (springeZuArtikel/springeZuSektion) setzt aktivIds/tocBaum weiterhin SOFORT
+      // Auf/Zu statt einer dichten Reflow-Folge des Baums. Der Klick-Sprung-Pfad
+      // (springeZuArtikel/springeZuSektion) setzt aktivIds/tocBaum weiterhin SOFORT
       // und löscht diesen Timer (kein Kampf mit einem verspäteten Auto-Update).
+      //
+      // RUHE-TOR (Entscheid David 9.8.2026 (a); Herleitung bei AUTO_AUF_RUHE_MS):
+      // der AUFklapp feuert nur, wenn der Dokument-Scroll ruht — sonst wird der
+      // Durchlauf mit `erneut = true` neu angesetzt. Der Rest des Blocks (Marke,
+      // Nachlauf-Ticks, Zuklappen) läuft unverändert weiter; `erneut` hält beim
+      // Warten allein den Tick an, damit die Zuklapp-Regel ihren Takt behält.
+      // Damit löst dieser Commit den a33-Zielkonflikt an der Wurzel: das Wachstum
+      // im Sichtband entsteht nicht mehr während des Scrollens.
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
-      tocBaumTimer.current = window.setTimeout(() => {
+      const anwenden = (erneut: boolean) => {
+        const aufklappen = scrollRuht(letzterScroll, Date.now());
+        if (!aufklappen) tocBaumTimer.current = window.setTimeout(() => anwenden(true), AUTO_AUF_RUHE_MS);
         // Wertgleichen Pfad nicht neu setzen (pfadZu liefert stets ein neues Array):
         // sonst Re-Render + Mitscroll-Effekt bei jedem Artikel derselben Blatt-Sektion.
         setAktivIds((prev) => prev.length === ids.length && prev.every((v, i) => v === ids[i]) ? prev : ids);
@@ -562,12 +550,14 @@ export function useLeserSprungSpy(opts: {
         // off-screen → Zuklapp-Reflow zählt nicht; verhindert das sichtbare Auf-/Zu-
         // klappen beim Hin-und-Her-Scrollen, das auf 2-vCPU-CI das CLS-Budget riss).
         const auto = autoOffenRef.current;
-        const tick = ++autoTickNowRef.current;
+        // `erneut` = Wartelauf auf Scroll-Ruhe: Tick NICHT weiterzählen, sonst
+        // alterten die Äste im Leerlauf und das Zuklappen käme früher als bisher.
+        const tick = erneut ? autoTickNowRef.current : ++autoTickNowRef.current;
         // Aktive Pfad-IDs auto-aufklappen — aber manuell geöffnete NICHT ins Auto-Set
         // adoptieren (die bleiben dauerhaft offen) und manuell ZUgeklappte (manuellZuRef)
         // gar nicht auto-aufklappen (explizites Einklappen des aktiven Zweigs gewinnt).
         // Jedes Aktiv-Vorkommen (inkl. Vorfahren aus pfadZu) frischt den Nachlauf-Tick.
-        for (const id of ids) if (!manuellOffenRef.current.has(id) && !manuellZuRef.current.has(id)) { auto.add(id); autoTickRef.current.set(id, tick); }
+        for (const id of ids) if (!manuellOffenRef.current.has(id) && !manuellZuRef.current.has(id)) { if (aufklappen) auto.add(id); autoTickRef.current.set(id, tick); }
         // F2-Wurzelfix (W2·19-GLIEDERUNG/S5, Bau-Spec §3.6): welche Äste zugehen
         // dürfen und wie viel Höhe dabei OBERHALB des Sichtbands verschwindet,
         // entscheidet `planeZuklappen` — Herleitung, Provenienz des 19.7.-Wächters
@@ -580,7 +570,7 @@ export function useLeserSprungSpy(opts: {
         const aktualisieren = (o: Record<string, boolean>): Record<string, boolean> => {
           let geaendert = false;
           const n = { ...o };
-          for (const id of ids) if (!n[id] && !manuellZuRef.current.has(id)) { n[id] = true; geaendert = true; }
+          if (aufklappen) for (const id of ids) if (!n[id] && !manuellZuRef.current.has(id)) { n[id] = true; geaendert = true; }
           for (const id of schliessen) if (n[id]) { n[id] = false; geaendert = true; }
           return geaendert ? n : o; // identische Referenz, wenn nichts ändert → kein Re-Render
         };
@@ -619,7 +609,8 @@ export function useLeserSprungSpy(opts: {
         } else {
           setTocBaum(aktualisieren);
         }
-      }, 200);
+      };
+      tocBaumTimer.current = window.setTimeout(() => anwenden(false), 200);
     };
     const io = new IntersectionObserver((entries) => {
       // V3/H6 (W2·5d-SPY): NICHT-schneidende Einträge aus der Karte ENTFERNEN statt
@@ -675,15 +666,20 @@ export function useLeserSprungSpy(opts: {
     // Passiv registriert (kein Scroll-Blocker). Ziel ist der Scroll-Container des
     // Panes bzw. das Fenster — dieselbe Quelle, aus der `oben` gemessen wird.
     const scrollZiel: HTMLElement | Window = paneRoot(imPane, wurzel) ?? window;
-    const beiScroll = () => { if (!raf) raf = window.requestAnimationFrame(auswerten); };
+    const wecke = () => { if (!raf) raf = window.requestAnimationFrame(auswerten); };
+    // NUR hier wird der Ruhe-Zeitstempel gesetzt: das Ruhe-Tor fragt «scrollt der
+    // Leser gerade», nicht «hat irgendetwas den Spy geweckt». Der Nachlauf-Wecker
+    // unten ist kein Scroll — zählte er mit, verzögerte er den Aufklapp nach einem
+    // Klick-Sprung ohne jeden Grund.
+    const beiScroll = () => { letzterScroll = Date.now(); wecke(); };
     scrollZiel.addEventListener('scroll', beiScroll, { passive: true });
     // N2: dritter Auslöser — das Lösen des jumpLock (Herleitung oben bei
     // `spyNachlauf`). Derselbe rAF-Kranz wie Observer und Scroll.
-    spyNachlauf.add(beiScroll);
+    spyNachlauf.add(wecke);
     return () => {
       io.disconnect();
       scrollZiel.removeEventListener('scroll', beiScroll);
-      spyNachlauf.delete(beiScroll);
+      spyNachlauf.delete(wecke);
       if (raf) cancelAnimationFrame(raf);
       if (tabArtikelTimer.current != null) window.clearTimeout(tabArtikelTimer.current);
       if (aktArtikelTimer.current != null) window.clearTimeout(aktArtikelTimer.current);
