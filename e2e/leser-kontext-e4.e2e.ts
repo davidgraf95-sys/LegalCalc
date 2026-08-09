@@ -16,6 +16,20 @@ import { test, expect } from '@playwright/test';
 // Scroller nichts — das Einwachsen vergrössert nur die Scrollhöhe, verschiebt
 // aber kein sichtbares Element. Kontext-Feeds werden per Route angehalten, bis
 // der CLS-Beobachter steht (deterministisches Messfenster).
+// ── DEKLARIERTE ERWEITERUNG W2·19-GLIEDERUNG/S7 (9.8.2026) ────────────────────
+// Freigabe David 8.8.2026 (Bau-Spec §10, Entscheid (a) «e2e-Anpassungen in
+// deklarierten Commits erlaubt»), NEBEN dem 25.7.-Zitat oben — beide gelten:
+//   25.7.2026: «also das kontextfenster soll gliederung nicht abschneiden. sie
+//              soll einfach unten an der gliederung stehen.»  → LAYOUT-Verdikt
+//   8.8.2026:  «Kontext = Erlass-Übersicht UND Artikel-Kontext»  → INHALT
+// Die LAYOUT-Assertions (a)–(f) sind UNVERÄNDERT geblieben; hinzugekommen ist
+// ausschliesslich ein zweiter Prüfschritt (g) für den neuen, scrollgetriebenen
+// Inhalt: die «Zu Art. X»-Gruppe wechselt ihren Inhalt, WÄHREND man liest — also
+// ohne Nutzer-Input, also CLS-pflichtig (§15.2). Ein solcher Wechsel ist der
+// einzige Weg, wie die neue Gruppe Schaden anrichten kann, und genau deshalb
+// steht die Assertion hier und nicht in einer eigenen Spec: sie gehört an das
+// bestehende CLS-Messfenster des Kontext-Fensters.
+//
 // Drossel wie leser-kopf-a9: CI = 4× (2-Kern-Runner), lokal 6× (Auftrag E4).
 const DROSSEL = process.env.CI ? 4 : 6;
 
@@ -110,4 +124,98 @@ test('E4-Korrektur: Panel im Fluss unter der vollen Gliederung — kein Abschnei
     if (t && k) t.scrollTop += k.getBoundingClientRect().top - t.getBoundingClientRect().top - 20;
   });
   await expect(page.locator('#kontext-titel')).toBeInViewport();
+});
+
+// ── (g) S7 · Artikel-Kontext: CLS 0 AUCH beim Artikelwechsel ─────────────────
+// Der neue «Zu Art. X»-Block ist der erste Panel-Inhalt, der sich beim blossen
+// SCROLLEN ändert — vier Rollen-Zeilen, deren Text je Artikel wechselt (Praxis,
+// Verweise, letzte Änderung, Werkzeuge). Ohne feste Höhe wäre jeder gelesene
+// Artikel ein kleiner Layout-Sprung im sichtbaren Panel; `hadRecentInput` greift
+// nicht, weil kein Klick beteiligt ist. Diese Prüfung ist damit die
+// Abnahme-Bedingung der Höhenfestigkeit (§15.2, Bau-Spec §5.2 «höhenfester
+// Block»), und sie ist scheiterns-fähig: nimmt man `lc-artikelkontext` weg,
+// misst sie den Sprung sofort.
+test('S7: Artikel-Kontext wechselt beim Lesen den Inhalt — Höhe und CLS bleiben', async ({ page }) => {
+  // Zeitbudget: der OR-Reader lädt gedrosselt lange, und die drei Lese-Schritte
+  // warten je 900 ms aus. Reine INFRASTRUKTUR (§6.3) — kein `expect` berührt.
+  test.setTimeout(process.env.CI ? 120_000 : 60_000);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const client = await page.context().newCDPSession(page);
+
+  // OR: viele Artikel mit sehr unterschiedlich dichtem Kontext (Art. 41 trägt
+  // Praxis und Werkzeuge, die Nachbarn deutlich weniger) — genau die Spreizung,
+  // die einen höhenvariablen Block auffliegen liesse.
+  // Die Drossel greift BEWUSST erst nach dem Laden: gemessen wird der Wechsel
+  // beim Lesen, nicht der Seitenaufbau (den deckt der erste Test dieser Datei
+  // gedrosselt ab). Ungedrosselt zu laden macht den Test schnell, ohne die
+  // Prüfaussage zu verwässern.
+  await page.goto('/gesetze/bund/OR#art-41');
+  const block = page.locator('[data-artikel-kontext]');
+  await expect(block).toBeAttached({ timeout: 30000 });
+  // Panel-Anfang ins Sichtfeld holen — nur ein SICHTBARER Sprung zählt als CLS.
+  await page.evaluate(() => {
+    const t = document.querySelector('[data-toc]');
+    const k = document.querySelector('[data-toc-kontext]');
+    if (t && k) t.scrollTop += k.getBoundingClientRect().top - t.getBoundingClientRect().top - 240;
+  });
+  await page.waitForTimeout(600);
+  await expect(block).toBeInViewport();
+
+  const hoehe = () => page.evaluate(() => {
+    const b = document.querySelector('[data-artikel-kontext]');
+    return b ? Math.round(b.getBoundingClientRect().height) : -1;
+  });
+  const gruppe = () => page.evaluate(() => {
+    const b = document.querySelector('[data-artikel-kontext]');
+    return b?.parentElement?.querySelector('h3')?.textContent ?? '';
+  });
+  const hoeheVorher = await hoehe();
+  const gruppeVorher = await gruppe();
+  expect(hoeheVorher, 'Artikel-Kontext-Block nicht gerendert').toBeGreaterThan(0);
+
+  // Ab hier gedrosselt messen (2-Kern-Runner-Nähe, wie der erste Test).
+  await client.send('Emulation.setCPUThrottlingRate', { rate: DROSSEL });
+
+  // CLS-Beobachter NACH dem Einschwingen installieren, und AUF DAS KONTEXTFENSTER
+  // GESCOPT. Begründung (gemessen 9.8.2026, Quellen-Sonde über `sources[].node`):
+  // beim Durchscrollen von OR verschieben sich zwei Dinge, die NICHTS mit dieser
+  // Slice zu tun haben — die Lesespalte selbst (`#lc-lesespalte section`, das
+  // bekannte content-visibility-/Höhenschätzungs-Verhalten) und die Baumzeilen im
+  // `<aside>` (das Auto-Akkordeon des Scroll-Spys, dessen Budget a33 F1/F2 misst,
+  // nicht diese Spec). Eine ungescopte Summe misst also fremde Budgets mit und
+  // wäre entweder dauerhaft rot oder müsste auf einen Deckel aufgeweicht werden —
+  // beides schlechter als eine SCHARFE Aussage über das, was S7 neu einführt:
+  // im `[data-toc-kontext]`-Fenster darf sich beim Lesen NICHTS verschieben.
+  await page.evaluate(() => {
+    (window as unknown as { __clsKontext: number }).__clsKontext = 0;
+    new PerformanceObserver((l) => {
+      for (const e of l.getEntries() as PerformanceEntry[]) {
+        const s = e as unknown as {
+          value: number; hadRecentInput: boolean;
+          sources?: Array<{ node?: Node | null }>;
+        };
+        if (s.hadRecentInput) continue;
+        const imKontext = (s.sources ?? []).some((q) => {
+          const n = q.node as Element | null | undefined;
+          return !!(n && n.nodeType === 1 && n.closest('[data-toc-kontext]'));
+        });
+        if (imKontext) (window as unknown as { __clsKontext: number }).__clsKontext += s.value;
+      }
+    }).observe({ type: 'layout-shift' });
+  });
+
+  // Durch mehrere Artikel scrollen (kein Klick — der Scroll-Spy führt den Block
+  // nach). `mouse.wheel` erzeugt keinen `hadRecentInput`-Ausschluss für Shifts
+  // ausserhalb des 500-ms-Fensters; wir warten darum je Schritt lange genug.
+  for (const ziel of ['art-52', 'art-62', 'art-97']) {
+    await page.evaluate((id) => document.getElementById(id)?.scrollIntoView({ block: 'start' }), ziel);
+    await page.waitForTimeout(900);
+    expect(await hoehe(), `Höhe des Artikel-Kontexts wandert bei ${ziel}`).toBe(hoeheVorher);
+  }
+
+  await client.send('Emulation.setCPUThrottlingRate', { rate: 1 });
+  const cls = await page.evaluate(() => (window as unknown as { __clsKontext: number }).__clsKontext);
+  expect(cls, 'CLS im Kontextfenster beim Artikelwechsel muss 0 sein').toBe(0);
+  // Und der Block hat wirklich MITGEFÜHRT (sonst wäre die Höhen-Aussage wertlos).
+  expect(await gruppe(), 'Artikel-Kontext ist dem Lesen nicht gefolgt').not.toBe(gruppeVorher);
 });

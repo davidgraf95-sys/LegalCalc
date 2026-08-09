@@ -711,6 +711,17 @@
     display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
   }
 
+  /* W2·19-GLIEDERUNG/S7 · Artikel-Kontext-Block im KontextPanel
+     (components/kontext/KontextPanel.tsx, Bau-Spec §5.2 «höhenfester Block»).
+     Vier einzeilige Rollen-Zeilen (Praxis · Verweise · Änderung · Werkzeuge) zu
+     je 1.375em = 5.5em, `overflow:hidden` als Riegel. Der Inhalt wechselt beim
+     SCROLLEN — also ohne Nutzer-Input, also CLS-pflichtig (§15.2). Eine feste
+     Höhe ist hier das einzig tragfähige Mittel: sie hält auch dann, wenn ein
+     Artikel vier volle Zeilen hat und der nächste nur den Leer-Satz.
+     `height` statt `min-height`: Anatomie, keine Trefferflächen-Untergrenze
+     (F9-Abgrenzung, src/tests/tap-ziel-token.test.ts). */
+  .lc-artikelkontext { line-height: 1.375; height: 5.5em; overflow: hidden; }
+
   /* Signature-Element neu: Messing-Akzentlinie (Designsystem §4) —
      Haarlinie mit kurzem, nach rechts auslaufendem Messing-Akzent.
      Ruhiger als die frühere Strichskala; sparsam einsetzen. */

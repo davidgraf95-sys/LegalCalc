@@ -10,6 +10,7 @@ import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
 } from './berechnungen';
 import { baueGliederungsModell } from './gliederungsModell';
+import { useArtikelKontext } from './artikelKontext';
 import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
 import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
@@ -221,6 +222,16 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // (./inhalt-ableitungen); der Angebots-Zustand liegt in ./inhalt-weiterlesen,
   // das Markup der beiden Overlays in ./inhalt-overlays.
   const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
+  // W2·19-GLIEDERUNG/S7: Wegweiser zum aktiv gelesenen Artikel (Bau-Spec §5.2).
+  // Der Hook lebt HIER im Leser, nicht im KontextPanel — so bleibt die Gruppe im
+  // Panel eine reine, hart gegatete Prop und kann nicht in den Entscheid-Leser
+  // lecken. Speist sich aus bereits geladenen Shards (Promise-Cache) und dem
+  // schon entprellten `aktivToken`; kein eigener Takt, kein zweiter Fetch.
+  const artikelKontext = useArtikelKontext({
+    erlass, token: aktivToken, label: aktArtikel, eintraege, struktur,
+    revision: aktivToken ? revisionFuer(aktivToken) : undefined,
+    onSprung: springeZuArtikel,
+  });
   const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
     erlass, eintraege, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
   });
@@ -425,6 +436,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         // W2·19-GLIEDERUNG/S6: Zone-C-Sockel (Erlass-Übersicht) + Kopf-Warnung.
         kennzahlen={modell.kennzahlen} kantonErlassAnzahl={kantonErlassAnzahl}
         nichtKonsolidiert={nichtKonsolidiert}
+        // W2·19-GLIEDERUNG/S7: Wegweiser zur Leseposition (eigene, gegatete Prop).
+        artikelKontext={artikelKontext}
       />
       <LeserOverlays istSekundaer={istSekundaer}
         weiterlesen={weiterlesen} onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen}

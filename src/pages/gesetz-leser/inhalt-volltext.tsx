@@ -24,6 +24,7 @@ import { ArtikelSprungFeld } from './parts/ArtikelSprungFeld';
 import { GliederungSheet } from './parts/GliederungSheet';
 import { ErlassUebersicht } from './parts/ErlassUebersicht';
 import type { GliederungsKennzahlen } from './gliederungsModell';
+import type { ArtikelKontextAnsicht } from '../../lib/kontext';
 
 // ═══ ABSCHNITT · Volltext-Leseansicht — INNENinhalt (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationsschicht (Props rein, §3): der gesamte Innen-Render des
@@ -52,6 +53,7 @@ export function LeserVolltextInhalt({
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
   kennzahlen = null, kantonErlassAnzahl = null, nichtKonsolidiert = false,
+  artikelKontext = null,
 }: {
   erlass: BrowseErlass;
   eintraege: NormSnapshot[];
@@ -136,6 +138,10 @@ export function LeserVolltextInhalt({
   kantonErlassAnzahl?: number | null;
   /** S6: mindestens eine in Kraft getretene Änderung ist nicht konsolidiert. */
   nichtKonsolidiert?: boolean;
+  /** W2·19-GLIEDERUNG/S7: Wegweiser zum aktiv gelesenen Artikel — geht als
+   *  eigene, hart gegatete Prop ins KontextPanel (nie über `artikelZitate`,
+   *  Bau-Spec §5.2). `null` = keine Gruppe. */
+  artikelKontext?: ArtikelKontextAnsicht | null;
 }) {
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
@@ -149,7 +155,8 @@ export function LeserVolltextInhalt({
   // bleibt der ehrlich sichtbare Platz das LESEENDE wie bisher. Es rendert
   // stets genau EIN Panel (nie doppelt, nie eines in einem hidden-Container).
   const kontextImToc = istXl && sektionen.length > 0 && tocOffen;
-  const kontextPanelLesespalte = kontextImToc ? null : <KontextPanel typ="norm" normKeys={[erlass.key]} />;
+  const kontextPanelLesespalte = kontextImToc ? null
+    : <KontextPanel typ="norm" normKeys={[erlass.key]} artikelKontext={artikelKontext} />;
   // W2·19-GLIEDERUNG/S6 (Bau-Spec §2 Zone C, §5.1): der Übersichts-Sockel wird
   // EINMAL beschrieben (§5) und folgt exakt derselben Platz-Weiche wie das
   // Kontext-Panel — in der 2-Spalten-Ansicht im Fluss des [data-toc]-Scrollers
@@ -513,7 +520,7 @@ export function LeserVolltextInhalt({
               )}
               {kontextImToc && (
                 <div data-toc-kontext className="mt-4 border-t border-line pt-3">
-                  <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" />
+                  <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" artikelKontext={artikelKontext} />
                 </div>
               )}
             </div>

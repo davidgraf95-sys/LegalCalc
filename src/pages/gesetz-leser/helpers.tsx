@@ -17,6 +17,17 @@ const SR_INTERN: ReadonlyMap<string, { key: string; ebene: 'bund' | 'kanton' }> 
     .map((e) => [e.sr as string, { key: e.key, ebene: e.ebene }]),
 );
 
+/**
+ * W2·19-GLIEDERUNG/S7: SR-Nummer → intern gehaltener Erlass, sonst `undefined`.
+ * Derselbe `SR_INTERN`-Index, den der Fussnoten-Renderer weiter unten schon nutzt
+ * (§5, EINE Auflösung) — exportiert, damit der Artikel-Kontext einen
+ * Fussnoten-Verweis intern verlinken kann, WO wir den Erlass wirklich halten,
+ * und sonst ehrlich beim amtlichen Link bleibt (§8, kein toter interner Pfad).
+ */
+export function internerErlassFuerSr(sr: string): { key: string; ebene: 'bund' | 'kanton' } | undefined {
+  return SR_INTERN.get(sr);
+}
+
 export function formatiereDatum(iso: string): string {
   const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;

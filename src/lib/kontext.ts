@@ -27,6 +27,51 @@ export type { MaterialBezug, EntscheidRef };
 /** Quelle-Korpus des Readers, der das Panel zeigt. */
 export type KontextTyp = 'norm' | 'entscheid' | 'material';
 
+// ─── Artikel-Kontext (W2·19-GLIEDERUNG/S7, Bau-Spec §5.2) ───────────────────
+//
+// Nur die TYPEN leben hier; gebaut wird die Ansicht im Gesetzes-Leser
+// (src/pages/gesetz-leser/artikelKontext.ts). Der Grund ist die Schichtung:
+// `components/kontext/KontextPanel.tsx` darf die Form kennen, aber nicht in die
+// Seiten-Schicht hinaufimportieren (check:zyklen). ADDITIV — kein bestehender
+// Export ändert sich.
+//
+// HARTE ABGRENZUNG zu `artikelZitate` (dieselbe Datei, `kontextSync` unten):
+// `artikelZitate` speist AUSSCHLIESSLICH `werkzeugeFuerZitate()` und ist die
+// Zitat-Liste eines ENTSCHEIDS. Der Artikel-Kontext ist etwas anderes — die
+// Leseposition im Gesetzes-Leser — und bekommt darum eine EIGENE Prop, statt
+// die bestehende umzudeuten: sonst verengte sich die erlass-weite Werkzeugliste
+// still, und die Werkzeug-Gruppe bewegte sich bei jedem Artikelwechsel in der
+// Höhe (Bau-Spec §5.2, mitten im E4-CLS-Messfenster).
+
+/** Ein ausgehender Verweis des Artikels — intern, wo wir den Erlass halten. */
+export interface KontextVerweis {
+  /** Anzeige-Label («ArG», «SR 822.11»). */
+  label: string;
+  /** Interner Reader-Pfad; fehlt er, ist `url` der amtliche Fallback (§8). */
+  pfad?: string;
+  url?: string;
+}
+
+/** Alles, was die gegatete «Zu Art. X»-Gruppe im KontextPanel zeigt. */
+export interface ArtikelKontextAnsicht {
+  /** «Art. 41» bzw. «§ 41»; leer = noch keine Leseposition erfasst (§8). */
+  label: string;
+  /** Artikel-Token des Sprungziels (Anker `art-<token>`). */
+  token: string;
+  /** Erfasste Leitentscheide zu diesem Artikel; `undefined` = Shard nicht geladen. */
+  leitentscheide?: number;
+  /** Artikelscharfe amtliche Materialien; `undefined` = Shard nicht geladen. */
+  materialien?: number;
+  /** Letzte belegte Textänderung; `null` = Urfassung, `undefined` = unbekannt. */
+  revision?: { iso: string; as: string } | null;
+  /** Ausgehende Verweise (Trägergesetz + Fussnoten-Erlassverweise), dedupliziert. */
+  verweise: KontextVerweis[];
+  /** Label der artikelscharfen Werkzeug-Gruppe («Art. 127–142»), falls vorhanden. */
+  werkzeugGruppe?: string;
+  /** Sprung in die Lesespalte zum Artikel (dort steht das Detail, §5 SSoT). */
+  onSprung?: () => void;
+}
+
 /** Verweis auf eine Erlass-Detailseite (aufgelöst über das ERLASS_REGISTER). */
 export interface NormBezug {
   key: string;
