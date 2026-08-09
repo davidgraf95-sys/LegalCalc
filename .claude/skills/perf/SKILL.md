@@ -87,6 +87,10 @@ nacheinander in dieselben Fallen gelaufen):
    Paint-Fragen CDP `Page.startScreencast` (komponierte Frames) verwenden.
 5. **Flake-Raten ohne Messbedingung (kalt/warm, Parallel-Last, Stichprobengrösse gegen
    die vermutete Rate) sind keine Zahlen** — Dispatch-§0 Ziff. 3c.
+6. **Werkzeug-Falle IntersectionObserver:** In der versteckten Browser-Pane feuern
+   IO-Callbacks GAR NICHT — auch nicht für handgebaute Observer; das sieht wie ein
+   Produktfehler aus (real ~20 Min. Diagnose gekostet, W2·19/S8). IO-/Sichtbarkeits-
+   Verhalten in Playwright prüfen, nie in der Pane.
 
 ## §-Konkordanz (für Alt-Verweise im Bestand)
 

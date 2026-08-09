@@ -1,5 +1,20 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## W2·17 B3–B7 + Fehlerbuch-Erledigungen (8./9.8.2026, übertragen 9.8.2026)
+
+Aus ROADMAP verdichtet (QS-TOK-Budget):
+
+  - [x] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4. ✅ 8.8.2026, PR #471.
+  - [x] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). ✅ 8.8.2026, PR #472 (LM-155: Verwerfen-Entscheid von David am 8.8.2026 REVIDIERT — Neubau freigegeben, siehe Position B4-N1; LM-158 → `W2·5h-GESETZ-UI` K6 gemäss Grenz-Auflage §24.1; Rest gebaut/überholt). §5.
+  - [x] **B4-N1 · LM-155-Neubau: Gliederungs-Tiefenführung im Gesetzes-Leser** — Freigabe David 8.8.2026. ✅ 8.8.2026, PR #475 (Baum-Ebenen typografisch + per gestufter Schrittweite unterscheidbar; Entwurf gegen die A28-Scheiter-Gründe begründet, nur SektionBaumTOC). §5 (LM-155).
+  - [x] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). ✅ 8.8.2026, PR #473 (7/8 + LM-174: David hat am 8.8.2026 auf System-Schema umentschieden — 19.6.-Entscheid «Tageszeit» revidiert, Bau-Position B5-N1; Rest gebaut/nachgemessen-überholt). §6.
+  - [x] **B5-N1 · LM-174-Umbau: Farbschema folgt beim Erstbesuch dem System** — Entscheid David 8.8.2026 (revidiert 19.6.2026). ✅ 8.8.2026, PR #474 (pristine liest prefers-color-scheme, Label «Automatisch (System)», Live-Listener auch pristine). §6 (LM-174).
+  - [x] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). ✅ 8.8.2026, PR #476 (10/14; übersprungen mit Begründung in §7: LM-162/LM-164 warten auf David, LM-166 Risikopfad → Daten-Session, LM-163 Browser-Rendering — eigene Untersuchung). §7.
+  - [x] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). ✅ 8.8.2026, PR #477 (5/8: LM-010/LM-015 Scrim-Frage → @david-fragen; LM-016 eigener Schritt → Fehlerbuch). §8.
+  - [x] **Gliederung im Gesetzes-Leser (Davids Befunde 8.8.2026 abends)** — ✅ überführt: Diagnose im [Dossier](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md), Bau als eigener Schritt `W2·19-GLIEDERUNG` (Queue-Spitze, eigene Session auf Davids Wunsch).
+  - [x] **Beobachtungsposten `verzahnung.e2e.ts:201`:** ✅ Wurzel gefixt 9.8.2026 (`ea1fcedf3`): zwei `boundingBox()!` ohne Stabilitäts-Wartung; atomare Poll-Messung, unter 8 Workern + repeat-each 15/15 und 52/52 grün (vorher 2/3 rot).
+
+
 > **Angelegt 10.7.2026 (QS-TOK / T7 «ROADMAP-Chronik-Split», Detailquelle `FAHRPLAN-TOKEN-OEKONOMIE.md` §3).**
 > Diese Datei nimmt die **Erledigt-Prosa abgeschlossener (`[x]`) Schritte** aus `ROADMAP.md` auf —
 > **verschoben, nie zusammengefasst** (kein Retrieval-Verlust; voller Wortlaut erhalten). In
