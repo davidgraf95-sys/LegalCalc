@@ -15,7 +15,7 @@ import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
 import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
 import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from './inhalt-zustand';
-import { useArtikelAbleitungen, useArtikelTokens, useTrefferUndNachbarn } from './inhalt-ableitungen';
+import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from './inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from './inhalt-sprung';
 import { useWeiterlesen } from './inhalt-weiterlesen';
 import { LeserOverlays } from './inhalt-overlays';
@@ -157,9 +157,17 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // Permalink setzen — derselbe Mechanismus wie der Hash-Sprung. Bleibt HIER, weil
   // die LM-202-Quellensonde den `replaceState`-Aufruf in dieser Datei prüft.
   const springeZuArtikel = useCallback((token: string) => {
-    // Im Suchmodus erst die Suche verlassen, sonst ist das Ziel nicht im DOM
-    // (nur Treffer gerendert) → Permalink änderte sich ohne Sprung. Kein Zurück
-    // zur Vor-Such-Position (wir springen ja gezielt zum Artikel).
+    // Suchmodus verlassen. Die URSPRÜNGLICHE Begründung ist mit S8 entfallen —
+    // «sonst ist das Ziel nicht im DOM (nur Treffer gerendert)» stimmt nicht
+    // mehr, weil die Lesespalte nicht mehr gefiltert wird. Das VERHALTEN bleibt
+    // trotzdem, und zwar bewusst: dieser Pfad trägt die Sprünge, die den
+    // Suchvorgang wirklich beenden (Quickjump «Art. N», ein Verweis im
+    // Wortlaut, «Weiterlesen», der Hash-Sprung). Der Sprung AUS DER
+    // TREFFERLISTE läuft nicht hier durch, sondern über `springeZuTreffer`
+    // (inhalt-suchtreffer) — er lässt Suche und Markierung ausdrücklich stehen,
+    // sonst erlösche beim ersten Klick genau das, wonach man gesucht hat (§4.5:
+    // «kein stilles Umschalten der Ansicht beim Sprung»).
+    // Kein Zurück zur Vor-Such-Position (wir springen ja gezielt zum Artikel).
     scrollVorSucheRef.current = null;
     setSuche('');
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
@@ -268,14 +276,19 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
 
   // ═══ ABSCHNITT · In-Gesetz-Suche & Treffer ═══════════════════════════════════
   const sucheTrim = sucheDebounced.trim().toLowerCase(); // Rank 9: entprellt (nicht `suche`)
-  const { treffer, vorher, nachher } = useTrefferUndNachbarn({ eintraege, sucheTrim, manifest, erlass });
+  const { vorher, nachher } = useNachbarn({ manifest, erlass });
   const sucheFeldLeer = suche.trim() === '';
-  // A35-Hervorhebung, R1-Fundstellen-Navigation, R2-Quickjump + «Sie sind hier»
-  // — verhaltensneutral in ./inhalt-suchtreffer (ein kontiguer Hook-Block).
+  // W2·19-GLIEDERUNG/S8: die Treffer entstehen SEIT HIER im Such-Hook (aus
+  // `leserSuche.ts`), nicht mehr als Filter über `eintraege` — die Lesespalte
+  // wird nicht mehr gefiltert (Entscheid David (c) 8.8.2026). A35-Hervorhebung
+  // (jetzt artikelweise, IntersectionObserver-getrieben), Fundstellen-
+  // Navigation, R2-Quickjump + «Sie sind hier» bleiben in ./inhalt-suchtreffer.
   const {
-    trefferRef, fundstellen, trefferPos, springeZuFundstelle, loeseArtikel, siePfad, siePfadArtikel,
+    leseRef, treffer, fundstellen, fussnotenAus, trefferPos, aktivToken: trefferAktivToken,
+    springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
   } = useSuchTreffer({
-    treffer, sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
+    erlassKey: erlass?.key ?? null, eintraege, struktur,
+    sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
   });
 
   // ═══ ABSCHNITT · Ansichts-Weichen vor dem Volltext-Zweig ════════════════════
@@ -422,16 +435,19 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         treffer={treffer} suche={suche} sucheDebounced={sucheDebounced} setSuche={setSuche}
         tocBaumEl={tocBaumEl} tocOffen={tocOffen} tocAuf={tocAuf} setTocOffen={setTocOffen} setTocAuf={setTocAuf}
         springeZuArtikel={springeZuArtikel}
-        // W2·10-UI-NAV/R1: Fundstellen-Zählung + Vor/Zurück-Sprungtasten.
-        fundstellen={treffer && fundstellen?.begriff === sucheTrim ? fundstellen : null}
-        trefferPos={trefferPos} springeZuFundstelle={springeZuFundstelle}
+        // W2·19-GLIEDERUNG/S8: datenseitiger Fundstellen-Zähler (§4.4 Ziff. 1),
+        // Badge-Ehrlichkeit bei ausgeblendetem Apparat, Vor/Zurück-Sprungtasten
+        // und der Treffer-Klick (springt, ohne die Suche zu verlassen).
+        fundstellen={fundstellen} fussnotenAus={fussnotenAus}
+        trefferPos={trefferPos} trefferAktivToken={trefferAktivToken}
+        springeZuFundstelle={springeZuFundstelle} springeZuTreffer={springeZuTreffer}
         // W2·10-UI-NAV/R2: Quickjump + «Sie sind hier» des Gliederungs-Sheets.
         loeseArtikel={loeseArtikel} siePfad={siePfad} siePfadArtikel={siePfadArtikel}
         bezuegeFuer={bezuegeFuer} revisionFuer={revisionFuer} historieFuer={historieFuer}
         kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
         bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
         reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
-        tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
+        tocDrawerRef={tocDrawerRef} leseRef={leseRef} navigate={navigate}
         // W2·19-GLIEDERUNG/S6: Zone-C-Sockel (Erlass-Übersicht) + Kopf-Warnung.
         kennzahlen={modell.kennzahlen} kantonErlassAnzahl={kantonErlassAnzahl}
         nichtKonsolidiert={nichtKonsolidiert}

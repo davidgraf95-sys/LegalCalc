@@ -1153,6 +1153,20 @@
      helle Tinte) → EINE Regel trägt AA in beiden Themes (§13/F2), kein Override. */
   ::highlight(lc-such-treffer) { background-color: var(--brass-200); color: var(--ink-900); }
 
+  /* W2·19-GLIEDERUNG/S8 (Bau-Spec §4.3): der Textausschnitt in der Trefferliste
+     der Seitenleiste hebt den Begriff «in brass-200-Optik wie
+     ::highlight(lc-such-treffer)» hervor — hier als echtes <mark>, weil der
+     Ausschnitt aus den QUELL-Strings gebaut wird (kein DOM-Range, also keine
+     Highlight-API). Bewusst DIESELBEN zwei Variablen wie die Regel darüber: der
+     Leser soll dieselbe Markierung in der Liste und im Wortlaut wiedererkennen,
+     und beide kippen mit html.dark gemeinsam (§13/F2, AA in beiden Themes).
+     Der UA-Default von <mark> (Gelb auf Schwarz) wird damit vollständig
+     ersetzt — sonst stünde ein haus-fremdes Gelb in der Leiste. */
+  .lc-such-ausschnitt mark {
+    background-color: var(--brass-200); color: var(--ink-900);
+    border-radius: .125rem; padding: 0 .0625rem;
+  }
+
   .lc-live { display: inline-flex; align-items: center; gap: .4rem; }
   /* F1: Live-Punkt = Zustand «live/ok» → --ok-Rolle (wertidentisch zu sage). */
   .lc-live::before {
