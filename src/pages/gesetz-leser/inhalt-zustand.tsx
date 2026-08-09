@@ -10,6 +10,7 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
+import { revisionenFuerNorm } from '../../lib/normtext/revisionen';
 import { klappZeile } from './tocAutoZuklappen';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
@@ -118,6 +119,32 @@ export function useLeserZustand() {
       ? revisionFuerToken(revisionShard.shard, artikel)
       : undefined
   ), [erlass, revisionShard]);
+  // W2·19-GLIEDERUNG/S6 (Bau-Spec §5.1, Zeile 1): trägt der Erlass mindestens
+  // eine in Kraft getretene, aber nicht konsolidierte Änderung? PROMOTION, kein
+  // Neubau — dieselbe Quelle, die das KontextPanel ohnehin lädt
+  // (`revisionenFuerNorm`, modulweiter Promise-Cache in normtext/revisionen.ts),
+  // also KEIN zweiter Fetch (§15.3). Der Reader hebt die Tatsache nur an zwei
+  // Stellen, an denen man sie VOR dem Lesen sieht (Erlass-Kopf, Erlass-Übersicht).
+  // Kein `beiLeerlauf`: das Panel stösst denselben Fetch beim Mount an, und ein
+  // zusätzlicher Leerlauf-Verzug verschöbe die Aussage grundlos nach hinten.
+  // `false` = noch nicht bekannt ODER keine solche Änderung — beides «kein
+  // Banner» (§8: nichts behaupten, was nicht belegt ist).
+  //
+  // Das Ergebnis trägt seinen EIGENEN Key, der Anzeigewert wird daraus
+  // ABGELEITET (dasselbe Muster wie im KontextPanel): so steht beim Erlass-/
+  // Pane-Wechsel nie eine fremde Aussage, OHNE dass im Effekt-Rumpf synchron
+  // gesetzt werden müsste (react-hooks/set-state-in-effect, Kaskaden-Render).
+  const [konsGeladen, setKonsGeladen] = useState<{ key: string; wert: boolean } | null>(null);
+  useEffect(() => {
+    const key = erlass?.key;
+    if (!key) return;
+    let lebt = true;
+    void revisionenFuerNorm([key]).then((ans) => {
+      if (lebt) setKonsGeladen({ key, wert: !!ans?.revisionen.some((r) => r.nichtKonsolidiert) });
+    });
+    return () => { lebt = false; };
+  }, [erlass?.key]);
+  const nichtKonsolidiert = !!erlass && konsGeladen?.key === erlass.key && konsGeladen.wert;
   // G-HIST-UI: Artikel-Token → Fassungshistorie des AKTUELLEN Erlasses (sonst
   // undefined = kein Badge). Direkter Roh-Token-Lookup (Snapshot/Shard gleiche
   // Extraktion). Stabile Referenz aus dem Shard → memo-freundlich.
@@ -133,7 +160,7 @@ export function useLeserZustand() {
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer,
+    revisionFuer, historieFuer, nichtKonsolidiert,
   };
 }
 

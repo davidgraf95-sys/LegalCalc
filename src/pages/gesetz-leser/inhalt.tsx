@@ -57,7 +57,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer,
+    revisionFuer, historieFuer, nichtKonsolidiert,
   } = useLeserZustand();
   const {
     offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
@@ -107,6 +107,16 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     }),
     [tocSektionen, ohneGliederung, eintraege, struktur],
   );
+
+  // W2·19-GLIEDERUNG/S6: Eingabe des Erfassungsgrads (§8, erfassungsgrad.ts) —
+  // die in LexMetrik ERFASSTE Erlass-Zahl des Kantons dieses Erlasses, gezählt
+  // aus dem ohnehin geladenen Browse-Manifest (§5: keine zweite Zählung, keine
+  // hartkodierte Menge). Bund trägt keinen Erfassungsgrad ⇒ null.
+  const kantonErlassAnzahl = useMemo<number | null>(() => {
+    const kanton = erlass?.kanton;
+    if (!kanton || !manifest) return null;
+    return manifest.erlasse.reduce((n, e) => (e.kanton === kanton ? n + 1 : n), 0);
+  }, [erlass?.kanton, manifest]);
 
   // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
   // aus dem TATSÄCHLICHEN Aufbau des Erlasses ab (Struktur-Sidecar: Gliederungstiefe
@@ -412,6 +422,9 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
         reiterToast={reiterToast} setReiterToast={setReiterToast} reiterToastTimerRef={reiterToastTimer}
         tocDrawerRef={tocDrawerRef} trefferRef={trefferRef} navigate={navigate}
+        // W2·19-GLIEDERUNG/S6: Zone-C-Sockel (Erlass-Übersicht) + Kopf-Warnung.
+        kennzahlen={modell.kennzahlen} kantonErlassAnzahl={kantonErlassAnzahl}
+        nichtKonsolidiert={nichtKonsolidiert}
       />
       <LeserOverlays istSekundaer={istSekundaer}
         weiterlesen={weiterlesen} onWeiterlesen={weiterlesenSprung} onVerwerfen={weiterlesenVerwerfen}
