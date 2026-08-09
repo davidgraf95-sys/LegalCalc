@@ -289,6 +289,10 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur,
     sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
+    // B3/B4 (Bug-Check §9 zu S8): DERSELBE Klapp-Zustand, den Fliesstext und
+    // Scroll-Spy führen — der Sprung muss ein zugeklapptes Ziel öffnen können,
+    // und der Markierungs-Beobachter muss von neuen Artikeln erfahren.
+    offen, setOffen,
   });
 
   // ═══ ABSCHNITT · Ansichts-Weichen vor dem Volltext-Zweig ════════════════════

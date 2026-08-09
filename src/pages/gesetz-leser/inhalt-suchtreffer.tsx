@@ -1,4 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  useCallback, useEffect, useMemo, useRef, useState,
+  type Dispatch, type SetStateAction,
+} from 'react';
 import type { InternRefs } from '../../components/NormText';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
@@ -6,6 +9,7 @@ import {
   setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges,
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
+import { pfadZu } from './helpers';
 import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } from './leserSuche';
 
 // ═══ ABSCHNITT · In-Gesetz-Suche: Treffer, Hervorhebung, Quickjump ═══════════
@@ -45,7 +49,7 @@ import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } fr
 
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
-  internRefs, aktArtikel, tokenByLabel,
+  internRefs, aktArtikel, tokenByLabel, offen, setOffen,
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -58,6 +62,14 @@ export function useSuchTreffer({
   internRefs: InternRefs | undefined;
   aktArtikel: string | null;
   tokenByLabel: Map<string, string>;
+  /** Klapp-Zustand der LESESPALTE (B3/B4): welche Sektionen aufgeklappt sind.
+   *  Der Sprung braucht `setOffen`, um ein Ziel in einem zugeklappten Ast
+   *  überhaupt erreichbar zu machen; der Markierungs-Beobachter braucht `offen`
+   *  in seinen Deps, weil ein Aufklapp neue Artikel ins DOM bringt, die er sonst
+   *  nie beobachtet. Es ist derselbe Zustand, den der Reader ohnehin führt — kein
+   *  zweiter (§5). */
+  offen: Record<string, boolean>;
+  setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
@@ -149,7 +161,13 @@ export function useSuchTreffer({
     };
     // `ansichtTick`: ein Ansicht-Toggle ändert die MALBARKEIT (Fussnoten-Apparat
     // display:none) — die Ranges müssen dann neu entstehen (RV6).
-  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, male]);
+    // `offen` (B4, Bug-Check §9 zu S8): ein Auf-/Zuklapp im Fliesstext ÄNDERT DIE
+    // ARTIKELMENGE im DOM. Ohne diese Dep beobachtete der Observer nur die beim
+    // Effekt-Lauf vorhandenen Artikel; alles, was danach aufgeklappt wurde, blieb
+    // unmarkiert — der Leser sah einen Treffer-Artikel ohne eine einzige
+    // leuchtende Stelle (§8). Der Scroll-Spy führt `offen` aus genau diesem Grund
+    // schon in seiner Liste (inhalt-hooks.tsx).
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, male]);
 
   // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
   // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.
@@ -190,42 +208,67 @@ export function useSuchTreffer({
   const zeigeFundstelle = useCallback((n: number) => {
     const eintrag = folge[n];
     if (!eintrag || typeof window === 'undefined') return;
-    const wurzel = leseRef.current;
+    // B3 (Bug-Check §9 zu S8): den FORTSCHRITT festhalten, BEVOR ein Ausstieg
+    // möglich ist. Bis hierher stand `setNav` HINTER der DOM-Suche — lag der
+    // Zielartikel in einer zugeklappten Sektion, blieb `nav.pos` stehen, und
+    // jeder weitere ↑↓-Druck berechnete daraus dieselbe Position: die Folge kam
+    // nicht vom Fleck, der Klick blieb ohne jede Rückmeldung (§8).
+    setNav({ begriff: sucheTrim, pos: n, token: eintrag.token });
     const id = `art-${eintrag.token}`;
     // CSS.escape: ein Artikel-Token mit Sonderzeichen (belegt: «22 a», «36–42»)
     // darf den Selektor nicht sprengen — dieselbe Vorsicht wie `findeArt`.
-    const art = (wurzel ?? document).querySelector<HTMLElement>(
+    const finde = () => (leseRef.current ?? document).querySelector<HTMLElement>(
       `#${typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id}`);
-    if (!art) return;
-    setNav({ begriff: sucheTrim, pos: n, token: eintrag.token });
-    // Frisch sammeln (nicht aus `rangesRef` recyceln): Ranges hängen an
-    // konkreten Text-Knoten, und zwischen zwei Klicks kann der Reader Teilbäume
-    // neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Der Lauf kostet
-    // genau EINEN Artikel.
-    //
-    // `ranges[rang]` ist die Zuordnung datenseitige Fundstelle → gemalte
-    // Stelle. Sie geht auf, solange alle Fundstellen des Artikels malbar sind
-    // (der Regelfall: Wortlaut-Treffer) — die Segment-Reihenfolge des Index
-    // folgt bewusst der Dokument-Reihenfolge. Ist die Fundstelle NICHT malbar
-    // (Gliederungspfad, Bild-Alt, ausgeblendeter Apparat), gibt es keinen
-    // Range: dann bleibt es beim Artikel, statt eine Stelle zu behaupten (§8).
-    const ranges = sammleTrefferRanges(art, sucheTrim);
-    // Das SPRUNGZIEL wird immer gemalt (§4.5) — unabhängig davon, ob der
-    // IntersectionObserver es schon gemeldet hat. Ohne diesen Schritt landete
-    // man auf einer Fundstelle, die erst im nächsten Beobachter-Zyklus
-    // aufleuchtet; bei einem Ziel ausserhalb des bisherigen Sichtbands wäre das
-    // sichtbar zu spät.
-    rangesRef.current.set(art.id, ranges);
-    male();
-    const start = ranges[eintrag.rang]?.startContainer;
-    const el = (start
-      ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
-      : art);
-    el?.scrollIntoView({ block: 'center', behavior: 'auto' });
-    blinkAus();
-    art.classList.add('lc-ziel-blink');
-    blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
-  }, [blinkAus, folge, male, sucheTrim]);
+    const zeige = (art: HTMLElement) => {
+      // Frisch sammeln (nicht aus `rangesRef` recyceln): Ranges hängen an
+      // konkreten Text-Knoten, und zwischen zwei Klicks kann der Reader
+      // Teilbäume neu gerendert haben (Bezugs-/Historie-Shard läuft nach). Der
+      // Lauf kostet genau EINEN Artikel.
+      //
+      // `ranges[rang]` ist die Zuordnung datenseitige Fundstelle → gemalte
+      // Stelle. Sie geht auf, solange alle Fundstellen des Artikels malbar sind
+      // (der Regelfall: Wortlaut-Treffer) — die Segment-Reihenfolge des Index
+      // folgt bewusst der Dokument-Reihenfolge. Ist die Fundstelle NICHT malbar
+      // (Gliederungspfad, Bild-Alt, ausgeblendeter Apparat), gibt es keinen
+      // Range: dann bleibt es beim Artikel, statt eine Stelle zu behaupten (§8).
+      const ranges = sammleTrefferRanges(art, sucheTrim);
+      // Das SPRUNGZIEL wird immer gemalt (§4.5) — unabhängig davon, ob der
+      // IntersectionObserver es schon gemeldet hat. Ohne diesen Schritt landete
+      // man auf einer Fundstelle, die erst im nächsten Beobachter-Zyklus
+      // aufleuchtet; bei einem Ziel ausserhalb des bisherigen Sichtbands wäre
+      // das sichtbar zu spät.
+      rangesRef.current.set(art.id, ranges);
+      male();
+      const start = ranges[eintrag.rang]?.startContainer;
+      const el = (start
+        ? (start.nodeType === 1 ? start as Element : start.parentElement) as HTMLElement | null
+        : art);
+      el?.scrollIntoView({ block: 'center', behavior: 'auto' });
+      blinkAus();
+      art.classList.add('lc-ziel-blink');
+      blink.current = { el: art, id: window.setTimeout(() => blinkAus(), 2400) };
+    };
+    const da = finde();
+    if (da) { zeige(da); return; }
+    // ZIEL IN EINER ZUGEKLAPPTEN SEKTION (B3, zweite Hälfte). Die Lesespalte
+    // bleibt seit S8 vollständig, aber sie bleibt auch klappbar — ein
+    // Sektionskopf-Klick genügt, und der Zielartikel ist nicht im DOM. Der
+    // Artikel-Sprung (`springeZuArtikel`, inhalt.tsx) öffnet seine Vorfahren
+    // seit je selbst; dieser Pfad tat es nicht und war damit für einen Teil
+    // seiner EIGENEN Trefferliste tot. Dieselbe Mechanik, dieselbe Quelle:
+    // `pfadZu` über die Sektionen, dann `setOffen` — hier wird nichts
+    // zweitmalig zugeordnet (§5).
+    const pfad = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === eintrag.token)) ?? [];
+    if (!pfad.length) return;
+    setOffen((o) => { const naechst = { ...o }; for (const sid of pfad) naechst[sid] = true; return naechst; });
+    // Der Artikel entsteht erst im Commit des Aufklapps. Zwei Frames später
+    // steht er samt Layout — dieselbe Zweistufigkeit wie beim Sektions-Sprung
+    // (inhalt-sprung.tsx). Erst dann darf gemessen und gescrollt werden.
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      const el = finde();
+      if (el) zeige(el);
+    }));
+  }, [blinkAus, folge, male, sucheTrim, sektionen, setOffen]);
 
   const springeZuFundstelle = useCallback((delta: number) => {
     const len = folge.length;
