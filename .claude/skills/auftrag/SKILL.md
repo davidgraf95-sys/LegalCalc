@@ -207,7 +207,14 @@ Zweitblicks), Risiko-Pfad-Bau, alles Parallelisierbare oder Kontext-Schwere
 kosteten als Dispatch mehr als die Sache; Agenten mussten Konfig-Flächen
 dreifach ablehnen, die der Orchestrator mit Freigabe selbst ändern darf.)*
 
-**Drei Orchestrator-Fallen (belegt 5./7.8.2026):** (c) **Keine main-Commits,
+**Vier Orchestrator-Fallen (belegt 5./7.8. und 9.8.2026):** (d) **Keine
+Orchestrator-Commits in einem Worktree, solange ein Bau-Agent darin baut** —
+geteilter git-Index; der Agent committet ggf. mit `git add -A` und nimmt die
+fremden uncommitteten Doku-Edits mit (Beinahe-Vorfall 9.8.2026, W2·19/S8: zwei
+Orchestrator-Doku-Commits landeten während des Baus im Agenten-Worktree, die
+ersten zwei Agenten-Commits liefen über `add -A` und blieben nur zufällig
+sauber). Datei-EDITS ohne git-Operationen sind das erlaubte Maximum; committet
+wird im ruhigen Fenster zwischen zwei Agenten-Läufen. (c) **Keine main-Commits,
 solange eine eigene Landekette offen ist** — jeder main-Push macht die
 wartenden grünen PRs BEHIND, Auto-Merge feuert dann nie, und jedes Nachziehen
 kostet einen vollen CI-Lauf (real 7.8.2026: drei Zyklen à ~15 min an einem

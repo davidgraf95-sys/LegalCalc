@@ -118,6 +118,7 @@ maschinelles Tor.* Glieder-Aufzählung und Code-Bestands-Inventar (kontext.ts/Ko
   `W1·4`** (Entparkung 3.8.2026, David): sie ist der erste Arbeitsschritt des Schrittes, kein Wartegrund.
 
 <!-- @blockers
+pr-480-landung-s9-s10: W2·19 geparkt (9.8.2026): S8 fertig in Draft-PR #480 — vor Merge fehlen Batterie + §9-Bug-Check (Skill landung); danach S9/S10. KEIN David-Gate, jede Bau-Session kann übernehmen (Branch feat/w2-19-s8-s10)
 §4-lizenz: Live-Rechtsprechung — CC-BY-SA vs. Art. 5 URG, CORS/Rate-Limits unbestätigt
 vps-bestellung-david: E3-Serving + E4-UI hängen an einer VPS-Bestellung (David, ~15 Min; Entscheid David 8.8.2026: «mach ich erst wenn UI noch optimierter wird» — bewusst zurückgestellt, nicht vergessen) — Dossier `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md` (PR #271). ECHTES David-Gate, kein Bau-Blocker. Bis dahin sind QS-DATA/W2·6-DATA nur im NICHT-VPS-Teil baubar (E0–E4 sind lokal fertig). Befund 20.7.2026: dieser Blocker stand bisher NUR im Fliesstext («🔒 BLOCKER»), das @meta trug `blocker: null` — für `check:plan` unsichtbar.
 richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE (20.7.2026): Filtern/Facette/Verlinkung sind FREI und gebaut (#309/#311); gesperrt bleiben allein RANKING und PROGNOSE. Nur deskriptiv; bewusste Freigabe Davids erforderlich (heikel: Standesrecht, Persönlichkeitsschutz, richterliche Unabhängigkeit)
@@ -287,7 +288,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
 > ihr Vokabular; Fehlen ist zulässig und zeigt «Grösse ungeschätzt». Definition und Schätzgrundlage:
 > [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Feld `groesse`».
 
-<!-- @queue: W2·19-GLIEDERUNG, W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ Prozess-Schritte stehen vorn (Entscheid David 8.8.2026: «prozess soll grundsätzlich
      vorgehen» — revidiert die Produkt-Phase vom Vormittag). Gequeuete Querschnitt-Schritte
      steigen seit demselben Datum in die Hauptreihenfolge auf (aufloesen.ts). -->
@@ -299,7 +300,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
      passt»); will er später die Gesetzesdarstellung vorziehen, `W2·5h-GESETZ-UI` an den Kopf
      dieser Zeile setzen (`W2·5d` ist erledigt — eine done-ID in der @queue macht Regel 8.3 rot) (der frühere Platzhalter `W2·12-HYGIENE` ist erledigt, Chronik 3.8.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — `W2·19-GLIEDERUNG` (Davids Gliederungs-Paket) ist seit 8.8.2026 im Bau (`wip`, eigene Session auf Davids Wunsch; Diagnose liegt als Bau-Spec bereit) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Am 8.8.2026 gelandet → Chronik: `QS-SKILL-DIAET` (PR #468), `QS-CONFIDENCE-EHRLICH` (PR #469), `QS-AUDIT-VERWEISE` (PR #470, alle 8 Checklisten-Positionen).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — `W2·19-GLIEDERUNG` (Davids Gliederungs-Paket) ist `parked` (S1–S7 live via PR #478/#479, S8 fertig in Draft-PR #480 — Landung + S9/S10 in der Folge-Session) (Queue-Kopf; Prozess vor Produkt, Entscheid David 8.8.2026; Fokus-Dekret 24.7.2026 unten). Landungen 8.8.2026 → Chronik (#468–#470).
 > Stand 8.8.2026: Teilschritte -S/-V/-O/-J sind gelandet (PR #464), vom Dach offen ist nur noch `-J3` (Risikopfad, eigene Session).
 > `QS-TOK` ist am 5.8.2026 abgeschlossen (Rest T10 · T12-Stufe-2 · T14-Stufe-1 · T16 · T20
 > gelandet via PRs #457/#458; Stand-Block im Fahrplan §Stand 5.8.2026, Wortlaut des
@@ -546,13 +547,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   (Blocker zuerst); die frühere `dep`-Kette B3→B19 war reine Abarbeitungsordnung, kein fachlicher
   Zwang. Sessionfüllende Batches à mehrere Positionen, alles reine Darstellungsschicht (kein
   Risikopfad), je Position eigener Commit mit Trailer `Roadmap: W2·17-UI-BEFUNDE`.
-  - [x] **B3 · Klebende Leisten (K-01)** — 7 Befunde (Blocker 2 · Hoch 4). §4. ✅ 8.8.2026, PR #471.
-  - [x] **B4 · Leseansicht Gesetz (K-14)** — 12 Befunde (Blocker 2 · Hoch 4). ✅ 8.8.2026, PR #472 (LM-155: Verwerfen-Entscheid von David am 8.8.2026 REVIDIERT — Neubau freigegeben, siehe Position B4-N1; LM-158 → `W2·5h-GESETZ-UI` K6 gemäss Grenz-Auflage §24.1; Rest gebaut/überholt). §5.
-  - [x] **B4-N1 · LM-155-Neubau: Gliederungs-Tiefenführung im Gesetzes-Leser** — Freigabe David 8.8.2026. ✅ 8.8.2026, PR #475 (Baum-Ebenen typografisch + per gestufter Schrittweite unterscheidbar; Entwurf gegen die A28-Scheiter-Gründe begründet, nur SektionBaumTOC). §5 (LM-155).
-  - [x] **B5 · Druck, Farbschema, Reiter- und Split-Ansicht (K-16 + K-17 + K-18)** — 8 Befunde (Blocker 2 · Hoch 2). ✅ 8.8.2026, PR #473 (7/8 + LM-174: David hat am 8.8.2026 auf System-Schema umentschieden — 19.6.-Entscheid «Tageszeit» revidiert, Bau-Position B5-N1; Rest gebaut/nachgemessen-überholt). §6.
-  - [x] **B5-N1 · LM-174-Umbau: Farbschema folgt beim Erstbesuch dem System** — Entscheid David 8.8.2026 (revidiert 19.6.2026). ✅ 8.8.2026, PR #474 (pristine liest prefers-color-scheme, Label «Automatisch (System)», Live-Listener auch pristine). §6 (LM-174).
-  - [x] **B6 · Fehler-, Leer- und Ladezustände (K-15)** — 14 Befunde (Blocker 1 · Hoch 9). ✅ 8.8.2026, PR #476 (10/14; übersprungen mit Begründung in §7: LM-162/LM-164 warten auf David, LM-166 Risikopfad → Daten-Session, LM-163 Browser-Rendering — eigene Untersuchung). §7.
-  - [x] **B7 · Overlays und Menüfenster (K-02)** — 8 Befunde (Blocker 1 · Hoch 3). ✅ 8.8.2026, PR #477 (5/8: LM-010/LM-015 Scrim-Frage → @david-fragen; LM-016 eigener Schritt → Fehlerbuch). §8.
+  - [x] **B3–B7 (inkl. B4-N1, B5-N1)** ✅ 8.8.2026, PRs #471–#477 — Detail und Übersprungs-Begründungen: Chronik → «W2·17 B3–B7 (8.8.2026)» und Fahrplan-§§.
   - [ ] **B6-N1 · LM-162-Umbau: Ergebniskasten wächst mit dem Inhalt** — Entscheid David 8.8.2026 («umentscheiden», revidiert den CLS-Festhöhen-Entscheid); Umsetzung muss das CLS-Budget trotzdem halten (reservierter Mindestplatz + sanftes Wachsen statt Festhöhe). §7 (LM-162).
   - [ ] **B6-N2 · LM-164-Umbau: «nicht erfasst» wird ausgewiesen** — Entscheid David 8.8.2026 («umentscheiden», revidiert die Doktrin «Default bleibt nackt»); Beschriftung ehrlich (§8), beide Themes. §7 (LM-164).
   - [ ] **B7-N1 · Scrim hinter Overlays (LM-010/LM-015)** — Entscheid David 8.8.2026 («scrim ja», revidiert die Minimalismus-Vorgabe vom 28.7. für Overlay-Hintergründe); dezent, Token-Rolle, beide Themes, a11y-fest. §8 (LM-010/LM-015).
@@ -568,42 +563,30 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   - [ ] **B17 · Schaltflächen — Varianten, Gewichtung, Deaktiviert-Zustand (K-09a)** — 8 Befunde (Blocker 0 · Hoch 1). §18.
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
-- [~] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026 abends, Diagnose noch am selben Abend — eigene Session auf Davids Wunsch: «neue session soll sich mit der gliederung alleine beschäftigen»)*
-  <!-- @meta id: W2·19-GLIEDERUNG · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
+- [ ] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026; erweitert im Chat 8.8. auf die ganze Seitenleiste — Wortlaut, Entscheide (a)(b)(c) und drei §11-Entscheide: Spec §9-Kopf/§11)*
+  <!-- @meta id: W2·19-GLIEDERUNG · status: parked · blocker: pr-480-landung-s9-s10 · of: ja · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
   **Bau-Spec:** [FAHRPLAN-W2-19-SEITENLEISTE.md](fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md) §9
-  (Ultracode-Fundament 8.8.2026: 4 Bestandes-Berichte, 3 unabhängige Konzepte, Jury 3:0,
-  Synthese; Slices S1–S10). **Erweiterung David 8.8.2026 (Chat, Session-Start):** «offen in der
-  Umsetzung — die ganze Seitenleiste überarbeiten, inkl. Suche und Kontext; Ziel ist
-  Nützlichkeit; Gliederung und Übersicht sind sehr wichtig; verschiedene Arten von
-  Gesetzen/Verordnungen beachten, damit das Grundfundament stimmt; als erstes Fundament bauen,
-  dann Detailfragen; auch Gesetzes-Fliesstext darf bearbeitet werden.» Drei Rückfragen
-  entschieden: **(a)** e2e-Tests DÜRFEN in deklarierten eigenen Commits an das neue Verhalten
-  angepasst werden (ersetzt das frühere «nicht anfassen»); **(b)** Kontext-Bereich zeigt BEIDES
-  — Erlass-Übersicht (Stand, Art, Umfang, amtliche Quelle) und artikelbezogenen Kontext
-  (Rechtsprechung, Verweise, Historie); **(c)** Suche wird Trefferliste in der Seitenleiste mit
-  Textausschnitten — die Lesespalte bleibt vollständig und springt zum Treffer. Grösse darum
-  M→L. **Zusatz-Auftrag David (gleicher Chat):** überlegen, welche Informationen im Bestand
-  vorhanden sind (Struktur-Sidecar, Bezüge/Rechtsprechung, Revisionen/Historie, Fussnoten,
-  Randtitel, eId/ELI-Links, Currency, Grundart-Register, …) und sie so einsetzen, dass «die
-  nützlichste und gleichzeitig übersichtlichste Gesetzesdarstellung» entsteht —
-  Informations-Inventar ist Teil des Fundaments. **Drei §11-Entscheide David 8.8.2026 spät
-  (Protokoll in der Spec):** kleine Erlasse ab Start sichtbar · SG-3849 sofort ehrlicher
-  §8-Hinweis + Korpus-Prüfauftrag · Sidecar-Nachzug 42 Kantonserlasse als eigener
-  gegenprüfungspflichtiger Folge-Schritt.
-  Die Diagnose ([Dossier — ZUERST LESEN, es ist die Bau-Spec](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md)) hat die Wurzeln vermessen: Haupt-Bremser ist der Hover-Dimm-Effekt der LESESPALTE (1686 simultane Transitionen, TBT 8.9 s @4×; Davids Dimm-Effekt vom 18.6. bleibt, nur die transition fällt — F1a), dazu das konstruktiv tote Auto-Zuklappen (0 Ereignisse; Wiederherstellung von Davids Auftrag K 26.6. mit Frame-gleicher scrollTop-Kompensation, CLS-Beweis = bestehende a9/a33-Tests unverändert grün — F2), unmemoisiertes Baum-Rendering (11'075 Knoten dauerhaft gemountet, Klick 231 ms @4× — F3: memoisierte Zeilen, zugeklappte Äste unmounten; der Baum ist KEIN Normtext, §15-Virtualisierungsverbot greift nicht), ungedrosselter Scroll-Listener `App.tsx:97` (F4: rAF wie der A16-Nachbar) und die missglückte Hervorhebung (sechsfaches `aria-current` = §8-Falschaussage; F5: EINE Positionsmarke, 2-px-Kante brass-500 statt Goldfläche, Sidebar-Muster, beide Themes ≥3:1). **Entscheid David 8.8.2026 spät: der Dimm-Effekt vom 18.6. «kann auch weg — Gliederung ist wichtiger»** ⇒ F1 = Hover-Dimmen der Lesespalte ERSATZLOS entfernen (Transition UND :has-Ketten — schnellster Weg auf den gemessenen 300-ms-Boden); F1b entfällt damit. Nachmessen gegen die Dossier-Tabelle ist Teil der DoD; danach LM-163 (B6 §7) gegen die neue Lage prüfen. Golden byte-gleich; e2e-Dateien nicht anfassen — gewollte Test-Konflikte melden.
+  (Ultracode-Fundament, Slices S1–S10); Diagnose: [Dossier 8.8.](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md).
+  **Stand 9.8.2026:** S1–S7 gelandet (PRs #478/#479) · **S8 fertig, GEPARKT in Draft-PR
+  #480** (Bau grün; vor Merge: Batterie + §9-Bug-Check) · S9–S10 offen (Modi/T11/Anhang ·
+  Mobile/Pane, Zonen-Komponenten, Roadmap-Nachträge inkl. Sidecar-Nachzug + SG-3849-Prüfauftrag).
+  **DoD-Beleg:** Perf-Nachmessung 9.8.2026 (Datei kommt mit PR #480: bibliothek/betrieb/gliederung-perf-nachmessung-2026-08-09.md; Kernziele erreicht; Restposten als W2·18-Zeilen/David-Entscheide); LM-163 geprüft:
+  Verdacht widerlegt (FAHRPLAN-UI-BEFUNDE Z. 334).
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
   - [ ] **Kalender-Export: Termine als «frei» markieren (TRANSP:TRANSPARENT)** — Go David 8.8.2026 («frei ok»); bricht deklariert einen Golden-Anker ⇒ fachliche Änderung mit Golden-Neuschrieb im eigenen Commit (Herkunft: Session-Karte 3./4.8.2026, archiv/STRUKTUR-SESSIONKARTEN.md).
-  - [x] **Gliederung im Gesetzes-Leser (Davids Befunde 8.8.2026 abends)** — ✅ überführt: Diagnose im [Dossier](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md), Bau als eigener Schritt `W2·19-GLIEDERUNG` (Queue-Spitze, eigene Session auf Davids Wunsch).
-  - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Breite der Brotkrume-Leiste angleichen** — strukturelle Lücke zwischen Kopfzeile und Brotkrume auf jeder Seite mit Brotkrume (Befund B7 8.8.2026, bewusst zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
-  - [ ] `check:design-tokens` scannt Kommentartext mit — ein Kommentar mit Utility-Platzhalter (`text-ink-*`) macht das Tor rot und kostet je Vorfall einen Tor-Zyklus; Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund B4-N1 8.8.2026 — nicht Davids Fund, hier verortet als kleinste passende Sammelstelle.)*
-  - [ ] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt — wartet auf David:** Auftrag K (26.6.) lässt den Baum beim Lese-Scroll im Sichtband wachsen; Chromiums Input-Fenster macht daraus eine Timing-Los-Flake (~10–20 % kalt). Drei Wege (a: kein Aufklapp während Lese-Scroll · b: Aufklapp beim Laden · c: Kontrakt neu fassen), alle ändern Zugesagtes. Dossier: [a33-Alt-Flake](bibliothek/betrieb/a33-lesescroll-cls-altflake-2026-08-09.md); danach Fix mit Rot-Beweis. *(W2·19-Bug-Check 9.8.2026 — Alt-Mangel auf main, keine Regression.)*
-  - [ ] **Baum-Fokus beim Auto-Zuklappen retten (B8, WCAG 2.4.3):** liegt `document.activeElement` in einem zu schliessenden Ast (schmaler Pfad: Taste t, dann j/k/Rad), Fokus vor `setTocBaum` auf die Elternzeile setzen — ~10–15 Zeilen um `inhalt-hooks.tsx:528–546`. *(W2·19-Bug-Check 9.8.2026, bewusst zurückgestellt.)*
-  - [x] **Beobachtungsposten `verzahnung.e2e.ts:201`:** ✅ Wurzel gefixt 9.8.2026 (`ea1fcedf3`): zwei `boundingBox()!` ohne Stabilitäts-Wartung; atomare Poll-Messung, unter 8 Workern + repeat-each 15/15 und 52/52 grün (vorher 2/3 rot).
-  - [ ] **Alt-Flake `qsui-hierarchie.e2e.ts` (Vorlagen-Block):** «kein Formvorschrift-Badge ([data-formgate])» fällt nicht-deterministisch ~25 % je Fall — auf main WIE Branch (Nullprobe 9.8.2026: 25/84 main vs. 18/84 Branch, workers=1, Testdatei byte-identisch); Badge in Isolation stets da, Meldung beschuldigt das Produkt für eine Zeitbedingung. Gleiche Familie wie Popover-Fix `ea1fcedf3`; Wurzel-Fix mit Mandat auf `e2e/qsui-hierarchie.e2e.ts`.
-  - [ ] **Tor gegen die Flake-Familie «einmaliges DOM-Lesen, Meldung zeigt aufs Produkt»:** `check:*`, das im e2e-Bestand `boundingBox()!`-Non-Null-Assertions und ungewartete `querySelectorAll(...).find(...)`-Einzel-Lesungen in `page.evaluate` aufspürt — dritter Fall derselben Familie in einer Session (a33-Signatur · verzahnung:201 · qsui-hierarchie), jeder kostete einen Diagnose-Zyklus; einmal rot zeigen (§6.7). *(Agent-Vorschlag 9.8.2026, hier verortet als kleinste passende Sammelstelle.)*
-  - [ ] **Wording bei Anhang-Dominanz:** «Umfang: N Artikel» in Kopf UND Erlass-Übersicht sagt bei anhang-dominierten Erlassen (SG-3849: 97 % Anhang) das Falsche — gemeinsam auf «Einträge» o. ä. umstellen (beide Stellen zugleich, §5; Bug-Check-Nachklang S6/S7 9.8.2026).
-  - [ ] **Tor gegen case-blinde Korpus-Pfad-Literale:** `check:*`, das String-Literale der Form `public/normtext/**.json` in `src/`, `scripts/`, `e2e/` zeichengenau gegen den git-Baum prüft — macOS löst `VwVG.json`→`VWVG.json` case-blind auf, der Linux-CI nicht (PR #478: 4 deterministische CI-Rot-Fälle bei lokal grün; Wurzel-Fix `normtext-fixture.ts` deckt nur, wer ihn nutzt). Sweep-Skript der Fix-Session 9.8.2026 als Vorlage; einmal rot zeigen (§6.7). *(Agent-Vorschlag, hier verortet als kleinste passende Sammelstelle.)*
+  - [ ] **LM-016-Wurzel: Topbar-Icon-Zeile an die Brotkrume-Breite angleichen** (Befund B7 8.8.2026, zurückgestellt: braucht eigenen Entscheid statt Menü-Pflaster).
+  - [ ] `check:design-tokens` scannt Kommentartext mit (Utility-Platzhalter im Kommentar = rotes Tor, je Vorfall ein Zyklus); Wurzel-Fix: Kommentar-Strip vor dem Scan, einmal rot zeigen (§6.7). *(Agent-Fund 8.8.2026.)*
+  - [ ] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt — wartet auf David (a/b/c):** drei Wege im [a33-Dossier](bibliothek/betrieb/a33-lesescroll-cls-altflake-2026-08-09.md); danach Fix mit Rot-Beweis. *(Alt-Mangel auf main, keine W2·19-Regression.)*
+  - [ ] **Baum-Fokus beim Auto-Zuklappen retten (B8, WCAG 2.4.3):** Fokus vor `setTocBaum` auf die Elternzeile, ~10–15 Zeilen um `inhalt-hooks.tsx:528–546`. *(W2·19-Bug-Check, zurückgestellt.)*
+  - [ ] **Alt-Flake `qsui-hierarchie.e2e.ts` (Vorlagen-Block, ~25 %/Fall, Nullprobe-belegt 25/84 auf main):** Wurzel-Fix mit Mandat; Familie + Zahlen im a33-Dossier-Nachtrag (PR #480).
+  - [ ] **Alt-Flake `leser-weiterlesen-r4-r8` (Shard-Kontext, vorbestehend, Befund 9.8.2026):** gleiche Familie; Wurzel-Fix mit Mandat, Messbedingung protokollieren.
+  - [ ] **Klick-Pfad der Gliederungs-Zeile (Perf-Restposten W2·19):** 161 ms @4×, OR/BGFA-Verhältnis 7→14.6 verschlechtert; Messpunkte in der Perf-Nachmessung (bibliothek, via PR #480). Skill perf.
+  - [ ] **Lese-Kadenz-TBT @4× (U3-Rest, ~10 s/32 s, @1× unmerklich):** Spy-/Zuklapp-/Re-Render-Pfad; Messvorschrift: Kadenz-Kopfzeile der Nachmessung.
+  - [ ] **Liste `/gesetze`: ~370-px-Leerfläche am Seitenende schliessen** (LM-163-Alternativerklärung, risikoarm; Nachprüfung 9.8.2026).
+  - [ ] **Wording bei Anhang-Dominanz:** «N Artikel» → «Einträge» o. ä., Kopf UND Erlass-Übersicht zugleich (§5; SG-3849 97 % Anhang).
+  - [ ] **Tor gegen case-blinde Korpus-Pfad-Literale** (`public/normtext/**.json`-Strings zeichengenau gegen den git-Baum; macOS case-blind vs. Linux-CI, PR #478): `normtext-fixture.ts` deckt nur Nutzer; einmal rot zeigen (§6.7).
+  - [ ] **Tor gegen die Flake-Familie «einmaliges DOM-Lesen ohne Wartung»** (`boundingBox()!`, ungewartete Einzel-Lesungen in `page.evaluate`): vier belegte Fälle, je ein Diagnose-Zyklus Kosten; einmal rot zeigen (§6.7).
   David sammelt Fehler aus der täglichen Nutzung formlos hier als `- [ ]`-Zeile (oder meldet sie im
   Chat — die Session trägt sie ein). Eine Fix-Batch-Session arbeitet mehrere Positionen sortenrein
   ab: ein Branch, einmal Tore, eine Landung. **Risikopfad-Funde gehören NICHT hierher**, sondern als

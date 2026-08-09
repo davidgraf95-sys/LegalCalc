@@ -71,6 +71,13 @@ Gegengekoppelt an `golden:vergleich` sowie `check:normtext` und
 
 Detail-Begründungen je Regel: `fahrplaene/FAHRPLAN-PERFORMANCE.md` (Querschnitt `QS-PERF`).
 
+**Werkzeug-Falle IntersectionObserver (9.8.2026, W2·19/S8):** In der versteckten
+Browser-Pane feuern IO-Callbacks GAR NICHT — auch nicht für handgebaute Observer;
+das sieht wie ein Produktfehler aus (hat real ~20 Min. Diagnose gekostet). Wer
+IO-/Sichtbarkeits-Verhalten prüft, tut das in Playwright, nie in der Pane.
+*(Hinweis: PR #480 trägt im selben Abschnitt einen Mess-Hygiene-Block aus derselben
+Session — beim Rebase beide behalten.)*
+
 ## §-Konkordanz (für Alt-Verweise im Bestand)
 
 Die Unterparagraphen von §15 sind seit dem A4-Umzug (25.7.2026, `b2fa14dda`)
