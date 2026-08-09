@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import {
   kontextSync, kontextEntscheide, kontextSoftLaw, mischeMaterialien, normenFuer,
-  type KontextTyp, type EntscheidRef, type MaterialBezug,
+  type KontextTyp, type EntscheidRef, type MaterialBezug, type ArtikelKontextAnsicht,
 } from '../../lib/kontext';
 import { ladeLeitfallShard, artikelProEntscheid } from '../../lib/rechtsprechung/norm-index';
 import { artikelWerkzeugGruppen } from '../../lib/normtext/werkzeuge';
@@ -13,6 +13,12 @@ import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import { KantenChip } from '../verzahnung/KantenChip';
 import { StatusBadge } from '../verzahnung/StatusBadge';
+import { ArtikelKontextZeilen } from './ArtikelKontextGruppe';
+// §6.6-Split (9.8.2026): die geteilte Gruppen-Hülle lebt daneben; der
+// Re-Export hält den bisherigen Import-Pfad `./KontextPanel` für alle
+// Bestands-Aufrufer stabil (§6 Ziff. 3 — kein Test wird angefasst).
+import { KontextGruppe } from './KontextGruppe';
+export { KontextGruppe } from './KontextGruppe';
 import {
   ladeRevisionShard, revisionFuerToken, klassifiziereFassungsBezug, entscheidDatum,
   revisionDetailText, type RevisionShard,
@@ -77,39 +83,6 @@ function kurzDatum(iso: string): string {
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
 }
 
-// Exportiert (V1.3): der EntscheidLeser rendert seine beiden Richtungs-Gruppen
-// («Zitierte Normen» / «Zitierte Entscheide») mit DERSELBEN Hülle im Panel —
-// eine Anatomie, keine zweite Gruppen-Optik (§5).
-export function KontextGruppe({ titel, richtung, anzahl, children, hinweis, punkt }: {
-  titel: string;
-  /** Beziehungstyp als Text (juris/EUR-Lex-Muster): «Wendet an» u. a.; nie Farbe. */
-  richtung?: string;
-  anzahl: number;
-  children: ReactNode;
-  hinweis?: ReactNode;
-  /** Farb-Wörterbuch V2·C-3 (§4b-B): Familien-Punkt vor dem Gruppentitel —
-   *  'norm' = brass (Erlasse/Verweise), 'entscheid' = slate (Rechtsprechung),
-   *  'material' = sage (Botschaften/Vernehmlassungen/Soft-Law, kein Gesetzesrang).
-   *  Redundant zum Gruppentitel (`aria-hidden`, Farbe trägt NIE allein, §13/F2);
-   *  sitzt auf `--paper`. Ohne Prop kein Punkt (Werkzeuge/Revisionen neutral). */
-  punkt?: 'norm' | 'entscheid' | 'material';
-}) {
-  const punktKlasse = punkt === 'entscheid' ? 'lc-punkt lc-punkt-entscheid'
-    : punkt === 'material' ? 'lc-punkt lc-punkt-material'
-    : punkt === 'norm' ? 'lc-punkt' : null;
-  return (
-    <div className="space-y-2">
-      <h3 className="lc-overline text-ink-600">
-        {punktKlasse && <span className={punktKlasse} aria-hidden />}
-        {richtung && <span className="text-brass-700">{richtung} · </span>}
-        {titel} <span className="num text-ink-500">{anzahl}</span>
-      </h3>
-      {children}
-      {hinweis && <p className="text-micro text-ink-500">{hinweis}</p>}
-    </div>
-  );
-}
-
 // Geteilter «⧉ daneben öffnen»-Knopf (Split-View B-2) — EINE Anatomie für alle
 // Panel-Zeilen; Sichtbarkeit steuert der Aufrufer über das bestehende Gating
 // `kannOeffnen && !istOffen` (≥lg + freie Kapazität, pane-sicher).
@@ -125,7 +98,7 @@ function DanebenKnopf({ ziel, label, oeffneDaneben, className = 'ml-1' }: {
   );
 }
 
-export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, variante = 'lesespalte' }: {
+export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, artikelKontext = null, variante = 'lesespalte' }: {
   typ: KontextTyp;
   normKeys: readonly string[];
   /** Reader-eigene Gruppen (KontextGruppe), VOR den Standard-Gruppen gerendert —
@@ -137,6 +110,21 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   /** V1 (W2·10-UI-NAV): zitierte Norm-Strings des Entscheids — schaltet die
    *  «Passende Werkzeuge» artikelscharf (Rausch-Filter, #28). */
   artikelZitate?: readonly string[];
+  /** W2·19-GLIEDERUNG/S7 (Bau-Spec §5.2): Wegweiser zum AKTIV GELESENEN Artikel
+   *  des Gesetzes-Lesers — Praxis-Zahl, letzte Textänderung, ausgehende
+   *  Verweise, Sprung zur Werkzeug-Gruppe.
+   *
+   *  EIGENE PROP, NICHT `artikelZitate` (Bau-Spec §5.2 ausdrücklich): jene
+   *  speist laut `kontextSync` ausschliesslich `werkzeugeFuerZitate()`. Sie dem
+   *  Spy-Artikel nachzuführen würde (1) die erlass-weite Werkzeugliste still
+   *  verengen und (2) die Werkzeug-Gruppe bei JEDEM Artikelwechsel in der Höhe
+   *  bewegen — mitten im E4-CLS-Messfenster.
+   *
+   *  HART GEGATET: die Gruppe rendert nur bei `typ === 'norm'` UND gesetzter
+   *  Prop. `EntscheidLeser.tsx` rendert dieselbe Komponente mit `artikelZitate`
+   *  und setzt diese Prop nie — beides zusammen schliesst ein Leck aus
+   *  (Sonde: src/tests/kontext-artikel-s7.test.tsx). */
+  artikelKontext?: ArtikelKontextAnsicht | null;
   /** E4/A32 (David 16.7.2026): 'seitenleiste' = kompakte Darstellung unterhalb
    *  der Gliederung in der TOC-Spalte des Gesetz-Readers. Zwei Unterschiede zur
    *  Standard-Lesespalten-Form (Markup dort byte-gleich unverändert):
@@ -302,6 +290,15 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   // NICHT als leer (kein vorzeitiges Leerbild → kein Flash/CLS).
   const softLawLaden = typ !== 'material' && (!softLawGeladen || softLawGeladen.key !== normKeysKey);
 
+  // S7: der Artikel-Kontext wird HIER gegatet — `typ === 'norm'` schliesst den
+  // Entscheid-/Material-Reader aus, selbst wenn eine künftige Aufrufstelle die
+  // Prop versehentlich setzte (Gürtel und Hosenträger, Bau-Spec §5.2).
+  const artikelKtx = typ === 'norm' ? artikelKontext : null;
+
+  // `istLeer` spricht über die QUERVERWEIS-Gruppen (Entscheide/Materialien/
+  // Werkzeuge) — der Wegweiser steht seit dem CI-Befund ausserhalb und ist keine
+  // solche Menge; er darf die Leer-Aussage darunter darum weder auslösen noch
+  // unterdrücken.
   const hatSync = normen.length > 0 || alleMaterialien.length > 0 || werkzeuge.length > 0 || zeigeArtikelWerkzeuge;
   const istLeer = !zusatzGruppen && !hatSync && !entscheideLaden && !softLawLaden
     && !botschaftenLaden && !botschaftenFehler && botschaften.length === 0
@@ -314,6 +311,11 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
   const seitenleiste = variante === 'seitenleiste';
   const laedtNoch = entscheideLaden || softLawLaden || botschaftenLaden
     || revLaden || vernehmlassungenLaden;
+  // Verdeckt das Gating die Querverweis-Gruppen gerade? Der Wegweiser braucht
+  // die Antwort, weil sein Werkzeug-Sprung auf eine dieser Gruppen zielt: ein
+  // Knopf, dessen Ziel noch gar nicht im DOM steht, wäre ein toter Knopf
+  // (§13/F4) — dieselbe Regel, die der Bug-Check als B4 aufgestellt hat.
+  const gruppenVerdeckt = seitenleiste && laedtNoch;
 
   return (
     <section aria-labelledby="kontext-titel"
@@ -323,7 +325,42 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
         <span aria-hidden className="h-px flex-1 bg-line" />
       </div>
 
-      {seitenleiste && laedtNoch ? (
+      {/* W2·19-GLIEDERUNG/S7 — «Zu Art. X»: der Wegweiser zur Leseposition
+          (Bau-Spec §5.2). Er beantwortet vier Fragen und springt für das Detail
+          dorthin, wo es ohnehin steht: Artikelfuss (Praxis) bzw. Werkzeug-Gruppe
+          weiter unten (§5 SSoT — nie eine zweite Liste derselben Sachen).
+
+          AUSSERHALB DES LADE-GATINGS, und das ist ein Produkt-Entscheid mit
+          Messbeleg (CI-Rot Shard 7/8, PR #479, 9.8.2026): der Wegweiser stand
+          zuerst INNERHALB des `laedtNoch`-Zweigs. Der Seiten-Snapshot zum
+          Fehlerzeitpunkt zeigt, was das heisst — die OR-Seite war nach 30 s
+          vollständig da (Kopf, Gliederung, Erlass-Übersicht), aber das Panel
+          stand unverändert auf «Kontext wird geladen …», weil einer der FÜNF
+          async-Feeds (Entscheide · Soft-Law · Botschaften · Revisionen ·
+          Vernehmlassungen) auf dem Runner so lange braucht.
+          Fachlich hängt der Wegweiser an KEINEM dieser Feeds: er wird aus
+          Daten gebaut, die der Leser ohnehin hält. Ihn hinter deren
+          Alles-oder-nichts-Gating zu hängen, hiess auf jedem langsamen Gerät:
+          minutenlang «wird geladen», obwohl die Auskunft sofort bereitsteht.
+          Das war kein Test-, sondern ein Nutzer-Problem (§8).
+
+          §15.2 bleibt gewahrt — im Gegenteil: der Block ist HÖHENFEST
+          (`lc-artikelkontext`, vier Zeilen) und sein Titel einzeilig, er hat
+          also von der ersten Zeichnung an seine Endhöhe. Was später einwächst,
+          steht DARUNTER, und darunter steht im Scroller nichts (dasselbe
+          Argument, das die E4-Geometrie schon trägt). */}
+      {artikelKtx && (
+        <KontextGruppe punkt="norm" rolle="wegweiser"
+          titel={artikelKtx.label ? `Zu ${artikelKtx.label}` : 'Zur Leseposition'}>
+          <div data-artikel-kontext className="lc-artikelkontext flex flex-col text-micro leading-snug text-ink-600">
+            {!artikelKtx.token ? (
+              <p className="truncate">Noch keine Leseposition erfasst.</p>
+            ) : <ArtikelKontextZeilen k={artikelKtx} werkzeugZielBereit={zeigeArtikelWerkzeuge && !gruppenVerdeckt} />}
+          </div>
+        </KontextGruppe>
+      )}
+
+      {gruppenVerdeckt ? (
         <p className="text-body-s text-ink-500">Kontext wird geladen …</p>
       ) : istLeer ? (
         <p className="text-body-s text-ink-500">
@@ -653,7 +690,10 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               Artikel (Art. 127 OR → Verjährung). Ersetzt dort die grobe Erlass-
               Werkzeugliste. Jede Zeile trägt ihren Artikel-Bereich als Beleg. */}
           {zeigeArtikelWerkzeuge && (
-            <KontextGruppe titel="Werkzeuge zu einzelnen Artikeln" anzahl={artikelGruppen.length}
+            // S7: Sprungziel des Artikel-Kontexts («Rechner/Vorlagen zu Art. N ↓»)
+            // — Promotion statt Zweitdarstellung (§5): der Wegweiser oben zeigt
+            // hierher, die Liste bleibt die eine, die hier schon steht.
+            <KontextGruppe id="kontext-werkzeuge" titel="Werkzeuge zu einzelnen Artikeln" anzahl={artikelGruppen.length}
               hinweis="Rechner und Vorlagen, die genau zu einem Artikel dieses Erlasses passen (eindeutige Zuordnungen; Zweifelsfälle bewusst ausgelassen).">
               <ul className="flex flex-col gap-2.5">
                 {artikelGruppen.map((g) => (

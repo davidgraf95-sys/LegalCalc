@@ -8,9 +8,9 @@ import { KontextPanel } from '../../components/kontext/KontextPanel';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { CurrencyMap, ErlassKopf, Sektion, StrukturMap } from '../../lib/normtext/browse';
-import { sachgruppe, topTitel, type KantonSystematik } from '../../lib/normtext/systematik';
+import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { LinienProfil } from './linienAufbau';
-import { kopfOverline, grundartMeta } from './helpers';
+import { kopfOverline, grundartMeta, verifiziertesSachgebiet } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
@@ -22,6 +22,9 @@ import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { TrefferLeiste } from './parts/TrefferLeiste';
 import { ArtikelSprungFeld } from './parts/ArtikelSprungFeld';
 import { GliederungSheet } from './parts/GliederungSheet';
+import { ErlassUebersicht } from './parts/ErlassUebersicht';
+import type { GliederungsKennzahlen } from './gliederungsModell';
+import type { ArtikelKontextAnsicht } from '../../lib/kontext';
 
 // ═══ ABSCHNITT · Volltext-Leseansicht — INNENinhalt (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationsschicht (Props rein, §3): der gesamte Innen-Render des
@@ -49,6 +52,8 @@ export function LeserVolltextInhalt({
   bezugHistogramm, bezugBereich,
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, trefferRef, navigate,
+  kennzahlen = null, kantonErlassAnzahl = null, nichtKonsolidiert = false,
+  artikelKontext = null,
 }: {
   erlass: BrowseErlass;
   eintraege: NormSnapshot[];
@@ -122,6 +127,21 @@ export function LeserVolltextInhalt({
   tocDrawerRef: RefObject<HTMLDivElement | null>;
   trefferRef: RefObject<HTMLDivElement | null>;
   navigate: NavigateFunction;
+  /** W2·19-GLIEDERUNG/S6: Kennzahlen des Gliederungs-Modells (S3) — speisen die
+   *  Umfang-Zeile der Erlass-Übersicht (Anhang ja/nein, Sidecar vorhanden).
+   *  OPTIONAL: ohne sie lässt die Übersicht die abgeleiteten Angaben weg,
+   *  statt sie zu raten (§8). */
+  kennzahlen?: GliederungsKennzahlen | null;
+  /** S6: in LexMetrik erfasste Erlass-Zahl des Kantons dieses Erlasses (aus dem
+   *  Browse-Manifest gezählt) — Eingabe des Erfassungsgrads (§8, erfassungsgrad.ts).
+   *  `null` = Bund oder Manifest noch nicht da ⇒ keine Erfassungs-Aussage. */
+  kantonErlassAnzahl?: number | null;
+  /** S6: mindestens eine in Kraft getretene Änderung ist nicht konsolidiert. */
+  nichtKonsolidiert?: boolean;
+  /** W2·19-GLIEDERUNG/S7: Wegweiser zum aktiv gelesenen Artikel — geht als
+   *  eigene, hart gegatete Prop ins KontextPanel (nie über `artikelZitate`,
+   *  Bau-Spec §5.2). `null` = keine Gruppe. */
+  artikelKontext?: ArtikelKontextAnsicht | null;
 }) {
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
@@ -135,7 +155,23 @@ export function LeserVolltextInhalt({
   // bleibt der ehrlich sichtbare Platz das LESEENDE wie bisher. Es rendert
   // stets genau EIN Panel (nie doppelt, nie eines in einem hidden-Container).
   const kontextImToc = istXl && sektionen.length > 0 && tocOffen;
-  const kontextPanelLesespalte = kontextImToc ? null : <KontextPanel typ="norm" normKeys={[erlass.key]} />;
+  const kontextPanelLesespalte = kontextImToc ? null
+    : <KontextPanel typ="norm" normKeys={[erlass.key]} artikelKontext={artikelKontext} />;
+  // W2·19-GLIEDERUNG/S6 (Bau-Spec §2 Zone C, §5.1): der Übersichts-Sockel wird
+  // EINMAL beschrieben (§5) und folgt exakt derselben Platz-Weiche wie das
+  // Kontext-Panel — in der 2-Spalten-Ansicht im Fluss des [data-toc]-Scrollers
+  // ÜBER dem Panel, sonst am Leseende ebenfalls über dem Panel. Damit steht
+  // stets genau EINE Übersicht (nie doppelt, nie eine in einem hidden-Container),
+  // und die a32-Invariante «genau EIN Panel» bleibt unberührt: die Übersicht ist
+  // eine eigene <section> mit eigener Überschrift, KEINE zweite Panel-Wurzel.
+  const erlassUebersichtEl = (
+    <ErlassUebersicht erlass={erlass} kopf={kopf} currency={currency?.[erlass.key]}
+      erlassTyp={meta.erlassTyp} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
+      bestimmungsEtikettStatus={meta.bestimmungsEtikettStatus}
+      gliederungsTiefe={linien.strukturTiefe} kennzahlen={kennzahlen}
+      kantonSys={kantonSys} kantonErlassAnzahl={kantonErlassAnzahl}
+      nichtKonsolidiert={nichtKonsolidiert} />
+  );
 
   // N13 (BS-Audit 23.6.2026): die Reader-Overline zeigte für JEDEN kantonalen
   // Erlass stur das Einheits-Rechtsgebiet («Öffentliches Recht»). Stattdessen das
@@ -143,15 +179,13 @@ export function LeserVolltextInhalt({
   // Nur wenn ein verifizierter Titel vorliegt — der neutrale Fallback («Bereich N»,
   // «Ohne Systematik-Nummer») wird weggelassen (§8, nichts Geratenes). Bund bleibt
   // beim Rechtsgebiet-Label.
-  const overlineGebiet: string | null = (() => {
-    if (erlass.ebene === 'bund') return GEBIET_LABEL[erlass.rechtsgebiet];
-    const sys = erlass.kanton ? kantonSys[erlass.kanton] : undefined;
-    if (!sys) return null;
-    const { top } = sachgruppe(sys, erlass.sr);
-    if (top === '~') return null;
-    const name = topTitel(sys, top);
-    return /^Bereich /.test(name) ? null : name;
-  })();
+  // W2·19-GLIEDERUNG/S7 (Bug-Check B9): die Filterregel selbst lebt seit hier in
+  // `verifiziertesSachgebiet` (helpers) — dieselbe Quelle, die auch die
+  // Erlass-Übersicht konsumiert (§5). Vorher stand sie nur hier, und die
+  // Übersicht zeigte den Platzhalter, den diese Zeile korrekt unterdrückte.
+  const overlineGebiet: string | null = erlass.ebene === 'bund'
+    ? GEBIET_LABEL[erlass.rechtsgebiet]
+    : verifiziertesSachgebiet(erlass, kantonSys)?.top ?? null;
 
   // Geteilte Such-Steuerung (nur noch die Eingabe — der frühere Fussnoten-Schalter
   // ist in die Options-Leiste unifiziert, G2b).
@@ -220,6 +254,7 @@ export function LeserVolltextInhalt({
           G2b: EINE Kopf-Komponente (ErlassLeserKopf) — dieselbe wie im pdf-embed-
           Pfad; sie trägt die Options-Leiste (Linien/Fussnoten/Verweise). */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort} currency={currency?.[erlass.key]}
+        nichtKonsolidiert={nichtKonsolidiert}
         overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
         hinweis="Snapshot — massgeblich ist die amtliche Fassung"
         aktionen={
@@ -469,9 +504,21 @@ export function LeserVolltextInhalt({
                 {quickjump && <div className="mt-1.5">{quickjump}</div>}
               </div>
               {tocBaumEl}
+              {/* ── Zone C (W2·19-GLIEDERUNG/S6, Bau-Spec §2) ──────────────────
+                  Erlass-Übersicht als Sockel, DARUNTER erst das Kontext-Panel:
+                  «Was ist das für ein Erlass» kommt vor «Was hängt an ihm».
+                  Beide im FLUSS des [data-toc]-Scrollers — die E4-Geometrie
+                  (Panel im Scroller, tocClient > 85 % der Aside-Höhe) bleibt
+                  damit unberührt; zusätzlicher Inhalt am Scroller-Ende
+                  vergrössert nur die Scrollhöhe. */}
+              {kontextImToc && (
+                <div data-toc-uebersicht className="mt-4 border-t border-line pt-3">
+                  {erlassUebersichtEl}
+                </div>
+              )}
               {kontextImToc && (
                 <div data-toc-kontext className="mt-4 border-t border-line pt-3">
-                  <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" />
+                  <KontextPanel typ="norm" normKeys={[erlass.key]} variante="seitenleiste" artikelKontext={artikelKontext} />
                 </div>
               )}
             </div>
@@ -554,6 +601,12 @@ export function LeserVolltextInhalt({
               der 2-Spalten-Ansicht sitzt es unterhalb der Gliederung (oben, TOC-
               Spalte); HIER am Leseende nur noch als Mobil-/Rückfall-Platz
               (kontextImToc=false — Drawer-Layouts und eingeklappte Spalte). */}
+          {/* W2·19-GLIEDERUNG/S6: mobil/eingeklappt trägt das Leseende auch die
+              Erlass-Übersicht — über dem Panel, in derselben Reihenfolge wie in
+              der Leiste (Bau-Spec §5.1 «Mobil am Leseende über dem Panel»). */}
+          {!kontextImToc && (
+            <div className="mt-12 border-t border-line pt-6 max-w-reading">{erlassUebersichtEl}</div>
+          )}
           {kontextPanelLesespalte}
 
           <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">

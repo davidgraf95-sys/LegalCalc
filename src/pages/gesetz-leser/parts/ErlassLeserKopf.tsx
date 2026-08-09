@@ -10,7 +10,7 @@ import { formatiereDatum } from '../helpers';
 // pdf-embed) durch EINE Quelle (§5) — die Options-Leiste trägt sie einheitlich.
 // Reine Darstellung (§3); Kopf-Label bleibt heutige Herleitung (erlassTyp-Label
 // ist G3a). Der overflow-wrap/hyphens am Titel deckt Langtitel (mobil, §3.3).
-export function ErlassLeserKopf({ erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', aktionen, hinweis, currency }: {
+export function ErlassLeserKopf({ erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', aktionen, hinweis, currency, nichtKonsolidiert = false }: {
   erlass: BrowseErlass;
   overline: ReactNode;
   /** Artikelzahl (Snapshot); null = keine Zählung (pdf-embed). */
@@ -24,6 +24,14 @@ export function ErlassLeserKopf({ erlass, overline, artikelAnzahl, bestimmungsWo
   hinweis: string;
   /** P1-d: maschineller Fedlex-Currency-Beweis (geltend geprüft / künftige Fassung). */
   currency?: CurrencyEintrag;
+  /** W2·19-GLIEDERUNG/S6 (Bau-Spec §5.1, Zeile 1): mindestens eine in Kraft
+   *  getretene Änderung ist NICHT in den gezeigten Text konsolidiert. PROMOTION,
+   *  kein Neubau: dieselbe Tatsache steht heute schon je Revisions-Zeile im
+   *  KontextPanel (`RevisionBezug.nichtKonsolidiert`) — sie wird hier aggregiert
+   *  an die Stelle gehoben, an der man sie VOR dem Lesen sieht. Der Wortlaut der
+   *  Einzelzeilen im Panel bleibt unverändert (§5: eine Datenquelle, zwei
+   *  Auflösungsgrade). Default `false` = keine Aussage, kein Banner (§8). */
+  nichtKonsolidiert?: boolean;
 }) {
   const titelOhneSuffix = erlass.titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const titelRedundant = titelOhneSuffix.toLowerCase() === erlass.kuerzel.trim().toLowerCase();
@@ -77,7 +85,49 @@ export function ErlassLeserKopf({ erlass, overline, artikelAnzahl, bestimmungsWo
           </span>
         )}
         {aktionen}
-        <span className="basis-full sm:basis-auto sm:ml-auto text-micro text-ink-500">{hinweis}</span>
+        {/* W2·19-GLIEDERUNG/S6 · §8-Promotion «in Kraft, aber nicht konsolidiert».
+            Bis hierher stand diese Tatsache ausschliesslich weit unten im
+            Kontext-Panel an der einzelnen Revisions-Zeile — wer den Erlass las,
+            erfuhr also erst NACH dem Lesen, dass der gezeigte Wortlaut nicht mehr
+            der geltende ist. Sie wird darum aggregiert an den Kopf gehoben
+            (Promotion, kein Zweitrender: dieselbe Sidecar-Quelle, dieselbe
+            Aussage, nur früher; die Einzelzeilen im Panel bleiben unverändert).
+
+            §15.2 — WARUM IN DIESE ZEILE UND NICHT ALS EIGENER BANNER: der erste
+            Bauversuch setzte einen `lc-notice-warn`-Block ans Kopfende. Er ist
+            GEMESSEN rot geworden (9.8.2026, e2e/leser-kontext-e4 gegen den
+            echten Build): CLS 0.0227, Quelle laut layout-shift-`sources` das
+            2-Spalten-Grid, das um 72 px nach unten rutschte. Ursache ist
+            strukturell, nicht kalibrierbar — der Revisions-Sidecar kommt
+            asynchron, und E4 hält ihn per Route bis NACH dem Start des
+            CLS-Beobachters zurück; BV trägt eine nicht konsolidierte Änderung,
+            der Shift ist also reproduzierbar und kein Zufall.
+            Die Aussage wandert deshalb in die BEREITS VORHANDENE Hinweis-Zeile:
+            kein neues Element, keine neue Zeile, nur anderer Text und andere
+            Farbe. Beide Fassungen sind rund 45 Zeichen lang (46 / 44) und passen
+            damit auch @390 in EINE Zeile — der Umbruch der Metazeile kann sich
+            nicht ändern, die Höhe also auch nicht.
+
+            ZWEITE MESSUNG, zweite Korrektur: mit `sm:ml-auto` blieb ein
+            Rest-CLS von 0.000057 stehen — die Zeile war RECHTSbündig, ein
+            um 30 px schmalerer Text verschob also ihre linke Kante (Sonde
+            9.8.2026, `sources`: span 1133,295 → 1163,295). Sie steht darum in
+            JEDER Breite als eigene, LINKSbündige Zeile (`basis-full` ohne
+            sm-Override). Eine linksbündige Zeile behält bei Textwechsel ihre
+            Startposition — nur die Breite ändert sich, und Breite allein ist
+            kein Layout-Shift. Die Umstellung selbst ist statisch (ab dem ersten
+            Paint, für jeden Erlass gleich) und damit CLS-neutral.
+            §8: der volle Satz steht im `title`, ausgeschrieben zusätzlich in der
+            Erlass-Übersicht (Zone C) und unverändert je Änderung im Panel. */}
+        <span
+          className={`basis-full text-micro ${nichtKonsolidiert && !erlass.aufgehoben ? 'text-warn-700' : 'text-ink-500'}`}
+          title={nichtKonsolidiert && !erlass.aufgehoben
+            ? 'Für diesen Erlass ist mindestens eine Änderung in Kraft, die in der gezeigten Konsolidierung noch nicht enthalten ist — massgeblich ist die amtliche Fassung.'
+            : undefined}>
+          {nichtKonsolidiert && !erlass.aufgehoben
+            ? '⚠ Änderung in Kraft, noch nicht konsolidiert'
+            : hinweis}
+        </span>
       </div>
       {/* §8-Ehrlichkeit: GANZ aufgehobener Erlass (jolux:dateNoLongerInForce). Der
           Snapshot bleibt als historische Fassung lesbar, wird aber unmissverständlich
