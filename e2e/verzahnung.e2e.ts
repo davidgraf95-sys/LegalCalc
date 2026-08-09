@@ -36,8 +36,47 @@ test('MM1: DBG-Fuss trägt ≥2 Kontextgruppen mit Overline + Zähler + Hinweis;
   const gruppen = kontext.locator('h3')
   await expect(gruppen.first()).toBeVisible({ timeout: 10_000 })
   expect(await gruppen.count()).toBeGreaterThanOrEqual(2)
-  // Jede Gruppe: Zähler (num-Span in der Overline); Richtungs-/Herkunfts-Texte da.
-  for (const g of await gruppen.all()) await expect(g.locator('.num')).toBeVisible()
+  // ── §6.3-DEKLARATION (9.8.2026, W2·19-GLIEDERUNG/S7) ────────────────────────
+  // Freigabe David 8.8.2026 («e2e-Anpassungen in deklarierten Commits erlaubt»,
+  // Bau-Spec §10 Entscheid (a)); der 3.7.-Auftrag hinter MM1 bleibt unberührt.
+  //
+  // GEPRÜFTER SACHVERHALT UNVERÄNDERT: «jede Gruppe, die eine MENGE auflöst,
+  // zeigt ihren Zähler». Die Zeile iterierte bisher ALLE `h3` und nahm damit
+  // stillschweigend an, dass jede Panel-Gruppe eine Kanten-Menge ist. Seit S7
+  // gibt es eine Gruppe, die keine ist: der Artikel-Kontext «Zu Art. X» zeigt
+  // vier feste, benannte ROLLEN-Zeilen (Praxis · Verweise · letzte Änderung ·
+  // Werkzeuge). Sie trägt darum — konsistent mit FAHRPLAN-VERZAHNUNG-UI §1.4,
+  // wo Richtungs-Label, Zähler und Hinweis ein Trio sind — auch keine Richtung
+  // und keinen Hinweis.
+  //
+  // WARUM NICHT EINFACH EINE ZAHL DRANSCHREIBEN: der Zähler ist hier die
+  // PRÜFSTAND-Angabe («n erfasste Entscheide») — er sagt, wie viel wir gefunden
+  // haben. Für den Wegweiser gäbe es nur zwei Kandidaten: die konstante Vier
+  // (die Zeilenzahl) oder die Zahl der befüllten Zeilen. Beides zählt UNSERE
+  // Darstellung, nicht erfasste Einträge — also genau die Zahl ohne Aussagewert,
+  // gegen die §8 sich richtet. Die Ehrlichkeitspflicht wird stattdessen FEINER
+  // erfüllt: jede der vier Zeilen nennt ihre eigene Zahl oder sagt ausdrücklich,
+  // dass nichts erfasst ist — und genau das prüft der Zusatz unten mit.
+  //
+  // NICHT AUFGEWEICHT: die Iteration wird auf `[data-kontext-rolle="liste"]`
+  // GESCHÄRFT, nicht auf «Gruppen, die zufällig einen Zähler haben» (das wäre
+  // zirkulär und kein Tor mehr). Der Default der Hülle ist `liste` — wer eine
+  // neue Listen-Gruppe baut und `anzahl` vergisst, wird weiterhin rot. Die
+  // Ausnahme muss im Code AUSDRÜCKLICH erklärt werden, und die zwei Zusatz-
+  // Assertions halten sie klein und ehrlich.
+  const listen = kontext.locator('[data-kontext-rolle="liste"] > h3')
+  expect(await listen.count(), 'MM1 braucht ≥2 mengen-auflösende Gruppen').toBeGreaterThanOrEqual(2)
+  // Jede Listen-Gruppe: Zähler (num-Span in der Overline).
+  for (const g of await listen.all()) await expect(g.locator('.num')).toBeVisible()
+  // Die Ausnahme bleibt eine Ausnahme — höchstens EIN Wegweiser je Panel …
+  const wegweiser = kontext.locator('[data-kontext-rolle="wegweiser"]')
+  expect(await wegweiser.count(), 'Wegweiser-Ausnahme darf sich nicht ausbreiten').toBeLessThanOrEqual(1)
+  // … und sie erfüllt ihre §8-Pflicht in den Zeilen statt in der Overline:
+  // entweder eine Zahl oder ein ausdrückliches «nichts erfasst».
+  if (await wegweiser.count() === 1) {
+    const txt = (await wegweiser.textContent()) ?? ''
+    expect(txt, 'Wegweiser ohne Zahl UND ohne Leer-Aussage (§8)').toMatch(/\d|kein|keine|keines|nicht erfasst/)
+  }
   await expect(kontext.getByText('Wird zitiert von', { exact: false }).first()).toBeVisible()
   await expect(kontext.getByText('erfasste Entscheide', { exact: false }).first()).toBeVisible()
   await expect(kontext.getByText('Legt aus', { exact: false }).first()).toBeVisible()

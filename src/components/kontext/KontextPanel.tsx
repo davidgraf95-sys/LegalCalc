@@ -81,14 +81,13 @@ function kurzDatum(iso: string): string {
 // Exportiert (V1.3): der EntscheidLeser rendert seine beiden Richtungs-Gruppen
 // («Zitierte Normen» / «Zitierte Entscheide») mit DERSELBEN Hülle im Panel —
 // eine Anatomie, keine zweite Gruppen-Optik (§5).
-export function KontextGruppe({ titel, richtung, anzahl, children, hinweis, punkt, id }: {
+export function KontextGruppe({ titel, richtung, anzahl, children, hinweis, punkt, id, rolle = 'liste' }: {
   titel: string;
   /** Beziehungstyp als Text (juris/EUR-Lex-Muster): «Wendet an» u. a.; nie Farbe. */
   richtung?: string;
-  /** Zähler hinter dem Titel. OPTIONAL seit W2·19-GLIEDERUNG/S7: die
-   *  Artikel-Kontext-Gruppe zählt nichts Gleichartiges (sie bündelt vier
-   *  verschiedene Rollen) — eine Zahl dort wäre bedeutungslos statt informativ.
-   *  Alle Bestands-Aufrufer geben sie weiter, ihr Markup ist unverändert. */
+  /** Zähler hinter dem Titel — für `rolle="liste"` PFLICHT (§1.4). Optional ist
+   *  er allein deshalb, weil `rolle="wegweiser"` keine zählbare Menge hat; eine
+   *  `liste`-Gruppe ohne Zähler meldet e2e/verzahnung MM1 weiterhin rot. */
   anzahl?: number;
   children: ReactNode;
   hinweis?: ReactNode;
@@ -100,12 +99,36 @@ export function KontextGruppe({ titel, richtung, anzahl, children, hinweis, punk
   punkt?: 'norm' | 'entscheid' | 'material';
   /** Sprungziel-Id der Gruppe (S7: der Artikel-Kontext zeigt auf die Werkzeuge). */
   id?: string;
+  /**
+   * W2·19-GLIEDERUNG/S7 — welche ART von Gruppe ist das?
+   *
+   * `'liste'` (Default, alle Bestands-Gruppen): löst eine MENGE von Kanten auf
+   * und trägt darum die drei Pflicht-Props aus FAHRPLAN-VERZAHNUNG-UI §1.4 —
+   * Richtungs-Label, **Zähler** und §8-Hinweis. Der Zähler ist dort die
+   * Prüfstand-Angabe («n erfasste Entscheide»): er sagt, wie viel wir gefunden
+   * haben, und macht eine Kürzung sichtbar.
+   *
+   * `'wegweiser'`: zeigt KEINE Menge, sondern feste, benannte Rollen-Zeilen
+   * (heute genau eine solche Gruppe: der Artikel-Kontext «Zu Art. X»). Sie hat
+   * folgerichtig weder Richtung noch Hinweis — und ein Zähler wäre dort keine
+   * Prüfstand-Angabe, sondern entweder konstant (immer vier Zeilen) oder eine
+   * Zählung UNSERER EIGENEN Zeilen statt erfasster Einträge. Genau das wäre die
+   * unehrliche Zahl, gegen die §8 sich richtet. Die §8-Pflicht wird stattdessen
+   * FEINER erfüllt: jede Rolle nennt ihre eigene Zahl oder sagt ausdrücklich,
+   * dass nichts erfasst ist.
+   *
+   * Der Wert steht als `data-kontext-rolle` im DOM, damit e2e/verzahnung MM1
+   * die Zähler-Pflicht genau dort prüfen kann, wo sie gilt. Der Default ist
+   * bewusst `'liste'`: wer eine neue Listen-Gruppe baut und `anzahl` vergisst,
+   * wird weiterhin rot — die Ausnahme muss AUSDRÜCKLICH erklärt werden.
+   */
+  rolle?: 'liste' | 'wegweiser';
 }) {
   const punktKlasse = punkt === 'entscheid' ? 'lc-punkt lc-punkt-entscheid'
     : punkt === 'material' ? 'lc-punkt lc-punkt-material'
     : punkt === 'norm' ? 'lc-punkt' : null;
   return (
-    <div id={id} className="space-y-2">
+    <div id={id} data-kontext-rolle={rolle} className="space-y-2">
       <h3 className="lc-overline text-ink-600">
         {punktKlasse && <span className={punktKlasse} aria-hidden />}
         {richtung && <span className="text-brass-700">{richtung} · </span>}
@@ -369,7 +392,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               in Zeilen, die schon stehen; er kann nichts verschieben. Genau das
               misst die erweiterte E4-Spec (CLS 0 auch beim Artikelwechsel). */}
           {artikelKtx && (
-            <KontextGruppe punkt="norm"
+            <KontextGruppe punkt="norm" rolle="wegweiser"
               titel={artikelKtx.label ? `Zu ${artikelKtx.label}` : 'Zur Leseposition'}>
               <div data-artikel-kontext className="lc-artikelkontext flex flex-col text-micro leading-snug text-ink-600">
                 {!artikelKtx.token ? (

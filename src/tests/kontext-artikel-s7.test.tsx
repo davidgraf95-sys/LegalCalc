@@ -39,6 +39,9 @@ function panel(props: Parameters<typeof KontextPanel>[0]) {
   return renderToString(<MemoryRouter><KontextPanel {...props} /></MemoryRouter>);
 }
 
+const zaehle = (html: string, nadel: string) =>
+  (html.match(new RegExp(nadel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) ?? []).length;
+
 describe('S7 — Gating: die Gruppe leckt nicht in fremde Reader', () => {
   it('Gesetz-Reader (typ=norm) mit Prop: Gruppe da', () => {
     const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
@@ -81,6 +84,29 @@ describe('S7 — §15.2: der Block ist in JEDEM Füllzustand höhenfest', () => 
       expect(html).toContain('lc-artikelkontext');
     });
   }
+});
+
+// Die Zähler-Pflicht aus FAHRPLAN-VERZAHNUNG-UI §1.4 gilt für Gruppen, die eine
+// MENGE auflösen. Der Artikel-Kontext ist keine — er zeigt vier feste Rollen.
+// Damit e2e/verzahnung MM1 die Pflicht dort prüfen kann, wo sie gilt (und NUR
+// dort), trägt jede Gruppe ihre Rolle im DOM. Diese Tests halten beide Enden
+// fest: die Ausnahme ist deklariert, und der Default bleibt streng.
+describe('S7 — Gruppen-Rolle: Zähler-Pflicht bleibt scharf, Ausnahme deklariert', () => {
+  it('Der Artikel-Kontext deklariert sich als Wegweiser — genau einmal', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    expect(zaehle(html, 'data-kontext-rolle="wegweiser"')).toBe(1);
+  });
+
+  it('Alle übrigen Gruppen bleiben Listen-Gruppen (Default streng)', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    expect(zaehle(html, 'data-kontext-rolle="liste"')).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Ohne Wegweiser trägt JEDE Gruppe die Listen-Rolle (kein stiller Schlupf)', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'] });
+    expect(zaehle(html, 'data-kontext-rolle="wegweiser"')).toBe(0);
+    expect(zaehle(html, 'data-kontext-rolle="liste"')).toBe(zaehle(html, '<h3'));
+  });
 });
 
 describe('S7 — §8: jede Rolle sagt etwas, auch wenn sie nichts weiss', () => {
