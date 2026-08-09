@@ -403,6 +403,12 @@ Spec-Kopf (Bericht 3, Fund 1).
 
 ## §8 Erlass-Typen-Matrix (Verhalten je Typ, Referenz-Erlasse = Unit-Test-Fälle)
 
+> **Fixture-Regel (Lehre 9.8.2026, PR #478-CI-Rot):** Die Tabellen hier nennen die
+> Erlasse beim **Kürzel** (VwVG, ChemRRV). Wer daraus Test-Fixtures ableitet, lädt
+> über den **Register-Schlüssel** (`key`, z. B. `VWVG`, `CHEMRRV`) via
+> `src/tests/fixtures/normtext-fixture.ts` — nie über einen von Hand gebauten
+> Dateipfad: macOS löst case-blind auf, der Linux-CI nicht.
+
 | Typ | Referenz | Behandlung |
 |---|---|---|
 | T1 Kodifikation (5 Ebenen, 134–171 Knoten) | OR, ZGB | B1 kompakt; adaptive Zählwerte; Einzug-Deckel; F2 hält ~10–25 Zeilen; Zone-A-Pfad trägt die 5-Ebenen-Verortung; Randtitel-Stufung im Artikelkopf |
