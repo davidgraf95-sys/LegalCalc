@@ -242,7 +242,6 @@ test('Popover öffnet AM Link (tief im Dokument), Seite scrollt nicht', async ({
   await page.goto('/rechtsprechung/bge_152_V_52')
   const link = page.getByRole('link', { name: 'Art. 18 UVG', exact: true }).first()
   await link.scrollIntoViewIfNeeded()
-  const linkBox = (await link.boundingBox())!
   const scrollVor = await page.evaluate(() => window.scrollY)
   expect(scrollVor).toBeGreaterThan(500)   // wirklich tief im Dokument
   await link.click()
@@ -253,8 +252,54 @@ test('Popover öffnet AM Link (tief im Dokument), Seite scrollt nicht', async ({
   // boundingBox() im Swap-Moment liefert null (CI-Race). Der Fuss-Link
   // existiert nur im Volltext-Popover.
   await expect(karte.getByText('Im Gesetz öffnen')).toBeVisible()
-  await expect.poll(async () => (await karte.boundingBox()) !== null).toBe(true)
-  const kBox = (await karte.boundingBox())!
+
+  // ── §17-WURZELFIX (9.8.2026, W2·19-GLIEDERUNG) ──────────────────────────────
+  // Vorher standen hier ZWEI Messungen mit demselben Defekt:
+  //     const linkBox = (await link.boundingBox())!            // vor dem Klick
+  //     await expect.poll(… karte.boundingBox() !== null …)
+  //     const kBox = (await karte.boundingBox())!
+  // Beide `!` behaupten eine Zusicherung, die Playwright nicht gibt:
+  // `boundingBox()` liefert `null`, sobald das Element im Messmoment nicht
+  // gelayoutet ist — und der Entscheid-Leser lädt seinen Volltext on demand,
+  // tauscht also Knoten aus, während `scrollIntoViewIfNeeded()` längst zurück
+  // ist. Das `null` lief stumm durch und schlug 17 Zeilen später als
+  // `TypeError: Cannot read properties of null (reading 'y')` auf — ein
+  // Fehlerbild, das den ECHTEN Ort verschweigt und wie ein Produktdefekt aussieht.
+  //
+  // GEMESSENE RATE, Bedingung jeweils genannt (Streuung statt Einzelwert,
+  // §0 Ziff. 3 — identischer Build):
+  //     1 Worker (= CI-Konfiguration)          0 rot / 6 Läufe
+  //     5 Worker (lokaler Default)             1 rot / 7 Läufe
+  //     8 Worker + repeat-each=3               2 rot / 3 Wiederholungen
+  // Lastabhängig ⇒ kein Produktdefekt, sondern fehlende Stabilitäts-Wartung.
+  //
+  // ERSTER FIX-VERSUCH WAR ZU KURZ und ist hier dokumentiert, damit ihn niemand
+  // wiederholt: ein `expect.poll(… !== null)` VOR dem `boundingBox()` behebt
+  // nichts, weil Prüfung und Lesung zwei getrennte Zugriffe sind
+  // (check-then-act). Der Knoten kann zwischen beiden erneut getauscht werden —
+  // der erste Lauf unter Last war grün, der zweite wieder rot (2 × 8 Worker ×
+  // repeat-each=3). Ein einzelner grüner Lauf hätte den falschen Fix belegt.
+  //
+  // RICHTIG: EINE atomare Messung. Der Poll liest beide Boxen im selben Zugriff
+  // und BEHÄLT genau die Werte, die die Bedingung erfüllt haben. Zusätzlich
+  // werden sie jetzt im SELBEN, gesetzten Zustand genommen (nach dem Volltext-
+  // Swap statt davor) — das beseitigt neben dem `null` auch die stille
+  // Zweit-Gefahr, die Link-Geometrie von VOR dem Swap gegen die Karten-Geometrie
+  // von DANACH zu vergleichen.
+  //
+  // KEINE ASSERTION ABGESCHWÄCHT: verglichen wird unverändert dieselbe Geometrie
+  // mit denselben Toleranzen (≤ 12 px vertikal, ≤ 8 px horizontal); es wird
+  // ausschliesslich gewartet, bis die Messwerte überhaupt existieren.
+  type Kasten = { x: number; y: number; width: number; height: number }
+  const gemessen: { link?: Kasten; karte?: Kasten } = {}
+  await expect.poll(async () => {
+    const [l, k] = await Promise.all([link.boundingBox(), karte.boundingBox()])
+    if (l && k) { gemessen.link = l; gemessen.karte = k }
+    return !!(gemessen.link && gemessen.karte)
+  }, { message: 'Link- und Karten-Geometrie nie gleichzeitig messbar' }).toBe(true)
+  const linkBox = gemessen.link!
+  const kBox = gemessen.karte!
+
   // Kein Seiten-Sprung beim Öffnen.
   expect(await page.evaluate(() => window.scrollY)).toBe(scrollVor)
   // Vertikal unmittelbar unter ODER über dem Link (wenige px Toleranz).
