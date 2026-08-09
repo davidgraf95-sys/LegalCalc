@@ -31,6 +31,7 @@ import { ErlassUebersicht } from '../pages/gesetz-leser/parts/ErlassUebersicht';
 import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { LinienProfil } from '../pages/gesetz-leser/linienAufbau';
 import type { Sektion, ErlassKopf } from '../lib/normtext/browse';
+import type { KantonSystematik } from '../lib/normtext/systematik';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
@@ -164,6 +165,70 @@ describe('S6 — Promotion in den Erlass-Kopf (höhenfest, §15.2)', () => {
     expect(html).toContain('lc-notice-danger');
     expect(html).toContain(HINWEIS);
     expect(html).not.toContain(WARN);
+  });
+
+  // B3 (Bug-Check 9.8.2026, live auf /gesetze/bund/BMV): der Kopf zog die
+  // Grenze, die ÜBERSICHT nicht — dort stand «In Kraft getretene Änderung …»
+  // direkt neben dem Aufhebungs-Banner. Zwei Aussagen, die einander
+  // widersprechen; der eigene S6-Test hatte die Absicht wörtlich dokumentiert,
+  // ohne sie an dieser Stelle zu prüfen.
+  it('B3: auch die ÜBERSICHT schweigt zur Konsolidierung, wenn der Erlass aufgehoben ist', () => {
+    const html = render({ istXl: true, tocOffen: true, nichtKonsolidiert: true, aufgehoben: true });
+    expect(html).not.toContain('noch nicht im gezeigten Text');
+    // Die Zeile bleibt trotzdem stehen (Höhen-Reservierung, §15.2) …
+    expect(zaehle(html, 'lc-uebersicht-hinweis')).toBe(1);
+    // … mit der Aussage, die auch für einen aufgehobenen Erlass gilt.
+    expect(html).toContain('Massgeblich ist stets die amtliche Fassung');
+  });
+});
+
+// ── Bug-Check 9.8.2026 · B8/B9 ─────────────────────────────────────────────
+describe('S6/Bug-Check — B8: kein leeres Stand-Versprechen', () => {
+  it('Ohne erfassten Stand steht «nicht erfasst» statt «Stand:» ins Leere', () => {
+    const html = renderToString(
+      <MemoryRouter>
+        <ErlassUebersicht erlass={{ ...erlass, stand: '' }} kopf={null} artikelAnzahl={3} />
+      </MemoryRouter>,
+    );
+    expect(html).toContain('Stand:');
+    expect(html).toContain('nicht erfasst');
+  });
+
+  it('Mit Stand bleibt der Wert unverändert', () => {
+    const html = renderToString(
+      <MemoryRouter>
+        <ErlassUebersicht erlass={erlass} kopf={null} artikelAnzahl={3} />
+      </MemoryRouter>,
+    );
+    expect(html).toContain('01.01.2026');
+  });
+});
+
+describe('S6/Bug-Check — B9: Systematik-Platzhalter ist keine Aussage (§8)', () => {
+  const kantonal = { ...erlass, ebene: 'kanton' as const, kanton: 'AG', sr: 'SAR 152.110' };
+  const uebersicht = (kantonSys: Record<string, KantonSystematik>, e = kantonal) => renderToString(
+    <MemoryRouter>
+      <ErlassUebersicht erlass={e} kopf={null} artikelAnzahl={3} kantonSys={kantonSys} />
+    </MemoryRouter>,
+  );
+
+  it('«Bereich SAR» erscheint NICHT — die Overline derselben Seite filtert ihn auch', () => {
+    // Leere Systematik ⇒ die Auflösung fällt auf den neutralen Platzhalter
+    // zurück. Vorher stand er als Sachgebiet im Mehr-Block (~80 Kantonserlasse).
+    const html = uebersicht({ AG: { roots: [], index: {} } });
+    expect(html).not.toContain('Bereich SAR');
+    expect(html).not.toContain('Sachgebiet:');
+  });
+
+  it('Ein VERIFIZIERTES Sachgebiet erscheint weiterhin — der Filter schneidet nicht zu viel', () => {
+    const html = uebersicht(
+      { AG: { roots: [{ nummer: '6', name: 'Finanzrecht', kinder: [{ nummer: '64', name: 'Steuern' }] }], index: { '640100': ['6', '64'] } } },
+      { ...kantonal, sr: '640.100' },
+    );
+    // (SSR setzt zwischen statischem Text und Interpolation einen Kommentar-
+            //  Marker — darum die zwei Teile statt der zusammengesetzten Zeile.)
+    expect(html).toContain('Sachgebiet:');
+    expect(html).toContain('Finanzrecht › Steuern');
   });
 });
 

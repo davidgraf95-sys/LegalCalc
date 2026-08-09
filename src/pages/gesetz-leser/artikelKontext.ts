@@ -100,7 +100,18 @@ export function materialienAmArtikel(shard: KantenShard | null, token: string): 
   return dok.size;
 }
 
-/** Leitentscheide am Artikel aus dem Schaufenster-Shard. */
+/**
+ * Erfasste Entscheide am Artikel aus dem Schaufenster-Shard.
+ *
+ * B7 (Bug-Check 9.8.2026): Der Shard heisst «Leitfall-Shard», führt aber je
+ * Artikel ALLE erfassten Entscheide — Leitentscheide UND Routine-Entscheide
+ * (`LeitfallRef.leitcharakter` unterscheidet sie). Die Zahl als
+ * «N Leitentscheide» zu beschriften war für 49 Artikel falsch, 12 davon ohne
+ * einen einzigen echten Leitentscheid. Gefiltert wird NICHT — die Gesamtzahl
+ * ist die nützlichere Auskunft, und ein Filter hätte 12 Artikel fälschlich als
+ * praxisfrei gezeigt. Stattdessen sagt die Beschriftung, was gezählt wird
+ * («erfasste Entscheide», dieselbe Formel wie das Panel, §5/§8).
+ */
 export function leitentscheideAmArtikel(shard: LeitfallShard | null, token: string): number {
   return shard?.proArtikel[normArtikelToken(token)]?.length ?? 0;
 }
@@ -114,7 +125,7 @@ export function leitentscheideAmArtikel(shard: LeitfallShard | null, token: stri
  * bereits entprellten Scroll-Spy (`aktArtikelTimer`, inhalt-hooks) — ein
  * zweiter Timer daneben wäre eine zweite Wahrheit über «wo bin ich» (§5).
  */
-export function useArtikelKontext({ erlass, token, label, eintraege, struktur, revision, onSprung }: {
+export function useArtikelKontext({ erlass, token, label, eintraege, struktur, revision }: {
   erlass: BrowseErlass | null;
   /** Aktiver Artikel-Token aus dem Scroll-Spy; `null` = noch keine Leseposition. */
   token: string | null;
@@ -124,7 +135,6 @@ export function useArtikelKontext({ erlass, token, label, eintraege, struktur, r
   struktur: StrukturMap | null;
   /** `revisionFuer(token)` des Readers — kein zweiter Shard-Zugriff (§5). */
   revision: ArtikelRevision | null | undefined;
-  onSprung?: (token: string) => void;
 }): ArtikelKontextAnsicht | null {
   const key = erlass?.key;
   const [leitfall, setLeitfall] = useState<{ key: string; shard: LeitfallShard | null } | null>(null);
@@ -160,7 +170,6 @@ export function useArtikelKontext({ erlass, token, label, eintraege, struktur, r
       revision,
       verweise: ausgehendeVerweise(eintragByToken.get(token), struktur, token),
       werkzeugGruppe: gruppe?.label,
-      onSprung: onSprung ? () => onSprung(token) : undefined,
     };
-  }, [erlass, token, label, leitfall, kanten, revision, eintragByToken, struktur, werkzeugGruppen, onSprung]);
+  }, [erlass, token, label, leitfall, kanten, revision, eintragByToken, struktur, werkzeugGruppen]);
 }

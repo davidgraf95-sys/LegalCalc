@@ -230,7 +230,6 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   const artikelKontext = useArtikelKontext({
     erlass, token: aktivToken, label: aktArtikel, eintraege, struktur,
     revision: aktivToken ? revisionFuer(aktivToken) : undefined,
-    onSprung: springeZuArtikel,
   });
   const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
     erlass, eintraege, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,

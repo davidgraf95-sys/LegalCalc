@@ -68,8 +68,18 @@ export interface ArtikelKontextAnsicht {
   verweise: KontextVerweis[];
   /** Label der artikelscharfen Werkzeug-Gruppe («Art. 127–142»), falls vorhanden. */
   werkzeugGruppe?: string;
-  /** Sprung in die Lesespalte zum Artikel (dort steht das Detail, §5 SSoT). */
-  onSprung?: () => void;
+  //
+  // B4 (Bug-Check 9.8.2026, Entscheid delegierte Technik): hier stand ein
+  // `onSprung?: () => void` für einen «→»-Knopf an der Praxis-Zeile. Er ist
+  // ERSATZLOS entfernt, nicht bloss ungenutzt gelassen — ein Eingang, den
+  // niemand bedient, behauptet eine Fähigkeit, die es nicht gibt.
+  // Grund: der Sprung landete über `springeZuArtikel` am Artikel-ANFANG,
+  // während die Praxis-Liste am Artikelfuss steht; und im Default-
+  // Facettenzustand rendert dort seit W2·7-BEZUG/B4 gar keine Liste. Das
+  // Versprechen lief doppelt ins Leere (§8).
+  // WIEDEREINFÜHRUNG (Folge-Slice): Feld hier zurücknehmen, im Leser wieder
+  // durchreichen und auf einen FUSS-Anker zielen — erst dann, wenn dort im
+  // Regelfall wirklich etwas steht.
 }
 
 /** Verweis auf eine Erlass-Detailseite (aufgelöst über das ERLASS_REGISTER). */

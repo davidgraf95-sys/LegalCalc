@@ -29,11 +29,16 @@ const VOLL: ArtikelKontextAnsicht = {
   label: 'Art. 41', token: '41',
   leitentscheide: 12, materialien: 3,
   revision: { iso: '2025-01-01', as: 'AS 2023 628' },
-  verweise: [{ label: 'ArG', pfad: '/gesetze/bund/ARG' }, { label: 'SR 822.11', url: 'https://x' }],
+  // B2-Fixture: das amtliche Label trägt Auszeichnung, wie 100 % der
+  // rs-Fussnoten im Bund-Korpus. Die frühere Fixture war «sauber» und konnte
+  // den Defekt darum gar nicht sehen.
+  verweise: [{ label: 'ArG', pfad: '/gesetze/bund/ARG' }, { label: 'SR <b>822.11</b>', url: 'https://x' }],
   werkzeugGruppe: 'Art. 127–142',
 };
 const LEER: ArtikelKontextAnsicht = { label: '§ 7', token: '7', leitentscheide: 0, materialien: 0, revision: null, verweise: [] };
 const OHNE_POSITION: ArtikelKontextAnsicht = { label: '', token: '', verweise: [] };
+/** B5-Fixture: Shards noch nicht da — `undefined`, NICHT `0`. */
+const LAEDT: ArtikelKontextAnsicht = { label: 'Art. 5', token: '5', verweise: [] };
 
 function panel(props: Parameters<typeof KontextPanel>[0]) {
   return renderToString(<MemoryRouter><KontextPanel {...props} /></MemoryRouter>);
@@ -109,15 +114,89 @@ describe('S7 — Gruppen-Rolle: Zähler-Pflicht bleibt scharf, Ausnahme deklarie
   });
 });
 
+// ── Bug-Check 9.8.2026 · je Befund eine scheiterns-fähige Assertion (§6.7) ──
+describe('S7/Bug-Check — B1: kein nackter Hash-Anker zur Werkzeug-Gruppe', () => {
+  it('Der Werkzeug-Sprung ist ein Knopf, KEIN href="#…"', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    // Ein `href="#kontext-werkzeuge"` pushte browsernativ Verlauf (LM-209),
+    // überschrieb den #art-Deeplink (LM-202) und löste im Split-View
+    // dokumentweit auf. Er darf im Markup nicht mehr vorkommen.
+    expect(html).not.toContain('href="#kontext-werkzeuge"');
+    expect(html).toContain('Rechner/Vorlagen zu');
+    // Die Ziel-Gruppe behält ihre Id (der Knopf sucht sie pane-lokal).
+    expect(html).toContain('id="kontext-werkzeuge"');
+  });
+});
+
+describe('S7/Bug-Check — B2: amtliche Auszeichnung wird gerendert, nicht getippt', () => {
+  it('«SR <b>822.11</b>» erscheint als Auszeichnung, nicht als sichtbarer Tag', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    // Vorher: React escapte das Markup → der Nutzer las «SR &lt;b&gt;822.11&lt;/b&gt;».
+    expect(html).not.toContain('&lt;b&gt;');
+    expect(html).toContain('<strong>822.11</strong>');
+  });
+
+  it('Das title-Attribut trägt den tag-freien Wortlaut (Attribute rendern kein Markup)', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    // Der Verweis-Absatz führt ALLE Labels tag-frei im title — sonst stünde dort
+    // «SR <b>822.11</b>» als rohe Zeichenfolge (Attribute rendern kein Markup).
+    expect(html).toContain('title="ArG · SR 822.11"');
+  });
+});
+
+describe('S7/Bug-Check — B4: keine Sprung-Affordanz ohne Ziel-Inhalt', () => {
+  it('Die Praxis-Zeile zeigt die Zahl OHNE Knopf/Pfeil (§8: kein Versprechen ins Leere)', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    const zeile = html.slice(html.indexOf('Praxis:'), html.indexOf('Verweist auf'));
+    expect(zeile).not.toContain('<button');
+    expect(zeile).not.toContain('→');
+  });
+});
+
+describe('S7/Bug-Check — B5: «lädt» ist nicht «nichts erfasst»', () => {
+  it('Solange die Shards fehlen (undefined), behauptet nichts eine Leere', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: LAEDT });
+    expect(html).not.toContain('Kein artikelbezogener Kontext erfasst');
+    expect(html).toContain('wird geladen');
+  });
+
+  it('Erst bei 0 (Shard da, nichts drin) fällt die Leer-Aussage', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: LEER });
+    expect(html).toContain('Kein artikelbezogener Kontext erfasst');
+    expect(html).not.toContain('wird geladen');
+  });
+
+  it('Auch im Lade-Zustand bleibt der Block höhenfest', () => {
+    expect(panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: LAEDT })).toContain('lc-artikelkontext');
+  });
+});
+
+describe('S7/Bug-Check — B6: Gruppentitel kann nicht in die Höhe wachsen', () => {
+  it('Der Wegweiser-Titel ist auf eine Zeile gedeckelt, voller Wortlaut im title', () => {
+    const lang = 'Anhang 3 Ziff. 4.2 Anforderungen an die Ausbildung von Personen, die bewilligungspflichtige Tätigkeiten ausüben, sowie an die Anerkennung ausländischer Diplome und Fachausweise nach Artikel 12 Absatz 3 dieser Verordnung';
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: { ...VOLL, label: lang } });
+    const h3 = /<h3[^>]*>/.exec(html.slice(html.indexOf('data-kontext-rolle="wegweiser"')))?.[0] ?? '';
+    expect(h3, 'Wegweiser-h3 ohne Höhendeckel — Langlabel verschiebt beim Artikelwechsel').toContain('truncate');
+    expect(h3).toContain('title=');
+  });
+
+  it('Listen-Gruppen bleiben UNgedeckelt — sonst verschwände der Zähler (MM1/§8)', () => {
+    const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
+    const h3 = /<h3[^>]*>/.exec(html.slice(html.indexOf('data-kontext-rolle="liste"')))?.[0] ?? '';
+    expect(h3).not.toContain('truncate');
+  });
+});
+
 describe('S7 — §8: jede Rolle sagt etwas, auch wenn sie nichts weiss', () => {
   it('Voller Artikel: alle vier Rollen mit Inhalt, Werkzeug-Sprung statt Zweitliste', () => {
     const html = panel({ typ: 'norm', normKeys: ['OR'], artikelKontext: VOLL });
-    expect(html).toContain('12 Leitentscheide');
+    // B7: der Shard führt Leit- UND Routine-Entscheide — die Beschriftung sagt,
+    // was gezählt wird, statt alles zu Leitentscheiden zu erklären.
+    expect(html).toContain('12 erfasste Entscheide');
+    expect(html).not.toContain('Leitentscheide');
     expect(html).toContain('3 Materialien');
     expect(html).toContain('ArG');
     expect(html).toContain('01.01.2025');
-    // Sprung zur bestehenden Werkzeug-Gruppe — KEINE zweite Werkzeugliste (§5).
-    expect(html).toContain('#kontext-werkzeuge');
     expect(html).toContain('Art. 127–142');
   });
 
@@ -137,7 +216,7 @@ describe('S7 — §8: jede Rolle sagt etwas, auch wenn sie nichts weiss', () => 
       typ: 'norm', normKeys: ['OR'],
       artikelKontext: { label: 'Art. 1', token: '1', leitentscheide: 2, materialien: 0, revision: undefined, verweise: [] },
     });
-    expect(html).toContain('2 Leitentscheide');
+    expect(html).toContain('2 erfasste Entscheide');
     expect(html).toContain('kein Erlassverweis erfasst');
     expect(html).toContain('nicht erfasst');
     expect(html).toContain('keines zu diesem Artikel');

@@ -3,9 +3,9 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
 import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad';
-import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../../lib/normtext/systematik';
+import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
-import { formatiereDatum, kopfOverline } from '../helpers';
+import { formatiereDatum, kopfOverline, verifiziertesSachgebiet } from '../helpers';
 import {
   teilerfassung, nurErlassdatum, erlassOrgan, istDatumsToken,
 } from '../erlassUebersichtDaten';
@@ -76,15 +76,25 @@ export function ErlassUebersicht({
   const datum = kopf?.erlassdatum ? nurErlassdatum(kopf.erlassdatum) : null;
   const artZeile = [kopfOverline(erlass, erlassTyp, null), organ, datum].filter(Boolean) as string[];
 
+  // B3 (Bug-Check 9.8.2026, live auf /gesetze/bund/BMV): bei einem GANZ
+  // aufgehobenen Erlass stand «In Kraft getretene Änderung …» direkt neben dem
+  // Aufhebungs-Banner — zwei Aussagen, die einander widersprechen. Bei einem
+  // aufgehobenen Erlass IST die Aufhebung die Aussage; eine offene Konsolidierung
+  // daneben ist bestenfalls irreführend (§8). Der Erlass-Kopf zog diese Grenze
+  // schon, die Übersicht nicht — jetzt beide.
+  const zeigeKonsWarnung = nichtKonsolidiert && !erlass.aufgehoben;
+
   const hatAnhang = (kennzahlen?.anhangArtikel ?? 0) > 0;
   const beleg = teilerfassung(erlass.key);
   const grad = erlass.kanton && kantonErlassAnzahl != null
     ? erfassungsgrad(erlass.kanton, kantonErlassAnzahl) : null;
-  const sys = erlass.kanton ? kantonSys[erlass.kanton] : undefined;
-  const gebiet = sys ? sachgruppe(sys, erlass.sr) : null;
-  const gebietPfad = gebiet
-    ? [topTitel(sys, gebiet.top), subTitel(sys, gebiet.top, gebiet.sub)].filter(Boolean).join(' › ')
-    : '';
+  // B9 (Bug-Check 9.8.2026): der Brotkrümel baute die Sachgebiets-Auflösung neu
+  // und zeigte dabei die neutralen PLATZHALTER der Systematik («Bereich SAR») —
+  // also eine Aussage, wo wir keine haben (§8). Die Reader-Overline derselben
+  // Seite filterte sie längst korrekt weg; die Regel lebt jetzt EINMAL in
+  // `verifiziertesSachgebiet` (helpers) und wird hier wie dort konsumiert (§5).
+  const gebiet = verifiziertesSachgebiet(erlass, kantonSys);
+  const gebietPfad = gebiet ? [gebiet.top, gebiet.sub].filter(Boolean).join(' › ') : '';
 
   // §8-Block: alles, was die Anzeige über ihre eigenen Grenzen weiss. Leer =
   // nichts zu vermelden (dann entfällt der Block, statt «keine Einschränkungen»
@@ -125,8 +135,8 @@ export function ErlassUebersicht({
           kommt asynchron, und e2e/leser-kontext-e4 hält ihn bis NACH dem Start
           des CLS-Beobachters zurück. §8: im Normalfall sagt die Zeile die
           Wahrheit, die immer gilt, statt leer zu bleiben. */}
-      <p className={`lc-uebersicht-hinweis text-micro leading-snug ${nichtKonsolidiert ? 'text-warn-700' : 'text-ink-500'}`}>
-        {nichtKonsolidiert
+      <p className={`lc-uebersicht-hinweis text-micro leading-snug ${zeigeKonsWarnung ? 'text-warn-700' : 'text-ink-500'}`}>
+        {zeigeKonsWarnung
           ? <><span aria-hidden>⚠ </span>In Kraft getretene Änderung noch nicht im gezeigten Text.</>
           : 'Massgeblich ist stets die amtliche Fassung.'}
       </p>
@@ -147,8 +157,13 @@ export function ErlassUebersicht({
         {artZeile.map((t, i) => <span key={t}>{i > 0 && PUNKT}{t}</span>)}
       </Zeile>
 
+      {/* B8 (Bug-Check 9.8.2026): zwei VD-Erlasse tragen `stand: ""` — die Zeile
+          zeigte dann «Stand:» ohne Wert, also ein leeres Versprechen (§8). Der
+          Erlass-Kopf guardet dasselbe Feld längst; hier fehlte es. */}
       <Zeile label="Stand:">
-        <span className="num">{formatiereDatum(erlass.stand)}</span>
+        {erlass.stand
+          ? <span className="num">{formatiereDatum(erlass.stand)}</span>
+          : <span className="text-ink-500">nicht erfasst</span>}
         {erlass.fassungsToken && istDatumsToken(erlass.fassungsToken) && (
           <>{PUNKT}Fassung <span className="num">{erlass.fassungsToken}</span></>
         )}

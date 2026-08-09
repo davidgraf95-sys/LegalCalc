@@ -219,3 +219,36 @@ test('S7: Artikel-Kontext wechselt beim Lesen den Inhalt — Höhe und CLS bleib
   // Und der Block hat wirklich MITGEFÜHRT (sonst wäre die Höhen-Aussage wertlos).
   expect(await gruppe(), 'Artikel-Kontext ist dem Lesen nicht gefolgt').not.toBe(gruppeVorher);
 });
+
+// ── S7/B1 · Werkzeug-Sprung: VERHALTEN, nicht String-Präsenz ────────────────
+// Bug-Check 9.8.2026: die Werkzeug-Zeile war ein nacktes `<a href="#kontext-
+// werkzeuge">`. Das wirkte dreifach — (a) jeder Klick pushte browsernativ einen
+// Verlaufseintrag (exakt das als LM-209 behobene Muster), (b) der
+// Fragment-Wechsel überschrieb den `#art-…`-Deeplink, den LM-202 als teilbare
+// Adresse schützt, (c) im Split-View löst der Browser das Fragment DOKUMENTWEIT
+// auf und sprang damit ins falsche Pane.
+// Der S7-Unit-Test prüfte nur, dass die Zeichenkette `#kontext-werkzeuge` im
+// Markup steht — genau die Sorte Assertion, die den Defekt gar nicht sehen
+// KANN. Hier wird darum das Verhalten gemessen: Verlaufslänge, Adresse, Ziel.
+test('S7/B1: Werkzeug-Sprung ohne Verlaufseintrag und ohne den #art-Deeplink zu zerstören', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  // OR Art. 127 trägt eine artikelscharfe Werkzeug-Gruppe (Verjährung).
+  await page.goto('/gesetze/bund/OR#art-127');
+  const knopf = page.getByRole('button', { name: /Rechner\/Vorlagen zu/ });
+  await expect(knopf).toBeVisible({ timeout: 30000 });
+
+  const vorher = await page.evaluate(() => ({ len: history.length, hash: location.hash }));
+  expect(vorher.hash, 'Deeplink nicht gesetzt — Testvoraussetzung').toContain('art-127');
+
+  await knopf.click();
+  await page.waitForTimeout(500);
+
+  const nachher = await page.evaluate(() => ({ len: history.length, hash: location.hash }));
+  // (a) LM-209: kein Verlaufseintrag je Klick.
+  expect(nachher.len, 'Werkzeug-Sprung flutet den Verlauf').toBe(vorher.len);
+  // (b) LM-202: der teilbare Artikel-Anker überlebt den Sprung.
+  expect(nachher.hash, '#art-Deeplink vom Werkzeug-Sprung überschrieben').toBe(vorher.hash);
+  // (c) Und der Sprung hat trotzdem stattgefunden — sonst wären (a) und (b)
+  // trivial durch «Knopf tut gar nichts» erfüllt.
+  await expect(page.locator('#kontext-werkzeuge')).toBeInViewport();
+});

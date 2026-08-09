@@ -8,9 +8,9 @@ import { KontextPanel } from '../../components/kontext/KontextPanel';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { CurrencyMap, ErlassKopf, Sektion, StrukturMap } from '../../lib/normtext/browse';
-import { sachgruppe, topTitel, type KantonSystematik } from '../../lib/normtext/systematik';
+import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { LinienProfil } from './linienAufbau';
-import { kopfOverline, grundartMeta } from './helpers';
+import { kopfOverline, grundartMeta, verifiziertesSachgebiet } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserMenuPaar } from './LeserMenuPaar';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
@@ -179,15 +179,13 @@ export function LeserVolltextInhalt({
   // Nur wenn ein verifizierter Titel vorliegt — der neutrale Fallback («Bereich N»,
   // «Ohne Systematik-Nummer») wird weggelassen (§8, nichts Geratenes). Bund bleibt
   // beim Rechtsgebiet-Label.
-  const overlineGebiet: string | null = (() => {
-    if (erlass.ebene === 'bund') return GEBIET_LABEL[erlass.rechtsgebiet];
-    const sys = erlass.kanton ? kantonSys[erlass.kanton] : undefined;
-    if (!sys) return null;
-    const { top } = sachgruppe(sys, erlass.sr);
-    if (top === '~') return null;
-    const name = topTitel(sys, top);
-    return /^Bereich /.test(name) ? null : name;
-  })();
+  // W2·19-GLIEDERUNG/S7 (Bug-Check B9): die Filterregel selbst lebt seit hier in
+  // `verifiziertesSachgebiet` (helpers) — dieselbe Quelle, die auch die
+  // Erlass-Übersicht konsumiert (§5). Vorher stand sie nur hier, und die
+  // Übersicht zeigte den Platzhalter, den diese Zeile korrekt unterdrückte.
+  const overlineGebiet: string | null = erlass.ebene === 'bund'
+    ? GEBIET_LABEL[erlass.rechtsgebiet]
+    : verifiziertesSachgebiet(erlass, kantonSys)?.top ?? null;
 
   // Geteilte Such-Steuerung (nur noch die Eingabe — der frühere Fussnoten-Schalter
   // ist in die Options-Leiste unifiziert, G2b).

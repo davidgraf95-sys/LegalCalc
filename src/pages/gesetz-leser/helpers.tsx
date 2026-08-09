@@ -5,6 +5,7 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import { ERLASS_REGISTER, type ErlassTyp, type Grundart } from '../../lib/normtext/register';
 import { GRUNDART_SEED } from '../../lib/normtext/grundart.generated';
+import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../lib/normtext/systematik';
 import { norm } from '../../lib/suche/normQuery';
 
 // M11 (§5 Verzahnung): Reverse-Resolver SR-Nummer → interner Erlass, ABGELEITET
@@ -31,6 +32,37 @@ export function internerErlassFuerSr(sr: string): { key: string; ebene: 'bund' |
 export function formatiereDatum(iso: string): string {
   const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
+}
+
+/**
+ * N13 (BS-Audit 23.6.2026) — das VERIFIZIERTE amtliche Sachgebiet eines
+ * kantonalen Erlasses, oder `null`.
+ *
+ * §8: Für nicht zugeordnete Systematik-Nummern liefert die Kanton-Systematik
+ * neutrale PLATZHALTER («Bereich SAR», «Ohne Systematik-Nummer»). Das sind keine
+ * Sachgebiete, sondern die Auskunft «wir wissen es nicht» — sie werden darum
+ * weggelassen statt angezeigt.
+ *
+ * W2·19-GLIEDERUNG/S7 (Bug-Check B9): diese Filterregel stand nur inline in der
+ * Reader-Overline (`inhalt-volltext.tsx`). Die Erlass-Übersicht baute ihren
+ * Brotkrümel daneben NEU — und zeigte den Platzhalter, den die Overline
+ * derselben Seite korrekt unterdrückte (~80 Kantonserlasse, 6.5 %). Jetzt EINE
+ * Regel für beide Stellen (§5); wer sie ändert, ändert sie überall.
+ *
+ * `sub` ist der Untergruppen-Titel und darf leer sein (nicht jede Nummer hat
+ * eine); der Aufrufer filtert ihn selbst weg.
+ */
+export function verifiziertesSachgebiet(
+  erlass: Pick<BrowseErlass, 'kanton' | 'sr'>,
+  kantonSys: Record<string, KantonSystematik>,
+): { top: string; sub: string } | null {
+  const sys = erlass.kanton ? kantonSys[erlass.kanton] : undefined;
+  if (!sys) return null;
+  const { top, sub } = sachgruppe(sys, erlass.sr);
+  if (top === '~') return null;
+  const topName = topTitel(sys, top);
+  if (/^Bereich /.test(topName)) return null;
+  return { top: topName, sub: subTitel(sys, top, sub) };
 }
 
 // «Zitat kopieren» (W2·5d G2b, FAHRPLAN §3.3/K12b): EIN deterministisches Zitat-
@@ -166,7 +198,15 @@ export function pfadZu(sektionen: Sektion[], treffer: (s: Sektion) => boolean): 
 // G15: Hervorhebungen (fett/kursiv) im Fussnotentext als Rich-Text rendern. Der
 // Extraktor (fussnoten-extrahiere.clean) behält bare <b>/<i>; hier werden sie in
 // <strong>/<em> übersetzt (rekursiv für die seltene Verschachtelung <i>…<b>…</b>…</i>).
-function richText(s: string, keyBase: string): ReactNode {
+//
+// W2·19-GLIEDERUNG/S7 (Bug-Check B2): EXPORTIERT, weil der Artikel-Kontext
+// dieselben amtlichen Labels zeigt («SR <b>281.1</b>» — 100 % der rs-Fussnoten
+// im Bund-Korpus tragen die Tags). Eine zweite Parse-Regel daneben wäre eine
+// §5-Doppelwahrheit; die eine hier ist bereits am Fussnoten-Text erprobt.
+// (Natürlicher Langzeit-Ort wäre ein geteiltes Darstellungs-Modul — der Import
+// aus der Komponenten-Schicht ist eine Schicht-Inversion für EINE reine
+// Funktion, erzeugt aber keinen Zyklus; siehe check:zyklen.)
+export function richText(s: string, keyBase: string): ReactNode {
   if (!s.includes('<')) return s;
   const out: ReactNode[] = [];
   const re = /<(b|i)>([\s\S]*?)<\/\1>/gi;
@@ -184,6 +224,16 @@ function richText(s: string, keyBase: string): ReactNode {
   }
   if (last < s.length) out.push(s.slice(last));
   return out.length === 1 ? out[0] : out;
+}
+
+/**
+ * Derselbe Wortlaut OHNE Auszeichnung — für Attribute (`title`), die kein
+ * Markup rendern können und es sonst als rohe Zeichen zeigen würden (§8: was
+ * dort steht, muss lesbar sein, nicht «SR &lt;b&gt;281.1&lt;/b&gt;»).
+ * Deckt genau die Tags, die der Extraktor durchlässt (b/i, G15).
+ */
+export function ohneMarkup(s: string): string {
+  return s.replace(/<\/?[bi]>/gi, '');
 }
 
 // Fussnoten-Text mit klickbaren AS/BBl-Verweisen (die Label-Vorkommen werden
