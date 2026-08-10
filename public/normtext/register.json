@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-03",
+  "erzeugt": "2026-08-10",
   "erlasse": [
     {
       "key": "ZGB",
@@ -10463,9 +10463,9 @@
       "status": "snapshot",
       "datei": "kanton/BE-154.21.json",
       "artikelAnzahl": 49,
-      "stand": "2026-05-01",
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.belex.sites.be.ch/app/de/texts_of_law/154.21",
-      "fassungsToken": "ed3d032a1b292535c81f942ed43a314a",
+      "fassungsToken": "e78c32f36998f3f42e841fb9f8d22384",
       "pdfPfad": null,
       "pdfUrl": "https://www.belex.sites.be.ch/api/de/versions/3355/pdf_file",
       "pdfStand": "2026-05-01"
