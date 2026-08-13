@@ -350,10 +350,17 @@ const Zeile = memo(function Zeile({
  * (State), Callbacks (useCallback).
  */
 export const SektionBaumTOC = memo(function SektionBaumTOC({
-  knoten, aktivPfad, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
+  knoten, aktivPfad, aktivToken, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
 }: {
   knoten: GliederungsKnoten[];
   aktivPfad: string[]; // Sektions-Ids des aktiven Pfads, Wurzel → tiefster Knoten
+  /**
+   * Token des gerade gelesenen Artikels (F2 des §9-Bug-Checks 13.8.2026) — die
+   * Marke landet damit auf der ARTIKEL-Zeile, wenn diese sichtbar ist. Der
+   * flache Artikel-Index tut das seit S9 (parts/ArtikelIndex.tsx); der Baum
+   * konnte es nicht, weil der Aktiv-Pfad nur Sektions-Ids kennt.
+   */
+  aktivToken?: string | null;
   offen: Record<string, boolean>;
   startOffeneTiefe: number;
   onToggle: (ids: string[], istOffen: boolean) => void;
@@ -364,7 +371,7 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
   // (`[data-toc] [data-toc-aktiv]` als Sprungziel) und a33 (Ruhe-Messung)
   // stützen: nie mehr als eine, und solange der Spy überhaupt einen Pfad im
   // Baum meldet, auch nie weniger (s. findeMarke).
-  const markeId = findeMarke(knoten, aktivPfad, offen, startOffeneTiefe);
+  const markeId = findeMarke(knoten, aktivPfad, offen, startOffeneTiefe, aktivToken);
   return (
     <ul className="space-y-0.5">
       {knoten.map((k, i) => (

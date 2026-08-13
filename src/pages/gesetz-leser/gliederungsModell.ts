@@ -601,6 +601,16 @@ export function artikelKinderOffen(
  */
 export function findeMarke(
   knoten: GliederungsKnoten[], aktivPfad: string[], offen: Record<string, boolean>, startOffeneTiefe: number,
+  /**
+   * Token des gerade gelesenen Artikels (F2 des §9-Bug-Checks 13.8.2026).
+   * Ohne ihn endete die Marke am Kapitel, obwohl die Artikel-Zeile daneben
+   * sichtbar war: der Aktiv-Pfad kommt aus `pfadZu`/`findeSynthPfad` und kennt
+   * nur Sektions- bzw. Synth-Ids, nie die `gm-art:`-Ids. Belegt an ZPO Art. 404
+   * (Marke auf «Übergangsbestimmungen» statt auf der Zeile) und OR Art. 329gbis
+   * (Marke auf einem sachfremden Nachbarknoten). Der flache Artikel-Index
+   * (B2/B4) markiert längst artikelgenau — die Baum-Ansicht zieht hier nach.
+   */
+  aktivToken?: string | null,
 ): string | null {
   if (aktivPfad.length === 0) return null;
   let marke: string | null = null;
@@ -610,6 +620,14 @@ export function findeMarke(
     if (!treffer) return marke;
     marke = treffer.id;
     if (treffer.kinder.length === 0 || !zeileIstOffen(treffer, offen, startOffeneTiefe)) return marke;
+    // Die Artikel-Zeile gewinnt, sobald sie wirklich sichtbar ist: sie ist der
+    // tiefste sichtbare Knoten des Aktiv-Pfads. Ist sie zugeklappt (oder liest
+    // der Nutzer einen Artikel ohne eigene Zeile), bleibt es beim Kapitel —
+    // «genau EINE Marke» gilt unverändert.
+    if (aktivToken && artikelKinderOffen(treffer, offen, startOffeneTiefe)) {
+      const zeile = treffer.kinder.find((kk) => kk.art === 'artikel' && kk.ersterArtikel === aktivToken);
+      if (zeile) return zeile.id;
+    }
     liste = treffer.kinder;
   }
 }

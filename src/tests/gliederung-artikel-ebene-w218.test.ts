@@ -22,10 +22,11 @@ import { baueGliederungsbaum, type StrukturMap, type Sektion } from '../lib/norm
 import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
+import { pfadZu } from '../pages/gesetz-leser/helpers';
 import { artikelSachtitel } from '../lib/normtext/darstellung';
 import {
-  baueGliederungsModell, flacheZeilen, zeileIstOffen, artikelKinderOffen,
-  artikelRandtitel, istAnhangEintrag,
+  baueGliederungsModell, flacheZeilen, zeileIstOffen, artikelKinderOffen, findeMarke,
+  findeSynthPfad, uebersetzeRohPfad, artikelRandtitel, istAnhangEintrag,
   ARTIKEL_EBENE_MAX_BLATT_DECKUNG, ID_ARTIKEL,
   type GliederungsModell, type GliederungsKnoten,
 } from '../pages/gesetz-leser/gliederungsModell';
@@ -461,5 +462,78 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
     expect(zeileIstOffen(traeger, {}, m.startOffeneTiefe)).toBe(false);
     const auf = Object.fromEntries(traeger.ids.map((id) => [id, true]));
     expect(zeileIstOffen(traeger, auf, m.startOffeneTiefe)).toBe(true);
+  });
+});
+
+// ═══ 5 · Positionsmarke bis auf die Artikel-Zeile (F2 des §9-Bug-Checks) ════
+//
+// BEFUND (zwei Prüfer unabhängig, 13.8.2026): Die Marke erreichte die neuen
+// Artikel-Zeilen NIE. Der Aktiv-Pfad kommt aus `pfadZu` (Rohbaum) bzw.
+// `findeSynthPfad` — beide kennen nur Sektions- und Synth-Ids, nie die
+// `gm-art:`-Ids. Sichtbar war das an der ZPO: beim Lesen von Art. 404 markierte
+// die Leiste das Kapitel, obwohl die Zeile «Art. 404 — Weitergelten des
+// bisherigen Rechts» direkt darunter stand. Der flache Artikel-Index (B2/B4)
+// markiert seit S9 artikelgenau; die Baum-Ansicht zieht hier nach.
+//
+// Die Testlücke, die das durchgehen liess: der bestehende Marken-Fall prüfte
+// nur `!== null`. Diese Fälle prüfen die ART der getroffenen Zeile.
+describe('W2·18/F2 — die Marke findet die Artikel-Zeile, wenn sie sichtbar ist', () => {
+  /** Aktiv-Pfad wie im Reader: Rohpfad übersetzt, sonst der Synth-Pfad. */
+  const aktivPfadFuer = (m: ReturnType<typeof lade>, token: string): string[] => {
+    const roh = pfadZu(m.sektionen, (s) => s.artikel.some((a) => a.artikel === token));
+    return roh ? uebersetzeRohPfad(m.umhaengPraefix, roh) : (findeSynthPfad(m.knoten, token) ?? []);
+  };
+
+  const faelle = [
+    ['bund', 'ZPO', '404', 'Art. 404 — Weitergelten des bisherigen Rechts'],
+    ['bund', 'SCHKG', '283', 'Art. 283 — Retentionsverzeichnis'],
+    ['bund', 'RBUE', '23', 'Art. 23'],
+  ] as const;
+
+  for (const [ebene, key, token, label] of faelle) {
+    it(`${key} Art. ${token}: die Marke sitzt auf der Artikel-Zeile, nicht auf dem Kapitel`, () => {
+      const m = lade(ebene, key);
+      const ids = aktivPfadFuer(m, token);
+      expect(ids.length, `${key}: kein Aktiv-Pfad für ${token}`).toBeGreaterThan(0);
+      // Der Ast steht offen — genau so misst der Reader nach dem Auto-Akkordeon
+      // bzw. nach einem Klick; zugeklappt prüft der Fall darunter.
+      const offen = Object.fromEntries(ids.map((id) => [id, true]));
+      const marke = findeMarke(m.knoten, ids, offen, m.startOffeneTiefe, token);
+      const zeile = flacheZeilen(m.knoten).find((k) => k.id === marke);
+      expect(zeile, `${key}: Marke ${String(marke)} zeigt auf keine Zeile`).toBeDefined();
+      expect(zeile!.art, `${key}: Marke sitzt auf «${zeile!.label}»`).toBe('artikel');
+      expect(zeile!.ersterArtikel).toBe(token);
+      expect(zeile!.label).toBe(label);
+      // «Genau EINE Marke» bleibt: die Id kommt im ganzen Baum einmal vor.
+      expect(flacheZeilen(m.knoten).filter((k) => k.id === marke).length).toBe(1);
+    });
+  }
+
+  it('zugeklappt bleibt es beim Kapitel — die Marke verschwindet nie (a9-Sprungziel)', () => {
+    const m = lade('bund', 'ZPO');
+    const ids = aktivPfadFuer(m, '404');
+    // Nur die Sektionen offen, die Artikel-Ebene zu: der Zustand direkt nach dem
+    // Öffnen der Leiste. Die Marke muss auf der TIEFSTEN SICHTBAREN Zeile sitzen.
+    const marke = findeMarke(m.knoten, ids, {}, m.startOffeneTiefe, '404');
+    const zeile = flacheZeilen(m.knoten).find((k) => k.id === marke);
+    expect(zeile?.art).toBe('sektion');
+    expect(marke).toBe(ids[0]);
+  });
+
+  it('OR Art. 329gbis: kein Doppel — die Marke sitzt auf dem Randtitel-Blatt, das den Artikel IST', () => {
+    // Im Bug-Check als «Marke auf sachfremdem Nachbarknoten» gemeldet; am Modell
+    // nachgeprüft trifft das nicht zu: `sek-610` trägt genau diesen einen
+    // Artikel, und sein Label «b. Im Falle des Todes der Mutter» IST dessen
+    // amtlicher Randtitel. Eine Artikel-Zeile daneben wäre die Doppelung, die
+    // §5 verbietet — der Fall hält beides fest, damit die Frage nicht
+    // wiederkehrt.
+    const m = lade('bund', 'OR');
+    const ids = aktivPfadFuer(m, '329_g_bis');
+    const offen = Object.fromEntries(ids.map((id) => [id, true]));
+    const marke = findeMarke(m.knoten, ids, offen, m.startOffeneTiefe, '329_g_bis');
+    const zeile = flacheZeilen(m.knoten).find((k) => k.id === marke)!;
+    expect(zeile.art).toBe('sektion');
+    expect(zeile.ersterArtikel).toBe('329_g_bis');
+    expect(zeile.kinder.some((k) => k.art === 'artikel')).toBe(false);
   });
 });
