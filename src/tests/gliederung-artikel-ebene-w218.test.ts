@@ -63,7 +63,7 @@ describe('W2·18 — jeder Artikel ist über die Gliederung erreichbar', () => {
   for (const [ebene, key, anzahl] of baumFaelle) {
     it(`${key}: alle ${anzahl} Artikel haben eine eigene Zeile`, () => {
       const m = lade(ebene, key);
-      expect(m.artikelEbene).toBe(true);
+      expect(m.artikelEbene).toBe('voll');
       expect(m.kennzahlen.artikelAnzahl).toBe(anzahl);
       // Jede Zeile, die genau EINEN Artikel deckt — die neuen Artikel-Zeilen
       // UND die Anhang-Einträge, die `baueAnhangAst` schon vorher je Eintrag
@@ -137,7 +137,7 @@ describe('W2·18 — jeder Artikel ist über die Gliederung erreichbar', () => {
 
   it('BS-211.100 (T8): Artikel-Zeilen stehen in Dokumentreihenfolge zwischen den Untersektionen', () => {
     const m = lade('kanton', 'BS-211.100');
-    expect(m.artikelEbene).toBe(true);
+    expect(m.artikelEbene).toBe('voll');
     const pos = new Map(m.eintraege.map((e, i) => [e.artikel, i]));
     const ersteArt = (k: GliederungsKnoten): number => {
       const eigene = k.ersterArtikel !== undefined ? pos.get(k.ersterArtikel) ?? Infinity : Infinity;
@@ -186,24 +186,138 @@ describe('W2·18 — jeder Artikel ist über die Gliederung erreichbar', () => {
   });
 });
 
-// ═══ 2 · Die Ausnahme: OR/ZGB bleiben unangetastet ══════════════════════════
-describe('W2·18 — artikel-granulare Bäume werden nicht gedoppelt', () => {
-  for (const key of ['OR', 'ZGB'] as const) {
-    it(`${key}: keine Artikel-Ebene, Baum unverändert`, () => {
-      const m = lade('bund', key);
-      expect(m.artikelEbene).toBe(false);
+// ═══ 2 · Artikel-granulare Bäume: Lücken schliessen, nichts doppeln ═════════
+//
+// GEÄNDERTE ERWARTUNG, deklariert (Nutzer-Turn David 13.8.2026: «die ganze
+// Gliederung bis zum einzelnen Artikel in ALLEN Gesetzen»). Dieser Block prüfte
+// bis zum Nachtrag «OR/ZGB bleiben unangetastet» — eine Zusicherung aus dem
+// Auftrags-Rahmen, die Davids Anforderung nachgeordnet ist. Sie fiel, als die
+// eigene Lane den Preis gemessen hat: in OR waren 83 von 1686 Artikeln über die
+// Gliederung NICHT anspringbar, im ZGB 48 (plus 74 aus der A36-Kuration, die
+// bewusst nicht im Baum stehen), dazu LFG 17 · KOV 8 ·
+// SchKG 7 · ENTG 6 · IPRG 5 · VZG 5 · VSTG 4 · VSTV 1 · VSTRR 1. Der Grund ist
+// mechanisch: eine Zeile hat genau EIN Sprungziel, ein Knoten mit mehreren
+// Artikeln erreicht also nur den ersten.
+//
+// Was NICHT fällt: das Doppelungs-Verbot (§5). Die 1568 Randtitel-Blätter des
+// OR bekommen weiterhin keine Kind-Zeile — nur Knoten, die ihre Artikel nicht
+// selbst anspringen.
+describe('W2·18 — artikel-granulare Bäume: jeder Artikel erreichbar, keine Doppelung', () => {
+  /**
+   * Anspringbare Artikel: jede Zeile führt zu genau EINEM Artikel
+   * (`ersterArtikel`, s. SektionBaumTOC — Sektionszeilen über `onSprung`,
+   * Artikel- und Synth-Zeilen über `onSprungArtikel`). Der flache Index zählt
+   * mit, wo ein Modus ihn zeigt.
+   */
+  const anspringbar = (m: GliederungsModell): Set<string> => {
+    const ziel = new Set<string>(
+      flacheZeilen(m.knoten).map((k) => k.ersterArtikel).filter((t): t is string => t !== undefined),
+    );
+    for (const g of m.artikelIndex) for (const z of g.zeilen) ziel.add(z.token);
+    return ziel;
+  };
+
+  const sammleTokens = (s: Sektion, aus: Set<string>): void => {
+    s.artikel.forEach((a) => aus.add(a.artikel));
+    s.kinder.forEach((k) => sammleTokens(k, aus));
+  };
+
+  // Zahlen aus der Korpus-Sonde 13.8.2026, gemessen am Stand VOR diesem Commit
+  // (Sabotage `luecken → keine`): Artikel im kuratierten Baum-Eingang ohne
+  // anspringbare Zeile. Beim ZGB sind es 48 — die im GESAMT-Snapshot gezählten
+  // 122 enthalten zusätzlich die 74 Artikel der A36-Kuration, die absichtlich
+  // nicht im Baum stehen (eigener Fall unten).
+  const granular = [
+    ['bund', 'OR', 83], ['bund', 'ZGB', 48], ['bund', 'SCHKG', 7],
+    ['bund', 'IPRG', 5], ['bund', 'LFG', 17], ['bund', 'KOV', 8],
+  ] as const;
+
+  for (const [ebene, key, vorher] of granular) {
+    it(`${key}: ${vorher} vorher unerreichbare Artikel → 0`, () => {
+      const m = lade(ebene, key);
+      expect(m.artikelEbene).toBe('luecken');
       expect(m.kennzahlen.artikelBlattDeckung).toBeGreaterThan(ARTIKEL_EBENE_MAX_BLATT_DECKUNG);
-      // BEWEIS DER UNVERÄNDERTHEIT: `haengeArtikelZeilen` kann an einem Baum
-      // genau zweierlei tun — Artikel-Zeilen einfügen und `startOffen: false`
-      // setzen. Ist beides nirgends vorhanden, ist der Baum identisch mit dem
-      // vor dem Umbau; ein eingefrorener Abzug (Snapshot) bewiese weniger und
-      // müsste bei jedem Korpus-Nachzug nachgeführt werden.
-      const alle = flacheZeilen(m.knoten);
-      expect(alle.some((k) => k.art === 'artikel')).toBe(false);
-      expect(alle.some((k) => k.startOffen === false)).toBe(false);
-      expect(alle.some((k) => k.id.startsWith(`${ID_ARTIKEL}:`))).toBe(false);
+
+      // (a) Erreichbarkeit, gemessen am KURATIERTEN Baum-Eingang, den das Modell
+      // bekommt. Das ist kein Weichspüler: `kuratiereTocSektionen` nimmt beim
+      // ZGB die 74 Artikel des Anhangs «Wortlaut der früheren Bestimmungen des
+      // sechsten Titels» bewusst aus der Gliederung (A36, Bau-Spec §3.4 «bleibt
+      // UNVERÄNDERT») — sie stehen vollständig in der Lesespalte samt Anker.
+      // Ein Test, der sie hier einforderte, verlangte die Rücknahme eines
+      // anderen, begründeten Entscheids. Der Fall darunter zählt sie einzeln.
+      const imEingang = new Set<string>();
+      m.sektionen.forEach((s) => sammleTokens(s, imEingang));
+      const ziel = anspringbar(m);
+      expect([...imEingang].filter((t) => !ziel.has(t)), `${key}: nicht anspringbare Artikel`).toEqual([]);
+
+      // (b) Die Lücken sind wirklich über NEUE Zeilen geschlossen, nicht durch
+      // eine weichere Messung: mindestens so viele Artikel-Zeilen wie vorher
+      // fehlende Artikel.
+      const artikelZeilen = flacheZeilen(m.knoten).filter((k) => k.art === 'artikel');
+      expect(artikelZeilen.length).toBeGreaterThanOrEqual(vorher);
+
+      // (c) KEINE DOPPELUNG: keine Zeile, die ihren einzigen Artikel schon
+      // selbst anspringt, hat eine Kind-Zeile bekommen.
+      for (const t of flacheZeilen(m.knoten).filter((k) => k.kinder.some((kk) => kk.art === 'artikel'))) {
+        const eigene = t.kinder.filter((kk) => kk.art === 'artikel');
+        const waereDieselbeZeile = t.kinder.length === 1 && eigene.length === 1
+          && t.ersterArtikel === eigene[0].ersterArtikel;
+        expect(waereDieselbeZeile, `${key}/${t.id}: Zeile und Artikel-Zeile wären dieselbe`).toBe(false);
+      }
     });
   }
+
+  it('ZGB: die 74 verbleibenden Artikel sind die deklarierte A36-Kuration, kein Leck', () => {
+    // Ehrlichkeit statt runder Null (§8): korpusweit bleibt nach dem Umbau
+    // GENAU dieser eine Block ohne Gliederungs-Zeile — der Alt-Güterrecht-
+    // Anhang, den `kuratiereTocSektionen` absichtlich aus dem Baum nimmt.
+    const { eintraege, struktur } = ladeNormFixture('bund', 'ZGB');
+    const roh = baueGliederungsbaum(eintraege, struktur);
+    const kuratiert = roh.sektionen.find((s) => s.label === 'Wortlaut der früheren Bestimmungen des sechsten Titels');
+    expect(kuratiert, 'A36-Kurationsziel muss im Rohbaum existieren').toBeDefined();
+    const inKuration = new Set<string>();
+    sammleTokens(kuratiert!, inKuration);
+    expect(inKuration.size).toBe(74);
+
+    const m = lade('bund', 'ZGB');
+    const ziel = anspringbar(m);
+    const fehlt = eintraege.filter((a) => !ziel.has(a.artikel));
+    expect(fehlt.length).toBe(74);
+    expect(fehlt.every((a) => inKuration.has(a.artikel))).toBe(true);
+  });
+
+  it('B2 mit Anhang-Sektionen: auch dort schliesst die Lücken-Regel auf (ASYLV3, RDV)', () => {
+    // Zweiter Fund derselben Mechanik: in b2-index rendert der Baum-Renderer NUR
+    // den Anhang-Ast, und der flache Index lässt Anhang-Einträge bewusst aus
+    // (§5). Eine Anhang-SEKTION mit mehreren Artikeln erreichte damit nur ihren
+    // ersten — ASYLV3 5 von 51, RDV 3 von 37 waren über die Leiste nirgends zu
+    // finden. Ohne diesen Fall wäre der Umbau auf halbem Weg stehen geblieben.
+    for (const [key, anzahl] of [['ASYLV3', 51], ['RDV', 37]] as const) {
+      const m = lade('bund', key);
+      expect(m.modus).toBe('b2-index');
+      const ziel = anspringbar(m);
+      expect(m.eintraege.filter((a) => !ziel.has(a.artikel)).map((a) => a.artikelLabel),
+        `${key}: nicht anspringbare Artikel`).toEqual([]);
+      expect(m.kennzahlen.artikelAnzahl).toBe(anzahl);
+      // Die Zeilen entstehen NUR im Anhang-Ast — der übrige Baum wird in diesem
+      // Modus gar nicht gezeigt, dort wäre jede gebaute Zeile Verschnitt (§15).
+      const anhangAst = m.knoten.filter((k) => k.art === 'anhang');
+      expect(flacheZeilen(anhangAst).filter((k) => k.art === 'artikel').length).toBeGreaterThan(0);
+      expect(flacheZeilen(m.knoten.filter((k) => k.art !== 'anhang')).some((k) => k.art === 'artikel')).toBe(false);
+    }
+  });
+
+  it('OR: das Doppelungs-Verbot trägt — 115 Artikel-Zeilen, nicht 1686', () => {
+    const m = lade('bund', 'OR');
+    const artikelZeilen = flacheZeilen(m.knoten).filter((k) => k.art === 'artikel').length;
+    // 115 Zeilen schliessen 83 Lücken: ein Knoten mit mehreren Artikeln gibt
+    // auch seinem ERSTEN eine Zeile — eine Teilliste «alle ausser dem ersten»
+    // wäre die verwirrendere Wahl. Weit entfernt von den 1686 Zeilen, die eine
+    // Ebene ohne Lücken-Regel erzeugt hätte.
+    expect(artikelZeilen).toBe(115);
+    expect(artikelZeilen).toBeLessThan(m.kennzahlen.artikelAnzahl / 10);
+    expect(flacheZeilen(m.knoten).filter((k) => k.id.startsWith(`${ID_ARTIKEL}:`)).length).toBe(115);
+  });
 
   it('die Schwelle trennt die beiden Lager mit Abstand (§0-3: Verteilung, nicht Einzelwert)', () => {
     // Korpus-Sonde 13.8.2026: unterhalb endet die Verteilung bei 0.793, oberhalb
@@ -223,7 +337,7 @@ describe('W2·18 — Modi ohne Artikel-Ebene, jeder aus eigenem Grund', () => {
     it(`${key} (b2-index): die Artikel stehen flach im Index, nicht zweimal`, () => {
       const m = lade(ebene, key);
       expect(m.modus).toBe('b2-index');
-      expect(m.artikelEbene).toBe(false);
+      expect(m.artikelEbene).toBe('keine');
       const imIndex = m.artikelIndex.flatMap((g) => g.zeilen.map((z) => z.token));
       const anhang = m.eintraege.filter(istAnhangEintrag).length;
       expect(imIndex.length).toBe(m.eintraege.length - anhang);
@@ -251,7 +365,7 @@ describe('W2·18 — Modi ohne Artikel-Ebene, jeder aus eigenem Grund', () => {
       expect(m.kennzahlen.artikelAnzahl).toBe(anzahl);
       // Die Artikel-Ebene des BAUMS bleibt aus — es gibt keinen Baum. Der
       // flache Index ist hier der ganze Zugang (§5: nicht beides).
-      expect(m.artikelEbene).toBe(false);
+      expect(m.artikelEbene).toBe('keine');
       const imIndex = m.artikelIndex.flatMap((g) => g.zeilen.map((z) => z.token));
       const imAnhang = flacheZeilen(m.knoten).filter((k) => k.art === 'anhang').flatMap((k) => k.tokens ?? []);
       const gedeckt = new Set([...imIndex, ...imAnhang]);

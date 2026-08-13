@@ -187,19 +187,29 @@ export interface DirektArtikel {
 // Sachtitel (`artikelRandtitel`) kommen aus denselben Feldern wie der flache
 // Artikel-Index (B2/B4) und die Lesespalte.
 //
-// DREI STELLEN, AN DENEN SIE BEWUSST NICHT ANSETZT (§5 — nie doppeln):
-//  1. Randtitel-Blätter mit genau EINEM Artikel: die Zeile trägt bereits den
-//     Sachtitel dieses Artikels; eine Kind-Zeile wäre dieselbe Zeile zweimal.
-//     Das ist die Regel, die OR/ZGB praktisch vollständig trägt (0.92/0.88).
-//  2. Erlasse, deren Baum ohnehin artikel-granular ist
-//     (ARTIKEL_EBENE_MAX_BLATT_DECKUNG) — dort bleibt der Baum unverändert.
-//  3. Anhang-Zeilen (`art: 'anhang'`): `baueAnhangAst` erzeugt je Anhang-Eintrag
-//     schon eine eigene Zeile. Die Anhang-SEKTIONEN (`art: 'sektion'`,
-//     `anhang: true`, z. B. AIG/ChemRRV) bekommen die Ebene dagegen sehr wohl —
-//     ihre Artikel hingen sonst weiter unerreichbar am Kapitel.
-// Vorspann-, Nachspann- und Mittelgruppen-Zeilen bekommen sie ausdrücklich
-// AUCH: dort liegt bei Staatsverträgen der Haupttext (RBUE 47 von 49 Artikeln),
-// und eine Sammelzeile «Ohne Abschnitt (Art. 1–47)» ist kein Zugang zu Art. 23.
+// ZWEI UMFÄNGE, EIN ZIEL (Nachtrag 13.8.2026 — s. `ArtikelEbeneUmfang`):
+//  · `voll` — der Baum ist nicht artikel-granular: jede Zeile mit eigenen
+//    Artikeln bekommt Kind-Zeilen. Ausgenommen bleibt allein das
+//    Randtitel-Blatt mit genau EINEM Artikel: seine Zeile trägt schon dessen
+//    Sachtitel, eine Kind-Zeile wäre dieselbe Zeile zweimal.
+//  · `luecken` — der Baum ist bereits artikel-granular (OR 0.92, ZGB 0.88,
+//    ARTIKEL_EBENE_MAX_BLATT_DECKUNG): hier entsteht eine Kind-Zeile NUR, wo
+//    ein Artikel sonst gar nicht anspringbar wäre. Denn eine Zeile springt
+//    immer zu genau EINEM Artikel (`ersterArtikel`) — trägt ein Knoten
+//    mehrere, sind die übrigen über die Gliederung nicht erreichbar.
+//    GEMESSEN am committeten Korpus: OR 83 von 1686 Artikeln, ZGB 122 von
+//    1277, dazu LFG 17 · KOV 8 · SchKG 7 · ENTG 6 · IPRG 5 · VZG 5 · VSTG 4 ·
+//    VSTV 1 · VSTRR 1. Diese Artikel standen bis zum 13.8.2026 in der Leiste
+//    nicht zur Verfügung — Davids Vorgabe «bis zum einzelnen Artikel in ALLEN
+//    Gesetzen» ist damit erst jetzt erfüllt.
+//
+// ANHANG-ZEILEN (`art: 'anhang'`) bekommen in KEINEM Umfang Kind-Zeilen:
+// `baueAnhangAst` erzeugt je Anhang-Eintrag schon eine eigene. Die Anhang-
+// SEKTIONEN (`art: 'sektion'`, `anhang: true`, z. B. AIG/ChemRRV) dagegen sehr
+// wohl — ihre Artikel hingen sonst weiter unerreichbar am Kapitel.
+// Vorspann-, Nachspann- und Mittelgruppen-Zeilen ebenso: dort liegt bei
+// Staatsverträgen der Haupttext (RBUE 47 von 49 Artikeln), und eine Sammelzeile
+// «Ohne Abschnitt (Art. 1–47)» ist kein Zugang zu Art. 23.
 
 /** Eine Artikel-Zeile. Blatt ohne Kinder — die Ebene ist immer die unterste. */
 function baueArtikelZeile(e: NormSnapshot, tiefe: number, struktur: StrukturMap | null): GliederungsKnoten {
@@ -231,10 +241,27 @@ function baueArtikelZeile(e: NormSnapshot, tiefe: number, struktur: StrukturMap 
 }
 
 /**
- * Trägt diese Zeile ihren einen Artikel bereits selbst? (Fall 1 oben.)
+ * Trägt diese Zeile ihren einen Artikel bereits mit dessen SACHTITEL? Dann
+ * wäre eine Kind-Zeile wortgleich (Umfang `voll`, Ausnahme oben) — und diese
+ * Prüfung ist zugleich die Definition der Kennzahl `artikelBlattDeckung`.
  */
 export function istSchonArtikelZeile(d: DirektArtikel): boolean {
   return d.randtitelBlatt && d.ohneKinder && d.arts.length === 1;
+}
+
+/**
+ * Ist dieser Artikel über die Zeile, an der er hängt, ANSPRINGBAR? Eine Zeile
+ * hat genau ein Sprungziel (`ersterArtikel`, s. SektionBaumTOC) — trägt sie
+ * mehrere Artikel, erreicht sie nur einen davon. Massgeblich im Umfang
+ * `luecken`: dort entsteht eine Kind-Zeile ausschliesslich für die anderen.
+ *
+ * Der Vergleich gegen `ersterArtikel` statt gegen «genau ein Artikel» ist
+ * nicht Feinschliff, sondern der gemischte Knoten (T8): dessen Sprungziel ist
+ * der erste Artikel des ganzen TEILBAUMS, also womöglich der eines Kindes —
+ * sein eigener Artikel bliebe dann trotz `arts.length === 1` unerreichbar.
+ */
+function istAnspringbar(k: GliederungsKnoten, arts: NormSnapshot[]): boolean {
+  return arts.length === 1 && k.ersterArtikel === arts[0].artikel;
 }
 
 /**
@@ -266,19 +293,24 @@ export function haengeArtikelZeilen(
   /** Artikel-Token → Snapshot-Eintrag (für die synthetischen Zeilen). */
   artNach: Map<string, NormSnapshot>,
   struktur: StrukturMap | null,
+  /** `voll` = überall, `luecken` = nur wo sonst unerreichbar (s. o.). */
+  umfang: 'voll' | 'luecken',
 ): void {
   for (const k of knoten) {
-    haengeArtikelZeilen(k.kinder, direkt, artPos, artNach, struktur);
-    if (k.art === 'artikel' || k.art === 'anhang') continue; // s. Fall 1/3 oben
+    haengeArtikelZeilen(k.kinder, direkt, artPos, artNach, struktur, umfang);
+    if (k.art === 'artikel' || k.art === 'anhang') continue; // s. o.: schon je Eintrag eine Zeile
     let arts: NormSnapshot[];
     if (k.art === 'sektion') {
       const d = direkt.get(k.id);
-      if (!d || istSchonArtikelZeile(d)) continue;
+      if (!d) continue;
       arts = d.arts;
+      if (umfang === 'voll' && istSchonArtikelZeile(d)) continue;
     } else {
       // Vorspann/Nachspann/Mittelgruppe: ihre Artikel stehen in `tokens`.
       arts = (k.tokens ?? []).map((t) => artNach.get(t)).filter((e): e is NormSnapshot => e !== undefined);
     }
+    // `luecken`: was die Zeile selbst anspringt, bleibt wie es ist.
+    if (umfang === 'luecken' && istAnspringbar(k, arts)) continue;
     if (arts.length === 0) continue;
     const zeilen = arts.map((e) => baueArtikelZeile(e, k.tiefe + 1, struktur));
     const posVon = (kind: GliederungsKnoten): number =>

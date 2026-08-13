@@ -54,11 +54,13 @@ export {
 } from './gliederungsArtikel';
 
 import type {
-  GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe,
+  ArtikelEbeneUmfang, GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe,
 } from './gliederungsTypen';
 // Die hier auch LOKAL gebrauchten Typen werden aus dem Import re-exportiert —
 // ein zweites `export … from` daneben wäre laut `tsc -b` ein Konflikt (TS2484).
-export type { GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe };
+export type {
+  ArtikelEbeneUmfang, GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe,
+};
 import {
   ARTIKEL_EBENE_MAX_BLATT_DECKUNG, baueArtikelIndex, haengeArtikelZeilen, hatRandtitel,
   istAnhangEintrag, istSchonArtikelZeile, sammleArtikel, type DirektArtikel,
@@ -494,8 +496,11 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
       : 0;
 
   // Artikel-Ebene (W2·18-FEHLERBUCH, David 13.8.2026): in JEDEM Baum-Modus,
-  // nicht nur bei hoher Sachtitel-Dichte. Die drei anderen Modi brauchen sie
-  // nicht bzw. können sie nicht tragen — und zwar aus je eigenem Grund:
+  // nicht nur bei hoher Sachtitel-Dichte — und seit dem Nachtrag vom selben Tag
+  // in JEDEM Erlass, nur in zwei Umfängen (s. `ArtikelEbeneUmfang`):
+  //   · nicht artikel-granular  → `voll`    (Nummer + Sachtitel an jeder Zeile)
+  //   · schon artikel-granular  → `luecken` (nur die sonst unerreichbaren)
+  // Die beiden anderen Modi brauchen sie nicht bzw. können sie nicht tragen:
   //   · b2-index / b4-mini zeigen die Artikel bereits FLACH (`artikelIndex`);
   //     eine zweite, geschachtelte Artikel-Liste daneben wäre die Doppelung,
   //     die §5 verbietet (der Baum-Renderer läuft dort nur für den Anhang-Ast).
@@ -503,11 +508,21 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
   //     Artikel — da gibt es nichts anzuhängen. Die 68 sidecar-/randtitel-losen
   //     Erlasse, die früher hier landeten, zeigen jetzt den flachen Index
   //     (Herleitung in `waehleModus`).
-  const artikelEbene = (modus === 'b1-offen' || modus === 'b1-kompakt')
-    && kennzahlen.artikelBlattDeckung < ARTIKEL_EBENE_MAX_BLATT_DECKUNG;
-  if (artikelEbene) {
-    const artNach = new Map(eintraege.map((e) => [e.artikel, e]));
-    haengeArtikelZeilen(knoten, hilfe.direkt, artPos, artNach, struktur);
+  const artikelEbene: ArtikelEbeneUmfang = (modus !== 'b1-offen' && modus !== 'b1-kompakt') ? 'keine'
+    : kennzahlen.artikelBlattDeckung < ARTIKEL_EBENE_MAX_BLATT_DECKUNG ? 'voll'
+      : 'luecken';
+  const artNach = new Map(eintraege.map((e) => [e.artikel, e]));
+  if (artikelEbene !== 'keine') {
+    haengeArtikelZeilen(knoten, hilfe.direkt, artPos, artNach, struktur, artikelEbene);
+  } else if (anhangWurzel && (modus === 'b2-index' || modus === 'b4-mini')) {
+    // In B2/B4 rendert der Baum-Renderer NUR den Anhang-Ast (inhalt.tsx) — der
+    // flache Index deckt die Anhang-Einträge bewusst nicht ab (§5). Steht dort
+    // eine Anhang-SEKTION mit mehreren Artikeln, springt ihre Zeile nur zum
+    // ersten und der Rest bliebe unerreichbar: belegt an ASYLV3 (5 von 51) und
+    // RDV (3 von 37). Darum schliesst auch hier die Lücken-Regel auf — nur im
+    // Anhang-Ast, weil der Rest des Baums in diesen Modi gar nicht gezeigt wird
+    // (§15: nichts bauen, was niemand sieht).
+    haengeArtikelZeilen([anhangWurzel], hilfe.direkt, artPos, artNach, struktur, 'luecken');
   }
   kennzahlen.zeilenGesamt = zaehleZeilen(knoten);
 

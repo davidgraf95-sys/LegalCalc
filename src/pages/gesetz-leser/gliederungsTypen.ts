@@ -19,6 +19,27 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 
 export type GliederungsModus = 'b4-mini' | 'b3-leer' | 'b2-index' | 'b1-offen' | 'b1-kompakt';
 
+/**
+ * Wie weit reicht die Artikel-Ebene des Baums? (W2·18-FEHLERBUCH, David
+ * 13.8.2026 «bis zum einzelnen Artikel in ALLEN Gesetzen».)
+ *
+ *  · `voll`     — jede Zeile mit eigenen Artikeln bekommt sie. Der Regelfall
+ *                 der Baum-Modi: dort ist der Baum nicht artikel-granular, die
+ *                 Artikel-Zeile trägt Nummer UND Sachtitel.
+ *  · `luecken`  — nur dort, wo Artikel sonst UNERREICHBAR wären. Der Fall der
+ *                 Erlasse, deren Randtitel-Blätter den Baum schon artikel-
+ *                 granular machen (OR, ZGB, SchKG …): eine Zeile je Randtitel-
+ *                 Blatt bleibt, aber wo ein Knoten mehrere Artikel trägt, ist
+ *                 nur der erste anspringbar — die übrigen bekommen ihre Zeile.
+ *  · `keine`    — der Modus zeigt die Artikel ohnehin flach (`artikelIndex`,
+ *                 b2/b4) oder es gibt gar keine (b3).
+ *
+ * Die Unterscheidung ist KEIN Qualitätsurteil über den Erlass, sondern die
+ * Antwort auf «wo fehlt noch ein Zugang»: Erreichbarkeit gilt überall, gedoppelt
+ * wird nirgends (§5).
+ */
+export type ArtikelEbeneUmfang = 'voll' | 'luecken' | 'keine';
+
 export interface GliederungsKennzahlen {
   /** Artikel im Snapshot (inkl. Anhang-Einträge — es ist die Snapshot-Länge). */
   artikelAnzahl: number;
@@ -152,14 +173,11 @@ export interface GliederungsModell {
    */
   umhaengPraefix: Record<string, string[]>;
   /**
-   * Trägt der Baum die Artikel als unterste Klapp-Ebene? (W2·18-FEHLERBUCH,
-   * David 13.8.2026). `false` heisst NICHT «hier fehlen Artikel», sondern
-   * entweder «der Baum ist schon artikel-granular» (OR/ZGB, s.
-   * ARTIKEL_EBENE_MAX_BLATT_DECKUNG) oder «dieser Modus zeigt die Artikel
-   * ohnehin flach» (b2-index/b4-mini über `artikelIndex`) oder «der Snapshot
-   * hat gar keine Artikel» (b3-leer).
+   * Wie weit reicht die Artikel-Ebene? (Herleitung bei `ArtikelEbeneUmfang`.)
+   * `keine` heisst nie «hier fehlen Artikel», sondern «dieser Modus zeigt sie
+   * anderswo» (flacher `artikelIndex`) bzw. «es gibt keine» (b3-leer).
    */
-  artikelEbene: boolean;
+  artikelEbene: ArtikelEbeneUmfang;
   kennzahlen: GliederungsKennzahlen;
   /**
    * W2·19-GLIEDERUNG/S9 (Bau-Spec §3.2/§8, T3/T4-Fälle): der ARTIKEL-scharfe
