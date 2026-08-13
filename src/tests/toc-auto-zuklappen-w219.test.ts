@@ -330,73 +330,144 @@ describe('Ruhe-Tor — wann darf der aktive Zweig von selbst aufgehen', () => {
 
 // ═══ B8 · Fokus-Rettung beim Auto-Zuklappen (WCAG 2.4.3) ════════════════════
 //
-// W2·18-FEHLERBUCH (Herkunft: W2·19-Bug-Check B8, zurückgestellt). Seit dem
-// Unmount zugeklappter Äste (S5) verschwindet ein geschlossener Ast aus dem
-// DOM — samt dem Element, auf dem der Tastatur-Fokus stand. Der Browser gibt
-// ihn dann an <body>, und die nächste Tab-Taste beginnt am Seitenanfang.
+// W2·18-FEHLERBUCH (Herkunft: W2·19-Bug-Check B8), korrigiert nach dem
+// §9-Bug-Check 13.8.2026. Seit dem Unmount zugeklappter Äste (S5) verschwindet
+// ein geschlossener Ast aus dem DOM — samt dem Element, auf dem der
+// Tastatur-Fokus stand. Der Browser gibt ihn dann an <body>.
 //
 // ZWEITES DOM-DOUBLE, bewusst neben dem oberen: `planeZuklappen` misst
-// Geometrie, `retteFokusVorZuklapp` fragt Fokus-Zugehörigkeit — zwei
-// verschiedene DOM-Fähigkeiten. Ein gemeinsames Double müsste beide Rollen
-// tragen und wäre in keiner davon mehr lesbar.
+// Geometrie, `retteFokusVorZuklapp` fragt Fokus-Zugehörigkeit, Verschachtelung
+// und Sichtbarkeit. Ein gemeinsames Double müsste beide Rollen tragen und wäre
+// in keiner davon mehr lesbar.
+//
+// SCROLL-SEMANTIK IM DOUBLE (F3b): `focus()` auf ein Element ausserhalb des
+// Sichtbands scrollt den Container — genau das war der Fehler der ersten
+// Fassung, und ohne diese Nachbildung bliebe er unsichtbar. Das Double
+// protokolliert darum, ob das Fokus-Ziel sichtbar war.
 describe('B8 — der Tastatur-Fokus überlebt das Auto-Zuklappen', () => {
-  interface Bau { ids: string[]; hatAst: boolean; fokusImAst?: boolean; ohneKnopf?: boolean }
+  interface Bau {
+    ids: string[];
+    hatAst: boolean;
+    fokusImAst?: boolean;
+    ohneKnopf?: boolean;
+    /** Ids der Zeilen, deren ZEILE innerhalb dieses Astes liegt (Verschachtelung). */
+    enthaeltZeilen?: string[];
+  }
 
-  function baueFokusToc(zeilen: Bau[], fokus: 'im-ast' | 'auf-zeile' | 'draussen' | 'keiner') {
+  function baueFokusToc(zeilen: Bau[], fokus: 'im-ast' | 'auf-zeile' | 'draussen' | 'keiner' | 'auf-marke', mitMarke = true) {
     const fokusEl = { __name: 'fokus' } as unknown as HTMLElement;
     const fokussiert: string[] = [];
-    const knopfVon = (id: string, art: string): HTMLElement =>
-      ({ __name: `${art}:${id}`, focus: () => fokussiert.push(`${art}:${id}`) } as unknown as HTMLElement);
+    const scrollSpruenge: string[] = [];
+    // Die Marken-Zeile ist per F5 immer im Sichtband (Mitscroll-Nudge); die
+    // Elternzeile eines schliessenden Astes ist es per Konstruktion nie
+    // (F2_SICHERHEITSSAUM ≥ 64 px daneben).
+    const knopf = (name: string, sichtbar: boolean): HTMLElement => ({
+      __name: name,
+      focus: () => { fokussiert.push(name); if (!sichtbar) scrollSpruenge.push(name); },
+    } as unknown as HTMLElement);
+    const markeEl = mitMarke ? knopf('marke', true) : null;
+
+    const zeilenEl = new Map<string, HTMLElement>();
     const zeileEl = (z: Bau): HTMLElement => {
-      const ast = {
-        contains: (el: unknown) => z.fokusImAst === true && el === fokusEl,
-      } as unknown as HTMLElement;
-      return {
+      const vorhanden = zeilenEl.get(z.ids[0]);
+      if (vorhanden) return vorhanden;
+      const el = {
+        __id: z.ids[0],
         querySelector: (sel: string) => {
-          if (sel === ':scope > div.grid') return z.hatAst ? ast : null;
-          if (sel === ':scope > div > button[title]') return z.ohneKnopf ? null : knopfVon(z.ids[0], 'sprung');
-          if (sel === ':scope > div > button[aria-expanded]') return knopfVon(z.ids[0], 'chevron');
+          if (sel === ':scope > div.grid') return z.hatAst ? astEl(z) : null;
+          if (sel === ':scope > div > button[title]') return z.ohneKnopf ? null : knopf(`sprung:${z.ids[0]}`, false);
+          if (sel === ':scope > div > button[aria-expanded]') return knopf(`chevron:${z.ids[0]}`, false);
           return null;
         },
       } as unknown as HTMLElement;
+      zeilenEl.set(z.ids[0], el);
+      return el;
     };
+    const asteEl = new Map<string, HTMLElement>();
+    const astEl = (z: Bau): HTMLElement => {
+      const vorhanden = asteEl.get(z.ids[0]);
+      if (vorhanden) return vorhanden;
+      const el = {
+        contains: (anderer: { __name?: string; __id?: string }) => {
+          if (z.fokusImAst === true && anderer === (fokusEl as unknown)) return true;
+          return anderer?.__id !== undefined && (z.enthaeltZeilen ?? []).includes(anderer.__id);
+        },
+      } as unknown as HTMLElement;
+      asteEl.set(z.ids[0], el);
+      return el;
+    };
+
+    const aktivesEl = fokus === 'keiner' ? null : fokus === 'auf-marke' ? markeEl : fokusEl;
     const toc = {
-      ownerDocument: { activeElement: fokus === 'keiner' ? null : fokusEl },
-      contains: (el: unknown) => fokus !== 'draussen' && fokus !== 'keiner' && el === fokusEl,
+      ownerDocument: { activeElement: aktivesEl },
+      contains: (el: unknown) => fokus !== 'draussen' && fokus !== 'keiner' && el === aktivesEl,
       querySelector: (sel: string) => {
+        if (sel === '[data-toc-aktiv]') return markeEl;
         const treffer = /\[data-sektion-ids~="([^"]+)"\]/.exec(sel);
         if (!treffer) return null;
         const z = zeilen.find((x) => x.ids.includes(treffer[1]));
         return z ? zeileEl(z) : null;
       },
     } as unknown as HTMLElement;
-    return { toc, fokussiert };
+    return { toc, fokussiert, scrollSpruenge };
   }
 
-  it('Fokus im kollabierenden Ast → er wandert auf den Sprung-Knopf der Elternzeile', () => {
-    const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], 'im-ast');
+  it('Fokus im kollabierenden Ast → er wandert auf die SICHTBARE Marken-Zeile', () => {
+    // F3b (§9-Bug-Check): die Elternzeile liegt per Konstruktion off-screen —
+    // sie zu fokussieren scrollte den [data-toc]-Container, und die
+    // Kompensation im Aufrufer rechnete danach mit falscher Geometrie.
+    const { toc, fokussiert, scrollSpruenge } = baueFokusToc([{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], 'im-ast');
+    expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(true);
+    expect(fokussiert).toEqual(['marke']);
+    expect(scrollSpruenge, 'der Fokus darf den Scroller nicht verschieben').toEqual([]);
+  });
+
+  it('ohne Marke bleibt die Elternzeile der Ersatzweg — Fokus retten schlägt Scroll-Ruhe', () => {
+    const { toc, fokussiert } = baueFokusToc(
+      [{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], 'im-ast', false);
     expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(true);
     expect(fokussiert).toEqual(['sprung:sek-1']);
   });
 
-  it('mehrere schliessende Äste: es gewinnt der, in dem der Fokus wirklich steht', () => {
+  it('F3a — verschachtelt: es gewinnt der ÄUSSERSTE schliessende Ast, nicht der erste in der Liste', () => {
+    // `schliessen` kommt aus einem Set in Einfüge-Reihenfolge; das Kind kann vor
+    // dem Elternteil stehen. Die erste Fassung nahm den ersten Treffer — der
+    // Fokus landete dann auf einer Zeile, die im selben flushSync mit
+    // ausgehängt wird.
     const { toc, fokussiert } = baueFokusToc([
-      { ids: ['sek-1'], hatAst: true },
       { ids: ['sek-2'], hatAst: true, fokusImAst: true },
-    ], 'im-ast');
+      { ids: ['sek-1'], hatAst: true, fokusImAst: true, enthaeltZeilen: ['sek-2'] },
+    ], 'im-ast', false);
+    expect(retteFokusVorZuklapp(toc, ['sek-2', 'sek-1'])).toBe(true);
+    expect(fokussiert).toEqual(['sprung:sek-1']);
+  });
+
+  it('F3c — ein Ast ohne Treffer bricht die Suche nicht ab', () => {
+    // Früher `return false` statt `continue`: stand der Fokus im ZWEITEN Ast und
+    // hatte der erste keinen offenen Kind-Container, gab die Funktion auf.
+    const { toc, fokussiert } = baueFokusToc([
+      { ids: ['sek-1'], hatAst: false },
+      { ids: ['sek-2'], hatAst: true, fokusImAst: true },
+    ], 'im-ast', false);
     expect(retteFokusVorZuklapp(toc, ['sek-1', 'sek-2'])).toBe(true);
     expect(fokussiert).toEqual(['sprung:sek-2']);
   });
 
   it('ohne benannten Knopf greift der Chevron derselben Zeile', () => {
     const { toc, fokussiert } = baueFokusToc(
-      [{ ids: ['sek-1'], hatAst: true, fokusImAst: true, ohneKnopf: true }], 'im-ast');
+      [{ ids: ['sek-1'], hatAst: true, fokusImAst: true, ohneKnopf: true }], 'im-ast', false);
     expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(true);
     expect(fokussiert).toEqual(['chevron:sek-1']);
   });
 
   it('Fokus auf der Elternzeile selbst bleibt, wo er ist — sie verschwindet ja nicht', () => {
     const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true }], 'auf-zeile');
+    expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(false);
+    expect(fokussiert).toEqual([]);
+  });
+
+  it('Fokus steht schon auf der Marke ⇒ kein Neu-Fokussieren (kein Screenreader-Rauschen)', () => {
+    const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], 'auf-marke');
     expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(false);
     expect(fokussiert).toEqual([]);
   });
