@@ -1,7 +1,7 @@
 import { memo, type ReactNode } from 'react';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
-import { zeileIstOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
+import { zeileIstOffen, artikelKinderOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
 //
@@ -75,6 +75,16 @@ function einzugFuerTiefe(tiefe: number): number {
  * («Erster Titel:») nur dort, wo die Ebene selbst nicht schon hebt.
  * Tinten enden bei ink-800: ink-900 bleibt der EINEN Positionsmarke vorbehalten.
  */
+/**
+ * Stimme der Artikel-Zeile (W2·18-FEHLERBUCH, unterste Klapp-Ebene). Bewusst
+ * DIESELBE wie im flachen Artikel-Index (`parts/ArtikelIndex.tsx`): `text-xs`,
+ * Etikett in `num font-medium text-ink-800`, Sachtitel gedämpft in
+ * `text-ink-600`. Ein Artikel muss in der Leiste gleich aussehen, egal ob der
+ * Erlass ihn im Baum (B1) oder flach (B2/B4) zeigt — sonst behauptete die
+ * Oberfläche einen Unterschied, den es fachlich nicht gibt.
+ */
+const ARTIKEL_STIMME = { form: 'text-xs font-normal', tinte: 'text-ink-700', pre: '' } as const;
+
 function ebenenStimme(randtitel: boolean, tiefe: number): { form: string; tinte: string; pre: string } {
   if (randtitel) return { form: 'text-xs font-serif font-normal', tinte: 'text-ink-500', pre: 'font-medium' };
   if (tiefe === 0) return { form: 'text-body-s font-semibold', tinte: 'text-ink-800', pre: '' };
@@ -158,11 +168,21 @@ interface ZeilenProps {
 const Zeile = memo(function Zeile({
   k, erster, aktivPfad, markeId, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
 }: ZeilenProps): ReactNode {
+  // F1 (§9-Bug-Check 13.8.2026): An einem gemischten Knoten (T8) hängen
+  // Sektions- und Artikel-Kinder am selben Klapp-Zustand, dürfen aber nicht
+  // demselben START-Zustand folgen — Sektionen starten bei kleinen Bäumen
+  // offen, Artikel nie. Welche der beiden Regeln greift, entscheidet das
+  // Modell (`artikelKinderOffen`); hier wird sie nur angewandt (§3).
   const auf = zeileIstOffen(k, offen, startOffeneTiefe);
+  const artikelAuf = artikelKinderOffen(k, offen, startOffeneTiefe);
+  const sichtbareKinder = auf ? k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf) : [];
+  // `hatKinder` steuert Chevron und `aria-expanded`. Massgeblich ist, was die
+  // Zeile ÖFFNEN KANN, nicht was gerade zu sehen ist — sonst verschwände der
+  // Knopf an einer Zeile, die nur Artikel trägt, und die Ebene wäre unerreichbar.
   const hatKinder = k.kinder.length > 0;
   const istMarke = markeId !== null && k.id === markeId;
   const aufPfad = !istMarke && k.ids.some((id) => aktivPfad.includes(id));
-  const stimme = ebenenStimme(k.randtitel, k.tiefe);
+  const stimme = k.art === 'artikel' ? ARTIKEL_STIMME : ebenenStimme(k.randtitel, k.tiefe);
   const tinte = istMarke ? 'text-ink-900' : aufPfad ? (AHNEN_TINTE[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
   // LM-155 Mittel 3: Rhythmus — die obersten Knoten bekommen einen Vorlauf. Der
   // jeweils ERSTE Knoten einer Liste bleibt bündig. Statisches margin ⇒ kein
@@ -203,6 +223,10 @@ const Zeile = memo(function Zeile({
               // sichtbare Zustand `auf` geht mit, damit auch eine Zeile ohne
               // Eintrag in `tocBaum` (Start-offen per Modell) mit dem ersten
               // Klick zugeht.
+              // F1: der sichtbare Zustand ist das, was WIRKLICH offen steht —
+              // an einem gemischten Knoten mit noch zugeklappter Artikel-Ebene
+              // meldet die Zeile darum `true` (die Sektionen stehen offen), und
+              // der erste Klick schliesst sie. Der zweite öffnet beides.
               onClick={() => onToggle(k.ids, auf)}
               aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'}
               className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
@@ -250,7 +274,20 @@ const Zeile = memo(function Zeile({
               würde sonst trotz line-clamp die Zeile — und damit den
               [data-toc]-Scroller — horizontal aufreissen statt umzubrechen. */}
           <span className="line-clamp-2 [overflow-wrap:anywhere]">
-            {pre ? <><span className={stimme.pre}>{pre}:</span> {margLabel(rest)}</> : margLabel(k.labelKette[k.labelKette.length - 1])}
+            {/* Artikel-Zeile (W2·18-FEHLERBUCH): Etikett und Sachtitel in zwei
+                Stimmen, wortgleich mit dem flachen Artikel-Index. Der
+                `romanFrei`-Weg der Sektionszeilen taugt hier NICHT: er spaltet
+                am ersten Doppelpunkt («Erster Titel: …»), und ein Sachtitel
+                darf einen Doppelpunkt enthalten — die Zeile hätte dann einen
+                erfundenen Enumerator-Vorsatz gezeigt (§8). */}
+            {k.art === 'artikel'
+              ? (
+                <>
+                  <span className="num font-medium text-ink-800">{k.labelKette[0]}</span>
+                  {k.sachtitel && <span className="text-ink-600"> — {margLabel(k.sachtitel)}</span>}
+                </>
+              )
+              : pre ? <><span className={stimme.pre}>{pre}:</span> {margLabel(rest)}</> : margLabel(k.labelKette[k.labelKette.length - 1])}
             {/* Verdichtete Einzelkind-Kette: die übersprungenen Stufen stehen
                 sichtbar davor, sonst behauptete die Zeile eine Ebene, die es
                 nicht gibt. Gedämpft, damit der Sachtitel führt. */}
@@ -288,11 +325,11 @@ const Zeile = memo(function Zeile({
           §15.2: weiterhin KEINE Höhen-Animation — eine animierte Höhenänderung
           reflowt Frame für Frame die Geschwister und zählt, wenn der Spy sie
           auslöst, als unerwarteter CLS. Das Umschalten bleibt ein Schritt. */}
-      {hatKinder && auf && (
+      {sichtbareKinder.length > 0 && (
         <div className="grid grid-rows-[1fr]">
           <div className="overflow-hidden min-h-0">
             <ul className="space-y-0.5 mt-0.5">
-              {k.kinder.map((kind, i) => (
+              {sichtbareKinder.map((kind, i) => (
                 <Zeile key={kind.id} k={kind} erster={i === 0}
                   aktivPfad={aktivPfad} markeId={markeId} offen={offen}
                   startOffeneTiefe={startOffeneTiefe}
@@ -313,10 +350,17 @@ const Zeile = memo(function Zeile({
  * (State), Callbacks (useCallback).
  */
 export const SektionBaumTOC = memo(function SektionBaumTOC({
-  knoten, aktivPfad, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
+  knoten, aktivPfad, aktivToken, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
 }: {
   knoten: GliederungsKnoten[];
   aktivPfad: string[]; // Sektions-Ids des aktiven Pfads, Wurzel → tiefster Knoten
+  /**
+   * Token des gerade gelesenen Artikels (F2 des §9-Bug-Checks 13.8.2026) — die
+   * Marke landet damit auf der ARTIKEL-Zeile, wenn diese sichtbar ist. Der
+   * flache Artikel-Index tut das seit S9 (parts/ArtikelIndex.tsx); der Baum
+   * konnte es nicht, weil der Aktiv-Pfad nur Sektions-Ids kennt.
+   */
+  aktivToken?: string | null;
   offen: Record<string, boolean>;
   startOffeneTiefe: number;
   onToggle: (ids: string[], istOffen: boolean) => void;
@@ -327,7 +371,7 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
   // (`[data-toc] [data-toc-aktiv]` als Sprungziel) und a33 (Ruhe-Messung)
   // stützen: nie mehr als eine, und solange der Spy überhaupt einen Pfad im
   // Baum meldet, auch nie weniger (s. findeMarke).
-  const markeId = findeMarke(knoten, aktivPfad, offen, startOffeneTiefe);
+  const markeId = findeMarke(knoten, aktivPfad, offen, startOffeneTiefe, aktivToken);
   return (
     <ul className="space-y-0.5">
       {knoten.map((k, i) => (

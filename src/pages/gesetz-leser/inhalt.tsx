@@ -10,7 +10,7 @@ import { ArtikelIndex } from './parts/ArtikelIndex';
 import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
 } from './berechnungen';
-import { baueGliederungsModell } from './gliederungsModell';
+import { baueGliederungsModell, findeSynthPfad } from './gliederungsModell';
 import { useArtikelKontext } from './artikelKontext';
 import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
@@ -208,6 +208,19 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       setAktivIds(ids);
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((id) => [id, true])) }));
       jumpLockRef.current = true;
+    } else {
+      // F2 (§9-Bug-Check 13.8.2026): Artikel OHNE amtliche Sektion — Vorspann,
+      // Nachspann, Mittelgruppe, Anhang. `pfadZu` findet für sie nichts, und
+      // bis hierher endete die Markierung damit stumm: die Leiste behauptete
+      // weiter den zuletzt bekannten Standort (§8), obwohl der Leser
+      // anderswo steht. Belegt am RBUE, wo 47 von 49 Artikeln so liegen.
+      // Welche Zeile den Artikel deckt, weiss allein das Modell — dieselbe
+      // Auflösung, die der Scroll-Spy schon nutzt (inhalt-hooks, §5).
+      const synth = findeSynthPfad(modell.knoten, token);
+      if (synth) {
+        if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
+        setAktivIds(synth);
+      }
     }
     if (typeof window === 'undefined') return;
     // ?search (Instanz-Diskriminator ?r) erhalten, sonst verliert ein Mehrfach-
@@ -245,8 +258,12 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     // Seit dem T14-Split kommen sie aus ./inhalt-zustand herein, wo die Regel
     // ihre Stabilität nicht mehr sehen kann — Deps darum byte-gleich zum Stand
     // vor dem Split (Aufnahme wäre eine stille Verhaltens-Änderung, §6).
+    // `modell.knoten` kommt seit F2 (§9-Bug-Check 13.8.2026) dazu: der
+    // Synth-Pfad-Zweig liest den aktuellen Baum. Ohne die Dep hielte der
+    // Callback beim Erlass-Wechsel den Baum des VORIGEN Erlasses fest und
+    // markierte eine Zeile, die es nicht mehr gibt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel]);
+  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, modell.knoten]);
 
   // R4 «Weiterlesen» + R8 Tastatur brauchen den aktiven Artikel als TOKEN
   // (./inhalt-ableitungen); der Angebots-Zustand liegt in ./inhalt-weiterlesen,
@@ -416,6 +433,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // abhängig, nicht mehr ausschliesslich der Sektionsbaum.
   //   · b3-leer  — ehrliche Leerzeile (§8); der Quickjump steht bereits in
   //     Zone A (inhalt-volltext.tsx), hier kommt nichts Zweites dazu (§5).
+  //     Seit dem 13.8.2026 (W2·18-FEHLERBUCH, Auftrag David) trifft dieser
+  //     Modus nur noch den Erlass OHNE jeden Artikel. Die 68 Erlasse ohne
+  //     Sidecar/Randtitel, die hier früher endeten, zeigen jetzt den flachen
+  //     Index — die Artikel-Folge steht im Snapshot, sie braucht keine
+  //     Gliederung (Herleitung: gliederungsModell.ts, `waehleModus`).
   //   · b2-index / b4-mini — der flache Artikel-Index (S9, gliederungsModell.ts
   //     `artikelIndex`); ein Mini-Erlass böte sonst beim Öffnen von ☰ eine
   //     leere Fläche (`knoten` bleibt für ihn praktisch leer, s. dort).
@@ -426,7 +448,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   const anhangAst = modell.knoten.filter((k) => k.art === 'anhang');
   const anhangEl = anhangAst.length > 0
     ? (
-      <SektionBaumTOC knoten={anhangAst} aktivPfad={aktivIds} offen={tocBaum}
+      <SektionBaumTOC knoten={anhangAst} aktivPfad={aktivIds} aktivToken={aktivToken} offen={tocBaum}
         startOffeneTiefe={modell.startOffeneTiefe}
         onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
     )
@@ -445,7 +467,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         // (Teilmenge, pfadZu findet sie identisch). `onSprungArtikel` bedient die
         // synthetischen Zeilen (Vorspann/Anhänge), die keine `sek-N`-Identität
         // haben und darum über ihren ersten Artikel-Token springen.
-        <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} offen={tocBaum}
+        <SektionBaumTOC knoten={modell.knoten} aktivPfad={aktivIds} aktivToken={aktivToken} offen={tocBaum}
           startOffeneTiefe={modell.startOffeneTiefe}
           onToggle={tocToggleGruppe} onSprung={springeZuSektion} onSprungArtikel={springeZuArtikel} />
       );

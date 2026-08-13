@@ -78,6 +78,15 @@
  * eigentliche Ziel ist trotzdem erfüllt: statt monoton auf 140+ zu wachsen
  * (U4: NULL Zuklapp-Ereignisse je Lauf), bleibt der Baum beschränkt, und die
  * DOM-Last im Baum fällt von 20 389 auf ~1 300–1 500 Knoten.
+ *
+ * NACHTRAG 13.8.2026 (W2·18-FEHLERBUCH, §9-Bug-Check F4): Die Zahlen oben sind
+ * VOR der Artikel-Ebene gemessen und bleiben als Provenienz stehen. Seither
+ * kann ein aufgeklappter Ast zusätzlich seine Artikel-Zeilen tragen. Korpusweit
+ * nachgemessen (alle 1458 Snapshots, 11 294 Knoten mit Artikel-Kindern):
+ * Median 3 · p90 8 · Maximum 49 Artikel-Zeilen je Träger-Knoten. Ein
+ * Zuklapp-Ereignis hängt damit im Regelfall eine Handvoll Zeilen mehr aus als
+ * 2026-08; die Grössenordnung der Messreihe oben ändert sich nicht, der
+ * Ausreisser-Fall (49) ist die neue Obergrenze für die Kompensations-Rechnung.
  */
 export const AUTO_ZU_NACHLAUF = 6;
 
@@ -216,7 +225,116 @@ export function klappZeile(
   offen: Record<string, boolean>, ids: string[], istOffen: boolean,
 ): Record<string, boolean> {
   const ziel = !istOffen;
-  return { ...offen, ...Object.fromEntries(ids.map((id) => [id, ziel])) };
+  return {
+    ...offen,
+    ...Object.fromEntries(ids.map((id) => [id, ziel])),
+    // Die ARTIKEL-Ebene bewegt sich nur hier — beim Chevron-Klick (s. u.).
+    ...Object.fromEntries(ids.map((id) => [artikelSchluessel(id), ziel])),
+  };
+}
+
+/**
+ * Schlüssel des Artikel-Ebenen-Zustands einer Zeile (CI-Rot 13.8.2026).
+ *
+ * WARUM EIN ZWEITER SCHLÜSSEL IN DERSELBEN KARTE. Die Klapp-Karte `tocBaum`
+ * hat zwei Schreiber: den NUTZER (Chevron-Klick, Sektions-Sprung) und den
+ * SCROLL-SPY (Auto-Akkordeon). Für die Sektions-Ebene ist das richtig — der
+ * Spy soll den gelesenen Zweig aufreissen. Für die Artikel-Ebene ist es der
+ * Defekt: der Spy öffnete beim Weiterlesen eine Zeile, die ihre Artikel trägt,
+ * und das Auto-Zuklappen hängte den so gewachsenen Ast später wieder aus —
+ * mit bis zu 49 Artikel-Zeilen darin.
+ *
+ * BELEG (CI-Lauf 31721564029, Shard 6, deterministisch in Erst- und
+ * Zweitlauf): CLS 0.0751 gegen Budget 0.05, Quellen drei Baumzeilen der BV,
+ * die im Sichtband auf 0×0 kollabieren — die grösste 280×498 px, also genau
+ * eine aufgeklappte Artikel-Liste. Der Trace zeigt zugleich, dass die BV mit
+ * `aria-expanded="false"` an den artikel-tragenden Zeilen STARTET: geöffnet
+ * haben kann sie also nur der Spy.
+ *
+ * Mit dem zweiten Schlüssel bewegt der Spy weiterhin die Sektionen (a33-Auftrag
+ * K bleibt erfüllt), die Artikel-Ebene aber nur noch der ausdrückliche Klick —
+ * und der ist Nutzer-Eingabe, deren Layout-Sprung nicht als unerwarteter Shift
+ * zählt. Zugleich landet eine so geöffnete Zeile in `manuellOffenRef`
+ * (inhalt-zustand) und wird vom Auto-Zuklappen nie wieder angefasst: die
+ * grossen Aushäng-Ereignisse können gar nicht mehr entstehen.
+ *
+ * Der Präfix kann mit keiner `sek-N`- oder `gm-…`-Id kollidieren.
+ */
+export const ARTIKEL_OFFEN_PRAEFIX = 'art@';
+export function artikelSchluessel(id: string): string {
+  return `${ARTIKEL_OFFEN_PRAEFIX}${id}`;
+}
+
+/**
+ * B8 (W2·19-Bug-Check; WCAG 2.4.3 «Fokus-Reihenfolge»): Rettet den
+ * Tastatur-Fokus, BEVOR das Auto-Zuklappen einen Ast aushängt.
+ *
+ * BEFUND. Seit dem Unmount zugeklappter Äste (S5, F3) existiert ein
+ * geschlossener Ast nicht mehr im DOM. Stand der Fokus auf einer Zeile IN
+ * diesem Ast — der Normalfall für eine Tastatur-Nutzerin, die sich durch die
+ * Gliederung arbeitet und dabei weiterliest —, verlor ihn der Browser
+ * ersatzlos an `<body>`. Die nächste Tab-Taste begann wieder am Seitenanfang.
+ * Der Zuklapp geschieht ohne Zutun der Nutzerin, sie kann ihm nicht zuvorkommen.
+ *
+ * WOHIN DER FOKUS WANDERT — korrigiert nach dem §9-Bug-Check 13.8.2026 (F3b).
+ * Erste Fassung: auf die Elternzeile des schliessenden Astes. Das war ein
+ * Fehler mit Folgewirkung: dieser Ast liegt per Konstruktion mindestens
+ * F2_SICHERHEITSSAUM (64 px) AUSSERHALB des Sichtbands — seine Elternzeile ist
+ * also praktisch nie sichtbar. `focus()` scrollt ein Element in den sichtbaren
+ * Bereich; der Aufrufer liest unmittelbar danach `tocCont.scrollTop` als
+ * Ausgangswert seiner Kompensation (inhalt-hooks) und hätte mit einer
+ * Geometrie gerechnet, die der Fokus-Sprung gerade verschoben hat.
+ * Jetzt: der Fokus geht auf die MARKEN-Zeile (`[data-toc-aktiv]`) — die
+ * Leseposition der Nutzerin, per F5 immer genau einmal vorhanden und vom
+ * Mitscroll-Nudge im Sichtband gehalten. Sie ist zugleich die sinnvollste
+ * Antwort auf «wo bin ich jetzt»: derselbe Ort, den die Leiste ohnehin als
+ * Standort ausweist. `preventScroll` allein wäre die schlechtere Wahl gewesen
+ * — ein Fokus, den man nicht sieht, verletzt WCAG 2.4.7.
+ * Fällt keine Marke an (Deep-Link vor der ersten Spy-Auswertung), bleibt die
+ * Elternzeile der Ersatzweg: ein springender Scroller ist immer noch besser
+ * als ein verlorener Fokus.
+ *
+ * WELCHER AST GEWINNT — F3a desselben Bug-Checks. Es wird der ÄUSSERSTE
+ * schliessende Ast gesucht, nicht der erste in der Liste. `schliessen` kommt
+ * aus einem Set in Einfüge-Reihenfolge; steht dort das Kind vor dem Elternteil
+ * (real möglich, weil der Spy Äste in Lesereihenfolge einträgt), landete der
+ * Fokus auf einer Zeile, die im SELBEN `flushSync` mit ausgehängt wird — der
+ * Fehler, den die Funktion verhindern soll, nur eine Ebene höher.
+ *
+ * Gibt zurück, ob der Fokus verschoben wurde (für Tests und für den Aufrufer,
+ * der sonst nichts weiter zu tun hat).
+ */
+export function retteFokusVorZuklapp(tocCont: HTMLElement | null, schliessen: string[]): boolean {
+  if (!tocCont || schliessen.length === 0) return false;
+  const aktiv = tocCont.ownerDocument?.activeElement as HTMLElement | null;
+  // Kein Fokus in der Leiste ⇒ nichts zu retten. Insbesondere NICHT blind
+  // fokussieren: dem Mausleser den Fokus in die Gliederung zu setzen wäre eine
+  // Bewegung, die niemand angefordert hat.
+  if (!aktiv || !tocCont.contains(aktiv)) return false;
+
+  // F3a: alle Äste sammeln, die den Fokus enthalten, und den äussersten nehmen —
+  // der ist es, der die anderen mit aushängt.
+  const betroffen: { zeile: HTMLElement; ast: HTMLElement }[] = [];
+  for (const id of schliessen) {
+    const zeile = zeileZu(tocCont, id);
+    const ast = zeile ? astVon(zeile) : null;
+    // `continue`, nicht `return`: ein Ast ohne Treffer sagt nichts über die
+    // übrigen (F3c — der frühere `return false` brach die Suche ab).
+    if (!zeile || !ast || !ast.contains(aktiv)) continue;
+    betroffen.push({ zeile, ast });
+  }
+  if (betroffen.length === 0) return false;
+  const aeusserster = betroffen.find((a) => !betroffen.some((b) => b !== a && b.ast.contains(a.zeile)))
+    ?? betroffen[0];
+
+  // F3b: die sichtbare Marken-Zeile schlägt die (off-screen liegende) Elternzeile.
+  const marke = tocCont.querySelector('[data-toc-aktiv]') as HTMLElement | null;
+  const ersatz = (aeusserster.zeile.querySelector(':scope > div > button[title]')
+    ?? aeusserster.zeile.querySelector(':scope > div > button[aria-expanded]')) as HTMLElement | null;
+  const ziel = marke ?? ersatz;
+  if (!ziel || ziel === aktiv) return false;
+  ziel.focus();
+  return true;
 }
 
 export interface ZuklappPlan {

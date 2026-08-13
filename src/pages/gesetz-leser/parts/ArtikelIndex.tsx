@@ -20,11 +20,21 @@ import type { ArtikelIndexGruppe } from '../gliederungsModell';
 // KEINE Zählwerte an der Zeile (David 9.8.2026, dieselbe Regel wie im Baum,
 // s. SektionBaumTOC) — nur Etikett + Randtitel + Aufgehoben-Signal.
 //
-// VIRTUALISIERUNG (§6/4 «darf virtualisiert werden»): bewusst NICHT gebaut.
-// Der referenzierte Korpus (VwVG 93, NHG 70, VMWG ~60 Zeilen) bleibt weit
-// unter jeder Render-Schwelle, an der ein zweites Perf-Werkzeug (§15
-// Logikverlust-Bewertung) seinen Preis wert wäre. Zieht ein künftiger B2-Fall
-// mehrere hundert Zeilen nach sich, ist das ein eigener, deklarierter S15-Schritt.
+// VIRTUALISIERUNG (§6/4 «darf virtualisiert werden»): weiterhin NICHT gebaut,
+// aber der Grund hat sich geändert und gehört korrigiert (§8, §9-Bug-Check F4
+// vom 13.8.2026). Bis dahin stand hier, der Korpus bleibe «weit unter jeder
+// Render-Schwelle» (VwVG 93, NHG 70, VMWG ~60 Zeilen). Das stimmt seit
+// W2·18-FEHLERBUCH nicht mehr: mit dem Wegfall der B3-Leerzeile fallen 68
+// sidecar-lose Erlasse in diesen Modus, und der längste zeigt beim Start 608
+// Zeilen (SG-3849: 17 Artikel im Index, 590 Einträge im dominanz-offenen
+// Anhang-Ast; ZH-243 152). Gemessen, nicht geschätzt — korpusweite Sonde
+// 13.8.2026.
+// Es bleibt trotzdem bei der flachen Liste: 608 statische Zeilen sind für den
+// DOM kein Problem (der OR-Baum trug vor S5 über 20 000 Knoten), und eine
+// Virtualisierung kostete Ctrl+F über die Leiste. Ob sie auf schwachen Geräten
+// nötig wird, ist ein Messposten mit eigener ROADMAP-Zeile
+// («Perf-Blick auf den langen Artikel-Index», W2·18-FEHLERBUCH) — kein
+// stillschweigend hingenommenes Risiko.
 
 interface ArtikelIndexProps {
   gruppen: ArtikelIndexGruppe[];
