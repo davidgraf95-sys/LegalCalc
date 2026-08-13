@@ -157,11 +157,27 @@ jobs:
             git diff --stat
           fi
 
+      # `check:golden-normtext` steht hier seit 13.8.2026 (PR #482, Runde 2) und
+      # ist kein Zusatz, sondern DER Wächter dieses Schritts. Der
+      # Regenerierungs-Schritt oben fährt `npm run normtext` als VOLL-Lauf; fällt
+      # dabei eine Kantons-Quelle aus, verlor der Golden-Index bis zum
+      # Wurzel-Fix in scripts/normtext-snapshot.ts die Drift-Basis der nicht
+      # gelieferten Erlasse. Genau das geschah am 10.8.2026 (b84ee8302:
+      # 56'113 → 32'640 Einträge, AR 6398→453, BS 17688→160) — und dieser
+      # Tor-Block liess es durch, weil er das einzige Tor NICHT enthielt, das
+      # den Index auf Vollständigkeit liest. `golden:vergleich` prüft die
+      # ENGINE-Golden, nicht den Normtext-Index; die beiden sind verschiedene
+      # Beweismittel und nur die Namensähnlichkeit legt Gleichheit nahe.
+      # Der Commit behauptete danach «Offline-Tore grün» — die Behauptung war
+      # wahr für die gefahrenen Tore und trotzdem irreführend (§8).
+      # ci.yml fuhr das Tor (Zeile ~356) und wurde rot; der Schaden war da nur
+      # nicht mehr abzuwenden, sondern bloss noch sichtbar.
       - name: Offline-Tore vor dem PR (kein roter Auto-Merge-PR)
         if: steps.diff.outputs.geaendert == '1'
         run: |
           set -euo pipefail
           npm run check:normtext
+          npm run check:golden-normtext
           npm run check:struktur-konsistenz
           npm run check:verklebung
           npm run golden:vergleich

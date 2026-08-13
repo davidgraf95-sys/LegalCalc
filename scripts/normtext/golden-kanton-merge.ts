@@ -99,3 +99,137 @@ export function mischeGoldenKanton(
     fehlgeschlageneKantone: [...kantone].filter((k) => !erfolgKantone.has(k)).sort(),
   };
 }
+
+// ─── Voll-Lauf (npm run normtext ohne --nur=…) ───────────────────────────────
+//
+// WARUM ES DIESE ZWEITE FUNKTION BRAUCHT. mischeGoldenKanton oben sichert die
+// TEILLÄUFE (--nur=kanton, --nur=zh). Der VOLL-Lauf schrieb den Index bis zum
+// 13.8.2026 pauschal aus dem Lauf-Index (normtext-snapshot.ts, Zeilen
+// 1525-1531) — ausgerechnet der Pfad, den die Fedlex-Frische-Automatik fährt
+// (.github/workflows/fedlex-frische.yml, Schritt «Regenerierung»:
+// `npm run normtext -- --datum=…`, ohne --nur=).
+//
+// DERSELBE SCHADEN, ZWEIMAL:
+//   27.7.2026 (PR #383): 55'763 → 32'639 Einträge, −23'473 Kantons-Knoten.
+//     Reaktion: das Tor check:golden-normtext wurde gebaut. Die Ursache blieb.
+//   10.8.2026 (b84ee8302): 56'113 → 32'640, wieder −23'473. AR 6398 → 453,
+//     BS 17688 → 160; 1116 Erlass-Präfixe ohne Drift-Basis, während ihre
+//     Snapshot-Dateien unverändert auf der Platte lagen. Kein Golden-sha
+//     änderte sich, kein Schlüssel kam hinzu — der Lauf hat nur gelöscht.
+// Erkennen ohne Reparieren erzeugt genau diese Wiederholung (§17).
+//
+// MECHANISMUS. Fällt eine Quelle aus (LexWork-Token fehlt, PDF-Cache leer,
+// Netzfehler), liefert die Route 0 Knoten. Die Snapshot-DATEI bleibt liegen —
+// sie wird nur bei Erfolg überschrieben. Pauschales Schreiben löscht dann die
+// Drift-Basis einer Datei, die es weiterhin gibt (§7 lit. d, §8).
+//
+// WARUM DIE DATEI-SONDE. «0 frische Knoten» hat zwei Ursachen, die man nur am
+// Dateisystem unterscheiden kann: der Erlass ist AUSGEFALLEN (Datei da →
+// bewahren) oder er wurde aus dem Korpus ENTFERNT (Datei fort → verwerfen, sonst
+// verwaist der Index, check:golden-normtext (b) / §5 zweite Wahrheit).
+// Injiziert statt importiert, damit die Regel ohne Dateisystem testbar bleibt
+// (§2) — dieselbe Begründung wie beim seiteneffektfreien Modulschnitt oben.
+
+/** Schlüssel-Aufbau der Bund-Einträge: bund/<KEY>/<eId>. */
+const SEGMENTE_BUND = 3;
+
+/**
+ * Erlass-Präfix eines BELIEBIGEN Golden-Schlüssels — die Granularität genau
+ * EINER Snapshot-Datei:
+ *   `bund/<KEY>/<eId>`            → `bund/<KEY>`
+ *   `kanton/<KT>/<lawIdSafe>/<a>` → `kanton/<KT>/<lawIdSafe>`
+ *
+ * `null` für alles andere (Fremdformat) — im Ist-Bestand gemessen 13.8.2026:
+ * 25'404 bund (3 Segmente), 7236 kanton (4 Segmente), 0 Fremdformate.
+ */
+export function erlassPraefixVoll(key: string): string | null {
+  const teile = key.split('/');
+  if (teile[0] === 'kanton' && teile.length >= SEGMENTE_KANTON) return teile.slice(0, 3).join('/');
+  if (teile[0] === 'bund' && teile.length >= SEGMENTE_BUND) return teile.slice(0, 2).join('/');
+  return null;
+}
+
+/**
+ * Projektionspfad der Snapshot-Datei eines Erlass-Präfixes. Umkehrung der
+ * Dateinamens-Regel des Generators (`<KT>-<lawIdSafe>.json` bzw. `<KEY>.json`).
+ */
+export function snapshotDateiPfad(praefix: string): string | null {
+  const teile = praefix.split('/');
+  if (teile[0] === 'kanton' && teile.length === 3) {
+    return `public/normtext/kanton/${teile[1]}-${teile[2]}.json`;
+  }
+  if (teile[0] === 'bund' && teile.length === 2) {
+    return `public/normtext/bund/${teile[1]}.json`;
+  }
+  return null;
+}
+
+export interface GoldenVollLaufMerge {
+  /** Der neue Golden-Bestand (unsortiert; der Aufrufer sortiert wie bisher). */
+  gemischt: Record<string, string>;
+  /** Präfixe ohne frische Knoten, deren Snapshot-Datei noch da ist — Altbestand bewahrt. */
+  bewahrt: string[];
+  /** Präfixe ohne frische Knoten UND ohne Snapshot-Datei — korrekt fallengelassen. */
+  verworfen: string[];
+  /** Präfixe, die dieser Lauf tatsächlich neu erzeugt hat. */
+  ersetzt: string[];
+}
+
+/**
+ * Mischt den bestehenden Golden-Index mit dem Lauf-Index eines VOLL-Laufs.
+ *
+ * Regel: ein Erlass-Präfix wird nur ersetzt, wenn dieser Lauf für ihn mindestens
+ * einen Knoten erzeugt hat. Innerhalb eines ersetzten Erlasses bleibt die Purge
+ * erhalten (weggefallene Anker verschwinden, sonst verwaisen sie).
+ *
+ * @param bestand        committeter Golden-Index (golden/normtext-snapshot.json)
+ * @param frisch         Lauf-Index: nur die in DIESEM Lauf erzeugten Knoten
+ * @param dateiExistiert Sonde auf den Projektionspfad (i.d.R. existsSync)
+ */
+export function mischeGoldenVollLauf(
+  bestand: Record<string, string>,
+  frisch: Record<string, string>,
+  dateiExistiert: (pfad: string) => boolean,
+): GoldenVollLaufMerge {
+  const frischePraefixe = new Set<string>();
+  for (const k of Object.keys(frisch)) {
+    const p = erlassPraefixVoll(k);
+    if (p !== null) frischePraefixe.add(p);
+  }
+
+  // Präfixe des Altbestands, die dieser Lauf NICHT geliefert hat.
+  const ausgefallen = new Set<string>();
+  for (const k of Object.keys(bestand)) {
+    const p = erlassPraefixVoll(k);
+    if (p !== null && !frischePraefixe.has(p)) ausgefallen.add(p);
+  }
+
+  // Datei-Sonde genau einmal je ausgefallenem Präfix (die gelieferten sind per
+  // Definition da — sie wurden soeben geschrieben).
+  const bewahrt: string[] = [];
+  const verworfen: string[] = [];
+  const bewahrtSet = new Set<string>();
+  for (const p of [...ausgefallen].sort()) {
+    const pfad = snapshotDateiPfad(p);
+    // Unbekannte Präfix-Form: bewahren. Ein Schlüssel, dessen Datei wir nicht
+    // benennen können, darf nicht stillschweigend gelöscht werden (§8) — das
+    // Tor check:golden-normtext meldet ihn dann sichtbar als Waise.
+    if (pfad === null || dateiExistiert(pfad)) {
+      bewahrt.push(p);
+      bewahrtSet.add(p);
+    } else {
+      verworfen.push(p);
+    }
+  }
+
+  const gemischt: Record<string, string> = {};
+  for (const k of Object.keys(bestand)) {
+    const p = erlassPraefixVoll(k);
+    // Fremdformat (p === null) hat kein Präfix und damit keinen Lauf-Bezug —
+    // bewahren, statt es an einer Regel scheitern zu lassen, die es nicht kennt.
+    if (p === null || bewahrtSet.has(p)) gemischt[k] = bestand[k];
+  }
+  for (const k of Object.keys(frisch)) gemischt[k] = frisch[k];
+
+  return { gemischt, bewahrt, verworfen, ersetzt: [...frischePraefixe].sort() };
+}

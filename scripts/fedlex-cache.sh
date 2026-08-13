@@ -58,7 +58,7 @@ EINTRAEGE=(
   # Re-Pin 20250101→20260701 (§7-Nachverifikation 1.7.2026, AS 2026 16 Besitzesschutz:
   # neu art_260_a/art_260_b, nicht zitiert). No-Suffix (n=0; n≥1 = Casemates-SPA). Alle 14
   # zitierten Anker operativ byte-identisch (art_314 nur Fussnoten-Reklassifikation, Fristen 10/30 T. unverändert).
-  "zpo|cc/2010/262|20260701|0|art_4,art_6,art_68,art_145,art_197,art_198,art_199,art_210,art_212,art_243,art_308,art_314,art_319,art_321|272"
+  "zpo|cc/2010/262|20260701|1|art_4,art_6,art_68,art_145,art_197,art_198,art_199,art_210,art_212,art_243,art_308,art_314,art_319,art_321|272"
   # SchKG-Anker um die Zuständigkeits-Karten-Pillen erweitert (Katalog-Split 6.6.2026).
   # Re-Pin 20250101→20260101 (§7-Nachverifikation 7.6.2026): alle engine-
   # tragenden Artikel (46–53, 56, 63, 83–88, 166, 174, 250, 271–280) body-
