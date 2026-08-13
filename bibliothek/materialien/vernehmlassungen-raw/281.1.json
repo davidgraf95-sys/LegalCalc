@@ -84,45 +84,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/33/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (SchKG) (Betreibungsauskunft, elektronische Zustellungen und Online-Versteigerung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur la poursuite pour dettes et la faillite (LP) (Extrait du registre des poursuites, notification par voie électronique et vente aux enchères en ligne)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sulla esecuzione e sul fallimento (LEF) (Informazione sulle esecuzioni, notificazione per via elettronica e incanto in linea)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-06-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-10-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "281.1"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
     },
     "status": {
@@ -153,6 +114,45 @@
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "281.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/33/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (SchKG) (Betreibungsauskunft, elektronische Zustellungen und Online-Versteigerung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur la poursuite pour dettes et la faillite (LP) (Extrait du registre des poursuites, notification par voie électronique et vente aux enchères en ligne)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sulla esecuzione e sul fallimento (LEF) (Informazione sulle esecuzioni, notificazione per via elettronica e incanto in linea)"
+    },
+    "start": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-06-22"
+    },
+    "ende": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-10-17"
     }
   },
   {

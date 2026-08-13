@@ -232,5 +232,34 @@
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-02-26"
     }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "241"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/77/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes gegen den unlauteren Wettbewerb (UWG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale contre la concurrence déloyale (LCD)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale contro la concorrenza sleale (LCSI)"
+    }
   }
 ]
