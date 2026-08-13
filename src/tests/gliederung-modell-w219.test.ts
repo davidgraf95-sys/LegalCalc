@@ -145,10 +145,15 @@ describe('S3 — Modus-Kette an den Referenz-Erlassen', () => {
     expect(gemischt.length).toBeGreaterThan(0);
     // T8-Invariante: die direkt am Knoten hängenden Artikel zählen in seinen
     // Zählwert. Bräche das, verschwänden sie beim Zuklappen stumm.
+    // W2·18-FEHLERBUCH (Artikel-Ebene, David 13.8.2026): seit die direkten
+    // Artikel eigene Kind-Zeilen tragen, stecken sie in `kinderSumme` — ein
+    // zweites Addieren von `eigeneArtikel` zählte sie doppelt. Geprüft wird
+    // unverändert dasselbe: kein Artikel geht stumm verloren.
     for (const k of gemischt) {
       expect(k.artikelAnzahl).toBeGreaterThanOrEqual(k.eigeneArtikel);
       const kinderSumme = k.kinder.reduce((n, kk) => n + kk.artikelAnzahl, 0);
-      expect(k.artikelAnzahl).toBe(k.eigeneArtikel + kinderSumme);
+      const eigenOhneZeile = k.kinder.some((kk) => kk.art === 'artikel') ? 0 : k.eigeneArtikel;
+      expect(k.artikelAnzahl).toBe(eigenOhneZeile + kinderSumme);
     }
   });
 
@@ -181,7 +186,7 @@ describe('S3 — Modus-Kette an den Referenz-Erlassen', () => {
 describe('S3 — waehleModus: die Reihenfolge ist die Regel', () => {
   const basis = {
     artikelAnzahl: 100, hatSidecar: true, zeilenVoll: 10, zeilenGesamt: 10,
-    amtlicheKnoten: 10, knotenGesamt: 10, marginalienDichte: 0.5, anhangAnteil: 0,
+    amtlicheKnoten: 10, knotenGesamt: 10, marginalienDichte: 0.5, artikelBlattDeckung: 0, anhangAnteil: 0,
     vorspannArtikel: 0, nachspannArtikel: 0, anhangArtikel: 0,
   };
 
@@ -300,7 +305,10 @@ describe('S3 — Zählwerte sind Summen, keine Schätzungen', () => {
       const m = lade(ebene, key);
       const pruefe = (k: GliederungsKnoten): void => {
         const kinder = k.kinder.reduce((n, kk) => n + kk.artikelAnzahl, 0);
-        expect(k.artikelAnzahl).toBe(k.eigeneArtikel + kinder);
+        // W2·18-FEHLERBUCH: s. T8-Fall oben — wo Artikel-Zeilen hängen, sind
+        // die eigenen Artikel bereits in `kinder` enthalten.
+        const eigenOhneZeile = k.kinder.some((kk) => kk.art === 'artikel') ? 0 : k.eigeneArtikel;
+        expect(k.artikelAnzahl).toBe(eigenOhneZeile + kinder);
         k.kinder.forEach(pruefe);
       };
       m.knoten.forEach(pruefe);

@@ -75,6 +75,16 @@ function einzugFuerTiefe(tiefe: number): number {
  * («Erster Titel:») nur dort, wo die Ebene selbst nicht schon hebt.
  * Tinten enden bei ink-800: ink-900 bleibt der EINEN Positionsmarke vorbehalten.
  */
+/**
+ * Stimme der Artikel-Zeile (W2·18-FEHLERBUCH, unterste Klapp-Ebene). Bewusst
+ * DIESELBE wie im flachen Artikel-Index (`parts/ArtikelIndex.tsx`): `text-xs`,
+ * Etikett in `num font-medium text-ink-800`, Sachtitel gedämpft in
+ * `text-ink-600`. Ein Artikel muss in der Leiste gleich aussehen, egal ob der
+ * Erlass ihn im Baum (B1) oder flach (B2/B4) zeigt — sonst behauptete die
+ * Oberfläche einen Unterschied, den es fachlich nicht gibt.
+ */
+const ARTIKEL_STIMME = { form: 'text-xs font-normal', tinte: 'text-ink-700', pre: '' } as const;
+
 function ebenenStimme(randtitel: boolean, tiefe: number): { form: string; tinte: string; pre: string } {
   if (randtitel) return { form: 'text-xs font-serif font-normal', tinte: 'text-ink-500', pre: 'font-medium' };
   if (tiefe === 0) return { form: 'text-body-s font-semibold', tinte: 'text-ink-800', pre: '' };
@@ -162,7 +172,7 @@ const Zeile = memo(function Zeile({
   const hatKinder = k.kinder.length > 0;
   const istMarke = markeId !== null && k.id === markeId;
   const aufPfad = !istMarke && k.ids.some((id) => aktivPfad.includes(id));
-  const stimme = ebenenStimme(k.randtitel, k.tiefe);
+  const stimme = k.art === 'artikel' ? ARTIKEL_STIMME : ebenenStimme(k.randtitel, k.tiefe);
   const tinte = istMarke ? 'text-ink-900' : aufPfad ? (AHNEN_TINTE[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
   // LM-155 Mittel 3: Rhythmus — die obersten Knoten bekommen einen Vorlauf. Der
   // jeweils ERSTE Knoten einer Liste bleibt bündig. Statisches margin ⇒ kein
@@ -250,7 +260,20 @@ const Zeile = memo(function Zeile({
               würde sonst trotz line-clamp die Zeile — und damit den
               [data-toc]-Scroller — horizontal aufreissen statt umzubrechen. */}
           <span className="line-clamp-2 [overflow-wrap:anywhere]">
-            {pre ? <><span className={stimme.pre}>{pre}:</span> {margLabel(rest)}</> : margLabel(k.labelKette[k.labelKette.length - 1])}
+            {/* Artikel-Zeile (W2·18-FEHLERBUCH): Etikett und Sachtitel in zwei
+                Stimmen, wortgleich mit dem flachen Artikel-Index. Der
+                `romanFrei`-Weg der Sektionszeilen taugt hier NICHT: er spaltet
+                am ersten Doppelpunkt («Erster Titel: …»), und ein Sachtitel
+                darf einen Doppelpunkt enthalten — die Zeile hätte dann einen
+                erfundenen Enumerator-Vorsatz gezeigt (§8). */}
+            {k.art === 'artikel'
+              ? (
+                <>
+                  <span className="num font-medium text-ink-800">{k.labelKette[0]}</span>
+                  {k.sachtitel && <span className="text-ink-600"> — {margLabel(k.sachtitel)}</span>}
+                </>
+              )
+              : pre ? <><span className={stimme.pre}>{pre}:</span> {margLabel(rest)}</> : margLabel(k.labelKette[k.labelKette.length - 1])}
             {/* Verdichtete Einzelkind-Kette: die übersprungenen Stufen stehen
                 sichtbar davor, sonst behauptete die Zeile eine Ebene, die es
                 nicht gibt. Gedämpft, damit der Sachtitel führt. */}
