@@ -328,6 +328,27 @@ describe('W2·18 — artikel-granulare Bäume: jeder Artikel erreichbar, keine D
     expect(flacheZeilen(m.knoten).filter((k) => k.id.startsWith(`${ID_ARTIKEL}:`)).length).toBe(115);
   });
 
+  it('die 20 artikel-granularen Erlasse, namentlich (F4 des §9-Bug-Checks)', () => {
+    // Der Kommentar an ARTIKEL_EBENE_MAX_BLATT_DECKUNG verweist auf «die Liste
+    // im Unit-Test» — bis zum Bug-Check gab es sie nicht. Hier ist sie:
+    // korpusweit gemessen (1458 Snapshots, 13.8.2026) fallen genau diese
+    // Erlasse in den Umfang `luecken`. Der Fall ist bewusst eine feste Liste
+    // und keine Schwellen-Rechnung: verschiebt ein Korpus-Nachzug einen Erlass
+    // über die Schwelle, wird das SICHTBAR statt still.
+    const erwartet = [
+      'BS-730.120', 'BS-740.110', 'BS-782.100', 'BS-783.200', 'BS-783.410', 'BS-813.400',
+      'BS-819.410', 'BS-832.200', 'ENTG', 'IPRG', 'KOV', 'LFG', 'OR', 'SCHKG',
+      'VSTG', 'VSTRR', 'VSTV', 'VZG', 'ZG-641.1', 'ZGB',
+    ];
+    const gemessen: string[] = [];
+    for (const key of erwartet) {
+      const ebene = /^[A-Z]{2}-/.test(key) ? 'kanton' : 'bund';
+      const m = lade(ebene as 'bund' | 'kanton', key);
+      if (m.artikelEbene === 'luecken') gemessen.push(key);
+    }
+    expect(gemessen.sort()).toEqual([...erwartet].sort());
+  });
+
   it('die Schwelle trennt die beiden Lager mit Abstand (§0-3: Verteilung, nicht Einzelwert)', () => {
     // Korpus-Sonde 13.8.2026: unterhalb endet die Verteilung bei 0.793, oberhalb
     // beginnt sie bei 0.800; OR/ZGB haben 12 bzw. 8 Prozentpunkte Luft. Die

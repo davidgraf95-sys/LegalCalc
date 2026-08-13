@@ -35,8 +35,10 @@ import type { GliederungsKnoten, ArtikelIndexZeile, ArtikelIndexGruppe } from '.
  * ZGB 0.881 / OR 0.919. Die Schwelle liegt also in einer echten Lücke, und die
  * beiden Erlasse, die der Auftrag ausdrücklich unverändert verlangt, haben
  * 8 bzw. 12 Prozentpunkte Luft — ein Snapshot-Nachzug kippt sie nicht. 20 von
- * 861 B1-Erlassen bleiben damit ohne Artikel-Ebene (Liste im Unit-Test), 841
- * bekommen sie.
+ * 861 B1-Erlassen fallen damit in den Umfang `luecken` statt `voll`; die
+ * namentliche Liste steht im Unit-Test (gliederung-artikel-ebene-w218,
+ * «die 20 artikel-granularen Erlasse»), damit ein Korpus-Nachzug sie sichtbar
+ * verschiebt statt still.
  *
  * NICHT als Dichte-Schwelle missverstehen: die Aufnahme hängt NICHT an der
  * Sachtitel-Dichte (der frühere Vorschlag) — David 13.8.2026: «in JEDEM Erlass

@@ -78,6 +78,15 @@
  * eigentliche Ziel ist trotzdem erfüllt: statt monoton auf 140+ zu wachsen
  * (U4: NULL Zuklapp-Ereignisse je Lauf), bleibt der Baum beschränkt, und die
  * DOM-Last im Baum fällt von 20 389 auf ~1 300–1 500 Knoten.
+ *
+ * NACHTRAG 13.8.2026 (W2·18-FEHLERBUCH, §9-Bug-Check F4): Die Zahlen oben sind
+ * VOR der Artikel-Ebene gemessen und bleiben als Provenienz stehen. Seither
+ * kann ein aufgeklappter Ast zusätzlich seine Artikel-Zeilen tragen. Korpusweit
+ * nachgemessen (alle 1458 Snapshots, 11 294 Knoten mit Artikel-Kindern):
+ * Median 3 · p90 8 · Maximum 49 Artikel-Zeilen je Träger-Knoten. Ein
+ * Zuklapp-Ereignis hängt damit im Regelfall eine Handvoll Zeilen mehr aus als
+ * 2026-08; die Grössenordnung der Messreihe oben ändert sich nicht, der
+ * Ausreisser-Fall (49) ist die neue Obergrenze für die Kompensations-Rechnung.
  */
 export const AUTO_ZU_NACHLAUF = 6;
 
