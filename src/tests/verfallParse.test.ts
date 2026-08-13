@@ -64,7 +64,20 @@ describe('sammleTermine — gegen das echte Register', () => {
 });
 
 describe('registerStand', () => {
+  // Der Anker prüft die GRAMMATIK, nicht den Tageswert. Vorher stand hier das
+  // Datum «11.7.2026» fest verdrahtet — das Register schreibt aber selbst vor,
+  // seine Stand-Zeile bei JEDER inhaltlichen Ergänzung mitzuziehen. Damit war
+  // der Test ein garantierter Fehlalarm: er wurde bei jeder regulären
+  // Register-Pflege rot, ohne je einen Defekt anzuzeigen (rot geworden am
+  // 13.8.2026 bei genau so einer Pflege, W2·19B-KORPUS). Was der Parser können
+  // muss, ist die Zeile zu FINDEN und ein Datum daraus zu liefern — das prüft
+  // die Fassung unten, und sie wird rot, wenn die Zeile verschwindet, ihr
+  // Format kippt oder der Parser danebengreift.
   it('liest die Stand-Zeile des Registers', () => {
-    expect(registerStand(md)).toContain('11.7.2026');
+    const stand = registerStand(md);
+    expect(stand).toMatch(/^\d{1,2}\.\d{1,2}\.\d{4}$/);
+    // Gegenprobe, dass wirklich die Register-Zeile gelesen wird und nicht
+    // irgendein Datum aus dem Fliesstext.
+    expect(md).toContain(`Stand des Registers: ${stand}`);
   });
 });
