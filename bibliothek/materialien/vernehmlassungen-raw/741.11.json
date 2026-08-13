@@ -123,6 +123,35 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/79/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Verkehrszulassungsverordnung (VZV): Harmonisierung der Führerausweiskategorien mit jenen der EU und andere Änderungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de l’Ordonnance réglant l’admission à la circulation routière (OAC): Harmonisation des catégories de permis de conduire avec celles de l'UE et autres modifications"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale dell’Ordinanza sull’ammissione alla circolazione (OAC): Armonizzazione delle categorie delle patenti di guida con quelle dell'UE e altre modifiche"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/97/cons_1"
     },
     "status": {
@@ -396,45 +425,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/4/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der technischen Anforderungen und der Zulassungsprüfung von Strassenfahrzeugen und Einführung eines neuen Fahrtschreibers"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des exigences techniques et du contrôle des véhicules routiers en vue de leur immatriculation, et introduction d'un nouveau tachygraphe"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dei requisiti tecnici e dell'esame d'immatricolazione dei veicoli stradali e introduzione di un nuovo cronotachigrafo"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-01-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-04-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/71/cons_1"
     },
     "status": {
@@ -465,6 +455,45 @@
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/4/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der technischen Anforderungen und der Zulassungsprüfung von Strassenfahrzeugen und Einführung eines neuen Fahrtschreibers"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des exigences techniques et du contrôle des véhicules routiers en vue de leur immatriculation, et introduction d'un nouveau tachygraphe"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dei requisiti tecnici e dell'esame d'immatricolazione dei veicoli stradali e introduzione di un nuovo cronotachigrafo"
+    },
+    "start": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-01-17"
+    },
+    "ende": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-04-25"
     }
   },
   {

@@ -1361,50 +1361,11 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/35/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "13.430 n Rickli Natalie. Haftung bei bedingten Entlassungen und Strafvollzugslockerungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilité en cas de mise en liberté conditionnelle et de décision d'allègement de l'exécution d'une peine"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilità in caso di liberazione condizionale e regime aperto"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-05-24"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
@@ -1469,6 +1430,45 @@
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/35/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "13.430 n Rickli Natalie. Haftung bei bedingten Entlassungen und Strafvollzugslockerungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilité en cas de mise en liberté conditionnelle et de décision d'allègement de l'exécution d'une peine"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilità in caso di liberazione condizionale e regime aperto"
+    },
+    "start": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-05-24"
+    },
+    "ende": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-09-14"
     }
   },
   {

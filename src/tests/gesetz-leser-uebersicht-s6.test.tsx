@@ -254,10 +254,18 @@ describe('S6 — reine Ableitungen', () => {
 });
 
 describe('S6 — §8-Teilerfassungs-Beleg (Entscheid David 8.8.2026, Bau-Spec §11 Ziff. 2)', () => {
-  it('SG-3849 trägt den Hinweis «Auswahl, nicht vollständig»', () => {
+  // FACHLICHE ÄNDERUNG (W2·19B-KORPUS, 13.8.2026), ausdrücklich kein
+  // Refactoring: der alte Wortlaut «Auswahl, nicht vollständig» beruhte auf der
+  // Annahme, SG-3849 sei teilerfasst. Die Prüfung gegen die amtliche Quelle hat
+  // das widerlegt — der Erlass (GebT, sGS 821.5) hat amtlich gar keine Artikel,
+  // die 17 «Art.»-Einträge sind Fehlextraktionen. Herleitung im Kommentar bei
+  // TEILERFASSUNG_BELEGE. Die Anker unten sind entsprechend umgestellt.
+  it('SG-3849 trägt den Hinweis «Fehlerhaft erfasst»', () => {
     const beleg = teilerfassung('SG-3849');
     expect(beleg).toBeDefined();
-    expect(beleg!.befund).toContain('Auswahl, nicht vollständig');
+    expect(beleg!.befund).toContain('Fehlerhaft erfasst');
+    // Die Kernaussage — keine eigenen Artikel — muss im Satz stehen bleiben.
+    expect(beleg!.befund).toContain('keine eigenen Artikel');
   });
 
   it('Der Befund stimmt mit dem committeten Snapshot überein — er kann nicht still veralten', () => {
@@ -267,12 +275,14 @@ describe('S6 — §8-Teilerfassungs-Beleg (Entscheid David 8.8.2026, Bau-Spec §
       .filter((e) => !/^Anhang/i.test(e.artikelLabel))
       .map((e) => Number.parseInt(e.artikel, 10))
       .filter((n) => Number.isFinite(n));
-    // (a) Die Folge beginnt NICHT bei Art. 1.
-    expect(nummern[0]).toBeGreaterThan(1);
-    // (b) Sie ist lückenhaft — es fehlen Artikel zwischen den erfassten.
-    const luecken = nummern.some((n, i) => i > 0 && n - nummern[i - 1] > 1);
-    expect(luecken, 'Artikel-Folge ohne Lücken — Beleg überholt?').toBe(true);
-    // (c) Anhang-Übergewicht: der Erlass-Text ist die Minderheit der Einträge.
+    // (a) EXAKT die 17 gegen die amtliche Quelle geprüften Phantom-Nummern —
+    //     nicht mehr, nicht weniger. Sobald der PDF-Pfad die Ziffern-Tarife
+    //     richtig liest, wird diese Zeile rot und zwingt dazu, den §8-Hinweis
+    //     neu zu bewerten, statt ihn stumm weiterlaufen zu lassen.
+    expect(nummern).toEqual([2, 7, 11, 12, 13, 15, 19, 43, 51, 71, 80, 82, 84, 381, 505, 544, 1032]);
+    // (b) Art. 1 ist NICHT darunter — der Erlass hat amtlich überhaupt keinen.
+    expect(nummern).not.toContain(1);
+    // (c) Die Gebühren-Nummern sind der Haupttext, die Phantom-Artikel Beiwerk.
     expect(nummern.length * 10).toBeLessThan(eintraege.length);
   });
 
@@ -289,6 +299,6 @@ describe('S6 — §8-Teilerfassungs-Beleg (Entscheid David 8.8.2026, Bau-Spec §
       </MemoryRouter>,
     );
     const vorDetails = html.slice(0, html.indexOf('<details'));
-    expect(vorDetails).toContain('Auswahl, nicht vollständig');
+    expect(vorDetails).toContain('Fehlerhaft erfasst');
   });
 });
