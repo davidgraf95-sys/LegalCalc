@@ -20,6 +20,7 @@ import {
   type LexFussnote,
 } from './struktur-lexwork.ts';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register.ts';
+import { identitaetAusErlass } from './browse-manifest.ts';
 
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
 const erzeugt = datumArg ? datumArg.slice('--datum='.length) : '';
@@ -34,11 +35,42 @@ mkdirSync(ZIEL, { recursive: true });
 
 const LEXWORK = /\/app\/(de|fr|it)\/texts_of_law\//;
 
+/**
+ * W2·19B — zweite LexWork-Adressform. Ein Teil des Kantonsbestands wurde über den
+ * PDF-Pfad der clex/LexWork-Familie aufgenommen; diese Snapshots tragen als
+ * `quelleUrl` NICHT die `/app/…/texts_of_law/<sn>`-Leseadresse, sondern den
+ * Datei-Endpunkt `…/api/<lang>/versions/<versionId>/pdf_file[_with_annexes]`.
+ * Aus dieser Form allein lässt sich die Struktur-API nicht adressieren (der
+ * Pfad führt die VERSIONS-Id, nicht die Systematiknummer = LexWork-`lawId`).
+ *
+ * Empirischer Befund 13.8.2026: Vier dieser Erlasse (LU-3870/SRL 258,
+ * GR-3348/BR 210.370, FR-8428/RSF 261.16, VS-1413/178.104) liefern unter
+ * `/api/<lang>/texts_of_law/<sn>` sehr wohl ein `xhtml_tol` — das PDF war also
+ * nie die einzige verfügbare Struktur (Quell-Wahl-Regel: höchste verfügbare
+ * Struktur). Die übrigen führen `structured_document_id: null` und sind
+ * amtlich wirklich PDF-only; sie werden hier ehrlich übersprungen (§8), NICHT
+ * mit einer erfundenen Gliederung gefüllt.
+ */
+const LEXWORK_PDF = /^https:\/\/[^/]+\/api\/(de|fr|it)\/versions\/(\d+)\/pdf_file/;
+
 // Optionaler Kanton-Filter (z.B. --kanton=BS), um die Sidecars gezielt für einen
 // Kanton (re-)zu erzeugen statt alle ~1200 Dateien neu zu fetchen.
 const kantonArg = process.argv.find((a) => a.startsWith('--kanton='));
 const nurKantone = kantonArg
   ? new Set(kantonArg.slice('--kanton='.length).split(',').map((s) => s.trim().toUpperCase()).filter(Boolean))
+  : null;
+
+/**
+ * Erlass-genauer Filter (`--nur=LU-3870,GR-3348`). Schärfer als `--kanton=`, und
+ * aus einem inhaltlichen Grund nötig: JEDE geschriebene Datei trägt das
+ * `erzeugt`-Datum, ein Breitband-Lauf schriebe also auch dort ein neues Datum
+ * hinein, wo sich am Inhalt nichts geändert hat. Diese reine Datums-Churn
+ * verdeckt im Diff die echten Änderungen und macht das Manifest unruhig
+ * (Ingest-Regel «content-hash change gate — reine Datums-Churn zurücksetzen»).
+ */
+const nurArg = process.argv.find((a) => a.startsWith('--nur='));
+const nurKeys = nurArg
+  ? new Set(nurArg.slice('--nur='.length).split(',').map((s) => s.trim()).filter(Boolean))
   : null;
 
 // ── Verweis-Auflösung: amtlicher Link → interner Reader-Verweis, wo gehalten ──
@@ -93,30 +125,81 @@ function verlinkeIntern(
   }
 }
 
-interface Aufgabe { key: string; kanton: string; api: string; tokens: Set<string> }
+interface Aufgabe {
+  key: string;
+  kanton: string;
+  api: string;
+  tokens: Set<string>;
+  /**
+   * Nur bei der PDF-Adressform gesetzt: die Versions-Id aus der `quelleUrl`. Sie
+   * ist das FASSUNGS-TOR — die Struktur-API antwortet immer mit der AKTUELLEN
+   * Fassung, der Snapshot hängt aber an genau dieser Version. Stimmen beide nicht
+   * überein, beschriebe das Sidecar eine andere Fassung als der Text, den es
+   * gliedert (§5-Doppelwahrheit). Dann wird übersprungen, nicht geschrieben.
+   */
+  erwarteteVersion?: number;
+}
+
+/** Systematiknummer (LexWork-`lawId`) aus dem Snapshot-`erlass`-Feld: dort steht
+ *  sie als Klammerzusatz ('Verordnung … (SRL 258)'). `identitaetAusErlass` ist
+ *  dieselbe Zerlegung, aus der auch `register.json` seinen `sr` speist (§5 — eine
+ *  Quelle, nicht zwei). Der Amts-Präfix ('SRL', 'BR', 'bGS', 'RSF') wird
+ *  abgestreift; übrig bleibt die reine Nummer, die LexWork adressiert. Lässt sich
+ *  keine plausible Nummer lesen, gibt die Funktion null — dann wird der Erlass
+ *  übersprungen statt geraten (§7). */
+export function lawIdAusErlass(erlass: string): string | null {
+  const sr = identitaetAusErlass(erlass).sr;
+  if (!sr) return null;
+  const m = sr.trim().match(/^(?:[A-Za-zÀ-ÿ.]+\s+)?(\d[\d.]*)$/);
+  return m ? m[1] : null;
+}
 
 const aufgaben: Aufgabe[] = [];
 let nichtLexwork = 0;
+let ohneLawId = 0;
 for (const f of readdirSync(KANTON_DIR).filter((x) => x.endsWith('.json') && x !== 'index.json')) {
   const kanton = f.split('-')[0]?.toUpperCase() ?? '';
   if (nurKantone && !nurKantone.has(kanton)) continue;
+  if (nurKeys && !nurKeys.has(f.replace(/\.json$/, ''))) continue;
   const datei = JSON.parse(readFileSync(join(KANTON_DIR, f), 'utf8')) as NormSnapshotDatei;
-  const url = datei.eintraege?.[0]?.quelleUrl ?? '';
-  if (!LEXWORK.test(url)) { nichtLexwork++; continue; }
-  aufgaben.push({
-    key: f.replace(/\.json$/, ''),
-    kanton,
-    api: url.replace('/app/', '/api/').replace(/#.*$/, ''),
-    tokens: new Set(datei.eintraege.map((e) => e.artikel)),
-  });
+  const erstes = datei.eintraege?.[0];
+  const url = erstes?.quelleUrl ?? '';
+  const key = f.replace(/\.json$/, '');
+  const tokens = new Set(datei.eintraege.map((e) => e.artikel));
+  const mPdf = url.match(LEXWORK_PDF);
+  if (LEXWORK.test(url)) {
+    aufgaben.push({ key, kanton, api: url.replace('/app/', '/api/').replace(/#.*$/, ''), tokens });
+  } else if (mPdf) {
+    const lawId = lawIdAusErlass(erstes?.erlass ?? '');
+    if (!lawId) { ohneLawId++; console.log(`  ohne lawId (übersprungen): ${key}`); continue; }
+    const basis = url.slice(0, url.indexOf('/api/'));
+    aufgaben.push({
+      key, kanton,
+      api: `${basis}/api/${mPdf[1]}/texts_of_law/${lawId}`,
+      tokens,
+      erwarteteVersion: Number(mPdf[2]),
+    });
+  } else {
+    nichtLexwork++;
+  }
 }
 
-async function hole(a: Aufgabe): Promise<'ok' | 'leer' | 'fehler'> {
+async function hole(a: Aufgabe): Promise<'ok' | 'leer' | 'fehler' | 'fassung'> {
   try {
     const res = await fetch(a.api, { signal: AbortSignal.timeout(25000) });
     if (!res.ok) return 'fehler';
-    const json = await res.json() as { text_of_law?: { selected_version?: { xhtml_tol?: string | null } } };
-    const xhtml = json.text_of_law?.selected_version?.xhtml_tol;
+    // Soft-404-Sonde (§7, scraping-Skill Fakt 3): die LexWork-Portale antworten
+    // auf einen unbekannten Pfad mit HTTP 200 + Angular-Shell. Der Status allein
+    // ist also kein Erfolgsbeweis — der Content-Type entscheidet.
+    if (!/application\/json/i.test(res.headers.get('content-type') ?? '')) return 'fehler';
+    const json = await res.json() as {
+      text_of_law?: { selected_version?: { id?: number; xhtml_tol?: string | null } };
+    };
+    const sel = json.text_of_law?.selected_version;
+    // Fassungs-Tor (siehe `erwarteteVersion`): lieber kein Sidecar als eines,
+    // das eine andere Fassung gliedert als der Snapshot führt.
+    if (a.erwarteteVersion !== undefined && sel?.id !== a.erwarteteVersion) return 'fassung';
+    const xhtml = sel?.xhtml_tol;
     if (!xhtml) return 'leer';
     const { kopf, artikel } = extrahiereLexWorkSidecar(xhtml);
     const erlassHost = host(a.api);
@@ -144,14 +227,17 @@ async function hole(a: Aufgabe): Promise<'ok' | 'leer' | 'fehler'> {
 
 // Begrenzte Parallelität (höflich gegenüber den Kantons-APIs).
 const GRENZE = 6;
-let ok = 0, leer = 0, fehler = 0, i = 0;
+let ok = 0, leer = 0, fehler = 0, fassung = 0, i = 0;
 async function worker() {
   while (i < aufgaben.length) {
     const a = aufgaben[i++];
     const r = await hole(a);
-    if (r === 'ok') ok++; else if (r === 'leer') leer++; else { fehler++; console.log(`  fehler/leer: ${a.key} (${a.api})`); }
+    if (r === 'ok') ok++;
+    else if (r === 'leer') leer++;
+    else if (r === 'fassung') { fassung++; console.log(`  Fassungs-Tor (übersprungen): ${a.key} — Snapshot hängt an Version ${a.erwarteteVersion}, Portal führt eine andere als aktuell (${a.api})`); }
+    else { fehler++; console.log(`  fehler/leer: ${a.key} (${a.api})`); }
   }
 }
 await Promise.all(Array.from({ length: GRENZE }, () => worker()));
 
-console.log(`Kanton-Struktur: ${ok} ok, ${leer} ohne XHTML, ${fehler} Fehler · ${nichtLexwork} Nicht-LexWork übersprungen → ${ZIEL}/`);
+console.log(`Kanton-Struktur: ${ok} ok, ${leer} ohne XHTML, ${fassung} Fassungs-Tor, ${fehler} Fehler · ${nichtLexwork} Nicht-LexWork, ${ohneLawId} ohne lawId übersprungen → ${ZIEL}/`);
