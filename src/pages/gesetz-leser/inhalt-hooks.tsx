@@ -13,7 +13,7 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import { pfadZu } from './helpers';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
-import { planeZuklappen, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
+import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 
@@ -490,6 +490,12 @@ export function useLeserSprungSpy(opts: {
           // Deshalb: was gemessen wurde, wird auch sofort mutiert. `flushSync`
           // ist hier keine Optimierung, sondern die Bedingung dafür, dass die
           // Messung überhaupt gilt.
+          // B8 (W2·19-Bug-Check, WCAG 2.4.3): erst den Tastatur-Fokus aus dem
+          // Ast holen, DANN aushängen. Steht er in einer Zeile, die gleich
+          // unmountet, verlöre ihn der Browser an <body> — die Regel selbst
+          // (welche Zeile ihn übernimmt) steht in ./tocAutoZuklappen, damit sie
+          // ohne React prüfbar ist.
+          retteFokusVorZuklapp(tocCont, schliessen);
           const vorher = tocCont.scrollTop;
           flushSync(() => setTocBaum(aktualisieren));
           if (kompensation > 0) {

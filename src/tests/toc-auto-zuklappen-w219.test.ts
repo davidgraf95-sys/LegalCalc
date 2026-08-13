@@ -28,7 +28,8 @@
  */
 import { describe, it, expect } from 'vitest';
 import {
-  planeZuklappen, scrollRuht, AUTO_ZU_NACHLAUF, AUTO_AUF_RUHE_MS, F2_SICHERHEITSSAUM, F2_OBERHALB,
+  planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_ZU_NACHLAUF, AUTO_AUF_RUHE_MS, F2_SICHERHEITSSAUM,
+  F2_OBERHALB,
 } from '../pages/gesetz-leser/tocAutoZuklappen';
 
 interface ZeilenBau {
@@ -324,5 +325,94 @@ describe('Ruhe-Tor — wann darf der aktive Zweig von selbst aufgehen', () => {
     // damit ein späteres «kurz nachjustieren» sichtbar wird statt still zu gelten.
     expect(AUTO_AUF_RUHE_MS).toBeGreaterThanOrEqual(150);
     expect(AUTO_AUF_RUHE_MS).toBeLessThanOrEqual(300);
+  });
+});
+
+// ═══ B8 · Fokus-Rettung beim Auto-Zuklappen (WCAG 2.4.3) ════════════════════
+//
+// W2·18-FEHLERBUCH (Herkunft: W2·19-Bug-Check B8, zurückgestellt). Seit dem
+// Unmount zugeklappter Äste (S5) verschwindet ein geschlossener Ast aus dem
+// DOM — samt dem Element, auf dem der Tastatur-Fokus stand. Der Browser gibt
+// ihn dann an <body>, und die nächste Tab-Taste beginnt am Seitenanfang.
+//
+// ZWEITES DOM-DOUBLE, bewusst neben dem oberen: `planeZuklappen` misst
+// Geometrie, `retteFokusVorZuklapp` fragt Fokus-Zugehörigkeit — zwei
+// verschiedene DOM-Fähigkeiten. Ein gemeinsames Double müsste beide Rollen
+// tragen und wäre in keiner davon mehr lesbar.
+describe('B8 — der Tastatur-Fokus überlebt das Auto-Zuklappen', () => {
+  interface Bau { ids: string[]; hatAst: boolean; fokusImAst?: boolean; ohneKnopf?: boolean }
+
+  function baueFokusToc(zeilen: Bau[], fokus: 'im-ast' | 'auf-zeile' | 'draussen' | 'keiner') {
+    const fokusEl = { __name: 'fokus' } as unknown as HTMLElement;
+    const fokussiert: string[] = [];
+    const knopfVon = (id: string, art: string): HTMLElement =>
+      ({ __name: `${art}:${id}`, focus: () => fokussiert.push(`${art}:${id}`) } as unknown as HTMLElement);
+    const zeileEl = (z: Bau): HTMLElement => {
+      const ast = {
+        contains: (el: unknown) => z.fokusImAst === true && el === fokusEl,
+      } as unknown as HTMLElement;
+      return {
+        querySelector: (sel: string) => {
+          if (sel === ':scope > div.grid') return z.hatAst ? ast : null;
+          if (sel === ':scope > div > button[title]') return z.ohneKnopf ? null : knopfVon(z.ids[0], 'sprung');
+          if (sel === ':scope > div > button[aria-expanded]') return knopfVon(z.ids[0], 'chevron');
+          return null;
+        },
+      } as unknown as HTMLElement;
+    };
+    const toc = {
+      ownerDocument: { activeElement: fokus === 'keiner' ? null : fokusEl },
+      contains: (el: unknown) => fokus !== 'draussen' && fokus !== 'keiner' && el === fokusEl,
+      querySelector: (sel: string) => {
+        const treffer = /\[data-sektion-ids~="([^"]+)"\]/.exec(sel);
+        if (!treffer) return null;
+        const z = zeilen.find((x) => x.ids.includes(treffer[1]));
+        return z ? zeileEl(z) : null;
+      },
+    } as unknown as HTMLElement;
+    return { toc, fokussiert };
+  }
+
+  it('Fokus im kollabierenden Ast → er wandert auf den Sprung-Knopf der Elternzeile', () => {
+    const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], 'im-ast');
+    expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(true);
+    expect(fokussiert).toEqual(['sprung:sek-1']);
+  });
+
+  it('mehrere schliessende Äste: es gewinnt der, in dem der Fokus wirklich steht', () => {
+    const { toc, fokussiert } = baueFokusToc([
+      { ids: ['sek-1'], hatAst: true },
+      { ids: ['sek-2'], hatAst: true, fokusImAst: true },
+    ], 'im-ast');
+    expect(retteFokusVorZuklapp(toc, ['sek-1', 'sek-2'])).toBe(true);
+    expect(fokussiert).toEqual(['sprung:sek-2']);
+  });
+
+  it('ohne benannten Knopf greift der Chevron derselben Zeile', () => {
+    const { toc, fokussiert } = baueFokusToc(
+      [{ ids: ['sek-1'], hatAst: true, fokusImAst: true, ohneKnopf: true }], 'im-ast');
+    expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(true);
+    expect(fokussiert).toEqual(['chevron:sek-1']);
+  });
+
+  it('Fokus auf der Elternzeile selbst bleibt, wo er ist — sie verschwindet ja nicht', () => {
+    const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true }], 'auf-zeile');
+    expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(false);
+    expect(fokussiert).toEqual([]);
+  });
+
+  it('Fokus ausserhalb der Leiste wird NIE angefasst (keine ungefragte Bewegung)', () => {
+    for (const lage of ['draussen', 'keiner'] as const) {
+      const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], lage);
+      expect(retteFokusVorZuklapp(toc, ['sek-1'])).toBe(false);
+      expect(fokussiert).toEqual([]);
+    }
+  });
+
+  it('nichts zu schliessen oder kein Container ⇒ keine Blind-Aktion', () => {
+    const { toc, fokussiert } = baueFokusToc([{ ids: ['sek-1'], hatAst: true, fokusImAst: true }], 'im-ast');
+    expect(retteFokusVorZuklapp(toc, [])).toBe(false);
+    expect(retteFokusVorZuklapp(null, ['sek-1'])).toBe(false);
+    expect(fokussiert).toEqual([]);
   });
 });

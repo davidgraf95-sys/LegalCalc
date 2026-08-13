@@ -219,6 +219,49 @@ export function klappZeile(
   return { ...offen, ...Object.fromEntries(ids.map((id) => [id, ziel])) };
 }
 
+/**
+ * B8 (W2·19-Bug-Check, zurückgestellt; WCAG 2.4.3 «Fokus-Reihenfolge»):
+ * Rettet den Tastatur-Fokus, BEVOR das Auto-Zuklappen einen Ast aushängt.
+ *
+ * BEFUND. Seit dem Unmount zugeklappter Äste (S5, F3) existiert ein
+ * geschlossener Ast nicht mehr im DOM. Stand der Fokus auf einer Zeile IN
+ * diesem Ast — der Normalfall für eine Tastatur-Nutzerin, die sich durch die
+ * Gliederung arbeitet und dabei weiterliest —, verlor ihn der Browser
+ * ersatzlos an `<body>`. Die nächste Tab-Taste begann wieder am Seitenanfang:
+ * Fokus verloren, Position verloren, Kontext verloren. Der Zuklapp geschieht
+ * ohne Zutun der Nutzerin, sie hat also keine Chance, das vorherzusehen.
+ *
+ * REGEL. Liegt der Fokus im Ast einer Zeile, die gleich zugeht, wandert er auf
+ * die ELTERNZEILE selbst — konkret auf deren Sprung-Knopf, weil der die Zeile
+ * benennt (`title`/`aria-label` tragen das volle Etikett) und ein Screenreader
+ * damit ansagt, WO die Nutzerin jetzt steht. Der Chevron derselben Zeile ist
+ * der Ersatzweg, falls die Zeilen-Anatomie je ohne benannten Knopf auskommt.
+ * Die Elternzeile bleibt beim Zuklappen stehen — der Fokus landet also nie auf
+ * etwas, das gleich darauf ebenfalls verschwindet.
+ *
+ * Gibt zurück, ob der Fokus verschoben wurde (für Tests und für den Aufrufer,
+ * der sonst nichts weiter zu tun hat).
+ */
+export function retteFokusVorZuklapp(tocCont: HTMLElement | null, schliessen: string[]): boolean {
+  if (!tocCont || schliessen.length === 0) return false;
+  const aktiv = tocCont.ownerDocument?.activeElement as HTMLElement | null;
+  // Kein Fokus in der Leiste ⇒ nichts zu retten. Insbesondere NICHT blind
+  // fokussieren: dem Mausleser den Fokus in die Gliederung zu setzen wäre eine
+  // Bewegung, die niemand angefordert hat.
+  if (!aktiv || !tocCont.contains(aktiv)) return false;
+  for (const id of schliessen) {
+    const zeile = zeileZu(tocCont, id);
+    const ast = zeile ? astVon(zeile) : null;
+    if (!ast || !ast.contains(aktiv)) continue;
+    const ziel = (zeile!.querySelector(':scope > div > button[title]')
+      ?? zeile!.querySelector(':scope > div > button[aria-expanded]')) as HTMLElement | null;
+    if (!ziel) return false;
+    ziel.focus();
+    return true;
+  }
+  return false;
+}
+
 export interface ZuklappPlan {
   /** Ids, deren Ast zugeklappt werden darf (Reihenfolge unerheblich). */
   schliessen: string[];
