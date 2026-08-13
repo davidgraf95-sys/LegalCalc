@@ -54,6 +54,39 @@ Version. Ohne das Tor bekäme ein alter Snapshot eine Gliederung der neuen
 Fassung untergeschoben — eine zweite Wahrheit im selben Erlass (§5). Der Lauf
 vom 13.8.2026 hat das Tor real greifen sehen (SG-2808).
 
+**Nachtrag Gegenprüfung 13.8.2026 — drei Korrekturen an dieser Regel.**
+
+*(a) Mehrdeutiges Systematik-Feld.* Regel 2 setzte voraus, dass im `erlass`-Feld
+genau eine Nummer steht. SG-2935 und SG-3849 tragen aber ein verschachteltes
+Feld mit zwei Erlassen: `(914.5 (GB-GebV); 821.5 (GebT))`. Die Zerlegung
+scheiterte daran, und der Lauf meldete «ohne lawId» — eine **Falschauskunft**,
+denn der wahre Grund ist ein anderer. Gefährlich wäre das bei einem künftigen
+Erlass mit doppeltem Feld **und** vorhandener Struktur: er würde unter falscher
+Begründung übersprungen, ohne je gefragt zu werden. Die Nummern-Erkennung ist
+jetzt verschachtelungsfest und liefert **alle** Kandidaten; welcher gilt, wird
+nicht geraten (§7), sondern vom Fassungs-Tor an der API entschieden. Seither
+melden beide Erlasse den zutreffenden Befund «amtlich ohne XHTML» — SG-3849
+gegen **821.5**. Das bestätigt die Identitätsfeststellung dieses Dossiers
+unabhängig: das Tor verwirft 914.5 (führt Version 2935) und nimmt 821.5 (führt
+Version 3849).
+
+*(b) Aussagekraft bei mehreren Kandidaten.* Ein Kandidat mit abweichender
+Fassung ist meist nur der falsche Erlass — keine Aussage über den gesuchten.
+Diese Meldung darf darum die spezifischere Auskunft eines zutreffenden
+Kandidaten nicht verdecken (sonst meldete SG-3849 eine Fassungs-Abweichung
+gegen die fremde Nummer 914.5 und schickte den Leser zum falschen Erlass).
+Rangfolge jetzt: `ok` > `leer` > `fassung` > `shell` > Transportfehler.
+
+*(c) Die Soft-404-Sonde ist jetzt belegt statt behauptet.* Sie wurde im Lauf nie
+rot (kein Portal antwortete mit einer Shell) und war damit unbewiesen — der
+Commit, der «beide Tore rot gezeigt» behauptete, deckte nur das Fassungs-Tor.
+Sie ist jetzt unit-getestet, und der Rot-Beweis förderte zutage, dass eine Shell
+ohne sie als **«amtlich ohne XHTML»** durchginge: ein Erlass gälte dauerhaft als
+strukturlos abgeklärt, obwohl die Quelle nie geantwortet hat. Die reine
+Entscheidungs-Logik liegt dafür jetzt in `struktur-kanton-logik.ts` — der Runner
+selbst ist nicht importierbar, weil er beim Laden `process.exit` aufruft, und
+genau deshalb konnten seine Tore bis dahin nicht geprüft werden.
+
 ## Ergebnis des Nachzugs
 
 | Erlass | Systematiknummer | Befund | Modus vorher → nachher |

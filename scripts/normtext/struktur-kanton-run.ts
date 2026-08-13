@@ -20,7 +20,9 @@ import {
   type LexFussnote,
 } from './struktur-lexwork.ts';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register.ts';
-import { identitaetAusErlass } from './browse-manifest.ts';
+import {
+  bewerteAntwort, besterBefund, lawIdKandidaten, type AntwortBefund,
+} from './struktur-kanton-logik.ts';
 
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
 const erzeugt = datumArg ? datumArg.slice('--datum='.length) : '';
@@ -128,7 +130,12 @@ function verlinkeIntern(
 interface Aufgabe {
   key: string;
   kanton: string;
-  api: string;
+  /**
+   * Anzufragende Struktur-Adressen. In der Regel genau eine; bei einem
+   * Snapshot mit doppeltem Systematik-Feld (SG-2935/SG-3849) mehrere Kandidaten.
+   * Welcher gilt, wird NICHT geraten (§7) — es entscheidet das Fassungs-Tor.
+   */
+  apis: string[];
   tokens: Set<string>;
   /**
    * Nur bei der PDF-Adressform gesetzt: die Versions-Id aus der `quelleUrl`. Sie
@@ -138,20 +145,6 @@ interface Aufgabe {
    * gliedert (§5-Doppelwahrheit). Dann wird übersprungen, nicht geschrieben.
    */
   erwarteteVersion?: number;
-}
-
-/** Systematiknummer (LexWork-`lawId`) aus dem Snapshot-`erlass`-Feld: dort steht
- *  sie als Klammerzusatz ('Verordnung … (SRL 258)'). `identitaetAusErlass` ist
- *  dieselbe Zerlegung, aus der auch `register.json` seinen `sr` speist (§5 — eine
- *  Quelle, nicht zwei). Der Amts-Präfix ('SRL', 'BR', 'bGS', 'RSF') wird
- *  abgestreift; übrig bleibt die reine Nummer, die LexWork adressiert. Lässt sich
- *  keine plausible Nummer lesen, gibt die Funktion null — dann wird der Erlass
- *  übersprungen statt geraten (§7). */
-export function lawIdAusErlass(erlass: string): string | null {
-  const sr = identitaetAusErlass(erlass).sr;
-  if (!sr) return null;
-  const m = sr.trim().match(/^(?:[A-Za-zÀ-ÿ.]+\s+)?(\d[\d.]*)$/);
-  return m ? m[1] : null;
 }
 
 const aufgaben: Aufgabe[] = [];
@@ -168,14 +161,14 @@ for (const f of readdirSync(KANTON_DIR).filter((x) => x.endsWith('.json') && x !
   const tokens = new Set(datei.eintraege.map((e) => e.artikel));
   const mPdf = url.match(LEXWORK_PDF);
   if (LEXWORK.test(url)) {
-    aufgaben.push({ key, kanton, api: url.replace('/app/', '/api/').replace(/#.*$/, ''), tokens });
+    aufgaben.push({ key, kanton, apis: [url.replace('/app/', '/api/').replace(/#.*$/, '')], tokens });
   } else if (mPdf) {
-    const lawId = lawIdAusErlass(erstes?.erlass ?? '');
-    if (!lawId) { ohneLawId++; console.log(`  ohne lawId (übersprungen): ${key}`); continue; }
+    const kandidaten = lawIdKandidaten(erstes?.erlass ?? '');
+    if (kandidaten.length === 0) { ohneLawId++; console.log(`  ohne Systematiknummer (übersprungen): ${key}`); continue; }
     const basis = url.slice(0, url.indexOf('/api/'));
     aufgaben.push({
       key, kanton,
-      api: `${basis}/api/${mPdf[1]}/texts_of_law/${lawId}`,
+      apis: kandidaten.map((id) => `${basis}/api/${mPdf[1]}/texts_of_law/${id}`),
       tokens,
       erwarteteVersion: Number(mPdf[2]),
     });
@@ -184,25 +177,31 @@ for (const f of readdirSync(KANTON_DIR).filter((x) => x.endsWith('.json') && x !
   }
 }
 
-async function hole(a: Aufgabe): Promise<'ok' | 'leer' | 'fehler' | 'fassung'> {
+/** Fragt EINE Kandidaten-Adresse an und schreibt bei Erfolg das Sidecar. Die
+ *  Bewertung der Antwort liegt in `bewerteAntwort` (rein, unit-getestet). */
+async function holeEine(a: Aufgabe, api: string): Promise<AntwortBefund> {
   try {
-    const res = await fetch(a.api, { signal: AbortSignal.timeout(25000) });
-    if (!res.ok) return 'fehler';
-    // Soft-404-Sonde (§7, scraping-Skill Fakt 3): die LexWork-Portale antworten
-    // auf einen unbekannten Pfad mit HTTP 200 + Angular-Shell. Der Status allein
-    // ist also kein Erfolgsbeweis — der Content-Type entscheidet.
-    if (!/application\/json/i.test(res.headers.get('content-type') ?? '')) return 'fehler';
-    const json = await res.json() as {
-      text_of_law?: { selected_version?: { id?: number; xhtml_tol?: string | null } };
-    };
-    const sel = json.text_of_law?.selected_version;
-    // Fassungs-Tor (siehe `erwarteteVersion`): lieber kein Sidecar als eines,
-    // das eine andere Fassung gliedert als der Snapshot führt.
-    if (a.erwarteteVersion !== undefined && sel?.id !== a.erwarteteVersion) return 'fassung';
-    const xhtml = sel?.xhtml_tol;
-    if (!xhtml) return 'leer';
+    const res = await fetch(api, { signal: AbortSignal.timeout(25000) });
+    const ct = res.headers.get('content-type');
+    // Body nur lesen, wenn der Transport überhaupt JSON verspricht — sonst
+    // würde `res.json()` an der Angular-Shell werfen und der Grund im
+    // catch-Zweig zu einem unspezifischen «fehler» verwischen.
+    const istJson = res.ok && /^application\/json\b/i.test((ct ?? '').trim());
+    const json = istJson
+      ? await res.json() as { text_of_law?: { selected_version?: { id?: number; xhtml_tol?: string | null } } }
+      : undefined;
+    const sel = json?.text_of_law?.selected_version;
+    const befund = bewerteAntwort({
+      httpOk: res.ok,
+      contentType: ct,
+      selectedVersionId: sel?.id,
+      xhtmlVorhanden: Boolean(sel?.xhtml_tol),
+      erwarteteVersion: a.erwarteteVersion,
+    });
+    if (befund !== 'ok') return befund;
+    const xhtml = sel!.xhtml_tol!;
     const { kopf, artikel } = extrahiereLexWorkSidecar(xhtml);
-    const erlassHost = host(a.api);
+    const erlassHost = host(api);
     // Nur Tokens behalten, die der Snapshot auch führt (Konsistenz-Tor).
     const gefiltert: Record<string, LexArtikelStruktur> = {};
     for (const tok of Object.keys(artikel).sort()) {
@@ -221,23 +220,39 @@ async function hole(a: Aufgabe): Promise<'ok' | 'leer' | 'fehler' | 'fassung'> {
     writeFileSync(`${ZIEL}/${a.key}.json`, JSON.stringify(doc, null, 1) + '\n', 'utf8');
     return 'ok';
   } catch {
-    return 'fehler';
+    return 'fehler-status';
   }
+}
+
+/**
+ * Fragt die Kandidaten der Reihe nach an und meldet den aussagekräftigsten
+ * Befund (Rangfolge und Begründung in `BEFUND_RANG`). Beim Normalfall — genau
+ * ein Kandidat — ist das Ergebnis unverändert dessen eigener Befund.
+ */
+async function hole(a: Aufgabe): Promise<{ befund: AntwortBefund; api: string }> {
+  const ergebnisse: Array<{ befund: AntwortBefund; api: string }> = [];
+  for (const api of a.apis) {
+    const befund = await holeEine(a, api);
+    ergebnisse.push({ befund, api });
+    if (befund === 'ok') break;
+  }
+  return besterBefund(ergebnisse) ?? { befund: 'fehler-status', api: a.apis[0] ?? '' };
 }
 
 // Begrenzte Parallelität (höflich gegenüber den Kantons-APIs).
 const GRENZE = 6;
-let ok = 0, leer = 0, fehler = 0, fassung = 0, i = 0;
+let ok = 0, leer = 0, fehler = 0, fassung = 0, shell = 0, i = 0;
 async function worker() {
   while (i < aufgaben.length) {
     const a = aufgaben[i++];
-    const r = await hole(a);
-    if (r === 'ok') ok++;
-    else if (r === 'leer') leer++;
-    else if (r === 'fassung') { fassung++; console.log(`  Fassungs-Tor (übersprungen): ${a.key} — Snapshot hängt an Version ${a.erwarteteVersion}, Portal führt eine andere als aktuell (${a.api})`); }
-    else { fehler++; console.log(`  fehler/leer: ${a.key} (${a.api})`); }
+    const { befund, api } = await hole(a);
+    if (befund === 'ok') ok++;
+    else if (befund === 'leer') { leer++; console.log(`  amtlich ohne XHTML: ${a.key} (${api})`); }
+    else if (befund === 'fassung') { fassung++; console.log(`  Fassungs-Tor (übersprungen): ${a.key} — Snapshot hängt an Version ${a.erwarteteVersion}, Portal führt eine andere als aktuell (${api})`); }
+    else if (befund === 'shell') { shell++; console.log(`  Soft-404/Shell (Quelle NICHT erreicht, kein Endbefund): ${a.key} (${api})`); }
+    else { fehler++; console.log(`  Transportfehler: ${a.key} (${api})`); }
   }
 }
 await Promise.all(Array.from({ length: GRENZE }, () => worker()));
 
-console.log(`Kanton-Struktur: ${ok} ok, ${leer} ohne XHTML, ${fassung} Fassungs-Tor, ${fehler} Fehler · ${nichtLexwork} Nicht-LexWork, ${ohneLawId} ohne lawId übersprungen → ${ZIEL}/`);
+console.log(`Kanton-Struktur: ${ok} ok, ${leer} ohne XHTML, ${fassung} Fassungs-Tor, ${shell} Shell, ${fehler} Fehler · ${nichtLexwork} Nicht-LexWork, ${ohneLawId} ohne Systematiknummer übersprungen → ${ZIEL}/`);
