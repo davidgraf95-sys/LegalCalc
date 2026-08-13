@@ -559,6 +559,33 @@ export function zeileIstOffen(k: GliederungsKnoten, offen: Record<string, boolea
 }
 
 /**
+ * Zeigt diese Zeile ihre ARTIKEL-Kinder? (F1 des §9-Bug-Checks 13.8.2026.)
+ *
+ * Der gemischte Knoten (T8) trägt eigene Artikel UND Untersektionen. Beide
+ * hängen an DERSELBEN Zeile und damit am selben Klapp-Zustand — die
+ * Start-Regel kann also nicht beide zugleich richtig bedienen: Sektionen
+ * sollen bei kleinen Bäumen offen starten (Entscheid David 8.8.2026), Artikel
+ * nie (Auftrag David 13.8.2026). Die Klemme `startOffen: false` am Elternknoten
+ * hat das falsch aufgelöst: sie nahm den Sektions-Kindern die Start-Sicht mit
+ * (58 Erlasse, 257 Zeilen; BS-257.820 7 → 1).
+ *
+ * Auflösung: die Artikel-Kinder bekommen eine eigene, engere Regel — sie
+ * erscheinen NUR, wenn die Zeile ausdrücklich geöffnet wurde (Klick oder
+ * Scroll-Spy schreiben in die Klapp-Karte). Reine Artikel-Träger brauchen sie
+ * nicht: dort IST der Klapp-Zustand die Artikel-Ebene, und die Klemme im Modell
+ * hält sie beim Start zu.
+ *
+ * Rein und ohne DOM, damit die Regel ohne Renderer prüfbar bleibt (§3/§6.7).
+ */
+export function artikelKinderOffen(
+  k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number,
+): boolean {
+  if (!zeileIstOffen(k, offen, startOffeneTiefe)) return false;
+  if (!k.kinder.some((kk) => kk.art !== 'artikel')) return true; // reiner Artikel-Träger
+  return k.ids.some((id) => offen[id] === true);
+}
+
+/**
  * F5: welche EINE Zeile trägt die Positionsmarke?
  *
  * Die Spec sagt «der tiefste aktive Knoten». Das genügt als Regel nicht ganz,

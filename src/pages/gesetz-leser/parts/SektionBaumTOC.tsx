@@ -1,7 +1,7 @@
 import { memo, type ReactNode } from 'react';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
-import { zeileIstOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
+import { zeileIstOffen, artikelKinderOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
 //
@@ -168,7 +168,17 @@ interface ZeilenProps {
 const Zeile = memo(function Zeile({
   k, erster, aktivPfad, markeId, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
 }: ZeilenProps): ReactNode {
+  // F1 (§9-Bug-Check 13.8.2026): An einem gemischten Knoten (T8) hängen
+  // Sektions- und Artikel-Kinder am selben Klapp-Zustand, dürfen aber nicht
+  // demselben START-Zustand folgen — Sektionen starten bei kleinen Bäumen
+  // offen, Artikel nie. Welche der beiden Regeln greift, entscheidet das
+  // Modell (`artikelKinderOffen`); hier wird sie nur angewandt (§3).
   const auf = zeileIstOffen(k, offen, startOffeneTiefe);
+  const artikelAuf = artikelKinderOffen(k, offen, startOffeneTiefe);
+  const sichtbareKinder = auf ? k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf) : [];
+  // `hatKinder` steuert Chevron und `aria-expanded`. Massgeblich ist, was die
+  // Zeile ÖFFNEN KANN, nicht was gerade zu sehen ist — sonst verschwände der
+  // Knopf an einer Zeile, die nur Artikel trägt, und die Ebene wäre unerreichbar.
   const hatKinder = k.kinder.length > 0;
   const istMarke = markeId !== null && k.id === markeId;
   const aufPfad = !istMarke && k.ids.some((id) => aktivPfad.includes(id));
@@ -213,6 +223,10 @@ const Zeile = memo(function Zeile({
               // sichtbare Zustand `auf` geht mit, damit auch eine Zeile ohne
               // Eintrag in `tocBaum` (Start-offen per Modell) mit dem ersten
               // Klick zugeht.
+              // F1: der sichtbare Zustand ist das, was WIRKLICH offen steht —
+              // an einem gemischten Knoten mit noch zugeklappter Artikel-Ebene
+              // meldet die Zeile darum `true` (die Sektionen stehen offen), und
+              // der erste Klick schliesst sie. Der zweite öffnet beides.
               onClick={() => onToggle(k.ids, auf)}
               aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'}
               className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
@@ -311,11 +325,11 @@ const Zeile = memo(function Zeile({
           §15.2: weiterhin KEINE Höhen-Animation — eine animierte Höhenänderung
           reflowt Frame für Frame die Geschwister und zählt, wenn der Spy sie
           auslöst, als unerwarteter CLS. Das Umschalten bleibt ein Schritt. */}
-      {hatKinder && auf && (
+      {sichtbareKinder.length > 0 && (
         <div className="grid grid-rows-[1fr]">
           <div className="overflow-hidden min-h-0">
             <ul className="space-y-0.5 mt-0.5">
-              {k.kinder.map((kind, i) => (
+              {sichtbareKinder.map((kind, i) => (
                 <Zeile key={kind.id} k={kind} erster={i === 0}
                   aktivPfad={aktivPfad} markeId={markeId} offen={offen}
                   startOffeneTiefe={startOffeneTiefe}

@@ -275,13 +275,21 @@ function istAnspringbar(k: GliederungsKnoten, arts: NormSnapshot[]): boolean {
  * Text stehen — vor, zwischen oder nach seinen Untersektionen. Blosses Anhängen
  * hätte bei jedem T8-Knoten eine falsche Leseordnung behauptet (§8).
  *
- * STARTZUSTAND: jeder Knoten, der eine Artikel-Ebene bekommt, wird explizit auf
- * `startOffen: false` gesetzt (sofern er nicht schon eine Vorgabe trägt).
- * Begründung — Auftrag David 13.8.2026: «es geht um VERFÜGBARKEIT der
- * Artikel-Ebene beim Aufklappen, nicht um Start-Sichtbarkeit». Ohne diese Zeile
- * risse `startOffeneTiefe = Infinity` (B1 offen, 787 Erlasse) beim Öffnen der
- * Leiste sofort alle Artikel auf: die BV zeigte statt 39 Zeilen deren 271. Ein
- * expliziter Wert gewinnt in `zeileIstOffen` gegen die Tiefen-Regel, ein
+ * STARTZUSTAND — und die Grenze, die der §9-Bug-Check gezogen hat (F1,
+ * 13.8.2026): Die Artikel-Ebene darf beim Start nicht sichtbar sein (Auftrag
+ * David: «VERFÜGBARKEIT beim Aufklappen, nicht Start-Sichtbarkeit»; ohne die
+ * Klemme zeigte die BV statt 39 Zeilen deren 271). Aber die Klemme
+ * `startOffen: false` wirkt auf die GANZE Zeile, also auch auf ihre
+ * SEKTIONS-Kinder — und an gemischten Knoten (T8: eigene Artikel UND
+ * Untersektionen) verschwanden damit ganze Teilbäume aus der Start-Sicht.
+ * A/B am Korpus gemessen: 58 Erlasse verloren zusammen 257 Start-Zeilen
+ * (BS-257.820 7 → 1, GR-210.370 16 → 3) — genau gegen Davids Entscheid vom
+ * 8.8.2026, dass kleine Bäume offen starten.
+ * Darum wird sie nur noch dort gesetzt, wo die Zeile AUSSCHLIESSLICH
+ * Artikel-Kinder trägt. Am gemischten Knoten regelt die Sichtbarkeit der
+ * Artikel-Zeilen `artikelKinderOffen` (gliederungsModell.ts): Sektions-Kinder
+ * folgen der Start-Regel, Artikel-Kinder erst einem ausdrücklichen Öffnen.
+ * Ein expliziter Wert gewinnt in `zeileIstOffen` gegen die Tiefen-Regel, ein
  * Klick und der Scroll-Spy gewinnen weiterhin gegen ihn.
  */
 export function haengeArtikelZeilen(
@@ -327,6 +335,10 @@ export function haengeArtikelZeilen(
     // `gemischt`/`eigeneArtikel` bleiben unangetastet: sie beschreiben den
     // AUFBAU des Erlasses (Knoten ist Ordner und Sprungziel zugleich), nicht
     // die Zahl der gerenderten Zeilen. Die Erlass-Übersicht rechnet mit ihnen.
-    k.startOffen ??= false;
+    //
+    // F1 (§9-Bug-Check 13.8.2026): die Klemme NUR an Zeilen, die nichts als
+    // Artikel tragen — sonst nähme sie den gemischten Knoten ihre
+    // Sektions-Kinder mit (Herleitung oben).
+    if (gemischt.every((kk) => kk.art === 'artikel')) k.startOffen ??= false;
   }
 }

@@ -24,7 +24,8 @@ import type { NormSnapshot } from '../lib/normtext/typen';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import { artikelSachtitel } from '../lib/normtext/darstellung';
 import {
-  baueGliederungsModell, flacheZeilen, zeileIstOffen, artikelRandtitel, istAnhangEintrag,
+  baueGliederungsModell, flacheZeilen, zeileIstOffen, artikelKinderOffen,
+  artikelRandtitel, istAnhangEintrag,
   ARTIKEL_EBENE_MAX_BLATT_DECKUNG, ID_ARTIKEL,
   type GliederungsModell, type GliederungsKnoten,
 } from '../pages/gesetz-leser/gliederungsModell';
@@ -47,8 +48,15 @@ const artikelZeilen = (m: { knoten: GliederungsKnoten[] }): GliederungsKnoten[] 
   flacheZeilen(m.knoten).filter((k) => k.art === 'artikel');
 
 /** Die Zeilen, die der Nutzer OHNE eigenes Zutun sieht (Klapp-Karte leer). */
-const sichtbarBeimStart = (knoten: GliederungsKnoten[], tiefe: number): GliederungsKnoten[] =>
-  knoten.flatMap((k) => [k, ...(zeileIstOffen(k, {}, tiefe) ? sichtbarBeimStart(k.kinder, tiefe) : [])]);
+const sichtbarBeimStart = (knoten: GliederungsKnoten[], tiefe: number, offen: Record<string, boolean> = {}): GliederungsKnoten[] =>
+  knoten.flatMap((k) => {
+    if (!zeileIstOffen(k, offen, tiefe)) return [k];
+    // Dieselbe Auswahl wie im Renderer (SektionBaumTOC): Artikel-Kinder nur,
+    // wenn die Zeile ausdrücklich geöffnet wurde (F1).
+    const artikelAuf = artikelKinderOffen(k, offen, tiefe);
+    const kinder = k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf);
+    return [k, ...sichtbarBeimStart(kinder, tiefe, offen)];
+  });
 
 // ═══ 1 · Der Anlassfall und die Typen-Breite ════════════════════════════════
 describe('W2·18 — jeder Artikel ist über die Gliederung erreichbar', () => {
@@ -399,6 +407,46 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
     // Ohne die `startOffen: false`-Klemme wären es 39 + 232 = 271 Zeilen.
     expect(sichtbar.length).toBe(m.kennzahlen.zeilenVoll);
     expect(m.kennzahlen.zeilenGesamt).toBe(39 + 232);
+  });
+
+  // ── F1 (§9-Bug-Check 13.8.2026): die Klemme darf keine SEKTIONEN verstecken ──
+  // Die erste Fassung setzte `startOffen: false` an jedem Knoten mit
+  // Artikel-Kindern. An gemischten Knoten (T8) nahm das die Untersektionen mit:
+  // korpusweit 58 Erlasse, 257 Start-Zeilen. Die beiden Fälle hier sind die
+  // gemessenen Extreme — sie sind gegen den Stand vor dem Fix rot.
+  const t8Faelle = [['kanton', 'BS-257.820', 7], ['kanton', 'GR-210.370', 16]] as const;
+  for (const [ebene, key, zeilen] of t8Faelle) {
+    it(`${key} (T8): der Start zeigt weiterhin ${zeilen} Zeilen, nicht nur den Stamm`, () => {
+      const m = lade(ebene, key);
+      const sichtbar = sichtbarBeimStart(m.knoten, m.startOffeneTiefe);
+      expect(sichtbar.length).toBe(zeilen);
+      // Die Sektions-Sicht ist vollständig — jede Zeile, die die Start-Regel
+      // öffnet, zeigt ihre Sektions-Kinder.
+      for (const k of sichtbar) {
+        if (!zeileIstOffen(k, {}, m.startOffeneTiefe)) continue;
+        for (const kind of k.kinder.filter((kk) => kk.art !== 'artikel')) {
+          expect(sichtbar.some((x) => x.id === kind.id), `${key}: ${kind.id} fehlt in der Start-Sicht`).toBe(true);
+        }
+      }
+      // …und keine einzige Artikel-Zeile ist dabei.
+      expect(sichtbar.some((k) => k.art === 'artikel')).toBe(false);
+    });
+  }
+
+  it('gemischter Knoten: ein ausdrückliches Öffnen bringt die Artikel, die Start-Regel nie', () => {
+    const m = lade('kanton', 'GR-210.370');
+    const misch = flacheZeilen(m.knoten).find((k) =>
+      k.kinder.some((kk) => kk.art === 'artikel') && k.kinder.some((kk) => kk.art !== 'artikel'));
+    expect(misch, 'GR-210.370 muss einen gemischten Knoten haben').toBeDefined();
+    // Start: Sektionen ja, Artikel nein.
+    expect(zeileIstOffen(misch!, {}, m.startOffeneTiefe)).toBe(true);
+    expect(artikelKinderOffen(misch!, {}, m.startOffeneTiefe)).toBe(false);
+    // Nach dem Klick: beides.
+    const auf = Object.fromEntries(misch!.ids.map((id) => [id, true]));
+    expect(artikelKinderOffen(misch!, auf, m.startOffeneTiefe)).toBe(true);
+    // Zugeklappt: nichts.
+    const zu = Object.fromEntries(misch!.ids.map((id) => [id, false]));
+    expect(artikelKinderOffen(misch!, zu, m.startOffeneTiefe)).toBe(false);
   });
 
   it('ZPO (b1-kompakt): der Start bleibt bei den obersten Knoten', () => {
