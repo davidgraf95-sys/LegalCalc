@@ -201,6 +201,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/53/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Asylverordnung 2 über Finanzierungsfragen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance n° 2 sur l'asile concernant les questions de financement"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'Ordinanza n. 2 sull'asilo relativa alle questioni finanziarie"
+    },
+    "start": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-08-12"
+    },
+    "ende": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-10-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.312"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/84/cons_1"
     },
     "status": {
@@ -231,35 +270,6 @@
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-05-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.312"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/53/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderungen der Asylverordnung 2 über Finanzierungsfragen (AsylV 2)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications de l’ordonnance 2 sur l’asile relative au financement (OA 2)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche dell’ordinanza 2 sull’asilo relativa alle questioni finanziarie (OAsi 2)"
     }
   },
   {
