@@ -313,3 +313,149 @@ je Schritt Titel, `@meta`, Anlass/Kurzabsatz und der Pointer. Steuert nicht — 
 > dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr** gelöst. A28 (Auto-Guide
 > aus, manuell einschaltbar) bleibt bis zur Abnahme der Live-Stand. Referenz-Baustand des
 > verworfenen Versuchs: geschlossener PR #423 (`fd44b37b3`, mit Beweisen).
+
+### §9.3 `W2·5k-LINIEN-KONZEPT` — Konzept-Entwurf (Fable/Synthese-Agent, 13.8.2026)
+
+**Status: Entwurf, zur David-Abnahme.** Erfüllt den Auftrag aus §9.2 («2–3 Varianten,
+Empfehlung, David-Abnahme VOR jedem Vollbau»). Zum Verhältnis zur ebenfalls in §9.2
+verlangten «klickbaren Prototypen (Preview-Deploy)» siehe die Abweichung am Ende dieses
+Abschnitts.
+
+#### a) Problemlage — was belegt ist, nicht was vermutet wird
+
+Die Gliederungslinie (vertikaler `border-guide` neben tief verschachtelten Abschnitten)
+wurde **zweimal gebaut und zweimal von David live verworfen**, beide Male am selben
+Befund, nicht an einer Justage-Frage:
+
+| Datum | Baustand | Davids Verdikt (wörtlich) | Konsequenz |
+|---|---|---|---|
+| 5.7.2026 | G3a/K11: Guide nur bei `grundart==='KODIFIKATION'` | A8: «Liniengliederungsdarstellung … regeln festlegen wie es wann angezeigt wird JE NACH AUFBAU GESETZ. zgb bspw. sehr viele aber arg fast keine aktuell.» | Umbau auf aufbau-basiert (Struktur-Sidecar statt Kategorie) |
+| 11.7.2026 | L-3 (#207): Auto-Guide AN für dichte Erlasse, inkl. ZGB/OR | 12.7.2026 (A28): «das mit den linien funktioniert überhaupt nicht» / «also ist überhaupt nicht fördernd für die übersicht» | A28: Auto-Default korpusweit AUS, Feature bleibt nur als manueller K11-Schalter |
+| 3.8.2026 | PR #423 (`fd44b37b3`, geschlossen): L-3 reaktiviert, Auto-Guide kehrt zurück | Preview-Verdikt: «eine einzige linie und unbrauchbar» | PR geschlossen, A28-Zustand bleibt Live-Stand; ROADMAP-Anlass dieses Konzept-Schritts |
+
+Belege im Code: `src/pages/gesetz-leser/linienAufbau.ts:19–49` (A28-Chronik im
+Kopfkommentar, wörtliche Zitate) · `scripts/check-linien-kanon.ts:21–34` (B1-Invariante
+`autoGuide` korpusweit `false`) · `DESIGN-REGLEMENT-NORMTEXT.md §4b-A` (Zeile ~210–265,
+Referenz-Tabelle + Rangfolge-Doktrin) · Vorgeschichte A28 wörtlich in
+`FAHRPLAN-GESETZES-UX.md` Ziff. 10.9.
+
+**Der strukturelle Grund, warum Nachjustieren nicht half:** `linienProfil()` zeigt
+**höchstens EINEN** Guide, auf genau einer Ebene (`guideEbene = min(renderTiefe−1, 1)`,
+`linienAufbau.ts:176`). Bei ZGB (Tiefe 5) oder OR (Tiefe 4) markiert dieser eine Strich
+zwangsläufig nur einen Bruchteil der Verschachtelung — die tieferen Ebenen trägt seit
+L-1 ohnehin nur Einzug/Typo (`DESIGN-REGLEMENT-NORMTEXT.md §4b` Rangfolge «Typo > Einzug
+> Guide»). Ob der eine Strich per Kategorie, per Dichte-Schwelle oder per Default AN/AUS
+gesteuert wird, ändert an diesem Deckel nichts — das erklärt, warum L-3 (Dichte-Boden)
+und der frühere G3a-Default (Kategorie) am selben Befund scheiterten: **eine einzelne
+Linie kann «viele Ebenen» strukturell nicht abbilden**, unabhängig von der Schalter-Logik
+darüber.
+
+**Was sich seit A28 geändert hat (wesentlich für die Varianten unten):** `W2·19-GLIEDERUNG`
+ist seit dem 13.8.2026 auf `main` live (PR #478–#481) — eine eigene Seitenleiste mit
+Gliederungsbaum, Scroll-Spy-Positionsmarke und Sprungnavigation. Die Erweiterung bis zum
+einzelnen Artikel (`gliederungsModell.ts`, `ARTIKEL_EBENE_MAX_BLATT_DECKUNG`) liegt auf
+Branch `fix/w2-18-gliederung` (Commit `b7c9ec310`, Stand 13.8.2026, **noch nicht in
+main gemergt**). Die Übersichts-Funktion, die der Guide 2026 nie zuverlässig lieferte
+(«wo bin ich in der Struktur», «wie tief ist dieser Erlass gegliedert»), übernimmt damit
+zunehmend ein anderes, dafür gebautes Werkzeug — das ändert die Ausgangslage gegenüber
+Juli/August grundlegend und ist bei der Variantenwahl zu berücksichtigen.
+
+#### b) Varianten (keine ist eine Default-Umkehr)
+
+**V1 — Guide-Mechanik vollständig zurückbauen, Übersicht der Seitenleiste überlassen.**
+Die gesamte Linien-Mechanik im Lesetext (`autoGuide`, K11-Tri-State-Schalter «Linien»,
+`data-linien`/`data-guide-auto`, `check-linien-kanon.ts` Teil B, zugehörige
+`--guide-gliederung`-Verwendung) wird entfernt. Struktur im Fliesstext trägt sich
+ausschliesslich über Typo + Einzug (bereits höchste zwei Ränge der §4b-Doktrin);
+Navigation/Übersicht liefert die Seitenleiste (W2·19 + W2·18).
+*Konsequenzen:* Rückbau, kein Neubau — geringster Aufwand (S), löst die Lehre
+**endgültig** (nichts bleibt übrig, das zurückgedreht werden könnte). Verlust: keine
+In-Text-Linie mehr, auch nicht optional/manuell. Golden-neutral, `check:linien-kanon`
+verliert Teil B (Teil A/Linien-Kanon-Sprache bleibt für Artikel-/Struktur-Trenner
+bestehen — betrifft nur den vertikalen Gliederungs-Guide).
+
+**V2 — Guide-Mechanik zurückbauen, dafür Typo-Kontrast der Zwischentitel gezielt
+verstärken.** Wie V1 (Guide weg), zusätzlich: Schriftgewicht/-grösse zwischen den
+Gliederungsstufen (Teil/Titel/Kapitel/Abschnitt) deutlicher abstufen und den
+Weissraum zwischen Ebenen-Wechseln vergrössern (Umsetzung der bereits skizzierten,
+nie gebauten Alternativen 1+4 aus `FAHRPLAN-GESETZES-UX.md §10.9`
+«A28-Alternativen-Skizze»). *Konsequenzen:* mittlerer Aufwand (M) — Typografie-Tuning
+über den ganzen Korpus, Vorher/Nachher-Screenshots hell/dunkel/mobil als Beweis
+(wie L-1/L-2 seinerzeit), Risiko eines erneuten «trägt nicht» ist gering, weil es
+KEIN Ein/Aus-Mechanismus, sondern eine durchgehende Eigenschaft ist — es gibt nichts
+zu falsifizieren im Sinne von «diese eine Linie funktioniert nicht».
+
+**V3 — Guide durch einen dynamischen, scroll-gebundenen Tiefen-Indikator ersetzen.**
+Statt einer statischen Linie auf fester Ebene: ein kurzer Guide-Abschnitt, der nur
+den Bereich markiert, in dem der Leser gerade steht (gebunden an dieselbe
+Scroll-Spy-Mechanik, die die Seitenleisten-Positionsmarke aus W2·19/S5 bereits nutzt),
+mit gestuftem Kontrast je Vorfahren-Ebene, max. 1–2 gleichzeitig sichtbar. *Konsequenzen:*
+höchster Aufwand (L) — neue, in diesem Kontext unerprobte Mechanik (dynamisch statt
+statisch), Perf-Bewertung nach §15 nötig (Scroll-Listener-Budget, CLS-0-Beweis), reales
+Risiko eines dritten gescheiterten Versuchs, weil David bislang jede Linien-Variante als
+Konzept abgelehnt hat, nicht nur die statische. Baut auf bereits vorhandener
+IntersectionObserver-Infrastruktur auf (kein Neubau der Scroll-Erkennung).
+
+*Bewusst nicht als Variante geführt:* «Auto-Default wieder AN, anders geschwellt» — das
+ist exakt die verbotene Default-Umkehr (§9.2, Lehre aus L-3/PR #423).
+
+#### c) Empfehlung
+
+**V1.** Begründung: (1) Der strukturelle Deckel — höchstens ein Guide auf einer Ebene —
+ist in jeder bisherigen Variante gleich geblieben und war beide Male der Grund für
+Davids Ablehnung, nicht die Schwellen-/Default-Logik darüber; eine weitere Justage
+derselben Ein-Linien-Mechanik hat keine neue Erfolgsaussicht. (2) Der eigentliche
+Zweck («Übersicht in tiefen Gesetzen», Wortlaut A28) wird seit dem 13.8.2026 von einem
+dafür gebauten, mächtigeren Werkzeug getragen (Seitenleiste mit Gliederungsbaum und
+— sobald `fix/w2-18-gliederung` gemergt ist — Artikel-Sprungziel), nicht mehr vom
+Guide. (3) Aufwand/Risiko: V1 ist der einzige Weg, der die §17-Lehre («nie wieder über
+eine blosse Default-Umkehr») nicht nur befolgt, sondern das Rückfall-Risiko auf null
+senkt, weil nichts Umschaltbares übrig bleibt. V2 bleibt als **günstige Nachrüst-Option**
+vorgemerkt, falls David nach dem Rückbau (V1) findet, dass die reine Typo/Einzug-Stufung
+im Fliesstext zu wenig Struktur zeigt — sie ist ohne Sunk Cost aus V1 heraus nachrüstbar.
+Von **V3 raten wir vorerst ab**: das Risiko eines dritten Fehlschlags an einer erneuten
+In-Text-Linie ist real, und der Aufwand rechtfertigt sich nur, wenn David nach V1 aktiv
+eine In-Text-Orientierung vermisst, die die Seitenleiste nicht liefert.
+
+#### d) Abweichung vom Spec-Wortlaut (§7-Offenlegungspflicht)
+
+§9.2 verlangt «klickbare Prototypen (Preview-Deploy)» als Teil dieses Schritts. Der
+Bau-Auftrag zu diesem Konzept-Schritt (Orchestrator, 13.8.2026) grenzt ihn ausdrücklich
+auf ein **Doku-Konzept ohne Code/Preview-Deploy** ein. Dieser Abschnitt liefert darum
+Varianten + Konsequenzen + Empfehlung in Textform (mit Datei:Zeile-Belegen zum
+bestehenden Verhalten), aber keine anklickbaren Demos. **Vorschlag, wie die Lücke
+geschlossen wird:** David wählt hier zunächst eine Richtung (oder verwirft alle Guide-
+Varianten zugunsten der Seitenleiste); ein *separater* Bau-Schritt liefert dann
+Preview-Deploys **nur der gewählten Variante** (statt aller 2–3 vorab click-baren
+Prototypen) — das spart einen Bau-Zyklus für Varianten, die David ohnehin nicht wählt.
+Dieser Vorschlag selbst wartet auf Davids Bestätigung (Frage 4 unten).
+
+#### e) Abnahme-Block — wartet auf David
+
+Vier Entscheidfragen, in Alltagssprache:
+
+1. **Soll die Gliederungslinie im Lesetext ganz verschwinden**, weil die neue
+   Seitenleiste (Inhaltsverzeichnis mit Sprungfunktion, bald bis zum einzelnen Artikel)
+   die Übersicht jetzt übernimmt? *(Das ist Variante V1 — unsere Empfehlung.)*
+2. Falls ja: **Reicht dir die heutige Unterscheidung über Schriftgrösse/-gewicht und
+   Einzug**, um die Gliederungsebenen im Text zu erkennen — oder soll das zusätzlich
+   deutlicher gemacht werden (Variante V2, als spätere, kleine Nachrüstung, falls beim
+   Lesen etwas fehlt)?
+3. Oder **willst du trotz der zwei bisherigen Fehlschläge eine dritte Linien-Idee
+   ausprobieren** — eine Linie, die nur den Abschnitt markiert, in dem du gerade liest,
+   und beim Scrollen mitwandert (Variante V3)? Das ist die aufwendigste und riskanteste
+   Option; wir empfehlen sie nicht als ersten Schritt.
+4. **Ist es für dich in Ordnung, dass dieser Schritt nur Text + Beleg-Screenshots aus
+   der bestehenden Historie liefert statt anklickbarer Demo-Versionen** — und eine
+   Demo erst für die von dir gewählte Variante gebaut wird (siehe Abschnitt d)?
+
+**Offene Punkte, die nach Davids Antwort folgen:** (i) bei V1/V2 ein eigener,
+golden-neutraler Bau-Schritt mit Vorher/Nachher-Beweis (analog L-1/L-2); (ii) Prüfen,
+ob `fix/w2-18-gliederung` bis zum Bau-Start gemergt ist — V1/V2 setzen die Seitenleiste
+als tragendes Übersichts-Werkzeug voraus, sind aber auch mit dem heutigen main-Stand
+(Gliederungsbaum ohne Artikel-Ebene) bereits sinnvoll; (iii) sollte David parallel eine
+eigene Erlass-Kategorisierung für Kantonserlasse/Staatsverträge einführen, bleibt das
+hier gewählte Regelwerk davon getrennt zu halten — alle drei Varianten leiten weiterhin
+vom TATSÄCHLICHEN Struktur-Sidecar ab, nie von einer Kategorie-Schublade (§4b-A-Lehre
+aus der A8-Heilung: der Kategorie-Default war die ursprüngliche Inkonsistenz, die A8
+behoben hat — eine neue Kategorisierung darf dort nicht wieder einziehen).
