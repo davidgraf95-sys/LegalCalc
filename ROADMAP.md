@@ -571,8 +571,8 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   Mobile/Pane, Zonen-Komponenten, Roadmap-Nachträge inkl. Sidecar-Nachzug + SG-3849-Prüfauftrag).
   **DoD-Beleg:** Perf-Nachmessung 9.8.2026 (Datei kommt mit PR #480: bibliothek/betrieb/gliederung-perf-nachmessung-2026-08-09.md; Kernziele erreicht; Restposten als W2·18-Zeilen/David-Entscheide); LM-163 geprüft:
   Verdacht widerlegt (FAHRPLAN-UI-BEFUNDE Z. 334).
-- [~] **19b · Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19)** *(S10-Nachträge 9.8.2026)*
-  <!-- @meta id: W2·19B-KORPUS · status: wip · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: M -->
+- [x] **19b · Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19)** *(S10-Nachträge 9.8.2026)*
+  <!-- @meta id: W2·19B-KORPUS · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: M -->
   Beides Extraktions-Risikopfad ⇒ Skill `gegenpruefung` Pflicht, Merge gesperrt bis Verdikt:
   - [x] **Sidecar-Nachzug der 42 Kantonserlasse ohne Gliederungs-Sidecar** — erledigt 13.8.2026, soweit amtlich möglich: **4 von 42 nachgezogen** (LU-3870, GR-3348, VS-1413, FR-8428), Artikel-Ebene je vollständig belegt. Die übrigen 38 sind **amtlich nicht strukturiert erschliessbar**: 3 clex-Erlasse führen `structured_document_id: null` (nur PDF), 1 scheitert am neuen Fassungs-Tor (SG-2808), 9 laufen über lexfind-`tolv` (liefert `application/pdf`), 25 über kantonseigene Portale ohne Struktur-API. Negativbefunde je Familie in `bibliothek/normen/kanton-gliederung-sidecar-luecke-2026-08-13.md` — nicht erneut suchen.
   - [x] **Korpus-Prüfauftrag SG-3849** — erledigt 13.8.2026. **Annahme widerlegt:** der Erlass (GebT, sGS 821.5) ist nicht teilerfasst, er hat amtlich GAR KEINE Artikel; alle 17 «Art. N» sind Fehlextraktionen aus Verweisen auf fremde Erlasse (Stichprobe 17/17, zwei unabhängige Wege). §8-Hinweis präzisiert statt aufgelöst.
