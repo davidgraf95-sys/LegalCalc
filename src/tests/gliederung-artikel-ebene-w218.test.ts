@@ -231,19 +231,45 @@ describe('W2·18 — Modi ohne Artikel-Ebene, jeder aus eigenem Grund', () => {
     });
   }
 
-  for (const key of ['ZH-243', 'SG-3849'] as const) {
-    it(`${key} (b3-leer, kein Sidecar): kein Baum, also auch keine Artikel-Ebene`, () => {
-      // OFFENER PUNKT, ehrlich benannt (§8) statt still übergangen: diese 68
-      // Erlasse haben kein Struktur-Sidecar (T10). Der Zugang zum einzelnen
-      // Artikel entsteht dort mit dem Sidecar-Nachzug (ROADMAP W2·19B-KORPUS),
-      // nicht in der Darstellungsschicht — eine hier konstruierte Ersatz-
-      // Gliederung wäre eine zweite Wahrheit über den Erlass (§5).
-      const m = lade('kanton', key);
-      expect(m.modus).toBe('b3-leer');
+  // ── Die 68er-Familie: Snapshots OHNE Sidecar und OHNE Randtitel ────────────
+  // Befund der parallelen Korpus-Lane (13.8.2026): bei diesen Erlassen zeigte
+  // die Leiste eine LEERE Gliederung — die Modus-Kette fiel auf «leer», weil
+  // sie ohne Randtitel keinen Index zutraute. Gemessen am Korpus sind es 68
+  // Erlasse (40 ohne Sidecar, 28 mit sidecar-losem Inhalt), alle ohne
+  // Sektionen und mit Dichte 0, im Mittel 22 Artikel, der grösste 607.
+  // Sie tragen die Artikel-Folge trotzdem im Snapshot — nur eben ohne
+  // Überschriften.
+  const ohneSidecar = [
+    ['kanton', 'ZH-243', 150], ['kanton', 'SG-3849', 607], ['kanton', 'VD-vd-105539', 118],
+    ['kanton', 'GE-rsg_d3_30', 194], ['kanton', 'SZ-173.111', 40],
+  ] as const;
+
+  for (const [ebene, key, anzahl] of ohneSidecar) {
+    it(`${key}: keine leere Leiste mehr — jeder der ${anzahl} Artikel steht im Index`, () => {
+      const m = lade(ebene, key);
+      expect(m.modus).toBe('b2-index');
+      expect(m.kennzahlen.artikelAnzahl).toBe(anzahl);
+      // Die Artikel-Ebene des BAUMS bleibt aus — es gibt keinen Baum. Der
+      // flache Index ist hier der ganze Zugang (§5: nicht beides).
       expect(m.artikelEbene).toBe(false);
-      expect(m.knoten).toEqual([]);
+      const imIndex = m.artikelIndex.flatMap((g) => g.zeilen.map((z) => z.token));
+      const imAnhang = flacheZeilen(m.knoten).filter((k) => k.art === 'anhang').flatMap((k) => k.tokens ?? []);
+      const gedeckt = new Set([...imIndex, ...imAnhang]);
+      expect(m.eintraege.filter((e) => !gedeckt.has(e.artikel)).map((e) => e.artikelLabel)).toEqual([]);
+      // Ohne Randtitel trägt die Zeile nur ihr amtliches Etikett — «Art. N»
+      // bzw. «§ N», je nach Designator des Erlasses (aus `artikelLabel`, nie
+      // geraten). Genau dieser Fall war vorher gesperrt.
+      const alle = m.artikelIndex.flatMap((g) => g.zeilen);
+      expect(alle.every((z) => /^(Art\.|§)\s*\S/.test(z.label))).toBe(true);
     });
   }
+
+  it('b3-leer bleibt für den einen ehrlichen Fall: ein Erlass ohne jeden Artikel', () => {
+    const m = baueGliederungsModell({ sektionen: [], ohneGliederung: [], eintraege: [], struktur: null });
+    expect(m.modus).toBe('b3-leer');
+    expect(m.knoten).toEqual([]);
+    expect(m.artikelIndex).toEqual([]);
+  });
 });
 
 // ═══ 4 · Start-Zustand: Verfügbarkeit, nicht Sichtbarkeit ═══════════════════

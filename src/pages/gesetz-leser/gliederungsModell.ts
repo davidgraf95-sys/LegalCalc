@@ -16,6 +16,13 @@
 // als reine Funktion ohne Hooks unit-testbar — genau das verlangt §3.2 der Spec
 // («Reine Funktion, unit-getestet gegen die Referenz-Erlasse»).
 //
+// WARUM DREI DATEIEN (13.8.2026). Mit der Artikel-Ebene (W2·18-FEHLERBUCH) riss
+// diese Datei dasselbe Tor (1047 Zeilen). Geschnitten wurde entlang der Fragen,
+// nicht der Zeilenzahl: `gliederungsTypen.ts` sagt, WAS ein Modell ist (reine
+// Typen), `gliederungsArtikel.ts`, was die Leiste über einzelne ARTIKEL weiss,
+// und hier steht der Sektionsbaum samt Modus-Kette. Die Fassade unten hält den
+// Importpfad `./gliederungsModell` für alle Aufrufer gültig.
+//
 // WARUM EIN MODUS-SYSTEM UND KEIN «BAUM MIT SONDERFÄLLEN». Ein Drittel des
 // Korpus hat keine amtliche Gliederung, 42 Kantons-Snapshots haben gar kein
 // Sidecar. Leere und Teilerfassung sind damit benannte Normalfälle (§8), keine
@@ -30,18 +37,44 @@
 // §5-Doppelwahrheit ohne Konsumenten. Labels taugen nicht als Schlüssel
 // (SORTG-Labelkollision), eIds fehlen kantonal vollständig.
 
-import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
+import type { Sektion } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import { artikelSachtitel } from '../../lib/normtext/darstellung';
-import { berechneSektionMeta, istAnhangToken } from './berechnungen';
+import { berechneSektionMeta } from './berechnungen';
+
+// ─── Fassade (§6.6-Aufteilung 13.8.2026) ─────────────────────────────────────
+// Die Typen und die Artikel-Ebene liegen seit dem 13.8.2026 in eigenen Dateien
+// (`gliederungsTypen.ts`, `gliederungsArtikel.ts`), weil diese Datei mit der
+// Artikel-Ebene die 800-Zeilen-Schwelle riss. Damit KEIN Aufrufer seinen
+// Importpfad ändern muss — und damit `./gliederungsModell` weiterhin die eine
+// Adresse des Modells bleibt —, wird hier alles re-exportiert, was vorher hier
+// stand. Reines Fassaden-Muster: keine Umbenennung, keine Signatur-Änderung.
+export type { ArtikelIndexZeile, ArtikelIndexGruppe } from './gliederungsTypen';
+export {
+  ARTIKEL_EBENE_MAX_BLATT_DECKUNG, ID_ARTIKEL, artikelRandtitel, hatRandtitel, istAnhangEintrag,
+} from './gliederungsArtikel';
+
+import type {
+  GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe,
+} from './gliederungsTypen';
+// Die hier auch LOKAL gebrauchten Typen werden aus dem Import re-exportiert —
+// ein zweites `export … from` daneben wäre laut `tsc -b` ein Konflikt (TS2484).
+export type { GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe };
+import {
+  ARTIKEL_EBENE_MAX_BLATT_DECKUNG, baueArtikelIndex, haengeArtikelZeilen, hatRandtitel,
+  istAnhangEintrag, istSchonArtikelZeile, sammleArtikel, type DirektArtikel,
+} from './gliederungsArtikel';
 
 // ─── Schwellen der Modus-Kette (§3.2) ───────────────────────────────────────
 // Alle fünf Zahlen stehen hier und nur hier; die Kette unten liest sie, die
 // Unit-Tests prüfen die Referenz-Erlasse GEGEN sie (nicht gegen Kopien).
 /** B4 Mini: bis zu so vielen Artikeln lohnt keine Leiste. */
 export const MINI_MAX_ARTIKEL = 9;
-/** B3 Leer: unter dieser Randtitel-Dichte trägt auch ein Artikel-Index nicht. */
-export const LEER_MAX_DICHTE = 0.2;
+// LEER_MAX_DICHTE (0.2) ist am 13.8.2026 ERSATZLOS ENTFALLEN. Sie beantwortete
+// die Frage «ab wann trägt ein Artikel-Index nicht mehr» — und die Antwort war
+// falsch: ein Index aus blossen Nummern («§ 1», «§ 2» …) trägt sehr wohl, er
+// ist der einzige Zugang zu 68 Erlassen ohne Randtitel. Herleitung in
+// `waehleModus`. Die Nummer wird nicht neu belegt, damit kein Bestandsverweis
+// still auf eine andere Schwelle zeigt.
 /** B2 Artikel-Index: ab dieser Randtitel-Dichte ist «Art. N — Randtitel» tragfähig. */
 export const INDEX_MIN_DICHTE = 0.6;
 /** B2: so wenige AMTLICHE Knoten sind keine Gliederung mehr (VwVG: 5). */
@@ -53,34 +86,6 @@ export const OFFEN_MAX_ZEILEN = 40;
 /** Anhang-Ast startet aufgeklappt, sobald er den Erlass dominiert (ZH-243: 88 %). */
 export const ANHANG_DOMINANZ = 0.5;
 
-// ─── Artikel-Ebene (W2·18-FEHLERBUCH, Auftrag David 13.8.2026) ───────────────
-/**
- * Ab dieser Deckung durch Randtitel-Blätter gilt der Baum als BEREITS
- * artikel-granular — dann wird keine Artikel-Ebene angehängt.
- *
- * WAS «DECKUNG» HIER MISST (`artikelBlattDeckung`): den Anteil der Artikel, die
- * schon heute eine eigene Baumzeile haben, weil ihr Randtitel als Blatt-Knoten
- * im Sidecar steht und genau DIESEN einen Artikel trägt. Für solche Artikel
- * wäre eine zusätzliche Artikel-Zeile eine wortgleiche Doppelung: die Zeile
- * trüge denselben Sachtitel wie ihr Elternknoten.
- *
- * WARUM 0.8 UND NICHT «GENAU OR/ZGB» (korpusweite Sonde 13.8.2026, 1458
- * Erlasse, alle B1-Fälle vermessen — §0-3 Verteilung statt Einzelwert):
- * unterhalb der Schwelle endet die Verteilung bei SO-614.11 0.793 / BL-331
- * 0.785 / PATG 0.774, oberhalb beginnt sie bei BS-730.120 0.800 / KOV 0.854 /
- * ZGB 0.881 / OR 0.919. Die Schwelle liegt also in einer echten Lücke, und die
- * beiden Erlasse, die der Auftrag ausdrücklich unverändert verlangt, haben
- * 8 bzw. 12 Prozentpunkte Luft — ein Snapshot-Nachzug kippt sie nicht. 20 von
- * 861 B1-Erlassen bleiben damit ohne Artikel-Ebene (Liste im Unit-Test), 841
- * bekommen sie.
- *
- * NICHT als Dichte-Schwelle missverstehen: die Aufnahme hängt NICHT an der
- * Sachtitel-Dichte (der frühere Vorschlag) — David 13.8.2026: «in JEDEM Erlass
- * bis zum einzelnen Artikel aufklappbar». Diese Zahl schliesst allein die
- * Doppelung aus, sie ist kein Qualitätsfilter.
- */
-export const ARTIKEL_EBENE_MAX_BLATT_DECKUNG = 0.8;
-
 /** Synthetische Knoten-Ids — bewusst KEIN `sek-`-Präfix (Kollision ausgeschlossen). */
 export const ID_VORSPANN = 'gm-vorspann';
 export const ID_NACHSPANN = 'gm-nachspann';
@@ -91,250 +96,6 @@ export const ID_ANHANG = 'gm-anhang';
  * damit mehrere Lücken im selben Erlass kollisionsfrei bleiben.
  */
 export const ID_MITTE = 'gm-mitte';
-/**
- * Artikel-Zeile (unterste Klapp-Ebene). Präfix + Artikel-Token, damit die Id
- * im Erlass eindeutig ist und mit keiner `sek-N` kollidieren kann.
- */
-export const ID_ARTIKEL = 'gm-art';
-
-export type GliederungsModus = 'b4-mini' | 'b3-leer' | 'b2-index' | 'b1-offen' | 'b1-kompakt';
-
-export interface GliederungsKennzahlen {
-  /** Artikel im Snapshot (inkl. Anhang-Einträge — es ist die Snapshot-Länge). */
-  artikelAnzahl: number;
-  /** Struktur-Sidecar vorhanden? `false` = die 42 Kantons-Snapshots ohne Sidecar (T10). */
-  hatSidecar: boolean;
-  /**
-   * Baumzeilen bei Vollausklapp, OHNE die synthetischen Knoten (Vorspann/
-   * Nachspann/Anhang-Wurzel) — das ist die Grösse, an der die Modus-Kette
-   * entscheidet. Bewusst so geschnitten: die Spec verankert «AIG = 52 Zeilen»
-   * (§3.2/§8), und AIG hat genau 52 Sektions-Knoten. Zählte man die
-   * Anhang-Wurzel mit, verschöbe sich diese Referenz ohne fachlichen Grund.
-   */
-  zeilenVoll: number;
-  /** Alle Zeilen inkl. der synthetischen Knoten — das, was wirklich gerendert wird. */
-  zeilenGesamt: number;
-  /** Knoten der AMTLICHEN Gliederung (ohne randtitel-promotete). VwVG 5, OR 171, ZGB 134. */
-  amtlicheKnoten: number;
-  /** Alle Knoten des Rohbaums (vor der Einzelkind-Verdichtung). */
-  knotenGesamt: number;
-  /** Anteil der Artikel mit Randtitel/Marginalie, 0…1 (§3.2 «Marginalien-Dichte»). */
-  marginalienDichte: number;
-  /**
-   * Anteil der Artikel, die schon OHNE Artikel-Ebene eine eigene Baumzeile
-   * haben — ihr Randtitel steht als Blatt-Knoten im Sidecar und trägt genau
-   * diesen einen Artikel (OR 0.92, ZGB 0.88, ZPO 0.00). Massgeblich für
-   * `artikelEbene`, s. ARTIKEL_EBENE_MAX_BLATT_DECKUNG.
-   */
-  artikelBlattDeckung: number;
-  /** Anteil der Anhang-Einträge an allen Artikeln, 0…1 (ZH-243 0.88, SG-3849 0.97). */
-  anhangAnteil: number;
-  /** Artikel ohne Gliederungs-Zuordnung VOR dem ersten Baumartikel (T9: RBUE 47). */
-  vorspannArtikel: number;
-  /** Dieselben, aber NACH dem letzten Baumartikel (im Referenzbestand 0). */
-  nachspannArtikel: number;
-  /** Anhang-Einträge insgesamt. */
-  anhangArtikel: number;
-}
-
-export interface GliederungsKnoten {
-  /** Sektions-Id (`sek-N`) bzw. eine der synthetischen Ids. Der EINZIGE Schlüssel. */
-  id: string;
-  art: 'sektion' | 'vorspann' | 'nachspann' | 'mitte' | 'anhang' | 'artikel';
-  /**
-   * Alle Sektions-Ids, die diese EINE Zeile trägt — bei verdichteten
-   * Einzelkind-Ketten mehr als eine (`[sek-7, sek-8, sek-9]`). Der Scroll-Spy
-   * liefert einen Pfad aus Roh-Ids; eine Zeile ist aktiv, wenn der Pfad
-   * IRGENDEINE ihrer Ids enthält. Ohne dieses Feld verlöre die verdichtete
-   * Zeile ihre Aktiv-Erkennung.
-   */
-  ids: string[];
-  /** Die verdichteten Einzel-Labels in Reihenfolge (`['§ 3', 'I.', '1.']`). */
-  labelKette: string[];
-  /** Anzeige-Label; bei Verdichtung `'§ 3 › I. › 1.'`. */
-  label: string;
-  /** Ebene der äussersten Sektion (aus dem Sidecar; synthetische Knoten: 0). */
-  ebene: number;
-  /** Renderer-Tiefe dieser ZEILE (verdichtete Stufen zählen als eine). */
-  tiefe: number;
-  /** true, wenn die äusserste Stufe randtitel-promotet ist (ruhige Serif-Stimme). */
-  randtitel: boolean;
-  /** Fedlex-Container-eId, wo vorhanden — reines Zusatzfeld, NIE Schlüssel, NIE Anker. */
-  eId?: string;
-  kinder: GliederungsKnoten[];
-  /** Artikel im ganzen Teilbaum (inkl. der direkt am Knoten hängenden). */
-  artikelAnzahl: number;
-  /** Direkt am Knoten hängende Artikel (T8 gemischter Knoten: > 0 trotz Kindern). */
-  eigeneArtikel: number;
-  /** T8: Knoten ist Ordner UND Sprungziel zugleich. */
-  gemischt: boolean;
-  /** «Art. 1–40» — aus `berechneSektionMeta`, also aus den amtlichen `artikelLabel`. */
-  bereich?: string;
-  /** Token des ersten Artikels im Teilbaum (Sprungziel, Anker `art-<token>`). */
-  ersterArtikel?: string;
-  /** Alle Artikel des Teilbaums tragen `aufgehoben` — im Baum sichtbar zu machen. */
-  aufgehoben: boolean;
-  /** Reiner Anhang-Teilbaum (kein «Bereich»-Badge, gehört unter die Anhang-Wurzel). */
-  anhang: boolean;
-  /**
-   * Ausnahme-Vorgabe gegen die Tiefen-Regel. Zwei Setzer: die dominante
-   * Anhang-Wurzel (`true`) und jeder Knoten, an dem eine Artikel-Ebene hängt
-   * (`false` — Herleitung bei `haengeArtikelZeilen`).
-   */
-  startOffen?: boolean;
-  /**
-   * Nur an Artikel-Zeilen: die artikel-eigene Sachüberschrift, wo eine
-   * existiert. Getrennt vom `label` geführt, weil die Zeile Etikett und
-   * Sachtitel in zwei Stimmen setzt (wie der Artikel-Index) — der Renderer
-   * soll den zusammengesetzten String nicht wieder auseinandernehmen müssen.
-   */
-  sachtitel?: string;
-  /**
-   * Artikel-Tokens, die DIESE Zeile unmittelbar deckt — nur an synthetischen
-   * Zeilen (Vorspann/Nachspann/Anhang). Sektionszeilen brauchen es nicht: für
-   * sie liefert `pfadZu` den Pfad aus dem Rohbaum.
-   *
-   * W2·19-GLIEDERUNG/S5: ohne dieses Feld kann der Scroll-Spy den Zustand «vor
-   * dem ersten Knoten» (Spec §3.4) nicht melden. Beim RBUE liegen 47 von 49
-   * Artikeln im Vorspann; `pfadZu` findet für sie nichts, die Leiste blieb
-   * unmarkiert, während der Leser mitten im Text stand. Die Zuordnung gehört
-   * ins Modell und nicht in den Hook — sonst entstünde eine zweite Wahrheit
-   * darüber, welcher Artikel zu welcher Zeile gehört (§5).
-   */
-  tokens?: string[];
-}
-
-export interface GliederungsModell {
-  modus: GliederungsModus;
-  /** Der fertige Zeilenbaum. In `b3-leer` bewusst leer (die Leere IST das Ergebnis). */
-  knoten: GliederungsKnoten[];
-  /**
-   * Bis zu welcher Tiefe Zeilen ohne Zutun offen starten (Zeilen mit
-   * `tiefe < startOffeneTiefe`). 0 = alles zu (Entscheid David 5.8.2026);
-   * `Infinity` = alles offen. Einzelne Knoten dürfen mit `startOffen` abweichen.
-   */
-  startOffeneTiefe: number;
-  /** B4: die Leiste startet eingeklappt, die Lesespalte bekommt die volle Breite. */
-  leisteStartetZu: boolean;
-  /**
-   * Rohpfad→Modellpfad, EINE Übersetzungsstelle (§5). Roh-Sektions-Id → Präfix
-   * der synthetischen Zeilen, unter die ihr Ast im Modell umgehängt wurde
-   * (heute ausschliesslich `['gm-anhang']`).
-   *
-   * WOZU: der Scroll-Spy bestimmt den aktiven Pfad über den ROHBAUM
-   * (`pfadZu`) — er kennt das Modell nicht und soll es auch nicht nachbauen.
-   * Ein reiner Anhang-Ast ist im Rohbaum Top-Level, im Modell aber Kind der
-   * Wurzel «Anhänge». Ohne Übersetzung sucht die Marken-Suche den Roh-Id auf
-   * der obersten Modell-Ebene, findet nichts und gibt auf: keine
-   * Positionsmarke, kein `aria-current`, kein Mitscroll (Bug-Check 9.8.2026,
-   * B4 — belegt an AIG/ASYLG/KKV, korpusweit 136 Erlasse mit Anhang-Ast).
-   * Leer, solange nichts umgehängt wurde.
-   */
-  umhaengPraefix: Record<string, string[]>;
-  /**
-   * Trägt der Baum die Artikel als unterste Klapp-Ebene? (W2·18-FEHLERBUCH,
-   * David 13.8.2026). `false` heisst NICHT «hier fehlen Artikel», sondern
-   * entweder «der Baum ist schon artikel-granular» (OR/ZGB, s.
-   * ARTIKEL_EBENE_MAX_BLATT_DECKUNG) oder «dieser Modus zeigt die Artikel
-   * ohnehin flach» (b2-index/b4-mini über `artikelIndex`) oder «es gibt keinen
-   * Baum» (b3-leer).
-   */
-  artikelEbene: boolean;
-  kennzahlen: GliederungsKennzahlen;
-  /**
-   * W2·19-GLIEDERUNG/S9 (Bau-Spec §3.2/§8, T3/T4-Fälle): der ARTIKEL-scharfe
-   * Index für `b2-index` UND `b4-mini` — «Art. N — Randtitel», vorhandene
-   * amtliche Abschnitte als nicht klappbare Zwischenköpfe (§3.2 B2-Zeile).
-   * Leer in jedem anderen Modus (billig: nichts wird umsonst gebaut). Der
-   * SEKTIONS-Baum (`knoten`) kennt keine einzelnen Artikel — nur er kann sie
-   * liefern, darum eine eigene, zweite Ableitung statt eines Render-Tricks
-   * über `knoten` (§3 Schichtentrennung: die Entscheidung, WELCHE Artikel wo
-   * stehen, ist Modell, keine Darstellung).
-   */
-  artikelIndex: ArtikelIndexGruppe[];
-}
-
-/** Eine Zeile des Artikel-Index (§3.2 B2): «Art. N — Randtitel». */
-export interface ArtikelIndexZeile {
-  /** Artikel-Token — Sprungziel (`onSprungArtikel`) und React-Key. */
-  token: string;
-  /** Amtliches Etikett («Art. 7», «§ 12»), nie geraten (`artikelLabel`). */
-  label: string;
-  /** Artikel-eigene Sachüberschrift (Randtitel-Blatt) oder `titel` (Kanton-
-   *  Fallback, dieselbe Quelle wie `hatRandtitel`) — `null` = keine vorhanden. */
-  randtitel: string | null;
-  aufgehoben: boolean;
-}
-
-/**
- * Eine Gruppe des Artikel-Index: `kopf` ist die nicht klappbare amtliche
- * Abschnitts-Überschrift (Spec §3.2 «vorhandene Abschnitte als Zwischenköpfe»)
- * — `null`, wo der Erlass gar keine hat (T4: NHG/VMWG) oder wo Artikel
- * ausserhalb jedes Abschnitts liegen (dieselbe Ehrlichkeit wie Vor-/Nachspann,
- * §3.4 — nichts wird stillschweigend einer Überschrift zugeschlagen, zu der
- * es amtlich nicht gehört).
- */
-export interface ArtikelIndexGruppe {
-  kopf: string | null;
-  zeilen: ArtikelIndexZeile[];
-}
-
-/**
- * Baut den Artikel-Index für B2/B4 (§3.2). Rein, deterministisch — arbeitet
- * auf denselben Eingaben wie der Sektionsbaum, aber auf ARTIKEL-Ebene: die
- * `knoten`-Ableitung zählt nur Bereiche, nie einzelne Artikel (§3 — zwei
- * verschiedene Fragen, zwei Funktionen, keine gemeinsame Wahrheit erzwungen).
- * Anhang-Einträge bleiben aussen vor — sie stehen unter der Anhang-Wurzel des
- * Sektionsbaums (`knoten`), die der Renderer UNTER den Index hängt (§5: der
- * Index dupliziert die Anhang-Erkennung nicht neu).
- */
-function baueArtikelIndex(
-  sektionen: Sektion[], ohneGliederung: NormSnapshot[], eintraege: NormSnapshot[], struktur: StrukturMap | null,
-): ArtikelIndexGruppe[] {
-  const randtitelVon = (e: NormSnapshot): string | null => artikelRandtitel(e, struktur);
-  const zeileFuer = (e: NormSnapshot): ArtikelIndexZeile => ({
-    token: e.artikel, label: e.artikelLabel, randtitel: randtitelVon(e), aufgehoben: e.aufgehoben === true,
-  });
-  const gruppen: ArtikelIndexGruppe[] = [];
-  if (sektionen.length > 0) {
-    // Top-Level-Abschnitte als Zwischenköpfe; ihr GANZER Teilbaum (inkl. tiefer
-    // randtitel-promoteter Untergruppen) liefert die Artikel dokumentlinear —
-    // der Index zeigt die flache Liste, keine zweite Verschachtelung (§3.2).
-    for (const s of sektionen) {
-      const arts = sammleArtikel(s).filter((a) => !istAnhangEintrag(a));
-      if (arts.length > 0) gruppen.push({ kopf: s.label, zeilen: arts.map(zeileFuer) });
-    }
-    const frei = ohneGliederung.filter((a) => !istAnhangEintrag(a));
-    if (frei.length > 0) gruppen.push({ kopf: null, zeilen: frei.map(zeileFuer) });
-  } else {
-    const arts = eintraege.filter((a) => !istAnhangEintrag(a));
-    if (arts.length > 0) gruppen.push({ kopf: null, zeilen: arts.map(zeileFuer) });
-  }
-  return gruppen;
-}
-
-/**
- * Die artikel-eigene Sachüberschrift («Randtitel»), oder `null`.
- *
- * WARUM `artikelSachtitel`, NICHT `randtitelKnoten(…).blatt`: `blatt` ist
- * `null`, sobald die LETZTE Marginalien-Stufe selbst einen Aufzähler trägt
- * («1.») — dann wird sie im Baum zur (ggf. einzelartikligen) Ast-Zeile statt
- * zum Blatt (§3.4, Auftrag David 28.6.2026). Bei VwVG trifft das auf ALLE
- * 93 Artikel zu (empirisch geprüft, §7) — `blatt` wäre für den ganzen Erlass
- * durchgehend `null`, obwohl die Spec genau «Art. N — Randtitel» für VwVG
- * verlangt (§3.2/§8 T3). `artikelSachtitel` liefert IMMER die artikel-eigene
- * Sachüberschrift (letzte Marginalien-Stufe, Aufzähler gestrippt) — dieselbe
- * Quelle, die das Verweis-Popover (M11) für denselben Zweck nutzt. Der
- * `titel`-Zweig ist der Kantons-Fallback (LexWork `article_title`), dieselbe
- * Quelle wie in `hatRandtitel`.
- *
- * EINE Stelle für zwei Konsumenten (§5): der flache Artikel-Index (B2/B4) und
- * die Artikel-Ebene des Baums (B1) beantworten dieselbe Frage — sie dürfen sie
- * nie verschieden beantworten.
- */
-export function artikelRandtitel(e: NormSnapshot, struktur: StrukturMap | null): string | null {
-  return artikelSachtitel(struktur?.[e.artikel]?.marginalie ?? []) ?? (e.titel?.trim() || null);
-}
 
 /**
  * Übersetzt einen Rohpfad (Sektions-Ids aus `pfadZu`) in den Modellpfad, indem
@@ -345,44 +106,6 @@ export function uebersetzeRohPfad(umhaengPraefix: Record<string, string[]>, roh:
   if (roh.length === 0) return roh;
   const praefix = umhaengPraefix[roh[0]];
   return praefix === undefined ? roh : [...praefix, ...roh];
-}
-
-// ─── Randtitel-Dichte ────────────────────────────────────────────────────────
-/**
- * Trägt der Artikel einen Randtitel? Zwei Quellen, weil die beiden Korpora ihn
- * an verschiedenen Orten führen (empirisch geprüft, nicht angenommen):
- *  · BUND — im Struktur-Sidecar als `marginalie`-Kette (OR 99 %, VwVG 100 %,
- *    NHG 100 %); das Snapshot-Feld `titel` ist dort durchgehend leer.
- *  · KANTON — im Snapshot als `titel` (LexWork `article_title`; BS-211.100 22 %,
- *    BS-640.100 29 %); dort deckt sich der Sidecar-Wert exakt mit `titel`.
- * Die Spec nennt für VwVG «93/93 Randtitel» und für NHG «70/70» — beide Zahlen
- * ergeben sich NUR aus der Sidecar-Marginalie, nicht aus `titel`. Wer hier nur
- * `titel` läse, bekäme für den ganzen Bund 0 % und schöbe VwVG/NHG fälschlich
- * aus B2 heraus.
- */
-export function hatRandtitel(e: NormSnapshot, struktur: StrukturMap | null): boolean {
-  if ((struktur?.[e.artikel]?.marginalie ?? []).length > 0) return true;
-  return (e.titel ?? '').trim().length > 0;
-}
-
-// ─── Anhang-Erkennung ────────────────────────────────────────────────────────
-/**
- * Anhang-Eintrag? Drei Signale, in dieser Reihenfolge:
- *  1. Bund-Token-Namensraum (`annex_`/`lvl_`/`decl_`/`scope_`) — die bestehende,
- *     tor-geprüfte `istAnhangToken` aus `berechnungen.ts` (keine zweite Wahrheit).
- *  2. Kanton-Token `anhang_N` (ZH-243).
- *  3. Das amtliche `artikelLabel` beginnt mit dem Wort «Anhang» — Identitäts-
- *     Treffer mit Wortgrenze, kein Substring (§7). Das ist das ehrlichste der
- *     drei Signale: der Adapter hat «Anhang Ziff. 1.1.2.1» selbst geschrieben,
- *     wir raten nichts aus der Token-FORM. Genau daran hängen die beiden
- *     Zahlen, die die Spec nennt: ZH-243 132/150 = 88 %, SG-3849 590/607 = 97 %.
- * Die Erkennung steuert ausschliesslich die DARSTELLUNG (eigener Ast, Start-
- * Zustand) — sie klassifiziert nie rechtlich (§1/§3).
- */
-export function istAnhangEintrag(e: NormSnapshot): boolean {
-  if (istAnhangToken(e.artikel)) return true;
-  if (/^anhang[_.]/i.test(e.artikel)) return true;
-  return /^Anhang\b/.test(e.artikelLabel ?? '');
 }
 
 // ─── Rohbaum-Kennzahlen ──────────────────────────────────────────────────────
@@ -401,32 +124,11 @@ function messeRohbaum(sektionen: Sektion[]): RohMass {
 // ─── Aufbau des Zeilenbaums ──────────────────────────────────────────────────
 type SekMeta = ReturnType<typeof berechneSektionMeta>;
 
-/**
- * Was eine Baumzeile UNMITTELBAR an Artikeln trägt — die Grundlage der
- * Artikel-Ebene. Wird beim Bau der Zeile mitgeschrieben, weil sie danach nicht
- * mehr rekonstruierbar ist: nach der Einzelkind-Verdichtung stammen die
- * Artikel vom BLATT der Kette, die Zeilen-Id aber vom Kopf.
- */
-interface DirektArtikel {
-  arts: NormSnapshot[];
-  /** Trägt das Blatt der Kette einen Randtitel? (Dann IST sein Label der Sachtitel.) */
-  randtitelBlatt: boolean;
-  /** Hat das Blatt der Kette keine Untersektionen? */
-  ohneKinder: boolean;
-}
-
 interface Bauhilfe {
   artPos: Map<string, number>;
   meta: SekMeta;
   /** Zeilen-Id → unmittelbar getragene Artikel (nur Sektionszeilen). */
   direkt: Map<string, DirektArtikel>;
-}
-
-/** Alle Artikel eines Teilbaums in Dokumentreihenfolge (bottom-up, einmalig). */
-function sammleArtikel(s: Sektion, aus: NormSnapshot[] = []): NormSnapshot[] {
-  for (const a of s.artikel) aus.push(a);
-  for (const k of s.kinder) sammleArtikel(k, aus);
-  return aus;
 }
 
 /**
@@ -586,131 +288,6 @@ function zaehleZeilen(knoten: GliederungsKnoten[]): number {
   return knoten.reduce((n, k) => n + 1 + zaehleZeilen(k.kinder), 0);
 }
 
-// ─── Artikel-Ebene (W2·18-FEHLERBUCH, Auftrag David 13.8.2026) ───────────────
-//
-// AUFTRAG, wörtlich: «Die Gliederung muss in JEDEM Erlass bis zum einzelnen
-// Artikel aufklappbar sein.» Bis hierher endete der Baum an der untersten
-// AMTLICHEN Gliederungsstufe. Wo die Randtitel als Knoten im Sidecar stehen
-// (OR, ZGB), fällt das nicht auf — dort IST die unterste Stufe der Artikel.
-// Wo sie es nicht tun, endete er beim Kapitel: die ZPO hat 94 % Sachtitel, aber
-// nur 138 Kapitel-Knoten für 430 Artikel; die Sachtitel standen ausschliesslich
-// in der Lesespalte. Der Jurist konnte «Art. 404 — Weitergelten des bisherigen
-// Rechts» in der Leiste weder sehen noch anspringen.
-//
-// WAS DIE EBENE IST: je Zeile, die Artikel unmittelbar trägt, eine Kind-Zeile
-// pro Artikel — «Art. 1 — Gegenstand», bzw. schlicht «Art. 257», wo das Sidecar
-// keinen artikel-eigenen Sachtitel führt (ZPO: 403 von 430 tragen einen; §8:
-// der Rest bekommt kein erfundenes Etikett, sondern nur seine Nummer).
-//
-// WAS SIE NICHT IST: keine zweite Quelle. Etikett (`artikelLabel`) und
-// Sachtitel (`artikelRandtitel`) kommen aus denselben Feldern wie der flache
-// Artikel-Index (B2/B4) und die Lesespalte.
-//
-// DREI STELLEN, AN DENEN SIE BEWUSST NICHT ANSETZT (§5 — nie doppeln):
-//  1. Randtitel-Blätter mit genau EINEM Artikel: die Zeile trägt bereits den
-//     Sachtitel dieses Artikels; eine Kind-Zeile wäre dieselbe Zeile zweimal.
-//     Das ist die Regel, die OR/ZGB praktisch vollständig trägt (0.92/0.88).
-//  2. Erlasse, deren Baum ohnehin artikel-granular ist
-//     (ARTIKEL_EBENE_MAX_BLATT_DECKUNG) — dort bleibt der Baum unverändert.
-//  3. Anhang-Zeilen (`art: 'anhang'`): `baueAnhangAst` erzeugt je Anhang-Eintrag
-//     schon eine eigene Zeile. Die Anhang-SEKTIONEN (`art: 'sektion'`,
-//     `anhang: true`, z. B. AIG/ChemRRV) bekommen die Ebene dagegen sehr wohl —
-//     ihre Artikel hingen sonst weiter unerreichbar am Kapitel.
-// Vorspann-, Nachspann- und Mittelgruppen-Zeilen bekommen sie ausdrücklich
-// AUCH: dort liegt bei Staatsverträgen der Haupttext (RBUE 47 von 49 Artikeln),
-// und eine Sammelzeile «Ohne Abschnitt (Art. 1–47)» ist kein Zugang zu Art. 23.
-
-/** Eine Artikel-Zeile. Blatt ohne Kinder — die Ebene ist immer die unterste. */
-function baueArtikelZeile(e: NormSnapshot, tiefe: number, struktur: StrukturMap | null): GliederungsKnoten {
-  const sachtitel = artikelRandtitel(e, struktur);
-  return {
-    id: `${ID_ARTIKEL}:${e.artikel}`,
-    art: 'artikel',
-    ids: [`${ID_ARTIKEL}:${e.artikel}`],
-    labelKette: [e.artikelLabel],
-    // Der zusammengesetzte Text ist das, was `title`/`aria-label` sprechen —
-    // sichtbar setzt der Renderer Etikett und Sachtitel in zwei Stimmen.
-    label: sachtitel ? `${e.artikelLabel} — ${sachtitel}` : e.artikelLabel,
-    sachtitel: sachtitel ?? undefined,
-    ebene: 0,
-    tiefe,
-    randtitel: false,
-    kinder: [],
-    tokens: [e.artikel],
-    artikelAnzahl: 1,
-    eigeneArtikel: 1,
-    gemischt: false,
-    ersterArtikel: e.artikel,
-    // Aufgehobene Artikel behalten ihre Zeile (Platzhalter-Treue, §8): sie sind
-    // Teil der amtlichen Zählung, und ihr Verschwinden aus der Gliederung
-    // erzeugte eine Lücke, die es im Erlass nicht gibt.
-    aufgehoben: e.aufgehoben === true,
-    anhang: istAnhangEintrag(e),
-  };
-}
-
-/**
- * Trägt diese Zeile ihren einen Artikel bereits selbst? (Fall 1 oben.)
- */
-function istSchonArtikelZeile(d: DirektArtikel): boolean {
-  return d.randtitelBlatt && d.ohneKinder && d.arts.length === 1;
-}
-
-/**
- * Hängt die Artikel-Ebene an. Mutiert die frisch gebauten Knoten in place —
- * sie sind bis hierher rein lokal, und ein zweiter, kopierender Durchgang über
- * bis zu 2 181 Zeilen (OR) wäre reine Allokation ohne Erkenntnisgewinn (§15).
- *
- * EINFÜGE-ORDNUNG: die Artikel-Zeilen werden nach DOKUMENTREIHENFOLGE zwischen
- * die bestehenden Kind-Zeilen gemischt, ohne deren Reihenfolge anzutasten. Ein
- * gemischter Knoten (T8) zeigt seine direkten Artikel damit dort, wo sie im
- * Text stehen — vor, zwischen oder nach seinen Untersektionen. Blosses Anhängen
- * hätte bei jedem T8-Knoten eine falsche Leseordnung behauptet (§8).
- *
- * STARTZUSTAND: jeder Knoten, der eine Artikel-Ebene bekommt, wird explizit auf
- * `startOffen: false` gesetzt (sofern er nicht schon eine Vorgabe trägt).
- * Begründung — Auftrag David 13.8.2026: «es geht um VERFÜGBARKEIT der
- * Artikel-Ebene beim Aufklappen, nicht um Start-Sichtbarkeit». Ohne diese Zeile
- * risse `startOffeneTiefe = Infinity` (B1 offen, 787 Erlasse) beim Öffnen der
- * Leiste sofort alle Artikel auf: die BV zeigte statt 39 Zeilen deren 271. Ein
- * expliziter Wert gewinnt in `zeileIstOffen` gegen die Tiefen-Regel, ein
- * Klick und der Scroll-Spy gewinnen weiterhin gegen ihn.
- */
-function haengeArtikelZeilen(
-  knoten: GliederungsKnoten[], hilfe: Bauhilfe, artNach: Map<string, NormSnapshot>, struktur: StrukturMap | null,
-): void {
-  for (const k of knoten) {
-    haengeArtikelZeilen(k.kinder, hilfe, artNach, struktur);
-    if (k.art === 'artikel' || k.art === 'anhang') continue; // s. Fall 1/3 oben
-    let arts: NormSnapshot[];
-    if (k.art === 'sektion') {
-      const d = hilfe.direkt.get(k.id);
-      if (!d || istSchonArtikelZeile(d)) continue;
-      arts = d.arts;
-    } else {
-      // Vorspann/Nachspann/Mittelgruppe: ihre Artikel stehen in `tokens`.
-      arts = (k.tokens ?? []).map((t) => artNach.get(t)).filter((e): e is NormSnapshot => e !== undefined);
-    }
-    if (arts.length === 0) continue;
-    const zeilen = arts.map((e) => baueArtikelZeile(e, k.tiefe + 1, struktur));
-    const posVon = (kind: GliederungsKnoten): number =>
-      kind.ersterArtikel !== undefined ? hilfe.artPos.get(kind.ersterArtikel) ?? Infinity : Infinity;
-    const gemischt: GliederungsKnoten[] = [];
-    let i = 0;
-    for (const z of zeilen) {
-      const p = posVon(z);
-      while (i < k.kinder.length && posVon(k.kinder[i]) < p) gemischt.push(k.kinder[i++]);
-      gemischt.push(z);
-    }
-    while (i < k.kinder.length) gemischt.push(k.kinder[i++]);
-    k.kinder = gemischt;
-    // `gemischt`/`eigeneArtikel` bleiben unangetastet: sie beschreiben den
-    // AUFBAU des Erlasses (Knoten ist Ordner und Sprungziel zugleich), nicht
-    // die Zahl der gerenderten Zeilen. Die Erlass-Übersicht rechnet mit ihnen.
-    k.startOffen ??= false;
-  }
-}
-
 // ─── Modus-Kette (§3.2) ──────────────────────────────────────────────────────
 /**
  * Geordnete Bedingungskette — die ERSTE zutreffende gewinnt. Sie entscheidet an
@@ -719,44 +296,44 @@ function haengeArtikelZeilen(
  *
  * | # | Modus         | Bedingung                                                          |
  * |---|---------------|--------------------------------------------------------------------|
- * | 1 | B4 Mini       | artikelAnzahl ≤ 9                                                    |
- * | 2 | B3 Leer       | kein Sidecar ODER (keine Sektionen UND Randtitel-Dichte < 20 %)      |
+ * | 1 | B3 Leer       | der Snapshot trägt keinen einzigen Artikel                           |
+ * | 2 | B4 Mini       | artikelAnzahl ≤ 9                                                    |
  * | 3 | B2 Index      | keine Sektionen ODER (< 6 amtliche Knoten bei ≥ 30 Art. UND ≥ 60 %)  |
  * | 4 | B1 offen      | Vollausklapp ≤ 40 Zeilen                                             |
  * | 5 | B1 kompakt    | sonst                                                                |
  *
  * «Knoten» in Zeile 3 sind die AMTLICHEN Knoten (ohne randtitel-promotete) —
  * gemessen und gegen die Spec-Zahlen belegt: VwVG 5, OR 171, ZGB 134.
+ *
+ * B3 IST SEIT DEM 13.8.2026 DIE ECHTE LEERE, NICHT MEHR DIE FEHLENDE
+ * GLIEDERUNG (Auftrag David: die Artikel-Ebene muss in JEDEM Erlass erreichbar
+ * sein). Die Bedingung hiess vorher «kein Sidecar ODER (keine Sektionen UND
+ * Randtitel-Dichte < 20 %)». Gemessen am committeten Korpus traf sie 68
+ * Erlasse — ausnahmslos ohne Sektionen und mit Randtitel-Dichte 0, im Mittel
+ * 22 Artikel, der grösste 607 (SG-3849), 40 davon ohne Sidecar. Die Leiste
+ * sagte dort «keine Gliederung erfasst» und bot NICHTS an, obwohl die
+ * Artikel-Folge im Snapshot steht: sie braucht dafür weder Sidecar noch
+ * Randtitel, nur das amtliche `artikelLabel` («Art. 1», «§ 1» — der Designator
+ * kommt aus dem Register, nie geraten). Diese Erlasse fallen jetzt auf B2 und
+ * zeigen den flachen Artikel-Index; wo Randtitel fehlen, trägt die Zeile eben
+ * nur ihre Nummer (§8: nichts erfinden, aber auch nichts vorenthalten).
+ * Die ehrliche Leer-Zeile bleibt für den einen Fall, in dem sie stimmt: ein
+ * Erlass ohne jeden Artikel. Sie steht darum ZUERST — sonst schluckte B4 Mini
+ * (≤ 9) sie und die Leiste böte ein leeres Verzeichnis an.
+ * Was NICHT verschwindet: der §8-Hinweis auf das fehlende Sidecar in der
+ * Erlass-Übersicht (`kennzahlen.hatSidecar`, Zone C). Dass die amtliche
+ * Gliederung fehlt, erfährt der Nutzer weiterhin — er steht nur nicht mehr vor
+ * einer leeren Fläche. `LEER_MAX_DICHTE` wird damit von keiner Regel mehr
+ * gelesen und ist entfallen.
  */
 export function waehleModus(k: GliederungsKennzahlen, hatSektionen: boolean): GliederungsModus {
+  if (k.artikelAnzahl === 0) return 'b3-leer';
   if (k.artikelAnzahl <= MINI_MAX_ARTIKEL) return 'b4-mini';
-  if (!k.hatSidecar || (!hatSektionen && k.marginalienDichte < LEER_MAX_DICHTE)) return 'b3-leer';
   if (!hatSektionen
     || (k.amtlicheKnoten < INDEX_MAX_AMTLICHE_KNOTEN
       && k.artikelAnzahl >= INDEX_MIN_ARTIKEL
       && k.marginalienDichte >= INDEX_MIN_DICHTE)) return 'b2-index';
   return k.zeilenVoll <= OFFEN_MAX_ZEILEN ? 'b1-offen' : 'b1-kompakt';
-}
-
-export interface ModellEingabe {
-  /** Ausgabe von `baueGliederungsbaum` — bereits kuratiert (`kuratiereTocSektionen`). */
-  sektionen: Sektion[];
-  /** Ausgabe von `baueGliederungsbaum` — Artikel ohne Gliederungs-Zuordnung. */
-  ohneGliederung: NormSnapshot[];
-  /** Der volle Snapshot in Dokumentreihenfolge. */
-  eintraege: NormSnapshot[];
-  /** Struktur-Sidecar oder `null` (= keines vorhanden, T10). */
-  struktur: StrukturMap | null;
-  /**
-   * §11 Frage 1 / §3.2 «Achtung Konflikt mit Davids 5.8.-Entscheid ‹alles zu›»:
-   * B1 offen startet erst dann wirklich sichtbar, wenn dieser Schalter gesetzt
-   * ist. Default `false` = der 5.8.-Entscheid gilt unverändert, B1 offen
-   * verhält sich wie B1 kompakt. Der Modus selbst bleibt in BEIDEN Fällen
-   * `b1-offen` — er beschreibt, was der Erlass IST; der Schalter beschreibt nur,
-   * was die Leiste beim Öffnen TUT. So bleibt das Modell auch nach dem Go
-   * dieselbe Wahrheit (§8).
-   */
-  startSichtbarGo?: boolean;
 }
 
 /**
@@ -922,15 +499,15 @@ export function baueGliederungsModell(ein: ModellEingabe): GliederungsModell {
   //   · b2-index / b4-mini zeigen die Artikel bereits FLACH (`artikelIndex`);
   //     eine zweite, geschachtelte Artikel-Liste daneben wäre die Doppelung,
   //     die §5 verbietet (der Baum-Renderer läuft dort nur für den Anhang-Ast).
-  //   · b3-leer hat keinen Baum, an den sich etwas hängen liesse — dort fehlt
-  //     das Sidecar ganz (T10). Die Artikel bleiben über Quickjump und
-  //     Lesespalte erreichbar; die Leiste sagt ehrlich, dass sie nichts weiss
-  //     (§8). Der Zugang entsteht dort mit dem Sidecar-Nachzug, nicht hier.
+  //   · b3-leer trifft seit dem 13.8.2026 nur noch den Erlass OHNE jeden
+  //     Artikel — da gibt es nichts anzuhängen. Die 68 sidecar-/randtitel-losen
+  //     Erlasse, die früher hier landeten, zeigen jetzt den flachen Index
+  //     (Herleitung in `waehleModus`).
   const artikelEbene = (modus === 'b1-offen' || modus === 'b1-kompakt')
     && kennzahlen.artikelBlattDeckung < ARTIKEL_EBENE_MAX_BLATT_DECKUNG;
   if (artikelEbene) {
     const artNach = new Map(eintraege.map((e) => [e.artikel, e]));
-    haengeArtikelZeilen(knoten, hilfe, artNach, struktur);
+    haengeArtikelZeilen(knoten, hilfe.direkt, artPos, artNach, struktur);
   }
   kennzahlen.zeilenGesamt = zaehleZeilen(knoten);
 
@@ -994,7 +571,6 @@ export function findeMarke(
     liste = treffer.kinder;
   }
 }
-
 
 /** Alle Zeilen des Modells in Renderreihenfolge (Testhilfe und Zählwerk). */
 export function flacheZeilen(knoten: GliederungsKnoten[]): GliederungsKnoten[] {

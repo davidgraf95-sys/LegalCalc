@@ -416,6 +416,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // abhängig, nicht mehr ausschliesslich der Sektionsbaum.
   //   · b3-leer  — ehrliche Leerzeile (§8); der Quickjump steht bereits in
   //     Zone A (inhalt-volltext.tsx), hier kommt nichts Zweites dazu (§5).
+  //     Seit dem 13.8.2026 (W2·18-FEHLERBUCH, Auftrag David) trifft dieser
+  //     Modus nur noch den Erlass OHNE jeden Artikel. Die 68 Erlasse ohne
+  //     Sidecar/Randtitel, die hier früher endeten, zeigen jetzt den flachen
+  //     Index — die Artikel-Folge steht im Snapshot, sie braucht keine
+  //     Gliederung (Herleitung: gliederungsModell.ts, `waehleModus`).
   //   · b2-index / b4-mini — der flache Artikel-Index (S9, gliederungsModell.ts
   //     `artikelIndex`); ein Mini-Erlass böte sonst beim Öffnen von ☰ eine
   //     leere Fläche (`knoten` bleibt für ihn praktisch leer, s. dort).

@@ -98,9 +98,21 @@ describe('S9 — Artikel-Index bleibt LEER ausserhalb B2/B4 (§15: kein unnötig
     expect(m.artikelIndex).toEqual([]);
   });
 
-  it('ZH-243 (b3-leer, T10): artikelIndex ist [] — dieselbe Ehrlichkeit wie `knoten`', () => {
+  it('ZH-243 (T10, kein Sidecar): seit W2·18 b2-index — der Index ist der EINZIGE Zugang', () => {
+    // GEÄNDERTE ERWARTUNG, deklariert (Auftrag David 13.8.2026): bis hierher
+    // stand hier b3-leer und ein leerer Index — «dieselbe Ehrlichkeit wie
+    // knoten». Ehrlich war daran nur die Hälfte: dass die GLIEDERUNG fehlt,
+    // stimmt; dass es nichts zu zeigen gäbe, nicht. Die 18 Nicht-Anhang-Artikel
+    // stehen im Snapshot, die 132 Anhang-Einträge im Anhang-Ast.
     const m = lade('kanton', 'ZH-243');
-    expect(m.modus).toBe('b3-leer');
-    expect(m.artikelIndex).toEqual([]);
+    expect(m.modus).toBe('b2-index');
+    const alle = m.artikelIndex.flatMap((g) => g.zeilen);
+    expect(alle.length).toBeGreaterThan(0);
+    // Ohne Sidecar gibt es keine Randtitel — die Zeile trägt nur ihr amtliches
+    // Etikett, und genau das ist der Fall, den die frühere Dichte-Schwelle
+    // ausgesperrt hat (§8: keine Überschrift erfinden, aber auch keine
+    // vorenthalten).
+    expect(alle.every((z) => z.randtitel === null)).toBe(true);
+    expect(alle.every((z) => /^(Art\.|§)\s*\S/.test(z.label))).toBe(true);
   });
 });

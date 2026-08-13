@@ -164,20 +164,27 @@ describe('S3 — Modus-Kette an den Referenz-Erlassen', () => {
     expect(m.modus).toBe('b1-kompakt');
   });
 
-  it('T10 ZH-243: kein Sidecar → B3 Leer, kein konstruierter Baum', () => {
+  // W2·18-FEHLERBUCH (Auftrag David 13.8.2026): die beiden T10-Referenzen
+  // standen bis hierher auf B3 «keine Gliederung erfasst» — eine leere Leiste
+  // für 150 bzw. 607 Artikel. Ohne Sidecar gibt es keinen BAUM, aber sehr wohl
+  // eine Artikel-FOLGE; sie steht im Snapshot. Die Erwartung wechselt darum
+  // deklariert auf B2 (flacher Index). Was unverändert bleibt: es wird keine
+  // Gliederung konstruiert, die es nicht gibt (`amtlicheKnoten` 0), und der
+  // §8-Hinweis auf das fehlende Sidecar (`hatSidecar`) trägt weiter.
+  it('T10 ZH-243: kein Sidecar → B2 Index statt leerer Leiste, kein konstruierter Baum', () => {
     const m = lade('kanton', 'ZH-243');
     expect(m.kennzahlen.hatSidecar).toBe(false);
-    expect(m.modus).toBe('b3-leer');
-    // §8: die Leere wird nicht mit einer Ersatz-Gliederung überspielt.
-    expect(m.knoten).toEqual([]);
+    expect(m.modus).toBe('b2-index');
+    expect(m.kennzahlen.amtlicheKnoten).toBe(0);
     // Der Anhang-Anteil bleibt trotzdem messbar (Spec: ZH-243 88 %).
     expect(Math.round(m.kennzahlen.anhangAnteil * 100)).toBe(88);
   });
 
-  it('T10 SG-3849: kein Sidecar, 97 % Anhang → B3 Leer', () => {
+  it('T10 SG-3849: kein Sidecar, 97 % Anhang → B2 Index', () => {
     const m = lade('kanton', 'SG-3849');
     expect(m.kennzahlen.hatSidecar).toBe(false);
-    expect(m.modus).toBe('b3-leer');
+    expect(m.modus).toBe('b2-index');
+    expect(m.kennzahlen.amtlicheKnoten).toBe(0);
     expect(Math.round(m.kennzahlen.anhangAnteil * 100)).toBe(97);
   });
 });
@@ -190,18 +197,26 @@ describe('S3 — waehleModus: die Reihenfolge ist die Regel', () => {
     vorspannArtikel: 0, nachspannArtikel: 0, anhangArtikel: 0,
   };
 
-  it('B4 schlägt alles — auch ein Mini-Erlass ohne Sidecar bleibt Mini', () => {
+  it('B4 Mini gilt auch ohne Sidecar — darüber übernimmt der Index', () => {
     expect(waehleModus({ ...basis, artikelAnzahl: 9, hatSidecar: false }, false)).toBe('b4-mini');
-    expect(waehleModus({ ...basis, artikelAnzahl: 10, hatSidecar: false }, false)).toBe('b3-leer');
+    // W2·18 (David 13.8.2026): früher b3-leer. Ohne Sidecar fehlt der BAUM,
+    // nicht die Artikel-Folge — 10 Artikel sind 10 Index-Zeilen.
+    expect(waehleModus({ ...basis, artikelAnzahl: 10, hatSidecar: false }, false)).toBe('b2-index');
   });
 
-  it('B3 vor B2: ohne Sidecar gibt es keinen Index, egal wie dicht die Randtitel sind', () => {
-    expect(waehleModus({ ...basis, hatSidecar: false, marginalienDichte: 1 }, false)).toBe('b3-leer');
+  it('B3 trifft nur noch den Erlass ohne jeden Artikel — und steht darum zuerst', () => {
+    expect(waehleModus({ ...basis, artikelAnzahl: 0 }, false)).toBe('b3-leer');
+    expect(waehleModus({ ...basis, artikelAnzahl: 0, hatSidecar: false }, true)).toBe('b3-leer');
+    // Ein Artikel genügt, damit die Leiste etwas anzubieten hat.
+    expect(waehleModus({ ...basis, artikelAnzahl: 1 }, false)).toBe('b4-mini');
   });
 
-  it('B3 bei leerer Gliederung nur unterhalb der Dichte-Schwelle', () => {
-    expect(waehleModus({ ...basis, marginalienDichte: 0.19 }, false)).toBe('b3-leer');
-    expect(waehleModus({ ...basis, marginalienDichte: 0.2 }, false)).toBe('b2-index');
+  it('ohne Sektionen entscheidet die Randtitel-Dichte NICHT mehr über den Zugang', () => {
+    // Die frühere LEER_MAX_DICHTE-Schwelle sperrte genau die Erlasse aus, die
+    // den Index am nötigsten haben: die ohne Randtitel (Dichte 0).
+    for (const dichte of [0, 0.19, 0.2, 1]) {
+      expect(waehleModus({ ...basis, marginalienDichte: dichte }, false)).toBe('b2-index');
+    }
   });
 
   it('B2 braucht ALLE drei Bedingungen, sobald Sektionen existieren', () => {
@@ -431,9 +446,12 @@ describe('S3 — gleiche Eingabe, gleiche Ausgabe', () => {
     expect(a.kennzahlen).toEqual(b.kennzahlen);
   });
 
-  it('leere Eingabe ergibt B4 Mini und keinen Knoten (kein Absturz, kein NaN)', () => {
+  it('leere Eingabe ergibt B3 Leer und keinen Knoten (kein Absturz, kein NaN)', () => {
+    // W2·18 (David 13.8.2026): der Erlass ohne jeden Artikel ist der EINE Fall,
+    // für den die Leer-Zeile stimmt — vorher fiel er in B4 Mini und die Leiste
+    // bot ein leeres Verzeichnis hinter dem ☰ an.
     const m = baueGliederungsModell({ sektionen: [], ohneGliederung: [], eintraege: [], struktur: null });
-    expect(m.modus).toBe('b4-mini');
+    expect(m.modus).toBe('b3-leer');
     expect(m.knoten).toEqual([]);
     expect(m.kennzahlen.marginalienDichte).toBe(0);
     expect(m.kennzahlen.anhangAnteil).toBe(0);
