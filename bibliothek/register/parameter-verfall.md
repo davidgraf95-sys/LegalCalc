@@ -4,8 +4,9 @@ Alle **datierten Parameter** im Code: Werte, die sich ausserhalb des Repos ände
 und darum regelmässig geprüft werden müssen. Wer einen neuen datierten Wert
 verdrahtet, trägt ihn HIER ein (mit Fundstelle, Stand, Prüfrhythmus).
 
-Stand des Registers: 11.7.2026 (fortlaufend gepflegt — Fedlex-Pin-Kanonik/
-GL-LexWork-Migration/SG-GKV-Sunset zuletzt inhaltlich ergänzt; das Datum wird
+Stand des Registers: 13.8.2026 (fortlaufend gepflegt — zuletzt inhaltlich
+ergänzt um die Fassungs-Bindung der PDF-erfassten Kantons-Snapshots; davor
+Fedlex-Pin-Kanonik/GL-LexWork-Migration/SG-GKV-Sunset; das Datum wird
 maschinell gelesen — `scripts/verfall-parse.ts` `registerStand()` — bei jeder
 inhaltlichen Ergänzung mitziehen, nicht nur beim jährlichen Audit).
 
@@ -21,6 +22,7 @@ inhaltlichen Ergänzung mitziehen, nicht nur beim jährlichen Audit).
 | BWO-Verzeichnis Miet-Schlichtungsbehörden | noch nicht verdrahtet (Bibliothek: `schlichtungsbehoerden-kantone.md`) | PDF-Stand 13.02.2026 | **jährlich** | Feb. 2027 |
 | Behörden-Stammdaten | `src/lib/vorlagen/behoerden.ts` | je Adresse `stand`-Feld (BS: 5.6.2026) | vor jeder «geprüft»-Hebung; sonst jährlich | — |
 | Fedlex-Konsolidierungsstände | `bibliothek/register/quellen-register.md` | je Gesetz dokumentiert | bei Rechtsänderungen (AS-Publikationen) | bei neuen Aufträgen |
+| Kantons-Snapshots aus dem PDF-Pfad (Fassungs-Bindung) | `public/normtext/kanton/*.json` mit `quelleUrl` `…/api/<lang>/versions/<vid>/pdf_file` (8 Erlasse) ↔ `normen/kanton-gliederung-sidecar-luecke-2026-08-13.md` | Diese Snapshots hängen an einer festen Versions-Id; ihr `fassungsToken` ist ein Inhalts-Hash des PDF und ändert sich NICHT, wenn das Portal längst eine neue Fassung führt — die Drift bleibt unbemerkt. **Belegt 13.8.2026: SG-2808 (GKV sGS 941.12) hängt an Version 2808 / Stand 1.3.2012, amtlich gilt Version 3863 seit 1.7.2026.** Übrige sieben am selben Datum fassungsgleich geprüft | **halbjährlich**, bis ein Tor `current_version.id` gegen die Snapshot-Version prüft (Wurzel-Fix, §17) | **SG-2808: sofort** · übrige: Feb. 2027 |
 | Beurkundungs-/Beglaubigungs-Hinweise (Kantone, Richtwerte CHF) | `src/lib/vorlagen/vorsorgeauftrag.ts` (`beurkundungsHinweis`) | dokumentierte Beispiele, 5.6.2026 | jährlich, niedrige Priorität | — |
 | Verzugszins-Sätze (gesetzlich 5 %) | `src/lib/…verzugszins` | gesetzlich fix (Art. 104 OR) | nur bei Gesetzesänderung | — |
 | HReg-Gebühren (Neueintragung 420/280/210 …) | `src/lib/gruendungsunterlagen.ts` + Masken-/Mappen-Texte | GebV-HReg-Anhang @ 1.1.2021 (einzige Konsolidierung, Cache) | **jährlich** (Verordnungs-Pauschalen) | Jan. 2027 |

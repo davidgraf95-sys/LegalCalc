@@ -1,0 +1,1107 @@
+{
+ "erzeugt": "2026-08-13",
+ "kopf": {
+  "titel": "Verordnung über die Beurkundungsgebühren",
+  "erlassdatum": "vom 24.11.1973 (Stand 01.01.2022)",
+  "praeambel": [
+   {
+    "rolle": "autor",
+    "text": "Das Kantonsgericht des Kantons Luzern,"
+   },
+   {
+    "rolle": "ingress",
+    "text": "in Vollziehung der §§ 52a Absatz 2, 52b Absatz 6, 53 Absatz 3 und 63 Absatz 1 des Gesetzes über die öffentlichen Beurkundungen vom 18. September 1973,",
+    "fnNrs": [
+     "1"
+    ]
+   },
+   {
+    "rolle": "verb",
+    "text": "beschliesst:"
+   }
+  ],
+  "fussnoten": [
+   {
+    "nr": "1",
+    "text": "SRL Nr. 255",
+    "links": [
+     {
+      "label": "255",
+      "url": "https://srl.lu.ch/data/255/de"
+     }
+    ],
+    "absatz": null,
+    "item": null
+   }
+  ]
+ },
+ "artikel": {
+  "1": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Gebühr"
+   ]
+  },
+  "2": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Bemessung"
+   ]
+  },
+  "3": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Gegenstand der Gebühr"
+   ]
+  },
+  "4": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Erhöhung der Gebühr"
+   ]
+  },
+  "5": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Herabsetzung der Gebühr"
+   ]
+  },
+  "6": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Vorvertrag"
+   ]
+  },
+  "7": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Verlängerung eines zeitlich befristeten Vertrags"
+   ]
+  },
+  "8": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Mehrere Rechtsgeschäfte"
+   ]
+  },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Auslagen und Mehrwertsteuer"
+   ]
+  },
+  "10": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1 Allgemeine Bestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Verzicht auf Vergütung"
+   ]
+  },
+  "11": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1 Beglaubigungen"
+    }
+   ],
+   "marginalie": [
+    "Unterschrift, Handzeichen"
+   ]
+  },
+  "12": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1 Beglaubigungen"
+    }
+   ],
+   "marginalie": [
+    "Von Dritten hergestellte Kopien und dergleichen"
+   ]
+  },
+  "13": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1 Beglaubigungen"
+    }
+   ],
+   "marginalie": [
+    "Von der Urkundsperson hergestellte Kopien und dergleichen"
+   ]
+  },
+  "14": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.1 Beglaubigungen"
+    }
+   ],
+   "marginalie": [
+    "Übersetzung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "2",
+     "text": "SR 210",
+     "links": [
+      {
+       "label": "210",
+       "url": "https://db.clex.ch/link/Bund/210/de",
+       "intern": {
+        "ebene": "bund",
+        "key": "ZGB"
+       }
+      }
+     ],
+     "absatz": "2",
+     "item": null
+    }
+   ]
+  },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Stiftungen"
+   ]
+  },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Ehevertrag, Vermögensvertrag"
+   ],
+   "fussnoten": [
+    {
+     "nr": "3",
+     "text": "SR 211.231",
+     "links": [
+      {
+       "label": "211.231",
+       "url": "https://db.clex.ch/link/Bund/211.231/de",
+       "intern": {
+        "ebene": "bund",
+        "key": "PARTG"
+       }
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Inventar"
+   ]
+  },
+  "18": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Gemeinderschaftsvertrag"
+   ]
+  },
+  "19": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Letztwillige Verfügung, Erbvertrag"
+   ]
+  },
+  "20": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Ausschluss der Aufhebung von Miteigentum"
+   ]
+  },
+  "21": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Übertragung von Grundeigentum"
+   ],
+   "fussnoten": [
+    {
+     "nr": "4",
+     "text": "SRL Nr. 256",
+     "links": [
+      {
+       "label": "256",
+       "url": "https://srl.lu.ch/data/256/de"
+      }
+     ],
+     "absatz": "3",
+     "item": null
+    }
+   ]
+  },
+  "22": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": []
+  },
+  "23": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Vorkaufsrecht bei Miteigentum und Baurecht"
+   ]
+  },
+  "24": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Stockwerkeigentum"
+   ]
+  },
+  "25": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": []
+  },
+  "26": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Dienstbarkeit"
+   ]
+  },
+  "27": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Baurecht"
+   ]
+  },
+  "28": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Grundlast"
+   ]
+  },
+  "29": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Grundpfand"
+   ],
+   "fussnoten": [
+    {
+     "nr": "5",
+     "text": "SR 220",
+     "links": [
+      {
+       "label": "220",
+       "url": "https://db.clex.ch/link/Bund/220/de",
+       "intern": {
+        "ebene": "bund",
+        "key": "OR"
+       }
+      }
+     ],
+     "absatz": "6",
+     "item": null
+    }
+   ]
+  },
+  "30": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Ersatz der Unterschrift"
+   ]
+  },
+  "31": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Erklärung nach Artikel 90 OR"
+   ]
+  },
+  "32": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Kaufs-, Rückkaufs- und limitiertes Vorkaufsrecht"
+   ]
+  },
+  "33": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Schenkung dinglicher Rechte an Grundstücken"
+   ]
+  },
+  "34": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Schenkung auf den Todesfall"
+   ]
+  },
+  "35": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Bürgschaft"
+   ]
+  },
+  "36": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Verpfründung"
+   ]
+  },
+  "37": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Aktiengesellschaft und Kommanditaktiengesellschaft a. Gründung"
+   ]
+  },
+  "38": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "b. Kapitalerhöhung"
+   ]
+  },
+  "39": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "c. Kapitalherabsetzung"
+   ]
+  },
+  "40": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": []
+  },
+  "41": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "e. Andere Beschlüsse"
+   ]
+  },
+  "42": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Gesellschaft mit beschränkter Haftung"
+   ]
+  },
+  "43": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Gesellschaftsrechtliche Feststellungen"
+   ]
+  },
+  "44": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Wechsel und Check"
+   ]
+  },
+  "45": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.2 Nach Obligationenrecht"
+    }
+   ],
+   "marginalie": [
+    "Anleihensgläubigerbeschlüsse"
+   ],
+   "fussnoten": [
+    {
+     "nr": "6",
+     "text": "SR 221.522.1",
+     "links": [
+      {
+       "label": "221.522.1",
+       "url": "https://db.clex.ch/link/Bund/221.522.1/de"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    },
+    {
+     "nr": "7",
+     "text": "SR 221.301",
+     "links": [
+      {
+       "label": "221.301",
+       "url": "https://db.clex.ch/link/Bund/221.301/de",
+       "intern": {
+        "ebene": "bund",
+        "key": "FUSG"
+       }
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "46": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.4 Sonstige Beurkundungen"
+    }
+   ],
+   "marginalie": [
+    "Ziehungen"
+   ]
+  },
+  "47": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.4 Sonstige Beurkundungen"
+    }
+   ],
+   "marginalie": [
+    "Eidesabnahme, Erklärung an Eidesstatt"
+   ]
+  },
+  "48": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.4 Sonstige Beurkundungen"
+    }
+   ],
+   "marginalie": [
+    "Sachbeurkundungen des kantonalen Rechts"
+   ],
+   "fussnoten": [
+    {
+     "nr": "8",
+     "text": "SRL Nr. 255",
+     "links": [
+      {
+       "label": "255",
+       "url": "https://srl.lu.ch/data/255/de"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "49": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.4 Sonstige Beurkundungen"
+    }
+   ],
+   "marginalie": [
+    "Andere Beurkundungen"
+   ]
+  },
+  "50": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.4 Sonstige Beurkundungen"
+    }
+   ],
+   "marginalie": [
+    "Nicht beurkundungsbedürftige Geschäfte"
+   ]
+  },
+  "51": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Aufhebung bisherigen Rechts"
+   ],
+   "fussnoten": [
+    {
+     "nr": "9",
+     "text": "V XVI 932. Änderungen: V XVII 336 und V XVIII 358.",
+     "links": [],
+     "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "52": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3 Schlussbestimmungen"
+    }
+   ],
+   "marginalie": [
+    "Inkrafttreten"
+   ]
+  },
+  "18_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.1 Nach Zivilgesetzbuch"
+    }
+   ],
+   "marginalie": [
+    "Vorsorgeauftrag"
+   ]
+  },
+  "45_a": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.3 Nach Fusionsgesetz"
+    }
+   ],
+   "marginalie": [
+    "a. Übertragender Rechtsträger"
+   ]
+  },
+  "45_b": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.3 Nach Fusionsgesetz"
+    }
+   ],
+   "marginalie": [
+    "b. Übernehmender Rechtsträger"
+   ]
+  },
+  "45_c": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2 Tarif"
+    },
+    {
+     "ebene": 2,
+     "label": "2.2 Beurkundungen"
+    },
+    {
+     "ebene": 3,
+     "label": "2.2.3 Nach Fusionsgesetz"
+    }
+   ],
+   "marginalie": [
+    "Sonstige Beurkundungen nach Fusionsrecht"
+   ]
+  }
+ }
+}

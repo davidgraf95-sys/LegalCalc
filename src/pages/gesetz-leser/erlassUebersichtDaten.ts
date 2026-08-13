@@ -37,9 +37,31 @@ import type { ErlassKopf } from '../../lib/normtext/browse';
 // Der Wortlaut nennt darum die MESSBARE Eigenschaft «lückenhaft» statt einer
 // Liste, die beim nächsten Korpus-Lauf falsch wäre.
 //
-// AUFLÖSUNG: der Eintrag verschwindet, sobald der Korpus-Prüfauftrag (Bau-Spec
-// §11 Ziff. 2, Roadmap-Nachtrag in S10) den Erlass vollständig erfasst hat —
-// sein natürlicher Ort ist danach der Generator, nicht die Darstellungsschicht.
+// ZWEITE KORREKTUR (W2·19B-KORPUS, 13.8.2026 — der Prüfauftrag selbst): Die
+// Annahme «teilerfasst/lückenhaft» ist WIDERLEGT. Gegen die amtliche Quelle
+// geprüft (gesetzessammlung.sg.ch, Portal-API `texts_of_law/821.5` und das
+// amtliche PDF der Version 3849, Stand 1. Januar 2026):
+//   · SG-3849 ist der Gebührentarif für die Kantons- und Gemeindeverwaltung
+//     (GebT, sGS 821.5) — NICHT die GB-GebV (sGS 914.5), die das `erlass`-Feld
+//     des Snapshots fälschlich mitnennt (eigener Mangel, siehe Rückgabe).
+//   · Der GebT führt AMTLICH KEINE EIGENEN ARTIKEL. Sein Textkörper ist
+//     durchgehend nach Gebühren-Nummern (10.01 … 70.11) gegliedert. Es fehlt
+//     also nichts «zwischen Art. 2 und Art. 7» — es gibt gar keine Artikel.
+//   · Alle 17 als «Art. N» geführten Einträge (2, 7, 11, 12, 13, 15, 19, 43,
+//     51, 71, 80, 82, 84, 381, 505, 544, 1032) sind FEHLEXTRAKTIONEN: der
+//     PDF-Pfad hat Verweise auf FREMDE Erlasse (Art. 381/505/544 ZGB,
+//     Art. 1032 OR, kantonale Verordnungen) als eigene Artikel-Köpfe gelesen.
+//     Stichprobe 17/17, auf zwei unabhängigen Wegen geprüft (Portal-API und
+//     PDF-Volltext).
+// Der Befund-Satz sagt darum jetzt die richtige Sache: nicht «da fehlt etwas»,
+// sondern «was hier als Artikel steht, gehört nicht hierher».
+//
+// AUFLÖSUNG: der Eintrag verschwindet, sobald der PDF-Pfad die Ziffern-Tarife
+// richtig liest (eigene Erkennungsregel «Nr. XX.YY am Zeilenanfang» statt des
+// generischen «Art. N»-Musters) und der Snapshot ohne die 17 Phantom-Artikel
+// neu erzeugt ist — sein natürlicher Ort ist danach der Generator, nicht die
+// Darstellungsschicht. Bis dahin bleibt er stehen, weil die UI sonst 17
+// erfundene Artikel unwidersprochen als amtlich ausgäbe (§8).
 export interface TeilerfassungsBeleg {
   /** Der §8-Satz, den die UI zeigt. Beschreibt den MESSBAREN Befund, kein Urteil. */
   befund: string;
@@ -49,8 +71,8 @@ export interface TeilerfassungsBeleg {
 
 export const TEILERFASSUNG_BELEGE: Readonly<Record<string, TeilerfassungsBeleg>> = Object.freeze({
   'SG-3849': {
-    befund: 'Auswahl, nicht vollständig: die erfasste Artikel-Folge beginnt nicht bei Art. 1 und ist lückenhaft; der weitaus grösste Teil der Einträge sind Anhang-Ziffern. Was hier fehlt, steht in der amtlichen Fassung.',
-    geprueftAm: '2026-08-09',
+    befund: 'Fehlerhaft erfasst: dieser Gebührentarif ist amtlich durchgehend nach Gebühren-Nummern gegliedert und kennt gar keine eigenen Artikel. Die 17 hier als «Art.» geführten Einträge sind irrtümlich übernommene Verweise auf andere Erlasse; die Gebühren-Nummern selbst sind vollständig. Massgeblich ist die amtliche Fassung.',
+    geprueftAm: '2026-08-13',
   },
 });
 
