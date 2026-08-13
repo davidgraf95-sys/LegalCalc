@@ -139,7 +139,12 @@ jobs:
           if grep -qvE '\.md$' pr-dateien.txt; then
             echo "art=code" >> "$GITHUB_OUTPUT"
             echo "Nicht-.md-Dateien im Diff — volles Programm:"
-            grep -vE '\.md$' pr-dateien.txt | head -20
+            # KEIN `grep | head`: unter pipefail killt heads früher Exit den grep
+            # per SIGPIPE (exit 141) — bei PRs mit >20 Nicht-md-Dateien starb so
+            # der ganze Klassierungs-Job und ALLE Folge-Jobs skippten (real
+            # PR #482, 581 Dateien, 13.8.2026). awk zählt selbst und braucht
+            # keine Pipe.
+            awk '!/\.md$/ && ++n<=20' pr-dateien.txt
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
             echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz und check:plan laufen ECHT, restliche Code-Tore quittieren."
