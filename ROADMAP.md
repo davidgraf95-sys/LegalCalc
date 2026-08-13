@@ -570,8 +570,8 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   Mobile/Pane, Zonen-Komponenten, Roadmap-Nachträge inkl. Sidecar-Nachzug + SG-3849-Prüfauftrag).
   **DoD-Beleg:** Perf-Nachmessung 9.8.2026 (Datei kommt mit PR #480: bibliothek/betrieb/gliederung-perf-nachmessung-2026-08-09.md; Kernziele erreicht; Restposten als W2·18-Zeilen/David-Entscheide); LM-163 geprüft:
   Verdacht widerlegt (FAHRPLAN-UI-BEFUNDE Z. 334).
-- [ ] **19b · Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19)** *(S10-Nachträge 9.8.2026)*
-  <!-- @meta id: W2·19B-KORPUS · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: M -->
+- [~] **19b · Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19)** *(S10-Nachträge 9.8.2026)*
+  <!-- @meta id: W2·19B-KORPUS · status: wip · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: M -->
   Beides Extraktions-Risikopfad ⇒ Skill `gegenpruefung` Pflicht, Merge gesperrt bis Verdikt:
   - [ ] **Sidecar-Nachzug der 42 Kantonserlasse ohne Gliederungs-Sidecar** — bis dahin zeigt die Leiste dort ehrlich den Artikel-Index (B3/B2, W2·19-S9).
   - [ ] **Korpus-Prüfauftrag SG-3849** (teilerfasst, Artikel-Folge lückenhaft; §8-Hinweis steht seit S6 in der Erlass-Übersicht) — Lücke gegen die amtliche Quelle klären, dann Hinweis auflösen oder präzisieren.
