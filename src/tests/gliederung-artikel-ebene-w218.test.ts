@@ -23,6 +23,7 @@ import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
 import { pfadZu } from '../pages/gesetz-leser/helpers';
+import { klappZeile } from '../pages/gesetz-leser/tocAutoZuklappen';
 import { artikelSachtitel } from '../lib/normtext/darstellung';
 import {
   baueGliederungsModell, flacheZeilen, zeileIstOffen, artikelKinderOffen, findeMarke,
@@ -463,13 +464,49 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
     // Start: Sektionen ja, Artikel nein.
     expect(zeileIstOffen(misch!, {}, m.startOffeneTiefe)).toBe(true);
     expect(artikelKinderOffen(misch!, {}, m.startOffeneTiefe)).toBe(false);
-    // Nach dem Klick: beides.
-    const auf = Object.fromEntries(misch!.ids.map((id) => [id, true]));
+    // Nach dem Chevron-Klick: beides. Der Klick läuft über `klappZeile` — nur
+    // dieser Weg öffnet die Artikel-Ebene (CI-Rot 13.8.2026, s. dort).
+    const auf = klappZeile({}, misch!.ids, false);
     expect(artikelKinderOffen(misch!, auf, m.startOffeneTiefe)).toBe(true);
     // Zugeklappt: nichts.
-    const zu = Object.fromEntries(misch!.ids.map((id) => [id, false]));
+    const zu = klappZeile(auf, misch!.ids, true);
     expect(artikelKinderOffen(misch!, zu, m.startOffeneTiefe)).toBe(false);
+    // Und der SPY (schreibt nur die nackte Sektions-Id) öffnet sie NICHT.
+    const spy = Object.fromEntries(misch!.ids.map((id) => [id, true]));
+    expect(zeileIstOffen(misch!, spy, m.startOffeneTiefe), 'Sektionen: ja').toBe(true);
+    expect(artikelKinderOffen(misch!, spy, m.startOffeneTiefe), 'Artikel: nein').toBe(false);
   });
+
+  // ── CI-Rot 13.8.2026 (Lauf 31721564029, Shard 6): der Spy darf die
+  //    Artikel-Ebene NICHT öffnen ──────────────────────────────────────────
+  // BEFUND: «A9 — Chip … CLS-frei» riss mit CLS 0.0751 gegen Budget 0.05; die
+  // Quellen waren drei Baumzeilen der BV, die IM SICHTBAND auf 0×0 kollabieren,
+  // die grösste 280×498 px. Der CI-Trace zeigt die BV mit `aria-expanded=false`
+  // an den artikel-tragenden Zeilen — geöffnet haben kann sie also nur der
+  // Scroll-Spy, und das Auto-Zuklappen hängte den so gewachsenen Ast später
+  // wieder aus. Lokal ist der Lauf nicht reproduzierbar (CLS 0 auch bei 20×
+  // Drossel und Nachlauf 0), darum steht die Regel hier als Unit-Invariante.
+  const spyFaelle = [['bund', 'BV'], ['bund', 'ZPO'], ['kanton', 'GR-210.370']] as const;
+  for (const [ebene, key] of spyFaelle) {
+    it(`${key}: ein Spy-Öffnen des Aktiv-Pfads bringt KEINE Artikel-Zeile ins Bild`, () => {
+      const m = lade(ebene, key);
+      // Der Spy schreibt die nackten Sektions-Ids des Aktiv-Pfads in die
+      // Klapp-Karte (inhalt-hooks, `aktualisieren`) — hier: ALLE Zeilen offen,
+      // der härteste Fall.
+      const spy: Record<string, boolean> = {};
+      for (const k of flacheZeilen(m.knoten)) for (const id of k.ids) spy[id] = true;
+      const sichtbar = sichtbarBeimStart(m.knoten, m.startOffeneTiefe, spy);
+      expect(sichtbar.some((k) => k.art === 'artikel'),
+        `${key}: der Spy hat die Artikel-Ebene aufgerissen`).toBe(false);
+      // Gegenprobe: über den Klick-Weg erscheinen sie sehr wohl — sonst prüfte
+      // der Fall eine Ebene, die es gar nicht gibt (§6.7).
+      // Gegenprobe über den Klick-Weg: ALLE Zeilen aufklappen (bei b1-kompakt
+      // sind auch die Vorfahren zu, sonst bliebe die Ebene schon deshalb unsichtbar).
+      let klick: Record<string, boolean> = {};
+      for (const k of flacheZeilen(m.knoten)) klick = klappZeile(klick, k.ids, false);
+      expect(sichtbarBeimStart(m.knoten, m.startOffeneTiefe, klick).some((k) => k.art === 'artikel')).toBe(true);
+    });
+  }
 
   it('ZPO (b1-kompakt): der Start bleibt bei den obersten Knoten', () => {
     const m = lade('bund', 'ZPO');
@@ -516,9 +553,11 @@ describe('W2·18/F2 — die Marke findet die Artikel-Zeile, wenn sie sichtbar is
       const m = lade(ebene, key);
       const ids = aktivPfadFuer(m, token);
       expect(ids.length, `${key}: kein Aktiv-Pfad für ${token}`).toBeGreaterThan(0);
-      // Der Ast steht offen — genau so misst der Reader nach dem Auto-Akkordeon
-      // bzw. nach einem Klick; zugeklappt prüft der Fall darunter.
-      const offen = Object.fromEntries(ids.map((id) => [id, true]));
+      // Der Ast steht offen, wie nach einem Chevron-Klick auf die Trägerzeile:
+      // `klappZeile` öffnet Sektions- UND Artikel-Ebene. Der Auto-Akkordeon-Pfad
+      // des Spy öffnet die Artikel-Ebene bewusst NICHT (CI-Rot 13.8.2026) —
+      // dann bleibt die Marke am Kapitel, s. den Fall darunter.
+      const offen = ids.reduce<Record<string, boolean>>((o, id) => klappZeile(o, [id], false), {});
       const marke = findeMarke(m.knoten, ids, offen, m.startOffeneTiefe, token);
       const zeile = flacheZeilen(m.knoten).find((k) => k.id === marke);
       expect(zeile, `${key}: Marke ${String(marke)} zeigt auf keine Zeile`).toBeDefined();
@@ -550,7 +589,7 @@ describe('W2·18/F2 — die Marke findet die Artikel-Zeile, wenn sie sichtbar is
     // wiederkehrt.
     const m = lade('bund', 'OR');
     const ids = aktivPfadFuer(m, '329_g_bis');
-    const offen = Object.fromEntries(ids.map((id) => [id, true]));
+    const offen = ids.reduce<Record<string, boolean>>((o, id) => klappZeile(o, [id], false), {});
     const marke = findeMarke(m.knoten, ids, offen, m.startOffeneTiefe, '329_g_bis');
     const zeile = flacheZeilen(m.knoten).find((k) => k.id === marke)!;
     expect(zeile.art).toBe('sektion');

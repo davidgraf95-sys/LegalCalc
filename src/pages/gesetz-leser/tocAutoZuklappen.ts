@@ -225,7 +225,44 @@ export function klappZeile(
   offen: Record<string, boolean>, ids: string[], istOffen: boolean,
 ): Record<string, boolean> {
   const ziel = !istOffen;
-  return { ...offen, ...Object.fromEntries(ids.map((id) => [id, ziel])) };
+  return {
+    ...offen,
+    ...Object.fromEntries(ids.map((id) => [id, ziel])),
+    // Die ARTIKEL-Ebene bewegt sich nur hier — beim Chevron-Klick (s. u.).
+    ...Object.fromEntries(ids.map((id) => [artikelSchluessel(id), ziel])),
+  };
+}
+
+/**
+ * Schlüssel des Artikel-Ebenen-Zustands einer Zeile (CI-Rot 13.8.2026).
+ *
+ * WARUM EIN ZWEITER SCHLÜSSEL IN DERSELBEN KARTE. Die Klapp-Karte `tocBaum`
+ * hat zwei Schreiber: den NUTZER (Chevron-Klick, Sektions-Sprung) und den
+ * SCROLL-SPY (Auto-Akkordeon). Für die Sektions-Ebene ist das richtig — der
+ * Spy soll den gelesenen Zweig aufreissen. Für die Artikel-Ebene ist es der
+ * Defekt: der Spy öffnete beim Weiterlesen eine Zeile, die ihre Artikel trägt,
+ * und das Auto-Zuklappen hängte den so gewachsenen Ast später wieder aus —
+ * mit bis zu 49 Artikel-Zeilen darin.
+ *
+ * BELEG (CI-Lauf 31721564029, Shard 6, deterministisch in Erst- und
+ * Zweitlauf): CLS 0.0751 gegen Budget 0.05, Quellen drei Baumzeilen der BV,
+ * die im Sichtband auf 0×0 kollabieren — die grösste 280×498 px, also genau
+ * eine aufgeklappte Artikel-Liste. Der Trace zeigt zugleich, dass die BV mit
+ * `aria-expanded="false"` an den artikel-tragenden Zeilen STARTET: geöffnet
+ * haben kann sie also nur der Spy.
+ *
+ * Mit dem zweiten Schlüssel bewegt der Spy weiterhin die Sektionen (a33-Auftrag
+ * K bleibt erfüllt), die Artikel-Ebene aber nur noch der ausdrückliche Klick —
+ * und der ist Nutzer-Eingabe, deren Layout-Sprung nicht als unerwarteter Shift
+ * zählt. Zugleich landet eine so geöffnete Zeile in `manuellOffenRef`
+ * (inhalt-zustand) und wird vom Auto-Zuklappen nie wieder angefasst: die
+ * grossen Aushäng-Ereignisse können gar nicht mehr entstehen.
+ *
+ * Der Präfix kann mit keiner `sek-N`- oder `gm-…`-Id kollidieren.
+ */
+export const ARTIKEL_OFFEN_PRAEFIX = 'art@';
+export function artikelSchluessel(id: string): string {
+  return `${ARTIKEL_OFFEN_PRAEFIX}${id}`;
 }
 
 /**

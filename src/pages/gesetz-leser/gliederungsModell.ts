@@ -40,6 +40,7 @@
 import type { Sektion } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { berechneSektionMeta } from './berechnungen';
+import { artikelSchluessel } from './tocAutoZuklappen';
 
 // ─── Fassade (§6.6-Aufteilung 13.8.2026) ─────────────────────────────────────
 // Die Typen und die Artikel-Ebene liegen seit dem 13.8.2026 in eigenen Dateien
@@ -559,7 +560,8 @@ export function zeileIstOffen(k: GliederungsKnoten, offen: Record<string, boolea
 }
 
 /**
- * Zeigt diese Zeile ihre ARTIKEL-Kinder? (F1 des §9-Bug-Checks 13.8.2026.)
+ * Zeigt diese Zeile ihre ARTIKEL-Kinder? (F1 des §9-Bug-Checks 13.8.2026,
+ * verschärft nach dem CI-Rot vom selben Tag.)
  *
  * Der gemischte Knoten (T8) trägt eigene Artikel UND Untersektionen. Beide
  * hängen an DERSELBEN Zeile und damit am selben Klapp-Zustand — die
@@ -570,10 +572,18 @@ export function zeileIstOffen(k: GliederungsKnoten, offen: Record<string, boolea
  * (58 Erlasse, 257 Zeilen; BS-257.820 7 → 1).
  *
  * Auflösung: die Artikel-Kinder bekommen eine eigene, engere Regel — sie
- * erscheinen NUR, wenn die Zeile ausdrücklich geöffnet wurde (Klick oder
- * Scroll-Spy schreiben in die Klapp-Karte). Reine Artikel-Träger brauchen sie
- * nicht: dort IST der Klapp-Zustand die Artikel-Ebene, und die Klemme im Modell
- * hält sie beim Start zu.
+ * erscheinen NUR nach einem Klick auf das Chevron. Massgeblich ist der eigene
+ * Schlüssel `art@<id>` der Klapp-Karte, den ausschliesslich `klappZeile`
+ * schreibt (Herleitung dort).
+ *
+ * DASS DER SCROLL-SPY SIE NICHT ÖFFNET, IST KEIN DETAIL, sondern der Kern:
+ * er schreibt beim Weiterlesen `true` auf die Sektions-Ids des Aktiv-Pfads.
+ * Solange das auch die Artikel-Ebene aufriss, wuchs ein Ast im Vorbeilesen um
+ * bis zu 49 Zeilen — und das Auto-Zuklappen hängte ihn später wieder aus. Im
+ * CI kostete das 0.0751 CLS gegen ein Budget von 0.05 (Lauf 31721564029,
+ * Shard 6; Quelle: eine 280×498-px-Baumzeile, die im Sichtband auf 0×0 fällt).
+ * Der a33-Kontrakt «der Baum bewegt sich beim Lesen nicht von selbst» gilt
+ * damit auch für die Artikel-Ebene.
  *
  * Rein und ohne DOM, damit die Regel ohne Renderer prüfbar bleibt (§3/§6.7).
  */
@@ -581,8 +591,7 @@ export function artikelKinderOffen(
   k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number,
 ): boolean {
   if (!zeileIstOffen(k, offen, startOffeneTiefe)) return false;
-  if (!k.kinder.some((kk) => kk.art !== 'artikel')) return true; // reiner Artikel-Träger
-  return k.ids.some((id) => offen[id] === true);
+  return k.ids.some((id) => offen[artikelSchluessel(id)] === true);
 }
 
 /**
