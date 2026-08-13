@@ -383,17 +383,20 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   byte-gleich; Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1).
   **Grenze zu `W2·13-KANTONE-K7`** beachten (dort die PDF-Extraktion davor, hier die Darstellung).
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18.
-- [~] **5k-LINIEN-KONZEPT · Linienführung tiefer Kodifikationen neu konzipieren** *(Anlass: Davids
+- [x] **5k-LINIEN-KONZEPT · Linienführung tiefer Kodifikationen neu konzipieren** *(Anlass: Davids
   zweifaches Live-Verdikt — 12.7.2026 (A28) und 3.8.2026 nach Preview von PR #423: «eine einzige
   linie und unbrauchbar». Die EINE Auto-Guide-Linie auf der Gliederungsebene trägt bei ZGB/OR
   keine nützliche Orientierung; der Schalter-Flip wurde zweimal gebaut und zweimal am selben
   Urteil verworfen)* — **KONZEPT-Schritt, kein Bau**, **zur David-Abnahme VOR jedem Vollbau**.
   Harte Regel aus der Lehre: dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr**
-  gelöst. **Detail:**
+  gelöst. **ENTSCHIEDEN 13.8.2026** (David, Chat, wörtlich: «ja linien ganz entfernen. 2 es
+  reicht. 3 nein. 4. ok») — Variante V1 (Rückbau) gewählt, Umsetzung als
+  `W2·5k-LINIEN-RUECKBAU` (unten). **Detail:**
   [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.2
-  (Spec-Wortlaut; Sachstand: §2, Massnahme F4 «Liniengliederung reparieren», Posten L-3 samt Bau-
-  und Rücknahme-Vermerk); Vorgeschichte A28: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) Ziff. 10.9.
-  <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
+  (Spec-Wortlaut) + §9.3 (Konzept, Varianten, Entscheid-Protokoll; Sachstand: §2, Massnahme F4
+  «Liniengliederung reparieren», Posten L-3 samt Bau- und Rücknahme-Vermerk); Vorgeschichte A28:
+  [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) Ziff. 10.9.
+  <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **5k-LINIEN-RUECKBAU · Gliederungslinie im Lesetext entfernen** *(Entscheid David
   13.8.2026, wörtlich: «ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok» — Antwort auf
   den Abnahme-Block des Konzept-Schritts `W2·5k-LINIEN-KONZEPT`: Variante V1 gewählt, V2/V3
