@@ -49,7 +49,7 @@ import { holePdf, PDF_PROFILE } from './normtext/adapter-pdf.ts';
 const FETCH_CONCURRENCY = 4;
 import { pdfLawIdSafe } from './normtext/lawid-safe.ts';
 import { baueManifest } from './normtext/kanton-manifest.ts';
-import { mischeGoldenKanton } from './normtext/golden-kanton-merge.ts';
+import { mischeGoldenKanton, mischeGoldenVollLauf } from './normtext/golden-kanton-merge.ts';
 import { baueBrowseManifest } from './normtext/browse-manifest.ts';
 import type { NormSnapshot, NormSnapshotDatei } from '../src/lib/normtext/typen.ts';
 import type { BildRef } from './normtext/extrahiere-fedlex.ts';
@@ -1522,14 +1522,56 @@ async function main(): Promise<void> {
     `\nBrowse-Manifest: public/normtext/register.json (${browse.erlasse.length} Erlasse)`,
   );
 
-  // Golden-Index schreiben (sortiert)
+  // ── Golden-Index schreiben: GEMISCHT, nicht pauschal ──────────────────────
+  // Bis zum 13.8.2026 stand hier `goldenIndex` direkt als neuer Bestand. Das
+  // machte jeden Routen-Ausfall zu einem stillen Datenverlust: eine Quelle
+  // liefert 0 Knoten, ihre Snapshot-Datei bleibt aber liegen (sie wird nur bei
+  // Erfolg überschrieben) — und der Erlass verlor seine Drift-Basis (§7 lit. d).
+  //
+  // ZWEIMAL belegt, mit fast identischer Zahl: 27.7.2026 (PR #383) 55'763 →
+  // 32'639, und 10.8.2026 (b84ee8302, Fedlex-Frische-Automatik) 56'113 → 32'640
+  // — beide Male −23'473 Kantons-Knoten. Nach dem ersten Mal wurde nur das TOR
+  // gebaut (check:golden-normtext), nicht die Ursache behoben; §17 verlangt den
+  // Wurzel-Fix, sonst wiederholt sich der Vorfall — was er tat.
+  //
+  // Merge-Regel: scripts/normtext/golden-kanton-merge.ts (eine Quelle für alle
+  // Lauf-Arten, isoliert getestet in src/tests/golden-voll-lauf-merge.test.ts).
+  const goldenPfadVoll = 'golden/normtext-snapshot.json';
+  let bestandVoll: Record<string, string> = {};
+  if (existsSync(goldenPfadVoll)) {
+    bestandVoll = JSON.parse(readFileSync(goldenPfadVoll, 'utf8')) as Record<string, string>;
+  }
+  // Erstlauf (kein Bestand) → der Lauf-Index IST der Bestand; die Merge-Regel
+  // liefert dann von selbst genau das.
+  const mergeVoll = mischeGoldenVollLauf(bestandVoll, goldenIndex, (p) => existsSync(p));
+
+  if (mergeVoll.bewahrt.length > 0) {
+    const zeige = mergeVoll.bewahrt.slice(0, 12).join(', ');
+    console.warn(
+      `\n⚠  §8: ${mergeVoll.bewahrt.length} Erlass(e) lieferten in diesem Lauf KEINEN Knoten, ` +
+        `ihre Snapshot-Datei liegt aber weiterhin vor — Golden-Altbestand BEWAHRT ` +
+        `(nicht gefahrene Route / Fetch-Fehler): ${zeige}` +
+        `${mergeVoll.bewahrt.length > 12 ? ` … (+${mergeVoll.bewahrt.length - 12})` : ''}`,
+    );
+  }
+  if (mergeVoll.verworfen.length > 0) {
+    console.log(
+      `\n${mergeVoll.verworfen.length} Erlass-Präfix(e) ohne Knoten UND ohne Snapshot-Datei ` +
+        `— aus dem Index entfernt (Korpus-Abgang): ${mergeVoll.verworfen.join(', ')}`,
+    );
+  }
+
   const goldenSortiert: Record<string, string> = {};
-  for (const k of Object.keys(goldenIndex).sort()) {
-    goldenSortiert[k] = goldenIndex[k];
+  for (const k of Object.keys(mergeVoll.gemischt).sort()) {
+    goldenSortiert[k] = mergeVoll.gemischt[k];
   }
   mkdirSync('golden', { recursive: true });
-  writeFileSync('golden/normtext-snapshot.json', stabelesJson(goldenSortiert), 'utf8');
-  console.log(`\nGolden-Index: golden/normtext-snapshot.json (${Object.keys(goldenSortiert).length} Einträge)`);
+  writeFileSync(goldenPfadVoll, stabelesJson(goldenSortiert), 'utf8');
+  console.log(
+    `\nGolden-Index: ${goldenPfadVoll} (${Object.keys(goldenSortiert).length} Einträge; ` +
+      `${Object.keys(goldenIndex).length} in diesem Lauf erzeugt, ` +
+      `${mergeVoll.bewahrt.length} Erlasse bewahrt, ${mergeVoll.verworfen.length} verworfen)`,
+  );
 }
 
 // Nur als CLI-Skript ausführen, NICHT beim Import aus einem Unit-Test (der nur

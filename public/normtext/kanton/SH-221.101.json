@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-27",
+  "erzeugt": "2026-08-10",
   "eintraege": [
     {
       "id": "kanton/SH/221.101/art_1",
@@ -51,7 +51,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "9d8939a80a420da0379fb1578cb7c6236c7a01457fe5648302fbfffaa383a35b"
     },
@@ -62,6 +62,7 @@
       "erlass": "Verordnung über die Gebühren für öffentliche Beurkundungen, Notariatsgebührenverordnung (221.101 (ergänzend 211.433))",
       "artikel": "2",
       "artikelLabel": "§ 2",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -70,7 +71,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -90,7 +91,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "d90ef40b877c5f3ed0c1e007bc6e8258dfbf3a66ca81e5d48c624e7f14efa997"
     },
@@ -132,7 +133,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "8a97ac6d3c0d9ae5b689720198803db944f448c03b588ad89cc6c04f81534ae9"
     },
@@ -166,7 +167,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "6c51bbd46f1f3385a7023c46fcb77808be0f5fcb203f6476c3c3d9fd9386448c"
     },
@@ -194,7 +195,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "e1e464f92a66d7416a1da5c5e2ab3cfaf18205beec2974058398c92b7aec57c9"
     },
@@ -214,7 +215,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "78f3902b7204e4db7181872cdfafb252d1e1f40771c6ff89d1c7b1a6b8befc30"
     },
@@ -242,7 +243,7 @@
       ],
       "stand": "2016-01-01",
       "quelleUrl": "https://rechtsbuch.sh.ch/app/de/texts_of_law/221.101",
-      "abgerufen": "2026-07-27",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "5c227273dbe6c659359f9f2f61feb954",
       "sha": "5f2d530446fb7c1b84bd9462a089a53d500297a69e061af19f039fb15f0d934d"
     }
