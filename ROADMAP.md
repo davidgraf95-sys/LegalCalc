@@ -126,6 +126,7 @@ david-entscheid-konfig-entlastungen: QS-ENTREG-KONFIG — drei fertig ausgearbei
 david-freigabe-dispatch-p0: QS-DISPATCH-P0-PRUEF baut an der Pflichtklausel-Durchsetzung selbst (Generator + dispatch-schutz.py + check:dispatch-klausel) — Freigabe und anschliessende Abnahme durch David; Grundlage in bibliothek/betrieb/entregulierung-2026-08-07.md
 zeitreihe-5-snapshots: QS-AUTOPILOT-STUFE1 ist von David freigegeben (Entscheid 7.8.2026 «stufe 1 ja»), aber an die Mindestdatenlage gebunden: erst bauen, wenn messwerte/selbstopt-zeitreihe.json ≥ 5 Snapshots trägt (retro:17-Schwelle — darunter sind Vorschläge statistisch nicht belegbar). Prüfbar: npm run retro:17 meldet die Datenlage selbst
 david-freigabe-hooks-ausbau: QS-HOOKS-AUSBAU baut an Hooks/.claude/rules/CLAUDE.md — dieselbe für Sessions gesperrte Konfig-Fläche wie QS-ENTREG-KONFIG; Freigabe + Anwendung mit David. Grundlage: bibliothek/recherche/state-of-the-art-abgleich-2026-08-07.md
+pr-485-david-abnahme: W2·5k-LINIEN-KONZEPT liegt fertig als Konzept in PR #485 (Empfehlung: Linien-Mechanik zurückbauen, Seitenleiste übernimmt die Übersicht); vier Entscheidfragen an David im Dokument (FAHRPLAN-GESETZESDARSTELLUNG-V2.md §9.3). ECHTES David-Gate: Konzept-Abnahme VOR jedem Vollbau (Schritt-Definition)
 david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organisation für die native Merge Queue (User-Konten haben keine); Infrastruktur-Entscheid mit ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets). Erst prüfen, ob QS-MERGE-AUTOZUG den BEHIND-Schmerz ausreichend dämpft (Entscheid David 7.8.2026: «B als Schritt, A parken»)
 -->
 
@@ -393,7 +394,7 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.2
   (Spec-Wortlaut; Sachstand: §2, Massnahme F4 «Liniengliederung reparieren», Posten L-3 samt Bau-
   und Rücknahme-Vermerk); Vorgeschichte A28: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) Ziff. 10.9.
-  <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
+  <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: parked · of: ja · blocker: pr-485-david-abnahme · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** *(Anlass:
   Bauplan-Review 4.8.2026, Befund B5 — `FAHRPLAN-NORMTEXT-DARSTELLUNG.md` führt B2 seit dem
   29.6.2026 als «Nächste Arbeit», David hat die Batch-Grenze am 28.6.2026 bestätigt, aber **kein

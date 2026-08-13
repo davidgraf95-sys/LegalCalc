@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/49/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bankengesetzes (Umsetzung der Massnahmen aus dem Bericht des Bundesrates zur Bankenstabilität und des Berichts der parlamentarischen Untersuchungskommission)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur les banques (mise en œuvre des mesures issues du rapport du Conseil fédéral sur la stabilité des banques et du rapport de la Commission d’enquête parlementaire)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sulle banche (attuazione delle misure definite nel rapporto del Consiglio federale sulla stabilità delle banche e nel rapporto della Commissione parlamentare d’inchiesta)"
+    },
+    "start": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-08-12"
+    },
+    "ende": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-11-19"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/80/cons_1"
     },
     "status": {
@@ -36,35 +75,6 @@
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-06-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/49/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bankengesetzes (Umsetzung der Massnahmen aus dem Bericht des Bundesrates zur Bankenstabilität und des Berichts der parlamentarischen Untersuchungskommission)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur les banques (mise en œuvre des mesures issues du rapport du Conseil fédéral sur la stabilité des banques et du rapport de la Commission d’enquête parlementaire)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sulle banche (attuazione delle misure definite nel rapporto del Consiglio federale sulla stabilità delle banche e nel rapporto della Commissione parlamentare d’inchiesta)"
     }
   },
   {
