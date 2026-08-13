@@ -2120,3 +2120,61 @@ Wortlaut wie am 8.8.2026 in `ROADMAP.md` gestanden:
   - [x] §10-Chesterton-Prüfung: streichen mit Nummern-Sperre (§16-Muster) oder Anlass benennen
 
 *Umsetzung: PR #470 (Merge 791dee94e, 8.8.2026), alle 8 Positionen in einer Session (Dach-Schnitt am selben Tag). Neu: check:testtreue (§6.3) · §3-ESLint-Regel · CLAUDE.md-Budget im Wächter · Konkordanzen §15/§13/§12.2. §17-Wurzel-Fix: bindeCheckbox × Dach-Checklisten (plan:set toggelte falsche Checkbox). Gegenprüfung Konkordanzen: Sonnet, bestanden. Rangfolge-Punkt 8 (Abnahme-Domäne) bleibt bei David.*
+
+# Umschichtung 13.8.2026 — drei erledigte Schritte aus dem Steuerungsplan
+
+## W2·5k-LINIEN-KONZEPT — Linienführung tiefer Kodifikationen neu konzipieren *(done, verschoben 13.8.2026)*
+
+- [x] **5k-LINIEN-KONZEPT · Linienführung tiefer Kodifikationen neu konzipieren** *(Anlass: Davids
+  zweifaches Live-Verdikt — 12.7.2026 (A28) und 3.8.2026 nach Preview von PR #423: «eine einzige
+  linie und unbrauchbar». Die EINE Auto-Guide-Linie auf der Gliederungsebene trägt bei ZGB/OR
+  keine nützliche Orientierung; der Schalter-Flip wurde zweimal gebaut und zweimal am selben
+  Urteil verworfen)* — **KONZEPT-Schritt, kein Bau**, **zur David-Abnahme VOR jedem Vollbau**.
+  Harte Regel aus der Lehre: dieser Gegenstand wird **nie wieder über eine blosse Default-Umkehr**
+  gelöst. **ENTSCHIEDEN 13.8.2026** (David, Chat, wörtlich: «ja linien ganz entfernen. 2 es
+  reicht. 3 nein. 4. ok») — Variante V1 (Rückbau) gewählt, Umsetzung als
+  `W2·5k-LINIEN-RUECKBAU` (unten). **Detail:**
+  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.2
+  (Spec-Wortlaut) + §9.3 (Konzept, Varianten, Entscheid-Protokoll; Sachstand: §2, Massnahme F4
+  «Liniengliederung reparieren», Posten L-3 samt Bau- und Rücknahme-Vermerk); Vorgeschichte A28:
+  [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) Ziff. 10.9.
+  <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
+
+## W2·19-GLIEDERUNG — Gesetzes-Leser-Seitenleiste: Fundament neu, flüssig, selbst-zuklappend *(done, verschoben 13.8.2026)*
+
+- [x] **19-GLIEDERUNG · Gesetzes-Leser-Seitenleiste: Fundament neu (Gliederung · Suche · Kontext), flüssig, selbst-zuklappend, schöner markiert** *(Fehlerbuch-Befunde David 8.8.2026; erweitert im Chat 8.8. auf die ganze Seitenleiste — Wortlaut, Entscheide (a)(b)(c) und drei §11-Entscheide: Spec §9-Kopf/§11)*
+  <!-- @meta id: W2·19-GLIEDERUNG · status: done · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/App.tsx, src/index.css, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md -->
+  **Bau-Spec:** [FAHRPLAN-W2-19-SEITENLEISTE.md](fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md) §9
+  (Ultracode-Fundament, Slices S1–S10); Diagnose: [Dossier 8.8.](bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md).
+  **Stand 9.8.2026:** S1–S7 gelandet (PRs #478/#479) · **S8 in Landung (PR #480)** · S9–S10 offen (Modi/T11/Anhang ·
+  Mobile/Pane, Zonen-Komponenten, Roadmap-Nachträge inkl. Sidecar-Nachzug + SG-3849-Prüfauftrag).
+  **DoD-Beleg:** Perf-Nachmessung 9.8.2026 (Datei kommt mit PR #480: bibliothek/betrieb/gliederung-perf-nachmessung-2026-08-09.md; Kernziele erreicht; Restposten als W2·18-Zeilen/David-Entscheide); LM-163 geprüft:
+  Verdacht widerlegt (FAHRPLAN-UI-BEFUNDE Z. 334).
+
+## W2·19B-KORPUS — Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19) *(done, verschoben 13.8.2026)*
+
+- [x] **19b · Korpus-Nacharbeiten Gliederung (Risikopfad, aus W2·19)** *(S10-Nachträge 9.8.2026)*
+  <!-- @meta id: W2·19B-KORPUS · status: done · of: ja · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext] · worktree: ja · 26x: nein · groesse: M -->
+  Beides Extraktions-Risikopfad ⇒ Skill `gegenpruefung` Pflicht, Merge gesperrt bis Verdikt:
+  - [x] **Sidecar-Nachzug der 42 Kantonserlasse ohne Gliederungs-Sidecar** — erledigt 13.8.2026, soweit amtlich möglich: **4 von 42 nachgezogen** (LU-3870, GR-3348, VS-1413, FR-8428), Artikel-Ebene je vollständig belegt. Die übrigen 38 sind **amtlich nicht strukturiert erschliessbar**: 3 clex-Erlasse führen `structured_document_id: null` (nur PDF), 1 scheitert am neuen Fassungs-Tor (SG-2808), 9 laufen über lexfind-`tolv` (liefert `application/pdf`), 25 über kantonseigene Portale ohne Struktur-API. Negativbefunde je Familie in `bibliothek/normen/kanton-gliederung-sidecar-luecke-2026-08-13.md` — nicht erneut suchen.
+  - [x] **Korpus-Prüfauftrag SG-3849** — erledigt 13.8.2026. **Annahme widerlegt:** der Erlass (GebT, sGS 821.5) ist nicht teilerfasst, er hat amtlich GAR KEINE Artikel; alle 17 «Art. N» sind Fehlextraktionen aus Verweisen auf fremde Erlasse (Stichprobe 17/17, zwei unabhängige Wege). §8-Hinweis präzisiert statt aufgelöst.
+  Drei Folgebefunde aus dem Schritt — je eigener Eintrag nötig, Priorisierung offen:
+  - [ ] **PDF-Pfad liest Ziffern-Tarife falsch** — die Wurzel des SG-3849-Fehlers: das generische «Art. N»-Muster greift auch in Querverweisen. Braucht eine Regel «Nr. XX.YY am Zeilenanfang». Gleicher Verdacht bei ZH-243, SG-2935, AR-1203 (Typ Ziffern-Tarif, nicht geprüft).
+  - [ ] **Fassungs-Drift PDF-erfasster Kantons-Snapshots bleibt unbemerkt** (§17-Wurzel-Fix) — der `fassungsToken` ist ein Inhalts-Hash des PDF und ändert sich nicht, wenn das Portal eine neue Fassung führt. Belegt: SG-2808 hängt an Version 2808/2012, amtlich gilt 3863 seit 1.7.2026. Nötig ist ein Tor `current_version.id` ↔ Snapshot-Version; übergangsweise im Verfallsregister geführt.
+  - [ ] **37 der 42 zeigen eine LEERE Leiste, keinen Artikel-Index** — die T10-Annahme «B2/B3 aus Snapshot-Labels» trägt nicht, weil keiner dieser Snapshots Randtitel führt (Dichte 0 ⇒ die Modus-Kette fällt auf `b3-leer`). Kollidiert mit Davids Vorgabe 13.8.2026 «Gliederung bis zum einzelnen Artikel sichtbar». UI-Entscheid, kein Korpus-Schritt.
+
+*Hinweis (Rotation 13.8.2026): die drei offenen Folgebefunde am Ende dieses Blocks
+(«PDF-Pfad liest Ziffern-Tarife falsch» · «Fassungs-Drift PDF-erfasster Kantons-Snapshots»
+· «37 der 42 zeigen eine LEERE Leiste») sind hier nur historisch dokumentiert — als aktive
+Positionen wurden sie unverändert weitergeführt: die beiden Risikopfad-Befunde unter
+`W2·13-KANTONE-DATEN`, der UI-Befund (kein Korpus-Schritt) unter `W2·18-FEHLERBUCH`.*
+
+## W2·18-FEHLERBUCH — datierte ✅-Teilerfolge *(Schritt bleibt OFFEN; Prosa verschoben 13.8.2026)*
+
+Konvention 22.7.2026: Teilerfolgs-Prosa eines noch offenen Sammel-Schritts wandert wörtlich
+in die Chronik, im Plan bleibt ein ✅-Einzeiler + Pointer. Wortlaut wie am 13.8.2026 in
+`ROADMAP.md` unter `W2·18-FEHLERBUCH` gestanden:
+
+  - [x] **Artikel-Ebene in der Gliederung — in JEDEM Erlass (David 9.8.2026 «umgekehrt», erweitert 13.8.2026):** ✅ PR #486. Der Auftrag wurde im Bau erweitert: keine Dichte-Schwelle als Aufnahme-Kriterium mehr — die Artikel sind in allen Baum-Modi die unterste Klapp-Ebene («Art. 5 — Sachtitel», sonst «Art. 5»), ausgenommen die 20 Erlasse, deren Baum über Randtitel-Blätter schon artikel-granular ist (OR/ZGB unverändert, per Unit-Test belegt). Zusätzlich fällt die frühere B3-Leerzeile: 68 Erlasse ohne Sidecar/Randtitel zeigten eine LEERE Leiste und tragen jetzt den flachen Artikel-Index (ZH-243 150 · SG-3849 607 · GE-rsg_d3_30 194 …). `gliederungsModell.ts` dabei nach §6.6 in drei Dateien geteilt (Typen · Artikel · Sektionsbaum). Nachtrag im selben PR: auch die artikel-granularen Bäume (OR/ZGB, SchKG, IPRG …) bekommen die Ebene dort, wo Artikel sonst nicht anspringbar wären — korpusweit 0 unerreichbare Artikel (vorher OR 83 · ZGB 48 · LFG 17 · KOV 8 …), ohne die Randtitel-Blätter zu doppeln. Verbleibende Ausnahme, deklariert: die 74 ZGB-Artikel der A36-Kuration.
+  - [x] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt:** ✅ Entscheid David 9.8.2026 = Weg a (Aufklappen erst bei Scroll-Ruhe), umgesetzt in PR #480 — a33 kalt 20/20 grün (vorher 2–4/20); ~39-Zeilen-Ziel von David als überholt gestrichen («kein Wuchern genügt»). Dossier nachgeführt.
+  - [x] **Baum-Fokus beim Auto-Zuklappen retten (B8, WCAG 2.4.3):** ✅ PR #486 — `retteFokusVorZuklapp` in `tocAutoZuklappen.ts`, aufgerufen vor dem `flushSync` in `inhalt-hooks.tsx`; sechs Unit-Fälle, Rot-Beweis geführt. *(W2·19-Bug-Check, zurückgestellt.)*

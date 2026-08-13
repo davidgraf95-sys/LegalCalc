@@ -1,7 +1,7 @@
 # Kantonale Gliederungs-Sidecars — Erschliessbarkeit der 42 Erlasse ohne Sidecar, und der Fehlbefund SG-3849
 
 **Erstellt:** 13.8.2026 — Anlass: Roadmap-Schritt `W2·19B-KORPUS`, beide
-Teilaufträge aus dem Entscheid David 8.8.2026 (FAHRPLAN-W2-19-SEITENLEISTE §11
+Teilaufträge aus dem Entscheid David 8.8.2026 (archiv/FAHRPLAN-W2-19-SEITENLEISTE §11
 Ziff. 2 und 3): (a) Sidecar-Nachzug der 42 Kantonserlasse ohne Gliederungs-
 Sidecar, (b) Korpus-Prüfauftrag SG-3849. Beides Extraktions-Risikopfad.
 

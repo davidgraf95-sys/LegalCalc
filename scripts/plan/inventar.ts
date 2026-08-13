@@ -33,6 +33,14 @@
 // Das Dach W2·10-UI-NAV bleibt (status ready) — offen ist dort nur noch -J3.
 // Folge-Bereinigung nach Regel 4 (Präzedenz 5.8.2026): `dep: [QS-GP-BEREICH]` in QS-GP-PREPUSH
 // geleert, weil die Vorbedingung erledigt und ihr @meta mit in die Chronik gewandert ist.
+// UMSCHICHTUNG 13.8.2026 (Aufräum-Session, Anlass: Wächter `struktur-rotieren.py --check` rot,
+// ROADMAP.md 106.0 KB über dem 100-KB-Ceiling): drei erledigte Schritte → Chronik-Abschnitt
+// «Umschichtung 13.8.2026». Entfernt: W2·5k-LINIEN-KONZEPT · W2·19-GLIEDERUNG · W2·19B-KORPUS.
+// Deren offene Folgebefunde sind NICHT verschwunden: zwei Risikopfad-Nachträge stehen jetzt als
+// Checklisten-Zeilen unter `W2·13-KANTONE-DATEN`, ein UI-Nachtrag unter `W2·18-FEHLERBUCH`
+// (beide ohne eigenes @meta, darum hier nicht separat gelistet). Fahrplan
+// `FAHRPLAN-W2-19-SEITENLEISTE.md` nach `archiv/` verschoben (Regel 7: unverlinkt nach dem
+// Block-Wegfall).
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
@@ -61,7 +69,7 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 31.7.2026 (AP-9, QS-TOK-Aufräumwelle): externe UI-Befundliste (Cowork 29.7.2026,
   // 210 Befunde) — Dachschritt + 20 Batches (19 Bau + 1 Prüf-Batch), Fahrplan FAHRPLAN-UI-BEFUNDE.md.
-  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH', 'W2·19-GLIEDERUNG', 'W2·19B-KORPUS',
+  'W2·17-UI-BEFUNDE', 'W2·18-FEHLERBUCH',
 
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
@@ -92,7 +100,7 @@ export const INVENTAR: readonly string[] = [
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
-  'QS-KORPUS-BMV', 'W2·5k-LINIEN-KONZEPT', 'QS-KORPUS-SCOPE', 'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
+  'QS-KORPUS-BMV', 'QS-KORPUS-SCOPE', 'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
 
   // Entscheid David 13.8.2026 («ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok»):
   // W2·5k-LINIEN-KONZEPT entschieden (Variante V1), Rückbau-Bau-Schritt angelegt.
