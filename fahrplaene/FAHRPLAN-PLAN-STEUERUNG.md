@@ -652,6 +652,63 @@ PR-Treffer bei `--prs` · git-Ausfall ohne Warnung · zwei stale wip in stabiler
 Mutation den Test rot zeigt (§6.7), die Bestandszeilen des Blocks unverändert sind und
 `check:plan` grün ist.
 
+### §Seq-Frische · Veraltete Reihenfolge-Vermerke melden (Schritt `QS-PLAN-SEQ-FRISCHE`, 13.8.2026)
+
+**Anlass, belegt (Sitzung 13.8.2026).** `W2·5h-GESETZ-UI` trägt seit dem 31.7.2026
+`seq-hart: [QS-UI(a Fundament-Pass + b Hierarchie-Pass)]`. Dieser Vorbehalt ist am 4.8.2026
+eingelöst — `FAHRPLAN-UI-QUALITAET.md` §2.2 hält es wörtlich fest («Der `seq-hart`-Vorbehalt von
+`W2·5h-GESETZ-UI` auf «(a) + (b)» ist damit eingelöst»). Der Vermerk steht trotzdem unverändert in
+der Zeile. Wirkung real in derselben Sitzung: die Zeile las sich beim Sichten der Gesetzes-Fläche
+als Sperre, die es nicht gab — die erste Antwort an David empfahl deshalb einen Umweg über `QS-UI`,
+der gar nicht nötig war.
+
+**Der Mechanismus, gemessen.** `seq-hart`/`seq-weich` werden von `etikett.ts` geparst
+(`seqHart`/`seqWeich`), von `serializeEtikett` byte-gleich zurückgeschrieben und von `dump.ts`
+angezeigt — aber von `next.ts` **nirgends ausgewertet** (verifiziert 13.8.2026: kein Vorkommen von
+`seqHart` ausserhalb `etikett.ts`/`dump.ts`/`set.ts`). Baubarkeit und Reihenfolge steuern allein
+`dep` und `blocker`. Die Felder sind damit reine Lesehinweise **ohne jede Kontrolle** — es gibt
+keine Stelle, die bemerken könnte, dass ein Hinweis hinfällig geworden ist. Genau das ist die
+Fehlerklasse «Prosa, die wie eine Regel aussieht» (Skill `lehren`): sie verrottet still und
+kostet erst dann Zeit, wenn jemand sie für bare Münze nimmt.
+
+**Fläche, ehrlich (gemessen 13.8.2026 an `ROADMAP.md`).** Es gibt **drei** Vermerke in **zwei**
+Schritten: `W2·5h-GESETZ-UI` (`seq-hart` auf `QS-UI`, eingelöst) und `W2·16-ANLEITUNG`
+(`seq-hart: [QS-UI(8a), W2·5h-GESETZ-UI(8b)]` sowie das einzige `seq-weich`). Die Fläche ist also
+winzig — der Schritt ist `groesse: S` und wird ausdrücklich **nur gebündelt** mit anderer
+`scripts/plan`-Arbeit genommen (Skill `auftrag` Ziff. 3). Wer ihn allein nimmt, zahlt einen
+Session-Sockel für drei Zeilen.
+
+**Drei Wege — Entscheid gehört in den Schritt, nicht in diese Spec.**
+
+| Weg | Was er tut | Bewertung |
+|---|---|---|
+| **A · Wecker** (empfohlen) | `check:plan` prüft jeden Vermerk auf Frische und meldet hinfällige rot | Feld behält seinen Nutzen, bekommt die fehlende Kontrolle; kleinster Eingriff |
+| **B · Feld streichen** | die drei Vermerke in Prosa überführen, `seq-hart`/`seq-weich` aus `etikett.ts` entfernen | verlagert dieselbe Verrottung nur in Fliesstext, wo noch weniger prüfbar ist |
+| **C · wirksam machen** | `next.ts` wertet `seq-hart` als echte Sperre aus | **ändert die Plan-Semantik** — Schritte würden real unbaubar; das ist ein David-Entscheid, kein Session-Entscheid |
+
+**Regel (Weg A).** Je Eintrag in `seq-hart`/`seq-weich` wird der führende ID-Token vor einer
+optionalen Klammer gelesen (`QS-UI(8a)` → `QS-UI`) und geprüft:
+
+1. **ID unbekannt** — weder ein `@meta` in `ROADMAP.md` noch ein Eintrag in `INVENTAR` trägt sie
+   ⇒ rot. Das ist zugleich der Regelfall für erledigte Schritte: sie wandern mit ihrem `@meta` in
+   `ROADMAP-CHRONIK.md` und verschwinden aus dem Inventar (Regel 4, Präzedenz 5.8.2026).
+2. **ID vorhanden, Status `done`** ⇒ rot, Meldung «Vermerk hinfällig — Vorbedingung erledigt».
+
+**Ehrliche Grenze, deklariert statt still (§8).** Der Klammer-Zusatz ist Freitext und benennt
+Teil-Schritte, die selbst **keine ID tragen** (`QS-UI(a Fundament-Pass + b Hierarchie-Pass)`). Ob
+ein solcher Teil-Schritt erledigt ist, kann keine Regel entscheiden — und bei einem
+kontinuierlichen Querschnitt-Strang ohne Endzustand wie `QS-UI` wird Stufe 1 und 2 **nie** rot.
+Genau der Fall, der diesen Schritt ausgelöst hat, bliebe also ungedeckt. Damit daraus keine
+Schein-Deckung wird (§6.7): Vermerke mit Klammer-Zusatz erscheinen einmalig im Bericht als
+**«nicht maschinell prüfbar — von Hand gegen den Fahrplan halten»**, mit ID und Zeilennummer. Eine
+Regel, die rät, meldet Falsches (§2) — eine, die schweigt, wird für Deckung gehalten.
+
+**Fertig, wenn** die Regel mit injizierten Daten getestet ist (unbekannte ID · `done`-ID · gültige
+ID · Klammer-Zusatz als Hinweis, nicht als Fehler), eine Mutation sie rot zeigt (§6.7), der
+eingelöste Vermerk an `W2·5h-GESETZ-UI` entfernt und der Bestand der drei Vermerke einmal
+durchgesehen ist, und `check:plan` grün läuft. Reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+Trailer `Roadmap: QS-PLAN-SEQ-FRISCHE`.
+
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 
 Der AP-8-Umzug nach `fahrplaene/` hat in den Fahrplänen selbst Links hinterlassen, die auf die

@@ -206,6 +206,19 @@ verlorener Arbeitstag (Detail: Skill `lehren`). Grenzen unverändert:
 Risiko-Pfade nur mit Gegenprüfung, Budget-/Schwellen-Entscheide (§15) und
 fachliche Abnahme bleiben bei David.
 
+**Gegengewicht — Rückbau gehört dazu (Auftrag David 13.8.2026).** Die Regel oben
+erzeugt nur Zuwachs; nichts verlangte je das Entfernen, und so wuchs die
+Steuerung schneller als das Produkt. Vier Sätze, die in derselben Session
+mitlaufen: (1) Wer etwas hinzufügt, ersetzt zuerst die Stelle, die dieselbe
+Sorge schon trägt — oder sagt im Anlass-Satz, dass es keine gibt. (2) Was nicht
+scheitern kann, wird **gestrichen statt bewacht** (Präzedenz: `seq-hart`, drei
+Vorkommen, null Auswertung). (3) Eine Regel ohne datierten Anlass ist
+Rückbau-Kandidat (Chesterton). (4) Der Plan bildet **Kapazität ab, nicht
+Absicht**: was den Deckel sprengt, verliert sein Etikett und lebt als
+Ideen-Liste ohne `@meta`, Inventar und Tor weiter. Bei Konflikt gewinnt der
+Rückbau — ausser die Stelle hat einen datierten Vorfall verhindert. §1 bleibt
+unberührt.
+
 ## §18 Geheimnisse bleiben draussen (Gutachten-Befund 7.8.2026)
 
 API-Schlüssel, Tokens und andere Zugangsdaten erscheinen nie im Repo, in Logs,
