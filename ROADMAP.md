@@ -394,6 +394,16 @@ vollständig in einem `bibliothek/`-Dossier liegt und die nichts zu bauen haben,
   (Spec-Wortlaut; Sachstand: §2, Massnahme F4 «Liniengliederung reparieren», Posten L-3 samt Bau-
   und Rücknahme-Vermerk); Vorgeschichte A28: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) Ziff. 10.9.
   <!-- @meta id: W2·5k-LINIEN-KONZEPT · status: wip · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/linienAufbau.ts, scripts/check-linien-kanon.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
+- [ ] **5k-LINIEN-RUECKBAU · Gliederungslinie im Lesetext entfernen** *(Entscheid David
+  13.8.2026, wörtlich: «ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok» — Antwort auf
+  den Abnahme-Block des Konzept-Schritts `W2·5k-LINIEN-KONZEPT`: Variante V1 gewählt, V2/V3
+  verworfen)* — Rückbau der Guide-Mechanik im Gesetz-Leser (`autoGuide`, K11-Tri-State-
+  Schalter «Linien», `data-linien`/`data-guide-auto`, `check-linien-kanon.ts` Teil B) gemäss
+  §9.3-Entscheid; Übersicht trägt künftig allein die Seitenleiste (`W2·19-GLIEDERUNG`).
+  **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht (analog L-1/L-2),
+  Linien-Kanon Teil A (Artikel-/Struktur-Trenner) bleibt unberührt. **Detail:**
+  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
+  <!-- @meta id: W2·5k-LINIEN-RUECKBAU · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** *(Anlass:
   Bauplan-Review 4.8.2026, Befund B5 — `FAHRPLAN-NORMTEXT-DARSTELLUNG.md` führt B2 seit dem
   29.6.2026 als «Nächste Arbeit», David hat die Batch-Grenze am 28.6.2026 bestätigt, aber **kein

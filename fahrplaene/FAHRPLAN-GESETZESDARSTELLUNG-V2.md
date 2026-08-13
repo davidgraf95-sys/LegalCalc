@@ -430,32 +430,47 @@ Preview-Deploys **nur der gewählten Variante** (statt aller 2–3 vorab click-b
 Prototypen) — das spart einen Bau-Zyklus für Varianten, die David ohnehin nicht wählt.
 Dieser Vorschlag selbst wartet auf Davids Bestätigung (Frage 4 unten).
 
-#### e) Abnahme-Block — wartet auf David
+#### e) Abnahme-Block — ENTSCHIEDEN (David, Chat 13.8.2026)
 
-Vier Entscheidfragen, in Alltagssprache:
+**Provenienz:** David, Nutzer-Turn 13.8.2026, wörtlich: *«ja linien ganz entfernen. 2 es
+reicht. 3 nein. 4. ok»* — Antwort auf die vier Entscheidfragen unten (Fragen zur
+Einordnung stehengelassen, Protokoll je Frage direkt darunter).
 
 1. **Soll die Gliederungslinie im Lesetext ganz verschwinden**, weil die neue
    Seitenleiste (Inhaltsverzeichnis mit Sprungfunktion, bald bis zum einzelnen Artikel)
    die Übersicht jetzt übernimmt? *(Das ist Variante V1 — unsere Empfehlung.)*
+   → **Ja.** Linie wird ganz entfernt — **Variante V1 ist der Entscheid.**
 2. Falls ja: **Reicht dir die heutige Unterscheidung über Schriftgrösse/-gewicht und
    Einzug**, um die Gliederungsebenen im Text zu erkennen — oder soll das zusätzlich
    deutlicher gemacht werden (Variante V2, als spätere, kleine Nachrüstung, falls beim
    Lesen etwas fehlt)?
+   → **«es reicht».** Heutige Typo/Einzug-Stufung bleibt unverändert — **Variante V2
+   entfällt** (keine Typo-Nachrüstung beauftragt).
 3. Oder **willst du trotz der zwei bisherigen Fehlschläge eine dritte Linien-Idee
    ausprobieren** — eine Linie, die nur den Abschnitt markiert, in dem du gerade liest,
    und beim Scrollen mitwandert (Variante V3)? Das ist die aufwendigste und riskanteste
    Option; wir empfehlen sie nicht als ersten Schritt.
+   → **Nein.** **Variante V3 ist verworfen.**
 4. **Ist es für dich in Ordnung, dass dieser Schritt nur Text + Beleg-Screenshots aus
    der bestehenden Historie liefert statt anklickbarer Demo-Versionen** — und eine
    Demo erst für die von dir gewählte Variante gebaut wird (siehe Abschnitt d)?
+   → **«ok».** Doku-only-Vorgehen für diesen Konzept-Schritt war zulässig; §9.2s
+   «klickbare Prototypen» entfallen ersatzlos, weil die gewählte Variante (V1) ein
+   reiner Rückbau ohne neue Interaktion ist — es gibt nichts, das ein Prototyp zeigen
+   müsste, das der Vorher/Nachher-Beweis im Bau-PR nicht ohnehin liefert.
 
-**Offene Punkte, die nach Davids Antwort folgen:** (i) bei V1/V2 ein eigener,
-golden-neutraler Bau-Schritt mit Vorher/Nachher-Beweis (analog L-1/L-2); (ii) Prüfen,
-ob `fix/w2-18-gliederung` bis zum Bau-Start gemergt ist — V1/V2 setzen die Seitenleiste
-als tragendes Übersichts-Werkzeug voraus, sind aber auch mit dem heutigen main-Stand
-(Gliederungsbaum ohne Artikel-Ebene) bereits sinnvoll; (iii) sollte David parallel eine
-eigene Erlass-Kategorisierung für Kantonserlasse/Staatsverträge einführen, bleibt das
-hier gewählte Regelwerk davon getrennt zu halten — alle drei Varianten leiten weiterhin
-vom TATSÄCHLICHEN Struktur-Sidecar ab, nie von einer Kategorie-Schublade (§4b-A-Lehre
-aus der A8-Heilung: der Kategorie-Default war die ursprüngliche Inkonsistenz, die A8
-behoben hat — eine neue Kategorisierung darf dort nicht wieder einziehen).
+**Ergebnis:** Der Bau-Auftrag ist **V1 — Guide-Mechanik vollständig zurückbauen,
+Übersicht der Seitenleiste überlassen** (Abschnitt b oben), ohne Typo-Nachrüstung (V2)
+und ohne dynamischen Scroll-Guide (V3). Umsetzung als eigener Roadmap-Schritt:
+`W2·5k-LINIEN-RUECKBAU` (ROADMAP.md).
+
+**Offene Punkte, die in den Bau-Schritt gehen:** (i) ein eigener, golden-neutraler
+Bau-PR mit Vorher/Nachher-Beweis (analog L-1/L-2) — deklarierte Verhaltensänderung, kein
+verstecktes Refactoring (§6); (ii) `check-linien-kanon.ts` Teil B (Aufbau-Regelwerk)
+mitziehen oder stilllegen, Teil A (Linien-Kanon-Sprache für Artikel-/Struktur-Trenner)
+bleibt unberührt; (iii) Prüfen, ob `fix/w2-18-gliederung` bis zum Bau-Start gemergt ist
+— der Rückbau ist auch mit dem heutigen main-Stand (Gliederungsbaum ohne Artikel-Ebene)
+bereits sinnvoll, da die Seitenleiste unabhängig davon lebt; (iv) sollte David parallel
+eine eigene Erlass-Kategorisierung für Kantonserlasse/Staatsverträge einführen, bleibt
+das nicht mehr betroffen, da die Linien-Mechanik komplett entfällt — die frühere
+§4b-A-Lehre (aufbau- statt kategorie-basiert) ist mit dem Rückbau gegenstandslos.
