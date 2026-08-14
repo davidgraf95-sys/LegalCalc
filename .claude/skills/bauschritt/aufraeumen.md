@@ -109,6 +109,18 @@ archiviertem Fahrplan, alternativ den Zeiger auf `archiv/…` umschreiben
 in einen aktiven Fahrplan zu extrahieren sind, sonst verwaist die
 Steuerung.
 
+### 4b · Fahrplan-§-Diät (lebende Fahrpläne, BAUPLAN-UMBAU 15.8.2026)
+
+Fahrpläne sind lebendige Specs (Skill-Hauptdatei, Station B) — und sie sind
+mit ~16 000 Zeilen der grösste Doku-Posten im Repo. Darum gilt für **lebende**
+Fahrpläne dieselbe Umzugslogik wie für die ROADMAP: **erledigte §§ wandern
+wörtlich** nach `archiv/<FAHRPLAN-NAME>-erledigt.md` (datierter Block ans
+Dateiende, nie zusammenfassen). Im Fahrplan bleibt je umgezogenem § **eine
+Stub-Zeile** `## §N — <Titel> ✅ (erledigt <Datum>, Wortlaut: archiv/…)` —
+der §-Anker bleibt bestehen, damit `check:plan` Regel 11 (Spec-Bindung) und
+bestehende §-Verweise weiter auflösen. Anlass ist die Rotation oder der
+Abschluss eines Schrittes, keine eigene Pflicht-Runde.
+
 ## 5 · Tor-Reihenfolge
 
 **Abweichung von der Spec** (§7, offengelegt): `FAHRPLAN-TOKEN-OEKONOMIE.md`
