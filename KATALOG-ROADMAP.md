@@ -99,7 +99,7 @@ verifizieren (Verfallsregister offen).
 | 19 | vollmacht · testament · vorsorgeauftrag · patientenverfuegung | 2·2·2=8 | Vorsorge-Block zusammen abnehmen |
 | 20 | arbeitsvertrag · mietvertrag-wohnen | 2·2·2=8 | Vertrags-Block |
 | 21 | schlichtungsgesuch · klage-vereinfacht | 2·2·2=8 | BS-Zuschnitt offenlegen |
-| 22 | ag-gruendung · gmbh-gruendung · kapitalerhoehung · kuendigung-vertrag | 1·3·2=6 | AG: ABNAHME-AG-BAUSTEINE.md (194 Bausteine) liegt David bereits vor |
+| 22 | ag-gruendung · gmbh-gruendung · kapitalerhoehung · kuendigung-vertrag | 1·3·2=6 | AG: `npm run abnahme:ag` (195 Bausteine, 13 Schemas) liegt David bereits vor |
 
 ## B · Abdeckungskarte je Rechtsgebiet (G1.1/G1.2 — Entscheidvorlage)
 

@@ -20,7 +20,8 @@ erst Protokoll, dann Status.
 Für die Karten-ID aus `src/lib/startseiteConfig.ts`:
 
 1. **Bausteine wortwörtlich:** Bei Vorlagen jeden Text-Baustein verbatim
-   auflisten (Muster: `scripts/abnahme-ag.ts` → ABNAHME-AG-BAUSTEINE.md;
+   auflisten (Muster: `npm run abnahme:ag` erzeugt die Liste bei Bedarf —
+   sie liegt seit 14.8.2026 nicht mehr im Bestand, sondern ist gitignoriert;
    für andere Schemas analog generieren, nicht abtippen). Bei Rechnern:
    alle Ergebnis-Sätze, Warnungen, Annahmen-Zeilen und Hinweise der
    Engine (aus den Golden-Outputs ziehen, nicht aus der UI abschreiben).

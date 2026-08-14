@@ -175,4 +175,10 @@ export const INVENTAR: readonly string[] = [
 
   // §17-Eskalation 5.8.2026 (zweiter Fall nach dem 10-wip-Vorfall vom ~20.7.): `plan:next`
   // warnt vor `wip`-Marken ohne Bau-Spur, statt sie stumm als «im Bau» auszuweisen.
+
+  // §14-Intake 14.8.2026 (Auftrag David, bewusst OFFEN): Plan-System vereinfachen — kürzere
+  // Roadmap, offener formulierte Schritte, billigerer Pflegeprozess. Löst den tags zuvor
+  // angelegten QS-PLAN-SEQ-FRISCHE ersatzlos ab: jener wollte ein neues Tor für die
+  // Veralterung toter Felder bauen, die hier zur Streichung stehen (Audit 13./14.8.2026).
+  'QS-PLAN-EINFACH',
 ];

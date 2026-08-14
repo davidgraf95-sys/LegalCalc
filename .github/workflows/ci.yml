@@ -52,16 +52,38 @@
 # ci.yml ist ab hier die EINZIGE Quelle der Required-Kontextnamen (§5);
 # ci-doku-noop.yml ist mit diesem Umbau gelöscht.
 #
-# `push` behält `paths-ignore: '**.md'` UNVERÄNDERT: dort gibt es keine
-# Required-Kontexte zu melden, und ohne den Filter liefe `perf` (Lighthouse)
-# auch für reine Doku-Pushes auf main.
+# ─── Doku-Kurzpfad auch auf `push` (FREIGABE DAVID 14.8.2026) ───────────────
+# BIS HIERHER hatte `push` einen `paths-ignore: '**.md'`-Filter: ein reiner
+# .md-Push auf main erzeugte GAR KEINEN Lauf. Zwei Befunde der Messung vom
+# 14.8.2026 über 419 main-Commits der letzten 30 Tage:
+#
+#   (a) Der Filter deckt den teuren Fall NICHT ab. 158 Commits waren rein .md
+#       (kein Lauf, gut), aber 42 weitere waren «.md + AUSSCHLIESSLICH
+#       scripts/plan/inventar.ts» — die Plan-Buchhaltung verlangt diesen
+#       Zweitschritt bei jeder Rotation (Skill `bauschritt`/`aufraeumen.md`).
+#       Eine einzige TypeScript-Zeile Inventarpflege zog also 42-mal das volle
+#       Programm (~15 min) nach sich: rund 10 Stunden CI in 30 Tagen.
+#   (b) Der Filter war zugleich ein Loch. Für die 158 reinen .md-Pushes lief
+#       NICHTS — auch nicht `Merge-Schutz` und `check:plan`, die im PR-Doku-Pfad
+#       ausdrücklich ECHT laufen (Begründung an den Schritten: md-only-Diffs
+#       treffen `daten/**`, und @meta-Waisen entstehen genau hier).
+#
+# JETZT: kein Pfadfilter mehr auf `push`; der `diff`-Job klassiert auch
+# push-Events. Damit gilt auf main dieselbe Semantik wie im PR — art=doku fährt
+# `Merge-Schutz`, `Testtreue` und `check:plan` ECHT und quittiert den Rest.
+# Ergebnis beider Richtungen: die 42 teuren Läufe werden billig, und die 158
+# bisher ungeprüften Pushes bekommen erstmals die drei Tore, die sie brauchen.
+#
+# DER GELOCKERTE GRUNDSATZ, ausdrücklich: ci.yml hielt fest, ein Deploy-Stand
+# werde «nie nach Dateiendungen abgekürzt». Für `push` auf main ist das mit
+# Davids Entscheid vom 14.8.2026 («wird freigegeben») bewusst gelockert.
+# `merge_group` bleibt unberührt und fährt weiterhin ausnahmslos das volle
+# Programm. Fehlerseite unverändert (§6.7): jede Unsicherheit fällt auf `code`.
 name: CI
 
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - '**.md'
   # BEWUSST OHNE paths/paths-ignore — siehe K3/K12 im Kopf.
   pull_request:
   # B-12-Vorbereitung: Damit die (noch NICHT aktivierte) GitHub Merge Queue die
@@ -112,15 +134,63 @@ jobs:
           REPO: ${{ github.repository }}
           PR: ${{ github.event.pull_request.number }}
           GEMELDET: ${{ github.event.pull_request.changed_files }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
         run: |
           set -euo pipefail
-          # Nur PR-Events werden klassiert. push/merge_group/workflow_dispatch
-          # fahren unverändert das volle Programm — dort hängt kein Required-
-          # Kontext an der Klassierung, und ein Deploy-Stand (main, merge_group)
-          # wird nie nach Dateiendungen abgekürzt.
-          if [ "$EVENT" != "pull_request" ]; then
+          # `merge_group` und `workflow_dispatch` fahren unverändert das volle
+          # Programm: die Merge Queue prüft einen Stand, der gleich main WIRD,
+          # und ein Handstart ist immer als Volllauf gemeint.
+          if [ "$EVENT" != "pull_request" ] && [ "$EVENT" != "push" ]; then
             echo "art=code" >> "$GITHUB_OUTPUT"
-            echo "Event '${EVENT}' — keine Klassierung nötig, volles Programm."
+            echo "Event '${EVENT}' — keine Klassierung, volles Programm."
+            exit 0
+          fi
+          # ── push auf main (Freigabe David 14.8.2026, Kopf dieser Datei) ──────
+          # Dateiliste über die Compare-API statt `git diff`: der Job hat bewusst
+          # keinen Checkout (billigster Job der Kette), und ein `fetch-depth: 0`
+          # nur zum Zählen wäre teurer als der API-Aufruf.
+          # FEHLERSEITE (§6.7) — jeder dieser Fälle fällt auf `code`:
+          #   · erster Push eines Branches / kein Vorgänger (BEFORE = 40 Nullen)
+          #   · Force-Push oder verworfene Historie (Compare-API antwortet nicht)
+          #   · 300 Dateien in der Antwort: das ist die Kappungsgrenze der API —
+          #     dahinter könnte eine Nicht-Doku-Datei stehen, die wir nie sehen
+          #   · leerer Bereich: auf einem Deploy-Stand kein belegter Normalfall
+          if [ "$EVENT" = "push" ]; then
+            if [ -z "${BEFORE:-}" ] || [ "${BEFORE}" = "0000000000000000000000000000000000000000" ]; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "Kein Vorgänger-Commit (BEFORE='${BEFORE:-}') — volles Programm."
+              exit 0
+            fi
+            # KEIN --paginate: die Compare-API paginiert die COMMITS, nicht die
+            # Dateien — mit --paginate käme dieselbe Dateiliste je Seite erneut
+            # und blähte die Zählung auf (falsch-`code` wäre harmlos, eine
+            # falsche 300er-Kappung dagegen nicht).
+            if ! gh api "repos/${REPO}/compare/${BEFORE}...${AFTER}" --jq '.files[]?.filename' > push-dateien.txt; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "::warning::Compare-API ${BEFORE}...${AFTER} nicht auswertbar (Force-Push?) — volles Programm."
+              exit 0
+            fi
+            anzahl=$(wc -l < push-dateien.txt | tr -d ' ')
+            echo "Push ${BEFORE}...${AFTER}: ${anzahl} Datei(en)."
+            if [ "$anzahl" -eq 0 ] || [ "$anzahl" -ge 300 ]; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "Dateizahl ${anzahl} (leer oder an der API-Kappungsgrenze 300) — volles Programm."
+              exit 0
+            fi
+            # Doku-Menge: alle .md PLUS die Plan-Inventarliste. Sie ist reine
+            # Buchhaltung (eine ID-Liste), wird ausschliesslich von check:plan
+            # gelesen — und check:plan läuft im Doku-Pfad ECHT, ein Syntaxfehler
+            # darin fällt also weiterhin auf. Der Zweitschritt bei jeder
+            # Rotation ist damit nicht länger ein Volllauf-Auslöser.
+            if grep -qvE '(\.md|^scripts/plan/inventar\.ts)$' push-dateien.txt; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "Nicht-Doku-Dateien im Push — volles Programm:"
+              awk '!/(\.md|^scripts\/plan\/inventar\.ts)$/ && ++n<=20' push-dateien.txt
+            else
+              echo "art=doku" >> "$GITHUB_OUTPUT"
+              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue und check:plan laufen ECHT, restliche Code-Tore quittieren."
+            fi
             exit 0
           fi
           gh api --paginate "repos/${REPO}/pulls/${PR}/files" --jq '.[].filename' > pr-dateien.txt
@@ -483,8 +553,13 @@ jobs:
     # Messung zurück. Seit 26.7.2026 (Entscheid David) nur noch auf main/
     # merge_group statt auf jedem PR-Lauf: das §15-Budget wird weiterhin bei
     # jedem Deploy-Stand gemessen, hängt aber nicht mehr am kritischen PR-Pfad.
-    if: github.event_name != 'pull_request'
-    needs: [tore, e2e]
+    # `art != code` kam mit dem Doku-Kurzpfad für push dazu (14.8.2026): Bis
+    # dahin hielt der `paths-ignore`-Filter reine Doku-Pushes von der ganzen
+    # Datei fern und damit auch von hier. Ohne diese Bedingung liefe Lighthouse
+    # (4× CPU, langsames 4G, eigener Chromium) für jede Roadmap-Pflege — und
+    # zwar gegen ein dist, das der Doku-Pfad gar nicht gebaut hat.
+    if: github.event_name != 'pull_request' && needs.diff.outputs.art == 'code'
+    needs: [diff, tore, e2e]
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich

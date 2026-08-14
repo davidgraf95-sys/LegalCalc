@@ -652,6 +652,98 @@ PR-Treffer bei `--prs` · git-Ausfall ohne Warnung · zwei stale wip in stabiler
 Mutation den Test rot zeigt (§6.7), die Bestandszeilen des Blocks unverändert sind und
 `check:plan` grün ist.
 
+### §Einfach · Plan-System vereinfachen (Schritt `QS-PLAN-EINFACH`, Auftrag David 14.8.2026)
+
+**Der Auftrag ist bewusst OFFEN.** David, 14.8.2026: «wichtig ist das alles weniger kompliziert
+wird … neue session soll selbstständig entscheiden können was sie anpassen soll». Dieser § ist
+darum **Befundlage, keine Bau-Anweisung**. Die bauende Session wählt selbst, was sie anfasst, in
+welcher Reihenfolge und wie weit sie geht. Verbindlich ist allein das Ziel; wer hier eine
+Schritt-für-Schritt-Vorschrift sucht, hat den Auftrag missverstanden.
+
+**Drei Ziele.** (1) Die Roadmap wird kürzer. (2) Ihre Schritte werden **offener** formuliert — Ziel
+klar, Weg frei; die heutige Durchspezifikation nimmt Folge-Sessions das Urteil ab und veraltet
+schneller, als sie gepflegt werden kann. (3) Der **Pflegeprozess selbst** wird billiger — wie ein
+Schritt angelegt, abgehakt, rotiert und archiviert wird (Skills `auftrag`, `bauschritt`, Datei
+`aufraeumen.md`, Hook `struktur-rotieren.py`).
+
+**Ausgangslage, gemessen 13./14.8.2026** (Mehr-Agenten-Audit, 40 gegengeprüfte Befunde, 7 in der
+Gegenprüfung widerlegt und darum nicht aufgeführt):
+
+- **39 %** aller Commits der letzten sieben Wochen (470 von 1192) fassen ausschliesslich
+  Steuer-Dokumente an. Auf eine substanzielle Erledigung kommen rund 26 Buchungs-Commits.
+- **50 von 79** offenen Etiketten wurden in der gesamten Repo-Historie nie in einer
+  Commit-Nachricht genannt. 187 Anlagen gegen 18 substanzielle Erledigungen in 7 Wochen (4,3 : 1);
+  Median-Lebensdauer eines wieder entfernten Etiketts: 7 Tage.
+- **32 von 80** offenen Schritten betreffen das System selbst, nicht das Produkt — Zeitreihe
+  0 (29.6.) → 11 (21.7.) → 32 (13.8.), kein Plateau.
+- Vier Etikett-Felder unterscheiden **nie** etwas: `of: ja` steht 20 686-mal, `of: nein` nie (der
+  Zweig `wartetFachzeit` kann nicht feuern) · `seq-hart`/`seq-weich` 3 Vermerke, 0 auswertende
+  Code-Stellen · `statusAgent` 0 Vorkommen. Konstantfelder = 3908 von 22 096 Byte aller
+  Etikettenzeilen (18 %).
+- Zwei Tore in der Kette haben **null Abbruchpfade** und melden immer grün
+  (`scripts/katalog-inventur.ts`, `scripts/norm-zitate-pruefen.ts`) — §6.7-Fall.
+- Drei Halden ohne Leser: `archiv/STRUKTUR-SESSIONKARTEN.md` 791 085 Byte (+12 KB/Tag) · 17 tote
+  Archivdateien (155 KB) · 50 Fahrplan-Abschnitte, die in ihrer eigenen Überschrift sagen, dass
+  sie nicht steuern (187 714 Byte; Spitze 45 % einer Datei). Doppelungsprobe: nur 0,4 % davon
+  steht auch anderswo — es ist Verschieben, nicht Löschen.
+- Die Rotation ist **fehlkalibriert**: sie räumte zuletzt auf 49 Byte unter die Marke; der nächste
+  Doku-Commit musste sie reissen und tat es 3 h 43 min später.
+- **Nicht** die Prüfstrasse: alle Tore laufen parallel in 15,5 s; 78 % der CI-Zeit (38,3 von
+  49,1 min) gehen an acht Browser-Prüfungen. Die Ersparnis liegt in Sitzungs- und Lesezeit.
+
+**Was die Gegenprüfung ausdrücklich verteidigt hat — nicht antasten ohne neuen Befund:** die
+ID-Liste in `scripts/plan/inventar.ts` (sieht wie eine Kopie aus, ist aber die einzige Wache
+dagegen, dass eine Rotation einen *unerledigten* Schritt mitnimmt; lief in 30 Tagen 28-mal) ·
+Regel 1c (Dubletten, fand am 31.7. eine echte) · Regel 3 (blockiert ohne Blocker-Eintrag) · das
+Feld `groesse` selbst (nur die Vokabelprüfung darum herum ist entbehrlich) · der Sammler der
+Selbstoptimierung (einzige Zahlenquelle über den eigenen Bau — die Zahlen oben stammen daraus) ·
+die acht Browser-Prüfungen (andere Risikoklasse) · `check:verfall` bleibt aus der Pflichtkette
+ausgeschlossen (hängt an der Wanduhr) · §7, §14.7, §18 und alles Fachliche.
+
+**Davids Entscheide vom 14.8.2026 — verbindlich, nicht mehr offen:**
+
+- **Chronik behält ihren Wortlaut** («2 behalten»). `ROADMAP-CHRONIK.md` wird **nicht** auf
+  Kurzzeilen eingedampft; sie ist die einzige Stelle, an der David ohne Werkzeuge nachlesen kann,
+  warum etwas so gebaut wurde. Wer sie kürzen will, braucht einen neuen David-Entscheid.
+- **Doku-Kurzpfad freigegeben** («1. wird freigegeben»). `QS-BASIS-DOKU-CI` ist entsperrt; der
+  ci.yml-Grundsatz «nie nach Dateiendungen abkürzen» ist für reine `.md`-Pushes auf `main` bewusst
+  gelockert.
+- **AG-Bausteinliste ist Erzeugnis, kein Bestand** («3. kann weg»). `ABNAHME-AG-BAUSTEINE.md` ist
+  aus dem Bestand genommen und gitignoriert; `npm run abnahme:ag` erzeugt sie in <1 s.
+  **Korrektur zum Audit-Befund:** Die dort vermutete Drift existiert nicht — die Nachmessung am
+  14.8. ergab den erzeugten Inhalt **byte-gleich** zum committeten Stand. Der Rückbau geschieht
+  also aus Sparsamkeit, nicht wegen einer Falschangabe.
+
+**Weiterhin offen und ausschliesslich Davids Entscheid:** ob eine harte Obergrenze für die
+Schrittzahl gilt (Empfehlung: vorerst nein) · die Streichung der zwei QS-Schritte auf
+Risiko-Pfaden.
+
+**Aufgegangen in diesem Schritt:** `QS-PLAN-SEQ-FRISCHE` (angelegt 13.8., ersatzlos abgelöst
+14.8.). Er wollte ein **neues Tor** bauen, das die Veralterung genau der `seq-hart`-Vermerke
+überwacht, die hier zur Streichung stehen — ein totes Feld erzeugte neuen Bau. Der auslösende Fall
+bleibt als Beleg erhalten: `W2·5h-GESETZ-UI` trägt seit 31.7. einen `seq-hart`-Vorbehalt auf
+`QS-UI`, der am 4.8. eingelöst wurde (`FAHRPLAN-UI-QUALITAET.md` §2.2 wörtlich «ist damit
+eingelöst») und trotzdem unverändert in der Zeile steht; er las sich in der Sitzung vom 13.8. als
+Sperre der Gesetzes-Oberfläche, die es nicht gab.
+
+**Die Wurzel — und warum der Gegenmechanismus kein Text sein darf.** §17 verlangt, jede Störung an
+der Wurzel zu beheben; das erzeugt zuverlässig Regeln, Felder, Tore, Schritte, und nichts verlangte
+je das Gegenteil. Beleg: Vor dem 3.8.2026 wurde in der gesamten Plan-Historie **kein einziges
+Etikett je entfernt**. Schärfster Beleg: Der Commit, der den Grössen-Deckel gerissen hat, heisst
+«§17 bekommt sein Gegengewicht — Rückbau ist Teil der Prozessverbesserung» und war 1532 Byte neue
+Prosa. Das Gegengewicht als Text hat als Erstes das Problem verschlimmert, das es beheben sollte.
+Vorschlag des Audits, den die Session prüfen (und verwerfen) darf: Der Gegenmechanismus setzt am
+**Zeitpunkt der Anlage** an — wer eine Regel, ein Feld, ein Tor oder einen QS-Schritt anlegt,
+notiert in derselben Zeile, **woran man erkennt, dass es wirkt** und **wann es ersatzlos entfällt**.
+Fehlt eines von beidem, wird nichts angelegt. Das macht jede spätere Streichrunde zur Ablesung
+statt zur Archäologie.
+
+**Fertig, wenn** die Roadmap spürbar kürzer ist, ihre Schritte das Ziel statt des Weges nennen, der
+Pflegeprozess weniger Handgriffe braucht — und die Session in einem Satz sagen kann, was sie
+bewusst NICHT angefasst hat. Kein Vorher/Nachher-Beweis auf Byte-Ebene verlangt; wohl aber die
+Zahl vorher und nachher. Reine Steuer-Doku und Plan-Werkzeug ⇒ `Gegenpruefung: n/a`, sofern kein
+Risiko-Pfad berührt wird. Trailer `Roadmap: QS-PLAN-EINFACH`.
+
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 
 Der AP-8-Umzug nach `fahrplaene/` hat in den Fahrplänen selbst Links hinterlassen, die auf die
