@@ -37,6 +37,21 @@ describe('check:testtreue — §6.3 (Tests bleiben bei Refactorings unangetastet
     expect(istRefactorCommit('docs(refactoring): Skill ergänzt')).toBe(false);
   });
 
+  it('Präfix-Grenzfälle: refactor!: , refactor(scope): und Gross-/Kleinschreibung — Ist-Verhalten eingefroren (Regelaudit 14.8.2026)', () => {
+    // Scope + Breaking-Marker, beide bereits oben über findeVerstoesse indirekt geprüft —
+    // hier explizit auf der reinen Klassifikator-Funktion, unabhängig von Testdatei-Erkennung.
+    expect(istRefactorCommit('refactor(scope): x')).toBe(true);
+    expect(istRefactorCommit('refactor!: x')).toBe(true);
+    expect(istRefactorCommit('refactor(scope)!: x')).toBe(true);
+    // Regex trägt das /i-Flag: Gross-/Kleinschreibung ist heute EGAL — das ist der
+    // Ist-Zustand, nicht die Soll-Vorgabe; dieser Test hält ihn fest, ändert ihn nicht.
+    expect(istRefactorCommit('Refactor: x')).toBe(true);
+    expect(istRefactorCommit('REFACTOR(scope): x')).toBe(true);
+    // Ohne Trenner nach dem Wort ist es kein Treffer (kein Conventional-Commit-Typ).
+    expect(istRefactorCommit('refactoring: x')).toBe(false);
+    expect(istRefactorCommit('refactor x')).toBe(false);
+  });
+
   it('klassifiziert Test-Dateien wie §6.3 sie meint', () => {
     expect(istTestDatei('src/tests/plan-groesse.test.ts')).toBe(true);
     expect(istTestDatei('e2e/verzahnung.e2e.ts')).toBe(true);
