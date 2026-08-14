@@ -125,28 +125,12 @@ function einheit(groesse: string | null): Einheit {
 }
 const SCHRITT: SchrittInfo = { titel: 'Testschritt', prosa: 'Wortlaut.', par: '4', pflicht: [], ankerDefekt: null, gekuerzt: false, checkliste: null };
 
-describe('bauPrompt — die Schätzung reist mit', () => {
-  // Ohne diese Zeile sähe die bauende Session die Schätzung nie: der
-  // Grössen-Check in Station A des Skills `bauschritt` ist der einzige Ort, der
-  // aus ihr eine Handlung ableitet, und `plan:next` gibt das Feld nicht aus.
-  it('S verlangt Bündeln, L verlangt Schneiden, M nennt den Normalfall', () => {
-    expect(bauPrompt(einheit('S'), SCHRITT)).toContain('Grösse S —');
-    expect(bauPrompt(einheit('S'), SCHRITT)).toContain('kollisionsfreie `ready-now`-Nachbarn');
-    expect(bauPrompt(einheit('L'), SCHRITT)).toContain('in sessionfüllende Teilschritte schneiden');
-    expect(bauPrompt(einheit('M'), SCHRITT)).toContain('Grösse M —');
-  });
-
-  it('ohne Schätzung sagt der Prompt das ehrlich, statt M zu unterstellen', () => {
-    expect(bauPrompt(einheit(null), SCHRITT)).toContain('Grösse ungeschätzt');
-  });
-
-  it('unbekanntes Vokabular fällt auf «ungeschätzt» zurück, nie auf eine geratene Klasse', () => {
-    expect(bauPrompt(einheit('XL'), SCHRITT)).toContain('Grösse ungeschätzt');
-  });
-
-  it('jeder Prompt nennt die Grenze: Schätzung, kein Tor-Kriterium', () => {
-    for (const g of [...GROESSE_WERTE, null]) {
-      expect(bauPrompt(einheit(g), SCHRITT)).toContain('kein Tor-Kriterium');
+describe('bauPrompt — Grössen-Zeile entfernt (Entscheid David 15.8.2026)', () => {
+  it('der Prompt trägt KEINE Grössen-Schätzung mehr — sie lebt im @meta und auf der Lagebild-Seite', () => {
+    for (const g of ['S', 'M', 'L', null, 'XL'] as const) {
+      const p = bauPrompt(einheit(g as string | null), SCHRITT);
+      expect(p).not.toContain('Grösse');
+      expect(p).not.toContain('Schätzung');
     }
   });
 });

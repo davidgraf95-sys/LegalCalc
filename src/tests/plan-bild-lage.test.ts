@@ -500,7 +500,6 @@ describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)',
     const leer: SchrittInfo = { ...SCHRITT, checkliste: { offen: 0, gesamt: 5, offenTexte: [] } };
     const p = bauPrompt(einheit({ groesse: 'L' }), leer);
     expect(p).not.toContain('Dach-Schritt mit Checkliste:');
-    expect(p).toContain('in sessionfüllende Teilschritte schneiden');
   });
 });
 

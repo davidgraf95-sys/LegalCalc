@@ -124,11 +124,6 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
       })()
     : [];
   const pflichtZeilen = (info?.pflicht ?? []).map((p) => `   Pflichtlektüre: ${p}`);
-  // Die Grösse gehört in den PROMPT, nicht nur auf die Seite: der Grössen-Check in
-  // Station A des Skills `bauschritt` ist der einzige Ort, der aus ihr eine Handlung
-  // ableitet (bündeln bzw. schneiden), und `plan:next` gibt das Feld nicht aus. Stünde
-  // die Schätzung allein im Lagebild, ginge sie beim Kopieren des Auftrags verloren —
-  // die Session sähe genau das nicht, wofür geschätzt wurde.
   const istDach = (info?.checkliste?.offen ?? 0) > 0;
   // Checkliste UND Grösse gehörten bis 14.8.2026 zwei getrennten, sich
   // überschneidenden Sätzen an («Dach-Schritt mit Checkliste: NICHT alles auf
@@ -145,16 +140,10 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
         ``,
       ]
     : [];
-  // Verschlankt 15.8.2026 (Auftrag David «Bau-Prompt simpler»): eine Zeile je
-  // Fall statt Absatz; die Handlungs-Ableitung steht in Station A des Skills.
-  const groesseZeile = istDach
-    ? [`Grösse ${e.etikett.groesse ?? 'ungeschätzt'} (Dach — die Checkliste bestimmt den Zuschnitt).`, '']
-    : [(({
-    S: 'Grösse S — 1–2 kollisionsfreie `ready-now`-Nachbarn gleicher Risikoklasse dazunehmen (Station A).',
-    M: 'Grösse M — sessionfüllend.',
-    L: 'Grösse L — VOR dem Bau in sessionfüllende Teilschritte schneiden (AP-6).',
-  } as Record<string, string>)[e.etikett.groesse ?? ''] ?? 'Grösse ungeschätzt — Umfang im Grössen-Check selbst beurteilen.')
-    + ' (Schätzung, kein Tor-Kriterium — bei Abweichung `groesse:` im @meta korrigieren und melden.)', ''];
+  // Grössen-Zeile ENTFERNT 15.8.2026 (Entscheid David, Chat «das mit der
+  // grösse soll weg»): die Schätzung lebt weiter im @meta (`groesse:`) und
+  // auf der Lagebild-Seite; der Grössen-Check in Station A (Skill
+  // `bauschritt`) liest sie dort — der Prompt trägt sie nicht mehr.
   const zeilen = [
     // Erste Zeile = Skill-Auslöser: der Zyklus (Einstieg, Prüfung, Landung,
     // Aufräumen) steht im Skill `bauschritt`, nicht im Prompt. So bleibt der
@@ -165,7 +154,6 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     ``,
     ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
     ...dachZeilen,
-    ...groesseZeile,
     // Verschlankt 15.8.2026 (Auftrag David «Bau-Prompt simpler», Minimalismus-
     // Regel vom selben Tag): der Prompt trägt nur noch, was SCHRITT-SPEZIFISCH
     // ist. Gestrichen, weil wortgleich an der ladenden Stelle vorhanden —
