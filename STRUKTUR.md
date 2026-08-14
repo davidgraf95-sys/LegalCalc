@@ -4,7 +4,7 @@
 Refactoring-Protokoll) — dieses Dokument hier beschreibt den Zustand.
 
 **Dokument-Ordnung im Root (Aufräumung 10.6.2026, Auftrag David):** Im Root
-liegen nur AKTIVE Steuerungsdokumente — CLAUDE/README/STRUKTUR/HANDLUNGSPLAN,
+liegen nur AKTIVE Steuerungsdokumente — CLAUDE/README/STRUKTUR/ROADMAP,
 Projekt- und Strategie-Papiere (PROJEKTBESCHRIEB, STRATEGIE-PLATTFORM,
 WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP). Die AG-Bausteinliste ist seit
 dem 14.8.2026 (Entscheid David) **kein Bestand mehr**, sondern ein Erzeugnis:
@@ -269,7 +269,7 @@ Fristwiederherstellung → ZPO-Fristen; Rechtsöffnung/Aberkennung/Kollokation
 Verzugszins-vertieft → Verzugszins; SV-Leistungsverwirkung → ATSG-Karte.
 `RechnerCard.szenarien` zeigt abgedeckte/geplante Szenarien auf der Karte.
 
-**Spät-Session 7.6.2026 (Kurzspiegel; Details HANDLUNGSPLAN.md A.0):**
+**Spät-Session 7.6.2026 (Kurzspiegel; Details ROADMAP.md A.0):**
 Daueranweisungen §0 Mehrwert-Test + §0a Perfektion-vor-Neubau · Roadmap
 −7 geplante Karten (verifiziert) · AG-Programm fertig inkl. Notariats-
 tarif-Korrekturen (ZH-Rahmen 123! SG floor!) · Startseite: leere Gebiete

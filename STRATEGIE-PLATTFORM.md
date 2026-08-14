@@ -10,11 +10,17 @@ Pricing) + Ultra-Workflow mit 6 Analyse-Linsen (Produkt, Technik, Vertrauen, Mar
 Betrieb, Moat) und 3 adversarialen Kritikern (Solo-Machbarkeit, CLAUDE.md-Prinzipien,
 Markt-Realismus). Roh-Berichte: `.scratch/strategie-plattform-2026-06-07/`.
 Dieses Dokument ist die konsolidierte Synthese; das operative Tagesgeschäft bleibt
-in `HANDLUNGSPLAN.md`.
+in `ROADMAP.md` (früher HANDLUNGSPLAN.md).
 
 ---
 
 ## Direktive David (14.6.2026): Ausbau-Phase vor den Kanzleigesprächen
+
+> **REVIDIERT 8.8.2026 (David, Chat; Alt-Entscheide-Audit 14.8.2026):** Die
+> Prioritäts-Direktive unten gilt NICHT mehr — seit dem 8.8. gilt «Prozess
+> geht grundsätzlich vor Produkt» (Session-Karte 8.8., Memory Nordstern).
+> Der Block bleibt als historischer Kontext stehen; massgeblich sind
+> `npm run plan:next` und die Nordstern-Notiz, nicht dieser Absatz.
 
 **Übersteuert die Tagespriorität bis zu den ersten Kanzleigesprächen (G1, erst in
 einigen Monaten).** Bis dahin gilt NICHT Nutzer-Validierung als Maßstab, sondern
@@ -174,7 +180,7 @@ F1/F2 sind sofort und parallel startbar. «David-Zeit» = nicht delegierbar.
   Fristen-Engines** (zpoFristen, schkgFristen, allgemeineFrist, erbFristen,
   sperrfristen; verpasste Frist = definitiver Schaden), Welle 2 Form-Gate-Vorlagen
   (Testament, Gründungsurkunden), Welle 3 Beträge (reversibel/nachrechenbar).
-  Vorbedingung Welle 1: kantonale Feiertags-Verifikation (HANDLUNGSPLAN C.14;
+  Vorbedingung Welle 1: kantonale Feiertags-Verifikation (ROADMAP, früher HANDLUNGSPLAN, C.14;
   BJ-Liste = Stand 2011, Matrix-Dossier ist die Arbeitsgrundlage).
 - [ ] **F4.4 Welle 1 durchführen** – 1–2 Wochen Davids Kernzeit, je Engine mit
   Protokoll (F4.1). Selbstabnahme ist für die Grundlagen-Phase korrekt (David IST
@@ -359,5 +365,5 @@ wichtigste Investition des ganzen Plans):
 > niemals schneller als `verified:true`.
 
 **Pflege dieses Dokuments:** Erledigtes abhaken; operative Detailplanung weiter
-in `HANDLUNGSPLAN.md` (dieses Dokument = Richtungsentscheid, jenes = Tagesgeschäft).
+in `ROADMAP.md` (früher HANDLUNGSPLAN.md) (dieses Dokument = Richtungsentscheid, jenes = Tagesgeschäft).
 Stand in `STRUKTUR.md` spiegeln, sobald Stränge starten.
