@@ -30,6 +30,19 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 14.8.2026 (Teil 2) — QS-PLAN-EINFACH abgeschlossen: Skills-Diät, Halden-Abbau, Etiketten 79→63, Auto-Buchung, CI-Klasse app-fern, Lagebild (#490)
+
+**Fable-Orchestrator, 6 Unteragenten nach Stufen (2× Bau sonnet, 2× Mechanik, 1× Recherche, 2× Gegenprüfung + 1 Einsortierungs-Prüfung), Merge durch David.** Rest-Checkliste von QS-PLAN-EINFACH vollzogen + Davids Optimierungs-Punkte 1–3; Schritt `done`, Block in der Chronik.
+
+- **Skills-Diät:** auftrag 15.9→9.5 KB (neu: Einsortier-Tabelle), bauschritt/aufraeumen je ~−33 %. Das Regelverlust-Tor fing eine zu scharfe Kürzung (Station-W-Wortlaute) — wörtlich bedient, Test unverändert (§6.3).
+- **Halden:** Sessionkarten 791 KB → 3 Monatsdateien (308 Karten byte-treu, Hook rotiert monatsweise nach Karten-Datum) · 15 Null-Verweis-Archivdateien gelöscht (Audit «17/155 KB» unabhängig auf 15/130 korrigiert) · 22 erledigte Fahrplan-Abschnitte → `archiv/FAHRPLAN-ERLEDIGT-ABSCHNITTE.md` (Byte-Bilanz exakt), 2 Grenzfälle belassen.
+- **Etiketten 79→63:** 16 Kleinst-Etiketten als Checklisten-Zeilen in 7 Dächer; Einsortierung durch unabhängigen Prüfer verifiziert (Verdikt OK; Auflagen umgesetzt: Worktree-Pflicht QS-GP/QS-BASIS, Trailer-Zeilen dreier Fahrpläne, Kollisions-Pfade, Chronik-Präzisierung).
+- **Auto-Buchung (Punkt 1):** `plan-buchung.yml` bucht `Roadmap-Status:`-Trailer nach Merge; Gegenprüfung fand Shell-Injection (env-Mapping + Zeichensatz-Wache nachgerüstet, Rotfälle im Test) + Push-Race (Rebase). Erster Live-Lauf: korrekt still (GitHub-Standard-Merge-Text trägt den Trailer nicht im Trailer-Block — Fail-safe wie designt; Lagebild-Prompt liefert den Trailer künftig richtig).
+- **CI-Klasse `code-fern` (Punkt 3):** app-ferne Diffs überspringen nur die 8 Playwright-Shards (78 % der CI-Zeit), Bau + Node-Tore voll; Regex-Parität Bash↔TS gegengeprüft, `\.md$` nachgeschärft.
+- **Lagebild (David):** Anstehend-Karten (1-Satz-Ziel, Checklisten-Fortschritt), Verknüpfungs-Chips (dieselbe `kollidiert()`-Regel wie der Resolver), Bau-Prompt mit Checklisten-Spec + Trailer-Hinweis; bildSeiten.ts bewusst in die Schlankheits-Baseline (843 Z., Begründung im Commit).
+- **Freigaben verankert:** `QS-HOOKS-AUSBAU` entsperrt («alle hooks freigegeben», Bau in eigener Session). **Lehre (§12.2, an mir selbst):** zwei `add -A`-Commits während laufender Agenten zogen fremde Halbstände mit — ab da nur Pathspec-Commits; bestehende Regel, kein neuer Anker nötig.
+- e2e: 539 grün + 2 isolierte Flakes (Wiederholung 8/8 grün; als Fehlerbuch-Zeile erfasst). Gate voll grün, alle 42 Tore.
+
 ## Session 14.8.2026 — QS-PLAN-EINFACH gebaut: Feld-Diät, ROADMAP 100→78 KB, Schein-Tore ehrlich (feat/qs-plan-einfach)
 
 **Fable-Orchestrator, drei Commits, Auftrag David im Chat («roadmap zu kompliziert — vereinfachen, Sessions sollen offener entscheiden»).** Kern des offenen Schritts `QS-PLAN-EINFACH` umgesetzt; alle Massnahmen folgen dem gegengeprüften Audit vom 13./14.8.

@@ -41,6 +41,7 @@
 // (beide ohne eigenes @meta, darum hier nicht separat gelistet). Fahrplan
 // `FAHRPLAN-W2-19-SEITENLEISTE.md` nach `archiv/` verschoben (Regel 7: unverlinkt nach dem
 // Block-Wegfall).
+// ZIFF-6-VOLLZUG 14.8.2026: QS-PLAN-EINFACH done -> Block in ROADMAP-CHRONIK.md.
 // KONSOLIDIERUNG 14.8.2026 (QS-PLAN-EINFACH, Etiketten-Sterblichkeit): 16 Kleinst-
 // Etiketten als Checklisten-Zeilen in ihre Daecher aufgegangen — QS-GP-PRERENDER/
 // -PREPUSH/-NACHBEFUNDE → QS-GP · QS-BASIS-TOT/-DEPS → QS-BASIS · QS-AUTOMATIK-
@@ -175,5 +176,4 @@ export const INVENTAR: readonly string[] = [
   // Roadmap, offener formulierte Schritte, billigerer Pflegeprozess. Löst den tags zuvor
   // angelegten QS-PLAN-SEQ-FRISCHE ersatzlos ab: jener wollte ein neues Tor für die
   // Veralterung toter Felder bauen, die hier zur Streichung stehen (Audit 13./14.8.2026).
-  'QS-PLAN-EINFACH',
 ];

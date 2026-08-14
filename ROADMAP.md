@@ -211,11 +211,6 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: blocked · blocker: zeitreihe-5-snapshots · dep: [] · kollision: [.github/workflows, scripts/plan] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
 - [ ] **`QS-ORG-UMZUG` · Repo in eine GitHub-Organisation überführen (Merge Queue)** — erst wenn der Auto-Nachzug (Checklisten-Zeile unter `QS-AUTOMATIK`) nicht reicht. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
   <!-- @meta id: QS-ORG-UMZUG · status: blocked · blocker: david-entscheid-org-umzug · dep: [] · kollision: [.github/workflows] · worktree: nein · 26x: nein · groesse: M -->
-- [~] **`QS-PLAN-EINFACH` · Plan-System vereinfachen: kürzere Roadmap, offenere Schritte, billigere Pflege** *(Auftrag David 14.8.2026, **bewusst offener Auftrag**)* — verbindlich ist nur «alles wird weniger kompliziert»; die Session entscheidet selbst. **Kern gelandet 14.8.2026** (tote Felder gestrichen · ROADMAP 100→78 KB, Schritte auf Zielform · Rotations-Hysterese · zwei Schein-Tore ehrlich). Ausgangslage, Zäune, offene David-Entscheide: **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) §Einfach.
-  <!-- @meta id: QS-PLAN-EINFACH · status: wip · blocker: null · dep: [] · kollision: [ROADMAP.md, scripts/plan, .claude/skills, .claude/hooks, fahrplaene, archiv] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
-  - [ ] **Skills `auftrag`/`bauschritt`/`aufraeumen.md` verschlanken** — dieselbe Diät wie die ROADMAP: Ziel statt Weg, Historien-Prosa in die Chronik; Handgriffe je Schritt zählen und senken.
-  - [ ] **Drei Halden ohne Leser abbauen** — `archiv/STRUKTUR-SESSIONKARTEN.md` (791 KB, +12 KB/Tag: Deckel oder Jahres-Split) · 17 tote Archivdateien (155 KB) · 50 selbsterklärt nicht-steuernde Fahrplan-Abschnitte (188 KB) → `archiv/`.
-  - [ ] **Etiketten-Sterblichkeit senken** — 50 von 79 offenen Etiketten wurden nie in einem Commit genannt; Kandidaten je Dach prüfen und zusammenlegen oder als Ideen-Zeile ohne `@meta` weiterführen (§17-Gegengewicht Satz 4).
 
 
 ---
@@ -440,6 +435,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **Muster «Test pinnt von-Hand-Tageswert» anderswo suchen** — der `registerStand`-Fall (garantierter Fehlalarm bei jeder Pflege) ist gefixt; Geschwister finden.
   - [ ] **Alt-Flake `qsui-hierarchie.e2e.ts` (Vorlagen-Block, ~25 %/Fall, Nullprobe-belegt 25/84 auf main):** Wurzel-Fix mit Mandat; Familie + Zahlen im a33-Dossier-Nachtrag (PR #480).
   - [ ] **Alt-Flake `leser-weiterlesen-r4-r8` (Shard-Kontext, vorbestehend, Befund 9.8.2026):** gleiche Familie; Wurzel-Fix mit Mandat, Messbedingung protokollieren.
+  - [ ] **Flake-Beobachtung 14.8.2026 (Voll-Suite, isoliert grün):** `gesetze-historie-badge` Lade-CLS-Budget (§15-Messrauschen unter Last) + `leser-kontext-e4` Deeplink — je 1× rot bei 539 grün, Wiederholung 8/8 grün; bei Wiederkehr zur CLS-/Leser-Flake-Familie schlagen.
   - [ ] **Klick-Pfad der Gliederungs-Zeile (Perf-Restposten W2·19):** 161 ms @4×, OR/BGFA-Verhältnis 7→14.6 verschlechtert; Messpunkte in der Perf-Nachmessung (bibliothek, via PR #480). Skill perf.
   - [ ] **Lese-Kadenz-TBT @4× (U3-Rest, ~10 s/32 s, @1× unmerklich):** Spy-/Zuklapp-/Re-Render-Pfad; Messvorschrift: Kadenz-Kopfzeile der Nachmessung.
   - [ ] **Liste `/gesetze`: ~370-px-Leerfläche am Seitenende schliessen** (LM-163-Alternativerklärung, risikoarm; Nachprüfung 9.8.2026).

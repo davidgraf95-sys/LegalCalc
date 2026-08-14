@@ -1,5 +1,18 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## QS-PLAN-EINFACH — Plan-System vereinfachen *(done 14.8.2026, PRs #489 + #490 Squash `a7ffd90b7`/`bf213a768`; überführt 14.8.2026)*
+
+- [x] **`QS-PLAN-EINFACH` · Plan-System vereinfachen: kürzere Roadmap, offenere Schritte, billigere Pflege** *(Auftrag David 14.8.2026, **bewusst offener Auftrag**)* — verbindlich ist nur «alles wird weniger kompliziert»; die Session entscheidet selbst. **Kern gelandet 14.8.2026** (tote Felder gestrichen · ROADMAP 100→78 KB, Schritte auf Zielform · Rotations-Hysterese · zwei Schein-Tore ehrlich). Ausgangslage, Zäune, offene David-Entscheide: **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) §Einfach.
+  <!-- @meta id: QS-PLAN-EINFACH · status: done · blocker: null · dep: [] · kollision: [ROADMAP.md, scripts/plan, .claude/skills, .claude/hooks, fahrplaene, archiv] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+  - [x] **Skills `auftrag`/`bauschritt`/`aufraeumen.md` verschlanken** — dieselbe Diät wie die ROADMAP: Ziel statt Weg, Historien-Prosa in die Chronik; Handgriffe je Schritt zählen und senken. *(#490: −40/−32/−33 %; Einsortier-Tabelle neu; Regelverlust-Tor bedient.)*
+  - [x] **Drei Halden ohne Leser abbauen** — `archiv/STRUKTUR-SESSIONKARTEN.md` (791 KB, +12 KB/Tag: Deckel oder Jahres-Split) · 17 tote Archivdateien (155 KB) · 50 selbsterklärt nicht-steuernde Fahrplan-Abschnitte (188 KB) → `archiv/`. *(#490: Monats-Split byte-treu; 15 Dateien mit Null-Verweis gelöscht [Audit-Wert korrigiert]; 22 Abschnitte verschoben, 2 Grenzfälle belassen.)*
+  - [x] **Etiketten-Sterblichkeit senken** — 50 von 79 offenen Etiketten wurden nie in einem Commit genannt; Kandidaten je Dach prüfen und zusammenlegen oder als Ideen-Zeile ohne `@meta` weiterführen (§17-Gegengewicht Satz 4). *(#490: 16 → 7 Dächer, Bestand 79→63; Einsortierung unabhängig geprüft, Auflagen umgesetzt.)*
+
+Dazu über den offenen Auftrag hinaus (Davids Punkte 1–3 vom 14.8.): Auto-Buchung
+`Roadmap-Status:`-Trailer (`plan-buchung.yml`, Injection-Befund der Gegenprüfung vor
+Merge geschlossen) · CI-Klasse `code-fern` (Browser-Shards nur bei App-Diffs) ·
+Lagebild mit Anstehend-Karten, Verknüpfungs-Chips und neuem Bau-Prompt.
+
 ## Etiketten-Konsolidierung + Halden-Abbau 14.8.2026 (`QS-PLAN-EINFACH`, Auftrag David)
 
 **16 Kleinst-Etiketten aufgegangen** (nicht gestrichen — jede lebt als Checklisten-Zeile in ihrem
