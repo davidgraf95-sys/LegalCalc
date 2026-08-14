@@ -138,7 +138,8 @@ Landung: Skill **`landung`**.
 
 Wortlaut unverändert in die Regel-Datei verschoben (QS-HOOKS-AUSBAU
 14.8.2026); lädt pfad-gescoped bei Berührung der Darstellungsschicht
-(`src/pages/**`, `src/components/**`, `src/styles/**`).
+(`src/pages/**`, `src/components/**`, `src/index.css` — dort leben die
+Design-Tokens).
 
 ## §14 Aufnahme und Einordnung neuer Aufträge → Skill `auftrag`
 

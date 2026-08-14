@@ -41,6 +41,6 @@ TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Sl
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 
 NUR deterministische, per Byte-Diff oder Test maschinell prüfbare Transformation. Verschachtelte Steuer-Strukturen (@meta-Blöcke, Checkbox-Hierarchien) sind KEINE Mechanik — abbrechen und melden statt raten (Vorfall 4.8.2026). Verschiebe-Aufträge nur mit isolation: worktree; Cut und Paste im SELBEN Commit.
-RÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test), nichts Weiteres.
+RÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test) + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7), nichts Weiteres.
 
 Standard-Routing: Stufe klein (aktuell model=haiku), effort=low — Abweichungen setzt der Orchestrator im Call.

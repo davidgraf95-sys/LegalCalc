@@ -73,12 +73,12 @@ def wip_schritte() -> list[str]:
     return ids
 
 
-def messen(end_reason: str) -> dict:
+def messen(reason: str) -> dict:
     uncommitted = [z for z in git("status", "--porcelain").splitlines() if z.strip()]
     # @{u} fehlt (kein Upstream) → leere Antwort, zählt als 0 — bewusst milde.
     unpushed = [z for z in git("log", "@{u}..HEAD", "--oneline").splitlines() if z.strip()]
     return {
-        "end_reason": end_reason,
+        "reason": reason,
         "branch": git("rev-parse", "--abbrev-ref", "HEAD").strip(),
         "uncommitted": uncommitted[:20],
         "unpushed": unpushed[:20],
@@ -91,8 +91,14 @@ def modus_ende() -> None:
         data = json.load(sys.stdin)
     except Exception:
         data = {}
-    befund = messen(str(data.get("end_reason") or "unbekannt"))
-    if not (befund["uncommitted"] or befund["unpushed"] or befund["wip"]):
+    # Feldname laut Binary 2.1.220: `reason` (Gegenprüfungs-Auflage B5 —
+    # die Web-Doku nannte end_reason; die Binary ist die härtere Quelle).
+    befund = messen(str(data.get("reason") or "unbekannt"))
+    # wip allein löst KEINEN Nachlass aus (Auflage B10, Cry-Wolf: während
+    # eines normalen Baus ist immer irgendein Schritt wip; wip-ohne-Bau-Spur
+    # überwacht bereits plan:next — §17 Satz 1: ersetzen statt doppeln).
+    # wip bleibt als Kontext im Nachlass, wenn echte Baustellen vorliegen.
+    if not (befund["uncommitted"] or befund["unpushed"]):
         try:  # sauber abgeschlossen — alten Nachlass räumen
             os.remove(NACHLASS)
         except OSError:
@@ -109,12 +115,16 @@ def modus_start() -> None:
     try:
         with open(NACHLASS, encoding="utf-8") as f:
             b = json.load(f)
-    except Exception:
+    except FileNotFoundError:
         return
+    except Exception:
+        b = {}  # korrupte Datei: trotzdem räumen (Auflage B7), nichts melden
     try:  # genau einmal melden, dann räumen
         os.remove(NACHLASS)
     except OSError:
         pass
+    if not b:
+        return
     teile = []
     if b.get("wip"):
         teile.append(f"wip-Schritte: {', '.join(b['wip'])}")
@@ -126,7 +136,7 @@ def modus_start() -> None:
         return
     print(
         "NACHLASS-WACHE (§17): Die vorige Session endete "
-        f"({b.get('end_reason', '?')}) mit offener Baustelle — "
+        f"({b.get('reason', '?')}) mit offener Baustelle — "
         + " · ".join(teile) + ".\n"
         "Vor dem Weiterbau nach §17 behandeln: Status schliessen bzw. "
         "committen/pushen ODER als bewussten Zustand (Parallel-Session) "

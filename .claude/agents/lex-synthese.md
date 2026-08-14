@@ -41,6 +41,6 @@ TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Sl
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 
 Steuer-Doku: dieser Text lenkt Folge-Sessions. Ehrlich, mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.
-RÜCKGABE: der Text selbst + betroffene Pfade.
+RÜCKGABE: der Text selbst + betroffene Pfade + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7; uncommittiert ⇒ ausdrücklich sagen).
 
 Standard-Routing: Stufe mittel (aktuell model=sonnet), effort=medium — Abweichungen setzt der Orchestrator im Call.

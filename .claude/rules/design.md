@@ -2,7 +2,7 @@
 paths:
   - "src/pages/**"
   - "src/components/**"
-  - "src/styles/**"
+  - "src/index.css"
 ---
 # §13 Design → `DESIGN-REGLEMENT.md`
 
