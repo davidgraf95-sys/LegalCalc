@@ -3,7 +3,7 @@
 **Zweck (STRATEGIE-PLATTFORM.md F1.3, Bus-Faktor 1):** Alles, was eine
 übernehmende Person zum Weiterbetrieb braucht und was NICHT aus dem Code
 hervorgeht. Fachliche Arbeitsweise: `CLAUDE.md` · Stand: `STRUKTUR.md` ·
-Vorgehen: `HANDLUNGSPLAN.md` + `STRATEGIE-PLATTFORM.md`.
+Vorgehen: `ROADMAP.md` (früher HANDLUNGSPLAN.md) + `STRATEGIE-PLATTFORM.md`.
 
 ## Konten & Infrastruktur
 

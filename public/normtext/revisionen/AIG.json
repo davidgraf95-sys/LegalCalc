@@ -1,15 +1,22 @@
 {
   "erlassKey": "AIG",
   "sr": "142.20",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.20",
-      "sha": "952f24a38910dece13f06ae5856d5a01856dbb72f64ee1e2a947a4f1e9ba8619"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "eb222d3137d5bd793b96145c3615a36e1cd36f365d40abf84f0ad2a7f41d9137"
     },
     {
       "art": "aenderung",
@@ -932,5 +939,5 @@
       "sha": "61ffc69115701b9edcc8e9d5fe46b446b5340baaf0135dccab7d5260405ee661"
     }
   ],
-  "sha": "70c7e472a3c601c0c6e8aa01433b4e1709db7056c641e5642e4372ac252467cb"
+  "sha": "a6818b09b7c870a6ee8058a7004a8b0c780ce2fdfc21951173386756794f26ee"
 }

@@ -14,6 +14,10 @@ Hinterlegt werden die GERUNDETEN Originalbasen-Reihen ab Basis Sep. 1966
 import sys, datetime, openpyxl
 
 pfad = sys.argv[1] if len(sys.argv) > 1 else '/tmp/lik.xlsx'
+# Abrufdatum (§7: Stand gehoert ans Artefakt). Default = Laufdatum, per argv[2]
+# ueberschreibbar (Format T.M.JJJJ), damit ein Nachlauf das echte Abrufdatum traegt.
+_h = datetime.date.today()
+abrufdatum = sys.argv[2] if len(sys.argv) > 2 else f'{_h.day}.{_h.month}.{_h.year}'
 wb = openpyxl.load_workbook(pfad, read_only=True, data_only=True)
 ws = wb['Index_m']
 BASEN = ['1966-09','1977-09','1982-12','1993-05','2000-05','2005-12','2010-12','2015-12','2020-12','2025-12']
@@ -40,8 +44,13 @@ zeilen = [
     '// Dezimalstelle — BFS-Empfehlung für Indexierungszwecke). Lizenz OPEN-BY,',
     '// Quellenangabe Pflicht. Regeneration: scripts/lik-reihe-generieren.py',
     '//',
+    '// Amtliche Quelle (Live-Fassung, massgeblich — nie dieses Artefakt):',
+    '//   Asset-Seite: https://www.bfs.admin.ch/asset/de/cc-d-05.02.08',
+    '//   XLSX-Master: https://dam-api.bfs.admin.ch/hub/api/dam/assets/36773872/master',
+    f'// Abgerufen: {abrufdatum}. Frische-Tor: npm run check:lik-frische.',
+    '//',
     f"export const LIK_LETZTER_MONAT = '{letzter}';",
-    f"export const LIK_STAND = 'BFS-Indexierungstabelle bis {letzter} (abgerufen 5.6.2026)';",
+    f"export const LIK_STAND = 'BFS-Indexierungstabelle bis {letzter} (abgerufen {abrufdatum})';",
     "export const LIK_QUELLE = 'Bundesamt für Statistik (BFS), Landesindex der Konsumentenpreise';",
     '',
     '// Je Originalbasis (Basismonat = 100) die Monatswerte ab Basismonat.',

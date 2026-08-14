@@ -5301,6 +5301,38 @@
       },
       "oc": {
         "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/393"
+      },
+      "dateForce": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-03-20"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Legge federale sul programma di sgravio 2027 delle finanze federali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "142.20"
+      },
+      "oc": {
+        "type": "uri",
         "value": "https://fedlex.data.admin.ch/eli/oc/49/279_279_293"
       },
       "dateForce": {

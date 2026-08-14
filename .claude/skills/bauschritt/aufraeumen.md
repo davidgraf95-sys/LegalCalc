@@ -72,6 +72,16 @@ Jede Streichung bekommt in `ROADMAP-CHRONIK.md` eine **Begründungszeile**
 Ohne diese Zeile verschwindet ein Posten stillschweigend — der Verlust, den
 §11 (Erforschtes Wissen wird geordnet abgelegt) verhindern soll.
 
+**Für CODE gilt derselbe Massstab in beweisbarer Form (Auftrag David
+14.8.2026, Chat sinngemäss «was keine Fehlfunktion auslöst, kann weg» —
+präzisiert, weil unbeobachtet ≠ unbenutzt):** Eine Zeile/Datei darf weg,
+wenn der NACHWEIS des Nichttragens vor der Löschung steht — (a) keine
+eingehenden Verweise (Sweep-Guards oben, `git ls-files`-Bestand), (b) alle
+Tore grün UND golden byte-gleich nach dem Entfernen, (c) bei Rechtslogik
+zusätzlich §1-Blick: trägt die Stelle einen ungetesteten Rechtsfall, fällt
+sie NICHT («keine beobachtete Fehlfunktion» ist dort kein Beweis — Tests
+decken nie alle Fälle). Beweis vor Löschung, nie löschen-und-schauen.
+
 ## 4 · Fahrplan-Archivierung — verify-then-archive
 
 `check:plan` koppelt zwei Regeln: **Regel 7** — jede `FAHRPLAN-*.md` unter
@@ -119,6 +129,24 @@ danach (kein Gate) — zeigt Session-Karten-Nachzugsbedarf.
 in **einem** Commit — Regel 9/7 sind mechanisch gekoppelt, kein Tor liest
 die Chronik. Ein Zwischenstand (verschoben, Zeiger nicht nachgezogen, oder
 umgekehrt) wäre unter Regel 9 bzw. 7 rot.
+
+## Verwaisungs-Sweep — vier Guards (Lehren 14.8.2026, QS-EFFIZIENZ)
+
+Wer nach toten Dateien sucht (Totcode, Halden-Kandidaten), nimmt diese vier
+Regeln in den Sweep-Auftrag — jede hat an diesem Tag einen Fehlalarm oder
+Beinahe-Fehler erzeugt:
+
+1. **Nur `git ls-files`-Bestand ist Kandidat.** Untracked/gitignorierte
+   Dateien sind Davids Lokalbestand, keine Repo-Halden (Beinahe-Fall:
+   COWORK.md, aktiv in Gebrauch, wäre «archiviert» worden).
+2. **Backlink-Suche ohne Verzeichnis-Ausschluss** — auch `archiv/` zählt;
+   Treffer dort werden als «nur historisch» ausgewiesen, nicht verschwiegen
+   (Fall: zwei «0-Backlink»-Kandidaten hatten Archiv-Verweise).
+3. **`*.test.ts` ist nie verwaist** (Vitest-Autodiscovery braucht keinen
+   Namensverweis) und **Dateien mit dokumentierter `vite-node <pfad>`-CLI im
+   Kopf sind Werkzeuge**, keine Waisen — beides vorab ausfiltern.
+4. **Löschen erst nach unabhängigem Guard im ausführenden Auftrag** (Basisnamen-
+   Gegensuche vor jedem `git rm`) — der Sweep ist Verdacht, nicht Urteil.
 
 ## Nachbar-Instrumente
 

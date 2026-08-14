@@ -1,15 +1,14 @@
 {
   "erlassKey": "LRV",
   "sr": "814.318.142.1",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2026-08-01",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.318.142.1",
-      "sha": "e7dd6b875d3c4e16cde25bb7e817de569779982a6e9b89b0d3cfe40bc08c9c29"
+      "sha": "bb4693ec40abc858740c4a2537e37cc23234c877057a1559a7770728ad4cad86"
     },
     {
       "art": "aenderung",
@@ -360,5 +359,5 @@
       "sha": "e0e746ed2210298d217e9b7a57074e789cb9a517636e8314ef232b0ecb387383"
     }
   ],
-  "sha": "c81c727dc1ed9ae5fe3708191d7fc33c307432e3b854ab0bbdaf766ebbc2e146"
+  "sha": "2b911b1c17ee3627c364a997a32aab55b9a96dece7bcf97720c492086112c416"
 }

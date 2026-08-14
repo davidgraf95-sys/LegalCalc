@@ -318,6 +318,123 @@
     },
     "botschaft": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/1272"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0831"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.079"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant un crédit-cadre en faveur de l'environnement mondial et une modification de la loi fédérale sur la protection de l'environnement"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/1272"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0831"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.079"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant un crédit-cadre en faveur de l'environnement mondial et une modification de la loi fédérale sur la protection de l'environnement"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/1272"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0831"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.079"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant un crédit-cadre en faveur de l'environnement mondial et une modification de la loi fédérale sur la protection de l'environnement"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "botschaft": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2003/887"
     },
     "proj": {
@@ -465,123 +582,6 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulla protezione dell’ambiente (rumore, siti contaminati, tasse d’incentivazione, finanziamento di corsi di formazione e di formazione continua, sistemi di informazione e di documentazione, diritto penale)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/1272"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0831"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.079"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant un crédit-cadre en faveur de l'environnement mondial et une modification de la loi fédérale sur la protection de l'environnement"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/1272"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0831"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.079"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant un crédit-cadre en faveur de l'environnement mondial et une modification de la loi fédérale sur la protection de l'environnement"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/1272"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0831"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.079"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant un crédit-cadre en faveur de l'environnement mondial et une modification de la loi fédérale sur la protection de l'environnement"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
     }
   }
 ]

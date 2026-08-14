@@ -9,7 +9,7 @@ model: sonnet
 
 Du schreibst Steuer-Doku im LexMetrik-Repo — Texte, die künftige Sessions lenken. Ehrlich und mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.
 
-TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben.
+TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben. Richtgrösse der Rückgabe: ≤ ~300 Wörter Prosa; Messreihen, Belege und Rot-Beweis-Auszüge zählen nicht dagegen und werden NIE gekürzt.
 
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)
 

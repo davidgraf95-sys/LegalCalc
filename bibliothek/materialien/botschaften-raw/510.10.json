@@ -123,6 +123,123 @@
     },
     "botschaft": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/114"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5245"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/165"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "1999-09-20"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "1999.078"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Bericht und Botschaft über die von der Internationalen Arbeitskonferenz anlässlich ihrer 85., 86. und 87. Tagung 1997, 1998 und 1999 genehmigten Instrumente und zum Übereinkommen (Nr. 144) über dreigliedrige Beratungen zur Förderung der Durchführung internationaler Arbeitsnormen, 1976"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Rapport et message sur les instruments adoptés en 1997, 1998 et 1999 par la Conférence internationale du Travail lors de ses 85°, 86° et 87° sessions et sur la convention (n° 144) concernant les consultations tripartites destinées à promouvoir la mise en œuvre des normes internationales du travail, 1976"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Rapporto e messaggio concernente gli strumenti adottati nel 1997, 1998 e 1999 dalla Conferenza internazionale del lavoro in occasione delle sue 85a, 86a e 87a sessioni e sulla Convenzione (n. 144) concernente le consultazioni tripartite volte a promuovere l'attuazione delle norme internazionali del lavoro, 1976 "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/114"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5245"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/165"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "1999-09-20"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "1999.078"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Bericht und Botschaft über die von der Internationalen Arbeitskonferenz anlässlich ihrer 85., 86. und 87. Tagung 1997, 1998 und 1999 genehmigten Instrumente und zum Übereinkommen (Nr. 144) über dreigliedrige Beratungen zur Förderung der Durchführung internationaler Arbeitsnormen, 1976"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Rapport et message sur les instruments adoptés en 1997, 1998 et 1999 par la Conférence internationale du Travail lors de ses 85°, 86° et 87° sessions et sur la convention (n° 144) concernant les consultations tripartites destinées à promouvoir la mise en œuvre des normes internationales du travail, 1976"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Rapporto e messaggio concernente gli strumenti adottati nel 1997, 1998 e 1999 dalla Conferenza internazionale del lavoro in occasione delle sue 85a, 86a e 87a sessioni e sulla Convenzione (n. 144) concernente le consultazioni tripartite volte a promuovere l'attuazione delle norme internazionali del lavoro, 1976 "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/114"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5245"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/165"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "1999-09-20"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "1999.078"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Bericht und Botschaft über die von der Internationalen Arbeitskonferenz anlässlich ihrer 85., 86. und 87. Tagung 1997, 1998 und 1999 genehmigten Instrumente und zum Übereinkommen (Nr. 144) über dreigliedrige Beratungen zur Förderung der Durchführung internationaler Arbeitsnormen, 1976"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Rapport et message sur les instruments adoptés en 1997, 1998 et 1999 par la Conférence internationale du Travail lors de ses 85°, 86° et 87° sessions et sur la convention (n° 144) concernant les consultations tripartites destinées à promouvoir la mise en œuvre des normes internationales du travail, 1976"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Rapporto e messaggio concernente gli strumenti adottati nel 1997, 1998 e 1999 dalla Conferenza internazionale del lavoro in occasione delle sue 85a, 86a e 87a sessioni e sulla Convenzione (n. 144) concernente le consultazioni tripartite volte a promuovere l'attuazione delle norme internazionali del lavoro, 1976 "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "botschaft": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2002/118"
     },
     "proj": {
@@ -474,36 +591,36 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/114"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5245"
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5586"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/165"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/323"
     },
     "dateDoc": {
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-09-20"
+      "value": "1999-10-27"
     },
     "curia": {
       "type": "literal",
-      "value": "1999.078"
+      "value": "99.084"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Bericht und Botschaft über die von der Internationalen Arbeitskonferenz anlässlich ihrer 85., 86. und 87. Tagung 1997, 1998 und 1999 genehmigten Instrumente und zum Übereinkommen (Nr. 144) über dreigliedrige Beratungen zur Förderung der Durchführung internationaler Arbeitsnormen, 1976"
+      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
     },
     "titleFr": {
       "type": "literal",
-      "value": "Rapport et message sur les instruments adoptés en 1997, 1998 et 1999 par la Conférence internationale du Travail lors de ses 85°, 86° et 87° sessions et sur la convention (n° 144) concernant les consultations tripartites destinées à promouvoir la mise en œuvre des normes internationales du travail, 1976"
+      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Rapporto e messaggio concernente gli strumenti adottati nel 1997, 1998 e 1999 dalla Conferenza internazionale del lavoro in occasione delle sue 85a, 86a e 87a sessioni e sulla Convenzione (n. 144) concernente le consultazioni tripartite volte a promuovere l'attuazione delle norme internazionali del lavoro, 1976 "
+      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
     }
   },
   {
@@ -513,36 +630,36 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/114"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5245"
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5586"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/165"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/323"
     },
     "dateDoc": {
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-09-20"
+      "value": "1999-10-27"
     },
     "curia": {
       "type": "literal",
-      "value": "1999.078"
+      "value": "99.084"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Bericht und Botschaft über die von der Internationalen Arbeitskonferenz anlässlich ihrer 85., 86. und 87. Tagung 1997, 1998 und 1999 genehmigten Instrumente und zum Übereinkommen (Nr. 144) über dreigliedrige Beratungen zur Förderung der Durchführung internationaler Arbeitsnormen, 1976"
+      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
     },
     "titleFr": {
       "type": "literal",
-      "value": "Rapport et message sur les instruments adoptés en 1997, 1998 et 1999 par la Conférence internationale du Travail lors de ses 85°, 86° et 87° sessions et sur la convention (n° 144) concernant les consultations tripartites destinées à promouvoir la mise en œuvre des normes internationales du travail, 1976"
+      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Rapporto e messaggio concernente gli strumenti adottati nel 1997, 1998 e 1999 dalla Conferenza internazionale del lavoro in occasione delle sue 85a, 86a e 87a sessioni e sulla Convenzione (n. 144) concernente le consultazioni tripartite volte a promuovere l'attuazione delle norme internazionali del lavoro, 1976 "
+      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
     }
   },
   {
@@ -552,36 +669,153 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/114"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5245"
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5586"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/165"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/323"
     },
     "dateDoc": {
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-09-20"
+      "value": "1999-10-27"
     },
     "curia": {
       "type": "literal",
-      "value": "1999.078"
+      "value": "99.084"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Bericht und Botschaft über die von der Internationalen Arbeitskonferenz anlässlich ihrer 85., 86. und 87. Tagung 1997, 1998 und 1999 genehmigten Instrumente und zum Übereinkommen (Nr. 144) über dreigliedrige Beratungen zur Förderung der Durchführung internationaler Arbeitsnormen, 1976"
+      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
     },
     "titleFr": {
       "type": "literal",
-      "value": "Rapport et message sur les instruments adoptés en 1997, 1998 et 1999 par la Conférence internationale du Travail lors de ses 85°, 86° et 87° sessions et sur la convention (n° 144) concernant les consultations tripartites destinées à promouvoir la mise en œuvre des normes internationales du travail, 1976"
+      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Rapporto e messaggio concernente gli strumenti adottati nel 1997, 1998 e 1999 dalla Conferenza internazionale del lavoro in occasione delle sue 85a, 86a e 87a sessioni e sulla Convenzione (n. 144) concernente le consultazioni tripartite volte a promuovere l'attuazione delle norme internazionali del lavoro, 1976 "
+      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5587"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/324"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "1999-10-27"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "99.084"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5587"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/324"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "1999-10-27"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "99.084"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5587"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2001/324"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "1999-10-27"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "99.084"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
     }
   },
   {
@@ -660,240 +894,6 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge militare e dell’organizzazione dell’esercito"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5586"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/323"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-10-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "99.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5586"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/323"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-10-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "99.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5586"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/323"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-10-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "99.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5587"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/324"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-10-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "99.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5587"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/324"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-10-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "99.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/142"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/5587"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2001/324"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "1999-10-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "99.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Militärgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de la loi fédérale sur l'armée et l'administration militaire"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'esercito e sull'amministrazione militare"
     }
   },
   {

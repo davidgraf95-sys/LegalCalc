@@ -1,7 +1,7 @@
 {
   "erlassKey": "USG",
   "sr": "814.01",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -13,9 +13,8 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. März 2024 des Umweltschutzgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 15 mars 2024 de la loi sur la protection de l’environnement",
       "titelIt": "Ordinanza concernente un’entrata in vigore parziale della modifica del 15 marzo 2024 della legge sulla protezione dell’ambiente",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/356/de",
-      "sha": "de25c38cc4af11294aa317fbefb7106c839009dbbe1a39aa010f7261e1a36636"
+      "sha": "cf9149d933b5ba4da89f0723a743bc38ff76d3d6f4a9a1ebcfa8e57d52c6f08e"
     },
     {
       "art": "aenderung",
@@ -336,5 +335,5 @@
       "sha": "5dbbe0fca13017ff1bbe08becebf39dab36de1acdd75510495d3e5aa4ac12b08"
     }
   ],
-  "sha": "a6b3b8ccc1e55aeab7763c59ac37b091c890e72fc06f553945c611a04b66ee75"
+  "sha": "a80ee154ac81b19ab8e88f9abaf6e611ee184890b4fe759bbd78037848c6641d"
 }

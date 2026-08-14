@@ -1,9 +1,16 @@
 {
   "erlassKey": "CO2_GESETZ",
   "sr": "641.71",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-01-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.71",
+      "sha": "d76015802061fe405ab7b6045c633a23d5cb4e3230fc46dd9305aabc2573c155"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
@@ -117,5 +124,5 @@
       "sha": "5410b6f79807cca46fea26c7c436c4d3964057e1cfa64e49dc95d91e6169bac0"
     }
   ],
-  "sha": "c3a551f6ab5749a7423d1c423a57ffb0c3c120260bc9c3e5b626983530e468d2"
+  "sha": "df0bd26af54d018b445d5498d0ce6e4d7c6b8f6f3d96f794bf52f9c3202a2eaa"
 }

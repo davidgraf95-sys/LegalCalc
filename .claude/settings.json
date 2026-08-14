@@ -1,4 +1,8 @@
 {
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_METRICS_EXPORTER": "prometheus"
+  },
   "permissions": {
     "allow": [
       "Bash(npm run lint)",
@@ -99,6 +103,15 @@
           {
             "type": "command",
             "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/lese-schutz.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "deploy_to_vercel|buy_domain|buy_pro|buy_credits|buy_addon|update_project_deployment_protection",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/deploy-schutz.py\""
           }
         ]
       },
