@@ -1,5 +1,6 @@
 // @shard-gruppe: 7
 import { test, expect } from '@playwright/test';
+import { DROSSEL } from './helpers/budgets';
 
 // E4/A32 + E4-Korrektur (David-Feedback 25.7.2026, wörtlich): «also das
 // kontextfenster soll gliederung nicht abschneiden. sie soll einfach unten an
@@ -31,8 +32,7 @@ import { test, expect } from '@playwright/test';
 // steht die Assertion hier und nicht in einer eigenen Spec: sie gehört an das
 // bestehende CLS-Messfenster des Kontext-Fensters.
 //
-// Drossel wie leser-kopf-a9: CI = 4× (2-Kern-Runner), lokal 6× (Auftrag E4).
-const DROSSEL = process.env.CI ? 4 : 6;
+// Drossel aus `./helpers/budgets` (§5, Auftrag E4).
 
 test('E4-Korrektur: Panel im Fluss unter der vollen Gliederung — kein Abschneiden, CLS 0', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });

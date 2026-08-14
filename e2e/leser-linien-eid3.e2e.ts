@@ -1,5 +1,6 @@
 // @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test';
+import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets';
 
 // W2·5d-EID3 Teil (b) — A9-Querschnitt auf der EINZIGEN Fläche, die der Umbau
 // überhaupt berührt.
@@ -16,11 +17,8 @@ import { test, expect, type Page } from '@playwright/test';
 // bestätigt — die Linie wird NIE aufgedrängt).
 //
 // A9-DoD: Bedienbarkeit (Tastatur/aria/Tap-Ziel) und Flüssigkeit unter
-// CPU-Throttle (CI 4×, lokal 6× — Kalibrierung wie leser-kopf-a9.e2e.ts),
-// CLS über den INTERAKTIONS-Fluss = 0, keine Konsolenfehler.
-const DROSSEL = process.env.CI ? 4 : 6;
-const REAKTIONS_BUDGET = process.env.CI ? 8000 : 5000;
-const REAKTIONS_LATTE = REAKTIONS_BUDGET + 3000;
+// CPU-Throttle, CLS über den INTERAKTIONS-Fluss = 0, keine Konsolenfehler.
+// Drossel/Budget/Latte aus `./helpers/budgets` (§5) — dort auch die Herleitung.
 // WCAG 2.5.8 (AA, Target Size Minimum) — dieselbe Latte wie in der übrigen
 // Reader-A9-Reihe.
 const TAP_MIN = 24;
@@ -70,7 +68,7 @@ async function guideStapel(page: Page, artId: string): Promise<number> {
 }
 
 test('EID-3(b): SVG behält EINEN Guide auf der gerenderten Ebene; Toggle flüssig unter CPU-Throttle, CLS 0', async ({ page }) => {
-  if (process.env.CI) test.setTimeout(120_000);
+  if (CONTAINER_BUDGET_CI) test.setTimeout(CONTAINER_BUDGET_CI);
   const fehler = fehlerSammeln(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   const client = await page.context().newCDPSession(page);
