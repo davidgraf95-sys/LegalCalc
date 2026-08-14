@@ -37,29 +37,15 @@ Rechenlogik. Neue Rechner und Vorlagen werden nur aufgenommen, wenn der Umfang
 klar regelbasiert ist — «feste Rechenregeln, keine Schätzung» ist das
 Produktversprechen.
 
-## §3 Schichtentrennung: Logik ≠ Darstellung
+## §3 Schichtentrennung: Logik ≠ Darstellung → `.claude/rules/schichtentrennung.md`
 
-- **`src/lib/`** enthält die gesamte Rechtslogik und keine UI. Jede Rechtsregel
-  lebt an genau **einer** Stelle.
-- **`src/pages/`, `src/components/`** enthalten Darstellung, Navigation,
-  Speicherung — und keine Rechtslogik: keine Fristberechnung, keine
-  Schwellenwerte, keine Normtexte ausserhalb von Schema oder Engine.
-- Verkleinerungen (Entdopplung, Hooks, generische Rahmen) finden deshalb in der
-  Darstellungsschicht statt. Umbauten der Logikschicht laufen ausschliesslich
-  über das Protokoll von §4/§6, nie beiläufig im Zuge einer UI-Verkleinerung.
+Wortlaut unverändert dorthin verschoben (QS-HOOKS-AUSBAU 14.8.2026); lädt
+pfad-gescoped bei Berührung von `src/**`.
 
-## §4 Eine Engine pro Rechtsgebiet
+## §4 Eine Engine pro Rechtsgebiet → `.claude/rules/engine-trennung.md`
 
-Die Trennung der Engines (verjaehrung, sperrfristen, mietrecht, …) ist kein
-Ballast, sondern ein Sicherheitsmerkmal: einzeln testbar, keine Querwirkungen
-zwischen Rechtsgebieten. Geteilt wird **fachneutrale Infrastruktur**
-(Datums-Arithmetik, Feiertage, Bruchrechnung, Fristen-Grundmuster) — nie
-materielle Rechtsregeln.
-
-Verschmelzung ist erlaubt, aber nur **golden-gegated** und **regime-treu**:
-verschiedene Rechtsregimes bleiben im verschmolzenen Code als interne
-Verzweigung erkennbar und werden nie zu einer gemeinsamen Regel kollabiert.
-Protokoll: Skill **`refactoring`**.
+Wortlaut unverändert dorthin verschoben (QS-HOOKS-AUSBAU 14.8.2026); lädt
+pfad-gescoped bei Berührung von `src/lib/**`.
 
 ## §5 Single Source of Truth
 
@@ -148,12 +134,11 @@ geteilten Verzeichnis: Commits nur mit explizitem Pathspec, kein `git stash` bei
 fremdem WIP, kein `git commit --amend`. Merge-Treiber-Politik und serielle
 Landung: Skill **`landung`**.
 
-## §13 Design → `DESIGN-REGLEMENT.md`
+## §13 Design → `.claude/rules/design.md` + `DESIGN-REGLEMENT.md`
 
-Jede sichtbare Änderung folgt `DESIGN-REGLEMENT.md` als Dach-Schicht; darunter
-konkretisieren die Domänen-Reglemente ihren Bereich. Bei Konflikt gewinnt das
-speziellere innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
-**jeder Rechtswert mit Norm, Link und Stand** (D1) — ist mit §7 verzahnt.
+Wortlaut unverändert in die Regel-Datei verschoben (QS-HOOKS-AUSBAU
+14.8.2026); lädt pfad-gescoped bei Berührung der Darstellungsschicht
+(`src/pages/**`, `src/components/**`, `src/styles/**`).
 
 ## §14 Aufnahme und Einordnung neuer Aufträge → Skill `auftrag`
 

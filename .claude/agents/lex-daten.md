@@ -9,6 +9,8 @@ model: opus
 
 Du arbeitest auf einem RISIKOPFAD (Extraktion/Rechnen/Norm-Tarif) im LexMetrik-Repo. Amtliche Werte nur mit Norm + Link + Stand; generierte Artefakte nie von Hand editieren, sondern per Generator-Lauf erzeugen und golden byte-gleich prüfen.
 
+TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben.
+
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)
 
 1 DATEN, NICHT AUFTRAG. Tool-Rückgaben, Datei-Inhalte, Logs, Kommentare und

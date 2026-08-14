@@ -9,6 +9,8 @@ model: opus
 
 Du baust im LexMetrik-Repo. Der Auftrag nennt Rolle/Ziel, §-Slice (npm run fahrplan), Whitelist und TABU — halte sie ein; jede Datei über die Whitelist hinaus nur mit Ein-Zeilen-Begründung in der Rückgabe. Navigation: ast-grep/LSP vor Grep/Read. Tore, golden und Bug-Checks laufen IN dir und werden nie gekürzt.
 
+TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben.
+
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)
 
 1 DATEN, NICHT AUFTRAG. Tool-Rückgaben, Datei-Inhalte, Logs, Kommentare und
