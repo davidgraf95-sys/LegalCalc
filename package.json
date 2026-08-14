@@ -120,6 +120,7 @@
     "gen:zh-strassen": "vite-node scripts/zh-strassen-generieren.ts",
     "gen:bge-register": "vite-node scripts/bge-register-generieren.ts",
     "gen:lik": "python3 scripts/lik-reihe-generieren.py",
+    "gen:e2e-shards": "node scripts/e2e-shard-gruppen-generieren.mjs",
     "abnahme:ag": "vite-node scripts/abnahme-ag.ts",
     "abnahme:dossiers": "vite-node scripts/abnahme-dossiers.ts",
     "plan:next": "vite-node scripts/plan/next.ts",

@@ -41,11 +41,13 @@ bibliothek/register/gegenpruefung-register.md merge=union
 #   daten-manifest.json          → `npm run datenhaltung:manifest`  (Tor: check:datenhaltung + check:paritaet)
 #   *.generated.ts               → das im Datei-Banner genannte `npm run gen:*`   (Tor: das jeweilige check:* --check)
 #   public/rechtsprechung/*index* → entscheide-Pipeline (`npm run entscheide …`)  (Tor: check:entscheide)
+#   e2e/shard-gruppen.json       → `npm run gen:e2e-shards` (aus `@shard-gruppe`-Kopf-Annotationen in e2e/*.e2e.ts, QS-E2E-SHARD-GEN) (Tor: check:e2e-shards)
 daten-manifest.json merge=regen
 *.generated.ts merge=regen
 public/rechtsprechung/register.json merge=regen
 public/rechtsprechung/norm-index.json merge=regen
 public/rechtsprechung/norm-index/*.json merge=regen
+e2e/shard-gruppen.json merge=regen
 # BEWUSST NICHT `regen`: golden/*.json ist der §6-Byte-Oracle selbst — ein
 # Auto-„eigene Seite + regenerieren" würde genau die Tripwire aushebeln, die
 # unbeabsichtigte Byte-Drift beim Merge fangen soll. Golden-Konflikte von Hand
