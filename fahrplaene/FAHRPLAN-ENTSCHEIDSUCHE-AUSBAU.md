@@ -232,6 +232,11 @@ Nachweis ist eine Erfindung.
 
 ## §8 · ROADMAP-Spec W2·6-RNAME (wörtlich verschoben 31.7.2026)
 
+*Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): Das Etikett `W2·6-RNAME` ist
+aufgegangen — bauender Schritt dieser Spec ist seither `W2·6-RESOLVER` (Risikopfad-Dach der
+Rechtsprechungs-Daten), die Zeile steht dort als Checklisten-Eintrag. Gegenstand, Gegenrichtung
+und `QS-GP`-Pflicht unverändert.*
+
 > **→ Bau-Spec: «6. Richternamen gegen den Staatskalender auflösen» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*

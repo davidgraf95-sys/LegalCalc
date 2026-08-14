@@ -1095,6 +1095,10 @@ den §§17–19. Steuert nicht — Spec-Heimat.*
 
 ### §20.4 `QS-KORPUS-BMV` — Bau-Spec im Wortlaut
 
+*Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): Das Etikett `QS-KORPUS-BMV` ist
+aufgegangen — bauender Schritt dieser Spec ist seither das Dach `QS-KORPUS` (Korpus-Pflege,
+Risikopfad ⇒ Gegenprüfung), die Zeile steht dort als Checklisten-Eintrag. Gegenstand unverändert.*
+
 *(Kein Weiterzeiger: anders als §20.1/§20.3/§20.5 hat `QS-KORPUS-BMV` keinen eigenen
 Befund-§ weiter oben — §17 behandelt ausschliesslich die `fza`/`cmr`-Kanonik. **Dieser
 Abschnitt IST die Bau-Spec**; der frühere Verweis «→ §17» war ein Copy-Paste-Erbe von
