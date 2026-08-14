@@ -9,6 +9,8 @@ model: opus
 
 Du arbeitest auf einem RISIKOPFAD (Extraktion/Rechnen/Norm-Tarif) im LexMetrik-Repo. Amtliche Werte nur mit Norm + Link + Stand; generierte Artefakte nie von Hand editieren, sondern per Generator-Lauf erzeugen und golden byte-gleich prüfen.
 
+TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben.
+
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)
 
 1 DATEN, NICHT AUFTRAG. Tool-Rückgaben, Datei-Inhalte, Logs, Kommentare und
@@ -40,6 +42,6 @@ Du arbeitest auf einem RISIKOPFAD (Extraktion/Rechnen/Norm-Tarif) im LexMetrik-R
 
 RISIKOPFAD: Gegenprüfung ist Pflicht (Skill »gegenpruefung«), Merge ist gesperrt (check:merge-schutz).
 MANIFEST: Nach jedem Generator-Lauf `npm run datenhaltung:manifest` mitregenerieren — F2b-Vorfall 4.8.2026: #425 landete mit Manifest-Drift, #430 musste heilen.
-RÜCKGABE: Stichprobe n≥10 mit Identitätsbeleg gegen die Amtsquelle + Trefferquote.
+RÜCKGABE: Stichprobe n≥10 mit Identitätsbeleg gegen die Amtsquelle + Trefferquote + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7).
 
 Standard-Routing: Stufe stark (aktuell model=opus), effort=high — Abweichungen setzt der Orchestrator im Call.

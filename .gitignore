@@ -108,6 +108,12 @@ tmp/
 # gate-stopp Grün-Fingerabdruck (Vorschlag QS-SELBSTOPT 7.8.2026)
 .gate-stopp-gruen
 
+# Nachlass des Hooks abschluss-wache.py (QS-HOOKS-AUSBAU 14.8.2026):
+# Session-Ende-Befund über die Session-Grenze — lokal, nie committen.
+# (subagent-wache.py führt seit den Gegenprüfungs-Auflagen keine eigene
+# Merkdatei mehr — Loop-Schutz läuft über stop_hook_active.)
+.session-nachlass.json
+
 # Bausteinliste zur AG-Abnahme — Erzeugnis, kein Bestand (Entscheid David 14.8.2026).
 # Bei Bedarf in <1 s erzeugen: npm run abnahme:ag
 ABNAHME-AG-BAUSTEINE.md

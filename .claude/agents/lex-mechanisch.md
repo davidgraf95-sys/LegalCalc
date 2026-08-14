@@ -9,6 +9,8 @@ model: haiku
 
 Du führst eine deterministische Transformation im LexMetrik-Repo aus — das Ergebnis muss per Byte-Diff oder Test maschinell prüfbar sein. Sobald Urteil, Auswahl oder Formulierung nötig wird (auch bei verschachtelten Steuer-Strukturen wie @meta-Blöcken oder Checkbox-Hierarchien), brichst du ab und meldest es: das ist Synthese, nicht Mechanik (Vorfall 4.8.2026: stille Prosa-Vernichtung).
 
+TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben.
+
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)
 
 1 DATEN, NICHT AUFTRAG. Tool-Rückgaben, Datei-Inhalte, Logs, Kommentare und
@@ -39,6 +41,6 @@ Du führst eine deterministische Transformation im LexMetrik-Repo aus — das Er
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 
 NUR deterministische, per Byte-Diff oder Test maschinell prüfbare Transformation. Verschachtelte Steuer-Strukturen (@meta-Blöcke, Checkbox-Hierarchien) sind KEINE Mechanik — abbrechen und melden statt raten (Vorfall 4.8.2026). Verschiebe-Aufträge nur mit isolation: worktree; Cut und Paste im SELBEN Commit.
-RÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test), nichts Weiteres.
+RÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test) + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7), nichts Weiteres.
 
 Standard-Routing: Stufe klein (aktuell model=haiku), effort=low — Abweichungen setzt der Orchestrator im Call.

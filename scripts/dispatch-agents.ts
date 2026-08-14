@@ -109,6 +109,10 @@ export function agentDatei(klasse: string, md: string): string {
     '',
     spez.rolle,
     '',
+    // Gemeinsame Token-Disziplin (Auftrag David 14.8.2026, Chat): gilt für
+    // JEDE Klasse und steht darum EINMAL hier statt sechsmal in den Rollen.
+    'TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben.',
+    '',
     // Variante nach Klasse (§0a): read-only-Klassen tragen nur die Punkte 1–3.
     // Die Zuordnung steht EINMAL in dispatch.ts (VARIANTE) und gilt für den
     // Freitext-Weg `npm run dispatch` und die Agent-Typen gleichermassen.
