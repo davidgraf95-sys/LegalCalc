@@ -133,7 +133,7 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   trägt sichtbaren ehrlichen Status + Stand; Golden-Abdeckung & Norm-Anker-Prüfung automatisieren.
   **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §1.
 - **Adversariale Gegenprüfung — Restkampagne + Werkzeug-Härtungen** *(QS-GP, `[OF]`)* — offen ist
-  <!-- @meta id: QS-GP · status: ready · blocker: null · dep: [] · kollision: [scripts/gegenpruefung, .claude/skills/gegenpruefung, bibliothek/register, scripts/prerender.ts, scripts/git-setup.sh, scripts/check-gegenpruefung.ts, src/lib/rechtsprechung/besetzung, scripts/normtext/entscheide-schreiben.ts] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
+  <!-- @meta id: QS-GP · status: ready · blocker: null · dep: [] · kollision: [scripts/gegenpruefung, .claude/skills/gegenpruefung, bibliothek/register, scripts/prerender.ts, package.json, scripts/git-setup.sh, scripts/check-gegenpruefung.ts, src/lib/rechtsprechung/besetzung, scripts/normtext/entscheide-schreiben.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
   Baustein d (rückwirkende Kampagne, Stufen 2–3 + BGE-Korpus-Regenerierung).
   **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2.
   - [ ] `check:prerender-golden` als Opt-in-Beweiswerkzeug (nicht im Pflicht-Gate) — der Seiten-Byte-Gleichheits-Beweis ist heute Handarbeit. §3.2.
@@ -170,7 +170,7 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   Rechtsinhalt (O-Reihe); keine Massnahme kürzt Beweis, Tor oder Prüfung.
   **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
 - **Basis-Ausbau — Fundament** *(QS-BASIS, `[OF]`)*. CI/lokal-Tor-Parität + offene B-Einheiten.
-  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, package.json, package-lock.json, knip.json] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, package.json, package-lock.json, knip.json] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] Totcode-Meldung wird echtes Tor `check:tot` — blockierend bei NEUEN Meldungen (Basis: 1). Reine Prüflogik. §3.2.
   - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted — Dependabot meldet 2 Verwundbarkeiten (1 hoch); Audit als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
@@ -340,7 +340,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 - **Merkposten:** `register.json` steht bei 97 % des 780-KB-gzip-Deckels — wer es weiter belädt,
   reisst `check:perf-budget`; Lösung ist eine eigene Projektion, nie das Anheben der Schranke (§8).
 - [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — ✅ V1a/V1b/V1c gebaut 3./4.7.2026 (Chronik):
-  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, reine UI auf vorhandenen Daten (§3). Offen:
   V2 (E3-Serving) · V3 (E6a) — an den Datenstrang gekoppelt.
   **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.

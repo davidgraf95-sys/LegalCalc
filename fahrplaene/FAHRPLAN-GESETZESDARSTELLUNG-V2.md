@@ -452,7 +452,7 @@ Einordnung stehengelassen, Protokoll je Frage direkt darunter).
 **Ergebnis:** Der Bau-Auftrag ist **V1 — Guide-Mechanik vollständig zurückbauen,
 Übersicht der Seitenleiste überlassen** (Abschnitt b oben), ohne Typo-Nachrüstung (V2)
 und ohne dynamischen Scroll-Guide (V3). Umsetzung als eigener Roadmap-Schritt:
-`W2·5k-LINIEN-RUECKBAU` (ROADMAP.md).
+Checklisten-Zeile am Dach `W2·5h-GESETZ-UI` (bis 14.8.2026 eigenes Etikett `W2·5k-LINIEN-RUECKBAU`).
 
 **Offene Punkte, die in den Bau-Schritt gehen:** (i) ein eigener, golden-neutraler
 Bau-PR mit Vorher/Nachher-Beweis (analog L-1/L-2) — deklarierte Verhaltensänderung, kein

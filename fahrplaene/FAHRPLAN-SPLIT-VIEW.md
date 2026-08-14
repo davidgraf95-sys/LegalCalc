@@ -1,7 +1,9 @@
 # FAHRPLAN — Multi-Pane / Split-View (+ Breiten-Umschalter)
 <!-- @lagebild name: Split-View · zweck: Gesetz, Rechner und Entscheid nebeneinander wie Browser-Fenster. -->
 
-**Heimat: ROADMAP-Schritte `W3·14` und `W3·14-B3`.**
+**Heimat: ROADMAP-Schritt `W3·14`.** *Nachtrag 14.8.2026 (QS-PLAN-EINFACH): die früheren
+Teil-Etiketten `W3·14-B3`/`-S`/`-a11y` sind Checklisten-Zeilen des Dachs — Trailer ist
+einheitlich `Roadmap: W3·14`.*
 
 > **Stand 29.6.2026 · KOMPLETT: A + B-0 + B-0b + B-1 + B-2 + B-2.5 + B-4 + B-5 (Branch
 > `feat/split-view-strang-a`).** A/B-0/B-0b + B-1/B-2 auf **Prod** (`bec0ecb7`); B-2.5/B-4/B-5
@@ -215,13 +217,12 @@ jede Phase `npm run gate` grün + Default Golden byte-gleich; visuell breit/2-/3
 **Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
   **Session-Granularität (AP-6, 31.7.2026):** Strang A sowie B-0/B-0b/B-1/B-2/B-2.5/B-4/B-5 sind
-  gebaut; `W3·14-S` (Bündel S) und `W3·14-a11y` tragen bereits eigene `@meta`. Der einzige noch
-  unetikettierte Rest — **B-3** — bekommt unten sein eigenes Etikett; damit ist dieser Schritt
-  vollständig Dach über drei abschliessbare Teilschritte.
+  gebaut; Bündel S, a11y-Restpunkte und B-3 stehen seit 14.8.2026 als Checklisten-Zeilen am
+  Dach `W3·14` (Etiketten-Konsolidierung QS-PLAN-EINFACH).
 
 **Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
-  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: diese Datei §STRANG B (B-3). Trailer `Roadmap: W3·14-B3`.
+  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen bereits; **offen**: Scroll-POSITIONS-Wiederherstellung (`ScrollWiederherstellung`/`ScrollZuHash` sind in `App.tsx` weiterhin window-basiert und im Multipane-Primär ohne Wirkung) + Tastatur-Pane-Wechsel. Detail: diese Datei §STRANG B (B-3). Trailer `Roadmap: W3·14` (Teil-Etikett 14.8.2026 ins Dach konsolidiert).
 
 ### Bündel S (Auftrags-Eingang 30.6.2026) im Wortlaut (verschoben 31.7.2026)
 
