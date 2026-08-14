@@ -152,7 +152,10 @@ export const INVENTAR: readonly string[] = [
   // Bau-Evaluation 3.8.2026 (Nutzer-Turn): CI-Kosten- und Feedback-Latenz-Befunde.
   // Die Worktree-/Branch-Inventur aus derselben Evaluation ist KEIN neuer Schritt —
   // sie erweitert QS-AUTOMATIK-BERICHT (Bündelung, Skill `auftrag` Ziff. 3).
-  'QS-GP-PREPUSH', 'QS-BASIS-DOKU-CI',
+  // QS-BASIS-DOKU-CI erledigt 14.8.2026 (PR #488) → Chronik-Abschnitt oben in
+  // ROADMAP-CHRONIK.md. David gab den Grundsatz frei, die Messung korrigierte die
+  // Prämisse (nicht reine .md-Pushes waren teuer, sondern .md + inventar.ts).
+  'QS-GP-PREPUSH',
 
   // F2b-Vorfall 4.8.2026 (#425 grün trotz Manifest-Drift): die Paritäts-Sonde
   // zählte Wächter-Workflows als Deckung. Akuter Fix (check:datenhaltung in

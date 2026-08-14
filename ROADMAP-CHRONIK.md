@@ -1,5 +1,47 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## QS-BASIS-DOKU-CI — Doku-Kurzpfad auch für main-Pushes *(erledigt 14.8.2026, PR #488 Squash `13a3d05ad`; überführt 14.8.2026)*
+
+- [x] **`QS-BASIS-DOKU-CI` · Doku-Kurzpfad auch für main-Pushes** *(**FREIGEGEBEN David 14.8.2026**: «wird freigegeben» — der Grundsatz «ein Deploy-Stand wird nie nach Dateiendungen abgekürzt» wird für reine `.md`-Pushes auf `main` bewusst gelockert; Anlass war ~75 CI-Minuten pro Tag für reine Plan-Buchhaltung)* — Ziel: Ein Push, der ausschliesslich `.md` berührt, läuft den Kurzpfad statt des Volllaufs. Prüfungen, die `.md`-Inhalte wirklich lesen, bleiben **echt**; im Zweifel Volllauf. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.4.
+
+**Die Prämisse des Schritts war überholt — gemessen, bevor gebaut wurde.** Der Fahrplan (angelegt
+3.8.2026) beschreibt Voll-CI für reine `.md`-Pushes. Tatsächlich trug `on.push` seit der
+CI-Härtung `paths-ignore: '**.md'`: ein reiner .md-Push erzeugte **gar keinen** Lauf. Die Messung
+über 419 main-Commits der letzten 30 Tage fand den wahren Kostentreiber:
+
+| Klasse | Commits | vorher |
+|---|---:|---|
+| rein `.md` | 158 | kein Lauf — und damit auch **keine** Prüfung |
+| `.md` + **nur** `scripts/plan/inventar.ts` | 42 | volles Programm |
+| echter Code | 219 | volles Programm (richtig so) |
+
+Die Inventarliste ist der von `aufraeumen.md` vorgeschriebene Zweitschritt jeder Rotation — eine
+ID-Zeile Buchhaltung zog 42-mal das volle Programm nach sich. Zugleich war der Filter ein **Loch**:
+für die 158 reinen .md-Pushes liefen auch `Merge-Schutz` und `check:plan` nicht, die im PR-Doku-Pfad
+ausdrücklich ECHT laufen.
+
+**Gebaut:** `paths-ignore` auf `push` entfernt, der `diff`-Job klassiert jetzt auch push-Events;
+Doku-Menge = alle `.md` **plus** `scripts/plan/inventar.ts` (reine ID-Buchhaltung, einziger Leser
+ist `check:plan`, und das läuft im Doku-Pfad echt). `perf`/Lighthouse zusätzlich auf `art == code`
+gestellt (sonst liefe es künftig bei jeder Roadmap-Pflege). `merge_group` unberührt. Fehlerseite
+(§6.7): kein Vorgänger-Commit · Compare-API nicht auswertbar · 0 Dateien · ≥300 Dateien
+(API-Kappungsgrenze) fallen alle auf `code`.
+
+**§6.7-Beweis, beide Richtungen live auf main gemessen (14.8.2026):**
+
+| | Klassierung | Bau | Tore | Shard 1/8 |
+|---|---|---:|---:|---:|
+| Doku-Push `3c908cce2` (1 × `.md`) | `art=doku` | 0.1 min | 0.8 min | 0.1 min |
+| Code-Push `13a3d05ad` (11 Dateien) | `art=code` | 2.1 min | 4.9 min | 3.1 min |
+
+Protokoll-Zitate: «Reiner Doku-Push (1 Datei(en)) — Merge-Schutz, Testtreue und check:plan laufen
+ECHT, restliche Code-Tore quittieren» bzw. «Nicht-Doku-Dateien im Push — volles Programm».
+
+**Ehrlich zur Erwartung (§8):** Der Gewinn ist kleiner, als der Fahrplan von 3.8. annahm — nicht
+«15 Minuten gespart», sondern die schweren Jobs fallen von 2.1/4.9/3.1 auf 0.1/0.8/0.1 Minuten.
+Die Runner-Grundlast (Checkout, `npm ci`) läuft im Doku-Pfad weiterhin mit; sie zu überspringen ist
+ein Kandidat für `QS-PLAN-EINFACH`, kein offener Mangel dieses Schritts.
+
 ## W2·17 B3–B7 + Fehlerbuch-Erledigungen (8./9.8.2026, übertragen 9.8.2026)
 
 Aus ROADMAP verdichtet (QS-TOK-Budget):
