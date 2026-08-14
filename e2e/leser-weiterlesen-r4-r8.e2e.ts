@@ -1,6 +1,7 @@
 // @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
+import { DROSSEL } from './helpers/budgets'
 
 // ─── W2·10-UI-NAV/R4 + R8 ────────────────────────────────────────────────────
 //
@@ -19,8 +20,7 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
 // Dokument-Geometrie mit und ohne Chip und verlangt Byte-Gleichheit der
 // y-Positionen. Ein Timing-Mass könnte hier nur Lade-Shifts der Seite messen,
 // die es schon vorher gab; die Geometrie sagt, was die Frage eigentlich ist.
-// Drossel wie leser-kopf-a9/leser-kontext-e4: CI = 4× (2-Kern-Runner), lokal 6×.
-const DROSSEL = process.env.CI ? 4 : 6
+// Drossel aus `./helpers/budgets` (§5).
 const ERLASS = '/gesetze/bund/BV'
 const SPEICHER = 'lexmetrik-leseposition'
 
