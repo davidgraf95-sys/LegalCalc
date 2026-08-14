@@ -651,6 +651,18 @@ Mutation den Test rot zeigt (§6.7), die Bestandszeilen des Blocks unverändert 
 
 ### §Einfach · Plan-System vereinfachen (Schritt `QS-PLAN-EINFACH`, Auftrag David 14.8.2026)
 
+**Stand 14.8.2026 — Kern gelandet (Session mit David im Chat):** (1) Tote Etikett-Felder `of`,
+`seq-hart`, `seq-weich`, `statusAgent` + `groesse`-Vokabelprüfung gestrichen (Parser tolerant,
+Serializer räumt ab; 310 Plan-Tests nachgezogen). (2) ROADMAP 100.1 → 77.9 KB: Schritt-Prosa auf
+Zielform («Ziel und Grenzen, nicht der Weg» — im ROADMAP-Kopf kodifiziert), Beweis der
+Steuerungs-Neutralität: `plan:dump` vorher/nachher byte-gleich; Voll-Wortlaut: ROADMAP@`cc89fd3d0`.
+(3) Rotations-Hysterese (Riss ⇒ Räumen bis 90 % Budget). (4) `check:zitate` mit echtem Abbruchpfad
+(rot bei Befunden/ohne Caches, live rot gezeigt), `check:inventur` → `report:inventur` und aus
+Kette + CI genommen. **Offen (Checkliste am Schritt):** Skill-Diät `auftrag`/`bauschritt`/
+`aufraeumen.md` · Halden-Abbau · Etiketten-Sterblichkeit. Der Audit-Vorschlag
+«Anlage nur mit wirkt/entfällt-Vermerk» wurde in dieser Session bewusst NICHT als neue Regel
+verankert (er wäre selbst Zuwachs); der Streichgrundsatz von §17-Gegengewicht deckt die Sorge.
+
 **Der Auftrag ist bewusst OFFEN.** David, 14.8.2026: «wichtig ist das alles weniger kompliziert
 wird … neue session soll selbstständig entscheiden können was sie anpassen soll». Dieser § ist
 darum **Befundlage, keine Bau-Anweisung**. Die bauende Session wählt selbst, was sie anfasst, in
