@@ -2276,23 +2276,29 @@ in die Chronik, im Plan bleibt ein ✅-Einzeiler + Pointer. Wortlaut wie am 13.8
 weiter, Risiko-Vermerke und Fahrplan-Zeiger wörtlich an der Zeile; Dach-`kollision` je um die
 aufgenommene Fläche erweitert). Anlass: Auftrag David 15.8.2026 («eventuell schritte zusammenlegen»,
 BAUPLAN-UMBAU: «alle offenen Schritte gross schneiden»); Muster der Etiketten-Konsolidierung vom
-14.8.2026. Etiketten-Bestand 65 → 53 (14 aufgegangen, 2 neue Dächer). **Risiko-Klassen nie gemischt:** fusioniert wurde nur
-innerhalb derselben Fläche UND derselben Risiko-Klasse; die Risikopfad-Vermerke (`QS-GP`,
-«Gegenprüfung») stehen wörtlich an der aufgenommenen Zeile, eine Session nimmt sortenreine
-Teilmengen.
+14.8.2026. Etiketten-Bestand 65 → 53 (14 aufgegangen, 2 neue Dächer). **Sortenreinheit lebt an der
+Zeile, nicht am Etikett** (Korrektur 15.8. nach Gegenprüfungs-Auflage): ein Dach darf Zeilen
+verschiedener Risiko-Klassen tragen — massgeblich ist, dass jede Bau-Session eine sortenreine
+Teilmenge nimmt und das Gegenprüfungs-Tor pfadbasiert greift (`istRisikoPfad`); Risiko-Zeilen
+tragen den `QS-GP`-Vermerk wörtlich an der Zeile. Fusion 4 überspannt zudem bewusst vier Flächen
+(Welle-3-Horizont).
 
 **Die fünf Fusionen mit Begründung:**
 
 1. `W2·6-ADRESSEN` · `W2·6-FILTER` · `W2·6-ZNETZ` · `W2·6-UEBERSICHT` → **`W2·6`** — dieselbe Fläche
-   (Rechtsprechung: `scripts/rechtsprechung`, `public/rechtsprechung`, `src/lib/rechtsprechung`) und
-   dieselbe Risiko-Klasse (nicht-Risikopfad); das Dach trug die vier ohnehin als «vier eigenständige
-   Unterschritte». Die bisherige `dep: [W2·6-RESOLVER]` von `W2·6-UEBERSICHT` ist Prosa geworden
-   («erst nach dem Resolver-Teil»).
+   (Rechtsprechung: `scripts/rechtsprechung`, `public/rechtsprechung`, `src/lib/rechtsprechung`);
+   Risiko-Klassen GEMISCHT an den Zeilen (Korrektur 15.8.: `W2·6-ZNETZ` berührt
+   `scripts/verzahnung/` und `W2·6-FILTER` `scripts/datenhaltung` — beides `istRisikoPfad`-wahr,
+   `QS-GP`-Vermerk an diesen Zeilen; ADRESSEN/UEBERSICHT nicht-Risiko). Das Dach trug die vier
+   ohnehin als «vier eigenständige Unterschritte». Die bisherige `dep: [W2·6-RESOLVER]` von
+   `W2·6-UEBERSICHT` ist Prosa geworden («erst nach dem Resolver-Teil»).
 2. `W2·6-RNAME` → **`W2·6-RESOLVER`** — beide Risikopfad Rechtsprechungs-Daten (Extraktion/
    Personendaten, `QS-GP` Pflicht), beide arbeiten am Auflösen von Rohtext gegen amtliche Register.
 3. `W2·5j-TABELLEN` · `W2·6-MEHRSPRACH` → **`W2·5g-ZEIT`** — alle drei Fläche Gesetzesdaten
-   (`scripts/normtext` / `public/normtext` / Gesetzes-Leser), alle drei nicht-Risiko im Sinne der
-   Klassen-Trennung, alle drei mit demselben Extraktions-`QS-GP`-Vermerk an der Zeile.
+   (`scripts/normtext` / `public/normtext` / Gesetzes-Leser). Korrektur 15.8. (Gegenprüfungs-
+   Auflage): die Fläche `scripts/normtext` ist `istRisikoPfad`-wahr — wo eine Zeile Extraktion
+   berührt, gilt Gegenprüfungs-Pflicht; der `QS-GP`-Vermerk steht seit der Korrektur auch an der
+   MEHRSPRACH-Zeile.
 4. `W3·10` · `W3·11` · `W3·13` · `W3·14` → **`W3-AUSBAU`** (neu) — Welle-3-Horizont, vier Flächen
    (Rechner · Fedlex · Vorlagen · UI) unter einem Dach; je Zeile eine sortenreine Bau-Einheit.
    `W3·12` bleibt eigenständig (26×-Slot-Inhaber), `W3·15-RICHTER` bleibt eigenständig (blocked,
