@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-14",
+  "erzeugt": "2026-08-10",
   "eintraege": [
     {
       "id": "kanton/GE/rsg_e1_50p06/art_1",
@@ -36,7 +36,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "865c7cf98cb67cb78a3e9521846cf8849aa3c11f2a0477164c33052d3ddea915"
     },
@@ -69,7 +69,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "2c6cdf2b587a8ff6f85a0c05f3d6efda4b9f15a31067991d25bd6dde4f7fd121"
     },
@@ -96,7 +96,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "b7854b13a3cd88d313c7fd3acbff21c087d4d6f2fcbd6ca9f1de6a6a065bdc58"
     },
@@ -115,7 +115,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "e8659ebad566574c452ad602a350e8a41a198fdfbdb89fcf06765e73e2442a42"
     },
@@ -144,7 +144,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "2a45cdbc37f60a32dcc6548ae7a9cd20aa35004fca8337624054387e111a05e3"
     },
@@ -169,7 +169,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "6c52e1e138b526e817574c4e38a7963db489d29b6429f05d48bf03cb4d941244"
     },
@@ -198,7 +198,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "f635b2699396ee2b6b654178e81bbbd37aa80491982beb24a1c3496a520f90b0"
     },
@@ -223,7 +223,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "a56dbdda2d414155cb63749ed3f3d57488cc8692d58fca3ed33d6aecce4e8270"
     },
@@ -270,7 +270,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "97fd51956682cf088ddd293a04a4b7eea48223edeaa1dd39bb9dac695dd013e7"
     },
@@ -289,7 +289,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "76531d41c8d35e785bc01b8c148543929b8ee7a6f26ff13f66daee30ccbe59b4"
     },
@@ -316,7 +316,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "24e617dd60f6027ae028a54672a35ee122e9fef67aa1ac0bacaa14c52547a5ea"
     },
@@ -335,7 +335,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "7b389cdbee5e9160d5df7e5e7f60f0dd662f72bfd94dc29fd87a2e0ab883ebfa"
     },
@@ -420,7 +420,7 @@
       ],
       "stand": "2024-04-24",
       "quelleUrl": "https://silgeneve.ch/legis/data/rsg_e1_50p06.htm",
-      "abgerufen": "2026-08-14",
+      "abgerufen": "2026-08-10",
       "fassungsToken": "f998ef537d30cbb49eb64b1ea9fdb645c7c5e48aa70e59398f22d14d8cb534f8",
       "sha": "08d00ff54263efb35f1d1ad129605c1894b199f3c1a9880bcbcdb3588b69589a"
     }
