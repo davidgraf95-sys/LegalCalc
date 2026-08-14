@@ -1,5 +1,7 @@
 # /sandbox prüfen — Recherche-Befund 14.8.2026
 
+**Erstellt:** 14.8.2026 (QS-HOOKS-AUSBAU Punkt 4, lex-recherche/lex-synthese).
+
 **Anlass:** QS-HOOKS-AUSBAU, Punkt 4 («/sandbox prüfen» — Folge-Lücke aus dem
 State-of-the-Art-Abgleich vom 7.8.2026, siehe
 [state-of-the-art-abgleich-2026-08-07.md](state-of-the-art-abgleich-2026-08-07.md)).
