@@ -130,18 +130,18 @@ describe('bauPrompt — die Schätzung reist mit', () => {
   // Grössen-Check in Station A des Skills `bauschritt` ist der einzige Ort, der
   // aus ihr eine Handlung ableitet, und `plan:next` gibt das Feld nicht aus.
   it('S verlangt Bündeln, L verlangt Schneiden, M nennt den Normalfall', () => {
-    expect(bauPrompt(einheit('S'), SCHRITT)).toContain('Geschätzte Grösse: S');
-    expect(bauPrompt(einheit('S'), SCHRITT)).toContain('kollisionsfreie Nachbarn');
+    expect(bauPrompt(einheit('S'), SCHRITT)).toContain('Grösse S —');
+    expect(bauPrompt(einheit('S'), SCHRITT)).toContain('kollisionsfreie `ready-now`-Nachbarn');
     expect(bauPrompt(einheit('L'), SCHRITT)).toContain('in sessionfüllende Teilschritte schneiden');
-    expect(bauPrompt(einheit('M'), SCHRITT)).toContain('Geschätzte Grösse: M');
+    expect(bauPrompt(einheit('M'), SCHRITT)).toContain('Grösse M —');
   });
 
   it('ohne Schätzung sagt der Prompt das ehrlich, statt M zu unterstellen', () => {
-    expect(bauPrompt(einheit(null), SCHRITT)).toContain('Geschätzte Grösse: ungeschätzt');
+    expect(bauPrompt(einheit(null), SCHRITT)).toContain('Grösse ungeschätzt');
   });
 
   it('unbekanntes Vokabular fällt auf «ungeschätzt» zurück, nie auf eine geratene Klasse', () => {
-    expect(bauPrompt(einheit('XL'), SCHRITT)).toContain('Geschätzte Grösse: ungeschätzt');
+    expect(bauPrompt(einheit('XL'), SCHRITT)).toContain('Grösse ungeschätzt');
   });
 
   it('jeder Prompt nennt die Grenze: Schätzung, kein Tor-Kriterium', () => {
