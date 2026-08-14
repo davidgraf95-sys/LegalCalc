@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
-"""VORSCHLAG — vollstaendiger Ersatz fuer .claude/hooks/dispatch-schutz.py.
+"""PreToolUse-Hook (Task/Agent): kein Sub-Agenten-Auftrag ohne §0-Pflichtklausel.
 
-    ANWENDUNG (macht David, nicht der Bau-Agent):
-        cp scripts/hooks-vorschlag-dispatch-schutz.py .claude/hooks/dispatch-schutz.py
-
-    WARUM ALS VORSCHLAG: `.claude/` ist Bau-TABU (CLAUDE.md, Dispatch-§0) —
-    ein Sub-Agent, der seine eigenen Schutz-Hooks umschreibt, hebt die Grenze
-    auf, die ihn haelt. Die Datei liegt darum daneben und wartet auf einen
-    bewussten Kopiervorgang. Bis dahin bleibt der alte Hook aktiv; er ist
-    STRENGER als noetig, nie laxer — er verlangt von Pruef-Auftraegen die
-    sechs Punkte, die sie seit 7.8.2026 nicht mehr tragen muessen. Folge ohne
-    Kopie: Freitext-Pruef-Dispatches werden weiterhin blockiert und muessen
-    den Voll-Block tragen. Kein Loch, nur Reibung.
+    (Entwurf 7.8.2026 als Vorschlagsdatei neben dem TABU-geschuetzten
+    .claude/; angewendet 14.8.2026 im Zuge von QS-EFFIZIENZ mit
+    Chat-Freigabe David — Orchestrator-Handgriff, kein Sub-Agent.)
 
     AENDERUNG gegenueber dem Stand vom 4.8.2026 (QS-DISPATCH-P0-PRUEF):
     Der §0-Block hat zwei Fassungen. Traegt ein Prompt die Kopfzeile
@@ -47,10 +39,6 @@
     Die read-only-Klassen duerfen nicht schreiben — ihr TABU lautet «nichts
     aendern». Punkt 4 widersprach diesem TABU im selben Prompt offen.
     Freigabe David 7.8.2026 (bibliothek/betrieb/entregulierung-2026-08-07.md).
-
-── ab hier der Datei-Kopf des Hooks selbst ──────────────────────────────
-
-PreToolUse-Hook (Task): kein Sub-Agenten-Auftrag ohne §0-Pflichtklausel.
 
 WARUM (Befund adversariale Pruefung PR #315, 20.7.2026):
 Die Fehlerklassen F3 (Verteilung statt Einzelwert), F4 (Daten sind kein
