@@ -108,10 +108,10 @@ tmp/
 # gate-stopp Grün-Fingerabdruck (Vorschlag QS-SELBSTOPT 7.8.2026)
 .gate-stopp-gruen
 
-# Merkdatei/Nachlass der neuen Claude-Code-Hooks (QS-HOOKS-AUSBAU 14.8.2026):
-# subagent-wache.py (Einmal-Mahnung je agent_id) und abschluss-wache.py
-# (Session-Nachlass über die Session-Grenze) — beide lokal, nie committen.
-.subagent-wache-gemahnt
+# Nachlass des Hooks abschluss-wache.py (QS-HOOKS-AUSBAU 14.8.2026):
+# Session-Ende-Befund über die Session-Grenze — lokal, nie committen.
+# (subagent-wache.py führt seit den Gegenprüfungs-Auflagen keine eigene
+# Merkdatei mehr — Loop-Schutz läuft über stop_hook_active.)
 .session-nachlass.json
 
 # Bausteinliste zur AG-Abnahme — Erzeugnis, kein Bestand (Entscheid David 14.8.2026).
