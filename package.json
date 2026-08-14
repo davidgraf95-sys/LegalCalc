@@ -175,6 +175,7 @@
     "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
+    "@ast-grep/cli": "^0.45.1",
     "@axe-core/playwright": "^4.11.3",
     "@capsizecss/core": "^4.1.3",
     "@capsizecss/metrics": "^4.1.0",

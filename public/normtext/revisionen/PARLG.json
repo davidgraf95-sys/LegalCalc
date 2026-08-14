@@ -1,9 +1,16 @@
 {
   "erlassKey": "PARLG",
   "sr": "171.10",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-01-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
+      "sha": "e6122ff259e1dba2a7cfe16c204318e2f7c74db17d275fcc882fc8d997624201"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-03-02",
@@ -438,5 +445,5 @@
       "sha": "52065c35070eaaaf2f941671551ab6a4c7e268f8244784f50a58330360164a28"
     }
   ],
-  "sha": "6d45ffbadd9637de2e83b79c38bce7535b2bdec6a31da1dbd774d9f1c9b5f35b"
+  "sha": "e6dffe39e780d58a9db613f4f4814d9cb902b32cd0843ae8a3b8ee96ef11e39b"
 }

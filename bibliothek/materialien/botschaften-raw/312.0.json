@@ -201,162 +201,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-21"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.092"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'unification du droit de la procédure pénale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "312.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-21"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.092"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'unification du droit de la procédure pénale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "312.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-21"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.092"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'unification du droit de la procédure pénale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "312.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-21"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.092"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'unification du droit de la procédure pénale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "312.0"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2019/2368"
     },
     "proj": {
@@ -426,6 +270,162 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice di procedura penale (Attuazione della mozione 14.3383 della Commissione degli affari giuridici del Consiglio degli Stati, Adeguamento del Codice di procedura penale)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "312.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'unification du droit de la procédure pénale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "312.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'unification du droit de la procédure pénale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "312.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'unification du droit de la procédure pénale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "312.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/124"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2319"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/267"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Vereinheitlichung des Strafprozessrechts "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'unification du droit de la procédure pénale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'unificazione del diritto processuale penale"
     }
   },
   {

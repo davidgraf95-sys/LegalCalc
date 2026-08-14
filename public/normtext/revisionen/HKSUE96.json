@@ -1,7 +1,7 @@
 {
   "erlassKey": "HKSUE96",
   "sr": "0.211.231.011",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -97,9 +97,10 @@
       "titelDe": "Übereinkommen über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
       "titelIt": "Convenzione concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
+      "botschaftKey": "BOTSCHAFT-2007-421",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/380/de",
-      "sha": "ea8e9e4b09eba719b1f0bea88d50ee43b088cbb0bceb6ceabf840b8f61a01457"
+      "sha": "d667fd6db4d7dd1823e7dc19797ec9a3a51def7245f313b88afe286ec227592f"
     }
   ],
-  "sha": "b8d12d47501a78896a17144189da1a5ed68aa5eaa8dc6ab9679eb4f1a1acf972"
+  "sha": "722da2b27747cfc4ccef32fac8487ab3285f5d5e714a1df79deeac8d36d67b2a"
 }

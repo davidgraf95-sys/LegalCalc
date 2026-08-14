@@ -1,7 +1,7 @@
 {
   "erlassKey": "ZEMIS_V",
   "sr": "142.513",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -20,9 +20,8 @@
       "titelDe": "Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)",
       "titelFr": "Ordonnance sur le système d’information central sur la migration (Ordonnance SYMIC)",
       "titelIt": "Ordinanza concernente il sistema d’informazione centrale sulla migrazione (Ordinanza SIMIC)",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/341/de",
-      "sha": "dceac5373fd2ec90e3bc7be1feb0634d49585b40a5b47f332c8622b924a97d66"
+      "sha": "a31f0cdf76203d2f3235fb2eab3aacab4e34f9d34075748d3582a949da38170e"
     },
     {
       "art": "aenderung",
@@ -391,5 +390,5 @@
       "sha": "dabd8eac60a4e44773b553b3c9ecb6c216b37c43986b9b2f47bb7415a94b81e3"
     }
   ],
-  "sha": "24b551fce68a79123b62cc040ec949c779b1296de51fbcc22d8adc249b0c17c6"
+  "sha": "567f152d86b057a713aa62f5bcf9457ff8b6155598f644751be8ff565c60e6bb"
 }

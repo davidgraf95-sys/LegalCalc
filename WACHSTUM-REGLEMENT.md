@@ -1,10 +1,10 @@
 # Wachstums-Reglement — Checkliste für jeden neuen Einstieg
 
 Stand: 10.6.2026 (FAHRPLAN-GRUNDLAGEN G4.3). Dieses Dokument hebt die
-Leitprinzipien §0/§0a (HANDLUNGSPLAN) und §10/§11 (CLAUDE.md) in eine
+Leitprinzipien §0/§0a (ROADMAP, früher HANDLUNGSPLAN) und §10/§11 (CLAUDE.md) in eine
 **stabile Checkliste**, die jeder künftige Rechner-/Vorlagen-Einstieg
 besteht, BEVOR gebaut wird. Es ändert sich selten; tagesaktuelle Sperren
-und Prioritäten leben im HANDLUNGSPLAN und in der Praxis-Abdeckungskarte
+und Prioritäten leben in der ROADMAP und in der Praxis-Abdeckungskarte
 (`KATALOG-ROADMAP.md`).
 
 ## Vorbedingung: Bau-Fenster offen?
