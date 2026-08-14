@@ -97,6 +97,13 @@ dass es in EINER Session landet — zu gross ⇒ erst schneiden. Serielle
   `plan:set`-Commit nach der Landung entfällt dann.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
+- **Block-Form (vier Vorfälle 26.7./31.7.2026, aus Memory hierher überführt
+  14.8.):** git liest Trailer nur im LETZTEN Absatz — genau EINE Leerzeile
+  VOR dem Trailer-Block (sonst klebt er am Fliesstext und parst nicht),
+  KEINE Leerzeile innerhalb (sonst zerreisst der Block und `%(trailers)`/
+  Merge-Schutz sehen nichts), jeder Trailer einzeilig. Lokal prüfbar:
+  `git log -1 --format='%(trailers:key=Roadmap,valueonly)'` muss den Wert
+  liefern; Risiko-Pfad-Form zusätzlich per `npm run check:merge-schutz`.
 
 ## 6 · Delegation und Kontext-Hygiene
 
