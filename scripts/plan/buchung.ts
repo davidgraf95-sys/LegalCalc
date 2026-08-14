@@ -100,23 +100,111 @@ export function parseBuchung(idTrailer: string, statusTrailer: string): Buchung 
   return { id, status, blocker };
 }
 
-// CLI: vite-node scripts/plan/buchung.ts -- "<Roadmap-Trailer>" "<Roadmap-Status-Trailer>"
-// Gibt bei Erfolg drei Zeilen im GITHUB_OUTPUT-Format aus (id=…/status=…/
-// blocker=…, `blocker=` leer wenn keiner gesetzt ist) — der Workflow leitet
-// stdout direkt in `$GITHUB_OUTPUT` um. Wirft (Exit 1) bei ungültiger Eingabe.
-if (!process.env.VITEST) {
-  const [idTrailer, statusTrailer] = process.argv.slice(2);
-  if (!idTrailer || !statusTrailer) {
-    console.error('Aufruf: vite-node scripts/plan/buchung.ts -- "<Roadmap>" "<Roadmap-Status>"');
-    process.exit(2);
+// ---------------------------------------------------------------------------
+// FALLBACK (Lehre 14.8.2026, real bei PR #491): GitHub Auto-Merge nimmt bei
+// einem Squash mit MEHREREN Commits den Standard-Text — nur die verketteten
+// Commit-SUBJECTS, endet auf "Co-authored-by". Ein Trailer, der nur im BODY
+// eines Zwischen-Commits stand, erreicht den Squash-Commit dann nie; der
+// Buchungs-Workflow blieb (korrekt fail-safe) still, die Buchung musste von
+// Hand nachgezogen werden.
+//
+// Ersatzweise wird die Buchungs-Absicht aus dem PR-BODY gelesen — dort steht
+// sie unverändert, unabhängig davon, was GitHub in den Squash-Commit kopiert.
+// PR-Body ist FREMDTEXT (Daten, nie Code, §14.7 Dispatch-Klausel): er wird wie
+// eine Commit-Message als Trailer-Block interpretiert (git-Konvention: der
+// LETZTE durch eine Leerzeile abgetrennte Absatz, und zwar nur, wenn WIRKLICH
+// jede Zeile darin dem Muster "Key: value" folgt — sonst ist es Fliesstext,
+// kein Trailer, und es wird nichts gebucht). Gefundene Werte laufen exakt durch
+// dieselbe Zeichensatz-Wache (`parseBuchung` → `ID_RE`/`TOKEN_RE`) wie
+// Commit-Trailer; ein Injection-Versuch im Blocker-Token oder in der ID wird
+// dadurch genauso hart abgewiesen. Priorität: Commit-Trailer schlägt PR-Body
+// (der Workflow ruft diesen Fallback nur auf, wenn der Commit-Trailer fehlte).
+const TRAILER_LINE_RE = /^([A-Za-z][A-Za-z0-9-]*):\s*(.*)$/;
+
+/**
+ * Interpretiert den letzten Absatz von `text` als Git-Trailer-Block: nur wenn
+ * JEDE nicht-leere Zeile darin "Key: value" ist, werden die Paare
+ * zurückgegeben — sonst ein leeres Objekt (kein Trailer-Block gefunden, das
+ * ist der Normalfall bei einer gewöhnlichen PR-Beschreibung ohne Buchungs-
+ * Absicht). Mehrfache Vorkommen desselben Keys: der letzte gewinnt (wie
+ * `git interpret-trailers`).
+ */
+export function extractTrailerBlock(text: string): Record<string, string> {
+  const trimmed = text.trim();
+  if (!trimmed) return {};
+  const absaetze = trimmed.split(/\n\s*\n/);
+  const letzter = absaetze[absaetze.length - 1];
+  const zeilen = letzter.split('\n').map((z) => z.trim()).filter((z) => z.length > 0);
+  if (zeilen.length === 0) return {};
+  const ergebnis: Record<string, string> = {};
+  for (const zeile of zeilen) {
+    const m = zeile.match(TRAILER_LINE_RE);
+    if (!m) return {}; // Absatz enthält eine Nicht-Trailer-Zeile -> kein Trailer-Block
+    ergebnis[m[1]] = m[2].trim();
   }
-  try {
-    const b = parseBuchung(idTrailer, statusTrailer);
-    console.log(`id=${b.id}`);
-    console.log(`status=${b.status}`);
-    console.log(`blocker=${b.blocker ?? ''}`);
-  } catch (e) {
-    console.error(e instanceof Error ? e.message : String(e));
-    process.exit(1);
+  return ergebnis;
+}
+
+/**
+ * Liest die Buchungs-Trailer ersatzweise aus einem PR-Body. Gibt `null`
+ * zurück, wenn dort kein vollständiger Trailer-Block steht (stiller
+ * Normalfall, §6.7 kein Rot). Steht ein Trailer-Block da, aber mit ungültigem
+ * Wert oder verbotenen Zeichen, wirft diese Funktion — wie `parseBuchung` —
+ * und der Aufrufer (CLI unten) beendet den Prozess mit Exit 1: ein erkannter,
+ * aber kaputter/bösartiger Buchungsversuch darf nie still verpuffen.
+ */
+export function parseBuchungAusPrBody(body: string): Buchung | null {
+  const block = extractTrailerBlock(body);
+  const roadmap = block['Roadmap'];
+  const status = block['Roadmap-Status'];
+  if (!roadmap || !status) return null;
+  return parseBuchung(roadmap, status);
+}
+
+// CLI, zwei Modi:
+//   vite-node scripts/plan/buchung.ts -- "<Roadmap-Trailer>" "<Roadmap-Status-Trailer>"
+//     Commit-Trailer-Pfad (unverändert). Gibt bei Erfolg drei Zeilen im
+//     GITHUB_OUTPUT-Format aus (id=…/status=…/blocker=…) und wirft (Exit 1)
+//     bei ungültiger Eingabe.
+//   vite-node scripts/plan/buchung.ts --pr-body   (Body auf STDIN)
+//     PR-Body-Fallback. Kein Trailer-Block im Body -> Exit 0 OHNE Ausgabe
+//     (still, wie der Normalfall). Trailer-Block vorhanden, aber ungültig/
+//     Injection-Versuch -> Exit 1, wie oben.
+if (!process.env.VITEST) {
+  const mode = process.argv[2];
+  if (mode === '--pr-body') {
+    void (async () => {
+      let body = '';
+      process.stdin.setEncoding('utf8');
+      for await (const chunk of process.stdin) body += chunk;
+      try {
+        const b = parseBuchungAusPrBody(body);
+        if (b) {
+          console.log(`id=${b.id}`);
+          console.log(`status=${b.status}`);
+          console.log(`blocker=${b.blocker ?? ''}`);
+        }
+        // kein Trailer-Block im PR-Body: bewusst keine Ausgabe, Exit 0 (still).
+      } catch (e) {
+        console.error(e instanceof Error ? e.message : String(e));
+        process.exit(1);
+      }
+    })();
+  } else {
+    const [idTrailer, statusTrailer] = process.argv.slice(2);
+    if (!idTrailer || !statusTrailer) {
+      console.error('Aufruf: vite-node scripts/plan/buchung.ts -- "<Roadmap>" "<Roadmap-Status>"');
+      console.error('   oder: vite-node scripts/plan/buchung.ts --pr-body   (Body auf STDIN)');
+      process.exit(2);
+    }
+    try {
+      const b = parseBuchung(idTrailer, statusTrailer);
+      console.log(`id=${b.id}`);
+      console.log(`status=${b.status}`);
+      console.log(`blocker=${b.blocker ?? ''}`);
+    } catch (e) {
+      console.error(e instanceof Error ? e.message : String(e));
+      process.exit(1);
+    }
   }
 }
