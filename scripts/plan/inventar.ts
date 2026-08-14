@@ -134,6 +134,7 @@ export const INVENTAR: readonly string[] = [
   // State-of-the-Art-Abgleich 7.8.2026 (Web-Recherche gegen Anthropic-Doku):
   // Hook-/Konfig-Ausbauten, gesperrte Fläche ⇒ blocked bis David-Freigabe.
   'QS-HOOKS-AUSBAU',
+  'QS-EFFIZIENZ',
 
   // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
