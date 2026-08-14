@@ -160,7 +160,9 @@ describe('VARIANTE — Zuordnung Klasse → Fassung', () => {
 // wörtlich aus KLASSEN. Beide Kopplungen werden hier festgehalten.
 describe('Kopplungen ausserhalb dieses Moduls (B1/B3)', () => {
   const tor = readFileSync('scripts/check-dispatch-klausel.ts', 'utf8');
-  const hook = readFileSync('scripts/hooks-vorschlag-dispatch-schutz.py', 'utf8');
+  // Seit der Anwendung des Vorschlags (QS-EFFIZIENZ Pkt. 2, 14.8.2026) lebt
+  // der Hook am aktiven Ort; die Vorschlagsdatei ist gelöscht (§5).
+  const hook = readFileSync('.claude/hooks/dispatch-schutz.py', 'utf8');
 
   it('das Tor führt dieselbe Soll-Liste read-only wie dieser Test', () => {
     expect(tor).toContain("const READONLY_SOLL = ['pruefung', 'recherche'] as const");

@@ -187,11 +187,11 @@ const HOOK_TABU: Record<string, string> = {
   pruefung: 'TABU: nichts ändern',
   recherche: 'TABU: kein Code, keine Repo-Änderung',
 };
-// Geprüft wird jede Hook-Datei, die die Varianten-Erkennung SCHON KENNT
-// (Marker `PRUEF_KOPF`). Der aktive Hook unter .claude/ hinkt bewusst nach —
-// er ist bis zu Davids `cp` die strengere Vorgängerfassung und darf das Tor
-// nicht rot machen; sobald er die neue Logik trägt, gilt die Prüfung auch dort.
-const HOOK_DATEIEN = ['scripts/hooks-vorschlag-dispatch-schutz.py', '.claude/hooks/dispatch-schutz.py'];
+// Geprüft wird die aktive Hook-Datei, sofern sie die Varianten-Erkennung
+// SCHON KENNT (Marker `PRUEF_KOPF`). Der frühere Vorschlags-Pfad
+// scripts/hooks-vorschlag-dispatch-schutz.py ist seit seiner Anwendung
+// (QS-EFFIZIENZ Pkt. 2, 14.8.2026) gelöscht — eine Quelle statt zwei (§5).
+const HOOK_DATEIEN = ['.claude/hooks/dispatch-schutz.py'];
 const HOOK_MARKER = 'PRUEF_KOPF';
 
 for (const [klasse, tabu] of Object.entries(HOOK_TABU)) {
@@ -217,6 +217,18 @@ for (const datei of HOOK_DATEIEN.filter((d) => existsSync(d))) {
       `  Ohne das zweite Merkmal senkt eine bloss ZITIERTE Prüf-Kopfzeile das\n` +
       `  Pflicht-Set auf drei Punkte (Befund B1 der Gegenprüfung 7.8.2026).`);
   }
+}
+
+// (B0e, Gegenprüfungs-Auflage B2-2, 14.8.2026): Ein Tor, das 0 Dateien prüft,
+// kann nie scheitern und ist damit kein Tor (§6.7) — es meldete bislang still
+// GRÜN, wenn HOOK_DATEIEN leerlief oder keine Datei den Marker trug (genau der
+// Zustand, den die Löschung von scripts/hooks-vorschlag-dispatch-schutz.py
+// oben erzeugt hätte, wäre die aktive Hook-Datei je ohne Marker).
+if (hookGeprueft.length === 0) {
+  rot(
+    `Keine Hook-Datei geprüft (0 von ${HOOK_DATEIEN.length} in HOOK_DATEIEN existiert/trägt den Marker).\n\n` +
+    `  Ein Tor, das 0 Dateien prüft, kann nie scheitern und ist damit kein Tor (§6.7).\n` +
+    `  → Existiert ${HOOK_DATEIEN.join(', ')}? Trägt sie noch den Marker '${HOOK_MARKER}'?`);
 }
 
 // ── (B) Wirkung: der vorgeschriebene Aufrufweg liefert den Block wirklich ──

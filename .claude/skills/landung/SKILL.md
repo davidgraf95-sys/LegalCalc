@@ -250,7 +250,12 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    Weg (seit 14.8.2026, QS-PLAN-EINFACH): dem Squash-Commit den Trailer
    `Roadmap-Status: done|ready|parked(<token>)` mitgeben — `plan-buchung.yml`
    bucht nach dem Merge automatisch (rot bei ungültiger ID/Status, nie ein
-   unwahrer Plan). Fällt die Automatik aus oder fehlt der Trailer: von Hand
+   unwahrer Plan). **Denselben Trailer-Block zusätzlich als eigenen Absatz in
+   den PR-BODY** (unformatiert, nicht eingerückt, kein Code-Fence; der
+   🤖-Footer darf danach folgen): mergt jemand per GitHub-Auto-Merge mit
+   Standard-Squash-Text, geht der Commit-Trailer verloren — der Workflow
+   liest ihn dann ersatzweise aus dem PR-Body (Lehre 14.8.2026, PR #491:
+   Auto-Buchung blieb still, Hand-Buchung nötig). Fällt beides aus: von Hand
    `plan:set <id> status=…` + committen (done ⇒ Block per Ziff. 6 in die
    Chronik). Realfall 5.8.2026:
    `QS-TOK`/`QS-TOK-AUFRAEUMEN` blieben nach Session-Ende stundenlang `wip`,

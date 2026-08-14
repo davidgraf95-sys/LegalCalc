@@ -100,23 +100,165 @@ export function parseBuchung(idTrailer: string, statusTrailer: string): Buchung 
   return { id, status, blocker };
 }
 
-// CLI: vite-node scripts/plan/buchung.ts -- "<Roadmap-Trailer>" "<Roadmap-Status-Trailer>"
-// Gibt bei Erfolg drei Zeilen im GITHUB_OUTPUT-Format aus (id=…/status=…/
-// blocker=…, `blocker=` leer wenn keiner gesetzt ist) — der Workflow leitet
-// stdout direkt in `$GITHUB_OUTPUT` um. Wirft (Exit 1) bei ungültiger Eingabe.
-if (!process.env.VITEST) {
-  const [idTrailer, statusTrailer] = process.argv.slice(2);
-  if (!idTrailer || !statusTrailer) {
-    console.error('Aufruf: vite-node scripts/plan/buchung.ts -- "<Roadmap>" "<Roadmap-Status>"');
-    process.exit(2);
+// ---------------------------------------------------------------------------
+// FALLBACK (Lehre 14.8.2026, real bei PR #491): GitHub Auto-Merge nimmt bei
+// einem Squash mit MEHREREN Commits den Standard-Text — nur die verketteten
+// Commit-SUBJECTS, endet auf "Co-authored-by". Ein Trailer, der nur im BODY
+// eines Zwischen-Commits stand, erreicht den Squash-Commit dann nie; der
+// Buchungs-Workflow blieb (korrekt fail-safe) still, die Buchung musste von
+// Hand nachgezogen werden.
+//
+// Ersatzweise wird die Buchungs-Absicht aus dem PR-BODY gelesen — dort steht
+// sie unverändert, unabhängig davon, was GitHub in den Squash-Commit kopiert.
+// PR-Body ist FREMDTEXT (Daten, nie Code, §14.7 Dispatch-Klausel): er wird wie
+// eine Commit-Message als Trailer-Block interpretiert. Gefundene Werte laufen
+// exakt durch dieselbe Zeichensatz-Wache (`parseBuchung` → `ID_RE`/`TOKEN_RE`)
+// wie Commit-Trailer; ein Injection-Versuch im Blocker-Token oder in der ID
+// wird dadurch genauso hart abgewiesen. Priorität: Commit-Trailer schlägt
+// PR-Body (der Workflow ruft diesen Fallback nur auf, wenn der Commit-Trailer
+// fehlte).
+//
+// Gegenprüfungs-Auflage B1-1 (14.8.2026): Haus-PR-Bodies enden auf den
+// Werkzeug-Footer «🤖 Generated with […]» — ein reiner "letzter Absatz"-Blick
+// hätte den Anlass-PR #491 selbst NIE gebucht, weil der Footer, nicht der
+// Trailer, zuletzt steht. Der Parser geht darum die Absätze VON HINTEN durch
+// und überspringt reine Footer-/Trenn-Absätze (jede Zeile beginnt mit "🤖"
+// oder "_🤖", oder ist eine "---"-Trennlinie); der ERSTE verbleibende Absatz
+// ist dann der einzige Kandidat für den Trailer-Block — ist er es nicht
+// vollständig, gibt es keinen Treffer (kein Weitersuchen weiter zurück: ein
+// "Roadmap:"-Satz mitten in der Beschreibung ist kein Trailer).
+//
+// Gegenprüfungs-Auflage B1-3 (14.8.2026): NUR die drei bekannten Trailer-Keys
+// zählen (Roadmap, Roadmap-Status, Gegenpruefung — die reale Haus-Konvention,
+// siehe z. B. ROADMAP-CHRONIK.md), UND eine Zeile zählt nie als Trailer-Zeile,
+// wenn sie eingerückt ist (≥1 Leerzeichen vor dem Key — Markdown-Codeblock-
+// Konvention: 4 Leerzeichen) oder innerhalb eines ``` -Fences liegt. Deshalb
+// KEIN `.trim()` auf die einzelne Zeile vor der Klassifikation — nur zum
+// Erkennen einer rein-leeren Zeile (Absatz-Trenner).
+const TRAILER_KEYS = ['Roadmap', 'Roadmap-Status', 'Gegenpruefung'] as const;
+const TRAILER_LINE_RE = /^(Roadmap-Status|Roadmap|Gegenpruefung):\s*(.*)$/;
+const FOOTER_ZEILE_RE = /^(🤖|_🤖)/;
+const TRENNLINIE_RE = /^-{3,}$/;
+
+function istFusszeile(zeile: string): boolean {
+  const roh = zeile.trim();
+  return FOOTER_ZEILE_RE.test(roh) || TRENNLINIE_RE.test(roh);
+}
+
+/** Ein Absatz = fortlaufende Zeilen, `inFence` markiert Zeilen innerhalb eines
+ *  ``` -Codeblocks (die Fence-Markierungszeile selbst zählt als "in Fence"). */
+function absaetzeMitFenceStatus(text: string): { text: string; inFence: boolean }[][] {
+  const zeilen = text.replace(/\r\n/g, '\n').split('\n');
+  const absaetze: { text: string; inFence: boolean }[][] = [];
+  let aktuell: { text: string; inFence: boolean }[] = [];
+  let inFence = false;
+  for (const roh of zeilen) {
+    if (roh.trim().length === 0) {
+      if (aktuell.length) { absaetze.push(aktuell); aktuell = []; }
+      continue;
+    }
+    if (/^\s*```/.test(roh)) {
+      aktuell.push({ text: roh, inFence: true });
+      inFence = !inFence;
+      continue;
+    }
+    aktuell.push({ text: roh, inFence });
   }
-  try {
-    const b = parseBuchung(idTrailer, statusTrailer);
-    console.log(`id=${b.id}`);
-    console.log(`status=${b.status}`);
-    console.log(`blocker=${b.blocker ?? ''}`);
-  } catch (e) {
-    console.error(e instanceof Error ? e.message : String(e));
-    process.exit(1);
+  if (aktuell.length) absaetze.push(aktuell);
+  return absaetze;
+}
+
+/**
+ * Sucht von HINTEN nach dem Trailer-Block: überspringt reine Footer-/Trenn-
+ * Absätze, dann muss der nächste Absatz VOLLSTÄNDIG aus gültigen
+ * Trailer-Zeilen (Keys Roadmap/Roadmap-Status/Gegenpruefung, unindentiert,
+ * ausserhalb jedes ``` -Fences) bestehen — sonst kein Treffer (kein
+ * Weitersuchen). Mehrfaches Vorkommen desselben Keys im Block: der letzte
+ * gewinnt (wie `git interpret-trailers`).
+ */
+export function extractTrailerBlock(text: string): Record<string, string> {
+  if (!text.trim()) return {};
+  const absaetze = absaetzeMitFenceStatus(text);
+  for (let i = absaetze.length - 1; i >= 0; i--) {
+    const zeilen = absaetze[i];
+    if (zeilen.every((z) => istFusszeile(z.text))) continue; // Footer/Trennlinie -> weiter zurück
+
+    const ergebnis: Record<string, string> = {};
+    for (const { text: zeile, inFence } of zeilen) {
+      if (inFence) return {};
+      const m = zeile.match(TRAILER_LINE_RE);
+      if (!m) return {};
+      ergebnis[m[1]] = m[2].trim();
+    }
+    return ergebnis;
+  }
+  return {};
+}
+
+// Nur zur Selbstdokumentation exportiert (Kommentar-Referenz oben) — kein
+// Aufrufer ausserhalb dieser Datei braucht die Liste heute.
+export { TRAILER_KEYS };
+
+/**
+ * Liest die Buchungs-Trailer ersatzweise aus einem PR-Body. Gibt `null`
+ * zurück, wenn dort kein vollständiger Trailer-Block steht (stiller
+ * Normalfall, §6.7 kein Rot). Steht ein Trailer-Block da, aber mit ungültigem
+ * Wert oder verbotenen Zeichen, wirft diese Funktion — wie `parseBuchung` —
+ * und der Aufrufer (CLI unten) beendet den Prozess mit Exit 1: ein erkannter,
+ * aber kaputter/bösartiger Buchungsversuch darf nie still verpuffen.
+ */
+export function parseBuchungAusPrBody(body: string): Buchung | null {
+  const block = extractTrailerBlock(body);
+  const roadmap = block['Roadmap'];
+  const status = block['Roadmap-Status'];
+  if (!roadmap || !status) return null;
+  return parseBuchung(roadmap, status);
+}
+
+// CLI, zwei Modi:
+//   vite-node scripts/plan/buchung.ts -- "<Roadmap-Trailer>" "<Roadmap-Status-Trailer>"
+//     Commit-Trailer-Pfad (unverändert). Gibt bei Erfolg drei Zeilen im
+//     GITHUB_OUTPUT-Format aus (id=…/status=…/blocker=…) und wirft (Exit 1)
+//     bei ungültiger Eingabe.
+//   vite-node scripts/plan/buchung.ts --pr-body   (Body auf STDIN)
+//     PR-Body-Fallback. Kein Trailer-Block im Body -> Exit 0 OHNE Ausgabe
+//     (still, wie der Normalfall). Trailer-Block vorhanden, aber ungültig/
+//     Injection-Versuch -> Exit 1, wie oben.
+if (!process.env.VITEST) {
+  const mode = process.argv[2];
+  if (mode === '--pr-body') {
+    void (async () => {
+      let body = '';
+      process.stdin.setEncoding('utf8');
+      for await (const chunk of process.stdin) body += chunk;
+      try {
+        const b = parseBuchungAusPrBody(body);
+        if (b) {
+          console.log(`id=${b.id}`);
+          console.log(`status=${b.status}`);
+          console.log(`blocker=${b.blocker ?? ''}`);
+        }
+        // kein Trailer-Block im PR-Body: bewusst keine Ausgabe, Exit 0 (still).
+      } catch (e) {
+        console.error(e instanceof Error ? e.message : String(e));
+        process.exit(1);
+      }
+    })();
+  } else {
+    const [idTrailer, statusTrailer] = process.argv.slice(2);
+    if (!idTrailer || !statusTrailer) {
+      console.error('Aufruf: vite-node scripts/plan/buchung.ts -- "<Roadmap>" "<Roadmap-Status>"');
+      console.error('   oder: vite-node scripts/plan/buchung.ts --pr-body   (Body auf STDIN)');
+      process.exit(2);
+    }
+    try {
+      const b = parseBuchung(idTrailer, statusTrailer);
+      console.log(`id=${b.id}`);
+      console.log(`status=${b.status}`);
+      console.log(`blocker=${b.blocker ?? ''}`);
+    } catch (e) {
+      console.error(e instanceof Error ? e.message : String(e));
+      process.exit(1);
+    }
   }
 }
