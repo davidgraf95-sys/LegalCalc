@@ -29,6 +29,12 @@ permissions:
   checks: read
   pull-requests: read
   statuses: read
+  # `issues: write` seit 14.8.2026 (Aktivierungs-Audit) — für die Selbstmeldung
+  # unten (Muster normen-monitor.yml). Vorher hatte dieser Workflow als
+  # einziger geplanter Wächter KEINE Issue-Eskalation: er war seit 10.8.2026
+  # täglich rot (5/5), ohne dass es jemand erfuhr — genau die Fehlerklasse,
+  # gegen die er selbst gebaut wurde (Kopf-Kommentar oben).
+  issues: write
 
 jobs:
   laeufe:
@@ -76,6 +82,39 @@ jobs:
           # Die Required-Kontexte kommen aus dem Branch-Schutz selbst — keine
           # zweite Liste im Repo (§5). Ist er nicht lesbar, wird das gemeldet
           # und der Schritt endet ohne Urteil (nie still).
+          #
+          # RICHTIGSTELLUNG zur Diagnose in Commit 9a57976fb (14.8.2026, «das
+          # Skript stirbt unter bash -e am 403»): geprüft und WIDERLEGT. `gh api`
+          # steht hier in der BEDINGUNG eines `if !`, und Bash-Fehlerabbruch
+          # (`-e`, vom Runner via `bash -e {0}` gesetzt) klammert per Definition
+          # jeden Befehl aus, der Teil einer if/while-Bedingung ist — der 403
+          # führt darum planmässig zum `exit 0` in Zeile darunter, nicht zum
+          # Absturz. Belegt an allen 5 roten Läufen 10.–14.8.2026 (jeder zeigt
+          # exakt diese ::warning-Zeile, keiner einen Skript-Absturz an dieser
+          # Stelle) UND lokal mit einem simulierten 403 unter `bash -e`
+          # nachvollzogen. Die tägliche Rot-Serie stammt vom vorigen Schritt
+          # («Lauf-Zustand der geplanten Workflows», meldet echt
+          # `normen-monitor.yml: jüngster Lauf 'failure'`) — ein echter Befund,
+          # kein Wächter-Bug.
+          #
+          # WAS DIE BRANCH-SCHUTZ-LESUNG LIEFERT UND OB DER NACHZUG OHNE SIE
+          # KORREKT BLEIBT: sie liefert die Namen der Required-Kontexte, gegen
+          # die unten geprüft wird, welche an offenen PRs fehlen. Ohne sie kann
+          # dieser Schritt nicht wissen, WAS fehlen könnte — er überspringt den
+          # Nachzug für diesen Lauf vollständig («kein Kontext-Nachzug, kein
+          # Urteil»). Das bleibt KORREKT (kein falsches Urteil, keine
+          # Fehlmeldung), ist aber UNVOLLSTÄNDIG: bleibt der 403 dauerhaft
+          # bestehen, nachzieht dieser Schritt nie. Empirisch war das an allen
+          # 5 geprüften Läufen der Fall — mit demselben, unveränderten
+          # `permissions`-Block wie oben. Das deutet auf eine STRUKTURELLE
+          # Grenze von `GITHUB_TOKEN` hin (die Branch-Schutz-Leseroute verlangt
+          # Repository-Admin-Rechte, die `GITHUB_TOKEN` über keinen Eintrag im
+          # `permissions:`-Block erhalten kann — anders als bei `actions:`,
+          # `issues:` usw. gibt es keinen `administration:`-Schlüssel), nicht
+          # auf eine vorübergehende Störung. Ein echter Fix bräuchte einen PAT
+          # mit Admin-Leserecht (Secret, §18) oder eine andere Quelle für die
+          # Required-Kontexte — beides ausserhalb dieses eng umrissenen Fixes;
+          # offener Punkt für einen eigenen Roadmap-Schritt.
           if ! gh api "repos/${REPO}/branches/main/protection/required_status_checks" \
                  --jq '.contexts[]' > erwartet.txt 2>fehler.txt; then
             echo "::warning::Branch-Schutz nicht lesbar ($(head -1 fehler.txt)) — kein Kontext-Nachzug, kein Urteil."
@@ -116,3 +155,46 @@ jobs:
               echo "  → nur «Vercel» fehlt (App-Integration, kein Actions-Mittel) — nichts nachzuziehen."
             fi
           done < prs.tsv
+
+      # ── Selbstmeldung (14.8.2026, Aktivierungs-Audit) ───────────────────────
+      # Muster von normen-monitor.yml (dort seit A2/K5 bewährt): dieser
+      # Workflow war der einzige geplante Wächter OHNE Issue-Eskalation — er
+      # war seit 10.8.2026 täglich rot (5/5), und niemand erfuhr es. Genau die
+      # Fehlerklasse «ein Ausfall, den niemand bemerkt» (Kopf-Kommentar oben),
+      # nur diesmal am Melder selbst. `if: failure()`/`if: success()` sind die
+      # eingebauten GitHub-Actions-Statusfunktionen: sie werten den Zustand
+      # ALLER vorangehenden Schritte dieses Jobs aus (auch den `if: always()`-
+      # Nachzug oben), nicht nur des unmittelbar vorigen.
+      - name: Bei Rot — sichtbaren Aufgaben-Zettel anlegen/aktualisieren
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          offen=$(gh issue list --state open --search 'Wächter rot in:title' --json number --jq '.[0].number // empty')
+          if [ -n "$offen" ]; then
+            gh issue comment "$offen" --body "Weiterhin rot am $(date +%F). Lauf: ${RUN_URL}"
+            echo "Zettel #${offen} kommentiert (weiterhin rot)."
+          else
+            nr=$(gh issue create \
+              --title "🔴 Wächter rot seit $(date +%F) — geplante Läufe/PR-Kontexte prüfen" \
+              --body "Der tägliche Wächter (geplante Läufe, .github/workflows/waechter.yml) ist fehlgeschlagen — mindestens ein geplanter Workflow ist laut \`check:ci-laeufe\` nicht in Ordnung, ODER der PR-Kontext-Nachzug (K2/K11) ist an einer anderen Stelle als der bekannten, tolerierten Branch-Schutz-403-Lücke gescheitert. Lauf-Log prüfen. Lauf: ${RUN_URL}" \
+              | grep -oE '[0-9]+$')
+            echo "Zettel #${nr} angelegt (erstmals rot)."
+          fi
+
+      - name: Bei Grün — offenen Aufgaben-Zettel schliessen
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          offen=$(gh issue list --state open --search 'Wächter rot in:title' --json number --jq '.[0].number // empty')
+          if [ -z "$offen" ]; then
+            echo "Wächter grün, kein offener Zettel — nichts zu schliessen."
+            exit 0
+          fi
+          gh issue close "$offen" --reason completed --comment "🟢 Wächter wieder grün am $(date +%F). Lauf: ${RUN_URL}"
+          echo "Zettel #${offen} geschlossen (Wächter grün)."
