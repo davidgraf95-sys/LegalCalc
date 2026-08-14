@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 6
 import { test, expect, type Page } from '@playwright/test';
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER } from './helpers/budgets';
 

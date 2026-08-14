@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 4
 import { test, expect, type Page } from '@playwright/test';
 import { DROSSEL } from './helpers/budgets';
 

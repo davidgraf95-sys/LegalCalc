@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 2
 import { test, expect, type Page } from '@playwright/test';
 
 // R5 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Typo-Skala): die Lesespalte hält ein
