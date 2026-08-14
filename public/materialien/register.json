@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-13",
+  "erzeugt": "2026-08-14",
   "materialien": [
     {
       "key": "ESTV-KS-DBG-5A",
@@ -6939,6 +6939,34 @@
       "sha": "b4020fae26accf3af25a8189204f8dded0850ece06985d2db41897ac15d45def"
     },
     {
+      "key": "BOTSCHAFT-2025-3067",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft zum Entlastungspaket 2027 für den Bundeshaushalt (EP 27)",
+      "nummer": "25.063",
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2025/3067/de",
+      "stand": "2025-09-19",
+      "rang": 79749081,
+      "normKeys": [
+        "AIG"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+      "titelFr": "Message concernant le programme d’allégement budgétaire 2027",
+      "titelIt": "Messaggio concernente le misure di sgravio del bilancio della Confederazione applicabili dal 2027",
+      "projEli": "https://fedlex.data.admin.ch/eli/dl/proj/7025/0173",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2026/393"
+      ],
+      "botschaftDate": "2025-09-19",
+      "sha": "cd8c6d1da61437580356abfb17f6783027c033becfa5c89fa056800948109f90"
+    },
+    {
       "key": "BOTSCHAFT-2025-1478",
       "behoerde": "BR",
       "behoerdeName": "Bundesrat (Botschaften)",
@@ -10400,6 +10428,34 @@
       "sha": "6b855c4abef696fa4e32be44e1401bd4302e7b7d4ee6f02e205072fd4a564c67"
     },
     {
+      "key": "BOTSCHAFT-2017-76",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft zur Genehmigung des Übereinkommens des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention)",
+      "nummer": "16.081",
+      "rechtsgebiet": "international",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2017/76/de",
+      "stand": "2016-12-02",
+      "rang": 79838798,
+      "normKeys": [
+        "ISTANBUL"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+      "titelFr": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique (convention d'Istanbul)",
+      "titelIt": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica (Convenzione di Istanbul)",
+      "projEli": "https://fedlex.data.admin.ch/eli/proj/2016/2518",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2018/168"
+      ],
+      "botschaftDate": "2016-12-02",
+      "sha": "535087333977d9a24da31e8b9d46f5172c859b09dd6dfac23ec48343128f1581"
+    },
+    {
       "key": "BOTSCHAFT-2017-112",
       "behoerde": "BR",
       "behoerdeName": "Bundesrat (Botschaften)",
@@ -12003,6 +12059,34 @@
       ],
       "botschaftDate": "2013-02-27",
       "sha": "ae56999514103e6d70a88329d19ae6db23a394b51d25c6f48ef1261657f3d12a"
+    },
+    {
+      "key": "BOTSCHAFT-2013-126",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft zur Genehmigung des Übereinkommens vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
+      "nummer": "12.100",
+      "rechtsgebiet": "international",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2013/126/de",
+      "stand": "2012-12-19",
+      "rang": 79878781,
+      "normKeys": [
+        "UNO_BRK"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+      "titelFr": "Message portant approbation de la Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
+      "titelIt": "Messaggio concernente l'approvazione della Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "projEli": "https://fedlex.data.admin.ch/eli/proj/2012/2488",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2014/245"
+      ],
+      "botschaftDate": "2012-12-19",
+      "sha": "e57d99247beb22383067d2aba9cfa6e9270d2451a093ddd1b818792e63840973"
     },
     {
       "key": "BOTSCHAFT-2013-50",
@@ -14750,17 +14834,19 @@
       "stand": "2007-02-28",
       "rang": 79929772,
       "normKeys": [
-        "HEUE"
+        "HEUE",
+        "HKSUE96"
       ],
       "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
       "titelFr": "Message concernant la mise en uvre des conventions sur l'enlèvement international d'enfants ainsi que l'approbation et la mise en uvre des conventions de La Haye en matière de protection des enfants et des adultes",
       "titelIt": "Messaggio concernente l'attuazione delle convenzioni sul rapimento internazionale di minori nonché l'approvazione e l'attuazione delle Convenzioni dell'Aia sulla protezione dei minori e degli adulti",
       "projEli": "https://fedlex.data.admin.ch/eli/proj/2006/1340",
       "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2009/380",
         "https://fedlex.data.admin.ch/eli/oc/2009/381"
       ],
       "botschaftDate": "2007-02-28",
-      "sha": "1ca51b35c20a7de3d515c45f0594caec450b7b9b1db1501f488d4f4aaf886bb1"
+      "sha": "56efa4f2c699f11aa43eb06d7f630c7d6ca83c6a458815ea44729e5207d367cb"
     },
     {
       "key": "BOTSCHAFT-2007-65",
@@ -16235,6 +16321,34 @@
       ],
       "botschaftDate": "2004-06-23",
       "sha": "53e213a7038a6ab218da315d59bf07a1c86eb3ea87de2449bed4313847cd901e"
+    },
+    {
+      "key": "BOTSCHAFT-2004-558",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft betreffend das Übereinkommen zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
+      "nummer": "04.027",
+      "rechtsgebiet": "international",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2004/558/de",
+      "stand": "2004-05-26",
+      "rang": 79959474,
+      "normKeys": [
+        "MONTREAL"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+      "titelFr": "Message concernant la Convention pour l'unification de certaines règles relatives au transport aérien international",
+      "titelIt": "Messaggio concernente la Convenzione per l'unificazione di alcune norme relative al trasporto aereo internazionale",
+      "projEli": "https://fedlex.data.admin.ch/eli/proj/2003/1862",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2005/566"
+      ],
+      "botschaftDate": "2004-05-26",
+      "sha": "84c259457fd6c30a7ccb0fa62bd7672899041b9bd2edde8d241871a4322bdaba"
     },
     {
       "key": "BOTSCHAFT-2004-706",
