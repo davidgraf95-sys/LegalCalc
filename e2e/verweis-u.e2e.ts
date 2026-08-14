@@ -1,3 +1,4 @@
+// @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
 
 // ─── W2·5d U-VERWEIS (A7 + A10 + A11 + A13) — Browser-Beweise ────────────────

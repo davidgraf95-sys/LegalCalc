@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
 

@@ -1,3 +1,4 @@
+// @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d G3a — Per-Grundart-Darstellung im Gesetzes-Reader (FAHRPLAN §2.2):

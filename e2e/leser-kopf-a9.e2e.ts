@@ -1,3 +1,4 @@
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d U-KOPF — A9-Querschnitt (Bedienbarkeit + Flüssigkeit unter CPU-Throttle).

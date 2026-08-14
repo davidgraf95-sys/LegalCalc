@@ -1,3 +1,4 @@
+// @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d G2b — Kopf-Zusammenführung + «Zitat kopieren» (A27: Sticky Section-

@@ -1,3 +1,4 @@
+// @shard-gruppe: 6
 import { test, expect } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 

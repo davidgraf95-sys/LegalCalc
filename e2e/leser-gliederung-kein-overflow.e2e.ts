@@ -1,3 +1,4 @@
+// @shard-gruppe: 1
 // W2·19-GLIEDERUNG/S9 — Zusatzpunkt David 9.8.2026: die Leiste darf NICHT von
 // links nach rechts scrollbar sein. Kein horizontaler Overflow im
 // [data-toc]-Scroller (Baum, Trefferliste, Zonen A/C) — lange Etikette

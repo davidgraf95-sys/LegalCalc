@@ -1,3 +1,4 @@
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 import { clsBeobachtenInstallieren, clsAuslesen, clsHoehenSamplerVorabInstallieren } from './helpers/cls';
 

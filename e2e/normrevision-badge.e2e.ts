@@ -1,3 +1,4 @@
+// @shard-gruppe: 6
 // Browser-Smoke der Normrevisions-Ehrlichkeit (FAHRPLAN-VERZAHNUNG-UI §V1c):
 // hängt ein alter Entscheid an einer SEIT DEM ENTSCHEID revidierten Norm, trägt der
 // Leitfall-Chip einen ↻-Marker mit Revisionsdatum + AS-Fundstelle (aria-label).

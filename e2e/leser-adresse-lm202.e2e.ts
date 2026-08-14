@@ -1,3 +1,4 @@
+// @shard-gruppe: 5
 // W2·10-UI-NAV-URL — Adress-Modell des Gesetzes-Lesers (LM-202).
 //
 // David-Entscheid 3.8.2026, wörtlich:

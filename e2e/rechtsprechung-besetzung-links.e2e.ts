@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 // Klickbare Besetzung im Entscheid-Leser (Richter:in → ihre übrigen Entscheide).
 //
 // Prüft gegen den ECHTEN Korpus, dass der amtliche Besetzungs-Freitext eines
