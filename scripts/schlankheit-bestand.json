@@ -1,6 +1,6 @@
 {
   "scripts/golden-outputs.ts": 819,
-  "scripts/normtext-snapshot.ts": 1547,
+  "scripts/normtext-snapshot.ts": 1589,
   "scripts/normtext/abk-aliase-generieren.ts": 922,
   "scripts/normtext/adapter-htm.ts": 957,
   "scripts/normtext/adapter-lexwork.ts": 839,
@@ -9,9 +9,10 @@
   "scripts/normtext/check-normkeys-abdeckung.ts": 811,
   "scripts/normtext/entscheide-mapping.ts": 1152,
   "scripts/normtext/extrahiere-fedlex.ts": 1496,
-  "src/components/normtext/ArtikelBody.tsx": 903,
+  "scripts/plan/bildSeiten.ts": 843,
+  "src/components/normtext/ArtikelBody.tsx": 926,
   "src/lib/rechtsprechung/zitat-extraktion.ts": 844,
-  "src/pages/EntscheidLeser.tsx": 997,
+  "src/pages/EntscheidLeser.tsx": 1095,
   "src/tests/gruendungAgDokumente.test.ts": 1018,
   "src/tests/normtext-fedlex.test.ts": 940,
   "src/tests/vorlagen.test.ts": 893
