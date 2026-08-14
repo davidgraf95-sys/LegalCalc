@@ -2,7 +2,7 @@
 import { setField, prosaMarkerDriftHinweis } from '../../scripts/plan/set';
 
 const MD = `- [ ] **6 · Konsultieren**
-  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
   Prosa.
 `;
 
@@ -14,8 +14,8 @@ describe('setField', () => {
   });
 
   it('setzt status=wip und toggelt Checkbox auf [~]', () => {
-    const out = setField(MD, 'W2·6', 'status', 'wip(meine-wt)');
-    expect(out).toContain('status: wip(meine-wt)');
+    const out = setField(MD, 'W2·6', 'status', 'wip');
+    expect(out).toContain('status: wip');
     expect(out).toContain('- [~] **6 · Konsultieren**');
   });
 
@@ -32,7 +32,7 @@ describe('setField', () => {
   it('ändert ein Feld mit Mittelpunkt-Werten (dep mit W2·n-IDs)', () => {
     const md = [
       '- [ ] **6 · X**',
-      '  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [W2·5] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [W2·5] · kollision: [] · worktree: nein · 26x: nein -->',
       '',
     ].join('\n');
     const out = setField(md, 'W2·6', 'dep', '[W2·5, W2·7]');
@@ -40,7 +40,7 @@ describe('setField', () => {
   });
 
   it('Wert mit $ wird literal eingesetzt (keine Backreference)', () => {
-    const md = ['- [ ] **x**', '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
+    const md = ['- [ ] **x**', '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
     const out = setField(md, 'A', 'kollision', '[src/$1/x.ts]');
     expect(out).toContain('kollision: [src/$1/x.ts]');
   });
@@ -48,7 +48,7 @@ describe('setField', () => {
   it('erhält den Blockquote-Präfix (> ) der @meta-Zeile', () => {
     const md = [
       '> **⬆ Prosa**',
-      '> <!-- @meta id: QS-TOK · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '> <!-- @meta id: QS-TOK · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     const out = setField(md, 'QS-TOK', 'status', 'wip');
     const metaZeile = out.split('\n').find((z) => z.includes('@meta'))!;
@@ -76,7 +76,7 @@ describe('setField', () => {
 describe('setField — Entparken (Fund 27)', () => {
   const geparkt = (cb: string) => [
     `- ${cb} **5j-TABELLEN · X**`,
-    '  <!-- @meta id: W2·5j · status: parked · of: ja · blocker: david-spaeter-tabellen · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    '  <!-- @meta id: W2·5j · status: parked · blocker: david-spaeter-tabellen · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
   ].join('\n');
 
   it('[d] → status=ready zieht die Checkbox auf [ ] nach', () => {
@@ -184,13 +184,13 @@ describe('setField — Checkbox-Nachzug über Prosa hinweg (Fund R2-1/R2-10)', (
     '    Behauptung «ist gebaut» erst nach 19 Bau-Batches geprüft — erwiese sie sich als falsch, entstünde',
     '    der Bau-Posten am spätesten möglichen Punkt. B20 ist damit **unabhängig und vorziehbar**; die',
     '    Bau-Kette B1→…→B19 bleibt unverändert seriell. `plan:next` führt B20 dadurch gewollt in ready-now.',
-    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
+    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
   ].join('\n');
 
   const ZEIT = [
     '- [ ] **5g-ZEIT · Norm-Zeitmaschine + Fassungs-Diff** *(Ideen-Intake 20.7.2026 · Extraktion, `QS-GP`)*:',
     '  **Status 20.7.2026 (David):** «irgendwann, aktuell nicht relevant» → von `blocked` auf `parked`.',
-    '  <!-- @meta id: W2·5g-ZEIT · status: parked · of: ja · blocker: zeit-historik-poc · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
+    '  <!-- @meta id: W2·5g-ZEIT · status: parked · blocker: zeit-historik-poc · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
   ].join('\n');
 
   it('B20-Layout: status=done zieht die Checkbox trotz 5 Prosa-Zeilen auf [x]', () => {
@@ -207,7 +207,7 @@ describe('setField — Checkbox-Nachzug über Prosa hinweg (Fund R2-1/R2-10)', (
     const md = [
       '  - [ ] **fremde Checkbox der Nachbarliste**',
       '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
-      '  <!-- @meta id: QS-DATA · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: QS-DATA · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     const out = setField(md, 'QS-DATA', 'status', 'done');
     expect(out.split('\n')[0]).toBe('  - [ ] **fremde Checkbox der Nachbarliste**');
@@ -215,26 +215,20 @@ describe('setField — Checkbox-Nachzug über Prosa hinweg (Fund R2-1/R2-10)', (
 });
 
 // ---------------------------------------------------------------------------
-// Fund R2-16 (Runde 2): `serializeEtikett` kannte `seq-hart`/`seq-weich` nicht und
-// verwarf beide beim Neu-Serialisieren. `seq-hart` steuert die Kollisionsreihen-
-// folge auf geteilten Dateien (§12); sein stiller Verlust kann zwei Sessions auf
-// dieselbe Datei laufen lassen. Fixture ist die ECHTE W2·5d-Zeile der ROADMAP.
+// QS-PLAN-EINFACH (14.8.2026): `seq-hart`/`seq-weich` sind gestrichen — Alt-
+// Zeilen im Bestand dürfen plan:set aber nicht brechen; der nächste Schreib-
+// zugriff räumt die Felder mechanisch ab.
 // ---------------------------------------------------------------------------
-describe('setField — seq-hart/seq-weich überleben den Round-Trip (Fund R2-16)', () => {
-  const W2_5D =
-    '  <!-- @meta id: W2·5d · status: ready · of: ja · blocker: null · dep: [W2·5c] · kollision: [src/pages/gesetz-leser/parts.tsx, src/pages/gesetz-leser/inhalt.tsx, src/components/normtext/ArtikelBody.tsx, src/lib/normtext/register.ts, src/components/suche, scripts/normtext] · seq-hart: [QS-PERF(ArtikelBody.tsx)] · seq-weich: [W2·5b-L0(scripts/normtext, nur U-PDF)] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->';
-  const MD_5D = ['- [ ] **5d · Gesetzes-UX**', '  Prosa dazwischen.', W2_5D].join('\n');
-
-  it('status-Wechsel erhält seq-hart und seq-weich byte-gleich', () => {
-    const out = setField(MD_5D, 'W2·5d', 'status', 'wip');
+describe('setField — optionale Felder und Altfeld-Toleranz', () => {
+  it('räumt gestrichene Altfelder (seq-hart/seq-weich) beim Schreiben ab', () => {
+    const alt =
+      '  <!-- @meta id: W2·5d · status: ready · blocker: null · dep: [] · kollision: [a.ts] · seq-hart: [QS-PERF(a.ts)] · seq-weich: [X(y)] · worktree: ja · 26x: nein -->';
+    const md = ['- [ ] **5d · Gesetzes-UX**', alt].join('\n');
+    const out = setField(md, 'W2·5d', 'status', 'wip');
     const zeile = out.split('\n').find((z) => z.includes('@meta'))!;
-    expect(zeile).toBe(W2_5D.replace('status: ready', 'status: wip'));
-  });
-
-  it('Nicht-Status-Feld erhält seq-hart und seq-weich byte-gleich', () => {
-    const out = setField(MD_5D, 'W2·5d', 'worktree', 'nein');
-    const zeile = out.split('\n').find((z) => z.includes('@meta'))!;
-    expect(zeile).toBe(W2_5D.replace('worktree: ja', 'worktree: nein'));
+    expect(zeile).toContain('status: wip');
+    expect(zeile).not.toContain('seq-hart');
+    expect(zeile).not.toContain('seq-weich');
   });
 
   // Beim Nachtragen der `fahrplan:`-Felder für W3·10/W3·11/W3·14-S/W3·14-a11y
@@ -247,28 +241,21 @@ describe('setField — seq-hart/seq-weich überleben den Round-Trip (Fund R2-16)
   it('trägt ein fehlendes optionales Feld nach, statt still nichts zu tun', () => {
     const md = [
       '- [ ] **10 · X**',
-      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     const out = setField(md, 'W3·10', 'fahrplan', 'fahrplaene/FAHRPLAN-X.md');
     expect(out).not.toBe(md);
     expect(out.split('\n')[1]).toBe(
-      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->');
+      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->');
   });
 
-  it('trägt ein fehlendes seq-hart in kanonischer Position nach', () => {
+  it('gestrichene Felder sind nicht mehr setzbar', () => {
     const md = [
       '- [ ] **10 · X**',
-      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [a.ts] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [a.ts] · worktree: nein · 26x: nein -->',
     ].join('\n');
-    const out = setField(md, 'W3·10', 'seq-hart', '[QS-PERF(a.ts)]');
-    expect(out.split('\n')[1]).toBe(
-      '  <!-- @meta id: W3·10 · status: ready · of: ja · blocker: null · dep: [] · kollision: [a.ts] · seq-hart: [QS-PERF(a.ts)] · worktree: nein · 26x: nein -->');
-  });
-
-  it('seq-hart ist als Feld setzbar', () => {
-    const out = setField(MD_5D, 'W2·5d', 'seq-hart', '[QS-PERF(ArtikelBody.tsx), W2·5b-L0(x)]');
-    expect(out).toContain('seq-hart: [QS-PERF(ArtikelBody.tsx), W2·5b-L0(x)]');
-    expect(out).toContain('seq-weich: [W2·5b-L0(scripts/normtext, nur U-PDF)]');
+    expect(() => setField(md, 'W3·10', 'seq-hart', '[QS-PERF(a.ts)]')).toThrow(/Unbekanntes Feld/);
+    expect(() => setField(md, 'W3·10', 'of', 'ja')).toThrow(/Unbekanntes Feld/);
   });
 });
 
@@ -287,9 +274,9 @@ describe('prosaMarkerDriftHinweis (§17-Wurzel-Fix)', () => {
       `<!-- @queue: ${queueIds} -->`,
       marker,
       '- [ ] **4 · D**',
-      '  <!-- @meta id: W1·4 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W1·4 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
       '- [ ] **5 · E**',
-      '  <!-- @meta id: W1·5 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W1·5 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
 
   it('Marker nennt X, X wird wip → Hinweis enthält beide IDs', () => {

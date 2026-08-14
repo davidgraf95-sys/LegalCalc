@@ -1,5 +1,23 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## ROADMAP-Verschlankung 14.8.2026 (`QS-PLAN-EINFACH`, Auftrag David)
+
+**Streichungs-Begründung (Protokoll Ziff. 5):** Die Schritt-Prosa der ROADMAP wurde auf Zielform
+gekürzt — Ziel, Risiko-Klassierung und harte Auflagen bleiben an der Zeile, Anlass-Erzählungen,
+Datums-/PR-Historie und Weg-Vorschriften sind entfernt (sie stehen in den verlinkten Fahrplan-§§
+und in dieser Chronik). **Vollständiger Wortlaut vor der Kürzung: `ROADMAP.md` im Commit
+`cc89fd3d0`.** Beweis der Steuerungs-Neutralität: `plan:dump` vorher/nachher byte-gleich (alle 79
+Etiketten, @queue, @blockers unverändert). Im selben Zug als erledigt hierher geräumt:
+
+- [x] **W2·17 B3–B7 (inkl. B4-N1, B5-N1)** ✅ 8.8.2026, PRs #471–#477.
+- [x] **W2·18: Artikel-Ebene in der Gliederung — in JEDEM Erlass** ✅ PR #486 (13.8.2026).
+- [x] **W2·18: a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt** (PR #480) **· Baum-Fokus beim Auto-Zuklappen retten** (B8, WCAG 2.4.3, PR #486) ✅ 13.8.2026.
+- [x] **W2·13: 37 der 42 zeigen eine LEERE Leiste** ✅ PR #486 (13.8.2026) — b3-leer-Familie (68 Erlasse) zeigt den flachen Artikel-Index; korpusweiter Sweep über 1458 Erlasse: 0 leere Leisten.
+
+Gestrichene tote Etikett-Felder (`of`, `seq-hart`, `seq-weich`, `statusAgent`) und die
+`groesse`-Vokabelprüfung: Begründung und Messwerte im Commit «QS-PLAN-EINFACH 1/3» sowie
+`fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md` §Einfach.
+
 ## QS-BASIS-DOKU-CI — Doku-Kurzpfad auch für main-Pushes *(erledigt 14.8.2026, PR #488 Squash `13a3d05ad`; überführt 14.8.2026)*
 
 - [x] **`QS-BASIS-DOKU-CI` · Doku-Kurzpfad auch für main-Pushes** *(**FREIGEGEBEN David 14.8.2026**: «wird freigegeben» — der Grundsatz «ein Deploy-Stand wird nie nach Dateiendungen abgekürzt» wird für reine `.md`-Pushes auf `main` bewusst gelockert; Anlass war ~75 CI-Minuten pro Tag für reine Plan-Buchhaltung)* — Ziel: Ein Push, der ausschliesslich `.md` berührt, läuft den Kurzpfad statt des Volllaufs. Prüfungen, die `.md`-Inhalte wirklich lesen, bleiben **echt**; im Zweifel Volllauf. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.4.

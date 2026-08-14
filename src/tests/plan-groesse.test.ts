@@ -20,8 +20,8 @@ import type { Etikett } from '../../scripts/plan/etikett';
 import type { Einheit } from '../../scripts/plan/parse';
 import type { SchrittInfo } from '../../scripts/plan/bildDaten';
 
-const OHNE = '  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->';
-const MIT = '  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-X.md -->';
+const OHNE = '  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->';
+const MIT = '  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-X.md -->';
 
 describe('Etikett-Feld `groesse` — Parsen und Serialisieren', () => {
   it('liest S/M/L', () => {
@@ -56,7 +56,7 @@ const PLAN = `## Die geordnete Abarbeitung
 <!-- @blockers
 -->
 - [ ] **6 · A**
-  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
 
 Siehe FAHRPLAN-PLAN-STEUERUNG.md.
 `;
@@ -65,7 +65,7 @@ const DA = () => true;
 const lauf = (md: string) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], DA, INV);
 const groesseProbleme = (md: string) => lauf(md).filter((p) => /groesse/.test(p.meldung));
 
-describe('check:plan Regel 12 — Vokabular von `groesse`', () => {
+describe('check:plan — `groesse` ist reine Lese-Hilfe (Regel 12 gestrichen, QS-PLAN-EINFACH 14.8.2026)', () => {
   it('ohne Feld grün: das Tor verlangt die Schätzung nicht', () => {
     expect(lauf(PLAN)).toEqual([]);
   });
@@ -76,15 +76,8 @@ describe('check:plan Regel 12 — Vokabular von `groesse`', () => {
     }
   });
 
-  it('unbekanntes Vokabular → genau EIN Problem, mit ID und erlaubter Menge', () => {
-    const p = groesseProbleme(PLAN.replace('26x: nein', '26x: nein · groesse: gross'));
-    expect(p).toHaveLength(1);
-    expect(p[0].id).toBe('W2·6');
-    expect(p[0].meldung).toContain('S, M, L');
-  });
-
-  it('Kleinschreibung ist kein gültiger Wert — das Vokabular ist exakt', () => {
-    expect(groesseProbleme(PLAN.replace('26x: nein', '26x: nein · groesse: m'))).toHaveLength(1);
+  it('auch unbekanntes Vokabular macht das Tor nicht rot (Feld steuert nichts)', () => {
+    expect(groesseProbleme(PLAN.replace('26x: nein', '26x: nein · groesse: gross'))).toEqual([]);
   });
 });
 
@@ -120,13 +113,9 @@ function einheit(groesse: string | null): Einheit {
   const etikett: Etikett = {
     id: 'QS-TEST-1',
     status: 'ready',
-    statusAgent: null,
-    of: false,
     blocker: null,
     dep: [],
     kollision: ['scripts/plan/**'],
-    seqHart: [],
-    seqWeich: [],
     worktree: true,
     asset26x: false,
     groesse,

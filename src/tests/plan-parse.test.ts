@@ -11,15 +11,15 @@ wbqdyap3x: Prozesskosten I2 — Recherche offen
 -->
 
 - [x] **1 · Begründungs-Absatz** *(BEGRUENDUNGS-ABSATZ)*
-  <!-- @meta id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
   Prosa hier.
 - [ ] **6 · Konsultieren** *(amtlich)*
-  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/norm-index.ts] · worktree: ja · 26x: nein -->
+  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [src/lib/norm-index.ts] · worktree: ja · 26x: nein -->
 
 ## Querschnitt-Band
 
 - **Performance** *(QS-PERF)*
-  <!-- @meta id: QS-PERF · status: wip(perf-wt) · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
+  <!-- @meta id: QS-PERF · status: wip(perf-wt) · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->
 
 ## Geparkt
 
@@ -36,7 +36,8 @@ describe('parseRoadmap', () => {
     expect(w11.sektion).toBe('Die geordnete Abarbeitung');
     const qs = einheiten.find((e) => e.id === 'QS-PERF')!;
     expect(qs.checkbox).toBeNull(); // Querschnitt-Bullet ohne Checkbox
-    expect(qs.etikett.statusAgent).toBe('perf-wt');
+    // Alt-Notation `wip(agent)` bleibt lesbar; der Agent-Zusatz ist gestrichen.
+    expect(qs.etikett.status).toBe('wip');
   });
 
   it('liest das @blockers-Register', () => {
@@ -48,23 +49,23 @@ describe('parseRoadmap', () => {
 
 describe('parseRoadmap — Robustheit', () => {
   it('CRLF: @blockers werden trotz \\r geparst', () => {
-    const md = ['## Die geordnete Abarbeitung', '<!-- @blockers', 'b1: grund', '-->', '- [ ] **x**', '  <!-- @meta id: A · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\r\n');
+    const md = ['## Die geordnete Abarbeitung', '<!-- @blockers', 'b1: grund', '-->', '- [ ] **x**', '  <!-- @meta id: A · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\r\n');
     const { blockers, einheiten } = parseRoadmap(md);
     expect(blockers.b1).toBe('grund');
     expect(einheiten.map((e) => e.id)).toEqual(['A']);
   });
   it('einzeiliger @blockers-Kommentar schluckt nicht das ganze Dokument', () => {
-    const md = ['## Die geordnete Abarbeitung', '<!-- @blockers b1: x -->', '- [ ] **y**', '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
+    const md = ['## Die geordnete Abarbeitung', '<!-- @blockers b1: x -->', '- [ ] **y**', '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
     expect(parseRoadmap(md).einheiten.map((e) => e.id)).toEqual(['A']);
   });
   it('einzeiliger @blockers MIT Inline-Eintrag registriert ihn', () => {
-    const md = ['## Die geordnete Abarbeitung', '<!-- @blockers b1: grund -->', '- [ ] **y**', '  <!-- @meta id: A · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
+    const md = ['## Die geordnete Abarbeitung', '<!-- @blockers b1: grund -->', '- [ ] **y**', '  <!-- @meta id: A · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
     const { blockers, einheiten } = parseRoadmap(md);
     expect(blockers.b1).toBe('grund');
     expect(einheiten.map((e) => e.id)).toEqual(['A']);
   });
   it('Checkbox [X] gross + * /+ -Bullets werden erkannt', () => {
-    const md = ['## Die geordnete Abarbeitung', '* [X] **z**', '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
+    const md = ['## Die geordnete Abarbeitung', '* [X] **z**', '  <!-- @meta id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[x]');
   });
 });
@@ -91,7 +92,7 @@ describe('parseRoadmap — Robustheit', () => {
 // ---------------------------------------------------------------------------
 describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)', () => {
   const META_B20 =
-    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->';
+    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->';
 
   // Wörtlich aus ROADMAP.md Z.700-706 (Stand f9d7fbb74).
   const B20_LAYOUT = [
@@ -110,7 +111,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
     '## Die geordnete Abarbeitung',
     '- [ ] **5g-ZEIT · Norm-Zeitmaschine + Fassungs-Diff** *(Ideen-Intake 20.7.2026 · Extraktion, `QS-GP`)*:',
     '  **Status 20.7.2026 (David):** «irgendwann, aktuell nicht relevant» → von `blocked` auf `parked`; der Blocker `zeit-historik-poc` bleibt bestehen.',
-    '  <!-- @meta id: W2·5g-ZEIT · status: parked · of: ja · blocker: zeit-historik-poc · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
+    '  <!-- @meta id: W2·5g-ZEIT · status: parked · blocker: zeit-historik-poc · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
   ].join('\n');
 
   it('B20-Layout (Bullet, 5 Prosa-Zeilen, @meta) bindet die Checkbox', () => {
@@ -131,7 +132,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
       '## Querschnitt-Band',
       '  - [ ] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — geparkt.',
       '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
-      '  <!-- @meta id: QS-DATA · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: QS-DATA · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
   });
@@ -141,7 +142,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
       '- [x] **weit oben**',
       '',
       '## ⚡ S0 — fristgetrieben',
-      '<!-- @meta id: S0 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '<!-- @meta id: S0 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
   });
@@ -151,9 +152,9 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
       '## Die geordnete Abarbeitung',
       '- [x] **7-BEZUG · Dach**',
       '  - [x] **B7 · Unterschritt**',
-      '    <!-- @meta id: B7 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '    <!-- @meta id: B7 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
       '  Detail: Chronik.',
-      '  <!-- @meta id: BEZUG · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: BEZUG · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     const e = parseRoadmap(md).einheiten;
     expect(e.find((x) => x.id === 'B7')!.checkbox).toBe('[x]');
@@ -166,7 +167,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
       '- [x] **weit oben**',
       '',
       '',
-      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBeNull();
   });
@@ -181,7 +182,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
     const md = [
       '## Die geordnete Abarbeitung',
       '- [ ] **A · Migration (Pfeil: alt --> neu)**',
-      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[ ]');
   });
@@ -190,7 +191,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
     const md = [
       '## Die geordnete Abarbeitung',
       '- [~] **A · Kommentar-Syntax «<!--» im Titel**',
-      '  <!-- @meta id: A · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[~]');
   });
@@ -200,7 +201,7 @@ describe('parseRoadmap — Checkbox-Bindung über Prosa hinweg (Fund R2-1/R2-10)
       '## Die geordnete Abarbeitung',
       '- [~] **läuft**',
       '',
-      '  <!-- @meta id: A · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(parseRoadmap(md).einheiten[0].checkbox).toBe('[~]');
   });

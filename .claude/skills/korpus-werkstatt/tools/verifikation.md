@@ -37,7 +37,7 @@ Push, keine Übergabe an `landung`** (§9).
 ## Sammeltore — `check` (offline) und `check:netz` (live)
 
 - **`npm run check`** — der offline-Sammellauf, der in `gate` (voll) steckt. Kette:
-  `check:inventur`, `check:design-tokens`, `check:bibliothek`, `check:verfall`, `check:verfall-ui`,
+  `report:inventur` (auf Abruf), `check:design-tokens`, `check:bibliothek`, `check:verfall`, `check:verfall-ui`,
   `check:sweep`, `check:smoke`, `check:normtext`, `check:vollstaendigkeit`, `check:entscheide`,
   `check:materialien`, `check:pdf`. Deckt beide Korpora gegen den **eingecheckten** Stand ab.
 - **`npm run check:netz`** — die **netzabhängigen** Tore separat (nicht in `gate`, weil sie eine

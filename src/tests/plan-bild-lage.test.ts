@@ -337,7 +337,7 @@ describe('davidFragen — @david-fragen-Block statt hartkodierter Liste (§5, 8.
 describe('schrittInfoAusRoadmap — Klartext-Titel aus der ROADMAP-Zeile', () => {
   const MD = [
     '- [ ] **`QS-BEISPIEL` · Ein sprechender Titel für Laien** *(Anlass: Test)* — Prosa dazu.',
-    '  <!-- @meta id: QS-BEISPIEL · status: ready · of: ja · blocker: null · dep: [] · kollision: [scripts/plan] · worktree: ja · 26x: nein -->',
+    '  <!-- @meta id: QS-BEISPIEL · status: ready · blocker: null · dep: [] · kollision: [scripts/plan] · worktree: ja · 26x: nein -->',
   ].join('\n');
 
   it('nimmt den Fettdruck-Titel und streift die vorangestellte ID ab', () => {
@@ -347,7 +347,7 @@ describe('schrittInfoAusRoadmap — Klartext-Titel aus der ROADMAP-Zeile', () =>
   it('Titel ohne ID-Präfix bleibt unverändert', () => {
     const md = [
       '- **Geräte-Last / Performance** *(QS-PERF)*.',
-      '  <!-- @meta id: QS-PERF · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n');
     expect(schrittInfoAusRoadmap(md).get('QS-PERF')?.titel).toBe('Geräte-Last / Performance');
   });
@@ -394,13 +394,9 @@ function einheit(p: Partial<Etikett> = {}): Einheit {
     etikett: {
       id: 'QS-TEST-1',
       status: 'ready',
-      statusAgent: null,
-      of: false,
       blocker: null,
       dep: [],
       kollision: ['scripts/plan/**'],
-      seqHart: [],
-      seqWeich: [],
       worktree: true,
       asset26x: false,
       groesse: null,
@@ -486,13 +482,13 @@ describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)',
 describe('schrittInfoAusRoadmap — Nachblock und Checkliste (Entstückelung 8.8.2026)', () => {
   const MD_DACH = [
     '- [ ] **QS-DACH · Ein Dach mit Positionen** *(Zusatz)*',
-    '  <!-- @meta id: QS-DACH · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/x] · worktree: nein · 26x: nein · groesse: L -->',
+    '  <!-- @meta id: QS-DACH · status: ready · blocker: null · dep: [] · kollision: [src/x] · worktree: nein · 26x: nein · groesse: L -->',
     '  Beschreibung NACH dem Etikett — sie gehört in den Wortlaut.',
     '  - [ ] **P1 · Erste Position** — offen.',
     '  - [x] **P2 · Zweite Position** — erledigt.',
     '  - [ ] **P3 · Dritte Position** — offen.',
     '- [ ] **QS-NAECHSTER · Nächste Einheit**',
-    '  <!-- @meta id: QS-NAECHSTER · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    '  <!-- @meta id: QS-NAECHSTER · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
   ].join('\n');
 
   it('zählt offene und gesamte Positionen und stoppt an der nächsten Einheit', () => {

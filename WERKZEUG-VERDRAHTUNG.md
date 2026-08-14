@@ -173,9 +173,9 @@ des Produkts. Fixiert, damit kein späterer Schnitt eine zweite Quelle anlegt:
   7.6.2026); Vorlage → Rechner über `vorlagen/PassendeRechner.tsx` im
   Wizard-Kopf (neu, V6). Die Vorlagen-Seite wird dabei **nicht** angefasst: die
   Komponente löst ihre Karte über den Routenpfad auf (`href` der Karte = Route,
-  festgehalten von `check:inventur`). So kann keine der ~50 Vorlagen-Seiten die
+  festgehalten von `report:inventur`). So kann keine der ~50 Vorlagen-Seiten die
   Verdrahtung vergessen.
-- **Tore:** `check:inventur` meldet kaputte `related`-Ziele und Einbahnen als
+- **Tore:** `report:inventur` meldet kaputte `related`-Ziele und Einbahnen als
   Hinweis; die Mindest-Paare der Spec (verjaehrungsverzicht↔verjaehrung ·
   mahnung↔verzugszins · klage-vereinfacht/-ordentlich↔streitwert/prozesskosten)
   sind in `src/tests/uinav-v6-kreuzlinks.test.ts` **symmetrisch** festgenagelt.

@@ -16,18 +16,17 @@ const MD = [
   '-->',
   '- [ ] **A · X**',
   '  Prosa dazwischen.',
-  '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/x.ts] · seq-hart: [B(x.ts)] · seq-weich: [] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->',
+  '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [src/x.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->',
 ].join('\n');
 
 describe('plan:dump', () => {
-  it('führt jedes Feld der Einheit — inkl. checkbox, seq-hart, seq-weich, pos, sektion', () => {
+  it('führt jedes Feld der Einheit — inkl. checkbox, pos, sektion', () => {
     const zeile = dump(MD).split('\n')[0];
-    for (const feld of ['id=', 'pos=', 'checkbox=', 'sektion=', 'status=', 'statusAgent=', 'of=',
-      'blocker=', 'dep=', 'kollision=', 'seq-hart=', 'seq-weich=', 'worktree=', '26x=', 'fahrplan=', 'slot=']) {
+    for (const feld of ['id=', 'pos=', 'checkbox=', 'sektion=', 'status=',
+      'blocker=', 'dep=', 'kollision=', 'worktree=', '26x=', 'fahrplan=', 'slot=']) {
       expect(zeile).toContain(feld);
     }
     expect(zeile).toContain('checkbox=[ ]');
-    expect(zeile).toContain('seq-hart=[B(x.ts)]');
   });
 
   it('führt @queue und das @blockers-Register', () => {

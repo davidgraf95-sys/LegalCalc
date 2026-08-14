@@ -15,7 +15,6 @@ if (!process.env.VITEST) {
   z(`  Parallel-Lanes: ${b.lanes.map((l) => `[${l.join(' + ')}]`).join('  ') || '—'}`);
   if (b.begleitend.length) z(`🔄 begleitend (Querschnitt-Band, kein Reihenfolge-Slot): ${b.begleitend.join(', ')}`);
   if (b.wartetDep.length) z(`⏳ wartet auf dep: ${b.wartetDep.map((x) => `${x.id}→${x.offen.join(',')}`).join(' · ')}`);
-  if (b.wartetFachzeit.length) z(`👤 wartet auf Davids Fachzeit: ${b.wartetFachzeit.join(', ')}`);
   if (b.blockiert.length) z(`⛔ blockiert: ${b.blockiert.map((x) => `${x.id}(${x.blocker})`).join(', ')}`);
   if (b.geparkt.length) z(`🅿️  geparkt: ${b.geparkt.join(', ')}`);
   if (b.inArbeit.length) z(`🔨 in Arbeit (wip): ${b.inArbeit.join(', ')}`);

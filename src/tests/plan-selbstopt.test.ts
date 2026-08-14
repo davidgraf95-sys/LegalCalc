@@ -601,7 +601,7 @@ describe('lageBlock — Andock-Muster', () => {
   let pos = 0;
   const einheit = (id: string): Einheit => ({
     id, checkbox: null, sektion: 'Die geordnete Abarbeitung', pos: pos++,
-    etikett: { id, status: 'ready', statusAgent: null, of: true, blocker: null, dep: [], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, groesse: null, fahrplan: null },
+    etikett: { id, status: 'ready', blocker: null, dep: [], kollision: [], worktree: false, asset26x: false, groesse: null, fahrplan: null },
   });
   const kaputt = () => { throw new Error('git fehlt'); };
 

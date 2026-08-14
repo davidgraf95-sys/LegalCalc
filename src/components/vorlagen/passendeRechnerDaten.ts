@@ -34,7 +34,7 @@ export function passendeRechner(karteId: string): { id: string; title: string; h
  * Karten-Id zum aktuellen Pfad. Der Wizard-Rahmen kennt seine Karte nicht (er
  * bekommt Titel/Normen als fertige Props von ~50 Seiten); der Pfad ist der eine
  * Schlüssel, den alle teilen — `href` der Karte IST der Routenpfad (Tor
- * `check:inventur`: «href ausserhalb /rechner|/vorlagen (0)»). So braucht keine
+ * `report:inventur`: «href ausserhalb /rechner|/vorlagen (0)»). So braucht keine
  * der Seiten angefasst zu werden, und keine kann die Verdrahtung vergessen.
  */
 export function karteIdFuerPfad(pfad: string): string | null {

@@ -8,22 +8,20 @@ let posZaehler = 0;
 function einheit(id: string, p: Partial<Einheit['etikett']> = {}): Einheit {
   return {
     id, checkbox: null, sektion: 'Die geordnete Abarbeitung', pos: posZaehler++,
-    etikett: { id, status: 'ready', statusAgent: null, of: true, blocker: null, dep: [], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, groesse: null, fahrplan: null, ...p },
+    etikett: { id, status: 'ready', blocker: null, dep: [], kollision: [], worktree: false, asset26x: false, groesse: null, fahrplan: null, ...p },
   };
 }
 
 describe('resolve', () => {
-  it('ready-now nur bei status=ready, of=ja, kein blocker, deps done', () => {
+  it('ready-now nur bei status=ready, kein blocker, deps done', () => {
     const b = resolve([
       einheit('A'),
       einheit('B', { status: 'blocked', blocker: 'wbqdyap3x' }),
-      einheit('C', { of: false }),
       einheit('D', { status: 'parked' }),
       einheit('E', { dep: ['Z'] }),
     ]);
     expect(b.readyNow).toContain('A');
     expect(b.blockiert.map((x) => x.id)).toEqual(['B']);
-    expect(b.wartetFachzeit).toEqual(['C']);
     expect(b.geparkt).toEqual(['D']);
     expect(b.wartetDep).toEqual([{ id: 'E', offen: ['Z'] }]);
   });

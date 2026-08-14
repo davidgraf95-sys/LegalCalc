@@ -82,14 +82,14 @@ Toleranz: harmlose Prosa-Edits ausserhalb des Inventars machen das Tor **nie** r
 
 ---
 
-## Das Etikett `@meta` — 9 Felder
+## Das Etikett `@meta` — 7 Pflichtfelder + 3 optionale
 
 Eine Kommentar-Zeile direkt **unter** der ersten Zeile der Einheit (Schritt-Bullet bzw. Überschrift),
 Felder durch ` · ` getrennt:
 
 ```
 - [ ] **6 · Konsultieren-Klingen** *(`[OF]`, amtlich)*:
-  <!-- @meta id: W2·6 · status: ready · of: ja · blocker: null · dep: [] · kollision: [src/lib/norm-index.ts] · worktree: ja · 26x: nein -->
+  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [src/lib/norm-index.ts] · worktree: ja · 26x: nein -->
   - Mehrsprachiger Normvergleich DE/FR/IT …   ← gewohnte Prosa + Unter-Bullets, unverändert
 ```
 
@@ -99,7 +99,6 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet (S0, Q
 |---|---|---|
 | `id` | Stabile Schritt-ID (explizit) | `S0` · `W1·1` · `W2·6` · `W3·14` · `QS-PERF` · Bündel `W2·6-B1` |
 | `status` | Die Ampel | `ready` · `wip` · `blocked` · `done` · `parked` (Grammatik s. u.) |
-| `of` | Ohne Davids Fachzeit baubar (Zeitsperre)? | `ja` / `nein` |
 | `blocker` | Token, falls `blocked`/`parked` | Token aus dem Blocker-Register oder `null` |
 | `dep` | Einheiten, die erst `done` sein müssen | Liste von IDs, z. B. `[W1·4]` oder `[]` |
 | `kollision` | repo-relative Dateien/Globs, die sie anfasst | Liste, z. B. `[src/lib/norm-index.ts]` |
@@ -107,15 +106,13 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet (S0, Q
 | `26x` | Eines der 5 grossen Datenassets? | `ja` / `nein` |
 | `fahrplan` | Detail-Datei (optional) | Pfad (`fahrplaene/…` bzw. `archiv/…`) oder leer |
 | `slot` | 26×-Slot-Inhaberschaft (optional) | `inhaber` oder leer |
-| `seq-hart` | Harte Reihenfolge auf geteilten Dateien, §12 (optional) | Liste, z. B. `[QS-PERF(ArtikelBody.tsx)]` |
-| `seq-weich` | Weiche Reihenfolge-Empfehlung (optional) | Liste, analog |
 | `groesse` | Geschätzter Bau-Umfang (optional, s. u.) | `S` · `M` · `L` oder leer |
 
-*(Die vier optionalen Felder standen faktisch längst im Bestand; `seq-hart`/`seq-weich` kannte
-der Etikett-Typ bis zum 31.7.2026 aber nicht und `serializeEtikett` verwarf sie beim
-Neu-Schreiben — `plan:set` löschte die Kollisionsreihenfolge damit still mit, Endprüfungs-Fund
-R2-16. Seither Teil des Typs, byte-treuer Round-Trip. **Die Tabellen-Überschrift «9 Felder» ist
-die historische Zählung der Pflichtfelder + `fahrplan`; die optionalen kommen hinzu.**)*
+*(**Gestrichen 14.8.2026, `QS-PLAN-EINFACH`:** `of` (20 686× «ja», 0× «nein» — der Zweig
+«wartet auf Fachzeit» konnte nie feuern), `seq-hart`/`seq-weich` (3 Vermerke, 0 auswertende
+Code-Stellen; ein eingelöster Vermerk las sich als Sperre, die es nicht gab) und der
+`status`-Agent-Zusatz `wip(agent)` (0 Vorkommen). Der Parser toleriert die Altfelder im Bestand,
+der Serializer schreibt sie nie — `plan:set` räumt Reste mechanisch ab.)*
 
 ### Feld `groesse` — die Auswahl-Hilfe (Auftrag David 5.8.2026)
 
@@ -653,6 +650,18 @@ Mutation den Test rot zeigt (§6.7), die Bestandszeilen des Blocks unverändert 
 `check:plan` grün ist.
 
 ### §Einfach · Plan-System vereinfachen (Schritt `QS-PLAN-EINFACH`, Auftrag David 14.8.2026)
+
+**Stand 14.8.2026 — Kern gelandet (Session mit David im Chat):** (1) Tote Etikett-Felder `of`,
+`seq-hart`, `seq-weich`, `statusAgent` + `groesse`-Vokabelprüfung gestrichen (Parser tolerant,
+Serializer räumt ab; 310 Plan-Tests nachgezogen). (2) ROADMAP 100.1 → 77.9 KB: Schritt-Prosa auf
+Zielform («Ziel und Grenzen, nicht der Weg» — im ROADMAP-Kopf kodifiziert), Beweis der
+Steuerungs-Neutralität: `plan:dump` vorher/nachher byte-gleich; Voll-Wortlaut: ROADMAP@`cc89fd3d0`.
+(3) Rotations-Hysterese (Riss ⇒ Räumen bis 90 % Budget). (4) `check:zitate` mit echtem Abbruchpfad
+(rot bei Befunden/ohne Caches, live rot gezeigt), `check:inventur` → `report:inventur` und aus
+Kette + CI genommen. **Offen (Checkliste am Schritt):** Skill-Diät `auftrag`/`bauschritt`/
+`aufraeumen.md` · Halden-Abbau · Etiketten-Sterblichkeit. Der Audit-Vorschlag
+«Anlage nur mit wirkt/entfällt-Vermerk» wurde in dieser Session bewusst NICHT als neue Regel
+verankert (er wäre selbst Zuwachs); der Streichgrundsatz von §17-Gegengewicht deckt die Sorge.
 
 **Der Auftrag ist bewusst OFFEN.** David, 14.8.2026: «wichtig ist das alles weniger kompliziert
 wird … neue session soll selbstständig entscheiden können was sie anpassen soll». Dieser § ist

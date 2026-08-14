@@ -111,3 +111,6 @@ tmp/
 # Bausteinliste zur AG-Abnahme — Erzeugnis, kein Bestand (Entscheid David 14.8.2026).
 # Bei Bedarf in <1 s erzeugen: npm run abnahme:ag
 ABNAHME-AG-BAUSTEINE.md
+
+# Python-Bytecode (Hook-Testläufe)
+__pycache__/

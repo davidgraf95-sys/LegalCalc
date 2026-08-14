@@ -313,9 +313,9 @@ jobs:
       - name: Lint (volle Ausgabe, nie tail!)
         if: needs.diff.outputs.art == 'code'
         run: npm run lint
-      - name: Katalog-Inventur
-        if: needs.diff.outputs.art == 'code'
-        run: npm run check:inventur
+      # ── Katalog-Inventur ENTFERNT (14.8.2026, QS-PLAN-EINFACH) ──────────────
+      # Das Skript hat keinen Abbruchpfad und konnte nie rot werden (§6.7) —
+      # es heisst jetzt ehrlich `report:inventur` und läuft auf Abruf.
       - name: Bibliotheks-Standards (S1–S10)
         if: needs.diff.outputs.art == 'code'
         run: npm run check:bibliothek

@@ -182,7 +182,7 @@ CHF-Apostroph, «5 %», Guillemets, ss statt ß, Halbgeviert.
 
 **Katalog:** 134 Karten im Code (Rechner + Vorlagen); Status-Verteilung
 ca. 66 × `entwurf` · 86 × `geplant` (inkl. Szenarien-Substati) ·
-**0 × `geprüft`**. Massgeblicher Zähler: `npm run check:inventur`;
+**0 × `geprüft`**. Massgeblicher Zähler: `npm run report:inventur`;
 Soll-Inventar: `KATALOG-ROADMAP.md` (Praxis-Abdeckungskarte).
 
 **Rechner-Schwerpunkte (gebaut, Status entwurf):** kombinierter
@@ -237,7 +237,7 @@ Gesetz-Leser.
   Lint · Build · Golden · rund 40 `check:*`-Tore, u. a. `check:normtext`
   (+ `-netz`-Drift gegen Fedlex/LexWork), `check:entscheide`,
   `check:besetzung`, Paritäts-Tor DB↔Projektion,
-  `check:fedlex-versionen`, `check:turso-frische`, `check:inventur`,
+  `check:fedlex-versionen`, `check:turso-frische`, `report:inventur`,
   `check:farbwelt`.
 - **Adversariale Gegenprüfung** (QS-GP): auf Risiko-Pfaden (Extraktion /
   Rechnen / Norm-Tarif) blockiert `check:gegenpruefung` das Gate bis zum

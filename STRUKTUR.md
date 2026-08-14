@@ -30,6 +30,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 14.8.2026 — QS-PLAN-EINFACH gebaut: Feld-Diät, ROADMAP 100→78 KB, Schein-Tore ehrlich (feat/qs-plan-einfach)
+
+**Fable-Orchestrator, drei Commits, Auftrag David im Chat («roadmap zu kompliziert — vereinfachen, Sessions sollen offener entscheiden»).** Kern des offenen Schritts `QS-PLAN-EINFACH` umgesetzt; alle Massnahmen folgen dem gegengeprüften Audit vom 13./14.8.
+
+- **Feld-Diät (`cc89fd3d0`):** `of`, `seq-hart`, `seq-weich`, `statusAgent` aus Etikett-Typ, Parser (tolerant), Serializer, `plan:set`-FELDER, `dump`, `resolve` (Zweig `wartetFachzeit` entfernt) und allen 79 ROADMAP-Etiketten gestrichen; `check:plan` Regel 12 (`groesse`-Vokabular) weg. 310 Plan-Tests nachgezogen (deklarierte fachliche Änderung), tsc + check:plan grün.
+- **ROADMAP-Verschlankung (`9785f3596`):** 100.1 → 77.9 KB. Schritt-Prosa auf Zielform; neu im Kopf: **«Schritte nennen Ziel und Grenzen, nicht den Weg.»** Leitprinzip 6 an die geltende Deploy-Praxis angeglichen (Merge = Deploy — alter Wortlaut «nur auf Davids frisches Ja» widersprach dem Protokoll). Beweis: `plan:dump` vorher/nachher **byte-gleich**; erledigte Checkbox-Zeilen + Streichungs-Begründung in der Chronik (Voll-Wortlaut: ROADMAP@`cc89fd3d0`).
+- **Pflege billiger (`8c544a9fd`):** Rotations-Hysterese (Riss ⇒ Räumen bis 90 % Budget statt 49 Byte Luft) · `check:zitate` mit echtem Abbruchpfad, live rot gezeigt (ohne Caches meldete es bisher «0 Befunde» bei null geprüften Zitaten) · `check:inventur` → `report:inventur`, aus check:seriell + ci.yml entfernt. `check:tor-paritaet` OK, alle 42 Sub-Checks parallel grün (14.2 s).
+- **Offen am Schritt (Checkliste):** Skill-Diät (`auftrag`/`bauschritt`/`aufraeumen.md`) · Halden-Abbau (791-KB-Kartenarchiv, tote Archivdateien, nicht-steuernde Fahrplan-§§) · Etiketten-Sterblichkeit (50/79 nie in einem Commit genannt).
+
 ## Session 13./14.8.2026 — Plan-System vereinfachen: §17-Gegengewicht, offener Auftrag QS-PLAN-EINFACH, Doku-Kurzpfad für main (#488)
 
 **Opus-Orchestrator, ein 11-Agenten-Audit, fünf Commits im Zweig `feat/roadmap-diaet`** (PR #488). Ausgangspunkt war eine Frage Davids zur Gesetzes-Oberfläche; sie legte einen veralteten `seq-hart`-Vermerk frei, und daraus wurde die Sitzung über das Steuerungssystem selbst.

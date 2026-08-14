@@ -23,7 +23,7 @@ und — nach Öffnung der §0a-Sperre — die **Bau-Reihenfolge**.
 - Praxiswert (G1.4): **H**äufigkeit × **R**isiko-bei-Fehlen ×
   **D**eterminismus-Klarheit, je 1–3 → Produkt 1–27.
 
-**Zähler-Ist 10.6.2026 (`npm run check:inventur`):** 105 Karten · 32
+**Zähler-Ist 10.6.2026 (`npm run report:inventur`):** 105 Karten · 32
 verfügbar (gebaut — alle nur «entwurf») · 73 geplant · **0 geprüft**.
 
 ---
