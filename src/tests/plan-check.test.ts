@@ -5,9 +5,9 @@ const OK = `## Die geordnete Abarbeitung
 wbqdyap3x: I2 offen
 -->
 - [x] **1 · A**
-  <!-- @meta id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
 - [ ] **4 · D**
-  <!-- @meta id: W1·4 · status: blocked · of: ja · blocker: wbqdyap3x · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W1·4 · status: blocked · blocker: wbqdyap3x · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
 
 Siehe FAHRPLAN-PLAN-STEUERUNG.md.
 `;
@@ -42,16 +42,16 @@ describe('pruefe', () => {
   // monatelang nicht auf. Beide Richtungen festhalten.
   it('done mit offenem dep → Problem', () => {
     const bad = OK.replace(
-      'id: W1·1 · status: done · of: ja · blocker: null · dep: []',
-      'id: W1·1 · status: done · of: ja · blocker: null · dep: [W1·4]');
+      'id: W1·1 · status: done · blocker: null · dep: []',
+      'id: W1·1 · status: done · blocker: null · dep: [W1·4]');
     const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv);
     expect(p.some((x) => x.id === 'W1·1' && /dep "W1·4" ist blocked/.test(x.meldung))).toBe(true);
   });
 
   it('done mit done-dep → kein Problem', () => {
     const gut = OK.replace(
-      'id: W1·4 · status: blocked · of: ja · blocker: wbqdyap3x · dep: []',
-      'id: W1·4 · status: done · of: ja · blocker: null · dep: [W1·1]')
+      'id: W1·4 · status: blocked · blocker: wbqdyap3x · dep: []',
+      'id: W1·4 · status: done · blocker: null · dep: [W1·1]')
       .replace('- [ ] **4 · D**', '- [x] **4 · D**');
     expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
   });
@@ -70,49 +70,49 @@ describe('pruefe — Lücken-Abdeckung (Task-5-Review)', () => {
   const ok = (md: string, inv: string[]) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, inv);
 
   it('verwaistes @meta (id nicht im Inventar) → Problem', () => {
-    const md = plan(unit('[ ]', 'id: W9·9 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[ ]', 'id: W9·9 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, []).some((p) => p.id === 'W9·9')).toBe(true);
   });
   it('doppelte id → Problem', () => {
-    const u = 'id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein';
+    const u = 'id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein';
     const md = plan(`${unit('[ ]', u)}\n${unit('[ ]', u)}`);
     expect(ok(md, ['A']).some((p) => /mehrfach/.test(p.meldung))).toBe(true);
   });
   it('Zyklus A→B→A → Problem', () => {
     const md = plan(
-      `${unit('[ ]', 'id: A · status: ready · of: ja · blocker: null · dep: [B] · kollision: [] · worktree: nein · 26x: nein')}\n` +
-      `${unit('[ ]', 'id: B · status: ready · of: ja · blocker: null · dep: [A] · kollision: [] · worktree: nein · 26x: nein')}`,
+      `${unit('[ ]', 'id: A · status: ready · blocker: null · dep: [B] · kollision: [] · worktree: nein · 26x: nein')}\n` +
+      `${unit('[ ]', 'id: B · status: ready · blocker: null · dep: [A] · kollision: [] · worktree: nein · 26x: nein')}`,
     );
     expect(ok(md, ['A', 'B']).some((p) => /Zyklus/.test(p.meldung))).toBe(true);
   });
   it('dep auf nicht existierende id → Problem', () => {
-    const md = plan(unit('[ ]', 'id: A · status: ready · of: ja · blocker: null · dep: [ZZ] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[ ]', 'id: A · status: ready · blocker: null · dep: [ZZ] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, ['A']).some((p) => /ZZ/.test(p.meldung))).toBe(true);
   });
   it('Checkbox [~] mit status done → Problem', () => {
-    const md = plan(unit('[~]', 'id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[~]', 'id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
   });
   it('Checkbox [D] (geparkt) mit status parked → kein Coupling-Problem', () => {
-    const md = plan(unit('[D]', 'id: A · status: parked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[D]', 'id: A · status: parked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, ['A'])).toEqual([]);
   });
   it('Checkbox [D] (geparkt) mit status done → Problem', () => {
-    const md = plan(unit('[D]', 'id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[D]', 'id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
   });
   it('status ready mit blocker → Problem', () => {
-    const md = plan(unit('[ ]', 'id: A · status: ready · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[ ]', 'id: A · status: ready · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
   });
   it('status blocked ohne blocker → Problem', () => {
-    const md = plan(unit('[ ]', 'id: A · status: blocked · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
+    const md = plan(unit('[ ]', 'id: A · status: blocked · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
     expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
   });
   it('zwei 26x auf wip → Problem', () => {
     const md = plan(
-      `${unit('[~]', 'id: A · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: ja')}\n` +
-      `${unit('[~]', 'id: B · status: wip · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: ja')}`,
+      `${unit('[~]', 'id: A · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: ja')}\n` +
+      `${unit('[~]', 'id: B · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: ja')}`,
     );
     expect(ok(md, ['A', 'B']).some((p) => /wip/.test(p.meldung))).toBe(true);
   });
@@ -121,7 +121,7 @@ describe('pruefe — Lücken-Abdeckung (Task-5-Review)', () => {
   // 26×-Slot nie zurückgibt. Genau diese Kombination hält über next.ts jeden
   // anderen 26×-Schritt an, ohne dass noch jemand am Slot arbeitet.
   const slotUnit = (cb: string, status: string, blocker: string) =>
-    unit(cb, `id: A · status: ${status} · of: ja · blocker: ${blocker} · dep: [] · kollision: [] · worktree: nein · 26x: ja · slot: inhaber`);
+    unit(cb, `id: A · status: ${status} · blocker: ${blocker} · dep: [] · kollision: [] · worktree: nein · 26x: ja · slot: inhaber`);
 
   it('slot: inhaber mit status done → Problem', () => {
     const md = plan(slotUnit('[x]', 'done', 'null'));
@@ -155,7 +155,7 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
     // «konsistente Queue» braucht darum einen BAUBAREN Schritt; die Aussage des
     // Tests bleibt unverändert — nur das Fixture hatte den Zustand mitkodiert,
     // den die neue Regel gerade als Fehler ausweist.
-    const baubar = mitQueue('W1·4').replace('status: blocked · of: ja · blocker: wbqdyap3x', 'status: ready · of: ja · blocker: null');
+    const baubar = mitQueue('W1·4').replace('status: blocked · blocker: wbqdyap3x', 'status: ready · blocker: null');
     expect(pruefe(baubar, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
   });
   it('8.1: Queue-ID ohne @meta → Problem', () => {
@@ -172,7 +172,7 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
   });
   // 8.4 prüft gegen die TATSÄCHLICHE plan:next-Ausgabe (resolve().readyNow[0]),
   // nicht bloss gegen queue[0] — Härtung nach adversarialem Verify-Befund 24.7.2026.
-  const READY = `- [ ] **5 · E**\n  <!-- @meta id: W1·5 · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->\n`;
+  const READY = `- [ ] **5 · E**\n  <!-- @meta id: W1·5 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->\n`;
   const invR = ['W1·1', 'W1·4', 'W1·5'];
 
   it('8.4: Prosa-«OBERSTER» widerspricht der plan:next-Ausgabe → Problem', () => {
@@ -243,7 +243,7 @@ describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
     const { resolve } = await import('../../scripts/plan/next');
     const qs = {
       id: 'QS-X', checkbox: null, sektion: 'Querschnitt-Band (läuft begleitend', pos: 0,
-      etikett: { id: 'QS-X', status: 'ready' as const, statusAgent: null, of: true, blocker: null, dep: ['FEHLT'], kollision: [], seqHart: [], seqWeich: [], worktree: false, asset26x: false, groesse: null, fahrplan: null },
+      etikett: { id: 'QS-X', status: 'ready' as const, blocker: null, dep: ['FEHLT'], kollision: [], worktree: false, asset26x: false, groesse: null, fahrplan: null },
     };
     const b = resolve([qs]);
     expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);
@@ -264,8 +264,8 @@ describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
 // erfundenen Pfad gesetzt → pruefe() lieferte []. §6.7: erst rot zeigen.
 describe('Regel 9 — fahrplan:-Pfad muss existieren', () => {
   const MIT_FAHRPLAN = OK.replace(
-    'id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein',
-    'id: W1·1 · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md',
+    'id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein',
+    'id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md',
   );
 
   it('NEGATIV: fahrplan: zeigt auf eine nicht existierende Datei → Problem', () => {
@@ -307,7 +307,7 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
     const md = plan10([
       '- [ ] **B20 · Prüf-Batch**',
       '  - Unter-Bullet ohne Checkbox kappt die Bindung.',
-      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
   });
@@ -316,7 +316,7 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
     const md = plan10([
       '- [ ] **B20 · Prüf-Batch**',
       '  <!-- Notiz, die die Rückwärts-Bindung kappt -->',
-      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
   });
@@ -331,7 +331,7 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
       '- [ ] **B20 · Prüf-Batch**',
       '',
       '',
-      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A'])).toEqual([]);
   });
@@ -341,7 +341,7 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
       '- [ ] **B20 · Prüf-Batch**',
       '  Prosa-Zeile eins.',
       '  Prosa-Zeile zwei.',
-      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A'])).toEqual([]);
   });
@@ -364,9 +364,9 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
       '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
       '  B1–B6 + B7 komplett (PRs #401–#406).',
       '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
-      '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '    <!-- @meta id: B · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
       '  Detail: Chronik.',
-      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A', 'B']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
   });
@@ -378,10 +378,10 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
   it('GEGENPROBE: Dach-@meta unmittelbar unter der Dach-Bullet → kein Problem', () => {
     const md = plan10([
       '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
-      '  <!-- @meta id: A · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
       '  B1–B6 + B7 komplett (PRs #401–#406).',
       '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
-      '    <!-- @meta id: B · status: done · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '    <!-- @meta id: B · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
       '  Detail: Chronik.',
     ].join('\n'));
     expect(lauf(md, ['A', 'B'])).toEqual([]);
@@ -396,7 +396,7 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
   it('GEGENPROBE: Bullet mit «-->» im eigenen Titel bindet ihre Checkbox → kein Problem', () => {
     const md = plan10([
       '- [ ] **A · Migration (Pfeil: alt --> neu)**',
-      '  <!-- @meta id: A · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A'])).toEqual([]);
   });
@@ -405,7 +405,7 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
     const md = plan10([
       '  - [ ] **fremde Checkbox der Nachbarliste**',
       '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
-      '  <!-- @meta id: A · status: blocked · of: ja · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
     ].join('\n'));
     expect(lauf(md, ['A'])).toEqual([]);
   });
@@ -424,7 +424,7 @@ describe('Regel 8.3 — Stale-Guard deckt auch blocked', () => {
   });
 
   it('GEGENPROBE: ready-Schritt in der Queue → kein Problem', () => {
-    const gut = MIT_QUEUE.replace('status: blocked · of: ja · blocker: wbqdyap3x', 'status: ready · of: ja · blocker: null');
+    const gut = MIT_QUEUE.replace('status: blocked · blocker: wbqdyap3x', 'status: ready · blocker: null');
     expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
   });
 });
@@ -440,7 +440,7 @@ describe('bindeCheckbox — Dach-Schritt mit eingerückter Checkliste', () => {
       '- [ ] **`W9·9-DACH` · Titel** — Prosa.',
       '  - [ ] Position eins',
       '  - [x] Position zwei',
-      '  <!-- @meta id: W9·9-DACH · status: ready · of: ja · blocker: null · dep: [] -->',
+      '  <!-- @meta id: W9·9-DACH · status: ready · blocker: null · dep: [] -->',
     ];
     const b = bindeCheckbox(zeilen, 3);
     expect(b.zeile).toBe(0);
@@ -451,7 +451,7 @@ describe('bindeCheckbox — Dach-Schritt mit eingerückter Checkliste', () => {
     const { bindeCheckbox } = await import('../../scripts/plan/parse');
     const zeilen = [
       '- [x] **`W9·8` · Titel** — Prosa.',
-      '  <!-- @meta id: W9·8 · status: done · of: ja · blocker: null · dep: [] -->',
+      '  <!-- @meta id: W9·8 · status: done · blocker: null · dep: [] -->',
     ];
     const b = bindeCheckbox(zeilen, 1);
     expect(b.zeile).toBe(0);

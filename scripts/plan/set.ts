@@ -5,7 +5,7 @@ import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS, parseRoadmap } from './par
 import { resolve } from './aufloesen';
 import { obersterMarkerId } from './marker';
 
-const FELDER = new Set(['id', 'status', 'of', 'blocker', 'dep', 'kollision', 'seq-hart', 'seq-weich', 'worktree', '26x', 'fahrplan', 'slot']);
+const FELDER = new Set(['id', 'status', 'blocker', 'dep', 'kollision', 'worktree', '26x', 'groesse', 'fahrplan', 'slot']);
 // Marke, die ein Statuswechsel setzt, WENN die bestehende nicht schon passt.
 //
 // `parked: '[d]'`/`blocked: '[d]'` waren am 31.7.2026 kurzzeitig hier (Fund
@@ -29,7 +29,7 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   const indent = zeilen[idx].match(/^([ \t]*(?:>[ \t]*)*)/)![1];
   const normalisiert = serializeEtikett(parseEtikett(zeilen[idx]), indent);
   let ersetzt = normalisiert.replace(new RegExp(`(\\b${feld}): .*?(?= ·| -->)`), (_m, g1) => `${g1}: ${wert}`);
-  // Fehlt ein OPTIONALES Feld (`fahrplan`, `slot`, `seq-hart`, `seq-weich`), trifft
+  // Fehlt ein OPTIONALES Feld (`fahrplan`, `slot`, `groesse`), trifft
   // die Regex nichts — bis 31.7.2026 blieb die Zeile dann unverändert, und die CLI
   // meldete trotzdem «gesetzt: …». Ein Werkzeug, das seinen Nicht-Erfolg als Erfolg
   // meldet, ist dieselbe Fehlerklasse wie die Funde dieser Runde. Darum anhängen:

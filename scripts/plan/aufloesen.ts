@@ -9,7 +9,6 @@ export interface Buckets {
   readyNow: string[];
   lanes: string[][];
   wartetDep: { id: string; offen: string[] }[];
-  wartetFachzeit: string[];
   blockiert: { id: string; blocker: string }[];
   geparkt: string[];
   inArbeit: string[];
@@ -56,7 +55,6 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
 
   const readyNow: string[] = [];
   const wartetDep: { id: string; offen: string[] }[] = [];
-  const wartetFachzeit: string[] = [];
   const blockiert: { id: string; blocker: string }[] = [];
   const geparkt: string[] = [];
   const inArbeit: string[] = [];
@@ -71,11 +69,10 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
     if (t.status === 'parked') { geparkt.push(e.id); continue; }
     if (t.status === 'blocked') { blockiert.push({ id: e.id, blocker: t.blocker ?? '?' }); continue; }
     // status === 'ready'
-    if (!t.of) { wartetFachzeit.push(e.id); continue; }
     const offen = t.dep.filter((d) => !done.has(d));
     if (offen.length) { wartetDep.push({ id: e.id, offen }); continue; }
-    // Querschnitt-Filter erst NACH of/dep: ein Querschnitt-Schritt mit offener
-    // Voraussetzung gehört in wartetDep/wartetFachzeit, nicht still in «begleitend»
+    // Querschnitt-Filter erst NACH dep: ein Querschnitt-Schritt mit offener
+    // Voraussetzung gehört in wartetDep, nicht still in «begleitend»
     // (Verify-Befund 24.7.2026 — «begleitend» heisst «jetzt mitlaufbar»).
     // AUSNAHME (Entscheid David 8.8.2026, «Prozess geht grundsätzlich vor»):
     // Ein ausdrücklich in die @queue gestellter Querschnitt-Schritt steigt in
@@ -107,6 +104,6 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
     }
     if (!platziert) lanes.push([id]);
   }
-  return { readyNow, lanes, wartetDep, wartetFachzeit, blockiert, geparkt, inArbeit, wartet26xSlot, slot26xBelegtVon, begleitend };
+  return { readyNow, lanes, wartetDep, blockiert, geparkt, inArbeit, wartet26xSlot, slot26xBelegtVon, begleitend };
 }
 

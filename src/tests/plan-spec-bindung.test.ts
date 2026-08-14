@@ -51,7 +51,7 @@ const ZIEL_PFAD = 'fahrplaene/FAHRPLAN-ZIEL.md';
 const leser = (p: string): string | null => (p === ZIEL_PFAD ? ZIEL : null);
 
 const META = (id: string) =>
-  `<!-- @meta id: ${id} · status: ready · of: ja · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->`;
+  `<!-- @meta id: ${id} · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->`;
 
 /** ROADMAP-Fixture: eine Einheit, deren Prosa den Verweis trägt. */
 const plan = (verweis: string, id = 'W9·1-ALPHA') =>
