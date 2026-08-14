@@ -167,12 +167,12 @@ Bedingung «Parallel-Last (Builds + e2e)» wörtlich nach Fahrplan §3.4: voller
 `npm run test:e2e` **plus** Dauer-Build, Last-Mittel ~14. Datei-Gesamtdauer in s,
 n = 5:
 
-**46.23 · 66.60 · 49.08 · 48.97 · 41.78** → mittel **50.53**, sd **9.28**.
+**46.23 · 66.60 · 49.08 · 48.97 · 41.78** → mittel **50.53**, sd **9.46**.
 
 Lauf 2 **rot**: `Error: Hook timed out in 60000ms.` — der dokumentierte Anlass
 reproduziert, Rate 1/5 unter dieser Bedingung.
 
-Lastfaktor I → Parallel-Last: 10.85 → 50.53 s = **4.7×**; sd 0.45 → 9.28 s
+Lastfaktor I → Parallel-Last: 10.85 → 50.53 s = **4.7×**; sd 0.45 → 9.46 s
 (Faktor 20). Deckel nach QS-PERF Ziff. 5: 66 600 + max(3 sd 27 840, 25 % 16 650)
 = 94 440 → **95 000 ms**.
 

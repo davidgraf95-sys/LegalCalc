@@ -36,9 +36,9 @@ beforeAll(() => {
   //   isoliert (nichts sonst auf der Maschine, n=5):
   //     11.66 · 10.67 · 10.62 · 10.58 · 10.70   (mittel 10.85, sd 0.45)
   //   unter Parallel-Last (n=5, Bedingung oben):
-  //     46.23 · 66.60 · 49.08 · 48.97 · 41.78   (mittel 50.53, sd 9.28)
+  //     46.23 · 66.60 · 49.08 · 48.97 · 41.78   (mittel 50.53, sd 9.46)
   // Lastfaktor also ~4.7×, und die Streuung wächst um mehr als das Zwanzigfache
-  // (sd 0.45 → 9.28 s). Genau daran scheitert ein Deckel, der gegen den
+  // (sd 0.45 → 9.46 s). Genau daran scheitert ein Deckel, der gegen den
   // ISOLIERTEN Wert bemessen ist: isoliert wirken 60 s wie Faktor 5.5 Reserve,
   // unter Last liegt der Hook IM Streubereich des Deckels.
   //
