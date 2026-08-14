@@ -23,6 +23,7 @@ import {
   letzteCommits,
   chronikErledigt,
   davidFragen,
+  ersterSatz,
   katalogGruppen,
   katalogZaehlung,
   mainAmpel,
@@ -34,11 +35,13 @@ import {
   repoWebUrl,
   schrittInfoAusRoadmap,
   selbstoptKennzahlen,
+  verknuepfungenAusEinheiten,
   worktreesUndBranches,
   zaehleNach,
   zuletztGelandet,
   type NormErlass,
   type SchrittInfo,
+  type Verknuepfung,
 } from './bildDaten';
 import {
   BEREICH_ERKLAERUNG,
@@ -46,6 +49,7 @@ import {
   WIRKUNGSBEREICHE,
   bereichKlasse,
   bereichsBadges,
+  checklisteText,
   esc,
   fussnote,
   groesseBadge,
@@ -55,6 +59,7 @@ import {
   seitenDatei,
   seitenKopf,
   tabelle,
+  verknuepfungenZeile,
   wasGeradePassiert,
   wirkungsbereiche,
   type SeitenOpts,
@@ -122,8 +127,23 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
   // die Schätzung allein im Lagebild, ginge sie beim Kopieren des Auftrags verloren —
   // die Session sähe genau das nicht, wofür geschätzt wurde.
   const istDach = (info?.checkliste?.offen ?? 0) > 0;
+  // Checkliste UND Grösse gehörten bis 14.8.2026 zwei getrennten, sich
+  // überschneidenden Sätzen an («Dach-Schritt mit Checkliste: NICHT alles auf
+  // einmal…» hier, dieselbe Aussage nochmals mit Zahlen unten im Hauptteil) —
+  // eine Zeile, die in jeder kopierten Session mitkostet. Zusammengeführt zu
+  // EINER Aussage (Auftrag David 14.8.2026, «Bau-Prompt knapper formulieren»);
+  // die offenen Positionstexte stehen direkt im Prompt (leichter Pfad — bei
+  // klaren Punkten braucht es dafür kein zweites Lesen von ROADMAP.md).
+  const dachZeilen = istDach
+    ? [
+        `Dach-Schritt mit Checkliste: ${info!.checkliste!.offen} von ${info!.checkliste!.gesamt} Positionen offen — sessionfüllende Auswahl SORTENREIN abarbeiten (Risiko- und Nicht-Risiko-Positionen nie im selben Paket), je Position ein eigener Commit, danach in ROADMAP.md abhaken.`,
+        `Offene Positionen (Spec für den leichten Pfad — bei klaren Punkten reicht dieser Text, ROADMAP.md nur bei Unklarheit zusätzlich lesen):`,
+        ...info!.checkliste!.offenTexte.map((x) => `  - ${x}`),
+        ``,
+      ]
+    : [];
   const groesseZeile = istDach
-    ? [`Geschätzte Grösse: ${e.etikett.groesse ?? 'ungeschätzt'} — Dach-Schritt mit Checkliste: NICHT alles auf einmal bauen, sondern eine sessionfüllende Auswahl offener Positionen (sortenrein).`]
+    ? [`Geschätzte Grösse: ${e.etikett.groesse ?? 'ungeschätzt'} (Dach — die Checkliste oben bestimmt den Zuschnitt, nicht diese Schätzung).`]
     : {
     S: ['Geschätzte Grösse: S — trägt keine eigene Session. Im Grössen-Check (Skill `bauschritt`, Station A) 1–2 kollisionsfreie Nachbarn gleicher Risikoklasse aus `ready-now` dazunehmen, je eigener Commit und Trailer.'],
     M: ['Geschätzte Grösse: M — sessionfüllend, der Normalfall. Kein Zusatz-Handgriff im Grössen-Check.'],
@@ -139,9 +159,7 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
     ...(info?.prosa ? [`Auftrags-Wortlaut (aus ROADMAP.md, dort massgeblich und vollständig): ${info.prosa}`, ``] : []),
-    ...(istDach
-      ? [`Dach-Schritt mit Checkliste: ${info!.checkliste!.offen} von ${info!.checkliste!.gesamt} Positionen offen (die Zeilen stehen in ROADMAP.md unter dem Schritt). Sessionfüllend viele Positionen SORTENREIN abarbeiten — Risiko- und Nicht-Risiko-Positionen nie im selben Paket —, je Position ein eigener Commit, erledigte Positionen in ROADMAP.md abhaken.`, ``]
-      : []),
+    ...dachZeilen,
     ...groesseZeile,
     `Arbeitsweise (Entscheid David 7./8.8.2026, Skill \`auftrag\` Ziff. 6): Die Session delegiert die schwere Arbeit — grosser, riskanter oder parallelisierbarer Bau und JEDE Gegenprüfung gehen an Unteragenten (je Call model+effort explizit; Gegenprüfung stets auf einem ANDEREN Modell als dem bauenden). Kleine verifizierte Fixes ohne tiefen Code-Kontext sowie Plan-/Doku-Buchhaltung macht sie selbst — Massstab: Übersteigt der Übergabe-Aufwand die Arbeit selbst, nicht delegieren. Rückgaben stets gegen prüfbare Artefakte prüfen.`,
     ``,
@@ -159,11 +177,17 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
           : `4. Detail-Spec lesen: npm run fahrplan -- ${fp} <§> (den §-Verweis nennt der Schritt in ROADMAP.md).`
       : `4. Detail steht direkt im Schritt-Wortlaut in ROADMAP.md (kein eigener Fahrplan) — lies den Block dort VOLLSTÄNDIG.`,
     ...pflichtZeilen,
-    `5. Definition of Done (Skill \`auftrag\` Ziff. 4): npm run gate grün · berührt der Diff Risiko-Pfade (istRisikoPfad, scripts/gegenpruefung/kern.ts), Skill \`gegenpruefung\` fahren und Verdikt quittieren · verhaltensändernd ⇒ Golden byte-gleich · Status-Marker (§8) · ${istDach ? `Häkchen der gebauten Positionen in ROADMAP.md setzen; npm run plan:set -- ${e.id} status=done NUR wenn danach keine Position mehr offen ist, sonst Status wieder freigeben (ready bzw. parked bei offenem PR)` : `npm run plan:set -- ${e.id} status=done`}; danach npm run check:plan · Session-Karte in STRUKTUR.md nachziehen.`,
+    // Status-Buchung seit QS-PLAN-EINFACH (14.8.2026) per Merge-Trailer statt
+    // Hand-Schritt: der Commit, der auf main landet, trägt `Roadmap-Status:
+    // done|ready|parked(<token>)` — `.github/workflows/plan-buchung.yml` bucht
+    // ROADMAP.md danach automatisch (scripts/plan/buchung.ts). `npm run
+    // plan:set … status=` ist für den Abschluss nicht mehr nötig (nur noch für
+    // `status=wip` in Schritt 2, den ein Merge-Trailer nicht abdeckt).
+    `5. Definition of Done (Skill \`auftrag\` Ziff. 4): npm run gate grün · berührt der Diff Risiko-Pfade (istRisikoPfad, scripts/gegenpruefung/kern.ts), Skill \`gegenpruefung\` fahren und Verdikt quittieren · verhaltensändernd ⇒ Golden byte-gleich · Status-Marker (§8) · ${istDach ? `Häkchen der gebauten Positionen in ROADMAP.md setzen (danach npm run check:plan); Trailer Roadmap-Status: done NUR wenn danach keine Position mehr offen ist, sonst Roadmap-Status: ready (bzw. parked(<token>) bei offenem PR/Blocker)` : `Trailer Roadmap-Status: done`} · Session-Karte in STRUKTUR.md nachziehen.`,
     // Die Weiterbau-Regel (Entscheid David 8.8.2026) steht seit der Skill-Diät
     // (QS-SKILL-DIAET) als Station W im Skill `bauschritt` — die Skill-Zeile
     // oben lädt sie; eine Prompt-Kopie wäre eine zweite Wahrheit (§5).
-    `6. Commits, die den Schritt erfüllen, tragen den Trailer: Roadmap: ${e.id}`,
+    `6. Commits tragen den Trailer Roadmap: ${e.id}; der Commit, der auf main landet, zusätzlich Roadmap-Status: done|ready|parked(<token>) — Auto-Buchung nach Merge, kein npm run plan:set mehr nötig.`,
     ``,
     `Vertrauensgrenze (§14.7, wörtlich): ${VERTRAUENSGRENZE}`,
   ];
@@ -205,6 +229,11 @@ export function lagebildSeite(o: SeitenOpts): string {
   const schritte = schrittInfoAusRoadmap(md);
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
+  // Verknüpfungen (dep, Kollisions-Fläche, gleicher Fahrplan) — EINMAL für alle
+  // offenen Schritte berechnet, dann an jeder Anzeigestelle nur nachgeschlagen
+  // (Auftrag David 14.8.2026, Ziel 2).
+  const verkn = verknuepfungenAusEinheiten(einheiten);
+  const verknZeile = (v: Verknuepfung | undefined) => (v ? verknuepfungenZeile(v, t) : '');
 
   const offen = einheiten.filter((e) => e.etikett.status !== 'done');
   const baubar = new Set([...b.readyNow, ...b.begleitend]);
@@ -295,9 +324,10 @@ export function lagebildSeite(o: SeitenOpts): string {
             ? ' <span class="sub">⏸ geparkt</span>'
             : '';
     const chk = schritte.get(e.id)?.checkliste;
-    const chkText = chk && chk.offen > 0 ? ` <span class="sub">Checkliste: ${chk.offen} offen</span>` : '';
+    const chkTxt = checklisteText(chk);
+    const chkText = chkTxt ? ` <span class="sub">Checkliste: ${esc(chkTxt)}</span>` : '';
     const fpName = e.etikett.fahrplan ? baustellenInfo(e.etikett.fahrplan).name : null;
-    return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${chkText}${knopf}${fpName ? `<br><span class="sub">Baustelle: ${esc(fpName)}</span>` : ''}</div></li>`;
+    return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${chkText}${knopf}${fpName ? `<br><span class="sub">Baustelle: ${esc(fpName)}</span>` : ''}${verknZeile(verkn.get(e.id))}</div></li>`;
   };
   const statusRang = (e: Einheit) => (e.etikett.status === 'wip' ? 0 : baubar.has(e.id) ? 1 : e.etikett.status === 'parked' ? 2 : e.etikett.status === 'blocked' ? 3 : 2);
   // Innerhalb eines Bereichs zählt die QUEUE-Reihenfolge (readyNow-Rang), nicht
@@ -354,11 +384,38 @@ export function lagebildSeite(o: SeitenOpts): string {
   // bauen kann — genau die Drift, die `check:plan` Regel 8.4 an der Prosa verhindert.
   // Zwei Quellen für «der nächste Schritt» wären zwei Wahrheiten (§5).
   const empfohlen = b.readyNow[0] ?? null;
+  const empfohlenChk = empfohlen ? checklisteText(schritte.get(empfohlen)?.checkliste) : null;
+  const empfohlenZiel = empfohlen ? schritte.get(empfohlen)?.prosa : undefined;
   const empfohlenHtml = empfohlen
     ? `<div class="empfehlung"><p class="lage" style="margin-top:0"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${groesseBadge(byId.get(empfohlen)?.etikett.groesse ?? null)}${bereichsBadges(byId.get(empfohlen)?.etikett.kollision ?? [])}</p>
+  ${empfohlenChk ? `<p class="sub">Checkliste: ${esc(empfohlenChk)}</p>` : ''}
+  ${empfohlenZiel ? `<p class="zweck">${esc(ersterSatz(empfohlenZiel))}</p>` : ''}
+  ${verknZeile(verkn.get(empfohlen))}
   ${prompts[empfohlen] ? `<p style="margin:.5rem 0 0"><button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button></p>` : ''}
   <p class="sub" style="margin-top:.5rem">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span> — Prozess-Schritte stehen seit 8.8.2026 vorn (Entscheid David). Die Grösse ist eine Schätzung und kein Tor: <b>S</b> lohnt keine eigene Session (gebündelt nehmen), <b>M</b> ist der Normalfall, <b>L</b> vor dem Bau in Teilschritte schneiden bzw. beim Dach eine Checklisten-Auswahl nehmen.</p></div>`
     : '<p class="lage"><b>Empfohlener nächster Bau:</b> keiner — kein Schritt ist gerade baubar.</p>';
+
+  // «Weitere sinnvolle nächste Schritte» — bis zu vier Kandidaten NACH dem
+  // Empfohlenen, in derselben Reihenfolge wie `plan:next` (@queue-Rang vor
+  // Dokumentreihenfolge, s. resolve()). Ersetzt die lange gleichförmige
+  // Warteschlangen-Liste als PRIMÄRE Ansicht (Auftrag David 14.8.2026, Ziel 1)
+  // — die vollständige Liste bleibt darunter, nur eingeklappt.
+  const naechsteKandidaten = b.readyNow.filter((id) => id !== empfohlen).slice(0, 4);
+  const naechsteHtml = naechsteKandidaten
+    .map((id) => {
+      const e = byId.get(id);
+      const info = schritte.get(id);
+      const chkTxt = checklisteText(info?.checkliste);
+      const ziel = info?.prosa ? ersterSatz(info.prosa) : '';
+      return `<div class="card">
+  <p style="margin:0">${schrittLabel(t(id), id)}${groesseBadge(e?.etikett.groesse ?? null)}${bereichsBadges(e?.etikett.kollision ?? [])}</p>
+  ${chkTxt ? `<span class="fortschritt">Checkliste: ${esc(chkTxt)}</span>` : ''}
+  ${ziel ? `<p class="zweck">${esc(ziel)}</p>` : ''}
+  ${verknZeile(verkn.get(id))}
+  ${prompts[id] ? `<p style="margin:0"><button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></p>` : ''}
+</div>`;
+    })
+    .join('\n');
 
   // Fehlerbuch-Kasten (Entscheid David 8.8.2026): W2·18-FEHLERBUCH ist der
   // stehende Sammel-Schritt für Alltags-Fehlerfunde — der Kasten zeigt die
@@ -489,8 +546,11 @@ ${jetzt}
   <p class="lede">Mit «Bau-Prompt kopieren» holst du dir den fertigen Auftrag für eine neue Claude-Code-Session
   (enthält wip-Setzen, Worktree-Regel, Spec-Befehl, Definition of Done und die §14.7-Klausel).</p>
   ${empfohlenHtml}
+  ${naechsteHtml ? `<h3 style="margin-top:1.4rem">Weitere sinnvolle nächste Schritte</h3>
+  <div class="cards">${naechsteHtml}</div>` : ''}
   ${fehlerbuchHtml}
-  <ol class="queue">${queueHtml}</ol>
+  <details style="margin-top:1.4rem"><summary>Vollständige Warteschlange (${queue.length} Schritt${queue.length === 1 ? '' : 'e'})</summary>
+  <ol class="queue">${queueHtml}</ol></details>
   ${laneEmpfehlung.length > 1 ? `<div class="panel" style="border-color:var(--sage);background:var(--sage-bg);margin-top:1.2rem">
     <h3 style="color:var(--sage)">Jetzt parallel startbar — ohne Kollision</h3>
     <p class="sub">Diese Schritte berühren getrennte Dateiflächen (Resolver-Lane 1): du kannst für jeden eine eigene Session starten, sie kommen sich nicht in die Quere.</p>

@@ -17,6 +17,8 @@ import { readFileSync } from 'node:fs';
 import { laufeEcht, leseZeitreihe, parseWorktrees, type Laufe } from './lage';
 import { letzterSnapshot, quoteText } from './selbstoptKern';
 import { BULLET_RE } from './parse';
+import type { Einheit } from './parse';
+import { kollidiert } from './aufloesen';
 import { headings, trefferFuer } from '../fahrplanSlicerKern';
 import { ALLE_KARTEN } from '../../src/lib/startseiteConfig';
 import { SEKTIONEN, VORLAGE_SEKTIONEN, type Status as KartenStatus } from '../../src/lib/startseiteConfigTypen';
@@ -142,6 +144,26 @@ function kappe(text: string, grenze: number): { text: string; gekuerzt: boolean 
   // einziges Riesenwort darf die Kappung nicht auf ein Fragment eindampfen).
   const geschnitten = letzteLuecke > grenze * 0.6 ? roh.slice(0, letzteLuecke) : roh;
   return { text: `${geschnitten.replace(/[\s,;:·—–-]+$/, '')}${GEKUERZT_MARKER}`, gekuerzt: true };
+}
+
+/**
+ * Erster Satz eines Auftrags-Wortlauts — für die kompakte «1-Satz-Ziel»-Vorschau
+ * der nächsten Schritte (Auftrag David 14.8.2026). Heuristik: bis zum ersten
+ * Satzzeichen (. ! ?) gefolgt von Leerraum, sonst bis zu einer Wortgrenze
+ * innerhalb `maxLen`. Kein Anspruch auf linguistische Korrektheit — eine
+ * Abkürzung («z. B.») kann vorzeitig trennen. Für eine Ein-Satz-Vorschau ist
+ * das Risiko ein zu kurzer statt ein falscher Satz, darum bewusst in Kauf
+ * genommen (derselbe Kompromiss wie `kappe()` oben).
+ */
+export function ersterSatz(prosa: string, maxLen = 170): string {
+  if (!prosa) return '';
+  const m = prosa.match(/^.{8,}?[.!?](?=\s|$)/);
+  if (m && m[0].length <= maxLen) return m[0];
+  if (prosa.length <= maxLen) return prosa;
+  const roh = prosa.slice(0, maxLen);
+  const luecke = roh.lastIndexOf(' ');
+  const geschnitten = luecke > maxLen * 0.6 ? roh.slice(0, luecke) : roh;
+  return `${geschnitten.replace(/[\s,;:·—–-]+$/, '')}…`;
 }
 
 /** Markdown-Zeile(n) → Klartext (Links auf ihren Text, Auszeichnung weg). */
@@ -295,6 +317,55 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
 export function schrittIdInTitel(titel: string): string | null {
   const m = titel.match(/\b(QS-[A-ZÄÖÜ0-9-]+|W\d·[\wÄÖÜäöü·-]+)\b/);
   return m ? m[1] : null;
+}
+
+// ---------------------------------------------------------------------------
+// Verknüpfungen — «was verbindet diesen Schritt mit anderen?» (Auftrag David
+// 14.8.2026: «zeigen was miteinander verknüpft ist»). Drei Kanten je Schritt,
+// alle aus bereits vorhandenen Etikett-Feldern — keine neue Datenquelle:
+//
+//  * dep (vorwärts UND rückwärts): `wartetAuf` sind die eigenen offenen
+//    Voraussetzungen, `blockiert` die anderen offenen Schritte, die IHRERSEITS
+//    auf diesen warten. Beides steckt in `etikett.dep`, nur die Blick-Richtung
+//    dreht sich um.
+//  * kollisionsPartner: andere offene Schritte, deren `kollision:`-Globs
+//    überlappen — also NICHT parallel bearbeitbar sind. Dieselbe Regel wie die
+//    Lane-Bildung in `resolve()` (`kollidiert()` aus aufloesen.ts, §5), kein
+//    zweiter Nachbau. Ein Schritt OHNE eigene Kollisions-Angabe bekommt keine
+//    Partner-Liste: `kollidiert([], x)` gilt konservativ als «kollidiert mit
+//    allem» (eigene Lane) — das für JEDEN anderen Schritt einzeln aufzuzählen
+//    wäre keine Information, nur Lärm.
+//  * fahrplanPartner: andere offene Schritte mit demselben `fahrplan:`-Wert —
+//    dieselbe Baustelle, dasselbe Detail-Dokument.
+// ---------------------------------------------------------------------------
+export interface Verknuepfung {
+  wartetAuf: string[];
+  blockiert: string[];
+  kollisionsPartner: string[];
+  fahrplanPartner: string[];
+}
+
+/** Verknüpfungen ALLER offenen Schritte in einem Durchlauf (§n² über `offen`,
+ *  bei ~60 Schritten unmessbar — kein Cache nötig). */
+export function verknuepfungenAusEinheiten(einheiten: Einheit[]): Map<string, Verknuepfung> {
+  const offen = einheiten.filter((e) => e.etikett.status !== 'done');
+  const doneIds = new Set(einheiten.filter((e) => e.etikett.status === 'done').map((e) => e.id));
+  const out = new Map<string, Verknuepfung>();
+  for (const e of offen) {
+    const wartetAuf = e.etikett.dep.filter((d) => !doneIds.has(d));
+    const blockiert = offen.filter((o) => o.id !== e.id && o.etikett.dep.includes(e.id)).map((o) => o.id);
+    const kollisionsPartner =
+      e.etikett.kollision.length === 0
+        ? []
+        : offen
+            .filter((o) => o.id !== e.id && o.etikett.kollision.length > 0 && kollidiert(e.etikett.kollision, o.etikett.kollision))
+            .map((o) => o.id);
+    const fahrplanPartner = e.etikett.fahrplan
+      ? offen.filter((o) => o.id !== e.id && o.etikett.fahrplan === e.etikett.fahrplan).map((o) => o.id)
+      : [];
+    out.set(e.id, { wartetAuf, blockiert, kollisionsPartner, fahrplanPartner });
+  }
+  return out;
 }
 
 // ---------------------------------------------------------------------------

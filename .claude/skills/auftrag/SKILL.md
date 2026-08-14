@@ -91,6 +91,10 @@ dass es in EINER Session landet — zu gross ⇒ erst schneiden. Serielle
 ## 5 · Commit-Trailer
 
 - Schritt-Commit: `Roadmap: <ID>`.
+- **Auto-Buchung (seit 14.8.2026):** trägt der Squash-Commit nach `main`
+  zusätzlich `Roadmap-Status: done|ready|parked(<blocker-token>)`, bucht der
+  Workflow `plan-buchung.yml` den Status automatisch nach — der manuelle
+  `plan:set`-Commit nach der Landung entfällt dann.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
 

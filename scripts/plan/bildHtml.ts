@@ -581,6 +581,51 @@ export function schrittLabel(titel: string, id: string, fett = true): string {
   return `${fett ? `<b>${t}</b>` : t} <span class="id">(${esc(id)})</span>`;
 }
 
+/**
+ * Klartext-Fortschritt einer Dach-Checkliste, z. B. «3 von 14 Positionen offen»
+ * (Auftrag David 14.8.2026 — Checklisten-Fortschritt auf einen Blick). `null`
+ * heisst «kein Dach-Schritt» (keine Checkliste unter dem Etikett).
+ */
+export function checklisteText(chk: { offen: number; gesamt: number } | null | undefined): string | null {
+  if (!chk) return null;
+  return chk.offen === 0
+    ? `alle ${chk.gesamt} Position${chk.gesamt === 1 ? '' : 'en'} erledigt`
+    : `${chk.offen} von ${chk.gesamt} Position${chk.gesamt === 1 ? '' : 'en'} offen`;
+}
+
+/**
+ * Kompakte Verknüpfungs-Zeile eines Schritts: dep-Richtung, Kollisions-Fläche,
+ * gleicher Fahrplan (Auftrag David 14.8.2026 — «zeigen was miteinander
+ * verknüpft ist», ohne Graphik-Bibliothek). Reine Darstellung über bereits
+ * erhobene IDs (s. `verknuepfungenAusEinheiten` in bildDaten.ts); jede Liste
+ * wird auf `max` Einträge gekappt («+N weitere»), damit ein breit geteilter
+ * Pfad (z. B. «src/pages») die Zeile nicht sprengt. Leer, wenn der Schritt
+ * keine der vier Kanten trägt — dann erscheint keine Zeile (§8: nichts
+ * Erfundenes anzeigen).
+ */
+export function verknuepfungenZeile(
+  v: { wartetAuf: string[]; blockiert: string[]; kollisionsPartner: string[]; fahrplanPartner: string[] },
+  titelVon: (id: string) => string,
+  max = 3,
+): string {
+  const teil = (label: string, ids: string[]): string => {
+    if (!ids.length) return '';
+    const zeig = ids
+      .slice(0, max)
+      .map((id) => schrittLabel(titelVon(id), id, false))
+      .join(' · ');
+    const rest = ids.length - Math.min(ids.length, max);
+    return `<b>${label}:</b> ${zeig}${rest > 0 ? ` · +${rest} weitere` : ''}`;
+  };
+  const teile = [
+    teil('wartet auf', v.wartetAuf),
+    teil('blockiert', v.blockiert),
+    teil('nicht parallel mit', v.kollisionsPartner),
+    teil('gleiche Baustelle', v.fahrplanPartner),
+  ].filter(Boolean);
+  return teile.length ? `<p class="sub">${teile.join(' &nbsp;·&nbsp; ')}</p>` : '';
+}
+
 /** Was der Block anzeigt. Alle Felder sind bereits erhoben — die Funktion rechnet nicht. */
 export interface WasPassiert {
   /** Schritte auf `wip`: Klartext-Titel, Kürzel und ihre `kollision:`-Globs (roh). */

@@ -32,7 +32,10 @@ function pfadUeberlappt(x: string, y: string): boolean {
   const [k, l] = a.length <= b.length ? [a, b] : [b, a];
   return l.startsWith(k) && (k.endsWith('/') || l[k.length] === '/');
 }
-function kollidiert(a: string[], b: string[]): boolean {
+// Exportiert für scripts/plan/bildDaten.ts (Verknüpfungs-Anzeige «kann nicht
+// parallel laufen mit», Auftrag David 14.8.2026) — DIESELBE Kollisions-Regel
+// wie die Lane-Bildung hier, kein zweiter Nachbau im Bild-Generator (§5).
+export function kollidiert(a: string[], b: string[]): boolean {
   if (a.length === 0 || b.length === 0) return true;
   for (const x of a) for (const y of b) if (pfadUeberlappt(x, y)) return true;
   return false;
