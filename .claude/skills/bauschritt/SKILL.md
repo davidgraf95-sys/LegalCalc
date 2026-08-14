@@ -42,13 +42,16 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
 2. **ID gegen `ready-now`.** Nicht darin (Abhängigkeit offen, `done`,
    blockiert) ⇒ **STOPP, melden, nicht bauen** — massgeblich ist
    `plan:next`, nicht der Prompt.
-3. **Grössen-Check:** `Grösse:`/`groesse:` (S/M/L); weicht die eigene
-   Einschätzung ab, gilt sie, per `plan:set` korrigiert.
-   - **Zu klein** (< ~1 h): 1–2 bündelbare `ready-now`-Nachbarn (gleiche
-     Fläche/Fahrplan/Risikoklasse, kollisionsfrei) mitbauen, je eigener
-     Commit/Trailer (Skill `auftrag`).
-   - **Zu gross:** **STOPP**, erst per `plan:set`/ROADMAP in
-     sessionfüllende Teilschritte schneiden (AP-6-Muster).
+3. **Grössen-Check** (Massstab hochkalibriert, David 15.8.2026 — Referenz
+   ist die orchestrierte Session, die mehrere M-Schritte landet):
+   `groesse:` im @meta lesen; weicht die eigene Einschätzung ab, gilt sie,
+   per `plan:set` korrigiert.
+   - **S/M:** von Beginn an so viele bündelbare `ready-now`-Nachbarn
+     (gleiche Fläche/Risikoklasse, kollisionsfrei) einplanen, dass die
+     Session gefüllt ist — je eigener Commit/Trailer; Station W führt fort.
+   - **Zu gross (L mit echtem Serialisierungs-/Risiko-Zwang):** **STOPP**,
+     erst per `plan:set`/ROADMAP schneiden (AP-6-Muster) — Grösse allein
+     ist seit 15.8. kein Schneide-Grund mehr.
    - **Harte Grenze:** nie Risikoklassen mischen, nie fremde Flächen dazu.
 4. **Bau-Spec:** `npm run fahrplan -- <fahrplan-datei> <§>` — Slice statt
    Volltext.
