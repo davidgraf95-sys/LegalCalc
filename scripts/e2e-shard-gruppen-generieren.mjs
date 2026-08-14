@@ -11,12 +11,18 @@
 // ist die eine Quelle, die JSON nie von Hand editieren) und trägt
 // `merge=regen` in .gitattributes — bei einem lokalen Merge-Konflikt gewinnt
 // automatisch die eigene Seite, DANACH macht dieser Generator die Datei
-// wieder korrekt (das CI-Tor `check:e2e-shards` erzwingt den Neulauf).
+// wieder korrekt (das CI-Tor `check:e2e-shards` erzwingt den Neulauf — es
+// ruft seit der Gegenprüfungs-Auflage 14.8.2026 NEBEN dem Union-Wächter auch
+// `--check` dieses Skripts auf, damit eine verschobene Annotation OHNE
+// Neulauf ebenfalls rot wird, nicht nur eine fehlende Datei/Spec).
 //
 // GRUPPEN-MITGLIEDSCHAFT (fachlich relevant, was der Union-Wächter prüft):
 // ausschliesslich aus den `@shard-gruppe`-Annotationen. Eine Spec ohne
-// Annotation lässt dieses Skript mit Exit 1 rot laufen (Wächter-Funktion vor
-// dem eigentlichen Union-Wächter `e2e-shard-gruppen.mjs --pruefen`).
+// Annotation, mit mehr als einer Annotation im Kopf oder mit einer Annotation
+// ausserhalb 1–GRUPPEN_MAX lässt dieses Skript mit Exit 1 rot laufen
+// (Wächter-Funktion vor dem eigentlichen Union-Wächter
+// `e2e-shard-gruppen.mjs --pruefen`, der seinerseits die JSON-Schlüssel
+// gegen dieselbe Spanne prüft — auch Hand-Edits der JSON fängt so wer).
 //
 // REIHENFOLGE innerhalb einer Gruppe (rein kosmetisch, betrifft keine
 // Zuordnung): die bestehende Reihenfolge aus der aktuellen JSON bleibt
@@ -38,7 +44,25 @@ const WURZEL = join(HIER, '..')
 const E2E_DIR = join(WURZEL, 'e2e')
 const GRUPPEN_JSON = join(WURZEL, 'e2e', 'shard-gruppen.json')
 
-const ANNOTATION_RE = /^\/\/\s*@shard-gruppe:\s*(\d+)\s*$/
+// Anzahl der Shard-Gruppen. FIXPUNKT ist `.github/workflows/ci.yml` Zeile ~515
+// (`strategy.matrix.gruppe: [1, 2, 3, 4, 5, 6, 7, 8]`) — die Job-Matrix ist die
+// einzige Stelle, an der die Zahl tatsächlich etwas steuert (acht CI-Jobs).
+// `scripts/e2e-shard-gruppen.mjs` hat KEINEN eigenen Hardcode für die Anzahl
+// (es liest `Object.keys(gruppen)` dynamisch aus der JSON) — es bekommt seit
+// der Gegenprüfungs-Auflage 1 (14.8.2026) trotzdem dieselbe Konstante, weil es
+// die Gruppen-SCHLÜSSEL der JSON gegen eine Spanne validieren muss (Hand-Edit-
+// Schutz) und ein Import aus diesem Skript das dortige CLI-Dispatch am
+// Modul-Top ungewollt mitausführen würde (kein sauberer Re-Export ohne
+// Umbau). Bei einer Änderung der Gruppenzahl darum DREI Stellen anfassen:
+// ci.yml-Matrix, GRUPPEN_MAX hier, GRUPPEN_MAX in e2e-shard-gruppen.mjs.
+const GRUPPEN_MAX = 8
+
+// Annotation gilt nur als KOPF-Annotation, wenn sie in den ersten KOPF_ZEILEN
+// Zeilen der Spec steht (Konvention: Zeile 1, direkt über/unter einem
+// Datei-Banner in Zeile 1–2 ist noch "Kopf"; alles danach zählt nicht mehr).
+const KOPF_ZEILEN = 3
+
+const ANNOTATION_RE = /^\/\/\s*@shard-gruppe:\s*(\S+)\s*$/
 
 const DEFAULT_KOMMENTAR =
   'e2e-Shard-Balancing: Gruppen sind GENERIERT aus den `// @shard-gruppe:`-Kopf-' +
@@ -47,15 +71,25 @@ const DEFAULT_KOMMENTAR =
   'Annotation in der jeweiligen Spec-Datei, dann Generator neu laufen lassen. ' +
   'Union-Wächter: scripts/e2e-shard-gruppen.mjs --pruefen.'
 
-/** Erste ~10 Zeilen einer Spec nach der Annotation absuchen. */
-function annotationLesen(pfad) {
+/** Alle @shard-gruppe-Treffer in den ersten KOPF_ZEILEN Zeilen (roh, ungeprüft). */
+function annotationenLesen(pfad) {
   const inhalt = readFileSync(pfad, 'utf8')
-  const zeilen = inhalt.split('\n', 10)
+  const zeilen = inhalt.split('\n', KOPF_ZEILEN)
+  const treffer = []
   for (const z of zeilen) {
-    const treffer = z.match(ANNOTATION_RE)
-    if (treffer) return treffer[1]
+    const m = z.match(ANNOTATION_RE)
+    if (m) treffer.push(m[1])
   }
-  return null
+  return treffer
+}
+
+/** roh (String) → kanonische Gruppen-Nummer als String, oder null wenn ungültig
+ *  (nicht-numerisch, führende Null wie "01", ausserhalb 1..GRUPPEN_MAX). */
+function gruppeParsen(roh) {
+  if (!/^[1-9]\d*$/.test(roh)) return null
+  const n = Number(roh)
+  if (!Number.isInteger(n) || n < 1 || n > GRUPPEN_MAX) return null
+  return String(n)
 }
 
 function alleSpecs() {
@@ -77,20 +111,44 @@ function bauen() {
   const specs = alleSpecs()
   const gruppeVon = new Map()
   const fehlend = []
+  const mehrdeutig = []
+  const ungueltig = []
 
   for (const spec of specs) {
-    const g = annotationLesen(join(E2E_DIR, spec))
-    if (g === null) {
+    const treffer = annotationenLesen(join(E2E_DIR, spec))
+    if (treffer.length === 0) {
       fehlend.push(spec)
+      continue
+    }
+    if (treffer.length > 1) {
+      mehrdeutig.push({ spec, werte: treffer })
+      continue
+    }
+    const g = gruppeParsen(treffer[0])
+    if (g === null) {
+      ungueltig.push({ spec, roh: treffer[0] })
       continue
     }
     gruppeVon.set(spec, g)
   }
 
-  if (fehlend.length) {
-    console.error('✗ e2e-Shard-Generator ROT — Spec ohne `// @shard-gruppe: N`-Kopf-Annotation:')
-    for (const f of fehlend) console.error(`   ${f}`)
-    console.error('\n   Fix: Annotation als erste Zeile der Spec-Datei ergänzen, dann neu laufen lassen.')
+  if (fehlend.length || mehrdeutig.length || ungueltig.length) {
+    console.error('✗ e2e-Shard-Generator ROT:')
+    if (fehlend.length) {
+      console.error(`  Ohne \`// @shard-gruppe: N\`-Kopf-Annotation (erste ${KOPF_ZEILEN} Zeilen):`)
+      for (const f of fehlend) console.error(`     ${f}`)
+    }
+    if (mehrdeutig.length) {
+      console.error(`  MEHRDEUTIG — mehr als eine Annotation in den ersten ${KOPF_ZEILEN} Zeilen:`)
+      for (const { spec, werte } of mehrdeutig) console.error(`     ${spec} (Werte: ${werte.join(', ')})`)
+    }
+    if (ungueltig.length) {
+      console.error(`  UNGÜLTIG — Wert ausserhalb 1–${GRUPPEN_MAX} oder falsch formatiert (z. B. führende Null):`)
+      for (const { spec, roh } of ungueltig) console.error(`     ${spec} (Wert: "${roh}")`)
+    }
+    console.error(
+      `\n   Fix: genau EINE gültige Annotation \`// @shard-gruppe: 1\`..\`${GRUPPEN_MAX}\` in Zeile 1–${KOPF_ZEILEN} der Spec-Datei, dann neu laufen lassen.`,
+    )
     process.exit(1)
   }
 

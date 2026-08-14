@@ -41,7 +41,7 @@ bibliothek/register/gegenpruefung-register.md merge=union
 #   daten-manifest.json          → `npm run datenhaltung:manifest`  (Tor: check:datenhaltung + check:paritaet)
 #   *.generated.ts               → das im Datei-Banner genannte `npm run gen:*`   (Tor: das jeweilige check:* --check)
 #   public/rechtsprechung/*index* → entscheide-Pipeline (`npm run entscheide …`)  (Tor: check:entscheide)
-#   e2e/shard-gruppen.json       → `npm run gen:e2e-shards` (aus `@shard-gruppe`-Kopf-Annotationen in e2e/*.e2e.ts, QS-E2E-SHARD-GEN) (Tor: check:e2e-shards)
+#   e2e/shard-gruppen.json       → `npm run gen:e2e-shards` (aus `@shard-gruppe`-Kopf-Annotationen in e2e/*.e2e.ts, QS-E2E-SHARD-GEN) (Tor: check:e2e-shards — prüft Union UND Annotation-Drift)
 daten-manifest.json merge=regen
 *.generated.ts merge=regen
 public/rechtsprechung/register.json merge=regen
