@@ -135,6 +135,7 @@ export const INVENTAR: readonly string[] = [
   // Hook-/Konfig-Ausbauten, gesperrte Fläche ⇒ blocked bis David-Freigabe.
   'QS-HOOKS-AUSBAU',
   'QS-EFFIZIENZ',
+  'QS-MONITOR-ROT',
 
   // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
