@@ -6,7 +6,9 @@ Refactoring-Protokoll) — dieses Dokument hier beschreibt den Zustand.
 **Dokument-Ordnung im Root (Aufräumung 10.6.2026, Auftrag David):** Im Root
 liegen nur AKTIVE Steuerungsdokumente — CLAUDE/README/STRUKTUR/HANDLUNGSPLAN,
 Projekt- und Strategie-Papiere (PROJEKTBESCHRIEB, STRATEGIE-PLATTFORM,
-WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP, ABNAHME-AG-BAUSTEINE). Die
+WACHSTUM-REGLEMENT, BETRIEB, KATALOG-ROADMAP). Die AG-Bausteinliste ist seit
+dem 14.8.2026 (Entscheid David) **kein Bestand mehr**, sondern ein Erzeugnis:
+`npm run abnahme:ag` schreibt sie bei Bedarf in <1 s ins Root, gitignoriert. Die
 laufenden Fahrpläne liegen seit AP-8 der QS-TOK-Aufräumwelle (31.7.2026) NICHT
 mehr im Root, sondern in **`fahrplaene/`** (Stand 3.8.2026: 27 Dateien —
 NOTEBOOKLM-EINSATZ und OPENCASELAW-QUELLEN sind mit der Aufräumung 3.8.2026 nach

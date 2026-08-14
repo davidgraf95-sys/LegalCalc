@@ -107,3 +107,7 @@ tmp/
 
 # gate-stopp Grün-Fingerabdruck (Vorschlag QS-SELBSTOPT 7.8.2026)
 .gate-stopp-gruen
+
+# Bausteinliste zur AG-Abnahme — Erzeugnis, kein Bestand (Entscheid David 14.8.2026).
+# Bei Bedarf in <1 s erzeugen: npm run abnahme:ag
+ABNAHME-AG-BAUSTEINE.md

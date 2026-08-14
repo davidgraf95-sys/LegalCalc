@@ -700,10 +700,23 @@ Selbstoptimierung (einzige Zahlenquelle über den eigenen Bau — die Zahlen obe
 die acht Browser-Prüfungen (andere Risikoklasse) · `check:verfall` bleibt aus der Pflichtkette
 ausgeschlossen (hängt an der Wanduhr) · §7, §14.7, §18 und alles Fachliche.
 
-**Was David entscheidet, nicht die Session:** Ob die Chronik ihren Wortlaut behält (Empfehlung des
-Audits: ja — sie ist die einzige Stelle, an der er ohne Werkzeuge nachlesen kann, warum etwas so
-gebaut wurde) · ob eine harte Obergrenze für die Schrittzahl gilt (Empfehlung: vorerst nein) · die
-Streichung der zwei QS-Schritte auf Risiko-Pfaden.
+**Davids Entscheide vom 14.8.2026 — verbindlich, nicht mehr offen:**
+
+- **Chronik behält ihren Wortlaut** («2 behalten»). `ROADMAP-CHRONIK.md` wird **nicht** auf
+  Kurzzeilen eingedampft; sie ist die einzige Stelle, an der David ohne Werkzeuge nachlesen kann,
+  warum etwas so gebaut wurde. Wer sie kürzen will, braucht einen neuen David-Entscheid.
+- **Doku-Kurzpfad freigegeben** («1. wird freigegeben»). `QS-BASIS-DOKU-CI` ist entsperrt; der
+  ci.yml-Grundsatz «nie nach Dateiendungen abkürzen» ist für reine `.md`-Pushes auf `main` bewusst
+  gelockert.
+- **AG-Bausteinliste ist Erzeugnis, kein Bestand** («3. kann weg»). `ABNAHME-AG-BAUSTEINE.md` ist
+  aus dem Bestand genommen und gitignoriert; `npm run abnahme:ag` erzeugt sie in <1 s.
+  **Korrektur zum Audit-Befund:** Die dort vermutete Drift existiert nicht — die Nachmessung am
+  14.8. ergab den erzeugten Inhalt **byte-gleich** zum committeten Stand. Der Rückbau geschieht
+  also aus Sparsamkeit, nicht wegen einer Falschangabe.
+
+**Weiterhin offen und ausschliesslich Davids Entscheid:** ob eine harte Obergrenze für die
+Schrittzahl gilt (Empfehlung: vorerst nein) · die Streichung der zwei QS-Schritte auf
+Risiko-Pfaden.
 
 **Aufgegangen in diesem Schritt:** `QS-PLAN-SEQ-FRISCHE` (angelegt 13.8., ersatzlos abgelöst
 14.8.). Er wollte ein **neues Tor** bauen, das die Veralterung genau der `seq-hart`-Vermerke
