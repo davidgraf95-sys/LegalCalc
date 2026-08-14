@@ -30,6 +30,15 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 14.8.2026 (Teil 4) — Effizienz-Dauerauftrag Runde 1+2 (#492, #493) + QS-TOK-DECKEL per Messung
+
+**Gleiche Session wie Teil 3; stehender Auftrag David («bau immer weiter … bis ich stop sage», Memory `dauerauftrag-effizienz-2026-08-14`), Anker `QS-EFFIZIENZ` (wip, Querschnitt), Worktree `lexmetrik-effizienz`. 5 Unteragenten (2 Bau sonnet, 1 Mechanik, 2 Recherche sonnet, 1 Gegenprüfung fable); #492 mergte David per Auto-Merge, #493 der Orchestrator.**
+
+- **#492:** plan-buchung.yml liest Trailer ersatzweise aus dem PR-Body (Wurzel-Fix Lehre #491; Gegenprüfung erzwang Footer-Toleranz — sonst wäre der Fallback bei Haus-Bodies nie gefeuert —, Squash-Verifikation gegen falschen PR-Bezug, Einrückungs-/Fence-Härtung) · dispatch-schutz-Vorschlag vom 7.8. angewendet (Prüf-Freitexte 3 statt 6 Punkte; Tor-Guard «0 geprüfte Dateien ⇒ rot»). PR-Body-Trailer-Konvention in `landung` Schritt 9 verankert. Erster Live-Lauf des Fallbacks: korrekt still.
+- **#493:** Halden (verwaistes Fixture gelöscht, 2 Doku-Snapshots byte-gleich nach archiv/; COWORK-Duo als gitignorierte Lokaldateien erkannt und unangetastet — Mechanik-Guard fing zwei Sweep-Fehlklassierungen) · Regelaudit nach §17-Gegengewicht (Befund: Bestand weitgehend konsolidiert, 0 unverzahnte Duplikate; §11 gestrafft, Gegenprüfungs-Skill als einziger undatierter datiert) · Testtreue-Präfix-Grenzfälle eingefroren (Audit-Anlass war teils überholt — Nullprobe des Bau-Agenten korrigierte ihn).
+- **QS-TOK-DECKEL done per Messung statt Bau:** 19 getrackte Root-md ≤ Deckel 20 (Ist 22 vom 31.7. durch QS-PLAN-EINFACH überholt); nichts verschoben.
+- Offen im Dauerauftrag: Live-Beweis subagent-wache (`agent_type`-Laufzeitwert; erst Folge-Session — Hooks laden beim Start).
+
 ## Session 14.8.2026 (Teil 3) — QS-HOOKS-AUSBAU: SubagentStop-Wache §14.7, Abschluss-Wache §17, Pfad-Regeln, Sandbox-Entscheid (#491)
 
 **Fable-Orchestrator, 4 Unteragenten (1 Recherche sonnet, 1 Bau sonnet, 1 Synthese, 1 Gegenprüfung opus); Merge durch David (Auto-Merge um 16:44 aktiviert, feuerte bei CI-Grün).** Alle vier freigegebenen Punkte gebaut; Schritt `done` (Hand-Buchung, s. Lehre).
