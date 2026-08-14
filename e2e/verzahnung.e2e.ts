@@ -1,3 +1,4 @@
+// @shard-gruppe: 4
 // Verzahnungs-UI V1a (W2·7-VZUI): die 5 Magic-Moment-Leitfälle aus
 // FAHRPLAN-VERZAHNUNG-UI §4 + die Zusatzaufträge David 3.7.2026 (Fundstellen-
 // Landung je Linkquelle, Popover-Verankerung am Link) + a11y-Stichprobe auf den

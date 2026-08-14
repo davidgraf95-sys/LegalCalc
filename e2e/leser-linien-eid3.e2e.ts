@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d-EID3 Teil (b) — A9-Querschnitt auf der EINZIGEN Fläche, die der Umbau

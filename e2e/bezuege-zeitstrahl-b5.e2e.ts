@@ -1,3 +1,4 @@
+// @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·7-BEZUG/B5 — Zeitstrahl + Von-Bis-Datum im Dropdown «Rechtsprechung ▾».

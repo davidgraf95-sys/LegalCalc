@@ -1,3 +1,4 @@
+// @shard-gruppe: 1
 // W2·19-S8 · Bug-Check §9 — Tore für den §4.4-Vertrag «gemalte ≤ gezählte» (B8).
 //
 // ─── DIE LÜCKE, DIE DIESE DATEI SCHLIESST ────────────────────────────────────

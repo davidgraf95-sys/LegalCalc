@@ -1,3 +1,4 @@
+// @shard-gruppe: 3
 import { test, expect } from '@playwright/test';
 
 // W2·5d U-PDF / A12 — die Download-Aktion lädt das AMTLICHE PDF der gepinnten

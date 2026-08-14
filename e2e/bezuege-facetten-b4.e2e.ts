@@ -1,3 +1,4 @@
+// @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·7-BEZUG/B4 — Facetten-Filter der Bezüge im Gesetz-Leser.

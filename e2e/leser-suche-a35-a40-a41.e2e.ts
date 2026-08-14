@@ -1,3 +1,4 @@
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 
 // E5-Welle (David 16.7.2026, §10.10) — A35 · A40 · A41.

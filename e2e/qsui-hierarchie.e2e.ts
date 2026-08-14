@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 // ─── QS-UI 8b · Tor «Verdikt zuerst» ────────────────────────────────────────
 //
 // Der Informationshierarchie-Pass (FAHRPLAN-UI-QUALITAET.md §2) hat die Ordnung

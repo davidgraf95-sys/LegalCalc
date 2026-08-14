@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d G2a — Leser-Options-Leiste (Linien/Fussnoten/Verweise): reine data-*-/

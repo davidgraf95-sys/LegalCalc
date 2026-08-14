@@ -1,3 +1,4 @@
+// @shard-gruppe: 8
 // E3/A34 (David 16.7.2026, ANMERKUNGEN Ziff. 6) — Split-View des Gesetz-Lesers:
 //  Bug 1: Öffnet man aus dem Gesetz einen verlinkten BGE im Split-View, sprang das
 //         Gesetz-Pane auf den FRÜHER angeklickten Artikel zurück (Scroll-Verlust,

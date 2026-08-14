@@ -1,3 +1,4 @@
+// @shard-gruppe: 5
 import { test, expect } from '@playwright/test';
 
 // R4 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Linien-Kanon Regel 1): der Gliederungs-

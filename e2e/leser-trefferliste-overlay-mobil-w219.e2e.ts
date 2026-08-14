@@ -1,3 +1,4 @@
+// @shard-gruppe: 1
 // W2·19-GLIEDERUNG/S10 — S8-Restpunkt, Bau-Spec §4.5 letzter Punkt: «Mobil:
 // Trefferliste im bestehenden Such-Overlay unter dem Feld; Tap schliesst und
 // springt.» Bis S10 stand die Trefferliste auf Mobil INLINE über der

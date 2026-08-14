@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 // Layout-Regressionsschutz für den Schnellrechner-Kalender der Startseite
 // (Auftrag David 26.6.2026 «füllt nicht alles aus»): der kompakte Kalender
 // klebte als feste 12.5rem-Kachel links in seiner Karte und liess rechts

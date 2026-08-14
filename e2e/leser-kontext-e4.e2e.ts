@@ -1,3 +1,4 @@
+// @shard-gruppe: 7
 import { test, expect } from '@playwright/test';
 
 // E4/A32 + E4-Korrektur (David-Feedback 25.7.2026, wörtlich): «also das
