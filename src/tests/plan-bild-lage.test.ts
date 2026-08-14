@@ -432,6 +432,7 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
     expect(p).toContain('Pflichtlektüre: bibliothek/X.md');
     expect(p).toContain('npm run fahrplan -- fahrplaene/FAHRPLAN-X.md 4');
     expect(p).toContain('Roadmap: QS-TEST-1');
+    expect(p).toContain('token-sparsam');
   });
 
   it('trägt KEINE Vertrauensgrenze-Kopie mehr (Verschlankung 15.8.2026) — Tor: Klausel lebt in CLAUDE.md §14.7 UND in jeder lex-Definition, erzwungen vom dispatch-schutz-Hook', () => {

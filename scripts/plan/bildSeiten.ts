@@ -149,6 +149,11 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     // Aufräumen) steht im Skill `bauschritt`, nicht im Prompt. So bleibt der
     // Prompt kurz und der Ablauf an EINER Stelle pflegbar (§5).
     `Nutze den Skill \`bauschritt\` für den ganzen Session-Zyklus. Schritt: ${e.id}.`,
+    // Token-Zeile auf Davids ausdrücklichen Wunsch IM Prompt (15.8.2026,
+    // «verankere im bauprompt dass man tokensparend arbeiten soll») —
+    // bewusste Ausnahme vom Nur-Schritt-Spezifisches-Prinzip; Detail-Regeln
+    // bleiben im Skill (Token-Regeln) und in den lex-Definitionen.
+    `Arbeite token-sparsam: delegieren statt selbst lesen, Slices statt Volltexte, kompakte Rückgaben (Token-Regeln: Skill \`bauschritt\`).`,
     ``,
     `Baue den LexMetrik-ROADMAP-Schritt ${e.id} — «${titel}».`,
     ``,
