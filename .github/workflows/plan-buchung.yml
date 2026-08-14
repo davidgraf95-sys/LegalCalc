@@ -1,0 +1,144 @@
+# .github/workflows/plan-buchung.yml — Buchhaltungs-Automation nach Merge
+# (QS-PLAN-EINFACH, 14.8.2026, Punkt 1; Auftrag David).
+#
+# BISHER: nach jeder Landung setzte die Session von Hand `npm run plan:set --
+# <ID> status=<wert>` + push — ein Zweitschritt, der leicht vergessen wird
+# (Beleg: 9a57976fb «Wächter ist seit 3 Tagen selbst rot» — Status im ROADMAP.md
+# hinkte dem realen Stand nach).
+#
+# JETZT: trägt der Squash-Commit auf `main` BEIDE Trailer
+#   Roadmap: <ID>
+#   Roadmap-Status: done | ready | parked(<blocker-token>)
+# bucht dieser Workflow den Status automatisch nach — die Absicht steht schon
+# im Commit, ein separater Hand-Schritt ist redundant. Trailer-Parsen und
+# -Validieren sitzt in `scripts/plan/buchung.ts` (Vitest-getestet, §6.7-Beweis
+# dort) — dieser Workflow ruft das Skript nur auf und verdrahtet es mit den
+# bestehenden Werkzeugen `plan:set`/`check:plan`.
+#
+# FEHLERSEITE (§6.7): ein ungültiger Status-Wert oder eine unbekannte ID lässt
+# den Job ROT enden, BEVOR etwas committet wird — nie ein unwahrer Plan-Stand.
+#
+# SELBST-TRIGGER-GUARD: der von diesem Workflow erzeugte Buchungs-Commit trägt
+# selbst keinen `Roadmap-Status`-Trailer (siehe Commit-Message unten), der
+# Trailer-Schritt fände hier also ohnehin nichts. Der Actor-/Autor-Guard ist
+# trotzdem verdrahtet (Belt+Suspenders, wie `merge-schutz` in ci.yml) — er
+# verlässt den Job, BEVOR überhaupt ausgecheckt wird, egal was ein künftiger
+# Commit-Wortlaut zufällig trüge. Ergänzend gilt ohnehin GitHubs eingebaute
+# Rekursionssperre: von `GITHUB_TOKEN` erzeugte push-Events lösen keine
+# Workflow-Läufe aus (siehe waechter.yml, K2/K11-Kommentar) — der Guard hier
+# ist zusätzliche Sicherung, keine notwendige.
+name: Plan-Buchung (Merge-Trailer → ROADMAP.md)
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: plan-buchung-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  buchen:
+    name: Roadmap-Status aus Merge-Trailer buchen
+    runs-on: ubuntu-latest
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      github.event.head_commit.author.username != 'github-actions[bot]'
+    env:
+      TZ: Europe/Zurich
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      # `%(trailers:key=…,valueonly)` liest nur echte Trailer-Zeilen am
+      # Commit-Ende (wie check-merge-schutz.ts) — keine beiläufige Erwähnung
+      # im Fliesstext. Fehlt einer der beiden, ist das KEIN Fehler, sondern der
+      # weit häufigere Normalfall («normaler» Merge ohne Buchungs-Absicht) —
+      # der Job endet hier still mit Exit 0.
+      - name: Trailer aus dem Head-Commit lesen
+        id: trailer
+        run: |
+          set -euo pipefail
+          ROADMAP=$(git log -1 --format='%(trailers:key=Roadmap,valueonly)' | tr -d '\n')
+          STATUS=$(git log -1 --format='%(trailers:key=Roadmap-Status,valueonly)' | tr -d '\n')
+          if [ -z "$ROADMAP" ] || [ -z "$STATUS" ]; then
+            echo "vorhanden=false" >> "$GITHUB_OUTPUT"
+            echo "Kein vollständiger Buchungs-Trailer im Head-Commit (Roadmap='${ROADMAP}', Roadmap-Status='${STATUS}') — nichts zu tun."
+            exit 0
+          fi
+          echo "vorhanden=true" >> "$GITHUB_OUTPUT"
+          echo "roadmap=${ROADMAP}" >> "$GITHUB_OUTPUT"
+          echo "status=${STATUS}" >> "$GITHUB_OUTPUT"
+          echo "Buchungs-Trailer gefunden: Roadmap=${ROADMAP} · Roadmap-Status=${STATUS}"
+
+      # Trailer-Parsen + Validierung (scripts/plan/buchung.ts). Die Datei gibt
+      # bei Erfolg genau `id=…`/`status=…`/`blocker=…`-Zeilen aus — das ist
+      # bereits GITHUB_OUTPUT-Format, darum die direkte Umleitung. Wirft die
+      # Validierung (ungültiger Status, "parked" ohne Blocker-Token), endet
+      # dieser Schritt mit Exit 1 — der Job wird ROT, `plan:set` läuft NIE.
+      # SICHERHEIT (Gegenprüfungs-Befund 14.8.2026): Trailer-Werte stammen aus
+      # dem Commit-Text und sind beeinflussbar — sie erreichen die Shell darum
+      # NUR über `env:` (Variablen-Expansion, keine Kommando-Substitution),
+      # NIE über `${{ }}` im `run:`-Skripttext (dort würde ein `$(…)` im Wert
+      # ausgeführt). Zusätzlich validiert buchung.ts ID/Token gegen einen
+      # engen Zeichensatz, bevor irgendetwas weiterläuft.
+      - name: Trailer parsen + validieren
+        if: steps.trailer.outputs.vorhanden == 'true'
+        id: buchung
+        env:
+          ROADMAP_TRAILER: ${{ steps.trailer.outputs.roadmap }}
+          STATUS_TRAILER: ${{ steps.trailer.outputs.status }}
+        run: |
+          set -euo pipefail
+          npx vite-node scripts/plan/buchung.ts -- "$ROADMAP_TRAILER" "$STATUS_TRAILER" >> "$GITHUB_OUTPUT"
+
+      - name: ROADMAP.md nachziehen (plan:set)
+        if: steps.trailer.outputs.vorhanden == 'true'
+        env:
+          BUCHUNG_ID: ${{ steps.buchung.outputs.id }}
+          BUCHUNG_STATUS: ${{ steps.buchung.outputs.status }}
+          BUCHUNG_BLOCKER: ${{ steps.buchung.outputs.blocker }}
+        run: |
+          set -euo pipefail
+          npm run plan:set -- "$BUCHUNG_ID" status="$BUCHUNG_STATUS"
+          if [ -n "$BUCHUNG_BLOCKER" ]; then
+            npm run plan:set -- "$BUCHUNG_ID" blocker="$BUCHUNG_BLOCKER"
+          fi
+
+      # Konsistenz-Tor VOR dem Commit (§6.7: "ist check:plan rot ⇒ Job ROT und
+      # KEIN Commit — nie einen unwahren Plan committen").
+      - name: check:plan (Konsistenz-Tor)
+        if: steps.trailer.outputs.vorhanden == 'true'
+        run: npm run check:plan
+
+      # `plan:bild` (Lagebild) erzeugt NUR eine gitignorierte Datei
+      # (tmp/plan-bild.html, siehe .gitignore Z. 98 `tmp/`) — kein committetes
+      # Artefakt, geprüft per `git status` nach einem lokalen Lauf. Hier darum
+      # bewusst NICHT ausgeführt: es gäbe nichts zusätzlich zu committen.
+      - name: ROADMAP.md committen und pushen
+        if: steps.trailer.outputs.vorhanden == 'true'
+        env:
+          BUCHUNG_ID: ${{ steps.buchung.outputs.id }}
+          BUCHUNG_STATUS: ${{ steps.buchung.outputs.status }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- ROADMAP.md; then
+            echo "ROADMAP.md unverändert (Status entsprach bereits dem Trailer) — kein Commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ROADMAP.md
+          git commit -m "docs(plan): $BUCHUNG_ID -> $BUCHUNG_STATUS (automatisch aus Merge-Trailer)"
+          # Push-Race (Gegenprüfung, nachrangig): zwischen Trigger-SHA und jetzt
+          # kann ein weiterer Merge gelandet sein — Rebase statt non-fast-forward-Rot.
+          git pull --rebase origin main
+          npm run check:plan
+          git push origin HEAD:main

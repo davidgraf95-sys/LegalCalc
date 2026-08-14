@@ -1,5 +1,22 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Etiketten-Konsolidierung + Halden-Abbau 14.8.2026 (`QS-PLAN-EINFACH`, Auftrag David)
+
+**16 Kleinst-Etiketten aufgegangen** (nicht gestrichen — jede lebt als Checklisten-Zeile in ihrem
+Dach weiter, Risiko-Vermerke an der Zeile; Dach-`kollision` je um die aufgenommene Fläche erweitert):
+`QS-GP-PRERENDER`/`QS-GP-PREPUSH`/`QS-GP-NACHBEFUNDE` → `QS-GP` · `QS-BASIS-TOT`/`QS-BASIS-DEPS` →
+`QS-BASIS` · `QS-AUTOMATIK-BERICHT`/`QS-AUTOMATIK-PARITAET`/`QS-MERGE-AUTOZUG` → `QS-AUTOMATIK` ·
+`W2·14-SIGNAL-B1`/`-B2`/`-GER` → `W2·14-SIGNAL` (Bau-Reihenfolge als Prosa-Note statt `dep`-Kette) ·
+`W2·7-BEZUG-LADEN` → `W2·7-VZUI` · `W2·5k-LINIEN-RUECKBAU` → `W2·5h-GESETZ-UI` · `W3·14-B3`/`-S`/
+`-a11y` → `W3·14`. Anlass: Audit 13./14.8. — 50 von 79 Etiketten nie in einem Commit genannt;
+Etiketten-Bestand 79 → 63. Risiko-Klassen nicht als Bau-Einheit gemischt: Zeilen mit Risikopfad-
+Anteil (`QS-GP-NACHBEFUNDE` b/c) bzw. deklarierter Verhaltensänderung (`W2·5k`) tragen den Vermerk
+wörtlich an der Zeile — eine Session nimmt sortenreine Teilmengen (Muster `W2·13-KANTONE-DATEN`).
+
+**15 tote Archivdateien gelöscht** (130 KB, null lebende Verweise, unabhängig nachgemessen —
+der Audit-Wert «17/155 KB» war um 2 Dateien zu hoch): Liste in `archiv/README.md`
+§«Gelöscht 14.8.2026»; git-Historie trägt sie weiter.
+
 ## ROADMAP-Verschlankung 14.8.2026 (`QS-PLAN-EINFACH`, Auftrag David)
 
 **Streichungs-Begründung (Protokoll Ziff. 5):** Die Schritt-Prosa der ROADMAP wurde auf Zielform

@@ -79,6 +79,20 @@
 # Davids Entscheid vom 14.8.2026 («wird freigegeben») bewusst gelockert.
 # `merge_group` bleibt unberührt und fährt weiterhin ausnahmslos das volle
 # Programm. Fehlerseite unverändert (§6.7): jede Unsicherheit fällt auf `code`.
+#
+# ─── Dritte Klasse `code-fern` (QS-PLAN-EINFACH 14.8.2026, Punkt 3) ──────────
+# Die 8 Playwright-Browser-Shards sind gemessen 78 % der CI-Zeit. Rührt ein
+# Diff AUSSCHLIESSLICH Flächen an, die die ausgelieferte App nachweislich
+# nicht berühren (`**.md`, `scripts/plan/**`, `scripts/cowork/**`, `.claude/**`,
+# `docs/**`, `bibliothek/**`, `messwerte/**`, `archiv/**`), fahren Bau + alle
+# Node-Tore weiterhin VOLL — nur die 8 Browser-Shards werden übersprungen,
+# mit demselben Skip-Muster wie die bestehende `doku`-Klasse (Required-Check-
+# Semantik bleibt identisch). `Merge-Schutz` läuft für JEDE Klasse unverändert
+# echt. KONSERVATIV: jede weitere Datei (auch package.json, e2e/**, scripts/**
+# ausserhalb plan/cowork) kippt die ganze Klassierung auf `code`. Regel als
+# Bash im `diff`-Job (CODE_FERN_RE, bewusst NICHT ausgelagert — der Job bleibt
+# checkout-/npm-frei) UND als reine, Vitest-getestete Funktion in
+# scripts/ci/diff-klassieren.ts (§6.7-Beweis dort).
 name: CI
 
 on:
@@ -118,7 +132,7 @@ jobs:
   # Länge der API-Liste ab (Kappung bei 3000 Dateien, Sonderzeichen im Namen),
   # wird NICHT als Doku klassiert.
   diff:
-    name: Diff-Klassierung (Code vs. Doku)
+    name: Diff-Klassierung (Code vs. Code-fern vs. Doku)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -138,6 +152,23 @@ jobs:
           AFTER: ${{ github.event.after }}
         run: |
           set -euo pipefail
+          # Flächen, die die ausgelieferte App nachweislich nicht berühren
+          # (Klasse `code-fern`, Punkt 3 QS-PLAN-EINFACH 14.8.2026 — 78 %-
+          # Messwert der Browser-Shards). Für PUSH und PULL_REQUEST gemeinsam
+          # definiert, damit beide Zweige exakt dieselbe Regel auswerten (§5).
+          # KONSERVATIV: jede andere Datei (auch package.json, e2e/**,
+          # scripts/** sonst) kippt auf `art=code` (§6.7-Fehlerseite).
+          #
+          # Direkt in Bash, NICHT nach `scripts/ci/diff-klassieren.ts`
+          # ausgelagert: dieser `diff`-Job ist bewusst checkout-/npm-frei
+          # ("billigster Job der Kette", siehe Kommentar unten) — ein
+          # `vite-node`-Aufruf bräuchte Checkout + `npm ci` bei JEDEM Lauf,
+          # nicht nur bei code-fernen. Dieselbe Regel liegt zusätzlich als
+          # reine, Vitest-getestete Funktion in scripts/ci/diff-klassieren.ts
+          # (§6.7-Beweis dort, `npx vitest run src/tests/ci-diff-klassieren.
+          # test.ts`) — die Pfadliste hier ist wortgleich zu deren
+          # CODE_FERNE_MUSTER, damit beide Fassungen nicht auseinanderlaufen.
+          CODE_FERN_RE='(\.md$|^scripts/plan/|^scripts/cowork/|^\.claude/|^docs/|^bibliothek/|^messwerte/|^archiv/)'
           # `merge_group` und `workflow_dispatch` fahren unverändert das volle
           # Programm: die Merge Queue prüft einen Stand, der gleich main WIRD,
           # und ein Handstart ist immer als Volllauf gemeint.
@@ -184,9 +215,16 @@ jobs:
             # darin fällt also weiterhin auf. Der Zweitschritt bei jeder
             # Rotation ist damit nicht länger ein Volllauf-Auslöser.
             if grep -qvE '(\.md|^scripts/plan/inventar\.ts)$' push-dateien.txt; then
-              echo "art=code" >> "$GITHUB_OUTPUT"
-              echo "Nicht-Doku-Dateien im Push — volles Programm:"
-              awk '!/(\.md|^scripts\/plan\/inventar\.ts)$/ && ++n<=20' push-dateien.txt
+              # Nicht rein Doku — app-ferne Zusatz-Klasse prüfen (CODE_FERN_RE,
+              # Kopf dieses Schritts) statt sofort das volle Programm.
+              if grep -qvE "$CODE_FERN_RE" push-dateien.txt; then
+                echo "art=code" >> "$GITHUB_OUTPUT"
+                echo "App-nahe Dateien im Push — volles Programm:"
+                grep -vE "$CODE_FERN_RE" -m 20 push-dateien.txt
+              else
+                echo "art=code-fern" >> "$GITHUB_OUTPUT"
+                echo "Nur app-ferne Nicht-Doku-Dateien im Push (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 8 Browser-Shards werden übersprungen (gleiches Skip-Muster wie 'doku')."
+              fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
               echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue und check:plan laufen ECHT, restliche Code-Tore quittieren."
@@ -207,14 +245,21 @@ jobs:
             exit 0
           fi
           if grep -qvE '\.md$' pr-dateien.txt; then
-            echo "art=code" >> "$GITHUB_OUTPUT"
-            echo "Nicht-.md-Dateien im Diff — volles Programm:"
-            # KEIN `grep | head`: unter pipefail killt heads früher Exit den grep
-            # per SIGPIPE (exit 141) — bei PRs mit >20 Nicht-md-Dateien starb so
-            # der ganze Klassierungs-Job und ALLE Folge-Jobs skippten (real
-            # PR #482, 581 Dateien, 13.8.2026). awk zählt selbst und braucht
-            # keine Pipe.
-            awk '!/\.md$/ && ++n<=20' pr-dateien.txt
+            # Nicht rein .md — app-ferne Zusatz-Klasse prüfen (CODE_FERN_RE,
+            # Kopf dieses Schritts).
+            if grep -qvE "$CODE_FERN_RE" pr-dateien.txt; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "App-nahe Dateien im Diff — volles Programm:"
+              # KEIN `grep | head`: unter pipefail killt heads früher Exit den
+              # grep per SIGPIPE (exit 141) — bei PRs mit >20 App-nahen Dateien
+              # starb so der ganze Klassierungs-Job und ALLE Folge-Jobs
+              # skippten (real PR #482, 581 Dateien, 13.8.2026). `grep -m 20`
+              # begrenzt selbst und braucht keine Pipe.
+              grep -vE "$CODE_FERN_RE" -m 20 pr-dateien.txt
+            else
+              echo "art=code-fern" >> "$GITHUB_OUTPUT"
+              echo "Nur app-ferne Nicht-.md-Dateien (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 8 Browser-Shards werden übersprungen."
+            fi
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
             echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz und check:plan laufen ECHT, restliche Code-Tore quittieren."
@@ -230,23 +275,25 @@ jobs:
       # Der Job läuft IMMER (kein Job-`if:`) — sonst zöge ein übersprungenes
       # `bau` die 8 e2e-Shards über `needs:` mit in den Skip, und die acht
       # Required-Kontexte hingen wieder an einer Bedingung statt an einem Job.
-      # Bei art=doku ist er ein Leerlauf von Sekunden.
+      # Bei art=doku ist er ein Leerlauf von Sekunden. `code-fern` (Punkt 3,
+      # QS-PLAN-EINFACH 14.8.2026) baut VOLL wie `code` — es überspringt nur
+      # die Browser-Shards weiter unten, Bau und Tore sind unverändert Pflicht.
       - uses: actions/checkout@v5
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
       - uses: actions/setup-node@v5
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         with:
           node-version: 22
           cache: npm
       - run: npm ci
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
       # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
       # hier die ganze Kette, bevor tore/e2e überhaupt starten.
       - name: Build
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run build
       - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         uses: actions/upload-artifact@v4
         with:
           name: dist
@@ -254,7 +301,7 @@ jobs:
           retention-days: 1
           include-hidden-files: true
       - name: Kurzquittung (Doku-/Leer-Diff)
-        if: needs.diff.outputs.art != 'code'
+        if: needs.diff.outputs.art == 'doku'
         run: echo "Kein Code im Diff — kein Bau, kein dist-Artefakt (die e2e-Shards laden es folgerichtig auch nicht)."
 
   tore:
@@ -308,16 +355,16 @@ jobs:
       # schon im alten Monojob VOR dem Build). Darum auch kein `needs: bau` —
       # tore startet sofort, parallel zu bau.
       - name: Tests (volle Ausgabe)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm test
       - name: Lint (volle Ausgabe, nie tail!)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run lint
       # ── Katalog-Inventur ENTFERNT (14.8.2026, QS-PLAN-EINFACH) ──────────────
       # Das Skript hat keinen Abbruchpfad und konnte nie rot werden (§6.7) —
       # es heisst jetzt ehrlich `report:inventur` und läuft auf Abruf.
       - name: Bibliotheks-Standards (S1–S10)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:bibliothek
       # ── check:verfall STEHT HIER BEWUSST NICHT MEHR (3.8.2026, K7) ──────────
       # Es ist das einzige Tor im PR-Pfad, dessen Ergebnis von der WANDUHR
@@ -336,16 +383,16 @@ jobs:
       # check:tor-paritaet bleibt grün, weil es ALLE Workflows scannt, nicht
       # nur ci.yml — der Nachweis der Abdeckung bleibt also maschinell.
       - name: Abnahme-Dossiers synchron zu den Schemas (§5-Projektion)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:dossiers
       - name: Logik-Sweep (Invarianten)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:sweep
       - name: Golden-Outputs (byte-gleich zur committeten Basis)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run golden:vergleich
       - name: SSR-Smoke (alle Seiten)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:smoke
       # ── Tore, die bis 20.7.2026 auf der Paritaets-Allowlist standen ──────
       # Die Begruendung «braucht rechtsprechung.db (488 MB, nicht im CI-
@@ -355,13 +402,13 @@ jobs:
       # gruen unter CI=1. check:besetzung ist das Tor, das die 11 erfundenen
       # Amtstraeger:innen aus #309 faengt — es war ausgerechnet unsichtbar.
       - name: Spruchkörper-Projektion (Leak · Konsistenz · Determinismus)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:besetzung
       - name: Entscheid-Korpus (Bund)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:entscheide
       - name: Entscheid-Korpus (BS)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:bs-entscheide
       # Sichtbarkeits-Tor der Verzahnung (W2·6-NKEY c): zaehlt, wie viele
       # Gesetzes-Zitate des Korpus KEINEN Register-key finden. Ohne dieses Tor
@@ -370,7 +417,7 @@ jobs:
       # Liest wie die drei Tore darueber nur die committeten Projektionen unter
       # public/rechtsprechung/, keine DB, kein Netz.
       - name: normKeys-Abdeckung (Verzahnung Rechtsprechung ↔ Gesetz)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:normkeys
       # Bezugs-Schicht (W2·7-BEZUG B1-B3): prueft, dass die Bundesgerichts-Sicht
       # der Facetten-Shards die bestehende Artikel-Ebene EXAKT nachrechnet (also
@@ -378,16 +425,16 @@ jobs:
       # dass keine Deckel- oder Grundgesamtheits-Zahl luegt. Liest wie die Tore
       # darueber nur die committeten Projektionen, keine DB, kein Netz.
       - name: Bezugs-Schicht (Facetten · Projektion · Grundgesamtheit)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:bezuege
       # Selbstschutz der Tor-Landschaft: meldet neue Tore ohne CI-Lauf.
       # Lief selbst nur lokal — der Melder war damit so unsichtbar wie der
       # Defekt, den er meldet (F2b rekursiv).
       - name: Tor-Parität (CI/lokal)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:tor-paritaet
       - name: Dispatch-Pflichtklausel (§0-Generator lauffähig)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:dispatch-klausel
       # ── R1-Nachzug (20.7.2026): die bis dahin unsichtbaren Tore ─────────────
       # Das Tor-Wirksamkeits-Audit (bibliothek/, PR #318) hat die 20 Allowlist-
@@ -403,7 +450,7 @@ jobs:
       # fing — stand selbst auf dieser Liste. Diese Tore sind nicht ertragsarm,
       # sie waren unsichtbar.
       - name: Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:design-tokens && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
       # UI-Normzitate gegen den Korpus (QS-CODE-AUSSENKANTEN, 4.8.2026): die
       # ~740 hart kodierten Art.-Zitate der Darstellungsschicht sind eine
@@ -411,26 +458,26 @@ jobs:
       # Erlasses existieren. Offline, Basislinien-Modell, eingebauter §6.7-
       # Selbsttest (synthetisches Falsch-Zitat muss rot werden).
       - name: UI-Normzitate (Korpus-Abgleich)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:ui-normzitate
       - name: Import-Zyklen
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:zyklen
       - name: Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:vollstaendigkeit && npm run check:zaehler && npm run check:historie && npm run check:revisionen && npm run check:artikel-revisionen
       - name: Normtext-Struktur (Tabellen · Grundart · Invarianten)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:tabellen && npm run check:grundart && npm run check:invarianten
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM
       # Tor gelesen. Laeuft offline in <1 s.
       - name: Golden-Vollständigkeit (Normtext-Index ⊇⊆ Snapshots)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:golden-normtext
       - name: Quellen-Projektionen (PDF · PDF-Quellen · Bilder)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:pdf && npm run check:pdf-quellen && npm run check:bilder
       # Verdrahtet 4.8.2026 (F2b-Vorfall #425): 226 geänderte Normtext-Snapshots
       # ohne daten-manifest.json-Nachzug passierten das PR-CI grün — die Drift
@@ -438,13 +485,13 @@ jobs:
       # Sync blockiert). In-Memory-Ingest, ~21 s auf dem CI-Runner (gemessen
       # Lauf 30856208988), kein daten/*.db nötig.
       - name: Datenhaltungs-Manifest (Determinismus · Drift · Invarianten)
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:datenhaltung
       - name: SEO-Index · Verfall-UI
-        if: needs.diff.outputs.art == 'code'
+        if: needs.diff.outputs.art != 'doku'
         run: npm run check:seo-index && npm run check:verfall-ui
       - name: Kurzquittung (Doku-/Leer-Diff)
-        if: needs.diff.outputs.art != 'code'
+        if: needs.diff.outputs.art == 'doku'
         run: echo "Kein Code im Diff — Merge-Schutz und check:plan sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
@@ -469,7 +516,11 @@ jobs:
     steps:
       # Wie bei `bau`: der Job selbst läuft IMMER, damit die acht Required-
       # Kontexte «Browser-Smoke Shard N/8 (Playwright)» ereignisunabhängig
-      # gemeldet werden. Bei art=doku bleibt davon eine Kurzquittung.
+      # gemeldet werden. Bei art=doku ODER art=code-fern (Punkt 3,
+      # QS-PLAN-EINFACH 14.8.2026 — 78 %-Messwert) bleibt davon eine
+      # Kurzquittung: `code-fern`-Flächen berühren die ausgelieferte App
+      # nachweislich nicht, Bau und alle Node-Tore liefen für sie trotzdem
+      # VOLL im `tore`-Job oben — nur die Browser-Shards sind hier verzichtbar.
       - uses: actions/checkout@v5
         if: needs.diff.outputs.art == 'code'
       - uses: actions/setup-node@v5
@@ -509,9 +560,9 @@ jobs:
       - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
         if: needs.diff.outputs.art == 'code'
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
-      - name: Kurzquittung (Doku-/Leer-Diff)
+      - name: Kurzquittung (Doku-/App-fern-/Leer-Diff)
         if: needs.diff.outputs.art != 'code'
-        run: echo "Kein Code im Diff — Browser-Smoke Shard ${{ matrix.gruppe }}/8 nicht betroffen."
+        run: echo "art=${{ needs.diff.outputs.art }} — Browser-Smoke Shard ${{ matrix.gruppe }}/8 nicht betroffen (bei code-fern liefen Bau + alle Node-Tore trotzdem voll)."
       # Per-Spec-CI-Dauern sichern (auch bei rotem Shard — gerade dann sind sie
       # interessant). Damit lässt sich `e2e/shard-gruppen.json` künftig gegen
       # GEMESSENE CI-Zeiten packen statt gegen lokale, die nicht uniform skalieren

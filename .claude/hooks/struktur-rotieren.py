@@ -243,6 +243,66 @@ def archiv_prepend(archiv_text: str, rotierte) -> str:
     return archiv_text[: m.start()] + block + archiv_text[m.start() :]
 
 
+# ── Monats-Archiv (QS-PLAN-EINFACH 14.8.2026, Halden-Abbau) ──────────────────
+# Die frühere Einzeldatei ARCHIV wuchs auf 791 KB (+12 KB/Tag) ohne Leser.
+# Karten wandern jetzt in archiv/struktur-sessionkarten/<JJJJ-MM>.md — der
+# Monat kommt aus dem KARTEN-Datum (deterministisch, keine Wanduhr). Die
+# Stammdatei ARCHIV trägt nur noch das Verzeichnis (zählerfrei, damit es nie
+# veraltet) und allfällige Karten ohne parsebares Datum.
+ARCHIV_DIR = "archiv/struktur-sessionkarten"
+MONATS_KOPF = "# STRUKTUR-Session-Karten — Archiv {ym}\n\n"
+VERZEICHNIS_ANKER = "## Monatliche Archive\n"
+
+
+def monats_name(block: str):
+    d = karten_datum(block)
+    return f"{d.year}-{d.month:02d}" if d else None
+
+
+def verteile_rotierte(repo, rotierte):
+    """Schreibt rotierte Karten in ihre Monatsdateien (Prepend, neueste zuerst).
+
+    Gibt die Summe der geschriebenen KARTEN-Bytes zurück (Kopf-/Verzeichnis-
+    Bytes neu angelegter Monate zählen nicht — die Byte-Bilanz vergleicht
+    Karten gegen Karten). Karten ohne Datum landen im Stammdatei-Abschnitt
+    «Karten ohne Datum».
+    """
+    gruppen: dict = {}
+    for b in rotierte:
+        gruppen.setdefault(monats_name(b), []).append(b)
+
+    karten_bytes = 0
+    for ym, bloecke in gruppen.items():
+        if ym is None:
+            stamm = lese(repo, ARCHIV)
+            block = "".join(bloecke)
+            stamm = stamm.replace("## Karten ohne Datum\n\n(keine)\n",
+                                  "## Karten ohne Datum\n\n" + block, 1) \
+                if "## Karten ohne Datum\n\n(keine)\n" in stamm \
+                else stamm.rstrip("\n") + "\n\n" + block
+            schreibe(repo, ARCHIV, stamm)
+            karten_bytes += len(block.encode("utf-8"))
+            continue
+        pfad = f"{ARCHIV_DIR}/{ym}.md"
+        voll = os.path.join(repo, pfad)
+        if os.path.exists(voll):
+            alt = lese(repo, pfad)
+        else:
+            os.makedirs(os.path.join(repo, ARCHIV_DIR), exist_ok=True)
+            alt = MONATS_KOPF.format(ym=ym)
+            # Neuen Monat ins Verzeichnis der Stammdatei eintragen (oberste Zeile).
+            stamm = lese(repo, ARCHIV)
+            zeile = f"- [{ym}](struktur-sessionkarten/{ym}.md)\n"
+            if zeile not in stamm and VERZEICHNIS_ANKER in stamm:
+                stamm = stamm.replace(VERZEICHNIS_ANKER + "\n",
+                                      VERZEICHNIS_ANKER + "\n" + zeile, 1)
+                schreibe(repo, ARCHIV, stamm)
+        neu = archiv_prepend(alt, bloecke)
+        schreibe(repo, pfad, neu)
+        karten_bytes += sum(len(b.encode("utf-8")) for b in bloecke)
+    return karten_bytes
+
+
 def waechter_meldungen(repo):
     """Re-Akkumulations-Wächter (T7-K Teil 2): Steuer-Doks über Budget?"""
     out = []
@@ -276,21 +336,19 @@ def rotiere_und_schreibe(repo, commit: bool):
     neu, rotierte = baue_neues_struktur(struktur)
     if neu is None:
         return 0, True
-    # Byte-Bilanz: die aus STRUKTUR entfernten Karten-Bytes == die ins Archiv
-    # geschriebenen Karten-Bytes (Anker ist ein ZUSATZ-Marker, kein Inhalt).
+    # Byte-Bilanz: die aus STRUKTUR entfernten Karten-Bytes == die in die
+    # Monats-Archive geschriebenen Karten-Bytes (Kopf-/Verzeichnis-Zeilen neu
+    # angelegter Monate sind ZUSATZ-Marker, kein Karten-Inhalt).
     entfernt = sum(len(b.encode("utf-8")) for b in rotierte)
-    archiv = lese(repo, ARCHIV)
-    archiv_neu = archiv_prepend(archiv, rotierte)
-    hinzugefuegt = len(archiv_neu.encode("utf-8")) - len(archiv.encode("utf-8"))
+    hinzugefuegt = verteile_rotierte(repo, rotierte)
     bilanz_ok = entfernt == hinzugefuegt
     if rotierte and not bilanz_ok:
         raise RuntimeError(
             f"Byte-Bilanz verletzt: entfernt {entfernt} != hinzugefügt {hinzugefuegt}"
         )
     schreibe(repo, "STRUKTUR.md", neu)
-    schreibe(repo, ARCHIV, archiv_neu)
     if commit:
-        git(repo, "add", "--", "STRUKTUR.md", ARCHIV)
+        git(repo, "add", "--", "STRUKTUR.md", ARCHIV, ARCHIV_DIR)
         git(
             repo,
             "commit",

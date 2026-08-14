@@ -44,6 +44,8 @@ Pflichtteil JEDER bauenden Phase.
 
 ---
 
+> Erledigt-/Stand-Abschnitte vom 14.8.2026 nach `archiv/FAHRPLAN-ERLEDIGT-ABSCHNITTE.md` verschoben (QS-PLAN-EINFACH).
+
 ## §0 · Zweck
 
 Detailquelle zu `W2·8` — Verträge-Rahmen, P1-Vorlagen und Rechner-Erweiterungen
@@ -174,69 +176,6 @@ Zweige golden-bewiesen unverändert).
    klagen-vorlagen.md`. IA-Anker: Behördeneingaben-Rubrik
    `klage_besonders` (nach klageGebiet gruppiert) bzw. neue Rubrik gemäss
    Quellen-Zuschnitt.
-
-## Abarbeitungs-Stand 12.6.2026 (Session «Wettbewerbsanalyse + Musterklagen», David abwesend)
-
-ERLEDIGT + committet: **V1** (Verträge-Rubriken + formGate-Zeile, 8a78ee2) ·
-**V2.1** Verjährungsverzicht (0b21767) · **V2b** Blanko-Download-Rahmen alle
-Einzel-Wizards (270007c; Mappen offen) · **Musterklagen M1**: Scheidungsklage
-unbegründet Art. 290 ZPO (b3ba2dc; Karte klage_besonders/Familienrecht).
-WEITER ERLEDIGT (Fortsetzung): **Bd.-I-Struktur-Dossier** §§ 1–25 in
-bibliothek/recherche/musterklagen-vertrag-haftpflicht-bd1.md (bdebf6d;
-4 Struktur-Agents, NUR Struktur) · **Gemeinsames Scheidungsbegehren**
-Art. 285/286 ZPO (00f7931) · **Eheschutzgesuch** Art. 175 ff. ZGB +
-10 GEPLANT-Karten der Musterklagen-Rubrik (7175a01). Familienrecht-Masken
-3/3 der ersten Welle gebaut (Scheidungsklage · Begehren · Eheschutz).
-NÄCHSTE SCHRITTE (V8-Fortsetzung): Masken für die geplanten Karten nach
-Davids Priorisierung — Kandidaten-Reihenfolge nach Dossier-Praxiswert:
-Bauhandwerkerpfandrecht-Gesuch (4-Monats-Gate!) → Arbeit-Kündigungsklage
-(Synergie 336b-Engine) → Werkmängel → VVG → Honorar → 158-ZPO →
-Konkurrenzverbot → Personenschaden → Abänderung/Konkubinat. Dazu V2-Rest
-(NDA, Zession, Fristerstreckung, 8a-SchKG-Löschung), V3–V7.
-Push/Deploy weiter gesperrt (Davids frisches Ja).
-
-## Abarbeitungs-Stand 13.6.2026 (Session «Pauschal-Abnahme + V2-Rest»)
-
-P1-Priorisierung durch David ABGENOMMEN 12.6.2026 («alles abgenommen»,
-`abnahme/wortlaute-2026-06/PAUSCHALABNAHME-2026-06-12.md`). **V2 KOMPLETT
-(4/4):** Verjährungsverzicht (0b21767) · **Abtretungserklärung/Zession**
-Art. 164/165/167/170 OR (5d4ccf8) · **Fristerstreckungsgesuch** Art.
-143/144/148 ZPO mit Frist-Art-Weiche + Vor-Fristablauf-Gates (fd10ff1) ·
-**Nichtbekanntgabe Betreibung** Art. 8a III lit. d SchKG, Fassung
-1.1.2026 (AS 2025 522) am Cache verifiziert, 3-Monats-Schwelle
-deterministisch (3d1fc99). NDA gehört zu V3 (Vertrags-Grundtyp).
-OFFENE FOLGEPOSTEN aus V2: (a) Ergebnis-Prefill-Brücke zpo-fristen →
-Fristerstreckung (laufende Frist reist mit, G3); (b) VorlagenSprung im
-SchKG-Zuständigkeits-Rechner bräuchte ein neues Anliegen «Löschung/
-Nichtbekanntgabe» (Engine-Änderung, Entscheid David). NÄCHSTE PHASEN:
-V3 (Auftrag · Werkvertrag · NDA · Konkubinat) → V4 ff.; parallel V8 nach
-Priorisierung. Push/Deploy weiter gesperrt (Davids frisches Ja).
-
-## Abarbeitungs-Stand 13.6.2026 (Session «V3 + Verwaltungs-/BGG-Stillstand»)
-
-**V3 KOMPLETT (4/4 Grundtypen, je eigener Commit, Gate je GRÜN):**
-**Auftrag** `41dccc3` (Art. 394 ff. OR; Module Beratung/Treuhand/Inkasso;
-Auflösungsrecht Art. 404 offengelegt) · **Werkvertrag** `704aa85`
-(Art. 363 ff. OR; Weiche beweglich/unbeweglich → Rügefrist 60 T zwingend
-Art. 367 Abs. 1bis + Verjährung 2/5 J Art. 371; Brücke Gewährleistungs-
-Rechner; Rücktritt Art. 377) · **NDA** `5aa4b62` (Innominat Art. 19 OR;
-einseitig/gegenseitig + Konventionalstrafe Art. 160/161/163, Herabsetzung
-163 III offengelegt) · **Konkubinat** `d081391` (Art. 19 OR / 646/650/651
-ZGB / 530/548/549 OR; Module Wohnen/Kosten/Inventar/einfache Gesellschaft/
-Auflösung; kein gesetzliches Konkubinatsrecht + Kindesbelange nach Gesetz
-offengelegt). Alle V0-Anker am Cache verifiziert, check:zitate 0 Befunde.
-Endstand: 47 gebaut/43 sichtbar, Golden 159, Routen 49.
-
-**EINGESCHOBEN (Auftrag David im Chat):** Verwaltungs-Stillstand
-(Art. 22a VwVG) + BGG-Stillstand (Art. 46 BGG) im einfachen Fristenrechner
-— neue Engine `lib/bggVwvgFristen.ts`, Dossier `bibliothek/recherche/
-stillstand-vwvg-bgg.md`. Gilt NUR für nach Tagen bestimmte Fristen;
-Abs.-2-Ausnahmen je Regime; periodengleich zur ZPO (golden-bewiesen).
-
-NÄCHSTE PHASEN: V4 (Detailgrad-Schalter, Pilot Arbeits-/Mietvertrag) ·
-V5 (Form-Weichen Bürgschaft/Ehevertrag) · V6 (ABV) · V7 (Rechner-
-Erweiterungen) · V8 (Musterklagen-Masken). Fachliche Abnahmen der
-V3-Vorlagen + Stillstand-Wortlaut offen. Push/Deploy gesperrt (frisches Ja).
 
 ## Davids Entscheide vor Start (Entscheidvorlage)
 

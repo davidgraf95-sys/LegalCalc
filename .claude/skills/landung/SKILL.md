@@ -246,9 +246,13 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    auf das neue main rebasen (zurück zu Schritt 1). So kollidiert nie eine
    zweite Landung mit einer schwebenden.
 
-9. **Schritt-Status schliessen — wip verlässt die Session nie.** Nach der
-   letzten Landung SOFORT `plan:set <id> status=done|ready|parked` setzen und
-   committen (done ⇒ Block per Ziff. 6 in die Chronik). Realfall 5.8.2026:
+9. **Schritt-Status schliessen — wip verlässt die Session nie.** Bevorzugter
+   Weg (seit 14.8.2026, QS-PLAN-EINFACH): dem Squash-Commit den Trailer
+   `Roadmap-Status: done|ready|parked(<token>)` mitgeben — `plan-buchung.yml`
+   bucht nach dem Merge automatisch (rot bei ungültiger ID/Status, nie ein
+   unwahrer Plan). Fällt die Automatik aus oder fehlt der Trailer: von Hand
+   `plan:set <id> status=…` + committen (done ⇒ Block per Ziff. 6 in die
+   Chronik). Realfall 5.8.2026:
    `QS-TOK`/`QS-TOK-AUFRAEUMEN` blieben nach Session-Ende stundenlang `wip`,
    das Lagebild zeigte falschen Bau — seither warnt `plan:next` bei wip ohne
    Bau-Spur, aber die Warnung ist das Netz, nicht der Prozess.

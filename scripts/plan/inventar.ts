@@ -41,13 +41,18 @@
 // (beide ohne eigenes @meta, darum hier nicht separat gelistet). Fahrplan
 // `FAHRPLAN-W2-19-SEITENLEISTE.md` nach `archiv/` verschoben (Regel 7: unverlinkt nach dem
 // Block-Wegfall).
+// KONSOLIDIERUNG 14.8.2026 (QS-PLAN-EINFACH, Etiketten-Sterblichkeit): 16 Kleinst-
+// Etiketten als Checklisten-Zeilen in ihre Daecher aufgegangen — QS-GP-PRERENDER/
+// -PREPUSH/-NACHBEFUNDE → QS-GP · QS-BASIS-TOT/-DEPS → QS-BASIS · QS-AUTOMATIK-
+// BERICHT/-PARITAET + QS-MERGE-AUTOZUG → QS-AUTOMATIK · W2·14-SIGNAL-B1/-B2/-GER
+// → W2·14-SIGNAL · W2·7-BEZUG-LADEN → W2·7-VZUI · W2·5k-LINIEN-RUECKBAU →
+// W2·5h-GESETZ-UI · W3·14-B3/-S/-a11y → W3·14. Begruendung: ROADMAP-CHRONIK.md.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
   'W3·10', 'W3·11', 'W3·12', 'W3·13', 'W3·14',
   'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA',
   'W2·6-DATA', 'W2·7-VZUI', 'W2·10-UI-NAV', 'W2·11-DESIGN',
-  'W3·14-S', 'W3·14-a11y',
   'QS-OPT', 'QS-BASIS',
 
   // 'W2·12-HYGIENE' stand hier ein zweites Mal — Dublette entfernt 31.7.2026 (AP-6, QS-TOK).
@@ -77,24 +82,18 @@ export const INVENTAR: readonly string[] = [
   'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
   'W2·10-UI-NAV-J3',
   'W2·13-KANTONE-DATEN',
-  'W2·14-SIGNAL-B1', 'W2·14-SIGNAL-B2', 'W2·14-SIGNAL-GER',
-  'W3·14-B3',
-
   // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
   // UI-Befunde des Batches B1 entschieden (LM-048 verworfen, LM-041/LM-044 geöffnet) + zwei
   // Nebenfunde des Verfallsregister-Durchgangs vom selben Tag in den Plan gehoben.
   // `-N1` statt `-B21`: Nachzug zu B1, NICHT Glied der Bau-Kette B1→…→B19 (s. ROADMAP-Prosa).
   // (`W2·17-UI-BEFUNDE-N1` am 3.8.2026 als erledigt in die Chronik überführt.)
-  'W2·7-VZUI-SACHGEBIET', 'W2·7-BEZUG-LADEN',
-  'QS-CURRENCY-KANON', 'W2·13-KANTONE-DRIFT',
+  'W2·7-VZUI-SACHGEBIET', 'QS-CURRENCY-KANON', 'W2·13-KANTONE-DRIFT',
 
   // §14-Intake 3.8.2026 (Aufräum-Session): Nebenfunde der CI-Diagnose (K1–K13), der Totcode-Welle
   // (#418/#420) und der Gegenprüfungen des Tages — alle klein, alle mit Anlass-Satz in der ROADMAP.
-  'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', 'QS-GP-PRERENDER',
-  // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
+  'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
-  'QS-AUTOMATIK-BERICHT', 'QS-BASIS-TOT', 'QS-BASIS-DEPS',
   'QS-TOK-DECKEL',
 
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
@@ -104,11 +103,8 @@ export const INVENTAR: readonly string[] = [
 
   // Entscheid David 13.8.2026 («ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok»):
   // W2·5k-LINIEN-KONZEPT entschieden (Variante V1), Rückbau-Bau-Schritt angelegt.
-  'W2·5k-LINIEN-RUECKBAU',
-
   // §14-Intake 4./5.8.2026 (Nacht-Landekette): Nebenbefunde der adversarialen Gegenprüfungen
   // zu PR #447/#448 — fedlex-Risiko-Klassifikation, leakErkannt-Konsument, PARTEI_RE-Härtung.
-  'QS-GP-NACHBEFUNDE',
   // QS-GP-COMMITDIFF (7.8.2026) am 8.8. als Duplikat in QS-GP-BEREICH fusioniert (Fahrplan §3.7→§3.1).
   // Gegenprüfungs-Befund B6 der J-Runde 8.8.2026: Korpus-Datumsfehler (bge_151_II_475 = 1999).
   'QS-KORPUS-RSPR-DATUM',
@@ -143,7 +139,7 @@ export const INVENTAR: readonly string[] = [
 
   // Entscheid David 7.8.2026 abends («B als Schritt, A parken» — BEHIND-Kosten
   // der QS-SELBSTOPT-Landekette, 3 manuelle Nachzieh-Zyklen an einem Tag):
-  'QS-MERGE-AUTOZUG', 'QS-ORG-UMZUG',
+  'QS-ORG-UMZUG',
 
   // §14-Intake 4.8.2026 (Code-Inventur): vier Schritte erledigt, Ziff-6-Vollzug 5.8.2026.
   // (Die fünf Befunde aus der Code-Inventur: vier sind Struktur-Massnahmen und sind jetzt fertig.
@@ -155,14 +151,10 @@ export const INVENTAR: readonly string[] = [
   // QS-BASIS-DOKU-CI erledigt 14.8.2026 (PR #488) → Chronik-Abschnitt oben in
   // ROADMAP-CHRONIK.md. David gab den Grundsatz frei, die Messung korrigierte die
   // Prämisse (nicht reine .md-Pushes waren teuer, sondern .md + inventar.ts).
-  'QS-GP-PREPUSH',
-
   // F2b-Vorfall 4.8.2026 (#425 grün trotz Manifest-Drift): die Paritäts-Sonde
   // zählte Wächter-Workflows als Deckung. Akuter Fix (check:datenhaltung in
   // ci.yml) ist gebaut; die Sonden-Schärfung + Evaluation der 5 übrigen
   // wächter-gedeckten Tore ist dieser Schritt.
-  'QS-AUTOMATIK-PARITAET',
-
   // §17-Vorfall 4.8.2026: Vercel-Free-Tier-Tageslimit (>100 Preview-Deployments)
   // blockierte den merge-pflichtigen Vercel-Check eines App-fremden Diffs (#443,
   // Admin-Bypass durch David). Wurzel-Fix: Ignored Build Step für App-fremde Diffs.

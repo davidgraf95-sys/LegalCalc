@@ -1,8 +1,10 @@
 # FAHRPLAN-FEDLEX-PORTFOLIO — Nützliche Fedlex-Datenarten für LexMetrik
 <!-- @lagebild name: Bundesrecht aktuell halten · zweck: Wächter gegen Abweichungen zur amtlichen Quelle; Korpus-Lücken schliessen; Watchlist. -->
 
-**Heimat: ROADMAP-Schritte `QS-CURRENCY`, `W2·14-SIGNAL`, `W2·14-SIGNAL-B1`,
-`W2·14-SIGNAL-B2`, `W2·14-SIGNAL-GER`** (je Paket am Ende dieses Dokuments benannt).
+**Heimat: ROADMAP-Schritte `QS-CURRENCY` und `W2·14-SIGNAL`** (je Paket am Ende dieses
+Dokuments benannt). *Nachtrag 14.8.2026 (QS-PLAN-EINFACH): die früheren Teil-Etiketten
+`W2·14-SIGNAL-B1/-B2/-GER` sind Checklisten-Zeilen des Dachs — Trailer ist einheitlich
+`Roadmap: W2·14-SIGNAL`.*
 
 ## §0 · Zweck und Quer-Regeln
 
@@ -951,9 +953,9 @@ Trailer `Roadmap: W2·14-SIGNAL`.
 
 **Ursprünglicher Wortlaut der Teilschritt-Bullets — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
-  - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister, analog `gen:fedlex-wiedervorlage`; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`). DoD: Generator deterministisch, 2 Läufe byte-gleich. Detail: diese Datei §7.1. Trailer `Roadmap: W2·14-SIGNAL-B1`.
-  - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die statischen Build-Artefakte geprüft (`zuletztVerwendet`-Muster). **Rückblick-Flag zwingend gegen `fassungsToken`/`sha`, nie gegen `geprueftAm`** (sonst systematische Falschmeldungen); keine Mandats-/Personendaten in localStorage (§8). Detail: diese Datei §7.0/§7.1. Trailer `Roadmap: W2·14-SIGNAL-B2`.
-  - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm seit Datum X); **eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt**. Es gibt keinen Live-Gerichts-Feed — die Import-Kadenz wird als «Stand des Entscheid-Bestands» sichtbar ausgeliefert (§8). Detail: diese Datei §7.2. Trailer `Roadmap: W2·14-SIGNAL-GER`.
+  - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister, analog `gen:fedlex-wiedervorlage`; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`). DoD: Generator deterministisch, 2 Läufe byte-gleich. Detail: diese Datei §7.1. Trailer `Roadmap: W2·14-SIGNAL` (Teil-Etikett 14.8.2026 ins Dach konsolidiert).
+  - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die statischen Build-Artefakte geprüft (`zuletztVerwendet`-Muster). **Rückblick-Flag zwingend gegen `fassungsToken`/`sha`, nie gegen `geprueftAm`** (sonst systematische Falschmeldungen); keine Mandats-/Personendaten in localStorage (§8). Detail: diese Datei §7.0/§7.1. Trailer `Roadmap: W2·14-SIGNAL` (Teil-Etikett 14.8.2026 ins Dach konsolidiert).
+  - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` (neue Einträge je Gericht/Norm seit Datum X); **eigenes Verdikt, nicht unter dem Fedlex-🟢 mitgeführt**. Es gibt keinen Live-Gerichts-Feed — die Import-Kadenz wird als «Stand des Entscheid-Bestands» sichtbar ausgeliefert (§8). Detail: diese Datei §7.2. Trailer `Roadmap: W2·14-SIGNAL` (Teil-Etikett 14.8.2026 ins Dach konsolidiert).
 
 ### Dach-Prosa W2·14-SIGNAL im Wortlaut (verschoben 31.7.2026) *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
