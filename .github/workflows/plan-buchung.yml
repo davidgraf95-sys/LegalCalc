@@ -62,7 +62,7 @@ jobs:
     env:
       TZ: Europe/Zurich
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           # PAT-Weg (Entscheid David 14.8.2026, Chat «machen wir pat»): der
           # Buchungs-Push muss die Branch-Protection passieren — das kann nur
