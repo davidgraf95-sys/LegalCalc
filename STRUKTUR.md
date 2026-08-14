@@ -30,6 +30,18 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 14.8.2026 (Teil 3) — QS-HOOKS-AUSBAU: SubagentStop-Wache §14.7, Abschluss-Wache §17, Pfad-Regeln, Sandbox-Entscheid (#491)
+
+**Fable-Orchestrator, 4 Unteragenten (1 Recherche sonnet, 1 Bau sonnet, 1 Synthese, 1 Gegenprüfung opus); Merge durch David (Auto-Merge um 16:44 aktiviert, feuerte bei CI-Grün).** Alle vier freigegebenen Punkte gebaut; Schritt `done` (Hand-Buchung, s. Lehre).
+
+- **SubagentStop-Wache** (`subagent-wache.py`): Erfolgsbericht schreibender lex-Klassen ohne prüfbares Artefakt → einmal blockiert (§14.7 auf Tool-Ebene). Rot/Grün mit 10 Sonden + 15 Vitest-Fällen (`hooks-wache.test.ts`).
+- **Abschluss-Wache** (`abschluss-wache.py`): SessionEnd (nicht blockierbar, Doku-Befund) misst uncommitted/unpushed → `.session-nachlass.json`; SessionStart meldet einmal in den Kontext (§17-Check über die Session-Grenze). wip allein löst nichts aus (Cry-Wolf-Auflage).
+- **`.claude/rules/`**: §3/§4/§13 wortlaut-treu (SHA-verifiziert) in paths-gescopte Regel-Dateien; CLAUDE.md 247→232 Zeilen (Richtwert <200 nicht erreicht — Rest ist nicht pfadgebunden, gemeldet statt gequetscht). Live-Ladeverhalten für Sub-Agenten noch unbelegt.
+- **Sandbox geprüft, nicht aktiviert:** gh (Landungs-Werkzeug) scheitert laut Doku teils an TLS unter Seatbelt; belegte Vorfallsklassen schon durch Hooks/Permissions gedeckt. Dossier `bibliothek/recherche/sandbox-pruefung-2026-08-14.md`, David-Veto möglich.
+- **Gegenprüfung (Opus, gegen die installierte Binary 2.1.220)** fand 2 schwere + 4 moderate Befunde VOR der Landung — u. a. blockierte die Wache schema-treue Berichte (B1), las verneinte Erfolgswörter als Erfolg (B2), und `stop_hook_active`/`reason` existieren entgegen der Web-Doku (B3/B5). Alle Auflagen umgesetzt, Original-Sonden grün nachgefahren; Artefakt-Pflicht (Commit-SHA) jetzt auch im RÜCKGABE-Schema von daten/mechanisch/synthese.
+- **Token-Disziplin dauerhaft:** TOKEN-DISZIPLIN-Zeile in der gemeinsamen Agenten-Präambel (dispatch-agents.ts, Auftrag David 14.8.2026).
+- **Lehre (Auto-Buchung):** Davids Auto-Merge nahm den GitHub-Standard-Squash-Text — der vorbereitete `Roadmap-Status:`-Trailer erreichte den Commit nie, `plan-buchung.yml` blieb korrekt still, Buchung von Hand. Wurzel-Fix (Trailer-Fallback aus dem PR-Body) ist erster Punkt des anschliessenden Effizienz-Dauerauftrags (Chat-Freigabe David 14.8.2026, s. Memory).
+
 ## Session 14.8.2026 (Teil 2) — QS-PLAN-EINFACH abgeschlossen: Skills-Diät, Halden-Abbau, Etiketten 79→63, Auto-Buchung, CI-Klasse app-fern, Lagebild (#490)
 
 **Fable-Orchestrator, 6 Unteragenten nach Stufen (2× Bau sonnet, 2× Mechanik, 1× Recherche, 2× Gegenprüfung + 1 Einsortierungs-Prüfung), Merge durch David.** Rest-Checkliste von QS-PLAN-EINFACH vollzogen + Davids Optimierungs-Punkte 1–3; Schritt `done`, Block in der Chronik.
