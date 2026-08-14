@@ -1,167 +1,131 @@
 ---
 name: bauschritt
-description: Verwenden, wenn ein Lagebild-Bau-Prompt eingefügt wird oder ein einzelner Roadmap-Schritt gebaut werden soll — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», ein eingefügter Bau-Auftrag aus plan-bild.html. Kodifiziert den kompletten Session-Zyklus Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss (inkl. leichtem Pfad für sortenreine Nicht-Risiko-Fix-Batches) sowie — als Referenzdatei aufraeumen.md — das Aufräumen der Steuer-Doku («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken»); der frühere Skill aufraeumen ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
+description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadmap-Schritt — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», Bau-Auftrag aus plan-bild.html. Kodifiziert Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss (inkl. leichter Pfad für Nicht-Risiko-Fix-Batches) sowie, via aufraeumen.md, das Steuer-Doku-Aufräumen («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken»); Nachfolger von aufraeumen (QS-SKILL-DIAET 8.8.2026).
 ---
 
-# Bauschritt — der Standard-Lebenszyklus einer Bau-Session
+# Bauschritt — Standard-Lebenszyklus einer Bau-Session
 
-**Grundsatz: dünne Klammer, keine Kopien.** Dieser Skill entscheidet nur, *was
-wann* dran ist; *wie* es geht, steht im jeweiligen Instrument, und nur dort
-(§5 — kein Fachinhalt an zwei Stellen). Wer hier eine Anleitung vermisst, hat
-den Verweis noch nicht geöffnet — er gehört nicht hierher kopiert.
-
-**Eine Bau-Einheit = ein Schritt:** angefangen, geprüft, gelandet, Status
-geschlossen. Kommt unterwegs etwas Neues auf: in den Plan, nicht in diese
-Session (Station B). Nach einer Landung baut eine tragfähige Session
-automatisch weiter (Station W) — abgeschlossen wird erst, wenn nichts
-Sinnvolles mehr ansteht oder der Kontext zur Neige geht.
-
-Davids einziger Input ist der Bau-Prompt. Alles Übrige — Einstieg, Prüfung,
-Landung, Weiterbau, Aufräumen, Schlusssatz — läuft ohne Rückfrage nach diesem
+**Dünne Klammer, keine Kopien:** entscheidet nur *was wann* dran ist, nicht
+*wie* (§5 — kein Fachinhalt an zwei Stellen). **Eine Bau-Einheit = ein
+Schritt:** angefangen, geprüft, gelandet, Status geschlossen; Neues
+unterwegs → in den Plan (Station B), nicht in die Session. Nach Landung
+baut eine tragfähige Session automatisch weiter (Station W), bis nichts
+Sinnvolles mehr ansteht oder der Kontext zur Neige geht. Davids einziger
+Input ist der Bau-Prompt — alles Übrige läuft ohne Rückfrage nach diesem
 Zyklus.
 
 ## Pfadwahl: Normalpfad oder leichter Pfad
 
-**Leichter Pfad (Entscheid David 8.8.2026, Entstückelung):** für **sortenreine
-Nicht-Risiko-Fix-Batches** — typisch das checklisten-weise Abarbeiten eines
-Dach-Schritts (`W2·17`, `W2·18`), kein Risikopfad im Diff, keine neue
-Architektur. Verschlankt wird **nur Prozedur-Prosa**; die **Tore laufen in
-beiden Pfaden identisch** (Station C und Skill `landung` gelten unverändert,
-ebenso §14.7 und §18).
+**Leichter Pfad** (David 8.8.2026): sortenreine Nicht-Risiko-Fix-Batches
+(z. B. `W2·17`/`W2·18`-Checklisten, kein Risikopfad, keine neue
+Architektur). Nur Prozedur-Prosa verschlankt — **Tore identisch** (Station C,
+Skill `landung`, §14.7, §18 unverändert).
 
-- **Kurzer Einstieg:** `npm run plan:next` lesen (Kollisionen!) — die
-  STOPP-Regel aus Station A Ziff. 2 gilt unverändert (ID nicht in `ready-now`
-  ⇒ melden, nicht bauen) —, dann `plan:set … status=wip` + `check:plan`,
-  wip-Commit pushen, Branch `feat/<slug>` — fertig (nur Grössen-Prosa und
-  Spec-Slice entfallen: die Checklisten-Zeile ist die Spec).
-- **Kurzer Abschluss:** Status schliessen (Station D Schluss), **eine
-  Karten-Zeile** in `STRUKTUR.md` statt voller Session-Karte,
-  `python3 .claude/hooks/struktur-rotieren.py --check` (exit-1-fähig — Tore
-  bleiben identisch), `npm run plan:bild`, Bau-Flächen abräumen, kurzer
-  Klartext-Schluss an David. §17 bleibt bedingt: ist eine Lehre aufgekommen,
-  wird sie verankert; sonst entfällt der Posten. Ausdrücklich entfallen nur
-  die Prosa-Posten: volle Session-Karte, Memory-Hygiene-Durchsicht,
-  ausführlicher Schlusssatz.
+- **Einstieg:** `plan:next` (Kollisionen), STOPP-Regel Station A Ziff. 2
+  unverändert, dann `plan:set … status=wip` + `check:plan`, wip-Commit
+  pushen, Branch `feat/<slug>` — Grössen-Prosa/Spec-Slice entfallen
+  (Checklisten-Zeile ist die Spec).
+- **Abschluss:** Status schliessen (Station D), **eine Karten-Zeile** statt
+  voller Karte, `struktur-rotieren.py --check`, `plan:bild`, Bau-Flächen
+  abräumen, kurzer Klartext-Schluss; §17 nur bei tatsächlicher Lehre.
+  Entfällt: volle Session-Karte, Memory-Durchsicht, langer Schlusssatz.
 
-Alles andere — inkl. jeder Bau mit Risikopfad-Berührung — fährt den Normalpfad
-(Stationen A–E).
+Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–E).
 
 ---
 
 ## Station A — Einstieg (vor jeder Zeile Code)
 
-1. **`npm run plan:next`** — Pflicht, immer als erstes. Den Lage-Block
-   **lesen**, nicht überfliegen: Warnungen zu stale `wip`-Schritten oder
-   fremden Bau-Plätzen sind Kollisionsmeldungen. Bei Treffer **erst melden**
-   (an David, kurz), dann entscheiden — nie parallel in dieselbe Fläche bauen.
-2. **Schritt-ID gegen `ready-now` prüfen.** Steht die ID aus dem Prompt nicht
-   unter den baubaren Schritten (Abhängigkeit offen, bereits `done`, blockiert):
-   **STOPP, melden, nicht bauen.** Der Prompt ist eine Momentaufnahme, `plan:next`
-   ist der Ist-Stand.
-3. **Grössen-Check** (die Session-Fixkosten — Startlektüre, `plan:next`,
-   Spec-Slice — müssen sich lohnen): Ausgangspunkt ist die `Grösse:`-Angabe im
-   Bau-Prompt bzw. das `groesse:`-Feld im `@meta` (S/M/L, geschätzt); weicht
-   die eigene Einschätzung ab, gilt die eigene — dann die Schätzung im Plan per
-   `plan:set` korrigieren (Beobachtung zurückschreiben, damit die nächste
-   Session die bessere Zahl sieht).
-   - **Zu klein** (reine Doku, Einzeiler, geschätzt < ~1 h Bau): die
-     `ready-now`-Liste auf **1–2 bündelbare Nachbarn** prüfen — gleiche Fläche
-     bzw. gleicher Fahrplan, **gleiche Risikoklasse**, laut Lanes kollisionsfrei
-     — und mitbauen (je eigener Commit mit eigenem Trailer; Bündelungsregel
-     Skill `auftrag`).
-   - **Zu gross** für eine Session: **STOPP.** Erst per `plan:set`/ROADMAP in
-     sessionfüllende Teilschritte schneiden (AP-6-Muster), dann bauen.
-   - **Harte Grenze:** nie Risikoklassen mischen, nie fremde Flächen dazunehmen.
-4. **Bau-Spec holen:** `npm run fahrplan -- <fahrplan-datei> <§>`. Der gezielte
-   Slice ersetzt die Datei-Lektüre — Fahrpläne werden nie ganz gelesen.
-5. **Sichtbar werden, bevor gebaut wird** (F6): `npm run plan:set -- <id>
-   status=wip && npm run check:plan`, committen und **pushen**. Ein Bau, den
-   parallele Sessions nicht sehen, ist ein Kollisionsrisiko.
-6. **Branch `feat/<slug-der-id>`** (ID kleingeschrieben, z. B. `QS-TOK-T14` →
-   `feat/qs-tok-t14`), sofort nach Anlage pushen. Worktree ja/nein richtet sich
-   nach dem `worktree:`-Feld im `@meta`-Block des Schritts (§12, Skill `landung`).
+1. **`plan:next`** zuerst, Lage-Block **lesen**: stale `wip`/fremde
+   Bau-Plätze = Kollisionsmeldung → melden, dann entscheiden, nie parallel
+   in dieselbe Fläche bauen.
+2. **ID gegen `ready-now`.** Nicht darin (Abhängigkeit offen, `done`,
+   blockiert) ⇒ **STOPP, melden, nicht bauen** — massgeblich ist
+   `plan:next`, nicht der Prompt.
+3. **Grössen-Check:** `Grösse:`/`groesse:` (S/M/L); weicht die eigene
+   Einschätzung ab, gilt sie, per `plan:set` korrigiert.
+   - **Zu klein** (< ~1 h): 1–2 bündelbare `ready-now`-Nachbarn (gleiche
+     Fläche/Fahrplan/Risikoklasse, kollisionsfrei) mitbauen, je eigener
+     Commit/Trailer (Skill `auftrag`).
+   - **Zu gross:** **STOPP**, erst per `plan:set`/ROADMAP in
+     sessionfüllende Teilschritte schneiden (AP-6-Muster).
+   - **Harte Grenze:** nie Risikoklassen mischen, nie fremde Flächen dazu.
+4. **Bau-Spec:** `npm run fahrplan -- <fahrplan-datei> <§>` — Slice statt
+   Volltext.
+5. **Sichtbar werden** (F6): `plan:set -- <id> status=wip && check:plan`,
+   committen, **pushen** — sonst unsichtbares Kollisionsrisiko.
+6. **Branch `feat/<slug-der-id>`**, sofort pushen; Worktree nach
+   `worktree:`-Feld im `@meta` (§12, Skill `landung`).
 
 ## Station B — Bau
 
-- Gebaut wird nach **Bau-Prompt + Fahrplan-Spec**, nicht nach Erinnerung.
-- **Delegation:** Klassen-Zuordnung, Stufen-Palette und Dispatch-Vorlage stehen
-  im Skill `auftrag` (Ziff. 6). Diese Session orchestriert und landet.
-- **WIP-Commit nach jedem abgeschlossenen Teilschritt** (F5) — nie über längere
-  Arbeit hinweg uncommittet bleiben.
-- **Nebenfunde gehen in den Plan**, nicht in diese Session und nicht in Chips:
-  Kleinbefund als Checklisten-Zeile in den passenden Dach-Schritt, sonst
-  ROADMAP-Schritt vorschlagen oder anlegen (Skill `auftrag`, Ziff. 3),
-  weiterbauen.
+- Nach **Bau-Prompt + Fahrplan-Spec**, nicht nach Erinnerung.
+- **Delegation:** Klassen/Stufen/Dispatch-Vorlage → Skill `auftrag` Ziff. 6;
+  diese Session orchestriert und landet.
+- **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
+  uncommittet bleiben.
+- **Nebenfunde in den Plan**, nie in diese Session oder als Chip:
+  Checklisten-Zeile im Dach-Schritt, sonst ROADMAP-Schritt (Skill `auftrag`
+  Ziff. 3), weiterbauen.
 
 ## Station C — Prüfung
 
-- Die im Bau-Prompt und in der Spec genannten **Tore nackt fahren** (kein
-  `--silent`, keine Filter, volle Ausgabe lesen); Abschluss `npm run gate`.
-- **Rot-Beweise (§6.7) nur mit sauberem Index fahren:** erst die eigenen neuen
-  Dateien committen, DANN den Wegwerf-Probe-Commit anlegen und verwerfen — ein
-  `git reset --hard` nach der Probe verschluckt sonst untracked Neu-Dateien
-  und uncommitted Nachbar-Änderungen (Vorfall 8.8.2026, QS-AUDIT-VERWEISE:
-  Testdatei + package.json/ci.yml-Einträge mussten rekonstruiert werden).
-- Berührt der Diff einen **Risiko-Pfad** (`istRisikoPfad`,
-  `scripts/gegenpruefung/kern.ts`): Skill **`gegenpruefung`** ist **Pflicht**,
-  der Merge bleibt gesperrt, bis ein Verdikt vorliegt.
-- Verhaltensändernd? Golden byte-gleich belegen (§6, Skill `refactoring`).
+- Genannte **Tore nackt fahren** (kein `--silent`, keine Filter, volle
+  Ausgabe lesen); Abschluss `npm run gate`.
+- **Rot-Beweise (§6.7) nur mit sauberem Index:** erst eigene neue Dateien
+  committen, DANN Wegwerf-Probe-Commit anlegen/verwerfen — `git reset
+  --hard` danach verschluckt sonst untracked Neu-Dateien und uncommittete
+  Nachbar-Änderungen (Beleg: 8.8.2026, QS-AUDIT-VERWEISE).
+- **Risiko-Pfad** (`istRisikoPfad`, `scripts/gegenpruefung/kern.ts`) im
+  Diff ⇒ Skill **`gegenpruefung`** Pflicht, Merge gesperrt bis Verdikt.
+- Verhaltensändernd ⇒ golden byte-gleich (§6, Skill `refactoring`).
 
 ## Station D — Landung
 
-Skill **`landung`** Schritt für Schritt — er trägt die komplette Merge- UND
-Deploy-Disziplin (§12 + §9: Tore vor dem Merge, Bug-Check, serielle Landung,
-CI-Grün, Nachkontrolle) samt dem Schlusspunkt, der die Session nie offen
-verlässt: **Status schliessen** (`plan:set <id> status=done` bzw.
-`ready`/`parked`, `check:plan`, committen, pushen).
+Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge,
+Bug-Check, serielle Landung, CI-Grün, Nachkontrolle). Schlusspunkt:
+**Status schliessen** (`plan:set <id> status=done`/`ready`/`parked`,
+`check:plan`, committen, pushen).
 
-## Station W — Weiterbau (Entscheid David 8.8.2026)
+## Station W — Weiterbau (David 8.8.2026)
 
-«Automatisch weiterarbeiten, ohne dass ich es sagen muss»: Ist der Schritt
-gelandet und die Session noch tragfähig, **NICHT abschliessen**, sondern direkt
-weiterbauen. Reihenfolge:
+Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
 
 - **(a)** nächste offene Position derselben Dach-Checkliste;
-- **(b)** sonst oberster `ready`-Schritt **gleicher Risikoklasse** im selben
-  Wirkungsbereich (`npm run plan:next` + Kollisionsprüfung gegen fremde
-  wip/Worktrees);
-- **(c)** nichts Sinnvolles mehr ⇒ regulär abschliessen (Station E).
+- **(b)** sonst oberster `ready`-Schritt **gleicher Risikoklasse**, selber
+  Wirkungsbereich (`plan:next` + Kollisionsprüfung);
+- **(c)** nichts Sinnvolles mehr ⇒ Abschluss (Station E).
 
-Je Weiterbau gilt der volle Zyklus im Kleinen: `status=wip` setzen, volle
-Sorgfalt (Tore, ggf. Gegenprüfung), eigener Commit mit eigenem
-Roadmap-Trailer. **NIE sortenrein-widrig auf Risikopfade wechseln**, und
-Schluss **spätestens bevor der Kontext zur Neige geht** — lieber sauber landen
-als einen Schritt anreissen.
+Je Weiterbau: voller Zyklus im Kleinen (`status=wip`, volle Sorgfalt,
+eigener Commit/Trailer). **Nie** sortenrein-widrig auf Risikopfade
+wechseln; Schluss **spätestens vor Kontext-Ende**.
 
 ## Station E — Abschluss (Checkliste, keine Kür)
 
-- [ ] **Session-Karte in `STRUKTUR.md`** — kurz: was gebaut, was belegt, was
-      offen (im leichten Pfad: eine Karten-Zeile).
-- [ ] `python3 .claude/hooks/struktur-rotieren.py --check` — bei Rot die
-      Steuer-Doku aufräumen: Prozedur in **[aufraeumen.md](aufraeumen.md)**
-      (Chronik-Überführung, Streich-Massstab, Fahrplan-Archivierung).
-- [ ] `npm run plan:bild` — Davids Dock-Datei auf frischem Stand.
-- [ ] **Bau-Flächen abräumen:** Worktree entfernen, Feature-Branch löschen
-      (lokal + remote), `git worktree prune`, Scratch-Dateien weg.
-- [ ] **§17-Lehren-Check:** Ist im Bau eine Lehre aufgekommen? Dann ist sie
-      nach der Formregel des Skills `lehren` verankert (Tor > Dispatch-§0 >
-      Skill > Prosa). Eine Lehre, die nur im Chat steht, gilt als nicht gezogen.
-- [ ] **Memory-Hygiene:** Erledigtes löschen, Überholtes korrigieren — was das
-      Repo trägt, gehört nicht ins Memory.
-- [ ] **Schlusssatz an David** — Klartext, kein Statusbericht: was jetzt live
-      ist, und entweder «nichts wartet auf dich» oder genau, *was* auf ihn
-      wartet und warum nur er es entscheiden kann.
+- [ ] **Session-Karte `STRUKTUR.md`** — was gebaut, belegt, offen
+      (leichter Pfad: eine Zeile).
+- [ ] `struktur-rotieren.py --check` — bei Rot: Steuer-Doku aufräumen nach
+      **[aufraeumen.md](aufraeumen.md)**.
+- [ ] `npm run plan:bild` — Dock-Datei aktuell.
+- [ ] **Bau-Flächen abräumen:** Worktree, Feature-Branch (lokal + remote),
+      `git worktree prune`, Scratch-Dateien.
+- [ ] **§17-Lehren-Check:** Lehre aufgekommen? Verankert nach Formregel
+      Skill `lehren` (Tor > Dispatch-§0 > Skill > Prosa) — nur im Chat
+      gilt als nicht gezogen.
+- [ ] **Memory-Hygiene:** Erledigtes löschen, Überholtes korrigieren —
+      Repo-Inhalt nicht ins Memory.
+- [ ] **Schlusssatz an David** — Klartext: was live ist, «nichts wartet
+      auf dich» oder genau *was* und warum nur er entscheidet.
 
 ---
 
-## Token-Regeln (gelten in jeder Station)
+## Token-Regeln (in jeder Station)
 
-- **Slices statt Dateien.** `npm run fahrplan -- <datei> <§>` und `plan:next`
-  liefern das Nötige; ROADMAP.md und STRUKTUR.md werden nicht am Stück gelesen.
-- **Nichts doppelt lesen.** Was ein Unteragent schon gelesen hat, wird nicht in
-  der Hauptsession nachgelesen — sein Bericht ist das Ergebnis.
-- **Mechanik nach unten delegieren.** Verschieben, Formatieren, Umbenennen,
-  Sweeps gehen auf die günstigere Stufe (Skill `auftrag`, Klassen-Palette).
-- **Doku-Pushes bündeln.** Status-, Karten- und Plan-Änderungen sammeln und in
-  einem Commit landen — Ausnahme: der `wip`-Push aus Station A, der muss sofort.
-- **Antworten kurz.** Kein Nacherzählen von Tool-Ausgaben; Ergebnis, Beleg, Rest.
+- **Slices statt Dateien:** `fahrplan -- <datei> <§>`, `plan:next` —
+  ROADMAP/STRUKTUR nie am Stück gelesen.
+- **Nichts doppelt lesen:** Unteragenten-Bericht ist das Ergebnis.
+- **Mechanik nach unten delegieren** (Verschieben/Formatieren/Umbenennen/
+  Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
+- **Doku-Pushes bündeln** — Ausnahme: `wip`-Push aus Station A, sofort.
+- **Antworten kurz:** kein Nacherzählen von Tool-Ausgaben.
+</content>
