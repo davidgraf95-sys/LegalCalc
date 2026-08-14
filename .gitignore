@@ -108,6 +108,12 @@ tmp/
 # gate-stopp Grün-Fingerabdruck (Vorschlag QS-SELBSTOPT 7.8.2026)
 .gate-stopp-gruen
 
+# Merkdatei/Nachlass der neuen Claude-Code-Hooks (QS-HOOKS-AUSBAU 14.8.2026):
+# subagent-wache.py (Einmal-Mahnung je agent_id) und abschluss-wache.py
+# (Session-Nachlass über die Session-Grenze) — beide lokal, nie committen.
+.subagent-wache-gemahnt
+.session-nachlass.json
+
 # Bausteinliste zur AG-Abnahme — Erzeugnis, kein Bestand (Entscheid David 14.8.2026).
 # Bei Bedarf in <1 s erzeugen: npm run abnahme:ag
 ABNAHME-AG-BAUSTEINE.md
