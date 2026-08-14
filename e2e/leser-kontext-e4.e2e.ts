@@ -1,6 +1,6 @@
 // @shard-gruppe: 7
 import { test, expect } from '@playwright/test';
-import { DROSSEL } from './helpers/budgets';
+import { DROSSEL, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER_SCHWER } from './helpers/budgets';
 
 // E4/A32 + E4-Korrektur (David-Feedback 25.7.2026, wörtlich): «also das
 // kontextfenster soll gliederung nicht abschneiden. sie soll einfach unten an
@@ -139,7 +139,9 @@ test('E4-Korrektur: Panel im Fluss unter der vollen Gliederung — kein Abschnei
 test('S7: Artikel-Kontext wechselt beim Lesen den Inhalt — Höhe und CLS bleiben', async ({ page }) => {
   // Zeitbudget: der OR-Reader lädt gedrosselt lange, und die drei Lese-Schritte
   // warten je 900 ms aus. Reine INFRASTRUKTUR (§6.3) — kein `expect` berührt.
-  test.setTimeout(process.env.CI ? 120_000 : 60_000);
+  // Lokal gemessen (Voll-Lauf, n=5): 28442–47967 ms — die bisherigen 60 000 ms
+  // liessen nur 20 % Reserve. Deckel jetzt aus dem Budget-Modul (§5).
+  test.setTimeout(CONTAINER_BUDGET_CI ?? CONTAINER_LOKAL_READER_SCHWER);
   await page.setViewportSize({ width: 1440, height: 900 });
   const client = await page.context().newCDPSession(page);
 
@@ -280,6 +282,11 @@ test('S7: Artikel-Kontext wechselt beim Lesen den Inhalt — Höhe und CLS bleib
 // Markup steht — genau die Sorte Assertion, die den Defekt gar nicht sehen
 // KANN. Hier wird darum das Verhalten gemessen: Verlaufslänge, Adresse, Ziel.
 test('S7/B1: Werkzeug-Sprung ohne Verlaufseintrag und ohne den #art-Deeplink zu zerstören', async ({ page }) => {
+  // Dieser Test trug bis 14.8.2026 GAR KEIN eigenes Zeitbudget und lief damit
+  // lokal gegen den 30-s-Projekt-Default — obwohl die Latte auf Zeile 290 unten
+  // 60 s beträgt. Der Container riss also zuerst und schluckte die Auskunft
+  // (§6.7). Gemessen (Voll-Lauf, n=5): 17900–37462 ms. Deckel aus dem Modul.
+  test.setTimeout(CONTAINER_BUDGET_CI ?? CONTAINER_LOKAL_READER_SCHWER);
   await page.setViewportSize({ width: 1440, height: 900 });
   // OR Art. 127 trägt eine artikelscharfe Werkzeug-Gruppe (Verjährung).
   await page.goto('/gesetze/bund/OR#art-127');

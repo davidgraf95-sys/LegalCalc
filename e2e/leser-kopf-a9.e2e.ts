@@ -1,6 +1,6 @@
 // @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
-import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets';
+import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER } from './helpers/budgets';
 
 // W2·5d U-KOPF — A9-Querschnitt (Bedienbarkeit + Flüssigkeit unter CPU-Throttle).
 // Beweist, dass die Kopf-Interaktionen (A4 «Ansicht»-Dropdown öffnen +
@@ -23,7 +23,7 @@ function fehlerSammeln(page: Page): string[] {
 }
 
 test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle, CLS 0', async ({ page }) => {
-  if (CONTAINER_BUDGET_CI) test.setTimeout(CONTAINER_BUDGET_CI);
+  test.setTimeout(CONTAINER_BUDGET_CI ?? CONTAINER_LOKAL_READER);
   const fehler = fehlerSammeln(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   const client = await page.context().newCDPSession(page);

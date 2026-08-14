@@ -1,6 +1,6 @@
 // @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test';
-import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets';
+import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER } from './helpers/budgets';
 
 // W2·5d-EID3 Teil (b) — A9-Querschnitt auf der EINZIGEN Fläche, die der Umbau
 // überhaupt berührt.
@@ -68,7 +68,7 @@ async function guideStapel(page: Page, artId: string): Promise<number> {
 }
 
 test('EID-3(b): SVG behält EINEN Guide auf der gerenderten Ebene; Toggle flüssig unter CPU-Throttle, CLS 0', async ({ page }) => {
-  if (CONTAINER_BUDGET_CI) test.setTimeout(CONTAINER_BUDGET_CI);
+  test.setTimeout(CONTAINER_BUDGET_CI ?? CONTAINER_LOKAL_READER);
   const fehler = fehlerSammeln(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   const client = await page.context().newCDPSession(page);

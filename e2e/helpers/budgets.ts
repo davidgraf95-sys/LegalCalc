@@ -84,6 +84,78 @@ export const REAKTIONS_LATTE = REAKTIONS_BUDGET + 3000
  * ungedrosselten Ready-Latten kommt dem 90-s-Projekt-Default nahe. Reisst der
  * Container zuerst, lautet die Meldung «Test timeout» — und sagt nicht mehr,
  * WELCHE Interaktion zu langsam war; genau diese Auskunft ist der Ertrag des
- * Tests. Lokal unverändert (Projekt-Default 30 s), darum `null`.
+ * Tests. `null` heisst «kein CI-Deckel», nicht «kein Deckel»: lokal greift
+ * `CONTAINER_LOKAL_READER` bzw. `…_SCHWER` (unten).
  */
 export const CONTAINER_BUDGET_CI: number | null = AUF_CI ? 120_000 : null
+
+// ── Lokaler Container-Deckel der gedrosselten Reader-Tests ───────────────────
+// (QS-E2E-STABIL, Messung 14.8.2026 — der eigentliche Ertrag dieses Schritts)
+//
+// BEFUND. Die CI-Seite dieser Familie ist seit 26.7. kalibriert (120 s, s. o.);
+// die LOKALE Seite blieb beim Projekt-Default von 30 s und wurde nie gemessen.
+// Genau dort lag die Wurzel der lokalen Timeout-Flakes: nicht in einer zu
+// langsamen App, sondern in einem Deckel, den niemand gegen die Streuung des
+// lokalen Voll-Laufs gehalten hat. Lokal ist die Lage nämlich UMGEKEHRT zu CI —
+// CI fährt `workers: 1`, lokal `fullyParallel` mit einem Worker je Kern. Der
+// lokale Lauf ist damit die Bedingung MIT Contention, der CI-Lauf die ohne.
+//
+// REPRODUKTION (F3, vor jedem Fix). Zwei Voll-Läufe unter Parallel-Last liessen
+// drei Tests 2/2 in «Test timeout of 30000ms exceeded» laufen: leser-kopf-a9,
+// leser-linien-eid3, leser-kontext-e4 «S7/B1». Nullprobe auf dem unveränderten
+// Vor-Konsolidierungs-Stand (11c39e8e0): dieselben drei, 2/2 — der Defekt ist
+// vorbestehend, keine Regression der Modul-Zusammenlegung.
+//
+// MESSREIHE. Bedingung P = Standard-Lokal-Lauf `npm run test:e2e` (10 Worker
+// auf 10 Kernen, warmer preview-Server, Last-Mittel 10–12), Container per
+// `--timeout=300000` gehoben, damit die Dauern UNZENSIERT sind (ein am Deckel
+// abgeschnittener Wert ist keine Messung). n = 5 Voll-Läufe, Rohwerte in ms:
+//   leser-kopf-a9   A9-Dropdown/Sprung   23523 · 26591 · 33406 · 31084 · 26812
+//                                        (mittel 28283, sd 3930)
+//   leser-linien-eid3 EID-3(b)           21241 · 22769 · 24602 · 29414 · 26454
+//                                        (mittel 24896, sd 3194)
+//   leser-kontext-e4 S7/B1               21119 · 17900 · 37462 · 23558 · 22649
+//                                        (mittel 24538, sd 7538)
+//   leser-kontext-e4 S7                  31558 · 28442 · 47967 · 35694 · 33760
+//                                        (mittel 35484, sd 7481)
+//   leser-gliederung-a33 A9-Lese-Scroll  38662 · 33585 · 60034 · 45156 · 40134
+//                                        (mittel 43514, sd 10114)
+// Zum Vergleich dieselben Tests ISOLIERT (n = 5, nichts sonst auf der Maschine):
+// leser-kopf-a9 15182 · 15331 · 15519 · 15632 · 15715 (mittel 15476, sd 218).
+// Der Lastfaktor der Familie liegt also bei ~1.8×, die Streuung steigt dabei um
+// mehr als eine Grössenordnung (sd 218 → 3930). Ein Deckel, der gegen den
+// ISOLIERTEN Wert bemessen ist, misst deshalb die Maschine, nicht die Sache.
+//
+// HÖHE nach QS-PERF Ziff. 5 («Deckel = Ist + max(3 sd, ~25 %)»), Ist = grösster
+// gemessener Wert der jeweiligen Stufe:
+//   mittel:  Ist 33406 + max(3 sd 11790, 25 % 8352) = 45196  → 50 000 ms
+//   schwer:  Ist 60034 + max(3 sd 30342, 25 % 15009) = 90376 → 95 000 ms
+//
+// WARUM DAS KEIN «Tor, das nicht scheitern kann» IST (§6.7). Der Container ist
+// in dieser Familie ausdrücklich NICHT die Prüfaussage — er ist das Sicherheits-
+// netz, das die informative Meldung durchlässt. Scharf bleibt `REAKTIONS_BUDGET`
+// (lokal 5000 ms JE Interaktion, oben, unverändert): eine echte Verlangsamung
+// der Bedienung fällt weiterhin dort durch, mit Angabe WELCHE Interaktion.
+// Umgekehrt hat der bisherige 30-s-Container genau das verhindert — er riss
+// zuerst und meldete «Test timeout» statt der Interaktion. In
+// leser-kontext-e4.ts:290 war das sogar strukturell tot: die dortige Latte
+// `toBeAttached({ timeout: 60000 })` lag ÜBER dem 30-s-Container und konnte
+// lokal nie feuern. Mit 95 000 ms kann sie es.
+//
+// NICHT kalibriert, weil gemessen unauffällig (Bedingung P, n = 5, Ist/Deckel):
+// rechtsprechung A9 5237/7000 · qsui-hierarchie A9 6948/9000 · verweis-u
+// 18563/24000 · leser-weiterlesen R8/A9 17647/23000 · r5-r7 A9-Chip 12240/17000
+// · a11y BS-640.100 19724/30000 gegen 60 000 (schwer-Projekt). Diese behalten
+// den Projekt-Default; ein Deckel ohne belegten Anlass wäre Zuwachs ohne Grund.
+
+/**
+ * Lokaler Container-Deckel für gedrosselte Reader-Tests mittlerer Last
+ * (BV-Reader, ~25–33 s im Voll-Lauf). Herleitung: Block oben.
+ */
+export const CONTAINER_LOKAL_READER = 50_000
+
+/**
+ * Lokaler Container-Deckel für die schweren Reader-Tests (OR-Volltext bzw.
+ * langer Lese-Scroll unter Drossel, ~35–60 s im Voll-Lauf). Herleitung oben.
+ */
+export const CONTAINER_LOKAL_READER_SCHWER = 95_000
