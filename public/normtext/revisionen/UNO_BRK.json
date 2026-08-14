@@ -1,7 +1,7 @@
 {
   "erlassKey": "UNO_BRK",
   "sr": "0.109",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -157,9 +157,10 @@
       "titelDe": "Übereinkommen über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention relative aux droits des personnes handicapées",
       "titelIt": "Convenzione sui diritti delle persone con disabilità",
+      "botschaftKey": "BOTSCHAFT-2013-126",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/245/de",
-      "sha": "ba5a98e2c9065d6d74366e46023c49a4efebe5d6355d32aadbac6bf24a71e26f"
+      "sha": "6b1e4229cb34c691289324f005244ff6b724e9cb05f6ffbe2efeb89e0a0b53f6"
     }
   ],
-  "sha": "aba80feadbdf19dd99140ae75acfc62b6d00f8b37022764e493ad0f47bf42a2d"
+  "sha": "0b80e23f2401cc5d34d45f2f4da313ef8a05749d4194d94714792a0e852cc8be"
 }

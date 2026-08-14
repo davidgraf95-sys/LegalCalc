@@ -1332,708 +1332,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2011/883"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0402"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-06-22"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "11.039"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und  pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2011/883"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0402"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-06-22"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "11.039"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und  pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2011/883"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0402"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-06-22"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "11.039"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und  pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/735"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1306"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-06-29"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.060"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003 "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification du code pénal dans sa version du 13 décembre 2002 et du code pénal militaire dans sa version du 21 mars 2003 "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/735"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1306"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-06-29"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.060"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003 "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification du code pénal dans sa version du 13 décembre 2002 et du code pénal militaire dans sa version du 21 mars 2003 "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/735"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1306"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-06-29"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.060"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003 "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification du code pénal dans sa version du 13 décembre 2002 et du code pénal militaire dans sa version du 21 mars 2003 "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/67"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0539"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-13"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "13.109"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/67"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0539"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-13"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "13.109"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/67"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0539"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-13"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "13.109"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/612"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2000/0384"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-05-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "2000.041"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code pénal suisse et du code pénal militaire (infractions contre l'intégrité sexuelle / prescription des infractions contre l'intégrité sexuelle des enfants et interdiction de la possession de pornographie dure) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/612"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2000/0384"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-05-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "2000.041"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code pénal suisse et du code pénal militaire (infractions contre l'intégrité sexuelle / prescription des infractions contre l'intégrité sexuelle des enfants et interdiction de la possession de pornographie dure) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/612"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2000/0384"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-05-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "2000.041"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code pénal suisse et du code pénal militaire (infractions contre l'intégrité sexuelle / prescription des infractions contre l'intégrité sexuelle des enfants et interdiction de la possession de pornographie dure) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/104"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2305"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-11-23"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.081"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Schweizerischen Strafgesetzbuches  in der Fassung vom 13. Dezember 2002. (Umsetzung von Artikel 123a der Bundesverfassung über die lebenslängliche Verwahrung extrem gefährlicher Straftäter) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification du code pénal dans sa version  du 13 décembre 2002. (Mise en uvre de l'art. 123a de la Constitution fédérale sur l'internement à vie pour les délinquants extrêmement dangereux) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/104"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2305"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-11-23"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.081"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Schweizerischen Strafgesetzbuches  in der Fassung vom 13. Dezember 2002. (Umsetzung von Artikel 123a der Bundesverfassung über die lebenslängliche Verwahrung extrem gefährlicher Straftäter) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification du code pénal dans sa version  du 13 décembre 2002. (Mise en uvre de l'art. 123a de la Constitution fédérale sur l'internement à vie pour les délinquants extrêmement dangereux) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/104"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2305"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-11-23"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.081"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Schweizerischen Strafgesetzbuches  in der Fassung vom 13. Dezember 2002. (Umsetzung von Artikel 123a der Bundesverfassung über die lebenslängliche Verwahrung extrem gefährlicher Straftäter) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification du code pénal dans sa version  du 13 décembre 2002. (Mise en uvre de l'art. 123a de la Constitution fédérale sur l'internement à vie pour les délinquants extrêmement dangereux) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2001/133"
     },
     "proj": {
@@ -2103,6 +1401,708 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente lo Statuto di Roma della Corte penale internazionale, la legge federale sulla cooperazione con la Corte penale internazionale e una revisione del diritto Codice penale "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2011/883"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0402"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-06-22"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "11.039"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und  pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2011/883"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0402"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-06-22"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "11.039"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und  pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2011/883"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0402"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-06-22"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "11.039"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und  pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/735"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1306"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-06-29"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.060"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003 "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification du code pénal dans sa version du 13 décembre 2002 et du code pénal militaire dans sa version du 21 mars 2003 "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/735"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1306"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-06-29"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.060"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003 "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification du code pénal dans sa version du 13 décembre 2002 et du code pénal militaire dans sa version du 21 mars 2003 "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/735"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1306"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-06-29"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.060"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003 "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification du code pénal dans sa version du 13 décembre 2002 et du code pénal militaire dans sa version du 21 mars 2003 "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/67"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0539"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "13.109"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/67"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0539"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "13.109"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/67"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0539"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "13.109"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.076"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.076"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.076"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/612"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2000/0384"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-05-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "2000.041"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code pénal suisse et du code pénal militaire (infractions contre l'intégrité sexuelle / prescription des infractions contre l'intégrité sexuelle des enfants et interdiction de la possession de pornographie dure) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/612"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2000/0384"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-05-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "2000.041"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code pénal suisse et du code pénal militaire (infractions contre l'intégrité sexuelle / prescription des infractions contre l'intégrité sexuelle des enfants et interdiction de la possession de pornographie dure) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/612"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2000/0384"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-05-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "2000.041"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code pénal suisse et du code pénal militaire (infractions contre l'intégrité sexuelle / prescription des infractions contre l'intégrité sexuelle des enfants et interdiction de la possession de pornographie dure) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/104"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2305"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-11-23"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.081"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Schweizerischen Strafgesetzbuches  in der Fassung vom 13. Dezember 2002. (Umsetzung von Artikel 123a der Bundesverfassung über die lebenslängliche Verwahrung extrem gefährlicher Straftäter) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification du code pénal dans sa version  du 13 décembre 2002. (Mise en uvre de l'art. 123a de la Constitution fédérale sur l'internement à vie pour les délinquants extrêmement dangereux) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/104"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2305"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-11-23"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.081"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Schweizerischen Strafgesetzbuches  in der Fassung vom 13. Dezember 2002. (Umsetzung von Artikel 123a der Bundesverfassung über die lebenslängliche Verwahrung extrem gefährlicher Straftäter) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification du code pénal dans sa version  du 13 décembre 2002. (Mise en uvre de l'art. 123a de la Constitution fédérale sur l'internement à vie pour les délinquants extrêmement dangereux) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/104"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2305"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-11-23"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.081"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Schweizerischen Strafgesetzbuches  in der Fassung vom 13. Dezember 2002. (Umsetzung von Artikel 123a der Bundesverfassung über die lebenslängliche Verwahrung extrem gefährlicher Straftäter) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification du code pénal dans sa version  du 13 décembre 2002. (Mise en uvre de l'art. 123a de la Constitution fédérale sur l'internement à vie pour les délinquants extrêmement dangereux) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
     }
   },
   {

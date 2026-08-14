@@ -1,7 +1,7 @@
 {
   "erlassKey": "KVV",
   "sr": "832.102",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -27,9 +27,8 @@
       "titelDe": "Verordnung über die Krankenversicherung (KVV)",
       "titelFr": "Ordonnance sur l’assurance-maladie (OAMal)",
       "titelIt": "Ordinanza sull’assicurazione malattie (OAMal)",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/347/de",
-      "sha": "9dcfb7ebad629612d44c757b5a73aa1aa5a882a8a664e06093b17546f314066a"
+      "sha": "11fd1fd3be80a7ed67c36a7698d6aa3321234cab34a2628c542323cadb8cde41"
     },
     {
       "art": "sammelerlass-marker",
@@ -974,5 +973,5 @@
       "sha": "1b8f4b7546ec7284c63371e873d9a217b6191c580f1a463aaa8d76db384f3eca"
     }
   ],
-  "sha": "a470d8e385d7f1b99a151ead1f483d47aa1ee9c346f331de054db3fbe8e215b5"
+  "sha": "dd03c3c7e76440ff55a323bdc76073fdb7bab1f4eb546e129e3b8c178d034ad4"
 }

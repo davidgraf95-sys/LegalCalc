@@ -1,7 +1,7 @@
 {
   "erlassKey": "FZV",
   "sr": "831.425",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -14,9 +14,8 @@
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2026-08-01",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "fd67c5f65861260593945ac031fe97e4ab7d6557545f56927046ad5417bb6023"
+      "sha": "0c4677dbb529abb0471b2c90d1de5c35fd2a010413afed3d32396ad10652c9db"
     },
     {
       "art": "sammelerlass-marker",
@@ -169,5 +168,5 @@
       "sha": "51e1b3d45f3554d728c3d1ccae43ad1cfdd65031dba36ec4e1f2ef07abcc71b5"
     }
   ],
-  "sha": "a56c79aa396e2a3263a125c6cabb3193b7fce500433700c79719cec65ee2400c"
+  "sha": "5761743881d4335b798b00712956089e3da1ccf5b805c0ec4404b356057bdfa4"
 }

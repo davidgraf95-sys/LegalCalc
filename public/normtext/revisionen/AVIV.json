@@ -1,7 +1,7 @@
 {
   "erlassKey": "AVIV",
   "sr": "837.02",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -27,9 +27,8 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/258/de",
-      "sha": "f937ac80a279483fbdbb339fec09f5ad3a18ff73b8e9ac13bf448d14abae9f36"
+      "sha": "9a4d8dafc896dbc9860589fa4db8326bc15f29239d9d564b73938fc9eebbddcf"
     },
     {
       "art": "aenderung",
@@ -776,5 +775,5 @@
       "sha": "37d87ebb84feea6d048f21000a0e132e7e157ecfd1329af32f97416aac3f6fe7"
     }
   ],
-  "sha": "83145d3007a3bc538376e865a388b141ff9d2fb58f4d390aab651928f2b27839"
+  "sha": "165296fa74e3ff6b0c2aaf826c998f8866b6ed7382cad3603329a49826cd418e"
 }

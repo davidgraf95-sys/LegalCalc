@@ -45,6 +45,123 @@
     },
     "botschaft": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2016/1235"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2020/111"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-09-16"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "16.065"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (EL-Reform)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi sur les prestations complémentaires (Réforme des PC)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2016/1235"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2020/111"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-09-16"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "16.065"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (EL-Reform)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi sur les prestations complémentaires (Réforme des PC)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2016/1235"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2020/111"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-09-16"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "16.065"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (EL-Reform)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi sur les prestations complémentaires (Réforme des PC)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "botschaft": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2000/99"
     },
     "proj": {
@@ -114,123 +231,6 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2016/1235"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2020/111"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-09-16"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "16.065"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (EL-Reform)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification de la loi sur les prestations complémentaires (Réforme des PC)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2016/1235"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2020/111"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-09-16"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "16.065"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (EL-Reform)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification de la loi sur les prestations complémentaires (Réforme des PC)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2016/1620"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2016/1235"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2020/111"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-09-16"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "16.065"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (EL-Reform)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification de la loi sur les prestations complémentaires (Réforme des PC)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
     }
   },
   {
