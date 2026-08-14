@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 1
 import { test, expect, type Page } from '@playwright/test'
 
 // ─── E6a·M5: Amtliche-Materialien-Delta in der Verzahnungs-UI ───────────────

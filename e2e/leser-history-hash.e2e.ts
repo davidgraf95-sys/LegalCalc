@@ -1,4 +1,4 @@
-// @shard-gruppe: 8
+// @shard-gruppe: 1
 // W2·17-UI-BEFUNDE-B2 · Los G — History und Scroll im Gesetzes-Leser.
 //
 // LM-199: «Zurück» mit stehendem #hash in der URL. Der Einstiegs-Anker (Deep-

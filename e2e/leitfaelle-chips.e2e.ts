@@ -1,4 +1,4 @@
-// @shard-gruppe: 6
+// @shard-gruppe: 5
 // Browser-Smoke der Rechtsprechungs-Auflistung am Artikel (FAHRPLAN-DATENHALTUNG
 // §11.2, Weiche B): lazy aus dem erlass-lokalen Shard geladen. Prüft (a) ein Artikel
 // MIT Entscheiden zeigt die Auflistung + Entscheid-Link, (b) ohne Treffer bzw. ohne
