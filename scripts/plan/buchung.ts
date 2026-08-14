@@ -78,10 +78,25 @@ export function parseStatusTrailer(wert: string): { status: Status; blocker: str
  * einen leeren Trailer-WERT (`Roadmap:` ohne Inhalt ist für `git log
  * %(trailers:…)` ein vorhandener, aber leerer Treffer).
  */
+// Enger Zeichensatz für ID und Blocker-Token (Gegenprüfungs-Befund 14.8.2026):
+// die Werte stammen aus dem Commit-Text und fliessen in plan:set und die
+// Commit-Message des Buchungs-Commits — Shell-Metazeichen (`$`, Backtick, `;`,
+// Anführungszeichen …) haben in einer Schritt-ID nichts verloren und werden
+// hart abgewiesen, BEVOR irgendetwas weiterläuft. Echte IDs: `W2·10-UI-NAV`,
+// `QS-GP`; echte Tokens: `vps-bestellung-david`, `pr-451`.
+const ID_RE = /^[A-Za-z0-9·.\-]+$/;
+const TOKEN_RE = /^[a-z0-9\-]+$/;
+
 export function parseBuchung(idTrailer: string, statusTrailer: string): Buchung {
   const id = idTrailer.trim();
   if (!id) throw new Error('Roadmap: Trailer ist leer — keine ID zum Buchen.');
+  if (!ID_RE.test(id)) {
+    throw new Error(`Roadmap: "${id}" enthält unerlaubte Zeichen (erlaubt: Buchstaben, Ziffern, ·, ., -).`);
+  }
   const { status, blocker } = parseStatusTrailer(statusTrailer);
+  if (blocker !== null && !TOKEN_RE.test(blocker)) {
+    throw new Error(`Roadmap-Status: Blocker-Token "${blocker}" enthält unerlaubte Zeichen (erlaubt: a-z, 0-9, -).`);
+  }
   return { id, status, blocker };
 }
 

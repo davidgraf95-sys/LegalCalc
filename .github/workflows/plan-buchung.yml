@@ -83,20 +83,33 @@ jobs:
       # bereits GITHUB_OUTPUT-Format, darum die direkte Umleitung. Wirft die
       # Validierung (ungültiger Status, "parked" ohne Blocker-Token), endet
       # dieser Schritt mit Exit 1 — der Job wird ROT, `plan:set` läuft NIE.
+      # SICHERHEIT (Gegenprüfungs-Befund 14.8.2026): Trailer-Werte stammen aus
+      # dem Commit-Text und sind beeinflussbar — sie erreichen die Shell darum
+      # NUR über `env:` (Variablen-Expansion, keine Kommando-Substitution),
+      # NIE über `${{ }}` im `run:`-Skripttext (dort würde ein `$(…)` im Wert
+      # ausgeführt). Zusätzlich validiert buchung.ts ID/Token gegen einen
+      # engen Zeichensatz, bevor irgendetwas weiterläuft.
       - name: Trailer parsen + validieren
         if: steps.trailer.outputs.vorhanden == 'true'
         id: buchung
+        env:
+          ROADMAP_TRAILER: ${{ steps.trailer.outputs.roadmap }}
+          STATUS_TRAILER: ${{ steps.trailer.outputs.status }}
         run: |
           set -euo pipefail
-          npx vite-node scripts/plan/buchung.ts -- "${{ steps.trailer.outputs.roadmap }}" "${{ steps.trailer.outputs.status }}" >> "$GITHUB_OUTPUT"
+          npx vite-node scripts/plan/buchung.ts -- "$ROADMAP_TRAILER" "$STATUS_TRAILER" >> "$GITHUB_OUTPUT"
 
       - name: ROADMAP.md nachziehen (plan:set)
         if: steps.trailer.outputs.vorhanden == 'true'
+        env:
+          BUCHUNG_ID: ${{ steps.buchung.outputs.id }}
+          BUCHUNG_STATUS: ${{ steps.buchung.outputs.status }}
+          BUCHUNG_BLOCKER: ${{ steps.buchung.outputs.blocker }}
         run: |
           set -euo pipefail
-          npm run plan:set -- "${{ steps.buchung.outputs.id }}" status="${{ steps.buchung.outputs.status }}"
-          if [ -n "${{ steps.buchung.outputs.blocker }}" ]; then
-            npm run plan:set -- "${{ steps.buchung.outputs.id }}" blocker="${{ steps.buchung.outputs.blocker }}"
+          npm run plan:set -- "$BUCHUNG_ID" status="$BUCHUNG_STATUS"
+          if [ -n "$BUCHUNG_BLOCKER" ]; then
+            npm run plan:set -- "$BUCHUNG_ID" blocker="$BUCHUNG_BLOCKER"
           fi
 
       # Konsistenz-Tor VOR dem Commit (§6.7: "ist check:plan rot ⇒ Job ROT und
@@ -111,6 +124,9 @@ jobs:
       # bewusst NICHT ausgeführt: es gäbe nichts zusätzlich zu committen.
       - name: ROADMAP.md committen und pushen
         if: steps.trailer.outputs.vorhanden == 'true'
+        env:
+          BUCHUNG_ID: ${{ steps.buchung.outputs.id }}
+          BUCHUNG_STATUS: ${{ steps.buchung.outputs.status }}
         run: |
           set -euo pipefail
           if git diff --quiet -- ROADMAP.md; then
@@ -120,5 +136,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add ROADMAP.md
-          git commit -m "docs(plan): ${{ steps.buchung.outputs.id }} → ${{ steps.buchung.outputs.status }} (automatisch aus Merge-Trailer)"
+          git commit -m "docs(plan): $BUCHUNG_ID -> $BUCHUNG_STATUS (automatisch aus Merge-Trailer)"
+          # Push-Race (Gegenprüfung, nachrangig): zwischen Trigger-SHA und jetzt
+          # kann ein weiterer Merge gelandet sein — Rebase statt non-fast-forward-Rot.
+          git pull --rebase origin main
+          npm run check:plan
           git push origin HEAD:main

