@@ -8,7 +8,7 @@
       "Bash(npm run gate)",
       "Bash(npm run gate:schnell)",
       "Bash(npm run check)",
-      "Bash(npm run check:inventur)",
+      "Bash(npm run report:inventur)",
       "Bash(npm run check:bibliothek)",
       "Bash(npm run check:verfall)",
       "Bash(npm run check:sweep)",

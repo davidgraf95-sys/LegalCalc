@@ -5,7 +5,11 @@ import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS, parseRoadmap } from './par
 import { resolve } from './aufloesen';
 import { obersterMarkerId } from './marker';
 
-const FELDER = new Set(['id', 'status', 'blocker', 'dep', 'kollision', 'worktree', '26x', 'groesse', 'fahrplan', 'slot']);
+// `groesse` bewusst NICHT setzbar (Gegenprüfungs-Befund 14.8.2026): seit der
+// Streichung der Vokabelprüfung (check.ts Regel 12) würde plan:set einen
+// Tippfehler (`groesse=XL`) ungeprüft schreiben und das Lagebild still
+// verändern — das Feld wird von Hand gepflegt wie zuvor.
+const FELDER = new Set(['id', 'status', 'blocker', 'dep', 'kollision', 'worktree', '26x', 'fahrplan', 'slot']);
 // Marke, die ein Statuswechsel setzt, WENN die bestehende nicht schon passt.
 //
 // `parked: '[d]'`/`blocked: '[d]'` waren am 31.7.2026 kurzzeitig hier (Fund

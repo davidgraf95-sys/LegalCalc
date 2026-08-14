@@ -129,8 +129,9 @@ console.log(`\n${total} eindeutige Zitate geprüft · ${fehler} Befunde`);
 // kann, ist gefährlicher als keines. Rot bei echten Befunden UND wenn kein
 // einziger Cache lesbar war (Caches besorgt `check:caches`, das in check:netz
 // davor läuft).
-if (Object.keys(html).length === 0) {
-  console.error('check:zitate ROT: kein einziger Gesetzes-Cache lesbar — es wurde nichts geprüft (erst `npm run check:caches`).');
+const fehlendeCaches = Object.keys(CACHES).filter((g) => !(g in html));
+if (fehlendeCaches.length > 0) {
+  console.error(`check:zitate ROT: ${fehlendeCaches.length} Gesetzes-Cache(s) nicht lesbar (${fehlendeCaches.join(', ')}) — Zitate dieser Gesetze wären still übersprungen (erst \`npm run check:caches\`).`);
   process.exit(1);
 }
 if (fehler > 0) {

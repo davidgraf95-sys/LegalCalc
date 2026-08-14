@@ -164,15 +164,19 @@ def budget_erweitern(karten, index_datum, rotate_idx, kopf, schwanz, budget):
     rotate_idx = set(rotate_idx)
     # Ziel greift erst, wenn das Budget WIRKLICH gerissen ist — unter der Marke
     # wird nie vorsorglich rotiert (Verhalten unverändert konservativ).
+    # ACHTUNG Namensraum: die Schleife unten nutzt `ziel` bereits als
+    # Karten-INDEX — das Byte-Ziel heisst darum `ziel_bytes` (Gegenprüfungs-
+    # Befund B1, 14.8.2026: der Schatten liess die Rotation bis MINDEST_BEHALT
+    # durchlaufen statt bis 90 %).
     rest0 = [i for i in range(len(karten)) if i not in rotate_idx]
     text0 = anker_einfuegen(kopf, [karten[i] for i in rest0]) + schwanz
-    ziel = budget if len(text0.encode("utf-8")) <= budget else int(budget * ZIEL_FAKTOR)
+    ziel_bytes = budget if len(text0.encode("utf-8")) <= budget else int(budget * ZIEL_FAKTOR)
     while True:
         rest_idx = [i for i in range(len(karten)) if i not in rotate_idx]
         if len(rest_idx) <= MINDEST_BEHALT:
             break
         text = anker_einfuegen(kopf, [karten[i] for i in rest_idx]) + schwanz
-        if len(text.encode("utf-8")) <= ziel:
+        if len(text.encode("utf-8")) <= ziel_bytes:
             break
         kandidaten = [(d, i) for i, d in index_datum if d is not None and i not in rotate_idx]
         if not kandidaten:
