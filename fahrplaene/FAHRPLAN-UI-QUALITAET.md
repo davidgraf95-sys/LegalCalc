@@ -4,9 +4,10 @@
 > **ROADMAP-Schritt:** `QS-UI` (Querschnitt-Band — **kontinuierlich, kein Reihenfolge-Slot**).
 > **Anlass:** Ideen-Intake 20.7.2026, Idee 8a («UI app-weit optimieren»); die Gesetzes-Fläche
 > folgt als 8b in `W2·5h-GESETZ-UI`. Dieser Schritt hängt **nicht per `dep`** an diesem Strang —
-> `QS-UI` ist kontinuierlich und erreicht nie «fertig», ein `dep` wäre nie erfüllbar. Massgeblich
-> ist `seq-hart` auf die zwei abschliessbaren Teil-Schritte (a) Fundament- und (b) Hierarchie-Pass
-> (Begründung: `FAHRPLAN-GESETZES-UX.md` §13.1).
+> `QS-UI` ist kontinuierlich und erreicht nie «fertig», ein `dep` wäre nie erfüllbar. Die Sequenz
+> «erst die Pässe (a) Fundament und (b) Hierarchie, dann die Gesetzes-Fläche» gilt als Prosa-Regel
+> hier und in `FAHRPLAN-GESETZES-UX.md` §13.1; beide Pässe sind seit 4.8.2026 eingelöst. *(Das
+> frühere Vehikel `seq-hart` ist am 14.8.2026 gestrichen — QS-PLAN-EINFACH: 0 auswertende Stellen.)*
 > **Charakter:** Dieses Dokument ist die **Umbrella-Detailquelle** für einen mess-getriebenen
 > Dauer-Strang. Es ist **kein Redesign-Plan** und **kein zweiter Einstieg** (§14.1) — es
 > koordiniert und härtet, es baut nicht neben den bestehenden UI-Schritten her.
@@ -447,7 +448,8 @@ W2·5h-GESETZ-UI(8b)]`.
   **Sequenz maschinenlesbar, bewusst getrennt (§14.3 — dieselbe Konstruktion wie bei `W2·5h-GESETZ-UI`):**
   `dep` trägt nur **`W2·16-INVENTAR`** (echte Bau-Voraussetzung, endlicher Schritt). `QS-UI` ist ein
   **kontinuierlicher Querschnitt ohne Endzustand** — ein `dep` darauf wäre nie erfüllbar und machte diesen
-  Schritt dauerhaft nicht startbar; massgeblich ist darum `seq-hart` auf die konkreten Teil-Schritte.
+  Schritt dauerhaft nicht startbar; massgeblich ist darum die Prosa-Sequenz auf die konkreten
+  Teil-Schritte (a)/(b) — beide eingelöst 4.8.2026. *(`seq-hart` als Feld gestrichen 14.8.2026.)*
   **DoD:** deckt die Funktionsmenge aus `W2·16-INVENTAR` **vollständig** ab (keine stille Auslassung, §8) ·
   Sprache nach §13 Ziff. 3 (Fach **und** Laie) · axe · golden byte-gleich.
   Trailer `Roadmap: W2·16-ANLEITUNG`.

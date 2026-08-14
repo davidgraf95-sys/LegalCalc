@@ -1985,8 +1985,10 @@ dem steuerungs-Querverweis «§12 Ziff. 2» = Pathspec-Commit-Konvention).
 
 ### 13.0 · Abgrenzung zu den bestehenden §-Einheiten (bindend, §14.3)
 
-Der Schritt liegt bewusst auf **fremder Bau-Fläche**. Die Grenze ist darum nicht Prosa,
-sondern im `@meta` als `seq-hart`/`seq-weich` geführt:
+Der Schritt liegt bewusst auf **fremder Bau-Fläche**. *(Nachtrag 14.8.2026, QS-PLAN-EINFACH:
+die Felder `seq-hart`/`seq-weich` sind gestrichen — 0 auswertende Code-Stellen. Die Tabelle
+bleibt als REIHENFOLGE-Doku gültig; durchgesetzt wird sie durch `dep`, Worktree-Isolation §12
+und die wip-Sichtbarkeit in `plan:next`, nicht mehr durch ein Etikett-Feld.)*
 
 | Nachbar | Gemeinsame Dateien | Verhältnis |
 |---|---|---|
@@ -2004,8 +2006,9 @@ sondern im `@meta` als `seq-hart`/`seq-weich` geführt:
 `QS-UI` ist ausdrücklich ein **kontinuierlicher Querschnitt-Strang ohne Endzustand** («kein
 Reihenfolge-Slot»). Ein `dep` darauf wäre **nie erfüllbar** und machte diesen Schritt dauerhaft
 nicht startbar — das Tor `check:plan` prüft nur Azyklie, nicht Erfüllbarkeit, hätte den
-Widerspruch also nicht gemeldet. Massgeblich ist darum `seq-hart` auf die zwei **konkreten,
-abschliessbaren** QS-UI-Teil-Schritte (a) Fundament-Pass und (b) Informationshierarchie-Pass.
+Widerspruch also nicht gemeldet. Massgeblich ist darum die Sequenz auf die zwei **konkreten,
+abschliessbaren** QS-UI-Teil-Schritte (a) Fundament-Pass und (b) Informationshierarchie-Pass
+— beide eingelöst 4.8.2026 (`seq-hart` als Feld gestrichen 14.8.2026).
 Erst wenn diese beiden stehen, wird die Gesetzes-Fläche angefasst — sonst wird sie zweimal
 angefasst, und das ist der ganze Grund für Davids Sequenz «erst app-weit, dann Gesetze».
 
@@ -2228,11 +2231,11 @@ dann K1–K7 als Delta bauen. Reines UI, golden byte-gleich; DoD wie `W2·5h` (a
   `/gesetze` und der Gesetz-Leser maximal tauglich für die tägliche Norm-Arbeit — Normtext-Darstellung,
   Gliederung/TOC, Split-View im Leser, Suche im Gesetz, Fussnoten und Marginalien. **Baut auf** `W2·5d`
   (Gesetzes-UX, G0/G1/G2a gebaut) und `W3·14` (Split-View). **Feasibility 🟢 aus-Bestand.**
-  **Sequenz maschinenlesbar (§12/§14.3) — bewusst NICHT als `dep`:** `QS-UI` ist ein
+  **Sequenz (§12/§14.3) — bewusst NICHT als `dep`:** `QS-UI` ist ein
   **kontinuierlicher Querschnitt-Strang ohne Endzustand**; ein `dep` darauf wäre nie erfüllbar und
-  machte diesen Schritt dauerhaft nicht startbar. Massgeblich ist darum `seq-hart` auf die konkreten
-  QS-UI-**Teil**-Schritte (a) Fundament-Pass und (b) Informationshierarchie-Pass — erst wenn diese
-  beiden stehen, wird die Gesetzes-Fläche angefasst. `dep` bleibt allein `W2·5d` (echte
+  machte diesen Schritt dauerhaft nicht startbar. Massgeblich ist darum die Sequenz auf die konkreten
+  QS-UI-**Teil**-Schritte (a) Fundament-Pass und (b) Informationshierarchie-Pass — beide eingelöst
+  4.8.2026, die Fläche ist frei (`seq-hart` als Feld gestrichen 14.8.2026). `dep` bleibt allein `W2·5d` (echte
   Bau-Voraussetzung). **Datei-Überschneidungen ausgewiesen statt nur in Prosa behauptet:**
   `W2·5b` (Reader-Dateien, `wip`) hart sequenziert; `W2·10-UI-NAV` (`gesetz-leser`,
   `GesetzLeser.tsx`, `components/suche`) und `W3·14` (Split-View-Rahmen) weich — Worktree-Isolation
