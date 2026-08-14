@@ -3,6 +3,7 @@
 // Manifest, Klick führt in den Reader (gegliederter Entscheid), keine Console-/
 // Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -226,11 +227,7 @@ test.describe('Leitentscheid — Ansichten «Amtlicher BGE-Auszug» ⟷ «Vollst
 // Rail ein aufklappbarer Block ÜBER dem Text mit 24-px-Tap-Zielen; (d) der
 // ganze Fluss läuft unter CPU-Drossel ohne Hänger und mit CLS 0 (A9).
 //
-// Drossel + Budgets exakt nach `leser-kopf-a9.e2e.ts` (dort steht die
-// Kalibrierungs-Empirie für den 2-vCPU-Runner) — keine eigene, zweite Latte.
-const DROSSEL = process.env.CI ? 4 : 6
-const REAKTIONS_BUDGET = process.env.CI ? 8000 : 5000
-const REAKTIONS_LATTE = REAKTIONS_BUDGET + 3000
+// Drossel + Budgets aus `./helpers/budgets` (§5) — keine eigene, zweite Latte.
 
 test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
   test('Rail listet die Erwägungen, springt an den Anker und sucht ehrlich im Entscheid', async ({ page }) => {
@@ -315,9 +312,7 @@ test.describe('V5 — Erwägungs-Rail im Entscheid-Leser', () => {
   })
 
   test('A9: Rail-Sprung + Suche flüssig unter CPU-Throttle, CLS 0', async ({ page }) => {
-    // Container-Budget wie in leser-kopf-a9: die gedrosselten Fenster plus die
-    // ungedrosselten Ready-Latten kommen dem 90-s-Default nahe.
-    if (process.env.CI) test.setTimeout(120_000)
+    if (CONTAINER_BUDGET_CI) test.setTimeout(CONTAINER_BUDGET_CI)
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     const client = await page.context().newCDPSession(page)

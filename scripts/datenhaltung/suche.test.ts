@@ -26,7 +26,38 @@ beforeAll(() => {
   frischesSchema(dbR, 'rechtsprechung');
   ingestRechtsprechung(dbR);
   baueFtsEntscheideSchaufenster(dbR);
-}, 60000);
+  // ── Hook-Budget 60 s → 95 s (QS-E2E-STABIL, Messung 14.8.2026) ─────────────
+  // REPRODUKTION VOR DEM FIX (F3): unter der im Fahrplan genannten Bedingung
+  // «Parallel-Last (Builds + e2e)» — voller `npm run test:e2e` plus dauernd
+  // laufender vite-build, Last-Mittel ~14 auf 10 Kernen — fiel dieser Hook in
+  // 1 von 5 Läufen mit «Hook timed out in 60000ms».
+  //
+  // MESSREIHE, Datei-Gesamtdauer in s (der Hook ist der weit überwiegende Teil):
+  //   isoliert (nichts sonst auf der Maschine, n=5):
+  //     11.66 · 10.67 · 10.62 · 10.58 · 10.70   (mittel 10.85, sd 0.45)
+  //   unter Parallel-Last (n=5, Bedingung oben):
+  //     46.23 · 66.60 · 49.08 · 48.97 · 41.78   (mittel 50.53, sd 9.46)
+  // Lastfaktor also ~4.7×, und die Streuung wächst um mehr als das Zwanzigfache
+  // (sd 0.45 → 9.46 s). Genau daran scheitert ein Deckel, der gegen den
+  // ISOLIERTEN Wert bemessen ist: isoliert wirken 60 s wie Faktor 5.5 Reserve,
+  // unter Last liegt der Hook IM Streubereich des Deckels.
+  //
+  // HÖHE nach QS-PERF Ziff. 5 (Ist + max(3 sd, 25 %)): Ist = 66 600 ms
+  // (schlechtester gemessener Wert), 3 sd = 27 840 ms, 25 % = 16 650 ms
+  // → 66 600 + 27 840 = 94 440 ms, gerundet 95 000 ms.
+  //
+  // WARUM NICHT «Hook entlasten» (die Alternative im Fahrplan): der Hook baut
+  // beide HOT-DBs aus den echten Quellen über dieselben ingest+fts-Bausteine wie
+  // `datenhaltung:build`. Genau das ist die Aussage dieser Datei — ein gecachtes
+  // DB-Artefakt nähme die Ingest-Strecke aus der Prüfung, der Test bewiese danach
+  // weniger (§1 vor Tempo). Die Arbeit ist legitim schwer; zu korrigieren war der
+  // ungemessene Deckel, nicht der Hook.
+  //
+  // §6.7: der Deckel kann weiterhin scheitern — er greift bei Überschreitung und
+  // hält zum schlechtesten belegten Wert noch ~30 % Abstand; eine echte
+  // Verlangsamung der Ingest-Strecke (etwa durch einen Korpus-Sprung) fällt
+  // unverändert durch. KEINE Assertion und kein Prüfschritt berührt (§6.3).
+}, 95000);
 
 afterAll(() => {
   dbN?.close();

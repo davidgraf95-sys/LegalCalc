@@ -1,5 +1,6 @@
 // @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
+import { DROSSEL } from './helpers/budgets';
 
 // ─── W2·5d U-VERWEIS (A7 + A10 + A11 + A13) — Browser-Beweise ────────────────
 // P2 (§10.2): (1) MWSTG Art. 5 verbatim = 5 Links (art_31/35/37/38/45);
@@ -8,9 +9,7 @@ import { test, expect, type Page } from '@playwright/test';
 // Plural DSG; aBV-Schutz-Negativfall ArG). A7: strukturiertes Verweis-Popover
 // (Wortlaut → massgebliche
 // Entscheide → klar abgetrennte Materialien). A9: Flüssigkeit unter CPU-Throttle
-// (CI 4× / lokal 6×), CLS 0. Läuft gegen `vite preview` (dist).
-
-const DROSSEL = process.env.CI ? 4 : 6;
+// (Drossel aus `./helpers/budgets`, §5), CLS 0. Läuft gegen `vite preview` (dist).
 
 // ELI-Diskriminator der BV (aus src/lib/fedlex.ts FEDLEX): SR 101.
 const BV_ELI = '1999/404';
