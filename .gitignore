@@ -120,3 +120,6 @@ ABNAHME-AG-BAUSTEINE.md
 
 # Python-Bytecode (Hook-Testläufe)
 __pycache__/
+
+# Token-Spool je Session-Ende (QS-EFFIZIENZ 14.8.2026; Konsument: selbstopt:erheben)
+messwerte/token-spool.jsonl
