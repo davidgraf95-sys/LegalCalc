@@ -97,8 +97,9 @@ Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
 - **(c)** nichts Sinnvolles mehr ⇒ Abschluss (Station E).
 
 Je Weiterbau: voller Zyklus im Kleinen (`status=wip`, volle Sorgfalt,
-eigener Commit/Trailer). **Nie** sortenrein-widrig auf Risikopfade
-wechseln; Schluss **spätestens vor Kontext-Ende**.
+eigener Commit mit eigenem Roadmap-Trailer).
+**NIE sortenrein-widrig auf Risikopfade wechseln**; Schluss **spätestens
+bevor der Kontext zur Neige geht** — lieber sauber landen als anreissen.
 
 ## Station E — Abschluss (Checkliste, keine Kür)
 
