@@ -107,6 +107,15 @@
         ]
       },
       {
+        "matcher": "deploy_to_vercel|buy_domain|buy_pro|buy_credits|buy_addon|update_project_deployment_protection",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/deploy-schutz.py\""
+          }
+        ]
+      },
+      {
         "matcher": "Task|Agent",
         "hooks": [
           {

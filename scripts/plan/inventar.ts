@@ -136,6 +136,7 @@ export const INVENTAR: readonly string[] = [
   'QS-HOOKS-AUSBAU',
   'QS-EFFIZIENZ',
   'QS-MONITOR-ROT',
+  'QS-TYP-LUECKE',
 
   // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.
