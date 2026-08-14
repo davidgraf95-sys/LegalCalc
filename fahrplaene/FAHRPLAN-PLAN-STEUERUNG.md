@@ -652,62 +652,84 @@ PR-Treffer bei `--prs` · git-Ausfall ohne Warnung · zwei stale wip in stabiler
 Mutation den Test rot zeigt (§6.7), die Bestandszeilen des Blocks unverändert sind und
 `check:plan` grün ist.
 
-### §Seq-Frische · Veraltete Reihenfolge-Vermerke melden (Schritt `QS-PLAN-SEQ-FRISCHE`, 13.8.2026)
+### §Einfach · Plan-System vereinfachen (Schritt `QS-PLAN-EINFACH`, Auftrag David 14.8.2026)
 
-**Anlass, belegt (Sitzung 13.8.2026).** `W2·5h-GESETZ-UI` trägt seit dem 31.7.2026
-`seq-hart: [QS-UI(a Fundament-Pass + b Hierarchie-Pass)]`. Dieser Vorbehalt ist am 4.8.2026
-eingelöst — `FAHRPLAN-UI-QUALITAET.md` §2.2 hält es wörtlich fest («Der `seq-hart`-Vorbehalt von
-`W2·5h-GESETZ-UI` auf «(a) + (b)» ist damit eingelöst»). Der Vermerk steht trotzdem unverändert in
-der Zeile. Wirkung real in derselben Sitzung: die Zeile las sich beim Sichten der Gesetzes-Fläche
-als Sperre, die es nicht gab — die erste Antwort an David empfahl deshalb einen Umweg über `QS-UI`,
-der gar nicht nötig war.
+**Der Auftrag ist bewusst OFFEN.** David, 14.8.2026: «wichtig ist das alles weniger kompliziert
+wird … neue session soll selbstständig entscheiden können was sie anpassen soll». Dieser § ist
+darum **Befundlage, keine Bau-Anweisung**. Die bauende Session wählt selbst, was sie anfasst, in
+welcher Reihenfolge und wie weit sie geht. Verbindlich ist allein das Ziel; wer hier eine
+Schritt-für-Schritt-Vorschrift sucht, hat den Auftrag missverstanden.
 
-**Der Mechanismus, gemessen.** `seq-hart`/`seq-weich` werden von `etikett.ts` geparst
-(`seqHart`/`seqWeich`), von `serializeEtikett` byte-gleich zurückgeschrieben und von `dump.ts`
-angezeigt — aber von `next.ts` **nirgends ausgewertet** (verifiziert 13.8.2026: kein Vorkommen von
-`seqHart` ausserhalb `etikett.ts`/`dump.ts`/`set.ts`). Baubarkeit und Reihenfolge steuern allein
-`dep` und `blocker`. Die Felder sind damit reine Lesehinweise **ohne jede Kontrolle** — es gibt
-keine Stelle, die bemerken könnte, dass ein Hinweis hinfällig geworden ist. Genau das ist die
-Fehlerklasse «Prosa, die wie eine Regel aussieht» (Skill `lehren`): sie verrottet still und
-kostet erst dann Zeit, wenn jemand sie für bare Münze nimmt.
+**Drei Ziele.** (1) Die Roadmap wird kürzer. (2) Ihre Schritte werden **offener** formuliert — Ziel
+klar, Weg frei; die heutige Durchspezifikation nimmt Folge-Sessions das Urteil ab und veraltet
+schneller, als sie gepflegt werden kann. (3) Der **Pflegeprozess selbst** wird billiger — wie ein
+Schritt angelegt, abgehakt, rotiert und archiviert wird (Skills `auftrag`, `bauschritt`, Datei
+`aufraeumen.md`, Hook `struktur-rotieren.py`).
 
-**Fläche, ehrlich (gemessen 13.8.2026 an `ROADMAP.md`).** Es gibt **drei** Vermerke in **zwei**
-Schritten: `W2·5h-GESETZ-UI` (`seq-hart` auf `QS-UI`, eingelöst) und `W2·16-ANLEITUNG`
-(`seq-hart: [QS-UI(8a), W2·5h-GESETZ-UI(8b)]` sowie das einzige `seq-weich`). Die Fläche ist also
-winzig — der Schritt ist `groesse: S` und wird ausdrücklich **nur gebündelt** mit anderer
-`scripts/plan`-Arbeit genommen (Skill `auftrag` Ziff. 3). Wer ihn allein nimmt, zahlt einen
-Session-Sockel für drei Zeilen.
+**Ausgangslage, gemessen 13./14.8.2026** (Mehr-Agenten-Audit, 40 gegengeprüfte Befunde, 7 in der
+Gegenprüfung widerlegt und darum nicht aufgeführt):
 
-**Drei Wege — Entscheid gehört in den Schritt, nicht in diese Spec.**
+- **39 %** aller Commits der letzten sieben Wochen (470 von 1192) fassen ausschliesslich
+  Steuer-Dokumente an. Auf eine substanzielle Erledigung kommen rund 26 Buchungs-Commits.
+- **50 von 79** offenen Etiketten wurden in der gesamten Repo-Historie nie in einer
+  Commit-Nachricht genannt. 187 Anlagen gegen 18 substanzielle Erledigungen in 7 Wochen (4,3 : 1);
+  Median-Lebensdauer eines wieder entfernten Etiketts: 7 Tage.
+- **32 von 80** offenen Schritten betreffen das System selbst, nicht das Produkt — Zeitreihe
+  0 (29.6.) → 11 (21.7.) → 32 (13.8.), kein Plateau.
+- Vier Etikett-Felder unterscheiden **nie** etwas: `of: ja` steht 20 686-mal, `of: nein` nie (der
+  Zweig `wartetFachzeit` kann nicht feuern) · `seq-hart`/`seq-weich` 3 Vermerke, 0 auswertende
+  Code-Stellen · `statusAgent` 0 Vorkommen. Konstantfelder = 3908 von 22 096 Byte aller
+  Etikettenzeilen (18 %).
+- Zwei Tore in der Kette haben **null Abbruchpfade** und melden immer grün
+  (`scripts/katalog-inventur.ts`, `scripts/norm-zitate-pruefen.ts`) — §6.7-Fall.
+- Drei Halden ohne Leser: `archiv/STRUKTUR-SESSIONKARTEN.md` 791 085 Byte (+12 KB/Tag) · 17 tote
+  Archivdateien (155 KB) · 50 Fahrplan-Abschnitte, die in ihrer eigenen Überschrift sagen, dass
+  sie nicht steuern (187 714 Byte; Spitze 45 % einer Datei). Doppelungsprobe: nur 0,4 % davon
+  steht auch anderswo — es ist Verschieben, nicht Löschen.
+- Die Rotation ist **fehlkalibriert**: sie räumte zuletzt auf 49 Byte unter die Marke; der nächste
+  Doku-Commit musste sie reissen und tat es 3 h 43 min später.
+- **Nicht** die Prüfstrasse: alle Tore laufen parallel in 15,5 s; 78 % der CI-Zeit (38,3 von
+  49,1 min) gehen an acht Browser-Prüfungen. Die Ersparnis liegt in Sitzungs- und Lesezeit.
 
-| Weg | Was er tut | Bewertung |
-|---|---|---|
-| **A · Wecker** (empfohlen) | `check:plan` prüft jeden Vermerk auf Frische und meldet hinfällige rot | Feld behält seinen Nutzen, bekommt die fehlende Kontrolle; kleinster Eingriff |
-| **B · Feld streichen** | die drei Vermerke in Prosa überführen, `seq-hart`/`seq-weich` aus `etikett.ts` entfernen | verlagert dieselbe Verrottung nur in Fliesstext, wo noch weniger prüfbar ist |
-| **C · wirksam machen** | `next.ts` wertet `seq-hart` als echte Sperre aus | **ändert die Plan-Semantik** — Schritte würden real unbaubar; das ist ein David-Entscheid, kein Session-Entscheid |
+**Was die Gegenprüfung ausdrücklich verteidigt hat — nicht antasten ohne neuen Befund:** die
+ID-Liste in `scripts/plan/inventar.ts` (sieht wie eine Kopie aus, ist aber die einzige Wache
+dagegen, dass eine Rotation einen *unerledigten* Schritt mitnimmt; lief in 30 Tagen 28-mal) ·
+Regel 1c (Dubletten, fand am 31.7. eine echte) · Regel 3 (blockiert ohne Blocker-Eintrag) · das
+Feld `groesse` selbst (nur die Vokabelprüfung darum herum ist entbehrlich) · der Sammler der
+Selbstoptimierung (einzige Zahlenquelle über den eigenen Bau — die Zahlen oben stammen daraus) ·
+die acht Browser-Prüfungen (andere Risikoklasse) · `check:verfall` bleibt aus der Pflichtkette
+ausgeschlossen (hängt an der Wanduhr) · §7, §14.7, §18 und alles Fachliche.
 
-**Regel (Weg A).** Je Eintrag in `seq-hart`/`seq-weich` wird der führende ID-Token vor einer
-optionalen Klammer gelesen (`QS-UI(8a)` → `QS-UI`) und geprüft:
+**Was David entscheidet, nicht die Session:** Ob die Chronik ihren Wortlaut behält (Empfehlung des
+Audits: ja — sie ist die einzige Stelle, an der er ohne Werkzeuge nachlesen kann, warum etwas so
+gebaut wurde) · ob eine harte Obergrenze für die Schrittzahl gilt (Empfehlung: vorerst nein) · die
+Streichung der zwei QS-Schritte auf Risiko-Pfaden.
 
-1. **ID unbekannt** — weder ein `@meta` in `ROADMAP.md` noch ein Eintrag in `INVENTAR` trägt sie
-   ⇒ rot. Das ist zugleich der Regelfall für erledigte Schritte: sie wandern mit ihrem `@meta` in
-   `ROADMAP-CHRONIK.md` und verschwinden aus dem Inventar (Regel 4, Präzedenz 5.8.2026).
-2. **ID vorhanden, Status `done`** ⇒ rot, Meldung «Vermerk hinfällig — Vorbedingung erledigt».
+**Aufgegangen in diesem Schritt:** `QS-PLAN-SEQ-FRISCHE` (angelegt 13.8., ersatzlos abgelöst
+14.8.). Er wollte ein **neues Tor** bauen, das die Veralterung genau der `seq-hart`-Vermerke
+überwacht, die hier zur Streichung stehen — ein totes Feld erzeugte neuen Bau. Der auslösende Fall
+bleibt als Beleg erhalten: `W2·5h-GESETZ-UI` trägt seit 31.7. einen `seq-hart`-Vorbehalt auf
+`QS-UI`, der am 4.8. eingelöst wurde (`FAHRPLAN-UI-QUALITAET.md` §2.2 wörtlich «ist damit
+eingelöst») und trotzdem unverändert in der Zeile steht; er las sich in der Sitzung vom 13.8. als
+Sperre der Gesetzes-Oberfläche, die es nicht gab.
 
-**Ehrliche Grenze, deklariert statt still (§8).** Der Klammer-Zusatz ist Freitext und benennt
-Teil-Schritte, die selbst **keine ID tragen** (`QS-UI(a Fundament-Pass + b Hierarchie-Pass)`). Ob
-ein solcher Teil-Schritt erledigt ist, kann keine Regel entscheiden — und bei einem
-kontinuierlichen Querschnitt-Strang ohne Endzustand wie `QS-UI` wird Stufe 1 und 2 **nie** rot.
-Genau der Fall, der diesen Schritt ausgelöst hat, bliebe also ungedeckt. Damit daraus keine
-Schein-Deckung wird (§6.7): Vermerke mit Klammer-Zusatz erscheinen einmalig im Bericht als
-**«nicht maschinell prüfbar — von Hand gegen den Fahrplan halten»**, mit ID und Zeilennummer. Eine
-Regel, die rät, meldet Falsches (§2) — eine, die schweigt, wird für Deckung gehalten.
+**Die Wurzel — und warum der Gegenmechanismus kein Text sein darf.** §17 verlangt, jede Störung an
+der Wurzel zu beheben; das erzeugt zuverlässig Regeln, Felder, Tore, Schritte, und nichts verlangte
+je das Gegenteil. Beleg: Vor dem 3.8.2026 wurde in der gesamten Plan-Historie **kein einziges
+Etikett je entfernt**. Schärfster Beleg: Der Commit, der den Grössen-Deckel gerissen hat, heisst
+«§17 bekommt sein Gegengewicht — Rückbau ist Teil der Prozessverbesserung» und war 1532 Byte neue
+Prosa. Das Gegengewicht als Text hat als Erstes das Problem verschlimmert, das es beheben sollte.
+Vorschlag des Audits, den die Session prüfen (und verwerfen) darf: Der Gegenmechanismus setzt am
+**Zeitpunkt der Anlage** an — wer eine Regel, ein Feld, ein Tor oder einen QS-Schritt anlegt,
+notiert in derselben Zeile, **woran man erkennt, dass es wirkt** und **wann es ersatzlos entfällt**.
+Fehlt eines von beidem, wird nichts angelegt. Das macht jede spätere Streichrunde zur Ablesung
+statt zur Archäologie.
 
-**Fertig, wenn** die Regel mit injizierten Daten getestet ist (unbekannte ID · `done`-ID · gültige
-ID · Klammer-Zusatz als Hinweis, nicht als Fehler), eine Mutation sie rot zeigt (§6.7), der
-eingelöste Vermerk an `W2·5h-GESETZ-UI` entfernt und der Bestand der drei Vermerke einmal
-durchgesehen ist, und `check:plan` grün läuft. Reine Prüflogik ⇒ `Gegenpruefung: n/a`.
-Trailer `Roadmap: QS-PLAN-SEQ-FRISCHE`.
+**Fertig, wenn** die Roadmap spürbar kürzer ist, ihre Schritte das Ziel statt des Weges nennen, der
+Pflegeprozess weniger Handgriffe braucht — und die Session in einem Satz sagen kann, was sie
+bewusst NICHT angefasst hat. Kein Vorher/Nachher-Beweis auf Byte-Ebene verlangt; wohl aber die
+Zahl vorher und nachher. Reine Steuer-Doku und Plan-Werkzeug ⇒ `Gegenpruefung: n/a`, sofern kein
+Risiko-Pfad berührt wird. Trailer `Roadmap: QS-PLAN-EINFACH`.
 
 ## Selbstverweise in Fahrplänen — Konvention (AP-11, Nachtrag 31.7.2026)
 

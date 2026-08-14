@@ -176,9 +176,9 @@ export const INVENTAR: readonly string[] = [
   // §17-Eskalation 5.8.2026 (zweiter Fall nach dem 10-wip-Vorfall vom ~20.7.): `plan:next`
   // warnt vor `wip`-Marken ohne Bau-Spur, statt sie stumm als «im Bau» auszuweisen.
 
-  // §14-Intake 13.8.2026 (Sitzung David): `seq-hart`/`seq-weich` werden geparst und
-  // zurückgeschrieben, aber von next.ts nie ausgewertet — ein eingelöster Vorbehalt an
-  // W2·5h-GESETZ-UI stand darum seit dem 4.8. unbemerkt weiter in der Zeile und las sich
-  // als Sperre. Wecker statt Wirkung: Frische-Prüfung in check:plan.
-  'QS-PLAN-SEQ-FRISCHE',
+  // §14-Intake 14.8.2026 (Auftrag David, bewusst OFFEN): Plan-System vereinfachen — kürzere
+  // Roadmap, offener formulierte Schritte, billigerer Pflegeprozess. Löst den tags zuvor
+  // angelegten QS-PLAN-SEQ-FRISCHE ersatzlos ab: jener wollte ein neues Tor für die
+  // Veralterung toter Felder bauen, die hier zur Streichung stehen (Audit 13./14.8.2026).
+  'QS-PLAN-EINFACH',
 ];
