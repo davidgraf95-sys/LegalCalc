@@ -141,9 +141,17 @@ def karten_datum(block: str):
         return None
 
 
+# Hysterese der Budget-Rotation (QS-PLAN-EINFACH 14.8.2026): Ausgelöst wird bei
+# Budget-Riss, geräumt aber bis auf ZIEL_FAKTOR·Budget. Vorher stoppte die
+# Rotation beim ersten Byte unter der Marke (real: 49 Byte Luft) — der nächste
+# Doku-Commit riss sie erneut, gemessen 3 h 43 min später.
+ZIEL_FAKTOR = 0.9
+
+
 def budget_erweitern(karten, index_datum, rotate_idx, kopf, schwanz, budget):
     """Erweitert `rotate_idx` (Alters-Rotation) um weitere Karten, solange
-    STRUKTUR.md nach der Alters-Rotation noch über `budget` liegt.
+    STRUKTUR.md nach der Alters-Rotation noch über `budget` liegt; geräumt
+    wird dann mit Hysterese bis unter ZIEL_FAKTOR·budget (s. oben).
 
     Rotiert wird je Schritt die ÄLTESTE verbleibende DATIERTE Karte (Tie-Break bei
     gleichem Datum: die im Dokument am weitesten unten stehende — in der
@@ -154,12 +162,17 @@ def budget_erweitern(karten, index_datum, rotate_idx, kopf, schwanz, budget):
     Deterministisch: gleiche Eingabe → gleiche Auswahl, keine Heuristik.
     """
     rotate_idx = set(rotate_idx)
+    # Ziel greift erst, wenn das Budget WIRKLICH gerissen ist — unter der Marke
+    # wird nie vorsorglich rotiert (Verhalten unverändert konservativ).
+    rest0 = [i for i in range(len(karten)) if i not in rotate_idx]
+    text0 = anker_einfuegen(kopf, [karten[i] for i in rest0]) + schwanz
+    ziel = budget if len(text0.encode("utf-8")) <= budget else int(budget * ZIEL_FAKTOR)
     while True:
         rest_idx = [i for i in range(len(karten)) if i not in rotate_idx]
         if len(rest_idx) <= MINDEST_BEHALT:
             break
         text = anker_einfuegen(kopf, [karten[i] for i in rest_idx]) + schwanz
-        if len(text.encode("utf-8")) <= budget:
+        if len(text.encode("utf-8")) <= ziel:
             break
         kandidaten = [(d, i) for i, d in index_datum if d is not None and i not in rotate_idx]
         if not kandidaten:

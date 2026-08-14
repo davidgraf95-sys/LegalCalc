@@ -122,3 +122,18 @@ for (const q of QUELLEN) {
   }
 }
 console.log(`\n${total} eindeutige Zitate geprüft · ${fehler} Befunde`);
+
+// §6.7-Abbruchpfad (QS-PLAN-EINFACH 14.8.2026): Bis hierher konnte dieses Tor
+// nie scheitern — es zählte Befunde und endete mit Exit 0; ohne Caches meldete
+// es «0 Befunde», obwohl es NICHTS geprüft hatte. Ein Tor, das nicht scheitern
+// kann, ist gefährlicher als keines. Rot bei echten Befunden UND wenn kein
+// einziger Cache lesbar war (Caches besorgt `check:caches`, das in check:netz
+// davor läuft).
+if (Object.keys(html).length === 0) {
+  console.error('check:zitate ROT: kein einziger Gesetzes-Cache lesbar — es wurde nichts geprüft (erst `npm run check:caches`).');
+  process.exit(1);
+}
+if (fehler > 0) {
+  console.error(`check:zitate ROT: ${fehler} Zitat-Befunde (Liste oben).`);
+  process.exit(1);
+}

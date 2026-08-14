@@ -4,7 +4,11 @@
 // welche konsolidierten Rechner keine szenarien? Auffindbarkeits-Lücken sind
 // Daten-Lücken (§5: alles in startseiteConfig.ts).
 //
-// Aufruf: npx vite-node scripts/katalog-inventur.ts
+// Seit 14.8.2026 (QS-PLAN-EINFACH) heisst das Skript `report:inventur` und
+// steht NICHT mehr in check:seriell/CI: es hat bewusst keinen Abbruchpfad —
+// als `check:*` in der Pflichtkette war es ein Tor, das nie scheitern kann (§6.7).
+//
+// Aufruf: npm run report:inventur
 
 import { ALLE_KARTEN, istVerfuegbar } from '../src/lib/startseiteConfig';
 
