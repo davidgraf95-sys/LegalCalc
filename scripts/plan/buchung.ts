@@ -84,8 +84,8 @@ export function parseStatusTrailer(wert: string): { status: Status; blocker: str
 // Anführungszeichen …) haben in einer Schritt-ID nichts verloren und werden
 // hart abgewiesen, BEVOR irgendetwas weiterläuft. Echte IDs: `W2·10-UI-NAV`,
 // `QS-GP`; echte Tokens: `vps-bestellung-david`, `pr-451`.
-const ID_RE = /^[A-Za-z0-9·.\-]+$/;
-const TOKEN_RE = /^[a-z0-9\-]+$/;
+const ID_RE = /^[A-Za-z0-9·.-]+$/;
+const TOKEN_RE = /^[a-z0-9-]+$/;
 
 export function parseBuchung(idTrailer: string, statusTrailer: string): Buchung {
   const id = idTrailer.trim();
