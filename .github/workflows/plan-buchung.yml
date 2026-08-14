@@ -22,8 +22,10 @@
 # Squash-Commit — z. B. weil GitHub Auto-Merge bei mehreren Commits den
 # Standard-Squash-Text nimmt (nur verkettete Subjects, kein Body) — wird die
 # Buchungs-Absicht ersatzweise aus dem PR-BODY gelesen (PR-Nummer aus der
-# Commit-Subject-Endung "(#N)"). Details bei den Schritten "PR-Nummer …" und
-# "Trailer aus PR-Body lesen (Fallback)" unten.
+# Commit-Subject-Endung "(#N)", danach verifiziert: state MERGED UND
+# mergeCommit.oid == dieser Commit, sonst still kein Fallback — B1-2).
+# Details bei den Schritten "PR-Nummer …", "PR gegen den Squash-Commit
+# verifizieren …" und "Trailer aus PR-Body lesen (Fallback)" unten.
 #
 # SELBST-TRIGGER-GUARD: der von diesem Workflow erzeugte Buchungs-Commit trägt
 # selbst keinen `Roadmap-Status`-Trailer (siehe Commit-Message unten), der
@@ -111,6 +113,42 @@ jobs:
             echo "Kein '(#N)'-Suffix im Commit-Subject — kein PR-Body-Fallback möglich."
           fi
 
+      # AUFLAGE B1-2 (Gegenprüfung 14.8.2026): "(#N)" am Commit-Subject-Ende
+      # ist NICHT zwingend ein PR — GitHub hängt dieselbe Endung auch bei
+      # Issue-Bezügen an, und selbst bei einer echten PR-Nummer könnte #N
+      # inzwischen ein ANDERER, späterer Merge sein. Vor dem Body-Lesen wird
+      # darum verifiziert, dass #N wirklich der PR ist, dessen Squash-Merge
+      # GENAU DIESEN Commit erzeugt hat: `state` MERGED und `mergeCommit.oid`
+      # gleich dem aktuellen Commit (`$GITHUB_SHA` — von Actions automatisch
+      # gesetzter Runner-Env-Var, kein `${{ }}`-Kontextausdruck nötig). JEDER
+      # Fehlschlag bleibt STILL: falsche/fremde Nummer, kein PR (Issue),
+      # gh-API-Fehler — das ist der weit häufigere Normalfall (ein Commit ohne
+      # zugehörigen, hierher passenden PR), kein Fehlerzustand des Jobs.
+      - name: PR gegen den Squash-Commit verifizieren (Fallback)
+        id: pr_verify
+        if: steps.trailer.outputs.vorhanden == 'false' && steps.pr.outputs.nummer != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMMER: ${{ steps.pr.outputs.nummer }}
+        run: |
+          set -uo pipefail
+          AUSGABE=$(gh pr view "$PR_NUMMER" --json state,mergeCommit \
+            --jq '(.state // "") + "|" + (.mergeCommit.oid // "")' 2>&1)
+          if [ $? -ne 0 ]; then
+            echo "gh pr view #${PR_NUMMER} fehlgeschlagen (z. B. Issue statt PR, kein Zugriff) — kein Fallback: ${AUSGABE}"
+            echo "bestaetigt=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          STATE="${AUSGABE%%|*}"
+          OID="${AUSGABE#*|}"
+          if [ "$STATE" = "MERGED" ] && [ -n "$OID" ] && [ "$OID" = "$GITHUB_SHA" ]; then
+            echo "bestaetigt=true" >> "$GITHUB_OUTPUT"
+            echo "PR #${PR_NUMMER} verifiziert: state=MERGED, mergeCommit=${OID}."
+          else
+            echo "PR #${PR_NUMMER} nicht bestätigt (state=${STATE:-leer}, mergeCommit=${OID:-leer}, erwartet=${GITHUB_SHA}) — kein Fallback."
+            echo "bestaetigt=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # PR-Body ist FREMDTEXT (Daten, nie Code, §14.7 Dispatch-Klausel): er
       # fliesst nur über STDIN in buchung.ts und von dort — wie der
       # Commit-Trailer-Pfad oben — NUR über `env:` in die Folge-Schritte, nie
@@ -124,7 +162,7 @@ jobs:
       # §6.7).
       - name: Trailer aus PR-Body lesen (Fallback)
         id: buchung_fallback
-        if: steps.trailer.outputs.vorhanden == 'false' && steps.pr.outputs.nummer != ''
+        if: steps.trailer.outputs.vorhanden == 'false' && steps.pr_verify.outputs.bestaetigt == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMMER: ${{ steps.pr.outputs.nummer }}

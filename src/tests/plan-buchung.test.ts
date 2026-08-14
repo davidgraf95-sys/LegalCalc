@@ -108,6 +108,73 @@ describe('extractTrailerBlock', () => {
     const body = 'Roadmap: ALT\nRoadmap: NEU\nRoadmap-Status: ready';
     expect(extractTrailerBlock(body)).toEqual({ Roadmap: 'NEU', 'Roadmap-Status': 'ready' });
   });
+
+  // Gegenprüfungs-Auflage B1-1 (14.8.2026): Haus-PR-Bodies enden auf den
+  // Werkzeug-Footer — ohne Footer-Skip hätte der Anlass-PR #491 NIE gebucht.
+  describe('Footer-Skip (B1-1)', () => {
+    it('bucht aus einem REALEN Haus-Body: Trailer-Absatz gefolgt vom 🤖-Footer-Absatz', () => {
+      const body =
+        '## Inhalt\n\n' +
+        'Vier Punkte umgesetzt, siehe Details oben.\n\n' +
+        'Roadmap: QS-EFFIZIENZ\nRoadmap-Status: done\n\n' +
+        '🤖 Generated with [Claude Code](https://claude.com/claude-code)';
+      expect(extractTrailerBlock(body)).toEqual({ Roadmap: 'QS-EFFIZIENZ', 'Roadmap-Status': 'done' });
+    });
+
+    it('überspringt eine "---"-Trennlinie VOR dem Footer ebenfalls', () => {
+      const body =
+        'Text.\n\nRoadmap: QS-EFFIZIENZ\nRoadmap-Status: ready\n\n---\n\n' +
+        '🤖 Generated with [Claude Code](https://claude.com/claude-code)';
+      expect(extractTrailerBlock(body)).toEqual({ Roadmap: 'QS-EFFIZIENZ', 'Roadmap-Status': 'ready' });
+    });
+
+    it('Footer-only-Body (keine Buchungs-Absicht irgendwo) -> still, leeres Objekt', () => {
+      const body = 'Beschreibung ohne jede Trailer-Absicht.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)';
+      expect(extractTrailerBlock(body)).toEqual({});
+      expect(extractTrailerBlock('🤖 Generated with [Claude Code](https://claude.com/claude-code)')).toEqual({});
+    });
+
+    it('Absatz direkt vor dem Footer ist kein vollständiger Trailer-Block -> kein Treffer (kein Weitersuchen)', () => {
+      const body =
+        'Roadmap: QS-EFFIZIENZ\nRoadmap-Status: done\n\n' + // echter Trailer weiter vorn — zählt NICHT
+        'Ein Nachsatz, der die Absicht nur erwähnt.\n\n' +
+        '🤖 Generated with [Claude Code](https://claude.com/claude-code)';
+      expect(extractTrailerBlock(body)).toEqual({});
+    });
+  });
+
+  // Gegenprüfungs-Auflage B1-3 (14.8.2026): eingerückte Zeilen und Zeilen in
+  // ``` -Fences zählen nie als Trailer-Zeilen.
+  describe('Einrückung und Codeblöcke zählen nie als Trailer (B1-3)', () => {
+    it('Sonden-Body mit 4-Leerzeichen-Einrückung bucht NICHT', () => {
+      const body = 'Beispiel-Doku:\n\n    Roadmap: X\n    Roadmap-Status: done';
+      expect(extractTrailerBlock(body)).toEqual({});
+    });
+
+    it('Trailer-Zeilen innerhalb eines ``` -Fences zählen nicht', () => {
+      const body = 'Beispiel:\n\n```\nRoadmap: X\nRoadmap-Status: done\n```';
+      expect(extractTrailerBlock(body)).toEqual({});
+    });
+
+    it('unindentierter echter Trailer-Block danach bucht weiterhin', () => {
+      const body = '```\nBeispiel-Code\n```\n\nRoadmap: QS-EFFIZIENZ\nRoadmap-Status: done';
+      expect(extractTrailerBlock(body)).toEqual({ Roadmap: 'QS-EFFIZIENZ', 'Roadmap-Status': 'done' });
+    });
+  });
+
+  it('unbekannte Keys (nicht Roadmap/Roadmap-Status/Gegenpruefung) machen den Absatz ungültig', () => {
+    const body = 'Text.\n\nRoadmap: QS-EFFIZIENZ\nRoadmap-Status: done\nSonstwas: X';
+    expect(extractTrailerBlock(body)).toEqual({});
+  });
+
+  it('akzeptiert den dritten Haus-Key "Gegenpruefung" im selben Block', () => {
+    const body = 'Text.\n\nRoadmap: W2·12-HYGIENE\nRoadmap-Status: done\nGegenpruefung: bestanden';
+    expect(extractTrailerBlock(body)).toEqual({
+      Roadmap: 'W2·12-HYGIENE',
+      'Roadmap-Status': 'done',
+      Gegenpruefung: 'bestanden',
+    });
+  });
 });
 
 describe('parseBuchungAusPrBody', () => {
