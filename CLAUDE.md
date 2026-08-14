@@ -119,13 +119,11 @@ weil jede neue Vorlage die Regel real konsumiert.)*
 
 ## §11 Erforschtes Wissen wird geordnet abgelegt
 
-Jede Recherche mündet in eine Übersichtsliste in `bibliothek/` mit Eintrag im
-dortigen `INDEX.md` — nie nur in Chat-Antworten oder Commit-Messages. Je
-Eintrag: Quelle mit Stand · Regel deterministisch formuliert (Eingabe →
-Ausgabe) · Geltungsbereich und Ausnahmen · Pflegebedarf · Abnahme-Status.
-
-Erkenntnisse, die bestehenden Code korrigieren, werden zusätzlich am Fundort als
-Kommentar mit Quellenverweis verankert (§7).
+Jede Recherche mündet in `bibliothek/` mit `INDEX.md`-Eintrag (Quelle mit
+Stand · Regel deterministisch · Geltung/Ausnahmen · Pflegebedarf ·
+Abnahme-Status) — nie nur in Chat oder Commit-Message; Code-korrigierende
+Erkenntnisse zusätzlich am Fundort verankern (§7). *(Gestrafft 14.8.2026,
+Regelaudit QS-EFFIZIENZ — Inhalt unverändert, Wächter: `check:bibliothek`.)*
 
 ## §12 Parallel-Sessions nur isoliert → Skill `landung`
 

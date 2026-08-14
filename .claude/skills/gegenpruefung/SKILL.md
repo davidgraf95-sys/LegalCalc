@@ -8,7 +8,9 @@ description: Use when the LexMetrik gate `check:gegenpruefung` is red, or before
 ## Zweck
 
 Die teuersten LexMetrik-Bugs (Tabellen-Drop, Footnote-Leak, `bis`/`ter`-Verlust,
-falsche Frist/Quote) sind an **Session-Blindheit** entstanden: der Autor prüft
+falsche Frist/Quote — Vorfallswelle Juni/Juli 2026, prominentester Fall PR #309
+am 20.7.2026: elf erfundene Amtsträger:innen ~1 h auf Prod; Tor-Geburtsbeweis
+`f87921e53`) sind an **Session-Blindheit** entstanden: der Autor prüft
 seinen eigenen Output und übersieht dieselbe Lücke zweimal. Dieser Skill ist der
 **unabhängige Zweitdurchgang**. Auftrag ist nicht «bestätigen», sondern
 **widerlegen** — den Output aktiv zu Fall bringen.
