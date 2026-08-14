@@ -106,7 +106,7 @@ vps-bestellung-david: E3-Serving + E4-UI hängen an einer VPS-Bestellung (David,
 richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE (20.7.2026): Filtern/Facette/Verlinkung sind FREI und gebaut (#309/#311); gesperrt bleiben allein RANKING und PROGNOSE. Nur deskriptiv; bewusste Freigabe Davids erforderlich (heikel: Standesrecht, Persönlichkeitsschutz, richterliche Unabhängigkeit)
 zeitreihe-5-snapshots: QS-AUTOPILOT-STUFE1 ist von David freigegeben (Entscheid 7.8.2026 «stufe 1 ja»), aber an die Mindestdatenlage gebunden: erst bauen, wenn messwerte/selbstopt-zeitreihe.json ≥ 5 Snapshots trägt (retro:17-Schwelle — darunter sind Vorschläge statistisch nicht belegbar). Prüfbar: npm run retro:17 meldet die Datenlage selbst
 david-freigabe-hooks-ausbau: QS-HOOKS-AUSBAU baut an Hooks/.claude/rules/CLAUDE.md — dieselbe für Sessions gesperrte Konfig-Fläche wie QS-ENTREG-KONFIG; Freigabe + Anwendung mit David. Grundlage: bibliothek/recherche/state-of-the-art-abgleich-2026-08-07.md
-david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organisation für die native Merge Queue (User-Konten haben keine); Infrastruktur-Entscheid mit ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets). Erst prüfen, ob QS-MERGE-AUTOZUG den BEHIND-Schmerz ausreichend dämpft (Entscheid David 7.8.2026: «B als Schritt, A parken»)
+david-entscheid-org-umzug: QS-ORG-UMZUG — Repo-Transfer in eine Gratis-Organisation für die native Merge Queue (User-Konten haben keine); Infrastruktur-Entscheid mit ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets). Erst prüfen, ob der Auto-Nachzug (Checklisten-Zeile unter QS-AUTOMATIK) den BEHIND-Schmerz ausreichend dämpft (Entscheid David 7.8.2026: «B als Schritt, A parken»)
 -->
 
 <!-- @david-fragen
@@ -132,14 +132,21 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   <!-- @meta id: LERNPHASE-AB · status: ready · blocker: null · dep: [] · kollision: [src/lib/startseiteConfig.ts, src/tests, scripts/gegenpruefung] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
   trägt sichtbaren ehrlichen Status + Stand; Golden-Abdeckung & Norm-Anker-Prüfung automatisieren.
   **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §1.
-- **Adversariale Gegenprüfung — Restkampagne** *(QS-GP, `[OF]`)* — offen ist Baustein d
-  <!-- @meta id: QS-GP · status: ready · blocker: null · dep: [] · kollision: [scripts/gegenpruefung, .claude/skills/gegenpruefung, bibliothek/register] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
-  (rückwirkende Kampagne, Stufen 2–3 + BGE-Korpus-Regenerierung).
+- **Adversariale Gegenprüfung — Restkampagne + Werkzeug-Härtungen** *(QS-GP, `[OF]`)* — offen ist
+  <!-- @meta id: QS-GP · status: ready · blocker: null · dep: [] · kollision: [scripts/gegenpruefung, .claude/skills/gegenpruefung, bibliothek/register, scripts/prerender.ts, scripts/git-setup.sh, scripts/check-gegenpruefung.ts, src/lib/rechtsprechung/besetzung, scripts/normtext/entscheide-schreiben.ts] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
+  Baustein d (rückwirkende Kampagne, Stufen 2–3 + BGE-Korpus-Regenerierung).
   **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §2.
+  - [ ] `check:prerender-golden` als Opt-in-Beweiswerkzeug (nicht im Pflicht-Gate) — der Seiten-Byte-Gleichheits-Beweis ist heute Handarbeit. §3.2.
+  - [ ] Verdikt-Prüfung vor dem Push (lokaler pre-push-Hook) — spart den 11-Minuten-CI-Umweg; reine Prüflogik, einmal rot zeigen (§6.7). §3.3.
+  - [ ] Vier Härtungen aus Gegenprüfungen: (a) fedlex-Extraktionsschicht Risiko-klassieren; (b) `leakErkannt` ohne Konsument; (c) `trenneInterneTitel` unterläuft `PARTEI_RE`; (d) `check-merge-schutz.ts` diffs ohne `-z`/`--no-renames`. **b/c Risikopfad ⇒ Gegenprüfung**; je Punkt Rot-Beweis (§6.7). §3.6.
 - **Automatik-Gesundheit** *(QS-AUTOMATIK, `[OF]`)*. Läuft unsere Automatik wirklich, und würde sie
-  <!-- @meta id: QS-AUTOMATIK · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, scripts/datenhaltung/check-turso-frische.ts, scripts/check-ci-laeufe.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-AUTOMATIK · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, scripts/datenhaltung/check-turso-frische.ts, scripts/check-ci-laeufe.ts, scripts/check-tor-paritaet.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   scheitern können? Offen: Turso-Wächter-Abdeckung + Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
+  - [ ] Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde — eine Stelle, die sagt, wie es den Wächtern geht. §3.1.
+  - [ ] **Der Wächter selbst ist seit 12.8. rot** (Lauf `31781300926`): Branch-Schutz-Nachzug stirbt unter `bash -e` an `HTTP 403`. Fix: Lesung als optional führen (Exit-Code abfangen, Urteil ohne sie fällen und ausweisen).
+  - [ ] Paritäts-Sonde: PR-Deckung ≠ Wächter-Deckung — ein post-merge-Wächter kann keinen Merge verhindern. Einmal rot zeigen (§6.7). §3.5.
+  - [ ] Wächter zieht BEHIND-PRs mit scharfem Auto-Merge automatisch nach — seriell, max. 1 PR/Lauf, §6.7 einmal real. §3.1.
 - **SEO/A11y** *(SEO-A11Y-GOVERNANCE)*. A11y zahlt auf Bedienbarkeit ein → begleitendes Tor
   <!-- @meta id: SEO-A11Y · status: ready · blocker: null · dep: [] · kollision: [public/normtext/register.json, src/lib/seo.ts, scripts/prerender.ts, vercel.json] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
   (Tabellen-Semantik, Tastatur-e2e, hreflang). Reines SEO geparkt. **Bedingung der Gleichzeitigkeit:
@@ -163,8 +170,10 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   Rechtsinhalt (O-Reihe); keine Massnahme kürzt Beweis, Tor oder Prüfung.
   **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
 - **Basis-Ausbau — Fundament** *(QS-BASIS, `[OF]`)*. CI/lokal-Tor-Parität + offene B-Einheiten.
-  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, package.json] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, package.json, package-lock.json, knip.json] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
+  - [ ] Totcode-Meldung wird echtes Tor `check:tot` — blockierend bei NEUEN Meldungen (Basis: 1). Reine Prüflogik. §3.2.
+  - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted — Dependabot meldet 2 Verwundbarkeiten (1 hoch); Audit als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
 - [ ] **`QS-UI` — Oberflächen-Qualität app-weit** *(reines UI/Design, §13 · kontinuierlich)* —
   <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · kollision: [DESIGN-REGLEMENT.md, src/index.css, tailwind.config.js, scripts/check-farbwelt.ts, e2e/a11y.e2e.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
@@ -190,23 +199,8 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   <!-- @meta id: QS-E2E-STABIL · status: ready · blocker: null · dep: [] · kollision: [playwright.config.ts, e2e/a11y.e2e.ts, scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
 - [ ] **`QS-KORPUS-SCOPE` · scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — 23 amtliche Sektionen liegen ausserhalb des `div#annex`-Containers und fehlen im Snapshot. **Risikopfad** ⇒ Gegenprüfung; golden-Diff erwartet (neue amtliche Substanz). **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §19.
   <!-- @meta id: QS-KORPUS-SCOPE · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
-- [ ] **`QS-GP-PRERENDER` · `check:prerender-golden` als Opt-in-Beweiswerkzeug** — der Seiten-Byte-Gleichheits-Beweis ist heute Handarbeit; **nicht** im Pflicht-Gate. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.2.
-  <!-- @meta id: QS-GP-PRERENDER · status: ready · blocker: null · dep: [] · kollision: [scripts/prerender.ts, package.json] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
-- [ ] **`QS-GP-PREPUSH` · Verdikt-Prüfung vor dem Push (lokaler pre-push-Hook)** — spart den 11-Minuten-CI-Umweg für ein lokal in Sekunden prüfbares Verdikt. Reine Prüflogik; einmal rot zeigen (§6.7). **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.3.
-  <!-- @meta id: QS-GP-PREPUSH · status: ready · blocker: null · dep: [] · kollision: [scripts/git-setup.sh, scripts/check-gegenpruefung.ts] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
-- [ ] **`QS-GP-NACHBEFUNDE` · Vier Härtungen aus Gegenprüfungen** — (a) fedlex-Extraktionsschicht Risiko-klassieren; (b) `leakErkannt` ohne Konsument; (c) `trenneInterneTitel` unterläuft `PARTEI_RE`; (d) `check-merge-schutz.ts` diffs ohne `-z`/`--no-renames`. b/c **Risikopfad** ⇒ Gegenprüfung; je Punkt Rot-Beweis (§6.7). **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.6.
-  <!-- @meta id: QS-GP-NACHBEFUNDE · status: ready · blocker: null · dep: [] · kollision: [scripts/gegenpruefung/kern.ts, src/lib/rechtsprechung/besetzung, scripts/normtext/entscheide-schreiben.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
 - [ ] **`QS-KORPUS-RSPR-DATUM` · Entscheid-Datumsfehler im Rechtsprechungs-Register bereinigen** — `bge_151_II_475` trägt 1999 statt 2025; Datum gegen bger.ch verifizieren, in der Pipeline-Quelle korrigieren (nie im Projektions-JSON, §5), Register-Sweep nach weiteren Band/Jahr-Diskrepanzen, Projektion neu erzeugen. **Risikopfad** ⇒ Gegenprüfung. **Detail-Heimat:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md).
   <!-- @meta id: QS-KORPUS-RSPR-DATUM · status: ready · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
-- [ ] **`QS-AUTOMATIK-BERICHT` · Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde** — eine Stelle, die sagt, wie es den Wächtern geht, plus Sonde für längst gelandete Worktrees. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.1.
-  <!-- @meta id: QS-AUTOMATIK-BERICHT · status: ready · blocker: null · dep: [] · kollision: [scripts/check-ci-laeufe.ts, .github/workflows] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-  - [ ] **Der Wächter selbst ist seit 12.8. rot** (Fund 14.8.2026, Lauf `31781300926`): der Branch-Schutz-Nachzug stirbt unter `bash -e` an `HTTP 403`. Fix: die Lesung als optional führen (Exit-Code abfangen, Urteil ohne sie fällen und ausweisen) — ein Wächter darf nicht an einer Zusatzauskunft scheitern.
-- [ ] **`QS-BASIS-TOT` · Totcode-Meldung wird echtes Tor `check:tot`** — blockierend bei NEUEN Meldungen (Basis steht bei 1). Reine Prüflogik. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.2.
-  <!-- @meta id: QS-BASIS-TOT · status: ready · blocker: null · dep: [] · kollision: [knip.json, package.json] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-BASIS-DEPS` · Dependency-Frische: `npm audit` + Majors + knip-Unlisted** — Dependabot meldet 2 Verwundbarkeiten (1 hoch). Audit als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`** (npm 11 erzeugt CI-inkompatibles Lock). **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.3.
-  <!-- @meta id: QS-BASIS-DEPS · status: ready · blocker: null · dep: [] · kollision: [package.json, package-lock.json, knip.json] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-AUTOMATIK-PARITAET` · Paritäts-Sonde: PR-Deckung ≠ Wächter-Deckung** — ein post-merge-Wächter zählt heute als «gedeckt», kann aber keinen Merge verhindern. Einmal rot zeigen (§6.7). **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.5.
-  <!-- @meta id: QS-AUTOMATIK-PARITAET · status: ready · blocker: null · dep: [] · kollision: [scripts/check-tor-paritaet.ts, .github/workflows] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
 - [ ] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.1.
   <!-- @meta id: QS-TOK-DECKEL · status: ready · blocker: null · dep: [] · kollision: [archiv] · worktree: nein · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
 - [ ] **`QS-EXTQUELLEN` · Externe Quellen/APIs/Repos neu bewerten** *(Anordnung David 3.8.2026)* — fertig, wenn je Befund entschieden (EINE Frage an David: kommerzieller Betrieb? entscheidet über CC-BY-NC-SA-Quelle). **Befunde:** [externe-quellen-repos-2026-08-03.md](bibliothek/recherche/externe-quellen-repos-2026-08-03.md).
@@ -215,9 +209,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   <!-- @meta id: QS-HOOKS-AUSBAU · status: blocked · blocker: david-freigabe-hooks-ausbau · dep: [] · kollision: [.claude/hooks, CLAUDE.md] · worktree: nein · 26x: nein · groesse: M -->
 - [ ] **`QS-AUTOPILOT-STUFE1` · Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben)* — Cron fährt `retro:17`, eröffnet Entwurfs-PR, kein Auto-Merge. **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
   <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: blocked · blocker: zeitreihe-5-snapshots · dep: [] · kollision: [.github/workflows, scripts/plan] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
-- [ ] **`QS-MERGE-AUTOZUG` · Wächter zieht BEHIND-PRs mit scharfem Auto-Merge automatisch nach** — seriell, max. 1 PR/Lauf, §6.7 einmal real. **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §3.1.
-  <!-- @meta id: QS-MERGE-AUTOZUG · status: ready · blocker: null · dep: [] · kollision: [.github/workflows] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
-- [ ] **`QS-ORG-UMZUG` · Repo in eine GitHub-Organisation überführen (Merge Queue)** — erst wenn `QS-MERGE-AUTOZUG` nicht reicht. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+- [ ] **`QS-ORG-UMZUG` · Repo in eine GitHub-Organisation überführen (Merge Queue)** — erst wenn der Auto-Nachzug (Checklisten-Zeile unter `QS-AUTOMATIK`) nicht reicht. **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
   <!-- @meta id: QS-ORG-UMZUG · status: blocked · blocker: david-entscheid-org-umzug · dep: [] · kollision: [.github/workflows] · worktree: nein · 26x: nein · groesse: M -->
 - [~] **`QS-PLAN-EINFACH` · Plan-System vereinfachen: kürzere Roadmap, offenere Schritte, billigere Pflege** *(Auftrag David 14.8.2026, **bewusst offener Auftrag**)* — verbindlich ist nur «alles wird weniger kompliziert»; die Session entscheidet selbst. **Kern gelandet 14.8.2026** (tote Felder gestrichen · ROADMAP 100→78 KB, Schritte auf Zielform · Rotations-Hysterese · zwei Schein-Tore ehrlich). Ausgangslage, Zäune, offene David-Entscheide: **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) §Einfach.
   <!-- @meta id: QS-PLAN-EINFACH · status: wip · blocker: null · dep: [] · kollision: [ROADMAP.md, scripts/plan, .claude/skills, .claude/hooks, fahrplaene, archiv] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
@@ -291,22 +283,17 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   **Detail:** [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §8.
  
 - [ ] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
-  <!-- @meta id: W2·5h-GESETZ-UI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  <!-- @meta id: W2·5h-GESETZ-UI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
   der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
+  - [ ] **Gliederungslinie im Lesetext entfernen** *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
 - [ ] **5j-TABELLEN · Tabellen in Gesetzen lesbar machen** *(§14-Intake 20.7.2026 · Extraktion + Darstellung, `QS-GP`)* — **ENTPARKT 3.8.2026 (David).**
   <!-- @meta id: W2·5j-TABELLEN · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext/adapter-pdf.ts, src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`. Extraktion = Risikopfad ⇒ `QS-GP` + golden
   byte-gleich; Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1).
   **Grenze zu `W2·13-KANTONE-K7`** beachten (dort die PDF-Extraktion davor, hier die Darstellung).
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18.
-- [ ] **5k-LINIEN-RUECKBAU · Gliederungslinie im Lesetext entfernen** *(Entscheid David 13.8.2026:
-  V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik im Gesetz-Leser; Übersicht trägt künftig
-  allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht,
-  Linien-Kanon Teil A bleibt unberührt. **Detail:**
-  [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
-  <!-- @meta id: W2·5k-LINIEN-RUECKBAU · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** —
   **Risikopfad** (`scripts/normtext`) ⇒ Gegenprüfung; **golden-Re-Bless erwartet** (additiv).
   <!-- @meta id: W2·5l-NORMTEXT-B2 · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund, golden] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md -->
@@ -353,14 +340,13 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 - **Merkposten:** `register.json` steht bei 97 % des 780-KB-gzip-Deckels — wer es weiter belädt,
   reisst `check:perf-budget`; Lösung ist eine eigene Projektion, nie das Anheben der Schranke (§8).
 - [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — ✅ V1a/V1b/V1c gebaut 3./4.7.2026 (Chronik):
-  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, reine UI auf vorhandenen Daten (§3). Offen:
   V2 (E3-Serving) · V3 (E6a) — an den Datenstrang gekoppelt.
   **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
+  - [ ] «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen (`bezugAuswahl.ts`/`bezuegeLaden.ts`) — Code-Zusage ohne Deckung ist keine Option (§5/§8). §13.
   - [ ] **VZUI-SACHGEBIET · Sachgebiet-Facette an der Norm↔Entscheid-Kante** — deterministisch aus der amtlichen BGE-Bandnummer I–V (§2, keine Heuristik). Extraktion = Risikopfad ⇒ Gegenprüfung. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12.
     <!-- @meta id: W2·7-VZUI-SACHGEBIET · status: ready · blocker: null · dep: [] · kollision: [src/lib/verzahnung/facetten.ts, src/lib/rechtsprechung/bezuege.ts, scripts/normtext/bezuege-bauen.ts, src/pages/gesetz-leser/bezugAuswahl.ts, src/components/verzahnung/BezugFacettenWahl.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
-- [ ] **7-BEZUG-LADEN · «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen** — Code-Zusage ohne Deckung ist keine Option (§5/§8). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §13.
-  <!-- @meta id: W2·7-BEZUG-LADEN · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
 - [ ] **6b-MAT-FINMA · FINMA-Materialien prioritär + Verzahnung** *(§14-Intake 24.7.2026;
   <!-- @meta id: W2·6b-MAT-FINMA · status: ready · blocker: null · dep: [] · kollision: [scripts/materialien/**, public/materialien/**, src/lib/materialien] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
   Kontext Bewerbung David bei der FINMA)* — FINMA-Rundschreiben/Wegleitungen als nächste Quelle der
@@ -404,16 +390,14 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **PDF-Pfad liest Ziffern-Tarife falsch** *(19B-Nachtrag 13.8.)* — SG-3849-Wurzel: generisches «Art. N»-Muster greift auch in Querverweisen; Regel «Nr. XX.YY am Zeilenanfang» nötig. Verdacht auch ZH-243, SG-2935, AR-1203. §1-A.
   - [ ] **Fassungs-Drift PDF-erfasster Kantons-Snapshots unbemerkt** *(19B-Nachtrag 13.8.; §17-Wurzel-Fix)* — `fassungsToken` (PDF-Inhalts-Hash) ändert sich nicht bei neuer Portal-Fassung. SG-2808: hängt an Version 2808/2012, amtlich gilt 3863 (seit 1.7.). Nötig: Tor `current_version.id` ↔ Snapshot. §1-A.
 - [ ] **14-SIGNAL · Watchlist & Änderungs-Signale** *(Ideen-Intake 20.7.2026 · Infra/UI, kein Rechtsinhalt)*:
-  <!-- @meta id: W2·14-SIGNAL · status: ready · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json, public/rechtsprechung/register.json, src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  <!-- @meta id: W2·14-SIGNAL · status: ready · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json, public/rechtsprechung/register.json, scripts/rechtsprechung, src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
   «Sag mir, wenn sich Norm Y ändert / Gericht X neu entscheidet.» **Baut ausschliesslich auf vorhandenen
   Signalen** (Currency/Register/Wiedervorlage); Speicherung lokal, Werkzeuge bleiben zustandslos.
+  Dach-Schritt mit Checkliste, Bau-Reihenfolge B1 → B2 → GER (B2 liest B1-Artefakte).
   **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §16.
-  - [ ] **14-SIGNAL-B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister; **nur der VORWÄRTS-Fall** (`naechsteFassungAb`).
-    <!-- @meta id: W2·14-SIGNAL-B1 · status: ready · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, public/normtext/currency.json] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
-  - [ ] **14-SIGNAL-B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, beim Besuch gegen die Build-Artefakte geprüft. **Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.**
-    <!-- @meta id: W2·14-SIGNAL-B2 · status: ready · blocker: null · dep: [W2·14-SIGNAL-B1] · kollision: [src/lib/zuletztVerwendet.ts, src/pages/Startseite.tsx, src/pages/Einstellungen.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
-  - [ ] **14-SIGNAL-GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta über `register.json` je Gericht/Norm; **eigenes Verdikt**, Import-Kadenz sichtbar ausgeliefert (§8).
-    <!-- @meta id: W2·14-SIGNAL-GER · status: ready · blocker: null · dep: [W2·14-SIGNAL-B2] · kollision: [public/rechtsprechung/register.json, scripts/rechtsprechung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  - [ ] **B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister; nur der VORWÄRTS-Fall (`naechsteFassungAb`).
+  - [ ] **B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, gegen Build-Artefakte geprüft; Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.
+  - [ ] **GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta je Gericht/Norm; eigenes Verdikt, Import-Kadenz sichtbar (§8).
 - [ ] **15-CLS · Echter CLS-Defekt auf `/gesetze` (0.109 @8× CPU)** *(§14-Intake 20.7.2026 · **Produktfehler**, reine UI)*
   <!-- @meta id: W2·15-CLS · status: ready · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Gemessener Produktfehler auf `/gesetze`, reine UI.
@@ -492,20 +476,13 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §10
   (Vertrags-Varianten) + §11 (GmbH-Gründung) — W3·13 trägt beide Stränge.
 - [ ] **14 · Multi-Pane / Split-View** *(SPLIT-VIEW, Fundament-Umbau, eigener Worktree; Auftrag
-  <!-- @meta id: W3·14 · status: ready · blocker: null · dep: [] · kollision: [src/components/layout/Shell.tsx, src/components/layout/Topbar.tsx, src/App.tsx, tailwind.config.js] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
+  <!-- @meta id: W3·14 · status: ready · blocker: null · dep: [] · kollision: [src/components/layout, src/App.tsx, tailwind.config.js] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
   David 29.6.2026)*. 2–3 „Engines" nebeneinander **wie im Browser** → der **Verzahnungs-Burggraben
-  sichtbar** (Gesetz | Rechner | Begründungs-Absatz). **Erst Strang A** (Inhaltsbreite-Umschalter),
-  dann der Fundament-Umbau; eigener Worktree (§12).
+  sichtbar** (Gesetz | Rechner | Begründungs-Absatz). Dach-Schritt mit Checkliste; eigener Worktree (§12).
   **Detail:** [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1.
-  - [ ] **14-B3 · Scroll & Fokus pro Pane — Restposten** — pro-Pane-Scroll und Spy laufen; **offen**: Scroll-POSITIONS-Wiederherstellung (`App.tsx` noch window-basiert) + Tastatur-Pane-Wechsel. §STRANG B (B-3).
-    <!-- @meta id: W3·14-B3 · status: ready · blocker: null · dep: [] · kollision: [src/App.tsx, src/components/layout/usePaneLayout.ts, src/components/layout/Pane.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
-  - [ ] **+ Auftrags-Eingang 30.6.: Bündel S** — **S1** Breadcrumb-Navigation in der Pane · **S2**
-    <!-- @meta id: W3·14-S · status: ready · blocker: null · dep: [] · kollision: [src/components/layout] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
-    Tracker «alles schliessen». S1+S2 bündeln. Wortlaut: [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1.
-  - [ ] **Split-View a11y-Restpunkte** *(SPLIT-VIEW, `[OF]`, NIEDRIG — aus §9-Bug-Check 29.6.2026)* —
-    <!-- @meta id: W3·14-a11y · status: ready · blocker: null · dep: [] · kollision: [src/components/layout] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
-    3 verifizierte, bewusst **nach** dem Prod-Deploy zurückgestellte a11y-Kanten der Pane-Schicht.
-    **Detail:** [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1.
+  - [ ] **B3 · Scroll & Fokus pro Pane — Restposten** — offen: Scroll-POSITIONS-Wiederherstellung (`App.tsx` noch window-basiert) + Tastatur-Pane-Wechsel. §STRANG B (B-3).
+  - [ ] **Bündel S** — S1 Breadcrumb-Navigation in der Pane · S2 Tracker «alles schliessen»; gebündelt bauen. §1.
+  - [ ] **a11y-Restpunkte** — 3 verifizierte, bewusst zurückgestellte a11y-Kanten der Pane-Schicht. §1.
 - [ ] **15-RICHTER · Spruchkörper-Analytik** *(Ideen-Intake 20.7.2026 · **bewusst freigabe-pflichtig**)* —
   <!-- @meta id: W3·15-RICHTER · status: blocked · blocker: richter-analytik-gate · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung, src/pages/Rechtsprechung.tsx] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
   Ausschliesslich deskriptive Spruchkörper-Muster; **keine Erfolgsquoten, keine Prognose über
@@ -528,7 +505,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 - **Betriebs-Instrumente (später):** Sentry (erst bei Traffic; A5-Fehler-Link deckt jetzt) · CodeQL ·
   Claude-Code-PR-Action (bewusster Entscheid) — Detail + Verworfen-Liste:
   `BACKLOG-AUDIT-WERKZEUGE-2026-07.md`. *(`npm audit` 3.8.2026 aus dieser Liste genommen: die
-  Meldungs-Variante ist als `QS-BASIS-DEPS` in Arbeit; geparkt bleibt nur die Stopper-Variante.)*
+  Meldungs-Variante ist eine Checklisten-Zeile unter `QS-BASIS`; geparkt bleibt nur die Stopper-Variante.)*
 - **Abnahme-Warteschlange** (Haftungsrang: 1 Fristen → 2 Form-Gate-Vorlagen → 3 Beträge; aufgereiht,
   nicht gedrängt): BGER-RECHTSWEG (§7) · BEURKUNDUNGS-AUSBAU · NOTARIAT/LUECKEN (`geprüft`) ·
   GESETZESTEXT-POPUP-Snapshots · GRUNDLAGEN G2/B.
