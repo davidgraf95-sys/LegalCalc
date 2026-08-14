@@ -1,7 +1,7 @@
 {
   "erlassKey": "VVEA",
   "sr": "814.600",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -13,9 +13,8 @@
       "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
       "titelFr": "Ordonnance sur la limitation et l’élimination des déchets (Ordonnance sur les déchets, OLED)",
       "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/357/de",
-      "sha": "0a13600c2518f2cf4fca2e13223694de968ffc67590016b5b8387218c11f4618"
+      "sha": "a26acdfb4d03f263ec8e8eb1742eb5626d8cd6d62401e7f514c552370bb1f72b"
     },
     {
       "art": "aenderung",
@@ -246,5 +245,5 @@
       "sha": "f9564c812f55206e9b5359b7e6805fd2d7146a851145205a0831d68f1a53386c"
     }
   ],
-  "sha": "08855d8a136239542c0e61a90c9a422486a36528938148aa3f45a8b46f16a642"
+  "sha": "3ae0107d2f650e89a7b8ec0f0b930d061f4df7c4cbce230d7158de6a659645e6"
 }

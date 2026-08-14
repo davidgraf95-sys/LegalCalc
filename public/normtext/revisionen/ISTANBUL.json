@@ -1,7 +1,7 @@
 {
   "erlassKey": "ISTANBUL",
   "sr": "0.311.35",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -49,9 +49,10 @@
       "titelDe": "Übereinkommen des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention) (mit Anhang)",
       "titelFr": "Convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique (Convention d'Istanbul) (avec annexe)",
       "titelIt": "Convenzione del Consiglio d'Europa sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica (Convenzione di Istanbul) (con allegato)",
+      "botschaftKey": "BOTSCHAFT-2017-76",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/168/de",
-      "sha": "31dbe0f182f20f96ae0502d382cf12a5a3f6b7d90bb2ff425e5b14004cb26df2"
+      "sha": "192420e9a9ab3dd78d0e1ea46ef670571ad07d5b8dec311244a0abc3b5b0a98f"
     }
   ],
-  "sha": "354f1e3d235efe8e233413c4d639082cff1ee1601a736d127d44f14bad510648"
+  "sha": "a19c9211ebfef72b3e4900fa09e1a778b7890f9fd63d039cc2e4d7ddad98adf0"
 }
