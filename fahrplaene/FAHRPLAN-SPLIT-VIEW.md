@@ -26,6 +26,8 @@
 
 ---
 
+> Erledigt-/Stand-Abschnitte vom 14.8.2026 nach `archiv/FAHRPLAN-ERLEDIGT-ABSCHNITTE.md` verschoben (QS-PLAN-EINFACH).
+
 ## §0 · Zweck
 
 Detailquelle zu `W3·14`/`W3·14-B3` — zwei oder drei „Engines" nebeneinander wie
@@ -79,19 +81,6 @@ Strikt zustandslos: Panes speichern **nur Pfade**, nie Formular-/Falldaten
   EntscheidLeser-`dl`; ~10–15 Stellen). Kosmetik (`sm:px-`, `sm:text-`) bleibt am Viewport.
   CQ-2 (alle Grids) / CQ-3 (alle 450) bewusst **nicht** — Risiko/Nutzen.
 - **Dieser Container-Query-Schritt ist der eigentliche Hauptaufwand von B, nicht das Routing.**
-
----
-
-## STRANG A — Inhaltsbreite-Umschalter „kompakt / breit"  *(✅ FERTIG, Commit `fc5dbb3c`)*
-
-1. **`src/components/layout/useInhaltsbreite.ts`** (Vorlage `useSeitenleiste`): Zustand
-   `'kompakt'|'breit'`, localStorage `lexmetrik-inhaltsbreite`, typeof-window-Guard,
-   **Default `'kompakt'`** (= heute).
-2. **`Shell.tsx`**: Wrapper `breit ? 'max-w-screen-2xl' : 'max-w-content'`
-   (`mx-auto px-5 …` unverändert; `max-w-reading` NICHT anfassen).
-3. **`Topbar.tsx`**: segmentierter Schalter `[kompakt|breit]` neben dem Sidebar-Schalter;
-   `aria-pressed`, Tastatur, sichtbarer Fokus; ab `lg`, mobil aus.
-4. **Tore:** Default kompakt ⇒ Golden byte-gleich · `npm run gate` grün · visuell 2560px + mobil.
 
 ---
 

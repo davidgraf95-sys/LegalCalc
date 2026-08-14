@@ -14,6 +14,8 @@
 
 ---
 
+> Erledigt-/Stand-Abschnitte vom 14.8.2026 nach `archiv/FAHRPLAN-ERLEDIGT-ABSCHNITTE.md` verschoben (QS-PLAN-EINFACH).
+
 ## §0 · Verbindliche Prozess-Regeln (gelten für JEDE Einheit dieses Plans)
 
 1. **Vintage-Regel (Prod-Re-Audit vor jedem Schnitt).** Viele Befunde wurden gegen einen
@@ -116,87 +118,6 @@ präzisiert, nie autonom gekippt.
   Rechtsprechungs-Recherche stellt `rg` UND `q` wieder her. *(#42, #25, #43-Teil — macht die
   Zähler §8-ehrlich.)*
 
-### S2 · normQuery-Ausbau: BGE-Zitations-Direktsprung + Kompaktformen — M ✅ (11.7.2026, `feat/uinav-s2-s3`)
-> **Gebaut:** `bgeQuery.ts` (deterministischer BGE-Parser + Bestands-Lookup über `bgeReferenz`, K10) → interner Sprung wenn im Bestand, sonst §8-ehrliche «nicht im Bestand»-Zeile + amtlicher search.bger.ch-CLIR-Permalink. Kompaktform «or257d» (Ambiguität «ArGV1» gewahrt) + FR/IT-Aliasse CO/CC/CP/CPC/LP. Unit-Tests inkl. Negativfälle; norm-sprung.e2e um BGE erweitert (A9-DoD grün).
-- **Kern:** deterministischer BGE-Parser (`BGE?\s*\d+\s+[IVX]+\s+\d+`, auch ohne Präfix
-  «152 II 19») als sprungGruppe-Analogon **vor** allen Gruppen; **§8-Kernstück:** bei
-  Nichtbestand ehrliche Zeile «BGE 145 III 63 ist nicht im Bestand» + amtlicher Link
-  (bger.ch) statt stillem Rauschen · `or257d`-Kompaktform (Token-Split an der
-  Kürzel/Ziffer-Grenze; **Ambiguitäts-Vorsicht:** Kürzel mit Ziffer wie «ArGV 1») ·
-  **FR/IT-Kürzel-Aliasse** (CO→OR, CC→ZGB, CP→StGB, CPC→ZPO, LP→SchKG — billigster
-  Romandie-Hebel, Zusatzbefund der Praxis-Linse).
-- **Flächen:** `src/lib/suche/normQuery.ts`, `useUniversalSuche.ts`, `universalSuche.ts`.
-- **Prüfpunkte:** e2e `norm-sprung.e2e.ts`-Kontrakt nachziehen; `universalSuche.test.ts`
-  (A6-Rangfolge) bleibt grün; «BGE 152 I 65» = erste Zeile «Direkt öffnen ★». *(#21+#39
-  gemergt, #46, Z3.)*
-
-### S3 · Dropdown-Ehrlichkeit & Robustheit — M ✅ (11.7.2026, `feat/uinav-s2-s3`)
-> **Gebaut:** Enter-Puffer (#52), «Meinten Sie …?» (#44, `vorschlag.ts` Levenshtein §2), §8-Zähler «mindestens N …» (#5) + Mindesthöhen-Platzhalter (#48), Snippet zweizeilig + `<mark>` + redundanter Chip mobil aus (#56), **E1** Korpus-Fusszeile + neue Seite `/abdeckung` «Was ist drin» (aus Registern, K10). E2-Degradieren per Code verifiziert.
-- **Kern:** Trefferzähler erst final bzw. «10+ …» solange Sektionen laden *(#5)* ·
-  Mindesthöhen-Platzhalter für ladende Gruppen statt Layout-Springen (§15.2) *(#48)* ·
-  **Enter-Puffer** während der Ladephase (pending-Flag; mobil trifft die tote Suchen-Taste
-  JEDEN Nutzer) *(#52)* · deterministische «Meinten Sie …?»-Zeile (Levenshtein gegen
-  `such-vokabular.json` + Erlass-Kürzel + Katalog-Titel; kein LLM, §2) *(#44)* ·
-  Snippet-Politur mobil: redundanter Typ-Chip weg, zweizeiliges Snippet mit Highlight *(#56)* ·
-  **E1 Korpus-Offenlegung (§8, hoch):** eine Fusszeile «Durchsucht: N Erlasse im Volltext ·
-  342 BGE · kantonale Erlasse: nur Titel» + Link auf eine Abdeckungsseite («Was ist drin»,
-  aus Registern generiert — deckt auch den Kantons-/Rechtsprechungs-Blindflug ab).
-- **Flächen:** `src/components/suche/SuchResultate.tsx`, `useUniversalSuche.ts`,
-  `src/lib/suche/vokabular.ts`, `src/data/such-vokabular.json`.
-- **Hinweis:** Fehlerzustand der Online-Gruppe (E2 der Treue-Linse) ist laut E2-Anbindung
-  **bereits gebaut** (ehrliches Degradieren 503/Netz/Timeout/200-leer) — nur verifizieren.
-- **Prüfpunkte:** «Verjärung» zeigt «Meinten Sie Verjährung?»; kein sichtbarer Treffer springt
-  beim Einwachsen; Enter nach 0,5 s landet richtig. *(#5, #44, #48, #52, #56, E1, E2-Verify.)*
-
-### S4 · Gesetzestext-Ranking bei Alltagsbegriffen — M–L ✅ (12.7.2026, `feat/uinav-s4-s5`)
-> **Gebaut (Opus).** FlexSearch liefert nur noch den Recall; die Reihenfolge bestimmt
-> eine reine, deterministische Relevanz-Schicht `src/lib/suche/artikelRanking.ts` (§2). Der
-> Such-Index bekommt drei Felder aus dem bestehenden `struktur/bund`-Sidecar (K10, KEIN
-> Zweit-Index): m=primäre Marginalie (Hauptthema), n=nachrangige Marginalie, g=Gliederungs-
-> Titel. Drei topische Stufen (Hauptthema → Nebenerwähnung → Text), innerhalb einer Stufe
-> Kernerlass ↑ + Artikelnummer ↑ (definitorischer Eröffnungsartikel zuerst). **Query-Testset
-> = Gate** (`src/tests/suche/rankingTestset.test.ts`, gegen den echten Bund-Korpus, Vorher/
-> Nachher-Metrik + «nie schlechter als roh»): «Miete»→OR 253 (— → 1), «Verjährung»→OR 60/127
-> (— → 1/3), «Kündigung»→OR 271 (26 → 1), «Werkvertrag»→OR 363 (2 → 1). Synonyme tragen
-> Recall+Textfrequenz, nicht die topische Ordnung. Golden byte-gleich, gate:schnell grün.
-- **Kern:** Relevanz-Score im Artikel-Volltext-Index: Boost für Marginalie/Sachüberschrift +
-  Termfrequenz + **kuratierte Kernerlass-Prioritätsliste** (klein halten: OR/ZGB/StGB/ZPO/BV/
-  SchKG; im Code dokumentiert-begründet, kein Schein-Objektivität) + `such-vokabular.json` als
-  Synonym-/Einstiegsschicht («Miete» → OR 8. Titel).
-- **Auflage (repo-Linse):** A6 dokumentiert die gruppeninterne Sortierung als Kontrakt —
-  Ranking-Boost ist eine **deklarierte fachliche Änderung** (Tests nachziehen, §6.3);
-  **Query-Testset** («Miete», «Verjährung», «Kündigung», «Kalender», «BGE 152 I 65») als
-  Regressions-Anker VOR dem Umbau festschreiben.
-- **Flächen:** `src/lib/suche/artikelVolltext.ts`, `src/data/such-vokabular.json`.
-- **Prüfpunkte:** «Miete» zeigt OR 253 ff. in den Top-Treffern; «Verjährung» OR 127/134 vor
-  IPRG/MStG. *(#40 — schwerster Einzelbefund.)*
-
-### S5 · /suche-Ergebnisseite (+ Facetten Etappe 2) — L ✅ (12.7.2026, `feat/uinav-s4-s5`)
-> **David-Gate AUFGEHOBEN** (David 11.7. im Chat: «du hast bei allem was ich entscheiden
-> muss selbst die wahl» → Orchestrator-Entscheid: bauen). **Gebaut (Opus).** Neue Route
-> `/suche?q=` (prerenderte Shell via `seo.ts`, `ERWARTETE_ROUTEN` 62→63; client-gefüllte
-> Treffer) zeigt alle Gruppen ungekappt — bes. die Gesetzestext-Gruppe (34/40 Treffer waren
-> im Dropdown strukturell unerreichbar, §8). Additiv zum A5/A6-Dropdown, **A5-Enter-Semantik
-> unberührt** (kein Palette-Revival). `artikelGruppe` bekommt endlich `mehrHref` (/suche?q=);
-> `useUniversalSuche(q, {artikelLimit, kappung})` — Default = Dropdown unverändert.
-> Inhaltstyp-Facette (Etappe 2, ehrlich+lokal; Masse-Counts folgen mit E3, §8),
-> role=group-Landmarken (`sektionsRollen`), Deep-Link `?q=` stabil, CLS über festen
-> Kopf/Feld. e2e (`suche-seite.e2e.ts`) + a11y-Prüfpunkt grün. **O1-«Suchanfragen-Verlauf»
-> hängt laut Plan an O1** (eigene Baueinheit), NICHT an S5 → hier nicht mitgebaut; der
-> Landeplatz existiert nun.
-- **Kern:** `/suche?q=`-Route (heute 404, `routesManifest.ts`): alle Gruppen ungekappt,
-  `artikelGruppe` bekommt endlich ein `mehrHref`-Ziel (heute sind 34/40 Treffer strukturell
-  unerreichbar — §8-relevant), Dropdown bleibt Schnellzugriff und verlinkt «alle 40 →»;
-  Enter ohne Auswahl → `/suche?q=`. **Etappe 2:** Facettenspalte (Inhaltstyp/Ebene/Kanton
-  mit Counts; entscheidsuche.ch-Muster) — Ebene-1-Facetten aus lokalen Manifesten, Masse-
-  Counts erst mit E3-Serving.
-- **Warum David-Go:** A5/A6 haben das Dropdown-Modell gerade fixiert — /suche als **additive**
-  Zielseite framen (kein Palette-Revival), kurzes Ja einholen.
-- **Flächen:** `src/routesManifest.ts`, neue `src/pages/Suche.tsx`, `universalSuche.ts`.
-- **Prüfpunkte:** Zähler = erreichbare Treffer (Ehrlichkeit); Deep-Link/Bookmark einer
-  Recherche funktioniert; Gesetzestext-Sektion im Dropdown auf Top-5 + «alle N →» gekappt.
-  *(#41, #71 eingefaltet, #48-Zugang, #52-Langfrist, #20/#43-Konsolidierung, #1-Kappungs-Teil.)*
-
 ### S6 · Mobiler Such-Fokusmodus — S–M
 - **Kern:** Feld expandiert beim Fokus über die volle Headerbreite (Logo/Theme temporär weg,
   ✕ zum Verlassen) · Input-`font-size` ≥16 px nur mobil (heute `text-body-s` 14 px ⇒
@@ -210,21 +131,6 @@ präzisiert, nie autonom gekippt.
 ---
 
 ## §3 · P2 — Verzahnung Norm ↔ Rechtsprechung ↔ Werkzeug (der Burggraben-Anschluss)
-
-### V1 · Artikel↔Werkzeug-Map (beide Richtungen, EINE Datenstruktur) — M ✅ (11.7.2026, Branch `feat/uinav-v1`)
-- **Gebaut:** artikel-scharfe `ARTIKEL_WERKZEUGE`-Map in `normtext/werkzeuge.ts` (EINE Datenstruktur, §5) mit Artikel-Bereichen (`von`/`bis`, Sub-Artikel 335a ⊂ 335) + fachlichem **Norm-Beleg je Kante** (§7); 60 Kanten über 10 Erlasse, Zweifelsfälle (13. ML, Schadenszins, Werkvertrags-Gewährleistung, AIG-Fristen) bewusst ausgelassen + im Code ausgewiesen (§8). **Beide Richtungen:** (a) Entscheid — `werkzeugeFuerZitate()` löst die zitierten Norm-Strings artikelscharf auf → Rausch-Filter (BGE 152 I 65: 7 grobe Werkzeuge inkl. Erbrecht/Vorsorge → **0**, da Art. 448 ZGB = Erwachsenenschutz, Art. 321 StGB = Berufsgeheimnis); (b) Gesetz-Reader — neue KontextPanel-Gruppe «Werkzeuge zu einzelnen Artikeln» (Art. 127–142 OR → Verjährung), ersetzt dort die grobe Erlass-Liste. Konsumenten: `KontextPanel.tsx`, `EntscheidLeser.tsx` (`artikelZitate`-Prop), `kontext.ts`. Golden `IDENTISCH` (209, alles runtime); tsc/lint/3653 Unit-Tests grün (8 neue Map-Tests); Gegenprüfung Opus (Anker gegen Fedlex). Trailer `Roadmap: W2·10-UI-NAV`.
-- **Kern (Spec):** `ERLASS_WERKZEUGE` (`normtext/werkzeuge.ts`) ist deklariert «Erlass-granular» —
-  daher ZGB→Erbrecht-Rauschen unter BGE 152 I 65 UND fehlender Rechner-Hinweis bei OR 127.
-  Bau: **artikel-scharfe Map** (Artikel-Ranges: Art. 448 ZGB ≠ Erbrecht) + Relevanzschwelle
-  mit **Ausblenden unter Schwelle** (lieber 1–2 treffende Werkzeuge als 7 grobe) — gespeist
-  aus der Rechner-Registry (behauptete `calc.normen`-Invertierung **zuerst empirisch
-  erheben**). Konsumenten: «Passende Werkzeuge» am Entscheid *(#28)* + neue Zeile «Werkzeuge
-  zu diesem Artikel» im KontextPanel *(#38; Erstschritt Top-Artikel Art. 60/67/127 ff. OR,
-  Art. 91–94 ZPO)*.
-- **Flächen:** `src/lib/normtext/werkzeuge.ts`, `src/components/kontext/KontextPanel.tsx:591`,
-  `EntscheidVerzahnung.tsx`. U-VERWEIS-Geist, aber **eigener neuer Schnitt** (A7/A13 sind gebaut).
-- **Prüfpunkte:** BGE 152 I 65 zeigt 0–2 passende Werkzeuge (kein Erbrecht); OR Art. 127
-  zeigt den Verjährungs-Rechner. *(#28+#38 gemergt — einer der 3 wertvollsten Befunde.)*
 
 ### V2 · Hover-Preview am bestehenden NormPopover — S–M
 - **Kern:** Klick-Popover MIT Wortlaut + ⧉-Split ist gebaut (U-VERWEIS/VZUI). Delta = nur der
@@ -344,46 +250,6 @@ präzisiert, nie autonom gekippt.
 ---
 
 ## §5 · P3b — Verlauf-Initiative (EINE Baueinheit, EINE Datenquelle)
-
-### O1 · Lokaler Verlauf & Wiedereinstieg — M ✅ (11.7.2026, `feat/uinav-o1-verlauf`)
-> **Gebaut (Opus):** (1) Tracking auf **alle Inhaltstypen** — Materialien ergänzt
-> (Gesetz/Entscheid waren im Vintage-Re-Audit bereits gebaut, `INHALT_ITEM`), plus
-> ein `typ`-Diskriminator je Eintrag (Typ-Icon) mit Alt-Eintrags-Migration. (2)
-> **⌘K-/Fokus-Leerzustand** der Kopf-Suche (`SucheLeerzustand`): Zuletzt-Liste (bis 5)
-> + 5 kuratierte Rubrik-Einstiege, synchron/CLS-frei (nur auf Fokus → keine
-> Prerender-Divergenz). (3) **Topbar-«Verlauf»** (`VerlaufUebersicht`): Uhr-Trigger
-> + Dialog-Flyout, chronologisch heute/gestern/früher, Typ-Icons, §8-Fusszeile «Nur
-> auf diesem Gerät» + «Verlauf leeren». (4) Startseiten-Chips speisen sich
-> unverändert aus derselben Quelle (§5, EINE Store). Reaktiver `useZuletzt`-Hook
-> (§15.2: Initialstate auf Server-[leer] gepinnt, Sync nach Mount via `ZULETZT_EVENT`
-> + `storage`). Store-Kappung 6→12 (Topbar-Verlauf, deklarierte Änderung §6.3).
-> Tore grün (tsc · vitest 3764 · golden 209 byte-gleich · lint · gegenpruefung n/a);
-> neue e2e `verlauf-o1` (Leerzustand-Recents + Topbar-Verlauf), norm-sprung/a11y/smoke
-> bleiben grün (A9-DoD). **Fremd-vorbestehend rot** (unberührt vom UI-Diff):
-> `check:p-klassen` + `check:vollstaendigkeit` (Normtext-Daten).
-> **Ausgelassen (deklariert):** **Suchanfragen-Verlauf** — der EINE Store ist
-> navigations-/route-keyed (§5), Query-Historie ist ein anderer Belang, und ihr
-> natürlicher Landeplatz `/suche` ist David-gegatet (S5); ins Route-Store zu falten
-> würde §14.2 (Belange nicht mischen, Einheit klein für EIN Gate) verletzen → eigener
-> Posten, wenn S5 freigegeben ist. Schritt 2/3/4 der Spec brauchen es nicht.
-- **Engpass zuerst:** ~~`zuletztVerwendet.ts` trackt nur Rechner/Vorlagen — «Gesetze/Entscheide
-  = eigenes Arbeitspaket» steht wörtlich im Code (archiv/FAHRPLAN-STARTSEITE-V3 §3 #5, ~½ Session).~~
-  **Überholt seit 3.7.2026** (Befund 31.7.2026): Gesetz-/Entscheid-/Material-Titel werden getrackt
-  (`src/lib/zuletztTitel.ts`, `ZuletztTyp` in `zuletztVerwendet.ts:22`); O1 weiter unten sagt das
-  bereits. Der Engpass ist damit weg — Schritt (1) der Reihenfolge ist erledigt.
-  **Reihenfolge:** (1) Tracking auf alle Inhaltstypen ausdehnen (Gesetz-Artikel, BGE,
-  Materialien, Suchanfragen) → (2) Cmd/⌘K-**Leerzustand** zeigt Zuletzt-Liste + 3–5 kuratierte
-  Einstiege (synchron aus localStorage, CLS-frei) → (3) globaler Zugriff: Topbar-«Verlauf»
-  (Label/Tooltip am bestehenden Tracker-Icon sofort — S) bzw. schlichtes Drawer-Panel
-  (chronologisch, Typ-Icon, heute/gestern) → (4) Startseiten-Chips speisen sich daraus.
-- **Leitplanken:** localStorage-only, **§8-Label «nur auf diesem Gerät»** überall; kein
-  Server-Verlauf vortäuschen; Westlaw-Graph ist Kür — die Liste liefert 90 %.
-- **Startseiten-Umplatzierung der Zuletzt-Rubrik:** NICHT vorab bauen — V3-Abnahme-Mappe
-  wartet auf David (→ §Y David-Fragen).
-- **Flächen:** `zuletztVerwendet.ts`, `ZuletztTracker.tsx`, `useUniversalSuche.ts`
-  (Leerzustand), `Topbar.tsx`. *(#59+#62+#69+#3-Teile gemergt; Westlaw-Precision-History-Muster.)*
-
----
 
 ## §6 · P4 — Rechtsprechungs-Übersicht & Startseiten-News
 

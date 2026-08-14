@@ -12,6 +12,8 @@
 
 ---
 
+> Erledigt-/Stand-Abschnitte vom 14.8.2026 nach `archiv/FAHRPLAN-ERLEDIGT-ABSCHNITTE.md` verschoben (QS-PLAN-EINFACH).
+
 ## §0 · Zweck
 
 Detailquelle zu `QS-PH` — die `@meta`-DSL (Etiketten, Felder, Tor `check:plan`),
@@ -855,63 +857,6 @@ Kopfzahlen 238/1231/53/81 exakt) — die Fehler sitzen dort, wo das Tor blind is
 **Nicht gebaut wird:** Prosa-Frische-Heuristik (Über-Regulierung; die Klasse B2
 schrumpft mit dem Ziff.-6-Vollzug von selbst) und jedes neue Zustandsfile.
 
-### Stand 5.8.2026 — Befunde B3/B4 erledigt, Schritt 1 gebaut
-
-- **B4 (Rotations-Regex) ✅ erledigt** — die Nacht-Session 4./5.8.2026 hat `DATUM_RE` in
-  `.claude/hooks/struktur-rotieren.py` um das Übernacht-Format `T./T.M.JJJJ` erweitert; die
-  zuvor nie rotierenden Karten rotieren. Damit ist der Wurzel-Fix des Budget-Risses gebaut
-  (§17), nicht umschifft.
-- **B3 (geparkte Arbeit unsichtbar) ✅ erledigt** — dieselbe Nacht-Session hat die Landekette
-  **10/10** abgearbeitet; die QS-CODE-Reihe steht nicht mehr `ready` neben offenen PRs, sondern
-  `done`. Die **Prävention** zu B3 ist damit nicht erledigt, sondern in Ziff. 4 unten verortet:
-  Lage-Block, Namenskonvention und die `parked`-Regel im Skill `auftrag` Ziff. 2 (letztere ist
-  am 5.8.2026 geschrieben, samt der Branch-/Worktree-Slug-Regel).
-- **Schritt 1 (Sofort-Korrekturen ROADMAP/Fahrpläne) ✅ gebaut** — Branch
-  `feat/qs-plan-review-doku`, 14 Korrekturen: die drei falschen Anker aus B1 (`QS-KORPUS-BMV`
-  → §20.4 · `QS-UI-HIGHLIGHT` → neue Bau-Spec `FAHRPLAN-UI-NAVIGATION.md` §9 ·
-  `W2·5k-LINIEN-KONZEPT` → GESETZESDARSTELLUNG-V2 §2/F4 + GESETZES-UX §10.9), die stale
-  Steuerungs-Prosa aus B2 (@queue-Kommentar, Ceiling-Satz, TOKEN-OEKONOMIE §8 Ziff. 4), die
-  B5-Kleinteile (Dach-Präfix-Liste samt deklarierter `fahrplan:`-Ausnahme, LERNPHASE-§3-Titel,
-  FEDLEX §19 als `##` statt `###`) und die zwei fehlenden Schritte
-  (`W2·5l-NORMTEXT-B2`, `QS-PLAN-REVIEW`).
-- **Offen — der eigentliche Präventions-Bau:** Ziff. 3 (Tor-Erweiterung `check:plan` auf
-  Spec-Bindung, **Geburtsbeweis nur noch auf dem Stand VOR Schritt 1 führbar** — also gegen
-  `main@d316f5884` oder den Elter-Commit dieses Branches, nicht gegen den heutigen Stand) und
-  Ziff. 4a/4b (Lage-Block in `plan:next`, Namenskonvention im Dispatch-§0 Ziff. 5).
-- **Nachtrag zu B1:** `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` §9.2 trägt denselben toten Anker
-  «→ Bau-Spec: §L-3/A28 dieser Datei» wie zuvor die ROADMAP. Er ist **nicht** mitkorrigiert
-  (lag ausserhalb der Bau-Whitelist) und bleibt ein offener B1-Rest — das
-  Spec-Bindungs-Tor aus Ziff. 3 muss ihn erwischen.
-
-### Endstand 5.8.2026 nachts — alle Befunde gefixt, beide Präventionen gelandet (Schritt done)
-
-Serielle Landung durch die Orchestrier-Session (David: «fixe alle befunde … du orchestrierst,
-unter-sessions bauen»), vier Bau-Agenten in Worktrees:
-
-- **Ziff. 3 Tor gelandet** — `check:plan` Regel 11 «Spec-Bindung» (`scripts/plan/specBindung.ts`,
-  25 Tests). **Geburtsbeweis geführt:** auf `d316f5884` dreifach rot wie gefordert PLUS zwei
-  Neubefunde (`W2·6` →`§12` löst nicht auf · `W2·17-UI-BEFUNDE` →`§1` statt §24) — auch der
-  V2-§9.2-Nachtrag und zwei vom Doku-Fix selbst erzeugte Fehl-Anker (`§10.9`, `§2` ohne
-  ID-Bindung) wurden vom Tor erwischt und sind korrigiert (Ziff.-Schreibweise für
-  Überschriften ohne §-Sigel). Allowlist: genau 1 Eintrag (`W3·10 §P3`, Archiv-Ausnahme,
-  Schlüssel id+anker). Auf dem Endstand: **grün.**
-- **Ziff. 4a Lage-Block gelandet** — `plan:next` zeigt belegte Flächen (wip+`kollision:`),
-  Worktrees/Branches mit Slug→Schritt-Zuordnung («ohne Schritt-Bezug» = unangemeldeter Bau),
-  `--prs` optional netzbehaftet; bestehende Ausgabe byte-identisch (cmp-Beweis), 17 Tests.
-- **Ziff.-6-Vollzug** — die 5 verbliebenen done-Blöcke (QS-CODE-Reihe, W2·5d) wörtlich in die
-  Chronik, `dep: [W2·5d]` zweifach als erfüllt entfernt, Inventar nachgezogen; plan:next
-  vorher/nachher byte-identisch.
-- **QS-CI-VERCEL-Testplan vollzogen** — Doku-Diff nach Limit-Reset: Vercel-Check
-  `success` («Canceled by Ignored Build Step») ⇒ Merge-Bedingung Skip=success erfüllt,
-  #445 per Auto-Squash eingereiht (Merge-Go David 4.8.).
-
-**Offene Kleinposten (bewusst, je klein — kein eigener Roadmap-Schritt, Mitnahme beim
-nächsten Bau an `scripts/plan/`):** (a) Regel 11 prüft Blockquote-Prosa ohne Bullet-Block
-nicht (einziger Bestandsfall: `QS-TOK`) und keine `§§3–§7`-Bereiche — beide Grenzen im Code
-mit Test dokumentiert; (b) `bildSeiten.ts` hält eine lokale Slug-Kopie, die `slug()` aus
-`lage.ts` importieren sollte (Entdopplungs-Richtung: schwer importiert leicht).
-
-
 ## Selbstoptimierender Bau (`QS-SELBSTOPT` — EIN Schritt, eine ganze Session, ergebnisoffen)
 
 **Anlass:** Auftrag David 5.8.2026; Recherche mit allen Quellen und drei bewussten
@@ -956,13 +901,3 @@ Stufe 3 (autonomer Bau) sind ausdrücklich NICHT freigegeben — je eigener kün
 David-Entscheid.
 
 
-## QS-SESSION-ZYKLUS — der Skill `bauschritt` und sein Auslöser (done 5.8.2026)
-
-Der Session-Ablauf lag verstreut (Bau-Prompt, `auftrag`, `landung`, Gewohnheit);
-jetzt liegt er an EINER Stelle (§5): `.claude/skills/bauschritt/SKILL.md` — fünf
-Stationen A–E, Grössen-Check in A (sessionfüllend: zu klein ⇒ bündeln, zu gross ⇒
-AP-6-Schnitt), Token-Regel-Kasten; Obergrenze ~120 Zeilen, Verweis-Architektur.
-Ausgelöst durch die ERSTE Zeile jedes Lagebild-Bau-Prompts («Nutze den Skill
-`bauschritt` … Schritt: <ID>», `bauPrompt` in scripts/plan/bildSeiten.ts);
-Erste-Zeile-Zusicherung + Bestands-Härtungen testgesichert
-(src/tests/plan-bild-lage.test.ts, Rot-Beweis geführt).
