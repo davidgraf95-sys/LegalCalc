@@ -528,8 +528,7 @@ export function agDokumentmappe(a: AgDokAntworten): { dokumente: AgDokument[]; g
 // ── Abnahme-Registry (Perfektion Punkt 15) ──────────────────────────────────
 
 /** ALLE AG-Schemas in Mappen-Reihenfolge — Quelle für Davids Wort-für-Wort-
- *  Abnahme: `npm run abnahme:ag` erzeugt daraus die Bausteinliste (gitignoriert,
- *  kein Bestand — Entscheid David 14.8.2026)
+ *  Abnahme: `scripts/abnahme-ag.ts` generiert daraus ABNAHME-AG-BAUSTEINE.md
  *  (je Baustein id · Wortlaut · Norm · Begründung · Hinweis · Bedingung).
  *  Abgenommene Bausteine erhalten später `verified: true` (§7: nie
  *  automatisch setzen). */
