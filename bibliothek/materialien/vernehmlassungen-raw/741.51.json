@@ -162,35 +162,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/79/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Verkehrszulassungsverordnung (VZV): Harmonisierung der Führerausweiskategorien mit jenen der EU und andere Änderungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de l’Ordonnance réglant l’admission à la circulation routière (OAC): Harmonisation des catégories de permis de conduire avec celles de l'UE et autres modifications"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale dell’Ordinanza sull’ammissione alla circolazione (OAC): Armonizzazione delle categorie delle patenti di guida con quelle dell'UE e altre modifiche"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.51"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/52/cons_1"
     },
     "status": {
