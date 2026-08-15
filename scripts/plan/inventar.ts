@@ -48,6 +48,7 @@
 // BERICHT/-PARITAET + QS-MERGE-AUTOZUG → QS-AUTOMATIK · W2·14-SIGNAL-B1/-B2/-GER
 // → W2·14-SIGNAL · W2·7-BEZUG-LADEN → W2·7-VZUI · W2·5k-LINIEN-RUECKBAU →
 // W2·5h-GESETZ-UI · W3·14-B3/-S/-a11y → W3·14. Begruendung: ROADMAP-CHRONIK.md.
+// ERLEDIGT 15.8.2026: QS-CURRENCY-TESTS (15 Tests, Chronik-Block gleichen Datums).
 // ERLEDIGT 15.8.2026: QS-EXTQUELLEN (alle Befunde entschieden, Chronik-Block gleichen Datums).
 // KONSOLIDIERUNG 15.8.2026 (BAUPLAN-UMBAU, Auftrag David «schritte zusammenlegen /
 // gross schneiden»): 14 Etiketten als Checklisten-Zeilen in fuenf Daecher aufgegangen,
@@ -103,7 +104,7 @@ export const INVENTAR: readonly string[] = [
 
   // §14-Intake 3.8.2026 (Aufräum-Session): Nebenfunde der CI-Diagnose (K1–K13), der Totcode-Welle
   // (#418/#420) und der Gegenprüfungen des Tages — alle klein, alle mit Anlass-Satz in der ROADMAP.
-  'QS-FRIT-DRIFT', 'QS-CURRENCY-TESTS', // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
+  'QS-FRIT-DRIFT', // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
   'QS-TOK-DECKEL',
