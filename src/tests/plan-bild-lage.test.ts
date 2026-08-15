@@ -356,12 +356,26 @@ describe('schrittInfoAusRoadmap — Klartext-Titel aus der ROADMAP-Zeile', () =>
 describe('methodeSeite — Legenden für Sessions und Laien', () => {
   const html = methodeSeite({ indexPfad: 'tmp/plan-bild.html', watch: null, stand: '5. Aug. 2026, 16:30' });
 
+  // Fachliche Änderung, deklariert (§6.3): Die Legende nannte «TOK
+  // Token-Sparen» und «PLAN Bau-Planung» als Themen-Beispiele. Beide Etiketten
+  // existieren seit der Etiketten-Konsolidierung (QS-PLAN-EINFACH 14.8.2026,
+  // Fusion 15.8.2026) nicht mehr als offene Schritte — QS-TOK ist in
+  // QS-EFFIZIENZ aufgegangen, QS-PLAN-EINFACH ist erledigt. Eine Legende, die
+  // Kürzel erklärt, die im Plan nirgends stehen, führt den Leser in die Irre;
+  // die Erwartung folgt darum den heute lebenden Etiketten.
   it('erklärt die Kürzel-Bestandteile in Laiensätzen', () => {
     expect(html).toContain('So liest du die Kürzel');
-    expect(html).toContain('Welle 2');
+    expect(html).toContain('Welle 1, 2, 3');
     expect(html).toContain('Klinge des Taschenmessers');
     expect(html).toContain('Quer- und Qualitätsarbeit ohne festen Platz in der Reihenfolge');
-    expect(html).toContain('TOK Token-Sparen');
+    expect(html).toContain('EFFIZIENZ sparsamer Bau');
+  });
+
+  it('erklärt die Begriffe des heutigen Bau-Modells (BAUPLAN-UMBAU 15.8.2026)', () => {
+    for (const b of ['Dach-Schritt (Checkliste)', 'Lebendige Spec', 'Session-Karte (Kurzkarte)', 'Grösse S · M · L']) {
+      expect(html).toContain(b);
+    }
+    expect(html).toContain('Erledigtes wird im Plan abgehakt');
   });
 
   it('begründet, warum die Kürzel stehen bleiben (Verweis-Anker)', () => {
