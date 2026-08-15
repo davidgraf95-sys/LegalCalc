@@ -51,7 +51,8 @@ Jeder Teil-Schritt läuft nach demselben Vierschritt, damit Befunde vergleichbar
    ein sauberes Gate). Befunde, die eine bestehende Einheit betreffen, laufen **dort ein**.
 
 **Abgrenzungs-Precheck (Pflicht vor jedem Schnitt):** berührt der Befund
-`W2·10-UI-NAV`, `W2·11-DESIGN`, `W3·14` oder `W2·5h-GESETZ-UI`? Dann gehört er **dorthin**,
+`W2·10-UI-NAV`, `W2·11-DESIGN`, `W3-AUSBAU` (Zeile «Multi-Pane / Split-View», vormals `W3·14`,
+Etiketten-Konsolidierung 15.8.2026) oder `W2·5h-GESETZ-UI`? Dann gehört er **dorthin**,
 nicht hierher (§14.3). Dieser Strang liefert dann nur Messung und Priorisierung.
 
 ## §2 · Informationshierarchie-Pass («Verdikt zuerst»)
@@ -171,7 +172,8 @@ Als eigener Schritt mit Abnahme durch David zu führen.
 1. **Norm am Wert** (oben) — höchster Nutzwert, fachliche Einheit, Abnahme David.
 2. **Tagerechner, zweiter Block: 3.36 Desktop / 5.33 mobil** — Preset-Suche und Regime-Tabs
    stehen über ihm. Das ist ein Seiten-Aufbau-Problem (R1/FE-1), kein Ergebnis-Ordnungs-
-   Problem; gehört zu `W3·14` (Responsive/Split), nicht in einen reinen Hierarchie-Pass.
+   Problem; gehört zu `W3-AUSBAU` (Zeile «Multi-Pane / Split-View», Responsive/Split; vormals
+   `W3·14`, Etiketten-Konsolidierung 15.8.2026), nicht in einen reinen Hierarchie-Pass.
 3. **`ZustErgebnisEinleitung`** — zwischen `<ErgebnisBlock>` und `<ErgebnisAnzeige>` liegen
    440 Quelltextzeilen Behörden-Auflösung. Nach R12 gilt «ab dem Ergebnisblock R4
    unverändert», also formal ein Verstoss; inhaltlich ist die aufgelöste Behörde dort
@@ -287,7 +289,8 @@ verstecken kann, ist gegen §8 gebaut; es ist entfernt (§17: Wurzel, nicht Umsc
    stehen Kopf (306 px, davon 234 px Intro), Sachgebiets-Band (45 px), `LiveSuche` (61 px)
    und die Filterzeile (409 px). Kein Reglement-Verstoss — R15 will den Filter mobil über
    den Resultaten —, aber die schlechteste Browse-Zahl der App. Der Hebel wäre ein mobil
-   eingeklappter Filter; das ist `W3·14` (Responsive), nicht Hierarchie.
+   eingeklappter Filter; das ist `W3-AUSBAU` (Zeile «Multi-Pane / Split-View», Responsive;
+   vormals `W3·14`, Etiketten-Konsolidierung 15.8.2026), nicht Hierarchie.
 3. **Mappen-Flächen verkürzen** (`gmbh-gruendung` 8.25 Bildschirmhöhen mobil). Die
    Checkliste VOR der Mappe ist Seiten-Aufbau (R1/FE-1) — dieselbe Grenzziehung wie beim
    Tagerechner in Teil 1. Im Tor als `TIEF_AUSGEWIESEN` geführt, kompensiert durch die
@@ -334,7 +337,7 @@ Jede Verschärfung kommt **nach** den Fixes, die sie grün machen — nie ein ro
 **Nachgelagert:** `W2·5h-GESETZ-UI` (Idee 8b) setzt auf (a)+(b) auf — erst stehen die
 gemeinsamen Muster und die Hierarchie, dann wird die Gesetzes-Fläche darauf gezogen.
 **Nicht dupliziert:** `W2·10-UI-NAV` (Navigation), `W2·11-DESIGN` (Farbwärme),
-`W3·14` (Split/Responsive), `FAHRPLAN-GESETZES-UX.md` + `FAHRPLAN-NORMTEXT-DARSTELLUNG.md`
+`W3-AUSBAU` (Split/Responsive; vormals `W3·14`), `FAHRPLAN-GESETZES-UX.md` + `FAHRPLAN-NORMTEXT-DARSTELLUNG.md`
 (Gesetzes-Darstellung), `FAHRPLAN-SEO-A11Y-GOVERNANCE.md` (a11y-Governance).
 
 ## §6 · Definition of Done je Teil-Schritt
@@ -408,7 +411,8 @@ W2·5h-GESETZ-UI(8b)]`.
   (Farbwelt-Baseline enger ziehen, axe von Stichprobe auf Flächendeckung, ggf. Flow-/Hierarchie-Checks).
   **Feasibility 🟢 aus-Bestand** (Reglemente + Farbwelt-Gate + axe stehen). **Abgrenzung (§14.3,
   verbindlich):** `QS-UI` **koordiniert und härtet**, es **dupliziert nicht** `W2·10-UI-NAV`
-  (Navigations-Plumbing), `W2·11-DESIGN` (Farbwärme) oder `W3·14` (Split/Responsive) — diese bleiben die
+  (Navigations-Plumbing), `W2·11-DESIGN` (Farbwärme) oder `W3-AUSBAU` (Split/Responsive; vormals
+  `W3·14`, Etiketten-Konsolidierung 15.8.2026) — diese bleiben die
   konkreten Sub-Efforts, die dieser Strang treibt und einfordert. Nachgelagert hängt
   **`W2·5h-GESETZ-UI`** (Gesetzes-Fläche) an diesem Fundament. Detailquelle: diese Datei.
   **DoD je Teil-Schritt:** §13-Tore grün (`check:farbwelt`, axe) · golden byte-gleich, wo die Änderung
