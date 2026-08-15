@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-10",
+ "erzeugt": "2026-08-14",
  "kopf": {
   "srNummer": "211.432.11",
   "titel": "Technische Verordnung des EJPD und des VBS über das Grundbuch",
@@ -31,7 +31,8 @@
     "links": [
      {
       "label": "SR <b>210</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/24/233_245_233"
+      "url": "https://fedlex.data.admin.ch/eli/cc/24/233_245_233",
+      "rs": "210"
      }
     ],
     "absatz": null,
@@ -44,7 +45,8 @@
     "links": [
      {
       "label": "SR <b>211.432.1</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/2011/667"
+      "url": "https://fedlex.data.admin.ch/eli/cc/2011/667",
+      "rs": "211.432.1"
      }
     ],
     "absatz": null,
@@ -57,7 +59,8 @@
     "links": [
      {
       "label": "SR <b>211.432.2</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1992/2446_2446_2446"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1992/2446_2446_2446",
+      "rs": "211.432.2"
      }
     ],
     "absatz": null,
@@ -375,8 +378,13 @@
    "fussnoten": [
     {
      "nr": "20",
-     "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch.",
-     "links": [],
+     "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch .",
+     "links": [
+      {
+       "label": "www.snv.ch",
+       "url": "http://www.snv.ch"
+      }
+     ],
      "absatz": "1",
      "item": null,
      "pos": {
@@ -475,8 +483,13 @@
    "fussnoten": [
     {
      "nr": "32",
-     "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch.",
-     "links": [],
+     "text": "Diese Norm kann kostenlos eingesehen und gegen Bezahlung bezogen werden bei der Schweizerischen Normen-Vereinigung (SNV), Sulzerallee 70, 8404 Winterthur; www.snv.ch .",
+     "links": [
+      {
+       "label": "www.snv.ch",
+       "url": "http://www.snv.ch"
+      }
+     ],
      "absatz": null,
      "item": null,
      "absatzIndex": 0,
@@ -592,7 +605,8 @@
      "links": [
       {
        "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
+       "rs": "220"
       }
      ],
      "absatz": null,
@@ -624,7 +638,8 @@
      "links": [
       {
        "label": "SR <b>211.435.11</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/30"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/30",
+       "rs": "211.435.11"
       }
      ],
      "absatz": null,
@@ -657,7 +672,8 @@
      "links": [
       {
        "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
+       "rs": "220"
       }
      ],
      "absatz": null,
@@ -689,7 +705,8 @@
      "links": [
       {
        "label": "SR <b>211.435.11</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/30"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/30",
+       "rs": "211.435.11"
       }
      ],
      "absatz": null,
@@ -735,7 +752,8 @@
      "links": [
       {
        "label": "SR <b>211.435.11</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2018/30"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2018/30",
+       "rs": "211.435.11"
       }
      ],
      "absatz": "1",
@@ -797,7 +815,8 @@
       },
       {
        "label": "SR <b>943.03</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752",
+       "rs": "943.03"
       }
      ],
      "absatz": null,
@@ -813,7 +832,12 @@
     {
      "nr": "44",
      "text": "www.eCH.ch",
-     "links": [],
+     "links": [
+      {
+       "label": "www.eCH.ch",
+       "url": "http://www.eCH.ch"
+      }
+     ],
      "absatz": null,
      "item": "d",
      "pos": {
@@ -844,7 +868,8 @@
      "links": [
       {
        "label": "SR <b>172.041.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2004/677"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2004/677",
+       "rs": "172.041.1"
       }
      ],
      "absatz": "6",
@@ -874,7 +899,8 @@
      "links": [
       {
        "label": "SR <b>943.03</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752",
+       "rs": "943.03"
       }
      ],
      "absatz": "3",
@@ -1133,7 +1159,8 @@
      "links": [
       {
        "label": "SR <b>431.841</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2017/376"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2017/376",
+       "rs": "431.841"
       }
      ],
      "absatz": null,
@@ -1152,7 +1179,8 @@
      "links": [
       {
        "label": "SR <b>510.625</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/393"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/393",
+       "rs": "510.625"
       }
      ],
      "absatz": null,
@@ -1211,7 +1239,8 @@
      "links": [
       {
        "label": "SR <b>510.625</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2008/393"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2008/393",
+       "rs": "510.625"
       }
      ],
      "absatz": "1",
@@ -1230,7 +1259,8 @@
      "links": [
       {
        "label": "SR <b>431.841</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2017/376"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2017/376",
+       "rs": "431.841"
       }
      ],
      "absatz": "1",

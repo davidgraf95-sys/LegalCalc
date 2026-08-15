@@ -42,13 +42,16 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
 2. **ID gegen `ready-now`.** Nicht darin (Abhängigkeit offen, `done`,
    blockiert) ⇒ **STOPP, melden, nicht bauen** — massgeblich ist
    `plan:next`, nicht der Prompt.
-3. **Grössen-Check:** `Grösse:`/`groesse:` (S/M/L); weicht die eigene
-   Einschätzung ab, gilt sie, per `plan:set` korrigiert.
-   - **Zu klein** (< ~1 h): 1–2 bündelbare `ready-now`-Nachbarn (gleiche
-     Fläche/Fahrplan/Risikoklasse, kollisionsfrei) mitbauen, je eigener
-     Commit/Trailer (Skill `auftrag`).
-   - **Zu gross:** **STOPP**, erst per `plan:set`/ROADMAP in
-     sessionfüllende Teilschritte schneiden (AP-6-Muster).
+3. **Grössen-Check** (Massstab hochkalibriert, David 15.8.2026 — Referenz
+   ist die orchestrierte Session, die mehrere M-Schritte landet):
+   `groesse:` im @meta lesen; weicht die eigene Einschätzung ab, gilt sie,
+   per `plan:set` korrigiert.
+   - **S/M:** von Beginn an so viele bündelbare `ready-now`-Nachbarn
+     (gleiche Fläche/Risikoklasse, kollisionsfrei) einplanen, dass die
+     Session gefüllt ist — je eigener Commit/Trailer; Station W führt fort.
+   - **Zu gross (L mit echtem Serialisierungs-/Risiko-Zwang):** **STOPP**,
+     erst per `plan:set`/ROADMAP schneiden (AP-6-Muster) — Grösse allein
+     ist seit 15.8. kein Schneide-Grund mehr.
    - **Harte Grenze:** nie Risikoklassen mischen, nie fremde Flächen dazu.
 4. **Bau-Spec:** `npm run fahrplan -- <fahrplan-datei> <§>` — Slice statt
    Volltext.
@@ -60,6 +63,11 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
 ## Station B — Bau
 
 - Nach **Bau-Prompt + Fahrplan-Spec**, nicht nach Erinnerung.
+- **Lebendige Spec (David 15.8.2026):** Weicht die Fahrplan-Spec vom
+  Ist-Code ab, wird die Spec **sofort in der Fahrplan-Datei korrigiert**
+  (datiert, mit Anlass-Halbsatz) und weitergebaut — nie gegen die veraltete
+  Spec bauen, nie die Abweichung nur im Chat vermerken. Erledigte §§ wandern
+  bei der Rotation ins Archiv ([aufraeumen.md](aufraeumen.md)).
 - **Delegation:** Klassen/Stufen/Dispatch-Vorlage → Skill `auftrag` Ziff. 6;
   diese Session orchestriert und landet.
 - **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
@@ -103,8 +111,12 @@ bevor der Kontext zur Neige geht** — lieber sauber landen als anreissen.
 
 ## Station E — Abschluss (Checkliste, keine Kür)
 
-- [ ] **Session-Karte `STRUKTUR.md`** — was gebaut, belegt, offen
-      (leichter Pfad: eine Zeile).
+- [ ] **Session-Karte `STRUKTUR.md`** — Default ist die **Kurzkarte**
+      (3–6 Zeilen: was gebaut, Commit/PR-Beleg, was offen). Volle Karte NUR
+      bei Risikopfad-Berührung, gezogener §17-Lehre oder offenen Enden, die
+      eine Folge-Session steuern müssen (Diät-Beleg 15.8.2026: 51 % aller
+      Commits seit 1.8. waren reine Doku-/Plan-Pflege, 12,5 % Produkt-Code).
+      Leichter Pfad: eine Zeile.
 - [ ] `struktur-rotieren.py --check` — bei Rot: Steuer-Doku aufräumen nach
       **[aufraeumen.md](aufraeumen.md)**.
 - [ ] `npm run plan:bild` — Dock-Datei aktuell.

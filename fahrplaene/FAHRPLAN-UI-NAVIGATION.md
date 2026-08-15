@@ -97,7 +97,8 @@ Pfade schliessen**, nicht Neubau.
 - **J5** Entscheid-Leser: Tab-Klick schreibt `?ansicht=voll|auszug` zurück (Lesen existiert
   schon, `EntscheidLeser.tsx:168ff.`) + `scrollTo` Dokumentanfang beim Wechsel *(#30)*.
 - **O3** «In neuem Reiter»: Toast/Fly-to zum Reiter-Tracker + Tooltip «Reiter & Split-View»
-  am ☰-Icon (`inhalt.tsx:1022`) — als W3·14-Kleinposten geführt *(#18)*.
+  am ☰-Icon (`inhalt.tsx:1022`) — als Kleinposten der `W3-AUSBAU`-Zeile «Multi-Pane / Split-View»
+  geführt (vormals `W3·14`, Etiketten-Konsolidierung 15.8.2026) *(#18)*.
 
 ---
 

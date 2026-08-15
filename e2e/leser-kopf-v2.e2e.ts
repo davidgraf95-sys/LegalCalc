@@ -1,4 +1,4 @@
-// @shard-gruppe: 5
+// @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
 
 // FAHRPLAN-GESETZESDARSTELLUNG-V2 — koordinierter Kopf-PR (A22/A23, David 10.7.2026):

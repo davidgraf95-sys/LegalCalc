@@ -63,10 +63,10 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "ZH": 3
   },
   "rechtsprechungVolltext": 5093,
-  "materialien": 1552,
+  "materialien": 1555,
   "rechner": 23,
   "vorlagen": 26,
   "standGesetze": "2026-08-10",
   "standRechtsprechung": "2026-07-28",
-  "standMaterialien": "2026-08-13"
+  "standMaterialien": "2026-08-14"
 };

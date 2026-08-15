@@ -1,7 +1,7 @@
 {
   "erlassKey": "MONTREAL",
   "sr": "0.748.411",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -193,9 +193,10 @@
       "titelDe": "Übereinkommen zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "botschaftKey": "BOTSCHAFT-2004-558",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/566/de",
-      "sha": "d92fbb9ba9910c0045f4dece7d27829974111514df5a7c8d3573c0c2f3afed67"
+      "sha": "40ea4d3bf54212ec366493dd035add19505f63d967a1f1505dc6f04652e5f2b1"
     }
   ],
-  "sha": "b7cc4a914025ec4bbe111717efde118f116cbf1e7c094c58dbabee358b613ba9"
+  "sha": "2b5b7ce66f5321395c34fa2827a7267be3356e7e72438548b2c8204f2708cbf2"
 }

@@ -6,6 +6,162 @@
     },
     "botschaft": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-11-06"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "botschaft": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2002/672"
     },
     "proj": {
@@ -231,162 +387,6 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2683"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0233"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-11-06"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung von Artikel 1 des Rechtshilfegesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision de l'art. 1 de la loi sur l'entraide pé-nale internationale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
     }
   }
 ]

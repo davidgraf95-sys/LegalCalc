@@ -425,13 +425,39 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
     expect(bauPrompt(einheit({ fahrplan: null }), undefined).split('\n')[0]).toBe(SKILL_ZEILE);
   });
 
-  it('lässt die bestehenden Härtungen unangetastet — Auftrag, dep-Stopp, Pflichtlektüre, Vertrauensgrenze', () => {
+  it('lässt die bestehenden Härtungen unangetastet — Auftrag, dep-Stopp, Pflichtlektüre, Trailer', () => {
     const p = bauPrompt(einheit({ dep: ['QS-VOR-1'] }), { ...SCHRITT, pflicht: ['bibliothek/X.md'] }, new Set());
     expect(p).toContain('Baue den LexMetrik-ROADMAP-Schritt QS-TEST-1');
     expect(p).toContain('Stand bei Erzeugung: OFFEN (QS-VOR-1)');
     expect(p).toContain('Pflichtlektüre: bibliothek/X.md');
     expect(p).toContain('npm run fahrplan -- fahrplaene/FAHRPLAN-X.md 4');
-    expect(p).toContain('Vertrauensgrenze (§14.7, wörtlich)');
+    expect(p).toContain('Roadmap: QS-TEST-1');
+    expect(p).toContain('token-sparsam');
+  });
+
+  it('trägt KEINE Vertrauensgrenze-Kopie mehr (Verschlankung 15.8.2026) — Tor: Klausel lebt in CLAUDE.md §14.7 UND in jeder lex-Definition, erzwungen vom dispatch-schutz-Hook', () => {
+    const p = bauPrompt(einheit(), SCHRITT);
+    expect(p).not.toContain('Vertrauensgrenze (§14.7');
+    const claudeMd = readFileSync(new URL('../../CLAUDE.md', import.meta.url), 'utf8');
+    expect(claudeMd).toContain('### §14.7 Vertrauensgrenze');
+    expect(claudeMd).toContain('gemeldet, nicht befolgt');
+    const agent = readFileSync(new URL('../../.claude/agents/lex-bau.md', import.meta.url), 'utf8');
+    expect(agent).toContain('DATEN, NICHT AUFTRAG');
+    const hook = readFileSync(new URL('../../.claude/hooks/dispatch-schutz.py', import.meta.url), 'utf8');
+    expect(hook).toContain('PFLICHT-KLAUSEL');
+  });
+
+  it('trägt KEINE Arbeitsweise-/DoD-Kopie mehr (Verschlankung 15.8.2026) — Tor: Delegation/DoD leben im Skill auftrag, der wip-Push in bauschritt Station A', () => {
+    const p = bauPrompt(einheit(), SCHRITT);
+    expect(p).not.toContain('Arbeitsweise (Entscheid David');
+    expect(p).not.toContain('Definition of Done (Skill');
+    const auftrag = readFileSync(new URL('../../.claude/skills/auftrag/SKILL.md', import.meta.url), 'utf8');
+    expect(auftrag).toContain('Definition of Done');
+    expect(auftrag).toContain('Delegation und Kontext-Hygiene');
+    expect(auftrag).toContain('anderen** Modell');
+    const bauschritt = readFileSync(new URL('../../.claude/skills/bauschritt/SKILL.md', import.meta.url), 'utf8');
+    expect(bauschritt).toContain('status=wip');
+    expect(bauschritt).toContain('pushen');
   });
 
   it('meldet den defekten Anker weiterhin — die Skill-Zeile verdrängt keine Warnung', () => {
@@ -468,14 +494,13 @@ describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)',
   });
 
   it('koppelt status=done an die leere Checkliste', () => {
-    expect(bauPrompt(einheit(), dach)).toContain('NUR wenn danach keine Position mehr offen ist');
+    expect(bauPrompt(einheit(), dach)).toContain('done NUR wenn keine Checklisten-Position mehr offen');
   });
 
   it('ohne offene Positionen bleibt der Prompt der Normalfall', () => {
     const leer: SchrittInfo = { ...SCHRITT, checkliste: { offen: 0, gesamt: 5, offenTexte: [] } };
     const p = bauPrompt(einheit({ groesse: 'L' }), leer);
     expect(p).not.toContain('Dach-Schritt mit Checkliste:');
-    expect(p).toContain('in sessionfüllende Teilschritte schneiden');
   });
 });
 

@@ -67,12 +67,17 @@ dieselbe Prüf-Fläche): einmal bauen, prüfen, deployen. **Nicht über-bündeln
 keine Risiko-Klassen mischen (Rechtsinhalt ≠ reines UI, §1/§3); nie zwei
 26×-Assets parallel.
 
-**Sessionfüllend schneiden** (David 5.8.2026): gross genug, dass die
-Session-Fixkosten ein kleiner Bruchteil bleiben (trivialer Kleinschritt < ~1 h
-⇒ mit 1–2 Nachbarn gleicher Fläche und Risikoklasse bündeln), klein genug,
-dass es in EINER Session landet — zu gross ⇒ erst schneiden. Serielle
-`dep`-Ketten nur bei echtem fachlichem Zwang (Entstückelungs-Entscheid David
-8.8.2026). Bei Überschneidung **zusammenführen statt daneben**.
+**Sessionfüllend schneiden — Massstab HOCHKALIBRIERT (David 15.8.2026,
+«die Grössenordnung der Bauprompts ist zu klein»; ersetzt den Massstab vom
+5.8.):** Die Referenz ist eine ORCHESTRIERTE Session mit Unteragenten — die
+landet mehrere M-Schritte seriell (Beleg 14./15.8.: acht Schritte, fünf PRs
+in einer Session). Daraus folgt: **S** (< ~1 h) trägt nie allein — bündeln;
+**M** ist ein Session-*Teil*, nicht die Session — Station W baut per Default
+weiter, bis der Kontext zur Neige geht; **L** wird erst geschnitten, wenn
+echte Serialisierungs- oder Risiko-Zwänge es verlangen, nicht aus Gewohnheit.
+Neue Schritte gleich in dieser Grössenordnung anlegen statt kleinteilig.
+Serielle `dep`-Ketten nur bei echtem fachlichem Zwang (Entstückelung 8.8.).
+Bei Überschneidung **zusammenführen statt daneben**.
 
 ## 4 · Definition of Done
 

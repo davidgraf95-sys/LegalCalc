@@ -30,6 +30,31 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 15.8.2026 — BAUPLAN-UMBAU: lebendige Specs, Gross-Schnitt, Doku-Diät (PR #507)
+
+**QS-EFFIZIENZ · BAUPLAN-UMBAU (David 15.8.) komplett; 8 Unteragenten (3 Recherche, 2 Bau, 3 Gegenprüfung).** Messen vor Handeln: SotA-Web-Recherche (`bibliothek/betrieb/agenten-bauplanung-sota-2026-08-15.md`) + Repo-Inventar + Messdaten (Kern-Beleg: 51 % Doku-Commits seit 1.8. vs. 12,5 % Produkt-Code; fahrplaene/ 16 015 Zeilen).
+
+- **Lebendige Spec** (OpenSpec-Muster): Banner in `fahrplan-slice` an jedem Slice, bauschritt Station B, Fahrplan-§-Diät als aufraeumen.md §4b; live angewandt: GESETZES-UX/FEDLEX-PORTFOLIO −795 Z. wörtlich archiviert (5/5 byte-geprüft).
+- **Gross-Schnitt:** 14 Etiketten → 5 Dächer (65 → 53; W2·6, W2·6-RESOLVER, W2·5g-ZEIT, W3-AUSBAU neu, QS-KORPUS neu); unabhängige Gegenprüfung BESTANDEN MIT AUFLAGEN → Auflagen behoben (Risikoklassen-Doku wahr, QS-GP-Vermerke an MEHRSPRACH/FILTER-Zeile, 22+2+5 tote ID-Stellen nachgezogen). Nebenfund-Fix: `RECHNEN_RE` +zustellfiktion/zustellung.
+- **Doku-Diät:** Kurzkarte = Session-Karten-Default (Station E). §9-Bug-Check: Code-Lupe + 6/6 empirische Repros, keine blockierenden Befunde.
+- **Dependabot:** #501 gemergt; #500/#502/#504 Auto-Merge scharf (Lock-Fix npx npm@10, H-8-Muster, auf #502/#504 gepusht); #503 tailwind 3→4 + Lock-Wurzelfix → QS-BASIS-Checklisten-Zeilen.
+- **Landung (Nachtrag):** #507 gemergt als `f6d8925fa`, Prod-Deploy success, 6 Kernrouten 200. Verzögerung ~7 h: Vercel-Tageslimit + Wächter-Lücke (mein Ad-hoc-Monitor deckte BEHIND nicht ab — Regel stand im Landung-Skill Ziff. 2, war im Monitor nicht implementiert; behoben durch Hand-`update-branch`, Folge-Monitor mit BEHIND-Pfad). Plan-Buchung: Workflow «success» ohne Push (still!) — Beleg am offenen Auto-Buchungs-Punkt vermerkt, Hand-Buchung `status=ready` ausgeführt.
+
+## Session 14./15.8.2026 (Teil 5) — Aktivierungs-Audit, Rechtsstand-Reparatur, Test-Stabilisierung (#495, #497, #498, #499, #505)
+
+**Fortsetzung derselben Session (Dauerauftrag); ~12 weitere Unteragenten (Recherche/Bau/Daten/Mechanik/Gegenprüfung), jede Landung einzeln gegengeprüft.** Auslöser war Davids Frage nach dem Token-Messungs-Ausfall: «prüfe, was sonst noch liegen geblieben ist».
+
+- **Aktivierungs-Audit (Klasse «gebucht, nie bewiesen»):** Normen-Monitor ≥5 Wochen rot bei ignorierter Eskalation · Wächter 5 Tage rot ohne Meldeweg · Fedlex-Auto-Merge nie End-zu-Ende · Selbstopt-Messreihe handbetrieben · Token-Messung halb konfiguriert. ALLE fünf behoben oder verankert; sauber belegt: prod-smoke, turso, perf-lighthouse, Hook-Kette.
+- **Der Monitor hatte recht — echte Rechtsstand-Lücken (#499, Risikopfad, Verdikt registriert):** LIK 2026-05→07 (BFS, 0 stille Revisionen, Vollabgleich 3184/3184) · Botschaften 401→405 (AIG + 3 Nachzügler, SPARQL-rederiviert 5/5) · VERN-2026-79 = Fedlex-Umnummerierungs-Doppel mit fremdführendem Link (§8) bereinigt · Projektions-Kaskade (Sidecars/Zähler/Manifest) nachgezogen — Kaskaden-Lücke als Befund (g), Frische-Automat um gen:historie/check:historie ergänzt.
+- **#497 (14 Pins) nach 2 Gegenprüfungs-Runden gelandet:** Kanonik 14/14 selbst rederiviert; PR von 574 auf 10 Dateien entbläht (Automaten-Churn inkl. 115 Kanton-Dateien = Befund a2); currency.json-Behalt begründet; TGBV-Leerzeichen als Extraktor-Muster (h) erkannt, Daten quellentreu belassen.
+- **QS-E2E-STABIL done (#505):** 43 Messläufe/4 Lastbedingungen; Kern-Einsicht: Parallel-Last verzehnfacht die STREUUNG, nicht den Mittelwert — Deckel je QS-PERF Ziff. 5 aus dokumentierten Reihen, eine Budget-Quelle statt 7 Gabeln (wertgleich bewiesen), 6/6 Abnahme ohne Timeout-Flake; Rohdaten kompakt committet (Minimalismus: 20 606→673 Diff-Zeilen). Folgebefunde als Fehlerbuch-Zeilen.
+- **Werkzeug-Analyse umgesetzt (#498):** ast-grep endlich real installiert (Präambel-Pflicht war unerfüllbar), MCP-Deploy-/Kauf-Riegel (Rot/Grün bewiesen), dependabot, QS-TYP-LUECKE als ready-Schritt (33 belegte Typfehler ausserhalb tsc-Abdeckung). Lockfile-Lehre: Neuschriebe nur mit npm@10 (CI-Version; npm 11 warf nested-Eintrag weg).
+- **Automatik End-zu-Ende bewiesen:** PLAN_BUCHUNG_TOKEN (David) → erste vollautomatische Plan-Buchung durch den Branch-Schutz · Wächter-Selbstmeldung erzeugte live Issue #496 · Token-Spool schrieb erste Zeile.
+- **Regel-Anker (Auftrag David):** Minimalismus-Prinzip ausserhalb der Rechtsschicht (rules/schichtentrennung, pfad-lazy) · Code-Streich-Massstab «Beweis vor Löschung, §1-Vorbehalt» (aufraeumen.md) · Alt-Entscheide-Audit: Direktive 14.6. als revidiert markiert, HANDLUNGSPLAN-Totverweise korrigiert · Entregulierung Runde 2 geplant (Start ~21.8., Prompt im Dossier entregulierung-2026-08-07).
+- **Eigenfehler quittiert:** 2× main-Push in offene Landekette (Falle c — kostete je einen update-branch-Zyklus).
+- **Schluss-Runde 15.8. (nach Karten-Erstfassung):** Fedlex-Auto-Merge erstmals End-zu-Ende (#497 mergte unbeaufsichtigt nach Verdikt) · Bau-Prompt 25→10 Zeilen verschlankt (Kopien raus, je Streichung Regelverlust-Tor; Token-Zeile auf Davids Wunsch drin; Grössen-Zeile raus) · Schritt-Grössenordnung hochkalibriert (Referenz = orchestrierte Session; Zusammenlegung W2·6-Familie u. a. als erster Zug der Folge-Session) · Shard-Neubalancierung (#506, Spread 2 Min→<1 s, Beweis-Lauf 4.3–4.9 Min) · Testapparat-Rückbau in §17-Gegengewicht verankert · Dependabot lieferte sofort 5 PRs (#500–504, tailwind-Major dabei).
+- **Wartet auf David:** nur Domain lexmetrik.ch (seit Juni offen, Squatting-Risiko).
+
 ## Session 14.8.2026 (Teil 4) — Effizienz-Dauerauftrag Runde 1+2 (#492, #493) + QS-TOK-DECKEL per Messung
 
 **Gleiche Session wie Teil 3; stehender Auftrag David («bau immer weiter … bis ich stop sage», Memory `dauerauftrag-effizienz-2026-08-14`), Anker `QS-EFFIZIENZ` (wip, Querschnitt), Worktree `lexmetrik-effizienz`. 5 Unteragenten (2 Bau sonnet, 1 Mechanik, 2 Recherche sonnet, 1 Gegenprüfung fable); #492 mergte David per Auto-Merge, #493 der Orchestrator.**

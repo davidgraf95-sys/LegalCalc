@@ -1,7 +1,7 @@
 {
   "erlassKey": "KLV",
   "sr": "832.112.31",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -53,9 +53,8 @@
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2026-08-01",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.112.31",
-      "sha": "536c4b0edbe8e8d4b2c7366e835994b54147cf03e47270d22bece8deeea7301e"
+      "sha": "1c3b152f5331c31566e6cf4504993aca5fed89c46c6a574d13b64d0f10bc7944"
     },
     {
       "art": "aenderung",
@@ -1960,5 +1959,5 @@
       "sha": "e636cf67a1d1aa35b4a5099a945ccc9acf2f3f80e0dee33993e1bf4034113129"
     }
   ],
-  "sha": "c737c80e15cfaef6b2df427a2e546aea1f933db59587e8852888007ab26636de"
+  "sha": "ad1bb0ed2c5b74667852697889e2dd45c0db59ed5a01170fcfa2a3436d018e58"
 }

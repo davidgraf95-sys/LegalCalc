@@ -1,7 +1,7 @@
 {
   "erlassKey": "BVV_2",
   "sr": "831.441.1",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -20,9 +20,8 @@
       "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
       "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
       "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
-      "sha": "0e4005e4edd970531bde8410409313a81cacd9c2fb63544702ee63080974adb3"
+      "sha": "73d63a5733a08d7bc3bcd8982c980e5f320bbf718fbf9430c340ca56397ac751"
     },
     {
       "art": "aenderung",
@@ -601,5 +600,5 @@
       "sha": "23a1428fe64690b7be04935182bde710bf047e8b494a517c9f8a72bad2052d41"
     }
   ],
-  "sha": "ccf85d936d385bce7d60a9f27085db7e091c11db59ea38b373d9d9c07d0f34df"
+  "sha": "b649ae22128b7a292d55c85610592c4b8facd2edc20b182eff2d3106db36f0f9"
 }

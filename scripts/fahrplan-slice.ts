@@ -45,6 +45,14 @@ if (!process.env.VITEST) {
     process.exit(2);
   }
   const res = slice(md, keys, datei);
+  // BAUPLAN-UMBAU (David 15.8.2026): Fahrpläne sind lebendige Specs — der
+  // Banner läuft mit jedem Slice aus, damit die Regel am Werkzeug klebt,
+  // nicht in einer Doku, die niemand lädt.
+  process.stdout.write(
+    '⚠ LEBENDIGE SPEC (David 15.8.2026): Weicht dieser §-Text vom Ist-Code ab, ' +
+      'wird die Spec SOFORT in der Fahrplan-Datei korrigiert (datiert, mit Anlass) ' +
+      'und weitergebaut — nie gegen die veraltete Spec bauen.\n\n',
+  );
   process.stdout.write(res.text);
   if (res.fehlend.length) process.exitCode = 1;
 }

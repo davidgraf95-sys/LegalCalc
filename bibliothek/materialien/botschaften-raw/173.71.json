@@ -6,162 +6,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-02-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "01.023"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.71"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-02-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "01.023"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.71"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-02-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "01.023"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.71"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-02-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "01.023"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.71"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2016/1190"
     },
     "proj": {
@@ -348,6 +192,162 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.71"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-02-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "01.023"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.71"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-02-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "01.023"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.71"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-02-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "01.023"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.71"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-02-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "01.023"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
     }
   },
   {
