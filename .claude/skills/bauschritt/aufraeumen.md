@@ -56,6 +56,14 @@ schlank aussieht.
 
 ## 3 · Streich-Massstab
 
+**Steuerungs-Deckel (David 15.8.2026):** `check:steuerdeckel` (Kette + CI)
+misst neben STRUKTUR/ROADMAP/CLAUDE auch die Flächen `.claude/hooks/*.py` und
+`scripts/check-*.ts` gegen Byte-Budgets (`FLAECHEN_BUDGET` in
+`struktur-rotieren.py`). Rot ⇒ vor dem nächsten Wächter einen streichen —
+Kandidaten liefert `npm run retro:17` (Regel «nie rot», Chesterton-Vorbehalt
+dort); Beweis nach dem Code-Massstab unten. Rechtsdaten-Tore sind ausgenommen.
+
+
 Vor jeder Streichung (echtes Entfernen, keine Verschiebung): **«Steuert der
 Schritt noch etwas?»** Ein Posten ohne `dep`-/`@queue`-/Blocker-Referenz
 mehr, dessen Anlass entfallen ist (Richtungsentscheid, Doppel-Eintrag,

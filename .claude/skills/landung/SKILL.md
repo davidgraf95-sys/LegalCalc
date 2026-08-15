@@ -92,18 +92,28 @@ npm run check:perf-budget  # QS-PERF: Bundle-Topologie/-Budget + Single-React;
 
 ## 2 · Bug-Check §9
 
-Unabhängige Review-Agents über das Deploy-Delta (`git log <letzter
-Deploy>..HEAD`): mindestens 2 Agents (Code-Lupe + empirische
-vite-node-Repros); bei grossen Deltas das bewährte Workflow-Muster
-«6 Strang-Finder × 2 adversariale Lupen». Bestätigte Befunde fixen,
-Regressionstests dazu, danach Tore aus Schritt 1 erneut.
+**Nach Diff-Klasse skaliert (Vereinfachung 15.8.2026):**
+- **Produkt-/Werkzeug-Diff** (`src/**`, `scripts/**`, `.github/**`, `vercel.json`,
+  `package.json`): unabhängige Review-Agents über das Deploy-Delta — Code-Lupe
+  + empirische vite-node-Repros (2 Agents); bei grossen Deltas «6 Strang-Finder
+  × 2 adversariale Lupen». Bestätigte Befunde fixen, Regressionstests dazu,
+  danach Tore aus Schritt 1 erneut.
+- **Reiner Doku-/Plan-/Test-Diff** (`*.md`, `fahrplaene/`, `bibliothek/`,
+  `.claude/`, `src/tests/**` ohne `src/lib`-Berührung): **kein** Agenten-
+  Bug-Check — die Tore (`gate`, `check:plan`, `check:bibliothek`) sind die
+  Prüfung; ein Bug-Check-Agent auf einem Doku-Diff ist Leerprüfung (15.8.:
+  je ~40–80k Token für «keine Befunde»). Risikopfad-Anteile bleiben davon
+  unberührt (Gegenprüfung ist eine andere Pflicht, unten).
 
 ## 3 · Serielle Landung — strikt der Reihe nach, EIN Kommando aufs Mal
 
-1. **Landungs-Rolle ansagen.** Vor Landungs-Beginn einen PR-Kommentar setzen
-   («Landung übernommen — Session/Worktree <name>»); wer an einem PR einen
-   fremden, jüngeren Landungs-Kommentar sieht, merged ihn NICHT. *(Anlass
-   3./4.8.2026, drei Parallel-Sessions — Wortlaut: `referenz-ci.md`.)*
+1. **Landungs-Rolle ansagen — nur bei sichtbarer Parallel-Session.** Zeigt
+   `plan:next` fremde Bau-Spuren (fremder wip, fremder Worktree/Branch, fremder
+   offener PR auf gleicher Fläche), VOR Landungs-Beginn einen PR-Kommentar
+   setzen («Landung übernommen — Session/Worktree <name>»); wer einen fremden,
+   jüngeren Landungs-Kommentar sieht, merged NICHT. Im Ein-Session-Betrieb
+   entfällt der Kommentar (Vereinfachung 15.8.2026: 12 Kommentare ohne Leser).
+   *(Anlass 3./4.8.2026, drei Parallel-Sessions — Wortlaut: `referenz-ci.md`.)*
 2. **Kollisionen sichten.** `gh pr list --state open` — prüfen, ob ein
    anderer offener PR dieselben Dateien/dasselbe Subsystem berührt
    (Doppelarbeit/Kollision). Bei Überschneidung: erst den anderen landen,
@@ -203,17 +213,21 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    auf das neue main rebasen (zurück zu Schritt 1). So kollidiert nie eine
    zweite Landung mit einer schwebenden.
 
-9. **Schritt-Status schliessen — wip verlässt die Session nie.** Bevorzugter
-   Weg (seit 14.8.2026, QS-PLAN-EINFACH): dem Squash-Commit den Trailer
-   `Roadmap-Status: done|ready|parked(<token>)` mitgeben — `plan-buchung.yml`
-   bucht nach dem Merge automatisch (rot bei ungültiger ID/Status, nie ein
-   unwahrer Plan). **Denselben Trailer-Block zusätzlich als eigenen Absatz in
-   den PR-BODY** — BEIDE Zeilen im SELBEN Absatz, unformatiert (ein halber
-   Block macht den Buchungs-Lauf seit 15.8. laut rot; Auto-Merge mit
-   Standard-Squash-Text verliert den Commit-Trailer, PR #491). Fällt beides
-   aus: von Hand `plan:set <id> status=…` + committen (done ⇒ Block per
-   Ziff. 6 in die Chronik). Trailer-Form: Skill `auftrag` Ziff. 5;
-   Vorfalls-Wortlaut: `referenz-ci.md`.
+9. **Schritt-Status schliessen — wip verlässt die Session nie.** EINE
+   Quelle (Vereinfachung 15.8.2026, §5 — vorher Commit-Trailer UND PR-Body,
+   heute 2× still verloren, 3× nachgebessert): der Trailer-Block steht **im
+   PR-BODY**, als eigener Absatz, beide Zeilen zusammen, unformatiert:
+   ```
+   Roadmap: <ID>
+   Roadmap-Status: done|ready|parked(<token>)
+   ```
+   `plan-buchung.yml` liest ihn nach dem Squash-Merge aus dem PR (Standard-
+   Squash-Text verliert Commit-Trailer ohnehin, PR #491); ein halber Block
+   macht den Lauf laut rot (seit 15.8.). Ein zusätzlicher Commit-Trailer
+   schadet nicht, ist aber keine Pflicht mehr. Fällt die Auto-Buchung aus
+   (Branch-Protection, PAT offen): `plan:set <id> status=…` im nächsten
+   PR/Sammel-Push (Ziff. 7 — kein direkter main-Push). Trailer-Form: Skill
+   `auftrag` Ziff. 5; Vorfalls-Wortlaut: `referenz-ci.md`.
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
