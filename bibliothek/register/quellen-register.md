@@ -5,6 +5,18 @@ VMWG/BGG mit Wortlaut-Diffs alt↔neu — Dossier
 [fedlex-pin-nachverifikation-2026-06.md](../normen/fedlex-pin-nachverifikation-2026-06.md);
 davor S3-Nachzug: HRegV, GebV-HReg, StG, GebV SchKG, StGB nachregistriert).
 
+## Lizenz-Politik für Fremdquellen (Entscheid David 15.8.2026)
+
+**LexMetrik wird nicht kommerziell betrieben** (David, Chat 15.8.2026, Anlass
+QS-EXTQUELLEN §5 Ziff. 5). Folge: Material unter «nicht-kommerziell»-Lizenzen
+(CC BY-NC, CC BY-NC-SA) ist lizenzrechtlich grundsätzlich zulässig — jede
+Aufnahme trägt trotzdem Namensnennung + Share-Alike-Pflicht und braucht einen
+**vorhandenen Lizenztext im Quell-Repo** (README-Zusage genügt nicht;
+Präzedenz `droid-f/fedlex`, verworfen 15.8.2026). Unverändert vorrangig bleibt
+das Leitbild: nur amtliche und urheberrechtsfreie Quellen für Rechtsinhalte
+(Art. 5 URG) — die Lizenz-Politik betrifft Werkzeuge/Hilfsdaten, nie den
+Rechtstext selbst.
+
 ## Fedlex — verifizierte Gesetzesquellen
 
 Basis-URLs sind in `src/lib/fedlex.ts` verdrahtet (SSoT für Links). Die
