@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-14",
+  "erzeugt": "2026-08-15",
   "materialien": [
     {
       "key": "ESTV-KS-DBG-5A",
@@ -238,7 +238,7 @@
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "f838b3bc8713afd12a6f590a9d5e9fcb0b1503797cea5e94e3d844c799307b60"
+      "sha": "ffd70cf77ab0988336c3fd9ebeed7ebec79da2f15536b323eda641d005fae0d5"
     },
     {
       "key": "ESTV-MWST-INFO-06",
@@ -670,14 +670,14 @@
       "sprache": "de",
       "status": "nur-live-link",
       "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MBI/04",
-      "stand": "2026-05-11",
+      "stand": "2026-08-13",
       "rang": 204,
       "normKeys": [
         "MWSTG",
         "MWSTV"
       ],
       "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert.",
-      "sha": "74e129462d65ed189cae1af20edbc7891dad7c61fa82c0e80fa6b70a82ef6e5e"
+      "sha": "8e8663b51352205305e41c58d9843e13eac435ea59dbb1d98d66fc2e95b3f8b0"
     },
     {
       "key": "ESTV-MWST-BRANCHEN-INFO-05",
