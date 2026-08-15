@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 4
 // E7 / A33 (FAHRPLAN-GESETZES-UX §10.10) — «Gliederung springt umher. Wenn man
 // sich darin bewegt.» (David 16.7.2026). Regressions-Wächter für die Ruhe des
 // Gliederungs-Baums (Scroll-Spy / TOC-Mitscroll). Läuft gegen `vite preview`
@@ -11,6 +11,7 @@
 //   A9-DoD — Lese-Scroll unter 4× CPU-Drossel: CLS 0, keine Konsolenfehler.
 import { test, expect, type Page } from '@playwright/test'
 import { clsBeobachtenInstallieren, clsAuslesen, clsHoehenSamplerVorabInstallieren } from './helpers/cls'
+import { CONTAINER_LOKAL_READER_SCHWER } from './helpers/budgets'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -363,6 +364,14 @@ test.describe('A33 — Ruhige Gliederung (Scroll-Spy / TOC)', () => {
   // ── A9-DoD: Lese-Scroll unter 4× CPU-Drossel, CLS 0 ──
   test('A9 — Lese-Scroll unter CPU-Drossel: CLS 0, keine Konsolenfehler', async ({ page }) => {
     test.slow()
+    // `test.slow()` verdreifacht den Projekt-Default — lokal also 90 s. Gemessen
+    // (Voll-Lauf `npm run test:e2e`, 10 Worker, n=5): 33585 · 38662 · 40134 ·
+    // 45156 · 60034 ms, mittel 43514, sd 10114. Der 90-s-Deckel hatte damit auf
+    // den schlechtesten Wert nur noch 1 % Reserve; unter zusätzlicher Build-Last
+    // riss er (86735 ms gemessen, 2 von 5 Läufen rot). Deckel nach QS-PERF
+    // Ziff. 5: 60034 + max(3 sd 30342, 25 %) = 90376 → 95 000 ms aus dem
+    // Budget-Modul. CI UNBERÜHRT (dort bleibt es bei `test.slow()` = 270 s).
+    if (!process.env.CI) test.setTimeout(CONTAINER_LOKAL_READER_SCHWER)
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 820 })
     // Wachser-Diagnose (19.7.): den Über-Grid-Höhen-Sampler schon AB Navigation

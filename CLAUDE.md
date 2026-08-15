@@ -196,7 +196,11 @@ Steuerung schneller als das Produkt. Vier Sätze, die in derselben Session
 mitlaufen: (1) Wer etwas hinzufügt, ersetzt zuerst die Stelle, die dieselbe
 Sorge schon trägt — oder sagt im Anlass-Satz, dass es keine gibt. (2) Was nicht
 scheitern kann, wird **gestrichen statt bewacht** (Präzedenz: `seq-hart`, drei
-Vorkommen, null Auswertung). (3) Eine Regel ohne datierten Anlass ist
+Vorkommen, null Auswertung) — das gilt ausdrücklich auch für den TESTAPPARAT
+(Auftrag David 14.8.2026): Tests und Tore, die weder Rechtslogik noch
+Rechtsdaten decken und nachweislich nie etwas gefangen haben, unterliegen
+demselben Rückbau (Beweis nach Streich-Massstab, `bauschritt`/aufraeumen.md);
+Prüftiefe auf Rechtslogik/Rechtsdaten ist davon ausgenommen und bleibt. (3) Eine Regel ohne datierten Anlass ist
 Rückbau-Kandidat (Chesterton). (4) Der Plan bildet **Kapazität ab, nicht
 Absicht**: was den Deckel sprengt, verliert sein Etikett und lebt als
 Ideen-Liste ohne `@meta`, Inventar und Tor weiter. Bei Konflikt gewinnt der

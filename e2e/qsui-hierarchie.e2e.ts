@@ -1,4 +1,4 @@
-// @shard-gruppe: 7
+// @shard-gruppe: 8
 // ─── QS-UI 8b · Tor «Verdikt zuerst» ────────────────────────────────────────
 //
 // Der Informationshierarchie-Pass (FAHRPLAN-UI-QUALITAET.md §2) hat die Ordnung
@@ -39,6 +39,7 @@
 // Reine Darstellungs-Prüfung (§3): kein Wortlaut, kein Wert, keine Frist wird
 // geprüft — nur Reihenfolge, Abstand und Breite.
 import { test, expect, type Page } from '@playwright/test'
+import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets'
 
 // Rechner-Flächen, die ohne Eingabe schon ein Ergebnis zeigen (Live-Berechnung).
 // Eingabe-gegatete Flächen (Streitwert, Prozesskosten, Betreibungskosten,
@@ -608,14 +609,14 @@ for (const [breite, hoehe, name] of [[1280, 800, 'Desktop'], [390, 844, 'Mobil']
 // Die zwei Bauteile dieser Einheit, die der Nutzer BEDIENT, sind die Abkürzung
 // zum Dokument (`ErgebnisSprung` auf den Mappen-Flächen; der «Vorschau ↓»-Knopf
 // im Wizard) und der Griff des eingeklappten Vorschau-Blocks. Geprüft wird beides
-// unter 6×-CPU-Drossel: Tastatur-Erreichbarkeit, Wirkung, Reaktionszeit, CLS.
-// Drossel/Budget-Konstanten wie in `rechtsprechung.e2e.ts` (CI langsamer).
-const A9_DROSSEL = process.env.CI ? 4 : 6
-const A9_BUDGET = process.env.CI ? 8000 : 5000
-const A9_LATTE = A9_BUDGET + 3000
+// unter CPU-Drossel: Tastatur-Erreichbarkeit, Wirkung, Reaktionszeit, CLS.
+// Drossel/Budget/Latte aus `./helpers/budgets` (§5).
+const A9_DROSSEL = DROSSEL
+const A9_BUDGET = REAKTIONS_BUDGET
+const A9_LATTE = REAKTIONS_LATTE
 
 test('A9 · Abkürzung zum Dokument: Tastatur, Wirkung, Flüssigkeit, CLS 0', async ({ page }) => {
-  if (process.env.CI) test.setTimeout(120_000)
+  if (CONTAINER_BUDGET_CI) test.setTimeout(CONTAINER_BUDGET_CI)
   const konsolenfehler: string[] = []
   page.on('pageerror', (e) => konsolenfehler.push(String(e)))
   page.on('console', (m) => { if (m.type() === 'error') konsolenfehler.push(m.text()) })

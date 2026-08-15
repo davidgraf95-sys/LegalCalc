@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-10",
+ "erzeugt": "2026-08-14",
  "kopf": {
   "srNummer": "221.214.1",
   "titel": "Bundesgesetz über den Konsumkredit",
@@ -29,7 +29,8 @@
     "links": [
      {
       "label": "SR <b>101</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "rs": "101"
      }
     ],
     "absatz": null,
@@ -299,7 +300,8 @@
      "links": [
       {
        "label": "SR <b>171.10</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510",
+       "rs": "171.10"
       }
      ],
      "absatz": "1",
@@ -317,7 +319,8 @@
      "links": [
       {
        "label": "SR <b>171.10</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510",
+       "rs": "171.10"
       }
      ],
      "absatz": "2",
@@ -530,7 +533,8 @@
      "links": [
       {
        "label": "SR <b>220</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+       "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377",
+       "rs": "220"
       }
      ],
      "absatz": "3",
@@ -695,7 +699,8 @@
      "links": [
       {
        "label": "SR <b>235.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2022/491"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2022/491",
+       "rs": "235.1"
       }
      ],
      "absatz": "3",
@@ -936,7 +941,8 @@
      "links": [
       {
        "label": "SR <b>281.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529"
+       "url": "https://fedlex.data.admin.ch/eli/cc/11/529_488_529",
+       "rs": "281.1"
       }
      ],
      "absatz": "2",
@@ -1259,7 +1265,8 @@
      "links": [
       {
        "label": "SR <b>241</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1988/223_223_223"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1988/223_223_223",
+       "rs": "241"
       }
      ],
      "absatz": null,
@@ -1336,7 +1343,8 @@
      "links": [
       {
        "label": "SR <b>952.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129"
+       "url": "https://fedlex.data.admin.ch/eli/cc/51/117_121_129",
+       "rs": "952.0"
       }
      ],
      "absatz": "3",

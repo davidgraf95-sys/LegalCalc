@@ -1,9 +1,21 @@
 {
   "erlassKey": "ASYLV2",
   "sr": "142.312",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-07-14",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/382",
+      "dateDocument": "2026-07-14",
+      "roFundstelle": "AS 2026 382",
+      "titelDe": "Asylverordnung 2 über Finanzierungsfragen (Asylverordnung 2, AsylV 2). Berichtigung (Betrifft nur den französischen Text)",
+      "titelFr": "Ordonnance 2 sur l’asile relative au financement (Ordonnance 2 sur l’asile, OA 2). Erratum",
+      "titelIt": "Ordinanza 2 sull’asilo relativa alle questioni finanziarie (Ordinanza 2 sull’asilo, OAsi 2). Correzione (Concerne soltanto il testo francese)",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/382/de",
+      "sha": "82a29107a1a33582441ed614422f93244b2ea7f6379a155a8fb28d58634e7370"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-06-12",
@@ -431,5 +443,5 @@
       "sha": "011c92a3d1112b02f80b5bafef9b4cf6c8954f1c15c04332d20b72a27934db73"
     }
   ],
-  "sha": "955fcb7ff20eef391087194cc202cbed41df91bc5e602e3f25e142a421dd903e"
+  "sha": "56a58cd13bd138a565f587e7558d51b6d64053e248ae68a1b9f33bddb3816fe6"
 }

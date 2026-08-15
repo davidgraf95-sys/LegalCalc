@@ -708,123 +708,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2011/61"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3171"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/673"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-12-03"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.108"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification de la loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramenti esecutivi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2011/61"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3171"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/673"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-12-03"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.108"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification de la loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramenti esecutivi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2011/61"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3171"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/673"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-12-03"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.108"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la modification de la loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramenti esecutivi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2020/1"
     },
     "proj": {
@@ -1323,6 +1206,123 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2011/61"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3171"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/673"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-12-03"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.108"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramenti esecutivi)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2011/61"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3171"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/673"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-12-03"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.108"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramenti esecutivi)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2011/61"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3171"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/673"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-12-03"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.108"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramenti esecutivi)"
     }
   }
 ]

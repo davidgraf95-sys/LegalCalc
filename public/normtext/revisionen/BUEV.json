@@ -1,7 +1,7 @@
 {
   "erlassKey": "BUEV",
   "sr": "141.01",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -13,9 +13,8 @@
       "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
       "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
       "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)",
-      "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/344/de",
-      "sha": "ab1278fe3db4351a276754788012b872e69a38184a6c03f6bd572b43fd697dfc"
+      "sha": "f9fdd194bd733aded45b7fe36c9678acc010de11874e302aff661ae0da7eac3e"
     },
     {
       "art": "aenderung",
@@ -60,5 +59,5 @@
       "sha": "3c314c3630bdbbc24767ac63de6e48143b15b5cacd56fe65d0b858ce5794bbb6"
     }
   ],
-  "sha": "ccb08ff4f9bec1560420ce5404594ff391df199031daed8c126fe95bc767a7f2"
+  "sha": "751dd341e874e0d77b2051f76b1b7c60b98ebc640b6ac9892cb337f07d128ff4"
 }

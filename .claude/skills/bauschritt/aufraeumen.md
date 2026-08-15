@@ -72,6 +72,16 @@ Jede Streichung bekommt in `ROADMAP-CHRONIK.md` eine **Begründungszeile**
 Ohne diese Zeile verschwindet ein Posten stillschweigend — der Verlust, den
 §11 (Erforschtes Wissen wird geordnet abgelegt) verhindern soll.
 
+**Für CODE gilt derselbe Massstab in beweisbarer Form (Auftrag David
+14.8.2026, Chat sinngemäss «was keine Fehlfunktion auslöst, kann weg» —
+präzisiert, weil unbeobachtet ≠ unbenutzt):** Eine Zeile/Datei darf weg,
+wenn der NACHWEIS des Nichttragens vor der Löschung steht — (a) keine
+eingehenden Verweise (Sweep-Guards oben, `git ls-files`-Bestand), (b) alle
+Tore grün UND golden byte-gleich nach dem Entfernen, (c) bei Rechtslogik
+zusätzlich §1-Blick: trägt die Stelle einen ungetesteten Rechtsfall, fällt
+sie NICHT («keine beobachtete Fehlfunktion» ist dort kein Beweis — Tests
+decken nie alle Fälle). Beweis vor Löschung, nie löschen-und-schauen.
+
 ## 4 · Fahrplan-Archivierung — verify-then-archive
 
 `check:plan` koppelt zwei Regeln: **Regel 7** — jede `FAHRPLAN-*.md` unter

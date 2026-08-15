@@ -71,7 +71,7 @@ jobs:
       # lösen keine Workflows aus.
       actions: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -143,6 +143,11 @@ jobs:
             npm run normtext:struktur -- --datum=${{ steps.datum.outputs.iso }}
             npm run gen:fedlex-wiedervorlage -- --datum=${{ steps.datum.outputs.iso }}
             npm run gen:verfall
+            # gen:historie VOR dem Manifest: Historie-Shards leiten aus den
+            # Struktur-Sidecars ab (§5-Kaskade). Fehlte bis 15.8.2026 — PR #497
+            # landete mit Sidecar-Änderung ohne Shard-Nachzug, check:historie
+            # rot erst in der Hand-Nacharbeit entdeckt (Nullprobe-Beleg dort).
+            npm run gen:historie
             npm run datenhaltung:manifest
           fi
 
@@ -183,6 +188,7 @@ jobs:
           npm run golden:vergleich
           npm run check:verfall
           npm run check:paritaet
+          npm run check:historie
 
       - name: Reparatur-PR eröffnen + Auto-Merge (David-Rahmen 16.7.2026)
         if: steps.diff.outputs.geaendert == '1'

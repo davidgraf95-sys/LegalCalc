@@ -1,7 +1,7 @@
 {
   "erlassKey": "CHEMRRV",
   "sr": "814.81",
-  "abgerufen": "2026-07-11",
+  "abgerufen": "2026-08-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -66,6 +66,18 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
       "sha": "0d1adc4eba6a31f9dd00aeda24e7f139a45b1358a899eced4e4795e42f7b60fa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-07-16",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/394",
+      "dateDocument": "2026-07-16",
+      "roFundstelle": "AS 2026 394",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV). Berichtigung",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim). Erratum",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim). Correzione",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/394/de",
+      "sha": "dd4309a2b444e7737283351d0c19e157503ce9ccbde318763b2448a16c53099e"
     },
     {
       "art": "aenderung",
@@ -770,5 +782,5 @@
       "sha": "a993ac534035835c97b63b3a35ac82d725066f2f88295f4547cfbe3c39e997d5"
     }
   ],
-  "sha": "06b902bc4dec6734758898f10a3b403d0b4f6afd5fad98ac9efaac7af6f8040e"
+  "sha": "182e842484b05c80d6a62497c0e34f75d53f8df6094cc15e08d97df485e8f826"
 }

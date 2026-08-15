@@ -279,123 +279,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/1151"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2460"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2007/452"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-02"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zu einer Teilrevision des Raumplanungsgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la révision partielle de la loi fédérale  sur l'aménagement du territoire "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio su una revisione parziale del diritto  sulla pianificazione del territorio "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "700"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/1151"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2460"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2007/452"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-02"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zu einer Teilrevision des Raumplanungsgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la révision partielle de la loi fédérale  sur l'aménagement du territoire "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio su una revisione parziale del diritto  sulla pianificazione del territorio "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "700"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/1151"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2460"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2007/452"
-    },
-    "dateDoc": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-12-02"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.084"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zu einer Teilrevision des Raumplanungsgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la révision partielle de la loi fédérale  sur l'aménagement du territoire "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio su una revisione parziale del diritto  sulla pianificazione del territorio "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "700"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2002/1110"
     },
     "proj": {
@@ -504,6 +387,123 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di misure di risanamento delle finanze federali"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "700"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/1151"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2460"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2007/452"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-02"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.084"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zu einer Teilrevision des Raumplanungsgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la révision partielle de la loi fédérale  sur l'aménagement du territoire "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio su una revisione parziale del diritto  sulla pianificazione del territorio "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "700"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/1151"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2460"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2007/452"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-02"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.084"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zu einer Teilrevision des Raumplanungsgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la révision partielle de la loi fédérale  sur l'aménagement du territoire "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio su una revisione parziale del diritto  sulla pianificazione del territorio "
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "700"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/1151"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2460"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2007/452"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-12-02"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.084"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zu einer Teilrevision des Raumplanungsgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la révision partielle de la loi fédérale  sur l'aménagement du territoire "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio su una revisione parziale del diritto  sulla pianificazione del territorio "
     }
   }
 ]

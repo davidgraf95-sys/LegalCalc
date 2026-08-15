@@ -127,3 +127,36 @@ beobachtet 5.–7.8.).
 **Status: einfach belegt** (Erstrecherche + Umsetzungs-Gegenprüfung am Ist-Zustand;
 Laufzeiten einmalig gemessen, Rot-Historie aus Repo-Quellen ohne Actions-Log-Abfrage —
 «nie rot belegt» heisst nicht «nie rot gewesen»). Zeitreihe: `messwerte/selbstopt-zeitreihe.json`.
+
+## Runde 2 — geplant (Auftrag David 14./15.8.2026, Start frühestens ~21.8.2026)
+
+**Startbedingung:** Token-Zeitreihe trägt ≥5 Session-Messpunkte
+(messwerte/token-spool.jsonl läuft seit 14.8.; Begründung: Kosten-Urteile
+messen statt schätzen). Prompt-Wortlaut für die Session (Anker QS-EFFIZIENZ):
+
+> Nutze den Skill `bauschritt` für den ganzen Session-Zyklus. Dauerauftrag-
+> Anker: QS-EFFIZIENZ (Querschnitt; Wortlaut-Herkunft: Memory
+> dauerauftrag-effizienz-2026-08-14).
+>
+> Auftrag: Recherchiere offen und mit Unteragenten in mehrere Richtungen das
+> Problem der ÜBERREGULIERUNG dieses Repos — Steuerungs-, Prüf- und
+> Session-Pflichten, die mehr kosten als sie fangen — und baue mit maximaler
+> Freiheit um. Du darfst alles ändern: Skills, Hooks, Tore, CI, CLAUDE.md,
+> Session-Abläufe.
+>
+> Schwerpunkte: (1) TESTAPPARAT ZURÜCKFAHREN, wo er nichts Relevantes deckt —
+> der Testapparat unterliegt denselben Rückbau-Regeln wie alles andere,
+> AUSSER bei Rechtslogik und Rechtsdaten (dort bleibt jede Prüftiefe).
+> Massstab je Test/Tor: Was hat er je gefangen (CI-Historie, git log,
+> Fehlerbuch)? Deckt er Rechtslogik? Nein+nein ⇒ streichen/zusammenlegen mit
+> Begründungszeile; Beweis vor Löschung (Streich-Massstab
+> bauschritt/aufraeumen.md). (2) SESSION-ABLÄUFE SIMPLIFIZIEREN: weniger
+> Pflicht-Handgriffe bei gleicher notwendiger Genauigkeit — maschinell
+> Erledigtes fliegt als Hand-Pflicht raus, Doppeltes wird konsolidiert.
+> (3) MESSEN VOR HANDELN: Token-Zeitreihe + CI-Messreihe als Beleg.
+>
+> Grenzen (unverändert): §1 · Rechtslogik/Rechtsdaten samt Prüfungen tabu
+> für Rückbau · Risiko-Pfade nur mit Gegenprüfung auf anderem Modell ·
+> §14.7/§18 · fachliche Abnahme bei David. Jede Streichung datiert begründet;
+> kein Rückbau, der einen belegten Vorfall wieder möglich macht. Seriell,
+> orchestriert, jede Einheit einzeln landen. Run till dry.
