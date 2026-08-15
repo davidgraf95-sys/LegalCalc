@@ -380,8 +380,15 @@ jobs:
       #   · wöchentlich in normen-monitor.yml (dort mit Vorlauf-Warnung),
       #   · in fedlex-frische.yml vor jedem Reparatur-PR,
       #   · und vor jedem Deploy lokal in `check:seriell`.
-      # check:tor-paritaet bleibt grün, weil es ALLE Workflows scannt, nicht
-      # nur ci.yml — der Nachweis der Abdeckung bleibt also maschinell.
+      #
+      # NACHTRAG 15.8.2026 (QS-AUTOMATIK-PARITAET): Der frühere Satz «check:tor-
+      # paritaet bleibt grün, weil es ALLE Workflows scannt» gilt NICHT mehr —
+      # genau diese Gleichsetzung von Wächter- mit PR-Deckung war der #425-
+      # Defekt. Die Sonde unterscheidet jetzt beides; `check:verfall` trägt
+      # darum einen ausdrücklichen ALLOWLIST-Eintrag mit den zwei Wächtern als
+      # benannten Ersatz-Arbitern. Die Abdeckung ist damit weiterhin maschinell
+      # gebunden, aber als BEWUSSTE Ausnahme deklariert statt stillschweigend
+      # mitgezählt. Die Wanduhr-Begründung oben ist unverändert der Grund.
       - name: Abnahme-Dossiers synchron zu den Schemas (§5-Projektion)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:dossiers
@@ -469,6 +476,18 @@ jobs:
       - name: Normtext-Struktur (Tabellen · Grundart · Invarianten)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:tabellen && npm run check:grundart && npm run check:invarianten
+      # Verdrahtet 15.8.2026 (QS-AUTOMATIK-PARITAET lit. b): diese drei standen
+      # bis dahin NUR in fedlex-frische.yml — einem schedule-Workflow. Das ist
+      # Wächter-, nicht PR-Deckung: er meldet Korpus-Drift erst NACH dem Merge
+      # und kann keinen verhindern (Fehlerklasse #425). Ein PR, der Snapshots
+      # oder Struktur-Sidecars ändert, blieb hier ungeprüft.
+      # Alle drei lesen offline nur die committeten Projektionen unter
+      # public/normtext/** (kein daten/*.db, kein Netz) und sind wanduhr-
+      # unabhängig — anders als check:verfall oben. Gemessen 15.8.2026 unter
+      # CI=1: 0.6 s + 0.9 s + 0.4 s = rund 2 s zusammen.
+      - name: Normtext-Korpus (Drift/Coverage · Struktur-Konsistenz · Verklebung)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:normtext && npm run check:struktur-konsistenz && npm run check:verklebung
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM
@@ -484,9 +503,15 @@ jobs:
       # meldete erst der POST-merge-Wächter turso-sync.yml (rot 21:52, Serving-
       # Sync blockiert). In-Memory-Ingest, ~21 s auf dem CI-Runner (gemessen
       # Lauf 30856208988), kein daten/*.db nötig.
-      - name: Datenhaltungs-Manifest (Determinismus · Drift · Invarianten)
+      # check:paritaet kam 15.8.2026 dazu (QS-AUTOMATIK-PARITAET lit. b) — es
+      # gehört zur selben Fehlerklasse und derselben Mechanik wie das Tor
+      # daneben: Es baut drei In-Memory-DBs aus den committeten JSONs und
+      # beweist, dass jede der 8377 Dateien byte-gleich zurückprojiziert wird.
+      # Auch dieses Tor lief bis dahin nur in fedlex-frische.yml (Wächter, post
+      # merge). Gemessen 15.8.2026 unter CI=1: 3.4 s, kein daten/*.db nötig.
+      - name: Datenhaltungs-Manifest · Byte-Parität DB↔Projektion
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:datenhaltung
+        run: npm run check:datenhaltung && npm run check:paritaet
       - name: SEO-Index · Verfall-UI
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:seo-index && npm run check:verfall-ui
