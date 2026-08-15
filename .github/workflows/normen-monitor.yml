@@ -98,6 +98,40 @@ jobs:
         if: always()
         run: bash .github/scripts/api-vertragstests.sh
 
+      # ── 3. FR/IT-Drift Stufe 1 (QS-FRIT-DRIFT, 15.8.2026) ──────────────────
+      #
+      # Bis hierher prüft dieser Monitor ausschliesslich die DEUTSCHE Fassung —
+      # eine französische oder italienische Fassung konnte beliebig abweichen,
+      # ohne dass ein Tor es sah. `check:frit-drift` vergleicht je Kern-Erlass
+      # die eId-Mengen der drei Amtssprachen AM GEPINNTEN Stand und meldet
+      # Abweichungen (Details: scripts/fedlex-frit-drift.ts).
+      #
+      # Der Exit-2-Fall wird bewusst NICHT rot: Exit 2 heisst «Fedlex/Filestore
+      # nicht erreichbar, keine Aussage möglich» — das ist kein Rechtsstands-
+      # Befund, und ein Rot dafür würde denselben Alarm entwerten, den die
+      # Triage unten scharf halten soll. Er wird als ::warning:: annotiert, ist
+      # also sichtbar und nicht still (§6.7); lokal bleibt der Exit-Code 2.
+      # Exit 1 (echte Sprach-Drift) färbt den Lauf rot — `continue-on-error`
+      # bleibt deshalb false.
+      - name: FR/IT-Drift Stufe 1 (eId-Mengenvergleich DE/FR/IT, Kern-Erlasse)
+        if: always()
+        continue-on-error: false
+        run: |
+          set -uo pipefail
+          # `set +e` ist nötig: GitHub startet `run:`-Blöcke mit `bash -e`, und
+          # -e würde den Lauf beim Exit-Code 2 abbrechen, BEVOR die Netz-Warnung
+          # unterschieden werden kann. Der Exit-Code wird unverändert
+          # weitergereicht (nie durch Pipe/|| verschluckt, §6-Lehre 6./7.6.).
+          set +e
+          npm run check:frit-drift
+          code=$?
+          set -e
+          if [ "$code" = "2" ]; then
+            echo "::warning title=FR/IT-Drift unvollständig::Fedlex/Filestore nicht vollständig erreichbar — kein Sprachvergleich möglich (kein Drift-Befund, kein Grün)."
+            exit 0
+          fi
+          exit "$code"
+
       # A2 (2.7.2026): Ein roter Lauf verhallte bisher still in der Verlaufsliste (15.6./29.6.
       # real rot, unbemerkt). Bei Rot legen wir einen sichtbaren Aufgaben-Zettel an — ODER
       # kommentieren den bestehenden, damit keine Issue-Flut entsteht.
