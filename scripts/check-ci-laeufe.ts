@@ -87,6 +87,152 @@ try {
   skip('`gh` fehlt oder ist nicht authentisiert');
 }
 
+// ─── UNTERBEFEHL `--bericht` (QS-AUTOMATIK-BERICHT, Fahrplan §3.1) ───────────
+// Das Tor oben beantwortet «ist ein geplanter Workflow kaputt?». Der Bericht
+// beantwortet die zwei Fragen daneben, für die es bis 15.8.2026 KEINE Stelle
+// gab: «wie geht es den Wächtern insgesamt?» und «welche Zweige/Worktrees sind
+// gelandet, aber nicht abgeräumt?». Beides war Handarbeit (Aufräum-Disziplin
+// 27.7.2026) und skaliert nicht über parallele Sessions — dieselbe Bewegung wie
+// beim Plansystem: aus der Regel wird ein Werkzeug.
+//
+// ABGRENZUNG zum Tor: der Bericht läuft NICHT in `check:seriell` und nicht in
+// CI. Er misst den Zustand einer ARBEITSMASCHINE (lokale Worktrees, lokale
+// Zweige) — auf einem CI-Runner gibt es die nicht, ein Urteil dort wäre
+// bedeutungslos. Er ist trotzdem kein blosser Ausdruck: findet er Verwaistes,
+// endet er mit Exit 1 (§6.7 — was nicht scheitern kann, ist kein Befund).
+if (process.argv.includes('--bericht')) bericht();
+
+function git(...args: string[]): string {
+  try {
+    return execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    return '';
+  }
+}
+
+/** (a) Zustand JEDES Workflows: letzter Lauf, Ergebnis, Alter in Tagen. */
+function abschnittWaechter(): void {
+  console.log('── (a) Wächter-Zustand — letzter Lauf je Workflow ──────────────────────────');
+  const dateien = readdirSync(DIR).filter((d) => /\.ya?ml$/.test(d)).sort();
+  for (const datei of dateien) {
+    const inhalt = readFileSync(`${DIR}/${datei}`, 'utf8');
+    const geplant = /^\s*-\s*cron:/m.test(inhalt) ? 'geplant' : 'ereignisgesteuert';
+    let roh: string;
+    try {
+      roh = execFileSync(
+        'gh',
+        ['run', 'list', '--workflow', datei, '--limit', '1',
+         '--json', 'conclusion,status,createdAt,url'],
+        { stdio: ['ignore', 'pipe', 'ignore'], encoding: 'utf8', timeout: 60_000 },
+      );
+    } catch {
+      console.log(`  ${datei.padEnd(26)} [${geplant}] Lauf-Liste nicht abrufbar.`);
+      continue;
+    }
+    const l = (JSON.parse(roh) as Lauf[])[0];
+    if (!l) {
+      console.log(`  ${datei.padEnd(26)} [${geplant}] KEIN EINZIGER LAUF.`);
+      continue;
+    }
+    const tage = (Date.now() - Date.parse(l.createdAt)) / (24 * STUNDE);
+    const ergebnis = l.status === 'completed' ? (l.conclusion ?? '?') : l.status;
+    console.log(
+      `  ${datei.padEnd(26)} [${geplant}] ${ergebnis.padEnd(11)} ` +
+      `${l.createdAt.slice(0, 10)} (vor ${tage.toFixed(1)} Tagen)`);
+  }
+}
+
+/** (b) Verwaiste Worktrees und Zweige — Rückgabe: Zahl der Funde. */
+function abschnittVerwaist(): number {
+  console.log('\n── (b) Verwaiste Worktrees und Zweige ──────────────────────────────────────');
+  const funde: string[] = [];
+
+  const porcelain = git('worktree', 'list', '--porcelain');
+  const bloecke = porcelain.split('\n\n').filter(Boolean);
+  // Der ERSTE Block ist stets das Haupt-Arbeitsverzeichnis — daran misst sich,
+  // was «ausserhalb des Repo-Verzeichnisses» heisst.
+  const wurzel = /^worktree (.+)$/m.exec(bloecke[0] ?? '')?.[1] ?? '';
+  const mitWorktree = new Set<string>();
+
+  for (const b of bloecke) {
+    const pfad = /^worktree (.+)$/m.exec(b)?.[1];
+    const zweig = /^branch refs\/heads\/(.+)$/m.exec(b)?.[1];
+    if (!pfad) continue;
+    if (zweig) mitWorktree.add(zweig);
+    if (pfad === wurzel) continue;
+
+    if (wurzel && !pfad.startsWith(wurzel)) {
+      funde.push(`  ${pfad}: Worktree AUSSERHALB von ${wurzel} — Scratchpad-Pfad einer beendeten Session?`);
+    }
+    if (!zweig) {
+      funde.push(`  ${pfad}: Worktree ohne Zweig (detached HEAD) — nicht zuordenbar.`);
+      continue;
+    }
+    // Leerer Diff gegen origin/main = der Inhalt steckt bereits in main. Bewusst
+    // der DIFF und nicht die Commit-Liste: bei --squash-Landung behält der Zweig
+    // seine Commits, sein Inhalt ist aber angekommen.
+    const abweichung = git('diff', '--stat', 'origin/main', zweig);
+    if (!abweichung) {
+      // SPEC-SCHÄRFUNG 15.8.2026 (beim Bau aufgefallen, Fahrplan §3.1 nachgezogen):
+      // Der Diff allein genügt nicht. Ein Worktree, in dem GERADE gearbeitet wird,
+      // hat vor dem ersten Commit denselben leeren Diff wie ein abgeräumter — der
+      // Bericht meldete sich in seinem eigenen Bauverzeichnis als verwaist. Ein
+      // Melder, der Falschalarm gibt, wird weggeklickt; dann meldet er nichts mehr.
+      const schmutzig = git('-C', pfad, 'status', '--porcelain');
+      if (schmutzig) {
+        console.log(`  ok: ${zweig} — in Arbeit (${schmutzig.split('\n').length} Datei(en) uncommittet).`);
+      } else {
+        funde.push(`  ${pfad} (${zweig}): gelandet, nicht abgeräumt — Diff gegen origin/main ist LEER, nichts uncommittet.`);
+      }
+    } else {
+      console.log(`  ok: ${zweig} — eigener Stand gegenüber origin/main (${abweichung.split('\n').length - 1} Datei(en)).`);
+    }
+  }
+
+  // Zweige OHNE Worktree gegen die offenen PRs: ein Zweig ohne PR und ohne
+  // Worktree, dessen Inhalt schon in main steht, ist Rest einer alten Session.
+  let prZweige = new Set<string>();
+  try {
+    const roh = execFileSync('gh', ['pr', 'list', '--state', 'open', '--json', 'headRefName'],
+      { stdio: ['ignore', 'pipe', 'ignore'], encoding: 'utf8', timeout: 60_000 });
+    prZweige = new Set((JSON.parse(roh) as { headRefName: string }[]).map((p) => p.headRefName));
+  } catch {
+    console.log('  (offene PRs nicht abrufbar — Zweig-Abgleich unvollständig, kein Urteil darüber.)');
+  }
+
+  const lokal = git('branch', '--format=%(refname:short)').split('\n').filter(Boolean);
+  const entfernt = git('branch', '-r', '--format=%(refname:short)')
+    .split('\n').filter((z) => z.startsWith('origin/') && !z.includes('HEAD') && z !== 'origin/main')
+    .map((z) => z.slice('origin/'.length));
+
+  for (const [herkunft, zweige] of [['lokal', lokal], ['origin', entfernt]] as const) {
+    for (const z of zweige) {
+      if (z === 'main' || mitWorktree.has(z) || prZweige.has(z)) continue;
+      const ref = herkunft === 'origin' ? `origin/${z}` : z;
+      if (!git('diff', '--stat', 'origin/main', ref)) {
+        funde.push(`  ${ref}: Zweig ohne Worktree und ohne offenen PR, Diff gegen origin/main LEER — löschbar.`);
+      }
+    }
+  }
+
+  if (!funde.length) console.log('  Keine verwaisten Worktrees oder Zweige.');
+  else console.log(funde.join('\n'));
+  return funde.length;
+}
+
+function bericht(): never {
+  abschnittWaechter();
+  const verwaist = abschnittVerwaist();
+  if (verwaist) {
+    console.log(
+      `\nbericht:automatik ROT — ${verwaist} verwaiste(r) Worktree/Zweig.\n` +
+      `  Abräumen: git worktree remove <pfad> · git branch -D <zweig> · git push origin --delete <zweig>.`);
+    process.exit(1);
+  }
+  console.log('\nbericht:automatik OK — Wächter-Zustand oben, nichts Verwaistes.');
+  process.exit(0);
+}
+
 // Der Selbstausschluss oben ist ein NAME — wird waechter.yml umbenannt, greift
 // er stillschweigend nicht mehr und die Verriegelung kehrt zurück (§6.7 lit. b:
 // nie still). Darum hier hart: existiert die Datei nicht, ist der Ausschluss
