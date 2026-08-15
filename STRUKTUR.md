@@ -38,7 +38,7 @@ Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 - **Gross-Schnitt:** 14 Etiketten → 5 Dächer (65 → 53; W2·6, W2·6-RESOLVER, W2·5g-ZEIT, W3-AUSBAU neu, QS-KORPUS neu); unabhängige Gegenprüfung BESTANDEN MIT AUFLAGEN → Auflagen behoben (Risikoklassen-Doku wahr, QS-GP-Vermerke an MEHRSPRACH/FILTER-Zeile, 22+2+5 tote ID-Stellen nachgezogen). Nebenfund-Fix: `RECHNEN_RE` +zustellfiktion/zustellung.
 - **Doku-Diät:** Kurzkarte = Session-Karten-Default (Station E). §9-Bug-Check: Code-Lupe + 6/6 empirische Repros, keine blockierenden Befunde.
 - **Dependabot:** #501 gemergt; #500/#502/#504 Auto-Merge scharf (Lock-Fix npx npm@10, H-8-Muster, auf #502/#504 gepusht); #503 tailwind 3→4 + Lock-Wurzelfix → QS-BASIS-Checklisten-Zeilen.
-- **OFFEN (steuert Folge-Session):** Vercel-Tageslimit riss mitten in der Landekette — #507 und #500 stehen mit grünen Actions-Checks und scharfem Auto-Merge, Vercel-Kontext rot («rate limited»). Re-Trigger nach Quota-Reset: leerer Commit auf den jeweiligen Branch (Landung-Skill Ziff. 6). Kein Bypass. `QS-EFFIZIENZ` bucht sich per PR-Body-Trailer (`Roadmap-Status: ready`) beim Merge selbst.
+- **Landung (Nachtrag):** #507 gemergt als `f6d8925fa`, Prod-Deploy success, 6 Kernrouten 200. Verzögerung ~7 h: Vercel-Tageslimit + Wächter-Lücke (mein Ad-hoc-Monitor deckte BEHIND nicht ab — Regel stand im Landung-Skill Ziff. 2, war im Monitor nicht implementiert; behoben durch Hand-`update-branch`, Folge-Monitor mit BEHIND-Pfad). Plan-Buchung: Workflow «success» ohne Push (still!) — Beleg am offenen Auto-Buchungs-Punkt vermerkt, Hand-Buchung `status=ready` ausgeführt.
 
 ## Session 14./15.8.2026 (Teil 5) — Aktivierungs-Audit, Rechtsstand-Reparatur, Test-Stabilisierung (#495, #497, #498, #499, #505)
 
