@@ -83,10 +83,22 @@ describe('check:plan — `groesse` ist reine Lese-Hilfe (Regel 12 gestrichen, QS
 
 // --- Anzeige -----------------------------------------------------------------
 describe('groesseBadge — Lagebild', () => {
-  it('S nennt die Bündelung, L das Schneiden, M den Normalfall', () => {
+  // Fachliche Änderung, deklariert (§6.3): die frühere Erwartung («M
+  // sessionfüllend», «L erst in Teilschritte schneiden») bildete den Massstab
+  // vom 5.8.2026 ab. David hat ihn am 15.8.2026 hochkalibriert («die
+  // Grössenordnung der Bauprompts ist zu klein») — Referenz ist die
+  // orchestrierte Session, die mehrere M-Schritte landet (Skill `auftrag`
+  // Ziff. 3, Skill `bauschritt` Station A 3). Die Anzeige folgt jetzt diesem
+  // Massstab; die alten Sätze hätten David beim Auswählen falsch beraten.
+  it('S nennt die Bündelung, M den Session-TEIL, L das Schneiden nur bei Zwang', () => {
     expect(groesseBadge('S')).toContain('nur gebündelt nehmen');
-    expect(groesseBadge('L')).toContain('erst in Teilschritte schneiden');
-    expect(groesseBadge('M')).toContain('sessionfüllend');
+    expect(groesseBadge('M')).toContain('ein Session-Teil');
+    expect(groesseBadge('L')).toContain('nur bei echtem Zwang schneiden');
+  });
+
+  it('Tor gegen Rückfall: kein Badge behauptet mehr, M fülle eine ganze Session', () => {
+    expect(groesseBadge('M')).not.toContain('sessionfüllend');
+    expect(groesseBadge('L')).not.toContain('erst in Teilschritte schneiden');
   });
 
   it('ohne Schätzung steht «Grösse ungeschätzt» — der Renderer rät nicht (§8)', () => {
