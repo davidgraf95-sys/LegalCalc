@@ -294,7 +294,7 @@ jobs:
         run: npm run build
       - name: dist-Artefakt hochladen (für tore + e2e-Shards + perf)
         if: needs.diff.outputs.art != 'doku'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist
@@ -569,7 +569,7 @@ jobs:
       # (a33: lokal 92 s, CI ~360 s). Begründung in playwright.config.ts.
       - name: Playwright-JSON-Report ablegen (Shard-Balancing-Datengrundlage)
         if: always() && needs.diff.outputs.art == 'code'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report-gruppe-${{ matrix.gruppe }}
           path: playwright-report.json
@@ -590,7 +590,7 @@ jobs:
       # Diagnose, kurz genug fürs Speicherkonto.
       - name: Playwright-Traces ablegen (nur bei rotem Shard)
         if: failure() && needs.diff.outputs.art == 'code'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-traces-gruppe-${{ matrix.gruppe }}
           path: test-results/
