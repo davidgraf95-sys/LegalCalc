@@ -2426,3 +2426,10 @@ Arbeitsschritt).
   <!-- @meta id: QS-EXTQUELLEN · status: done · blocker: null · dep: [] · kollision: [bibliothek/recherche] · worktree: nein · 26x: nein · groesse: S -->
 
 **Abschluss 15.8.2026:** alle 13 Befunde entschieden (Entscheid-Blöcke im Dossier `bibliothek/recherche/externe-quellen-repos-2026-08-03.md`, Status BEWERTET); 3 Übernahmen als Checklisten-Zeilen in `W3-AUSBAU`; die eine David-Frage (kommerzieller Betrieb? → NC-Quellen-Politik) bleibt offen, gate-t aber nichts mehr — die einzige NC-Quelle wurde unabhängig davon verworfen (keine Lizenzdatei im Repo).
+
+## QS-CURRENCY-TESTS — Testbindung cacheBefund + Kanonik-Ausschluss *(done, verschoben 15.8.2026)*
+
+- [x] **`QS-CURRENCY-TESTS` · Testbindung `cacheBefund` + Kanonik-Ausschluss** — beide hängen an keinem Test (§6.7). Reine Prüflogik, kein Pin wird geändert (Risikopfad-Anteil liegt in `QS-CURRENCY-KANON`). **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §18.2.
+  <!-- @meta id: QS-CURRENCY-TESTS · status: done · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, src/tests] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+
+**Abschluss 15.8.2026:** 15 neue Vitest-Fälle (`fedlex-cache-befund.test.ts` neu, `fedlex-wiedervorlage.test.ts` erweitert), jeder per Mutation mindestens einmal rot gezeigt (5 Mutationen), 0 Produktionscode-Zeilen, Golden 256/256 byte-gleich; FAHRPLAN-FEDLEX-PORTFOLIO §18.2 korrigiert (Bau-Fläche war fälschlich `scripts/fedlex-cache.sh`, real `src/tests/`).

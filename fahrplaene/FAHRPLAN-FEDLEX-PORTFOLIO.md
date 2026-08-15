@@ -744,7 +744,14 @@ Residue-Klasse trägt heute sehr Verschiedenes unter einem Etikett); (c) Ausbau 
   auffallen. Beide zuerst **rot gezeigt**, dann grün gestellt.
 - **Nicht hier:** re-pinnen, regenerieren oder Anker verifizieren — das ist Risikopfad und
   liegt in `QS-CURRENCY-KANON` (§17). Dieser Schritt ändert **keinen Pin**.
-- **Dateien:** `scripts/fedlex-cache.sh`, `src/tests/`.
+- **Dateien:** `src/tests/` — und NUR dort. *(Korrigiert 15.8.2026 beim Bau, lebendige
+  Spec: die Zeile nannte `scripts/fedlex-cache.sh`. Dort liegt keiner der beiden Bausteine.
+  `cacheBefund` steht in `scripts/normtext-snapshot.ts:362`, die Kanonik-Ausschluss-Dimension
+  in `scripts/fedlex-wiedervorlage-generieren.ts:206-217` (`erhebe()`); beide sind exportiert
+  und unter `VITEST` seiteneffektfrei importierbar — keine Fassade nötig. `fedlex-cache.sh`
+  trägt nur die Bash-Zwillinge der drei Sonden-Konstanten (:449/:463/:469) und ist Risikopfad
+  — es zu ändern wäre hier ausdrücklich falsch gewesen. Gebaut mit Diff = ausschliesslich
+  `src/tests/`.)*
 
 ## §19 `QS-KORPUS-SCOPE` — scope/decl-Sektionen ohne annex-Container ingestieren
 
