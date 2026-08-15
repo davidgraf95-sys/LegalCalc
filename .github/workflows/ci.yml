@@ -162,7 +162,7 @@ jobs:
           # Direkt in Bash, NICHT nach `scripts/ci/diff-klassieren.ts`
           # ausgelagert: dieser `diff`-Job ist bewusst checkout-/npm-frei
           # ("billigster Job der Kette", siehe Kommentar unten) — ein
-          # `vite-node`-Aufruf bräuchte Checkout + `npm ci` bei JEDEM Lauf,
+          # `vite-node`-Aufruf bräuchte Checkout + `npx -y npm@11 ci` bei JEDEM Lauf,
           # nicht nur bei code-fernen. Dieselbe Regel liegt zusätzlich als
           # reine, Vitest-getestete Funktion in scripts/ci/diff-klassieren.ts
           # (§6.7-Beweis dort, `npx vitest run src/tests/ci-diff-klassieren.
@@ -285,7 +285,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
         if: needs.diff.outputs.art != 'doku'
       # gen:suchindex + tsc -b + vite build + prerender — tsc-Fehler reissen
       # hier die ganze Kette, bevor tore/e2e überhaupt starten.
@@ -326,7 +326,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
       # Merge-Sperre auf Risikopfaden (F1, Vorfall PR #309). Lief bis 20.7.2026
       # NUR im lokalen PreToolUse-Hook — Web-UI-Merge, `gh api …/merge` und die
       # Zeitluecke von `gh pr merge --auto` waren damit ungedeckt. Hier ist das
@@ -502,7 +502,7 @@ jobs:
     # GitHub-Default von 360 min — ein systemisch hängender Shard hätte also bis zu
     # SECHS Stunden Runner-Zeit gebrannt und die Merge-Kette so lange blockiert.
     # Gemessen: ein grüner Shard braucht ~5.4–6.4 min Testzeit plus ~4 min Rüstzeit
-    # (npm ci, Chromium, dist-Download). 25 min lassen dem langsamsten Runner das
+    # (npx -y npm@11 ci, Chromium, dist-Download). 25 min lassen dem langsamsten Runner das
     # Doppelte an Luft und schlagen erst zu, wenn etwas grundsätzlich klemmt.
     # ROT BLEIBT ROT: der Deckel bricht ab und meldet FEHLGESCHLAGEN — er macht
     # nichts grün, er kürzt nur die Brenndauer (§17: Wurzel-Deckel statt Umschiffen).
@@ -528,7 +528,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
         if: needs.diff.outputs.art == 'code'
       # Union-Wächter VOR den Shards: beweist, dass die Gruppen in
       # e2e/shard-gruppen.json exakt die von Playwright gesammelte Spec-Menge
@@ -620,7 +620,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
       - name: dist-Artefakt herunterladen (aus `bau`, nicht neu bauen)
         uses: actions/download-artifact@v4
         with:
@@ -657,6 +657,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
         run: npm run check:merge-schutz
