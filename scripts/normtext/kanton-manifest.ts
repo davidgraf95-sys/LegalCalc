@@ -54,6 +54,13 @@ export function baueManifest(verzeichnis: string): Record<string, string> {
 }
 
 // ── Ausführbarer Teil ─────────────────────────────────────────────────────────
+// Seit 15.8.2026 (QS-EFFIZIENZ, Nebenfund QS-CURRENCY-TESTS) als Funktion: der
+// Block lief bis dahin bei JEDEM Import — auch aus Tests und aus
+// normtext-snapshot.ts (das das Manifest danach selbst schreibt) — und schrieb
+// still nach public/; ein Test, der beim blossen Import ein Repo-Artefakt
+// schreibt, ist ein latenter Golden-Zerstörer. CLI-Einstieg: der dünne Runner
+// `kanton-manifest-run.ts` (Fassaden-Muster wie vernehmlassungen-generieren-run.ts).
+export function schreibeKantonManifest(): void {
 const KANTON_DIR = 'public/normtext/kanton';
 const INDEX_PFAD = `${KANTON_DIR}/index.json`;
 
@@ -79,4 +86,5 @@ const stichproben = [
 for (const url of stichproben) {
   const datei = sortiert[url];
   console.log(`  ${url} → ${datei ?? '(nicht gefunden!)'}`);
+}
 }
