@@ -63,11 +63,13 @@ BUDGET = {
 # (Streich-Massstab bauschritt/aufraeumen.md §3, Kandidaten aus `retro:17`
 # Regel «nie rot»). Rechtsdaten-Tore (scripts/normtext, scripts/materialien …)
 # bleiben AUSSERHALB — Prüftiefe auf Rechtslogik/Rechtsdaten ist vom Rückbau
-# ausgenommen (§17-Gegengewicht). Ist 15.8.2026: hooks 71.1 KB · check-*.ts
-# 170.0 KB → Deckel Ist + ~7 %. Rot-Beweis 15.8.: Deckel auf 60 KB ⇒ Exit 1.
+# ausgenommen (§17-Gegengewicht). Ist 15.8.2026 (nach #516): hooks 71.2 KB ·
+# check-*.ts 182.5 KB → Deckel Ist + ~5 %. Rot-Beweis 15.8.: Deckel 60 KB ⇒
+# Exit 1 — und der erste CI-Lauf von #529 riss den 182-KB-Deckel real (182.5),
+# weil #516 dazwischen landete: der Deckel wirkt.
 FLAECHEN_BUDGET = {
     ".claude/hooks/*.py": 76 * 1024,
-    "scripts/check-*.ts": 182 * 1024,
+    "scripts/check-*.ts": 192 * 1024,
 }
 KARTEN_ANKER = "<!-- KARTEN -->"
 ARCHIV = "archiv/STRUKTUR-SESSIONKARTEN.md"
