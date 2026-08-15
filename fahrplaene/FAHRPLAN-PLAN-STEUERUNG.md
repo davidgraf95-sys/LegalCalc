@@ -99,7 +99,7 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet (S0, Q
 
 | Feld | Bedeutung | Werte |
 |---|---|---|
-| `id` | Stabile Schritt-ID (explizit) | `S0` · `W1·1` · `W2·6` · `W3·14` · `QS-PERF` · Bündel `W2·6-B1` |
+| `id` | Stabile Schritt-ID (explizit) | `S0` · `W1·1` · `W2·6` · `W3·12` · `QS-PERF` · Bündel `W2·6-B1` |
 | `status` | Die Ampel | `ready` · `wip` · `blocked` · `done` · `parked` (Grammatik s. u.) |
 | `blocker` | Token, falls `blocked`/`parked` | Token aus dem Blocker-Register oder `null` |
 | `dep` | Einheiten, die erst `done` sein müssen | Liste von IDs, z. B. `[W1·4]` oder `[]` |
@@ -149,7 +149,7 @@ prüft nur den `<wert>` vor der Klammer gegen die erlaubte Menge; die optionale 
 bei `wip` den Bauenden fest: `status: wip(reader-wt)` → Selbst-Koordination paralleler Agenten (heute
 manuell: «an Bündel R sitzt ein anderer Agent»).
 
-**IDs** folgen §14.5 (`W2·6` = «Welle 2 · Schritt 6»). `S0` und `W3·14` sind feste IDs. Bündel erben den
+**IDs** folgen §14.5 (`W2·6` = «Welle 2 · Schritt 6»). `S0` und `W3·12` sind feste IDs (Beispiel-ID nachgezogen 15.8.2026, Etiketten-Konsolidierung). Bündel erben den
 Eltern-Präfix (`W2·6-B1`). Vorbestehende CLAUDE.md-Drift «S0 + Wellen 1–13» (Schritt 14 existiert)
 wird **nicht** in diesem Schritt gefixt (fremde Datei), nur notiert.
 

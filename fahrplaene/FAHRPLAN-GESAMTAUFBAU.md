@@ -205,7 +205,7 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
 
 **(b) Inhalt:**
 - **Bahn A: Tarif-26×-Bündel — 26×-Slot Nr. 3, seriell:** Prozesskosten I2-Rest+I4 (gleiche Datenschicht), Tarif-Tabellen-Stufe2 (D→A→C→B; `spalten`-Schema-Abstimmung mit Fedlex-Extraktor ist nach Phase 3 konfliktfrei), I9, ZH-243. Jeder Tarif-Wert mit Norm + Link + Stand + Gegenprüfung (Daueranweisung).
-- **Bahn B:** OCL W10 Materialien-/Rechtsetzungs-Tracking + W3·11 «was kommt» (auf Paket-2/5-Pipeline).
+- **Bahn B:** OCL W10 Materialien-/Rechtsetzungs-Tracking + W3-AUSBAU-Zeile Rechtsetzungs-Tracking (vormals W3·11, Konsolidierung 15.8.2026) «was kommt» (auf Paket-2/5-Pipeline).
 - **Bahn D:** QS-PERF-Reste, SEO **Welle 3-Gerüst** (Content-Teil in die Abnahme), QS-GP Baustein d (rückwirkende Gegenprüfungs-Kampagne, risiko-priorisiert).
 - **Abnahme-Bereitstellung (kein David-Termin):** sämtliche Warteschlangen-Einträge werden per `abnahme`-Skill zu fertigen Abnahme-Paketen geschnürt und priorisiert (Fristen-Engines zuerst, dann grosse Kantone der Quarantäne), sodass die Welle ab Feb 2027 mit maximalem Durchsatz starten kann.
 - **Nur falls David in T0b das Vorziehen gewählt hat:** Abnahme-Welle 1 beginnt bereits hier (Inhalt wie Phase 6/T3 beschrieben); Default ist das NICHT.
@@ -290,7 +290,7 @@ Das fertig gebaute 26×-Asset **Beurkundung** wird in Phase 0 per Batch-Deploy a
 
 `ROADMAP.md` bleibt **die eine Steuerungsquelle**; dieser Plan ist eine **Ordnungs-Schicht**, kein Ersatz. Konkret:
 
-- **Mapping:** Phase 1–3 ≙ W2·6-DATA (E0–E4) + W2·5b/W2·6-Reste + NORMTEXT-Vollständigkeits-Audit; Phase 2 deckt zusätzlich Fedlex-Portfolio-Pakete 1/2/5 ([D]-Schritt) und OCL-W12; Phase 4 ≙ W3·12 (+BS/3-Tier-Bündel) + Vendor-Sondierungs-Tor; Phase 5 ≙ Tarif-Stränge + Abnahme-Paket-Schnürung; Phase 6 ≙ Abnahme-Warteschlange (Wellen 1+2) + E5/E6 + W3·11 + RECHTSPRECHUNG-P-Kette + Pakete 3/4 + Gerichtsferien-Matrix; das Querschnitt-Band (QS-PERF/QS-GP/QS-PH, SEO-A11y, UX, Lernphase) läuft als Bahn D **durch alle Phasen** und wird — gemäss Daueranweisung «beide Zonen» — bei jedem Überblick gleichwertig mitgeführt.
+- **Mapping:** Phase 1–3 ≙ W2·6-DATA (E0–E4) + W2·5b/W2·6-Reste + NORMTEXT-Vollständigkeits-Audit; Phase 2 deckt zusätzlich Fedlex-Portfolio-Pakete 1/2/5 ([D]-Schritt) und OCL-W12; Phase 4 ≙ W3·12 (+BS/3-Tier-Bündel) + Vendor-Sondierungs-Tor; Phase 5 ≙ Tarif-Stränge + Abnahme-Paket-Schnürung; Phase 6 ≙ Abnahme-Warteschlange (Wellen 1+2) + E5/E6 + W3-AUSBAU (Zeile Rechtsetzungs-Tracking, vormals W3·11) + RECHTSPRECHUNG-P-Kette + Pakete 3/4 + Gerichtsferien-Matrix; das Querschnitt-Band (QS-PERF/QS-GP/QS-PH, SEO-A11y, UX, Lernphase) läuft als Bahn D **durch alle Phasen** und wird — gemäss Daueranweisung «beide Zonen» — bei jedem Überblick gleichwertig mitgeführt.
 - **Einpflege:** Je Phase werden die Etappen als ROADMAP-Schritte mit Link auf ihren Herkunfts-FAHRPLAN geführt (kein FAHRPLAN ohne ROADMAP-Anker — QS-PH-Regel); der Phasen-Takt selbst wird als @meta-Etikett (`plan:next`) abgebildet, das **Slot-Inhaber-Etikett** kommt als zweites Etikett dazu — beide prüft `check:plan`, sobald das Phase-0-Etikettensystem steht.
 - **Konfliktauflösung:** Wo dieser Plan und ROADMAP-Fliesstext divergieren (z. B. 26×-Slot-Status, Abnahme-Welle-Startdatum), gilt ROADMAP nach Davids T0b-Entscheid — dieser Plan liefert nur den Entscheidungsvorschlag und die Begründungsordnung.
 

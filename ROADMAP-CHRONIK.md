@@ -2415,3 +2415,7 @@ Arbeitsschritt).
 
 - [ ] **`QS-KORPUS-RSPR-DATUM` · Entscheid-Datumsfehler im Rechtsprechungs-Register bereinigen** — `bge_151_II_475` trägt 1999 statt 2025; Datum gegen bger.ch verifizieren, in der Pipeline-Quelle korrigieren (nie im Projektions-JSON, §5), Register-Sweep nach weiteren Band/Jahr-Diskrepanzen, Projektion neu erzeugen. **Risikopfad** ⇒ Gegenprüfung. **Detail-Heimat:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md).
   <!-- @meta id: QS-KORPUS-RSPR-DATUM · status: ready · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+
+## BAUPLAN-UMBAU — Auftrags-Wortlaut *(erledigt 15.8.2026, ✅-Prosa aus offenem `QS-EFFIZIENZ` verschoben 15.8.2026)*
+
+· [ ] BAUPLAN-UMBAU (David 15.8., Prompt-Wortlaut: Chat-Übergabe / sinngemäss hier): Plan vereinfachen + Doku-Pflichten reduzieren (Streich-Massstab, mit Beleg) · Fahrpläne LEBENDIG machen (Mechanismus: Ist-Abweichung ⇒ Spec direkt korrigieren, datiert begründen, weiterbauen — statt gegen veraltete Spec bauen) · alle offenen Schritte gross schneiden (Massstab 15.8.) · Gesamtaufbau fundiert prüfen, erst recherchieren (auch Internet-Inspiration) dann umbauen · NACHZIEH-PFLICHT an jeder Ecke (Skills, bildSeiten/bauPrompt, check:plan, CLAUDE.md, Chronik; Regelverlust-Tore je Streichung) · Grenzen unverändert (§1, Risikopfad-Gegenprüfung, §14.7/§18, Kollisions-Sichtbarkeit erhalten)
