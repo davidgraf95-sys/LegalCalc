@@ -14,6 +14,15 @@ auch die dokumentierte Hand-Ausnahme, die ein Mensch am Dashboard fährt).
 
 Exit 2 = Aufruf blockieren. Kaputtes JSON → Exit 0 (nie fälschlich blocken;
 der Matcher in settings.json trifft ohnehin nur die Zielnamen).
+
+MATCHER-BEFUND (QS-EFFIZIENZ 15.8.2026, §6.7): Der ursprüngliche Matcher
+`deploy_to_vercel|buy_domain|…` hat NIE gefeuert — dieses Skript war ein Tor,
+das nicht scheitern konnte. Claude Code (Bundle 2.1.220, Funktion `BFy`) prüft
+einen Matcher, der nur aus `[A-Za-z0-9_|]` besteht, als LITERAL-Liste mit
+exakter Gleichheit statt als Regex; `deploy_to_vercel` ist aber nie gleich
+`mcp__<server>__deploy_to_vercel`. Erst ein Matcher mit Regex-Metazeichen
+(hier `^mcp__.*__(…)$`) nimmt den Regex-Zweig. Merksatz für neue MCP-Matcher:
+IMMER mit `^mcp__.*__` präfixen, nie den blanken Tool-Namen.
 """
 import json
 import re

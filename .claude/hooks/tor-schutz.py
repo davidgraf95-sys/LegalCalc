@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""PreToolUse-Hook (Bash): blockiert die drei teuersten Unfall-Muster.
+"""PreToolUse-Hook (Bash + MCP-Shell-Kanäle): blockiert die drei teuersten
+Unfall-Muster.
 
 1. Tor-Kommandos (Lint/Test/tsc/Golden/Check) durch Pipes jagen —
    Pipes verschlucken den Exit-Code (real passiert: 8 Lint-Fehler und
@@ -16,6 +17,13 @@
 Prompt-Cache (QS-TOK/T19): PreToolUse liegt AUSSERHALB des gecachten
 Präfix — dieser Hook kostet bei Grün 0 Token und keine Cache-Invalidierung.
 
+MCP-Kanal-Deckung (QS-EFFIZIENZ 15.8.2026, Werkzeug-Analyse Befund 3): Der
+Hook hing allein am Matcher `Bash`. `start_process`/`interact_with_process`
+(Desktop Commander u. a.) starten dieselbe Shell und erzielen damit dieselbe
+Wirkung — dort heisst das Feld aber `command` bzw. `input`. Unten wird nur die
+HERKUNFT normalisiert; die drei Regeln selbst sind Wort für Wort unverändert,
+der Bash-Pfad bleibt byte-gleich.
+
 Exit 2 = Aufruf blockieren, stderr geht als Feedback an Claude.
 """
 import json
@@ -24,12 +32,38 @@ import re
 import subprocess
 import sys
 
+# Shell-Kanäle: Tool-Name → Feld im tool_input, das die Kommandozeile trägt.
+SHELL_KANAELE = {
+    "Bash": "command",
+    "start_process": "command",
+    "interact_with_process": "input",
+}
+
+
+def kanal(tool_name: str) -> str:
+    """MCP-Tools heissen `mcp__<server>__<tool>` — massgeblich ist der Tool-Teil.
+    Nicht-MCP-Namen bleiben unverändert (`Bash` → `Bash`)."""
+    return tool_name.rsplit("__", 1)[-1] if tool_name.startswith("mcp__") else tool_name
+
+
 try:
     data = json.load(sys.stdin)
 except Exception:
     sys.exit(0)
 
-cmd = (data.get("tool_input") or {}).get("command", "")
+feld = SHELL_KANAELE.get(kanal(str(data.get("tool_name") or "Bash")))
+if feld is None:
+    sys.exit(0)
+# Gegenprüfungs-Auflage 15.8.2026: Nicht-String-Input (Zahl, Liste) warf hier
+# einen Traceback → Exit 1 → Claude Code wertet das als non-blocking = FAIL-OPEN
+# eines Wächters. Darum: tool_input hart auf dict koerzieren, Kommando auf str —
+# der Muster-Scan läuft dann auch über exotische Payloads statt zu sterben.
+ti = data.get("tool_input")
+if not isinstance(ti, dict):
+    ti = {}
+cmd = ti.get(feld, "")
+if not isinstance(cmd, str):
+    cmd = str(cmd)
 if not cmd:
     sys.exit(0)
 
