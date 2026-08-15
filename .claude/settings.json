@@ -107,7 +107,29 @@
         ]
       },
       {
-        "matcher": "deploy_to_vercel|buy_domain|buy_pro|buy_credits|buy_addon|update_project_deployment_protection",
+        "matcher": "^mcp__.*__(start_process|interact_with_process)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/tor-schutz.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/lese-schutz.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__.*__(read_file|read_multiple_files)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/lese-schutz.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "^mcp__.*__(deploy_to_vercel|buy_domain|buy_pro|buy_credits|buy_addon|update_project_deployment_protection)$",
         "hooks": [
           {
             "type": "command",
