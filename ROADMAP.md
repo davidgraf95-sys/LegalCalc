@@ -170,7 +170,7 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   Rechtsinhalt (O-Reihe); keine Massnahme kürzt Beweis, Tor oder Prüfung.
   **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
 - **Basis-Ausbau — Fundament** *(QS-BASIS, `[OF]`)*. CI/lokal-Tor-Parität + offene B-Einheiten.
-  <!-- @meta id: QS-BASIS · status: wip · blocker: null · dep: [] · kollision: [.github/workflows, package.json, package-lock.json, knip.json] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, package.json, package-lock.json, knip.json] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] Totcode-Meldung wird echtes Tor `check:tot` — blockierend bei NEUEN Meldungen (Basis: 1). Reine Prüflogik. §3.2.
   - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted — Dependabot meldet 2 Verwundbarkeiten (1 hoch); Audit als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
