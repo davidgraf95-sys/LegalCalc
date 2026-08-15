@@ -111,16 +111,9 @@ Ein neues Tor ohne Klasse wird nicht aufgenommen.
 
 ## 8. §-Konkordanz (für Alt-Verweise im Bestand)
 
-Die Unterparagraphen von §6 sind seit dem A4-Umzug (25.7.2026) hierher gezogen.
-Rund 220 Verweise im Bestand (Code-Kommentare, Fahrpläne, Tests) zeigen weiterhin
-auf die alten Nummern — sie lösen hier auf:
-
-| Alt (`CLAUDE.md`) | Neu |
-|---|---|
-| §6.1 Ablauf, Tore vorher grün | Ziff. 1 |
-| §6.2 Golden festhalten | Ziff. 1, Schritt 2 |
-| §6.3 Tests nicht anpassen | Ziff. 2 — **steht zusätzlich weiter in `CLAUDE.md` §6** |
-| §6.4 Performance ändert nur den Ladezeitpunkt | Ziff. 5 |
-| §6.5 Diagnose sparsam | Ziff. 6 |
-| §6.6 Datei-Schlankheit, Fassaden-Muster | Ziff. 4 |
-| §6.7 Wann ein Tor ein Tor ist (a)–(d) | Ziff. 7 |
+Die Unterparagraphen von §6 sind seit dem A4-Umzug (25.7.2026) hier; rund 220
+Bestands-Verweise zeigen weiterhin auf die alten Nummern. Volle
+Auflösungs-Tabelle: **`referenz-konkordanz.md`** im Skill-Ordner — nur laden,
+wenn wirklich ein «§6.x» aufzulösen ist. Merkhilfe: §6.1/§6.2 → Ziff. 1,
+§6.3 → Ziff. 2, §6.4 → Ziff. 5, §6.5 → Ziff. 6, §6.6 → Ziff. 4,
+§6.7 → Ziff. 7.

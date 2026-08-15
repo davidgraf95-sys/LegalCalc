@@ -38,11 +38,11 @@ const BAHNEN: { name: string; text: string }[] = [
  * festhält. Also: Hausnummern behalten, lesbares Schild davor.
  */
 const KUERZEL_LEGENDE: { teil: string; erklaerung: string }[] = [
-  { teil: 'W2', erklaerung: 'Welle 2 — die zweite grosse Bauetappe des Projekts. Die Wellennummer sagt, in welcher Etappe ein Arbeitspaket geplant wurde, nicht wie wichtig es ist.' },
+  { teil: 'W1, W2, W3', erklaerung: 'Welle 1, 2, 3 — die grossen Bauetappen des Projekts. Die Wellennummer sagt, in welcher Etappe ein Arbeitspaket geplant wurde, nicht wie wichtig es ist.' },
   { teil: '·5, ·6, ·13 …', erklaerung: 'Die Zahl nach dem Mittelpunkt ist die Klinge des Taschenmessers, also der Themenbereich — zum Beispiel ·5 Gesetze lesen, ·6 Rechtsprechung, ·13 Kantone.' },
   { teil: '-KANTONE, -K7, -B3 …', erklaerung: 'Der Namensteil dahinter bezeichnet den Teilschritt innerhalb des Themas. Buchstabe plus Zahl heisst meist: einer von vielen gleichartigen Batches.' },
   { teil: 'QS-…', erklaerung: 'Quer- und Qualitätsarbeit ohne festen Platz in der Reihenfolge — jederzeit einschiebbar, weil sie keine Etappe blockiert.' },
-  { teil: 'QS-TOK, QS-KORPUS, QS-GP …', erklaerung: 'Der Namensteil nach QS nennt das Thema: TOK Token-Sparen, KORPUS Gesetzes-Sammlung, GP Gegenprüfung, BASIS Fundament, AUTOMATIK Prüf-Automatik, PLAN Bau-Planung.' },
+  { teil: 'QS-EFFIZIENZ, QS-KORPUS, QS-GP …', erklaerung: 'Der Namensteil nach QS nennt das Thema: EFFIZIENZ sparsamer Bau, KORPUS Gesetzes- und Urteils-Sammlung, GP Gegenprüfung, BASIS Fundament, AUTOMATIK Prüf-Automatik, PERF Tempo, UI Oberfläche.' },
 ];
 
 /** Glossar — je ein Laien-Satz, projektbezogen (statisch). */
@@ -63,7 +63,11 @@ const GLOSSAR: { begriff: string; erklaerung: string }[] = [
   { begriff: 'Status «geprüft»', erklaerung: 'Der Projekteigner hat den Inhalt Norm für Norm abgenommen. Diese Stufe wird nie automatisch vergeben; heute trägt sie noch kein Eintrag.' },
   { begriff: 'Status «geplant»', erklaerung: 'Vorgesehen, aber noch nicht gebaut. Auf der Plattform als «In Vorbereitung» gekennzeichnet und ohne Norm-Angaben — damit nichts Unfertiges nach Substanz aussieht.' },
   { begriff: '@queue (Warteschlange)', erklaerung: 'Die eine Prioritätsliste des Projekts: Sie legt fest, welcher offene Schritt als Nächstes gebaut wird. Ohne sie entschiede die Tagesform.' },
+  { begriff: 'Dach-Schritt (Checkliste)', erklaerung: 'Ein Arbeitspaket, das viele gleichartige Einzelposten unter einem Namen sammelt; die Checkliste darunter zeigt, wie viele davon noch offen sind. Eine Session nimmt daraus eine passende Auswahl — nie das ganze Dach auf einmal — und hakt jede erledigte Position im Plan ab.' },
+  { begriff: 'Grösse S · M · L', erklaerung: 'Eine Schätzung des Arbeitsumfangs, keine Prüfung: S trägt nie eine eigene Session und wird gebündelt, M ist ein Session-Teil (eine Session mit Unteragenten schafft mehrere davon), L wird nur dann in Teilschritte zerlegt, wenn die Arbeit wirklich nacheinander laufen muss.' },
   { begriff: 'Fahrplan / Baustelle', erklaerung: 'Eine «Baustelle» bündelt zusammengehörige Schritte; ihr «Fahrplan» ist das Detaildokument dazu — von der Begründung über die einzelnen Bauschritte bis zur Abnahme-Bedingung.' },
+  { begriff: 'Lebendige Spec', erklaerung: 'Ein Fahrplan ist eine Bau-Anleitung, kein Protokoll: Weicht er vom tatsächlich Gebauten ab, wird er sofort und datiert korrigiert statt umgangen. Erledigte Abschnitte ziehen ins Archiv um; im Fahrplan bleibt je Abschnitt eine Zeile stehen, damit bestehende Verweise weiter aufgehen.' },
+  { begriff: 'Session-Karte (Kurzkarte)', erklaerung: 'Der Abschluss-Vermerk einer Bau-Session: was gebaut wurde, mit welchem Beleg, was offen bleibt. Der Normalfall sind drei bis sechs Zeilen; die ausführliche Karte gibt es nur, wenn Rechtsinhalte berührt wurden, eine Lehre gezogen wurde oder eine Folge-Session etwas wissen muss.' },
 ];
 
 // ===========================================================================
@@ -103,7 +107,9 @@ export function methodeSeite(o: SeitenOpts): string {
   <h2>Warum mehrere Baustellen gleichzeitig laufen</h2>
   <p class="lede">Die Arbeit ist in vier Bahnen geschnitten, die weitgehend <b>getrennte Dateiflächen</b> berühren.
   Genau deshalb können mehrere Baustellen gleichzeitig laufen, ohne sich gegenseitig zu überschreiben — jede Session
-  arbeitet dabei in einem eigenen Worktree, also einer eigenen vollständigen Arbeitskopie des Projekts.</p>
+  arbeitet dabei in einem eigenen Worktree, also einer eigenen vollständigen Arbeitskopie des Projekts.
+  Die Bahnen sagen, <b>wer gleichzeitig bauen kann</b>; welchen Teil des Projekts ein einzelnes Arbeitspaket berührt,
+  sagen die <a href="#bereiche">Wirkungsbereiche</a> weiter unten.</p>
   <div class="cards">${bahnen}</div>
 </section>
 
@@ -140,6 +146,15 @@ export function methodeSeite(o: SeitenOpts): string {
   Tor-Ausgabe; alles andere gilt als nicht erfolgt.</p>
   <p class="lede">Fachliche Abnahmen, Budget-Entscheide und der Status «geprüft» bleiben beim Projekteigner und werden
   nie automatisch gesetzt.</p>
+  <p class="lede">Drei Dinge hält jede Session schriftlich fest — sonst zeigt dieses Lagebild einen Stand, den es nicht gibt:</p>
+  <ul class="liste">
+    <li><span class="s done"></span><div><b>Erledigtes wird im Plan abgehakt.</b> Was gebaut wurde, verschwindet aus der
+    Liste der offenen Schritte; abgeschlossene Arbeitspakete wandern ins Chronik-Archiv.</div></li>
+    <li><span class="s done"></span><div><b>Die Bau-Anleitung wird nachgeführt.</b> Weicht der Fahrplan vom Gebauten ab,
+    wird er im selben Zug datiert korrigiert — nie gegen eine veraltete Anleitung weiterbauen (<i>lebendige Spec</i>).</div></li>
+    <li><span class="s done"></span><div><b>Eine kurze Session-Karte bleibt zurück.</b> Drei bis sechs Zeilen: was gebaut
+    wurde, welcher Beleg dazugehört, was offen bleibt. Ausführlich nur, wenn Rechtsinhalte berührt wurden.</div></li>
+  </ul>
 </section>
 
 <section id="bereiche">
@@ -157,7 +172,7 @@ export function methodeSeite(o: SeitenOpts): string {
   <p class="eyebrow">Kürzel</p>
   <h2>So liest du die Kürzel</h2>
   <p class="lede">Die Arbeitspakete tragen kurze Kennzeichen wie <span class="id">W2·13-KANTONE-K7</span> oder
-  <span class="id">QS-TOK</span>. Sie sind aus Teilen zusammengesetzt, die sich einzeln lesen lassen.</p>
+  <span class="id">QS-EFFIZIENZ</span>. Sie sind aus Teilen zusammengesetzt, die sich einzeln lesen lassen.</p>
   <dl class="glossar">${kuerzel}</dl>
   <p class="hinweis">Warum die Kürzel nicht einfach durch Klartext ersetzt werden: Sie sind die Hausnummern des
   Projekts — der Plan, die Detailpläne, die Änderungsvermerke und die Arbeitskopien verweisen alle darauf.

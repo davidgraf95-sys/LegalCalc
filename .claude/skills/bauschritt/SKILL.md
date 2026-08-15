@@ -36,7 +36,7 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
 
 ## Station A — Einstieg (vor jeder Zeile Code)
 
-1. **`plan:next`** zuerst, Lage-Block **lesen**: stale `wip`/fremde
+1. **`git fetch --prune`, dann `plan:next`**, Lage-Block **lesen**: stale `wip`/fremde
    Bau-Plätze = Kollisionsmeldung → melden, dann entscheiden, nie parallel
    in dieselbe Fläche bauen.
 2. **ID gegen `ready-now`.** Nicht darin (Abhängigkeit offen, `done`,
@@ -55,10 +55,17 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
    - **Harte Grenze:** nie Risikoklassen mischen, nie fremde Flächen dazu.
 4. **Bau-Spec:** `npm run fahrplan -- <fahrplan-datei> <§>` — Slice statt
    Volltext.
-5. **Sichtbar werden** (F6): `plan:set -- <id> status=wip && check:plan`,
-   committen, **pushen** — sonst unsichtbares Kollisionsrisiko.
-6. **Branch `feat/<slug-der-id>`**, sofort pushen; Worktree nach
+5. **Branch `feat/<slug-der-id>` ZUERST** anlegen; Worktree nach
    `worktree:`-Feld im `@meta` (§12, Skill `landung`).
+6. **Sichtbar werden** (F6): `plan:set -- <id> status=wip && check:plan`,
+   committen und den **Feature-Branch** pushen — NICHT main (jeder
+   main-Push ist ein Vercel-Deploy und wirft offene Auto-Merge-PRs auf
+   BEHIND; Hook `tor-schutz.py` blockt ihn, Skill `landung` Ziff. 7, David
+   15.8.2026). Sichtbarkeit trägt der **Branch-Name** (Slug = Schritt-ID,
+   `lage.ts` ordnet Branches Schritten zu und listet sie unter «🌿 weitere
+   Branches»); darum in Station A Ziff. 1 vor `plan:next` ein
+   `git fetch --prune`, damit fremde Feature-Branches erscheinen. Der
+   ROADMAP-wip-Marker auf main kommt mit dem PR-Merge (Trailer, Ziff. 9).
 
 ## Station B — Bau
 
@@ -121,7 +128,12 @@ bevor der Kontext zur Neige geht** — lieber sauber landen als anreissen.
       **[aufraeumen.md](aufraeumen.md)**.
 - [ ] `npm run plan:bild` — Dock-Datei aktuell.
 - [ ] **Bau-Flächen abräumen:** Worktree, Feature-Branch (lokal + remote),
-      `git worktree prune`, Scratch-Dateien.
+      `git worktree prune`, Scratch-Dateien; danach `git checkout main &&
+      git pull` (Falle 15.8.: zweimal vom alten Branch aus weitergearbeitet).
+- [ ] **Sammel-Push:** alle Doku-Commits der Session, die keinen PR haben
+      (Session-Karte, Nachbuchungen, Lehren), in EINEM Push:
+      `LEXMETRIK_MAIN_PUSH=1 git push origin main` — der einzige direkte
+      main-Push der Session (Skill `landung` Ziff. 7).
 - [ ] **§17-Lehren-Check:** Lehre aufgekommen? Verankert nach Formregel
       Skill `lehren` (Tor > Dispatch-§0 > Skill > Prosa) — nur im Chat
       gilt als nicht gezogen.
@@ -139,6 +151,8 @@ bevor der Kontext zur Neige geht** — lieber sauber landen als anreissen.
 - **Nichts doppelt lesen:** Unteragenten-Bericht ist das Ergebnis.
 - **Mechanik nach unten delegieren** (Verschieben/Formatieren/Umbenennen/
   Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
-- **Doku-Pushes bündeln** — Ausnahme: `wip`-Push aus Station A, sofort.
+- **Kein direkter main-Push** (Hook blockt): Verwaltung fährt im PR mit;
+  Doku ohne PR am Session-Ende in EINEM `LEXMETRIK_MAIN_PUSH=1 git push
+  origin main` (Station E) — David 15.8.2026, Skill `landung` Ziff. 7.
 - **Antworten kurz:** kein Nacherzählen von Tool-Ausgaben.
 </content>
