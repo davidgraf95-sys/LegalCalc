@@ -301,6 +301,70 @@ verstecken kann, ist gegen §8 gebaut; es ist entfernt (§17: Wurzel, nicht Umsc
    Pendant «↓ Dokumente (3)».
 6. **I3 aus Teil 1 auf `checkVisibility()` nachziehen** (methodischer Fund oben). Klein,
    verhaltensneutral, aber es macht ein bestehendes Tor erst zuverlässig.
+   **Korrektur 15.8.2026 — erst nach Ziff. 7 nachziehen.** `checkVisibility()` trägt eine
+   eigene Falsch-Rot-Klasse (§2.3); wer es jetzt nach Teil 1 kopiert, trägt sie mit. Die
+   Reihenfolge ist: Settle-Fix (Ziff. 7), dann I3 nachziehen.
+7. **Tor-Falschmeldung unter Parallel-Last beheben** (§2.3, gemessen 15.8.2026) — höchster
+   Prozess-Nutzwert, gehört in Teil-Schritt **(e)**. Kein Produktfehler, aber ein Tor, das
+   ohne Defekt rot wird, und damit §6.7-relevant.
+
+### §2.3 · Nachprüfung 15.8.2026 — (b) bestätigt, aber das Tor meldet falsch rot
+
+**Nachgeprüft, weil «erledigt» kein Beleg ist.** Durchgang über den Ist-Code statt über die
+Spec: die 21 Rechner-Routen (`/rechner/fristenspiegel` ist ein Redirect, kein Werkzeug), die
+Rechtsprechungs- und die 30 Vorlagen-Flächen. **Ergebnis: Teilpass (b) steht.** Die
+Verdikt-Ordnung ist überall gebaut, das Tor `e2e/qsui-hierarchie.e2e.ts` deckt sie mit
+I1–I10 + A9 ab, und seit dem 4.8.2026 ist **kein neues Werkzeug** dazugekommen (die
+Neuzugänge sind Gesetzes-Leser-Interna sowie `PassendeRechner`/`GerichtsWahlBlock` in
+bestehenden Vorlagen-Köpfen). **Keine Darstellungs-Abweichung offen** — darum in dieser
+Einheit **keine Änderung an `src/**`.**
+
+**Der Befund liegt im Tor, nicht im Produkt.** Der erste Lauf nach dem Build war rot: drei
+Vorlagen-Flächen meldeten «kein Formvorschrift-Badge (`[data-formgate]`)» — die §8-Ansage,
+die über die Gültigkeit entscheidet. Das Badge fehlt aber auf **keiner** Fläche; es steht in
+allen 30 prerenderten Seiten und war beim Fehlschlag im DOM und ausgelayoutet.
+
+**Mechanismus, gemessen (nicht vermutet):** Instrumentierter Lauf, Diagnose am Fehlschlag:
+
+```
+DIAG {"anzahlImDom":1,"sichtbarkeiten":[false],"rects":["241x23"],
+      "readyState":"complete","routeOpacity":"0","ahnenOpacity":[["lc-route=0"]]}
+```
+
+1. Die Seite ist prerendert, `page.locator('h1').first().waitFor()` löst darum **sofort** aus
+   — unabhängig von der Hydration.
+2. React hydriert und montiert `<div className="lc-route">` (`src/App.tsx:290`); dessen
+   `animation: lc-fade-in var(--dur-base)` (`src/index.css:1128`) startet bei `opacity: 0`.
+3. Unter Parallel-Last landet `page.evaluate` auf dem Frame, in dem die berechnete Opazität
+   **exakt 0** ist.
+4. `checkVisibility({ opacityProperty: true })` liefert dann für **jeden** Nachfahren `false`.
+   Wichtig und nicht offensichtlich: Zwischenwerte zählen NICHT — bei 0.77–0.92 (gedrosselt
+   gemessen) ist das Ergebnis `true`. Nur die exakte Null kippt es. Genau daran ist die
+   Erstdiagnose zuerst gescheitert.
+5. Alle vier Griffe der Vorlagen-Messung (`dok`, `platz`, `badge`, `sprung`) nutzen
+   `.find(sicht)` — sie fallen **gemeinsam** auf `null`. Betroffen sind also **I8, I9 und
+   I10**, nicht nur I10, und die Meldung zeigt auf ein Produktproblem, das es nicht gibt.
+
+**Messreihe (Bedingung mitgenannt, nicht nur die Rate):**
+
+| Bedingung | rot |
+|---|---|
+| `--workers=5`, ganze Datei, kalt direkt nach dem Build | 3 / 65 |
+| `--workers=5`, ganze Datei, warm | 0 / 65 |
+| `--workers=5`, nur Vorlagen, `--repeat-each=3` | 0 / 84 |
+| `--workers=14`, ganze Datei | 3 / 65 · 4 / 65 |
+| `--workers=16`, ganze Datei | 6 / 65 |
+
+Die betroffenen Routen wechseln bei jedem Lauf (mahnung/ag-gruendung/kuendigung-vermieter →
+rubrum/testament/vollmacht → …) — routenunabhängig, also Zeitpunkt, nicht Fläche.
+**Verlässliche Reproduktion:** `npx playwright test e2e/qsui-hierarchie.e2e.ts --workers=14`.
+
+**Fix-Richtung für (e)** — Tor-seitig, `src/**` bleibt unberührt: vor dem Messen den
+Einblende-Frame abwarten, statt einmalig zu einem beliebigen Zeitpunkt zu messen. Sauber ist
+die Wartebedingung auf die zu messende Sache selbst (`locator(...).waitFor({ state:
+'visible' })`) bzw. eine Wiederholung der Erhebung (`expect.poll`), nicht ein fester
+`waitForTimeout` — der wäre wieder eine Wette auf die Maschine. Gegenprobe nach dem Fix:
+derselbe `--workers=16`-Lauf muss grün bleiben (§6.7 — der Rot-Beweis liegt oben schon vor).
 
 ## §3 · Navigations- und Muster-Konsistenz
 
