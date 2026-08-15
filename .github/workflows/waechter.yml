@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
       - name: Lauf-Zustand der geplanten Workflows
         run: npm run check:ci-laeufe
         env:

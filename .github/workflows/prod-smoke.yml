@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
       - name: Prod-Smoke fahren
         env:
           SMOKE_BASE_URL: ${{ github.event.inputs.base_url }}

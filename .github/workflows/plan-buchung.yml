@@ -78,7 +78,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
 
       # `%(trailers:key=…,valueonly)` liest nur echte Trailer-Zeilen am
       # Commit-Ende (wie check-merge-schutz.ts) — keine beiläufige Erwähnung

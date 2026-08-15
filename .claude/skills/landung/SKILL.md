@@ -251,7 +251,9 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    `Roadmap-Status: done|ready|parked(<token>)` mitgeben — `plan-buchung.yml`
    bucht nach dem Merge automatisch (rot bei ungültiger ID/Status, nie ein
    unwahrer Plan). **Denselben Trailer-Block zusätzlich als eigenen Absatz in
-   den PR-BODY** (unformatiert, nicht eingerückt, kein Code-Fence; der
+   den PR-BODY** (unformatiert, nicht eingerückt, kein Code-Fence; BEIDE
+   Zeilen im SELBEN Absatz — getrennte Absätze buchten bis 15.8. still
+   nichts, seither macht ein halber Block den Buchungs-Lauf laut rot; der
    🤖-Footer darf danach folgen): mergt jemand per GitHub-Auto-Merge mit
    Standard-Squash-Text, geht der Commit-Trailer verloren — der Workflow
    liest ihn dann ersatzweise aus dem PR-Body (Lehre 14.8.2026, PR #491:

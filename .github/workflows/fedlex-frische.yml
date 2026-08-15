@@ -76,7 +76,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
 
       - name: Laufdatum festlegen (§2 — kein Date.now in der Erhebung)
         id: datum

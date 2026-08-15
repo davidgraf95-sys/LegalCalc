@@ -196,11 +196,22 @@ describe('parseBuchungAusPrBody', () => {
   });
 
   // (c) kein Trailer nirgends -> still (null, kein Wurf).
-  it('gibt null zurück, wenn der PR-Body keinen vollständigen Trailer-Block trägt', () => {
+  it('gibt null zurück, wenn der PR-Body gar keine Buchungs-Absicht trägt', () => {
     expect(parseBuchungAusPrBody('Nur eine gewöhnliche PR-Beschreibung ohne Trailer.')).toBeNull();
     expect(parseBuchungAusPrBody('')).toBeNull();
-    // nur EIN der beiden Trailer vorhanden -> weiterhin still, kein Teil-Treffer.
-    expect(parseBuchungAusPrBody('Text.\n\nRoadmap: QS-EFFIZIENZ')).toBeNull();
+  });
+
+  // FACHLICHE ÄNDERUNG 15.8.2026 (deklariert, §6.3): ein HALBER Buchungs-Block
+  // verpuffte bis dahin still — Realfall PR #507: `Roadmap:` und
+  // `Roadmap-Status:` durch Leerzeile getrennt, nur der letzte Absatz zählte
+  // als Block, Workflow endete «success» ohne Push, Hand-Buchung nötig.
+  // Seither gilt: erkennbare, aber unvollständige Buchungs-Absicht => Wurf.
+  it('wirft bei halbem Buchungs-Block (nur einer der beiden Trailer)', () => {
+    expect(() => parseBuchungAusPrBody('Text.\n\nRoadmap: QS-EFFIZIENZ')).toThrow(/unvollständiger Buchungs-Block/);
+    // der exakte #507-Fall: beide Trailer da, aber in GETRENNTEN Absätzen —
+    // nur der letzte (status-only) zählt als Block => laut, nie still.
+    expect(() => parseBuchungAusPrBody('Text.\n\nRoadmap: QS-EFFIZIENZ\n\nRoadmap-Status: ready\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)'))
+      .toThrow(/unvollständiger Buchungs-Block/);
   });
 
   // (b) Injection-Probe im PR-Body wird verworfen — läuft durch dieselbe
