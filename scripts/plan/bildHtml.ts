@@ -532,17 +532,17 @@ export function bereichsBadges(globs: string[]): string {
 const GROESSE_TEXT: Record<string, { badge: string; titel: string; klasse: string }> = {
   S: {
     badge: 'Grösse S — nur gebündelt nehmen',
-    titel: 'Geschätzt: trägt keine eigene Session. Der Skill «bauschritt» bündelt sie in Station A mit 1–2 kollisionsfreien Nachbarn gleicher Risikoklasse.',
+    titel: 'Geschätzt: trägt nie allein eine Session. Der Skill «bauschritt» bündelt sie in Station A mit so vielen kollisionsfreien Nachbarn gleicher Risikoklasse, dass die Session gefüllt ist.',
     klasse: 'ready',
   },
   M: {
-    badge: 'Grösse M — sessionfüllend',
-    titel: 'Geschätzt: füllt eine Bau-Session — der Normalfall, ohne Zusatz-Handgriff.',
+    badge: 'Grösse M — ein Session-Teil',
+    titel: 'Geschätzt: füllt einen TEIL der Session, nicht die ganze — eine orchestrierte Session landet mehrere M-Schritte nacheinander (Massstab David 15.8.2026); weitergebaut wird per Default, bis der Kontext zur Neige geht.',
     klasse: 'done',
   },
   L: {
-    badge: 'Grösse L — erst in Teilschritte schneiden',
-    titel: 'Geschätzt: zu gross für eine Session. Vor dem Bau in sessionfüllende Teilschritte schneiden (AP-6-Muster); bei Dach-Schritten läuft der Bau ohnehin über die Unterschritte.',
+    badge: 'Grösse L — nur bei echtem Zwang schneiden',
+    titel: 'Geschätzt: gross. Geschnitten wird erst, wenn echte Serialisierungs- oder Risiko-Zwänge es verlangen, nicht aus Gewohnheit (Massstab David 15.8.2026); bei Dach-Schritten gibt ohnehin die Checkliste die Auswahl vor.',
     klasse: 'wip',
   },
 };
