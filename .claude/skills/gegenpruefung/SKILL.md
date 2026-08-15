@@ -149,6 +149,13 @@ zustaendigkeit|straf|bger`).
 - **Commit-Trailer** setzen (§14 Trailer-Konvention):
   `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde/„keine">`
   bzw. bei reiner Tor-/Test-Änderung `Gegenpruefung: n/a — reine Prüflogik`.
+  **EINZEILIG, im letzten Absatz, nur Trailer-Zeilen dort** (Falle 15.8.2026,
+  QS-TYP-LUECKE): `git`'s `%(trailers)`-Parser erkennt den Block nur, wenn
+  jede Zeile des letzten Absatzes ein `Key: Wert` ist — ein Zeilenumbruch
+  mitten im Verdikt-Wert oder ein Prosa-Satz darunter macht den Trailer
+  unsichtbar, `check:merge-schutz` bleibt rot trotz Register-Zeile.
+  `gegenpruefung:ok` akzeptiert als Verdikt nur `bestanden` — Auflagen
+  vorher einbauen, dann `bestanden` mit Auflagen-Vermerk im Prüfer-Feld.
 
 ## Nicht-Ziele
 
