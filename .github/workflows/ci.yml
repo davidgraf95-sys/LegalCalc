@@ -278,7 +278,7 @@ jobs:
       # Bei art=doku ist er ein Leerlauf von Sekunden. `code-fern` (Punkt 3,
       # QS-PLAN-EINFACH 14.8.2026) baut VOLL wie `code` — es überspringt nur
       # die Browser-Shards weiter unten, Bau und Tore sind unverändert Pflicht.
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         if: needs.diff.outputs.art != 'doku'
       - uses: actions/setup-node@v5
         if: needs.diff.outputs.art != 'doku'
@@ -319,7 +319,7 @@ jobs:
       # fetch-depth: 0 — check:merge-schutz bildet merge-base(origin/main, HEAD).
       # Mit dem Default (depth 1) gibt es keine gemeinsame Basis und das Tor
       # wuerde (korrekt) rot melden, dass es seine Referenz nicht bilden kann.
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v5
@@ -521,7 +521,7 @@ jobs:
       # Kurzquittung: `code-fern`-Flächen berühren die ausgelieferte App
       # nachweislich nicht, Bau und alle Node-Tore liefen für sie trotzdem
       # VOLL im `tore`-Job oben — nur die Browser-Shards sind hier verzichtbar.
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         if: needs.diff.outputs.art == 'code'
       - uses: actions/setup-node@v5
         if: needs.diff.outputs.art == 'code'
@@ -615,7 +615,7 @@ jobs:
     env:
       TZ: Europe/Zurich
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -650,7 +650,7 @@ jobs:
     name: Merge-Schutz (Required-Kontext)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v5
