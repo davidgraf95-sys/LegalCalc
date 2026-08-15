@@ -6,7 +6,9 @@
  * §5: Single Source of Truth — das Manifest ableitet aus den vorhandenen Dateien,
  *     nie redundant von Hand pflegen.
  *
- * Aufruf: npx vite-node scripts/normtext/kanton-manifest.ts
+ * Aufruf: npx vite-node scripts/normtext/kanton-manifest-run.ts
+ *   (seit 15.8.2026 — der Direktaufruf dieser Datei schreibt NICHTS mehr; sie ist
+ *   reine Bibliothek, Schreiben nur über schreibeKantonManifest() im Runner)
  */
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
