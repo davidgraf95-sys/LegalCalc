@@ -205,6 +205,86 @@ describe('erhebe()', () => {
   });
 });
 
+// ─── Kanonik als zweite Ausschluss-Dimension (QS-CURRENCY-TESTS) ─────────────
+//
+// ANLASS. Gegenprüfung zu PR #420, Befund 1 (TESTLÜCKE): die mit #414/Befund 4
+// eingebaute Kanonik-Dimension (`&& !kanonikBefund` in erhebe()) hing an KEINEM
+// Test — wer sie entfernt hätte, hätte kein Tor rot gemacht (§6.7).
+//
+// WAS SIE ABWEHRT. Ein Pin auf einer NICHT-KANONISCHEN html-Manifestation
+// (Alias-URL / Alt-Revision DESSELBEN Konsolidierungsdatums) ist datumsmässig
+// aktuell. Ohne die Dimension trüge er den Frische-Chip «geltend geprüft»,
+// während `check:fedlex-versionen` denselben Pin zeitgleich ROT meldet — zwei
+// Wahrheiten über denselben Erlass (§5), und die falsche steht im UI (§8).
+//
+// Die Kanonik-Wahrheit wird INJIZIERT (Map Abstract-ELI → gepinnt/kanonisch),
+// nicht hier aufgelöst: kein Netz, kein Pin wird berührt.
+describe('erhebe() — Kanonik-Ausschluss', () => {
+  const AAA = erlass({ key: 'AAA', sr: '1', kuerzel: 'AAA', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/1/1/de', fassungsToken: '20260101' });
+  const fetchAktuell = fakeFetch([{ eli: 'cc/1/1', date: '2026-01-01' }]); // geltend == Pin
+
+  it('datumsaktuell, aber nicht-kanonisch ⇒ KEIN geprüft-Chip, dafür gelistet', async () => {
+    const kanonik = new Map([['cc/1/1', { gepinntN: 5, kanonischN: 9 }]]); // fza-Muster (§17)
+    const r = await erhebe([AAA], '2026-08-15', fetchAktuell, kanonik);
+    expect(r.currency.AAA).toBeUndefined();
+    expect(r.nichtKanonisch).toEqual([{ key: 'AAA', gepinntN: 5, kanonischN: 9 }]);
+    // Es ist NICHT die Überholt-Dimension, die hier greift — sonst wäre der
+    // Fall auch ohne die Kanonik-Zeile rot und bewiese nichts.
+    expect(r.ueberholt).toEqual([]);
+  });
+
+  it('Gegenprobe: derselbe Erlass OHNE Kanonik-Eintrag trägt den Chip', async () => {
+    const r = await erhebe([AAA], '2026-08-15', fetchAktuell, new Map());
+    expect(r.currency.AAA).toEqual({ geprueftAm: '2026-08-15' });
+    expect(r.nichtKanonisch).toEqual([]);
+  });
+
+  it('Randfall: überholt UND nicht-kanonisch ⇒ kein Chip, in BEIDEN Listen, sortiert', async () => {
+    const zwei: ErlassBasis[] = [
+      erlass({ key: 'ZWEI', sr: '2', kuerzel: 'ZWEI', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2/2/de', fassungsToken: '20240101' }),
+      erlass({ key: 'EINS', sr: '1', kuerzel: 'EINS', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/1/1/de', fassungsToken: '20260101' }),
+    ];
+    const f = fakeFetch([
+      { eli: 'cc/1/1', date: '2026-01-01' }, // EINS: aktuell
+      { eli: 'cc/2/2', date: '2026-07-01' }, // ZWEI: überholt (Pin 2024)
+    ]);
+    const kanonik = new Map([
+      ['cc/1/1', { gepinntN: 5, kanonischN: 9 }],
+      ['cc/2/2', { gepinntN: 3, kanonischN: 6 }],
+    ]);
+    const r = await erhebe(zwei, '2026-08-15', f, kanonik);
+    expect(r.currency).toEqual({});
+    expect(r.ueberholt.map((u) => u.key)).toEqual(['ZWEI']);
+    // Die Doppel-Betroffenheit verschwindet nicht in der Überholt-Liste, und die
+    // Ausgabe ist deterministisch nach key sortiert (§2).
+    expect(r.nichtKanonisch.map((k) => k.key)).toEqual(['EINS', 'ZWEI']);
+  });
+
+  it('Randfall: Ganz-Aufhebung hat Vorrang — der Erlass wird nicht zusätzlich als nicht-kanonisch geführt', async () => {
+    // Ein aufgehobener Erlass verlässt die Schleife vor der Kanonik-Prüfung. Er
+    // darf nicht doppelt gemeldet werden («re-pinnen!» für etwas, das gar nicht
+    // mehr gilt) — die Massnahme ist die Aufhebung, nicht der Re-Pin.
+    const erl: ErlassBasis[] = [
+      erlass({ key: 'BMV', sr: '412.103.1', kuerzel: 'BMV', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/2009/423/de', fassungsToken: '20160823' }),
+    ];
+    const f = fakeFetch([{ eli: 'cc/2009/423', date: '2016-08-23', noLonger: '2026-03-01' }]);
+    const r = await erhebe(erl, '2026-07-18', f, new Map([['cc/2009/423', { gepinntN: 1, kanonischN: 4 }]]));
+    expect(r.aufhebungen[0]).toMatchObject({ key: 'BMV', anerkannt: true });
+    expect(r.nichtKanonisch).toEqual([]);
+    expect(r.currency.BMV).toBeUndefined();
+  });
+
+  it('Randfall: der Join läuft über den Abstract-ELI, nicht über den Erlass-Key', async () => {
+    // WATCH aus der Gegenprüfung zu #420: liefe die Map versehentlich auf
+    // Erlass-Keys statt ELIs (Schlüsselraum-Drift register.json ↔ cache.sh),
+    // wäre die ganze Dimension ein STILLER No-op. Dieser Fall pinnt den
+    // Schlüsselraum fest: ein Key-Eintrag greift nachweislich NICHT.
+    const r = await erhebe([AAA], '2026-08-15', fetchAktuell, new Map([['AAA', { gepinntN: 5, kanonischN: 9 }]]));
+    expect(r.nichtKanonisch).toEqual([]);
+    expect(r.currency.AAA).toEqual({ geprueftAm: '2026-08-15' });
+  });
+});
+
 describe('AUTO-Block ist Verfall-grammatik-konform', () => {
   it('erzeugt parsbare Termine (letzte Spalte = künftiges Datum)', () => {
     const block = baueAutoBlock(
