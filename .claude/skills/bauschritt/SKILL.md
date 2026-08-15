@@ -97,6 +97,14 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
 
 ## Station D — Landung
 
+**Kein Stillstand ohne David (Auftrag 16.8.2026, nach 7 h stummem Warten
+15./16.8.):** Wer eine Landekette per Wächter begleitet, setzt zusätzlich
+einen **Stillstands-Anker** (Hintergrund-Lauf: alle 5 min `git fetch`; wenn
+25 min kein neuer main-Merge UND noch PRs offen ⇒ Meldung «STILLSTAND»,
+worauf die Session SELBST eingreift: Konflikt lösen, Hand-Merge bei allen
+Required grün, Nachzug). Ein Wächter, der «nachzieht», ist keine Landung —
+massgeblich ist der Merge-Zeitstempel auf origin/main.
+
 Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge,
 Bug-Check, serielle Landung, CI-Grün, Nachkontrolle). Schlusspunkt:
 **Status schliessen** (`plan:set <id> status=done`/`ready`/`parked`,
