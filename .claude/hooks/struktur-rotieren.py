@@ -55,6 +55,22 @@ BUDGET = {
     "ROADMAP.md": 100 * 1024,
     "CLAUDE.md": 14 * 1024,
 }
+# Steuerungs-Deckel (Auftrag David 15.8.2026, «Steuerungszuwachs minimieren, und
+# darauf achten, dass es immer so bleibt»): dieselbe Mechanik für FLÄCHEN statt
+# Einzeldateien — Summe der Bytes je Glob. Anlass: 15.8. wuchsen Hooks/Wächter
+# um ~+240 Zeilen, während Prosa fiel; jede Lehre wurde ein eigener Wächter.
+# Reisst ein Flächen-Deckel, ist vor dem nächsten Wächter ein Rückbau fällig
+# (Streich-Massstab bauschritt/aufraeumen.md §3, Kandidaten aus `retro:17`
+# Regel «nie rot»). Rechtsdaten-Tore (scripts/normtext, scripts/materialien …)
+# bleiben AUSSERHALB — Prüftiefe auf Rechtslogik/Rechtsdaten ist vom Rückbau
+# ausgenommen (§17-Gegengewicht). Ist 15.8.2026 (nach #516): hooks 71.2 KB ·
+# check-*.ts 182.5 KB → Deckel Ist + ~5 %. Rot-Beweis 15.8.: Deckel 60 KB ⇒
+# Exit 1 — und der erste CI-Lauf von #529 riss den 182-KB-Deckel real (182.5),
+# weil #516 dazwischen landete: der Deckel wirkt.
+FLAECHEN_BUDGET = {
+    ".claude/hooks/*.py": 76 * 1024,
+    "scripts/check-*.ts": 192 * 1024,
+}
 KARTEN_ANKER = "<!-- KARTEN -->"
 ARCHIV = "archiv/STRUKTUR-SESSIONKARTEN.md"
 # Karten älter als so viele ARBEITSTAGE (Mo–Fr) gegenüber der jüngsten Karte rotieren.
@@ -316,6 +332,18 @@ def waechter_meldungen(repo):
             out.append(
                 f"  - {name}: {groesse/1024:.1f} KB > Budget {budget/1024:.0f} KB "
                 f"(+{(groesse-budget)/1024:.1f} KB)"
+            )
+    # Flächen-Deckel: Summe je Glob (*.test.ts zählt nicht — Prüftiefe, kein
+    # Steuerungs-Zuwachs).
+    import glob as _glob
+    for muster, budget in FLAECHEN_BUDGET.items():
+        dateien = [f for f in _glob.glob(os.path.join(repo, muster)) if not f.endswith(".test.ts")]
+        summe = sum(os.path.getsize(f) for f in dateien)
+        if summe > budget:
+            out.append(
+                f"  - Steuerungs-Fläche {muster}: {summe/1024:.1f} KB > Deckel {budget/1024:.0f} KB "
+                f"(+{(summe-budget)/1024:.1f} KB, {len(dateien)} Dateien) — vor dem nächsten "
+                f"Wächter einen streichen (retro:17 «nie rot», aufraeumen.md §3)"
             )
     return out
 
