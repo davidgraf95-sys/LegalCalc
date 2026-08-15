@@ -140,7 +140,7 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   - [ ] Verdikt-Prüfung vor dem Push (lokaler pre-push-Hook) — spart den 11-Minuten-CI-Umweg; reine Prüflogik, einmal rot zeigen (§6.7). §3.3.
   - [ ] Vier Härtungen aus Gegenprüfungen: (a) fedlex-Extraktionsschicht Risiko-klassieren; (b) `leakErkannt` ohne Konsument; (c) `trenneInterneTitel` unterläuft `PARTEI_RE`; (d) `check-merge-schutz.ts` diffs ohne `-z`/`--no-renames`. **b/c Risikopfad ⇒ Gegenprüfung**; je Punkt Rot-Beweis (§6.7). §3.6.
 - **Automatik-Gesundheit** *(QS-AUTOMATIK, `[OF]`)*. Läuft unsere Automatik wirklich, und würde sie
-  <!-- @meta id: QS-AUTOMATIK · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, scripts/datenhaltung/check-turso-frische.ts, scripts/check-ci-laeufe.ts, scripts/check-tor-paritaet.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-AUTOMATIK · status: wip · blocker: null · dep: [] · kollision: [.github/workflows, scripts/datenhaltung/check-turso-frische.ts, scripts/check-ci-laeufe.ts, scripts/check-tor-paritaet.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   scheitern können? Offen: Turso-Wächter-Abdeckung + Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
   - [ ] Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde — eine Stelle, die sagt, wie es den Wächtern geht. §3.1.
