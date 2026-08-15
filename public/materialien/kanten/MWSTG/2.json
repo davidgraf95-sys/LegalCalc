@@ -1,7 +1,79 @@
 {
-  "erzeugt": "2026-07-04",
+  "erzeugt": "2026-08-15",
   "erlass": "MWSTG",
   "kanten": [
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "14",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2025-01-14",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 3",
+          "url": "&componentId=1010289"
+        },
+        {
+          "z": "Teil A · Ziff. 5.2.1.2",
+          "url": "&componentId=1269061"
+        },
+        {
+          "z": "Teil A · Ziff. 5.2.2.2",
+          "url": "&componentId=1269080"
+        },
+        {
+          "z": "Teil A · Ziff. 6.2",
+          "url": "&componentId=1010339"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "14",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2025-07-28",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 5.1.2",
+          "url": "&componentId=1269046"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "14",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-05-11",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 5",
+          "url": "&componentId=1010299"
+        },
+        {
+          "z": "Teil A · Ziff. 5.1",
+          "url": "&componentId=1010304"
+        },
+        {
+          "z": "Teil A · Ziff. 5.1.1",
+          "url": "&componentId=1269041"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "16",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2025-10-31",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 4.2",
+          "url": "&componentId=1056103"
+        }
+      ]
+    },
     {
       "dok": "ESTV-MWST-INFO-02",
       "artikel": "19",
@@ -6889,10 +6961,6 @@
           "url": "&componentId=1003649"
         },
         {
-          "z": "Ziff. 3.6",
-          "url": "&componentId=1003961"
-        },
-        {
           "z": "Ziff. 4",
           "url": "&componentId=1003966"
         },
@@ -6972,7 +7040,16 @@
         {
           "z": "Ziff. 4.1",
           "url": "&componentId=1003971"
-        },
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-19",
+      "artikel": "28",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-13",
+      "fundstellen": [
         {
           "z": "Ziff. 4.2",
           "url": "&componentId=1003976"
@@ -7049,6 +7126,19 @@
     },
     {
       "dok": "ESTV-MWST-INFO-19",
+      "artikel": "45",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-13",
+      "fundstellen": [
+        {
+          "z": "Ziff. 3.6",
+          "url": "&componentId=1003961"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-19",
       "artikel": "56",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
@@ -7065,7 +7155,7 @@
       "artikel": "72",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
-      "stand": "2023-02-07",
+      "stand": "2026-08-13",
       "fundstellen": [
         {
           "z": "Ziff. 5",
