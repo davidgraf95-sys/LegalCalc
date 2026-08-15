@@ -419,6 +419,12 @@ hierher. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §1 dieser Datei (a/b/a�
   (Ausbaustufe, David 4.8.2026; keine Wächter-Lücke). (b) Prod-Smoke existiert
   doppelt (`.github/scripts/prod-smoke.sh` wöchentlich + `scripts/betrieb/prod-smoke.ts`
   6-stündlich, überlappende Prüfungen) — konsolidieren oder Schnitt dokumentieren.
+  **Ist-Korrektur 15.8.2026 (Rückbau-Sweep, lebendige Spec):** NUR HALB doppelt — das
+  bash-Skript prüft zusätzlich vier Korpus-JSONs (normtext/, rechtsprechung/,
+  materialien/register.json, such-index/artikel.json), die der TS-Smoke nicht kennt;
+  ein Löschen des `.sh` verlöre Rechtsdaten-Deckung. Richtiger Weg: Korpus-Sonden in
+  `prod-smoke.ts` heben, DANN `.sh` streichen (Bau-, kein Rückbau-Schritt). Ebenfalls
+  15.8.: die WARN-Stufe des TS-Smoke (konnte nie rot werden, §6.7) ist scharf gestellt.
 
 ---
 
