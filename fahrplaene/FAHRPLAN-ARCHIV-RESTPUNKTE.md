@@ -301,8 +301,9 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 - **Stale Doku-Köpfe**: Teileintrag «VERTRAGS-VARIANTEN «1000»» ist mit der Archivierung 31.7.2026
   **gestrichen** — der Kopf bleibt im Archiv byte-genau stehen, die Zähl-Wahrheit trägt jetzt
   `variantenInventar` (Stand 168 = 17 %).
-- **W3·13 @meta**: nach der Archivierung `fahrplan: archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` ergänzen
-  (Feld fehlt heute, anders als bei W3·12/W3·14) —
+- **`W3-AUSBAU` @meta** (Zeile «Vorlagen-Breite», vormals `W3·13`, Etiketten-Konsolidierung
+  15.8.2026): nach der Archivierung `fahrplan: archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` ergänzen
+  (Feld fehlt heute) —
   `npm run fahrplan -- archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md §2` löst den Pfad auf, der Slice bleibt
   damit erreichbar.
 
@@ -522,7 +523,8 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
   `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` und gilt fachlich unverändert fort. Sie ist von
   aktivem Bestand referenziert: `scripts/normtext/tabelle-normalisieren.ts` Z.25 («Regeln A/B/E»),
   `FAHRPLAN-TARIF-TABELLEN-STUFE2.md` Z.5-11/85, `DESIGN-REGLEMENT-NORMTEXT.md` §4a +
-  Korrektur-Kasten, und sie ist die Detailquelle für `W2·5j-TABELLEN` beim Entparken. Der
+  Korrektur-Kasten, und sie ist die Detailquelle für die `W2·5g-ZEIT`-Zeile «Tabellen in Gesetzen
+  lesbar machen» (vormals `W2·5j-TABELLEN`, Etiketten-Konsolidierung 15.8.2026). Der
   Übernahme-Auftrag «A/B/F → STUFE2» (Anhang 1, Kopf) ist bis heute **nicht** vollzogen — der
   STUFE2-Fahrplan verweist nur; C/D **sind** in `DESIGN-REGLEMENT-NORMTEXT.md` §4a angekommen.
   Entweder A/B/F nachziehen oder die Verweis-Lösung ausdrücklich als gewollt festhalten. `[OF]`

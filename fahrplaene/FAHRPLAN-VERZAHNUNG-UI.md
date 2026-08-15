@@ -5,7 +5,8 @@
 
 ## §0 · Zweck und Leitplanken
 
-Detailquelle zu `W2·7-VZUI` (auch `W2·6-ZNETZ`/`W2·7-BEZUG`) — die Verzahnung
+Detailquelle zu `W2·7-VZUI` (auch `W2·6`/`W2·7-BEZUG`; Zitationsnetz vormals
+`W2·6-ZNETZ`, Etiketten-Konsolidierung 15.8.2026) — die Verzahnung
 Norm↔Rechtsprechung sichtbar machen (V1 vor VPS · V2 Masse · V3 Soft-Law).
 
 **Leitplanken (bindend):**
@@ -363,7 +364,8 @@ Kommentar-Konvention `// Erweiterungspunkt V2/V3: …` (Weiche-B-Stil), keine to
 
 ## 8. Zitationsnetz — Rückwärts-Zitate + Leitentscheid-Score (`W2·6-ZNETZ`, Ideen-Intake 20.7.2026)
 
-> **ROADMAP-Schritt:** `W2·6-ZNETZ`. Detailquelle zum ROADMAP-Schritt (§14.1); die **UI** dieser
+> **ROADMAP-Schritt:** `W2·6` (Checklisten-Zeile «Zitationsnetz»; vormals `W2·6-ZNETZ`,
+> Etiketten-Konsolidierung 15.8.2026). Detailquelle zum ROADMAP-Schritt (§14.1); die **UI** dieser
 > Kanten läuft in `W2·7-VZUI` V2 ein und wird hier **nicht doppelt geplant** (§14.3).
 
 **Ziel.** «Welche Entscheide zitieren diesen?» (Rückwärts-Kanten) + Leitentscheid-Score nach
@@ -399,7 +401,8 @@ anderes als einer über 195k Entscheide, und diese Differenz muss sichtbar bleib
 
 Generator **deterministisch** (2 Läufe byte-gleich) · `check:gegenpruefung` bestanden
 (Daten-Derivation = Risikopfad) · golden byte-gleich · Tore grün.
-Trailer `Roadmap: W2·6-ZNETZ` + `Gegenpruefung: <Verdikt>`.
+Trailer `Roadmap: W2·6` + `Gegenpruefung: <Verdikt>` (vormals `W2·6-ZNETZ`,
+Etiketten-Konsolidierung 15.8.2026).
 Feasibility-Beleg: `bibliothek/recherche/zitationsnetz-feasibility.md`.
 
 ## 9. Bezüge am Artikel — Facetten-Fundament alle Instanzen (`W2·7-BEZUG`, §14-Intake 24.7.2026)
@@ -475,6 +478,12 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
 ---
 
 ## §10 · ROADMAP-Spec W2·6-ZNETZ (wörtlich verschoben 31.7.2026)
+
+*Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): Das Etikett `W2·6-ZNETZ` ist
+aufgegangen — bauender Schritt dieser Spec ist seither das Dach `W2·6` (Rechtsprechungs-Daten),
+die Zeile steht dort als Checklisten-Eintrag. **Trailer also `Roadmap: W2·6`**, nicht der im
+wörtlichen Block unten zitierte Alt-Trailer. Gegenstand, Risikoklasse und Gegenprüfungs-Pflicht
+unverändert.*
 
 > **→ Bau-Spec: «8. Zitationsnetz — Rückwärts-Zitate + Leitentscheid-Score» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
@@ -649,7 +658,8 @@ Kurzabsatz und Pointer. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §11 bzw.
 ### §14.3 `W2·6-ZNETZ` — Merkposten LM-042 im Wortlaut *(→ Bau-Spec: §10 dieser Datei)*
 
 *Herkunft: `ROADMAP.md`, Welle 2, Schritt `W2·6-ZNETZ` (verschoben 4.8.2026, ROADMAP-Diät Welle 3);
-dort bleibt der Merkposten als Auflage-Einzeiler.*
+dort bleibt der Merkposten als Auflage-Einzeiler. Nachzug 15.8.2026 (Etiketten-Konsolidierung
+BAUPLAN-UMBAU): Heimat des Merkpostens ist seither das Dach `W2·6`.*
 
 > **Merkposten (LM-042, UI-Befunde B20, Prod-Nachmessung 3.8.2026):** Sammelzitate («ff.») werden
 > nicht kenntlich gemacht — `zitat-extraktion.ts` GLIED_KOPF fängt Sub-Marker/ff. bewusst nicht

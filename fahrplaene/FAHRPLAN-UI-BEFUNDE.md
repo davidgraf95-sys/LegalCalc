@@ -85,10 +85,11 @@ seither nur noch mit Triage-Zahlen und Pointer hierher:*
 
 Je Eintrag: Referenz aus dem Bestand + der Ein-Zeilen-Grund, warum kein Neubau.
 
-- **LM-020** (Mittel, K-02) — gemischte Richternamen-Formen: identischer Defekt an derselben Stelle; `W2·6-RNAME` hat
+- **LM-020** (Mittel, K-02) — gemischte Richternamen-Formen: identischer Defekt an derselben Stelle; `W2·6-RESOLVER`
+  (vormals `W2·6-RNAME`, Etiketten-Konsolidierung 15.8.2026) hat
   dafür bereits eine verbindliche Regel (Auflösung nur bei Eindeutigkeit, Kollisions-Report,
   Risikopfad nach dem #309-Vorfall). Dort abarbeiten, nicht doppelt einplanen.
-  Referenz: `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §6 «Richternamen gegen den Staatskalender auflösen» (W2·6-RNAME); ROADMAP.md → @meta W2·6-RNAME`
+  Referenz: `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §6 «Richternamen gegen den Staatskalender auflösen»; ROADMAP.md → @meta W2·6-RESOLVER`
 - **LM-104** (Hoch, K-10) — «SR»-Präfix an kantonalem Erlass: identische Stelle
   (`src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx`), im Bestand als **F28** mit
   Snapshot-Tor geführt. Als F28 abarbeiten.
@@ -608,7 +609,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 - [x] **LM-012** · Hoch · Der Lesemodus öffnet als Dialog mit korrekter Auszeichnung (role=dialog, aria-modal=true, Beschriftung … [bereits gebaut → src/pages/EntscheidLeser.tsx:669–691 (useEffect im LesemodusOverlay)] — Prod-Nachmessung 3.8.2026: Fokus liegt beim Öffnen auf dem ✕-Knopf im Dialog, Tab bleibt in der Fokusfalle.
 - [x] **LM-013** · Hoch · «A+» ist im Moment des Öffnens bereits gesperrt (disabled), «A−» nicht. … [bereits gebaut → src/pages/EntscheidLeser.tsx:157–169 (FS_STUFEN, ladeFsIdx) + 232–236 (setFs, localStorage rsp-…] — Prod-Nachmessung 3.8.2026: A− und A+ beim Öffnen beide `disabled=false`, Klick auf A+ hebt `rsp-fs-idx` sauber.
 - [x] **LM-017** · Mittel · Beide Panels sind ebenfalls weit links vom Auslöser verankert und überlagern … [bereits gebaut → src/components/layout/ReiterUebersicht.tsx:35–46 + 163; src/components/layout/VerlaufUebersicht…] — Prod-Nachmessung 3.8.2026: beide Panels rechtsbündig exakt am Auslöser (Panel-`right` = Trigger-`right`, 4px darunter).
-- [ ] **LM-042** · Hoch · Ein «ff.»-Zitat wird auf mehrere Einzelartikel gebucht: Derselbe Entscheid (Sozialversicherungsgericht BS … [bereits gebaut → src/lib/rechtsprechung/zitat-extraktion.ts:365 (GLIED_KOPF: «Sub-Marker/ff. werden bewusst NICH…] — ⛔ Rest offen — ff.-Marker fehlt im Artefakt, Fix läge in der Zitat-Extraktion (Risiko-Klasse §0.3); als Auflage beim nächsten Extraktions-Schritt (→ ROADMAP W2·6-ZNETZ, Merkposten dort).
+- [ ] **LM-042** · Hoch · Ein «ff.»-Zitat wird auf mehrere Einzelartikel gebucht: Derselbe Entscheid (Sozialversicherungsgericht BS … [bereits gebaut → src/lib/rechtsprechung/zitat-extraktion.ts:365 (GLIED_KOPF: «Sub-Marker/ff. werden bewusst NICH…] — ⛔ Rest offen — ff.-Marker fehlt im Artefakt, Fix läge in der Zitat-Extraktion (Risiko-Klasse §0.3); als Auflage beim nächsten Extraktions-Schritt (→ ROADMAP `W2·6`, Zeile «Zitationsnetz», Merkposten dort; vormals `W2·6-ZNETZ`, Etiketten-Konsolidierung 15.8.2026).
 - [x] **LM-043** · Hoch · Am Verweis ist nicht erkennbar, ob der Entscheid zur geltenden Fassung … [bereits gebaut → FAHRPLAN-VERZAHNUNG-UI.md §V1c «Normrevisions-Ehrlichkeit»; Code src/lib/verzahnung…] — Prod-Nachmessung 3.8.2026: ↻-Chip an Art. 367/370 trägt `aria-label`/`title` mit Revisionsdatum 01.01.2026 + AS 2025 270.
 - [x] **LM-062** · Blocker · Die Tabelle wird rechts abgeschnitten, ohne Scrollbereich und ohne Hinweis. Die … [bereits gebaut → src/components/forms/ErbteilungForm.tsx:305 (lc-card p-5 overflow-x-auto) + :307 (table min-w-[…] — Prod-Nachmessung 3.8.2026: `overflow-x-auto` mit `scrollWidth 712 > clientWidth 298`, Pflichtteil-Spalte nach Scroll vollständig sichtbar.
 - [x] **LM-092** · Mittel · Der Erklärtext ist gepunktet unterstrichen, aber nicht klickbar, und steht auf … [bereits gebaut → src/components/EntwurfLegende.tsx:33-42; FAHRPLAN-UI-NAVIGATION.md §1 N0d·W3 (✅ gebaut 11.7.202…] — Prod-Nachmessung 3.8.2026: Erklärtext ist `<button aria-expanded>`, Klick öffnet die Toggletip-Karte; `cursor:help` statt Link-Optik.
