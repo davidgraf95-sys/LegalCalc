@@ -121,9 +121,6 @@ export function dispatchText(klasse: string, md: string): string {
   return `${pflichtKlausel(md, varianteVon(klasse))}\n\n${KLASSEN[klasse]}`;
 }
 
-/** Marker, an dem Hook und Tor den eingebauten §0-Block wiedererkennen. */
-export const KLAUSEL_MARKER = '§0 PFLICHT-KLAUSEL';
-
 export function templateLesen(): string {
   return readFileSync(TEMPLATE, 'utf8');
 }

@@ -9,10 +9,17 @@
 //
 // Abgrenzung (§14, nicht daneben bauen): `normen-monitor.yml` bleibt der
 // QUELLEN-Wächter (Fedlex/LexWork/Materialien). Dieser Job ist der PROD-Wächter.
-// Die CSP-Volldeckung (entscheidsuche.ch in connect-src) und das Ende des
-// Soft-404 sind in PR #244 (QS-OPT O-1.1/O-1.4) unterwegs, aber noch OPEN —
-// darum hier als **WARN** (informativ), nie als falsches Rot: der Watchdog geht
-// heute grün und dokumentiert den bekannt-offenen Rest, statt ihn zu verstecken.
+//
+// WARN-MECHANIK ZURÜCKGEBAUT (15.8.2026, §17-Gegengewicht/§6.7). Zwei Prüfungen
+// liefen als `weich()`-WARN, weil PR #244 (QS-OPT O-1.1 CSP-connect-src /
+// O-1.4 Soft-404) bei ihrem Bau noch offen war. Ein WARN macht den Job per
+// Konstruktion NIE rot — beide Prüfungen konnten also nicht scheitern, und ihr
+// Anlass war seit dem Merge von #244 entfallen. Gemessen am 15.8.2026 gegen
+// die Live-Site (nicht behauptet): `/normtext/existiert-nicht-*.json` → HTTP
+// 404, und die CSP-Kopfzeile trägt `connect-src … https://entscheidsuche.ch`.
+// Beide sind darum jetzt HART. Damit fällt die gesamte WARN-Maschinerie
+// (`weich()`, `Befund.warn`, gelb-Zähler, WARN-Symbol) ersatzlos weg — was
+// nicht scheitern kann, wird gestrichen statt bewacht.
 //
 // Reine Betriebs-Prüfung, kein Rechts-/Rechen-/Norm-Pfad. Kein Import aus src/.
 
@@ -21,7 +28,6 @@ const TIMEOUT_MS = Number(process.env.SMOKE_TIMEOUT_MS || 20000);
 
 interface Befund {
   ok: boolean;
-  warn?: boolean;
   name: string;
   detail: string;
 }
@@ -29,9 +35,6 @@ interface Befund {
 const befunde: Befund[] = [];
 function hart(ok: boolean, name: string, detail: string) {
   befunde.push({ ok, name, detail });
-}
-function weich(ok: boolean, name: string, detail: string) {
-  befunde.push({ ok, warn: true, name, detail });
 }
 
 async function hole(pfad: string, init?: RequestInit): Promise<Response> {
@@ -127,13 +130,14 @@ async function pruefeCsp() {
     const res = await hole('/');
     const csp = res.headers.get('content-security-policy') || '';
     hart(csp.includes("default-src 'self'"), 'CSP-Kopfzeile', csp ? "vorhanden · default-src 'self'" : 'FEHLT');
-    // WARN (informativ): connect-src-Volldeckung erst nach PR #244 (O-1.1).
-    weich(
+    // HART seit 15.8.2026 (vorher WARN, Anlass PR #244 entfallen): fehlt der
+    // Host, blockt die CSP den LiveSuche-POST — ein totes Feature in Prod.
+    hart(
       csp.includes('entscheidsuche.ch'),
       'CSP connect-src entscheidsuche.ch',
       csp.includes('entscheidsuche.ch')
         ? 'gedeckt'
-        : 'FEHLT noch — LiveSuche-POST wird von der CSP geblockt (PR #244 / QS-OPT O-1.1 offen)',
+        : 'FEHLT — LiveSuche-POST wird von der CSP geblockt',
     );
   } catch (e) {
     hart(false, 'CSP-Kopfzeile', `Netz-/Timeout-Fehler: ${(e as Error).message}`);
@@ -146,16 +150,17 @@ async function pruefeSoft404() {
     const res = await hole(pfad);
     const ct = res.headers.get('content-type') || '';
     const echt404 = res.status === 404;
-    // WARN (informativ): echte 404 für fehlende Datenassets erst nach PR #244 (O-1.4).
-    weich(
+    // HART seit 15.8.2026 (vorher WARN, Anlass PR #244 entfallen): eine
+    // 200-HTML-Shell auf fehlende Datenassets maskiert jeden Datenfehler.
+    hart(
       echt404,
       'Soft-404-Signal',
       echt404
         ? 'fehlende .json-Assets geben echte 404'
-        : `fehlendes Asset gibt Status ${res.status} (${ct.split(';')[0]}) statt 404 — Soft-404 (PR #244 / QS-OPT O-1.4 offen)`,
+        : `fehlendes Asset gibt Status ${res.status} (${ct.split(';')[0]}) statt 404 — Soft-404 zurück`,
     );
   } catch (e) {
-    weich(false, 'Soft-404-Signal', `Netz-/Timeout-Fehler: ${(e as Error).message}`);
+    hart(false, 'Soft-404-Signal', `Netz-/Timeout-Fehler: ${(e as Error).message}`);
   }
 }
 
@@ -177,19 +182,16 @@ async function main() {
   await pruefeSoft404();
 
   let rot = 0;
-  let gelb = 0;
   for (const b of befunde) {
-    const sym = b.ok ? '  ok  ' : b.warn ? ' WARN ' : ' ROT  ';
-    if (!b.ok && b.warn) gelb++;
-    if (!b.ok && !b.warn) rot++;
-    console.log(`${sym} ${b.name} — ${b.detail}`);
+    if (!b.ok) rot++;
+    console.log(`${b.ok ? '  ok  ' : ' ROT  '} ${b.name} — ${b.detail}`);
   }
-  console.log(`\n${befunde.length} Prüfungen · ${rot} rot · ${gelb} warn`);
+  console.log(`\n${befunde.length} Prüfungen · ${rot} rot`);
   if (rot > 0) {
     console.error('\nPROD-SMOKE ROT — Live-Site verletzt einen harten Vertrag.');
     process.exit(1);
   }
-  console.log('\nPROD-SMOKE GRÜN (WARN = bekannt-offen, siehe docs/betrieb/).');
+  console.log('\nPROD-SMOKE GRÜN.');
   // fetch/undici hält Keep-Alive-Sockets offen → expliziter Exit, sonst hängt
   // der Prozess ~Timeout lang nach dem letzten Log (CI-Job liefe unnötig lange).
   process.exit(0);
