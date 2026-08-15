@@ -48,6 +48,7 @@
 // BERICHT/-PARITAET + QS-MERGE-AUTOZUG → QS-AUTOMATIK · W2·14-SIGNAL-B1/-B2/-GER
 // → W2·14-SIGNAL · W2·7-BEZUG-LADEN → W2·7-VZUI · W2·5k-LINIEN-RUECKBAU →
 // W2·5h-GESETZ-UI · W3·14-B3/-S/-a11y → W3·14. Begruendung: ROADMAP-CHRONIK.md.
+// ERLEDIGT 15.8.2026: QS-EXTQUELLEN (alle Befunde entschieden, Chronik-Block gleichen Datums).
 // KONSOLIDIERUNG 15.8.2026 (BAUPLAN-UMBAU, Auftrag David «schritte zusammenlegen /
 // gross schneiden»): 14 Etiketten als Checklisten-Zeilen in fuenf Daecher aufgegangen,
 // Wortlaut + Fusions-Begruendung in ROADMAP-CHRONIK.md § «Etiketten-Konsolidierung
@@ -126,7 +127,6 @@ export const INVENTAR: readonly string[] = [
   // §14-Intake 3.8.2026 (Recherche-Session externe Quellen): Befundliste als EIN Schritt
   // aufgenommen, Bewertung und Verortung bewusst offen gelassen (Anordnung David) — die
   // Aufteilung in Bau-Schritte ist Gegenstand des Schritts selbst, nicht seiner Aufnahme.
-  'QS-EXTQUELLEN',
 
   // §14-Intake 5.8.2026 (Recherche selbstoptimierender Bau, Auftrag David):
   // EIN ergebnisoffener Gesamtschritt (Entscheid David: ganze Session), Pfad im Fahrplan-§.
