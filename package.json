@@ -53,6 +53,7 @@
     "check:zitate": "vite-node scripts/norm-zitate-pruefen.ts",
     "check:fedlex-versionen": "vite-node scripts/fedlex-versionen-pruefen.ts",
     "check:rss-oc": "vite-node scripts/fedlex-rss-oc-pruefen.ts",
+    "check:frit-drift": "vite-node scripts/fedlex-frit-drift.ts",
     "check:vollstaendigkeit": "vite-node scripts/normtext/check-vollstaendigkeit.ts",
     "check:struktur-konsistenz": "vite-node scripts/normtext/check-struktur-konsistenz.ts",
     "check:golden-normtext": "vite-node scripts/check-golden-normtext.ts",

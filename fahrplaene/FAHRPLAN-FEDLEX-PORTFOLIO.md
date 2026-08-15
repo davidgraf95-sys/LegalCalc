@@ -628,6 +628,112 @@ allein dieser §.*
   (§6.7) und der Grün-Fall über die 30 Kern-Erlasse reproduzierbar durchläuft.
 - **Dateien:** `.github/workflows/normen-monitor.yml`, `scripts/fedlex-versionen-pruefen.ts`.
 
+#### Bau-Stand 15.8.2026 — GEBAUT, mit drei Spec-Korrekturen (lebendige Spec)
+
+**Dateien real:** `scripts/fedlex-frit-drift.ts` (neu, eigenes Modul),
+`src/tests/fedlex-frit-drift.test.ts`, `package.json` (`check:frit-drift`),
+`.github/workflows/normen-monitor.yml`. **`fedlex-versionen-pruefen.ts` wurde NICHT
+angefasst** — dort lebt die Currency-Frage (welcher Stand gilt), hier die
+Sprach-Frage (trägt der ausgelieferte Stand dieselbe Struktur in de/fr/it). Zwei
+Fragen, zwei Tore; der Risikopfad-Nachbar bleibt unberührt.
+
+**Korrektur 1 — «eId-Mengen über SPARQL abfragen» geht so nicht.** eIds stehen
+**nicht** im Triplestore; jolux kennt Erlass, Konsolidierung, Sprach-Expression und
+Manifestation, aber keine Artikel-Knoten. Real gebaut: SPARQL löst je Erlass und
+Sprache die **XML-Manifestation** des gepinnten Standes auf
+(`isRealizedBy(DEU|FRA|ITA) → isEmbodiedBy(userFormat=xml) → isExemplifiedBy`),
+danach werden die eIds aus dem AKN-XML **gelesen** (Soft-404-Sonde über
+Content-Type, nie über den Status).
+
+**Korrektur 2 — «Abweichung ⇒ Meldung» braucht zwei Ebenen, sonst ist das Tor
+dauerhaft rot.** Gemessen am 15.8.2026: **Kern-eIds** (ohne `/`, also Artikel und
+Top-Container) stimmen in 27 von 30 Erlassen exakt; **Unter-eIds** (`art_220/para_1`)
+weichen fast überall ab, weil DE/FR/IT real verschieden viele Absätze zählen — und
+zwar amtlich gewollt: das OR sagt es in Art. 1033 selbst («Im französischen und
+italienischen Text besteht dieser Artikel aus einem einzigen Absatz»). Darum:
+Kern-Differenz ⇒ **rot** (Exit 1), Unter-Differenz ⇒ **RESIDUE-Hinweis**, nie rot.
+Extremwert der Residue: BV 330/665 (fr) bzw. 328/783 (it) bei identischer
+Artikel-Menge — Stufe 2 müsste dafür eine eigene Absatz-Semantik bauen.
+
+**Korrektur 3 — der Mengenvergleich allein greift zu kurz: DUPLIKAT-Prüfung ergänzt.**
+Der Erstbefund (unten) entstand dadurch, dass FR/IT einen eId **zweimal** vergeben.
+Eine Menge schluckt das stillschweigend. Ein doppelter eId zerstört aber die
+eId-Adressierbarkeit — genau die Eigenschaft, auf der `W2·5g-ZEIT` aufsetzen würde.
+Doppelte Kern-eIds sind darum ebenfalls rot.
+
+**Netz-Politik:** Exit 0 nur, wenn **alle** Kern-Erlasse verglichen wurden; sonst
+Exit 2 «unvollständig» (kein stilles Grün, §6.7). Im Monitor wird Exit 2 als
+`::warning::` annotiert statt rot gefärbt — «Fedlex nicht erreichbar» ist kein
+Rechtsstands-Befund und würde den Alarm entwerten; Exit 1 färbt rot.
+
+**Kern-Erlass-Auswahl (nicht von Hand geführt, §5):** abgeleitet aus
+`fedlex-cache.sh` — Anker-Zahl ↓ (die §7-verifizierten, vom Produkt zitierten
+Artikel = Tiefe der Abhängigkeit), Snapshot-Gewicht ↓, Name ↑; die ersten 30.
+Liste jederzeit: `npm run check:frit-drift -- --liste`.
+
+**Live-Lauf 15.8.2026 (34 s, 30/30 verglichen, 0 Netz-Ausfälle) — drei BEFUNDE,
+alle gegen das amtliche Filestore-XML nachgeprüft (§7):**
+
+| Erlass | Sprache | Befund |
+|---|---|---|
+| **OR** (SR 220 @ 2026-01-01) | fr | `art_219` fehlt; `art_221` **doppelt** — der Knoten mit `<num>Art. 219</num>` trägt den eId `art_220`, der Artikel-Text ist gegenüber dem eId **um eins versetzt** |
+| **OR** | it | `art_219_a` fehlt; `art_219` **doppelt** — der Knoten mit `<num>Art. 219a</num>` trägt den eId `art_219` |
+| **PatG** (SR 232.14 @ 2025-07-01) | fr + it | `art_86_l` fehlt; `art_86_k` **doppelt** — der Knoten mit `<num>Art. 86l</num>` trägt `art_86_k` |
+| **BewG** (SR 211.412.41 @ 2023-07-01) | fr | `disp_u2`–`disp_u4` fehlen als eIds — der Inhalt ist da, aber als `<level eId="chap_6/lvl_u6…u8">`; **FR `disp_u1` = Schlussbestimmung 2020, DE `disp_u1` = die von 1997**: gleicher eId, anderer Erlassteil |
+
+Gemeinsamer Mechanismus bei OR und PatG: ein **neu eingeschobener** Artikel
+(`Art. 219a`, eingefügt per 1.1.2026 «Baumängel»; `Art. 86l`) bekommt in FR/IT
+keinen eigenen eId, sondern den des Vorgängers. **Produktrelevanz:** wer FR/IT je
+über eIds adressiert, serviert dort stillschweigend den falschen Artikel. Das ist
+eine Eigenschaft der amtlichen Quelle, kein Defekt dieses Tors — Konsequenz für
+`W2·5g-ZEIT`: die eId-Achse trägt **nicht** sprachübergreifend, es braucht einen
+Abgleich über `<num>`. Dossier: `bibliothek/register/frit-drift-2026-08-15.md`.
+
+**Korrektur 4 — ein Tor, das dauerhaft rot steht, wird stummgeschaltet.** Die vier
+Fundstellen liegen bei Fedlex; wir können sie nicht beheben. Ein permanent roter
+Monitor-Schritt hätte genau den Verfall wiederholt, den `normen-monitor.yml` an
+Issue #166 selbst dokumentiert (vier Wochen identischer Kommentare). Übernommen
+wurde darum das im Repo bereits bewährte Muster **G-AUFH** aus
+`fedlex-versionen-pruefen.ts` (`anerkannteAufhebungNachEli`): die §7-verifizierte
+Abweichung wird in `ANERKANNTE_DRIFT` **deklariert** und bei **jedem** Lauf live
+gegen die Quelle nachgeprüft — deckungsgleich ⇒ ANERKANNT (grün, aber im Log
+genannt); abweichend oder gewachsen ⇒ rot («Deklaration nachführen»); Abweichung
+verschwunden ⇒ rot («Deklaration entfernen»). Undeklarierte Drift bleibt rot; ein
+Duplikat in der **Ankersprache DE** ist nie anerkennbar. Der Befund wird damit
+festgehalten und überwacht, nicht weggedrückt.
+
+**Stand nach Deklaration (Lauf 15.8.2026, 42 s, Exit 0):** 14 Erlasse vollständig
+identisch, 13 identisch auf Artikel-Ebene mit Absatz-Residue, 3 mit deklarierter und
+live bestätigter Sprach-Drift, 0 undeklariert, 0 Netz-Ausfälle.
+
+**Gegenprüfung 15.8.2026 (Fable, unabhängig, read-only): Verdikt zunächst «nicht
+bestanden» — drei Funde, alle behoben und nachgemessen:**
+
+1. **Kern-Definition zu eng.** «eId ohne `/`» warf **83 echte OR-Artikel**
+   (`disp_u2/art_1`, vom Korpus als `disp_u2_art_1` adressiert) und 9 PatG-Artikel
+   in die nie-rote Residue-Klasse — eine künftige Drift dort wäre unsichtbar grün
+   gewesen. Neu ist das **letzte Pfadsegment** massgeblich (`art_`/`annex_`).
+   Wirkung messbar: OR 1629 → 1712 Kern-eIds, ZGB 1109 → 1287, PatG 201 → 210.
+2. **Pfad zu stillem Grün.** Drei leere eId-Mengen sind formal «identisch» und
+   liefen als GLEICH/Exit 0 durch; eine Wartungsantwort mit korrektem
+   `application/xml` («`<error>maintenance</error>`») kam durch die Soft-404-Sonde.
+   Neu: Rumpf muss `<akomaNtoso` enthalten, und eine leere DE-Menge ist nie
+   «gleich».
+3. **BewG-Befund falsch beschrieben** (s. Tabelle oben) — die Deklaration hätte
+   bei jedem Lauf eine unzutreffende Begründung als «live bestätigt» gedruckt.
+   Zusätzlich unterdrückte ein `continue` nach ANERKANNT die RESIDUE-Zeile, die
+   den wahren Mechanismus gezeigt hätte; beides korrigiert.
+   Ebenfalls geschlossen: eine Deklaration ohne Inhalt erzeugt keine
+   ANERKANNT-Zeile mehr (Blanko-Freibrief).
+
+**Offen / für Stufe 2:** (a) Abgleich über `<num>`/Heading statt über die Menge —
+der BewG-Fall (gleicher eId, anderer Erlassteil) ist für einen Mengenvergleich
+**prinzipiell unsichtbar**; (b) Absatz-Semantik für die BV-Residue (330/665 bzw.
+328/783 ist kein «1–5 %-Rest», sondern ein anderes Absatz-eId-Schema — die
+Residue-Klasse trägt heute sehr Verschiedenes unter einem Etikett); (c) Ausbau von
+30 auf alle 227 Pins (hochgerechnet ~5 min — erst nach (a) sinnvoll).
+**Wartet auf David:** ob die vier Fundstellen Fedlex gemeldet werden.
+
 ### §18.2 `QS-CURRENCY-TESTS` — Testbindung `cacheBefund` + Kanonik-Ausschluss
 
 - **Anlass (Gegenprüfung zu PR #420, Befund 1):** die neue Cache-Inhalts-Sonde und die
