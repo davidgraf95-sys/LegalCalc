@@ -10,9 +10,19 @@ updates:
       day: monday
     open-pull-requests-limit: 3
     groups:
+      # Browser-Testkette isoliert (Lehre 15.8.2026, PR #510): ein 19-Paket-
+      # Sammel-Bump mit @playwright/test 1.60→1.62 + @vitejs/plugin-react
+      # liess 3 Shards rot werden — im Sammelpaket unattributierbar. Diese
+      # Kette landet nur noch allein, damit ein Timing-/Locator-Effekt
+      # eindeutig zuordenbar ist.
+      browser-tests:
+        dependency-type: development
+        patterns: ["@playwright/*", "playwright", "@axe-core/*", "@vitejs/plugin-react"]
+        update-types: [minor, patch]
       dev-minor:
         dependency-type: development
         update-types: [minor, patch]
+        exclude-patterns: ["@playwright/*", "playwright", "@axe-core/*", "@vitejs/plugin-react"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
