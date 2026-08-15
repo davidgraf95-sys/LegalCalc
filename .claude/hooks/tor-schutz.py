@@ -119,6 +119,28 @@ if re.search(r"git\s+commit\b[^\n]*--amend", cmd):
         "Commit umgeschrieben). Nachzügler als eigenen, additiven Commit."
     )
 
+# ── 2b. Direkter main-Push = Deploy (Auftrag David 15.8.2026) ─────────────
+# Jeder Push auf origin/main loest einen Vercel-Deploy aus UND laesst jeden
+# offenen Auto-Merge-PR auf BEHIND fallen (= je ein weiterer Deploy pro
+# Nachzug). Realfall 15.8.2026: ~15 kleine Verwaltungs-Pushes (Buchung,
+# wip-Marker, Nachzuege) rissen das Tageslimit, sechs fertige PRs standen
+# stundenlang. Regel (Skill landung Ziff. 7): Feature einzeln per PR landen,
+# Verwaltung im PR mitfahren oder am Session-Ende in EINEM Push buendeln.
+# Der Hook blockt darum den DIREKTEN Push auf main. Freigabe fuer den
+# gebuendelten Schluss-Push: Umgebungsvariable LEXMETRIK_MAIN_PUSH=1 im
+# selben Kommando (bewusster Akt, nicht Gewohnheit) — der Merge via PR
+# (gh pr merge) ist davon unberuehrt.
+if re.search(r"\bgit\s+push\b[^\n|;&]*\borigin\s+(HEAD:)?main\b", cmd) \
+        and "LEXMETRIK_MAIN_PUSH=1" not in cmd:
+    probleme.append(
+        "BLOCKIERT (Skill landung Ziff. 7, David 15.8.2026): direkter Push "
+        "auf main. Jeder main-Push ist ein Vercel-Deploy und wirft alle "
+        "offenen Auto-Merge-PRs auf BEHIND. Weg: Aenderung in den "
+        "Feature-Branch/PR (Buchung per Trailer, Ziff. 9) — oder Doku am "
+        "Session-Ende in EINEM Push buendeln: `LEXMETRIK_MAIN_PUSH=1 git "
+        "push origin main` (bewusste Freigabe im selben Kommando)."
+    )
+
 # ── 3. Merge-Sperre auf Risiko-Pfaden ──────────────────────────────────
 # Nur bei Merge-Kommandos (selten) — die ~3 s Laufzeit fallen sonst nie an.
 #
