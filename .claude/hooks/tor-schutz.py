@@ -54,7 +54,16 @@ except Exception:
 feld = SHELL_KANAELE.get(kanal(str(data.get("tool_name") or "Bash")))
 if feld is None:
     sys.exit(0)
-cmd = (data.get("tool_input") or {}).get(feld, "")
+# Gegenprüfungs-Auflage 15.8.2026: Nicht-String-Input (Zahl, Liste) warf hier
+# einen Traceback → Exit 1 → Claude Code wertet das als non-blocking = FAIL-OPEN
+# eines Wächters. Darum: tool_input hart auf dict koerzieren, Kommando auf str —
+# der Muster-Scan läuft dann auch über exotische Payloads statt zu sterben.
+ti = data.get("tool_input")
+if not isinstance(ti, dict):
+    ti = {}
+cmd = ti.get(feld, "")
+if not isinstance(cmd, str):
+    cmd = str(cmd)
 if not cmd:
     sys.exit(0)
 

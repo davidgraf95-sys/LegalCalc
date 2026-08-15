@@ -68,7 +68,12 @@ try:
 except Exception:
     sys.exit(0)
 
-ti = data.get("tool_input") or {}
+ti = data.get("tool_input")
+# Gegenprüfungs-Auflage 15.8.2026: kein Traceback auf exotischen Payloads —
+# Nicht-dict/Nicht-str fällt kontrolliert durch (lese-schutz blockt nie
+# fälschlich), statt per Exit 1 undefiniert zu enden.
+if not isinstance(ti, dict):
+    ti = {}
 
 
 def norm(p):
@@ -98,7 +103,7 @@ if tool in ("Read", "read_file", "read_multiple_files"):
             or ti.get("length") is not None
         )
     for pfad in pfade:
-        if not pfad:
+        if not pfad or not isinstance(pfad, str):
             continue
         np = norm(pfad)
         if PFAD_MUSTER.search(np):
@@ -124,7 +129,7 @@ if tool in ("Read", "read_file", "read_multiple_files"):
 # Shell-Kanäle: Bash/start_process (command) · interact_with_process (input).
 if tool in ("Bash", "start_process", "interact_with_process"):
     cmd = ti.get("input", "") if tool == "interact_with_process" else ti.get("command", "")
-    if not cmd:
+    if not cmd or not isinstance(cmd, str):
         sys.exit(0)
     # Nur die inhalts-dumpenden Leser fangen; head -c / wc / jq-Selektion sind
     # gebunden und bleiben erlaubt.
