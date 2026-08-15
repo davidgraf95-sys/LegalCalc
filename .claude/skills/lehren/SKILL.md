@@ -5,10 +5,9 @@ description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleib
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
 
-**Zweck:** Lehren aus Vorfällen lagen bisher ausserhalb des Repos (Memory-Dateien).
-Kein Sub-Agent hat sie je gesehen, und sie waren weder versioniert noch reviewbar.
-Dieses Register liegt im Repo, kostet im Normalbetrieb nur seine Description und
-wird nur geladen, wenn es gebraucht wird.
+**Zweck:** Lehren aus Vorfällen lagen früher ausserhalb des Repos (Memory) —
+unversioniert, für Sub-Agenten unsichtbar. Dieses Register liegt im Repo und
+kostet im Normalbetrieb nur seine Description.
 
 ## Die Formregel (wichtiger als jede einzelne Lehre)
 
@@ -100,23 +99,22 @@ was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
 Über-Regulierung ist selbst ein Effizienzproblem. Verworfen und warum:
 
 - **Generisches Meta-Tor `check:tore`** — ein statischer Analysator für
-  Tor-Semantik wäre heuristisch, falsch-positiv-anfällig und erzeugt eine
-  Allowlist, die selbst verrottet. Stattdessen das exakte `check:tor-paritaet`.
+  Tor-Semantik wäre heuristisch und erzeugt eine selbst verrottende Allowlist.
+  Stattdessen das exakte `check:tor-paritaet`.
 - **`fail-closed`-Sweep über alle Tore** — die `existsSync`-Gatter sind
-  grösstenteils bewusste, dokumentierte CI/lokal-Zweige (`check-materialien.ts`
-  hat einen sauberen `else`-Zweig). Ein pauschaler Umbau bräche funktionierende Tore.
-- **Claim-Registry `.claude/anspruch.json`** gegen F6 — ein neues Zustandsfile ist
-  eine neue Drift-Quelle. *Wiederaufgerollt 28.7.2026 nach dem 2. F6-Vorfall
-  (#397/#398): Entscheid weiterhin GEGEN das Zustandsfile — die Lücke war nicht
-  fehlender Zustand, sondern eine zu enge Sonde (der fremde Branch war sichtbar,
-  nur die PR-Liste blind). Eskaliert wurde innerhalb der Dispatch-Form (drei
-  Sonden + Früh-Push, §0.5) plus wip-Pflicht im Skill `auftrag`. Tritt F6 ein
-  DRITTES Mal auf, obwohl beide Seiten griffen, ist die Registry (oder ein Tor)
-  dran — dann hat auch die verbreiterte Sonde nicht gereicht.*
+  grösstenteils bewusste, dokumentierte CI/lokal-Zweige; ein pauschaler Umbau
+  bräche funktionierende Tore.
+- **Claim-Registry `.claude/anspruch.json`** gegen F6 — ein neues Zustandsfile
+  ist eine neue Drift-Quelle. *Wiederaufgerollt 28.7.2026 nach dem 2.
+  F6-Vorfall (#397/#398), Entscheid bestätigt: die Lücke war nicht fehlender
+  Zustand, sondern eine zu enge Sonde. Eskaliert wurde innerhalb der
+  Dispatch-Form (drei Sonden + Früh-Push, §0.5) plus wip-Pflicht im Skill
+  `auftrag`. Tritt F6 ein DRITTES Mal auf, ist die Registry (oder ein Tor)
+  dran.*
 - **SessionStart-Injektion von Lehren** — git-zustandsabhängiger
   `additionalContext` ist byte-instabil und zerstört den Prompt-Cache
   (QS-TOK/T19, gemessen bei 95,8 % Cache-Read-Anteil). Nur byte-**konstante**
   SessionStart-Texte; Hooks gehören in PreToolUse/Stop (0 Token bei Grün).
-- **ROADMAP-Restrukturierung** — Council-Entscheid 3.7.2026 geprüft und getragen.
-  Die Befunde sind Inhalts-**Frische**, nicht Architektur; ein zweiter
-  autoritativer Artefakt hätte die Drift verdoppelt statt geheilt.
+- **ROADMAP-Restrukturierung** — Council-Entscheid 3.7.2026 geprüft und
+  getragen: die Befunde sind Inhalts-**Frische**, nicht Architektur; ein
+  zweiter autoritativer Artefakt hätte die Drift verdoppelt.

@@ -18,19 +18,16 @@ verweist auf die Single Source of Truth, statt sie zu kopieren (§5).
 
 Drei Schichten, bewusst getrennt:
 
-- **`methodology/`** — *was + warum* (die fachliche Reihenfolge je Korpus).
-  `methodology/normtext.md` (Bund + Kanton), `methodology/rechtsprechung.md`.
-- **`tools/`** — *wie* (die exakte Mechanik: Befehle, JSON-Schema, Editier-
-  Stellen). `tools/normtext-pipeline.md`, `tools/rechtsprechung-pipeline.md`,
-  `tools/verifikation.md`.
+- **`methodology/`** — *was + warum* (fachliche Reihenfolge je Korpus):
+  `normtext.md` (Bund + Kanton), `rechtsprechung.md`.
+- **`tools/`** — *wie* (Befehle, JSON-Schema, Editier-Stellen):
+  `normtext-pipeline.md`, `rechtsprechung-pipeline.md`, `verifikation.md`.
 - **`review.md`** — der user-getriggerte adversariale Zusatz-Audit (Bugklassen),
   nie automatisch (= der «Zusatz-Pass» aus ‹Verifikation — zwei Pässe›).
 
 **Eine `tools/`-Datei erst beim jeweiligen Schritt in den Kontext ziehen, nicht
-alle vorab** — sonst lädt dieser selten genutzte Skill seinen ganzen Mechanik-
-Ballast vorsorglich. Mini-Durchlauf: «Normtext neu → lies `methodology/normtext.md`;
-beim Schritt ‹Cache laden / Snapshot generieren› ziehe `tools/normtext-pipeline.md`;
-beim Verifizieren `tools/verifikation.md`; zum Abschluss (user-getriggert) `review.md`.»
+alle vorab** — sonst lädt dieser selten genutzte Skill seinen ganzen
+Mechanik-Ballast vorsorglich.
 
 ## Klassifizieren und routen
 
@@ -47,43 +44,35 @@ die Produktions-Pipeline.
 ## Zielgerichtet vs. offen — «Stop early»
 
 Die methodology-Dateien geben eine **Default-Reihenfolge für offene Aufgaben**.
-Eine **gezielte** Anfrage springt direkt zum relevanten Schritt — keine starre
-Pipeline:
-
-- «verifizier Art. 335c OR» → direkt `review.md`, nicht der ganze Neu-Anlage-Flow.
-- «Render-Bug: Tausendertrenner in DBG» → direkt `tools/verifikation.md` +
-  die passende `review.md`-Bugklasse, kein Produktionslauf.
-- «BGE-Leitentscheid zu X finden/aufnehmen» → `methodology/rechtsprechung.md`,
-  Zweig BGE-Leitentscheide.
-
-Den vollen Ablauf nur fahren, wenn die Aufgabe wirklich offen ist. Stop, sobald
-das Nötige erreicht ist.
+Eine **gezielte** Anfrage springt direkt zum relevanten Schritt — «verifizier
+Art. 335c OR» → `review.md`; «Render-Bug: Tausendertrenner in DBG» →
+`tools/verifikation.md` + passende `review.md`-Bugklasse; «BGE-Leitentscheid zu
+X» → `methodology/rechtsprechung.md`, Zweig BGE-Leitentscheide. Den vollen
+Ablauf nur bei wirklich offener Aufgabe fahren; Stop, sobald das Nötige
+erreicht ist.
 
 ## Disambiguierung (EINE Rückfrage bei Unklarheit)
 
 Ist der **Inhaltstyp** (Bund / Kanton / welcher Kanton / Rechtsprechung) **oder**
 die **Aufgabe** (produzieren / verifizieren / Render-Bug) nicht eindeutig aus dem
-Auftrag ableitbar → **eine** gezielte Rückfrage stellen, bevor in methodology/tools
-geroutet wird. Begründung: Eine Fehlroute riskiert verifizierte Kantons-Snapshots
-(vgl. `--nur=bund`, §2 Determinismus) und ist im selten genutzten Skill teurer als
-die Rückfrage.
+Auftrag ableitbar → **eine** gezielte Rückfrage, bevor in methodology/tools
+geroutet wird: eine Fehlroute riskiert verifizierte Kantons-Snapshots (vgl.
+`--nur=bund`, §2) und ist teurer als die Rückfrage.
 
 ## Grenzen (kein Duplikat — nur Verweise)
 
-- **Dach:** `CLAUDE.md` §1–§15, insb. §2 (Determinismus), §5 (Single Source of
-  Truth), §7 (Kernsatz «verifizieren, nicht vertrauen» + Zitat-Ausnahme
-  (a)–(d) — die Build-Regeln stehen seit 25.7.2026 **in diesem Skill**), §8
-  (Status/Ehrlichkeit), §11 (Wissensablage). §14.4 (Definition of Done) und
-  §14.5 (Trailer) stehen im Skill `auftrag`.
-- **Bibliotheks-Standards:** `bibliothek/STANDARDS.md` — **S2** (Status-Vokabular
-  ERSTRECHERCHE / ZWEIFACH GEPRÜFT / ABGENOMMEN, koppelt an `verifiziert`/«geprüft»),
-  **S5** (Negativbefunde sind Pflicht), **S6** (Datiertes sofort ins
-  Verfallsregister), **S8** (Korrektur-Protokoll am eigenen Bestand).
-- **Übergabe:** Release → Skill `landung` (§9-Ritual). Fachliche Abnahme →
-  Skill `abnahme` (Status-Hebung auf «geprüft»/`verified:true`).
-- **Nicht-Ziele:** kein Endnutzer-Feature, keine LLM-Schicht in der App
-  («deterministisch statt KI», §2); keine Tarife/Vorlagen (späterer Ausbau);
-  keine Fremd-/Sekundärliteratur (Art. 5 URG); zustandslos.
+- **Dach:** `CLAUDE.md` §2 (Determinismus), §5 (Single Source of Truth), §7
+  (Kernsatz + Zitat-Ausnahme (a)–(d); die Build-Regeln stehen seit 25.7.2026
+  **in diesem Skill**), §8 (Status/Ehrlichkeit), §11 (Wissensablage);
+  §14.4/§14.5 im Skill `auftrag`.
+- **Bibliotheks-Standards:** `bibliothek/STANDARDS.md` — **S2**
+  (Status-Vokabular, koppelt an `verifiziert`/«geprüft»), **S5**
+  (Negativbefunde), **S6** (Datiertes ins Verfallsregister), **S8**
+  (Korrektur-Protokoll).
+- **Übergabe:** Release → Skill `landung`. Fachliche Abnahme → Skill `abnahme`.
+- **Nicht-Ziele:** kein Endnutzer-Feature, keine LLM-Schicht in der App (§2);
+  keine Tarife/Vorlagen; keine Fremd-/Sekundärliteratur (Art. 5 URG);
+  zustandslos.
 
 ## Eiserne Regeln
 
@@ -152,16 +141,13 @@ Quellen-Priorität und PDF-Extraktionsregeln im Detail:
 ## Verifikation — zwei Pässe, sauber getrennt
 
 - **Pflicht-Pass (§14.4):** Nach **jeder** Extraktions-Produktion auf einem
-  Risiko-Pfad ist die adversariale Gegenprüfung **verpflichtend**, nicht auf Abruf.
-  Das Tor `check:gegenpruefung` (Skript `scripts/check-gegenpruefung.ts`, in
-  `check:seriell`) erzwingt sie über die geteilte Kernfunktion `istRisikoPfad()`
-  (`scripts/gegenpruefung/kern.ts`): Normtext-Pfade (`scripts/normtext/**`,
-  `src/lib/normtext/**`, `public/normtext/**/*.json`, `scripts/fedlex-*`) und der
-  Entscheid-Generator `scripts/normtext-entscheide.ts` sind Risiko-Pfade — die reinen
-  Entscheid-Outputs `public/rechtsprechung/**` NICHT. Bei reinen Entscheid-Output-Läufen
-  (`public/rechtsprechung/**`) greift das Tor nicht — die Pflicht-Gegenprüfung dennoch
-  fahren und nur im §14.5-Trailer quittieren (`tools/verifikation.md`). Beweismittel:
-  adversariale Agenten / das `AUDIT-…md`-Muster; Werkzeugkasten `tools/verifikation.md`.
+  Risiko-Pfad ist die adversariale Gegenprüfung **verpflichtend**, nicht auf
+  Abruf. Das Tor `check:gegenpruefung` erzwingt sie über `istRisikoPfad()`
+  (`scripts/gegenpruefung/kern.ts`): Normtext-Pfade und der Entscheid-Generator
+  `scripts/normtext-entscheide.ts` sind Risiko-Pfade, die reinen
+  Entscheid-Outputs `public/rechtsprechung/**` NICHT — dort greift das Tor
+  nicht, die Pflicht-Gegenprüfung wird dennoch gefahren und im §14.5-Trailer
+  quittiert. Beweismittel und Werkzeugkasten: `tools/verifikation.md`.
 - **Zusatz-Pass (on-demand):** Davon getrennt der **user-getriggerte**
   `review.md`-Audit («prüf das», «stimmt das?», «review»). Das ist **nicht** der
   §14.4-Pflicht-Pass, sondern ein zusätzlicher Audit — nie automatisch starten.
@@ -173,7 +159,8 @@ Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
 - [ ] §6-/§9-Tore grün (Tor-Status pro Schritt notiert).
 - [ ] Pflicht-Gegenprüfung gelaufen (Risiko-Pfad, §14.4).
 - [ ] Status-Marker §8 gesetzt — «verifiziert»/«geprüft» **nie automatisch**.
-- [ ] STRUKTUR.md-Session-Karte nachgezogen (§14.4 / Skill `auftrag`, Ziff. 4a).
+- [ ] STRUKTUR.md-Session-Karte nachgezogen (Skill `auftrag`, Ziff. 4 — Form:
+      Kurzkarte, Skill `bauschritt` Station E).
 - [ ] §11-Wissensablage erfolgt (Schritt in der jeweiligen `methodology/`-Datei).
 - [ ] §14.5-Trailer am Produktions-Commit: `Roadmap: <ID>` und auf Risiko-Pfaden
       zusätzlich `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`
@@ -181,23 +168,20 @@ Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
 
 ## Fehlerfälle — Tor rot / Quelle fehlt (je eine Sofortmassnahme)
 
-1. **Cache/Stand-Tor rot** (`npm run check:fedlex-versionen` Exit 1) → geltende
-   Konsolidierung neu pinnen, die Zeile in `scripts/fedlex-cache.sh` aktualisieren,
-   Cache neu laden — **nicht aus dem Gedächtnis rekonstruieren** (Update-Pfad in
-   `methodology/normtext.md`).
+1. **Cache/Stand-Tor rot** (`check:fedlex-versionen` Exit 1) → geltende
+   Konsolidierung neu pinnen, Zeile in `scripts/fedlex-cache.sh` aktualisieren,
+   Cache neu laden — **nie aus dem Gedächtnis rekonstruieren**.
 2. **Quelle / OCL nicht erreichbar** → Lauf abbrechen statt halben Korpus
-   schreiben; offline über `npm run entscheide:seed` / Fixtures weiterarbeiten;
-   ehrlicher §8-Fallback-Status statt erfundener Werte.
-3. **SR-Kollision** (Pflicht-Anker/SR-Sonde schlägt an) → Quarantäne; Identität
-   in `src/lib/normtext/register.ts` (Register-Eintrag + Feld `fedlexKey`), der
-   `FEDLEX`-Taxonomie in `src/lib/fedlex.ts` und `ERLASS_MAP` in
+   schreiben; offline über `npm run entscheide:seed` / Fixtures; ehrlicher
+   §8-Fallback-Status statt erfundener Werte.
+3. **SR-Kollision** → Quarantäne; Identität in `src/lib/normtext/register.ts`
+   (`fedlexKey`), `FEDLEX` in `src/lib/fedlex.ts` und `ERLASS_MAP` in
    `scripts/normtext-snapshot.ts` klären (Identität ≠ Normtext); **erst dann**
    Snapshot generieren.
-4. **Gate / vitest rot** → §6.5-Diagnoseweg (Skill `refactoring`, Ziff. 6): nur die rote vitest-Datei
-   einzeln (`npx vitest run src/tests/<datei>`), `npm run golden:diff -- <id>`;
-   **nie `dist`/`golden`/Lock direkt lesen**.
+4. **Gate / vitest rot** → §6.5-Diagnoseweg (Skill `refactoring`, Ziff. 6): nur
+   die rote Datei einzeln, `npm run golden:diff -- <id>`; **nie
+   `dist`/`golden`/Lock direkt lesen**.
 
 **Abschluss-Regel:** Bei rotem Tor **kein Push, keine Übergabe an `landung`**
-(§9). Die exakten Fehlerfall-Verweise (die vier Fälle oben) stehen ausführlich
-in `tools/verifikation.md` — damit der seltene Aufrufer keinen Vorwissen-Sprung
-machen muss.
+(§9). Ausführlich — inkl. Update-Pfaden — in `tools/verifikation.md` bzw.
+`methodology/normtext.md`; hier steht nur die Sofortmassnahme (§5: ein Ort).
