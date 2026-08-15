@@ -1,7 +1,7 @@
 {
   /* QS-TYP-LUECKE (15.8.2026): Bis hierher prüfte `tsc -b` nur `src/` und
      `vite.config.ts` — die gesamte Werkzeug- und Prüfschicht (`scripts/`,
-     `e2e/`) lief ungeprüft. Gemessen beim Anlegen: 32 reale Typfehler, davon
+     `e2e/`) lief ungeprüft. Gemessen beim Anlegen: 30 reale Typfehler, davon
      mehrere Null-/Union-Lücken in der Korpus-Erzeugung (struktur-run,
      check-bezuege, soft-law-snapshot, abk-aliase-generieren, masse-ingest).
      Ein durchrutschendes `undefined` erzeugt dort eine stille Korpus-Lücke,
@@ -12,7 +12,8 @@
      dieser Bequemlichkeit (15.8.2026): mit DOM liefert `Response.json()`
      `any` statt `unknown` — eine Probe ohne DOM fand dadurch genau EINEN
      zusätzlichen echten Fehler (`scripts/normtext/adapter-lexwork.ts:778`,
-     unvalidiertes Fetch-Ergebnis). Er ist in diesem Schritt mitbehoben. Wer
+     unvalidiertes Fetch-Ergebnis). Er ist NICHT hier behoben — Nebenfund,
+     als Zeile im Plan (QS-KORPUS/QS-GP), Gegenprüfungs-Auflage A1 15.8. Wer
      die DOM-Bequemlichkeit später zurückbauen will, muss `bs-parse.ts` und
      `bs-besetzung.ts` von den globalen DOM-Typen auf linkedom-Typen umstellen
      (beide werden über `src/tests/**` ohnehin schon mit DOM geprüft). */

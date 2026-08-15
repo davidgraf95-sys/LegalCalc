@@ -89,11 +89,11 @@ for (const reg of bund) {
       .map((rf) => { const f = defs.get(rf.fnId); return f ? { ...f, absatz: null, item: null, sektion: rf.label } : null; })
       // Das Prädikat lautete `f is Fussnote` und war damit WEITER als der Wert,
       // den `.map()` erzeugt — TypeScript verwarf es (TS2677), `.filter()` fiel
-      // auf die nicht-verengende Überladung zurück und `rfn` blieb
-      // `(Fussnote | null)[]`. Die `null`s liefen so ungeprüft weiter in
-      // `[...perArt, ...rfn].map(mitKlasse)` und wären als `null`-Einträge im
-      // Fussnoten-Sidecar gelandet. Erst die exakte Prädikat-Form macht die
-      // Verengung wirksam (QS-TYP-LUECKE 15.8.2026).
+      // auf die nicht-verengende Überladung zurück, `rfn` blieb typseitig
+      // `(Fussnote | null)[]`. LAUFZEIT war davon nie betroffen: der Guard
+      // `!!f` filtert die nulls seit jeher (Gegenprüfung 15.8.2026 hat die
+      // Erst-Erzählung «Nulls im Sidecar» widerlegt). Die exakte Prädikat-Form
+      // stellt nur die Typ-Verengung her (QS-TYP-LUECKE 15.8.2026).
       .filter((f): f is SektionsFussnote => !!f && !perArt.some((p) => p.nr === f.nr));
     // A43-Hinweis (David 16.7.): Die ANZEIGE-Reihenfolge der Fussnoten (laufende
     // Fedlex-Nummer) wird in der Darstellungsschicht hergestellt (ArtikelLeser

@@ -373,14 +373,12 @@ function main(): void {
           // einem anderen Grund rot geworden als dem echten.
           //
           // Der Fall ist bereits oben (messbar-Prüfung) als Fehler protokolliert,
-          // der Lauf endet ohnehin rot. Hier wird er LAUT statt still: lieber ein
-          // Abbruch mit der Ursache im Klartext als eine stille NaN-Ordnung (§6.7).
-          if (typeof e.gewicht !== 'number') {
-            throw new Error(
-              `${erlass}/${token}/${e.key}: gewicht=${JSON.stringify(e.gewicht)} in messbarer Klasse '${f.status}' — `
-              + 'die Bestandsordnung ist damit nicht bildbar (NaN-Vergleicher). Ursache in der Kanten-Projektion suchen.',
-            );
-          }
+          // der Lauf endet ohnehin rot. Die Kante wird hier aus der Projektion
+          // AUSGELASSEN statt per throw den Sammel-Bericht abzubrechen — ein
+          // Abbruch beim ersten Treffer würde alle weiteren Befunde des Laufs
+          // verschlucken (Gegenprüfungs-Hinweis 15.8.2026); der Rot-Grund steht
+          // bereits im Fehler-Array, die NaN-Ordnung ist so trotzdem ausgeschlossen.
+          if (typeof e.gewicht !== 'number') continue;
           bgProjektion.push({ key: e.key, gewicht: e.gewicht, datum: kopf.datum, leit: f.status === 'bge' });
         }
       }
