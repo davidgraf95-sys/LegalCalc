@@ -91,6 +91,20 @@ describe('tor-schutz: MCP-Shell-Kanäle', () => {
     expect(hook('tor-schutz.py', dc('interact_with_process', { pid: 1, input: 'print(df.head())' }))).toBe(0);
   });
 
+  // Direkter main-Push = Deploy (Auftrag David 15.8.2026, Skill landung
+  // Ziff. 7): Verwaltungs-Pushes rissen am 15.8. das Vercel-Tageslimit und
+  // warfen sechs fertige PRs auf BEHIND. Der Hook blockt den direkten Push,
+  // lässt Feature-Branch-Pushes und den bewusst freigegebenen Schluss-Push durch.
+  it('blockt direkte main-Pushes, lässt Branch-Push und freigegebenen Schluss-Push durch', () => {
+    const bash = (command: string) => ({ tool_name: 'Bash', tool_input: { command } });
+    expect(hook('tor-schutz.py', bash('git push origin main'))).toBe(2);
+    expect(hook('tor-schutz.py', bash('git commit -m x -- ROADMAP.md && git push origin HEAD:main'))).toBe(2);
+    expect(hook('tor-schutz.py', bash('git push -u origin feat/qs-x'))).toBe(0);
+    expect(hook('tor-schutz.py', bash('git push'))).toBe(0);
+    expect(hook('tor-schutz.py', bash('LEXMETRIK_MAIN_PUSH=1 git push origin main'))).toBe(0);
+    expect(hook('tor-schutz.py', dc('start_process', { command: 'git push origin main' }))).toBe(2);
+  });
+
   it('bleibt für Bash unverändert', () => {
     expect(hook('tor-schutz.py', { tool_name: 'Bash', tool_input: { command: 'npm run lint | tail' } })).toBe(2);
     expect(hook('tor-schutz.py', { tool_name: 'Bash', tool_input: { command: 'ls -la' } })).toBe(0);
