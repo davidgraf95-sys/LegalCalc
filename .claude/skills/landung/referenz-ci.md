@@ -85,6 +85,13 @@ mit echtem Build-Fehler bleibt Rot, und an landeintensiven Tagen frisst jedes
 `update-branch` einen App-Deploy — Kette seriell und ohne überflüssige
 Zwischen-Pushes fahren.
 
+**Stand 16.8.2026:** Der Vercel-Kontext ist KEIN Required Check mehr
+(David, Branch-Schutz-Edit 15.8. nach dem Tageslimit-Stau) und Feature-
+Branches bauen keine Previews (vercel.json, #519). Die Klasse «PR wartet auf
+Vercel» existiert damit nicht mehr; ein Admin-Bypass hat keinen Anlass. Ein
+Vercel-Rot auf `main` (echter Build-Fehler) bleibt Rot — sichtbar über den
+Prod-Deploy-Status, nicht über einen PR-Check.
+
 ### Warum der Trailer zusätzlich in den PR-Body gehört (Schritt 9)
 
 **Denselben Trailer-Block zusätzlich als eigenen Absatz in den PR-BODY**
