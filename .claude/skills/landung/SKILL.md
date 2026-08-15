@@ -209,6 +209,15 @@ npm run check:perf-budget  # QS-PERF: Bundle-Topologie/-Budget + Single-React;
    **Bewusste Grenze:** nichts mergen, was Tore rot lässt oder nicht doppelt
    verifiziert ist. Rot = Stopp, kein «mergen und nachbessern».
 
+7b. **Wächter für die Kette (Lehre F2h, 16.8.2026):** wer eine Landekette
+   per Hintergrund-Wächter begleitet, baut ihn so, dass er (a) bei
+   Risikopfad-Hand-Merges auf «alle Required grün» prüft (Required-Liste per
+   `gh api repos/…/branches/main/protection/required_status_checks`), nicht
+   auf `mergeStateStatus: CLEAN` — ein nicht-required roter Kontext (z. B.
+   Vercel nach dem Limit) hält sonst alles stumm; (b) `DIRTY`/`UNKNOWN`
+   länger als 2 Runden **laut meldet** statt zu warten; (c) nach 30 min ohne
+   Zustandsänderung Stillstand meldet. Realfall 15./16.8.: 7 h kein Merge bei
+   6 offenen, fertig geprüften PRs — bis David fragte.
 8. **Nächste PR erst danach.** Erst wenn diese PR auf main ist, die nächste
    auf das neue main rebasen (zurück zu Schritt 1). So kollidiert nie eine
    zweite Landung mit einer schwebenden.
