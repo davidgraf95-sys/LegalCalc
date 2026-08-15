@@ -178,6 +178,9 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   - [ ] Dependabot-Lock-Wurzelfix: npm-Major-Mismatch erzeugt fehlende genestete Einträge (H-8-Muster, 341a4a161; 15.8. dreimal von Hand mit `npx npm@10 install --package-lock-only` geflickt) — Workflow-Schritt oder dependabot.yml-Weg finden, der den Lock automatisch mit npm@10 nachzieht
 - [ ] **`QS-UI` — Oberflächen-Qualität app-weit** *(reines UI/Design, §13 · kontinuierlich)* —
   <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · kollision: [DESIGN-REGLEMENT.md, src/index.css, tailwind.config.js, scripts/check-farbwelt.ts, e2e/a11y.e2e.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+  - [x] Teilpass (b) Informationshierarchie 15.8.: Audit über alle Werkzeuge (14 Rechner, 6 gegatete, 4 Entscheid-Leser, 26 Vorlagen, 2 Mappen, 30 Formvorschrift-Badges) — **bereits überall konform** (seit 4.8. durch I1–I10/A9 gegatet), kein Bau; Fahrplan §2.3 nachgezogen.
+  - [x] Teilpass (e) Gate-Verschärfung, erster Zug 15.8.: `qsui-hierarchie.e2e.ts` meldete falsch rot (3–6/65 unter --workers≥14 — `.lc-route` fade-in ab opacity:0, `checkVisibility` auf dem Null-Frame false); Fix `emulateMedia({reducedMotion:'reduce'})` im beforeEach (Haus-Muster a11y/hist-ansicht) — 2× 65/65 grün unter workers=16.
+  - [ ] Teilpass (e) Rest: Farbwelt-Baseline enger, axe von Stichprobe auf Flächendeckung; Restliste §2.3 Ziff. 6 (I3 auf checkVisibility nachziehen — jetzt gefahrlos).
   kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
 
