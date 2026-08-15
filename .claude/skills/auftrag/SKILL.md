@@ -33,10 +33,12 @@ mechanisch; Definitionen: Lagebild-Seite «Arbeitsweise & Glossar»):
   `<!-- @lagebild name: <Klartext-Name> · zweck: <1 Laien-Satz> -->`.
 - Jeder Schritt schreibt seinen Spec-Verweis als `**Detail:** [Datei](…) §N` —
   maschinell gelesen, macht den generierten Bau-Prompt konkret.
-- Jede neue Schritt-ID trägt einen **sprechenden Namensteil** (`QS-KORPUS-BMV`,
-  nie nur `W2·5l`) und einen Klartext-Titel, der ohne Kürzel verständlich ist.
-  Bestehende Kürzel werden **nie umbenannt** (Verweis-Anker) — übersetzen statt
-  umbenennen.
+- Jede neue Schritt-ID trägt einen **sprechenden Namensteil**
+  (`W2·6-RESOLVER`, nie nur `W2·5l`) und einen Klartext-Titel, der ohne Kürzel
+  verständlich ist. Bestehende Kürzel werden **nie umbenannt** (Verweis-Anker) —
+  übersetzen statt umbenennen. *(Ausnahme: die Etiketten-Konsolidierung
+  15.8.2026 hat verwandte Schritte zu Dach-IDs verschmolzen — eine Fusion ist
+  kein Umbenennen, der alte Anker lebt in der Chronik weiter.)*
 - **`kollision:` ist zugleich die Themen-Klassierung:** daraus leitet das
   Lagebild den Wirkungsbereich ab. Ohne `kollision:` erscheint der Schritt ohne
   Bereich.
@@ -56,7 +58,7 @@ npm run plan:set -- <id> status=wip    # vor Baubeginn; status=done zum Abhaken
 - **Fertige Arbeit in offenen PRs heisst `parked` + `grund: pr-NNN`, nie
   `ready`** — `ready` heisst «niemand baut das gerade» (F6-Beleg: QS-CODE-Reihe
   in zehn offenen PRs als `ready`, 4./5.8.2026).
-- **Branch-/Worktree-Namen tragen den Schritt-ID-Slug** (`feat/qs-korpus-bmv`)
+- **Branch-/Worktree-Namen tragen den Schritt-ID-Slug** (`feat/w26-resolver`)
   — die wip-Verstoss-Sonde des Lagebilds liest den Namen; opake Namen sind für
   sie unsichtbar.
 
@@ -67,17 +69,15 @@ dieselbe Prüf-Fläche): einmal bauen, prüfen, deployen. **Nicht über-bündeln
 keine Risiko-Klassen mischen (Rechtsinhalt ≠ reines UI, §1/§3); nie zwei
 26×-Assets parallel.
 
-**Sessionfüllend schneiden — Massstab HOCHKALIBRIERT (David 15.8.2026,
-«die Grössenordnung der Bauprompts ist zu klein»; ersetzt den Massstab vom
-5.8.):** Die Referenz ist eine ORCHESTRIERTE Session mit Unteragenten — die
-landet mehrere M-Schritte seriell (Beleg 14./15.8.: acht Schritte, fünf PRs
-in einer Session). Daraus folgt: **S** (< ~1 h) trägt nie allein — bündeln;
-**M** ist ein Session-*Teil*, nicht die Session — Station W baut per Default
-weiter, bis der Kontext zur Neige geht; **L** wird erst geschnitten, wenn
-echte Serialisierungs- oder Risiko-Zwänge es verlangen, nicht aus Gewohnheit.
-Neue Schritte gleich in dieser Grössenordnung anlegen statt kleinteilig.
-Serielle `dep`-Ketten nur bei echtem fachlichem Zwang (Entstückelung 8.8.).
-Bei Überschneidung **zusammenführen statt daneben**.
+**Sessionfüllend schneiden — Massstab HOCHKALIBRIERT (David 15.8.2026, ersetzt
+den vom 5.8.):** Referenz ist die ORCHESTRIERTE Session mit Unteragenten, die
+mehrere M-Schritte seriell landet (Beleg 14./15.8.: acht Schritte, fünf PRs).
+Daraus: **S** trägt nie allein — bündeln; **M** ist ein Session-*Teil*, nicht
+die Session (Station W baut per Default weiter); **L** wird erst geschnitten,
+wenn echte Serialisierungs- oder Risiko-Zwänge es verlangen, nicht aus
+Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
+`dep`-Ketten nur bei echtem fachlichem Zwang; bei Überschneidung
+**zusammenführen statt daneben**.
 
 ## 4 · Definition of Done
 
@@ -89,9 +89,11 @@ Bei Überschneidung **zusammenführen statt daneben**.
 4. Status-Marker gesetzt (CLAUDE.md §8).
 5. **Plan zurückgeschrieben:** `plan:set -- <id> status=done` + `check:plan`.
 6. **Session-Karte in `STRUKTUR.md`** — wer substanzielle Arbeit auf `main`
-   landet, zieht in derselben Session oben eine ehrliche Karte nach (gilt auch
-   für Parallel-/Autonom-Sessions; bei fremden undokumentierten Commits nur
-   die fehlende Karte nachtragen). `npm run struktur:aktuell` meldet Lücken.
+   landet, zieht in derselben Session eine ehrliche Karte nach (auch
+   Parallel-/Autonom-Sessions; bei fremden undokumentierten Commits nur die
+   fehlende Karte). **Default ist die Kurzkarte**, volle Karte nur in den
+   Ausnahmen — Form: Skill `bauschritt` Station E (David 15.8.2026).
+   `npm run struktur:aktuell` meldet Lücken.
 
 ## 5 · Commit-Trailer
 
@@ -127,23 +129,19 @@ Pflicht-Rückgabe-Schema, `model` + `effort` explizit.
 **Rollenteilung** (David 4./7.8.2026): Der Orchestrator delegiert Bau- und
 Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
 kleine verifizierte Fixes < ~30 Min, Konfig-Flächen (mit Davids Freigabe).
-Massstab: Übersteigt der Übergabe-Aufwand die Arbeit, ist Delegation
-Pseudo-Disziplin. **Delegationspflichtig bleiben:** Gegenprüfung
-(Unabhängigkeit!), Risiko-Pfad-Bau, alles Parallelisierbare oder
-Kontext-Schwere.
+Übersteigt der Übergabe-Aufwand die Arbeit, ist Delegation Pseudo-Disziplin.
+**Delegationspflichtig bleiben:** Gegenprüfung (Unabhängigkeit!),
+Risiko-Pfad-Bau, alles Parallelisierbare oder Kontext-Schwere.
 
 **Vier Orchestrator-Fallen** (Belege 5.–9.8.2026, Detail: git-Historie):
-
-- (a) Nie Probe-/Testnachrichten an Agenten; Empfänger-ID vor dem Senden
-  verifizieren (eine Nachricht an einen beendeten Agenten weckt ihn mit vollem
-  Kontext).
-- (b) Vor dem Editieren von Steuer-Dateien auf main prüfen, ob ein laufender
-  Agent dieselben Dateien auf einem Branch hat.
-- (c) Keine main-Commits, solange eine eigene Landekette offen ist (jeder
-  main-Push macht wartende PRs BEHIND; je Nachzug ein CI-Lauf).
-- (d) Keine Orchestrator-COMMITS in einem Worktree, solange ein Bau-Agent
-  darin baut (geteilter git-Index; `git add -A` des Agenten nimmt fremde
-  Edits mit). Datei-Edits ohne git-Operationen sind das Maximum.
+(a) nie Probe-/Testnachrichten an Agenten, Empfänger-ID vor dem Senden
+verifizieren (eine Nachricht weckt auch einen beendeten Agenten mit vollem
+Kontext); (b) vor dem Editieren von Steuer-Dateien auf main prüfen, ob ein
+laufender Agent dieselben Dateien auf einem Branch hat; (c) keine
+main-Commits bei offener eigener Landekette (macht wartende PRs BEHIND, je
+Nachzug ein CI-Lauf); (d) keine Orchestrator-COMMITS in einem Worktree,
+solange ein Bau-Agent darin baut (geteilter git-Index — `git add -A` des
+Agenten nimmt fremde Edits mit); Datei-Edits ohne git sind das Maximum.
 
 **Modellwahl nach Stufen** (Abbildung Stufe → Modell nur in `PALETTE`,
 `scripts/dispatch.ts`): anspruchsvoller Bau **stark** · eng umrissener
@@ -173,17 +171,7 @@ Rahmen, wird **erst der Rahmen** gebaut (verhaltensneutral, Skill
 
 ## 9 · §-Konkordanz (für Alt-Verweise im Bestand)
 
-Die Unterparagraphen von §14 sind seit dem A4-Umzug (25.7.2026) hierher
-gezogen (ausser §14.7); Alt-Verweise lösen so auf:
-
-| Alt (`CLAUDE.md`) | Neu |
-|---|---|
-| §14.1 Eingang ist `ROADMAP.md` | Ziff. 1 |
-| §14.2 Plan-Stand abfragen, bündeln | Ziff. 2 + 3 |
-| §14.3 Verortung nach Thema/Abhängigkeit/Risiko | Ziff. 3 |
-| §14.4 Definition of Done | Ziff. 4 (inkl. STRUKTUR-Pflicht, früher 4a) |
-| §14.5 Trailer-Konvention | Ziff. 5 |
-| §14.6 Delegation, Kontext-Hygiene | Ziff. 6 |
-| §14.7 Vertrauensgrenze | **bleibt in `CLAUDE.md` §14.7**; Wortlaut hier Ziff. 7 |
-
-§10 (Wachstum folgt dem Rahmen) steht in Ziff. 8.
+§14.1–§14.6 sind seit dem A4-Umzug (25.7.2026) hier (Reihenfolge = Ziff. 1–6),
+§14.7 bleibt in `CLAUDE.md`, §10 steht in Ziff. 8. Volle Auflösungs-Tabelle:
+**`referenz-konkordanz.md`** im Skill-Ordner — nur laden, wenn wirklich ein
+«§14.x» aufzulösen ist.
