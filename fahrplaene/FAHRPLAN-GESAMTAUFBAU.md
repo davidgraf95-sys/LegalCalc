@@ -439,6 +439,8 @@ amtlich nutzbar mit harter Auflage. Die Kern-Auflagen je Werkzeug stehen oben in
 
 ## §3 · ROADMAP-Spec-Nachzug `W3·10` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
 
+> Nachzug 15.8.2026 (Etiketten-Konsolidierung): `W3·10` ist in `W3-AUSBAU` aufgegangen (Zeile Rechner-Klingen); der Block darunter ist wörtliches Archiv und bleibt unverändert.
+
 *Herkunft: `ROADMAP.md`, Welle 3, Schritt `W3·10` — AP-11 rückwirkend angewandt (ROADMAP-Diät
 Welle 3, 4.8.2026). Der Schritt zeigt per `fahrplan:` auf `archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md`
 (deklarierte Ausnahme); die Begründung der Ausnahme steht darum hier, nicht in der Archivdatei.

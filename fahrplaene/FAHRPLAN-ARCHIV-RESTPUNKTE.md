@@ -277,7 +277,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 *(→ `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md`)*
 
 - **VERTRAGS-VARIANTEN — Restbestand neuer Basistypen** *(Heimat
-  `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5; Bau-Anker `W3·13`)*: **P3-Rest** Tausch (237) ·
+  `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` §2/§5; Bau-Anker `W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026)`)*: **P3-Rest** Tausch (237) ·
   Gebrauchsleihe (305) · Miet-Untertypen Parkplatz/möbliert — **P4-Rest** Schuldanerkennung
   (82 SchKG) · Garantievertrag (111) — **P5** Mäkler (412 ff.) · Agentur (418a ff.) · Kommission
   (425) · Lizenz (innominat) · Kooperation/JV · Franchise — **P6** einfache Gesellschaft (530 ff.)
@@ -301,7 +301,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
 - **Stale Doku-Köpfe**: Teileintrag «VERTRAGS-VARIANTEN «1000»» ist mit der Archivierung 31.7.2026
   **gestrichen** — der Kopf bleibt im Archiv byte-genau stehen, die Zähl-Wahrheit trägt jetzt
   `variantenInventar` (Stand 168 = 17 %).
-- **`W3-AUSBAU` @meta** (Zeile «Vorlagen-Breite», vormals `W3·13`, Etiketten-Konsolidierung
+- **`W3-AUSBAU` @meta** (Zeile «Vorlagen-Breite», vormals `W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026)`, Etiketten-Konsolidierung
   15.8.2026): nach der Archivierung `fahrplan: archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md` ergänzen
   (Feld fehlt heute) —
   `npm run fahrplan -- archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md §2` löst den Pfad auf, der Slice bleibt
@@ -335,7 +335,7 @@ offenen `R-RICHTER`) und `FAHRPLAN-OPENCASELAW-QUELLEN.md` (geltende Grundlage v
   (Satz|Zeile-Fragmente · Agio-Gegenwert auf GELEISTETEN Einlagen · VR/GF⊆Gründer-Gate ·
   Beilagen-Listen ehrlich filtern · Konventions-Testfälle je Numerus/Variante).
 - **GMBH-GRUENDUNG — David-Gate:** Bau **pausiert seit 7.6.2026** («warte noch mit dem bau der gmbh,
-  mach nur recherche»); G0–G7 starten erst auf ausdrückliches Go. W3·13 (`GMBH G2`) trägt den
+  mach nur recherche»); G0–G7 starten erst auf ausdrückliches Go. W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026) (`GMBH G2`) trägt den
   Blocker noch nicht — beim Aufgreifen `blocker` setzen oder das Gate bewusst als aufgehoben
   vermerken.
 - **GMBH-GRUENDUNG — Wortlaut-Basis:** die Originale liegen committet in `bibliothek/muster/`
@@ -677,7 +677,7 @@ Sektionen weiter oben.
 
 ---
 
-## §21 · ROADMAP-Spec-Nachzug `W2·9` / `W3·13` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+## §21 · ROADMAP-Spec-Nachzug `W2·9` / `W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026)` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
 
 *Herkunft: `ROADMAP.md` — AP-11 rückwirkend angewandt (ROADMAP-Diät Welle 3, 4.8.2026). In der
 ROADMAP bleiben je Schritt Titel, `@meta`, Kurzabsatz und Pointer. Steuert nicht — Spec-Heimat.*
@@ -688,7 +688,7 @@ ROADMAP bleiben je Schritt Titel, `@meta`, Kurzabsatz und Pointer. Steuert nicht
 > 20-Punkte-Liste). Herkunft der Verengung und die Abgrenzung zur Bedienungsanleitung (Träger sind
 > `W2·16-INVENTAR`/`W2·16-ANLEITUNG`, nicht dieser Schritt) → `ROADMAP-CHRONIK.md` → W2·9 (3.8.2026).
 
-### §21.2 `W3·13` — Zeiger-Wortlaut *(→ Bau-Spec: §10 + §11 dieser Datei)*
+### §21.2 `W3-AUSBAU (Zeile Vorlagen-Breite, vormals W3·13, Konsolidierung 15.8.2026)` — Zeiger-Wortlaut *(→ Bau-Spec: §10 + §11 dieser Datei)*
 
 > *(Zeiger 31.7.2026
 > umgestellt, Endprüfungs-Fund R2-14/R2-19: `fahrplan:` zeigte auf `archiv/FAHRPLAN-VERTRAGS-VARIANTEN.md`

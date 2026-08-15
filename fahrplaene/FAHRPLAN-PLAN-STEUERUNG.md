@@ -830,7 +830,7 @@ Kopfzahlen 238/1231/53/81 exakt) — die Fehler sitzen dort, wo das Tor blind is
    §-Anker als Überschrift in der Zieldatei auflöst und (b) der §-Abschnitt die
    Schritt-ID wörtlich enthält (Intake-Regel «Bau-Spec im ROADMAP-Spec-§ des
    verlinkten Fahrplans» wird damit prüfbar). Sonderformen (Archiv-Ausnahme
-   W3·10→§P3, «STRANG B», Weiterzeiger-§§) über begründete Allowlist analog
+   W3·10→§P3 — Schlüssel seit der Etiketten-Konsolidierung 15.8.2026 `W3-AUSBAU §P3`, «STRANG B», Weiterzeiger-§§) über begründete Allowlist analog
    `ARCHIV_BACKLOG`. **Geburtsbeweis:** Das Tor MUSS auf dem Stand vor Schritt 1
    dreifach rot sein (B1) — damit ist §6.7 (einmal rot) by construction erfüllt;
    nach Schritt 1 grün zeigen. Danach Registereintrag im Skill `lehren`

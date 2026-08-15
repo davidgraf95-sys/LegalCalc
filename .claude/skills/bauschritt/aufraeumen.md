@@ -102,7 +102,7 @@ auf eine existierende Datei zeigen. Reihenfolge, sonst `check:plan` rot:
    sofort unter Regel 9 auf.
 
 Ein Fahrplan mit lebendem Verweis wird i. d. R. NICHT archiviert, selbst
-bei `done`. **Ausnahme** (`W3·10`, 31.7.2026): Regel 9 prüft nur Existenz
+bei `done`. **Ausnahme** (`W3·10`, 31.7.2026 — ID seit der Etiketten-Konsolidierung 15.8.2026 in `W3-AUSBAU` aufgegangen, Allowlist-Schlüssel `W3-AUSBAU §P3` in specBindung.ts): Regel 9 prüft nur Existenz
 des `fahrplan:`-Pfads, nicht den Ort — bleibt ein Schritt aktiv trotz
 archiviertem Fahrplan, alternativ den Zeiger auf `archiv/…` umschreiben
 (statt nicht zu archivieren), dann sichtbar markieren, dass Restpunkte noch
