@@ -48,10 +48,20 @@
 // BERICHT/-PARITAET + QS-MERGE-AUTOZUG → QS-AUTOMATIK · W2·14-SIGNAL-B1/-B2/-GER
 // → W2·14-SIGNAL · W2·7-BEZUG-LADEN → W2·7-VZUI · W2·5k-LINIEN-RUECKBAU →
 // W2·5h-GESETZ-UI · W3·14-B3/-S/-a11y → W3·14. Begruendung: ROADMAP-CHRONIK.md.
+// KONSOLIDIERUNG 15.8.2026 (BAUPLAN-UMBAU, Auftrag David «schritte zusammenlegen /
+// gross schneiden»): 14 Etiketten als Checklisten-Zeilen in fuenf Daecher aufgegangen,
+// Wortlaut + Fusions-Begruendung in ROADMAP-CHRONIK.md § «Etiketten-Konsolidierung
+// 15.8.2026». Entfernt: W2·6-ADRESSEN · W2·6-FILTER · W2·6-ZNETZ · W2·6-UEBERSICHT
+// (→ W2·6) · W2·6-RNAME (→ W2·6-RESOLVER) · W2·5j-TABELLEN · W2·6-MEHRSPRACH
+// (→ W2·5g-ZEIT) · W3·10 · W3·11 · W3·13 · W3·14 (→ neu W3-AUSBAU) · QS-KORPUS-BMV
+// · QS-KORPUS-SCOPE · QS-KORPUS-RSPR-DATUM (→ neu QS-KORPUS). Neu: W3-AUSBAU,
+// QS-KORPUS. Folge-Bereinigung nach Regel 4: die dep [W2·6-RESOLVER] von
+// W2·6-UEBERSICHT ist Prosa geworden («erst nach dem Resolver-Teil»). W3·12
+// (26x-Slot-Inhaber) und W3·15-RICHTER (blocked) bleiben eigenstaendig.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
-  'W3·10', 'W3·11', 'W3·12', 'W3·13', 'W3·14',
+  'W3·12', 'W3-AUSBAU',
   'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA',
   'W2·6-DATA', 'W2·7-VZUI', 'W2·10-UI-NAV', 'W2·11-DESIGN',
   'QS-OPT', 'QS-BASIS',
@@ -62,12 +72,12 @@ export const INVENTAR: readonly string[] = [
   'W2·13-KANTONE',
 
   // Ideen-Intake 20.7.2026 (§14): 8 Alleinstellungs-Ideen verortet.
-  'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5h-GESETZ-UI', 'W2·6-ZNETZ', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
+  'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5h-GESETZ-UI', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
 
   // §14-Intake 20.7.2026 (2. Welle, Befunde des Tages). Label-Vergabe bewusst geprüft:
   // W2·5e/5f sind VERBRANNT (am 20.7. doppelt vergeben, danach auf 5g/5h umbenannt) —
   // die Reihe wird darum bei 5i fortgesetzt, nicht mit den freigewordenen Buchstaben.
-  'W2·5j-TABELLEN', 'W2·6-FILTER', 'W2·6-RNAME',
+  // (W2·5j-TABELLEN, W2·6-FILTER und W2·6-RNAME sind am 15.8.2026 fusioniert — s. Kopf.)
   'W2·15-CLS', 'W2·16-INVENTAR', 'W2·16-ANLEITUNG', 'QS-AUTOMATIK',
 
   // §14-Intake 24.7.2026 (Anmerkungs-Session David): FINMA-Materialien.
@@ -80,7 +90,7 @@ export const INVENTAR: readonly string[] = [
   // AP-6 (QS-TOK-Aufräumwelle, 31.7.2026): Session-Granularität — offene Mehr-Sessions-Schritte
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
   // Der jeweilige Elter behält sein @meta und bleibt das Dach.
-  'W2·6-MEHRSPRACH', 'W2·6-RESOLVER', 'W2·6-ADRESSEN', 'W2·6-UEBERSICHT',
+  'W2·6-RESOLVER',
   'W2·10-UI-NAV-J3',
   'W2·13-KANTONE-DATEN',
   // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
@@ -100,7 +110,7 @@ export const INVENTAR: readonly string[] = [
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
-  'QS-KORPUS-BMV', 'QS-KORPUS-SCOPE', 'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
+  'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
 
   // Entscheid David 13.8.2026 («ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok»):
   // W2·5k-LINIEN-KONZEPT entschieden (Variante V1), Rückbau-Bau-Schritt angelegt.
@@ -108,7 +118,7 @@ export const INVENTAR: readonly string[] = [
   // zu PR #447/#448 — fedlex-Risiko-Klassifikation, leakErkannt-Konsument, PARTEI_RE-Härtung.
   // QS-GP-COMMITDIFF (7.8.2026) am 8.8. als Duplikat in QS-GP-BEREICH fusioniert (Fahrplan §3.7→§3.1).
   // Gegenprüfungs-Befund B6 der J-Runde 8.8.2026: Korpus-Datumsfehler (bge_151_II_475 = 1999).
-  'QS-KORPUS-RSPR-DATUM',
+  
   // Verbesserungs-Runde David 7./8.8.2026: CI-Wartezeit (Shard-Neu-Packung, in-Session gebaut)
   // + Eigenschafts-Tests für die Engines (vermerkt, Invarianten-Katalog mit Abnahme).
   'QS-CODE-PROP',
@@ -135,6 +145,9 @@ export const INVENTAR: readonly string[] = [
   // Hook-/Konfig-Ausbauten, gesperrte Fläche ⇒ blocked bis David-Freigabe.
   'QS-HOOKS-AUSBAU',
   'QS-EFFIZIENZ',
+  // Fusion 15.8.2026 (BAUPLAN-UMBAU): Dach der Korpus-Pflege — nimmt die drei
+  // Risikopfad-Reparaturen BMV/SCOPE/RSPR-DATUM als Checklisten-Zeilen auf.
+  'QS-KORPUS',
   'QS-MONITOR-ROT',
   'QS-TYP-LUECKE',
 

@@ -1,7 +1,8 @@
 # Fahrplan — entscheidsuche voll ausschöpfen (Teil-B-Ausbau)
 <!-- @lagebild name: Entscheide filtern · zweck: Filter nach Gericht und Facetten; Richternamen-Auflösung (Risikopfad). -->
 
-**Heimat: ROADMAP-Schritte `W2·6-FILTER` und `W2·6-RNAME`.**
+**Heimat: ROADMAP-Schritte `W2·6` (Dach, Checklisten-Zeile «Entscheid-Filter»; vormals
+`W2·6-FILTER`) und `W2·6-RESOLVER` (vormals `W2·6-RNAME`) — Etiketten-Konsolidierung 15.8.2026.**
 
 **Auftrag David (24.6.2026):** Den vollen Mehrwert von entscheidsuche
 (`https://mcp.entscheidsuche.ch/` + darunterliegende API) für LexMetrik heben.
@@ -10,7 +11,8 @@ Dateien, Tore und Risiken. **Reiner Plan — nichts hier ist umgesetzt** (§9).
 
 ## §0 · Zweck
 
-Detailquelle zu `W2·6-FILTER`/`W2·6-RNAME` — entscheidsuche.ch (MCP + Live-Suche)
+Detailquelle zu `W2·6`/`W2·6-RESOLVER` (vormals `W2·6-FILTER`/`W2·6-RNAME`,
+Etiketten-Konsolidierung 15.8.2026) — entscheidsuche.ch (MCP + Live-Suche)
 für LexMetrik voll ausschöpfen. Steuert nicht; kein zweiter Einstieg (§14). Datei-
 spezifisch: **reiner Plan, nichts hier ist umgesetzt** (§9) — Umsetzungsstand steht
 allein in `ROADMAP.md`/`STRUKTUR.md`, nicht in diesem Dokument.
@@ -125,7 +127,7 @@ Daten-Ausbau; P6 ist ein günstiges Qualitäts-Tor, das vor P5 stehen sollte.
 ### 5.1 Warum a und b EINE Einheit sind
 Beide brauchen dieselbe Kette: Turso-Schema → Sync (Voll-Rebuild seit PR #313) → `api/suche`-Query →
 Facetten-UI. Sie getrennt zu bauen hiesse, dieselbe Kette zweimal anzufassen (§14.2). Getrennt bleibt
-dagegen die **Namens-Auflösung** (`W2·6-RNAME`, §6) — dort werden Personen *identifiziert*, hier nur
+dagegen die **Namens-Auflösung** (`W2·6-RESOLVER`, vormals `W2·6-RNAME`, §6) — dort werden Personen *identifiziert*, hier nur
 *abgefragt*; das sind verschiedene Risiko-Klassen.
 
 ### 5.2 Teil a — Richterfilter
@@ -197,6 +199,12 @@ Nachweis ist eine Erfindung.
 
 ## §7 · ROADMAP-Spec W2·6-FILTER (wörtlich verschoben 31.7.2026)
 
+*Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): Das Etikett `W2·6-FILTER` ist
+aufgegangen — bauender Schritt dieser Spec ist seither das Dach `W2·6` (Rechtsprechungs-Daten),
+die Zeile steht dort als Checklisten-Eintrag. **Trailer also `Roadmap: W2·6`**, nicht der im
+wörtlichen Block unten zitierte Alt-Trailer. Gegenstand, Bündelungs-Begründung und die Abgrenzung
+zur Namens-Auflösung (§8, heute `W2·6-RESOLVER`) unverändert.*
+
 > **→ Bau-Spec: «5. Entscheid-Filter über die API» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
@@ -231,6 +239,11 @@ Nachweis ist eine Erfindung.
 ---
 
 ## §8 · ROADMAP-Spec W2·6-RNAME (wörtlich verschoben 31.7.2026)
+
+*Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): Das Etikett `W2·6-RNAME` ist
+aufgegangen — bauender Schritt dieser Spec ist seither `W2·6-RESOLVER` (Risikopfad-Dach der
+Rechtsprechungs-Daten), die Zeile steht dort als Checklisten-Eintrag. Gegenstand, Gegenrichtung
+und `QS-GP`-Pflicht unverändert.*
 
 > **→ Bau-Spec: «6. Richternamen gegen den Staatskalender auflösen» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 

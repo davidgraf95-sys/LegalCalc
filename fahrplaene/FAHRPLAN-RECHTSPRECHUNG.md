@@ -692,6 +692,14 @@ Gegenproben und Zahlen: `bibliothek/rechtsprechung/besetzung-extraktion-2026-07-
 *Ausführungs-Protokoll Ziff. 6). Die ROADMAP führt je Teilschritt nur noch Checkbox,*
 *`@meta` und einen Einzeiler; der Wortlaut unten ist die massgebliche Fassung.*
 
+> **Etiketten-Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU).** Die wörtlich
+> zitierten Blöcke unten nennen Etiketten, die seither fusioniert sind; der Zitat-Wortlaut
+> bleibt unangetastet, **verbindlich für Trailer und Heimat ist diese Umschlüsselung**:
+> `W2·6-MEHRSPRACH` → **`W2·5g-ZEIT`** (Zeile «Mehrsprachiger Normvergleich») ·
+> `W2·6-ADRESSEN`, `W2·6-UEBERSICHT`, `W2·6-FILTER` → **`W2·6`** (Dach, je eigene
+> Checklisten-Zeile) · `W2·6-RNAME` → **`W2·6-RESOLVER`**. Gegenstand, Risikoklasse und
+> `QS-GP`-Pflicht je Zeile unverändert.
+
 **Schnitt-Begründung (Session-Granularität AP-6) — wörtlich:** *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
 
     **Session-Granularität (AP-6, 31.7.2026):** §13 ist eine unsortierte Postenliste ohne eigene

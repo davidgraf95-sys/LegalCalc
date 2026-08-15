@@ -63,6 +63,11 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
 ## Station B — Bau
 
 - Nach **Bau-Prompt + Fahrplan-Spec**, nicht nach Erinnerung.
+- **Lebendige Spec (David 15.8.2026):** Weicht die Fahrplan-Spec vom
+  Ist-Code ab, wird die Spec **sofort in der Fahrplan-Datei korrigiert**
+  (datiert, mit Anlass-Halbsatz) und weitergebaut — nie gegen die veraltete
+  Spec bauen, nie die Abweichung nur im Chat vermerken. Erledigte §§ wandern
+  bei der Rotation ins Archiv ([aufraeumen.md](aufraeumen.md)).
 - **Delegation:** Klassen/Stufen/Dispatch-Vorlage → Skill `auftrag` Ziff. 6;
   diese Session orchestriert und landet.
 - **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
@@ -106,8 +111,12 @@ bevor der Kontext zur Neige geht** — lieber sauber landen als anreissen.
 
 ## Station E — Abschluss (Checkliste, keine Kür)
 
-- [ ] **Session-Karte `STRUKTUR.md`** — was gebaut, belegt, offen
-      (leichter Pfad: eine Zeile).
+- [ ] **Session-Karte `STRUKTUR.md`** — Default ist die **Kurzkarte**
+      (3–6 Zeilen: was gebaut, Commit/PR-Beleg, was offen). Volle Karte NUR
+      bei Risikopfad-Berührung, gezogener §17-Lehre oder offenen Enden, die
+      eine Folge-Session steuern müssen (Diät-Beleg 15.8.2026: 51 % aller
+      Commits seit 1.8. waren reine Doku-/Plan-Pflege, 12,5 % Produkt-Code).
+      Leichter Pfad: eine Zeile.
 - [ ] `struktur-rotieren.py --check` — bei Rot: Steuer-Doku aufräumen nach
       **[aufraeumen.md](aufraeumen.md)**.
 - [ ] `npm run plan:bild` — Dock-Datei aktuell.

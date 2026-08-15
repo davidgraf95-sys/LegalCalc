@@ -172,21 +172,21 @@ describe('Regel 11 — Bau-Spec-Zeiger vs. Kontext-Verweis', () => {
 });
 
 describe('Regel 11 — Allowlist', () => {
-  // Der einzige Bestands-Eintrag: W3·10 zeigt in einen ARCHIVIERTEN Fahrplan aus
-  // der Zeit vor der §-Überschriften-Konvention (`## P3` ohne §-Sigel, Schritt-ID
-  // dort unbekannt). Die Auflösung ist laut ROADMAP der erste Arbeitsschritt von
-  // W3·10 selbst.
+  // Der einzige Bestands-Eintrag: W3-AUSBAU (bis zur Etiketten-Konsolidierung
+  // 15.8.2026 `W3·10`) zeigt in einen ARCHIVIERTEN Fahrplan aus der Zeit vor der
+  // §-Überschriften-Konvention (`## P3` ohne §-Sigel, Schritt-ID dort unbekannt).
+  // Die Auflösung ist laut ROADMAP der erste Arbeitsschritt des Schritts selbst.
   const ARCHIV = '# Alt\n\n## P3 — Fachliche Spitze\nOhne §-Sigel und ohne Schritt-ID.\n';
   const archivLeser = (p: string) => (p === 'archiv/FAHRPLAN-ALT.md' ? ARCHIV : null);
   const mitArchiv = (anker: string, id: string) =>
     plan(`\`archiv/FAHRPLAN-ALT.md\` ${anker}`, id);
 
   it('der Eintrag trägt eine Begründung (leere Begründung wäre keine)', () => {
-    expect(SPEC_BINDUNG_AUSNAHMEN.get('W3·10 §P3')).toMatch(/Archiv-Fahrplan/);
+    expect(SPEC_BINDUNG_AUSNAHMEN.get('W3-AUSBAU §P3')).toMatch(/Archiv-Fahrplan/);
   });
 
   it('allowlisteter Verweis → kein Problem', () => {
-    const p = pruefe(mitArchiv('§P3', 'W3·10'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W3·10'], archivLeser);
+    const p = pruefe(mitArchiv('§P3', 'W3-AUSBAU'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W3-AUSBAU'], archivLeser);
     expect(p).toEqual([]);
   });
 
@@ -195,8 +195,8 @@ describe('Regel 11 — Allowlist', () => {
   // Ausnahme, die jeden künftigen Anker desselben Schritts mit deckt, wäre ein
   // Tor, das an dieser Stelle nicht mehr scheitern kann (§6.7).
   it('NEGATIV: derselbe Schritt mit ANDEREM Anker fällt aus der Ausnahme (fail-closed)', () => {
-    const p = pruefe(mitArchiv('§P9', 'W3·10'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W3·10'], archivLeser);
-    expect(p.some((x) => x.id === 'W3·10' && /§P9 .* nicht auf/.test(x.meldung))).toBe(true);
+    const p = pruefe(mitArchiv('§P9', 'W3-AUSBAU'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W3-AUSBAU'], archivLeser);
+    expect(p.some((x) => x.id === 'W3-AUSBAU' && /§P9 .* nicht auf/.test(x.meldung))).toBe(true);
   });
 
   it('NEGATIV: ein anderer Schritt erbt die Ausnahme nicht', () => {

@@ -127,7 +127,7 @@ const basename = (p: string): string => p.split('/').pop() ?? p;
 // nicht alle 75 top-level src/lib/*.ts). Die ^src/lib/[^/]+\.ts$-Klammer
 // verhindert Rekursion in Unterordner (die separat als Präfix erfasst sind).
 const RECHNEN_RE =
-  /(tarif|kosten|gebuehr|zustaendigkeit|frist|verjaehr|streitwert|beurkund|gruendung|schkg|straf|bger)/i;
+  /(tarif|kosten|gebuehr|zustaendigkeit|frist|verjaehr|streitwert|beurkund|gruendung|schkg|straf|bger|zustellfiktion|zustellung)/i;
 
 /** Risiko-Pfade: Extraktion · Rechnen · Norm/Tarif (real gegen den Baum verifiziert). */
 export function istRisikoPfad(p: string): boolean {
