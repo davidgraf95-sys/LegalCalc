@@ -12,7 +12,7 @@
 // MASSE_DB (Default 'daten/masse.db'). Der Worktree hat kein daten/poc → Absolut-Pfad übergeben.
 import { rmSync, mkdirSync, statSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { DatabaseSync } from 'node:sqlite';
+import { DatabaseSync, type SQLInputValue } from 'node:sqlite';
 import { asyncBufferFromFile, parquetMetadataAsync, parquetReadObjects } from 'hyparquet';
 import { compressors } from 'hyparquet-compressors';
 import {
@@ -91,7 +91,7 @@ async function main(): Promise<void> {
   for (const datei of ['bger.parquet', 'bge.parquet']) {
     const n = await jeRowGroup<EntscheidParquet>(`${POC_DIR}/${datei}`, entCols, (rows) => {
       db.exec('BEGIN');
-      for (const r of rows) insEnt.run(entscheidRow(r) as unknown as Record<string, unknown>);
+      for (const r of rows) insEnt.run(entscheidRow(r) as unknown as Record<string, SQLInputValue>);
       db.exec('COMMIT');
     });
     entGelesen += n;
@@ -111,7 +111,7 @@ async function main(): Promise<void> {
     ['source_decision_id', 'target_ref', 'match_type', 'confidence_score'],
     (rows) => {
       db.exec('BEGIN');
-      for (const r of rows) insZit.run(zitatRow(r) as unknown as Record<string, unknown>);
+      for (const r of rows) insZit.run(zitatRow(r) as unknown as Record<string, SQLInputValue>);
       db.exec('COMMIT');
     },
   );
@@ -129,7 +129,7 @@ async function main(): Promise<void> {
     ['decision_id', 'law_code', 'article'],
     (rows) => {
       db.exec('BEGIN');
-      for (const r of rows) insRef.run(normRefRow(r) as unknown as Record<string, unknown>);
+      for (const r of rows) insRef.run(normRefRow(r) as unknown as Record<string, SQLInputValue>);
       db.exec('COMMIT');
     },
   );

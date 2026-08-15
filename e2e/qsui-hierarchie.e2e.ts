@@ -547,7 +547,7 @@ for (const [breite, hoehe, name] of [[1280, 800, 'Desktop'], [390, 844, 'Mobil']
           // nicht eine Klasse: `md:sticky` ist ein Klassenname, `position:
           // sticky` ist die Wirkung, und nur die zählt.
           let klebt = false
-          for (let el = stelle; el && el !== document.body; el = el.parentElement) {
+          for (let el: Element | null = stelle; el && el !== document.body; el = el.parentElement) {
             if (getComputedStyle(el).position === 'sticky') { klebt = true; break }
           }
           return {

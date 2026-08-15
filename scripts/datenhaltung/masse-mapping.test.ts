@@ -3,7 +3,7 @@
 // Manifest) mit HANDGEBAUTEN Mini-Fixtures, OHNE die grossen Parquete. Beweist: Dedup,
 // quelle_url-Ableitung (§7), Kanten-Orientierung von/nach, konfidenz, Manifest-Determinismus.
 import { describe, it, expect } from 'vitest';
-import { DatabaseSync } from 'node:sqlite';
+import { DatabaseSync, type SQLInputValue } from 'node:sqlite';
 import {
   entscheidRow,
   zitatRow,
@@ -151,9 +151,9 @@ function baueMiniDb(): DatabaseSync {
      VALUES (@id,@ecli,@ecli_key,@gericht,@kanton,@nummer,@bge_referenz,@bge_key,@docket_key,@datum,@publikation,
        @sprache,@rechtsgebiet,@leitcharakter,@kuratierung,@regeste_json,@full_text,@quelle,@quelle_url,@abgerufen,@sha)`,
   );
-  for (const p of [BGER, BGE]) insEnt.run(entscheidRow(p) as unknown as Record<string, unknown>);
+  for (const p of [BGER, BGE]) insEnt.run(entscheidRow(p) as unknown as Record<string, SQLInputValue>);
   // Duplikat-Entscheid (gleiche id) → INSERT OR IGNORE muss dedupen.
-  insEnt.run(entscheidRow(BGER) as unknown as Record<string, unknown>);
+  insEnt.run(entscheidRow(BGER) as unknown as Record<string, SQLInputValue>);
 
   const insZit = db.prepare('INSERT INTO zitat_roh (von_id,ziel_key,nach_zitierung,match_type) VALUES (@von_id,@ziel_key,@nach_zitierung,@match_type)');
   const kanten: Array<[string, string, string]> = [
@@ -162,12 +162,12 @@ function baueMiniDb(): DatabaseSync {
     ['bger_4A_1_2020', 'BGE 150 III 1', 'bge_bare'], // exaktes Duplikat (von,ziel) → Dedup
     ['bger_4A_1_2020', 'BGE 99 IX 9', 'bge_bare'], // Ziel nicht im Korpus → unresolved
   ];
-  for (const [von, ref, mt] of kanten) insZit.run(zitatRow({ source_decision_id: von, target_ref: ref, match_type: mt, confidence_score: 1 }) as unknown as Record<string, unknown>);
+  for (const [von, ref, mt] of kanten) insZit.run(zitatRow({ source_decision_id: von, target_ref: ref, match_type: mt, confidence_score: 1 }) as unknown as Record<string, SQLInputValue>);
 
   const insRef = db.prepare('INSERT INTO normref_roh (quelldok_id,erlass_key,artikel,zitat_key,roh_zitat) VALUES (@quelldok_id,@erlass_key,@artikel,@zitat_key,@roh_zitat)');
   // Zwei Paragraph-Varianten desselben Artikels → auf Artikel-Ebene EIN Eintrag (UNIQUE ohne paragraph).
-  for (const art of ['41', '41']) insRef.run(normRefRow({ decision_id: 'bger_4A_1_2020', law_code: 'OR', article: art }) as unknown as Record<string, unknown>);
-  insRef.run(normRefRow({ decision_id: 'bge_150 III 1', law_code: 'ZGB', article: '8' }) as unknown as Record<string, unknown>);
+  for (const art of ['41', '41']) insRef.run(normRefRow({ decision_id: 'bger_4A_1_2020', law_code: 'OR', article: art }) as unknown as Record<string, SQLInputValue>);
+  insRef.run(normRefRow({ decision_id: 'bge_150 III 1', law_code: 'ZGB', article: '8' }) as unknown as Record<string, SQLInputValue>);
 
   db.exec(DEDUP_MASSE);
   db.exec(INDIZES_MASSE);

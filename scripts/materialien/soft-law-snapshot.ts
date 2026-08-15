@@ -35,12 +35,17 @@ import type { SoftLawDok, NormRefKante, AdapterErgebnis } from './adapter-typen.
 function arg(name: string): string | undefined {
   return process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 }
-const datum = arg('datum');
+const datumRoh = arg('datum');
 const quelleArg = arg('quelle');
-if (!datum || !/^\d{4}-\d{2}-\d{2}$/.test(datum)) {
+if (!datumRoh || !/^\d{4}-\d{2}-\d{2}$/.test(datumRoh)) {
   console.error('soft-law-snapshot: --datum=YYYY-MM-DD erforderlich (§2, kein Date.now).');
   process.exit(1);
 }
+// Eigene Konstante NACH dem Guard: die Verengung auf `string` gilt damit auch
+// innerhalb der Closures weiter unten, die das Datum bisher mit `datum!` an der
+// Prüfung vorbeischmuggelten (QS-TYP-LUECKE 15.8.2026). Rein typseitig — der
+// Guard und sein Abbruch sind unverändert.
+const datum: string = datumRoh;
 const UNTERSTUETZT = new Set<SoftLawQuelle>(['seco', 'edoeb', 'estv-ks', 'estv-mwst']);
 if (!quelleArg || !UNTERSTUETZT.has(quelleArg as SoftLawQuelle)) {
   console.error(`soft-law-snapshot: --quelle=${[...UNTERSTUETZT].join('|')} erforderlich. (erhalten: ${quelleArg ?? '—'})`);
@@ -61,15 +66,15 @@ function gehoertZurQuelle(id: string): boolean {
 /** Fährt den Adapter der gewählten Quelle (Count-/Vollständigkeits-Gate werfen bei ROT → §8). */
 async function crawle(substrate: { tag: string; html: string }[]): Promise<AdapterErgebnis> {
   if (quelle === 'edoeb') {
-    return crawleEdoeb({ abgerufen: datum!, substrat: (tag, html) => substrate.push({ tag, html }) });
+    return crawleEdoeb({ abgerufen: datum, substrat: (tag, html) => substrate.push({ tag, html }) });
   }
   if (quelle === 'estv-ks') {
-    return crawleEstvKs({ abgerufen: datum!, substrat: (tag, html) => substrate.push({ tag, html }) });
+    return crawleEstvKs({ abgerufen: datum, substrat: (tag, html) => substrate.push({ tag, html }) });
   }
   if (quelle === 'estv-mwst') {
     // robots-Freigabe David 4.7.2026 (§8): Concurrency 1, Delay, identifizierender UA — im Adapter fest.
     return crawleEstvMwst({
-      abgerufen: datum!,
+      abgerufen: datum,
       substrat: (tag, html) => substrate.push({ tag, html }),
       log: (z) => console.log(z),
     });
@@ -80,7 +85,7 @@ async function crawle(substrate: { tag: string; html: string }[]): Promise<Adapt
     if (set === null) throw new Error(`soft-law-snapshot: kein Normtext-Korpus für ${erlassKey} (public/normtext/bund/${erlassKey}.json fehlt).`);
     return set;
   };
-  return crawleSeco(korpusFuer, { abgerufen: datum!, substrat: (tag, html) => substrate.push({ tag, html }) });
+  return crawleSeco(korpusFuer, { abgerufen: datum, substrat: (tag, html) => substrate.push({ tag, html }) });
 }
 
 /** Lokale Ablage des rohen Adapter-Ergebnisses (store-raw VOR load): ein Ingest-/Load-Bug darf

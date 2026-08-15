@@ -180,7 +180,11 @@ function hex(c: Farbe): string {
 function oklchOf(token: string, mode: Mode) {
   const t = tokensOf(mode);
   const c = loeseFarbe(t.get(token)!, t);
-  return { l: toOklab(c).l, ...toOklch(c) } as { l: number; c: number; h: number | undefined };
+  // Das vorangestellte `l: toOklab(c).l` war TOTER CODE: der nachfolgende Spread
+  // überschrieb es (TS2783, sichtbar erst seit QS-TYP-LUECKE 15.8.2026). Der
+  // gelieferte Wert ändert sich dadurch NICHT — OKLCh ist die Polarform von
+  // OKLab und trägt dasselbe L. Weg damit, damit die Zeile sagt, was sie tut.
+  return { ...toOklch(c) } as { l: number; c: number; h: number | undefined };
 }
 
 // ── 3 · Assertion-Tabellen ───────────────────────────────────────────────────
