@@ -1,9 +1,11 @@
 # FAHRPLAN — Multi-Pane / Split-View (+ Breiten-Umschalter)
 <!-- @lagebild name: Split-View · zweck: Gesetz, Rechner und Entscheid nebeneinander wie Browser-Fenster. -->
 
-**Heimat: ROADMAP-Schritt `W3·14`.** *Nachtrag 14.8.2026 (QS-PLAN-EINFACH): die früheren
-Teil-Etiketten `W3·14-B3`/`-S`/`-a11y` sind Checklisten-Zeilen des Dachs — Trailer ist
-einheitlich `Roadmap: W3·14`.*
+**Heimat: ROADMAP-Schritt `W3-AUSBAU`, Zeile «Multi-Pane / Split-View».** *Nachtrag 14.8.2026
+(QS-PLAN-EINFACH): die früheren Teil-Etiketten `W3·14-B3`/`-S`/`-a11y` sind Checklisten-Zeilen
+des Dachs. Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): auch das Dach `W3·14`
+selbst ist in `W3-AUSBAU` aufgegangen — **Trailer einheitlich `Roadmap: W3-AUSBAU`**; alle
+`W3·14`-Nennungen unten sind als diese Zeile zu lesen.*
 
 > **Stand 29.6.2026 · KOMPLETT: A + B-0 + B-0b + B-1 + B-2 + B-2.5 + B-4 + B-5 (Branch
 > `feat/split-view-strang-a`).** A/B-0/B-0b + B-1/B-2 auf **Prod** (`bec0ecb7`); B-2.5/B-4/B-5

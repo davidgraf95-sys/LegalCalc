@@ -30,6 +30,16 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 15.8.2026 — BAUPLAN-UMBAU: lebendige Specs, Gross-Schnitt, Doku-Diät (PR #507)
+
+**QS-EFFIZIENZ · BAUPLAN-UMBAU (David 15.8.) komplett; 8 Unteragenten (3 Recherche, 2 Bau, 3 Gegenprüfung).** Messen vor Handeln: SotA-Web-Recherche (`bibliothek/betrieb/agenten-bauplanung-sota-2026-08-15.md`) + Repo-Inventar + Messdaten (Kern-Beleg: 51 % Doku-Commits seit 1.8. vs. 12,5 % Produkt-Code; fahrplaene/ 16 015 Zeilen).
+
+- **Lebendige Spec** (OpenSpec-Muster): Banner in `fahrplan-slice` an jedem Slice, bauschritt Station B, Fahrplan-§-Diät als aufraeumen.md §4b; live angewandt: GESETZES-UX/FEDLEX-PORTFOLIO −795 Z. wörtlich archiviert (5/5 byte-geprüft).
+- **Gross-Schnitt:** 14 Etiketten → 5 Dächer (65 → 53; W2·6, W2·6-RESOLVER, W2·5g-ZEIT, W3-AUSBAU neu, QS-KORPUS neu); unabhängige Gegenprüfung BESTANDEN MIT AUFLAGEN → Auflagen behoben (Risikoklassen-Doku wahr, QS-GP-Vermerke an MEHRSPRACH/FILTER-Zeile, 22+2+5 tote ID-Stellen nachgezogen). Nebenfund-Fix: `RECHNEN_RE` +zustellfiktion/zustellung.
+- **Doku-Diät:** Kurzkarte = Session-Karten-Default (Station E). §9-Bug-Check: Code-Lupe + 6/6 empirische Repros, keine blockierenden Befunde.
+- **Dependabot:** #501 gemergt; #500/#502/#504 Auto-Merge scharf (Lock-Fix npx npm@10, H-8-Muster, auf #502/#504 gepusht); #503 tailwind 3→4 + Lock-Wurzelfix → QS-BASIS-Checklisten-Zeilen.
+- **Landung (Nachtrag):** #507 gemergt als `f6d8925fa`, Prod-Deploy success, 6 Kernrouten 200. Verzögerung ~7 h: Vercel-Tageslimit + Wächter-Lücke (mein Ad-hoc-Monitor deckte BEHIND nicht ab — Regel stand im Landung-Skill Ziff. 2, war im Monitor nicht implementiert; behoben durch Hand-`update-branch`, Folge-Monitor mit BEHIND-Pfad). Plan-Buchung: Workflow «success» ohne Push (still!) — Beleg am offenen Auto-Buchungs-Punkt vermerkt, Hand-Buchung `status=ready` ausgeführt.
+
 ## Session 14./15.8.2026 (Teil 5) — Aktivierungs-Audit, Rechtsstand-Reparatur, Test-Stabilisierung (#495, #497, #498, #499, #505)
 
 **Fortsetzung derselben Session (Dauerauftrag); ~12 weitere Unteragenten (Recherche/Bau/Daten/Mechanik/Gegenprüfung), jede Landung einzeln gegengeprüft.** Auslöser war Davids Frage nach dem Token-Messungs-Ausfall: «prüfe, was sonst noch liegen geblieben ist».

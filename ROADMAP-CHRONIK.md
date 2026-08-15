@@ -2268,3 +2268,154 @@ in die Chronik, im Plan bleibt ein ✅-Einzeiler + Pointer. Wortlaut wie am 13.8
   - [x] **Artikel-Ebene in der Gliederung — in JEDEM Erlass (David 9.8.2026 «umgekehrt», erweitert 13.8.2026):** ✅ PR #486. Der Auftrag wurde im Bau erweitert: keine Dichte-Schwelle als Aufnahme-Kriterium mehr — die Artikel sind in allen Baum-Modi die unterste Klapp-Ebene («Art. 5 — Sachtitel», sonst «Art. 5»), ausgenommen die 20 Erlasse, deren Baum über Randtitel-Blätter schon artikel-granular ist (OR/ZGB unverändert, per Unit-Test belegt). Zusätzlich fällt die frühere B3-Leerzeile: 68 Erlasse ohne Sidecar/Randtitel zeigten eine LEERE Leiste und tragen jetzt den flachen Artikel-Index (ZH-243 150 · SG-3849 607 · GE-rsg_d3_30 194 …). `gliederungsModell.ts` dabei nach §6.6 in drei Dateien geteilt (Typen · Artikel · Sektionsbaum). Nachtrag im selben PR: auch die artikel-granularen Bäume (OR/ZGB, SchKG, IPRG …) bekommen die Ebene dort, wo Artikel sonst nicht anspringbar wären — korpusweit 0 unerreichbare Artikel (vorher OR 83 · ZGB 48 · LFG 17 · KOV 8 …), ohne die Randtitel-Blätter zu doppeln. Verbleibende Ausnahme, deklariert: die 74 ZGB-Artikel der A36-Kuration.
   - [x] **a33-Zielkonflikt Auto-Aufklapp ↔ CLS-Kontrakt:** ✅ Entscheid David 9.8.2026 = Weg a (Aufklappen erst bei Scroll-Ruhe), umgesetzt in PR #480 — a33 kalt 20/20 grün (vorher 2–4/20); ~39-Zeilen-Ziel von David als überholt gestrichen («kein Wuchern genügt»). Dossier nachgeführt.
   - [x] **Baum-Fokus beim Auto-Zuklappen retten (B8, WCAG 2.4.3):** ✅ PR #486 — `retteFokusVorZuklapp` in `tocAutoZuklappen.ts`, aufgerufen vor dem `flushSync` in `inhalt-hooks.tsx`; sechs Unit-Fälle, Rot-Beweis geführt. *(W2·19-Bug-Check, zurückgestellt.)*
+
+
+# Etiketten-Konsolidierung 15.8.2026 — Fusionen (BAUPLAN-UMBAU)
+
+**14 Etiketten aufgegangen** (nicht gestrichen — jede lebt als Checklisten-Zeile in ihrem Dach
+weiter, Risiko-Vermerke und Fahrplan-Zeiger wörtlich an der Zeile; Dach-`kollision` je um die
+aufgenommene Fläche erweitert). Anlass: Auftrag David 15.8.2026 («eventuell schritte zusammenlegen»,
+BAUPLAN-UMBAU: «alle offenen Schritte gross schneiden»); Muster der Etiketten-Konsolidierung vom
+14.8.2026. Etiketten-Bestand 65 → 53 (14 aufgegangen, 2 neue Dächer). **Sortenreinheit lebt an der
+Zeile, nicht am Etikett** (Korrektur 15.8. nach Gegenprüfungs-Auflage): ein Dach darf Zeilen
+verschiedener Risiko-Klassen tragen — massgeblich ist, dass jede Bau-Session eine sortenreine
+Teilmenge nimmt und das Gegenprüfungs-Tor pfadbasiert greift (`istRisikoPfad`); Risiko-Zeilen
+tragen den `QS-GP`-Vermerk wörtlich an der Zeile. Fusion 4 überspannt zudem bewusst vier Flächen
+(Welle-3-Horizont).
+
+**Die fünf Fusionen mit Begründung:**
+
+1. `W2·6-ADRESSEN` · `W2·6-FILTER` · `W2·6-ZNETZ` · `W2·6-UEBERSICHT` → **`W2·6`** — dieselbe Fläche
+   (Rechtsprechung: `scripts/rechtsprechung`, `public/rechtsprechung`, `src/lib/rechtsprechung`);
+   Risiko-Klassen GEMISCHT an den Zeilen (Korrektur 15.8.: `W2·6-ZNETZ` berührt
+   `scripts/verzahnung/` und `W2·6-FILTER` `scripts/datenhaltung` — beides `istRisikoPfad`-wahr,
+   `QS-GP`-Vermerk an diesen Zeilen; ADRESSEN/UEBERSICHT nicht-Risiko). Das Dach trug die vier
+   ohnehin als «vier eigenständige Unterschritte». Die bisherige `dep: [W2·6-RESOLVER]` von
+   `W2·6-UEBERSICHT` ist Prosa geworden («erst nach dem Resolver-Teil»).
+2. `W2·6-RNAME` → **`W2·6-RESOLVER`** — beide Risikopfad Rechtsprechungs-Daten (Extraktion/
+   Personendaten, `QS-GP` Pflicht), beide arbeiten am Auflösen von Rohtext gegen amtliche Register.
+3. `W2·5j-TABELLEN` · `W2·6-MEHRSPRACH` → **`W2·5g-ZEIT`** — alle drei Fläche Gesetzesdaten
+   (`scripts/normtext` / `public/normtext` / Gesetzes-Leser). Korrektur 15.8. (Gegenprüfungs-
+   Auflage): die Fläche `scripts/normtext` ist `istRisikoPfad`-wahr — wo eine Zeile Extraktion
+   berührt, gilt Gegenprüfungs-Pflicht; der `QS-GP`-Vermerk steht seit der Korrektur auch an der
+   MEHRSPRACH-Zeile.
+4. `W3·10` · `W3·11` · `W3·13` · `W3·14` → **`W3-AUSBAU`** (neu) — Welle-3-Horizont, vier Flächen
+   (Rechner · Fedlex · Vorlagen · UI) unter einem Dach; je Zeile eine sortenreine Bau-Einheit.
+   `W3·12` bleibt eigenständig (26×-Slot-Inhaber), `W3·15-RICHTER` bleibt eigenständig (blocked,
+   Freigabe-Gate).
+5. `QS-KORPUS-BMV` · `QS-KORPUS-SCOPE` · `QS-KORPUS-RSPR-DATUM` → **`QS-KORPUS`** (neu) — alle drei
+   Korpus-Pflege, alle drei Risikopfad ⇒ Gegenprüfungs-Pflicht steht im Kopf des Dachs.
+
+**Nachzug an den Rändern** (Regel 11, Spec-Bindung): `FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md §8` und
+`FAHRPLAN-FEDLEX-PORTFOLIO.md §20.4` nennen jetzt den bauenden Schritt (`W2·6-RESOLVER` bzw.
+`QS-KORPUS`) — die Spec ist dem Etikett gefolgt, nicht umgekehrt. Die Archiv-Ausnahme
+`W3·10 §P3` in `scripts/plan/specBindung.ts` ist mit dem Schritt auf `W3-AUSBAU §P3` umgeschlüsselt
+(Begründung unverändert: Archiv-Fahrplan ohne §-Überschriften, seine Auflösung ist der erste
+Arbeitsschritt).
+
+*Wortlaut der aufgegangenen Schritte, wie er bis 15.8.2026 in `ROADMAP.md` stand:*
+
+## W2·6-ADRESSEN — Gerichts-/Behörden-Adressregister *(fusioniert in W2·6, verschoben 15.8.2026)*
+
+    - [ ] **6-ADRESSEN · Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5). Quelle `bibliothek/behoerden/`. §13.
+      <!-- @meta id: W2·6-ADRESSEN · status: ready · blocker: null · dep: [] · kollision: [bibliothek/behoerden, src/lib/kontext.ts, src/pages/RechnerUebersicht.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+
+## W2·6-FILTER — Entscheid-Filter über die API — Richter + allgemeine Facetten *(fusioniert in W2·6, verschoben 15.8.2026)*
+
+- [ ] **6-FILTER · Entscheid-Filter über die API — Richter + allgemeine Facetten** *(§14-Intake 20.7.2026, David — Queue-Plätze 2 und 3; **ULTRACODE freigegeben** für Teil b)*
+  <!-- @meta id: W2·6-FILTER · status: ready · blocker: null · dep: [] · kollision: [api/suche.ts, scripts/datenhaltung, src/components/suche, src/lib/rechtsprechung, public/rechtsprechung] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md -->
+  **Gebündelt, weil beide Teile dieselbe Bau-Fläche tragen** (Turso-Schema + `api/suche.ts` + Facetten-UI):
+  Richter-Facette (aus `R-RICHTER` Block B) und die allgemeinen Entscheid-Facetten über die API.
+  **Detail:** [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §7.
+
+## W2·6-ZNETZ — Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score *(fusioniert in W2·6, verschoben 15.8.2026)*
+
+- [ ] **6-ZNETZ · Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score** *(Ideen-Intake 20.7.2026 · Daten-Derivation, `QS-GP`)*:
+  <!-- @meta id: W2·6-ZNETZ · status: ready · blocker: null · dep: [] · kollision: [scripts/verzahnung, src/lib/verzahnung, src/lib/rechtsprechung, public/rechtsprechung] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  «Welche Entscheide zitieren diesen?» (Rückwärts-Kanten) + **Leitentscheid-Score**, deterministisch
+  aus dem Zitat-Graph abgeleitet (§2 — kein Ranking-Modell, kein Bedeutungs-Urteil); Daten-Derivation
+  ⇒ `QS-GP`. **Merkposten LM-042** («ff.»-Sammelzitate) als Auflage mitführen, kein eigener Posten.
+  **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10.
+
+## W2·6-UEBERSICHT — Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite *(fusioniert in W2·6, verschoben 15.8.2026)*
+
+    - [ ] **6-UEBERSICHT · Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; Kantons-Ausweitung setzt den Resolver voraus (darum `dep`). §13.
+      <!-- @meta id: W2·6-UEBERSICHT · status: ready · blocker: null · dep: [W2·6-RESOLVER] · kollision: [src/pages/Rechtsprechung.tsx, src/components/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+
+## W2·6-RNAME — Richternamen gegen den Staatskalender auflösen *(fusioniert in W2·6-RESOLVER, verschoben 15.8.2026)*
+
+- [ ] **6-RNAME · Richternamen gegen den Staatskalender auflösen** *(§14-Intake 20.7.2026, David · **Extraktion/Personendaten — Risikopfad**, `QS-GP`)*
+  <!-- @meta id: W2·6-RNAME · status: ready · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md -->
+  Abgekürzte Vornamen auflösen: **«P. Kaderli» → «Kaderli Peter»**, Abgleich gegen den amtlichen
+  Staatskalender. **Extraktion/Personendaten = Risikopfad** ⇒ `QS-GP` Pflicht, nie raten.
+  **Detail:** [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §8.
+
+## W2·5j-TABELLEN — Tabellen in Gesetzen lesbar machen *(fusioniert in W2·5g-ZEIT, verschoben 15.8.2026)*
+
+- [ ] **5j-TABELLEN · Tabellen in Gesetzen lesbar machen** *(§14-Intake 20.7.2026 · Extraktion + Darstellung, `QS-GP`)* — **ENTPARKT 3.8.2026 (David).**
+  <!-- @meta id: W2·5j-TABELLEN · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext/adapter-pdf.ts, src/components/normtext/ArtikelBody.tsx, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`. Extraktion = Risikopfad ⇒ `QS-GP` + golden
+  byte-gleich; Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1).
+  **Grenze zu `W2·13-KANTONE-K7`** beachten (dort die PDF-Extraktion davor, hier die Darstellung).
+  **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18.
+
+## W2·6-MEHRSPRACH — Mehrsprachiger Normvergleich DE/FR/IT *(fusioniert in W2·5g-ZEIT, verschoben 15.8.2026)*
+
+    - [ ] **6-MEHRSPRACH · Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: drei Sprachfassungen je Erlass + Synopse-UI; heute ist nur `de` befüllt. §13.
+      <!-- @meta id: W2·6-MEHRSPRACH · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund, src/pages/gesetz-leser] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+
+## W3·10 — Neue Rechner-Klingen *(fusioniert in W3-AUSBAU, verschoben 15.8.2026)*
+
+- [ ] **10 · Neue Rechner-Klingen** *(`[OF]`, §2/§7)* — Zustellfiktions-Engine · Gesellschafts-
+  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [src/lib, src/lib/startseiteConfig.ts, src/pages] · worktree: nein · 26x: nein · groesse: L · fahrplan: archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md -->
+  rechts-Schwellen (OR 727/671/653s) · IGE-Gebühren · Geltungsstand-Prüfer · Kantonale
+  Gerichtsferien-Datenschicht (26×-Asset, Slot beachten). **Erster Arbeitsschritt:**
+  Restpunkte-Extraktion aus `archiv/FAHRPLAN-PRODUKTAUSBAU-BURGGRABEN.md` §P3 in einen aktiven
+  Fahrplan (deklarierte Archiv-Ausnahme).
+
+## W3·11 — Gesetzgebungs-/Rechtsetzungs-Tracking *(fusioniert in W3-AUSBAU, verschoben 15.8.2026)*
+
+- [ ] **11 · Gesetzgebungs-/Rechtsetzungs-Tracking** *(neu, amtlich)*. Übersicht «was kommt»:
+  <!-- @meta id: W3·11 · status: ready · blocker: null · dep: [] · kollision: [scripts/fedlex-wiedervorlage-generieren.ts, src/lib/fedlex, public/normtext, src/pages] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  Rest offen: Parlamentsgeschäfte (parlament.ch), künftige-Fassungen-Drift, Übersichtsseite «alle
+  laufenden Vernehmlassungen», Laufend-Badge im Reader-Kopf. Andockpunkt `fedlex.ts`/Drift-System;
+  Detail `fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md §Paket 3`.
+
+## W3·13 — Vorlagen-Breite *(fusioniert in W3-AUSBAU, verschoben 15.8.2026)*
+
+- [ ] **13 · Vorlagen-Breite** *(VORLAGEN V5/V6/V8, GMBH G2, VERTRAGS-VARIANTEN P3; Worktree)*.
+  <!-- @meta id: W3·13 · status: ready · blocker: null · dep: [] · kollision: [src/lib/vorlagen] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
+  Tiefe vor Stückzahl. GmbH qualifizierte Gründung (777c II) · Musterklagen (Bauhandwerkerpfand) ·
+  Basistypen (Kauf/Fahrniskauf Art. 184 ff. dispositiv, Schenkung/Pacht/Darlehen/Bürgschaft).
+  **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §10
+  (Vertrags-Varianten) + §11 (GmbH-Gründung) — W3·13 trägt beide Stränge.
+
+## W3·14 — Multi-Pane / Split-View *(fusioniert in W3-AUSBAU, verschoben 15.8.2026)*
+
+- [ ] **14 · Multi-Pane / Split-View** *(SPLIT-VIEW, Fundament-Umbau, eigener Worktree; Auftrag
+  <!-- @meta id: W3·14 · status: ready · blocker: null · dep: [] · kollision: [src/components/layout, src/App.tsx, tailwind.config.js] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-SPLIT-VIEW.md -->
+  David 29.6.2026)*. 2–3 „Engines" nebeneinander **wie im Browser** → der **Verzahnungs-Burggraben
+  sichtbar** (Gesetz | Rechner | Begründungs-Absatz). Dach-Schritt mit Checkliste; eigener Worktree (§12).
+  **Detail:** [FAHRPLAN-SPLIT-VIEW.md](fahrplaene/FAHRPLAN-SPLIT-VIEW.md) §1.
+  - [ ] **B3 · Scroll & Fokus pro Pane — Restposten** — offen: Scroll-POSITIONS-Wiederherstellung (`App.tsx` noch window-basiert) + Tastatur-Pane-Wechsel. §STRANG B (B-3).
+  - [ ] **Bündel S** — S1 Breadcrumb-Navigation in der Pane · S2 Tracker «alles schliessen»; gebündelt bauen. §1.
+  - [ ] **a11y-Restpunkte** — 3 verifizierte, bewusst zurückgestellte a11y-Kanten der Pane-Schicht. §1.
+
+## QS-KORPUS-BMV — Geltende BMV (Totalrevision cc/2025/408) in den Korpus aufnehmen *(fusioniert in QS-KORPUS, verschoben 15.8.2026)*
+
+- [ ] **`QS-KORPUS-BMV` · Geltende BMV (Totalrevision `cc/2025/408`) in den Korpus aufnehmen** — die seit 1.3.2026 geltende Nachfolge-Verordnung (gleiche SR 412.103.1) fehlt; Nutzer finden nur den historischen Text. **Risikopfad** ⇒ Gegenprüfung. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §20.4.
+  <!-- @meta id: QS-KORPUS-BMV · status: ready · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, public/normtext/bund, src/lib/normtext/aufhebungen.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+
+## QS-KORPUS-SCOPE — scope/decl-Sektionen von 12 Staatsverträgen ingestieren *(fusioniert in QS-KORPUS, verschoben 15.8.2026)*
+
+- [ ] **`QS-KORPUS-SCOPE` · scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — 23 amtliche Sektionen liegen ausserhalb des `div#annex`-Containers und fehlen im Snapshot. **Risikopfad** ⇒ Gegenprüfung; golden-Diff erwartet (neue amtliche Substanz). **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §19.
+  <!-- @meta id: QS-KORPUS-SCOPE · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+
+## QS-KORPUS-RSPR-DATUM — Entscheid-Datumsfehler im Rechtsprechungs-Register bereinigen *(fusioniert in QS-KORPUS, verschoben 15.8.2026)*
+
+- [ ] **`QS-KORPUS-RSPR-DATUM` · Entscheid-Datumsfehler im Rechtsprechungs-Register bereinigen** — `bge_151_II_475` trägt 1999 statt 2025; Datum gegen bger.ch verifizieren, in der Pipeline-Quelle korrigieren (nie im Projektions-JSON, §5), Register-Sweep nach weiteren Band/Jahr-Diskrepanzen, Projektion neu erzeugen. **Risikopfad** ⇒ Gegenprüfung. **Detail-Heimat:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md).
+  <!-- @meta id: QS-KORPUS-RSPR-DATUM · status: ready · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+
+## BAUPLAN-UMBAU — Auftrags-Wortlaut *(erledigt 15.8.2026, ✅-Prosa aus offenem `QS-EFFIZIENZ` verschoben 15.8.2026)*
+
+· [ ] BAUPLAN-UMBAU (David 15.8., Prompt-Wortlaut: Chat-Übergabe / sinngemäss hier): Plan vereinfachen + Doku-Pflichten reduzieren (Streich-Massstab, mit Beleg) · Fahrpläne LEBENDIG machen (Mechanismus: Ist-Abweichung ⇒ Spec direkt korrigieren, datiert begründen, weiterbauen — statt gegen veraltete Spec bauen) · alle offenen Schritte gross schneiden (Massstab 15.8.) · Gesamtaufbau fundiert prüfen, erst recherchieren (auch Internet-Inspiration) dann umbauen · NACHZIEH-PFLICHT an jeder Ecke (Skills, bildSeiten/bauPrompt, check:plan, CLAUDE.md, Chronik; Regelverlust-Tore je Streichung) · Grenzen unverändert (§1, Risikopfad-Gegenprüfung, §14.7/§18, Kollisions-Sichtbarkeit erhalten)

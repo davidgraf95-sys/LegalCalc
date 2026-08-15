@@ -99,7 +99,7 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet (S0, Q
 
 | Feld | Bedeutung | Werte |
 |---|---|---|
-| `id` | Stabile Schritt-ID (explizit) | `S0` · `W1·1` · `W2·6` · `W3·14` · `QS-PERF` · Bündel `W2·6-B1` |
+| `id` | Stabile Schritt-ID (explizit) | `S0` · `W1·1` · `W2·6` · `W3·12` · `QS-PERF` · Bündel `W2·6-B1` |
 | `status` | Die Ampel | `ready` · `wip` · `blocked` · `done` · `parked` (Grammatik s. u.) |
 | `blocker` | Token, falls `blocked`/`parked` | Token aus dem Blocker-Register oder `null` |
 | `dep` | Einheiten, die erst `done` sein müssen | Liste von IDs, z. B. `[W1·4]` oder `[]` |
@@ -149,7 +149,7 @@ prüft nur den `<wert>` vor der Klammer gegen die erlaubte Menge; die optionale 
 bei `wip` den Bauenden fest: `status: wip(reader-wt)` → Selbst-Koordination paralleler Agenten (heute
 manuell: «an Bündel R sitzt ein anderer Agent»).
 
-**IDs** folgen §14.5 (`W2·6` = «Welle 2 · Schritt 6»). `S0` und `W3·14` sind feste IDs. Bündel erben den
+**IDs** folgen §14.5 (`W2·6` = «Welle 2 · Schritt 6»). `S0` und `W3·12` sind feste IDs (Beispiel-ID nachgezogen 15.8.2026, Etiketten-Konsolidierung). Bündel erben den
 Eltern-Präfix (`W2·6-B1`). Vorbestehende CLAUDE.md-Drift «S0 + Wellen 1–13» (Schritt 14 existiert)
 wird **nicht** in diesem Schritt gefixt (fremde Datei), nur notiert.
 
@@ -830,7 +830,7 @@ Kopfzahlen 238/1231/53/81 exakt) — die Fehler sitzen dort, wo das Tor blind is
    §-Anker als Überschrift in der Zieldatei auflöst und (b) der §-Abschnitt die
    Schritt-ID wörtlich enthält (Intake-Regel «Bau-Spec im ROADMAP-Spec-§ des
    verlinkten Fahrplans» wird damit prüfbar). Sonderformen (Archiv-Ausnahme
-   W3·10→§P3, «STRANG B», Weiterzeiger-§§) über begründete Allowlist analog
+   W3·10→§P3 — Schlüssel seit der Etiketten-Konsolidierung 15.8.2026 `W3-AUSBAU §P3`, «STRANG B», Weiterzeiger-§§) über begründete Allowlist analog
    `ARCHIV_BACKLOG`. **Geburtsbeweis:** Das Tor MUSS auf dem Stand vor Schritt 1
    dreifach rot sein (B1) — damit ist §6.7 (einmal rot) by construction erfüllt;
    nach Schritt 1 grün zeigen. Danach Registereintrag im Skill `lehren`

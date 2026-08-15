@@ -65,16 +65,19 @@ const VERWEIS_RE = /(?:\]\(|`)((?:fahrplaene|archiv)\/FAHRPLAN-[^)`\s]+\.md)(?:\
  * haltbare Begründung gehört NICHT hierhin, sondern in den Befundbericht.
  */
 export const SPEC_BINDUNG_AUSNAHMEN: ReadonlyMap<string, string> = new Map<string, string>([
-  // W3·10 zeigt als einziger Schritt in einen ARCHIVIERTEN Fahrplan — laut ROADMAP
+  // Umgeschlüsselt 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): `W3·10` ist im
+  // Dach `W3-AUSBAU` aufgegangen, der Verweis steht dort als Checklisten-Zeile. Die
+  // Ausnahme wandert mit dem Schritt — Begründung unverändert, Gegenstand unverändert.
+  // W3-AUSBAU zeigt als einziger Schritt in einen ARCHIVIERTEN Fahrplan — laut ROADMAP
   // (Z.589 f., 31.7.2026) eine ausdrücklich deklarierte Ausnahme, deren Auflösung
   // selbst der erste Arbeitsschritt des Schritts ist («Restpunkte-Extraktion aus
   // §P3 in einen aktiven Fahrplan»). Die Datei stammt aus der Zeit VOR der
   // §-Überschriften-Konvention: sie gliedert in `## P0`…`## P4` ohne §-Sigel, und
-  // sie kennt die heutige Schritt-ID `W3·10` nicht. Beide Stufen der Regel können
+  // sie kennt die heutige Schritt-ID nicht. Beide Stufen der Regel können
   // dort also gar nicht greifen, ohne dass etwas falsch wäre. Die Ausnahme fällt
   // mit der Extraktion weg — dann zeigt der Verweis auf einen aktiven Fahrplan
   // und der Schlüssel passt nicht mehr.
-  ['W3·10 §P3', 'Archiv-Fahrplan ohne §-Überschriften; Auflösung ist der erste Arbeitsschritt von W3·10 selbst'],
+  ['W3-AUSBAU §P3', 'Archiv-Fahrplan ohne §-Überschriften; Auflösung ist der erste Arbeitsschritt der Zeile «Neue Rechner-Klingen» in W3-AUSBAU selbst'],
 ]);
 
 interface Block { id: string; start: number; ende: number; einzug: number }
