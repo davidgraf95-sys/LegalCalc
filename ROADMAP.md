@@ -176,8 +176,8 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted — Dependabot meldet 2 Verwundbarkeiten (1 hoch); Audit als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
   - [ ] tailwind 3→4-Migration (PR #503; PostCSS-Pipeline, Config-Format, container-queries-Plugin nativ, ~249 className-Dateien visuelle Regression — kein Dependabot-Merge)
   - [ ] Dependabot-Lock-Wurzelfix: npm-Major-Mismatch erzeugt fehlende genestete Einträge (H-8-Muster, 341a4a161; 15.8. dreimal von Hand mit `npx npm@10 install --package-lock-only` geflickt) — Workflow-Schritt oder dependabot.yml-Weg finden, der den Lock automatisch mit npm@10 nachzieht
-- [ ] **`QS-UI` — Oberflächen-Qualität app-weit** *(reines UI/Design, §13 · kontinuierlich)* —
-  <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · kollision: [DESIGN-REGLEMENT.md, src/index.css, tailwind.config.js, scripts/check-farbwelt.ts, e2e/a11y.e2e.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+- [~] **`QS-UI` — Oberflächen-Qualität app-weit** *(reines UI/Design, §13 · kontinuierlich)* —
+  <!-- @meta id: QS-UI · status: wip · blocker: null · dep: [] · kollision: [DESIGN-REGLEMENT.md, src/index.css, tailwind.config.js, scripts/check-farbwelt.ts, e2e/a11y.e2e.ts] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
 
