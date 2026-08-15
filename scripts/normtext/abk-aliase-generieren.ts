@@ -816,7 +816,11 @@ try {
 }
 
 // ── Filter + Konflikt-Prüfung ───────────────────────────────────────────────
-const jeSrSprache = new Map<string, Map<string, Set<string>>>();   // sr → sprache → {abk}
+// Der innere Schlüssel ist die Sprache, nicht irgendein String: er stammt
+// ausnahmslos aus SPRACHE[] (Zeile 167) und wird bei Zeile 865 als
+// AliasZeile.sprache weitergereicht. Als `string` deklariert, war der Übergang
+// dorthin ungeprüft (QS-TYP-LUECKE 15.8.2026) — Typ-Enge, kein Verhalten.
+const jeSrSprache = new Map<string, Map<'de' | 'fr' | 'it', Set<string>>>();   // sr → sprache → {abk}
 const ccVon = new Map<string, Set<string>>();                       // "sr|sprache|abk" → {cc}
 let verworfenLeer = 0;
 

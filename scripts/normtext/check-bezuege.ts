@@ -364,6 +364,23 @@ function main(): void {
           if (shard.erlassEbene === 'bund') kantonalAnBund++; else kantonalAnKanton++;
         }
         if (f.status === 'bge' || f.status === 'bger') {
+          // `e.gewicht` ist `number | null`; `BgKante.gewicht` ist `number`. Bis
+          // 15.8.2026 (QS-TYP-LUECKE) sah das niemand, weil scripts/ ungeprüft
+          // war — ein `null` wäre als Zahl getarnt in `bestandsOrdnung` gelaufen
+          // und hätte dort `b.gewicht - a.gewicht` = NaN ergeben: ein Vergleicher,
+          // der NaN liefert, macht die Sortierordnung UNDEFINIERT. Die Bestands-
+          // ordnung ist aber genau das, was T1 prüft — der Test wäre also aus
+          // einem anderen Grund rot geworden als dem echten.
+          //
+          // Der Fall ist bereits oben (messbar-Prüfung) als Fehler protokolliert,
+          // der Lauf endet ohnehin rot. Hier wird er LAUT statt still: lieber ein
+          // Abbruch mit der Ursache im Klartext als eine stille NaN-Ordnung (§6.7).
+          if (typeof e.gewicht !== 'number') {
+            throw new Error(
+              `${erlass}/${token}/${e.key}: gewicht=${JSON.stringify(e.gewicht)} in messbarer Klasse '${f.status}' — `
+              + 'die Bestandsordnung ist damit nicht bildbar (NaN-Vergleicher). Ursache in der Kanten-Projektion suchen.',
+            );
+          }
           bgProjektion.push({ key: e.key, gewicht: e.gewicht, datum: kopf.datum, leit: f.status === 'bge' });
         }
       }

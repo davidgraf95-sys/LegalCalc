@@ -23,7 +23,7 @@ let ziele: { sr: string; key: string }[];
 if (args.length && !args[0].startsWith('--')) {
   ziele = args.map((sr) => ({ sr, key: sr }));
 } else {
-  ziele = (ERLASS_REGISTER as Array<{ ebene: string; status: string; sr: string; key: string }>)
+  ziele = (ERLASS_REGISTER as ReadonlyArray<{ ebene: string; status: string; sr: string; key: string }>)
     .filter((r) => r.ebene === 'bund' && r.status === 'nur-live-link')
     .map((r) => ({ sr: String(r.sr), key: r.key }));
 }

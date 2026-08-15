@@ -43,6 +43,12 @@ mkdirSync(ZIEL, { recursive: true });
 // fehlende Klasse blendet nie etwas aus.
 const mitKlasse = (f: Fussnote): Fussnote & { kl: string } => ({ ...f, kl: klassifiziereFussnote(f.text) });
 
+/** Section-heading-Fussnote (G11): `absatz`/`item` sind hier per Konstruktion `null`
+ *  (Marker sitzt am Sektions-/Randtitel-Kopf), `sektion` trägt das Quell-Heading.
+ *  Genau die Form, die der `.map()` unten erzeugt — als Prädikat-Ziel des
+ *  nachfolgenden `.filter()`. */
+type SektionsFussnote = Fussnote & { absatz: null; item: null; sektion: string };
+
 const bund = ERLASS_REGISTER.filter((r) => r.ebene === 'bund' && r.status === 'snapshot');
 let geschrieben = 0;
 const fehlend: string[] = [];
@@ -81,7 +87,14 @@ for (const reg of bund) {
     // richtigen Sektions-/Randtitel-Kopf setzt statt anonym auf Artikelebene.
     const rfn = (randtitelFn ?? [])
       .map((rf) => { const f = defs.get(rf.fnId); return f ? { ...f, absatz: null, item: null, sektion: rf.label } : null; })
-      .filter((f): f is Fussnote => !!f && !perArt.some((p) => p.nr === f.nr));
+      // Das Prädikat lautete `f is Fussnote` und war damit WEITER als der Wert,
+      // den `.map()` erzeugt — TypeScript verwarf es (TS2677), `.filter()` fiel
+      // auf die nicht-verengende Überladung zurück und `rfn` blieb
+      // `(Fussnote | null)[]`. Die `null`s liefen so ungeprüft weiter in
+      // `[...perArt, ...rfn].map(mitKlasse)` und wären als `null`-Einträge im
+      // Fussnoten-Sidecar gelandet. Erst die exakte Prädikat-Form macht die
+      // Verengung wirksam (QS-TYP-LUECKE 15.8.2026).
+      .filter((f): f is SektionsFussnote => !!f && !perArt.some((p) => p.nr === f.nr));
     // A43-Hinweis (David 16.7.): Die ANZEIGE-Reihenfolge der Fussnoten (laufende
     // Fedlex-Nummer) wird in der Darstellungsschicht hergestellt (ArtikelLeser
     // sortiert fussAnzeige), NICHT hier. Die Sidecar-Reihenfolge bleibt bewusst

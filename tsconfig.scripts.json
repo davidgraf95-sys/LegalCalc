@@ -1,0 +1,57 @@
+{
+  /* QS-TYP-LUECKE (15.8.2026): Bis hierher prüfte `tsc -b` nur `src/` und
+     `vite.config.ts` — die gesamte Werkzeug- und Prüfschicht (`scripts/`,
+     `e2e/`) lief ungeprüft. Gemessen beim Anlegen: 32 reale Typfehler, davon
+     mehrere Null-/Union-Lücken in der Korpus-Erzeugung (struktur-run,
+     check-bezuege, soft-law-snapshot, abk-aliase-generieren, masse-ingest).
+     Ein durchrutschendes `undefined` erzeugt dort eine stille Korpus-Lücke,
+     die kein Byte-Golden sieht, weil das Artefakt gar nicht erst entsteht.
+
+     `lib: DOM` ist nötig, weil `e2e/**` in `page.evaluate()` Browser-Code
+     ausführt und `scripts/messung-cwv.ts` dasselbe tut. GEMESSENER PREIS
+     dieser Bequemlichkeit (15.8.2026): mit DOM liefert `Response.json()`
+     `any` statt `unknown` — eine Probe ohne DOM fand dadurch genau EINEN
+     zusätzlichen echten Fehler (`scripts/normtext/adapter-lexwork.ts:778`,
+     unvalidiertes Fetch-Ergebnis). Er ist in diesem Schritt mitbehoben. Wer
+     die DOM-Bequemlichkeit später zurückbauen will, muss `bs-parse.ts` und
+     `bs-besetzung.ts` von den globalen DOM-Typen auf linkedom-Typen umstellen
+     (beide werden über `src/tests/**` ohnehin schon mit DOM geprüft). */
+  "compilerOptions": {
+    /* `incremental` ist hier gesetzt, in tsconfig.app/node NICHT — dort bleibt
+       `tsBuildInfoFile` wirkungslos und jeder Lauf rechnet neu. Gemessen
+       15.8.2026 an `npx tsc -b` (10 Kerne): vorher 7.8 s · nachher kalt 14.8 s ·
+       nachher warm 7.6 s. Ohne dieses Flag bliebe es bei 14.6 s in JEDEM Lauf;
+       mit ihm kostet die neue Prüffläche im eingeschwungenen Zustand nichts.
+       Denselben Griff an app/node zu legen ist ein eigener Schritt (Nebenfund). */
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.scripts.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "esnext",
+    /* `vite/client` nur wegen `import.meta.env`: mehrere Skripte ziehen
+       `src/**`-Module herein, die es lesen (z. B. suche/artikelVolltext.ts). */
+    "types": ["node", "vite/client"],
+    "skipLibCheck": true,
+    "strict": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    /* `tailwind.config.js` ist echtes JS und wird von zwei Tor-Skripten
+       importiert; ohne `allowJs` ist es implizit `any` (TS7016). `checkJs`
+       bleibt aus — die Datei wird gelesen, nicht geprüft. */
+    "allowJs": true,
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["scripts/**/*.ts", "e2e/**/*.ts"]
+}

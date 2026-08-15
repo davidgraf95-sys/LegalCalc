@@ -31,11 +31,11 @@ import { vaZusammenstellen, pruefeVaGates, VA_DEFAULTS } from '../src/lib/vorlag
 import { sgZusammenstellen, SG_DEFAULTS, SG_PERSON_NATUERLICH } from '../src/lib/vorlagen/schlichtungsgesuchBs';
 import { koZusammenstellen, KO_DEFAULTS } from '../src/lib/vorlagen/klageOrdentlich';
 import { avZusammenstellen, AV_DEFAULTS, pruefeAvGates } from '../src/lib/vorlagen/arbeitsvertrag';
-import { lvZusammenstellen, LV_DEFAULTS, pruefeLvGates } from '../src/lib/vorlagen/lehrvertrag';
+import { lvZusammenstellen, LV_DEFAULTS, pruefeLvGates, type LvAntworten } from '../src/lib/vorlagen/lehrvertrag';
 import { hrZusammenstellen, HR_DEFAULTS, pruefeHrGates } from '../src/lib/vorlagen/handelsreisendenvertrag';
 import { haZusammenstellen, HA_DEFAULTS, pruefeHaGates } from '../src/lib/vorlagen/heimarbeitsvertrag';
 import { agDokumentmappe, AG_DOK_DEFAULTS, type AgDokAntworten } from '../src/lib/vorlagen/gruendungAgDokumente';
-import { mvZusammenstellen, MV_DEFAULTS, pruefeMvGates } from '../src/lib/vorlagen/mietvertrag';
+import { mvZusammenstellen, MV_DEFAULTS, pruefeMvGates, type MvAntworten } from '../src/lib/vorlagen/mietvertrag';
 import { maZusammenstellen, MA_DEFAULTS, pruefeMaGates, type MaAntworten } from '../src/lib/vorlagen/mahnung';
 import { rubrumZusammenstellen, RUBRUM_DEFAULTS, pruefeRubrumGates } from '../src/lib/vorlagen/rubrum';
 import { formatiereGerichtszitat } from '../src/lib/gerichtszitat';
@@ -311,14 +311,18 @@ f('vorl:av-experte', () => avZusammenstellen({ ...avBasis, detailgrad: 'experte'
 f('vorl:av-kader', () => avZusammenstellen({ ...avBasis, untertyp: 'kader' }));
 f('vorl:av-kader-experte', () => avZusammenstellen({ ...avBasis, untertyp: 'kader', detailgrad: 'experte' }));
 // Lehrvertrag (Art. 344–346a OR; P1c) – Sonderregime, eigenes Schema.
-const lvBasis = {
+// Typ-Annotation statt `as const` (QS-TYP-LUECKE 15.8.2026, Muster von `maBasis`
+// unten): `as const` machte `lohnLehrjahre` readonly und damit unzuweisbar an
+// `LvAntworten` — die Fixture lief nur deshalb durch, weil scripts/ ungeprüft war.
+// Die WERTE sind unverändert; der Golden-Byte-Vergleich beweist es.
+const lvBasis: LvAntworten = {
   ...LV_DEFAULTS, betriebName: 'Muster AG', betriebAdresse: 'X 1, 4051 Basel',
   lernendeVorname: 'Lea', lernendeName: 'Beispiel', lernendeAdresse: 'Y 2, 4052 Basel',
   lernendeGeburtsdatum: '2009-05-01', gesetzlicheVertretung: 'Maria Beispiel',
   beruf: 'Kauffrau', beginn: '2026-08-01', dauerJahre: 3,
   lohnLehrjahre: [{ jahr: 1, chf: '700' }, { jahr: 2, chf: '900' }, { jahr: 3, chf: '1200' }],
   ort: 'Basel', datum: '2026-06-15',
-} as const;
+};
 f('vorl:lv-standard', () => lvZusammenstellen(lvBasis));
 f('vorl:lv-experte', () => lvZusammenstellen({ ...lvBasis, detailgrad: 'experte', berufswerkzeuge: true, unterkunftVerpflegung: true, versicherungspraemien: true }));
 f('vorl:lv-volljaehrig-einfach', () => lvZusammenstellen({ ...lvBasis, detailgrad: 'einfach', lernendeGeburtsdatum: '2000-01-01', gesetzlicheVertretung: '' }));
@@ -349,11 +353,13 @@ f('vorl:ha-stueck-experte', () => haZusammenstellen({ ...haBasis, detailgrad: 'e
 f('vorl:ha-einfach', () => haZusammenstellen({ ...haBasis, detailgrad: 'einfach' }));
 f('vorl:ha-blanko', () => haZusammenstellen({ ...HA_DEFAULTS }));
 f('vorl:ha-gates', () => pruefeHaGates({ ...haBasis, materialBeschafftHeimarbeiter: true, ununterbrochen: false }));
-const mvBasis = {
+// Wie `lvBasis`: Annotation statt `as const` — `as const` machte `nkPositionen`
+// readonly und damit unzuweisbar an `MvAntworten` (QS-TYP-LUECKE 15.8.2026).
+const mvBasis: MvAntworten = {
   ...MV_DEFAULTS, vermieterName: 'V', vermieterAdresse: 'X 1', mieterName: 'M', mieterAdresse: 'Y 2',
   objektBeschrieb: '3.5-Zi', objektAdresse: 'Z 3', beginn: '2026-10-01', mietzinsNettoCHF: '2000',
   nebenkostenCHF: '250', nkPositionen: ['Heizung'], ort: 'Basel', datum: '2026-06-15',
-} as const;
+};
 f('vorl:mv', () => mvZusammenstellen({ ...mvBasis }));
 f('vorl:mv-gates', () => pruefeMvGates({ ...mvBasis, kautionCHF: '6800' }));
 f('vorl:mv-staffel', () => mvZusammenstellen({ ...mvBasis, mietzinsModell: 'staffel', mindestdauerJahre: 3, staffeln: [{ ab: '2027-10-01', erhoehungCHF: '50' }] }));
