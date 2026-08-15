@@ -163,6 +163,19 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    einholen; Davids Deploy-/Merge-Verlangen deckt den Push mit ab. **Der
    Live-Gang-Entscheid ist die Freigabe zum Merge nach `main`.**
 
+   **Jeder Push auf `main` ist ein Deploy — darum: Feature einzeln landen,
+   Verwaltung bündeln (Auftrag David 15.8.2026, gilt für jede Session).**
+   Direkte `main`-Pushes für Doku/Plan/Buchung/wip-Marker sind **verboten**
+   (Hook `tor-schutz.py` blockt sie): Sie kosten je einen Vercel-Deploy UND
+   lassen jeden offenen Auto-Merge-PR auf BEHIND fallen (= je ein weiterer
+   Deploy pro Nachzug). Realfall 15.8.2026: ~15 Verwaltungs-Pushes rissen das
+   Tageslimit, sechs fertige PRs standen stundenlang. Regel: Plan-Buchung
+   und Status-Marker fahren **im Feature-Branch/PR** mit (Trailer, Ziff. 9);
+   Doku, die keinen PR hat, wird **am Session-Ende in EINEM Push** gebündelt
+   (Station E des Skills `bauschritt`) — oder als eigener kleiner PR. Der
+   Ausnahmefall «Hand-Buchung nach stiller Auto-Buchung» gehört ebenfalls in
+   den nächsten Sammel-Push, nicht sofort auf main.
+
    Falls noch kein PR existiert: `gh pr create …` (der Branch ist durch den
    Früh-Push aus Station A des Skills `bauschritt` bereits auf origin).
    Merge manuell: `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange die
