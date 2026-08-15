@@ -126,6 +126,11 @@ bevor der Kontext zur Neige geht** — lieber sauber landen als anreissen.
       Leichter Pfad: eine Zeile.
 - [ ] `struktur-rotieren.py --check` — bei Rot: Steuer-Doku aufräumen nach
       **[aufraeumen.md](aufraeumen.md)**.
+- [ ] `npm run selbstopt:erheben` — Zeitreihen-Snapshot (David 15.8.2026:
+      füttert die «nie rot»-Streichliste in `retro:17`; ohne Snapshot je
+      Session bleibt der Steuerungs-Rückbau ungemessen). Datei kommt mit dem
+      Sammel-Push. Bei Deckel-Rot (`check:steuerdeckel`): `retro:17` lesen,
+      Streichkandidat wählen, nach aufraeumen.md §3 mit Beweis entfernen.
 - [ ] `npm run plan:bild` — Dock-Datei aktuell.
 - [ ] **Bau-Flächen abräumen:** Worktree, Feature-Branch (lokal + remote),
       `git worktree prune`, Scratch-Dateien; danach `git checkout main &&

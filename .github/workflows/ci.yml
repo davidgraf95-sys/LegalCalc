@@ -349,6 +349,13 @@ jobs:
         run: npm run check:testtreue
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan
+      # Steuerungs-Deckel (David 15.8.2026 «Steuerungszuwachs minimieren, und
+      # darauf achten, dass es immer so bleibt»): Byte-Budgets für STRUKTUR/
+      # ROADMAP/CLAUDE UND die Flächen .claude/hooks + scripts/check-*.ts.
+      # Reisst er, ist vor dem nächsten Wächter ein Rückbau fällig — bewusst
+      # als Tor, nicht als Hinweis (Prosa-Deckel hielt seit 8.8. nicht).
+      - name: Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)
+        run: npm run check:steuerdeckel
       # tsc -b läuft im bau-Job (Teil von npm run build). KEIN dist-Download
       # hier: kein einziger tore-Check liest dist/ (Review 26.7.2026 — smoke
       # rendert SSR aus src, seo-index liest ROOT/index.html; Tests/Lint liefen
