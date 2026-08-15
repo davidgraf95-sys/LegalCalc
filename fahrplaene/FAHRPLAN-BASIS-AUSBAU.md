@@ -426,6 +426,26 @@ hierher. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §1 dieser Datei (a/b/a�
   `prod-smoke.ts` heben, DANN `.sh` streichen (Bau-, kein Rückbau-Schritt). Ebenfalls
   15.8.: die WARN-Stufe des TS-Smoke (konnte nie rot werden, §6.7) ist scharf gestellt.
 
+  **Wächter-Röte 403/`bash -e` — nachgeprüft und ERLEDIGT (15.8.2026,
+  `QS-AUTOMATIK`).** Die ältere Diagnose «der Branch-Schutz-Nachzug stirbt unter
+  `bash -e` an HTTP 403» ist widerlegt und im Workflow bereits richtiggestellt;
+  das verlangte Muster «Lesung optional, Urteil ohne sie ausweisen» ist in
+  `waechter.yml` umgesetzt (`::warning::` + `exit 0`, nie stiller Skip) und die
+  strukturelle Grenze dort ausformuliert. **Nichts zu bauen.** Empirischer
+  Beleg heute, Lauf `31870641148` (15.8.2026, 06:55 UTC): der Job ist rot wegen
+  `check:ci-laeufe ROT — 1 von 4 … normen-monitor.yml: jüngster Lauf 'failure'`
+  — ein **korrektes Monitor-Urteil** (ESTV-Drift, eigener Bau), kein
+  Wächter-Bug. Der 403 besteht unverändert fort und erscheint im selben Lauf als
+  `##[warning]Branch-Schutz nicht lesbar (gh: Resource not accessible by
+  integration (HTTP 403))`. **Offen bleibt** damit nicht die Behandlung, sondern
+  die Wirkung: der Kontext-Nachzug läuft faktisch nie. `GITHUB_TOKEN` kann das
+  Recht über keinen `permissions:`-Schlüssel erhalten (es gibt kein
+  `administration:`); ein Fix bräuchte einen PAT mit Admin-Leserecht (Secret,
+  §18) oder eine andere Quelle für die Required-Kontexte — eigener
+  Roadmap-Schritt, ausserhalb dieses Bandes. Praktische Folge, hier schon
+  gezogen: der BEHIND-Nachzug (§3.1) darf sich nicht auf diesen Nachzug
+  verlassen und stösst `ci.yml` selbst an.
+
 ---
 
 ## §2 · ROADMAP-Spec QS-BASIS (wörtlich verschoben 31.7.2026)
@@ -499,6 +519,48 @@ User-Konten nicht verfügbar (→ `QS-ORG-UMZUG`, geparkter David-Entscheid).
 - **Nicht hier:** das Reparieren einzelner Workflows (das war PR #419, `QS-AUTOMATIK`) und
   Wachstums-Schwellen der Turso-Wächter (bleibt am Dach-Schritt `QS-AUTOMATIK`).
 - **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+**GEBAUT 15.8.2026 (lebendige Spec — Ist-Stand, drei Abweichungen deklariert).**
+Zustandsbericht und Worktree-Sonde liegen als Unterbefehl `--bericht` in
+`scripts/check-ci-laeufe.ts`, erreichbar über `npm run bericht:automatik`; das
+Tor-Verhalten ohne Flag ist unverändert. Rot-Beweis §6.7: ein eigens angelegter
+leerer Worktree (`probe-leer-6-7`, Diff gegen `origin/main` leer) erschien als
+«gelandet, nicht abgeräumt», Exit 1 — danach entfernt.
+
+1. **Der Diff allein genügt nicht** (Spec-Schärfung, beim Bau aufgefallen): ein
+   Worktree, in dem gerade gearbeitet wird, hat vor dem ersten Commit denselben
+   leeren Diff wie ein abgeräumter — der Bericht meldete sein eigenes
+   Bauverzeichnis als verwaist. Zusatzbedingung ist jetzt «und nichts
+   uncommittet». Grund: ein Melder mit Falschalarm wird weggeklickt und meldet
+   danach gar nichts mehr.
+2. **Abschnitt (a) listet ALLE Workflows**, nicht nur die geplanten, je mit
+   Kennzeichnung `[geplant]`/`[ereignisgesteuert]` — sonst bliebe genau die
+   Klasse unsichtbar, die der Schritt sichtbar machen soll (Beispiel aus dem
+   ersten Lauf: `perf-kalibrierung.yml`, letzter Lauf 11.8 Tage alt).
+3. **Der Bericht läuft NICHT in `check:seriell`/CI.** Er misst lokale Worktrees
+   und Zweige; auf einem CI-Runner gibt es die nicht, ein Urteil dort wäre
+   bedeutungslos. Er ist trotzdem scheiternsfähig (Exit 1 bei Funden, §6.7).
+
+**`QS-MERGE-AUTOZUG` GEBAUT 15.8.2026** als eigener Job `autozug` in
+`waechter.yml` (kein Checkout, kein npm, reines `gh`; Job-Rechte
+`contents/pull-requests/actions: write`, der Lauf-Zustands-Job bleibt lesend).
+Auswahl per jq: `autoMergeRequest != null` **und** `mergeStateStatus == BEHIND`,
+`sort_by(.number) | .[0]` — max. 1 PR je Lauf, ältester zuerst. §6.7 gegen
+Fixtures belegt: aus fünf PRs (kein Auto-Merge · CLEAN · BLOCKED · jünger ·
+ältester) wird genau `#150` gewählt, im Leerfall nichts. **Zwei Abweichungen:**
+
+1. **Kein 10-Minuten-Cron, sondern `push: branches: [main]`.** Ein PR wird
+   ausschliesslich dadurch BEHIND, dass `main` sich bewegt — der main-Push *ist*
+   das Ereignis, ein 10-Minuten-Poll fragte 144-mal täglich nach einem Zustand,
+   der sich nur bei Push ändert. Der teure Lauf-Zustands-Job ist per
+   `if: github.event_name != 'push'` vom Push-Pfad ausgenommen.
+2. **Nach `update-branch` folgt zwingend ein `gh workflow run ci.yml`.** Ohne
+   ihn wäre der Nachzug SCHÄDLICH statt nützlich: `update-branch` schreibt mit
+   `GITHUB_TOKEN`, und von `GITHUB_TOKEN` erzeugte Push-Events lösen keine
+   Workflows aus — der PR bekäme eine neue Head-SHA, an der die Required-Kontexte
+   nie gemeldet werden, und stünde statt «BEHIND» auf «für immer blockiert». Der
+   Kontext-Nachzug im anderen Job kann das nicht auffangen (403, s. §1-N).
+   `workflow_dispatch` ist die dokumentierte Ausnahme von der Rekursionssperre.
 
 ### §3.2 `QS-BASIS-TOT` — `check:tot` blockierend bei NEUEN Meldungen
 
@@ -580,6 +642,35 @@ Vorfall trotz Gegenmittel ⇒ Gegenmittel schärfen, keine Regel danebenlegen).*
   genau die 5 Tore meldend), nach (b) grün; kein seriell-Tor mehr stillschweigend nur
   wächter-gedeckt.
 - **Risiko-Klasse:** reine Prüflogik ⇒ `Gegenpruefung: n/a`.
+
+**GEBAUT 15.8.2026 (lebendige Spec — Ist-Stand).** lit. a umgesetzt: die Sonde
+liest den `on:`-Block jedes Workflows (Block- und Inline-Form) und trennt
+PR-Deckung (`pull_request`/`pull_request_target`) von Wächter-Deckung
+(schedule/push). Nur PR-Deckung befreit vom Allowlist-Zwang; Regel (2) wertet
+einen Eintrag erst dann als überholt, wenn das Tor im **PR-Pfad** läuft.
+**Rot-Beweis §6.7 wie in der Spec vorhergesagt:** auf dem Stand vor lit. b
+meldete die Sonde **genau die 5** Tore (`check:verfall`, `check:normtext`,
+`check:struktur-konsistenz`, `check:verklebung`, `check:paritaet`).
+
+**Neue Regel (0) als Nebenfund:** ein Workflow ohne lesbaren `on:`-Block wird
+rot gemeldet, nicht stillschweigend als «kein PR-Trigger» gewertet — sonst
+liesse ein Tippfehler im Workflow-Kopf die PR-Deckung verschwinden und die Sonde
+meldete Ruhe (§6.7 lit. b). Einmal rot gezeigt an einem verfälschten
+`perf-kalibrierung.yml`, danach zurückgesetzt.
+
+**lit. b — Entscheid je Tor (Laufzeit lokal gemessen, `CI=1`):** vier der fünf
+sind diff-abhängig, offline und billig und laufen jetzt im ci.yml-Tore-Job —
+`check:normtext` (0.6 s) · `check:struktur-konsistenz` (0.9 s) ·
+`check:verklebung` (0.4 s) in einem neuen Schritt, `check:paritaet` (3.4 s, baut
+In-Memory-DBs aus den committeten JSONs, **kein `daten/*.db` nötig**) neben
+`check:datenhaltung`. Zusammen rund 5 s. **Ausnahme `check:verfall`:** bleibt
+draussen und bekommt den Allowlist-Eintrag mit `normen-monitor.yml` und
+`fedlex-frische.yml` als benannten Ersatz-Arbitern — sein Ergebnis hängt an der
+**Wanduhr statt am Diff**, ein ablaufender Registertermin färbte sonst alle
+offenen PRs rot (K7 vom 3.8.2026, Beleg Lauf 30764225649). Der Kommentar in
+`ci.yml`, der bis dahin sagte, `check:tor-paritaet` bleibe grün, «weil es ALLE
+Workflows scannt», ist mitkorrigiert — genau diese Gleichsetzung war der
+#425-Defekt. Endstand: 38 Tore im PR-Pfad, 4 auf der Allowlist.
 
 ---
 
