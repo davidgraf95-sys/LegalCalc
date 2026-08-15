@@ -2419,3 +2419,10 @@ Arbeitsschritt).
 ## BAUPLAN-UMBAU — Auftrags-Wortlaut *(erledigt 15.8.2026, ✅-Prosa aus offenem `QS-EFFIZIENZ` verschoben 15.8.2026)*
 
 · [ ] BAUPLAN-UMBAU (David 15.8., Prompt-Wortlaut: Chat-Übergabe / sinngemäss hier): Plan vereinfachen + Doku-Pflichten reduzieren (Streich-Massstab, mit Beleg) · Fahrpläne LEBENDIG machen (Mechanismus: Ist-Abweichung ⇒ Spec direkt korrigieren, datiert begründen, weiterbauen — statt gegen veraltete Spec bauen) · alle offenen Schritte gross schneiden (Massstab 15.8.) · Gesamtaufbau fundiert prüfen, erst recherchieren (auch Internet-Inspiration) dann umbauen · NACHZIEH-PFLICHT an jeder Ecke (Skills, bildSeiten/bauPrompt, check:plan, CLAUDE.md, Chronik; Regelverlust-Tore je Streichung) · Grenzen unverändert (§1, Risikopfad-Gegenprüfung, §14.7/§18, Kollisions-Sichtbarkeit erhalten)
+
+## QS-EXTQUELLEN — Externe Quellen/APIs/Repos neu bewerten *(done, verschoben 15.8.2026)*
+
+- [x] **`QS-EXTQUELLEN` · Externe Quellen/APIs/Repos neu bewerten** *(Anordnung David 3.8.2026)* — fertig, wenn je Befund entschieden (EINE Frage an David: kommerzieller Betrieb? entscheidet über CC-BY-NC-SA-Quelle). **Befunde:** [externe-quellen-repos-2026-08-03.md](bibliothek/recherche/externe-quellen-repos-2026-08-03.md).
+  <!-- @meta id: QS-EXTQUELLEN · status: done · blocker: null · dep: [] · kollision: [bibliothek/recherche] · worktree: nein · 26x: nein · groesse: S -->
+
+**Abschluss 15.8.2026:** alle 13 Befunde entschieden (Entscheid-Blöcke im Dossier `bibliothek/recherche/externe-quellen-repos-2026-08-03.md`, Status BEWERTET); 3 Übernahmen als Checklisten-Zeilen in `W3-AUSBAU`; die eine David-Frage (kommerzieller Betrieb? → NC-Quellen-Politik) bleibt offen, gate-t aber nichts mehr — die einzige NC-Quelle wurde unabhängig davon verworfen (keine Lizenzdatei im Repo).
