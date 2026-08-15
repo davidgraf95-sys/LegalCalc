@@ -10,10 +10,9 @@ description: Use when the LexMetrik gate `check:gegenpruefung` is red, or before
 Die teuersten LexMetrik-Bugs (Tabellen-Drop, Footnote-Leak, `bis`/`ter`-Verlust,
 falsche Frist/Quote — Vorfallswelle Juni/Juli 2026, prominentester Fall PR #309
 am 20.7.2026: elf erfundene Amtsträger:innen ~1 h auf Prod; Tor-Geburtsbeweis
-`f87921e53`) sind an **Session-Blindheit** entstanden: der Autor prüft
-seinen eigenen Output und übersieht dieselbe Lücke zweimal. Dieser Skill ist der
-**unabhängige Zweitdurchgang**. Auftrag ist nicht «bestätigen», sondern
-**widerlegen** — den Output aktiv zu Fall bringen.
+`f87921e53`) entstanden an **Session-Blindheit**: der Autor prüft seinen eigenen
+Output und übersieht dieselbe Lücke zweimal. Dieser Skill ist der **unabhängige
+Zweitdurchgang** — Auftrag ist nicht «bestätigen», sondern **widerlegen**.
 
 Das Tor `check:gegenpruefung` (in `npm run gate`) blockiert jeden Diff auf einer
 Risiko-Datei, bis genau für diesen Diff ein `bestanden`-Nachweis vorliegt.
@@ -58,27 +57,12 @@ echten Widerlegungs-Durchgang) verletzt ihren Geist** — `gegenpruefung:ok`
 prüft die Belege technisch nicht, genau deshalb bist du die Prüfung, nicht das
 Tool.
 
-## Rationalisierungen (und warum sie nicht zählen)
-
-| Ausrede | Realität |
-|---|---|
-| «Ich hatte die Norm drei Stunden vor mir — nochmal öffnen ist Ritual.» | Das war die Autorensicht. Prüfung beginnt mit dem Öffnen der amtlichen Quelle in der Prüfsession — plausibel ≠ geprüft. |
-| «Mein Kopf-Überschlag stimmt grob — das IST das Nachrechnen.» | Kopf-Überschlag zählt NICHT. Unabhängiger Wert schriftlich VOR dem Vergleich, plus Randfall. |
-| «Regel 1 sagt nur ‹idealerweise› — geht also auch ohne frischen Kontext.» | «Idealerweise» wählt das Vehikel, nicht ob geprüft wird. Autoren-Selbstabnahme im selben Gedankengang ist genau die Session-Blindheit aus dem Zweck-Abschnitt. |
-| «Ich habe scharf draufgeschaut und keinen Fehler gefunden.» | Draufschauen ist kein Widerlegungsversuch. Ernsthaft = die drei Minimum-Punkte oben, nachweisbar. |
-| «Code gelesen und verstanden = geprüft.» | Lesen reproduziert die Fehler des Codes. Nur unabhängiges Rechnen aus der Norm kann ihn widerlegen. |
-| «Alle anderen Tore sind grün — ein Fehler wäre längst aufgefallen.» | Nachbar-Tore prüfen Form und Struktur, nie Norm-Treue. Dafür gibt es genau dieses Tor. |
-| «David wartet / Autonom-Modus heisst durchziehen.» | Autonom-Modus hebt kein Tor auf. Zeitdruck ist nie ein Verdikt-Grund. |
-| «Zu müde — ehrlicher ist quittieren und morgen frisch draufschauen.» | Ehrlich ist: NICHT quittieren, Tor bleibt rot, morgen prüfen. Müdigkeit macht `bestanden` nicht wahrer. |
-| «Artikel + Link + Stand kenne ich auswendig, das schreibe ich in die Notiz.» | Ein Beleg aus dem Gedächtnis ist eine zweite Ableitung. Der Beleg entsteht am geöffneten Quelltext. |
-| «Nur ein kleiner Fix mit einer Zahl.» | Die teuersten Bugs waren Ein-Wert-Fehler. Kleiner Diff = gleiches Protokoll. |
-| «Risikolos — beim nächsten Edit kippt eh der Hash und es gibt einen neuen Durchgang.» | Der Hash erzwingt nur künftige Durchgänge, er findet keine Fehler. Ein falscher Wert steht bis dahin live. |
-| «Der Durchgang von vorhin gilt weiter — der Folge-Edit war trivial, ich quittiere einfach neu.» | Der Nachweis bindet an genau EINEN Diff. Nach jedem Edit ist es ein neuer Output ⇒ neuer Durchgang. Neu quittieren ohne neu zu prüfen ist Token-Recycling von Hand — genau das, was der Hash verhindern soll. |
-| «Drei Stunden Arbeit drin, nur die Quittung fehlt noch.» | Sunk Cost. Wenn wirklich alles verifiziert ist, kostet der echte Durchgang Minuten — wenn er sich «zu teuer» anfühlt, fehlt er. |
-
 ## Red Flags — STOP und neu ansetzen
 
-Wenn eines davon zutrifft, bist du gerade am Abnicken:
+Wenn eines davon zutrifft, bist du gerade am Abnicken — dann **zuerst
+`referenz-ausreden.md`** im Skill-Ordner lesen: die dreizehn belegten
+Ausreden und warum keine zählt (ausgelagert QS-EFFIZIENZ 15.8.2026, Wortlaut
+unverändert; Muster `landung/referenz-ausnahmen.md`).
 
 - Du willst quittieren, ohne die amtliche URL **in dieser Prüfsession** geöffnet
   zu haben.
@@ -95,24 +79,24 @@ Wenn eines davon zutrifft, bist du gerade am Abnicken:
 
 ## Beschaffung als Sub-Agent — was übergeben werden darf (QS-TOK/T11)
 
-Wird dieser Durchgang als **eigener Sub-Agent** gefahren (Regel 1, empfohlen), darf der
-Orchestrator dir die **Beschaffung** abnehmen, um die Fetch-/Such-Runde (~5–15k Tok) zu sparen —
-aber **nie die Prüfung**:
+Wird dieser Durchgang als **eigener Sub-Agent** gefahren (Regel 1, empfohlen),
+darf der Orchestrator dir die **Beschaffung** abnehmen — **nie die Prüfung**:
 
 - **Übergeben werden darf:** der **gepinnte amtliche Filestore-HTML-Pfad** (via
-  `scripts/fedlex-cache.sh`) und der **Scope-Anker aus der roten Tor-Meldung** (welche
-  Dateien/Artikel im Diff). Das ist reine Beschaffung.
-- **Bei dir bleibt vollständig:** die **Re-Derivation aus der Norm** (unabhängig rechnen/
-  ableiten, Randfall, schriftlicher Wert VOR dem Vergleich, Beleg mit §/Link/Stand). Der Pin
-  ersetzt das Öffnen der Quelle in der Prüfsession NICHT — er ist die Quelle, die du öffnest.
+  `scripts/fedlex-cache.sh`) und der **Scope-Anker aus der roten Tor-Meldung**.
+- **Bei dir bleibt vollständig:** die **Re-Derivation aus der Norm** (unabhängig
+  rechnen, Randfall, schriftlicher Wert VOR dem Vergleich, Beleg mit
+  §/Link/Stand). Der Pin ersetzt das Öffnen der Quelle nicht — er IST die
+  Quelle, die du öffnest.
 
-**Common-Mode-Schutz (nicht verhandelbar):**
-
-1. Führe den **Currency-Check SELBST** (`npm run check:fedlex-versionen` / `check:caches`).
-   Übernimm den gepinnten Snapshot **nur bei eigenem Grün**; ist er überholt (Fedlex-P1a/b: Pins
-   z. T. veraltet), hol die geltende Fassung **live** (Skill `scraping-swiss-official-sources`).
-2. Übernimm **nie** den Grün-Status des Bau-Pfads, zeig **nie** auf den Code oder eine zweite
-   Ableitung (Regeln 2+5). Ein übergebener Pin ist ein Start-Artefakt, kein Verdikt.
+**Common-Mode-Schutz (nicht verhandelbar):** Currency-Check **selbst** fahren
+(`check:fedlex-versionen`/`check:caches`) und den Pin nur bei eigenem Grün
+übernehmen — sonst die geltende Fassung **live** holen (Skill
+`scraping-swiss-official-sources`). Nie den Grün-Status des Bau-Pfads
+übernehmen, nie auf den Code oder eine zweite Ableitung zeigen (Regel 2 +
+Minimum Ziff. 2 — der frühere Verweis «Regeln 2+5» lief ins Leere, es gibt nur
+vier eiserne Regeln; korrigiert 15.8.2026).
+Ein übergebener Pin ist ein Start-Artefakt, kein Verdikt.
 
 ## Modus wählen
 

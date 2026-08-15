@@ -5,24 +5,18 @@ description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «lan
 
 # Landung nach main = Deploy (§12 + §9, «Weg 1»)
 
-**Dieser Skill trägt §12 UND §9.** Seit dem A4-Umzug (25.7.2026) stehen beide
-Paragraphen ausserhalb des Reglements, `CLAUDE.md` zeigt nur noch hierher; seit
-der Skill-Diät (QS-SKILL-DIAET, 8.8.2026) ist auch der frühere Skill
-`deploy-check` hier aufgegangen. Bei einem Widerspruch zwischen diesem Text und
-einer älteren §9-/§12-/deploy-check-Erinnerung gewinnt **dieser Text** — wer
-sich an einen ausführlichen §9 in `CLAUDE.md` oder an einen eigenen
-deploy-check-Skill erinnert, erinnert einen Altstand.
+**Dieser Skill trägt §12 UND §9** (A4-Umzug 25.7.2026; der frühere Skill
+`deploy-check` ist hier aufgegangen, QS-SKILL-DIAET 8.8.2026). Bei Widerspruch
+zu einer älteren §9-/§12-/deploy-check-Erinnerung gewinnt **dieser Text** — wer
+einen ausführlichen §9 in `CLAUDE.md` erinnert, erinnert einen Altstand.
 
-**Kernmodell (Weg 1):** Vercel liefert `main` automatisch auf Prod aus.
-**Der Merge nach `main` IST der Deploy.** Es gibt keinen separaten
+**Kernmodell (Weg 1):** Vercel liefert `main` automatisch auf Prod aus — **der
+Merge nach `main` IST der Deploy**, es gibt keinen separaten
 `vercel --prod`-Handschritt. Darum liegt die gesamte §9-Sorgfalt (Tore grün,
 Bug-Check, Golden byte-gleich, doppelt verifiziert) zwingend **VOR dem
-Merge/Push auf main**. Unverändert übergeordnet bleiben die Invarianten in
-`CLAUDE.md`, insbesondere §1 (Korrektheit), §6 (Verhaltensneutralität, Golden)
-und §8 (Ehrlichkeit).
-
-Ziel der Merge-Mechanik: Konflikte paralleler PRs entschärfen, indem **EINE**
-PR aufs Mal gelandet wird und generierte Dateien nie von Hand gemischt werden.
+Merge/Push auf main**; übergeordnet bleiben §1, §6 und §8. Ziel der
+Merge-Mechanik: **EINE** PR aufs Mal landen, generierte Dateien nie von Hand
+mischen.
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -30,10 +24,8 @@ Gleichzeitige Sessions im selben Arbeitsverzeichnis haben wiederholt Arbeit
 zerstört. Darum:
 
 1. **Zweite und jede weitere Session arbeitet in einem eigenen git-Worktree**
-   (`git worktree add …` bzw. die native Worktree-Isolation von Claude Code)
    und bringt Ergebnisse als Commits zurück. Wer beim Start fremden WIP in
-   `git status` sieht, der nicht zum eigenen Auftrag gehört, wechselt **vor**
-   Struktur-Arbeiten in einen Worktree.
+   `git status` sieht, wechselt **vor** Struktur-Arbeiten in einen Worktree.
 2. **Im geteilten Verzeichnis gelten zwingend:**
    - Commits nur mit explizitem Pathspec: `git commit -m "…" -- <dateien>`
    - **kein** `git stash` bei fremdem WIP
@@ -50,14 +42,11 @@ zerstört. Darum:
    `rerere` ist aktiv. Die Treiber greifen nur bei **lokalen** Merges und
    Rebases, nie beim GitHub-Server-Merge.
 
-**Anker-Konkordanz «§12.x»** (Audit-Befund 7.8.2026, Kollision; QS-AUDIT-VERWEISE):
-Alt-Verweise «CLAUDE.md §12.2» meinen **Ziff. 2** dieser Liste (Pathspec-Commits,
-kein stash/amend), «§12.3» **Ziff. 3** (Deploy nur aus sauberem HEAD-Worktree).
-Achtung Verwechslungsgefahr: Fahrpläne nummerieren ihre EIGENEN Abschnitte
-dateiintern ebenfalls «§12.x» (z. B. `FAHRPLAN-VERZAHNUNG-UI.md` §12.2
-«Herleitung», `FAHRPLAN-GESETZES-UX.md` §12.x) — solche Verweise sind stets
-dateigebunden und nie Reglement-Anker; im Zweifel entscheidet der Kontext
-(«diese Datei §…» = Fahrplan-Anker).
+**Anker-Konkordanz «§12.x»** (Audit-Befund 7.8.2026, QS-AUDIT-VERWEISE):
+«CLAUDE.md §12.2» = **Ziff. 2** oben (Pathspec-Commits, kein stash/amend),
+«§12.3» = **Ziff. 3** (Deploy nur aus sauberem HEAD-Worktree). Fahrpläne
+nummerieren ihre eigenen Abschnitte dateiintern ebenfalls «§12.x» — solche
+Verweise sind dateigebunden, nie Reglement-Anker («diese Datei §…»).
 
 ---
 
@@ -69,15 +58,13 @@ Einmal pro Clone/Worktree: `npm install` lief (setzt via `prepare` →
 (keine Pipes — der PreToolUse-Hook blockiert sie ohnehin), volle Ausgabe
 lesen, Exit-Code prüfen. Dann:
 
-1. `git status` — fremden WIP einer Parallel-Session identifizieren.
-   Eigene Commits IMMER mit explizitem Pathspec:
-   `git commit -m "…" -- <dateien>`. Im Landungs-Kontext gilt verschärft und
-   ohne Bedingung: NIE `git stash`, NIE `--amend` (§12.2 ist das Minimum).
+1. `git status` — fremden WIP identifizieren. Eigene Commits IMMER mit
+   Pathspec; im Landungs-Kontext ohne Bedingung: NIE `git stash`, NIE
+   `--amend` (Ziff. 2 oben ist das Minimum).
 2. Review-Schrott räumen: `find src -name '__*'` muss leer sein
    (Repro-Dateien von Review-Agents brechen Suite/Lint).
-3. Untracked Ballast im Root prüfen (PDFs, Bücher) — darf nie **committet**
-   werden. Der Git-Deploy baut nur committete Inhalte; die Gefahr ist ein
-   versehentliches `git add -A`, nicht mehr ein Verzeichnis-Upload.
+3. Untracked Ballast im Root (PDFs, Bücher) nie **committen** — der Git-Deploy
+   baut nur Committetes; die Gefahr ist ein versehentliches `git add -A`.
 
 ## 1 · Tore vor dem Merge (alle grün, volle Ausgabe)
 
@@ -94,15 +81,9 @@ npm run check:perf-budget  # QS-PERF: Bundle-Topologie/-Budget + Single-React;
                     # liest das gebaute dist (nach build), Chrome-frei.
 ```
 
-- **`test:e2e` zwingend vor jedem Merge nach main** — es ist bewusst NICHT im
-  schnellen `gate` (build+Browser, zu langsam pro Iteration); ohne diesen Lauf
-  rottet die Suite (axe-Befunde, veraltete Locator). Die a11y-Prüfpunkte pinnen
-  das Theme (hell + Reader zusätzlich dunkel) → uhrzeitunabhängig deterministisch.
-- **`check:perf-budget` zwingend vor jedem Merge nach main** (QS-PERF/§15):
-  sichert die vendor-react-Topologie (ein stabiler Chunk, kein Doppel-React) und
-  die gzip-Budgets; deterministisch, braucht das gebaute `dist` → nur hier, nicht
-  im schnellen `gate`. Die Lighthouse-Metrik-Schranken bleiben der Mess-Schritt
-  in der Nachkontrolle (unten, Punkt 4).
+- **`test:e2e` und `check:perf-budget` sind zwingend vor jedem Merge nach main**
+  und bewusst NICHT im schnellen `gate` (Browser bzw. gebautes `dist`).
+  Begründung im Detail: `referenz-ci.md`.
 - Golden-Abweichungen ERST den interleaved Commits der Parallel-Session
   zuordnen, dann erst über Neu-Schreiben entscheiden (nur deklariert).
 - Falls zusätzlich `check:netz`/`check:zitate` gefahren wird: vorher den
@@ -122,20 +103,16 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
 1. **Landungs-Rolle ansagen.** Vor Landungs-Beginn einen PR-Kommentar setzen
    («Landung übernommen — Session/Worktree <name>»); wer an einem PR einen
    fremden, jüngeren Landungs-Kommentar sieht, merged ihn NICHT. *(Anlass
-   3./4.8.2026: drei Parallel-Sessions, zwei beanspruchten dieselbe Rolle,
-   mehrere PRs wurden bei Grün extern gemergt, einer davon vor Abschluss des
-   laufenden §9-Bug-Checks — gutgegangen, aber nur zufällig.)*
+   3./4.8.2026, drei Parallel-Sessions — Wortlaut: `referenz-ci.md`.)*
 2. **Kollisionen sichten.** `gh pr list --state open` — prüfen, ob ein
    anderer offener PR dieselben Dateien/dasselbe Subsystem berührt
    (Doppelarbeit/Kollision). Bei Überschneidung: erst den anderen landen,
    dann diesen rebasen (Schritt 8). Nie zwei kollidierende PRs gleichzeitig.
    **Scharfer Auto-Merge ist keine Landung:** bei `mergeStateStatus: BEHIND`
-   (Branch hinter main, Required «up to date») feuert er NIE von selbst —
-   nach jeder main-Landung die verbleibenden Auto-Merge-PRs per
-   `gh pr view <n> --json mergeStateStatus` prüfen und bei BEHIND
-   `gh pr update-branch` fahren. Realfall #445 (5.8.2026): 16 h scharf,
-   alle Checks grün, kein Merge — Ursache waren fünf zwischenzeitliche
-   main-Landungen.
+   feuert er NIE von selbst — nach jeder main-Landung die verbleibenden
+   Auto-Merge-PRs per `gh pr view <n> --json mergeStateStatus` prüfen und bei
+   BEHIND `gh pr update-branch` fahren (Realfall #445, 5.8.2026: 16 h scharf,
+   grün, kein Merge — Wortlaut: `referenz-ci.md`).
 3. **origin/main einziehen.** `git fetch origin` → dann in den Feature-Branch
    `git merge origin/main` (oder `git rebase origin/main`). Hier greifen die
    lokalen Merge-Treiber aus `.gitattributes`.
@@ -159,50 +136,20 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    Schritt 4: ein vergessener Generator-Neulauf fällt als rotes `check:*` auf.
 6. **CI-Grün verifizieren.** Push (`git push`), dann `gh pr checks <nr> --watch`
    bis grün. Billing-rot bei lokal-grün = OK (§9).
-   **`cancelled` und `skipped` zählen als ROT**, nicht als «nicht rot» — ein
-   abgebrochener Lauf hat nichts bewiesen. (Realfall 20.7.2026: 5 stumm
-   abgebrochene `turso-sync`-Läufe, der Suchindex veraltete unbemerkt.)
-   **Ausnahme — DESIGNTE konditionale Jobs:** `Perf-Budget (§15 — nur bei
-   grüner Treue)` skippt auf JEDEM `pull_request`-Lauf per
-   `if: github.event_name != 'pull_request'` (ci.yml, Entscheid David
-   26.7.2026 — gemessen wird nach dem Merge auf main); dieser Skip ist
-   mergefähig, die §15-Substanz wird lokal per `npm run check:perf-budget`
-   auf dem gemergten Stand belegt. Gleiches gilt für Vercel «Canceled by
-   Ignored Build Step» = success (#445). Massstab: Ein Skip zählt nur dann
-   als erfüllt, wenn seine Bedingung DOKUMENTIERT designt ist UND die
-   Substanz anderweitig belegt wurde — jeder andere skipped/cancelled
-   bleibt ROT.
-   **Und: FEHLENDE Checks zählen als PENDING, nie als grün.** Im Fenster
-   direkt nach einem Push sind die Checks des neuen Heads noch nicht
-   registriert — wer dann «kein pending, kein fail» als grün liest, merged
-   ungeprüft. Vor der Bewertung die Präsenz der Kern-Batterie verifizieren
-   (Tore + Bau + letzter Playwright-Shard). (Realfall 4./5.8.2026: Wächter
-   meldete GRÜN, während Bau/Tore noch gar nicht liefen — nur der
-   Verifikations-Zwischenschritt vor dem Merge fing es ab.)
+   **`cancelled`/`skipped` zählen als ROT** (Realfall 20.7.2026, 5 stumme
+   `turso-sync`-Abbrüche). Einzige Ausnahme: ein **dokumentiert designter**
+   konditionaler Skip, dessen Substanz anderweitig belegt ist — heute
+   `Perf-Budget (§15 …)` auf `pull_request` und Vercel «Canceled by Ignored
+   Build Step» (#445). **FEHLENDE Checks zählen als PENDING, nie als grün** —
+   direkt nach einem Push die Präsenz der Kern-Batterie (Tore + Bau + letzter
+   Playwright-Shard) verifizieren, sonst merged man ungeprüft (Realfall
+   4./5.8.2026). **Ein Vercel-Rot mit echtem Build-Fehler bleibt Rot**; an
+   landeintensiven Tagen die Kette seriell und ohne überflüssige
+   Zwischen-Pushes fahren (jedes `update-branch` frisst einen App-Deploy).
 
-   **Wenn nach einem Push KEIN `pull_request`-Lauf erscheint** (Realfälle
-   3.8.2026, PRs #414/#417): erst die Ursache prüfen, dann das passende Mittel —
-   (a) leerer Diff / md-only: seit der CI-Härtung klassifiziert `ci.yml` selbst,
-   ein Lauf muss IMMER erscheinen; fehlt er, `gh api commits/<head>/check-suites`
-   ansehen; (b) Event nicht zugestellt: der Wächter zieht fehlende Required-
-   Kontexte an offenen PRs täglich per `workflow_dispatch` nach — manuell geht
-   `gh workflow run ci.yml --ref <branch>` sofort; (c) ein leerer Commit hilft
-   nur bei hängendem VERCEL-Kontext, er erzeugt KEINEN Actions-Lauf (kein
-   Datei-Diff) und schiebt den Head von bereits grünen Check-Runs weg.
-
-   **Vercel-Tageslimit (Free-Tier ~100 Deploys/Tag):** Die Wurzel ist seit dem
-   #445-Merge (5.8.2026, QS-CI-VERCEL) behoben — der Ignored Build Step lässt
-   App-fremde Diffs den Vercel-Build gar nicht erst verbrauchen; ein
-   übersprungener Build meldet den Check als `success` («Canceled by Ignored
-   Build Step») und ist mergefähig. Das frühere Admin-Bypass-Interim
-   («lass vercel aus dem spiel», David 4.8.2026) ist damit GESTRICHEN: Reisst
-   das Limit trotzdem (App-Diff-Ketten), ist das kein Bypass-Fall mehr,
-   sondern Warten/Re-Trigger nach Reset — ein leerer Commit auf den Branch
-   genügt als Vercel-Re-Trigger (er erzeugt keinen Actions-Lauf, schiebt aber
-   den Head; Realfall 5.8.2026: #445 selbst so gelandet). Unverändert gilt:
-   ein Vercel-Rot mit echtem Build-Fehler bleibt Rot, und an landeintensiven
-   Tagen frisst jedes `update-branch` einen App-Deploy — Kette seriell und
-   ohne überflüssige Zwischen-Pushes fahren.
+   Sonderfälle — **kein `pull_request`-Lauf nach dem Push** (#414/#417,
+   3.8.2026), Bewertung eines skipped/cancelled im Grenzfall, gerissenes
+   **Vercel-Tageslimit**: Vorgehen und Vorfalls-Wortlaut in `referenz-ci.md`.
 
 6b. **Bei Daten-/Extraktions-PRs: Identitätsbeleg.** Bevor neue Entitäten
    (Personen, Erlasse, Entscheide) live gehen, eine Stichprobe **n ≥ 10** gegen
@@ -212,22 +159,32 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    (unten, Risiko-Sperre) ist genau hier passiert.*
 
 7. **Push + Merge = Deploy.** **Push ist stehend freigegeben** (Daueranweisung
-   David 2.7.2026: «immer ja zum push» — `git push` + PR + Auto-Merge ohne
-   Einzel-Nachfrage). KEINE gesonderte Push-Bestätigung mehr einholen; Davids
-   Deploy-/Merge-Verlangen («bring das auf Prod», Batch-Freigabe) deckt den
-   Push mit ab. **Der Live-Gang-Entscheid ist die Freigabe zum Merge nach
-   `main`** — Vercel baut und liefert den gemergten Commit automatisch aus.
+   David 2.7.2026 «immer ja zum push»): keine gesonderte Push-Bestätigung
+   einholen; Davids Deploy-/Merge-Verlangen deckt den Push mit ab. **Der
+   Live-Gang-Entscheid ist die Freigabe zum Merge nach `main`.**
+
+   **Jeder Push auf `main` ist ein Deploy — darum: Feature einzeln landen,
+   Verwaltung bündeln (Auftrag David 15.8.2026, gilt für jede Session).**
+   Direkte `main`-Pushes für Doku/Plan/Buchung/wip-Marker sind **verboten**
+   (Hook `tor-schutz.py` blockt sie): Sie kosten je einen Vercel-Deploy UND
+   lassen jeden offenen Auto-Merge-PR auf BEHIND fallen (= je ein weiterer
+   Deploy pro Nachzug). Realfall 15.8.2026: ~15 Verwaltungs-Pushes rissen das
+   Tageslimit, sechs fertige PRs standen stundenlang. Regel: Plan-Buchung
+   und Status-Marker fahren **im Feature-Branch/PR** mit (Trailer, Ziff. 9);
+   Doku, die keinen PR hat, wird **am Session-Ende in EINEM Push** gebündelt
+   (Station E des Skills `bauschritt`) — oder als eigener kleiner PR. Der
+   Ausnahmefall «Hand-Buchung nach stiller Auto-Buchung» gehört ebenfalls in
+   den nächsten Sammel-Push, nicht sofort auf main.
 
    Falls noch kein PR existiert: `gh pr create …` (der Branch ist durch den
    Früh-Push aus Station A des Skills `bauschritt` bereits auf origin).
    Merge manuell: `gh pr merge <nr> --squash`. **KEIN `--auto`**, solange die
    Required Checks nicht neu gesetzt sind (David-Handschritt offen). Wo
-   `--auto` grundsätzlich zulässig ist (Daueranweisung 30.6.), gilt:
-   **`--auto` ist der Deploy-Zünder — erst scharf machen, wenn die Schritte
-   0–2 komplett abgeschlossen sind.** Ein früh gesetztes `--auto` merged
-   (= deployt) automatisch, sobald die CI grün ist, auch wenn lokale Tore
-   (test:e2e, perf-budget, Bug-Check) noch laufen oder nie liefen. Grüne CI
-   ist Merge-Voraussetzung, sie ERSETZT die Schritte 0–2 nicht.
+   `--auto` zulässig ist (Daueranweisung 30.6.): **`--auto` ist der
+   Deploy-Zünder — erst scharf machen, wenn die Schritte 0–2 komplett
+   abgeschlossen sind.** Früh gesetzt merged (= deployt) es, sobald die CI
+   grün ist, auch wenn lokale Tore noch laufen oder nie liefen. Grüne CI ist
+   Merge-Voraussetzung, sie ERSETZT die Schritte 0–2 nicht.
 
    Nie einen roten PR mergen (Billing-roter Check + lokal grün = OK). Arbeit
    direkt auf `main`: `git push origin main` löst den Prod-Deploy unmittelbar
@@ -251,18 +208,12 @@ Regressionstests dazu, danach Tore aus Schritt 1 erneut.
    `Roadmap-Status: done|ready|parked(<token>)` mitgeben — `plan-buchung.yml`
    bucht nach dem Merge automatisch (rot bei ungültiger ID/Status, nie ein
    unwahrer Plan). **Denselben Trailer-Block zusätzlich als eigenen Absatz in
-   den PR-BODY** (unformatiert, nicht eingerückt, kein Code-Fence; BEIDE
-   Zeilen im SELBEN Absatz — getrennte Absätze buchten bis 15.8. still
-   nichts, seither macht ein halber Block den Buchungs-Lauf laut rot; der
-   🤖-Footer darf danach folgen): mergt jemand per GitHub-Auto-Merge mit
-   Standard-Squash-Text, geht der Commit-Trailer verloren — der Workflow
-   liest ihn dann ersatzweise aus dem PR-Body (Lehre 14.8.2026, PR #491:
-   Auto-Buchung blieb still, Hand-Buchung nötig). Fällt beides aus: von Hand
-   `plan:set <id> status=…` + committen (done ⇒ Block per Ziff. 6 in die
-   Chronik). Realfall 5.8.2026:
-   `QS-TOK`/`QS-TOK-AUFRAEUMEN` blieben nach Session-Ende stundenlang `wip`,
-   das Lagebild zeigte falschen Bau — seither warnt `plan:next` bei wip ohne
-   Bau-Spur, aber die Warnung ist das Netz, nicht der Prozess.
+   den PR-BODY** — BEIDE Zeilen im SELBEN Absatz, unformatiert (ein halber
+   Block macht den Buchungs-Lauf seit 15.8. laut rot; Auto-Merge mit
+   Standard-Squash-Text verliert den Commit-Trailer, PR #491). Fällt beides
+   aus: von Hand `plan:set <id> status=…` + committen (done ⇒ Block per
+   Ziff. 6 in die Chronik). Trailer-Form: Skill `auftrag` Ziff. 5;
+   Vorfalls-Wortlaut: `referenz-ci.md`.
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
@@ -270,20 +221,13 @@ Auf Risiko-Pfaden (Extraktion, Rechnen, Norm-Tarif — Definition über
 `istRisikoPfad()` in `scripts/gegenpruefung/kern.ts`) wird **erst nach
 vorliegendem Gegenprüfungs-Verdikt** gemergt. `--auto` ist dort **ganz
 gesperrt**: Es prüft nur den Stand beim Aktivieren, nicht den beim Mergen.
-
 Das Verdikt braucht eine prüfbare Form **und** einen Zuwachs im committeten
-Gegenprüfungs-Register. Ein Trailer allein ist eine Behauptung über eine
-Prüfung, kein Nachweis.
+Gegenprüfungs-Register — ein Trailer allein ist eine Behauptung, kein Nachweis.
 
-Maschinelle Rückendeckung, dreifach:
-
-- `check:merge-schutz` als dedizierter CI-Job «Merge-Schutz
-  (Required-Kontext)», gesetzt als **Required Check** in den Branch-Regeln —
-  ein entfernter Job hinterlässt einen «expected»-Block.
-- derselbe Check im Hook `tor-schutz.py` vor jedem Merge-Kommando (erste
-  Verteidigungslinie, lokal).
-- `check:gegenpruefung` blockiert `npm run gate`, bis für den Diff ein
-  `bestanden`-Nachweis vorliegt.
+Maschinelle Rückendeckung, dreifach: `check:merge-schutz` als Required-Check-Job
+«Merge-Schutz» (ein entfernter Job hinterlässt einen «expected»-Block) ·
+derselbe Check lokal im Hook `tor-schutz.py` vor jedem Merge-Kommando ·
+`check:gegenpruefung` blockiert `npm run gate` ohne `bestanden`-Nachweis.
 
 **Vorfall, der das erzwungen hat:** PR #309 — elf erfundene Amtsträger:innen
 gingen rund eine Stunde auf Prod, weil der Verweis auf die Gegenprüfung beim
@@ -291,11 +235,11 @@ Abarbeiten der Liste übersprungen wurde.
 
 ### Ausnahmefall manueller Deploy · Ausreden-Tabelle → referenz-ausnahmen.md
 
-Beides selten gebraucht und darum ausgelagert (Wortlaut unverändert,
-QS-EFFIZIENZ 14.8.2026): Wer einen manuellen Deploy erwägt ODER sich bei
-einem Red Flag unten beim Rationalisieren ertappt, liest ZUERST
-`referenz-ausnahmen.md` im Skill-Ordner — die zwei Ausnahme-Prädikate und
-die belegten Ausreden stehen dort.
+Wer einen manuellen Deploy erwägt ODER sich bei einem Red Flag unten beim
+Rationalisieren ertappt, liest ZUERST `referenz-ausnahmen.md` im Skill-Ordner —
+die zwei Ausnahme-Prädikate und die belegten Ausreden stehen dort (ausgelagert
+QS-EFFIZIENZ 14.8.2026, Wortlaut unverändert).
+
 ### Red Flags — STOP
 
 - Du bist dabei, `npx vercel --prod` zu tippen, ohne dass ein Ausnahme-Prädikat
@@ -326,13 +270,13 @@ Geist verletzen.
    `/rechner/mietrecht`, `/vorlagen`, eine Vorlagen-Detailroute.
    Prod-URL ist https://lexmetrik.vercel.app (eine Custom-Domain
    lexmetrik.ch existiert NICHT — Fehlversuch 5.8.2026, curl exit 6).
-4. Lighthouse-Metriken (QS-PERF/§15): CLS/LCP/TBT auf `/gesetze/bund/OR` —
-   Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md`. Läuft seit dem CI-Ausbau
-   **automatisiert** als `check:perf-lighthouse` nach dem Merge auf main
-   (ci.yml; Faktenkorrektur 7.8.2026, Reglement-Audit — «manuell bis CI-Chrome»
-   war überholt). Manuell nur noch bei Verdacht zwischen zwei Läufen.
+4. Lighthouse-Metriken (QS-PERF/§15): CLS/LCP/TBT auf `/gesetze/bund/OR`,
+   Soll-Werte in `fahrplaene/FAHRPLAN-PERFORMANCE.md` — läuft automatisiert als
+   `check:perf-lighthouse` nach dem Merge auf main (ci.yml; Faktenkorrektur
+   7.8.2026). Manuell nur bei Verdacht zwischen zwei Läufen.
 5. Aufräumen: gemergten Branch + zugehörigen Worktree entfernen
    (`git worktree remove …`, Branch lokal + remote löschen; Daueranweisung
    30.6.).
-6. STRUKTUR.md / ROADMAP.md spiegeln (deployter Stand, Commit-Hash) —
-   STRUKTUR-Pflicht: Skill `auftrag`, Ziff. 4a.
+6. Session-Karte in `STRUKTUR.md` nachziehen (deployter Stand, Commit-Hash) —
+   **Kurzkarte ist der Default**, Form und Ausnahmen: Skill `bauschritt`
+   Station E; Pflicht: Skill `auftrag`, Ziff. 4.
