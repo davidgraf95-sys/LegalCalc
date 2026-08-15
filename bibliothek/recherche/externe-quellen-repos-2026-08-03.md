@@ -115,8 +115,9 @@ zugleich lizenzrechtlich am heikelsten (§4).
 `scripts/fedlex-wiedervorlage-generieren.ts` · `public/normtext/currency.json`.
 
 **Entscheid 15.8.2026: VERWERFEN** für `swiss-law` und `legalize` ·
-**WARTET AUF DAVID** für `droid-f/fedlex` (allein wegen der NC-Lizenz, §5
-Ziff. 5).
+`droid-f/fedlex`: **VERWERFEN** (Davids Antwort 15.8.2026 «nicht kommerziell»
+hätte NC formal erlaubt — verworfen bleibt es trotzdem: kein Lizenztext im
+Repo, Zweitbestand fachlich obsolet, s. §5 Ziff. 5).
 
 *Tragender Grund — die Sorge ist inzwischen anderweitig getragen.* Der ganze
 Wert des Zweitbestands lag in einer einzigen Fehlerklasse: «unser Pin ist stale,
@@ -473,8 +474,12 @@ unmittelbar darunter. Ziff. 1–4 sind technische Entscheide (Delegation David
 5. **Frage an David:** wird LexMetrik kommerziell betrieben? Davon hängt ab,
    ob `droid-f/fedlex` (NC) überhaupt berührt werden darf.
 
-   **Stand 15.8.2026: WARTET AUF DAVID — die einzige offene Frage dieses
-   Dossiers.** Präzisiert nach der Nachprüfung (§4): Das Repo führt **gar keine
+   **Antwort David 15.8.2026 (Chat): «nein, nicht kommerziell.»** Damit ist
+   NC-Material für LexMetrik lizenzrechtlich grundsätzlich zulässig; die
+   Nutzungspflicht bleibt bei jeder Quelle die Namensnennung + Share-Alike.
+   Für `droid-f/fedlex` ändert das nichts — VERWERFEN aus den zwei anderen
+   Gründen (kein Lizenztext, Zweitbestand obsolet). Kein Punkt dieses
+   Dossiers wartet mehr auf David. Präzisiert nach der Nachprüfung (§4): Das Repo führt **gar keine
    Lizenzdatei**, die NC-Angabe steht allein in der README. Die Frage ist damit
    zweistufig — (a) betreiben wir kommerziell? und (b) selbst bei «nein» bliebe
    eine Nutzung auf eine README-Zusage gestützt, ohne Lizenztext. **Empfehlung
