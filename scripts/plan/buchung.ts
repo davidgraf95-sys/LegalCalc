@@ -211,7 +211,20 @@ export function parseBuchungAusPrBody(body: string): Buchung | null {
   const block = extractTrailerBlock(body);
   const roadmap = block['Roadmap'];
   const status = block['Roadmap-Status'];
-  if (!roadmap || !status) return null;
+  // Kein Buchungs-Key im Block: stiller Normalfall (auch ein reiner
+  // Gegenpruefung-Trailer ist keine Buchungs-Absicht).
+  if (!roadmap && !status) return null;
+  // HALBER Buchungs-Block: erkennbare Absicht, aber unvollständig — z. B.
+  // `Roadmap:` und `Roadmap-Status:` durch eine Leerzeile getrennt, sodass nur
+  // der letzte Absatz als Block zählt. Das verpuffte bis 15.8.2026 STILL
+  // (Realfall PR #507: Workflow «success» ohne Buchung, Hand-Buchung nötig).
+  // Erkannter, aber kaputter Buchungsversuch => laut (Exit 1), nie still.
+  if (!roadmap || !status) {
+    throw new Error(
+      `PR-Body: unvollständiger Buchungs-Block (Roadmap=${roadmap ?? '—'}, ` +
+      `Roadmap-Status=${status ?? '—'}) — beide Trailer müssen im SELBEN Absatz ` +
+      `stehen (zusammenhängender Block, Skill landung Ziff. 9).`);
+  }
   return parseBuchung(roadmap, status);
 }
 

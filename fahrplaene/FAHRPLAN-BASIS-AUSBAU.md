@@ -517,8 +517,11 @@ User-Konten nicht verfügbar (→ `QS-ORG-UMZUG`, geparkter David-Entscheid).
 - **Zu bauen:** (a) `npm audit` als **Meldung, nie Stopper** in den Wächter-Bericht (§3.1)
   einhängen; (b) die knip-Unlisted-Funde `playwright` und `react-router` sauber deklarieren;
   (c) offene Major-Sprünge einzeln bewerten, nicht sammeln.
-- **ACHTUNG Lockfile:** jede Änderung an `package-lock.json` nur über `npx npm@10` — das lokal
-  installierte npm 11 erzeugt eine CI-inkompatible Lockfile-Fassung.
+- **ACHTUNG Lockfile (Ist-Korrektur 15.8.2026, Dependabot-Lock-Wurzelfix):** Regel INVERTIERT —
+  der Lock ist seit dem Wurzelfix kanonisch **npm 11** (CI fährt `npx -y npm@11 ci`, Dependabot und
+  das lokale npm 11 schreiben dieselbe Fassung); eine Regeneration mit npm 10 macht die CI laut rot
+  (EUSAGE «Missing: typescript@5.9.3», Gegenprobe 15.8.). Die alte npm@10-Regel galt nur, solange
+  die CI npm 10 pinnte (H-8-Fix 12.7., in die falsche Richtung angeglichen).
 - **Fertig, wenn:** Audit-Ausgabe läuft ohne Exit-Code-Wirkung, knip meldet kein Unlisted mehr,
   und je Major-Sprung steht ein Ja/Nein mit Begründung.
 - **Abgrenzung:** der Geparkt-Entscheid «Betriebs-Instrumente später» betrifft nur die

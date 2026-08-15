@@ -51,7 +51,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
       - name: Build (dist für die Messung)
         run: npm run build
       - name: Playwright-Browser (Chromium — Lighthouse steuert ihn)

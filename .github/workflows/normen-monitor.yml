@@ -58,7 +58,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci
 
       # ── 1. Rechtsstände: die EINE Netz-Tor-Kette (O-1.3) ────────────────────
       - name: Rechtsstände — npm run check:netz (alle 12 Netz-Tore)
