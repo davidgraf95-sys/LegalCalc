@@ -41,6 +41,17 @@
 import { test, expect, type Page } from '@playwright/test'
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets'
 
+// QS-UI (e) 15.8.2026 — Tor meldete falsch rot (3–6 von 65 unter --workers≥14,
+// wechselnde Routen): `.lc-route` blendet per `lc-fade-in` ab opacity:0 ein
+// (index.css:1128); landet `page.evaluate` auf dem Null-Frame, ist
+// `checkVisibility({opacityProperty:true})` für JEDEN Nachfahren false — I8/I9/I10
+// kippten ohne Defekt (Beleg: routeOpacity="0" instrumentiert, FAHRPLAN-UI-QUALITAET
+// §2.3). Reduced-Motion schaltet die Animation ab (index.css:1186) — dasselbe
+// Muster wie a11y/hist-ansicht/rechtsprechung-richter; kein waitForTimeout.
+test.beforeEach(async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+})
+
 // Rechner-Flächen, die ohne Eingabe schon ein Ergebnis zeigen (Live-Berechnung).
 // Eingabe-gegatete Flächen (Streitwert, Prozesskosten, Betreibungskosten,
 // Notariat/Grundbuch, Zuständigkeit, Gerichtszitat) sind hier bewusst NICHT
