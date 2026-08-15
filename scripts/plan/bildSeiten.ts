@@ -384,7 +384,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   ${empfohlenZiel ? `<p class="zweck">${esc(ersterSatz(empfohlenZiel))}</p>` : ''}
   ${verknZeile(verkn.get(empfohlen))}
   ${prompts[empfohlen] ? `<p style="margin:.5rem 0 0"><button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button></p>` : ''}
-  <p class="sub" style="margin-top:.5rem">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span> — Prozess-Schritte stehen seit 8.8.2026 vorn (Entscheid David). Die Grösse ist eine Schätzung und kein Tor: <b>S</b> lohnt keine eigene Session (gebündelt nehmen), <b>M</b> ist der Normalfall, <b>L</b> vor dem Bau in Teilschritte schneiden bzw. beim Dach eine Checklisten-Auswahl nehmen.</p></div>`
+  <p class="sub" style="margin-top:.5rem">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span> — Prozess-Schritte stehen seit 8.8.2026 vorn (Entscheid David). Die Grösse ist eine Schätzung und kein Tor (Massstab David 15.8.2026): <b>S</b> trägt nie allein eine Session (gebündelt nehmen), <b>M</b> ist ein Session-<i>Teil</i> — eine Session mit Unteragenten landet mehrere davon —, <b>L</b> wird nur bei echtem Serialisierungs- oder Risiko-Zwang geschnitten; beim Dach-Schritt gibt die Checkliste die Auswahl vor.</p></div>`
     : '<p class="lage"><b>Empfohlener nächster Bau:</b> keiner — kein Schritt ist gerade baubar.</p>';
 
   // «Weitere sinnvolle nächste Schritte» — bis zu vier Kandidaten NACH dem
