@@ -38,6 +38,38 @@ const E2E_PORT = process.env.E2E_PORT ?? (process.env.CI ? CI_PORT : portAusPfad
 // 60-s-Timeout statt der globalen 30 s (Begründung unten bei `projects`).
 const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 
+// ── N-Specs: Normtext-Treue (FAHRPLAN-LESER-V3 Kap. 10) ─────────────────────
+// Diese Specs prüfen, dass am NORMTEXT nichts verrutscht — Optionen-Schalter,
+// Fundstellen/Quickjump, Rücksprung, Such-Vertrag, Marginalien, PDF-Download,
+// die neun UX-Punkte, Kopf-Label, Anhang-Behandlung und den Linien-Rückbau.
+// Sie laufen im Fenster DOPPELT: im Projekt `chromium` ohne Flag gegen den
+// Ist-Stand und im Projekt `leser-v3` mit gesetztem Flag gegen die neue Hülle.
+// Diese Doppelung IST der Paritätsbeweis — eine Hülle, die den Normtext
+// verändert, wird auf genau einer Seite rot.
+//
+// Der Fahrplan schreibt in derselben Zeile «8 bleiben unverändert grün» und
+// zählt dann ZEHN Namen auf. Hier stehen alle zehn: die Liste ist die
+// verbindliche Aufzählung, die Zahl «8» ist ein Zählfehler aus einer früheren
+// Fassung (gemeldet in docs/ux-audit-2026-07/reader/leser-v3-vorprobe.md).
+// Mehr Deckung ist hier die sichere Richtung — nie weniger als der Fahrplan.
+const N_SPECS = [
+  // Kein N-Test, sondern der Selbsttest des Flag-Projekts: er sieht den
+  // V3-Marker POSITIV und schliesst damit aus, dass `leser-v3` still gegen V1
+  // läuft und grün ist, ohne etwas zu prüfen (§6.7). Läuft absichtlich in
+  // BEIDEN Projekten — `chromium` beweist den Grundzustand AUS (R10).
+  '**/leser-v3-flag.e2e.ts',
+  '**/leser-optionen.e2e.ts',
+  '**/leser-r1-r2.e2e.ts',
+  '**/leser-ruecksprung-r5-r7.e2e.ts',
+  '**/leser-suche-vertrag-b8.e2e.ts',
+  '**/leser-ohne-gliederungslinie.e2e.ts',
+  '**/gesetze-marginalie.e2e.ts',
+  '**/gesetze-pdf-download.e2e.ts',
+  '**/gesetze-ux-9punkte.e2e.ts',
+  '**/gesetze-ux-g3a.e2e.ts',
+  '**/gesetze-ux-g3b-anhang.e2e.ts',
+]
+
 export default defineConfig({
   testDir: './e2e',
   testMatch: '**/*.e2e.ts',
@@ -123,6 +155,35 @@ export default defineConfig({
       name: 'chromium',
       testIgnore: SCHWERE_SPECS,
       timeout: process.env.CI ? 90_000 : 30_000,
+    },
+    // ── Flag-Projekt: dieselben N-Specs gegen die V3-Hülle ──────────────────
+    // Aktivierung über `storageState` statt über einen Query-Parameter: die
+    // Specs navigieren selbst (`page.goto('/gesetze/…')`) und wüssten von
+    // einem `?leser=v3`-Suffix nichts — es müsste in jede einzelne Spec
+    // hinein, und das wäre eine inhaltliche Änderung bestehender Specs (§6.3
+    // verbietet genau das bei einem Struktur-Schritt). `storageState` legt
+    // `lm.leser.v3` VOR dem ersten Laden in den Speicher des Origins; die
+    // Fassade (`src/pages/GesetzLeser.tsx`) liest ihn beim ersten Render.
+    // Die Specs bleiben Zeichen für Zeichen unangetastet.
+    // Das Origin muss den dynamischen Port tragen (Port-Wahl oben), sonst
+    // greift der Speicher-Eintrag ins Leere und das Projekt testete still V1
+    // — also genau das Tor, das nicht scheitern kann. Der Rot-Beweis der
+    // Vorprobe (V-2) schliesst diesen Fall aus.
+    {
+      name: 'leser-v3',
+      testMatch: N_SPECS,
+      timeout: process.env.CI ? 90_000 : 30_000,
+      use: {
+        storageState: {
+          cookies: [],
+          origins: [
+            {
+              origin: `http://localhost:${E2E_PORT}`,
+              localStorage: [{ name: 'lm.leser.v3', value: '1' }],
+            },
+          ],
+        },
+      },
     },
   ],
   webServer: {

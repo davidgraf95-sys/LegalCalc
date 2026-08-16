@@ -349,6 +349,39 @@ importiert); dazu das Playwright-Flag-Projekt.
 **Ohne V-0 (F7 entschieden), V-D0 (gelandet) und bestandene Vorprobe V-1…V-3 wird H1 nicht
 begonnen.**
 
+### ✅ Vollzugsvermerk V-1 bis V-3 (16.8.2026, Branch `feat/leser-v3-h1`)
+
+**Protokoll mit allen Ausgaben:** `docs/ux-audit-2026-07/reader/leser-v3-vorprobe.md`.
+
+| Schritt | Ergebnis |
+|---|---|
+| **V-1** | **bestanden.** `gate.sh voll` grün (Exit 0, `golden:vergleich` inbegriffen) · `npm run build` Exit 0 · Leser-/Gesetze-/Split-View-e2e `195 passed` Exit 0. Kein Defekt auf `main`. |
+| **V-2** | **bestanden.** Projekt `leser-v3` gebaut (`playwright.config.ts`, Aktivierung über `storageState`, bestehende Specs unverändert). Rot-Beweis mit leerem Rahmen: `56 failed / 1 passed`, Exit 1 → mit eingehängtem `ArtikelLeser`-Baum: `57 passed`, Exit 0. Zusätzlich `e2e/leser-v3-flag.e2e.ts` als Selbsttest des Projekts (Marker positiv gesehen), ebenfalls einzeln rot gezeigt. |
+| **V-3** | **erhoben, aber nicht tragfähig für den Deckel** — siehe Abweichung unten. |
+
+**Zwei Korrekturen an diesem Fahrplan** (Belege im Protokoll):
+
+- **Kap. 10, Zeile «e2e N»:** «8 bleiben unverändert grün» steht neben einer Aufzählung von
+  **zehn** Namen. Das Flag-Projekt fährt alle zehn. Die Zahl ist beim nächsten Schnitt auf 10 zu
+  korrigieren.
+- **Kap. 12, A-1:** Die Behauptung, `scrollAnker.ts` beschreibe einen nicht auffindbaren
+  localStorage-Spiegel, ist falsch. Die Datei sagt ausdrücklich das Gegenteil
+  (`scrollAnker.ts:134–137`), und der dauerhafte Spiegel existiert und ist greppbar
+  (`lesePosition.ts:54`/`:98`, Schlüssel `lexmetrik-leseposition`). A-1 ist damit erledigt und
+  die Zeile beim nächsten Schnitt zu streichen.
+
+**Abweichung V-3 — der Deckel lässt sich an diesem Repo nicht kalibrieren (wartet auf David).**
+(a) Streichquote: über alle 63 Fahrpläne gibt es nur **n = 2** streng zählbare Fälle einer
+«Rückbau-zuletzt»-Etappe (1 gelandet, 1 offen, 0 still gestrichen). Das ist eine Anekdote, keine
+Rate (§0 Ziff. 3c). Ursache ist ein eigener Befund: **das Repo kennt keinen Feature-Flag-
+Mechanismus** (Kap. 2, Zeile 109) — grosse Umbauten liefen bisher ohne Doppelspur, weshalb R9
+schlicht keine Vorgeschichte hat. (b) Durchsatz: 41 PR-Landungen auf `src/pages/gesetz-leser` in
+4,1 Wochen (≈ 10/Woche), davon ≈ 26 benannte Etappen (≈ 6/Woche) — der 5-PR-Deckel bindet die
+**Bauzeit** also nicht und taugt nur als Abbruch-Schwelle, nicht als Zeitplan. Der nächste
+Verwandte `archiv/FAHRPLAN-STARTSEITE-V3.md` baute die Startseite in **5 PRs direkt am Bestand**
+um — ohne Flag, ohne Parallel-Hülle. Vorschlag: Deckel als Abbruch-Schwelle behalten, H5
+(Flag-Entfernung) aber schon als Abnahmezeile von **H1** mitschreiben statt erst am Ende.
+
 ---
 
 ## 7 · Etappenplan — zwei Stränge
@@ -378,6 +411,110 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **H3** | **Panel/Sheet für Rechtsprechung + Kontext** — Pos. 3, 12, 17; **Vorbedingung F4**. Enthält **Panel-Nachladen** (s. u.) | neu: `LeserPanel.tsx` (3 Reiter, vierter Filter «Sachgebiet» **vorgesehen**, Datenlogik dazu bleibt `W2·7-VZUI-SACHGEBIET`) · behalten: `bezuegeLaden`, `bezugAuswahl`, `bezugZeit`, `bezugPortion` (Datenlogik unverändert) | +450 / −0 | 4: `leser-v3-panel-facetten`, `leser-v3-panel-zaehler`, `leser-v3-kontext-cls`, `leser-v3-prerender-bezuege` | Jeder Entscheid, der heute unter einem Artikel erreichbar ist, ist über Zähler → Panel erreichbar, in beiden Panes, ohne dritte vertikale Fläche — und das prerenderte HTML trägt die Bezüge unverändert. | **L** |
 | **H4** | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `playwright.config.ts` | ±0 | 0 neu (11 alte B-Tests werden entfernt/umgehängt) | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
 | **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
+
+### ✅ Vollzugsvermerk H1 (16.8.2026, Branch `feat/leser-v3-h1`)
+
+**Kontaktbogen mit NM-Tabelle, Treue-Messwerten und Bildern:**
+`docs/ux-audit-2026-07/reader/leser-v3-h1/README.md`.
+
+**Neue Dateien** (Hülle, alle unter `src/pages/gesetz-leser/v3/`):
+`LeserRahmenV3.tsx` · `LeserKopf.tsx` · `LeserAnsichtV3.tsx` ·
+`LeserSeitenleiste.tsx` · `SuchSprungFeld.tsx` · `UebersichtBox.tsx` ·
+`kopfStufen.ts` · `v3Optionen.ts`; dazu `GesetzLeserV3.tsx` gefüllt (lazy).
+**Entfernt: nichts** — die Ist-Hülle ist unberührt (FL-4).
+
+**Abnahme-Kriterium der Zeile erfüllt:** unter `?leser=v3` steht in beiden Panes
+derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
+(`leser-v3-suche-sprung`), das Umschalten V1↔V3 hält Erlass, Anker und Optionen
+(`leser-v3-umschalten`, FL-6) — und ohne Flag ist der Ist-Stand unverändert
+(`golden:vergleich` byte-gleich, Flag-Vitest FL-3/R10).
+
+**Vier Punkte, die über die Zeile hinausgehen und hier festgehalten gehören:**
+
+- **Kopf-Verzweigung 21 → 0 in der neuen Hülle** ist erreicht, aber anders
+  gelöst als vermutet: `LeserKopf.tsx` enthält **kein** `imPane` und **keinen**
+  Breakpoint (Quellensonde `src/tests/leser-v3-adresse.test.ts`). Die Overflow-
+  Regel misst die **Element-Breite** (ResizeObserver, `kopfStufen.ts`) statt des
+  Viewports — nur deshalb gilt in Einzelansicht, breitem und schmalem Pane
+  dieselbe Regel aus einer Quelle. Ein `xl:`-Präfix hätte im Pane den Viewport
+  gemessen und das Desktop-Bild in eine 620-px-Spalte gezwungen.
+- **Zielzahl «Sucheingabe-Felder 2 → 1 (nach H1, V3)» ist gemessen erreicht:**
+  V1 trägt @1440 zwei Eingaben im Gesetz («Im Gesetz suchen …», «Art. N»), V3
+  eine («Suchen oder «Art. 429» …»).
+- **Der Sprung-Offset rechnet die neue Kopfhöhe mit** (Risiko R1): `#art-429`
+  landet nach dem Sprung auf y = 156 px = Topbar 64 + App-Leiste 36 + Kopfzeile
+  56. Im Ist-Stand fehlte diese Verrechnung ganz.
+- **Kein Kern angefasst:** `ArtikelLeser`/`ArtikelBody` unverändert importiert;
+  Artikelzahl (480), Lesespalten-Breite (672 px @1440 / 350 px @390) und
+  Bezüge-Zeilen (326) sind in beiden Hüllen identisch gemessen.
+
+**Zwei Abweichungen** (Herleitung im Kontaktbogen, Ziff. 4):
+
+- **A-1 Schriftgrössen-Regler.** Er bedient den bestehenden globalen Skala-Store
+  (`lexmetrik-schriftskala`) statt eines zweiten 4-Stufen-Speichers. Grund: ein
+  zweiter Speicher für dieselbe Frage wäre eine zweite Wahrheit (§5), und die
+  vier absoluten rem-Werte der Design-Grundlage (Kap. 2.3) setzen die
+  V3-Normtextgrösse voraus, die erst **S2** bringt — in H1 bliebe sonst der
+  Normtext nicht byte-gleich (Treue-Grenze PX). **Vorschlag: die vier Stufen
+  mit S2 nachziehen**, wenn die Baseline ohnehin einmalig neu gesetzt wird.
+- **A-2 Zwei Leisten statt einer.** Die V3-Kopfzeile sitzt **unter** der
+  bestehenden App-Leiste, statt sie zu ersetzen. Die Verschmelzung verlangt
+  Änderungen an `src/components/layout/**` und hätte die Ist-Hülle mit
+  umgebaut (FL-4). Sie gehört zu **H4/H5**; Preis heute 37 px Chrome. Dieselbe
+  Aufteilung hat der Entscheid-Leser seit je.
+
+**Fundament-Auflage David 16.8.2026** («richtig guter Code, der sich als
+Fundament auch für weitere Gesetze und Darstellungen eignet») — umgesetzt und im
+Kontaktbogen Ziff. 4c mit Modulgraph belegt: **eine Naht** zur geteilten
+Maschinerie (`v3/leserV3Modell.ts`, typisiertes `LeserV3Modell`) statt acht
+verstreuter `inhalt-*`-Importe · **kein `if (bund)` in Komponenten**
+(`v3/erlassAnsicht.ts` leitet Ebene, Overline und Übersichtszeile aus dem
+Datenmodell ab — Bund, Kanton und Staatsvertrag laufen durch denselben Rahmen) ·
+**eine Wurzel** für Pane und Breite (`v3/LeserV3Kontext.ts`) · **fünf benannte
+Erweiterungspunkte** als Props (`panelOeffner`, `panelSlot`, `beiwerkSlot`,
+`fassungsWahl`, `leisteExtra`), die ungesetzt nichts rendern · Rahmen von 597 auf
+285 Zeilen, Lesekörper und Gliederung als eigene Bauteile. Bewusst NICHT
+abstrahiert: die Hook-Reihenfolge im Adapter (koppelt geteilte Refs, §6.6), die
+Umbenennung der `inhalt-*`-Module (fasst FL-4-eingefrorene Dateien an → H5), der
+Lesekörper (PX misst ihn), die Breiten-Messung per ResizeObserver (sie speist
+`--nt-stick`; zwei Geometrie-Quellen wären die LM-003-Konstellation) und ein
+gemeinsamer Rahmen mit dem Entscheid-Leser (§1: keine Abstraktion über zwei
+Fälle, von denen einer noch umgebaut wird). Der Umbau war verhaltensneutral:
+identische Messwerte, alle 15 V3-e2e grün.
+
+**Befund zur N-Liste (Kap. 10) — die Zuordnung ist zu früh als «N» geführt.**
+Das Flag-Projekt steht nach H1 bei **49 von 60 grün**. Alle elf roten Zeilen
+wurden einzeln nachgesehen; **keine betrifft den Normtext**, alle prüfen die
+**Struktur der Ist-Hülle**, die V3 planmässig ersetzt: `gesetze-ux-g3a` (3 ×
+`.lc-leser > header` als direktes Kind), `leser-optionen` (3 × «genau zwei
+role=switch» — V3 hat die drei von Kap. 4f), `leser-r1-r2` (4 × das zweite Feld
+«Zu Artikel springen», das Pos. 4 gerade beseitigt) und `leser-ruecksprung-r5-r7`
+(1 × Rücksprung «< 140 px»; V3 landet auf **156 px** = exakt das klebende Chrome
+64 + 36 + 56 — die Schwelle war auf das Ist-Chrome von 100 px kalibriert).
+Diese vier Dateien können gegen eine neue Hülle **konstruktiv nicht** grün
+werden; sie als Paritätsbeweis zu führen hiesse, jede Hüllen-Änderung als
+Normtext-Verletzung zu melden. **Vorschlag beim nächsten Schnitt:** die vier in
+Kap. 10 als **B** einordnen (H4 entfernt/hängt sie ohnehin um). Als N bleiben
+`gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`,
+`gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`, `leser-suche-vertrag-b8`
+— **alle sechs sind in beiden Hüllen grün**, und das ist der Paritätsbeweis, der
+wirklich einer ist. Herleitung je Zeile im Kontaktbogen, Ziff. 4b.
+
+**Zwei Befunde aus der Prüfung, die H1 selbst betrafen und behoben sind:** die
+Gliederungsspalte konnte nicht scrollen (`max-height` am Vorfahren löst kein
+`height:100%` im Kind auf — der Überschuss wurde stumm abgeschnitten), und der
+GETEILTE Scroll-Spy fand seinen Container nicht, weil der V3-Leiste die Marken
+`[data-toc]`/`[data-toc-zone-a]` fehlten (die Gliederung wäre beim Lesen still
+stehen geblieben, P9b/A33). Beide reproduziert, behoben und nachgemessen.
+
+**Nebenbefund für H2:** die reine Volltextsuche kostet auf **H** einen Tap mehr
+als im Ist-Stand (Ist: Lupe im Kopf = 1 Tap · V3: ☰ → Feld = 2 Taps), weil
+Kap. 4b Suchfeld und Gliederung gemeinsam ins Bottom-Sheet legt. Keine der drei
+NM-Aufgaben, aber die Stelle, an der H2 ansetzen sollte.
+
+**Deckel-Stand:** H1 ist der erste der höchstens fünf H-PRs (Kap. 7).
+
+---
 
 ### Strang S (in place, wirkt in beiden Hüllen)
 
@@ -506,7 +643,7 @@ diese Frage am Bild und nicht am Text beantwortet wird.
 
 | Kategorie | Bestand | Wirkung |
 |---|---|---|
-| e2e **N** (Normtext-Treue) | ~10 | **8 bleiben unverändert grün** — Pflicht: `leser-optionen`, `leser-r1-r2`, `leser-ruecksprung-r5-r7`, `leser-suche-vertrag-b8`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3a`, `gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`. **2 neu geschrieben** (deklarierte fachliche Änderung, §6.3, in S1): `hist-ansicht-w25i`, `gesetze-historie-badge`. Diese acht laufen **doppelt**: mit Flag gegen V3, ohne Flag gegen den Ist-Stand — das ist der Paritätsbeweis |
+| e2e **N** (Normtext-Treue) | ~10 | **10 bleiben unverändert grün** *(korrigiert 16.8.2026, Vollzug H1: die Zahl «8» stand neben einer Aufzählung von zehn Namen; das Flag-Projekt fährt alle zehn — Befund aus der Vorprobe V-2)* — Pflicht: `leser-optionen`, `leser-r1-r2`, `leser-ruecksprung-r5-r7`, `leser-suche-vertrag-b8`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3a`, `gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`. **2 neu geschrieben** (deklarierte fachliche Änderung, §6.3, in S1): `hist-ansicht-w25i`, `gesetze-historie-badge`. Diese acht laufen **doppelt**: mit Flag gegen V3, ohne Flag gegen den Ist-Stand — das ist der Paritätsbeweis |
 | e2e **B** (Bedienung/Layout) | ~17 | **11 neu geschrieben, aber nur EINMAL** (gegen V3, nicht als Interim + Endzustand): 10 in H1–H3 + `leser-breite-a37`/`leser-lesemass` in S2. Die alten Gegenstücke fallen in H4/H5 |
 | e2e **P** (Perf/CLS) | ~5 | 2 neu, 3 bleiben |
 | Vitest (DOM-frei) | 21 | ~4 berührt: `leser-suche-w219`, `gesetz-leser-uebersicht-s6`, `hist-chronologie` (entfällt mit dem Modus), `kontext`/`kontext-artikel-s7`; **neu**: Fassaden-Default (R10), Optionen-Migration, Sortierung (S4) |
@@ -579,9 +716,9 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 
 | # | Kriterium | Prüfung |
 |---|---|---|
-| A-1 | **`scrollAnker.ts`-Claim verifiziert.** Die Datei behauptet in Kommentaren einen localStorage-Spiegel, der per Grep nicht auffindbar war. | Entweder Fundstelle benennen oder den Kommentar als falsch korrigieren — H1 berührt die Scroll-Restauration und darf nicht auf einer unbelegten Annahme aufsetzen |
-| A-2 | **`#art_N` → `#art-` korrigiert.** Die Referenz-Notiz nennt Fedlex' Anker-Schema als «unser». | Korrektur in `02-referenzen.md` (Scratchpad) belegt; verbindlich ist `#art-<token>` (`inhalt-sprung.tsx:159`) |
-| A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | Im PR-Titel ausdrücklich benannt; sortenrein bleibt es (reine UI/Guard-Parität), aber nicht stillschweigend |
+| ~~A-1~~ | ~~**`scrollAnker.ts`-Claim verifiziert.**~~ **ERLEDIGT UND GESTRICHEN** (Vorprobe 16.8.2026): die Behauptung war falsch. `scrollAnker.ts:134–137` sagt ausdrücklich das Gegenteil, und der dauerhafte Spiegel existiert und ist greppbar (`lesePosition.ts:54`/`:98`, Schlüssel `lexmetrik-leseposition`). | — |
+| ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
+| A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **ERLEDIGT** in der Vorprobe dieses PRs. `EntscheidLeser.tsx` setzte `document.title` **ohne** Guard (so steht es bis heute auf `main`, Z. 408–411) — im Split-View trug der Browser-Reiter darum den Entscheid, obwohl das Hauptfenster das Gesetz zeigte (§8: der Reiter log über seinen Inhalt). Der Guard `if (rolle === 'sekundaer') return;` ist ergänzt und liegt unter der Quellensonde `src/tests/tab-titel-paritaet.test.ts`, die BEIDE Leser prüft. Im PR-Body benannt, wie die Zeile es verlangt. *(Selbstkorrektur 16.8.2026: der Vollzugsvermerk notierte hier zuerst «die Parität besteht bereits» — gemessen am Arbeitsbaum statt an `main`, also am Zustand NACH dem eigenen Fix. Der Befund war echt; die Nullprobe gegen die Basis fehlte.)* |
 
 ---
 

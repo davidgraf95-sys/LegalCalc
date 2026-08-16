@@ -276,7 +276,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   leseParam: string | null;
 }) {
   const navigate = useNavigate();
-  const { imPane, wurzel } = usePaneKontext();
+  const { imPane, rolle, wurzel } = usePaneKontext();
   // W2·5d U-POSITION/A17: im SEKUNDÄREN Pane ist die massgebliche Fundstelle-/
   // Hash-Quelle die PANE-LOKALE Location (react-router `<Routes location>`), NICHT
   // `window.location.hash` (= die Haupt-URL). Wird ein Entscheid via ⧉ aus einem
@@ -407,8 +407,9 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   // Browser-Tab: Zitierung des Entscheids.
   useEffect(() => {
     if (!snap || typeof document === 'undefined') return;
+    if (rolle === 'sekundaer') return; // sekundäres Pane treibt den Browser-Tab-Titel nicht (B-2.5)
     document.title = `${snap.zitierung} — LexMetrik`;
-  }, [snap]);
+  }, [snap, rolle]);
 
   // Deep-Link auf eine Erwägung (#e-2-4 aus «Fundstelle kopieren»): der Entscheid
   // lädt on-demand (fetch), das Ziel-Element existiert beim Routen-Hash-Sprung

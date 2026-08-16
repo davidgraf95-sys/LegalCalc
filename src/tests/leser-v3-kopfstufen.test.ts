@@ -1,0 +1,64 @@
+import { describe, expect, it } from 'vitest';
+import {
+  KOPF_SCHWELLE_KOMPAKT, KOPF_SCHWELLE_MINI,
+  kopfElemente, kopfHoehe, kopfStufe,
+} from '../pages/gesetz-leser/v3/kopfStufen';
+
+// FAHRPLAN-LESER-V3 Kap. 4a — die Overflow-Regel der V3-Kopfzeile:
+//
+//   «Unter 900 px fällt zuerst «Gesetze», dann der Volltitel; NIE der Artikel,
+//    nie «Ansicht».»
+//
+// Der zweite Halbsatz ist die eigentliche Zusage. An Utility-Klassen liesse er
+// sich nur an den paar Breiten stichproben, die ein Screenshot zufällig trifft;
+// an einer reinen Funktion lässt er sich über den ganzen Bereich beweisen.
+// Genau das tut der Test unten — nicht drei Beispiele, sondern jede Breite von
+// 280 bis 2000 px.
+//
+// Rot zu bekommen: in `kopfElemente` `artikel` an die Stufe binden, oder die
+// beiden Schwellen vertauschen.
+
+describe('Overflow-Regel der V3-Kopfzeile (Kap. 4a)', () => {
+  it('die drei Zuschnitte liegen an den Schwellen 640 und 900', () => {
+    expect(kopfStufe(360)).toBe('mini');
+    expect(kopfStufe(KOPF_SCHWELLE_MINI - 1)).toBe('mini');
+    expect(kopfStufe(KOPF_SCHWELLE_MINI)).toBe('kompakt');
+    expect(kopfStufe(KOPF_SCHWELLE_KOMPAKT - 1)).toBe('kompakt');
+    expect(kopfStufe(KOPF_SCHWELLE_KOMPAKT)).toBe('voll');
+    expect(kopfStufe(1440)).toBe('voll');
+  });
+
+  it('die Reihenfolge des Wegfalls ist «Gesetze» zuerst, dann der Volltitel', () => {
+    expect(kopfElemente('voll')).toMatchObject({ sektion: true, volltitel: true });
+    expect(kopfElemente('kompakt')).toMatchObject({ sektion: false, volltitel: false });
+    expect(kopfElemente('mini')).toMatchObject({ sektion: false, volltitel: false });
+  });
+
+  it('Kürzel, laufender Artikel und «Ansicht» fallen bei KEINER Breite weg', () => {
+    for (let b = 280; b <= 2000; b += 1) {
+      const el = kopfElemente(kopfStufe(b));
+      expect(el.kuerzel, `Kürzel fehlt bei ${b} px`).toBe(true);
+      expect(el.artikel, `Artikel fehlt bei ${b} px`).toBe(true);
+      expect(el.ansicht, `Ansicht fehlt bei ${b} px`).toBe(true);
+    }
+  });
+
+  it('die Regel ist monoton — mehr Platz nimmt nie etwas weg', () => {
+    const rang = { mini: 0, kompakt: 1, voll: 2 } as const;
+    let letzter = -1;
+    for (let b = 280; b <= 2000; b += 1) {
+      const r = rang[kopfStufe(b)];
+      expect(r, `Zuschnitt springt bei ${b} px zurück`).toBeGreaterThanOrEqual(letzter);
+      letzter = r;
+    }
+  });
+
+  it('die Kopfhöhe folgt der Design-Grundlage (H/S 48 px · D 56 px)', () => {
+    // Kap. 3 der Design-Grundlage. Die Werte sind zugleich die Grundlage des
+    // Sprung-Offsets `--nt-stick` (Risiko R1) — ein stiller Wechsel hier
+    // verschöbe jeden Artikel-Sprung.
+    expect(kopfHoehe('voll')).toBe('3.5rem');
+    expect(kopfHoehe('kompakt')).toBe('3rem');
+    expect(kopfHoehe('mini')).toBe('3rem');
+  });
+});
