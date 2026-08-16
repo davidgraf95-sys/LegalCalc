@@ -165,7 +165,7 @@ describe('Leser-Schriftskala — Treue-Grenze und §5-Spiegel', () => {
     // auch im Grundzustand eine font-size-Deklaration emittiert — rechnerisch
     // derselbe Wert, aber die Zusage «Vorgabestufe rührt den Normtext nicht an»
     // wäre nur noch behauptet statt konstruktiv erzwungen (§6).
-    expect(css).toContain('html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser .nt-art-cv .text-body-l');
+    expect(css).toContain('html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv .text-body-l');
     expect(css).not.toMatch(/html\[data-leserschrift="normal"\]\s*\{[^}]*--lm-leser-schrift/);
   });
 
@@ -197,5 +197,35 @@ describe('Leser-Schriftskala — Treue-Grenze und §5-Spiegel', () => {
         .toContain('.nt-art-cv');
     }
     expect(gepruefte, 'keine font-size-Regel der Schriftskala gefunden').toBe(1);
+  });
+
+  it('FL-4-NACHZUG (Pruefer-Befund PR #539): die Regel ist konstruktiv auf die V3-Huelle beschraenkt — .lc-leser allein (V1) darf NIE treffen', () => {
+    const css = readFileSync(fileURLToPath(new URL('../index.css', import.meta.url)), 'utf8');
+    // Befund: `data-leserschrift` wird global am <html> gesetzt, unabhaengig von
+    // der aktiven Huelle. `.lc-leser` traegt sowohl V1 als auch V3 — ohne
+    // zusaetzlichen Scope waere die vergroesserte Stufe in V1 sichtbar UND dort
+    // nicht zurueckstellbar (V1 hat keinen Regler). Der Selektor muss darum das
+    // V3-Root-Attribut `data-leser-v3="rahmen"` tragen — direkt auf `.lc-leser`
+    // (LeserRahmenV3.tsx setzt beide Attribute auf demselben Element, nicht auf
+    // Vorfahre/Nachfahre getrennt).
+    // Kommentare zuerst raus — sonst faengt der Selektor-Scan versehentlich
+    // erlaeuternden Kommentartext vor der Regel mit ein (der auch das gesuchte
+    // Attribut als Prosa erwaehnen darf, ohne dass die Regel es tatsaechlich hat).
+    const cssOhneKommentare = css.replace(/\/\*[\s\S]*?\*\//g, '');
+    const eintrag = [...cssOhneKommentare.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+      .find(([, sel, koerper]) => sel.includes('data-leserschrift') && /font-size/.test(koerper));
+    const treffer = eintrag?.[1].trim();
+    expect(treffer, 'keine font-size-Regel der Schriftskala gefunden').toBeTruthy();
+    // Die letzte Zeile (unmittelbar vor `{`) ist der tatsaechliche Selektor —
+    // vorangehende Regeln derselben Fund-Passage (leere Zeilen, andere Deklarationen
+    // im gleichen Kommentar-freien Block) faellen sonst mit ins `sel.includes`.
+    const selektorZeile = treffer!.split('\n').pop()!.trim();
+    expect(selektorZeile, 'Regel fehlt der V3-Scope [data-leser-v3="rahmen"] — sie traefe auch V1')
+      .toContain('[data-leser-v3="rahmen"]');
+    // Die Regel muss den Scope UNMITTELBAR an `.lc-leser` haengen (kombiniert,
+    // kein Nachfahre-Leerzeichen dazwischen) — sonst gaebe es einen zweiten Weg,
+    // ueber den ein `.lc-leser`-Element OHNE das V3-Attribut doch getroffen wird.
+    expect(selektorZeile, 'Scope muss direkt an .lc-leser haengen, nicht als Nachfahre')
+      .toContain('.lc-leser[data-leser-v3="rahmen"]');
   });
 });

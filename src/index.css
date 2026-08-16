@@ -539,7 +539,15 @@
   html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.25rem; }
   html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.375rem; }
   html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.5rem; }
-  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser .nt-art-cv .text-body-l {
+  /* FL-4-NACHZUG (Pruefer-Befund zu PR #539, 16.8.2026): `data-leserschrift` wird
+     GLOBAL am <html> gesetzt, unabhaengig davon, ob die V3-Huelle aktiv ist. Ohne
+     zusaetzlichen Scope traf die Regel auch `.lc-leser` in der Ist-Huelle (V1) —
+     dort gibt es aber keinen Regler, um die Stufe wieder zurueckzustellen (nur der
+     Rueckweg ueber V3 half). `.lc-leser[data-leser-v3="rahmen"]` ist das V3-Root
+     selbst (LeserRahmenV3.tsx traegt beide Attribute auf demselben Element) — die
+     Regel greift damit KONSTRUKTIV nur, wenn V3 aktiv ist; in V1 fehlt das
+     Attribut, der Selektor kann nie treffen. */
+  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv .text-body-l {
     font-size: var(--lm-leser-schrift, 1.125rem);
   }
 
