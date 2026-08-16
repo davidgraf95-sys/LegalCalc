@@ -73,6 +73,26 @@ describe('setField', () => {
 // für `plan:set` darum unerreichbar ist. W1·4 und W2·5g-ZEIT tragen `- [ ]`, waren
 // also nie betroffen. Die Zeilenangabe «ROADMAP:494» war zudem schon beim Schreiben
 // falsch (der Bullet stand auf 496) — Anker deshalb auf die stabile Form gehoben.
+describe('setField — done räumt die @queue mit (§17-Wurzel-Fix 16.8.2026, PR #530)', () => {
+  const MDQ = `<!-- @queue: W2·10, W2·6, W2·13 -->
+- [~] **6 · Konsultieren**
+  <!-- @meta id: W2·6 · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+`;
+  it('status=done entfernt genau die eigene ID aus der @queue', () => {
+    const out = setField(MDQ, 'W2·6', 'status', 'done');
+    expect(out).toContain('<!-- @queue: W2·10, W2·13 -->');
+    expect(out).toContain('status: done');
+  });
+  it('status=wip lässt die @queue unangetastet', () => {
+    const out = setField(MDQ.replace('status: wip', 'status: ready'), 'W2·6', 'status', 'wip');
+    expect(out).toContain('<!-- @queue: W2·10, W2·6, W2·13 -->');
+  });
+  it('done ohne eigenen Queue-Eintrag lässt die @queue unangetastet', () => {
+    const out = setField(MDQ.replace('W2·10, W2·6, W2·13', 'W2·10, W2·13'), 'W2·6', 'status', 'done');
+    expect(out).toContain('<!-- @queue: W2·10, W2·13 -->');
+  });
+});
+
 describe('setField — Entparken (Fund 27)', () => {
   const geparkt = (cb: string) => [
     `- ${cb} **5j-TABELLEN · X**`,

@@ -25,7 +25,12 @@ jobs:
       contents: read
       issues: write
     steps:
+      # fetch-depth: 0 — der Prod-Stand-Wächter (QS-AUTOMATIK 16.8.2026) vergleicht
+      # den ausgelieferten Build-SHA gegen origin/main. Ein flacher Klon kennt den
+      # Build-Commit oft nicht und der Wächter meldete «unbekannter Build-SHA».
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v5
         with:
           node-version: 22
@@ -44,7 +49,7 @@ jobs:
         run: |
           set -euo pipefail
           offen=$(gh issue list --state open --search 'Prod-Smoke rot in:title' --json number --jq '.[0].number // empty')
-          rumpf="Der Prod-Smoke ist rot — die Live-Site verletzt einen harten Betriebs-Vertrag (Kernroute nicht 200, Edge-Suche liefert HTML statt JSON, Sitemap/Asset weg oder CSP-Kopf fehlt). **Rückweg**: docs/betrieb/rollback-runbook.md (\`vercel rollback\`). Lauf: ${RUN_URL}"
+          rumpf="Der Prod-Smoke ist rot — die Live-Site verletzt einen harten Betriebs-Vertrag (Kernroute nicht 200, Edge-Suche liefert HTML statt JSON, Sitemap/Asset weg oder CSP-Kopf fehlt). **Neu seit 16.8.2026**: auch «Prod hinkt hinter main» — dann ist die AUSLIEFERUNG defekt, nicht die Site. Erst den Ignored Build Step und den Deployment-State in Vercel prüfen (READY statt CANCELED), nicht rollbacken. **Rückweg** bei echtem Site-Defekt: docs/betrieb/rollback-runbook.md (\`vercel rollback\`). Lauf: ${RUN_URL}"
           if [ -n "$offen" ]; then
             gh issue comment "$offen" --body "Erneut rot am $(date +%F). ${rumpf}"
           else
