@@ -325,7 +325,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   Tragende Falle: Token-Kollision `disp_u1`/`art_1` (ohne eigenen id-Raum stiller Daten-Verlust).
   **Detail:** [FAHRPLAN-NORMTEXT-DARSTELLUNG.md](fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md)
   §M13/§M14 + Resume-Hinweis.
-- [ ] **6 · Konsultieren-Klingen** *(`[OF]`, amtlich)*:
+- [ ] **6 · Konsultieren-Klingen** *(`[OF]`, amtlich)*: *(Leitsatz David 16.8.2026, dejure-Modell: **Nachweisdatenbank statt Volltextsammlung** — Fundstellen + Link auf amtliche/nichtamtliche Quelle, Anbindung entscheidsuche.ch; Detail FAHRPLAN-LESER-V3.md Kap. 14.)*
   <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung, src/lib/rechtsprechung, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, bibliothek/behoerden, src/lib/kontext.ts, src/pages/RechnerUebersicht.tsx, api/suche.ts, scripts/datenhaltung, src/components/suche, scripts/verzahnung, src/lib/verzahnung] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
   Dach der Rechtsprechungs-Fläche. **Detail + Schnitt-Begründung:**
   [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13. Vier Etiketten sind am
