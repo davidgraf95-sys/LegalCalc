@@ -277,8 +277,12 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
   // im Pane den Pane-Scroller, sonst das Fenster. `paneRoot` ist dieselbe
   // Auflösung, die auch der Artikel-Sprung benutzt (§5).
   const zumAnfang = useCallback(() => {
-    const wurzelEl = paneRoot(imPane, wurzel);
-    if (wurzelEl && wurzelEl !== document) (wurzelEl as HTMLElement).scrollTo({ top: 0, behavior: 'auto' });
+    // `paneRoot` liefert das Pane-Scrollelement oder `null` — ausserhalb eines
+    // Panes scrollt das Fenster. (Der frühere Vergleich gegen `document` war
+    // ein Typfehler: die Funktion gibt nie ein Document zurück; `tsc -b` hat
+    // ihn gefangen, `tsc --noEmit` auf der Einzeldatei nicht.)
+    const paneEl = paneRoot(imPane, wurzel);
+    if (paneEl) paneEl.scrollTo({ top: 0, behavior: 'auto' });
     else window.scrollTo({ top: 0, behavior: 'auto' });
   }, [imPane, wurzel]);
 
@@ -461,40 +465,6 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
       <LeserKopf erlass={erlass} aktArtikel={aktArtikel} fussnotenAnzahl={fussnotenAnzahl}
         stufe={stufe} gliederungKnopf={gliederungKnopf} />
 
-      {/* Erlass-Kopf: in H1 der BESTEHENDE `ErlassLeserKopf` (das Neu-Design der
-          Fakten-/Status-/Aktionen-Zeile ist Etappe S3, Kap. 4e). Er trägt Titel,
-          SR-Nummer, Stand und die Warnung «nicht konsolidiert» — damit ist NM-3
-          («Stand + Warnung erkennen») in JEDER Breite ohne Umweg erfüllt, auch
-          dort, wo die Seitenleiste ein Sheet ist. */}
-      <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
-        currency={currency?.[erlass.key]} nichtKonsolidiert={nichtKonsolidiert}
-        overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
-        hinweis="Snapshot — massgeblich ist die amtliche Fassung"
-        aktionen={
-          <>
-            <button type="button"
-              onClick={() => {
-                const ziel = naechsteInstanz(window.location.pathname + window.location.hash);
-                merkeTab(ziel, erlass.kuerzel);
-                navigate(ziel);
-                setReiterToast(true);
-                if (reiterToastTimerRef.current) window.clearTimeout(reiterToastTimerRef.current);
-                reiterToastTimerRef.current = window.setTimeout(() => setReiterToast(false), 3200);
-              }}
-              className="lc-chip hover:text-brass-700" title="Diesen Erlass zusätzlich in einem neuen Reiter öffnen">⧉ In neuem Reiter</button>
-            {erlass.pdfUrl && (
-              <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
-            )}
-          </>
-        } />
-
-      {kopf && (
-        <div className={zweiSpalten ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
-          {zweiSpalten && <div aria-hidden />}
-          <ErlassKopfBlock kopf={kopf} intern={internRefs} />
-        </div>
-      )}
-
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
           (Kap. 4b). Wiederverwendet wird die bestehende Sheet-Anatomie (Dialog-
           Rolle, Fokusfang, Esc, Portal in die Pane-Overlay-Schicht) — §5, kein
@@ -530,6 +500,45 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
           </aside>
         )}
 
+        {/* ── Rechte Zelle: Erlass-Kopf UND Lesespalte ─────────────────────
+            Der Erlass-Kopf lief bis hierher über die VOLLE Breite und schob die
+            Seitenleiste bei 1440 px auf y≈730 — also unter die Falz, obwohl sie
+            in V3 die Hauptnavigation ist (gemessen 16.8.2026 am Kontaktbogen).
+            In der Zelle beginnt das Raster direkt unter der Kopfzeile, und die
+            Gliederung steht ohne Scrollen da. Nebeneffekt: die LM-149-Dummy-
+            Zelle entfällt — `ErlassKopfBlock` zentriert sich mit derselben
+            `max-w-normtext mx-auto` wie die Lesespalte und fluchtet damit von
+            selbst (vorher musste eine leere Grid-Zelle das nachbilden). */}
+        <div className="min-w-0 space-y-5">
+        {/* Erlass-Kopf: in H1 der BESTEHENDE `ErlassLeserKopf` (das Neu-Design der
+            Fakten-/Status-/Aktionen-Zeile ist Etappe S3, Kap. 4e). Er trägt Titel,
+            SR-Nummer, Stand und die Warnung «nicht konsolidiert» — damit ist NM-3
+            («Stand + Warnung erkennen») in JEDER Breite ohne Umweg erfüllt, auch
+            dort, wo die Seitenleiste ein Sheet ist. */}
+        <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
+          currency={currency?.[erlass.key]} nichtKonsolidiert={nichtKonsolidiert}
+          overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
+          hinweis="Snapshot — massgeblich ist die amtliche Fassung"
+          aktionen={
+            <>
+              <button type="button"
+                onClick={() => {
+                  const ziel = naechsteInstanz(window.location.pathname + window.location.hash);
+                  merkeTab(ziel, erlass.kuerzel);
+                  navigate(ziel);
+                  setReiterToast(true);
+                  if (reiterToastTimerRef.current) window.clearTimeout(reiterToastTimerRef.current);
+                  reiterToastTimerRef.current = window.setTimeout(() => setReiterToast(false), 3200);
+                }}
+                className="lc-chip hover:text-brass-700" title="Diesen Erlass zusätzlich in einem neuen Reiter öffnen">⧉ In neuem Reiter</button>
+              {erlass.pdfUrl && (
+                <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
+              )}
+            </>
+          } />
+
+        {kopf && <ErlassKopfBlock kopf={kopf} intern={internRefs} />}
+
         {/* Lesespalte — Markup, Klassen und Reihenfolge byte-gleich zur
             Ist-Hülle (`inhalt-volltext.tsx`). Hier darf nichts «aufgeräumt»
             werden: `#lc-lesespalte`, `max-w-normtext` und `mx-auto` tragen das
@@ -556,6 +565,7 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
             <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">Übersicht</Link>
             {nachher ? <Link to={`/gesetze/${nachher.ebene}/${encodeURIComponent(nachher.key)}`} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
           </nav>
+          </div>
         </div>
       </div>
 
