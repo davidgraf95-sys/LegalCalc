@@ -53,6 +53,11 @@ const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 // Fassung (gemeldet in docs/ux-audit-2026-07/reader/leser-v3-vorprobe.md).
 // Mehr Deckung ist hier die sichere Richtung — nie weniger als der Fahrplan.
 const N_SPECS = [
+  // Kein N-Test, sondern der Selbsttest des Flag-Projekts: er sieht den
+  // V3-Marker POSITIV und schliesst damit aus, dass `leser-v3` still gegen V1
+  // läuft und grün ist, ohne etwas zu prüfen (§6.7). Läuft absichtlich in
+  // BEIDEN Projekten — `chromium` beweist den Grundzustand AUS (R10).
+  '**/leser-v3-flag.e2e.ts',
   '**/leser-optionen.e2e.ts',
   '**/leser-r1-r2.e2e.ts',
   '**/leser-ruecksprung-r5-r7.e2e.ts',
