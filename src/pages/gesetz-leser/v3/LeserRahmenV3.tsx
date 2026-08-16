@@ -217,10 +217,27 @@ export function LeserRahmenV3({
       {!umgebung.istXl && m.tocAuf && hatLeiste && (() => {
         const ziel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
         const sheet = (
-          <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
-            onSchliessen={() => m.setTocAuf(false)}
-            pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
-            sprungFeld={suchFeld} baum={leiste(true)} />
+          // ── H2 · DAS SHEET TRÄGT SEINE PANE-ROLLE (Befund 16.8.2026) ──────
+          // Gemessen im Split @1440 (Pane 590 px, also unter der xl-Schwelle):
+          // das Sheet wird per Portal in die Overlay-Schicht gehängt und landet
+          // dabei AUSSERHALB von `[data-pane="…"]` — die Vorfahrenkette des
+          // Suchfelds endete bei `#root`. Damit verliert die einzige Bedienung
+          // des Panes, die es in dieser Breite gibt, ihre Zugehörigkeit: von
+          // aussen ist nicht mehr zu sagen, zu welchem Pane das offene Sheet
+          // gehört — bei ZWEI offenen Sheets sind zwei identische Suchfelder
+          // ununterscheidbar nebeneinander im DOM.
+          //
+          // Das ist kein Test-Problem, sondern eine Lücke im Portal-Vertrag,
+          // und H3 hängt das Kontext-Panel in dieselbe Schicht. Die Rolle
+          // wandert darum MIT: ein Attribut an der Sheet-Wurzel, gesetzt aus
+          // derselben Quelle, aus der auch der Adress-Schreiber seine
+          // Pane-Weiche zieht (`istSekundaer`, nicht `imPane` — B1-Falle).
+          <div data-v3-pane={umgebung.istSekundaer ? 'sekundaer' : 'primaer'}>
+            <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
+              onSchliessen={() => m.setTocAuf(false)}
+              pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
+              sprungFeld={suchFeld} baum={leiste(true)} />
+          </div>
         );
         return ziel ? createPortal(sheet, ziel) : sheet;
       })()}

@@ -40,22 +40,83 @@
 // Läufe im selben Browser — der einzige Unterschied ist das Hüllen-Flag.
 import { test, expect, type Page } from '@playwright/test'
 
-/** Ruhe vor dem Bild: Animationen aus, Schriften geladen, Layout gesetzt. */
+/**
+ * Ruhe vor dem Bild: Animationen aus, Schriften geladen, Layout gesetzt.
+ *
+ * DER SPRUNG-PULS MUSS WEG — sonst misst PX ihn statt des Textes. Der
+ * Anker-Sprung (`#art-…`) legt `lc-ziel-blink` auf den Zielartikel und nimmt
+ * sie erst nach 2400 ms zurück. Beim ersten Lauf mit erzwungen gleicher Breite
+ * blieben genau daran 40 276 Pixel (ratio 0.05) Unterschied hängen, obwohl
+ * Inhalt und Geometrie beider Hüllen NACHWEISLICH identisch waren: Höhe 1526 px,
+ * `font-size` 16 px, `line-height` 25.6 px, 8 Fussnoten-Marker, 1 Apparat,
+ * dieselben Optionen `an/fussnoten/an`, 3145 Zeichen Text — in V1 wie in V3.
+ * Die Hüllen unterschieden sich nur darin, WANN der Puls relativ zum Bild
+ * verklungen war.
+ *
+ * Darum beides: die Klasse aktiv entfernen UND lange genug warten. Die Klasse
+ * nur zu entfernen genügte nicht, weil der Timer sie nicht neu setzt, ein
+ * später eintreffender zweiter Sprung aber schon.
+ */
 async function beruhige(page: Page) {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.evaluate(() => document.fonts.ready)
   // Der Reader lädt Bezugs-/Historie-Shards nach; ein Bild davor zeigte einen
-  // Zwischenstand und wäre für sich schon flakig.
-  await page.waitForTimeout(1500)
+  // Zwischenstand und wäre für sich schon flakig. 2600 ms deckt zusätzlich die
+  // 2400-ms-Lebensdauer des Sprung-Pulses ab.
+  await page.waitForTimeout(2600)
+  await page.evaluate(() => {
+    for (const el of document.querySelectorAll('.lc-ziel-blink')) el.classList.remove('lc-ziel-blink')
+  })
 }
+
+/**
+ * Breite, auf die BEIDE Hüllen für die Messung gezwungen werden.
+ *
+ * ENTSCHEID 16.8.2026: PX misst bei GLEICHER Spaltenbreite. Der erste scharfe
+ * Lauf hatte gezeigt, dass V1 und V3 den Artikel unterschiedlich breit setzen
+ * (874 gegen 691 px Spalte, 744 gegen 561 px Artikel) — und dass das kein
+ * Treue-Bruch ist, sondern der beabsichtigte Satzspiegel der neuen Hülle
+ * (18-rem-Seitenleiste, seit Ä2 zusätzlich 40 rem Lesemass).
+ *
+ * Ein Tor, das beides zugleich misst, misst nichts Brauchbares: jede
+ * Layout-Entscheidung risse es mit, und niemand könnte mehr unterscheiden, ob
+ * sich der WORTLAUT verschoben hat oder nur die Spalte. PX beweist darum ab
+ * jetzt den TEXT-KERN — Schrift, Laufweite, Einzüge, Absatzabstände,
+ * Fussnoten-Apparat — und ausdrücklich NICHT den Satzspiegel. Der ist eine
+ * Gestaltungsfrage und hat mit Ä2 seine eigene Entscheidung bekommen.
+ *
+ * Erzwungen wird die Breite am Artikel-Knoten selbst statt über das Fenster:
+ * die Spaltenbreite hängt in V3 von Seitenleiste und Klapp-Zustand ab, ein
+ * Viewport-Wert träfe sie also nur zufällig. `!important`, weil der Container
+ * seine Breite über eine Utility-Klasse setzt.
+ */
+const MESS_BREITE_PX = 640
 
 async function artikelBild(page: Page, pfad: string, artId: string) {
   await page.setViewportSize({ width: 1440, height: 900 })
   await page.goto(pfad)
   const art = page.locator(`#${artId}`)
   await expect(art).toBeAttached({ timeout: 30_000 })
+
+  // Beide Hüllen auf dieselbe Artikelbreite zwingen — VOR dem Beruhigen, damit
+  // die Zeilenumbrüche im gemessenen Zustand entstehen.
+  await page.evaluate(({ id, breite }) => {
+    const el = document.getElementById(id)
+    if (el) el.style.setProperty('width', `${breite}px`, 'important')
+    // Auch den Lesespalten-Container klemmen: er trägt das Lesemass, und ein
+    // breiterer Elternknoten liesse Randabstände anders auflösen.
+    const spalte = document.getElementById('lc-lesespalte')
+    if (spalte) spalte.style.setProperty('max-width', `${breite}px`, 'important')
+  }, { id: artId, breite: MESS_BREITE_PX })
+
   await art.scrollIntoViewIfNeeded()
   await beruhige(page)
+
+  // Beweis, dass die Klemme wirklich griff — sonst verglichen wir wieder zwei
+  // verschiedene Breiten und merkten es nicht (§6.7).
+  const breite = await art.evaluate((el) => Math.round(el.getBoundingClientRect().width))
+  expect(breite, `Artikelbreite ${breite} px statt ${MESS_BREITE_PX} px — die Mess-Klemme greift nicht`)
+    .toBe(MESS_BREITE_PX)
   return art
 }
 
@@ -101,25 +162,28 @@ const FAELLE = [
 // Damit ist jede Hülle gegen ihre EIGENE Drift geschützt — ein Refactoring, das
 // den Wortlaut verschiebt, fällt sofort auf. Was es NICHT mehr behauptet, ist
 // die Gleichheit der beiden untereinander; die steht unter Entscheid.
-test.describe('A-7 · PX — Textkörper je Hülle gegen Drift', () => {
+test.describe('A-7 · PX — der Text-Kern ist in V1 und V3 pixelgleich', () => {
   for (const f of FAELLE) {
-    test(`${f.name}: V1-Textkörper unverändert`, async ({ page }) => {
+    test(`${f.name}: V3-Artikel gleicht bei gleicher Breite der V1-Baseline`, async ({ page }) => {
       test.slow()
-      const art = await artikelBild(page, f.v1, f.id)
-      await expect(art).toHaveScreenshot(`${f.name}-v1.png`, {
+
+      // Schritt 1 — V1 ist die BASELINE: der eingefrorene Ist-Zustand.
+      const artV1 = await artikelBild(page, f.v1, f.id)
+      await expect(artV1).toHaveScreenshot(`${f.name}.png`, {
         // maxDiffPixelRatio statt maxDiffPixels: die Artikel sind
-        // unterschiedlich hoch, ein absoluter Wert wäre für den kurzen Artikel
-        // streng und für den langen lax.
+        // unterschiedlich hoch, ein absoluter Wert wäre für den kurzen streng
+        // und für den langen lax.
         maxDiffPixelRatio: 0.001,
         animations: 'disabled',
         caret: 'hide',
       })
-    })
 
-    test(`${f.name}: V3-Textkörper unverändert`, async ({ page }) => {
-      test.slow()
-      const art = await artikelBild(page, f.v3, f.id)
-      await expect(art).toHaveScreenshot(`${f.name}-v3.png`, {
+      // Schritt 2 — V3 muss DIESELBE Baseline treffen. Derselbe Dateiname ist
+      // der ganze Test: zwei getrennte Bilder zu pflegen hiesse, zwei
+      // Baselines zu haben, von denen jede für sich grün bleibt, während sie
+      // auseinanderlaufen (§6.7 — ein Tor, das nicht scheitern kann).
+      const artV3 = await artikelBild(page, f.v3, f.id)
+      await expect(artV3).toHaveScreenshot(`${f.name}.png`, {
         maxDiffPixelRatio: 0.001,
         animations: 'disabled',
         caret: 'hide',
