@@ -1,4 +1,6 @@
 {
+  "git": { "deploymentEnabled": false },
+  "buildCommand": "npm run build",
   "ignoreCommand": "sh scripts/vercel-ignore.sh",
   "cleanUrls": true,
   "trailingSlash": false,
