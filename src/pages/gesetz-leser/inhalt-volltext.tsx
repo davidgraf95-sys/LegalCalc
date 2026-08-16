@@ -51,7 +51,7 @@ export function LeserVolltextInhalt({
   bezugHistogramm, bezugBereich,
   reiterToast, setReiterToast, reiterToastTimerRef,
   tocDrawerRef, leseRef, navigate,
-  kennzahlen = null, kantonErlassAnzahl = null, nichtKonsolidiert = false,
+  kennzahlen = null, kantonErlassAnzahl = null, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
   artikelKontext = null,
 }: {
   erlass: BrowseErlass;
@@ -152,6 +152,10 @@ export function LeserVolltextInhalt({
   kantonErlassAnzahl?: number | null;
   /** S6: mindestens eine in Kraft getretene Änderung ist nicht konsolidiert. */
   nichtKonsolidiert?: boolean;
+  /** S3/F5: frühestes Inkrafttreten unter den nicht konsolidierten Änderungen
+   *  (ISO) — der Zeitbezug des Klartextsatzes im Erlass-Kopf. `null` = Datum
+   *  nicht bekannt; die Warnung erscheint dann ohne Datum (§8). */
+  nichtKonsolidiertSeit?: string | null;
   /** W2·19-GLIEDERUNG/S7: Wegweiser zum aktiv gelesenen Artikel — geht als
    *  eigene, hart gegatete Prop ins KontextPanel (nie über `artikelZitate`,
    *  Bau-Spec §5.2). `null` = keine Gruppe. */
@@ -337,8 +341,12 @@ export function LeserVolltextInhalt({
           → PaneKopf. Kein zweiter Inline-Breadcrumb mehr (sonst Dopplung im Pane).
           G2b: EINE Kopf-Komponente (ErlassLeserKopf) — dieselbe wie im pdf-embed-
           Pfad; sie trägt die Options-Leiste (Fussnoten/Verweise). */}
+      {/* S3: `kennzahlen` speist die Anhang-Dominanz der Fakten-Zeile («Einträge»
+          statt «Artikel») — dieselbe Kennzahl, die die Erlass-Übersicht schon
+          bekommt (§5). Tatsache und Datum reisen als zwei getrennte Props. */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort} currency={currency?.[erlass.key]}
-        nichtKonsolidiert={nichtKonsolidiert}
+        kennzahlen={kennzahlen}
+        nichtKonsolidiert={nichtKonsolidiert} nichtKonsolidiertSeit={nichtKonsolidiertSeit}
         overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
         hinweis="Snapshot — massgeblich ist die amtliche Fassung"
         aktionen={

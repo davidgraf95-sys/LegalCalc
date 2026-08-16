@@ -871,6 +871,32 @@
      --warn-500 in html.dark bewusst NICHT überschrieben (Tick-Kontrast gehalten). */
   .lc-chip-geltend { border-left-color: var(--sage-500); }
   .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
+  /* Aktionen-Zeile des Erlass-Kopfs (W2·5m-LESER-V3 · S3, Skizze Kap. 4e).
+     Der Kopf zeigt seine Aktionen als ruhige Text-Links mit Icon + Label statt
+     als Chip-Kästen (Ästhetik-Urteil Ä6: «5–6 Chips mit Brass-Kante in Mono»).
+     Die Knöpfe kommen aber als `aktionen`-SLOT aus drei Aufrufern — einer davon
+     liegt in fremder Bauhand (V3-Hülle, Etappe H2) — und tragen dort `.lc-chip`.
+     Statt drei Aufrufer umzubauen, wird die Chip-ANATOMIE hier für genau diese
+     Zeile neutralisiert; der Slot-Vertrag bleibt unverändert.
+     AUSDRÜCKLICH NICHT zurückgesetzt wird `min-height: var(--tap-ziel)`: das
+     Trefferziel ist a11y-Pflicht und wird in e2e/a11y gemessen (F2b) — eine
+     ruhigere Optik darf es nie kaufen. Farbe brass-700 + Unterstreichung bei
+     Hover/Fokus wie in der Erlass-Übersicht (§5, dieselbe Aktions-Grammatik);
+     der Fokusring kommt unverändert vom globalen :focus-visible. */
+  .lc-kopf-aktionen .lc-chip {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    color: var(--brass-700);
+    gap: 4px;
+  }
+  .lc-kopf-aktionen .lc-chip:hover,
+  .lc-kopf-aktionen .lc-chip:focus-visible { text-decoration: underline; }
   /* Selected-Zustand für Toggle-Chips (W2·17-UI-BEFUNDE-B1, LM-040 · F4
      «selected»): der gewählte Chip einer Facetten-Reihe muss OHNE Farbvergleich
      erkennbar sein — vorher trug er nur eine Rahmen-/Textfarbnuance auf

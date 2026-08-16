@@ -59,7 +59,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer, nichtKonsolidiert,
+    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
   } = useLeserZustand();
   const {
     offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
@@ -528,7 +528,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         tocDrawerRef={tocDrawerRef} leseRef={leseRef} navigate={navigate}
         // W2·19-GLIEDERUNG/S6: Zone-C-Sockel (Erlass-Übersicht) + Kopf-Warnung.
         kennzahlen={modell.kennzahlen} kantonErlassAnzahl={kantonErlassAnzahl}
-        nichtKonsolidiert={nichtKonsolidiert}
+        nichtKonsolidiert={nichtKonsolidiert} nichtKonsolidiertSeit={nichtKonsolidiertSeit}
         // W2·19-GLIEDERUNG/S7: Wegweiser zur Leseposition (eigene, gegatete Prop).
         artikelKontext={artikelKontext}
       />

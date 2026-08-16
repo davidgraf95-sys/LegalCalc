@@ -82,6 +82,11 @@ export interface LeserV3Modell {
   fussnotenAnzahl: number | null;
   kantonErlassAnzahl: number | null;
   nichtKonsolidiert: boolean;
+  /** S3/F5-Nachzug: ISO-Datum des frühesten nicht konsolidierten Inkrafttretens
+   *  (`null` = unbekannt). Ohne dieses Feld zeigte der V3-Kopf den F5-Satz ohne
+   *  Zeitbezug, während die Ist-Hülle «seit 01.07.2025» nannte — zwei Hüllen,
+   *  zwei Aussagen über denselben Sachverhalt (§5). */
+  nichtKonsolidiertSeit: string | null;
   vorher: BrowseErlass | null;
   nachher: BrowseErlass | null;
 
@@ -188,7 +193,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
     manifest, setManifest, currency, setCurrency,
-    bezuegeFuer, revisionFuer, historieFuer, nichtKonsolidiert,
+    bezuegeFuer, revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
     // Als `…Ref` benannt: die Lint-Regel `react-hooks/immutability` erkennt
     // einen Ref am Namen, und dieser wird beschrieben.
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer: reiterToastTimerRef,
@@ -368,7 +373,8 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     modell: {
       erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys,
       sektionen, ohneGliederung, gliederung, alleKnotenIds,
-      gliederungsTiefe, fussnotenAnzahl, kantonErlassAnzahl, nichtKonsolidiert, vorher, nachher,
+      gliederungsTiefe, fussnotenAnzahl, kantonErlassAnzahl, nichtKonsolidiert, nichtKonsolidiertSeit,
+      vorher, nachher,
       sekPos, artIndex, sektionMeta, margAnzeige, internRefs,
       bezuegeFuer, revisionFuer, historieFuer,
       aktArtikel, aktivToken, artTokens, aktivIds, offen, setOffen, tocBaum, setTocBaum,
