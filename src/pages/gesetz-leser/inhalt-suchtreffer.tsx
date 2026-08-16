@@ -6,7 +6,7 @@ import type { InternRefs } from '../../components/NormText';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import {
-  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges,
+  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, neueHighlightInstanz,
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
@@ -82,6 +82,16 @@ export function useSuchTreffer({
   // vollständig bleibt, ist es die Lesespalte selbst.
   const leseRef = useRef<HTMLDivElement | null>(null);
 
+  // ─── QS-UI-HIGHLIGHT: EINE Registry-Identität je Leser-Instanz ─────────────
+  // Der Hook läuft je Pane einmal; diese Identität ist damit genau die
+  // «Registry je Leser-Instanz», die der Roadmap-Schritt verlangt. Sie steckt
+  // in `useState` mit LAZY-Initialisierer, weil nur der eine über die ganze
+  // Lebensdauer der Instanz stabile Wert zusagt — ein `useMemo` darf React
+  // verwerfen, und ein neu gezogenes Symbol hiesse: die alte Buchungszeile
+  // bliebe stehen und die Markierung des eigenen Panes doppelte sich.
+  // Der Setter wird nie gerufen; das Symbol ist von Geburt an unveränderlich.
+  const [highlightInstanz] = useState(() => neueHighlightInstanz('gesetz-leser'));
+
   // ─── Ansicht-Schalter beobachten ───────────────────────────────────────────
   // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
   // («KEIN Artikel-Re-Render», leserOptionen.ts) — sie in React-State zu ziehen
@@ -134,8 +144,8 @@ export function useSuchTreffer({
   const male = useCallback(() => {
     const alle: Range[] = [];
     for (const rs of rangesRef.current.values()) alle.push(...rs);
-    setzeSuchHighlightRanges(alle);
-  }, []);
+    setzeSuchHighlightRanges(alle, highlightInstanz);
+  }, [highlightInstanz]);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     // `leseWurzel` statt `wurzel`: seit B7 trägt die Prop `wurzel` den
@@ -144,7 +154,7 @@ export function useSuchTreffer({
     const leseWurzel = leseRef.current;
     rangesRef.current = new Map();
     if (!sucheAktiv || !leseWurzel || typeof IntersectionObserver === 'undefined') {
-      setzeSuchHighlight(null, '');
+      setzeSuchHighlight(null, '', highlightInstanz);
       return;
     }
     const beob = new IntersectionObserver((eintraegeIo) => {
@@ -175,7 +185,7 @@ export function useSuchTreffer({
     return () => {
       beob.disconnect();
       rangesRef.current = new Map();
-      setzeSuchHighlight(null, '');
+      setzeSuchHighlight(null, '', highlightInstanz);
     };
     // `ansichtTick`: ein Ansicht-Toggle ändert die MALBARKEIT (Fussnoten-Apparat
     // display:none) — die Ranges müssen dann neu entstehen (RV6).
@@ -185,7 +195,7 @@ export function useSuchTreffer({
     // unmarkiert — der Leser sah einen Treffer-Artikel ohne eine einzige
     // leuchtende Stelle (§8). Der Scroll-Spy führt `offen` aus genau diesem Grund
     // schon in seiner Liste (inhalt-hooks.tsx).
-  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male]);
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male, highlightInstanz]);
 
   // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
   // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.
@@ -342,8 +352,8 @@ export function useSuchTreffer({
   // Erlass-/Pane-Wechsel). Der Effekt oben bleibt der einzige SETZENDE Pfad.
   useEffect(() => {
     if (typeof window === 'undefined' || !sucheFeldLeer) return;
-    setzeSuchHighlight(null, '');
-  }, [sucheFeldLeer]);
+    setzeSuchHighlight(null, '', highlightInstanz);
+  }, [sucheFeldLeer, highlightInstanz]);
 
   return {
     leseRef, treffer, artikelAnzahl, fundstellen, fussnotenAus,

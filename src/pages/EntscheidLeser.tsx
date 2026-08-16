@@ -19,6 +19,7 @@ import { normalisiereRegeste, type BrowseEntscheid, type RichterRef } from '../l
 import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
 import {
+  ENTSCHEID_HIGHLIGHT_INSTANZ,
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
   trefferInErwaegungen, urlMitHash, urlMitLese, zaehleNennungen, zaehleTreffer,
 } from './entscheidLeserRegeln';
@@ -466,7 +467,12 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   useEffect(() => {
     if (zustand !== 'da' || lese) { loescheNennungen(); return; }
     if (suche.trim() !== '') {
-      setzeSuchHighlight(koerperRef.current, suche);
+      // DIESELBE Instanz wie `maleNennungen`/`loescheNennungen`: dadurch ERSETZT
+      // die Suche die Nennungs-Menge, statt neben ihr zu stehen — «Suche schlägt
+      // Herkunfts-Nennung» bleibt Zeile für Zeile das erklärte Verhalten.
+      // QS-UI-HIGHLIGHT ändert daran nichts; es verhindert nur, dass dieser
+      // Leser beim Aufräumen die Markierung FREMDER Panes mitnimmt.
+      setzeSuchHighlight(koerperRef.current, suche, ENTSCHEID_HIGHLIGHT_INSTANZ);
       return () => loescheNennungen();
     }
     if (!normParam) { loescheNennungen(); return; }
