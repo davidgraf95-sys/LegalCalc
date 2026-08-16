@@ -2,14 +2,23 @@
  * G-AUFH · Reader-Kopf zeigt aufgehobene Erlasse §8-ehrlich:
  *   • Status-Banner «Aufgehoben per …» (Design-Token danger, kein Ad-hoc-Rot),
  *   • Nachfolger-Link + amtlicher (aufgehobener) Link,
- *   • KEIN irreführendes «geltend geprüft»/«geltende Fassung» mehr.
+ *   • KEIN irreführender Standausweis/«geltende Fassung» mehr.
  * Geltende Erlasse bleiben unverändert (kein Banner).
+ *
+ * NEU GEFASST W2·5m-LESER-V3/S3 (Entscheid F5, David 16.8.2026): der
+ * Standausweis heisst nicht mehr «geltend geprüft am …», sondern «gegen
+ * Fedlex-Konsolidierung geprüft am … (maschinell)». Das ist eine deklarierte
+ * FACHLICHE Änderung, kein Refactoring (§6.3) — die Erwartung wird darum
+ * angepasst, nicht der Code gebogen. Der erwartete String wird aus der EINEN
+ * Quelle geholt (`standausweisSatz`), damit der Test die Kopplung prüft statt
+ * eine zweite Kopie des Wortlauts zu werden (§5).
  */
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { ErlassLeserKopf } from '../pages/gesetz-leser/parts/ErlassLeserKopf';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { CurrencyEintrag } from '../lib/normtext/browse';
+import { standausweisSatz } from '../lib/normtext/erlassKopfText';
 
 const basis: BrowseErlass = {
   key: 'BMV', ebene: 'bund', kanton: null, kuerzel: 'BMV',
@@ -51,17 +60,23 @@ describe('ErlassLeserKopf — Aufhebungs-Banner', () => {
     expect(out).toContain('amtliche (aufgehobene) Fassung');
   });
 
-  it('unterdrückt «geltend geprüft» und «geltende Fassung» bei aufgehobenem Erlass (§8)', () => {
+  it('unterdrückt Standausweis und «geltende Fassung» bei aufgehobenem Erlass (§8)', () => {
     const out = html(aufgehoben, currency);
-    expect(out).not.toContain('geltend geprüft');
+    expect(out).not.toContain('Fedlex-Konsolidierung geprüft');
     expect(out).not.toContain('geltende Fassung');
+    // Der alte Wortlaut darf auch nicht als Rest zurückkommen.
+    expect(out).not.toContain('geltend geprüft');
   });
 
-  it('geltender Erlass: kein Banner, «geltend geprüft» bleibt sichtbar', () => {
+  it('geltender Erlass: kein Banner, Standausweis bleibt sichtbar (F5-Wortlaut)', () => {
     const out = html(basis, currency);
     expect(out).not.toContain('lc-notice-danger');
     expect(out).not.toContain('Aufgehoben per');
-    expect(out).toContain('geltend geprüft');
+    expect(out).toContain(standausweisSatz('2026-07-10'));
     expect(out).toContain('geltende Fassung');
+    // §7/§8: «(maschinell)» bleibt tragend, kein Verifikations-Wortfeld.
+    expect(out).toContain('(maschinell)');
+    expect(out).not.toContain('verifiziert');
+    expect(out).not.toContain('gegengeprüft');
   });
 });

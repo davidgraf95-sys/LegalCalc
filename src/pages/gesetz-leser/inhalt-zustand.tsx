@@ -10,7 +10,9 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
-import { revisionenFuerNorm } from '../../lib/normtext/revisionen';
+import {
+  fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
+} from '../../lib/normtext/revisionen';
 import { klappZeile } from './tocAutoZuklappen';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
@@ -134,17 +136,43 @@ export function useLeserZustand() {
   // ABGELEITET (dasselbe Muster wie im KontextPanel): so steht beim Erlass-/
   // Pane-Wechsel nie eine fremde Aussage, OHNE dass im Effekt-Rumpf synchron
   // gesetzt werden müsste (react-hooks/set-state-in-effect, Kaskaden-Render).
-  const [konsGeladen, setKonsGeladen] = useState<{ key: string; wert: boolean } | null>(null);
+  //
+  // S3 (F5) verschärft das an zwei Stellen:
+  //
+  //  (a) DATUM: der Klartextsatz im Erlass-Kopf nennt, SEIT WANN die Änderung
+  //      gilt. Der Effekt legt darum die Inkrafttretens-Daten der offenen
+  //      Revisionen ab, nicht nur ein Ja/Nein.
+  //  (b) STICHTAG: `nichtKonsolidiert` markiert alles, was NACH dem Korpus-Stand
+  //      in Kraft tritt — also auch rein KÜNFTIGE Änderungen (gemessen 16.8.2026:
+  //      66 Erlasse mit Marker, davon nur 4 mit einer bereits geltenden Änderung,
+  //      der späteste Marker auf 2034). Als «gilt schon, fehlt aber im Text»
+  //      darf nur zählen, was am letzten maschinellen Fedlex-Abgleich
+  //      (`currency.geprueftAm`) bereits in Kraft war — Begründung und §2-Beleg
+  //      in `fruehestesInKraft`. Angekündigtes trägt weiterhin sein eigenes,
+  //      korrektes Wortfeld «nächste Fassung ab …».
+  //
+  // Die Ableitung steht bewusst NICHT im Effekt: der Stichtag kommt aus dem
+  // Currency-Sidecar, der unabhängig eintrifft. Rohdaten im State, Aussage im
+  // Render — so braucht der Effekt keine zweite Dependency und kann nicht mit
+  // einem veralteten Stichtag zurückbleiben.
+  const [konsGeladen, setKonsGeladen] = useState<{ key: string; offen: string[] } | null>(null);
   useEffect(() => {
     const key = erlass?.key;
     if (!key) return;
     let lebt = true;
     void revisionenFuerNorm([key]).then((ans) => {
-      if (lebt) setKonsGeladen({ key, wert: !!ans?.revisionen.some((r) => r.nichtKonsolidiert) });
+      if (lebt) setKonsGeladen({ key, offen: nichtKonsolidierteInkrafttreten(ans?.revisionen) });
     });
     return () => { lebt = false; };
   }, [erlass?.key]);
-  const nichtKonsolidiert = !!erlass && konsGeladen?.key === erlass.key && konsGeladen.wert;
+  const nichtKonsolidiertSeit = erlass && konsGeladen?.key === erlass.key
+    ? fruehestesInKraft(konsGeladen.offen, currency?.[erlass.key]?.geprueftAm)
+    : null;
+  // Ein Ja/Nein bleibt für die Verbraucher erhalten, die kein Datum zeigen
+  // (Erlass-Übersicht, V3-Modell) — es ist jetzt DASSELBE Urteil wie im Kopf,
+  // nicht mehr der ungefilterte Marker. Vorher hätte die Übersicht bei 66 statt
+  // 4 Erlassen «In Kraft getretene Änderung …» behauptet (§8).
+  const nichtKonsolidiert = nichtKonsolidiertSeit !== null;
   // G-HIST-UI: Artikel-Token → Fassungshistorie des AKTUELLEN Erlasses (sonst
   // undefined = kein Badge). Direkter Roh-Token-Lookup (Snapshot/Shard gleiche
   // Extraktion). Stabile Referenz aus dem Shard → memo-freundlich.
@@ -160,7 +188,7 @@ export function useLeserZustand() {
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer, nichtKonsolidiert,
+    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
   };
 }
 

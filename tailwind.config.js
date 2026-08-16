@@ -171,7 +171,39 @@ export default {
       // Viewport (Nullprobe 25.7.: FOOTER-Shift ~0.0496 unter Drossel 6×;
       // Beweis e2e/gesetze-footer-cls.e2e.ts). svh = kleinste Viewport-Höhe
       // (mobil stabil). Reserviert nur Platz, versteckt/kürzt nichts (§15.2).
-      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)' },
+      // `kopf-stand*` (W2·5m-LESER-V3 · S3, §15.2): die Zelle im Erlass-Kopf, die
+      // Stand-Zeile UND Status-/Warnzeile trägt. Beide Aussagen treffen erst NACH
+      // dem ersten Paint ein (Currency- bzw. Revisions-Sidecar) und sind
+      // unterschiedlich lang — ohne Reservierung schiebt der Nachzügler den
+      // Lesekörper nach unten. Genau dieser Shift wurde am 9.8.2026 gemessen
+      // (CLS 0.0227, e2e/leser-kontext-e4), als die Warnung noch ein eigener
+      // Block war. Die frühere Abwehr «beide Fassungen sind gleich lang» trägt
+      // nicht mehr: F5 verlangt einen Klartextsatz mit Datum, rund dreimal so
+      // lang wie der Grundhinweis. An ihre Stelle tritt eine feste Höhe.
+      // WERTE GEMESSEN, nicht geschätzt (Playwright, e2e/leser-kopf-s3-belege;
+      // Endzustand des ungünstigsten Erlasses je Fenster, Zeilenhöhe 16.5 px +
+      // 4 px space-y-1), aufgerundet auf die nächste halbe Pixelstufe in rem:
+      //   < 640   STPO 86.5 px (2 Zeilen Stand + 3 Zeilen Warnung) → 5.4375rem
+      //   ≥ 640   STPO 70   px (2 + 2)                             → 4.375rem
+      //   ≥ 768   OR   53.5 px (2 + 1 — OR hat die längste Stand-Zeile:
+      //                         Inkrafttreten 1912 + Ausweis + Vorbehalt) → 3.375rem
+      // OBERHALB 768 KEIN weiterer Schritt — Nachzug 16.8.2026, Prüferbefund:
+      // ein `xl`-Schritt auf 2.3125rem (37 px) passte NUR zur Ist-Hülle, die ab
+      // 1280 die volle Fensterbreite hat. Die V3-Hülle stellt den Kopf in eine
+      // Spalte NEBEN der Seitenleiste; sie misst @1280 nur 656 px und deckelt
+      // auch @1440/@1600 bei 752 px, wo OR weiterhin 53.5 px braucht. Der
+      // xl-Schritt hätte dort bei jedem Nachschub 16.5 px Sprung erzeugt —
+      // also genau den Shift, gegen den die Reservierung gebaut ist. 17 px
+      // Reserve in der breiten Ist-Hülle sind der richtige Preis dafür, zumal
+      // V3 mit H4 die Hauptroute wird. Gemessen in BEIDEN Hüllen (v1: 1280/1440
+      // = 37 px bei 976/1072 px Spaltenbreite; v3: 53.5 px bei 656/752 px).
+      // Reserviert nur Platz, versteckt/kürzt nichts (§15/2, §8: der volle
+      // Wortlaut steht immer). In der Tailwind-Skala und NICHT als
+      // `min-height`-Regel in index.css — das ist die Hausform für
+      // Höhen-Reservierungen (`titel-2z`, `hist-zeile`, `inhalt-region`), und
+      // `src/tests/tap-ziel-token.test.ts` hält index.css frei von rohen
+      // min-height-Zahlen (F9: dort gehört nur var(--tap-ziel) hin).
+      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

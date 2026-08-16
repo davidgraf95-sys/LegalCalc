@@ -315,12 +315,19 @@ export function LeserRahmenV3({
             H1 über die VOLLE Breite und schob die Seitenleiste bei 1440 px
             unter die Falz — obwohl sie in V3 die Hauptnavigation ist. */}
         <div className="min-w-0 space-y-5">
-          {/* In H1 der BESTEHENDE Erlass-Kopf; sein Neu-Design ist S3 (Kap. 4e).
-              Er trägt Titel, SR-Nummer, Stand und die Warnung «nicht
-              konsolidiert» — damit ist «Stand + Warnung erkennen» in JEDER
-              Breite ohne Umweg erfüllt, auch dort, wo die Leiste ein Sheet ist. */}
+          {/* Der geteilte Erlass-Kopf, seit S3 im Neu-Design (Kap. 4e): Titel ·
+              Fakten · Stand+Status · Aktionen. Er trägt Stand und die Warnung
+              «nicht konsolidiert» — damit ist «Stand + Warnung erkennen» in
+              JEDER Breite ohne Umweg erfüllt, auch dort, wo die Leiste ein
+              Sheet ist.
+              S3-Nachzug: `kennzahlen` ist dieselbe Kennzahl, die die
+              Erlass-Übersicht daneben schon bekommt (§5) — sie speist die
+              Anhang-Dominanz («Einträge» statt «Artikel»); `nichtKonsolidiertSeit`
+              gibt der Warnung ihren Zeitbezug. Ohne beides sagte der V3-Kopf
+              weniger als der Ist-Kopf, obwohl es dieselbe Komponente ist. */}
           <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
             currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
+            kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
             overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet(erlass, m.kantonSys))}
             hinweis="Snapshot — massgeblich ist die amtliche Fassung"
             aktionen={

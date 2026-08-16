@@ -722,6 +722,51 @@ legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
 | **S3** | Erlass-Kopf + Standausweis-Wortlaut (Pos. 11, 18) | **F5 «ja»** | 3 Vitest + 1 e2e-Wortlaut; `aufhebung-kopf` bleibt grün | UI-Kopf und prerenderter SEO-Kopf tragen **denselben** neuen Wortlaut, und die Warnung erscheint genau bei den fünf betroffenen Erlassen. | **S/M** |
 | **S4** ✅ | Sortierung der Suchtreffer auf Erlass-Reihenfolge — **erledigt 16.8.2026 mit H2** (deklarierte Verhaltensänderung, wirkt in beiden Hüllen) | keine | Vitest an der Sortierfunktion; `leser-r1-r2`, `leser-suche-vertrag-b8` bleiben grün | Die Sortierfunktion liefert Dokumentreihenfolge als Primärschlüssel, bewiesen ohne Browser. | **S** |
 
+### ✅ Vollzugsvermerk S3 (16.8.2026, Branch `feat/leser-v3-s3`)
+
+**Gebaut.** Erlass-Kopf nach Skizze 4e in vier Bänder getrennt (Titel · Fakten ·
+Stand+Status · Aktionen), Chip-Optik weg, Standausweis-Wortlaut nach **F5**.
+Wirkt in BEIDEN Hüllen (geteilte Komponente `ErlassLeserKopf`).
+
+| Zusage | Nachweis |
+|---|---|
+| §5-Einheit UI ↔ prerenderter SEO-Kopf | EIN Wortlaut-Modul `src/lib/normtext/erlassKopfText.ts`; Vitest sucht den String der einen Seite im Dokument der anderen. Nebenbefund behoben: die zwei Templates waren im DATUMSFORMAT bereits auseinander (UI `14.08.2026`, Prerender `2026-08-14`) — darum liegt auch die Datumsform dort, `formatiereDatum` ist ihre Fassade |
+| F5-Wortlaut live | `dist/`: 224 Bund-Erlass-Seiten tragen «gegen Fedlex-Konsolidierung geprüft am …», der alte Wortlaut hat **null** Treffer im ganzen `dist/` |
+| Warnung genau bei zutreffendem Fall | s. §7-Korrektur unten |
+| Anhang-Dominanz | `zaehlWort()` ab 90 % Anhang «Einträge»; im V2-Baum verdrahtet, V3 s. offene Punkte |
+| CLS | Kopf-Zelle höhenfest `.lc-kopf-stand` (vier gemessene Fenster-Werte in `index.css`). Gemessen 0.0216 @390 · 0.0060 @1280 für die GANZE Seite; die Shift-Quellen liegen laut `layout-shift`-`sources` im Seiten-Chrom, nicht im Kopf. Nullprobe auf Seiten ohne diesen Kopf, gleicher Lauf: `/gesetze` 0.31/0.73, `/rechtsprechung` 2.15/2.19 |
+| Kantons-Probe | BS-640.100 hell+dunkel, Desktop+Mobil: kein Standausweis (kein `geprueftAm`), «Paragraphen», keine leeren Trenner; axe grün |
+| Belege | `docs/ux-audit-2026-07/reader/leser-v3-s3/` — 16 Kopf-Screenshots (StPO mit Warnung · OR ohne · VMWG Verordnung · BS-Kantonserlass, je Desktop/Mobil × hell/dunkel) |
+
+**§7-Korrektur beim Bau — abweichend umgesetzt und offengelegt.** Der erste
+Bau warnte bei jeder als `nichtKonsolidiert` markierten Revision. Ein
+e2e-Fehlschlag auf OR deckte auf, dass der Marker «tritt später in Kraft als der
+Korpus-Stand» bedeutet und damit auch **rein künftige** Änderungen umfasst.
+Gemessen über alle 227 Sidecars: **66** Erlasse mit Marker, aber nur **4** mit
+einer bereits geltenden Änderung; spätester Marker **2034-01-01**. Der Satz
+«Fedlex hat eine seit 01.01.2034 geltende Änderung noch nicht eingearbeitet»
+wäre eine falsche Tatsachenbehauptung (§1/§8). Dieser Fahrplan verlangt den
+Filter oben («`dateEntryInForce ≤ heute`», Pos. 11/18) — der erste Bau hatte ihn
+übersehen. Gefiltert wird gegen einen **datengetragenen Stichtag**
+(`currency.geprueftAm`), nicht gegen eine Uhr: kein `Date.now()`, prerender-stabil
+(§2). Ergebnis = exakt die hier genannte Menge (FZA, STPO, TXG, BGG; BMV
+unterdrückt bereits die Aufhebungs-Regel). Das gefilterte Ja/Nein gilt **auch für
+die Erlass-Übersicht und die V3-Hülle** — sie hätten sonst bei 66 statt 4
+Erlassen gewarnt.
+
+**Offen aus S3 (nicht stillschweigend erledigt):**
+
+| Punkt | Grund |
+|---|---|
+| `check:gegenpruefung` ROT | `src/lib/normtext/**` ist Blanket-Risikopfad; berührt sind `erlassKopfText.ts` (neu, reiner Text) und `revisionen.ts` (+2 reine Funktionen). Das Tor wurde **nicht** umgangen — ein Verschieben der Logik aus dem Risikopfad ist genau das Muster, vor dem `scripts/gegenpruefung/kern.ts` selbst warnt (Besetzungs-Präzedenz). Adversariale Gegenprüfung vor dem Merge fahren |
+| ~~V3-Hülle ohne `kennzahlen`~~ | **Erledigt im Nachzug 16.8.2026** (Prüferbefund): `leserV3Modell` führt `nichtKonsolidiertSeit` mit, der Rahmen reicht es samt `kennzahlen` an den Kopf. Zugleich ist die Übergangs-Prop `nichtKonsolidiert: boolean \| string` in zwei klare Props aufgelöst — ihr Grund (das auf `boolean` gepinnte V3-Modell in fremder Bauhand) ist damit weg |
+| ~~`xl`-Reservierung zu klein für V3~~ | **Erledigt im Nachzug 16.8.2026** (Prüferbefund): der `xl`-Schritt (37 px) passte nur zur Ist-Hülle. V3 stellt den Kopf in eine Spalte von 656 px @1280 (Deckel 752 px auch @1600), wo OR 53.5 px braucht — der Schritt hätte je Nachschub 16.5 px Sprung erzeugt. Schritt gestrichen, ab 768 px gilt einheitlich 3.375rem; der CLS-Wächter läuft jetzt über **beide** Hüllen (v3 @1280: 0.0014) |
+| **`ANHANG_DOMINANZ` zweimal, mit verschiedenem Wert** | `gliederungsModell.ts:90` = **0.5** (ab wann der Anhang-Ast aufgeklappt startet) und `erlassKopfText.ts:88` = **0.9** (ab wann die Fakten-Zeile «Einträge» statt «Artikel» sagt). Gleicher Name, verschiedene Sache, verschiedener Wert — wer den einen liest und den anderen meint, ändert stillschweigend das Falsche. Zusätzlich rechnet `zaehlWort()` den Quotienten neu, obwohl `kennzahlen.anhangAnteil` ihn bereits trägt (§5). **Nachzug, nicht hier gebaut:** `erlassKopfText.ts` liegt im Risikopfad `src/lib/normtext/**`, eine Änderung kippt den Gegenprüfungs-Hash dieses PR. Im nächsten Risikopfad-PR mit Gegenprüfung: Konstante zu `ANHANG_ZAEHLWORT_SCHWELLE` umbenennen und `anhangAnteil` verwenden statt neu zu dividieren |
+| Warnung fehlt im prerenderten Kopf | `seo-detail.ts` trägt den Standausweis, nicht die Warnzeile: dafür müsste der Revisions-Sidecar in den Prerender-Pfad. Eigener Schritt |
+| `Stand` im SEO-Kopf bleibt ISO | `Stand 2025-04-01 · gegen Fedlex-Konsolidierung geprüft am 14.08.2026` mischt zwei Datumsformen in einem Satz. Der Fix ist eine Zeile, ändert aber jede prerenderte Seite — ausserhalb des F5-Auftrags |
+| `lc-chip-geltend`/`lc-chip-vorbehalt` sind tot | Nach dem Chip-Rückbau in `src/` unbenutzt. Ihr Rückbau berührt das Farb-Wörterbuch in `DESIGN-REGLEMENT-NORMTEXT.md` §264-269/304 — eine Design-Autoritäts-Entscheidung, keine Nebenwirkung eines UI-PR (§17-Rückbau als eigener Schritt) |
+| Falschverweis in diesem Fahrplan | Kap. 14 nennt «die 8 Befunde aus `FAHRPLAN-UI-NAVIGATION.md` §15». Diese Datei hat kein §15; die Befunde stehen in **`FAHRPLAN-UI-BEFUNDE.md` §15** (LM-181/183/184/188/197). Unten korrigiert |
+
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
 | Punkt | Regel |
@@ -754,6 +799,17 @@ legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
 | 8 Änderungshistorie | Umbauen + Weg | S1 | 18 Meta-Zeile Erlass-Kopf | Neu | S3 |
 | 9 Code simplifizieren | Umbauen | H5 | 19 Typografie | Umbauen | S2 |
 | 10 Übersichtsbox | Neu | H1 | | | |
+
+**Nachtrag S3 — drei Ästhetik-Positionen aus der Gegenprüfung (16.8.2026, Urteil
+7/10 «Merge ja mit Nachzug»). Bewusst NICHT in S3 gebaut:** sie betreffen
+Typografie und Titel-Anatomie, also die Fläche, über die **F3/S2** am Bildbogen
+entscheidet — sie jetzt einzeln zu setzen, nähme diesem Entscheid vorweg.
+
+| # | Befund | Heimat |
+|---|---|---|
+| (a) | Die Titel-Reservierung hält zwei Zeilen (`min-h-titel-2z`, 2.35em). Bei einzeiligem Titel — der Regelfall bei kurzen Kürzeln — steht darunter sichtbarer Leerraum, seit S3 stärker wahrnehmbar, weil der Kopf sonst ruhig geworden ist. Die Reservierung selbst ist CLS-Pflicht (Font-Swap) und darf nicht ersatzlos fallen; zu prüfen ist eine metrisch angeglichene Fallback-Schrift, die mit weniger Reserve auskommt | **S2** |
+| (b) | Die Stand-Zeile mischt Datumsformen: `Stand 01.04.2025` läuft in der Ziffern-Mono-Auszeichnung (`.num`), das Datum im Standausweis proportional — dieselbe Grösse, zwei Anmutungen in einem Satz | **S2** |
+| (d) | Bei Staatsverträgen mit sehr langem Volltitel steht das Kürzel am Ende einer dreizeiligen `<h1>` und ist damit schlecht auffindbar, obwohl es die Kennung ist, nach der gesucht wird. Betrifft die Titel-Anatomie, nicht den Standausweis | **H2b** |
 
 **Pos. 8 im Klartext.** «Chronologie» entfällt; der Schalter heisst «Änderungsvermerke: an/aus»,
 und bei «aus» verschwinden Marker, Apparat-Zeile **und** «Fassung»-Overline gemeinsam. §8 ist
@@ -972,7 +1028,7 @@ stillschweigend doppelt gebaut (§17-Gegengewicht, Kollisionsregel).
 | Schritt-ID | Bezug zu V3 | Etappe | Beim Bau abzuhaken |
 |---|---|---|---|
 | **`QS-UI-HIGHLIGHT`** (ROADMAP:210) — `::highlight()`-Registry je Leser-Instanz; heute löscht im Split-View das Rail-Suchfeld die Markierung des Nachbar-Panes | Genau der Defekt, den ein Suchfeld pro Pane erzeugt. V3 hat **ein** Suchfeld je Pane mit pane-eigener Registry | **H2** | Registry ist an die Pane-Wurzel gebunden (nicht global); e2e: Suche in Pane A löscht Markierung in Pane B **nicht**; danach `QS-UI-HIGHLIGHT` in ROADMAP als erledigt abhaken mit Zeiger hierher |
-| **`W2·10-UI-NAV` / `B14`** (ROADMAP:434) — «Brotkrume, Kopfzeilen und Seitenmeta (K-19a)», 8 Befunde, davon 3 «hoch» | Deckungsgleich mit Pos. 1 (Kopfzeile) und Pos. 18 (Seitenmeta) | **H1** (Krume/Kopf) + **S3** (Seitenmeta) | Die **8 Befunde aus `FAHRPLAN-UI-NAVIGATION.md` §15 werden als Abnahme-Checkliste in den H1- bzw. S3-PR kopiert** und einzeln abgehakt — nicht «sinngemäss mitgemacht». Die 3 Hoch-Befunde sind Blocker der jeweiligen Etappe |
+| **`W2·10-UI-NAV` / `B14`** (ROADMAP:434) — «Brotkrume, Kopfzeilen und Seitenmeta (K-19a)», 8 Befunde, davon 3 «hoch» | Deckungsgleich mit Pos. 1 (Kopfzeile) und Pos. 18 (Seitenmeta) | **H1** (Krume/Kopf) + **S3** (Seitenmeta) | Die **8 Befunde aus `FAHRPLAN-UI-BEFUNDE.md` §15 werden als Abnahme-Checkliste in den H1- bzw. S3-PR kopiert** *(Dateiname korrigiert 16.8.2026 beim S3-Bau: `FAHRPLAN-UI-NAVIGATION.md` hat kein §15 — die Befunde LM-181/183/184/188/197 stehen in UI-BEFUNDE)* und einzeln abgehakt — nicht «sinngemäss mitgemacht». Die 3 Hoch-Befunde sind Blocker der jeweiligen Etappe |
 | **`W2·7-VZUI`** (ROADMAP:349) — Verzahnung sichtbar machen, Rest-Umfang am `KontextPanel` | H3 **ersetzt** das KontextPanel durch das V3-Panel | **H3** | Nach H3 prüfen, welche VZUI-Restzeilen inhaltlich noch offen sind; erledigte Zeilen in ROADMAP abhaken, Rest umformulieren — der Schritt darf nicht mit einer Komponente weiterleben, die es nicht mehr gibt |
 | **`W2·7-VZUI-SACHGEBIET`** (ROADMAP:355) — Sachgebiet-Facette aus der BGE-Bandnummer | V3 sieht im Panel **den vierten Filter «Sachgebiet» baulich vor** (Platz, Reiter-Layout, Filterzeile) | **H3** (nur Hülle) | Filter-Platzhalter existiert und ist bei fehlenden Daten sauber ausgeblendet (kein leeres Steuerelement). **Die Datenlogik bleibt ausdrücklich `W2·7-VZUI-SACHGEBIET`** — Risikopfad mit Gegenprüfung, nicht Teil von V3 |
 | **`QS-PERF`-Restposten** (ROADMAP:163) — Klickpfad Gliederungszeile **161 ms @4×**, Lese-Kadenz-TBT, langer Artikel-Index | Alle drei liegen in der Hülle, die V3 ohnehin neu setzt | **H1** (Messlatte) | Die 161 ms sind die **Messlatte, die H1 unterbieten muss — nicht nur halten**. Messung unter denselben Bedingungen (4× CPU-Drossel, kalt), Zahl im Kontaktbogen neben NM-1 |

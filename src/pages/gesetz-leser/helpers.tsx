@@ -6,6 +6,7 @@ import { ERLASS_REGISTER, type ErlassTyp, type Grundart } from '../../lib/normte
 import { GRUNDART_SEED } from '../../lib/normtext/grundart.generated';
 import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../lib/normtext/systematik';
 import { norm } from '../../lib/suche/normQuery';
+import { datumCh } from '../../lib/normtext/erlassKopfText';
 
 // M11 (§5 Verzahnung): Reverse-Resolver SR-Nummer → interner Erlass, ABGELEITET
 // aus dem Register (keine Handtabelle, §3/§5 eine Quelle). Nur Bund-Erlasse, die
@@ -28,10 +29,14 @@ export function internerErlassFuerSr(sr: string): { key: string; ebene: 'bund' |
   return SR_INTERN.get(sr);
 }
 
-export function formatiereDatum(iso: string): string {
-  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
-}
+/**
+ * §5 (W2·5m-LESER-V3/S3): die EINE ISO→CH-Datumsform lebt in
+ * `lib/normtext/erlassKopfText` — der prerenderte SEO-Kopf (`lib/seo-detail.ts`)
+ * braucht dieselbe Form, und die Bibliotheks-Schicht darf nicht auf `pages/`
+ * zeigen (§3). Der eingeführte Name bleibt hier als Fassade stehen, damit die
+ * bestehenden Aufrufstellen nicht wandern müssen (§6.1: kleinster Eingriff).
+ */
+export const formatiereDatum = datumCh;
 
 /**
  * N13 (BS-Audit 23.6.2026) — das VERIFIZIERTE amtliche Sachgebiet eines

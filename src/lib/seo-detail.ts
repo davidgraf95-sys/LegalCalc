@@ -18,6 +18,7 @@
 // (snapshot ≠ in Kraft — TODO(David), Welle ab 1.12.2026).
 
 import { SITE_URL, type RouteMetadaten } from './seo';
+import { naechsteFassungSatz, standausweisSatz } from './normtext/erlassKopfText';
 import { GEBIET_LABEL } from './normtext/register';
 import { ABSCHNITT_TITEL } from './rechtsprechung/abschnitte';
 import type { Rechtsgebiet } from './normtext/register';
@@ -264,10 +265,13 @@ export function erlassVolltextHtml(
   currency?: { geprueftAm?: string; naechsteFassungAb?: string },
 ): string {
   const srZeile = e.sr ? ` · SR ${esc(e.sr)}` : '';
-  // P1-d: Currency-Chips schon im prerenderten Kopf (CLS=0, kein async-Einwachsen;
-  // §15/2). Wortfeld «geltend geprüft am … (maschinell)» = zugelassene Formel.
-  const geprueft = currency?.geprueftAm ? ` · geltend geprüft am ${esc(currency.geprueftAm)} (maschinell)` : '';
-  const kuenftig = currency?.naechsteFassungAb ? ` · nächste Fassung ab ${esc(currency.naechsteFassungAb)}` : '';
+  // P1-d: Currency-Angaben schon im prerenderten Kopf (CLS=0, kein async-
+  // Einwachsen; §15/2). S3/F5: der WORTLAUT kommt aus `erlassKopfText` — genau
+  // dieselbe Funktion, die der interaktive Erlass-Kopf aufruft (§5). Bis dahin
+  // waren es zwei handgeschriebene Strings, die im Datumsformat bereits
+  // auseinandergelaufen waren (hier ISO, dort TT.MM.JJJJ).
+  const geprueft = currency?.geprueftAm ? ` · ${esc(standausweisSatz(currency.geprueftAm))}` : '';
+  const kuenftig = currency?.naechsteFassungAb ? ` · ${esc(naechsteFassungSatz(currency.naechsteFassungAb))}` : '';
   const kopf =
     `<header><nav aria-label="Brotkrumen"><a href="/gesetze">Gesetze</a> › ` +
     `<a href="/gesetze">${esc(gebietLabel(e.rechtsgebiet))}</a> › ${esc(e.kuerzel)}</nav>` +
