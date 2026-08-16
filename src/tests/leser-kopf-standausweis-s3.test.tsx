@@ -111,7 +111,7 @@ describe('S3/F5 — Klartext-Warnung «noch nicht eingearbeitet»', () => {
       'Fedlex hat eine seit 01.07.2025 geltende Änderung noch nicht in den Text'
       + ' eingearbeitet — massgeblich ist die amtliche Fassung.',
     );
-    const html = kopf({ nichtKonsolidiert: '2025-07-01' });
+    const html = kopf({ nichtKonsolidiert: true, nichtKonsolidiertSeit: '2025-07-01' });
     expect(html).toContain(nichtKonsolidiertSatz('2025-07-01'));
     // ⚠ ist redundante Verstärkung, nie alleiniger Träger (§13/B3).
     expect(html).toContain('aria-hidden');
@@ -126,6 +126,23 @@ describe('S3/F5 — Klartext-Warnung «noch nicht eingearbeitet»', () => {
     expect(nichtKonsolidiertSatz(null)).not.toMatch(/\d/);
   });
 
+  it('Tatsache ohne Datum: Warnung steht, Satz nennt kein Datum (§8)', () => {
+    // Beweist, dass die zwei Props unabhängig wirken — vor dem S3-Nachzug
+    // hingen sie in EINEM `boolean | string` und konnten das nicht.
+    const html = kopf({ nichtKonsolidiert: true });
+    expect(html).toContain(nichtKonsolidiertSatz(null));
+    // Auf dem SATZ prüfen, nicht auf dem Dokument: «seit» steht als Substring
+    // auch in der Stand-Zeile («in Kraft seit 01.01.1912») — Identität statt
+    // Substring-Präsenz (§7). Der Satz selbst darf kein Datum tragen.
+    expect(nichtKonsolidiertSatz(null)).not.toContain('seit');
+    expect(html).not.toMatch(/Fedlex hat eine seit/);
+  });
+
+  it('Datum ohne Tatsache: keine Warnung (das Datum allein behauptet nichts)', () => {
+    const html = kopf({ nichtKonsolidiertSeit: '2025-07-01' });
+    expect(html).not.toContain('noch nicht in den Text eingearbeitet');
+  });
+
   it('ohne nichtKonsolidiert: kein Warnsatz, sondern der Grundhinweis', () => {
     const html = kopf();
     expect(html).not.toContain('noch nicht in den Text eingearbeitet');
@@ -135,7 +152,7 @@ describe('S3/F5 — Klartext-Warnung «noch nicht eingearbeitet»', () => {
   it('aufgehobener Erlass: weder Warnung noch Standausweis (die Aufhebung ist die Aussage)', () => {
     const html = kopf({
       erlass: { ...or, aufgehoben: { seit: '2026-03-01' } },
-      nichtKonsolidiert: '2025-07-01',
+      nichtKonsolidiert: true, nichtKonsolidiertSeit: '2025-07-01',
     });
     expect(html).toContain('lc-notice-danger');
     expect(html).not.toContain('noch nicht in den Text eingearbeitet');
@@ -234,7 +251,7 @@ describe('S3 — Kantons-Probe (Bund-Fokus, «bricht nicht»)', () => {
     // Der Kopf steht trotzdem vollständig: Titel, Zählwort, Grundhinweis.
     expect(html).toContain('Paragraphen');
     expect(html).toContain('Snapshot — massgeblich ist die amtliche Fassung');
-    expect(html).toContain('min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md xl:min-h-kopf-stand-xl');
+    expect(html).toContain('min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md');
   });
 
   it('Kantonserlass ohne SR und ohne Inkrafttreten erzeugt keine leeren Trenner', () => {

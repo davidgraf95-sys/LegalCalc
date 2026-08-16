@@ -343,12 +343,10 @@ export function LeserVolltextInhalt({
           Pfad; sie trägt die Options-Leiste (Fussnoten/Verweise). */}
       {/* S3: `kennzahlen` speist die Anhang-Dominanz der Fakten-Zeile («Einträge»
           statt «Artikel») — dieselbe Kennzahl, die die Erlass-Übersicht schon
-          bekommt (§5). Das Datum reist über DIESELBE Prop wie die Tatsache
-          (`boolean | string`), damit der V3-Aufruf in fremder Bauhand unverändert
-          gültig bleibt. */}
+          bekommt (§5). Tatsache und Datum reisen als zwei getrennte Props. */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort} currency={currency?.[erlass.key]}
         kennzahlen={kennzahlen}
-        nichtKonsolidiert={nichtKonsolidiertSeit ?? nichtKonsolidiert}
+        nichtKonsolidiert={nichtKonsolidiert} nichtKonsolidiertSeit={nichtKonsolidiertSeit}
         overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
         hinweis="Snapshot — massgeblich ist die amtliche Fassung"
         aktionen={

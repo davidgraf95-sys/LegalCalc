@@ -27,7 +27,7 @@ import {
 // Das 44-px-Tap-Ziel der Chips bleibt dabei ausdrücklich erhalten (F2b/a11y).
 export function ErlassLeserKopf({
   erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', kennzahlen = null,
-  aktionen, hinweis, currency, nichtKonsolidiert = false,
+  aktionen, hinweis, currency, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
 }: {
   erlass: BrowseErlass;
   overline: ReactNode;
@@ -52,16 +52,24 @@ export function ErlassLeserKopf({
    *  Tatsache steht je Revisions-Zeile im KontextPanel
    *  (`RevisionBezug.nichtKonsolidiert`) — sie wird hier aggregiert an die Stelle
    *  gehoben, an der man sie VOR dem Lesen sieht (§5: eine Datenquelle, zwei
-   *  Auflösungsgrade).
+   *  Auflösungsgrade). `false` = keine Aussage, kein Banner (§8).
    *
-   *  S3 hat den Typ von `boolean` auf `boolean | string` GEWEITET, weil F5 einen
-   *  Zeitbezug verlangt («eine seit 01.07.2025 geltende Änderung»): der String
-   *  ist das ISO-Datum des FRÜHESTEN nicht konsolidierten Inkrafttretens, `true`
-   *  heisst «Tatsache belegt, Datum nicht bekannt» (dann nennt der Satz keines,
-   *  statt eines zu erfinden — §8). Die Weitung statt einer zweiten Prop hält den
-   *  Datenpfad frei von Durchreich-Änderungen in fremder Bauhand (V3-Hülle).
-   *  Default `false` = keine Aussage, kein Banner (§8). */
-  nichtKonsolidiert?: boolean | string;
+   *  Nur BEREITS GELTENDE Änderungen zählen — der Stichtagsfilter sitzt beim
+   *  Erzeuger (`fruehestesInKraft`, lib/normtext/revisionen.ts), nicht hier:
+   *  die Darstellung entscheidet nicht, was gilt (§3). */
+  nichtKonsolidiert?: boolean;
+  /** S3/F5: ISO-Datum des FRÜHESTEN nicht konsolidierten Inkrafttretens — der
+   *  Zeitbezug des Klartextsatzes («eine seit 01.07.2025 geltende Änderung»).
+   *  `null` = Tatsache belegt, Datum nicht bekannt: dann nennt der Satz keines,
+   *  statt eines zu erfinden (§8).
+   *
+   *  Bewusst eine ZWEITE Prop und nicht `boolean | string` in einer: die
+   *  Übergangsform trug zwei Aussagen («gibt es das?» / «seit wann?») in einem
+   *  Wert und zwang jeden Aufrufer, sie über die Wahrheitswertigkeit eines
+   *  Strings zu koppeln. Sie stammte aus der Bau-Reihenfolge (das V3-Modell
+   *  pinnte das Feld auf `boolean`, während die V3-Hülle in fremder Bauhand
+   *  lag); mit dem Nachzug ist der Grund weg — und mit ihm die Union. */
+  nichtKonsolidiertSeit?: string | null;
 }) {
   // Fedlex hängt das Kürzel als Klammer-Suffix an den Volltitel («… (Strafpro-
   // zessordnung, StPO)»). Bis S3 stand hier «StPO — Schweizerische Strafprozess-
@@ -82,9 +90,7 @@ export function ErlassLeserKopf({
   // aufgehobene Konsolidierung; der amtliche Link liegt ehrlich beschriftet im
   // Aufhebungs-Banner unten).
   const lebt = !erlass.aufgehoben;
-  const warnung = lebt && nichtKonsolidiert
-    ? nichtKonsolidiertSatz(typeof nichtKonsolidiert === 'string' ? nichtKonsolidiert : null)
-    : null;
+  const warnung = lebt && nichtKonsolidiert ? nichtKonsolidiertSatz(nichtKonsolidiertSeit) : null;
 
   // Fakten- und Stand-Segmente werden als Liste gebaut und mit einem Mittepunkt
   // gefügt — so kann kein führender/doppelter Trenner entstehen, wenn ein Wert
@@ -148,7 +154,7 @@ export function ErlassLeserKopf({
           Die Höhe ist GEMESSEN kalibriert (Tokens `kopf-stand*` in
           tailwind.config.js — dort stehen die vier Fenster-Werte samt Messfall),
           nicht geschätzt: schmal brechen dieselben Sätze über mehr Zeilen. */}
-      <div className="min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md xl:min-h-kopf-stand-xl space-y-1">
+      <div className="min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md space-y-1">
         {stand.length > 0 && (
           <p className="text-xs leading-snug text-ink-500">
             {stand.map((s, i) => (
