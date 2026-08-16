@@ -88,6 +88,29 @@ Der Sprung-Offset rechnet die neue Kopfhöhe mit: `#art-429` landet nach dem
 Sprung auf **y = 156 px** = Topbar 64 + App-Leiste 36 + Kopfzeile 56 — also
 exakt unter dem klebenden Chrome und nicht dahinter (Risiko R1, gemessen).
 
+### Layout-Sprünge (CLS) — V3 liegt unter dem Ist-Stand
+
+Gemessen mit `PerformanceObserver('layout-shift')` über 2,5 s nach dem Laden,
+Chromium, Dev-Server, kalter Kontext je Messung:
+
+| Fall | Ist (V1) | V3 | |
+|---|---|---|---|
+| StPO @1440 | 0.0050 | **0.0006** | −88 % |
+| StPO @390 | 0.0056 | **0.0024** | −57 % |
+| BS EG StPO @1440 | 0.0039 | **0.0004** | −90 % |
+
+Die Auflage «CLS ≤ Ist-Stand» ist damit nicht nur gehalten, sondern deutlich
+unterschritten. Der Grund ist baulicher Art: die V3-Kopfzeile hat eine feste,
+aus **einer** Quelle gesetzte Höhe (`--leser-v3-kopf-h`), und die Übersichtsbox
+steht geschlossen — es wächst nach dem ersten Bild nichts mehr ein.
+
+### Kantons-Probe (Risiko R5)
+
+`BS-257.100` (EG StPO Basel-Stadt, 48 Paragraphen) rendert unter dem Flag
+vollständig: Titel, Kopf, Gliederung, Lesetext — dieselbe Artikelzahl wie im
+Ist-Stand, CLS 0.0004. Die Kopf-Felder, die es nur beim Bund gibt (SR-Nummer,
+Fedlex-Konsolidierung), entfallen dort still, statt einen Platzhalter zu zeigen.
+
 ---
 
 ## 3 · Bilder
