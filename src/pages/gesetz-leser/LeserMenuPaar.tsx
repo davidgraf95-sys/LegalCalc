@@ -18,13 +18,12 @@
 
 import { LeserAnsichtMenu } from './LeserAnsichtMenu';
 import { LeserRechtsprechungMenu } from './LeserRechtsprechungMenu';
-import type { LinienProfil } from './linienAufbau';
 import type { Histogramm, Zeitbereich } from './bezugZeit';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 
 export function LeserMenuPaar({
-  kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich, linien, fussnotenAnzahl,
+  kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich, fussnotenAnzahl,
 }: {
   /** B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter). */
   kantoneVerfuegbar?: string[];
@@ -34,7 +33,6 @@ export function LeserMenuPaar({
   bezugHistogramm?: Histogramm;
   /** B5: aktiver Von-Bis-Bereich. */
   bezugBereich?: Zeitbereich;
-  linien: LinienProfil;
   fussnotenAnzahl: number | null;
 }) {
   return (
@@ -42,8 +40,7 @@ export function LeserMenuPaar({
       <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
         klassenImErlass={klassenImErlass}
         histogramm={bezugHistogramm} bereich={bezugBereich} />
-      <LeserAnsichtMenu zeigeLinien={linien.guideEbene !== null}
-        linienAutoAn={linien.autoGuide} fussnotenAnzahl={fussnotenAnzahl} />
+      <LeserAnsichtMenu fussnotenAnzahl={fussnotenAnzahl} />
     </div>
   );
 }

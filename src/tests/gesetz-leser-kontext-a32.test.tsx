@@ -15,7 +15,6 @@ import { MemoryRouter } from 'react-router-dom';
 import type { NavigateFunction } from 'react-router-dom';
 import { LeserVolltextInhalt } from '../pages/gesetz-leser/inhalt-volltext';
 import { grundartMeta } from '../pages/gesetz-leser/helpers';
-import type { LinienProfil } from '../pages/gesetz-leser/linienAufbau';
 import type { Sektion } from '../lib/normtext/browse';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
@@ -32,7 +31,6 @@ const eintrag: NormSnapshot = {
   stand: '2026-01-01', quelleUrl: 'https://x', abgerufen: '2026-06-29', fassungsToken: '20260101', sha: 'x',
 };
 const sektion: Sektion = { id: 'sek-0', ebene: 1, label: 'Erster Titel', kinder: [], artikel: [eintrag] };
-const linien: LinienProfil = { strukturTiefe: 1, guideEbene: 1, dichteAmGuide: 1, autoGuide: true };
 
 function render({ istXl, tocOffen, imPane = false }: { istXl: boolean; tocOffen: boolean; imPane?: boolean }) {
   const noop = () => {};
@@ -41,7 +39,7 @@ function render({ istXl, tocOffen, imPane = false }: { istXl: boolean; tocOffen:
       <LeserVolltextInhalt
         erlass={erlass} eintraege={[eintrag]} struktur={null} kopf={null} currency={null}
         vorher={null} nachher={null} sektionen={[sektion]} ohneGliederung={[]}
-        linien={linien} fussnotenAnzahl={0} meta={grundartMeta('ZGB')}
+        gliederungsTiefe={1} fussnotenAnzahl={0} meta={grundartMeta('ZGB')}
         internRefs={undefined} margAnzeige={new Map()} kantonSys={{}}
         basisPfad="/gesetze/bund/ZGB" renderSektion={() => null}
         imPane={imPane} istXl={istXl} overlayWurzel={null}

@@ -114,16 +114,14 @@
     --line:color-mix(in oklab, var(--ink-900) 10%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 18%, transparent);
     /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT-NORMTEXT
-       §Linien-Kanon): genau DREI benannte Rollen ersetzen die früher frei
-       gewählten Ad-hoc-Opazitäten von --line (Artikel /70, Sektion voll|/50,
-       Guide /60, Tabellenzeile/Fussnoten). Werte am bestehenden --line gemessen
-       (10 %); nur der oberste Struktur-Trenner eine Spur kräftiger (14 %). */
-    /* V2·L-2: Gliederungs-Guide von 10 % auf --line-strong-Niveau (18 %) angehoben —
-       der Guide war mit ~1.2:1 praktisch unsichtbar (David-Befund «funktioniert
-       praktisch nicht»). NICHT höher (kein hartes 3:1): die Deko-Linie darf nicht
-       zur dunkelsten Linie des Systems werden (DESIGN-REGLEMENT F2 nimmt Deko von
-       3:1 aus). Rangfolge §4b bleibt: Typo > Einzug > Guide. */
-    --guide-gliederung:color-mix(in oklab, var(--ink-900) 18%, transparent);
+       §Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
+       --line (Artikel /70, Sektion voll|/50, Tabellenzeile/Fussnoten). Werte am
+       bestehenden --line gemessen (10 %); nur der oberste Struktur-Trenner eine
+       Spur kräftiger (14 %).
+       LINIEN-RÜCKBAU V1 (16.8.2026): die dritte Rolle `--guide-gliederung`
+       (vertikaler Gliederungs-Guide im Lesetext) ist ERSATZLOS entfallen — David
+       hat die Linie am 13.8.2026 endgültig verworfen (FAHRPLAN-GESETZES-
+       DARSTELLUNG-V2 §9.3). Übrig bleiben die zwei TRENNER-Rollen. */
     --rule-artikel:color-mix(in oklab, var(--ink-900) 10%, transparent);
     --rule-struktur:color-mix(in oklab, var(--ink-900) 14%, transparent);
     /* Messing – der eine Akzent (= gravierte Skala) */
@@ -321,9 +319,7 @@
     --line:color-mix(in oklab, var(--ink-900) 14%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 24%, transparent);
     /* Linien-Kanon dunkel: helle Tinte auf Dunkel wirkt feiner → eine Spur
-       kräftiger als hell (Guide/Artikel 14 %, Struktur 20 %). */
-    /* V2·L-2: dunkel analog von 14 % auf --line-strong-Niveau (24 %). */
-    --guide-gliederung:color-mix(in oklab, var(--ink-900) 24%, transparent);
+       kräftiger als hell (Artikel 14 %, Struktur 20 %). */
     --rule-artikel:color-mix(in oklab, var(--ink-900) 14%, transparent);
     --rule-struktur:color-mix(in oklab, var(--ink-900) 20%, transparent);
     /* Messing: Text-Töne (800–600) hell, Flächen-Töne (100/200) dunkel,
@@ -382,34 +378,18 @@
   html { -webkit-tap-highlight-color: transparent; }
   :focus:not(:focus-visible) { outline: none; }
 
-  /* ── W2·5d G2a: Leser-Options-Leiste (Linien/Fussnoten/Verweise) ───────────
+  /* ── W2·5d G2a: Leser-Options-Leiste (Fussnoten/Verweise) ─────────────────
      Rein visuelle Darstellungs-Toggles (leserOptionen.tsx) — data-*-Attribute am
      <html>, hier per CSS ausgewertet. Default 'an' = KEINE Regel greift = heutige
      Darstellung byte-gleich (R6). Alle Regeln auf `.lc-leser` gescopt, damit NUR
      der Gesetzes-Reader betroffen ist (nicht das Norm-Popover der Rechner). */
 
-  /* Linien AUS (expliziter Nutzerwunsch, K11-Override): Gliederungs-Guide unsichtbar
-     (border-Breite BLEIBT 1px reserviert → das Ausblenden der Linie bewegt keinen
-     Textknoten, CLS-freundlich) UND der Einzug kollabiert (flache Textkante) —
-     reproduziert den Zustand «Gruppierungslinien aus». Ctrl+F/Anker/Print unberührt
-     (nur border+padding). */
-  html[data-linien="aus"] .lc-leser [data-normtext-linie] {
-    border-left-color: transparent;
-    padding-left: 0;
-  }
-
-  /* Linien AUTO = Auto-Default (W2·5d). V2·A28 (David 12.7.2026, Live-Verdikt «das
-     mit den linien funktioniert überhaupt nicht»): der Auto-Guide ist KORPUSWEIT
-     zurückgezogen — linienAufbau.ts liefert autoGuide=false für jeden Erlass, also
-     ist `data-guide-auto` am .lc-leser-Root stets "aus". Die folgende Regel blendet
-     darum im Default-Zustand ('auto') den vertikalen Guide überall aus; der EINZUG
-     bleibt (Rangfolge §4b: Typo > Einzug > Guide). Das FEATURE bleibt: ein expliziter
-     Klick «Linien AN» (data-linien="an", K11-Tri-State) zeigt den EINEN Guide auf
-     `guideEbene` wieder — er übersteuert den Auto-Default global. Nur border-Farbe →
-     CLS 0, Prosa/Ctrl+F/Anker byte-gleich. */
-  html[data-linien="auto"] .lc-leser[data-guide-auto="aus"] [data-normtext-linie] {
-    border-left-color: transparent;
-  }
+  /* LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026 «ja linien ganz
+     entfernen»): die beiden `[data-linien]`-Regeln (Guide aus-/einblenden, Einzug
+     kollabieren) sind ERSATZLOS entfallen — es gibt keinen Gliederungs-Guide und
+     keinen Schalter «Linien» mehr. Der Einzug im Lesetext ist damit dauerhaft und
+     nicht mehr abschaltbar; Struktur trägt Typo + Einzug, Übersicht die Seiten-
+     leiste (FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3). */
 
   /* Fussnoten AUS: die Fussnoten-Marker (¹²³) und der ganze Apparat VERSCHWINDEN
      visuell (David-Entscheid 5.7.2026, überstimmt die frühere R9-Dämpfungs-Regel —

@@ -3,8 +3,9 @@
 // David 5.7.2026 (A4): «der kopf … soll funktionaler ausgestaltet werden. also
 // die darstellungsoptionen (fussnoten linien verweise) sollen im kopf sein mit
 // drop down menu.» Die frühere G2a-Chip-Leiste entfällt und geht in EIN «Ansicht»-
-// Dropdown im aktionen-Slot des ErlassLeserKopf auf. Es enthält genau die drei
-// Switches Linien/Fussnoten/Verweise (§3.1: keine Wucherung).
+// Dropdown im aktionen-Slot des ErlassLeserKopf auf (§3.1: keine Wucherung).
+// Seit dem Linien-Rückbau V1 (16.8.2026) sind es zwei Switches — «Fussnoten»
+// (mit Änderungshistorie-Wahl) und «Verweise»; «Linien» ist ersatzlos entfallen.
 //
 // A11y (ehrliche Disclosure, NICHT role=menu): Switches sind Formular-Steuerelemente,
 // kein Menü — ein role=menu verspräche eine Pfeiltasten-Bedienung, die es nicht
@@ -110,11 +111,13 @@ function HistAnsichtWahl() {
   );
 }
 
-/** Das «Ansicht»-Dropdown. `zeigeLinien` blendet den Linien-Schalter aus, wo es
- *  keine Gliederungs-Sektion mit Guide gibt (flache Artikelliste) — er wäre sonst
- *  wirkungslos (§2.2④). `linienAutoAn` = ob im AUFBAU-abhängigen Default-Zustand
- *  ('auto', U-LINIEN/A8) der Guide für DIESEN Erlass sichtbar ist, damit der
- *  Schalter den EFFEKTIVEN Zustand ehrlich zeigt (§8).
+/** Das «Ansicht»-Dropdown.
+ *
+ *  LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026): der frühere Schalter
+ *  «Linien» (K11-Tri-State an/aus/auto) ist ERSATZLOS entfallen — mit ihm die
+ *  Props `zeigeLinien`/`linienAutoAn`. Die Gliederungslinie im Lesetext gibt es
+ *  nicht mehr; Struktur trägt Typo + Einzug, Übersicht die Seitenleiste
+ *  (FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3).
  *
  *  A26 (David 11.7.2026): das Dropdown lebt in der IMMER sichtbaren Positions-/
  *  Kontextleiste (Inhalts-Kopf `Gesetze › Bund › ZPO … Stand … ✕`), damit die
@@ -125,8 +128,8 @@ function HistAnsichtWahl() {
  *  nicht geladen ⇒ Zähler erscheint erst danach; da er in einem geschlossenen,
  *  absolut positionierten Panel steckt, wächst im sichtbaren Kopf keine Zahl nach
  *  (CLS 0). */
-export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenAnzahl = null }: {
-  zeigeLinien: boolean; linienAutoAn?: boolean; fussnotenAnzahl?: number | null;
+export function LeserAnsichtMenu({ fussnotenAnzahl = null }: {
+  fussnotenAnzahl?: number | null;
 }) {
   const opt = useLeserOptionen();
   const [offen, setOffen] = useState(false);
@@ -155,7 +158,7 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
   // NICHT das generische `scroll`-Event (Regression, gefunden über die
   // A9-CPU-Throttle-Probe `leser-kopf-a9.e2e.ts`, Nullprobe §0 Ziff. 3 gegen
   // den Stand vor diesem Commit: dort grün, hier rot ⇒ eigene Ursache): ein
-  // Fussnoten-/Linien-Toggle verändert die Höhe des Fliesstexts UNTER dem
+  // Fussnoten-Toggle verändert die Höhe des Fliesstexts UNTER dem
   // sichtbaren Ausschnitt, der Browser gleicht das per naitver Scroll-
   // Anchoring aus — das feuert ein `scroll`-Ereignis OHNE jede Nutzer-Geste
   // und schloss das eben erst geöffnete Menü, noch bevor der Switch-Klick
@@ -175,10 +178,6 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
     };
   }, [offen]);
 
-  // Effektiver Linien-Zustand: expliziter Nutzer-Wunsch schlägt den Aufbau-Default;
-  // im Default 'auto' folgt er dem Aufbau (linienAutoAn).
-  const linienEffektivAn = opt.linien === 'an' || (opt.linien === 'auto' && linienAutoAn);
-
   return (
     <div ref={wrapRef} className="relative inline-flex">
       <button
@@ -189,7 +188,7 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
         aria-label="Ansicht"
         data-ansicht-menu
         className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
-        title="Darstellung: Linien, Fussnoten (mit Änderungshistorie), Verweise"
+        title="Darstellung: Fussnoten (mit Änderungshistorie), Verweise"
       >
         {/* Enger Platz in der Sticky-Positionsleiste (@390): Label nur ≥lg, sonst
             reines Icon (Accessible-Name bleibt über aria-label «Ansicht» erhalten).
@@ -212,14 +211,6 @@ export function LeserAnsichtMenu({ zeigeLinien, linienAutoAn = false, fussnotenA
           className="absolute right-0 top-full z-40 mt-1.5 flex w-[13rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 rounded-lg border border-line bg-paper-raised p-1.5 shadow-lg"
         >
           <p className="lc-overline px-2.5 pb-1 pt-0.5">Darstellung</p>
-          {zeigeLinien && (
-            <OptSwitch
-              feld="linien"
-              an={linienEffektivAn}
-              label="Linien"
-              titel="Gliederungslinien und Einzug ein- oder ausblenden"
-            />
-          )}
           {/* A26 (David 11.7.2026): der frühere separate Fussnoten-Chip ist hier als
               Eintrag aufgegangen — der Zähler N (Sidecar) sitzt als dezentes Signal
               rechts vom Label; der Schalter bleibt derselbe `fussnoten`-Toggle. Kein

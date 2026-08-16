@@ -11,10 +11,8 @@ import { berechneSekPos, berechneSektionMeta } from './berechnungen';
 // Dependency-Listen, identische Reihenfolge innerhalb jedes Hooks; die Hooks
 // werden an EXAKT der Position gerufen, an der die Memos vorher inline standen.
 //
-// NICHT hier: der Gliederungsbaum (`baueGliederungsbaum`), das Linien-Profil
-// (`linienProfil`) und `fussnotenAnzahl` bleiben in `inhalt.tsx` — `check:linien-
-// kanon` (Teil B0) liest den `linienProfil(`-Aufruf im Quelltext von `inhalt.tsx`
-// und würde den Aufbau-Default sonst als abgeklemmt melden.
+// NICHT hier: der Gliederungsbaum (`baueGliederungsbaum`), die Gliederungstiefe
+// (`strukturTiefe`) und `fussnotenAnzahl` bleiben in `inhalt.tsx`.
 
 // ─── Artikel-bezogene Ableitungen (Positionen, Bereichslabel, Randtitel) ─────
 export function useArtikelAbleitungen({ sektionen, eintraege, struktur }: {

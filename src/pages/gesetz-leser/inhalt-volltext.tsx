@@ -9,7 +9,6 @@ import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { CurrencyMap, ErlassKopf, Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
-import type { LinienProfil } from './linienAufbau';
 import { kopfOverline, grundartMeta, verifiziertesSachgebiet } from './helpers';
 import { ArtikelLeser, ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { LeserMenuPaar } from './LeserMenuPaar';
@@ -31,18 +30,17 @@ import type { ArtikelKontextAnsicht } from '../../lib/kontext';
 // Volltext-Readers (Toast, Erlass-Kopf + Options, pane-lokale Such-Leiste, mobiler
 // Gliederungs-Drawer, 2-Spalten-TOC, Lesespalte, Kontext-Panel, Nachbar-Nav).
 // VERHALTENSNEUTRAL: identisches Markup + identische Handler wie zuvor inline (golden/
-// Snapshot byte-gleich). Die reader-root-Hülle (`.lc-leser` mit data-grundart/
-// data-guide-auto) UND `renderSektion` (Linien-Kanon: border-guide/linien.guideEbene/
-// data-normtext-linie) bleiben in GesetzLeserInhalt (inhalt.tsx) — dort gated sie
-// `check:linien-kanon`; `renderSektion` wird als Prop hereingereicht. Keine
-// Rechtsregel, kein Normtext, keine Hook-Reihenfolge berührt.
+// Snapshot byte-gleich). Die reader-root-Hülle (`.lc-leser` mit data-grundart) UND
+// `renderSektion` bleiben in GesetzLeserInhalt (inhalt.tsx); `renderSektion` wird als
+// Prop hereingereicht. Keine Rechtsregel, kein Normtext, keine Hook-Reihenfolge
+// berührt.
 
 type ArtikelLeserProps = ComponentProps<typeof ArtikelLeser>;
 type GrundartMeta = ReturnType<typeof grundartMeta>;
 
 export function LeserVolltextInhalt({
   erlass, eintraege, struktur, kopf, currency, vorher, nachher,
-  sektionen, ohneGliederung, linien, fussnotenAnzahl, meta,
+  sektionen, ohneGliederung, gliederungsTiefe, fussnotenAnzahl, meta,
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
@@ -65,7 +63,8 @@ export function LeserVolltextInhalt({
   nachher: BrowseErlass | null;
   sektionen: Sektion[];
   ohneGliederung: NormSnapshot[];
-  linien: LinienProfil;
+  /** Amtliche Gliederungstiefe (Kennzahl der Erlass-Übersicht, strukturTiefe.ts). */
+  gliederungsTiefe: number;
   fussnotenAnzahl: number | null;
   meta: GrundartMeta;
   internRefs: InternRefs | undefined;
@@ -253,7 +252,7 @@ export function LeserVolltextInhalt({
     <ErlassUebersicht erlass={erlass} kopf={kopf} currency={currency?.[erlass.key]}
       erlassTyp={meta.erlassTyp} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
       bestimmungsEtikettStatus={meta.bestimmungsEtikettStatus}
-      gliederungsTiefe={linien.strukturTiefe} kennzahlen={kennzahlen}
+      gliederungsTiefe={gliederungsTiefe} kennzahlen={kennzahlen}
       kantonSys={kantonSys} kantonErlassAnzahl={kantonErlassAnzahl}
       nichtKonsolidiert={nichtKonsolidiert} />
   );
@@ -318,7 +317,7 @@ export function LeserVolltextInhalt({
       // dieselbe Komponente, nicht mehr eine zweite Kopie (§5).
       <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
         bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
-        linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
+        fussnotenAnzahl={fussnotenAnzahl} />
     )
     : null;
 
@@ -337,7 +336,7 @@ export function LeserVolltextInhalt({
       {/* Breadcrumb trägt seit A/F der Kopf: Einzelansicht → Inhalts-Kopf, Split-View
           → PaneKopf. Kein zweiter Inline-Breadcrumb mehr (sonst Dopplung im Pane).
           G2b: EINE Kopf-Komponente (ErlassLeserKopf) — dieselbe wie im pdf-embed-
-          Pfad; sie trägt die Options-Leiste (Linien/Fussnoten/Verweise). */}
+          Pfad; sie trägt die Options-Leiste (Fussnoten/Verweise). */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort} currency={currency?.[erlass.key]}
         nichtKonsolidiert={nichtKonsolidiert}
         overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet)}
@@ -349,7 +348,7 @@ export function LeserVolltextInhalt({
           // Download-Aktionen (Download bleibt der letzte, verankerte Punkt).
           <>
             {/* W2·5d U-KOPF/A4 + V2·B-1/B-2: «Ansicht»-Dropdown
-                (Linien/Fussnoten/Verweise/Entscheide + Zeitraum) — reine data-*-/
+                (Fussnoten/Verweise + Rechtsprechungs-Filter) — reine data-*-/
                 CSS-Toggles bzw. JS-Filter (leserOptionen.ts), global, jede Instanz
                 synchron. A26 (David 11.7.2026) verschob es in der EINZELANSICHT in
                 den immer sichtbaren Inhalts-Kopf (via ansichtSlot). E3/A34 (David
