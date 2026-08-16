@@ -300,7 +300,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
   der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
-  - [ ] **Gliederungslinie im Lesetext entfernen** *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
+  - [x] **Gliederungslinie im Lesetext entfernen** *(gebaut 16.8.2026, PR feat/w2-5h-gesetz-ui)* *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** —
   **Risikopfad** (`scripts/normtext`) ⇒ Gegenprüfung; **golden-Re-Bless erwartet** (additiv).
   <!-- @meta id: W2·5l-NORMTEXT-B2 · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund, golden] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md -->
