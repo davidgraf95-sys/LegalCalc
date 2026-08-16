@@ -26,44 +26,60 @@ const BREITEN = [
 // Currency-Sidecar UND die Warnzeile aus dem Revisions-Sidecar). Gemessen wird
 // @390, wo die Sätze am ehesten neu umbrechen. Der Beobachter startet vor der
 // Navigation, damit er das Einwachsen sieht (Muster aus leser-kontext-e4).
-for (const b of BREITEN) {
-  test(`CLS Erlass-Kopf @${b.w} (STPO — beide Sidecars als Nachzügler)`, async ({ page }) => {
-    await page.setViewportSize({ width: b.w, height: b.h });
-    await page.addInitScript(() => {
-      (window as unknown as { __cls: number }).__cls = 0;
-      new PerformanceObserver((liste) => {
-        for (const e of liste.getEntries() as unknown as Array<{ value: number; hadRecentInput: boolean }>) {
-          if (!e.hadRecentInput) (window as unknown as { __cls: number }).__cls += e.value;
-        }
-      }).observe({ type: 'layout-shift', buffered: true });
+// Beide Hüllen: die Reservierung muss in der Ist-Hülle UND in V3 tragen. Sie
+// sind nicht austauschbar — V3 stellt den Kopf in eine Spalte neben der
+// Seitenleiste (@1280 nur 656 px statt 976 px), dort brechen dieselben Sätze
+// über mehr Zeilen. Genau daran ist der frühere `xl`-Schritt der Reservierung
+// gescheitert (Prüferbefund 16.8.2026); ohne diesen Lauf fiele das erst beim
+// Umschalten in H4 auf.
+const HUELLEN = [
+  { name: 'ist-huelle', q: '?leser=v1' },
+  { name: 'v3', q: '?leser=v3' },
+] as const;
+
+for (const h of HUELLEN) {
+  for (const b of BREITEN) {
+    test(`CLS Erlass-Kopf · ${h.name} @${b.w} (STPO — beide Sidecars als Nachzügler)`, async ({ page }) => {
+      await page.setViewportSize({ width: b.w, height: b.h });
+      await page.addInitScript(() => {
+        (window as unknown as { __cls: number }).__cls = 0;
+        new PerformanceObserver((liste) => {
+          for (const e of liste.getEntries() as unknown as Array<{ value: number; hadRecentInput: boolean }>) {
+            if (!e.hadRecentInput) (window as unknown as { __cls: number }).__cls += e.value;
+          }
+        }).observe({ type: 'layout-shift', buffered: true });
+      });
+      await page.goto(`/gesetze/bund/STPO${h.q}`);
+      await page.locator('header').first().waitFor({ state: 'visible', timeout: 20_000 });
+      // Warten, bis die Warnzeile wirklich da ist — sonst misst man das Nichts.
+      // Sie ist zugleich der Nachweis, dass die V3-Hülle den Zeitbezug bekommt
+      // (S3-Nachzug: `nichtKonsolidiertSeit` durch `leserV3Modell`).
+      await expect(
+        page.getByText(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung noch nicht in den Text eingearbeitet/).first(),
+      ).toBeVisible({ timeout: 20_000 });
+      await page.waitForTimeout(1500);
+      const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
+      // eslint-disable-next-line no-console -- Messwert gehört in die PR-Belegzeile
+      console.log(`S3-MESSUNG ${h.name} cls@${b.w}=${cls}`);
+      // ─── Woher die Schwelle kommt (gemessen 16.8.2026, nicht gesetzt) ────────
+      // Gemessen wurde die GANZE Seite, nicht nur der Kopf: 0.0216 @390 und
+      // 0.0072 @1280. Die Shift-Quellen (`layout-shift`-`sources`) liegen dabei
+      // NICHT im Erlass-Kopf, sondern im Seiten-Chrom (die x-Bewegung der
+      // Kopfleisten-Gruppen nach dem Font-Swap) und im Fliesstext. Beleg per
+      // Nullprobe auf Seiten OHNE diesen Kopf, gleicher Lauf, gleiche Bedingung:
+      // /gesetze 0.31 @390 · 0.73 @1280, /rechtsprechung 2.15 @390 · 2.19 @1280.
+      // Der Leser liegt also zwei Grössenordnungen darunter.
+      // Die Schwelle bewacht darum, dass der Kopf diesen Grundpegel nicht
+      // VERSCHLECHTERT — sie ist kein Rein-Kopf-Mass. Für den Kopf selbst gilt
+      // die Reservierung über die `min-h-kopf-stand*`-Tokens (tailwind.config.js
+      // — dort stehen die gemessenen Fenster-Werte) plus die drei bereits
+      // kalibrierten Wächter leser-kontext-e4, leser-kopf-a9 und
+      // gesetze-historie-badge, die alle unverändert grün sind.
+      // 0.05 = halber CWV-«good»-Wert (0.1), rund das 2.5-Fache des Ist-Werts —
+      // eng genug, um eine echte Verschlechterung zu fangen, weit genug, um am
+      // Chrom-Grundrauschen nicht zu flackern.
+      // Messbedingung: warm, ohne CPU-Drossel, eigener Browser-Kontext je Fall.
+      expect(cls).toBeLessThan(0.05);
     });
-    await page.goto('/gesetze/bund/STPO');
-    await page.locator('.lc-leser > header').first().waitFor({ state: 'visible', timeout: 20_000 });
-    // Warten, bis die Warnzeile wirklich da ist — sonst misst man das Nichts.
-    await expect(
-      page.locator('.lc-leser > header').getByText(/noch nicht in den Text eingearbeitet/),
-    ).toBeVisible({ timeout: 20_000 });
-    await page.waitForTimeout(1500);
-    const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
-    // eslint-disable-next-line no-console -- Messwert gehört in die PR-Belegzeile
-    console.log(`S3-MESSUNG cls@${b.w}=${cls}`);
-    // ─── Woher die Schwelle kommt (gemessen 16.8.2026, nicht gesetzt) ────────
-    // Gemessen wurde die GANZE Seite, nicht nur der Kopf: 0.0205 @390 und
-    // 0.0072 @1280. Die Shift-Quellen (`layout-shift`-`sources`) liegen dabei
-    // NICHT im Erlass-Kopf, sondern im Seiten-Chrom (die x-Bewegung der
-    // Kopfleisten-Gruppen nach dem Font-Swap) und im Fliesstext. Beleg per
-    // Nullprobe auf Seiten OHNE diesen Kopf, gleicher Lauf, gleiche Bedingung:
-    // /gesetze 0.31 @390 · 0.73 @1280, /rechtsprechung 2.15 @390 · 2.19 @1280.
-    // Der Leser liegt also zwei Grössenordnungen darunter.
-    // Die Schwelle bewacht darum, dass der Kopf diesen Grundpegel nicht
-    // VERSCHLECHTERT — sie ist kein Rein-Kopf-Mass. Für den Kopf selbst gilt
-    // die Reservierung `.lc-kopf-stand` (index.css) plus die drei bereits
-    // kalibrierten Wächter leser-kontext-e4, leser-kopf-a9 und
-    // gesetze-historie-badge, die alle unverändert grün sind.
-    // 0.05 = halber CWV-«good»-Wert (0.1), rund das 2.5-Fache des Ist-Werts —
-    // eng genug, um eine echte Verschlechterung zu fangen, weit genug, um am
-    // Chrom-Grundrauschen nicht zu flackern.
-    // Messbedingung: warm, ohne CPU-Drossel, eigener Browser-Kontext je Fall.
-    expect(cls).toBeLessThan(0.05);
-  });
+  }
 }
