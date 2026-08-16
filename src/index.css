@@ -482,6 +482,40 @@
     display: none;
   }
 
+  /* ── LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Pkt. 4) ────────────────
+     Befund: «Schriftgrössen-Regler wirkt auf die ganze Seite.» Ursache war der
+     GLOBALE Steller (`useSchriftskala.ts`), der `font-size` am <html> setzt —
+     gemessen wuchs die Kopfzeile von 16 px auf 20.8 px mit. Er bleibt für die
+     ganze App bestehen (Barrierefreiheit, WCAG 1.4.4); DIESE Skala beantwortet
+     die andere Frage — «der Gesetzestext ist mir zu klein» — und darf darum
+     genau eines vergrössern: den Normtext.
+
+     Warum nicht auf `.lc-leser` selbst: die Kopfzeile und die Seitenleiste
+     liegen INNERHALB dieser Hülle (LeserRahmenV3). Der Scope ist deshalb
+     `.nt-art-cv` — die Artikel-Hülle, die es in V1 wie V3 gibt (ArtikelLeser) —
+     und darin der Fliesstext-Container. Auf eine Tailwind-Utility zu selektieren
+     ist hier gängige Praxis (Blaupause: die `[data-verweise="aus"]`-Regel oben
+     auf `.decoration-dotted`); der Normtext-Container trägt kein eigenes
+     Daten-Attribut, und die Komponente gehörte nicht zur Bau-Fläche.
+
+     R6/BYTE-GLEICHHEIT: Die Vorgabestufe `normal` ist über das `:not()` vom
+     Selektor AUSGENOMMEN — sie emittiert keine Deklaration, die Normtext-Grösse
+     bleibt exakt `text-body-l` (1.125 rem) und damit pixelidentisch zum
+     Ist-Stand. Fehlt das Attribut ganz (Prerender vor `wendeLeserOptionenAn`),
+     greift ebenfalls nichts. Umschalten ist klick-getrieben ⇒ der Reflow liegt
+     binnen 500 ms nach der Eingabe (CLS-exkludiert) und rendert nichts neu (§15).
+
+     Die rem-Werte sind in `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`)
+     gespiegelt, weil dort der Anzeigewert «xxx %» daraus entsteht;
+     `src/tests/leser-schriftskala.test.ts` prüft beide Listen gegeneinander, so
+     dass sie nicht auseinanderlaufen können (§5). ── */
+  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.25rem; }
+  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.375rem; }
+  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.5rem; }
+  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser .nt-art-cv .text-body-l {
+    font-size: var(--lm-leser-schrift, 1.125rem);
+  }
+
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen
      Layout/Paint. Inhalt bleibt im DOM (Suche/Anker/Screenreader/Crawler
      unberührt), nur der Render-ZEITPUNKT ändert (§6.4). contain-intrinsic-size

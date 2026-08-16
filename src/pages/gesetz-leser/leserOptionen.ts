@@ -87,11 +87,40 @@ export type LeserOptionen = Record<OptFeld, OptWert>;
  */
 export type HistAnsicht = 'aus' | 'fussnoten' | 'chronologie';
 
+/**
+ * LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Punkt 4: «Schriftgrössen-Regler
+ * wirkt auf die ganze Seite»).
+ *
+ * VIER Stufen für die Grösse des NORMTEXTS im Leser — und nur dort. Der globale
+ * App-Regler (`components/layout/useSchriftskala.ts`, Schlüssel
+ * `lexmetrik-schriftskala`) setzt `font-size` am `<html>` und skaliert damit
+ * jedes rem-Token der ganzen Anwendung: Kopfzeile, Seitenleiste, Topbar. Das ist
+ * als globale Barrierefreiheits-Einstellung richtig und bleibt unangetastet —
+ * als «Schriftgrösse» IM Lesewerkzeug war es der gemeldete Fehler.
+ *
+ * Der Wert lebt wie `HistAnsicht` als eigenes Feld im SELBEN persistenten Store:
+ * ein localStorage-Schlüssel, ein Hörer-Satz (§5), geteilt von V1 und V3 — kein
+ * zweiter Schriftgrössen-Speicher.
+ *
+ * Bewusst NAMEN statt Zahlen: die Stufe ist eine Nutzerwahl, keine Rechengrösse.
+ * Ein gespeicherter Faktor müsste bei jeder Änderung der Skala neu gesnappt
+ * werden (so wie `stufeIndex` es global tun muss); ein Name bleibt gültig, und
+ * die Whitelist-Prüfung beim Laden ist derselbe Einzeiler wie bei den Toggles.
+ *
+ * `normal` = die heutige Normtext-Grösse (`text-body-l` = 1.125rem). Es emittiert
+ * KEINE CSS-Regel (index.css) ⇒ die Vorgabestufe ist byte-gleich zum Ist-Stand
+ * (R6/§6) und der Pixelvergleich der V3-Paritätsspecs bleibt gültig.
+ */
+export type LeserSchrift = 'normal' | 'mittel' | 'gross' | 'sehr-gross';
+
 const KEY = 'lm.leser.optionen';
 const FELDER: readonly OptFeld[] = ['fussnoten', 'verweise', 'leitfaelle'];
 const DEFAULT: LeserOptionen = { fussnoten: 'an', verweise: 'an', leitfaelle: 'an' };
 const HIST_ANSICHTEN: readonly HistAnsicht[] = ['aus', 'fussnoten', 'chronologie'];
 const DEFAULT_HIST: HistAnsicht = 'fussnoten';
+/** Aufsteigend — die Reihenfolge IST die Regler-Achse (`leserSchrift.ts`). */
+export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gross', 'sehr-gross'];
+const DEFAULT_SCHRIFT: LeserSchrift = 'normal';
 
 // W2·7-BEZUG/B4: Grundzustand der Bezugs-Facetten = NUR Leitentscheide (§9 B4
 // «Default konservativ»). Die geteilte Konstanten-Referenz macht den häufigen
@@ -103,6 +132,7 @@ const KEINE_KANTONE: readonly string[] = [];
 interface GeladenerZustand {
   opt: LeserOptionen;
   hist: HistAnsicht;
+  schrift: LeserSchrift;
   bezugKlassen: readonly BezugStatus[];
   bezugKantone: readonly string[];
   bezugVon: string;
@@ -114,7 +144,7 @@ interface GeladenerZustand {
 
 function lade(): GeladenerZustand {
   const grund = {
-    opt: { ...DEFAULT }, hist: DEFAULT_HIST,
+    opt: { ...DEFAULT }, hist: DEFAULT_HIST, schrift: DEFAULT_SCHRIFT,
     bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
     bezugVon: '', bezugBis: '', migriert: false,
   };
@@ -122,11 +152,18 @@ function lade(): GeladenerZustand {
     const roh = localStorage.getItem(KEY);
     if (!roh) return grund;
     const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>>
-      & { zeitraum?: unknown; hist?: unknown; bezugKlassen?: unknown; bezugKantone?: unknown;
-          bezugVon?: unknown; bezugBis?: unknown };
+      & { zeitraum?: unknown; hist?: unknown; schrift?: unknown; bezugKlassen?: unknown;
+          bezugKantone?: unknown; bezugVon?: unknown; bezugBis?: unknown };
     const opt: LeserOptionen = { ...DEFAULT };
     for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus') opt[f] = o[f] as OptWert;
     const hist = HIST_ANSICHTEN.includes(o.hist as HistAnsicht) ? (o.hist as HistAnsicht) : DEFAULT_HIST;
+    // Schrift-Stufe: dieselbe Whitelist-Prüfung wie `hist` — was nicht im
+    // Vokabular steht (fehlend, `undefined`, Zahl, Alt-Wort, manipulierter
+    // Speicher), fällt auf die Vorgabestufe. Ein unbekannter Wert darf NIE
+    // durchrutschen: er landete sonst als `data-leserschrift="…"` am <html>,
+    // wo keine Regel greift — der Nutzer sähe eine Stufe, die es nicht gibt.
+    const schrift = SCHRIFT_STUFEN.includes(o.schrift as LeserSchrift)
+      ? (o.schrift as LeserSchrift) : DEFAULT_SCHRIFT;
     // B5-Migration: steht schon EIN Bereichs-Feld im Speicher, ist der Bereich die
     // Wahrheit und `zeitraum` ein Überbleibsel, das beim nächsten Schreiben
     // wegfällt. Sonst wird die Alt-Stufe einmalig abgebildet (§8) — `heuteIso`
@@ -151,7 +188,7 @@ function lade(): GeladenerZustand {
       ? normalisiereKlassen(o.bezugKlassen)
       : (opt.leitfaelle === 'aus' ? [] : DEFAULT_BEZUG_KLASSEN);
     const bezugKantone = Array.isArray(o.bezugKantone) ? normalisiereKantone(o.bezugKantone) : KEINE_KANTONE;
-    return { opt, hist, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
+    return { opt, hist, schrift, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
   } catch {
     // localStorage gesperrt (privater Modus) ODER kaputtes JSON → Default.
     return grund;
@@ -162,13 +199,14 @@ function lade(): GeladenerZustand {
 // `aktuell`/`aktuellVon`/`aktuellBis` werden nur bei echten Änderungen ersetzt.
 const start = typeof window === 'undefined'
   ? {
-      opt: { ...DEFAULT }, hist: DEFAULT_HIST,
+      opt: { ...DEFAULT }, hist: DEFAULT_HIST, schrift: DEFAULT_SCHRIFT,
       bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
       bezugVon: '', bezugBis: '', migriert: false,
     }
   : lade();
 let aktuell: LeserOptionen = start.opt;
 let aktuellHist: HistAnsicht = start.hist;
+let aktuellSchrift: LeserSchrift = start.schrift;
 let aktuellKlassen: readonly BezugStatus[] = start.bezugKlassen;
 let aktuellKantone: readonly string[] = start.bezugKantone;
 let aktuellVon: string = start.bezugVon;
@@ -180,7 +218,7 @@ function speichere(): void {
     // ein weitergeschleppter Alt-Wert liesse die Migration bei jedem Laden neu
     // greifen. Ein einziges Schreiben räumt ihn ab.
     localStorage.setItem(KEY, JSON.stringify({
-      ...aktuell, hist: aktuellHist,
+      ...aktuell, hist: aktuellHist, schrift: aktuellSchrift,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
       bezugVon: aktuellVon, bezugBis: aktuellBis,
     }));
@@ -204,6 +242,7 @@ export function wendeLeserOptionenAn(): void {
   const g = lade();
   aktuell = g.opt;
   aktuellHist = g.hist;
+  aktuellSchrift = g.schrift;
   // B4: JS-konsumiert (kein data-*-Attribut) — die Weiche «welcher Shard» und
   // die Gruppierung der Kanten sind React-Zustand, nicht CSS.
   aktuellKlassen = g.bezugKlassen;
@@ -217,6 +256,13 @@ export function wendeLeserOptionenAn(): void {
   // Pre-Paint-Attribut am <html> (kein Flackern, kein Hydration-Mismatch). Der
   // Default 'fussnoten' emittiert KEINE CSS-Regel ⇒ Grundzustand byte-gleich (R6).
   el.setAttribute('data-histansicht', aktuellHist);
+  // Leser-Schriftskala: CSS-getrieben wie die Toggles, also dasselbe
+  // Pre-Paint-Attribut am <html>. Das ATTRIBUT steht global, die WIRKUNG nicht:
+  // die einzige Regel, die es auswertet, ist auf `.lc-leser .nt-art-cv` gescopt
+  // (index.css) — Kopfzeile, Seitenleiste und der Rest der App bleiben unberührt.
+  // Genau darin unterscheidet es sich vom globalen `font-size`-Steller am <html>.
+  // Die Vorgabestufe 'normal' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6).
+  el.setAttribute('data-leserschrift', aktuellSchrift);
 }
 
 const hoerer = new Set<() => void>();
@@ -260,6 +306,20 @@ export function setzeHistAnsicht(h: HistAnsicht): void {
   speichere();
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('data-histansicht', h);
+  }
+  hoerer.forEach((f) => f());
+}
+
+/** Leser-Schriftskala setzen. Mechanik wie `setzeHistAnsicht`: Attribut direkt
+ *  ans <html>, persistieren, Hörer benachrichtigen — KEIN Artikel-Re-Render, die
+ *  Umschaltung ist reines CSS (§15). Ein unbekannter Wert kann hier nicht
+ *  eintreten (Typ), und `lade()` fängt ihn beim nächsten Start ab. */
+export function setzeLeserSchrift(s: LeserSchrift): void {
+  if (s === aktuellSchrift) return;
+  aktuellSchrift = s;
+  speichere();
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('data-leserschrift', s);
   }
   hoerer.forEach((f) => f());
 }
@@ -359,6 +419,20 @@ function getHistServerSnapshot(): HistAnsicht {
 }
 export function useHistAnsicht(): HistAnsicht {
   return useSyncExternalStore(abonniere, getHistSnapshot, getHistServerSnapshot);
+}
+
+/** Primitiv-Selektor auf die Leser-Schriftstufe — nur ein String, also rendern
+ *  die Abonnenten (die drei Regler-Elemente) bei fremden Toggles nicht neu
+ *  (Object.is, §15). Der Normtext folgt dem `data-leserschrift`-Attribut per
+ *  CSS und wird beim Umschalten NICHT neu gerendert. */
+function getSchriftSnapshot(): LeserSchrift {
+  return aktuellSchrift;
+}
+function getSchriftServerSnapshot(): LeserSchrift {
+  return DEFAULT_SCHRIFT;
+}
+export function useLeserSchriftStufe(): LeserSchrift {
+  return useSyncExternalStore(abonniere, getSchriftSnapshot, getSchriftServerSnapshot);
 }
 
 /**
