@@ -107,7 +107,14 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
         type="button"
         onClick={() => setOffen((o) => !o)}
         aria-expanded={offen}
-        aria-controls={panelId}
+        // NUR im offenen Zustand (Bug-Check B3, 16.8.2026): `aria-controls`
+        // zeigt im geschlossenen Zustand auf eine Id, die es im DOM gar nicht
+        // gibt — das Panel wird bedingt gerendert. axe meldet das als
+        // `aria-valid-attr-value` (kaputte Id-Referenz), und Screenreader
+        // bieten einen Sprung an, der ins Leere führt (§8). `aria-expanded`
+        // trägt die Zustandsauskunft ohnehin allein. Dasselbe Muster wie im
+        // Header-Suchfeld (`aria-controls={zeigtPanel ? listboxId : undefined}`).
+        aria-controls={offen ? panelId : undefined}
         aria-label="Ansicht"
         data-v3-ansicht
         className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"

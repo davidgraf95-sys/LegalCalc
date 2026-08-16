@@ -63,6 +63,36 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     expect(fehler).toEqual([])
   })
 
+  test('(b2) Ansicht-Öffner: `aria-controls` erst, wenn das Panel wirklich da ist (B3)', async ({ page }) => {
+    // Bug-Check 16.8.2026: der Öffner trug `aria-controls` auch im Ruhezustand,
+    // in dem das Panel gar nicht gerendert wird — eine Id-Referenz ins Leere
+    // (axe `aria-valid-attr-value`; ein Screenreader bietet einen Sprung an,
+    // der nirgends landet, §8). Geprüft wird der VERTRAG in beiden Zuständen,
+    // nicht nur die Abwesenheit des Attributs: im offenen Zustand muss die
+    // referenzierte Id auch wirklich existieren, sonst wäre «weg damit» ein
+    // Fix, der die Verbindung ganz zerstört.
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
+
+    const oeffner = page.locator('[data-v3-ansicht]')
+    await expect(oeffner).toHaveAttribute('aria-expanded', 'false')
+    await expect(oeffner).not.toHaveAttribute('aria-controls', /./)
+
+    await oeffner.click()
+    await expect(page.locator('[data-v3-ansicht-panel]')).toBeVisible()
+    await expect(oeffner).toHaveAttribute('aria-expanded', 'true')
+    const ziel = await oeffner.getAttribute('aria-controls')
+    expect(ziel, 'offen ohne aria-controls — die Verbindung fehlt ganz').toBeTruthy()
+    await expect(
+      page.locator(`[id="${ziel}"]`),
+      `aria-controls zeigt auf «${ziel}» — kein solches Element im DOM`,
+    ).toHaveCount(1)
+
+    expect(fehler).toEqual([])
+  })
+
   test('(c) Grundzustand: ohne Flag existiert [data-leser-v3="rahmen"] NICHT (R10)', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze/bund/BGFA')

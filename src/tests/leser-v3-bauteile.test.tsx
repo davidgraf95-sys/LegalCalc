@@ -78,6 +78,25 @@ describe('LeserKopf — Kürzel, laufender Artikel, Ansicht-Öffner sind IMMER d
   });
 });
 
+describe('LeserAnsichtV3 — `aria-controls` zeigt nie auf ein Panel, das es nicht gibt (B3)', () => {
+  // Gefunden 16.8.2026 im Bug-Check: der Öffner trug `aria-controls` immer,
+  // das Panel wird aber bedingt gerendert. Im Ruhezustand — und das ist der
+  // Zustand, in dem der Leser fast immer steht — verwies das Attribut auf eine
+  // Id ohne Element: axe `aria-valid-attr-value`, und ein Screenreader bietet
+  // einen Sprung an, der ins Leere führt (§8). Den OFFENEN Zustand prüft
+  // `e2e/leser-v3-umschalten.e2e.ts` (a) im echten Browser — hier gibt es
+  // keinen Weg, den internen Zustand umzuschalten (Node-Env, kein jsdom).
+  it.each<KopfStufe>(['voll', 'kompakt', 'mini'])('Stufe "%s": zu ⇒ kein aria-controls, aber aria-expanded=false', (stufe) => {
+    const html = renderKopf({ stufe });
+    expect(html).toContain('data-v3-ansicht');
+    expect(html).toContain('aria-expanded="false"');
+    // Der Ruhezustand rendert kein Panel — dann darf es auch keine Referenz geben.
+    expect(html).not.toContain('data-v3-ansicht-panel');
+    expect(html, 'aria-controls im geschlossenen Zustand — kaputte Id-Referenz')
+      .not.toContain('aria-controls');
+  });
+});
+
 describe('LeserKopf — «Gesetze» und der Volltitel fallen unter 900 px', () => {
   it('Stufe "voll": Gesetze-Krume UND Volltitel sind da', () => {
     const html = renderKopf({ stufe: 'voll' });
