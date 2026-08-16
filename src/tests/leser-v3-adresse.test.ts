@@ -54,6 +54,7 @@ const V3_REIN = [
   'src/pages/gesetz-leser/v3/LeserKopf.tsx',
   'src/pages/gesetz-leser/v3/LeserSeitenleiste.tsx',
   'src/pages/gesetz-leser/v3/SuchSprungFeld.tsx',
+  'src/pages/gesetz-leser/v3/suchKuerzel.ts',
   'src/pages/gesetz-leser/v3/LeserAnsichtV3.tsx',
   'src/pages/gesetz-leser/v3/UebersichtBox.tsx',
   'src/pages/gesetz-leser/v3/kopfStufen.ts',

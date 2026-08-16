@@ -257,8 +257,12 @@ describe('SuchSprungFeld — Enter springt, Escape leert und springt NICHT', () 
     renderToString(
       <SuchSprungFeld wert="429" setzeWert={setzeWert} onSprung={onSprung} loeseArtikel={() => '429_tok'} />,
     );
-    const onKeyDown = eingefangeneInputs[0].onKeyDown as (e: { key: string; preventDefault: () => void }) => void;
-    onKeyDown({ key: 'Escape', preventDefault: () => {} });
+    // `stopPropagation` gehoert seit dem B1-Nachzug dazu: im Sheet laegen sonst
+    // «Feld leeren» und «Sheet schliessen» auf demselben Tastendruck.
+    const onKeyDown = eingefangeneInputs[0].onKeyDown as (e: { key: string; preventDefault: () => void; stopPropagation: () => void }) => void;
+    let gestoppt = false;
+    onKeyDown({ key: 'Escape', preventDefault: () => {}, stopPropagation: () => { gestoppt = true; } });
+    expect(gestoppt, 'Escape wird weitergereicht — das Sheet schliesst mit').toBe(true);
     expect(setzeWert).toHaveBeenCalledExactlyOnceWith('');
     expect(onSprung).not.toHaveBeenCalled();
   });

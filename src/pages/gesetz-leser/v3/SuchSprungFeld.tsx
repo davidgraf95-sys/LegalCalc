@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from 'react';
+import { useRef, type RefObject } from 'react';
 
 // ─── EIN Feld für Suchen UND Springen (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 4) ────
 //
@@ -15,25 +15,17 @@ import { useEffect, useRef, type RefObject } from 'react';
 // Der Sprung selbst geht über `springeZuArtikel` des Rahmens und erbt damit den
 // Sticky-Offset (`.nt-anker` → `--nt-stick`), den der Kopf setzt (Risiko R1).
 //
-// TASTATUR (Kap. 4h): `⌘K`/`Ctrl+K` und `/` fokussieren das Feld; `Esc` leert
-// es und schliesst die Trefferliste, SPRINGT ABER NICHT — die Scrollposition
-// bleibt exakt stehen (Pos. 14, «recover from mistakes»). Darum ruft der
-// Esc-Zweig ausdrücklich nichts als `setSuche('')`: jeder Sprung-Aufruf, auch
-// ein «zurück an den Anfang», wäre eine Bewegung, die niemand angefordert hat.
+// TASTATUR (Kap. 4h): `Esc` leert das Feld und schliesst die Trefferliste,
+// SPRINGT ABER NICHT — die Scrollposition bleibt exakt stehen (Pos. 14,
+// «recover from mistakes»). Darum ruft der Esc-Zweig ausdrücklich nichts als
+// `setSuche('')`: jeder Sprung-Aufruf, auch ein «zurück an den Anfang», wäre
+// eine Bewegung, die niemand angefordert hat. `stopPropagation` hält den
+// Tastendruck zudem beim Feld — ein Esc, das die Trefferliste leert, soll nicht
+// zusätzlich das Sheet schliessen, in dem das Feld steht.
 //
-// Die Tastenkürzel hängen am `window`, nicht am Feld — sie sollen ja greifen,
-// während der Fokus im Lesetext steht. Sie sind trotzdem NICHT global im Sinne
-// von «überall in der App»: der Effekt lebt und stirbt mit dieser Komponente,
-// die nur im V3-Leser gerendert wird. `/` wird unterdrückt, solange der Fokus
-// in einem Eingabefeld steht (sonst könnte man das Zeichen nirgends tippen).
-
-/** Tippt der Nutzer gerade in ein Feld? Dann ist `/` ein Zeichen, kein Kürzel. */
-function inEingabe(ziel: EventTarget | null): boolean {
-  const el = ziel as HTMLElement | null;
-  if (!el || !el.tagName) return false;
-  const t = el.tagName.toLowerCase();
-  return t === 'input' || t === 'textarea' || t === 'select' || el.isContentEditable === true;
-}
+// `⌘K`/`Ctrl+K` und `/` liegen NICHT hier, sondern im Rahmen
+// (`./suchKuerzel`): das Feld ist bei zugeklappter Spalte gar nicht im DOM, ein
+// Kürzel darin wäre dann still wirkungslos (Bug-Check B1, 16.8.2026).
 
 export function SuchSprungFeld({
   wert, setzeWert, loeseArtikel, onSprung, feldRef, onKuerzel,
@@ -44,29 +36,11 @@ export function SuchSprungFeld({
    *  bleibt das Feld eine reine Suche — nie ein totes Sprung-Versprechen (§8). */
   loeseArtikel?: (eingabe: string) => string | null;
   onSprung: (token: string) => void;
-  /** Damit der Rahmen den Fokus setzen kann (Sheet öffnet → Feld fokussieren). */
+  /** Damit der Rahmen den Fokus setzen kann (Fläche öffnet → Feld fokussieren). */
   feldRef?: RefObject<HTMLInputElement | null>;
-  /** Wird bei `⌘K`/`/` gerufen, BEVOR fokussiert wird — mobil öffnet das
-   *  die Gliederung als Sheet, in der das Feld steht (Kap. 4h). */
-  onKuerzel?: () => void;
 }) {
   const eigenerRef = useRef<HTMLInputElement>(null);
   const ref = feldRef ?? eigenerRef;
-
-  useEffect(() => {
-    const taste = (e: KeyboardEvent) => {
-      const istK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
-      const istSlash = e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !inEingabe(e.target);
-      if (!istK && !istSlash) return;
-      e.preventDefault();
-      onKuerzel?.();
-      // Nach dem Öffnen des Sheets existiert das Feld evtl. erst im nächsten
-      // Frame — der Fokus wird darum nachgereicht statt sofort versucht.
-      requestAnimationFrame(() => ref.current?.focus());
-    };
-    window.addEventListener('keydown', taste);
-    return () => window.removeEventListener('keydown', taste);
-  }, [onKuerzel, ref]);
 
   const token = loeseArtikel && wert.trim() !== '' ? loeseArtikel(wert) : null;
 
@@ -80,8 +54,11 @@ export function SuchSprungFeld({
           onChange={(e) => setzeWert(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Escape') {
-              // Kein Sprung, kein Scroll — nur leeren (Pos. 14).
+              // Kein Sprung, kein Scroll — nur leeren (Pos. 14). Und nicht
+              // weiterreichen: im Sheet läge sonst «Feld leeren» und «Sheet
+              // schliessen» auf demselben Tastendruck.
               e.preventDefault();
+              e.stopPropagation();
               setzeWert('');
               return;
             }

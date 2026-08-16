@@ -1,4 +1,4 @@
-import { type CSSProperties, type ReactNode } from 'react';
+import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import { naechsteInstanz, merkeTab } from '../../../lib/tabs';
@@ -23,6 +23,7 @@ import { SuchSprungFeld } from './SuchSprungFeld';
 import { UebersichtBox } from './UebersichtBox';
 import { LeserV3Provider } from './LeserV3Kontext';
 import { kopfHoehe, useKopfStufe } from './kopfStufen';
+import { useSuchSprungKuerzel } from './suchKuerzel';
 import { overlineGebiet, uebersichtsZeile } from './erlassAnsicht';
 import { useLeserV3Modell } from './leserV3Modell';
 
@@ -91,6 +92,22 @@ export function LeserRahmenV3({
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
   const { stufe, kopfRef } = useKopfStufe();
 
+  // ⌘K / «/» — Zusage des RAHMENS, nicht des Feldes (Bug-Check B1): erst die
+  // Fläche öffnen, in der das Feld steht, dann fokussieren. Steht VOR den
+  // frühen Rückgaben, weil Hooks nicht bedingt laufen dürfen; der Ist-Zustand
+  // wird erst beim Tastendruck gelesen, nicht beim Registrieren.
+  const suchFeldRef = useRef<HTMLInputElement>(null);
+  useSuchSprungKuerzel({
+    feldRef: suchFeldRef,
+    onKuerzel: () => {
+      if ((m.eintraege?.length ?? 0) === 0) return;
+      // @≥1024 px: zugeklappte Spalte aufziehen (sonst gäbe es kein Feld zu
+      // fokussieren). Darunter: Bottom-Sheet öffnen. Beides idempotent.
+      if (umgebung.istXl) m.setTocOffen(true);
+      else m.setTocAuf(true);
+    },
+  });
+
   // Frühe Ansichten (Fehlseite · Currency-Pin · pdf-embed · nur-live-link) und
   // der Ladezustand — dieselben Bausteine wie die Ist-Hülle (§5).
   const frueheAnsicht = FruehAnsicht({
@@ -108,8 +125,7 @@ export function LeserRahmenV3({
 
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
-      onSprung={m.springeZuArtikel}
-      onKuerzel={() => { if (!umgebung.istXl && hatLeiste) m.setTocAuf(true); }} />
+      onSprung={m.springeZuArtikel} feldRef={suchFeldRef} />
   );
 
   const leiste = (imSheet: boolean) => (

@@ -112,6 +112,15 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
       setOffen(true);
     };
     const handler = (e: KeyboardEvent) => {
+      // VORRANGREGEL (Bug-Check B1 zu Leser V3, 16.8.2026): Wer denselben
+      // Tastendruck in der CAPTURE-Phase schon beansprucht hat, gewinnt. Der
+      // V3-Leser tut das für sein Such-/Sprungfeld (`v3/suchKuerzel.ts`) —
+      // ohne diese Zeile öffnete ⌘K/«/» dort BEIDES: hier synchron das
+      // Dropdown, dort einen Frame später den Fokus, und das Dropdown blieb
+      // sichtbar über der Lesefläche stehen. Einzige Änderung an dieser Datei;
+      // ausserhalb des V3-Lesers ruft niemand `preventDefault` in Capture, das
+      // Verhalten bleibt also unverändert.
+      if (e.defaultPrevented) return;
       if ((e.metaKey || e.ctrlKey) && !e.altKey && (e.key === 'k' || e.key === 'K')) {
         e.preventDefault();
         fokussiere();

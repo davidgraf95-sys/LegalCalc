@@ -97,19 +97,56 @@ test.describe('FL-5 — EIN Feld für Suchen und Springen', () => {
     expect(fehler).toEqual([])
   })
 
-  test('(d) ⌘K/Ctrl+K und «/» fokussieren das Feld', async ({ page }) => {
+  // VORRANG VOR DER HEADER-SUCHE (Bug-Check B1, 16.8.2026). Der Test hatte den
+  // Fehler bis dahin maskiert: zwischen den beiden Kürzeln stand ein
+  // `body.click()`, und der schloss nebenbei das Dropdown der globalen Suche,
+  // das ⌘K dort ebenfalls aufgezogen hatte. Ohne Klick — nur `blur()` — steht
+  // im Test, was der Nutzer sieht; darum prüft er jetzt zusätzlich, dass das
+  // Header-Dropdown ZU bleibt (deklarierte Verhaltensänderung, PR #537).
+  const headerFeld = (page: Page) =>
+    page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
+  // Das Dropdown der globalen Suche — Treffer UND Leerzustand rendern beide eine
+  // `.lc-card` innerhalb `[role="search"]`. Bewusst NICHT `aria-expanded`: das
+  // steht bei leerem Feld auch dann auf `false`, wenn der Leerzustand sichtbar
+  // aufgezogen ist, und der Test wäre grün, ohne etwas zu prüfen (§6.7).
+  const headerDropdown = (page: Page) => page.locator('[role="search"] .lc-card')
+
+  test('(d) ⌘K/Ctrl+K und «/» fokussieren das Feld — und NUR dieses', async ({ page }) => {
     test.slow()
     const fehler = await oeffneStPO(page)
 
     await page.keyboard.press('Control+k')
     await expect(suchFeld(page)).toBeFocused()
+    await expect(headerDropdown(page)).toHaveCount(0)
+    await expect(headerFeld(page)).not.toBeFocused()
 
-    // Weg vom Feld, dann «/» probieren (Fokus liegt jetzt im Fliesstext, nicht
-    // in einem Eingabefeld — sonst würde `/` als Zeichen getippt).
-    await page.locator('body').click({ position: { x: 5, y: 5 } })
+    // Weg vom Feld, OHNE Klick (ein Klick auf den Body schlösse fremde Overlays
+    // gleich mit): der Fokus fällt auf <body>, «/» ist dort ein Kürzel.
+    await suchFeld(page).blur()
     await expect(suchFeld(page)).not.toBeFocused()
     await page.keyboard.press('/')
     await expect(suchFeld(page)).toBeFocused()
+    await expect(headerDropdown(page)).toHaveCount(0)
+
+    expect(fehler).toEqual([])
+  })
+
+  test('(e) ⌘K bei ZUGEKLAPPTER Gliederungsspalte zieht sie auf und fokussiert', async ({ page }) => {
+    test.slow()
+    const fehler = await oeffneStPO(page)
+
+    // @1440 steht die Spalte offen — zuklappen, dann ist das Feld nicht im DOM.
+    // Genau dort tat ⌘K bis zum B1-Nachzug gar nichts (der Listener hing am
+    // Feld, das Feld gab es nicht).
+    await page.locator('[data-v3-gliederung-zu]').click()
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+    await expect(suchFeld(page)).toHaveCount(0)
+
+    await page.keyboard.press('Control+k')
+    await expect(page.locator('[data-v3-aside]')).toBeVisible()
+    await expect(suchFeld(page)).toBeFocused()
+    await expect(headerDropdown(page)).toHaveCount(0)
+    await expect(headerFeld(page)).not.toBeFocused()
 
     expect(fehler).toEqual([])
   })
