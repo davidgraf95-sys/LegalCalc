@@ -14,7 +14,10 @@ import { baueGliederungsModell, findeSynthPfad } from './gliederungsModell';
 import { useArtikelKontext } from './artikelKontext';
 import { LadeAnzeige, FruehAnsicht } from './inhalt-ansichten';
 import { LeserVolltextInhalt } from './inhalt-volltext';
-import { useLeserDaten, useInhaltsKopfMeldung, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
+import { useLeserDaten, useLeserSprungSpy, loeseSpyNachlauf } from './inhalt-hooks';
+// Direkt statt über den Re-Export in './inhalt-hooks' (A1, 16.8.2026): jener
+// zog die Ist-Kopfleiste transitiv auch in die V3-Hülle. Begründung dort.
+import { useInhaltsKopfMeldung } from './inhalt-kopfmeldung';
 import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from './inhalt-zustand';
 import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from './inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from './inhalt-sprung';

@@ -92,7 +92,24 @@ export function GliederungSheet({
               )}
             </p>
           ) : (
-            <p className="text-micro leading-snug text-ink-400">Noch keine Leseposition erfasst.</p>
+            // ── DEKLARIERTE FL-4-ABWEICHUNG (PR #537, 16.8.2026) ───────────
+            // FL-4 friert die geteilten Ist-Dateien ein, solange V3 hinter dem
+            // Flag steht — DIESE eine Zeile ist die einzige Ausnahme, und sie
+            // ist im PR-Body als Ist-Kontrastfix ausgewiesen.
+            //
+            // BEFUND: `ink-400` ist ein Deko-Token (3.41:1 auf `paper-raised`)
+            // und trug hier sichtbaren Text — axe: `color-contrast`, serious.
+            // Gefunden beim axe-Scan des GEÖFFNETEN Sheets (die bestehende
+            // a11y-Stichprobe öffnet es nicht) und in BEIDEN Hüllen
+            // reproduziert: der Defekt ist heute live, nicht durch V3 entstanden.
+            //
+            // WARUM KEIN REVERT: FL-4 schützt die Ist-Hülle vor V3-getriebenem
+            // Umbau, nicht vor der Behebung eines eigenen AA-Verstosses. Ein
+            // Revert liesse einen serious-Befund auf Prod stehen, um eine Regel
+            // formal einzuhalten, die genau dafür nicht gemacht ist (§8, §1).
+            // `ink-500` hebt ihn auf AA, ohne die Dämpfung aufzugeben; dieselbe
+            // Klasse wie W3.6 (25.6.2026) und der Menü-Befund vom 26.7.2026.
+            <p className="text-micro leading-snug text-ink-500">Noch keine Leseposition erfasst.</p>
           )}
         </div>
         {/* 3 · Quickjump «Art. N» */}
