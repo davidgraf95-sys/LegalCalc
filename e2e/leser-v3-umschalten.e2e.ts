@@ -22,7 +22,21 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     // BGBM: kleiner Erlass mit Fussnoten-Apparat (Präzedenz leser-optionen.e2e.ts).
     await page.goto('/gesetze/bund/BGBM?leser=v3')
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
-    const marker = page.locator('.lc-leser button[aria-label^="Fussnote"]').first()
+    // ── SELEKTOR NACHGEZOGEN (Treuebruch-Fix 16.8.2026) ────────────────────
+    // Hier stand `.lc-leser button[aria-label^="Fussnote"]`. Dieser Selektor
+    // trifft in V3 NICHT den Fussnoten-Marker, sondern den SCHALTER
+    // «Fussnoten (26)» im Ansicht-Menü — das Menü liegt in V3 innerhalb von
+    // `.lc-leser`. Genau daraus bestand der von David gemeldete Defekt: die
+    // CSS-Regel suchte über den accessible name und blendete den Schalter aus,
+    // mit dem man sie zurücknimmt.
+    //
+    // DIESER TEST WAR GRÜN, WEIL DER DEFEKT DA WAR: `toBeHidden()` prüfte in
+    // Wahrheit, dass der Bedienknopf verschwindet. Nachdem der Wurzel-Fix den
+    // Schalter korrekt stehen lässt, fällt die Zeile — richtigerweise.
+    // Der Test zielt jetzt auf die Kennung, die der Marker seit dem Fix trägt
+    // (`data-fn-ref`, gesetzt in `ArtikelBody.tsx`); sie ist eindeutig,
+    // hüllenneutral, und der Schalter trägt sie nicht.
+    const marker = page.locator('.lc-leser [data-fn-ref]').first()
     await expect(marker).toBeVisible({ timeout: 15_000 })
 
     await page.locator('[data-v3-ansicht]').click()
@@ -36,7 +50,11 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     await expect(page.locator('[data-leser-v3="rahmen"]')).toHaveCount(0)
     await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'aus')
     // Die Ist-Hülle zeigt denselben Zustand — kein zweiter, unabhängiger Speicher.
-    const markerV1 = page.locator('.lc-leser button[aria-label^="Fussnote"]').first()
+    // Dieselbe Kennung in der Ist-Hülle — sie ist bewusst hüllenneutral, damit
+    // dieser Vergleich überhaupt einer ist (in V1 lag das Ansicht-Menü
+    // ausserhalb von `.lc-leser`, der alte Selektor traf dort tatsächlich
+    // Marker; die Spec verglich also links und rechts Verschiedenes).
+    const markerV1 = page.locator('.lc-leser [data-fn-ref]').first()
     await expect(markerV1).toBeHidden({ timeout: 15_000 })
 
     expect(fehler).toEqual([])
