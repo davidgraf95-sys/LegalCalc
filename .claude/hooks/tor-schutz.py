@@ -119,6 +119,22 @@ if re.search(r"git\s+commit\b[^\n]*--amend", cmd):
         "Commit umgeschrieben). Nachzügler als eigenen, additiven Commit."
     )
 
+# ── 2a. Merge und Aufraeumen nie in EINER Kommandozeile (Vorfall 16.8.2026) ──
+# `gh pr merge 533 …; git push origin --delete <branch>` — der Merge scheiterte
+# (BEHIND/BLOCKED), die Kette lief weiter, der Remote-Branch war weg, GitHub
+# schloss den PR unmerged. Aufraeumen (Branch/Worktree loeschen) erst NACH dem
+# geprueften `state: MERGED`, in einem eigenen Kommando.
+if re.search(r"\bgh\s+pr\s+merge\b", cmd) and re.search(
+    r"(git\s+push\b[^\n]*--delete|git\s+branch\s+-[dD]\b|git\s+worktree\s+remove)", cmd
+):
+    probleme.append(
+        "BLOCKIERT (Skill landung Ziff. 7/Nachkontrolle 5, Vorfall 16.8.2026): "
+        "`gh pr merge` und Branch-/Worktree-Loeschung in EINER Kommandozeile — "
+        "scheitert der Merge (BEHIND/BLOCKED), loescht die Kette trotzdem den "
+        "Branch und GitHub schliesst den PR unmerged (#533). Erst mergen, dann "
+        "`gh pr view --json state` == MERGED pruefen, DANN aufraeumen."
+    )
+
 # ── 2b. Direkter main-Push = Deploy (Auftrag David 15.8.2026) ─────────────
 # Jeder Push auf origin/main loest einen Vercel-Deploy aus UND laesst jeden
 # offenen Auto-Merge-PR auf BEHIND fallen (= je ein weiterer Deploy pro
