@@ -47,27 +47,43 @@ const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 // Diese Doppelung IST der Paritätsbeweis — eine Hülle, die den Normtext
 // verändert, wird auf genau einer Seite rot.
 //
-// Der Fahrplan schreibt in derselben Zeile «8 bleiben unverändert grün» und
-// zählt dann ZEHN Namen auf. Hier stehen alle zehn: die Liste ist die
-// verbindliche Aufzählung, die Zahl «8» ist ein Zählfehler aus einer früheren
-// Fassung (gemeldet in docs/ux-audit-2026-07/reader/leser-v3-vorprobe.md).
-// Mehr Deckung ist hier die sichere Richtung — nie weniger als der Fahrplan.
+// SECHS, nicht zehn — Vollzug des Vorproben-Befunds (Kap. 7, 16.8.2026).
+// Die Liste stand bis dahin auf zehn Namen. Vier davon können gegen eine NEUE
+// Hülle konstruktiv nicht grün werden, weil sie die STRUKTUR der Ist-Hülle
+// prüfen, die V3 planmässig ersetzt — nicht den Normtext:
+//   gesetze-ux-g3a          `.lc-leser > header` als direktes Kind (3 ×)
+//   leser-optionen          «genau zwei role=switch» — V3 hat die drei aus Kap. 4f
+//   leser-r1-r2             das zweite Feld «Zu Artikel springen», das Pos. 4 beseitigt
+//   leser-ruecksprung-r5-r7 Rücksprung «< 140 px» — V3 landet auf 156 px (64+36+56)
+// Sie im Flag-Projekt zu führen hiesse, jede Hüllen-Änderung als
+// Normtext-Verletzung zu melden — ein Tor, das das Falsche misst, ist schlimmer
+// als keines (§6.7). Sie sind damit **B-Specs**: im Projekt `chromium` gegen den
+// Ist-Stand laufen sie unverändert weiter (dort sind sie der Schutz der alten
+// Hülle) und werden erst in H4 umgehängt. CI-Anlass: Run 31962198006, Shard 4/8,
+// `[leser-v3] › e2e/gesetze-ux-g3a.e2e.ts:23`.
+//
+// Was bleibt, ist der Paritätsbeweis, der wirklich einer ist: sechs Specs, die
+// in BEIDEN Hüllen grün sind.
 const N_SPECS = [
   // Kein N-Test, sondern der Selbsttest des Flag-Projekts: er sieht den
   // V3-Marker POSITIV und schliesst damit aus, dass `leser-v3` still gegen V1
   // läuft und grün ist, ohne etwas zu prüfen (§6.7). Läuft absichtlich in
   // BEIDEN Projekten — `chromium` beweist den Grundzustand AUS (R10).
   '**/leser-v3-flag.e2e.ts',
-  '**/leser-optionen.e2e.ts',
-  '**/leser-r1-r2.e2e.ts',
-  '**/leser-ruecksprung-r5-r7.e2e.ts',
   '**/leser-suche-vertrag-b8.e2e.ts',
   '**/leser-ohne-gliederungslinie.e2e.ts',
   '**/gesetze-marginalie.e2e.ts',
   '**/gesetze-pdf-download.e2e.ts',
   '**/gesetze-ux-9punkte.e2e.ts',
-  '**/gesetze-ux-g3a.e2e.ts',
   '**/gesetze-ux-g3b-anhang.e2e.ts',
+]
+
+// Die e2e der neuen Hülle selbst. Sie brauchen das Flag und liefen bisher NUR
+// im Projekt `chromium`, das den Flag-Zustand über den Query-Parameter setzt —
+// im Flag-Projekt liefen sie gar nicht mit, obwohl genau dort ihr Zuhause ist.
+const V3_SPECS = [
+  '**/leser-v3-*.e2e.ts',
+  '**/leser-kopf-paritaet.e2e.ts',
 ]
 
 export default defineConfig({
@@ -171,7 +187,7 @@ export default defineConfig({
     // Vorprobe (V-2) schliesst diesen Fall aus.
     {
       name: 'leser-v3',
-      testMatch: N_SPECS,
+      testMatch: [...N_SPECS, ...V3_SPECS],
       timeout: process.env.CI ? 90_000 : 30_000,
       use: {
         storageState: {

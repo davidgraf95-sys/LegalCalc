@@ -28,7 +28,7 @@ import { useRef, type RefObject } from 'react';
 // Kürzel darin wäre dann still wirkungslos (Bug-Check B1, 16.8.2026).
 
 export function SuchSprungFeld({
-  wert, setzeWert, loeseArtikel, onSprung, feldRef, onKuerzel,
+  wert, setzeWert, loeseArtikel, onSprung, feldRef,
 }: {
   wert: string;
   setzeWert: (v: string) => void;

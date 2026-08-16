@@ -93,7 +93,15 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     expect(fehler).toEqual([])
   })
 
-  test('(c) Grundzustand: ohne Flag existiert [data-leser-v3="rahmen"] NICHT (R10)', async ({ page }) => {
+  test('(c) Grundzustand: ohne Flag existiert [data-leser-v3="rahmen"] NICHT (R10)', async ({ page }, info) => {
+    // Diese Zusage ist projekt-ABHÄNGIG: im Projekt `leser-v3` setzt der
+    // `storageState` das Flag, «ohne Flag» gibt es dort also gar nicht. Sie
+    // gehört ins Projekt `chromium` — und wird für die Flag-Seite bereits von
+    // `leser-v3-flag.e2e.ts:27` geführt, das beide Projekte ausdrücklich
+    // unterscheidet. Ohne diesen Wächter wäre der Test im Flag-Projekt
+    // konstruktiv rot (reproduziert 16.8.2026 beim Zuschnitt des Projekts).
+    test.skip(info.project.name === 'leser-v3',
+      'R10 ist die Aussage ohne Flag — im Flag-Projekt sinnlos, dort deckt sie leser-v3-flag.e2e.ts')
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
