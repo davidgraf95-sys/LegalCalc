@@ -12,7 +12,7 @@ import path from 'node:path';
 //
 // Rot zu bekommen: irgendeine V3-Datei ausser `leserV3Modell.ts` importiert
 // eine der sechs `inhalt-*`-Nahtdateien; irgendeine Datei importiert die
-// Ist-Hülle; `imPane`/`istSekundaer` taucht ausserhalb der drei Wurzel-Dateien
+// Ist-Hülle; `imPane`/`istSekundaer` taucht ausserhalb der Wurzel-Dateien
 // im CODE auf; `.ebene`/`.rechtsgebiet` wird ausserhalb `erlassAnsicht.ts`
 // gelesen; eine Datei überschreitet 400 Zeilen.
 
@@ -191,7 +191,10 @@ describe('Keine Ist-Hülle transitiv: was V3 importiert, importiert sie auch nic
 });
 
 describe('Keine Pane-Verzweigung ausserhalb der Wurzel (imPane/istSekundaer)', () => {
-  const WURZELN = ['leserV3Modell.ts', 'LeserV3Kontext.ts', 'LeserRahmenV3.tsx'];
+  // Zwei statt drei seit 16.8.2026: `LeserV3Kontext.ts` ist gestrichen (0
+  // Konsumenten, Architektur-Review A2). Die Zusage ist damit STRENGER, nicht
+  // schwächer — es gibt eine Wurzel weniger, an der verzweigt werden darf.
+  const WURZELN = ['leserV3Modell.ts', 'LeserRahmenV3.tsx'];
 
   it('die drei Wurzel-Dateien lesen tatsächlich imPane bzw. istSekundaer (sonst prüfte das Verbot nichts)', () => {
     for (const datei of WURZELN) {

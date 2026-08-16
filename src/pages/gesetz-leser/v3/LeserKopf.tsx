@@ -59,6 +59,15 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
     // ausserhalb des Pane-Scrollers liegt). Dieselbe Variable speist
     // `--nt-stick`, also den Sprung-Offset — eine Quelle für «wie hoch klebt
     // es» (Risiko R1). Höhe aus `--leser-v3-kopf-h` (ebenfalls Rahmen).
+    //
+    // `z-[17]` ist eine rohe Zahl, weil das Repo (Stand 16.8.2026) KEINE
+    // z-Index-Token führt — weder in `src/index.css` noch in der Tailwind-
+    // Konfiguration; erfunden würde hier also eine Skala von einem einzigen
+    // Aufrufer aus (§17: Rahmen zuerst, dann Feature). ANLASS der Zahl: die
+    // Such-Leiste der Ist-Volltextansicht klebt auf `z-[16]`
+    // (`inhalt-volltext.tsx:424`) — der V3-Kopf muss darüber liegen, aber unter
+    // den Overlays (`z-40`/`z-50`: Ansicht-Panel, Sheet, Toast). Eine echte
+    // Token-Skala ist ein eigener Design-Schritt (W-3), nicht Beiwerk von H1.
     <div
       data-v3-kopf
       className="sticky z-[17] -mx-1 mb-4 border-b border-line bg-paper px-1"

@@ -26,10 +26,17 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Verantwortungen, von denen genau eine eingefroren ist. So sieht man der
 // Dateiliste an, welche das ist.
 
-export function LeserLesespalte({ m, trefferListe }: {
+export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
   m: LeserV3Modell;
   /** Trefferliste für den Rand-Fall ohne Leiste (sonst steht sie dort). */
   trefferListe?: ReactNode;
+  /** S2 — Beiwerk-Zone am Fuss des Lesetexts (Fassung · Entscheid-Zähler ·
+   *  Fussnoten), Pos. 13. Der Rahmen reicht sie durch; in H1 ist sie NICHT
+   *  gesetzt und rendert dann gar kein Element — kein leerer Kasten, kein CLS
+   *  (§15), und der Pixelvergleich PX bleibt byte-gleich. Der Slot steht hier
+   *  statt nur im Rahmen-Interface, damit S2 einen echten Anschluss vorfindet
+   *  und nicht erst die Naht bauen muss (Architektur-Review A2, 16.8.2026). */
+  beiwerkSlot?: ReactNode;
 }) {
   const { erlass, eintraege, struktur, sektionen, ohneGliederung, basisPfad, vorher, nachher } = m;
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
@@ -86,6 +93,8 @@ export function LeserLesespalte({ m, trefferListe }: {
         )}
         {sektionen.map((s) => renderSektion(s, true, 0))}
       </div>
+
+      {beiwerkSlot}
 
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
         {vorher ? <Link to={erlassPfad(vorher)} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}

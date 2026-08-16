@@ -49,7 +49,6 @@ const V3_REIN = [
   'src/pages/gesetz-leser/v3/LeserRahmenV3.tsx',
   'src/pages/gesetz-leser/v3/LeserLesespalte.tsx',
   'src/pages/gesetz-leser/v3/LeserGliederung.tsx',
-  'src/pages/gesetz-leser/v3/LeserV3Kontext.ts',
   'src/pages/gesetz-leser/v3/erlassAnsicht.ts',
   'src/pages/gesetz-leser/v3/LeserKopf.tsx',
   'src/pages/gesetz-leser/v3/LeserSeitenleiste.tsx',

@@ -21,7 +21,6 @@ import { LeserGliederung } from './LeserGliederung';
 import { LeserLesespalte } from './LeserLesespalte';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { UebersichtBox } from './UebersichtBox';
-import { LeserV3Provider } from './LeserV3Kontext';
 import { kopfHoehe, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { overlineGebiet, uebersichtsZeile } from './erlassAnsicht';
@@ -30,10 +29,9 @@ import { useLeserV3Modell } from './leserV3Modell';
 // ═══ LESER V3 · Rahmen (FAHRPLAN-LESER-V3, Etappe H1) ═══════════════════════
 //
 // **Nur Layout.** Daten und Effekte kommen fertig aus `./leserV3Modell` (die
-// eine Naht zur geteilten Maschinerie), der Lesekörper aus `./LeserLesespalte`,
-// die Umgebung aus `./LeserV3Kontext`. Diese Datei entscheidet ausschliesslich,
-// **wo etwas steht** — und ist damit die Datei, die man liest, um die Hülle zu
-// verstehen.
+// eine Naht zur geteilten Maschinerie), der Lesekörper aus `./LeserLesespalte`.
+// Diese Datei entscheidet ausschliesslich, **wo etwas steht** — und ist damit
+// die Datei, die man liest, um die Hülle zu verstehen.
 //
 // DER AUFBAU, VON OBEN:
 //   LeserKopf            klebt · Ort · Ansicht · ✕            (Kap. 4a)
@@ -64,10 +62,18 @@ import { useLeserV3Modell } from './leserV3Modell';
 // jeder Leser für eine Etappe, die es noch nicht gibt.
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
-// `imPane`/`istSekundaer`/`istXl` werden GENAU HIER gelesen und in den
-// `LeserV3Provider` gelegt. Die zwei Werte, die daraus folgen, stehen als CSS-
-// Variablen am Wurzel-Element — damit rechnet auch der Sprung-Offset der Anker
-// aus derselben Quelle (Risiko R1, Lehre LM-003).
+// `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
+// werden GENAU HIER gelesen — sonst nirgends in `v3/` (bewacht von
+// `src/tests/leser-v3-fundament.test.ts`). Die zwei Werte, die daraus folgen,
+// stehen als CSS-Variablen am Wurzel-Element — damit rechnet auch der
+// Sprung-Offset der Anker aus derselben Quelle (Risiko R1, Lehre LM-003).
+//
+// Bis 16.8. lag `umgebung` zusätzlich in einem React-Kontext
+// (`LeserV3Kontext.ts`, Provider hier, `useLeserV3Kontext` dort). Der hatte
+// nach dem Fundament-Umbau NULL Konsumenten: alle Bauteile bekommen, was sie
+// brauchen, als Prop. Gestrichen statt bewacht (§17 Rückbau, Architektur-Review
+// A2); braucht H3 eine Verteilung ohne Prop-Drilling, legt es sie in fünf
+// Zeilen neu an — mit dem dann bekannten Konsumenten.
 
 export interface LeserRahmenV3Props {
   ebene: string;
@@ -76,8 +82,9 @@ export interface LeserRahmenV3Props {
   panelOeffner?: ReactNode;
   /** H3 — das Panel/Sheet selbst. */
   panelSlot?: ReactNode;
-  /** S2 — Beiwerk-Zone unter dem Artikel (Fassung · Zähler · Fussnoten).
-   *  Reicht der Rahmen an die Lesespalte durch, sobald S2 sie baut. */
+  /** S2 — Beiwerk-Zone unter dem Lesetext (Fassung · Zähler · Fussnoten).
+   *  Der Rahmen reicht ihn an `LeserLesespalte` durch; ungesetzt rendert die
+   *  Spalte dafür KEIN Element (kein leerer Kasten, kein CLS). */
   beiwerkSlot?: ReactNode;
   /** W2·5g — Fassungswahl/Zeitmaschine in den Aktionen des Erlass-Kopfs. */
   fassungsWahl?: ReactNode;
@@ -86,7 +93,7 @@ export interface LeserRahmenV3Props {
 }
 
 export function LeserRahmenV3({
-  ebene, schluessel, panelOeffner, panelSlot, fassungsWahl, leisteExtra,
+  ebene, schluessel, panelOeffner, panelSlot, beiwerkSlot, fassungsWahl, leisteExtra,
 }: LeserRahmenV3Props) {
   const navigate = useNavigate();
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
@@ -174,28 +181,138 @@ export function LeserRahmenV3({
     : undefined;
 
   return (
-    <LeserV3Provider value={umgebung}>
-      <div
-        ref={kopfRef}
-        data-leser-v3="rahmen"
-        className="lc-leser space-y-5"
-        data-grundart={meta.grundart ?? undefined}
-        // ── Die EINE Stelle, an der Kopf-Geometrie steht (Risiko R1) ────────
-        // `--leser-kopf-h` behält seine Ist-BEDEUTUNG (Topbar + App-Leiste) —
-        // sie umzudeuten hätte das geteilte `GliederungSheet` still verstellt,
-        // das daraus seine Höhe rechnet (§5: eine Variable, eine Bedeutung).
-        // `--nt-stick` speist sich daraus und ist damit automatisch richtig,
-        // wenn die Kopfzeile ihre Stufe wechselt — genau das fehlte im Ist-Stand.
-        style={{
-          '--leser-v3-kopf-h': kopfHoehe(stufe),
-          '--leser-v3-kopf-top': umgebung.imPane ? '0rem' : 'var(--leser-kopf-h)',
-          '--leser-kopf-h': 'calc(4rem + 2.25rem)',
-          '--leser-sub-h': umgebung.imPane ? 'var(--leser-v3-kopf-h)' : '0rem',
-          '--nt-stick': umgebung.imPane
-            ? 'var(--leser-sub-h)'
-            : 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h))',
-        } as CSSProperties}>
+    <div
+      ref={kopfRef}
+      data-leser-v3="rahmen"
+      className="lc-leser space-y-5"
+      data-grundart={meta.grundart ?? undefined}
+      // ── Die EINE Stelle, an der Kopf-Geometrie steht (Risiko R1) ────────
+      // `--leser-kopf-h` behält seine Ist-BEDEUTUNG (Topbar + App-Leiste) —
+      // sie umzudeuten hätte das geteilte `GliederungSheet` still verstellt,
+      // das daraus seine Höhe rechnet (§5: eine Variable, eine Bedeutung).
+      // `--nt-stick` speist sich daraus und ist damit automatisch richtig,
+      // wenn die Kopfzeile ihre Stufe wechselt — genau das fehlte im Ist-Stand.
+      style={{
+        '--leser-v3-kopf-h': kopfHoehe(stufe),
+        '--leser-v3-kopf-top': umgebung.imPane ? '0rem' : 'var(--leser-kopf-h)',
+        '--leser-kopf-h': 'calc(4rem + 2.25rem)',
+        '--leser-sub-h': umgebung.imPane ? 'var(--leser-v3-kopf-h)' : '0rem',
+        '--nt-stick': umgebung.imPane
+          ? 'var(--leser-sub-h)'
+          : 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h))',
+      } as CSSProperties}>
 
+      <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
+        stufe={stufe} gliederungKnopf={gliederungKnopf} panelOeffner={panelOeffner} />
+
+      {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
+          (Kap. 4b). Wiederverwendet wird die bestehende Sheet-Anatomie
+          (Dialog-Rolle, Fokusfang, Esc, Portal in die Pane-Overlay-Schicht) —
+          §5, kein zweiter Overlay-Mechanismus. */}
+      {!umgebung.istXl && m.tocAuf && hatLeiste && (() => {
+        const ziel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
+        const sheet = (
+          <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
+            onSchliessen={() => m.setTocAuf(false)}
+            pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
+            sprungFeld={suchFeld} baum={leiste(true)} />
+        );
+        return ziel ? createPortal(sheet, ziel) : sheet;
+      })()}
+
+      <div className={zweiSpalten ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
+        {zweiSpalten && (
+          <aside role="navigation" aria-label="Gliederung" data-v3-aside
+            // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:
+            // `top` ist derselbe Ausdruck wie der Sprung-Offset der Anker, damit
+            // Spalte und Sprung konstruktiv nicht auseinanderlaufen (LM-003).
+            // `flex flex-col` + `maxHeight` ist die tragende Kombination — NICHT
+            // `overflow-hidden` mit `h-full` im Kind: `height:100%` löst gegen
+            // eine Maximalhöhe nicht auf, der Scroller wüchse auf die volle
+            // Inhaltshöhe und der Überschuss würde stumm abgeschnitten
+            // (reproduziert am OR @1440×900).
+            className="sticky flex min-h-0 flex-col self-start"
+            style={{
+              top: 'var(--nt-stick)',
+              maxHeight: umgebung.imPane
+                ? 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)'
+                : 'calc(100vh - var(--nt-stick) - 1.5rem)',
+            }}>
+            <div className="flex items-center justify-end pb-1">
+              <button type="button" data-v3-gliederung-zu onClick={() => m.setTocOffen(false)}
+                aria-expanded={m.tocOffen} title="Gliederung ausblenden"
+                className="lc-leiste-griff gap-1 px-1.5 text-micro">
+                <span aria-hidden>‹</span><span>ausblenden</span>
+              </button>
+            </div>
+            {leiste(false)}
+          </aside>
+        )}
+
+        {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis
+            H1 über die VOLLE Breite und schob die Seitenleiste bei 1440 px
+            unter die Falz — obwohl sie in V3 die Hauptnavigation ist. */}
+        <div className="min-w-0 space-y-5">
+          {/* In H1 der BESTEHENDE Erlass-Kopf; sein Neu-Design ist S3 (Kap. 4e).
+              Er trägt Titel, SR-Nummer, Stand und die Warnung «nicht
+              konsolidiert» — damit ist «Stand + Warnung erkennen» in JEDER
+              Breite ohne Umweg erfüllt, auch dort, wo die Leiste ein Sheet ist. */}
+          <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
+            currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
+            overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet(erlass, m.kantonSys))}
+            hinweis="Snapshot — massgeblich ist die amtliche Fassung"
+            aktionen={
+              <>
+                {fassungsWahl}
+                <button type="button"
+                  onClick={() => {
+                    const ziel = naechsteInstanz(window.location.pathname + window.location.hash);
+                    merkeTab(ziel, erlass.kuerzel);
+                    navigate(ziel);
+                    m.setReiterToast(true);
+                    const toastRef = m.refs.reiterToastTimerRef;
+                    if (toastRef.current) window.clearTimeout(toastRef.current);
+                    toastRef.current = window.setTimeout(() => m.setReiterToast(false), 3200);
+                  }}
+                  className="lc-chip hover:text-brass-700" title="Diesen Erlass zusätzlich in einem neuen Reiter öffnen">⧉ In neuem Reiter</button>
+                {erlass.pdfUrl && (
+                  <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
+                )}
+              </>
+            } />
+
+          {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
+
+          <LeserLesespalte m={m} beiwerkSlot={beiwerkSlot}
+            // Rand-Fall: keine Leiste, aber breit genug — dann stünde die
+            // Trefferliste nirgends. Lieber über dem Text als verschwunden (§8).
+            trefferListe={m.sucheAktiv && !zweiSpalten && umgebung.istXl
+              ? <LeserGliederung m={m} />
+              : undefined} />
+        </div>
+      </div>
+
+      {panelSlot}
+
+      {/* R4 «Weiterlesen» + R8 Tastatur — dieselben BAUSTEINE wie die Ist-Hülle
+          (Kap. 4h: KEINE zweite Tastaturebene), direkt aus `parts/` statt über
+          den Ist-Wrapper `inhalt-overlays`. Nur die PRIMÄR-/Einzelansicht: im
+          sekundären Pane liefe sonst ein zweiter globaler keydown-Listener und
+          j/k sprängen doppelt.
+          `display: contents` am Träger ist kein Zierrat, sondern der Fix eines
+          gemessenen 20-px-Shifts: `.lc-leser` trägt `space-y-5`, und dessen
+          `> * + *`-Regel gäbe dem Lese-Inhalt einen Margin, sobald ein zweites
+          Kind danebensteht — obwohl beide Overlays `fixed` sind und gar keinen
+          Platz brauchen. Ein Träger ohne eigene Box nimmt den Margin entgegen
+          und wirft ihn weg. */}
+      <div className="contents">
+        {/* Der Reiter-Toast gehört hierher, nicht an den Kopf des Rahmens: er
+            ist `fixed` und braucht keinen Platz, stand als ERSTES Grid-Kind aber
+            im `space-y-5`-Fluss und gab der Kopfzeile darunter ein `mt-5` — ein
+            sichtbarer Sprung von 20 px, sobald er erschien (Bug-Check «Nice»,
+            16.8.2026). Derselbe `display: contents`-Träger, der das schon für
+            «Weiterlesen» und die Tastatur löst, nimmt den Margin entgegen und
+            wirft ihn weg. */}
         {m.reiterToast && (
           <div role="status" aria-live="polite"
             className="fixed right-3 top-20 z-50 flex items-center gap-2 rounded-lg border border-line bg-paper-raised px-3 py-2 text-body-s text-ink-700 shadow-lg">
@@ -203,120 +320,14 @@ export function LeserRahmenV3({
             Im neuen Reiter geöffnet — oben unter ☰
           </div>
         )}
-
-        <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
-          stufe={stufe} gliederungKnopf={gliederungKnopf} panelOeffner={panelOeffner} />
-
-        {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
-            (Kap. 4b). Wiederverwendet wird die bestehende Sheet-Anatomie
-            (Dialog-Rolle, Fokusfang, Esc, Portal in die Pane-Overlay-Schicht) —
-            §5, kein zweiter Overlay-Mechanismus. */}
-        {!umgebung.istXl && m.tocAuf && hatLeiste && (() => {
-          const ziel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
-          const sheet = (
-            <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
-              onSchliessen={() => m.setTocAuf(false)}
-              pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
-              sprungFeld={suchFeld} baum={leiste(true)} />
-          );
-          return ziel ? createPortal(sheet, ziel) : sheet;
-        })()}
-
-        <div className={zweiSpalten ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
-          {zweiSpalten && (
-            <aside role="navigation" aria-label="Gliederung" data-v3-aside
-              // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:
-              // `top` ist derselbe Ausdruck wie der Sprung-Offset der Anker, damit
-              // Spalte und Sprung konstruktiv nicht auseinanderlaufen (LM-003).
-              // `flex flex-col` + `maxHeight` ist die tragende Kombination — NICHT
-              // `overflow-hidden` mit `h-full` im Kind: `height:100%` löst gegen
-              // eine Maximalhöhe nicht auf, der Scroller wüchse auf die volle
-              // Inhaltshöhe und der Überschuss würde stumm abgeschnitten
-              // (reproduziert am OR @1440×900).
-              className="sticky flex min-h-0 flex-col self-start"
-              style={{
-                top: 'var(--nt-stick)',
-                maxHeight: umgebung.imPane
-                  ? 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)'
-                  : 'calc(100vh - var(--nt-stick) - 1.5rem)',
-              }}>
-              <div className="flex items-center justify-end pb-1">
-                <button type="button" data-v3-gliederung-zu onClick={() => m.setTocOffen(false)}
-                  aria-expanded={m.tocOffen} title="Gliederung ausblenden"
-                  className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                  <span aria-hidden>‹</span><span>ausblenden</span>
-                </button>
-              </div>
-              {leiste(false)}
-            </aside>
-          )}
-
-          {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis
-              H1 über die VOLLE Breite und schob die Seitenleiste bei 1440 px
-              unter die Falz — obwohl sie in V3 die Hauptnavigation ist. */}
-          <div className="min-w-0 space-y-5">
-            {/* In H1 der BESTEHENDE Erlass-Kopf; sein Neu-Design ist S3 (Kap. 4e).
-                Er trägt Titel, SR-Nummer, Stand und die Warnung «nicht
-                konsolidiert» — damit ist «Stand + Warnung erkennen» in JEDER
-                Breite ohne Umweg erfüllt, auch dort, wo die Leiste ein Sheet ist. */}
-            <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
-              currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
-              overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet(erlass, m.kantonSys))}
-              hinweis="Snapshot — massgeblich ist die amtliche Fassung"
-              aktionen={
-                <>
-                  {fassungsWahl}
-                  <button type="button"
-                    onClick={() => {
-                      const ziel = naechsteInstanz(window.location.pathname + window.location.hash);
-                      merkeTab(ziel, erlass.kuerzel);
-                      navigate(ziel);
-                      m.setReiterToast(true);
-                      const toastRef = m.refs.reiterToastTimerRef;
-                      if (toastRef.current) window.clearTimeout(toastRef.current);
-                      toastRef.current = window.setTimeout(() => m.setReiterToast(false), 3200);
-                    }}
-                    className="lc-chip hover:text-brass-700" title="Diesen Erlass zusätzlich in einem neuen Reiter öffnen">⧉ In neuem Reiter</button>
-                  {erlass.pdfUrl && (
-                    <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
-                  )}
-                </>
-              } />
-
-            {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
-
-            <LeserLesespalte m={m}
-              // Rand-Fall: keine Leiste, aber breit genug — dann stünde die
-              // Trefferliste nirgends. Lieber über dem Text als verschwunden (§8).
-              trefferListe={m.sucheAktiv && !zweiSpalten && umgebung.istXl
-                ? <LeserGliederung m={m} />
-                : undefined} />
-          </div>
-        </div>
-
-        {panelSlot}
-
-        {/* R4 «Weiterlesen» + R8 Tastatur — dieselben BAUSTEINE wie die Ist-Hülle
-            (Kap. 4h: KEINE zweite Tastaturebene), direkt aus `parts/` statt über
-            den Ist-Wrapper `inhalt-overlays`. Nur die PRIMÄR-/Einzelansicht: im
-            sekundären Pane liefe sonst ein zweiter globaler keydown-Listener und
-            j/k sprängen doppelt.
-            `display: contents` am Träger ist kein Zierrat, sondern der Fix eines
-            gemessenen 20-px-Shifts: `.lc-leser` trägt `space-y-5`, und dessen
-            `> * + *`-Regel gäbe dem Lese-Inhalt einen Margin, sobald ein zweites
-            Kind danebensteht — obwohl beide Overlays `fixed` sind und gar keinen
-            Platz brauchen. Ein Träger ohne eigene Box nimmt den Margin entgegen
-            und wirft ihn weg. */}
-        <div className="contents">
-          {!umgebung.istSekundaer && m.weiterlesen && (
-            <WeiterlesenChip label={m.weiterlesen.label}
-              onWeiterlesen={m.weiterlesenSprung} onVerwerfen={m.weiterlesenVerwerfen} />
-          )}
-          {!umgebung.istSekundaer && (
-            <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel} />
-          )}
-        </div>
+        {!umgebung.istSekundaer && m.weiterlesen && (
+          <WeiterlesenChip label={m.weiterlesen.label}
+            onWeiterlesen={m.weiterlesenSprung} onVerwerfen={m.weiterlesenVerwerfen} />
+        )}
+        {!umgebung.istSekundaer && (
+          <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel} />
+        )}
       </div>
-    </LeserV3Provider>
+    </div>
   );
 }

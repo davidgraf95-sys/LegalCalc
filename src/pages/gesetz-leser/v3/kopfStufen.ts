@@ -20,7 +20,7 @@
 // Die Schwellen: 900 px ist die im Fahrplan genannte Grenze; 640 px ist die
 // Handy-Grenze «H» derselben Skizze (Kap. 4, «H Handy ≤ 640 px»).
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 
 /** Die drei Zuschnitte der Kopfzeile. Reihenfolge = abnehmender Platz. */
@@ -89,6 +89,15 @@ export function kopfHoehe(stufe: KopfStufe): string {
  * prerendert (R10), der erste Client-Render kennt den Viewport also bereits.
  * Ein pauschales `'voll'` liesse den Kopf auf einem Telefon einen Frame lang zu
  * hoch stehen — genau der Layout-Sprung, den §15.2 verbietet.
+ *
+ * IM PANE ist der Viewport aber die falsche Zahl: eine 620-px-Spalte in einem
+ * 1440-px-Fenster startete auf `'voll'` (3.5rem) und fiel beim ersten
+ * Observer-Lauf auf `'kompakt'` (3rem) — ein sichtbarer 8-px-Sprung der
+ * Kopfzeile (Bug-Check «Nice», 16.8.2026). Darum misst der Callback-Ref SOFORT,
+ * wenn das Element entsteht: er läuft im React-Commit, also vor dem Paint, und
+ * ein `setState` dort wird noch im selben Frame verarbeitet. Der Startwert ist
+ * damit nur noch der Wert für den einen Render, in dem es das Element gar nicht
+ * gibt (Lade-Platzhalter).
  */
 export function useKopfStufe(): { stufe: KopfStufe; kopfRef: (el: HTMLDivElement | null) => void } {
   const [el, setEl] = useState<HTMLDivElement | null>(null);
@@ -98,26 +107,36 @@ export function useKopfStufe(): { stufe: KopfStufe; kopfRef: (el: HTMLDivElement
   // einen Re-Render auslöst (jede Pixel-Änderung beim Ziehen des Pane-Gutters
   // feuert sonst — §15).
   const letzte = useRef<KopfStufe>(stufe);
+
+  const uebernimm = useCallback((breite: number) => {
+    // Breite 0 kommt vor, solange das Element noch nicht gelayoutet ist —
+    // sie als «Handy» zu lesen wäre eine Messung von nichts.
+    if (breite <= 0) return;
+    const neu = kopfStufe(breite);
+    if (neu === letzte.current) return;
+    letzte.current = neu;
+    setStufe(neu);
+  }, []);
+
+  const kopfRef = useCallback((el: HTMLDivElement | null) => {
+    setEl(el);
+    // Vor dem Paint messen — sonst zeigt das Pane einen Frame lang die Stufe
+    // des VIEWPORTS (siehe Kopfkommentar). Stabile Identität via useCallback,
+    // damit der Ref nicht bei jedem Render ab- und wieder angehängt wird.
+    if (el) uebernimm(el.getBoundingClientRect().width);
+  }, [uebernimm]);
+
   useEffect(() => {
     if (!el || typeof ResizeObserver === 'undefined') return;
-    const messe = (breite: number) => {
-      // Breite 0 kommt vor, solange das Element noch nicht gelayoutet ist —
-      // sie als «Handy» zu lesen wäre eine Messung von nichts.
-      if (breite <= 0) return;
-      const neu = kopfStufe(breite);
-      if (neu === letzte.current) return;
-      letzte.current = neu;
-      setStufe(neu);
-    };
-    messe(el.getBoundingClientRect().width);
+    uebernimm(el.getBoundingClientRect().width);
     const ro = new ResizeObserver((eintraege) => {
       for (const e of eintraege) {
         // border-box: die Scrollbar des Panes verschiebt die Schwelle nicht.
-        messe(e.borderBoxSize?.[0]?.inlineSize ?? e.contentRect.width);
+        uebernimm(e.borderBoxSize?.[0]?.inlineSize ?? e.contentRect.width);
       }
     });
     ro.observe(el, { box: 'border-box' });
     return () => ro.disconnect();
-  }, [el]);
-  return { stufe, kopfRef: setEl };
+  }, [el, uebernimm]);
+  return { stufe, kopfRef };
 }
