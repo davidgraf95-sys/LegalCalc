@@ -214,6 +214,19 @@ Leser-Zustände. Die Quellensonden `leser-v3-adresse.test.ts` und
 | `fassungsWahl` | W2·5g · Zeitmaschine/Fassungswahl | rendert nichts |
 | `leisteExtra` | Kontext-Reiter am Fuss der Seitenleiste | rendert nichts |
 
+### Zustand — gemessen, nicht behauptet
+
+`grep -rn 'localStorage\|sessionStorage' src/pages/gesetz-leser/v3/` → **kein
+Treffer**: V3 legt **keinen einzigen** eigenen Speicher an. Bedient werden
+ausschliesslich bestehende Stores — `lm.leser.optionen` (geteilt mit V1, FL-6),
+`lexmetrik-schriftskala` (global), `lexmetrik-leseposition`. Dazu der Flag-Schlüssel
+`lm.leser.v3`, der als Zuwachs auf Zeit deklariert ist und in H5 fällt (FL-7).
+
+`useState` in `v3/`: **5 Aufrufe insgesamt** — 2 im Ansicht-Menü (offen/zu, Panel-Id)
+und 3 im Breiten-Hook. **Alle** Layout- und Anzeige-Bauteile (Kopf, Seitenleiste,
+Gliederung, Lesespalte, Übersichtsbox, Suchfeld) sind zustandsfrei: sie bekommen
+das Modell und rendern.
+
 ### Drei Ebenen, ein Rahmen — nachgemessen
 
 | Erlass | Ebene | Ergebnis unter `?leser=v3` |
