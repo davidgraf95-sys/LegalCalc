@@ -25,6 +25,23 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
+/**
+ * Macht das Such-/Sprungfeld EINES Panes erreichbar und gibt es zurück.
+ *
+ * In der Einzelansicht steht es in der Seitenleisten-Spalte; im Pane ist die
+ * Leiste ein Bottom-Sheet hinter ☰ (Kap. 4b), weil die Pane-Breite unter der
+ * xl-Schwelle liegt. Der Helfer öffnet darum bei Bedarf zuerst — das ist keine
+ * Test-Bequemlichkeit, sondern derselbe Weg, den ein Nutzer im Split geht.
+ */
+async function oeffneFeld(pane: import('@playwright/test').Locator) {
+  const feld = pane.locator('[data-v3-suchsprung] input').first()
+  if (!(await feld.isVisible().catch(() => false))) {
+    await pane.locator('[data-v3-gliederung-auf]').first().click()
+  }
+  await expect(feld).toBeVisible({ timeout: 20_000 })
+  return feld
+}
+
 /** Grösse der einen Registry-Position — 0, wenn sie gar nicht gesetzt ist. */
 async function highlightGroesse(page: Page): Promise<number> {
   return page.evaluate(() => {
@@ -47,10 +64,12 @@ test.describe('QS-UI-HIGHLIGHT — Suche in Pane A löscht die Markierung in Pan
 
     const paneA = page.locator('[data-pane="primaer"]')
     const paneB = page.locator('[data-pane="sekundaer"]')
-    const feldA = paneA.locator('[data-v3-suchsprung] input').first()
-    const feldB = paneB.locator('[data-v3-suchsprung] input').first()
-    await expect(feldA).toBeVisible({ timeout: 20_000 })
-    await expect(feldB).toBeVisible({ timeout: 20_000 })
+    // Im Pane ist die Seitenleiste ein SHEET (die Pane-Breite unterschreitet die
+    // xl-Schwelle), das Suchfeld liegt also hinter ☰ und nicht in einer Spalte.
+    // Erst öffnen, dann greifen — sonst prüfte der Test eine Fläche, die es in
+    // dieser Breite gar nicht gibt.
+    const feldA = await oeffneFeld(paneA)
+    const feldB = await oeffneFeld(paneB)
 
     // ── Pane B sucht und malt ────────────────────────────────────────────────
     await feldB.fill('Markt')
@@ -83,10 +102,8 @@ test.describe('QS-UI-HIGHLIGHT — Suche in Pane A löscht die Markierung in Pan
     await page.goto('/gesetze/bund/BGFA?leser=v3&p=/gesetze/bund/BGBM%3Fleser%3Dv3')
     await expect(page.locator('[data-pane="sekundaer"]')).toBeVisible({ timeout: 20_000 })
 
-    const feldA = page.locator('[data-pane="primaer"] [data-v3-suchsprung] input').first()
-    const feldB = page.locator('[data-pane="sekundaer"] [data-v3-suchsprung] input').first()
-    await expect(feldA).toBeVisible({ timeout: 20_000 })
-    await expect(feldB).toBeVisible({ timeout: 20_000 })
+    const feldA = await oeffneFeld(page.locator('[data-pane="primaer"]'))
+    const feldB = await oeffneFeld(page.locator('[data-pane="sekundaer"]'))
 
     await feldA.fill('Anwalt')
     await feldB.fill('Markt')

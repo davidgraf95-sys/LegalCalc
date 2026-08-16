@@ -38,7 +38,15 @@ function fehlerSammeln(page: Page): string[] {
 const normtext = (page: Page) => page.locator('#art-1 .text-body-l').first()
 const kopf = (page: Page) => page.locator('[data-v3-kopf]')
 const leiste = (page: Page) => page.locator('[data-v3-aside]')
-const groesser = (page: Page) => page.getByRole('button', { name: 'Schrift vergrössern' })
+// Ä9 (Ästhetik-Review 16.8.2026) BEISST HIER: «A+» gibt es ZWEIMAL — in der
+// App-Leiste (globaler Regler, wirkt absichtlich auf die ganze Seite) und im
+// Ansicht-Menü des Lesers (neuer Leser-Regler). Ein `getByRole`-Treffer ohne
+// Bezugsraum erwischt @1440 den APP-Regler, und der Test misst dann korrekt
+// dessen globale Wirkung — und meldet sie als Fehlschlag des Leser-Reglers.
+// Der Selektor ist darum auf das Ansicht-Panel eingeschränkt. Dass zwei gleich
+// beschriftete Knöpfe nebeneinander stehen, bleibt der offene Befund Ä9.
+const groesser = (page: Page) =>
+  page.locator('[data-v3-ansicht-panel]').getByRole('button', { name: 'Schrift vergrössern' })
 const kleiner = (page: Page) => page.getByRole('button', { name: 'Schrift verkleinern' })
 
 async function schriftgroesse(wahl: ReturnType<typeof normtext>): Promise<number> {
@@ -60,6 +68,9 @@ async function oeffneStPO(page: Page): Promise<string[]> {
   // Das Optionsmenü steht im Ist-Stand offen; sollte es zugeklappt starten,
   // wird es über den Ansicht-Knopf aufgezogen. Bewusst defensiv statt fest
   // verdrahtet — die Menü-Mechanik gehört nicht zum Prüfgegenstand.
+  // Immer öffnen: der Leser-Regler lebt ausschliesslich im Panel, und die
+  // frühere Bedingung «nur öffnen, wenn kein A+ sichtbar ist» griff nie, weil
+  // die App-Leiste ihr eigenes A+ zeigt (Ä9).
   if (!(await groesser(page).isVisible().catch(() => false))) {
     await page.locator('[data-v3-ansicht]').click()
   }
