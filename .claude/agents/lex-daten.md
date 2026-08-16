@@ -52,6 +52,10 @@ TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Sl
   Tageslimit (100/Tag Free; Vorfall 16.8.2026: Prod 24 h blockiert).
 6 KEIN MERGE IM BAU-AUFTRAG. Dieser Auftrag baut. Merge/Deploy ist ein eigener,
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
+  ABSCHLUSS: Ein Auftrag endet mit prüfbarer Rückgabe (SHA/Tor-Ausgabe), NIE
+  mit «ich warte auf …» — laufende Läufe per until-Schleife zu Ende bringen,
+  Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten mussten je
+  mehrfach zum Abschluss aufgefordert werden).
 
 RISIKOPFAD: Gegenprüfung ist Pflicht — sie beauftragt der ORCHESTRATOR nach deiner Rückgabe, NICHT du (F5-Wartetod 15.8.2026: ein Daten-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf ein Verdikt, das ein Sub-Agent nie empfangen kann). Du lieferst committete Arbeit + Bericht ab und ENDEST. Merge ist gesperrt (check:merge-schutz).
 MANIFEST: Nach jedem Generator-Lauf `npm run datenhaltung:manifest` mitregenerieren — F2b-Vorfall 4.8.2026: #425 landete mit Manifest-Drift, #430 musste heilen.

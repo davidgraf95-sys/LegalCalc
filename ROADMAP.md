@@ -176,6 +176,7 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
 - **Basis-Ausbau — Fundament** *(QS-BASIS, `[OF]`)*. CI/lokal-Tor-Parität + offene B-Einheiten.
   <!-- @meta id: QS-BASIS · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, package.json, package-lock.json, knip.json] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
+  - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot` — prerendertes DOM wird 27–78 ms nach `load` verworfen (Befund H2-Abschluss 16.8.2026, Nullprobe auf main bestätigt)** — Wurzel der «flaky» Tastatur-/Skip-Link-Specs (`e2e/tastatur.e2e.ts`) und ein CLS-/TTI-Posten (§15). Fix `hydrateRoot` mit Hydrations-Fehler-Wächter (Markup-Mismatch ⇒ rot), Vorher/Nachher-Messung (CLS, TBT, Zeit bis interaktiv) auf `/`, `/gesetze/bund/OR`; Gegenprüfung (Rendering-Pfad aller Seiten), eigener PR.
   - [ ] Totcode-Meldung wird echtes Tor `check:tot` — blockierend bei NEUEN Meldungen (Basis: 1). Reine Prüflogik. §3.2.
   - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted — Dependabot meldet 2 Verwundbarkeiten (1 hoch); Audit als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
   - [ ] tailwind 3→4-Migration (PR #503; PostCSS-Pipeline, Config-Format, container-queries-Plugin nativ, ~249 className-Dateien visuelle Regression — kein Dependabot-Merge)
