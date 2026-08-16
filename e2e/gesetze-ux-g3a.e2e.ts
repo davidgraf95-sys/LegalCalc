@@ -32,7 +32,7 @@ test('Kopf-Label: Verordnung wird als «Verordnung» betitelt, nicht «Bundesges
 // gedrosselten 2-Kern-Runner nahe an die 20-s-warteReader-Latte (16–19 s lokal
 // unter Contention). Die Kopf-Label-Semantik («Bundesgesetz» für grundart GESETZ)
 // ist seitengrössen-unabhängig → Umzug auf das kleine ELG (~50 KB), ebenfalls ein
-// Bundesgesetz. Der OR-Fall bleibt im Linien-Kanon-Tor (check:linien-kanon) gegated.
+// Bundesgesetz. Linien-Kanon Teil B (OR-Gate) ist seit dem Rückbau 16.8.2026 gestrichen.
 test('Kopf-Label: Gesetz bleibt «Bundesgesetz» (ELG)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG');
   await expect(page.locator('.lc-leser > header .lc-overline').first()).toContainText('Bundesgesetz');

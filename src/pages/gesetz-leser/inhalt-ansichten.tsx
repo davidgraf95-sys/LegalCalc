@@ -58,7 +58,7 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
     <div className="space-y-5">
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf bzw. PaneKopf) — kein Inline-Dup.
           G2b: EINE Kopf-Komponente (ErlassLeserKopf) — hier ohne Options-Leiste,
-          da am eingebetteten PDF Linien/Fussnoten/Verweise wirkungslos wären
+          da am eingebetteten PDF Fussnoten/Verweise wirkungslos wären
           (keine toten Steuerelemente, §13 F4). */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
         overline={`${erlass.ebene === 'bund' ? 'Staatsvertrag' : `Kanton ${erlass.kanton}`} · amtliches PDF`}

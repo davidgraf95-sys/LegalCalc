@@ -6,7 +6,7 @@ import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAI
 // Beweist, dass die Kopf-Interaktionen (A4 «Ansicht»-Dropdown öffnen +
 // Switches togglen, Gliederungs-/TOC-Sprung) auch gedrosselt ohne spürbaren Lag
 // laufen und KEINEN Layout-Shift verursachen (CLS 0). BV#art-8: klein, aber
-// geschachtelt (Guide + 2-Spalten-Lesemodus mit TOC) → deckt die A-Punkte ab.
+// geschachtelt (2-Spalten-Lesemodus mit TOC) → deckt die A-Punkte ab.
 // A27: der In-Erlass-Kontextkopf/Breadcrumb ist entfernt, der Sprung-Schritt
 // nutzt die TOC.
 //

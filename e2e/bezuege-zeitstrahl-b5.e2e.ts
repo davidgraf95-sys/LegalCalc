@@ -185,7 +185,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await warteReader(page);
     await page.evaluate(() => {
       localStorage.setItem('lm.leser.optionen', JSON.stringify({
-        linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'an',
+        fussnoten: 'an', verweise: 'an', leitfaelle: 'an',
         zeitraum: '5', hist: 'fussnoten',
       }));
     });
@@ -222,7 +222,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await warteReader(page);
     await page.evaluate(() => {
       localStorage.setItem('lm.leser.optionen', JSON.stringify({
-        linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'an',
+        fussnoten: 'an', verweise: 'an', leitfaelle: 'an',
         zeitraum: 'alle', hist: 'fussnoten',
       }));
     });
@@ -245,7 +245,7 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     await warteReader(page);
     await page.evaluate(() => {
       localStorage.setItem('lm.leser.optionen', JSON.stringify({
-        linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'aus', hist: 'fussnoten',
+        fussnoten: 'an', verweise: 'an', leitfaelle: 'aus', hist: 'fussnoten',
       }));
     });
     await page.reload();

@@ -7,8 +7,8 @@
 // nur in der Artikel-Sektion.
 //
 // ── ARBEITSTEILUNG DER BEIDEN DROPDOWNS ────────────────────────────────────
-// «Ansicht ▾»          — WIE der Gesetzestext dargestellt wird (Linien,
-//                        Fussnoten, Verweise).
+// «Ansicht ▾»          — WIE der Gesetzestext dargestellt wird
+//                        (Fussnoten, Verweise).
 // «Rechtsprechung ▾»   — WELCHE Entscheide die Zeile zeigt (Instanzen, Kantone,
 //                        seit B5: Zeitraum über Zeitstrahl und Von-Bis-Datum).
 // Die Trennung ist die Frage, die der Nutzer stellt — «wie sieht es aus?» gegen

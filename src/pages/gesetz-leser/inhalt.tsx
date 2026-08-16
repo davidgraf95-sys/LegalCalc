@@ -406,7 +406,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     const eingerueckt = tiefe > 0 && tiefe <= 5;
     const einzugCls = eingerueckt ? 'pl-einzug-mobil sm:pl-einzug' : '';
     return (
-      <section key={s.id} className={`space-y-3 ${einzugCls}`}>
+      <section key={s.id} data-normtext-linie className={`space-y-3 ${einzugCls}`}>
         <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)} bereich={sektionMeta.get(s.id)?.bereich} bereichEinzel={sektionMeta.get(s.id)?.einzel ?? false}
           // EID-2 (W2·5d §12): Sektions-Deep-Link zur amtlichen Fassung — nur wenn
           // das EID-1-Sidecar eine Container-eId trägt UND der Erlass eine ELI-

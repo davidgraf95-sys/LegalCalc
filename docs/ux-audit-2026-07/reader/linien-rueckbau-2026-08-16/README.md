@@ -41,8 +41,15 @@ Rohdaten: `vorher-messung.json` / `nachher-messung.json`.
 ## Zu den Screenshots — ehrlich eingeordnet (§8)
 
 `vorher-3-zgb-684-linien-an.png` gegen `nachher-1-zgb-684-grundzustand.png`:
-der Fliesstext steht **an identischer Stelle**, kein Zeilenumbruch, kein
-Höhensprung — der Rückbau ist layout-neutral. Die Linie selbst ist im
+kein Zeilenumbruch, kein Höhensprung; **horizontal rückt der Fliesstext um
+1 CSS-px nach links** (Pixel-Diff der beiden Screenshots bei 2× DPR: exakt
+−2 Gerätepixel, Bug-Check 16.8.2026), weil der Alt-Default `linien=auto` die
+1-px-`border-l` transparent *reserviert* liess und sie jetzt ganz fehlt — also
+nicht layout-neutral, sondern eine deklarierte, minimale Verschiebung ohne
+Umbruch (Lesemass ≤ 75 ch unberührt, `leser-lesemass` grün). Nutzer, die
+`linien=aus` gespeichert hatten, sehen den Einzug wieder — er ist nun
+dauerhaft, kein Schalter mehr (Altwert wird beim Laden ignoriert, beim ersten
+Speichern verworfen). Die Linie selbst ist im
 Vorher-Bild nur bei genauem Hinsehen als Haarlinie am linken Rand der Lesespalte
 zu erkennen. Das ist kein Mangel des Beweises, sondern der belegte Befund: sie
 lag bei ~18 % Deckung, und genau daran hat David sie dreimal verworfen
