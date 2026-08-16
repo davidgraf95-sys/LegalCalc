@@ -463,6 +463,25 @@ derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
   umgebaut (FL-4). Sie gehört zu **H4/H5**; Preis heute 37 px Chrome. Dieselbe
   Aufteilung hat der Entscheid-Leser seit je.
 
+**Fundament-Auflage David 16.8.2026** («richtig guter Code, der sich als
+Fundament auch für weitere Gesetze und Darstellungen eignet») — umgesetzt und im
+Kontaktbogen Ziff. 4c mit Modulgraph belegt: **eine Naht** zur geteilten
+Maschinerie (`v3/leserV3Modell.ts`, typisiertes `LeserV3Modell`) statt acht
+verstreuter `inhalt-*`-Importe · **kein `if (bund)` in Komponenten**
+(`v3/erlassAnsicht.ts` leitet Ebene, Overline und Übersichtszeile aus dem
+Datenmodell ab — Bund, Kanton und Staatsvertrag laufen durch denselben Rahmen) ·
+**eine Wurzel** für Pane und Breite (`v3/LeserV3Kontext.ts`) · **fünf benannte
+Erweiterungspunkte** als Props (`panelOeffner`, `panelSlot`, `beiwerkSlot`,
+`fassungsWahl`, `leisteExtra`), die ungesetzt nichts rendern · Rahmen von 597 auf
+285 Zeilen, Lesekörper und Gliederung als eigene Bauteile. Bewusst NICHT
+abstrahiert: die Hook-Reihenfolge im Adapter (koppelt geteilte Refs, §6.6), die
+Umbenennung der `inhalt-*`-Module (fasst FL-4-eingefrorene Dateien an → H5), der
+Lesekörper (PX misst ihn), die Breiten-Messung per ResizeObserver (sie speist
+`--nt-stick`; zwei Geometrie-Quellen wären die LM-003-Konstellation) und ein
+gemeinsamer Rahmen mit dem Entscheid-Leser (§1: keine Abstraktion über zwei
+Fälle, von denen einer noch umgebaut wird). Der Umbau war verhaltensneutral:
+identische Messwerte, alle 15 V3-e2e grün.
+
 **Befund zur N-Liste (Kap. 10) — die Zuordnung ist zu früh als «N» geführt.**
 Das Flag-Projekt steht nach H1 bei **49 von 60 grün**. Alle elf roten Zeilen
 wurden einzeln nachgesehen; **keine betrifft den Normtext**, alle prüfen die
