@@ -92,7 +92,13 @@ export function GliederungSheet({
               )}
             </p>
           ) : (
-            <p className="text-micro leading-snug text-ink-400">Noch keine Leseposition erfasst.</p>
+            // W3.6-Klasse, gefunden 16.8.2026 beim axe-Scan des GEÖFFNETEN Sheets
+            // (die bestehende a11y-Stichprobe öffnet es nicht): `ink-400` ist ein
+            // Deko-Token (3.41:1 auf `paper-raised`) und trug hier sichtbaren
+            // Text — axe: color-contrast, serious. In BEIDEN Hüllen reproduziert,
+            // also ein Ist-Defekt mit Live-Wirkung und darum auch unter FL-4
+            // behebbar. `ink-500` hebt ihn auf AA, ohne die Dämpfung aufzugeben.
+            <p className="text-micro leading-snug text-ink-500">Noch keine Leseposition erfasst.</p>
           )}
         </div>
         {/* 3 · Quickjump «Art. N» */}

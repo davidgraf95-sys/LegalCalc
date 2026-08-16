@@ -97,8 +97,13 @@ export function SuchSprungFeld({
         />
         {/* Das Kürzel steht sichtbar am Feld — ein Kürzel, das man kennen muss,
             ist keines (Design-Grundlage Kap. 8: sichtbar im Ruhezustand). Auf
-            Touch-Breiten ausgeblendet, dort gibt es keine Tastatur. */}
-        <kbd aria-hidden className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 select-none text-micro text-ink-400 sm:block">⌘K</kbd>
+            Touch-Breiten ausgeblendet, dort gibt es keine Tastatur.
+            `ink-500`, NICHT `ink-400`: `ink-400` ist ein Deko-Token (~3.1:1 auf
+            der Feldfläche) und trägt hier sichtbaren Text — axe meldete
+            `color-contrast`, serious. Dieselbe Klasse wie W3.6 (25.6.2026) und
+            der Menü-Befund vom 26.7.2026; `aria-hidden` hilft nicht, das Zeichen
+            ist ja zu sehen. */}
+        <kbd aria-hidden className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 select-none text-micro text-ink-500 sm:block">⌘K</kbd>
       </div>
       {token && (
         <button type="button" id="v3-sprung-hinweis" data-v3-sprung-hinweis
@@ -106,7 +111,7 @@ export function SuchSprungFeld({
           className="flex w-full items-center gap-1.5 rounded-sm px-2 py-1 text-left text-body-s text-brass-700 transition-colors hover:bg-brass-100/50">
           <span aria-hidden>→</span>
           <span>Zu <span className="num font-medium">{wert.trim()}</span> springen</span>
-          <kbd aria-hidden className="ml-auto hidden text-micro text-ink-400 sm:block">↵</kbd>
+          <kbd aria-hidden className="ml-auto hidden text-micro text-ink-500 sm:block">↵</kbd>
         </button>
       )}
     </div>
