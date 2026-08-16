@@ -296,6 +296,13 @@ export function erlassVorschlaege<T extends Pick<BrowseErlass, 'key' | 'kuerzel'
     || a.e.key.localeCompare(b.e.key));
   return bewertet.slice(0, max).map((x) => x.e);
 }
+// DESIGN-D0: die drei Fussnoten-Links unten trugen `text-brass-700/90`. Die
+// Deckkraft war seit je ein No-op (Fund B4) — ausgeliefert wurde immer das volle
+// brass-700 (5.41:1, AA). Mit dem Wurzel-Fix hätte sie erstmals gegriffen: axe
+// mass #8e713a auf Papier = 4.4:1 an 16 Knoten, unter AA (`a11y.e2e.ts`
+// «Gesetze — Reader Bund»). Suffix gestrichen, damit bleibt der ausgelieferte
+// Zustand; `hover:text-brass-700` war dadurch wirkungslos und fällt mit
+// (F7 «keine Leichen»).
 export function fnTextMitLinks(fn: Fussnote): ReactNode {
   if (!fn.links.length) return richText(fn.text, 'fn');
   const map = new Map(fn.links.map((l) => [l.label, l]));
@@ -312,7 +319,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
       return (
         <Link key={i} to={`/gesetze/${link.intern.ebene}/${encodeURIComponent(link.intern.key)}`}
           title="Intern öffnen"
-          className="text-brass-700/90 hover:text-brass-700 hover:underline decoration-dotted underline-offset-2">{richText(t, `fn${i}`)}</Link>
+          className="text-brass-700 hover:underline decoration-dotted underline-offset-2">{richText(t, `fn${i}`)}</Link>
       );
     }
     const kinder = richText(t, `fn${i}`);
@@ -338,7 +345,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
       return (
         <Link key={i} to={`/gesetze/${intern.ebene}/${encodeURIComponent(intern.key)}`}
           title={titel}
-          className="text-brass-700/90 hover:text-brass-700 hover:underline decoration-dotted underline-offset-2">{kinder}</Link>
+          className="text-brass-700 hover:underline decoration-dotted underline-offset-2">{kinder}</Link>
       );
     }
     // LM-154 (W2·17-UI-BEFUNDE-B4): reine Fedlex-Verweise (BBl/AS ohne SR-Treffer)
@@ -352,7 +359,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
     // mehrere Zitate in einer dichten Zeile aneinanderreiht).
     return (
       <a key={i} href={url} target="_blank" rel="noopener noreferrer" title="Amtliche Fedlex-Quelle – öffnet in neuem Tab"
-        className="text-brass-700/90 underline decoration-dotted underline-offset-2 hover:text-brass-700">{kinder}</a>
+        className="text-brass-700 underline decoration-dotted underline-offset-2">{kinder}</a>
     );
   });
 }

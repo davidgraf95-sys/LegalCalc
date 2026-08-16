@@ -11,9 +11,27 @@
 //     generiert Tailwind die Klasse STILL nicht (No-op). Genau diese Bug-Klasse
 //     (bg-brass-50 / border-brass-300) erscheint sonst gar nicht im UI (F6/F7).
 //
+//  3) DECKKRAFT (DESIGN-D0, Infrastruktur-Fund B4 vom 8.8.2026): dieselbe
+//     No-op-Klasse eine Ebene tiefer. `bg-brass-100/70` & Co. erzeugten am
+//     Stand vom 16.8.2026 KEINE CSS-Regel — Tailwind 3 kann den `/<alpha>`-
+//     Modifier nur anwenden, wenn der Farbwert entweder parsebar (`#F1E8D6`)
+//     oder eine Funktion/`<alpha-value>`-Vorlage ist. Reine `var(--token)`-
+//     Werte sind beides nicht: `withAlphaValue()` liefert `undefined`, die
+//     Deklaration entfällt, die Regel wird verworfen — die Fläche rendert
+//     unsichtbar (belegt LM-156, unsichtbare Aktiv-Zeile der Gesetzes-
+//     Gliederung, PR #472). Prüfung 2 fängt das NICHT: die Stufe existiert ja,
+//     nur der Modifier verpufft. Der Wächter kompiliert darum die im Repo
+//     tatsächlich verwendeten `/<alpha>`-Klassen mit echtem Tailwind und
+//     verlangt (a) eine Regel und (b) einen anderen Deklarations-Rumpf als die
+//     opake Schwesterklasse — sonst wäre eine Regel ohne Deckkraft-Wirkung
+//     grün. Implementierungs-neutral: greift auch bei einer künftigen
+//     Tailwind-4-/color-mix-Lösung.
+//
 // Lauf:  npm run check:design-tokens   (Teil von `npm run check` → gate voll).
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import postcss, { type Declaration } from 'postcss';
+import tailwindcss from 'tailwindcss';
 import tw from '../tailwind.config.js';
 
 const WURZEL = 'src';
@@ -68,6 +86,10 @@ const OVERLINE_DIM_RE = /\blc-overline\b[^"'`]*\btext-ink-(?:500|400|300)\b|\bte
 // dieses Komponenten-Scopes. Heute 0 Treffer = billige Versicherung (F6/F7).
 const WHITE_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-white\\b`, 'g');
 const INLINE_WHITE_RE = /(?:background|backgroundColor|color)\s*:\s*['"]#(?:fff|ffffff)['"]/i;
+// ── Deckkraft-Suffix (Prüfung 3, D0): <praefix>-<farbe>/<alpha>. Bewusst OHNE
+// Familien-Filter — auch die Tailwind-Keyword-Farben (bg-black/50) laufen mit,
+// die Kompilation entscheidet. Nur Farb-Präfixe, damit w-1/2 & Co. nicht greifen.
+const ALPHA_UTIL_RE = new RegExp(`\\b(?:${PRAEFIX})-[a-z]+(?:-[a-z0-9]+)*\\/[0-9.]+\\b`, 'g');
 
 function dateien(dir: string): string[] {
   const out: string[] = [];
@@ -80,6 +102,8 @@ function dateien(dir: string): string[] {
 }
 
 const fehler: string[] = [];
+/** Fundstellen je Deckkraft-Klasse: "bg-brass-100/70" → ["src/…:42", …] */
+const alphaFunde = new Map<string, string[]>();
 for (const datei of dateien(WURZEL)) {
   const zeilen = readFileSync(datei, 'utf8').split('\n');
   zeilen.forEach((zeile, i) => {
@@ -112,7 +136,48 @@ for (const datei of dateien(WURZEL)) {
       fehler.push(`${datei}:${i + 1} — Reinweiss-Utility «${wm[0]}» (§13-Nachtrag d / Reinweiss-Invariante). Warme Fläche/Tinte nutzen: bg-paper*/bg-surface* bzw. text-paper (nie #FFFFFF als Lesefläche).`);
     if (INLINE_WHITE_RE.test(zeile))
       fehler.push(`${datei}:${i + 1} — Reinweiss #fff im Inline-Style (§13-Nachtrag d / Reinweiss-Invariante). Token nutzen: var(--paper*)/var(--surface*) bzw. var(--paper) für Tinte auf Dunkel.`);
+    let alm: RegExpExecArray | null;
+    ALPHA_UTIL_RE.lastIndex = 0;
+    while ((alm = ALPHA_UTIL_RE.exec(zeile)) !== null) {
+      const liste = alphaFunde.get(alm[0]) ?? [];
+      liste.push(`${datei}:${i + 1}`);
+      alphaFunde.set(alm[0], liste);
+    }
   });
+}
+
+// ── Prüfung 3: Deckkraft-Klassen gegen echtes Tailwind kompilieren ───────────
+// Ein Lauf für alle Klassen (opak + Alpha) — Tailwind braucht dafür ~150 ms.
+if (alphaFunde.size > 0) {
+  const opak = (k: string) => k.slice(0, k.lastIndexOf('/'));
+  const klassen = [...alphaFunde.keys()].flatMap((k) => [k, opak(k)]);
+  const config = { ...(tw as Record<string, unknown>), content: [{ raw: klassen.join(' '), extension: 'html' }] };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const ergebnis = await postcss([tailwindcss(config as any)]).process('@tailwind utilities;', { from: undefined });
+  // Selektor → Deklarations-Rumpf. `--tw-*-opacity` fliegt raus: Tailwind
+  // emittiert die Zeile nur bei der opaken Variante und sie ist wirkungslos,
+  // würde den Vergleich aber immer «unterschiedlich» machen.
+  const rumpf = new Map<string, string>();
+  ergebnis.root.walkRules((regel) => {
+    const treffer = /^\.((?:[^\s.:>~+[\\]|\\.)+)/.exec(regel.selector);
+    if (!treffer) return;
+    const klasse = treffer[1].replace(/\\/g, '');
+    const decls = regel.nodes
+      .filter((n): n is Declaration => n.type === 'decl' && !/^--tw-[a-z-]+-opacity$/.test(n.prop))
+      .map((n) => `${n.prop}:${n.value}`)
+      .join(';');
+    rumpf.set(klasse, (rumpf.get(klasse) ?? '') + decls);
+  });
+  for (const [klasse, orte] of alphaFunde) {
+    const wo = `${orte[0]}${orte.length > 1 ? ` (+${orte.length - 1} weitere)` : ''}`;
+    const mit = rumpf.get(klasse);
+    if (mit === undefined || mit === '') {
+      fehler.push(`${wo} — Deckkraft-Klasse «${klasse}» erzeugt KEINE CSS-Regel (stiller No-op, D0/F7). Farbwert in tailwind.config.js alpha-fähig machen (Funktion mit opacityValue bzw. <alpha-value>), nicht die Klasse entfernen.`);
+      continue;
+    }
+    if (mit === rumpf.get(opak(klasse)))
+      fehler.push(`${wo} — Deckkraft-Klasse «${klasse}» erzeugt zwar eine Regel, aber denselben Wert wie «${opak(klasse)}» — der /-Modifier bleibt wirkungslos (D0/F7).`);
+  }
 }
 
 if (fehler.length > 0) {
@@ -120,4 +185,4 @@ if (fehler.length > 0) {
   for (const f of fehler) console.error('  ' + f);
   process.exit(1);
 }
-console.log(`Token-Schranke ok — Typo-Skala sauber, alle Farb-Utilities in der Config (${GUELTIG.size} gültige Stufen).`);
+console.log(`Token-Schranke ok — Typo-Skala sauber, alle Farb-Utilities in der Config (${GUELTIG.size} gültige Stufen), ${alphaFunde.size} Deckkraft-Klassen erzeugen eine wirksame Regel.`);
