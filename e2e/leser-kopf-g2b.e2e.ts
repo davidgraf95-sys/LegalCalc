@@ -61,34 +61,65 @@ test('A4 «Ansicht»-Dropdown: Öffnen fokussiert den Inhalt, Escape schliesst +
 // sichtbare Inhalts-Kopf (siehe Test oben: nav[aria-label="Brotkrümel"]); die
 // «Zitat kopieren»-Aktion lebt je Artikel im ArtikelLeser (unten geprüft).
 
-// P1-d — Currency-Chips im Leser-Kopf (Moat-Hebel 3). Der Chip steht schon im
+// P1-d — Currency-Aussagen im Leser-Kopf (Moat-Hebel 3). Sie stehen schon im
 // prerenderten Kopf (CLS=0) UND im React-Kopf (geteilte Komponente ErlassLeserKopf,
-// beide Leser-Instanzen). BV ist aktuell + hat eine künftige Fassung → beide Chips;
-// BKV ist aktuell ohne künftige Fassung → nur der geprüft-Chip.
-test('Currency-Chips: «geltend geprüft am … (maschinell)» + «nächste Fassung ab …» (BV)', async ({ page }) => {
+// beide Leser-Instanzen). BV ist aktuell + hat eine künftige Fassung → beide
+// Angaben; BKV ist aktuell ohne künftige Fassung → nur der Standausweis.
+//
+// NEU GEFASST W2·5m-LESER-V3/S3 (Entscheid F5, David 16.8.2026): der Standausweis
+// heisst nicht mehr «geltend geprüft am …», sondern «gegen Fedlex-Konsolidierung
+// geprüft am … (maschinell)», und er steht nicht mehr in einem Chip, sondern in
+// der Stand-Zeile. Deklarierte FACHLICHE Änderung, kein Refactoring (§6.3): die
+// Erwartung wird angepasst, nicht der Code gebogen. Die §8-Zusagen bleiben WÖRTLICH
+// stehen — «(maschinell)» tragend, kein «gültig»/«verifiziert» — und werden zur
+// Sicherheit zusätzlich um den ALTEN Wortlaut ergänzt, damit ein Rückfall auffällt.
+test('Standausweis F5 + «nächste Fassung ab …» (BV)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BV');
   const header = page.locator('.lc-leser > header');
-  await expect(header.getByText(/geltend geprüft am \d{2}\.\d{2}\.\d{4} \(maschinell\)/)).toBeVisible();
+  await expect(header.getByText(/gegen Fedlex-Konsolidierung geprüft am \d{2}\.\d{2}\.\d{4} \(maschinell\)/)).toBeVisible();
   await expect(header.getByText(/nächste Fassung ab \d{2}\.\d{2}\.\d{4}/)).toBeVisible();
   // §8: kein «gültig»/«verifiziert» als eigenes Wort ausserhalb der zugelassenen Formel.
   await expect(header.getByText(/\bgültig\b/)).toHaveCount(0);
   await expect(header.getByText(/\bverifiziert\b/)).toHaveCount(0);
+  // F5: der alte, irreführende Wortlaut darf nicht zurückkommen.
+  await expect(header.getByText(/geltend geprüft am/)).toHaveCount(0);
 });
 
-test('Currency-Chip: nur geprüft-Chip ohne künftige Fassung (BKV)', async ({ page }) => {
+test('Standausweis ohne künftige Fassung (BKV)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BKV');
   const header = page.locator('.lc-leser > header');
-  await expect(header.getByText(/geltend geprüft am \d{2}\.\d{2}\.\d{4} \(maschinell\)/)).toBeVisible();
+  await expect(header.getByText(/gegen Fedlex-Konsolidierung geprüft am \d{2}\.\d{2}\.\d{4} \(maschinell\)/)).toBeVisible();
   await expect(header.getByText(/nächste Fassung ab/)).toHaveCount(0);
 });
 
-test('Currency-Chips brechen mobil @390 um — kein horizontaler Seiten-Overflow', async ({ page }) => {
+test('Stand-Zeile bricht mobil @390 um — kein horizontaler Seiten-Overflow', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await warteReader(page, '/gesetze/bund/BV');
-  await expect(page.locator('.lc-leser > header').getByText(/geltend geprüft am/)).toBeVisible();
+  await expect(page.locator('.lc-leser > header').getByText(/Fedlex-Konsolidierung geprüft am/)).toBeVisible();
   const overflow = await page.evaluate(() =>
     document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
   expect(overflow).toBe(false);
+});
+
+// S3 · F5-Warnzeile im KLARTEXT — der Kern des Positions-11-Befunds. STPO trägt
+// eine in Kraft getretene, nicht konsolidierte Änderung; der Satz muss VOR dem
+// Lesen sichtbar sein (nicht bloss im `title`) und ein Datum nennen.
+test('S3/F5: nicht konsolidierte Änderung steht im Klartext im Kopf (STPO)', async ({ page }) => {
+  await warteReader(page, '/gesetze/bund/STPO');
+  const header = page.locator('.lc-leser > header');
+  await expect(
+    header.getByText(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung noch nicht in den Text eingearbeitet/),
+  ).toBeVisible();
+  await expect(header.getByText(/massgeblich ist die amtliche Fassung/)).toBeVisible();
+});
+
+// Gegenprobe: ein Erlass OHNE offene Konsolidierung behauptet nichts Beruhigendes
+// (§8 — «keine Warnung» heisst auch «noch nicht bekannt»).
+test('S3/§8: ohne offene Konsolidierung kein Warnsatz (OR)', async ({ page }) => {
+  await warteReader(page, '/gesetze/bund/OR');
+  const header = page.locator('.lc-leser > header');
+  await expect(header.getByText(/noch nicht in den Text eingearbeitet/)).toHaveCount(0);
+  await expect(header.getByText(/Snapshot — massgeblich ist die amtliche Fassung/)).toBeVisible();
 });
 
 test('«Zitat kopieren»: deterministisches Zitat (Kürzel + SR + Stand) in die Zwischenablage', async ({ page, context }) => {

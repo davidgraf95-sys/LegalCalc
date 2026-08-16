@@ -97,28 +97,64 @@ export async function revisionenFuerNorm(normKeys: readonly string[]): Promise<R
 }
 
 /**
- * W2·5m-LESER-V3/S3 (F5): frühestes Inkrafttreten unter den NICHT konsolidierten
- * Revisionen — das Datum, das der Erlass-Kopf im Klartextsatz «Fedlex hat eine
- * seit TT.MM.JJJJ geltende Änderung noch nicht in den Text eingearbeitet» nennt.
+ * W2·5m-LESER-V3/S3 (F5), Schritt 1 von 2: die Inkrafttretens-Daten aller als
+ * NICHT KONSOLIDIERT markierten Revisionen, aufsteigend sortiert.
  *
- * `null` = keine nicht konsolidierte Änderung. Rein und deterministisch (§2):
- * ISO-Daten sortieren lexikografisch = chronologisch, kein `Date.now()`, und
- * hier wird NICHT abgeleitet, ob etwas konsolidiert ist — das entscheidet allein
- * der Generator (`scripts/normtext/revisionen-generieren.ts`,
- * `dateEntryInForce > korpusStand`); sein Marker wird nur ausgewertet.
- *
- * §8: Ist der Marker gesetzt, das Datum aber kein ISO-Datum, liefert die Funktion
- * `null` — der Satz nennt dann schlicht kein Datum, statt eines zu erfinden. Die
- * TATSACHE bleibt davon unberührt sichtbar (sie hängt am Marker, nicht am Datum).
+ * Rein und deterministisch (§2): ISO-Daten sortieren lexikografisch =
+ * chronologisch, kein `Date.now()`. Hier wird NICHT abgeleitet, ob etwas
+ * konsolidiert ist — das entscheidet allein der Generator
+ * (`scripts/normtext/revisionen-generieren.ts`, `dateEntryInForce > korpusStand`);
+ * sein Marker wird nur ausgewertet. Einträge ohne brauchbares ISO-Datum fallen
+ * heraus: sie können keinen Zeitbezug tragen (§8, nichts erfinden).
  */
-export function fruehestesNichtKonsolidiert(
+export function nichtKonsolidierteInkrafttreten(
   revisionen: readonly RevisionBezug[] | undefined,
-): string | null {
-  const daten = (revisionen ?? [])
+): string[] {
+  return (revisionen ?? [])
     .filter((r) => r.nichtKonsolidiert && /^\d{4}-\d{2}-\d{2}$/.test(r.dateEntryInForce))
     .map((r) => r.dateEntryInForce)
     .sort();
-  return daten[0] ?? null;
+}
+
+/**
+ * W2·5m-LESER-V3/S3 (F5), Schritt 2 von 2: das früheste dieser Daten, das am
+ * `stichtag` BEREITS IN KRAFT war — oder `null`.
+ *
+ * ─── Warum dieser Filter unverzichtbar ist (Befund beim Bau, 16.8.2026) ──────
+ * Der Marker `nichtKonsolidiert` bedeutet «tritt später in Kraft als der
+ * Korpus-Stand» — er umfasst damit AUCH Änderungen, die erst in Zukunft gelten.
+ * Gemessen an den 227 Sidecars trugen 66 Erlasse den Marker, aber nur 4 eine
+ * Änderung, die tatsächlich schon galt; der späteste Marker lag auf 2034-01-01.
+ * Der Satz «Fedlex hat eine seit 01.01.2034 geltende Änderung noch nicht
+ * eingearbeitet» wäre schlicht falsch (§1/§8) — die Änderung gilt nicht, sie ist
+ * angekündigt. Für Angekündigtes gibt es bereits das eigene, korrekte Wortfeld
+ * «nächste Fassung ab …» (P1-d, warn-Rolle). Der Fahrplan verlangt den Filter
+ * ausdrücklich («nur bei `nichtKonsolidiert` mit `dateEntryInForce ≤ heute`»,
+ * FAHRPLAN-LESER-V3 Kap. 7, Pos. 11/18); mit ihm ergibt sich exakt die dort
+ * genannte Erlass-Menge (FZA, STPO, TXG, BGG — plus BMV, dessen Warnung schon
+ * die Aufhebungs-Regel unterdrückt).
+ *
+ * ─── Warum `stichtag` und nicht «heute» (§2) ────────────────────────────────
+ * Kein `Date.now()`: der Kopf wird prerendert, eine Bauzeit-Gegenwart veraltete
+ * still, und eine Client-Uhr machte dieselbe Seite je nach Gerät verschieden.
+ * Massgeblich ist stattdessen ein DATENGETRAGENER Stichtag — `currency.geprueftAm`,
+ * der Tag des letzten maschinellen Abgleichs gegen den Fedlex-Konsolidierungs-
+ * graphen. Was an diesem Tag belegt in Kraft und unkonsolidiert war, ist es
+ * heute erst recht. Die Aussage ist damit konservativ: sie kann höchstens eine
+ * Änderung verschweigen, die seit dem letzten Abgleich in Kraft getreten ist,
+ * nie eine behaupten, die es nicht ist (§8 — im Zweifel schweigen).
+ *
+ * Fehlt der Stichtag (kein `geprueftAm` — z. B. bei einem Erlass, dessen Pin
+ * nicht der geltenden Fassung entspricht, §8-Härtung P1-d), liefert die Funktion
+ * `null`: ohne verifizierten Bezugstag lässt sich «gilt bereits» nicht belegen.
+ * Solche Erlasse bleiben über `check:fedlex-versionen` sichtbar.
+ */
+export function fruehestesInKraft(
+  inkrafttreten: readonly string[],
+  stichtag: string | null | undefined,
+): string | null {
+  if (!stichtag) return null;
+  return inkrafttreten.find((d) => d <= stichtag) ?? null;
 }
 
 /** Locale-Titel eines Eintrags (DE Fallback). Rein. */

@@ -33,6 +33,7 @@ import type { Sektion, ErlassKopf } from '../lib/normtext/browse';
 import type { KantonSystematik } from '../lib/normtext/systematik';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
+import { nichtKonsolidiertSatz } from '../lib/normtext/erlassKopfText';
 
 const erlass: BrowseErlass = {
   key: 'ZGB', ebene: 'bund', kanton: null, kuerzel: 'ZGB', titel: 'Zivilgesetzbuch', sr: '210',
@@ -52,8 +53,9 @@ const kopf: ErlassKopf = {
   praeambel: [{ rolle: 'autor', text: 'Die Bundesversammlung der Schweizerischen Eidgenossenschaft,' }],
 };
 
-function render({ istXl, tocOffen, nichtKonsolidiert = false, aufgehoben = false }: {
-  istXl: boolean; tocOffen: boolean; nichtKonsolidiert?: boolean; aufgehoben?: boolean;
+function render({ istXl, tocOffen, nichtKonsolidiert = false, nichtKonsolidiertSeit = null, aufgehoben = false }: {
+  istXl: boolean; tocOffen: boolean; nichtKonsolidiert?: boolean;
+  nichtKonsolidiertSeit?: string | null; aufgehoben?: boolean;
 }) {
   const noop = () => {};
   const e: BrowseErlass = aufgehoben ? { ...erlass, aufgehoben: { seit: '2026-01-01' } } : erlass;
@@ -73,7 +75,7 @@ function render({ istXl, tocOffen, nichtKonsolidiert = false, aufgehoben = false
         reiterToast={false} setReiterToast={noop} reiterToastTimerRef={{ current: null }}
         tocDrawerRef={{ current: null }} leseRef={{ current: null }}
         navigate={noop as NavigateFunction}
-        nichtKonsolidiert={nichtKonsolidiert}
+        nichtKonsolidiert={nichtKonsolidiert} nichtKonsolidiertSeit={nichtKonsolidiertSeit}
       />
     </MemoryRouter>,
   );
@@ -135,34 +137,59 @@ describe('S6 — §15.2: die Konsolidierungs-Zeile ist höhenfest reserviert', (
 // EINE Zeile, zwei Zustände, kein zweites Element.
 describe('S6 — Promotion in den Erlass-Kopf (höhenfest, §15.2)', () => {
   const HINWEIS = 'Snapshot — massgeblich ist die amtliche Fassung';
-  const WARN = '⚠ Änderung in Kraft, noch nicht konsolidiert';
 
-  it('nichtKonsolidiert=true: die Hinweis-Zeile trägt die Warnung statt des Normalsatzes', () => {
+  it('nichtKonsolidiert=true: die Status-Zeile trägt die Warnung statt des Normalsatzes', () => {
     const html = render({ istXl: true, tocOffen: true, nichtKonsolidiert: true });
-    expect(html).toContain(WARN);
+    expect(html).toContain(nichtKonsolidiertSatz(null));
     expect(html).not.toContain(HINWEIS);
     // Kein zusätzlicher Block — der wäre der gemessene CLS-Verursacher.
     expect(html).not.toContain('lc-notice-warn');
   });
 
-  it('Beide Fassungen sind praktisch gleich lang — der Umbruch kann nicht kippen', () => {
-    // Die Höhen-Invarianz hängt daran, dass die Metazeile nicht neu umbricht.
-    // Ein künftiger, längerer Warntext soll hier auffallen, nicht erst im e2e.
-    expect(Math.abs(WARN.length - HINWEIS.length)).toBeLessThanOrEqual(4);
-    expect(WARN.length).toBeLessThanOrEqual(50);
+  // NEU GEFASST W2·5m-LESER-V3/S3 (F5). Der bis 16.8.2026 hier geprüfte Satz
+  // «beide Fassungen sind praktisch gleich lang» WAR die CLS-Abwehr: solange
+  // Warnung und Normalsatz gleich lang sind, kann der Umbruch nicht kippen.
+  // F5 verlangt jetzt ausdrücklich einen Klartextsatz mit Datum — er ist rund
+  // dreimal so lang, die Gleich-Längen-Abwehr ist damit sachlich unmöglich
+  // geworden. Sie wird NICHT ersatzlos gestrichen (das wäre stiller Schutz-
+  // verlust), sondern durch die Abwehr ersetzt, die an ihre Stelle getreten
+  // ist: Stand- und Status-Zeile teilen sich eine Zelle mit RESERVIERTER Höhe.
+  // Wer die Reservierung entfernt, baut den gemessenen Shift wieder ein.
+  it('Ersatz-Abwehr: Stand- und Status-Zeile stehen in EINER höhenfest reservierten Zelle', () => {
+    for (const fall of [{}, { nichtKonsolidiert: true }]) {
+      const html = render({ istXl: true, tocOffen: true, ...fall });
+      // Ganzes Klassenpaar als EIN Treffer prüfen — `min-h-kopf-stand` allein
+      // wäre auch Teilstring von `sm:min-h-kopf-stand-sm` (§7: Identität, nicht
+      // Substring-Präsenz).
+      expect(zaehle(html, 'min-h-kopf-stand sm:min-h-kopf-stand-sm')).toBe(1);
+    }
+  });
+
+  it('S3/F5: das Datum der nicht konsolidierten Änderung steht im Klartext', () => {
+    const html = render({ istXl: true, tocOffen: true, nichtKonsolidiert: true, nichtKonsolidiertSeit: '2025-07-01' });
+    expect(html).toContain(nichtKonsolidiertSatz('2025-07-01'));
+    expect(html).toContain('01.07.2025');
+    // §8: die Einschränkung steht im sichtbaren Text, nicht bloss im title.
+    expect(html).toContain('massgeblich ist die amtliche Fassung');
+  });
+
+  it('S3/§8: ohne bekanntes Datum nennt der Satz keines (statt eines zu erfinden)', () => {
+    const html = render({ istXl: true, tocOffen: true, nichtKonsolidiert: true });
+    expect(html).toContain(nichtKonsolidiertSatz(null));
+    expect(html).not.toContain(' seit ');
   });
 
   it('nichtKonsolidiert=false: unveränderter Normalsatz (§8 — nichts behaupten)', () => {
     const html = render({ istXl: true, tocOffen: true });
     expect(html).toContain(HINWEIS);
-    expect(html).not.toContain(WARN);
+    expect(html).not.toContain('noch nicht in den Text eingearbeitet');
   });
 
   it('Aufgehobener Erlass: keine Konsolidierungs-Warnung (die Aufhebung ist die Aussage)', () => {
-    const html = render({ istXl: true, tocOffen: true, nichtKonsolidiert: true, aufgehoben: true });
+    const html = render({ istXl: true, tocOffen: true, nichtKonsolidiert: true, nichtKonsolidiertSeit: '2025-07-01', aufgehoben: true });
     expect(html).toContain('lc-notice-danger');
     expect(html).toContain(HINWEIS);
-    expect(html).not.toContain(WARN);
+    expect(html).not.toContain('noch nicht in den Text eingearbeitet');
   });
 
   // B3 (Bug-Check 9.8.2026, live auf /gesetze/bund/BMV): der Kopf zog die
