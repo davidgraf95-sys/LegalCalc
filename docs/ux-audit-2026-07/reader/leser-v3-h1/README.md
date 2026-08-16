@@ -214,6 +214,17 @@ Leser-Zustände. Die Quellensonden `leser-v3-adresse.test.ts` und
 | `fassungsWahl` | W2·5g · Zeitmaschine/Fassungswahl | rendert nichts |
 | `leisteExtra` | Kontext-Reiter am Fuss der Seitenleiste | rendert nichts |
 
+### Drei Ebenen, ein Rahmen — nachgemessen
+
+| Erlass | Ebene | Ergebnis unter `?leser=v3` |
+|---|---|---|
+| StPO (SR 312.0) | Bund | 480 Artikel · Overline «Bundesgesetz · Verfahrensrecht» · CLS 0.0006 |
+| BS EG StPO (257.100) | Kanton | 48 **Paragraphen** · kein SR-Feld (entfällt, statt Platzhalter) · CLS 0.0004 |
+| LugÜ (SR 0.275.12) | Staatsvertrag | 91 Artikel · Overline «Staatsvertrag» · 12 Anhang-Blöcke |
+
+Kein Zweig davon steht in einer Komponente: Zähl-Substantiv, Overline und
+Übersichtszeile kommen aus `erlassAnsicht.ts` bzw. dem Grundart-Register.
+
 ### Was bewusst NICHT abstrahiert wurde
 
 1. **Die Hook-Reihenfolge im Adapter** — sie koppelt geteilte Refs und Timer
