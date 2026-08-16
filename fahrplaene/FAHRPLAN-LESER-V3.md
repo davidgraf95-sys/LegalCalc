@@ -613,6 +613,8 @@ Verhältnis zu dreizehn offenen Roadmap-Schritten.
 
 ## 14 · Verhältnis zu anderen offenen Roadmap-Schritten
 
+> **Externe Referenzen (David 16.8.2026):** *legalviz.eu* (Maastricht Law & Tech, EU-Rechtsakte-Leser, React/Vite/Tailwind, GPLv3 — Code nicht übernehmbar, Ideen ja): ⌘K-Suche + Deep-Links und einklappbares Inhaltsverzeichnis (bereits im Plan), Rechtsprechung je Artikel (haben wir, Panel geht weiter), **Hervorhebung definierter Begriffe mit Legaldefinition** (Idee für später, nach H5; Extraktions-Risikopfad), **zweisprachiger Leser DE/FR** (später, hängt an FR/IT-Korpus W2·5g-ZEIT), PDF-Export ausgewählter Abschnitte (später, zu Zitat-Export). *eurlex2lexparency* (Python, MIT, EUR-Lex→Lexparency-Format): reines Daten-Konversionswerkzeug für Formex-XML — für Fedlex/Akoma-Ntoso nicht brauchbar, keine UI-Ideen.
+
 Sweep 16.8.2026 über `ROADMAP.md`. Alle IDs unten wurden im Plan verifiziert (Zeilennummern
 angegeben). Zweck: V3 baut nicht neben laufenden Schritten her, und kein Schritt wird
 stillschweigend doppelt gebaut (§17-Gegengewicht, Kollisionsregel).
