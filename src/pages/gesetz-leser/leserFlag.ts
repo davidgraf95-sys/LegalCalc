@@ -54,12 +54,32 @@ export function leserFlagLesen(): string | null {
   }
 }
 
-/** Vollzug der Merkung. Schlägt der Speicher fehl, bleibt das Flag flüchtig —
- *  die aktuelle Ansicht stimmt trotzdem, sie kam aus dem Query-Parameter. */
+/**
+ * Vollzug der Merkung. Schlägt der Speicher fehl, bleibt das Flag flüchtig —
+ * die aktuelle Ansicht stimmt trotzdem, sie kam aus dem Query-Parameter.
+ *
+ * IDEMPOTENT (Bug-Check B2, 16.8.2026). Der Vollzug lief bis dahin in einem
+ * `useEffect` der Fassade — also NACH dem Render. Im Split-View rendern beide
+ * Panes durch denselben `RouteSwitch`; das zweite Pane wertete sein Flag aus,
+ * während der Effekt des ersten noch ausstand, las `null` und rendert V1 neben
+ * V3 (FL-1 verspricht das Gegenteil). Weil diese Funktion nichts mehr tut, wenn
+ * der Speicher schon stimmt, darf die Fassade sie synchron im Render-Rumpf
+ * rufen: kein wiederholtes Schreiben, kein Effekt-Verzug, keine Reihenfolge-
+ * Abhängigkeit zwischen zwei Panes.
+ *
+ * Ein Schreibvorgang im Render-Rumpf ist sonst ein Anti-Muster — hier ist er
+ * zulässig, weil er GEGEN EINE AUSSENWELT idempotent ist (kein React-Zustand,
+ * kein Re-Render, gleiche Eingabe ⇒ gleiche Wirkung, §2).
+ */
 export function leserFlagSchreiben(speichern: LeserFlagWirkung['speichern']): void {
+  if (speichern === null) return;
   try {
-    if (speichern === 'setzen') localStorage.setItem(LESER_V3_KEY, '1');
-    else if (speichern === 'loeschen') localStorage.removeItem(LESER_V3_KEY);
+    const ist = localStorage.getItem(LESER_V3_KEY);
+    if (speichern === 'setzen') {
+      if (ist !== '1') localStorage.setItem(LESER_V3_KEY, '1');
+    } else if (ist !== null) {
+      localStorage.removeItem(LESER_V3_KEY);
+    }
   } catch {
     /* siehe oben */
   }

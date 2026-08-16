@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { GesetzLeserInhalt } from './gesetz-leser/inhalt';
 import { GesetzLeserV3 } from './gesetz-leser/GesetzLeserV3';
@@ -24,7 +23,14 @@ export function GesetzLeser() {
   const schluessel = keyRoh ? decodeURIComponent(keyRoh) : '';
   const { modus, speichern } = leserFlagAuswerten(search, leserFlagLesen());
 
-  useEffect(() => { leserFlagSchreiben(speichern); }, [speichern]);
+  // SYNCHRON, nicht im `useEffect` (Bug-Check B2, 16.8.2026). `Pane.tsx:126`
+  // schickt BEIDE Split-Panes durch denselben `RouteSwitch` — und damit durch
+  // diese Fassade. Lief der Vollzug im Effekt, wertete das zweite Pane sein
+  // Flag noch VOR dem Effekt des ersten aus, las `null` und rendert V1 neben
+  // V3; FL-1 verspricht genau das Gegenteil («ein Flag schaltet beide»). Der
+  // Aufruf ist gegen die Aussenwelt idempotent (siehe `leserFlagSchreiben`) und
+  // berührt keinen React-Zustand — er darf darum im Render-Rumpf stehen.
+  leserFlagSchreiben(speichern);
 
   const Huelle = modus === 'v3' ? GesetzLeserV3 : GesetzLeserInhalt;
   return <Huelle key={schluessel} ebene={ebene ?? ''} schluessel={schluessel} />;
