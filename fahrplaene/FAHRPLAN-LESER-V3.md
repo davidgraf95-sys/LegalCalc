@@ -465,7 +465,7 @@ Breiten (390 / 1440 / 720 px = Pane) und drei Zustände (Ist · V1 · V2), V1/V2
 
 ## 9 · Entscheide F1–F6 — als harte Vorbedingungen
 
-> **Entscheide David 16.8.2026 (Chat, «go, empfehlungen übernehmen, bau den prototyp»):** F1 ja · F2 ja · F4 ja · F5 ja · F6 nein · **F3 = V1 (19 px) · F7 = A (Kopf mit «Ansicht ▾») · F8 = Panel-Randlasche behalten — entschieden am Prototyp V-0, David 16.8.2026 («V1, a, Lasche behalten — weiter mit H1»)** · Design-Grundlage D-A Regler ja · D-B Dunkelmodus behalten (14 Rollen) · D-C Serif behalten. Blocker `david-go-leser-v3` gelöst; Schritt auf wip.
+> **Entscheide David 16.8.2026 (Chat, «go, empfehlungen übernehmen, bau den prototyp»):** F1 ja · F2 ja · F4 ja · F5 ja · F6 nein · **F3 = V1 (19 px) · F7 = A (Kopf mit «Ansicht ▾») · F8 = Panel-Randlasche behalten; **Regel David 16.8.: Schalter «Rechtsprechung im Text» aus ⇒ Zähler UND Randlasche weg** (Panel bleibt über «Ansicht ▾»/Tastatur erreichbar; H3) — entschieden am Prototyp V-0, David 16.8.2026 («V1, a, Lasche behalten — weiter mit H1»)** · Design-Grundlage D-A Regler ja · D-B Dunkelmodus behalten (14 Rollen) · D-C Serif behalten. Blocker `david-go-leser-v3` gelöst; Schritt auf wip.
 
 Keine Etappe startet ohne ihre Vorbedingung. Fehlt der Entscheid, wartet die Etappe — sie wird
 **nicht** «auf Verdacht nach Empfehlung» gebaut (Council A/D: sonst liegt ein fertiger
