@@ -36,6 +36,12 @@ TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Sl
   (gequotet) — nie als -m "…"-String mit Backticks: die Shell substituiert
   sie, die Message verliert Woerter, und --amend ist gesperrt (2 Vorfaelle
   16.8.2026, PR #530/#531).
+  Commit-Typ ehrlich: ein Commit mit Praefix `refactor(` darf KEINE Testdatei
+  aendern oder anlegen (Tor check:testtreue, §6.3) — neue/geaenderte Tests
+  gehoeren in einen `test(`/`feat(`/`fix(`-Commit (Vorfall PR #536, 16.8.2026).
+  Typpruefung im Bau IMMER mit `npx tsc -b` (= npm run build), nie mit
+  `tsc --noEmit -p tsconfig.json`: der Root-tsconfig prueft nicht dasselbe
+  (Beleg 16.8.2026: --noEmit gruen, tsc -b rot an ungenutztem Parameter).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
