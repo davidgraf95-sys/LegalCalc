@@ -326,23 +326,53 @@ function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuel
 /**
  * Erlass-lokale Suche über alle Felder.
  *
- * SORTIERUNG (Spec §4.2), vollständig hier und nirgends sonst:
- *  1. höchstes getroffenes Feldgewicht, `t > m > n > g > tb > f`
- *  2. Fundstellenzahl absteigend
- *  3. Artikelreihenfolge (Dokument-Position) aufsteigend
- * Alle drei Stufen sind total und deterministisch — bei gleicher Eingabe kommt
- * dieselbe Liste heraus (§2).
+ * SORTIERUNG — **Dokument-Reihenfolge**, vollständig hier und nirgends sonst:
+ * aufsteigend nach `pos`, der Artikel-Position im Erlass. EINE Stufe, total und
+ * deterministisch (§2): `pos` ist der Laufindex über `eintraege` (Aufbau des
+ * Index oben, Z. 167) und darum je Artikel eindeutig — es gibt keinen
+ * Gleichstand, den eine zweite Stufe brechen könnte.
  *
- * B11 (Bug-Check §9 zu S8) — EHRLICHKEIT ZU STUFE 3. Hier stand, Stufe 3 mache
- * die Ordnung strikt und mache damit die Sortierstabilität der Engine
- * unerheblich. Das ist der Sache nach richtig, aber es ist keine PRÜFBARE
- * Aussage: die Artikel kommen bereits in Dokument-Reihenfolge aus dem Index,
- * `pos` ist also aufsteigend, und ein `sort` ohne Stufe 3 verhielte sich in
- * jeder stabilen Implementierung beobachtungsgleich. Kein Black-Box-Test kann
- * die Mutante töten — der zugehörige Testname behauptete darum mehr, als er
- * zeigt, und ist mitkorrigiert. Stufe 3 bleibt: sie ist eine BEWUSSTE
- * §2-Redundanz, die die Ordnung unabhängig von einer Engine-Zusage festnagelt,
- * und keine Zeile, die man wegkürzen sollte, weil ein Tor sie nicht sieht.
+ * ─── S4 · DEKLARIERTE VERHALTENSÄNDERUNG (FAHRPLAN-LESER-V3 Kap. 7, Strang S) ─
+ *
+ * Bis hierher galt eine dreistufige RANGFOLGE: (1) höchstes getroffenes
+ * Feldgewicht `t > m > n > g > tb > f`, (2) Fundstellenzahl absteigend, (3)
+ * Dokument-Position. Die Liste war damit nach Relevanz geordnet — und das ist
+ * für ein VERZEICHNIS NEBEN dem vollständigen Wortlaut die falsche Ordnung.
+ * Drei Folgen, alle drei am Bestand belegt:
+ *
+ *  ① Das Verzeichnis konnte seinem Text nicht folgen. Seit S8 bleibt die
+ *    Lesespalte vollständig; die Trefferliste steht daneben und soll sagen, wo
+ *    im Erlass die Stellen liegen. In der Rangfolge stand OR Art. 336c
+ *    irgendwo zwischen Art. 41 und Art. 962 — die Liste hatte keine Richtung,
+ *    der man mit dem Finger folgen kann.
+ *  ② Die Gruppenköpfe logen der Form nach. Die Liste setzt einen Zwischenkopf
+ *    bei jedem Wechsel des Top-Kapitels; in der Rangfolge sprang das Kapitel
+ *    hin und her, dasselbe Kapitel erschien mehrfach. Erst in
+ *    Dokument-Reihenfolge ist ein Gruppenkopf das, wonach er aussieht: die
+ *    einmalige Überschrift über einem zusammenhängenden Abschnitt.
+ *  ③ Die ↑↓-Navigation lief gegen die Leserichtung. `fundstellenFolge` baut die
+ *    flache Folge in LISTEN-Reihenfolge; «nächste Fundstelle» sprang darum im
+ *    Erlass vor und zurück. Jetzt heisst «nächste» das, was der Jurist erwartet:
+ *    die nächste weiter unten im Gesetz.
+ *
+ * WAS DIE RANGFOLGE GELEISTET HAT, GEHT NICHT VERLOREN — es wechselt den Ort:
+ * das getroffene Feld steht weiter an jedem Treffer (`topFeld`, `felder`) und
+ * wird als Herkunfts-Badge SICHTBAR angezeigt (`badgesFuer`), statt sich
+ * unsichtbar in einer Listenposition auszudrücken; der Ausschnitt kommt
+ * unverändert aus dem stärksten getroffenen Feld. Wer nach Relevanz sucht statt
+ * zu blättern, ist beim GLOBALEN Suchindex richtig — der rangiert weiterhin
+ * (`src/lib/suche/artikelRanking.ts`), und genau diese Arbeitsteilung war der
+ * Grund, hier nie `sucherTerme()` zu übernehmen (§7-Abweichung oben).
+ *
+ * B11-ERBE. Der frühere Kommentar hielt fest, dass die alte Stufe 3 von keinem
+ * Black-Box-Test getötet werden kann, weil die Artikel ohnehin in
+ * Dokument-Reihenfolge aus dem Index kommen. Das gilt jetzt umgekehrt und
+ * schärfer: die Ordnung IST die Index-Ordnung, und der `sort` nagelt sie
+ * unabhängig von einer Engine-Zusage zur Sortierstabilität fest (bewusste
+ * §2-Redundanz). Die beiden alten Stufen sind GESTRICHEN, nicht auskommentiert
+ * und nicht als Rückfall behalten: bei eindeutigem `pos` könnte kein Test sie je
+ * erreichen, und was nicht scheitern kann, wird gestrichen statt bewacht
+ * (§17-Gegengewicht).
  */
 export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): LeserTreffer[] {
   const b = begriff.trim();
@@ -387,10 +417,7 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
     });
   }
 
-  treffer.sort((x, y) =>
-    FELD_GEWICHT[y.topFeld] - FELD_GEWICHT[x.topFeld]
-    || y.fundstellen - x.fundstellen
-    || x.pos - y.pos);
+  treffer.sort((x, y) => x.pos - y.pos);
   return treffer;
 }
 

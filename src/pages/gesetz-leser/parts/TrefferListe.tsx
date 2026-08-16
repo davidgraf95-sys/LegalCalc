@@ -68,11 +68,17 @@ export function TrefferListe({
   const hatSprung = fundstellen > 0;
   const anzeige = position < 0 ? '–' : String(position + 1);
   // Zwischenkopf des Top-Kapitels (§4.3), EINMAL vorberechnet statt im Render
-  // mitgeschleppt. Er erscheint bei JEDEM Wechsel der Gruppe — die Liste ist
-  // nach Feldgewicht sortiert (§4.2), nicht nach Dokument-Reihenfolge, ein
-  // Kapitel kann darum mehrfach auftauchen. Das ist die ehrliche Darstellung
-  // der Rangfolge; die Alternative (einmalige Kapitelblöcke) hiesse, die
-  // Sortierung stillschweigend umzustellen.
+  // mitgeschleppt. Er erscheint bei JEDEM Wechsel der Gruppe.
+  //
+  // NACHGEZOGEN MIT S4 (16.8.2026): hier stand, die Liste sei nach Feldgewicht
+  // sortiert und ein Kapitel könne darum mehrfach auftauchen — das war der
+  // ehrliche Vermerk zur damaligen Rangfolge und ist seit der Umstellung auf
+  // Dokument-Reihenfolge (`leserSuche.ts`, S4) schlicht falsch. Da die Treffer
+  // jetzt in Erlass-Reihenfolge kommen, erscheint jedes Kapitel genau einmal,
+  // und dieselbe Zeile «Kopf bei Gruppenwechsel» leistet ohne Änderung das,
+  // wonach sie aussieht: eine einmalige Überschrift über einem
+  // zusammenhängenden Abschnitt. Nur der Kommentar wird korrigiert — die
+  // Darstellungsregel bleibt Zeile für Zeile dieselbe.
   // ── B10 (Bug-Check §9 zu S8): die Liste ist gedeckelt ──────────────────────
   // «der» im OR ergibt 1146 Treffer-Artikel und damit rund 16'700 DOM-Knoten in
   // demselben Scroller, in dem S1–S7 den Gliederungsbaum gerade auf ~1'300
