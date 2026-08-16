@@ -30,12 +30,13 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 16.8.2026 — W2·5h-GESETZ-UI abgeschlossen: Gliederungslinie im Leser ersatzlos entfernt (V1, PR #530)
+## Session 16.8.2026 — W2·5h-GESETZ-UI abgeschlossen (Linien-Rückbau V1, #530) + Deploy-Ausfall seit #519 behoben (#531)
 
 - **Gebaut (1 lex-bau, 2 lex-pruefung):** Guide-Mechanik komplett zurückgebaut (Entscheid David 13.8. «linien ganz entfernen»): `linienAufbau.ts`→`strukturTiefe.ts` (Kennzahl über 1 420 Sidecars identisch), Schalter «Linien» + Feld `linien` weg, CSS/Tailwind-Token `guide` weg, Linien-Kanon Teil B gestrichen (§6.7, Teil A rot-geprobt), Reglement §4b/§4b-A/§4c aufgehoben; Wächter-Spec `leser-ohne-gliederungslinie` neu. Vorher/Nachher-Beweis `docs/ux-audit-2026-07/reader/linien-rueckbau-2026-08-16/` (Prüfer-Korrektur: 1 CSS-px Horizontalverschiebung, nicht «layout-neutral»). Merge `1d571c6ed`, Dach-Schritt done (letzte Position).
 - **Tore:** gate grün · golden 256 byte-gleich · e2e voll 529/531 (2 Flakes im Einzellauf grün) · CI 15/15 · kein Risikopfad.
 - **§17-Wurzel-Fix:** Auto-Buchung scheiterte an `check:plan` («@queue-ID ist done») → `plan:set status=done` räumt die eigene ID jetzt selbst aus der `@queue` (`scripts/plan/set.ts` + 3 Tests). Hand-Buchung im Sammel-Push.
-- **Offen:** nichts für David; Nebenfund Prüfer: Wächter-Spec blind für Linien via `::before`/`box-shadow` (niedrig, nicht gebaut).
+- **Deploy-Ausfall entdeckt und behoben (PR #531, `835bcd06e`, QS-AUTOMATIK):** Nachkontrolle zeigte Prod ohne den Rückbau — ALLE Prod-Deployments seit #519 (15.8.) waren `Canceled by Ignored Build Step` (#520, #512, #521, #524, #529, #523, #530 nie live; Prod-Smoke sah nur HTTP 200). Ursache: `git rev-parse --verify <40-Hex>` = Exit 0 ohne Objekt (Shallow-Clone), `git diff` «bad object», grep leer, `!` ⇒ Skip. Fix: `scripts/vercel-ignore.sh` (POSIX; unsicher ⇒ bauen; Vercel-Limit 256 Zeichen erzwang die Datei — Inline-Fassung starb als Preview-ERROR), `<meta name="lexmetrik-build">` in allen 8169 Seiten, Prod-Smoke-Wächter `pruefeBuildStand` (Rot-Beweis gegen Live: «Build-Kennung fehlt»; Frische-Toleranz misst jüngsten CODE-Commit — Prüfer-Auflage), Test 9 Fälle alt/neu. Nach Merge: Vercel baute (`835bcd06` live, Linien-Token 0, Smoke 15/15 grün) — 8 Merges auf einen Schlag live. Lehren verankert: §0 Commit-Message per -F/Heredoc (2 Backtick-Vorfälle), Landung-Nachkontrolle prüft Deployment-STATE.
+- **Offen:** für David nur lokal: `git config --unset core.hooksPath` (zeigt auf gelöschtes `~/Desktop/LegalCalc/.git/hooks`, Hooks laufen nie; Classifier sperrte den Befehl). Nebenfunde nicht gebaut: Wächter-Spec blind für Linien via `::before`/`box-shadow` (niedrig); `.github/scripts/prod-smoke.sh` (normen-monitor) kennt den Prod-Stand-Wächter nicht; 2 alte `worktree-agent-*`-Branches ohne Schritt-Bezug (fremd, nicht angefasst).
 
 ## Session 15.8.2026 — BAUPLAN-UMBAU: lebendige Specs, Gross-Schnitt, Doku-Diät (PR #507)
 
