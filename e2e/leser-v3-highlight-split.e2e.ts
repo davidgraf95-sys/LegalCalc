@@ -25,21 +25,75 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
+type Rolle = 'primaer' | 'sekundaer'
+
 /**
- * Macht das Such-/Sprungfeld EINES Panes erreichbar und gibt es zurück.
+ * Das Such-/Sprungfeld eines Panes — adressiert über die PANE-ROLLE, nicht über
+ * die DOM-Verschachtelung.
  *
- * In der Einzelansicht steht es in der Seitenleisten-Spalte; im Pane ist die
- * Leiste ein Bottom-Sheet hinter ☰ (Kap. 4b), weil die Pane-Breite unter der
- * xl-Schwelle liegt. Der Helfer öffnet darum bei Bedarf zuerst — das ist keine
- * Test-Bequemlichkeit, sondern derselbe Weg, den ein Nutzer im Split geht.
+ * WARUM NICHT ÜBER `[data-pane="…"]` ALLEIN (Befund 16.8.2026, gemessen). Im
+ * Split @1600 sind die Panes 669 px breit und unterschreiten damit die
+ * xl-Schwelle: es gibt keine Seitenleisten-SPALTE, die Leiste ist ein
+ * Bottom-Sheet hinter ☰ (Kap. 4b). Dieses Sheet hängt per Portal in der
+ * Pane-Overlay-Schicht — und die liegt konstruktiv AUSSERHALB von
+ * `[data-pane="…"]`. Die gemessene Vorfahrenkette des Feldes lautet:
+ *
+ *     input < … < div[data-v3-pane=primaer] < … < div#root
+ *
+ * Ein Selektor, der das Feld unterhalb von `[data-pane="primaer"]` sucht,
+ * findet darum konstruktiv nichts — unabhängig davon, ob die Verdrahtung
+ * stimmt. Genau das war der Fehlschlag dieser Spec.
+ *
+ * `data-v3-pane` ist der Marker, den der Portal-Vertrag dafür vorsieht
+ * (LeserRahmenV3.tsx). Er ist bewusst NICHT `data-pane`: Shell.tsx zählt
+ * `[data-pane]` für den F6-Regionswechsel, ein Sheet mit dieser Kennung machte
+ * aus zwei Regionen vier. Die Spec nimmt darum BEIDE Orte an — Spalte (in der
+ * Einzelansicht bzw. bei breiten Panes) und Sheet-Portal — und bleibt so gegen
+ * die Breiten-Weiche unempfindlich, ohne die Rolle preiszugeben.
+ *
+ * KEINE LOCKERUNG: geprüft wird unverändert `toBeVisible`, und die Rollen-Probe
+ * unten hält zusätzlich fest, dass die zwei Felder wirklich zwei verschiedenen
+ * Panes gehören — der Prüfgegenstand wird dadurch schärfer, nicht weicher.
  */
-async function oeffneFeld(pane: import('@playwright/test').Locator) {
-  const feld = pane.locator('[data-v3-suchsprung] input').first()
+function feldVon(page: Page, rolle: Rolle) {
+  return page
+    .locator(`[data-pane="${rolle}"], [data-v3-pane="${rolle}"]`)
+    .locator('[data-v3-suchsprung] input')
+    .first()
+}
+
+/**
+ * Macht das Feld eines Panes erreichbar und gibt es zurück. Öffnet bei Bedarf
+ * zuerst das Sheet — das ist keine Test-Bequemlichkeit, sondern derselbe Weg,
+ * den ein Nutzer im Split geht.
+ */
+async function oeffneFeld(page: Page, rolle: Rolle) {
+  const feld = feldVon(page, rolle)
   if (!(await feld.isVisible().catch(() => false))) {
-    await pane.locator('[data-v3-gliederung-auf]').first().click()
+    await page.locator(`[data-pane="${rolle}"] [data-v3-gliederung-auf]`).first().click()
   }
-  await expect(feld).toBeVisible({ timeout: 20_000 })
+  await expect(feld, `Suchfeld des Panes «${rolle}» nicht erreichbar`).toBeVisible({ timeout: 20_000 })
   return feld
+}
+
+/**
+ * Die Zusage «zwei echte Instanzen» — als eigene Messung, nicht als Nebeneffekt.
+ * Ohne sie könnte die Spec auch dann grün werden, wenn beide `feldVon`-Aufrufe
+ * DASSELBE Feld träfen; die Registry-Zahlen wären dann Zufallszahlen.
+ */
+async function pruefeZweiInstanzen(page: Page) {
+  const rollen = await page.locator('[data-v3-suchsprung] input').evaluateAll((els) =>
+    els.map((el) => {
+      let n: HTMLElement | null = el as HTMLElement
+      while (n) {
+        const v = n.getAttribute('data-v3-pane') ?? n.getAttribute('data-pane')
+        if (v) return v
+        n = n.parentElement
+      }
+      return '(ohne Pane-Rolle)'
+    }))
+  expect(rollen.slice().sort(), `Pane-Rollen der gefundenen Suchfelder: ${rollen.join(', ')}`)
+    .toEqual(['primaer', 'sekundaer'])
 }
 
 /** Grösse der einen Registry-Position — 0, wenn sie gar nicht gesetzt ist. */
@@ -62,14 +116,13 @@ test.describe('QS-UI-HIGHLIGHT — Suche in Pane A löscht die Markierung in Pan
     await page.goto('/gesetze/bund/BGFA?leser=v3&p=/gesetze/bund/BGBM%3Fleser%3Dv3')
     await expect(page.locator('[data-pane="sekundaer"]')).toBeVisible({ timeout: 20_000 })
 
-    const paneA = page.locator('[data-pane="primaer"]')
-    const paneB = page.locator('[data-pane="sekundaer"]')
     // Im Pane ist die Seitenleiste ein SHEET (die Pane-Breite unterschreitet die
     // xl-Schwelle), das Suchfeld liegt also hinter ☰ und nicht in einer Spalte.
     // Erst öffnen, dann greifen — sonst prüfte der Test eine Fläche, die es in
     // dieser Breite gar nicht gibt.
-    const feldA = await oeffneFeld(paneA)
-    const feldB = await oeffneFeld(paneB)
+    const feldA = await oeffneFeld(page, 'primaer')
+    const feldB = await oeffneFeld(page, 'sekundaer')
+    await pruefeZweiInstanzen(page)
 
     // ── Pane B sucht und malt ────────────────────────────────────────────────
     await feldB.fill('Markt')
@@ -102,8 +155,9 @@ test.describe('QS-UI-HIGHLIGHT — Suche in Pane A löscht die Markierung in Pan
     await page.goto('/gesetze/bund/BGFA?leser=v3&p=/gesetze/bund/BGBM%3Fleser%3Dv3')
     await expect(page.locator('[data-pane="sekundaer"]')).toBeVisible({ timeout: 20_000 })
 
-    const feldA = await oeffneFeld(page.locator('[data-pane="primaer"]'))
-    const feldB = await oeffneFeld(page.locator('[data-pane="sekundaer"]'))
+    const feldA = await oeffneFeld(page, 'primaer')
+    const feldB = await oeffneFeld(page, 'sekundaer')
+    await pruefeZweiInstanzen(page)
 
     await feldA.fill('Anwalt')
     await feldB.fill('Markt')

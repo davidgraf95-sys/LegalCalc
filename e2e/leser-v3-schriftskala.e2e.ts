@@ -45,9 +45,16 @@ const leiste = (page: Page) => page.locator('[data-v3-aside]')
 // dessen globale Wirkung — und meldet sie als Fehlschlag des Leser-Reglers.
 // Der Selektor ist darum auf das Ansicht-Panel eingeschränkt. Dass zwei gleich
 // beschriftete Knöpfe nebeneinander stehen, bleibt der offene Befund Ä9.
-const groesser = (page: Page) =>
-  page.locator('[data-v3-ansicht-panel]').getByRole('button', { name: 'Schrift vergrössern' })
-const kleiner = (page: Page) => page.getByRole('button', { name: 'Schrift verkleinern' })
+// BEIDE Knöpfe müssen gescopt sein, nicht nur «A+». `Schrift verkleinern` gibt
+// es ebenfalls zweimal (`components/layout/Topbar.tsx` und
+// `v3/LeserAnsichtV3.tsx`); ungescopt bediente der Rückweg dieser Spec den
+// APP-Regler, während der Hinweg den Leser-Regler bediente. Der Test hätte dann
+// zwei verschiedene Steller gegeneinander gemessen und den Fehlschlag dem
+// falschen zugeschrieben. Gefunden 16.8.2026, als der Hinweg zum ersten Mal
+// überhaupt bis zum Rückweg durchlief.
+const panel = (page: Page) => page.locator('[data-v3-ansicht-panel]')
+const groesser = (page: Page) => panel(page).getByRole('button', { name: 'Schrift vergrössern' })
+const kleiner = (page: Page) => panel(page).getByRole('button', { name: 'Schrift verkleinern' })
 
 async function schriftgroesse(wahl: ReturnType<typeof normtext>): Promise<number> {
   return wahl.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))
@@ -128,22 +135,35 @@ test.describe('Leser-Schriftskala — der Regler bewegt NUR den Normtext', () =>
     expect(start, 'Vorgabestufe verschiebt die Normtext-Grösse').toBe(18)
 
     const treppe: number[] = [start]
-    // Vier Stufen ⇒ drei wirksame Klicks; der vierte muss am Anschlag folgenlos
-    // bleiben (sonst liefe die Skala über ihr Vokabular hinaus).
-    for (let i = 0; i < 4; i++) {
+    // Vier Stufen ⇒ DREI wirksame Klicks. Der Anschlag wird danach an der
+    // Bedienbarkeit des Knopfes geprüft, nicht an einem vierten Klick:
+    // `kannGroesser` schaltet den Knopf auf `disabled` (LeserAnsichtV3.tsx), und
+    // Playwright wartet auf einem deaktivierten Knopf bis zum Test-Timeout,
+    // statt folgenlos zu klicken — genau daran starb diese Spec (gemessen
+    // 16.8.2026: «element is not enabled», 90 s).
+    //
+    // KEINE LOCKERUNG, SONDERN DIE SCHÄRFERE PROBE. «Der vierte Klick bleibt
+    // folgenlos» wäre auch dann erfüllt, wenn ein Fehler den Klick verschluckt.
+    // «Der Knopf ist am Anschlag deaktiviert» ist die Zusage, die der Nutzer
+    // tatsächlich sieht, und sie schliesst das Überlaufen des Vokabulars
+    // genauso aus.
+    for (let i = 0; i < 3; i++) {
       await groesser(page).click()
       await page.waitForTimeout(120)
       treppe.push(await schriftgroesse(normtext(page)))
     }
-    expect(treppe, `Treppe ${treppe.join(' → ')} px`).toEqual([18, 20, 22, 24, 24])
+    expect(treppe, `Treppe ${treppe.join(' → ')} px`).toEqual([18, 20, 22, 24])
+    await expect(groesser(page), 'oberer Anschlag ist nicht gesperrt — die Skala kann über ihr Vokabular hinauslaufen')
+      .toBeDisabled()
 
     // Zurück bis zum unteren Anschlag — die Vorgabestufe muss exakt wieder
     // erreicht werden, nicht ein Wert daneben.
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       await kleiner(page).click()
       await page.waitForTimeout(120)
     }
     expect(await schriftgroesse(normtext(page)), 'Rückweg landet nicht auf der Vorgabestufe').toBe(start)
+    await expect(kleiner(page), 'unterer Anschlag ist nicht gesperrt').toBeDisabled()
 
     expect(await schriftgroesse(kopf(page)), 'Kopfzeile hat sich unterwegs verstellt').toBe(kopfStart)
     expect(await schriftgroesse(leiste(page)), 'Seitenleiste hat sich unterwegs verstellt').toBe(leisteStart)
