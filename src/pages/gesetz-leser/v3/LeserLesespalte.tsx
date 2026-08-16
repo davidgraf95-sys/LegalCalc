@@ -4,6 +4,7 @@ import type { Sektion } from '../../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../../lib/normtext/verifikationslink';
 import { ArtikelLeser, SektionKopf } from '../parts';
 import { istAnhangToken } from '../berechnungen';
+import { erlassPfad } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
@@ -87,9 +88,9 @@ export function LeserLesespalte({ m, trefferListe }: {
       </div>
 
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
-        {vorher ? <Link to={`/gesetze/${vorher.ebene}/${encodeURIComponent(vorher.key)}`} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
+        {vorher ? <Link to={erlassPfad(vorher)} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
         <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">Übersicht</Link>
-        {nachher ? <Link to={`/gesetze/${nachher.ebene}/${encodeURIComponent(nachher.key)}`} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
+        {nachher ? <Link to={erlassPfad(nachher)} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
   );

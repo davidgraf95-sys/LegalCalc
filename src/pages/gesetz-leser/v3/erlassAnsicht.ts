@@ -80,6 +80,20 @@ export function uebersichtsZeile(
   ].filter(Boolean).join(' · ');
 }
 
+/**
+ * Adresse eines Erlasses: `/gesetze/<ebene>/<key>`. Auch das ist eine
+ * Erlass-spezifische Ableitung und gehört darum hierher — gefunden von der
+ * Vertrags-Sonde `leser-v3-fundament.test.ts` (16.8.2026), die den Zugriff auf
+ * `.ebene` in `LeserLesespalte.tsx` (Nachbar-Erlass-Links) als Verstoss gegen
+ * die Zusage oben meldete. Kein `if (bund)`, aber ein Lesezugriff ausserhalb
+ * der einen erlaubten Stelle: würde die Route je Ebene anders aussehen, wäre
+ * er der Ort, an dem man es vergisst. Statt die Zusage aufzuweichen, ist die
+ * Ableitung hergezogen.
+ */
+export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'key'>): string {
+  return `/gesetze/${erlass.ebene}/${encodeURIComponent(erlass.key)}`;
+}
+
 /** Brotkrume für die App-Leiste: Gesetze › Ebene › Kürzel. */
 export function brotkrume(
   erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>,

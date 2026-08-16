@@ -126,19 +126,15 @@ describe('Keine Pane-Verzweigung ausserhalb der Wurzel (imPane/istSekundaer)', (
 
 describe('Kein `if (bund)`: erlass.ebene / erlass.rechtsgebiet nur in erlassAnsicht.ts', () => {
   const QUELLE_DER_WAHRHEIT = 'erlassAnsicht.ts';
-  // BEKANNTE, GEMELDETE VERLETZUNG (H1, 16.8.2026, nicht gefixt — ausserhalb der
-  // Whitelist dieser Bau-Session, die NUR src/tests/** schreiben darf): die
-  // «Vorher/Nachher»-Navigation in LeserLesespalte.tsx liest `vorher.ebene` und
-  // `nachher.ebene`, um den Pfad des Nachbar-Erlasses zu bauen
-  // (`/gesetze/${vorher.ebene}/…`). Das ist KEIN `if (bund)`-Fork — der Wert
-  // steuert keine Verzweigung, nur eine URL-Interpolation —, aber es ist
-  // trotzdem ein wörtlicher Verstoss gegen die Zusage in erlassAnsicht.ts
-  // ("Keine Komponente der V3-Hülle fragt `erlass.ebene` … ab") und gegen den
-  // Auftrag hier. Diese Zeile pinnt den IST-Zustand, statt ihn zu verstecken —
-  // wird der Zugriff entfernt (z. B. indem der Pfad im Adapter vorgerechnet
-  // wird), MUSS dieser Test angepasst werden (§6.3: das ist dann eine
-  // FACHLICHE Korrektur der Architektur, kein Refactoring).
-  const BEKANNTE_AUSNAHME_EBENE = 'LeserLesespalte.tsx';
+  // GEMELDET UND BEHOBEN (16.8.2026): Diese Sonde fand beim ersten Lauf eine
+  // echte Verletzung — die «Vorher/Nachher»-Navigation in LeserLesespalte.tsx
+  // las `vorher.ebene`/`nachher.ebene`, um den Pfad des Nachbar-Erlasses zu
+  // bauen. Kein `if (bund)`-Fork (der Wert steuerte keine Verzweigung, nur eine
+  // URL-Interpolation), aber ein Lesezugriff ausserhalb der einen erlaubten
+  // Stelle — und damit genau der Ort, an dem man es vergisst, wenn die Route je
+  // Ebene einmal anders aussieht. Statt die Zusage aufzuweichen, ist die
+  // Ableitung nach `erlassAnsicht.ts` gezogen worden (`erlassPfad`). Die Sonde
+  // duldet seither KEINE Ausnahme mehr.
 
   it('erlassAnsicht.ts liest tatsächlich .ebene und .rechtsgebiet (sonst prüfte das Verbot nichts)', () => {
     const quelle = ohneKommentare(LIES(QUELLE_DER_WAHRHEIT));
@@ -154,18 +150,21 @@ describe('Kein `if (bund)`: erlass.ebene / erlass.rechtsgebiet nur in erlassAnsi
     }
   });
 
-  it('.ebene wird ausserhalb erlassAnsicht.ts NUR in der gemeldeten Ausnahme gelesen', () => {
+  it('.ebene wird in KEINER anderen V3-Datei gelesen — ohne Ausnahme', () => {
     for (const datei of ALLE_DATEIEN) {
-      if (datei === QUELLE_DER_WAHRHEIT || datei === BEKANNTE_AUSNAHME_EBENE) continue;
+      if (datei === QUELLE_DER_WAHRHEIT) continue;
       const quelle = ohneKommentare(LIES(datei));
-      expect(traegt(quelle, /\.ebene\b/), `${datei} liest .ebene — NEUE Verletzung, nicht die bekannte`).toBe(false);
+      expect(traegt(quelle, /\.ebene\b/), `${datei} liest .ebene — Ableitung gehört nach erlassAnsicht.ts`).toBe(false);
     }
   });
 
-  it('die gemeldete Ausnahme ist noch exakt dort und nicht weiter gewachsen (2 Stellen, Nachbar-Links)', () => {
-    const quelle = ohneKommentare(LIES(BEKANNTE_AUSNAHME_EBENE));
-    const treffer = quelle.match(/\.ebene\b/g) ?? [];
-    expect(treffer.length, 'Zahl der .ebene-Stellen in LeserLesespalte.tsx hat sich verändert — Kommentar/Befund nachführen').toBe(2);
+  it('die Adress-Ableitung liegt bei der einen Quelle (erlassPfad)', () => {
+    // Positiv-Sonde zum Verbot oben: die Funktion, in die der Zugriff gewandert
+    // ist, existiert wirklich — sonst gewönne das Verbot gegen eine Lücke.
+    expect(traegt(ohneKommentare(LIES(QUELLE_DER_WAHRHEIT)), /export function erlassPfad\(/),
+      'erlassPfad fehlt — die Nachbar-Links hätten keine erlaubte Quelle').toBe(true);
+    expect(traegt(ohneKommentare(LIES('LeserLesespalte.tsx')), /erlassPfad\(/),
+      'die Lesespalte benutzt die Ableitung nicht').toBe(true);
   });
 });
 
