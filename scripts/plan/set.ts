@@ -85,9 +85,10 @@ export function setField(md: string, id: string, feld: string, wert: string): st
     // Status schliesst, räumt die Queue mit — sonst scheitert JEDE Auto-Buchung
     // eines Queue-Schritts am eigenen Tor. Nur die @queue-Zeile, nur die eine ID.
     if (neu.status === 'done') {
-      const qIdx = zeilen.findIndex((z) => /^\s*<!-- @queue:/.test(z));
+      // Regex wie parse.ts (`<!--\s*@queue:`), damit beide dieselbe Zeile meinen (§5).
+      const qIdx = zeilen.findIndex((z) => /<!--\s*@queue:/.test(z));
       if (qIdx >= 0) {
-        const m = zeilen[qIdx].match(/^(\s*<!-- @queue:\s*)(.*?)(\s*-->\s*)$/);
+        const m = zeilen[qIdx].match(/^(\s*<!--\s*@queue:\s*)(.*?)(\s*-->\s*)$/);
         if (m) {
           const ids = m[2].split(',').map((s) => s.trim()).filter(Boolean);
           if (ids.includes(id)) {

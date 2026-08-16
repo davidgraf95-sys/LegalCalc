@@ -294,8 +294,12 @@ async function pruefeBuildStand() {
     return hart(true, 'Prod-Stand', `Build ${buildSha}, ${mainRef} ${mainSha} — Rückstand nur Doku (${geaendert.length} Datei(en), kein Deploy nötig)`);
   }
 
-  // Frische-Toleranz: ein eben gemergter Commit darf noch bauen.
-  const alterS = Math.round(Date.now() / 1000) - Number(git('log', '-1', '--format=%ct', mainRef));
+  // Frische-Toleranz: ein eben gemergter CODE-Commit darf noch bauen. Massgeblich
+  // ist der jüngste Commit, der eine der nicht ausgelieferten Code-Dateien
+  // berührt — NICHT der jüngste main-Commit: sonst hielte jeder Doku-/Buchungs-
+  // Commit kurz vor dem 6-h-Cron den Wächter falsch grün (Bug-Check #531).
+  const juengsterCodeCommit = Number(git('log', '-1', '--format=%ct', `${buildSha}..${mainRef}`, '--', ...code));
+  const alterS = Math.round(Date.now() / 1000) - juengsterCodeCommit;
   if (alterS < BAUZEIT_TOLERANZ_S) {
     return hart(
       true,

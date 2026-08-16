@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { execFileSync, spawnSync } from 'node:child_process';
-import { mkdtempSync, rmSync, writeFileSync, mkdirSync, appendFileSync, readFileSync } from 'node:fs';
+import { mkdtempSync, rmSync, writeFileSync, mkdirSync, appendFileSync, readFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -44,9 +44,15 @@ function commit(nachricht: string): void {
   git('-c', 'user.email=t@t', '-c', 'user.name=t', 'commit', '--quiet', '-m', nachricht);
 }
 
-/** Fährt den ignoreCommand wie Vercel: Exit 0 = Build überspringen, Exit 1 = bauen. */
+/**
+ * Fährt den ignoreCommand wie Vercel (mit `sh`, nicht bash): Exit 0 = Build
+ * überspringen, Exit 1 = bauen. Der Command ruft `sh scripts/vercel-ignore.sh`
+ * relativ zur Repo-Wurzel — im Wegwerf-Repo wird der Pfad absolut gemacht, sonst
+ * bliebe der Test an einem «Datei nicht gefunden» (Exit 127 ≠ 0/1) hängen.
+ */
 function fahre(ref: string, previousSha: string, kommando = IGNORE_COMMAND): number {
-  const r = spawnSync('bash', ['-c', kommando], {
+  const absolut = kommando.replace('scripts/vercel-ignore.sh', join(WURZEL, 'scripts/vercel-ignore.sh'));
+  const r = spawnSync('sh', ['-c', absolut], {
     cwd: repo,
     env: { ...process.env, VERCEL_GIT_COMMIT_REF: ref, VERCEL_GIT_PREVIOUS_SHA: previousSha },
     encoding: 'utf8',
@@ -83,6 +89,17 @@ afterAll(() => {
 });
 
 describe('vercel.json ignoreCommand — «bei Unsicherheit bauen»', () => {
+  it('Vercel-Schema: ignoreCommand ≤ 256 Zeichen und zeigt auf das Skript', () => {
+    // Preview #531 (16.8.2026): der Inline-Command mit 314 Zeichen scheiterte an
+    // der Vercel-Schema-Validierung («should NOT be longer than 256 characters»)
+    // — Deployment ERROR statt Build. Darum lebt die Logik in der Datei.
+    expect(IGNORE_COMMAND.length).toBeLessThanOrEqual(256);
+    expect(IGNORE_COMMAND).toBe('sh scripts/vercel-ignore.sh');
+    expect(existsSync(join(WURZEL, 'scripts/vercel-ignore.sh'))).toBe(true);
+    // POSIX-sh-Syntax (Vercel führt mit /bin/sh aus, nicht bash).
+    expect(spawnSync('sh', ['-n', join(WURZEL, 'scripts/vercel-ignore.sh')]).status).toBe(0);
+  });
+
   it('Mechanismus des Ausfalls: rev-parse --verify sagt bei FEHLENDEM Objekt Exit 0', () => {
     // Das ist die Falle, die sieben Deployments verschluckt hat — hier festgenagelt,
     // damit niemand versehentlich wieder auf rev-parse --verify zurückbaut.

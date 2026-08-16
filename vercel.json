@@ -1,5 +1,5 @@
 {
-  "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ] && exit 0; B=\"$VERCEL_GIT_PREVIOUS_SHA\"; [ -n \"$B\" ] || exit 1; git cat-file -e \"$B^{commit}\" 2>/dev/null || exit 1; D=$(git diff --name-only \"$B\" HEAD 2>/dev/null) || exit 1; [ -n \"$D\" ] || exit 1; ! printf '%s\\n' \"$D\" | grep -qvE '\\.md$|^(bibliothek|archiv|docs|\\.claude)/'",
+  "ignoreCommand": "sh scripts/vercel-ignore.sh",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
