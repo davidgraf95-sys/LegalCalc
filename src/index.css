@@ -402,7 +402,27 @@
      dem Klick (input-exkludiert) → kein CLS-Beitrag; der Default AN emittiert keine
      Regel (byte-gleich, R6). Druck folgt dem Toggle: bei AUS wird der Apparat auch
      im Ausdruck weggelassen (display:none wirkt in @media print gleichermassen). */
-  html[data-fussnoten="aus"] .lc-leser button[aria-label^="Fussnote"],
+  /* ── H2 · ENGER GEFASST (David-Befund 16.8.2026, reproduziert) ────────────
+     Dieser eine Selektor greift über den ACCESSIBLE NAME, nicht über ein
+     Marker-Attribut — und traf damit alles, was «Fussnote…» heisst. In der
+     V3-Hülle trägt der WURZEL-Knoten die Klasse `.lc-leser` (Kopfzeile und
+     Seitenleiste liegen darin), und der Schalter im Ansicht-Menü heisst
+     `aria-label="Fussnoten (283)"`. Folge, live nachgemessen: ein Klick auf
+     «Fussnoten» setzte `data-fussnoten="aus"` — und blendete damit den Schalter
+     aus, mit dem man es rückgängig macht (`display:none`, `checkVisibility()`
+     false). Der Nutzer sah den Schalter nach dem ersten Klick verschwinden und
+     kam nicht mehr an ihn heran.
+     In V1 fiel das nie auf, weil dort das Ansicht-Menü ausserhalb von
+     `.lc-leser` lag; die Regel war schon immer zu weit, hatte aber keine Ziele.
+     Der Selektor zeigt jetzt auf `#lc-lesespalte` — den Lesekörper, für den er
+     gemeint ist («Marker-Ziffern + Apparat-Texte», s. o.). Die drei
+     Attribut-Selektoren darunter bleiben auf `.lc-leser`: `data-fn-marker`,
+     `data-fn-apparat` und `data-hist-chrono` existieren ausschliesslich am
+     Normtext und können mit Bedienelementen gar nicht kollidieren.
+     (Der DOM-Walker in `suchHighlight.ts` benutzt dieselbe Namensregel, ist
+     aber von Haus aus auf den Artikel-Container beschränkt — dort ist sie
+     unbedenklich und bleibt unverändert.) */
+  html[data-fussnoten="aus"] #lc-lesespalte button[aria-label^="Fussnote"],
   html[data-fussnoten="aus"] .lc-leser [data-fn-marker],
   html[data-fussnoten="aus"] .lc-leser [data-fn-apparat],
   html[data-fussnoten="aus"] .lc-leser [data-hist-chrono] {

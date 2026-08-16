@@ -79,15 +79,21 @@ test.describe('H2 — Trefferliste in Erlass-Reihenfolge, je Artikel gruppiert',
     await suchFeld(page).fill('Entschädigung')
     await expect(page.locator('[data-treffer-artikel]').first()).toBeVisible({ timeout: 30_000 })
 
-    // Einen Artikel mit mehr als einer Fundstelle wählen — sonst beweist die
-    // Zeile «eine Stelle» nichts über die Gruppierung.
-    const mehrfach = page.locator('[data-treffer-artikel]').filter({
-      has: page.locator('[data-fundstellen-zahl]'),
+    // Einen Artikel mit MEHR ALS EINER Fundstelle wählen — an einem Artikel mit
+    // genau einer Stelle bewiese «eine Zeile» nichts über die Gruppierung.
+    // Die Auswahl läuft über die Daten am Element, nicht über einen
+    // Playwright-Filter: `data-fundstellen-zahl` ist eine ZAHL, und ein
+    // «hat-Kind»-Filter kann Zahlen nicht vergleichen.
+    const wahl = await page.evaluate(() => {
+      for (const li of document.querySelectorAll('[data-treffer-artikel]')) {
+        const n = Number(li.getAttribute('data-fundstellen-zahl') ?? '0')
+        if (n > 1) return { token: li.getAttribute('data-treffer-artikel'), zahl: n }
+      }
+      return null
     })
-    const ziel = mehrfach.first()
-    const token = await ziel.getAttribute('data-treffer-artikel')
-    const zahl = Number(await ziel.getAttribute('data-fundstellen-zahl'))
-    await ziel.locator('button').first().click()
+    expect(wahl, 'kein Artikel mit mehr als einer Fundstelle — Testfall trägt nicht').not.toBeNull()
+    const { token, zahl } = wahl!
+    await page.locator(`[data-treffer-artikel="${token}"] button`).first().click()
 
     // Aufgeklappt: so viele Fundstellen-Zeilen wie der Zähler nennt (bis zum
     // Deckel von 40 — der Zähler bleibt datenseitig und nennt die volle Zahl).

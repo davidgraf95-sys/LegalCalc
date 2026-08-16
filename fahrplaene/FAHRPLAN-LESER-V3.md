@@ -197,6 +197,7 @@ H   Gliederung + Suchfeld als Bottom-Sheet hinter ☰; «↑ Anfang» schwebt un
 |---|---|---|
 | **Eine** Übersichtsbox, nicht sticky (Fedlex hat drei) | neu (Pos. 10) | **Simplicity** |
 | **Ein** Feld für Suche und Sprung — «Art. 429» erkennt `loeseArtikelEingabe` (`suchTreffer.ts:38-42`) und springt, sonst Volltextsuche | neu, löst K2 | **Simplicity**, **Agency** |
+| **Korrektur 16.8.2026 (David):** das Feld gehört in den KLEBENDEN Block und steht dort **zuoberst** — Reihenfolge: 1. Such-/Sprungfeld · 2. Gliederungs-Kopfzeile · 3. scrollbarer Baum. Die Skizze oben zeigt es noch über dem klebenden Bereich; das war falsch: «Das Suchfeld muss immer zugreifbar sein, auch wenn ich in der Gliederung scrolle.» Die Übersichtsbox bleibt darüber und scrollt weiterhin weg — sie ist Ankunfts-Information, kein Werkzeug. Umgesetzt in H2 | korrigiert | **Agency** |
 | Gliederung sticky | behalten | **Flexibility** (Kontext bewahren) |
 | «alles ein-/ausklappen» als sichtbarer Knopf, **kein** Shortcut (W3C ARIA APG: globales Auf/Zu ist kein Tastatur-Standard) | neu (Pos. 16) | **Familiarity** |
 | «↑ Anfang», genau **ein** Knopf pro Seite, Text-Label | neu (Pos. 15) | **Agency** |
@@ -400,6 +401,8 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | Regel | Inhalt |
 |---|---|
 | **NM · Nutzer-Massstab** (Abnahme-Kriterium **jeder** Etappe) | Drei Aufgaben, je Breite (H/D/S), **vorher und nachher** in **Klicks/Tastendrücken** und **Sekunden**: (1) «Art. 429 aufschlagen» · (2) «Entscheide zu Art. 429 sehen» · (3) «Stand und Warnung erkennen». Die Tabelle steht im Kontaktbogen. Eine Etappe, die keine der drei Zahlen senkt und keine als Preis für eine andere ausweist, ist **nicht abnahmefähig** — «einfacher» wird damit erstmals in Nutzer-Grössen belegt, nicht nur in Zeilen und DOM. |
+| **Ästhetik-Review** (David 16.8.2026) | Vor dem Merge beurteilt ein SEPARATER Agent die Screens H/D/S in hell und dunkel gegen die Design-Grundlage und die acht HIG-Begriffe. Befunde gehen als Nachzug in dieselbe Etappe oder als benannte Position in die nächste — nie als «später mal». Grund für den eigenen Agenten: wer eine Fläche gebaut hat, sieht sie nicht mehr mit fremden Augen. |
+| **Bund-Probe** (David 16.8.2026) | Je Etappe mindestens EIN Bundesgesetz + EINE Verordnung + EIN Staatsvertrag unter Flag prüfen — Kopf-Etikett, Übersichtsbox, Gliederung und Trefferliste müssen identisch aufgebaut sein. «Achte auf Einheitlichkeit, dass alle Verordnungen und Gesetze vom Bund gleich sind.» Abweichungen werden als Befund GEMELDET, nicht stillschweigend gefixt (ausser trivial). **Flip-Kriterium H4:** automatischer Sweep über alle Bundeserlasse auf identischen Aufbau. |
 | **PX · Pixelvergleich Textkörper** (zusätzliches Treue-Tor, ab H1) | Playwright `toHaveScreenshot()` auf die Region `.lc-leser article`, gleiche Artikel (StPO Art. 429, OR Art. 336c), gleiche Breite, V1 gegen V3. Der **Textkörper darf sich beim Hüllen-Umbau nicht um ein Pixel ändern** — das ist der schärfste verfügbare Beweis für «Kern unangetastet» und fängt, was DOM-Tests durchlassen (Abstände, Einzüge, Zeilenumbrüche). **Einzige zugelassene Ausnahme: S2**, wo die Baseline **einmalig und deklariert** neu gesetzt wird; die Neusetzung wird im PR begründet und der alte Screenshot als Vorher-Bild beigelegt (§6.3 — eine Baseline stillschweigend zu erneuern wäre ein Tor, das nicht scheitern kann). |
 
 ### Strang H
@@ -411,6 +414,96 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **H3** | **Panel/Sheet für Rechtsprechung + Kontext** — Pos. 3, 12, 17; **Vorbedingung F4**. Enthält **Panel-Nachladen** (s. u.) | neu: `LeserPanel.tsx` (3 Reiter, vierter Filter «Sachgebiet» **vorgesehen**, Datenlogik dazu bleibt `W2·7-VZUI-SACHGEBIET`) · behalten: `bezuegeLaden`, `bezugAuswahl`, `bezugZeit`, `bezugPortion` (Datenlogik unverändert) | +450 / −0 | 4: `leser-v3-panel-facetten`, `leser-v3-panel-zaehler`, `leser-v3-kontext-cls`, `leser-v3-prerender-bezuege` | Jeder Entscheid, der heute unter einem Artikel erreichbar ist, ist über Zähler → Panel erreichbar, in beiden Panes, ohne dritte vertikale Fläche — und das prerenderte HTML trägt die Bezüge unverändert. | **L** |
 | **H4** | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `playwright.config.ts` | ±0 | 0 neu (11 alte B-Tests werden entfernt/umgehängt) | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
 | **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
+
+### ✅ Vollzugsvermerk H2 (16.8.2026, Branch `feat/leser-v3-h2`)
+
+**Gebaut:** Trefferliste als Verzeichnis (`v3/LeserTrefferListe.tsx`) in
+Erlass-Reihenfolge, je Artikel gruppiert, mit einer Zeile JE Fundstelle samt
+Kontext-Schnipsel; Suchbereich-Segment (`v3/SuchBereichWahl.tsx`); ↑↓/Enter im
+Feld; ✕/Esc ohne jede Scroll-Bewegung; S4 (Dokument-Reihenfolge) in
+`leserSuche.ts`; `QS-UI-HIGHLIGHT` behoben.
+
+**Was über die Zeile hinausgeht und hier festgehalten gehört:**
+
+- **QS-UI-HIGHLIGHT reichte weiter als gemeldet.** Der Roadmap-Text nennt das
+  Rail-Suchfeld im Split-View. Der Rot-Beweis zeigte: die Panes überschrieben
+  einander bei **jeder Eingabe**, nicht erst beim Leeren — die Vereinigung
+  entstand nie. Und es gab einen **zweiten Schreiber**: `entscheidLeserRegeln.ts`
+  hielt eine eigene Kopie von `highlightApi()` und schrieb dieselbe Position
+  direkt, weshalb ein Entscheid neben einem Gesetz beim Verlassen die Markierung
+  des Gesetzes mitnahm. Beides läuft jetzt über eine Buchführung je Instanz.
+  **Bewusst offen:** zwei ENTSCHEID-Panes teilen weiterhin eine Modul-Instanz —
+  unverändert gegenüber dem Vorzustand, ausserhalb des Befunds.
+- **Pos. 14 war ein echter Defekt, kein fehlendes Feature.** `inhalt-sprung.tsx`
+  scrollte beim BEGINN der Suche an den Anfang und beim Leeren wieder zurück.
+  Die Begründung im Code nennt ihren eigenen Ablauf: nötig war das, WEIL die
+  Trefferliste den Volltext ersetzte. Seit S8 tut sie das nicht mehr. V3 steigt
+  über `scrollBeiSuchwechsel: false` aus; die Ist-Hülle behält ihr Verhalten
+  (FL-4). Damit ist auch **Ä3** des Ästhetik-Reviews erledigt.
+- **Der Suchbereich steuert Liste, Zähler und ↑↓-Folge — NICHT die
+  Hervorhebung** im Wortlaut. `sammleTrefferRanges` malt jedes Vorkommen des
+  Begriffs im sichtbaren Text und kennt keine Feldklassen. Beide Zusagen sind
+  für sich wahr und beantworten verschiedene Fragen; sie zu vermengen hiesse,
+  dem DOM-Walker eine Feldkenntnis anzudichten, die er nicht hat. **Bewusste
+  Grenze, kein offener Rest.**
+
+#### A-7 · PX ist eingelöst — und hat die Zusage aus Kap. 7 widerlegt
+
+Opt-in-Projekt `px` (`PX=1`), bewusst NICHT in den CI-Shards: die Baseline
+entsteht lokal auf macOS, der CI-Runner ist Linux, Font-Rasterung unterscheidet
+sich dort systematisch. **Flake-Basisrate 0/5 Läufe (20 Test-Ausführungen);
+Messbedingung: lokal macOS, warm, `vite preview`, keine Parallel-Last.**
+
+**Der Befund, erster scharfer Lauf:** OR Art. 336c unterscheidet sich zwischen
+V1 und V3 um 40 377 Pixel (ratio 0.05) — in jedem Lauf exakt dieselbe Zahl, also
+kein Rauschen. Direkt am DOM nachgemessen @1440:
+
+| | V1 | V3 |
+|---|---|---|
+| `#lc-lesespalte` | 874 px | 691 px |
+| `article#art-336_c` | 744 px | **561 px** |
+
+StPO Art. 429 war pixelgleich — dort fielen die Zeilenumbrüche zufällig gleich.
+Genau die Sorte Scheingrün, gegen die PX gebaut ist.
+
+**⚠ ENTSCHEID DAVID — Satzspiegel.** «Der Textkörper ändert sich nicht um ein
+Pixel» (Kap. 7 PX) und «die neue Hülle hat eine 18-rem-Seitenleiste» (Kap. 4b)
+sind bei gleicher Fensterbreite **nicht gleichzeitig erfüllbar**. Welche Zusage
+weicht, ist eine Gestaltungsfrage und wird von keiner Bau-Etappe nebenbei
+entschieden (§7). Das Tor hält bis dahin **je Hülle eine eigene Baseline**: jede
+Hülle ist gegen ihre eigene Drift geschützt, die Gleichheit untereinander
+behauptet es ausdrücklich nicht mehr. Der Punkt hängt mit **Ä2** zusammen
+(Lesespalte zu schmal) — beide betreffen dieselbe Breite.
+
+#### Ästhetik-Review H1 (5,5/10) — was H2 nimmt und was bleibt
+
+Erledigt in H2: **Ä3** (Tippen sprang an den Seitenanfang — s. o.).
+
+**NICHT in H2 gebaut, mit Grund und Ort.** Der Review kam an, als H2 seinen
+Deckel (+200 Zeilen, Kap. 7) bereits deutlich überschritten hatte; acht
+Gestaltungsänderungen ohne eigene Screens und ohne zweiten Ästhetik-Durchgang
+hinterherzuschieben hiesse, dieselbe Etappe ein zweites Mal unbesehen zu
+vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
+«später mal»:
+
+| Nr. | Inhalt | Ort |
+|---|---|---|
+| **Ä1** | Leerzone unter der Krumen-Leiste schliessen (V3-Kopf bündig, `top-16`); Krumen-Leiste zeigt im Split den falschen Artikel («Art. 428» statt «Art. 429») — **Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle | **H3** (Vollverschmelzung bleibt H4) |
+| **Ä2** | Lesespalte 556–616 px @1280; App-Seitenleiste im Leser unter Flag eingeklappt starten, Lesespalte auf 40 rem | **H3**, zusammen mit dem PX-Entscheid oben |
+| **Ä5** | Seitenleiste als drei gerahmte Kästen; hängendes «·» in der Übersichtszeile; Übersichtsbox schimmert unter dem klebenden Block durch | **H3** |
+| **Ä8** | Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung, Kap. 8 Nr. 3) | **S2** (liegt im Ist-Kern) |
+| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | **H3**, zusammen mit S-Punkt 4 |
+| **Ä10** | Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser | **H3** |
+| **Ä12** | «Seitenleiste ausblenden» (App) gegen «‹ ausblenden» (Gliederung) — gleiche Wortwahl, zwei Wirkungen | **H3** |
+| **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | **H3** |
+| **Ä4** | Beiwerk-Chips laufen über den Rand | **H3/S2** |
+| **Ä6** | Erlass-Kopf | **S3** |
+| **Ä7** | Randtitel über Artikelnummer (Hierarchie) | **S2** |
+| **Ä11** | Split-Pane-Icon-Flut | **H3/H4** |
+
+**Deckel-Stand:** H2 ist der zweite der höchstens fünf H-PRs (Kap. 7).
+
+---
 
 ### ✅ Vollzugsvermerk H1 (16.8.2026, Branch `feat/leser-v3-h1`)
 
@@ -548,7 +641,7 @@ legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
 | **S1** | Optionen-Rückbau: Historie zweiwertig, «Fassung»-Overline an denselben Schalter, «Verweise» streichen, Migration alter Werte (Pos. 8) | **F1 + F2 schriftlich «ja»** | **2 N neu**: `hist-ansicht-w25i`, `gesetze-historie-badge`; `leser-optionen` bleibt grün; Vitest-Migration | «Änderungsvermerke: aus» lässt keine Historie-Spur im Lesekörper zurück, und der DOM bleibt vollständig. | **S** |
 | **S2** | Artikel-Raster (Beiwerk-Zone) + Typografie-Tokens (Pos. 13, 19) | **F3 entschieden, nach Bild-Bogen** (Kap. 8) | 2: `leser-breite-a37`, `leser-lesemass` | Das Umschalten aller drei Schalter erzeugt an keinem Artikel einen Layout-Sprung, und der Satzspiegel entspricht der von David gewählten Variante. | **M** |
 | **S3** | Erlass-Kopf + Standausweis-Wortlaut (Pos. 11, 18) | **F5 «ja»** | 3 Vitest + 1 e2e-Wortlaut; `aufhebung-kopf` bleibt grün | UI-Kopf und prerenderter SEO-Kopf tragen **denselben** neuen Wortlaut, und die Warnung erscheint genau bei den fünf betroffenen Erlassen. | **S/M** |
-| **S4** | Sortierung der Suchtreffer auf Erlass-Reihenfolge (`leserSuche.ts:390-393`) | keine | Vitest an der Sortierfunktion; `leser-r1-r2`, `leser-suche-vertrag-b8` bleiben grün | Die Sortierfunktion liefert Dokumentreihenfolge als Primärschlüssel, bewiesen ohne Browser. | **S** |
+| **S4** ✅ | Sortierung der Suchtreffer auf Erlass-Reihenfolge — **erledigt 16.8.2026 mit H2** (deklarierte Verhaltensänderung, wirkt in beiden Hüllen) | keine | Vitest an der Sortierfunktion; `leser-r1-r2`, `leser-suche-vertrag-b8` bleiben grün | Die Sortierfunktion liefert Dokumentreihenfolge als Primärschlüssel, bewiesen ohne Browser. | **S** |
 
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
@@ -817,6 +910,19 @@ stillschweigend doppelt gebaut (§17-Gegengewicht, Kollisionsregel).
 | **`W2·13-KANTONE`** (ROADMAP:373) | **Nach H5.** V3 leistet jetzt nur die **Kantons-Probe** (jede H-Etappe gegen einen Kantons-Erlass), damit die neue Hülle kantonstauglich entsteht — der Ausbau selbst folgt auf der fertigen Hülle, nicht parallel dazu |
 | **`W2·15-CLS`** (ROADMAP:408) — CLS-Defekt 0.109 @8× auf `/gesetze` | Betrifft die **Übersichtsseite** `/gesetze`, nicht den Leser (`src/pages/Gesetze.tsx`) — andere Fläche, eigener Schritt |
 | **Leerfläche ~370 px am Ende von `/gesetze`** (ROADMAP:455) | Ebenfalls Übersichtsseite |
+
+### Nebenfunde aus H2 (16.8.2026)
+
+- **`Ä13` · Korpus-Datenqualität, NICHT V3.** Die VMWG-Gliederung zeigt
+  «Art. 6b — b Bezug…» — der Randtitel-Buchstabe steht doppelt. Das ist ein
+  Extraktions-/Datenbefund und gehört an **`QS-KORPUS`**, nicht in eine
+  Hüllen-Etappe: V3 malt, was im Sidecar steht.
+- **`QS-UI-HIGHLIGHT` ist mit H2 erledigt** — Registry-Buchführung je
+  Leser-Instanz in `suchHighlight.ts`, Rot-Beweis in
+  `src/tests/suchHighlight.test.ts`, Browser-Beweis in
+  `e2e/leser-v3-highlight-split.e2e.ts`. **Rest, bewusst offen:** zwei
+  ENTSCHEID-Panes teilen weiterhin eine Modul-Instanz (unverändert gegenüber dem
+  Vorzustand, ausserhalb des gemeldeten Befunds).
 
 ### Kollisionshinweis für die Folge-Session
 

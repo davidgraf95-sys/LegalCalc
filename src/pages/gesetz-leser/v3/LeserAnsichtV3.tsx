@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
-import { useSchriftskala } from '../../../components/layout/useSchriftskala';
+import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
 import {
   setzeOption, setzeHistAnsicht, useLeserOptionen, useHistAnsicht, type OptFeld,
 } from '../leserOptionen';
@@ -166,14 +166,22 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
           />
 
           {/* ── Schriftgrösse ────────────────────────────────────────────────
-              Bedient den BESTEHENDEN globalen Skala-Store (`useSchriftskala`,
-              Schlüssel `lexmetrik-schriftskala`), den heute nur die Topbar ab
-              `lg` anbietet. Bewusst KEIN zweiter Schriftgrössen-Speicher: das
-              wäre eine zweite Wahrheit für dieselbe Frage (§5), und der
-              4-Stufen-Regler der Design-Grundlage (Kap. 2.3, absolute rem-Werte
-              für den Fliesstext) setzt eine Normtext-Grösse voraus, die erst
-              S2 bringt — in H1 bleibt der Normtext byte-gleich (Treue-Grenze PX).
-              Abweichung im PR ausgewiesen. */}
+              H2 · DEKLARIERTE UMKEHR DER H1-ABWEICHUNG A-1 (David 16.8.2026).
+              H1 bediente hier bewusst den GLOBALEN Skala-Store
+              (`lexmetrik-schriftskala`) — mit der Begründung, ein zweiter
+              Speicher für dieselbe Frage wäre eine zweite Wahrheit (§5).
+              Davids Befund am gebauten Stand widerlegt die Prämisse: es ist
+              NICHT dieselbe Frage. «Wie gross ist die App» und «wie gross ist
+              der Gesetzestext, den ich gerade lese» sind zwei Fragen, und der
+              globale Regler beantwortete beide zugleich — gemessen skalierte
+              er mit dem Normtext auch Kopfzeile und Seitenleiste mit (StPO/V3,
+              3× A+: `<html>` 16 → 20.8 px, Kopfzeile 16 → 20.8 px).
+              Neu: vier Stufen im GETEILTEN Leser-Store `lm.leser.optionen`
+              (Feld `schrift`, V1 und V3 dieselbe Quelle), wirksam nur auf dem
+              Lesekörper. Der globale App-Regler bleibt unberührt.
+              TREUE-GRENZE gehalten: die Vorgabestufe emittiert gar keine
+              Deklaration (`:not()` im Selektor), der Normtext bleibt exakt
+              1.125 rem — der Pixelvergleich PX läuft mit der Änderung 4/4 grün. */}
           <div role="group" aria-label="Schriftgrösse" className="mt-1 flex items-center justify-between gap-3 border-t border-line px-2.5 pb-0.5 pt-2">
             <span className="text-body-s text-ink-700">Schriftgrösse</span>
             <span className="inline-flex items-center gap-0.5 rounded-md border border-line">

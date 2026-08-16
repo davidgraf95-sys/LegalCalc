@@ -281,7 +281,13 @@ export function LeserRahmenV3({
               <button type="button" data-v3-gliederung-zu onClick={() => m.setTocOffen(false)}
                 aria-expanded={m.tocOffen} title="Gliederung ausblenden"
                 className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                <span aria-hidden>‹</span><span>ausblenden</span>
+                {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur
+                    «ausblenden» — Wort für Wort dasselbe wie «Seitenleiste
+                    ausblenden» der App-Leiste zwei Zentimeter weiter oben, aber
+                    mit anderer Wirkung. Zwei gleich beschriftete Knöpfe, die
+                    Verschiedenes tun, sind eine Falle (§8). Der Knopf sagt
+                    jetzt, WAS er ausblendet. */}
+                <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
               </button>
             </div>
             {leiste(false)}
