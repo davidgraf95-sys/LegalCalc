@@ -52,24 +52,18 @@ test.describe('Kap. 4b — feste Reihenfolge der Seitenleiste', () => {
   })
 
   test('(b) Übersicht + Feld scrollen weg, der Baum-Kopf klebt (sticky) — OR, dessen Leisteninhalt die Spalte übersteigt', async ({ page }) => {
-    // GEFUNDENER PRODUKTFEHLER (16.8.2026, H1 — gemeldet, NICHT gefixt: kein
-    // src/**-Zugriff in diesem Bau-Auftrag). Wurzel: `[data-v3-aside]`
-    // (LeserRahmenV3.tsx) trägt nur `max-h-[calc(100dvh-var(--leser-kopf-h)-2rem)]`,
-    // keine dazu passende `h-[...]`. Eine Prozent-/`h-full`-Höhe eines Kindes
-    // (hier: `[data-v3-leiste]` → `[data-v3-leiste-scroller]`, LeserSeitenleiste.tsx)
-    // braucht nach CSS-Spec eine EXPLIZITE Höhe des Vorfahren — `max-height`
-    // allein reicht nicht. Ohne sie wächst der Scroller auf die volle
-    // Inhaltshöhe (`scrollHeight === clientHeight`, gemessen an OR@1440×900:
-    // 1082 === 1082, obwohl die Aside-Box nur 712 px hoch ist) und hat darum
-    // NICHTS zu scrollen — der Überschuss wird von `overflow-hidden` am Aside
-    // STUMM abgeschnitten statt über die Leiste erreichbar zu sein. Bestätigt
-    // per Diagnose-Eingriff: `aside.style.height = <computed max-height>` senkt
-    // `clientHeight` sofort auf 712 (Beleg im Bau-Bericht). Vorschlag (nicht
-    // angewandt): dieselbe `calc(...)`-Formel als `h-[...]` neben `max-h-[...]`
-    // an `[data-v3-aside]` ergänzen. Bis zum Fix bleibt dieser Fall `fixme` —
-    // die Assertions unten sind die Zielsetzung und laufen automatisch wieder
-    // mit, sobald `test.fixme` entfernt wird.
-    test.fixme(true, 'Produktfehler: [data-v3-aside] fehlt h-[...] neben max-h-[...] — Leiste scrollt nicht, Inhalt wird stumm abgeschnitten (s. Kommentar oben)')
+    // WAR EIN PRODUKTFEHLER, BEHOBEN AM 16.8.2026 (H1) — der Fall stand bis
+    // dahin auf `fixme`, weil ihn die Test-Etappe zwar fand, aber nicht fixen
+    // durfte. Wurzel: `[data-v3-aside]` trug eine `max-height`, das Kind
+    // (`[data-v3-leiste]` → `[data-v3-leiste-scroller]`) aber `h-full` — und
+    // `height:100%` löst nach CSS-Spec gegen eine MAXIMALhöhe nicht auf. Der
+    // Scroller wuchs darum auf die volle Inhaltshöhe (`scrollHeight ===
+    // clientHeight`, gemessen an OR@1440×900: 1082 === 1082 bei 712 px
+    // Spaltenhöhe) und hatte nichts zu scrollen; der Überschuss wurde vom
+    // `overflow-hidden` STUMM abgeschnitten statt über die Leiste erreichbar zu
+    // sein. Fix: dieselbe Flex-Anatomie wie die Ist-Spalte (`flex flex-col` +
+    // `maxHeight` am Aside, `flex-1 min-h-0` am Scroller) — nachgemessen
+    // scrollHeight 1082 / clientHeight 692.
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
