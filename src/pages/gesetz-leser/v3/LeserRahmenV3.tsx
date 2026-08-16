@@ -225,7 +225,41 @@ export function LeserRahmenV3({
         return ziel ? createPortal(sheet, ziel) : sheet;
       })()}
 
-      <div className={zweiSpalten ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
+      {/* ── Zwei Spalten, IMMER — nur die linke schrumpft (David 16.8.2026) ────
+          Befund am gebauten H1-Stand, @1440 reproduziert: klappte man die
+          Gliederung ein, verschwand das Grid ganz. Die Lesespalte sprang dabei
+          um 175 px nach links (x 600 → 424) und gewann ganze 31 px Breite
+          (641 → 672, mehr lässt das Lesemass nicht zu) — der Nutzer sah einen
+          Sprung ohne Gewinn. Und der einzige Weg zurück war ein 24-px-☰ OHNE
+          Beschriftung, ganz rechts im Kopf (x = 1101) — also an der
+          gegenüberliegenden Seite von dem, was es zurückholt.
+          Jetzt bleibt das Grid stehen und die linke Spalte wird zur schmalen
+          Schiene mit beschriftetem Öffner. Der Öffner steht damit DORT, wo die
+          Gliederung war, die Fläche gewinnt echte 15.75 rem, und die Bewegung
+          ist eine Breitenänderung statt eines Umbruchs. */}
+      <div
+        className={hatLeiste && umgebung.istXl
+          ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
+          : ''}
+        style={hatLeiste && umgebung.istXl
+          ? { gridTemplateColumns: m.tocOffen ? '18rem minmax(0,1fr)' : '2.25rem minmax(0,1fr)' }
+          : undefined}>
+        {hatLeiste && umgebung.istXl && !m.tocOffen && (
+          // Die Schiene: ein einziger Knopf, senkrecht beschriftet, klebend auf
+          // Höhe des Lesetexts. Senkrecht, weil 2.25 rem für «Gliederung»
+          // waagrecht nicht reichen und eine Abkürzung («Gl.») niemandem hilft;
+          // `writing-mode` dreht echten Text, es bleibt vorlesbar und
+          // durchsuchbar — kein Bild, kein `aria-label` als Ersatz für Inhalt.
+          <div className="sticky self-start" style={{ top: 'var(--nt-stick)' }}>
+            <button type="button" data-v3-gliederung-schiene
+              onClick={() => m.setTocOffen(true)}
+              aria-expanded={false} title="Gliederung einblenden"
+              className="flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors hover:border-brass-300 hover:bg-paper-sunken/60 hover:text-brass-700">
+              <span aria-hidden className="text-base leading-none">☰</span>
+              <span className="[writing-mode:vertical-rl] [text-orientation:mixed]">Gliederung</span>
+            </button>
+          </div>
+        )}
         {zweiSpalten && (
           <aside role="navigation" aria-label="Gliederung" data-v3-aside
             // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:

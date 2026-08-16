@@ -63,14 +63,23 @@ export function LeserSeitenleiste({
         {uebersicht && (
           <div data-v3-leiste-uebersicht className="mb-3">{uebersicht}</div>
         )}
-        {suchFeld && <div data-v3-leiste-feld className="mb-3">{suchFeld}</div>}
         {/* Ab hier klebt es. `bg-paper` ist Pflicht: ohne opake Fläche liefe der
             Baum beim Scrollen sichtbar unter der Kopfzeile durch. */}
         {/* `data-toc-zone-a`: derselbe geteilte Anschluss — der Mitscroll-Nudge
             misst daran, wie viele oberste Pixel des Scrollers dieser klebende
             Sockel verdeckt. Ohne die Marke schöbe er die aktive Zeile exakt
             darunter und meldete «sichtbar», was niemand sieht. */}
-        <div data-toc-zone-a data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
+        {/* ── H2 · DAS FELD KLEBT MIT (David 16.8.2026) ─────────────────────
+            «Das Suchfeld muss immer zugreifbar sein, auch wenn ich in der
+            Gliederung scrolle.» Bis hierher stand das Feld ÜBER dem klebenden
+            Block und scrollte mit der Übersichtsbox weg — wer tief im Baum der
+            StPO stand und suchen wollte, musste erst die Leiste hochscrollen.
+            Reihenfolge im klebenden Block, in dieser Folge (Präzisierung David
+            16.8.): 1. Such-/Sprungfeld ganz oben · 2. Gliederungs-Kopfzeile ·
+            3. der scrollbare Baum. Die Übersichtsbox bleibt darüber und scrollt
+            weiterhin weg — sie ist Ankunfts-Information, kein Werkzeug. */}
+        <div data-toc-zone-a data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 space-y-2 bg-paper pb-2 pt-0.5">
+          {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
           <div className="flex items-center justify-between gap-2">
             <h2 className="lc-overline">{baumTitel}</h2>
             <div className="flex shrink-0 items-center gap-1">

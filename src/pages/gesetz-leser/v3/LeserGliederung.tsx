@@ -54,7 +54,8 @@ export function LeserGliederung({ m }: { m: LeserV3Modell }) {
     ? (
       <SektionBaumTOC knoten={anhangAst} aktivPfad={m.aktivIds} aktivToken={m.aktivToken} offen={m.tocBaum}
         startOffeneTiefe={gliederung.startOffeneTiefe}
-        onToggle={m.tocToggleGruppe} onSprung={m.springeZuSektion} onSprungArtikel={m.springeZuArtikel} />
+        onToggle={m.tocToggleGruppe} onSprung={m.springeZuSektion} onSprungArtikel={m.springeZuArtikel}
+        titelKlapptAuf stimmeGedaempft />
     )
     : undefined;
 
@@ -72,6 +73,7 @@ export function LeserGliederung({ m }: { m: LeserV3Modell }) {
   return (
     <SektionBaumTOC knoten={gliederung.knoten} aktivPfad={m.aktivIds} aktivToken={m.aktivToken} offen={m.tocBaum}
       startOffeneTiefe={gliederung.startOffeneTiefe}
-      onToggle={m.tocToggleGruppe} onSprung={m.springeZuSektion} onSprungArtikel={m.springeZuArtikel} />
+      onToggle={m.tocToggleGruppe} onSprung={m.springeZuSektion} onSprungArtikel={m.springeZuArtikel}
+      titelKlapptAuf stimmeGedaempft />
   );
 }

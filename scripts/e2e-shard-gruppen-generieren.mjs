@@ -92,9 +92,25 @@ function gruppeParsen(roh) {
   return String(n)
 }
 
+// ── OPT-IN-SPECS: nicht im CI-Lauf, also auch in keiner Shard-Gruppe ────────
+// `e2e/px-*.e2e.ts` (Pixelvergleich A-7) wird von playwright.config.ts nur bei
+// gesetztem `PX=1` überhaupt einem Projekt zugeordnet. Ohne das Flag sammelt
+// `playwright test --list` sie nicht — der Union-Wächter kennt sie also gar
+// nicht und würde eine Gruppenzuordnung sogar als «UNBEKANNT» rot melden.
+// Dieser Generator liest dagegen das VERZEICHNIS und sähe die Datei; ohne diese
+// Ausnahme verlangte er eine Annotation, die der Wächter direkt danach wieder
+// verböte — zwei Tore mit gegenläufiger Forderung.
+//
+// Das Muster steht bewusst hier und nicht als Annotation in der Spec: «läuft im
+// CI mit» ist eine Eigenschaft der PROJEKT-Konfiguration, und die Datei, die
+// die Gruppen erzeugt, muss dieselbe Grenze kennen (§5). Wer ein weiteres
+// Opt-in-Projekt einführt, ergänzt hier ein Muster — und nirgends sonst.
+const OPT_IN_MUSTER = [/^px-.*\.e2e\.ts$/]
+
 function alleSpecs() {
   return readdirSync(E2E_DIR)
     .filter((d) => d.endsWith('.e2e.ts'))
+    .filter((d) => !OPT_IN_MUSTER.some((re) => re.test(d)))
     .sort()
 }
 

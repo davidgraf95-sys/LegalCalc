@@ -86,6 +86,20 @@ const V3_SPECS = [
   '**/leser-kopf-paritaet.e2e.ts',
 ]
 
+// ── A-7 · Pixelvergleich (PX), OPT-IN ───────────────────────────────────────
+// Läuft NUR mit `PX=1` und dann in einem eigenen Projekt. Grund, Kap. 12 A-7:
+// die Baseline entsteht lokal auf macOS, der CI-Runner ist Linux — Font-
+// Rasterung und Hinting unterscheiden sich dort systematisch, das Tor wäre auf
+// CI zuverlässig rot ohne jede Aussage über den Textkörper. Ein Tor mit
+// bekannter, sachfremder Ausfallursache gehört nicht in die Shards (§0 Ziff. 3:
+// keine Rate ohne Messbedingung). Die Linux-Baseline ist ein eigener Schritt.
+//
+// Weil die Datei ohne `PX=1` von KEINEM Projekt gesammelt wird, sieht der
+// Shard-Union-Wächter sie nicht und verlangt keine Gruppenzuordnung — genau so
+// ist es gewollt, und darum trägt sie bewusst keine `@shard-gruppe`-Kopfzeile.
+const PX_SPECS = ['**/px-*.e2e.ts']
+const PX_AN = process.env.PX === '1'
+
 export default defineConfig({
   testDir: './e2e',
   testMatch: '**/*.e2e.ts',
@@ -169,7 +183,10 @@ export default defineConfig({
     },
     {
       name: 'chromium',
-      testIgnore: SCHWERE_SPECS,
+      // PX_SPECS mit ausschliessen: `chromium` hat kein `testMatch` und würde
+      // die Pixel-Spec sonst im Normallauf mitnehmen — also genau das, was der
+      // Opt-in verhindern soll.
+      testIgnore: [...SCHWERE_SPECS, ...PX_SPECS],
       timeout: process.env.CI ? 90_000 : 30_000,
     },
     // ── Flag-Projekt: dieselben N-Specs gegen die V3-Hülle ──────────────────
@@ -201,6 +218,18 @@ export default defineConfig({
         },
       },
     },
+    // Nur mit `PX=1` vorhanden — s. Herleitung an PX_SPECS oben.
+    ...(PX_AN
+      ? [{
+          name: 'px',
+          testMatch: PX_SPECS,
+          timeout: 120_000,
+          // Kein `retries`: ein Pixel-Tor, das sich beim zweiten Versuch
+          // beruhigt, misst Rauschen und nicht den Textkörper. Die Flake-Rate
+          // soll SICHTBAR sein, nicht wegretried werden (§0 Ziff. 3).
+          retries: 0,
+        }]
+      : []),
   ],
   webServer: {
     command: `npm run preview -- --port ${E2E_PORT} --strictPort`,
