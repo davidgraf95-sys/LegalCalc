@@ -37,14 +37,39 @@ function serifFontDisplayOptional(): Plugin {
   };
 }
 
+/** Kurze Build-Kennung: Vercel-Commit-SHA auf 8 Zeichen, sonst 'dev'. */
+function buildId(): string {
+  return (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 8) || 'dev';
+}
+
+// QS-AUTOMATIK (16.8.2026): die Build-Kennung zusätzlich als <meta> in den <head>
+// schreiben. VITE_BUILD_ID (unten) lebt nur im JS-Bundle — von aussen nicht
+// lesbar, ohne die App auszuführen. Erst das Meta macht den ausgelieferten Stand
+// mit einem simplen GET prüfbar; darauf setzt der Prod-Stand-Wächter in
+// scripts/betrieb/prod-smoke.ts auf («hinkt Prod hinter main?»). Anlass: sieben
+// gemergte PRs waren zwischen dem 15. und 16.8. nicht live, und kein Wächter
+// konnte es sehen — der Prod-Smoke prüfte nur HTTP 200 und blieb grün.
+// Der Prerender (scripts/prerender.ts) nimmt dist/index.html als Template für
+// JEDE Route ⇒ das Meta trägt automatisch auf allen prerenderten Seiten.
+// Kein Geheimnis (§18): der Commit-SHA ist öffentlich.
+function buildKennungMeta(): Plugin {
+  return {
+    name: 'build-kennung-meta',
+    transformIndexHtml(html) {
+      return html.replace(
+        '</head>',
+        `  <meta name="lexmetrik-build" content="${buildId()}" />\n  </head>`,
+      );
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [serifFontDisplayOptional(), react()],
+  plugins: [serifFontDisplayOptional(), react(), buildKennungMeta()],
   // O-1.9: Build-Kennung für den Fehlerkanal — Vercel-Commit-SHA (kurz), sonst 'dev'.
   // Erlaubt es, einen gemeldeten Client-Fehler einem Deploy zuzuordnen. Kein Geheimnis.
   define: {
-    'import.meta.env.VITE_BUILD_ID': JSON.stringify(
-      (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 8) || 'dev',
-    ),
+    'import.meta.env.VITE_BUILD_ID': JSON.stringify(buildId()),
   },
   resolve: {
     alias: {
