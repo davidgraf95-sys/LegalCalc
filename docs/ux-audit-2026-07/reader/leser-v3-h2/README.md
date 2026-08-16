@@ -314,3 +314,77 @@ also nicht nur Redundanz, sondern eine abgeschnittene Redundanz.
    breit, der Platzhalter «Suche · OR 257d …» passt nicht hinein und das Feld
    sieht wie eine leere Kachel aus. In V1 und V3 identisch gemessen — gehört
    zur Ist-Hülle, nicht zu dieser Etappe.
+
+---
+
+## Kantons-Probe
+
+Nachgelieferte Probe: rendert die V3-Hülle einen **Kantonserlass** unverändert
+und ohne Sonderpfad, oder gibt es hier einen anderen Bug-Pfad als bei Bund?
+
+**Geprüfter Erlass:** ZH, Schlüssel **`ZH-211.11`** — Gebührenverordnung des
+Obergerichts (GebV OG), SR LS 211.11. **Das ist der im Auftrag genannte
+Erlass (LS 211.11)**, tatsächlich im Korpus vorhanden
+(`public/normtext/kanton/ZH-211.11.json`, Eintrag im Register
+`public/normtext/register.json`). Route-Form verifiziert (nicht geraten): der
+im Auftrag vorgeschlagene Pfad `/gesetze/kantone/ZH/211.11` liefert HTTP 200,
+aber nur die App-Shell — die client-seitige Route ist `/gesetze/:ebene/:key`
+(`src/RouteSwitch.tsx:116`) und der Schlüssel im Register ist `ZH-211.11`, kein
+`211.11`. Korrekte URL, mit `<title>` verifiziert:
+
+```
+http://localhost:4650/gesetze/kanton/ZH-211.11?leser=v1
+http://localhost:4650/gesetze/kanton/ZH-211.11?leser=v3
+```
+
+Der erste Versuch mit der Auftrags-URL rendert `404 · NICHT GEFUNDEN` in
+beiden Hüllen — kein Kantons-Bug, sondern eine falsche URL-Form; mit der
+korrekten URL rendert der Erlass in beiden Hüllen.
+
+**Screens** (4, Desktop 1280×800 + Handy 390×844, je hell, Ist und V3):
+
+- `screens/zh-21111-ruhe-D-hell-v1.png`
+- `screens/zh-21111-ruhe-D-hell-v3.png`
+- `screens/zh-21111-ruhe-H-hell-v1.png`
+- `screens/zh-21111-ruhe-H-hell-v3.png`
+
+### Befund
+
+- **Bestimmungswort korrekt.** Kopf, Übersichtsbox («23 **Paragraphen**»),
+  Gliederung («§ 1» … «§ 23») und Artikeltext («§ 1», Ziff. a/b/c) verwenden
+  durchweg **§**, nie «Artikel» — in V1 wie in V3, Desktop wie Handy. Einzige
+  Ausnahme: das Platzhalter-Beispiel im lokalen Suchfeld zeigt fix
+  «Suchen oder «Art. 429» …» — das ist aber **kein Kantons-spezifischer Bug**:
+  derselbe hartkodierte Platzhalter steht identisch auch bei der StPO
+  (`stpo-ruhe-D-hell-v3.png`), ist also vorbestehend und generisch, nicht neu
+  hier.
+- **Kopf-Etikett gleich aufgebaut wie beim Bund.** «KANTON ZH · VERORDNUNG»
+  parallel zu «BUNDESGESETZ · VERFAHRENSRECHT» bei der StPO — kein
+  Sonderpfad.
+- **Doppelter Titel im Kopf — bei ZH deutlich schärfer als beim Bund.** Der aus
+  Teil 1 bekannte Doppel-Krumen-Befund (Ä1: App-Krume plus Leser-Krume
+  übereinander) tritt auch bei ZH-211.11 auf, mit einer Verschärfung: bei der
+  StPO unterscheiden sich Kürzel («StPO») und Volltitel
+  («Schweizerische Strafprozessordnung») optisch klar. Bei ZH-211.11 ist das
+  Kürzel im Register bereits der volle Name
+  («Gebührenverordnung des Obergerichts (GebV OG)»), der Titel nur das Kürzel
+  plus «(LS 211.11)» angehängt — dadurch zeigt die Leser-Krume in
+  `zh-21111-ruhe-D-hell-v3.png` **wortgleich denselben Namen zweimal
+  hintereinander** («… Gebührenverordnung des Obergerichts (GebV OG)
+  Gebührenverordnung des Obergerichts (GebV OG) (LS 211.11) · § 1»), während
+  direkt darunter die H1 denselben Namen ein drittes Mal als Überschrift
+  trägt. Auf dem Handy (`zh-21111-ruhe-H-hell-v3.png`) erscheint dieselbe
+  Zeile als zweite, abgeschnittene Titelzeile mit eigenem ⋯-Menü unter der
+  «‹ § 1 Gebühren…»-Kopfzeile. Das ist dieselbe Ursache wie Ä1 (App-Krume +
+  Leser-Krume unabhängig voneinander), aber bei Kantonserlassen ohne
+  eigenständiges Kürzel sichtbar strenger — Kandidat, Ä1 bei der Fixierung mit
+  einem Kanton-Fall statt nur der StPO zu prüfen.
+- **Gliederung, Quelle-Link und PDF vorhanden und plausibel.** «↗ geltende
+  Fassung» und «⧉ In neuem Reiter» sind gesetzt, Gliederung zeigt korrekt
+  «§ 1» … «§ 23» (23 Paragraphen), keine Lücken oder Fehlbeschriftung
+  beobachtet.
+- **Kein neuer Sonderpfad nötig.** Ausser dem oben belegten Doppel-Titel
+  (Ä1-Familie, bereits bekannt und in H2b eingeplant) verhält sich die
+  V3-Hülle bei diesem Kantonserlass strukturell wie beim Bund. Diese Probe ist
+  eine Stichprobe von einem Erlass, kein Beweis für den gesamten
+  Kantons-Bestand.
