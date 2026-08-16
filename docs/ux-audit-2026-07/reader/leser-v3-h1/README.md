@@ -174,6 +174,62 @@ als **B** (Bedienung/Hülle) einordnen; N bleiben `gesetze-marginalie`,
 `leser-ohne-gliederungslinie`, `leser-suche-vertrag-b8` — und die sind **alle
 grün**, in beiden Hüllen.
 
+## 4c · Fundament (Auflage David 16.8.2026)
+
+«Stell sicher dass es richtig guter code ist und sich sehr gut als fundament
+auch für weitere gesetze und darstellungen bietet.»
+
+### Modulgraph
+
+```
+GesetzLeser.tsx  ── Flag ──▶ GesetzLeserV3.tsx  ──lazy──▶ v3/LeserRahmenV3.tsx
+                                                              │  nur Layout, 285 Z.
+      ┌───────────────────────────────────────────────────────┤
+      ▼                        ▼                              ▼
+ v3/leserV3Modell.ts     v3/LeserV3Kontext.ts          v3/erlassAnsicht.ts
+ Daten-Adapter, 387 Z.   Pane + Breite, 1× gelesen     rein: Ebene/Overline/Zeile
+      │ DIE EINE NAHT                                        (kein `if (bund)`)
+      ▼
+ ../inhalt-hooks · -zustand · -ableitungen · -sprung · -weiterlesen · -suchtreffer
+ (geteilte Maschinerie beider Hüllen — NICHT die Ist-Hülle)
+
+ Bauteile (reine Renderer, 51–186 Z.): LeserKopf · LeserAnsichtV3 ·
+ LeserSeitenleiste · SuchSprungFeld · UebersichtBox · LeserGliederung ·
+ LeserLesespalte ← der eingefrorene Kern
+```
+
+Auf die **Ist-Hülle** zeigt nichts: weder `inhalt.tsx` noch `inhalt-volltext.tsx`
+noch ein Ist-Menü wird aus `v3/` importiert. Einzige deklarierte
+Zusatz-Berührung: `inhalt-ansichten` (Fehlseite · Laden) — geteilte
+Leser-Zustände. Die Quellensonden `leser-v3-adresse.test.ts` und
+`leser-v3-fundament.test.ts` halten das fest.
+
+### Erweiterungspunkte — als Props vorgesehen, nicht als TODO
+
+| Slot | Für | Ungesetzt |
+|---|---|---|
+| `panelOeffner` | H3 · Zähler «⚖ 14 Entscheide →» im Kopf | rendert nichts |
+| `panelSlot` | H3 · Panel (D) bzw. Sheet (S/H) | rendert nichts |
+| `beiwerkSlot` | S2 · Beiwerk-Zone je Artikel (Pos. 13) | rendert nichts |
+| `fassungsWahl` | W2·5g · Zeitmaschine/Fassungswahl | rendert nichts |
+| `leisteExtra` | Kontext-Reiter am Fuss der Seitenleiste | rendert nichts |
+
+### Was bewusst NICHT abstrahiert wurde
+
+1. **Die Hook-Reihenfolge im Adapter** — sie koppelt geteilte Refs und Timer
+   (§6.6-Bedingung); eine „aufgeräumte" Reihenfolge wäre eine stille
+   Verhaltensänderung. Darum ist der Adapter die einzige Datei über 250 Zeilen.
+2. **Die Umbenennung der `inhalt-*`-Module** — der saubere Endzustand, aber er
+   fasst FL-4-eingefrorene Dateien an. Gehört zu H5.
+3. **Der Lesekörper** — Markup und Klassen bleiben, weil PX genau diese Region
+   misst. Typografie ist S2.
+4. **Die Breiten-Messung per ResizeObserver** statt Container-Query — die
+   gemessene Kopfhöhe speist `--nt-stick`; Geometrie auf CSS **und** JS zu
+   verteilen erzeugte zwei Quellen für eine Höhe (LM-003-Konstellation).
+   Migrationspfad: nach H4/H5, wenn die Kopfzeile den Offset nicht mehr trägt.
+5. **Ein gemeinsamer Rahmen für Gesetz- und Entscheid-Leser** — verfrüht: eine
+   Abstraktion über zwei Fälle, von denen einer noch umgebaut wird (§1).
+
 ## 5 · Kern-Ausnahmen
 
 **Keine.** `ArtikelLeser`, `ArtikelBody` und die übrigen Kern-Dateien sind
