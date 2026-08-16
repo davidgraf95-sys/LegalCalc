@@ -512,6 +512,31 @@ als im Ist-Stand (Ist: Lupe im Kopf = 1 Tap · V3: ☰ → Feld = 2 Taps), weil
 Kap. 4b Suchfeld und Gliederung gemeinsam ins Bottom-Sheet legt. Keine der drei
 NM-Aufgaben, aber die Stelle, an der H2 ansetzen sollte.
 
+#### Nachzug nach Bug-Check und Architektur-Review (16.8.2026, vor Merge)
+
+Behoben: ⌘K/«/» hatten ZWEI Empfänger (V3-Feld und Header-Suche) — der Leser hat
+jetzt Vorrang über die Capture-Phase, und das Kürzel hängt am RAHMEN, weil das
+Feld bei zugeklappter Spalte @≥1024 px gar nicht im DOM ist · das Hüllen-Flag
+wurde in einem `useEffect` vollzogen, sodass das zweite Split-Pane V1 neben V3
+rendern konnte (jetzt synchron und idempotent) · `aria-controls` am
+Ansicht-Öffner zeigte im Ruhezustand auf eine nicht existierende Id ·
+`inhalt-hooks` re-exportierte aus `inhalt-kopfmeldung` und zog damit
+`LeserMenuPaar` + `InGesetzSuche` transitiv nach `v3/` (Re-Export gestrichen,
+Fundament-Sonde läuft jetzt **eine Ebene transitiv**) · `beiwerkSlot` stand im
+Interface, ohne angeschlossen zu sein (geht jetzt an `LeserLesespalte` durch) ·
+`LeserV3Kontext.ts` hatte NULL Konsumenten und ist gestrichen (§17 Rückbau; H3
+legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
+
+**Folge-Etappen, die daraus feststehen:**
+- **H3** braucht ein DREI-Spalten-Grid, damit `panelSlot` rechts stehen kann
+  (heute zwei Spalten), und einen GETEILTEN `usePopoverAutoZu`-Hook —
+  Ansicht-Panel und Kontext-Panel schliessen sonst mit zwei Kopien derselben
+  Aussenklick-/Esc-Logik (§5).
+- **H4** braucht EINE Breiten-Quelle (`useElementBreite`) mit den Modi
+  `d`/`s`/`sheet`; heute entscheiden `istXl` (Rahmen) und `kopfStufe`
+  (Kopfzeile) unabhängig über denselben Platz. Dorthin gehört auch das
+  Umhängen der vier B-Specs (Kap. 10).
+
 **Deckel-Stand:** H1 ist der erste der höchstens fünf H-PRs (Kap. 7).
 
 ---
@@ -656,6 +681,18 @@ diese Frage am Bild und nicht am Text beantwortet wird.
 `check:design-tokens` (S2) · `check:perf-budget` (H3-Nachladen, gemessen) ·
 `check:seo-index` (H3 Prerender-Bezüge, S3 Wortlaut).
 
+**B-Specs der Ist-Hülle laufen im Flag-Projekt erst ab H4 (umgehängt).** Vier der
+zehn als «N» geführten Specs prüfen die STRUKTUR der Ist-Hülle, nicht den
+Normtext, und können gegen eine neue Hülle konstruktiv nicht grün werden:
+`gesetze-ux-g3a` (`.lc-leser > header` als direktes Kind), `leser-optionen`
+(«genau zwei `role=switch`»), `leser-r1-r2` (das zweite Sprungfeld, das Pos. 4
+beseitigt), `leser-ruecksprung-r5-r7` (Schwelle «< 140 px», auf das Ist-Chrome
+von 100 px kalibriert; V3 landet auf 156 px). Seit dem H1-Nachzug (16.8.2026,
+CI-Anlass Run 31962198006 Shard 4/8) fährt das Playwright-Projekt `leser-v3`
+darum **sechs** N-Specs plus die V3-eigenen Specs; im Projekt `chromium` laufen
+die vier unverändert weiter und schützen dort die alte Hülle. Umgehängt bzw.
+entfernt werden sie in **H4**.
+
 **Neue Treue-Grenze PX (Pixelvergleich).** Über die DOM-Tests hinaus wird der Textkörper
 `.lc-leser article` ab H1 pixelweise gegen V1 verglichen (StPO Art. 429, OR Art. 336c, gleiche
 Breite). Damit ist «Kern unangetastet» erstmals **bildlich** bewiesen: Abstände, Einzüge und
@@ -719,6 +756,8 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 | ~~A-1~~ | ~~**`scrollAnker.ts`-Claim verifiziert.**~~ **ERLEDIGT UND GESTRICHEN** (Vorprobe 16.8.2026): die Behauptung war falsch. `scrollAnker.ts:134–137` sagt ausdrücklich das Gegenteil, und der dauerhafte Spiegel existiert und ist greppbar (`lesePosition.ts:54`/`:98`, Schlüssel `lexmetrik-leseposition`). | — |
 | ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
 | A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **ERLEDIGT** in der Vorprobe dieses PRs. `EntscheidLeser.tsx` setzte `document.title` **ohne** Guard (so steht es bis heute auf `main`, Z. 408–411) — im Split-View trug der Browser-Reiter darum den Entscheid, obwohl das Hauptfenster das Gesetz zeigte (§8: der Reiter log über seinen Inhalt). Der Guard `if (rolle === 'sekundaer') return;` ist ergänzt und liegt unter der Quellensonde `src/tests/tab-titel-paritaet.test.ts`, die BEIDE Leser prüft. Im PR-Body benannt, wie die Zeile es verlangt. *(Selbstkorrektur 16.8.2026: der Vollzugsvermerk notierte hier zuerst «die Parität besteht bereits» — gemessen am Arbeitsbaum statt an `main`, also am Zustand NACH dem eigenen Fix. Der Befund war echt; die Nullprobe gegen die Basis fehlte.)* |
+| **A-7** | **Abweichung, deklariert 16.8.2026 — der Pixelvergleich PX fehlt in H1.** Kap. 10 schreibt ihn «ab H1» vor; H1 liefert ihn NICHT. **Folge: H2.** Begründung: `toHaveScreenshot` ist im Repo bisher nirgends im Einsatz — die Flake-Basisrate eines Pixel-Tors auf diesem CI-Runner ist unbekannt, und ein Tor, dessen Ausfallrate man nicht kennt, erzeugt rote Läufe ohne Aussage (§0 Ziff. 3: Rate immer mit Messbedingung). Dazu kommt, dass die Baseline erst mit der Design-Grundlage **W-3** fachlich feststeht; eine Baseline, die S2 ohnehin neu setzt, in H1 einzufrieren hiesse, zweimal zu messen. In H1 tragen die DOM-Sonden und `check:linien-kanon` die Kern-Grenze. | Offen bis H2 — dort mit gemessener Flake-Rate (Stichprobe gegen die vermutete Rate dimensioniert, kalt **und** warm) |
+| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | Offen bis H4 |
 
 ---
 
