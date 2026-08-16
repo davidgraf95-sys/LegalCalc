@@ -403,6 +403,7 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **NM · Nutzer-Massstab** (Abnahme-Kriterium **jeder** Etappe) | Drei Aufgaben, je Breite (H/D/S), **vorher und nachher** in **Klicks/Tastendrücken** und **Sekunden**: (1) «Art. 429 aufschlagen» · (2) «Entscheide zu Art. 429 sehen» · (3) «Stand und Warnung erkennen». Die Tabelle steht im Kontaktbogen. Eine Etappe, die keine der drei Zahlen senkt und keine als Preis für eine andere ausweist, ist **nicht abnahmefähig** — «einfacher» wird damit erstmals in Nutzer-Grössen belegt, nicht nur in Zeilen und DOM. |
 | **Ästhetik-Review** (David 16.8.2026) | Vor dem Merge beurteilt ein SEPARATER Agent die Screens H/D/S in hell und dunkel gegen die Design-Grundlage und die acht HIG-Begriffe. Befunde gehen als Nachzug in dieselbe Etappe oder als benannte Position in die nächste — nie als «später mal». Grund für den eigenen Agenten: wer eine Fläche gebaut hat, sieht sie nicht mehr mit fremden Augen. |
 | **Bund-Probe** (David 16.8.2026) | Je Etappe mindestens EIN Bundesgesetz + EINE Verordnung + EIN Staatsvertrag unter Flag prüfen — Kopf-Etikett, Übersichtsbox, Gliederung und Trefferliste müssen identisch aufgebaut sein. «Achte auf Einheitlichkeit, dass alle Verordnungen und Gesetze vom Bund gleich sind.» Abweichungen werden als Befund GEMELDET, nicht stillschweigend gefixt (ausser trivial). **Flip-Kriterium H4:** automatischer Sweep über alle Bundeserlasse auf identischen Aufbau. |
+| **Drei Prüfer vor jedem Merge** (David 16.8.2026) | Vor jedem Merge laufen **drei unabhängige Prüfer**, gestartet vom Orchestrator, nie vom Bauenden. **(1) Bug-Check §9.** **(2) Ästhetik-Prüfer** — Screens H/D/S in hell und dunkel gegen die Design-Grundlage und die HIG-Begriffe; die Ästhetik-Checkliste **Ä1–Ä14 wird fortgeschrieben**, und jeder Punkt braucht eine **sinnvolle Umsetzung, nicht nur ein Häkchen** (präzisiert die Zeile «Ästhetik-Review» oben, ersetzt sie nicht — §5). **(3) Architektur- und Erlass-Neutralitäts-Prüfer**, zwingend mit einem **anderen Modell als dem bauenden**: derselbe Code trägt Bundesgesetz, Verordnung, Kantonserlass und Staatsvertrag **ohne Sonderpfade**, Unterschiede stammen ausschliesslich aus dem Datenmodell. Er prüft zusätzlich Abhängigkeitsrichtung (Hülle → Kern, nie umgekehrt), typisierten Vertrag, benannte Erweiterungspunkte, Dateigrösse gegen Verantwortung, Vitest je Komponente und die **Rückbaubarkeit der Ist-Hülle**. Probe je Etappe unter `?leser=v3` mit **je einem Erlass jeder Art**. |
 | **PX · Pixelvergleich Textkörper** (zusätzliches Treue-Tor, ab H1) | Playwright `toHaveScreenshot()` auf die Region `.lc-leser article`, gleiche Artikel (StPO Art. 429, OR Art. 336c), gleiche Breite, V1 gegen V3. Der **Textkörper darf sich beim Hüllen-Umbau nicht um ein Pixel ändern** — das ist der schärfste verfügbare Beweis für «Kern unangetastet» und fängt, was DOM-Tests durchlassen (Abstände, Einzüge, Zeilenumbrüche). **Einzige zugelassene Ausnahme: S2**, wo die Baseline **einmalig und deklariert** neu gesetzt wird; die Neusetzung wird im PR begründet und der alte Screenshot als Vorher-Bild beigelegt (§6.3 — eine Baseline stillschweigend zu erneuern wäre ein Tor, das nicht scheitern kann). |
 
 ### Strang H
@@ -411,6 +412,7 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 |---|---|---|---|---|---|---|
 | **H1** | **Fassaden-Flag + `LeserRahmenV3` + `LeserKopf` + Seitenleisten-Skelett mit Such-/Sprungfeld** — Pos. 1, 2, 4, 6, 7, 10, 15, 16; **sichtbar ab dem ersten PR** | neu: `GesetzLeserV3.tsx`, `LeserRahmenV3.tsx`, `LeserKopf.tsx`, `LeserSeitenleiste.tsx`, `SuchSprungFeld.tsx`, Playwright-Projekt `leser-v3` · entfernt: nichts (alter Baum eingefroren) · behalten: **alle Hooks unverändert importiert**, `ArtikelLeser`, `ArtikelBody`, `tocAutoZuklappen`, `leserSuche` | +900 / −0 | 4: `leser-kopf-paritaet` (beide Panes), `leser-v3-suche-sprung`, `leser-v3-seitenleiste-ordnung`, `leser-v3-umschalten` (FL-6) | Unter `?leser=v3` steht in beiden Panes derselbe Kopf, ein Feld sucht **und** springt, das Umschalten V1↔V3 hält die Leseposition — und ohne Flag ist der Ist-Stand bitgleich unverändert. | **L** |
 | **H2** | **Suchverhalten** — Pos. 5 (UI-Seite), 14 | geändert: `TrefferListe`-Nachfolger in V3, Sprung-Offset gegen die Sticky-Höhe | +200 / −0 | 3: `leser-v3-treffer-reihenfolge`, `leser-v3-esc-ohne-sprung`, `leser-v3-treffer-mobil` | Treffer stehen in Erlass-Reihenfolge je Artikel gruppiert, und ✕/Esc bewegen den Scroll um 0 px. | **M** |
+| **H2b** | **Ästhetik-Nachzug** — die Positionen des Ästhetik-Reviews H1, die H2 aus Deckelgründen liegen liess (s. Ä-Tabelle im Vollzugsvermerk H2). Inhalt: **Ä1** Leerzone unter der Krumen-Leiste schliessen + Krumen-Leiste zeigt im Split den falschen Artikel (**Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle) + **App-Seitenleiste im Leser eingeklappt starten** · **Ä5** Seitenleiste als drei gerahmte Kästen, hängendes «·», Durchschimmern unter dem klebenden Block · **Ä8** Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung) · **Ä9** Schriftregler doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EINER · **Ä10** Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser · **Ä14** Fokusring am Suchfeld doppelt/dick | **Ä1 berührt als einzige Position `src/components/layout/**`** (App-Seitenleiste, Krumen-Leiste) — bis hierher war die Fläche für alle H-Etappen TABU. Sie wird darum mit **deklarierter Whitelist** geöffnet: nur die Dateien, die den Seitenleisten-Default und die Krumen-Quelle tragen, jede mit Nennung im PR. Alles andere in `layout/` bleibt gesperrt. Übrige Positionen: `src/pages/gesetz-leser/v3/**`, `src/index.css` | +150 / −80 | keine neuen Tore nötig — die Positionen sind an den Ästhetik-Screens abzunehmen, nicht an Zusicherungen; Ausnahme **Ä1 Krumen-Wahrheit**: eigener Test, weil eine falsche Ortsangabe ein §7-Fehler ist und kein Geschmack | Die sechs Positionen sind **sinnvoll umgesetzt, nicht abgehakt** (Drei-Prüfer-Regel oben, Prüfer 2), die Krumen-Leiste nennt im Split denselben Artikel wie die Lesespalte, und ohne Flag ist der Ist-Stand unverändert. | **M** |
 | **H3** | **Panel/Sheet für Rechtsprechung + Kontext** — Pos. 3, 12, 17; **Vorbedingung F4**. Enthält **Panel-Nachladen** (s. u.) | neu: `LeserPanel.tsx` (3 Reiter, vierter Filter «Sachgebiet» **vorgesehen**, Datenlogik dazu bleibt `W2·7-VZUI-SACHGEBIET`) · behalten: `bezuegeLaden`, `bezugAuswahl`, `bezugZeit`, `bezugPortion` (Datenlogik unverändert) | +450 / −0 | 4: `leser-v3-panel-facetten`, `leser-v3-panel-zaehler`, `leser-v3-kontext-cls`, `leser-v3-prerender-bezuege` | Jeder Entscheid, der heute unter einem Artikel erreichbar ist, ist über Zähler → Panel erreichbar, in beiden Panes, ohne dritte vertikale Fläche — und das prerenderte HTML trägt die Bezüge unverändert. | **L** |
 | **H4** | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `playwright.config.ts` | ±0 | 0 neu (11 alte B-Tests werden entfernt/umgehängt) | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
 | **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
@@ -454,26 +456,54 @@ entsteht lokal auf macOS, der CI-Runner ist Linux, Font-Rasterung unterscheidet
 sich dort systematisch. **Flake-Basisrate 0/5 Läufe (20 Test-Ausführungen);
 Messbedingung: lokal macOS, warm, `vite preview`, keine Parallel-Last.**
 
-**Der Befund, erster scharfer Lauf:** OR Art. 336c unterscheidet sich zwischen
-V1 und V3 um 40 377 Pixel (ratio 0.05) — in jedem Lauf exakt dieselbe Zahl, also
-kein Rauschen. Direkt am DOM nachgemessen @1440:
+**Der Befund und seine Auflösung.** OR Art. 336c riss mit **40 276 Pixeln
+(ratio 0.05)**, in jedem Lauf exakt dieselbe Zahl — kein Rauschen, also nie eine
+Toleranz-Frage. StPO Art. 429 war pixelgleich. Drei Erklärungen wurden geprüft
+und **ausgeschlossen**, nicht geglaubt: der Sprung-Puls `lc-ziel-blink`
+(entfernt und abgewartet, Zahl blieb); der Satzspiegel (real — @1440 Spalte
+874 gegen 691 px, Artikel 744 gegen 561 px —, seit der Mess-Klemme auf 640 px
+aber keine Erklärung mehr); und Knoten-für-Knoten-Sonden, die **nichts** fanden
+(139 sichtbare Knoten beidseits, Artikelhöhe 1526 px, 3145 Zeichen, gleiche
+Schriftmasse).
+
+**Die Ursache wurde im Diff-BILD gesehen, nicht gerechnet** — daran war die
+vorige Diagnose gescheitert, die ausschliesslich gerechnet hatte. Markiert war
+weder ein Rand noch ein Subpixel-Saum, sondern **jeder Buchstabe**: die Signatur
+von «eine Seite ist leer». Nachgemessen an der Aufnahme (Screenshot-Bytes als
+Tinten-Indikator):
 
 | | V1 | V3 |
 |---|---|---|
-| `#lc-lesespalte` | 874 px | 691 px |
-| `article#art-336_c` | 744 px | **561 px** |
+| Element-Screenshot | 341 696 B | **5 856 B** ← nur Papier |
+| dasselbe mit `content-visibility: visible` | — | 341 673 B ← Text da |
 
-StPO Art. 429 war pixelgleich — dort fielen die Zeilenumbrüche zufällig gleich.
-Genau die Sorte Scheingrün, gegen die PX gebaut ist.
+`.nt-art-cv` trägt `content-visibility: auto` (1686 Artikel allein im OR). Ein
+**übersprungener** Artikel behält über `contain-intrinsic-size: auto` seine
+zuletzt bekannte Grösse: **er misst sich vollständig und malt nichts.** Genau
+deshalb war jede DOM-Sonde grün, während das Bild leer blieb. In V3 steht der
+Artikel 56 px tiefer (höhere Kopfzeile) — das genügt für eine andere
+Relevanz-Entscheidung des Browsers bei Playwrights Element-Aufnahme.
 
-**⚠ ENTSCHEID DAVID — Satzspiegel.** «Der Textkörper ändert sich nicht um ein
-Pixel» (Kap. 7 PX) und «die neue Hülle hat eine 18-rem-Seitenleiste» (Kap. 4b)
-sind bei gleicher Fensterbreite **nicht gleichzeitig erfüllbar**. Welche Zusage
-weicht, ist eine Gestaltungsfrage und wird von keiner Bau-Etappe nebenbei
-entschieden (§7). Das Tor hält bis dahin **je Hülle eine eigene Baseline**: jede
-Hülle ist gegen ihre eigene Drift geschützt, die Gleichheit untereinander
-behauptet es ausdrücklich nicht mehr. Der Punkt hängt mit **Ä2** zusammen
-(Lesespalte zu schmal) — beide betreffen dieselbe Breite.
+**Kein Produktfehler, geprüft statt angenommen:** ein Viewport-Bild derselben
+V3-Seite ohne Element-Clip zeigt Art. 336c vollständig gesetzt. Leer war die
+**Aufnahme**, nie die Seite. Dieselbe Falle ist im Druck schon einmal
+aufgeschlagen und dort gleich gelöst (`@media print`).
+
+**Folge fürs Tor:** `artikelBild` schaltet das ausgelagerte Rendering am
+Mess-Artikel ab — in beiden Hüllen gleich, mit von Hand nachgezogener
+Einschliessung, damit weiterhin das AUSGELIEFERTE Bild gemessen wird. **Die
+Toleranz wurde nicht angefasst** (`maxDiffPixelRatio` unverändert 0.001), die
+Baseline **nicht** neu aufgenommen. Rot-Beweis (§6.7), beides gesehen: ohne
+Abschaltung 40 276 px; mit Abschaltung, aber ohne Einschliessung 4383 px
+(StPO 429) bzw. 15 350 px (OR 336c). **Das Tor kann scheitern.**
+
+**⚠ ENTSCHEID DAVID — Satzspiegel, bleibt offen.** Dass V3 den Text schmaler
+setzt als V1, ist gemessen und durch die Auflösung oben **nicht** erledigt: PX
+misst seit der Klemme ausdrücklich den **Text-Kern**, nicht den Satzspiegel.
+«Der Textkörper ändert sich nicht um ein Pixel» (Kap. 7 PX) und «die neue Hülle
+hat eine 18-rem-Seitenleiste» (Kap. 4b) sind bei gleicher Fensterbreite nach wie
+vor nicht gleichzeitig erfüllbar; welche Zusage weicht, entscheidet keine
+Bau-Etappe nebenbei (§7). Der Punkt hängt mit **Ä2** zusammen.
 
 #### Ästhetik-Review H1 (5,5/10) — was H2 nimmt und was bleibt
 
@@ -488,20 +518,60 @@ vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
 
 | Nr. | Inhalt | Ort |
 |---|---|---|
-| **Ä1** | Leerzone unter der Krumen-Leiste schliessen (V3-Kopf bündig, `top-16`); Krumen-Leiste zeigt im Split den falschen Artikel («Art. 428» statt «Art. 429») — **Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle | **H3** (Vollverschmelzung bleibt H4) |
-| **Ä2** | Lesespalte 556–616 px @1280; App-Seitenleiste im Leser unter Flag eingeklappt starten, Lesespalte auf 40 rem | **H3**, zusammen mit dem PX-Entscheid oben |
-| **Ä5** | Seitenleiste als drei gerahmte Kästen; hängendes «·» in der Übersichtszeile; Übersichtsbox schimmert unter dem klebenden Block durch | **H3** |
-| **Ä8** | Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung, Kap. 8 Nr. 3) | **S2** (liegt im Ist-Kern) |
-| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | **H3**, zusammen mit S-Punkt 4 |
-| **Ä10** | Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser | **H3** |
-| **Ä12** | «Seitenleiste ausblenden» (App) gegen «‹ ausblenden» (Gliederung) — gleiche Wortwahl, zwei Wirkungen | **H3** |
-| **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | **H3** |
+| **Ä1** | Leerzone unter der Krumen-Leiste schliessen (V3-Kopf bündig, `top-16`); Krumen-Leiste zeigt im Split den falschen Artikel («Art. 428» statt «Art. 429») — **Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle; dazu **App-Seitenleiste im Leser eingeklappt starten** (aus Ä2 hierher gezogen, weil dieselbe Fläche `src/components/layout/**` betroffen ist) | **H2b** (Vollverschmelzung bleibt H4) |
+| **Ä2** | Lesespalte 556–616 px @1280; Lesespalte auf 40 rem | ✅ **erledigt in H2** (`max-w-normtext` → `max-w-reading`, Nachtrag 16.8.); der Seitenleisten-Default ist nach **Ä1/H2b** gewandert |
+| **Ä5** | Seitenleiste als drei gerahmte Kästen; hängendes «·» in der Übersichtszeile; Übersichtsbox schimmert unter dem klebenden Block durch | **H2b** |
+| **Ä8** | Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung, Kap. 8 Nr. 3) | **H2b** (liegt im Ist-Kern — Änderung wirkt in beiden Hüllen und ist als solche zu deklarieren) |
+| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | **H2b**, zusammen mit S-Punkt 4 |
+| **Ä10** | Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser | **H2b** |
+| **Ä12** | «Seitenleiste ausblenden» (App) gegen «‹ ausblenden» (Gliederung) — gleiche Wortwahl, zwei Wirkungen | ✅ **erledigt in H2** (der Knopf sagt jetzt, WAS er ausblendet) |
+| **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | **H2b** |
 | **Ä4** | Beiwerk-Chips laufen über den Rand | **H3/S2** |
 | **Ä6** | Erlass-Kopf | **S3** |
 | **Ä7** | Randtitel über Artikelnummer (Hierarchie) | **S2** |
 | **Ä11** | Split-Pane-Icon-Flut | **H3/H4** |
 
 **Deckel-Stand:** H2 ist der zweite der höchstens fünf H-PRs (Kap. 7).
+
+#### Abschluss H2 — Zeilenbilanz, Dateien, Abweichungen
+
+**Zeilenbilanz gegen `main`** (gemessen, nicht geschätzt): `src/` +1666 / −147 ·
+`e2e/` +911 / −14 · Steuer-Doku +109 / −3. Davon in der V3-Hülle selbst
+(`src/pages/gesetz-leser/v3/`) **+508 / −36**. **Der Deckel «+200 Zeilen» aus
+Kap. 7 ist um das Zweieinhalbfache gerissen** — das ist die wichtigste
+Abweichung dieser Etappe und der Grund, warum der Ästhetik-Nachzug als eigene
+Etappe **H2b** ausgelagert wurde, statt H2 ein drittes Mal zu vergrössern.
+
+**Neue Dateien:** `v3/LeserTrefferListe.tsx`, `v3/SuchBereichWahl.tsx`,
+`gesetz-leser/leserSchrift.ts`, `e2e/px-textkoerper.e2e.ts` (+ zwei Baselines),
+`e2e/leser-v3-{treffer-reihenfolge,esc-ohne-sprung,highlight-split,schriftskala}.e2e.ts`,
+`src/tests/{leser-schriftskala,fussnoten-toggle-huellenneutral}.test.ts`.
+
+**Drei Abweichungen, die über den Auftrag hinausgehen:**
+
+1. **FL-4-Bruch an der eingefrorenen V1 — gefunden und behoben.** Der erste Fix
+   des Fussnoten-Defekts verengte den CSS-Selektor auf `#lc-lesespalte`.
+   Gemessen an der Ist-Hülle (BGBM): **4 von 29 Marker-Buttons liegen ausserhalb
+   der Lesespalte** (Erlasskopf, Ingress) — dort schaltete der Toggle seither
+   gar nicht mehr. Das ist eine Verhaltensänderung an V1 und verletzt FL-4. Die
+   Wurzel liegt tiefer: **eine CSS-Regel darf Elemente nicht über ihren Text
+   suchen.** Der Marker trägt jetzt die eigene Kennung `data-fn-ref`
+   (`ArtikelBody.tsx`); Wächter `src/tests/fussnoten-toggle-huellenneutral.test.ts`.
+   `[data-fn-marker]` wurde als Ersatz-Scope geprüft und **verworfen** — 19/29
+   (BGBM) bzw. 476/847 (OR) Marker liegen ausserhalb eines solchen Clusters.
+   *Whitelist-Überschreitung:* `src/components/normtext/ArtikelBody.tsx` liegt im
+   Kern und war nicht freigegeben; die Kennung dort zu setzen **ist** der
+   Wurzel-Fix, jede Alternative wäre ein Workaround gewesen (§17). Golden und
+   `gate voll` decken die Änderung ab.
+2. **A-7/PX aufgelöst** — s. o. Die Ursache war eine leere **Aufnahme**, kein
+   Pixelunterschied; Toleranz und Baseline blieben unangetastet.
+3. **Drei Specs beschrieben einen Stand, den es nicht mehr gab** (Portal-Rolle
+   des Sheets, deaktivierter Anschlag-Knopf, Feld im klebenden Block). Alle drei
+   wurden nachgezogen, keine Assertion gelockert; zwei wurden dabei **schärfer**
+   (Pane-Rollen-Probe, `toBeDisabled` statt folgenlosem Klick). Nebenbefund: in
+   `leser-v3-schriftskala` war «Schrift verkleinern» nicht auf das Ansicht-Panel
+   gescopt und hätte den **App**-Regler bedient — Hin- und Rückweg hätten zwei
+   verschiedene Steller gemessen (Ä9 beisst, jetzt in H2b).
 
 ---
 
