@@ -97,9 +97,14 @@ function ZitierMarke({ zitat, ausweis, sup, klasse, children }: {
       setOk(true); window.setTimeout(() => setOk(false), 1200);
     });
   };
+  // DESIGN-D0: `text-brass-700/55` → `text-brass-700`. Die Deckkraft war seit je
+  // ein No-op (Fund B4) — ausgeliefert wurde immer das volle brass-700 (5.41:1,
+  // AA). Mit dem Wurzel-Fix hätte sie erstmals gegriffen und den Zitierknopf auf
+  // 2.2:1 gedrückt (#b9a683 auf Papier), weit unter AA. Ein gedämpfter
+  // Ruhezustand wäre eine neue Design-Entscheidung — die trifft nicht D0.
   const knopf = (
     <button type="button" onClick={kopiere} title={`${zitat} — kopieren`}
-      className={`num font-semibold cursor-pointer text-brass-700/55 hover:text-brass-700 hover:underline decoration-dotted underline-offset-2 ${klasse ?? ''}`}>
+      className={`num font-semibold cursor-pointer text-brass-700 hover:underline decoration-dotted underline-offset-2 ${klasse ?? ''}`}>
       {ok ? '✓' : children}
     </button>
   );
