@@ -464,3 +464,57 @@ bereits sinnvoll, da die Seitenleiste unabhängig davon lebt; (iv) sollte David 
 eine eigene Erlass-Kategorisierung für Kantonserlasse/Staatsverträge einführen, bleibt
 das nicht mehr betroffen, da die Linien-Mechanik komplett entfällt — die frühere
 §4b-A-Lehre (aufbau- statt kategorie-basiert) ist mit dem Rückbau gegenstandslos.
+
+#### f) VOLLZUG — gebaut 16.8.2026 (Branch `feat/w2-5h-gesetz-ui`, PR folgt)
+
+V1 ist umgesetzt. Die vier offenen Punkte aus e) sind erledigt: (i) Vorher/Nachher-
+Beweis liegt unter `docs/ux-audit-2026-07/reader/linien-rueckbau-2026-08-16/`
+(reproduzierbares Skript `beweis.mjs vorher|nachher`, Screenshots, Messreihe,
+`README.md` mit Einordnung); (ii) Teil B des Tors wurde **gestrichen, nicht
+umgebaut** — Begründung unten; (iii) `fix/w2-18-gliederung` war beim Bau-Start
+nicht in `main`, der Rückbau ist wie vorgesehen davon unabhängig; (iv) gegenstandslos
+wie beschrieben.
+
+**Entfernt** (nicht ausgeschaltet — es bleibt nichts Umschaltbares übrig):
+
+| Datei | Was |
+|---|---|
+| `src/pages/gesetz-leser/linienAufbau.ts` → `strukturTiefe.ts` | `LinienProfil`, `guideEbene`, `dichteAmGuide`, `autoGuide`, `median()`, die Schwellen `TIEF_AB`/`DICHTE_MIN`; übrig `eIdPfadTiefe()` + `strukturTiefe()` |
+| `src/pages/gesetz-leser/inhalt.tsx` | `border-l border-guide`, `data-normtext-linie` an der Gliederungs-Sektion, `data-guide-auto` am `.lc-leser`-Root |
+| `src/pages/gesetz-leser/LeserAnsichtMenu.tsx` | Schalter «Linien» samt Props `zeigeLinien`/`linienAutoAn` |
+| `src/pages/gesetz-leser/LeserMenuPaar.tsx`, `inhalt-kopfmeldung.tsx`, `inhalt-volltext.tsx` | die `linien: LinienProfil`-Propkette; `inhalt-volltext` reicht jetzt `gliederungsTiefe: number` an `ErlassUebersicht` |
+| `src/pages/gesetz-leser/leserOptionen.ts` | Feld `linien` und der nur dafür existierende Wert `'auto'` |
+| `src/index.css` | beide `[data-linien]`-Regeln, Token `--guide-gliederung` (hell + dunkel) |
+| `tailwind.config.js` | Farbe `guide` (zeigte auf das entfernte Token) |
+| `scripts/check-linien-kanon.ts` | Teil B vollständig; `border-guide` fällt aus dem Rollen-Kanon |
+| `scripts/linien-korpus-verteilung.mjs` | gelöscht (Diagnose-Sonde, spiegelte `linienProfil`; nie in `package.json`) |
+| `e2e/leser-linien-kanon.e2e.ts`, `e2e/leser-linien-eid3.e2e.ts` | gelöscht; A28-Fälle in `gesetze-ux-g3a.e2e.ts` und der Linien-Toggle-Fall in `leser-optionen.e2e.ts` ebenso |
+
+**Bewusst geblieben:** Typo + Einzug im Fliesstext (Ränge 1 + 2 der §4b-Rangfolge;
+der Einzug ist jetzt **dauerhaft** statt über «Linien AUS» abschaltbar), Teil A des
+Linien-Kanons für die Artikel-/Struktur-Trenner samt `--rule-artikel`/`--rule-struktur`,
+`data-grundart`, und die Kennzahl «Gliederungstiefe» in der Erlass-Übersicht.
+
+**Warum Teil B gestrichen und nicht umgebaut (§6.7 / §17-Rückbau):** der von Teil B
+bewachte Sachverhalt existiert nicht mehr — `autoGuide`/`guideEbene`/`dichteAmGuide`
+sind fort, `data-guide-auto` und `data-linien` werden nirgends gesetzt,
+`--guide-gliederung` ist aus dem Token-Satz entfernt. Ein umgebautes Teil B hätte nur
+noch Konstanten gegen sich selbst geprüft und **könnte nicht mehr rot werden**. Teil A
+bleibt scharf; Rot-Probe am 16.8.2026 gefahren (`border-line/70` an einem markierten
+Container ⇒ `check:linien-kanon` exit 1 mit Fundstelle `ArtikelLeser.tsx:406`, danach
+zurückgenommen ⇒ wieder grün).
+
+**Der Wächter gegen den vierten Anlauf:** `e2e/leser-ohne-gliederungslinie.e2e.ts`
+hält fest, dass ZGB Art. 684 (Tiefe 5) und OR Art. 319 (Tiefe 4) **keine** Sektions-
+Kante mehr tragen, dass `data-linien`/`data-guide-auto`/der Schalter «Linien» nicht
+existieren — und **positiv**, dass der Einzug weiter staffelt, damit ein späterer
+«Rückbau» den Fliesstext nicht still flachzieht.
+
+**Spec-Korrektur zu Abschnitt b (lebendige Spec, David 15.8.2026):** b) zählt
+`strukturTiefe` implizit zur «gesamten Linien-Mechanik». Am Ist-Code stimmt das nicht:
+`strukturTiefe` speist seit `W2·19-GLIEDERUNG/S6` die Kennzahl «Gliederungstiefe» in
+`ErlassUebersicht` (`inhalt-volltext.tsx`, Prop `gliederungsTiefe`) und hat mit der
+Linie nichts zu tun. Sie bleibt darum erhalten — mitsamt der EID-3(b)-Herleitung und
+den Achsen 1–3 ihres Tests (`src/tests/struktur-tiefe-eid3.test.ts`, vormals
+`linien-aufbau-eid3.test.ts`; die vierte Achse «`guideEbene` bleibt an die gerenderten
+Stufen gebunden» ist mit dem Guide entfallen).

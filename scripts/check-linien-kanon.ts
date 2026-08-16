@@ -1,42 +1,38 @@
-// R1/R4-Nachfolger (W2·5d G1 + U-LINIEN/A8) — «EINE Linien-Sprache» UND das
-// AUFBAU-basierte Regelwerk «wann welche Linie» maschinell gegated.
+// R1/R4-Nachfolger (W2·5d G1) — «EINE Linien-Sprache» im Normtext-Reader,
+// maschinell gegated.
 //
-// Zwei Beweislasten, beide positiv GRÜN / negativ ROT:
+// LINIEN-KANON: die strukturellen Normtext-Container (`data-normtext-linie`)
+// nutzen ausschliesslich die benannten Linien-Rollen (`border-rule-artikel`/
+// `-struktur`), kein Ad-hoc `border-line`; die Token-Kette lebt end-to-end
+// (:root + html.dark + tailwind + reale Verwendung im Reader). Chrome-/Brass-
+// Borders sind ausgenommen.
 //
-//  A) LINIEN-KANON (unverändert seit G1): die strukturellen Normtext-Container
-//     (`data-normtext-linie`) nutzen ausschliesslich die drei benannten Linien-
-//     Rollen (`border-rule-artikel`/`-struktur`/`border-guide`), kein Ad-hoc
-//     `border-line`; die Token-Kette lebt end-to-end (:root + html.dark + tailwind
-//     + reale Verwendung im Reader). Chrome-/Brass-Borders sind ausgenommen.
+// ── LINIEN-RÜCKBAU V1 (16.8.2026) — Teil B GESTRICHEN ────────────────────────
+// Das Tor trug bis heute einen zweiten Teil B: das AUFBAU-REGELWERK «wann zeigt
+// der Reader den vertikalen Gliederungs-Guide» (Auto-Default aus Gliederungstiefe
+// + Artikel-Dichte, korpusweite Invarianten über alle Sidecars, Referenz-Verdikte
+// ZGB/OR/ArG/VMWG/BVV3/HKUE/SVG, Verdrahtungs-Sonden auf `data-guide-auto` und
+// `linien.guideEbene`).
 //
-//  B) AUFBAU-REGELWERK (neu, A8): der Auto-Default des Gliederungs-Guides folgt dem
-//     TATSÄCHLICHEN Aufbau (Struktur-Sidecar: Gliederungstiefe + Artikel-Dichte je
-//     Ebene, SSoT src/pages/gesetz-leser/linienAufbau.ts), NICHT der grundart-Schublade.
-//     Gegated wird: (1) korpusweite Invarianten über ALLE Sidecars; (2) die
-//     Referenz-Verdikte (ZGB/OR zeigen ihren EINEN Guide, ArG/Kurzerlass/Staats-
-//     vertrag sichtbar, VMWG flach) — dieselbe `linienProfil`-Funktion, die der
-//     Reader nutzt (kein Drift); (3) die Verdrahtung im Reader + CSS (data-guide-auto,
-//     guideEbene).
+// David hat die Gliederungslinie am 13.8.2026 ganz verworfen — «ja linien ganz
+// entfernen» (Variante V1, FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3 e), nachdem sie
+// dreimal gebaut und dreimal live abgelehnt worden war (A8 5.7., A28 12.7.,
+// PR #423 3.8.2026). Mit dem Guide entfällt der bewachte Sachverhalt vollständig:
+// `autoGuide`/`guideEbene`/`dichteAmGuide` existieren nicht mehr, `data-guide-auto`
+// und `data-linien` werden nirgends mehr gesetzt, `--guide-gliederung` ist aus dem
+// Token-Satz entfernt. Teil B hätte damit nur noch Konstanten gegen sich selbst
+// geprüft und könnte nicht mehr rot werden.
 //
-//  V2·A28 (Auto-Default-RÜCKZUG, David 12.7.2026): die L-3-Einheit (#207, 11.7.)
-//  hatte den Auto-Guide für dichte Erlasse AN geschaltet (inkl. ZGB/OR). David hat
-//  das LIVE verworfen — «das mit den linien funktioniert überhaupt nicht» / «also
-//  ist überhaupt nicht fördernd für die übersicht». Der Auto-Default wird darum
-//  KORPUSWEIT zurückgezogen: autoGuide=false für JEDEN Erlass. Deklarierte Regel-
-//  werk-Änderung (Quelle = Davids Verdikt): B1-Invariante auf `!autoGuide` für den
-//  ganzen Korpus, B2-Verdikte ZGB/OR/ArG/Kurzerlass/Staatsvertrag von AN auf AUS
-//  (SSoT linienAufbau.ts). Das FEATURE bleibt (K11-Tri-State-Schalter); nur das
-//  Aufdrängen endet. guideEbene/strukturTiefe bleiben gegated (Nutzer-«an» trifft
-//  denselben Ort).
+// §6.7 («ein Tor, das nicht scheitern kann, ist gefährlicher als keines») und
+// §17-Rückbau («was nicht scheitern kann, wird gestrichen statt bewacht») führen
+// hier zur STREICHUNG, nicht zum Umbau. Teil A bleibt unverändert scharf und ist
+// weiterhin rot zu bekommen (Rot-Probe im Bau-PR belegt).
 //
-// Ein wieder eingeschalteter Auto-Guide, ein toter Guide-Token, ein entferntes
-// data-guide-auto oder ein `border-line/70` an einem markierten Element färbt das
-// Tor ROT.
+// Ein `border-line/70` an einem markierten Element oder ein toter Rollen-Token
+// färbt das Tor ROT.
 
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { linienProfil, type LinienProfil } from '../src/pages/gesetz-leser/linienAufbau';
-import type { StrukturMap } from '../src/lib/normtext/browse';
 
 const wurzel = resolve(import.meta.dirname ?? '.', '..');
 const lies = (p: string) => readFileSync(resolve(wurzel, p), 'utf8');
@@ -57,7 +53,7 @@ const READER = [
 ];
 const MARKER = 'data-normtext-linie';
 const VERBOTEN = /border-line(\/\d+)?\b/;
-const KANON = ['border-rule-artikel', 'border-rule-struktur', 'border-guide'];
+const KANON = ['border-rule-artikel', 'border-rule-struktur'];
 
 function oeffnendesTag(src: string, at: number): string {
   const start = src.lastIndexOf('<', at);
@@ -99,106 +95,22 @@ for (const k of KANON) {
 const css = lies('src/index.css');
 const rootBlock = css.slice(css.indexOf(':root'), css.indexOf('html.dark'));
 const darkBlock = css.slice(css.indexOf('html.dark'));
-for (const v of ['--guide-gliederung', '--rule-artikel', '--rule-struktur']) {
+for (const v of ['--rule-artikel', '--rule-struktur']) {
   if (!rootBlock.includes(v)) fehler.push(`CSS-Variable \`${v}\` fehlt im :root (hell).`);
   if (!darkBlock.includes(v)) fehler.push(`CSS-Variable \`${v}\` fehlt in html.dark.`);
 }
 const tw = lies('tailwind.config.js');
-for (const map of ['var(--guide-gliederung)', 'var(--rule-artikel)', 'var(--rule-struktur)']) {
+for (const map of ['var(--rule-artikel)', 'var(--rule-struktur)']) {
   if (!tw.includes(map)) fehler.push(`tailwind.config.js bildet \`${map}\` nicht ab.`);
-}
-
-// ─── Teil B · Aufbau-Regelwerk (A8) ──────────────────────────────────────────
-
-// B0 · Verdrahtung: der Reader muss das aufbau-basierte Regelwerk tatsächlich
-// nutzen (guideEbene in renderSektion, data-guide-auto am Root) und das CSS es
-// auswerten. Entfernt jemand die Kopplung, ist der Kategorie-Default zurück.
-const inhalt = lies('src/pages/gesetz-leser/inhalt.tsx');
-if (!/linienProfil\s*\(/.test(inhalt)) fehler.push('inhalt.tsx ruft `linienProfil()` nicht auf — der Aufbau-Default ist abgeklemmt.');
-if (!inhalt.includes('linien.guideEbene')) fehler.push('renderSektion nutzt `linien.guideEbene` nicht — der Guide sitzt wieder auf tiefe===1 statt aufbau-basiert.');
-if (!inhalt.includes('data-guide-auto')) fehler.push('inhalt.tsx setzt `data-guide-auto` nicht am .lc-leser-Root — der Auto-Default ist nicht verdrahtet.');
-if (!css.includes('[data-guide-auto="aus"]')) fehler.push('index.css wertet `[data-guide-auto="aus"]` nicht aus — Erlasse ohne tragende Dichte werden nicht ruhig gestellt.');
-// Negativ-Sicherung: der frühere grundart-Kategorie-Default darf NICHT zurückkehren.
-if (css.includes(':not([data-grundart="KODIFIKATION"]) [data-normtext-linie]')) {
-  fehler.push('index.css enthält noch den grundart-Kategorie-Default (`:not([data-grundart="KODIFIKATION"])`) — U-LINIEN/A8 hat ihn abgelöst.');
-}
-
-// B1 · Korpusweite Invarianten über ALLE Struktur-Sidecars.
-function ladeSidecars(): Array<{ ebene: string; key: string; profil: LinienProfil }> {
-  const rows: Array<{ ebene: string; key: string; profil: LinienProfil }> = [];
-  for (const ebene of ['bund', 'kanton']) {
-    const dir = resolve(wurzel, `public/normtext/struktur/${ebene}`);
-    if (!existsSync(dir)) continue;
-    for (const f of readdirSync(dir)) {
-      if (!f.endsWith('.json')) continue;
-      let d: { artikel?: StrukturMap };
-      try { d = JSON.parse(readFileSync(resolve(dir, f), 'utf8')); } catch { continue; }
-      rows.push({ ebene, key: f.slice(0, -5), profil: linienProfil(d.artikel ?? null) });
-    }
-  }
-  return rows;
-}
-const korpus = ladeSidecars();
-if (korpus.length < 500) fehler.push(`Nur ${korpus.length} Struktur-Sidecars gefunden (<500) — Korpus unvollständig, Schwellen-Gegenprobe nicht aussagekräftig.`);
-
-let invariantenVerletzt = 0;
-for (const { key, profil: p } of korpus) {
-  // V2·A28 (Auto-Default-Rückzug, Davids Live-Verdikt): der Auto-Guide ist KORPUSWEIT
-  // aus — autoGuide MUSS für jeden Erlass false sein. guideEbene bleibt strukturell
-  // (0/1/null), damit der Nutzer-Override «an» denselben Ort trifft; flache Erlasse
-  // (Tiefe 0) haben keine Sektion (guideEbene null).
-  const ok =
-    (p.guideEbene === null || p.guideEbene === 0 || p.guideEbene === 1) &&
-    (p.strukturTiefe !== 0 || p.guideEbene === null) &&
-    p.autoGuide === false;
-  if (!ok) {
-    invariantenVerletzt++;
-    if (invariantenVerletzt <= 3) fehler.push(`Invarianten-Bruch bei ${key}: ${JSON.stringify(p)}`);
-  }
-}
-if (invariantenVerletzt > 0) fehler.push(`${invariantenVerletzt} Erlass(e) verletzen die Linien-Aufbau-Invarianten.`);
-
-// B2 · Referenz-Verdikte (positiv+negativ): das Herz von Davids A8-Befund.
-type Erwartung = Partial<LinienProfil> & { hinweis: string };
-const REFERENZ: Record<string, Erwartung> = {
-  ZGB: { strukturTiefe: 5, guideEbene: 1, autoGuide: false, hinweis: 'V2·A28: Auto-Guide korpusweit aus (guideEbene bleibt für Nutzer-«an»)' },
-  OR: { strukturTiefe: 4, guideEbene: 1, autoGuide: false, hinweis: 'V2·A28: Auto-Guide korpusweit aus (guideEbene bleibt für Nutzer-«an»)' },
-  ARG: { strukturTiefe: 2, guideEbene: 1, autoGuide: false, hinweis: 'V2·A28: kein Auto-Guide; Nutzer-«an» trifft Ebene 1' },
-  VMWG: { strukturTiefe: 0, guideEbene: null, autoGuide: false, hinweis: 'flache Artikelliste — kein Guide möglich' },
-  BVV3: { guideEbene: 0, autoGuide: false, hinweis: 'V2·A28: Kurzerlass, Auto-Guide aus (guideEbene 0 für Nutzer-«an»)' },
-  HKUE: { guideEbene: 0, autoGuide: false, hinweis: 'V2·A28: Staatsvertrag, Auto-Guide aus (guideEbene 0 für Nutzer-«an»)' },
-  // EID-3(b), 3.8.2026: der EINZIGE Erlass im Korpus (1416 Sidecars), dessen
-  // amtliche eId-Pfadtiefe über die hN-Ableitung hinausgeht — `tit_3/lvl_u1/
-  // chap_2/lvl_I` = 4 Segmente, `gliederung.length` = 3, weil Fedlex den
-  // Container `tit_3/lvl_u1` («Grundregel») als `div.heading aria-level=2` statt
-  // als `h2` führt (amtlich verifiziert, SR 741.01, Konsolidierung 20260701).
-  // Fällt die Tiefe hier auf 3 zurück, ist die eId-Primärquelle abgeklemmt —
-  // dieser Fall IST die Rot-Probe des Umbaus. guideEbene bleibt 1 — dieses Tor
-  // beweist aber NUR die strukturTiefe-Quelle, NICHT die renderTiefe-Bindung
-  // von guideEbene (Math.min(…,1) deckt beide Ableitungen gleich ab); die
-  // Render-Bindung sichert allein linien-aufbau-eid3.test.ts (Bug-Check B1).
-  SVG: { strukturTiefe: 4, guideEbene: 1, autoGuide: false, hinweis: 'EID-3(b): Tiefe aus eId-Pfad (4) statt hN-Ableitung (3)' },
-};
-for (const [key, erw] of Object.entries(REFERENZ)) {
-  const row = korpus.find((r) => r.key === key);
-  if (!row) { fehler.push(`Referenzfall ${key} nicht im Korpus gefunden (Sidecar fehlt).`); continue; }
-  const p = row.profil;
-  for (const feld of ['strukturTiefe', 'guideEbene', 'autoGuide'] as const) {
-    if (erw[feld] !== undefined && p[feld] !== erw[feld]) {
-      fehler.push(`Referenz ${key} (${erw.hinweis}): ${feld}=${JSON.stringify(p[feld])}, erwartet ${JSON.stringify(erw[feld])}.`);
-    }
-  }
 }
 
 // ─── Verdikt ─────────────────────────────────────────────────────────────────
 if (fehler.length > 0) {
-  console.error('check:linien-kanon ROT — Linien-Sprache ODER Aufbau-Regelwerk verletzt:\n');
+  console.error('check:linien-kanon ROT — Linien-Sprache verletzt:\n');
   for (const f of fehler) console.error('  • ' + f);
   process.exit(1);
 }
-const autoAn = korpus.filter((r) => r.profil.autoGuide).length;
 console.log(
-  `check:linien-kanon GRÜN — ${markierteGesamt} markierte Container / 3 Rollen-Tokens (hell+dunkel); ` +
-  `Aufbau-Regelwerk über ${korpus.length} Sidecars invariant (Auto-Guide korpusweit AUS, V2·A28: ${autoAn}), ` +
-  `Referenz-Verdikte ZGB/OR/ArG/Kurzerlass/Staatsvertrag autoGuide=false (guideEbene bleibt für Nutzer-«an») · VMWG flach — bestätigt.`,
+  `check:linien-kanon GRÜN — ${markierteGesamt} markierte Container / ${KANON.length} Rollen-Tokens ` +
+  `(hell + dunkel + tailwind + reale Verwendung), kein Ad-hoc \`border-line\`.`,
 );

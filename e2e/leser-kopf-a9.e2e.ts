@@ -6,7 +6,7 @@ import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAI
 // Beweist, dass die Kopf-Interaktionen (A4 «Ansicht»-Dropdown öffnen +
 // Switches togglen, Gliederungs-/TOC-Sprung) auch gedrosselt ohne spürbaren Lag
 // laufen und KEINEN Layout-Shift verursachen (CLS 0). BV#art-8: klein, aber
-// geschachtelt (Guide + 2-Spalten-Lesemodus mit TOC) → deckt die A-Punkte ab.
+// geschachtelt (2-Spalten-Lesemodus mit TOC) → deckt die A-Punkte ab.
 // A27: der In-Erlass-Kontextkopf/Breadcrumb ist entfernt, der Sprung-Schritt
 // nutzt die TOC.
 //
@@ -56,8 +56,11 @@ test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle,
   await expect(gruppe).toBeVisible({ timeout: REAKTIONS_LATTE });
   expect(Date.now() - t0, 'Dropdown öffnen zu langsam').toBeLessThan(REAKTIONS_BUDGET);
 
-  // A4: die drei Switches togglen — jeder reagiert ohne Hänger.
-  for (const name of ['Fussnoten', 'Linien', 'Verweise'] as const) {
+  // A4: die Switches togglen — jeder reagiert ohne Hänger. «Linien» ist mit dem
+  // Linien-Rückbau V1 (16.8.2026, Entscheid David 13.8.2026) aus dem Menü
+  // entfallen; geprüfter Sachverhalt (Reaktionszeit je Schalter unter Drossel)
+  // unverändert (§6.3: deklariert).
+  for (const name of ['Fussnoten', 'Verweise'] as const) {
     t0 = Date.now();
     const sw = gruppe.getByRole('switch', { name });
     const vorher = await sw.getAttribute('aria-checked');

@@ -36,7 +36,7 @@ const E2E_PORT = process.env.E2E_PORT ?? (process.env.CI ? CI_PORT : portAusPfad
 
 // Bekannt schwere Specs (Forensik 17.7.): erhalten via Projekt-Override ein
 // 60-s-Timeout statt der globalen 30 s (Begründung unten bei `projects`).
-const SCHWERE_SPECS = ['**/a11y.e2e.ts', '**/leser-linien-kanon.e2e.ts']
+const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 
 export default defineConfig({
   testDir: './e2e',

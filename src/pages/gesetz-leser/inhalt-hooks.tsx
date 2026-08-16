@@ -132,7 +132,7 @@ export function useLeserDaten(opts: {
   }, [erlass, istSekundaer]);
 
   // A/A2/A3/F: Kopf melden — die Meldung selbst steht in useInhaltsKopfMeldung (nach
-  // `linien`/`fussnotenAnzahl`, die der A26-Ansicht-Slot braucht; TDZ). Hier nur das
+  // `fussnotenAnzahl`, das der A26-Ansicht-Slot braucht; TDZ). Hier nur das
   // Aufräumen. Beim Verlassen den Kopf räumen (Shell setzt bei Routenwechsel ohnehin zurück).
   useEffect(() => () => meldeInhaltsKopf(null), [meldeInhaltsKopf]);
 }

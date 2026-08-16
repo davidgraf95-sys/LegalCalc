@@ -5,7 +5,7 @@ import { test, expect, type Page } from '@playwright/test';
 // Kontextkopf entfernt — Orientierung im Inhalts-Kopf, Zitat je Artikel).
 // Der Reader liefert prerendertes Crawler-HTML → auf den Client-Takeover warten
 // (die Options-Leiste existiert NUR im React-DOM), bevor geprüft wird. BV ist ein
-// kleiner, ABER geschachtelter Erlass (Guide + 2-Spalten-Lesemodus) — CI-fest.
+// kleiner, ABER geschachtelter Erlass (2-Spalten-Lesemodus) — CI-fest.
 async function warteReader(page: Page, url: string): Promise<void> {
   await page.goto(url);
   await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 });

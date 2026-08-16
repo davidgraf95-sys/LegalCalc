@@ -15,7 +15,6 @@ export default {
         // Linien-Sprache — vertikaler Gliederungs-Guide, Artikel-Trenner (fein),
         // Struktur-Trenner (oberste Sektionen, eine Spur kräftiger). Nur im
         // Normtext-Reader verwendet; Chrome-Borders bleiben `border-line`.
-        guide: 'var(--guide-gliederung)',
         rule: { artikel: 'var(--rule-artikel)', struktur: 'var(--rule-struktur)' },
         // raised/sunken ergänzt 7.6.2026: bg-paper-raised wurde in
         // FristenKalender/wizard bereits verwendet, war aber nie generiert

@@ -361,12 +361,11 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // (der data-fussnoten-Toggle der Options-Leiste, Default AN). Marker + Apparat
   // liegen IMMER im DOM (R9/§8, Ctrl+F/Print/Screenreader); «AUS» dämpft rein per
   // CSS (index.css), versteckt nie. Kein React-State-Zweig mehr im Artikel-Baum.
-  // W2·5d G2a: Die Gruppierungs-/Gliederungslinien werden nicht mehr per
-  // component-local useState geschaltet (das rendert die Artikelliste neu, §15),
-  // sondern über den globalen data-linien-Toggle der Options-Leiste
-  // (leserOptionen.tsx) rein per CSS. renderSektion emittiert Guide + Einzug
-  // darum IMMER (wie der frühere Default AN → Markup byte-gleich); `[data-linien
-  // ="aus"]` blendet Guide + Einzug per CSS aus (index.css, gescopt auf .lc-leser).
+  // LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026): die frühere
+  // Gliederungslinie und ihr `data-linien`-Toggle sind ersatzlos entfallen —
+  // `renderSektion` emittiert nur noch den Einzug, und der ist dauerhaft
+  // (FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3). Es gibt hier also auch keinen
+  // Linien-State mehr, den man versehentlich als React-Zweig zurückholen könnte.
   // N13: amtliche Kanton-Systematik (lazy) — liefert das echte Sachgebiet eines
   // kantonalen Erlasses für die Reader-Overline (statt Einheits-«Öffentliches Recht»).
   const [kantonSys, setKantonSys] = useState<Record<string, KantonSystematik>>({});

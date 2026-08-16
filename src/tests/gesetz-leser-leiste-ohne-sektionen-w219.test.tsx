@@ -19,7 +19,6 @@ import { MemoryRouter } from 'react-router-dom';
 import type { NavigateFunction } from 'react-router-dom';
 import { LeserVolltextInhalt } from '../pages/gesetz-leser/inhalt-volltext';
 import { grundartMeta } from '../pages/gesetz-leser/helpers';
-import type { LinienProfil } from '../pages/gesetz-leser/linienAufbau';
 import type { NormSnapshot } from '../lib/normtext/typen';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
@@ -34,7 +33,6 @@ const eintrag: NormSnapshot = {
   bloecke: [{ absatz: '1', text: 'Der Bund erfüllt seine Aufgabe.' }],
   stand: '2026-01-01', quelleUrl: 'https://x', abgerufen: '2026-06-29', fassungsToken: '20260101', sha: 'x',
 };
-const linien: LinienProfil = { strukturTiefe: 0, guideEbene: null, dichteAmGuide: 0, autoGuide: false };
 
 function render({ istXl, tocOffen, imPane = false }: { istXl: boolean; tocOffen: boolean; imPane?: boolean }) {
   const noop = () => {};
@@ -45,7 +43,7 @@ function render({ istXl, tocOffen, imPane = false }: { istXl: boolean; tocOffen:
         vorher={null} nachher={null}
         // Der Kern des Rot-Beweises: KEINE Sektionen — T4-Ehrlichkeit (B2/B3).
         sektionen={[]} ohneGliederung={[eintrag]}
-        linien={linien} fussnotenAnzahl={0} meta={grundartMeta('NHG')}
+        gliederungsTiefe={0} fussnotenAnzahl={0} meta={grundartMeta('NHG')}
         internRefs={undefined} margAnzeige={new Map()} kantonSys={{}}
         basisPfad="/gesetze/bund/NHG" renderSektion={() => null}
         imPane={imPane} istXl={istXl} overlayWurzel={null}

@@ -1,7 +1,7 @@
 // @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 
-// W2·5d G2a — Leser-Options-Leiste (Linien/Fussnoten/Verweise): reine data-*-/
+// W2·5d G2a — Leser-Options-Leiste (Fussnoten/Verweise): reine data-*-/
 // CSS-Toggles am <html>, persistent (localStorage) + Pre-Paint (main.tsx, CSP-
 // konform ohne Inline-Script). Belegt R6 (Grundzustand = heutige Darstellung,
 // Toggle rein CSS) und R9 (Fussnoten-«AUS» DÄMPFT, versteckt NIE — Ctrl+F/
@@ -17,14 +17,12 @@ import { test, expect, type Page } from '@playwright/test';
 // 4.7.2026, Run 28711156193 — lokal auch mit 20×-CPU-Throttle nicht
 // reproduzierbar).
 //
-// W2·5d G2b (Flake-Härtung): der Linien-Toggle lief bisher auf dem grossen ZGB
-// (~1277 Art., #art-684 tief) und war am gedrosselten Runner nahe dem Timeout.
-// Er zieht auf den kleinen, ABER geschachtelten Erlass BV (~232 Art., #art-8 mit
-// Guide über tiefe===1) um — @6×-CPU-Throttle-Probe: BV ready≈1,0 s / toggle≈1,3 s
-// vs. ZGB ready≈2,5 s / toggle≈4,1 s (≈3× schneller), Assertions unverändert
-// scharf (Guide sichtbar → transparent, Element bleibt, Einzug kollabiert). Die
-// R4-TIEFEN-Referenz (≤1 Guide-Stapel, ZGB Art. 684) bleibt CI-fest in
-// `leser-linien-kanon.e2e.ts`.
+// LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026 «ja linien ganz
+// entfernen»): der frühere dritte Schalter «Linien» und sein eigener Toggle-Fall
+// (Guide sichtbar → transparent, Einzug kollabiert) sind ersatzlos gestrichen —
+// sie prüften genau das entfernte Verhalten (§6.3: deklariert, kein Refactoring).
+// Dass im Lesetext KEINE Gliederungslinie mehr erscheint, hält jetzt
+// `leser-ohne-gliederungslinie.e2e.ts` fest.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -44,92 +42,25 @@ async function ansichtOeffnen(page: Page): Promise<void> {
   await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
 }
 
-/** Farbe/Breite/Padding der ersten gerenderten Guide-Kante über einem Artikel. */
-async function guide(page: Page, artId: string) {
-  return page.evaluate((id) => {
-    let el: HTMLElement | null = document.getElementById(id)?.parentElement ?? null;
-    while (el) {
-      if (el.matches('section[data-normtext-linie]')) {
-        const cs = getComputedStyle(el);
-        if (cs.borderLeftStyle !== 'none' && parseFloat(cs.borderLeftWidth) > 0) {
-          return { color: cs.borderLeftColor, width: cs.borderLeftWidth, padding: cs.paddingLeft };
-        }
-      }
-      el = el.parentElement;
-    }
-    return null;
-  }, artId);
-}
-
-test('Options-Leiste: drei role=switch (W2·7-BEZUG/B4: «Entscheide» entfallen, ersetzt durch «Rechtsprechung ▾»); Fussnoten/Verweise an, Linien-Default aus (V2·A28, Auto-Guide korpusweit zurückgezogen)', async ({ page }) => {
+test('Options-Leiste: zwei role=switch (Fussnoten/Verweise) — «Entscheide» via «Rechtsprechung ▾», «Linien» seit dem Rückbau V1 entfallen', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
   await expect(gruppe).toBeVisible();
-  // V2·B-1 (David 10.7.2026, überstimmt «genau drei Toggles», A19+): 4. Schalter
-  // «Entscheide» im Dropdown. BGBM hat eine Gliederungs-Sektion → der Linien-Schalter
-  // ERSCHEINT (zeigeLinien=guideEbene!==null, feature-abhängig, unverändert) ⇒ 3 Switches.
-  // W2·7-BEZUG/B4 (§6.3-Deklaration, Vorgabe David 28.7.2026): der vierte Schalter
-  // «Entscheide» ist entfallen — er steuerte dieselbe Sache wie das neue Dropdown
-  // «Rechtsprechung ▾» (zwei konkurrierende Steuerungen). Geprüfter Sachverhalt
-  // unverändert: das Menü führt genau die Darstellungs-Schalter und sonst nichts.
-  await expect(gruppe.getByRole('switch')).toHaveCount(3);
-  // V2·A28 (David 12.7.2026, Live-Verdikt «funktioniert überhaupt nicht»): der Auto-
-  // Guide ist KORPUSWEIT aus → data-guide-auto="aus", der Linien-Schalter zeigt
-  // ehrlich «aus» (§8). Das FEATURE bleibt: ein Klick «Linien AN» zeigt den Guide.
-  // Fussnoten/Verweise bleiben unverändert an (R6-No-op).
-  await expect(page.locator('.lc-leser').first()).toHaveAttribute('data-guide-auto', 'aus');
-  await expect(gruppe.getByRole('switch', { name: 'Linien' })).toHaveAttribute('aria-checked', 'false');
+  // W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere Schalter «Entscheide» ist
+  // entfallen — er steuerte dieselbe Sache wie das Dropdown «Rechtsprechung ▾».
+  // LINIEN-RÜCKBAU V1 (Entscheid David 13.8.2026): «Linien» ist ebenfalls entfallen,
+  // die Gliederungslinie im Lesetext gibt es nicht mehr. Bleiben zwei Schalter.
+  await expect(gruppe.getByRole('switch')).toHaveCount(2);
+  await expect(gruppe.getByRole('switch', { name: 'Linien' })).toHaveCount(0);
   for (const name of ['Fussnoten', 'Verweise']) {
     await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
   }
   const html = page.locator('html');
-  await expect(html).toHaveAttribute('data-linien', 'auto');
+  // Kein `data-linien` mehr am <html> — das Attribut existierte nur für die Linie.
+  await expect(html).not.toHaveAttribute('data-linien', /.*/);
   await expect(html).toHaveAttribute('data-fussnoten', 'an');
   await expect(html).toHaveAttribute('data-verweise', 'an');
-});
-
-test('Linien-Toggle: Auto-Default transparent (V2·A28), Nutzer «an» zeigt / «aus» versteckt den Guide, persistiert über Reload', async ({ page }) => {
-  // BV ist eine tiefe Struktur (Gliederungstiefe 3, dichte 8). V2·A28 (David 12.7.,
-  // Live-Verdikt «funktioniert überhaupt nicht»): der Auto-Guide ist korpusweit
-  // zurückgezogen (data-guide-auto="aus") — auch die tiefe Kodifikation drängt die
-  // Linie nicht mehr auf. Der border-Container BLEIBT im DOM (nur transparent).
-  await warteReader(page, '/gesetze/bund/BV#art-8', 'art-8');
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'auto');
-  await expect(page.locator('.lc-leser').first()).toHaveAttribute('data-guide-auto', 'aus');
-  const autoAus = await guide(page, 'art-8');
-  expect(autoAus, 'Guide-Container existiert (auch im Auto-Default)').not.toBeNull();
-  expect(parseFloat(autoAus!.width)).toBeGreaterThan(0);
-  expect(autoAus!.color).toBe('rgba(0, 0, 0, 0)'); // V2·A28: Auto-Guide korpusweit aus
-
-  // A4: Switches liegen im «Ansicht»-Dropdown — öffnen (bleibt über die Klicks offen).
-  await ansichtOeffnen(page);
-  // POSITIV: der Auto-Default ist effektiv AUS → erster Klick setzt explizit «Linien
-  // AN» (K11-Tri-State übersteuert global) → der EINE Guide auf `guideEbene` wird
-  // sichtbar. Das FEATURE bleibt voll funktionsfähig, nur das Aufdrängen endete.
-  await page.getByRole('switch', { name: 'Linien' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'an');
-  const an = await guide(page, 'art-8');
-  expect(an, 'Guide-Container bleibt strukturell erhalten').not.toBeNull();
-  expect(parseFloat(an!.width)).toBeGreaterThan(0);
-  expect(an!.color).not.toBe('rgba(0, 0, 0, 0)'); // Nutzer-«an» → Guide sichtbar
-
-  // NEGATIV: zweiter Klick → «Linien» explizit AUS → Kante transparent, Einzug
-  // kollabiert (flach), Element (border-Breite > 0) BLEIBT — kein display-Wechsel.
-  await page.getByRole('switch', { name: 'Linien' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'aus');
-  const aus = await guide(page, 'art-8');
-  expect(aus!.color).toBe('rgba(0, 0, 0, 0)'); // transparent
-  expect(aus!.padding).toBe('0px'); // Einzug kollabiert (flach)
-
-  // Persistenz + Pre-Paint: Reload stellt data-linien=aus wieder her.
-  const ls = await page.evaluate(() => localStorage.getItem('lm.leser.optionen'));
-  expect(ls).toContain('"linien":"aus"');
-  await page.reload();
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'aus');
-  await expect(page.locator('#art-8')).toBeVisible();
-  const nachReload = await guide(page, 'art-8');
-  expect(nachReload!.color).toBe('rgba(0, 0, 0, 0)'); // kein Flash: bleibt aus
 });
 
 test('Fussnoten-Toggle: AN sichtbar → AUS VERSCHWINDEN (A1, David 5.7.2026), Text bleibt im DOM, kein CLS beim Toggle', async ({ page }) => {

@@ -1,12 +1,20 @@
 // ─── Leser-Options-Store (W2·5d G2a) — Darstellungs-Toggles, KEINE Rechtslogik (§3) ─
 //
 // Persistente, rein visuelle Lese-Umschalter für den Gesetzes-Reader
-// (FAHRPLAN-GESETZES-UX.md §3 + V2/A23): «Linien» (Gliederungs-Guide + Einzug),
-// «Fussnoten» (Marker-Prominenz), «Verweise» (Link-Unterstreichung) und — seit
-// V2·B-1 (David 10.7.2026, überstimmt «genau drei Toggles») — «Entscheide»
-// (Leitfall-Zeilen ein/aus). Die Bedien-Oberfläche rendert `LeserAnsichtMenu.tsx`.
+// (FAHRPLAN-GESETZES-UX.md §3 + V2/A23): «Fussnoten» (Marker-Prominenz),
+// «Verweise» (Link-Unterstreichung) und — seit V2·B-1 (David 10.7.2026,
+// überstimmt «genau drei Toggles») — «Entscheide» (Leitfall-Zeilen ein/aus).
+// Die Bedien-Oberfläche rendert `LeserAnsichtMenu.tsx`.
 //
-// Mechanik der vier Toggles = data-*-Attribute + CSS, KEIN React-State-Zweig im
+// LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026 «ja linien ganz
+// entfernen»): das frühere Feld `linien` (K11-Tri-State an/aus/auto) ist samt
+// Schalter, `data-linien`-Attribut und CSS-Regeln ENTFALLEN — mit ihm der einzige
+// Grund für den Wert 'auto'. Ein alt gespeichertes `"linien"` im localStorage wird
+// beim Laden ignoriert (es steht nicht mehr in FELDER) und beim nächsten Schreiben
+// abgeräumt; es kann nichts mehr einschalten. Herleitung:
+// FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3.
+//
+// Mechanik der Toggles = data-*-Attribute + CSS, KEIN React-State-Zweig im
 // Artikel-Baum (§15: das Toggeln rendert die Artikelliste NICHT neu). Vorbild ist
 // die Theme-Mechanik (components/thema.ts): die Attribute werden IMPERATIV am
 // <html> gesetzt — bewusst KEIN Inline-Script im index.html-Head, weil die CSP
@@ -22,15 +30,8 @@
 // UND jedes Split-View-Pane) folgen derselben Wahl ohne Re-Render.
 //
 // Fussnoten/Verweise/Entscheide: Default 'an' = heutige Darstellung → data-*="an"
-// ist ein CSS-No-op (R6: Grundzustand byte-gleich). Linien: Default 'auto'. V2·A28
-// (David 12.7.2026, Live-Verdikt «das mit den linien funktioniert überhaupt nicht»):
-// der Auto-Guide ist KORPUSWEIT zurückgezogen — linienAufbau.ts liefert autoGuide=
-// false für jeden Erlass, der Reader schreibt darum data-guide-auto="aus" an den
-// `.lc-leser`-Root, und im Default 'auto' bleibt der vertikale Guide überall aus
-// (Einzug bleibt). Das FEATURE bleibt: ein expliziter Klick «Linien AN» setzt
-// data-linien="an" und zeigt den EINEN Guide auf `guideEbene` wieder (K11-Tri-State,
-// übersteuert den Auto-Default global). Alle CSS-Regeln sind auf `.lc-leser` gescopt
-// (index.css), damit sie NUR den Reader treffen.
+// ist ein CSS-No-op (R6: Grundzustand byte-gleich). Alle CSS-Regeln sind auf
+// `.lc-leser` gescopt (index.css), damit sie NUR den Reader treffen.
 //
 // W2·7-BEZUG/B5 (David 28.7.2026): die frühere Stufen-Wahl «alle · 20 · 10 · 5 J.»
 // (V2·B-2) ist ENTFALLEN und durch einen VON-BIS-BEREICH ersetzt — Zeitstrahl mit
@@ -62,10 +63,8 @@ import { DEFAULT_KLASSEN, normalisiereKantone, normalisiereKlassen } from './bez
 import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
 import { heuteIso } from '../../lib/format';
 
-export type OptFeld = 'linien' | 'fussnoten' | 'verweise' | 'leitfaelle';
-// 'auto' nur für 'linien' sinnvoll (grundart-abhängiger Default, K11); Fussnoten/
-// Verweise/Entscheide nutzen nur 'an'/'aus'. Die Union bleibt gemeinsam (ein Store).
-export type OptWert = 'an' | 'aus' | 'auto';
+export type OptFeld = 'fussnoten' | 'verweise' | 'leitfaelle';
+export type OptWert = 'an' | 'aus';
 export type LeserOptionen = Record<OptFeld, OptWert>;
 
 /**
@@ -79,8 +78,8 @@ export type LeserOptionen = Record<OptFeld, OptWert>;
  * · `chronologie` — dieselben 'A'-Einträge, aber als chronologisch sortierte
  *                   Liste am Artikelfuss statt als Fussnoten-Apparat.
  *
- * Bewusst KEIN `OptFeld`/`OptWert`: die Union der vier Toggles ist zweiwertig
- * ('an'|'aus', plus 'auto' für Linien). Ein drittes, semantisch anderes Wort in
+ * Bewusst KEIN `OptFeld`/`OptWert`: die Union der Toggles ist zweiwertig
+ * ('an'|'aus'). Ein drittes, semantisch anderes Wort in
  * dieselbe Union zu drücken machte jeden Toggle-Aufruf typunsicher (`setzeOption
  * ('fussnoten', 'chronologie')` wäre compilierbar und sinnlos). Der Wert lebt
  * darum wie der Zeit-Bereich als eigenes Feld im SELBEN persistenten Store — ein
@@ -89,8 +88,8 @@ export type LeserOptionen = Record<OptFeld, OptWert>;
 export type HistAnsicht = 'aus' | 'fussnoten' | 'chronologie';
 
 const KEY = 'lm.leser.optionen';
-const FELDER: readonly OptFeld[] = ['linien', 'fussnoten', 'verweise', 'leitfaelle'];
-const DEFAULT: LeserOptionen = { linien: 'auto', fussnoten: 'an', verweise: 'an', leitfaelle: 'an' };
+const FELDER: readonly OptFeld[] = ['fussnoten', 'verweise', 'leitfaelle'];
+const DEFAULT: LeserOptionen = { fussnoten: 'an', verweise: 'an', leitfaelle: 'an' };
 const HIST_ANSICHTEN: readonly HistAnsicht[] = ['aus', 'fussnoten', 'chronologie'];
 const DEFAULT_HIST: HistAnsicht = 'fussnoten';
 
@@ -126,7 +125,7 @@ function lade(): GeladenerZustand {
       & { zeitraum?: unknown; hist?: unknown; bezugKlassen?: unknown; bezugKantone?: unknown;
           bezugVon?: unknown; bezugBis?: unknown };
     const opt: LeserOptionen = { ...DEFAULT };
-    for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus' || o[f] === 'auto') opt[f] = o[f] as OptWert;
+    for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus') opt[f] = o[f] as OptWert;
     const hist = HIST_ANSICHTEN.includes(o.hist as HistAnsicht) ? (o.hist as HistAnsicht) : DEFAULT_HIST;
     // B5-Migration: steht schon EIN Bereichs-Feld im Speicher, ist der Bereich die
     // Wahrheit und `zeitraum` ein Überbleibsel, das beim nächsten Schreiben
@@ -197,9 +196,9 @@ function speichere(): void {
 if (start.migriert) speichere();
 
 /** Wendet die gespeicherten Toggle-Optionen VOR dem ersten Render an (Aufruf in
- *  main.tsx, analog `wendeThemaAn`). Setzt data-linien/-fussnoten/-verweise/
- *  -leitfaelle am <html>; Default 'an' ⇒ CSS-No-op ⇒ byte-gleiche heutige
- *  Darstellung. Der Zeit-Bereich ist JS-konsumiert (kein data-*-Attribut). */
+ *  main.tsx, analog `wendeThemaAn`). Setzt data-fussnoten/-verweise/-leitfaelle
+ *  am <html>; Default 'an' ⇒ CSS-No-op ⇒ byte-gleiche heutige Darstellung. Der
+ *  Zeit-Bereich ist JS-konsumiert (kein data-*-Attribut). */
 export function wendeLeserOptionenAn(): void {
   if (typeof document === 'undefined') return;
   const g = lade();
@@ -214,7 +213,7 @@ export function wendeLeserOptionenAn(): void {
   if (g.migriert) speichere();
   const el = document.documentElement;
   for (const f of FELDER) el.setAttribute(`data-${f}`, aktuell[f]);
-  // W2·5i: die Historie-Ansicht ist CSS-getrieben wie die vier Toggles → dasselbe
+  // W2·5i: die Historie-Ansicht ist CSS-getrieben wie die Toggles → dasselbe
   // Pre-Paint-Attribut am <html> (kein Flackern, kein Hydration-Mismatch). Der
   // Default 'fussnoten' emittiert KEINE CSS-Regel ⇒ Grundzustand byte-gleich (R6).
   el.setAttribute('data-histansicht', aktuellHist);

@@ -23,7 +23,7 @@ wendeThemaAn(effektivesThema())
 // Ebenso die gespeicherte Schriftskala (R3) vor dem ersten Render anwenden —
 // kein Aufblitzen der Default-Grösse für Nutzer mit eigener Wahl.
 wendeSchriftskalaAn()
-// Und die gespeicherten Leser-Optionen (W2·5d G2a: Linien/Fussnoten/Verweise)
+// Und die gespeicherten Leser-Optionen (W2·5d G2a: Fussnoten/Verweise)
 // als data-*-Attribute ans <html> — CSP-konform ohne Inline-Script, analog
 // Thema/Schriftskala. Default 'an' ⇒ CSS-No-op ⇒ heutige Darstellung byte-gleich.
 wendeLeserOptionenAn()

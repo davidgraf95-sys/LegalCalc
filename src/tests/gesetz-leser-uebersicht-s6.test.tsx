@@ -29,7 +29,6 @@ import {
 } from '../pages/gesetz-leser/erlassUebersichtDaten';
 import { ErlassUebersicht } from '../pages/gesetz-leser/parts/ErlassUebersicht';
 import { ladeNormFixture } from './fixtures/normtext-fixture';
-import type { LinienProfil } from '../pages/gesetz-leser/linienAufbau';
 import type { Sektion, ErlassKopf } from '../lib/normtext/browse';
 import type { KantonSystematik } from '../lib/normtext/systematik';
 import type { NormSnapshot } from '../lib/normtext/typen';
@@ -47,7 +46,6 @@ const eintrag: NormSnapshot = {
   stand: '2026-01-01', quelleUrl: 'https://x', abgerufen: '2026-06-29', fassungsToken: '20260101', sha: 'x',
 };
 const sektion: Sektion = { id: 'sek-0', ebene: 1, label: 'Erster Titel', kinder: [], artikel: [eintrag] };
-const linien: LinienProfil = { strukturTiefe: 1, guideEbene: 1, dichteAmGuide: 1, autoGuide: true };
 const kopf: ErlassKopf = {
   srNummer: '210', titel: 'Schweizerisches Zivilgesetzbuch',
   erlassdatum: 'vom 10. Dezember 1907 (Stand am 1. Juli 2026)',
@@ -64,7 +62,7 @@ function render({ istXl, tocOffen, nichtKonsolidiert = false, aufgehoben = false
       <LeserVolltextInhalt
         erlass={e} eintraege={[eintrag]} struktur={null} kopf={kopf} currency={null}
         vorher={null} nachher={null} sektionen={[sektion]} ohneGliederung={[]}
-        linien={linien} fussnotenAnzahl={0} meta={grundartMeta('ZGB')}
+        gliederungsTiefe={1} fussnotenAnzahl={0} meta={grundartMeta('ZGB')}
         internRefs={undefined} margAnzeige={new Map()} kantonSys={{}}
         basisPfad="/gesetze/bund/ZGB" renderSektion={() => null}
         imPane={false} istXl={istXl} overlayWurzel={null}

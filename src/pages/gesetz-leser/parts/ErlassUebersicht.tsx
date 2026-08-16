@@ -66,7 +66,7 @@ export function ErlassUebersicht({
   bestimmungsWort?: 'Artikel' | 'Paragraphen';
   /** K6: kantonale Etiketten sind teils Entwurf — bleibt sichtbar (§8). */
   bestimmungsEtikettStatus?: 'entwurf';
-  /** `LinienProfil.strukturTiefe` — die amtliche Gliederungs-Verschachtelung. */
+  /** `strukturTiefe()` — die amtliche Gliederungs-Verschachtelung. */
   gliederungsTiefe?: number;
   /** Kennzahlen des Gliederungs-Modells (S3) — EINE Quelle für «hat Anhang» (§5). */
   kennzahlen?: GliederungsKennzahlen | null;

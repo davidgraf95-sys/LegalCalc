@@ -7,7 +7,6 @@ import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import type { LinienProfil } from './linienAufbau';
 import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 
 // `MeldeKopf` NICHT aus ./inhalt-hooks importiert (check:zyklen, Schranke 1):
@@ -40,7 +39,6 @@ export function useInhaltsKopfMeldung(opts: {
   meldeInhaltsKopf: MeldeKopf;
   imPane: boolean;
   eintraege: NormSnapshot[] | null;
-  linien: LinienProfil;
   fussnotenAnzahl: number | null;
   /** W2·7-BEZUG/B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter).
    *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
@@ -61,7 +59,7 @@ export function useInhaltsKopfMeldung(opts: {
   setTocAuf: Dispatch<SetStateAction<boolean>>;
 }): void {
   const {
-    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl, kantoneVerfuegbar = [], klassenImErlass,
+    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl, kantoneVerfuegbar = [], klassenImErlass,
     bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf,
   } = opts;
@@ -125,7 +123,7 @@ export function useInhaltsKopfMeldung(opts: {
           // Pane-Suchleiste) und lief in den Label-Schwellen auseinander.
           <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
             bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
-            linien={linien} fussnotenAnzahl={fussnotenAnzahl} />
+            fussnotenAnzahl={fussnotenAnzahl} />
         )
         : undefined,
       // A35: das In-Gesetz-Suchfeld nur in der Einzelansicht (im Split-View trägt es
@@ -137,7 +135,7 @@ export function useInhaltsKopfMeldung(opts: {
     // Setter (setSuche/setTocOffen/setTocAuf) sind stabil; Deps byte-identisch zum
     // früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
+  }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl,
       kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
       suche, istXl, tocOffen, tocAuf]);
 }

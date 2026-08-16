@@ -2,8 +2,11 @@
 import { test, expect, type Page } from '@playwright/test';
 
 // W2·5d G3a — Per-Grundart-Darstellung im Gesetzes-Reader (FAHRPLAN §2.2):
-// erlassTyp-Kopf-Label, aufbau-abhängiger Linien-Default (U-LINIEN/A8, data-guide-auto),
-// KANTON §-Label (⑥, Anker bleibt #art-/R8), LIVE_VERWEIS-Verweiskarte (⑧).
+// erlassTyp-Kopf-Label, KANTON §-Label (⑥, Anker bleibt #art-/R8),
+// LIVE_VERWEIS-Verweiskarte (⑧). Der frühere aufbau-abhängige Linien-Default
+// (U-LINIEN/A8, `data-guide-auto`) ist mit dem Linien-Rückbau V1 (16.8.2026,
+// Entscheid David 13.8.2026) ersatzlos entfallen — die beiden A28-Fälle hier
+// prüften genau ihn und sind mit ihm gestrichen (§6.3: deklariert).
 // Reine Darstellung (§3) — die Grundart kommt zur Laufzeit aus dem Register
 // (SSoT, §5), NICHT aus der BrowseErlass. Reader = prerendertes Crawler-HTML →
 // auf den Client-Takeover warten, bevor geprüft wird.
@@ -14,21 +17,6 @@ async function warteKopf(page: Page, url: string): Promise<void> {
 async function warteReader(page: Page, url: string): Promise<void> {
   await page.goto(url);
   await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 });
-}
-
-/** Border-Left-Farbe der ersten Guide-Kante über einem Artikel (oder null). */
-async function guideFarbe(page: Page, artId: string): Promise<string | null> {
-  return page.evaluate((id) => {
-    let el: HTMLElement | null = document.getElementById(id)?.parentElement ?? null;
-    while (el) {
-      if (el.matches('section[data-normtext-linie]')) {
-        const cs = getComputedStyle(el);
-        if (cs.borderLeftStyle !== 'none' && parseFloat(cs.borderLeftWidth) > 0) return cs.borderLeftColor;
-      }
-      el = el.parentElement;
-    }
-    return null;
-  }, artId);
 }
 
 // ── erlassTyp-Kopf-Label (§5.1, behebt «Verordnung als Bundesgesetz») ──────────
@@ -44,46 +32,10 @@ test('Kopf-Label: Verordnung wird als «Verordnung» betitelt, nicht «Bundesges
 // gedrosselten 2-Kern-Runner nahe an die 20-s-warteReader-Latte (16–19 s lokal
 // unter Contention). Die Kopf-Label-Semantik («Bundesgesetz» für grundart GESETZ)
 // ist seitengrössen-unabhängig → Umzug auf das kleine ELG (~50 KB), ebenfalls ein
-// Bundesgesetz. Der OR-Fall bleibt im Linien-Kanon-Tor (check:linien-kanon) gegated.
+// Bundesgesetz. Linien-Kanon Teil B (OR-Gate) ist seit dem Rückbau 16.8.2026 gestrichen.
 test('Kopf-Label: Gesetz bleibt «Bundesgesetz» (ELG)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG');
   await expect(page.locator('.lc-leser > header .lc-overline').first()).toContainText('Bundesgesetz');
-});
-
-// ── V2·A28: Auto-Guide korpusweit AUS (Davids Live-Verdikt) ────────────────────
-// David hat die L-3-Einheit (#207, Auto-Guide AN für dichte Erlasse) live verworfen:
-// «das mit den linien funktioniert überhaupt nicht» / «also ist überhaupt nicht
-// fördernd für die übersicht». Der Auto-Default ist darum korpusweit zurückgezogen:
-// data-guide-auto ist stets "aus", KEIN Erlass drängt die Linie auf. Das FEATURE
-// bleibt: der explizite K11-Schalter «Linien AN» zeigt den EINEN Guide wieder.
-// NEGATIV: der Auto-Default lässt den Guide auch beim flachen ArG transparent;
-// POSITIV: der Nutzer-Override 'an' macht ihn sichtbar (auf `guideEbene`).
-test('V2·A28: STG bleibt im Auto-Default RUHIG (Guide transparent, korpusweit aus)', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/STG#art-10');
-  await expect(page.locator('.lc-leser')).toHaveAttribute('data-guide-auto', 'aus');
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'auto');
-  await expect(page.locator('#art-10')).toBeVisible({ timeout: 20000 });
-  const farbe = await guideFarbe(page, 'art-10');
-  expect(farbe, 'Guide-Container bleibt strukturell im DOM').not.toBeNull();
-  expect(farbe).toBe('rgba(0, 0, 0, 0)'); // A28: Auto-Guide korpusweit aus
-});
-
-test('V2·A28: ArG-Guide im Auto-Default AUS (transparent), Nutzer-Override «an» zeigt ihn wieder', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/ARG#art-9');
-  // Auto-Default: korpusweit aus (auch das flache Gesetz drängt die Linie nicht auf).
-  await expect(page.locator('.lc-leser')).toHaveAttribute('data-guide-auto', 'aus');
-  await expect(page.locator('#art-9')).toBeVisible({ timeout: 20000 });
-  const autoFarbe = await guideFarbe(page, 'art-9');
-  expect(autoFarbe, 'Guide-Container bleibt strukturell im DOM').not.toBeNull();
-  expect(autoFarbe).toBe('rgba(0, 0, 0, 0)'); // A28: kein aufgedrängter Guide
-  // POSITIV: das FEATURE bleibt — expliziter K11-Schalter «Linien AN» zeigt den
-  // EINEN Guide auf `guideEbene` wieder (data-linien="an" übersteuert global).
-  await page.getByRole('button', { name: 'Ansicht' }).first().click();
-  await page.getByRole('switch', { name: 'Linien' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-linien', 'an');
-  const anFarbe = await guideFarbe(page, 'art-9');
-  expect(anFarbe, 'ArG-Guide vorhanden').not.toBeNull();
-  expect(anFarbe).not.toBe('rgba(0, 0, 0, 0)'); // Nutzer-«an» → Ebene sichtbar
 });
 
 // ── ⑥ KANTON §-Label: sichtbares «§ N», Anker bleibt #art- (R8) ────────────────

@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { baueGliederungsbaum, type Sektion } from '../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../lib/normtext/verifikationslink';
-import { linienProfil } from './linienAufbau';
+import { strukturTiefe } from './strukturTiefe';
 import { pfadZu, grundartMeta } from './helpers';
 import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import { ArtikelIndex } from './parts/ArtikelIndex';
@@ -37,9 +37,6 @@ import { useSuchTreffer } from './inhalt-suchtreffer';
 // Hook einen KONTIGUEN Block kapselt und an exakt derselben Position gerufen wird.
 //
 // Was hier bleiben MUSS und warum:
-//  · `linienProfil()`, `linien.guideEbene` (renderSektion) und `data-guide-auto`
-//    am .lc-leser-Root — `check:linien-kanon` (Teil B0) liest sie im Quelltext
-//    GENAU dieser Datei und meldet den Aufbau-Default sonst als abgeklemmt.
 //  · `springeZuArtikel` mit `window.history.replaceState(null, '', ziel)` — die
 //    LM-202-Quellensonde (src/tests/leser-adresse-lm202.test.ts) prüft den einen
 //    erlaubten Adress-Schreiber in dieser Datei. Ihn zu verschieben hiesse, einen
@@ -138,14 +135,13 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     return manifest.erlasse.reduce((n, e) => (e.kanton === kanton ? n + 1 : n), 0);
   }, [erlass?.kanton, manifest]);
 
-  // W2·5d U-LINIEN (A8): das Linien-Regelwerk «wann welche Linie» leitet der Reader
-  // aus dem TATSÄCHLICHEN Aufbau des Erlasses ab (Struktur-Sidecar: Gliederungstiefe
-  // + Artikel-Dichte je Ebene), NICHT mehr aus der grundart-Schublade (der frühere
-  // K11-Default «nur KODIFIKATION»). `guideEbene` sagt renderSektion, welche Sektions-
-  // tiefe den EINEN vertikalen Guide trägt; `autoGuide` steuert den Auto-Default
-  // (data-guide-auto am .lc-leser → index.css). Reine Darstellung (§3, SSoT
-  // linienAufbau.ts, im Tor `check:linien-kanon` korpusweit gegated).
-  const linien = useMemo(() => linienProfil(struktur), [struktur]);
+  // Amtliche Gliederungstiefe des Erlasses — reine Kennzahl für die Erlass-
+  // Übersicht (SSoT strukturTiefe.ts, §3). Bis zum Linien-Rückbau V1 (16.8.2026)
+  // war das ein ganzes `LinienProfil` samt `guideEbene`/`autoGuide`, das steuerte,
+  // wo die Gliederungslinie im Lesetext sitzt; die Linie ist mit Davids Entscheid
+  // vom 13.8.2026 ersatzlos entfallen (FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3),
+  // übrig bleibt die Zahl.
+  const gliederungsTiefe = useMemo(() => strukturTiefe(struktur), [struktur]);
 
   // V2·K-2: Gesamtzahl der Fussnoten aus dem Struktur-Sidecar (Kopf-Signal + Zähler
   // am Fussnoten-Chip). null = Sidecar noch nicht geladen ⇒ der Chip erscheint erst
@@ -159,12 +155,12 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
 
   // §6.6-Split: Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht-/Such-Slot)
   // — verhaltensneutral in ./inhalt-hooks (EIN useEffect). Steht NACH
-  // `linien`/`fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
+  // `fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
   // W2·19-GLIEDERUNG/S9: `sektionen` fällt hier weg — der ☰-Knopf hängt seit
   // dem Schwachstelle-8-Fix an `eintraege` (hatLeiste-Logik), nicht mehr an
   // der amtlichen Gliederung (inhalt-hooks.tsx, `zeigeGliederung`).
   useInhaltsKopfMeldung({
-    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, linien, fussnotenAnzahl,
+    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl,
     kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf,
   });
@@ -352,10 +348,9 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
 
   // §6.6-Split (W2·12-HYGIENE/B24): der Innen-Render des Volltext-Readers lebt in der
   // reinen Präsentationskomponente ./inhalt-volltext (Markup + Handler byte-gleich).
-  // `renderSektion` (Linien-Kanon: border-guide / linien.guideEbene / data-normtext-
-  // linie) und die reader-root-Hülle (data-grundart / data-guide-auto) bleiben HIER —
-  // dort gated sie `check:linien-kanon` (READER-Liste). renderSektion wird als Prop
-  // hereingereicht; sie arbeitet weiter auf demselben `offen`/`setOffen`.
+  // `renderSektion` und die reader-root-Hülle (`.lc-leser` mit data-grundart) bleiben
+  // HIER; renderSektion wird als Prop hereingereicht und arbeitet weiter auf
+  // demselben `offen`/`setOffen`.
   const istOffen = (id: string, defOpen: boolean) => offen[id] ?? defOpen;
   const toggle = (id: string, defOpen: boolean) => setOffen((o) => ({ ...o, [id]: !(o[id] ?? defOpen) }));
   const regRef = (id: string) => (el: HTMLElement | null) => {
@@ -364,8 +359,8 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
 
   // W2·5d G3a: Grundart-Metadaten zur Laufzeit aus dem Register (SSoT, §5) per key —
-  // steuert Kopf-Label (erlassTyp), §-Zähl-Substantiv (bestimmungsEtikett, ⑥) und den
-  // grundart-abhängigen Linien-Default (data-grundart am .lc-leser-Root, K11).
+  // steuert Kopf-Label (erlassTyp) und §-Zähl-Substantiv (bestimmungsEtikett, ⑥);
+  // `data-grundart` bleibt als semantischer Marker am .lc-leser-Root.
   const meta = grundartMeta(erlass.key);
 
   // Jede Sektionsstufe ist klappbar (Fedlex-analog); Inhalt rendert nur offen.
@@ -393,28 +388,25 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
           })),
         ].sort((a, b) => a.pos - b.pos)
       : [];
-    // Linien-Kanon (W2·5d G1 + U-LINIEN/A8, DESIGN-REGLEMENT-NORMTEXT §4b Regel 1 +
-    // §Weissraum-Rhythmus): HÖCHSTENS EINE vertikale Guide-Linie gleichzeitig — genau
-    // die aufbau-abhängige `linien.guideEbene` trägt den Guide (Ebene 0 bei einer
-    // einzigen Gliederungsebene → «flache Ebene sichtbar», sonst Ebene 1); tiefere
-    // Ebenen tragen ihre Tiefe allein über den EINZUG (kein gestapelter «Barcode» aus
-    // border-l pro Ebene, der ZGB Art. 684 / OR Art. 319 zupflasterte). `guideEbene
-    // === null` (flache Artikelliste) ⇒ gar kein Guide. Einzug-Skala (V2·L-1): Tiefe
-    // 1–5 → je eine `einzug`-Stufe (20px), gedeckelt bei 5 (vorher 3 — tiefe
-    // Kodifikationen ZGB/OR verloren ab Ebene 3 die visuelle Verschachtelung, David-
-    // Befund «funktioniert praktisch nicht»). MOBIL kollabiert der Einzug NICHT mehr
-    // auf 0, sondern trägt `einzug-mobil` (~0.75rem, `pl-einzug-mobil sm:pl-einzug`)
-    // → die Verschachtelung flüstert auch @390 weiter; die eine Guide bleibt am
-    // Spaltenrand. CLS 0: Einzug = padding, Guide = border darauf. Der Guide wird bei
-    // jedem Erlass mit Gliederung emittiert; ob er im Auto-Default SICHTBAR ist,
-    // entscheidet der aufbau-basierte `data-guide-auto`-Toggle rein per CSS (kein
-    // Artikel-Re-Render, §15). `data-linien="aus"` kollabiert den Einzug weiterhin
-    // auf 0 über ALLE Ebenen (index.css, padding-left:0).
-    const guide = linien.guideEbene !== null && tiefe === linien.guideEbene;
+    // LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026 «ja linien ganz
+    // entfernen», FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3): die vertikale
+    // Gliederungslinie ist hier ERSATZLOS entfallen — samt Schalter, Auto-Default
+    // und `data-guide-auto`-Verdrahtung. Struktur im Fliesstext trägt jetzt allein
+    // Typo + EINZUG (die zwei obersten Ränge der Rangfolge aus
+    // DESIGN-REGLEMENT-NORMTEXT §4b); die Übersicht «wo bin ich» liefert die
+    // Seitenleiste mit Gliederungsbaum (W2·19-GLIEDERUNG). Nicht wieder einbauen,
+    // ohne §9.3 e) zu lesen: die Linie wurde dreimal gebaut und dreimal verworfen.
+    //
+    // Einzug-Skala (V2·L-1, UNVERÄNDERT): Tiefe 1–5 → je eine `einzug`-Stufe
+    // (20px), gedeckelt bei 5 (vorher 3 — tiefe Kodifikationen ZGB/OR verloren ab
+    // Ebene 3 die visuelle Verschachtelung, David-Befund «funktioniert praktisch
+    // nicht»). MOBIL kollabiert der Einzug NICHT auf 0, sondern trägt
+    // `einzug-mobil` (~0.75rem, `pl-einzug-mobil sm:pl-einzug`) → die
+    // Verschachtelung flüstert auch @390 weiter. CLS 0: Einzug = padding.
     const eingerueckt = tiefe > 0 && tiefe <= 5;
     const einzugCls = eingerueckt ? 'pl-einzug-mobil sm:pl-einzug' : '';
     return (
-      <section key={s.id} data-normtext-linie className={`space-y-3 ${guide ? 'border-l border-guide' : ''} ${einzugCls}`}>
+      <section key={s.id} data-normtext-linie className={`space-y-3 ${einzugCls}`}>
         <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)} bereich={sektionMeta.get(s.id)?.bereich} bereichEinzel={sektionMeta.get(s.id)?.einzel ?? false}
           // EID-2 (W2·5d §12): Sektions-Deep-Link zur amtlichen Fassung — nur wenn
           // das EID-1-Sidecar eine Container-eId trägt UND der Erlass eine ELI-
@@ -474,13 +466,11 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
 
   return (
     // `lc-leser`: Scope-Anker für die G2a-Options-CSS (index.css) — die
-    // data-linien/-fussnoten/-verweise-Regeln greifen NUR im Reader, nie im
-    // Norm-Popover der Rechner o. Ä. `data-guide-auto` (U-LINIEN/A8): der
-    // AUFBAU-abhängige Linien-Default 'auto' wertet CSS hieran aus — 'aus' = tiefe
-    // Kodifikation bleibt ruhig (Guide unsichtbar, Einzug bleibt), 'an' = flaches/
-    // mittleres Gesetz zeigt seine EINE Guide-Ebene. Löst den grundart-Kategorie-
-    // Default (K11) ab. `data-grundart` bleibt als semantischer Marker (§5).
-    <div className="lc-leser space-y-5" data-grundart={meta.grundart ?? undefined} data-guide-auto={linien.autoGuide ? 'an' : 'aus'}
+    // data-fussnoten/-verweise-Regeln greifen NUR im Reader, nie im Norm-Popover
+    // der Rechner o. Ä. `data-grundart` bleibt als semantischer Marker (§5).
+    // Das frühere `data-guide-auto` ist mit dem Linien-Rückbau V1 (16.8.2026)
+    // entfallen — es steuerte allein den Auto-Default der Gliederungslinie.
+    <div className="lc-leser space-y-5" data-grundart={meta.grundart ?? undefined}
       // W2·10-UI-NAV/N0c: reale Sticky-Höhe für die .nt-anker-Sprünge. Einzelansicht:
       // Topbar (4rem) + Inhalts-Kopf (2.25rem) — die frühere dritte klebende Such-Zeile
       // (~3rem) entfiel mit A35 (Suchfeld jetzt IM Inhalts-Kopf). Im Pane liegen Topbar/
@@ -513,7 +503,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       <LeserVolltextInhalt
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
-        sektionen={sektionen} ohneGliederung={ohneGliederung} linien={linien} fussnotenAnzahl={fussnotenAnzahl}
+        sektionen={sektionen} ohneGliederung={ohneGliederung} gliederungsTiefe={gliederungsTiefe} fussnotenAnzahl={fussnotenAnzahl}
         meta={meta} internRefs={internRefs} margAnzeige={margAnzeige} kantonSys={kantonSys}
         basisPfad={basisPfad} renderSektion={renderSektion}
         imPane={imPane} istXl={istXl} overlayWurzel={overlayWurzel}

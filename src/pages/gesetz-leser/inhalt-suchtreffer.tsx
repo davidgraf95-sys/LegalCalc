@@ -99,7 +99,7 @@ export function useSuchTreffer({
     const beob = new MutationObserver(() => { lies(); setAnsichtTick((n) => n + 1); });
     beob.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-linien', 'data-verweise'],
+      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-verweise'],
     });
     return () => beob.disconnect();
   }, []);
