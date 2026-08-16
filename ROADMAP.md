@@ -295,8 +295,8 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   · [ ] **Tabellen in Gesetzen lesbar machen** — Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`; Extraktion = Risikopfad ⇒ `QS-GP` + golden byte-gleich, Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1). **Grenze zu `W2·13-KANTONE-K7`** beachten (dort die PDF-Extraktion davor, hier die Darstellung). (fusioniert 15.8., vormals `W2·5j-TABELLEN`; Fahrplan: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18)
   · [ ] **Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: drei Sprachfassungen je Erlass + Synopse-UI; heute ist nur `de` befüllt. Berührt Extraktion (`scripts/normtext`, Risikopfad) ⇒ `QS-GP`-Gegenprüfung Pflicht. (fusioniert 15.8., vormals `W2·6-MEHRSPRACH`; Fahrplan: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13)
  
-- [ ] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
-  <!-- @meta id: W2·5h-GESETZ-UI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+- [~] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
+  <!-- @meta id: W2·5h-GESETZ-UI · status: wip · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
   der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
