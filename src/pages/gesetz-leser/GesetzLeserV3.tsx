@@ -37,7 +37,7 @@ export function GesetzLeserV3({ ebene, schluessel }: { ebene: string; schluessel
     <>
       <div
         data-leser-v3="rahmen"
-        className="mb-3 rounded border border-dashed border-brass-600 px-3 py-1 text-sm text-ink-700"
+        className="mb-3 rounded border border-dashed border-brass-600 px-3 py-1 text-body-s text-ink-700"
       >
         V3-Rahmen (Vorprobe)
       </div>

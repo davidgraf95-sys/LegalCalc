@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { LESER_V3_KEY, leserFlagAuswerten } from '../pages/GesetzLeser';
+import { LESER_V3_KEY, leserFlagAuswerten } from '../pages/gesetz-leser/leserFlag';
 
 // FAHRPLAN-LESER-V3 Kap. 5 (FL-1…FL-3, FL-6) + Risiko R10 «Das Flag leckt».
 //

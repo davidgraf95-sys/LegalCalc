@@ -349,6 +349,39 @@ importiert); dazu das Playwright-Flag-Projekt.
 **Ohne V-0 (F7 entschieden), V-D0 (gelandet) und bestandene Vorprobe V-1…V-3 wird H1 nicht
 begonnen.**
 
+### ✅ Vollzugsvermerk V-1 bis V-3 (16.8.2026, Branch `feat/leser-v3-h1`)
+
+**Protokoll mit allen Ausgaben:** `docs/ux-audit-2026-07/reader/leser-v3-vorprobe.md`.
+
+| Schritt | Ergebnis |
+|---|---|
+| **V-1** | **bestanden.** `gate.sh voll` grün (Exit 0, `golden:vergleich` inbegriffen) · `npm run build` Exit 0 · Leser-/Gesetze-/Split-View-e2e `195 passed` Exit 0. Kein Defekt auf `main`. |
+| **V-2** | **bestanden.** Projekt `leser-v3` gebaut (`playwright.config.ts`, Aktivierung über `storageState`, bestehende Specs unverändert). Rot-Beweis mit leerem Rahmen: `56 failed / 1 passed`, Exit 1 → mit eingehängtem `ArtikelLeser`-Baum: `57 passed`, Exit 0. Zusätzlich `e2e/leser-v3-flag.e2e.ts` als Selbsttest des Projekts (Marker positiv gesehen), ebenfalls einzeln rot gezeigt. |
+| **V-3** | **erhoben, aber nicht tragfähig für den Deckel** — siehe Abweichung unten. |
+
+**Zwei Korrekturen an diesem Fahrplan** (Belege im Protokoll):
+
+- **Kap. 10, Zeile «e2e N»:** «8 bleiben unverändert grün» steht neben einer Aufzählung von
+  **zehn** Namen. Das Flag-Projekt fährt alle zehn. Die Zahl ist beim nächsten Schnitt auf 10 zu
+  korrigieren.
+- **Kap. 12, A-1:** Die Behauptung, `scrollAnker.ts` beschreibe einen nicht auffindbaren
+  localStorage-Spiegel, ist falsch. Die Datei sagt ausdrücklich das Gegenteil
+  (`scrollAnker.ts:134–137`), und der dauerhafte Spiegel existiert und ist greppbar
+  (`lesePosition.ts:54`/`:98`, Schlüssel `lexmetrik-leseposition`). A-1 ist damit erledigt und
+  die Zeile beim nächsten Schnitt zu streichen.
+
+**Abweichung V-3 — der Deckel lässt sich an diesem Repo nicht kalibrieren (wartet auf David).**
+(a) Streichquote: über alle 63 Fahrpläne gibt es nur **n = 2** streng zählbare Fälle einer
+«Rückbau-zuletzt»-Etappe (1 gelandet, 1 offen, 0 still gestrichen). Das ist eine Anekdote, keine
+Rate (§0 Ziff. 3c). Ursache ist ein eigener Befund: **das Repo kennt keinen Feature-Flag-
+Mechanismus** (Kap. 2, Zeile 109) — grosse Umbauten liefen bisher ohne Doppelspur, weshalb R9
+schlicht keine Vorgeschichte hat. (b) Durchsatz: 41 PR-Landungen auf `src/pages/gesetz-leser` in
+4,1 Wochen (≈ 10/Woche), davon ≈ 26 benannte Etappen (≈ 6/Woche) — der 5-PR-Deckel bindet die
+**Bauzeit** also nicht und taugt nur als Abbruch-Schwelle, nicht als Zeitplan. Der nächste
+Verwandte `archiv/FAHRPLAN-STARTSEITE-V3.md` baute die Startseite in **5 PRs direkt am Bestand**
+um — ohne Flag, ohne Parallel-Hülle. Vorschlag: Deckel als Abbruch-Schwelle behalten, H5
+(Flag-Entfernung) aber schon als Abnahmezeile von **H1** mitschreiben statt erst am Ende.
+
 ---
 
 ## 7 · Etappenplan — zwei Stränge

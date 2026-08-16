@@ -69,7 +69,8 @@
    "gesetze-uebersicht-u.e2e.ts",
    "leser-suche-vertrag-b8.e2e.ts",
    "suche-q-fokus-s1-s6.e2e.ts",
-   "verlauf-o1.e2e.ts"
+   "verlauf-o1.e2e.ts",
+   "leser-v3-flag.e2e.ts"
   ],
   "7": [
    "leser-kontext-e4.e2e.ts",
