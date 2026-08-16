@@ -22,7 +22,7 @@ import type { ReactNode } from 'react';
 // ist sie in der Spalte (D/S) und im Bottom-Sheet (H) dasselbe Bauteil.
 
 export function LeserSeitenleiste({
-  uebersicht, suchFeld, baum, baumTitel = 'Gliederung', onAlleAuf, onAlleZu, onAnfang, alleOffen,
+  uebersicht, suchFeld, baum, baumTitel = 'Gliederung', onAlleAuf, onAlleZu, onAnfang, alleOffen, extra,
 }: {
   /** Übersichtsbox (Kap. 4b ①). `null` = noch nicht ladbar ⇒ Zeile entfällt. */
   uebersicht?: ReactNode;
@@ -40,6 +40,9 @@ export function LeserSeitenleiste({
   onAnfang: () => void;
   /** Steuert nur die Beschriftung des einen Knopfes (auf/zu), kein Zustand. */
   alleOffen: boolean;
+  /** Erweiterungspunkt: zusätzliche Blöcke UNTER dem Baum (Kontext-Reiter,
+   *  H3-Panel-Anschluss). Nicht gesetzt ⇒ nichts gerendert, kein Abstand. */
+  extra?: ReactNode;
 }) {
   return (
     // `flex-1 min-h-0` statt `h-full`: der Vorfahre (die klebende Spalte) hat eine
@@ -88,6 +91,7 @@ export function LeserSeitenleiste({
           </div>
         </div>
         <div data-v3-leiste-baum>{baum}</div>
+        {extra && <div data-v3-leiste-extra className="mt-4 border-t border-line pt-3">{extra}</div>}
       </div>
     </div>
   );

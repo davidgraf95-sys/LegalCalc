@@ -38,11 +38,19 @@ function ohneKommentare(quelle: string): string {
     .replace(/\/\*[\s\S]*?\*\//g, ' ');
 }
 
-const RAHMEN = 'src/pages/gesetz-leser/v3/LeserRahmenV3.tsx';
+// Der Adress-Schreiber ist mit dem Fundament-Umbau (16.8.2026) vom Rahmen in
+// den Daten-Adapter gewandert — dorthin, wo auch der Scroll-Spy und die
+// Sprung-Mechanik hängen. Die Sonde zieht mit; ihre Aussage ist unverändert.
+const RAHMEN = 'src/pages/gesetz-leser/v3/leserV3Modell.ts';
 // Die übrigen V3-Dateien sind reine Darstellung (§3) und dürfen die Adresse
 // GAR NICHT anfassen. `readFileSync` wirft, wenn eine umbenannt wird — die
 // Sonde wird dann rot und nicht still grün (§6.7 b).
 const V3_REIN = [
+  'src/pages/gesetz-leser/v3/LeserRahmenV3.tsx',
+  'src/pages/gesetz-leser/v3/LeserLesespalte.tsx',
+  'src/pages/gesetz-leser/v3/LeserGliederung.tsx',
+  'src/pages/gesetz-leser/v3/LeserV3Kontext.ts',
+  'src/pages/gesetz-leser/v3/erlassAnsicht.ts',
   'src/pages/gesetz-leser/v3/LeserKopf.tsx',
   'src/pages/gesetz-leser/v3/LeserSeitenleiste.tsx',
   'src/pages/gesetz-leser/v3/SuchSprungFeld.tsx',
@@ -96,12 +104,12 @@ describe('V3-Hülle: der EINE erlaubte Adress-Schreiber (LM-202)', () => {
 
 describe('V3-Hülle: der Kern bleibt unangetastet (Treue-Grenze, Kap. 1.3)', () => {
   it('die Hülle rendert den Kern, sie ersetzt ihn nicht', () => {
-    const quelle = LIES(RAHMEN);
     // Positiv: der Lesekörper kommt aus `ArtikelLeser` — nicht aus einer
     // eigenen V3-Fassung. Fiele diese Zeile, wäre der Pixelvergleich PX die
     // einzige verbleibende Wache, und der misst erst im Browser.
-    expect(traegt(quelle, /<ArtikelLeser key=\{e\.id\}/), 'V3 rendert den Kern nicht mehr').toBe(true);
-    expect(traegt(quelle, /id="lc-lesespalte" className="mx-auto w-full max-w-normtext"/),
+    const spalte = LIES('src/pages/gesetz-leser/v3/LeserLesespalte.tsx');
+    expect(traegt(spalte, /<ArtikelLeser key=\{e\.id\}/), 'V3 rendert den Kern nicht mehr').toBe(true);
+    expect(traegt(spalte, /id="lc-lesespalte" className="mx-auto w-full max-w-normtext"/),
       'Lesespalte weicht von der Ist-Geometrie ab (A37-Lesemass)').toBe(true);
   });
 

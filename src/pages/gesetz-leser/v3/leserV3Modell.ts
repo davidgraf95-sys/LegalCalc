@@ -1,0 +1,387 @@
+import { useCallback, useEffect, useMemo, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { aktualisiereTabArtikel } from '../../../lib/tabs';
+import { baueGliederungsbaum, type CurrencyMap, type ErlassKopf, type Sektion, type StrukturMap } from '../../../lib/normtext/browse';
+import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
+import type { NormSnapshot } from '../../../lib/normtext/typen';
+import type { KantonSystematik } from '../../../lib/normtext/systematik';
+import type { InternRefs } from '../../../components/NormText';
+import type { LeserTreffer } from '../leserSuche';
+import { strukturTiefe } from '../strukturTiefe';
+import { pfadZu } from '../helpers';
+import { paneRoot, findeArt, kuratiereTocSektionen } from '../berechnungen';
+import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
+import { brotkrume } from './erlassAnsicht';
+import { formatiereDatum } from '../helpers';
+// ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
+// Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
+// genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
+import { useLeserDaten, useLeserSprungSpy, loeseSpyNachlauf } from '../inhalt-hooks';
+import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from '../inhalt-zustand';
+import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-ableitungen';
+import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
+import { useWeiterlesen } from '../inhalt-weiterlesen';
+import { useSuchTreffer } from '../inhalt-suchtreffer';
+import type { LesePosition } from '../lesePosition';
+
+// ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
+//
+// WAS DIESE DATEI IST: die **einzige** Stelle, an der die V3-Hülle die geteilte
+// Leser-Maschinerie berührt. Sie ruft die Hooks, verdrahtet ihre Refs und
+// liefert ein **typisiertes Modell** (`LeserV3Modell`) heraus. Kein Markup, kein
+// Layout, keine Entscheidung über Aussehen.
+//
+// WARUM ES SIE GIBT (Fundament-Auflage 1, Auftrag David 16.8.2026):
+//
+//  ① EINE NAHT STATT ACHT. Ohne sie importierte jede V3-Komponente selbst aus
+//     `../inhalt-*` — und H5, das die Ist-Hülle löscht, müsste in acht Dateien
+//     suchen, was davon geteilte Maschinerie und was Ist-Hülle ist. Jetzt steht
+//     die Antwort in einem Import-Block, den man in zehn Sekunden liest.
+//  ② DIE NAMEN LÜGEN, DIE ABHÄNGIGKEIT NICHT. Die Module heissen `inhalt-*`,
+//     weil der §6.6-Split sie 2026 aus `inhalt.tsx` herausgeschnitten hat. Sie
+//     sind aber **nicht** die Ist-Hülle: sie enthalten Datenladung, Scroll-Spy,
+//     Sprung-Mechanik und Suchtreffer — Dinge, die BEIDE Hüllen brauchen. Die
+//     Ist-HÜLLE ist `inhalt.tsx` (Orchestrierung) und `inhalt-volltext.tsx`
+//     (Markup) samt Menüs; **auf keines von beiden zeigt V3**, und die Sonde
+//     `src/tests/leser-v3-adresse.test.ts` hält das fest. Der saubere Endzustand
+//     ist die Umbenennung der geteilten Module in einen neutralen Namensraum —
+//     sie gehört zu H5, wo die Ist-Hülle ohnehin fällt, und nicht in H1, wo sie
+//     eine eingefrorene Datei (FL-4) anfassen müsste.
+//  ③ TESTBARE GRENZE. Was V3 an Daten hat, steht als ein Interface da. Ein
+//     Architektur-Prüfer muss nicht den Rahmen lesen, um es zu wissen.
+//
+// WAS BEWUSST **NICHT** HIER PASSIERT: die Hook-Reihenfolge ist byte-gleich zur
+// Ist-Hülle übernommen — nicht aus Bequemlichkeit, sondern weil diese Hooks
+// geteilte Refs und Timer über ihre Reihenfolge koppeln (der §6.6-Split hat das
+// ausdrücklich als Bedingung festgehalten). Eine „aufgeräumte" Reihenfolge wäre
+// keine Verbesserung, sondern eine stille Verhaltensänderung (§6).
+
+/** Was die V3-Hülle über den geöffneten Erlass weiss. Vollständig — es gibt
+ *  keinen zweiten Kanal, und keine Komponente holt Daten selbst nach. */
+export interface LeserV3Modell {
+  /** `null`, solange der Snapshot lädt bzw. eine frühe Ansicht greift. */
+  erlass: BrowseErlass | null;
+  eintraege: NormSnapshot[] | null;
+  struktur: StrukturMap | null;
+  kopf: ErlassKopf | null;
+  currency: CurrencyMap | null;
+  fehler: boolean;
+  manifest: ReturnType<typeof useLeserZustand>['manifest'];
+  kantonSys: Record<string, KantonSystematik>;
+
+  /** Amtliche Gliederung: voller Baum für die Lesespalte … */
+  sektionen: Sektion[];
+  /** … und die Artikel ohne amtliche Sektion (Vorspann/Anhang). */
+  ohneGliederung: NormSnapshot[];
+  /** Das kuratierte Gliederungs-MODELL (Modus, Zählwerte, Anhang-Ast). */
+  gliederung: GliederungsModell;
+  /** Alle klappbaren Knoten-Ids — Eingabe für «alles auf/zu». */
+  alleKnotenIds: string[];
+
+  gliederungsTiefe: number;
+  fussnotenAnzahl: number | null;
+  kantonErlassAnzahl: number | null;
+  nichtKonsolidiert: boolean;
+  vorher: BrowseErlass | null;
+  nachher: BrowseErlass | null;
+
+  /** Artikel-Ableitungen für den Lesekörper (Positionen, Marginalien, Labels). */
+  sekPos: Map<string, number>;
+  artIndex: Map<string, number>;
+  sektionMeta: ReturnType<typeof useArtikelAbleitungen>['sektionMeta'];
+  margAnzeige: Map<string, { teile: string[]; ab: number }>;
+  internRefs: InternRefs | undefined;
+  // Die drei Artikel-Beigaben werden aus dem GETEILTEN Zustand abgeleitet
+  // statt hier neu typisiert: eine zweite Typ-Definition für dieselbe Sache
+  // liefe unbemerkt auseinander (§5).
+  bezuegeFuer: ReturnType<typeof useLeserZustand>['bezuegeFuer'];
+  revisionFuer: ReturnType<typeof useLeserZustand>['revisionFuer'];
+  historieFuer: ReturnType<typeof useLeserZustand>['historieFuer'];
+
+  /** Leseposition (Scroll-Spy) und Klapp-Zustand des Baums. */
+  aktArtikel: string | null;
+  aktivToken: string | null;
+  artTokens: string[];
+  aktivIds: string[];
+  offen: Record<string, boolean>;
+  setOffen: Dispatch<SetStateAction<Record<string, boolean>>>;
+  tocBaum: Record<string, boolean>;
+  setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
+  tocToggleGruppe: ReturnType<typeof useLeserTocZustand>['tocToggleGruppe'];
+
+  /** Sichtbarkeit der Gliederung: Spalte (D/S) bzw. Sheet (H). */
+  tocOffen: boolean;
+  setTocOffen: Dispatch<SetStateAction<boolean>>;
+  tocAuf: boolean;
+  setTocAuf: Dispatch<SetStateAction<boolean>>;
+
+  /** In-Gesetz-Suche: EIN Feld, ein Zustand. */
+  suche: string;
+  setSuche: Dispatch<SetStateAction<string>>;
+  sucheAktiv: boolean;
+  sucheBegriff: string;
+  treffer: LeserTreffer[];
+  fundstellen: number;
+  fussnotenAus: boolean;
+  trefferPos: number;
+  trefferAktivToken: string | null;
+  springeZuFundstelle?: (delta: number) => void;
+  springeZuTreffer?: (token: string) => void;
+  /** «Art. 429» → Token. `undefined`, solange der Snapshot fehlt. */
+  loeseArtikel?: (eingabe: string) => string | null;
+  siePfad: string[];
+  siePfadArtikel: string | null;
+
+  /** Sprünge. Beide sind die EINZIGEN Bewegungs-Auslöser der Hülle. */
+  springeZuArtikel: (token: string) => void;
+  springeZuSektion: ReturnType<typeof useSektionSprung>;
+  zumAnfang: () => void;
+
+  /** «Weiterlesen»-Angebot (R4) und Basispfad für Permalinks. */
+  weiterlesen: LesePosition | null;
+  weiterlesenSprung: () => void;
+  weiterlesenVerwerfen: () => void;
+  basisPfad: string;
+
+  /** Flüchtige Bestätigung nach «In neuem Reiter». */
+  reiterToast: boolean;
+  setReiterToast: Dispatch<SetStateAction<boolean>>;
+
+  /**
+   * Die Refs GEBÜNDELT — bewusst nicht als lose Felder neben den Daten.
+   *
+   * Zwei Gründe, und der erste ist gemessen: die Lint-Regel `react-hooks/refs`
+   * kann einem flachen Objekt nicht ansehen, welches Feld ein Ref ist, und
+   * meldete darum JEDEN Zugriff auf das Modell als «Ref-Zugriff im Render»
+   * (10 Fehler, 16.8.2026). Der zweite ist der eigentliche: Daten und
+   * veränderliche Zeiger sind zwei verschiedene Dinge, und wer sie mischt,
+   * lädt genau die Verwechslung ein, vor der die Regel warnt.
+   */
+  refs: {
+    /** Registrierte Sektions-Elemente (Sprungziele des Baums). */
+    sekRef: MutableRefObject<Map<string, HTMLElement>>;
+    /** Dialog-Ref des Bottom-Sheets (Fokusfang, Esc, Rückgabe). */
+    tocDrawerRef: RefObject<HTMLDivElement | null>;
+    /** Wurzel der Lesespalte — Beobachtungsraum des Treffer-Highlights. */
+    leseRef: RefObject<HTMLDivElement | null>;
+    /** Timer der «In neuem Reiter»-Bestätigung. */
+    reiterToastTimerRef: MutableRefObject<number | null>;
+  };
+}
+
+/** Nur was der Rahmen zusätzlich zum Modell braucht, um den Kontext zu füllen. */
+export interface LeserV3Umgebung {
+  imPane: boolean;
+  istSekundaer: boolean;
+  wurzel: RefObject<HTMLElement | null> | null;
+  overlayWurzel: RefObject<HTMLElement | null> | null;
+  istXl: boolean;
+}
+
+export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schluessel: string }):
+{ modell: LeserV3Modell; umgebung: LeserV3Umgebung } {
+  const basisPfad = `/gesetze/${ebene}/${encodeURIComponent(schluessel)}`;
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // ── Zustand (drei kontigue Blöcke, Reihenfolge wie in der Ist-Hülle) ───────
+  const {
+    erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
+    manifest, setManifest, currency, setCurrency,
+    bezuegeFuer, revisionFuer, historieFuer, nichtKonsolidiert,
+    // Als `…Ref` benannt: die Lint-Regel `react-hooks/immutability` erkennt
+    // einen Ref am Namen, und dieser wird beschrieben.
+    fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer: reiterToastTimerRef,
+    suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
+  } = useLeserZustand();
+  const {
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
+  } = useLeserTocZustand();
+  const {
+    tocOffen, setTocOffen, istXl, imPane, wurzel, overlayWurzel, istSekundaer,
+    meldeInhaltsKopf, aktArtikel, setAktArtikel, kantonSys, setKantonSys,
+    sekRefs, tocDrawerRef, tabArtikelTimer, aktArtikelTimer, tocBaumTimer, tocTouchRef,
+  } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
+
+  useLeserDaten({
+    ebene, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
+    setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
+  });
+
+  // ── Ableitungen ───────────────────────────────────────────────────────────
+  const { sektionen, ohneGliederung } = useMemo(
+    () => (eintraege ? baueGliederungsbaum(eintraege, struktur) : { sektionen: [], ohneGliederung: [] }),
+    [eintraege, struktur],
+  );
+  const tocSektionen = useMemo(() => kuratiereTocSektionen(sektionen), [sektionen]);
+  const gliederung = useMemo(
+    () => baueGliederungsModell({
+      sektionen: tocSektionen, ohneGliederung, eintraege: eintraege ?? [], struktur,
+      startSichtbarGo: true,
+    }),
+    [tocSektionen, ohneGliederung, eintraege, struktur],
+  );
+  useEffect(() => {
+    if (eintraege && gliederung.leisteStartetZu) setTocOffen(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [erlass?.key, eintraege, gliederung.leisteStartetZu]);
+
+  const alleKnotenIds = useMemo(() => {
+    const ids: string[] = [];
+    const geh = (knoten: readonly GliederungsKnoten[]) => {
+      for (const k of knoten) { if (k.kinder.length > 0) { ids.push(k.id); geh(k.kinder); } }
+    };
+    geh(gliederung.knoten);
+    return ids;
+  }, [gliederung.knoten]);
+
+  const kantonErlassAnzahl = useMemo<number | null>(() => {
+    const kanton = erlass?.kanton;
+    if (!kanton || !manifest) return null;
+    return manifest.erlasse.reduce((n, e) => (e.kanton === kanton ? n + 1 : n), 0);
+  }, [erlass?.kanton, manifest]);
+  const gliederungsTiefe = useMemo(() => strukturTiefe(struktur), [struktur]);
+  const fussnotenAnzahl = useMemo<number | null>(() => {
+    if (!struktur) return null;
+    let n = 0;
+    for (const v of Object.values(struktur)) n += v?.fussnoten?.length ?? 0;
+    return n;
+  }, [struktur]);
+
+  // ── Meldung an die App-Leiste (Ortsangabe, KEINE Bedienelemente) ──────────
+  // V3 meldet Brotkrume · Stand · laufenden Artikel und sonst nichts: die
+  // Bedienung lebt in der eigenen Kopfzeile und in der Seitenleiste. Sie
+  // zusätzlich zu melden hiesse, dieselbe Funktion an zwei Orten anzubieten
+  // (§5) — und im Pane gäbe es sie dort ohnehin nicht (der PaneKopf trägt keine
+  // Slots), womit genau die Kopf-Asymmetrie zurückkäme, die H1 beseitigt.
+  useEffect(() => {
+    if (!erlass) return;
+    meldeInhaltsKopf({
+      breadcrumb: brotkrume(erlass),
+      stand: erlass.stand ? formatiereDatum(erlass.stand) : null,
+      artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
+    });
+  }, [erlass, aktArtikel, meldeInhaltsKopf]);
+
+  const { sekPos, artIndex, sektionMeta, artLabelByToken, margAnzeige } = useArtikelAbleitungen({
+    sektionen, eintraege, struktur,
+  });
+
+  // ── Artikel-Sprung: der EINE erlaubte Adress-Schreiber (LM-202) ───────────
+  // `replaceState`, nie `pushState`, nie eine direkte Hash-Zuweisung; und nur
+  // aus dem primären Pane (die Rolle unterscheidet, nicht `imPane` — B1-Falle).
+  // Quellensonde: `src/tests/leser-v3-adresse.test.ts`.
+  const springeZuArtikel = useCallback((token: string) => {
+    scrollVorSucheRef.current = null;
+    setSuche('');
+    const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    if (ids.length) {
+      setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
+      for (const id of ids) manuellZuRef.current.delete(id);
+      if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
+      setAktivIds(ids);
+      setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((id) => [id, true])) }));
+      jumpLockRef.current = true;
+    } else {
+      // F2: Artikel ohne amtliche Sektion — der synthetische Pfad kommt aus
+      // demselben Modell, das auch der Scroll-Spy auflöst (§5).
+      const synth = findeSynthPfad(gliederung.knoten, token);
+      if (synth) {
+        if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
+        setAktivIds(synth);
+      }
+    }
+    if (typeof window === 'undefined') return;
+    if (!istSekundaer) {
+      const ziel = `${basisPfad}${window.location.search}#art-${token}`;
+      window.history.replaceState(null, '', ziel);
+      aktualisiereTabArtikel(ziel);
+    }
+    const scrolle = () => {
+      const el = findeArt(paneRoot(imPane, wurzel), token);
+      if (!el) return;
+      // R1: an den oberen Lese-Rand (`block:'start'` + `.nt-anker`-scroll-margin
+      // aus `--nt-stick`). In V3 rechnet `--nt-stick` die eigene Kopfhöhe mit —
+      // der Sprung landet unter der klebenden Zeile, nicht dahinter.
+      el.scrollIntoView({ block: 'start', behavior: 'auto' });
+      el.classList.add('lc-ziel-blink');
+      window.setTimeout(() => el.classList.remove('lc-ziel-blink'), 2400);
+    };
+    window.requestAnimationFrame(() => window.setTimeout(() => {
+      scrolle();
+      window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
+    }, 110));
+    // Deps byte-gleich zur Ist-Hülle (Setter/Refs sind stabil, Herleitung dort).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, gliederung.knoten]);
+
+  const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
+  const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
+    erlass, eintraege, istSekundaer, locationHash: location.hash, aktArtikel, aktivToken, springeZuArtikel,
+  });
+
+  const springeZuSektion = useSektionSprung({
+    sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
+    setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
+  });
+  const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
+
+  useLeserSprungSpy({
+    ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
+    paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad,
+    offen, sucheDebounced, aktivIds, tocBaum,
+    gliederungsKnoten: gliederung.knoten, umhaengPraefix: gliederung.umhaengPraefix,
+    istXl, tocOffen, artLabelByToken, setOffen, setAktArtikel, setAktivIds, setTocBaum,
+    refs: {
+      jumpLock: jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
+      tocBaumTimer, tabArtikelTimer, aktArtikelTimer, tocTouchRef,
+    },
+  });
+
+  // ── Suche & Treffer ───────────────────────────────────────────────────────
+  const sucheTrim = sucheDebounced.trim().toLowerCase();
+  const { vorher, nachher } = useNachbarn({ manifest, erlass });
+  const sucheFeldLeer = suche.trim() === '';
+  const {
+    leseRef, treffer, fundstellen, fussnotenAus, trefferPos, aktivToken: trefferAktivToken,
+    springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
+  } = useSuchTreffer({
+    erlassKey: erlass?.key ?? null, eintraege, struktur,
+    sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
+    offen, setOffen, imPane, wurzel,
+  });
+
+  // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,
+  // den auch der Artikel-Sprung auflöst (§5): im Pane der Pane-Scroller, sonst
+  // das Fenster.
+  const zumAnfang = useCallback(() => {
+    const paneEl = paneRoot(imPane, wurzel);
+    if (paneEl) paneEl.scrollTo({ top: 0, behavior: 'auto' });
+    else window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [imPane, wurzel]);
+
+  const sucheBegriff = sucheDebounced.trim();
+
+  return {
+    modell: {
+      erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys,
+      sektionen, ohneGliederung, gliederung, alleKnotenIds,
+      gliederungsTiefe, fussnotenAnzahl, kantonErlassAnzahl, nichtKonsolidiert, vorher, nachher,
+      sekPos, artIndex, sektionMeta, margAnzeige, internRefs,
+      bezuegeFuer, revisionFuer, historieFuer,
+      aktArtikel, aktivToken, artTokens, aktivIds, offen, setOffen, tocBaum, setTocBaum,
+      tocToggleGruppe,
+      tocOffen, setTocOffen, tocAuf, setTocAuf,
+      suche, setSuche, sucheAktiv: sucheBegriff !== '', sucheBegriff,
+      treffer, fundstellen, fussnotenAus, trefferPos, trefferAktivToken,
+      springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
+      springeZuArtikel, springeZuSektion, zumAnfang,
+      weiterlesen, weiterlesenSprung, weiterlesenVerwerfen, basisPfad,
+      reiterToast, setReiterToast,
+      refs: { sekRef: sekRefs, tocDrawerRef, leseRef, reiterToastTimerRef },
+    },
+    umgebung: { imPane, istSekundaer, wurzel, overlayWurzel, istXl },
+  };
+}

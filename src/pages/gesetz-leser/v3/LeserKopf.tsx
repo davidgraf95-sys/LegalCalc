@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
+import type { ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
+import { ebeneAngabe } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
@@ -31,7 +33,7 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // hier führt zur Gesetzes-Übersicht — in einem Pane pane-lokal, weil jedes
 // Pane seinen eigenen Navigator hat. Der Accessible-Name sagt es aus (§8).
 
-export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf }: {
+export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf, panelOeffner }: {
   erlass: BrowseErlass;
   /** Laufender Artikel aus dem bestehenden Scroll-Spy («Art. 429»). */
   aktArtikel: string | null;
@@ -40,13 +42,16 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
   /** ☰-Öffner der Gliederung — der Rahmen baut ihn, wenn die Seitenleiste
    *  gerade NICHT als Spalte steht. `undefined` = die Gliederung ist sichtbar,
    *  ein Öffner wäre ein Knopf ohne Wirkung. */
-  gliederungKnopf?: React.ReactNode;
+  gliederungKnopf?: ReactNode;
+  /** H3 — Öffner des Rechtsprechungs-Panels («⚖ 14 Entscheide →»). Leer
+   *  gelassen kostet er nichts: kein Platzhalter, keine reservierte Fläche. */
+  panelOeffner?: ReactNode;
 }) {
   const navigate = useNavigate();
   const el = kopfElemente(stufe);
-  const ebeneLabel = erlass.rechtsgebiet === 'international'
-    ? 'International'
-    : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`;
+  // Ebene-Beschriftung aus dem Datenmodell, nicht aus `if (bund)` — die eine
+  // Ableitung steht in `./erlassAnsicht` (Fundament-Auflage 2).
+  const ebene = ebeneAngabe(erlass);
 
   return (
     // `sticky top` aus `--leser-v3-kopf-top`: der Rahmen legt den Wert EINMAL
@@ -71,7 +76,7 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
           )}
           <span data-v3-kopf-kuerzel className="shrink-0 font-medium text-ink-800">{erlass.kuerzel}</span>
           {el.volltitel && (
-            <span className="min-w-0 truncate text-ink-500" title={`${erlass.titel} · ${ebeneLabel}`}>{erlass.titel}</span>
+            <span className="min-w-0 truncate text-ink-500" title={`${erlass.titel} · ${ebene.label}`}>{erlass.titel}</span>
           )}
           {/* Der laufende Artikel fällt NIE (Kap. 4a) — darum `shrink-0`: beim
               Engerwerden gibt der Volltitel nach, nie die genauere Angabe.
@@ -89,6 +94,7 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
             davon ≤ 2 reine Icons». Ort + Ansicht + ✕ = 3; ☰ tritt nur hinzu,
             wenn die Gliederung nicht ohnehin sichtbar ist. */}
         <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
+          {panelOeffner}
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl} />
           <button type="button" onClick={() => navigate('/gesetze')}
