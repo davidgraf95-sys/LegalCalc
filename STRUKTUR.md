@@ -30,6 +30,13 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 16.8.2026 — W2·5h-GESETZ-UI abgeschlossen: Gliederungslinie im Leser ersatzlos entfernt (V1, PR #530)
+
+- **Gebaut (1 lex-bau, 2 lex-pruefung):** Guide-Mechanik komplett zurückgebaut (Entscheid David 13.8. «linien ganz entfernen»): `linienAufbau.ts`→`strukturTiefe.ts` (Kennzahl über 1 420 Sidecars identisch), Schalter «Linien» + Feld `linien` weg, CSS/Tailwind-Token `guide` weg, Linien-Kanon Teil B gestrichen (§6.7, Teil A rot-geprobt), Reglement §4b/§4b-A/§4c aufgehoben; Wächter-Spec `leser-ohne-gliederungslinie` neu. Vorher/Nachher-Beweis `docs/ux-audit-2026-07/reader/linien-rueckbau-2026-08-16/` (Prüfer-Korrektur: 1 CSS-px Horizontalverschiebung, nicht «layout-neutral»). Merge `1d571c6ed`, Dach-Schritt done (letzte Position).
+- **Tore:** gate grün · golden 256 byte-gleich · e2e voll 529/531 (2 Flakes im Einzellauf grün) · CI 15/15 · kein Risikopfad.
+- **§17-Wurzel-Fix:** Auto-Buchung scheiterte an `check:plan` («@queue-ID ist done») → `plan:set status=done` räumt die eigene ID jetzt selbst aus der `@queue` (`scripts/plan/set.ts` + 3 Tests). Hand-Buchung im Sammel-Push.
+- **Offen:** nichts für David; Nebenfund Prüfer: Wächter-Spec blind für Linien via `::before`/`box-shadow` (niedrig, nicht gebaut).
+
 ## Session 15.8.2026 — BAUPLAN-UMBAU: lebendige Specs, Gross-Schnitt, Doku-Diät (PR #507)
 
 **QS-EFFIZIENZ · BAUPLAN-UMBAU (David 15.8.) komplett; 8 Unteragenten (3 Recherche, 2 Bau, 3 Gegenprüfung).** Messen vor Handeln: SotA-Web-Recherche (`bibliothek/betrieb/agenten-bauplanung-sota-2026-08-15.md`) + Repo-Inventar + Messdaten (Kern-Beleg: 51 % Doku-Commits seit 1.8. vs. 12,5 % Produkt-Code; fahrplaene/ 16 015 Zeilen).

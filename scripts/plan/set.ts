@@ -77,6 +77,27 @@ export function setField(md: string, id: string, feld: string, wert: string): st
       zeilen[idx] = serializeEtikett({ ...neu, blocker: null }, indent);
       console.error(`Hinweis: blocker "${neu.blocker}" bei ${id} mit entfernt (status ready duldet keinen blocker).`);
     }
+    // §17-Wurzel-Fix (Anlass 16.8.2026, PR #530): Die Auto-Buchung
+    // (`plan-buchung.yml`) setzte `W2·5h-GESETZ-UI status=done`, liess die ID
+    // aber in der `@queue` stehen — check.ts («@queue-ID ist done — veraltete
+    // Steuerung») machte den Lauf rot, die Buchung fiel aus, Hand-Nachzug nötig.
+    // Ein done-Schritt hat in der Reihenfolge nichts mehr zu suchen; wer den
+    // Status schliesst, räumt die Queue mit — sonst scheitert JEDE Auto-Buchung
+    // eines Queue-Schritts am eigenen Tor. Nur die @queue-Zeile, nur die eine ID.
+    if (neu.status === 'done') {
+      const qIdx = zeilen.findIndex((z) => /^\s*<!-- @queue:/.test(z));
+      if (qIdx >= 0) {
+        const m = zeilen[qIdx].match(/^(\s*<!-- @queue:\s*)(.*?)(\s*-->\s*)$/);
+        if (m) {
+          const ids = m[2].split(',').map((s) => s.trim()).filter(Boolean);
+          if (ids.includes(id)) {
+            const rest = ids.filter((q) => q !== id);
+            zeilen[qIdx] = `${m[1]}${rest.join(', ')}${m[3]}`;
+            console.error(`Hinweis: ${id} aus @queue entfernt (done-Schritt steuert keine Reihenfolge mehr).`);
+          }
+        }
+      }
+    }
   }
   return zeilen.join('\n');
 }

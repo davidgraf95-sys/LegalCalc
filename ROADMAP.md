@@ -140,7 +140,7 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   - [ ] Verdikt-Prüfung vor dem Push (lokaler pre-push-Hook) — spart den 11-Minuten-CI-Umweg; reine Prüflogik, einmal rot zeigen (§6.7). §3.3.
   - [ ] Vier Härtungen aus Gegenprüfungen: (a) fedlex-Extraktionsschicht Risiko-klassieren; (b) `leakErkannt` ohne Konsument; (c) `trenneInterneTitel` unterläuft `PARTEI_RE`; (d) `check-merge-schutz.ts` diffs ohne `-z`/`--no-renames`. **b/c Risikopfad ⇒ Gegenprüfung**; je Punkt Rot-Beweis (§6.7). §3.6.
 - **Automatik-Gesundheit** *(QS-AUTOMATIK, `[OF]`)*. Läuft unsere Automatik wirklich, und würde sie
-  <!-- @meta id: QS-AUTOMATIK · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, scripts/datenhaltung/check-turso-frische.ts, scripts/check-ci-laeufe.ts, scripts/check-tor-paritaet.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
+  <!-- @meta id: QS-AUTOMATIK · status: wip · blocker: null · dep: [] · kollision: [.github/workflows, scripts/datenhaltung/check-turso-frische.ts, scripts/check-ci-laeufe.ts, scripts/check-tor-paritaet.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   scheitern können? Offen: Turso-Wächter-Abdeckung + Wachstums-Schwellen.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §1.
   - [x] Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde — gebaut 15.8. (`npm run bericht:automatik`, check-ci-laeufe.ts --bericht; Rot-Beweis mit synthetischem Waisen-Worktree; Spec-Schärfung: «Diff leer» allein reicht nicht, zusätzlich «nichts uncommittet»). §3.1.
@@ -237,7 +237,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 > `groesse: S|M|L` (S nur gebündelt nehmen · M sessionfüllend · L vorher schneiden — Schätzung,
 > kein Tor-Kriterium).
 
-<!-- @queue: W2·10-UI-NAV, W2·5h-GESETZ-UI, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·10-UI-NAV, W2·13-KANTONE, W2·6b-MAT-FINMA -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Gequeuete Querschnitt-Schritte steigen in die Hauptreihenfolge auf (Entscheid David 8.8.2026,
@@ -295,8 +295,8 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   · [ ] **Tabellen in Gesetzen lesbar machen** — Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`; Extraktion = Risikopfad ⇒ `QS-GP` + golden byte-gleich, Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1). **Grenze zu `W2·13-KANTONE-K7`** beachten (dort die PDF-Extraktion davor, hier die Darstellung). (fusioniert 15.8., vormals `W2·5j-TABELLEN`; Fahrplan: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18)
   · [ ] **Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: drei Sprachfassungen je Erlass + Synopse-UI; heute ist nur `de` befüllt. Berührt Extraktion (`scripts/normtext`, Risikopfad) ⇒ `QS-GP`-Gegenprüfung Pflicht. (fusioniert 15.8., vormals `W2·6-MEHRSPRACH`; Fahrplan: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13)
  
-- [~] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
-  <!-- @meta id: W2·5h-GESETZ-UI · status: wip · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+- [x] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
+  <!-- @meta id: W2·5h-GESETZ-UI · status: done · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
   **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
   der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
