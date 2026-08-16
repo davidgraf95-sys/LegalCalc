@@ -113,10 +113,20 @@ test('S3/F5: nicht konsolidierte Änderung steht im Klartext im Kopf (STPO)', as
   await expect(header.getByText(/massgeblich ist die amtliche Fassung/)).toBeVisible();
 });
 
-// Gegenprobe: ein Erlass OHNE offene Konsolidierung behauptet nichts Beruhigendes
-// (§8 — «keine Warnung» heisst auch «noch nicht bekannt»).
-test('S3/§8: ohne offene Konsolidierung kein Warnsatz (OR)', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/OR');
+// Gegenprobe zum §7-Stichtagsfilter, im echten Browser. BV ist der scharfe Fall:
+// es TRÄGT den `nichtKonsolidiert`-Marker, aber für eine Änderung, die erst
+// 2029 in Kraft tritt. Es darf darum KEINE Warnung zeigen — «Fedlex hat eine
+// seit 01.01.2029 geltende Änderung noch nicht eingearbeitet» wäre eine falsche
+// Tatsachenbehauptung (§1/§8). Angekündigtes trägt stattdessen sein eigenes,
+// korrektes Wortfeld «nächste Fassung ab …», das der BV-Test oben prüft.
+//
+// (Zuerst stand hier OR. Das war ein Fehlgriff: OR ist mit 2038 Artikeln der
+// schwerste Snapshot im Bestand, der Lade-Helfer lief unter Parallellast in
+// 2 von 5 Läufen in den Timeout. Kein Timeout hochgesetzt, sondern der Fall
+// gewechselt — BV ist leichter, in dieser Spec ohnehin schon geladen UND
+// beweist mehr als OR es konnte, §17.)
+test('S3/§7: künftig in Kraft tretende Änderung erzeugt KEINE Warnung (BV)', async ({ page }) => {
+  await warteReader(page, '/gesetze/bund/BV');
   const header = page.locator('.lc-leser > header');
   await expect(header.getByText(/noch nicht in den Text eingearbeitet/)).toHaveCount(0);
   await expect(header.getByText(/Snapshot — massgeblich ist die amtliche Fassung/)).toBeVisible();

@@ -317,7 +317,7 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **H5 Löschung** — alte Hülle raus (Streich-Massstab aufraeumen.md §3, Beweis vor Löschung), Zielzahlen Kap. 10. Kap. 7.
   - [ ] **S1 Historie-Modell** — «Änderungsvermerke: an/aus», bei «aus» keine Spur im Lesetext (Sichtbarkeits-Wächter §8) — **wartet auf F1/F2**. Kap. 7.
   - [ ] **S2 Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
-  - [ ] **S3 Erlass-Kopf + Standausweis-Wortlaut** — Fakten/Status/Aktionen getrennt, «gegen Fedlex-Konsolidierung geprüft am …» (**F5**; Pos. 11 geklärt: Fedlex selbst nicht konsolidiert). Kap. 7.
+  - [x] **S3 Erlass-Kopf + Standausweis-Wortlaut** *(gebaut 16.8.2026, Branch `feat/leser-v3-s3`; Belege docs/ux-audit-2026-07/reader/leser-v3-s3/)* — Fakten/Status/Aktionen getrennt, «gegen Fedlex-Konsolidierung geprüft am …» (**F5**; Pos. 11 geklärt: Fedlex selbst nicht konsolidiert). Kap. 7.
   - [ ] **S4 Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht). Kap. 7.
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** —
   **Risikopfad** (`scripts/normtext`) ⇒ Gegenprüfung; **golden-Re-Bless erwartet** (additiv).

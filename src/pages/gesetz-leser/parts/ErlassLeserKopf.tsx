@@ -145,10 +145,10 @@ export function ErlassLeserKopf({
           Reservierungen, weil sich die Zeilen den Platz teilen können — der
           Warnfall (lang, 5 von 227 Erlassen) trifft fast immer auf einen
           Standausweis, der auf derselben Breite kürzer ausfällt.
-          Die Höhe ist gemessen kalibriert (Token `min-h-kopf-stand`,
-          tailwind.config.js), nicht geschätzt; unterhalb `sm` braucht es mehr
-          Zeilen, weil dieselben Sätze schmaler umbrechen. */}
-      <div className="min-h-kopf-stand sm:min-h-kopf-stand-sm space-y-1">
+          Die Höhe ist GEMESSEN kalibriert (Tokens `kopf-stand*` in
+          tailwind.config.js — dort stehen die vier Fenster-Werte samt Messfall),
+          nicht geschätzt: schmal brechen dieselben Sätze über mehr Zeilen. */}
+      <div className="min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md xl:min-h-kopf-stand-xl space-y-1">
         {stand.length > 0 && (
           <p className="text-xs leading-snug text-ink-500">
             {stand.map((s, i) => (

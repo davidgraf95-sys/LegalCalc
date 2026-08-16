@@ -234,7 +234,7 @@ describe('S3 — Kantons-Probe (Bund-Fokus, «bricht nicht»)', () => {
     // Der Kopf steht trotzdem vollständig: Titel, Zählwort, Grundhinweis.
     expect(html).toContain('Paragraphen');
     expect(html).toContain('Snapshot — massgeblich ist die amtliche Fassung');
-    expect(html).toContain('min-h-kopf-stand');
+    expect(html).toContain('min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md xl:min-h-kopf-stand-xl');
   });
 
   it('Kantonserlass ohne SR und ohne Inkrafttreten erzeugt keine leeren Trenner', () => {

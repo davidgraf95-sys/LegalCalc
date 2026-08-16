@@ -161,7 +161,7 @@ describe('S6 — Promotion in den Erlass-Kopf (höhenfest, §15.2)', () => {
       // Ganzes Klassenpaar als EIN Treffer prüfen — `min-h-kopf-stand` allein
       // wäre auch Teilstring von `sm:min-h-kopf-stand-sm` (§7: Identität, nicht
       // Substring-Präsenz).
-      expect(zaehle(html, 'min-h-kopf-stand sm:min-h-kopf-stand-sm')).toBe(1);
+      expect(zaehle(html, 'min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md xl:min-h-kopf-stand-xl')).toBe(1);
     }
   });
 

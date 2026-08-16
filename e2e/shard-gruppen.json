@@ -39,11 +39,12 @@
    "smoke.e2e.ts"
   ],
   "4": [
-   "gesetze-rechtsgebiet-g6.e2e.ts",
    "gesetze-ia4-scope.e2e.ts",
+   "gesetze-rechtsgebiet-g6.e2e.ts",
    "gesetze-ux-g3a.e2e.ts",
    "leser-adresse-lm202.e2e.ts",
    "leser-gliederung-a33.e2e.ts",
+   "leser-kopf-cls-s3.e2e.ts",
    "leser-kopf-g2b.e2e.ts",
    "leser-suche-klappzustand.e2e.ts",
    "leser-v3-seitenleiste-ordnung.e2e.ts",
