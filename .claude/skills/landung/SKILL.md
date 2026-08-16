@@ -286,6 +286,12 @@ Geist verletzen.
 1. Prod-Deploy dem Merge-Commit zuordnen: das Vercel-Prod-Deployment muss den
    gemergten Commit bauen (PR-Deploy-Status bzw. `npx vercel ls`); warten,
    bis es Ready ist — nicht durch einen manuellen Deploy «beschleunigen».
+   **Deployment-STATE prüfen, nicht nur die Existenz:** `Canceled by Ignored
+   Build Step` auf einem Code-Commit ist ROT, nicht «übersprungen weil Doku».
+   Gegenprobe: `curl -s https://lexmetrik.vercel.app/ | grep lexmetrik-build`
+   muss den gemergten Kurz-SHA zeigen (Realfall 15./16.8.2026: 7 Merges
+   #519–#530 still nicht live, `git rev-parse --verify` log bei fehlendem
+   Objekt; Wächter seit #531 im Prod-Smoke, `pruefeBuildStand`).
 2. Asset-Hash live = lokal (index.html der Prod-URL gegen `dist/` des
    gemergten Stands).
 3. Kernrouten auf HTTP 200: `/`, `/rechner/tagerechner`,

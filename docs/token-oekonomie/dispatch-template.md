@@ -57,6 +57,10 @@ zusammengestellt.
   Zahl. Beleg: a33-Diagnose 8./9.8.2026, kalt 2-4/20 rot vs. warm 0/40.
 4 RECOVERY. Committe lokal nach jedem abgeschlossenen Teilschritt (WIP-Commit
   genuegt, --squash fasst zusammen). Nie uncommittet ueber laengere Arbeit hinweg.
+  Commit-Message immer per `git commit -F <datei>` oder Heredoc mit 'EOF'
+  (gequotet) — nie als -m "…"-String mit Backticks: die Shell substituiert
+  sie, die Message verliert Woerter, und --amend ist gesperrt (2 Vorfaelle
+  16.8.2026, PR #530/#531).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
