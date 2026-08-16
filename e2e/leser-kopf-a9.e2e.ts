@@ -56,8 +56,11 @@ test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle,
   await expect(gruppe).toBeVisible({ timeout: REAKTIONS_LATTE });
   expect(Date.now() - t0, 'Dropdown öffnen zu langsam').toBeLessThan(REAKTIONS_BUDGET);
 
-  // A4: die drei Switches togglen — jeder reagiert ohne Hänger.
-  for (const name of ['Fussnoten', 'Linien', 'Verweise'] as const) {
+  // A4: die Switches togglen — jeder reagiert ohne Hänger. «Linien» ist mit dem
+  // Linien-Rückbau V1 (16.8.2026, Entscheid David 13.8.2026) aus dem Menü
+  // entfallen; geprüfter Sachverhalt (Reaktionszeit je Schalter unter Drossel)
+  // unverändert (§6.3: deklariert).
+  for (const name of ['Fussnoten', 'Verweise'] as const) {
     t0 = Date.now();
     const sw = gruppe.getByRole('switch', { name });
     const vorher = await sw.getAttribute('aria-checked');

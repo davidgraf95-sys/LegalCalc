@@ -292,7 +292,8 @@ Status-Flächen wurden grauer/kälter als das Rezept verspricht). Neu gemessen
   sind Voll-Token auf dem soliden `--well`, kein color-mix im Pfad
   (vorher = nachher: 4.81/3.47 · 5.24/9.43 · 4.91/10.48).
 - **Mixe mit `transparent` (15 der 19 Stellen — Haarlinien `--line`/
-  `--line-strong`/`--guide-gliederung`/`--rule-*`, `lc-glass`, Badge-Outlines,
+  `--line-strong`/`--rule-*` (und das am 16.8.2026 entfernte
+  `--guide-gliederung`), `lc-glass`, Badge-Outlines,
   Schraffur, brass-Unterstreichung): gerendert BYTE-IDENTISCH** — bei
   premultiplied alpha trägt der transparente Endpunkt kein Farbgewicht, die
   Interpolation ist raumunabhängig.
@@ -472,7 +473,7 @@ dritte Schrift (§15). Regel erfüllt, keine Code-Änderung nötig.
 
 **f — Linien unter der Tinte, Textur-NEIN.** Struktur-/Haarlinien sind immer
 schwächer als der ink-600-Sekundärtext und laufen nur über die color-mix-Tokens
-(`--line`, `--line-strong`, `--rule-*`, `--guide-gliederung`). Explizites **NEIN**
+(`--line`, `--line-strong`, `--rule-*`). Explizites **NEIN**
 zu Papier-Texturen/Noise-Overlays (auch §15 Performance).
 
 **g — Wärme-Architektur (der EINE Steuerhebel).** Wärme wird ausschliesslich

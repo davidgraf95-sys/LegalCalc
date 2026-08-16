@@ -148,9 +148,10 @@ Leitprinzip (aus Fedlex-Messung + SotA doppelt belegt): **Ruhe durch Reduktion.
 Hierarchie über Typo-Abstufung + Einzug, NICHT über Linien.** Der Fliesstext ist
 der Held; die Struktur flüstert (Gegen-Lehre zu Fedlex, wo «die Struktur schreit,
 der Rechtstext flüstert»). Rangfolge verbindlich: **Typo (Gewicht/Grösse) >
-Einzug > eine dezente Guide-Linie. Farbe/Boxen nie.**
+Einzug. Farbe/Boxen nie.** Der frühere dritte Rang — «eine dezente Guide-Linie» —
+ist am 16.8.2026 **ersatzlos gestrichen** (Entscheid David 13.8.2026, §4b-A).
 
-**EINE Linien-Sprache — genau DREI benannte Rollen, sonst keine.** Vorher wurden
+**EINE Linien-Sprache — genau ZWEI benannte Rollen, sonst keine.** Vorher wurden
 für strukturgleiche Trenner 4–6 Ad-hoc-Opazitäten desselben `--line` frei gewählt
 (Artikel `/70`, Sektion voll|`/50`, Guide `/60`, Tabellenzeile/Fussnoten `/50–60`)
 und bis zu ~6 parallele 1px-Linien stapelten sich («Barcode/Gleisbett», ZGB
@@ -159,14 +160,13 @@ Art. 684 / OR Art. 319). Neu (Tokens in `src/index.css` `:root` **und**
 
 | Rolle | Klasse | CSS-Var (hell / dunkel) | Wo (strukturell) |
 |---|---|---|---|
-| **Gliederungs-Guide** (vertikale Tiefen-Linie) | `border-l border-guide` | `--guide-gliederung` (18 % / 24 %, = `--line-strong`; V2·L-2 von 10 %/14 % angehoben — der Guide war praktisch unsichtbar; NICHT höher, sonst wäre die Deko die dunkelste Linie, F2 nimmt Deko von 3:1 aus) | `renderSektion` (nur `linien.guideEbene`, aufbau-basiert — §4b-A) |
 | **Artikel-Trenner** (fein) | `border-t border-rule-artikel` | `--rule-artikel` (10 % / 14 %) | Artikel-Kopf, Tabellenzeilen, Fussnoten-Trenner |
 | **Struktur-Trenner** (oberste Sektionen Teil/Titel/Abschnitt, eine Spur kräftiger) | `border-t/-b border-rule-struktur` | `--rule-struktur` (14 % / 20 %) | Sektionskopf ebene ≤ 1, Ingress |
 
 Harte Regeln:
-1. **Höchstens EINE vertikale Guide-Linie gleichzeitig** — genau die aufbau-
-   abhängige Ebene (`linien.guideEbene`, §4b-A) trägt den Guide; grössere Tiefe
-   wird über **Einzug** getragen, nie über eine zweite parallele Linie.
+1. **KEINE vertikale Guide-Linie** — Tiefe wird ausschliesslich über **Einzug**
+   getragen (16.8.2026, §4b-A; früher: höchstens EINE Linie auf einer aufbau-
+   abhängigen Ebene). Der Rollen-Token `--guide-gliederung` ist entfernt.
 2. **Innere Sektionen (ebene ≥ 2) und randtitel-promotete Knoten** («A.», «II.»)
    tragen **keine** Horizontal-Linie (die frühere feine ebene-2-Linie entfällt);
    ihre Tiefe trägt Typo + Einzug.
@@ -183,10 +183,10 @@ spacing`, 20px/Stufe): Desktop Tiefe *n* → `n × einzug`, **gedeckelt bei 5 St
 sichtbare Verschachtelung, David-Befund «Liniengliederung funktioniert praktisch
 nicht»). **Mobil kollabiert der Einzug NICHT mehr auf 0**, sondern trägt ein
 kleineres `einzug-mobil` (~0.75rem, `pl-einzug-mobil sm:pl-einzug`) — die
-Verschachtelung bleibt auch @390 flüsterleise lesbar; die eine Guide bleibt als
-einzelne 1px-Linie am Spaltenrand. **CLS 0:** Einzug = `padding`, Guide = `border`
-darauf → Umschalten/Kollabieren bewegt keinen Textknoten. `data-linien="aus"`
-kollabiert den Einzug weiterhin über ALLE Ebenen auf 0 (`padding-left:0`).
+Verschachtelung bleibt auch @390 flüsterleise lesbar. **CLS 0:** Einzug =
+`padding`. Seit dem 16.8.2026 ist der Einzug **dauerhaft** — der frühere Schalter
+«Linien AUS», der ihn über alle Ebenen auf 0 kollabierte, ist mit der Guide-Linie
+entfallen.
 
 **Lese-Typografie.** Lesespalte **hart auf `max-w-reading` (40rem ≈ 66–71 ch)**,
 nie arbitrary `max-w-[…rem]` (R2). Fliesstext 18px Serif (über Fedlex 14px),
@@ -200,83 +200,65 @@ tracking-wide text-ink-500`, dazwischen `text-ink-600`; mehrzeilige Randtitel mi
 «1. Im / Allgemeinen».
 
 **Maschinell gegated:** R1 `check:linien-kanon` (marker-scoped, in `npm run gate`),
-R2 eslint (`no-restricted-syntax` gegen arbitrary `max-w-[…rem]` im Reader), R4/R5
-als Playwright-e2e (≤ 1 Guide je Artikel; Lesemass ≤ 75 ch @ 1440 / kein
-horizontaler Overflow @ 390). **`golden/lexmetrik-golden.json` bleibt byte-gleich**
+R2 eslint (`no-restricted-syntax` gegen arbitrary `max-w-[…rem]` im Reader), R5
+als Playwright-e2e (Lesemass ≤ 75 ch @ 1440 / kein horizontaler Overflow @ 390);
+`leser-ohne-gliederungslinie.e2e.ts` hält fest, dass **keine** Guide-Linie
+zurückkommt und der Einzug bleibt (R4 «≤ 1 Guide je Artikel» ist damit
+gegenstandslos und entfallen). **`golden/lexmetrik-golden.json` bleibt byte-gleich**
 (der Reader liegt nicht in der Engine-Golden-Matrix); der amtliche **Wortlaut ist
 unangetastet** (§1, Text-Extraktion vorher/nachher byte-gleich) — geändert sind
 ausschliesslich Klassen/Attribute.
 
-### §4b-A · Linien-Aufbau-Regelwerk (W2·5d U-LINIEN / A8, 5.7.2026)
+### §4b-A · Gliederungslinie — AUFGEHOBEN (Rückbau V1, 16.8.2026)
 
-**Wann zeigt der Reader den vertikalen Gliederungs-Guide? — nach dem TATSÄCHLICHEN
-Aufbau des Erlasses, NICHT nach seiner grundart-Kategorie.** Davids Anmerkung A8:
-«Liniengliederungsdarstellung … regeln festlegen wie es wann angezeigt wird JE NACH
-AUFBAU GESETZ. zgb bspw. sehr viele aber arg fast keine aktuell.» Der frühere
-G3a/K11-Default war kategorie-basiert (nur `grundart==='KODIFIKATION'` zeigte den
-Guide) — genau die gerügte Inkonsistenz: das tiefe **ZGB** ertrank in Linien, das
-flache **ArG** bekam gar keine. Neu leitet **SSoT `src/pages/gesetz-leser/linienAufbau.ts`
-(`linienProfil`)** den Default aus dem Struktur-Sidecar ab (Gliederungstiefe +
-Artikel-Dichte je Ebene). Der K11-Tri-State-**Nutzer-Override** (`data-linien`
-an/aus, global) bleibt unangetastet — hier geht es allein um den AUTO-Default.
+**Es gibt im Lesetext keine vertikale Gliederungslinie mehr, und es soll auch
+keine vierte geben.** Dieser Abschnitt regelte von Juli bis Mitte August 2026,
+*wann* der Reader den Guide zeigt (Auto-Default aus Gliederungstiefe + Artikel-
+Dichte, `linienProfil()`, `data-guide-auto`, K11-Tri-State-Schalter «Linien»).
+Er ist mit dem Feature aufgehoben — der Wortlaut steht in
+`archiv/FAHRPLAN-GESETZES-UX-erledigt.md` und in der Fassungs-Historie.
 
-**Profil je Erlass** (`linienProfil`): `strukturTiefe` = max. Gliederungs-
-Verschachtelung; `guideEbene` = Sektions-tiefe, die den EINEN Guide trägt (`null` =
-flache Artikelliste); `dichteAmGuide` = Median Artikel je Sektion auf `guideEbene`;
-`autoGuide` = zeigt der Guide im Auto-Default? Der Reader schreibt `autoGuide` als
-`data-guide-auto="an|aus"` an den `.lc-leser`-Root; CSS wertet es aus. **V2·A28
-(David 12.7.2026): `autoGuide` ist korpusweit `false` — `data-guide-auto` ist stets
-`"aus"`.**
+**Der datierte Anlass, damit niemand ihn versehentlich wiederholt (Chesterton).**
+Die Linie wurde DREIMAL gebaut und DREIMAL von David live verworfen:
 
-| Aufbau (`strukturTiefe`) | `guideEbene` | Auto-Default | Wirkung |
-|---|---|---|---|
-| **0** (flache Artikelliste, z. B. VMWG, Kanton-§) | `null` | — | Kein Guide möglich; Artikel trennt der feine Artikel-Trenner. |
-| **1** (eine Gliederungsebene, z. B. Kurzerlass, Staatsvertrag) | 0 | **AUS** (A28) | Kein aufgedrängter Guide; Nutzer-«an» zeigt die EINE Ebene auf `guideEbene 0`. |
-| **2** (zwei Ebenen, z. B. ArG) | 1 | **AUS** (A28) | Kein aufgedrängter Guide; Nutzer-«an» zeigt die innere Gruppierung auf `guideEbene 1`. |
-| **≥ 3** (tiefe Kodifikation, z. B. BV, OR, ZGB) | 1 | **AUS** (A28) | Kein aufgedrängter Guide; Nutzer-«an» zeigt den EINEN Guide auf `guideEbene 1` (≤ 1 Guide-Stapel, kein Barcode; die tieferen Ebenen tragen ihre Tiefe über Einzug + Typo). |
+| Datum | Baustand | Davids Verdikt (wörtlich) |
+|---|---|---|
+| 5.7.2026 | G3a/K11 — Guide nur bei `grundart==='KODIFIKATION'` | A8: «Liniengliederungsdarstellung … regeln festlegen wie es wann angezeigt wird JE NACH AUFBAU GESETZ. zgb bspw. sehr viele aber arg fast keine aktuell.» |
+| 12.7.2026 | L-3 (#207) — Auto-Guide AN für dichte Erlasse, inkl. ZGB/OR | A28: «das mit den linien funktioniert überhaupt nicht» / «also ist überhaupt nicht fördernd für die übersicht» |
+| 3.8.2026 | PR #423 — L-3 reaktiviert | «eine einzige linie und unbrauchbar» |
 
-**Auto-Default-RÜCKZUG (V2·A28, David 12.7.2026, Live-Feedback auf L-3/#207).** L-3
-(gebaut 11.7.) hatte den Auto-Guide für dichte Erlasse AN geschaltet (inkl. ZGB/OR),
-gestützt auf die Theorie, ein einzelner Guide auf `guideEbene` sei die hilfreiche
-Gliederungshilfe. David hat das **live verworfen**: *«das mit den linien funktioniert
-überhaupt nicht»* / *«also ist überhaupt nicht fördernd für die übersicht»* (Wortlaut
-`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-12.md`). Das ist ein Total-Urteil
-über den aufgedrängten Guide, kein Schwellwert-Feedback. Konsequenz: der Auto-Default
-wird **korpusweit zurückgezogen** — `autoGuide = false` für JEDEN Erlass. Der Reader
-drängt die Gliederungslinie nie auf.
+**Warum keine vierte Justage hilft (der strukturelle Grund, nicht der ästhetische):**
+der Reader konnte höchstens EINE Linie auf genau EINER Ebene zeigen
+(`guideEbene = min(renderTiefe−1, 1)`). Bei ZGB (Tiefe 5) oder OR (Tiefe 4)
+markiert dieser eine Strich zwangsläufig nur einen Bruchteil der Verschachtelung.
+Ob er per Kategorie, per Dichte-Schwelle oder per Default AN/AUS gesteuert wird,
+ändert an diesem Deckel nichts — **eine einzelne Linie kann «viele Ebenen»
+strukturell nicht abbilden.** Genau daran scheiterten alle drei Anläufe.
 
-**Das FEATURE bleibt — nur das Aufdrängen endet.** Der K11-Tri-State-Nutzer-Schalter
-«Linien» (`data-linien` an/aus/auto, global) ist voll funktionsfähig: ein Klick
-«Linien AN» zeigt den EINEN Guide auf `guideEbene`. `strukturTiefe`/`guideEbene`/
-`dichteAmGuide` bleiben voll berechnet (sie steuern, WO der Guide sitzt und OB der
-Schalter erscheint — `zeigeLinien = guideEbene !== null`). `DICHTE_MIN`/`TIEF_AB`
-bleiben nur noch Diagnose-/Doku-Schwellen (deckeln nichts mehr am Auto-Default).
+**Was die Aufgabe stattdessen trägt:** im Fliesstext Typo + Einzug (§4b Ränge 1
+und 2, Einzug jetzt dauerhaft statt abschaltbar); für die Übersicht «wo bin ich in
+der Struktur» die Seitenleiste mit Gliederungsbaum, Scroll-Spy und Sprungziel
+(`W2·19-GLIEDERUNG`, live seit 13.8.2026) — ein dafür gebautes, mächtigeres
+Werkzeug als eine Linie am Spaltenrand.
 
-**Warum «korpusweit AUS» statt Feinjustage:** Davids Urteil ist ein Grundsatz-Nein
-zum aufgedrängten Guide. Jede verbleibende Auto-Heuristik (Dichte/Tiefe/Kategorie)
-bliebe eine Wette gegen dieses Urteil. Der konservative Zustand ist: nicht aufdrängen.
-Weitere Justage nur auf neues, positives David-Signal. Alternativen für echte
-Struktur-Übersicht (Typo-Hierarchie · Sticky-Mini-Kontext · TOC-Scroll-Spy ·
-Abschnitts-Rhythmus) sind in `fahrplaene/FAHRPLAN-GESETZES-UX.md §10.9` skizziert (nur Doku).
+**Entscheid:** David, Chat 13.8.2026, wörtlich *«ja linien ganz entfernen. 2 es
+reicht. 3 nein. 4. ok»* — Variante V1 (Rückbau); V2 (Typo-Nachrüstung) und V3
+(scroll-gebundener Tiefen-Indikator) ausdrücklich verworfen. Bau-Spec und
+Vollzugsvermerk: `fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md` §9.3.
+Vorher/Nachher-Beweis: `docs/ux-audit-2026-07/reader/linien-rueckbau-2026-08-16/`.
 
-**Referenz-Verdikte** (im Tor gegated): ZGB (Tiefe 5) → **Auto-Guide AUS** · OR
-(Tiefe 4) → **AUS** · ArG (Tiefe 2) → **AUS** · VMWG (Tiefe 0) → **kein Guide** ·
-Kurzerlass/Staatsvertrag (Tiefe 1) → **AUS**. `guideEbene`/`strukturTiefe` bleiben
-gegated (Nutzer-«an» trifft denselben Ort).
-
-**Maschinell gegated:** `check:linien-kanon` (Nachfolger von R1/R4, in `npm run
-gate`) importiert dieselbe `linienProfil`-Funktion, beweist die korpusweiten
-Invarianten (`autoGuide` korpusweit `false`) + die Referenz-Verdikte + die
-Reader-/CSS-Verdrahtung (kein Drift); e2e `gesetze-ux-g3a`/`leser-optionen`/
-`leser-linien-kanon` beweisen das gerenderte Ergebnis (Auto-Default 0 sichtbare
-Guides; Nutzer-«an» ⇒ genau 1 Guide, ≤ 1 Guide-Stapel).
-**Wortlaut byte-gleich** (nur Klassen/Attribute), Engine-Golden byte-gleich.
+**Maschinell gegated:** `check:linien-kanon` prüft nur noch die Linien-SPRACHE
+(Teil A: zwei Rollen-Tokens, kein Ad-hoc `border-line` an markierten Containern);
+das frühere Teil B (Aufbau-Regelwerk) wurde **gestrichen statt umgebaut**, weil
+sein Gegenstand nicht mehr existiert und es nicht mehr rot werden könnte (§6.7).
+Dass die Linie wegbleibt, hält `e2e/leser-ohne-gliederungslinie.e2e.ts` fest —
+inklusive der positiven Gegenprobe, dass der Einzug weiter staffelt.
 
 ### §4b-B · Farb-Wörterbuch der Referenzschicht (W2·5d V2·C-1, 10.7.2026, David «go zu allem»)
 
 Grundsatz (David 10.7.2026): **Farbe NUR auf der Referenz-/Verzahnungsschicht**
 (Chips, Badges, Kopf) — der **Normtext-Körper bleibt farbfrei** (Rangfolge §4b:
-Typo > Einzug > Guide; kein Ton im Lesefluss). Das Wörterbuch ist EIN Entscheid je
+Typo > Einzug; kein Ton im Lesefluss). Das Wörterbuch ist EIN Entscheid je
 Farbe — kein Ton trägt zwei Bedeutungen:
 
 | Ton | Bedeutung (die EINE) | Trägt sie |
@@ -365,32 +347,37 @@ Prerender wird je Deploy neu gebaut.
 
 ### §4c · Leser-Darstellungsoptionen (W2·5d G2a, 4.7.2026; U-KOPF/A1+A4, 5.7.2026; V2·B-1/B-2/K-2, 11.7.2026)
 
-**V2-Nachtrag (David 10.7.2026, überstimmt «genau drei Toggles»):** es sind jetzt
-**vier** persistente, rein visuelle Umschalter im «Ansicht»-Dropdown — **Linien ·
-Fussnoten · Verweise · Entscheide** — plus ein JS-Filter **Zeitraum** und, im
-aktionen-Slot, ein prominenter **Fussnoten-Chip**. Die «genau drei»-Fassung von
+**V2-Nachtrag (David 10.7.2026, überstimmt «genau drei Toggles»):** es waren
+danach **vier** persistente, rein visuelle Umschalter im «Ansicht»-Dropdown —
+**Linien · Fussnoten · Verweise · Entscheide** — plus ein JS-Filter **Zeitraum**
+und, im aktionen-Slot, ein prominenter **Fussnoten-Chip**. Heute sind es **zwei**:
+«Entscheide» wanderte am 28.7.2026 ins Dropdown «Rechtsprechung ▾» (W2·7-BEZUG/B4),
+und **«Linien» ist am 16.8.2026 mit der Gliederungslinie ersatzlos entfallen**
+(§4b-A). Die «genau drei»-Fassung von
 §3.1/§10.5 (UX) ist damit ausdrücklich überstimmt (A22/A23). Details am Ende von §4c.
 
 Die ursprünglich drei persistenten, **rein visuellen** Lese-Umschalter (Auftrag
-David): **Linien** (Gliederungs-Guide + Einzug), **Fussnoten** (Marker +
-Apparat sichtbar/verschwunden), **Verweise** (Verweis-Link-Unterstreichung). Sie
+David): ~~**Linien** (Gliederungs-Guide + Einzug, entfallen 16.8.2026)~~,
+**Fussnoten** (Marker + Apparat sichtbar/verschwunden), **Verweise**
+(Verweis-Link-Unterstreichung). Sie
 liegen seit U-KOPF/A4 (David 5.7.2026) in **einem «Ansicht»-Dropdown im aktionen-
 Slot des `ErlassLeserKopf`** (die frühere G2a-Chip-Leiste entfällt; Details im
 U-KOPF-Nachtrag unten). Verbindliche Bau-Regeln:
 
 1. **Mechanik = `data-*`-Attribut am `<html>` + CSS, kein React-State im
    Artikel-Baum.** Store `src/pages/gesetz-leser/leserOptionen.ts` setzt
-   `data-linien/-fussnoten/-verweise` **imperativ** (Vorbild `components/thema.ts`);
+   `data-fussnoten/-verweise/-leitfaelle` **imperativ** (Vorbild `components/thema.ts`);
    Umschalten rendert nur die Switch-Buttons neu, nie die Artikelliste (§15). Die
    CSS-Regeln stehen in `src/index.css`, **auf `.lc-leser` gescopt** (nur der
    Reader, nicht das Norm-Popover der Rechner).
 2. **Pre-Paint CSP-konform.** Angewandt in `main.tsx` VOR `createRoot` (analog
    Thema/Schriftskala) — **kein Inline-Script** (`script-src 'self'`, vercel.json
    verbietet es). Persistenz in localStorage `lm.leser.optionen`.
-3. **Default = 'an' für alle drei = heutige Darstellung** ⇒ `data-*="an"` ist ein
-   CSS-No-op ⇒ Grundzustand **byte-gleich** (R6, `golden:vergleich` IDENTISCH). Die
-   Guide-/Einzug-Klassen werden IMMER emittiert; `data-linien="aus"` blendet sie
-   per CSS aus (der frühere React-State-Umschalter entfällt).
+3. **Default = 'an' = heutige Darstellung** ⇒ `data-*="an"` ist ein CSS-No-op ⇒
+   Grundzustand **byte-gleich** (R6, `golden:vergleich` IDENTISCH). Die
+   Einzug-Klassen werden IMMER emittiert und sind seit dem 16.8.2026 dauerhaft —
+   der frühere `data-linien="aus"`-Zweig, der Guide + Einzug ausblendete, ist mit
+   der Gliederungslinie entfallen (§4b-A).
 4. **Fussnoten-«AUS» lässt Marker + Apparat VERSCHWINDEN** (U-KOPF/A1, David
    5.7.2026 — überstimmt die frühere R9-Dämpfungs-Regel; s. U-KOPF-Nachtrag).
    `display:none` am Marker-Cluster (`button[aria-label^="Fussnote"]`,
