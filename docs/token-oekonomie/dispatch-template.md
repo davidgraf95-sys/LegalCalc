@@ -72,6 +72,9 @@ zusammengestellt.
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
   Treffer -> melden, nicht doppelt bauen. Und selbst sichtbar werden: eigenen
   Branch sofort nach Anlage pushen, nicht erst am Ende.
+  Danach SPARSAM pushen: nur bei Meilensteinen (Abschluss, Nachzug) — jeder
+  Push auf jeden Branch erzeugt bei Vercel ein Deployment und zaehlt ans
+  Tageslimit (100/Tag Free; Vorfall 16.8.2026: Prod 24 h blockiert).
 6 KEIN MERGE IM BAU-AUFTRAG. Dieser Auftrag baut. Merge/Deploy ist ein eigener,
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
 ```
