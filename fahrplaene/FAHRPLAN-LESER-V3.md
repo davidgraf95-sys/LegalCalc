@@ -412,6 +412,66 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **H4** | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `playwright.config.ts` | ±0 | 0 neu (11 alte B-Tests werden entfernt/umgehängt) | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
 | **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
 
+### ✅ Vollzugsvermerk H1 (16.8.2026, Branch `feat/leser-v3-h1`)
+
+**Kontaktbogen mit NM-Tabelle, Treue-Messwerten und Bildern:**
+`docs/ux-audit-2026-07/reader/leser-v3-h1/README.md`.
+
+**Neue Dateien** (Hülle, alle unter `src/pages/gesetz-leser/v3/`):
+`LeserRahmenV3.tsx` · `LeserKopf.tsx` · `LeserAnsichtV3.tsx` ·
+`LeserSeitenleiste.tsx` · `SuchSprungFeld.tsx` · `UebersichtBox.tsx` ·
+`kopfStufen.ts` · `v3Optionen.ts`; dazu `GesetzLeserV3.tsx` gefüllt (lazy).
+**Entfernt: nichts** — die Ist-Hülle ist unberührt (FL-4).
+
+**Abnahme-Kriterium der Zeile erfüllt:** unter `?leser=v3` steht in beiden Panes
+derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
+(`leser-v3-suche-sprung`), das Umschalten V1↔V3 hält Erlass, Anker und Optionen
+(`leser-v3-umschalten`, FL-6) — und ohne Flag ist der Ist-Stand unverändert
+(`golden:vergleich` byte-gleich, Flag-Vitest FL-3/R10).
+
+**Vier Punkte, die über die Zeile hinausgehen und hier festgehalten gehören:**
+
+- **Kopf-Verzweigung 21 → 0 in der neuen Hülle** ist erreicht, aber anders
+  gelöst als vermutet: `LeserKopf.tsx` enthält **kein** `imPane` und **keinen**
+  Breakpoint (Quellensonde `src/tests/leser-v3-adresse.test.ts`). Die Overflow-
+  Regel misst die **Element-Breite** (ResizeObserver, `kopfStufen.ts`) statt des
+  Viewports — nur deshalb gilt in Einzelansicht, breitem und schmalem Pane
+  dieselbe Regel aus einer Quelle. Ein `xl:`-Präfix hätte im Pane den Viewport
+  gemessen und das Desktop-Bild in eine 620-px-Spalte gezwungen.
+- **Zielzahl «Sucheingabe-Felder 2 → 1 (nach H1, V3)» ist gemessen erreicht:**
+  V1 trägt @1440 zwei Eingaben im Gesetz («Im Gesetz suchen …», «Art. N»), V3
+  eine («Suchen oder «Art. 429» …»).
+- **Der Sprung-Offset rechnet die neue Kopfhöhe mit** (Risiko R1): `#art-429`
+  landet nach dem Sprung auf y = 156 px = Topbar 64 + App-Leiste 36 + Kopfzeile
+  56. Im Ist-Stand fehlte diese Verrechnung ganz.
+- **Kein Kern angefasst:** `ArtikelLeser`/`ArtikelBody` unverändert importiert;
+  Artikelzahl (480), Lesespalten-Breite (672 px @1440 / 350 px @390) und
+  Bezüge-Zeilen (326) sind in beiden Hüllen identisch gemessen.
+
+**Zwei Abweichungen** (Herleitung im Kontaktbogen, Ziff. 4):
+
+- **A-1 Schriftgrössen-Regler.** Er bedient den bestehenden globalen Skala-Store
+  (`lexmetrik-schriftskala`) statt eines zweiten 4-Stufen-Speichers. Grund: ein
+  zweiter Speicher für dieselbe Frage wäre eine zweite Wahrheit (§5), und die
+  vier absoluten rem-Werte der Design-Grundlage (Kap. 2.3) setzen die
+  V3-Normtextgrösse voraus, die erst **S2** bringt — in H1 bliebe sonst der
+  Normtext nicht byte-gleich (Treue-Grenze PX). **Vorschlag: die vier Stufen
+  mit S2 nachziehen**, wenn die Baseline ohnehin einmalig neu gesetzt wird.
+- **A-2 Zwei Leisten statt einer.** Die V3-Kopfzeile sitzt **unter** der
+  bestehenden App-Leiste, statt sie zu ersetzen. Die Verschmelzung verlangt
+  Änderungen an `src/components/layout/**` und hätte die Ist-Hülle mit
+  umgebaut (FL-4). Sie gehört zu **H4/H5**; Preis heute 37 px Chrome. Dieselbe
+  Aufteilung hat der Entscheid-Leser seit je.
+
+**Nebenbefund für H2:** die reine Volltextsuche kostet auf **H** einen Tap mehr
+als im Ist-Stand (Ist: Lupe im Kopf = 1 Tap · V3: ☰ → Feld = 2 Taps), weil
+Kap. 4b Suchfeld und Gliederung gemeinsam ins Bottom-Sheet legt. Keine der drei
+NM-Aufgaben, aber die Stelle, an der H2 ansetzen sollte.
+
+**Deckel-Stand:** H1 ist der erste der höchstens fünf H-PRs (Kap. 7).
+
+---
+
 ### Strang S (in place, wirkt in beiden Hüllen)
 
 | E | Inhalt | Vorbedingung | Tests | Abnahme-Kriterium | Aufwand |
@@ -539,7 +599,7 @@ diese Frage am Bild und nicht am Text beantwortet wird.
 
 | Kategorie | Bestand | Wirkung |
 |---|---|---|
-| e2e **N** (Normtext-Treue) | ~10 | **8 bleiben unverändert grün** — Pflicht: `leser-optionen`, `leser-r1-r2`, `leser-ruecksprung-r5-r7`, `leser-suche-vertrag-b8`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3a`, `gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`. **2 neu geschrieben** (deklarierte fachliche Änderung, §6.3, in S1): `hist-ansicht-w25i`, `gesetze-historie-badge`. Diese acht laufen **doppelt**: mit Flag gegen V3, ohne Flag gegen den Ist-Stand — das ist der Paritätsbeweis |
+| e2e **N** (Normtext-Treue) | ~10 | **10 bleiben unverändert grün** *(korrigiert 16.8.2026, Vollzug H1: die Zahl «8» stand neben einer Aufzählung von zehn Namen; das Flag-Projekt fährt alle zehn — Befund aus der Vorprobe V-2)* — Pflicht: `leser-optionen`, `leser-r1-r2`, `leser-ruecksprung-r5-r7`, `leser-suche-vertrag-b8`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3a`, `gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`. **2 neu geschrieben** (deklarierte fachliche Änderung, §6.3, in S1): `hist-ansicht-w25i`, `gesetze-historie-badge`. Diese acht laufen **doppelt**: mit Flag gegen V3, ohne Flag gegen den Ist-Stand — das ist der Paritätsbeweis |
 | e2e **B** (Bedienung/Layout) | ~17 | **11 neu geschrieben, aber nur EINMAL** (gegen V3, nicht als Interim + Endzustand): 10 in H1–H3 + `leser-breite-a37`/`leser-lesemass` in S2. Die alten Gegenstücke fallen in H4/H5 |
 | e2e **P** (Perf/CLS) | ~5 | 2 neu, 3 bleiben |
 | Vitest (DOM-frei) | 21 | ~4 berührt: `leser-suche-w219`, `gesetz-leser-uebersicht-s6`, `hist-chronologie` (entfällt mit dem Modus), `kontext`/`kontext-artikel-s7`; **neu**: Fassaden-Default (R10), Optionen-Migration, Sortierung (S4) |
@@ -612,9 +672,9 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 
 | # | Kriterium | Prüfung |
 |---|---|---|
-| A-1 | **`scrollAnker.ts`-Claim verifiziert.** Die Datei behauptet in Kommentaren einen localStorage-Spiegel, der per Grep nicht auffindbar war. | Entweder Fundstelle benennen oder den Kommentar als falsch korrigieren — H1 berührt die Scroll-Restauration und darf nicht auf einer unbelegten Annahme aufsetzen |
-| A-2 | **`#art_N` → `#art-` korrigiert.** Die Referenz-Notiz nennt Fedlex' Anker-Schema als «unser». | Korrektur in `02-referenzen.md` (Scratchpad) belegt; verbindlich ist `#art-<token>` (`inhalt-sprung.tsx:159`) |
-| A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | Im PR-Titel ausdrücklich benannt; sortenrein bleibt es (reine UI/Guard-Parität), aber nicht stillschweigend |
+| ~~A-1~~ | ~~**`scrollAnker.ts`-Claim verifiziert.**~~ **ERLEDIGT UND GESTRICHEN** (Vorprobe 16.8.2026): die Behauptung war falsch. `scrollAnker.ts:134–137` sagt ausdrücklich das Gegenteil, und der dauerhafte Spiegel existiert und ist greppbar (`lesePosition.ts:54`/`:98`, Schlüssel `lexmetrik-leseposition`). | — |
+| ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
+| A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **Geprüft 16.8.2026 (Vollzug H1) — die Prämisse hält nicht: die Parität besteht bereits.** Beide Leser wachen identisch gegen das sekundäre Pane, `EntscheidLeser.tsx:409` (`if (rolle === 'sekundaer') return;`) und `inhalt-hooks.tsx:129` (`if (istSekundaer) return;`, und `istSekundaer` **ist** `rolle === 'sekundaer'`). H1 fasst die Datei darum **nicht** an — eine Änderung ohne Defekt wäre Zuwachs ohne Anlass (§17-Gegengewicht). Sollte hinter Pos. 7 ein anderer Befund stecken, ist er neu zu belegen. |
 
 ---
 
