@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useCallback, type ReactNode } from 'react';
 
 // ─── Seitenleiste V3 — feste Reihenfolge, nur der Baum klebt (Kap. 4b) ──────
 //
@@ -44,6 +44,33 @@ export function LeserSeitenleiste({
    *  H3-Panel-Anschluss). Nicht gesetzt ⇒ nichts gerendert, kein Abstand. */
   extra?: ReactNode;
 }) {
+  // ── W-1 · Zone A publiziert ihre Höhe als `--toc-deckel` (Befund 16.8.2026) ─
+  // Die Trefferliste klebt mit `top: var(--toc-deckel, 0px)`
+  // (`LeserTrefferListe.tsx`) — das ist aus V1 geerbt und dort richtig, weil
+  // dort `inhalt-volltext.tsx` die Marke setzt. In V3 setzte sie NIEMAND: der
+  // Rückfallwert 0px griff, und damit klebten Trefferlisten-Kopf UND Zone A
+  // beide bei `top: 0`. Gemessen: `elementFromPoint` auf der Mitte des
+  // Suchfelds traf `SuchBereichWahl` — die Facetten-Leiste legte sich beim
+  // Scrollen über das Feld, mit dem man sucht.
+  //
+  // Wörtlich dieselbe Mechanik wie V1 (§5 — eine Bedeutung, ein Muster): Zone A
+  // misst sich selbst und legt die Höhe auf den `[data-toc]`-Scroller. Reine
+  // Darstellungs-Geometrie, kein State ⇒ kein Re-Render (§15). Der `ResizeObserver`
+  // ist nötig, weil Zone A ihre Höhe ändert, sobald das Suchfeld erscheint oder
+  // die Kopfzeile umbricht — ein einmaliges Messen wäre beim ersten Tippen falsch.
+  const zoneARef = useCallback((el: HTMLDivElement | null) => {
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ziel = el.closest('[data-toc]') as HTMLElement | null;
+    if (!ziel) return;
+    const setze = () => ziel.style.setProperty('--toc-deckel', `${Math.round(el.getBoundingClientRect().height)}px`);
+    setze();
+    const ro = new ResizeObserver(setze);
+    ro.observe(el);
+    // Kein Cleanup-Rückgabewert: ein Callback-Ref darf keinen liefern. Der
+    // Observer stirbt mit dem Element; beim Unmount ruft React den Callback
+    // ohnehin mit `null`, worauf hier nichts Neues entsteht.
+  }, []);
+
   return (
     // `flex-1 min-h-0` statt `h-full`: der Vorfahre (die klebende Spalte) hat eine
     // `max-height`, KEINE feste Höhe — und `height:100%` löst gegen eine
@@ -78,7 +105,7 @@ export function LeserSeitenleiste({
             16.8.): 1. Such-/Sprungfeld ganz oben · 2. Gliederungs-Kopfzeile ·
             3. der scrollbare Baum. Die Übersichtsbox bleibt darüber und scrollt
             weiterhin weg — sie ist Ankunfts-Information, kein Werkzeug. */}
-        <div data-toc-zone-a data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 space-y-2 bg-paper pb-2 pt-0.5">
+        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 space-y-2 bg-paper pb-2 pt-0.5">
           {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
           <div className="flex items-center justify-between gap-2">
             <h2 className="lc-overline">{baumTitel}</h2>
