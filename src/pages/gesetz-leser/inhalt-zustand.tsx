@@ -10,7 +10,7 @@ import { beiLeerlauf } from '../../lib/leerlauf';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
-import { revisionenFuerNorm } from '../../lib/normtext/revisionen';
+import { fruehestesNichtKonsolidiert, revisionenFuerNorm } from '../../lib/normtext/revisionen';
 import { klappZeile } from './tocAutoZuklappen';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
@@ -134,17 +134,33 @@ export function useLeserZustand() {
   // ABGELEITET (dasselbe Muster wie im KontextPanel): so steht beim Erlass-/
   // Pane-Wechsel nie eine fremde Aussage, OHNE dass im Effekt-Rumpf synchron
   // gesetzt werden müsste (react-hooks/set-state-in-effect, Kaskaden-Render).
-  const [konsGeladen, setKonsGeladen] = useState<{ key: string; wert: boolean } | null>(null);
+  //
+  // S3 (F5) führt zusätzlich das DATUM mit: `seit` = frühestes Inkrafttreten
+  // unter den nicht konsolidierten Änderungen, für den Klartextsatz im
+  // Erlass-Kopf. Bewusst als ZWEITER, additiver Rückgabewert statt einer Weitung
+  // von `nichtKonsolidiert` auf `boolean | string`: `LeserV3Modell` pinnt das
+  // Feld auf `boolean`, und die V3-Hülle liegt in fremder Bauhand (Etappe H2) —
+  // additiv bricht nichts und kollidiert nicht. `null` = Tatsache belegt, Datum
+  // unbekannt ODER gar keine solche Änderung; beides «kein Datum nennen» (§8).
+  const [konsGeladen, setKonsGeladen] = useState<{ key: string; wert: boolean; seit: string | null } | null>(null);
   useEffect(() => {
     const key = erlass?.key;
     if (!key) return;
     let lebt = true;
     void revisionenFuerNorm([key]).then((ans) => {
-      if (lebt) setKonsGeladen({ key, wert: !!ans?.revisionen.some((r) => r.nichtKonsolidiert) });
+      if (lebt) {
+        setKonsGeladen({
+          key,
+          wert: !!ans?.revisionen.some((r) => r.nichtKonsolidiert),
+          seit: fruehestesNichtKonsolidiert(ans?.revisionen),
+        });
+      }
     });
     return () => { lebt = false; };
   }, [erlass?.key]);
-  const nichtKonsolidiert = !!erlass && konsGeladen?.key === erlass.key && konsGeladen.wert;
+  const kons = !!erlass && konsGeladen?.key === erlass.key ? konsGeladen : null;
+  const nichtKonsolidiert = !!kons?.wert;
+  const nichtKonsolidiertSeit = kons?.seit ?? null;
   // G-HIST-UI: Artikel-Token → Fassungshistorie des AKTUELLEN Erlasses (sonst
   // undefined = kein Badge). Direkter Roh-Token-Lookup (Snapshot/Shard gleiche
   // Extraktion). Stabile Referenz aus dem Shard → memo-freundlich.
@@ -160,7 +176,7 @@ export function useLeserZustand() {
     bezuegeFuer, kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-    revisionFuer, historieFuer, nichtKonsolidiert,
+    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
   };
 }
 

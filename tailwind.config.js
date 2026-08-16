@@ -171,7 +171,17 @@ export default {
       // Viewport (Nullprobe 25.7.: FOOTER-Shift ~0.0496 unter Drossel 6×;
       // Beweis e2e/gesetze-footer-cls.e2e.ts). svh = kleinste Viewport-Höhe
       // (mobil stabil). Reserviert nur Platz, versteckt/kürzt nichts (§15.2).
-      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)' },
+      // `kopf-stand` / `kopf-stand-sm` (W2·5m-LESER-V3 · S3, §15.2): die Zelle im
+      // Erlass-Kopf, die Stand-Zeile UND Status-/Warnzeile trägt. Beide Aussagen
+      // treffen erst NACH dem ersten Paint ein (Currency- bzw. Revisions-Sidecar)
+      // und sind unterschiedlich lang — ohne Reservierung schiebt der Nachzügler
+      // den gesamten Lesekörper nach unten. Genau dieser Shift wurde am 9.8.2026
+      // gemessen (CLS 0.0227, e2e/leser-kontext-e4), als die Warnung noch ein
+      // eigener Block war. Werte GEMESSEN, nicht geschätzt (Zeilenhöhe text-xs ×
+      // leading-snug = 1.03125rem): schmal zwei Zeilen je Aussage, ab `sm` je
+      // eine — plus space-y-1 (0.25rem) zwischen ihnen. Reserviert nur Platz,
+      // versteckt/kürzt nichts (§15/2, §8: der volle Wortlaut steht immer).
+      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '4.375rem', 'kopf-stand-sm': '2.3125rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

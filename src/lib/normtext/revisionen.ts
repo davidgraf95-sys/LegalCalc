@@ -96,6 +96,31 @@ export async function revisionenFuerNorm(normKeys: readonly string[]): Promise<R
   return { revisionen: out, reichweite };
 }
 
+/**
+ * W2·5m-LESER-V3/S3 (F5): frühestes Inkrafttreten unter den NICHT konsolidierten
+ * Revisionen — das Datum, das der Erlass-Kopf im Klartextsatz «Fedlex hat eine
+ * seit TT.MM.JJJJ geltende Änderung noch nicht in den Text eingearbeitet» nennt.
+ *
+ * `null` = keine nicht konsolidierte Änderung. Rein und deterministisch (§2):
+ * ISO-Daten sortieren lexikografisch = chronologisch, kein `Date.now()`, und
+ * hier wird NICHT abgeleitet, ob etwas konsolidiert ist — das entscheidet allein
+ * der Generator (`scripts/normtext/revisionen-generieren.ts`,
+ * `dateEntryInForce > korpusStand`); sein Marker wird nur ausgewertet.
+ *
+ * §8: Ist der Marker gesetzt, das Datum aber kein ISO-Datum, liefert die Funktion
+ * `null` — der Satz nennt dann schlicht kein Datum, statt eines zu erfinden. Die
+ * TATSACHE bleibt davon unberührt sichtbar (sie hängt am Marker, nicht am Datum).
+ */
+export function fruehestesNichtKonsolidiert(
+  revisionen: readonly RevisionBezug[] | undefined,
+): string | null {
+  const daten = (revisionen ?? [])
+    .filter((r) => r.nichtKonsolidiert && /^\d{4}-\d{2}-\d{2}$/.test(r.dateEntryInForce))
+    .map((r) => r.dateEntryInForce)
+    .sort();
+  return daten[0] ?? null;
+}
+
 /** Locale-Titel eines Eintrags (DE Fallback). Rein. */
 export function revisionTitel(r: RevisionBezug, locale: 'de' | 'fr' | 'it'): string | undefined {
   return (locale === 'fr' && r.titelFr) || (locale === 'it' && r.titelIt) || r.titelDe;
