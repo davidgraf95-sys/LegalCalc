@@ -446,12 +446,16 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
       //                      genau das fehlte im Ist-Stand (Kap. 4h/R1).
       style={{
         '--leser-v3-kopf-h': kopfHoehe(stufe),
-        '--leser-v3-kopf-top': imPane ? '0rem' : 'calc(4rem + 2.25rem)',
-        '--leser-kopf-h': imPane
-          ? 'var(--leser-v3-kopf-h)'
-          : 'calc(4rem + 2.25rem + var(--leser-v3-kopf-h))',
+        '--leser-v3-kopf-top': imPane ? '0rem' : 'var(--leser-kopf-h)',
+        // `--leser-kopf-h` behält seine Ist-BEDEUTUNG (Topbar 4rem + App-Leiste
+        // 2.25rem) — sie umzudeuten hätte das geteilte `GliederungSheet` still
+        // verstellt, das daraus seine Höhe rechnet (§5: eine Variable, eine
+        // Bedeutung). Die V3-Kopfzeile kommt als EIGENE Variable dazu.
+        '--leser-kopf-h': 'calc(4rem + 2.25rem)',
         '--leser-sub-h': imPane ? 'var(--leser-v3-kopf-h)' : '0rem',
-        '--nt-stick': imPane ? 'var(--leser-sub-h)' : 'var(--leser-kopf-h)',
+        '--nt-stick': imPane
+          ? 'var(--leser-sub-h)'
+          : 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h))',
       } as CSSProperties}>
 
       {reiterToast && (
@@ -485,10 +489,24 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
         {zweiSpalten && (
           <aside role="navigation" aria-label="Gliederung"
             data-v3-aside
-            // Klebt unter der Kopfzeile und nutzt die Resthöhe des Fensters
-            // bzw. des Panes. `--leser-kopf-h` ist die EINE Quelle dafür.
-            className="sticky max-h-[calc(100dvh-var(--leser-kopf-h)-2rem)] min-h-0 self-start overflow-hidden"
-            style={{ top: 'calc(var(--leser-v3-kopf-top) + var(--leser-v3-kopf-h) + 0.5rem)' }}>
+            // Geometrie WÖRTLICH wie die Ist-Spalte (`inhalt-volltext.tsx`), und
+            // aus demselben Grund: `top` ist derselbe Ausdruck wie der
+            // Sprung-Offset der Anker (`--nt-stick`), damit Spalte und Sprung
+            // konstruktiv nicht auseinanderlaufen können (Lehre LM-003).
+            //
+            // `flex flex-col` + `maxHeight` ist die tragende Kombination — NICHT
+            // `overflow-hidden` mit `h-full` im Kind: `height:100%` löst gegen
+            // eine Maximalhöhe nicht auf, der innere Scroller wuchs auf die volle
+            // Inhaltshöhe und der Überschuss wurde stumm abgeschnitten statt
+            // scrollbar zu sein (Befund 16.8.2026 am OR @1440×900). Im Flex-Fluss
+            // schrumpft das Kind dagegen korrekt in die Maximalhöhe hinein.
+            className="sticky flex min-h-0 flex-col self-start"
+            style={{
+              top: 'var(--nt-stick)',
+              maxHeight: imPane
+                ? 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)'
+                : 'calc(100vh - var(--nt-stick) - 1.5rem)',
+            }}>
             <div className="flex items-center justify-end pb-1">
               <button type="button" data-v3-gliederung-zu onClick={() => setTocOffen(false)}
                 aria-expanded={tocOffen} title="Gliederung ausblenden"

@@ -42,16 +42,32 @@ export function LeserSeitenleiste({
   alleOffen: boolean;
 }) {
   return (
-    <div data-v3-leiste className="flex h-full min-h-0 flex-col">
-      {/* Der ganze Block scrollt in EINEM Scroller; sticky wirkt darin. */}
-      <div data-v3-leiste-scroller className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
+    // `flex-1 min-h-0` statt `h-full`: der Vorfahre (die klebende Spalte) hat eine
+    // `max-height`, KEINE feste Höhe — und `height:100%` löst gegen eine
+    // Maximalhöhe nicht auf (CSS-Spec). Die Folge war ein Scroller, der auf die
+    // volle Inhaltshöhe wuchs und darum nichts zu scrollen hatte: der Überschuss
+    // wurde stumm abgeschnitten (belegt am OR @1440×900, scrollHeight ===
+    // clientHeight === 1082 bei 712 px Spaltenhöhe). Dieselbe Flex-Anatomie wie
+    // die Ist-Spalte (`inhalt-volltext.tsx`, `flex-1 min-h-0` im `[data-toc]`).
+    <div data-v3-leiste className="flex min-h-0 flex-1 flex-col">
+      {/* Der ganze Block scrollt in EINEM Scroller; sticky wirkt darin.
+          `data-toc` ist KEIN Testhaken, sondern der Anschluss an die GETEILTE
+          Mechanik: der Scroll-Spy in `inhalt-hooks.tsx` sucht `[data-toc]`, um
+          die aktive Baumzeile mitzuführen (P9b/A33) und um den
+          Nutzer-Interaktions-Guard anzuhängen. Ohne die Marke lief beides in V3
+          ins Leere — die Gliederung wäre beim Lesen still stehen geblieben. */}
+      <div data-toc data-v3-leiste-scroller className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
         {uebersicht && (
           <div data-v3-leiste-uebersicht className="mb-3">{uebersicht}</div>
         )}
         {suchFeld && <div data-v3-leiste-feld className="mb-3">{suchFeld}</div>}
         {/* Ab hier klebt es. `bg-paper` ist Pflicht: ohne opake Fläche liefe der
             Baum beim Scrollen sichtbar unter der Kopfzeile durch. */}
-        <div data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
+        {/* `data-toc-zone-a`: derselbe geteilte Anschluss — der Mitscroll-Nudge
+            misst daran, wie viele oberste Pixel des Scrollers dieser klebende
+            Sockel verdeckt. Ohne die Marke schöbe er die aktive Zeile exakt
+            darunter und meldete «sichtbar», was niemand sieht. */}
+        <div data-toc-zone-a data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 bg-paper pb-2 pt-0.5">
           <div className="flex items-center justify-between gap-2">
             <h2 className="lc-overline">{baumTitel}</h2>
             <div className="flex shrink-0 items-center gap-1">
