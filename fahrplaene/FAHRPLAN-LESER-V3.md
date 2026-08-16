@@ -1059,6 +1059,81 @@ stillschweigend doppelt gebaut (§17-Gegengewicht, Kollisionsregel).
   ENTSCHEID-Panes teilen weiterhin eine Modul-Instanz (unverändert gegenüber dem
   Vorzustand, ausserhalb des gemeldeten Befunds).
 
+- **`Ä24` · Shard-7-Rot auf dem OR ist KEIN H2-Defekt — die Wurzel liegt auf
+  `main` und gehört an `QS-PERF`.** Gemessen 17.8.2026 (Diagnose-Auftrag zu
+  PR #539); der Ausgangsverdacht lautete: «H2 hat die V1-Hülle auf dem grossen
+  OR verlangsamt» (Kandidaten S4-Sortierung, Highlight-Registry, Trefferliste).
+
+  **Symptom.** Im Projekt `chromium` (= OHNE Flag = eingefrorene V1-Hülle) fielen
+  `e2e/leser-ohne-gliederungslinie.e2e.ts:71` (OR Art. 319, hart rot über alle
+  drei Versuche) und `e2e/leser-r1-r2.e2e.ts:544` (OR-Suchmodus, flaky). **Beide
+  scheiterten NICHT an ihrer Sachaussage**, sondern an der Bereitschaft der
+  Seite: «element(s) not found» nach 20 s auf
+  `getByRole('button', {name:'Ansicht'})` bzw. `[data-treffer-leiste]`. Die
+  eigentlichen Aussagen (keine Gliederungslinie, kein Massen-Remount) wurden nie
+  erreicht — das Tor fiel im Vorraum.
+
+  **Nullprobe (§0 Ziff. 3a) — zwei unabhängige, beide negativ.**
+  (i) *Gleiche Bytes, einmal grün, einmal rot:* Run `31973757595` auf `f54ff49aa`
+  war vollständig grün, Run `31974377602` auf `eca91b2b2` auf Shard 7 rot.
+  Zwischen beiden liegen **30 Zeilen `.claude/`-Doku und sonst nichts**
+  (`git diff --stat f54ff49aa eca91b2b2`). So verhält sich kein deterministischer
+  Code-Defekt.
+  (ii) *Lokales A/B Branch gegen Merge-Base:* Zeit bis der «Ansicht»-Knopf auf
+  `/gesetze/bund/OR#art-319` sichtbar ist, zwei getrennte `vite preview`-Server
+  auf demselben Rechner, je 11 Messungen.
+
+  **Verteilung (§0 Ziff. 3b) — der Messwert ist ZWEIGIPFLIG, und beide Gipfel
+  stehen in beiden Armen:**
+
+  | Arm | schneller Gipfel | langsamer Gipfel | Anteil langsam |
+  |---|---|---|---|
+  | Branch (H2) | 8.9–9.3 s, Median **9.19 s** | 14.9–16.5 s, Median **15.82 s** | 7/11 |
+  | `main` (Merge-Base) | 8.4–9.5 s, Median **8.87 s** | 15.8–17.2 s, Median **15.97 s** | 5/11 |
+
+  **Innerhalb desselben Gipfels sind die Arme ununterscheidbar:** +321 ms
+  (+3.6 %) im schnellen, −148 ms (Branch SCHNELLER) im langsamen — die Vorzeichen
+  widersprechen einander, was gegen jeden gerichteten Effekt spricht. Der
+  Unterschied der Roh-Mediane entsteht allein daraus, wie oft der langsame
+  Zustand eintrat; 7/11 gegen 5/11 ist bei dieser Stichprobe keine Aussage. Der
+  Sprung zwischen den Gipfeln beträgt **~6.8 s**, rund das Zwanzigfache des
+  grössten Arm-Unterschieds: **der Featureanteil verschwindet in der Streuung.**
+
+  **Messbedingung (§0 Ziff. 3c).** macOS, Apple Silicon, `dist` aus
+  `npm run build`, `vite preview`, je Messung ein frischer Browser-Kontext,
+  ungedrosselt, Rechner unbelastet. Die erste Reihe lief mit beiden Armen
+  GLEICHZEITIG und ist nur als Kontrolle geführt; die Tabelle poolt sie mit einer
+  zweiten, streng sequenziellen Reihe — beide zeigen dieselben zwei Gipfel, mit
+  vertauschten Anteilen. CI ist ein 2-Kern-Linux-Runner mit `workers: 1`.
+
+  **Gegenprobe unter CI-naher Last (`Emulation.setCPUThrottlingRate: 4`, je n=3).**
+  Sie zeigt den Ausfall direkt, statt ihn hochzurechnen: Branch **46,5–49,7 s**,
+  `main` **32,8–47,4 s** — beide Arme reissen das 20-s-Budget um das 2,3- bis
+  2,6-Fache, und die grösste Einzelstreuung steht auf `main`, nicht im Branch.
+  Ohne Hash dasselbe Bild (Branch 45,2–46,3 s, `main` 50,2–52,0 s; hier ist `main`
+  der langsamere Arm). Damit ist die Arm-Unabhängigkeit unter genau der Bedingung
+  belegt, unter der CI rot wurde.
+
+  **Wurzel.** Der Leser braucht auf dem OR (2038 Artikel) **8.4–17.2 s bis zur
+  Bedienbarkeit — auf einem schnellen, unbelasteten Rechner**. Die Spec gewährt
+  20 s. Der langsame Gipfel liegt damit schon lokal bei 86 % des Budgets; auf dem
+  CI-Runner reisst er es. Das Tor misst folglich nicht mehr seine Sachaussage,
+  sondern die Tagesform des Runners. Zwei Nebenbefunde: (a) die Hash-Form der
+  Adresse ist NICHT die Ursache — `/gesetze/bund/OR` ohne `#art-319` zeigt
+  dieselbe Zweigipfligkeit; (b) die grüne CI-Historie von `main` ist **kein**
+  Gegenbeweis: in 5 der 7 letzten `main`-Läufe war Shard 7 nach 4 s fertig, weil
+  die Diff-Klassierung ihn als `art=doku` übersprang.
+
+  **Was daraus NICHT folgt.** Kein Timeout-Anheben und keine Test-Lockerung in
+  H2 — beides maskierte genau die Zahl, die hier belegt ist. Die Ursache
+  (Erst-Render/Hydration des OR und die Herkunft des ~6.8-s-Sprungs zwischen den
+  Gipfeln) ist ein Perf-Thema der Ist-Hülle und liegt ausserhalb der H2-Fläche.
+
+  **Übergabe.** Gehört an **`QS-PERF`** (Erst-Render OR) und schliesst den
+  ausdrücklich offen gelassenen Punkt (b) von `QS-E2E-STABIL` — «`leser-r1-r2`-
+  Wurzel per CI-Forensik, kein UI-Bau ins Blaue, nicht per Timeout maskieren».
+  Die Forensik ist hiermit geliefert, der Bau steht aus.
+
 ### Kollisionshinweis für die Folge-Session
 
 `W2·10-UI-NAV`, `W2·7-VZUI`, `W2·13-KANTONE` und `QS-PERF` führen `src/pages/gesetz-leser` bzw.

@@ -163,7 +163,15 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
 - **Geräte-Last / Performance** *(QS-PERF, `[OF]`)*. Nicht merklich langsamer, ohne Logikverlust
   <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · kollision: [scripts/check-perf-budget.ts, src/pages/gesetz-leser, src/lib/rechtsprechung, vite.config.ts] · worktree: nein · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   (§15). Offen: M-Daten-Pfad (9,5-MB-`register.json` ist der lohnendste Hebel) +
-  Render-/Split-View-Feinschliff. **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
+  Render-/Split-View-Feinschliff. **Neu 17.8.2026 — Erst-Render OR, vermessen:** der
+  Leser braucht auf dem OR (2038 Art.) **8,4–17,2 s bis zur Bedienbarkeit** auf einem
+  schnellen, unbelasteten Rechner, zweigipflig mit einem ungeklärten Sprung von ~6,8 s;
+  auf `main` wie im V3-Branch identisch (A/B je n=11, Arm-Unterschied ≤ 3,6 % und im
+  Vorzeichen wechselnd). Das ist die Wurzel des Shard-7-Rots auf `e2e/leser-ohne-
+  gliederungslinie.e2e.ts:71` und `e2e/leser-r1-r2.e2e.ts:544` (20-s-Budget) und
+  schliesst zugleich Punkt (b) von `QS-E2E-STABIL`. Messreihe und Nullproben:
+  [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
+  **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
 - **Datenhaltung / VPS-Gate** *(QS-DATA)*. Trägt nur das David-Gate: E3-Serving + E4-UI-Panels
   <!-- @meta id: QS-DATA · status: blocked · blocker: vps-bestellung-david · dep: [] · kollision: [scripts/datenhaltung, daten] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
   hängen an einer VPS-Bestellung (~15 Min David). Der Datenhaltungs-Bau selbst liegt in `W2·6-DATA`.
