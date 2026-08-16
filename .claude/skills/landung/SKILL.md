@@ -1,6 +1,6 @@
 ---
 name: landung
-description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «landen», «Landung», «PR mergen», «einsammeln», «rebasen auf main», «Merge-Kette abarbeiten», «Push», «Deploy», «Live-Gang», «bring das auf Prod», «Release-Stand prüfen». Kodifiziert §12 (serielle Landung, Merge-Treiber) UND §9 (Merge nach main IST der Deploy — Vercel liefert main automatisch aus); der frühere Skill deploy-check ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
+description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «landen», «Landung», «PR mergen», «einsammeln», «rebasen auf main», «Merge-Kette abarbeiten», «Push», «Deploy», «Live-Gang», «bring das auf Prod», «Release-Stand prüfen». Kodifiziert §12 (serielle Landung, Merge-Treiber) UND §9 (Merge nach main IST der Deploy — seit 17.8.2026 liefert der CI-Job «Deploy (Prod, Vercel CLI)» aus, Vercel-Git-Deploys sind aus); der frühere Skill deploy-check ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
 ---
 
 # Landung nach main = Deploy (§12 + §9, «Weg 1»)
@@ -10,13 +10,33 @@ description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «lan
 zu einer älteren §9-/§12-/deploy-check-Erinnerung gewinnt **dieser Text** — wer
 einen ausführlichen §9 in `CLAUDE.md` erinnert, erinnert einen Altstand.
 
-**Kernmodell (Weg 1):** Vercel liefert `main` automatisch auf Prod aus — **der
-Merge nach `main` IST der Deploy**, es gibt keinen separaten
-`vercel --prod`-Handschritt. Darum liegt die gesamte §9-Sorgfalt (Tore grün,
-Bug-Check, Golden byte-gleich, doppelt verifiziert) zwingend **VOR dem
-Merge/Push auf main**; übergeordnet bleiben §1, §6 und §8. Ziel der
-Merge-Mechanik: **EINE** PR aufs Mal landen, generierte Dateien nie von Hand
-mischen.
+**Kernmodell (Weg 1):** **Der Merge nach `main` IST der Deploy** — es gibt
+keinen separaten `vercel --prod`-Handschritt. Darum liegt die gesamte
+§9-Sorgfalt (Tore grün, Bug-Check, Golden byte-gleich, doppelt verifiziert)
+zwingend **VOR dem Merge/Push auf main**; übergeordnet bleiben §1, §6 und §8.
+Ziel der Merge-Mechanik: **EINE** PR aufs Mal landen, generierte Dateien nie
+von Hand mischen.
+
+**Wer ausliefert — seit 17.8.2026 die CI, nicht mehr Vercel selbst.**
+Vercel-Git-Deploys sind abgeschaltet (`vercel.json` → `git.deploymentEnabled:
+false`; Entscheid David «Weg b»). Ausgeliefert wird im Job **«Deploy (Prod,
+Vercel CLI)»** in `ci.yml`: ausgelöst vom `push` auf `main`, mit
+`needs: [diff, tore, bau, e2e]` — Prod bekommt also nur, was die Tore
+freigegeben haben. Anlass: Vercel legte bei JEDEM Push auf JEDEN Branch ein
+Deployment an (auch das sofort «Canceled by Ignored Build Step»); am 16.8.2026
+riss das die Free-Grenze von 100/Tag und blockierte Prod 24 h. Folgen für die
+Landung:
+
+- **Push kostet keinen Deploy mehr.** Die §0-Sparregel «nur bei Meilensteinen
+  pushen» bleibt gute Sitte, ihr Vorfallsgrund ist entfallen.
+- **Kein Vercel-Check am PR.** Ohne Git-Deploy gibt es keinen Vercel-Commit-
+  Status; er ist auch kein Required Check mehr (Branch-Schutz-Edit 15.8.2026).
+  Ein fehlender Vercel-Kontext ist ab jetzt der Normalfall, kein Verdacht.
+- **Deploy-Rot ist ein CI-Job-Rot** — es steht im Actions-Lauf des
+  Merge-Commits, nicht im Vercel-Dashboard.
+- **Handdeploy bleibt verboten** (Abschnitt «manueller Deploy» unten): ein
+  lokales `vercel deploy --prod` liefert einen ungetesteten Arbeitsbaum aus und
+  rennt gegen den CI-Job um denselben Alias.
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -283,15 +303,21 @@ Geist verletzen.
 
 ## 4 · Nachkontrolle
 
-1. Prod-Deploy dem Merge-Commit zuordnen: das Vercel-Prod-Deployment muss den
-   gemergten Commit bauen (PR-Deploy-Status bzw. `npx vercel ls`); warten,
-   bis es Ready ist — nicht durch einen manuellen Deploy «beschleunigen».
-   **Deployment-STATE prüfen, nicht nur die Existenz:** `Canceled by Ignored
-   Build Step` auf einem Code-Commit ist ROT, nicht «übersprungen weil Doku».
-   Gegenprobe: `curl -s https://lexmetrik.vercel.app/ | grep lexmetrik-build`
-   muss den gemergten Kurz-SHA zeigen (Realfall 15./16.8.2026: 7 Merges
-   #519–#530 still nicht live, `git rev-parse --verify` log bei fehlendem
-   Objekt; Wächter seit #531 im Prod-Smoke, `pruefeBuildStand`).
+1. Prod-Deploy dem Merge-Commit zuordnen: im Actions-Lauf **des Merge-Commits
+   auf `main`** muss der Job **«Deploy (Prod, Vercel CLI)»** grün sein — warten,
+   bis er durch ist, nicht durch einen manuellen Deploy «beschleunigen».
+   Gegenprobe von Hand:
+   `curl -s https://lexmetrik.vercel.app/ | grep lexmetrik-build` muss den
+   gemergten Kurz-SHA zeigen. Dieselbe Probe fährt der Deploy-Job seit
+   17.8.2026 selbst als letzten Schritt (3 Versuche à 20 s für die
+   Alias-Umschaltung, sonst rot) — ein grüner Job heisst also bereits «live».
+   **Skipped ist hier NICHT grün:** fehlt der Job im Lauf, wurde nichts
+   ausgeliefert (erwartbar nur bei `art=doku`). Realfall 15./16.8.2026: 7 Merges
+   #519–#530 waren auf main, aber nie live (`git rev-parse --verify` log bei
+   fehlendem Objekt) — den Fall fängt jetzt der Job selbst, zusätzlich der
+   Wächter `pruefeBuildStand` im Prod-Smoke (#531). Historisch: bis 17.8.2026
+   baute Vercel per Git-Integration; ein `Canceled by Ignored Build Step` auf
+   einem Code-Commit war dort ROT. Diese Deploy-Art gibt es nicht mehr.
 2. Asset-Hash live = lokal (index.html der Prod-URL gegen `dist/` des
    gemergten Stands).
 3. Kernrouten auf HTTP 200: `/`, `/rechner/tagerechner`,

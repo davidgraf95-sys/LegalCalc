@@ -17,6 +17,15 @@ Merke: `main` = Prod (§9 «Merge = Deploy-Entscheid»). Ein Rollback macht den
 Fehler NICHT im Code rückgängig — es stellt nur eine ältere Auslieferung wieder
 her. Der eigentliche Fix kommt anschliessend als regulärer PR nach `main`.
 
+**Seit 17.8.2026 liefert die CI aus, nicht Vercel** (`vercel.json` →
+`git.deploymentEnabled: false`; Job «Deploy (Prod, Vercel CLI)» in `ci.yml`).
+Für den Rückweg ändert sich wenig: Weg A und B rollen unverändert auf ein
+älteres Deployment zurück — sie sind Alias-Umschaltungen, kein neuer Build.
+Neu ist nur der Vorwärtsweg: ein Deploy, der bloss hängen blieb oder abbrach,
+wird **nicht** von Hand nachgeschoben, sondern per Re-Run des Deploy-Jobs
+(`gh run rerun <run-id> --job "Deploy (Prod, Vercel CLI)"`, Lauf des
+Merge-Commits auf `main`).
+
 ## Weg A — Vercel-CLI (schnellster Rückweg)
 
 ```bash
