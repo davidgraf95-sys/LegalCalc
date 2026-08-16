@@ -101,6 +101,7 @@ maschinelles Tor.* Glieder-Aufzählung und Code-Bestands-Inventar (kontext.ts/Ko
   `W1·4`** (Entparkung 3.8.2026, David): sie ist der erste Arbeitsschritt des Schrittes, kein Wartegrund.
 
 <!-- @blockers
+david-go-leser-v3: W2·5m-LESER-V3 — Konzept + Council-Review liegen vor (fahrplaene/FAHRPLAN-LESER-V3.md, 16.8.2026); Bau startet erst auf Davids Go zum Plan und mit seinen Antworten F1–F6 (Kap. 9).
 §4-lizenz: Live-Rechtsprechung — CC-BY-SA vs. Art. 5 URG, CORS/Rate-Limits unbestätigt
 vps-bestellung-david: E3-Serving + E4-UI hängen an einer VPS-Bestellung (David, ~15 Min; Entscheid David 8.8.2026: «mach ich erst wenn UI noch optimierter wird» — bewusst zurückgestellt, nicht vergessen) — Dossier `bibliothek/betrieb/vps-bestell-dossier-2026-07-17.md` (PR #271). ECHTES David-Gate, kein Bau-Blocker. Bis dahin sind QS-DATA/W2·6-DATA nur im NICHT-VPS-Teil baubar (E0–E4 sind lokal fertig). Befund 20.7.2026: dieser Blocker stand bisher NUR im Fliesstext («🔒 BLOCKER»), das @meta trug `blocker: null` — für `check:plan` unsichtbar.
 richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE (20.7.2026): Filtern/Facette/Verlinkung sind FREI und gebaut (#309/#311); gesperrt bleiben allein RANKING und PROGNOSE. Nur deskriptiv; bewusste Freigabe Davids erforderlich (heikel: Standesrecht, Persönlichkeitsschutz, richterliche Unabhängigkeit)
@@ -302,6 +303,19 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
   - [x] **Gliederungslinie im Lesetext entfernen** *(gebaut 16.8.2026, PR feat/w2-5h-gesetz-ui)* *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
+- [ ] **5m-LESER-V3 · Gesetz-Leser V3: Hülle neu, Kern unangetastet** *(Auftrag David 16.8.2026, 19 Positionen; Konzept + Council-Review 16.8.2026)*:
+  <!-- @meta id: W2·5m-LESER-V3 · status: blocked · blocker: david-go-leser-v3 · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/kontext, src/components/suche, src/components/layout, e2e, src/index.css, tailwind.config.js] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LESER-V3.md -->
+  Radikale Vereinfachung der Leser-Oberfläche nach Apple-HIG-Prinzipien (Kopfzeile, Seitenleiste mit Übersichtsbox + einem Such-/Sprungfeld + Gliederung, Rechtsprechungs-Panel statt Dropdown, Typografie, Erlass-Kopf, Split-View einheitlich); Hülle neu **hinter Schalter `?leser=v3`** in der bestehenden Fassade (Hybrid/Strangler), Kern (`ArtikelBody`, `ArtikelLeser`, Datenlogik) unangetastet, Golden byte-gleich. Deckel: max. 5 Hüllen-PRs, dann Umschalten + Löschung der alten Hülle. **Detail:** [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) (Kurzfassung für David zuoberst; Kap. 7 Etappen H1–H5/S1–S4, Kap. 9 Fragen F1–F6).
+  - [ ] **Vorprobe H1** — Fassade als Schaltpunkt (`?leser=v3`), Flag-Playwright-Projekt (N-Tests laufen auch gegen V3), Nullprobe Flag-aus, Basisrate Etappen/Woche aus dem Verlauf. Kap. 6.
+  - [ ] **H1 Fundament** — Rahmen · ein Kopf (Ort · Artikel · ein Menü) · Seitenleiste mit Übersichtsbox (nicht sticky) + einem Such-/Sprungfeld + Gliederung (sticky, «alles ein-/aus», «↑ Anfang») · Tab-Titel-Parität Split-View. Kap. 7.
+  - [ ] **H2 Suche** — Treffer in Erlass-Reihenfolge, gruppiert je Artikel, Suchbereich; ✕ ohne Sprung (Scroll-Position). Kap. 7.
+  - [ ] **H3 Rechtsprechung/Kontext** — Seitenpanel/Sheet mit Instanz · Kanton · Zeitstrahl · Reiter Entscheide/Änderungen/Materialien; Inline nur Zähler (**F4**). Kap. 7.
+  - [ ] **H4 Umschalten** — V3 wird Hauptroute; Bild-Vergleich je Breite (Handy · voll · Split) als Abnahme; David-Go. Kap. 7.
+  - [ ] **H5 Löschung** — alte Hülle raus (Streich-Massstab aufraeumen.md §3, Beweis vor Löschung), Zielzahlen Kap. 10. Kap. 7.
+  - [ ] **S1 Historie-Modell** — «Änderungsvermerke: an/aus», bei «aus» keine Spur im Lesetext (Sichtbarkeits-Wächter §8) — **wartet auf F1/F2**. Kap. 7.
+  - [ ] **S2 Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
+  - [ ] **S3 Erlass-Kopf + Standausweis-Wortlaut** — Fakten/Status/Aktionen getrennt, «gegen Fedlex-Konsolidierung geprüft am …» (**F5**; Pos. 11 geklärt: Fedlex selbst nicht konsolidiert). Kap. 7.
+  - [ ] **S4 Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht). Kap. 7.
 - [ ] **5l-NORMTEXT-B2 · Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** —
   **Risikopfad** (`scripts/normtext`) ⇒ Gegenprüfung; **golden-Re-Bless erwartet** (additiv).
   <!-- @meta id: W2·5l-NORMTEXT-B2 · status: ready · blocker: null · dep: [] · kollision: [scripts/normtext, public/normtext/bund, golden] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md -->

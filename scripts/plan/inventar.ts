@@ -74,7 +74,7 @@ export const INVENTAR: readonly string[] = [
   'W2·13-KANTONE',
 
   // Ideen-Intake 20.7.2026 (§14): 8 Alleinstellungs-Ideen verortet.
-  'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5h-GESETZ-UI', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
+  'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5h-GESETZ-UI', 'W2·5m-LESER-V3', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
 
   // §14-Intake 20.7.2026 (2. Welle, Befunde des Tages). Label-Vergabe bewusst geprüft:
   // W2·5e/5f sind VERBRANNT (am 20.7. doppelt vergeben, danach auf 5g/5h umbenannt) —
