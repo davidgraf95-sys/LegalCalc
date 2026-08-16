@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import path from 'node:path';
 
 // ─── Architektur-Zusagen des V3-Fundaments (Auftrag David 16.8.2026, H1) ────
 //
@@ -79,26 +80,111 @@ describe('Eine Naht: die sechs geteilten inhalt-*-Module', () => {
   });
 });
 
-describe('Keine Ist-Hülle: die alten Bausteine sind aus v3/ nicht erreichbar', () => {
-  // Reihenfolge der Muster bewusst so, dass '../inhalt' NICHT versehentlich
-  // '../inhalt-hooks' o.ä. mitfängt: der String-Vergleich verlangt die
-  // schliessende Anführung direkt nach 'inhalt'.
-  const VERBOTEN: [string, RegExp][] = [
-    ['../inhalt (Ist-Orchestrierung)', /from '\.\.\/inhalt'/],
-    ['../inhalt-volltext', /from '\.\.\/inhalt-volltext'/],
-    ['LeserMenuPaar', /\bLeserMenuPaar\b/],
-    ['LeserAnsichtMenu', /\bLeserAnsichtMenu\b/],
-    ['LeserRechtsprechungMenu', /\bLeserRechtsprechungMenu\b/],
-    ['../parts/InGesetzSuche', /\bInGesetzSuche\b/],
-    ['../parts/ArtikelSprungFeld', /\bArtikelSprungFeld\b/],
-    ['KontextPanel', /\bKontextPanel\b/],
-  ];
+// Reihenfolge der Muster bewusst so, dass '../inhalt' NICHT versehentlich
+// '../inhalt-hooks' o.ä. mitfängt: der String-Vergleich verlangt die
+// schliessende Anführung direkt nach 'inhalt'.
+const VERBOTEN: [string, RegExp][] = [
+  ['../inhalt (Ist-Orchestrierung)', /from '\.\.\/inhalt'/],
+  ['../inhalt-volltext', /from '\.\.\/inhalt-volltext'/],
+  ['LeserMenuPaar', /\bLeserMenuPaar\b/],
+  ['LeserAnsichtMenu', /\bLeserAnsichtMenu\b/],
+  ['LeserRechtsprechungMenu', /\bLeserRechtsprechungMenu\b/],
+  ['../parts/InGesetzSuche', /\bInGesetzSuche\b/],
+  ['../parts/ArtikelSprungFeld', /\bArtikelSprungFeld\b/],
+  ['KontextPanel', /\bKontextPanel\b/],
+];
 
+describe('Keine Ist-Hülle: die alten Bausteine sind aus v3/ nicht erreichbar', () => {
   it('keine V3-Datei berührt die Ist-Hülle (Code, nicht Kommentare)', () => {
     for (const datei of ALLE_DATEIEN) {
       const quelle = ohneKommentare(LIES(datei));
       for (const [name, muster] of VERBOTEN) {
         expect(traegt(quelle, muster), `${datei} berührt die Ist-Hülle (${name})`).toBe(false);
+      }
+    }
+  });
+});
+
+// ─── EINE EBENE TRANSITIV (Architektur-Review A1, 16.8.2026) ─────────────────
+//
+// Die Sonde oben liest nur den QUELLTEXT der V3-Dateien. Sie war darum blind
+// gegen den Weg, auf dem die Ist-Hülle tatsächlich in V3 stand: `inhalt-hooks`
+// re-exportierte `useInhaltsKopfMeldung` aus `inhalt-kopfmeldung`, und diese
+// Datei zieht `LeserMenuPaar` + `InGesetzSuche` mit. Kein V3-Quelltext nannte
+// die beiden — der Bundler zog sie trotzdem. Ein Verbot, das ein `export … from`
+// aushebelt, ist keines.
+//
+// Darum wird der Import-Graph ab `v3/` ZWEI Kanten weit abgelaufen (Ebene 1 =
+// die direkten Nachbarn, Ebene 2 = deren Nachbarn) und auf denselben Markern
+// geprüft. Weiter als zwei Kanten wäre eine Sonde über die halbe Leser-Familie
+// und würde jeden fremden Umbau rot machen, ohne etwas über V3 zu sagen.
+const LESER_DIR = 'src/pages/gesetz-leser';
+
+/** Relative Import-/Re-Export-Ziele einer Datei (Code, nicht Kommentare).
+ *  Fasst `import … from '…'` UND `export … from '…'` — genau die zweite Form
+ *  war die Lücke. */
+function relativeZiele(quelle: string): string[] {
+  return [...ohneKommentare(quelle).matchAll(/\bfrom\s+'(\.[^']*)'/g)].map((t) => t[1]);
+}
+
+/** Spezifizierer → Dateipfad, sofern er unter `src/pages/gesetz-leser` liegt.
+ *  `../parts` muss auf den Barrel `parts.tsx` auflösen, nicht auf das
+ *  gleichnamige Verzeichnis — darum steht `.tsx` vor `/index.*`. */
+function aufloesen(vonDatei: string, spez: string): string | null {
+  const basis = path.resolve(path.dirname(vonDatei), spez);
+  for (const kandidat of [`${basis}.tsx`, `${basis}.ts`, `${basis}/index.tsx`, `${basis}/index.ts`]) {
+    if (!existsSync(kandidat)) continue;
+    const rel = path.relative(process.cwd(), kandidat);
+    return rel.startsWith(LESER_DIR) ? rel : null;
+  }
+  return null;
+}
+
+/** Nachbarn einer Dateimenge, ohne `v3/` selbst (das prüft die Sonde oben). */
+function nachbarn(dateien: string[]): string[] {
+  const raus = new Set<string>();
+  for (const datei of dateien) {
+    for (const spez of relativeZiele(readFileSync(datei, 'utf8'))) {
+      const ziel = aufloesen(datei, spez);
+      if (ziel && !ziel.startsWith(V3_DIR)) raus.add(ziel);
+    }
+  }
+  return [...raus].sort();
+}
+
+describe('Keine Ist-Hülle transitiv: was V3 importiert, importiert sie auch nicht', () => {
+  const V3_PFADE = ALLE_DATEIEN.map((d) => `${V3_DIR}/${d}`);
+  const EBENE1 = nachbarn(V3_PFADE);
+  const EBENE2 = nachbarn(EBENE1).filter((p) => !EBENE1.includes(p));
+
+  // DEKLARIERTE AUSNAHME — dieselbe wie oben, nur eine Kante weiter gedacht:
+  // `inhalt-ansichten.tsx` (Fehlseite · Currency-Pin · pdf-embed) rendert
+  // `KontextPanel`. Das ist kein Stück Ist-LESER-Hülle, sondern die Fehl- und
+  // Früh-Ansicht, die V3 bewusst teilt (§5); der Rahmen deklariert den Import
+  // dort seit H1. Der Kreis ist auf GENAU diese Datei und GENAU diesen Marker
+  // geschlossen — jede andere transitive Berührung wird rot.
+  const AUSNAHME_DATEI = `${LESER_DIR}/inhalt-ansichten.tsx`;
+  const AUSNAHME_MARKER = 'KontextPanel';
+
+  it('Positiv-Sonde: der Graph ist überhaupt gelaufen (sonst prüfte alles die leere Menge)', () => {
+    expect(EBENE1.length, 'Ebene 1 ist leer — Auflösung kaputt').toBeGreaterThan(5);
+    expect(EBENE2.length, 'Ebene 2 ist leer — es wird gar nicht transitiv geprüft').toBeGreaterThan(0);
+    expect(EBENE1, 'der Adapter-Nachbar inhalt-hooks fehlt im Graph').toContain(`${LESER_DIR}/inhalt-hooks.tsx`);
+  });
+
+  it('Positiv-Sonde: die Ausnahme-Datei ist wirklich im Graph und trägt wirklich den Marker', () => {
+    expect([...EBENE1, ...EBENE2], 'die deklarierte Ausnahme steht gar nicht im Graph — Kommentar ist stale')
+      .toContain(AUSNAHME_DATEI);
+    expect(readFileSync(AUSNAHME_DATEI, 'utf8')).toContain(AUSNAHME_MARKER);
+  });
+
+  it('keine Datei in Ebene 1 oder 2 berührt die Ist-Hülle', () => {
+    for (const datei of [...EBENE1, ...EBENE2]) {
+      const quelle = ohneKommentare(readFileSync(datei, 'utf8'));
+      for (const [name, muster] of VERBOTEN) {
+        if (datei === AUSNAHME_DATEI && name === AUSNAHME_MARKER) continue;
+        expect(traegt(quelle, muster),
+          `${datei} zieht die Ist-Hülle (${name}) transitiv nach v3/`).toBe(false);
       }
     }
   });
