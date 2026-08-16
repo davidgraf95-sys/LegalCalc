@@ -141,6 +141,38 @@ steht (Fahrplan Kap. 7: «Split-View ist ein Test, kein Screenshot»).
 | A-4 | Kap. 10, Zeile «e2e N»: «8 bleiben unverändert grün» neben **zehn** Namen | Zahl auf 10 korrigiert | Bereits in der Vorprobe gemeldet; mit diesem Schnitt vollzogen. |
 | A-5 | Kap. 12, A-1 (`scrollAnker.ts`-Claim) | Zeile gestrichen | In der Vorprobe widerlegt: der Spiegel existiert (`lesePosition.ts:54/:98`, Schlüssel `lexmetrik-leseposition`). |
 
+## 4b · Die N-Tests im Flag-Projekt — was der Paritätsbeweis wirklich zeigt
+
+Der Fahrplan (Kap. 10) lässt zehn «N»-Specs **doppelt** laufen: ohne Flag gegen
+den Ist-Stand, mit Flag gegen V3. «Diese Doppelung IST der Paritätsbeweis — eine
+Hülle, die den Normtext verändert, wird auf genau einer Seite rot.»
+
+**Ergebnis nach H1: 49 von 60 grün, 11 rot** (`npx playwright test
+--project=leser-v3`, gegen den frischen Build). Jede der elf roten Zeilen wurde
+einzeln nachgesehen. **Keine einzige betrifft den Normtext** — alle prüfen die
+**Struktur der Ist-Hülle**, die V3 planmässig ersetzt:
+
+| Rot | Was der Test verlangt | Warum V3 es nicht erfüllt |
+|---|---|---|
+| `gesetze-ux-g3a` (3) | Der Erlass-Kopf ist ein **direktes Kind** von `.lc-leser` (`.lc-leser > header`) | In V3 sitzt er in der rechten Rasterzelle, damit die Gliederung nicht unter die Falz rutscht (Ziff. 2). **Der geprüfte Inhalt stimmt**: «Verordnung» statt «Bundesgesetz» (VMWG), «Bundesgesetz» (ELG), «Paragraphen» + `#art-`-Anker (AG) sind in V3 unverändert vorhanden — nur der Anker-Selektor der Prüfung greift nicht mehr |
+| `leser-optionen` (3) | **Genau zwei** `role="switch"` («Fussnoten», «Verweise») im Ist-Ansicht-Menü | V3 hat **drei** («Fussnoten», «Änderungsvermerke», «Rechtsprechung im Text») und keinen Verweise-Schalter — genau der Rückbau von Kap. 4f (24 → 8 Kombinationen). Ein grüner Test wäre hier der Beweis, dass H1 nichts getan hat |
+| `leser-r1-r2` (4) | Ein **zweites** Feld «Zu Artikel springen» im TOC-Kopf und im Sheet | V3 hat **ein** Feld für Suche und Sprung — Pos. 4, die Behebung von K2. Der Test fordert genau die Dopplung, die die Etappe beseitigt |
+| `leser-ruecksprung-r5-r7` (1) | Der Rücksprung landet **< 140 px** unter der Fensterkante | V3 landet auf **156 px** — und das ist korrekt: 156 px ist die exakte Höhe des klebenden Chrome (Topbar 64 + App-Leiste 36 + V3-Kopfzeile 56). Die 140-px-Schwelle war auf das Ist-Chrome (100 px) kalibriert. **Zugleich die schärfste Zahl für Abweichung A-2**: sobald H4/H5 die beiden Leisten verschmelzen, fällt der Wert unter die Schwelle |
+
+**Was daraus folgt — eine Korrektur an Kap. 10, die David sehen sollte:** die
+N-Liste ist **nicht sortenrein**. Sie enthält neben echter Normtext-Treue
+(Marginalien, PDF-Download, Anhänge, Linien-Rückbau, Such-Vertrag, die neun
+UX-Punkte — **alle 49 grün**) auch Specs, die die **Ist-Hüllen-Struktur**
+festschreiben. Gegen eine neue Hülle können die letzteren **konstruktiv nicht**
+grün werden; sie als Paritätsbeweis zu führen hiesse, jede Hüllen-Änderung als
+Normtext-Verletzung zu melden. Der Fahrplan sieht ihr Ende ohnehin vor (H4:
+«11 alte B-Tests werden entfernt/umgehängt») — **die Zuordnung ist nur zu früh
+als «N» geführt**. Vorschlag: die vier Dateien beim nächsten Schnitt in Kap. 10
+als **B** (Bedienung/Hülle) einordnen; N bleiben `gesetze-marginalie`,
+`gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3b-anhang`,
+`leser-ohne-gliederungslinie`, `leser-suche-vertrag-b8` — und die sind **alle
+grün**, in beiden Hüllen.
+
 ## 5 · Kern-Ausnahmen
 
 **Keine.** `ArtikelLeser`, `ArtikelBody` und die übrigen Kern-Dateien sind

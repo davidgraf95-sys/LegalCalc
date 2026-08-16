@@ -463,6 +463,31 @@ derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
   umgebaut (FL-4). Sie gehört zu **H4/H5**; Preis heute 37 px Chrome. Dieselbe
   Aufteilung hat der Entscheid-Leser seit je.
 
+**Befund zur N-Liste (Kap. 10) — die Zuordnung ist zu früh als «N» geführt.**
+Das Flag-Projekt steht nach H1 bei **49 von 60 grün**. Alle elf roten Zeilen
+wurden einzeln nachgesehen; **keine betrifft den Normtext**, alle prüfen die
+**Struktur der Ist-Hülle**, die V3 planmässig ersetzt: `gesetze-ux-g3a` (3 ×
+`.lc-leser > header` als direktes Kind), `leser-optionen` (3 × «genau zwei
+role=switch» — V3 hat die drei von Kap. 4f), `leser-r1-r2` (4 × das zweite Feld
+«Zu Artikel springen», das Pos. 4 gerade beseitigt) und `leser-ruecksprung-r5-r7`
+(1 × Rücksprung «< 140 px»; V3 landet auf **156 px** = exakt das klebende Chrome
+64 + 36 + 56 — die Schwelle war auf das Ist-Chrome von 100 px kalibriert).
+Diese vier Dateien können gegen eine neue Hülle **konstruktiv nicht** grün
+werden; sie als Paritätsbeweis zu führen hiesse, jede Hüllen-Änderung als
+Normtext-Verletzung zu melden. **Vorschlag beim nächsten Schnitt:** die vier in
+Kap. 10 als **B** einordnen (H4 entfernt/hängt sie ohnehin um). Als N bleiben
+`gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`,
+`gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`, `leser-suche-vertrag-b8`
+— **alle sechs sind in beiden Hüllen grün**, und das ist der Paritätsbeweis, der
+wirklich einer ist. Herleitung je Zeile im Kontaktbogen, Ziff. 4b.
+
+**Zwei Befunde aus der Prüfung, die H1 selbst betrafen und behoben sind:** die
+Gliederungsspalte konnte nicht scrollen (`max-height` am Vorfahren löst kein
+`height:100%` im Kind auf — der Überschuss wurde stumm abgeschnitten), und der
+GETEILTE Scroll-Spy fand seinen Container nicht, weil der V3-Leiste die Marken
+`[data-toc]`/`[data-toc-zone-a]` fehlten (die Gliederung wäre beim Lesen still
+stehen geblieben, P9b/A33). Beide reproduziert, behoben und nachgemessen.
+
 **Nebenbefund für H2:** die reine Volltextsuche kostet auf **H** einen Tap mehr
 als im Ist-Stand (Ist: Lupe im Kopf = 1 Tap · V3: ☰ → Feld = 2 Taps), weil
 Kap. 4b Suchfeld und Gliederung gemeinsam ins Bottom-Sheet legt. Keine der drei
