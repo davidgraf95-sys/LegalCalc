@@ -142,9 +142,16 @@ export function useLeserDaten(opts: {
 // Schwachstelle-8-Fix (`zeigeGliederung` auf `eintraege.length` statt
 // `sektionen.length`) stand diese Datei bei 804/800 Zeilen. Der Hook ist
 // unverändert byte-gleich — nur ausgelagert nach ./inhalt-kopfmeldung.tsx
-// (Fassade, Begründung dort). Re-Export hält den Importpfad `from
-// './inhalt-hooks'` in inhalt.tsx stabil.
-export { useInhaltsKopfMeldung } from './inhalt-kopfmeldung';
+// (Fassade, Begründung dort).
+//
+// DER RE-EXPORT IST WEG (Architektur-Review A1, 16.8.2026). Er hielt den
+// Importpfad `from './inhalt-hooks'` in `inhalt.tsx` bequem stabil und zog dafür
+// `inhalt-kopfmeldung` — und damit `LeserMenuPaar` + `InGesetzSuche` — in JEDEN
+// Importeur dieser Datei. Seit H1 ist das auch der V3-Adapter
+// (`v3/leserV3Modell.ts`): die neue Hülle trug die alte Kopfleiste im Bundle,
+// ohne sie je zu nennen. `inhalt.tsx` importiert den Hook jetzt direkt aus
+// `./inhalt-kopfmeldung`; bewacht wird das von der transitiven Sonde in
+// `src/tests/leser-v3-fundament.test.ts` (einmal rot gezeigt, §6.7).
 
 // ── Hash-Sprung-Seed + geteilter Aktiv-Artikel-Beobachter (Scroll-Spy) + TOC-
 //    Mitscroll + Nutzer-Interaktions-Guard + Scroll-Anker ──────────────────────
