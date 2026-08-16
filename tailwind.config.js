@@ -1,11 +1,47 @@
 import containerQueries from '@tailwindcss/container-queries';
 
+// ─── Deckkraft-Fähigkeit der Token-Farben (DESIGN-D0, Fund B4 vom 8.8.2026) ──
+// Tailwind 3 wendet den `/<alpha>`-Modifier nur an, wenn der Farbwert parsebar
+// ist (`#F1E8D6`) oder eine Funktion bzw. `<alpha-value>`-Vorlage. Ein blosses
+// `var(--brass-100)` ist beides nicht: `withAlphaValue()` liefert `undefined`,
+// die Deklaration entfällt, die GANZE Regel wird verworfen — `bg-brass-100/70`
+// & Co. rendern unsichtbar statt halbtransparent (belegt LM-156 / PR #472).
+//
+// Der Fix wickelt die BLÄTTER des Farbbaums in eine Funktion, ohne die Werte
+// selbst anzufassen: eine Quelle bleibt die CSS-Variable in `src/index.css`
+// (§5 — keine zweite Wahrheit als RGB-Kanal-Token, und die Dunkel-Umschaltung
+// bleibt ein reiner :root-Eingriff). Der opake Fall gibt unverändert
+// `var(--token)` zurück, damit alle bestehenden Utilities denselben Wert
+// behalten (§6); nur der Modifier-Fall mischt. `color-mix(in oklab, C p%,
+// transparent)` ist das Idiom, das `src/index.css` für `--line`/`--rule-*`
+// bereits verwendet — also keine neue Browser-Anforderung.
+// Bewacht von `check:design-tokens` Prüfung 3: sie kompiliert die real
+// genutzten `/<alpha>`-Klassen und verlangt eine Regel mit abweichendem Wert.
+/**
+ * @param {Record<string, unknown>} baum Farbbaum mit `var(--token)`-Blättern.
+ * @returns {Record<string, unknown>} derselbe Baum, Blätter deckkraft-fähig.
+ */
+function alphaFaehig(baum) {
+  const um = (wert) => {
+    if (wert && typeof wert === 'object')
+      return Object.fromEntries(Object.entries(wert).map(([k, v]) => [k, um(v)]));
+    if (typeof wert !== 'string' || !wert.startsWith('var(')) return wert;
+    return ({ opacityVariable, opacityValue } = {}) =>
+      // Opak: Utility ohne Modifier (Tailwind reicht dort die --tw-*-opacity-
+      // Variable durch) bzw. ausdrücklich volle Deckkraft. Sonst anteilig.
+      opacityVariable !== undefined || opacityValue === undefined || Number(opacityValue) === 1
+        ? wert
+        : `color-mix(in oklab, ${wert} calc(${opacityValue} * 100%), transparent)`;
+  };
+  return um(baum);
+}
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      colors: {
+      colors: alphaFaehig({
         ink: {
           900: 'var(--ink-900)', 800: 'var(--ink-800)', 700: 'var(--ink-700)', 600: 'var(--ink-600)',
           500: 'var(--ink-500)', 400: 'var(--ink-400)', 300: 'var(--ink-300)',
@@ -49,7 +85,7 @@ export default {
         well: 'var(--well)',
         warn: { 500: 'var(--warn-500)', 700: 'var(--warn-700)', bg: 'var(--warn-bg)', line: 'var(--warn-line)', solid: 'var(--warn-solid)', text: 'var(--warn-text)' },
         danger: { 500: 'var(--danger-500)', 700: 'var(--danger-700)', bg: 'var(--danger-bg)', line: 'var(--danger-line)', solid: 'var(--danger-solid)', text: 'var(--danger-text)' },
-      },
+      }),
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

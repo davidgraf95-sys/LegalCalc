@@ -219,6 +219,18 @@ Klassen. **Jede `bg-*`/`text-*`/`border-*`/`ring-*`-Farbe muss in
 wo Token/Utility existiert (datengetriebene Inline-Werte — Timelines, Karten-
 Fill — sind ausgenommen). Dark-Mode-Parität ist Teil jeder Farb-Entscheidung.
 
+**F7a — Deckkraft-Suffix ist erlaubt und wirksam (DESIGN-D0, 16.8.2026).** Das
+Suffix (`bg-brass-100/40`, `border-line/60` …) war bis dahin ein stiller No-op:
+Tailwind 3 kann den `/<alpha>`-Modifier auf einen reinen `var(--token)`-Wert
+nicht anwenden, verwarf darum die ganze Regel, und die Fläche rendert unsichtbar
+(Fund B4 vom 8.8.2026, belegt LM-156 / PR #472; 22 Klassen an 90 Fundstellen).
+Wurzel-Fix in `tailwind.config.js` (`alphaFaehig()` — opak unverändert, nur der
+Modifier mischt per `color-mix`), bewacht von `check:design-tokens` Prüfung 3.
+Folge für den Bau: Halbtransparenz wird wieder über das Suffix ausgedrückt,
+**nicht** über ein zweites Token; die symptomatischen Umgehungen von damals
+(z. B. `bg-line` statt `bg-line/70` in `GesetzeGliederung.tsx`) sind seither
+freiwillig, nicht erzwungen.
+
 **F8 — Motion zurückhaltend.** Mechanisch-präzise, kein Overshoot (Token-
 Kurven/-Dauern); `prefers-reduced-motion` wird respektiert (Base-Reset).
 
