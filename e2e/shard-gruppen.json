@@ -46,6 +46,7 @@
    "leser-gliederung-a33.e2e.ts",
    "leser-kopf-g2b.e2e.ts",
    "leser-suche-klappzustand.e2e.ts",
+   "leser-v3-seitenleiste-ordnung.e2e.ts",
    "materialien-m4-estv-ks.e2e.ts",
    "tastatur.e2e.ts",
    "verweis-u.e2e.ts"
@@ -58,6 +59,7 @@
    "leser-gliederung-kein-overflow.e2e.ts",
    "leser-optionen.e2e.ts",
    "leser-ruecksprung-r5-r7.e2e.ts",
+   "leser-v3-umschalten.e2e.ts",
    "leser-weiterlesen-r4-r8.e2e.ts",
    "materialien-m1-estv-mwst.e2e.ts",
    "suche-seite.e2e.ts"
