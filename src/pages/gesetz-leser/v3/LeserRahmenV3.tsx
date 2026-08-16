@@ -27,6 +27,7 @@ import { formatiereDatum } from '../helpers';
 import { LeserKopf } from './LeserKopf';
 import { LeserSeitenleiste } from './LeserSeitenleiste';
 import { SuchSprungFeld } from './SuchSprungFeld';
+import { UebersichtBox } from './UebersichtBox';
 import { kopfHoehe, useKopfStufe } from './kopfStufen';
 
 // ═══ LESER V3 · Rahmen (FAHRPLAN-LESER-V3, Etappe H1) ════════════════════════
@@ -251,8 +252,7 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
   });
 
   // ── Breite → Zuschnitt der Kopfzeile (EINE Quelle, kein `imPane`) ──────────
-  const rahmenRef = useRef<HTMLDivElement>(null);
-  const stufe = useKopfStufe(rahmenRef);
+  const { stufe, kopfRef } = useKopfStufe();
   const suchFeldRef = useRef<HTMLInputElement>(null);
 
   // ── «alles auf/zu» (Pos. 16) ──────────────────────────────────────────────
@@ -361,13 +361,31 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
     ? GEBIET_LABEL[erlass.rechtsgebiet]
     : verifiziertesSachgebiet(erlass, kantonSys)?.top ?? null;
 
+  // Die geschlossene Zeile beantwortet SR · Umfang · Stand (Kap. 4b). Kein
+  // geratenes Feld: fehlt eine Angabe, entfällt sie ersatzlos (§8).
+  const uebersichtZeile = [
+    erlass.sr ? `SR ${erlass.sr}` : null,
+    `${eintraege.length} ${bestimmungsWort}`,
+    erlass.stand ? `Stand ${formatiereDatum(erlass.stand)}` : null,
+  ].filter(Boolean).join(' · ');
+
   const uebersichtEl = (
-    <ErlassUebersicht erlass={erlass} kopf={kopf} currency={currency?.[erlass.key]}
-      erlassTyp={meta.erlassTyp} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
-      bestimmungsEtikettStatus={meta.bestimmungsEtikettStatus}
-      gliederungsTiefe={gliederungsTiefe} kennzahlen={modell.kennzahlen}
-      kantonSys={kantonSys} kantonErlassAnzahl={kantonErlassAnzahl}
-      nichtKonsolidiert={nichtKonsolidiert} />
+    <UebersichtBox zusammenfassung={uebersichtZeile}
+      warnung={nichtKonsolidiert
+        ? (
+          <p className="flex items-start gap-1 text-micro leading-snug text-warn-700">
+            <span aria-hidden className="shrink-0">⚠</span>
+            <span>Eine in Kraft getretene Änderung ist noch nicht eingearbeitet — massgeblich ist die amtliche Fassung.</span>
+          </p>
+        )
+        : undefined}>
+      <ErlassUebersicht erlass={erlass} kopf={kopf} currency={currency?.[erlass.key]}
+        erlassTyp={meta.erlassTyp} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
+        bestimmungsEtikettStatus={meta.bestimmungsEtikettStatus}
+        gliederungsTiefe={gliederungsTiefe} kennzahlen={modell.kennzahlen}
+        kantonSys={kantonSys} kantonErlassAnzahl={kantonErlassAnzahl}
+        nichtKonsolidiert={nichtKonsolidiert} />
+    </UebersichtBox>
   );
 
   const suchFeldEl = (
@@ -406,7 +424,7 @@ export function LeserRahmenV3({ ebene, schluessel }: { ebene: string; schluessel
 
   return (
     <div
-      ref={rahmenRef}
+      ref={kopfRef}
       data-leser-v3="rahmen"
       className="lc-leser space-y-5"
       data-grundart={meta.grundart ?? undefined}

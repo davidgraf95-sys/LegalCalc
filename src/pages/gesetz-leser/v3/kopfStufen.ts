@@ -22,6 +22,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+
 /** Die drei Zuschnitte der Kopfzeile. Reihenfolge = abnehmender Platz. */
 export type KopfStufe = 'voll' | 'kompakt' | 'mini';
 
@@ -72,15 +73,25 @@ export function kopfHoehe(stufe: KopfStufe): string {
 }
 
 /**
- * Misst die Breite des übergebenen Elements und liefert den Zuschnitt.
+ * Misst die Breite des Rahmens und liefert den Zuschnitt.
+ *
+ * CALLBACK-REF, NICHT `useRef` — und das ist hier kein Stilfrage, sondern ein
+ * reproduzierter Fehler (gefunden 16.8.2026 im Browser, StPO @1440): der Rahmen
+ * kehrt beim ersten Render früh mit dem Lade-Platzhalter zurück, das gemessene
+ * Element existiert also noch gar nicht. Ein `useEffect` auf einem `useRef`
+ * läuft genau einmal — mit `ref.current === null` —, hängt keinen Observer ein
+ * und wird nie wieder gerufen, weil sich die Ref-Identität nicht ändert. Der
+ * Kopf blieb dadurch dauerhaft auf dem Startwert stehen: bei 1440 px stand der
+ * Handy-Zuschnitt. Ein Callback-Ref meldet das Element, SOBALD es entsteht, und
+ * der Effekt läuft dann erneut.
  *
  * Startwert aus `window.innerWidth` statt aus `'voll'`: die V3-Hülle wird nicht
- * prerendert (R10 — der Prerender rendert die Hülle ohnehin nicht), der erste
- * Client-Render kennt den Viewport also bereits. Ein pauschales `'voll'` als
- * Startwert liesse den Kopf auf einem Telefon einen Frame lang zu hoch stehen
- * und erzeugte genau den Layout-Sprung, den §15.2 verbietet.
+ * prerendert (R10), der erste Client-Render kennt den Viewport also bereits.
+ * Ein pauschales `'voll'` liesse den Kopf auf einem Telefon einen Frame lang zu
+ * hoch stehen — genau der Layout-Sprung, den §15.2 verbietet.
  */
-export function useKopfStufe(ref: React.RefObject<HTMLElement | null>): KopfStufe {
+export function useKopfStufe(): { stufe: KopfStufe; kopfRef: (el: HTMLDivElement | null) => void } {
+  const [el, setEl] = useState<HTMLDivElement | null>(null);
   const [stufe, setStufe] = useState<KopfStufe>(() =>
     kopfStufe(typeof window === 'undefined' ? 1200 : window.innerWidth));
   // Der zuletzt gemeldete Wert, damit der Observer nur bei echtem Stufenwechsel
@@ -88,9 +99,11 @@ export function useKopfStufe(ref: React.RefObject<HTMLElement | null>): KopfStuf
   // feuert sonst — §15).
   const letzte = useRef<KopfStufe>(stufe);
   useEffect(() => {
-    const el = ref.current;
     if (!el || typeof ResizeObserver === 'undefined') return;
     const messe = (breite: number) => {
+      // Breite 0 kommt vor, solange das Element noch nicht gelayoutet ist —
+      // sie als «Handy» zu lesen wäre eine Messung von nichts.
+      if (breite <= 0) return;
       const neu = kopfStufe(breite);
       if (neu === letzte.current) return;
       letzte.current = neu;
@@ -105,6 +118,6 @@ export function useKopfStufe(ref: React.RefObject<HTMLElement | null>): KopfStuf
     });
     ro.observe(el, { box: 'border-box' });
     return () => ro.disconnect();
-  }, [ref]);
-  return stufe;
+  }, [el]);
+  return { stufe, kopfRef: setEl };
 }
