@@ -21,7 +21,18 @@
 // (`weich()`, `Befund.warn`, gelb-Zähler, WARN-Symbol) ersatzlos weg — was
 // nicht scheitern kann, wird gestrichen statt bewacht.
 //
+// PROD-STAND-WÄCHTER ERGÄNZT (16.8.2026, QS-AUTOMATIK). Belegter Anlass: seit
+// PR #519 (15.8.) war JEDES Prod-Deployment auf main CANCELED — sieben gemergte
+// PRs (#520, #512, #521, #524, #529, #523, #530) waren nicht live. Der Vercel-
+// «Ignored Build Step» sagte bei einem `fatal: bad object` fälschlich «skip».
+// Dieser Smoke sah davon NICHTS: er prüfte HTTP 200 und Inhalts-Marker, und die
+// alte, live stehende Fassung erfüllt beides — 24 h lang grün über einer toten
+// Auslieferungskette. Die Lücke war strukturell: geprüft wurde, DASS etwas
+// ausgeliefert wird, nie WELCHER Stand. `pruefeBuildStand()` schliesst sie.
+//
 // Reine Betriebs-Prüfung, kein Rechts-/Rechen-/Norm-Pfad. Kein Import aus src/.
+
+import { execFileSync } from 'node:child_process';
 
 const BASE = (process.env.SMOKE_BASE_URL || 'https://lexmetrik.vercel.app').replace(/\/$/, '');
 const TIMEOUT_MS = Number(process.env.SMOKE_TIMEOUT_MS || 20000);
@@ -164,6 +175,142 @@ async function pruefeSoft404() {
   }
 }
 
+/** Dieselbe Skip-Liste wie der `ignoreCommand` in vercel.json: Pfade, deren
+ *  Änderung bewusst KEIN Deployment auslöst. Bleibt beides deckungsgleich,
+ *  meldet der Wächter genau dann, wenn Vercel hätte bauen müssen. */
+const NUR_DOKU = /\.md$|^(bibliothek|archiv|docs|\.claude)\//;
+
+/** 30 min Bauzeit-Toleranz: ein frischer main-Commit darf noch unterwegs sein. */
+const BAUZEIT_TOLERANZ_S = 30 * 60;
+
+function git(...args: string[]): string {
+  return execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+}
+
+/** true, wenn das Objekt wirklich im Repo liegt.
+ *  BEWUSST `cat-file -e` und NICHT `rev-parse --verify`: letzteres liefert bei
+ *  einem wohlgeformten 40-Hex-SHA Exit 0, auch wenn das Objekt fehlt — genau die
+ *  Falle, die den Ausfall vom 15./16.8. verursacht hat. Der Wächter über den
+ *  Fehler darf nicht auf demselben Fehler stehen. */
+function objektDa(rev: string): boolean {
+  try {
+    git('cat-file', '-e', `${rev}^{commit}`);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function istVorfahr(a: string, b: string): boolean {
+  try {
+    git('merge-base', '--is-ancestor', a, b);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Liefert Prod genau den Stand aus, der auf main steht?
+ *
+ * Drei Schritte: (1) Build-Kennung aus dem <head> der Startseite lesen,
+ * (2) prüfen, dass das Repo diesen Commit kennt, (3) den Diff Build↔main auf
+ * Nicht-Doku-Pfade prüfen. Grundsatz wie beim ignoreCommand, nur mit umgekehrtem
+ * Vorzeichen: bei Unsicherheit ROT, nie still grün.
+ */
+/** Liest die Build-Kennung aus dem <head> der Startseite; null = Befund schon gesetzt. */
+async function leseBuildKennung(): Promise<string | null> {
+  try {
+    const res = await hole('/');
+    if (res.status !== 200) {
+      hart(false, 'Prod-Stand', `Startseite Status ${res.status} — Build-Kennung nicht lesbar`);
+      return null;
+    }
+    const treffer = /<meta\s+name="lexmetrik-build"\s+content="([^"]*)"/.exec(await res.text());
+    if (!treffer?.[1]) {
+      hart(
+        false,
+        'Prod-Stand',
+        'Build-Kennung fehlt — <meta name="lexmetrik-build"> nicht im <head> (Deploy älter als der Meta-Einbau, oder Build übersprungen)',
+      );
+      return null;
+    }
+    return treffer[1];
+  } catch (e) {
+    hart(false, 'Prod-Stand', `Netz-/Timeout-Fehler: ${(e as Error).message}`);
+    return null;
+  }
+}
+
+async function pruefeBuildStand() {
+  if (process.env.SMOKE_OHNE_BUILDSTAND === '1') {
+    console.log('  (übersprungen) Prod-Stand — SMOKE_OHNE_BUILDSTAND=1 gesetzt (Aufruf ausserhalb eines Repos)\n');
+    return;
+  }
+
+  // (1) Build-Kennung von der Live-Site.
+  const buildSha = await leseBuildKennung();
+  if (buildSha === null) return;
+
+  if (buildSha === 'dev') {
+    return hart(false, 'Prod-Stand', 'Build-Kennung «dev» — Prod wurde ohne VERCEL_GIT_COMMIT_SHA gebaut');
+  }
+
+  // (2) Repo-Seite. Ohne git/Repo ehrlich rot statt still grün — der Workflow
+  //     checkt mit fetch-depth: 0 aus, der Fall darf also nicht auftreten.
+  let mainRef: string;
+  try {
+    git('rev-parse', '--git-dir');
+    mainRef = objektDa('origin/main') ? 'origin/main' : 'HEAD';
+  } catch {
+    return hart(false, 'Prod-Stand', 'kein git-Repo / git nicht verfügbar — Stand nicht prüfbar (SMOKE_OHNE_BUILDSTAND=1 zum bewussten Überspringen)');
+  }
+
+  if (!objektDa(buildSha)) {
+    return hart(
+      false,
+      'Prod-Stand',
+      `unbekannter Build-SHA ${buildSha} — im Repo nicht auffindbar (flacher Klon? fetch-depth: 0 nötig)`,
+    );
+  }
+
+  const mainSha = git('rev-parse', '--short=8', mainRef);
+  if (git('rev-parse', buildSha) === git('rev-parse', mainRef)) {
+    return hart(true, 'Prod-Stand', `Build ${buildSha} == ${mainRef} — Prod ist aktuell`);
+  }
+
+  if (!istVorfahr(buildSha, mainRef)) {
+    return hart(
+      false,
+      'Prod-Stand',
+      `Build ${buildSha} ist kein Vorfahr von ${mainRef} (${mainSha}) — divergenter oder veralteter Repo-Stand (git fetch nötig?)`,
+    );
+  }
+
+  // (3) Diff Build → main: nur Doku ist folgenlos, alles andere fehlt in Prod.
+  const geaendert = git('diff', '--name-only', buildSha, mainRef).split('\n').filter(Boolean);
+  const code = geaendert.filter((p) => !NUR_DOKU.test(p));
+  if (code.length === 0) {
+    return hart(true, 'Prod-Stand', `Build ${buildSha}, ${mainRef} ${mainSha} — Rückstand nur Doku (${geaendert.length} Datei(en), kein Deploy nötig)`);
+  }
+
+  // Frische-Toleranz: ein eben gemergter Commit darf noch bauen.
+  const alterS = Math.round(Date.now() / 1000) - Number(git('log', '-1', '--format=%ct', mainRef));
+  if (alterS < BAUZEIT_TOLERANZ_S) {
+    return hart(
+      true,
+      'Prod-Stand',
+      `Build ${buildSha}, ${mainRef} ${mainSha}: ${code.length} Code-Datei(en) offen, jüngster main-Commit erst ${Math.round(alterS / 60)} min alt — Deploy vermutlich unterwegs (< 30 min)`,
+    );
+  }
+
+  hart(
+    false,
+    'Prod-Stand',
+    `Prod hinkt hinter main: ${code.length} Code-Datei(en) nicht ausgeliefert (Build ${buildSha}, main ${mainSha}, seit ${Math.round(alterS / 60)} min) — z. B. ${code.slice(0, 3).join(', ')}`,
+  );
+}
+
 async function main() {
   console.log(`Prod-Smoke gegen ${BASE}\n`);
   // Kernrouten (prerendered, öffentlich) — Reihenfolge stabil für lesbare Logs.
@@ -180,6 +327,8 @@ async function main() {
   await pruefeAsset('/robots.txt', 'text/plain');
   await pruefeCsp();
   await pruefeSoft404();
+  // Zuletzt, weil es als einziges die Repo-Seite braucht (QS-AUTOMATIK 16.8.2026).
+  await pruefeBuildStand();
 
   let rot = 0;
   for (const b of befunde) {
