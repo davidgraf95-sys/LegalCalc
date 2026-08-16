@@ -67,7 +67,6 @@
    "fn5-wortposition.e2e.ts",
    "gesetze-marginalie.e2e.ts",
    "gesetze-uebersicht-u.e2e.ts",
-   "leser-linien-eid3.e2e.ts",
    "leser-suche-vertrag-b8.e2e.ts",
    "suche-q-fokus-s1-s6.e2e.ts",
    "verlauf-o1.e2e.ts"
@@ -81,9 +80,9 @@
    "gesetze-ia7-sidebar-badges.e2e.ts",
    "ics-export-z1.e2e.ts",
    "international-kanonik-ia6.e2e.ts",
-   "leser-linien-kanon.e2e.ts",
    "leser-r1-r2.e2e.ts",
-   "leser-toc-sprung.e2e.ts"
+   "leser-toc-sprung.e2e.ts",
+   "leser-ohne-gliederungslinie.e2e.ts"
   ],
   "8": [
    "leser-spy-w25d.e2e.ts",
