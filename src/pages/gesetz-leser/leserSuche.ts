@@ -132,6 +132,43 @@ export interface LeserSuchIndex {
   artikel: SuchArtikel[];
 }
 
+// ─── H2 · Suchbereich (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 5) ───────────────────
+/**
+ * Welcher Teil des Erlasses durchsucht wird. Die vier Werte sind eine
+ * GRUPPIERUNG der sechs Feldklassen oben, keine zweite Feldeinteilung (§5):
+ *
+ *  · `alles`     — alle sechs Felder (Vorgabe, entspricht dem Verhalten vor H2)
+ *  · `titel`     — `m` + `n` + `g`: primäre und nachrangige Randtitel sowie der
+ *                  Gliederungspfad. Für den Juristen ist das «wie heisst die
+ *                  Bestimmung», nicht «was steht darin».
+ *  · `text`      — `t` + `tb`: Fliesstext/Aufzählungen samt Tabellen, Bild-Alt
+ *                  und `grundlage`. Alles, was zum Wortlaut selbst gehört.
+ *  · `fussnoten` — `f`: der amtliche Fussnoten-Apparat.
+ *
+ * WAS DER BEREICH STEUERT UND WAS NICHT (§8, ehrlich statt bequem). Er steuert
+ * die TREFFERLISTE, die Zähler und die ↑↓-Folge — also alles, was aus den Daten
+ * kommt. Er steuert NICHT die Hervorhebung im Wortlaut: `sammleTrefferRanges`
+ * malt jedes Vorkommen des Begriffs im sichtbaren Text, und das bleibt so. Beide
+ * Zusagen sind für sich wahr und beantworten verschiedene Fragen («welche
+ * Stellen führe ich auf» gegen «wo steht das Wort»); sie zu vermengen hiesse,
+ * dem DOM-Walker eine Feldkenntnis anzudichten, die er nicht hat. Der Fahrplan
+ * führt das als bewusste Grenze, nicht als offenen Rest.
+ */
+export type SuchBereich = 'alles' | 'titel' | 'text' | 'fussnoten';
+
+/** Feldklassen je Bereich — die EINE Zuordnung, hier und nirgends sonst. */
+const BEREICH_FELDER: Record<SuchBereich, ReadonlySet<SuchFeld>> = {
+  alles: new Set<SuchFeld>(['t', 'm', 'n', 'g', 'tb', 'f']),
+  titel: new Set<SuchFeld>(['m', 'n', 'g']),
+  text: new Set<SuchFeld>(['t', 'tb']),
+  fussnoten: new Set<SuchFeld>(['f']),
+};
+
+/** Gehört dieses Feld zum gewählten Bereich? */
+export function imBereich(feld: SuchFeld, bereich: SuchBereich): boolean {
+  return BEREICH_FELDER[bereich].has(feld);
+}
+
 // ─── Index-Aufbau ────────────────────────────────────────────────────────────
 
 /** Nicht-leerer, markup-freier Text — leere Bausteine kosten sonst Schleifenzeit. */
@@ -374,7 +411,11 @@ function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuel
  * erreichen, und was nicht scheitern kann, wird gestrichen statt bewacht
  * (§17-Gegengewicht).
  */
-export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): LeserTreffer[] {
+export function sucheImErlass(
+  index: LeserSuchIndex | null,
+  begriff: string,
+  bereich: SuchBereich = 'alles',
+): LeserTreffer[] {
   const b = begriff.trim();
   if (!index || b === '') return [];
 
@@ -391,6 +432,11 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
     let ausschnittGewicht = -1;
 
     for (const seg of a.segmente) {
+      // H2: der Bereich filtert VOR dem Zählen, nicht danach. Nur so bleiben
+      // `fundstellen`, `malbarkeiten` und damit die ganze ↑↓-Folge auf
+      // derselben Menge — ein Nachfilter über `felder` verlöre die Zuordnung
+      // Fundstelle → Rang, an der schon B5 einmal gebrochen ist.
+      if (!imBereich(seg.feld, bereich)) continue;
       const stellen = findeVorkommen(seg.text, b);
       if (stellen.length === 0) continue;
       gesamt += stellen.length;
@@ -419,6 +465,66 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
 
   treffer.sort((x, y) => x.pos - y.pos);
   return treffer;
+}
+
+/**
+ * Eine einzelne Fundstelle EINES Artikels, fertig für die Anzeige (H2).
+ *
+ * `rang` ist derselbe 0-basierte Rang, den `fundstellenFolge` je Artikel vergibt
+ * — die Zeile in der Trefferliste und der Schritt der ↑↓-Navigation sind damit
+ * dieselbe Sache und nicht zwei Zählungen nebeneinander (§5).
+ */
+export interface ArtikelFundstelle {
+  rang: number;
+  feld: SuchFeld;
+  quelle: SuchQuelle;
+  malbar: Malbarkeit;
+  ausschnitt: Ausschnitt;
+}
+
+/**
+ * Die Fundstellen EINES Artikels mit je eigenem Kontext-Ausschnitt (H2).
+ *
+ * WARUM EINZELN UND NICHT IN `sucheImErlass`. Ein Ausschnitt je Fundstelle ist
+ * genau das, was die V3-Trefferliste unter dem Artikelkopf zeigt — aber ihn für
+ * ALLE Treffer im Voraus zu bauen wäre die teuerste Zeile des Lesers: «der» im
+ * OR ergibt rund 1146 Treffer-Artikel mit zusammen einigen zehntausend
+ * Fundstellen, und das bei JEDEM Tastendruck. `LeserTreffer` trägt darum
+ * weiterhin genau EINEN Ausschnitt (den aus dem stärksten Feld) für die
+ * Artikelzeile; die Einzelstellen holt die Liste hier nach, und zwar nur für
+ * den Artikel, den sie gerade aufklappt. Der Lauf kostet ein Artikel-Segment-Set.
+ *
+ * REIHENFOLGE-VERTRAG: die Schleife läuft über dieselben Segmente in derselben
+ * Ordnung wie `sucheImErlass`, mit demselben Bereichs-Filter. Nur deshalb ist
+ * `rang` hier und dort dieselbe Zahl. Wer eine der beiden Schleifen umbaut,
+ * muss die andere mit umbauen — `src/tests/leser-suche-w219.test.ts` hält den
+ * Vertrag fest, statt ihn nur zu behaupten.
+ */
+export function artikelFundstellen(
+  index: LeserSuchIndex | null,
+  token: string,
+  begriff: string,
+  bereich: SuchBereich = 'alles',
+): ArtikelFundstelle[] {
+  const b = begriff.trim();
+  if (!index || b === '') return [];
+  const a = index.artikel.find((x) => x.token === token);
+  if (!a) return [];
+  const out: ArtikelFundstelle[] = [];
+  let rang = 0;
+  for (const seg of a.segmente) {
+    if (!imBereich(seg.feld, bereich)) continue;
+    for (const [von, bis] of findeVorkommen(seg.text, b)) {
+      out.push({
+        rang: rang++,
+        feld: seg.feld,
+        quelle: seg.quelle,
+        malbar: seg.malbar,
+        ausschnitt: baueAusschnitt(seg.text, von, bis, seg.quelle),
+      });
+    }
+  }
+  return out;
 }
 
 /** Datenseitiger Kopf-Zähler «N Artikel · M Fundstellen» (§4.4 Ziff. 1). */

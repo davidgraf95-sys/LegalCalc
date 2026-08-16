@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
+import { useCallback, useEffect, useMemo, useState, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../../lib/tabs';
 import { baueGliederungsbaum, type CurrencyMap, type ErlassKopf, type Sektion, type StrukturMap } from '../../../lib/normtext/browse';
@@ -6,7 +6,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { InternRefs } from '../../../components/NormText';
-import type { LeserTreffer } from '../leserSuche';
+import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
 import { strukturTiefe } from '../strukturTiefe';
 import { pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen } from '../berechnungen';
@@ -125,8 +125,20 @@ export interface LeserV3Modell {
   fussnotenAus: boolean;
   trefferPos: number;
   trefferAktivToken: string | null;
+  /** H2 · Suchbereich (Kap. 4b, Pos. 5) — Zustand der V3-Huelle, kein Speicher.
+   *  Er absichtlich NICHT persistiert: ein beim naechsten Besuch stillschweigend
+   *  eingeschraenkter Suchbereich waere ein Zustand, der Treffer verschwinden
+   *  laesst, ohne dass jemand ihn gesetzt zu haben glaubt (§8). */
+  suchBereich: SuchBereich;
+  setzeSuchBereich: (b: SuchBereich) => void;
+  /** H2 · Artikel + Rang der laufenden Fundstelle — hebt EINE Listenzeile hervor. */
+  aktivStelle: { token: string; rang: number } | null;
+  /** H2 · Fundstellen EINES Artikels auf Abruf (nur fuer aufgeklappte Artikel). */
+  fundstellenFuer: (token: string) => ArtikelFundstelle[];
   springeZuFundstelle?: (delta: number) => void;
   springeZuTreffer?: (token: string) => void;
+  /** H2 · Sprung zu GENAU einer Fundstelle (Artikel + Rang darin). */
+  springeZuStelle?: (token: string, rang: number) => void;
   /** «Art. 429» → Token. `undefined`, solange der Snapshot fehlt. */
   loeseArtikel?: (eingabe: string) => string | null;
   siePfad: string[];
@@ -324,6 +336,11 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const springeZuSektion = useSektionSprung({
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    // Pos. 14: Suche beginnen ODER beenden bewegt den Lesetext um 0 px. Die
+    // Ist-Hülle scrollt an beiden Punkten (an den Anfang, dann zurück) — der
+    // Anlass dafür (gefilterte, geschrumpfte Lesespalte) besteht in V3 nicht.
+    // Herleitung am Effekt in `inhalt-sprung.tsx`, Beweis `leser-v3-esc-ohne-sprung`.
+    scrollBeiSuchwechsel: false,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
@@ -344,13 +361,18 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const sucheTrim = sucheDebounced.trim().toLowerCase();
   const { vorher, nachher } = useNachbarn({ manifest, erlass });
   const sucheFeldLeer = suche.trim() === '';
+  // H2: der Suchbereich ist Hüllen-Zustand. Er steht HIER und nicht in der
+  // Trefferliste, weil er in die Datenableitung eingeht (`useSuchTreffer`) und
+  // nicht bloss die Darstellung filtert — die Liste bekommt ihn als Prop (§3).
+  const [suchBereich, setzeSuchBereich] = useState<SuchBereich>('alles');
   const {
     leseRef, treffer, fundstellen, fussnotenAus, trefferPos, aktivToken: trefferAktivToken,
-    springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
+    springeZuFundstelle, springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer,
+    loeseArtikel, siePfad, siePfadArtikel,
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur,
     sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
-    offen, setOffen, imPane, wurzel,
+    offen, setOffen, imPane, wurzel, bereich: suchBereich,
   });
 
   // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,
@@ -376,7 +398,8 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
       tocOffen, setTocOffen, tocAuf, setTocAuf,
       suche, setSuche, sucheAktiv: sucheBegriff !== '', sucheBegriff,
       treffer, fundstellen, fussnotenAus, trefferPos, trefferAktivToken,
-      springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
+      suchBereich, setzeSuchBereich, aktivStelle, fundstellenFuer,
+      springeZuFundstelle, springeZuTreffer, springeZuStelle, loeseArtikel, siePfad, siePfadArtikel,
       springeZuArtikel, springeZuSektion, zumAnfang,
       weiterlesen, weiterlesenSprung, weiterlesenVerwerfen, basisPfad,
       reiterToast, setReiterToast,

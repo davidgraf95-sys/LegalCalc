@@ -1,6 +1,6 @@
 import { SektionBaumTOC } from '../parts';
 import { ArtikelIndex } from '../parts/ArtikelIndex';
-import { TrefferListe } from '../parts/TrefferListe';
+import { LeserTrefferListe } from './LeserTrefferListe';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ─── Zone B der Seitenleiste: Baum ODER Treffer (Kap. 4b) ───────────────────
@@ -20,16 +20,23 @@ import type { LeserV3Modell } from './leserV3Modell';
 // (§3) — und der Grund, warum ein Erlass ohne amtliche Gliederung hier keine
 // Sonderbehandlung braucht.
 //
-// Die Trefferliste selbst ist in H1 der BESTEHENDE Baustein: Reihenfolge und
-// ✕-Verhalten sind Etappe H2, hier wechselt nur ihr Ort mit.
+// H1 hängte hier noch den BESTEHENDEN Baustein (`parts/TrefferListe`) ein und
+// wechselte nur seinen Ort. H2 tauscht ihn gegen `LeserTrefferListe` — und das
+// ist der ganze Eingriff an dieser Datei, wie der Architektur-Review es
+// vorhergesagt hat: weil die Weiche Baum/Treffer schon hier und nur hier sitzt,
+// kostet ein neuer Trefferbaustein genau eine Zeile Import und einen Aufruf.
+// Der alte Baustein bleibt unangetastet — er trägt weiter die Ist-Hülle (FL-4).
 
 export function LeserGliederung({ m }: { m: LeserV3Modell }) {
   if (m.sucheAktiv) {
     return (
-      <TrefferListe treffer={m.treffer} begriff={m.sucheBegriff} fundstellen={m.fundstellen}
-        fussnotenAus={m.fussnotenAus} position={m.trefferPos} aktivToken={m.trefferAktivToken}
+      <LeserTrefferListe treffer={m.treffer} begriff={m.sucheBegriff} fundstellen={m.fundstellen}
+        fussnotenAus={m.fussnotenAus} position={m.trefferPos} aktivStelle={m.aktivStelle}
+        bereich={m.suchBereich} setzeBereich={m.setzeSuchBereich}
+        fundstellenFuer={m.fundstellenFuer}
         onZurueck={() => m.springeZuFundstelle?.(-1)} onVor={() => m.springeZuFundstelle?.(1)}
-        onSprung={(t) => m.springeZuTreffer?.(t)} />
+        onSprung={(t) => m.springeZuTreffer?.(t)}
+        onSprungStelle={(t, r) => m.springeZuStelle?.(t, r)} />
     );
   }
 

@@ -132,7 +132,12 @@ export function LeserRahmenV3({
 
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
-      onSprung={m.springeZuArtikel} feldRef={suchFeldRef} />
+      onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
+      // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
+      // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).
+      hatTreffer={m.fundstellen > 0}
+      onVor={() => m.springeZuFundstelle?.(1)}
+      onZurueck={() => m.springeZuFundstelle?.(-1)} />
   );
 
   const leiste = (imSheet: boolean) => (

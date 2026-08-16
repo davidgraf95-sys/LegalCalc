@@ -11,7 +11,10 @@ import {
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
 import { paneRoot } from './berechnungen';
-import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } from './leserSuche';
+import {
+  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen,
+  type SuchBereich,
+} from './leserSuche';
 
 // ═══ ABSCHNITT · In-Gesetz-Suche: Treffer, Hervorhebung, Quickjump ═══════════
 //
@@ -51,6 +54,7 @@ import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } fr
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
   internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
+  bereich = 'alles',
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -76,6 +80,10 @@ export function useSuchTreffer({
    *  greift dort ins Leere — die Markierung liefe dem Leser sichtbar hinterher. */
   imPane: boolean;
   wurzel: RefObject<HTMLElement | null> | null;
+  /** H2 · Suchbereich (Kap. 4b, Pos. 5). Ungesetzt = `alles`, also exakt das
+   *  Verhalten vor H2 — die Ist-Huelle reicht ihn nicht durch und aendert sich
+   *  dadurch nicht (FL-4). */
+  bereich?: SuchBereich;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
@@ -128,7 +136,7 @@ export function useSuchTreffer({
     () => (sucheAktiv && erlassKey && eintraege ? baueLeserSuchIndex(erlassKey, eintraege, struktur) : null),
     [sucheAktiv, erlassKey, eintraege, struktur],
   );
-  const treffer = useMemo(() => sucheImErlass(index, sucheTrim), [index, sucheTrim]);
+  const treffer = useMemo(() => sucheImErlass(index, sucheTrim, bereich), [index, sucheTrim, bereich]);
   const { artikel: artikelAnzahl, fundstellen } = useMemo(() => zaehleTreffer(treffer), [treffer]);
   // B5: der Ansicht-Schalter gehört IN die Folge, nicht daneben — bei
   // ausgeblendetem Apparat sind Fussnoten-Stellen nicht malbar, und ein Rang,
@@ -316,6 +324,20 @@ export function useSuchTreffer({
     if (n >= 0) zeigeFundstelle(n);
   }, [folge, zeigeFundstelle]);
 
+  /**
+   * H2 · Klick auf EINE Fundstellen-Zeile der V3-Liste: zu genau dieser Stelle.
+   *
+   * Adressiert wird ueber (Artikel, Rang) statt ueber den flachen Folge-Index —
+   * die Liste kennt den Artikel und den Rang darin, den flachen Index kennt nur
+   * die Folge. Die Aufloesung passiert hier, damit die Liste keine zweite
+   * Zaehlung fuehren muss (§5). Kein Treffer in der Folge (Rang gefiltert
+   * weggefallen) ⇒ es passiert nichts, statt irgendwohin zu springen (§8).
+   */
+  const springeZuStelle = useCallback((token: string, rang: number) => {
+    const n = folge.findIndex((f) => f.token === token && f.rang === rang);
+    if (n >= 0) zeigeFundstelle(n);
+  }, [folge, zeigeFundstelle]);
+
   // ═══ ABSCHNITT · R2 · Quickjump «Art. N» + «Sie sind hier» ═══════════════════
   // Quickjump: KEIN Index, KEIN Server — die Eingabe wird gegen die bereits
   // geladene Token-Map des Erlasses aufgelöst (dieselbe, die Querverweise im
@@ -355,9 +377,27 @@ export function useSuchTreffer({
     setzeSuchHighlight(null, '', highlightInstanz);
   }, [sucheFeldLeer, highlightInstanz]);
 
+  // ─── H2 · Fundstellen EINES Artikels, auf Abruf ────────────────────────────
+  // Die V3-Trefferliste zeigt unter dem Artikelkopf eine Zeile je Fundstelle mit
+  // eigenem Kontext-Ausschnitt. Diese Ausschnitte im Voraus fuer ALLE Treffer zu
+  // bauen waere der teuerste Handgriff des Lesers (Herleitung an
+  // `artikelFundstellen`, leserSuche.ts) — sie kommen darum nur fuer den
+  // Artikel, den die Liste gerade aufklappt. Der Index liegt ohnehin schon da;
+  // ein zweiter waere die §5-Doppelwahrheit.
+  const fundstellenFuer = useCallback(
+    (token: string) => artikelFundstellen(index, token, sucheTrim, bereich),
+    [index, sucheTrim, bereich],
+  );
+
+  // Welche EINZELNE Fundstelle die ^v-Navigation gerade anzeigt — die Liste
+  // hebt genau diese Zeile hervor. Projektion aus der Folge, kein zweiter
+  // Zustand: `trefferPos` ist der flache Rang, `folge` loest ihn in
+  // (Artikel, Rang darin) auf.
+  const aktivStelle = trefferPos >= 0 ? folge[trefferPos] ?? null : null;
+
   return {
     leseRef, treffer, artikelAnzahl, fundstellen, fussnotenAus,
-    trefferPos, aktivToken, springeZuFundstelle, springeZuTreffer,
-    loeseArtikel, siePfad, siePfadArtikel,
+    trefferPos, aktivToken, springeZuFundstelle, springeZuTreffer, springeZuStelle,
+    aktivStelle, fundstellenFuer, loeseArtikel, siePfad, siePfadArtikel,
   };
 }
