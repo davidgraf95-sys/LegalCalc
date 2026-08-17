@@ -44,6 +44,18 @@ import { SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
 const APP_TOPBAR_H = '4rem';
 /** Höhe der Pane-Titelleiste (`components/layout/PaneKopf.tsx`, `h-9`). */
 const PANE_LEISTE_H = '2.25rem';
+/**
+ * A-2 · Das reservierte BAND der App-Krumen-Leiste (`h-9` + 1 px Kante).
+ *
+ * Die Leiste zeigt unter `kopfzeileSelbst` nichts mehr, BEHÄLT aber ihre Höhe —
+ * sonst wandert der ganze Inhalt beim Eintreffen der Meldung 37 px hoch (die
+ * Route ist `lazy`, die Shell rät bis dahin; Messung und Tor-Beleg in
+ * `components/layout/InhaltsKopf.tsx`). Der Kopf verschluckt das Band statt
+ * dessen: sichtbar gewonnen sind die 37 px, gesprungen ist nichts.
+ * NUR in der Einzelansicht — im Pane trägt die Titelleiste weiter die
+ * Fenster-Steuerung und ist damit kein leeres Band.
+ */
+const APP_BAND_H = 'calc(2.25rem + 1px)';
 
 export interface LeserGeometrieLage {
   /** Zuschnitt der Kopfzeile (gemessene Breite → `kopfStufe`). */
@@ -78,6 +90,14 @@ export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
     // Ä1: Wrapper-Polsterung, die der Kopf verschluckt. Vorgabe in index.css
     // (Shell `py-8 sm:py-12`); im Pane sind es `py-6` (Pane.tsx).
     ...(vollflaechig ? {} : { '--leser-v3-kopf-luecke': '1.5rem' }),
+    // A-2: das zweite, GETRENNT geführte Stück, das der Kopf verschluckt — das
+    // reservierte Band der App-Leiste. Getrennt von der Wrapper-Polsterung, weil
+    // die beiden verschiedenen Eigentümern gehören und sich verschieden ändern:
+    // die Polsterung folgt dem Route-Wrapper und braucht dessen Breakpoint (darum
+    // steht sie in `index.css`), das Band folgt der App-Leiste und hängt nur an
+    // der Fläche (darum steht es hier). In eine Variable gerechnet wären sie beim
+    // nächsten Umbau nicht mehr auseinanderzuhalten (§5).
+    '--leser-v3-app-band': vollflaechig ? APP_BAND_H : '0rem',
     '--leser-sub-h': vollflaechig ? '0rem' : 'var(--leser-v3-kopf-h)',
     '--nt-stick': vollflaechig
       ? `calc(${APP_TOPBAR_H} + var(--leser-v3-kopf-h) + var(--leser-v3-such-h))`

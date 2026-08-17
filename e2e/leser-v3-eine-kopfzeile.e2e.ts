@@ -268,37 +268,31 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
-  // ── (g) DER PREIS, DEN DIE VERSCHMELZUNG HEUTE KOSTET — gemessen, gedeckelt ─
+  // ── (g) DIE WEICHENDE LEISTE DARF DEN INHALT NICHT VERSCHIEBEN ─────────────
   //
-  // Die Route `/gesetze/:ebene/:key` ist `lazy` (RouteSwitch), die Shell rät
-  // solange aus dem Pfad, dass eine App-Leiste kommt (`kopfVonPfad`). Sagt der
-  // Leser dann «ich trage sie selbst», fällt die Leiste zusammen und der Inhalt
-  // rückt 37 px hoch — gemessen 17.8.2026 @1440 StPO: EIN Shift von 0.0238
-  // (`main#inhalt` 102 → 65) bei t ≈ 395 ms, Gesamt-CLS 0.0301–0.0309 gegen
-  // 0.0039–0.0054 in V1; kalt und mit warmem Chunk-Cache identisch (18–19 von
-  // ~205 Frames zeigen die Leiste). Sichtbar ist in diesem Moment der
-  // Lade-Platzhalter, nicht Text.
+  // DER BEFUND, der diese Sonde erzwungen hat (17.8.2026, im Bau gemessen): die
+  // Route `/gesetze/:ebene/:key` ist `lazy` (RouteSwitch), die Shell rät solange
+  // aus dem Pfad, dass eine App-Leiste kommt (`kopfVonPfad`). Die erste Fassung
+  // liess die Leiste bei der Meldung «ich trage sie selbst» auf 0 px fallen —
+  // `main#inhalt` rückte 102 → 65 px hoch, EIN Shift von 0.0238 bei t ≈ 395 ms,
+  // Gesamt-CLS 0.0309 gegen 0.0048 in V1. Das Bestands-Tor `leser-kopf-cls-s3`
+  // (v3 @390) riss damit seine Schwelle 0.05 mit 0.0573.
   //
-  // WARUM NICHT BEHOBEN: der Wurzelfix wäre, dass die Shell nicht mehr rät —
-  // und das geht nur, wenn ALLE Leser-Routen ihre Kopfzeile selbst tragen, also
-  // mit dem Fall des Flags in H5 (dann meldet der Pfad-Fallback selbst
-  // `kopfzeileSelbst`). Bis dahin verbieten die zwei Leitplanken jede Abkürzung:
-  // die Shell darf das Flag nicht kennen (FL-1) und V1 muss unverändert bleiben
-  // (FL-4) — eine spät erscheinende Leiste in V1 wäre derselbe Sprung, nur in
-  // die andere Richtung.
-  // DIESE SONDE ist darum ein DECKEL, kein Freibrief: sie hält den gemessenen
-  // Preis fest und wird rot, wenn er wächst.
+  // DER WURZELFIX (nicht umschifft, §17): das Band der Leiste BLEIBT reserviert,
+  // der Leser-Kopf legt sich darüber und verschluckt es (`--leser-v3-app-band`).
+  // Sichtbar sind die 37 px trotzdem gewonnen — das misst (a) —, gesprungen ist
+  // nichts. Nachher: 0 Sprünge von `main#inhalt`, Gesamt-CLS 0.0064–0.0071
+  // @1440 und 0.0028–0.018 @390, also auf V1-Niveau.
   //
   // GEMESSEN WIRD DER EINE SPRUNG, NICHT DAS GESAMT-CLS — und das ist §0.3, nicht
-  // Bequemlichkeit: das Gesamt-CLS derselben Seite misst 0.030 allein und 0.054
-  // unter drei parallelen Workern (17.8.2026, dieselbe Datei, derselbe Build).
-  // Eine Zahl ohne Messbedingung wäre hier also ein Flake-Generator. Der Anteil
-  // des Sprungs selbst ist dagegen deterministisch: 37 px auf 900 px Höhe, mit
-  // `main#inhalt` als Quelle.
-  // ROT ZU BEKOMMEN: in `InhaltsKopf.tsx` dem stillen Träger eine Höhe geben
-  // (z. B. `h-9`) und die Leiste zusätzlich rendern ⇒ zwei Sprünge derselben
-  // Quelle statt einem.
-  test('(g) Deckel für den Lade-Sprung der weichenden App-Leiste', async ({ page }) => {
+  // Bequemlichkeit: das Gesamt-CLS derselben Seite mass in der defekten Fassung
+  // 0.030 allein und 0.054 unter drei parallelen Workern (dieselbe Datei,
+  // derselbe Build). Eine Zahl ohne Messbedingung wäre hier ein Flake-Generator;
+  // die Frage «wandert der Inhaltsrahmen?» ist dagegen bedingungsfrei.
+  // ROT ZU BEKOMMEN (§6.7, am 17.8.2026 gesehen): in `InhaltsKopf.tsx` dem
+  // stillen Träger seine Höhe nehmen (`h-9 border-b border-transparent` weg) ⇒
+  // ein Sprung mit 0.0238.
+  test('(g) beim Laden wandert der Inhaltsrahmen nicht', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.addInitScript(() => {
@@ -321,12 +315,12 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
 
     const spruenge = await page.evaluate(() => (window as unknown as { __haupt: number[] }).__haupt)
     const summe = spruenge.reduce((s, v) => s + v, 0)
-    // Gemessen 17.8.2026 @1440 StPO: GENAU EIN Eintrag, 0.0238 (`main#inhalt`
-    // 102 → 65). Kalt und mit warmem Chunk-Cache gleich.
-    expect(spruenge.length, `Sprünge von main#inhalt: ${JSON.stringify(spruenge)} — erwartet höchstens einer`)
-      .toBeLessThanOrEqual(1)
-    expect(summe, `main#inhalt verschiebt sich um ${summe} (gemessen 0.0238 = die weichende 37-px-Leiste)`)
-      .toBeLessThan(0.03)
+    // Gemessen 17.8.2026 @1440 StPO nach dem Wurzelfix: NULL Einträge. Die
+    // Schranke lässt Chrom-Grundrauschen zu (Sub-Pixel-Rundung beim Einlaufen der
+    // Webfont), aber nicht die weichende Leiste: die schlägt mit 0.0238 zu Buche,
+    // also dem Fünffachen.
+    expect(summe, `main#inhalt verschiebt sich um ${summe} — Sprünge ${JSON.stringify(spruenge)}; die weichende 37-px-Leiste kostet 0.0238`)
+      .toBeLessThan(0.005)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

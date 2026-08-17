@@ -122,9 +122,17 @@ export function LeserKopf({
       // `imPane`- und keinen Breakpoint-Zweig (Kap. 10) — sie liest eine Variable.
       // BEWACHT: `e2e/leser-v3-kopf-buendig.e2e.ts` misst die Lücke auf H/D/S
       // gegen 0 und wird rot, wenn eine der beiden Polsterungen sich ändert.
+      //
+      // A-2 (17.8.2026): verschluckt wird jetzt ZWEIERLEI — die Wrapper-
+      // Polsterung UND das reservierte Band der App-Krumen-Leiste. Das Band
+      // behält seine Höhe, damit beim Eintreffen der Meldung «ich trage die
+      // Kopfzeile selbst» nichts wandert (Messung und Tor-Beleg in
+      // `components/layout/InhaltsKopf.tsx`); dieser Kopf legt sich opak darüber,
+      // und genau dadurch sind die 37 px sichtbar gewonnen. Beide Werte kommen
+      // von aussen — die Datei bleibt ohne Breakpoint- und ohne `imPane`-Zweig.
       style={{
         top: 'var(--leser-v3-kopf-top)',
-        marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))',
+        marginTop: 'calc(-1 * (var(--leser-v3-kopf-luecke, 0px) + var(--leser-v3-app-band, 0px)))',
       }}
     >
       <div className="flex items-center gap-2 sm:gap-3" style={{ height: 'var(--leser-v3-kopf-h)' }}>

@@ -50,26 +50,37 @@ describe('A-2 — InhaltsKopf: `kopfzeileSelbst` schaltet die Leiste ab', () => 
     expect(html).toContain('Art. 429');
   });
 
-  it('mit `kopfzeileSelbst`: keine Leiste, keine Krume, kein Stand, kein ✕', () => {
+  it('mit `kopfzeileSelbst`: keine Krume, kein Stand, kein Artikel, kein ✕', () => {
     const html = inhaltsKopfHtml({ ...MIT_KRUME, kopfzeileSelbst: true });
-    expect(html, 'die Leiste ist noch da').not.toContain('data-inhalt-kopf"');
+    expect(html, 'die laute Leiste ist noch da').not.toContain('data-inhalt-kopf"');
     expect(html).not.toContain('Brotkrümel');
     expect(html).not.toContain('01.04.2025');
     expect(html).not.toContain('Art. 429');
     expect(html).not.toContain('✕');
-    // Sie ist nicht «leer», sie ist WEG: kein h-9-Balken, keine Kante.
-    expect(html).not.toContain('h-9');
-    expect(html).not.toContain('border-b');
+    // Und sie ist auch nicht mehr zu SEHEN: kein Papier-Grund, keine gezeichnete
+    // Kante. (Ihre HÖHE bleibt — Herleitung im nächsten Fall.)
+    expect(html).not.toContain('bg-paper');
+    expect(html).not.toContain('border-line');
   });
 
-  it('der stille Träger bleibt — er ist der Anker der zwei Sprung-Rückmeldungen', () => {
-    // `DeepLinkSkeleton` positioniert sich `absolute top-full` an der Unterkante
-    // dieses Trägers. Fiele er ganz weg, läge das Overlay am Seitenanfang. Der
-    // Träger hat keine Höhe und keine Farbe, aber `sticky top-16` und dieselbe
-    // z-Ebene wie die Leiste vorher.
+  it('der stille Träger bleibt — Anker der Rückmeldungen UND reserviertes Band', () => {
+    // ZWEI Aufgaben, beide gemessen hergeleitet (Herleitung in `InhaltsKopf.tsx`):
+    //  · `DeepLinkSkeleton` positioniert sich `absolute top-full` an seiner
+    //    Unterkante — fiele der Träger weg, läge das Overlay am Seitenanfang;
+    //  · seine HÖHE bleibt (`h-9` + 1 px Kante), damit beim Eintreffen der Meldung
+    //    nichts im Fluss wandert. Ohne sie rückte `main#inhalt` 102 → 65 px hoch
+    //    (Shift 0.0238) und das Bestands-Tor `leser-kopf-cls-s3` riss bei v3 @390
+    //    seine Schwelle 0.05 mit 0.0573 (gemessen 17.8.2026). Sichtbar ist das
+    //    Band nicht — der Leser-Kopf verschluckt es (`--leser-v3-app-band`).
     const html = inhaltsKopfHtml({ ...MIT_KRUME, kopfzeileSelbst: true });
     expect(html).toContain('data-inhalt-kopf-still');
     expect(html).toContain('sticky top-16');
+    expect(html, 'das reservierte Band hat seine Höhe verloren — der Inhalt springt wieder')
+      .toContain('h-9');
+    expect(html).toContain('border-transparent');
+    // Ohne `pointer-events-none` schluckte das Band (höheres z) die Klicks auf
+    // Krume und Griffe des Kopfes, der darunter liegt.
+    expect(html).toContain('pointer-events-none');
   });
 });
 
