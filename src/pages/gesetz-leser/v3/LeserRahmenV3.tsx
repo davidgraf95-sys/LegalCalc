@@ -95,8 +95,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // V6: Höhenausgleich beim Ein-/Ausklappen der Gliederung — Befund, Messreihe und
   // der Vertrag von `setzeTocOffen`/`wurzelRef`: `./useStickAusgleich`. Scroller aus
   // derselben `paneRoot`-Auflösung wie «↑ Anfang» (§5).
-  const { wurzelRef, setzeTocOffen } = useStickAusgleich(
-    m.tocOffen, m.setTocOffen, paneRoot(umgebung.imPane, umgebung.wurzel));
+  const { wurzelRef, setzeTocOffen } = useStickAusgleich(m.tocOffen, m.setTocOffen,
+    paneRoot(umgebung.imPane, umgebung.wurzel), m.aktivToken);
   // A3: die Id der Panel-Fläche entsteht HIER — Öffner und Fläche stehen in
   // verschiedenen Teilbäumen und brauchen dieselbe (`aria-controls`).
   const panelId = useId();

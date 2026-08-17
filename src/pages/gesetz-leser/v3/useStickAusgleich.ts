@@ -11,12 +11,26 @@ import { useLayoutEffect, useRef } from 'react';
 // erstes die Überschrift, an der er gerade las.
 //
 // DIE KORREKTUR IST GEMESSEN, NICHT GERECHNET. Die naheliegende Fassung wäre
-// `scrolleUm(SUCH_H_RUHE)`. Sie wäre zweimal falsch: sobald der Nutzer die
+// `scrollBy(SUCH_H_RUHE)`. Sie wäre zweimal falsch: sobald der Nutzer die
 // Schriftgrösse verstellt (die App führt eine `schriftskala` — ein rem sind dann
-// nicht 16 px), und sobald eine Suche läuft (dann gilt `SUCH_H_AKTIV`). Statt die
-// Höhe zu behaupten, wird sie vor und nach dem Umschalten AM KLEBENDEN BLOCK
-// SELBST abgelesen und die Differenz weggescrollt — dasselbe Vorher/Nachher-
-// Muster, mit dem `--nt-stick` seine Zusage hält (Risiko R1, Lehre LM-003).
+// nicht 16 px), und sobald eine Suche läuft (dann gilt `SUCH_H_AKTIV`).
+//
+// ── UND GEMESSEN WIRD DER ABSTAND, NICHT DIE HÖHE (im Bau reproduziert) ─────
+// Die erste Fassung las die HÖHE des Blocks vorher/nachher und scrollte die
+// Differenz weg. Sie machte es schlimmer, und die Spec hat es sofort gezeigt:
+// `#art-429` stand danach bei y = 76 statt bei 120, also 44 px HÖHER — genau die
+// Höhendifferenz, doppelt statt gar nicht.
+// URSACHE: Chromiums **Scroll-Anchoring**. Wächst Inhalt oberhalb des Sichtfelds,
+// zieht der Browser die Scroll-Position von sich aus nach; der Text bleibt also
+// stehen, und der gewachsene Kopf legt sich einfach ÜBER ihn. Genau das war Ä77 —
+// nicht «der Text springt», sondern «der Kopf verdeckt ihn». Eine Korrektur, die
+// den Text zusätzlich verschiebt, addiert zum Anchoring, statt es zu ergänzen.
+// DIE INVARIANTE, die in beiden Welten stimmt (mit und ohne Anchoring, und auch
+// wenn Chromium seine Heuristik ändert): **der Abstand zwischen der Unterkante
+// des klebenden Blocks und dem gelesenen Artikel bleibt gleich.** Gemessen wird
+// darum dieser ABSTAND vorher und nachher; verschoben wird um seine Differenz.
+// Rechnerisch: Anchoring an ⇒ Abstand schrumpft um 44, Korrektur −44; Anchoring
+// aus ⇒ Abstand unverändert, Korrektur 0. Dieselbe Zeile, beide Male richtig.
 //
 // Der Layout-Effekt läuft nach dem Commit und VOR dem Paint: es gibt keinen
 // Zwischenzustand, den der Nutzer sieht, also auch keinen Sprung, den man
@@ -54,20 +68,35 @@ export interface StickAusgleich {
  *   im Pane wäre `window` schlicht wirkungslos. Dass die Auflösung draussen
  *   bleibt, ist Absicht: `imPane` darf nur an der Wurzel gelesen werden
  *   (Fundament-Sonde, Kap. 10).
+ * @param bezugsToken Token des GELESENEN Artikels (Scroll-Spy, `m.aktivToken`).
+ *   Er ist das Bezugsobjekt der Invariante — und die ehrliche Wahl: Ä77 handelt
+ *   davon, dass GENAU DIESE Überschrift hinter dem Kopf verschwindet. `null`
+ *   (noch keine Leseposition, Seitenanfang) ⇒ es gibt nichts zu erhalten, dann
+ *   wird nicht gescrollt; ungefragt zu scrollen wäre schlimmer als nichts.
  */
 export function useStickAusgleich(
   tocOffen: boolean,
   setTocOffen: (auf: boolean) => void,
   scroller: HTMLElement | null,
+  bezugsToken: string | null,
 ): StickAusgleich {
   const wurzelRef = useRef<HTMLDivElement | null>(null);
   const vorherRef = useRef<number | null>(null);
+  const tokenRef = useRef<string | null>(null);
 
-  /** Aktuelle Höhe des klebenden Kopf-BLOCKS (Kopfzeile + Such-Zone).
-   *  `null` = noch kein Kopf im DOM (frühe Ansicht, Ladezustand). */
-  const hoehe = (): number | null => {
-    const el = wurzelRef.current?.querySelector('[data-v3-kopf]');
-    return el ? el.getBoundingClientRect().height : null;
+  /** Abstand zwischen der Unterkante des klebenden Blocks und der Oberkante des
+   *  gelesenen Artikels. `null` = kein Kopf oder kein Bezug im DOM (frühe
+   *  Ansicht, Ladezustand, Seitenanfang).
+   *  Gesucht wird INNERHALB der eigenen Wurzel: im Split trägt der Nachbar-Pane
+   *  dieselben `art-…`-Ids, und `document.getElementById` fände irgendeine. */
+  const abstand = (): number | null => {
+    const wurzel = wurzelRef.current;
+    const token = tokenRef.current;
+    if (!wurzel || !token) return null;
+    const kopf = wurzel.querySelector('[data-v3-kopf]');
+    const bezug = wurzel.querySelector(`[id="art-${CSS.escape(token)}"]`);
+    if (!kopf || !bezug) return null;
+    return bezug.getBoundingClientRect().top - kopf.getBoundingClientRect().bottom;
   };
 
   useLayoutEffect(() => {
@@ -78,19 +107,26 @@ export function useStickAusgleich(
     // `gliederung.leisteStartetZu`. Dann gibt es keine Leseposition zu erhalten,
     // und ungefragt zu scrollen wäre schlimmer als nichts zu tun.
     if (vorher == null) return;
-    const nachher = hoehe();
+    const nachher = abstand();
     if (nachher == null) return;
+    // `scrollBy(+d)` schiebt den Inhalt um d nach OBEN, verkleinert den Abstand
+    // also um d. Um ihn auf den alten Wert zurückzuholen, ist d genau seine
+    // Zunahme — Vorzeichen inklusive, in beide Umschaltrichtungen.
     const delta = nachher - vorher;
     // Unter 1 px ist es Rundung, kein Sprung.
     if (Math.abs(delta) < 1) return;
     (scroller ?? window).scrollBy({ top: delta, behavior: 'auto' });
-    // Nur der Umschalt-Zustand triggert; `hoehe` liest eine Ref, der Scroller
-    // wird beim Auslösen gelesen, nicht beim Einhängen.
+    // Nur der Umschalt-Zustand triggert; `abstand` liest Refs, der Scroller wird
+    // beim Auslösen gelesen, nicht beim Einhängen.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tocOffen]);
 
   return {
     wurzelRef,
-    setzeTocOffen: (auf: boolean) => { vorherRef.current = hoehe(); setTocOffen(auf); },
+    setzeTocOffen: (auf: boolean) => {
+      tokenRef.current = bezugsToken;
+      vorherRef.current = abstand();
+      setTocOffen(auf);
+    },
   };
 }
