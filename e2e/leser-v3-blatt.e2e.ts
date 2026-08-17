@@ -124,7 +124,13 @@ test.describe('A3 — ⌘K bedient das Pane, in dem der Fokus steht', () => {
       // Fokus vom Feld nehmen, ohne das Pane zu verlassen: der Kopf des Panes
       // trägt einen echten Knopf. So ist der Fall der ECHTE — «⌘K aus dem Pane,
       // aber nicht aus dem Feld».
-      await page.locator(`[data-pane="${start}"] [data-v3-kopf-schliessen]`).focus()
+      // Ä46 (H4-II, 17./18.8.2026): das war bis dahin `[data-v3-kopf-schliessen]`;
+      // im Pane gibt es dieses ✕ nicht mehr (zweites Kreuz je Pane, Duplikat des
+      // Rücksprungs). Der «Ansicht»-Öffner steht dort unverändert und ist
+      // ebenso ein echter, fokussierbarer Knopf im Kopf DIESES Panes — die
+      // Aussage des Tests (⌘K trifft das Pane, in dem der Fokus steht) ist
+      // unberührt (§6.3).
+      await page.locator(`[data-pane="${start}"] [data-v3-ansicht]`).focus()
 
       await page.keyboard.press('Control+k')
 

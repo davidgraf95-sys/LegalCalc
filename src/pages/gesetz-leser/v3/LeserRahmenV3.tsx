@@ -26,7 +26,7 @@ import { useTrefferBlatt } from './useTrefferBlatt';
 import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
-import { kopfElemente, panelForm, useKopfStufe } from './kopfStufen';
+import { kopfElemente, panelForm, useKopfStufe, zeigeSchliessKreuz } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
@@ -52,26 +52,15 @@ import { useLeserV3Modell } from './leserV3Modell';
 // oberste Element des klebenden Blocks.
 //
 // ── DIE ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4/H3, ein Eintrag statt zwei) ──
-// H1 hatte `beiwerkSlot` · `fassungsWahl` · `leisteExtra` als `ReactNode`-Slots
-// vorgesehen (Fundament-Auflage 3), H3 zusätzlich `panelOeffner`/`panelSlot`.
-// Befund des Architektur-Reviews 17.8.2026:
-//
-//  · Der EINZIGE Aufrufer (`../GesetzLeserV3.tsx`) setzt keinen von ihnen — seit
-//    H1, über drei Etappen.
-//  · `beiwerkSlot` hielt zudem nicht, was sein Kommentar versprach («Beiwerk-Zone
-//    je Artikel»): gebaut war EIN ReactNode am Fuss der Lesespalte
-//    (`LeserLesespalte`), also kein Slot je Artikel. Und S2 — die Etappe, für die
-//    er gedacht war — baut die Beiwerk-Zone im KERN (`parts/ArtikelLeser`,
-//    Kap. 1.3) und braucht ihn darum nicht.
-//
-//  · `panelOeffner`/`panelSlot` waren von aussen gar nicht füllbar: Zähler und
-//    Panel brauchen `useLeserV3Modell`, das erst HIER läuft (§5-Bruch).
-//
-// Damit gilt §17 in der Fassung vom 13.8.2026: was nicht scheitern kann, wird
-// gestrichen statt bewacht — und ein Erweiterungspunkt, dessen künftiger Füller
-// bereits einen anderen Weg nimmt, ist keiner (Präzedenz `LeserV3Kontext.ts`;
-// Herleitung im Vollzugsvermerk H3). Sie sind in der Historie greifbar, wenn ein
-// echter Konsument auftritt. (Nachzug 17.8.2026: stand tiefer ein zweites Mal.)
+// `beiwerkSlot` · `fassungsWahl` · `leisteExtra` (H1, Fundament-Auflage 3) und
+// `panelOeffner`/`panelSlot` (H3): null Aufrufer über drei Etappen, und die
+// beiden Panel-Slots waren von aussen gar nicht füllbar (sie brauchen
+// `useLeserV3Modell`, das erst HIER läuft — §5-Bruch). §17 in der Fassung vom
+// 13.8.2026: was nicht scheitern kann, wird gestrichen statt bewacht; sie sind
+// in der Historie greifbar, wenn ein echter Konsument auftritt. Vollständige
+// Herleitung samt Befundliste: Vollzugsvermerk H3 im Fahrplan Kap. 7.
+// (Gestrafft H4-II 18.8.2026 — der Absatz stand hier in voller Länge und die
+// Datei klemmte an der 420-Zeilen-Sonde; §6.6.)
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
 // `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
@@ -207,9 +196,12 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Klassen-Zähler konnte «nichts erfasst» nicht von «lädt noch» trennen.
   const panelZahl = trefferZahl(bezuege.bezuegeFuer, bezuege.geladen, panelZiel.token);
 
+  // Ä79 (H4-II): steht die Schiene, ist SIE der eine Griff — die Herleitung samt
+  // Messreihe steht am Bauteil, das sie betrifft (`./LeserGliederungSchiene`).
+  const schieneSteht = hatLeiste && umgebung.istXl && !m.tocOffen;
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
-  const gliederungKnopf = hatLeiste && !zweiSpalten
+  const gliederungKnopf = hatLeiste && !zweiSpalten && !schieneSteht
     ? (
       <button type="button" data-v3-gliederung-auf
         aria-expanded={umgebung.istXl ? m.tocOffen : m.tocAuf}
@@ -236,13 +228,14 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
         hatAenderungsvermerke={m.hatAenderungsvermerke}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
-        // F8-Regel David 16.8.2026: «Rechtsprechung im Text» aus ⇒ Zähler UND
-        // Lasche weg (`panel.oeffnerSichtbar`, eine Stelle). Ä11: auf `mini` trägt die
-        // Kopfzeile den Zähler nicht — dort ist die Lasche der Öffner
-        // (`kopfElemente(stufe).panel`).
-        panelOeffner={panel.oeffnerSichtbar && kopfElemente(stufe).panel
+        // F8-Regel David 16.8.2026 («Rechtsprechung im Text» aus ⇒ Zähler weg):
+        // unverändert der EINE wirksame Torwächter, `panel.oeffnerSichtbar`.
+        // H4-II: die Stufe entscheidet nur noch die GESTALT des Zählers, nicht
+        // sein Dasein (`kopfElemente(stufe).panel`, Herleitung dort).
+        panelOeffner={panel.oeffnerSichtbar
           ? (
             <PanelZaehler anzahl={panelZahl} artikelLabel={panelArtikel} offen={panel.offen}
+              form={kopfElemente(stufe).panel}
               // A3: dieselbe Id wie die Fläche — sonst ist `aria-controls` null.
               panelId={panel.offen ? panelId : undefined}
               onKlick={panel.umschalten} />
@@ -251,6 +244,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // A2: der Weg zum Panel, der keine Tastatur braucht und keinen Schalter —
         // steht in JEDEM Pane und auf JEDEM Zuschnitt (`./LeserAnsichtV3`).
         onPanelOeffnen={() => panel.oeffne('entscheide')}
+        // Ä46/H4-II: das ✕ steht, wo es NICHT das Duplikat des Rücksprungs
+        // «‹ Gesetze» ist — die eine Ableitung samt Messreihe: `./kopfStufen`.
+        zeigeSchliessen={zeigeSchliessKreuz(stufe, !umgebung.imPane)}
         suchZone={suchZone} />
 
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰

@@ -65,8 +65,13 @@ function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: K
       {/* D1: der Kopf reicht `hatAenderungsvermerke` nur durch — hier `true`, damit
           die Fälle unten unverändert den vollen Schalter-Satz sehen; die Bedingung
           selbst prüft `e2e/leser-v3-umschalten` (a3) am gerenderten Erlass. */}
+      {/* Ä46/H4-II: `zeigeSchliessen` kommt vom Rahmen (Herleitung in
+          `v3/kopfStufen.zeigeSchliessKreuz`). Vorbelegt mit `true` = die
+          vollflächige Einzelansicht, damit die Fälle unten unverändert den
+          bisherigen Kopf sehen; die REGEL selbst prüft
+          `leser-v3-kopfstufen.test.ts` an der reinen Funktion. */}
       <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3}
-        hatAenderungsvermerke {...props} />
+        hatAenderungsvermerke zeigeSchliessen {...props} />
     </MemoryRouter>,
   );
 }

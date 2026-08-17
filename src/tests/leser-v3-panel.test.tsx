@@ -193,11 +193,21 @@ describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
   });
 });
 
-describe('Ä11 — wo der Öffner steht', () => {
-  it('auf `mini` trägt die Kopfzeile keinen Zähler (≤ 4 Elemente)', () => {
-    expect(kopfElemente('mini').panel).toBe(false);
-    expect(kopfElemente('kompakt').panel).toBe(true);
-    expect(kopfElemente('voll').panel).toBe(true);
+// §6.3-DEKLARATION (H4-II, 17./18.8.2026): dieser Fall hiess «auf `mini` trägt
+// die Kopfzeile keinen Zähler» und prüfte `panel === false`. Das war die
+// Ä11-Antwort von H3 — und genau sie hat den NM-2-Blocker des Kontaktbogens H4
+// erzeugt: @390 stand im Ruhezustand KEIN Öffner in der Kopfzeile, der Weg zu
+// den Entscheiden kostete zwei Taps statt einem. Der Zähler fällt seither nicht
+// mehr, er SCHRUMPFT ('voll' | 'kompakt'), und das Element-Budget hält, weil
+// dafür das ✕ weicht (`kopfStufen.zeigeSchliessKreuz`, dort die Messreihe).
+// Die Ä11-Sorge ist unverändert geprüft, nur schärfer gefasst: nicht «kein
+// Zähler», sondern «kein fünftes Element» — die Zahl im Browser misst
+// `e2e/leser-v3-h4-kopfwege` (a2).
+describe('Ä11/H4-II — welche Gestalt der Öffner je Stufe hat', () => {
+  it('auf `mini` schrumpft der Zähler zum Chip, statt zu verschwinden', () => {
+    expect(kopfElemente('mini').panel).toBe('kompakt');
+    expect(kopfElemente('kompakt').panel).toBe('voll');
+    expect(kopfElemente('voll').panel).toBe('voll');
   });
 });
 
