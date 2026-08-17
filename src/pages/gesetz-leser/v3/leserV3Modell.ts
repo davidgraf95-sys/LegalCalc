@@ -210,7 +210,10 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     // einen Ref am Namen, und dieser wird beschrieben.
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer: reiterToastTimerRef,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-  } = useLeserZustand();
+    // H3 · Panel-Nachladen (Kap. 7): kein Bezugs-Shard beim Seitenaufruf. Die
+    // Rechtsprechung steht im Panel und lädt beim Öffnen (`./panelModell`);
+    // `bezuegeFuer` ist hier durchgehend `undefined` (Pos. 12).
+  } = useLeserZustand({ bezuegeVorladen: false });
   const {
     offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,

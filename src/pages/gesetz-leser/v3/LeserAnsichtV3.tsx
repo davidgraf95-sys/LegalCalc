@@ -1,6 +1,6 @@
-import { useEffect, useId, useRef, useState } from 'react';
-import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { useId, useRef, useState } from 'react';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
+import { usePopoverAutoZu } from './usePopoverAutoZu';
 import {
   HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
 } from '../leserOptionen';
@@ -99,33 +99,13 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
 
-  useDialogFokus(offen, panelRef, () => setOffen(false));
-
-  useEffect(() => {
-    if (!offen) return;
-    const klick = (e: PointerEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOffen(false);
-    };
-    document.addEventListener('pointerdown', klick);
-    return () => document.removeEventListener('pointerdown', klick);
-  }, [offen]);
-
-  // LM-009: eine echte Scroll-GESTE schliesst; NICHT das generische `scroll`-
-  // Ereignis — ein Schalter verändert die Höhe des Fliesstexts, der Browser
-  // gleicht per Scroll-Anchoring aus und feuerte `scroll` ohne Nutzer-Geste,
-  // was das eben geöffnete Panel wieder schloss (Herleitung: LeserAnsichtMenu.tsx).
-  useEffect(() => {
-    if (!offen) return;
-    const schliesse = () => setOffen(false);
-    window.addEventListener('wheel', schliesse, { passive: true });
-    window.addEventListener('touchmove', schliesse, { passive: true });
-    window.addEventListener('resize', schliesse);
-    return () => {
-      window.removeEventListener('wheel', schliesse);
-      window.removeEventListener('touchmove', schliesse);
-      window.removeEventListener('resize', schliesse);
-    };
-  }, [offen]);
+  // H3 · GETEILTES AUTO-ZU (§5). Bis H2 standen hier drei lokale Effekte:
+  // Fokus-Falle/Esc (`useDialogFokus`), Aussenklick und Wisch-Geste (LM-009).
+  // H3 bringt eine zweite aufziehbare Fläche — das Rechtsprechungs-Panel —, und
+  // zwei Kopien derselben Bedien-Zusage laufen beim ersten Nachjustieren
+  // auseinander. Die Mechanik liegt darum in `./usePopoverAutoZu`; die Herleitung
+  // beider Effekte (samt LM-009) steht dort im Kopf, nicht mehr hier.
+  usePopoverAutoZu({ offen, schliesse: () => setOffen(false), wrapRef, panelRef, modus: 'popover' });
 
   const schalte = (feld: OptFeld, an: boolean) => setzeOption(feld, an ? 'aus' : 'an');
 

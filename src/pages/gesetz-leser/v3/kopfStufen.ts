@@ -53,6 +53,17 @@ export interface KopfElemente {
   artikel: true;
   /** Öffner «Ansicht ▾» bzw. «···». Bleibt IMMER (Fahrplan Kap. 4a). */
   ansicht: true;
+  /**
+   * H3/Ä11 — Zähler «⚖ 14 Entscheide» in der Kopfzeile.
+   *
+   * AUF `mini` NICHT: dort stehen bereits Ort · ☰ · ··· · ✕, und die
+   * Design-Grundlage Kap. 6 deckelt die Ruhezustand-Kopfzeile auf VIER Elemente.
+   * Der Öffner verschwindet damit nicht — er lebt auf dem Handy-Zuschnitt
+   * ausschliesslich als Randlasche, also in der Daumenzone statt in der engsten
+   * Zeile des Bildschirms. Das ist der Teil von Ä11 («Split-Pane-Icon-Flut»),
+   * den H3 zu verantworten hat: die neue Fläche vergrössert die Kopfzeile nicht.
+   */
+  panel: boolean;
 }
 
 export function kopfElemente(stufe: KopfStufe): KopfElemente {
@@ -62,7 +73,31 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
     kuerzel: true,
     artikel: true,
     ansicht: true,
+    panel: stufe !== 'mini',
   };
+}
+
+/**
+ * Ab welcher Rahmen-Breite (px) darf das Panel als SPALTE andocken?
+ *
+ * GERECHNET, NICHT GERATEN — die Summe der Spuren, die im offenen Zustand
+ * gleichzeitig Platz haben müssen:
+ *   Gliederung 18 rem (288) + gap 2 rem (32) + Lesemass 40 rem (640)
+ *   + gap 2 rem (32) + Panel 22 rem (352) = 1344 px
+ * Darunter würde die Lesespalte beim Öffnen unter ihr Mass gedrückt und der
+ * Normtext bräche neu um — ein Panel, das den Satzspiegel verstellt, verletzt
+ * die Trennung «Panel ist Beiwerk, der Text ist der Zweck» (Kap. 4c, §1). Ist
+ * die Breite kleiner, öffnet dasselbe Panel als Blatt (Sheet) — dort nimmt es
+ * dem Text gar keine Breite.
+ *
+ * Rein und an jeder Breite prüfbar; die Zahl steht EINMAL (§5).
+ */
+export const PANEL_DOCK_PX = 1344;
+
+/** Breite (px) → darf das Panel andocken? (Im Pane NIE — das entscheidet der
+ *  Rahmen zusätzlich: «nie drei vertikale Flächen», Design-Grundlage Kap. 8.) */
+export function panelAlsSpalte(breitePx: number): boolean {
+  return breitePx >= PANEL_DOCK_PX;
 }
 
 /** Höhe der Kopfzeile je Stufe (Design-Grundlage Kap. 3: H 48 px · D 56 px ·
@@ -99,19 +134,36 @@ export function kopfHoehe(stufe: KopfStufe): string {
  * damit nur noch der Wert für den einen Render, in dem es das Element gar nicht
  * gibt (Lade-Platzhalter).
  */
-export function useKopfStufe(): { stufe: KopfStufe; kopfRef: (el: HTMLDivElement | null) => void } {
+export function useKopfStufe(): {
+  stufe: KopfStufe;
+  /** H3: reicht die gemessene Breite für das angedockte Panel? (`panelAlsSpalte`) */
+  dockFaehig: boolean;
+  kopfRef: (el: HTMLDivElement | null) => void;
+} {
   const [el, setEl] = useState<HTMLDivElement | null>(null);
-  const [stufe, setStufe] = useState<KopfStufe>(() =>
-    kopfStufe(typeof window === 'undefined' ? 1200 : window.innerWidth));
+  const startBreite = typeof window === 'undefined' ? 1200 : window.innerWidth;
+  const [stufe, setStufe] = useState<KopfStufe>(() => kopfStufe(startBreite));
+  // H3: ZWEITER abgeleiteter Wert aus DERSELBEN Messung — kein zweiter
+  // ResizeObserver und keine zweite Breiten-Quelle (die eine Quelle für
+  // `d`/`s`/`sheet` baut H4, Vollzugsvermerk H1). Als DISKRETER Zustand geführt,
+  // nicht als rohe px-Zahl: sonst löste jede Pixel-Änderung beim Ziehen des
+  // Pane-Gutters ein Re-Render der ganzen Hülle aus (§15).
+  const [dockFaehig, setDockFaehig] = useState<boolean>(() => panelAlsSpalte(startBreite));
   // Der zuletzt gemeldete Wert, damit der Observer nur bei echtem Stufenwechsel
   // einen Re-Render auslöst (jede Pixel-Änderung beim Ziehen des Pane-Gutters
   // feuert sonst — §15).
   const letzte = useRef<KopfStufe>(stufe);
+  const letzteDock = useRef<boolean>(dockFaehig);
 
   const uebernimm = useCallback((breite: number) => {
     // Breite 0 kommt vor, solange das Element noch nicht gelayoutet ist —
     // sie als «Handy» zu lesen wäre eine Messung von nichts.
     if (breite <= 0) return;
+    const dock = panelAlsSpalte(breite);
+    if (dock !== letzteDock.current) {
+      letzteDock.current = dock;
+      setDockFaehig(dock);
+    }
     const neu = kopfStufe(breite);
     if (neu === letzte.current) return;
     letzte.current = neu;
@@ -138,5 +190,5 @@ export function useKopfStufe(): { stufe: KopfStufe; kopfRef: (el: HTMLDivElement
     ro.observe(el, { box: 'border-box' });
     return () => ro.disconnect();
   }, [el, uebernimm]);
-  return { stufe, kopfRef };
+  return { stufe, dockFaehig, kopfRef };
 }

@@ -1,0 +1,138 @@
+// @shard-gruppe: 3
+// ─── H3 · Zähler und Randlasche des Rechtsprechungs-Panels ───────────────────
+//
+// ZWEI ZUSAGEN, die diese Spec messbar macht:
+//
+//  1. JEDER ENTSCHEID BLEIBT ERREICHBAR. In V3 steht unter dem Artikel keine
+//     Bezüge-Zeile mehr (Pos. 12). Der Weg zu den Entscheiden ist der Öffner —
+//     Zähler in der Kopfzeile oder Randlasche —, und er führt ins Panel, in
+//     BEIDEN Panes. Wäre der Öffner weg oder das Panel leer, wäre die
+//     Rechtsprechung des Artikels unerreichbar geworden: der eine Fehler, den
+//     H3 nicht machen darf.
+//
+//  2. DIE REGEL DAVIDS VOM 16.8.2026 (F8): «Rechtsprechung im Text» AUS ⇒
+//     Zähler UND Lasche weg. Und trotzdem erreichbar — über die Taste «r»
+//     (Kap. 4h). Beides wird hier geprüft, nicht nur die halbe Regel.
+//
+// ROT ZU BEKOMMEN (§6.7):
+//  · Fall (a)/(c): in `v3/LeserRahmenV3.tsx` das `panelOeffner`-Argument auf
+//    `undefined` setzen — kein Zähler, Fall (a) rot.
+//  · Fall (b): in `v3/LeserPanelZone.tsx` `const lasche = oeffnerSichtbar ? …`
+//    auf bedingungslos stellen — die Lasche überlebt das Ausschalten, rot.
+//  · Fall (d): in `parts/LeserTastatur.tsx` den `r`-Zweig entfernen — das Panel
+//    ist mit ausgeschaltetem Schalter nicht mehr erreichbar, rot.
+import { test, expect, type Page } from '@playwright/test'
+
+function fehlerSammeln(page: Page): string[] {
+  const fehler: string[] = []
+  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
+  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
+  return fehler
+}
+
+async function warteLeser(page: Page): Promise<void> {
+  await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+  await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+}
+
+test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
+  test('(a) D @1440 StPO: Öffner führt ins Panel, und der Zähler bekommt seine Zahl', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await warteLeser(page)
+
+    // Im Lesekörper steht KEINE Bezüge-Zeile mehr (Pos. 12) — sie ist der Grund,
+    // aus dem es den Öffner überhaupt gibt.
+    await expect(page.locator('[data-bezuege-zeile]')).toHaveCount(0)
+
+    const zaehler = page.locator('[data-v3-panel-zaehler]')
+    await expect(zaehler).toBeVisible()
+    // Vor dem Öffnen steht dort KEINE Zahl: der Shard ist nicht geladen, und
+    // eine 0 wäre eine Behauptung über den Bestand (§8).
+    await expect(zaehler).toHaveAttribute('aria-expanded', 'false')
+    expect(await zaehler.getAttribute('data-v3-panel-anzahl')).toBeNull()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+
+    await zaehler.click()
+    await expect(page.locator('[data-v3-panel]')).toBeVisible()
+    await expect(zaehler).toHaveAttribute('aria-expanded', 'true')
+
+    // Jetzt lädt der Bezugs-Shard (Nachladen) und der Zähler bekommt seine Zahl.
+    // Die StPO führt an Art. 1 Leitentscheide; gewartet wird auf das Attribut,
+    // nicht auf eine Zeit.
+    await expect(zaehler).toHaveAttribute('data-v3-panel-anzahl', /\d+/, { timeout: 20_000 })
+
+    // Und die Entscheide stehen wirklich im Panel, nicht bloss der Reiter.
+    await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first()).toBeVisible({ timeout: 20_000 })
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('(b) F8: «Rechtsprechung im Text» aus ⇒ Zähler UND Lasche weg', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await warteLeser(page)
+    // Beides ist DA, bevor geschaltet wird — sonst prüfte der Fall unten nichts.
+    await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
+    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(1)
+
+    await page.evaluate(() => {
+      localStorage.setItem('lm.leser.optionen', JSON.stringify({
+        fussnoten: 'an', verweise: 'an', leitfaelle: 'aus', hist: 'fussnoten',
+      }))
+    })
+    await page.reload()
+    await warteLeser(page)
+
+    await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(0)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('(c) Split-View: beide Panes tragen ihren eigenen Öffner, und sie öffnen getrennt', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1600, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await warteLeser(page)
+    // Zweites Pane über die Adresse (dasselbe Muster wie leser-kopf-paritaet).
+    await page.goto('/gesetze/bund/STPO?leser=v3&r=/gesetze/bund/BGFA')
+    await expect(page.locator('[data-v3-kopf]')).toHaveCount(2, { timeout: 20_000 })
+
+    // Im Pane ist das Panel IMMER ein Blatt (nie drei vertikale Flächen) — die
+    // Lasche ist der Öffner, den es dort in jeder Breite gibt.
+    const laschen = page.locator('[data-v3-panel-lasche]')
+    await expect(laschen).toHaveCount(2)
+
+    await laschen.first().click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(1)
+    // Das offene Blatt nennt SEIN Pane (H2-Portal-Vertrag) — ohne diese Marke
+    // wären zwei offene Panels im DOM nicht auseinanderzuhalten.
+    await expect(page.locator('[data-v3-pane][data-v3-panel-spur="blatt"]').first()).toHaveAttribute('data-v3-pane', /primaer|sekundaer/)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('(d) F8-Kehrseite: mit ausgeschaltetem Schalter öffnet «r» das Panel weiterhin', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await warteLeser(page)
+    await page.evaluate(() => {
+      localStorage.setItem('lm.leser.optionen', JSON.stringify({
+        fussnoten: 'an', verweise: 'an', leitfaelle: 'aus', hist: 'fussnoten',
+      }))
+    })
+    await page.reload()
+    await warteLeser(page)
+    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(0)
+
+    // Fokus ausserhalb jedes Eingabefelds (der Listener hat einen Eingabe-Guard).
+    await page.locator('#lc-lesespalte').click({ position: { x: 5, y: 5 } })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 10_000 })
+    // Und es ist wieder schliessbar, ohne dass ein Öffner existiert.
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+})

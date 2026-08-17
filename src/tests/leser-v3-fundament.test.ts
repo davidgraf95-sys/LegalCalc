@@ -94,13 +94,93 @@ const VERBOTEN: [string, RegExp][] = [
   ['KontextPanel', /\bKontextPanel\b/],
 ];
 
+// H3 · NUR DIREKT (nicht transitiv): `BezuegeZeile` ist der Artikelfuss der
+// Ist-Hülle, den V3 durch das Panel ablöst (Pos. 12). Das Verbot gilt bewusst
+// nur für den V3-Quelltext selbst — transitiv steht die Zeile weiterhin im Graph,
+// weil der KERN (`parts/ArtikelLeser`) sie rendert, wenn ein Aufrufer `bezuege`
+// setzt. Genau das tut V3 nicht mehr; der Kern bleibt unangetastet.
+const VERBOTEN_DIREKT: [string, RegExp][] = [
+  ['BezuegeZeile', /\bBezuegeZeile\b/],
+];
+
 describe('Keine Ist-Hülle: die alten Bausteine sind aus v3/ nicht erreichbar', () => {
   it('keine V3-Datei berührt die Ist-Hülle (Code, nicht Kommentare)', () => {
     for (const datei of ALLE_DATEIEN) {
       const quelle = ohneKommentare(LIES(datei));
-      for (const [name, muster] of VERBOTEN) {
+      for (const [name, muster] of [...VERBOTEN, ...VERBOTEN_DIREKT]) {
         expect(traegt(quelle, muster), `${datei} berührt die Ist-Hülle (${name})`).toBe(false);
       }
+    }
+  });
+});
+
+// ─── H3 · DIE ZUSAGEN DES RECHTSPRECHUNGS-PANELS ────────────────────────────
+//
+// Vier Quellensonden, die je einen Rückschritt rot machen, den ein DOM-Test
+// nicht sieht.
+
+describe('H3 — Pos. 12: der Lesekörper führt keine Bezüge mehr', () => {
+  it('die Lesespalte setzt die `bezuege`-Prop des Kerns NICHT', () => {
+    const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
+    expect(traegt(quelle, /\bbezuege=/), 'LeserLesespalte.tsx setzt `bezuege` — die Entscheid-Linien sind zurück').toBe(false);
+  });
+
+  it('Positiv-Sonde: sie setzt `revision`/`historie` weiterhin (sonst prüfte das Verbot nur eine leere Datei)', () => {
+    const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
+    expect(traegt(quelle, /\brevision=/)).toBe(true);
+    expect(traegt(quelle, /\bhistorie=/)).toBe(true);
+  });
+
+  it('der Adapter schaltet das Vorladen des Bezugs-Shards ab (Nachladen, Kap. 7)', () => {
+    const quelle = ohneKommentare(LIES('leserV3Modell.ts'));
+    expect(traegt(quelle, /bezuegeVorladen:\s*false/),
+      'leserV3Modell.ts lädt die Bezüge wieder beim Seitenaufruf — das Nachladen ist ausgehebelt').toBe(true);
+  });
+});
+
+describe('H3 — EIN Auto-Zu für alle Flächen (§5)', () => {
+  const HOOK = 'usePopoverAutoZu.ts';
+
+  it('der Hook trägt die Mechanik wirklich (sonst prüfte das Verbot nichts)', () => {
+    const quelle = ohneKommentare(LIES(HOOK));
+    expect(traegt(quelle, /pointerdown/)).toBe(true);
+    expect(traegt(quelle, /wheel/)).toBe(true);
+    expect(traegt(quelle, /useDialogFokus/)).toBe(true);
+  });
+
+  it('KEINE andere V3-Datei registriert Aussenklick- oder Wisch-Schliessen selbst', () => {
+    for (const datei of ALLE_DATEIEN) {
+      if (datei === HOOK) continue;
+      const quelle = ohneKommentare(LIES(datei));
+      expect(traegt(quelle, /addEventListener\(\s*'pointerdown'/), `${datei} hat eine zweite Aussenklick-Kopie`).toBe(false);
+      expect(traegt(quelle, /addEventListener\(\s*'wheel'/), `${datei} hat eine zweite Wisch-Kopie`).toBe(false);
+    }
+  });
+
+  it('beide Flächen benutzen ihn — das Ansicht-Menü UND das Panel', () => {
+    expect(traegt(ohneKommentare(LIES('LeserAnsichtV3.tsx')), /usePopoverAutoZu\(/)).toBe(true);
+    expect(traegt(ohneKommentare(LIES('LeserPanelZone.tsx')), /usePopoverAutoZu\(/)).toBe(true);
+  });
+});
+
+describe('H3 — SEO: der Prerender-Pfad kennt die Bezüge nicht (§7-Befund)', () => {
+  // Der Fahrplan verlangt «der Prerender behält die Bezüge im HTML». Gemessen:
+  // er hatte sie nie. Diese Sonde hält den EIGENTLICHEN Schutz fest — der
+  // Prerender-Pfad darf sich nie an die Hülle oder an die Bezugs-Ladeschicht
+  // hängen, sonst könnte eine Hüllen-Entscheidung das SEO-HTML verändern.
+  const PFADE = ['src/lib/seo-detail.ts', 'scripts/prerender.ts'];
+
+  it('Positiv-Sonde: die Dateien existieren und schreiben Erlass-HTML', () => {
+    expect(readFileSync(PFADE[0]!, 'utf8')).toContain('erlassVolltextHtml');
+    expect(readFileSync(PFADE[1]!, 'utf8')).toContain('erlassVolltextHtml');
+  });
+
+  it('weder seo-detail noch prerender berühren Bezüge, norm-index oder die V3-Hülle', () => {
+    for (const p of PFADE) {
+      const quelle = ohneKommentare(readFileSync(p, 'utf8'));
+      expect(traegt(quelle, /bezuege/i), `${p} berührt die Bezugs-Schicht`).toBe(false);
+      expect(traegt(quelle, /norm-index/), `${p} berührt den norm-index`).toBe(false);
+      expect(traegt(quelle, /gesetz-leser\/v3/), `${p} berührt die V3-Hülle`).toBe(false);
     }
   });
 });

@@ -37,16 +37,29 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 /** Die Tastenbelegung — EINE Quelle für Auswertung UND Overlay (§5). Ein Eintrag,
  *  der hier fehlt, taucht auch in der Hilfe nicht auf; ein Eintrag, der hier steht
  *  und nicht wirkt, fiele beim Lesen der Hilfe sofort auf. */
-const BELEGUNG: readonly { taste: string; wirkung: string }[] = [
-  { taste: 'j', wirkung: 'Zum nächsten Artikel' },
-  { taste: 'k', wirkung: 'Zum vorigen Artikel' },
-  { taste: 't', wirkung: 'Fokus in die Gliederung' },
-  { taste: '?', wirkung: 'Diese Übersicht öffnen' },
-  { taste: 'Esc', wirkung: 'Übersicht schliessen' },
-];
+/**
+ * `hatPanel` = der Aufrufer hat ein Rechtsprechungs-/Kontext-Panel (LESER-V3,
+ * H3). NUR DANN steht «r» in der Hilfe. Die Ist-Hülle hat kein solches Panel;
+ * einen Eintrag zu zeigen, der dort nichts tut, wäre genau die Hilfe, die lügt
+ * (§8) — und der Grund, warum diese Liste überhaupt EINE Quelle für Auswertung
+ * und Overlay ist. Rein, damit die Zuordnung ohne Browser prüfbar ist (§6.7).
+ */
+export function belegung(hatPanel: boolean): readonly { taste: string; wirkung: string }[] {
+  return [
+    { taste: 'j', wirkung: 'Zum nächsten Artikel' },
+    { taste: 'k', wirkung: 'Zum vorigen Artikel' },
+    { taste: 't', wirkung: 'Fokus in die Gliederung' },
+    ...(hatPanel ? [{ taste: 'r', wirkung: 'Rechtsprechung und Kontext öffnen' }] : []),
+    { taste: '?', wirkung: 'Diese Übersicht öffnen' },
+    { taste: 'Esc', wirkung: 'Übersicht schliessen' },
+  ];
+}
 
-/** Tasten, die dieser Listener beansprucht (ohne «?»/Escape, die separat laufen). */
-const NAVIGATION = new Set(['j', 'k', 't']);
+/** Tasten, die dieser Listener beansprucht (ohne «?»/Escape, die separat laufen).
+ *  «r» ist frei: «/» und ⌘K gehören der HeaderSuche, j/k/t diesem Listener; kein
+ *  Browser-Standard belegt ein blankes «r» (Reload ist ⌘/Ctrl+R und fällt bereits
+ *  an Guard 1). */
+const NAVIGATION = new Set(['j', 'k', 't', 'r']);
 
 function istEingabe(ziel: EventTarget | null): boolean {
   const el = ziel as HTMLElement | null;
@@ -54,7 +67,7 @@ function istEingabe(ziel: EventTarget | null): boolean {
   return /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable === true;
 }
 
-export function LeserTastatur({ tokens, aktivToken, onSprung }: {
+export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel }: {
   /** Artikel-Tokens in DOKUMENT-Reihenfolge (Reader: aus `eintraege`). j/k gehen
    *  auf dieser Liste einen Schritt — nie auf einer DOM-Abfrage: die wäre bei
    *  `content-visibility:auto` von der Renderreihenfolge abhängig. */
@@ -66,6 +79,20 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
   /** Sprung zum Token — der Reader reicht `springeZuArtikel` herein (EIN
    *  Sprung-Mechanismus für Quickjump, Treffer, Tastatur). */
   onSprung: (token: string) => void;
+  /**
+   * LESER-V3 H3 · «r» zieht das Rechtsprechungs-/Kontext-Panel auf.
+   *
+   * UNGESETZT ⇒ die Taste ist unbelegt und steht auch nicht in der Hilfe: die
+   * Ist-Hülle hat kein Panel und bleibt Zeichen für Zeichen, wie sie war (FL-4).
+   * KEINE ZWEITE TASTATUREBENE (Kap. 4h): V3 registriert keinen eigenen
+   * keydown-Listener, sondern reicht eine Funktion in DEN einen herein.
+   *
+   * WARUM DAS KÜRZEL ÜBERHAUPT NÖTIG IST: Regel David 16.8.2026 — mit «Rechts­
+   * prechung im Text: aus» verschwinden Zähler UND Randlasche. Dann muss das
+   * Panel anders erreichbar bleiben; «Ansicht ▾» ist der eine Weg, «r» der
+   * zweite (F8).
+   */
+  onPanel?: () => void;
 }) {
   const [hilfeOffen, setHilfeOffen] = useState(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
@@ -83,6 +110,10 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
   useEffect(() => { tokenRef.current = tokens; }, [tokens]);
   useEffect(() => { aktivRef.current = aktivToken; }, [aktivToken]);
   useEffect(() => { sprungRef.current = onSprung; }, [onSprung]);
+  // Wie `sprungRef`: über eine Ref gelesen, damit der Listener nicht bei jedem
+  // Render des Rahmens ab- und neu registriert wird.
+  const panelRef = useRef(onPanel);
+  useEffect(() => { panelRef.current = onPanel; }, [onPanel]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -118,6 +149,15 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
         return;
       }
       if (!NAVIGATION.has(e.key)) return;
+      if (e.key === 'r') {
+        // Ohne Panel ist die Taste unbelegt — und zwar wirklich: kein
+        // `preventDefault`, damit ein blankes «r» dort bleibt, was es war.
+        const oeffne = panelRef.current;
+        if (!oeffne) return;
+        e.preventDefault();
+        oeffne();
+        return;
+      }
       if (e.key === 't') {
         // Fokus in die Gliederung. Kein Aufklappen, kein Sprung: die Taste
         // verschiebt nur den Fokus dorthin, ab da bedient Tab/Enter den Baum.
@@ -159,7 +199,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
         className="lc-card w-full max-w-sm space-y-3 p-4">
         <h2 className="text-body-l font-semibold">Tastatur-Kurzbefehle</h2>
         <dl className="space-y-2">
-          {BELEGUNG.map((b) => (
+          {belegung(onPanel != null).map((b) => (
             <div key={b.taste} className="flex items-baseline gap-3">
               <dt className="lc-chip shrink-0 justify-center px-2">{b.taste}</dt>
               <dd className="text-body-s text-ink-700">{b.wirkung}</dd>
