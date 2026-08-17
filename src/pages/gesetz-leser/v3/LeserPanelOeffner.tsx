@@ -1,4 +1,4 @@
-import { oeffnerLabel, oeffnerName } from './panelModell';
+import { oeffnerLabel, oeffnerName, zaehlerAttribut } from './panelModell';
 
 // ─── Die ZWEI Öffner des Panels — ein Zustand, zwei Orte (H3, F8) ────────────
 //
@@ -11,7 +11,7 @@ import { oeffnerLabel, oeffnerName } from './panelModell';
 // ── DIE REGEL DAVIDS, UND WO SIE STEHT ──────────────────────────────────────
 // «Rechtsprechung im Text» AUS ⇒ Zähler UND Lasche weg. Diese Datei prüft das
 // NICHT: sie wird dann gar nicht gerendert. Die Entscheidung liegt an genau
-// einer Stelle (`LeserRahmenV3`, `panelSichtbar`) — zwei Stellen, die dieselbe
+// einer Stelle (`panelModell.oeffnerSichtbar`) — zwei Stellen, die dieselbe
 // Option lesen, hätten irgendwann zwei Antworten.
 //
 // ── WARUM DER ZÄHLER AUF DEM HANDY-ZUSCHNITT FEHLT (Ä11) ────────────────────
@@ -42,7 +42,7 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, onKlick }: 
       aria-label={oeffnerName(anzahl, artikelLabel)}
       title={oeffnerName(anzahl, artikelLabel)}
       data-v3-panel-zaehler
-      data-v3-panel-anzahl={anzahl ?? undefined}
+      data-v3-panel-anzahl={zaehlerAttribut(anzahl)}
       className="lc-leiste-griff lc-leiste-griff-fest gap-1 px-1.5"
     >
       <span aria-hidden>⚖</span>
@@ -82,6 +82,7 @@ export function PanelLasche({ anzahl, artikelLabel, offen, panelId, onKlick, cla
       aria-label={oeffnerName(anzahl, artikelLabel)}
       title={oeffnerName(anzahl, artikelLabel)}
       data-v3-panel-lasche
+      data-v3-panel-anzahl={zaehlerAttribut(anzahl)}
       className={`flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line bg-paper py-3 text-micro text-ink-600 transition-colors hover:border-brass-300 hover:bg-paper-sunken/60 hover:text-brass-700 ${className}`}
     >
       <span aria-hidden className="text-base leading-none">⚖</span>

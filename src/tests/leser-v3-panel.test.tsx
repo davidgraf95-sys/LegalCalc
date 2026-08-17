@@ -2,10 +2,11 @@ import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import {
   PANEL_REITER, gruppiereKanten, normZitat, oeffnerLabel, oeffnerName, shardGeladen, trefferZahl,
+  zaehlerAttribut,
 } from '../pages/gesetz-leser/v3/panelModell';
 import { PANEL_DOCK_PX, kopfElemente, panelAlsSpalte } from '../pages/gesetz-leser/v3/kopfStufen';
 import { PanelSachgebiet } from '../pages/gesetz-leser/v3/PanelSachgebiet';
-import { belegung } from '../pages/gesetz-leser/parts/LeserTastatur';
+import { belegung } from '../pages/gesetz-leser/parts/leserTastaturBelegung';
 import type { Bezug } from '../lib/rechtsprechung/bezuege';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
 
@@ -57,6 +58,28 @@ describe('oeffnerName — der Accessible-Name sagt, WORAUF sich die Zahl bezieht
     // Sichtbar wäre «0 Entscheide» ein leerer Zähler; VORGELESEN ist die Auskunft
     // «keine Entscheide erfasst» genau die, die der Nutzer braucht (§8).
     expect(oeffnerName(0, 'Art. 5')).toContain('keine Entscheide erfasst');
+  });
+});
+
+describe('zaehlerAttribut — das Attribut sagt dasselbe wie das Label', () => {
+  // BEFUND beim ersten Lauf von `leser-v3-panel-facetten` (d), 17.8.2026: am
+  // Kantonserlass stand sichtbar «Rechtsprechung», im Attribut aber «0» — zwei
+  // Aussagen an einem Knopf. Die Sonde hält die Deckung fest.
+  it('unbekannt und gewusste 0 ⇒ gar kein Attribut', () => {
+    expect(zaehlerAttribut(null)).toBeUndefined();
+    expect(zaehlerAttribut(0)).toBeUndefined();
+  });
+
+  it('jede Zahl, die das Label zeigt, steht auch im Attribut', () => {
+    expect(zaehlerAttribut(1)).toBe(1);
+    expect(zaehlerAttribut(14)).toBe(14);
+  });
+
+  it('Label und Attribut sind über den ganzen Wertebereich deckungsgleich', () => {
+    for (const n of [null, 0, 1, 2, 99]) {
+      const hatZahl = oeffnerLabel(n) !== 'Rechtsprechung';
+      expect(zaehlerAttribut(n) !== undefined, `n = ${n}`).toBe(hatZahl);
+    }
   });
 });
 

@@ -66,7 +66,11 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus }:
   useEffect(() => {
     if (!offen || modus !== 'spalte') return;
     const vorher = document.activeElement as HTMLElement | null;
-    panelRef.current?.focus({ preventScroll: true });
+    // Das Element EINMAL greifen: in der Aufräumfunktion auf `panelRef.current`
+    // zuzugreifen wäre ein Zugriff auf einen möglicherweise schon getauschten
+    // Knoten (react-hooks/exhaustive-deps warnt genau davor).
+    const flaeche = panelRef.current;
+    flaeche?.focus({ preventScroll: true });
     const taste = (e: KeyboardEvent) => {
       if (e.key === 'Escape' || e.key === 'Esc') schliesseRef.current();
     };
@@ -76,7 +80,7 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus }:
       // Nur zurückgeben, wenn der Fokus noch IM Panel steht: hat der Nutzer
       // inzwischen in den Lesetext geklickt, wäre ein Rücksprung auf den Öffner
       // ein Fokus-Diebstahl (die Spalte ist nicht modal).
-      if (panelRef.current?.contains(document.activeElement)) vorher?.focus({ preventScroll: true });
+      if (flaeche?.contains(document.activeElement)) vorher?.focus({ preventScroll: true });
     };
   }, [offen, modus, panelRef]);
 

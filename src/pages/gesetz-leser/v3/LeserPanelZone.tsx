@@ -137,7 +137,17 @@ export function LeserPanelZone({
       style={{ '--leser-leiste-flaeche': 'var(--paper-raised)' } as CSSProperties}>
       {/* Die Lasche: am rechten Rand, senkrecht, ausserhalb des Flusses. Auf der
           Höhe des Lesetexts, nicht mittig im Fenster — dort greift der Daumen. */}
-      {lasche && <div className={`${imPaneBlatt ? 'absolute' : 'fixed'} right-0 top-1/3 z-30`}>{lasche}</div>}
+      {/* `pointer-events-auto` im Pane ist KEIN Zierrat: die Overlay-Schicht des
+          Panes steht auf `pointer-events: none`, damit sie den Pane-Inhalt unter
+          sich nicht blockiert. Ohne die Rücknahme war die Lasche sichtbar, aber
+          nicht klickbar — der Pane-Inhalt fing jeden Klick ab (gemessen 17.8.2026
+          im Split @1440: «subtree intercepts pointer events»). Dieselbe Rücknahme
+          setzt das Gliederungs-Blatt an seiner Überlagerung. */}
+      {lasche && (
+        <div className={`${imPaneBlatt ? 'pointer-events-auto absolute' : 'fixed'} right-0 top-1/3 z-30`}>
+          {lasche}
+        </div>
+      )}
       {offen && (
         <>
           <div className={imPaneBlatt ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : 'fixed inset-0 z-40 bg-ink-900/30'}

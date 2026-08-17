@@ -90,25 +90,50 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(c) Split-View: beide Panes tragen ihren eigenen Öffner, und sie öffnen getrennt', async ({ page }) => {
+  test('(c) Split-View: das Pane trägt seinen eigenen Öffner, und das Blatt nennt sein Pane', async ({ page }) => {
+    test.slow() // schwere Split-View-Interaktion (Präzedenz A17/FL-1)
     const fehler = fehlerSammeln(page)
-    await page.setViewportSize({ width: 1600, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
-    await warteLeser(page)
-    // Zweites Pane über die Adresse (dasselbe Muster wie leser-kopf-paritaet).
-    await page.goto('/gesetze/bund/STPO?leser=v3&r=/gesetze/bund/BGFA')
-    await expect(page.locator('[data-v3-kopf]')).toHaveCount(2, { timeout: 20_000 })
+    await page.setViewportSize({ width: 1440, height: 900 })
+    // Das zweite Pane entsteht über die Bedienung, nicht über die Adresse — genau
+    // wie in `leser-kopf-paritaet` (ein `?r=`-Parameter erzeugt keines).
+    await page.goto('/gesetze/bund/AIG?leser=v3')
+    await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
+    const art5 = page.locator('#art-5')
+    await expect(art5).toBeAttached({ timeout: 20_000 })
+    await art5.scrollIntoViewIfNeeded()
+    await page.waitForTimeout(250)
+    const stgbLink = art5.locator('a[href*="54/757_781_799"][href*="#art_66_a"]:not([href*="66_a_bis"])').first()
+    await expect(stgbLink).toBeVisible({ timeout: 10_000 })
+    await stgbLink.click()
+    const dialog = page.locator('[role="dialog"]')
+    await expect(dialog).toBeVisible()
+    await dialog.getByRole('button', { name: /nebeneinander öffnen/ }).click()
+
+    const pane = page.locator('[data-pane="sekundaer"]')
+    await expect(pane).toBeVisible({ timeout: 10_000 })
+    await expect(pane.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
 
     // Im Pane ist das Panel IMMER ein Blatt (nie drei vertikale Flächen) — die
-    // Lasche ist der Öffner, den es dort in jeder Breite gibt.
-    const laschen = page.locator('[data-v3-panel-lasche]')
-    await expect(laschen).toHaveCount(2)
+    // Lasche ist dort der Öffner, den es in jeder Breite gibt. BEIDE Flächen
+    // tragen einen, sonst wäre die Rechtsprechung in einer von ihnen unerreichbar.
+    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(2, { timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel-spur="blatt"]')).toHaveCount(2)
 
-    await laschen.first().click()
-    await expect(page.locator('[data-v3-panel]')).toHaveCount(1)
-    // Das offene Blatt nennt SEIN Pane (H2-Portal-Vertrag) — ohne diese Marke
-    // wären zwei offene Panels im DOM nicht auseinanderzuhalten.
-    await expect(page.locator('[data-v3-pane][data-v3-panel-spur="blatt"]').first()).toHaveAttribute('data-v3-pane', /primaer|sekundaer/)
+    // Das Blatt nennt SEIN Pane (H2-Portal-Vertrag) — ohne diese Marke wären zwei
+    // offene Panels im DOM nicht auseinanderzuhalten.
+    const rollen = await page.locator('[data-v3-panel-spur="blatt"]').evaluateAll(
+      (els) => els.map((e) => e.getAttribute('data-v3-pane')),
+    )
+    expect([...rollen].sort()).toEqual(['primaer', 'sekundaer'])
+
+    // Öffnen im Pane öffnet GENAU EIN Panel, nicht beide. GESUCHT WIRD ÜBER DIE
+    // ROLLE, nicht über `[data-pane="sekundaer"]`: das Blatt hängt per Portal in
+    // der Overlay-Schicht und liegt damit AUSSERHALB des Pane-Elements — genau der
+    // H2-Befund, dessentwegen die Rolle als Attribut mitwandert.
+    const sekundaer = page.locator('[data-v3-pane="sekundaer"][data-v3-panel-spur="blatt"]')
+    await sekundaer.locator('[data-v3-panel-lasche]').click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(1, { timeout: 20_000 })
+    await expect(sekundaer.locator('[data-v3-panel]')).toHaveCount(1)
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 

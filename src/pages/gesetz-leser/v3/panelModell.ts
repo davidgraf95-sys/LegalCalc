@@ -60,6 +60,19 @@ export function oeffnerLabel(anzahl: number | null): string {
   return anzahl === 1 ? '1 Entscheid' : `${anzahl} Entscheide`;
 }
 
+/**
+ * Maschinell lesbarer Zähler am Öffner (`data-v3-panel-anzahl`).
+ *
+ * DIESELBE WAHRHEIT WIE DAS LABEL, nicht eine zweite: `undefined` überall, wo
+ * `oeffnerLabel` keine Zahl schreibt. Sonst stand am Kantonserlass sichtbar
+ * «Rechtsprechung» und im Attribut «0» — zwei Aussagen an einem Knopf, und die
+ * maschinelle war die falsche (gefunden beim ersten Lauf von
+ * `leser-v3-panel-facetten` (d), 17.8.2026: «Öffner zeigt ‹0›»).
+ */
+export function zaehlerAttribut(anzahl: number | null): number | undefined {
+  return anzahl !== null && anzahl > 0 ? anzahl : undefined;
+}
+
 /** Voller Accessible-Name des Öffners — sagt, WAS sich öffnet und WORAUF sich
  *  die Zahl bezieht (der Zähler allein ist zweideutig: Artikel oder Erlass?). */
 export function oeffnerName(anzahl: number | null, artikelLabel: string | null): string {

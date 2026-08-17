@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { NAVIGATION, belegung } from './leserTastaturBelegung';
 
 // ─── W2·10-UI-NAV/R8 · Tastatur-Navigation j/k + «?»-Overlay ──────────────────
 //
@@ -34,32 +35,10 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Ruhezustand — im geschlossenen Zustand rendert sie `null`, das prerenderte
 // Markup bleibt unberührt (golden byte-gleich).
 
-/** Die Tastenbelegung — EINE Quelle für Auswertung UND Overlay (§5). Ein Eintrag,
- *  der hier fehlt, taucht auch in der Hilfe nicht auf; ein Eintrag, der hier steht
- *  und nicht wirkt, fiele beim Lesen der Hilfe sofort auf. */
-/**
- * `hatPanel` = der Aufrufer hat ein Rechtsprechungs-/Kontext-Panel (LESER-V3,
- * H3). NUR DANN steht «r» in der Hilfe. Die Ist-Hülle hat kein solches Panel;
- * einen Eintrag zu zeigen, der dort nichts tut, wäre genau die Hilfe, die lügt
- * (§8) — und der Grund, warum diese Liste überhaupt EINE Quelle für Auswertung
- * und Overlay ist. Rein, damit die Zuordnung ohne Browser prüfbar ist (§6.7).
- */
-export function belegung(hatPanel: boolean): readonly { taste: string; wirkung: string }[] {
-  return [
-    { taste: 'j', wirkung: 'Zum nächsten Artikel' },
-    { taste: 'k', wirkung: 'Zum vorigen Artikel' },
-    { taste: 't', wirkung: 'Fokus in die Gliederung' },
-    ...(hatPanel ? [{ taste: 'r', wirkung: 'Rechtsprechung und Kontext öffnen' }] : []),
-    { taste: '?', wirkung: 'Diese Übersicht öffnen' },
-    { taste: 'Esc', wirkung: 'Übersicht schliessen' },
-  ];
-}
-
-/** Tasten, die dieser Listener beansprucht (ohne «?»/Escape, die separat laufen).
- *  «r» ist frei: «/» und ⌘K gehören der HeaderSuche, j/k/t diesem Listener; kein
- *  Browser-Standard belegt ein blankes «r» (Reload ist ⌘/Ctrl+R und fällt bereits
- *  an Guard 1). */
-const NAVIGATION = new Set(['j', 'k', 't', 'r']);
+// Belegung UND die beanspruchten Tasten liegen in `./leserTastaturBelegung` —
+// eine Komponenten-Datei darf nichts anderes exportieren (Fast Refresh,
+// `react-refresh/only-export-components`), und die Liste soll ohne Browser
+// prüfbar bleiben (§6.7).
 
 function istEingabe(ziel: EventTarget | null): boolean {
   const el = ziel as HTMLElement | null;

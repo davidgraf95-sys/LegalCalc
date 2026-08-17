@@ -106,7 +106,10 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await expect(inhalt).toBeVisible()
     await expect(page.locator('[data-v3-panel-sachgebiet]')).toHaveCount(0)
     await expect(inhalt.locator('[data-v3-panel-entscheid]')).toHaveCount(0)
-    await expect(inhalt.locator('p')).toContainText(/erfasst|eingeschaltet|geladen/, { timeout: 20_000 })
+    // Der ehrliche Satz statt einer leeren Liste (§8). Gezielt EIN Absatz — die
+    // Filterzeile bringt eigene Erklärtexte mit, ein `p`-Sammler wäre unscharf.
+    await expect(inhalt.getByText(/ist kein Entscheid der eingeschalteten Instanzen erfasst/))
+      .toBeVisible({ timeout: 20_000 })
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 })
