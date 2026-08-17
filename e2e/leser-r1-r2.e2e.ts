@@ -37,6 +37,33 @@
 //      Flake-Familie dieses Bestands sind einmalige `evaluate`-Lesungen ohne
 //      Wartung; `expect.poll` misst dieselbe Aussage, wartet aber, statt zu
 //      raten. Die Budgets bleiben bei 20 s — Anheben wäre Maskierung.
+// ─── H4-UMHÄNGUNG (Flip 18.8.2026, Kontaktbogen H4 §7) ──────────────────────
+// R1 lief unverändert grün gegen V3 (gemessen: alle sieben S8-Fälle plus der
+// OR-Perf-Beweis). R2 nicht — dort steckt die EINE Änderung, die Pos. 4 gemacht
+// hat: V1 trug ZWEI Felder («Im Gesetz suchen» + «Zu Artikel springen»), V3
+// trägt EINES, das beides tut. Gemessen 18.8.2026 an BGFA @390: im Sheet liegt
+// in V1 `Zu Artikel springen`, in V3 `Im Gesetz suchen oder zu einer Bestimmung
+// springen` — dieselbe Stelle, ein Feld statt zwei.
+//
+// Was daraus folgt, Fall für Fall:
+//  · Sheet-Fall: `getByRole('textbox', {name:'Zu Artikel springen'})` wird zum
+//    Feld des Sheets. Die AUSSAGE («das Sprungfeld steht ZUOBERST, über dem
+//    Baum») bleibt Wort für Wort dieselbe.
+//  · Quickjump-Fall: die ehrliche Ablehnung eines unbekannten Artikels sagt V3
+//    nicht mehr über `role="alert"`, sondern als sichtbaren Satz in der
+//    Trefferliste — gemessen: «Kein Artikel gefunden für «Art. 99999».». Der
+//    geprüfte §8-Sachverhalt ist unverändert; der Fall greift jetzt den Satz.
+//    OFFENER BEFUND, gemeldet statt stillschweigend gefixt: die V1-Meldung war
+//    eine Live-Region und wurde angesagt, die V3-Meldung ist es nicht.
+//  · «Desktop-TOC-Kopf trägt denselben Baustein (§5)» ist GELÖSCHT.
+//    NICHTTRAGE-NACHWEIS: `leser-v3-suchfeld-ueberall.e2e.ts` (a) prüft «JE
+//    Pane genau EIN sichtbares Feld» und (c) «@1440 mit eingeklappter
+//    Gliederung bleibt es da» — das ist dieselbe §5-Aussage, nur strenger
+//    (nicht «zwei Bausteine sind derselbe», sondern «es gibt nur einen»).
+//  · A9-DoD: das mobile Such-ICON (A35) gibt es in V3 nicht mehr — gemessen
+//    @390: 0 Knöpfe «Im Gesetz suchen», das Feld steht offen im Kopf. Der
+//    Öffnungs-Schritt entfällt darum; gemessen wird unverändert CLS 0 über
+//    Suche, Sprünge und Sheet.
 import { test, expect, type Page } from '@playwright/test';
 
 test.describe.configure({ timeout: 120_000 });
@@ -416,8 +443,9 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
     await expect(page.locator('[data-sie-sind-hier]')).toBeVisible();
     await expect(page.locator('[data-sie-sind-hier]')).toContainText('Sie sind hier');
 
-    // Quickjump «Art. N» steht ZUOBERST (über dem Baum).
-    const feld = page.getByRole('textbox', { name: 'Zu Artikel springen' });
+    // Quickjump steht ZUOBERST (über dem Baum) — in V3 ist es das EINE Feld,
+    // das sucht und springt (Pos. 4).
+    const feld = sheet(page).getByRole('searchbox');
     await expect(feld).toBeVisible();
     const feldBox = (await feld.boundingBox())!;
     const baumBox = (await sheet(page).getByRole('list').first().boundingBox())!;
@@ -440,12 +468,12 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
     await page.getByRole('button', { name: /Gliederung/ }).first().click();
     await expect(sheet(page)).toBeVisible({ timeout: 20_000 });
 
-    const feld = page.getByRole('textbox', { name: 'Zu Artikel springen' });
+    const feld = sheet(page).getByRole('searchbox');
     // Unbekannter Artikel: KEIN Sprung, sondern ein ehrlicher Hinweis (§8).
     await feld.fill('Art. 99999');
     await feld.press('Enter');
-    await expect(page.getByRole('alert')).toContainText(/gibt es in diesem Erlass nicht/);
-    await expect(sheet(page)).toBeVisible();
+    await expect(page.getByText(/Kein Artikel gefunden für/)).toBeVisible({ timeout: 20_000 });
+    await expect(page.locator('#art-1')).not.toBeInViewport();
 
     // Bekannter Artikel (mit «Art.»-Präfix + Punkt): Sprung + Sheet zu.
     await feld.fill('Art. 12');
@@ -453,32 +481,38 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
     await expect(page.locator('#art-12')).toBeInViewport({ timeout: 20_000 });
   });
 
-  test('Desktop-TOC-Kopf trägt denselben Quickjump-Baustein (§5)', async ({ page }) => {
-    await oeffneLeser(page, LEICHT);
-    const feld = page.getByRole('textbox', { name: 'Zu Artikel springen' });
-    await expect(feld).toBeVisible({ timeout: 20_000 });
-    // Genau EINES (kein Doppel aus Sheet + Spalte).
-    await expect(feld).toHaveCount(1);
-    // W2·19-GLIEDERUNG/S4 — deklarierte Umkehrung EINER Assertion (Bau-Spec §2,
-    // e2e-Freigabe David 8.8.2026). Bisher stand hier: das Feld liegt im
-    // TOC-Kopf, aber NICHT im [data-toc]-Scroller — mit der Begründung «bleibt
-    // beim Blättern stehen». Seit S4 bildet es zusammen mit der «Sie sind
-    // hier»-Pfadzeile die Zone A und klebt sticky INNERHALB des Scrollers. Die
-    // GEPRÜFTE EIGENSCHAFT bleibt dieselbe und wird sogar strenger: das Feld
-    // bleibt beim Blättern stehen — vorher als «ausserhalb des Scrollers»
-    // behauptet, jetzt als `position: sticky` BEWIESEN.
-    await expect(feld.locator('xpath=ancestor::aside')).toHaveCount(1);
-    await expect(feld.locator('xpath=ancestor::*[@data-toc]')).toHaveCount(1);
-    const zoneA = feld.locator('xpath=ancestor::*[@data-toc-zone-a]');
-    await expect(zoneA).toHaveCount(1);
-    expect(await zoneA.evaluate((el) => getComputedStyle(el).position)).toBe('sticky');
-
-    await feld.fill('12');
-    await feld.press('Enter');
-    await expect(page.locator('#art-12')).toBeInViewport({ timeout: 20_000 });
-  });
+  // ── «Desktop-TOC-Kopf trägt denselben Quickjump-Baustein (§5)» ────────────
+  // GELÖSCHT IN H4 (Flip 18.8.2026). Der Fall bewies, dass Sheet und Spalte
+  // DENSELBEN Baustein tragen — eine §5-Aussage über zwei Felder. Seit Pos. 4
+  // gibt es nur noch EINES, und dass es überall genau einmal steht, prüft
+  // `leser-v3-suchfeld-ueberall.e2e.ts` (a)/(b)/(c) strenger, als dieser Fall
+  // es je konnte. Kein Verlust an Abdeckung, ein Wegfall der Doppelung.
 });
 
+// ── OFFENER BEFUND AUS DEM H4-FLIP (18.8.2026) — bewusst NICHT weggeglättet ──
+// Dieser Fall ist am Flip-Stand ROT, und zwar an seiner Sachaussage, nicht an
+// einem Selektor. Gemessen @390 auf der BV unter 6× Drossel, Beobachter erst
+// NACH dem Laden scharf (`nurAbInstall`), Shifts je Schritt gelesen:
+//
+//   Schritt            CLS-Beitrag   Quelle
+//   1 Suche beginnen   0.0202        div 19,178·351×666 → 19,202·351×642
+//                      0.0116        drei Textknoten −25 px
+//                      0.0028        Griffzone der Kopfzeile (fremd, nicht zugerechnet)
+//   2–7 Liste, Sprünge, Sheet, Leeren, Gliederung   je 0
+//
+// Alles passiert im EINEN Moment, in dem die Suche startet: die Such-Zone wächst
+// um 24 px, weil die benannte Zähler-Zeile «… Fundstellen · Treffer anzeigen →»
+// erscheint, und schiebt die Lesespalte nach unten. In V1 gab es diesen Sprung
+// nicht — dort öffnete das Such-ICON ein Overlay AUS DEM FLUSS (A35).
+//
+// Warum hier nichts gelockert wird (§6.3/§6.7): das Budget «CLS 0» ist die
+// Sachaussage dieses Falls. Ein angehobenes Budget machte den Sprung unsichtbar,
+// obwohl ihn der Leser sieht. Der Fix läge in `v3/SuchZone`/`leserGeometrie`
+// (Höhe der Zone reservieren, statt sie wachsen zu lassen) — und er widerspricht
+// der Zusage von `leser-v3-suchfeld-ueberall` (e) («die ausgelegte Höhe deckt
+// ihr Markup — ohne Luft»). Das ist ein ENTSCHEID, keine Nacharbeit, und die
+// Fläche `v3/**` gehört in diesem PR einem anderen Bau. Der Befund steht darum
+// im Kontaktbogen H4 §1/§8 und wartet dort.
 test.describe('A9-DoD — Flüssigkeit unter CPU-Drossel 6×', () => {
   test('Suche, Fundstellen-Sprung und Gliederungs-Sheet ohne Layout-Shift (CLS 0)', async ({ page }) => {
     test.slow();
@@ -494,33 +528,45 @@ test.describe('A9-DoD — Flüssigkeit unter CPU-Drossel 6×', () => {
     await expect(page.locator('#art-1')).toBeVisible({ timeout: 40_000 });
     await clsBeobachten(page);
 
-    // Mobil (< sm) trägt der Inhalts-Kopf nur das Such-ICON (A35, David 19.7.2026);
-    // es öffnet das Feld als Overlay über der Zeile. Erst danach ist die searchbox da.
-    await page.getByRole('button', { name: 'Im Gesetz suchen' }).click();
+    // H4: Das mobile Such-ICON (A35, David 19.7.2026) ist mit V3 entfallen — das
+    // Feld steht @390 offen im Kopf (gemessen 18.8.2026: 0 Knöpfe «Im Gesetz
+    // suchen», 1 searchbox). Es gibt also nichts mehr zu öffnen.
 
     // 1 · Suchmodus betreten. Seit S8 wächst dabei NICHTS mehr in den Fluss:
     //     Zähler und Ausschnitte kommen datenseitig, die Lesespalte bleibt stehen.
+    //     H4: unterhalb von `istXl` steht die Trefferliste NICHT neben dem Feld
+    //     (das Blatt ist ein Desktop-Bau, `v3/suchZoneAufbau`: `blattAmFeld =
+    //     istXl && sucheAktiv`), sondern hinter der benannten Zähler-Zeile
+    //     «… Fundstellen · Treffer anzeigen →». Die ist der mobile Weg zur Liste
+    //     — und selbst eine der Flächen, die hier nicht springen darf.
     await inGesetzSuche(page).fill('Kanton');
-    await expect(leiste(page)).toBeVisible({ timeout: 40_000 });
+    const zaehlerZeile = page.locator('[data-v3-treffer-weg]');
+    await expect(zaehlerZeile).toBeVisible({ timeout: 40_000 });
     await page.waitForTimeout(900);
 
-    // 2 · Zwei Fundstellen-Sprünge (reines Scrollen, kein Reflow).
+    // 2 · Liste aufziehen und zwei Fundstellen-Sprünge (reines Scrollen, kein
+    //     Reflow). Die Liste steht im Sheet, das ist unverändert ein Overlay.
+    await zaehlerZeile.click();
+    await expect(leiste(page)).toBeVisible({ timeout: 40_000 });
     const vor = page.locator('[data-treffer-vor]');
     await vor.click();
     await vor.click();
     await page.waitForTimeout(900);
 
-    // 3 · Suchmodus verlassen. Mobil über das ✕ des Such-Overlays (leert UND
-    //     schliesst, wie der Nutzer es tut).
-    await page.getByRole('button', { name: 'Suche schliessen' }).click();
-    await expect(leiste(page)).toHaveCount(0, { timeout: 40_000 });
+    // 3 · Sheet zu, dann Suchmodus verlassen — durch Leeren des Feldes, wie der
+    //     Nutzer es tut. (Das ✕ des Such-Overlays gehörte zum entfallenen
+    //     A35-Overlay; das Sheet schliesst über Esc, useDialogFokus.)
+    await page.keyboard.press('Escape');
+    await expect(sheet(page)).toHaveCount(0, { timeout: 20_000 });
+    await inGesetzSuche(page).fill('');
+    await expect(zaehlerZeile).toHaveCount(0, { timeout: 40_000 });
     await page.waitForTimeout(900);
 
     // 4 · Gliederungs-Sheet auf und zu (Overlay, aus dem Fluss).
     await page.getByRole('button', { name: /Gliederung/ }).first().click();
     await expect(sheet(page)).toBeVisible({ timeout: 40_000 });
     await page.waitForTimeout(900);
-    await page.getByRole('button', { name: 'Gliederung schliessen' }).click();
+    await page.keyboard.press('Escape');
     await expect(sheet(page)).toHaveCount(0, { timeout: 20_000 });
     await page.waitForTimeout(900);
 
