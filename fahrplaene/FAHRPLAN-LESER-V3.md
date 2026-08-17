@@ -1815,7 +1815,7 @@ unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
 | **Ä81** | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | H4-Entscheid «nur der Kopf warnt» |
 | **Ä82** | Zwei Linien zwischen Ingress und Sektionskopf | S-Strang |
 | **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | H4 / `layout` |
-| ~~**Ä84**~~ | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten (gemessen 688 px, nicht 680) |
+| **Ä84** | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | ⏳ **teilweise 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Erledigt: das Segment (gemessen 688 px, nicht 680) hat einen Deckel. **OFFEN und jetzt begründet:** das allein stehende «↑ Anfang» widerspricht **Ä32**, das den Knopf im Treffer-Blatt ausdrücklich behält — **Entscheid nötig** |
 | ~~**—**~~ | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Der Befund traf NUR @1440 mit eingeklappter Gliederung; @720/@390 war der Steckbrief schon in zwei Schritten da (gemessen) |
 | **Ä75** | «SR» als Etikett bei Kantonen | **wartet auf David** |
 | ~~**Arch 5**~~ | Etikett «A-2» doppelt belegt | ✅ **erledigt 18.8.2026** — Verweis statt Umnummerierung, im Vollzugsvermerk H1 (Kap. 7) und in Kap. 12. **Auch A-1 war doppelt belegt** — miterledigt |
@@ -1839,7 +1839,7 @@ Fahrplan-Hygiene-Punkte. **Kein Flip** — `leserFlag.ts` bleibt V1, V3 nur unte
 |---|---|---|---|
 | **Ä80** Steckbrief-Chronologie und Präposition | StPO @1440, Box aufgeklappt: `Art · Erlassgeber · Erlassdatum «vom 5. Oktober 2007» · Stand «01.04.2025» · In Kraft seit «01.01.2011» · Aufbau`. Der Stand zerschnitt die Kette; «vom» stand im WERT, also begannen zwei Datumszeilen mit einer Ziffer und eine mit einem Wort — `tabular-nums` richtet an einer Kante aus, an der nichts steht | Reihenfolge **Erlass vom → In Kraft seit → Stand → Aufgehoben per** (Fedlex' «Beschluss/Inkrafttreten»-Ordnung, dieselbe Folge wie im Erlass-Kopf, §5). Präposition ins ETIKETT, Wert ein reines Datum. `ohneVom` als Muster mit Wortgrenze statt `slice(4)`: die Sidecars schreiben «vom …», «Vom …» (BS-640.100) und manche gar nichts (§7) | `src/tests/leser-v3-uebersicht.test.ts` Ä80 (a)–(e) · e2e `leser-v3-uebersicht` (d) misst BS-640.100 @1440 **und** @390 |
 | **Steckbrief bei eingeklappter Gliederung unerreichbar** | `[data-v3-uebersicht]` @1440 Gliederung offen **1**, eingeklappt **0** — nicht unsichtbar, sondern aus dem DOM (Ctrl+F, Screenreader), obwohl §8 an dieser Box das Gegenteil zusagt. @720 und @390: Start 0, nach ☰ 1, «Stand» nach dem zweiten Klick sichtbar — **dort war nichts zu heilen**. Der Befund ist EINER, und er sitzt auf dem Desktop | Dieselbe `<details>`-Klappe wie in der Leiste erscheint **über** der Panel-Tafel, und zwar nur in der Lage, in der sie sonst fehlte (`zweiSpalten \|\| blattOffen ? null : Box`). Panel aufziehen (1) + Klappe öffnen (2). EINE Ableitung (`uebersichtsAngaben`), EIN Bauteil — kein zweiter Steckbrief, darum bleibt Ä28 «die Warnung genau einmal» heil | e2e `leser-v3-uebersicht` «Steckbrief — auf jeder Breite in höchstens zwei Schritten» (a) @1440 eingeklappt · (b) @720/@390 · (c) Doppelanzeige in BEIDE Richtungen |
-| **Ä84** Blatt-Kopf-Raster | StPO/«Entschädigung»: D-Blatt @1440 Kopf «Treffer» \| «✕ ausblenden», `[data-v3-anfang]` = **null**. H-Blatt @390 Sockel 358 × 34 px mit **genau einem** Kind «↑ Anfang» (x = 308), Split/Sheet @720 ebenso (x = 638). Suchbereich-Segment 270 px im D-Blatt, **358 @390**, **688 @720** — für die 18-rem-Leiste kalibriert, ohne Deckel auf das 2,5-fache gedehnt (der Prüfer nannte «680 px») | Die Kopf-Zeile entsteht nur, wenn sie mehr als ein Element ordnet; bleibt nur «↑ Anfang», entfällt sie samt Knopf (§17 «gestrichen statt bewacht» — Ä32 hatte den Nachbarn «alles auf/zu» schon aus demselben Zustand entfernt, und das D-Blatt kommt seit Ä76 ohne aus). Segment auf `w-[min(100%,18rem)]`. In der SPALTE unberührt: dort steht «Treffer» daneben | e2e `leser-v3-suche-ohne-gliederung` (h) @390 und @720 |
+| **Ä84** Blatt-Kopf-Raster — **teilweise** | StPO/«Entschädigung»: D-Blatt @1440 Kopf «Treffer» \| «✕ ausblenden», `[data-v3-anfang]` = **null**. H-Blatt @390 Sockel 358 × 34 px mit **genau einem** Kind «↑ Anfang» (x = 308), Split/Sheet @720 ebenso (x = 638). Suchbereich-Segment 270 px im D-Blatt, **358 @390**, **688 @720** — für die 18-rem-Leiste kalibriert, ohne Deckel auf das 2,5-fache gedehnt (der Prüfer nannte «680 px») | **Gebaut:** Segment auf `w-[min(100%,18rem)]` ⇒ 270/288/288 px, ein Mass für alle drei Blätter. **Zurückgenommen, weil das Tor den Widerspruch fing:** das allein stehende «↑ Anfang» zu streichen war gebaut (§17, dieselbe Richtung, in der Ä32 den Nachbarn «alles auf/zu» entfernt hat) — `e2e/leser-v3-blatt` (d) wurde davon rot, denn **Ä32 behält den Knopf ausdrücklich** («es bezieht sich auf den Erlass, nicht auf den Baum», Pos. 15). Eine bewusste, belegte Entscheidung wird nicht still überschrieben (§6.3), darum unverändert gelassen und als Entscheid übergeben | e2e `leser-v3-suche-ohne-gliederung` (h) @390 und @720 (Segment) |
 
 **Messung NACHHER** (chromium, `?leser=v3`, 0 Konsolenfehler auf jeder Breite):
 
@@ -1848,7 +1848,7 @@ Fahrplan-Hygiene-Punkte. **Kein Flip** — `leserFlag.ts` bleibt V1, V3 nur unte
 | Steckbrief-Kette StPO | `datum · stand · inkraft`, Wert «vom 5. Oktober 2007» | `datum · inkraft · stand`, Etikett «Erlass vom», Wert «5. Oktober 2007» |
 | Steckbrief BS-640.100 | «Vom 12. April 2000» | «12. April 2000», Etikett «Erlass vom»; Zeilen Art · Erlassgeber · Erlass vom · Stand · Aufbau · Sachgebiet |
 | Steckbrief @1440 eingeklappt | 0 im DOM | 1 nach 2 Klicks, «Stand» sichtbar |
-| Blatt-Kopf-Kinder @390 / @720 | 1 / 1 (Höhe 34 px) | 0 / 0 (Höhe 0 px) |
+| Blatt-Kopf-Kinder @390 / @720 | 1 / 1 (Höhe 34 px) | **unverändert 1 / 1** — Rücknahme, s. Ä84-Zeile |
 | Segment D / @390 / @720 | 270 / 358 / 688 px | 270 / 288 / 288 px |
 
 **Der vierte Panel-Reiter wurde gebaut und AN DER MESSUNG verworfen** (§0 Ziff. 3
@@ -1868,6 +1868,26 @@ Klappe über der Tafel — sie braucht kein Fach.
 Platz ausdrücklich «vierter Reiter oder Fusszeile» vor. Der vierte Reiter ist mit
 dieser Messung **keine Option mehr**, solange die Leiste nicht umbricht — es
 bleibt die Fusszeile (`fuss`-Anschluss in `LeserPanel`).
+
+**Ä84 · der Teil, der offen bleibt — und warum das ein Ergebnis ist.** Das
+allein stehende «↑ Anfang» im Blatt-Kopf zu streichen war gebaut, und
+`e2e/leser-v3-blatt` (d) wurde davon rot (1 failed, 149 passed): **Ä32 behält den
+Knopf im Treffer-Blatt ausdrücklich** — «es bezieht sich auf den Erlass, nicht
+auf den Baum» (Pos. 15, genau EIN Knopf pro Seite). Zwei Prüferbefunde derselben
+Zone widersprechen sich damit, und das ist keine Testfrage, sondern eine
+Produktfrage. Ein ehrlicher Partner für die linke Hälfte der Zeile existiert
+nicht: den Zonen-Namen trägt der Sheet-Kopf bereits (Ä10 hat die Doppelnennung
+abgeräumt), und der Zähler steht eine Zeile tiefer in der Trefferliste — ihn
+oben zu wiederholen wäre der Ä78-Befund. Übrig bleiben drei Wege, alle mit
+Entscheid: **(a)** «↑ Anfang» im Treffer-Blatt streichen, also Ä32 in diesem
+Punkt aufheben (das D-Blatt kommt seit Ä76 ohne aus — gemessen
+`[data-v3-anfang]` = null @1440); **(b)** die Zeile stehen lassen und die
+Ungleichheit zum D-Blatt hinnehmen; **(c)** den Zähler aus der Trefferliste in
+den Blatt-Kopf heben, was `LeserTrefferListe` und `LeserSeitenleiste` neu
+verzahnt. Empfehlung: **(a)** — das D-Blatt ist der Beweis, dass der Knopf dort
+entbehrlich ist, und «genau EIN Knopf pro Seite» ist eine Obergrenze, keine
+Untergrenze. Nicht gebaut, weil Ä32 eine belegte Entscheidung ist und §6.3
+verlangt, sie zu deklarieren statt sie zu überschreiben.
 
 **Rot-Beweise (§6.7), alle vor dem Fix gegen das `dist/` des Basis-Stands
 `6ca1609b3` gesehen:**

@@ -71,42 +71,6 @@ export function LeserSeitenleiste({
   // Darstellungs-Geometrie, kein State ⇒ kein Re-Render (§15). Der `ResizeObserver`
   // ist nötig, weil Zone A ihre Höhe ändert, sobald das Suchfeld erscheint oder
   // die Kopfzeile umbricht — ein einmaliges Messen wäre beim ersten Tippen falsch.
-  // ── Ä84 (Ästhetik-Prüfer 17.8.2026) · KEIN ELEMENT STEHT ALLEIN ────────────
-  //
-  // GEMESSEN am Ist (StPO, «Entschädigung», chromium):
-  //
-  //   D-Blatt @1440   Kopf-Zeile «Treffer» links · «✕ ausblenden» rechts
-  //                   `[data-v3-anfang]` = null — es gibt hier gar keines
-  //   H-Blatt @390    Sockel 358 × 34 px, GENAU EIN Kind: «↑ Anfang», x = 308
-  //   Split/Sheet @720 Sockel 688 × 34 px, GENAU EIN Kind: «↑ Anfang», x = 638
-  //
-  // Der Sockel trug also unterhalb der Spaltenschwelle eine 34-px-Zeile, deren
-  // linke Hälfte leer war — und dies direkt über der Zähler-Leiste der
-  // Trefferliste, die ihr eigenes «links Zähler, rechts Bedienung»-Raster hat.
-  // Ä32 hatte den Nachbarn «alles auf/zu» schon aus demselben Zustand entfernt
-  // (er klappt einen Baum auf, der während einer Suche gar nicht steht); übrig
-  // blieb ein Knopf ohne Bezug — genau die etikettlose Knopfgruppe, die Ä32
-  // beschrieben hat, nur um eins geschrumpft.
-  //
-  // JETZT: die Kopf-Zeile entsteht nur, wenn sie etwas zu ORDNEN hat — einen
-  // Zonen-Namen oder die Baum-Knöpfe. Bleibt nur «↑ Anfang» übrig, entfällt die
-  // Zeile mitsamt dem Knopf, und die drei Blätter tragen dasselbe Raster:
-  // Zonen-Kopf → Suchbereich-Segment → Zähler-Zeile. Das ist §17 «gestrichen
-  // statt bewacht» und nicht ein Verlust: das D-Blatt kommt seit Ä76 ohne
-  // «↑ Anfang» aus, und Pos. 15 verlangt HÖCHSTENS einen pro Seite, nicht
-  // mindestens einen pro Zone. In der SPALTE bleibt er unangetastet — dort
-  // steht «Treffer» daneben, die Zeile ordnet also zwei Dinge.
-  //
-  // ROT ZU BEKOMMEN (§6.7): `kopfZeile` auf `true` festnageln ⇒ der Sockel führt
-  // im Treffer-Sheet wieder sein einzelnes Kind, `leser-v3-suche-ohne-gliederung`
-  // (f) meldet es.
-  const kopfZeile = baumTitel != null || baumKnoepfe;
-  // Ohne Feld UND ohne Kopf-Zeile hat der klebende Sockel keinen Inhalt. Dann
-  // fällt auch sein Innenabstand weg — sonst klebte ein 10 px hohes, leeres
-  // Rechteck über der Liste und `--toc-deckel` (unten) meldete eine Deckelhöhe,
-  // die nichts verdeckt.
-  const sockelTraegt = Boolean(suchFeld) || kopfZeile;
-
   const zoneARef = useCallback((el: HTMLDivElement | null) => {
     if (!el || typeof ResizeObserver === 'undefined') return;
     const ziel = el.closest('[data-toc]') as HTMLElement | null;
@@ -165,8 +129,7 @@ export function LeserSeitenleiste({
             `--paper` zurück; den Wert setzt der BEHÄLTER (der Rahmen am
             Sheet-Träger). Damit bleibt die Leiste ohne Behälter-Verzweigung (§3)
             und es gibt weiterhin genau EINE opake Fläche über dem Baum. */}
-        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf
-          className={`lc-leiste-sockel sticky top-0 z-10 ${sockelTraegt ? '-mt-0.5 space-y-2 pb-2 pt-0.5' : ''}`}>
+        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf className="lc-leiste-sockel sticky top-0 z-10 -mt-0.5 space-y-2 pb-2 pt-0.5">
           {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
           {/* ── Ä32 (H2b-Nachzug) · «ALLES AUF» GEHÖRT DEM BAUM ────────────────
               BEFUND (Ästhetik-Prüfung 17.8.2026, `lugue-H-hell-suche-liste`): im
@@ -183,7 +146,6 @@ export function LeserSeitenleiste({
               der Aufrufer sagt es über `baumKnoepfe`). «↑ Anfang» bleibt in
               beiden Zuständen: es bezieht sich auf den ERLASS, nicht auf den
               Baum, und ist «genau EIN Knopf pro Seite» (Pos. 15). */}
-          {kopfZeile && (
           <div className={`flex items-center gap-2 ${baumTitel ? 'justify-between' : 'justify-end'}`}>
             {baumTitel && <h2 className="lc-overline">{baumTitel}</h2>}
             <div className="flex shrink-0 items-center gap-1">
@@ -204,7 +166,6 @@ export function LeserSeitenleiste({
               </button>
             </div>
           </div>
-          )}
         </div>
         <div data-v3-leiste-baum>{baum}</div>
       </div>
