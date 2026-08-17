@@ -1,15 +1,25 @@
 import { Link, useNavigate } from 'react-router-dom';
-import type { ReactNode } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
-import { ebeneAngabe, zeigeVolltitel } from './erlassAnsicht';
+import { brotkrume, ebeneAngabe, zeigeVolltitel } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
 //
-//   D  │ Gesetze › StPO      Art. 429                    Ansicht ▾   ✕ │
+//   D  │ Gesetze › Bund › StPO   Art. 429                Ansicht ▾   ✕ │
 //   S  │ StPO   Art. 429                        Ansicht ▾ ✕│
 //   H  │ StPO · Art. 429   ☰   ···  ✕│
+//
+// ── A-2 · «DIE EINE» IST SEIT 17.8.2026 WÖRTLICH GEMEINT ────────────────────
+// Bis dahin sass diese Zeile UNTER der App-Krumen-Leiste, die denselben Ort
+// nannte (Auftrag David 17.8.2026: «wir haben jetzt oben einen header mit
+// ähnlichem inhalt … passe das entsprechend sinnvoll an»). Die Leiste ist weg —
+// die Seite meldet der Hülle `KopfDaten.kopfzeileSelbst` und trägt seither
+// Krume, Ebene, Kennung, Ortsangabe und Aktionen allein. Im Split-View bleibt
+// über dem Kopf einzig die Pane-Titelleiste, und die trägt nur noch die
+// FENSTER-Steuerung (⠿ ◂▸ ⇱ ⧉ ✕), also nichts, was eine Inhaltsseite tragen
+// könnte.
 //
 // EIN VERTRAG FÜR DREI BREITEN — und das ist die eigentliche Zusicherung von
 // H1: dieselbe Komponente, derselbe Baum, dieselben Bedienelemente in der
@@ -24,14 +34,19 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 //  · kein Suchfeld — es lebt in der Seitenleiste (Kap. 4b, `SuchSprungFeld`),
 //  · kein Menü «Rechtsprechung ▾» — die Facetten ziehen in H3 ins Panel,
 //  · kein Chip «Stand …» — die eine Stand-Wahrheit steht im Erlass-Kopf
-//    (Kap. 4e); die App-Leiste darüber führt ihn unverändert weiter.
+//    (Kap. 4e), zwei Zentimeter darunter und in jeder Breite. Seit A-2 ist das
+//    auch der EINZIGE Ort: die App-Leiste, die ihn klebend mitführte, ist weg.
+//    Ihn hier nachzubauen hiesse, ihn im Ruhezustand zweimal zu zeigen (§5) —
+//    dass er beim Scrollen nicht mitläuft, ist der bewusste Preis, siehe
+//    Vollzugsvermerk A-2.
 //
-// ✕ SCHLIESST DAS GESETZ, nicht die Anwendung: die App-Leiste (Einzelansicht
-// `InhaltsKopf`, Split-View `PaneKopf`) trägt bereits ein ✕ mit App-Bedeutung
-// («zur Startseite» bzw. «Pane schliessen»). Ein zweites ✕ mit derselben
-// Bedeutung wäre eine Dopplung; ein ✕ ohne Bedeutung wäre schlimmer. Dieses
-// hier führt zur Gesetzes-Übersicht — in einem Pane pane-lokal, weil jedes
-// Pane seinen eigenen Navigator hat. Der Accessible-Name sagt es aus (§8).
+// ✕ SCHLIESST DAS GESETZ, nicht die Anwendung: es führt zur Gesetzes-Übersicht,
+// in einem Pane pane-lokal (jedes Pane hat seinen eigenen Navigator). In der
+// EINZELANSICHT ist es seit A-2 das einzige ✕ der Seite. Im PANE steht daneben
+// weiterhin das ✕ der Pane-Titelleiste, das etwas anderes tut («dieses Fenster
+// schliessen») — die beiden sind nicht zusammenzulegen, weil eine Inhaltsseite
+// ihr eigenes Fenster nicht schliessen kann; unterscheidbar sind sie über ihren
+// Accessible-Name (§8) und über den Kontext (Fenster-Griffleiste vs. Inhalt).
 
 export function LeserKopf({
   erlass, aktArtikel, fussnotenAnzahl, hatAenderungsvermerke, stufe, gliederungKnopf,
@@ -71,6 +86,11 @@ export function LeserKopf({
   // Ebene-Beschriftung aus dem Datenmodell, nicht aus `if (bund)` — die eine
   // Ableitung steht in `./erlassAnsicht` (Fundament-Auflage 2).
   const ebene = ebeneAngabe(erlass);
+  // A-2: dieselbe Kette, die bis 17.8. an die App-Leiste gemeldet wurde.
+  const krume = brotkrume(erlass);
+  // V2 (Nachzug 17.8.): der EINE Rücksprung für die engen Zuschnitte — die
+  // erste Stufe DERSELBEN Kette («Gesetze»), nie ein zweiter Text (§5).
+  const rueckKrume = krume[0];
 
   return (
     // `sticky top` aus `--leser-v3-kopf-top`: der Rahmen legt den Wert EINMAL
@@ -105,20 +125,60 @@ export function LeserKopf({
       // `imPane`- und keinen Breakpoint-Zweig (Kap. 10) — sie liest eine Variable.
       // BEWACHT: `e2e/leser-v3-kopf-buendig.e2e.ts` misst die Lücke auf H/D/S
       // gegen 0 und wird rot, wenn eine der beiden Polsterungen sich ändert.
+      //
+      // A-2 (17.8.2026): verschluckt wird jetzt ZWEIERLEI — die Wrapper-
+      // Polsterung UND das reservierte Band der App-Krumen-Leiste. Das Band
+      // behält seine Höhe, damit beim Eintreffen der Meldung «ich trage die
+      // Kopfzeile selbst» nichts wandert (Messung und Tor-Beleg in
+      // `components/layout/InhaltsKopf.tsx`); dieser Kopf legt sich opak darüber,
+      // und genau dadurch sind die 37 px sichtbar gewonnen. Beide Werte kommen
+      // von aussen — die Datei bleibt ohne Breakpoint- und ohne `imPane`-Zweig.
       style={{
         top: 'var(--leser-v3-kopf-top)',
-        marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))',
+        marginTop: 'calc(-1 * (var(--leser-v3-kopf-luecke, 0px) + var(--leser-v3-app-band, 0px)))',
       }}
     >
       <div className="flex items-center gap-2 sm:gap-3" style={{ height: 'var(--leser-v3-kopf-h)' }}>
         {/* ── Ortsangabe: EINE schrumpfende Zone (Krume + laufender Artikel) ── */}
         <nav aria-label="Ort im Gesetz" data-v3-kopf-ort
           className="flex min-w-0 flex-1 items-baseline gap-1.5 overflow-hidden whitespace-nowrap text-xs text-ink-500">
-          {el.sektion && (
-            <>
-              <Link to="/gesetze" className="shrink-0 truncate no-underline hover:text-brass-700">Gesetze</Link>
+          {/* ── A-2 (David 17.8.2026) · DIE GANZE KRUME STEHT JETZT HIER ──────
+              «Gesetze › Bund › StPO» — die Kette, die bis 17.8. die App-Krumen-
+              Leiste 37 px darüber trug. Sie kommt aus DERSELBEN Funktion, die sie
+              dorthin gemeldet hat (`erlassAnsicht.brotkrume`): Bund, Kanton und
+              Staatsvertrag laufen durch eine Ableitung, kein `if (bund)` (Bund →
+              «Bund», Kanton BS → «Kanton BS», Staatsvertrag → «International»;
+              unit-geprüft in `leser-v3-erlassansicht.test.ts`). Gerendert werden
+              hier nur die FÜHRENDEN Stufen — die letzte ist das Kürzel und hat
+              unten ihre eigene Kürzungs-Regel (A4).
+              KLICKBAR bleibt sie: `<Link>` löst im Pane gegen den PANE-EIGENEN
+              Navigator auf (`Pane.tsx`, `navKontext`) — der Klick navigiert
+              pane-lokal und reisst nicht das ganze Fenster weg (dieselbe
+              Zusicherung wie beim ✕ unten). */}
+          {el.krume === 'voll' && krume.slice(0, -1).map((stufeKrume) => (
+            <Fragment key={stufeKrume.label}>
+              {stufeKrume.to
+                ? <Link to={stufeKrume.to} className="shrink-0 truncate no-underline hover:text-brass-700">{stufeKrume.label}</Link>
+                : <span className="shrink-0 truncate">{stufeKrume.label}</span>}
               <span aria-hidden className="shrink-0 text-ink-300">›</span>
-            </>
+            </Fragment>
+          ))}
+          {/* ── V2 (Nachzug 17.8.2026) · DER RÜCKSPRUNG, WO DIE KETTE NICHT PASST
+              Unter 900 px Elementbreite fiel die Krume bis hierher GANZ weg —
+              @390 und in jedem Pane unter 900 px. Bis A-2 fing die
+              App-Krumen-Leiste das auf; seither gab es dort keinen Weg nach oben
+              ausser dem ✕, und das springt auf die Gesetzes-Übersicht, also an
+              der Ebene vorbei. Statt der Kette steht jetzt ihre erste Stufe als
+              EIN Rücksprung: dieselbe Quelle (`brotkrume`), dieselbe pane-lokale
+              Auflösung wie oben (`<Link>` gegen den Pane-Navigator), ein Element
+              mehr in der Ort-Zone und keines mehr in der Kopf-ZEILE (Kap. 6).
+              Trüge die Stufe kein Ziel, wäre sie kein Rücksprung und entfällt —
+              ein stummer Link wäre schlechter als keiner (§8). */}
+          {el.krume === 'kurz' && rueckKrume?.to && (
+            <Link to={rueckKrume.to} data-v3-kopf-krume-kurz
+              className="shrink-0 truncate no-underline hover:text-brass-700">
+              <span aria-hidden className="mr-0.5 text-ink-300">‹</span>{rueckKrume.label}
+            </Link>
           )}
           {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────
               Ä21 gab dem Kürzel `min-w-0 truncate` (statt `shrink-0`), weil es bei

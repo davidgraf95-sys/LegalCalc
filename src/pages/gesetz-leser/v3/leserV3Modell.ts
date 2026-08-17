@@ -11,8 +11,6 @@ import { strukturTiefe } from '../strukturTiefe';
 import { pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
 import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
-import { brotkrume } from './erlassAnsicht';
-import { formatiereDatum } from '../helpers';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
@@ -268,20 +266,19 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     (eintraege ?? []).some((e) => historieFuer(e.artikel) !== undefined), eintraege !== null,
   ), [struktur, eintraege, historieFuer]);
 
-  // ── Meldung an die App-Leiste (Ortsangabe, KEINE Bedienelemente) ──────────
-  // V3 meldet Brotkrume · Stand · laufenden Artikel und sonst nichts: die
-  // Bedienung lebt in der eigenen Kopfzeile und in der Seitenleiste. Sie
-  // zusätzlich zu melden hiesse, dieselbe Funktion an zwei Orten anzubieten
-  // (§5) — und im Pane gäbe es sie dort ohnehin nicht (der PaneKopf trägt keine
-  // Slots), womit genau die Kopf-Asymmetrie zurückkäme, die H1 beseitigt.
-  useEffect(() => {
-    if (!erlass) return;
-    meldeInhaltsKopf({
-      breadcrumb: brotkrume(erlass),
-      stand: erlass.stand ? formatiereDatum(erlass.stand) : null,
-      artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
-    });
-  }, [erlass, aktArtikel, meldeInhaltsKopf]);
+  // ── A-2 · DIE MELDUNG AN DIE APP-LEISTE IST WEG (David 17.8.2026) ──────────
+  // Hier stand bis 17.8. ein Effekt, der Krume · Stand · laufenden Artikel an
+  // die App-Krumen-Leiste meldete — die dieselben drei Angaben 37 px über der
+  // V3-Kopfzeile ein zweites Mal ausgab (gemessen @1440: zwei `nav`-Krumen,
+  // zwei ✕). Die Leiste entfällt; damit hat KEINE der drei Angaben mehr einen
+  // Leser, und sie werden gestrichen statt weitergemeldet (§17 Rückbau).
+  // Was übrig bleibt, ist ein einziger, datenunabhängiger Satz («ich trage die
+  // Kopfzeile selbst») — und der steht bewusst NICHT hier, sondern im
+  // Einsprungspunkt `../GesetzLeserV3.tsx`: dieses Modell läuft erst, wenn der
+  // lazy Rahmen-Chunk da ist, und bis dahin rendert die Shell die Leiste, die
+  // danach 37 px zusammenfällt (gemessen: 19 Frames, CLS 0.030 statt 0.005).
+  // Die Rücknahme beim Verlassen bleibt geteilt (`useLeserDaten`, ein
+  // `meldeInhaltsKopf(null)` beim Abbau — darum wird der Wert weiter durchgereicht).
 
   const { sekPos, artIndex, sektionMeta, artLabelByToken, margAnzeige } = useArtikelAbleitungen({
     sektionen, eintraege, struktur,

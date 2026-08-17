@@ -265,6 +265,24 @@ describe('S6 — reine Ableitungen', () => {
     expect(nurErlassdatum('vom 1. Januar 2000 (AS 2000 1)')).toBe('vom 1. Januar 2000 (AS 2000 1)');
   });
 
+  // ── Ä74 (17.8.2026) · die kantonale Form OHNE «am» ───────────────────────
+  // FACHLICHE ERWEITERUNG, kein nachgezogener Test (§6.3): das Muster verlangte
+  // «(Stand am …)» und liess damit 1182 der 1420 Sidecars durch — gemessen an
+  // BS-640.100, wo die Übersicht «Vom 12. April 2000 (Stand 1. Januar 2026)»
+  // zeigte und eine Zeile tiefer nochmals «Stand 01.01.2026».
+  it('nurErlassdatum schneidet auch die kantonale Form «(Stand …)» ohne «am» (Ä74)', () => {
+    expect(nurErlassdatum('Vom 12. April 2000 (Stand 1. Januar 2026)')).toBe('Vom 12. April 2000');
+    expect(nurErlassdatum('Vom 10.11.1987 (Stand 01.01.2024)')).toBe('Vom 10.11.1987');
+    // NEGATIV-SONDE: eine Klammer, die eine EIGENE Aussage trägt, bleibt stehen
+    // — die freiburgische Form nennt das Inkrafttreten der Fassung, nicht den
+    // Stand (11 Sidecars mit anderer Klammer, gezählt 17.8.2026).
+    expect(nurErlassdatum('vom 30.11.2010 (Fassung in Kraft getreten am 01.12.2025)'))
+      .toBe('vom 30.11.2010 (Fassung in Kraft getreten am 01.12.2025)');
+    // NEGATIV-SONDE: «Stand» mitten im String ist kein Zusatz am Ende.
+    expect(nurErlassdatum('vom 1. Januar 2000 (Stand am 1. Juli 2026) Nachtrag'))
+      .toBe('vom 1. Januar 2000 (Stand am 1. Juli 2026) Nachtrag');
+  });
+
   it('erlassOrgan liest die autor-Zeile ohne Schluss-Komma', () => {
     expect(erlassOrgan(kopf)).toBe('Die Bundesversammlung der Schweizerischen Eidgenossenschaft');
     expect(erlassOrgan(null)).toBeNull();

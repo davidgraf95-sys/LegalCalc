@@ -1,9 +1,7 @@
 import { useId, useRef, useState } from 'react';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
-import {
-  HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
-} from '../leserOptionen';
+import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
 
 // ─── «Ansicht ▾» der V3-Kopfzeile (FAHRPLAN-LESER-V3 Kap. 4a/4f, H1) ─────────
 //
@@ -40,29 +38,29 @@ import {
 // Fokus-Falle, Escape und Fokus-Rückgabe kommen aus dem geteilten
 // `useDialogFokus` (§5) — dieselbe Mechanik wie im Ist-Menü.
 
-function V3Switch({ an, label, titel, onKlick, ariaLabel, hinweis }: {
+// ── Ä69 · DER `hinweis`-SLOT IST GESTRICHEN (17.8.2026) ──────────────────────
+// Er trug genau EINEN Satz, den Ä27-Hinweis am Vermerke-Schalter, und der ist mit
+// der Entkopplung (Ä68) entfallen — die Kreuz-Abhängigkeit, die er erklärte, gibt
+// es nicht mehr. Damit hatte der Slot null Aufrufer. §17 in der Fassung vom
+// 13.8.2026: was nichts mehr bedient, wird gestrichen statt bewacht (dieselbe
+// Begründung wie bei `beiwerkSlot`/`panelOeffner`/`LeserV3Kontext`). Mit ihm
+// fallen `useId`, `aria-describedby` und der Geschwister-`<p>`; tritt je wieder
+// eine echte Abhängigkeit zwischen zwei Schaltern auf, steht die Anatomie samt
+// ihrer Accessible-Name-Herleitung in der Historie.
+function V3Switch({ an, label, titel, onKlick, ariaLabel }: {
   an: boolean;
   label: string;
   titel: string;
   onKlick: () => void;
   ariaLabel?: string;
-  /** Ä27 (S1-Nachzug): erklärende Zeile UNTER dem Schalter — Wortlaut aus der
-   *  geteilten Konstante (§5), V1 zeigt denselben Satz. DESCRIPTION, nicht Name:
-   *  im `aria-label` hiesse der Schalter «… mit den Fussnoten ausgeblendet» und
-   *  enthielte damit den Namen des Nachbar-Schalters (Herleitung und der dadurch
-   *  ausgelöste Spec-Bruch stehen in `../LeserAnsichtMenu.tsx`). */
-  hinweis?: string;
 }) {
-  const hinweisId = useId();
   return (
-    <div>
     <button
       type="button"
       role="switch"
       aria-checked={an}
       aria-label={ariaLabel}
-      aria-describedby={hinweis ? hinweisId : undefined}
-      title={hinweis ? `${titel}. ${hinweis}` : titel}
+      title={titel}
       onClick={onKlick}
       className={`flex w-full items-center justify-between gap-3 rounded-md px-2.5 py-1.5 text-left text-body-s transition-colors hover:bg-brass-100/40 ${
         an ? 'text-ink-900' : 'text-ink-600'
@@ -75,12 +73,6 @@ function V3Switch({ an, label, titel, onKlick, ariaLabel, hinweis }: {
         {an ? '✓' : '○'} {an ? 'an' : 'aus'}
       </span>
     </button>
-    {/* Geschwister, nicht Kind — sonst wanderte der Text in den Accessible-Name
-        (Begründung in `../LeserAnsichtMenu.tsx`). */}
-    {hinweis && (
-      <p id={hinweisId} className="px-2.5 pb-1 text-micro leading-snug text-ink-500">{hinweis}</p>
-    )}
-    </div>
   );
 }
 
@@ -173,14 +165,19 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
             an={opt.fussnoten === 'an'}
             label="Fussnoten"
             ariaLabel={fussnotenAnzahl != null && fussnotenAnzahl > 0 ? `Fussnoten (${fussnotenAnzahl})` : undefined}
-            titel="Amtlicher Fussnoten-Apparat am Artikelfuss ein- oder ausblenden"
+            // Ä68: dieser Schalter trägt Marker UND Apparat, und zwar ALLE
+            // Klassen — auch `kl:'A'`. Er ist damit der einzige, der amtlichen
+            // Fussnotentext ausblendet.
+            titel="Amtlicher Fussnoten-Apparat am Artikelfuss ein- oder ausblenden — Marker und Apparat, alle Fussnoten"
             onKlick={() => schalte('fussnoten', opt.fussnoten === 'an')}
           />
-          {/* Kap. 4f: dieselbe Information, EIN Schalter. «aus» blendet NUR die
-              build-seitig als Änderungsvermerk klassifizierten Fussnoten (kl:'A')
-              samt «Fassung»-Zeile aus; echte Verweise, Grauzone und
-              Publikationsnachweise bleiben in jeder Stellung sichtbar
-              (H0-Auflage 1, §1/§8). */}
+          {/* Ä68 (Entscheid David 17.8.2026) · ENTKOPPELT. Der Schalter blendet
+              AUSSCHLIESSLICH die abgeleitete Fassungs-Zeile aus
+              (`[data-hist-slot]`) — nie eine Fussnote. Bis 17.8. nahm er `kl:'A'`
+              mit, und weil das beim Bundesrecht die Regel ist (StPO 187/285,
+              ZGB 719/809), verschwand mit ihm fast der ganze Apparat: Davids
+              Befund «wenn änderungsvermerke abgewählt wird dann verschwinden auch
+              fussnoten». Herleitung und Messreihe: index.css, Regel-Block Ä68. */}
           {/* D1: … und nur, wenn dieser Erlass Vermerke TRÄGT. Auf BS-640.100 und
               ZH-211.11 blieb dem Schalter sonst eine Layout-Raffung von 40 px je
               Artikel — die Beschriftung versprach mehr, als sie hielt (§8). Die
@@ -190,9 +187,11 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           <V3Switch
             an={opt.histansicht === 'an'}
             label="Änderungsvermerke"
-            titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
-            // Ä27 (S1-Nachzug): dieselbe Auskunft und derselbe Wortlaut wie in V1.
-            hinweis={opt.fussnoten === 'aus' ? HINWEIS_VERMERKE_OHNE_FUSSNOTEN : undefined}
+            // Ä68: derselbe Wortlaut wie in V1 (§5) — und er beschreibt jetzt die
+            // ganze Wirkung, nicht mehr einen Teil davon.
+            titel="Fassungs-Zeile am Artikelfuss ein- oder ausblenden («Gilt seit …» samt Zeitleiste) — der amtliche Fussnoten-Apparat bleibt in beiden Stellungen sichtbar"
+            // Ä69: die Ä27-Hinweiszeile ist gestrichen — die Kreuz-Abhängigkeit,
+            // die sie erklärte, gibt es nicht mehr (`../leserOptionen`).
             onKlick={() => schalte('histansicht', opt.histansicht === 'an')}
           />
           )}

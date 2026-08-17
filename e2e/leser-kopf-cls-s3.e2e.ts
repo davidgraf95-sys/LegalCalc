@@ -54,8 +54,33 @@ for (const h of HUELLEN) {
       // Warten, bis die Warnzeile wirklich da ist — sonst misst man das Nichts.
       // Sie ist zugleich der Nachweis, dass die V3-Hülle den Zeitbezug bekommt
       // (S3-Nachzug: `nichtKonsolidiertSeit` durch `leserV3Modell`).
+      //
+      // §6.3-DEKLARATION (Ä70, 17.8.2026) — DER ANKER WIRD ENGER, NICHT WEITER.
+      // Bis hierher stand hier `page.getByText(…).first()`, also die erste
+      // Fundstelle IRGENDWO auf der Seite. Seit Ä70 nimmt auch die Übersichtsbox
+      // der Seitenleiste denselben Satz aus `erlassKopfText.ts` (§5: EIN Wortlaut
+      // für EINEN Sachverhalt — vorher trug die Box einen eigenen zweiten).
+      // Damit traf `.first()` in der V3-Hülle die BOX statt den Kopf, und weil
+      // die Box zugeklappt startet, ist ihr Treffer `hidden`: die Wartebedingung
+      // lief in den Timeout, obwohl der Kopf die Zeile korrekt zeigte (so
+      // gemessen: «locator resolved to <span>» 16× mit «unexpected value hidden»).
+      // Der Fix ist keine Lockerung — die Messung GILT dem Erlass-Kopf, und der
+      // Anker sagt das jetzt auch. `leser-kopf-g2b` scopet dieselbe Zeile seit
+      // jeher auf einen Kopf-Anker; die Ausnahme war hier, nicht dort.
+      //
+      // ZWEI ZWISCHENFEHLER, damit sie niemand wiederholt (beide gemessen):
+      //  · `page.locator('header').first()` ist die APP-Kopfzeile, nicht der
+      //    Erlass-Kopf ⇒ 4/4 rot, «element(s) not found».
+      //  · `.lc-leser > header` (der Anker von `leser-kopf-g2b`) trägt NUR die
+      //    Ist-Hülle ⇒ ist-huelle grün, v3 2/2 rot. Diese Datei läuft über BEIDE
+      //    Hüllen, sie braucht darum einen hüllenneutralen Anker.
+      // Gemessen an STPO @1280: `header:has(h1)` trifft in beiden Hüllen genau
+      // EIN Element (von je zwei `<header>` der Seite), und genau dieses trägt
+      // die Warnzeile. Der Erlass-Kopf ist der einzige Kopf der Seite mit einer
+      // H1 — das ist seine Definition, nicht ein Zufall des Markups.
       await expect(
-        page.getByText(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung noch nicht in den Text eingearbeitet/).first(),
+        page.locator('header:has(h1)')
+          .getByText(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung noch nicht in den Text eingearbeitet/),
       ).toBeVisible({ timeout: 20_000 });
       await page.waitForTimeout(1500);
       const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);

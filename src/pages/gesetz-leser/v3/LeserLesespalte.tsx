@@ -32,10 +32,19 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Etappe, für die er gedacht war, baut die Zone im KERN (`parts/ArtikelLeser`,
 // Kap. 1.3) und braucht ihn nicht. §17: gestrichen statt bewacht; Herleitung im
 // Rahmen (`LeserRahmenV3`, «DIE DREI ERWEITERUNGS-SLOTS SIND GESTRICHEN»).
-export function LeserLesespalte({ m, trefferListe }: {
+// ── `trefferListe` IST GESTRICHEN (Ä76, 17.8.2026) ───────────────────────────
+// Der Prop hängte die Trefferliste INLINE über den Lesetext, angekündigt für den
+// Rand-Fall «keine Leiste, aber breit genug». Zwei Gründe, beide gemessen:
+//  · Er traf den falschen Fall. Die Bedingung im Rahmen lautete `!zweiSpalten`
+//    und schlug damit bei EINGEKLAPPTER Gliederung zu — dort lag die Liste 3596 px
+//    hoch bei y = 755 unter der Falz und schob den Gesetzestext um 3,6
+//    Bildschirmhöhen nach unten (Davids Befund «resultat ist versteckt»). Dieser
+//    Fall liegt jetzt im Blatt am Feld (`./LeserTrefferBlatt`).
+//  · Der angekündigte Fall ist unerreichbar. «Keine Leiste» heisst
+//    `eintraege.length === 0`, also kein Artikel — dann gibt es weder Treffer noch
+//    Lesetext. §17: gestrichen statt verengt.
+export function LeserLesespalte({ m }: {
   m: LeserV3Modell;
-  /** Trefferliste für den Rand-Fall ohne Leiste (sonst steht sie dort). */
-  trefferListe?: ReactNode;
 }) {
   const { erlass, eintraege, struktur, sektionen, ohneGliederung, basisPfad, vorher, nachher } = m;
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
@@ -119,7 +128,6 @@ export function LeserLesespalte({ m, trefferListe }: {
     // Satzspiegel. Ohne diese Trennung risse jede Layout-Entscheidung das
     // Treue-Tor mit, und genau daran wäre es unbrauchbar geworden.
     <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
-      {trefferListe && <div className="mb-8 border-b border-line pb-4">{trefferListe}</div>}
       <div className="space-y-2">
         {ohneGliederung.length > 0 && (
           <div className="space-y-5 mb-6">{ohneGliederung.map(artikel)}</div>

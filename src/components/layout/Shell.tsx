@@ -376,7 +376,10 @@ export function Shell({ children }: { children: ReactNode }) {
 
           {/* Einzelansicht-Kopf (kein Split-View): Breadcrumb · aktueller Artikel ·
               Stand · ✕→Start. Analog zur Pane-Titelleiste, aber ohne Verschiebe-
-              Steuerung. Im Multipane übernimmt der PaneKopf. */}
+              Steuerung. Im Multipane übernimmt der PaneKopf.
+              A-2: Ob die Leiste überhaupt eine ist, entscheidet die Inhaltsseite
+              über `kopfzeileSelbst` — die Komponente bleibt montiert (sie trägt
+              die zwei Sprung-Rückmeldungen), rendert dann aber keine Leiste. */}
           {!multipane && istInhaltsPfad(pathname) && (
             <InhaltsKopf daten={kopfDaten ?? kopfVonPfad(pathname, manifeste)}
               breiteKlasse={inhaltsbreiteKlasse} onSchliessen={() => navigate('/')} />
@@ -398,6 +401,7 @@ export function Shell({ children }: { children: ReactNode }) {
                 className={multipane ? `flex flex-col flex-1 min-w-0 border-l-2 ${dnd.spalte(0).ueber ? 'border-l-brass-700' : 'border-l-transparent'} max-lg:flex-none max-lg:w-full max-lg:snap-start` : 'contents'}>
                 {multipane && (
                   <PaneKopf {...titelVon(pathname)} breadcrumb={kopfDaten?.breadcrumb} onBreadcrumb={(to) => navigate(to)} artikel={kopfDaten?.artikel}
+                    nurSteuerung={kopfDaten?.kopfzeileSelbst}
                     rolle="primaer" onSchliessen={schliesseHaupt}
                     onRechts={() => verschiebePane(0, 1)} kannRechts={pane.sekundaer.length > 0}
                     ziehbar {...dnd.griff(0)} />

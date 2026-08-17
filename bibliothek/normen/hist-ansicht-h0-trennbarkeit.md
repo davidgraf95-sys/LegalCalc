@@ -267,6 +267,73 @@ den dritten Träger. Regel und Belege:
 `src/pages/gesetz-leser/berechnungen.ts` (`bieteAenderungsvermerkeSchalter`) +
 `src/tests/aenderungsvermerke-schalter.test.ts`.
 
+### 7.4a Nachtrag 17.8.2026 abends — EIN Träger statt drei (Entscheid David)
+
+*(Ersetzt die Träger-Tabelle in 7.4. Die Auflage 1 selbst ist unverändert — sie
+wird jetzt sogar strenger erfüllt als zuvor.)*
+
+**Anlass, wörtlich:** «wenn änderungsvermerke abgewählt wird dann verschwinden
+auch fussnoten.» Der Befund trifft zu. Gemessen 17.8.2026 @1440 in der Stellung
+Fussnoten = an · Änderungsvermerke = aus:
+
+| Erlass | Apparat-Einträge sichtbar | Marker sichtbar | Apparat-Kästen |
+|---|---|---|---|
+| StPO | 285 → **98** | 285 → **105** | 135 → 56 |
+| ZGB | 809 → **90** | 809 → **173** | 531 → 105 |
+
+Die Ursache liegt in der Klassenverteilung, nicht im Selektor: `kl:'A'` ist beim
+Bundesrecht die **Regel**, nicht der Sonderfall (ZGB 719 von 809 Einträgen). Ein
+Schalter, der «alle A-Fussnoten» ausblendet, blendet damit faktisch den
+**amtlichen Fussnoten-Apparat** aus — und war so ein zweiter, versteckter
+Fussnoten-Schalter. Das ist §8-widrig: die Beschriftung sagt «Änderungsvermerke»,
+die Wirkung war «Fussnoten».
+
+**Entscheid David 17.8.2026: Fussnoten unabhängig von Änderungsvermerken.** Zwei
+Schalter, zwei **disjunkte** Flächen:
+
+| Schalter | Fläche | Träger |
+|---|---|---|
+| Fussnoten | Marker **und** Apparat, **alle** Klassen (auch `kl:'A'`) | `[data-fn-ref]` · `[data-fn-marker]` · `[data-fn-apparat]` |
+| Änderungsvermerke | **nur** die abgeleitete Fassungs-Zeile | `[data-hist-slot]` |
+
+Die beiden Regeln auf `[data-fn-klasse="A"]` und auf den A-only-Apparat sind
+**ersatzlos entfallen** (`index.css`). Der dritte Träger aus 7.4 ist damit der
+**einzige**; die A-Fussnote bleibt vollständig abwählbar, nur über den Schalter,
+dem sie sachlich gehört.
+
+**Warum die Auflage 1 dadurch strenger erfüllt ist:** sie verlangte, dass V, G, Z,
+U und alles ohne Klasse vom Vermerke-Schalter unberührt bleiben. Das gilt jetzt
+für **jede** Klasse — der Schalter fasst den Fussnoten-Apparat überhaupt nicht
+mehr an. Die Sicherheitsrichtung ist unverändert einseitig: nie amtliche Substanz
+hinter einer Beschriftung verstecken, die etwas anderes verspricht.
+
+**Gilt in beiden Hüllen.** Die Regeln hängen an `.lc-leser`, nicht am V3-Flag.
+Den Schalter in V1 gekoppelt zu lassen hiesse, dasselbe Steuerelement mit zwei
+Bedeutungen zu führen (§5).
+
+**Die Anbieten-Regel bleibt unverändert — gemessen, nicht geschlossen.** Nach der
+Entkopplung beschreibt die `kl:'A'`-Bedingung in `bieteAenderungsvermerkeSchalter`
+keine Wirkung mehr; sie kann nur noch überanbieten. Gemessen über alle 1420
+Struktur-Sidecars gegen alle 209 Historie-Shards (205 mit Einträgen), 17.8.2026:
+
+| Fall | Anzahl |
+|---|---|
+| `kl:'A'` > 0 **und** Fassungszeile | 203 → Schalter wirksam |
+| `kl:'A'` > 0 **ohne** Fassungszeile | **0** → gäbe einen toten Schalter |
+| `kl:'A'` = 0 **mit** Fassungszeile | 2 (MONTREAL, PVUE) |
+
+{203} ∪ {2} ist genau die Menge der 205 Shards mit Einträgen — die Redundanz ist
+heute vollständig gedeckt und bleibt darum stehen (§1). Der Tag, an dem ein
+Erlass mit `kl:'A'` ohne Historie-Einträge dazukommt, ist der Tag, an dem sie
+fallen muss; Wächter dafür ist `src/tests/aenderungsvermerke-schalter.test.ts`
+(«Ä68: kein Erlass trägt kl:A ohne Fassungszeile»), der dann rot wird und den
+Erlass benennt.
+
+**Belege:** `src/index.css` (Regel-Block Ä68) · `e2e/hist-ansicht-w25i.e2e.ts`
+(A-Zusicherungen umgekehrt, je zweiseitig, plus 2×2-Matrix über Bund und Kanton) ·
+`e2e/leser-optionen.e2e.ts` (Ä69). Rot-Beweis am Vorzustand gesehen: «Vermerke=aus
+nimmt Apparat-Zeilen mit — Expected 29, Received 8» (BGBM).
+
 ### 7.5 Auflage 5 (ZITAT) — bleibt David-Entscheid
 
 `Z` (632 Fussnoten im Bund, 2.0 %) ist **sichtbar** gelassen = die Empfehlung aus

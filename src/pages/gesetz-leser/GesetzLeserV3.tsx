@@ -1,9 +1,10 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, useLayoutEffect } from 'react';
+import { useMeldeInhaltsKopf } from '../../components/layout/InhaltsKopfKontext';
 import { LadeAnzeige } from './inhalt-ansichten';
 
 // ═══ ABSCHNITT · Einsprungspunkt der V3-Hülle (FAHRPLAN-LESER-V3, H1) ════════
 //
-// Diese Datei ist bewusst DÜNN. Sie tut genau zwei Dinge:
+// Diese Datei ist bewusst DÜNN. Sie tut genau drei Dinge:
 //
 //  ① SIE HÄLT DEN V3-BAUM AUS DEM START-BUNDLE. Im Flag-Fenster liegen BEIDE
 //     Hüllen im Build (Risiko R7). Ohne `lazy` wanderte die neue Hülle in
@@ -19,6 +20,26 @@ import { LadeAnzeige } from './inhalt-ansichten';
 //     geladen wird. In H5 fällt beides zusammen mit dem Flag (FL-7) — dann
 //     verschwindet diese Datei, nicht ihr Inhalt.
 //
+//  ③ SIE SAGT DER HÜLLE, DASS V3 SEINE KOPFZEILE SELBST TRÄGT (A-2, Auftrag
+//     David 17.8.2026). Ein Satz, `KopfDaten.kopfzeileSelbst` — daraufhin lässt
+//     `components/layout` die App-Krumen-Leiste weg (Einzelansicht) bzw. behält
+//     im Split nur die Fenster-Steuerung. Herleitung am Feld selbst.
+//     WARUM HIER und nicht im Rahmen/Modell, wo die Krume entsteht: der Rahmen
+//     ist `lazy`. Meldete er es, rendert die Shell die Leiste, bis der Chunk da
+//     ist, und liesse sie danach um ihre 37 px zusammenfallen — gemessen
+//     17.8.2026 @1440 StPO: 19 Frames mit Leiste, CLS 0.0303–0.0309 gegen
+//     0.0039–0.0054 in V1. Diese Datei rendert synchron mit der Fassade, die
+//     Meldung steht also vor dem ersten Paint des Lesers.
+//     SIE IST RESERVIERUNG, NICHT DAS LETZTE WORT (V1, Nachzug 17.8.2026). Genau
+//     weil sie datenunabhängig sein MUSS, um vor dem ersten Paint zu stehen, ist
+//     sie auf drei Wegen falsch, auf denen der Rahmen früh zurückkehrt und nie
+//     einen V3-Kopf rendert: pdf-embed (EMRK) · nur-live-link (DSGVO) ·
+//     Fehlseite. Dort stand danach weder App-Krume noch Leser-Krume noch ✕.
+//     `v3/LeserRahmenV3.tsx` nimmt die Reservierung auf diesen drei Wegen zurück,
+//     sobald die Daten da sind (Herleitung dort am Effekt); der Lade-Platzhalter
+//     zählt ausdrücklich nicht dazu — für ihn existiert die Reservierung.
+//     Zurückgenommen wird sie beim Abbau, hier und geteilt in `useLeserDaten`.
+//
 // Der Marker `data-leser-v3="rahmen"` sitzt seit H1 am Rahmen selbst
 // (`v3/LeserRahmenV3.tsx`), nicht mehr auf einem eigenen Vorproben-Streifen:
 // er muss weiter maschinell sichtbar sein (`e2e/leser-v3-flag.e2e.ts` sieht
@@ -30,6 +51,20 @@ const LeserRahmenV3 = lazy(() =>
   import('./v3/LeserRahmenV3').then((m) => ({ default: m.LeserRahmenV3 })));
 
 export function GesetzLeserV3({ ebene, schluessel }: { ebene: string; schluessel: string }) {
+  const meldeInhaltsKopf = useMeldeInhaltsKopf();
+  // `useLayoutEffect`, nicht `useEffect` — und das ist gemessen, nicht Geschmack:
+  // die Shell setzt ihre Kopfdaten bei JEDEM Pfadwechsel zurück (Shell.tsx, im
+  // Render-Rumpf). Ein passiver Effekt käme danach, also potenziell erst nach
+  // einem Paint — und dieser eine Frame zeigt die Leiste, die es nicht mehr
+  // geben soll. Der Layout-Effekt läuft vor dem Paint; die Leiste erscheint
+  // damit in keinem einzigen Frame (gemessen: 19 → 0 Frames, s. ③ oben).
+  // Im Prerender (node) ist das ungefährlich: die Fassade wählt dort immer V1
+  // (`leserFlagLesen()` liest kein localStorage), diese Komponente rendert
+  // serverseitig also nie.
+  useLayoutEffect(() => {
+    meldeInhaltsKopf({ kopfzeileSelbst: true, breadcrumb: [] });
+    return () => meldeInhaltsKopf(null);
+  }, [meldeInhaltsKopf]);
   return (
     <Suspense fallback={<LadeAnzeige />}>
       <LeserRahmenV3 ebene={ebene} schluessel={schluessel} />

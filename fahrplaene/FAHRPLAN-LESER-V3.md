@@ -166,11 +166,14 @@ Drei Breiten: **H** Handy ≤ 640 px · **D** Desktop ≥ 1024 · **S** Split-Vi
 ### (a) Kopfzeile — ein Vertrag für alle drei Breiten
 
 ```
-D  │ Gesetze › StPO         Art. 429                    Ansicht ▾   ✕ │
+D  │ Gesetze › Bund › StPO   Art. 429               Ansicht ▾   ✕ │
 S  │ StPO      Art. 429                       Ansicht ▾ ✕│  (Krume gekürzt)
 H  │ StPO · Art. 429    ☰   ···  ✕│   ☰ Gliederung-Sheet · ··· Ansicht
 ```
 *(Bei F7-Variante B entfällt «Ansicht ▾» in allen drei Breiten.)*
+*(Die Ebene-Stufe «Bund» / «Kanton BS» / «International» kam mit **A-2** dazu:
+seit der Leisten-Verschmelzung ist diese Zeile die EINZIGE Krume der Seite,
+also trägt sie die ganze Kette. Vollzugsvermerk am Ende von Kap. 7.)*
 
 | Element | Entscheid | HIG (8er-Kanon) |
 |---|---|---|
@@ -524,7 +527,7 @@ vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
 | **Ä2** | Lesespalte 556–616 px @1280; Lesespalte auf 40 rem | ✅ **erledigt in H2** (`max-w-normtext` → `max-w-reading`, Nachtrag 16.8.); der Seitenleisten-Default ist nach **Ä1/H2b** gewandert |
 | **Ä5** | Seitenleiste als drei gerahmte Kästen; hängendes «·» in der Übersichtszeile; Übersichtsbox schimmert unter dem klebenden Block durch | ✅ **erledigt in H2b** — Box entrahmt (Weissraum statt Kasten), hängendes «·» weg, klebender Sockel trägt die Fläche seines Behälters |
 | **Ä8** | Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung, Kap. 8 Nr. 3) | ✅ **erledigt in H2b** — `paper-sunken` statt `brass-200/60`, kein 2-px-Lift mehr. KERN-BERÜHRUNG deklariert (`ArtikelBody.tsx`, wirkt in beiden Hüllen) |
-| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | ⏳ **teilweise in H2b, Rest → H4.** Erledigt: der Leser-Regler heisst «Gesetzestext» und ist der einzige für den Normtext (`[role=group][aria-label="Schriftgrösse"]` 2 → 1 bei offenem Panel). OFFEN: den globalen App-Regler im Leser AUSBLENDEN. Das geht heute nur über Flag-Wissen in der Topbar (FL-1) oder einen V1-Umbau (FL-4) — beides teurer als der Befund wiegt. Der Punkt fällt darum mit der **Leisten-Verschmelzung A-2 in H4**, wo die Topbar ohnehin angefasst wird. **Kein David-Entscheid nötig** — technische Sequenzierung, Orchestrator-Entscheid 17.8.2026 |
+| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | ⏳ **teilweise in H2b, Rest → H4.** Erledigt: der Leser-Regler heisst «Gesetzestext» und ist der einzige für den Normtext (`[role=group][aria-label="Schriftgrösse"]` 2 → 1 bei offenem Panel). OFFEN: den globalen App-Regler im Leser AUSBLENDEN. Das geht heute nur über Flag-Wissen in der Topbar (FL-1) oder einen V1-Umbau (FL-4) — beides teurer als der Befund wiegt. **Nachzug 17.8. abends — Kopplung aufgelöst:** A-2 ist gebaut, und der globale Regler sitzt in der **Topbar**, nicht in der abgelösten Leiste. Der Rest von Ä9 hängt damit NICHT an A-2, sondern bleibt eigenständig für **H4** offen (dieselbe Aussage wie im A-2-Vermerk in Kap. 7; die frühere Formel «Ä9-Rest fällt mit A-2» ist damit überholt). **Kein David-Entscheid nötig** — technische Sequenzierung, Orchestrator-Entscheid 17.8.2026 |
 | **Ä10** | Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser | ✅ **erledigt in H2b**, soweit reproduzierbar — «GLIEDERUNG» 2× → 1×; Überlauf (0 px gemessen) und Popover-Position (0 px Abweichung) waren NICHT reproduzierbar und sind gemeldet, nicht gefixt |
 | **Ä12** | «Seitenleiste ausblenden» (App) gegen «‹ ausblenden» (Gliederung) — gleiche Wortwahl, zwei Wirkungen | ✅ **erledigt in H2** (der Knopf sagt jetzt, WAS er ausblendet) |
 | **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | ✅ **erledigt in H2b-NACHZUG** — H2b nahm nur den `box-shadow` weg und liess Rahmenfarbe + `outline-offset: 1px` stehen, also wieder zwei Messing-Kanten (Ä41). Jetzt: Rahmen im Fokus neutral, Ring ohne Spalt |
@@ -935,13 +938,21 @@ also selbst; dieser Nachzug hält seine Hunks im Rahmen klein und lokal
 `refactor(`, `docs(` läuft ihm durch.
 
 **Für H4 vorgemerkt** (aus den Prüfer-Befunden, hier nur eingereiht):
-**Ä9-Rest** (globaler App-Regler im Leser ausblenden, A-2) · **Ä45** Doppelkrume
-(App-Krume und V3-Ortsangabe nennen denselben Ort übereinander; gemessen @390
-zwei `nav`-Krumen) · **Ä46** zwei ✕ je Pane mit verschiedener Bedeutung
-(gemessen 2 Stück) · **Ä33/Ä34** aus der Ästhetik-Prüfung. MESSWERT als H4-Ziel:
-das Chrome bis zum Beginn der Lesefläche ist @390 **183 px = 22 %** der
+~~**Ä45** Doppelkrume~~ **erledigt 17.8.2026 mit A-2** (Leisten-Verschmelzung,
+Vollzugsvermerk am Ende von Kap. 7): @1440 eine `nav`-Krume statt zwei ·
+**Ä46** zwei ✕ je Pane mit verschiedener Bedeutung — **teilweise erledigt**
+(Einzelansicht 1 statt 2; im Pane bleiben zwei, Begründung im A-2-Vermerk) ·
+**Ä9-Rest** (globaler App-Regler im Leser ausblenden) — **weiter offen, und zwar
+UNABHÄNGIG von A-2**: er sitzt in der Topbar, nicht in der abgelösten Leiste. Die
+Ä-Tabelle (Ä9) trägt seit dem Nachzug 17.8. abends denselben Satz; die frühere
+Formel «Ä9-Rest fällt mit A-2» gilt nicht mehr · **Ä33/Ä34** aus der
+Ästhetik-Prüfung. MESSWERT als H4-Ziel:
+das Chrome bis zum Beginn der Lesefläche war @390 **183 px = 22 %** der
 Fensterhöhe im Ruhezustand (Topbar 65 · Krumen-Leiste bis 102 · V3-Kopf bis 183)
-und wächst mit laufender Suche um 24 px auf **207 px = 25 %**.
+und wuchs mit laufender Suche um 24 px auf **207 px = 25 %**. *(Fortschreibung
+17.8.2026 nach S2/H3 und A-2: der Vorzustand mass @390 **195 px**, seit A-2 sind
+es **157 px = 18.6 %** — das H4-Ziel ist damit zum grössten Teil eingelöst; was
+bleibt, ist die Such-Zone, nicht die Leiste.)*
 
 **Tore:** s. Abschluss-Block unten.
 
@@ -992,11 +1003,13 @@ derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
   V3-Normtextgrösse voraus, die erst **S2** bringt — in H1 bliebe sonst der
   Normtext nicht byte-gleich (Treue-Grenze PX). **Vorschlag: die vier Stufen
   mit S2 nachziehen**, wenn die Baseline ohnehin einmalig neu gesetzt wird.
-- **A-2 Zwei Leisten statt einer.** Die V3-Kopfzeile sitzt **unter** der
-  bestehenden App-Leiste, statt sie zu ersetzen. Die Verschmelzung verlangt
-  Änderungen an `src/components/layout/**` und hätte die Ist-Hülle mit
-  umgebaut (FL-4). Sie gehört zu **H4/H5**; Preis heute 37 px Chrome. Dieselbe
-  Aufteilung hat der Entscheid-Leser seit je.
+- **A-2 Zwei Leisten statt einer.** ✅ **Eingelöst 17.8.2026** (Auftrag David,
+  Vollzugsvermerk «A-2 Leisten-Verschmelzung» am Ende von Kap. 7). Die
+  V3-Kopfzeile sass **unter** der bestehenden App-Leiste, statt sie zu ersetzen;
+  Preis 37 px Chrome. Der Weg, der die Ist-Hülle NICHT mit umbaut (FL-4) und der
+  Hülle kein Flag-Wissen gibt (FL-1), war ein Erweiterungspunkt im Melde-Vertrag
+  (`KopfDaten.kopfzeileSelbst`) statt einer Änderung an der Leiste selbst.
+  Der Entscheid-Leser behält die alte Aufteilung — er meldet das Feld nicht.
 
 **Fundament-Auflage David 16.8.2026** («richtig guter Code, der sich als
 Fundament auch für weitere Gesetze und Darstellungen eignet») — umgesetzt und im
@@ -1073,6 +1086,129 @@ legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
   Umhängen der vier B-Specs (Kap. 10).
 
 **Deckel-Stand:** H1 ist der erste der höchstens fünf H-PRs (Kap. 7).
+
+---
+
+### ✅ Vollzugsvermerk ÜBERSICHTSBOX (17.8.2026, Branch `feat/leser-v3-uebersicht`)
+
+**Auftrag David:** «das übersichtfeld ist sehr unästhetisch. insbesondere wenn es
+aufgeklappt ist. mach das schöner und orientiere dich an fedlex.»
+**Bilder:** `docs/ux-audit-2026-07/reader/leser-v3-uebersicht/{vorher,nachher}/`
+(je 30 Aufnahmen: fünf Erlassarten × hell/dunkel × D 1440 / H 390 / Split, Ruhe
+und aufgeklappt) + `README.md` mit der Fedlex-Referenz daneben. Werkzeuge
+committet (`schuss.mjs`, `mass.mjs`); jede Position unten ist **gemessen**.
+
+**Ist-Mängel** (D 1440, aufgeklappt): Ruhezeile komplett in der Mono-Stimme und
+darum an **allen fünf** Erlassen **dreizeilig** · vier `truncate`-Zeilen kappten
+still Text (StPO 282 px · BS-640.100 284 px · LugÜ 98 px · VMWG 66 px · «Stand:»
+je 57 px), erreichbar nur im `title` · zweites Etikett «ERLASS-ÜBERSICHT» samt
+zweiter Linie IN einer Box, die schon «Übersicht» heisst · «massgeblich ist die
+amtliche Fassung» an der StPO **2×** · **zwei** Klapp-Ebenen, hinter der zweiten
+die §8-Sätze · vier Label-Breiten (21/36/46/38 px) statt einer Wertspalte.
+**Wurzel:** die Box rief `parts/ErlassUebersicht` — den GETEILTEN Baustein der
+breiten Zone C der Ist-Hülle, dort richtig kalibriert, in 18 rem falsch.
+
+| Nr. | Was gebaut wurde | Beleg |
+|---|---|---|
+| **Ä70** | Steckbrief nach Fedlex' «Allgemeine Informationen»: Label/Wert-Raster (`.lc-v3-steckbrief`, 5 rem + 1fr), EINE Sans-Stimme mit `tabular-nums`, kein `truncate` (Werte brechen um), EINE Haarlinie oben/unten statt Kasten und Zwischenüberschrift, 4-px-Raster. Ruhezeile **3 → 1** Zeile (der Stand wandert in die Liste). Auswahl neu als reine Funktion `v3/uebersichtAngaben.ts`, die Komponente rendert nur | `leser-v3-uebersicht` (Vitest 16 · e2e 9) |
+| **Ä71** | Fassungs-Kennung gestrichen: in Datumsform derselbe Wert wie der Stand in anderer Notation (§5), in Hash-Form an **1231 von 1469** Erlassen (84 %) — Maschinen-Provenienz, keine Leser-Auskunft; §7 Bst. d trägt die Drift-ERKENNUNG, nicht der abgedruckte Hash | `leser-v3-uebersicht.test` |
+| **Ä72** | Zweite Klappe «Mehr zu diesem Erlass» weg — die vier §8-Sätze (Erfassungsgrad, Etikett-Entwurf, fehlende amtliche Gliederung, Teilerfassungs-Beleg) stehen jetzt offen. Ein Ehrlichkeits-Hinweis hinter zwei Klicks ist keiner (§8) | `leser-v3-bauteile`, e2e |
+| **Ä74** | `nurErlassdatum` verlangte «(Stand am …)» und liess die kantonale Form «(Stand …)» durch: **1182 von 1420** Sidecars zeigten den Stand zweimal untereinander (BS-640.100: «Vom 12. April 2000 (Stand 1. Januar 2026)» über «Stand 01.01.2026»). Wurzel-Fix in der EINEN geteilten Ableitung — wirkt in beiden Hüllen | `gesetz-leser-uebersicht-s6`, e2e Ä74 |
+
+**Nachher, gemessen** (dieselbe Reihe, `mass.mjs`): Ruhezeile **3 → 1** Zeile an
+allen fünf · Schriftfamilie in der Box **`Geist Mono Variable` → `Geist
+Variable`**, und zwar als EINZIGE · gekappte Werte **je 0** (vorher 1–2 je
+Erlass) · Klapp-Ebenen im Inneren **1 → 0** · «massgeblich ist …» an der StPO
+**2 → 1**, an den übrigen vier **1 → 0** (der Grundhinweis ist weg, der
+Erlass-Kopf trägt ihn). **Ehrlich zum Preis:** die aufgeklappte Box wird höher —
+StPO 270 → 350 px, LugÜ 219 → 249, VMWG 219 → 230, ZH-211.11 219 → 231, BS-640.100
+219 → **399**. Das ist kein Nebeneffekt, sondern der Gegenwert: nichts wird mehr
+abgeschnitten (BS' Sachgebiet allein war 414 px Verlust), und die §8-Sätze stehen
+nicht mehr hinter einer zweiten Klappe. Der Ruhezustand — der Normalfall — ist
+dagegen **kürzer** als vorher.
+
+**Zwei Befunde, die erst die BESTEHENDEN Tore gefunden haben** (§6.7 in Aktion,
+beide in dieser Etappe behoben):
+- Das Zeilen-Etikett hiess zuerst **«Gliederung»** — der Ä10-Wächter
+  (`leser-v3-auskunft`, «das Gliederungs-Blatt sagt ‹Gliederung› genau einmal»)
+  wurde davon rot, gemessen **2×**. Zu Recht: im Handy-Blatt benennt der
+  Blatt-Kopf bereits die Zone. Ein Zeilen-Etikett darf einen Zonen-Namen nicht
+  zurückholen ⇒ heisst jetzt **«Aufbau»**. Der Wächter blieb unangetastet.
+- `leser-kopf-cls-s3` hing an `getByText(…).first()` — also der ersten Fundstelle
+  IRGENDWO. Seit die Box denselben Satz nimmt wie der Kopf (§5), traf `.first()`
+  die **zugeklappte** Box, deren Treffer `hidden` ist ⇒ Timeout in beiden Hüllen.
+  Anker jetzt `header:has(h1)`: gemessen genau EIN Treffer je Hülle (von zwei
+  `<header>` der Seite), und der Erlass-Kopf ist der einzige Kopf mit einer H1.
+  Enger, nicht weiter. *(Zwei eigene Fehlversuche stehen im Spec-Kommentar:
+  `header` `.first()` = App-Kopfzeile; `.lc-leser > header` = nur die Ist-Hülle.)*
+
+**Ein Rest, der bewusst stehen bleibt.** Weil Box und Kopf jetzt denselben
+Wortlaut führen, steht der Warnsatz auf dem Ankunfts-Bildschirm **zweimal
+identisch** — vorher zweimal VERSCHIEDEN. Das ist die bessere von zwei schlechten
+Lagen (§5: ein Sachverhalt, ein Wortlaut), aber keine gute: den Satz zu kürzen
+hiesse einen dritten Wortlaut zu erfinden (der Auftrag verbietet es ausdrücklich),
+ihn aus der Box zu nehmen kehrte den Ä28-Entscheid um. **Empfehlung für David:**
+in H4, wenn Kopf und Leiste ohnehin neu verteilt werden, trägt ihn nur noch der
+Kopf.
+
+**Nachführung Ä5 / Ä10 / Ä28.** Ä5 (entrahmt, hängendes «·» weg) gilt unverändert
+und ist durch Ä70 **vollendet**: die letzte Linie im Inneren und die letzte
+gestapelte Fläche sind weg. Ä10 (Handy-Überlauf, damals «nicht reproduzierbar»)
+ist jetzt **gemessen bewacht** — @390 im Gliederungs-Blatt gilt
+`scrollWidth − clientWidth ≤ 1` für Box UND Blatt. Ä28 (Warnung doppelt) war bis
+hierher nur halb erledigt: B5 entfernte den zweiten Warn-Satz, der Grundhinweis
+mit demselben Schluss-Halbsatz blieb stehen — jetzt steht der Sachverhalt in der
+Box **genau einmal**, im Wortlaut des Erlass-Kopfs (`nichtKonsolidiertSatz`,
+S3/F5) statt in einem zweiten eigenen.
+
+**Der Doppelungs-Entscheid** (der Auftrag verlangt ihn ausdrücklich): Die
+Rechtfertigung «die Box hält fest, was der Kopf beim Scrollen verliert» ist
+**nachgeprüft falsch** — die Box steht ausserhalb des klebenden Blocks und
+scrollt selbst weg (Kap. 4b; `leser-v3-seitenleiste-ordnung` (b) misst genau
+das). Wer tief in Art. 429 liest, hat weder Kopf noch Box. Also: **Kopf** =
+welcher Erlass, wie aktuell, wo die amtliche Fassung. **Box** = woher er kommt
+und wie er gebaut ist. Gestrichen, weil der Kopf es im selben Bild sagt:
+Grundhinweis, Standausweis-Satz, Umfang-Zeile. Bewusst geblieben trotz
+Teil-Dopplung: die Datums-KETTE Erlassdatum → In Kraft seit → Stand — im Kopf
+eine «·»-Kette, hier Fedlex' Chronologie und der Grund, eine Steckbrief-Liste
+überhaupt aufzuklappen.
+
+**Zwei erklärte Abweichungen.** (1) Der Auftrag nennt «Sans 13 px»; gebaut ist
+`body-s` (14 px) — die Haus-Skala hat für die Leiste keine 13er-Stufe, und
+`leser-rand` (13 px) ist die Marginalien-Rolle des Lesekörpers; sie zu borgen
+gäbe einem Token eine zweite Bedeutung (§5, so auch der Kommentar in
+`tailwind.config.js`). (2) Fedlex richtet Werte rechts aus; hier linksbündig —
+nach der Label-Spalte bleiben rund 184 px, und ein umbrechender Wert liefe
+rechtsbündig mit ausgefranstem linkem Rand.
+
+**Rot-Beweis (§6.7).** Vitest: sechs gleichzeitige Sabotagen (Stand zurück in die
+Ruhezeile · Stand-Guard entfernt · Fassungs-Kennung zurück · Grundhinweis zurück
+· zweite Klappe zurück · `aufgehoben`-Grenze entfernt) ⇒ **12 von 42** Fällen
+rot, danach 42/42 grün. Browser: `dd` auf `nowrap/ellipsis` (der Ist-Zustand vor
+Ä70) + Raster auf `auto 1fr` ⇒ **5 von 9** rot, gemessene Kappung Erlassgeber
+15/79/157 px, Sachgebiet 414 px, Wertkanten 227 **und** 246 px. Ä74 zusätzlich
+gegen den Build VOR dem Fix rot gesehen. §6.3-Deklaration: `leser-v3-bauteile`
+ist neu gefasst (die Box ist kein `children`-Behälter mehr) — alle vier
+bestehenden Zusagen Zeichen für Zeichen erhalten, keine gelockert, zwei neu dazu.
+
+**Offen, bewusst nicht hier gebaut.**
+- **Ä73** — keine Höhen-Reservierung für die Warn-Zelle. Die Box liegt im Aside,
+  die CLS-Sonde misst die Lesespalte; eine Reserve bräuchte die vier
+  Fenster-Messwerte, die der Kopf mit `kopf-stand*` hat — ein einzelner geratener
+  Wert wäre schlechter als keiner.
+- **Ä75 — «SR» an kantonalen Erlassen (wartet auf David, §7).** Gezählt über
+  `register.json`: **1187** Erlasse ohne Präfix im `sr`-Feld bekommen ein hart
+  kodiertes «SR » vorangestellt — davon nur 230 Bund, also **957 kantonale**
+  Erlasse tragen die Bezeichnung der *eidgenössischen* Systematischen
+  Rechtssammlung. Weitere **275** führen ihr eigenes Präfix im Feld und lesen
+  sich darum «SR LS 211.11» / «SR bGS 1.1» (34 Präfix-Varianten über alle
+  Kantone). **Nicht in dieser Etappe gefixt und ausdrücklich nicht geraten:** die
+  richtige Sammlungs-Bezeichnung je Kanton ist eine amtliche Angabe (§7, Quelle +
+  Stand) und braucht Davids fachliche Abnahme. Sie betrifft ausserdem den
+  geteilten **Erlass-Kopf** (S3, in diesem Auftrag tabu) und `helpers.baueZitat`
+  — «Art. 7 OR, SR 220 (Stand …)» ist die Zitierform, die Nutzer kopieren. Ein
+  Alleingang in der Box hätte zwei verschiedene Bezeichnungen für dieselbe Nummer
+  nebeneinander auf einen Bildschirm gestellt.
 
 ---
 
@@ -1448,6 +1584,123 @@ Inline-Box des `<button>`, bewiesen per DOM-Chirurgie (Ersatz durch echte Inline
    77 ch darüber (WCAG 80 ch hält überall). Entweder `max-w-normtext` wird für die
    17-px-Stufe schmaler, oder die Hausdecke geht bewusst auf 80.
 
+### ✅ Vollzugsvermerk A-2 Leisten-Verschmelzung (17.8.2026, David-Auftrag)
+
+**Auftrag** (wörtlich): «beachte dass wir jetzt oben einen header haben mit
+ähnlichem inhalt … und darunter … passe das entsprechend sinnvoll an». Damit ist
+die H1-Abweichung **A-2** («Zwei Leisten statt einer», Preis 37 px) eingelöst.
+
+**Erweiterungspunkt, kein Sonderfall:** `KopfDaten.kopfzeileSelbst`
+(`components/layout/InhaltsKopfKontext.ts`). Meldet eine Inhaltsseite das Feld,
+zeigt `InhaltsKopf` keine Leiste mehr und `PaneKopf` (`nurSteuerung`) gibt seinen
+Identitäts-Teil ab. `layout/**` erfährt **nichts** über V3 (FL-1); wer nichts
+meldet, bekommt die Leiste unverändert (FL-4, eigene Sonde). Gemeldet wird der
+eine, datenunabhängige Satz im Einsprungspunkt `GesetzLeserV3.tsx` — der Rahmen
+ist `lazy`, seine Meldung käme zu spät.
+
+**Was wohin wanderte:** Krume **Gesetze › Bund › StPO** (ganze Kette, klickbar,
+aus `erlassAnsicht.brotkrume` — dieselbe Funktion, die sie vorher an die Leiste
+meldete; Kanton «Gesetze › Kanton BS ›», Staatsvertrag «International») ·
+Ortsangabe «Art. N» · Ansicht ▾ · ✕. **Nicht** mitgewandert: der **Stand** (steht
+seit S3 im Erlass-Kopf; ihn zu wiederholen wäre eine zweite Wahrheit, §5 — er ist
+damit nicht mehr klebend, aber ohne Scrollen sichtbar, NM-3 geprüft) und das
+App-✕ «zur Startseite» (die Topbar trägt die App-Navigation).
+`kopfElemente.sektion` → `krume`; der Melde-Effekt in `v3/leserV3Modell.ts` ist
+**gestrichen** (§17: nach dem Wegfall der Leiste hatte keine der drei Angaben
+noch einen Leser).
+
+**Chrome-Gewinn, gemessen an StPO** (Ruhe, Kopf-Unterkante = Beginn der
+Lesefläche): **D @1440 159 → 121 px (−38, −24 %)**, `--nt-stick` 156 → 120 ·
+**H @390 195 → 157 px (−38, −19 %)**, Anteil der Fensterhöhe 23.1 % → 18.6 % ·
+Kanton BS-640.100 identisch · V1 unverändert (Krume 65…102, Textbeginn 835 px).
+**Split:** Gewinn 0 px — die Pane-Titelleiste (36 px) bleibt, weil sie die
+FENSTER-Steuerung trägt (⠿ ◂▸ ⇱ ⧉ ✕), die keine Inhaltsseite tragen kann; sie
+verliert nur ihren Inhalt.
+
+**Der Sprung, der dabei entstand — und sein Wurzelfix:** die Route ist `lazy`, die
+Shell rät bis dahin aus dem Pfad (`kopfVonPfad`). Fiel die Leiste bei der Meldung
+auf 0 px, rückte `main#inhalt` 102 → 65 px hoch (Shift 0.0238; CLS 0.0309 gegen
+0.0048 in V1) und das **Bestands-Tor `leser-kopf-cls-s3` riss v3 @390 mit 0.0573
+gegen 0.05**. Nullprobe auf `afc008c19` reproduzierte die Ausgangswerte exakt.
+Fix: das Band der Leiste **bleibt reserviert** (transparent, `pointer-events-none`),
+der Leser-Kopf verschluckt es über `--leser-v3-app-band` — sichtbar gewonnen sind
+die 37 px trotzdem, gesprungen ist nichts (nachher CLS 0.0064–0.0071 @1440;
+`leser-kopf-cls-s3` v3 0.0089 @1280 / 0.0168 @390).
+
+**Rot-Beweise (§6.7), fünf, alle gesehen:** `kopfzeileSelbst`-Zweig entfernt ⇒ 3
+e2e-Fälle rot · `nurSteuerung` ignoriert ⇒ Split-Fall rot («⠿ StPO · Stand …») ·
+`krume: false` ⇒ Kanton-Fall rot · Meldung in `GesetzLeserV3` gestrichen ⇒ (a) rot ·
+Vitest-Sonde mit beiden Zweigen entfernt ⇒ 3 von 5 rot. **Nachgezogen** (§6.3,
+deklariert, nie gelockert): `leser-v3-ortsangabe` misst jetzt Chrome gegen TEXT
+statt Chrome gegen Chrome (schärfer), `leser-v3-kopf-buendig` (a)/(b) nehmen die
+Topbar als Bezugspunkt. **Bilder** vorher/nachher (D/H/Split/Kanton, hell):
+`docs/ux-audit-2026-07/reader/leser-v3-krume/`.
+
+**Ä-Tabelle nachgeführt:** **Ä45** (Doppelkrume) **erledigt** — @1440 eine
+`nav`-Krume statt zwei. **Ä46** (zwei ✕ je Pane) **teilweise**: Einzelansicht
+**1 statt 2**; im Pane bleiben zwei, weil sie Verschiedenes tun («Gesetz
+schliessen» vs. «Fenster schliessen») und eine Inhaltsseite ihr eigenes Fenster
+nicht schliessen kann — sie stehen jetzt in klar getrennten Kontexten
+(Griffleiste vs. Inhalt) und tragen verschiedene Accessible Names. **Ä9-Rest**
+(globaler Schriftregler im Leser) **bleibt offen** — er sitzt in der Topbar, nicht
+in der abgelösten Leiste; **Ä33/Ä34** unberührt. Alle drei bleiben H4.
+
+### ✅ Nachzug David-Befunde 17.8.2026 abends (B1–B3), Branch `fix/leser-v3-david-17-8`
+
+Drei Live-Befunde am Prod-Stand `afc008c19` unter `?leser=v3`. Alle drei zuerst
+**gemessen**, dann gefixt; neue Punkte **Ä67–Ä69 + Ä76** (Ä61–Ä66 sind S2).
+
+**Nummernkreis (korrigiert bei der Integration 17.8.).** Dieser Zweig und der
+Übersichts-Zweig liefen parallel und vergaben beide **Ä70**: hier «Suche ohne
+Gliederung», dort der Steckbrief (Ä70–Ä75). Der Übersichts-Kreis bleibt, wie er
+ist — er ist zusammenhängend belegt; der Punkt DIESES Zweigs ist auf **Ä76**
+umnummeriert (Code, Specs und Tabelle unten). Es gibt seither genau ein Ä70.
+
+| # | Befund (Wortlaut David) | Ursache, gemessen | Fix |
+|---|---|---|---|
+| **B1 / Ä76** (bis 17.8. «Ä70») | «wenn die gliederung ausgeblendet ist funktioniert suche nicht mehr resp. resultat ist versteckt. andere lösung finden» | Der `trefferListe`-Zweig der Lesespalte hing an `!zweiSpalten` und traf damit die **eingeklappte** Spalte — ein Zweig, der etwas anderes tat als sein Kommentar («Rand-Fall ohne Leiste»). Die Liste lag @1440 **und** @1024 inline über dem Lesetext: **y = 755, Höhe 3596 px**, also unter der Falz, und schob den Gesetzestext um 3,6 Bildschirmhöhen nach unten | Trefferliste als **Blatt am Suchfeld** (`v3/LeserTrefferBlatt.tsx`, 18 rem, `max-h 50dvh`, kein Scrim, Esc/✕, Zähler-Zeile führt zurück). Der Inline-Zweig ist **gestrichen**, nicht verengt: `hatLeiste` ist `eintraege.length > 0`, der angekündigte Rand-Fall ist unerreichbar (§17) |
+| **B2 / Ä68+Ä69** | «wenn änderungsvermerke abgewählt wird dann verschwinden auch fussnoten» | `[data-histansicht=aus]` blendete `[data-fn-klasse="A"]` und den A-only-Apparat aus. `kl:'A'` ist beim Bund die **Regel**: StPO Apparat-Einträge sichtbar **285 → 98**, Marker **285 → 105**; ZGB **809 → 90** bzw. **809 → 173**. Der Schalter war faktisch ein zweiter Fussnoten-Schalter (§8) | **Entkoppelt** (Entscheid David): Fussnoten-Schalter trägt Marker + Apparat **aller** Klassen, Vermerke-Schalter **nur** `[data-hist-slot]`. Ä27-Hinweis samt `hinweis`-Slot gestrichen — die erklärte Kreuz-Abhängigkeit gibt es nicht mehr |
+| **B3 / Ä67** | «um das suchfeld erscheint bei klick darin ein braun umrundetes feld dass abgeschnitten ist» | `outline` liegt aussen (`offset 0`): Ring x = **182…466**, Clip `[data-v3-leiste-scroller]` (`overflow-x: hidden`) beginnt bei **184** ⇒ linke Kante **2 px abgeschnitten**, hell wie dunkel; gescrollt trifft es die obere Kante | `outline-offset: -2px` — der Ring liegt vollständig **im** Element und kann von keinem Vorfahren mehr beschnitten werden (Wurzel statt Umschiffung, §17). Höhen der Kopf-Zone unberührt: `outline` nimmt nie Platz |
+
+**Warum B1 ein Blatt und keine aufziehende Spalte:** die zweite Option wurde
+**gemessen verworfen** — das Grid wechselt `2.25rem → 18rem`, der zentrierte
+Satzspiegel wandert @1440 um **126 px** seitwärts, und zwar beim Tippen und bei
+Esc wieder zurück. Genau diesen Sprung hat David am 16.8. gerügt. Das Blatt liegt
+`absolute` und verschiebt den Lesetext um **0 px** (Spec (e) misst es).
+
+**Die Anbieten-Regel bleibt — gemessen, nicht geschlossen.** Korpus 17.8. (1420
+Sidecars gegen 205 Shards mit Einträgen): **0** Erlasse tragen `kl:'A'` ohne
+Fassungszeile, die `kl:'A'`-Bedingung überanbietet also heute nirgends. Neuer
+Wächter in `aenderungsvermerke-schalter.test.ts` wird rot, sobald das kippt.
+
+**Deklarierte fachliche Änderungen (§6.3), beide in BEIDEN Hüllen** (die Regeln
+hängen an `.lc-leser`, nicht am Flag — sonst zwei Bedeutungen für ein
+Steuerelement, §5/FL-1): die A-Zusicherungen in `hist-ansicht-w25i` sind
+**umgekehrt**, jede als zweiseitige Sonde, dazu neu die **2×2-Matrix** über Bund
+(BGBM) und Kanton (BS-640.100); `leser-optionen` prüft statt des Ä27-Hinweises
+dessen Abwesenheit **plus** die Unabhängigkeit selbst. Nachtrag in
+`bibliothek/normen/hist-ansicht-h0-trennbarkeit.md` §7.4a — H0-Auflage 1 gilt
+jetzt für **jede** Klasse, ist also strenger erfüllt als zuvor.
+
+**Wartet auf Davids Auge (kein Test entscheidet das, §8):** das Blatt liegt als
+Overlay über dem LINKEN Rand des Satzspiegels. Gemessen über fünf Breiten:
+**38 px = 6 %** der Zeilenbreite ab 1280 (Lücke neben dem Text 250 px, Blatt
+288 px), **86 px = 13 %** bei 1024. Der rechte Rand bleibt überall frei (Spec
+(b) misst das). Schmaler zu werden ist möglich, aber nicht gratis: 18 rem ist die
+Breite, auf die die Trefferliste typografisch eingestellt ist (Ä15/Ä30 haben den
+Zähler-Umbruch genau dort gelöst), und unter ~15 rem kehrt die abgeschnittene
+Kernauskunft zurück. Die Alternative ohne jede Überlappung wäre die aufziehende
+Spalte — und die kostet 126 px Textbewegung. **Empfehlung: so lassen**, das Blatt
+ist mit ✕ und Esc in einer Geste weg.
+
+**Rot-Beweise (§6.7), am Vorzustand gesehen:** 15 von 28 Fällen rot — u. a.
+«Vermerke=aus nimmt Apparat-Zeilen mit — Expected 29, Received 8» (BGBM) ·
+«A-Marker 0 verschwindet mit den Änderungsvermerken» · «Ring links um 2 px vom
+Clip ‹data-v3-leiste-scroller› beschnitten» (hell **und** dunkel) · «Trefferliste
+fehlt ganz — Expected 1, Received 0». Ein Fehlschlag war **Prüfmechanik statt
+Sache** und ist protokolliert: die gescrollte Leiste kam nur 55 px weit (Baum
+eingeklappt), die Spec klappt jetzt erst auf und sichert die Scrollbarkeit positiv.
+
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
 | Punkt | Regel |
@@ -1456,6 +1709,110 @@ Inline-Box des `<button>`, bewiesen per DOM-Chirurgie (Ersatz durch echte Inline
 | Beweis | Die Ersparnis wird als **Zahl aus `check:perf-budget`** ausgewiesen (Daten-Nutzlast gzip, das Tor führt die Bezugs-Shards bereits als eigene Budget-Zeile) — vorher/nachher im PR, keine Behauptung. |
 | **SEO-Prüfpunkt (harte Grenze)** | Der **Prerender behält die Bezüge serverseitig im HTML** — nur der Browser lädt nach. Grund: `scripts/prerender.ts` schreibt das SEO-HTML aus Manifesten und Snapshots, unabhängig von der Hülle; würde das Nachladen dort durchschlagen, verlöre jede Erlass-Seite ihre Verzahnung für Suchmaschinen. |
 | Wächter | Neuer Test `leser-v3-prerender-bezuege`: das **prerenderte** HTML einer Erlass-Seite enthält die Bezüge weiterhin (Vitest gegen die Prerender-Ausgabe bzw. e2e mit deaktiviertem JS), zusätzlich `check:seo-index` grün. Ohne diesen Test wird H3 nicht abgenommen. |
+
+### ✅ Vollzugsvermerk H4-VORBEREITUNG (17.8.2026, Branch `feat/leser-v3-h4-vorbereitung`)
+
+**KEIN Flip.** Der Fassaden-Default bleibt V1, `playwright.config.ts` unverändert.
+Gemessen wurden die Flip-Kriterien, gebaut wurden A-8 und ein Flaker-Wurzelfix.
+Voller Bogen mit allen Rohdaten: `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md`.
+
+| Kriterium | Ergebnis |
+|---|---|
+| N-Tests unter Flag | ✅ Projekt `leser-v3` 110 passed / 1 skipped / Exit 0; Gegenprobe `chromium` über N + die vier B-Specs + die zwei S1-Specs 77 passed / Exit 0 |
+| `leser-kopf-paritaet` | ✅ grün im Flag-Projekt (9.6 s) |
+| PX | ✅ unter Ruhe-Bedingung: Branch 3/3, Basis `a516f12ef` 3/3. Direkt nach einem 8-Worker-Lauf 2/5 mit 3× 1869 px auf dem **V1**-Arm — die von S2 dokumentierte Rasterungs-Signatur. Nullprobe negativ, also kein A-8-Effekt, aber ein offener Lastfall |
+| **NM** | ❌ **NM-2 verschlechtert.** D/S je +1 Bedienschritt (Panel statt Zeile am Artikel, Pos. 12); auf **H per Tap gar nicht mehr erreichbar** (0 Öffner, 0 Randlasche, nur Taste «r»). NM-1 dagegen −1 Schritt auf S **und** H, NM-3 auf D erstmals erreicht |
+| CLS | ✅ V3 in allen vier Zellen besser (StPO D 0.0337→0.0207 · H 0.0205→0.0192 · BS-640.100 D 0.0475→0.0315 · H 0.0064→0.0044; Median, n=5, kalt) |
+| axe | ✅ 0 critical/serious in 20 Kombinationen (5 Erlasse × V1/V3 × hell/dunkel) |
+| Kantons-/Bund-Probe | ✅ BS-640.100, ZH-211.11, StPO, VMWG, LugÜ unter `?leser=v3`, je 0 Konsolenfehler |
+| drei Flaker | ⚠️ 1 von 3 mit belegter Wurzel behoben (s. u.), 2 von 3 lokal nicht reproduzierbar (0/65 unter 8-Worker-Last) — kein Blindfix (§0 Ziff. 2) |
+
+**A-8 teilweise erledigt.** `v3/useElementBreite.ts` ist die eine Quelle für
+Schwellen und Messung, `kopfStufen.ts` leitet weiter (byte-gleich, Rot-Beweis
+zweistufig). Die 1024er-Spaltenentscheidung bleibt bewusst an `istXl`: das
+Rahmen-Element ist 48 px schmaler als das Fenster und ab 1120 px auf 1072 px
+gedeckelt — eine Umstellung verschöbe die Spaltengrenze auf Viewport 1072
+(Details in Kap. 12 A-8). Das ist Ä60 und wartet auf David.
+
+**Ä24-Wurzel gefunden.** Nicht (nur) die Seite ist langsam, sondern die Abfrage:
+`getByRole('button',{name:'Ansicht'})` berechnet auf dem OR für 13 518 Knöpfe den
+zugänglichen Namen. A/B, gleiche Wartebedingung: warm 4.2 s gegen 1.0 s; **4×
+CPU-Drossel 28.2–29.1 s gegen 17.8–19.9 s, also 5/5 über dem 20-s-Budget gegen
+0/5**. Fix: `e2e/helpers/leserBereit.ts` (Attribut statt Rolle+Name), angewendet
+nur in `leser-ohne-gliederungslinie`. Rest ehrlich: 1.2 s Luft, der verbleibende
+Term ist der OR-Erst-Render und gehört zu `QS-PERF`. **Acht weitere Specs tragen
+dieselbe teure Wartung** — Liste im Bogen, bewusst nicht angefasst.
+
+**Messbedingung, die man kennen muss:** auf derselben Maschine liefen drei fremde
+Agenten-Sessions (`LexMetrik-fix`, `-krume`, `-uebersicht`); die lokalen
+Kontentions-Läufe kippten dadurch die Arm-Reihenfolge und sind nicht belastbar.
+Belastbar ist nur die prozessinterne 4×-Drossel-Messung.
+
+**Vor dem Flip zu erledigen:** NM-2 auf H (Blocker) · Ä60 · Ä46 zwei ✕
+(Rest: im Pane) · B-Spec-Umhängung (sonst Timeout-Hänger statt roter Tests).
+*(Nachzug 17.8. abends: **Ä45 Doppelkrume** ist hier gestrichen — sie ist mit A-2
+erledigt, s. Kap. 7. Die Liste führte sie weiter, während der A-2-Vermerk sie
+abhakte; es gilt der A-2-Stand.)*
+
+### ✅ Integration der vier Nachzüge (17.8.2026, Branch `feat/leser-v3-nachzug-17-8`)
+
+Basis `afc008c19` + vier parallel gebaute Zweige (`-krume` A-2 · `-h4` A-8 ·
+`fix/…-david-17-8` Ä67–Ä69/Ä76 · `-uebersicht` Ä70–Ä75). Textuell konfliktfrei;
+gesucht wurden die **Wechselwirkungen**, die kein Zweig allein zeigt.
+
+| Wechselwirkung | Befund | Fix |
+|---|---|---|
+| **Krume × Fix** (gefunden, rot) | Fundament-Sonde «der Adapter ist der grösste Baustein»: `fix` hob `LeserRahmenV3.tsx` 399 → **416**, `krume` senkte `leserV3Modell.ts` 419 → **416**. Auf beiden Zweigen grün, zusammen Gleichstand — den entscheidet die Sortierung alphabetisch gegen den Rahmen | Naht der beiden Zuflüsse nach `v3/suchZoneAufbau.tsx` ausgelagert (reine Funktion, Muster `FruehAnsicht` — kein Komponenten-Rand, `useTrefferBlatt` bleibt im Rahmen und behält seinen Zustand). Rahmen **404**, Sonde unverändert (MAX_ZEILEN 420) |
+| **Krume × H4** | `kopfStufen` (`sektion` → `krume`) gegen `useElementBreite` | grün ohne Eingriff: `leser-v3-kopfstufen` + `leser-v3-elementbreite` (Vitest), `leser-v3-eine-kopfzeile` + `leser-kopf-buendig` (e2e) |
+| **Krume × Übersicht** | Box-Position unter dem klebenden Block | grün: `leser-v3-seitenleiste-ordnung`, `leser-v3-uebersicht` |
+| **Fix × Übersicht** | «Blatt am Feld deckt die Box» ist **konstruktiv unmöglich**: das Blatt am Feld setzt `suchZoneKlebt` voraus, also keine Spalte — dann ist die Box gar nicht im DOM. Ä28-Warnung steht weiterhin genau einmal | kein Eingriff nötig |
+| **alle × PX / CLS** | Kopfhöhe −38 px verschiebt die Messposition | PX 2×2 grün (Text-Kern phasengleich), `leser-kopf-cls-s3` grün — keine Baseline angefasst |
+
+Tore am Stand: `gate` 0 · testtreue/e2e-shards/design-tokens/schlankheit/
+perf-budget je 0 · golden **256 byte-gleich** · e2e 335 (chromium) + 110/1
+skipped (leser-v3) + 47 (schwer) + 2×2 (PX) grün.
+
+### ✅ Nachzug nach drei Prüfern (Nachzug 17.8. abends)
+
+Drei unabhängige Prüfer (Ästhetik · Architektur · Bug-Check) über den
+Integrationsstand `05f2b6728`. **Noten: Ästhetik 7/10, Architektur 8,5/10.**
+Gebaut wurde nur, was vor dem Merge stehen muss; alles übrige ist unten
+eingetragen und wartet auf H4.
+
+| # | Befund | Fix |
+|---|---|---|
+| **V1** (Bug 2) | Die Fassade meldete `kopfzeileSelbst` UNBEDINGT — auf den drei Wegen, auf denen der Rahmen früh zurückkehrt (Fehlseite · pdf-embed · nur-live-link), rendert sie aber nie eine Kopfzeile. Reproduziert an `/gesetze/bund/EMRK`, `/gesetze/bund/DSGVO`, `/gesetze/bund/GIBTSNICHT` je mit `?leser=v3`: **null Krumen, null ✕** — eine Seite ohne Weg zurück | `v3/useKopfAnspruch.ts`: die Meldung ist RESERVIERUNG (sie muss datenunabhängig sein, sonst kehrt der 37-px-Sprung zurück) und wird zurückgenommen, sobald `FruehAnsicht` etwas BLEIBENDES liefert. `meldeInhaltsKopf(null)` ⇒ die Shell fällt auf `kopfVonPfad()` zurück, also auf das V1-Bild — keine zweite Krumen-Ableitung (§5). Der Lade-Platzhalter zählt ausdrücklich nicht dazu. Spec `leser-v3-eine-kopfzeile` (i) |
+| **V2** (Bug 3) | `kopfElemente.krume` war ein `boolean`: unter **900 px Elementbreite** (Handy @390, JEDES Pane unter 900) fiel die Krume ganz. Bis A-2 fing die App-Leiste das auf, seither war das ✕ der einzige Weg nach oben — und es springt an der Ebene vorbei | `krume: 'voll' \| 'kurz'` — die Kette schrumpft auf EINEN klickbaren Rücksprung «‹ Gesetze» aus derselben Quelle (`erlassAnsicht.brotkrume`). Kein dritter Wert «weg»: `leser-v3-kopfstufen` prüft über jede Breite 280–2000 px, dass eine Krume steht. Kopfzeile unverändert ≤ 4 Elemente, Suchfeld bleibt oberstes sticky Element. Specs `leser-v3-eine-kopfzeile` (b2)/(h) |
+| **V3** (Arch 4) | Fahrplan-Kollisionen: die Flip-Blocker-Liste des H4-Bogens führte **Ä45 Doppelkrume** weiter, während der A-2-Vermerk sie abhakte; **Ä9-Rest** stand einmal als «fällt mit A-2» und einmal als «Kopplung erledigt» | Je EINE Wahrheit, **A-2-Stand gewinnt**: Ä45 erledigt · Ä46 teilweise (Split offen) · Ä9-Rest offen für H4, **unabhängig** von A-2. Nachgeführt in Ä-Tabelle, A-2-Vermerk, Flip-Liste UND `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md`. Ä85 (Ä70 doppelt) nachgeprüft: keine Restnennung — alle Ä70-Treffer betreffen die Übersichtsbox |
+| **V4** (Arch 2/3) | Toter Export `spalteFuer()` (null Aufrufer seit A-8) · `expect(SCHWELLE_SPALTE).toBe(1024)` war eine Tautologie — die Zahl gegen sich selbst | `spalteFuer` **gestrichen statt bewacht** (§17). Die Tautologie ist eine **Quellensonde** gegen `inhalt-zustand.tsx` (`PANE_BREIT_PX` **und** die `matchMedia`-Zahl, beide mit Positiv-Sonde): verschiebt die Ist-Hülle ihre Schwelle, wird der Test rot statt die deklarierte Doppelung still auseinanderlaufen zu lassen |
+| **V5** (Ä78) | Bei OFFENEM Treffer-Blatt sagte die Zähler-Zeile am Feld «N Artikel · M Fundstellen · Treffer anzeigen →» und der Listenkopf zwei Zentimeter darunter dasselbe — dazu ein Knopf, der ein offenes Blatt öffnet | Die Zähler-Zeile schweigt, solange das Blatt offen ist (EIN Ausdruck speist Blatt und Schweigen, `suchZoneAufbau`). Kein Layout-Sprung: die Zonen-Höhe hängt am SUCH-Zustand, nicht am Blatt — B9-Wächter unberührt. Spec `leser-v3-suche-ohne-gliederung` (a), in beide Richtungen |
+| **V6** (Ä77) | Gliederung einklappen @1440: der klebende Block wächst **121 → 164 px** (er übernimmt die Such-Zone), die Scroll-Position bleibt — `#art-429` lag danach HINTER dem Kopf. Wer ausblendet, um mehr Text zu sehen, verliert die Überschrift, an der er las | `v3/useStickAusgleich.ts`. **Zwei Fassungen — die erste war falsch und die Spec hat es gezeigt:** «Höhendifferenz wegscrollen» brachte `#art-429` auf y = 76 statt 120, also 44 px zu hoch. Ursache ist Chromiums **Scroll-Anchoring** — der Text bleibt von selbst stehen, der gewachsene Kopf legt sich darüber; genau das war Ä77. Gemessen wird darum der **Abstand** Kopf-Unterkante → gelesener Artikel, vor und nach dem Umschalten, und um seine Differenz gescrollt: stimmt mit UND ohne Anchoring. Nicht `SUCH_H_RUHE` gerechnet (falsch bei verstellter Schriftskala und bei laufender Suche). Ein Weg für alle drei Bedienpunkte. Spec `leser-v3-kopf-buendig` (e), beide Richtungen |
+
+**Nebenwirkung, deklariert (§17 Rückbau):** die Herleitung der gestrichenen
+Erweiterungs-Slots stand im Rahmen zweimal — zusammengeführt, damit die Datei
+unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
+
+#### Für H4 vorgemerkt (Nachzug 17.8. abends — eingetragen, nicht gebaut)
+
+| # | Befund | Wohin |
+|---|---|---|
+| **Ä79** | @1440 mit eingeklappter Gliederung stehen ZWEI ☰ (Kopf-☰ + Schiene) für dieselbe Handlung | H4 |
+| **Ä80** | Steckbrief-Reihenfolge Erlassdatum → In Kraft → Stand; Präposition «vom» steht im WERT statt im Etikett | H4 |
+| **Ä81** | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | H4-Entscheid «nur der Kopf warnt» |
+| **Ä82** | Zwei Linien zwischen Ingress und Sektionskopf | S-Strang |
+| **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | H4 / `layout` |
+| **Ä84** | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | H4 |
+| **—** | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | H4 |
+| **Ä75** | «SR» als Etikett bei Kantonen | **wartet auf David** |
+| **Arch 5** | Etikett «A-2» doppelt belegt | H4 |
+| **Arch 6** | H5-Liste nennt das 37-px-Band der App-Leiste noch als zu entfernen | H4 |
+| **Arch 7** | Treffer-Blatt ohne `usePopoverAutoZu` — Klick daneben schliesst es nicht | **David-Frage** (Beiwerk oder Popover?) |
+
+**Sofort miterledigt (je eine Zeile, keine Bau-Fläche):** Bug 5 Kommentar in
+`LeserTrefferBlatt.tsx` korrigiert · Bug 6 Beispiel-Kommentar `gebiet` in
+`uebersichtAngaben.ts` korrigiert · Bug 7 der §8-Satz «keine amtliche Quelle
+hinterlegt» wiederhergestellt · Bug 8 `APP_BAND_H` 37 → gemessene 36 px
+(`2.25rem`), nur weil `leser-v3-kopf-buendig` grün bleibt.
 
 ### Fenster-Deckel und Flip-Kriterien
 
@@ -1695,7 +2052,7 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 | ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
 | A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **ERLEDIGT** in der Vorprobe dieses PRs. `EntscheidLeser.tsx` setzte `document.title` **ohne** Guard (so steht es bis heute auf `main`, Z. 408–411) — im Split-View trug der Browser-Reiter darum den Entscheid, obwohl das Hauptfenster das Gesetz zeigte (§8: der Reiter log über seinen Inhalt). Der Guard `if (rolle === 'sekundaer') return;` ist ergänzt und liegt unter der Quellensonde `src/tests/tab-titel-paritaet.test.ts`, die BEIDE Leser prüft. Im PR-Body benannt, wie die Zeile es verlangt. *(Selbstkorrektur 16.8.2026: der Vollzugsvermerk notierte hier zuerst «die Parität besteht bereits» — gemessen am Arbeitsbaum statt an `main`, also am Zustand NACH dem eigenen Fix. Der Befund war echt; die Nullprobe gegen die Basis fehlte.)* |
 | **A-7** | **Abweichung, deklariert 16.8.2026 — der Pixelvergleich PX fehlt in H1.** Kap. 10 schreibt ihn «ab H1» vor; H1 liefert ihn NICHT. **Folge: H2.** Begründung: `toHaveScreenshot` ist im Repo bisher nirgends im Einsatz — die Flake-Basisrate eines Pixel-Tors auf diesem CI-Runner ist unbekannt, und ein Tor, dessen Ausfallrate man nicht kennt, erzeugt rote Läufe ohne Aussage (§0 Ziff. 3: Rate immer mit Messbedingung). Dazu kommt, dass die Baseline erst mit der Design-Grundlage **W-3** fachlich feststeht; eine Baseline, die S2 ohnehin neu setzt, in H1 einzufrieren hiesse, zweimal zu messen. In H1 tragen die DOM-Sonden und `check:linien-kanon` die Kern-Grenze. | Offen bis H2 — dort mit gemessener Flake-Rate (Stichprobe gegen die vermutete Rate dimensioniert, kalt **und** warm) |
-| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | Offen bis H4 |
+| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | **TEILWEISE ERLEDIGT 17.8.2026** (H4-Vorbereitung, Branch `feat/leser-v3-h4-vorbereitung`): `src/pages/gesetz-leser/v3/useElementBreite.ts` ist gebaut und trägt die drei Schwellen UND die Messung; `kopfStufen.ts` leitet nur noch weiter (Verhalten byte-gleich, bewiesen über jede Breite 200–2000 px; Rot-Beweis zweistufig in `src/tests/leser-v3-elementbreite.test.ts`). **NICHT angeschlossen — mit Zahl:** der Zwei-Spalten-Entscheid bleibt an `istXl` (Viewport ≥ 1024). Gemessen am gebauten Stand ist das Rahmen-Element bis ~1120 px Viewport konstant **48 px schmaler** als das Fenster und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem): Viewport 640/900/1023/1024/1100/1280/1440 → Rahmen 592/852/975/976/1052/1072/1072. Eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf **1072** — die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**, und der wartet auf David. Rest offen bis zum Flip. |
 
 ---
 

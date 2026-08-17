@@ -45,6 +45,11 @@ import { DeepLinkSkeleton } from './DeepLinkSkeleton';
 // sichtbar (D1 — sie ist ein Rechtswert, kein Zierrat; sie wird leiser gesetzt,
 // nie versteckt). Kein Griff ist weggefallen, keiner ist in ein Menü gerutscht.
 // Höhe unverändert h-9 ⇒ CLS 0 gegenüber dem Vorzustand.
+//
+// ── A-2 (David 17.8.2026): die Leiste ist ABWÄHLBAR. Meldet die Inhaltsseite
+//    `kopfzeileSelbst`, entfällt sie ganz (Herleitung am Feld in
+//    `InhaltsKopfKontext.ts` und am `if` unten). Alles darüber gilt unverändert
+//    für jede Seite, die das Feld nicht meldet.
 
 /** Artikel-Etikett ohne die Wiederholung des Erlass-Kürzels, das direkt davor
  *  in der Brotkrume steht («Art. 212 ZGB» → «Art. 212», wenn die Blatt-Krume
@@ -73,6 +78,48 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
   // Übersicht, auf die auch die Sektions-Krume führt: kein Ziel geht verloren.
   const eltern = daten.breadcrumb.slice(0, letzter).reverse().find((b) => b.to);
   const artikelKurz = kuerzeArtikel(daten.artikel, blatt?.label);
+  // ── A-2 (David 17.8.2026) · EINE KOPFZEILE, NICHT ZWEI ────────────────────
+  // Trägt die Inhaltsseite ihre Kopfzeile selbst (`kopfzeileSelbst`, Herleitung
+  // im Vertrag), zeigt diese Leiste NICHTS mehr — keine Krume, keinen Stand,
+  // kein ✕. Was bleibt, sind die zwei Sprung-Rückmeldungen: sie hängen hier,
+  // weil dieser Kopf die einzige Klammer über allen Inhaltsseiten ist
+  // (Herleitung unten), rendern im Ruhezustand `null` und liegen ausserhalb des
+  // Layoutflusses — sie kosten also nichts, wenn die Leiste schweigt.
+  //
+  // WARUM DER STILLE TRÄGER BLEIBT und nicht ein blankes Fragment: das
+  // `DeepLinkSkeleton` positioniert sich `absolute top-full` an der UNTERKANTE
+  // dieser Leiste (statt über eine addierte Pixelhöhe, die still veraltet). Ohne
+  // Träger hätte es keinen Anker und läge am Seitenanfang; mit einem Träger OHNE
+  // `sticky top-16`/`z` läge es beim Scrollen an der falschen Stelle und unter
+  // dem klebenden Seiten-Kopf.
+  //
+  // ── UND WARUM ER SEINE HÖHE BEHÄLT (gemessen, kein Zierrat) ────────────────
+  // Die erste Fassung liess den Träger auf 0 px zusammenfallen. Folge, gemessen
+  // 17.8.2026 @1440 StPO: die Route `/gesetze/:ebene/:key` ist `lazy`, die Shell
+  // rät bis dahin aus dem Pfad, dass eine Leiste kommt (`kopfVonPfad`) — sagt der
+  // Leser dann «ich trage sie selbst», rückte `main#inhalt` 102 → 65 px hoch. EIN
+  // Layout-Shift von 0.0238, Gesamt-CLS 0.0309 gegen 0.0048 in V1, und das
+  // Bestands-Tor `leser-kopf-cls-s3` (v3 @390) riss seine Schwelle 0.05 mit
+  // 0.0573. Ein gerissenes Tor ist keine Verhandlungssache (§6).
+  // Darum bleibt das BAND reserviert (h-9 + 1 px Kante = dieselben 37 px wie die
+  // laute Leiste): im Fluss oberhalb des Inhalts wandert dann nichts. SICHTBAR
+  // gewonnen sind die 37 px trotzdem, weil der Leser-Kopf sich darüberlegt — er
+  // verschluckt das Band zusätzlich zur Wrapper-Polsterung (`--leser-v3-app-band`,
+  // gesetzt in `pages/gesetz-leser/v3/leserGeometrie.ts`; Kopf-Unterkante
+  // 159 → 122 px). Kein Kasten springt, die 37 px liegen hinter einem opaken Kopf.
+  // `pointer-events-none`, weil das Band mit höherem z über der oberen Hälfte
+  // jenes Kopfes liegt und Klicks auf Krume und Griffe sonst schluckte; die zwei
+  // Rückmeldungen holen sich die Klickbarkeit selbst zurück (beide tragen
+  // `pointer-events-auto` an ihrem bedienbaren Element).
+  if (daten.kopfzeileSelbst) {
+    return (
+      <div data-inhalt-kopf-still
+        className="pointer-events-none sticky top-16 z-[19] h-9 border-b border-transparent">
+        <RuecksprungChip />
+        <DeepLinkSkeleton />
+      </div>
+    );
+  }
   return (
     // Klebt unter der Topbar (sticky top-16 = 4rem), bleibt beim Scrollen sichtbar
     // (damit der Live-Artikel mitläuft). z ÜBER den Inhalts-Sticky-Leisten (Suche

@@ -154,4 +154,45 @@ describe('B3 an den echten Sidecars', () => {
       expect(bietet('bund', key), key).toBe(false);
     }
   });
+
+  // ── Ä68-WÄCHTER (Entscheid David 17.8.2026 abends) ────────────────────────
+  // Seit der Entkopplung blendet der Schalter NUR noch die Fassungs-Zeile aus
+  // (`[data-hist-slot]`, index.css). Die `kl:'A'`-Bedingung in
+  // `bieteAenderungsvermerkeSchalter` beschreibt damit keine Wirkung mehr — sie
+  // kann nur noch ÜBERANBIETEN, also einen Schalter zeigen, der nichts tut (§8).
+  //
+  // Heute tut sie das an keinem einzigen Erlass, und GENAU DAS wird hier gemessen
+  // statt behauptet. Der Tag, an dem der Korpus einen Erlass mit `kl:'A'`, aber
+  // ohne Historie-Einträge aufnimmt, ist der Tag, an dem die Bedingung fallen
+  // muss — dann wird dieser Test rot und sagt, welcher Erlass es ist. Ohne ihn
+  // bliebe die Redundanz stumm stehen und der Nutzer bekäme ein totes
+  // Steuerelement (Fehlerklasse F4).
+  it('Ä68: kein Erlass trägt kl:A ohne Fassungszeile — die Redundanz ist gedeckt', () => {
+    const ohneWirkung: string[] = [];
+    let mitBeidem = 0;
+    for (const ebene of ['bund', 'kanton'] as const) {
+      let dateien: string[];
+      try {
+        dateien = readdirSync(join(STRUKTUR, ebene)).filter((f) => f.endsWith('.json'));
+      } catch {
+        continue;
+      }
+      for (const datei of dateien) {
+        const key = datei.replace(/\.json$/, '');
+        const a = zaehleAenderungsvermerke(ladeStruktur(ebene, key)) ?? 0;
+        if (a === 0) continue;
+        if (hatFassungsZeile(key)) mitBeidem += 1;
+        else ohneWirkung.push(`${ebene}/${key} (kl:A = ${a})`);
+      }
+    }
+    // POSITIV-Vorbedingung: die Schleife hat wirklich Erlasse gesehen. Ohne sie
+    // wäre die leere Liste unten auch bei kaputtem Pfad erfüllt (§6.7).
+    expect(mitBeidem, 'keine Erlasse mit kl:A gefunden — die Sonde greift ins Leere')
+      .toBeGreaterThan(100);
+    expect(
+      ohneWirkung,
+      'diese Erlasse bekämen nach Ä68 einen wirkungslosen Schalter — '
+      + 'die kl:A-Bedingung in bieteAenderungsvermerkeSchalter muss dann fallen',
+    ).toEqual([]);
+  });
 });

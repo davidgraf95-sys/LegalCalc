@@ -58,7 +58,7 @@ export const SUCH_H_RUHE = '2.75rem';
 export const SUCH_H_AKTIV = '4.25rem';
 
 export function SuchZone({
-  suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
+  suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe, blattOffen, blatt,
 }: {
   /** Das Such-/Sprungfeld. Oberstes Element — das ist die ganze Zusage (Ä19).
    *
@@ -77,14 +77,40 @@ export function SuchZone({
   /** Zähl-Substantiv aus dem Datenmodell (Ä23) — nie ein Bund-Vorgabewert.
    *  B8: Typ und Zählform aus `./erlassAnsicht` (eine Quelle). */
   bestimmungsWort: BestimmungsWort;
-  /** Weg zur vollen Trefferliste: Spalte aufziehen bzw. Blatt öffnen. */
+  /** Weg zur vollen Trefferliste: Blatt am Feld öffnen bzw. Bottom-Sheet. */
   onListe: () => void;
+  /** ── Ä78 / V5 (Nachzug 17.8.2026) · HÄNGT DIE LISTE SCHON DARUNTER? ────────
+   *  Dann schweigt die Zähler-Zeile. Sie sagt zweierlei — «N Artikel · M
+   *  Fundstellen» und «Treffer anzeigen →» —, und beides ist beantwortet, sobald
+   *  das Blatt offen ist: die Zahlen stehen in seinem Listenkopf (dieselben
+   *  Werte aus derselben Quelle, §5), und der Weg dorthin ist gegangen. Ein
+   *  Knopf, der ein offenes Blatt öffnet, ist kein Angebot, sondern Rauschen —
+   *  Befund des Ästhetik-Reviews 17.8.2026 (Ä78, «Blatt offen»).
+   *  KEIN Layout-Sprung: die Zonen-Höhe kommt aus `--leser-v3-such-h`
+   *  (`./leserGeometrie`, zwei feste Werte am SUCH-Zustand, nicht am Blatt) und
+   *  bleibt unverändert — der B9-Wächter (`e2e/leser-v3-suchfeld-ueberall`(e))
+   *  misst dieselben Werte wie zuvor, und `--nt-stick` rechnet mit derselben
+   *  Zahl weiter. Der Platz bleibt reserviert, damit das Schliessen des Blattes
+   *  die Zeile zurückbringt, ohne den Lesetext zu verschieben (§15.2). */
+  blattOffen?: boolean;
+  /** ── Ä76 (17.8.2026) · DIE TREFFERLISTE, ANGEHÄNGT AN DIESE ZONE ───────────
+   *  Gesetzt, wo die Gliederung als Spalte fehlt, aber Platz neben dem Text ist
+   *  (Desktop mit eingeklappter Spalte) — dann liegt die Liste als Blatt DIREKT
+   *  unter dem Feld statt inline über dem Lesetext, wo sie 3596 px hoch unter der
+   *  Falz verschwand (Befund und Messreihe: `./LeserTrefferBlatt`).
+   *  Es hängt an DIESER Zone, weil «die Liste steht, wo das Feld steht» die eine
+   *  Regel ist, die Ä19 für alle Breiten gesetzt hat — und weil die Zone das
+   *  einzige Element ist, das in JEDER Lage ohne Spalte klebt. */
+  blatt?: ReactNode;
 }) {
   return (
-    <div data-v3-such-zone className="flex flex-col justify-start gap-1 pb-2"
+    // `relative`: der Bezugsrahmen des Blattes (`absolute top-full`). Es nimmt
+    // keinen Platz — die Zonen-Höhe bleibt allein `--leser-v3-such-h`, und die
+    // Höhen-Konstanten oben behalten ihre Gültigkeit (B9-Wächter unberührt).
+    <div data-v3-such-zone className="relative flex flex-col justify-start gap-1 pb-2"
       style={{ height: 'var(--leser-v3-such-h)' }}>
       {suchFeld}
-      {sucheAktiv && (
+      {sucheAktiv && !blattOffen && (
         // §8: die Zahl steht dran, und der Weg zur Liste ist BENANNT statt als ☰
         // zu erraten — genau das war der zweite Teil des Ä19-Befunds («das
         // geöffnete Blatt verdeckt das Pane»): der Leser soll selbst entscheiden,
@@ -100,6 +126,7 @@ export function SuchZone({
           <span aria-hidden className="ml-auto shrink-0">Treffer anzeigen →</span>
         </button>
       )}
+      {blatt}
     </div>
   );
 }

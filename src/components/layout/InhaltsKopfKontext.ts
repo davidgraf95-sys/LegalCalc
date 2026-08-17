@@ -25,6 +25,37 @@ export interface KopfDaten {
    *  Such-State/Highlight); der Kopf rendert es opak (Layer-Trennung wie `ansichtSlot`).
    *  Andere Inhaltstypen / der Split-View lassen es weg → kein Element. */
   sucheSlot?: ReactNode;
+  /** ── A-2 (Auftrag David 17.8.2026) · DIE SEITE TRÄGT IHRE KOPFZEILE SELBST ──
+   *
+   *  «beachte dass wir jetzt oben einen header haben mit ähnlichem inhalt … und
+   *  darunter … passe das entsprechend sinnvoll an» — zwei Leisten mit derselben
+   *  Auskunft (Krume · Ort · Stand · ✕) übereinander. Gemessen 17.8.2026 @1440
+   *  unter `?leser=v3`: ZWEI `nav`-Krumen, zwei ✕, 37 px App-Leiste zwischen
+   *  Topbar und der Kopfzeile, die dasselbe schon sagt.
+   *
+   *  Meldet eine Inhaltsseite dieses Feld, dann sagt sie: **ich trage Krume,
+   *  Ortsangabe und meine Aktionen selbst.** Wirkung:
+   *   · Einzelansicht — `InhaltsKopf` rendert KEINE Leiste mehr (nur seine zwei
+   *     Sprung-Rückmeldungen, die keinen Platz brauchen);
+   *   · Split-View — `PaneKopf` gibt seinen Identitäts-Teil (Krume · Label ·
+   *     Artikel · Stand) ab und behält NUR, was eine Inhaltsseite nicht tragen
+   *     kann: Ziehgriff, Umsortieren, Hauptfenster, Teilen, Pane schliessen.
+   *
+   *  ERWEITERUNGSPUNKT, KEIN SONDERFALL (FL-1): hier steht nichts über den
+   *  Gesetzes-Leser und nichts über ein Flag. `layout/**` erfährt aus dem
+   *  Vertrag nur, WER die Kopfzeile trägt — nicht, welche Hülle gerade läuft.
+   *  Wer das Feld nicht meldet (alle Ist-Seiten, V1), bekommt die Leiste
+   *  unverändert (FL-4).
+   *
+   *  Wer es meldet, meldet die übrigen Felder NICHT mehr — auch `breadcrumb`
+   *  nicht: sie hätten keinen Leser, und was niemand liest, wird nicht gepflegt
+   *  (§17 Rückbau). Eine selbsttragende Seite meldet darum `breadcrumb: []`.
+   *  Der Vorteil ist nicht die gesparte Zeile, sondern die Freiheit von den
+   *  Daten: die Meldung ist ein KONSTANTER Satz und kann darum im ersten
+   *  Render-Commit stehen, bevor irgendein Snapshot geladen ist — sonst rendert
+   *  die Shell die Leiste und lässt sie danach zusammenfallen (Layout-Sprung
+   *  §15.2; die Messung steht in `pages/gesetz-leser/GesetzLeserV3.tsx`). */
+  kopfzeileSelbst?: boolean;
 }
 
 // Melde-Funktion: Inhaltsseiten rufen sie (im Effect) mit ihren Kopfdaten bzw.
