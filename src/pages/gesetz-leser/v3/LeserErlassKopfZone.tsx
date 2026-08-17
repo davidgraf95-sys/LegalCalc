@@ -3,7 +3,7 @@ import { grundartMeta, kopfOverline } from '../helpers';
 import { ErlassLeserKopf } from '../parts';
 import { AmtlichesPdf } from '../parts/AmtlichesPdf';
 import { ReiterAktion } from './ReiterAktion';
-import { overlineGebiet, titelKennung } from './erlassAnsicht';
+import { overlineGebiet, titelKennung, type BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ─── Der Erlass-Kopf der V3-Zelle (Kap. 4e) ──────────────────────────────────
@@ -27,7 +27,9 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
   m: LeserV3Modell;
   erlass: NonNullable<LeserV3Modell['erlass']>;
   artikelAnzahl: number;
-  bestimmungsWort: 'Artikel' | 'Paragraphen';
+  // B8 (H2b-Nachzug): der TYP aus `./erlassAnsicht`, nie ein neues Literal —
+  // sonst stünde «Paragraphen» ein zweites Mal in `v3/` (Fundament-Sonde).
+  bestimmungsWort: BestimmungsWort;
   /** W2·5g — Fassungswahl/Zeitmaschine, vor den übrigen Aktionen. */
   fassungsWahl?: ReactNode;
 }) {

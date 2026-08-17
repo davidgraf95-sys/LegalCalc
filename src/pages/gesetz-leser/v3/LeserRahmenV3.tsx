@@ -19,13 +19,9 @@ import { LeserPanelZone } from './LeserPanelZone';
 import { PanelZaehler } from './LeserPanelOeffner';
 import { normZitat, panelBezug, shardGeladen, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
-// B9 (H2b-Nachzug): die zwei Zonen-Höhen gehören der Such-Zone, nicht hierher.
 import { SuchZone, SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
 import { kopfElemente, kopfHoehe, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
-// B8 (H2b-Nachzug): EINE Ableitung des Bestimmungsworts. `overlineGebiet`,
-// `titelKennung` und `ReiterAktion` sind mit dem Erlass-Kopf nach
-// `./LeserErlassKopfZone` gewandert (H3-Auslagerung, §6.6).
 import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
 import { useLeserV3Modell } from './leserV3Modell';
@@ -252,17 +248,14 @@ export function LeserRahmenV3({
           (Kap. 4b). Wiederverwendet wird die bestehende Sheet-Anatomie
           (Dialog-Rolle, Fokusfang, Esc, Portal in die Pane-Overlay-Schicht) —
           §5, kein zweiter Overlay-Mechanismus. Portal-Vertrag und Pane-Rolle:
-          `./LeserLeisteSheet` (H3-Auslagerung, §6.6 — die B10-Auflage des
-          H2b-Nachzugs). Der Rahmen entscheidet OB (`blattOffen`), WOHIN
-          (`ziel`/`paneRolle`) und WAS im Blatt steht; das WIE des Portals steht
-          dort. */}
+          `./LeserLeisteSheet` (H3-Auslagerung = B10-Auflage des H2b-Nachzugs,
+          §6.6); der Rahmen entscheidet OB, WOHIN und WAS darin steht. */}
       {blattOffen && (
         <LeserLeisteSheet ziel={overlayZiel} paneRolle={paneRolle}
           sheetRef={m.refs.tocDrawerRef} onSchliessen={() => m.setTocAuf(false)}
           pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
-          // A2/Ä32 (H2b-Nachzug): DASSELBE Feld zuoberst im Blatt (Fokus-Falle,
-          // WCAG 2.4.3; die Such-Zone gibt es solange her) · «Sie sind hier» nur
-          // zum Baum, nicht über der Trefferliste.
+          // A2/Ä32: DASSELBE Feld zuoberst im Blatt (Fokus-Falle, WCAG 2.4.3;
+          // die Such-Zone gibt es solange her) · «Sie sind hier» nur zum Baum.
           sprungFeld={suchFeld} feldZuoberst ortAnzeigen={!m.sucheAktiv}
           titel={m.sucheAktiv ? 'Treffer' : 'Gliederung'} baum={leiste(true)} />
       )}
