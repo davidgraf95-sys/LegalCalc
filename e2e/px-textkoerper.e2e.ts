@@ -130,13 +130,42 @@ const MESS_BREITE_PX = 640
  * DER FIX ist derselbe Gedanke, mit dem die Spec schon die BREITE erzwingt: was
  * die Messung nicht beweisen will, darf sie nicht mitmessen. Passt der Artikel in
  * beiden Hüllen ganz ins Fenster, entsteht beide Male eine Aufnahme ohne Scroll,
- * bei identischer Phase. Der Wert deckt den höchsten Mess-Artikel (OR 336c,
- * 1344.81 px) plus den V3-Versatz (56 px) plus Kopfhöhe mit Reserve.
+ * bei identischer Phase. Der Wert deckt den höchsten Mess-Artikel (OR 336c)
+ * plus den V3-Versatz plus Kopfhöhe mit Reserve.
  * WÄCHTER: passt ein künftiger Mess-Artikel doch nicht mehr, schlägt die
  * Zusicherung unten zu — der Defekt kommt dann als Fehlschlag zurück und nicht
  * als stille Pixel-Abweichung (§6.7).
+ *
+ * NACHZUG BEI DER VEREINIGUNG MIT H3 (17.8.2026) — 1800 → 2400: der Wächter
+ * meldete «Artikel endet bei y=1800.27 px», also 0.27 px über der Fenstergrenze,
+ * und das in EINEM von ZWEI Läufen. Genau die Grenzwertigkeit, die der Wurzel-Fix
+ * oben abschaffen wollte, war zurück — nur eine Etage höher: 1800 war knapp auf
+ * den damaligen Stand gerechnet, und H3 (Bezüge-Zeile → Zähler) plus die
+ * S2-Beiwerk-Zone verschieben den Artikel-ANFANG nach unten. Gemessen 17.8. am
+ * vereinigten Stand: OR 336c war im Messfenster 1302 px hoch (StPO 429: 742 px),
+ * der Artikel-ANFANG liegt je nach Beiwerk-/Zähler-Zustand zwischen y = 323.5 und
+ * y ≈ 498, die Unterkante damit bis 1800.27 px. 2400 lässt rund 600 px Reserve
+ * gegen diese Streuung. Seit das Beiwerk aus der Messung genommen ist (s.
+ * `artikelBild`) ist der gemessene Artikel nur noch 1058.55 bzw. 647.33 px hoch —
+ * die Reserve ist damit noch grösser, und der Deckel bleibt trotzdem stehen: er
+ * soll gegen KÜNFTIGE Mess-Artikel schützen, nicht bloss gegen die heutigen zwei.
+ *
+ * UND EIN ZWEITER GRUND FÜR REICHLICH RESERVE, gemessen beim Rot-Beweis: die
+ * Artikelhöhe ist nicht fensterunabhängig. Bei Fenster 1000 misst OR 336c 1345 px,
+ * bei 1800 und 2400 je 1302 px. Ein Messfenster, das nur knapp reicht, misst also
+ * nicht bloss riskant, es misst potenziell einen ANDEREN Artikel. Zwischen 1800 und
+ * 2400 ist der Wert stabil — der neue Deckel liegt im stabilen Bereich, nicht an
+ * seiner Kante.
+ *
+ * WARUM DAS KEINE LOCKERUNG IST: `MESS_HOEHE_PX` ist die FENSTERHÖHE der Messung,
+ * kein Timeout und keine Pixel-Toleranz. Die Zusage des Tors bleibt Wort für Wort
+ * dieselbe (`maxDiffPixelRatio: 0.001`), und der Wächter unten bleibt ein
+ * `toBeLessThanOrEqual` — er kann weiterhin rot werden (Rot-Beweis im
+ * Vollzugsvermerk: Fenster auf 1000 ⇒ «Artikel endet bei y=…, passt nicht ins
+ * 1000-px-Fenster»). Ein grösseres Fenster misst MEHR vom Artikel ohne Scroll,
+ * nicht weniger genau.
  */
-const MESS_HOEHE_PX = 1800
+const MESS_HOEHE_PX = 2400
 
 async function artikelBild(page: Page, pfad: string, artId: string) {
   await page.setViewportSize({ width: 1440, height: MESS_HOEHE_PX })
@@ -171,11 +200,100 @@ async function artikelBild(page: Page, pfad: string, artId: string) {
       // ausgelieferte — gemessen gegen die V1-Baseline 4383 px (StPO 429) bzw.
       // 15 350 px (OR 336c) Unterschied, nur aus der fehlenden Einschliessung.
       el.style.setProperty('contain', 'layout style paint', 'important')
+
+      // ── DAS BEIWERK AUS DER MESSUNG NEHMEN (Vereinigung mit H3, 17.8.2026) ──
+      // Dieses Tor heisst «der TEXT-KERN ist in V1 und V3 pixelgleich». Das
+      // Beiwerk (`data-beiwerk`) ist ausdrücklich NICHT der Text-Kern: es ist der
+      // Apparat unter dem Wortlaut, und H3 hat ihn in den beiden Hüllen bewusst
+      // verschieden besetzt — V1 zeigt dort die Leitentscheide-Zeile, V3 hat sie
+      // in den Zähler/das Panel verlegt und zeigt die Fassungs-Zeile.
+      //
+      // GEMESSEN 17.8.2026 am vereinigten Stand (StPO 429 · OR 336c, je 640 px):
+      //   MIT Beiwerk    V1 784.92 / 1344.81   V3 740.92 / 1300.81   → 44 px Diff
+      //   OHNE Beiwerk   V1 647.328125 / 1058.546875
+      //                  V3 647.328125 / 1058.546875 → auf den Subpixel GLEICH
+      // Der Text-Kern ist also identisch, und zwar exakt. Die einzige Abweichung
+      // ist der Apparat, und die ist gewollt.
+      //
+      // WARUM NICHT «BASELINE NEU AUFNEHMEN»: die Spec hält bewusst EINE
+      // Baseline-Datei für BEIDE Hüllen (s. Schritt 2 im Test unten). Eine
+      // Divergenz zwischen den Hüllen ist damit durch kein Neuaufnehmen heilbar —
+      // `--update-snapshots` schreibt schlicht die Hülle, die zuletzt lief, und
+      // die andere wird rot. Gemessen: nach dem Neuaufnehmen kippte der Fehler von
+      // «erwartet 786, erhalten 742» auf «erwartet 742, erhalten 786». Ein Tor,
+      // das unabhängig vom Code immer rot ist, sagt so wenig wie eines, das nie
+      // rot werden kann (§6.7) — beide muss man reparieren, nicht nachziehen.
+      //
+      // WARUM DAS AUSBLENDEN KEINE LOCKERUNG IST: es ist derselbe Gedanke, mit dem
+      // diese Spec schon die BREITE klemmt — was die Messung nicht beweisen will,
+      // darf sie nicht mitmessen. Danach vergleicht das Tor wieder GENAU seine
+      // Zusage, und es KANN wieder rot werden (Rot-Beweis im Vollzugsvermerk).
+      // ABGRENZUNG, damit hier keine Deckungslücke entsteht: die Geometrie des
+      // Beiwerks ist nicht ungedeckt, sie ist woanders gedeckt — `leser-marken-
+      // geometrie.e2e.ts` und die S2-Typografie-Fälle messen sie eigens. PX deckt
+      // den Wortlaut-Körper.
+      for (const bw of el.querySelectorAll('[data-beiwerk]')) {
+        (bw as HTMLElement).style.setProperty('display', 'none', 'important')
+      }
     }
   }, { id: artId, breite: MESS_BREITE_PX })
 
   await art.scrollIntoViewIfNeeded()
   await beruhige(page)
+
+  // ── SUBPIXEL-PHASE DER BEIDEN HÜLLEN GLEICHSETZEN (17.8.2026) ──────────────
+  // Der letzte Rest des «1-px-Höhen-Wacklers», und der eigentliche Grund für ihn.
+  // Playwright greift ein Element von `floor(top)` bis `ceil(top + height)`. Die
+  // HÖHE ist in beiden Hüllen auf den Subpixel gleich (OR 336c: 1058.5469 px in
+  // V1 UND V3) — aber die y-POSITION liegt auf verschiedenen Subpixel-Phasen, und
+  // damit fällt die Rundung verschieden aus. Gemessen 17.8., vier Läufe in Folge
+  // identisch (also kein Rauschen, sondern Struktur):
+  //     V1  top 369.9375  (frac 0.9375)  → Bild 1060 px
+  //     V3  top 156.1719  (frac 0.1719)  → Bild 1059 px
+  // Dieselbe Höhe, ein Pixel Unterschied, rein aus der Phase. Ohne diese Zeilen
+  // riss der Fall in 3 von 5 Läufen mit «Expected 1060px, received 1059px».
+  //
+  // DER FIX ist wieder derselbe Gedanke wie Breiten-Klemme und Fenster-Deckel: die
+  // Phase ist nichts, was die Messung beweisen will, also darf sie nicht
+  // mitmessen. Der Artikel wird um seinen eigenen Bruchteil versetzt, bis `top` auf
+  // einer ganzen Zahl liegt — danach greifen BEIDE Hüllen exakt `ceil(height)`
+  // Gerätepixel, aus derselben Phase.
+  //
+  // WARUM ÜBER `top` UND NICHT ÜBER DEN SCROLL: `window.scrollBy(0, bruchteil)`
+  // wurde zuerst gebaut und griff NICHT — der Browser rastert Scroll-Offsets auf
+  // Gerätepixel, übrig blieben 0.296875 (StPO) bzw. 0.625 (OR). Gemeldet hat das
+  // der Wächter unten, nicht ein stiller Pixel-Diff; genau dafür ist er da.
+  // `#art-…` trägt ohnehin `position: relative` (Klasse `group relative z-0`), ein
+  // `top`-Versatz verschiebt darum NUR dieses Element und reflowt nichts: die
+  // Zeilenumbrüche im Artikel bleiben Zeichen für Zeichen dieselben, und beide
+  // Hüllen landen auf derselben Phase — was verglichen wird, ist unverändert der
+  // Wortlaut-Körper.
+  await art.evaluate((el) => {
+    const rest = el.getBoundingClientRect().top % 1
+    if (rest !== 0) (el as HTMLElement).style.setProperty('top', `${-rest}px`, 'important')
+  })
+  await beruhige(page)
+
+  // WÄCHTER (§6.7): griffe das Gleichsetzen nicht — weil die Seite am Anschlag
+  // steht und nicht mehr scrollen kann, oder weil ein künftiger Umbau den Scroll
+  // abfängt —, käme der Wackler als stille 1-px-Abweichung zurück. Er soll als
+  // Fehlschlag mit Diagnose kommen.
+  const phase = await art.evaluate((el) => el.getBoundingClientRect().top % 1)
+  expect(phase, `Subpixel-Phase ${phase} statt 0 — das Gleichsetzen griff nicht, die Aufnahme rundet zufällig`)
+    .toBe(0)
+
+  // Beweis, dass das Beiwerk WIRKLICH aus der Messung ist (§6.7): würde das
+  // Attribut umbenannt, griffe die Schleife oben ins Leere und PX vergliche
+  // wieder Apparat — still, und mit dem bekannten 44-px-Versatz. Darum beides
+  // zusichern: der Wähler trifft noch etwas, UND das Getroffene ist 0 px hoch.
+  const beiwerk = await art.evaluate((el) => {
+    const alle = [...el.querySelectorAll('[data-beiwerk]')]
+    return { anzahl: alle.length, hoehe: alle.reduce((s, x) => s + x.getBoundingClientRect().height, 0) }
+  })
+  expect(beiwerk.anzahl, 'kein [data-beiwerk] im Mess-Artikel — Attribut umbenannt? Dann misst PX wieder den Apparat')
+    .toBeGreaterThanOrEqual(1)
+  expect(beiwerk.hoehe, `Beiwerk noch ${beiwerk.hoehe} px hoch — es steckt weiter in der Messung`)
+    .toBe(0)
 
   // Beweis, dass die Klemme wirklich griff — sonst verglichen wir wieder zwei
   // verschiedene Breiten und merkten es nicht (§6.7).
