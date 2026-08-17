@@ -25,10 +25,10 @@
 // EIGENEN Effekt, nicht beim Konsumieren — ein Panel, das die Daten nur nicht
 // anzeigt, hätte sie trotzdem geholt.
 //
-// ROT ZU BEKOMMEN (§6.7):
-//  · (a): in `src/lib/seo-detail.ts` `erlassVolltextHtml` auf den Kopf kürzen.
-//  · (b): in `v3/leserV3Modell.ts` `bezuegeVorladen: false` entfernen — dann
-//    liegt der Shard schon beim Seitenaufruf auf der Leitung, rot.
+// ROT GESEHEN (§6.7, 17.8.2026): in `v3/leserV3Modell.ts` `bezuegeVorladen:
+// false` entfernt ⇒ (b) rot mit «Bezugs-Shard schon beim Seitenaufruf geladen:
+// …/rechtsprechung/bezuege/STPO.json». Fall (a) bricht, wenn
+// `erlassVolltextHtml` in `src/lib/seo-detail.ts` auf den Kopf gekürzt wird.
 import { test, expect, type Page } from '@playwright/test'
 
 const BEZUG_MUSTER = /\/rechtsprechung\/bezuege\//

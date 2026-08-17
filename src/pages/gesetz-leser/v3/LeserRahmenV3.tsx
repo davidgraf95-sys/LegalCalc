@@ -17,7 +17,7 @@ import { LeserLeisteSheet } from './LeserLeisteSheet';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { PanelZaehler } from './LeserPanelOeffner';
-import { normZitat, shardGeladen, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
+import { normZitat, panelBezug, shardGeladen, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
 // B9 (H2b-Nachzug): die zwei Zonen-Höhen gehören der Such-Zone, nicht hierher.
 import { SuchZone, SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
@@ -96,7 +96,7 @@ export function LeserRahmenV3({
   ebene, schluessel, beiwerkSlot, fassungsWahl, leisteExtra,
 }: LeserRahmenV3Props) {
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
-  const { stufe, dockFaehig, kopfRef } = useKopfStufe();
+  const { stufe, kopfRef } = useKopfStufe();
   // H3 · Panel: Zustand und Bezugs-Daten. BEIDE Hooks stehen VOR den frühen
   // Rückgaben (Hooks laufen nicht bedingt) und kosten im Ruhezustand nichts —
   // `usePanelBezuege` bekommt den Erlass-Key erst, wenn das Panel einmal offen
@@ -181,17 +181,16 @@ export function LeserRahmenV3({
   // (H2-Befund, `./LeserLeisteSheet`).
   const overlayZiel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
   const paneRolle = umgebung.istSekundaer ? 'sekundaer' as const : 'primaer' as const;
-  // «Nie drei vertikale Flächen» ist im Pane eine HARTE Regel (Design-Grundlage
-  // Kap. 8) — dort immer Blatt, unabhängig von der Breite. Sonst entscheidet die
-  // gemessene Breite (`panelAlsSpalte`, gerechnete Schwelle in `./kopfStufen`).
-  const panelModus = !umgebung.imPane && dockFaehig && hatLeiste ? 'spalte' as const : 'blatt' as const;
-  const panelArtikel = m.aktArtikel;
+  // Ohne Leseposition gilt der ERSTE Artikel — benannt, nicht stillschweigend
+  // (Begründung und Befund in `./panelModell`, `panelBezug`).
+  const panelZiel = panelBezug(m.aktArtikel, m.aktivToken, eintraege[0]);
+  const panelArtikel = panelZiel.label;
   // Die Zone steht, solange ein Öffner sichtbar IST oder das Panel offen ist —
   // das zweite ist der F8-Fall: mit «Rechtsprechung im Text: aus» gibt es keine
   // Lasche und keinen Zähler, das per `r` geöffnete Panel muss trotzdem rendern
   // (`panelModell`, `offen` ist bewusst nicht mit `oeffnerSichtbar` verrechnet).
   const panelZone = panel.oeffnerSichtbar || panel.offen;
-  const panelZahl = trefferZahl(bezuege.bezuegeFuer, shardGeladen(bezuege.klassenImErlass), m.aktivToken);
+  const panelZahl = trefferZahl(bezuege.bezuegeFuer, shardGeladen(bezuege.klassenImErlass), panelZiel.token);
 
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
@@ -280,23 +279,22 @@ export function LeserRahmenV3({
           Schiene mit beschriftetem Öffner. Der Öffner steht damit DORT, wo die
           Gliederung war, die Fläche gewinnt echte 15.75 rem, und die Bewegung
           ist eine Breitenänderung statt eines Umbruchs. */}
-      {/* ── H3 · DIE DRITTE SPUR, nach derselben Regel wie die erste ───────────
-          Rechts eine Spur, die steht, solange ein Öffner da ist: 2.25 rem für die
-          Lasche, 22 rem für das offene Panel — wörtlich die Bauart, die David am
-          16.8. für die Gliederung links entschied (Breitenänderung statt Umbruch).
-          `PANEL_DOCK_PX` (1344) sichert, dass 18 + 40 + 22 rem gleichzeitig Platz
-          haben: das Öffnen VERSCHIEBT den Text, es bricht ihn nicht neu um.
-          Darunter und in jedem Pane gilt `blatt` — keine dritte Spur, die Zone ist
-          dann ein `display: contents`-Träger (Begründung dort). */}
+      {/* ── H3 · KEINE DRITTE SPUR — gemessen, nicht entschieden ───────────────
+          Der Fahrplan verlangt «auf D rechts 22 rem (3-Spalten-Grid)». Im heutigen
+          Seitenrahmen ist das auf JEDER Desktop-Breite arithmetisch unmöglich: der
+          Route-Wrapper deckelt auf `max-w-content` = 70 rem, gemessen 17.8.2026
+          exakt 1072 px bei Viewport 1280/1440/1600/1920 (Lesespalte 640 px). Für
+          18 + 40 + 22 rem samt zwei Abständen braucht es 1344 px — 272 fehlen;
+          selbst mit eingeklappter Gliederung bleiben nur 332 statt 352.
+          Ein Grid-Zweig, den keine Breite erreicht, ist toter Code (§17) — darum
+          keine dritte Spur. Das Panel ist überall ein Blatt. Was zu entscheiden
+          wäre, damit die Spalte möglich wird, steht im Vollzugsvermerk H3. */}
       <div
         className={hatLeiste && umgebung.istXl
           ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
           : ''}
         style={hatLeiste && umgebung.istXl
-          ? {
-            gridTemplateColumns: `${m.tocOffen ? '18rem' : '2.25rem'} minmax(0,1fr)${
-              panelModus === 'spalte' && panelZone ? (panel.offen ? ' 22rem' : ' 2.25rem') : ''}`,
-          }
+          ? { gridTemplateColumns: m.tocOffen ? '18rem minmax(0,1fr)' : '2.25rem minmax(0,1fr)' }
           : undefined}>
         {hatLeiste && umgebung.istXl && !m.tocOffen && (
           // Die Schiene: ein einziger Knopf, senkrecht beschriftet, klebend auf
@@ -371,10 +369,10 @@ export function LeserRahmenV3({
             füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
             und liegt ausserhalb des Flusses. */}
         {panelZone && (
-          <LeserPanelZone modus={panelModus} paneZiel={overlayZiel} paneRolle={paneRolle}
+          <LeserPanelZone paneZiel={overlayZiel} paneRolle={paneRolle}
             zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
             normZitat={normZitat(panelArtikel, erlass.kuerzel)}
-            artikelLabel={panelArtikel} aktArtikel={m.aktivToken} zaehler={panelZahl} />
+            artikelLabel={panelArtikel} aktArtikel={panelZiel.token} zaehler={panelZahl} />
         )}
       </div>
 

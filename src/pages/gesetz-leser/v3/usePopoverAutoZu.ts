@@ -10,24 +10,21 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // beim ersten Nachjustieren auseinander — dann schliesst die eine Fläche auf
 // Wischen und die andere nicht, ohne dass irgendwo steht, welche recht hat (§5).
 //
-// ── DREI MODI, WEIL ES DREI FLÄCHEN GIBT (deklariert, nicht abgeleitet) ──────
+// ── ZWEI MODI, WEIL ES ZWEI FLÄCHEN GIBT (deklariert, nicht abgeleitet) ──────
 //
 //   modus      Fläche                    Fokus-Falle  Aussenklick  Wisch-Geste
 //   ─────────────────────────────────────────────────────────────────────────────
 //   popover    «Ansicht ▾» im Kopf       ja           ja           ja
-//   blatt      Panel als Sheet (S/H)     ja           ja           nein
-//   spalte     Panel als Spalte (D)      NEIN         nein         nein
+//   blatt      Panel als Sheet           ja           ja           nein
 //
-// Esc schliesst in ALLEN drei Modi und gibt den Fokus an den Öffner zurück —
-// das ist die Zusage, die keine Fläche verhandeln darf (WCAG 2.1.2/2.4.3).
+// Esc schliesst in BEIDEN Modi und gibt den Fokus an den Öffner zurück — das ist
+// die Zusage, die keine Fläche verhandeln darf (WCAG 2.1.2/2.4.3).
 //
-// WARUM `spalte` KEINE FOKUS-FALLE HAT: die angedockte Spalte auf D ist nicht
-// modal — der Lesetext daneben bleibt bedienbar und lesbar. Eine Fokus-Falle
-// versprächen wir dort eine Modalität, die es nicht gibt, und der Nutzer käme
-// mit Tab nicht mehr aus dem Panel in den Text (§8: kein Versprechen, das die
-// Fläche nicht hält). Fokus wird beim Öffnen trotzdem HINEIN gesetzt: sonst
-// bliebe er auf dem Öffner und die eben aufgezogene Fläche wäre nur mit
-// mehrfachem Tab erreichbar.
+// EIN DRITTER MODUS `spalte` (nicht modal, kein Fokus-Fang) war für das
+// angedockte Panel auf D gebaut und ist mit ihm gestrichen: der Seitenrahmen ist
+// auf 70 rem gedeckelt, die Spalte damit auf keiner Breite erreichbar (Rechnung
+// im Rahmen). Ein Modus ohne Aufrufer ist toter Code (§17) — er kommt zurück,
+// wenn die Spalte kommt, und dann mit einem echten Konsumenten.
 //
 // WARUM `blatt` KEINE WISCH-GESTE HAT: das Sheet ist selbst ein Scroller. Die
 // Wisch-Geste im Panel-Inhalt würde das Panel schliessen, das man gerade liest —
@@ -39,7 +36,7 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Browser gleicht per Scroll-Anchoring aus und feuerte `scroll` ohne Geste; das
 // eben geöffnete Panel schloss sich von selbst.
 
-export type AutoZuModus = 'popover' | 'blatt' | 'spalte';
+export type AutoZuModus = 'popover' | 'blatt';
 
 export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus }: {
   offen: boolean;
@@ -58,42 +55,19 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus }:
   useEffect(() => { schliesseRef.current = schliesse; }, [schliesse]);
 
   // Fokus-Falle + Esc + Fokus-Rückgabe aus der GETEILTEN Mechanik — dieselbe,
-  // die das Ist-Menü und das Gliederungs-Blatt verwenden (§5). Für `spalte`
-  // bewusst ausgeschaltet (Begründung im Kopf); dort übernimmt der Effekt unten.
-  useDialogFokus(offen && modus !== 'spalte', panelRef, () => schliesseRef.current());
-
-  // ── `spalte`: Esc + Fokus hinein + Fokus zurück, OHNE Falle ───────────────
-  useEffect(() => {
-    if (!offen || modus !== 'spalte') return;
-    const vorher = document.activeElement as HTMLElement | null;
-    // Das Element EINMAL greifen: in der Aufräumfunktion auf `panelRef.current`
-    // zuzugreifen wäre ein Zugriff auf einen möglicherweise schon getauschten
-    // Knoten (react-hooks/exhaustive-deps warnt genau davor).
-    const flaeche = panelRef.current;
-    flaeche?.focus({ preventScroll: true });
-    const taste = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' || e.key === 'Esc') schliesseRef.current();
-    };
-    document.addEventListener('keydown', taste);
-    return () => {
-      document.removeEventListener('keydown', taste);
-      // Nur zurückgeben, wenn der Fokus noch IM Panel steht: hat der Nutzer
-      // inzwischen in den Lesetext geklickt, wäre ein Rücksprung auf den Öffner
-      // ein Fokus-Diebstahl (die Spalte ist nicht modal).
-      if (flaeche?.contains(document.activeElement)) vorher?.focus({ preventScroll: true });
-    };
-  }, [offen, modus, panelRef]);
+  // die das Ist-Menü und das Gliederungs-Blatt verwenden (§5).
+  useDialogFokus(offen, panelRef, () => schliesseRef.current());
 
   // ── Aussenklick ───────────────────────────────────────────────────────────
   useEffect(() => {
-    if (!offen || modus === 'spalte' || !wrapRef) return;
+    if (!offen || !wrapRef) return;
     const klick = (e: PointerEvent) => {
       const wurzel = wrapRef.current;
       if (wurzel && !wurzel.contains(e.target as Node)) schliesseRef.current();
     };
     document.addEventListener('pointerdown', klick);
     return () => document.removeEventListener('pointerdown', klick);
-  }, [offen, modus, wrapRef]);
+  }, [offen, wrapRef]);
 
   // ── Wisch-/Grössen-Geste (nur `popover`, Herleitung LM-009 im Kopf) ───────
   useEffect(() => {

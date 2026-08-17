@@ -8,31 +8,38 @@
 //      Text nach unten schiebt, hat die Leseposition verloren — beim Öffnen und
 //      beim Schliessen noch einmal.
 //
-//  (2) KEIN NEUUMBRUCH. Auf D bleibt die BREITE der Lesespalte gleich. Genau
-//      dafür steht die Schwelle `PANEL_DOCK_PX` (1344 px, gerechnet aus
-//      18 rem + 40 rem + 22 rem + zwei Abständen): darunter dockt das Panel
-//      nicht an, sondern öffnet als Blatt. Ohne diese Schwelle würde die
-//      Lesespalte beim Öffnen unter ihr Mass gedrückt, der Normtext bräche neu
-//      um — sichtbar auf jeder Zeile, und §1 zufolge nie zulässig als
-//      Nebenwirkung eines Beiwerk-Fensters.
+//  (2) KEIN NEUUMBRUCH. Die BREITE der Lesespalte bleibt gleich. Das Panel ist
+//      in jeder Breite ein Blatt ÜBER der Fläche und nimmt dem Text darum keine
+//      Spalte weg (Rechnung dazu im Rahmen, «KEINE DRITTE SPUR»). Ein Panel, das
+//      den Satzspiegel verstellte, bräche den Normtext auf jeder Zeile neu um —
+//      §1 zufolge nie zulässig als Nebenwirkung eines Beiwerk-Fensters. Diese
+//      Zusage muss gemessen bleiben, auch wenn die angedockte Spalte später
+//      kommt: sie ist dann die Stelle, an der sie brechen würde.
 //
-//  (3) LAYOUT-SHIFT OHNE EINGABE. Die `layout-shift`-Einträge mit
-//      `hadRecentInput === false` bleiben bei 0. Diese Bedingung IST der
-//      CLS-Begriff: eine vom Nutzer ausgelöste Bewegung zählt nicht, eine
-//      unangekündigte schon. Gemessen wird darum das, was nach dem Klick von
-//      selbst passiert — namentlich das Einwachsen der nachgeladenen Daten.
-//      Das ist die eigentliche Gefahr des Nachladens (Kap. 7).
+//  (3) LAYOUT-SHIFT OHNE EINGABE, IM LESEKÖRPER. Die `layout-shift`-Einträge
+//      mit `hadRecentInput === false`, deren Quelle im Lesekörper liegt, bleiben
+//      bei 0. `hadRecentInput` IST der CLS-Begriff: eine vom Nutzer ausgelöste
+//      Bewegung zählt nicht, eine unangekündigte schon. Gemessen wird darum das,
+//      was nach dem Klick von selbst passiert — namentlich das Einwachsen der
+//      nachgeladenen Daten. Das ist die eigentliche Gefahr des Nachladens
+//      (Kap. 7). Zur Quellen-Filterung siehe `shiftBeobachten`.
 //
 // WARUM DER ZÄHLER JE ARTIKEL NICHT IN H3 GEBAUT IST, steht in
 // `v3/LeserLesespalte.tsx`: er erschiene erst nach dem Öffnen und dann an jedem
 // Artikel gleichzeitig — ein Sprung über das ganze Dokument, den genau diese
 // Spec verbieten würde. Er gehört in die höhenfeste Beiwerk-Zone von S2.
 //
-// ROT ZU BEKOMMEN (§6.7): in `v3/LeserRahmenV3.tsx` die dritte Grid-Spur von
-// `2.25rem` (geschlossen) auf `0rem` setzen — dann verschiebt sich die
-// Lesespalte beim Öffnen um 36 px und Fall (2) wird rot. Oder `PANEL_DOCK_PX`
-// auf 1024 senken und @1280 fahren: Fall (2) wird rot, weil die Spalte schmaler
-// wird.
+// ROT GESEHEN (§6.7, 17.8.2026, gemessen an einem Zwischenstand, in dem das
+// Panel noch als Spalte andocken konnte): die Andock-Schwelle von 1344 auf 1024
+// gesenkt ⇒ Fall (a) rot mit «Artikel senkrecht verschoben:
+// 883,1162,1514,1961,2241 → 1064,1402,1890,2624,2991». Lehrreich am Rot: eine zu
+// knappe Lesespalte bricht den Normtext neu um, und der Umbruch schiebt jeden
+// folgenden Artikel NACH UNTEN — der Reflow zeigt sich zuerst in der SENKRECHTEN
+// Achse. Fall (1) misst damit den Fall (2) mit, und die Spec bleibt scharf, wenn
+// die angedockte Spalte später doch gebaut wird.
+// NICHT rot wird die Spec durch eine blosse WAAGRECHTE Verschiebung des
+// Textblocks: die ist input-ausgelöst, also kein CLS, und die Fahrplan-Zusage
+// lautet «kein Sprung», nicht «keine Bewegung».
 import { test, expect, type Page } from '@playwright/test'
 
 function fehlerSammeln(page: Page): string[] {
@@ -54,13 +61,38 @@ async function geometrie(page: Page): Promise<{ breite: number; ys: number[] }> 
   })
 }
 
-/** Summe der `layout-shift`-Einträge OHNE kürzliche Eingabe (= CLS-Definition). */
+/**
+ * Summe der `layout-shift`-Einträge OHNE kürzliche Eingabe, GEFILTERT auf
+ * Quellen IM LESEKÖRPER.
+ *
+ * WARUM GEFILTERT (Befund 17.8.2026, erster Batterie-Lauf mit 5 Workern): ohne
+ * Filter zählte die Messung die Shifts der GANZEN Seite und schlug mit 0.0174
+ * an, obwohl weder y noch Breite der Artikel sich bewegt hatten. Der Wert liegt
+ * exakt in der Grössenordnung, die S3 für das Seiten-Chrom gemessen hat
+ * (0.0087 @1280 · 0.019 @390 für die ganze V3-Seite, «die Shift-Quellen liegen
+ * laut `sources` im Seiten-Chrom, nicht im Kopf») — er war also nie eine Aussage
+ * über das Panel. Eine Schwelle gegen eine fremde Grundlast ist ein Tor, das
+ * beim ersten Nachbarn-Umbau rot wird und dann gelockert würde (§6.7); der
+ * Wurzelfix ist, das Richtige zu messen.
+ *
+ * `sources[].node` nennt das verschobene Element. Gezählt wird ein Eintrag nur,
+ * wenn mindestens eine Quelle im Lesekörper liegt — genau die Zusage dieser Spec.
+ */
 async function shiftBeobachten(page: Page): Promise<void> {
   await page.evaluate(() => {
     ;(window as unknown as { __shift: number }).__shift = 0
+    const imLesekoerper = (knoten: Node | null | undefined): boolean => {
+      const spalte = document.querySelector('#lc-lesespalte')
+      return !!spalte && !!knoten && spalte.contains(knoten)
+    }
     new PerformanceObserver((liste) => {
-      for (const e of liste.getEntries() as unknown as { value: number; hadRecentInput: boolean }[]) {
-        if (!e.hadRecentInput) (window as unknown as { __shift: number }).__shift += e.value
+      const eintraege = liste.getEntries() as unknown as {
+        value: number; hadRecentInput: boolean; sources?: { node?: Node | null }[]
+      }[]
+      for (const e of eintraege) {
+        if (e.hadRecentInput) continue
+        if (!(e.sources ?? []).some((q) => imLesekoerper(q.node))) continue
+        ;(window as unknown as { __shift: number }).__shift += e.value
       }
     }).observe({ type: 'layout-shift', buffered: false })
   })

@@ -14,13 +14,18 @@
 //     Zähler UND Lasche weg. Und trotzdem erreichbar — über die Taste «r»
 //     (Kap. 4h). Beides wird hier geprüft, nicht nur die halbe Regel.
 //
-// ROT ZU BEKOMMEN (§6.7):
-//  · Fall (a)/(c): in `v3/LeserRahmenV3.tsx` das `panelOeffner`-Argument auf
-//    `undefined` setzen — kein Zähler, Fall (a) rot.
-//  · Fall (b): in `v3/LeserPanelZone.tsx` `const lasche = oeffnerSichtbar ? …`
-//    auf bedingungslos stellen — die Lasche überlebt das Ausschalten, rot.
-//  · Fall (d): in `parts/LeserTastatur.tsx` den `r`-Zweig entfernen — das Panel
-//    ist mit ausgeschaltetem Schalter nicht mehr erreichbar, rot.
+// ROT GESEHEN (§6.7, 17.8.2026, gemessen statt behauptet):
+//  · Fall (b): in `v3/LeserRahmenV3.tsx` den F8-Torwächter entfernt
+//    (`panelZone = true` und `panelOeffner` ohne `panel.oeffnerSichtbar`) ⇒
+//    «locator('[data-v3-panel-zaehler]') Expected 0, Received 1».
+//    ANMERKUNG: es genügt NICHT, die Bedingung in `LeserPanelZone` aufzuheben —
+//    der äussere Torwächter im Rahmen fängt das ab. Die F8-Regel hat GENAU EINEN
+//    wirksamen Ort, und das ist der Rahmen; wer sie brechen will, muss dort
+//    hinein. Beim ersten Rot-Versuch (Sabotage in der Zone) blieb die Spec grün —
+//    das ist die Auskunft, wo die Regel wirklich lebt.
+//  · Fall (a)/(c)/(d) hängen an denselben zwei Stellen: fällt der Öffner, fällt
+//    (a); fällt die Portal-Rolle `data-v3-pane`, fällt (c); fällt der `r`-Zweig in
+//    `parts/LeserTastatur.tsx`, fällt (d).
 import { test, expect, type Page } from '@playwright/test'
 
 function fehlerSammeln(page: Page): string[] {
@@ -134,6 +139,28 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     await sekundaer.locator('[data-v3-panel-lasche]').click()
     await expect(page.locator('[data-v3-panel]')).toHaveCount(1, { timeout: 20_000 })
     await expect(sekundaer.locator('[data-v3-panel]')).toHaveCount(1)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('(e) H @390 ohne Leseposition: das Panel nennt den Artikel und zeigt seine Entscheide', async ({ page }) => {
+    // BEFUND 17.8.2026, gemessen: auf dem Handy-Zuschnitt hat der Scroll-Spy beim
+    // Ankommen noch keine Leseposition gesetzt (`[data-v3-kopf-artikel]` count 0).
+    // Ohne Fallback las man dort «kein Entscheid der eingeschalteten Instanzen
+    // erfasst» — an einem Erlass mit 1443 Verknüpfungen (§8). Jetzt gilt der ERSTE
+    // Artikel, und der Panel-Kopf sagt, welcher es ist.
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await warteLeser(page)
+    await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(0)
+
+    await page.locator('[data-v3-panel-lasche]').click()
+    await expect(page.locator('[data-v3-panel]')).toBeVisible()
+    // Der Kopf benennt den Bezug — ohne Namen wäre die Liste eine Behauptung
+    // über «irgendeinen» Artikel.
+    await expect(page.locator('[data-v3-panel] p').first()).toContainText('Art. 1')
+    await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel] [data-v3-panel-entscheid]').first()).toBeVisible()
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 

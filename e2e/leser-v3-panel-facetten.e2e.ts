@@ -12,12 +12,15 @@
 //  4. ERLASS-NEUTRALITÄT: ein Kantonserlass ohne Bezüge zeigt keinen leeren
 //     Zähler und kein leeres Panel-Element — sondern einen ehrlichen Satz.
 //
-// ROT ZU BEKOMMEN (§6.7):
-//  · (a): in `v3/PanelEntscheide.tsx` die `BezugFacettenWahl` entfernen.
-//  · (b): in `v3/LeserPanel.tsx` den `taste`-Handler abklemmen.
-//  · (c): in `v3/PanelSachgebiet.tsx` das `if (gebiete.length === 0) return null`
-//    streichen — der leere Streifen erscheint, rot.
+// ROT GESEHEN (§6.7, 17.8.2026): in `v3/PanelSachgebiet.tsx` das
+// `if (gebiete.length === 0) return null` gestrichen ⇒ (c) UND (d) rot mit
+// «locator('[data-v3-panel-sachgebiet]') Expected 0, Received 1» — der leere
+// Streifen erscheint an beiden Erlassen.
+// Weitere Bruchstellen: (a) fällt, wenn `BezugFacettenWahl`/`BezugZeitWahl` aus
+// `v3/PanelEntscheide.tsx` verschwinden; (b), wenn der `taste`-Handler in
+// `v3/LeserPanel.tsx` abgeklemmt wird.
 import { test, expect, type Page } from '@playwright/test'
+import AxeBuilder from '@axe-core/playwright'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -87,6 +90,28 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     // unten nur, dass das Panel leer ist).
     await expect(page.locator('[data-v3-panel] [data-v3-panel-filter]')).toBeVisible()
     await expect(page.locator('[data-v3-panel-sachgebiet]')).toHaveCount(0)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  test('(e) axe: das GEÖFFNETE Panel ist AA-sauber, auf D und auf H', async ({ page }) => {
+    // Die bestehende a11y-Stichprobe (`e2e/a11y.e2e.ts`) läuft nur im Projekt
+    // `chromium` und öffnet das Panel nicht — eine neue Fläche, die man nur
+    // geschlossen scannt, ist ungescannt (derselbe Befund wie beim
+    // Gliederungs-Blatt, PR #537). Darum hier, an der Fläche, in beiden Modi.
+    const fehler = fehlerSammeln(page)
+    for (const [breite, hoehe] of [[1440, 900], [390, 844]] as const) {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+      // Auf den nachgeladenen Inhalt warten: eine leere Fläche zu scannen wäre
+      // ein grüner Befund über nichts (§6.7).
+      await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first()).toBeVisible({ timeout: 20_000 })
+      const ergebnis = await new AxeBuilder({ page })
+        .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+        .include('[data-v3-panel]')
+        .analyze()
+      const schwer = ergebnis.violations.filter((v) => v.impact === 'critical' || v.impact === 'serious')
+      expect(schwer.map((v) => `${v.id} (${v.impact}) @${breite}`), JSON.stringify(schwer, null, 2)).toEqual([])
+    }
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 

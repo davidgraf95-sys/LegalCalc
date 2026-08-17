@@ -12,36 +12,23 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 
 // ─── WO das Panel steht — und wo die Lasche (H3, Kap. 4d) ────────────────────
 //
-// ZWEI MODI, EINE HARTE REGEL: «im Pane ist das Panel ein Sheet über dem Pane,
-// auf H ein Bottom-Sheet, auf D rechts 22 rem» — NIE drei vertikale Flächen in
-// einem Pane (Design-Grundlage Kap. 8 Nr. 3). Welcher Modus gilt, entscheidet
-// der Rahmen: nur er darf `imPane` lesen und nur er kennt die gemessene Breite
-// (Fundament-Sonde `leser-v3-fundament.test.ts`). Diese Datei rendert, was ihr
-// gesagt wird (§3).
+// EIN Blatt (Sheet) über der Fläche: auf H von unten, im Pane in der
+// Overlay-Schicht des Panes. Modal, mit Fokus-Fang und Überlagerung.
 //
-//   spalte  Angedockte Spalte im DREI-Spalten-Grid des Rahmens. NICHT modal: der
-//           Lesetext daneben bleibt lesbar und bedienbar (kein Fokus-Fang, kein
-//           Aussenklick-Schliessen — Herleitung in `usePopoverAutoZu`).
-//   blatt   Sheet über der Fläche: auf H von unten, im Pane in der
-//           Overlay-Schicht des Panes. Modal, mit Fokus-Fang und Überlagerung.
+// WARUM KEINE ANGEDOCKTE SPALTE AUF D: die Rechnung steht im Rahmen
+// (`LeserRahmenV3`, «KEINE DRITTE SPUR») — der Seitenrahmen ist auf 70 rem
+// gedeckelt (gemessen 1072 px auf jeder Desktop-Breite), 18 + 40 + 22 rem
+// brauchen 1344. Ein Zweig, den keine Breite erreicht, ist toter Code (§17).
+// Der Blatt-Modus erfüllt die harte Regel «NIE drei vertikale Flächen» ohnehin
+// in jeder Lage, nicht nur im Pane.
 //
-// ── DIE LASCHE UND DIE SPALTE TEILEN DIE SPUR (§15/2, CLS) ──────────────────
-// Im `spalte`-Modus hält der Rahmen die dritte Grid-Spur IMMER offen: 2.25 rem
-// geschlossen, 22 rem offen. Die Lasche steht in der schmalen Spur, das Panel in
-// der breiten — dieselbe Bauart, die David am 16.8. für die Gliederung links
-// entschieden hat («das Grid bleibt stehen und die linke Spalte wird zur
-// schmalen Schiene»). Der Lesetext behält dabei sein Mass: die Spalten-Schwelle
-// des Rahmens ist so gesetzt, dass 40 rem Lesebreite auch im offenen Zustand
-// Platz haben — das Öffnen verschiebt den Textblock, es bricht ihn nicht neu um.
-//
-// Im `blatt`-Modus liegt die Lasche am rechten Rand, ausserhalb des Flusses
-// (`fixed` bzw. `absolute` in der Pane-Overlay-Schicht) — dort kostet sie keine
-// Spur und keinen Layout-Sprung.
+// Die Lasche liegt am rechten Rand, ausserhalb des Flusses (`fixed` bzw.
+// `absolute` in der Pane-Overlay-Schicht) — dort kostet sie keine Grid-Spur und
+// keinen Layout-Sprung (§15/2, CLS).
 
 export function LeserPanelZone({
-  modus, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat, artikelLabel, aktArtikel, zaehler,
+  paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat, artikelLabel, aktArtikel, zaehler,
 }: {
-  modus: 'spalte' | 'blatt';
   /** Overlay-Wurzel des Panes (nur im Pane gesetzt) — dieselbe Schicht, in die
    *  das Gliederungs-Blatt portaliert (§5, H2-Befund: die Rolle wandert MIT). */
   paneZiel: HTMLElement | null;
@@ -63,7 +50,7 @@ export function LeserPanelZone({
   const kantone = useBezugKantone();
   const { oeffnerSichtbar, offen, reiter, setReiter, schliesse, umschalten } = zustand;
 
-  usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus });
+  usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus: 'blatt' });
 
   // Nachladen: erst wenn das Panel einmal offen war (Begründung in
   // `panelKontextLaden`). Die Hooks laufen unbedingt — das GATE ist ihr Argument,
@@ -95,29 +82,7 @@ export function LeserPanelZone({
     materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} />,
   } as const;
 
-  // ── `spalte`: Lasche ODER Panel in derselben Grid-Spur ─────────────────────
-  if (modus === 'spalte') {
-    return (
-      <div ref={wrapRef} data-v3-panel-spur="spalte" className="sticky self-start" style={{ top: 'var(--nt-stick)' }}>
-        {offen
-          ? (
-            <div role="region" aria-labelledby={titelId}
-              // Höhe wie die Gliederungs-Spalte gegenüber, aus derselben
-              // Variablen-Kette (`--nt-stick`) — sonst liefen die beiden Ränder
-              // des Lesers auseinander (Risiko R1, LM-003).
-              style={{ maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)' } as CSSProperties}
-              className="flex min-h-0 flex-col">
-              <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
-                reiter={reiter} setReiter={setReiter} inhalt={inhalt}
-                onSchliessen={schliesse} panelRef={panelRef} />
-            </div>
-          )
-          : lasche}
-      </div>
-    );
-  }
-
-  // ── `blatt`: Lasche am Rand + Sheet über der Fläche ────────────────────────
+  // ── Lasche am Rand + Sheet über der Fläche ─────────────────────────────────
   const imPaneBlatt = paneZiel != null;
   const blatt = (
     <div ref={wrapRef} data-v3-panel-spur="blatt"
@@ -159,7 +124,7 @@ export function LeserPanelZone({
             style={imPaneBlatt ? undefined : { top: 'var(--leser-kopf-h)', maxHeight: 'calc(100dvh - var(--leser-kopf-h))' }}>
             <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt}
-              onSchliessen={schliesse} panelRef={panelRef} variante="blatt"
+              onSchliessen={schliesse} panelRef={panelRef}
               // Griffleiste wie im Gliederungs-Blatt: dieselbe Geste, dieselbe
               // Optik — ein zweites Sheet-Idiom wäre die schlechtere Wucherung.
               kopfExtra={<div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-line" />} />

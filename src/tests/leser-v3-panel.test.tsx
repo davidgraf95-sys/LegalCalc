@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import {
-  PANEL_REITER, gruppiereKanten, normZitat, oeffnerLabel, oeffnerName, shardGeladen, trefferZahl,
-  zaehlerAttribut,
+  PANEL_REITER, gruppiereKanten, normZitat, oeffnerLabel, oeffnerName, panelBezug, shardGeladen,
+  trefferZahl, zaehlerAttribut,
 } from '../pages/gesetz-leser/v3/panelModell';
-import { PANEL_DOCK_PX, kopfElemente, panelAlsSpalte } from '../pages/gesetz-leser/v3/kopfStufen';
+import { kopfElemente } from '../pages/gesetz-leser/v3/kopfStufen';
 import { PanelSachgebiet } from '../pages/gesetz-leser/v3/PanelSachgebiet';
 import { belegung } from '../pages/gesetz-leser/parts/leserTastaturBelegung';
 import type { Bezug } from '../lib/rechtsprechung/bezuege';
@@ -97,6 +97,35 @@ describe('normZitat — zeichengleich mit dem Kurz-Zitat des Kerns', () => {
   });
 });
 
+describe('panelBezug — ohne Leseposition gilt der erste Artikel, benannt', () => {
+  const erster = { artikelLabel: 'Art. 1', artikel: '1' };
+
+  it('mit Leseposition gewinnt sie', () => {
+    expect(panelBezug('Art. 429', '429', erster)).toEqual({ label: 'Art. 429', token: '429' });
+  });
+
+  it('ohne Leseposition der ERSTE Artikel — und sein Label wird mitgegeben (§8)', () => {
+    // Der Befund @390: ohne diesen Fallback stand «kein Entscheid erfasst» an
+    // einem Erlass mit 1443 Verknüpfungen.
+    expect(panelBezug(null, null, erster)).toEqual({ label: 'Art. 1', token: '1' });
+  });
+
+  it('Bereichs-Artikel bekommen das Kern-Label (Halbgeviert), nicht das Rohlabel', () => {
+    expect(panelBezug(null, null, { artikelLabel: 'Art. 226a226d', artikel: '226_a_226_d' }))
+      .toEqual({ label: 'Art. 226a–226d', token: '226_a_226_d' });
+  });
+
+  it('ohne Artikel überhaupt (leerer Erlass) bleibt beides null', () => {
+    expect(panelBezug(null, null, undefined)).toEqual({ label: null, token: null });
+  });
+
+  it('halbe Leseposition zählt nicht als Leseposition', () => {
+    // Label ohne Token (oder umgekehrt) käme nur aus einem Zwischenzustand; darauf
+    // eine Kanten-Abfrage zu bauen ergäbe eine Zahl ohne Bezug.
+    expect(panelBezug('Art. 429', null, erster).token).toBe('1');
+  });
+});
+
 describe('gruppiereKanten — Rangordnung strukturell, nie nach Zähler', () => {
   it('ordnet die Klassen nach STATUS_RANG, unabhängig von der Eingabe-Folge', () => {
     const gruppen = gruppiereKanten([kante('a', 'kantonal'), kante('b', 'bge'), kante('c', 'bger')]);
@@ -148,19 +177,11 @@ describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
   });
 });
 
-describe('Ä11 / PANEL_DOCK_PX — wo der Öffner steht und ab wann das Panel andockt', () => {
+describe('Ä11 — wo der Öffner steht', () => {
   it('auf `mini` trägt die Kopfzeile keinen Zähler (≤ 4 Elemente)', () => {
     expect(kopfElemente('mini').panel).toBe(false);
     expect(kopfElemente('kompakt').panel).toBe(true);
     expect(kopfElemente('voll').panel).toBe(true);
-  });
-
-  it('die Andock-Schwelle ist die gerechnete Summe der drei Spuren', () => {
-    // 18 rem Gliederung + 2 rem + 40 rem Lesemass + 2 rem + 22 rem = 84 rem.
-    expect(PANEL_DOCK_PX).toBe(84 * 16);
-    expect(panelAlsSpalte(PANEL_DOCK_PX)).toBe(true);
-    expect(panelAlsSpalte(PANEL_DOCK_PX - 1)).toBe(false);
-    expect(panelAlsSpalte(1280)).toBe(false);
   });
 });
 

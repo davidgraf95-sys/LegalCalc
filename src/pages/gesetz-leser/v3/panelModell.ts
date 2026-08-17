@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { labelMitBereich } from '../../../lib/normtext/darstellung';
 import { useBezuege } from '../bezuegeLaden';
 import { useLeserOptionen } from '../leserOptionen';
 import { STATUS_RANG, type BezugStatus } from '../../../lib/verzahnung/facetten';
@@ -183,6 +184,36 @@ export function trefferZahl(
 ): number | null {
   if (!geladen || !aktArtikel) return null;
   return bezuegeFuer(aktArtikel)?.kanten.length ?? 0;
+}
+
+/**
+ * Auf WELCHEN Artikel bezieht sich das Panel?
+ *
+ * ── DER BEFUND, DEN DAS BEHEBT (gemessen 17.8.2026 @390, StPO) ─────────────
+ * Der Scroll-Spy setzt die Leseposition erst, wenn ein Artikel die Beobachtungs-
+ * zone erreicht. Auf dem Handy-Zuschnitt ist sie beim Ankommen noch NICHT
+ * gesetzt (`[data-v3-kopf-artikel]` count 0). Wer dort das Panel öffnete, las
+ * «Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst» —
+ * an einem Erlass mit 1443 Verknüpfungen. Das ist keine leere Liste, das ist
+ * eine falsche Tatsachenbehauptung (§8), und sie entstand aus einem Zustand, den
+ * der Nutzer nicht kennt und nicht herstellen wollte.
+ *
+ * FALLBACK IST DER ERSTE ARTIKEL DES ERLASSES — und er wird BENANNT: der
+ * Panel-Kopf schreibt «· Art. 1» daneben, das Kurz-Zitat trägt dieselbe Angabe.
+ * Damit ist die Auskunft wahr («die Entscheide zu Art. 1»), statt wahr-aber-
+ * unbrauchbar («keine Leseposition») oder falsch («nichts erfasst»).
+ *
+ * Das Label kommt aus `labelMitBereich` — derselben Funktion, aus der der Kern
+ * es baut (§5): sonst stimmte das `?norm=` bei Bereichs-Artikeln nicht.
+ */
+export function panelBezug(
+  aktArtikel: string | null,
+  aktivToken: string | null,
+  erster: { artikelLabel: string; artikel: string } | undefined,
+): { label: string | null; token: string | null } {
+  if (aktArtikel && aktivToken) return { label: aktArtikel, token: aktivToken };
+  if (!erster) return { label: null, token: null };
+  return { label: labelMitBereich(erster.artikelLabel, erster.artikel), token: erster.artikel };
 }
 
 /**

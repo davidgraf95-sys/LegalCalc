@@ -29,7 +29,6 @@ import { PANEL_REITER, type PanelReiter } from './panelModell';
 
 export function LeserPanel({
   panelId, titelId, artikelLabel, reiter, setReiter, inhalt, onSchliessen, fuss, panelRef, kopfExtra,
-  variante = 'spalte',
 }: {
   panelId: string;
   /** Id der Überschrift — der Aufrufer setzt sie als `aria-labelledby` an die
@@ -47,11 +46,6 @@ export function LeserPanel({
   panelRef: React.RefObject<HTMLDivElement | null>;
   /** Griffleiste des Blatt-Modus (Wisch-Griff) — im Spalten-Modus ungesetzt. */
   kopfExtra?: ReactNode;
-  /** Nur die AUSSENKANTE unterscheidet die beiden Flächen: die Spalte ist ein
-   *  Blatt mit Rahmen, das Sheet klebt an der Bildschirmkante und rundet darum
-   *  nur oben (eine unten gerundete Ecke gegen den Bildschirmrand ist ein
-   *  Bildfehler, kein Detail). Innen ist alles identisch — dasselbe Panel. */
-  variante?: 'spalte' | 'blatt';
 }) {
   const leisteRef = useRef<HTMLDivElement>(null);
 
@@ -75,11 +69,10 @@ export function LeserPanel({
   }
 
   return (
-    <div ref={panelRef} tabIndex={-1} id={panelId} data-v3-panel data-v3-panel-variante={variante}
-      className={`flex min-h-0 flex-col overflow-hidden bg-paper-raised ${
-        variante === 'blatt'
-          ? 'rounded-t-xl border-t border-line shadow-lg'
-          : 'rounded-lg border border-line'}`}>
+    // Nur oben gerundet: das Blatt klebt an der Bildschirm- bzw. Pane-Kante, und
+    // eine unten gerundete Ecke gegen diese Kante ist ein Bildfehler, kein Detail.
+    <div ref={panelRef} tabIndex={-1} id={panelId} data-v3-panel
+      className="flex min-h-0 flex-col overflow-hidden rounded-t-xl border-t border-line bg-paper-raised shadow-lg">
       {kopfExtra}
       {/* ── Kopf: WAS ist das, WORAUF bezieht es sich, WEG damit ─────────────── */}
       <div className="flex shrink-0 items-baseline justify-between gap-2 border-b border-line px-2.5 py-1.5">
