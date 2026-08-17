@@ -1,6 +1,7 @@
 import { SektionBaumTOC } from '../parts';
 import { ArtikelIndex } from '../parts/ArtikelIndex';
 import { LeserTrefferListe } from './LeserTrefferListe';
+import type { BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ─── Zone B der Seitenleiste: Baum ODER Treffer (Kap. 4b) ───────────────────
@@ -31,8 +32,8 @@ export function LeserGliederung({ m, bestimmungsWort }: {
   m: LeserV3Modell;
   /** Ä23 (H2b): Zähl-Substantiv für die Trefferliste — «Artikel» bzw.
    *  «Paragraphen». Durchgereicht statt hier neu abgeleitet: die Ableitung steht
-   *  genau einmal, im Rahmen (§5). */
-  bestimmungsWort: 'Artikel' | 'Paragraphen';
+   *  genau einmal, im Rahmen (§5). B8: der Typ kommt aus `./erlassAnsicht`. */
+  bestimmungsWort: BestimmungsWort;
 }) {
   if (m.sucheAktiv) {
     return (

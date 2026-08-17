@@ -111,15 +111,23 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
               <span aria-hidden className="shrink-0 text-ink-300">›</span>
             </>
           )}
-          {/* Ä21: seit der Volltitel entfallen kann, ist das Kürzel manchmal der
-              GANZE Name (ZH-211.11: 45 Zeichen). Es darf darum schrumpfen statt
-              die Zone zu sprengen — `truncate` statt `shrink-0`. Es bleibt damit
-              sichtbar (`kopfElemente.kuerzel === true`), und die Zusage «der
-              Artikel fällt nie» wird sogar STÄRKER: er trägt weiterhin `shrink-0`
-              und gibt jetzt zuletzt nach. Bewusst OHNE `title`: den Volltitel hier
-              als Tooltip nachzuschieben hiesse, ihn doch wieder mitzuführen — er
-              steht in der H1 unmittelbar darunter. */}
-          <span data-v3-kopf-kuerzel className="min-w-0 truncate font-medium text-ink-800">{erlass.kuerzel}</span>
+          {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────
+              Ä21 gab dem Kürzel `min-w-0 truncate` (statt `shrink-0`), weil es bei
+              ZH-211.11 der ganze Name ist (45 Zeichen) und die Zone sonst
+              gesprengt hätte. NEBENWIRKUNG, gemessen 17.8.2026 @1440 an LugÜ: in
+              einer Zone mit ZWEI `truncate`-Geschwistern verteilt Flexbox den
+              Mangel auf beide — das VIER Zeichen kurze «LugÜ» wurde zu «Lu…»
+              (`scrollWidth` 29 in `clientWidth` 23). Ausgerechnet die Kennung, die
+              man sucht, um den Erlass wiederzuerkennen (Ä-(d) hat sie im Titel
+              gerade darum nach vorn gezogen), verschwand als erste.
+              REGEL: das Kürzel schrumpft nur, wenn es allein steht — dann ist es
+              der ganze Name und darf umbrechen bzw. kürzen. Steht ein Volltitel
+              daneben, gibt DIESER nach, und die Kennung bleibt vollständig.
+              BEWACHT: `e2e/leser-v3-kopf-buendig.e2e.ts` (d) misst LugÜ/StPO und
+              ZH-211.11 auf `scrollWidth <= clientWidth` am Kürzel-Element. */}
+          <span data-v3-kopf-kuerzel
+            className={`font-medium text-ink-800 ${
+              el.volltitel && zeigeVolltitel(erlass) ? 'shrink-0' : 'min-w-0 truncate'}`}>{erlass.kuerzel}</span>
           {/* ── Ä21 (H2b) · DER NAME STEHT EINMAL ─────────────────────────────
               Gemessen 17.8.2026 an ZH-211.11: «Gebührenverordnung des
               Obergerichts (GebV OG)» stand in der App-Krume, direkt darunter als
@@ -130,8 +138,16 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
               erlassneutral, unit-geprüft): trägt der Titel neben dem Kürzel keine
               eigene Auskunft, entfällt er. Bund, Verordnung und Staatsvertrag
               sind unberührt — dort sagt der Volltitel etwas anderes als das
-              Kürzel. Der volle Wortlaut bleibt im `title` des Kürzels erreichbar,
-              es verschwindet also keine Information (§8). */}
+              Kürzel.
+              B2 (H2b-Nachzug): «keine eigene Auskunft» heisst seit dem Nachzug
+              WORTGLEICH, nicht «fängt gleich an» — die alte Regel unterdrückte
+              auch Titel, die mehr sagen als das Kürzel (BS-BeE 610.100, AsylG;
+              Herleitung und Messwerte in `erlassAnsicht.zeigeVolltitel`). Hier
+              stand zudem der Satz, der volle Wortlaut bleibe «im `title` des
+              Kürzels» erreichbar — das war falsch (das Kürzel trug nie ein
+              `title`) und wäre auch als Absicht falsch: ein Tooltip ist kein
+              Ersatz für sichtbare Auskunft (§8). Bleibt der Volltitel, steht er
+              sichtbar; sein `title` unten ist nur der Volltext der Ellipse. */}
           {el.volltitel && zeigeVolltitel(erlass) && (
             <span className="min-w-0 truncate text-ink-500" title={`${erlass.titel} · ${ebene.label}`}>{erlass.titel}</span>
           )}

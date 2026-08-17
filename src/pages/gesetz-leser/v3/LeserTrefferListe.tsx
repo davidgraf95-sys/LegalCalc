@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
 import { badgesFuer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
 import { SuchBereichWahl } from './SuchBereichWahl';
+import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 
 // ═══ Trefferliste V3 — Verzeichnis in Erlass-Reihenfolge (H2, Kap. 4b Pos. 5) ═
 //
@@ -51,8 +52,10 @@ export interface LeserTrefferListeProps {
    *  gemessen 17.8.2026 an ZH-211.11: «9 Artikel · 15 Fundstellen» in einem
    *  Erlass, der durchweg «§» führt. Kein Vorgabewert: ein stiller Rückfall auf
    *  «Artikel» wäre genau der Bund-Standard, den die Erlass-Neutralität
-   *  ausschliesst (Fundament-Auflage 2) — der Aufrufer MUSS sich äussern. */
-  bestimmungsWort: 'Artikel' | 'Paragraphen';
+   *  ausschliesst (Fundament-Auflage 2) — der Aufrufer MUSS sich äussern.
+   *  B8 (H2b-Nachzug): Typ und Zählform kommen aus `./erlassAnsicht`, nicht mehr
+   *  als Literal-Union je Datei. */
+  bestimmungsWort: BestimmungsWort;
   fussnotenAus: boolean;
   /** 0-basierte laufende Fundstelle der ↑↓-Navigation; -1 = noch keine. */
   position: number;
@@ -68,15 +71,6 @@ export interface LeserTrefferListeProps {
   onSprung: (token: string) => void;
   /** Klick auf eine Fundstellen-Zeile: zu genau dieser Stelle. */
   onSprungStelle: (token: string, rang: number) => void;
-}
-
-/**
- * Ä23 · Zählform des Bestimmungsworts. «Artikel» ist im Deutschen formgleich,
- * «Paragraphen» nicht — «1 Paragraphen» wäre ein Grammatikfehler an einer
- * Kernauskunft. Rein und an dieser Stelle, weil nur die Liste zählt (§3).
- */
-function zahlwort(n: number, wort: 'Artikel' | 'Paragraphen'): string {
-  return n === 1 && wort === 'Paragraphen' ? 'Paragraph' : wort;
 }
 
 /** Ein Kontext-Schnipsel mit markiertem Begriff — aus den QUELL-Strings.
@@ -148,11 +142,22 @@ export function LeserTrefferListe({
               nur während einer Suche existiert. `min-h-5` bleibt als
               Ein-Zeilen-Reservierung — der Umbruch tritt erst ein, wenn die Zahl
               ihn braucht, und dann durch eine Nutzer-Eingabe (§15.2). */}
+          {/* ── Ä30 (H2b-Nachzug) · DER UMBRUCH SITZT AM TRENNER ──────────────
+              Ä15 erlaubte den Umbruch statt der Ellipse — aber ohne zu sagen, WO.
+              Gemessen 17.8.2026 an BS-154.125 («Gericht»): der Browser brach
+              irgendwo, «15 Paragraphen · 62 Fundstellen» stand zweizeilig mit
+              «Paragraphen» allein in Zeile 2, an langen Wörtern auch dreizeilig
+              («285 / Paragraphen · 2203 / Fundstellen»). Eine Zahl von ihrer
+              Einheit zu trennen ist an einer Kernauskunft dasselbe Übel wie die
+              Ellipse (§8).
+              JETZT: jedes Segment «Zahl + Einheit» ist ein eigener,
+              nicht-umbrechbarer Block (`whitespace-nowrap`), der Trenner «·» ist
+              die einzige erlaubte Bruchstelle. Zwei Zeilen bleiben möglich, aber
+              sie brechen zwischen den Aussagen statt in ihnen. */}
           <p className="min-h-5 min-w-0 flex-1 leading-snug">
-            <span className="num">{treffer.length}</span> {zahlwort(treffer.length, bestimmungsWort)}
+            <span className="whitespace-nowrap"><span className="num">{treffer.length}</span> {zaehlform(treffer.length, bestimmungsWort)}</span>
             <span aria-hidden className="mx-1 text-ink-300">·</span>
-            <span className="num">{fundstellen}</span>
-            {fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}
+            <span className="whitespace-nowrap"><span className="num">{fundstellen}</span>{fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}</span>
           </p>
           {hatSprung && (
             <>
@@ -180,8 +185,10 @@ export function LeserTrefferListe({
         // §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
         // Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
         <p className="px-1 py-2 text-body-s text-ink-500">
-          {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. */}
-          {bestimmungsWort === 'Paragraphen' ? 'Kein Paragraph' : 'Kein Artikel'} gefunden für «{begriff}»
+          {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. B8: die Einzahl
+              kommt aus derselben `zaehlform` wie oben — hier stand sonst eine
+              dritte Schreibweise derselben Regel. */}
+          Kein {zaehlform(1, bestimmungsWort)} gefunden für «{begriff}»
           {bereich !== 'alles' && <> im gewählten Suchbereich</>}.
         </p>
       )}
@@ -213,8 +220,23 @@ export function LeserTrefferListe({
                   aria-current={aktiv ? 'location' : undefined}
                   aria-expanded={offen}
                   className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'hover:bg-paper-sunken/60'}`}>
+                  {/* ── Ä10/Ä26 (H2b-Nachzug) · DAS ETIKETT SPRENGT DIE LEISTE NICHT
+                      Gemessen 17.8.2026 (LugÜ, Suche «Gericht»): `shrink-0` am
+                      Etikett war für «Art. 47» richtig und für Anhänge falsch —
+                      «Protokoll 1 über bestimmte Zuständigkeits-, Verfahrens- und
+                      Vollstreckungsfragen» ist 80 Zeichen lang und trug den
+                      Scroller auf `scrollWidth` **699 px in `clientWidth` 280 px**
+                      (Blatt @390 ebenso: 699/366). Der Fundstellen-Zähler rechts
+                      lag damit hunderte Pixel ausserhalb des Sichtfelds — die
+                      Leiste hatte einen horizontalen Scroller, den sie ausdrücklich
+                      nicht haben darf (`overflow-x-hidden`, S9-Zusage).
+                      JETZT: das Etikett darf schrumpfen (`min-w-0 truncate`, voller
+                      Wortlaut im `title` und im Erlass selbst), der ZÄHLER behält
+                      `shrink-0` und bleibt sichtbar — er ist die Auskunft, die die
+                      Zeile hier gibt. Der Randtitel gibt weiterhin zuerst nach:
+                      er hat `flex-1`, das Etikett nicht. */}
                   <span className="flex items-baseline gap-2">
-                    <span className="num shrink-0 text-body-s font-semibold text-ink-800">{t.label}</span>
+                    <span className="num min-w-0 truncate text-body-s font-semibold text-ink-800" title={t.label}>{t.label}</span>
                     {t.randtitel && (
                       <span className="min-w-0 flex-1 truncate font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
                     )}

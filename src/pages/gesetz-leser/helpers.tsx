@@ -111,6 +111,27 @@ export function grundartMeta(key: string): {
   };
 }
 
+/**
+ * B1 (H2b-Nachzug) — der Volltitel OHNE das Klammer-Suffix, das Fedlex und die
+ * kantonalen Register anhängen («… (Strafprozessordnung, StPO)», «… (LS 211.11)»).
+ *
+ * WARUM HIER UND NICHT ZWEIMAL. Genau diese Zeichenkette ist es, die der
+ * Erlass-Kopf DRUCKT (`parts/ErlassLeserKopf.tsx`), und genau sie muss darum auch
+ * gemessen werden, wenn über ihre LÄNGE entschieden wird (`v3/erlassAnsicht`
+ * `titelKennung`) oder über ihre GLEICHHEIT mit dem Kürzel (`zeigeVolltitel`).
+ * Bis zum Nachzug lag die Regex nur im Kopf, die Entscheidungen massen `titel`
+ * roh — gemessen 17.8.2026 bekamen dadurch **46 von 1469** Erlassen die
+ * vorangestellte Kennung, obwohl ihr angezeigter Titel unter der Schwelle liegt
+ * (MSchG: roh 81 Zeichen, angezeigt 60; ebenso FusG, PartG, URV, BetmG, IRSG).
+ * Eine Länge, die etwas anderes misst als das Gedruckte, ist keine Kalibrierung.
+ *
+ * Rein und deterministisch (§2): nur das LETZTE Klammerpaar am Ende fällt, und
+ * nur, wenn es dort steht — «Verordnung (EU) 2016/679 über …» bleibt unberührt.
+ */
+export function titelOhneKlammerSuffix(titel: string): string {
+  return titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
 // Kopf-Overline JE GRUNDART (W2·5d G3a, FAHRPLAN §2.2 + §5.1): das Kopf-Label
 // leitet sich aus `erlassTyp` (Register, SSoT) ab statt aus der früheren
 // «ebene»-Heuristik, die JEDE Bund-Norm «Bundesgesetz» nannte — auch die 103

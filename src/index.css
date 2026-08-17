@@ -862,11 +862,21 @@
      `.lc-input` bleibt für die ganze App unverändert (FL-4).
      `outline` statt `box-shadow`: forced-colors zeichnet Outlines selbst, der
      UA-Fallback weiter unten bleibt damit ohne Konkurrenz. */
+  /* ── Ä31 (H2b-Nachzug) · WIRKLICH EIN RING, NICHT ZWEI ─────────────────────
+     Ä14 nahm den `box-shadow` weg, liess aber `border-color: var(--focus)` und
+     `outline-offset: 1px` stehen. Gemessen 17.8.2026 am Feld der V3-Leiste:
+     `outline 2px solid rgb(130,98,37)` · `outline-offset 1px` · `border-top 1px
+     rgb(130,98,37)` — der 1-px-Spalt zwischen Feldrahmen und Outline macht aus
+     zwei messingfarbenen Kanten wieder zwei sichtbare Ringe. Ä14 war damit nur
+     «teilweise» erledigt, wie die Ästhetik-Prüfung notiert hat.
+     JETZT: der Rahmen bleibt im Fokus NEUTRAL (`--line`, unverändert gegenüber
+     dem Ruhezustand), der Ring sitzt ohne Spalt am Feld (`outline-offset: 0`).
+     Es gibt genau EINE Messing-Kante — die des Rings. */
   .lc-input.lc-v3-feld:focus, .lc-input.lc-v3-feld:focus-visible {
-    border-color: var(--focus);
+    border-color: var(--line);
     box-shadow: none;
     outline: 2px solid var(--focus);
-    outline-offset: 1px;
+    outline-offset: 0;
   }
   /* ── Ä5 (LESER-V3 H2b) · Fläche des klebenden Leisten-Sockels ───────────────
      Der Sockel muss OPAK sein (sonst läuft der Gliederungsbaum beim Scrollen
@@ -1257,6 +1267,19 @@
   details > summary::-webkit-details-marker { display: none; }
   details > summary::after { content: '  ▸'; color: var(--ink-400); font-size: .7em; }
   details[open] > summary::after { content: '  ▾'; }
+  /* ── Ä5/Ä27 (H2b-Nachzug) · NUR EIN DISCLOSURE-ZEICHEN ─────────────────────
+     Ä5 entfernte das hängende «·» aus der V3-Übersichtszeile, ihr zweites
+     hängendes Zeichen blieb: die Regel oben hängt an JEDE `<summary>` ein «▸»
+     ANS ENDE, und `v3/UebersichtBox.tsx` setzt bereits ein eigenes «▸» VORN,
+     das beim Aufklappen dreht. Gemessen 17.8.2026 (LugÜ @1440,
+     `getComputedStyle(el,'::after').content` = `"  ▸"`, dazu der Textknoten
+     «▸» im ersten Kind): das Zeichen war nicht weg, es war umgezogen.
+     GESTRICHEN wird das GLOBALE für diese eine Box, nicht das eigene: das
+     eigene sitzt vor dem Etikett (wo der Leser es erwartet), dreht sich statt
+     seinen Inhalt zu tauschen, und kann nicht als einzelnes Zeichen ans
+     Zeilenende umbrechen. Die App-weite Regel bleibt für alle anderen
+     `<details>` unverändert (FL-4). */
+  details[data-v3-uebersicht] > summary::after { content: none; }
 
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */

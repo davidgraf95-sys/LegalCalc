@@ -332,6 +332,11 @@ export function Shell({ children }: { children: ReactNode }) {
         {!seitenleiste.eingeklappt && (
           <>
             <aside
+              // A1 (H2b-Nachzug): Testanker. Der Wächter der Ä1c-Vorgabe muss die
+              // APP-Leiste messen, nicht «das erste <aside>» — im Leser ist das
+              // sonst die V3-Gliederung (18 rem), und die Sonde wäre grün, während
+              // die App-Leiste offen daneben steht (genau so blieb A1 unbemerkt).
+              data-app-seitenleiste
               className="hidden lg:flex lg:flex-col shrink-0 sticky top-0 h-screen overflow-y-auto border-r border-line"
               style={{ width: seitenleiste.breite, background: 'color-mix(in srgb, var(--paper-sunken) 35%, var(--paper))' }}
             >

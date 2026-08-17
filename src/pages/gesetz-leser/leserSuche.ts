@@ -343,6 +343,46 @@ export interface LeserTreffer {
 /** Ausschnitt-Länge (Spec §4.3: «Snippet ≤ 120 Zeichen um die erste Fundstelle»). */
 export const AUSSCHNITT_MAX = 120;
 
+/**
+ * Ä29 (H2b-Nachzug) — SCHNITT AN DER WORTGRENZE.
+ *
+ * BEFUND (Ästhetik-Prüfung 17.8.2026): Kontext-Ausschnitte begannen mitten im
+ * Wort — «… on erhebt» statt «… Behörde erhebt». Ein angeschnittener Wortrest
+ * liest sich wie ein Tippfehler und kostet genau den Kontext, für den der
+ * Ausschnitt da ist (§8).
+ *
+ * Die beiden Funktionen rücken die Schnittkante auf die nächste Wortgrenze, und
+ * zwar **nur nach innen**: der Ausschnitt wird dadurch höchstens kürzer, nie
+ * länger als `AUSSCHNITT_MAX`. Ist in der Nähe keine Grenze (eine lange
+ * Zahlen-/Zeichenkette ohne Leerraum), bleibt der harte Schnitt — ein Ausschnitt,
+ * der auf eine Wortgrenze WARTET, verschluckte sonst die Fundstelle selbst.
+ * `GRENZ_FENSTER` ist darum klein: es soll ein angeschnittenes Wort verwerfen,
+ * nicht den Kontext neu zuschneiden.
+ *
+ * Rein und deterministisch (§2). GETEILTE WIRKUNG: `baueAusschnitt` speist die
+ * Trefferlisten BEIDER Hüllen — der Befund ist heute live, der Fix wirkt in
+ * beiden (deklariert wie Ä8).
+ */
+const GRENZ_FENSTER = 16;
+
+function wortAnfangAb(text: string, roh: number, schranke: number): number {
+  if (roh <= 0) return 0;
+  if (/\s/.test(text[roh - 1] ?? '')) return roh; // Kante steht schon am Trenner
+  for (let i = roh + 1; i <= Math.min(schranke, roh + GRENZ_FENSTER); i += 1) {
+    if (/\s/.test(text[i - 1] ?? '')) return i;
+  }
+  return roh;
+}
+
+function wortEndeBis(text: string, roh: number, schranke: number): number {
+  if (roh >= text.length) return text.length;
+  if (/\s/.test(text[roh] ?? '')) return roh;
+  for (let i = roh - 1; i >= Math.max(schranke, roh - GRENZ_FENSTER); i -= 1) {
+    if (/\s/.test(text[i] ?? '')) return i;
+  }
+  return roh;
+}
+
 function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuelle): Ausschnitt {
   const treffer = text.slice(von, bis);
   const rest = Math.max(0, AUSSCHNITT_MAX - treffer.length);
@@ -350,8 +390,10 @@ function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuel
   // NACH dem Begriff steht, trägt die Aussage meist weiter.
   const vorLaenge = Math.floor(rest / 3);
   const nachLaenge = rest - vorLaenge;
-  const abVor = Math.max(0, von - vorLaenge);
-  const bisNach = Math.min(text.length, bis + nachLaenge);
+  // Ä29: erst hart rechnen, dann nach innen auf die Wortgrenze rücken. Die
+  // Fundstelle (`von`/`bis`) ist die Schranke — sie wird nie angetastet.
+  const abVor = wortAnfangAb(text, Math.max(0, von - vorLaenge), von);
+  const bisNach = wortEndeBis(text, Math.min(text.length, bis + nachLaenge), bis);
   return {
     vor: (abVor > 0 ? '… ' : '') + text.slice(abVor, von),
     treffer,

@@ -17,11 +17,11 @@ import { LeserSeitenleiste } from './LeserSeitenleiste';
 import { LeserGliederung } from './LeserGliederung';
 import { LeserLesespalte } from './LeserLesespalte';
 import { SuchSprungFeld } from './SuchSprungFeld';
-import { SuchZone } from './SuchZone';
+import { SuchZone, SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
 import { ReiterAktion } from './ReiterAktion';
 import { kopfHoehe, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
-import { overlineGebiet, suchPlatzhalter, titelKennung } from './erlassAnsicht';
+import { bestimmungsWort as bestimmungsWortVon, overlineGebiet, suchPlatzhalter, titelKennung } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
 import { useLeserV3Modell } from './leserV3Modell';
 
@@ -95,24 +95,14 @@ export function LeserRahmenV3({
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
   const { stufe, kopfRef } = useKopfStufe();
 
-  // ⌘K / «/» — Zusage des RAHMENS, nicht des Feldes (Bug-Check B1): erst die
-  // Fläche öffnen, in der das Feld steht, dann fokussieren. Steht VOR den
-  // frühen Rückgaben, weil Hooks nicht bedingt laufen dürfen; der Ist-Zustand
-  // wird erst beim Tastendruck gelesen, nicht beim Registrieren.
+  // ⌘K / «/» — Zusage des RAHMENS, nicht des Feldes (Bug-Check B1). Steht VOR den
+  // frühen Rückgaben, weil Hooks nicht bedingt laufen dürfen.
+  // A3: WELCHES Pane den Tastendruck bekommt, entscheidet `./suchKuerzel` am
+  // Fokus. KEIN `onKuerzel` mehr — seit Ä19/A2 ist das Feld in jeder Lage im DOM
+  // (Spalte · Kopf-Zone · offenes Blatt), es ist also nichts zu öffnen (§17
+  // Rückbau; der Zweig war unerreichbar, Beleg im Vollzugsvermerk).
   const suchFeldRef = useRef<HTMLInputElement>(null);
-  useSuchSprungKuerzel({
-    feldRef: suchFeldRef,
-    onKuerzel: () => {
-      if ((m.eintraege?.length ?? 0) === 0) return;
-      // Ä19: das Feld ist seit der Such-Zone (`./SuchZone`) in jeder Breite im
-      // DOM. Dann NICHTS öffnen — sonst wanderte es beim Tastendruck aus dem Kopf
-      // in die eben geöffnete Spalte und der nachgereichte Fokus träfe ein
-      // Element, das gerade ausgetauscht wird. Nur der Rest-Fall öffnet.
-      if (suchFeldRef.current) return;
-      if (umgebung.istXl) m.setTocOffen(true);
-      else m.setTocAuf(true);
-    },
-  });
+  useSuchSprungKuerzel({ feldRef: suchFeldRef, imSekundaerenPane: umgebung.istSekundaer });
 
   // Frühe Ansichten (Fehlseite · Currency-Pin · pdf-embed · nur-live-link) und
   // der Ladezustand — dieselben Bausteine wie die Ist-Hülle (§5).
@@ -125,9 +115,10 @@ export function LeserRahmenV3({
 
   const { erlass, eintraege } = m;
   const meta = grundartMeta(erlass.key);
-  const bestimmungsWort = meta.bestimmungsEtikett === 'paragraf' ? 'Paragraphen' : 'Artikel';
+  const bestimmungsWort = bestimmungsWortVon(erlass.key); // B8: EINE Ableitung
   const hatLeiste = eintraege.length > 0;
   const zweiSpalten = umgebung.istXl && hatLeiste && m.tocOffen;
+  const blattOffen = !umgebung.istXl && m.tocAuf && hatLeiste; // A2: Feld im Blatt
 
   // Ä20 · Platzhalter-Beispiel = amtliches Etikett des ERSTEN Eintrags («Art. 1»
   // bzw. «§ 1»), nie aus dem Bestimmungswort gebaut (§5, `./erlassAnsicht`).
@@ -136,7 +127,7 @@ export function LeserRahmenV3({
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
       onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
-      platzhalter={suchPlatzhalter(beispielBestimmung)}
+      platzhalter={suchPlatzhalter(beispielBestimmung)} escLeert={!blattOffen}
       // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
       // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).
       hatTreffer={m.fundstellen > 0}
@@ -146,11 +137,13 @@ export function LeserRahmenV3({
 
   const leiste = (imSheet: boolean) => (
     <LeserSeitenleiste
-      uebersicht={<LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}
+      // Ä32: im TREFFER-Blatt keine Ankunfts-Übersicht über der Trefferliste.
+      uebersicht={imSheet && m.sucheAktiv ? undefined : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}
       // Ä19: Feld nur in der SPALTE — ohne Spalte trägt es die Such-Zone des
-      // Kopf-Blocks (`./SuchZone`), ein zweites im Sheet wäre der Fehler K2 (§5).
+      // Kopf-Blocks (`./SuchZone`) bzw., bei offenem Blatt, dessen Kopf (A2).
       suchFeld={imSheet ? undefined : suchFeld}
       baum={<LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />}
+      baumKnoepfe={!m.sucheAktiv} // Ä32: «alles auf/zu» nur zum Baum
       // Ä10: im Sheet benennt der Sheet-Kopf die Zone (sonst «Gliederung» doppelt).
       baumTitel={imSheet ? undefined : (m.sucheAktiv ? 'Treffer' : 'Gliederung')}
       onAlleAuf={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, true])) }))}
@@ -161,11 +154,11 @@ export function LeserRahmenV3({
   );
 
   // Ä19: Wo die Gliederung NICHT als Spalte steht, trägt der klebende Kopf-Block
-  // das Feld — Herleitung und Regel in `./SuchZone`.
+  // das Feld (Regel in `./SuchZone`) — ausser das Blatt ist offen, dann es (A2).
   const suchZoneKlebt = hatLeiste && !zweiSpalten;
   const suchZone = suchZoneKlebt
     ? (
-      <SuchZone suchFeld={suchFeld} sucheAktiv={m.sucheAktiv}
+      <SuchZone suchFeld={blattOffen ? undefined : suchFeld} sucheAktiv={m.sucheAktiv}
         bestimmungen={m.treffer.length} fundstellen={m.fundstellen}
         bestimmungsWort={bestimmungsWort}
         // Die eine Geste «zeig mir die Leiste»: Spalte @≥1024 px, Sheet darunter.
@@ -204,7 +197,8 @@ export function LeserRahmenV3({
         '--leser-kopf-h': 'calc(4rem + 2.25rem)',
         // Ä19: Höhe der Such-Zone — 0, wo die Leiste als Spalte das Feld trägt.
         // Zwei feste Werte, damit `--nt-stick` unten aus derselben Quelle rechnet.
-        '--leser-v3-such-h': suchZoneKlebt ? (m.sucheAktiv ? '4.25rem' : '2.75rem') : '0rem',
+        // B9: die zwei Werte gehören der Zone (`./SuchZone`), nicht dieser Datei.
+        '--leser-v3-such-h': suchZoneKlebt ? (m.sucheAktiv ? SUCH_H_AKTIV : SUCH_H_RUHE) : '0rem',
         // Ä1: Wrapper-Polsterung, die der Kopf verschluckt. Vorgabe in index.css
         // (Shell `py-8 sm:py-12`); im Pane sind es `py-6` (Pane.tsx).
         ...(umgebung.imPane ? { '--leser-v3-kopf-luecke': '1.5rem' } : {}),
@@ -222,7 +216,7 @@ export function LeserRahmenV3({
           (Kap. 4b). Wiederverwendet wird die bestehende Sheet-Anatomie
           (Dialog-Rolle, Fokusfang, Esc, Portal in die Pane-Overlay-Schicht) —
           §5, kein zweiter Overlay-Mechanismus. */}
-      {!umgebung.istXl && m.tocAuf && hatLeiste && (() => {
+      {blattOffen && (() => {
         const ziel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
         const sheet = (
           // ── H2 · DAS SHEET TRÄGT SEINE PANE-ROLLE (Befund 16.8.2026) ──────
@@ -248,7 +242,9 @@ export function LeserRahmenV3({
             <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
               onSchliessen={() => m.setTocAuf(false)}
               pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
-              // Ä19: kein `sprungFeld` — es steht in der Such-Zone des Kopf-Blocks.
+              // A2/Ä32: DASSELBE Feld zuoberst im Blatt (Fokus-Falle, WCAG 2.4.3;
+              // die Such-Zone gibt es solange her) · «Sie sind hier» nur zum Baum.
+              sprungFeld={suchFeld} feldZuoberst ortAnzeigen={!m.sucheAktiv}
               // Ä10: der Blatt-Kopf benennt die Zone; die Leiste darin schweigt.
               titel={m.sucheAktiv ? 'Treffer' : 'Gliederung'}
               baum={leiste(true)} />

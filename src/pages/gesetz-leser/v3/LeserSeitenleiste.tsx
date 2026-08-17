@@ -23,6 +23,7 @@ import { useCallback, type ReactNode } from 'react';
 
 export function LeserSeitenleiste({
   uebersicht, suchFeld, baum, baumTitel, onAlleAuf, onAlleZu, onAnfang, alleOffen, extra,
+  baumKnoepfe = true,
 }: {
   /** Übersichtsbox (Kap. 4b ①). `null` = noch nicht ladbar ⇒ Zeile entfällt. */
   uebersicht?: ReactNode;
@@ -50,6 +51,10 @@ export function LeserSeitenleiste({
   /** Erweiterungspunkt: zusätzliche Blöcke UNTER dem Baum (Kontext-Reiter,
    *  H3-Panel-Anschluss). Nicht gesetzt ⇒ nichts gerendert, kein Abstand. */
   extra?: ReactNode;
+  /** Ä32 (H2b-Nachzug): Steht in Zone B wirklich der GLIEDERUNGSBAUM? Nur dann
+   *  hat «alles auf/zu» ein Ziel. `false` setzt der Aufrufer, während die
+   *  Trefferliste an seinem Platz liegt — Herleitung unten am Markup. */
+  baumKnoepfe?: boolean;
 }) {
   // ── W-1 · Zone A publiziert ihre Höhe als `--toc-deckel` (Befund 16.8.2026) ─
   // Die Trefferliste klebt mit `top: var(--toc-deckel, 0px)`
@@ -125,17 +130,34 @@ export function LeserSeitenleiste({
             und es gibt weiterhin genau EINE opake Fläche über dem Baum. */}
         <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf className="lc-leiste-sockel sticky top-0 z-10 -mt-0.5 space-y-2 pb-2 pt-0.5">
           {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
-          <div className="flex items-center justify-between gap-2">
-            {baumTitel ? <h2 className="lc-overline">{baumTitel}</h2> : <span aria-hidden />}
+          {/* ── Ä32 (H2b-Nachzug) · «ALLES AUF» GEHÖRT DEM BAUM ────────────────
+              BEFUND (Ästhetik-Prüfung 17.8.2026, `lugue-H-hell-suche-liste`): im
+              Treffer-Blatt hing die Knopfgruppe «⌄ alles auf   ↑ Anfang»
+              etikettlos rechts — Ä10 hatte die Überschrift der Leiste dort
+              entfernt (der Blatt-Kopf benennt die Zone), und übrig blieben zwei
+              Knöpfe ohne Bezug. Der eigentliche Fehler steckt dahinter: «alle
+              Gliederungsstufen aufklappen» klappt einen Baum auf, der während
+              einer Suche gar nicht steht — an seinem Platz liegt die
+              Trefferliste, die ihre Artikel EINZELN aufklappt. Ein Knopf, der
+              etwas anderes tut als er sagt, ist schlimmer als keiner (§8).
+              JETZT: der Auf/Zu-Knopf erscheint nur, wenn der Baum gezeigt wird
+              (`baumTitel` ist genau dann gesetzt bzw. der Behälter benennt ihn —
+              der Aufrufer sagt es über `baumKnoepfe`). «↑ Anfang» bleibt in
+              beiden Zuständen: es bezieht sich auf den ERLASS, nicht auf den
+              Baum, und ist «genau EIN Knopf pro Seite» (Pos. 15). */}
+          <div className={`flex items-center gap-2 ${baumTitel ? 'justify-between' : 'justify-end'}`}>
+            {baumTitel && <h2 className="lc-overline">{baumTitel}</h2>}
             <div className="flex shrink-0 items-center gap-1">
-              <button type="button" data-v3-alle
-                onClick={alleOffen ? onAlleZu : onAlleAuf}
-                aria-expanded={alleOffen}
-                title={alleOffen ? 'Alle Gliederungsstufen zuklappen' : 'Alle Gliederungsstufen aufklappen'}
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                <span aria-hidden>{alleOffen ? '⌃' : '⌄'}</span>
-                <span>{alleOffen ? 'alles zu' : 'alles auf'}</span>
-              </button>
+              {baumKnoepfe && (
+                <button type="button" data-v3-alle
+                  onClick={alleOffen ? onAlleZu : onAlleAuf}
+                  aria-expanded={alleOffen}
+                  title={alleOffen ? 'Alle Gliederungsstufen zuklappen' : 'Alle Gliederungsstufen aufklappen'}
+                  className="lc-leiste-griff gap-1 px-1.5 text-micro">
+                  <span aria-hidden>{alleOffen ? '⌃' : '⌄'}</span>
+                  <span>{alleOffen ? 'alles zu' : 'alles auf'}</span>
+                </button>
+              )}
               <button type="button" data-v3-anfang onClick={onAnfang}
                 title="Zum Anfang des Erlasses"
                 className="lc-leiste-griff gap-1 px-1.5 text-micro">

@@ -95,11 +95,23 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
     const imKopf = await feld.evaluate((el) => !!el.closest('[data-v3-kopf]'))
     expect(imKopf, 'das Feld liegt nicht im klebenden Kopf-Block').toBe(true)
 
-    // Das Blatt trägt KEINES mehr: eine Absicht, eine Eingabe.
+    // ── §6.3-NACHZUG (A2, H2b-Nachzug) · DIE ZUSAGE IST GESCHÄRFT, NICHT GELOCKERT
+    // Bis hierher stand hier «im Blatt steht KEIN Feld» (`count === 0`). Das war
+    // die richtige Antwort auf K2 (zwei Eingaben für eine Absicht) und die falsche
+    // auf WCAG: das Blatt ist ein `role=dialog`, und ohne Feld darin gab es bei
+    // offener Trefferliste @390 überhaupt kein erreichbares Eingabefeld mehr —
+    // gemessen 17.8.2026 zog Ctrl+K den Fokus auf das VERDECKTE Kopf-Feld
+    // (`sheet.contains(activeElement) === false`), Tippen landete unsichtbar.
+    // NEUE ZUSAGE, strenger als die alte: es gibt weiterhin GENAU EIN Feld im
+    // ganzen Dokument — es steht nur dort, wo der Fokus hin darf. Solange das
+    // Blatt offen ist, IM Blatt; sonst im Kopf-Block.
     await page.locator('[data-v3-gliederung-auf]').first().click()
     await expect(page.locator('[data-gliederung-sheet]')).toBeVisible({ timeout: 15_000 })
+    await expect(feld, 'bei offenem Blatt gibt es nicht mehr genau EIN Feld (K2)').toHaveCount(1)
     expect(await page.locator('[data-gliederung-sheet] [data-v3-suchsprung]').count(),
-      'im Gliederungs-Blatt steht ein zweites Suchfeld (Fehler K2)').toBe(0)
+      'im offenen Blatt fehlt das Feld — der Fokus müsste den Dialog verlassen').toBe(1)
+    expect(await feld.evaluate((el) => !!el.closest('[data-v3-kopf]')),
+      'das Feld steht bei offenem Blatt noch im (verdeckten) Kopf-Block').toBe(false)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
@@ -127,6 +139,50 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
     // Und es ist bedienbar, nicht nur sichtbar.
     await feld.click()
     await expect(feld).toBeFocused()
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  // ── B9 (H2b-Nachzug) · DIE AUSGELEGTE HÖHE IST DIE GEMESSENE ──────────────
+  // `--leser-v3-such-h` speist `--nt-stick`, also den Sprung-Offset JEDES
+  // Artikel-Ankers. Die zwei Werte standen als rem-Literale im Rahmen, das
+  // Markup in `SuchZone.tsx` — ohne Wächter dazwischen (Klasse LM-003). Jetzt
+  // exportiert die Zone die Konstanten, und diese Spec misst, dass sie stimmen.
+  // ROT ZU BEKOMMEN (§6.7): `SUCH_H_RUHE` in `v3/SuchZone.tsx` auf `'3.5rem'`
+  // setzen ⇒ ausgelegt 56 px, gemessen 44 px.
+  test('(e) die Höhe der Such-Zone stimmt mit der ausgelegten Variable überein', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await expect(page.locator('[data-v3-such-zone]')).toBeVisible({ timeout: 20_000 })
+
+    const mass = async () => page.evaluate(() => {
+      const zone = document.querySelector('[data-v3-such-zone]') as HTMLElement | null
+      const wurzel = document.querySelector('[data-leser-v3="rahmen"]') as HTMLElement | null
+      if (!zone || !wurzel) return null
+      const roh = getComputedStyle(wurzel).getPropertyValue('--leser-v3-such-h').trim()
+      // rem → px über eine Sonde, damit die Spec keine 16-px-Annahme trifft.
+      const probe = document.createElement('div')
+      probe.style.cssText = `position:absolute;visibility:hidden;height:${roh}`
+      wurzel.appendChild(probe)
+      const ausgelegt = Math.round(probe.getBoundingClientRect().height)
+      probe.remove()
+      return { ausgelegt, gemessen: Math.round(zone.getBoundingClientRect().height), roh }
+    })
+
+    const ruhe = await mass()
+    expect(ruhe, 'Zone oder Rahmen nicht gefunden').not.toBe(null)
+    expect(ruhe!.gemessen, `Ruhezustand: ausgelegt ${ruhe!.roh} = ${ruhe!.ausgelegt} px, gemessen ${ruhe!.gemessen} px`)
+      .toBe(ruhe!.ausgelegt)
+
+    // Mit laufender Suche wächst die Zone um die Zähler-Zeile — der zweite Wert.
+    await page.locator('[data-v3-such-zone] input').fill('Anwalt')
+    await expect(page.locator('[data-v3-treffer-weg]')).toBeVisible({ timeout: 15_000 })
+    const aktiv = await mass()
+    expect(aktiv!.gemessen, `mit Suche: ausgelegt ${aktiv!.roh} = ${aktiv!.ausgelegt} px, gemessen ${aktiv!.gemessen} px`)
+      .toBe(aktiv!.ausgelegt)
+    expect(aktiv!.ausgelegt, 'die Zone wächst mit der Suche gar nicht — Fall untauglich')
+      .toBeGreaterThan(ruhe!.ausgelegt)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

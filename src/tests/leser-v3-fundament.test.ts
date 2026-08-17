@@ -257,6 +257,63 @@ describe('Kein `if (bund)`: erlass.ebene / erlass.rechtsgebiet nur in erlassAnsi
   });
 });
 
+describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2026)', () => {
+  const QUELLE_DER_WAHRHEIT = 'erlassAnsicht.ts';
+
+  // BEFUND, der diese Sonde nötig gemacht hat: das Literal `'Paragraphen'` lag an
+  // FÜNF Stellen in `v3/` (SuchZone · LeserGliederung · LeserUebersicht ·
+  // LeserTrefferListe, dazu die Ableitung im Rahmen), die Singular-Regel dreifach.
+  // Aus genau dieser Streuung entstand Ä23 («Artikel» hart kodiert an einem
+  // §-Erlass). Die Sonde ist die Gegenkraft: ein neues Bauteil bekommt den TYP,
+  // nicht ein neues Literal.
+  //
+  // AUSDRÜCKLICH NICHT MITGEZOGEN: `parts/ErlassUebersicht.tsx` und
+  // `parts/ErlassLeserKopf.tsx` (geteilte Bausteine — sie dürfen nicht an einem
+  // Typ aus `v3/` hängen, FL-4) und `inhalt-volltext.tsx` (V1, eingefroren). Die
+  // Sonde deckt darum `v3/`, und genau das ist die Zusage.
+
+  it('erlassAnsicht.ts trägt Typ, Ableitung und Zählform (sonst prüfte das Verbot nichts)', () => {
+    const quelle = ohneKommentare(LIES(QUELLE_DER_WAHRHEIT));
+    expect(traegt(quelle, /export type BestimmungsWort\b/), 'BestimmungsWort fehlt').toBe(true);
+    expect(traegt(quelle, /export function bestimmungsWort\(/), 'bestimmungsWort() fehlt').toBe(true);
+    expect(traegt(quelle, /export function zaehlform\(/), 'zaehlform() fehlt').toBe(true);
+  });
+
+  it('kein «Paragraphen»-Literal in einer anderen v3/-Datei', () => {
+    for (const datei of ALLE_DATEIEN) {
+      if (datei === QUELLE_DER_WAHRHEIT) continue;
+      const quelle = ohneKommentare(LIES(datei));
+      expect(traegt(quelle, /Paragraphen/),
+        `${datei} trägt das Wort «Paragraphen» im Code — Typ und Zählform gehören nach ${QUELLE_DER_WAHRHEIT}`).toBe(false);
+    }
+  });
+
+  it('kein zweiter Ableitungs-Ternär über bestimmungsEtikett in v3/', () => {
+    for (const datei of ALLE_DATEIEN) {
+      if (datei === QUELLE_DER_WAHRHEIT) continue;
+      const quelle = ohneKommentare(LIES(datei));
+      expect(traegt(quelle, /bestimmungsEtikett\s*===/),
+        `${datei} leitet das Bestimmungswort selbst ab — das tut bestimmungsWort()`).toBe(false);
+    }
+  });
+});
+
+describe('B9 · Die Höhe der Such-Zone steht bei der Such-Zone (Architektur-Nachzug)', () => {
+  // BEFUND: die zwei Werte lagen als rem-Literale im Rahmen, das Markup, dessen
+  // Höhe sie behaupten, in `SuchZone.tsx` — ohne Wächter dazwischen. `--nt-stick`
+  // (Sprung-Offset aller Anker) rechnet die Zone mit: eine stille Abweichung
+  // verschiebt jeden Artikel-Sprung (Klasse LM-003).
+  it('SuchZone.tsx exportiert die zwei Höhen, der Rahmen importiert sie', () => {
+    const zone = ohneKommentare(LIES('SuchZone.tsx'));
+    expect(traegt(zone, /export const SUCH_H_RUHE\b/)).toBe(true);
+    expect(traegt(zone, /export const SUCH_H_AKTIV\b/)).toBe(true);
+    const rahmen = ohneKommentare(LIES('LeserRahmenV3.tsx'));
+    expect(traegt(rahmen, /SUCH_H_AKTIV/), 'der Rahmen benutzt die Konstante nicht').toBe(true);
+    expect(traegt(rahmen, /'4\.25rem'|'2\.75rem'/),
+      'im Rahmen steht noch ein rem-Literal für die Zonen-Höhe').toBe(false);
+  });
+});
+
 describe('Dateigrösse: v3/ bleibt schlank', () => {
   // Harte Obergrenze (Auflage «≤ ~250 Zeilen» ist das ZIEL, kein hartes Tor).
   // Als Konstante mit Kommentar geführt, damit ein Wachsen der Grenze selbst

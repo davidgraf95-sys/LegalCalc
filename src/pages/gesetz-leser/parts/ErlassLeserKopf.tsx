@@ -4,6 +4,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
   datumCh, naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
+import { titelOhneKlammerSuffix } from '../helpers';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
 // führung, §3.3): Ersetzt die zwei früher duplizierten <header>-Blöcke (Snapshot
@@ -95,7 +96,10 @@ export function ErlassLeserKopf({
   // ordnung» in ZWEI Farben; Skizze 4e dreht das auf die gewohnte Zitierform
   // «Volltitel (Kürzel)» in EINER Farbe — zweifarbige Titel lasen sich wie zwei
   // Angaben, obwohl es eine ist (Ä6).
-  const titelOhneSuffix = erlass.titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  // B1 (H2b-Nachzug): die Regex lebt jetzt EINMAL in `helpers` — dieselbe
+  // Zeichenkette, über die `v3/erlassAnsicht` Länge und Gleichheit entscheidet
+  // (§5: gemessen wird, was gedruckt wird). Verhalten hier unverändert.
+  const titelOhneSuffix = titelOhneKlammerSuffix(erlass.titel);
   const kuerzel = erlass.kuerzel.trim();
   const titelRedundant = titelOhneSuffix.toLowerCase() === kuerzel.toLowerCase();
   // Ä-(d): mit `kennung` trägt der Titel das Klammer-Suffix nicht mehr — die

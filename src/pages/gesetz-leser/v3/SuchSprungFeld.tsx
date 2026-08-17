@@ -21,7 +21,8 @@ import { useRef, type RefObject } from 'react';
 // `setSuche('')`: jeder Sprung-Aufruf, auch ein «zurück an den Anfang», wäre
 // eine Bewegung, die niemand angefordert hat. `stopPropagation` hält den
 // Tastendruck zudem beim Feld — ein Esc, das die Trefferliste leert, soll nicht
-// zusätzlich das Sheet schliessen, in dem das Feld steht.
+// zusätzlich ein Overlay schliessen. AUSNAHME seit A2 (H2b-Nachzug): steht das
+// Feld IN einem modalen Blatt, gehört Esc dem Dialog (`escLeert={false}`).
 //
 // `⌘K`/`Ctrl+K` und `/` liegen NICHT hier, sondern im Rahmen
 // (`./suchKuerzel`): das Feld ist bei zugeklappter Spalte gar nicht im DOM, ein
@@ -29,7 +30,7 @@ import { useRef, type RefObject } from 'react';
 
 export function SuchSprungFeld({
   wert, setzeWert, loeseArtikel, onSprung, feldRef, onVor, onZurueck, hatTreffer = false,
-  platzhalter = 'Im Gesetz suchen …',
+  platzhalter = 'Im Gesetz suchen …', escLeert = true,
 }: {
   wert: string;
   setzeWert: (v: string) => void;
@@ -48,6 +49,18 @@ export function SuchSprungFeld({
   /** Gibt es überhaupt Fundstellen? Ohne sie tun ↑↓ und Enter nichts — und das
    *  Feld verspricht sie dann auch nicht (§8). */
   hatTreffer?: boolean;
+  /** ── A2 (H2b-Nachzug) · WEM GEHÖRT `Esc`? ─────────────────────────────────
+   *  Vorgabe `true` = das Ist-Verhalten von Pos. 14: Esc leert das Feld, springt
+   *  nicht, und hält den Tastendruck bei sich (`stopPropagation`).
+   *
+   *  `false` setzt der Aufrufer dort, wo das Feld IN einem modalen Blatt steht.
+   *  Dann gewinnt der Dialog: Esc schliesst ihn (ARIA-Dialog-Pattern, WCAG 2.1.2)
+   *  statt still den Suchbegriff zu löschen. GEMESSEN 17.8.2026 @390 mit offenem
+   *  Treffer-Blatt: Esc leerte das Feld und liess das Blatt offen stehen — der
+   *  Leser drückte die Taste, die jeden Dialog schliesst, und verlor stattdessen
+   *  seine Eingabe. Geleert wird im Blatt über das ✕ am Feld, das dort sichtbar
+   *  neben der Eingabe steht. */
+  escLeert?: boolean;
 }) {
   const eigenerRef = useRef<HTMLInputElement>(null);
   const ref = feldRef ?? eigenerRef;
@@ -83,10 +96,12 @@ export function SuchSprungFeld({
           value={wert}
           onChange={(e) => setzeWert(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && escLeert) {
               // Kein Sprung, kein Scroll — nur leeren (Pos. 14). Und nicht
-              // weiterreichen: im Sheet läge sonst «Feld leeren» und «Sheet
+              // weiterreichen: sonst läge «Feld leeren» und «umgebendes Overlay
               // schliessen» auf demselben Tastendruck.
+              // A2: steht das Feld in einem modalen Blatt, ist `escLeert` false —
+              // dann läuft dieser Zweig gar nicht und Esc erreicht den Dialog.
               e.preventDefault();
               e.stopPropagation();
               setzeWert('');
