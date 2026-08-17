@@ -144,7 +144,14 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     await warteLeser(page)
     await panelAufziehen(page)
 
-    const blatt = page.locator('[data-v3-panel-form="rechts"]')
+    // ── §6.3-ANPASSUNG, DEKLARIERT (Ä60 (c), David-Entscheid 17.8.2026) ──────
+    // Der Fall stand auf `[data-v3-panel-form="rechts"]`. @1440 trägt die Fläche
+    // seit dem breiteren Rahmen die Gestalt `spalte`. Die vier Zusagen dieses
+    // Falls — beginnt unter dem Kopf · kein Scrim · `role=region` · der Lesetext
+    // bleibt anklickbar — gelten für BEIDE Gestalten und werden hier unverändert
+    // gemessen, nur an der Fläche statt an einem Gestalt-Namen. WELCHE Gestalt
+    // auf welcher Breite gilt, prüft `leser-v3-rahmen.e2e.ts`.
+    const blatt = page.locator('[data-v3-panel-form]')
     await expect(blatt).toBeVisible()
     const kopf = (await page.locator('[data-v3-kopf]').boundingBox())!
     const box = (await blatt.boundingBox())!
@@ -181,8 +188,11 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // ein Klick in den Lesetext erreicht den Text. Lag dort ein Scrim, bricht
     // Playwright mit «subtree intercepts pointer events» ab — genau das ist die
     // Messung, und sie ist stärker als jedes Attribut.
-    // (Der Klick schliesst das Beiwerk-Blatt per Aussenklick — erwartetes
-    // Verhalten eines nicht-modalen Panels und darum am Ende des Falls.)
+    // (In der Gestalt `rechts` schliesst der Klick das Beiwerk-Blatt per
+    // Aussenklick; in der Gestalt `spalte` nicht — sie ist Layout und kein
+    // aufgezogenes Blatt, Herleitung samt Messung in `usePopoverAutoZu`. Für die
+    // Messung hier ist beides gleich: geprüft wird, dass NICHTS den Zeiger
+    // abfängt. Der Klick steht darum weiterhin am Ende des Falls.)
     const artikel = page.locator('#lc-lesespalte article').first()
     await artikel.scrollIntoViewIfNeeded()
     await expect(artikel).toBeVisible()

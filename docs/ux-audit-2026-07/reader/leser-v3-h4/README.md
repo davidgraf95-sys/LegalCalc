@@ -25,10 +25,11 @@ unter 8-Worker-Last entstanden ist, steht es dabei.
 > **Der Umschalter ist weiterhin nicht umgelegt und wartet auf dein Ja.**
 
 **Von den acht technischen Bedingungen sind sieben erfüllt.** Was noch offen ist,
-steht unten — der Kern: ein Seitenblatt, das auf dem Desktop die Zeilenenden des
-Gesetzestexts verdeckt (Ä60), und eine Aufräumarbeit an der Prüfstrasse
-(B-Specs), damit ein Fehler künftig als Fehlermeldung erscheint statt als
-hängender Testlauf.
+steht unten. Das Seitenblatt, das auf dem Desktop die Zeilenenden des
+Gesetzestexts verdeckte (Ä60), ist seit dem 18.8.2026 **erledigt** — nach deinem
+Entscheid (c) vom 17.8. steht es jetzt neben dem Text statt darüber. Offen bleibt
+eine Aufräumarbeit an der Prüfstrasse (B-Specs), damit ein Fehler künftig als
+Fehlermeldung erscheint statt als hängender Testlauf.
 
 *Ursprüngliche Fassung (17.8.2026), zur Nachvollziehbarkeit: «auf dem Handy ist
 im neuen Leser die Rechtsprechung zu einem Artikel mit dem Finger überhaupt nicht
@@ -41,12 +42,13 @@ mittlerer Breite **ein Bedienschritt weniger** als heute). Auf dem Desktop steht
 zusätzlich die Warnung «Eine in Kraft getretene Änderung ist noch nicht
 eingearbeitet» sichtbar im Bild; im heutigen Leser fehlt sie dort ganz.
 
-**Was danach noch offen ist (Stand 18.8.2026):** das Seitenblatt, das auf dem
-Desktop die Zeilenenden des Gesetzestexts verdeckt (Ä60) — dafür brauche ich
-deinen Entscheid, weil jeder Weg etwas kostet —, und die B-Spec-Umhängung in der
-Prüfstrasse. Erledigt sind seit der ersten Fassung: die Handy-Erreichbarkeit der
-Entscheide, die zwei übereinanderliegenden Ortsangaben und die zwei
-Schliess-Kreuze je Fenster. Das sind alles Bedienfragen, keine Rechenfehler —
+**Was danach noch offen ist (Stand 18.8.2026):** nur noch die B-Spec-Umhängung in
+der Prüfstrasse. Erledigt sind seit der ersten Fassung: die Handy-Erreichbarkeit
+der Entscheide, die zwei übereinanderliegenden Ortsangaben, die zwei
+Schliess-Kreuze je Fenster — und seit dem 18.8. das verdeckte Zeilenende (Ä60):
+auf einem 1440er-Bildschirm stehen Gliederung, Gesetzestext und Seitenblatt jetzt
+nebeneinander, auf schmaleren Fenstern weicht die Gliederung auf ihre Schiene,
+damit der Text seine Breite behält (Bilder unter §9, Suffix `-rahmen`). Das sind alles Bedienfragen, keine Rechenfehler —
 der Gesetzestext selbst ist pixelgenau derselbe, das ist eigens geprüft.
 
 **Wenn es dir nicht gefällt, geht es zurück:** der Umschalter bleibt bis zur
@@ -62,10 +64,13 @@ Handy-Erreichbarkeit der Entscheide (NM-2) reparieren.
 dir und dem Umschalten steht, sind **zwei Punkte**, und einer davon ist eine
 Frage an dich:
 
-1. **Ä60 — das Seitenblatt verdeckt Zeilenenden** (Desktop, breites Fenster). Das
-   ist der einzige Punkt, bei dem der Gesetzestext selbst betroffen ist, und er
-   braucht deinen Entscheid: (a) so lassen, (b) den Zähler in der Kopfzeile
-   opfern, (c) den Leser-Rahmen breiter machen. Details unten in der Tabelle.
+1. ~~**Ä60 — das Seitenblatt verdeckt Zeilenenden**~~ — **erledigt am 18.8.2026.**
+   Du hast am 17.8. spätabends **(c)** gewählt («ja und c, mach so»): der Leser
+   darf breiter werden als eine Textseite. Gebaut und gemessen: das Seitenblatt
+   steht jetzt **neben** dem Gesetzestext statt darüber, verdeckt sind ab 1024 px
+   Fensterbreite **0 px** statt 320/257/192/112. Der Erlass-Titel liegt ebenfalls
+   nicht mehr darunter (das war Ä59). Unter 1024 px bleibt alles wie bisher —
+   genau die Grenze, die du gezogen hast.
 2. **B-Specs umhängen** — reine Prüfstrassen-Arbeit, kein Entscheid nötig.
 
 **Die Frage bleibt also offen und liegt weiterhin bei dir**; ich lege den
@@ -203,11 +208,24 @@ und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem):
 
 Würde `istXl` auf diese Messung umgestellt, verschöbe sich die
 Zwei-Spalten-Grenze von Viewport 1024 auf **1072** — die Gliederungsspalte
-verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine
-Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**, und
-der wartet auf David. A-8 ist damit **teilweise erledigt**: die Regeln und die
-Messung liegen an einem Ort, die Umstellung der 1024er-Entscheidung ist eine
-sichtbare Änderung und gehört an den Flip.
+verschwände auf jedem Fenster zwischen 1024 und 1071 px.
+
+**Nachgeführt 18.8.2026 (nach Ä60 (c)): die Umstellung bleibt aus, und jetzt mit
+drei Zahlen statt einer.** Die Tabelle oben ist am gebauten H4-Stand
+nachgemessen und gilt unverändert (VP 1071 → 1023 px, **VP 1072 → 1024 px**):
+die Aufweitung aus Ä60 hängt am OFFENEN Seitenblatt, bei geschlossenem ist der
+Rahmen weiter auf 1072 px gedeckelt. Als Schwelle wäre er ausserdem
+rückgekoppelt — der Rahmen entschiede über seine Breite anhand seiner Breite.
+Die neue Messgrösse `raum` (`v3/rahmenSpalten.ts`) läge zwar richtig (Fenster
+− 48 px, Schwelle 976 ⟺ Viewport 1024), misst im geteilten Fenster aber
+`clientWidth` und damit ohne Scrollbar, während `PANE_BREIT_PX` ausdrücklich
+border-box misst, «damit die Scrollbar die Schwelle nicht verschiebt» (Differenz
+0 px auf macOS, 15 px auf Chromium/Linux). Und `istXl` trägt beide Hüllen: V3
+allein umzuhängen erzeugte eine dritte Wahrheit, statt eine zu beseitigen.
+
+A-8 bleibt damit **teilweise erledigt** — die Regeln und die Messung liegen an
+einem Ort — und wird mit **H5** abgeschlossen, wenn V1 fällt; dort ist es eine
+Streichung statt einer Verschiebung.
 
 ---
 
@@ -437,13 +455,14 @@ ein Paritätsbeweis, den nichts fährt.
 | Kürzel | Fahrplan-Zeile | Was offen ist | Einordnung |
 |---|---|---|---|
 | ~~**NM-2 auf H**~~ | — | Entscheide zu einem Artikel kosteten auf 390 px **2 Taps** statt einem (§2; die ursprüngliche Fassung «nicht per Tap erreichbar» ist als §7-Korrektur richtiggestellt) | ✅ **erledigt 17./18.8.2026 mit H4-II** — Zähler-Chip «⚖ N» auf `mini`, 1 Tap wie auf D/S; bewacht von `e2e/leser-v3-h4-kopfwege` (a)/(a2)/(a3). *Kein Flip-Blocker mehr* |
-| **Ä60** | 825 | Beiwerk-Blatt verdeckt auf D @1440 die äusseren 112 px (18 %) jeder Textzeile; keine feste Blattbreite behebt es | **BLOCKER VOR FLIP** — Normtext teilweise unlesbar (§1/§8); Weg (a) so lassen / (b) Kopf-Chip opfern / (c) breiterer Leser-Rahmen wartet auf David |
+| **Ä60 ✅** | 825 | Beiwerk-Blatt verdeckt auf D @1440 die äusseren 112 px (18 %) jeder Textzeile; keine feste Blattbreite behebt es | **ERLEDIGT 18.8.2026 nach David-Entscheid (c) vom 17.8.** — der Leser-Rahmen wächst bei offenem Blatt auf höchstens 84 rem (1344 px), das Blatt bekommt eine eigene Spur; verdeckt ab Fenster 1024 px **0 px** (vorher 320/257/192/112), Erlass-Titel **0 px** (Ä59). Unter 1024 px unverändert. Mess-Tabelle: Fahrplan Kap. 7, Vollzugsvermerk «Ä60 (c) breiterer Leser-Rahmen» |
 | ~~**Ä45 Doppelkrume**~~ | 938–940 | App-Krume und V3-Ortsangabe zeigten @390 denselben Ort in zwei `nav`-Krumen übereinander | ✅ **erledigt 17.8.2026 mit A-2** (Leisten-Verschmelzung; Vollzugsvermerk Kap. 7 des Fahrplans, bewacht von `e2e/leser-v3-eine-kopfzeile`). *Kein Flip-Blocker mehr — dieser Bogen entstand vor A-2 und führte ihn weiter (Nachzug 17.8. abends).* |
 | ~~**Ä46 zwei ✕ je Pane**~~ | 940–941 | zwei Schliess-Kreuze je Pane mit verschiedener Bedeutung; gemessen im Split @1600 **44 px übereinander** (Griffleiste y = 69, V3-Kopf y = 113) | ✅ **erledigt 17./18.8.2026 mit H4-II** — im Pane trägt nur noch die Griffleiste ein ✕; die Inhalts-Handlung («zur Übersicht») steht benannt als «‹ Gesetze» mit demselben Ziel `/gesetze`. Bewacht von `e2e/leser-v3-h4-kopfwege` (b), `leser-kopf-paritaet`, `leser-v3-eine-kopfzeile` (d). *Kein Flip-Blocker mehr* |
 | ~~**Ä79 zwei ☰ @1440**~~ | 724, 1785 | Gliederung eingeklappt @1440 → Kopf-☰ (x = 1117) **und** Schienen-☰ (x = 184) für dieselbe Handlung | ✅ **erledigt 17./18.8.2026 mit H4-II** — der Kopf-☰ weicht, solange die beschriftete Schiene steht; unter der Schienen-Schwelle bleibt er. Bewacht von `e2e/leser-v3-h4-kopfwege` (c)/(c2) |
 | **Icon-Deckel @390** (neu, hier gemessen) | — | Kopfzeile @390 trägt **drei** reine Icons (⚖ · ☰ · ···), erlaubt sind zwei (Design-Grundlage Kap. 6); vor H4-II waren es dieselben drei (☰ · ··· · ✕) | **kann H5 tragen** — unverändert, kein Rückschritt; der Chip trägt seine Zahl erst nach dem Nachladen (§8 verbietet eine erfundene 0) |
 | **Kopfzeile @720 = 5 Elemente** (neu, hier gemessen) | — | Einzelansicht `kompakt`: Ort · Zähler · ☰ · ··· · ✕ reisst den Vier-Elemente-Deckel — Befund älter als H4-II | **braucht Entscheid** — Hebel wäre `zeigeSchliessKreuz` auch auf `kompakt`, berührt aber die Ä46-Auflage «Einzelansicht bleibt bei 1» |
-| **A-8** (Rest) | 773, 1070, 1698 | Der 1024er-Spalten-Entscheid hängt noch an `istXl`; Umstellung verschiebt die Grenze auf Viewport 1072 (§3) | **braucht Davids Entscheid** — identisch mit Ä60 |
+| **Ä86 ✅** | Klick-Test 18.8.2026 | Das angedockte Panel schloss bei JEDEM Klick in die Lesespalte (Modus «beiwerk») — **Textmarkieren bei offenem Panel unmöglich**, gemessen am Stand `6ca1609b3` @1440/@1024 | **ERLEDIGT 18.8.2026 mit Ä60 (c)** — wo das Blatt eine eigene Spur hat (@1440 und im Schiebe-Modus 1024–1391) ist es Layout, kein Popover: kein Aussenklick-Schluss, heraus über ✕ · Esc · Zweitklick auf den Zähler · «r». Unter 1024 px unverändert. Bewacht: `leser-v3-rahmen` (f)/(f2) |
+| **A-8** (Rest) | 773, 1070, 1698 | Der 1024er-Spalten-Entscheid hängt noch an `istXl`; Umstellung verschiebt die Grenze auf Viewport 1072 (§3) | **NICHT umgehängt, 18.8.2026 — kein David-Entscheid mehr nötig, sondern drei Messgründe** (§3): die 1072er-Zahl gilt am H4-Stand unverändert, die Alternative `raum` misst im Pane ohne Scrollbar, und `istXl` trägt beide Hüllen. Abschluss mit **H5** |
 | **B-Specs umhängen** | 1240, 1610, 1622 | §7 dieses Bogens | **BLOCKER VOR FLIP** — sonst Timeout-Hänger statt Fehlermeldungen |
 | **Flaker** | 1746 | §6 dieses Bogens | **teilweise**; 2 von 3 brauchen CI-Forensik, nicht mehr lokale Läufe |
 | **Ä9 Regler-Doppel** | 527, 938 | globaler App-Schriftregler im Leser noch zusätzlich sichtbar | **kann H5 tragen** — Duplikat, nichts unbedienbar. *Nachzug 17.8. abends: hing nominell an A-2; der Regler sitzt aber in der Topbar, nicht in der abgelösten Leiste — der Punkt ist von A-2 unabhängig* |
@@ -452,7 +471,7 @@ ein Paritätsbeweis, den nichts fährt.
 | **Ä63 Handy-Einzug** | 548, 1404 | OR/ZGB @390 Einzug x = 80 px gegen StPO 44 px | **kann H5 tragen** — Typografie-Detail |
 | **Ä64 Regler-Hierarchie** | 549, 1404 | Schriftregler skaliert nur `[data-lese]`; Hierarchie kippt bei 130 % | **braucht Davids Entscheid** — Umbau auf em-relative Tokens |
 | **Ä57/Ä58** | 826 | Panel-Kopf ohne Warnzeichen bei «noch nicht im Text»; Chips gerahmt, ☰ nicht | **kann H5 tragen** |
-| **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite | **kein Flip-Blocker mehr** — sie war die *vermutete* Ursache des NM-2-Aufschlags auf H; der ist mit dem Kopf-Chip behoben, ohne dass die Lasche zurückkehrt. Was bleibt, ist Davids Bestätigung der §7-Abweichung zu F8 («Lasche behalten») |
+| **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite | **kein Flip-Blocker mehr** — sie war die *vermutete* Ursache des NM-2-Aufschlags auf H; der ist mit dem Kopf-Chip behoben, ohne dass die Lasche zurückkehrt. Was bleibt, ist Davids Bestätigung der §7-Abweichung zu F8 («Lasche behalten»). **Nachgeführt 18.8.2026:** David hat (c) gewählt, der Platz ist mit Ä60 da — die Lasche bleibt trotzdem gestrichen, weil an derselben Breite bereits der Kopf-Zähler steht und «ein Öffner je Breite» gilt. Der Platz ist da, gebraucht wird er nicht |
 | **`leser-lesemass` umhängen · `LeserRahmenV3`-Schnitt** | 1240 | Test-Umzug bzw. Datei-Schnitt | **kann H5 tragen** |
 | **Ä84-Rest · «↑ Anfang» steht allein** (18.8.2026 gemessen) | Vermerk «H4-Vorbereitung II», Kap. 7 | Im Treffer-Blatt @390/@720 trägt der Blatt-Kopf **genau ein** Element (34 px hoch, linke Hälfte leer); das D-Blatt @1440 hat dort gar keines. Streichen widerspricht **Ä32** (`e2e/leser-v3-blatt` (d) hält den Knopf fest) | **braucht einen Entscheid** — nichts ist unbedienbar, aber zwei Prüferbefunde widersprechen sich. Empfehlung im Vermerk: streichen, das D-Blatt beweist die Entbehrlichkeit |
 | **Panel-Reiter-Leiste bricht nicht um** (neu, 18.8.2026 gemessen) | Vermerk «H4-Vorbereitung II», Kap. 7 | Die Leiste hat @1440 **334 px** Platz; die drei Reiter belegen 269 px + 24 px Abstände, also bleiben **41 px**. Ein vierter Reiter passt damit an keiner ehrlichen Beschriftung («Steckbrief» 82 px, «Erlass» 55, «Norm» 51) — gebaut verschluckte die Leiste ihr viertes Fach (`scrollWidth` 369 gegen `clientWidth` 334). Fix wäre **ein Wort** an `[role="tablist"]` in `v3/LeserPanel.tsx` (`flex-wrap` oder `overflow-x-auto`) | **kann H5 tragen** — heute nichts unbedienbar (die Klappe über der Tafel löst den Steckbrief-Fall ohne Fach). **Aber:** Kap. 14 sieht für «Zitat-Export & Fussnoten-Ausgabe» ausdrücklich «vierter Reiter oder Fusszeile» als Platz vor — der vierte Reiter ist mit dieser Messung keine Option mehr, solange die Leiste nicht umbricht |
@@ -482,6 +501,11 @@ H = 390}, Schema ∈ {hell, dunkel}, Hülle ∈ {v1, v3}. Erlasse: **StPO Art. 4
 (gleicher Anker, gleiche Scrollposition in beiden Hüllen) und **BS-640.100**.
 `deviceScaleFactor: 1`, `reducedMotion: reduce`, Schriften abgewartet.
 Protokoll: `bilder-protokoll.json`.
+
+**Vier Bilder kamen am 18.8.2026 dazu** (Ä60 (c), Suffix `-rahmen`, Panel offen):
+`stpo-429-D1150-hell-rahmen.png` · `-D1150-dunkel-` · `-D1440-hell-` ·
+`-D1440-dunkel-`. Sie zeigen die zwei Lagen, um die es beim Entscheid ging —
+@1440 drei Spuren (Gliederung · Text · Blatt), @1150 Schiene · Text · Blatt.
 
 **S = 720 px Einzelansicht**, nicht ein echtes Split-Pane: die Pane-Chrome
 (zweiter Kopf, zusätzliches ✕) ist damit **nicht** im Bild. Das ist bewusst so

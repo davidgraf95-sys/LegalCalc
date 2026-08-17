@@ -267,6 +267,17 @@ Tastatur und Touch erreichbar — Hover verbirgt Zierde, nie Funktion.
 9. Keine dauerhaft sichtbaren Sekundäraktionen (**S**, Fehler Nr. 4 der Referenz-Recherche).
 10. Kein Radius/Abstand pro Komponente frei gewählt (**S**, Fehler Nr. 5).
 
+**Das WERKZEUG darf breiter sein als eine Textseite — der TEXT nicht** (Ä60 (c),
+Entscheid David 17.8.2026, gebaut 18.8.2026). Nr. 7 verbietet volle Fensterbreite
+für **Fliesstext**, nicht für den Rahmen um ihn herum: der Gesetz-Leser ist ein
+Arbeitsplatz aus drei Spuren — Gliederung 18 rem · Lesespalte 40 rem · Beiwerk
+22 rem —, und die brauchen samt Abständen 84 rem. Sein Rahmen wächst darum bei
+offenem Beiwerk-Blatt auf **höchstens** diese 84 rem (`v3/rahmenSpalten.ts`),
+nie darüber hinaus; die Lesespalte bleibt in jeder Lage auf ihrem Lesemass, und
+reicht der Platz nicht, weicht die **Gliederung** auf ihre Schiene, nie das
+Lesemass. Für jede andere Seite gilt `max-w-content` (70 rem) unverändert — die
+Aufweitung ist eine Eigenschaft dieses einen Werkzeugs, kein neuer Seitenrahmen.
+
 ---
 
 ## 9 · Ist → Soll: Änderungen am Reglement

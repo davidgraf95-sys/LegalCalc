@@ -124,7 +124,9 @@ export function LeserPanelZone({
 
   usePopoverAutoZu({
     offen, schliesse, wrapRef, panelRef,
-    modus: modal ? 'blatt' : 'beiwerk',
+    // Ä60 (c): die eigene Spur ist Layout, kein aufgezogenes Blatt — sie kennt
+    // darum keinen Aussenklick (Herleitung samt Messung in `usePopoverAutoZu`).
+    modus: modal ? 'blatt' : form === 'spalte' ? 'spalte' : 'beiwerk',
     // Die Öffner liegen ausserhalb von `wrapRef` (Kopfzeile, «Ansicht ▾»-Menü) —
     // ohne diese Ausnahme schlösse ihr `pointerdown` das Panel, das ihr `click`
     // gleich darauf wieder öffnete (Herleitung in `usePopoverAutoZu`).

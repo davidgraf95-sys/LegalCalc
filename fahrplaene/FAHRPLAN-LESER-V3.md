@@ -772,15 +772,15 @@ a11y-Stichprobe läuft nur im Projekt `chromium` und öffnet das Panel nicht).
 
 | Punkt | Grund / was zu entscheiden ist |
 |---|---|
-| **RANDLASCHE GESTRICHEN — §7-Abweichung, wartet auf David** (Nachzug 17.8.) | F8 lautete «V1, a, Lasche behalten». Am gebauten Stand hält die Prämisse an keiner Breite: die Lasche lag 16 px (@390) bzw. 4 px (@1024) IM Normtext, und bei 1024 px bleiben zwischen Lesespalte und Leser-Rand nur 8 px — eine 36-px-Schiene passt unterhalb ~1200 px nirgends. Wo sie passte (@1440), war sie das wortgleiche Doppel des Kopf-Zählers (Kopfzeile 5 Elemente statt ≤ 4). Umgesetzt ist darum: Kopf-Zähler auf `voll`/`kompakt`, Menü-Eintrag «Entscheide & Kontext …» überall, `r` überall. **Was David entscheidet:** (a) so lassen; (b) Lasche zurück und dafür den Kopf-Chip opfern (dann bleibt die Überlappung @390/@1024); (c) Lasche zurück, sobald der Leser-Seitenrahmen breiter wird (H4-Spalten-Entscheid darunter) — dann passt sie ohne Überlappung. **Empfehlung: (a) jetzt, (c) mit H4** |
-| **Angedockte Panel-SPALTE braucht eine Entscheidung** | Drei Wege, alle ausserhalb des H3-Auftrags: (1) **weiterer Seitenrahmen für den Leser** (`max-w-content` 70 rem → ~84 rem nur auf der Leser-Route) — Design-Autorität; (2) **schmalerer Satzspiegel** im offenen Zustand — berührt das Lesemass und damit S2/§1; (3) **gegenseitiges Einklappen** von Gliederung und Panel (dann passt es mit 20 rem statt 22) — Bedien-Entscheid, weil eine Geste eine zweite Fläche zuklappt. Gehört zur EINEN Breiten-Quelle von **H4** (`useElementBreite` mit `d`/`s`/`sheet`); die Zusagen der Spalte sind in `leser-v3-kontext-cls` schon gemessen und werden am Tag des Baus rot, wenn sie brechen |
+| **RANDLASCHE GESTRICHEN — ✅ entschieden 17.8.2026: (c)** (Nachzug 17.8.) | F8 lautete «V1, a, Lasche behalten». Am gebauten Stand hält die Prämisse an keiner Breite: die Lasche lag 16 px (@390) bzw. 4 px (@1024) IM Normtext, und bei 1024 px bleiben zwischen Lesespalte und Leser-Rand nur 8 px — eine 36-px-Schiene passt unterhalb ~1200 px nirgends. Wo sie passte (@1440), war sie das wortgleiche Doppel des Kopf-Zählers (Kopfzeile 5 Elemente statt ≤ 4). Umgesetzt ist darum: Kopf-Zähler auf `voll`/`kompakt`, Menü-Eintrag «Entscheide & Kontext …» überall, `r` überall. **Was David entscheidet:** (a) so lassen; (b) Lasche zurück und dafür den Kopf-Chip opfern (dann bleibt die Überlappung @390/@1024); (c) Lasche zurück, sobald der Leser-Seitenrahmen breiter wird (H4-Spalten-Entscheid darunter) — dann passt sie ohne Überlappung. **Empfehlung: (a) jetzt, (c) mit H4**. **ENTSCHEID DAVID 17.8.2026 spätabends (wörtlich «ja und c, mach so»): (c)** — der Leser-Rahmen ist mit Ä60 (c) breiter geworden (18.8.2026, Vollzugsvermerk in Kap. 7). **Die Lasche kommt trotzdem NICHT zurück**, und das ist keine Abweichung vom Entscheid, sondern seine Folge: (c) hat den Platz geschaffen, den die Lasche brauchte — den *Öffner* aber trägt an derselben Breite bereits der Kopf-Zähler, und «ein Öffner je Breite» (Kap. 7, Öffner-Ordnung) ist die ältere und strengere Regel. Zwei Öffner für dieselbe Fläche wären genau die wortgleiche Doppelung, an der die Lasche gescheitert ist. Festgehalten ist damit: der Platz IST da, gebraucht wird er nicht. |
+| **Angedockte Panel-SPALTE ✅ (entschieden 17.8., gebaut 18.8.2026)** | Drei Wege, alle ausserhalb des H3-Auftrags: (1) **weiterer Seitenrahmen für den Leser** (`max-w-content` 70 rem → ~84 rem nur auf der Leser-Route) — Design-Autorität; (2) **schmalerer Satzspiegel** im offenen Zustand — berührt das Lesemass und damit S2/§1; (3) **gegenseitiges Einklappen** von Gliederung und Panel (dann passt es mit 20 rem statt 22) — Bedien-Entscheid, weil eine Geste eine zweite Fläche zuklappt. Gehört zur EINEN Breiten-Quelle von **H4** (`useElementBreite` mit `d`/`s`/`sheet`); die Zusagen der Spalte sind in `leser-v3-kontext-cls` schon gemessen und werden am Tag des Baus rot, wenn sie brechen. **Gebaut ist Weg (1)** — 84 rem nur auf der Leser-Route, und die Zahl ist keine Schätzung mehr, sondern die Summe 18 + 2 + 40 + 2 + 22. Weg (3) kommt automatisch dazu, wo (1) nicht reicht: unter 84 rem weicht die Gliederung auf ihre Schiene. Weg (2) ist ausdrücklich NICHT gebaut — das Lesemass bleibt unberührt (§1). Vollzugsvermerk «Ä60 (c)» in Kap. 7 |
 | **Kein leichtes Zähl-Sidecar ⇒ der Zähler ist vor dem ersten Öffnen zahllos** | «Zähler am Öffner mit Trefferzahl» ist nur nach dem ersten Öffnen erfüllt: die Zahl steckt im schweren Shard (`gesamtProArtikel`), und den holt H3 bewusst nicht mehr im Voraus. Eine 0 zu zeigen wäre eine Behauptung aus Unwissen (§8), darum steht dort «⚖ Rechtsprechung». **Wurzel-Fix als eigener Schritt:** ein Zähl-Sidecar `rechtsprechung/bezuege-zahlen/<ERLASS>.json` (Artikel-Token → Kanten je Status, ~2 % der Shard-Grösse) aus `scripts/normtext/bezuege-bauen.ts`. Das ist ein **Daten-/Risikopfad** mit Gegenprüfung, nicht Teil einer UI-Etappe |
 | **`leser-kopf-cls-s3` (v3 @390) hat keine Reserve** | Nullprobe mit/ohne Panel-Öffner, 6 Messungen: **mit** 0.0192 / 0.0051 / 0.0480 · **ohne** 0.0039 / 0.0492 / 0.0192 — kein Ordnungsunterschied, das Panel ist NICHT die Quelle. Die Schwelle 0.05 liegt am oberen Rand einer Verteilung von 0.004–0.049 (Messbedingung: warm, workers=1, eigener Kontext je Fall); unter 5 Workern gemessen 0.0509 ⇒ rot. **Wurzel-Fix, nicht Lockerung:** die Spec soll wie `leser-v3-kontext-cls` nach `sources` filtern und nur Shifts IM Lesekörper zählen — S3 hat den Befund («die Shift-Quellen liegen im Seiten-Chrom») schon notiert, aber nicht in die Messung übernommen. Eigener, deklarierter Schritt (fachliche Änderung an einem Tor, §6.3) |
 | **`leser-kopf-a9` (Ist-Hülle) reisst das 5000-ms-Budget knapp** | Gemessen 5059 / 5250 ms unter 3–5 Workern, isoliert (workers=1, 4× CPU-Drossel) **1 von 5 rot mit 5132 ms** — der KALTE Erstlauf. Läuft auf `/gesetze/bund/BV` **ohne** V3-Flag, H3 ist also nicht beteiligt. Nicht gelockert (Auftrag); Messbedingung und Rate hier festgehalten. §17-Position: Budget mit Reserve neu bemessen ODER die Drossel-Messung aus dem parallelen Shard nehmen |
 | **`leser-v3-seitenleiste-ordnung` (b)/(c) auf OR unter Last** | 2 von 2 rot bei 5 Workern («`[data-leser-v3="rahmen"]` nicht sichtbar in 20 s»), **8 von 8 grün** isoliert und **77/77 grün** bei 3 Workern. Das ist die in `shard-gruppen.json` dokumentierte OR-Signatur (zweiter schwerer OR-Reader je Chromium-Worker), keine H3-Fläche. In der CI liegen die Specs in verschiedenen Shard-Gruppen; die vier neuen sind bewusst auf die Gruppen 3/4/5/6 verteilt |
 | **Sheet-Anatomie zweimal** | Das Panel-Blatt teilt die MECHANIK mit dem Gliederungs-Blatt (`useDialogFokus`, Portal in die Pane-Overlay-Schicht, `data-v3-pane`, z-40/50, `overscroll-contain`), aber nicht die Komponente: `GliederungSheet` liegt in `parts/` und ist unter FL-4 eingefroren, sein Inhalt («Sie sind hier», Quickjump) passt nicht. Eine geteilte `SheetHuelle` ist ein sinnvoller Schnitt für **H5**, wenn `parts/` ohnehin aufgeht |
 | **`panelOeffner`/`panelSlot` sind gestrichen** | H1 hatte sie als `ReactNode`-Slots vorgesehen. Von aussen nicht füllbar: Zähler und Panel brauchen `useLeserV3Modell`, das erst IM Rahmen läuft — ein äusserer Aufrufer hätte die eine Naht ein zweites Mal ziehen müssen (§5). Gestrichen statt bewacht (Präzedenz `LeserV3Kontext.ts`); `beiwerkSlot`/`fassungsWahl`/`leisteExtra` bleiben unverändert. **Lehre für kommende Slot-Vorplanung:** ein Erweiterungspunkt trägt nur, wenn der Füller an dieselben Daten kommt wie der Rahmen |
-| **Ä59** (im Vollzug als «Ä25 (neu)» geführt — Nummer war vergeben, s. Nachzug unten) | Der Erlass-Titel steht auf D teilweise UNTER dem rechts angeschlagenen Blatt (Bildbogen `stpo-d-hell-entscheide`). Bei einer Überlagerung unvermeidlich; sichtbar wird es nur, weil der Titel bis an den rechten Rand läuft. Mit der Spalten-Entscheidung oben zusammen zu lösen, nicht davor. **Vom Nachzug NICHT behoben:** das Blatt beginnt jetzt unter dem Kopf (Ä52), der Erlass-Titel liegt aber darunter im Fluss |
+| **Ä59 ✅ (erledigt 18.8.2026, Ä60 (c))** (im Vollzug als «Ä25 (neu)» geführt — Nummer war vergeben, s. Nachzug unten) | Der Erlass-Titel steht auf D teilweise UNTER dem rechts angeschlagenen Blatt (Bildbogen `stpo-d-hell-entscheide`). Bei einer Überlagerung unvermeidlich; sichtbar wird es nur, weil der Titel bis an den rechten Rand läuft. Mit der Spalten-Entscheidung oben zusammen zu lösen, nicht davor. **Vom Nachzug NICHT behoben:** das Blatt beginnt jetzt unter dem Kopf (Ä52), der Erlass-Titel liegt aber darunter im Fluss. **✅ 18.8.2026 mit Ä60 (c):** das Blatt hat ab Fenster 1024 px eine eigene Spur, der Titel steht in der Textzelle daneben — gemessene Deckung 168 → **0 px** @1440, 313 → 0 @1150, 248 → 0 @1280 (e2e `leser-v3-rahmen` (a)/(b) messen sie ohne Toleranz). Unter 1024 px unverändert (328 px), Entscheid David |
 
 **Vereinigung mit dem H2b-Nachzug (17.8.2026).** H3 war auf dem H2b-Stand
 `37159526f` gebaut; der Nachzug (`37159526f..9555f96e8`) fasste danach dieselben
@@ -825,7 +825,7 @@ dieser Nachzug führt darum **Ä52–Ä58**, das frühere «Ä25 (neu)» wird **
 | **C1** «Artikel» hart im Code | Drei Stellen; an BS-640.100 (§-Erlass) dreimal falsch. `bestimmungDativ()` in `erlassAnsicht.ts`, durchgereicht bis Panel-Kopf und Tooltip. Die **Fundament-Sonde war einseitig** (nur «Paragraphen» verboten) — jetzt auch `\bArtikel\b`, rot gesehen |
 | **C2 · C3 · C4 · C5** | «Sammelerlass anderer SR» → ohne Bund-Annahme · tote Enden weg (`className?`, `bezuegeFuer` aus der Modell-Oberfläche — durchgehend `undefined` und eine Falle) · `beiwerkSlot`/`fassungsWahl`/`leisteExtra` **gestrichen** (kein Aufrufer über drei Etappen; S2 baut die Beiwerk-Zone im Kern) · `leserGeometrie.ts` (CSS-Variablen als reine Funktion) + `LeserGliederungSchiene.tsx`; Rahmen **412 → 398**, Modell 419 → 417. Die 13 doppelten Schienen-Utilities sind durch **Löschen der zweiten Kopie** erledigt, die Werte stehen als `.lc-leiste-schiene` bei der `lc-leiste-*`-Familie |
 | **C6** H5-Löschliste korrigiert | `BezugFacettenWahl.tsx` ist ein GETEILTER Baustein (`src/components/verzahnung/`) und gehört **nicht** auf die Löschliste. Löschbar ist `components/kontext/KontextPanel.tsx` — H5 muss dann die Kante **`v3/leserV3Modell` → `../inhalt-ansichten` → `KontextPanel`** mitschneiden (`FruehAnsicht`/`LadeAnzeige` kommen von dort). W2·7-VZUI: erledigt sind «Kontext-Panel überladen» und «Facetten am Ort ihres Ergebnisses»; offen bleiben «Passende Werkzeuge»/`kontextSoftLaw` und S7 |
-| **Ä60** (neu, beim Bildbogen gefunden — H4) | Das Beiwerk-Blatt auf D verdeckt die äusseren **112 px jeder Textzeile** (gemessen @1440: Spalte x 580…1200, Blatt x 1088…1440 = 18 % der Spaltenbreite) — die Zeilenenden fehlen, der Text ist sichtbar aber nicht lesbar. Keine feste Blattbreite behebt das: der Rand rechts der Spalte misst @1440 240 px, @1280 nur 160. Dieselbe Arithmetik wie bei der gestrichenen Spalte ⇒ gehört zum **Spalten-Entscheid** unten. Der Kommentar an `panelForm` behauptet die Lesbarkeit nicht mehr, sondern nennt den Messwert (§8) |
+| **Ä60 ✅ (erledigt 18.8.2026, Option (c))** (neu, beim Bildbogen gefunden — H4) | Das Beiwerk-Blatt auf D verdeckt die äusseren **112 px jeder Textzeile** (gemessen @1440: Spalte x 580…1200, Blatt x 1088…1440 = 18 % der Spaltenbreite) — die Zeilenenden fehlen, der Text ist sichtbar aber nicht lesbar. Keine feste Blattbreite behebt das: der Rand rechts der Spalte misst @1440 240 px, @1280 nur 160. Dieselbe Arithmetik wie bei der gestrichenen Spalte ⇒ gehört zum **Spalten-Entscheid** unten. Der Kommentar an `panelForm` behauptet die Lesbarkeit nicht mehr, sondern nennt den Messwert (§8). **✅ 18.8.2026, Option (c) (David 17.8.):** der Leser-Rahmen wächst bei offenem Blatt auf höchstens 84 rem (1344 px) und gibt ihm eine eigene Spur; verdeckt sind ab 1024 px **0 px** (vorher 320/257/192/112). Vollzugsvermerk mit der ganzen Mess-Tabelle in Kap. 7 |
 | **Ä57/Ä58** (nur eingetragen, H4) | Ä57: der Panel-Kopf nennt «… · Art. 429» über erlassweiten Reitern, und «noch nicht im Text» steht ohne Warnzeichen. Ä58: gerahmte Chips gegen ungerahmtes ☰ — die Rahmen-Regel des Chromes ist nicht einheitlich |
 | **D1** Änderungsvermerke-Schalter in V3 | ✅ **ERLEDIGT NACH REBASE** (17.8.2026, `--onto origin/main`). Bis zum Rebase war es begründet NICHT umgesetzt: die eine Quelle (`bieteAenderungsvermerkeSchalter`/`zaehleAenderungsvermerke` in `pages/gesetz-leser/berechnungen.ts`) lag auf `main` (S1, #547) und nicht in der Branch-Basis (H2b) — ein Nachbau in `v3/` wäre die zweite Wahrheit gewesen, die §5 verbietet. **Gebaut wie aufgelegt:** `leserV3Modell.ts` bildet `hatAenderungsvermerke` mit **derselben** Funktion, die `inhalt.tsx` (V1) zieht, und reicht es als EINE Prop über `LeserRahmenV3` → `LeserKopf` an `LeserAnsichtV3`; dort steht die Bedingung, kein zweiter Ableitungsweg. Mitgenommen (§8, gleiche Sorge): der Tooltip des «Ansicht ▾»-Öffners nennt «Änderungsvermerke» nur, wenn es den Schalter gibt. Zeilen-Grenze `v3/` (420, `leser-v3-fundament`) gehalten, indem im Adapter **Prosa** gekürzt wurde, nicht Sachverhalt — der Adapter bleibt der grösste Baustein. Spec `leser-v3-umschalten` **(a3)**: STPO 3 Schalter, BS-640.100 und ZH-211.11 je 2 ohne «Änderungsvermerke»; ROT gesehen auf frisch gebautem Bundle (Bedingung entfernt ⇒ «Expected 0, Received 1») |
 
@@ -1752,7 +1752,7 @@ Schwellen und Messung, `kopfStufen.ts` leitet weiter (byte-gleich, Rot-Beweis
 zweistufig). Die 1024er-Spaltenentscheidung bleibt bewusst an `istXl`: das
 Rahmen-Element ist 48 px schmaler als das Fenster und ab 1120 px auf 1072 px
 gedeckelt — eine Umstellung verschöbe die Spaltengrenze auf Viewport 1072
-(Details in Kap. 12 A-8). Das ist Ä60 und wartet auf David.
+(Details in Kap. 12 A-8). Das war Ä60 — **entschieden am 17.8.2026 (Option c) und gebaut am 18.8.2026**; die Umhängung bleibt trotzdem aus, weil die Zahl unverändert gilt: bei geschlossenem Panel ist der Rahmen weiterhin auf 1072 px gedeckelt (nachgemessen 18.8. über 1000–1150 px). Begründung und die zwei weiteren Gründe: Kap. 12 A-8.
 
 **Ä24-Wurzel gefunden.** Nicht (nur) die Seite ist langsam, sondern die Abfrage:
 `getByRole('button',{name:'Ansicht'})` berechnet auf dem OR für 13 518 Knöpfe den
@@ -1768,8 +1768,7 @@ Agenten-Sessions (`LexMetrik-fix`, `-krume`, `-uebersicht`); die lokalen
 Kontentions-Läufe kippten dadurch die Arm-Reihenfolge und sind nicht belastbar.
 Belastbar ist nur die prozessinterne 4×-Drossel-Messung.
 
-**Vor dem Flip zu erledigen** *(Stand 18.8.2026)*: **Ä60** ·
-**B-Spec-Umhängung** (sonst Timeout-Hänger statt roter Tests) · **David-Go** nach
+**Vor dem Flip zu erledigen** *(Stand 18.8.2026, nach Ä60)*: **B-Spec-Umhängung** (sonst Timeout-Hänger statt roter Tests) · **David-Go** nach
 Kontaktbogen.
 *(Nachzug 17.8. abends: **Ä45 Doppelkrume** ist hier gestrichen — sie ist mit A-2
 erledigt, s. Kap. 7. Die Liste führte sie weiter, während der A-2-Vermerk sie
@@ -1978,6 +1977,99 @@ das Blatt beansprucht sie nicht.
 `docs/ux-audit-2026-07/reader/leser-v3-h4/bilder/` — `stpo-steckbrief-D`,
 `bs-640.100-steckbrief-D`, `stpo-steckbrief-panel-D`, `stpo-steckbrief-H`,
 `stpo-trefferblatt-H`.
+
+### ✅ Ä60 (c) breiterer Leser-Rahmen (18.8.2026, Branch `feat/leser-v3-h4-rahmen`)
+
+**Entscheid David 17.8.2026 spätabends (Chat, wörtlich «ja und c, mach so»):**
+von den drei Optionen der Randlaschen-/Spalten-Zeile gilt **(c)** — der Rahmen
+des **Gesetz-Lesers** wird breiter, damit Gesetzestext und Beiwerk-Blatt
+**nebeneinander** stehen. Jede andere Seite bleibt auf `max-w-content` (70 rem);
+die Aufweitung sitzt am Leser-Wurzelelement und nirgends sonst.
+
+**Vorher/nachher, gemessen** (StPO Art. 429, Panel offen, Chromium, `vite
+preview` aus `dist/`, App-Seitenleiste eingeklappt = Leser-Vorgabe Ä1c):
+
+| Fenster | Rahmen vorher → nachher | Lesespalte (Absatz) | verdeckte px je Zeile | Erlass-Titel verdeckt | Spuren nachher |
+|---|---|---|---|---|---|
+| 1023 | 975 → 975 | 620 → 620 | **161 → 161** | 328 → 328 | unverändert (Entscheid: «unter 1024 bleibt alles wie heute») |
+| 1024 | 976 → 976 | 620 → **504** | **320 → 0** | 328 → **0** | Schiene · Text · Blatt |
+| 1150 | 1072 → **1102** | 620 → 620 | **257 → 0** | 313 → **0** | Schiene · Text · Blatt |
+| 1280 | 1072 → **1232** | 620 → 620 | **192 → 0** | 248 → **0** | Schiene · Text · Blatt |
+| 1440 | 1072 → **1344** | 620 → 620 | **112 → 0** | 168 → **0** | Gliederung · Text · Blatt |
+| 1920 | 1072 → **1344** | 620 → 620 | 0 → 0 | 0 → 0 | Gliederung · Text · Blatt |
+
+Waagrechter Überlauf in allen Zellen **0**. Bei geschlossenem Panel ist der
+Rahmen auf JEDER Breite unverändert 1072 px — die Aufweitung hängt am offenen
+Blatt, nicht am Seitenaufruf (Positiv-Sonde im e2e-Fall (a)).
+
+**Die eine Zahl, aus der alles folgt:** `LESER_MAX_REM` = 18 + 2 + 40 + 2 + 22 =
+**84 rem** (1344 px) — die Summe der drei Spuren samt Abständen, und keinen
+Schritt mehr (ein Rahmen darüber wäre Fensterbreite für Fliesstext,
+Design-Grundlage Kap. 8 Nr. 7). Der frühere Kommentar «KEINE DRITTE SPUR»
+rechnete dieselbe Summe richtig und zog den falschen Schluss: dem Zweig fehlten
+nicht die Bedingungen, sondern 272 px.
+
+**Die eine Schwelle:** unterhalb von 84 rem weicht die **Gliederung** auf ihre
+Schiene (Ä79), nie das Lesemass. Ab 1150 px Fenster ist die Lesespalte damit in
+KEINER Lage schmaler als vorher; nur zwischen 1024 und ~1140 wird sie schmaler
+(@1024: 504 statt 620 px) — das ist Davids «das Blatt schiebt den Text zur
+Seite». Ein Klick auf die Schiene holt die Gliederung zurück **und** schliesst
+das Blatt (sonst wäre der Griff eine Zusage ohne Wirkung).
+
+**Zwei Befunde beim Bau, beide gemessen statt vermutet:**
+
+1. **Ä86 · Der Aussenklick frass den Klick — und vorher schon die Textauswahl.**
+   Der erste Bau liess das Panel wie bisher auf `pointerdown` ausserhalb
+   schliessen. @1440 fiel der Rahmen dabei von 1344 auf 1072 zurück, der Knopf
+   «Gliederung ausblenden» wanderte unter dem Zeiger weg, und sein `click`
+   erreichte ihn nie — die Gliederung blieb offen (rot gesehen an
+   `leser-v3-uebersicht` (c)). **Der ältere Teil desselben Befunds** kommt aus
+   dem Klick-Test vom 18.8.2026 (Stand `6ca1609b3`, @1440/@1024): das angedockte
+   Panel schloss bei JEDEM Klick in die Lesespalte — **Textmarkieren bei offenem
+   Panel war unmöglich** (`usePopoverAutoZu` Modus «beiwerk»,
+   `LeserPanelZone.tsx:113-121`). Beides hat dieselbe Wurzel: eine Spur ist
+   **Layout, kein Popover**. Fix: vierter Modus `spalte` in `usePopoverAutoZu` —
+   kein Aussenklick-Schluss, solange das Blatt eine eigene Spur hat (also @1440
+   und im Schiebe-Modus 1024–1391); heraus führen ✕ · Esc · Zweitklick auf den
+   Zähler · «r». **Unter 1024 px unverändert** — dort ist das Blatt weiterhin
+   eine Überlagerung und schliesst auf Aussenklick. Bewacht von
+   `e2e/leser-v3-rahmen` (f) @1440/@1150 (Dreifachklick markiert ≥ 20 Zeichen,
+   Blatt bleibt offen) und (f2) als Gegenprobe @1023.
+2. **Die Verankerung.** Zentriert man den aufgeweiteten Rahmen neu, schiebt das
+   Öffnen den gelesenen Text @1920 um 152 px waagrecht weg, obwohl rechts 400 px
+   frei sind. Der Rahmen wächst darum ZUERST in den freien Rand rechts und rückt
+   nur um den Rest nach links: @1920 **0 px**, @1440 **112 px**. Senkrecht bewegt
+   sich die Lesestelle in keinem Fall (e2e-Fall (e), Toleranz 2 px).
+
+**Neu/geändert:** `src/pages/gesetz-leser/v3/rahmenSpalten.ts` (neu, 276 Z. — die
+reine Entscheidung + der Mess-Hook; der Rahmen bleibt mit 414 Z. unter der
+420er-Sonde und unter dem Adapter) · `LeserRahmenV3.tsx` · `LeserPanelZone.tsx`
+(Gestalt `spalte`) · `usePopoverAutoZu.ts` (Modus `spalte`) · `kopfStufen.ts`
+(nur der Kommentar an `panelForm`, der die Ä60-Einschränkung trug).
+
+**Beweise:** `src/tests/leser-v3-rahmenspalten.test.ts` (12 Fälle, jede Breite
+nachgerechnet) · `e2e/leser-v3-rahmen.e2e.ts` (8 Fälle: @1440 drei Spuren ·
+@1150 Schiene + Boden 448 px · Grenze 1024/1023 unverändert · Startseite und
+`/gesetze` weiterhin 1072 px · Lesestelle senkrecht unbewegt · Ä86 Klick und
+Textauswahl @1440/@1150 · Gegenprobe @1023). **Rot-Beweis
+gefahren** (18.8.2026): `blattSpur` fest auf `false` ⇒ (a) und (b) rot mit
+«Expected: spalte / Received: rechts», Exit 1.
+
+**Bilder** (Suffix `-rahmen`, Panel offen):
+`docs/ux-audit-2026-07/reader/leser-v3-h4/bilder/stpo-429-D{1150,1440}-{hell,dunkel}-rahmen.png`.
+
+**Zwei §6.3-Anpassungen an bestehenden Specs, deklariert** (keine
+Verhaltensneutralität behauptet — Ä60 IST eine gewollte Verhaltensänderung):
+`leser-v3-panel-nachzug` (d) misst die Fläche statt den Gestalt-Namen `rechts`;
+`leser-v3-uebersicht` (c) prüft den Umzug des Steckbriefs ohne die zweite
+Bedienhandlung, die der frühere Aussenklick nötig machte. Beide Zusagen
+unverändert, Begründung steht in der jeweiligen Spec.
+
+**Offen und benannt:** im Band **948–1023 px** Fenster bleibt es beim
+überlagernden Blatt — 161 px verdeckter Text, 328 px verdeckter Titel. Das ist
+kein Versehen, sondern Davids Grenze «unter 1024 bleibt alles wie heute»; der Bau
+trüge die Spur dort ohne weitere Zahl (Text bekäme 591 px), es ist also ein
+Entscheid, keine Hürde.
 
 ### Fenster-Deckel und Flip-Kriterien
 
@@ -2225,7 +2317,7 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 | ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
 | A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **ERLEDIGT** in der Vorprobe dieses PRs. `EntscheidLeser.tsx` setzte `document.title` **ohne** Guard (so steht es bis heute auf `main`, Z. 408–411) — im Split-View trug der Browser-Reiter darum den Entscheid, obwohl das Hauptfenster das Gesetz zeigte (§8: der Reiter log über seinen Inhalt). Der Guard `if (rolle === 'sekundaer') return;` ist ergänzt und liegt unter der Quellensonde `src/tests/tab-titel-paritaet.test.ts`, die BEIDE Leser prüft. Im PR-Body benannt, wie die Zeile es verlangt. *(Selbstkorrektur 16.8.2026: der Vollzugsvermerk notierte hier zuerst «die Parität besteht bereits» — gemessen am Arbeitsbaum statt an `main`, also am Zustand NACH dem eigenen Fix. Der Befund war echt; die Nullprobe gegen die Basis fehlte.)* |
 | **A-7** | **Abweichung, deklariert 16.8.2026 — der Pixelvergleich PX fehlt in H1.** Kap. 10 schreibt ihn «ab H1» vor; H1 liefert ihn NICHT. **Folge: H2.** Begründung: `toHaveScreenshot` ist im Repo bisher nirgends im Einsatz — die Flake-Basisrate eines Pixel-Tors auf diesem CI-Runner ist unbekannt, und ein Tor, dessen Ausfallrate man nicht kennt, erzeugt rote Läufe ohne Aussage (§0 Ziff. 3: Rate immer mit Messbedingung). Dazu kommt, dass die Baseline erst mit der Design-Grundlage **W-3** fachlich feststeht; eine Baseline, die S2 ohnehin neu setzt, in H1 einzufrieren hiesse, zweimal zu messen. In H1 tragen die DOM-Sonden und `check:linien-kanon` die Kern-Grenze. | Offen bis H2 — dort mit gemessener Flake-Rate (Stichprobe gegen die vermutete Rate dimensioniert, kalt **und** warm) |
-| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | **TEILWEISE ERLEDIGT 17.8.2026** (H4-Vorbereitung, Branch `feat/leser-v3-h4-vorbereitung`): `src/pages/gesetz-leser/v3/useElementBreite.ts` ist gebaut und trägt die drei Schwellen UND die Messung; `kopfStufen.ts` leitet nur noch weiter (Verhalten byte-gleich, bewiesen über jede Breite 200–2000 px; Rot-Beweis zweistufig in `src/tests/leser-v3-elementbreite.test.ts`). **NICHT angeschlossen — mit Zahl:** der Zwei-Spalten-Entscheid bleibt an `istXl` (Viewport ≥ 1024). Gemessen am gebauten Stand ist das Rahmen-Element bis ~1120 px Viewport konstant **48 px schmaler** als das Fenster und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem): Viewport 640/900/1023/1024/1100/1280/1440 → Rahmen 592/852/975/976/1052/1072/1072. Eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf **1072** — die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**, und der wartet auf David. Rest offen bis zum Flip. |
+| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | **TEILWEISE ERLEDIGT 17.8.2026** (H4-Vorbereitung, Branch `feat/leser-v3-h4-vorbereitung`): `src/pages/gesetz-leser/v3/useElementBreite.ts` ist gebaut und trägt die drei Schwellen UND die Messung; `kopfStufen.ts` leitet nur noch weiter (Verhalten byte-gleich, bewiesen über jede Breite 200–2000 px; Rot-Beweis zweistufig in `src/tests/leser-v3-elementbreite.test.ts`). **NICHT angeschlossen — mit Zahl:** der Zwei-Spalten-Entscheid bleibt an `istXl` (Viewport ≥ 1024). Gemessen am gebauten Stand ist das Rahmen-Element bis ~1120 px Viewport konstant **48 px schmaler** als das Fenster und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem): Viewport 640/900/1023/1024/1100/1280/1440 → Rahmen 592/852/975/976/1052/1072/1072. Eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf **1072** — die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**. **STAND 18.8.2026 (nach Ä60 (c)): weiterhin NICHT umgehängt — mit drei Zahlen statt einer.** (1) Die alte Zahl gilt unverändert: nachgemessen am gebauten H4-Stand über 1000–1150 px ist das Rahmen-Element bei GESCHLOSSENEM Blatt weiter Fenster − 48 px und ab 1120 px auf 1072 gedeckelt (VP 1023→975 · 1024→976 · 1071→1023 · **1072→1024** · 1120→1072 · 1150→1072), die Spaltengrenze wanderte also nach wie vor von Viewport 1024 auf **1072**, und die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Die Aufweitung aus Ä60 (c) ändert daran nichts, weil sie am OFFENEN Blatt hängt — als Schwelle wäre sie sogar rückgekoppelt (der Rahmen entschiede über seine Breite anhand seiner Breite). (2) Die neue Messgrösse `raum` (Breite im `<main>`, `rahmenSpalten.ts`) läge richtig — Fenster − 48 px, also Schwelle 976 ⟺ Viewport 1024 —, misst im Pane aber `clientWidth` und damit OHNE Scrollbar; `PANE_BREIT_PX` misst border-box ausdrücklich deshalb, «damit die Scrollbar die Schwelle nicht verschiebt». Der Unterschied ist die Scrollbarbreite (macOS Overlay 0 px, Chromium/Linux 15 px) — also genau die Sorte Abweichung, die auf einer Maschine unsichtbar bleibt und auf der anderen zuschlägt. (3) `istXl` lebt in `inhalt-zustand.tsx` und trägt **beide** Hüllen; V3 allein umzuhängen erzeugte eine DRITTE Wahrheit statt eine zu beseitigen. A-8 wird darum mit **H5** abgeschlossen, wenn V1 fällt — dort ist es eine Streichung, keine Verschiebung. |
 
 ---
 
