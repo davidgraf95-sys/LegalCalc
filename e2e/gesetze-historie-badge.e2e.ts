@@ -1,5 +1,6 @@
 // @shard-gruppe: 1
 import { test, expect, type Page } from '@playwright/test';
+import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 
 // G-HIST-UI — «Gilt seit»-Badge + aufklappbare Fassungs-Timeline aus dem erlass-
 // lokalen Historie-Shard (public/normtext/historie/<KEY>.json, G-HIST #286).
@@ -8,8 +9,9 @@ import { test, expect, type Page } from '@playwright/test';
 //   · Timeline klappt auf und listet die amtlichen Fassungs-Ereignisse.
 //   · Artikel ohne Historie-Eintrag (BGBM Art. 6) → KEIN Badge (§8).
 //   · Erlass ohne Shard (CISG, Staatsvertrag) → nirgends ein Badge.
-//   · CLS: Timeline-Aufklappen (echter Input) verursacht keinen Shift; der
-//     Badge-Einwuchs am Artikel-Fuss verschiebt nichts (§15.2, Reservierung).
+//   · CLS: Timeline-Aufklappen (echter Input) verursacht keinen Shift.
+//   · Der Badge-Einwuchs am Artikel-Fuss verschiebt nichts (§15.2, Reservierung)
+//     — geprüft an der GEOMETRIE, nicht am CLS-Budget (S1-Nachzug, s. u.).
 //
 // ── FLAKE-WURZEL (S1, 17.8.2026 — Fahrplan Kap. 14 weist diese Datei S1 zu) ───
 // Die Datei stand als Flake auf der Liste. KEIN Timeout, KEINE Retry-Erhöhung —
@@ -46,19 +48,54 @@ import { test, expect, type Page } from '@playwright/test';
 //
 // WURZEL-FIX: die Messung deckt sich jetzt mit dem Prüfgegenstand. Der
 // Historie-Shard wird per `page.route` ANGEHALTEN, bis der Reader fertig steht;
-// erst dann läuft der Beobachter an, dann wird der Shard freigegeben. Gemessen
-// wird also genau der Badge-Einwuchs. Das ist deterministisch (7/7 Sonden-Läufe
-// inkl. 6× CPU-Drossel: CLS 0.00000) und STRENGER als vorher: zusätzlich zum
-// Budget wird die Reservierung direkt geprüft — die y-Position der folgenden
-// Artikel und die Seitenhöhe müssen EXAKT gleich bleiben. Nähme jemand
-// `min-h-hist-zeile` weg, war der alte Test im Rauschen des Kopf-Reflows
-// womöglich weiter grün; der neue ist sofort rot (rot gezeigt, §6.7).
+// erst dann wird der Shard freigegeben. Gemessen wird also genau der
+// Badge-Einwuchs, und zwar an der Reservierung selbst: die y-Position der
+// folgenden Artikel und die Seitenhöhe müssen EXAKT gleich bleiben.
+//
+// ── S1-NACHZUG (17.8.2026): die CLS-Zusicherung dieses Tests ist GESTRICHEN ───
+// Bis hierher stand unter den Geometrie-Zeilen zusätzlich
+// `expect(cls).toBeLessThan(0.05)` mit dem Satz «die Zusicherung ist NICHT
+// gelockert». Der Bug-Check-Prüfer hat sie als nicht-scheiterbar gemeldet; die
+// Mutations-Sonde (§6.7) bestätigt das. Gemessen, alles WARM, chromium:
+//
+//   Mutation: `min-h-hist-zeile` am Slot entfernt (ArtikelLeser.tsx) —
+//   also genau der Defekt, den der Satz benennt («die Reservierung greift nicht»).
+//     · GEOMETRIE  → ROT: «Artikel 2 verschoben: 1516 → 1552»,
+//                    Seitenhöhe 10735 → 10807.
+//     · CLS        → 0.00000, Zusicherung GRÜN. Grund: alle hist-Slots von BGBM
+//                    liegen below-fold (art-2 bei y≈1516, Ausschnitt 720 px),
+//                    und CLS zählt nur Verschiebungen IM Ausschnitt.
+//
+//   Gegenprobe, damit die Streichung nicht auf einem Messaufbau-Zufall beruht:
+//   dieselbe Mutation mit dem Slot IM Ausschnitt (auf art-1s Slot gescrollt,
+//   > 500 ms Abstand zum hadRecentInput-Fenster) ergibt CLS 0.0118515625 —
+//   3/3 Läufe bitgleich, Scroll-Anchoring greift nicht ein. Auch das reisst die
+//   Schwelle 0.05 NICHT. Die Zeile kann den Defekt, den sie benennt, in keinem
+//   Aufbau melden; erst eine andere, engere Schwelle könnte es, und die wäre
+//   nicht mehr die des Lighthouse-Tors.
+//
+// Also: gestrichen statt bewacht (§17-Rückbau, Präzedenz `seq-hart`). Der Test
+// wird von den drei Geometrie-Zeilen getragen — sie sind SCHÄRFER als das
+// Budget (exakte Gleichheit statt Schwelle) und unter der Mutation rot gezeigt.
+// Mit der Zusicherung fällt auch der von Hand gerollte PerformanceObserver: er
+// hatte keinen Verbraucher mehr.
 //
 // Das SEITEN-Lade-CLS bleibt gedeckt, und zwar dort, wo es hingehört: im
-// Lighthouse-Tor `check:perf-budget` (CLS ≤ 0.05 auf OR + Startseite). Der
-// Kopf-Reflow ist damit weiter bewacht — nur nicht mehr unter dem Namen des
-// Badges. (Er ist ein echter Befund; als eigener Schritt gehört er in den Strang
-// der Auslieferung, nicht in S1.)
+// Lighthouse-Tor `check:perf-lighthouse` (`scripts/perf/lighthouse-budget.ts`,
+// `clsMax: 0.05` auf /gesetze/bund/OR UND Startseite).
+//
+// KORREKTUR derselben Runde (Bug-Check B1): hier stand «Lighthouse-Tor
+// `check:perf-budget`» — falsch, zwei Fehler in einem Satz.
+// `check:perf-budget` (`scripts/check-perf-budget.ts`) ist bewusst Chrome-frei
+// und misst gzip-BYTES der Bundle-Topologie; eine CLS-Schranke kennt es nicht.
+// Und das Lighthouse-Tor ist KEIN Merge-Blocker: der ci.yml-Job `perf` trägt
+// `if: github.event_name != 'pull_request' && needs.diff.outputs.art == 'code'`,
+// läuft also erst nach dem Merge auf main/merge_group. Die Deckung ist real,
+// aber nachgelagert.
+//
+// Der Kopf-Reflow ist damit weiter bewacht — nur nicht mehr unter dem Namen des
+// Badges. Er ist ein echter Befund und steht als eigene Zeile im
+// Roadmap-Schritt QS-PERF (S1-Nachzug, §17), nicht in S1.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -88,15 +125,16 @@ test('Timeline klappt auf und listet Fassungs-Ereignisse; Aufklappen ohne CLS', 
   await expect(badge).toHaveAttribute('aria-expanded', 'false');
 
   // CLS-Beobachter NUR für den Toggle (input-exkludiert → muss 0 bleiben, wie K-2).
-  await page.evaluate(() => {
-    (window as unknown as { __cls: number }).__cls = 0;
-    new PerformanceObserver((l) => {
-      for (const e of l.getEntries() as PerformanceEntry[]) {
-        const s = e as unknown as { value: number; hadRecentInput: boolean };
-        if (!s.hadRecentInput) (window as unknown as { __cls: number }).__cls += s.value;
-      }
-    }).observe({ type: 'layout-shift' });
-  });
+  //
+  // S1-NACHZUG (17.8.2026, Bug-Check B2): hier stand ein von Hand gerollter
+  // PerformanceObserver, obwohl `helpers/cls.ts` genau diesen Beobachter führt —
+  // eine zweite Wahrheit für dieselbe Messung (§5), und die Messfenster-Lehre vom
+  // 20.7.2026 (`nurAbInstall`) lag nur im Helfer. `nurAbInstall: true` zählt ab
+  // dem Install-Zeitpunkt, also genau das Toggle-Fenster; `buffered: false`
+  // schliesst den Seitenaufbau aus. Verhalten identisch zum ersetzten Code — der
+  // Gewinn ist der Quellen-`bericht` unten, der bei einem roten Lauf sagt, WELCHES
+  // Element geschoben hat (Diagnosewerkzeug, keine Zusicherung).
+  await clsBeobachtenInstallieren(page, false, true);
 
   await badge.click();
   await expect(badge).toHaveAttribute('aria-expanded', 'true');
@@ -111,8 +149,8 @@ test('Timeline klappt auf und listet Fassungs-Ereignisse; Aufklappen ohne CLS', 
   await expect(badge).toHaveAttribute('aria-expanded', 'false');
   await expect(liste).toBeHidden();
 
-  const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
-  expect(cls, 'CLS über das Timeline-Auf-/Zuklappen muss 0 sein').toBe(0);
+  const { cls, bericht } = await clsAuslesen(page);
+  expect(cls, `CLS über das Timeline-Auf-/Zuklappen muss 0 sein · ${bericht}`).toBe(0);
 });
 
 test('Artikel ohne Historie-Eintrag zeigt kein Badge (BGBM Art. 6)', async ({ page }) => {
@@ -172,17 +210,6 @@ test('Badge-Einwuchs verschiebt nichts: die Reservierung hält (§15.2)', async 
   }));
   const vorher = await geometrie();
 
-  // Beobachter OHNE `buffered`: nur was ab jetzt shiftet, gehört dem Badge.
-  await page.evaluate(() => {
-    (window as unknown as { __cls: number }).__cls = 0;
-    new PerformanceObserver((l) => {
-      for (const e of l.getEntries()) {
-        const s = e as unknown as { value: number; hadRecentInput: boolean };
-        if (!s.hadRecentInput) (window as unknown as { __cls: number }).__cls += s.value;
-      }
-    }).observe({ type: 'layout-shift' });
-  });
-
   freigabe();
   // POSITIV: der Einwuchs hat wirklich stattgefunden (sonst messen wir Stillstand).
   await expect(page.locator('#art-2 [data-historie-zeile]')).toBeVisible({ timeout: 15000 });
@@ -192,10 +219,7 @@ test('Badge-Einwuchs verschiebt nichts: die Reservierung hält (§15.2)', async 
   expect(nachher.art2, `Artikel 2 verschoben: ${vorher.art2} → ${nachher.art2}`).toBe(vorher.art2);
   expect(nachher.art3, `Artikel 3 verschoben: ${vorher.art3} → ${nachher.art3}`).toBe(vorher.art3);
   expect(nachher.hoehe, `Seitenhöhe gewachsen: ${vorher.hoehe} → ${nachher.hoehe}`).toBe(vorher.hoehe);
-
-  // Und derselbe Sachverhalt in der Währung des Budgets — gemessen 0.00000 über
-  // 7 Sonden-Läufe inkl. 6× CPU-Drossel. Die Schwelle bleibt die des
-  // Lighthouse-Tors (0.05), die Zusicherung ist NICHT gelockert.
-  const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
-  expect(cls, 'der Badge-Einwuchs trägt CLS bei — die Reservierung greift nicht').toBeLessThan(0.05);
+  // KEINE CLS-Zeile mehr: sie konnte den Defekt nicht melden, den sie benannte
+  // (Mutations-Sonde am Datei-Kopf). Die drei Zeilen oben sind die scharfe
+  // Fassung derselben Zusage — exakte Gleichheit statt Schwelle.
 });

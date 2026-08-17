@@ -817,15 +817,26 @@ Top-Quellen auf; seine Höhe ist reserviert. Das ist dieselbe Fehlerklasse, die
 `nurAbInstall`) — für diesen Test damals ausdrücklich NICHT, mit der Begründung
 «für einen Lade-CLS-Test ist das genau richtig». Der Satz stimmt für ein
 Seiten-Budget, nicht für einen Badge-Test (§6.7). Fix: Shard per `page.route`
-anhalten, Beobachter erst nach fertigem Reader, dann freigeben — und zusätzlich
-zur Budget-Zusicherung die Reservierung exakt prüfen (y der Folgeartikel und
-`scrollHeight` unverändert).
+anhalten, Beobachter erst nach fertigem Reader, dann freigeben — und die
+Reservierung exakt prüfen (y der Folgeartikel und `scrollHeight` unverändert).
+
+**KORREKTUR S1-NACHZUG (17.8.2026, Bug-Check B2/§6.7):** die Budget-Zusicherung
+(`expect(cls).toBeLessThan(0.05)`) ist aus diesem Test **gestrichen** — sie
+konnte den Defekt nicht melden, den sie benannte. Mutations-Sonde (Reservierung
+`min-h-hist-zeile` entfernt): Geometrie **rot** («Artikel 2 verschoben:
+1516 → 1552», Seitenhöhe 10735 → 10807), CLS **0.00000 und damit grün**, weil
+alle hist-Slots von BGBM below-fold liegen. Gegenprobe mit dem Slot IM Ausschnitt:
+CLS 0.0118515625 (3/3 bitgleich) — reisst 0.05 ebenfalls nicht. Der Test wird von
+den drei Geometrie-Zeilen getragen; der handgerollte PerformanceObserver ist mit
+der Zusicherung entfallen, der Timeline-Test nutzt wieder `helpers/cls.ts` (§5).
 
 **Offen aus S1 (nicht stillschweigend erledigt):**
 
 | Punkt | Grund |
 |---|---|
-| **Echter Befund, nicht S1s Fläche: der Reader-Kopf reflowt nach dem Takeover um +161 px** | Aus der Flake-Diagnose gefallen. Für den Nutzer ein Lade-Sprung, gedeckt bleibt er beim Lighthouse-Tor `check:perf-budget` (CLS ≤ 0.05 auf OR + Startseite). Gehört als eigener Schritt in die Auslieferung/Startlast, nicht in einen Optionen-Rückbau |
+| **Echter Befund, nicht S1s Fläche: der Reader-Kopf reflowt nach dem Takeover um +161 px** | Aus der Flake-Diagnose gefallen. Für den Nutzer ein Lade-Sprung (bimodal 0.006 ↔ 0.119, lastabhängig). **KORREKTUR S1-Nachzug (17.8.2026, B1):** hier stand «gedeckt im Lighthouse-Tor `check:perf-budget` (CLS ≤ 0.05)» — falsch. `check:perf-budget` ist Chrome-frei und misst gzip-**Bytes** der Bundle-Topologie; die CLS-Schranke lebt in `scripts/perf/lighthouse-budget.ts` (`clsMax: 0.05`, OR + Startseite) = `check:perf-lighthouse`, und dieser Job läuft **erst nach dem Merge** (ci.yml, Job `perf`: `if: github.event_name != 'pull_request'`), ist also kein Merge-Blocker. Als Checklisten-Zeile im Roadmap-Schritt **QS-PERF** angelegt; gehört in die Auslieferung/Startlast, nicht in einen Optionen-Rückbau |
+| **Ä26 · Historie-Slot reserviert 40 px auch ohne je eine Fassung (Phantom-Lücke)** | Ästhetik-Prüfer 17.8.2026. Bewusst **nicht** in S1 gebaut: der Slot ist die Beiwerk-Zone, deren Neuordnung Etappe **S2** trägt (Grundlage Kap. 3 Pos. 13). Ein Vorziehen würde die Reservierung anfassen, die der Badge-Test exakt prüft — ohne die S2-Zonen-Entscheide wäre es Raten |
+| **`berechnungen.ts:176 fnNrSortKey` ≡ `ArtikelBody.tsx:114-123` (key) zeichengleich** | Architektur-Prüfer 17.8.2026: dieselbe Sortierregel für Fussnoten-Nummern zweimal im Code (§5). Entdopplung in eine spätere Etappe, **Heimat `src/lib/normtext/`**; Risikopfad (Fussnoten-Reihung am amtlichen Apparat) ⇒ **Gegenprüfung Pflicht**, darum nicht als Nebenzug im Nachzug |
 | `hist-ansicht-w25i` läuft nur im Projekt `chromium` | Die Spec steht in keiner der Listen `N_SPECS`/`V3_SPECS`, `--project=leser-v3` sammelt sie also nicht. Die V3-Seite der S1-Zusage ist über `leser-v3-umschalten` (a2) gedeckt (läuft in BEIDEN Projekten, mit Rot-Beweis). Das Umhängen der Spec-Listen ist ausdrücklich **H4** (Kap. 10) — hier bewusst nicht angefasst |
 | Vitest-Suite trägt einen last-abhängigen Flake **auf main** | Nullprobe auf dem unveränderten Basis-Commit `19a989f9`: **1/4 rot**, `allgemeineFrist.property.test.ts` mit 30-s-Timeout (`import 335 s` = massive Contention). Auf HEAD dieselbe Datei, 1/3. Ein Lauf unter Doppellast (Gate + volle Playwright-Matrix gleichzeitig) traf statt dessen `ArtikelBody`/`tap-ziel-token`. Ohne Nebenlast ist `npm run gate` grün. Nicht S1s Verursachung, aber offen |
 

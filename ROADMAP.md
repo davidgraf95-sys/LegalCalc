@@ -172,6 +172,14 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   gliederungslinie.e2e.ts:71` und `e2e/leser-r1-r2.e2e.ts:544` (20-s-Budget) und
   schliesst zugleich Punkt (b) von `QS-E2E-STABIL`. Messreihe und Nullproben:
   [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
+  **Neu 17.8.2026 (S1-Nachzug, §17) — Reader-Kopf reflowt nach dem Client-Takeover:**
+  gemessen `header 161 → 238 px`, `h1 49 → 75 px` (+161 px), Quelle
+  `div.flex.shrink-0`. Für die Nutzerin ein Lade-Sprung; der CLS-Beitrag ist
+  **bimodal 0.006 ↔ 0.119** und kippt allein mit der Parallel-Last (ob das Lese-Grid
+  zum Reflow-Zeitpunkt schon gemalt ist). Gedeckt ist er nur nachgelagert
+  (`check:perf-lighthouse`, post-merge) — kein Merge-Blocker. Fix gehört in die
+  Startlast: Kopf-Geometrie vor dem Takeover reservieren, statt die Schranke zu
+  heben (§8). Diagnose: `e2e/gesetze-historie-badge.e2e.ts`, Datei-Kopf.
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
 - **Datenhaltung / VPS-Gate** *(QS-DATA)*. Trägt nur das David-Gate: E3-Serving + E4-UI-Panels
   <!-- @meta id: QS-DATA · status: blocked · blocker: vps-bestellung-david · dep: [] · kollision: [scripts/datenhaltung, daten] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
