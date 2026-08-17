@@ -847,7 +847,20 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             key={i}
             ref={blockStark ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
             data-passus={blockStark ? 'true' : 'false'}
-            className={`${zitierKontext ? '' : 'text-body-s '}leading-relaxed ${
+            /* S2 (F3 = V2, David 17.8.2026 am Bildbogen): im LESER trägt dieser
+               Block-Wrapper KEINEN eigenen Zeilenabstand mehr. `leading-relaxed`
+               (1.625) stand hier unbedingt und schlug damit die Zeilenhöhe der
+               Fliesstext-Stufe — die Absätze liefen auf 1.625, nicht auf den 1.55
+               des Entscheids (und vor S2 auf 1.625 statt der behaupteten 1.65 des
+               Containers). Gemessen aufgefallen, nicht gelesen: der WCAG-Fall in
+               `e2e/leser-lesemass.e2e.ts` blieb grün, als die Stufe versuchsweise
+               auf lh 1.4 gesetzt wurde — ein Wert, der durchschlagen MÜSSTE.
+               Genau das verbietet die Design-Grundlage Kap. 8 Nr. 4 («kein fixer
+               Leading-Wert über alle Grössen»): der Zeilenabstand gehört zur Stufe.
+               AUSSERHALB des Lesers bleibt alles unverändert (`text-body-s` hat
+               lh 1.5 und braucht den lockereren Wert weiterhin) — die Änderung ist
+               auf den Reader-Zweig gescopt, Vorschau/Popover sind byte-gleich. */
+            className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${
               blockStark
                 ? 'rounded-md border-l-4 border-brass-500 bg-brass-100 px-3 py-2 text-ink-900'
                 : blockDezent

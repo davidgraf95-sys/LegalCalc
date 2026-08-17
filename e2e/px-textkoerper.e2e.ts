@@ -91,8 +91,55 @@ async function beruhige(page: Page) {
  */
 const MESS_BREITE_PX = 640
 
+/**
+ * Fensterhöhe für die Aufnahme — hoch genug, dass der Mess-Artikel in BEIDEN
+ * Hüllen VOLLSTÄNDIG ins Fenster passt.
+ *
+ * WURZEL-FIX S2 (17.8.2026) für den «1-px-Höhen-Wackler», den der Kopf des
+ * `test.describe` unten als offen notiert hatte («Der Wurzel-Fix … ist eigene
+ * Arbeit und ausdrücklich NICHT in dieser Etappe erledigt»). Er ist es jetzt.
+ *
+ * BEFUND, gemessen statt vermutet: V1 und V3 rendern den Artikel bis auf das
+ * letzte Merkmal gleich — bei StPO 429 beide 784.921875 px hoch, gleiche
+ * Subpixel-Phase (`top % 1` = 0.1875 in beiden), gleiche Schriftgrössen,
+ * Zeilenhöhen, Farben, Textdekorationen, `:target`-Zustände. Was sich
+ * unterscheidet, ist allein die y-POSITION: V3 setzt den Artikel 56 px tiefer
+ * (Hüllen-Kopf). Bei der alten Fensterhöhe 900 lag der 785 px hohe Artikel damit
+ * GENAU AUF DER BRUCHSTELLE — gemessen endete er je nach Hülle und Scroll-Ruhe
+ * bei 885, 900.1 bzw. 941 px, also teils knapp innerhalb, teils knapp ausserhalb
+ * des Fensters. Playwright nimmt ein Element, das nicht ins Fenster passt,
+ * scrollend auf; die Aufnahme entsteht dann bei einem anderen Scroll-Offset als
+ * die, die passt, und die Rasterung der kleinen Schriften (11-px-Fussnoten-
+ * Apparat, Chip-Zeile) weicht ab. Ergebnis: 1869 abweichende Pixel (ratio 0.0034
+ * gegen eine Schwelle von 0.001), reproduzierbar in 5 von 5 Läufen — kein
+ * Rauschen. Genau diese Nähe zur Fenstergrenze IST der Defekt: sie macht das
+ * Ergebnis von Pixel-Bruchteilen abhängig, die mit dem Wortlaut nichts zu tun
+ * haben.
+ *
+ * WARUM DAS EIN TOR-DEFEKT IST UND KEINE S2-REGRESSION: Nullprobe auf dem
+ * Basis-Commit 788e4d4a5 (eigener Worktree, frisch gesetzte Baseline, derselbe
+ * Rechner) — 2/2 GRÜN. Dieselbe Nullprobe gegen die COMMITTETE Baseline riss
+ * 2/2 mit «Expected an image 640px by 856px, received 640px by 857px», also mit
+ * genau dem notierten Wackler. Vor S2 war der Artikel 856/857 px hoch und passte
+ * in KEINER Hülle ins 900er Fenster — beide wurden scrollend aufgenommen, also
+ * gleich behandelt, also grün. S2 verkleinert die Schrift (18 → 17 px) und damit
+ * den Artikel auf 785 px: seither passt V1 und V3 nicht, und die Ungleichheit
+ * wird sichtbar. Das Tor hing an einem Zufall — dass beide Hüllen auf derselben
+ * Seite der Fenstergrenze lagen.
+ *
+ * DER FIX ist derselbe Gedanke, mit dem die Spec schon die BREITE erzwingt: was
+ * die Messung nicht beweisen will, darf sie nicht mitmessen. Passt der Artikel in
+ * beiden Hüllen ganz ins Fenster, entsteht beide Male eine Aufnahme ohne Scroll,
+ * bei identischer Phase. Der Wert deckt den höchsten Mess-Artikel (OR 336c,
+ * 1344.81 px) plus den V3-Versatz (56 px) plus Kopfhöhe mit Reserve.
+ * WÄCHTER: passt ein künftiger Mess-Artikel doch nicht mehr, schlägt die
+ * Zusicherung unten zu — der Defekt kommt dann als Fehlschlag zurück und nicht
+ * als stille Pixel-Abweichung (§6.7).
+ */
+const MESS_HOEHE_PX = 1800
+
 async function artikelBild(page: Page, pfad: string, artId: string) {
-  await page.setViewportSize({ width: 1440, height: 900 })
+  await page.setViewportSize({ width: 1440, height: MESS_HOEHE_PX })
   await page.goto(pfad)
   const art = page.locator(`#${artId}`)
   await expect(art).toBeAttached({ timeout: 30_000 })
@@ -135,6 +182,23 @@ async function artikelBild(page: Page, pfad: string, artId: string) {
   const breite = await art.evaluate((el) => Math.round(el.getBoundingClientRect().width))
   expect(breite, `Artikelbreite ${breite} px statt ${MESS_BREITE_PX} px — die Mess-Klemme greift nicht`)
     .toBe(MESS_BREITE_PX)
+
+  // WÄCHTER ZUM WURZEL-FIX (s. MESS_HOEHE_PX): der Artikel muss GANZ ins Fenster
+  // passen, sonst nimmt Playwright ihn scrollend auf — und genau die Ungleichheit
+  // «eine Hülle passt, die andere nicht» war der Defekt, den S2 aufgedeckt hat.
+  // Ohne diese Zusicherung käme ein künftig höherer Mess-Artikel wieder als
+  // stille Pixel-Abweichung zurück statt als Fehlschlag mit Diagnose.
+  const lage = await art.evaluate((el) => {
+    const r = el.getBoundingClientRect()
+    return { oben: r.top, unten: r.bottom, hoehe: r.height, fenster: window.innerHeight }
+  })
+  expect(lage.oben, `Artikel beginnt bei y=${lage.oben} px, also oberhalb des Fensters`).toBeGreaterThanOrEqual(0)
+  expect(
+    lage.unten,
+    `Artikel endet bei y=${Math.round(lage.unten)} px und passt damit nicht ins ${lage.fenster}-px-Fenster `
+    + `(Höhe ${Math.round(lage.hoehe)} px). Playwright nähme ihn scrollend auf; die Aufnahme wäre nicht mehr `
+    + `phasengleich zur anderen Hülle. MESS_HOEHE_PX erhöhen und die Baseline deklariert neu setzen.`,
+  ).toBeLessThanOrEqual(lage.fenster)
   return art
 }
 

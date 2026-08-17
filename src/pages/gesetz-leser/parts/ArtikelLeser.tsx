@@ -456,7 +456,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                anderen Quelle (`article_title` statt `marg`). Beide müssen gleich
                aussehen, sonst wechselt die Sachüberschrift zwischen Artikeln ihre
                Stimme (§5). */
-            <div className="mb-1 leading-snug font-sans text-leser-rand font-semibold text-ink-800">
+            <div className="mb-1 font-sans text-leser-rand font-semibold text-ink-800">
               {e.titel}
             </div>
           ) : null}
@@ -524,7 +524,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 auf Klick (hinter dem Fussnoten-Schalter), wie jede andere Fussnote.
                 Die Statuszeile «· aufgehoben» oben bleibt unabhängig immer sichtbar. */}
             {ganzAufgehoben && aufhebungNotiz.length > 0 && (
-              <span data-fn-apparat className="basis-full pl-6 text-xs leading-snug text-ink-500">
+              /* S2: `text-leser-fn` wie der Haupt-Apparat am Artikelfuss. Beide tragen
+                 `data-fn-apparat`, sind also dieselbe Rolle — bis S2 lief dieser hier
+                 auf `text-xs` (12 px) und der andere auf 11 px, zwei Grössen für eine
+                 Sache (§5). Der eigene `leading-snug` fällt mit: die Zeilenhöhe kommt
+                 aus der Stufe. */
+              <span data-fn-apparat className="basis-full pl-6 text-leser-fn text-ink-500">
                 {aufhebungNotiz.map((fn, i) => (
                   <span key={i}>{i > 0 && '; '}{fnTextMitLinks(fn)}</span>
                 ))}
