@@ -818,7 +818,7 @@ dieser Nachzug führt darum **Ä52–Ä58**, das frühere «Ä25 (neu)» wird **
 | **C6** H5-Löschliste korrigiert | `BezugFacettenWahl.tsx` ist ein GETEILTER Baustein (`src/components/verzahnung/`) und gehört **nicht** auf die Löschliste. Löschbar ist `components/kontext/KontextPanel.tsx` — H5 muss dann die Kante **`v3/leserV3Modell` → `../inhalt-ansichten` → `KontextPanel`** mitschneiden (`FruehAnsicht`/`LadeAnzeige` kommen von dort). W2·7-VZUI: erledigt sind «Kontext-Panel überladen» und «Facetten am Ort ihres Ergebnisses»; offen bleiben «Passende Werkzeuge»/`kontextSoftLaw` und S7 |
 | **Ä60** (neu, beim Bildbogen gefunden — H4) | Das Beiwerk-Blatt auf D verdeckt die äusseren **112 px jeder Textzeile** (gemessen @1440: Spalte x 580…1200, Blatt x 1088…1440 = 18 % der Spaltenbreite) — die Zeilenenden fehlen, der Text ist sichtbar aber nicht lesbar. Keine feste Blattbreite behebt das: der Rand rechts der Spalte misst @1440 240 px, @1280 nur 160. Dieselbe Arithmetik wie bei der gestrichenen Spalte ⇒ gehört zum **Spalten-Entscheid** unten. Der Kommentar an `panelForm` behauptet die Lesbarkeit nicht mehr, sondern nennt den Messwert (§8) |
 | **Ä57/Ä58** (nur eingetragen, H4) | Ä57: der Panel-Kopf nennt «… · Art. 429» über erlassweiten Reitern, und «noch nicht im Text» steht ohne Warnzeichen. Ä58: gerahmte Chips gegen ungerahmtes ☰ — die Rahmen-Regel des Chromes ist nicht einheitlich |
-| **D1** Änderungsvermerke-Schalter in V3 | **NICHT umgesetzt, begründet.** Die eine Quelle (`bieteAenderungsvermerkeSchalter`/`zaehleAenderungsvermerke` in `pages/gesetz-leser/berechnungen.ts`) liegt auf `main` (S1, #547) und **nicht in dieser Branch-Basis** (H2b). Ein Nachbau in `v3/` wäre die zweite Wahrheit, die §5 verbietet, und kollidierte beim angekündigten Rebase. **H3-Auflage nach dem Rebase:** `hatAenderungsvermerke` im V3-Rahmen aus derselben Funktion bilden (Vorbild `inhalt.tsx` auf main) und an `LeserAnsichtV3` durchreichen; Spec BS-640.100/ZH-211.11 ohne Schalter, STPO mit |
+| **D1** Änderungsvermerke-Schalter in V3 | ✅ **ERLEDIGT NACH REBASE** (17.8.2026, `--onto origin/main`). Bis zum Rebase war es begründet NICHT umgesetzt: die eine Quelle (`bieteAenderungsvermerkeSchalter`/`zaehleAenderungsvermerke` in `pages/gesetz-leser/berechnungen.ts`) lag auf `main` (S1, #547) und nicht in der Branch-Basis (H2b) — ein Nachbau in `v3/` wäre die zweite Wahrheit gewesen, die §5 verbietet. **Gebaut wie aufgelegt:** `leserV3Modell.ts` bildet `hatAenderungsvermerke` mit **derselben** Funktion, die `inhalt.tsx` (V1) zieht, und reicht es als EINE Prop über `LeserRahmenV3` → `LeserKopf` an `LeserAnsichtV3`; dort steht die Bedingung, kein zweiter Ableitungsweg. Mitgenommen (§8, gleiche Sorge): der Tooltip des «Ansicht ▾»-Öffners nennt «Änderungsvermerke» nur, wenn es den Schalter gibt. Zeilen-Grenze `v3/` (420, `leser-v3-fundament`) gehalten, indem im Adapter **Prosa** gekürzt wurde, nicht Sachverhalt — der Adapter bleibt der grösste Baustein. Spec `leser-v3-umschalten` **(a3)**: STPO 3 Schalter, BS-640.100 und ZH-211.11 je 2 ohne «Änderungsvermerke»; ROT gesehen auf frisch gebautem Bundle (Bedingung entfernt ⇒ «Expected 0, Received 1») |
 
 **Bilder:** `docs/ux-audit-2026-07/reader/leser-v3-h3/nachzug/`.
 
@@ -1207,8 +1207,12 @@ hier je Befund eine Zeile mit Beleg. Nicht umgesetzt: **B3 in V3** (Kollision) u
 | **D3/Ä26** | Nicht gebaut, gehört S2 (Beiwerk-Zone) — als Zeile in «Offen aus S1» und in die Ä-Tabelle |
 | **E1** | §17-Wurzelfix des main-Flakes `allgemeineFrist.property.test.ts`. Gemessen je Test: `tageZwischen` **12 775 ms** isoliert gegen 484 ms für die sieben anderen (96 % der Datei); unter Parallel-Last Datei 26.26 s, dieser Test also ~25.8 s bei 30 s Deckel — der Abstand ist kleiner als die Lastschwankung. Fester Zeit-Budget `{ timeout: 120_000 }` mit Begründung, **`numRuns` unverändert** (Prüftiefe auf Rechtslogik bleibt, §1 vor §15) |
 
-**Kollision, gemeldet statt doppelt gebaut (§0 Ziff. 5).** B3 ist in V1 gebaut und
-in **V3 offen**. Die Bedingung braucht einen Prop-Weg über `v3/leserV3Modell.ts` →
+**Kollision, gemeldet statt doppelt gebaut (§0 Ziff. 5)** — ✅ **aufgelöst am
+17.8.2026:** H3 wurde auf `origin/main` (mit S1 #547 und H2b #548) rebased und hat
+B3/D1 in derselben Bau-Einheit nachgezogen; Vollzug in der D1-Zeile des
+H3-Nachzugs. Der Vermerk unten hält den Grund der Verzögerung fest, nicht mehr
+einen offenen Punkt. — B3 ist in V1 gebaut und war in **V3 offen**.
+Die Bedingung braucht einen Prop-Weg über `v3/leserV3Modell.ts` →
 `v3/LeserRahmenV3.tsx` → `v3/LeserKopf.tsx`; alle drei liegen auf fremder
 Bau-Fläche: `origin/feat/leser-v3-h2b` ändert sie (offen, nicht in `main`), und der
 Worktree `LexMetrik-h3` hält sie samt `inhalt-zustand.tsx` **unfestgeschrieben**

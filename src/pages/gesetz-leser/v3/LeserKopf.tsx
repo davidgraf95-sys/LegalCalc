@@ -34,12 +34,15 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // Pane seinen eigenen Navigator hat. Der Accessible-Name sagt es aus (§8).
 
 export function LeserKopf({
-  erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf, panelOeffner, onPanelOeffnen, suchZone,
+  erlass, aktArtikel, fussnotenAnzahl, hatAenderungsvermerke, stufe, gliederungKnopf,
+  panelOeffner, onPanelOeffnen, suchZone,
 }: {
   erlass: BrowseErlass;
   /** Laufender Artikel aus dem bestehenden Scroll-Spy («Art. 429»). */
   aktArtikel: string | null;
   fussnotenAnzahl: number | null;
+  /** D1 — durchgereicht, nicht hier abgeleitet: die Frage gehört ins Modell (§5). */
+  hatAenderungsvermerke: boolean;
   stufe: KopfStufe;
   /** ☰-Öffner der Gliederung — der Rahmen baut ihn, wenn die Seitenleiste
    *  gerade NICHT als Spalte steht. `undefined` = die Gliederung ist sichtbar,
@@ -176,7 +179,7 @@ export function LeserKopf({
           {panelOeffner}
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
-            onPanelOeffnen={onPanelOeffnen} />
+            hatAenderungsvermerke={hatAenderungsvermerke} onPanelOeffnen={onPanelOeffnen} />
           <button type="button" onClick={() => navigate('/gesetze')}
             aria-label="Gesetz schliessen (zur Gesetzesübersicht)"
             title="Gesetz schliessen (zur Gesetzesübersicht)"

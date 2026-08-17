@@ -217,6 +217,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       })}>
 
       <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
+        hatAenderungsvermerke={m.hatAenderungsvermerke}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
         // F8-Regel David 16.8.2026: «Rechtsprechung im Text» aus ⇒ Zähler UND
         // Lasche weg (`panel.oeffnerSichtbar`, eine Stelle). Ä11: auf `mini` trägt die

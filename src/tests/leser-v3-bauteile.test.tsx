@@ -62,7 +62,11 @@ const ERLASS: BrowseErlass = {
 function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: KopfStufe }) {
   return renderToString(
     <MemoryRouter>
-      <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3} {...props} />
+      {/* D1: der Kopf reicht `hatAenderungsvermerke` nur durch — hier `true`, damit
+          die Fälle unten unverändert den vollen Schalter-Satz sehen; die Bedingung
+          selbst prüft `e2e/leser-v3-umschalten` (a3) am gerenderten Erlass. */}
+      <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3}
+        hatAenderungsvermerke {...props} />
     </MemoryRouter>,
   );
 }

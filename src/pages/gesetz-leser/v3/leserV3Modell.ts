@@ -9,7 +9,7 @@ import type { InternRefs } from '../../../components/NormText';
 import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
 import { strukturTiefe } from '../strukturTiefe';
 import { pfadZu } from '../helpers';
-import { paneRoot, findeArt, kuratiereTocSektionen } from '../berechnungen';
+import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
 import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
 import { brotkrume } from './erlassAnsicht';
 import { formatiereDatum } from '../helpers';
@@ -27,9 +27,9 @@ import type { LesePosition } from '../lesePosition';
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
 //
 // WAS DIESE DATEI IST: die **einzige** Stelle, an der die V3-Hülle die geteilte
-// Leser-Maschinerie berührt. Sie ruft die Hooks, verdrahtet ihre Refs und
-// liefert ein **typisiertes Modell** (`LeserV3Modell`) heraus. Kein Markup, kein
-// Layout, keine Entscheidung über Aussehen.
+// Leser-Maschinerie berührt. Sie ruft die Hooks, verdrahtet ihre Refs und liefert
+// ein **typisiertes Modell** (`LeserV3Modell`) heraus. Kein Markup, kein Layout,
+// keine Entscheidung über Aussehen.
 //
 // WARUM ES SIE GIBT (Fundament-Auflage 1, Auftrag David 16.8.2026):
 //
@@ -43,18 +43,14 @@ import type { LesePosition } from '../lesePosition';
 //     Sprung-Mechanik und Suchtreffer — Dinge, die BEIDE Hüllen brauchen. Die
 //     Ist-HÜLLE ist `inhalt.tsx` (Orchestrierung) und `inhalt-volltext.tsx`
 //     (Markup) samt Menüs; **auf keines von beiden zeigt V3**, und die Sonde
-//     `src/tests/leser-v3-adresse.test.ts` hält das fest. Der saubere Endzustand
-//     ist die Umbenennung der geteilten Module in einen neutralen Namensraum —
-//     sie gehört zu H5, wo die Ist-Hülle ohnehin fällt, und nicht in H1, wo sie
-//     eine eingefrorene Datei (FL-4) anfassen müsste.
-//  ③ TESTBARE GRENZE. Was V3 an Daten hat, steht als ein Interface da. Ein
-//     Architektur-Prüfer muss nicht den Rahmen lesen, um es zu wissen.
+//     `src/tests/leser-v3-adresse.test.ts` hält das fest. Endzustand ist die
+//     Umbenennung der geteilten Module in einen neutralen Namensraum — in H5, wo
+//     die Ist-Hülle ohnehin fällt, nicht in H1 (eingefrorene Datei, FL-4).
+//  ③ TESTBARE GRENZE. Was V3 an Daten hat, steht als EIN Interface da — ein Architektur-Prüfer muss nicht den Rahmen lesen, um es zu wissen.
 //
-// WAS BEWUSST **NICHT** HIER PASSIERT: die Hook-Reihenfolge ist byte-gleich zur
-// Ist-Hülle übernommen — nicht aus Bequemlichkeit, sondern weil diese Hooks
-// geteilte Refs und Timer über ihre Reihenfolge koppeln (der §6.6-Split hat das
-// ausdrücklich als Bedingung festgehalten). Eine „aufgeräumte" Reihenfolge wäre
-// keine Verbesserung, sondern eine stille Verhaltensänderung (§6).
+// WAS BEWUSST **NICHT** HIER PASSIERT: die Hook-Reihenfolge ist byte-gleich zur Ist-Hülle
+// übernommen — nicht aus Bequemlichkeit, sondern weil diese Hooks geteilte Refs und Timer
+// über ihre Reihenfolge koppeln (ausdrückliche Bedingung des §6.6-Splits); eine „aufgeräumte" Reihenfolge wäre eine stille Verhaltensänderung (§6).
 
 /** Was die V3-Hülle über den geöffneten Erlass weiss. Vollständig — es gibt
  *  keinen zweiten Kanal, und keine Komponente holt Daten selbst nach. */
@@ -80,6 +76,8 @@ export interface LeserV3Modell {
 
   gliederungsTiefe: number;
   fussnotenAnzahl: number | null;
+  /** D1 · trägt dieser Erlass überhaupt Änderungsvermerke? Geteilte Quelle mit V1 (§5). */
+  hatAenderungsvermerke: boolean;
   kantonErlassAnzahl: number | null;
   nichtKonsolidiert: boolean;
   /** S3/F5-Nachzug: ISO-Datum des frühesten nicht konsolidierten Inkrafttretens
@@ -98,7 +96,7 @@ export interface LeserV3Modell {
   internRefs: InternRefs | undefined;
   // Aus dem GETEILTEN Zustand abgeleitet statt neu typisiert (§5). C3: `bezuegeFuer`
   // ist weg — seit H3 (`bezuegeVorladen: false`) durchgehend `undefined` und ohne
-  // Leser, also eine Falle; Kanten kommen aus `usePanelBezuege` (`./panelModell`).
+  // Leser; Kanten kommen aus `usePanelBezuege` (`./panelModell`).
   revisionFuer: ReturnType<typeof useLeserZustand>['revisionFuer'];
   historieFuer: ReturnType<typeof useLeserZustand>['historieFuer'];
 
@@ -130,9 +128,9 @@ export interface LeserV3Modell {
   trefferPos: number;
   trefferAktivToken: string | null;
   /** H2 · Suchbereich (Kap. 4b, Pos. 5) — Zustand der V3-Huelle, kein Speicher.
-   *  Er absichtlich NICHT persistiert: ein beim naechsten Besuch stillschweigend
-   *  eingeschraenkter Suchbereich waere ein Zustand, der Treffer verschwinden
-   *  laesst, ohne dass jemand ihn gesetzt zu haben glaubt (§8). */
+   *  Absichtlich NICHT persistiert: ein beim naechsten Besuch stillschweigend
+   *  eingeschraenkter Suchbereich liesse Treffer verschwinden, ohne dass jemand
+   *  ihn gesetzt zu haben glaubt (§8). */
   suchBereich: SuchBereich;
   setzeSuchBereich: (b: SuchBereich) => void;
   /** H2 · Artikel + Rang der laufenden Fundstelle — hebt EINE Listenzeile hervor. */
@@ -163,16 +161,12 @@ export interface LeserV3Modell {
   reiterToast: boolean;
   setReiterToast: Dispatch<SetStateAction<boolean>>;
 
-  /**
-   * Die Refs GEBÜNDELT — bewusst nicht als lose Felder neben den Daten.
-   *
-   * Zwei Gründe, und der erste ist gemessen: die Lint-Regel `react-hooks/refs`
-   * kann einem flachen Objekt nicht ansehen, welches Feld ein Ref ist, und
-   * meldete darum JEDEN Zugriff auf das Modell als «Ref-Zugriff im Render»
-   * (10 Fehler, 16.8.2026). Der zweite ist der eigentliche: Daten und
-   * veränderliche Zeiger sind zwei verschiedene Dinge, und wer sie mischt,
-   * lädt genau die Verwechslung ein, vor der die Regel warnt.
-   */
+  /** Die Refs GEBÜNDELT, nicht als lose Felder neben den Daten. Zwei Gründe, der
+   *  erste gemessen: `react-hooks/refs` sieht einem flachen Objekt nicht an,
+   *  welches Feld ein Ref ist, und meldete JEDEN Modell-Zugriff als «Ref-Zugriff
+   *  im Render» (10 Fehler, 16.8.2026). Der zweite ist der eigentliche: Daten und
+   *  veränderliche Zeiger sind zwei Dinge — wer sie mischt, lädt genau die
+   *  Verwechslung ein, vor der die Regel warnt. */
   refs: {
     /** Registrierte Sektions-Elemente (Sprungziele des Baums). */
     sekRef: MutableRefObject<Map<string, HTMLElement>>;
@@ -266,6 +260,13 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     for (const v of Object.values(struktur)) n += v?.fussnoten?.length ?? 0;
     return n;
   }, [struktur]);
+  // D1: Schalter «Änderungsvermerke» nur bei Erlassen, die sie TRAGEN — dieselbe
+  // Funktion wie V1 seit S1, nicht nachgebaut (§5). Drei Zustände, zweiter Träger
+  // «Fassung»-Zeile und Korpus-Messung: `../berechnungen`.
+  const hatAenderungsvermerke = useMemo(() => bieteAenderungsvermerkeSchalter(
+    zaehleAenderungsvermerke(struktur),
+    (eintraege ?? []).some((e) => historieFuer(e.artikel) !== undefined), eintraege !== null,
+  ), [struktur, eintraege, historieFuer]);
 
   // ── Meldung an die App-Leiste (Ortsangabe, KEINE Bedienelemente) ──────────
   // V3 meldet Brotkrume · Stand · laufenden Artikel und sonst nichts: die
@@ -396,7 +397,8 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     modell: {
       erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys,
       sektionen, ohneGliederung, gliederung, alleKnotenIds,
-      gliederungsTiefe, fussnotenAnzahl, kantonErlassAnzahl, nichtKonsolidiert, nichtKonsolidiertSeit,
+      gliederungsTiefe, fussnotenAnzahl, hatAenderungsvermerke, kantonErlassAnzahl,
+      nichtKonsolidiert, nichtKonsolidiertSeit,
       vorher, nachher,
       sekPos, artIndex, sektionMeta, margAnzeige, internRefs,
       revisionFuer, historieFuer,
