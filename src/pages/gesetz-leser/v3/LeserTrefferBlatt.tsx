@@ -23,8 +23,13 @@ import type { ReactNode } from 'react';
 // breit genug». Die Bedingung lautete aber `sucheAktiv && !zweiSpalten && istXl`,
 // und `!zweiSpalten` ist bei ZUGEKLAPPTER Spalte wahr. Der Zweig traf damit
 // einen Fall, für den er nie gedacht war — ein Kommentar, der etwas Engeres
-// behauptet als sein Code (§7). Er ist auf `!hatLeiste` verengt; dort ist er
-// richtig, denn ohne Leiste gibt es weder Spalte noch Blatt.
+// behauptet als sein Code (§7).
+// KORREKTUR (Bug-Check 17.8.2026, Nachzug): hier stand «Er ist auf `!hatLeiste`
+// verengt» — das war der ZWISCHENSTAND. Gebaut wurde die Verengung nicht,
+// sondern die STREICHUNG: `hatLeiste` ist `eintraege.length > 0`, der
+// angekündigte Rand-Fall «kein Leiste-Inhalt, aber breit genug» ist damit
+// unerreichbar, und ein Zweig, den keine Eingabe erreicht, wird gestrichen statt
+// bewacht (§17). Der Prop `trefferListe` existiert nicht mehr.
 //
 // ── WARUM EIN BLATT UND NICHT «SPALTE AUTOMATISCH AUFZIEHEN» ─────────────────
 // Die zweite angebotene Lösung wäre gewesen: bei laufender Suche die Spalte

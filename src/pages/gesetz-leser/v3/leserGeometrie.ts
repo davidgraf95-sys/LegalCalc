@@ -45,7 +45,16 @@ const APP_TOPBAR_H = '4rem';
 /** Höhe der Pane-Titelleiste (`components/layout/PaneKopf.tsx`, `h-9`). */
 const PANE_LEISTE_H = '2.25rem';
 /**
- * A-2 · Das reservierte BAND der App-Krumen-Leiste (`h-9` + 1 px Kante).
+ * A-2 · Das reservierte BAND der App-Krumen-Leiste (`h-9`).
+ *
+ * BUG-CHECK 17.8.2026 (Nachzug): hier stand `calc(2.25rem + 1px)` = 37 px, «h-9
+ * plus 1 px Kante». Gemessen sind es **36**: der stille Träger in
+ * `components/layout/InhaltsKopf.tsx` trägt `h-9 border-b border-transparent`,
+ * und mit `box-sizing: border-box` (Tailwind-Grundlage) liegt die Kante INNEN —
+ * die 1 px sind in den 2.25rem enthalten, nicht darüber. Die 37 px gelten nur
+ * für die LAUTE Leiste, wo die Kante am äusseren Träger sitzt und die `h-9` an
+ * einem Kind. Ein Pixel zu viel verschluckt heisst: der Kopf legt sich einen
+ * Pixel höher, als das Band reicht.
  *
  * Die Leiste zeigt unter `kopfzeileSelbst` nichts mehr, BEHÄLT aber ihre Höhe —
  * sonst wandert der ganze Inhalt beim Eintreffen der Meldung 37 px hoch (die
@@ -55,7 +64,7 @@ const PANE_LEISTE_H = '2.25rem';
  * NUR in der Einzelansicht — im Pane trägt die Titelleiste weiter die
  * Fenster-Steuerung und ist damit kein leeres Band.
  */
-const APP_BAND_H = 'calc(2.25rem + 1px)';
+const APP_BAND_H = '2.25rem';
 
 export interface LeserGeometrieLage {
   /** Zuschnitt der Kopfzeile (gemessene Breite → `kopfStufe`). */

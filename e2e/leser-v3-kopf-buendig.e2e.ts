@@ -187,4 +187,69 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
+
+  // ── (e) V6 (Nachzug 17.8.2026) · DER KOPF WÄCHST, DER TEXT BLEIBT STEHEN ───
+  //
+  // BEFUND des Ästhetik-Reviews, gemessen @1440 an der StPO: klappt man die
+  // Gliederung ein, verliert der Leser die Spalte — und der klebende Kopf-BLOCK
+  // übernimmt dafür die Such-Zone (Ä19). Er wächst von 121 auf 164 px. Der
+  // Lesetext rutscht um dieselben ~43 px nach unten, die Scroll-Position bleibt
+  // aber stehen: `#art-429` lag vorher bündig unter dem Kopf (y = 120) und danach
+  // DAHINTER. Wer die Gliederung ausblendet, um mehr Text zu sehen, verliert als
+  // erstes die Überschrift, an der er gerade las.
+  //
+  // GEPRÜFT WIRD DIE ZUSAGE, NICHT DIE ZAHL (§0.3): «der Artikelkopf, der vor dem
+  // Umschalten sichtbar unter dem Kopf stand, steht danach immer noch unter ihm».
+  // Eine feste Pixeldifferenz wäre an Schriftskala und Such-Zustand gebunden und
+  // liefe bei der nächsten Höhenänderung falsch — die Aussage nicht.
+  // Beide Richtungen, weil der Ausgleich in beide funktionieren muss: zuklappen
+  // (Kopf wächst) und wieder aufklappen (Kopf schrumpft).
+  //
+  // ROT ZU BEKOMMEN (§6.7): in `v3/LeserRahmenV3.tsx` die drei `setzeTocOffen`
+  // wieder durch `m.setTocOffen` ersetzen (oder in `v3/useStickAusgleich.ts` das
+  // `scrollBy` streichen) ⇒ der Artikelkopf liegt nach dem Zuklappen hinter dem
+  // Kopf, die Differenz ist die Höhe der Such-Zone.
+  test('(e) V6 · Gliederung umschalten schiebt den gelesenen Artikel nicht unter den Kopf', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('#art-429')).toBeAttached({ timeout: 20_000 })
+    await page.waitForTimeout(1200) // der Anker-Sprung hat zwei Nachläufe
+
+    /** Unterkante des klebenden Blocks und Oberkante des gelesenen Artikels. */
+    const lage = () => page.evaluate(() => {
+      const kopf = document.querySelector('[data-v3-kopf]')!.getBoundingClientRect()
+      const art = document.querySelector('#art-429')!.getBoundingClientRect()
+      return { kopfUnten: kopf.bottom, artOben: art.top, kopfHoehe: kopf.height }
+    })
+
+    // Vorbedingung (§6.7): der Artikel steht WIRKLICH sichtbar unter dem Kopf —
+    // sonst prüfte der Test eine Lage, in der es nichts zu verlieren gibt.
+    const vorher = await lage()
+    expect(vorher.artOben, `Vorbedingung: #art-429 steht bei ${vorher.artOben}, Kopf endet bei ${vorher.kopfUnten}`)
+      .toBeGreaterThanOrEqual(vorher.kopfUnten - 2)
+    expect(vorher.artOben, 'Vorbedingung: #art-429 liegt nicht im Bild').toBeLessThan(900)
+
+    // ZUKLAPPEN — der Kopf wächst um die Such-Zone.
+    await page.locator('[data-v3-gliederung-zu]').click()
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+    await page.waitForTimeout(400)
+    const zu = await lage()
+    expect(zu.kopfHoehe, `Vorbedingung: der Kopf ist nicht gewachsen (${vorher.kopfHoehe} → ${zu.kopfHoehe})`)
+      .toBeGreaterThan(vorher.kopfHoehe + 1)
+    expect(zu.artOben, `#art-429 liegt nach dem Zuklappen bei ${zu.artOben}, der Kopf endet bei ${zu.kopfUnten}`)
+      .toBeGreaterThanOrEqual(zu.kopfUnten - 2)
+
+    // AUFKLAPPEN — der Kopf schrumpft, und der Artikel bleibt wieder stehen.
+    await page.locator('[data-v3-gliederung-auf]').click()
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(1)
+    await page.waitForTimeout(400)
+    const auf = await lage()
+    expect(auf.artOben, `#art-429 liegt nach dem Aufklappen bei ${auf.artOben}, der Kopf endet bei ${auf.kopfUnten}`)
+      .toBeGreaterThanOrEqual(auf.kopfUnten - 2)
+    expect(auf.artOben, 'nach dem Aufklappen aus dem Bild gescrollt').toBeLessThan(900)
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
 })

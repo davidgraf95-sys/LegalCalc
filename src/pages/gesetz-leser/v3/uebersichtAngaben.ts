@@ -256,7 +256,14 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   ].filter(Boolean).join(' · ');
   if (glied) zeilen.push({ id: 'aufbau', label: 'Aufbau', wert: glied, ziffern: true });
 
-  // ── Sachgebiet · «2 Privatrecht › 22 Obligationenrecht» ───────────────────
+  // ── Sachgebiet · «Bau- und Planungsrecht › Hochbau» ───────────────────────
+  // Bug-Check 17.8.2026 (Nachzug): das Beispiel lautete hier «2 Privatrecht ›
+  // 22 Obligationenrecht» — eine Bundes-Systematik, die an DIESER Stelle nie
+  // erscheint. `verifiziertesSachgebiet` liest ausschliesslich die KANTONALE
+  // Systematik (`helpers.tsx`: ohne `erlass.kanton` gibt es keine `sys`, also
+  // `null`); Bundeserlasse tragen ihr Gebiet über `erlassAnsicht.overlineGebiet`
+  // aus `GEBIET_LABEL`. Ein Beispiel, das den falschen Zweig zeigt, ist eine
+  // falsche Auskunft über den Code (§7) — darum ein kantonales.
   // B9 (Bug-Check 9.8.2026): `verifiziertesSachgebiet` filtert die neutralen
   // Platzhalter der Systematik weg («Bereich SAR») — wo wir keine Einordnung
   // haben, behaupten wir keine (§5, EINE Regel für Krume, Overline und Box).
@@ -266,6 +273,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
 
   // ── Amtliche Ziele ────────────────────────────────────────────────────────
   const links: UebersichtLink[] = [];
+  let hinweiseOhneQuelle = false;
   if (erlass.quelleUrl) {
     links.push({
       id: 'quelle', zeichen: '↗',
@@ -276,9 +284,16 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   if (erlass.pdfUrl) {
     links.push({ id: 'pdf', zeichen: '⬇', label: 'amtliches PDF', href: erlass.pdfUrl });
   }
+  // §8 (Bug-Check 17.8.2026, Nachzug): V1 sagt an dieser Stelle ausdrücklich
+  // «keine amtliche Quelle hinterlegt» (`../parts/ErlassUebersicht.tsx`), V3
+  // liess die Zone stumm. Schweigen liest sich wie «lädt noch», nicht wie «es
+  // gibt keine» — und dass der Weg zur amtlichen Fassung FEHLT, ist bei einem
+  // Rechtstext die wichtigere Auskunft von beiden. Wortgleich zu V1 (§5).
+  if (links.length === 0) hinweiseOhneQuelle = true;
 
   // ── §8 · was die Anzeige über ihre eigenen Grenzen weiss ──────────────────
   const hinweise: string[] = [];
+  if (hinweiseOhneQuelle) hinweise.push('Keine amtliche Quelle hinterlegt.');
   const beleg = teilerfassung(erlass.key);
   if (beleg) hinweise.push(`${beleg.befund} (geprüft ${formatiereDatum(beleg.geprueftAm)})`);
   const grad = erlass.kanton && e.kantonErlassAnzahl != null

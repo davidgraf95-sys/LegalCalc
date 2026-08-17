@@ -527,7 +527,7 @@ vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
 | **Ä2** | Lesespalte 556–616 px @1280; Lesespalte auf 40 rem | ✅ **erledigt in H2** (`max-w-normtext` → `max-w-reading`, Nachtrag 16.8.); der Seitenleisten-Default ist nach **Ä1/H2b** gewandert |
 | **Ä5** | Seitenleiste als drei gerahmte Kästen; hängendes «·» in der Übersichtszeile; Übersichtsbox schimmert unter dem klebenden Block durch | ✅ **erledigt in H2b** — Box entrahmt (Weissraum statt Kasten), hängendes «·» weg, klebender Sockel trägt die Fläche seines Behälters |
 | **Ä8** | Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung, Kap. 8 Nr. 3) | ✅ **erledigt in H2b** — `paper-sunken` statt `brass-200/60`, kein 2-px-Lift mehr. KERN-BERÜHRUNG deklariert (`ArtikelBody.tsx`, wirkt in beiden Hüllen) |
-| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | ⏳ **teilweise in H2b, Rest → H4.** Erledigt: der Leser-Regler heisst «Gesetzestext» und ist der einzige für den Normtext (`[role=group][aria-label="Schriftgrösse"]` 2 → 1 bei offenem Panel). OFFEN: den globalen App-Regler im Leser AUSBLENDEN. Das geht heute nur über Flag-Wissen in der Topbar (FL-1) oder einen V1-Umbau (FL-4) — beides teurer als der Befund wiegt. Der Punkt fällt darum mit der **Leisten-Verschmelzung A-2 in H4**, wo die Topbar ohnehin angefasst wird. **Kein David-Entscheid nötig** — technische Sequenzierung, Orchestrator-Entscheid 17.8.2026 |
+| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | ⏳ **teilweise in H2b, Rest → H4.** Erledigt: der Leser-Regler heisst «Gesetzestext» und ist der einzige für den Normtext (`[role=group][aria-label="Schriftgrösse"]` 2 → 1 bei offenem Panel). OFFEN: den globalen App-Regler im Leser AUSBLENDEN. Das geht heute nur über Flag-Wissen in der Topbar (FL-1) oder einen V1-Umbau (FL-4) — beides teurer als der Befund wiegt. **Nachzug 17.8. abends — Kopplung aufgelöst:** A-2 ist gebaut, und der globale Regler sitzt in der **Topbar**, nicht in der abgelösten Leiste. Der Rest von Ä9 hängt damit NICHT an A-2, sondern bleibt eigenständig für **H4** offen (dieselbe Aussage wie im A-2-Vermerk in Kap. 7; die frühere Formel «Ä9-Rest fällt mit A-2» ist damit überholt). **Kein David-Entscheid nötig** — technische Sequenzierung, Orchestrator-Entscheid 17.8.2026 |
 | **Ä10** | Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser | ✅ **erledigt in H2b**, soweit reproduzierbar — «GLIEDERUNG» 2× → 1×; Überlauf (0 px gemessen) und Popover-Position (0 px Abweichung) waren NICHT reproduzierbar und sind gemeldet, nicht gefixt |
 | **Ä12** | «Seitenleiste ausblenden» (App) gegen «‹ ausblenden» (Gliederung) — gleiche Wortwahl, zwei Wirkungen | ✅ **erledigt in H2** (der Knopf sagt jetzt, WAS er ausblendet) |
 | **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | ✅ **erledigt in H2b-NACHZUG** — H2b nahm nur den `box-shadow` weg und liess Rahmenfarbe + `outline-offset: 1px` stehen, also wieder zwei Messing-Kanten (Ä41). Jetzt: Rahmen im Fokus neutral, Ring ohne Spalt |
@@ -942,9 +942,11 @@ also selbst; dieser Nachzug hält seine Hunks im Rahmen klein und lokal
 Vollzugsvermerk am Ende von Kap. 7): @1440 eine `nav`-Krume statt zwei ·
 **Ä46** zwei ✕ je Pane mit verschiedener Bedeutung — **teilweise erledigt**
 (Einzelansicht 1 statt 2; im Pane bleiben zwei, Begründung im A-2-Vermerk) ·
-**Ä9-Rest** (globaler App-Regler im Leser ausblenden) — **weiter offen**: er sitzt
-in der Topbar, nicht in der von A-2 abgelösten Leiste, und die Kopplung an A-2 hat
-sich damit erledigt · **Ä33/Ä34** aus der Ästhetik-Prüfung. MESSWERT als H4-Ziel:
+**Ä9-Rest** (globaler App-Regler im Leser ausblenden) — **weiter offen, und zwar
+UNABHÄNGIG von A-2**: er sitzt in der Topbar, nicht in der abgelösten Leiste. Die
+Ä-Tabelle (Ä9) trägt seit dem Nachzug 17.8. abends denselben Satz; die frühere
+Formel «Ä9-Rest fällt mit A-2» gilt nicht mehr · **Ä33/Ä34** aus der
+Ästhetik-Prüfung. MESSWERT als H4-Ziel:
 das Chrome bis zum Beginn der Lesefläche war @390 **183 px = 22 %** der
 Fensterhöhe im Ruhezustand (Topbar 65 · Krumen-Leiste bis 102 · V3-Kopf bis 183)
 und wuchs mit laufender Suche um 24 px auf **207 px = 25 %**. *(Fortschreibung
@@ -1746,8 +1748,11 @@ Agenten-Sessions (`LexMetrik-fix`, `-krume`, `-uebersicht`); die lokalen
 Kontentions-Läufe kippten dadurch die Arm-Reihenfolge und sind nicht belastbar.
 Belastbar ist nur die prozessinterne 4×-Drossel-Messung.
 
-**Vor dem Flip zu erledigen:** NM-2 auf H (Blocker) · Ä60 · Ä45 Doppelkrume ·
-Ä46 zwei ✕ · B-Spec-Umhängung (sonst Timeout-Hänger statt roter Tests).
+**Vor dem Flip zu erledigen:** NM-2 auf H (Blocker) · Ä60 · Ä46 zwei ✕
+(Rest: im Pane) · B-Spec-Umhängung (sonst Timeout-Hänger statt roter Tests).
+*(Nachzug 17.8. abends: **Ä45 Doppelkrume** ist hier gestrichen — sie ist mit A-2
+erledigt, s. Kap. 7. Die Liste führte sie weiter, während der A-2-Vermerk sie
+abhakte; es gilt der A-2-Stand.)*
 
 ### ✅ Integration der vier Nachzüge (17.8.2026, Branch `feat/leser-v3-nachzug-17-8`)
 
@@ -1766,6 +1771,48 @@ gesucht wurden die **Wechselwirkungen**, die kein Zweig allein zeigt.
 Tore am Stand: `gate` 0 · testtreue/e2e-shards/design-tokens/schlankheit/
 perf-budget je 0 · golden **256 byte-gleich** · e2e 335 (chromium) + 110/1
 skipped (leser-v3) + 47 (schwer) + 2×2 (PX) grün.
+
+### ✅ Nachzug nach drei Prüfern (Nachzug 17.8. abends)
+
+Drei unabhängige Prüfer (Ästhetik · Architektur · Bug-Check) über den
+Integrationsstand `05f2b6728`. **Noten: Ästhetik 7/10, Architektur 8,5/10.**
+Gebaut wurde nur, was vor dem Merge stehen muss; alles übrige ist unten
+eingetragen und wartet auf H4.
+
+| # | Befund | Fix |
+|---|---|---|
+| **V1** (Bug 2) | Die Fassade meldete `kopfzeileSelbst` UNBEDINGT — auf den drei Wegen, auf denen der Rahmen früh zurückkehrt (Fehlseite · pdf-embed · nur-live-link), rendert sie aber nie eine Kopfzeile. Reproduziert an `/gesetze/bund/EMRK`, `/gesetze/bund/DSGVO`, `/gesetze/bund/GIBTSNICHT` je mit `?leser=v3`: **null Krumen, null ✕** — eine Seite ohne Weg zurück | `v3/useKopfAnspruch.ts`: die Meldung ist RESERVIERUNG (sie muss datenunabhängig sein, sonst kehrt der 37-px-Sprung zurück) und wird zurückgenommen, sobald `FruehAnsicht` etwas BLEIBENDES liefert. `meldeInhaltsKopf(null)` ⇒ die Shell fällt auf `kopfVonPfad()` zurück, also auf das V1-Bild — keine zweite Krumen-Ableitung (§5). Der Lade-Platzhalter zählt ausdrücklich nicht dazu. Spec `leser-v3-eine-kopfzeile` (i) |
+| **V2** (Bug 3) | `kopfElemente.krume` war ein `boolean`: unter **900 px Elementbreite** (Handy @390, JEDES Pane unter 900) fiel die Krume ganz. Bis A-2 fing die App-Leiste das auf, seither war das ✕ der einzige Weg nach oben — und es springt an der Ebene vorbei | `krume: 'voll' \| 'kurz'` — die Kette schrumpft auf EINEN klickbaren Rücksprung «‹ Gesetze» aus derselben Quelle (`erlassAnsicht.brotkrume`). Kein dritter Wert «weg»: `leser-v3-kopfstufen` prüft über jede Breite 280–2000 px, dass eine Krume steht. Kopfzeile unverändert ≤ 4 Elemente, Suchfeld bleibt oberstes sticky Element. Specs `leser-v3-eine-kopfzeile` (b2)/(h) |
+| **V3** (Arch 4) | Fahrplan-Kollisionen: die Flip-Blocker-Liste des H4-Bogens führte **Ä45 Doppelkrume** weiter, während der A-2-Vermerk sie abhakte; **Ä9-Rest** stand einmal als «fällt mit A-2» und einmal als «Kopplung erledigt» | Je EINE Wahrheit, **A-2-Stand gewinnt**: Ä45 erledigt · Ä46 teilweise (Split offen) · Ä9-Rest offen für H4, **unabhängig** von A-2. Nachgeführt in Ä-Tabelle, A-2-Vermerk, Flip-Liste UND `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md`. Ä85 (Ä70 doppelt) nachgeprüft: keine Restnennung — alle Ä70-Treffer betreffen die Übersichtsbox |
+| **V4** (Arch 2/3) | Toter Export `spalteFuer()` (null Aufrufer seit A-8) · `expect(SCHWELLE_SPALTE).toBe(1024)` war eine Tautologie — die Zahl gegen sich selbst | `spalteFuer` **gestrichen statt bewacht** (§17). Die Tautologie ist eine **Quellensonde** gegen `inhalt-zustand.tsx` (`PANE_BREIT_PX` **und** die `matchMedia`-Zahl, beide mit Positiv-Sonde): verschiebt die Ist-Hülle ihre Schwelle, wird der Test rot statt die deklarierte Doppelung still auseinanderlaufen zu lassen |
+| **V5** (Ä78) | Bei OFFENEM Treffer-Blatt sagte die Zähler-Zeile am Feld «N Artikel · M Fundstellen · Treffer anzeigen →» und der Listenkopf zwei Zentimeter darunter dasselbe — dazu ein Knopf, der ein offenes Blatt öffnet | Die Zähler-Zeile schweigt, solange das Blatt offen ist (EIN Ausdruck speist Blatt und Schweigen, `suchZoneAufbau`). Kein Layout-Sprung: die Zonen-Höhe hängt am SUCH-Zustand, nicht am Blatt — B9-Wächter unberührt. Spec `leser-v3-suche-ohne-gliederung` (a), in beide Richtungen |
+| **V6** (Ä77) | Gliederung einklappen @1440: der klebende Block wächst **121 → 164 px** (er übernimmt die Such-Zone), die Scroll-Position bleibt — `#art-429` lag danach HINTER dem Kopf. Wer ausblendet, um mehr Text zu sehen, verliert die Überschrift, an der er las | `v3/useStickAusgleich.ts`: Kopf-Höhe vor und nach dem Umschalten am Element GEMESSEN und die Differenz weggescrollt (nicht `SUCH_H_RUHE` gerechnet — das wäre bei verstellter Schriftskala und bei laufender Suche falsch). Ein Weg für alle drei Bedienpunkte. Spec `leser-v3-kopf-buendig` (e), beide Richtungen |
+
+**Nebenwirkung, deklariert (§17 Rückbau):** die Herleitung der gestrichenen
+Erweiterungs-Slots stand im Rahmen zweimal — zusammengeführt, damit die Datei
+unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
+
+#### Für H4 vorgemerkt (Nachzug 17.8. abends — eingetragen, nicht gebaut)
+
+| # | Befund | Wohin |
+|---|---|---|
+| **Ä79** | @1440 mit eingeklappter Gliederung stehen ZWEI ☰ (Kopf-☰ + Schiene) für dieselbe Handlung | H4 |
+| **Ä80** | Steckbrief-Reihenfolge Erlassdatum → In Kraft → Stand; Präposition «vom» steht im WERT statt im Etikett | H4 |
+| **Ä81** | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | H4-Entscheid «nur der Kopf warnt» |
+| **Ä82** | Zwei Linien zwischen Ingress und Sektionskopf | S-Strang |
+| **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | H4 / `layout` |
+| **Ä84** | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | H4 |
+| **—** | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | H4 |
+| **Ä75** | «SR» als Etikett bei Kantonen | **wartet auf David** |
+| **Arch 5** | Etikett «A-2» doppelt belegt | H4 |
+| **Arch 6** | H5-Liste nennt das 37-px-Band der App-Leiste noch als zu entfernen | H4 |
+| **Arch 7** | Treffer-Blatt ohne `usePopoverAutoZu` — Klick daneben schliesst es nicht | **David-Frage** (Beiwerk oder Popover?) |
+
+**Sofort miterledigt (je eine Zeile, keine Bau-Fläche):** Bug 5 Kommentar in
+`LeserTrefferBlatt.tsx` korrigiert · Bug 6 Beispiel-Kommentar `gebiet` in
+`uebersichtAngaben.ts` korrigiert · Bug 7 der §8-Satz «keine amtliche Quelle
+hinterlegt» wiederhergestellt · Bug 8 `APP_BAND_H` 37 → gemessene 36 px
+(`2.25rem`), nur weil `leser-v3-kopf-buendig` grün bleibt.
 
 ### Fenster-Deckel und Flip-Kriterien
 

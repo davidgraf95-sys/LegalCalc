@@ -372,12 +372,12 @@ ein Paritätsbeweis, den nichts fährt.
 |---|---|---|---|
 | **NM-2 auf H** (neu, hier gemessen) | — | Entscheide zu einem Artikel sind auf 390 px per Tap nicht erreichbar (§2) | **BLOCKER VOR FLIP** — verlorener Rechercheweg, kein Design-Geschmack |
 | **Ä60** | 825 | Beiwerk-Blatt verdeckt auf D @1440 die äusseren 112 px (18 %) jeder Textzeile; keine feste Blattbreite behebt es | **BLOCKER VOR FLIP** — Normtext teilweise unlesbar (§1/§8); Weg (a) so lassen / (b) Kopf-Chip opfern / (c) breiterer Leser-Rahmen wartet auf David |
-| **Ä45 Doppelkrume** | 938–940 | App-Krume und V3-Ortsangabe zeigen @390 denselben Ort in zwei `nav`-Krumen übereinander | **BLOCKER VOR FLIP** — sofort sichtbar auf jedem Erlass. *(Achtung: wird parallel im Worktree `LexMetrik-krume` bearbeitet — vor dem Flip Stand abgleichen)* |
-| **Ä46 zwei ✕ je Pane** | 940–941 | zwei Schliess-Kreuze je Pane mit verschiedener Bedeutung | **BLOCKER VOR FLIP** — widersprüchliche Bedienung |
+| ~~**Ä45 Doppelkrume**~~ | 938–940 | App-Krume und V3-Ortsangabe zeigten @390 denselben Ort in zwei `nav`-Krumen übereinander | ✅ **erledigt 17.8.2026 mit A-2** (Leisten-Verschmelzung; Vollzugsvermerk Kap. 7 des Fahrplans, bewacht von `e2e/leser-v3-eine-kopfzeile`). *Kein Flip-Blocker mehr — dieser Bogen entstand vor A-2 und führte ihn weiter (Nachzug 17.8. abends).* |
+| **Ä46 zwei ✕ je Pane** | 940–941 | zwei Schliess-Kreuze je Pane mit verschiedener Bedeutung | **teilweise erledigt** (Einzelansicht: 1 statt 2). **BLOCKER VOR FLIP bleibt für den Split**: im Pane stehen weiter zwei, unterscheidbar nur über den Accessible Name |
 | **A-8** (Rest) | 773, 1070, 1698 | Der 1024er-Spalten-Entscheid hängt noch an `istXl`; Umstellung verschiebt die Grenze auf Viewport 1072 (§3) | **braucht Davids Entscheid** — identisch mit Ä60 |
 | **B-Specs umhängen** | 1240, 1610, 1622 | §7 dieses Bogens | **BLOCKER VOR FLIP** — sonst Timeout-Hänger statt Fehlermeldungen |
 | **Flaker** | 1746 | §6 dieses Bogens | **teilweise**; 2 von 3 brauchen CI-Forensik, nicht mehr lokale Läufe |
-| **Ä9 Regler-Doppel** | 527, 938 | globaler App-Schriftregler im Leser noch zusätzlich sichtbar | **kann H5 tragen** — Duplikat, nichts unbedienbar |
+| **Ä9 Regler-Doppel** | 527, 938 | globaler App-Schriftregler im Leser noch zusätzlich sichtbar | **kann H5 tragen** — Duplikat, nichts unbedienbar. *Nachzug 17.8. abends: hing nominell an A-2; der Regler sitzt aber in der Topbar, nicht in der abgelösten Leiste — der Punkt ist von A-2 unabhängig* |
 | **A-2 Leisten-Verschmelzung** | 527, 644, 995 | zwei Leisten statt einer, 37 px Chrome-Preis; berührt `src/components/layout/**` | **kann H5 tragen** (Fahrplan nennt «H4/H5») |
 | **Ä33/Ä34** | 941–944 | Chrome bis zur Lesefläche @390 = 183 px (22 %) ruhend, 207 px (25 %) mit Suche | **braucht Davids Entscheid** — es gibt keinen Zielwert, nur den Messwert |
 | **Ä63 Handy-Einzug** | 548, 1404 | OR/ZGB @390 Einzug x = 80 px gegen StPO 44 px | **kann H5 tragen** — Typografie-Detail |
@@ -406,8 +406,10 @@ Pane-Beweis ist ein Test, kein Bild (`leser-kopf-paritaet.e2e.ts`).
 Bogen an drei Stellen bestätigt:
 
 - **zwei Ortsangaben übereinander** («‹ Art. 429 StPO … Stand 01.04.2025 ✕» und
-  darunter «StPO · Art. 429 … ✕») = Ä45 Doppelkrume,
-- **zwei ✕ in zwei Zeilen** mit verschiedener Bedeutung = Ä46,
+  darunter «StPO · Art. 429 … ✕») = Ä45 Doppelkrume — *das Bild zeigt den Stand
+  VOR A-2 (17.8.2026); seither gibt es nur die untere Zeile,*
+- **zwei ✕ in zwei Zeilen** mit verschiedener Bedeutung = Ä46 — *in der
+  Einzelansicht mit A-2 auf eines reduziert, im Pane unverändert,*
 - **kein Zähler und keine Lasche** für die Rechtsprechung = der NM-2-Verlust aus
   §2, sichtbar statt behauptet.
 

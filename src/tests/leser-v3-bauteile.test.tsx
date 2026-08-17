@@ -101,23 +101,39 @@ describe('LeserAnsichtV3 — `aria-controls` zeigt nie auf ein Panel, das es nic
   });
 });
 
-describe('LeserKopf — «Gesetze» und der Volltitel fallen unter 900 px', () => {
-  it('Stufe "voll": Gesetze-Krume UND Volltitel sind da', () => {
+// §6.3-DEKLARATION (V2, Nachzug 17.8.2026): unter 900 px fiel die Krume bis
+// hierher GANZ weg — genau das war der Befund. Seit A-2 steht darüber keine
+// App-Leiste mehr, die den Weg nach oben auffängt, und das ✕ springt an der
+// Ebene vorbei. Neu schrumpft die Kette auf einen Rücksprung «‹ Gesetze» statt
+// zu verschwinden. Geprüft wird darum dieselbe Zone mit einer PRÄZISEREN
+// Aussage: was fällt, ist die KETTE (Ebene-Stufe + «›») und der Volltitel — der
+// Rücksprung bleibt. Kein Aufweichen: die Ebene-Stufe wird auf beiden engen
+// Zuschnitten weiterhin ausdrücklich als abwesend geprüft.
+describe('LeserKopf — die Kette und der Volltitel fallen unter 900 px, die Krume nicht', () => {
+  it('Stufe "voll": ganze Kette (Gesetze › Bund ›) UND Volltitel sind da', () => {
     const html = renderKopf({ stufe: 'voll' });
     expect(html).toContain('>Gesetze<');
+    expect(html).toContain('>Bund<');
     expect(html).toContain('Obligationenrecht');
+    // Die volle Kette ist NICHT der Rücksprung — sonst prüften die zwei Tests
+    // unten dasselbe Element unter anderem Namen.
+    expect(html).not.toContain('data-v3-kopf-krume-kurz');
   });
 
-  it('Stufe "kompakt": beides ist weg', () => {
+  it('Stufe "kompakt": Kette und Volltitel weg, Rücksprung «‹ Gesetze» da', () => {
     const html = renderKopf({ stufe: 'kompakt' });
-    expect(html).not.toContain('>Gesetze<');
+    expect(html).not.toContain('>Bund<');
     expect(html).not.toContain('Obligationenrecht');
+    expect(html).toContain('data-v3-kopf-krume-kurz');
+    expect(html).toContain('href="/gesetze"');
   });
 
-  it('Stufe "mini": beides bleibt weg', () => {
+  it('Stufe "mini": dasselbe — auch auf dem engsten Zuschnitt bleibt der Weg nach oben', () => {
     const html = renderKopf({ stufe: 'mini' });
-    expect(html).not.toContain('>Gesetze<');
+    expect(html).not.toContain('>Bund<');
     expect(html).not.toContain('Obligationenrecht');
+    expect(html).toContain('data-v3-kopf-krume-kurz');
+    expect(html).toContain('href="/gesetze"');
   });
 });
 

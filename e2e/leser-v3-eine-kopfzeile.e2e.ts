@@ -35,8 +35,12 @@
 //    Krumen-Leisten, zwei ✕ und 159 px Chrome;
 //  · in `src/pages/gesetz-leser/GesetzLeserV3.tsx` die Meldung
 //    `meldeInhaltsKopf({ kopfzeileSelbst: true, … })` streichen ⇒ dasselbe;
-//  · in `src/pages/gesetz-leser/v3/kopfStufen.ts` `krume: stufe === 'voll'` auf
-//    `false` setzen ⇒ (b)/(f) verlieren «Gesetze ›» und die Ebene-Stufe;
+//  · in `src/pages/gesetz-leser/v3/kopfStufen.ts` `krume` auf einem Zuschnitt
+//    abschalten ⇒ (b)/(f) verlieren «Gesetze ›» und die Ebene-Stufe, (b2)/(h)
+//    den Rücksprung «‹ Gesetze»;
+//  · in `src/pages/gesetz-leser/v3/LeserRahmenV3.tsx` den Aufruf
+//    `useKopfAnspruch(...)` durch `useKopfAnspruch(false)` ersetzen ⇒ (i) findet
+//    auf EMRK/DSGVO/Fehlseite wieder KEINE Krume und KEIN ✕;
 //  · in `src/components/layout/PaneKopf.tsx` `nurSteuerung` ignorieren ⇒ (d)
 //    findet die Ortsangabe wieder in der Pane-Titelleiste.
 import { test, expect, type Page } from '@playwright/test'
@@ -174,10 +178,25 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(m.kopfUnten, `Chrome bis zur Lesefläche @390 ${m.kopfUnten} px — erlaubt ${VORHER_H} − ${APP_LEISTE_H}`)
       .toBeLessThanOrEqual(VORHER_H - APP_LEISTE_H)
     expect(m.kreuze.length, `Schliess-Griffe: ${m.kreuze.join(' | ')}`).toBe(1)
-    // Auf `mini` fällt die Krume (Kap. 4a) — die Ortsangabe bleibt, und das
-    // Suchfeld ist weiterhin das oberste Element des klebenden Blocks.
+    // Auf `mini` fällt die KETTE (Kap. 4a) — nicht die Krume: seit V2 (Nachzug
+    // 17.8.2026) bleibt ihre erste Stufe als klickbarer Rücksprung «‹ Gesetze»
+    // stehen. Vorher war das ✕ hier der einzige Weg nach oben, und es springt an
+    // der Ebene vorbei. Die Ortsangabe bleibt, und das Suchfeld ist weiterhin das
+    // oberste Element des klebenden Blocks.
     await expect(page.locator('[data-v3-kopf-kuerzel]')).toHaveText('StPO')
     await expect(page.locator('[data-v3-kopf] [data-v3-suchsprung] input')).toBeVisible()
+    const kurz = page.locator('[data-v3-kopf-krume-kurz]')
+    await expect(kurz).toHaveCount(1)
+    await expect(kurz).toHaveAttribute('href', '/gesetze')
+    await expect(kurz).toBeVisible()
+    // Die volle Kette steht hier NICHT — sonst prüfte die Zeile oben nur, dass
+    // der Zuschnitt gar nicht greift.
+    const ortH = (await page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]').innerText())
+      .replace(/\s+/g, ' ')
+    expect(ortH, `Ortsangabe @390: «${ortH}»`).not.toContain('Bund')
+    // Und er ist wirklich bedienbar: ein Klick führt zur Gesetzes-Übersicht.
+    await kurz.click()
+    await expect(page).toHaveURL(/\/gesetze(\?|$)/, { timeout: 20_000 })
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
@@ -324,4 +343,72 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
+
+  // ── (h) V2 · IM PANE GILT DIESELBE REGEL, GEMESSEN AN DER ELEMENTBREITE ────
+  // Ein 700-px-Pane unterschreitet die 900-px-Schwelle und bekommt darum den
+  // Zuschnitt `kompakt` — mit demselben Rücksprung wie das Handy, aus derselben
+  // Funktion (`kopfStufen`, ResizeObserver am Rahmen; Kap. 10: keine
+  // `imPane`-Verzweigung). Das ist der Fall, den A-2 unbemerkt gebrochen hatte:
+  // im Split gab es über dem Kopf gar keine App-Leiste mehr, die hätte auffangen
+  // können.
+  test('(h) V2 · Pane unter 900 px trägt den Rücksprung «‹ Gesetze»', async ({ page }) => {
+    test.slow() // zwei volle Leser-Instanzen
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3&p=/gesetze/bund/BGFA%3Fleser%3Dv3')
+    await expect(page.locator('[data-pane="sekundaer"] [data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(800)
+
+    for (const wahl of ['[data-pane="primaer"]', '[data-pane="sekundaer"]']) {
+      const kopf = page.locator(`${wahl} [data-v3-kopf]`)
+      // Positiv-Sonde: das Pane ist wirklich schmaler als 900 px — sonst prüfte
+      // die Zeile darunter den Desktop-Zuschnitt und wäre grundlos grün.
+      const breite = (await kopf.boundingBox())!.width
+      expect(breite, `${wahl} ist ${breite} px breit — über der 900-px-Schwelle`).toBeLessThan(900)
+      const kurz = kopf.locator('[data-v3-kopf-krume-kurz]')
+      await expect(kurz, `${wahl} ohne Rücksprung`).toHaveCount(1)
+      await expect(kurz).toHaveAttribute('href', '/gesetze')
+      await expect(kurz).toBeVisible()
+    }
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  // ── (i) V1 · WO KEIN V3-KOPF STEHT, MUSS DIE APP-LEISTE ZURÜCKKOMMEN ──────
+  //
+  // BEFUND (Ästhetik-Review 17.8.2026): die Fassade meldete `kopfzeileSelbst`
+  // UNBEDINGT — auf den drei Wegen, auf denen der Rahmen früh zurückkehrt
+  // (Fehlseite · pdf-embed · nur-live-link), rendert sie aber nie eine Kopfzeile.
+  // Gemessen an `/gesetze/bund/EMRK?leser=v3`: null Krumen, null ✕. Der Leser sass
+  // auf einer Seite ohne jeden Weg zurück — in V1 trug die App-Leiste ihn.
+  // Geprüft wird das SICHTBARE Ergebnis (Krume + Schliessen), nicht die Meldung:
+  // eine Sonde auf `kopfzeileSelbst` bliebe grün, wenn die Leiste aus einem
+  // anderen Grund verschwände.
+  for (const [name, pfad] of [
+    ['pdf-embed (EMRK)', '/gesetze/bund/EMRK?leser=v3'],
+    ['nur-live-link (DSGVO)', '/gesetze/bund/DSGVO?leser=v3'],
+    ['Fehlseite', '/gesetze/bund/GIBTSNICHT?leser=v3'],
+  ] as const) {
+    test(`(i) V1 · ${name}: App-Krume und ✕ sind da`, async ({ page }) => {
+      const fehler = fehlerSammeln(page)
+      await page.setViewportSize({ width: 1440, height: 900 })
+      await page.goto(pfad)
+      // Positiv-Sonde: es steht wirklich KEIN V3-Kopf auf dieser Seite — sonst
+      // prüfte der Test den Normalfall.
+      await expect(page.locator('[data-inhalt-kopf]')).toBeVisible({ timeout: 20_000 })
+      await page.waitForTimeout(600)
+      await expect(page.locator('[data-v3-kopf]'), 'diese Ansicht rendert doch einen V3-Kopf').toHaveCount(0)
+      await expect(page.locator('[data-inhalt-kopf-still]'), 'die Leiste schweigt weiterhin').toHaveCount(0)
+
+      const leiste = page.locator('[data-inhalt-kopf]')
+      await expect(leiste.locator('nav')).toHaveCount(1)
+      const text = (await leiste.innerText()).replace(/\s+/g, ' ')
+      expect(text, `App-Leiste: «${text}»`).toContain('Gesetze')
+      await expect(leiste.getByRole('link', { name: 'Gesetze' })).toHaveAttribute('href', '/gesetze')
+      // Ein Schliess-Griff — der Weg zurück, der auf diesen Seiten fehlte.
+      await expect(leiste.getByRole('button', { name: /schliessen/i })).toHaveCount(1)
+
+      expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+    })
+  }
 })

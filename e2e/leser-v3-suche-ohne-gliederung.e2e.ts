@@ -61,12 +61,19 @@ async function gliederungZu(page: Page): Promise<void> {
  * sondern ein beim Bau gesehener Fehlschlag: `[data-v3-treffer-weg]` (die
  * Zähler-Zeile) lebt in der Such-ZONE, und die gibt es nur OHNE stehende Spalte.
  * Mit Spalte wartete der Helfer auf ein Element, das dort nie erscheint.
+ *
+ * Ä78/V5 (Nachzug 17.8.2026): ohne Spalte ist der Zeuge das BLATT, nicht mehr die
+ * Zähler-Zeile. Das Blatt öffnet sich mit der Suche selbst, und seither schweigt
+ * die Zähler-Zeile, solange es offen ist — auf ihr Erscheinen zu warten hiesse
+ * jetzt, auf den geschlossenen Zustand zu warten. Unterhalb von 1024 px (Handy,
+ * schmales Pane) gibt es kein Blatt; dort bleibt die Zähler-Zeile der Zeuge,
+ * darum die Oder-Auswahl statt eines dritten Schalters.
  */
 async function suche(page: Page, wort = BEGRIFF, mitSpalte = false): Promise<void> {
   const feld = page.locator('[data-v3-suchsprung] input').first()
   await feld.click()
   await feld.fill(wort)
-  const zeuge = mitSpalte ? '[data-treffer-liste]' : '[data-v3-treffer-weg]'
+  const zeuge = mitSpalte ? '[data-treffer-liste]' : '[data-v3-treffer-blatt], [data-v3-treffer-weg]'
   await expect(page.locator(zeuge).first()).toBeVisible({ timeout: 15000 })
 }
 
@@ -121,12 +128,31 @@ for (const breite of [1024, 1440]) {
     // der Such-Zone (die einzige Stelle, die ohne Spalte klebt).
     await expect(page.locator('[data-v3-such-zone] [data-v3-treffer-blatt] [data-treffer-liste]')).toHaveCount(1)
 
-    // Und der Zähler ist da und sagt dieselben Zahlen wie der Listenkopf (§5).
+    // ── Ä78 / V5 (Nachzug 17.8.2026) · DER ZÄHLER STEHT GENAU EINMAL ────────
+    // Befund des Ästhetik-Reviews: bei OFFENEM Blatt sagte die Zeile am Feld
+    // «N Artikel · M Fundstellen · Treffer anzeigen →» — und zwei Zentimeter
+    // darunter sagte der Listenkopf des Blattes dasselbe. Der Weg war zudem
+    // schon gegangen: ein Knopf, der ein offenes Blatt öffnet.
+    // Geprüft in BEIDE Richtungen (sonst wäre «weg» auch mit kaputter Suche grün):
+    // solange das Blatt offen ist, schweigt die Zeile und die Zahlen stehen im
+    // Blatt; nach ✕ ist sie wieder da und nennt dieselben Zahlen (§5).
+    // ROT ZU BEKOMMEN (§6.7): in `v3/suchZoneAufbau.tsx` das Prop `blattOffen`
+    // weglassen ⇒ beide Zähler stehen gleichzeitig.
+    await expect(page.locator('[data-v3-treffer-weg]'),
+      'Zähler-Zeile steht neben dem offenen Blatt — der Zähler doppelt').toHaveCount(0)
+    const imBlatt = (await page.locator('[data-v3-treffer-blatt] [data-treffer-liste]').innerText())
+      .replace(/\s+/g, ' ')
+    expect(imBlatt, `Listenkopf ohne Artikel-Zahl: ${imBlatt}`).toMatch(/\d+ (Artikel|Paragraphen)/)
+    expect(imBlatt, `Listenkopf ohne Fundstellen-Zahl: ${imBlatt}`).toMatch(/\d+ Fundstellen?/)
+
+    // Blatt zu ⇒ die Zeile kommt zurück, mit denselben Zahlen und dem Weg hinein.
+    await page.locator('[data-v3-treffer-blatt-zu]').click()
     const weg = page.locator('[data-v3-treffer-weg]')
     await expect(weg).toBeVisible()
     const zaehler = (await weg.innerText()).replace(/\s+/g, ' ')
     expect(zaehler, `Zähler ohne Artikel-Zahl: ${zaehler}`).toMatch(/\d+ (Artikel|Paragraphen)/)
     expect(zaehler, `Zähler ohne Fundstellen-Zahl: ${zaehler}`).toMatch(/\d+ Fundstellen?/)
+    expect(zaehler, `Weg zur Liste fehlt: ${zaehler}`).toContain('Treffer anzeigen')
   })
 }
 
