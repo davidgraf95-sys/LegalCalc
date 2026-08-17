@@ -61,7 +61,13 @@ describe('Leser-Schriftskala — Persistenz und Migration', () => {
     // Die anderen Felder desselben Speichers bleiben unberührt — der neue
     // Schlüssel darf keinen Alt-Zustand überschreiben (§8).
     expect(el.attrs['data-fussnoten']).toBe('aus');
-    expect(el.attrs['data-histansicht']).toBe('chronologie');
+    // S1 (deklarierte fachliche Änderung, §6.3): derselbe Alt-Speicher, aber
+    // `histansicht` ist seit dem Optionen-Rückbau zweiwertig — 'chronologie'
+    // bedeutete «Vermerke sichtbar» und migriert darum auf 'an' (nie auf 'aus';
+    // der Nutzer hatte sie ausdrücklich bestellt, §8). Die Migrations-Regeln
+    // selbst stehen unter `src/tests/leser-optionen-migration.test.ts`; hier
+    // zählt nur, dass der Schrift-Schlüssel sie nicht stört.
+    expect(el.attrs['data-histansicht']).toBe('an');
   });
 
   it('unbekannter Wert ⇒ Vorgabestufe (nicht durchgereicht)', async () => {
@@ -110,9 +116,17 @@ describe('Leser-Schriftskala — Persistenz und Migration', () => {
     const o = JSON.parse(speicher.get('lm.leser.optionen')!);
     expect(o.schrift).toBe('sehr-gross');
     expect(o.fussnoten).toBe('aus');
-    expect(o.verweise).toBe('aus');
-    expect(o.hist).toBe('aus');
+    expect(o.leitfaelle).toBe('an');
     expect(o.bezugKantone).toEqual(['BS']);
+    // S1 (deklarierte fachliche Änderung, §6.3): `hist: 'aus'` steht als
+    // `histansicht: 'aus'` im neuen Speicher — die Nutzerwahl ist erhalten, nur
+    // unter dem neuen Schlüssel. Der mit S1 gestrichene `verweise` und der
+    // Alt-Schlüssel `hist` werden beim Schreiben ABGERÄUMT (dieselbe Mechanik wie
+    // `linien` und `zeitraum`): ein weitergeschleppter Alt-Wert liesse die
+    // Migration bei jedem Laden neu greifen.
+    expect(o.histansicht).toBe('aus');
+    expect(o.hist).toBeUndefined();
+    expect(o.verweise).toBeUndefined();
   });
 
   it('dieselbe Stufe noch einmal setzen weckt die Hörer NICHT (§15)', async () => {

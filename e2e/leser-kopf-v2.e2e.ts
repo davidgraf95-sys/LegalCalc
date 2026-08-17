@@ -131,7 +131,14 @@ test('B-2: die Alt-Zeitraum-Wahl ist aus dem Ansicht-Menü ENTFERNT (B5)', async
   for (const label of ['20 J.', '10 J.', '5 J.']) {
     await expect(panel.getByRole('button', { name: label, exact: true })).toHaveCount(0);
   }
-  // Die übrigen Streifen des Menüs stehen unverändert da — entfernt wurde genau
-  // eine Steuerung, nicht das Menü.
-  await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toBeVisible();
+  // Die übrigen Steuerungen des Menüs stehen unverändert da — entfernt wurde genau
+  // eine, nicht das Menü.
+  //
+  // S1 (deklarierte fachliche Änderung, §6.3): hier stand der dreiwertige Streifen
+  // `[aria-label="Darstellung der Änderungshistorie"]`. Er ist mit dem
+  // Optionen-Rückbau (Entscheid David F1 «ja») ein zweiwertiger `role="switch"`
+  // geworden. Die AUSSAGE der Zeile ist unverändert — «das Menü trägt weiter seine
+  // Historie-Bedienung» — nur ihr Griff ist der neue; der Vertrag des Schalters
+  // selbst liegt unter `hist-ansicht-w25i.e2e.ts`.
+  await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toBeVisible();
 });
