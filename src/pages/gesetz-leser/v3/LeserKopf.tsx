@@ -254,7 +254,8 @@ export function LeserKopf({
             Gliederung nicht ohnehin sichtbar ist (und seit Ä79 auch nicht als
             Schiene danebensteht), ⚖ trägt die Rechtsprechung, ✕ steht, wo es
             kein Duplikat des Rücksprungs ist. Auf `mini` ergibt das
-            Ort · ⚖ N · ☰ · ··· — vier Elemente, zwei davon reine Icons. */}
+            Ort · ⚖ · ☰ · ··· — vier Elemente (die Icon-Hälfte des Deckels ist
+            dort weiterhin gerissen, ehrlicher Vermerk in `./kopfStufen`). */}
         <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
           {panelOeffner}
           {gliederungKnopf}

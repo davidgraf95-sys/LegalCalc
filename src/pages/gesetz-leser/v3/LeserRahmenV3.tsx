@@ -52,26 +52,15 @@ import { useLeserV3Modell } from './leserV3Modell';
 // oberste Element des klebenden Blocks.
 //
 // ── DIE ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4/H3, ein Eintrag statt zwei) ──
-// H1 hatte `beiwerkSlot` · `fassungsWahl` · `leisteExtra` als `ReactNode`-Slots
-// vorgesehen (Fundament-Auflage 3), H3 zusätzlich `panelOeffner`/`panelSlot`.
-// Befund des Architektur-Reviews 17.8.2026:
-//
-//  · Der EINZIGE Aufrufer (`../GesetzLeserV3.tsx`) setzt keinen von ihnen — seit
-//    H1, über drei Etappen.
-//  · `beiwerkSlot` hielt zudem nicht, was sein Kommentar versprach («Beiwerk-Zone
-//    je Artikel»): gebaut war EIN ReactNode am Fuss der Lesespalte
-//    (`LeserLesespalte`), also kein Slot je Artikel. Und S2 — die Etappe, für die
-//    er gedacht war — baut die Beiwerk-Zone im KERN (`parts/ArtikelLeser`,
-//    Kap. 1.3) und braucht ihn darum nicht.
-//
-//  · `panelOeffner`/`panelSlot` waren von aussen gar nicht füllbar: Zähler und
-//    Panel brauchen `useLeserV3Modell`, das erst HIER läuft (§5-Bruch).
-//
-// Damit gilt §17 in der Fassung vom 13.8.2026: was nicht scheitern kann, wird
-// gestrichen statt bewacht — und ein Erweiterungspunkt, dessen künftiger Füller
-// bereits einen anderen Weg nimmt, ist keiner (Präzedenz `LeserV3Kontext.ts`;
-// Herleitung im Vollzugsvermerk H3). Sie sind in der Historie greifbar, wenn ein
-// echter Konsument auftritt. (Nachzug 17.8.2026: stand tiefer ein zweites Mal.)
+// `beiwerkSlot` · `fassungsWahl` · `leisteExtra` (H1, Fundament-Auflage 3) und
+// `panelOeffner`/`panelSlot` (H3): null Aufrufer über drei Etappen, und die
+// beiden Panel-Slots waren von aussen gar nicht füllbar (sie brauchen
+// `useLeserV3Modell`, das erst HIER läuft — §5-Bruch). §17 in der Fassung vom
+// 13.8.2026: was nicht scheitern kann, wird gestrichen statt bewacht; sie sind
+// in der Historie greifbar, wenn ein echter Konsument auftritt. Vollständige
+// Herleitung samt Befundliste: Vollzugsvermerk H3 im Fahrplan Kap. 7.
+// (Gestrafft H4-II 18.8.2026 — der Absatz stand hier in voller Länge und die
+// Datei klemmte an der 420-Zeilen-Sonde; §6.6.)
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
 // `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
@@ -207,18 +196,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Klassen-Zähler konnte «nichts erfasst» nicht von «lädt noch» trennen.
   const panelZahl = trefferZahl(bezuege.bezuegeFuer, bezuege.geladen, panelZiel.token);
 
-  // ── Ä79 (H4-II, 17./18.8.2026) · EIN ☰ FÜR DIE GLIEDERUNG, NICHT ZWEI ──────
-  // Gemessen @1440 mit eingeklappter Gliederung: ZWEI sichtbare ☰ für dieselbe
-  // Handlung — der Kopf-☰ ganz rechts (x = 1117, «Gliederung») und der Schienen-
-  // Knopf ganz links (x = 184, «Gliederung einblenden»), 933 px auseinander an
-  // gegenüberliegenden Fensterkanten. Das ist Ä79 und zugleich der Rest von Ä11.
-  // WELCHER bleibt, ist keine Geschmacksfrage: die Schiene steht dort, wo die
-  // Gliederung war und wieder erscheint, und sie ist BESCHRIFTET; der Kopf-☰ ist
-  // ein unbeschriftetes Zeichen auf der Gegenseite (derselbe Befund, aus dem
-  // 16.8.2026 die Schiene überhaupt entstand — Kommentar am Grid unten).
-  // Der Kopf-☰ verschwindet darum genau so lange, wie die Schiene sichtbar ist;
-  // unter der Schienen-Schwelle (kein `istXl`, also Handy und jedes schmale
-  // Pane) ist er unverändert der einzige Weg und bleibt.
+  // Ä79 (H4-II): steht die Schiene, ist SIE der eine Griff — die Herleitung samt
+  // Messreihe steht am Bauteil, das sie betrifft (`./LeserGliederungSchiene`).
   const schieneSteht = hatLeiste && umgebung.istXl && !m.tocOffen;
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
@@ -249,12 +228,10 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
         hatAenderungsvermerke={m.hatAenderungsvermerke}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
-        // F8-Regel David 16.8.2026: «Rechtsprechung im Text» aus ⇒ Zähler UND
-        // Lasche weg (`panel.oeffnerSichtbar`, eine Stelle) — unverändert der
-        // EINE wirksame Torwächter (Rot-Beweis in `leser-v3-panel-zaehler` (b)).
-        // H4-II: die STUFE entscheidet nur noch die GESTALT des Zählers, nicht
-        // mehr sein Dasein — auf `mini` steht er als Chip «⚖ 14» statt zu
-        // fehlen (`kopfElemente(stufe).panel`, NM-2-Blocker des Kontaktbogens).
+        // F8-Regel David 16.8.2026 («Rechtsprechung im Text» aus ⇒ Zähler weg):
+        // unverändert der EINE wirksame Torwächter, `panel.oeffnerSichtbar`.
+        // H4-II: die Stufe entscheidet nur noch die GESTALT des Zählers, nicht
+        // sein Dasein (`kopfElemente(stufe).panel`, Herleitung dort).
         panelOeffner={panel.oeffnerSichtbar
           ? (
             <PanelZaehler anzahl={panelZahl} artikelLabel={panelArtikel} offen={panel.offen}
@@ -268,9 +245,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // steht in JEDEM Pane und auf JEDEM Zuschnitt (`./LeserAnsichtV3`).
         onPanelOeffnen={() => panel.oeffne('entscheide')}
         // Ä46/H4-II: das ✕ steht, wo es NICHT das Duplikat des Rücksprungs
-        // «‹ Gesetze» ist — also in der vollflächigen Einzelansicht ausserhalb
-        // des Handy-Zuschnitts. Die eine Ableitung samt Messreihe (zwei ✕ je
-        // Pane, 44 px übereinander) steht in `./kopfStufen`.
+        // «‹ Gesetze» ist — die eine Ableitung samt Messreihe: `./kopfStufen`.
         zeigeSchliessen={zeigeSchliessKreuz(stufe, !umgebung.imPane)}
         suchZone={suchZone} />
 

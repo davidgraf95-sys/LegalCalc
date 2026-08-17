@@ -120,7 +120,18 @@ export interface KopfElemente {
    *   'voll'     «⚖ 14 Entscheide» — Ikone, Zahl, Zähl-Substantiv;
    *   'kompakt'  «⚖ 14» — Ikone und Zahl, ohne Wort. Gemessen @390 bleiben in
    *              der Ort-Zone 115 px frei (Zeile 350 px, Ort-Inhalt 144 px,
-   *              Griff-Zone 84 px); der Chip braucht davon ~50 px.
+   *              Griff-Zone 84 px); der Chip misst 24 px ohne und rund 45 px
+   *              mit Zahl.
+   *              EHRLICHER REST, gemessen 18.8.2026: im RUHEZUSTAND trägt er
+   *              nur die Ikone — die Zahl kennt niemand, bevor der Bezugs-Shard
+   *              geladen ist, und eine erfundene 0 verbietet §8
+   *              (`panelModell.oeffnerLabelKompakt`, dieselbe Schranke wie bei
+   *              `oeffnerLabel`, das auf D/S solange «Rechtsprechung» schreibt).
+   *              Er ist damit auf `mini` bis zum ersten Öffnen ein reines Icon,
+   *              und die zweite Hälfte der Design-Grundlage Kap. 6 («≤ 2 reine
+   *              Icons») bleibt @390 mit ⚖ · ☰ · ··· gerissen — genauso wie
+   *              vorher mit ☰ · ··· · ✕. Kein Rückschritt, aber auch kein
+   *              Fortschritt; als offener Punkt im Kontaktbogen geführt.
    * Einen dritten Wert «weg» gibt es nicht, und genau das prüft
    * `leser-v3-kopfstufen.test.ts` über jede Breite — eine Aussage über den
    * Rückgabewert, nicht über abwesenden Code (§6.7).
@@ -167,9 +178,10 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
  *   AUF `mini`. Dort ist die Zeile 350 px breit und die Design-Grundlage
  *   Kap. 6 deckelt sie auf vier Elemente. Mit dem Zähler-Chip (oben) wären es
  *   fünf. Von den fünf ist das ✕ das einzige, dessen Handlung nebenan schon
- *   sichtbar steht — es weicht, und die Zeile hält den Deckel erstmals in
- *   BEIDEN Hälften ein: vier Elemente, davon zwei reine Icons (vorher vier
- *   Elemente, aber drei reine Icons ☰ · ··· · ✕).
+ *   sichtbar steht — es weicht, und die Zeile bleibt bei vier: Ort · ⚖ · ☰ ·
+ *   ··· (gemessen 18.8.2026 an StPO und BS-640.100). Die zweite Hälfte des
+ *   Deckels («≤ 2 reine Icons») ist damit NICHT eingelöst und war es vorher
+ *   auch nicht — siehe den ehrlichen Rest am Feld `panel` oben.
  *
  * `vollflaechig` und nicht `imPane`: dieselbe Begründung wie bei `panelForm`
  * — die Fundament-Sonde lässt `imPane` nur in den Wurzel-Dateien zu, und diese

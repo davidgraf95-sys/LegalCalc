@@ -101,8 +101,7 @@ export function oeffnerLabel(anzahl: number | null): string {
  * (gemessen @390, StPO) — «⚖ 14 Entscheide» misst dort 115 px, «⚖ 14» rund 50.
  * Die Ikone daneben sagt bereits, WOVON die Zahl handelt, und der volle
  * Wortlaut steht unverkürzt im Accessible Name (`oeffnerName`), also dort, wo
- * ihn ein Screenreader ohnehin liest. Der Chip ist damit kein «reines Icon» im
- * Sinn der Design-Grundlage Kap. 6: er trägt eine Zahl.
+ * ihn ein Screenreader ohnehin liest.
  *
  * DIESELBE §8-SCHRANKE WIE OBEN, nicht eine zweite: keine Zahl, die wir nicht
  * haben. `null` (noch nicht geladen) und `0` (geladen, nichts erfasst) ergeben

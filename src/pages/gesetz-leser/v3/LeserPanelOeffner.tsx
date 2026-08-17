@@ -49,11 +49,16 @@ import type { KopfElemente } from './kopfStufen';
 // nicht «unerreichbar», wie der Bogen zunächst schrieb, aber doppelt so teuer
 // auf dem Gerät, auf dem der Finger das einzige Werkzeug ist.
 //
-// Der Deckel von Kap. 6 bleibt gewahrt, weil ein anderes Element weicht: das ✕
-// war auf `mini` das Duplikat des sichtbaren Rücksprungs «‹ Gesetze» in
-// derselben Zeile (beide auf `/gesetze`) — Herleitung und Messreihe in
-// `./kopfStufen`, `zeigeSchliessKreuz`. Die Zeile trägt danach Ort · ⚖ N · ☰ ·
-// ··· , also vier Elemente mit ZWEI reinen Icons statt vorher vier mit dreien.
+// Der VIER-ELEMENTE-Deckel von Kap. 6 bleibt gewahrt, weil ein anderes Element
+// weicht: das ✕ war auf `mini` das Duplikat des sichtbaren Rücksprungs
+// «‹ Gesetze» in derselben Zeile (beide auf `/gesetze`) — Herleitung und
+// Messreihe in `./kopfStufen`, `zeigeSchliessKreuz`. Die Zeile trägt danach
+// Ort · ⚖ · ☰ · ··· .
+// NICHT eingelöst ist die zweite Hälfte des Deckels («≤ 2 reine Icons»): der
+// Chip zeigt im Ruhezustand nur die Ikone, weil die Zahl vor dem Nachladen
+// niemand kennt (§8). Vorher standen dort ☰ · ··· · ✕, also ebenfalls drei —
+// die Lage ist unverändert, nicht verbessert; sie steht als offener Punkt im
+// Kontaktbogen H4.
 //
 // ── DIE REGEL DAVIDS, UND WO SIE STEHT ──────────────────────────────────────
 // «Rechtsprechung im Text» AUS ⇒ der Zähler verschwindet. Diese Datei prüft das

@@ -15,14 +15,24 @@ unter 8-Worker-Last entstanden ist, steht es dabei.
 
 ## 0 · Für David — in Alltagssprache
 
-**Der Umschalter ist noch nicht umgelegt, und nach dieser Messung soll er es
-auch noch nicht werden.** Von den acht technischen Bedingungen sind sechs
-erfüllt; zwei nicht — und eine davon ist nicht kosmetisch: auf dem **Handy** ist
-im neuen Leser die Rechtsprechung zu einem Artikel **mit dem Finger überhaupt
-nicht mehr erreichbar**. Im heutigen Leser stehen die Entscheide direkt unter dem
-Artikel, ohne einen einzigen Tap. Im neuen Leser sind sie in ein Seitenblatt
-gewandert, und der Knopf, der dieses Blatt öffnet, wird auf schmalen Bildschirmen
-ausgeblendet. Mit Tastatur geht es (Taste «r»), mit dem Finger nicht.
+> **Stand 18.8.2026 — was sich seit der ersten Fassung dieses Bogens geändert
+> hat.** Der Handy-Befund ist repariert, und eine Aussage darin war zu hart
+> formuliert: die Entscheide waren auf dem Handy nicht *unerreichbar*, sondern
+> **doppelt so teuer** (zwei Fingertipps statt einem — der Weg lief über das
+> «···»-Menü). Nachgemessen und richtiggestellt in §2. Jetzt ist es **ein
+> Fingertipp wie überall sonst**. Ebenfalls erledigt: die zwei Schliess-Kreuze je
+> Fenster und die zwei Gliederungs-Knöpfe auf dem breiten Bildschirm.
+> **Der Umschalter ist weiterhin nicht umgelegt und wartet auf dein Ja.**
+
+**Von den acht technischen Bedingungen sind sieben erfüllt.** Was noch offen ist,
+steht unten — der Kern: ein Seitenblatt, das auf dem Desktop die Zeilenenden des
+Gesetzestexts verdeckt (Ä60), und eine Aufräumarbeit an der Prüfstrasse
+(B-Specs), damit ein Fehler künftig als Fehlermeldung erscheint statt als
+hängender Testlauf.
+
+*Ursprüngliche Fassung (17.8.2026), zur Nachvollziehbarkeit: «auf dem Handy ist
+im neuen Leser die Rechtsprechung zu einem Artikel mit dem Finger überhaupt nicht
+mehr erreichbar». Das war der Messfehler, den §2 korrigiert.*
 
 **Was du siehst, wenn umgeschaltet wird:** eine ruhigere Kopfzeile, ein einziges
 Suchfeld statt zwei, und auf jeder Breite die Möglichkeit, direkt «429» zu tippen
@@ -31,11 +41,13 @@ mittlerer Breite **ein Bedienschritt weniger** als heute). Auf dem Desktop steht
 zusätzlich die Warnung «Eine in Kraft getretene Änderung ist noch nicht
 eingearbeitet» sichtbar im Bild; im heutigen Leser fehlt sie dort ganz.
 
-**Was danach noch offen ist:** die Handy-Erreichbarkeit der Entscheide (oben),
-ein Seitenblatt, das auf dem Desktop die Zeilenenden des Gesetzestexts verdeckt
-(Ä60), zwei übereinanderliegende Ortsangaben und zwei Schliess-Kreuze je Fenster.
-Das sind vier Bedienfragen, keine Rechenfehler — der Gesetzestext selbst ist
-pixelgenau derselbe, das ist eigens geprüft.
+**Was danach noch offen ist (Stand 18.8.2026):** das Seitenblatt, das auf dem
+Desktop die Zeilenenden des Gesetzestexts verdeckt (Ä60) — dafür brauche ich
+deinen Entscheid, weil jeder Weg etwas kostet —, und die B-Spec-Umhängung in der
+Prüfstrasse. Erledigt sind seit der ersten Fassung: die Handy-Erreichbarkeit der
+Entscheide, die zwei übereinanderliegenden Ortsangaben und die zwei
+Schliess-Kreuze je Fenster. Das sind alles Bedienfragen, keine Rechenfehler —
+der Gesetzestext selbst ist pixelgenau derselbe, das ist eigens geprüft.
 
 **Wenn es dir nicht gefällt, geht es zurück:** der Umschalter bleibt bis zur
 Etappe H5 bestehen. Ein Klick auf `?leser=v1` (bzw. das Zurücksetzen des Flags)
@@ -43,10 +55,21 @@ und du bist wieder im heutigen Leser — ohne Datenverlust, ohne Neubau.
 
 ### Frage an dich — Ja oder Nein zum Umschalten?
 
-Meine Empfehlung: **noch nicht.** Erst die Handy-Erreichbarkeit der Entscheide
-(NM-2) reparieren, dann umschalten. Alles andere lässt sich nach dem Umschalten
-mit dem Flag als Rückweg beheben; ein Rechercheweg, den es auf dem Handy nicht
-mehr gibt, nicht.
+Empfehlung in der ersten Fassung (17.8.2026): **noch nicht** — erst die
+Handy-Erreichbarkeit der Entscheide (NM-2) reparieren.
+
+**Nachgeführt 18.8.2026:** Diese Bedingung ist erfüllt. Was jetzt noch zwischen
+dir und dem Umschalten steht, sind **zwei Punkte**, und einer davon ist eine
+Frage an dich:
+
+1. **Ä60 — das Seitenblatt verdeckt Zeilenenden** (Desktop, breites Fenster). Das
+   ist der einzige Punkt, bei dem der Gesetzestext selbst betroffen ist, und er
+   braucht deinen Entscheid: (a) so lassen, (b) den Zähler in der Kopfzeile
+   opfern, (c) den Leser-Rahmen breiter machen. Details unten in der Tabelle.
+2. **B-Specs umhängen** — reine Prüfstrassen-Arbeit, kein Entscheid nötig.
+
+**Die Frage bleibt also offen und liegt weiterhin bei dir**; ich lege den
+Umschalter nicht ohne dein Ja um.
 
 ---
 
@@ -57,7 +80,7 @@ mehr gibt, nicht.
 | 1 | unveränderte **N-Tests** grün unter Flag | ✅ | Projekt `leser-v3`: **110 passed, 1 skipped, Exit 0**; Gegenprobe Projekt `chromium` über dieselben N-Specs plus die vier B-Specs plus die zwei S1-Specs: **77 passed, Exit 0** |
 | 2 | **`leser-kopf-paritaet`** grün | ✅ | 1 Test, beide Split-View-Panes, 9.6 s, im Flag-Projekt |
 | 3 | **PX** (Pixelvergleich) grün | ✅ *(mit Bedingung)* | Ruhe-Bedingung: Branch **3/3**, Basis `a516f12ef` **3/3**. Unmittelbar nach einem 8-Worker-Lauf: **2/5**, dreimal 1869 px (0.01) auf dem **V1**-Arm — exakt die Signatur, die S2 als Scroll-/Rasterungs-Artefakt dokumentiert. **Nullprobe negativ** (Basis unter Last nicht gegengemessen, Ruhe grün) → kein A-8-Effekt, aber ein offener Lastfall (§17-Zeile unten) |
-| 4 | **NM** in keiner der drei Aufgaben verschlechtert | ❌ | NM-2 kostet auf D und S **je einen Schritt mehr** und ist auf **H per Tap gar nicht erreichbar** (Tabelle §2) |
+| 4 | **NM** in keiner der drei Aufgaben verschlechtert | ⚠️ **Preis, kein Verlust** *(nachgeführt 18.8.2026)* | NM-2 kostet auf **allen drei** Breiten **einen Schritt mehr** als V1 (dort 0, weil die Leitentscheide-Zeile am Artikel stand). Der **H-Verlust ist behoben**: @390 stand kein Öffner in der Kopfzeile, der Weg kostete **2 Taps**; seit H4-II ist es **1 Tap** wie auf D/S (Messreihe §2, `nm-messung.json` → `h4ii`). NM-1 unverändert besser (−1 Schritt auf S und H), NM-3 unverändert besser auf D |
 | 5 | **CLS ≤ Ist-Stand** | ✅ | V3 in allen vier Zellen besser: StPO D 0.0337 → **0.0207** · StPO H 0.0205 → **0.0192** · BS-640.100 D 0.0475 → **0.0315** · BS-640.100 H 0.0064 → **0.0044** (Median, n=5, kalt) |
 | 6 | **axe** grün | ✅ | **0** critical/serious in **20** Kombinationen (5 Erlasse × V1/V3 × hell/dunkel); dokumentiert bleibt nur der begründete `link-in-text-block` (B-2) |
 | 7 | **Kantons-Probe** grün | ✅ | BS-640.100 (292 Best.), ZH-211.11 (23) und die Bund-Probe StPO/VMWG/LugÜ unter `?leser=v3`: Rahmen, Kopf und Gliederung je vorhanden, **0 Konsolenfehler** |
@@ -81,7 +104,7 @@ allen 54 Läufen.
 | | H | 6 Schritte (2 Taps + 4 Tasten) · 1027 ms | **5** (1 + 4) · 335 ms | **−1 Schritt** |
 | **NM-2** «Entscheide zu Art. 429 sehen» | D | **0 Schritte** (Leitentscheide-Zeile am Artikel) · 6 ms | 1 Klick (Panel öffnen) · 1233 ms | **+1 Schritt** |
 | | S | **0 Schritte** · 5 ms | 1 Klick · 1244 ms | **+1 Schritt** |
-| | H | **0 Taps** · 8 ms | **nicht per Tap erreichbar** (0 Öffner, 0 Randlasche; nur Taste «r») | **Verlust** |
+| | H | **0 Taps** · 8 ms | ~~nicht per Tap erreichbar~~ → **2 Taps** (siehe Korrektur unten), seit H4-II **1 Tap** | **+1 Schritt** |
 | **NM-3** «Stand + Warnung erkennen» | D | nicht erreicht — Stand ja, **Warnung fehlt ganz** | **erreicht, 0 Schritte** · 35 ms («⚠ Eine in Kraft getretene Änderung ist noch nicht eingearbeitet …») | **V3 besser** |
 | | S | nicht erreicht (Warnung nicht im Bild) | nicht erreicht | ±0 |
 | | H | nicht erreicht (Warnung nicht im Bild) | nicht erreicht | ±0 |
@@ -105,9 +128,52 @@ Stand, `?leser=v3`, StPO Art. 429, drei Breiten:
 Auf 390 px ist `kopfElemente(stufe).panel === false` (Stufe `mini`,
 `v3/kopfStufen.ts`) — der Zähler fällt aus der Kopfzeile, und die Randlasche, die
 ihn dort ersetzen sollte, ist nach dem H3-Vollzugsvermerk «an keiner Breite»
-eingelöst. Ergebnis: auf einem Telefon führt kein Finger-Weg zur Rechtsprechung.
-Das ist keine Geschmacksfrage, sondern der Verlust eines Rechercheweges (§8) und
-für mich der **einzige harte Blocker** vor dem Umschalten.
+eingelöst.
+
+### Korrektur und Vollzug — H4-Vorbereitung II (17./18.8.2026)
+
+**Erst die Korrektur an diesem Bogen (§7).** Oben stand «auf einem Telefon führt
+kein Finger-Weg zur Rechtsprechung». Nachgemessen am selben Stand (`6ca1609b3`,
+StPO Art. 429, @390, 3 Läufe) stimmt das **nicht**: der Eintrag «Entscheide &
+Kontext …» im «···»-Menü trug — der H3-Nachzug hatte ihn eingebaut, und er ist
+`[data-v3-panel-oeffner]`, nur eben erst nach dem Aufziehen des Menüs sichtbar.
+Der Befund ist damit **nicht «unerreichbar», sondern doppelt so teuer**:
+
+| Breite | Taps bis die Entscheide sichtbar sind (vorher) | Weg | nachher |
+|---|---|---|---|
+| 1280 | **1** · 134 ms | Zähler «⚖ Rechtsprechung» in der Kopfzeile | **1** · 138 ms |
+| 720 | **1** · 122 ms | dito | **1** · 134 ms |
+| **390** | **2** · 116 ms | «···» aufziehen → «Entscheide & Kontext …» | **1** · 144 ms |
+
+*(Eigene Messreihe, `nm-messung.json` → `h4ii`; 3 Läufe je Zelle, Median, kalter
+Kontext, keine Parallel-Last, 0 Konsolenfehler in allen 18 Läufen. Die
+absoluten ms sind **nicht** mit der Reihe vom 17.8. vergleichbar — dort lag ein
+anderes Ziel-Kriterium zugrunde (1233 ms auf D gegen 134 hier). Vergleichbar
+sind die **Taps**, und innerhalb dieser Reihe auch die ms.)*
+
+**Der Vollzug.** Der Zähler fällt auf `mini` nicht mehr weg, er **schrumpft** —
+dieselbe Bauform, die die Krume seit V2 hat: `panel` ist `'voll' | 'kompakt'`,
+auf `mini` ein Chip aus Ikone und Zahl («⚖ 14»). Platz ist da, gemessen @390 an
+StPO: Kopfzeile innen **350 px**, Ort-Zone 258 px mit 144 px Inhalt (also **115
+px frei**), Griff-Zone 84 px; der Chip misst 24 px ohne und rund 45 px mit Zahl.
+
+Der **Vier-Elemente-Deckel** (Design-Grundlage Kap. 6) hält, weil dafür das ✕
+weicht — es führte auf `/gesetze`, **genau dorthin wie der Rücksprung
+«‹ Gesetze»**, der seit V2 in derselben Zeile steht. Zwei Griffe, ein Ziel, 350
+px Zeilenbreite. Die Zeile liest sich jetzt **Ort · ⚖ · ☰ · ···** (gemessen an
+StPO und BS-640.100).
+
+**Ehrlicher Rest, ungeschönt:** die zweite Hälfte desselben Deckels («≤ 2 reine
+Icons») ist damit **nicht** eingelöst. Der Chip zeigt im Ruhezustand nur die
+Ikone, weil die Zahl vor dem Nachladen des Bezugs-Shards niemand kennt und eine
+erfundene «0» §8 verbietet. Vorher standen dort ☰ · ··· · ✕, also ebenfalls drei
+reine Icons — **die Lage ist unverändert, nicht verbessert** (offener Punkt §8).
+
+**Und ein zweiter offener Befund, hier nur gemessen, nicht behoben:** in der
+Einzelansicht @720 (`kompakt`) trägt die Kopfzeile **fünf** Elemente (Ort ·
+Zähler · ☰ · ··· · ✕), reisst den Deckel also schon vor H4-II. Der Fix wäre
+derselbe Hebel (`zeigeSchliessKreuz`), er berührt aber die Ä46-Auflage
+«Einzelansicht bleibt bei 1» und wartet darum auf einen Entscheid.
 
 ---
 
@@ -370,10 +436,13 @@ ein Paritätsbeweis, den nichts fährt.
 
 | Kürzel | Fahrplan-Zeile | Was offen ist | Einordnung |
 |---|---|---|---|
-| **NM-2 auf H** (neu, hier gemessen) | — | Entscheide zu einem Artikel sind auf 390 px per Tap nicht erreichbar (§2) | **BLOCKER VOR FLIP** — verlorener Rechercheweg, kein Design-Geschmack |
+| ~~**NM-2 auf H**~~ | — | Entscheide zu einem Artikel kosteten auf 390 px **2 Taps** statt einem (§2; die ursprüngliche Fassung «nicht per Tap erreichbar» ist als §7-Korrektur richtiggestellt) | ✅ **erledigt 17./18.8.2026 mit H4-II** — Zähler-Chip «⚖ N» auf `mini`, 1 Tap wie auf D/S; bewacht von `e2e/leser-v3-h4-kopfwege` (a)/(a2)/(a3). *Kein Flip-Blocker mehr* |
 | **Ä60** | 825 | Beiwerk-Blatt verdeckt auf D @1440 die äusseren 112 px (18 %) jeder Textzeile; keine feste Blattbreite behebt es | **BLOCKER VOR FLIP** — Normtext teilweise unlesbar (§1/§8); Weg (a) so lassen / (b) Kopf-Chip opfern / (c) breiterer Leser-Rahmen wartet auf David |
 | ~~**Ä45 Doppelkrume**~~ | 938–940 | App-Krume und V3-Ortsangabe zeigten @390 denselben Ort in zwei `nav`-Krumen übereinander | ✅ **erledigt 17.8.2026 mit A-2** (Leisten-Verschmelzung; Vollzugsvermerk Kap. 7 des Fahrplans, bewacht von `e2e/leser-v3-eine-kopfzeile`). *Kein Flip-Blocker mehr — dieser Bogen entstand vor A-2 und führte ihn weiter (Nachzug 17.8. abends).* |
-| **Ä46 zwei ✕ je Pane** | 940–941 | zwei Schliess-Kreuze je Pane mit verschiedener Bedeutung | **teilweise erledigt** (Einzelansicht: 1 statt 2). **BLOCKER VOR FLIP bleibt für den Split**: im Pane stehen weiter zwei, unterscheidbar nur über den Accessible Name |
+| ~~**Ä46 zwei ✕ je Pane**~~ | 940–941 | zwei Schliess-Kreuze je Pane mit verschiedener Bedeutung; gemessen im Split @1600 **44 px übereinander** (Griffleiste y = 69, V3-Kopf y = 113) | ✅ **erledigt 17./18.8.2026 mit H4-II** — im Pane trägt nur noch die Griffleiste ein ✕; die Inhalts-Handlung («zur Übersicht») steht benannt als «‹ Gesetze» mit demselben Ziel `/gesetze`. Bewacht von `e2e/leser-v3-h4-kopfwege` (b), `leser-kopf-paritaet`, `leser-v3-eine-kopfzeile` (d). *Kein Flip-Blocker mehr* |
+| ~~**Ä79 zwei ☰ @1440**~~ | 724, 1785 | Gliederung eingeklappt @1440 → Kopf-☰ (x = 1117) **und** Schienen-☰ (x = 184) für dieselbe Handlung | ✅ **erledigt 17./18.8.2026 mit H4-II** — der Kopf-☰ weicht, solange die beschriftete Schiene steht; unter der Schienen-Schwelle bleibt er. Bewacht von `e2e/leser-v3-h4-kopfwege` (c)/(c2) |
+| **Icon-Deckel @390** (neu, hier gemessen) | — | Kopfzeile @390 trägt **drei** reine Icons (⚖ · ☰ · ···), erlaubt sind zwei (Design-Grundlage Kap. 6); vor H4-II waren es dieselben drei (☰ · ··· · ✕) | **kann H5 tragen** — unverändert, kein Rückschritt; der Chip trägt seine Zahl erst nach dem Nachladen (§8 verbietet eine erfundene 0) |
+| **Kopfzeile @720 = 5 Elemente** (neu, hier gemessen) | — | Einzelansicht `kompakt`: Ort · Zähler · ☰ · ··· · ✕ reisst den Vier-Elemente-Deckel — Befund älter als H4-II | **braucht Entscheid** — Hebel wäre `zeigeSchliessKreuz` auch auf `kompakt`, berührt aber die Ä46-Auflage «Einzelansicht bleibt bei 1» |
 | **A-8** (Rest) | 773, 1070, 1698 | Der 1024er-Spalten-Entscheid hängt noch an `istXl`; Umstellung verschiebt die Grenze auf Viewport 1072 (§3) | **braucht Davids Entscheid** — identisch mit Ä60 |
 | **B-Specs umhängen** | 1240, 1610, 1622 | §7 dieses Bogens | **BLOCKER VOR FLIP** — sonst Timeout-Hänger statt Fehlermeldungen |
 | **Flaker** | 1746 | §6 dieses Bogens | **teilweise**; 2 von 3 brauchen CI-Forensik, nicht mehr lokale Läufe |
@@ -383,7 +452,7 @@ ein Paritätsbeweis, den nichts fährt.
 | **Ä63 Handy-Einzug** | 548, 1404 | OR/ZGB @390 Einzug x = 80 px gegen StPO 44 px | **kann H5 tragen** — Typografie-Detail |
 | **Ä64 Regler-Hierarchie** | 549, 1404 | Schriftregler skaliert nur `[data-lese]`; Hierarchie kippt bei 130 % | **braucht Davids Entscheid** — Umbau auf em-relative Tokens |
 | **Ä57/Ä58** | 826 | Panel-Kopf ohne Warnzeichen bei «noch nicht im Text»; Chips gerahmt, ☰ nicht | **kann H5 tragen** |
-| **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite — Ursache des NM-2-Verlusts auf H | **BLOCKER VOR FLIP**, zusammen mit NM-2 |
+| **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite | **kein Flip-Blocker mehr** — sie war die *vermutete* Ursache des NM-2-Aufschlags auf H; der ist mit dem Kopf-Chip behoben, ohne dass die Lasche zurückkehrt. Was bleibt, ist Davids Bestätigung der §7-Abweichung zu F8 («Lasche behalten») |
 | **`leser-lesemass` umhängen · `LeserRahmenV3`-Schnitt** | 1240 | Test-Umzug bzw. Datei-Schnitt | **kann H5 tragen** |
 
 ---
@@ -408,6 +477,13 @@ Bogen an drei Stellen bestätigt:
 - **zwei Ortsangaben übereinander** («‹ Art. 429 StPO … Stand 01.04.2025 ✕» und
   darunter «StPO · Art. 429 … ✕») = Ä45 Doppelkrume — *das Bild zeigt den Stand
   VOR A-2 (17.8.2026); seither gibt es nur die untere Zeile,*
+**Nachtrag 18.8.2026 — vier Bilder mit Suffix `-v2`.** Die 24 oben sind
+unberührt; daneben liegen jetzt `stpo-429-H-{hell,dunkel}-v3-v2.png` und
+`bs-640.100-H-{hell,dunkel}-v3-v2.png` mit dem Stand NACH H4-II. Ohne Messgerät
+zu sehen: die Kopfzeile @390 liest sich «‹ Gesetze · StPO · Art. 429 — ⚖ ☰ ···»,
+also **mit** Rechtsprechungs-Griff und **ohne** ✕; die Zeile ist kürzer als
+vorher, nicht länger. Beide Farbschemata geprüft, kein Überlauf.
+
 - **zwei ✕ in zwei Zeilen** mit verschiedener Bedeutung = Ä46 — *in der
   Einzelansicht mit A-2 auf eines reduziert, im Pane unverändert,*
 - **kein Zähler und keine Lasche** für die Rechtsprechung = der NM-2-Verlust aus
@@ -420,6 +496,8 @@ Bogen an drei Stellen bestätigt:
 | Was | Wo |
 |---|---|
 | Rohdaten NM (54 Läufe, Protokoll je Schritt) | `nm-messung.json` |
+| Rohdaten NM-2 vorher/nachher H4-II (18 Läufe) | `nm-messung.json` → Schlüssel `h4ii` |
+| H4-II · Spec und Rot-Beweis (NM-2 · Ä46 · Ä79) | `e2e/leser-v3-h4-kopfwege.e2e.ts` (Kopfkommentar nennt die drei Fehlermeldungen) |
 | Rohdaten CLS (4 Zellen × 5 Läufe, Verursacher-Knoten) | `cls-messung.json` |
 | Rohdaten axe + Proben (20 Kombinationen) | `axe-proben.json` |
 | Bilder + Protokoll | `bilder/`, `bilder-protokoll.json` |
