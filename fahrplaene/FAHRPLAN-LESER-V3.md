@@ -166,11 +166,14 @@ Drei Breiten: **H** Handy ≤ 640 px · **D** Desktop ≥ 1024 · **S** Split-Vi
 ### (a) Kopfzeile — ein Vertrag für alle drei Breiten
 
 ```
-D  │ Gesetze › StPO         Art. 429                    Ansicht ▾   ✕ │
+D  │ Gesetze › Bund › StPO   Art. 429               Ansicht ▾   ✕ │
 S  │ StPO      Art. 429                       Ansicht ▾ ✕│  (Krume gekürzt)
 H  │ StPO · Art. 429    ☰   ···  ✕│   ☰ Gliederung-Sheet · ··· Ansicht
 ```
 *(Bei F7-Variante B entfällt «Ansicht ▾» in allen drei Breiten.)*
+*(Die Ebene-Stufe «Bund» / «Kanton BS» / «International» kam mit **A-2** dazu:
+seit der Leisten-Verschmelzung ist diese Zeile die EINZIGE Krume der Seite,
+also trägt sie die ganze Kette. Vollzugsvermerk am Ende von Kap. 7.)*
 
 | Element | Entscheid | HIG (8er-Kanon) |
 |---|---|---|
@@ -935,13 +938,19 @@ also selbst; dieser Nachzug hält seine Hunks im Rahmen klein und lokal
 `refactor(`, `docs(` läuft ihm durch.
 
 **Für H4 vorgemerkt** (aus den Prüfer-Befunden, hier nur eingereiht):
-**Ä9-Rest** (globaler App-Regler im Leser ausblenden, A-2) · **Ä45** Doppelkrume
-(App-Krume und V3-Ortsangabe nennen denselben Ort übereinander; gemessen @390
-zwei `nav`-Krumen) · **Ä46** zwei ✕ je Pane mit verschiedener Bedeutung
-(gemessen 2 Stück) · **Ä33/Ä34** aus der Ästhetik-Prüfung. MESSWERT als H4-Ziel:
-das Chrome bis zum Beginn der Lesefläche ist @390 **183 px = 22 %** der
+~~**Ä45** Doppelkrume~~ **erledigt 17.8.2026 mit A-2** (Leisten-Verschmelzung,
+Vollzugsvermerk am Ende von Kap. 7): @1440 eine `nav`-Krume statt zwei ·
+**Ä46** zwei ✕ je Pane mit verschiedener Bedeutung — **teilweise erledigt**
+(Einzelansicht 1 statt 2; im Pane bleiben zwei, Begründung im A-2-Vermerk) ·
+**Ä9-Rest** (globaler App-Regler im Leser ausblenden) — **weiter offen**: er sitzt
+in der Topbar, nicht in der von A-2 abgelösten Leiste, und die Kopplung an A-2 hat
+sich damit erledigt · **Ä33/Ä34** aus der Ästhetik-Prüfung. MESSWERT als H4-Ziel:
+das Chrome bis zum Beginn der Lesefläche war @390 **183 px = 22 %** der
 Fensterhöhe im Ruhezustand (Topbar 65 · Krumen-Leiste bis 102 · V3-Kopf bis 183)
-und wächst mit laufender Suche um 24 px auf **207 px = 25 %**.
+und wuchs mit laufender Suche um 24 px auf **207 px = 25 %**. *(Fortschreibung
+17.8.2026 nach S2/H3 und A-2: der Vorzustand mass @390 **195 px**, seit A-2 sind
+es **157 px = 18.6 %** — das H4-Ziel ist damit zum grössten Teil eingelöst; was
+bleibt, ist die Such-Zone, nicht die Leiste.)*
 
 **Tore:** s. Abschluss-Block unten.
 
@@ -992,11 +1001,13 @@ derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
   V3-Normtextgrösse voraus, die erst **S2** bringt — in H1 bliebe sonst der
   Normtext nicht byte-gleich (Treue-Grenze PX). **Vorschlag: die vier Stufen
   mit S2 nachziehen**, wenn die Baseline ohnehin einmalig neu gesetzt wird.
-- **A-2 Zwei Leisten statt einer.** Die V3-Kopfzeile sitzt **unter** der
-  bestehenden App-Leiste, statt sie zu ersetzen. Die Verschmelzung verlangt
-  Änderungen an `src/components/layout/**` und hätte die Ist-Hülle mit
-  umgebaut (FL-4). Sie gehört zu **H4/H5**; Preis heute 37 px Chrome. Dieselbe
-  Aufteilung hat der Entscheid-Leser seit je.
+- **A-2 Zwei Leisten statt einer.** ✅ **Eingelöst 17.8.2026** (Auftrag David,
+  Vollzugsvermerk «A-2 Leisten-Verschmelzung» am Ende von Kap. 7). Die
+  V3-Kopfzeile sass **unter** der bestehenden App-Leiste, statt sie zu ersetzen;
+  Preis 37 px Chrome. Der Weg, der die Ist-Hülle NICHT mit umbaut (FL-4) und der
+  Hülle kein Flag-Wissen gibt (FL-1), war ein Erweiterungspunkt im Melde-Vertrag
+  (`KopfDaten.kopfzeileSelbst`) statt einer Änderung an der Leiste selbst.
+  Der Entscheid-Leser behält die alte Aufteilung — er meldet das Feld nicht.
 
 **Fundament-Auflage David 16.8.2026** («richtig guter Code, der sich als
 Fundament auch für weitere Gesetze und Darstellungen eignet») — umgesetzt und im
@@ -1447,6 +1458,67 @@ Inline-Box des `<button>`, bewiesen per DOM-Chirurgie (Ersatz durch echte Inline
 3. **Lesemass:** die Hausdecke 75 ch hat beim VMWG 1 ch Luft, das StGB liegt mit
    77 ch darüber (WCAG 80 ch hält überall). Entweder `max-w-normtext` wird für die
    17-px-Stufe schmaler, oder die Hausdecke geht bewusst auf 80.
+
+### ✅ Vollzugsvermerk A-2 Leisten-Verschmelzung (17.8.2026, David-Auftrag)
+
+**Auftrag** (wörtlich): «beachte dass wir jetzt oben einen header haben mit
+ähnlichem inhalt … und darunter … passe das entsprechend sinnvoll an». Damit ist
+die H1-Abweichung **A-2** («Zwei Leisten statt einer», Preis 37 px) eingelöst.
+
+**Erweiterungspunkt, kein Sonderfall:** `KopfDaten.kopfzeileSelbst`
+(`components/layout/InhaltsKopfKontext.ts`). Meldet eine Inhaltsseite das Feld,
+zeigt `InhaltsKopf` keine Leiste mehr und `PaneKopf` (`nurSteuerung`) gibt seinen
+Identitäts-Teil ab. `layout/**` erfährt **nichts** über V3 (FL-1); wer nichts
+meldet, bekommt die Leiste unverändert (FL-4, eigene Sonde). Gemeldet wird der
+eine, datenunabhängige Satz im Einsprungspunkt `GesetzLeserV3.tsx` — der Rahmen
+ist `lazy`, seine Meldung käme zu spät.
+
+**Was wohin wanderte:** Krume **Gesetze › Bund › StPO** (ganze Kette, klickbar,
+aus `erlassAnsicht.brotkrume` — dieselbe Funktion, die sie vorher an die Leiste
+meldete; Kanton «Gesetze › Kanton BS ›», Staatsvertrag «International») ·
+Ortsangabe «Art. N» · Ansicht ▾ · ✕. **Nicht** mitgewandert: der **Stand** (steht
+seit S3 im Erlass-Kopf; ihn zu wiederholen wäre eine zweite Wahrheit, §5 — er ist
+damit nicht mehr klebend, aber ohne Scrollen sichtbar, NM-3 geprüft) und das
+App-✕ «zur Startseite» (die Topbar trägt die App-Navigation).
+`kopfElemente.sektion` → `krume`; der Melde-Effekt in `v3/leserV3Modell.ts` ist
+**gestrichen** (§17: nach dem Wegfall der Leiste hatte keine der drei Angaben
+noch einen Leser).
+
+**Chrome-Gewinn, gemessen an StPO** (Ruhe, Kopf-Unterkante = Beginn der
+Lesefläche): **D @1440 159 → 121 px (−38, −24 %)**, `--nt-stick` 156 → 120 ·
+**H @390 195 → 157 px (−38, −19 %)**, Anteil der Fensterhöhe 23.1 % → 18.6 % ·
+Kanton BS-640.100 identisch · V1 unverändert (Krume 65…102, Textbeginn 835 px).
+**Split:** Gewinn 0 px — die Pane-Titelleiste (36 px) bleibt, weil sie die
+FENSTER-Steuerung trägt (⠿ ◂▸ ⇱ ⧉ ✕), die keine Inhaltsseite tragen kann; sie
+verliert nur ihren Inhalt.
+
+**Der Sprung, der dabei entstand — und sein Wurzelfix:** die Route ist `lazy`, die
+Shell rät bis dahin aus dem Pfad (`kopfVonPfad`). Fiel die Leiste bei der Meldung
+auf 0 px, rückte `main#inhalt` 102 → 65 px hoch (Shift 0.0238; CLS 0.0309 gegen
+0.0048 in V1) und das **Bestands-Tor `leser-kopf-cls-s3` riss v3 @390 mit 0.0573
+gegen 0.05**. Nullprobe auf `afc008c19` reproduzierte die Ausgangswerte exakt.
+Fix: das Band der Leiste **bleibt reserviert** (transparent, `pointer-events-none`),
+der Leser-Kopf verschluckt es über `--leser-v3-app-band` — sichtbar gewonnen sind
+die 37 px trotzdem, gesprungen ist nichts (nachher CLS 0.0064–0.0071 @1440;
+`leser-kopf-cls-s3` v3 0.0089 @1280 / 0.0168 @390).
+
+**Rot-Beweise (§6.7), fünf, alle gesehen:** `kopfzeileSelbst`-Zweig entfernt ⇒ 3
+e2e-Fälle rot · `nurSteuerung` ignoriert ⇒ Split-Fall rot («⠿ StPO · Stand …») ·
+`krume: false` ⇒ Kanton-Fall rot · Meldung in `GesetzLeserV3` gestrichen ⇒ (a) rot ·
+Vitest-Sonde mit beiden Zweigen entfernt ⇒ 3 von 5 rot. **Nachgezogen** (§6.3,
+deklariert, nie gelockert): `leser-v3-ortsangabe` misst jetzt Chrome gegen TEXT
+statt Chrome gegen Chrome (schärfer), `leser-v3-kopf-buendig` (a)/(b) nehmen die
+Topbar als Bezugspunkt. **Bilder** vorher/nachher (D/H/Split/Kanton, hell):
+`docs/ux-audit-2026-07/reader/leser-v3-krume/`.
+
+**Ä-Tabelle nachgeführt:** **Ä45** (Doppelkrume) **erledigt** — @1440 eine
+`nav`-Krume statt zwei. **Ä46** (zwei ✕ je Pane) **teilweise**: Einzelansicht
+**1 statt 2**; im Pane bleiben zwei, weil sie Verschiedenes tun («Gesetz
+schliessen» vs. «Fenster schliessen») und eine Inhaltsseite ihr eigenes Fenster
+nicht schliessen kann — sie stehen jetzt in klar getrennten Kontexten
+(Griffleiste vs. Inhalt) und tragen verschiedene Accessible Names. **Ä9-Rest**
+(globaler Schriftregler im Leser) **bleibt offen** — er sitzt in der Topbar, nicht
+in der abgelösten Leiste; **Ä33/Ä34** unberührt. Alle drei bleiben H4.
 
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
