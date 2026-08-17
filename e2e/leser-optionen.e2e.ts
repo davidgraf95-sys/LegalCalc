@@ -120,40 +120,53 @@ test('B3: Erlass OHNE Änderungsvermerke bietet ihn nicht (BS-640.100)', async (
   await expect(page.locator('[data-historie-zeile]')).toHaveCount(0);
 });
 
-// ── Ä27 (Ästhetik-Prüfer 17.8.2026) ─────────────────────────────────────────
-// Bei «Fussnoten: aus» steht «Änderungsvermerke ✓ an», sichtbar sind aber weder
-// Marker noch Apparat — nur die «Fassung»-Zeile, die dem Fussnoten-Schalter nicht
-// folgt. Im flachen Menü ist die Abhängigkeit unerkennbar; die Unterzeile sagt sie.
-test('Ä27: Hinweis am Änderungsvermerke-Schalter NUR bei «Fussnoten: aus»', async ({ page }) => {
-  const HINWEIS = 'Marker und Apparat sind mit den Fussnoten ausgeblendet';
+// ── Ä69 · DER Ä27-HINWEIS IST WEG, UND DAS IST DER PUNKT ────────────────────
+// DEKLARIERTE UMKEHR (§6.3, Entscheid David 17.8.2026 abends). Hier stand «Ä27:
+// Hinweis am Änderungsvermerke-Schalter NUR bei ‹Fussnoten: aus›» — die
+// Unterzeile «Marker und Apparat sind mit den Fussnoten ausgeblendet». Sie
+// erklärte eine KREUZ-ABHÄNGIGKEIT: der Vermerke-Schalter stand auf «an», zeigte
+// aber nichts, weil Marker und Apparat der A-Klasse am Fussnoten-Schalter hingen.
+//
+// Mit Ä68 gibt es diese Abhängigkeit nicht mehr — der Vermerke-Schalter steuert
+// nur noch die abgeleitete Fassungs-Zeile, und die folgt `data-fussnoten` nicht.
+// Der Hinweis würde jetzt eine Teil-Unwirksamkeit behaupten, die es nicht gibt
+// (§8, umgekehrt), und ist darum gestrichen (§17: kein Anlass mehr, keine Zeile).
+//
+// Der Test bleibt, mit gedrehter Aussage: KEIN Hinweis in KEINER Stellung — und
+// statt der erklärten Abhängigkeit wird die Unabhängigkeit selbst gemessen. Ohne
+// diese zweite Hälfte wäre es eine reine Negativ-Sonde, die auch bei einem
+// kaputten Menü grün bliebe (§6.7).
+test('Ä69: kein Hinweis mehr am Vermerke-Schalter — er hängt in keiner Stellung am Fussnoten-Schalter', async ({ page }) => {
+  const ALT_HINWEIS = 'Marker und Apparat sind mit den Fussnoten ausgeblendet';
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
   const vermerke = gruppe.getByRole('switch', { name: 'Änderungsvermerke' });
+  await expect(vermerke).toHaveCount(1);
 
-  // Grundzustand «Fussnoten: an» — KEIN Hinweis (er wäre dort falsch: Marker und
-  // Apparat sind sichtbar). Negativ zuerst, damit die Zeile nicht bloss «irgendwo
-  // steht», sondern an die Bedingung gebunden ist.
-  await expect(gruppe.getByText(HINWEIS)).toHaveCount(0);
+  // (1) In BEIDEN Stellungen des Fussnoten-Schalters keine Hinweiszeile — und
+  // auch kein verwaistes `aria-describedby`, das auf ein leeres Element zeigt.
+  for (const stellung of ['an', 'aus'] as const) {
+    if (stellung === 'aus') {
+      await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
+    }
+    await expect(page.locator('html')).toHaveAttribute('data-fussnoten', stellung);
+    await expect(gruppe.getByText(ALT_HINWEIS)).toHaveCount(0);
+    expect(
+      await vermerke.getAttribute('aria-describedby'),
+      `Vermerke-Schalter trägt bei «Fussnoten: ${stellung}» noch eine Beschreibung`,
+    ).toBeNull();
+  }
 
-  await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'aus');
-  await expect(gruppe.getByText(HINWEIS)).toHaveCount(1);
-  // Die Auskunft muss auch ohne Blick auf den Bildschirm ankommen — als
-  // DESCRIPTION des Schalters, nicht als Name (§13/F2: Farbe und Nähe tragen nie
-  // allein). Der NAME bleibt «Änderungsvermerke»: stünde der Satz darin, hiesse
-  // der Schalter «… mit den Fussnoten ausgeblendet» und wäre nicht mehr von
-  // seinem Nachbarn «Fussnoten» zu unterscheiden (beim Bau real passiert).
-  const beschriebenVon = await vermerke.getAttribute('aria-describedby');
-  expect(beschriebenVon, 'aria-describedby fehlt').toBeTruthy();
-  await expect(page.locator(`#${beschriebenVon}`)).toHaveText(HINWEIS);
-  // Der Schalter selbst steht weiter auf «an» — der Hinweis erklärt, er lügt nicht.
+  // (2) Und die Unabhängigkeit ist echt: bei «Fussnoten: aus» steht der
+  // Vermerke-Schalter nicht bloss unerklärt auf «an» — er WIRKT auch. Das ist der
+  // Grund, warum kein Hinweis nötig ist.
   await expect(vermerke).toHaveAttribute('aria-checked', 'true');
-
-  // Zurückschalten nimmt den Hinweis wieder weg.
-  await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'an');
-  await expect(gruppe.getByText(HINWEIS)).toHaveCount(0);
+  const slot = page.locator('.lc-leser [data-hist-slot]').first();
+  await expect(slot).toBeVisible({ timeout: 15000 });
+  await vermerke.click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
+  await expect(slot, 'Vermerke=aus wirkt bei «Fussnoten: aus» nicht').toBeHidden();
 });
 
 test('Fussnoten-Toggle: AN sichtbar → AUS VERSCHWINDEN (A1, David 5.7.2026), Text bleibt im DOM, kein CLS beim Toggle', async ({ page }) => {

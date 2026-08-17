@@ -21,6 +21,8 @@ import { PanelZaehler } from './LeserPanelOeffner';
 import { normZitat, panelBezug, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { SuchZone } from './SuchZone';
+import { LeserTrefferBlatt } from './LeserTrefferBlatt';
+import { useTrefferBlatt } from './useTrefferBlatt';
 import { leserCssVariablen } from './leserGeometrie';
 import { kopfElemente, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
@@ -108,6 +110,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Rückbau; der Zweig war unerreichbar, Beleg im Vollzugsvermerk).
   const suchFeldRef = useRef<HTMLInputElement>(null);
   useSuchSprungKuerzel({ feldRef: suchFeldRef, imSekundaerenPane: umgebung.istSekundaer });
+  // Ä70: Offen-Zustand des Treffer-Blattes (Herleitung in `./LeserTrefferBlatt`).
+  // Vor den frühen Rückgaben — Hooks laufen nicht bedingt.
+  const trefferBlatt = useTrefferBlatt(m.sucheBegriff);
 
   // Frühe Ansichten (Fehlseite · Currency-Pin · pdf-embed · nur-live-link) und
   // der Ladezustand — dieselben Bausteine wie die Ist-Hülle (§5).
@@ -160,13 +165,26 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Ä19: Wo die Gliederung NICHT als Spalte steht, trägt der klebende Kopf-Block
   // das Feld (Regel in `./SuchZone`) — ausser das Blatt ist offen, dann es (A2).
   const suchZoneKlebt = hatLeiste && !zweiSpalten;
+  // Ä70: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
+  // eingeklappter Gliederung), liegt die Trefferliste als Blatt AM FELD; darunter
+  // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg. Herleitung und die
+  // Messung, die «Spalte aufziehen» ausschloss: `./LeserTrefferBlatt`.
+  const blattAmFeld = suchZoneKlebt && umgebung.istXl && m.sucheAktiv;
   const suchZone = suchZoneKlebt
     ? (
       <SuchZone suchFeld={blattOffen ? undefined : suchFeld} sucheAktiv={m.sucheAktiv}
         bestimmungen={m.treffer.length} fundstellen={m.fundstellen}
         bestimmungsWort={bestimmungsWort}
-        // Die eine Geste «zeig mir die Leiste»: Spalte @≥1024 px, Sheet darunter.
-        onListe={() => { if (umgebung.istXl) m.setTocOffen(true); else m.setTocAuf(true); }} />
+        // Die eine Geste «zeig mir die Treffer»: Blatt am Feld @≥1024 px, sonst Sheet.
+        onListe={() => { if (umgebung.istXl) trefferBlatt.oeffne(); else m.setTocAuf(true); }}
+        blatt={blattAmFeld && trefferBlatt.offen
+          ? (
+            <LeserTrefferBlatt onSchliessen={trefferBlatt.schliesse}
+              // DASSELBE Bauteil wie in der Spalte, dieselbe Registry (§5) — die
+              // Weiche Baum/Treffer sitzt weiterhin nur in `LeserGliederung`.
+              liste={<LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />} />
+          )
+          : undefined} />
     )
     : undefined;
 
@@ -330,12 +348,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
           {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
 
-          <LeserLesespalte m={m}
-            // Rand-Fall: keine Leiste, aber breit genug — dann stünde die
-            // Trefferliste nirgends. Lieber über dem Text als verschwunden (§8).
-            trefferListe={m.sucheAktiv && !zweiSpalten && umgebung.istXl
-              ? <LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />
-              : undefined} />
+          {/* Ä70: der `trefferListe`-Prop ist gestrichen — er traf die
+              EINGEKLAPPTE Spalte statt des angekündigten Rand-Falls, und der ist
+              unerreichbar. Herleitung samt Messreihe steht am Bauteil, das sie
+              betrifft (`./LeserLesespalte`, `./LeserTrefferBlatt`). */}
+          <LeserLesespalte m={m} />
         </div>
 
         {/* H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus

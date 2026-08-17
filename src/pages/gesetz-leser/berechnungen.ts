@@ -226,17 +226,32 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
 // Bundes-Staatsverträge ohne Vermerke und (s. u.) Staatsverträge mit Fassungs-
 // zeile, aber ohne klassifizierte Fussnote; eine Herkunfts-Weiche träfe beide falsch.
 //
-// ZWEI Träger, weil der Schalter zwei Dinge ausblendet (index.css):
+// ── Ä68-NACHZUG (Entscheid David 17.8.2026): DIE REGEL BLEIBT, IHR GRUND ÄNDERT
+// SICH ────────────────────────────────────────────────────────────────────────
+// Bis zur Entkopplung blendete der Schalter ZWEI Dinge aus, und darum fragte er
+// nach zwei Trägern:
 //   1. `[data-fn-klasse="A"]` + der dadurch leere `[data-fn-apparat]`
 //      → Quelle: `kl: 'A'` im Struktur-Sidecar (`zaehleAenderungsvermerke`).
 //   2. `[data-hist-slot]`, die «Fassung»-Zeile am Artikelfuss
 //      → Quelle: der Historie-Shard (`historie/<KEY>.json`).
-// Beide müssen leer sein, damit der Schalter wirkungslos ist. Gemessen über den
-// ganzen Korpus (1420 Erlasse, 17.8.2026): 1217 tragen keine `kl:'A'`-Fussnote;
-// von diesen haben 6 einen Historie-Shard und genau 2 (MONTREAL, PVUE) darin
-// auch Einträge. Nur `kl:'A'` zu prüfen hätte dort einen WIRKSAMEN Schalter
-// entfernt — deshalb die zweite Bedingung (§1: lieber die Prüfung verdoppeln
-// als ein wirksames Steuerelement stillschweigend wegnehmen).
+// SEIT Ä68 (index.css) blendet er NUR noch Nr. 2 aus. Streng genommen wäre die
+// Frage damit allein `hatFassungsZeile`; Nr. 1 ist keine Wirkung des Schalters
+// mehr, sondern die des Fussnoten-Schalters.
+//
+// GEMESSEN, statt geschlossen (17.8.2026, alle 1420 Struktur-Sidecars gegen alle
+// 209 Historie-Shards, davon 205 mit Einträgen):
+//   `kl:'A'` > 0 UND Fassungszeile   203  → Schalter wirksam, Regel unverändert richtig
+//   `kl:'A'` > 0 OHNE Fassungszeile    0  → **kein einziger** Erlass
+//   `kl:'A'` = 0 MIT Fassungszeile     2  (MONTREAL, PVUE) → nur Nr. 2 trägt
+// Die `kl:'A'`-Bedingung kann nach der Entkopplung also nur noch ÜBERANBIETEN,
+// und sie tut es heute an null Erlassen: {203} ∪ {2} ist genau die Menge der 205
+// Shards mit Einträgen. Sie bleibt darum stehen (§1: lieber die Prüfung
+// verdoppeln, als ein wirksames Steuerelement stillschweigend wegzunehmen) — aber
+// als Redundanz mit gemessener Deckung, nicht mehr als eigene Wirkung.
+// NÄHME der Korpus je einen Erlass mit `kl:'A'` ohne Historie-Einträge auf, bekäme
+// er einen wirkungslosen Schalter (§8). Das ist die eine Stelle, an der diese
+// Redundanz schaden kann — Wächter samt Messung:
+// `src/tests/aenderungsvermerke-schalter.test.ts`.
 export function zaehleAenderungsvermerke(struktur: StrukturMap | null | undefined): number | null {
   // null = Sidecar noch nicht geladen. Bewusst UNTERSCHIEDEN von 0: «weiss ich
   // noch nicht» darf nicht wie «gibt es nicht» wirken (§8).

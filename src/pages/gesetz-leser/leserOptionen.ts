@@ -112,15 +112,23 @@ export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): Leser
   }
   return opt;
 }
-/**
- * Ä27 (S1-Nachzug 17.8.2026): Hinweiszeile am Schalter «Änderungsvermerke», NUR
- * bei «Fussnoten: aus». Dort zeigt er weiter «✓ an», sichtbar ist aber nur die
- * «Fassung»-Zeile — Marker und Apparat hängen am Fussnoten-Schalter, und im
- * flachen Menü ist diese Abhängigkeit unerkennbar (§8). EINE Konstante, weil V1
- * und V3 denselben Satz zeigen müssen (§5).
- */
-export const HINWEIS_VERMERKE_OHNE_FUSSNOTEN =
-  'Marker und Apparat sind mit den Fussnoten ausgeblendet';
+// ── Ä27 IST GESTRICHEN (Ä69, Entscheid David 17.8.2026) ──────────────────────
+// `HINWEIS_VERMERKE_OHNE_FUSSNOTEN` («Marker und Apparat sind mit den Fussnoten
+// ausgeblendet») stand als Hinweiszeile am Schalter «Änderungsvermerke», sobald
+// «Fussnoten: aus» war. Er erklärte eine KREUZ-ABHÄNGIGKEIT: der Schalter zeigte
+// «✓ an», sichtbar war aber nur die «Fassung»-Zeile, weil Marker und Apparat der
+// A-Klasse am Fussnoten-Schalter hingen.
+//
+// Mit der Entkopplung (Ä68, index.css) gibt es diese Abhängigkeit nicht mehr.
+// «Änderungsvermerke: an» heisst jetzt in JEDER Stellung des Fussnoten-Schalters
+// dasselbe und ist immer vollständig eingelöst — die Fassungs-Zeile ist die
+// ganze Fläche des Schalters, und sie ist dann da. Der Satz beschreibt seit der
+// Entkopplung die Wirkung des ANDEREN Schalters und legt am Vermerke-Schalter
+// eine Teil-Unwirksamkeit nahe, die es nicht gibt (§8, jetzt umgekehrt).
+// §17-Rückbau: gestrichen statt umformuliert — eine Hinweiszeile ohne erklärte
+// Abhängigkeit hat keinen Anlass mehr. Beide Menüs (V1 `LeserAnsichtMenu`, V3
+// `LeserAnsichtV3`) verlieren sie gemeinsam; sie war ausdrücklich EINE Konstante,
+// damit beide Hüllen denselben Satz zeigen (§5) — also fällt sie auch in beiden.
 
 /** Aufsteigend — die Reihenfolge IST die Regler-Achse (`leserSchrift.ts`). */
 export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gross', 'sehr-gross'];

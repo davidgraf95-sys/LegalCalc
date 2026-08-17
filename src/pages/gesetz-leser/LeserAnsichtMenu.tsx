@@ -36,11 +36,23 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
-import {
-  HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
-} from './leserOptionen';
+import { setzeOption, useLeserOptionen, type OptFeld } from './leserOptionen';
 
-function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz, hinweis }: {
+// ── Ä69 · DER `hinweis`-SLOT IST GESTRICHEN (17.8.2026) ──────────────────────
+// Sein einziger Aufrufer war der Ä27-Satz am Vermerke-Schalter, und der ist mit
+// der Entkopplung (Ä68, index.css) entfallen: die Kreuz-Abhängigkeit, die er
+// erklärte, gibt es nicht mehr. §17: was nichts mehr bedient, wird gestrichen
+// statt bewacht. Die damals gelernte Regel bleibt hier festgehalten, weil sie den
+// nächsten Bauversuch spart — WÄRE je wieder eine erklärende Zeile am Schalter
+// nötig, gehört sie in die DESCRIPTION (`aria-describedby`), nie in den
+// Accessible-NAME: im `aria-label` hiess der Schalter «Änderungsvermerke — Marker
+// und Apparat sind mit den Fussnoten ausgeblendet» und enthielt damit den Namen
+// des NACHBAR-Schalters; zwei Specs wurden sofort rot («strict mode violation: …
+// resolved to 2 elements»), und dieselbe Doppeldeutigkeit träfe jede Nutzerin,
+// die per Namen navigiert. Und sie muss GESCHWISTER des Knopfes sein, nicht Kind
+// (im Knopf zöge die Namensberechnung ihren Text in den Namen; `aria-hidden`
+// dagegen versteckte sie vor genau der Nutzerin, für die sie gedacht ist).
+function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
   feld: OptFeld;
   an: boolean;
   label: string;
@@ -49,28 +61,14 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz, hinweis }: {
   ariaLabel?: string;
   /** Kleines Zusatz-Signal rechts vom Label (z. B. der Fussnoten-Zähler N). */
   zusatz?: ReactNode;
-  /** Ä27: erklärende Zeile UNTER dem Schalter — sagt, warum die Stellung «an»
-   *  gerade nichts zeigt. Sie ist DESCRIPTION, nicht Name (`aria-describedby`).
-   *
-   *  Gelernt beim Bau (17.8.2026): zuerst stand der Satz im `aria-label`, also im
-   *  Accessible-NAME. Damit hiess der Schalter «Änderungsvermerke — Marker und
-   *  Apparat sind mit den Fussnoten ausgeblendet» — und enthielt das Wort
-   *  «Fussnoten», den Namen des NACHBAR-Schalters. Zwei bestehende Specs wurden
-   *  sofort rot («strict mode violation: … resolved to 2 elements»), und genau
-   *  dieselbe Doppeldeutigkeit träfe eine Nutzerin, die per Namen navigiert. Ein
-   *  Name benennt das Steuerelement; eine Begründung ist eine Beschreibung. */
-  hinweis?: string;
 }) {
-  const hinweisId = useId();
   return (
-    <div>
     <button
       type="button"
       role="switch"
       aria-checked={an}
       aria-label={ariaLabel}
-      aria-describedby={hinweis ? hinweisId : undefined}
-      title={hinweis ? `${titel}. ${hinweis}` : titel}
+      title={titel}
       onClick={() => setzeOption(feld, an ? 'aus' : 'an')}
       className={`flex w-full items-center justify-between gap-3 rounded-md px-2.5 py-1.5 text-left text-body-s transition-colors hover:bg-brass-100/40 ${
         an ? 'text-ink-900' : 'text-ink-600'
@@ -92,17 +90,6 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz, hinweis }: {
         {an ? '✓' : '○'} {an ? 'an' : 'aus'}
       </span>
     </button>
-    {/* AUSSERHALB des Knopfes: läge die Zeile darin, zöge die Namensberechnung
-        ihren Text in den Accessible-Name (s. `hinweis` oben) — sie mit
-        `aria-hidden` davor zu schützen hätte sie zugleich vor dem Screenreader
-        versteckt, also genau vor der Nutzerin, für die sie gedacht ist. Als
-        Geschwister ist sie sichtbar UND vorlesbar, und sie ist kein Klickziel
-        (ein Hinweis soll nicht schalten). `ink-500` statt `ink-400`: dieselbe
-        AA-Auflage wie beim «aus»-Wort (§13/F2). */}
-    {hinweis && (
-      <p id={hinweisId} className="px-2.5 pb-1 text-micro leading-snug text-ink-500">{hinweis}</p>
-    )}
-    </div>
   );
 }
 
@@ -227,15 +214,19 @@ export function LeserAnsichtMenu({ fussnotenAnzahl = null, hatAenderungsvermerke
               : undefined}
             titel="Fussnoten ein- oder ausblenden — AUS lässt Marker und Apparat verschwinden (der Normtext bleibt durchsuchbar)"
           />
-          {/* S1 (Kap. 4f, F1): der Änderungsvermerke-Schalter sitzt UNTER dem
-              Fussnoten-Schalter, weil er ihn verfeinert — im OR sind ~83 % der
-              Fussnoten Änderungsvermerke, hier trennt man sie von den echten
-              Verweisen. «aus» blendet AUSSCHLIESSLICH `kl:'A'` aus (H0-Auflage 1,
-              `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`): echte Verweise
-              (V), Grauzone (G), Publikationsnachweise (Z), Unklares (U) UND jede
-              Fussnote ohne Klasse (alle Kanton-Sidecars) bleiben sichtbar. Die
-              Sicherheitsrichtung ist einseitig — nie amtliche Substanz verstecken
-              (§1/§8). Zur unbedingten Sichtbarkeit s. Datei-Kopf. */}
+          {/* Ä68 (Entscheid David 17.8.2026) · WAS DER SCHALTER STEUERT:
+              AUSSCHLIESSLICH die abgeleitete Fassungs-Zeile am Artikelfuss
+              (`[data-hist-slot]`, index.css) — «Gilt seit …» plus Zeitleiste. Den
+              amtlichen Fussnoten-Apparat fasst er NICHT mehr an, in keiner Klasse.
+              Bis 17.8. blendete er `kl:'A'` mit aus, und weil das beim Bundesrecht
+              die Regel ist (ZGB: 719 von 809 Einträgen), verlor man mit ihm fast
+              den ganzen Apparat — Davids Befund «wenn änderungsvermerke abgewählt
+              wird dann verschwinden auch fussnoten». Marker und Apparat hängen
+              jetzt allein am Fussnoten-Schalter darüber. H0-Auflage 1
+              (`bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`) ist damit
+              strenger erfüllt als zuvor: unberührt bleibt nicht nur V/G/Z/U und
+              die klassenlose Fussnote, sondern JEDE. Die Sicherheitsrichtung ist
+              unverändert einseitig — nie amtliche Substanz verstecken (§1/§8). */}
           {/* S1-NACHZUG B3 (§8): nur, wenn der Erlass Vermerke TRÄGT. Auf
               Kantonserlassen und Staatsverträgen ohne klassifizierte Historie
               (gemessen: `[data-historie-zeile]` = 0 auf ZH-211.11, BS-640.100,
@@ -250,11 +241,15 @@ export function LeserAnsichtMenu({ fussnotenAnzahl = null, hatAenderungsvermerke
               feld="histansicht"
               an={opt.histansicht === 'an'}
               label="Änderungsvermerke"
-              titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
-              // Ä27: bei «Fussnoten: aus» steht hier «✓ an», sichtbar ist aber nur
-              // die «Fassung»-Zeile — Marker und Apparat hängen am Fussnoten-
-              // Schalter. Im flachen Menü ist diese Abhängigkeit sonst unerkennbar.
-              hinweis={opt.fussnoten === 'aus' ? HINWEIS_VERMERKE_OHNE_FUSSNOTEN : undefined}
+              // Ä68: der Titel sagt jetzt, was der Schalter WIRKLICH nur noch
+              // steuert — die abgeleitete Fassungs-Zeile. Der amtliche
+              // Fussnoten-Apparat bleibt in beiden Stellungen stehen; wer ihn
+              // ausblenden will, nimmt den Fussnoten-Schalter darüber.
+              titel="Fassungs-Zeile am Artikelfuss ein- oder ausblenden («Gilt seit …» samt Zeitleiste) — der amtliche Fussnoten-Apparat bleibt in beiden Stellungen sichtbar"
+              // Ä69: die Ä27-Hinweiszeile ist gestrichen. Sie erklärte, dass
+              // Marker und Apparat bei «Fussnoten: aus» fehlen, obwohl dieser
+              // Schalter «an» steht — eine Kreuz-Abhängigkeit, die es seit der
+              // Entkopplung nicht mehr gibt (Herleitung in `./leserOptionen`).
             />
           )}
           {/* W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere 4. Schalter

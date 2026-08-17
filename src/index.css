@@ -469,44 +469,75 @@
      ERSATZLOS ENTFALLEN, mit ihnen `[data-hist-chrono]` (das Element gibt es im
      DOM nicht mehr, ArtikelLeser.tsx). Geblieben ist genau eine Weiche: an/aus.
 
-     Der TRAGENDE Satz (H0-Auflage 1, nicht verhandelbar): ausgeblendet wird
-     ausschliesslich `[data-fn-klasse="A"]` — die build-seitig als reine
-     Änderungshistorie klassifizierten Fussnoten. Echte Verweise ("V"), die
-     Grauzone ("G"), Publikationsnachweise ("Z"), Unklares ("U") UND jede
-     Fussnote OHNE Klasse (alle Kanton-Sidecars tragen kein `kl`) bleiben in
-     BEIDEN Stellungen sichtbar. Attribut-Selektoren greifen nur bei
-     exakt "A" — eine fehlende Klasse blendet also nie etwas aus (§8/§1).
+     ── Ä68 · ENTKOPPELT (Entscheid David 17.8.2026, ersetzt die S1-Auslegung) ──
+     BEFUND, wörtlich: «wenn änderungsvermerke abgewählt wird dann verschwinden
+     auch fussnoten.» Er trifft zu, und zwar massiv. Gemessen 17.8.2026 abends
+     @1440 (Stellung Fussnoten = an, Änderungsvermerke = aus):
 
-     R9/§8: `display:none` trifft NUR Marker-Ziffern, Apparat-Zeilen und die
-     abgeleitete Fassungs-Metazeile, NIE einen Substanz-Träger — der Normtext
-     selbst ist von keiner dieser Regeln erfasst und bleibt in jeder Stellung
-     sichtbar, durchsuchbar (Ctrl+F) und im Ausdruck. Gleiche Mechanik und
-     gleiche Begründung wie der data-fussnoten-Toggle darüber (A1, David
-     5.7.2026: «AUS» = verschwinden statt dämpfen); der `<p id="fn-…">`-Quellblock
-     bleibt im DOM, weshalb das Marker-Popover (liest `innerHTML`) weiterarbeitet.
+       StPO   Apparat-Einträge sichtbar 285 → 98   · Marker 285 → 105
+              Apparat-Boxen 135 → 56   (79 Kästen ganz weg)
+       ZGB    Apparat-Einträge sichtbar 809 → 90   · Marker 809 → 173
+              Apparat-Boxen 531 → 105  (426 Kästen ganz weg)
+
+     Wer die Änderungsvermerke abwählte, verlor damit fast neun Zehntel des
+     amtlichen Fussnoten-Apparats — obwohl der Fussnoten-Schalter auf «an» stand.
+     Die Ursache waren die beiden Regeln, die hier standen: die erste blendete
+     `[data-fn-klasse="A"]` aus (Marker IM Fliesstext UND Apparat-Eintrag), die
+     zweite den ganzen Apparat-Kasten, sobald darin nur noch A-Zeilen lagen. Auf
+     dem ZGB sind 719 von 809 Einträgen `kl:'A'` — die Klasse ist beim Bundesrecht
+     die REGEL, nicht der Sonderfall, und damit war «Änderungsvermerke aus» de
+     facto ein zweiter, versteckter Fussnoten-Schalter.
+
+     DIE NEUE, EINE WAHRHEIT — zwei Schalter, zwei disjunkte Flächen:
+       Fussnoten-Schalter        Marker UND Apparat, ALLE Klassen (auch `kl:'A'`)
+       Änderungsvermerke-Schalter  NUR die abgeleitete Historie-Zeile
+                                   (`[data-hist-slot]`: «Gilt seit …» + Zeitleiste)
+     Der Fussnoten-Schalter trifft die Klasse `A` seit je mit (`[data-fn-ref]`/
+     `[data-fn-marker]`/`[data-fn-apparat]` kennen keine Klassen) — die A-Fussnote
+     ist also weiterhin abwählbar, nur nicht mehr über den falschen Schalter.
+
+     H0-AUFLAGE 1 BLEIBT GEWAHRT, sie wird sogar strenger erfüllt: sie verlangte,
+     dass echte Verweise ("V"), Grauzone ("G"), Publikationsnachweise ("Z"),
+     Unklares ("U") und jede Fussnote OHNE Klasse vom Vermerke-Schalter
+     UNBERÜHRT bleiben. Das gilt jetzt für JEDE Klasse — der Schalter fasst den
+     Fussnoten-Apparat überhaupt nicht mehr an
+     (`bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`, Nachtrag 17.8.2026).
+
+     WIRKSAM BLEIBT DER SCHALTER: gemessen über den ganzen Korpus (1420
+     Struktur-Sidecars, 209 Historie-Shards, davon 205 mit Einträgen, 17.8.2026)
+     tragen **0** Erlasse eine `kl:'A'`-Fussnote OHNE Fassungszeile. Die
+     Anbieten-Regel (`bieteAenderungsvermerkeSchalter`, berechnungen.ts) bleibt
+     darum unverändert richtig — sie kann nach der Entkopplung nur noch
+     überanbieten, und das tut sie heute an keinem einzigen Erlass.
+
+     R9/§8: `display:none` trifft NUR die abgeleitete Fassungs-Metazeile, NIE
+     einen Substanz-Träger — der Normtext bleibt in jeder Stellung sichtbar,
+     durchsuchbar (Ctrl+F) und im Ausdruck. Gleiche Mechanik wie der
+     data-fussnoten-Toggle darüber (A1, David 5.7.2026: «AUS» = verschwinden statt
+     dämpfen); der Inhalt bleibt im DOM.
 
      Default 'an' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6). Die
      Umschaltung ist klick-getrieben ⇒ der Reflow liegt binnen 500 ms nach der
-     Eingabe (CLS-exkludiert) und lädt nichts nach. ── */
+     Eingabe (CLS-exkludiert) und lädt nichts nach.
 
-  /* «aus»: Änderungsvermerke ganz weg — Marker und Apparat-Zeile. */
-  html[data-histansicht="aus"] .lc-leser [data-fn-klasse="A"] {
-    display: none;
-  }
-
-  /* Trägt der Apparat NUR noch unsichtbare A-Zeilen, bliebe seine Trennlinie
-     als leerer Strich stehen. `:not(:has(…))` prüft, ob überhaupt eine
-     nicht-A-Zeile darin steckt; fehlt sie, verschwindet der Rahmen mit. */
-  html[data-histansicht="aus"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))) {
-    display: none;
-  }
+     GILT IN BEIDEN HÜLLEN, und das ist gewollt: die Regeln hängen an
+     `.lc-leser`, nicht am V3-Flag. Den Schalter in V1 gekoppelt zu lassen
+     hiesse, dasselbe Steuerelement mit zwei Bedeutungen zu führen (§5) — und
+     eine flag-abhängige CSS-Regel wäre ein zweiter Schaltpunkt neben der einen
+     Fassade (FL-1). Deklarierte fachliche Änderung an V1, nicht Refactoring;
+     die Vorgabestellung ist unberührt, PX misst im Grundzustand (R6). ── */
 
   /* S1 (Befund K4): die «Fassung»-Zeile am Artikelfuss (ArtikelHistorie.tsx —
      «Gilt seit …»-Badge + Fassungs-Zeitleiste) hing bis S1 an GAR KEINEM
-     Schalter. Sie ist dieselbe Information wie die A-Fussnoten, nur aus dem
-     Historie-Shard aggregiert — bei «Änderungsvermerke aus» blieb sie als
-     einzige Historie-Spur im Lesetext stehen, und der Schalter hielt nicht, was
-     er verspricht (§8).
+     Schalter. Sie ist die aus dem Historie-Shard AGGREGIERTE Auskunft — nicht
+     amtlicher Fussnotentext, sondern eine daraus abgeleitete Metazeile; bei
+     «Änderungsvermerke aus» blieb sie als einzige Historie-Spur im Lesetext
+     stehen, und der Schalter hielt nicht, was er verspricht (§8).
+
+     Ä68 (17.8.2026): diese Regel ist seit der Entkopplung die EINZIGE des
+     Schalters — genau deshalb ist der Schalter jetzt ehrlich. Er blendet das
+     Abgeleitete aus und lässt den amtlichen Apparat, aus dem es abgeleitet ist,
+     stehen; wer auch den nicht sehen will, hat den Fussnoten-Schalter.
      Ausgeblendet wird der SLOT (`[data-hist-slot]`), nicht nur die Zeile darin:
      der Slot reserviert 16+24 px ab dem ersten Render (§15.2, CLS) und bliebe
      sonst als Phantom-Lücke unter jedem Artikel zurück. Inhalt bleibt im DOM
@@ -916,13 +947,39 @@
      zwei messingfarbenen Kanten wieder zwei sichtbare Ringe. Ä14 war damit nur
      «teilweise» erledigt, wie die Ästhetik-Prüfung notiert hat.
      JETZT: der Rahmen bleibt im Fokus NEUTRAL (`--line`, unverändert gegenüber
-     dem Ruhezustand), der Ring sitzt ohne Spalt am Feld (`outline-offset: 0`).
-     Es gibt genau EINE Messing-Kante — die des Rings. */
+     dem Ruhezustand), der Ring sitzt ohne Spalt am Feld. Es gibt genau EINE
+     Messing-Kante — die des Rings. */
+  /* ── Ä67 (David-Befund 17.8.2026 abends) · DER RING LIEGT INNEN ─────────────
+     BEFUND, wörtlich: «um das suchfeld erscheint bei klick darin ein braun
+     umrundetes feld dass abgeschnitten ist.»
+     GEMESSEN (StPO/V3 @1440, Gliederung als Spalte, Feld fokussiert): das Feld
+     liegt bei x = 184…464, der Ring — `outline` liegt IMMER aussen — bei
+     x = 182…466. Der Scroller der Seitenleiste (`[data-v3-leiste-scroller]`,
+     `overflow-x: hidden` · `overflow-y: auto`) beginnt aber exakt bei x = 184.
+     Die linke Ring-Kante lag damit **2 px ausserhalb des Clips** und war
+     abgeschnitten; beim Scrollen der Leiste trifft dasselbe die obere Kante, weil
+     der klebende Sockel nur `pt-0.5` (2 px) über dem Feld führt.
+     WURZEL: nicht der Scroller, sondern der Ring. `overflow-x: hidden` ist an
+     dieser Stelle tragend (langer Baumtitel darf die Leiste nicht waagrecht
+     scrollen — `e2e/leser-gliederung-kein-overflow.e2e.ts`), und `overflow-y`
+     IST der Scroller. Ein Ring, der aus seinem Element herausragt, ist in jedem
+     scrollenden Behälter angreifbar; der Behälter zu ändern behebt genau einen
+     Fundort und lädt den nächsten ein (§17: Wurzel, nicht Umschiffung).
+     FIX: `outline-offset: -2px` zieht den 2 px breiten Ring in die Feldfläche —
+     er deckt den 1-px-Rahmen und 1 px Polster, liegt also VOLLSTÄNDIG im
+     Element. Damit kann ihn kein Vorfahre mehr beschneiden, heute wie künftig.
+     Sichtbarkeit unverändert: dieselbe Rolle `focus`, dieselbe Breite 2 px, nur
+     innen statt aussen (WCAG 2.4.7/2.4.11 — der Indikator behält Fläche und
+     Kontrast; die Nachbarfarben sind Feldfläche innen, Behälterfläche aussen).
+     KEINE Wirkung auf die Höhenwächter des Kopf-Blocks (H2b B9): `outline` nimmt
+     in keiner Stellung Platz ein, `SUCH_H_RUHE`/`SUCH_H_AKTIV` bleiben gültig.
+     Wächter: `e2e/leser-v3-fokusring-suchfeld.e2e.ts` (vier Kanten gegen den
+     engsten Clip, hell und dunkel, Spalte UND Kopf-Zone), rot gezeigt. */
   .lc-input.lc-v3-feld:focus, .lc-input.lc-v3-feld:focus-visible {
     border-color: var(--line);
     box-shadow: none;
     outline: 2px solid var(--focus);
-    outline-offset: 0;
+    outline-offset: -2px;
   }
   /* ── Ä5 (LESER-V3 H2b) · Fläche des klebenden Leisten-Sockels ───────────────
      Der Sockel muss OPAK sein (sonst läuft der Gliederungsbaum beim Scrollen
