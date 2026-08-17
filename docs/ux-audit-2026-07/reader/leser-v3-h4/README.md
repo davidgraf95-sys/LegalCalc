@@ -58,10 +58,10 @@ mehr gibt, nicht.
 | 2 | **`leser-kopf-paritaet`** grün | ✅ | 1 Test, beide Split-View-Panes, 9.6 s, im Flag-Projekt |
 | 3 | **PX** (Pixelvergleich) grün | ✅ *(mit Bedingung)* | Ruhe-Bedingung: Branch **3/3**, Basis `a516f12ef` **3/3**. Unmittelbar nach einem 8-Worker-Lauf: **2/5**, dreimal 1869 px (0.01) auf dem **V1**-Arm — exakt die Signatur, die S2 als Scroll-/Rasterungs-Artefakt dokumentiert. **Nullprobe negativ** (Basis unter Last nicht gegengemessen, Ruhe grün) → kein A-8-Effekt, aber ein offener Lastfall (§17-Zeile unten) |
 | 4 | **NM** in keiner der drei Aufgaben verschlechtert | ❌ | NM-2 kostet auf D und S **je einen Schritt mehr** und ist auf **H per Tap gar nicht erreichbar** (Tabelle §2) |
-| 5 | **CLS ≤ Ist-Stand** | ⬜ *(siehe §4)* | |
-| 6 | **axe** grün | ⬜ *(siehe §5)* | |
-| 7 | **Kantons-Probe** grün | ⬜ *(siehe §5)* | |
-| 8 | drei bekannte **Flaker** mit Wurzel-Fix | ⚠️ teilweise | 1 von 3 mit belegter Wurzel behoben, 2 von 3 **lokal nicht reproduzierbar** (0/65 unter 8-Worker-Last) → kein Blindfix (§0 Ziff. 2). Details §6 |
+| 5 | **CLS ≤ Ist-Stand** | ✅ | V3 in allen vier Zellen besser: StPO D 0.0337 → **0.0207** · StPO H 0.0205 → **0.0192** · BS-640.100 D 0.0475 → **0.0315** · BS-640.100 H 0.0064 → **0.0044** (Median, n=5, kalt) |
+| 6 | **axe** grün | ✅ | **0** critical/serious in **20** Kombinationen (5 Erlasse × V1/V3 × hell/dunkel); dokumentiert bleibt nur der begründete `link-in-text-block` (B-2) |
+| 7 | **Kantons-Probe** grün | ✅ | BS-640.100 (292 Best.), ZH-211.11 (23) und die Bund-Probe StPO/VMWG/LugÜ unter `?leser=v3`: Rahmen, Kopf und Gliederung je vorhanden, **0 Konsolenfehler** |
+| 8 | drei bekannte **Flaker** mit Wurzel-Fix | ⚠️ teilweise | 1 von 3: Wurzel **belegt** (Locator-Kosten) und der dominante Term entfernt — seriell, also in der CI-Konfiguration `workers: 1`, **8/8 grün** (OR-Test 15.1–18.5 s gegen 20 s Budget). Unter lokaler 4-Worker-Last bleibt er rot: die Seite selbst braucht ~18 s, der Rest ist `QS-PERF`. 2 von 3 **nicht reproduzierbar** (0/65) → kein Blindfix (§0 Ziff. 2). Details §6 |
 | 9 | **David-Go** nach Kontaktbogen | ⬜ wartet | Frage oben in §0 |
 
 ---
@@ -145,42 +145,287 @@ sichtbare Änderung und gehört an den Flip.
 
 ---
 
-## 4 · Layout-Sprünge (CLS)
+## 4 · Layout-Sprünge (CLS) — V3 ist in allen vier Zellen besser
 
-⬜ *(wird gefüllt)*
+`PerformanceObserver('layout-shift')`, nur Sprünge **ohne** kürzliche Eingabe;
+je Lauf frischer Kontext (kalt), nach dem Laden vier Scroll-Runden (die
+Lese-Kadenz zählt mit), n=5, ungedrosselt, Maschine ruhig (Gesamtlast nach der
+Messreihe 46 % über alle Prozesse). Rohdaten `cls-messung.json`.
+
+| Erlass | Breite | Ist (V1) Median / Max | V3 Median / Max | Verdikt |
+|---|---|---|---|---|
+| StPO | D 1280 | 0.0337 / 0.0339 | **0.0207 / 0.0215** | ✅ −39 % |
+| StPO | H 390 | 0.0205 / 0.0216 | **0.0192 / 0.0192** | ✅ −6 % |
+| BS-640.100 | D 1280 | 0.0475 / 0.0475 | **0.0315 / 0.0315** | ✅ −34 % |
+| BS-640.100 | H 390 | 0.0064 / 0.0080 | **0.0044 / 0.0056** | ✅ −31 % |
+
+Grösster Einzelverursacher in beiden Hüllen ist derselbe: eine Gliederungs-`LI`
+(V1 0.0192 → V3 0.0131 auf StPO D). Alle Werte liegen deutlich unter der
+«guten» Web-Vitals-Schwelle 0.1. **Kriterium 5 erfüllt.**
 
 ---
 
 ## 5 · axe und Proben
 
-⬜ *(wird gefüllt)*
+### axe — hell und dunkel, in BEIDEN Hüllen
+
+Regelsatz und Tor-Politik wie `e2e/a11y.e2e.ts`: Tags `wcag2a`/`wcag2aa`/
+`wcag21a`/`wcag21aa`; **critical/serious** gaten, moderate/minor werden
+dokumentiert; der begründete Markenentscheid `link-in-text-block` (BERICHT B-2,
+Inline-Links ohne Unterstreichung) zählt nicht. Thema per `localStorage` gepinnt
+**und** `colorScheme` emuliert, `reducedMotion: reduce`. Rohdaten
+`axe-proben.json`.
+
+**Ergebnis: 0 critical/serious in allen 20 Kombinationen** (5 Erlasse × 2 Hüllen
+× hell/dunkel). Dokumentiert bleibt je 1–2 × `link-in-text-block`. **Kriterium 6
+erfüllt** — und zwar für V3 erstmals in beiden Farbschemata gemessen (die
+Repo-Spec `a11y.e2e.ts` fährt nur die Ist-Hülle).
+
+### Proben — Kanton und Bund unter `?leser=v3`
+
+| Erlass | Art | Bestimmungen | V3-Rahmen · Kopf · Gliederung | Konsolenfehler |
+|---|---|---|---|---|
+| **BS-640.100** (StG BS) | Kanton BS | 292 | 1 · 1 · 1 | **0** |
+| **ZH-211.11** (GebV OG) | Kanton ZH | 23 | 1 · 1 · 1 | **0** |
+| **StPO** (SR 312.0) | Bundesgesetz | 480 | 1 · 1 · 1 | **0** |
+| **VMWG** | Verordnung | 32 | 1 · 1 · 1 | **0** |
+| **LugÜ** (SR 0.275.12) | Staatsvertrag | 91 | 1 · 1 · 1 | **0** |
+
+Kein Sonderpfad, kein leerer Rahmen, keine fehlende Gliederung; die `h1` trägt in
+allen fünf Fällen den amtlichen Titel. **Kriterium 7 erfüllt.**
+
+**Nebenbefund, ohne Wertung gemeldet:** beim LugÜ lautet die `h1` in V3
+«LugÜ·Übereinkommen vom 30. Oktober 2007 …», in V1 nur «Übereinkommen vom
+30. Oktober 2007 …». V3 stellt also das Kürzel voran. Das ist eine
+Wortlaut-Differenz zwischen den Hüllen an einer Stelle, die `check:seo-index`
+und die Seitenmeta betrifft (S3-Fläche) — vor dem Flip einmal ansehen, ob das so
+gewollt ist.
+
+**Ehrliche Grenze dieser Probe:** fünf Erlasse sind eine Stichprobe, kein Beweis
+für den ganzen Korpus. Der automatische Sweep über alle Bundeserlasse steht
+weiterhin aus (schon im H2-Bogen so vermerkt).
 
 ---
 
 ## 6 · Die drei Flaker (Kap. 14) — Verteilungen vorher/nachher
 
-⬜ *(wird gefüllt)*
+### Vorab: die lokale Last-Bedingung ist derzeit unbrauchbar
+
+Während dieser Messungen liefen auf derselben Maschine **drei fremde
+Agenten-Sessions** (Worktrees `LexMetrik-fix`, `LexMetrik-krume`,
+`LexMetrik-uebersicht` — festgestellt über `git worktree list`, zusätzlich hat
+eine fremde Session eine Datei in meinem Mess-Verzeichnis überschrieben). Die
+8-Worker-Kontentions-Läufe kippten dadurch die Arm-Reihenfolge (vorher/nachher
+18:16, dann 10:17 von je 20) — eine Rate ohne stabile Bedingung ist keine Zahl
+(§0 Ziff. 3c). **Belastbar ist allein die prozessinterne Messung mit 4×
+CPU-Drossel**, weil dort beide Arme unmittelbar nacheinander im selben Prozess
+laufen; sie wurde zweimal gefahren und war beide Male gleich.
+
+### `leser-ohne-gliederungslinie:77` (OR Art. 319) — Wurzel gefunden, Fix drin
+
+**Symptom (Ä24, CI Shard 7):** «element(s) not found» nach 20 s auf
+`getByRole('button', {name:'Ansicht'})` — das Tor fiel im Vorraum, die
+Sachaussage wurde nie geprüft.
+
+**Wurzel, gemessen:** nicht (nur) die Seite ist langsam, sondern die **Abfrage**.
+`getByRole` mit Namensfilter rechnet für jeden Knopf im Dokument den zugänglichen
+Namen aus; auf dem OR sind das **13 518 Knöpfe** bei **75 724 DOM-Knoten**
+(gemessen @1280 nach dem Laden; StPO 5 146, BV 2 455 — daher trifft es genau das
+OR). Die Abfrage läuft im Polling, also wiederholt.
+
+**A/B auf demselben Dokument**, gleiche Wartebedingung «sichtbar», nur die
+Suchmaschine getauscht, je frischer Kontext:
+
+| Bedingung | `getByRole('button',{name:'Ansicht'})` | `[data-ansicht-menu]` | über 20 s |
+|---|---|---|---|
+| warm, ungedrosselt, n=10 | 4.1–4.4 s (Median 4.2) | 1.0 s (Median 1.02) | 0 / 0 |
+| **4× CPU-Drossel, n=5 (2×)** | **28.2–29.1 s** | **17.8–19.9 s** | **5/5 gegen 0/5** |
+
+Die 4×-Drossel ist die CI-nahe Bedingung aus der Ä24-Forensik (2-Kern-Runner,
+`workers: 1`). Unter ihr reisst **allein die Abfrage** das Budget: die Seite ist
+nach ~18 s bedienbar, die Namensberechnung kostet weitere ~10 s.
+
+**Fix:** `e2e/helpers/leserBereit.ts` — EINE Bereitschafts-Wartung (§5) über die
+Attribute `[data-ansicht-menu]` (Ist-Hülle) und `[data-v3-ansicht]` (V3), beide
+nur im Client-Render vorhanden (nachgemessen: `dist/gesetze/bund/OR.html` enthält
+**null** `<button>`). Kein Timeout angehoben, keine Retry-Zahl erhöht, keine
+Assertion gelockert. Der zugängliche Name des Öffners bleibt in
+`leser-kopf-a9.e2e.ts` und `leser-kopf-g2b.e2e.ts` geprüft.
+
+**Nachher, gemessen in der CI-Konfiguration** (`workers: 1`, seriell, 4
+Wiederholungen der Datei): **8/8 grün**, der OR-Test in 15.1 · 16.8 · 18.5 ·
+18.1 s gegen sein 20-s-Budget.
+
+**Ehrlicher Rest — der Fix reicht nicht überall.** Bei **4 Workern** fällt der
+OR-Test weiter (1 von 2 Läufen, «element(s) not found» nach 20 s auf das
+Attribut), bei 4× Drossel bleiben 17.8–19.9 s gegen 20 s, also **1.2 s Luft**.
+Der dominante Term ist weg, der verbleibende ist der Erst-Render des OR selbst
+und liegt bei `QS-PERF` (Ä24-Übergabe). Wer hier weiter senken will, senkt es
+dort — nicht am Budget dieses Tests.
+
+**Nebenbefund mit Hebel für H4:** dieselbe teure Wartung steht in **acht weiteren
+Specs** — `gesetze-ux-g3a:19`, `gesetze-ux-g3b-anhang:12`,
+`gesetze-historie-badge:102,186`, `hist-ansicht-w25i:47`, `leser-optionen:42`,
+`leser-kopf-v2:19`, `leser-kopf-g2b:11`, `leser-ruecksprung-r5-r7:13`,
+`leser-adresse-lm202:48`, `leser-lesemass:266`. Sie sind **nicht** angefasst: der
+Tausch ist je Datei zu prüfen (wo Rolle+Name die AUSSAGE ist, darf er nicht
+weg), und das gehört in H4, nicht in eine Vorbereitung.
+
+### `leser-weiterlesen-r4-r8` und `leser-kontext-e4` — nicht reproduziert
+
+Beide Specs, 5 Wiederholungen bei 8 Workern (Kontention als lokaler Ersatz für
+die CI-Aushungerung): **65/65 grün, Exit 0, 1.8 min.** Damit ist die Bedingung,
+unter der sie in CI fielen, lokal nicht hergestellt — und ohne gesehenen
+Fehlschlag wird hier nicht «repariert» (§0 Ziff. 2). Was sich sagen lässt:
+
+- `leser-weiterlesen-r4-r8` läuft auf der **BV** (2 455 Knöpfe). Der oben
+  gemessene Abfrage-Aufschlag ist dort um den Faktor ~5.5 kleiner; die
+  Locator-Wurzel erklärt diese Flake **nicht**.
+- `leser-kontext-e4` läuft auf dem **OR** unter CPU-Drossel und benutzt
+  `getByRole('button', {name:/Rechner\/Vorlagen zu/})` mit **Regex**-Namen (Zeile
+  298) gegen ein 30-s-Budget; die Datei dokumentiert selbst gemessene Laufzeiten
+  von 17 900–37 462 ms. Derselbe Mechanismus ist also plausibel und der Tausch
+  ist der erste Kandidat — belegt ist er hier nicht, und deshalb steht er als
+  **Empfehlung für H4**, nicht als Änderung.
+
+**Verdikt Kriterium 8: teilweise.** 1 von 3 mit belegter Wurzel behoben, 2 von 3
+lokal nicht reproduzierbar. Für die zwei offenen ist die nächste Messung **nicht**
+ein weiterer lokaler Lauf, sondern die CI-Forensik am rohen Shard-Log.
 
 ---
 
 ## 7 · B-Specs — Umhäng-Liste für H4 (Vorbereitung, kein Umbau)
 
-⬜ *(wird gefüllt)*
+Grundlage: `playwright.config.ts` (Listen `N_SPECS`/`V3_SPECS`, Z. 41–100).
+**Verifiziert** heisst: an Datei:Zeile belegt. **Verdacht** heisst: per Grep
+plausibel, nicht gegen V3 durchgemessen — die acht Verdachtszeilen sind vor dem
+Umbau je einzeln nachzuprüfen.
+
+| Spec | heute | Sachaussage | Verdikt | Beleg / was zu ändern ist |
+|---|---|---|---|---|
+| `gesetze-ux-g3a` | chromium | Kopf-Etikett (Gesetz/Verordnung/Kanton) | **UMHÄNGEN** (verifiziert) | `.lc-leser > header` in Z. 25, 38, 53 — in V3 existiert **kein** `<header>`-Tag; Ziel `[data-v3-kopf]`. Z. 57–63 (Live-Verweis) ist hüllenneutral und bleibt |
+| `leser-optionen` | chromium | Options-Menü: Bestückung und Wirkung | **gemischt** | (a) Z. 67 «genau zwei `role=switch`» → **UMHÄNGEN**, V3 hat zusätzlich «Rechtsprechung im Text» (`LeserAnsichtV3.tsx:204`); (b) Z. 97–121 B3-Paar → **LÖSCHEN**, Nichttrage-Nachweis: identische Aussage und identische Erlasse in `leser-v3-umschalten.e2e.ts:150–173`; (c) Z. 123–157 Ä27-Hinweis → **UMHÄNGEN** ohne Selektor-Änderung; (d) Z. 167 `.lc-leser button[aria-label^="Fussnote"]` greift in V3 den Menü-Schalter statt die Marke → auf `[data-fn-ref]` |
+| `leser-r1-r2` | chromium | Trefferliste/Zähler + Quickjump | **UMHÄNGEN** (Z. 461 verifiziert) | Z. 461 `toHaveCount(1)` auf das zweite Sprungfeld, das Pos. 4 beseitigt. Rest attributbasiert; **Verdacht** auf Redundanz mit `leser-v3-treffer-deckel`/`leser-v3-panel-zaehler` — vor dem Löschen prüfen |
+| `leser-ruecksprung-r5-r7` | chromium | Rücksprung-Chip/Deep-Link | **UMHÄNGEN** (verifiziert) | nur Z. 128 `toBeLessThan(140)`; V3 landet auf 156 px (64+36+56). Rest `[data-toc]`/`role=status` bleibt |
+| `leser-kopf-g2b` | chromium | Kopf-Zusammenführung, Zitat kopieren | **UMHÄNGEN** (verifiziert) | `.lc-leser > header` 6× (Z. 18, 78, 90, 96, 98, 109, 130) → `[data-v3-kopf]` |
+| `leser-kopf-v2` | chromium | K-1/K-2/B-1 Kopf-Vertrag | **UMHÄNGEN** (verifiziert) | Z. 48 `.lc-leser button[aria-label^="Fussnote"]` — derselbe Fehlgriff wie oben |
+| `hist-ansicht-w25i` | chromium | Änderungsvermerke-Vertrag (Inhalt an/aus) | **UMHÄNGEN** (verifiziert) | autoritative Quelle des Schalter-Vertrags (`leser-optionen.e2e.ts:35`); V3 hat den Schalter (`LeserAnsichtV3.tsx:190`), aber nur die PRÄSENZ ist dort geprüft, nicht der Inhalts-Vertrag `[data-fn-klasse]` |
+| `leser-kopf-cls-s3` | chromium | CLS am Kopf | **BLEIBT** (verifiziert) | enthält bereits `?leser=v3`-Fälle (Z. 37) |
+| `leser-marken-geometrie` | chromium | Marken-Geometrie | **BLEIBT** (verifiziert) | sagt selbst «in V1 gleich wie in V3», fährt bereits `?leser=v3` |
+| `leser-lesemass` | chromium | Zeilenmass ≤ 75 ch | **BLEIBT/UMHÄNGEN in H4** | die Datei erklärt selbst (Z. 4–24), dass der Wert V1 == V3 ist und der Umzug bewusst auf H4 wartet |
+| `leser-kopf-a9` | chromium | A9-Bedienbarkeit Ansicht-Menü | **BLEIBT** (verifiziert) | nur `getByRole('button',{name:'Ansicht'})` + `[aria-label="Darstellungsoptionen"]`, beides in V3 vorhanden (`LeserAnsichtV3.tsx:148,167`) |
+| `leser-breite-a37` · `leser-gliederung-a33` · `leser-kontext-e4` · `leser-suche-a35-a40-a41` · `leser-trefferliste-overlay-mobil-w219` · `leser-position-u` (A17) | chromium | Pixel-/Geometrie- bzw. Slot-Aussagen der Ist-Hülle | **UMHÄNGEN — Verdacht, nicht verifiziert** | je an V1-Layout gebundene Masse oder V1-Slots (`data-inhalt-kopf`/`data-such-slot`); vor dem Umbau einzeln gegen die V3-Geometrie messen |
+| `leser-adresse-lm202` · `leser-gliederung-kein-overflow` · `leser-history-hash` · `leser-spy-w25d` · `leser-suche-klappzustand` · `leser-toc-sprung` · `leser-weiterlesen-r4-r8` · `gesetze-historie-badge` | chromium | Adresse, Overflow, Verlauf, Scroll-Spy, Klappzustand, TOC-Sprung, Weiterlesen, Badge | **BLEIBT — Verdacht** | attribut- bzw. rahmenbasiert, keine Struktur-Treffer im Grep |
+
+**Warnung, die vor dem Flip erledigt sein muss (§6.7).** Nach dem Umlegen des
+Defaults rendert das Projekt `chromium` selbst V3. Die nicht umgehängten
+Struktur-Assertions werden dann **nicht sauber rot**, sondern laufen in Timeouts
+(`gesetze-ux-g3a` hat mit `.lc-leser > header, header` sogar einen Fallback, der
+auf den globalen `Topbar`-Header ausweichen könnte) — also je Test ein
+20-s-Hänger statt einer Fehlermeldung. Das ist schlimmer als ein Tor, das nicht
+scheitern kann.
+
+**Textvorschlag für `playwright.config.ts` (NICHT angewendet):**
+
+```js
+const N_SPECS = [
+  '**/leser-v3-flag.e2e.ts',
+  '**/leser-suche-vertrag-b8.e2e.ts',
+  '**/leser-ohne-gliederungslinie.e2e.ts',
+  '**/gesetze-marginalie.e2e.ts',
+  '**/gesetze-pdf-download.e2e.ts',
+  '**/gesetze-ux-9punkte.e2e.ts',
+  '**/gesetze-ux-g3b-anhang.e2e.ts',
+  // H4: nach dem Kopf-Selektor-Umzug auf [data-v3-kopf] paritätsfähig
+  '**/gesetze-ux-g3a.e2e.ts',
+  '**/leser-kopf-g2b.e2e.ts',
+]
+
+const V3_SPECS = [
+  '**/leser-v3-*.e2e.ts',
+  '**/leser-kopf-paritaet.e2e.ts',
+  // H4: nach Selektor-/Schwellenwert-Fix umgehängt (keine echte Parität —
+  // diese Specs prüfen V1-spezifische Werte)
+  '**/leser-optionen.e2e.ts',          // B3-Paar vorher entfernt (Redundanz)
+  '**/leser-ruecksprung-r5-r7.e2e.ts', // Schwelle 140 → 156 px
+  '**/hist-ansicht-w25i.e2e.ts',
+]
+```
+
+**`e2e/shard-gruppen.json`:** der Union-Wächter (`npm run check:e2e-shards`)
+prüft **Dateinamen unabhängig vom Projekt** — ein Umhängen zwischen `chromium`
+und `leser-v3` ändert die Union nicht. Nur wenn eine ganze Datei entfällt, muss
+ihr Eintrag aus der Gruppe verschwinden; nach obigem Vorschlag entfällt **keine
+Datei** (beim B3-Paar fallen nur Einzeltests).
+
+**Zwei Lücken in Kap. 10, gemessen:** `hist-ansicht-w25i` und
+`gesetze-historie-badge` sind dort als Teil der doppelt laufenden Parität geführt,
+stehen aber **nicht** in `N_SPECS` — sie laufen heute nur im Projekt `chromium`.
+Entweder in `N_SPECS` aufnehmen oder Kap. 10 korrigieren; beides ist besser als
+ein Paritätsbeweis, den nichts fährt.
 
 ---
 
 ## 8 · Offene H4-Auflagen aus H2b/H3/S2
 
-⬜ *(wird gefüllt)*
+| Kürzel | Fahrplan-Zeile | Was offen ist | Einordnung |
+|---|---|---|---|
+| **NM-2 auf H** (neu, hier gemessen) | — | Entscheide zu einem Artikel sind auf 390 px per Tap nicht erreichbar (§2) | **BLOCKER VOR FLIP** — verlorener Rechercheweg, kein Design-Geschmack |
+| **Ä60** | 825 | Beiwerk-Blatt verdeckt auf D @1440 die äusseren 112 px (18 %) jeder Textzeile; keine feste Blattbreite behebt es | **BLOCKER VOR FLIP** — Normtext teilweise unlesbar (§1/§8); Weg (a) so lassen / (b) Kopf-Chip opfern / (c) breiterer Leser-Rahmen wartet auf David |
+| **Ä45 Doppelkrume** | 938–940 | App-Krume und V3-Ortsangabe zeigen @390 denselben Ort in zwei `nav`-Krumen übereinander | **BLOCKER VOR FLIP** — sofort sichtbar auf jedem Erlass. *(Achtung: wird parallel im Worktree `LexMetrik-krume` bearbeitet — vor dem Flip Stand abgleichen)* |
+| **Ä46 zwei ✕ je Pane** | 940–941 | zwei Schliess-Kreuze je Pane mit verschiedener Bedeutung | **BLOCKER VOR FLIP** — widersprüchliche Bedienung |
+| **A-8** (Rest) | 773, 1070, 1698 | Der 1024er-Spalten-Entscheid hängt noch an `istXl`; Umstellung verschiebt die Grenze auf Viewport 1072 (§3) | **braucht Davids Entscheid** — identisch mit Ä60 |
+| **B-Specs umhängen** | 1240, 1610, 1622 | §7 dieses Bogens | **BLOCKER VOR FLIP** — sonst Timeout-Hänger statt Fehlermeldungen |
+| **Flaker** | 1746 | §6 dieses Bogens | **teilweise**; 2 von 3 brauchen CI-Forensik, nicht mehr lokale Läufe |
+| **Ä9 Regler-Doppel** | 527, 938 | globaler App-Schriftregler im Leser noch zusätzlich sichtbar | **kann H5 tragen** — Duplikat, nichts unbedienbar |
+| **A-2 Leisten-Verschmelzung** | 527, 644, 995 | zwei Leisten statt einer, 37 px Chrome-Preis; berührt `src/components/layout/**` | **kann H5 tragen** (Fahrplan nennt «H4/H5») |
+| **Ä33/Ä34** | 941–944 | Chrome bis zur Lesefläche @390 = 183 px (22 %) ruhend, 207 px (25 %) mit Suche | **braucht Davids Entscheid** — es gibt keinen Zielwert, nur den Messwert |
+| **Ä63 Handy-Einzug** | 548, 1404 | OR/ZGB @390 Einzug x = 80 px gegen StPO 44 px | **kann H5 tragen** — Typografie-Detail |
+| **Ä64 Regler-Hierarchie** | 549, 1404 | Schriftregler skaliert nur `[data-lese]`; Hierarchie kippt bei 130 % | **braucht Davids Entscheid** — Umbau auf em-relative Tokens |
+| **Ä57/Ä58** | 826 | Panel-Kopf ohne Warnzeichen bei «noch nicht im Text»; Chips gerahmt, ☰ nicht | **kann H5 tragen** |
+| **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite — Ursache des NM-2-Verlusts auf H | **BLOCKER VOR FLIP**, zusammen mit NM-2 |
+| **`leser-lesemass` umhängen · `LeserRahmenV3`-Schnitt** | 1240 | Test-Umzug bzw. Datei-Schnitt | **kann H5 tragen** |
 
 ---
 
 ## 9 · Bilder
 
-⬜ *(wird gefüllt)*
+**24 von 24** unter `bilder/`, Namensform
+`<erlass>-<breite>-<schema>-<huelle>.png` mit Breite ∈ {D = 1280, S = 720,
+H = 390}, Schema ∈ {hell, dunkel}, Hülle ∈ {v1, v3}. Erlasse: **StPO Art. 429**
+(gleicher Anker, gleiche Scrollposition in beiden Hüllen) und **BS-640.100**.
+`deviceScaleFactor: 1`, `reducedMotion: reduce`, Schriften abgewartet.
+Protokoll: `bilder-protokoll.json`.
+
+**S = 720 px Einzelansicht**, nicht ein echtes Split-Pane: die Pane-Chrome
+(zweiter Kopf, zusätzliches ✕) ist damit **nicht** im Bild. Das ist bewusst so
+benannt, weil genau diese Chrome unter Ä46/Ä33 getrennt geführt wird; der
+Pane-Beweis ist ein Test, kein Bild (`leser-kopf-paritaet.e2e.ts`).
+
+**Was auf `stpo-429-H-hell-v3.png` ohne Messgerät zu sehen ist** — und was den
+Bogen an drei Stellen bestätigt:
+
+- **zwei Ortsangaben übereinander** («‹ Art. 429 StPO … Stand 01.04.2025 ✕» und
+  darunter «StPO · Art. 429 … ✕») = Ä45 Doppelkrume,
+- **zwei ✕ in zwei Zeilen** mit verschiedener Bedeutung = Ä46,
+- **kein Zähler und keine Lasche** für die Rechtsprechung = der NM-2-Verlust aus
+  §2, sichtbar statt behauptet.
 
 ---
 
 ## 10 · Belege
 
-⬜ *(wird gefüllt)*
+| Was | Wo |
+|---|---|
+| Rohdaten NM (54 Läufe, Protokoll je Schritt) | `nm-messung.json` |
+| Rohdaten CLS (4 Zellen × 5 Läufe, Verursacher-Knoten) | `cls-messung.json` |
+| Rohdaten axe + Proben (20 Kombinationen) | `axe-proben.json` |
+| Bilder + Protokoll | `bilder/`, `bilder-protokoll.json` |
+| A-8 · Hook und Rot-Beweis | `src/pages/gesetz-leser/v3/useElementBreite.ts`, `src/tests/leser-v3-elementbreite.test.ts` |
+| Flaker-Wurzel · Messreihe im Kopf | `e2e/helpers/leserBereit.ts` |
+| Fahrplan-Fortschreibung | `fahrplaene/FAHRPLAN-LESER-V3.md` Kap. 7 (Vollzugsvermerk H4-Vorbereitung) und Kap. 12 A-8 |
+
+**Nicht gemessen, ausdrücklich benannt:** (a) kein automatischer Sweep über alle
+Bundeserlasse (§5); (b) kein CI-Lauf dieser Änderungen — die Zahlen hier sind
+lokal; (c) die zwei nicht reproduzierten Flaker (§6); (d) NM in einem echten
+Split-Pane (S wurde als 720-px-Einzelansicht gemessen, §9).

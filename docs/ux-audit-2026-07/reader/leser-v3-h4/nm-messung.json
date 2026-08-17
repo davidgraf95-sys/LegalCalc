@@ -1,0 +1,419 @@
+{
+  "erzeugt": "2026-08-17T16:55:20.407Z",
+  "basis": "http://localhost:4791",
+  "erlass": "STPO",
+  "laeufe": 3,
+  "messbedingung": "macOS Apple Silicon, vite preview gegen frisch gebautes dist/, je Lauf frischer Browser-Kontext (kalt), ungedrosselt, keine Parallel-Last",
+  "ergebnisse": [
+    {
+      "breiteTag": "D",
+      "breitePx": 1280,
+      "huelle": "v1",
+      "aufgabe": "NM-1",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 5,
+      "klicks": 1,
+      "tasten": 4,
+      "msMedian": 385,
+      "msAlle": [
+        385,
+        371,
+        385
+      ],
+      "protokoll": [
+        "Klick: Feld zum Springen/Suchen",
+        "Eingabe (3 Tasten): Bestimmungsnummer = «429»",
+        "Taste: Enter (springen)"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "D",
+      "breitePx": 1280,
+      "huelle": "v1",
+      "aufgabe": "NM-2",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": 6,
+      "msAlle": [
+        8,
+        6,
+        2
+      ],
+      "protokoll": [],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "D",
+      "breitePx": 1280,
+      "huelle": "v1",
+      "aufgabe": "NM-3",
+      "erreicht": false,
+      "laeufeOk": "0/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": -1,
+      "msAlle": [
+        3373,
+        3271,
+        3136
+      ],
+      "protokoll": [],
+      "teil": {
+        "standSicht": true,
+        "warnSicht": false,
+        "warnImDom": false,
+        "scrolls": 0
+      },
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "D",
+      "breitePx": 1280,
+      "huelle": "v3",
+      "aufgabe": "NM-1",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 5,
+      "klicks": 1,
+      "tasten": 4,
+      "msMedian": 312,
+      "msAlle": [
+        312,
+        312,
+        300
+      ],
+      "protokoll": [
+        "Klick: Feld zum Springen/Suchen",
+        "Eingabe (3 Tasten): Bestimmungsnummer = «429»",
+        "Taste: Enter (springen)"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "D",
+      "breitePx": 1280,
+      "huelle": "v3",
+      "aufgabe": "NM-2",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 1,
+      "klicks": 1,
+      "tasten": 0,
+      "msMedian": 1233,
+      "msAlle": [
+        1233,
+        1232,
+        1239
+      ],
+      "protokoll": [
+        "Klick: Panel/Bezüge öffnen"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "D",
+      "breitePx": 1280,
+      "huelle": "v3",
+      "aufgabe": "NM-3",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": 35,
+      "msAlle": [
+        35,
+        33,
+        37
+      ],
+      "protokoll": [],
+      "teil": {
+        "standSicht": true,
+        "warnSicht": true,
+        "warnImDom": false,
+        "scrolls": 0
+      },
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "S",
+      "breitePx": 720,
+      "huelle": "v1",
+      "aufgabe": "NM-1",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 6,
+      "klicks": 2,
+      "tasten": 4,
+      "msMedian": 1006,
+      "msAlle": [
+        1006,
+        1007,
+        983
+      ],
+      "protokoll": [
+        "Klick: ☰ Gliederung/Blatt öffnen",
+        "Klick: Feld zum Springen/Suchen",
+        "Eingabe (3 Tasten): Bestimmungsnummer = «429»",
+        "Taste: Enter (springen)"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "S",
+      "breitePx": 720,
+      "huelle": "v1",
+      "aufgabe": "NM-2",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": 5,
+      "msAlle": [
+        8,
+        5,
+        3
+      ],
+      "protokoll": [],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "S",
+      "breitePx": 720,
+      "huelle": "v1",
+      "aufgabe": "NM-3",
+      "erreicht": false,
+      "laeufeOk": "0/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": -1,
+      "msAlle": [
+        3236,
+        3271,
+        3267
+      ],
+      "protokoll": [],
+      "teil": {
+        "standSicht": true,
+        "warnSicht": false,
+        "warnImDom": false,
+        "scrolls": 0
+      },
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "S",
+      "breitePx": 720,
+      "huelle": "v3",
+      "aufgabe": "NM-1",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 5,
+      "klicks": 1,
+      "tasten": 4,
+      "msMedian": 315,
+      "msAlle": [
+        336,
+        300,
+        315
+      ],
+      "protokoll": [
+        "Klick: Feld zum Springen/Suchen",
+        "Eingabe (3 Tasten): Bestimmungsnummer = «429»",
+        "Taste: Enter (springen)"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "S",
+      "breitePx": 720,
+      "huelle": "v3",
+      "aufgabe": "NM-2",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 1,
+      "klicks": 1,
+      "tasten": 0,
+      "msMedian": 1244,
+      "msAlle": [
+        1244,
+        1238,
+        1263
+      ],
+      "protokoll": [
+        "Klick: Panel/Bezüge öffnen"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "S",
+      "breitePx": 720,
+      "huelle": "v3",
+      "aufgabe": "NM-3",
+      "erreicht": false,
+      "laeufeOk": "0/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": -1,
+      "msAlle": [
+        3114,
+        3121,
+        3089
+      ],
+      "protokoll": [],
+      "teil": {
+        "standSicht": true,
+        "warnSicht": false,
+        "warnImDom": false,
+        "scrolls": 0
+      },
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "H",
+      "breitePx": 390,
+      "huelle": "v1",
+      "aufgabe": "NM-1",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 6,
+      "klicks": 2,
+      "tasten": 4,
+      "msMedian": 1027,
+      "msAlle": [
+        1039,
+        1009,
+        1027
+      ],
+      "protokoll": [
+        "Klick: ☰ Gliederung/Blatt öffnen",
+        "Klick: Feld zum Springen/Suchen",
+        "Eingabe (3 Tasten): Bestimmungsnummer = «429»",
+        "Taste: Enter (springen)"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "H",
+      "breitePx": 390,
+      "huelle": "v1",
+      "aufgabe": "NM-2",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": 8,
+      "msAlle": [
+        8,
+        2,
+        9
+      ],
+      "protokoll": [],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "H",
+      "breitePx": 390,
+      "huelle": "v1",
+      "aufgabe": "NM-3",
+      "erreicht": false,
+      "laeufeOk": "0/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": -1,
+      "msAlle": [
+        3261,
+        3278,
+        3270
+      ],
+      "protokoll": [],
+      "teil": {
+        "standSicht": true,
+        "warnSicht": false,
+        "warnImDom": false,
+        "scrolls": 0
+      },
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "H",
+      "breitePx": 390,
+      "huelle": "v3",
+      "aufgabe": "NM-1",
+      "erreicht": true,
+      "laeufeOk": "3/3",
+      "schritte": 5,
+      "klicks": 1,
+      "tasten": 4,
+      "msMedian": 335,
+      "msAlle": [
+        335,
+        353,
+        333
+      ],
+      "protokoll": [
+        "Klick: Feld zum Springen/Suchen",
+        "Eingabe (3 Tasten): Bestimmungsnummer = «429»",
+        "Taste: Enter (springen)"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "H",
+      "breitePx": 390,
+      "huelle": "v3",
+      "aufgabe": "NM-2",
+      "erreicht": false,
+      "laeufeOk": "0/3",
+      "schritte": 1,
+      "klicks": 1,
+      "tasten": 0,
+      "msMedian": -1,
+      "msAlle": [
+        22477,
+        22484,
+        22472
+      ],
+      "protokoll": [
+        "Klick: Panel/Bezüge öffnen"
+      ],
+      "konsolfehler": 0
+    },
+    {
+      "breiteTag": "H",
+      "breitePx": 390,
+      "huelle": "v3",
+      "aufgabe": "NM-3",
+      "erreicht": false,
+      "laeufeOk": "0/3",
+      "schritte": 0,
+      "klicks": 0,
+      "tasten": 0,
+      "msMedian": -1,
+      "msAlle": [
+        3156,
+        3029,
+        3059
+      ],
+      "protokoll": [],
+      "teil": {
+        "standSicht": true,
+        "warnSicht": false,
+        "warnImDom": false,
+        "scrolls": 0
+      },
+      "konsolfehler": 0
+    }
+  ]
+}
