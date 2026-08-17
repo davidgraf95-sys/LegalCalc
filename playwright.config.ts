@@ -141,6 +141,12 @@ const V1_GEMISCHT = [
   '**/leser-breite-a37.e2e.ts',        // 1/3 rot (Spaltenmass der 2-Spalten-Zelle der Ist-Hülle)
   '**/druck-fundstellen-z2.e2e.ts',    // 1/7 rot (⧉ an der Bezüge-Zeile als Split-Einstieg)
   '**/leser-weiterlesen-r4-r8.e2e.ts', // 1/10 rot (Vorrang der Kopf-Suche auf «/» und ⌘K)
+  // 1/4 rot. Der Fall war zuerst UMGEHÄNGT und wurde dabei rot — und hat damit
+  // die Vermutung widerlegt: in V3 steht das Suchfeld @1280 IN der
+  // Gliederungsspalte (Zone A des Scrollers, gemessen 18.8.2026), also genau
+  // dort, wo dieser Fall es verbietet. Kein Defekt, sondern die Anordnung aus
+  // Kap. 4; die Zusage gehört zur alten Zwei-Leisten-Anordnung.
+  '**/leser-suche-a35-a40-a41.e2e.ts',
 ]
 
 const V1_PINNED = [...V1_NUR, ...V1_GEMISCHT]

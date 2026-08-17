@@ -419,7 +419,7 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **H2** | **Suchverhalten** — Pos. 5 (UI-Seite), 14 | geändert: `TrefferListe`-Nachfolger in V3, Sprung-Offset gegen die Sticky-Höhe | +200 / −0 | 3: `leser-v3-treffer-reihenfolge`, `leser-v3-esc-ohne-sprung`, `leser-v3-treffer-mobil` | Treffer stehen in Erlass-Reihenfolge je Artikel gruppiert, und ✕/Esc bewegen den Scroll um 0 px. | **M** |
 | **H2b** | **Ästhetik-Nachzug** — die Positionen des Ästhetik-Reviews H1, die H2 aus Deckelgründen liegen liess (s. Ä-Tabelle im Vollzugsvermerk H2). Inhalt: **Ä1** Leerzone unter der Krumen-Leiste schliessen + Krumen-Leiste zeigt im Split den falschen Artikel (**Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle) + **App-Seitenleiste im Leser eingeklappt starten** · **Ä5** Seitenleiste als drei gerahmte Kästen, hängendes «·», Durchschimmern unter dem klebenden Block · **Ä8** Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung) · **Ä9** Schriftregler doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EINER · **Ä10** Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser · **Ä14** Fokusring am Suchfeld doppelt/dick | **Ä1 berührt als einzige Position `src/components/layout/**`** (App-Seitenleiste, Krumen-Leiste) — bis hierher war die Fläche für alle H-Etappen TABU. Sie wird darum mit **deklarierter Whitelist** geöffnet: nur die Dateien, die den Seitenleisten-Default und die Krumen-Quelle tragen, jede mit Nennung im PR. Alles andere in `layout/` bleibt gesperrt. Übrige Positionen: `src/pages/gesetz-leser/v3/**`, `src/index.css` | +150 / −80 | keine neuen Tore nötig — die Positionen sind an den Ästhetik-Screens abzunehmen, nicht an Zusicherungen; Ausnahme **Ä1 Krumen-Wahrheit**: eigener Test, weil eine falsche Ortsangabe ein §7-Fehler ist und kein Geschmack | Die sechs Positionen sind **sinnvoll umgesetzt, nicht abgehakt** (Drei-Prüfer-Regel oben, Prüfer 2), die Krumen-Leiste nennt im Split denselben Artikel wie die Lesespalte, und ohne Flag ist der Ist-Stand unverändert. | **M** |
 | **H3** ✅ | **Panel/Sheet für Rechtsprechung + Kontext** — Pos. 3, 12, 17; **Vorbedingung F4**. Enthält **Panel-Nachladen** (s. u.) | neu: `LeserPanel.tsx` (3 Reiter, vierter Filter «Sachgebiet» **vorgesehen**, Datenlogik dazu bleibt `W2·7-VZUI-SACHGEBIET`) · behalten: `bezuegeLaden`, `bezugAuswahl`, `bezugZeit`, `bezugPortion` (Datenlogik unverändert) | +450 / −0 | 4: `leser-v3-panel-facetten`, `leser-v3-panel-zaehler`, `leser-v3-kontext-cls`, `leser-v3-prerender-bezuege` | Jeder Entscheid, der heute unter einem Artikel erreichbar ist, ist über Zähler → Panel erreichbar, in beiden Panes, ohne dritte vertikale Fläche — und das prerenderte HTML trägt die Bezüge unverändert. *(Erfüllt; zwei Teile GEMESSEN ANDERS als vorgesehen: das prerenderte HTML trug nie Bezüge, und die 22-rem-SPALTE passt nicht in den 70-rem-Seitenrahmen — Rechnung, Ersatz und nötiger Entscheid im Vollzugsvermerk H3.)* | **L** |
-| **H4** | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `playwright.config.ts` | ±0 | 0 neu (11 alte B-Tests werden entfernt/umgehängt) | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
+| **H4** ✅ **VOLLZOGEN 18.8.2026** (Vermerk «H4 — DER FLIP» am Ende dieses Kapitels) | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `leserFlag.ts`, `playwright.config.ts`, 14 Spec-Dateien | ±0 | **0 neu; 25 Bestands-Dateien berührt** — 10 umgehängt, 5 ganz + 9 fallweise auf die alte Hülle gepinnt, 2 Doppelungen gelöscht. Die Vorab-Schätzung «11 alte B-Tests» lag um mehr als das Doppelte zu tief; der Grund steht im Vermerk | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
 | **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, **`LeserAnsichtMenu.tsx` samt der darin definierten `OptSwitch`** (S1-Nachzug 17.8.2026, Architektur-Prüfer C3 — namentlich aufgeführt, weil `OptSwitch` die V1-KOPIE von `V3Switch` ist: gleiche Optik, gleiche ARIA-Mechanik, seit dem Ä27-Nachzug auch gleiche `hinweis`/`aria-describedby`-Logik. Sie darf H5 nicht überleben, sonst bleibt die Doppelung als zweite Wahrheit stehen, §5), `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) · **`components/kontext/KontextPanel.tsx`** — und dann zwingend die Kante `v3/leserV3Modell` → `../inhalt-ansichten` → `KontextPanel` mitschneiden. **NICHT auf die Liste** gehört `components/verzahnung/BezugFacettenWahl.tsx`: geteilter Baustein, den V3 im Panel selbst mountet (Korrektur H3-Nachzug 17.8.2026); ebenfalls **nicht** `gesetz-leser/berechnungen.ts` mit `bieteAenderungsvermerkeSchalter` — geteilte Quelle, die V1 UND V3 tragen (D1, H3-Nachzug 17.8.2026) · dazu die dann leere `v3/GesetzLeserV3.tsx`-Naht und `helpers/panelOeffnen.ts`, sobald es nur noch EINE Hülle gibt | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
 
 ### ✅ Vollzugsvermerk H2 (16.8.2026, Branch `feat/leser-v3-h2`)
@@ -2027,6 +2027,122 @@ fehlt. Neu: Chip «gegen Fedlex-Konsolidierung geprüft am …» plus Klartext-W
 `nichtKonsolidiert` mit `dateEntryInForce ≤ heute`. **§5-Pflicht:** derselbe Wortlaut steht an
 zwei Stellen (`ErlassLeserKopf.tsx:79`, `seo-detail.ts:269`) — beide im **selben** PR; zusätzlich
 die Kommentar-Referenzen `index.css:867,909`.
+
+---
+
+### ✅ Vollzugsvermerk **H4 — DER FLIP** (18.8.2026, Branch `feat/leser-v3-h4-flip`, Basis `f918a0b12`)
+
+**Der Umschalter ist umgelegt.** Grundlage ist Davids Ja vom 17.8.2026
+spätabends (Chat, wörtlich «ja und c, mach so») — damit ist das letzte offene
+Flip-Kriterium («David-Go nach Kontaktbogen», Kap. 7) erfüllt. Seither rendert
+der Leser **ohne Adresszusatz V3**; der Rückweg ist `?leser=v1` und wird
+gemerkt. Die alte Hülle bleibt bis **H5** lauffähig (H5 spätestens einen PR
+später, Fenster-Deckel unverändert).
+
+#### Was am Schalter selbst geschah
+
+| Sache | Vollzug |
+|---|---|
+| Grundzustand | `leserFlagAuswerten('' , null)` gibt jetzt `v3`. Die Funktion ist zeichengleich derselbe Bau, getauscht sind nur die Rollen von `'v1'` und `'v3'` |
+| **Schlüssel wechselt mit** | neu `lm.leser.v1`, nicht der invertierte alte. Begründung: wer bis gestern ausdrücklich V3 wählte, trägt `lm.leser.v3='1'` — eine Invertierung hätte ihm ausgerechnet V1 gezeigt, also das Gegenteil seiner Wahl. Mit eigenem Schlüssel ist der Alt-Eintrag schlicht **inert**; er wird bewusst nicht weggeräumt (eine Aufräum-Routine wäre Code, den nur H5 wieder löschen müsste) |
+| Rückweg | `?leser=v1` schaltet **und merkt**; `?leser=v3` löscht die Merkung. Idempotenter Vollzug im Render-Rumpf bleibt unverändert (Bug-Check B2, Split-View) |
+| Vitest | `src/tests/leser-v3-flag.test.ts` ehrlich nachgezogen — deklarierte fachliche Änderung, `feat(`-Commit, nie `refactor(` |
+
+#### Was am Testapparat geschah — und der Befund, der die Planung korrigiert
+
+Das Projekt `leser-v3` heisst jetzt **`leser-v1`** und trägt denselben
+Mechanismus (`storageState`) für den **Rückweg**. Der Paritätsbeweis ist Wort für
+Wort derselbe, nur gespiegelt: die N-Specs laufen weiter DOPPELT, im Regelprojekt
+gegen V3 und im Rückweg-Projekt gegen V1. `gesetze-ux-g3a` und `leser-kopf-g2b`
+sind nach der Selektor-Korrektur wieder paritätsfähig und stehen zurück in
+`N_SPECS`.
+
+**Der Befund, der festgehalten werden muss** (§17): Die Umhäng-Liste des
+Kontaktbogens (§7) entstand per Grep gegen die Ist-Hülle und kannte **sechs**
+betroffene Dateien; die Etappen-Tabelle schätzte «11 alte B-Tests». Der erste
+**Voll-Lauf am Flip-Stand** (`npx playwright test --project=chromium`, 634 Tests)
+meldete **47 rot in 18 Dateien**. Die zwölf zusätzlichen Dateien fallen alle in
+**eine** Klasse, die eine Selektor-Suche strukturell nicht sehen kann: sie greppt
+nach Hüllen-Selektoren, nicht nach **Montagepunkten**. Die Rechtsprechungs- und
+Materialien-Auskunft stand in V1 am **Artikelfuss** und im
+**Gliederungs-Scroller** — V3 hat sie mit Pos. 12 / Kap. 4d ins Panel gezogen.
+Jede Spec, die dort etwas behauptet, ist in V3 nicht falsch, sondern
+**gegenstandslos**, und keine davon trägt einen der gegreppten Selektoren.
+
+**Lehre, hier verankert:** vor einem Hüllen-Flip zählt nicht die Grep-Liste,
+sondern der Voll-Lauf gegen den geflippten Stand. Die Reihenfolge «flippen →
+messen → umhängen» war richtig; eine vorab erstellte Liste ist eine Hypothese,
+keine Inventur (§0 Ziff. 3: Verteilung statt Einzelwert).
+
+**Zweiter Befund gleicher Art, kleiner:** zwei Verdikte der §7-Liste waren
+schlicht falsch, und zwar in die teure Richtung — sie verlangten Arbeit, wo
+keine nötig war. `hist-ansicht-w25i` («UMHÄNGEN, verifiziert») läuft im
+Regelprojekt gegen V3 **ohne jede Änderung** grün, alle 10 Fälle; sechs weitere
+Dateien standen als «UMHÄNGEN — Verdacht» und sind ebenfalls grün. Nichts davon
+wurde angefasst: ein Umbau ohne vorher gesehenen Fehlschlag ist keiner
+(§0 Ziff. 2).
+
+Die vollständige Vollzugs-Tabelle (Spec → Verdikt → Nachweis) steht im
+Kontaktbogen `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md` §7a, die
+H5-Auflagen in §7b. Kurzfassung:
+
+| Verdikt | Zahl | Dateien |
+|---|---|---|
+| **UMGEHÄNGT** (Anker an V3 nachgezogen, Aussage unverändert) | 10 | `gesetze-ux-g3a` · `leser-kopf-g2b` · `leser-kopf-v2` · `leser-optionen` · `leser-r1-r2` · `leser-ruecksprung-r5-r7` · `leser-v3-umschalten` · `leser-spy-w25d` · `leser-adresse-lm202` · `leser-v3-flag` |
+| **GEPINNT, ganze Datei** (läuft nur noch im Rückweg-Projekt) | 5 | `bezuege-facetten-b4` · `bezuege-zeitstrahl-b5` · `leser-kontext-e4` · `leser-trefferliste-overlay-mobil-w219` · `split-view-a34` |
+| **GEPINNT, Einzelfall** (Datei läuft in beiden Projekten) | 9 | `verzahnung` (6/11) · `leitfaelle-chips` (3/6) · `normrevision-badge` (2/3) · `materialien-m5-verzahnung` (2/3) · `rechtsprechung` (1) · `leser-breite-a37` (1/3) · `druck-fundstellen-z2` (1/7) · `leser-weiterlesen-r4-r8` (1/10) · `leser-suche-a35-a40-a41` (1/4) |
+| **GELÖSCHT** (Doppelung, mit Nichttrage-Nachweis) | 2 Fälle | B3-Paar in `leser-optionen` (gedeckt durch `leser-v3-umschalten` (a2) **plus** den null-Fall ZH-211.11) · «Desktop-TOC-Kopf trägt denselben Baustein» in `leser-r1-r2` (`leser-v3-suchfeld-ueberall` (a)/(c) sagt strenger, dass es nur EINEN gibt) |
+| **UNBERÜHRT, grün** | 12 | u. a. `hist-ansicht-w25i`, `gesetze-historie-badge`, `leser-lesemass`, `leser-gliederung-a33`, `leser-position-u` |
+
+**Kein Timeout erhöht, keine Assertion gelockert** (§6.3). Zwei Gegenproben
+gegen Tore, die nicht scheitern können (§6.7): der `, header`-Fallback in
+`gesetze-ux-g3a` fiel (er wich auf den globalen Topbar-Header aus), und
+`leser-v3-umschalten` (c) prüft die V1-Seite jetzt POSITIV über
+`[data-ansicht-menu]` statt über die blosse Abwesenheit des V3-Rahmens.
+
+#### Warum «pinnen» und nicht «umschreiben»
+
+Ein Fall, der die Wirkung an einem verschwundenen Ort misst, wird beim
+Umschreiben nicht zum geänderten, sondern zum **neuen** Test — und der gehört zu
+den `leser-v3-*`-Specs, nicht in eine Datei, die H5 löscht. Gepinnt bleibt er bis
+H5 scharf, denn die alte Hülle ist bis dahin der freigegebene Rückweg und darf
+nicht unbewacht sein. Damit dabei nichts still verschwindet, verlangt das Muster
+(`e2e/helpers/istHuelle.ts`) bei **jedem** Skip die Angabe, welche
+`leser-v3-*`-Spec die Sache in V3 prüft; wo keine existiert, steht dort
+«Deckungslücke, H5-Auflage». **H5 darf die Ist-Hülle erst löschen, wenn die
+Lücken aus §7b geschlossen sind** — die gewichtigste ist
+`materialien-m5-verzahnung`: dort hängen Rechtsdaten (kuratiertes Sublabel «via
+Art. 24», Dokument-Stand, async-Merge), und V3 hat den Reiter «Materialien»
+(`v3/PanelMaterialien.tsx`), aber keine Spec, die die Daten dort nachweist.
+
+Bei gemischten Dateien steht die Grenze am **Einzelfall**, nicht an der Datei:
+`verzahnung.e2e.ts` hat 5 von 11 Fällen hüllenneutral, und die Datei ganz zu
+verschieben nähme dem Regelprojekt diese Wächter — ein Tor, das die neue Hülle
+nicht mehr prüft, ist schlimmer als keines (§6.7).
+
+#### Ein Fall bleibt ROT, und er wird hier nicht zugedeckt
+
+`leser-r1-r2:517` (A9-DoD) misst @390 unter 6× CPU-Drossel **CLS 0.0202 gegen
+Budget 0** — zweimal gemessen (Voll-Lauf und seriell mit `--workers=1`), Quelle
+laut Sonde ein `DIV` der Such-Zone, das beim Suchstart um 24 px wächst und die
+Lesespalte schiebt. Nicht gelockert, nicht gepinnt, aus drei Gründen: die
+Assertion ist **hüllenneutral richtig** (ein Layout-Sprung ohne Nutzereingabe ist
+in V3 genauso verboten), das Budget nachzugeben wäre §6.3-Bruch, und der Fix
+liegt in `src/pages/gesetz-leser/v3/SuchZone` — derselben Fläche, die der
+**Ä60-(c)-PR** gerade umbaut, und er widerspricht `leser-v3-suchfeld-ueberall`
+(e) («die ausgelegte Höhe der Such-Zone deckt ihr Markup — ohne Luft»). Höhe
+reservieren heisst dort Luft einbauen. **Das ist ein Entscheid und gehört in den
+Rahmen-PR, nicht in den Flip-PR.** Einordnung: kein Rechenfehler, kein
+Normtext-Befund (Golden byte-gleich), ein Bedien-Detail auf dem Handy unter
+künstlicher Drossel — es blockiert den Flip nicht, ist aber der **eine offene
+rote Fall** dieses Standes und darf nicht als grün gemeldet werden (§8).
+
+#### Was der Flip NICHT anfasst
+
+`src/pages/gesetz-leser/v3/**` und `src/index.css` blieben unberührt — sie
+gehören zum parallelen **Ä60-(c)**-PR (breiterer Leser-Rahmen). Keine
+H5-Löschung: die V1-Hülle ist vollständig lauffähig, und das Projekt `leser-v1`
+ist die letzte Stelle im Repo, die sie fährt.
 
 ---
 
