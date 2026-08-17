@@ -40,6 +40,14 @@ test('FL-3: das Projekt entscheidet den Grundzustand — ohne Flag kein V3-Rahme
 })
 
 test('FL-3: ?leser=v3 schaltet an und merkt es sich, ?leser=v1 löscht es wieder', async ({ page }) => {
+  // Vier volle ZGB-Navigationen (607 KB Erlass) in EINEM Test — die Datei misst
+  // seriell 33.9 s und reisst damit STRUKTURELL am 30-s-Default, nicht wegen
+  // eines Defekts. Gemessen 16.8.2026; unter Last fiel FL-3 stets mit
+  // `Test timeout ... exceeded` bzw. `net::ERR_ABORTED`, NIE mit einer
+  // Assertion. Dasselbe Zeitbudget wie FL-1 zwei Tests weiter unten
+  // (Präzedenz A17) — reine Infrastruktur, kein `expect` und kein Prüfschritt
+  // berührt (§6.3).
+  test.slow()
   const fehler = fehlerSammeln(page)
   const marker = page.locator(MARKER)
 

@@ -6,12 +6,15 @@ import type { InternRefs } from '../../components/NormText';
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import {
-  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges,
+  setzeSuchHighlight, sammleTrefferRanges, setzeSuchHighlightRanges, neueHighlightInstanz,
 } from './suchHighlight';
 import { loeseArtikelEingabe, pfadLabels } from './suchTreffer';
 import { pfadZu } from './helpers';
 import { paneRoot } from './berechnungen';
-import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } from './leserSuche';
+import {
+  baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge, artikelFundstellen,
+  type SuchBereich,
+} from './leserSuche';
 
 // ═══ ABSCHNITT · In-Gesetz-Suche: Treffer, Hervorhebung, Quickjump ═══════════
 //
@@ -51,6 +54,7 @@ import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer, fundstellenFolge } fr
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
   internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
+  bereich = 'alles',
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -76,11 +80,25 @@ export function useSuchTreffer({
    *  greift dort ins Leere — die Markierung liefe dem Leser sichtbar hinterher. */
   imPane: boolean;
   wurzel: RefObject<HTMLElement | null> | null;
+  /** H2 · Suchbereich (Kap. 4b, Pos. 5). Ungesetzt = `alles`, also exakt das
+   *  Verhalten vor H2 — die Ist-Huelle reicht ihn nicht durch und aendert sich
+   *  dadurch nicht (FL-4). */
+  bereich?: SuchBereich;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
   // vollständig bleibt, ist es die Lesespalte selbst.
   const leseRef = useRef<HTMLDivElement | null>(null);
+
+  // ─── QS-UI-HIGHLIGHT: EINE Registry-Identität je Leser-Instanz ─────────────
+  // Der Hook läuft je Pane einmal; diese Identität ist damit genau die
+  // «Registry je Leser-Instanz», die der Roadmap-Schritt verlangt. Sie steckt
+  // in `useState` mit LAZY-Initialisierer, weil nur der eine über die ganze
+  // Lebensdauer der Instanz stabile Wert zusagt — ein `useMemo` darf React
+  // verwerfen, und ein neu gezogenes Symbol hiesse: die alte Buchungszeile
+  // bliebe stehen und die Markierung des eigenen Panes doppelte sich.
+  // Der Setter wird nie gerufen; das Symbol ist von Geburt an unveränderlich.
+  const [highlightInstanz] = useState(() => neueHighlightInstanz('gesetz-leser'));
 
   // ─── Ansicht-Schalter beobachten ───────────────────────────────────────────
   // Die Toggles sind BEWUSST reine CSS-/Attribut-Schalter am <html>
@@ -118,7 +136,7 @@ export function useSuchTreffer({
     () => (sucheAktiv && erlassKey && eintraege ? baueLeserSuchIndex(erlassKey, eintraege, struktur) : null),
     [sucheAktiv, erlassKey, eintraege, struktur],
   );
-  const treffer = useMemo(() => sucheImErlass(index, sucheTrim), [index, sucheTrim]);
+  const treffer = useMemo(() => sucheImErlass(index, sucheTrim, bereich), [index, sucheTrim, bereich]);
   const { artikel: artikelAnzahl, fundstellen } = useMemo(() => zaehleTreffer(treffer), [treffer]);
   // B5: der Ansicht-Schalter gehört IN die Folge, nicht daneben — bei
   // ausgeblendetem Apparat sind Fussnoten-Stellen nicht malbar, und ein Rang,
@@ -134,8 +152,8 @@ export function useSuchTreffer({
   const male = useCallback(() => {
     const alle: Range[] = [];
     for (const rs of rangesRef.current.values()) alle.push(...rs);
-    setzeSuchHighlightRanges(alle);
-  }, []);
+    setzeSuchHighlightRanges(alle, highlightInstanz);
+  }, [highlightInstanz]);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     // `leseWurzel` statt `wurzel`: seit B7 trägt die Prop `wurzel` den
@@ -144,7 +162,7 @@ export function useSuchTreffer({
     const leseWurzel = leseRef.current;
     rangesRef.current = new Map();
     if (!sucheAktiv || !leseWurzel || typeof IntersectionObserver === 'undefined') {
-      setzeSuchHighlight(null, '');
+      setzeSuchHighlight(null, '', highlightInstanz);
       return;
     }
     const beob = new IntersectionObserver((eintraegeIo) => {
@@ -175,7 +193,7 @@ export function useSuchTreffer({
     return () => {
       beob.disconnect();
       rangesRef.current = new Map();
-      setzeSuchHighlight(null, '');
+      setzeSuchHighlight(null, '', highlightInstanz);
     };
     // `ansichtTick`: ein Ansicht-Toggle ändert die MALBARKEIT (Fussnoten-Apparat
     // display:none) — die Ranges müssen dann neu entstehen (RV6).
@@ -185,7 +203,7 @@ export function useSuchTreffer({
     // unmarkiert — der Leser sah einen Treffer-Artikel ohne eine einzige
     // leuchtende Stelle (§8). Der Scroll-Spy führt `offen` aus genau diesem Grund
     // schon in seiner Liste (inhalt-hooks.tsx).
-  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male]);
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male, highlightInstanz]);
 
   // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
   // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.
@@ -306,6 +324,20 @@ export function useSuchTreffer({
     if (n >= 0) zeigeFundstelle(n);
   }, [folge, zeigeFundstelle]);
 
+  /**
+   * H2 · Klick auf EINE Fundstellen-Zeile der V3-Liste: zu genau dieser Stelle.
+   *
+   * Adressiert wird ueber (Artikel, Rang) statt ueber den flachen Folge-Index —
+   * die Liste kennt den Artikel und den Rang darin, den flachen Index kennt nur
+   * die Folge. Die Aufloesung passiert hier, damit die Liste keine zweite
+   * Zaehlung fuehren muss (§5). Kein Treffer in der Folge (Rang gefiltert
+   * weggefallen) ⇒ es passiert nichts, statt irgendwohin zu springen (§8).
+   */
+  const springeZuStelle = useCallback((token: string, rang: number) => {
+    const n = folge.findIndex((f) => f.token === token && f.rang === rang);
+    if (n >= 0) zeigeFundstelle(n);
+  }, [folge, zeigeFundstelle]);
+
   // ═══ ABSCHNITT · R2 · Quickjump «Art. N» + «Sie sind hier» ═══════════════════
   // Quickjump: KEIN Index, KEIN Server — die Eingabe wird gegen die bereits
   // geladene Token-Map des Erlasses aufgelöst (dieselbe, die Querverweise im
@@ -342,12 +374,30 @@ export function useSuchTreffer({
   // Erlass-/Pane-Wechsel). Der Effekt oben bleibt der einzige SETZENDE Pfad.
   useEffect(() => {
     if (typeof window === 'undefined' || !sucheFeldLeer) return;
-    setzeSuchHighlight(null, '');
-  }, [sucheFeldLeer]);
+    setzeSuchHighlight(null, '', highlightInstanz);
+  }, [sucheFeldLeer, highlightInstanz]);
+
+  // ─── H2 · Fundstellen EINES Artikels, auf Abruf ────────────────────────────
+  // Die V3-Trefferliste zeigt unter dem Artikelkopf eine Zeile je Fundstelle mit
+  // eigenem Kontext-Ausschnitt. Diese Ausschnitte im Voraus fuer ALLE Treffer zu
+  // bauen waere der teuerste Handgriff des Lesers (Herleitung an
+  // `artikelFundstellen`, leserSuche.ts) — sie kommen darum nur fuer den
+  // Artikel, den die Liste gerade aufklappt. Der Index liegt ohnehin schon da;
+  // ein zweiter waere die §5-Doppelwahrheit.
+  const fundstellenFuer = useCallback(
+    (token: string) => artikelFundstellen(index, token, sucheTrim, bereich),
+    [index, sucheTrim, bereich],
+  );
+
+  // Welche EINZELNE Fundstelle die ^v-Navigation gerade anzeigt — die Liste
+  // hebt genau diese Zeile hervor. Projektion aus der Folge, kein zweiter
+  // Zustand: `trefferPos` ist der flache Rang, `folge` loest ihn in
+  // (Artikel, Rang darin) auf.
+  const aktivStelle = trefferPos >= 0 ? folge[trefferPos] ?? null : null;
 
   return {
     leseRef, treffer, artikelAnzahl, fundstellen, fussnotenAus,
-    trefferPos, aktivToken, springeZuFundstelle, springeZuTreffer,
-    loeseArtikel, siePfad, siePfadArtikel,
+    trefferPos, aktivToken, springeZuFundstelle, springeZuTreffer, springeZuStelle,
+    aktivStelle, fundstellenFuer, loeseArtikel, siePfad, siePfadArtikel,
   };
 }

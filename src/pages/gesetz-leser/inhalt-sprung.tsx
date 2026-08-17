@@ -47,6 +47,14 @@ export function useSektionSprung(opts: {
   setTocAuf: Dispatch<SetStateAction<boolean>>;
   scrollVorSucheRef: MutableRefObject<number | null>;
   sucheVorherRef: MutableRefObject<string>;
+  /**
+   * Darf das Beginnen/Beenden der Suche den Lesetext bewegen?
+   *
+   * Ungesetzt = `true` = das gewachsene Verhalten der Ist-Huelle, Zeile fuer
+   * Zeile unveraendert (FL-4). Die V3-Huelle setzt `false` — Herleitung am
+   * Effekt unten.
+   */
+  scrollBeiSuchwechsel?: boolean;
   refs: {
     jumpLockRef: MutableRefObject<boolean>;
     autoOffenRef: MutableRefObject<Set<string>>;
@@ -59,6 +67,7 @@ export function useSektionSprung(opts: {
   const {
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    scrollBeiSuchwechsel = true,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   } = opts;
 
@@ -170,6 +179,25 @@ export function useSektionSprung(opts: {
   // Gliederung) mit seinem geschrumpften Inhalt über den Viewport hinaus und war
   // «aus dem Bild». Nach oben scrollen holt Suchleiste + Gliederung zurück ins
   // Sichtfeld. Reine Scroll-Steuerung (kein setState) → keine Render-Kaskade.
+  //
+  // ─── H2 · WARUM DIE V3-HÜLLE HIER AUSSTEIGT (Pos. 14) ──────────────────────
+  //
+  // Die Begründung oben nennt ihren eigenen Ablauf: das Hoch-Scrollen war nötig,
+  // WEIL die Trefferliste den Volltext ersetzte und der sticky-Block mit dem
+  // geschrumpften Inhalt aus dem Bild rutschte. Seit S8 bleibt die Lesespalte
+  // vollständig, und in V3 steht die Trefferliste in der Seitenleiste — der
+  // Anlass ist damit ersatzlos weg, die Bewegung aber geblieben.
+  //
+  // Was sie heute anrichtet, ist genau Pos. 14: wer beim Lesen von Art. 429 kurz
+  // etwas sucht und das Feld wieder leert, bekommt ZWEI ungefragte Sprünge (erst
+  // an den Anfang, dann zurück) — und der zweite trifft nur, solange nichts
+  // dazwischen die Höhe verändert hat. «Recover from mistakes» heisst, dass das
+  // Verlassen einer Suche den Text gar nicht erst anfasst.
+  //
+  // Die Ist-Hülle behält das Verhalten unverändert (`scrollBeiSuchwechsel`
+  // ungesetzt = true): sie filtert ihre Lesespalte nicht mehr, aber sie ist
+  // eingefroren (FL-4), und eine stille Änderung an ihr wäre keine Etappe,
+  // sondern ein Nebenwirkungs-Fund im falschen PR.
   useEffect(() => {
     // An `sucheDebounced` gekoppelt (nicht `suche`): der Ansichtswechsel Volltext↔
     // Trefferliste erfolgt über `treffer` (aus sucheDebounced), darum muss die
@@ -177,6 +205,10 @@ export function useSektionSprung(opts: {
     const war = sucheVorherRef.current;
     sucheVorherRef.current = sucheDebounced;
     if (typeof window === 'undefined') return;
+    // V3: keine der beiden Bewegungen. Der Merkposten wird trotzdem NICHT
+    // gefüllt — ein halb geführter Zustand, den niemand ausliest, wäre die
+    // schlechtere Hälfte von beidem.
+    if (!scrollBeiSuchwechsel) return;
     // Im Pane scrollt der Pane-Container, nicht das Fenster (B-2.5).
     const sc = paneRoot(imPane, wurzel);
     const hole = () => sc ? sc.scrollTop : window.scrollY;
@@ -193,7 +225,7 @@ export function useSektionSprung(opts: {
     // über die Lebenszeit identisch; als Hook-Argumente kann die Regel das nicht
     // mehr sehen. Deps byte-gleich zum Inline-Stand (§6).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sucheDebounced, imPane, wurzel]);
+  }, [sucheDebounced, imPane, wurzel, scrollBeiSuchwechsel]);
 
   return springeZuSektion;
 }

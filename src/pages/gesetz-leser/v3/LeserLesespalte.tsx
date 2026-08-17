@@ -85,7 +85,21 @@ export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
   };
 
   return (
-    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-normtext">
+    // ── Ä2 · SATZSPIEGEL V3 = 40 rem (Entscheid 16.8.2026, Design-Grundlage
+    // Kap. 3) ──────────────────────────────────────────────────────────────
+    // Bis hierher stand `max-w-normtext` (42 rem), byte-gleich aus der
+    // Ist-Hülle. Gemessen blieben davon in V3 aber nur 556–616 px @1280 übrig,
+    // weil die 18-rem-Seitenleiste vorher Breite nimmt: der Lesetext war
+    // schmaler als sein eigenes Mass und schwankte mit dem Klapp-Zustand.
+    // `max-w-reading` (40 rem) ist ein BESTEHENDES Haus-Token, kein Ad-hoc-Wert.
+    //
+    // DEKLARIERTE ÄNDERUNG AN DER PX-REGION: der Textkörper wird schmaler, die
+    // V3-Baseline ist einmalig neu gesetzt. Zulässig, weil PX seit dem
+    // Entscheid vom 16.8. bei GLEICHER Artikelbreite misst
+    // (`e2e/px-textkoerper.e2e.ts`) — es beweist den Text-KERN, nicht den
+    // Satzspiegel. Ohne diese Trennung risse jede Layout-Entscheidung das
+    // Treue-Tor mit, und genau daran wäre es unbrauchbar geworden.
+    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
       {trefferListe && <div className="mb-8 border-b border-line pb-4">{trefferListe}</div>}
       <div className="space-y-2">
         {ohneGliederung.length > 0 && (

@@ -148,6 +148,12 @@ interface ZeilenProps {
   /** B3: die Sprungzeile gibt ALLE ihre Ids mit, nicht nur die äusserste. */
   onSprung: (ids: string[]) => void;
   onSprungArtikel: (token: string) => void;
+  /** H2 (David 16.8.2026): Klick auf den TITEL klappt zusätzlich auf.
+   *  Ungesetzt = false = das Verhalten der eingefrorenen Ist-Hülle (FL-4). */
+  titelKlapptAuf?: boolean;
+  /** H2 (David 16.8.2026): Baum in gedämpfter Chrome-Stimme, aktive Zeile im
+   *  Akzent. Ungesetzt = false = die Ist-Stimme, unverändert (FL-4). */
+  stimmeGedaempft?: boolean;
 }
 
 // ─── F3 (Teil 1 von 2): EINE Zeile = EIN memoisiertes Bauteil ────────────────
@@ -167,6 +173,7 @@ interface ZeilenProps {
 // darum steht hier ausdrücklich nur die Hälfte, und der Unmount folgt in S5.
 const Zeile = memo(function Zeile({
   k, erster, aktivPfad, markeId, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
+  titelKlapptAuf = false, stimmeGedaempft = false,
 }: ZeilenProps): ReactNode {
   // F1 (§9-Bug-Check 13.8.2026): An einem gemischten Knoten (T8) hängen
   // Sektions- und Artikel-Kinder am selben Klapp-Zustand, dürfen aber nicht
@@ -183,7 +190,26 @@ const Zeile = memo(function Zeile({
   const istMarke = markeId !== null && k.id === markeId;
   const aufPfad = !istMarke && k.ids.some((id) => aktivPfad.includes(id));
   const stimme = k.art === 'artikel' ? ARTIKEL_STIMME : ebenenStimme(k.randtitel, k.tiefe);
-  const tinte = istMarke ? 'text-ink-900' : aufPfad ? (AHNEN_TINTE[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
+  // ─── H2 · Stimme der Gliederung (David 16.8.2026) ─────────────────────────
+  // Befund: der Baum sprach in DERSELBEN Tintenskala wie der Normtext
+  // (ink-800/700/600), die aktive Zeile war nur eine Stufe dunkler (ink-900).
+  // Navigation und Inhalt klangen damit gleich laut, obwohl das eine Chrome ist
+  // und das andere amtlicher Text.
+  // NEU: der ganze Baum sinkt um EINE Stufe in die gedämpfte Chrome-Lage, und
+  // die eine aktive Zeile trägt den Messing-Akzent — dieselbe Farbe, die schon
+  // die Positionsmarke daneben führt (§5: EIN Akzent, nicht zwei).
+  // Nicht tiefer als ink-500: ink-400/300 sind im Haus Haarlinien- und
+  // Deko-Töne ohne Textanspruch (DESIGN-REGLEMENT, ink-Skala) — ein Baum in
+  // ink-400 wäre ein AA-Fehlschlag, kein «ruhigeres» Bild.
+  const GEDAEMPFT: Record<string, string> = {
+    'text-ink-800': 'text-ink-700',
+    'text-ink-700': 'text-ink-600',
+    'text-ink-600': 'text-ink-500',
+    'text-ink-500': 'text-ink-500',
+  };
+  const grund = stimmeGedaempft ? (GEDAEMPFT[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
+  const markenTinte = stimmeGedaempft ? 'text-brass-700 font-medium' : 'text-ink-900';
+  const tinte = istMarke ? markenTinte : aufPfad ? (AHNEN_TINTE[grund] ?? grund) : grund;
   // LM-155 Mittel 3: Rhythmus — die obersten Knoten bekommen einen Vorlauf. Der
   // jeweils ERSTE Knoten einer Liste bleibt bündig. Statisches margin ⇒ kein
   // Layout-Shift zur Laufzeit (§15.2).
@@ -248,11 +274,23 @@ const Zeile = memo(function Zeile({
         <span aria-hidden className={`mt-1 h-3.5 w-0.5 shrink-0 rounded-full ${istMarke ? 'bg-brass-600' : 'bg-transparent'}`} />
         <button
           type="button"
+          // H2 (David 16.8.2026): ein Klick auf den TITEL klappt den Ast auf UND
+          // springt. Befund am gebauten Stand: der Titel löste NUR den Sprung
+          // aus, aufklappen konnte man ausschliesslich über den 16-px-Pfeil
+          // daneben — wer den Titel traf, sah nichts geschehen und klickte
+          // danach ein zweites Mal. «Erst beim zweiten Klick» war also kein
+          // Timing-Problem, sondern zwei Ziele für eine Absicht.
+          // NUR AUFKLAPPEN, NIE ZUKLAPPEN: der Titel-Klick ist eine
+          // Hinbewegung. Klappte er einen offenen Ast zu, verschwände genau der
+          // Abschnitt, zu dem er eben gesprungen ist. Zuklappen bleibt beim
+          // Pfeil — der behält seine volle Umschaltfunktion.
+          aria-expanded={hatKinder && titelKlapptAuf ? auf : undefined}
           onClick={() => {
             // W2·10-UI-NAV/R5: die verlassene Leseposition VOR dem Sprung
             // vormerken — der TOC-Sprung erzeugt bewusst keinen History-Eintrag
             // (LM-202), ohne diese Notiz gäbe es keinen Rückweg.
             merkeRuecksprungVonDom();
+            if (titelKlapptAuf && hatKinder && !auf) onToggle(k.ids, auf);
             if (k.art === 'sektion') onSprung(k.ids);
             else if (k.ersterArtikel) onSprungArtikel(k.ersterArtikel);
           }}
@@ -333,7 +371,8 @@ const Zeile = memo(function Zeile({
                 <Zeile key={kind.id} k={kind} erster={i === 0}
                   aktivPfad={aktivPfad} markeId={markeId} offen={offen}
                   startOffeneTiefe={startOffeneTiefe}
-                  onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel} />
+                  onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel}
+                  titelKlapptAuf={titelKlapptAuf} stimmeGedaempft={stimmeGedaempft} />
               ))}
             </ul>
           </div>
@@ -351,6 +390,7 @@ const Zeile = memo(function Zeile({
  */
 export const SektionBaumTOC = memo(function SektionBaumTOC({
   knoten, aktivPfad, aktivToken, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
+  titelKlapptAuf = false, stimmeGedaempft = false,
 }: {
   knoten: GliederungsKnoten[];
   aktivPfad: string[]; // Sektions-Ids des aktiven Pfads, Wurzel → tiefster Knoten
@@ -366,6 +406,9 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
   onToggle: (ids: string[], istOffen: boolean) => void;
   onSprung: (ids: string[]) => void;
   onSprungArtikel: (token: string) => void;
+  /** H2 — s. ZeilenProps. */
+  titelKlapptAuf?: boolean;
+  stimmeGedaempft?: boolean;
 }) {
   // Genau EINE Marke je gerendertem Baum — die Invariante, auf die sich a9
   // (`[data-toc] [data-toc-aktiv]` als Sprungziel) und a33 (Ruhe-Messung)
@@ -378,7 +421,8 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
         <Zeile key={k.id} k={k} erster={i === 0}
           aktivPfad={aktivPfad} markeId={markeId} offen={offen}
           startOffeneTiefe={startOffeneTiefe}
-          onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel} />
+          onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel}
+          titelKlapptAuf={titelKlapptAuf} stimmeGedaempft={stimmeGedaempft} />
       ))}
     </ul>
   );

@@ -132,7 +132,12 @@ export function LeserRahmenV3({
 
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
-      onSprung={m.springeZuArtikel} feldRef={suchFeldRef} />
+      onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
+      // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
+      // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).
+      hatTreffer={m.fundstellen > 0}
+      onVor={() => m.springeZuFundstelle?.(1)}
+      onZurueck={() => m.springeZuFundstelle?.(-1)} />
   );
 
   const leiste = (imSheet: boolean) => (
@@ -212,15 +217,66 @@ export function LeserRahmenV3({
       {!umgebung.istXl && m.tocAuf && hatLeiste && (() => {
         const ziel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
         const sheet = (
-          <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
-            onSchliessen={() => m.setTocAuf(false)}
-            pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
-            sprungFeld={suchFeld} baum={leiste(true)} />
+          // ── H2 · DAS SHEET TRÄGT SEINE PANE-ROLLE (Befund 16.8.2026) ──────
+          // Gemessen im Split @1440 (Pane 590 px, also unter der xl-Schwelle):
+          // das Sheet wird per Portal in die Overlay-Schicht gehängt und landet
+          // dabei AUSSERHALB von `[data-pane="…"]` — die Vorfahrenkette des
+          // Suchfelds endete bei `#root`. Damit verliert die einzige Bedienung
+          // des Panes, die es in dieser Breite gibt, ihre Zugehörigkeit: von
+          // aussen ist nicht mehr zu sagen, zu welchem Pane das offene Sheet
+          // gehört — bei ZWEI offenen Sheets sind zwei identische Suchfelder
+          // ununterscheidbar nebeneinander im DOM.
+          //
+          // Das ist kein Test-Problem, sondern eine Lücke im Portal-Vertrag,
+          // und H3 hängt das Kontext-Panel in dieselbe Schicht. Die Rolle
+          // wandert darum MIT: ein Attribut an der Sheet-Wurzel, gesetzt aus
+          // derselben Quelle, aus der auch der Adress-Schreiber seine
+          // Pane-Weiche zieht (`istSekundaer`, nicht `imPane` — B1-Falle).
+          <div data-v3-pane={umgebung.istSekundaer ? 'sekundaer' : 'primaer'}>
+            <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
+              onSchliessen={() => m.setTocAuf(false)}
+              pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
+              sprungFeld={suchFeld} baum={leiste(true)} />
+          </div>
         );
         return ziel ? createPortal(sheet, ziel) : sheet;
       })()}
 
-      <div className={zweiSpalten ? 'grid grid-cols-[18rem_minmax(0,1fr)] gap-8' : ''}>
+      {/* ── Zwei Spalten, IMMER — nur die linke schrumpft (David 16.8.2026) ────
+          Befund am gebauten H1-Stand, @1440 reproduziert: klappte man die
+          Gliederung ein, verschwand das Grid ganz. Die Lesespalte sprang dabei
+          um 175 px nach links (x 600 → 424) und gewann ganze 31 px Breite
+          (641 → 672, mehr lässt das Lesemass nicht zu) — der Nutzer sah einen
+          Sprung ohne Gewinn. Und der einzige Weg zurück war ein 24-px-☰ OHNE
+          Beschriftung, ganz rechts im Kopf (x = 1101) — also an der
+          gegenüberliegenden Seite von dem, was es zurückholt.
+          Jetzt bleibt das Grid stehen und die linke Spalte wird zur schmalen
+          Schiene mit beschriftetem Öffner. Der Öffner steht damit DORT, wo die
+          Gliederung war, die Fläche gewinnt echte 15.75 rem, und die Bewegung
+          ist eine Breitenänderung statt eines Umbruchs. */}
+      <div
+        className={hatLeiste && umgebung.istXl
+          ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
+          : ''}
+        style={hatLeiste && umgebung.istXl
+          ? { gridTemplateColumns: m.tocOffen ? '18rem minmax(0,1fr)' : '2.25rem minmax(0,1fr)' }
+          : undefined}>
+        {hatLeiste && umgebung.istXl && !m.tocOffen && (
+          // Die Schiene: ein einziger Knopf, senkrecht beschriftet, klebend auf
+          // Höhe des Lesetexts. Senkrecht, weil 2.25 rem für «Gliederung»
+          // waagrecht nicht reichen und eine Abkürzung («Gl.») niemandem hilft;
+          // `writing-mode` dreht echten Text, es bleibt vorlesbar und
+          // durchsuchbar — kein Bild, kein `aria-label` als Ersatz für Inhalt.
+          <div className="sticky self-start" style={{ top: 'var(--nt-stick)' }}>
+            <button type="button" data-v3-gliederung-schiene
+              onClick={() => m.setTocOffen(true)}
+              aria-expanded={false} title="Gliederung einblenden"
+              className="flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors hover:border-brass-300 hover:bg-paper-sunken/60 hover:text-brass-700">
+              <span aria-hidden className="text-base leading-none">☰</span>
+              <span className="[writing-mode:vertical-rl] [text-orientation:mixed]">Gliederung</span>
+            </button>
+          </div>
+        )}
         {zweiSpalten && (
           <aside role="navigation" aria-label="Gliederung" data-v3-aside
             // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:
@@ -242,7 +298,13 @@ export function LeserRahmenV3({
               <button type="button" data-v3-gliederung-zu onClick={() => m.setTocOffen(false)}
                 aria-expanded={m.tocOffen} title="Gliederung ausblenden"
                 className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                <span aria-hidden>‹</span><span>ausblenden</span>
+                {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur
+                    «ausblenden» — Wort für Wort dasselbe wie «Seitenleiste
+                    ausblenden» der App-Leiste zwei Zentimeter weiter oben, aber
+                    mit anderer Wirkung. Zwei gleich beschriftete Knöpfe, die
+                    Verschiedenes tun, sind eine Falle (§8). Der Knopf sagt
+                    jetzt, WAS er ausblendet. */}
+                <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
               </button>
             </div>
             {leiste(false)}

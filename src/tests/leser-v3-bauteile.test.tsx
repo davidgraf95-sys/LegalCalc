@@ -146,7 +146,20 @@ function renderLeiste(props: Partial<Parameters<typeof LeserSeitenleiste>[0]> = 
 }
 
 describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
-  it('Übersicht → Feld → Baumkopf → Baum → Extra', () => {
+  // ── DEKLARIERTE VERTRAGSÄNDERUNG H2 (David 16.8.2026) ─────────────────────
+  // Bis H1 lautete der Vertrag «Übersicht → Feld → Baumkopf → Baum → Extra»,
+  // wobei das FELD ÜBER dem klebenden Block stand und mit der Übersichtsbox
+  // wegscrollte. Davids Befund am gebauten Stand: «Das Suchfeld muss immer
+  // zugreifbar sein, auch wenn ich in der Gliederung scrolle» — wer tief im
+  // Baum der StPO stand, musste erst die Leiste hochscrollen, um zu suchen.
+  //
+  // NEU: das Feld ist Teil des KLEBENDEN Blocks und steht dort ZUOBERST.
+  // Reihenfolge: Übersicht (scrollt weg) → [ Feld → Gliederungs-Kopfzeile ]
+  // klebend → Baum → Extra. Der Test prüft jetzt genau das, inklusive der
+  // Aussage, die den Unterschied trägt: das Feld liegt INNERHALB des klebenden
+  // Blocks, nicht davor. Das ist nach §6.3 eine fachliche Änderung mit eigener
+  // Begründung, kein stillschweigend nachgezogener Test.
+  it('Übersicht → [Feld → Baumkopf] klebend → Baum → Extra', () => {
     const html = renderLeiste({
       uebersicht: <div data-marker-u>U</div>,
       suchFeld: <div data-marker-f>F</div>,
@@ -158,9 +171,16 @@ describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
     const iB = html.indexOf('data-marker-baum');
     const iE = html.indexOf('data-marker-e');
     expect([iU, iF, iBaumkopf, iB, iE].every((i) => i >= 0)).toBe(true);
-    expect(iU).toBeLessThan(iF);
-    expect(iF).toBeLessThan(iBaumkopf);
-    expect(iBaumkopf).toBeLessThan(iB);
+    // Die Übersichtsbox bleibt oben und ausserhalb — sie ist
+    // Ankunfts-Information, kein Werkzeug, und darf wegscrollen.
+    expect(iU).toBeLessThan(iBaumkopf);
+    // DAS FELD LIEGT IM KLEBENDEN BLOCK, nicht davor: sein Marker steht im
+    // Markup NACH dem Blockanfang. Genau diese Zeile hätte den Vorzustand rot
+    // gemacht — dort stand das Feld davor.
+    expect(iBaumkopf).toBeLessThan(iF);
+    // … und darin ZUOBERST, vor der Gliederungs-Kopfzeile.
+    expect(iF).toBeLessThan(html.indexOf('data-v3-alle'));
+    expect(iF).toBeLessThan(iB);
     expect(iB).toBeLessThan(iE);
   });
 

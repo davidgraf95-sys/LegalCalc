@@ -402,7 +402,34 @@
      dem Klick (input-exkludiert) → kein CLS-Beitrag; der Default AN emittiert keine
      Regel (byte-gleich, R6). Druck folgt dem Toggle: bei AUS wird der Apparat auch
      im Ausdruck weggelassen (display:none wirkt in @media print gleichermassen). */
-  html[data-fussnoten="aus"] .lc-leser button[aria-label^="Fussnote"],
+  /* ── H2 · WURZEL-FIX (§17), zwei Vorfälle 16.8.2026, beide nachgemessen ────
+     (1) URSPRÜNGLICHER DEFEKT (David-Befund): Der Marker-Selektor griff über den
+     ACCESSIBLE NAME (`button[aria-label^="Fussnote"]`) und traf damit alles, was
+     «Fussnote…» heisst. In der V3-Hülle liegt das Ansicht-Menü innerhalb von
+     `.lc-leser`, und der Schalter dort heisst `aria-label="Fussnoten (283)"`.
+     Folge: ein Klick auf «Fussnoten» setzte `data-fussnoten="aus"` und blendete
+     den Schalter aus, mit dem man es rückgängig macht — der Nutzer kam nicht
+     mehr an ihn heran. In V1 hatte die (schon immer zu weite) Regel keine Ziele.
+     (2) FEHLGRIFF BEIM ERSTEN FIX: Der Selektor wurde auf `#lc-lesespalte`
+     verengt. Gemessen an der Ist-Hülle (BGBM, Preview): 4 von 29 Marker-Buttons
+     liegen AUSSERHALB der Lesespalte — Erlasskopf und Ingress. Dort schaltete
+     der Toggle seither gar nicht mehr; das ist eine Verhaltensänderung an der
+     eingefrorenen V1 und verletzt FL-4 (ohne Flag bitgleich).
+     WURZEL: Eine CSS-Regel darf Elemente nicht über ihren TEXT suchen. Der
+     Marker trägt jetzt die eigene Kennung `data-fn-ref`
+     (`src/components/normtext/ArtikelBody.tsx`) — eindeutig, hüllenneutral, und
+     der Schalter trägt sie nicht. Damit greift die Regel in V1 wieder überall
+     (auch im Kopf) und lässt in V3 den Schalter in Ruhe.
+     Die drei Attribut-Selektoren darunter waren nie betroffen: `data-fn-marker`,
+     `data-fn-apparat` und `data-hist-chrono` existieren ausschliesslich am
+     Normtext. Hinweis: `[data-fn-marker]` ist KEIN Ersatz-Scope für den Marker —
+     gemessen liegen 19/29 (BGBM) bzw. 476/847 (OR) Marker-Buttons ausserhalb
+     eines solchen Clusters.
+     Wächter: `src/tests/fussnoten-toggle-huellenneutral.test.ts` (rot gezeigt).
+     (Der DOM-Walker in `suchHighlight.ts` benutzt noch dieselbe Namensregel, ist
+     aber von Haus aus auf den Artikel-Container beschränkt — dort ist sie
+     unbedenklich und bleibt unverändert.) */
+  html[data-fussnoten="aus"] .lc-leser [data-fn-ref],
   html[data-fussnoten="aus"] .lc-leser [data-fn-marker],
   html[data-fussnoten="aus"] .lc-leser [data-fn-apparat],
   html[data-fussnoten="aus"] .lc-leser [data-hist-chrono] {
@@ -480,6 +507,48 @@
      bleiben im DOM (Ctrl+F/Screenreader-neutral wie der Fussnoten-Toggle). */
   html[data-leitfaelle="aus"] .lc-leser [data-leitfall-zeile] {
     display: none;
+  }
+
+  /* ── LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Pkt. 4) ────────────────
+     Befund: «Schriftgrössen-Regler wirkt auf die ganze Seite.» Ursache war der
+     GLOBALE Steller (`useSchriftskala.ts`), der `font-size` am <html> setzt —
+     gemessen wuchs die Kopfzeile von 16 px auf 20.8 px mit. Er bleibt für die
+     ganze App bestehen (Barrierefreiheit, WCAG 1.4.4); DIESE Skala beantwortet
+     die andere Frage — «der Gesetzestext ist mir zu klein» — und darf darum
+     genau eines vergrössern: den Normtext.
+
+     Warum nicht auf `.lc-leser` selbst: die Kopfzeile und die Seitenleiste
+     liegen INNERHALB dieser Hülle (LeserRahmenV3). Der Scope ist deshalb
+     `.nt-art-cv` — die Artikel-Hülle, die es in V1 wie V3 gibt (ArtikelLeser) —
+     und darin der Fliesstext-Container. Auf eine Tailwind-Utility zu selektieren
+     ist hier gängige Praxis (Blaupause: die `[data-verweise="aus"]`-Regel oben
+     auf `.decoration-dotted`); der Normtext-Container trägt kein eigenes
+     Daten-Attribut, und die Komponente gehörte nicht zur Bau-Fläche.
+
+     R6/BYTE-GLEICHHEIT: Die Vorgabestufe `normal` ist über das `:not()` vom
+     Selektor AUSGENOMMEN — sie emittiert keine Deklaration, die Normtext-Grösse
+     bleibt exakt `text-body-l` (1.125 rem) und damit pixelidentisch zum
+     Ist-Stand. Fehlt das Attribut ganz (Prerender vor `wendeLeserOptionenAn`),
+     greift ebenfalls nichts. Umschalten ist klick-getrieben ⇒ der Reflow liegt
+     binnen 500 ms nach der Eingabe (CLS-exkludiert) und rendert nichts neu (§15).
+
+     Die rem-Werte sind in `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`)
+     gespiegelt, weil dort der Anzeigewert «xxx %» daraus entsteht;
+     `src/tests/leser-schriftskala.test.ts` prüft beide Listen gegeneinander, so
+     dass sie nicht auseinanderlaufen können (§5). ── */
+  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.25rem; }
+  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.375rem; }
+  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.5rem; }
+  /* FL-4-NACHZUG (Pruefer-Befund zu PR #539, 16.8.2026): `data-leserschrift` wird
+     GLOBAL am <html> gesetzt, unabhaengig davon, ob die V3-Huelle aktiv ist. Ohne
+     zusaetzlichen Scope traf die Regel auch `.lc-leser` in der Ist-Huelle (V1) —
+     dort gibt es aber keinen Regler, um die Stufe wieder zurueckzustellen (nur der
+     Rueckweg ueber V3 half). `.lc-leser[data-leser-v3="rahmen"]` ist das V3-Root
+     selbst (LeserRahmenV3.tsx traegt beide Attribute auf demselben Element) — die
+     Regel greift damit KONSTRUKTIV nur, wenn V3 aktiv ist; in V1 fehlt das
+     Attribut, der Selektor kann nie treffen. */
+  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv .text-body-l {
+    font-size: var(--lm-leser-schrift, 1.125rem);
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen

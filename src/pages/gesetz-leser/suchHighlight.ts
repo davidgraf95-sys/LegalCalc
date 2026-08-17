@@ -259,26 +259,105 @@ export function trefferProArtikel(ranges: readonly Range[]): Map<string, number>
   return map;
 }
 
+// ═══ QS-UI-HIGHLIGHT · EINE Registry-Position, mehrere Leser-Instanzen ═══════
+//
+// ROADMAP-Schritt `QS-UI-HIGHLIGHT`, von FAHRPLAN-LESER-V3 Kap. 14 in Etappe H2
+// absorbiert. Befund im Wortlaut: «im Split-View löscht das Rail-Suchfeld die
+// Markierung des Nachbar-Panes».
+//
+// DER MECHANISMUS. Die CSS Custom Highlight API kennt je NAMEN genau eine Menge,
+// und `SUCH_HIGHLIGHT` ist ein Modul-Konstant-String. Bis hierher schrieb jede
+// Leser-Instanz direkt auf diese eine Position — `reg.set(…)` beim Malen,
+// `reg.delete(…)` beim Aufräumen. Im Split-View genügte darum das Leeren EINES
+// Suchfelds, um die Markierung des Nachbarn mitzunehmen: dessen Feld war
+// weiterhin gefüllt, seine Fundstellen leuchteten aber nicht mehr — die Anzeige
+// log über den Zustand (§8). Betroffen war nicht nur Gesetz+Gesetz: der
+// Entscheid-Leser schreibt dieselbe Position (`entscheidLeserRegeln.ts`), also
+// löschte auch sein `loescheNennungen()` die Gesetz-Panes mit.
+//
+// WARUM NICHT «ein Highlight-Name je Pane». `::highlight(name)` ist eine
+// STATISCHE CSS-Regel (index.css). Pane-abhängige Namen verlangten je Pane eine
+// eigene Regel — eine zweite Wahrheit über dieselbe Darstellung (§5) und ein
+// harter Deckel auf der Pane-Zahl, den heute nichts sonst kennt.
+//
+// DIE ANTWORT: es bleibt bei EINER Registry-Position und EINER CSS-Regel.
+// Buchgeführt werden die RANGES je Instanz; geschrieben wird stets ihre
+// VEREINIGUNG. Wer seine Menge leert, nimmt genau seine Ranges heraus, und die
+// des Nachbarn bleiben stehen. Ist keine Instanz mehr belegt, verschwindet die
+// Position ganz (`delete`) — eine leere `Highlight`-Instanz stehenzulassen wäre
+// ein Zustand, den niemand sieht und den der nächste Leser als «da» läse.
+//
+// LEBENSDAUER: eine Instanz belegt genau so lange eine Zeile, wie sie eine
+// nicht-leere Menge hält. Der Aufräum-Pfad jedes Lesers ruft ohnehin mit leerer
+// Menge (Feld geleert, Erlass-/Pane-Wechsel, Unmount), und das löscht die Zeile
+// — es braucht darum kein separates Abmelden und es kann nichts auflaufen.
+
 /**
- * Schreibt eine bereits gesammelte Range-Menge in die Highlight-Registry (bzw.
- * löscht den Eintrag bei leerer Menge). Getrennt von `sammleTrefferRanges`,
- * damit der Reader den (teuren) TreeWalker EINMAL laufen lässt und dieselbe
- * Menge für Malen, Zählen und Springen verwendet.
+ * Identität eines Lesers gegenüber der Highlight-Registry. Ein `symbol`, weil
+ * die Identität zählt und nicht die Beschriftung: zwei Gesetz-Panes heissen
+ * beide «leser» und müssen trotzdem getrennt buchen.
  */
-export function setzeSuchHighlightRanges(ranges: readonly Range[]): void {
+export type HighlightInstanz = symbol;
+
+/** Neue Registry-Identität. Je Leser-Instanz EINMAL erzeugen und festhalten. */
+export function neueHighlightInstanz(name = 'leser'): HighlightInstanz {
+  return Symbol(name);
+}
+
+/**
+ * Rückfall-Instanz für Aufrufer, die (noch) keine eigene führen. Sie ist eine
+ * gewöhnliche Instanz ohne Sonderrechte — wer sie benutzt, teilt sich eine
+ * Buchungszeile mit allen anderen Rückfall-Nutzern, genau wie vor QS-UI-HIGHLIGHT.
+ */
+const STANDARD_INSTANZ: HighlightInstanz = Symbol('standard');
+
+/** Ranges je Instanz. Die Registry sieht immer nur ihre Vereinigung. */
+const proInstanz = new Map<HighlightInstanz, readonly Range[]>();
+
+/** Schreibt die Vereinigung aller gebuchten Mengen in die eine Registry-Position. */
+function schreibeRegistry(): void {
   const api = highlightApi();
   if (!api) return;
   const { reg, Ctor } = api;
-  if (ranges.length === 0) { reg.delete(SUCH_HIGHLIGHT); return; }
-  reg.set(SUCH_HIGHLIGHT, new Ctor(...ranges));
+  const alle: Range[] = [];
+  for (const rs of proInstanz.values()) alle.push(...rs);
+  if (alle.length === 0) { reg.delete(SUCH_HIGHLIGHT); return; }
+  reg.set(SUCH_HIGHLIGHT, new Ctor(...alle));
+}
+
+/**
+ * Bucht eine bereits gesammelte Range-Menge für `instanz` (leere Menge = die
+ * Instanz malt nichts mehr) und schreibt die Vereinigung. Getrennt von
+ * `sammleTrefferRanges`, damit der Reader den (teuren) TreeWalker EINMAL laufen
+ * lässt und dieselbe Menge für Malen, Zählen und Springen verwendet.
+ */
+export function setzeSuchHighlightRanges(
+  ranges: readonly Range[],
+  instanz: HighlightInstanz = STANDARD_INSTANZ,
+): void {
+  // Die Buchführung läuft AUCH ohne API weiter: sie ist reiner Speicher, und ein
+  // stiller Zustandsverlust wäre schwerer zu finden als eine fehlende Paint-
+  // Schicht. `schreibeRegistry` steigt dann für sich aus.
+  if (ranges.length === 0) proInstanz.delete(instanz);
+  else proInstanz.set(instanz, ranges);
+  schreibeRegistry();
 }
 
 /**
  * Setzt (oder löscht) die Treffer-Hervorhebung des Suchbegriffs innerhalb von
- * `container`. Leerer/kurzer Begriff oder fehlende API ⇒ Highlight wird gelöscht.
- * Idempotent: ersetzt stets die volle Highlight-Menge dieses Namens.
+ * `container` für `instanz`. Leerer/kurzer Begriff oder fehlende API ⇒ die
+ * Menge dieser Instanz wird geleert. Idempotent: ersetzt stets die volle Menge
+ * DIESER Instanz, nie die einer anderen.
  */
-export function setzeSuchHighlight(container: HTMLElement | null, begriff: string): void {
+export function setzeSuchHighlight(
+  container: HTMLElement | null,
+  begriff: string,
+  instanz: HighlightInstanz = STANDARD_INSTANZ,
+): void {
+  // Ohne API gar nicht erst sammeln: der TreeWalker ist der teure Teil, und
+  // ohne Registry gibt es nichts, wofür sein Ergebnis gebraucht würde. Die
+  // Buchführung bleibt dann ebenfalls leer — das ist folgerichtig, weil ohne
+  // API auch nie etwas geschrieben wurde, das man zurücknehmen müsste.
   if (!highlightApi()) return;
-  setzeSuchHighlightRanges(sammleTrefferRanges(container, begriff));
+  setzeSuchHighlightRanges(sammleTrefferRanges(container, begriff), instanz);
 }

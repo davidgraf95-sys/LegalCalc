@@ -186,7 +186,12 @@ export function FnRef({ artikel, nr, klasse, kl }: {
   };
   return (
     <span ref={ankerRef} className="relative" data-fn-klasse={kl}>
-      <button type="button" onClick={umschalten} aria-expanded={auf} aria-label={`Fussnote ${nr}`}
+      {/* `data-fn-ref` ist die MASCHINEN-Kennung des Fussnoten-Markers: der
+          `data-fussnoten`-Toggle in `index.css` greift darüber und nie über den
+          accessible name (Treuebruch 16.8.2026 — die frühere Namensregel traf
+          auch den Schalter «Fussnoten (N)» im Ansicht-Menü). Wächter:
+          `src/tests/fussnoten-toggle-huellenneutral.test.ts`. */}
+      <button type="button" data-fn-ref onClick={umschalten} aria-expanded={auf} aria-label={`Fussnote ${nr}`}
         className={`num align-super text-[0.62em] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
       {auf && html && pos && typeof document !== 'undefined' && createPortal(
         <span ref={popRef} role="note" dangerouslySetInnerHTML={{ __html: html }}

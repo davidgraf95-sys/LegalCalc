@@ -69,25 +69,40 @@ function kunstErlass(): { eintraege: NormSnapshot[]; struktur: StrukturMap } {
   return { eintraege, struktur };
 }
 
-describe('S8 §4.2 — erlass-lokale Sortierung (eigene Regel, KEIN rangiere()-Reuse)', () => {
-  it('Feldgewicht t > m > n > g > tb > f schlägt die Fundstellenzahl', () => {
+// ═══ S4 · Sortierung auf Dokument-Reihenfolge ════════════════════════════════
+//
+// FAHRPLAN-LESER-V3 Kap. 7, Strang S4. DEKLARIERTE VERHALTENSÄNDERUNG gegenüber
+// S8: die Trefferliste ist ein VERZEICHNIS neben dem vollständigen Wortlaut, kein
+// Relevanz-Ranking. Herleitung vollständig im Modulkommentar von `leserSuche.ts`.
+//
+// Die beiden Tests dieses Blocks hiessen bis hierher «Feldgewicht … schlägt die
+// Fundstellenzahl» und «bei gleichem Feld entscheidet die Fundstellenzahl». Sie
+// schrieben die alte Rangfolge fest und sind mit ihr rot geworden (2 Fehlschläge,
+// vor dem Umschreiben gesehen — §0 Ziff. 2). Sie sind darum NEU GEFASST, nicht
+// nachgezogen: §6.3 verbietet das Anpassen von Tests im Refactoring, und genau
+// deshalb ist S4 auch keines, sondern eine deklarierte fachliche Änderung mit
+// eigener Begründung.
+describe('S4 §4.2 — erlass-lokale Sortierung: Dokument-Reihenfolge', () => {
+  it('ordnet nach Dokument-Position, NICHT nach Feldgewicht oder Fundstellenzahl', () => {
     const { eintraege, struktur } = kunstErlass();
     const treffer = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur), 'Zaunkoenig');
-    // Art. 3 trifft DREIMAL, aber nur im Gliederungstitel (g) — es muss trotzdem
-    // hinter den Einzeltreffern in t, m und n stehen.
-    expect(treffer.map((t) => t.token)).toEqual(['1', '2', '6', '3', '5', '4']);
-    expect(treffer.map((t) => t.topFeld)).toEqual(['t', 'm', 'n', 'g', 'tb', 'f']);
+    // Der Kunst-Erlass stellt jede Feldklasse genau einmal, in einer Reihenfolge,
+    // die der alten Rangfolge WIDERSPRICHT: Art. 3 trifft dreimal, aber nur im
+    // Gliederungstitel (g); Art. 6 trägt das stärkere Feld `n`, steht aber
+    // hinten. Unter der alten Regel kam ['1','2','6','3','5','4'] heraus — jetzt
+    // steht jeder Artikel an seiner Stelle im Erlass.
+    expect(treffer.map((t) => t.token)).toEqual(['1', '2', '3', '4', '5', '6']);
+    // Das getroffene Feld ist damit NICHT verschwunden: es steht weiter an jedem
+    // Treffer und trägt Badge und Ausschnitt (§8 — sichtbar statt in einer
+    // Listenposition versteckt).
+    expect(treffer.map((t) => t.topFeld)).toEqual(['t', 'm', 'g', 'f', 'tb', 'n']);
     expect(treffer.find((t) => t.token === '3')!.fundstellen).toBe(3);
   });
 
-  // B11: der Name nannte früher auch die dritte Stufe als GEPRÜFT. Beobachtbar
-  // ist hier nur die zweite (Fundstellenzahl); die Artikelreihenfolge kommt
-  // schon aus dem Index und wäre auch ohne Stufe 3 dieselbe (Herleitung im
-  // Modulkommentar von leserSuche.ts). Der Test prüft, was er prüfen kann.
-  it('bei gleichem Feld entscheidet die Fundstellenzahl (Stufe 2)', () => {
+  it('eine höhere Fundstellenzahl zieht einen späteren Artikel NICHT nach vorn', () => {
     const { eintraege, struktur } = kunstErlass();
-    // Zwei zusätzliche reine Fliesstext-Artikel: einer mit zwei Fundstellen
-    // (später im Dokument), einer mit einer (früher).
+    // Zwei zusätzliche reine Fliesstext-Artikel: der spätere trifft zweimal, der
+    // noch spätere einmal. Unter der alten Stufe 2 stand Art. 7 vor Art. 1.
     eintraege.push(
       { ...eintraege[0], id: 'x/7', artikel: '7', artikelLabel: 'Art. 7', bloecke: [{ absatz: '1', text: 'Zaunkoenig und Zaunkoenig.' }] },
       { ...eintraege[0], id: 'x/8', artikel: '8', artikelLabel: 'Art. 8', bloecke: [{ absatz: '1', text: 'Zaunkoenig allein.' }] },
@@ -96,9 +111,45 @@ describe('S8 §4.2 — erlass-lokale Sortierung (eigene Regel, KEIN rangiere()-R
     struktur['8'] = { gliederung: [], marginalie: [] };
     const treffer = sucheImErlass(baueLeserSuchIndex('X', eintraege, struktur), 'Zaunkoenig');
     const t = treffer.filter((x) => x.topFeld === 't').map((x) => x.token);
-    // Art. 7 (2 Fundstellen) vor Art. 1 und Art. 8 (je 1); unter diesen beiden
-    // gewinnt die Dokument-Position.
-    expect(t).toEqual(['7', '1', '8']);
+    expect(t).toEqual(['1', '7', '8']);
+  });
+
+  // DIESER TEST TÖTET DIE MUTANTE «sort ganz weglassen».
+  //
+  // B11 (Bug-Check §9 zu S8) hielt für die alte Stufe 3 fest, dass kein
+  // Black-Box-Test sie erreichen kann: die Artikel kommen bereits in
+  // Dokument-Reihenfolge aus dem Index, ein `sort` danach ist
+  // beobachtungsgleich mit gar keinem. Für S4 wäre das derselbe blinde Fleck —
+  // die einzige Sortierstufe IST jetzt die Index-Ordnung. Er wird hier
+  // ausgeräumt, statt ihn ein zweites Mal im Kommentar zuzugeben: der Index
+  // wird VOR dem Suchlauf permutiert. Kommt die Liste trotzdem in
+  // Dokument-Reihenfolge heraus, sortiert die Funktion wirklich; fällt der
+  // `sort` weg, kommt die Permutation durch.
+  it('sortiert wirklich — permutierter Index liefert dieselbe Dokument-Reihenfolge', () => {
+    const { eintraege, struktur } = kunstErlass();
+    const ix = baueLeserSuchIndex('X', eintraege, struktur);
+    const gedreht: LeserSuchIndex = { ...ix, artikel: [...ix.artikel].reverse() };
+    const treffer = sucheImErlass(gedreht, 'Zaunkoenig');
+    expect(treffer.map((t) => t.token)).toEqual(['1', '2', '3', '4', '5', '6']);
+    // `pos` ist der Laufindex über `eintraege` und je Artikel eindeutig — die
+    // Ordnung ist damit strikt aufsteigend und total, es gibt keinen
+    // Gleichstand, den eine zweite Stufe brechen müsste (§2).
+    const posFolge = treffer.map((t) => t.pos);
+    expect(posFolge).toEqual([...posFolge].sort((a, b) => a - b));
+    expect(new Set(posFolge).size).toBe(posFolge.length);
+  });
+
+  // Die Reihenfolge-Zusage gilt nicht nur am Kunst-Erlass, sondern am echten
+  // Korpus — dort, wo Feldklassen und Fundstellenzahlen wild durcheinander
+  // liegen und die alte Rangfolge die Liste sichtbar durchmischt hätte.
+  it('am echten Erlass (BGFA): die ganze Liste läuft mit dem Gesetz mit', () => {
+    const treffer = sucheImErlass(index('BGFA'), 'Anwalt');
+    expect(treffer.length).toBeGreaterThan(5);
+    const posFolge = treffer.map((t) => t.pos);
+    expect(posFolge).toEqual([...posFolge].sort((a, b) => a - b));
+    // Und es sind wirklich verschiedene Feldklassen im Spiel — sonst wäre die
+    // Aussage «Feldgewicht ordnet NICHT mehr» am Fixture leer.
+    expect(new Set(treffer.map((t) => t.topFeld)).size).toBeGreaterThan(1);
   });
 
   it('Ergebnis ist deterministisch — zweimal gesucht ist zweimal dasselbe (§2)', () => {

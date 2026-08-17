@@ -1,10 +1,29 @@
 // @shard-gruppe: 4
 // FAHRPLAN-LESER-V3, Kap. 4b — feste Reihenfolge der Seitenleiste:
 //
-//   ▸ Übersicht  (SR 312.0 · 480 Art. · Stand …)        scrollt MIT weg
-//   [ Suchen oder «Art. 429» …                    ⌘K ]  scrollt MIT weg
-//   Gliederung        [alles auf/zu]   [↑ Anfang]       ◀ ab hier sticky
+//   ▸ Übersicht  (SR 312.0 · 480 Art. · Stand …)        scrollt weg
+//   [ Suchen oder «Art. 429» …                    ⌘K ]  ◀ ab hier sticky
+//   Gliederung        [alles auf/zu]   [↑ Anfang]       ◀ im selben Block
 //    1. Teil … / 1. Titel …
+//
+// ── DEKLARIERTE VERTRAGSÄNDERUNG H2 (David 16.8.2026) ───────────────────────
+// Bis H1 lautete der Vertrag «Übersicht → Feld → Baumkopf», wobei das FELD ÜBER
+// dem klebenden Block stand und mit der Übersichtsbox wegscrollte. Davids
+// Befund am gebauten Stand: das Suchfeld muss zugreifbar bleiben, auch wenn man
+// in der Gliederung scrollt — wer tief im Baum der StPO stand, musste erst die
+// Leiste hochscrollen, um zu suchen.
+//
+// NEU: das Feld ist Teil des KLEBENDEN Blocks und steht dort ZUOBERST. Damit
+// ist es nicht mehr ein Geschwister VOR dem Block, sondern sein erstes Kind —
+// `compareDocumentPosition(feld, baumkopf)` meldet darum «enthält», nicht
+// «folgt». Genau daran fiel Fall (a) in seiner alten Fassung, und zwar zu
+// Recht: er beschrieb eine Ordnung, die es nicht mehr gibt.
+// Der Vitest-Zwilling dieses Vertrags steht in
+// `src/tests/leser-v3-bauteile.test.tsx` («Übersicht → [Feld → Baumkopf]
+// klebend → Baum → Extra») und ist bereits neu gefasst; diese Spec zieht nach
+// und ergänzt, was nur der Browser sagen kann: dass der Block wirklich klebt.
+// Nach §6.3 eine fachliche Änderung mit eigener Begründung, kein stillschweigend
+// nachgezogener Test.
 //
 // `LeserSeitenleiste.tsx` ist reine Anordnung (§3): Übersicht, Feld und Baum
 // kommen fertig herein, die Datei kennt weder Erlass noch Suchzustand.
@@ -28,25 +47,46 @@ async function oeffneBGFA(page: Page): Promise<string[]> {
 }
 
 test.describe('Kap. 4b — feste Reihenfolge der Seitenleiste', () => {
-  test('(a) Dokument-Reihenfolge: Übersicht → Feld → Gliederung', async ({ page }) => {
+  test('(a) Übersicht scrollt weg, das Feld klebt zuoberst im Gliederungs-Block', async ({ page }) => {
     const fehler = await oeffneBGFA(page)
 
-    const reihenfolge = await page.evaluate(() => {
-      const uebersicht = document.querySelector('[data-v3-uebersicht]')
+    const befund = await page.evaluate(() => {
+      const uebersicht = document.querySelector('[data-v3-leiste-uebersicht]')
       const feld = document.querySelector('[data-v3-leiste-feld]')
       const baumkopf = document.querySelector('[data-v3-leiste-baumkopf]')
-      if (!uebersicht || !feld || !baumkopf) return null
+      const alle = document.querySelector('[data-v3-alle]')
+      const baum = document.querySelector('[data-v3-leiste-baum]')
+      if (!uebersicht || !feld || !baumkopf || !alle || !baum) {
+        return {
+          fehlend: { uebersicht: !uebersicht, feld: !feld, baumkopf: !baumkopf, alle: !alle, baum: !baum },
+        }
+      }
       // Node.compareDocumentPosition: Bit 4 (DOCUMENT_POSITION_FOLLOWING) gesetzt
       // ⇒ das zweite Argument steht NACH dem Aufrufer im Dokument.
       const FOLGT = Node.DOCUMENT_POSITION_FOLLOWING
       return {
-        uebersichtVorFeld: !!(uebersicht.compareDocumentPosition(feld) & FOLGT),
-        feldVorBaumkopf: !!(feld.compareDocumentPosition(baumkopf) & FOLGT),
+        fehlend: null,
+        uebersichtVorBlock: !!(uebersicht.compareDocumentPosition(baumkopf) & FOLGT),
+        // Der Kern der Änderung: das Feld ist KIND des klebenden Blocks.
+        feldImBlock: baumkopf.contains(feld),
+        // Die Übersicht bleibt ausserhalb — sie ist Ankunfts-Information, kein
+        // Werkzeug, und darf wegscrollen.
+        uebersichtNichtImBlock: !baumkopf.contains(uebersicht),
+        feldVorAlleKnopf: !!(feld.compareDocumentPosition(alle) & FOLGT),
+        blockVorBaum: !!(baumkopf.compareDocumentPosition(baum) & FOLGT),
+        // Nur der Browser kann sagen, ob der Block wirklich klebt — das ist der
+        // Mehrwert dieser Spec gegenüber dem Vitest-Zwilling.
+        position: getComputedStyle(baumkopf).position,
       }
     })
-    expect(reihenfolge, 'einer der drei Anker fehlt im DOM').not.toBeNull()
-    expect(reihenfolge!.uebersichtVorFeld, 'Übersicht steht nicht vor dem Feld').toBe(true)
-    expect(reihenfolge!.feldVorBaumkopf, 'Feld steht nicht vor der Gliederung').toBe(true)
+
+    expect(befund.fehlend, `Anker fehlen im DOM: ${JSON.stringify(befund.fehlend)}`).toBeNull()
+    expect(befund.uebersichtVorBlock, 'Übersicht steht nicht vor dem klebenden Block').toBe(true)
+    expect(befund.feldImBlock, 'Feld liegt NICHT im klebenden Block — es scrollt wieder weg (David 16.8.2026)').toBe(true)
+    expect(befund.uebersichtNichtImBlock, 'Übersicht ist in den klebenden Block gerutscht und scrollt nicht mehr weg').toBe(true)
+    expect(befund.feldVorAlleKnopf, 'Feld steht nicht zuoberst im Block (Gliederungs-Kopfzeile steht davor)').toBe(true)
+    expect(befund.blockVorBaum, 'klebender Block steht nicht vor dem Baum').toBe(true)
+    expect(befund.position, 'der Gliederungs-Block klebt nicht').toBe('sticky')
 
     expect(fehler).toEqual([])
   })
