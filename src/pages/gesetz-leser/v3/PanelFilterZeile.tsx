@@ -7,7 +7,7 @@ import type { Histogramm, Zeitbereich } from '../bezugZeit';
 import { instanzStand, zeitStand } from './panelModell';
 import { PanelSachgebiet } from './PanelSachgebiet';
 
-// ═══ Ä47 (H3-Nachzug) · EINE Filterzeile, nicht vier Steuer-Blöcke ═══════════
+// ═══ Ä54 (H3-Nachzug) · EINE Filterzeile, nicht vier Steuer-Blöcke ═══════════
 //
 // BEFUND, gemessen 17.8.2026 @1440 an der StPO: was H3 «Filterzeile» nannte, war
 // der unveränderte Inhalt des Kopf-Dropdowns — Instanz-Schalter, DREI Erklär-

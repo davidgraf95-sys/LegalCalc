@@ -143,7 +143,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     const unterkante = kopf.y + kopf.height
 
     // ── DIE HARTE ZUSAGE: KEIN BEDIENELEMENT DES KOPFS LIEGT UNTER DEM BLATT ──
-    // Das ist der Befund Ä45 wörtlich («deckt den V3-Kopf samt Öffner,
+    // Das ist der Befund Ä52 wörtlich («deckt den V3-Kopf samt Öffner,
     // ‹Ansicht ▾›, ✕»), und er ist ohne Toleranz messbar.
     for (const griff of ['[data-v3-panel-zaehler]', '[data-v3-ansicht]', '[data-v3-kopf-schliessen]']) {
       const g = (await page.locator(griff).boundingBox())!
@@ -251,7 +251,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(g) Ä47 · die Filterzeile ist eine Zeile, nicht ein Block', async ({ page }) => {
+  test('(g) Ä54 · die Filterzeile ist eine Zeile, nicht ein Block', async ({ page }) => {
     // VORHER, gemessen @1440 (StPO): der Filter-Block war 348 px hoch, die erste
     // Entscheid-Gruppe begann 352 px unter dem Panel-Kopf — drei Erklär-Absätze,
     // ein Histogramm und zwei Datumsfelder vor der ersten Fundstelle.
@@ -277,7 +277,7 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     await expect(klappen.nth(1)).toContainText('Zeitraum')
 
     // Und sie führen zu den GETEILTEN Bausteinen — dieselbe Datenlogik, nur
-    // eingeklappt (Ä47 verlangt keine neue Auswahl-Wahrheit).
+    // eingeklappt (Ä54 verlangt keine neue Auswahl-Wahrheit).
     await klappen.first().click()
     await expect(filter.locator('[data-bezug-klasse="bge"]')).toHaveCount(1)
     await klappen.nth(1).click()

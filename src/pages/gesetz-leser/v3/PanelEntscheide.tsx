@@ -43,7 +43,7 @@ import { PanelFilterZeile } from './PanelFilterZeile';
 // ihr Dateikopf seit B4 verspricht («B5 mountet dieselbe Datei im Header»). Kein
 // Umbau, keine Kopie, ein Zustand (§5).
 //
-// Ä47 (H3-Nachzug): der Mount-Punkt ist jetzt `./PanelFilterZeile` — EINE Zeile
+// Ä54 (H3-Nachzug): der Mount-Punkt ist jetzt `./PanelFilterZeile` — EINE Zeile
 // mit zwei benannten Klappen statt vier gestapelter Steuer-Blöcke (348 px
 // gemessen). Die geteilten Bausteine selbst sind dabei nicht angefasst worden.
 
@@ -99,7 +99,7 @@ export function PanelEntscheide({
 
   return (
     <div data-v3-panel-reiter-inhalt="entscheide">
-      {/* ── EINE Filterzeile (Ä47) · Herleitung in `./PanelFilterZeile` ──────── */}
+      {/* ── EINE Filterzeile (Ä54) · Herleitung in `./PanelFilterZeile` ──────── */}
       <PanelFilterZeile klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
         klassenImErlass={klassenImErlass} histogramm={histogramm} bereich={bereich}
         onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />

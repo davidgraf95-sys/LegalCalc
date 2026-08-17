@@ -35,7 +35,7 @@ async function panelAuf(page: Page, pfad: string): Promise<void> {
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
   // Öffner je Zuschnitt — EINE Quelle (§5, `helpers/panelOeffnen`). Bis zum
   // H3-Nachzug stand hier `[data-v3-panel-lasche], [data-v3-panel-zaehler]`; die
-  // Lasche ist gestrichen (Ä46/Ä49).
+  // Lasche ist gestrichen (Ä53/Ä56).
   await panelAufziehen(page)
 }
 
@@ -47,7 +47,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
 
     const filter = page.locator('[data-v3-panel] [data-v3-panel-filter]')
     await expect(filter).toBeVisible()
-    // Ä47 (H3-Nachzug): die Facetten liegen hinter zwei benannten Klappen — EINE
+    // Ä54 (H3-Nachzug): die Facetten liegen hinter zwei benannten Klappen — EINE
     // Zeile statt vier gestapelter Blöcke (348 px gemessen). Die geprüfte Zusage
     // ist unverändert («die Facetten stehen IM Panel»); nur muss der Fall sie
     // jetzt aufklappen. Ihre Kompaktheit prüft `leser-v3-panel-nachzug` (g).

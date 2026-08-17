@@ -84,10 +84,26 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
  * brechen ihn darum nie neu um (Rechnung zur gestrichenen Grid-Spalte im
  * Rahmen). Nur die KANTE, an der sie hängen, unterscheidet sie:
  *
- *   'rechts'  22 rem breit, volle Höhe, am rechten Rand — die Gestalt, die die
- *             Skizze für D zeigt («Panel rechts 22rem»). Der Lesetext bleibt
- *             links davon sichtbar und lesbar; das Panel ist Beiwerk und sieht
- *             auch so aus.
+ *   'rechts'  22 rem breit, am rechten Rand, von der Kopf-Unterkante bis zum
+ *             Fensterboden — die Gestalt, die die Skizze für D zeigt («Panel
+ *             rechts 22rem»). Das Panel ist Beiwerk und verhält sich auch so:
+ *             kein Scrim, keine Modalität, keine Fokus-Falle; der Lesetext
+ *             daneben bleibt scrollbar und anklickbar (Ä52, `usePopoverAutoZu`
+ *             Modus `beiwerk`).
+ *
+ *             ── EHRLICHE EINSCHRÄNKUNG, GEMESSEN (Ä60, 17.8.2026) ──────────
+ *             «Der Lesetext bleibt links sichtbar UND LESBAR» stand hier bis
+ *             zum H3-Nachzug als unbedingte Zusage. Sie ist NICHT eingelöst:
+ *             gemessen @1440 liegt die Lesespalte bei x 580…1200 und das Blatt
+ *             bei x 1088…1440 — es verdeckt die äusseren **112 px jeder Zeile**
+ *             (18 % der Spaltenbreite), die Zeilenenden fehlen also. Und keine
+ *             feste Breite behebt das: @1440 misst der Rand rechts der Spalte
+ *             240 px, @1280 nur 160 — dieselbe Arithmetik, die schon die
+ *             angedockte Spalte unmöglich gemacht hat (Rechnung im Rahmen).
+ *             Die Zusage gehört darum zum offenen Spalten-Entscheid (H4,
+ *             Vollzugsvermerk H3); bis dahin sagt dieser Kommentar, was das
+ *             Blatt WIRKLICH tut (§8 — ein Kommentar, der mehr verspricht als
+ *             der Bau hält, ist die Sorte Beleg, die niemand nachprüft).
  *   'unten'   Bottom-Sheet über die ganze Breite — die Gestalt für H (Daumenzone)
  *             und für jede geteilte Fläche (dort verbietet die harte Regel eine
  *             dritte vertikale Fläche, und ein 22-rem-Streifen in einer

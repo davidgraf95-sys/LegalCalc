@@ -16,9 +16,9 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 //
 //   'rechts'  D, Einzelansicht — 22 rem am rechten Rand, NICHT modal. Der
 //             Lesetext links bleibt sichtbar UND bedienbar; das Panel ist
-//             Beiwerk und verhält sich auch so (Ä45, s. u.).
+//             Beiwerk und verhält sich auch so (Ä52, s. u.).
 //   'unten'   H und jedes Pane — echtes Bottom-Sheet, modal. Es reicht von der
-//             Unterkante nach oben und lässt den Artikel darüber stehen (Ä48).
+//             Unterkante nach oben und lässt den Artikel darüber stehen (Ä55).
 //
 // WARUM KEINE ANGEDOCKTE SPALTE AUF D: die Rechnung steht im Rahmen
 // (`LeserRahmenV3`, «KEINE DRITTE SPUR») — der Seitenrahmen ist auf 70 rem
@@ -27,7 +27,7 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // Der Blatt-Modus erfüllt die harte Regel «NIE drei vertikale Flächen» ohnehin
 // in jeder Lage, nicht nur im Pane.
 //
-// ═══ Ä45 (H3-Nachzug) · DAS BLATT DECKTE DEN KOPF, DEN ES BEDIENT ════════════
+// ═══ Ä52 (H3-Nachzug) · DAS BLATT DECKTE DEN KOPF, DEN ES BEDIENT ════════════
 // Gemessen 17.8.2026: das Blatt begann auf D bei `top: var(--leser-kopf-h)` =
 // **y 100**, der V3-Kopf liegt bei **y 100–159**. Es lag also über der Kopfzeile
 // samt Öffner, «Ansicht ▾» und ✕ — über genau den Bedienelementen, die es
@@ -36,7 +36,7 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // (`--nt-stick`, Risiko R1/LM-003): eine zweite Zahl hätte beim nächsten
 // Stufenwechsel der Kopfzeile auseinandergelaufen.
 //
-// ZWEITER TEIL VON Ä45 — KOMMENTAR UND BAU STIMMEN JETZT ÜBEREIN: `panelForm`
+// ZWEITER TEIL VON Ä52 — KOMMENTAR UND BAU STIMMEN JETZT ÜBEREIN: `panelForm`
 // verspricht für `'rechts'` «Lesetext bleibt links sichtbar und LESBAR; Panel ist
 // Beiwerk». Gebaut war ein Vollflächen-Scrim (`fixed inset-0 bg-ink-900/30`) mit
 // `aria-modal` und Fokus-Falle — also ein Dialog, der genau das verhindert. Auf D
@@ -44,7 +44,7 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // (`usePopoverAutoZu` Modus `beiwerk`, Herleitung dort); auf H und im Pane bleibt
 // das Sheet modal, weil es dort die ganze Bedienfläche beansprucht.
 //
-// ═══ Ä48 (H3-Nachzug) · DAS «BOTTOM-SHEET» HING OBEN ═════════════════════════
+// ═══ Ä55 (H3-Nachzug) · DAS «BOTTOM-SHEET» HING OBEN ═════════════════════════
 // Gemessen @390: das Sheet begann bei y = 100 und war 744 px hoch — es füllte
 // den ganzen Schirm und verdeckte mit 25 Treffern den gesamten Gesetzestext
 // (dieselbe Wurzel wie Ä19). Ein Bottom-Sheet ist unten angeschlagen und wächst
@@ -56,13 +56,13 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // H5-Auflage: `GliederungSheet` liegt in `parts/` und ist unter FL-4 eingefroren
 // (Herleitung im Vollzugsvermerk H3, «Sheet-Anatomie zweimal»).
 //
-// ── DIE RANDLASCHE IST WEG (Ä46/Ä49, gemessen — Herleitung in `LeserPanelOeffner`) ─
+// ── DIE RANDLASCHE IST WEG (Ä53/Ä56, gemessen — Herleitung in `LeserPanelOeffner`) ─
 // Sie lag @390 mit 16 px IM Normtext und @1024 mit 4 px; wo sie nicht überlappte
 // (@1440), war sie das wortgleiche Doppel des Kopf-Zählers. Der Öffner steht
 // jetzt genau einmal je Zuschnitt: im Kopf (`voll`/`kompakt`) bzw. im
 // «···»-Menü (`mini`) — dieses Bauteil rendert keinen Öffner mehr.
 
-/** Höhe des unten angeschlagenen Blatts: 55 % der Lesefläche (Ä48).
+/** Höhe des unten angeschlagenen Blatts: 55 % der Lesefläche (Ä55).
  *
  *  WARUM 55 UND NICHT 60 ODER 100: über dem Blatt müssen mindestens ein
  *  Artikel-Kopf und zwei Absätze stehen bleiben, sonst ist das Blatt ein
@@ -107,7 +107,7 @@ export function LeserPanelZone({
   // Im Pane ist das Blatt IMMER modal (es beansprucht die ganze Pane-Fläche);
   // in der Einzelansicht entscheidet die Gestalt. `imPaneBlatt` ist die
   // Portal-Frage, `modal` die Bedien-Frage — bis zum Nachzug waren beide
-  // dieselbe Bedingung, und genau daran hing Ä45.
+  // dieselbe Bedingung, und genau daran hing Ä52.
   const imPaneBlatt = paneZiel != null;
   const modal = imPaneBlatt || form === 'unten';
 
@@ -184,7 +184,7 @@ export function LeserPanelZone({
         <>
           {/* Der Scrim gehört zum MODALEN Blatt. Auf D gibt es keinen — dort ist
               das Panel Beiwerk, und ein Scrim hätte den Lesetext, den es
-              erläutert, hinter einer Scheibe gezeigt (Ä45). */}
+              erläutert, hinter einer Scheibe gezeigt (Ä52). */}
           {modal && (
             <div className={imPaneBlatt ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : 'fixed inset-0 z-40 bg-ink-900/30'}
               onClick={schliesse} aria-hidden />

@@ -1,7 +1,7 @@
 // e2e/helpers/panelOeffnen.ts — die EINE Geste «Panel aufziehen» (§5, H3-Nachzug).
 //
 // ── Warum diese Datei existiert ───────────────────────────────────────────────
-// Seit dem H3-Nachzug (Ä46/Ä49) hat das Rechtsprechungs-Panel je Zuschnitt GENAU
+// Seit dem H3-Nachzug (Ä53/Ä56) hat das Rechtsprechungs-Panel je Zuschnitt GENAU
 // EINEN sichtbaren Öffner, und es ist nicht überall derselbe:
 //
 //   Zuschnitt              Öffner

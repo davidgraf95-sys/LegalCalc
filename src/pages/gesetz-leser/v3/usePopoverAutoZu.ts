@@ -21,7 +21,7 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Esc schliesst in ALLEN Modi und gibt den Fokus an den Öffner zurück — das ist
 // die Zusage, die keine Fläche verhandeln darf (WCAG 2.1.2/2.4.3).
 //
-// ── `beiwerk` — DER DRITTE MODUS IST ZURÜCK, MIT AUFRUFER (Ä45, 17.8.2026) ───
+// ── `beiwerk` — DER DRITTE MODUS IST ZURÜCK, MIT AUFRUFER (Ä52, 17.8.2026) ───
 // H3 hatte einen Modus `spalte` (nicht modal) für ein angedocktes Panel gebaut
 // und mit der Spalte gestrichen — richtig, denn er hatte keinen Aufrufer mehr.
 // Jetzt hat er einen: das rechts angeschlagene Blatt auf D. `kopfStufen.panelForm`
@@ -42,7 +42,7 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Beim `beiwerk` kommt hinzu, dass man den Lesetext daneben scrollt, WÄHREND das
 // Panel offen bleiben soll: ein Wisch-Zu machte die Fläche unbenutzbar.
 //
-// ── AUSSENKLICK-AUSNAHME (Ä45-Folgebefund) ──────────────────────────────────
+// ── AUSSENKLICK-AUSNAHME (Ä52-Folgebefund) ──────────────────────────────────
 // Der Zähler in der Kopfzeile liegt NICHT im `wrapRef` des Panels (er steht im
 // klebenden Kopf, eine andere Teilstruktur). Ohne Ausnahme wäre ein Klick darauf
 // erst ein Aussenklick (`pointerdown` ⇒ schliesst) und danach ein Öffner-Klick

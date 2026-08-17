@@ -13,7 +13,7 @@
 //     der Zähler weg. Und trotzdem erreichbar — über «Ansicht ▾» und über die
 //     Taste «r» (Kap. 4h). Beides wird hier geprüft, nicht nur die halbe Regel.
 //
-// ── §6.3-NACHZUG (H3-Nachzug Ä46/Ä49, 17.8.2026): DIE RANDLASCHE IST WEG ─────
+// ── §6.3-NACHZUG (H3-Nachzug Ä53/Ä56, 17.8.2026): DIE RANDLASCHE IST WEG ─────
 // Diese Spec verlangte bis hierher an vier Stellen `[data-v3-panel-lasche]`. Die
 // Lasche ist gestrichen, weil sie gemessen 16 px @390 / 4 px @1024 IM Normtext
 // lag und @1440 das wortgleiche Doppel des Kopf-Zählers war (Herleitung in

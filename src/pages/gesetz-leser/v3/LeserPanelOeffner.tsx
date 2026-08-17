@@ -1,6 +1,6 @@
 import { oeffnerLabel, oeffnerName, zaehlerAttribut } from './panelModell';
 
-// ─── Der Öffner des Panels — EINER je Zuschnitt (H3, F8; Nachzug Ä46/Ä49) ─────
+// ─── Der Öffner des Panels — EINER je Zuschnitt (H3, F8; Nachzug Ä53/Ä56) ─────
 //
 // ═══ DIE RANDLASCHE IST GESTRICHEN — GEMESSEN, NICHT ENTSCHIEDEN ═════════════
 //
@@ -21,7 +21,7 @@ import { oeffnerLabel, oeffnerName, zaehlerAttribut } from './panelModell';
 // der am ARTIKEL (Beiwerk-Zone, S2) — nicht eine schwebende Schiene über dem
 // Text. Wo die Lasche NICHT überlappte (@1440), war sie zudem das wortgleiche
 // Doppel des Kopf-Zählers: fünf Elemente in der Kopfzeile, zwei Knöpfe mit
-// identischem Accessible-Name für dieselbe Fläche (Ä49).
+// identischem Accessible-Name für dieselbe Fläche (Ä56).
 //
 // DARAUS DIE NEUE ORDNUNG — GENAU EIN ÖFFNER JE ZUSCHNITT:
 //

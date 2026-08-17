@@ -119,7 +119,7 @@ export function oeffnerName(anzahl: number | null, artikelLabel: string | null):
 /**
  * Kurzstand der Instanz-Wahl für die Filterzeile: «BGE» · «BGE +2» · «keine».
  *
- * Ä47: die Klappe muss ihren Stand NENNEN, sonst ist eine eingeklappte Facette
+ * Ä54: die Klappe muss ihren Stand NENNEN, sonst ist eine eingeklappte Facette
  * ein verstecktes Filter — und ein Ergebnis, dessen Einschränkung man nicht sieht,
  * ist eine falsche Auskunft über den Bestand (§8). Die Kurznamen kommen aus
  * `KLASSE_SCHALTER` (derselben Quelle wie die Schalter selbst, §5).

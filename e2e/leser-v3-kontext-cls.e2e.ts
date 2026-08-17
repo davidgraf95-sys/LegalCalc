@@ -152,7 +152,7 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
     const vorher = await geometrie(page)
     await shiftBeobachten(page)
     // Auf `mini` trägt die Kopfzeile keinen Zähler (Ä11) — und seit dem H3-Nachzug
-    // auch keine Randlasche mehr (Ä46: sie lag 16 px im Normtext). Der Öffner ist
+    // auch keine Randlasche mehr (Ä53: sie lag 16 px im Normtext). Der Öffner ist
     // dort der Menü-Eintrag; die Zuschnitt-Regel steht in `helpers/panelOeffnen`.
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
     await panelAufziehen(page)
