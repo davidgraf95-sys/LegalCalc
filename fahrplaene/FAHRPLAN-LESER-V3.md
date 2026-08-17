@@ -524,19 +524,19 @@ vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
 | **Ä2** | Lesespalte 556–616 px @1280; Lesespalte auf 40 rem | ✅ **erledigt in H2** (`max-w-normtext` → `max-w-reading`, Nachtrag 16.8.); der Seitenleisten-Default ist nach **Ä1/H2b** gewandert |
 | **Ä5** | Seitenleiste als drei gerahmte Kästen; hängendes «·» in der Übersichtszeile; Übersichtsbox schimmert unter dem klebenden Block durch | ✅ **erledigt in H2b** — Box entrahmt (Weissraum statt Kasten), hängendes «·» weg, klebender Sockel trägt die Fläche seines Behälters |
 | **Ä8** | Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung, Kap. 8 Nr. 3) | ✅ **erledigt in H2b** — `paper-sunken` statt `brass-200/60`, kein 2-px-Lift mehr. KERN-BERÜHRUNG deklariert (`ArtikelBody.tsx`, wirkt in beiden Hüllen) |
-| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | ✅ **erledigt in H2b** — der Leser-Regler heisst «Gesetzestext» und ist der einzige für den Normtext; der globale App-Regler bleibt bewusst stehen (Begründung im Vollzugsvermerk H2b, Entscheid 1) |
+| **Ä9** | Schriftgrösse doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EIN Regler, und zwar im Ansicht-Menü | ⏳ **teilweise in H2b, Rest → H4.** Erledigt: der Leser-Regler heisst «Gesetzestext» und ist der einzige für den Normtext (`[role=group][aria-label="Schriftgrösse"]` 2 → 1 bei offenem Panel). OFFEN: den globalen App-Regler im Leser AUSBLENDEN. Das geht heute nur über Flag-Wissen in der Topbar (FL-1) oder einen V1-Umbau (FL-4) — beides teurer als der Befund wiegt. Der Punkt fällt darum mit der **Leisten-Verschmelzung A-2 in H4**, wo die Topbar ohnehin angefasst wird. **Kein David-Entscheid nötig** — technische Sequenzierung, Orchestrator-Entscheid 17.8.2026 |
 | **Ä10** | Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser | ✅ **erledigt in H2b**, soweit reproduzierbar — «GLIEDERUNG» 2× → 1×; Überlauf (0 px gemessen) und Popover-Position (0 px Abweichung) waren NICHT reproduzierbar und sind gemeldet, nicht gefixt |
 | **Ä12** | «Seitenleiste ausblenden» (App) gegen «‹ ausblenden» (Gliederung) — gleiche Wortwahl, zwei Wirkungen | ✅ **erledigt in H2** (der Knopf sagt jetzt, WAS er ausblendet) |
-| **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | ✅ **erledigt in H2b** — ein 2-px-Ring in der Rolle `focus`, `box-shadow: none` |
+| **Ä14** | Fokusring am Suchfeld doppelt/dick — ein 2-px-Ring in der Fokus-Rolle | ✅ **erledigt in H2b-NACHZUG** — H2b nahm nur den `box-shadow` weg und liess Rahmenfarbe + `outline-offset: 1px` stehen, also wieder zwei Messing-Kanten (Ä41). Jetzt: Rahmen im Fokus neutral, Ring ohne Spalt |
 | **Ä15** | Trefferzähler ellipsiert seine Kernauskunft («9 Artikel · 15 Fundstellen» braucht 159 px in einer 155-px-Spalte). Umbruch erlauben oder kürzen («9 Art. · 15 Stellen») — an einer Kernauskunft ist eine Ellipse nie richtig (§8) | ✅ **erledigt in H2b** — Umbruch statt Ellipse (176 px in 148 px → 148 = 148); bewusst KEINE Abkürzung |
 | **Ä16** | **Zwei ✕ im Suchfeld, Wurzel gemessen:** das Feld ist `type="search"`, Chromium rendert dazu seinen eigenen `::-webkit-search-cancel-button`, und V3 legt zusätzlich `data-v3-such-leeren` daneben. Im gebauten Stand existiert **keine** `search-cancel-button`-Regel (0 Treffer über alle `document.styleSheets`); V1 hat das Problem nicht, weil es keinen eigenen Lösch-Knopf mitbringt. Fix: nativen Cancel per Utility ausblenden (`[&::-webkit-search-cancel-button]:appearance-none`) **oder** `type="text"` mit passendem `inputmode` — **eine** Löschung, nicht zwei | ✅ **erledigt in H2b** — `type="text"` + `role="searchbox"`; die Ursache ist weg, nicht das Pseudoelement übermalt |
 | **Ä17** | Trefferzeilen haben den **Kontext-Schnipsel verloren** (V1: «Art. 47 Kosten 1 Entschädigungspflichten aus Rechtshilfe…», V3: «Art. 47 Kosten 1»). Im Ruhezustand je Artikelgruppe die **erste** Fundstelle mit Schnipsel zeigen, den Rest beim Aufklappen — damit trägt die Liste wieder, was der Vollzugsvermerk ihr zuschreibt | ✅ **erledigt in H2b** — jede Trefferzeile trägt im Ruhezustand ihren Ausschnitt (aus `LeserTreffer.ausschnitt`, kein zusätzlicher Lauf) |
-| **Ä18** | Bottom-Sheet auf dem Handy ordnet Feld → Übersicht → Treffer, der Desktop Übersicht → Feld → Treffer. Zwei Reihenfolgen für dieselbe Leiste (§5) | ✅ **erledigt in H2b** — EINE Regel auf allen Breiten: das Feld ist das oberste Element des klebenden Blocks (Spalte bzw. Kopf-Block); das Blatt trägt kein zweites Feld |
+| **Ä18** | Bottom-Sheet auf dem Handy ordnet Feld → Übersicht → Treffer, der Desktop Übersicht → Feld → Treffer. Zwei Reihenfolgen für dieselbe Leiste (§5) | ✅ **erledigt in H2b**, in H2b-NACHZUG **präzisiert** — EINE Regel auf allen Breiten: das Feld ist das oberste Element des klebenden Blocks; im OFFENEN Blatt ist das der Blatt-Kopf (Ä35), sonst Spalte bzw. Kopf-Block. Es gibt weiterhin genau EIN Feld im DOM |
 | **Ä19** | **Im Split-View existiert gar kein Suchfeld** (`count === 0`; V1 hat je Pane eines), und das geöffnete Blatt verdeckt das Pane vollständig — wer im Split sucht, verliert den Text aus dem Blick, in dem er sucht. Dieselbe Wurzel wie der Handy-Mehrschritt bei NM-3. **Gewichtigster offener Punkt** | ✅ **erledigt in H2b** — klebende Such-Zone im Kopf-Block (`v3/SuchZone.tsx`): im Split 0 → 2 Felder, je Pane eines, ohne Geste und ohne Overlay über dem Text (`leser-v3-suchfeld-ueberall`) |
 | **Ä20** | Platzhalter im Suchfeld ist fix «Suchen oder «Art. 429» …» — auch bei §-Erlassen (gemessen an ZH-211.11, wo sonst durchweg korrekt «§/Paragraphen» steht). Platzhalter je Erlassart aus dem Erlass ableiten | ✅ **erledigt in H2b** — Platzhalter aus dem Erlass («Suchen oder «§ 1» …»), Beispiel = Etikett der ersten Bestimmung |
-| **Ä21** | Kanton-Kopf zeigt den Titel **dreimal**: App-Krume, Leser-Krume, H1. Bei ZH-211.11 schärfer als beim Bund, weil dort das Register-Kürzel bereits der volle Name ist — Kürzel und Volltitel sind wortgleich. Wenn Kürzel = Volltitel: nur einmal ausgeben (`LeserKopf.tsx`) | ✅ **erledigt in H2b** — `zeigeVolltitel()`: der Volltitel entfällt, wenn er mit dem Kürzel beginnt (ZH-211.11) |
+| **Ä21** | Kanton-Kopf zeigt den Titel **dreimal**: App-Krume, Leser-Krume, H1. Bei ZH-211.11 schärfer als beim Bund, weil dort das Register-Kürzel bereits der volle Name ist — Kürzel und Volltitel sind wortgleich. Wenn Kürzel = Volltitel: nur einmal ausgeben (`LeserKopf.tsx`) | ✅ **erledigt in H2b**, in H2b-NACHZUG **geschärft** — `zeigeVolltitel()` prüft neu WORTGLEICHHEIT statt `startsWith` (Ä36) |
 | **Ä22** | LugÜ-Titel wird silbengetrennt umbrochen | **S3** (mit Ä6, Erlass-Kopf) |
-| **Ä23** | **«Artikel» ist in `LeserTrefferListe.tsx` hart kodiert** (2 Stellen) — `bestimmungsWort` existiert bereits in `LeserRahmenV3.tsx`, gehört nach `erlassAnsicht.ts` und muss durchgereicht werden, damit §-Erlasse in der Trefferliste nicht «Artikel» zählen | ✅ **erledigt in H2b** — `bestimmungsWort` durchgereicht (2 Stellen), mit Zählform; ZH-211.11 zählt «Paragraphen» |
+| **Ä23** | **«Artikel» ist in `LeserTrefferListe.tsx` hart kodiert** (2 Stellen) — `bestimmungsWort` existiert bereits in `LeserRahmenV3.tsx`, gehört nach `erlassAnsicht.ts` und muss durchgereicht werden, damit §-Erlasse in der Trefferliste nicht «Artikel» zählen | ✅ **erledigt in H2b**, in H2b-NACHZUG **vollzogen** — H2b reichte den Wert durch, liess ihn aber als Literal an fünf Stellen stehen; jetzt Typ + Ableitung + Zählform in `erlassAnsicht.ts`, bewacht (Ä42) |
 | **Ä4** | Beiwerk-Chips laufen über den Rand | **H3/S2** |
 | **Ä6** | Erlass-Kopf | **S3** |
 | **Ä7** | Randtitel über Artikelnummer (Hierarchie) | **S2** |
@@ -695,6 +695,87 @@ Assertion gelockert, zwei ausdrücklich verschärft).
 `check:e2e-shards` (94 Specs) · `build` · `check:perf-budget` · `leser-v3-*` +
 `leser-kopf-*` im Projekt `chromium` **62/62** und im Flag-Projekt `leser-v3`
 **44 passed / 1 skipped** · `a11y.e2e.ts` **47/47** (hell und dunkel).
+
+---
+
+### ✅ Vollzugsvermerk H2b-NACHZUG (17.8.2026, Branch `feat/leser-v3-h2b`)
+
+Drei unabhängige Prüfer (Bug-Check · Ästhetik **6,5/10** · Architektur 8/10 «ja
+mit Nachzug») haben H2b geprüft. **Nummernkreis:** die S1-Prüfung vom 17.8. hat
+Ä25–Ä27 parallel anders belegt (Verweis-Unterstreichung · Historie-Slot-Phantom ·
+Fussnoten-Abhängigkeit); dieser Nachzug vergibt darum **Ä35–Ä44**.
+
+| Nr. | Befund (gemessen 17.8.2026) | Vollzug |
+|---|---|---|
+| **Ä35** | @390 bei offenem Treffer-Blatt fokussierte ⌘K das VERDECKTE Kopf-Feld (`sheet.contains(activeElement) === false`), Tippen landete unsichtbar, Esc leerte das Feld statt das Blatt zu schliessen — und im Blatt war überhaupt kein Feld erreichbar (`felderImBlatt: 0`) | ✅ Das Blatt trägt das Feld, solange es offen ist — DASSELBE Bauteil, nicht ein zweites (die Such-Zone gibt es solange her, `count === 1` bleibt). `escLeert={!blattOffen}`: im Dialog gehört Esc dem Dialog (WCAG 2.1.2), der Begriff bleibt stehen. `leser-v3-blatt` (a)(b) |
+| **Ä36** | `zeigeVolltitel` prüfte `startsWith`: `kanton/BS-BeE 610.100` zeigte nur «Finanzreglement», obwohl `BS-154.125` dasselbe Kürzel trägt; `ASYLG` verlor «Asylgesetz», `BS-121.100` «Bürgerrechtsgesetz» | ✅ WORTGLEICHHEIT statt Präfix, gemessen an der ANGEZEIGTEN Zeichenkette. Korpus-Wirkung 784 → **775** unterdrückte Volltitel. Kein `title` als Ersatz für sichtbare Auskunft; der widersprüchliche Kommentar in `LeserKopf.tsx` ist bereinigt |
+| **Ä37** | ⌘K traf im Split IMMER dasselbe Pane: seit Ä19 hängen zwei Listener am Fenster, der zuletzt registrierte gewann (Fokus primär ⇒ Sprung ins sekundäre Feld, und umgekehrt genauso) | ✅ Das Kürzel bedient das Pane, in dem `document.activeElement` steht (Fallback primär); die Wache steht VOR `preventDefault`, sonst schwiege zusätzlich die Header-Suche. `leser-v3-blatt` (c) |
+| **Ä38** | Ä25-Regression: das Kürzel «LugÜ» wurde zu «Lu…» (`scrollWidth` 29 in `clientWidth` 23) — Ä21 gab ihm `truncate`, und zwei `truncate`-Geschwister teilen den Mangel | ✅ `shrink-0`, sobald ein Volltitel daneben steht; nur ohne ihn darf gekürzt werden (dann IST das Kürzel der Name). `leser-v3-kopf-buendig` (d), LugÜ · StPO · ZH-211.11 @1440/@390 |
+| **Ä39** | Ä10/Ä26: das Anhang-Etikett «Protokoll 1 über bestimmte Zuständigkeits-…» (80 Zeichen) trug `shrink-0` und riss den Leisten-Scroller auf **699 px in 280 px** (Blatt @390: 699/366), der Fundstellen-Zähler lag aus dem Bild | ✅ Etikett `min-w-0 truncate` (Wortlaut im `title`), Zähler behält `shrink-0`. `leser-v3-nachzug-auskunft` (d) misst LugÜ/«Gericht» auf `scrollWidth <= clientWidth` UND den Zähler innerhalb der Leiste |
+| **Ä40** | Ä5/Ä27: `details > summary::after {content:'  ▸'}` hängte an JEDE Übersichtszeile ein zweites Glyph ans Ende (`::after` = `"  ▸"` PLUS Textknoten «▸») — das hängende Zeichen war umgezogen, nicht weg. Ä28: die Warnung «nicht konsolidiert» stand in der aufgeklappten Box ZWEIMAL, in zwei Wortlauten | ✅ Die App-weite Regel bleibt, für diese eine Box gestrichen (`content: none`) — mit Positiv-Sonde, dass sie an fremden `<details>` weiterlebt. Die Warnung steht einmal: die ausführlichere der Box; zugleich trägt sie jetzt die `aufgehoben`-Grenze, die Erlass-Kopf und -Übersicht beide ziehen (§8) |
+| **Ä41** | Ä29 Kontext-Ausschnitte begannen mitten im Wort («… on erhebt») · Ä30 der Zähler brach zwischen Zahl und Einheit («15 Paragraphen» / «· 62 Fundstellen») · Ä31 Fokus: outline 2 px brass + Rahmen brass + offset 1 px = zwei Ringe | ✅ Schnitt an der Wortgrenze, nur nach innen und mit hartem Schnitt als Rückfall (`leserSuche`, unit-geprüft, **KERN-BERÜHRUNG** — wirkt in beiden Hüllen wie Ä8) · Segmente `whitespace-nowrap`, «·» ist die einzige Bruchstelle · Rahmen im Fokus neutral, `outline-offset: 0` |
+| **Ä42** | Architektur 1/2/3: das Literal `'Paragraphen'` an fünf Stellen in `v3/`, die Ableitung doppelt, die Singular-Regel dreifach; die zwei Höhen der Such-Zone als rem-Literale im Rahmen statt bei ihrem Markup | ✅ `BestimmungsWort` + `bestimmungsWort(key)` + `zaehlform()` in `erlassAnsicht.ts`, drei neue Fundament-Sonden («kein Paragraphen-Literal in `v3/` ausser dort»). Höhen als `SUCH_H_RUHE`/`SUCH_H_AKTIV` in `SuchZone.tsx`, vom Rahmen importiert |
+| **Ä43** | Ä32: im TREFFER-Blatt standen «Sie sind hier — Noch keine Leseposition erfasst.» und die Erlass-Übersicht, «⌄ alles auf ↑ Anfang» hing etikettlos rechts; der ✕ hiess dort «Gliederung schliessen» | ✅ Im Treffer-Blatt: keine Ortsangabe, keine Ankunfts-Übersicht, kein «alles auf/zu» (es klappt einen Baum, der gar nicht steht) — «↑ Anfang» bleibt, es meint den Erlass. Dialog UND ✕ heissen, was das Blatt zeigt. `leser-v3-blatt` (d)(e) |
+| **Ä44** | B1: `titelKennung` mass `erlass.titel.length`, gedruckt wird `titelOhneSuffix` — **42 von 1469** Erlassen bekamen die vorangestellte Kennung, obwohl ihr angezeigter Titel unter der Schwelle liegt (MSchG: roh 87, angezeigt 60) | ✅ Die Regex lebt einmal in `helpers.titelOhneKlammerSuffix` und speist Kopf, Längen- und Gleichheitsprüfung. Kennungen 268 → **226**; LugÜ (angezeigt 155) behält sie |
+
+**A1 · die Ä1c-Vorgabe war für Bestandsnutzer wirkungslos** (Bug-Check, VOR
+MERGE): der Stand vor H2b schrieb `lexmetrik-seitenleiste-eingeklappt='0'` bei
+JEDEM Mount ohne Nutzerhandlung; H2b las das als Wahl. Gemessen @1440 mit
+vorbelegtem `'0'`: App-Leiste **256 px offen** (fabrikneu 0 px). Fix: Schlüssel
+versioniert (`…-eingeklappt.v2`). Aus dem Alt-Schlüssel wird **nur `'1'`**
+übernommen — das konnte nur eine Wahl sein, denn eingeklappt war nie die
+Vorgabe; `'0'` ist vom Mount-Schrieb nicht zu unterscheiden und zählt nicht.
+Der Alt-Schlüssel wird nicht geschrieben und nicht gelöscht (eine Migration im
+Mount wäre genau der gerügte Fehler). Tri-State unit-geprüft, e2e auf drei
+Lagen: Alt-`'0'` im Leser eingeklappt · Alt-`'1'` bleibt Wahl · ausserhalb des
+Lesers offen und **kein** Speicherschreiben.
+
+**§17-Rückbau, im Nachzug gefunden:** der `onKuerzel`-Zweig des Rahmens («erst
+die Fläche öffnen, dann fokussieren», B1-Nachzug aus H1) war seit Ä19/A2
+**unerreichbar** — das Feld ist in jeder Lage im DOM, und
+`leser-v3-suche-sprung` (e) verlangt ausdrücklich, dass ⌘K die Spalte NICHT
+aufzieht. Zwei Tore forderten Gegensätzliches; der Zweig ist gestrichen, die
+Sonde in `leser-v3-kuerzel` bewacht jetzt den Rückbau (§6.3-Nachzug am Ort
+deklariert). Der Rahmen sinkt dadurch von 415 auf **411** Zeilen und bleibt
+unter dem Adapter (416) — die Datei-Sonde bleibt grün, ohne dass die Zahl weicht.
+
+**Rot-Beweis (§6.7) — 27 Sabotagen, alle einmal rot gesehen** (Lauf 17.8.2026,
+je im Spec-/Test-Kopf notiert, wie): A1 unit + e2e · B1 · B2 · B8 (Regel und
+Sonde) · Ä29 · B9 (Sonde, e2e zu hoch, e2e zu tief) · A3 (Sonde und e2e) · B3
+beide Richtungen · A4 · A5 · Ä27 · Ä28 · Ä30 · Ä31 · A2 (Feld, Esc, Feldzahl) ·
+Ä32 (Ort, Übersicht, alles-auf) · B11 · Ä18-Reihenfolge.
+**ZWEI ZUSICHERUNGEN WAREN BLIND und sind ersetzt** — das ist der wichtigste
+Einzelbefund dieses Nachzugs, weil er die Methode betrifft, nicht ein Feature:
+(1) die untere Schranke von Ä1 liess sich über `marginTop` nicht reissen (die
+Wrapper-Polsterung schluckt den Wert, `top` klemmt ihn ab); tragfähig ist
+`top: '0rem'` ⇒ **−101 px** nach 1200 px Scroll. (2) Die B9-Höhenprüfung
+verglich die gemessene Höhe mit der Variable, die sie selbst setzt — eine
+Tautologie. Sie misst jetzt die NATÜRLICHE Höhe (`height: auto`): Ruhe 40 gegen
+ausgelegt 44 px, mit Suche 64 gegen 68; erlaubt sind höchstens 4 px Reserve.
+
+**Auflage an H3** (B10): der Sheet-Block des Rahmens gehört in ein eigenes
+Bauteil. NICHT hier gebaut — die Kollisions-Sonde zeigt, dass der Worktree
+`LexMetrik-h3` den Rahmen bereits umbaut (174 geänderte Zeilen) und
+`v3/LeserLeisteSheet.tsx` dort schon **existiert**. H3 vollzieht die Auslagerung
+also selbst; dieser Nachzug hält seine Hunks im Rahmen klein und lokal
+(+19/−12 vor dem Rückbau, danach netto −4 Zeilen) und baut die Grid-Struktur nicht an.
+
+**Commit-Typ-Hinweis** (B12, keine Historien-Änderung): Commit `37159526f` heisst
+`docs(…)`, ändert aber `src/index.css`, `src/tests/ArtikelBody.test.tsx` und
+`e2e/leser-v3-suche-sprung.e2e.ts`. Nicht umgeschrieben (kein `amend`, kein
+`rebase`), aber hier und im PR-Body benannt — `check:testtreue` deckt nur
+`refactor(`, `docs(` läuft ihm durch.
+
+**Für H4 vorgemerkt** (aus den Prüfer-Befunden, hier nur eingereiht):
+**Ä9-Rest** (globaler App-Regler im Leser ausblenden, A-2) · **Ä45** Doppelkrume
+(App-Krume und V3-Ortsangabe nennen denselben Ort übereinander; gemessen @390
+zwei `nav`-Krumen) · **Ä46** zwei ✕ je Pane mit verschiedener Bedeutung
+(gemessen 2 Stück) · **Ä33/Ä34** aus der Ästhetik-Prüfung. MESSWERT als H4-Ziel:
+das Chrome bis zum Beginn der Lesefläche ist @390 **183 px = 22 %** der
+Fensterhöhe im Ruhezustand (Topbar 65 · Krumen-Leiste bis 102 · V3-Kopf bis 183)
+und wächst mit laufender Suche um 24 px auf **207 px = 25 %**.
+
+**Tore:** s. Abschluss-Block unten.
 
 ---
 
