@@ -1479,6 +1479,17 @@ dessen Abwesenheit **plus** die Unabhängigkeit selbst. Nachtrag in
 `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md` §7.4a — H0-Auflage 1 gilt
 jetzt für **jede** Klasse, ist also strenger erfüllt als zuvor.
 
+**Wartet auf Davids Auge (kein Test entscheidet das, §8):** das Blatt liegt als
+Overlay über dem LINKEN Rand des Satzspiegels. Gemessen über fünf Breiten:
+**38 px = 6 %** der Zeilenbreite ab 1280 (Lücke neben dem Text 250 px, Blatt
+288 px), **86 px = 13 %** bei 1024. Der rechte Rand bleibt überall frei (Spec
+(b) misst das). Schmaler zu werden ist möglich, aber nicht gratis: 18 rem ist die
+Breite, auf die die Trefferliste typografisch eingestellt ist (Ä15/Ä30 haben den
+Zähler-Umbruch genau dort gelöst), und unter ~15 rem kehrt die abgeschnittene
+Kernauskunft zurück. Die Alternative ohne jede Überlappung wäre die aufziehende
+Spalte — und die kostet 126 px Textbewegung. **Empfehlung: so lassen**, das Blatt
+ist mit ✕ und Esc in einer Geste weg.
+
 **Rot-Beweise (§6.7), am Vorzustand gesehen:** 15 von 28 Fällen rot — u. a.
 «Vermerke=aus nimmt Apparat-Zeilen mit — Expected 29, Received 8» (BGBM) ·
 «A-Marker 0 verschwindet mit den Änderungsvermerken» · «Ring links um 2 px vom

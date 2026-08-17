@@ -54,13 +54,20 @@ async function gliederungZu(page: Page): Promise<void> {
   await expect(page.locator('[data-v3-such-zone] input')).toHaveCount(1)
 }
 
-async function suche(page: Page, wort = BEGRIFF): Promise<void> {
+/**
+ * Suchen und warten, bis der Begriff durch das Debounce im Modell ist.
+ *
+ * WORAUF gewartet wird, hängt von der Lage ab — und das ist keine Feinheit,
+ * sondern ein beim Bau gesehener Fehlschlag: `[data-v3-treffer-weg]` (die
+ * Zähler-Zeile) lebt in der Such-ZONE, und die gibt es nur OHNE stehende Spalte.
+ * Mit Spalte wartete der Helfer auf ein Element, das dort nie erscheint.
+ */
+async function suche(page: Page, wort = BEGRIFF, mitSpalte = false): Promise<void> {
   const feld = page.locator('[data-v3-suchsprung] input').first()
   await feld.click()
   await feld.fill(wort)
-  // Der Begriff läuft durch ein Debounce ins Modell; die Zähler-Zeile ist das
-  // erste, was danach steht.
-  await expect(page.locator('[data-v3-treffer-weg]')).toBeVisible({ timeout: 15000 })
+  const zeuge = mitSpalte ? '[data-treffer-liste]' : '[data-v3-treffer-weg]'
+  await expect(page.locator(zeuge).first()).toBeVisible({ timeout: 15000 })
 }
 
 /**
@@ -256,7 +263,7 @@ test('(f) mit STEHENDER Spalte gibt es kein Blatt — nie zwei Listen', async ({
   // die `LeserGliederung` ausdrücklich ausschliesst (§5).
   await page.setViewportSize({ width: 1440, height: 900 })
   await warteLeser(page)
-  await suche(page, BEGRIFF)
+  await suche(page, BEGRIFF, true)
 
   await expect(page.locator('[data-v3-aside]')).toHaveCount(1)
   await expect(page.locator('[data-v3-treffer-blatt]')).toHaveCount(0)

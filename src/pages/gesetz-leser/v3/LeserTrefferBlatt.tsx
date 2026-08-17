@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 // ═══ Ä70 (David-Befund 17.8.2026 abends) · DIE TREFFER STEHEN AM FELD ════════
 //
@@ -61,32 +61,9 @@ import { useState, type ReactNode } from 'react';
 // (`LeserGliederung` → `LeserTrefferListe`, eine Registry, §5) — kein zweiter
 // Trefferbaustein, keine zweite Wahrheit.
 
-/**
- * Ist das Treffer-Blatt offen?
- *
- * Es öffnet sich SELBST, sobald eine Suche läuft — das ist der ganze Befund:
- * wer sucht, will das Ergebnis sehen, nicht erst einen Knopf finden. Der Nutzer
- * kann es wegklicken, und dann bleibt es weg, bis er die Eingabe ÄNDERT oder die
- * Liste ausdrücklich zurückholt.
- *
- * Kein Effekt, kein Zurücksetzen im Render-Nachlauf: gemerkt wird nicht «zu ja/
- * nein», sondern FÜR WELCHEN BEGRIFF weggeklickt wurde. Damit ergibt sich der
- * Zustand deterministisch aus Begriff + Merkwert (§2) — dasselbe Muster, mit dem
- * `LeserTrefferListe` ihren Aufklapp-Deckel beim Begriffswechsel verwirft
- * (`gemerkt.begriff === begriff`), und es umgeht die Kaskaden-Render-Falle
- * (`react-hooks/set-state-in-effect`).
- */
-export function useTrefferBlatt(begriff: string) {
-  const [zuFuer, setZuFuer] = useState<string | null>(null);
-  return {
-    /** Offen, solange für DIESEN Begriff nicht weggeklickt wurde. */
-    offen: zuFuer !== begriff,
-    /** ✕ am Blatt bzw. Esc darin — nimmt es weg, ohne die Suche zu verlieren. */
-    schliesse: () => setZuFuer(begriff),
-    /** «Treffer anzeigen →» in der Zähler-Zeile holt es zurück. */
-    oeffne: () => setZuFuer(null),
-  };
-}
+// Der Offen-Zustand liegt in `./useTrefferBlatt` — `react-refresh/only-export-
+// components` lässt neben einer Komponente keinen zweiten Export zu (Lint-Fehler
+// beim Bau gesehen), und die Trennung folgt ohnehin dem Haus-Muster.
 
 export function LeserTrefferBlatt({ liste, onSchliessen }: {
   /** Die Trefferliste — DASSELBE Bauteil wie in der Spalte (§5). */
