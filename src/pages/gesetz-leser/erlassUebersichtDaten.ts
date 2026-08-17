@@ -90,9 +90,33 @@ export function teilerfassung(erlassKey: string): TeilerfassungsBeleg | undefine
  * Dopplung. Der amtliche Wortlaut selbst bleibt unangetastet (§7): geschnitten
  * wird ausschliesslich diese eine, formelhafte Klammer am Ende; der volle
  * String bleibt über `title` erreichbar (§8, kein stiller Verlust).
+ *
+ * ── Ä74 (17.8.2026) · «am» IST OPTIONAL — 1182 VON 1420 SIDECARS ────────────
+ * BEFUND, gemessen beim Umbau der V3-Übersichtsbox an BS-640.100: die Zeile las
+ * «Erlassdatum · Vom 12. April 2000 (Stand 1. Januar 2026)» und direkt darunter
+ * «Stand · 01.01.2026» — genau die Dopplung, gegen die diese Funktion gebaut ist,
+ * ungehindert durchgelaufen. Ursache: Fedlex schreibt «(Stand am …)», die
+ * KANTONALEN Sammlungen schreiben «(Stand …)» ohne «am», und das Muster verlangte
+ * das «am».
+ *
+ * VERBREITUNG (gezählt 17.8.2026 über alle `public/normtext/struktur/**`):
+ * 1420 Sidecars tragen ein Erlassdatum — 227 in der Fedlex-Form «(Stand am …)»,
+ * **1182 in der kantonalen Form «(Stand …)»**, 11 mit einer anderen Klammer.
+ * Die Funktion griff also bei 16 % und liess 83 % durch.
+ *
+ * Die Klammer bleibt eng gefasst: sie muss mit «Stand» BEGINNEN und am Ende der
+ * Zeichenkette stehen. Klammern mit anderem Inhalt bleiben unangetastet — die
+ * Fundstelle «(AS 2000 1)» ebenso wie die freiburgische Form «(Fassung in Kraft
+ * getreten am 01.12.2025)», die eine EIGENE Aussage trägt und kein Stand-Zusatz
+ * ist (beide als Negativ-Sonde im Test).
+ *
+ * Wirkung auf die Ist-Hülle: deren Erlass-Übersicht (`parts/ErlassUebersicht`)
+ * konsumiert dieselbe Ableitung und zeigte die Dopplung an denselben 1182
+ * Erlassen. Der Fix wirkt dort mit — bewusst, denn es ist derselbe Mangel;
+ * eine korrigierte Zweitkopie in `v3/` wäre die zweite Wahrheit, die §5 verbietet.
  */
 export function nurErlassdatum(erlassdatum: string): string {
-  return erlassdatum.replace(/\s*\(Stand am [^)]*\)\s*$/, '').trim();
+  return erlassdatum.replace(/\s*\(Stand(?: am)? [^)]*\)\s*$/, '').trim();
 }
 
 /** Das erlassgebende Organ aus der amtlichen Präambel (ohne Schluss-Komma). */

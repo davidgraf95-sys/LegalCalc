@@ -123,7 +123,7 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     const a = uebersichtsAngaben(eingabe({
       erlass: erlassBauen({
         key: 'LUGUE', kuerzel: 'LugÜ', sr: '0.275.12', stand: '2016-04-08',
-        rechtsgebiet: 'international', inkraftSeit: null,
+        rechtsgebiet: 'international', inkraftSeit: undefined,
       }),
       erlassTyp: 'staatsvertrag', anzahl: 91,
     }));
@@ -175,7 +175,7 @@ describe('uebersichtsAngaben — die Grenzen, die §8 verlangt', () => {
 
   it('aufgehobener Erlass: keine Konsolidierungs-Warnung, ehrlich beschrifteter Link (B3/B5)', () => {
     const a = uebersichtsAngaben(eingabe({
-      erlass: erlassBauen({ aufgehoben: { seit: '2020-01-01', nachfolger: null } } as Partial<BrowseErlass>),
+      erlass: erlassBauen({ aufgehoben: { seit: '2020-01-01' } }),
       nichtKonsolidiert: true, nichtKonsolidiertSeit: '2019-01-01',
       currency: { naechsteFassungAb: '2027-01-01' } as UebersichtsEingabe['currency'],
     }));
@@ -198,7 +198,7 @@ describe('uebersichtsAngaben — die Grenzen, die §8 verlangt', () => {
 
   it('ohne amtliche Quelle: gar kein Link statt eines toten (§8/F4)', () => {
     const a = uebersichtsAngaben(eingabe({
-      erlass: erlassBauen({ quelleUrl: '', pdfUrl: null }),
+      erlass: erlassBauen({ quelleUrl: '', pdfUrl: undefined }),
     }));
     expect(a.links).toEqual([]);
   });
