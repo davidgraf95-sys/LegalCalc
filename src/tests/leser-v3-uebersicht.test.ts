@@ -90,7 +90,12 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     }));
 
     expect(a.ruhe).toBe('SR 312.0 · 480 Artikel');
-    expect(labels(a)).toEqual(['Art', 'Erlassgeber', 'Erlassdatum', 'Stand', 'In Kraft seit', 'Gliederung']);
+    expect(labels(a)).toEqual(['Art', 'Erlassgeber', 'Erlassdatum', 'Stand', 'In Kraft seit', 'Aufbau']);
+    // «Aufbau», nicht «Gliederung»: im Handy-Blatt trägt der Blatt-Kopf bereits
+    // die Zone «Gliederung», und Ä10 hat genau diese Doppelnennung abgeräumt.
+    // Der bestehende Wächter `leser-v3-auskunft` hat den Rückfall gefangen
+    // (gemessen 2× statt 1×) — dieser Fall hält die Bezeichnung fest.
+    expect(labels(a)).not.toContain('Gliederung');
     // Die formelhafte Stand-Klammer ist weg — der Stand steht eine Zeile
     // tiefer mit seinem maschinellen Wert (§5, sonst zweimal dasselbe Datum).
     expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('vom 5. Oktober 2007');

@@ -1102,6 +1102,42 @@ breiten Zone C der Ist-Hülle, dort richtig kalibriert, in 18 rem falsch.
 | **Ä72** | Zweite Klappe «Mehr zu diesem Erlass» weg — die vier §8-Sätze (Erfassungsgrad, Etikett-Entwurf, fehlende amtliche Gliederung, Teilerfassungs-Beleg) stehen jetzt offen. Ein Ehrlichkeits-Hinweis hinter zwei Klicks ist keiner (§8) | `leser-v3-bauteile`, e2e |
 | **Ä74** | `nurErlassdatum` verlangte «(Stand am …)» und liess die kantonale Form «(Stand …)» durch: **1182 von 1420** Sidecars zeigten den Stand zweimal untereinander (BS-640.100: «Vom 12. April 2000 (Stand 1. Januar 2026)» über «Stand 01.01.2026»). Wurzel-Fix in der EINEN geteilten Ableitung — wirkt in beiden Hüllen | `gesetz-leser-uebersicht-s6`, e2e Ä74 |
 
+**Nachher, gemessen** (dieselbe Reihe, `mass.mjs`): Ruhezeile **3 → 1** Zeile an
+allen fünf · Schriftfamilie in der Box **`Geist Mono Variable` → `Geist
+Variable`**, und zwar als EINZIGE · gekappte Werte **je 0** (vorher 1–2 je
+Erlass) · Klapp-Ebenen im Inneren **1 → 0** · «massgeblich ist …» an der StPO
+**2 → 1**, an den übrigen vier **1 → 0** (der Grundhinweis ist weg, der
+Erlass-Kopf trägt ihn). **Ehrlich zum Preis:** die aufgeklappte Box wird höher —
+StPO 270 → 350 px, LugÜ 219 → 249, VMWG 219 → 230, ZH-211.11 219 → 231, BS-640.100
+219 → **399**. Das ist kein Nebeneffekt, sondern der Gegenwert: nichts wird mehr
+abgeschnitten (BS' Sachgebiet allein war 414 px Verlust), und die §8-Sätze stehen
+nicht mehr hinter einer zweiten Klappe. Der Ruhezustand — der Normalfall — ist
+dagegen **kürzer** als vorher.
+
+**Zwei Befunde, die erst die BESTEHENDEN Tore gefunden haben** (§6.7 in Aktion,
+beide in dieser Etappe behoben):
+- Das Zeilen-Etikett hiess zuerst **«Gliederung»** — der Ä10-Wächter
+  (`leser-v3-auskunft`, «das Gliederungs-Blatt sagt ‹Gliederung› genau einmal»)
+  wurde davon rot, gemessen **2×**. Zu Recht: im Handy-Blatt benennt der
+  Blatt-Kopf bereits die Zone. Ein Zeilen-Etikett darf einen Zonen-Namen nicht
+  zurückholen ⇒ heisst jetzt **«Aufbau»**. Der Wächter blieb unangetastet.
+- `leser-kopf-cls-s3` hing an `getByText(…).first()` — also der ersten Fundstelle
+  IRGENDWO. Seit die Box denselben Satz nimmt wie der Kopf (§5), traf `.first()`
+  die **zugeklappte** Box, deren Treffer `hidden` ist ⇒ Timeout in beiden Hüllen.
+  Anker jetzt `header:has(h1)`: gemessen genau EIN Treffer je Hülle (von zwei
+  `<header>` der Seite), und der Erlass-Kopf ist der einzige Kopf mit einer H1.
+  Enger, nicht weiter. *(Zwei eigene Fehlversuche stehen im Spec-Kommentar:
+  `header` `.first()` = App-Kopfzeile; `.lc-leser > header` = nur die Ist-Hülle.)*
+
+**Ein Rest, der bewusst stehen bleibt.** Weil Box und Kopf jetzt denselben
+Wortlaut führen, steht der Warnsatz auf dem Ankunfts-Bildschirm **zweimal
+identisch** — vorher zweimal VERSCHIEDEN. Das ist die bessere von zwei schlechten
+Lagen (§5: ein Sachverhalt, ein Wortlaut), aber keine gute: den Satz zu kürzen
+hiesse einen dritten Wortlaut zu erfinden (der Auftrag verbietet es ausdrücklich),
+ihn aus der Box zu nehmen kehrte den Ä28-Entscheid um. **Empfehlung für David:**
+in H4, wenn Kopf und Leiste ohnehin neu verteilt werden, trägt ihn nur noch der
+Kopf.
+
 **Nachführung Ä5 / Ä10 / Ä28.** Ä5 (entrahmt, hängendes «·» weg) gilt unverändert
 und ist durch Ä70 **vollendet**: die letzte Linie im Inneren und die letzte
 gestapelte Fläche sind weg. Ä10 (Handy-Überlauf, damals «nicht reproduzierbar»)

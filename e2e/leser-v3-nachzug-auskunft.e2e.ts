@@ -181,11 +181,47 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
       const box = document.querySelector('[data-v3-uebersicht]') as HTMLElement
       return [...box.querySelectorAll('p')]
         .map((p) => (p.textContent ?? '').replace(/\s+/g, ' ').trim())
-        .filter((t) => /In Kraft getretene Änderung/i.test(t))
+        // §6.3-DEKLARATION (Ä70, 17.8.2026): die geprüfte SACHE ist unverändert
+        // — «der Konsolidierungs-Sachverhalt steht in der Box genau einmal».
+        // Geändert hat sich der Satz, den die Box dafür setzt, und zwar
+        // ABSICHTLICH: sie führte bis hierher einen EIGENEN Wortlaut («Eine in
+        // Kraft getretene Änderung ist noch nicht eingearbeitet …») neben dem
+        // des Erlass-Kopfs — zwei Formulierungen für einen Sachverhalt, also
+        // genau die zweite Wahrheit, gegen die Ä28 gebaut wurde. Sie nimmt jetzt
+        // `nichtKonsolidiertSatz` aus `lib/normtext/erlassKopfText.ts` (S3/F5),
+        // denselben String wie Erlass-Kopf und prerenderter SEO-Kopf (§5).
+        // Das Muster ist NICHT gelockert, sondern auf den Kern gestellt, den
+        // beide Fassungen tragen — und die Sonden darunter sind STRENGER als
+        // vorher (Zeitbezug und «⚠»-Freiheit kommen dazu).
+        .filter((t) => /Änderung noch nicht in den Text eingearbeitet/i.test(t))
     })
     expect(warnungen.length, `Warnsätze: ${JSON.stringify(warnungen)}`).toBe(1)
-    // Positiv-Sonde: die eine, die bleibt, ist die AUSFÜHRLICHE der Box.
+    // Positiv-Sonde: der eine Satz ist der GETEILTE aus `erlassKopfText.ts` —
+    // mit Zeitbezug und mit dem Verweis auf die amtliche Fassung.
+    expect(warnungen[0]).toMatch(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung/)
     expect(warnungen[0]).toContain('massgeblich ist die amtliche Fassung')
+    // Das «⚠» ist redundante Verstärkung und darf nie alleiniger
+    // Bedeutungsträger sein (DESIGN-REGLEMENT B3): es steht in einem EIGENEN
+    // `aria-hidden`-Element vor dem Satz, nicht im Satz. Geprüft wird darum die
+    // TRENNUNG, nicht die Abwesenheit im `textContent` des Absatzes — dort
+    // erscheint das Zeichen selbstverständlich mit (erster Anlauf 17.8.2026
+    // prüfte genau das Falsche und wurde zu Recht rot).
+    const zeichen = await page.evaluate(() => {
+      const box = document.querySelector('[data-v3-uebersicht]') as HTMLElement
+      const p = [...box.querySelectorAll('p')]
+        .find((el) => /Änderung noch nicht in den Text eingearbeitet/i.test(el.textContent ?? ''))
+      const marke = p?.querySelector('[aria-hidden]')
+      return {
+        marke: (marke?.textContent ?? '').trim(),
+        // Der Satz selbst — also das, was ein Screenreader vorliest — trägt es nicht.
+        satz: [...(p?.childNodes ?? [])]
+          .filter((n) => !(n instanceof Element) || !n.hasAttribute('aria-hidden'))
+          .map((n) => n.textContent ?? '').join('').trim(),
+      }
+    })
+    expect(zeichen.marke, 'das ⚠ steht nicht in einem eigenen aria-hidden-Element').toBe('⚠')
+    expect(zeichen.satz, 'das ⚠ steckt im vorgelesenen Satz').not.toContain('⚠')
+    expect(zeichen.satz).toContain('massgeblich ist die amtliche Fassung')
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

@@ -235,9 +235,18 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
     });
   }
 
-  // ── Gliederung · «3 Ebenen · Anhang» ──────────────────────────────────────
+  // ── Aufbau · «3 Ebenen · Anhang» ──────────────────────────────────────────
   // Nicht die Bestimmungszahl (die steht in der Ruhezeile), sondern der Bau des
   // Erlasses — die einzige Angabe der Box, die sonst nirgends steht.
+  //
+  // WARUM «Aufbau» UND NICHT «Gliederung» (17.8.2026): das Etikett hiess beim
+  // ersten Bau «Gliederung» — und der BESTEHENDE Ä10-Wächter wurde davon rot
+  // (`leser-v3-auskunft` «das Gliederungs-Blatt sagt ‹Gliederung› genau einmal»,
+  // gemessen 2×). Zu Recht: im Handy-Blatt trägt der Blatt-Kopf bereits die Zone
+  // «Gliederung», und Ä10 hat genau diese Doppelnennung abgeräumt. Ein
+  // Zeilen-Etikett darf einen Zonen-Namen nicht zurückholen. Das Tor hat einen
+  // echten Rückfall gefangen, nicht sich selbst — der Wächter bleibt
+  // unangetastet, die Bezeichnung weicht aus.
   const anhang = (e.kennzahlen?.anhangArtikel ?? 0) > 0;
   const glied = [
     e.gliederungsTiefe > 0
@@ -245,7 +254,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
       : null,
     anhang ? 'Anhang' : null,
   ].filter(Boolean).join(' · ');
-  if (glied) zeilen.push({ id: 'gliederung', label: 'Gliederung', wert: glied, ziffern: true });
+  if (glied) zeilen.push({ id: 'aufbau', label: 'Aufbau', wert: glied, ziffern: true });
 
   // ── Sachgebiet · «2 Privatrecht › 22 Obligationenrecht» ───────────────────
   // B9 (Bug-Check 9.8.2026): `verifiziertesSachgebiet` filtert die neutralen

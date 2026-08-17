@@ -58,8 +58,22 @@ ersten Anlauf zugeschlagen haben:
 | `d-lugue-*-offen` | Staatsvertrag: «Art · Staatsvertrag», und **keine** Zeile «In Kraft seit» — der Erlass trägt sie nicht, also entsteht sie nicht (§8, keine leere Wertspalte) |
 | `d-zh-211-11-*-offen` | Der kürzeste Fall: **zwei** Zeilen (Art · Stand). Kanton ZH hat keinen Struktur-Sidecar (0 von 1193), also gibt es weder Erlassgeber noch Erlassdatum — und ohne verifizierte Systematik wird kein Sachgebiet behauptet. Die Liste ist kurz, nicht kaputt |
 | `d-vmwg-*-offen` | Verordnung: dieselben Zeilen, anderer Wert («Verordnung», «Der Schweizerische Bundesrat») — kein `if (verordnung)` |
+| alle `-offen` | Die Zeile über der Gliederungstiefe heisst **«Aufbau»**, nicht «Gliederung»: im Handy-Blatt benennt der Blatt-Kopf bereits die Zone «Gliederung», und Ä10 hatte genau diese Doppelnennung abgeräumt. Der bestehende Ä10-Wächter hat den Rückfall beim Bau gefangen (gemessen 2× statt 1×) |
 | `*-dunkel-*` | Label `ink-600`, Wert `ink-800`, Haarlinien `--line` — alle drei kommen aus den Rollen und drehen im Dunkelmodus mit; die Warnung bleibt `warn` |
 | `h-*-offen` | Handy-Blatt @390: die Box bleibt in ihrer Breite, nichts tritt über den Rand (Ä10-Erbe, jetzt gemessen bewacht) |
+
+**Was auf den Bildern grösser geworden ist — und warum das der Preis ist.** Die
+aufgeklappte Box wächst (StPO 270 → 350 px · LugÜ 219 → 249 · VMWG 219 → 230 ·
+ZH-211.11 219 → 231 · BS-640.100 219 → **399**). Das ist der Gegenwert dafür, dass
+nichts mehr abgeschnitten wird — allein BS' Sachgebiet waren 414 px stiller
+Verlust — und dass die §8-Sätze nicht mehr hinter einer zweiten Klappe liegen.
+Der **Ruhezustand**, also der Normalfall, ist umgekehrt kürzer als vorher: eine
+Zeile statt drei.
+
+**Ein Rest, den die Bilder zeigen:** der Warnsatz steht auf dem
+Ankunfts-Bildschirm zweimal — im Erlass-Kopf und in der Box. Vorher standen dort
+zwei VERSCHIEDENE Sätze über denselben Sachverhalt; jetzt ist es derselbe (§5).
+Besser, aber nicht gut — Empfehlung und Begründung im Vollzugsvermerk.
 
 **Ein Aufnahme-Artefakt, damit es niemand für einen Befund hält:** auf den
 `-offen`-Bildern steht der Mauszeiger nach dem Klick noch auf der Ruhezeile, die
