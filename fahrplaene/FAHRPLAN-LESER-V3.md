@@ -1529,6 +1529,47 @@ in der abgelösten Leiste; **Ä33/Ä34** unberührt. Alle drei bleiben H4.
 | **SEO-Prüfpunkt (harte Grenze)** | Der **Prerender behält die Bezüge serverseitig im HTML** — nur der Browser lädt nach. Grund: `scripts/prerender.ts` schreibt das SEO-HTML aus Manifesten und Snapshots, unabhängig von der Hülle; würde das Nachladen dort durchschlagen, verlöre jede Erlass-Seite ihre Verzahnung für Suchmaschinen. |
 | Wächter | Neuer Test `leser-v3-prerender-bezuege`: das **prerenderte** HTML einer Erlass-Seite enthält die Bezüge weiterhin (Vitest gegen die Prerender-Ausgabe bzw. e2e mit deaktiviertem JS), zusätzlich `check:seo-index` grün. Ohne diesen Test wird H3 nicht abgenommen. |
 
+### ✅ Vollzugsvermerk H4-VORBEREITUNG (17.8.2026, Branch `feat/leser-v3-h4-vorbereitung`)
+
+**KEIN Flip.** Der Fassaden-Default bleibt V1, `playwright.config.ts` unverändert.
+Gemessen wurden die Flip-Kriterien, gebaut wurden A-8 und ein Flaker-Wurzelfix.
+Voller Bogen mit allen Rohdaten: `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md`.
+
+| Kriterium | Ergebnis |
+|---|---|
+| N-Tests unter Flag | ✅ Projekt `leser-v3` 110 passed / 1 skipped / Exit 0; Gegenprobe `chromium` über N + die vier B-Specs + die zwei S1-Specs 77 passed / Exit 0 |
+| `leser-kopf-paritaet` | ✅ grün im Flag-Projekt (9.6 s) |
+| PX | ✅ unter Ruhe-Bedingung: Branch 3/3, Basis `a516f12ef` 3/3. Direkt nach einem 8-Worker-Lauf 2/5 mit 3× 1869 px auf dem **V1**-Arm — die von S2 dokumentierte Rasterungs-Signatur. Nullprobe negativ, also kein A-8-Effekt, aber ein offener Lastfall |
+| **NM** | ❌ **NM-2 verschlechtert.** D/S je +1 Bedienschritt (Panel statt Zeile am Artikel, Pos. 12); auf **H per Tap gar nicht mehr erreichbar** (0 Öffner, 0 Randlasche, nur Taste «r»). NM-1 dagegen −1 Schritt auf S **und** H, NM-3 auf D erstmals erreicht |
+| CLS | ✅ V3 in allen vier Zellen besser (StPO D 0.0337→0.0207 · H 0.0205→0.0192 · BS-640.100 D 0.0475→0.0315 · H 0.0064→0.0044; Median, n=5, kalt) |
+| axe | ✅ 0 critical/serious in 20 Kombinationen (5 Erlasse × V1/V3 × hell/dunkel) |
+| Kantons-/Bund-Probe | ✅ BS-640.100, ZH-211.11, StPO, VMWG, LugÜ unter `?leser=v3`, je 0 Konsolenfehler |
+| drei Flaker | ⚠️ 1 von 3 mit belegter Wurzel behoben (s. u.), 2 von 3 lokal nicht reproduzierbar (0/65 unter 8-Worker-Last) — kein Blindfix (§0 Ziff. 2) |
+
+**A-8 teilweise erledigt.** `v3/useElementBreite.ts` ist die eine Quelle für
+Schwellen und Messung, `kopfStufen.ts` leitet weiter (byte-gleich, Rot-Beweis
+zweistufig). Die 1024er-Spaltenentscheidung bleibt bewusst an `istXl`: das
+Rahmen-Element ist 48 px schmaler als das Fenster und ab 1120 px auf 1072 px
+gedeckelt — eine Umstellung verschöbe die Spaltengrenze auf Viewport 1072
+(Details in Kap. 12 A-8). Das ist Ä60 und wartet auf David.
+
+**Ä24-Wurzel gefunden.** Nicht (nur) die Seite ist langsam, sondern die Abfrage:
+`getByRole('button',{name:'Ansicht'})` berechnet auf dem OR für 13 518 Knöpfe den
+zugänglichen Namen. A/B, gleiche Wartebedingung: warm 4.2 s gegen 1.0 s; **4×
+CPU-Drossel 28.2–29.1 s gegen 17.8–19.9 s, also 5/5 über dem 20-s-Budget gegen
+0/5**. Fix: `e2e/helpers/leserBereit.ts` (Attribut statt Rolle+Name), angewendet
+nur in `leser-ohne-gliederungslinie`. Rest ehrlich: 1.2 s Luft, der verbleibende
+Term ist der OR-Erst-Render und gehört zu `QS-PERF`. **Acht weitere Specs tragen
+dieselbe teure Wartung** — Liste im Bogen, bewusst nicht angefasst.
+
+**Messbedingung, die man kennen muss:** auf derselben Maschine liefen drei fremde
+Agenten-Sessions (`LexMetrik-fix`, `-krume`, `-uebersicht`); die lokalen
+Kontentions-Läufe kippten dadurch die Arm-Reihenfolge und sind nicht belastbar.
+Belastbar ist nur die prozessinterne 4×-Drossel-Messung.
+
+**Vor dem Flip zu erledigen:** NM-2 auf H (Blocker) · Ä60 · Ä45 Doppelkrume ·
+Ä46 zwei ✕ · B-Spec-Umhängung (sonst Timeout-Hänger statt roter Tests).
+
 ### Fenster-Deckel und Flip-Kriterien
 
 | Regel |
@@ -1767,7 +1808,7 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 | ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
 | A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **ERLEDIGT** in der Vorprobe dieses PRs. `EntscheidLeser.tsx` setzte `document.title` **ohne** Guard (so steht es bis heute auf `main`, Z. 408–411) — im Split-View trug der Browser-Reiter darum den Entscheid, obwohl das Hauptfenster das Gesetz zeigte (§8: der Reiter log über seinen Inhalt). Der Guard `if (rolle === 'sekundaer') return;` ist ergänzt und liegt unter der Quellensonde `src/tests/tab-titel-paritaet.test.ts`, die BEIDE Leser prüft. Im PR-Body benannt, wie die Zeile es verlangt. *(Selbstkorrektur 16.8.2026: der Vollzugsvermerk notierte hier zuerst «die Parität besteht bereits» — gemessen am Arbeitsbaum statt an `main`, also am Zustand NACH dem eigenen Fix. Der Befund war echt; die Nullprobe gegen die Basis fehlte.)* |
 | **A-7** | **Abweichung, deklariert 16.8.2026 — der Pixelvergleich PX fehlt in H1.** Kap. 10 schreibt ihn «ab H1» vor; H1 liefert ihn NICHT. **Folge: H2.** Begründung: `toHaveScreenshot` ist im Repo bisher nirgends im Einsatz — die Flake-Basisrate eines Pixel-Tors auf diesem CI-Runner ist unbekannt, und ein Tor, dessen Ausfallrate man nicht kennt, erzeugt rote Läufe ohne Aussage (§0 Ziff. 3: Rate immer mit Messbedingung). Dazu kommt, dass die Baseline erst mit der Design-Grundlage **W-3** fachlich feststeht; eine Baseline, die S2 ohnehin neu setzt, in H1 einzufrieren hiesse, zweimal zu messen. In H1 tragen die DOM-Sonden und `check:linien-kanon` die Kern-Grenze. | Offen bis H2 — dort mit gemessener Flake-Rate (Stichprobe gegen die vermutete Rate dimensioniert, kalt **und** warm) |
-| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | Offen bis H4 |
+| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | **TEILWEISE ERLEDIGT 17.8.2026** (H4-Vorbereitung, Branch `feat/leser-v3-h4-vorbereitung`): `src/pages/gesetz-leser/v3/useElementBreite.ts` ist gebaut und trägt die drei Schwellen UND die Messung; `kopfStufen.ts` leitet nur noch weiter (Verhalten byte-gleich, bewiesen über jede Breite 200–2000 px; Rot-Beweis zweistufig in `src/tests/leser-v3-elementbreite.test.ts`). **NICHT angeschlossen — mit Zahl:** der Zwei-Spalten-Entscheid bleibt an `istXl` (Viewport ≥ 1024). Gemessen am gebauten Stand ist das Rahmen-Element bis ~1120 px Viewport konstant **48 px schmaler** als das Fenster und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem): Viewport 640/900/1023/1024/1100/1280/1440 → Rahmen 592/852/975/976/1052/1072/1072. Eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf **1072** — die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**, und der wartet auf David. Rest offen bis zum Flip. |
 
 ---
 

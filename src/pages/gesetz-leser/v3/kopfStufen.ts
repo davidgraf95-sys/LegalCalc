@@ -17,25 +17,42 @@
 //     `e2e/leser-kopf-paritaet.e2e.ts`. Ein `xl:`-Präfix hätte im Pane den
 //     Viewport gemessen und dort das Desktop-Bild in eine 620-px-Spalte gezwungen.
 //
-// Die Schwellen: 900 px ist die im Fahrplan genannte Grenze; 640 px ist die
-// Handy-Grenze «H» derselben Skizze (Kap. 4, «H Handy ≤ 640 px»).
+// ── A-8 (H4, 17.8.2026): DIE SCHWELLEN STEHEN NICHT MEHR HIER ──────────────
+// Bis hierher trug diese Datei die Zahlen 900/640 UND die Messung selbst — und
+// `istXl` (Ist-Hülle, 1024 px) entschied unabhängig davon über denselben Platz.
+// Zwei Entscheider über eine Frage sind eine zweite Wahrheit (§5, Kap. 12 A-8).
+// Seit A-8 liegt beides in `./useElementBreite`: dort die drei Schwellen, dort
+// der ResizeObserver. Diese Datei ist nur noch der KOPF-Zuschnitt — sie
+// übersetzt den Modus in ihre Stufen und sagt, was auf welcher Stufe steht.
+// Verhalten unverändert: die Stufen liegen weiter an 640 und 900, bewiesen über
+// jede Breite von 200 bis 2000 px in `src/tests/leser-v3-elementbreite.test.ts`.
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  SCHWELLE_D, SCHWELLE_S, modusFuer, useElementBreite, type Breitenmodus,
+} from './useElementBreite';
 
 
 /** Die drei Zuschnitte der Kopfzeile. Reihenfolge = abnehmender Platz. */
 export type KopfStufe = 'voll' | 'kompakt' | 'mini';
 
-/** Grenze, ab der die Sektions-Krume «Gesetze» fällt (Kap. 4a). */
-export const KOPF_SCHWELLE_KOMPAKT = 900;
+/** Modus der einen Breiten-Quelle → Kopf-Zuschnitt. Die EINE Abbildung; sie
+ *  steht als Tabelle da, damit ein Widerspruch zum Modus nicht in einer
+ *  if-Kette versteckt entstehen kann. */
+const STUFE_JE_MODUS: Record<Breitenmodus, KopfStufe> = {
+  d: 'voll',
+  s: 'kompakt',
+  sheet: 'mini',
+};
+
+/** Grenze, ab der die Sektions-Krume «Gesetze» fällt (Kap. 4a) — Weiterleitung
+ *  auf die eine Quelle, keine zweite Zahl. */
+export const KOPF_SCHWELLE_KOMPAKT = SCHWELLE_D;
 /** Grenze «H» der Skizze (Kap. 4): darunter der Handy-Zuschnitt. */
-export const KOPF_SCHWELLE_MINI = 640;
+export const KOPF_SCHWELLE_MINI = SCHWELLE_S;
 
 /** Breite (px) → Zuschnitt. Rein, monoton, an jeder Breite prüfbar. */
 export function kopfStufe(breitePx: number): KopfStufe {
-  if (breitePx < KOPF_SCHWELLE_MINI) return 'mini';
-  if (breitePx < KOPF_SCHWELLE_KOMPAKT) return 'kompakt';
-  return 'voll';
+  return STUFE_JE_MODUS[modusFuer(breitePx)];
 }
 
 /** Was auf einer Stufe sichtbar ist. `artikel` und `ansicht` sind bewusst als
@@ -142,70 +159,16 @@ export function kopfHoehe(stufe: KopfStufe): string {
 }
 
 /**
- * Misst die Breite des Rahmens und liefert den Zuschnitt.
+ * Der Kopf-Zuschnitt der gemessenen Rahmenbreite.
  *
- * CALLBACK-REF, NICHT `useRef` — und das ist hier kein Stilfrage, sondern ein
- * reproduzierter Fehler (gefunden 16.8.2026 im Browser, StPO @1440): der Rahmen
- * kehrt beim ersten Render früh mit dem Lade-Platzhalter zurück, das gemessene
- * Element existiert also noch gar nicht. Ein `useEffect` auf einem `useRef`
- * läuft genau einmal — mit `ref.current === null` —, hängt keinen Observer ein
- * und wird nie wieder gerufen, weil sich die Ref-Identität nicht ändert. Der
- * Kopf blieb dadurch dauerhaft auf dem Startwert stehen: bei 1440 px stand der
- * Handy-Zuschnitt. Ein Callback-Ref meldet das Element, SOBALD es entsteht, und
- * der Effekt läuft dann erneut.
- *
- * Startwert aus `window.innerWidth` statt aus `'voll'`: die V3-Hülle wird nicht
- * prerendert (R10), der erste Client-Render kennt den Viewport also bereits.
- * Ein pauschales `'voll'` liesse den Kopf auf einem Telefon einen Frame lang zu
- * hoch stehen — genau der Layout-Sprung, den §15.2 verbietet.
- *
- * IM PANE ist der Viewport aber die falsche Zahl: eine 620-px-Spalte in einem
- * 1440-px-Fenster startete auf `'voll'` (3.5rem) und fiel beim ersten
- * Observer-Lauf auf `'kompakt'` (3rem) — ein sichtbarer 8-px-Sprung der
- * Kopfzeile (Bug-Check «Nice», 16.8.2026). Darum misst der Callback-Ref SOFORT,
- * wenn das Element entsteht: er läuft im React-Commit, also vor dem Paint, und
- * ein `setState` dort wird noch im selben Frame verarbeitet. Der Startwert ist
- * damit nur noch der Wert für den einen Render, in dem es das Element gar nicht
- * gibt (Lade-Platzhalter).
+ * A-8 (17.8.2026): Messung und Schwellen sind nach `./useElementBreite`
+ * gewandert — die Herleitung des Callback-Refs, des `border-box`-Observers und
+ * des Startwerts aus `window.innerWidth` steht dort im Kopfkommentar. Hier
+ * bleibt nur die Übersetzung Modus → Stufe. Der Name `kopfRef` bleibt, damit
+ * `LeserRahmenV3` unverändert bleibt (der Rahmen hängt den Ref an sein
+ * Wurzel-Element).
  */
 export function useKopfStufe(): { stufe: KopfStufe; kopfRef: (el: HTMLDivElement | null) => void } {
-  const [el, setEl] = useState<HTMLDivElement | null>(null);
-  const [stufe, setStufe] = useState<KopfStufe>(() =>
-    kopfStufe(typeof window === 'undefined' ? 1200 : window.innerWidth));
-  // Der zuletzt gemeldete Wert, damit der Observer nur bei echtem Stufenwechsel
-  // einen Re-Render auslöst (jede Pixel-Änderung beim Ziehen des Pane-Gutters
-  // feuert sonst — §15).
-  const letzte = useRef<KopfStufe>(stufe);
-
-  const uebernimm = useCallback((breite: number) => {
-    // Breite 0 kommt vor, solange das Element noch nicht gelayoutet ist —
-    // sie als «Handy» zu lesen wäre eine Messung von nichts.
-    if (breite <= 0) return;
-    const neu = kopfStufe(breite);
-    if (neu === letzte.current) return;
-    letzte.current = neu;
-    setStufe(neu);
-  }, []);
-
-  const kopfRef = useCallback((el: HTMLDivElement | null) => {
-    setEl(el);
-    // Vor dem Paint messen — sonst zeigt das Pane einen Frame lang die Stufe
-    // des VIEWPORTS (siehe Kopfkommentar). Stabile Identität via useCallback,
-    // damit der Ref nicht bei jedem Render ab- und wieder angehängt wird.
-    if (el) uebernimm(el.getBoundingClientRect().width);
-  }, [uebernimm]);
-
-  useEffect(() => {
-    if (!el || typeof ResizeObserver === 'undefined') return;
-    uebernimm(el.getBoundingClientRect().width);
-    const ro = new ResizeObserver((eintraege) => {
-      for (const e of eintraege) {
-        // border-box: die Scrollbar des Panes verschiebt die Schwelle nicht.
-        uebernimm(e.borderBoxSize?.[0]?.inlineSize ?? e.contentRect.width);
-      }
-    });
-    ro.observe(el, { box: 'border-box' });
-    return () => ro.disconnect();
-  }, [el, uebernimm]);
-  return { stufe, kopfRef };
+  const { modus, messRef } = useElementBreite();
+  return { stufe: STUFE_JE_MODUS[modus], kopfRef: messRef };
 }
