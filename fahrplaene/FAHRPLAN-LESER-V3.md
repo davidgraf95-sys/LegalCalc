@@ -270,6 +270,8 @@ Ziel: **3 zweiwertige Schalter** (Fussnoten · Änderungsvermerke · Rechtsprech
 Kombinationen**. **Migration:** gespeichertes `histansicht:"chronologie"` liest V3 als `"an"`;
 unbekannte Werte fallen auf den Default (Vitest-Fall Pflicht).
 
+✅ S1 gebaut 17.8.2026 (Branch `feat/leser-v3-s1`) — Vollzugsvermerk in Kap. 7.
+
 ### (g) URL/Hash-Vertrag — unverändert
 
 `#art-<token>` bleibt (`inhalt-sprung.tsx:159`). Kein Query-Parameter für die In-Gesetz-Suche —
@@ -766,6 +768,66 @@ Erlassen gewarnt.
 | `Stand` im SEO-Kopf bleibt ISO | `Stand 2025-04-01 · gegen Fedlex-Konsolidierung geprüft am 14.08.2026` mischt zwei Datumsformen in einem Satz. Der Fix ist eine Zeile, ändert aber jede prerenderte Seite — ausserhalb des F5-Auftrags |
 | `lc-chip-geltend`/`lc-chip-vorbehalt` sind tot | Nach dem Chip-Rückbau in `src/` unbenutzt. Ihr Rückbau berührt das Farb-Wörterbuch in `DESIGN-REGLEMENT-NORMTEXT.md` §264-269/304 — eine Design-Autoritäts-Entscheidung, keine Nebenwirkung eines UI-PR (§17-Rückbau als eigener Schritt) |
 | Falschverweis in diesem Fahrplan | Kap. 14 nennt «die 8 Befunde aus `FAHRPLAN-UI-NAVIGATION.md` §15». Diese Datei hat kein §15; die Befunde stehen in **`FAHRPLAN-UI-BEFUNDE.md` §15** (LM-181/183/184/188/197). Unten korrigiert |
+
+### ✅ Vollzugsvermerk S1 (17.8.2026, Branch `feat/leser-v3-s1`)
+
+**Gebaut.** Optionen-Rückbau der GETEILTEN Schicht (Strang S, wirkt in beiden
+Hüllen) auf **3 zweiwertige Schalter → 8 statt 24 Kombinationen**. Vorbedingungen
+F1/F2 lagen schriftlich vor (Kap. 9, David 16.8.2026).
+
+| Zusage | Nachweis |
+|---|---|
+| `histansicht` zweiwertig (F1) | `HistAnsicht`, `HIST_ANSICHTEN`, `setzeHistAnsicht`, `useHistAnsicht` und die Sonderzeile für `data-histansicht` sind **weg**: das Feld läuft als gewöhnliches `OptFeld` in `FELDER` mit. Damit entfällt auch `v3/v3Optionen.ts` samt `histZuSicht`/`sichtZuHist`/`histUmschalten` (Datei gelöscht) — ihr Zweck war die Abbildung auf den dritten Wert. Der «Chronologie»-Modus ist restlos zurückgebaut: `<ol data-hist-chrono>`, drei CSS-Regeln, `baueChronologie` + `ChronoFussnote`/`ChronoEintrag`. `fnNrSortKey` **bleibt** (ordnet den Apparat) |
+| «Verweise» gestrichen (F2) | Feld, beide Menü-Schalter, `data-verweise` (auch aus dem `attributeFilter` von `inhalt-suchtreffer.tsx`) und die CSS-Regel auf `.decoration-dotted` sind entfernt; kein Toter-Code-Rest (`grep -rnE '\bverweise\b' src e2e` findet nur noch die Verweis-CHIPS und -Links, eine andere Sache). Was F2 zusagte, ist positiv gedeckt: `leser-optionen` prüft, dass Farbe, `href`, Ctrl+F **und die :hover-Unterstreichung** bleiben — die Regel wurde nicht auf «aus» eingebrannt |
+| «Fassung»-Overline am selben Schalter (Befund K4) | Sie hing an gar keinem Schalter und blieb bei «aus» als einzige Historie-Spur stehen. Neu `[data-hist-slot]` + eine Regel. Ausgeblendet wird der **Slot**, nicht nur die Zeile: sonst bliebe seine reservierte Höhe (16+24 px) als Phantom-Lücke unter jedem Artikel — «aus» hätte doch eine Spur hinterlassen |
+| **Kern-Berührung deklariert** | `src/pages/gesetz-leser/parts/ArtikelLeser.tsx`, genau zwei Stellen: **Z. 221–225** (Chronologie-Berechnung entfernt, vier Importe verwaisten mit) und **Z. 594–620** (`data-hist-slot` am Historie-Slot; der `<ol data-hist-chrono>`-Block darunter entfernt). **Kein Wortlaut, kein Layout des Normtexts** — Golden 256/256 byte-gleich belegt es |
+| Migration alter Werte, Vitest **Pflicht** | Reine, exportierte `migriereOptFelder()` in `leserOptionen.ts` + `src/tests/leser-optionen-migration.test.ts` (8 Fälle): `hist:"chronologie"` UND `"fussnoten"` → `"an"` (beide bedeuteten «Vermerke sichtbar» — «aus» wäre §8-Substanzverlust), `"aus"` → `"aus"`, 12 unbekannte Werte → Default ohne Wurf, `verweise` ignoriert und beim nächsten Schreiben abgeräumt. Zusätzlich derselbe Weg im Browser (`hist-ansicht-w25i`: Alt-Speicher via `addInitScript`, Schalter steht danach auf «an», Vermerke sichtbar, kein `data-verweise` am `<html>`) |
+| Zusage der Etappe: keine Spur, DOM vollständig | `hist-ansicht-w25i` prüft alle drei Träger GEMEINSAM (Marker · Apparat-Rahmen · Fassungs-Slot) und die DOM-Vollständigkeit mit unverändertem Text — und die Rückkehr über «an». Parität: `leser-v3-umschalten` **(a2)** zeigt denselben Vorgang V3→V1 |
+| Golden byte-gleich | `npm run golden:vergleich` → **IDENTISCH, 256 Fälle** (kein Golden neu geschrieben) |
+
+**Rot-Beweise (§6.7), je einzeln erzeugt und zurückgenommen:**
+
+| Mutation | Wird rot |
+|---|---|
+| `[data-hist-slot]`-Regel aus `index.css` entfernt | `hist-ansicht-w25i` «S1-ZUSAGE» + «Schalter bei Fussnoten aus», `leser-v3-umschalten` (a2) — 3 Tests, **beide Hüllen** |
+| `min-h-hist-zeile` am Slot entfernt | `gesetze-historie-badge` «Reservierung hält»: «Artikel 2 verschoben: 1516 → 1552». Der alte CLS-Test wäre bei diesem below-fold-Sprung vermutlich grün geblieben — der neue ist strenger |
+| Schalter-Beschriftung geändert | `leser-optionen` (Bestückung) + `leser-kopf-v2` (B-2) |
+| `chronologie`→`aus` in `migriereOptFelder` | 2 Vitest-Fälle |
+| `verweise` wieder in `FELDER` | 2 Vitest-Fälle |
+| *(ungeplant, aber echt)* Die Alt-Fassung von `leser-schriftskala.test.ts` wurde beim ersten Lauf von selbst rot (`'an'` statt `'chronologie'`, `verweise`/`hist` nicht mehr geschrieben) — der Bestandstest hat die Migration gefangen, bevor der neue sie prüfte |
+
+**Flake-Wurzel `gesetze-historie-badge` (Kap. 14 wies sie S1 zu) — kein Timeout,
+keine Retry-Erhöhung:**
+
+| | vorher | nachher |
+|---|---|---|
+| ganze Datei, lokal warm, volle Parallelität (10 Kerne / 5 Worker) | **1/10 rot** | **0/40 rot** |
+| nur dieser Test, isoliert | 0/20 | — |
+| isoliert, CPU-Drossel 1×/4×/8× | 0/13, CLS stabil 0.0058–0.0075 | 0/7, CLS **0.00000** (inkl. 6×) |
+
+Treiber ist **Parallel-Last, nicht CPU-Tempo**, und die Streuung ist bimodal
+(≈0.006 gegen 0.119) — keine Wolke um die Schwelle. Ursache: `buffered: true`
+rechnete dem Badge das Lade-CLS der GANZEN Seite zu. Dominant ist der Reader-Kopf
+nach dem Client-Takeover (`⇑Wachser: header +161px→238, h1 +49px→75`); er tritt in
+jedem Lauf auf (Δ0.0052 in 20 Sonden-Läufen) und wird nur dann zu Δ0.1190, wenn
+die Artikelliste zu dem Zeitpunkt schon gemalt ist — dann liegt das 976×312-Grid
+in seiner Wirkfläche. Der Badge selbst tauchte in **keinem** Lauf unter den
+Top-Quellen auf; seine Höhe ist reserviert. Das ist dieselbe Fehlerklasse, die
+`helpers/cls.ts` am 20.7.2026 schon einmal behoben hat (Messfenster-Korrektur
+`nurAbInstall`) — für diesen Test damals ausdrücklich NICHT, mit der Begründung
+«für einen Lade-CLS-Test ist das genau richtig». Der Satz stimmt für ein
+Seiten-Budget, nicht für einen Badge-Test (§6.7). Fix: Shard per `page.route`
+anhalten, Beobachter erst nach fertigem Reader, dann freigeben — und zusätzlich
+zur Budget-Zusicherung die Reservierung exakt prüfen (y der Folgeartikel und
+`scrollHeight` unverändert).
+
+**Offen aus S1 (nicht stillschweigend erledigt):**
+
+| Punkt | Grund |
+|---|---|
+| **Echter Befund, nicht S1s Fläche: der Reader-Kopf reflowt nach dem Takeover um +161 px** | Aus der Flake-Diagnose gefallen. Für den Nutzer ein Lade-Sprung, gedeckt bleibt er beim Lighthouse-Tor `check:perf-budget` (CLS ≤ 0.05 auf OR + Startseite). Gehört als eigener Schritt in die Auslieferung/Startlast, nicht in einen Optionen-Rückbau |
+| `hist-ansicht-w25i` läuft nur im Projekt `chromium` | Die Spec steht in keiner der Listen `N_SPECS`/`V3_SPECS`, `--project=leser-v3` sammelt sie also nicht. Die V3-Seite der S1-Zusage ist über `leser-v3-umschalten` (a2) gedeckt (läuft in BEIDEN Projekten, mit Rot-Beweis). Das Umhängen der Spec-Listen ist ausdrücklich **H4** (Kap. 10) — hier bewusst nicht angefasst |
+| Vitest-Suite trägt einen last-abhängigen Flake **auf main** | Nullprobe auf dem unveränderten Basis-Commit `19a989f9`: **1/4 rot**, `allgemeineFrist.property.test.ts` mit 30-s-Timeout (`import 335 s` = massive Contention). Auf HEAD dieselbe Datei, 1/3. Ein Lauf unter Doppellast (Gate + volle Playwright-Matrix gleichzeitig) traf statt dessen `ArtikelBody`/`tap-ziel-token`. Ohne Nebenlast ist `npm run gate` grün. Nicht S1s Verursachung, aber offen |
 
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
