@@ -785,7 +785,7 @@ jobs:
         id: deploy
         run: |
           set -euo pipefail
-          url=$(npx -y vercel@latest deploy --prebuilt --prod --token="$VERCEL_TOKEN")
+          url=$(npx -y vercel@latest deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")
           echo "url=${url}" >> "$GITHUB_OUTPUT"
           echo "Deployment-URL: ${url}"
       # Der Deploy-Befehl kehrt zurück, sobald das Deployment bereit ist; die
