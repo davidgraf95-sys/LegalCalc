@@ -172,6 +172,14 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   gliederungslinie.e2e.ts:71` und `e2e/leser-r1-r2.e2e.ts:544` (20-s-Budget) und
   schliesst zugleich Punkt (b) von `QS-E2E-STABIL`. Messreihe und Nullproben:
   [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
+  **Nullprobe 17.8.2026 (S1-Nachzug), lokal warm:** `e2e/leser-ohne-gliederungslinie.e2e.ts
+  --project=leser-v3 --repeat-each=3` fällt auf **unverändertem `main` (19a989f93)
+  6 von 6** (beide Tests, alle Wiederholungen, «Test timeout of 30000ms exceeded»
+  beim Warten auf den «Ansicht»-Knopf). Das ist keine Zuschreibung aus der Doku,
+  sondern gemessen: der Worktree wurde dafür auf `main` gestellt und neu gebaut.
+  Damit ist belegt, dass der Deckel gegen die **Erst-Render-Zeit des OR/ZGB**
+  reisst und nicht gegen eine Feature-Änderung — der Fix gehört hierher, nicht in
+  eine Spec-Anpassung.
   **Neu 17.8.2026 (S1-Nachzug, §17) — Reader-Kopf reflowt nach dem Client-Takeover:**
   gemessen `header 161 → 238 px`, `h1 49 → 75 px` (+161 px), Quelle
   `div.flex.shrink-0`. Für die Nutzerin ein Lade-Sprung; der CLS-Beitrag ist
