@@ -39,36 +39,33 @@ const E2E_PORT = process.env.E2E_PORT ?? (process.env.CI ? CI_PORT : portAusPfad
 const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 
 // ── N-Specs: Normtext-Treue (FAHRPLAN-LESER-V3 Kap. 10) ─────────────────────
-// Diese Specs prüfen, dass am NORMTEXT nichts verrutscht — Optionen-Schalter,
-// Fundstellen/Quickjump, Rücksprung, Such-Vertrag, Marginalien, PDF-Download,
-// die neun UX-Punkte, Kopf-Label, Anhang-Behandlung und den Linien-Rückbau.
-// Sie laufen im Fenster DOPPELT: im Projekt `chromium` ohne Flag gegen den
-// Ist-Stand und im Projekt `leser-v3` mit gesetztem Flag gegen die neue Hülle.
-// Diese Doppelung IST der Paritätsbeweis — eine Hülle, die den Normtext
-// verändert, wird auf genau einer Seite rot.
+// Diese Specs prüfen, dass am NORMTEXT nichts verrutscht — Fundstellen/Quickjump,
+// Such-Vertrag, Marginalien, PDF-Download, die neun UX-Punkte, Anhang-Behandlung,
+// Kopf-Label und den Linien-Rückbau.
+// Sie laufen im Fenster DOPPELT: im Default-Projekt `chromium` gegen die neue
+// Hülle (seit dem H4-Flip ist V3 der Grundzustand) und im Projekt `leser-v1`
+// mit gesetztem Rückweg-Flag gegen die alte. Diese Doppelung IST der
+// Paritätsbeweis — eine Hülle, die den Normtext verändert, wird auf genau einer
+// Seite rot. Der H4-Flip hat die Doppelung nur GESPIEGELT, nicht aufgehoben:
+// bewiesen wird weiterhin dieselbe Aussage, nur steht jetzt V3 im Regelprojekt.
 //
-// SECHS, nicht zehn — Vollzug des Vorproben-Befunds (Kap. 7, 16.8.2026).
-// Die Liste stand bis dahin auf zehn Namen. Vier davon können gegen eine NEUE
-// Hülle konstruktiv nicht grün werden, weil sie die STRUKTUR der Ist-Hülle
-// prüfen, die V3 planmässig ersetzt — nicht den Normtext:
-//   gesetze-ux-g3a          `.lc-leser > header` als direktes Kind (3 ×)
-//   leser-optionen          «genau zwei role=switch» — V3 hat die drei aus Kap. 4f
-//   leser-r1-r2             das zweite Feld «Zu Artikel springen», das Pos. 4 beseitigt
-//   leser-ruecksprung-r5-r7 Rücksprung «< 140 px» — V3 landet auf 156 px (64+36+56)
-// Sie im Flag-Projekt zu führen hiesse, jede Hüllen-Änderung als
-// Normtext-Verletzung zu melden — ein Tor, das das Falsche misst, ist schlimmer
-// als keines (§6.7). Sie sind damit **B-Specs**: im Projekt `chromium` gegen den
-// Ist-Stand laufen sie unverändert weiter (dort sind sie der Schutz der alten
-// Hülle) und werden erst in H4 umgehängt. CI-Anlass: Run 31962198006, Shard 4/8,
-// `[leser-v3] › e2e/gesetze-ux-g3a.e2e.ts:23`.
+// Sie endet mit H5: fällt die alte Hülle, fällt das Projekt `leser-v1`, und die
+// N-Specs laufen wie jede andere Spec einfach im `chromium`-Projekt.
 //
-// Was bleibt, ist der Paritätsbeweis, der wirklich einer ist: sechs Specs, die
-// in BEIDEN Hüllen grün sind.
+// GESCHICHTE der Liste (Kap. 7, 16.8.2026). Sie stand einmal auf zehn Namen.
+// Vier davon konnten gegen die NEUE Hülle konstruktiv nicht grün werden, weil
+// sie die STRUKTUR der Ist-Hülle prüfen, die V3 planmässig ersetzt — nicht den
+// Normtext: `gesetze-ux-g3a`, `leser-optionen`, `leser-r1-r2`,
+// `leser-ruecksprung-r5-r7`. Sie waren damit B-Specs und wurden bis H4
+// zurückgestellt. In H4 sind sie auf V3 umgehängt (Selektoren und Schwellen an
+// der neuen Hülle nachgemessen, Assertion-Aussage unverändert); `gesetze-ux-g3a`
+// und `leser-kopf-g2b` sind seither wieder paritätsfähig und stehen unten.
 const N_SPECS = [
-  // Kein N-Test, sondern der Selbsttest des Flag-Projekts: er sieht den
-  // V3-Marker POSITIV und schliesst damit aus, dass `leser-v3` still gegen V1
-  // läuft und grün ist, ohne etwas zu prüfen (§6.7). Läuft absichtlich in
-  // BEIDEN Projekten — `chromium` beweist den Grundzustand AUS (R10).
+  // Kein N-Test, sondern der Selbsttest der Projekt-Trennung: er sieht den
+  // V3-Marker POSITIV bzw. seine Abwesenheit und schliesst damit aus, dass ein
+  // Projekt still gegen die falsche Hülle läuft und grün ist, ohne etwas zu
+  // prüfen (§6.7). Läuft absichtlich in BEIDEN Projekten — `chromium` beweist
+  // seit H4 den Grundzustand V3, `leser-v1` den wirksamen Rückweg.
   '**/leser-v3-flag.e2e.ts',
   '**/leser-suche-vertrag-b8.e2e.ts',
   '**/leser-ohne-gliederungslinie.e2e.ts',
@@ -76,14 +73,21 @@ const N_SPECS = [
   '**/gesetze-pdf-download.e2e.ts',
   '**/gesetze-ux-9punkte.e2e.ts',
   '**/gesetze-ux-g3b-anhang.e2e.ts',
+  // H4: nach dem Kopf-Selektor-Umzug auf `[data-v3-kopf]` wieder paritätsfähig
+  // (Kontaktbogen H4 §7). Beide prüfen Aussagen über den Erlass-Kopf, die in
+  // BEIDEN Hüllen gelten müssen — Etikett/Zähl-Substantiv bzw. Zitierform.
+  '**/gesetze-ux-g3a.e2e.ts',
+  '**/leser-kopf-g2b.e2e.ts',
 ]
 
-// Die e2e der neuen Hülle selbst. Sie brauchen das Flag und liefen bisher NUR
-// im Projekt `chromium`, das den Flag-Zustand über den Query-Parameter setzt —
-// im Flag-Projekt liefen sie gar nicht mit, obwohl genau dort ihr Zuhause ist.
-const V3_SPECS = [
-  '**/leser-v3-*.e2e.ts',
-  '**/leser-kopf-paritaet.e2e.ts',
+// ── Auf die ALTE Hülle gepinnt, bis H5 sie löscht ───────────────────────────
+// Diese Specs sagen etwas über die Ist-Hülle aus, das in V3 kein Gegenstück hat
+// und auch keines bekommen soll — sie sterben mit `leser-v1`, nicht vorher.
+// Wer hier etwas einträgt, verlängert die Lebenszeit von V1-Code; die Liste ist
+// darum bewusst kurz und jede Zeile nennt ihren Grund.
+const V1_PINNED: string[] = [
+  // (H4: leer — jede B-Spec ist entweder umgehängt, hüllenneutral oder als
+  // Doppelung gelöscht. Belegt im Kontaktbogen H4 §7, Spalte «Verdikt».)
 ]
 
 // ── A-7 · Pixelvergleich (PX), OPT-IN ───────────────────────────────────────
@@ -189,22 +193,31 @@ export default defineConfig({
       testIgnore: [...SCHWERE_SPECS, ...PX_SPECS],
       timeout: process.env.CI ? 90_000 : 30_000,
     },
-    // ── Flag-Projekt: dieselben N-Specs gegen die V3-Hülle ──────────────────
+    // ── Rest-Projekt: dieselben N-Specs gegen die ALTE Hülle ────────────────
+    // Bis H4 hiess dieses Projekt `leser-v3` und trug das Flag zur NEUEN Hülle.
+    // Mit dem Flip (David-Ja 17.8.2026) ist V3 der Grundzustand, und derselbe
+    // Mechanismus trägt jetzt den RÜCKWEG: `leser-v1`. Der Paritätsbeweis
+    // bleibt Wort für Wort derselbe, er ist nur gespiegelt.
+    //
     // Aktivierung über `storageState` statt über einen Query-Parameter: die
     // Specs navigieren selbst (`page.goto('/gesetze/…')`) und wüssten von
-    // einem `?leser=v3`-Suffix nichts — es müsste in jede einzelne Spec
+    // einem `?leser=v1`-Suffix nichts — es müsste in jede einzelne Spec
     // hinein, und das wäre eine inhaltliche Änderung bestehender Specs (§6.3
     // verbietet genau das bei einem Struktur-Schritt). `storageState` legt
-    // `lm.leser.v3` VOR dem ersten Laden in den Speicher des Origins; die
+    // `lm.leser.v1` VOR dem ersten Laden in den Speicher des Origins; die
     // Fassade (`src/pages/GesetzLeser.tsx`) liest ihn beim ersten Render.
     // Die Specs bleiben Zeichen für Zeichen unangetastet.
     // Das Origin muss den dynamischen Port tragen (Port-Wahl oben), sonst
-    // greift der Speicher-Eintrag ins Leere und das Projekt testete still V1
-    // — also genau das Tor, das nicht scheitern kann. Der Rot-Beweis der
-    // Vorprobe (V-2) schliesst diesen Fall aus.
+    // greift der Speicher-Eintrag ins Leere und das Projekt testete still V3
+    // — also genau das Tor, das nicht scheitern kann. `leser-v3-flag.e2e.ts`
+    // (in N_SPECS) schliesst diesen Fall aus, indem es die Abwesenheit des
+    // V3-Markers hier POSITIV prüft.
+    //
+    // MIT H5 FÄLLT DIESES PROJEKT (samt `V1_PINNED`) — es ist die letzte Stelle
+    // im Repo, die die alte Hülle noch fährt.
     {
-      name: 'leser-v3',
-      testMatch: [...N_SPECS, ...V3_SPECS],
+      name: 'leser-v1',
+      testMatch: [...N_SPECS, ...V1_PINNED],
       timeout: process.env.CI ? 90_000 : 30_000,
       use: {
         storageState: {
@@ -212,7 +225,7 @@ export default defineConfig({
           origins: [
             {
               origin: `http://localhost:${E2E_PORT}`,
-              localStorage: [{ name: 'lm.leser.v3', value: '1' }],
+              localStorage: [{ name: 'lm.leser.v1', value: '1' }],
             },
           ],
         },
