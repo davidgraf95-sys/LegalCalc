@@ -74,7 +74,8 @@
    "suche-seite.e2e.ts",
    "leser-v3-highlight-split.e2e.ts",
    "leser-v3-nachzug-auskunft.e2e.ts",
-   "leser-v3-kontext-cls.e2e.ts"
+   "leser-v3-kontext-cls.e2e.ts",
+   "leser-v3-panel-nachzug.e2e.ts"
   ],
   "6": [
    "fremdgesetz-verweis-aig.e2e.ts",

@@ -352,11 +352,15 @@ describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2
   // Typ aus `v3/` hängen, FL-4) und `inhalt-volltext.tsx` (V1, eingefroren). Die
   // Sonde deckt darum `v3/`, und genau das ist die Zusage.
 
-  it('erlassAnsicht.ts trägt Typ, Ableitung und Zählform (sonst prüfte das Verbot nichts)', () => {
+  it('erlassAnsicht.ts trägt Typ, Ableitung, Zählform und Dativ (sonst prüfte das Verbot nichts)', () => {
     const quelle = ohneKommentare(LIES(QUELLE_DER_WAHRHEIT));
     expect(traegt(quelle, /export type BestimmungsWort\b/), 'BestimmungsWort fehlt').toBe(true);
     expect(traegt(quelle, /export function bestimmungsWort\(/), 'bestimmungsWort() fehlt').toBe(true);
     expect(traegt(quelle, /export function zaehlform\(/), 'zaehlform() fehlt').toBe(true);
+    // C1 (H3-Nachzug): die Dativ-Einzahl («zu diesem Artikel»/«zu diesem
+    // Paragraphen») ist die Form, die das Panel braucht — sie hat dieselbe eine
+    // Quelle, sonst wäre das Verbot unten nur ein Verbot ohne Ausweg.
+    expect(traegt(quelle, /export function bestimmungDativ\(/), 'bestimmungDativ() fehlt').toBe(true);
   });
 
   it('kein «Paragraphen»-Literal in einer anderen v3/-Datei', () => {
@@ -366,6 +370,31 @@ describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2
       expect(traegt(quelle, /Paragraphen/),
         `${datei} trägt das Wort «Paragraphen» im Code — Typ und Zählform gehören nach ${QUELLE_DER_WAHRHEIT}`).toBe(false);
     }
+  });
+
+  // ── C1 (H3-Nachzug): DAS VERBOT WAR EINSEITIG ──────────────────────────────
+  // Bis hierher stand nur «Paragraphen» auf dem Index — «Artikel» durfte frei im
+  // Code liegen. Genau daran ist H3 gescheitert: `panelModell.PANEL_REITER` trug
+  // «Gerichtsentscheide zu diesem Artikel», `PanelEntscheide` zweimal «diesem
+  // Artikel», und an BS-640.100 (ein §-Erlass) war das dreimal falsch. Ein Verbot,
+  // das nur die eine Hälfte des Paares kennt, fängt die häufigere Hälfte nicht:
+  // die Bund-Annahme ist die Vorgabe, die man versehentlich hinschreibt.
+  //
+  // `\bArtikel\b` mit Wortgrenze trifft nur das WORT — nicht `artikelLabel`,
+  // nicht `ArtikelLeser`, nicht `aktArtikel` und nicht `data-…-artikel` (§7:
+  // Identitäts-Treffer, nie Substring-Präsenz).
+  it('C1 · auch kein «Artikel»-Literal in einer anderen v3/-Datei', () => {
+    for (const datei of ALLE_DATEIEN) {
+      if (datei === QUELLE_DER_WAHRHEIT) continue;
+      const quelle = ohneKommentare(LIES(datei));
+      expect(traegt(quelle, /\bArtikel\b/),
+        `${datei} schreibt «Artikel» als Wort in den Code — an einem §-Erlass ist das falsch; `
+        + `das Zähl-Substantiv kommt aus ${QUELLE_DER_WAHRHEIT} (bestimmungsWort/bestimmungDativ)`).toBe(false);
+    }
+  });
+
+  it('C1 · Positiv-Sonde: erlassAnsicht.ts trägt das Wort wirklich (sonst prüfte das Verbot eine leere Menge)', () => {
+    expect(traegt(ohneKommentare(LIES(QUELLE_DER_WAHRHEIT)), /\bArtikel\b/)).toBe(true);
   });
 
   it('kein zweiter Ableitungs-Ternär über bestimmungsEtikett in v3/', () => {

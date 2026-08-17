@@ -41,6 +41,7 @@
 // Textblocks: die ist input-ausgelöst, also kein CLS, und die Fahrplan-Zusage
 // lautet «kein Sprung», nicht «keine Bewegung».
 import { test, expect, type Page } from '@playwright/test'
+import { panelAufziehen } from './helpers/panelOeffnen'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -150,11 +151,11 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
 
     const vorher = await geometrie(page)
     await shiftBeobachten(page)
-    // Auf `mini` trägt die Kopfzeile keinen Zähler (Ä11) — die Lasche ist der
-    // Öffner, und dass sie es IST, ist Teil der Zusage.
+    // Auf `mini` trägt die Kopfzeile keinen Zähler (Ä11) — und seit dem H3-Nachzug
+    // auch keine Randlasche mehr (Ä46: sie lag 16 px im Normtext). Der Öffner ist
+    // dort der Menü-Eintrag; die Zuschnitt-Regel steht in `helpers/panelOeffnen`.
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
-    await page.locator('[data-v3-panel-lasche]').click()
-    await expect(page.locator('[data-v3-panel]')).toBeVisible()
+    await panelAufziehen(page)
     await page.waitForTimeout(600)
 
     const offen = await geometrie(page)

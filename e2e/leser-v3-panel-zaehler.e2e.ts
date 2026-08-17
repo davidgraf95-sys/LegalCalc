@@ -1,18 +1,25 @@
 // @shard-gruppe: 3
-// ─── H3 · Zähler und Randlasche des Rechtsprechungs-Panels ───────────────────
+// ─── H3 · Zähler und Erreichbarkeit des Rechtsprechungs-Panels ───────────────
 //
 // ZWEI ZUSAGEN, die diese Spec messbar macht:
 //
 //  1. JEDER ENTSCHEID BLEIBT ERREICHBAR. In V3 steht unter dem Artikel keine
 //     Bezüge-Zeile mehr (Pos. 12). Der Weg zu den Entscheiden ist der Öffner —
-//     Zähler in der Kopfzeile oder Randlasche —, und er führt ins Panel, in
-//     BEIDEN Panes. Wäre der Öffner weg oder das Panel leer, wäre die
-//     Rechtsprechung des Artikels unerreichbar geworden: der eine Fehler, den
-//     H3 nicht machen darf.
+//     und er führt ins Panel, in BEIDEN Panes. Wäre der Öffner weg oder das
+//     Panel leer, wäre die Rechtsprechung des Artikels unerreichbar geworden:
+//     der eine Fehler, den H3 nicht machen darf.
 //
 //  2. DIE REGEL DAVIDS VOM 16.8.2026 (F8): «Rechtsprechung im Text» AUS ⇒
-//     Zähler UND Lasche weg. Und trotzdem erreichbar — über die Taste «r»
-//     (Kap. 4h). Beides wird hier geprüft, nicht nur die halbe Regel.
+//     der Zähler weg. Und trotzdem erreichbar — über «Ansicht ▾» und über die
+//     Taste «r» (Kap. 4h). Beides wird hier geprüft, nicht nur die halbe Regel.
+//
+// ── §6.3-NACHZUG (H3-Nachzug Ä46/Ä49, 17.8.2026): DIE RANDLASCHE IST WEG ─────
+// Diese Spec verlangte bis hierher an vier Stellen `[data-v3-panel-lasche]`. Die
+// Lasche ist gestrichen, weil sie gemessen 16 px @390 / 4 px @1024 IM Normtext
+// lag und @1440 das wortgleiche Doppel des Kopf-Zählers war (Herleitung in
+// `v3/LeserPanelOeffner.tsx`). Die geprüften ZUSAGEN sind unverändert — nur der
+// Öffner, mit dem sie geprüft werden, ist der, den es je Zuschnitt gibt
+// (`helpers/panelOeffnen.ts`). Ihre ABWESENHEIT prüft `leser-v3-panel-nachzug` (f).
 //
 // ROT GESEHEN (§6.7, 17.8.2026, gemessen statt behauptet):
 //  · Fall (b): in `v3/LeserRahmenV3.tsx` den F8-Torwächter entfernt
@@ -27,6 +34,7 @@
 //    (a); fällt die Portal-Rolle `data-v3-pane`, fällt (c); fällt der `r`-Zweig in
 //    `parts/LeserTastatur.tsx`, fällt (d).
 import { test, expect, type Page } from '@playwright/test'
+import { panelAufziehen } from './helpers/panelOeffnen'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -73,14 +81,13 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(b) F8: «Rechtsprechung im Text» aus ⇒ Zähler UND Lasche weg', async ({ page }) => {
+  test('(b) F8: «Rechtsprechung im Text» aus ⇒ Zähler weg, Menü-Weg bleibt', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/STPO?leser=v3')
     await warteLeser(page)
-    // Beides ist DA, bevor geschaltet wird — sonst prüfte der Fall unten nichts.
+    // Er ist DA, bevor geschaltet wird — sonst prüfte der Fall unten nichts.
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
-    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(1)
 
     await page.evaluate(() => {
       localStorage.setItem('lm.leser.optionen', JSON.stringify({
@@ -91,7 +98,9 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     await warteLeser(page)
 
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
-    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(0)
+    // A2: «aus» nimmt den HINWEIS weg, nicht den Zugang — der Menü-Eintrag bleibt.
+    await page.locator('[data-v3-ansicht]').click()
+    await expect(page.locator('[data-v3-ansicht-panel-auf]')).toBeVisible()
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
@@ -118,10 +127,11 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     await expect(pane).toBeVisible({ timeout: 10_000 })
     await expect(pane.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
 
-    // Im Pane ist das Panel IMMER ein Blatt (nie drei vertikale Flächen) — die
-    // Lasche ist dort der Öffner, den es in jeder Breite gibt. BEIDE Flächen
-    // tragen einen, sonst wäre die Rechtsprechung in einer von ihnen unerreichbar.
-    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(2, { timeout: 20_000 })
+    // Im Pane ist das Panel IMMER ein Blatt (nie drei vertikale Flächen). BEIDE
+    // Panes tragen einen Öffner, sonst wäre die Rechtsprechung in einer von ihnen
+    // unerreichbar — im 590-px-Pane (Zuschnitt `mini`) ist es der Menü-Eintrag,
+    // und dass er in JEDEM Pane steht, ist die A2-Zusage.
+    await expect(page.locator('[data-v3-ansicht-panel-auf]')).toHaveCount(0) // Menüs zu
     await expect(page.locator('[data-v3-panel-spur="blatt"]')).toHaveCount(2)
 
     // Das Blatt nennt SEIN Pane (H2-Portal-Vertrag) — ohne diese Marke wären zwei
@@ -136,7 +146,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     // der Overlay-Schicht und liegt damit AUSSERHALB des Pane-Elements — genau der
     // H2-Befund, dessentwegen die Rolle als Attribut mitwandert.
     const sekundaer = page.locator('[data-v3-pane="sekundaer"][data-v3-panel-spur="blatt"]')
-    await sekundaer.locator('[data-v3-panel-lasche]').click()
+    await panelAufziehen(page, pane)
     await expect(page.locator('[data-v3-panel]')).toHaveCount(1, { timeout: 20_000 })
     await expect(sekundaer.locator('[data-v3-panel]')).toHaveCount(1)
     expect(fehler, fehler.join('\n')).toEqual([])
@@ -154,8 +164,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     await warteLeser(page)
     await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(0)
 
-    await page.locator('[data-v3-panel-lasche]').click()
-    await expect(page.locator('[data-v3-panel]')).toBeVisible()
+    await panelAufziehen(page)
     // Der Kopf benennt den Bezug — ohne Namen wäre die Liste eine Behauptung
     // über «irgendeinen» Artikel.
     await expect(page.locator('[data-v3-panel] p').first()).toContainText('Art. 1')
@@ -176,7 +185,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     })
     await page.reload()
     await warteLeser(page)
-    await expect(page.locator('[data-v3-panel-lasche]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
 
     // Fokus ausserhalb jedes Eingabefelds (der Listener hat einen Eingabe-Guard).
     await page.locator('#lc-lesespalte').click({ position: { x: 5, y: 5 } })

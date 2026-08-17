@@ -21,6 +21,7 @@
 // `v3/LeserPanel.tsx` abgeklemmt wird.
 import { test, expect, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
+import { panelAufziehen } from './helpers/panelOeffnen'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -32,8 +33,10 @@ function fehlerSammeln(page: Page): string[] {
 async function panelAuf(page: Page, pfad: string): Promise<void> {
   await page.goto(pfad)
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
-  await page.locator('[data-v3-panel-lasche], [data-v3-panel-zaehler]').first().click()
-  await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
+  // Öffner je Zuschnitt — EINE Quelle (§5, `helpers/panelOeffnen`). Bis zum
+  // H3-Nachzug stand hier `[data-v3-panel-lasche], [data-v3-panel-zaehler]`; die
+  // Lasche ist gestrichen (Ä46/Ä49).
+  await panelAufziehen(page)
 }
 
 test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
@@ -44,12 +47,19 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
 
     const filter = page.locator('[data-v3-panel] [data-v3-panel-filter]')
     await expect(filter).toBeVisible()
+    // Ä47 (H3-Nachzug): die Facetten liegen hinter zwei benannten Klappen — EINE
+    // Zeile statt vier gestapelter Blöcke (348 px gemessen). Die geprüfte Zusage
+    // ist unverändert («die Facetten stehen IM Panel»); nur muss der Fall sie
+    // jetzt aufklappen. Ihre Kompaktheit prüft `leser-v3-panel-nachzug` (g).
+    await filter.locator('[data-v3-panel-klappe]').first().click()
     // Instanz-Schalter (dieselbe geteilte Komponente wie in der Ist-Hülle).
     for (const klasse of ['bge', 'bger', 'eidg', 'kantonal']) {
       await expect(filter.locator(`[data-bezug-klasse="${klasse}"]`)).toHaveCount(1)
     }
-    // Zeit-Achse: die Von-Bis-Eingabe der `BezugZeitWahl`.
+    // Zeit-Achse: die Von-Bis-Eingabe der `BezugZeitWahl`, hinter ihrer Klappe.
+    await filter.locator('[data-v3-panel-klappe]').nth(1).click()
     await expect(filter.locator('input[type="date"]').first()).toBeAttached()
+    await filter.locator('[data-v3-panel-klappe]').first().click()
 
     // Kantonale Klasse zuschalten ⇒ der Kanton-Feinschnitt erscheint (er ist
     // ohne diese Klasse wirkungslos und darum gar nicht da, §13 F4).
@@ -121,10 +131,17 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(d) Kantonserlass ohne Bezüge: kein leerer Zähler, kein leeres Element', async ({ page }) => {
+  // ── §6.3-NACHZUG (H3-Nachzug A1) · ZWEI Kantons-Erlasse statt einem ─────────
+  // Der Fall lief nur an BS-640.100 — einem Erlass, der einen Bezugs-Shard HAT
+  // (79 kantonale Kanten). Damit prüfte er den Bestands-Satz genau dort, wo er
+  // ohnehin kam, und war blind gegen die Lage, die 79 % des Korpus betrifft: kein
+  // Shard, 404, ewiges «wird geladen». Jetzt läuft er über beide Erlasse; die
+  // Trennung «lädt» / «nichts erfasst» prüft zusätzlich `leser-v3-panel-nachzug` (a).
+  for (const erlass of ['BS-640.100', 'ZH-211.11']) {
+  test(`(d) Kantonserlass ohne Bezüge (${erlass}): kein leerer Zähler, kein leeres Element`, async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/kanton/BS-640.100?leser=v3')
+    await panelAuf(page, `/gesetze/kanton/${erlass}?leser=v3`)
 
     // Der Öffner trägt keine Zahl — weder eine 0 noch eine erfundene.
     const oeffner = page.locator('[data-v3-panel-zaehler], [data-v3-panel-lasche]').first()
@@ -143,4 +160,5 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
       .toBeVisible({ timeout: 20_000 })
     expect(fehler, fehler.join('\n')).toEqual([])
   })
+  }
 })
