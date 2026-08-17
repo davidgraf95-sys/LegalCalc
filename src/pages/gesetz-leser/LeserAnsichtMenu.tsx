@@ -31,9 +31,11 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
-import { setzeOption, useLeserOptionen, type OptFeld } from './leserOptionen';
+import {
+  HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
+} from './leserOptionen';
 
-function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
+function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz, hinweis }: {
   feld: OptFeld;
   an: boolean;
   label: string;
@@ -42,14 +44,28 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
   ariaLabel?: string;
   /** Kleines Zusatz-Signal rechts vom Label (z. B. der Fussnoten-Zähler N). */
   zusatz?: ReactNode;
+  /** Ä27: erklärende Zeile UNTER dem Schalter — sagt, warum die Stellung «an»
+   *  gerade nichts zeigt. Sie ist DESCRIPTION, nicht Name (`aria-describedby`).
+   *
+   *  Gelernt beim Bau (17.8.2026): zuerst stand der Satz im `aria-label`, also im
+   *  Accessible-NAME. Damit hiess der Schalter «Änderungsvermerke — Marker und
+   *  Apparat sind mit den Fussnoten ausgeblendet» — und enthielt das Wort
+   *  «Fussnoten», den Namen des NACHBAR-Schalters. Zwei bestehende Specs wurden
+   *  sofort rot («strict mode violation: … resolved to 2 elements»), und genau
+   *  dieselbe Doppeldeutigkeit träfe eine Nutzerin, die per Namen navigiert. Ein
+   *  Name benennt das Steuerelement; eine Begründung ist eine Beschreibung. */
+  hinweis?: string;
 }) {
+  const hinweisId = useId();
   return (
+    <div>
     <button
       type="button"
       role="switch"
       aria-checked={an}
       aria-label={ariaLabel}
-      title={titel}
+      aria-describedby={hinweis ? hinweisId : undefined}
+      title={hinweis ? `${titel}. ${hinweis}` : titel}
       onClick={() => setzeOption(feld, an ? 'aus' : 'an')}
       className={`flex w-full items-center justify-between gap-3 rounded-md px-2.5 py-1.5 text-left text-body-s transition-colors hover:bg-brass-100/40 ${
         an ? 'text-ink-900' : 'text-ink-600'
@@ -71,6 +87,17 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
         {an ? '✓' : '○'} {an ? 'an' : 'aus'}
       </span>
     </button>
+    {/* AUSSERHALB des Knopfes: läge die Zeile darin, zöge die Namensberechnung
+        ihren Text in den Accessible-Name (s. `hinweis` oben) — sie mit
+        `aria-hidden` davor zu schützen hätte sie zugleich vor dem Screenreader
+        versteckt, also genau vor der Nutzerin, für die sie gedacht ist. Als
+        Geschwister ist sie sichtbar UND vorlesbar, und sie ist kein Klickziel
+        (ein Hinweis soll nicht schalten). `ink-500` statt `ink-400`: dieselbe
+        AA-Auflage wie beim «aus»-Wort (§13/F2). */}
+    {hinweis && (
+      <p id={hinweisId} className="px-2.5 pb-1 text-micro leading-snug text-ink-500">{hinweis}</p>
+    )}
+    </div>
   );
 }
 
@@ -91,8 +118,13 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
  *  nicht geladen ⇒ Zähler erscheint erst danach; da er in einem geschlossenen,
  *  absolut positionierten Panel steckt, wächst im sichtbaren Kopf keine Zahl nach
  *  (CLS 0). */
-export function LeserAnsichtMenu({ fussnotenAnzahl = null }: {
+export function LeserAnsichtMenu({ fussnotenAnzahl = null, hatAenderungsvermerke = true }: {
   fussnotenAnzahl?: number | null;
+  /** S1-Nachzug B3 (§8): trägt DIESER Erlass Änderungsvermerke? `false` ⇒ der
+   *  Schalter «Änderungsvermerke» wird gar nicht gerendert, weil er hier nichts
+   *  ein- oder ausblenden könnte. Default `true` = anbieten (konservativ, s.
+   *  `bieteAenderungsvermerkeSchalter` in `./berechnungen`). */
+  hatAenderungsvermerke?: boolean;
 }) {
   const opt = useLeserOptionen();
   const [offen, setOffen] = useState(false);
@@ -199,12 +231,27 @@ export function LeserAnsichtMenu({ fussnotenAnzahl = null }: {
               Fussnote ohne Klasse (alle Kanton-Sidecars) bleiben sichtbar. Die
               Sicherheitsrichtung ist einseitig — nie amtliche Substanz verstecken
               (§1/§8). Zur unbedingten Sichtbarkeit s. Datei-Kopf. */}
-          <OptSwitch
-            feld="histansicht"
-            an={opt.histansicht === 'an'}
-            label="Änderungsvermerke"
-            titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
-          />
+          {/* S1-NACHZUG B3 (§8): nur, wenn der Erlass Vermerke TRÄGT. Auf
+              Kantonserlassen und Staatsverträgen ohne klassifizierte Historie
+              (gemessen: `[data-historie-zeile]` = 0 auf ZH-211.11, BS-640.100,
+              LugÜ) blieb dem Schalter nur eine Layout-Raffung von 40 px je
+              Artikel — die faktischen Änderungs-Fussnoten ohne Klasse bleiben
+              dort sichtbar (H0-Auflage 1, gewollt). Die Beschriftung versprach
+              also mehr, als sie hielt. Die Bedingung kommt aus dem DATENMODELL,
+              nicht aus der Herkunft — kein `if (kanton)`; Herleitung und
+              Korpus-Messung bei `zaehleAenderungsvermerke` in `./berechnungen`. */}
+          {hatAenderungsvermerke && (
+            <OptSwitch
+              feld="histansicht"
+              an={opt.histansicht === 'an'}
+              label="Änderungsvermerke"
+              titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
+              // Ä27: bei «Fussnoten: aus» steht hier «✓ an», sichtbar ist aber nur
+              // die «Fassung»-Zeile — Marker und Apparat hängen am Fussnoten-
+              // Schalter. Im flachen Menü ist diese Abhängigkeit sonst unerkennbar.
+              hinweis={opt.fussnoten === 'aus' ? HINWEIS_VERMERKE_OHNE_FUSSNOTEN : undefined}
+            />
+          )}
           {/* W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere 4. Schalter
               «Entscheide» ist ENTFALLEN. Er blendete die Kanten-Zeile per CSS
               aus und steuerte damit dieselbe Sache wie das Dropdown

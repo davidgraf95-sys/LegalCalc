@@ -174,6 +174,24 @@ export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): Leser
   }
   return opt;
 }
+/**
+ * Ä27 (S1-Nachzug, 17.8.2026): Hinweis-Unterzeile am Schalter
+ * «Änderungsvermerke», eingeblendet NUR bei «Fussnoten: aus».
+ *
+ * Befund des Ästhetik-Prüfers: das Menü ist flach, die Abhängigkeit unsichtbar.
+ * Steht «Fussnoten» auf `aus`, zeigt «Änderungsvermerke» weiter «✓ an», sichtbar
+ * sind aber weder Marker noch Apparat — nur die «Fassung»-Zeile, die dem
+ * Fussnoten-Schalter nicht folgt. Der Schalter sagt damit die Wahrheit über den
+ * Store und die Unwahrheit über den Bildschirm (§8).
+ *
+ * Der Text steht als EINE Konstante hier, weil ihn V1 (`LeserAnsichtMenu`) und
+ * V3 (`v3/LeserAnsichtV3`) beide zeigen und gleich zeigen müssen (§5) — zwei
+ * Literale wären zwei Wahrheiten, die auseinanderlaufen (Präzedenz: die
+ * Label-Schwellen des Menü-Paars, B6).
+ */
+export const HINWEIS_VERMERKE_OHNE_FUSSNOTEN =
+  'Marker und Apparat sind mit den Fussnoten ausgeblendet';
+
 /** Aufsteigend — die Reihenfolge IST die Regler-Achse (`leserSchrift.ts`). */
 export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gross', 'sehr-gross'];
 const DEFAULT_SCHRIFT: LeserSchrift = 'normal';

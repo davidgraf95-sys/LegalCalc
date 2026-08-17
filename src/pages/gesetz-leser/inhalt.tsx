@@ -9,6 +9,7 @@ import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import { ArtikelIndex } from './parts/ArtikelIndex';
 import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
+  zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter,
 } from './berechnungen';
 import { baueGliederungsModell, findeSynthPfad } from './gliederungsModell';
 import { useArtikelKontext } from './artikelKontext';
@@ -156,6 +157,23 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     return n;
   }, [struktur]);
 
+  // S1-NACHZUG B3 (§8): Trägt dieser Erlass überhaupt Änderungsvermerke? Nur dann
+  // wird der Schalter angeboten — sonst versprach er eine Wirkung, die es hier
+  // nicht gibt (auf ZH-211.11/BS-640.100/LugÜ blieb ihm nur eine Layout-Raffung
+  // von 40 px je Artikel). Herleitung, Korpus-Messung und die Begründung der ZWEI
+  // Träger stehen bei `zaehleAenderungsvermerke` in `./berechnungen`.
+  //
+  // Die «Fassung»-Zeile wird über `historieFuer` geprüft und NICHT über den
+  // Shard selbst: der Shard liegt im Zustands-Hook, und `historieFuer` ist genau
+  // die Frage, die der Artikel-Fuss auch stellt (eine Wahrheit, §5). Der Lookup
+  // ist ein Objekt-Zugriff je Artikel und läuft nur, wenn `eintraege` oder der
+  // Shard wechselt — nicht je Render (§15). `some` bricht beim ersten Treffer ab.
+  const hatAenderungsvermerke = useMemo(() => bieteAenderungsvermerkeSchalter(
+    zaehleAenderungsvermerke(struktur),
+    (eintraege ?? []).some((e) => historieFuer(e.artikel) !== undefined),
+    eintraege !== null,
+  ), [struktur, eintraege, historieFuer]);
+
   // §6.6-Split: Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht-/Such-Slot)
   // — verhaltensneutral in ./inhalt-hooks (EIN useEffect). Steht NACH
   // `fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
@@ -164,6 +182,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // der amtlichen Gliederung (inhalt-hooks.tsx, `zeigeGliederung`).
   useInhaltsKopfMeldung({
     erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl,
+    hatAenderungsvermerke,
     kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf,
   });
@@ -507,6 +526,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
         sektionen={sektionen} ohneGliederung={ohneGliederung} gliederungsTiefe={gliederungsTiefe} fussnotenAnzahl={fussnotenAnzahl}
+        hatAenderungsvermerke={hatAenderungsvermerke}
         meta={meta} internRefs={internRefs} margAnzeige={margAnzeige} kantonSys={kantonSys}
         basisPfad={basisPfad} renderSektion={renderSektion}
         imPane={imPane} istXl={istXl} overlayWurzel={overlayWurzel}

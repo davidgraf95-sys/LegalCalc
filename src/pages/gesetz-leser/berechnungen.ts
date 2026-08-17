@@ -4,7 +4,7 @@
 // Hooks, Effekte und das Rendering bleiben in inhalt.tsx. Die useMemo-Rümpfe rufen
 // diese Funktionen mit denselben Deps auf (byte-gleiche Ableitung, golden + e2e).
 import type { RefObject } from 'react';
-import type { Sektion } from '../../lib/normtext/browse';
+import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 
 // ─── Pane-Scoping-Helfer (B-2.5) — MODUL-Ebene = referenzstabil ────────────
@@ -156,6 +156,21 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
   // (`mt-4 min-h-hist-zeile` in ArtikelLeser) ist 16 + 24 px hoch und steht bei
   // JEDEM Artikel — er gehört darum in die Platzhalter-Höhe der off-screen-Artikel
   // (`contain-intrinsic-size`), sonst schiebt das Aufblenden beim Hereinscrollen.
+  //
+  // KORREKTUR S1-NACHZUG (17.8.2026, Bug-Check B4): «bei JEDEM Artikel» stimmt
+  // seit S1 nicht mehr unbedingt. Steht der Schalter «Änderungsvermerke» auf
+  // `aus`, blendet `html[data-histansicht="aus"] .lc-leser [data-hist-slot]`
+  // (index.css) den SLOT aus — dann sind diese 40 px nicht da, und die Schätzung
+  // überreserviert um 40 px je off-screen-Artikel.
+  //
+  // Bewusst NICHT nachgerechnet: die Richtung ist die tolerierte. Die Zusage der
+  // Schätzung lautet «echte Höhe ≤ Schätzung» (s. Kalibrierung oben) — zu HOCH
+  // ist der gewünschte Fehler, der Platzhalter schrumpft beim Rendern statt zu
+  // wachsen, und die Ankertreue bleibt grün. Den Wert vom Options-Zustand
+  // abhängig zu machen hiesse, eine reine Funktion (§2/§3) an einen
+  // Darstellungs-Store zu binden und die `contain-intrinsic-size` jedes Artikels
+  // beim Umschalten neu zu schreiben — genau der Re-Render des Normtexts, den die
+  // CSS-Mechanik vermeidet (§15). Nur der Kommentar zieht nach.
   const HIST_SLOT = 40;
   let h = 104 + HIST_SLOT; // Artikelkopf: «Art. N» + Trenner (border-t + pt-7 mt-7) + Basisabstand + Fassungs-Slot
   if (e.titel) h += 30;    // amtlicher Randtitel/Sachüberschrift (eine Zeile)
@@ -182,6 +197,79 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
 // `ArtikelLeser` (numerisch, dann Buchstaben-Suffix «95a») und ist dort weiter im
 // Einsatz. Als reine Funktion ist er direkt prüfbar
 // (src/tests/fn-nr-sortierung.test.ts).
+
+// ─── Trägt dieser Erlass überhaupt Änderungsvermerke? (S1-Nachzug B3) ─────────
+//
+// BEFUND (Bug-Check 17.8.2026): «Änderungsvermerke: aus» wirkte auf
+// Kantonserlassen und Staatsverträgen NUR als Layout-Raffung (−40 px je Artikel),
+// weil dort gar keine Vermerke existieren — `[data-historie-zeile]` = 0 auf
+// ZH-211.11, BS-640.100 und LugÜ. Die faktischen Änderungs-Fussnoten ohne
+// Klasse blieben sichtbar (H0-Auflage 1, gewollt: eine fehlende Klasse blendet
+// nie etwas aus). Der Schalter versprach damit mehr, als er hielt (§8).
+//
+// FIX: der Schalter wird nur angeboten, wenn der Erlass Vermerke TRÄGT — und das
+// entscheidet das DATENMODELL, nicht die Herkunft. Kein `if (kanton)`: die
+// Eigenschaft ist «hat klassifizierte Historie», nicht «ist kantonal». Es gibt
+// Bundes-Staatsverträge ohne Vermerke und (s. u.) Staatsverträge mit Fassungs-
+// zeile, aber ohne klassifizierte Fussnote; eine Herkunfts-Weiche träfe beide falsch.
+//
+// ZWEI Träger, weil der Schalter zwei Dinge ausblendet (index.css):
+//   1. `[data-fn-klasse="A"]` + der dadurch leere `[data-fn-apparat]`
+//      → Quelle: `kl: 'A'` im Struktur-Sidecar (`zaehleAenderungsvermerke`).
+//   2. `[data-hist-slot]`, die «Fassung»-Zeile am Artikelfuss
+//      → Quelle: der Historie-Shard (`historie/<KEY>.json`).
+// Beide müssen leer sein, damit der Schalter wirkungslos ist. Gemessen über den
+// ganzen Korpus (1420 Erlasse, 17.8.2026): 1217 tragen keine `kl:'A'`-Fussnote;
+// von diesen haben 6 einen Historie-Shard und genau 2 (MONTREAL, PVUE) darin
+// auch Einträge. Nur `kl:'A'` zu prüfen hätte dort einen WIRKSAMEN Schalter
+// entfernt — deshalb die zweite Bedingung (§1: lieber die Prüfung verdoppeln
+// als ein wirksames Steuerelement stillschweigend wegnehmen).
+export function zaehleAenderungsvermerke(struktur: StrukturMap | null | undefined): number | null {
+  // null = Sidecar noch nicht geladen. Bewusst UNTERSCHIEDEN von 0: «weiss ich
+  // noch nicht» darf nicht wie «gibt es nicht» wirken (§8).
+  if (!struktur) return null;
+  let n = 0;
+  for (const v of Object.values(struktur)) {
+    for (const fn of v?.fussnoten ?? []) if (fn.kl === 'A') n += 1;
+  }
+  return n;
+}
+
+/**
+ * Soll der Schalter «Änderungsvermerke» angeboten werden?
+ *
+ *  · `vermerke`         — Ergebnis von `zaehleAenderungsvermerke`; `null` heisst
+ *                         «kein Struktur-Sidecar da».
+ *  · `hatFassungsZeile` — trägt mindestens ein Artikel einen Historie-Eintrag?
+ *  · `erlassGeladen`    — sind die Artikel des Erlasses eingetroffen?
+ *
+ * Die DREI Zustände von `vermerke` müssen auseinandergehalten werden, und genau
+ * daran wäre eine naive Fassung gescheitert (Befund beim Bau, 17.8.2026):
+ *
+ *   0    — Sidecar da, keine Vermerke        ⇒ nicht anbieten
+ *   > 0  — Sidecar da, Vermerke da           ⇒ anbieten
+ *   null — kein Sidecar. ZWEIDEUTIG, und `ladeStruktur` löst beide Fälle
+ *          gleich auf (404 → null, browse.ts): «lädt noch» ODER «gibt es
+ *          gar nicht». `erlassGeladen` entscheidet. Ohne diese Unterscheidung
+ *          behielte ZH-211.11 den Schalter — der Erlass hat überhaupt kein
+ *          Struktur-Sidecar und war einer der drei gemeldeten Fälle.
+ *
+ * KONSERVATIV bleibt nur die echte Unwissenheit (`erlassGeladen === false`):
+ * dort wird ANGEBOTEN. Ein Steuerelement zu verschweigen, dessen Wirkung man noch
+ * nicht kennt, wäre die falsche Richtung — und der umgekehrte Fehler ist harmlos,
+ * weil das Panel im Grundzustand geschlossen ist (kein CLS, dieselbe Begründung
+ * wie beim nachwachsenden Fussnoten-Zähler in `LeserAnsichtMenu`). Kein Sidecar
+ * bei geladenem Erlass heisst dagegen: gar keine Fussnoten, also auch keine
+ * Vermerke — das ist Wissen, keine Unwissenheit.
+ */
+export function bieteAenderungsvermerkeSchalter(
+  vermerke: number | null,
+  hatFassungsZeile: boolean,
+  erlassGeladen: boolean,
+): boolean {
+  if (vermerke === null && !erlassGeladen) return true;
+  return (vermerke ?? 0) > 0 || hatFassungsZeile;
+}
 
 /** Fussnoten-Nummer → Sortierschlüssel [Zahl, Suffix]; unparsbar ⇒ ans Ende. */
 export function fnNrSortKey(nr: string | undefined): [number, string] {

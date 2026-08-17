@@ -1,7 +1,9 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
-import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
+import {
+  HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
+} from '../leserOptionen';
 
 // ─── «Ansicht ▾» der V3-Kopfzeile (FAHRPLAN-LESER-V3 Kap. 4a/4f, H1) ─────────
 //
@@ -13,6 +15,17 @@ import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
 // im Store gestrichen. Die Abbildung `./v3Optionen` (`histZuSicht`/`sichtZuHist`/
 // `histUmschalten`) ist damit ersatzlos entfallen — `histansicht` ist ein
 // gewöhnliches zweiwertiges Feld, und alle drei Schalter laufen durch `schalte`.
+//
+// S1-NACHZUG B3 — OFFEN in V3, mit Grund (17.8.2026): der Schalter
+// «Änderungsvermerke» wird in V1 nur noch angeboten, wenn der Erlass Vermerke
+// TRÄGT (§8, Herleitung in `../berechnungen`). In V3 steht er weiter unbedingt.
+// Nicht aus Nachlässigkeit: die Bedingung braucht einen Prop-Weg über
+// `leserV3Modell.ts` → `LeserRahmenV3.tsx` → `LeserKopf.tsx`, und alle drei
+// Dateien werden von den Etappen H2b und H3 GERADE umgebaut (H3 mit
+// unfestgeschriebenen Änderungen im Worktree). Doppelt bauen wäre ein
+// Drei-Wege-Konflikt (§0 Ziff. 5: Treffer melden, nicht doppelt bauen). V3 ist
+// zudem noch nicht ausgeliefert (H4-Flip wartet auf David), die Asymmetrie
+// trifft also keine Nutzerin. Nachzug-Zeile steht in FAHRPLAN-LESER-V3 Kap. 7.
 //
 // Was hier NICHT steht und bewusst nicht:
 //  · Rechtsprechungs-Facetten (Instanz/Kanton/Zeit) — die ziehen in H3 ins
@@ -28,20 +41,29 @@ import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
 // Fokus-Falle, Escape und Fokus-Rückgabe kommen aus dem geteilten
 // `useDialogFokus` (§5) — dieselbe Mechanik wie im Ist-Menü.
 
-function V3Switch({ an, label, titel, onKlick, ariaLabel }: {
+function V3Switch({ an, label, titel, onKlick, ariaLabel, hinweis }: {
   an: boolean;
   label: string;
   titel: string;
   onKlick: () => void;
   ariaLabel?: string;
+  /** Ä27 (S1-Nachzug): erklärende Zeile UNTER dem Schalter — Wortlaut aus der
+   *  geteilten Konstante (§5), V1 zeigt denselben Satz. DESCRIPTION, nicht Name:
+   *  im `aria-label` hiesse der Schalter «… mit den Fussnoten ausgeblendet» und
+   *  enthielte damit den Namen des Nachbar-Schalters (Herleitung und der dadurch
+   *  ausgelöste Spec-Bruch stehen in `../LeserAnsichtMenu.tsx`). */
+  hinweis?: string;
 }) {
+  const hinweisId = useId();
   return (
+    <div>
     <button
       type="button"
       role="switch"
       aria-checked={an}
       aria-label={ariaLabel}
-      title={titel}
+      aria-describedby={hinweis ? hinweisId : undefined}
+      title={hinweis ? `${titel}. ${hinweis}` : titel}
       onClick={onKlick}
       className={`flex w-full items-center justify-between gap-3 rounded-md px-2.5 py-1.5 text-left text-body-s transition-colors hover:bg-brass-100/40 ${
         an ? 'text-ink-900' : 'text-ink-600'
@@ -54,6 +76,12 @@ function V3Switch({ an, label, titel, onKlick, ariaLabel }: {
         {an ? '✓' : '○'} {an ? 'an' : 'aus'}
       </span>
     </button>
+    {/* Geschwister, nicht Kind — sonst wanderte der Text in den Accessible-Name
+        (Begründung in `../LeserAnsichtMenu.tsx`). */}
+    {hinweis && (
+      <p id={hinweisId} className="px-2.5 pb-1 text-micro leading-snug text-ink-500">{hinweis}</p>
+    )}
+    </div>
   );
 }
 
@@ -152,6 +180,8 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
             an={opt.histansicht === 'an'}
             label="Änderungsvermerke"
             titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
+            // Ä27 (S1-Nachzug): dieselbe Auskunft und derselbe Wortlaut wie in V1.
+            hinweis={opt.fussnoten === 'aus' ? HINWEIS_VERMERKE_OHNE_FUSSNOTEN : undefined}
             onKlick={() => schalte('histansicht', opt.histansicht === 'an')}
           />
           {/* Umwidmung des `leitfaelle`-Schalters (Kap. 4f): er steuert in V3

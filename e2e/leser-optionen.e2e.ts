@@ -83,6 +83,79 @@ test('Options-Leiste: zwei role=switch (Fussnoten/Änderungsvermerke) — «Ents
   await expect(html).toHaveAttribute('data-histansicht', 'an');
 });
 
+// ── S1-NACHZUG B3 (Bug-Check 17.8.2026, §8) ──────────────────────────────────
+// «Änderungsvermerke» wird nur angeboten, wenn der Erlass Vermerke TRÄGT. Auf
+// Erlassen ohne klassifizierte Historie blieb dem Schalter nur eine
+// Layout-Raffung von 40 px je Artikel; die faktischen Änderungs-Fussnoten OHNE
+// Klasse bleiben dort sichtbar (H0-Auflage 1) — die Beschriftung versprach mehr,
+// als sie hielt. Die Bedingung kommt aus dem DATENMODELL, nicht aus der Herkunft
+// (kein `if (kanton)`): Regel und Korpus-Messung stehen in
+// `src/tests/aenderungsvermerke-schalter.test.ts`, hier die gerenderte Wirkung.
+//
+// PAAR aus Positiv und Negativ, bewusst beides: eine Bedingung, die nur die
+// Abwesenheit prüft, wäre auch mit einem generell verschwundenen Schalter grün.
+test('B3: Erlass MIT Änderungsvermerken bietet den Schalter (StPO)', async ({ page }) => {
+  // StPO: 187 von 283 Fussnoten sind `kl:'A'`, dazu ein Historie-Shard.
+  await warteReader(page, '/gesetze/bund/STPO', 'art-1');
+  await ansichtOeffnen(page);
+  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  await expect(gruppe.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(1);
+  await expect(gruppe.getByRole('switch')).toHaveCount(2);
+});
+
+test('B3: Erlass OHNE Änderungsvermerke bietet ihn nicht (BS-640.100)', async ({ page }) => {
+  // BS-640.100 (StG BS) trägt 16 Fussnoten, KEINE davon klassifiziert, und keinen
+  // Historie-Shard ⇒ es gibt hier nichts, was der Schalter ein- oder ausblenden
+  // könnte. Bug-Check-Messung: `[data-historie-zeile]` = 0.
+  await warteReader(page, '/gesetze/kanton/BS-640.100', 'art-1');
+  await ansichtOeffnen(page);
+  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  await expect(gruppe).toBeVisible();
+  await expect(gruppe.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0);
+  // Der Fussnoten-Schalter BLEIBT — die 16 unklassifizierten Fussnoten sind da und
+  // er blendet sie wirklich aus. Nur EIN Schalter also, nicht null.
+  await expect(gruppe.getByRole('switch', { name: 'Fussnoten' })).toHaveCount(1);
+  await expect(gruppe.getByRole('switch')).toHaveCount(1);
+  // Und die faktischen Fussnoten stehen im Dokument (nichts weggeblendet, §8).
+  await expect(page.locator('[data-historie-zeile]')).toHaveCount(0);
+});
+
+// ── Ä27 (Ästhetik-Prüfer 17.8.2026) ─────────────────────────────────────────
+// Bei «Fussnoten: aus» steht «Änderungsvermerke ✓ an», sichtbar sind aber weder
+// Marker noch Apparat — nur die «Fassung»-Zeile, die dem Fussnoten-Schalter nicht
+// folgt. Im flachen Menü ist die Abhängigkeit unerkennbar; die Unterzeile sagt sie.
+test('Ä27: Hinweis am Änderungsvermerke-Schalter NUR bei «Fussnoten: aus»', async ({ page }) => {
+  const HINWEIS = 'Marker und Apparat sind mit den Fussnoten ausgeblendet';
+  await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
+  await ansichtOeffnen(page);
+  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const vermerke = gruppe.getByRole('switch', { name: 'Änderungsvermerke' });
+
+  // Grundzustand «Fussnoten: an» — KEIN Hinweis (er wäre dort falsch: Marker und
+  // Apparat sind sichtbar). Negativ zuerst, damit die Zeile nicht bloss «irgendwo
+  // steht», sondern an die Bedingung gebunden ist.
+  await expect(gruppe.getByText(HINWEIS)).toHaveCount(0);
+
+  await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'aus');
+  await expect(gruppe.getByText(HINWEIS)).toHaveCount(1);
+  // Die Auskunft muss auch ohne Blick auf den Bildschirm ankommen — als
+  // DESCRIPTION des Schalters, nicht als Name (§13/F2: Farbe und Nähe tragen nie
+  // allein). Der NAME bleibt «Änderungsvermerke»: stünde der Satz darin, hiesse
+  // der Schalter «… mit den Fussnoten ausgeblendet» und wäre nicht mehr von
+  // seinem Nachbarn «Fussnoten» zu unterscheiden (beim Bau real passiert).
+  const beschriebenVon = await vermerke.getAttribute('aria-describedby');
+  expect(beschriebenVon, 'aria-describedby fehlt').toBeTruthy();
+  await expect(page.locator(`#${beschriebenVon}`)).toHaveText(HINWEIS);
+  // Der Schalter selbst steht weiter auf «an» — der Hinweis erklärt, er lügt nicht.
+  await expect(vermerke).toHaveAttribute('aria-checked', 'true');
+
+  // Zurückschalten nimmt den Hinweis wieder weg.
+  await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'an');
+  await expect(gruppe.getByText(HINWEIS)).toHaveCount(0);
+});
+
 test('Fussnoten-Toggle: AN sichtbar → AUS VERSCHWINDEN (A1, David 5.7.2026), Text bleibt im DOM, kein CLS beim Toggle', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
 

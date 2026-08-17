@@ -40,6 +40,8 @@ export function useInhaltsKopfMeldung(opts: {
   imPane: boolean;
   eintraege: NormSnapshot[] | null;
   fussnotenAnzahl: number | null;
+  /** S1-Nachzug B3: trägt der Erlass Änderungsvermerke? (Schalter-Sichtbarkeit) */
+  hatAenderungsvermerke: boolean;
   /** W2·7-BEZUG/B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter).
    *  OPTIONAL: leer = noch kein Bezugs-Shard geladen ⇒ kein Kanton-Streifen. */
   kantoneVerfuegbar?: string[];
@@ -59,7 +61,8 @@ export function useInhaltsKopfMeldung(opts: {
   setTocAuf: Dispatch<SetStateAction<boolean>>;
 }): void {
   const {
-    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl, kantoneVerfuegbar = [], klassenImErlass,
+    erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl,
+    hatAenderungsvermerke, kantoneVerfuegbar = [], klassenImErlass,
     bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf,
   } = opts;
@@ -123,7 +126,8 @@ export function useInhaltsKopfMeldung(opts: {
           // Pane-Suchleiste) und lief in den Label-Schwellen auseinander.
           <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
             bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
-            fussnotenAnzahl={fussnotenAnzahl} />
+            fussnotenAnzahl={fussnotenAnzahl}
+            hatAenderungsvermerke={hatAenderungsvermerke} />
         )
         : undefined,
       // A35: das In-Gesetz-Suchfeld nur in der Einzelansicht (im Split-View trägt es
@@ -136,6 +140,7 @@ export function useInhaltsKopfMeldung(opts: {
     // früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl,
+      hatAenderungsvermerke,
       kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
       suche, istXl, tocOffen, tocAuf]);
 }

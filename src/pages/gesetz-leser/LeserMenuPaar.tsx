@@ -24,6 +24,7 @@ import type { KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 
 export function LeserMenuPaar({
   kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich, fussnotenAnzahl,
+  hatAenderungsvermerke = true,
 }: {
   /** B4: Kantone, zu denen dieser Erlass Kanten hat (Kanton-Schalter). */
   kantoneVerfuegbar?: string[];
@@ -34,13 +35,19 @@ export function LeserMenuPaar({
   /** B5: aktiver Von-Bis-Bereich. */
   bezugBereich?: Zeitbereich;
   fussnotenAnzahl: number | null;
+  /** S1-Nachzug B3: trägt der Erlass Änderungsvermerke? `false` ⇒ der Schalter
+   *  «Änderungsvermerke» wird nicht angeboten. Default `true` = anbieten
+   *  (konservativ: wer die Eigenschaft nicht kennt, verschweigt kein wirksames
+   *  Steuerelement — Herleitung in `berechnungen.ts`). */
+  hatAenderungsvermerke?: boolean;
 }) {
   return (
     <div className="flex items-center gap-1">
       <LeserRechtsprechungMenu kantoneVerfuegbar={kantoneVerfuegbar}
         klassenImErlass={klassenImErlass}
         histogramm={bezugHistogramm} bereich={bezugBereich} />
-      <LeserAnsichtMenu fussnotenAnzahl={fussnotenAnzahl} />
+      <LeserAnsichtMenu fussnotenAnzahl={fussnotenAnzahl}
+        hatAenderungsvermerke={hatAenderungsvermerke} />
     </div>
   );
 }
