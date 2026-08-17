@@ -1,6 +1,28 @@
 // @shard-gruppe: 2
 import { test, expect, type Page } from '@playwright/test';
 
+// ══ WELCHE HÜLLE PRÜFT DIESE DATEI? (Nachzug 17.8.2026, Arch-Prüfer 7) ════════
+//
+// Diese Frage war unbeantwortet, und das war der Mangel: `ladeReader` navigiert
+// nach `/gesetze/bund/<KEY>` OHNE `?leser=v3`, und die Datei steht in keiner der
+// Projektlisten von `playwright.config.ts` (`N_SPECS`/`V3_SPECS`) — sie läuft also
+// nur im Projekt `chromium` und gegen die IST-HÜLLE (V1).
+//
+// Das ist für die R5-Fälle richtig und bleibt so: die Lesespalte ist Kern-Sache
+// (S-Strang), das Lesemass-Token `max-w-normtext` und die Typo-Stufe
+// `text-leser-text` sind NICHT V3-gegated, und die Ist-Hülle ist heute die
+// ausgelieferte. Gemessen bestätigt: die Fliesstext-Stufe liefert in V1 dieselben
+// 17.00 px / 26.35 px wie in V3. V3-gegated ist allein der SCHRIFTREGLER
+// (index.css: `.lc-leser[data-leser-v3="rahmen"] … [data-lese]`) — also die
+// Vergrösserung, nicht die Grundstufe.
+//
+// Damit die Zusage der Etappe aber nicht nur AM RANDE der neuen Hülle geprüft ist,
+// steht unten EIN Fall ausdrücklich unter `?leser=v3` (StPO 429). Der Query-
+// Parameter ist der in `playwright.config.ts` beschriebene Weg, V3 im Projekt
+// `chromium` einzuschalten; das Umhängen dieser Datei in das Projekt `leser-v3`
+// gehört zu H4 (dort werden die B-Specs geschlossen umgehängt) und wird hier NICHT
+// vorgezogen.
+//
 // R5 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Typo-Skala): die Lesespalte hält ein
 // komfortables Zeilenmass — Desktop ≤ 75 ch @ 1440px, Mobil hinreichend breit @ 390px.
 // Der frühere Ist-Fehler: arbitrary max-w-[52/56rem] (zu breit) + auf Mobil ~16 ch
@@ -94,6 +116,41 @@ test.describe('S2 · WCAG 1.4.8 am Fliesstext (≤ 80 ch, lh ≥ 1.5)', () => {
       expect(typo!.fs, `@${width}: Fliesstext-Grösse (F3 = V2: 17 px)`).toBeCloseTo(17, 1);
     });
   }
+
+  // ── DER EINE FALL IN DER NEUEN HÜLLE (Nachzug 17.8.2026, Arch-Prüfer 7) ─────
+  // Alle Fälle oben laufen gegen die Ist-Hülle (s. Kopf der Datei). Die Etappe
+  // verspricht die V2-Stufe aber für den LESER, und die neue Hülle ist sein
+  // Zielzustand — also wird sie hier ausdrücklich gemessen, statt sie aus der
+  // Kern-Zugehörigkeit zu folgern. Erwartung sind DIESELBEN Werte wie in V1
+  // (17.00 px / 26.35 px = lh 1.55): V3 gated nur den Schriftregler, nicht die
+  // Grundstufe. Genau das macht den Fall wertvoll — er würde rot, sobald die neue
+  // Hülle die Stufe eigenmächtig verstellt oder ein V3-Override sie überschreibt.
+  //
+  // ROT ZU BEKOMMEN (§6.7): in `index.css` die Regler-Regel auf `[data-leser-v3]`
+  // ohne `:not([data-leserschrift="normal"])` legen (V3 bekäme eine andere
+  // Grundgrösse als V1) oder in `LeserRahmenV3` eine eigene Textstufe setzen.
+  test('StPO @1440 unter ?leser=v3: dieselbe Stufe wie in der Ist-Hülle (17.00 / 26.35 px)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/gesetze/bund/STPO?leser=v3');
+    await expect(page.locator('#art-1')).toBeVisible();
+    await page.evaluate(() => document.fonts?.ready);
+    // Positiv-Sicherung: der Fall muss WIRKLICH in V3 stehen, sonst prüft er die
+    // Ist-Hülle ein viertes Mal (§6.7 — «ein Tor, das nicht scheitern kann»).
+    await expect(page.locator('.lc-leser[data-leser-v3="rahmen"]')).toHaveCount(1);
+    // Und der Mess-Artikel der Etappe: StPO Art. 429 (Bildbogen-Fall).
+    await page.evaluate(() => document.getElementById('art-429')?.scrollIntoView());
+    await page.waitForTimeout(400);
+    const typo = await page.evaluate(() => {
+      const p = document.querySelector('#art-429 [data-lese] p') ?? document.querySelector('[id^="art-"] [data-lese] p');
+      if (!p) return null;
+      const s = getComputedStyle(p);
+      return { fs: parseFloat(s.fontSize), lh: parseFloat(s.lineHeight) };
+    });
+    expect(typo, 'Fliesstext-Absatz im V3-Lese-Container gefunden').not.toBeNull();
+    expect(typo!.fs, 'V3: Fliesstext-Grösse 17 px (F3 = V2)').toBeCloseTo(17, 1);
+    expect(typo!.lh, 'V3: Zeilenhöhe 26.35 px = lh 1.55').toBeCloseTo(26.35, 1);
+    expect(typo!.lh / typo!.fs, 'V3: lh-Quotient ≥ 1.5 (SC 1.4.8)').toBeGreaterThanOrEqual(1.5);
+  });
 });
 
 test.describe('S2 · Fussnotenmarke: hochgestellt, ohne Klammern (Entscheid David 17.8.2026)', () => {
@@ -238,6 +295,28 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
   });
 });
 
+// ── DIE 75-ch-SCHWELLE, BEWUSST GESETZT (Nachzug 17.8.2026, Arch-Prüfer 9) ────
+//
+// Die Schwelle unten ist die HAUSdecke (DESIGN-REGLEMENT-NORMTEXT §Typo-Skala),
+// nicht die WCAG-Decke (SC 1.4.8 = 80 ch; die prüft der S2-Block oben an drei
+// Breiten). Bis zum Nachzug hiess es dazu «empirisch ~70–72 ch, ≥ 3 ch Luft». Mit
+// F3 = V2 stimmt das nicht mehr: bei 17 px statt 18 px passt MEHR Text in dieselbe
+// 42-rem-Spalte. NEU GEMESSEN @1440 mit `messeMaxCharsPerLine` oben:
+//
+//   ZGB 68 ch · OR 71 ch · StPO 73 ch · VMWG 74 ch · StGB 77 ch
+//
+// Protokolliert statt weggeglättet: die drei geprüften Erlasse halten die 75, das
+// VMWG aber nur mit 1 ch Luft — und das StGB liegt mit 77 ch DARÜBER. Das StGB
+// steht NICHT in `ERLASSE`; die Liste ist Bestand aus R5 und wird hier nicht
+// erweitert, denn das wäre kein Nachzug, sondern ein neues ROTES Tor auf eine
+// Hausschwelle, deren Wert nach dem Stufenwechsel erst neu zu entscheiden ist.
+//
+// ENTSCHEID, DER OFFEN BLEIBT (David, Vollzugsvermerk S2): entweder wird das
+// Lesemass für die 17-px-Stufe schmaler (Änderung an `max-w-normtext`, wirkt im
+// ganzen Reader), oder die Hausdecke wird bewusst auf die WCAG-Marke 80 ch
+// gehoben. Beides ist ein Gestaltungsentscheid, keiner, den ein Nachzug fällt
+// (§7). Bis dahin bleibt die Schwelle bei 75 — sie KANN scheitern (VMWG 1 ch
+// Luft) und ist damit kein Schein-Tor.
 test.describe('R5 · Lesemass Desktop (≤ 75 ch @ 1440)', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
   for (const key of ERLASSE) {

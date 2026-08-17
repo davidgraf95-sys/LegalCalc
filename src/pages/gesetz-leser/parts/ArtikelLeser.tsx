@@ -562,8 +562,17 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                weg — die Zeilenhöhe gehört zur Stufe (Design-Grundlage Kap. 8 Nr. 4:
                «kein fixer Leading-Wert über alle Grössen»); Wächter
                `src/tests/leser-typo-tokens.test.ts`. WCAG 1.4.8 gemessen @1440:
-               lh 1.55 ≥ 1.5, 53–58 ch ≤ 80 (Lesemass `max-w-normtext` 42 rem
-               unverändert). */
+               lh 1.55 ≥ 1.5 und ≤ 80 ch (Lesemass `max-w-normtext` 42 rem
+               unverändert).
+
+               EINE ZAHL, EINE MESSUNG (Nachzug 17.8.2026, Arch-Prüfer 9): hier stand
+               «53–58 ch», im Fahrplan «73 / 71 / 61 ch» — zwei Zahlen für dieselbe
+               Sache. Massgeblich ist die Methode des Tors (`e2e/leser-lesemass.e2e.ts`:
+               längster mehrzeiliger Fliesstext-Absatz, Textlänge / Zeilenkisten).
+               Damit @1440 gemessen: ZGB 68 · OR 71 · StPO 73 · VMWG 74 · StGB 77 ch.
+               Die 80-ch-Decke der WCAG hält überall; die engere HAUSdecke von 75 ch
+               nicht mehr überall (StGB 77) — Notiz an der Schwelle im Tor und als
+               offener Punkt im Vollzugsvermerk S2. */
             className="space-y-3.5 font-serif text-leser-text text-ink-800" />
           {/* ═══ BEIWERK-ZONE (S2 · Pos. 13, Fahrplan Kap. 4c / Grundlage Kap. 3) ═══
               EIN benannter Ort für alles, was unter dem Wortlaut steht: Verweis-Chips ·

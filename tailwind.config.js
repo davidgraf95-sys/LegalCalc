@@ -149,13 +149,26 @@ export default {
       transitionTimingFunction: { DEFAULT: 'var(--ease)' },
       boxShadow: { sm: 'var(--shadow-sm)', md: 'var(--shadow-md)', lg: 'var(--shadow-lg)' },
       // `reading` (40rem ≈ 66–71 ch) = die knappe Standard-Lesespalte site-weit
-      // (Verdikte, Leden). `normtext` (42rem ≈ 672px ≈ 70–72 ch) = die etwas
-      // grosszügigere Lesespalte NUR des Gesetzes-Readers (E6/A37, David 16.7.2026:
-      // «gib dem Gesetz mehr Platz … nutze den Platz der zur Verfügung steht»): die
-      // Norm gewinnt Breite, bleibt aber mit Reserve unter der Fedlex-tauglichen
-      // Lesbarkeits-Decke (≤ 75 ch, DESIGN-REGLEMENT-NORMTEXT §Typo-Skala /
-      // leser-lesemass.e2e — empirisch ~70–72 ch, ≥ 3 ch Luft) und verletzt §13/2
-      // nicht (Lesespalte, nie volle Fensterbreite). Beide zentriert (mx-auto),
+      // (Verdikte, Leden). `normtext` (42rem = 672px) = die etwas grosszügigere
+      // Lesespalte NUR des Gesetzes-Readers (E6/A37, David 16.7.2026: «gib dem
+      // Gesetz mehr Platz … nutze den Platz der zur Verfügung steht»): die Norm
+      // gewinnt Breite und verletzt §13/2 nicht (Lesespalte, nie volle
+      // Fensterbreite).
+      //
+      // ZEICHEN JE ZEILE — NEU GEMESSEN NACH S2 (Nachzug 17.8.2026, Arch-Prüfer 9).
+      // Hier stand «≈ 70–72 ch … ≥ 3 ch Luft». Das galt für die alte 18-px-Stufe;
+      // mit F3 = V2 (17 px) passt MEHR Text in dieselbe Breite. Gemessen @1440 mit
+      // der Methode von `e2e/leser-lesemass.e2e.ts` (längster mehrzeiliger
+      // Fliesstext-Absatz, Textlänge / Zeilenkisten):
+      //   ZGB 68 · OR 71 · StPO 73 · VMWG 74 · StGB 77 ch
+      // Die Hausdecke des DESIGN-REGLEMENT-NORMTEXT §Typo-Skala (≤ 75 ch) hat damit
+      // NICHT mehr «≥ 3 ch Luft»: beim VMWG sind es 1 ch, und das StGB liegt mit
+      // 77 ch DARÜBER (es steht nicht in der gegateten Erlass-Liste, s. die Notiz an
+      // der Schwelle in `leser-lesemass.e2e.ts`). Die WCAG-Decke SC 1.4.8 (≤ 80 ch)
+      // ist in allen gemessenen Fällen gehalten und wird an drei Breiten gegated.
+      // Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist ein
+      // Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener Punkt) —
+      // hier wird die Zahl korrigiert, nicht der Wert geändert. Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
       maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)

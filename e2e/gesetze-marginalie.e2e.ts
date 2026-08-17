@@ -41,15 +41,14 @@ async function margStapel(page: import('@playwright/test').Page) {
 // gegen erwartete ≥ 16).
 //
 // DIE INVARIANTE BLEIBT UNVERÄNDERT und ist weiterhin die des Auftrags David
-// 26.6.2026 («uneinheitliche Bold-Formatierung»): das Blatt ist je Stapel die
-// prominenteste Stufe, die Vorfahren sind ruhiger Kontext, und es gibt nie einen
-// zweiten «Titel» im Stapel. Geprüft wird sie ab S2 an den Merkmalen, die sie
-// nach Ä7 wirklich tragen — GEWICHT (semibold 600 gegen medium/regular) und
-// FARBE (ink-800 gegen ink-600) — statt an der Schriftgrösse, die jetzt in allen
-// drei Stufen gleich ist. Die Prüfung wird dadurch nicht schwächer: sie verlangt
-// zusätzlich, dass jeder Vorfahr am Gewicht ODER an der Farbe unterscheidbar
-// bleibt, und lässt keinen Stapel durch, in dem Blatt und Vorfahr identisch
-// aussehen (das wäre der Wildwuchs, gegen den der Test 26.6. angelegt wurde).
+// 26.6.2026 («uneinheitliche Bold-Formatierung»): jedes Blatt (die unterste
+// gezeigte Stufe = Sachüberschrift) sieht GLEICH aus, und zwar so, wie Ä7 es
+// festlegt. Geprüft wird das ab dem S2-Nachzug an allen drei Merkmalen der Stufe
+// — Grösse 13 px (Token `leser-rand`), Gewicht 600, Farbe ink-800 —, weil die
+// Grösse allein die Rangfolge nicht mehr tragen kann: nach V2 laufen alle drei
+// Randtitel-Stufen auf derselben Grösse und unterscheiden sich über Gewicht und
+// Farbe. Die Farbe steht als `rgb(...)`-Literal, weil dieser Test im Hell-Modus
+// läuft (Projekt `chromium`/`leser-v3` ohne Farbschema-Override).
 //
 // OFFEN FÜR DAVIDS AUGE (§8, nicht vom Test zu entscheiden): die Sachüberschrift
 // ist mit V2 von 16 px auf 13 px gefallen. Das folgt der V2-Zeile, die David am
@@ -68,53 +67,61 @@ function helligkeit(farbe: string): number {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 }
 
-// ── BEFUND S2, GEMESSEN: DIE VORFAHREN-FÄLLE UNTEN LAUFEN HEUTE NIE ──────────
+// ── S2-NACHZUG 17.8.2026: DER TOTE VORFAHREN-ZWEIG IST GESTRICHEN ────────────
 //
-// Beim Nachziehen dieses Tests ist aufgefallen, dass die Vorfahren-Zusicherungen
-// in der Schleife unten NICHT ERREICHT werden — und zwar schon vor S2 nicht: alle
-// 11 Randtitel-Stapel, die der Test auf dem ZGB sieht, haben GENAU EIN Kind
-// (`mitVorfahren: 0`). Über ZGB und OR hinweg 40 000 px durchgescrollt: kein
-// einziger Stapel mit mehr als einem Kind. `margAnzeige` zeigt nur die gegenüber
-// dem Vorartikel GEÄNDERTEN Stufen, und das ist in der Praxis fast immer nur das
-// Blatt. Belegt ist der toten Zweig zusätzlich durch einen Rot-Beweis, der GRÜN
-// blieb: das Blatt versuchsweise auf `font-semibold text-ink-400` gesetzt (heller
-// als jeder Vorfahr) — 4/4 grün, weil die Schleife nicht läuft.
+// Bis zum Nachzug stand hier eine Schleife über die VORFAHREN eines Randtitel-
+// Stapels mit drei Zusicherungen (nie grösser, nie fett, nie dunkler als das
+// Blatt). Sie lief NIE — und zwar schon vor S2 nicht: alle 11 Randtitel-Stapel,
+// die dieser Test auf dem ZGB sieht, haben GENAU EIN Kind (`mitVorfahren: 0`);
+// über ZGB und OR hinweg 40 000 px durchgescrollt findet sich kein Stapel mit
+// mehr als einem Kind. Grund im Produkt: `margAnzeige` zeigt nur die gegenüber
+// dem Vorartikel GEÄNDERTEN Stufen, und das ist praktisch immer nur das Blatt.
+// Belegt war der tote Zweig durch einen Rot-Beweis, der GRÜN blieb: das Blatt
+// versuchsweise auf `font-semibold text-ink-400` gesetzt (heller als jeder
+// Vorfahr) — 4/4 grün, weil die Schleife nicht läuft.
 //
-// BEWUSST NICHT «REPARIERT»: die Zusicherungen sind richtig, nur unerreicht. Sie
-// zu löschen nähme einen korrekten Schutz für den Tag, an dem ein Erlass doch
-// einen mehrstufigen Stapel rendert; eine künstliche Lage zu konstruieren, damit
-// sie laufen, prüfte die Konstruktion und nicht das Produkt. Was NICHT bleiben
-// durfte, ist der falsche Eindruck von Deckung — darum steht der Befund hier und
-// als offener Punkt im Vollzugsvermerk S2. LIVE geprüft ist von diesem Fall heute
-// allein die Blatt-Zusicherung (Gewicht ≥ 600).
-test('Blatt (Sachüberschrift) ist je Stapel die prominenteste Stufe', async ({ page }) => {
+// S2 hatte die Zusicherungen mit der Begründung STEHEN GELASSEN, sie seien
+// «richtig, nur unerreicht». Drei Prüfer haben das übereinstimmend als Deckungs-
+// Schein gemeldet, und CLAUDE.md §17 Abs. 2 ist eindeutig: was nicht scheitern
+// kann, wird GESTRICHEN statt bewacht (Präzedenz `seq-hart`). Ein Zweig, der die
+// Hierarchie erst prüft, wenn ihn irgendwann ein Datenstand erreicht, schützt
+// heute nichts und verdeckt, was wirklich geprüft ist. Kommt der mehrstufige
+// Stapel je, ist er ein sichtbarer Datenstand mit eigenem Fall.
+//
+// Was bleibt, ist EINE LEBENDE Zusicherung am Blatt — und die ist jetzt vollständig
+// (bis S2 prüfte sie nur `weight >= 600`): Grösse, Gewicht UND Farbe des Blatts
+// gegen den Ä7-Entscheid, gemessen 13 px / 600 / ink-800.
+const BLATT_PX = 13          // Token `leser-rand` 0.8125 rem (F3 = V2)
+const BLATT_GEWICHT = 600    // semibold
+const BLATT_FARBE = 'rgb(43, 41, 36)' // ink-800
+
+test('Blatt (Sachüberschrift) trägt die Ä7-Stufe: 13 px semibold ink-800', async ({ page }) => {
   const stapel = await margStapel(page)
   expect(stapel.length, 'ZGB hat Randtitel-Stapel').toBeGreaterThan(5)
+  // Die Invariante des Auftrags David 26.6.2026 («uneinheitliche Bold-
+  // Formatierung») heisst: JEDES Blatt sieht gleich aus. Darum über alle Stapel,
+  // nicht am ersten.
   for (const zeilen of stapel) {
     const blatt = zeilen[zeilen.length - 1]
-    // Das Blatt ist immer halbfett — auch wenn der Stapel nur eine Stufe hat.
-    expect(blatt.weight, `Blatt ${JSON.stringify(blatt.text)}`).toBeGreaterThanOrEqual(600)
-    for (let i = 0; i < zeilen.length - 1; i++) {
-      const v = zeilen[i]
-      // Nie grösser als das Blatt (nach V2 gleich gross, darum nicht mehr strikt)…
-      expect(v.size, `Vorfahr ${JSON.stringify(v.text)} ist grösser als das Blatt`)
-        .toBeLessThanOrEqual(blatt.size)
-      // …und nie selbst fett: kein zweiter «Titel» im Stapel.
-      expect(v.weight, `Vorfahr ${JSON.stringify(v.text)} ist fett`).toBeLessThan(600)
-      // …und nie DUNKLER als das Blatt (seit Ä7 ist die Farbe das zweite Merkmal
-      // der Hierarchie, weil alle Stufen gleich gross sind).
-      expect(helligkeit(blatt.color), `Sachüberschrift ${JSON.stringify(blatt.text)} ist heller `
-        + `als ihr Vorfahr ${JSON.stringify(v.text)} (${blatt.color} gegen ${v.color})`)
-        .toBeLessThanOrEqual(helligkeit(v.color) + 0.001)
-    }
+    expect(blatt.size, `Blatt ${JSON.stringify(blatt.text)}: Grösse`).toBeCloseTo(BLATT_PX, 1)
+    expect(blatt.weight, `Blatt ${JSON.stringify(blatt.text)}: Gewicht`).toBeGreaterThanOrEqual(BLATT_GEWICHT)
+    expect(blatt.color, `Blatt ${JSON.stringify(blatt.text)}: Farbe`).toBe(BLATT_FARBE)
+    // Und das Blatt ist nie heller als ink-800 — die Farbe ist seit Ä7 das zweite
+    // Merkmal der Hierarchie, weil alle Randtitel-Stufen gleich gross sind.
+    expect(helligkeit(blatt.color), `Blatt ${JSON.stringify(blatt.text)} ist heller als ink-800`)
+      .toBeLessThanOrEqual(helligkeit(BLATT_FARBE) + 0.001)
   }
 })
 
 test('Höchstens drei definierte Randtitel-Stil-Stufen (kein Wildwuchs)', async ({ page }) => {
   const stapel = await margStapel(page)
   const stile = new Set(stapel.flat().map((z) => `${z.size}/${z.weight}`))
-  // margStufeStil definiert genau drei Stufen: Blatt 16/600, Vorfahr-Abschnitt
-  // 14/500, Vorfahr-tiefer 14/400 → höchstens drei distinkte (size,weight)-Paare.
+  // NACHZUG 17.8.2026: hier stand «Blatt 16/600, Vorfahr-Abschnitt 14/500,
+  // Vorfahr-tiefer 14/400» — mit F3 = V2 überholt. `margStufeStil` definiert die
+  // drei Stufen jetzt auf EINER Grösse (Token `leser-rand` = 13 px) und
+  // unterscheidet sie über Gewicht und Farbe: Blatt 13/600 ink-800 >
+  // Vorfahr-Abschnitt 13/500 ink-600 (Versalien) > Vorfahr-tiefer 13/400 ink-600.
+  // Höchstens drei distinkte (size,weight)-Paare bleibt damit die richtige Grenze.
   expect(stile.size, `gefundene Stile: ${[...stile].join(', ')}`).toBeLessThanOrEqual(3)
 })
 
