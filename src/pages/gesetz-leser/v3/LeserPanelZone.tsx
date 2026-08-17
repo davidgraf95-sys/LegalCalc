@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties } from 'react';
+import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { setzeBezugKantone, setzeBezugKlassen, setzeBezugZeit, useBezugKantone, useBezugKlassen } from '../leserOptionen';
 import type { BestimmungsWort } from './erlassAnsicht';
@@ -75,7 +75,7 @@ const BLATT_ANTEIL = 55;
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, bestimmungsWort, aktArtikel,
+  artikelLabel, bestimmungsWort, aktArtikel, steckbrief,
 }: {
   /** Gestalt des Blatts — `panelForm(stufe, vollflaechig)` im Rahmen entscheidet. */
   form: 'rechts' | 'unten';
@@ -96,6 +96,10 @@ export function LeserPanelZone({
   artikelLabel: string | null;
   bestimmungsWort: BestimmungsWort;
   aktArtikel: string | null;
+  /** Der Erlass-Steckbrief als Tafel — oder `null`, wenn er gerade OFFEN in der
+   *  Leiste steht. Die Weiche trifft der Rahmen (er kennt Spalte und Blatt),
+   *  nicht diese Datei (§3): sie ordnet an, sie entscheidet nicht. */
+  steckbrief?: ReactNode;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -126,8 +130,60 @@ export function LeserPanelZone({
   const revisionen = useRevisionen(erlassKey, zustand.jeGeoeffnet);
   const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
 
+  // ═══ STECKBRIEF-ZEILE ÜBER DER TAFEL (H4-Vorbereitung II, 17./18.8.2026) ════
+  //
+  // BEFUND (Integrations-Fund 17.8., @1440 reproduziert): die Übersichtsbox lebt
+  // in der Seitenleiste. Klappt man die Gliederung ein — die Geste, mit der man
+  // Breite für den Text gewinnt —, sinkt `[data-v3-uebersicht]` von 1 auf 0: der
+  // Steckbrief ist dann nicht unsichtbar, sondern aus dem DOM, also auch für
+  // Ctrl+F und Screenreader fort. Unterhalb der Spaltenschwelle trägt ihn das
+  // Gliederungs-Blatt weiter (☰ + ▸ = zwei Schritte, gemessen grün); der Defekt
+  // ist damit EINER, und er sitzt auf dem Desktop mit eingeklappter Gliederung.
+  //
+  // ── WARUM HIER UND NICHT ALS VIERTER REITER ────────────────────────────────
+  // Der vierte Reiter «Steckbrief» war gebaut und ist AN DER MESSUNG gescheitert,
+  // nicht am Geschmack. Gemessen 17.8.2026 @1440 an der Reiter-Leiste des Panels:
+  //
+  //   Platz (clientWidth)            334 px
+  //   drei bestehende Reiter          269 px  (Entscheide 89 · Änderungen 94 ·
+  //                                            Materialien 87)
+  //   Abstände + Innenabstand          24 px
+  //   ⇒ Budget für einen vierten       41 px
+  //
+  // Kein ehrliches Wort passt: «Steckbrief» misst 82 px, «Übersicht» 78,
+  // «Herkunft» 73, «Quelle» 57, «Erlass» 55, «Norm» 51. Gebaut sah das so aus,
+  // dass «Materialien» am Panel-Rand abgeschnitten wurde (`scrollWidth` 369 gegen
+  // `clientWidth` 334) — eine Reiter-Leiste, die ihr viertes Fach verschluckt.
+  // Die beiden Auswege wären ein Umbruch der Reiter-Leiste (`LeserPanel.tsx` —
+  // Bau-Fläche des parallel laufenden Kopf-Auftrags, darum hier gesperrt) oder
+  // ein breiteres Panel; letzteres kostet gemessen 48 px MEHR Deckung des
+  // Lesetexts (heute 104 px @1440, 184 px @1280) und verletzt damit genau die
+  // H3-Zusage «Lesetext bleibt links sichtbar und lesbar».
+  //
+  // GEWÄHLT ist darum die Zeile ÜBER der Tafel: dieselbe `<details>`-Klappe wie
+  // in der Leiste (§5 — EIN Bauteil, EINE Ableitung `uebersichtsAngaben`),
+  // zugeklappt genau eine Zeile hoch, und sie erscheint NUR in der Lage, in der
+  // der Steckbrief sonst fehlte. Panel aufziehen (1) + Klappe öffnen (2) = zwei
+  // Bedienschritte, ohne ein Fach in der Reiter-Leiste zu beanspruchen.
+  //
+  // SIE STEHT IN JEDEM REITER, und das ist Absicht: sie gehört zum PANEL, nicht
+  // zu einer seiner Tafeln — wer den Reiter wechselt, soll sie nicht verlieren.
+  // Im DOM ist sie trotzdem genau einmal, weil nur die aktive Tafel gemountet
+  // ist (`LeserPanel`: `inhalt[reiter]`). Daran hängt die Ä28-Zusage «die Warnung
+  // steht genau einmal».
+  // ABSTRICH, benannt statt übergangen: die Zeile liegt damit innerhalb des
+  // `role="tabpanel"` des jeweiligen Reiters, gehört aber inhaltlich eine Ebene
+  // höher. Die saubere Stelle wäre zwischen Reiter-Leiste und Scroller — das ist
+  // `LeserPanel.tsx` und bleibt als Rückgabe-Punkt offen.
+  const mitSteckbrief = (tafel: ReactNode): ReactNode => (steckbrief
+    ? <>
+      <div data-v3-panel-steckbrief className="border-b border-line px-2.5 py-1">{steckbrief}</div>
+      {tafel}
+    </>
+    : tafel);
+
   const inhalt = {
-    entscheide: (
+    entscheide: mitSteckbrief(
       <PanelEntscheide
         kanten={aktArtikel ? bezuege.bezuegeFuer(aktArtikel)?.kanten : undefined}
         normZitat={normZitat} artikelLabel={artikelLabel} bestimmungsWort={bestimmungsWort}
@@ -137,10 +193,10 @@ export function LeserPanelZone({
         klassen={klassen} kantone={kantone} kantoneVerfuegbar={bezuege.kantoneVerfuegbar}
         klassenImErlass={bezuege.klassenImErlass} histogramm={bezuege.histogramm} bereich={bezuege.bereich}
         onKlassen={setzeBezugKlassen} onKantone={setzeBezugKantone}
-        onBereich={(von, bis) => setzeBezugZeit(von, bis)} />
+        onBereich={(von, bis) => setzeBezugZeit(von, bis)} />,
     ),
-    aenderungen: <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} />,
-    materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} />,
+    aenderungen: mitSteckbrief(<PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} />),
+    materialien: mitSteckbrief(<PanelMaterialien stand={materialien} quelleUrl={quelleUrl} />),
   } as const;
 
   // ── Die Fläche ────────────────────────────────────────────────────────────

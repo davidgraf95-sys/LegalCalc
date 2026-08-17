@@ -178,6 +178,28 @@ export function ruheZeile(
 }
 
 /**
+ * Ä80 · Die Präposition wandert ins Etikett — «vom 5. Oktober 2007» → «5. Oktober
+ * 2007», Label «Erlass vom».
+ *
+ * WARUM EIN MUSTER MIT WORTGRENZE UND KEIN `slice(4)`: die Sidecars schreiben
+ * das Erlassdatum nicht einheitlich. Fedlex liefert «vom 5. Oktober 2007»,
+ * kantonale Snapshots auch gross («Vom 12. April 2000», so gemessen an
+ * BS-640.100 im Ä74-Befund) und manche ganz ohne Präposition («12. April 2000»).
+ * Ein stumpfes Abschneiden verstümmelte die dritte Gruppe still — der Wert
+ * begänne mit «April 2000». Darum eine Identitäts-Prüfung mit Wortgrenze (§7):
+ * getroffen wird nur ein führendes «vom», gefolgt von Weissraum; sonst bleibt
+ * der Wortlaut Zeichen für Zeichen stehen.
+ *
+ * NUR IN V3. Die Ist-Hülle rendert ihre Übersicht weiter aus
+ * `nurErlassdatum` — die eingefrorene Hülle hängt nie an der neuen (FL-4), und
+ * die Verlagerung ins Etikett ist eine Gestaltungsentscheidung dieser Box, keine
+ * Korrektur an den Daten.
+ */
+export function ohneVom(erlassdatum: string): string {
+  return erlassdatum.replace(/^vom\s+/i, '');
+}
+
+/**
  * Erlass → Angaben der Übersichtsbox. Erlass-neutral: jede Zeile entsteht aus
  * dem Datenmodell und entfällt, wo der Erlass die Angabe nicht trägt — kein
  * `if (bund)`, keine leere Wertspalte (Fundament-Auflage 2, Auftrag David
@@ -209,24 +231,42 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   const organ = erlassOrgan(kopf);
   if (organ) zeilen.push({ id: 'organ', label: 'Erlassgeber', wert: organ });
 
-  // ── Erlassdatum · «vom 5. Oktober 2007» ───────────────────────────────────
-  // Der amtliche Wortlaut des Sidecars, ohne die formelhafte Stand-Klammer am
-  // Ende (`nurErlassdatum`, §5 — dieselbe Ableitung wie die Ist-Hülle): der
-  // Stand steht in der Zeile darunter mit seinem maschinellen Wert.
-  const datum = kopf?.erlassdatum ? nurErlassdatum(kopf.erlassdatum) : null;
-  if (datum) zeilen.push({ id: 'datum', label: 'Erlassdatum', wert: datum, ziffern: true });
+  // ══ DIE DATUMS-KETTE · Erlass vom → In Kraft seit → Stand (Ä80) ═══════════
+  // Vier Zeilen, EINE Chronologie, in der Folge, in der ein Erlass sie durch-
+  // läuft: beschlossen → in Kraft → auf diesem Stand → (allenfalls) aufgehoben.
+  //
+  // Ä80 (Ästhetik-Prüfer 17.8.2026 abends) hat hier zwei Dinge gerügt, und beide
+  // sind an der reinen Funktion zu heilen, nicht am Markup:
+  //  (1) Der Stand stand ZWISCHEN Erlassdatum und Inkrafttreten. Fedlex ordnet
+  //      «Beschluss → Inkrafttreten» und der Erlass-Kopf führt dieselbe Kette in
+  //      derselben Folge — die Box war die einzige Stelle, die anders sortierte
+  //      (§5). Jetzt: eine Reihenfolge, eine Quelle.
+  //  (2) Die Präposition «vom» stand im WERT. Das nimmt der Wertspalte ihre
+  //      Kante: «vom 5. Oktober 2007» beginnt mit einem Wort, «01.04.2025» mit
+  //      einer Ziffer, und `tabular-nums` richtet nichts aus, was nicht an
+  //      derselben Stelle anfängt. Fedlex hält es umgekehrt — das Label trägt
+  //      die Sprache, der Wert nur das Datum. Darum «Erlass vom» als Etikett;
+  //      «In Kraft seit» und «Stand» tragen ihre Präposition ohnehin schon dort.
+  //      Der Wortlaut lehnt sich an Fedlex an, ohne dessen Kommentar-Text.
 
-  // ── Stand · «01.04.2025» ──────────────────────────────────────────────────
-  // B8 (Bug-Check 9.8.2026): zwei VD-Erlasse tragen `stand: ""`. «Stand» ohne
-  // Wert wäre ein leeres Versprechen — dann entfällt die Zeile (2 von 1469).
-  if (erlass.stand) {
-    zeilen.push({ id: 'stand', label: 'Stand', wert: formatiereDatum(erlass.stand), ziffern: true });
-  }
+  // ── Erlass vom · «5. Oktober 2007» ────────────────────────────────────────
+  // Zwei Ableitungen hintereinander, beide geteilt (§5): `nurErlassdatum`
+  // entfernt die formelhafte Stand-Klammer (Ä74 — sonst steht der Stand zweimal
+  // untereinander), `ohneVom` hebt die Präposition ins Etikett.
+  const datum = kopf?.erlassdatum ? ohneVom(nurErlassdatum(kopf.erlassdatum)) : null;
+  if (datum) zeilen.push({ id: 'datum', label: 'Erlass vom', wert: datum, ziffern: true });
+
   if (erlass.inkraftSeit) {
     zeilen.push({
       id: 'inkraft', label: 'In Kraft seit',
       wert: formatiereDatum(erlass.inkraftSeit), ziffern: true,
     });
+  }
+  // ── Stand · «01.04.2025» ──────────────────────────────────────────────────
+  // B8 (Bug-Check 9.8.2026): zwei VD-Erlasse tragen `stand: ""`. «Stand» ohne
+  // Wert wäre ein leeres Versprechen — dann entfällt die Zeile (2 von 1469).
+  if (erlass.stand) {
+    zeilen.push({ id: 'stand', label: 'Stand', wert: formatiereDatum(erlass.stand), ziffern: true });
   }
   if (erlass.aufgehoben) {
     zeilen.push({

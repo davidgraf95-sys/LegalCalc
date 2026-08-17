@@ -358,8 +358,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             paneZiel={overlayZiel} paneRolle={paneRolle}
             zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
             normZitat={normZitat(panelArtikel, erlass.kuerzel)}
-            artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort}
-            aktArtikel={panelZiel.token} />
+            artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token}
+            steckbrief={zweiSpalten || blattOffen ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
         )}
       </div>
 
