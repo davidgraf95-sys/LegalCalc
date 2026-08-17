@@ -1404,9 +1404,33 @@ H3-Nachzug (Ä52–Ä59). Die S2-Punkte heissen darum **Ä61–Ä66** (Ä52→Ä
 | **B9 später** | ✅ nur eingetragen: **Ä63** Handy-Einzug (OR/ZGB @390 x = 80 gegen StPO 44) → H4/S3 · **Ä64** Regler skaliert nur `[data-lese]`, Hierarchie kippt bei 130 % → H4 |
 
 **PX-Baseline erneut deklariert neu gesetzt.** Ä61/Ä62 verändern den Textkörper
-(Marken-Spalte und Marken-Umbruch), die S2-Aufnahme galt also nicht mehr. Vorher-Bild
-im Etappenordner `vorher/`; Messbedingung wie oben (macOS, warmer Preview, `workers=1`,
-`retries: 0`, keine Parallel-Last).
+(Marken-Spalte und Marken-Umbruch), die S2-Aufnahme galt also nicht mehr. Vorher-Bilder
+`vorher/px-{or-336c,stpo-429}-VORHER-s2-nachzug.png`; Messbedingung wie oben (macOS,
+warmer Preview, `workers=1`, `retries: 0`, keine Parallel-Last). Wie in S2 wurde die
+Baseline je Fall nur EINMAL geschrieben — V3 traf die V1-Aufnahme exakt, die
+Hüllen-Parität hält byte-genau.
+
+**Tore des Nachzugs (nackt, Exit-Code):** `npm run gate` **GRÜN** (43/43 Sub-Checks;
+`check:steuerdeckel` ist inzwischen grün) · `check:testtreue` 0 · `check:e2e-shards` 0
+(91 Specs) · `check:design-tokens` 0 · `check:perf-budget` 0 · `golden:vergleich` 0
+(«IDENTISCH — 256 Fälle byte-gleich») · `npm run build` 0 · `npx tsc -b` 0 ·
+Playwright `chromium` auf `leser-*`/`gesetze-*` **247/247** · Projekt `leser-v3` auf
+`leser-v3-*`/`leser-kopf-*` **32/32 + 1 skip** · `gesetze-marginalie` in beiden
+Projekten 8/8 · `leser-marken-geometrie` 5/5 · `PX=1 --project=px` **5/5** ·
+`a11y --project=schwer` **47/47** (hell + dunkel).
+
+**Rot-Beweise des Nachzugs (§6.7), je einmal gesehen:** die neue Spec
+`leser-marken-geometrie` 5/5 rot gegen den Stand vor dem Fix, mit den Messzahlen im
+Fehlertext (`cquinquies.» +60.41 px`, «13 von 532 Marken») · Blatt-Stufe in
+`gesetze-marginalie` auf 16 px verstellt ⇒ «Erwartet 16, erhalten 13» · der neue
+V3-Fall in `leser-lesemass` ohne `?leser=v3` gefahren ⇒ «Expected 1, Received 0» (er
+kann nicht still gegen die Ist-Hülle grün werden) · die neue Spec ohne Eintrag in
+`shard-gruppen.json` ⇒ «FEHLT: leser-marken-geometrie.e2e.ts». **Zwei Kandidaten sind
+als MISSLUNGEN protokolliert und haben genau dadurch die Auftrags-Ursache widerlegt:**
+`display:inline` am Fussnoten-Marker (13 Waisen vorher UND nachher) und
+`overflow-wrap: break-word`/`normal` (unverändert 13/8) — die Ursache ist die atomare
+Inline-Box des `<button>`, bewiesen per DOM-Chirurgie (Ersatz durch echte Inline-Spans
+⇒ 0 Waisen).
 
 **Vorbehalte für Davids Auge** (nichts davon entscheidet ein Test, §8):
 1. **Sachüberschrift 13 px** statt 16 px — folgt der V2-Zeile, berührt aber den
