@@ -2089,6 +2089,17 @@ Breiten (390 / 1440 / 720 px = Pane) und drei Zustände (Ist · V1 · V2), V1/V2
 > bleibt. Gebaut in **S2**; Nachweise, Messwerte und die eine Abweichung von der
 > V2-Spalte im Vollzugsvermerk S2 (Kap. 7).
 
+> **H4-Ja David 17.8.2026 (Chat, wörtlich «ja und c, mach so») — der Umschalter
+> wird umgelegt.** Damit ist das letzte offene Flip-Kriterium (Kap. 7,
+> «David-Go nach Kontaktbogen») erfüllt: V3 ist der Standard-Leser, V1 bleibt bis
+> H5 unter `?leser=v1` erreichbar. Im selben Satz entschieden ist **Ä60 = (c)**
+> — der Leser-Rahmen wird breiter, statt den Kopf-Zähler zu opfern oder das
+> Beiwerk-Blatt die Zeilenenden verdecken zu lassen. Der Flip ist im PR
+> «H4-Vorbereitung II» gebaut; (c) baut ein eigener PR auf derselben Basis.
+> *(Ablage abweichend vom Auftrag: der Auftrag nannte «Kap. 8» für Entscheide —
+> Kap. 8 trägt die Typografie-Varianten, die Entscheide stehen hier in Kap. 9.
+> Eingetragen wurde dort, wo die übrigen David-Entscheide stehen.)*
+
 Keine Etappe startet ohne ihre Vorbedingung. Fehlt der Entscheid, wartet die Etappe — sie wird
 **nicht** «auf Verdacht nach Empfehlung» gebaut (Council A/D: sonst liegt ein fertiger
 Test-Rewrite vor, den David kippen könnte).
@@ -2128,7 +2139,7 @@ diese Frage am Bild und nicht am Text beantwortet wird.
 
 | Kategorie | Bestand | Wirkung |
 |---|---|---|
-| e2e **N** (Normtext-Treue) | ~10 | **10 bleiben unverändert grün** *(korrigiert 16.8.2026, Vollzug H1: die Zahl «8» stand neben einer Aufzählung von zehn Namen; das Flag-Projekt fährt alle zehn — Befund aus der Vorprobe V-2)* — Pflicht: `leser-optionen`, `leser-r1-r2`, `leser-ruecksprung-r5-r7`, `leser-suche-vertrag-b8`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3a`, `gesetze-ux-g3b-anhang`, `leser-ohne-gliederungslinie`. **2 neu geschrieben** (deklarierte fachliche Änderung, §6.3, in S1): `hist-ansicht-w25i`, `gesetze-historie-badge`. Diese acht laufen **doppelt**: mit Flag gegen V3, ohne Flag gegen den Ist-Stand — das ist der Paritätsbeweis |
+| e2e **N** (Normtext-Treue) | ~10 | **KORRIGIERT 18.8.2026 am Flip-Stand (H4), gemessen statt behauptet.** Doppelt — also in BEIDEN Hüllen — laufen genau die Namen, die in `playwright.config.ts` unter `N_SPECS` stehen: `leser-v3-flag`, `leser-suche-vertrag-b8`, `leser-ohne-gliederungslinie`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3b-anhang` und seit H4 wieder `gesetze-ux-g3a` + `leser-kopf-g2b`. **Nicht doppelt und nie doppelt gewesen: `hist-ansicht-w25i` und `gesetze-historie-badge`** — die Zeile führte sie als Teil der Parität, in der Liste standen sie nie. Der Widerspruch ist hiermit zugunsten des Gemessenen aufgelöst: sie bleiben einfach laufende Specs im Default-Projekt (also seit dem Flip gegen V3), und `hist-ansicht-w25i` ist dort ohne jede Änderung grün — nachgemessen 18.8.2026, alle 10 Fälle. Die Liste wird dafür **nicht** aufgebläht: Parität kostet doppelte CI-Zeit, und beide Dateien prüfen den Änderungsvermerke-Vertrag, nicht den Normtext. *(Vorgeschichte: die Zahl «8» stand am 16.8.2026 neben einer Aufzählung von zehn Namen; korrigiert im Vollzug H1, Befund aus der Vorprobe V-2.)* |
 | e2e **B** (Bedienung/Layout) | ~17 | **11 neu geschrieben, aber nur EINMAL** (gegen V3, nicht als Interim + Endzustand): 10 in H1–H3 + `leser-breite-a37`/`leser-lesemass` in S2. Die alten Gegenstücke fallen in H4/H5 |
 | e2e **P** (Perf/CLS) | ~5 | 2 neu, 3 bleiben |
 | Vitest (DOM-frei) | 21 | ~4 berührt: `leser-suche-w219`, `gesetz-leser-uebersicht-s6`, `hist-chronologie` (entfällt mit dem Modus), `kontext`/`kontext-artikel-s7`; **neu**: Fassaden-Default (R10), Optionen-Migration, Sortierung (S4) |
