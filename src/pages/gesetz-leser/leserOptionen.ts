@@ -1,82 +1,43 @@
 // ─── Leser-Options-Store (W2·5d G2a) — Darstellungs-Toggles, KEINE Rechtslogik (§3) ─
 //
-// Persistente, rein visuelle Lese-Umschalter für den Gesetzes-Reader
-// (FAHRPLAN-GESETZES-UX.md §3 + V2/A23): «Fussnoten» (Marker-Prominenz),
-// «Änderungsvermerke» (Historie-Darstellung) und — seit V2·B-1 (David 10.7.2026,
-// überstimmt «genau drei Toggles») — «Entscheide»/«Rechtsprechung im Text»
-// (`leitfaelle`). Die Bedien-Oberfläche rendern `LeserAnsichtMenu.tsx` (V1) und
-// `v3/LeserAnsichtV3.tsx` (V3) — beide auf DIESEM Store (§5).
+// Persistente, rein visuelle Lese-Umschalter des Gesetzes-Readers. Drei
+// zweiwertige Felder (`fussnoten` · `histansicht` · `leitfaelle`) plus drei
+// JS-konsumierte Filterwerte (Schriftstufe, Bezugs-Facetten, Bezugs-Zeitraum) in
+// EINEM localStorage-Schlüssel und EINEM Hörer-Satz (§5). Bedien-Oberfläche:
+// `LeserAnsichtMenu.tsx` (V1) und `v3/LeserAnsichtV3.tsx` (V3), beide auf DIESEM
+// Store. Chronik der gestrichenen Felder (`verweise`, `linien`, `zeitraum`,
+// dreiwertiges `hist`) steht im Vollzugsvermerk S1, FAHRPLAN-LESER-V3 Kap. 7 —
+// hier nur, was beim Ändern des Codes noch gebraucht wird:
 //
-// ─── OPTIONEN-RÜCKBAU S1 (FAHRPLAN-LESER-V3 Kap. 4f, Entscheide David F1/F2
-// «ja», 16.8.2026) ───────────────────────────────────────────────────────────
-// Der Store trägt jetzt DREI zweiwertige Felder (8 statt 24 Kombinationen):
+// TOGGLES = data-*-Attribut am <html> + CSS, KEIN React-State im Artikel-Baum.
+// Umschalten rendert nur die Switch-Buttons neu, nie die Artikelliste (§15); ein
+// Attributsatz am <html> heisst, dass Einzelansicht und jedes Split-Pane
+// derselben Wahl folgen. Gesetzt wird IMPERATIV (Vorbild `components/thema.ts`),
+// nicht per Inline-Script im Head — die CSP (`vercel.json script-src 'self'`)
+// verbietet das; `main.tsx` ruft `wendeLeserOptionenAn()` vor dem ersten Paint
+// aus dem gebündelten Modul ⇒ kein Flackern, kein Hydration-Mismatch. Default
+// 'an' emittiert KEINE CSS-Regel (R6: Grundzustand byte-gleich), alle Regeln
+// sind auf `.lc-leser` gescopt (index.css) ⇒ nur der Reader ist betroffen.
 //
-//  · `verweise` ist ERSATZLOS ENTFALLEN (F2). Er wirkte allein auf die gepunktete
-//    Unterstreichung der Verweis-Links (`index.css`, Regel entfernt); Farbe,
-//    Klickbarkeit, Anker und Ctrl+F waren nie betroffen. Ein alt gespeichertes
-//    `"verweise"` steht nicht mehr in FELDER, wird beim Laden also ignoriert und
-//    beim nächsten Schreiben abgeräumt.
-//    KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7): hier stand «BEI :hover». Falsch —
-//    die Linie ist DAUERHAFT (`NormText.tsx:38`: `underline` unbedingt, bei Hover
-//    wechselt nur die Farbe). Der gestrichene Schalter nahm also eine permanente
-//    Linie weg, nicht eine Hover-Zierde. Offene Design-Frage Ä25, Fahrplan Kap. 7.
-//  · `histansicht` ist von DREI Werten ('aus' | 'fussnoten' | 'chronologie') auf
-//    ZWEI ('an' | 'aus') zurückgebaut (F1) und lebt seither als gewöhnliches
-//    Toggle-Feld in `FELDER` — die frühere Sonderbehandlung (eigener Setter,
-//    eigener Selektor, eigene Attribut-Zeile, eigenes Vokabular) ist damit weg.
-//    Der «Chronologie»-Modus entfällt; dieselben Vermerke stehen im Apparat.
-//    Alt gespeicherte Werte bildet `migriereOptFelder` ab (unten).
+// FILTERWERTE (Facetten, Kantone, Von-Bis) sind JS-konsumiert, kein Attribut:
+// sie entscheiden, WELCHER Shard geladen wird — das kann CSS nicht. Sie werden
+// über Primitiv-/Referenz-stabile Selektoren abonniert, damit ein fremder Toggle
+// sie nicht re-rendern lässt (§15). `getSnapshot` MUSS eine stabile Referenz
+// liefern: darum zwei Strings statt eines `{von, bis}`-Objekts und Arrays, die
+// nur im Setter ersetzt werden — ein je Aufruf neu gebauter Wert liesse React
+// schleifen.
 //
-// LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026 «ja linien ganz
-// entfernen»): das frühere Feld `linien` (K11-Tri-State an/aus/auto) ist samt
-// Schalter, `data-linien`-Attribut und CSS-Regeln ENTFALLEN — mit ihm der einzige
-// Grund für den Wert 'auto'. Ein alt gespeichertes `"linien"` im localStorage wird
-// beim Laden ignoriert (es steht nicht mehr in FELDER) und beim nächsten Schreiben
-// abgeräumt; es kann nichts mehr einschalten. Herleitung:
-// FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3.
+// GESTRICHENE SCHLÜSSEL im Bestands-Speicher (`verweise`, `linien`, `zeitraum`,
+// `hist`) stehen nicht in FELDER und werden beim Laden ignoriert; `speichere()`
+// räumt sie beim nächsten Schreiben ab. `hist` wird als EINZIGER noch GELESEN —
+// `migriereOptFelder` bildet ihn ab (unten). Bei `zeitraum` ist das Abräumen
+// nicht Kosmetik: bliebe er stehen, rechnete die Migration bei jedem Laden gegen
+// ein neues «heute», und «letzte 5 Jahre» rutschte täglich weiter.
 //
-// Mechanik der Toggles = data-*-Attribute + CSS, KEIN React-State-Zweig im
-// Artikel-Baum (§15: das Toggeln rendert die Artikelliste NICHT neu). Vorbild ist
-// die Theme-Mechanik (components/thema.ts): die Attribute werden IMPERATIV am
-// <html> gesetzt — bewusst KEIN Inline-Script im index.html-Head, weil die CSP
-// (vercel.json `script-src 'self'`) Inline-Scripte verbietet. Die Anwendung vor
-// dem ersten Paint erledigt main.tsx via `wendeLeserOptionenAn()` (analog
-// `wendeThemaAn`/`wendeSchriftskalaAn`), das aus dem gebündelten Modul-Script
-// läuft (same-origin, CSP-konform) → kein Flackern, kein Hydration-Mismatch.
-//
-// Beim Umschalten schreibt `setzeOption` das Attribut direkt ans <html> und
-// benachrichtigt die Hörer; nur die Switch-Buttons (useLeserOptionen) rendern
-// neu — der Normtext bleibt unberührt (CSS greift auf das geänderte Attribut).
-// Global (ein Attributsatz am <html>) ⇒ beide Reader-Instanzen (Einzelansicht
-// UND jedes Split-View-Pane) folgen derselben Wahl ohne Re-Render.
-//
-// Alle drei Felder: Default 'an' = heutige Darstellung → data-*="an" ist ein
-// CSS-No-op (R6: Grundzustand byte-gleich). Alle CSS-Regeln sind auf
-// `.lc-leser` gescopt (index.css), damit sie NUR den Reader treffen.
-//
-// W2·7-BEZUG/B5 (David 28.7.2026): die frühere Stufen-Wahl «alle · 20 · 10 · 5 J.»
-// (V2·B-2) ist ENTFALLEN und durch einen VON-BIS-BEREICH ersetzt — Zeitstrahl mit
-// Zieh-Auswahl plus zwei Datumsfeldern im Dropdown «Rechtsprechung ▾». Er lebt wie
-// die Facetten als JS-konsumierter Filterwert im SELBEN persistenten Store und wird
-// über PRIMITIV-Selektoren (`useBezugVon`/`useBezugBis`, je nur ein String)
-// abonniert: so re-rendern die Abonnenten nur bei echter Bereichs-Änderung, nicht
-// bei jedem anderen Toggle (§15). Zwei Strings statt eines Objekts, weil
-// `getSnapshot` eine STABILE Referenz liefern muss — ein je Aufruf neu gebautes
-// `{von, bis}` liesse React schleifen.
-//
-// EINMALIGE MIGRATION der Alt-Wahl: ein gespeichertes `zeitraum: '5'|'10'|'20'`
-// wird zu `bezugVon = heute minus n Jahre` (`migriereZeitraum`, bezugZeit.ts),
-// 'alle' zu offenen Enden. Sie greift nur, solange kein Bereich gespeichert ist,
-// und wird sofort zurückgeschrieben — sonst wanderte der Grenzwert mit jedem
-// Sitzungstag weiter, und der Filter zeigte jeden Tag etwas anderes an.
-
-// W2·7-BEZUG/B4: die Facetten-Auswahl der Bezüge (Status-Klassen + Kantone) lebt
-// im SELBEN persistenten Store — ein localStorage-Schlüssel, ein Hörer-Satz (§5),
-// wie der Zeit-Bereich und die Historie-Ansicht. Sie ist ebenso JS-konsumiert (kein
-// data-*-Attribut): welche Klassen gewählt sind, entscheidet, WELCHER Shard
-// geladen und welche Kanten gerendert werden — das kann CSS nicht. Abonniert wird
-// über Selektoren mit STABILER Referenz (nur bei echter Änderung ein Re-Render),
-// darum werden die Arrays beim Setzen einmal neu gebaut und danach geteilt (§15).
+// Ä25 (S1-Nachzug 17.8.2026, §7): der gestrichene Schalter `verweise` wirkte auf
+// eine DAUERHAFTE gepunktete Unterstreichung, nicht — wie hier und an vier
+// weiteren Stellen behauptet — auf eine Hover-Zierde (`NormText.tsx:38` setzt
+// `underline` unbedingt). Offene Design-Frage, Fahrplan Kap. 7 «Offen aus S1».
 
 import { useSyncExternalStore } from 'react';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
@@ -85,49 +46,30 @@ import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
 import { heuteIso } from '../../lib/format';
 
 /**
- * Die drei zweiwertigen Lese-Schalter (S1, Kap. 4f):
+ * Die drei zweiwertigen Lese-Schalter:
  *
- * · `fussnoten`    — amtlicher Fussnoten-Apparat + Marker (A1: «aus» = verschwinden).
- * · `histansicht`  — Änderungsvermerke: Marker, Apparat-Zeile und «Fassung»-Zeile
- *                    der Klasse 'A'. «aus» blendet AUSSCHLIESSLICH `kl:'A'` aus;
- *                    V/G/Z/U und jede Fussnote OHNE Klasse bleiben sichtbar
- *                    (H0-Auflage 1, `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`).
+ * · `fussnoten`    — amtlicher Apparat + Marker (A1: «aus» = verschwinden).
+ * · `histansicht`  — Änderungsvermerke. «aus» blendet AUSSCHLIESSLICH `kl:'A'`
+ *                    aus; V/G/Z/U und jede Fussnote OHNE Klasse bleiben sichtbar
+ *                    (H0-Auflage 1, `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`
+ *                    Ziff. 7.4 — dort auch die drei Träger der CSS-Regel).
  * · `leitfaelle`   — Rechtsprechungs-Hinweise im Lesetext.
- *
- * `histansicht` war bis S1 ein dreiwertiges Sonderfeld (`HistAnsicht`) mit
- * eigenem Setter und eigenem Selektor. Der Grund dafür war der dritte Wert
- * 'chronologie' — eine zweiwertige Option in derselben Union zu führen war
- * typunsicher. Mit F1 («Chronologie» entfällt) ist die Union zweiwertig, und die
- * Sonderbehandlung fällt mit ihr: ein Feld, ein Setter, ein Attribut-Satz (§5).
  */
 export type OptFeld = 'fussnoten' | 'histansicht' | 'leitfaelle';
 export type OptWert = 'an' | 'aus';
 export type LeserOptionen = Record<OptFeld, OptWert>;
 
 /**
- * LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Punkt 4: «Schriftgrössen-Regler
- * wirkt auf die ganze Seite»).
+ * LESER-SCHRIFTSKALA (David 16.8.2026, Punkt 4) — vier Stufen NUR für den
+ * Normtext. Der globale App-Regler (`components/layout/useSchriftskala.ts`)
+ * skaliert per `font-size` am <html> die ganze Anwendung mit; genau das war der
+ * gemeldete Fehler, er bleibt aber als Barrierefreiheits-Einstellung unangetastet.
  *
- * VIER Stufen für die Grösse des NORMTEXTS im Leser — und nur dort. Der globale
- * App-Regler (`components/layout/useSchriftskala.ts`, Schlüssel
- * `lexmetrik-schriftskala`) setzt `font-size` am `<html>` und skaliert damit
- * jedes rem-Token der ganzen Anwendung: Kopfzeile, Seitenleiste, Topbar. Das ist
- * als globale Barrierefreiheits-Einstellung richtig und bleibt unangetastet —
- * als «Schriftgrösse» IM Lesewerkzeug war es der gemeldete Fehler.
- *
- * Der Wert lebt als eigenes Feld im SELBEN persistenten Store: ein
- * localStorage-Schlüssel, ein Hörer-Satz (§5), geteilt von V1 und V3 — kein
- * zweiter Schriftgrössen-Speicher. Eigenes Feld und kein `OptFeld`, weil er
- * VIERwertig ist (die Toggle-Union ist zweiwertig).
- *
- * Bewusst NAMEN statt Zahlen: die Stufe ist eine Nutzerwahl, keine Rechengrösse.
- * Ein gespeicherter Faktor müsste bei jeder Änderung der Skala neu gesnappt
- * werden (so wie `stufeIndex` es global tun muss); ein Name bleibt gültig, und
- * die Whitelist-Prüfung beim Laden ist derselbe Einzeiler wie bei den Toggles.
- *
- * `normal` = die heutige Normtext-Grösse (`text-body-l` = 1.125rem). Es emittiert
- * KEINE CSS-Regel (index.css) ⇒ die Vorgabestufe ist byte-gleich zum Ist-Stand
- * (R6/§6) und der Pixelvergleich der V3-Paritätsspecs bleibt gültig.
+ * Eigenes Feld statt `OptFeld`, weil VIERwertig. NAMEN statt Zahlen: ein
+ * gespeicherter Faktor müsste bei jeder Skalen-Änderung neu gesnappt werden, ein
+ * Name bleibt gültig. `normal` emittiert KEINE CSS-Regel (index.css) ⇒ die
+ * Vorgabestufe ist byte-gleich zum Ist-Stand (R6/§6), der Pixelvergleich der
+ * V3-Paritätsspecs bleibt gültig.
  */
 export type LeserSchrift = 'normal' | 'mittel' | 'gross' | 'sehr-gross';
 
@@ -143,29 +85,21 @@ const ALT_HIST_AN: readonly string[] = ['fussnoten', 'chronologie'];
 /**
  * S1-MIGRATION — gespeicherte Optionen → die drei zweiwertigen Felder.
  *
- * REIN und deterministisch (§2): kein Speicher, kein DOM, keine Uhr. Genau
- * deshalb steht sie hier als eigene, exportierte Funktion und nicht als Zweig in
- * `lade()` — der Fall, der wehtut, ist ein Bestands-Speicher, und der ist im
- * Browser nicht mehr nachstellbar, sobald er einmal überschrieben wurde
- * (`src/tests/leser-optionen-migration.test.ts`).
+ * REIN und deterministisch (§2): kein Speicher, kein DOM, keine Uhr — und darum
+ * eigene exportierte Funktion statt Zweig in `lade()`. Der Fall, der wehtut, ist
+ * ein Bestands-Speicher, und der ist im Browser nicht mehr nachstellbar, sobald
+ * er einmal überschrieben wurde (`src/tests/leser-optionen-migration.test.ts`).
  *
- * Drei Regeln, jede mit einer Begründung aus §8 (keine Nutzerwahl still kippen):
- *
- *  1. `histansicht: 'an'|'aus'` — schon migrierter Speicher, gilt unverändert.
- *  2. Sonst der Alt-Schlüssel `hist`: 'aus' → 'aus'; 'fussnoten' UND
- *     'chronologie' → 'an'. Beide Alt-Werte bedeuteten «die Vermerke sind da»,
- *     nur in zwei Darstellungen — wer «Chronologie» gewählt hatte, wollte die
- *     Vermerke SEHEN. Sie auf 'aus' abzubilden hiesse, ihm amtliche Substanz
- *     wegzunehmen, die er ausdrücklich bestellt hat.
- *  3. Alles andere (fehlend, `undefined`, Zahl, Wort aus keinem Vokabular,
- *     manipulierter Speicher) fällt auf den Default. Ein unbekannter Wert darf
- *     NIE durchrutschen: er landete sonst als `data-histansicht="…"` am <html>,
- *     wo keine Regel greift — der Nutzer sähe eine Stellung, die es nicht gibt,
- *     und der Schalter stünde falsch (gleiche Sicherung wie bei der Schriftskala).
- *
- * Der ebenfalls entfallene Schlüssel `verweise` wird NICHT gelesen: er steht
- * nicht in FELDER, kann also nichts mehr einschalten, und `speichere()` räumt ihn
- * beim nächsten Schreiben ab (dieselbe Mechanik wie `linien` und `zeitraum`).
+ * Drei Regeln, jede aus §8 «keine Nutzerwahl still kippen»:
+ *  1. `histansicht: 'an'|'aus'` — schon migriert, gilt unverändert.
+ *  2. Sonst Alt-Schlüssel `hist`: 'aus' → 'aus'; 'fussnoten' UND 'chronologie'
+ *     → 'an'. Beide Alt-Werte bedeuteten «die Vermerke sind da», nur in zwei
+ *     Darstellungen — sie auf 'aus' abzubilden nähme dem Nutzer Substanz weg,
+ *     die er ausdrücklich bestellt hatte.
+ *  3. Alles andere fällt auf den Default. Ein unbekannter Wert darf NIE
+ *     durchrutschen: er landete als `data-histansicht="…"` am <html>, wo keine
+ *     Regel greift — der Schalter stünde dann falsch zu einer Stellung, die es
+ *     nicht gibt (gleiche Sicherung wie bei der Schriftskala).
  */
 export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): LeserOptionen {
   const opt: LeserOptionen = { ...DEFAULT };
@@ -179,19 +113,11 @@ export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): Leser
   return opt;
 }
 /**
- * Ä27 (S1-Nachzug, 17.8.2026): Hinweis-Unterzeile am Schalter
- * «Änderungsvermerke», eingeblendet NUR bei «Fussnoten: aus».
- *
- * Befund des Ästhetik-Prüfers: das Menü ist flach, die Abhängigkeit unsichtbar.
- * Steht «Fussnoten» auf `aus`, zeigt «Änderungsvermerke» weiter «✓ an», sichtbar
- * sind aber weder Marker noch Apparat — nur die «Fassung»-Zeile, die dem
- * Fussnoten-Schalter nicht folgt. Der Schalter sagt damit die Wahrheit über den
- * Store und die Unwahrheit über den Bildschirm (§8).
- *
- * Der Text steht als EINE Konstante hier, weil ihn V1 (`LeserAnsichtMenu`) und
- * V3 (`v3/LeserAnsichtV3`) beide zeigen und gleich zeigen müssen (§5) — zwei
- * Literale wären zwei Wahrheiten, die auseinanderlaufen (Präzedenz: die
- * Label-Schwellen des Menü-Paars, B6).
+ * Ä27 (S1-Nachzug 17.8.2026): Hinweiszeile am Schalter «Änderungsvermerke», NUR
+ * bei «Fussnoten: aus». Dort zeigt er weiter «✓ an», sichtbar ist aber nur die
+ * «Fassung»-Zeile — Marker und Apparat hängen am Fussnoten-Schalter, und im
+ * flachen Menü ist diese Abhängigkeit unerkennbar (§8). EINE Konstante, weil V1
+ * und V3 denselben Satz zeigen müssen (§5).
  */
 export const HINWEIS_VERMERKE_OHNE_FUSSNOTEN =
   'Marker und Apparat sind mit den Fussnoten ausgeblendet';
@@ -289,10 +215,8 @@ let aktuellBis: string = start.bezugBis;
 
 function speichere(): void {
   try {
-    // `zeitraum` wird NICHT mitgeschrieben: das Feld ist mit B5 entfallen, und
-    // ein weitergeschleppter Alt-Wert liesse die Migration bei jedem Laden neu
-    // greifen. Ein einziges Schreiben räumt ihn ab. Gleiches gilt seit S1 für
-    // `hist` (dreiwertig) und `verweise` — beide stehen nicht mehr im Objekt.
+    // Die gestrichenen Schlüssel (`zeitraum`, `hist`, `verweise`, `linien`)
+    // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
     localStorage.setItem(KEY, JSON.stringify({
       ...aktuell, schrift: aktuellSchrift,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
@@ -440,16 +364,9 @@ export function useLeserOptionen(): LeserOptionen {
   return useSyncExternalStore(abonniere, getSnapshot, getServerSnapshot);
 }
 
-/**
- * W2·7-BEZUG/B5: Primitiv-Selektoren auf die beiden Bereichs-Enden.
- *
- * Bewusst ZWEI Hooks auf zwei Strings statt eines Hooks auf ein `{von, bis}`:
- * `getSnapshot` muss eine stabile Referenz liefern, ein je Aufruf frisch
- * gebautes Objekt liesse React schleifen. Strings vergleicht `Object.is`
- * wertweise — obwohl jeder beliebige Toggle die Hörer benachrichtigt, rendern
- * die Abonnenten nur bei echter Bereichs-Änderung neu (§15-Zusage). Wer beide
- * Enden als Objekt braucht, baut es im eigenen `useMemo` zusammen.
- */
+/** B5: Primitiv-Selektoren auf die beiden Bereichs-Enden. ZWEI Hooks auf zwei
+ *  Strings statt einer auf `{von, bis}` — Begründung (stabile Referenz) im
+ *  Datei-Kopf. Wer beide Enden als Objekt braucht, baut es im eigenen `useMemo`. */
 function getVonSnapshot(): string {
   return aktuellVon;
 }
@@ -480,15 +397,10 @@ export function useLeserSchriftStufe(): LeserSchrift {
   return useSyncExternalStore(abonniere, getSchriftSnapshot, getSchriftServerSnapshot);
 }
 
-/**
- * W2·7-BEZUG/B4: Selektoren auf die Bezugs-Facetten.
- *
- * `getSnapshot` MUSS eine stabile Referenz liefern (sonst warnt React und
- * schleift). Die Arrays werden darum ausschliesslich in `setzeBezugKlassen`/
- * `setzeBezugKantone` ersetzt und dazwischen geteilt — im Grundzustand ist es
- * sogar dieselbe Modul-Konstante (`DEFAULT_BEZUG_KLASSEN`), sodass der
- * unveränderte Reader gar keinen Re-Render sieht.
- */
+/** B4: Selektoren auf die Bezugs-Facetten. Die Arrays werden ausschliesslich in
+ *  den Settern ersetzt und dazwischen geteilt; im Grundzustand ist es dieselbe
+ *  Modul-Konstante (`DEFAULT_BEZUG_KLASSEN`), sodass der unveränderte Reader gar
+ *  keinen Re-Render sieht. */
 function getKlassenSnapshot(): readonly BezugStatus[] {
   return aktuellKlassen;
 }

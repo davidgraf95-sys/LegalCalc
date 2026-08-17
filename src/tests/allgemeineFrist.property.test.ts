@@ -124,8 +124,35 @@ describe('allgemeineFrist — Rückwärtsfrist: Handlungstag vor dem Stichtag, V
 });
 
 // ─── AF-6 · tageZwischen: symmetrisch, nie negativ, Werktage ⊆ Kalendertage ──
+//
+// §17-WURZELFIX (S1-Nachzug 17.8.2026) — dieser Test riss an drei Sessions
+// desselben Tages den 30-s-Vorgabe-Timeout von Vitest und galt seither als
+// «Flake auf main». Er ist keiner: es gibt kein Rennen und keine Nebenläufigkeit,
+// nur einen festen, teuren Workload, der zu knapp am Deckel liegt.
+//
+// MESSUNG (macOS, 10 Kerne, warm; `--reporter=verbose` liefert die Zeit je Test):
+//   · isoliert:            dieser Test 12 775 ms — die sieben anderen dieser
+//                          Datei zusammen 484 ms (er trägt 96 % der Laufzeit)
+//   · unter Parallel-Last: Datei 26.26 s Testzeit (Nebenlast: drei
+//                          Playwright-Specs auf demselben Rechner)
+//                          ⇒ dieser Test allein ~25.8 s bei 30 s Deckel
+// Der Abstand zum Deckel ist kleiner als die Streuung der Maschinenlast — über
+// rot oder grün entscheidet die Zuteilung, nicht der Code.
+//
+// URSACHE: 1000 fast-check-Läufe × zwei Zufallsdaten aus 2015–2035 × eine
+// O(Tage)-Zählung, zusätzlich gegen die date-fns-Referenz geprüft. Das ist
+// gewollt — es ist Rechtslogik (Fristenzählung), und die Prüftiefe IST der Wert
+// dieses Tests.
+//
+// FIX: ein fester, begründeter Zeit-Budget nur für diesen Test. `numRuns` wird
+// NICHT reduziert — das wäre Prüftiefe gegen Laufzeit getauscht (§1 vor §15), und
+// zwar auf einem Rechtslogik-Pfad; §17 nimmt den Testapparat vom Rückbau
+// ausdrücklich aus, wo er Rechtslogik deckt. 120 s ist knapp 5× die gemessene
+// Worst-Case-Zeit unter Last: gross genug, dass die Maschinenzuteilung nie mehr
+// entscheidet, klein genug, dass ein echter Hänger (Endlosschleife in
+// `tageZwischen`) weiterhin auffliegt statt die CI zu blockieren.
 describe('allgemeineFrist — tageZwischen (reines Zählwerkzeug)', () => {
-  it('symmetrisch, ≥ 0, werktageMoFr ≤ kalendertage', () => {
+  it('symmetrisch, ≥ 0, werktageMoFr ≤ kalendertage', { timeout: 120_000 }, () => {
     fc.assert(fc.property(isoDatumArb(), isoDatumArb(), (a, b) => {
       const ab = tageZwischen(a, b);
       const ba = tageZwischen(b, a);

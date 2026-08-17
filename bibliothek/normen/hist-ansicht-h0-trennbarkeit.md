@@ -219,12 +219,53 @@ gelöschtem `kl`.
 
 ### 7.4 Auflage 1 in der UI: was ausblendbar ist
 
+*(Nachgezogen S1, 17.8.2026 — Stand des gebauten Reader-Codes. Der Absatz sprach
+von DREI Ansichten und von ZWEI Trägern; beides stimmt nicht mehr. Die Auflage 1
+selbst ist unverändert, nur ihre Umsetzung ist es nicht.)*
+
 Ausgeblendet wird ausschliesslich `[data-fn-klasse="A"]` — der Attribut-Selektor
-greift nur bei exakt `A`. V/G/Z/U **und** alles ohne Klasse bleiben in allen drei
-Ansichten sichtbar. `display:none` trifft nur Marker-Ziffern und Apparat-Zeilen,
-nie einen Substanz-Träger; der Normtext ist von keiner Regel erfasst und bleibt
-sichtbar, durchsuchbar und im Ausdruck (R9/§8). Der `<p id="fn-…">`-Quellblock
-bleibt im DOM, weshalb das Marker-Popover auch in der Chronologie-Ansicht trägt.
+greift nur bei exakt `A`. V/G/Z/U **und** alles ohne Klasse bleiben in **beiden
+Stellungen** sichtbar.
+
+**Zwei Änderungen gegenüber der Erstfassung:**
+
+1. **Zwei Stellungen statt drei Ansichten.** Der Schalter ist mit dem
+   Optionen-Rückbau S1 (Entscheid David F1, 16.8.2026) zweiwertig geworden
+   («Änderungsvermerke: an | aus»); die dritte Ansicht «als Chronologie» ist
+   ersatzlos gestrichen. Der letzte Satz der Erstfassung — der `<p id="fn-…">`-
+   Quellblock bleibt im DOM, «weshalb das Marker-Popover auch in der
+   Chronologie-Ansicht trägt» — gilt sachlich weiter (der Block bleibt im DOM,
+   das Popover trägt in beiden Stellungen), nur den benannten Modus gibt es nicht
+   mehr.
+
+2. **DREI Träger, nicht zwei.** «`display:none` trifft nur Marker-Ziffern und
+   Apparat-Zeilen» war ab S1 unvollständig. Der Schalter blendet aus (`index.css`,
+   alle Regeln auf `.lc-leser` gescopt):
+
+   | Träger | Was | Seit |
+   |---|---|---|
+   | `[data-fn-klasse="A"]` | Marker-Ziffer am Wort | W2·5i |
+   | `[data-fn-apparat]` ohne Nicht-A-Kind | die Apparat-Zeile am Artikelfuss | W2·5i |
+   | **`[data-hist-slot]`** | die **«Fassung»-Overline/Zeitleiste** am Artikelfuss (`ArtikelLeser.tsx`) | **S1** |
+
+   Der dritte Träger kam mit S1 dazu (Befund K4): bis dahin hing die
+   Fassungs-Zeile an gar keinem Schalter und blieb bei «aus» als einzige
+   Historie-Spur im Lesetext stehen. Ausgeblendet wird der SLOT, nicht nur die
+   Zeile darin — sonst bliebe seine reservierte Höhe (`mt-4 min-h-hist-zeile` =
+   16 + 24 px) als Phantom-Lücke unter jedem Artikel zurück.
+
+**Unverändert:** kein Substanz-Träger ist erfasst; der Normtext ist von keiner
+Regel betroffen und bleibt sichtbar, durchsuchbar und im Ausdruck (R9/§8). Alle
+Regeln arbeiten mit `display:none` auf Beiwerk, der DOM bleibt vollständig.
+
+**Folgeauflage aus S1-Nachzug (17.8.2026, §8):** weil «aus» auf einem Erlass ohne
+`kl:'A'` und ohne Fassungs-Zeile GAR NICHTS ausblendet, wird der Schalter dort
+nicht mehr angeboten. Gemessen über den ganzen Korpus: 1217 von 1420 Erlassen
+tragen keine `kl:'A'`-Fussnote; von diesen haben 6 einen Historie-Shard und
+genau 2 (MONTREAL, PVUE) darin Einträge — nur dort wirkt der Schalter noch über
+den dritten Träger. Regel und Belege:
+`src/pages/gesetz-leser/berechnungen.ts` (`bieteAenderungsvermerkeSchalter`) +
+`src/tests/aenderungsvermerke-schalter.test.ts`.
 
 ### 7.5 Auflage 5 (ZITAT) — bleibt David-Entscheid
 
