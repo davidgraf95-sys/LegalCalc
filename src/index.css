@@ -1335,6 +1335,47 @@
      `<details>` unverändert (FL-4). */
   details[data-v3-uebersicht] > summary::after { content: none; }
 
+  /* ── Ä70 (17.8.2026, David: «mach das schöner und orientiere dich an
+        Fedlex») · STECKBRIEF-RASTER DER ÜBERSICHTSBOX ────────────────────────
+     Fedlex setzt links neben den Erlass eine Karte «Allgemeine Informationen»:
+     Label links, Wert rechts, je Paar EINE Zeile («Abkürzung OR», «Beschluss
+     30. März 1911», «Inkrafttreten 1. Januar 1912»). Der RHYTHMUS ist übernommen,
+     der Kasten nicht — Design-Grundlage Kap. 8 Nr. 1 verbietet Rahmen um jedes
+     Element («Trennung über Weissraum, dann Linie»), und die Box war bis H2b
+     genau so ein Kasten (Ä5). Darum: EINE Haarlinie über und EINE unter der
+     Liste; die Zeilen trennt der Weissraum des 4-px-Rasters (Kap. 3).
+
+     Warum hier und nicht als Utility-Kette an der Komponente: die Spaltenbreite
+     ist EIN Mass für alle Zeilen (§5) — an jeder Zeile wiederholt wäre sie
+     sieben Wahrheiten, von denen man eine vergisst.
+
+     GEMESSEN 17.8.2026 (D 1440, Leiste 18 rem): die Box ist 280 px breit, nach
+     dem Klapp-Einzug bleiben 264 px. 5 rem Label + 0.5 rem Spalte lässt dem Wert
+     rund 184 px — genug, dass «Die Bundesversammlung der Schweizerischen
+     Eidgenossenschaft» in Zeilen UMBRICHT statt (wie im Ist) 282 px still
+     abgeschnitten zu werden.
+
+     KEIN `truncate` und kein `title`-Ersatz: der schwerste Ist-Befund war genau
+     dieser stille Textverlust (StPO 282 px · BS-640.100 284 px · LugÜ 98 px ·
+     VMWG 66 px) — ein Tooltip ist keine Auskunft (§8). */
+  .lc-v3-steckbrief > dl {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding-block: .5rem;
+  }
+  .lc-v3-steckbrief > dl > div {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    column-gap: .5rem;
+    padding-block: .25rem;
+  }
+  /* Die zwei Textrollen der Grundlage Kap. 4: `label-2` (ink-600) für das
+     Etikett, `label-1` (ink-800) für den Wert. EINE Grösse, zwei Rollen — nicht
+     zwei Grössen; die Grösse selbst kommt als Haus-Token von der Komponente
+     (`text-body-s`), damit `check:design-tokens` sie sieht. */
+  .lc-v3-steckbrief dt { color: var(--ink-600); }
+  .lc-v3-steckbrief dd { color: var(--ink-800); overflow-wrap: anywhere; }
+
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */
   @keyframes lc-ziel-blink { 0% { background: var(--brass-100); } 100% { background: transparent; } }
