@@ -151,12 +151,25 @@ export function LeserTrefferListe({
               Einheit zu trennen ist an einer Kernauskunft dasselbe Übel wie die
               Ellipse (§8).
               JETZT: jedes Segment «Zahl + Einheit» ist ein eigener,
-              nicht-umbrechbarer Block (`whitespace-nowrap`), der Trenner «·» ist
-              die einzige erlaubte Bruchstelle. Zwei Zeilen bleiben möglich, aber
-              sie brechen zwischen den Aussagen statt in ihnen. */}
+              nicht-umbrechbarer Block (`whitespace-nowrap`), und es gibt GENAU
+              EINE Bruchstelle — die hinter dem Trenner «·».
+              Zwei Punkte, die dabei gemessen werden mussten:
+              (1) Der Trenner klebt am ERSTEN Segment, nicht zwischen den beiden.
+              Stünde er frei, könnte er als einzelnes Zeichen an den Anfang der
+              zweiten Zeile rutschen — genau das hängende Zeichen, das Ä5 aus der
+              Übersichtszeile entfernt hat.
+              (2) Die Leerzeichen um den Trenner sind ECHTE Textknoten (`{' '}`),
+              nicht `mx-1`. Ohne sie hat die Zeile GAR KEINE Bruchstelle: JSX
+              verschluckt Zeilenumbrüche zwischen Elementen, der Absatz kann
+              nicht umbrechen, und dann ellipsiert er wieder — gemessen 17.8.2026
+              an der StPO/«Kosten» mit `mx-1`: 176 px in 148 px, Höhe 20 px, also
+              EINE Zeile mit Überlauf. Der Ä30-Fix hätte damit Ä15 gebrochen. */}
           <p className="min-h-5 min-w-0 flex-1 leading-snug">
-            <span className="whitespace-nowrap"><span className="num">{treffer.length}</span> {zaehlform(treffer.length, bestimmungsWort)}</span>
-            <span aria-hidden className="mx-1 text-ink-300">·</span>
+            <span className="whitespace-nowrap">
+              <span className="num">{treffer.length}</span> {zaehlform(treffer.length, bestimmungsWort)}
+              {' '}<span aria-hidden className="text-ink-300">·</span>
+            </span>
+            {' '}
             <span className="whitespace-nowrap"><span className="num">{fundstellen}</span>{fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}</span>
           </p>
           {hatSprung && (

@@ -739,11 +739,12 @@ Sonde in `leser-v3-kuerzel` bewacht jetzt den Rückbau (§6.3-Nachzug am Ort
 deklariert). Der Rahmen sinkt dadurch von 415 auf **411** Zeilen und bleibt
 unter dem Adapter (416) — die Datei-Sonde bleibt grün, ohne dass die Zahl weicht.
 
-**Rot-Beweis (§6.7) — 27 Sabotagen, alle einmal rot gesehen** (Lauf 17.8.2026,
+**Rot-Beweis (§6.7) — 30 Sabotagen, alle einmal rot gesehen** (Lauf 17.8.2026,
 je im Spec-/Test-Kopf notiert, wie): A1 unit + e2e · B1 · B2 · B8 (Regel und
 Sonde) · Ä29 · B9 (Sonde, e2e zu hoch, e2e zu tief) · A3 (Sonde und e2e) · B3
 beide Richtungen · A4 · A5 · Ä27 · Ä28 · Ä30 · Ä31 · A2 (Feld, Esc, Feldzahl) ·
-Ä32 (Ort, Übersicht, alles-auf) · B11 · Ä18-Reihenfolge.
+Ä32 (Ort, Übersicht, alles-auf) · B11 · Ä18-Reihenfolge · Ä30 gegen Ä15 ·
+Esc-Spec (d) · Ä30 nach der Nachbesserung.
 **ZWEI ZUSICHERUNGEN WAREN BLIND und sind ersetzt** — das ist der wichtigste
 Einzelbefund dieses Nachzugs, weil er die Methode betrifft, nicht ein Feature:
 (1) die untere Schranke von Ä1 liess sich über `marginTop` nicht reissen (die
@@ -752,6 +753,40 @@ Wrapper-Polsterung schluckt den Wert, `top` klemmt ihn ab); tragfähig ist
 verglich die gemessene Höhe mit der Variable, die sie selbst setzt — eine
 Tautologie. Sie misst jetzt die NATÜRLICHE Höhe (`height: auto`): Ruhe 40 gegen
 ausgelegt 44 px, mit Suche 64 gegen 68; erlaubt sind höchstens 4 px Reserve.
+
+**Zwei EIGENE Regressionen, in der Batterie gefangen und behoben** (kein
+fremder Befund — der Nachzug hat sie erzeugt, das Tor hat sie gemeldet):
+1. **Ä30 gegen Ä15.** Die Segmente `whitespace-nowrap` zu geben nahm der Zeile
+   ihre LETZTE Bruchstelle: JSX verschluckt Zeilenumbrüche zwischen Elementen,
+   und `mx-1` am Trenner ist kein Textknoten. Gemessen StPO/«Kosten» @1440:
+   176 px in 148 px, Höhe 20 px — EINE Zeile mit Überlauf, also genau die Ellipse,
+   die Ä15 beseitigt hatte (`leser-v3-auskunft` Ä15+Ä17 rot). Fix: echte
+   Leerzeichen (`{' '}`) statt `mx-1`, und der Trenner klebt am ERSTEN Segment,
+   damit er nicht als einzelnes Zeichen an den Anfang der zweiten Zeile rutscht
+   (das wäre das hängende Zeichen aus Ä5). Beide Richtungen rot gesehen.
+2. **`leser-v3-esc-ohne-sprung` (d) forderte das Gegenteil von A2** und war
+   zugleich falsch benannt: der Fall hiess «Esc im Sheet-Feld», traf über
+   `[data-v3-suchsprung] input` aber seit Ä19 das Feld im KOPF-Block — das Blatt
+   hatte gar keines. Der Test war grün, während die Bedienung im offenen Blatt
+   unerreichbar war. Umgedreht und geschärft (§6.3-Nachzug am Ort deklariert):
+   Esc schliesst den Dialog, der Begriff bleibt, und der Scroll-Offset bleibt
+   stehen — der Kern von Pos. 14 ist damit STÄRKER geprüft als vorher.
+
+**Messbedingung der Tore (§0 Ziff. 3c).** Gemessen auf einer Maschine, auf der
+zwei Schwester-Worktrees (`LexMetrik-h3`, `LexMetrik-s1`) parallel bauen und
+testen — Load Average 28–40. `npm run gate` meldete im ersten Lauf SIEBEN
+Timeout-Dateien (Fristen · Prozesskosten · Strassen · Materialien · Suche ·
+Ranking), im zweiten nur noch `allgemeineFrist.property`. Nullprobe: der Diff
+gegen `19a989f9` berührt `src/lib/**`, `src/data/**`, `scripts/**` und diese
+sieben Testdateien mit **0 Zeilen**; isoliert laufen alle sieben grün (86 s
+Wall-Clock, 225 s Testzeit), `allgemeineFrist.property` allein in 17.4 s. Kein
+Feature-Anteil — dieselbe Klasse, die der Vollzugsvermerk H2b schon für diese
+eine Datei vermerkt hat, unter höherer Last auf sechs weitere ausgedehnt.
+Ebenso in der Leser-Batterie: bei 5 Workern fielen die zwei OR-Fälle von
+`leser-v3-seitenleiste-ordnung` in den 20-s-Locator-Timeout, isoliert brauchen
+sie 26.0 s bzw. 28.7 s und sind grün; mit `--workers=3` ist die ganze Batterie
+grün (75/75). **Offener §17-Punkt für den Orchestrator, unverändert:** die
+Vitest-Zeitbudgets der schweren Sweeps halten Parallel-Last nicht aus.
 
 **Auflage an H3** (B10): der Sheet-Block des Rahmens gehört in ein eigenes
 Bauteil. NICHT hier gebaut — die Kollisions-Sonde zeigt, dass der Worktree
