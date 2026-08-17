@@ -61,10 +61,16 @@ export function modusFuer(breitePx: number): Breitenmodus {
   return 'd';
 }
 
-/** Hat die Gliederung als Spalte Platz? (Noch nicht angeschlossen — s. Kopf.) */
-export function spalteFuer(breitePx: number): boolean {
-  return breitePx >= SCHWELLE_SPALTE;
-}
+// ── V4 (Nachzug 17.8.2026) · `spalteFuer()` IST GESTRICHEN ──────────────────
+// Hier stand `export function spalteFuer(b) { return b >= SCHWELLE_SPALTE; }`
+// mit dem Zusatz «noch nicht angeschlossen». Der Architektur-Review 17.8.2026
+// hat nachgezählt: NULL Aufrufer — weder in `v3/`, noch in `src/`, noch in
+// `e2e/`, seit A-8. Ein Export, den niemand ruft, kann nicht scheitern und wird
+// gestrichen statt bewacht (§17 in der Fassung vom 13.8.2026). Die Funktion war
+// ohnehin nur ein Vergleich; wer den Entscheid anschliesst, schreibt ihn dort,
+// wo er getroffen wird. Die ZAHL bleibt hier — sie ist die deklarierte
+// Doppelung zu `inhalt-zustand.tsx` und hat seit V4 einen Wächter, der sie
+// gegen die Ist-Hülle vergleicht (`src/tests/leser-v3-elementbreite.test.ts`).
 
 /**
  * Misst die Breite des Elements, an dem `messRef` hängt, und liefert den Modus.

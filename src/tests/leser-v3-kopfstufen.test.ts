@@ -33,10 +33,26 @@ describe('Overflow-Regel der V3-Kopfzeile (Kap. 4a)', () => {
   // Kette «Gesetze › Bund ›» — ein Feld für beide führenden Stufen, darum
   // `krume`. Deklarierte fachliche Anpassung (§6.3), kein Aufweichen: geprüft
   // wird dieselbe Aussage über dieselbe Zone.
+  // V2 (Nachzug 17.8.2026): `krume` ist kein `boolean` mehr, sondern
+  // 'voll' | 'kurz' — die Kette schrumpft auf einen Rücksprung «‹ Gesetze»,
+  // statt ganz zu verschwinden. Zweite deklarierte fachliche Anpassung (§6.3):
+  // die Aussage «die führenden Stufen fallen zuerst» gilt unverändert, neu
+  // kommt die Zusicherung darunter dazu, dass NICHTS ganz wegfällt.
   it('die Reihenfolge des Wegfalls ist «Gesetze › Bund ›» zuerst, dann der Volltitel', () => {
-    expect(kopfElemente('voll')).toMatchObject({ krume: true, volltitel: true });
-    expect(kopfElemente('kompakt')).toMatchObject({ krume: false, volltitel: false });
-    expect(kopfElemente('mini')).toMatchObject({ krume: false, volltitel: false });
+    expect(kopfElemente('voll')).toMatchObject({ krume: 'voll', volltitel: true });
+    expect(kopfElemente('kompakt')).toMatchObject({ krume: 'kurz', volltitel: false });
+    expect(kopfElemente('mini')).toMatchObject({ krume: 'kurz', volltitel: false });
+  });
+
+  // V2 · DIE AUFWÄRTS-NAVIGATION FÄLLT AUF KEINER BREITE WEG.
+  // Rot zu bekommen: in `kopfStufen.kopfElemente` einen dritten Krumen-Wert
+  // einführen (oder auf `boolean` zurückgehen) — dann trägt mindestens eine
+  // Breite keine Krume mehr, und genau das war der Befund V2.
+  it('auf JEDER Breite trägt der Kopf eine Krume — voll oder als Rücksprung', () => {
+    for (let b = 280; b <= 2000; b += 1) {
+      const el = kopfElemente(kopfStufe(b));
+      expect(['voll', 'kurz'], `Krume fehlt bei ${b} px`).toContain(el.krume);
+    }
   });
 
   it('Kürzel, laufender Artikel und «Ansicht» fallen bei KEINER Breite weg', () => {

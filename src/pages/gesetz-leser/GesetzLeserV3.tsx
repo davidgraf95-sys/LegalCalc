@@ -30,10 +30,15 @@ import { LadeAnzeige } from './inhalt-ansichten';
 //     17.8.2026 @1440 StPO: 19 Frames mit Leiste, CLS 0.0303–0.0309 gegen
 //     0.0039–0.0054 in V1. Diese Datei rendert synchron mit der Fassade, die
 //     Meldung steht also vor dem ersten Paint des Lesers.
-//     EIN SCHREIBER, EIN SLOT (§5): die Meldung ist datenunabhängig und
-//     vollständig — der Rahmen meldet seit A-2 nichts mehr (der frühere Effekt
-//     ist in `v3/leserV3Modell.ts` als Kommentar dokumentiert). Zurückgenommen
-//     wird sie beim Abbau, hier und geteilt in `useLeserDaten`.
+//     SIE IST RESERVIERUNG, NICHT DAS LETZTE WORT (V1, Nachzug 17.8.2026). Genau
+//     weil sie datenunabhängig sein MUSS, um vor dem ersten Paint zu stehen, ist
+//     sie auf drei Wegen falsch, auf denen der Rahmen früh zurückkehrt und nie
+//     einen V3-Kopf rendert: pdf-embed (EMRK) · nur-live-link (DSGVO) ·
+//     Fehlseite. Dort stand danach weder App-Krume noch Leser-Krume noch ✕.
+//     `v3/LeserRahmenV3.tsx` nimmt die Reservierung auf diesen drei Wegen zurück,
+//     sobald die Daten da sind (Herleitung dort am Effekt); der Lade-Platzhalter
+//     zählt ausdrücklich nicht dazu — für ihn existiert die Reservierung.
+//     Zurückgenommen wird sie beim Abbau, hier und geteilt in `useLeserDaten`.
 //
 // Der Marker `data-leser-v3="rahmen"` sitzt seit H1 am Rahmen selbst
 // (`v3/LeserRahmenV3.tsx`), nicht mehr auf einem eigenen Vorproben-Streifen:

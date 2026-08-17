@@ -1,5 +1,6 @@
-import { useId, useRef } from 'react';
+import { isValidElement, useId, useRef } from 'react';
 import { grundartMeta } from '../helpers';
+import { paneRoot } from '../berechnungen';
 import { ErlassKopfBlock } from '../parts';
 // Geteilte ANSICHTS-ZUSTÄNDE (Fehlseite · Currency-Pin · pdf-embed · Laden).
 // Der zweite verbleibende Berührungspunkt zur `inhalt-*`-Familie neben dem
@@ -22,6 +23,8 @@ import { normZitat, panelBezug, trefferZahl, usePanelBezuege, usePanelZustand } 
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
 import { useTrefferBlatt } from './useTrefferBlatt';
+import { useKopfAnspruch } from './useKopfAnspruch';
+import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
 import { kopfElemente, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
@@ -48,9 +51,10 @@ import { useLeserV3Modell } from './leserV3Modell';
 // hinter ☰. Die Regel dahinter, auf allen drei Breiten dieselbe: das Feld ist das
 // oberste Element des klebenden Blocks.
 //
-// ── DIE DREI ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4, H3-Nachzug) ────────────
+// ── DIE ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4/H3, ein Eintrag statt zwei) ──
 // H1 hatte `beiwerkSlot` · `fassungsWahl` · `leisteExtra` als `ReactNode`-Slots
-// vorgesehen (Fundament-Auflage 3). Befund des Architektur-Reviews 17.8.2026:
+// vorgesehen (Fundament-Auflage 3), H3 zusätzlich `panelOeffner`/`panelSlot`.
+// Befund des Architektur-Reviews 17.8.2026:
 //
 //  · Der EINZIGE Aufrufer (`../GesetzLeserV3.tsx`) setzt keinen von ihnen — seit
 //    H1, über drei Etappen.
@@ -60,11 +64,14 @@ import { useLeserV3Modell } from './leserV3Modell';
 //    er gedacht war — baut die Beiwerk-Zone im KERN (`parts/ArtikelLeser`,
 //    Kap. 1.3) und braucht ihn darum nicht.
 //
+//  · `panelOeffner`/`panelSlot` waren von aussen gar nicht füllbar: Zähler und
+//    Panel brauchen `useLeserV3Modell`, das erst HIER läuft (§5-Bruch).
+//
 // Damit gilt §17 in der Fassung vom 13.8.2026: was nicht scheitern kann, wird
 // gestrichen statt bewacht — und ein Erweiterungspunkt, dessen künftiger Füller
-// bereits einen anderen Weg nimmt, ist keiner. Dieselbe Begründung, mit der H3
-// `panelOeffner`/`panelSlot` gestrichen hat (Präzedenz `LeserV3Kontext.ts`).
-// Sie sind in der Historie greifbar, wenn ein echter Konsument auftritt.
+// bereits einen anderen Weg nimmt, ist keiner (Präzedenz `LeserV3Kontext.ts`;
+// Herleitung im Vollzugsvermerk H3). Sie sind in der Historie greifbar, wenn ein
+// echter Konsument auftritt. (Nachzug 17.8.2026: stand tiefer ein zweites Mal.)
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
 // `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
@@ -77,12 +84,6 @@ import { useLeserV3Modell } from './leserV3Modell';
 // (`LeserV3Kontext.ts`) mit NULL Konsumenten — alle Bauteile bekommen ihre Werte
 // als Prop. Gestrichen statt bewacht (§17 Rückbau, Architektur-Review A2).
 
-// ── H3 · DIE ZWEI PANEL-SLOTS SIND WIEDER WEG (deklariert) ───────────────────
-// `panelOeffner`/`panelSlot` waren als `ReactNode`-Slots gedacht. Von aussen
-// nicht füllbar: Zähler und Panel brauchen `useLeserV3Modell`, das erst HIER
-// läuft — ein äusserer Aufrufer hätte die Naht ein zweites Mal ziehen müssen
-// (§5-Bruch). Gestrichen statt bewacht (§17, Präzedenz `LeserV3Kontext.ts`); der
-// Rahmen setzt das Panel selbst zusammen. Herleitung im Vollzugsvermerk H3.
 export interface LeserRahmenV3Props {
   ebene: string;
   schluessel: string;
@@ -91,6 +92,11 @@ export interface LeserRahmenV3Props {
 export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
   const { stufe, kopfRef } = useKopfStufe();
+  // V6: Höhenausgleich beim Ein-/Ausklappen der Gliederung — Befund, Messreihe und
+  // der Vertrag von `setzeTocOffen`/`wurzelRef`: `./useStickAusgleich`. Scroller aus
+  // derselben `paneRoot`-Auflösung wie «↑ Anfang» (§5).
+  const { wurzelRef, setzeTocOffen } = useStickAusgleich(
+    m.tocOffen, m.setTocOffen, paneRoot(umgebung.imPane, umgebung.wurzel));
   // A3: die Id der Panel-Fläche entsteht HIER — Öffner und Fläche stehen in
   // verschiedenen Teilbäumen und brauchen dieselbe (`aria-controls`).
   const panelId = useId();
@@ -119,6 +125,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     fehler: m.fehler, schluessel, manifest: m.manifest, erlass: m.erlass,
     currency: m.currency, kopf: m.kopf, internRefs: m.internRefs,
   });
+  // V1: Der Kopf-Anspruch der Fassade ist eine RESERVIERUNG und auf drei Wegen falsch
+  // (Fehlseite · pdf-embed · nur-live-link — dort stand weder App-Krume noch ✕); der
+  // Lade-Platzhalter ist der Übergang, für den sie existiert (`./useKopfAnspruch`).
+  useKopfAnspruch(isValidElement(frueheAnsicht) && frueheAnsicht.type !== LadeAnzeige);
+
   if (frueheAnsicht) return frueheAnsicht;
   if (!m.erlass || !m.eintraege) return <LadeAnzeige />;
 
@@ -202,7 +213,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     ? (
       <button type="button" data-v3-gliederung-auf
         aria-expanded={umgebung.istXl ? m.tocOffen : m.tocAuf}
-        onClick={() => { if (umgebung.istXl) m.setTocOffen(true); else m.setTocAuf((v) => !v); }}
+        onClick={() => { if (umgebung.istXl) setzeTocOffen(true); else m.setTocAuf((v) => !v); }}
         title="Gliederung" aria-label="Gliederung" className="lc-leiste-griff">
         <span aria-hidden>☰</span>
       </button>
@@ -211,7 +222,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
   return (
     <div
-      ref={kopfRef}
+      ref={(el) => { kopfRef(el); wurzelRef.current = el; }}
       data-leser-v3="rahmen"
       className="lc-leser space-y-5"
       data-grundart={meta.grundart ?? undefined}
@@ -289,7 +300,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           : undefined}>
         {hatLeiste && umgebung.istXl && !m.tocOffen && (
           // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
-          <LeserGliederungSchiene onAuf={() => m.setTocOffen(true)} />
+          <LeserGliederungSchiene onAuf={() => setzeTocOffen(true)} />
         )}
         {zweiSpalten && (
           <aside role="navigation" aria-label="Gliederung" data-v3-aside
@@ -309,7 +320,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
                 : 'calc(100vh - var(--nt-stick) - 1.5rem)',
             }}>
             <div className="flex items-center justify-end pb-1">
-              <button type="button" data-v3-gliederung-zu onClick={() => m.setTocOffen(false)}
+              <button type="button" data-v3-gliederung-zu onClick={() => setzeTocOffen(false)}
                 aria-expanded={m.tocOffen} title="Gliederung ausblenden"
                 className="lc-leiste-griff gap-1 px-1.5 text-micro">
                 {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur

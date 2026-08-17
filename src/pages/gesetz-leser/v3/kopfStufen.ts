@@ -69,8 +69,29 @@ export interface KopfElemente {
    *  EIN Feld für beide Stufen und nicht zwei: sie beantworten dieselbe Frage
    *  («woher komme ich»), und wo der Platz für die eine nicht reicht, reicht er
    *  für die andere auch nicht — zwei Flags, die nie auseinandergehen können,
-   *  wären ein Tor, das nicht scheitern kann (§6.7/§17). */
-  krume: boolean;
+   *  wären ein Tor, das nicht scheitern kann (§6.7/§17).
+   *
+   *  ── V2 (Nachzug 17.8.2026) · SIE FÄLLT NICHT MEHR GANZ, SIE SCHRUMPFT ─────
+   *  Das Feld war bis hierher ein `boolean`: unter 900 px Elementbreite (Handy
+   *  @390, JEDES Pane unter 900 px) gab es gar keine Krume. Solange die
+   *  App-Krumen-Leiste darüberstand, fing sie das auf — seit A-2 steht dort
+   *  nichts mehr, und der einzige Weg nach oben war das ✕ («Gesetz schliessen»),
+   *  das auf die Übersicht springt und die Ebene überspringt. Ein Zuschnitt, der
+   *  auf zwei von drei Breiten die Aufwärts-Navigation entfernt, ist keiner.
+   *  DARUM DREI WERTE — und ausdrücklich KEIN zweites Flag daneben:
+   *    'voll'  die ganze Kette «Gesetze › Bund ›»;
+   *    'kurz'  EIN klickbarer Rücksprung «‹ Gesetze» — die erste Stufe derselben
+   *            Kette, aus derselben Quelle (`erlassAnsicht.brotkrume`), nie ein
+   *            zweites Mal getextet.
+   *  Einen dritten Wert «weg» gibt es nicht: die Krume fällt auf KEINER Breite
+   *  ganz aus, und genau das prüft `leser-v3-kopfstufen.test.ts` über jede Breite
+   *  von 280 bis 2000 px — eine Aussage über den Rückgabewert, kein abwesender
+   *  Code (§6.7).
+   *  Die Kopf-ZEILE wächst dadurch nicht: der Rücksprung steht IN der Ort-Zone
+   *  (Design-Grundlage Kap. 6, ≤ 4 Elemente), die Höhe bleibt
+   *  `--leser-v3-kopf-h`, und das Suchfeld bleibt oberstes Element des klebenden
+   *  Blocks (Ä19). */
+  krume: 'voll' | 'kurz';
   /** Erlass-Volltitel neben dem Kürzel. Fällt als zweites. */
   volltitel: boolean;
   /** Erlass-Kürzel («StPO»). Bleibt immer — es ist die Ortsangabe. */
@@ -94,7 +115,7 @@ export interface KopfElemente {
 
 export function kopfElemente(stufe: KopfStufe): KopfElemente {
   return {
-    krume: stufe === 'voll',
+    krume: stufe === 'voll' ? 'voll' : 'kurz',
     volltitel: stufe === 'voll',
     kuerzel: true,
     artikel: true,

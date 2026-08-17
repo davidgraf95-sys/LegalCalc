@@ -88,6 +88,9 @@ export function LeserKopf({
   const ebene = ebeneAngabe(erlass);
   // A-2: dieselbe Kette, die bis 17.8. an die App-Leiste gemeldet wurde.
   const krume = brotkrume(erlass);
+  // V2 (Nachzug 17.8.): der EINE Rücksprung für die engen Zuschnitte — die
+  // erste Stufe DERSELBEN Kette («Gesetze»), nie ein zweiter Text (§5).
+  const rueckKrume = krume[0];
 
   return (
     // `sticky top` aus `--leser-v3-kopf-top`: der Rahmen legt den Wert EINMAL
@@ -152,7 +155,7 @@ export function LeserKopf({
               Navigator auf (`Pane.tsx`, `navKontext`) — der Klick navigiert
               pane-lokal und reisst nicht das ganze Fenster weg (dieselbe
               Zusicherung wie beim ✕ unten). */}
-          {el.krume && krume.slice(0, -1).map((stufeKrume) => (
+          {el.krume === 'voll' && krume.slice(0, -1).map((stufeKrume) => (
             <Fragment key={stufeKrume.label}>
               {stufeKrume.to
                 ? <Link to={stufeKrume.to} className="shrink-0 truncate no-underline hover:text-brass-700">{stufeKrume.label}</Link>
@@ -160,6 +163,23 @@ export function LeserKopf({
               <span aria-hidden className="shrink-0 text-ink-300">›</span>
             </Fragment>
           ))}
+          {/* ── V2 (Nachzug 17.8.2026) · DER RÜCKSPRUNG, WO DIE KETTE NICHT PASST
+              Unter 900 px Elementbreite fiel die Krume bis hierher GANZ weg —
+              @390 und in jedem Pane unter 900 px. Bis A-2 fing die
+              App-Krumen-Leiste das auf; seither gab es dort keinen Weg nach oben
+              ausser dem ✕, und das springt auf die Gesetzes-Übersicht, also an
+              der Ebene vorbei. Statt der Kette steht jetzt ihre erste Stufe als
+              EIN Rücksprung: dieselbe Quelle (`brotkrume`), dieselbe pane-lokale
+              Auflösung wie oben (`<Link>` gegen den Pane-Navigator), ein Element
+              mehr in der Ort-Zone und keines mehr in der Kopf-ZEILE (Kap. 6).
+              Trüge die Stufe kein Ziel, wäre sie kein Rücksprung und entfällt —
+              ein stummer Link wäre schlechter als keiner (§8). */}
+          {el.krume === 'kurz' && rueckKrume?.to && (
+            <Link to={rueckKrume.to} data-v3-kopf-krume-kurz
+              className="shrink-0 truncate no-underline hover:text-brass-700">
+              <span aria-hidden className="mr-0.5 text-ink-300">‹</span>{rueckKrume.label}
+            </Link>
+          )}
           {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────
               Ä21 gab dem Kürzel `min-w-0 truncate` (statt `shrink-0`), weil es bei
               ZH-211.11 der ganze Name ist (45 Zeichen) und die Zone sonst

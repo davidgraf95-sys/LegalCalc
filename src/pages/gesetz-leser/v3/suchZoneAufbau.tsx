@@ -58,13 +58,20 @@ export function suchZoneAufbau(a: {
   // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg. Herleitung und die
   // Messung, die «Spalte aufziehen» ausschloss: `./LeserTrefferBlatt`.
   const blattAmFeld = a.istXl && a.sucheAktiv;
+  // Ä78/V5 (Nachzug 17.8.2026): EIN Ausdruck entscheidet, ob die Liste unter dem
+  // Feld hängt — er speist das Blatt UND das Schweigen der Zähler-Zeile darüber
+  // (Herleitung am Prop `blattOffen` in `./SuchZone`). Zwei getrennte Bedingungen
+  // für dieselbe Lage könnten auseinandergehen, und das Ergebnis wäre genau der
+  // doppelte Zähler, den Ä78 gemeldet hat (§5).
+  const trefferBlattOffen = blattAmFeld && a.trefferBlatt.offen;
   return (
     <SuchZone suchFeld={a.blattOffen ? undefined : a.suchFeld} sucheAktiv={a.sucheAktiv}
       bestimmungen={a.bestimmungen} fundstellen={a.fundstellen}
       bestimmungsWort={a.bestimmungsWort}
       // Die eine Geste «zeig mir die Treffer»: Blatt am Feld @≥1024 px, sonst Sheet.
       onListe={() => { if (a.istXl) a.trefferBlatt.oeffne(); else a.onSheet(); }}
-      blatt={blattAmFeld && a.trefferBlatt.offen
+      blattOffen={trefferBlattOffen}
+      blatt={trefferBlattOffen
         ? <LeserTrefferBlatt onSchliessen={a.trefferBlatt.schliesse} liste={a.liste} />
         : undefined} />
   );

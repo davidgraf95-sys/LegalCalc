@@ -39,12 +39,13 @@ function ohneKommentare(quelle: string): string {
 
 const QUELLE = 'src/pages/gesetz-leser/v3/useElementBreite.ts';
 const KOPF = 'src/pages/gesetz-leser/v3/kopfStufen.ts';
+/** V4: die Ist-Hülle, gegen die `SCHWELLE_SPALTE` deklariert doppelt liegt. */
+const IST_ZUSTAND = 'src/pages/gesetz-leser/inhalt-zustand.tsx';
 
 describe('A-8 · EINE Breiten-Quelle (v3/useElementBreite)', () => {
   it('die Modi liegen an den heutigen Schwellen 640 und 900 — byte-gleich', () => {
     expect(SCHWELLE_S).toBe(640);
     expect(SCHWELLE_D).toBe(900);
-    expect(SCHWELLE_SPALTE).toBe(1024);
     expect(modusFuer(0)).toBe('sheet');
     expect(modusFuer(SCHWELLE_S - 1)).toBe('sheet');
     expect(modusFuer(SCHWELLE_S)).toBe('s');
@@ -65,6 +66,38 @@ describe('A-8 · EINE Breiten-Quelle (v3/useElementBreite)', () => {
   it('die Kopf-Schwellen sind Weiterleitungen, keine zweiten Zahlen', () => {
     expect(KOPF_SCHWELLE_MINI).toBe(SCHWELLE_S);
     expect(KOPF_SCHWELLE_KOMPAKT).toBe(SCHWELLE_D);
+  });
+
+  // ── V4 (Nachzug 17.8.2026) · DIE SPALTEN-SCHWELLE GEGEN IHRE HERKUNFT ──────
+  // Hier stand `expect(SCHWELLE_SPALTE).toBe(1024)` — eine Tautologie: die Zahl
+  // gegen sich selbst, in derselben Datei geändert und in derselben Datei
+  // bestätigt. Der Architektur-Review 17.8.2026 hat sie als Tor gemeldet, das
+  // nicht scheitern kann (§6.7).
+  // `SCHWELLE_SPALTE` ist eine DEKLARIERTE Doppelung: die Ist-Hülle entscheidet
+  // dieselbe Frage in `inhalt-zustand.tsx` (`PANE_BREIT_PX` für die Pane-Wurzel,
+  // `matchMedia('(min-width: 1024px)')` für den Viewport), und die V3-Hülle darf
+  // von dort nicht importieren (Fundament-Sonde). Also wird nicht die Zahl
+  // wiederholt, sondern die QUELLE gelesen — verschiebt die Ist-Hülle ihre
+  // Schwelle, wird dieser Test rot statt die Doppelung still auseinanderzulaufen.
+  // Rot zu bekommen: `SCHWELLE_SPALTE` auf 1023 setzen (oder `PANE_BREIT_PX`
+  // bzw. die matchMedia-Zahl in `inhalt-zustand.tsx` verschieben).
+  it('V4 · SCHWELLE_SPALTE stimmt mit der Ist-Hülle überein (gelesen, nicht wiederholt)', () => {
+    const ist = ohneKommentare(LIES(IST_ZUSTAND));
+    const paneBreit = /\bPANE_BREIT_PX\s*=\s*(\d+)\b/.exec(ist);
+    const mediaQuery = /matchMedia\('\(min-width:\s*(\d+)px\)'\)/.exec(ist);
+    // Positiv-Sonden zuerst: ohne sie prüfte ein Umbenennen in der Ist-Hülle
+    // gegen `null` und der Test bliebe stumm grün.
+    expect(paneBreit, '`PANE_BREIT_PX = <Zahl>` steht nicht mehr in inhalt-zustand.tsx').not.toBeNull();
+    expect(mediaQuery, 'die matchMedia-Schwelle steht nicht mehr in inhalt-zustand.tsx').not.toBeNull();
+    expect(Number(paneBreit![1]), 'Pane-Schwelle der Ist-Hülle weicht ab').toBe(SCHWELLE_SPALTE);
+    expect(Number(mediaQuery![1]), 'Viewport-Schwelle der Ist-Hülle weicht ab').toBe(SCHWELLE_SPALTE);
+  });
+
+  // V4 · und der tote Export ist wirklich weg (Rückbau, §17). Rot zu bekommen:
+  // `spalteFuer` in `useElementBreite.ts` wieder anlegen, ohne ihn zu rufen.
+  it('V4 · kein toter Export `spalteFuer` mehr in der Breiten-Quelle', () => {
+    expect(/\bexport function spalteFuer\b/.test(ohneKommentare(LIES(QUELLE))),
+      '`spalteFuer` ist zurück — ein Export ohne Aufrufer').toBe(false);
   });
 
   it('GENAU EINE Datei trägt die Zahlen — `kopfStufen.ts` nennt sie nicht mehr', () => {
