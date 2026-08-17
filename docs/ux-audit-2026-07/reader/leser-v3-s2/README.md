@@ -116,6 +116,33 @@ gemessen: 5.10 : 1 hell (`#6F6B61` auf `#FCFAF6`), 5.52 : 1 dunkel (`#918D83` au
 `#16150F`) — über der AA-Schwelle 4.5 : 1. Die Frage ist nicht die Norm, sondern
 das Gefühl am Objekt.
 
+## Vereinigung mit H3 (17.8.)
+Nach dem Rebase auf H3 rissen fünf Tore — S2×H3-Wechselwirkungen, keine
+S2-Regression (Nullproben je Punkt).
+- **R1 Schlankheit:** `ArtikelBody.tsx` 1029 Z. (Baseline 926, erlaubt 1018).
+  Nullprobe: vor dem Rebase 1009 (grün), H3-main 962 — die Summe reisst. Tabellen-
+  Gruppe nach `ArtikelTabellen.tsx` + `tarifText.ts`; Baseline NICHT erhöht.
+- **R2 Shard-Gruppen:** H3 regenerierte die JSON, der Rebase verlor S2s Eintrag
+  (102 gesammelt / 101 zugeordnet). Per Generator neu, nicht von Hand.
+- **R3 Fall (e) @390:** kein Sheet-Defekt, ein Messpunkt-Defekt.
+  `scrollIntoViewIfNeeded` hält bei scrollY 682 (Artikel y 392.4, Streifen −12.6);
+  der Anker-Sprung, den ein Leser erzeugt, liefert y 192.4 → **187.4 px Streifen**.
+  Spec auf die Sache gezogen und dabei verschärft: ≥ 120 px statt «> 0 px».
+- **R4 PX-Baseline:** die 44 px liegen **ganz im Beiwerk** (V1 Leitentscheide
+  121.59 px, V3 Fassung 77.59 px — H3 verlegte die Leitentscheide in den Zähler).
+  Ohne Beiwerk sind beide Hüllen subpixelgleich (647.328125 / 1058.546875). Also
+  Beiwerk aus der Messung statt Baseline nachziehen — **ein Neuaufnehmen konnte
+  hier nicht helfen**, die Spec hält eine Baseline für beide Hüllen, der Fehler
+  kippte nur die Seite. Dabei fiel ein zweiter Rest des 1-px-Wacklers auf: gleiche
+  Höhe, verschiedene **Subpixel-Phase** (V1 0.9375, V3 0.1719) → jetzt gleichgesetzt.
+- **R5 Messfenster:** `MESS_HOEHE_PX` 1800 → 2400. Der Wächter meldete 1800.27 px
+  in einem von zwei Läufen; H3 + Beiwerk-Zone schieben den Artikel-Anfang nach
+  unten. Eine Fensterhöhe, keine Toleranz — `maxDiffPixelRatio` 0.001 unverändert.
+
+**Baseline zweimal innerhalb S2 — beide deklariert:** nach der Typografie, dann
+nach der Vereinigung mit H3. Neue Abmessungen 640×648 (StPO 429), 640×1059
+(OR 336c); PX 5/5 grün, warm, `workers=1`.
+
 ## Dateien
 `stpo-429-{390,1440,720}-{ist,v1,v2}.png` (9) · `or-336c-{…}.png` (9) ·
 `dunkel-{stpo-429,or-336c}-1440-v1.png` (2) · `bogen.html` · diese Datei ·
@@ -124,4 +151,6 @@ das Gefühl am Objekt.
 `nachher/{stgb-66a-verweise-1440-hell,stgb-66a-verweise-1440-dunkel,or-336c-lit-cbis-1440-hell,or-336c-lit-cbis-390-hell,or-sektionskoepfe-1440-hell,zgb-684-marginalien-1440-hell}-NACHZUG.png`
 (6, der Prüfer-Nachzug) ·
 `vorher/px-{or-336c,stpo-429}-VORHER-s1-baseline.png` (2, die abgelöste
-PX-Baseline).
+PX-Baseline) · `vorher/px-{or-336c,stpo-429}-VORHER-s2-nachzug.png` (2) ·
+`vorher/px-{or-336c,stpo-429}-VORHER-s2-vor-h3.png` (2, die S2-Baseline vor der
+Vereinigung mit H3 — zweites Vorher).
