@@ -1,5 +1,5 @@
 import { grundartMeta } from '../helpers';
-import { UebersichtBox } from './UebersichtBox';
+import { UebersichtBox, UebersichtTafel } from './UebersichtBox';
 import { uebersichtsAngaben } from './uebersichtAngaben';
 import type { BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
@@ -46,17 +46,27 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Die `aufgehoben`-Grenze bleibt, wo sie seit B5 liegt: in der reinen Funktion,
 // weil sie eine fachliche Grenze ist (§8) und keine Anordnungsfrage.
 
-export function LeserUebersicht({ m, bestimmungsWort }: {
+// ── H4-VORBEREITUNG II · EINE ABLEITUNG, ZWEI ORTE ──────────────────────────
+// Der Steckbrief war bis hierher an die Seitenleiste gebunden und mit ihr weg
+// (gemessen @1440 mit eingeklappter Gliederung: `[data-v3-uebersicht]` 1 → 0).
+// `form` sagt jetzt, in welcher GESTALT er erscheint — die Klappe der Leiste oder
+// die Tafel des Panel-Reiters. Was er SAGT, entsteht weiterhin genau einmal, in
+// dieser Funktion, aus `uebersichtsAngaben` (§5): eine zweite Ableitung wäre
+// genau die zweite Wahrheit, gegen die die ganze Datei gebaut ist.
+export function LeserUebersicht({ m, bestimmungsWort, form = 'klappe' }: {
   m: LeserV3Modell;
   /** Zähl-Substantiv aus dem Grundart-Register (§5, EINE Ableitung im Rahmen).
    *  B8: der Typ kommt aus `./erlassAnsicht`. */
   bestimmungsWort: BestimmungsWort;
+  /** `klappe` = Seitenleiste (Zone A) · `tafel` = offener Block im Panel-Reiter. */
+  form?: 'klappe' | 'tafel';
 }) {
   const { erlass, eintraege } = m;
   if (!erlass) return null;
   const meta = grundartMeta(erlass.key);
+  const Gestalt = form === 'tafel' ? UebersichtTafel : UebersichtBox;
   return (
-    <UebersichtBox angaben={uebersichtsAngaben({
+    <Gestalt angaben={uebersichtsAngaben({
       erlass,
       kopf: m.kopf,
       currency: m.currency?.[erlass.key],

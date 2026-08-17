@@ -69,13 +69,20 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('(b) drei Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
+  // H4-Vorbereitung II (deklarierte fachliche Änderung, §6.3): VIER Reiter —
+  // «Steckbrief» steht seither vorn, weil der Erlass-Steckbrief bei
+  // eingeklappter Gliederung sonst gar nicht mehr im DOM ist (gemessen @1440:
+  // `[data-v3-uebersicht]` 1 → 0). Was diese Sonde prüft, ist unverändert: die
+  // Reiter-Leiste hält ihr `tablist`-Versprechen mit Maus UND Pfeiltasten.
+  test('(b) vier Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
 
     const reiter = page.locator('[data-v3-panel] [role="tab"]')
-    await expect(reiter).toHaveCount(3)
+    await expect(reiter).toHaveCount(4)
+    // Der VOREINGESTELLTE Reiter bleibt «Entscheide» — die neue Ordnung ändert,
+    // was neben was steht, nicht, was der Öffner zeigt (`oeffne('entscheide')`).
     await expect(page.locator('[data-v3-panel-reiter-inhalt="entscheide"]')).toBeVisible()
 
     await page.locator('[data-v3-panel-reiter="aenderungen"]').click()
@@ -86,9 +93,9 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await page.locator('[data-v3-panel-reiter="aenderungen"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
     await expect(page.locator('[data-v3-panel-reiter-inhalt="materialien"]')).toBeVisible({ timeout: 20_000 })
-    // Home springt zurück auf den ersten.
+    // Home springt zurück auf den ersten — seit H4-Vorbereitung II «Steckbrief».
     await page.locator('[data-v3-panel-reiter="materialien"]').press('Home')
-    await expect(page.locator('[data-v3-panel-reiter="entscheide"]')).toHaveAttribute('aria-selected', 'true')
+    await expect(page.locator('[data-v3-panel-reiter="steckbrief"]')).toHaveAttribute('aria-selected', 'true')
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 

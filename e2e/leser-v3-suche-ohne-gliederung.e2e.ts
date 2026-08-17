@@ -316,3 +316,68 @@ test('(g) Split-Pane: schmale Panes behalten das Bottom-Sheet, und nie beides', 
   await expect(page.locator('[data-pane="primaer"] [data-v3-treffer-weg]')).toBeVisible({ timeout: 15000 })
   await expect(page.locator('[data-v3-treffer-blatt]'), 'Blatt im schmalen Pane').toHaveCount(0)
 })
+
+// ═══ Ä84 (Ästhetik-Prüfer 17.8.2026) · EIN BLATT-KOPF-RASTER FÜR DREI BREITEN ══
+//
+// GEMESSEN am Ist-Stand (StPO, «Entschädigung», chromium, Projekt `leser-v3`):
+//
+//   Breite                Blatt-Kopf                        Suchbereich-Segment
+//   ──────────────────────────────────────────────────────────────────────────
+//   D-Blatt @1440         «Treffer» | «✕ ausblenden»              270 px
+//   H-Blatt @390          NUR «↑ Anfang», rechts, x = 308         358 px
+//   Split/Sheet @720      NUR «↑ Anfang», rechts, x = 638         688 px
+//
+// Zwei Befunde in einer Zone: der Kopf des schmalen Blattes trug ein EINZELNES,
+// rechtsbündiges Element über einer leeren linken Hälfte, und das Segment — für
+// die 18-rem-Leiste kalibriert — dehnte sich auf das 2,5-fache seiner Breite.
+//
+// DIE GEPRÜFTE REGEL: **Auf allen drei Breiten dasselbe Raster.** Kein Element
+// steht allein im Blatt-Kopf, und das Segment behält seine Kalibrierung.
+//
+// ROT ZU BEKOMMEN (§6.7): in `v3/LeserSeitenleiste.tsx` `kopfZeile` auf `true`
+// festnageln ⇒ (h) findet das einzelne Kind wieder. In `v3/SuchBereichWahl.tsx`
+// die Breiten-Klasse `w-[min(100%,18rem)]` entfernen ⇒ (h) meldet 688 px.
+for (const breite of [390, 720]) {
+  test(`(h) @${breite}: kein allein stehendes Element im Blatt-Kopf, Segment auf Mass`, async ({ page }) => {
+    await page.setViewportSize({ width: breite, height: 844 })
+    await warteLeser(page)
+    // Ohne Spalte trägt die Such-Zone das Feld; der Weg zur Liste ist das Sheet.
+    await suche(page)
+    await page.locator('[data-v3-treffer-weg]').click()
+    const leiste = page.locator('[data-v3-leiste]')
+    await expect(leiste).toBeVisible({ timeout: 15000 })
+    // POSITIV-Vorbedingung: es ist wirklich die TREFFERLISTE im Blatt, nicht der
+    // Baum — sonst prüfte alles Weitere den falschen Zustand (§6.7).
+    await expect(leiste.locator('[data-treffer-liste]')).toHaveCount(1)
+
+    const befund = await page.evaluate(() => {
+      const sockel = document.querySelector('[data-v3-leiste-baumkopf]') as HTMLElement | null
+      const seg = document.querySelector('[data-v3-leiste] [data-v3-suchbereich]') as HTMLElement | null
+      const scroller = document.querySelector('[data-v3-leiste-scroller]') as HTMLElement | null
+      return {
+        // Anzahl der Elemente, die der klebende Sockel wirklich rendert.
+        sockelKinder: sockel ? sockel.children.length : 0,
+        sockelHoehe: sockel ? Math.round(sockel.getBoundingClientRect().height) : 0,
+        anfangImBlatt: document.querySelectorAll('[data-v3-leiste] [data-v3-anfang]').length,
+        segBreite: seg ? Math.round(seg.getBoundingClientRect().width) : null,
+        segEltern: seg?.parentElement ? Math.round(seg.parentElement.getBoundingClientRect().width) : null,
+        ueberlauf: scroller ? scroller.scrollWidth - scroller.clientWidth : 0,
+      }
+    })
+
+    // (1) Kein einzelnes Element im Kopf. Entweder die Zeile ordnet mehrere
+    //     Dinge — dann steht sie — oder sie entsteht gar nicht erst.
+    expect(befund.sockelKinder,
+      `der Blatt-Kopf trägt GENAU EIN Element (Höhe ${befund.sockelHoehe} px)`).not.toBe(1)
+    expect(befund.anfangImBlatt, '«↑ Anfang» steht allein im Treffer-Blatt').toBe(0)
+
+    // (2) Das Segment behält seine Kalibrierung (18 rem = 288 px), auch wo mehr
+    //     Platz da ist. Die 1-px-Toleranz fängt das Sub-Pixel-Runden.
+    expect(befund.segBreite, 'Suchbereich-Segment ohne Deckel').not.toBeNull()
+    expect(befund.segBreite!,
+      `Segment ${befund.segBreite} px in ${befund.segEltern} px Behälter`).toBeLessThanOrEqual(289)
+    // Und es schrumpft mit, wo weniger Platz ist — sonst risse es das Blatt auf.
+    expect(befund.segBreite!).toBeLessThanOrEqual((befund.segEltern ?? 0) + 1)
+    expect(befund.ueberlauf, 'das Blatt scrollt waagrecht').toBeLessThanOrEqual(1)
+  })
+}

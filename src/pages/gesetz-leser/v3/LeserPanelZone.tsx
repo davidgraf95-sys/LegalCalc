@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties } from 'react';
+import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { setzeBezugKantone, setzeBezugKlassen, setzeBezugZeit, useBezugKantone, useBezugKlassen } from '../leserOptionen';
 import type { BestimmungsWort } from './erlassAnsicht';
@@ -75,7 +75,7 @@ const BLATT_ANTEIL = 55;
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, bestimmungsWort, aktArtikel,
+  artikelLabel, bestimmungsWort, aktArtikel, steckbrief,
 }: {
   /** Gestalt des Blatts — `panelForm(stufe, vollflaechig)` im Rahmen entscheidet. */
   form: 'rechts' | 'unten';
@@ -96,6 +96,10 @@ export function LeserPanelZone({
   artikelLabel: string | null;
   bestimmungsWort: BestimmungsWort;
   aktArtikel: string | null;
+  /** Der Erlass-Steckbrief als Tafel — oder `null`, wenn er gerade OFFEN in der
+   *  Leiste steht. Die Weiche trifft der Rahmen (er kennt Spalte und Blatt),
+   *  nicht diese Datei (§3): sie ordnet an, sie entscheidet nicht. */
+  steckbrief?: ReactNode;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -127,6 +131,22 @@ export function LeserPanelZone({
   const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
 
   const inhalt = {
+    // ── Steckbrief (H4-Vorbereitung II) ──────────────────────────────────────
+    // `null` heisst hier NICHT «kein Steckbrief», sondern «er steht bereits
+    // sichtbar in der Leiste» — der Rahmen entscheidet das, weil nur er die Lage
+    // kennt (Spalte offen? Gliederungs-Blatt offen?). Der Reiter bleibt in beiden
+    // Fällen an derselben Stelle: eine Reiter-Leiste, die je nach Fensterbreite
+    // drei oder vier Fächer hat, wäre schlechter vorhersagbar als eine, die
+    // immer vier hat und in einem davon auf den offenen Ort verweist (Kap. 4d,
+    // «drei benannte Reiter sind vorhersagbar»).
+    // KEIN zweiter Steckbrief: die Zusage «die Warnung steht genau einmal»
+    // (Ä28) hängt daran, dass die Angaben zu jedem Zeitpunkt an GENAU EINER
+    // Stelle im DOM stehen.
+    steckbrief: steckbrief ?? (
+      <p data-v3-panel-steckbrief-verweis className="px-2.5 py-2 text-body-s leading-snug text-ink-500">
+        Der Steckbrief steht offen in der Gliederungs-Leiste — dort unter «Übersicht».
+      </p>
+    ),
     entscheide: (
       <PanelEntscheide
         kanten={aktArtikel ? bezuege.bezuegeFuer(aktArtikel)?.kanten : undefined}

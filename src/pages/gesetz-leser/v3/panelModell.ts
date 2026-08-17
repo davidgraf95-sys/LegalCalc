@@ -30,14 +30,34 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 // `lib/rechtsprechung/bezuege`. H3 verschiebt den ZEITPUNKT und den ORT der
 // Darstellung, nicht die Rechnung (§5).
 
-export type PanelReiter = 'entscheide' | 'aenderungen' | 'materialien';
+export type PanelReiter = 'steckbrief' | 'entscheide' | 'aenderungen' | 'materialien';
 
 /** Reiter-Ordnung UND Beschriftung aus EINER Quelle (§5): ein Reiter, der hier
  *  fehlt, existiert nirgends; einer, der hier steht, ist überall gleich benannt.
- *  Reihenfolge = die Reihenfolge der Fragen am Gesetzesartikel: wie wird er
- *  ausgelegt (Entscheide) · wie ist er geworden (Änderungen) · woher kommt er
- *  (Materialien). */
+ *  Reihenfolge = die Reihenfolge der Fragen: wo bin ich (Steckbrief) · wie wird
+ *  der Artikel ausgelegt (Entscheide) · wie ist er geworden (Änderungen) · woher
+ *  kommt er (Materialien).
+ *
+ *  ── WARUM SEIT H4-VORBEREITUNG II VIER STATT DREI ──────────────────────────
+ *  Der Erlass-Steckbrief lebte ausschliesslich in der Seitenleiste und war mit
+ *  ihr weg: @1440 mit eingeklappter Gliederung sank `[data-v3-uebersicht]`
+ *  gemessen von 1 auf 0 — nicht unsichtbar, sondern nicht im DOM, also auch für
+ *  Ctrl+F und Screenreader fort. Das Panel ist die einzige Fläche, die es auf
+ *  JEDER Breite gibt (Blatt überall, Kap. 4d), und es heisst bereits
+ *  «Rechtsprechung & Kontext» — der Steckbrief ist genau dieser Kontext.
+ *
+ *  «Steckbrief» und nicht «Kontext» als Etikett: «Kontext» wiederholte den Namen
+ *  des Behälters (dieselbe Doppelnennung, die Ä10 an der Leiste abgeräumt hat),
+ *  und «Steckbrief» ist das Haus-Wort für genau diesen Block — es steht so in
+ *  `uebersichtAngaben.ts` und als `.lc-v3-steckbrief` in `index.css` (§5).
+ *
+ *  ZUERST, nicht zuletzt: er beantwortet die Ankunfts-Frage, und in der Leiste
+ *  steht die Box aus demselben Grund über dem Baum. Der VOREINGESTELLTE Reiter
+ *  bleibt davon unberührt — `usePanelZustand` startet auf `entscheide`, und die
+ *  beiden Öffner im Rahmen rufen `oeffne('entscheide')` ausdrücklich. Die
+ *  Ordnung ändert also, was NEBEN was steht, nicht, was man zuerst sieht. */
 export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
+  { id: 'steckbrief', label: 'Steckbrief' },
   { id: 'entscheide', label: 'Entscheide' },
   { id: 'aenderungen', label: 'Änderungen' },
   { id: 'materialien', label: 'Materialien' },
@@ -54,6 +74,7 @@ export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
  * nicht am Erlass (§5, eine Quelle je Frage).
  */
 export function reiterTitel(id: PanelReiter, wort: BestimmungsWort): string {
+  if (id === 'steckbrief') return 'Herkunft, Stand und Aufbau dieses Erlasses';
   if (id === 'entscheide') return `Gerichtsentscheide zu ${bestimmungDativ(wort)}`;
   if (id === 'aenderungen') return 'Änderungserlasse dieses Erlasses';
   return 'Botschaften und Vernehmlassungen zu diesem Erlass';

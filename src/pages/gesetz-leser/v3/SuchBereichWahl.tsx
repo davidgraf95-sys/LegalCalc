@@ -34,8 +34,22 @@ export function SuchBereichWahl({
   setzeWert: (b: SuchBereich) => void;
 }) {
   return (
+    // ── Ä84 (Ästhetik-Prüfer 17.8.2026) · DAS SEGMENT WÄCHST NICHT MIT ────────
+    // Das Segment ist für die 18-rem-Leiste kalibriert (vier kurze Wörter, je
+    // `flex-1`). Ohne Deckel dehnt es sich auf die Breite seines Behälters —
+    // gemessen 17.8.2026 an der StPO mit «Entschädigung»:
+    //
+    //   D-Blatt @1440 (Blatt am Feld, `w-72`)   270 px   ← die kalibrierte Breite
+    //   H-Blatt @390  (Bottom-Sheet)            358 px
+    //   Split/Sheet @720                        688 px   ← 2,5 × so breit
+    //
+    // Vier Schalter über 688 px sind keine Werkzeugzeile mehr: die Trefferliste
+    // darunter bleibt schmal, und das Segment liest sich als Reiter-Leiste einer
+    // Zone, die es nicht gibt. `min(100%, 18rem)` gibt allen drei Blättern
+    // DASSELBE Raster und lässt das schmalste unangetastet — der Deckel greift
+    // erst, wo mehr Platz da ist als die Kalibrierung braucht.
     <div data-v3-suchbereich role="radiogroup" aria-label="Suchbereich"
-      className="flex flex-wrap items-center gap-0.5 rounded-md bg-paper-sunken/50 p-0.5">
+      className="flex w-[min(100%,18rem)] flex-wrap items-center gap-0.5 rounded-md bg-paper-sunken/50 p-0.5">
       {REIHE.map((b) => {
         const aktiv = wert === b;
         return (
