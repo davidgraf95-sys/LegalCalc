@@ -648,27 +648,63 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
 
               S2 · Ä26 (Phantom-Lücke, Ästhetik-Prüfer 17.8.2026): die Reservierung
               stand bisher unter JEDEM Artikel JEDES Erlasses — auch dort, wo nie eine
-              Fassungs-Zeile eintreffen kann. Sie folgt jetzt dem Datenmodell: der
-              Historie-Shard existiert AUSSCHLIESSLICH auf Bundesebene. Über den ganzen
-              Korpus gemessen (17.8.2026, `public/normtext/historie/` gegen
-              `register.json`): 209 Shards, alle Bund; **kein einziger** der 1231
-              Kanton-Erlasse trägt einen — der Loader hält denselben Satz fest
-              («404 = kein Shard … bzw. Kanton», `historie-laden.ts`). `ebene`
-              entscheidet also exakt und OHNE neuen Datenweg, und weil sie am schon
-              vorhandenen `erlass`-Prop hängt, wirkt die Regel in BEIDEN Hüllen
-              (Strang S) — eine neue Prop hätte V3 nicht erreicht (`v3/**` ist fremde
-              Bau-Fläche, Kollision H2b/H3).
-              Wirkung, gemessen an BS-640.100: 278 leere Slots × 40 px = **11 120 px**
-              Phantom-Raum verschwinden; korpusweit fällt die Reservierung bei
-              **1247 von 1469** Erlassen (85 %) weg. REST-ÜBERRESERVIERUNG, benannt
-              statt versteckt: 29 Bund-Erlasse ohne Shard (16 ohne jede Fussnote,
-              13 mit Fussnoten aber ohne Shard) reservieren weiter — das aufzulösen
-              bräuchte ein Shard-Manifest im Prerender-Pfad (eigener Schritt,
-              Datenhaltung). Der Token heisst seit S2 `min-h-beiwerk` (Wert
-              unverändert 1.5 rem = die gemessenen 24 px der einen Chip-Zeile): er
-              reserviert den Boden der Beiwerk-Zone, nicht «eine Historie-Zeile». */}
+              Fassungs-Zeile eintreffen kann (auf BS-640.100 sind das 292 von 292).
+              Sie folgt jetzt dem Datenmodell, und zwar ARTIKELWEISE.
+
+              DIE FRAGE, die die Reservierung stellen MUSS: «kann in DIESEM Slot je
+              eine Fassungs-Zeile eintreffen?» Sie ist am Datenmodell exakt
+              beantwortbar, weil der Erzeuger sie selbst so stellt:
+              `scripts/normtext/historie-generieren.ts` baut die Shard-Einträge
+              AUSSCHLIESSLICH aus den gespeicherten Fussnoten des jeweiligen Artikels
+              (`artikel[<token>].fussnoten` → `baueArtikelHistorie`). Ein Artikel ohne
+              Fussnote kann darum keinen Eintrag bekommen — das ist eine
+              GENERATOR-INVARIANTE, keine Korpus-Zufälligkeit. Empirisch gegengeprüft
+              (17.8.2026, alle 209 Shards gegen alle Struktur-Sidecars): 24 511
+              Artikel, 13 093 mit Historie-Eintrag, davon **0** ohne Fussnote.
+
+              KEINE EBENEN-WEICHE. Ein früherer S2-Zwischenstand hing die Reserve an
+              `erlass.ebene === 'bund'`. Das traf den Korpus von heute (209 Shards,
+              alle Bund — der Generator liest nur `struktur/bund`), war aber ein
+              ERLASS-SONDERPFAD in einer Komponente, die erlass-neutral rendern soll:
+              die Eigenschaft heisst «kann eine Fassungs-Zeile tragen», nicht «ist
+              Bundesrecht». Genau diesen Fehler hat S1-B3 an derselben Mechanik schon
+              einmal vermieden (`zaehleAenderungsvermerke`, berechnungen.ts: «das
+              entscheidet das DATENMODELL, nicht die Herkunft»); wäre `ebene`
+              stehengeblieben, hätte der Tag, an dem der Generator Kantonsrecht
+              aufnimmt, eine stille Phantom-Lücke erzeugt statt eines Testfehlers.
+
+              WARUM ARTIKELWEISE UND NICHT ERLASSWEISE: die Shard-Existenz (404 vs.
+              Treffer) ist erst NACH dem idle-Fetch bekannt — also genau dann, wenn
+              die Zeile schon eintrifft. Eine Reserve, die auf diese Antwort wartet,
+              käme zu spät und müsste bei 404 wieder einfallen (ein Sprung nach oben,
+              den es heute nicht gibt). Die Fussnoten dagegen kommen mit dem
+              Struktur-Sidecar, aus dem auch der Apparat direkt darunter rendert
+              (`fussAnzeige`, s. u.) — Reserve und Apparat erscheinen im SELBEN Paint,
+              der spätere Shard-Resolve füllt nur noch. Die Reserve ist damit
+              MONOTON: sie verschwindet nie wieder.
+
+              `historie` steht als zweite Bedingung im ODER, obwohl die Invariante ihn
+              überflüssig macht: träfe je ein Eintrag ohne Fussnote ein, bekäme der
+              Slot trotzdem seinen Boden. Die Regel kann so nur überreservieren, nie
+              einen Sprung durchlassen (§1 — lieber die Prüfung verdoppeln).
+
+              WIRKUNG, gemessen (17.8.2026): korpusweit reservieren 17 547 statt
+              25 403 Artikel (−31 %); auf BS-640.100 fallen 278 von 292 Slots weg
+              (95 %), auf dem OR 1092 von 1686, auf der StPO 346 von 480.
+              REST-ÜBERRESERVIERUNG, benannt statt versteckt: 4454 Artikel tragen
+              Fussnoten, aber keinen Eintrag (25 % der reservierenden) — darunter die
+              14 Fussnoten-Artikel von BS-640.100, für die es heute gar keinen Shard
+              geben kann. Das enger zu ziehen bräuchte ein Shard-Manifest im
+              Prerender-Pfad (eigener Schritt, Datenhaltung). VERWORFEN als engere
+              Regel: «Artikel trägt eine `kl:'A'`-Fussnote» reserviert nur 13 046,
+              verfehlt aber 182 Artikel MIT Eintrag (u. a. ZGB Art. 159, 181, 451) —
+              unsound, das wären 182 echte Sprünge.
+
+              Der Token heisst seit S2 `min-h-beiwerk` (Wert unverändert 1.5 rem = die
+              gemessenen 24 px der einen Chip-Zeile): er reserviert den Boden der
+              Beiwerk-Zone, nicht «eine Historie-Zeile». */}
           <div {...{ [SUCH_META]: '' }} data-hist-slot
-            className={erlass.ebene === 'bund' ? 'mt-4 min-h-beiwerk' : historie ? 'mt-4' : undefined}>
+            className={fussAnzeige.length > 0 || historie ? 'mt-4 min-h-beiwerk' : undefined}>
             <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
           </div>
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
