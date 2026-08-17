@@ -28,10 +28,15 @@ describe('Overflow-Regel der V3-Kopfzeile (Kap. 4a)', () => {
     expect(kopfStufe(1440)).toBe('voll');
   });
 
-  it('die Reihenfolge des Wegfalls ist «Gesetze» zuerst, dann der Volltitel', () => {
-    expect(kopfElemente('voll')).toMatchObject({ sektion: true, volltitel: true });
-    expect(kopfElemente('kompakt')).toMatchObject({ sektion: false, volltitel: false });
-    expect(kopfElemente('mini')).toMatchObject({ sektion: false, volltitel: false });
+  // A-2 (David 17.8.2026): das Feld hiess `sektion` und stand für die eine Krume
+  // «Gesetze ›». Seit der Leisten-Verschmelzung trägt die Kopfzeile die ganze
+  // Kette «Gesetze › Bund ›» — ein Feld für beide führenden Stufen, darum
+  // `krume`. Deklarierte fachliche Anpassung (§6.3), kein Aufweichen: geprüft
+  // wird dieselbe Aussage über dieselbe Zone.
+  it('die Reihenfolge des Wegfalls ist «Gesetze › Bund ›» zuerst, dann der Volltitel', () => {
+    expect(kopfElemente('voll')).toMatchObject({ krume: true, volltitel: true });
+    expect(kopfElemente('kompakt')).toMatchObject({ krume: false, volltitel: false });
+    expect(kopfElemente('mini')).toMatchObject({ krume: false, volltitel: false });
   });
 
   it('Kürzel, laufender Artikel und «Ansicht» fallen bei KEINER Breite weg', () => {

@@ -110,6 +110,9 @@ export function SekundaerPane(props: SekundaerPaneProps) {
       >
         <PaneKopf
           label={label} stand={stand} breadcrumb={kopf?.breadcrumb} onBreadcrumb={navigiere} artikel={kopf?.artikel} rolle="sekundaer"
+          // A-2: trägt der Pane-Inhalt seine Kopfzeile selbst, bleibt hier die
+          // reine Fenster-Steuerung (Vertrag `KopfDaten.kopfzeileSelbst`).
+          nurSteuerung={kopf?.kopfzeileSelbst}
           onSchliessen={onSchliessen} onHauptfenster={onHauptfenster} onTeilen={onTeilen}
           onLinks={onLinks} onRechts={onRechts} kannLinks={kannLinks} kannRechts={kannRechts}
           ziehbar={ziehbar} onDragStart={onDragStart} onDragEnd={onDragEnd}

@@ -12,19 +12,38 @@ import { SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
 // (§2/§6.7) — genau das Argument, mit dem `kopfStufen` entstanden ist.
 //
 // ── RISIKO R1 / LEHRE LM-003, WÖRTLICH MITGENOMMEN ──────────────────────────
-// `--leser-kopf-h` behält seine Ist-BEDEUTUNG (Topbar + App-Leiste). Sie
+// `--leser-kopf-h` behält seine Ist-BEDEUTUNG (Topbar + Pane-Titelleiste). Sie
 // umzudeuten hätte das geteilte `GliederungSheet` still verstellt, das daraus
-// seine Höhe rechnet (§5: eine Variable, eine Bedeutung). `--nt-stick` speist
-// sich daraus und ist damit automatisch richtig, wenn die Kopfzeile ihre Stufe
-// wechselt — genau das fehlte im Ist-Stand. Wer hier eine Zeile ändert,
-// verschiebt jeden Artikel-Sprung; die Werte der Such-Zone kommen darum aus der
-// Zone selbst (`./SuchZone`, B9) und nicht als Literal von hier.
+// seine Höhe rechnet (§5: eine Variable, eine Bedeutung). Wer hier eine Zeile
+// ändert, verschiebt jeden Artikel-Sprung; die Werte der Such-Zone kommen darum
+// aus der Zone selbst (`./SuchZone`, B9) und nicht als Literal von hier.
+//
+// ── A-2 (David 17.8.2026) · DAS CHROME ÜBER DEM KOPF IST GESCHRUMPFT ────────
+// Bis 17.8. stand über der klebenden V3-Kopfzeile die App-Krumen-Leiste (37 px)
+// und sagte dasselbe noch einmal; `--leser-v3-kopf-top` und `--nt-stick`
+// rechneten sie darum mit. Seit der Leisten-Verschmelzung trägt die Seite ihre
+// Kopfzeile selbst (`KopfDaten.kopfzeileSelbst`) und die Leiste entfällt:
+//  · EINZELANSICHT — über dem Kopf steht nur noch die Topbar (`APP_TOPBAR_H`).
+//  · IM PANE — unverändert: die Pane-Titelleiste bleibt (sie trägt die
+//    Fenster-Steuerung, die keine Inhaltsseite tragen kann) und liegt AUSSERHALB
+//    des Pane-Scrollers, `--leser-v3-kopf-top` ist dort weiterhin 0.
+// `--nt-stick` folgt daraus automatisch — der Sprung-Offset ist genau um die
+// weggefallene Leiste kleiner, und das ist der ganze Punkt (Risiko R1: eine
+// Quelle für «wie hoch klebt es»). Gemessen 17.8.2026 @1440 StPO: Kopf-Unterkante
+// 159 → 122 px, `#art-429` landet auf 120 statt 156.
 //
 // ── KEIN `imPane` (Fundament-Sonde) ─────────────────────────────────────────
 // Das Argument heisst `vollflaechig` und beschreibt eine EIGENSCHAFT DER
 // LESEFLÄCHE, nicht ihre Umgebung. Die eine Übersetzung (`!umgebung.imPane`)
 // steht im Rahmen — dieselbe Regel und derselbe Grund wie bei `panelForm`
 // (Zurückweisung durch die Sonde am 17.8.2026).
+
+/** Höhe der App-Topbar (`components/layout/Topbar.tsx`, `sticky top-0` + h-16).
+ *  EINMAL benannt, zweimal gebraucht (Kopf-Anschlag und Pane-Chrome) — ein
+ *  zweites `4rem`-Literal wäre die Sorte Zahl, die still auseinanderläuft. */
+const APP_TOPBAR_H = '4rem';
+/** Höhe der Pane-Titelleiste (`components/layout/PaneKopf.tsx`, `h-9`). */
+const PANE_LEISTE_H = '2.25rem';
 
 export interface LeserGeometrieLage {
   /** Zuschnitt der Kopfzeile (gemessene Breite → `kopfStufe`). */
@@ -48,8 +67,10 @@ export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
   const { stufe, vollflaechig, suchZoneKlebt, sucheAktiv } = lage;
   return {
     '--leser-v3-kopf-h': kopfHoehe(stufe),
-    '--leser-v3-kopf-top': vollflaechig ? 'var(--leser-kopf-h)' : '0rem',
-    '--leser-kopf-h': 'calc(4rem + 2.25rem)',
+    // A-2: in der Einzelansicht klebt der Kopf direkt unter der Topbar — die
+    // App-Krumen-Leiste dazwischen gibt es nicht mehr.
+    '--leser-v3-kopf-top': vollflaechig ? APP_TOPBAR_H : '0rem',
+    '--leser-kopf-h': `calc(${APP_TOPBAR_H} + ${PANE_LEISTE_H})`,
     // Ä19: Höhe der Such-Zone — 0, wo die Leiste als Spalte das Feld trägt.
     // Zwei feste Werte, damit `--nt-stick` unten aus derselben Quelle rechnet.
     // B9: die zwei Werte gehören der Zone (`./SuchZone`), nicht dieser Datei.
@@ -59,7 +80,7 @@ export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
     ...(vollflaechig ? {} : { '--leser-v3-kopf-luecke': '1.5rem' }),
     '--leser-sub-h': vollflaechig ? '0rem' : 'var(--leser-v3-kopf-h)',
     '--nt-stick': vollflaechig
-      ? 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h) + var(--leser-v3-such-h))'
+      ? `calc(${APP_TOPBAR_H} + var(--leser-v3-kopf-h) + var(--leser-v3-such-h))`
       : 'calc(var(--leser-sub-h) + var(--leser-v3-such-h))',
   } as CSSProperties;
 }

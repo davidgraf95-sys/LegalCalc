@@ -43,8 +43,17 @@ export function kopfStufe(breitePx: number): KopfStufe {
  *  Fahrplans («nie der Artikel, nie Ansicht») eine Aussage über den Rückgabewert
  *  und nicht über abwesenden Code — ein Tor, das scheitern KANN (§6.7). */
 export interface KopfElemente {
-  /** Sektions-Krume «Gesetze ›». Fällt als erstes. */
-  sektion: boolean;
+  /** ── Die FÜHRENDEN Krumen-Stufen «Gesetze › Bund ›». Fallen als erstes. ───
+   *  Hiess bis 17.8.2026 `sektion` und trug nur «Gesetze ›»: die Ebene-Stufe
+   *  («Bund», «Kanton BS», «International») stand in der App-Krumen-Leiste
+   *  darüber, die A-2 abgelöst hat. Seither trägt die Kopfzeile die ganze Kette
+   *  — aus EINER Quelle (`erlassAnsicht.brotkrume`, die auch die Ebene aus dem
+   *  Datenmodell ableitet statt aus `if (bund)`).
+   *  EIN Feld für beide Stufen und nicht zwei: sie beantworten dieselbe Frage
+   *  («woher komme ich»), und wo der Platz für die eine nicht reicht, reicht er
+   *  für die andere auch nicht — zwei Flags, die nie auseinandergehen können,
+   *  wären ein Tor, das nicht scheitern kann (§6.7/§17). */
+  krume: boolean;
   /** Erlass-Volltitel neben dem Kürzel. Fällt als zweites. */
   volltitel: boolean;
   /** Erlass-Kürzel («StPO»). Bleibt immer — es ist die Ortsangabe. */
@@ -68,7 +77,7 @@ export interface KopfElemente {
 
 export function kopfElemente(stufe: KopfStufe): KopfElemente {
   return {
-    sektion: stufe === 'voll',
+    krume: stufe === 'voll',
     volltitel: stufe === 'voll',
     kuerzel: true,
     artikel: true,

@@ -8,6 +8,11 @@ import type { DragEvent, ReactNode } from 'react';
 // ⠿ Ziehgriff · ◂/▸ Umsortieren (Tastatur/Touch) · [zum Hauptfenster] · [teilen] · ✕.
 // Reine Darstellung (§3); Tokens-only (§13). Sitzt AUSSERHALB des Scroll-
 // Containers (echte Leiste, kein sticky-Hack).
+//
+// ── A-2 (David 17.8.2026): der IDENTITÄTS-Teil ist abwählbar (`nurSteuerung`).
+//    Trägt die Inhaltsseite ihre Kopfzeile selbst, bleibt hier die reine
+//    Fenster-Steuerung — Herleitung an der Prop und im Vertrag
+//    `InhaltsKopfKontext.KopfDaten.kopfzeileSelbst`.
 
 export interface PaneKopfProps {
   icon?: ReactNode;
@@ -34,6 +39,16 @@ export interface PaneKopfProps {
   onRechts?: () => void;
   kannLinks?: boolean;
   kannRechts?: boolean;
+  /** ── A-2 (David 17.8.2026) · NUR PANE-STEUERUNG, KEINE IDENTITÄT ──────────
+   *  Die Inhaltsseite dieses Panes hat `kopfzeileSelbst` gemeldet — sie trägt
+   *  Krume, Titel, Ortsangabe und Stand selbst, eine Zeile weiter unten. Diese
+   *  Leiste lässt ihren Identitäts-Teil dann WEG und behält genau das, was eine
+   *  Inhaltsseite nicht tragen kann, weil es nicht ihr gehört, sondern dem
+   *  Fenster: ⠿ Ziehgriff · ◂/▸ Umsortieren · ⇱ Hauptfenster · ⧉ Teilen · ✕
+   *  Pane schliessen.
+   *  `label` bleibt trotzdem gesetzt: die Steuer-Knöpfe brauchen ihn für ihre
+   *  Accessible Names («‹StPO› schliessen») — sichtbar wird er nicht mehr. */
+  nurSteuerung?: boolean;
   /** HTML5-Drag-Handler für den ⠿-Griff (nur wenn ziehbar, d. h. ≥2 Panes). */
   ziehbar?: boolean;
   onDragStart?: (e: DragEvent) => void;
@@ -42,7 +57,11 @@ export interface PaneKopfProps {
 
 const knopf = 'inline-flex h-7 w-7 items-center justify-center rounded-md text-ink-500 hover:text-brass-700 hover:bg-brass-100/40 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-ink-500 transition-colors';
 
-export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel, rolle, onSchliessen, onHauptfenster, onTeilen, onLinks, onRechts, kannLinks, kannRechts, ziehbar, onDragStart, onDragEnd }: PaneKopfProps) {
+export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel, rolle, onSchliessen, onHauptfenster, onTeilen, onLinks, onRechts, kannLinks, kannRechts, nurSteuerung, ziehbar, onDragStart, onDragEnd }: PaneKopfProps) {
+  // A-2: eine Zeile, ein Zuständiger. Trägt die Seite ihre Kopfzeile selbst,
+  // zeigt diese Leiste NICHTS von der Identität — sonst stünde derselbe Ort
+  // zweimal in zwei Zentimetern (§5, Ä45 «Doppelkrume»).
+  const zeigeIdentitaet = !nurSteuerung;
   return (
     <div className={`shrink-0 grid grid-cols-[1fr_auto] items-center gap-2 h-9 px-1.5 border-b border-line bg-paper ${rolle === 'primaer' ? 'border-l-2 border-l-brass-700' : ''}`}>
       {/* Links: Identität (Icon · Label · Stand). pl-0 + enger gap → der Breadcrumb-
@@ -59,8 +78,8 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
             className="shrink-0 cursor-grab active:cursor-grabbing select-none px-0.5 text-ink-400 hover:text-brass-600"
           >⠿</span>
         )}
-        {icon && <span className="shrink-0">{icon}</span>}
-        {breadcrumb && breadcrumb.length > 0 ? (
+        {zeigeIdentitaet && icon && <span className="shrink-0">{icon}</span>}
+        {!zeigeIdentitaet ? null : breadcrumb && breadcrumb.length > 0 ? (
           // Breadcrumb (Parität zur Einzelansicht). KEIN <nav>-Landmark (sonst
           // gleichnamige Landmark-Flut bei mehreren Panes). Krümel mit `to` sind
           // PANE-LOKAL klickbar (David 1.7.2026): <button> → onBreadcrumb (Pane-
@@ -85,8 +104,8 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
         {/* `data-ort-artikel` (Ä1, LESER-V3 H2b): Testanker der Ortsangabe —
             Herleitung in `InhaltsKopf.tsx` und `e2e/leser-v3-ortsangabe.e2e.ts`.
             Reine Kennzeichnung, keine Anzeige-Änderung. */}
-        {artikel && <span data-ort-artikel className="num shrink-0 text-micro font-medium text-ink-700">· {artikel}</span>}
-        {stand && <span className="num shrink-0 text-micro text-ink-500">· Stand {stand}</span>}
+        {zeigeIdentitaet && artikel && <span data-ort-artikel className="num shrink-0 text-micro font-medium text-ink-700">· {artikel}</span>}
+        {zeigeIdentitaet && stand && <span className="num shrink-0 text-micro text-ink-500">· Stand {stand}</span>}
         {rolle === 'primaer' && <span className="sr-only">(aktuelle Adresse)</span>}
       </div>
       {/* Rechts: Steuerung. */}
