@@ -7,25 +7,38 @@
 // §7-Fehler — darum verlangt der Fahrplan (Kap. 7, Zeile H2b) hierfür
 // ausdrücklich einen eigenen Test statt einer Zusicherung.
 //
-// WAS DIE NACHMESSUNG ERGAB (17.8.2026, Split @1440, StPO neben VMWG): der
-// Befund ist am gebauten Stand NICHT reproduzierbar. Beide Angaben stammen
-// bereits aus derselben Quelle — `aktArtikel` des Scroll-Spys
-// (`inhalt-hooks.tsx`); die V3-Kopfzeile liest sie als Prop, die Pane-Titelleiste
-// bekommt sie über `meldeInhaltsKopf` (`leserV3Modell.ts`). Gemessen zeigten
-// beide «Art. 7». Der Review hat vermutlich den 150-ms-Entprellungsfenster
-// gesehen, in dem die Leiste dem Text um einen Artikel nachläuft.
+// ── NACHGEFÜHRT AUF DIE A-2-WAHRHEIT (17.8.2026, Auftrag David) ──────────────
+// Bis A-2 verglich diese Spec ZWEI Chrome-Angaben: die App-Krumen-Leiste
+// (`[data-ort-artikel]`) und die V3-Kopfzeile (`[data-v3-kopf-artikel]`). Die
+// Leisten-Verschmelzung hat die erste beseitigt — der Vergleich hätte damit
+// keine zwei Seiten mehr und wäre stumm grün geworden, also genau das, was §6.7
+// verbietet.
 //
-// WARUM DIE SPEC TROTZDEM ENTSTEHT: «es gibt nur eine Quelle» ist heute wahr und
-// morgen eine Behauptung. Ein zweiter Schreiber wäre billig hinzugefügt (H3 hängt
-// ein Panel in dieselbe Schicht) und würde erst am Nutzer auffallen. Die Spec
-// misst die ÜBEREINSTIMMUNG, nicht die Existenz einer Variablen — sie überlebt
-// damit jede Umbenennung und fällt genau dann, wenn die Aussagen auseinandergehen.
+// Die Frage bleibt dieselbe, die Messung wird SCHÄRFER: statt Chrome gegen
+// Chrome misst die Spec jetzt Chrome gegen den TEXT.
+//   (1) Es gibt nur EINE Quelle: `[data-ort-artikel]` ist nirgends mehr im DOM
+//       (weder App-Leiste noch Pane-Titelleiste nennen einen Artikel), und je
+//       Lesefläche steht genau EIN `[data-v3-kopf-artikel]`.
+//   (2) Die genannte Bestimmung ist WIRKLICH DA: sie gehört zu einem Artikel,
+//       der im Augenblick der Messung sichtbar unter dem klebenden Kopf steht.
+//       Nennt der Kopf etwas, das der Leser nicht sieht — ein nachlaufender
+//       Wert, der Artikel des Nachbar-Panes, eine zweite Quelle —, wird die Spec
+//       rot. Das ist mehr, als der alte Mengenvergleich leisten konnte: der war
+//       auch dann grün, wenn BEIDE Leisten dasselbe Falsche sagten.
+//   (3) Im Split gilt (2) je Pane getrennt, mit verschiedenen Erlassen und
+//       verschiedenen Scroll-Strecken — sonst trüge der Fall nicht.
 //
-// ROT ZU BEKOMMEN (§6.7, gesehen): in `src/pages/gesetz-leser/v3/leserV3Modell.ts`
-// im `meldeInhaltsKopf`-Effekt `artikel: aktArtikel ? …` durch einen zweiten,
-// eigenen Wert ersetzen (z. B. `artikel: 'Art. 1 ' + erlass.kuerzel`) — dann
-// melden Leiste und Kopfzeile verschiedene Artikel und beide Fälle werden rot.
-import { test, expect, type Page } from '@playwright/test'
+// Gemessen wird innerhalb der Seite (ein `evaluate` je Fläche), damit Kopf und
+// Artikel im GLEICHEN Augenblick gelesen werden; zwei getrennte Runden hätten
+// den Scroll-Spy dazwischen laufen lassen und eine Abweichung erzeugt, die es
+// gar nicht gibt.
+//
+// ROT ZU BEKOMMEN (§6.7, am 17.8.2026 gesehen): in
+// `src/pages/gesetz-leser/v3/LeserRahmenV3.tsx` beim `LeserKopf` die Prop
+// `aktArtikel={m.aktArtikel}` durch einen festen Wert ersetzen (z. B.
+// `aktArtikel={'Art. 1'}`) — dann nennt der Kopf nach dem Scrollen eine
+// Bestimmung, die nicht mehr im Bild steht, und (2) fällt in beiden Fällen.
+import { test, expect, type Page, type Locator } from '@playwright/test'
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -34,41 +47,41 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
-/** «Art. 429» aus einem Etikett herausziehen — die beiden Orte setzen dieselbe
- *  Nummer in verschiedene Zuschnitte (Leiste mit Kürzel, Kopfzeile ohne). */
-function nummer(text: string | null): string | null {
-  const t = (text ?? '').replace(/\s+/g, ' ').trim()
-  const m = /((?:Art\.|§)\s*[\w.–-]+)/.exec(t)
-  return m ? m[1].replace(/\s+/g, ' ') : null
-}
-
 /**
- * Alle Ortsangaben des CHROMES bzw. der V3-Kopfzeilen — als Menge.
+ * Die Ortsangabe einer Lesefläche und die Bestimmungen, die dort GERADE
+ * SICHTBAR sind (unterhalb des klebenden Kopfes, oberhalb der Unterkante).
  *
- * Zwei Anker, zwei Herkünfte: `[data-ort-artikel]` sitzt in der App-Krumen-Leiste
- * (`InhaltsKopf.tsx`) und in der Pane-Titelleiste (`PaneKopf.tsx`),
- * `[data-v3-kopf-artikel]` in der V3-Kopfzeile. Die Marke im Chrome wurde für
- * diese Spec gesetzt, weil die Angabe vorher nur an einer Utility-Klasse (`.num`)
- * hing — und `.num` traf im ersten Lauf dieser Spec die SR-Nummer der
- * Übersichtsbox statt der Ortsangabe. Ein Test, der am Aussehen sucht, prüft
- * irgendwas (dieselbe Lehre wie der `data-fn-ref`-Fix in H2).
- *
- * MENGEN und keine Paare: im Split hängt die Titelleiste eines Panes als
- * GESCHWISTER neben dessen Scroller, eine Zuordnung müsste die DOM-Reihenfolge
- * annehmen. Die Mengen sind trotzdem scharf — die beiden Panes zeigen
- * verschiedene Erlasse und damit verschiedene Nummern; nennt eine Leiste den
- * Artikel des Nachbar-Panes oder einen veralteten, gehen die Mengen auseinander.
+ * `wurzel` ist die Einzelansicht (`body`) oder ein Pane — dieselbe Funktion für
+ * beide, damit der Split keine zweite Messregel bekommt.
  */
-async function ortsangaben(page: Page): Promise<{ chrome: string[]; kopf: string[] }> {
-  const lies = async (wahl: string) => {
-    const texte = await page.locator(`${wahl}:visible`).allInnerTexts()
-    return texte.map(nummer).filter((n): n is string => n != null).sort()
-  }
-  return { chrome: await lies('[data-ort-artikel]'), kopf: await lies('[data-v3-kopf-artikel]') };
+async function ort(wurzel: Locator): Promise<{ kopf: string | null; sichtbar: string[] }> {
+  return wurzel.evaluate((el) => {
+    // Die EINE Nummern-Grammatik dieser Messung — «Art. 429», «§ 12», «Art. 66a».
+    const nr = (text: string | null) => {
+      const t = (text ?? '').replace(/\s+/g, ' ').trim()
+      const m = /((?:Art\.|§)\s*[\w.–-]+)/.exec(t)
+      return m ? m[1].replace(/\s+/g, ' ') : null
+    }
+    const kopfEl = el.querySelector('[data-v3-kopf-artikel]')
+    const stick = el.querySelector('[data-v3-kopf]')
+    // Lesefenster: von der Unterkante des klebenden Kopfes bis zum unteren Rand
+    // der Fläche. Im Pane ist das der Scroller, in der Einzelansicht das Fenster.
+    const oben = stick ? stick.getBoundingClientRect().bottom : 0
+    const flaeche = el.getBoundingClientRect()
+    const unten = Math.min(flaeche.bottom, window.innerHeight)
+    const sichtbar: string[] = []
+    for (const art of el.querySelectorAll('article[id^="art-"]')) {
+      const r = art.getBoundingClientRect()
+      if (r.bottom <= oben || r.top >= unten) continue
+      const n = nr((art as HTMLElement).innerText)
+      if (n) sichtbar.push(n)
+    }
+    return { kopf: nr(kopfEl ? (kopfEl as HTMLElement).innerText : null), sichtbar }
+  })
 }
 
-test.describe('Ä1 — Krumen-Leiste und V3-Kopfzeile nennen denselben Artikel', () => {
-  test('(a) Einzelansicht: die App-Leiste folgt der Lesespalte, nicht einer zweiten Quelle', async ({ page }) => {
+test.describe('Ä1 — die V3-Kopfzeile nennt den Ort, an dem der Leser wirklich steht', () => {
+  test('(a) Einzelansicht: EINE Quelle, und sie nennt eine sichtbare Bestimmung', async ({ page }) => {
     test.slow() // grosser Erlass, damit der Spy mehrere Artikelgrenzen sieht
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -76,25 +89,33 @@ test.describe('Ä1 — Krumen-Leiste und V3-Kopfzeile nennen denselben Artikel',
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
+    // (1) Keine zweite Quelle: die App-Krumen-Leiste ist mit A-2 weg, ihr
+    // Ortsangabe-Anker damit auch. Wäre er wieder da, stünde der Artikel an zwei
+    // Stellen und der alte §7-Befund könnte zurückkommen.
+    await expect(page.locator('[data-ort-artikel]')).toHaveCount(0)
+
     // Weit scrollen, damit überhaupt ein Artikel «dran» ist, und die Entprellung
     // (150 ms) auslaufen lassen — sonst misst der Test das Nachlaufen und nicht
     // die Übereinstimmung.
     await page.evaluate(() => window.scrollBy(0, 3000))
     await page.waitForTimeout(1200)
 
+    await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(1)
     await expect.poll(async () => {
-      const { chrome, kopf } = await ortsangaben(page)
-      return kopf.length === 1 && chrome.join() === kopf.join()
+      const m = await ort(page.locator('body'))
+      return m.kopf != null && m.sichtbar.includes(m.kopf)
     }, { timeout: 20_000 }).toBe(true)
 
-    const { chrome, kopf } = await ortsangaben(page)
-    expect(chrome.join(' '), `App-Leiste «${chrome.join(' ')}» gegen V3-Kopf «${kopf.join(' ')}»`)
-      .toBe(kopf.join(' '))
+    const m = await ort(page.locator('body'))
+    expect(m.sichtbar.length, 'keine sichtbare Bestimmung gefunden — die Messung prüfte nichts')
+      .toBeGreaterThan(0)
+    expect(m.sichtbar, `Kopf nennt «${m.kopf}», sichtbar sind ${m.sichtbar.join(', ')}`).toContain(m.kopf)
+    await expect(page.locator('[data-ort-artikel]')).toHaveCount(0)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
-  test('(b) Split-View: jedes Pane nennt SEINEN Artikel — und zwar denselben zweimal', async ({ page }) => {
+  test('(b) Split-View: jeder Kopf nennt eine sichtbare Bestimmung SEINES Erlasses', async ({ page }) => {
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1600, height: 900 })
@@ -105,27 +126,33 @@ test.describe('Ä1 — Krumen-Leiste und V3-Kopfzeile nennen denselben Artikel',
     // BEIDE Panes um VERSCHIEDENE Strecken scrollen. Zwei Gründe, beide gemessen
     // (17.8.2026): (1) ein Pane, das nie gescrollt wurde, meldet gar keinen
     // Artikel — der Scroll-Spy hat dann nichts entschieden, und die Zusage «beide
-    // Leisten nennen ihren Artikel» wäre unprüfbar. (2) Verschiedene Strecken
-    // erzeugen VERSCHIEDENE Nummern (gemessen «Art. 7 StPO» und «Art. 2 BGFA») —
-    // erst dadurch fällt der Test auf, wenn eine Leiste den Artikel des
-    // Nachbar-Panes nennt. Bei gleichen Nummern wäre die Mengengleichheit blind.
+    // Köpfe nennen ihren Artikel» wäre unprüfbar. (2) Verschiedene Strecken
+    // erzeugen VERSCHIEDENE Nummern (gemessen «Art. 8» in StPO, «Art. 2» in
+    // BGFA) — erst dadurch fällt der Test auf, wenn ein Kopf den Artikel des
+    // Nachbar-Panes nennt.
     await page.locator('[data-pane="primaer"]').evaluate((el) => { el.scrollTop = 3000 })
     await page.locator('[data-pane="sekundaer"]').evaluate((el) => { el.scrollTop = 1500 })
     await page.waitForTimeout(2000)
 
-    await expect.poll(async () => {
-      const { chrome, kopf } = await ortsangaben(page)
-      return kopf.length === 2 && chrome.join() === kopf.join()
-    }, { timeout: 20_000 }).toBe(true)
+    await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(2)
+    await expect(page.locator('[data-ort-artikel]')).toHaveCount(0)
 
-    const { chrome, kopf } = await ortsangaben(page)
-    expect(kopf.length, `im Split müssen ZWEI V3-Kopfzeilen einen Artikel nennen: ${kopf.join(' | ')}`).toBe(2)
-    // Die Nummern müssen sich unterscheiden — sonst wäre die Mengengleichheit
-    // darunter kein Beweis, sondern ein Zufall (§6.7: der Fall muss tragen).
-    expect(new Set(kopf).size, `beide Panes nennen dieselbe Nummer ${kopf.join(' | ')} — Fall trägt nicht`).toBe(2)
-    expect(chrome.join(' '),
-      `Pane-Titelleisten «${chrome.join(' | ')}» gegen V3-Köpfe «${kopf.join(' | ')}» — Ä1-Wahrheitsproblem`)
-      .toBe(kopf.join(' '))
+    const nummern: string[] = []
+    for (const wahl of ['[data-pane="primaer"]', '[data-pane="sekundaer"]']) {
+      await expect.poll(async () => {
+        const m = await ort(page.locator(wahl))
+        return m.kopf != null && m.sichtbar.includes(m.kopf)
+      }, { timeout: 20_000 }).toBe(true)
+      const m = await ort(page.locator(wahl))
+      expect(m.sichtbar.length, `${wahl}: keine sichtbare Bestimmung — Fall trägt nicht`).toBeGreaterThan(0)
+      expect(m.sichtbar, `${wahl}: Kopf nennt «${m.kopf}», sichtbar sind ${m.sichtbar.join(', ')}`)
+        .toContain(m.kopf)
+      nummern.push(m.kopf!)
+    }
+    // Die Nummern müssen sich unterscheiden — sonst wäre der Fall blind gegen
+    // «Kopf nennt den Artikel des Nachbarn» (§6.7: der Fall muss tragen).
+    expect(new Set(nummern).size, `beide Panes nennen dieselbe Nummer ${nummern.join(' | ')} — Fall trägt nicht`)
+      .toBe(2)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

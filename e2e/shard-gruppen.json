@@ -117,7 +117,8 @@
    "qsui-hierarchie.e2e.ts",
    "uinav-o2-sidebar.e2e.ts",
    "uinav-v2-v4-normchip.e2e.ts",
-   "leser-v3-ortsangabe.e2e.ts"
+   "leser-v3-ortsangabe.e2e.ts",
+   "leser-v3-eine-kopfzeile.e2e.ts"
   ]
  }
 }

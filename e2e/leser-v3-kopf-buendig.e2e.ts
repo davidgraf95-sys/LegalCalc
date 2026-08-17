@@ -22,6 +22,18 @@
 // ROT ZU BEKOMMEN (§6.7): in `src/pages/gesetz-leser/v3/LeserKopf.tsx` die Zeile
 // `marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))'` entfernen — dann
 // misst der Fall (a) 48 px, (b) 32 px und (c) 24 px statt je 0.
+//
+// ── NACHGEFÜHRT AUF DIE A-2-WAHRHEIT (17.8.2026, Auftrag David) ──────────────
+// Die Krumen-Leiste, an der der Kopf bündig sass, GIBT ES IN DER EINZELANSICHT
+// NICHT MEHR (Leisten-Verschmelzung: die Seite trägt ihre Kopfzeile selbst).
+// Damit hätte `luecke(page, '[data-inhalt-kopf]')` in (a)/(b) `NaN` gemessen —
+// und `expect(NaN).toBeLessThanOrEqual(0)` ist rot, die Spec also nicht bloss
+// stumm, sondern falsch. Nachgezogen wird der BEZUGSPUNKT, nicht die Schranke:
+// oberhalb des Kopfes steht jetzt die Topbar, an ihr muss er bündig sitzen. Die
+// Aussage ist unverändert streng («keine Leerzone, kein Verrutschen darunter»)
+// und deckt seit A-2 sogar mehr, weil sie die neue Anschlusskante prüft.
+// (c) bleibt Zeichen für Zeichen: im Pane bleibt die Titelleiste (sie trägt die
+// Fenster-Steuerung) und damit der alte Bezugspunkt.
 import { test, expect, type Page } from '@playwright/test'
 
 function fehlerSammeln(page: Page): string[] {
@@ -31,16 +43,20 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
-/** Lücke zwischen der Unterkante der App-Krumen-Leiste und der Oberkante des
- *  V3-Kopfs. */
-async function luecke(page: Page, krumeWahl: string): Promise<number> {
+/** Lücke zwischen der Unterkante der Leiste ÜBER dem Kopf und dessen Oberkante.
+ *  Seit A-2 ist das in der Einzelansicht die Topbar (`header.sticky`), im Pane
+ *  weiterhin die Pane-Titelleiste. */
+async function luecke(page: Page, obenWahl: string): Promise<number> {
   return page.evaluate((sel) => {
-    const krume = document.querySelector(sel)
+    const oben = document.querySelector(sel)
     const kopf = document.querySelector('[data-v3-kopf]')
-    if (!krume || !kopf) return Number.NaN
-    return Math.round(kopf.getBoundingClientRect().top - krume.getBoundingClientRect().bottom)
-  }, krumeWahl)
+    if (!oben || !kopf) return Number.NaN
+    return Math.round(kopf.getBoundingClientRect().top - oben.getBoundingClientRect().bottom)
+  }, obenWahl)
 }
+
+/** Die App-Topbar — der Anschlag, an dem der Kopf in der Einzelansicht klebt. */
+const TOPBAR = 'header.sticky'
 
 /** ── B3 (H2b-Nachzug) · ZWEISEITIG, NICHT NUR NACH OBEN ─────────────────────
  *  Die Zusicherung lautete `toBeLessThanOrEqual(0)` und war damit halb blind: sie
@@ -56,9 +72,10 @@ async function luecke(page: Page, krumeWahl: string): Promise<number> {
  *     `marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))'` entfernen ⇒
  *     +48 px (a) / +32 px (b) / +24 px (c).
  *   · NACH UNTEN: `top: 'var(--leser-v3-kopf-top)'` auf `top: '0rem'` setzen ⇒
- *     im Ruhezustand 0 px, GESCROLLT −101 px: der Kopf klebt an der
- *     Fensterkante und schiebt sich unter die opake Krumen-Leiste, die
- *     Ortsangabe ist verdeckt. GEGENPROBE, die NICHT trägt und darum hier
+ *     im Ruhezustand 0 px, GESCROLLT −101 px (Messung 17.8.2026 vor A-2, Bezug
+ *     Krumen-Leiste; seit A-2 ist der Bezug die Topbar, also −65 px): der Kopf
+ *     klebt an der Fensterkante und schiebt sich unter die opake Leiste über
+ *     ihm, die Ortsangabe ist verdeckt. GEGENPROBE, die NICHT trägt und darum hier
  *     steht: `marginTop: '-4rem'` bleibt grün — im Ruhezustand schluckt die
  *     Wrapper-Polsterung den Wert, im geklebten Zustand klemmt `top` ihn ab.
  *     Wer die untere Schranke prüfen will, muss also am `top` drehen. */
@@ -72,7 +89,7 @@ function buendig(px: number, wo: string): void {
     .toBeGreaterThanOrEqual(LUECKE_MIN)
 }
 
-test.describe('Ä1 — der V3-Kopf sitzt bündig an der Krumen-Leiste', () => {
+test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () => {
   test('(a) Einzelansicht @1440: im Ruhezustand UND gescrollt keine Leerzone', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -80,14 +97,17 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Krumen-Leiste', () => {
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
-    const ruhe = await luecke(page, '[data-inhalt-kopf]')
-    buendig(ruhe, 'Ruhezustand @1440 (war 48 px vor H2b)')
+    // A-2: die App-Krumen-Leiste ist weg — geprüft, damit der Bezugspunkt-Wechsel
+    // unten nicht still an einer noch vorhandenen Leiste vorbeimisst.
+    await expect(page.locator('[data-inhalt-kopf]')).toHaveCount(0)
+    const ruhe = await luecke(page, TOPBAR)
+    buendig(ruhe, 'Ruhezustand @1440 (war 48 px vor H2b, Bezug seit A-2 die Topbar)')
 
     // Und im geklebten Zustand ebenfalls — sonst wäre der Ruhezustand nur zufällig
     // richtig und das Bild sprang beim Scrollen weiterhin.
     await page.evaluate(() => window.scrollBy(0, 1200))
     await page.waitForTimeout(300)
-    buendig(await luecke(page, '[data-inhalt-kopf]'), 'nach 1200 px Scroll @1440')
+    buendig(await luecke(page, TOPBAR), 'nach 1200 px Scroll @1440')
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
@@ -99,7 +119,8 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Krumen-Leiste', () => {
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
-    buendig(await luecke(page, '[data-inhalt-kopf]'), '@390 (Wrapper dort py-8 = 32 px)')
+    await expect(page.locator('[data-inhalt-kopf]')).toHaveCount(0)
+    buendig(await luecke(page, TOPBAR), '@390 (Wrapper dort py-8 = 32 px)')
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
