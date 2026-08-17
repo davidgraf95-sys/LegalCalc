@@ -109,7 +109,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Rückbau; der Zweig war unerreichbar, Beleg im Vollzugsvermerk).
   const suchFeldRef = useRef<HTMLInputElement>(null);
   useSuchSprungKuerzel({ feldRef: suchFeldRef, imSekundaerenPane: umgebung.istSekundaer });
-  // Ä70: Offen-Zustand des Treffer-Blattes (Herleitung in `./LeserTrefferBlatt`).
+  // Ä76: Offen-Zustand des Treffer-Blattes (Herleitung in `./LeserTrefferBlatt`).
   // Vor den frühen Rückgaben — Hooks laufen nicht bedingt.
   const trefferBlatt = useTrefferBlatt(m.sucheBegriff);
 
@@ -336,7 +336,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
           {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
 
-          {/* Ä70: der `trefferListe`-Prop ist gestrichen — er traf die
+          {/* Ä76: der `trefferListe`-Prop ist gestrichen — er traf die
               EINGEKLAPPTE Spalte statt des angekündigten Rand-Falls, und der ist
               unerreichbar. Herleitung samt Messreihe steht am Bauteil, das sie
               betrifft (`./LeserLesespalte`, `./LeserTrefferBlatt`). */}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 /**
- * Ist das Treffer-Blatt am Suchfeld offen? (Ä70 — das Blatt selbst und die
+ * Ist das Treffer-Blatt am Suchfeld offen? (Ä76 — das Blatt selbst und die
  * Herleitung des Befunds stehen in `./LeserTrefferBlatt`.)
  *
  * Es öffnet sich SELBST, sobald eine Suche läuft — das ist der ganze Befund

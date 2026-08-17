@@ -1,5 +1,5 @@
 // @shard-gruppe: 7
-// ─── Ä70 (David-Befund 17.8.2026 abends) · SUCHE BEI EINGEKLAPPTER GLIEDERUNG ─
+// ─── Ä76 (David-Befund 17.8.2026 abends) · SUCHE BEI EINGEKLAPPTER GLIEDERUNG ─
 //
 // BEFUND, wörtlich: «wenn die gliederung ausgeblendet ist funktioniert suche
 // nicht mehr resp. resultat ist versteckt. andere lösung finden.»

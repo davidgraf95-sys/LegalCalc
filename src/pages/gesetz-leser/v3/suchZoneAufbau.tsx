@@ -10,7 +10,7 @@ import type { BestimmungsWort } from './erlassAnsicht';
 // Adapter `leserV3Modell.ts` der grösste Baustein von `v3/` bleibt (Auflage 1).
 // Zwei parallel gebaute Zweige haben diese Ordnung zusammen gekippt, keiner
 // allein: `fix/leser-v3-david-17-8` liess den Rahmen von 399 auf 416 Zeilen
-// wachsen (Ä70, das Treffer-Blatt am Feld), `feat/leser-v3-krume` liess den
+// wachsen (Ä76, das Treffer-Blatt am Feld), `feat/leser-v3-krume` liess den
 // Adapter von 419 auf 416 schrumpfen (A-2). Auf beiden Zweigen war die Sonde
 // grün; erst zusammen entstand der Gleichstand, und den entscheidet die
 // Sortierung alphabetisch gegen den Rahmen. Ausgelagert ist darum genau die
@@ -53,7 +53,7 @@ export function suchZoneAufbau(a: {
   onSheet: () => void;
 }): ReactNode | undefined {
   if (!a.klebt) return undefined;
-  // Ä70: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
+  // Ä76: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
   // eingeklappter Gliederung), liegt die Trefferliste als Blatt AM FELD; darunter
   // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg. Herleitung und die
   // Messung, die «Spalte aufziehen» ausschloss: `./LeserTrefferBlatt`.

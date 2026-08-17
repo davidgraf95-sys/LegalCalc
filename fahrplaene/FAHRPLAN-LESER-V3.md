@@ -1646,11 +1646,17 @@ in der abgelösten Leiste; **Ä33/Ä34** unberührt. Alle drei bleiben H4.
 ### ✅ Nachzug David-Befunde 17.8.2026 abends (B1–B3), Branch `fix/leser-v3-david-17-8`
 
 Drei Live-Befunde am Prod-Stand `afc008c19` unter `?leser=v3`. Alle drei zuerst
-**gemessen**, dann gefixt; neue Punkte **Ä67–Ä70** (Ä61–Ä66 sind S2).
+**gemessen**, dann gefixt; neue Punkte **Ä67–Ä69 + Ä76** (Ä61–Ä66 sind S2).
+
+**Nummernkreis (korrigiert bei der Integration 17.8.).** Dieser Zweig und der
+Übersichts-Zweig liefen parallel und vergaben beide **Ä70**: hier «Suche ohne
+Gliederung», dort der Steckbrief (Ä70–Ä75). Der Übersichts-Kreis bleibt, wie er
+ist — er ist zusammenhängend belegt; der Punkt DIESES Zweigs ist auf **Ä76**
+umnummeriert (Code, Specs und Tabelle unten). Es gibt seither genau ein Ä70.
 
 | # | Befund (Wortlaut David) | Ursache, gemessen | Fix |
 |---|---|---|---|
-| **B1 / Ä70** | «wenn die gliederung ausgeblendet ist funktioniert suche nicht mehr resp. resultat ist versteckt. andere lösung finden» | Der `trefferListe`-Zweig der Lesespalte hing an `!zweiSpalten` und traf damit die **eingeklappte** Spalte — ein Zweig, der etwas anderes tat als sein Kommentar («Rand-Fall ohne Leiste»). Die Liste lag @1440 **und** @1024 inline über dem Lesetext: **y = 755, Höhe 3596 px**, also unter der Falz, und schob den Gesetzestext um 3,6 Bildschirmhöhen nach unten | Trefferliste als **Blatt am Suchfeld** (`v3/LeserTrefferBlatt.tsx`, 18 rem, `max-h 50dvh`, kein Scrim, Esc/✕, Zähler-Zeile führt zurück). Der Inline-Zweig ist **gestrichen**, nicht verengt: `hatLeiste` ist `eintraege.length > 0`, der angekündigte Rand-Fall ist unerreichbar (§17) |
+| **B1 / Ä76** (bis 17.8. «Ä70») | «wenn die gliederung ausgeblendet ist funktioniert suche nicht mehr resp. resultat ist versteckt. andere lösung finden» | Der `trefferListe`-Zweig der Lesespalte hing an `!zweiSpalten` und traf damit die **eingeklappte** Spalte — ein Zweig, der etwas anderes tat als sein Kommentar («Rand-Fall ohne Leiste»). Die Liste lag @1440 **und** @1024 inline über dem Lesetext: **y = 755, Höhe 3596 px**, also unter der Falz, und schob den Gesetzestext um 3,6 Bildschirmhöhen nach unten | Trefferliste als **Blatt am Suchfeld** (`v3/LeserTrefferBlatt.tsx`, 18 rem, `max-h 50dvh`, kein Scrim, Esc/✕, Zähler-Zeile führt zurück). Der Inline-Zweig ist **gestrichen**, nicht verengt: `hatLeiste` ist `eintraege.length > 0`, der angekündigte Rand-Fall ist unerreichbar (§17) |
 | **B2 / Ä68+Ä69** | «wenn änderungsvermerke abgewählt wird dann verschwinden auch fussnoten» | `[data-histansicht=aus]` blendete `[data-fn-klasse="A"]` und den A-only-Apparat aus. `kl:'A'` ist beim Bund die **Regel**: StPO Apparat-Einträge sichtbar **285 → 98**, Marker **285 → 105**; ZGB **809 → 90** bzw. **809 → 173**. Der Schalter war faktisch ein zweiter Fussnoten-Schalter (§8) | **Entkoppelt** (Entscheid David): Fussnoten-Schalter trägt Marker + Apparat **aller** Klassen, Vermerke-Schalter **nur** `[data-hist-slot]`. Ä27-Hinweis samt `hinweis`-Slot gestrichen — die erklärte Kreuz-Abhängigkeit gibt es nicht mehr |
 | **B3 / Ä67** | «um das suchfeld erscheint bei klick darin ein braun umrundetes feld dass abgeschnitten ist» | `outline` liegt aussen (`offset 0`): Ring x = **182…466**, Clip `[data-v3-leiste-scroller]` (`overflow-x: hidden`) beginnt bei **184** ⇒ linke Kante **2 px abgeschnitten**, hell wie dunkel; gescrollt trifft es die obere Kante | `outline-offset: -2px` — der Ring liegt vollständig **im** Element und kann von keinem Vorfahren mehr beschnitten werden (Wurzel statt Umschiffung, §17). Höhen der Kopf-Zone unberührt: `outline` nimmt nie Platz |
 
@@ -1742,6 +1748,24 @@ Belastbar ist nur die prozessinterne 4×-Drossel-Messung.
 
 **Vor dem Flip zu erledigen:** NM-2 auf H (Blocker) · Ä60 · Ä45 Doppelkrume ·
 Ä46 zwei ✕ · B-Spec-Umhängung (sonst Timeout-Hänger statt roter Tests).
+
+### ✅ Integration der vier Nachzüge (17.8.2026, Branch `feat/leser-v3-nachzug-17-8`)
+
+Basis `afc008c19` + vier parallel gebaute Zweige (`-krume` A-2 · `-h4` A-8 ·
+`fix/…-david-17-8` Ä67–Ä69/Ä76 · `-uebersicht` Ä70–Ä75). Textuell konfliktfrei;
+gesucht wurden die **Wechselwirkungen**, die kein Zweig allein zeigt.
+
+| Wechselwirkung | Befund | Fix |
+|---|---|---|
+| **Krume × Fix** (gefunden, rot) | Fundament-Sonde «der Adapter ist der grösste Baustein»: `fix` hob `LeserRahmenV3.tsx` 399 → **416**, `krume` senkte `leserV3Modell.ts` 419 → **416**. Auf beiden Zweigen grün, zusammen Gleichstand — den entscheidet die Sortierung alphabetisch gegen den Rahmen | Naht der beiden Zuflüsse nach `v3/suchZoneAufbau.tsx` ausgelagert (reine Funktion, Muster `FruehAnsicht` — kein Komponenten-Rand, `useTrefferBlatt` bleibt im Rahmen und behält seinen Zustand). Rahmen **404**, Sonde unverändert (MAX_ZEILEN 420) |
+| **Krume × H4** | `kopfStufen` (`sektion` → `krume`) gegen `useElementBreite` | grün ohne Eingriff: `leser-v3-kopfstufen` + `leser-v3-elementbreite` (Vitest), `leser-v3-eine-kopfzeile` + `leser-kopf-buendig` (e2e) |
+| **Krume × Übersicht** | Box-Position unter dem klebenden Block | grün: `leser-v3-seitenleiste-ordnung`, `leser-v3-uebersicht` |
+| **Fix × Übersicht** | «Blatt am Feld deckt die Box» ist **konstruktiv unmöglich**: das Blatt am Feld setzt `suchZoneKlebt` voraus, also keine Spalte — dann ist die Box gar nicht im DOM. Ä28-Warnung steht weiterhin genau einmal | kein Eingriff nötig |
+| **alle × PX / CLS** | Kopfhöhe −38 px verschiebt die Messposition | PX 2×2 grün (Text-Kern phasengleich), `leser-kopf-cls-s3` grün — keine Baseline angefasst |
+
+Tore am Stand: `gate` 0 · testtreue/e2e-shards/design-tokens/schlankheit/
+perf-budget je 0 · golden **256 byte-gleich** · e2e 335 (chromium) + 110/1
+skipped (leser-v3) + 47 (schwer) + 2×2 (PX) grün.
 
 ### Fenster-Deckel und Flip-Kriterien
 

@@ -32,7 +32,7 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Etappe, für die er gedacht war, baut die Zone im KERN (`parts/ArtikelLeser`,
 // Kap. 1.3) und braucht ihn nicht. §17: gestrichen statt bewacht; Herleitung im
 // Rahmen (`LeserRahmenV3`, «DIE DREI ERWEITERUNGS-SLOTS SIND GESTRICHEN»).
-// ── `trefferListe` IST GESTRICHEN (Ä70, 17.8.2026) ───────────────────────────
+// ── `trefferListe` IST GESTRICHEN (Ä76, 17.8.2026) ───────────────────────────
 // Der Prop hängte die Trefferliste INLINE über den Lesetext, angekündigt für den
 // Rand-Fall «keine Leiste, aber breit genug». Zwei Gründe, beide gemessen:
 //  · Er traf den falschen Fall. Die Bedingung im Rahmen lautete `!zweiSpalten`

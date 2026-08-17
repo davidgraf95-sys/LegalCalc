@@ -79,7 +79,7 @@ export function SuchZone({
   bestimmungsWort: BestimmungsWort;
   /** Weg zur vollen Trefferliste: Blatt am Feld öffnen bzw. Bottom-Sheet. */
   onListe: () => void;
-  /** ── Ä70 (17.8.2026) · DIE TREFFERLISTE, ANGEHÄNGT AN DIESE ZONE ───────────
+  /** ── Ä76 (17.8.2026) · DIE TREFFERLISTE, ANGEHÄNGT AN DIESE ZONE ───────────
    *  Gesetzt, wo die Gliederung als Spalte fehlt, aber Platz neben dem Text ist
    *  (Desktop mit eingeklappter Spalte) — dann liegt die Liste als Blatt DIREKT
    *  unter dem Feld statt inline über dem Lesetext, wo sie 3596 px hoch unter der
