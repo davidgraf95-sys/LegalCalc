@@ -248,13 +248,13 @@ test.describe('Ä10-Erbe — im Handy-Blatt kein Überlauf', () => {
 // unterscheidet sich (Panel-Reiter oben, Gliederungs-Blatt unten); die ZAHL nicht.
 //
 // ROT ZU BEKOMMEN (§6.7): in `LeserRahmenV3.tsx` die Prop `steckbrief={…}` an der
-// `<LeserPanelZone>` entfernen ⇒ (a) findet im Reiter nur noch den Verweis, nie
-// den Wert. Umgekehrt: die Weiche `zweiSpalten || blattOffen ? null : …` auf
-// `null` verkürzen ⇒ (c) meldet zwei Steckbriefe auf einer Seite.
-// So gemessen am Ist-Stand (Basis `6ca1609b3`, dist vor dem Bau): (a) rot mit
-// «Reiter «Steckbrief» nicht gefunden», (b)/(d) grün.
+// `<LeserPanelZone>` entfernen ⇒ (a) findet die Klappe im Panel nicht. Umgekehrt
+// die Weiche `zweiSpalten || blattOffen ? null : …` auf `…` verkürzen ⇒ (c)
+// meldet zwei Steckbriefe auf einer Seite.
+// So gemessen am Ist-Stand (Basis `6ca1609b3`, dist vor dem Bau): (a) und (c)
+// rot, (b) grün — der Befund lag nicht unterhalb der Spaltenschwelle.
 test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', () => {
-  test('(a) @1440 mit EINGEKLAPPTER Gliederung: Panel-Öffner + Reiter «Steckbrief»', async ({ page }) => {
+  test('(a) @1440 mit EINGEKLAPPTER Gliederung: Panel-Öffner + Klappe im Panel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/STPO?leser=v3')
@@ -273,12 +273,14 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     await page.locator('[data-v3-panel-zaehler]').first().click()
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
 
-    // Schritt 2 — der Reiter.
-    const reiter = page.locator('[data-v3-panel-reiter="steckbrief"]')
-    await expect(reiter, 'Reiter «Steckbrief» nicht gefunden').toHaveCount(1)
-    await reiter.click()
+    // Schritt 2 — die Klappe über der Tafel.
+    const klappe = page.locator('[data-v3-panel-steckbrief] [data-v3-uebersicht-zeile]')
+    await expect(klappe, 'Steckbrief-Klappe im Panel nicht gefunden').toHaveCount(1)
+    // Zugeklappt trägt sie bereits die Ruhezeile — sie kostet EINE Zeile, nicht
+    // eine Tafel (dieselbe Zusage wie in der Leiste).
+    await expect(klappe).toContainText('SR 312.0')
+    await klappe.click()
 
-    // Der Wert steht OHNE dritten Schritt da — keine Klappe im Reiter.
     const stand = page.locator('[data-v3-panel] [data-v3-uebersicht-zeile-id="stand"] dd')
     await expect(stand).toBeVisible({ timeout: 10_000 })
     await expect(stand).toHaveText(/^\d{2}\.\d{2}\.\d{4}$/)
@@ -313,7 +315,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     })
   }
 
-  test('(c) keine Doppelanzeige: steht die Box in der Leiste, verweist der Reiter nur', async ({ page }) => {
+  test('(c) keine Doppelanzeige: steht die Box in der Leiste, schweigt das Panel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/STPO?leser=v3')
@@ -321,21 +323,34 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
 
     await page.locator('[data-v3-panel-zaehler]').first().click()
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
-    await page.locator('[data-v3-panel-reiter="steckbrief"]').click()
 
-    // Die Tafel entfällt, der Verweis steht — und die Ä28-Zusage bleibt heil:
-    // die Label/Wert-Liste existiert auf der Seite GENAU EINMAL.
-    await expect(page.locator('[data-v3-steckbrief-tafel]')).toHaveCount(0)
-    await expect(page.locator('[data-v3-panel-steckbrief-verweis]')).toHaveCount(1)
+    // Mit stehender Spalte trägt die Leiste den Steckbrief — das Panel wiederholt
+    // ihn nicht. Daran hängt die Ä28-Zusage: die Warnung «massgeblich ist …» darf
+    // auf der Seite nicht zweimal stehen, und sie steht in der Box.
+    await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-uebersicht]')).toHaveCount(1)
     await expect(page.locator('[data-v3-uebersicht-liste]')).toHaveCount(1)
 
-    // Gegenprobe in derselben Sitzung: einklappen ⇒ die Tafel übernimmt, und es
-    // ist weiterhin genau EINE Liste. Ohne diese Richtung prüfte der Fall nur,
-    // dass die Tafel nie erscheint (§6.7).
+    // ── GEGENPROBE in derselben Sitzung (§6.7) ────────────────────────────────
+    // Ohne sie prüfte der Fall nur, dass die Klappe NIE erscheint. Die Gliederung
+    // wird darum eingeklappt und das Panel danach NEU aufgezogen — in dieser
+    // Reihenfolge, weil ein Klick neben das Panel es schliesst (`usePopoverAutoZu`,
+    // Modus «beiwerk»): klappte man bei offenem Panel ein, prüfte man ein Panel,
+    // das es in dem Moment gar nicht mehr gibt. Genau so ist diese Zeile beim
+    // ersten Lauf rot geworden — «0 statt 1» —, und der Befund war die Spec,
+    // nicht das Produkt.
     await page.locator('[data-v3-gliederung-zu]').click()
-    await expect(page.locator('[data-v3-steckbrief-tafel]')).toHaveCount(1)
-    await expect(page.locator('[data-v3-panel-steckbrief-verweis]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-uebersicht]')).toHaveCount(0)
+    await page.locator('[data-v3-panel-zaehler]').first().click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+
+    await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(1)
+    // Weiterhin genau EINE Label/Wert-Liste auf der Seite — der Steckbrief ist
+    // umgezogen, nicht verdoppelt.
     await expect(page.locator('[data-v3-uebersicht-liste]')).toHaveCount(1)
+    // Und er überlebt den Reiter-Wechsel: er gehört zum Panel, nicht zur Tafel.
+    await page.locator('[data-v3-panel-reiter="materialien"]').click()
+    await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(1)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

@@ -167,15 +167,8 @@ describe('trefferZahl — «lädt noch» ist nicht «leer»', () => {
 });
 
 describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
-  // H4-Vorbereitung II (deklarierte fachliche Änderung, §6.3): VIER statt drei.
-  // Der Erlass-Steckbrief lebte ausschliesslich in der Seitenleiste und war mit
-  // ihr aus dem DOM (gemessen @1440 mit eingeklappter Gliederung:
-  // `[data-v3-uebersicht]` 1 → 0). Das Panel ist die einzige Fläche, die es auf
-  // jeder Breite gibt — Herleitung an `PANEL_REITER`. Die Zusage, die diese
-  // Sonde trägt, ist unverändert: EINE Quelle für Ordnung und Beschriftung, und
-  // die Ankunfts-Frage steht vorn.
-  it('genau vier, Ankunft zuerst, dann die Fragen am Artikel', () => {
-    expect(PANEL_REITER.map((r) => r.id)).toEqual(['steckbrief', 'entscheide', 'aenderungen', 'materialien']);
+  it('genau drei, in der Reihenfolge der Fragen am Artikel', () => {
+    expect(PANEL_REITER.map((r) => r.id)).toEqual(['entscheide', 'aenderungen', 'materialien']);
   });
 
   it('jeder Reiter trägt Label UND erklärenden Titel (kein nackter Kurzname)', () => {

@@ -363,7 +363,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
             normZitat={normZitat(panelArtikel, erlass.kuerzel)}
             artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort}
-            steckbrief={zweiSpalten || blattOffen ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} form="tafel" />}
+            steckbrief={zweiSpalten || blattOffen ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}
             aktArtikel={panelZiel.token} />
         )}
       </div>
