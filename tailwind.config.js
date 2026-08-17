@@ -206,9 +206,21 @@ export default {
       // die kleiner sind als er; der Fussnoten-Apparat misst gemessen 27–187 px
       // und wird von keinem Token-Wert höhenfest.
       // S2 · Ä26: die Reservierung wird nur noch dort gesetzt, wo überhaupt eine
-      // Fassungs-Zeile eintreffen kann (`erlass.ebene === 'bund'` — 209 Shards
-      // im Korpus, alle Bund, kein einziger der 1231 Kanton-Erlasse). Herleitung
-      // und Korpus-Messung am Slot selbst (ArtikelLeser.tsx).
+      // Fassungs-Zeile eintreffen kann — und die Frage wird ARTIKELWEISE am
+      // Datenmodell gestellt, nicht am Erlass: `fussAnzeige.length > 0 ||
+      // historie` (ArtikelLeser.tsx). Der Generator baut Historie-Einträge nur
+      // aus Artikel-Fussnoten, also kann ein fussnotenfreier Artikel nie einen
+      // Eintrag bekommen (Invariante, 0 Gegenbeispiele in 24 511 Artikeln).
+      // AUSDRÜCKLICH KEINE Ebenen-Weiche: `erlass.ebene === 'bund'` wäre ein
+      // Erlass-Sonderpfad und liesse die Reserve unter jedem Bund-Artikel ohne
+      // Fussnote stehen; der Rot-Beweis dazu steht im Vollzugsvermerk S2.
+      // NACHZUG-KORREKTUR 17.8.2026 (Bug-Check B2 / Arch 1 / Ä65): hier stand
+      // «`erlass.ebene === 'bund'` — 209 Shards im Korpus, alle Bund» und
+      // beschrieb damit eine Weiche, die so nie gebaut wurde — Doku-Drift gegen
+      // §5. Herleitung, Korpus-Messung (25 403 → 17 547 reservierende Artikel,
+      // −31 %) und die verworfenen engeren Regeln stehen am Slot selbst
+      // (ArtikelLeser.tsx), die Wirkung auf die Höhen-Schätzung in
+      // `src/pages/gesetz-leser/berechnungen.ts`.
       // `inhalt-region` (Footer-CLS /gesetze, David 25.7.2026, §15.2): EIN
       // Rahmen um die drei exklusiven Inhalts-Zustände der Übersicht
       // (Landeplatz / Trefferregion / Ebenen-Panel) reserviert von Anfang an

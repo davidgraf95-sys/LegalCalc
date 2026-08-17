@@ -31,13 +31,15 @@ import { RechtsprechungText } from './RechtsprechungLink';
 
 // Ä25 (S2, 17.8.2026): Bund- und Kanton-Verweise tragen DENSELBEN Inline-Stil —
 // der String stand hier zeichengleich ein zweites Mal (§5-Nebenfund aus der
-// S1-Prüfung) und ist jetzt importiert. Herleitung, Kontrast-Rechnung und der
-// Unmöglichkeitsbeweis für ein Farb-Token stehen an `VERWEIS_INLINE_CLASS`
-// (NormText.tsx) — nicht hier verdoppeln.
+// S1-Prüfung) und ist jetzt importiert. Der Stil selbst ist der unveränderte
+// Ist-Stand (gepunktete Linie im Ruhezustand); die S2-Umstellung auf «Linie erst
+// bei Hover» ist im S2-Nachzug zurückgenommen und wartet als Entscheid auf David.
+// Reichweiten-Begründung, Kontrast-Messung und die Farb-Rechnung stehen an
+// `VERWEIS_INLINE_CLASS` (NormText.tsx) — nicht hier verdoppeln.
 const INLINE_CLASS = VERWEIS_INLINE_CLASS;
-// Der kantonale «§»-Trigger folgt derselben Ruhe-/Hover-Regel; nur die
-// Hover-Farbe bleibt ink-800 (er springt nicht nach Fedlex, sondern öffnet ein
-// Popover) und der Zeiger bleibt der Hand-Zeiger.
+// Der kantonale «§»-Trigger folgt derselben Linien-Regel; nur die Hover-Farbe
+// bleibt ink-800 (er springt nicht nach Fedlex, sondern öffnet ein Popover) und
+// der Zeiger bleibt der Hand-Zeiger.
 const KANTON_CLASS = `${VERWEIS_RUHE} hover:text-ink-800 cursor-pointer`;
 
 // Kantonaler «§»-Designator + optional Abs./lit./Ziff. (für die präzise

@@ -33,55 +33,53 @@ import { RechtsprechungText } from './RechtsprechungLink';
 // Browser); der erzeugte Text ist zeichenidentisch zum heutigen plain {text}
 // (nur zusätzliche <a>-Hüllen), Golden/PDF-Pfade nutzen NormText nicht.
 
-// ─── Ä25 · VERWEIS-AUSZEICHNUNG IM FLIESSTEXT (S2, 17.8.2026) ───────────────
-// Dezenter Inline-Stil — fügt sich in den Fliesstext ein, anders als der
-// Pillen-Chip an strukturierten Stellen.
+// ─── Ä25/Ä61 · VERWEIS-AUSZEICHNUNG IM FLIESSTEXT ───────────────────────────
+// Dezenter Inline-Stil (gepunktete Unterstreichung) — fügt sich in den
+// Fliesstext ein, anders als der Pillen-Chip an strukturierten Stellen.
 //
-// AUFTRAG (Design-Grundlage Kap. 8): «Erst bei Hover/Fokus: … Verweis-
-// Unterstreichung» — der Ruhezustand soll die gepunktete Linie NICHT tragen.
-// S1 hat den Umbau ausgesetzt, weil die Linie zu entfernen den Verweis auf
-// «Farbe allein» reduziert hätte (WCAG-Technik G183: dafür braucht die
-// Linkfarbe ≥ 3 : 1 gegen den umgebenden Text; gemessen waren es 2.04 : 1 hell
-// und 1.14 : 1 dunkel).
+// STAND 17.8.2026: die Linie bleibt im RUHEZUSTAND. S2 hatte sie versuchsweise
+// auf «Linie erst bei hover/focus-visible» umgestellt (Design-Grundlage Kap. 8);
+// der S2-Nachzug hat das ZURÜCKGENOMMEN, und die Design-Frage geht als Entscheid
+// an David (Fahrplan Kap. 7, Ä-Tabelle Ä25). Drei gemessene Gründe:
 //
-// S2 HAT DIE FRAGE ZU ENDE GERECHNET — das Ergebnis ist ein UNMÖGLICHKEITS-
-// BEWEIS, nicht eine Farbwahl. Ein Verweis-Token müsste ZWEI Schranken zugleich
-// halten: ≥ 3 : 1 gegen den Fliesstext (G183) UND ≥ 4.5 : 1 gegen den Grund
-// (AA für Linktext, SC 1.4.3). In relativer Leuchtdichte L (WCAG-2.x-Formel,
-// gerechnet 17.8.2026 aus den Ist-Tokens):
+//  1. REICHWEITE. Diese Klasse ist die Verweis-Auszeichnung der GANZEN Site,
+//     nicht des Lesers: NormText steht in Tarif-Hinweisen, Gates-/Ergebnis-
+//     Warnungen und Vorlagen-Texten (~20 prerenderte Rechner-/Vorlagen-Seiten).
+//     Eine Leser-Typografie-Etappe darf sie nicht mitziehen.
+//  2. WCAG G183. Ohne Linie unterscheidet den Verweis nur noch die FARBE; G183
+//     verlangt dafür ≥ 3 : 1 gegen den umgebenden Text. Gemessen am gebauten
+//     S2-Stand (chromium, 17.8.2026): 1.00 : 1 auf `/rechner/verjaehrung`
+//     (Link und Fliesstext tragen dort dieselbe Farbe), 1.06 : 1 auf den
+//     übrigen Rechner-Seiten, 2.14 : 1 im Leser. Die Schwelle ist damit an
+//     jeder gemessenen Stelle verfehlt, im Ruhezustand blieb faktisch KEIN
+//     nichtfarbliches Signal ausser dem Schriftgewicht.
+//  3. AXE-AUSNAHME. `link-in-text-block` ist eine ausdrückliche Ausnahme mit
+//     David-Entscheid (`docs/ux-audit-2026-07/BERICHT.md` B-2); ihre Reichweite
+//     eigenmächtig auszuweiten ist kein Nachzug.
+//
+// Warum ein FARB-Token die Frage nicht löst (S2-Rechnung, hier aufbewahrt, weil
+// sie in Davids Entscheid eingeht): ein Verweis-Token müsste ZWEI Schranken
+// zugleich halten — ≥ 3 : 1 gegen den Fliesstext (G183) UND ≥ 4.5 : 1 gegen den
+// Grund (AA für Linktext, SC 1.4.3). In relativer Leuchtdichte L (WCAG-2.x-
+// Formel, gerechnet 17.8.2026 aus den Ist-Tokens):
 //
 //   DUNKEL — Fliesstext #DCD9D2 (L 0.6949) auf Grund #16150F (L 0.0074):
-//     3 : 1 gegen den Text verlangt   L ≤ 0.1983   (heller als der Text geht
-//        nicht — der Text steht selbst schon bei 12.97 : 1 über dem Grund)
+//     3 : 1 gegen den Text verlangt   L ≤ 0.1983
 //     4.5 : 1 über dem Grund verlangt L ≥ 0.2084
-//     ⇒ das Intervall ist LEER. Es gibt keinen solchen Farbwert — nicht nur
-//       keinen in den 14 Rollen der Grundlage, sondern überhaupt keinen.
+//     ⇒ das Intervall ist LEER — es gibt keinen solchen Farbwert.
 //   HELL — Fliesstext #2B2924 (L 0.0223) auf Grund #FCFAF6 (L 0.9346):
-//     dunkler als der Text: L ≤ −0.0259 ⇒ unmöglich (negativ)
-//     heller als der Text:  L ∈ [0.1668, 0.1738] ⇒ existiert, aber als ~ein
-//       einziger Ton — und nützt nichts, solange die dunkle Seite leer ist.
+//     heller als der Text: L ∈ [0.1668, 0.1738] ⇒ existiert als ~ein einziger
+//     Ton, nützt aber nichts, solange die dunkle Seite leer ist.
 //
-// FOLGE: Ä25 ist über die FARBE nicht lösbar. Der Auftrag bot dafür ausdrücklich
-// die zweite Weiche — «ODER ein leises Nicht-Farb-Signal im Ruhezustand». Genau
-// das ist gebaut: der Verweis trägt im Ruhezustand `font-medium` (500, eines der
-// vier zugelassenen Gewichte, Grundlage Kap. 2.1) und die Akzentfarbe; die LINIE
-// tritt bei `hover` UND `focus-visible` hinzu. Damit ist keine Aussage
-// hover-only (Grundlage Kap. 8: «Hover verbirgt Zierde, nie Funktion»): das
-// Gewicht steht immer — auch auf Touch, wo es kein Hover gibt — und die Tastatur
-// bekommt dasselbe Signal wie die Maus.
-//
-// §5 (Ä25-Nebenfund): der String stand zeichengleich in `NormText.tsx` UND
-// `KantonNormText.tsx`. Er ist jetzt EINE exportierte Konstante — sonst laufen
-// Bund- und Kanton-Verweise beim nächsten Eingriff auseinander.
-// Der farbfreie Teil (Ruhe-Gewicht + Linie erst bei Hover/Fokus). Getrennt
-// exportiert, weil der kantonale §-Trigger dieselbe Ruhe-Regel, aber eine andere
-// Hover-Farbe braucht — und weil Tailwind seine Klassen aus dem QUELLTEXT liest:
-// eine zur Laufzeit zusammengesetzte oder ersetzte Klasse (`.replace(…)`) würde
-// gar nicht generiert und wäre ein stiller No-op (genau die Bug-Klasse, die
-// `check:design-tokens` Prüfung 2/3 verfolgt). Darum steht jede Farb-Utility als
-// LITERAL in der Datei, die sie verwendet.
-export const VERWEIS_RUHE =
-  'font-medium no-underline underline-offset-2 hover:underline hover:decoration-dotted focus-visible:underline focus-visible:decoration-dotted';
+// §5 (Ä25-Nebenfund, BEHALTEN): der String stand zeichengleich in
+// `NormText.tsx` UND `KantonNormText.tsx`. Er ist EINE exportierte Konstante —
+// sonst laufen Bund- und Kanton-Verweise beim nächsten Eingriff auseinander. Der
+// farbfreie Teil steht getrennt, weil der kantonale §-Trigger dieselbe Linie,
+// aber eine andere Hover-Farbe braucht. Jede FARB-Utility bleibt LITERAL in der
+// Datei, die sie verwendet — Tailwind liest seine Klassen aus dem Quelltext,
+// eine zur Laufzeit zusammengesetzte Farbklasse wäre ein stiller No-op (die
+// Bug-Klasse, die `check:design-tokens` Prüfung 2/3 verfolgt).
+export const VERWEIS_RUHE = 'underline decoration-dotted underline-offset-2';
 export const VERWEIS_INLINE_CLASS = `${VERWEIS_RUHE} hover:text-brass-700`;
 const INLINE_CLASS = VERWEIS_INLINE_CLASS;
 
