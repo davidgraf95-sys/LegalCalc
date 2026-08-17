@@ -42,7 +42,8 @@
    "rechtsprechung.e2e.ts",
    "smoke.e2e.ts",
    "leser-v3-auskunft.e2e.ts",
-   "leser-v3-panel-zaehler.e2e.ts"
+   "leser-v3-panel-zaehler.e2e.ts",
+   "leser-marken-geometrie.e2e.ts"
   ],
   "4": [
    "gesetze-rechtsgebiet-g6.e2e.ts",
