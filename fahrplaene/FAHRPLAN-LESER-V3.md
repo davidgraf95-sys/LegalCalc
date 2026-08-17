@@ -772,6 +772,27 @@ a11y-Stichprobe läuft nur im Projekt `chromium` und öffnet das Panel nicht).
 | **`panelOeffner`/`panelSlot` sind gestrichen** | H1 hatte sie als `ReactNode`-Slots vorgesehen. Von aussen nicht füllbar: Zähler und Panel brauchen `useLeserV3Modell`, das erst IM Rahmen läuft — ein äusserer Aufrufer hätte die eine Naht ein zweites Mal ziehen müssen (§5). Gestrichen statt bewacht (Präzedenz `LeserV3Kontext.ts`); `beiwerkSlot`/`fassungsWahl`/`leisteExtra` bleiben unverändert. **Lehre für kommende Slot-Vorplanung:** ein Erweiterungspunkt trägt nur, wenn der Füller an dieselben Daten kommt wie der Rahmen |
 | **Ä25 (neu)** | Der Erlass-Titel steht auf D teilweise UNTER dem rechts angeschlagenen Blatt (Bildbogen `stpo-d-hell-entscheide`). Bei einer Überlagerung unvermeidlich; sichtbar wird es nur, weil der Titel bis an den rechten Rand läuft. Mit der Spalten-Entscheidung oben zusammen zu lösen, nicht davor |
 
+**Vereinigung mit dem H2b-Nachzug (17.8.2026).** H3 war auf dem H2b-Stand
+`37159526f` gebaut; der Nachzug (`37159526f..9555f96e8`) fasste danach dieselben
+Stellen an. Rebase auf den Nachzug, zwei Konfliktstellen in `LeserRahmenV3.tsx`,
+beide Beiträge behalten: (1) Import-Block vereinigt — `SUCH_H_AKTIV`/`SUCH_H_RUHE`
+und `bestimmungsWort()` (B8/B9) bleiben, `kopfElemente`/`panelForm` kommen dazu,
+`ReiterAktion`/`overlineGebiet`/`titelKennung` entfallen, weil sie mit dem
+Erlass-Kopf nach `LeserErlassKopfZone.tsx` gewandert sind. (2) Gliederungs-Blatt —
+**die H3-Auslagerung `LeserLeisteSheet.tsx` gewinnt und erledigt damit die
+B10-Auflage des Nachzugs**, trägt aber die Nachzug-Semantik: dasselbe Suchfeld
+zuoberst im Blatt (A2/Ä18), «Sie sind hier» nur zum Baum (Ä32), Esc schliesst das
+Blatt — als drei durchgereichte Props, der Rahmen entscheidet weiter das WAS, das
+Bauteil nur das WIE des Portals. Zwei Regressionen der Vereinigung hat die
+Fundament-Sonde gefangen (rot gesehen, dann behoben): das Zähl-Substantiv in
+`LeserErlassKopfZone` stand als Literal-Union statt als Typ `BestimmungsWort`
+(B8), und der Rahmen lag mit 419 Zeilen gleichauf mit `leserV3Modell.ts` und wurde
+zur grössten Datei in `v3/` — Konflikt-Kommentare gestrafft, jetzt 412. Zusätzlich
+war `e2e/shard-gruppen.json` nicht neu erzeugt (100 Specs gegen 96 in der
+Projektion, `check:e2e-shards` rot); die Annotationen 3/4/5/6 der vier H3-Specs
+standen, nur die Projektion fehlte. Keine Spec nachgezogen, keine Funktion
+aufgegeben.
+
 **Deckel-Stand:** H3 ist der dritte der höchstens fünf H-PRs (H1 · H2/H2b · H3);
 zwei bleiben für H4 und Nachbesserungen.
 
