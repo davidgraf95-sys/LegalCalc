@@ -17,11 +17,10 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
-import { extrahiereFussnotenRevision, kanonArtikelToken } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
 import { SUCH_META } from '../suchHighlight';
-import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
-import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
+import { zitatMitAusweis, heuteIso } from '../../../lib/format';
+import { schaetzeArtikelHoehe, fnNrSortKey } from '../berechnungen';
 import { BezuegeZeile } from './BezuegeZeile';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import { urlMitHash } from '../../../lib/liveUrlSync';
@@ -218,23 +217,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Eintrag leer → kein data-fn-klasse → in JEDER Ansicht sichtbar (§8).
   const fnKlasse: Record<string, string> = {};
   for (const f of fussAnzeige) if (f.nr && f.kl) fnKlasse[f.nr] = f.kl;
-  // W2·5i: Chronologie-Reihung der ÄNDERUNGSVERMERKE dieses Artikels. Keine neue
-  // Datenquelle und kein neuer Parser — reiner Render über `fussAnzeige` (die
-  // Sidecar-Fussnoten, die sowieso schon geladen sind) mit dem BESTEHENDEN
-  // Datums-Extraktor aus dem Revisions-Extrakt (§5: das «in Kraft seit …»-Muster,
-  // das Datums-Fenster und der deutsche Monats-Parser leben genau dort, nicht hier).
-  // Die Reihenfolge-Regel selbst steht als reine, geprüfte Funktion in
-  // ./berechnungen (baueChronologie) — hier bleibt nur der Aufruf.
-  const chronologie = baueChronologie<Fussnote>(
-    fussAnzeige,
-    // `hostToken` MUSS mit (PR #376, Fremd-Adressierungs-Wächter): eine Klausel
-    // wie «… Art. 40c in Kraft vom 1. Jan. 2025 …» in der Gliederungstitel-
-    // Fussnote von AHVG Art. 39 datiert Art. 40c, NICHT den Host. Ohne den Token
-    // verwürfe der Wächter solche Klauseln konservativ ganz — die Chronologie
-    // zeigte dann «ohne Datum», obwohl das Datum bekannt ist. Mit dem Token
-    // stimmt sie mit den Revisions-Shards überein (EINE Wahrheit, §5).
-    (text) => extrahiereFussnotenRevision(text, kanonArtikelToken(e.artikel))?.iso ?? null,
-  );
+  // S1 (Optionen-Rückbau, David F1 «ja»): die frühere Chronologie-Reihung dieses
+  // Artikels ist ENTFALLEN — mit dem dritten Historie-Modus fällt die zweite
+  // Darstellung derselben Vermerke weg. Die Vermerke selbst sind unberührt: sie
+  // stehen im Fussnoten-Apparat unten, mit Nummer, Wortlaut und AS/BBl-Link.
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
     if (f.sektion) { (fnProSektion[f.sektion] ??= []).push(f.nr); continue; }
@@ -601,8 +587,19 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               Aussenabstand sitzt hier am Slot, nicht in der Zeile — sonst fallen
               reservierte und gefüllte Höhe auseinander. */}
           {/* S8: «Gilt seit»-Badge und Fassungs-Timeline sind abgeleitete
-              Metadaten, kein Wortlaut (§4.4) — `data-such-meta`. */}
-          <div {...{ [SUCH_META]: '' }} className="mt-4 min-h-hist-zeile">
+              Metadaten, kein Wortlaut (§4.4) — `data-such-meta`.
+
+              S1 (Kap. 4f, Befund K4): der Slot trägt `data-hist-slot`, damit der
+              Schalter «Änderungsvermerke» ihn MIT ausblenden kann. Bis S1 hing die
+              «Fassung»-Zeile an gar keinem Schalter — bei «Änderungsvermerke aus»
+              blieb die Fassungshistorie als einzige Historie-Spur im Lesetext
+              stehen. Ausgeblendet wird der SLOT, nicht nur die Zeile darin: sonst
+              bliebe seine reservierte Höhe (`mt-4 min-h-hist-zeile` = 16+24 px) als
+              Phantom-Lücke unter jedem Artikel zurück, und «aus» hätte doch eine
+              Spur hinterlassen. Der Inhalt bleibt im DOM (A1-Mechanik, David
+              5.7.2026: `display:none`, nie gelöscht) und «an» stellt ihn
+              vollständig wieder her. */}
+          <div {...{ [SUCH_META]: '' }} data-hist-slot className="mt-4 min-h-hist-zeile">
             <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
           </div>
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
@@ -628,48 +625,6 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 </p>
               ))}
             </div>
-          )}
-          {/* W2·5i-HIST-ANSICHT: dieselben Änderungsvermerke, chronologisch geordnet.
-              Liegt IMMER im DOM (wie Apparat und Leitfall-Zeilen) und wird allein per
-              `data-histansicht`-CSS ein-/ausgeblendet: das Umschalten ist damit ein
-              reiner Attribut-Wechsel am <html> — kein React-Re-Render der Artikelliste
-              (§15) und kein Nachladen. Mengenmässig sind das die A-Fussnoten GENAU
-              DIESES Artikels (im Schnitt ~0.7 je Artikel), also keine relevante
-              DOM-Last; sichtbar ist zu jedem Zeitpunkt nur EINE der beiden Listen. */}
-          {chronologie.length > 0 && (
-            <ol data-hist-chrono className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
-              {chronologie.map((fn, i) => (
-                <li key={i} className="text-xs leading-normal text-ink-500">
-                  {/* Gegenprüfungs-Befund B4 (26.7.2026): die Fussnoten-NUMMER gehört
-                      auch in die Chronologie-Zeile. Ohne sie ist der Marker im Wortlaut
-                      (¹¹⁶) keinem Eintrag mehr zuzuordnen — der Leser sieht eine
-                      Datumsliste ohne Anschluss an den Text. Gleiche Darstellung wie im
-                      Apparat (`num`, ink-500), damit die Zuordnung optisch trägt.
-                      LM-151 (W2·17-UI-BEFUNDE-B4): drei Bestandteile (Nummer/Sortier-
-                      Datum/Fussnotentext) liefen ohne TEXTLICHEN Trenner ineinander
-                      («1061. Oktober 2025Eingefügt …») — `mr-1`/`mr-1.5` setzen nur
-                      CSS-Abstand, kein Zeichen; für Text-Selektion/Screenreader blieb
-                      kein Zwischenraum. Explizite Trenn-Zeichen (` · `, `: `) statt
-                      reiner Margin schliessen die Lücke, ohne den amtlichen
-                      Fussnotentext (`fn.fn.text`) anzutasten (§1/§7). LM-153: Nummer
-                      brass-700 statt ink-500 — dieselbe Farbfamilie wie die Marke im
-                      Fliesstext (FnRef), gleiche Begründung wie im Apparat oben. */}
-                  {fn.fn.nr && <span className="num mr-1 text-brass-700">{fn.fn.nr}</span>}
-                  {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
-                      §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
-                      undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
-                  {fn.fn.nr && <span aria-hidden className="text-ink-300 mr-1">·</span>}
-                  {/* S8: das Sortier-Datum ist von UNS gesetzter Anzeigetext,
-                      nicht amtlicher Fussnotenwortlaut — `data-such-meta`,
-                      damit es keine Fundstelle malt, die niemand zählt (§4.4). */}
-                  <span {...{ [SUCH_META]: '' }} data-hist-datum={fn.iso ?? ''} className="num tabular-nums text-ink-600">
-                    {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
-                  </span>
-                  <span aria-hidden className="mr-1.5">:</span>
-                  {fnTextMitLinks(fn.fn)}
-                </li>
-              ))}
-            </ol>
           )}
         </div>
         )}

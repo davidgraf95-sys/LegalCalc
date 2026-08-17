@@ -1,17 +1,18 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
-import {
-  setzeOption, setzeHistAnsicht, useLeserOptionen, useHistAnsicht, type OptFeld,
-} from '../leserOptionen';
-import { histUmschalten, histZuSicht } from './v3Optionen';
+import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
 
 // ─── «Ansicht ▾» der V3-Kopfzeile (FAHRPLAN-LESER-V3 Kap. 4a/4f, H1) ─────────
 //
-// DREI Schalter, alle zweiwertig — gegenüber der Ist-Hülle fallen der dritte
-// Historie-Modus («Chronologie») und der Verweise-Schalter aus der BEDIENUNG
-// (Kap. 4f: 24 → 8 Kombinationen). Der Store darunter bleibt in H1 unangetastet
-// und GETEILT mit V1 (FL-6, §5) — die Abbildung steht in `./v3Optionen`.
+// DREI Schalter, alle zweiwertig (Kap. 4f: 24 → 8 Kombinationen). Der Store
+// darunter ist GETEILT mit V1 (FL-6, §5).
+//
+// S1 (Optionen-Rückbau): der dritte Historie-Modus («Chronologie») und der
+// Verweise-Schalter sind nicht mehr bloss aus der V3-BEDIENUNG genommen, sondern
+// im Store gestrichen. Die Abbildung `./v3Optionen` (`histZuSicht`/`sichtZuHist`/
+// `histUmschalten`) ist damit ersatzlos entfallen — `histansicht` ist ein
+// gewöhnliches zweiwertiges Feld, und alle drei Schalter laufen durch `schalte`.
 //
 // Was hier NICHT steht und bewusst nicht:
 //  · Rechtsprechungs-Facetten (Instanz/Kanton/Zeit) — die ziehen in H3 ins
@@ -64,7 +65,6 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
   fussnotenAnzahl: number | null;
 }) {
   const opt = useLeserOptionen();
-  const hist = useHistAnsicht();
   const schrift = useSchriftskala();
   const [offen, setOffen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -143,15 +143,16 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
             titel="Amtlicher Fussnoten-Apparat am Artikelfuss ein- oder ausblenden"
             onKlick={() => schalte('fussnoten', opt.fussnoten === 'an')}
           />
-          {/* Kap. 4f: dieselbe Information, EIN Schalter. «aus» dämpft NUR die
-              build-seitig als Änderungsvermerk klassifizierten Fussnoten (kl:'A');
-              echte Verweise, Grauzone und Publikationsnachweise bleiben in jeder
-              Stellung sichtbar (H0-Auflage 1, §1/§8). */}
+          {/* Kap. 4f: dieselbe Information, EIN Schalter. «aus» blendet NUR die
+              build-seitig als Änderungsvermerk klassifizierten Fussnoten (kl:'A')
+              samt «Fassung»-Zeile aus; echte Verweise, Grauzone und
+              Publikationsnachweise bleiben in jeder Stellung sichtbar
+              (H0-Auflage 1, §1/§8). */}
           <V3Switch
-            an={histZuSicht(hist) === 'an'}
+            an={opt.histansicht === 'an'}
             label="Änderungsvermerke"
             titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
-            onKlick={() => setzeHistAnsicht(histUmschalten(hist))}
+            onKlick={() => schalte('histansicht', opt.histansicht === 'an')}
           />
           {/* Umwidmung des `leitfaelle`-Schalters (Kap. 4f): er steuert in V3
               «Rechtsprechung im Text». Regel aus dem V-0-Entscheid David
