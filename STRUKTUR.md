@@ -30,7 +30,7 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
-## Session 17.8.2026 (Abend) — Gesetz-Leser V3: H3/S2 gelandet, PR #551 Nachzug im CI, H4-Flip wartet auf David (W2·5m-LESER-V3)
+## Session 17.8.2026 (Abend) — Gesetz-Leser V3: H3/S2 gelandet, PR #551 Nachzug gemergt (f225f9c5d), H4-Flip wartet auf David (W2·5m-LESER-V3)
 
 - **Gelandet + live:** #547 S1 (`2538dd356`) · #548 H2b (`98558b561`) · #549 H3 (`2992501b0`) · #550 S2 (`afc008c19`) — zusammen mit #539 H2 (`19a989f93`) ist die ganze Hüllen-Serie H2–S2 live. Ästhetik-Verlauf H1 5,5 → H2 6,0 → H2b 6,5 → H3 6 → S1 8 → S2 7.
 - **PR #551** `feat/leser-v3-nachzug-17-8` (Worktree `LexMetrik-nachzug`, HEAD `c7b2ceb20`) im CI: Kopfzeilen-Verschmelzung, drei Live-Befunde Davids (Treffer-Blatt, Fussnoten↔Vermerke entkoppelt, Fokusring), Übersichtsbox als Fedlex-Steckbrief, H4-Vorbereitung ohne Flip; drei Prüfer durch (Bug · Ästhetik 7/10 · Architektur 8,5/10), Auto-Merge-Wächter mergt bei Grün.

@@ -15,10 +15,8 @@ git-Historie (Commit `932df3a90`).
 - Live-Vergleich: https://lexmetrik.vercel.app/gesetze/bund/STPO?leser=v3 vs. ohne Flag.
 - Ästhetik-Verlauf: H1 5,5 · H2 6,0 · H2b 6,5 · H3 6 · S1 8 · S2 7 · Nachzug 7.
 
-## Offen — PR #551 (Stand bei Übergabe: OPEN, CI läuft)
-`feat/leser-v3-nachzug-17-8`, HEAD `c7b2ceb20`, Worktree `LexMetrik-nachzug`. Beim
-Aufgreifen zuerst `gh pr view 551 --json state,mergeCommit,statusCheckRollup` prüfen —
-bei `MERGED` als gelandet führen (SHA nachtragen), bei CI-Rot Diagnose vor Fix (§0.2).
+## Gelandet — PR #551 (Merge `f225f9c5d`, 17.8. spätabends; Worktree/Branch abgeräumt)
+Deploy-Job im Actions-Lauf des Merge-Commits und `curl -s https://lexmetrik.vercel.app/ | grep lexmetrik-build` == `f225f9c5` prüfen (die Übergabe-Session hat den Deploy-Wächter gestartet; falls nicht `f225f9c5`: Actions-Lauf ansehen).
 
 Inhalt:
 - **A-2 Leisten-Verschmelzung:** eine Kopfzeile statt zwei (`KopfDaten.kopfzeileSelbst`,
