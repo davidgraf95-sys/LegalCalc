@@ -217,14 +217,16 @@ export function zeigeSchliessKreuz(stufe: KopfStufe, vollflaechig: boolean): boo
  *             zum H3-Nachzug als unbedingte Zusage. Sie ist NICHT eingelöst:
  *             gemessen @1440 liegt die Lesespalte bei x 580…1200 und das Blatt
  *             bei x 1088…1440 — es verdeckt die äusseren **112 px jeder Zeile**
- *             (18 % der Spaltenbreite), die Zeilenenden fehlen also. Und keine
- *             feste Breite behebt das: @1440 misst der Rand rechts der Spalte
- *             240 px, @1280 nur 160 — dieselbe Arithmetik, die schon die
- *             angedockte Spalte unmöglich gemacht hat (Rechnung im Rahmen).
- *             Die Zusage gehört darum zum offenen Spalten-Entscheid (H4,
- *             Vollzugsvermerk H3); bis dahin sagt dieser Kommentar, was das
- *             Blatt WIRKLICH tut (§8 — ein Kommentar, der mehr verspricht als
- *             der Bau hält, ist die Sorte Beleg, die niemand nachprüft).
+ *             (18 % der Spaltenbreite; @1280: 192, @1024: 320), die Zeilenenden
+ *             fehlen also. Und keine feste Breite behebt das: @1440 misst der
+ *             Rand rechts der Spalte 240 px, @1280 nur 160.
+ *             ── SEIT Ä60 (c) IST DIESE FUNKTION NICHT MEHR DAS LETZTE WORT ──
+ *             David-Entscheid 17.8.2026: der Leser-Rahmen wird breiter, und
+ *             `rahmenSpalten.rahmenBild` gibt dem Blatt dort eine EIGENE Spur
+ *             (`'spalte'`). `'rechts'` bleibt die Gestalt für den ENGEN Rahmen
+ *             — Fenster unter 1024 px, ausgeklappte App-Seitenleiste —, und
+ *             dort gilt die Messreihe oben unverändert. Dieser Kommentar sagt
+ *             sie darum weiter, statt sie wegzuglätten (§8).
  *   'unten'   Bottom-Sheet über die ganze Breite — die Gestalt für H (Daumenzone)
  *             und für jede geteilte Fläche (dort verbietet die harte Regel eine
  *             dritte vertikale Fläche, und ein 22-rem-Streifen in einer

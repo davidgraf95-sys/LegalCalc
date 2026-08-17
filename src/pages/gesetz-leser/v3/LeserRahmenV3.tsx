@@ -26,6 +26,7 @@ import { useTrefferBlatt } from './useTrefferBlatt';
 import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
+import { rahmenBild, useRahmenRaum } from './rahmenSpalten';
 import { kopfElemente, panelForm, useKopfStufe, zeigeSchliessKreuz } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
@@ -95,6 +96,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // war, und ohne Key lädt die Bezugs-Hook nicht (Nachladen, Kap. 7).
   const panel = usePanelZustand();
   const bezuege = usePanelBezuege(m.erlass?.key, panel.jeGeoeffnet);
+  // Ä60 (c) · WIE BREIT der Rahmen ist und WELCHE Spuren er trägt: `./rahmenSpalten`
+  // (Herleitung, Messreihe und die eine Schwelle stehen dort). Gemessen wird der
+  // RAUM im `<main>`, nicht das eigene Element — sonst entschiede der Rahmen über
+  // seine Breite anhand seiner Breite.
+  const { raum, raumRef } = useRahmenRaum();
 
   // ⌘K / «/» — Zusage des RAHMENS, nicht des Feldes (Bug-Check B1). Steht VOR den
   // frühen Rückgaben, weil Hooks nicht bedingt laufen dürfen.
@@ -126,7 +132,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const meta = grundartMeta(erlass.key);
   const bestimmungsWort = bestimmungsWortVon(erlass.key); // B8: EINE Ableitung
   const hatLeiste = eintraege.length > 0;
-  const zweiSpalten = umgebung.istXl && hatLeiste && m.tocOffen;
+  const bild = rahmenBild({
+    raum, spaltenLage: hatLeiste && umgebung.istXl, tocOffen: m.tocOffen,
+    blattOffen: panel.offen, ruheForm: panelForm(stufe, !umgebung.imPane),
+  });
+  const zweiSpalten = bild.gliederungSpalte;
   const blattOffen = !umgebung.istXl && m.tocAuf && hatLeiste; // A2: Feld im Blatt
 
   // Ä20 · Platzhalter-Beispiel = amtliches Etikett des ERSTEN Eintrags («Art. 1»
@@ -198,7 +208,15 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
   // Ä79 (H4-II): steht die Schiene, ist SIE der eine Griff — die Herleitung samt
   // Messreihe steht am Bauteil, das sie betrifft (`./LeserGliederungSchiene`).
-  const schieneSteht = hatLeiste && umgebung.istXl && !m.tocOffen;
+  const schieneSteht = bild.schiene;
+  // Ä60 (c): die Schiene steht seit H4 aus ZWEI Gründen — der Nutzer hat die
+  // Gliederung eingeklappt, ODER das Beiwerk-Blatt hat ihren Platz. Im zweiten
+  // Fall wäre «einblenden» ohne das Schliessen des Blatts eine Zusage ohne
+  // Wirkung (der Platz reicht nicht für beide), also tut der Griff beides.
+  const schieneAuf = () => {
+    setzeTocOffen(true);
+    if (bild.schieneHoltPlatz) panel.schliesse();
+  };
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
   const gliederungKnopf = hatLeiste && !zweiSpalten && !schieneSteht
@@ -214,16 +232,21 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
   return (
     <div
-      ref={(el) => { kopfRef(el); wurzelRef.current = el; }}
+      ref={(el) => { kopfRef(el); wurzelRef.current = el; raumRef(el); }}
       data-leser-v3="rahmen"
       className="lc-leser space-y-5"
       data-grundart={meta.grundart ?? undefined}
       // Die Geometrie (sechs voneinander abhängige CSS-Variablen, Risiko R1) ist
       // eine reine Funktion in `./leserGeometrie` — dort steht auch die Herleitung
       // samt LM-003. Der Rahmen sagt nur noch, WELCHE Lage gilt (C5a, §6.6).
-      style={leserCssVariablen({
-        stufe, vollflaechig: !umgebung.imPane, suchZoneKlebt, sucheAktiv: m.sucheAktiv,
-      })}>
+      style={{
+        ...leserCssVariablen({
+          stufe, vollflaechig: !umgebung.imPane, suchZoneKlebt, sucheAktiv: m.sucheAktiv,
+        }),
+        // Ä60 (c): die Aufweitung. `undefined`, solange das Blatt keine eigene
+        // Spur hat — dann ist der Rahmen Zeichen für Zeichen der bisherige.
+        ...bild.breite,
+      }}>
 
       <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
         hatAenderungsvermerke={m.hatAenderungsvermerke}
@@ -265,38 +288,18 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           titel={m.sucheAktiv ? 'Treffer' : 'Gliederung'} baum={leiste(true)} />
       )}
 
-      {/* ── Zwei Spalten, IMMER — nur die linke schrumpft (David 16.8.2026) ────
-          Befund am gebauten H1-Stand, @1440 reproduziert: klappte man die
-          Gliederung ein, verschwand das Grid ganz. Die Lesespalte sprang dabei
-          um 175 px nach links (x 600 → 424) und gewann ganze 31 px Breite
-          (641 → 672, mehr lässt das Lesemass nicht zu) — der Nutzer sah einen
-          Sprung ohne Gewinn. Und der einzige Weg zurück war ein 24-px-☰ OHNE
-          Beschriftung, ganz rechts im Kopf (x = 1101) — also an der
-          gegenüberliegenden Seite von dem, was es zurückholt.
-          Jetzt bleibt das Grid stehen und die linke Spalte wird zur schmalen
-          Schiene mit beschriftetem Öffner. Der Öffner steht damit DORT, wo die
-          Gliederung war, die Fläche gewinnt echte 15.75 rem, und die Bewegung
-          ist eine Breitenänderung statt eines Umbruchs. */}
-      {/* ── H3 · KEINE DRITTE SPUR — gemessen, nicht entschieden ───────────────
-          Der Fahrplan verlangt «auf D rechts 22 rem (3-Spalten-Grid)». Im heutigen
-          Seitenrahmen ist das auf JEDER Desktop-Breite arithmetisch unmöglich: der
-          Route-Wrapper deckelt auf `max-w-content` = 70 rem, gemessen 17.8.2026
-          exakt 1072 px bei Viewport 1280/1440/1600/1920 (Lesespalte 640 px). Für
-          18 + 40 + 22 rem samt zwei Abständen braucht es 1344 px — 272 fehlen;
-          selbst mit eingeklappter Gliederung bleiben nur 332 statt 352.
-          Ein Grid-Zweig, den keine Breite erreicht, ist toter Code (§17) — darum
-          keine dritte Spur. Das Panel ist überall ein Blatt. Was zu entscheiden
-          wäre, damit die Spalte möglich wird, steht im Vollzugsvermerk H3. */}
+      {/* ── Die Lese-Zeile: Gliederung/Schiene · Text · Beiwerk-Spur ──────────
+          WELCHE Spuren auf welcher Breite stehen, WIE breit der Rahmen dafür
+          wird und warum das Grid auch eingeklappt stehen bleibt: `./rahmenSpalten`
+          (Befund David 16.8., Ä60 (c) 17./18.8., beide mit Messreihe). */}
       <div
-        className={hatLeiste && umgebung.istXl
+        className={bild.spalten
           ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
           : ''}
-        style={hatLeiste && umgebung.istXl
-          ? { gridTemplateColumns: m.tocOffen ? '18rem minmax(0,1fr)' : '2.25rem minmax(0,1fr)' }
-          : undefined}>
-        {hatLeiste && umgebung.istXl && !m.tocOffen && (
+        style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
+        {schieneSteht && (
           // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
-          <LeserGliederungSchiene onAuf={() => setzeTocOffen(true)} />
+          <LeserGliederungSchiene onAuf={schieneAuf} />
         )}
         {zweiSpalten && (
           <aside role="navigation" aria-label="Gliederung" data-v3-aside
@@ -354,7 +357,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
             und liegt ausserhalb des Flusses. */}
         {panelZone && (
-          <LeserPanelZone form={panelForm(stufe, !umgebung.imPane)} panelId={panelId}
+          <LeserPanelZone form={bild.blattForm} panelId={panelId}
             paneZiel={overlayZiel} paneRolle={paneRolle}
             zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
             normZitat={normZitat(panelArtikel, erlass.kuerzel)}

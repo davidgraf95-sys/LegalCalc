@@ -12,20 +12,26 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 
 // ─── WO das Panel steht (H3, Kap. 4d) ────────────────────────────────────────
 //
-// EIN Blatt (Sheet) über der Fläche, in zwei Gestalten (`panelForm`):
+// DREI Gestalten seit Ä60 (c). Welche gilt, entscheidet `rahmenSpalten.rahmenBild`
+// im Rahmen — diese Datei ordnet an, sie entscheidet nicht (§3):
 //
-//   'rechts'  D, Einzelansicht — 22 rem am rechten Rand, NICHT modal. Der
-//             Lesetext links bleibt sichtbar UND bedienbar; das Panel ist
-//             Beiwerk und verhält sich auch so (Ä52, s. u.).
+//   'spalte'  D, Einzelansicht, aufgeweiteter Rahmen — eine EIGENE Spur neben
+//             dem Text. Keine Überlagerung, kein verdecktes Zeilenende; im
+//             Fluss und darum `sticky` statt `fixed`. Das ist die Gestalt, die
+//             der Fahrplan von Anfang an vorsah («D: Panel rechts 22 rem»).
+//   'rechts'  D, Einzelansicht, ENGER Rahmen — 22 rem am rechten Rand, NICHT
+//             modal. Der Lesetext links bleibt sichtbar UND bedienbar; das
+//             Panel ist Beiwerk und verhält sich auch so (Ä52, s. u.).
 //   'unten'   H und jedes Pane — echtes Bottom-Sheet, modal. Es reicht von der
 //             Unterkante nach oben und lässt den Artikel darüber stehen (Ä55).
 //
-// WARUM KEINE ANGEDOCKTE SPALTE AUF D: die Rechnung steht im Rahmen
-// (`LeserRahmenV3`, «KEINE DRITTE SPUR») — der Seitenrahmen ist auf 70 rem
-// gedeckelt (gemessen 1072 px auf jeder Desktop-Breite), 18 + 40 + 22 rem
-// brauchen 1344. Ein Zweig, den keine Breite erreicht, ist toter Code (§17).
-// Der Blatt-Modus erfüllt die harte Regel «NIE drei vertikale Flächen» ohnehin
-// in jeder Lage, nicht nur im Pane.
+// WARUM DIE SPALTE ERST JETZT: bis H4 deckelte der Seitenrahmen auf 70 rem
+// (gemessen 1072 px auf jeder Desktop-Breite), 18 + 40 + 22 rem samt Abständen
+// brauchen 84 rem = 1344. Der Zweig war nicht falsch, ihm fehlten 272 px —
+// David-Entscheid (c) vom 17.8.2026 gibt sie ihm (`rahmenSpalten.ts`).
+// UNBERÜHRT bleibt die harte Regel «NIE drei vertikale Flächen» im geteilten
+// Fenster (Design-Grundlage Kap. 8 Nr. 8, ausdrücklich «im Split-View»): im
+// Pane ist die Gestalt weiterhin ausnahmslos `'unten'`.
 //
 // ═══ Ä52 (H3-Nachzug) · DAS BLATT DECKTE DEN KOPF, DEN ES BEDIENT ════════════
 // Gemessen 17.8.2026: das Blatt begann auf D bei `top: var(--leser-kopf-h)` =
@@ -77,8 +83,9 @@ export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
   artikelLabel, bestimmungsWort, aktArtikel, steckbrief,
 }: {
-  /** Gestalt des Blatts — `panelForm(stufe, vollflaechig)` im Rahmen entscheidet. */
-  form: 'rechts' | 'unten';
+  /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet (sie folgt
+   *  `panelForm`, ausser wo der aufgeweitete Rahmen eine eigene Spur trägt). */
+  form: 'rechts' | 'unten' | 'spalte';
   /** Id der Fläche. Kommt vom RAHMEN, nicht aus einem lokalen `useId` (A3): die
    *  Öffner stehen ausserhalb dieser Datei und brauchen dieselbe Id für ihr
    *  `aria-controls` — zwei `useId` hätten zwei Ids ergeben, und eine davon
@@ -202,7 +209,19 @@ export function LeserPanelZone({
   // ── Die Fläche ────────────────────────────────────────────────────────────
   // Anschlag-Kante und Deckel je Gestalt. Alle drei Zweige sind `fixed` bzw.
   // `absolute`, brauchen also keinen Platz im Fluss (§15/2, CLS 0).
-  const flaeche = form === 'rechts' && !imPaneBlatt
+  const flaeche = form === 'spalte' && !imPaneBlatt
+    // Ä60 (c) · D breit · EIGENE Spur: das Blatt liegt NICHT mehr über dem Text,
+    // sondern neben ihm. Es ist damit das einzige der drei Bilder, das im Fluss
+    // steht — `sticky` statt `fixed`, und die Höhe rechnet aus derselben Quelle
+    // wie die Gliederungsspalte gegenüber (`--nt-stick`, Risiko R1/LM-003).
+    ? {
+      klassen: 'sticky flex min-h-0 flex-col self-start',
+      stil: {
+        top: 'var(--nt-stick)',
+        maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)',
+      } as CSSProperties,
+    }
+    : form === 'rechts' && !imPaneBlatt
     // D · rechts angeschlagen, von der Kopf-Unterkante bis zum Fensterboden.
     ? {
       klassen: 'fixed bottom-0 right-0 z-50 w-[22rem] max-w-[calc(100vw-2rem)] p-2',
@@ -231,7 +250,11 @@ export function LeserPanelZone({
       // (derselbe Mechanismus, den der Rahmen für Toast/Weiterlesen beschreibt).
       // Die DOM-Vorfahrenkette bleibt unberührt: `data-v3-pane` trägt weiter
       // (H2-Befund), und die CSS-Variable unten erbt an die Kinder.
-      className="contents"
+      // Ä60 (c): GENAU EINE Lage braucht die Box — die eigene Spur. Dort ist der
+      // Träger das Grid-Kind, und `contents` liesse die Spur ins Leere laufen.
+      // Geschlossen bleibt er auch dort ohne Box: sonst stünde eine 22-rem-Spur
+      // samt `gap-8` im Bild, in der nichts steht.
+      className={form === 'spalte' && offen ? 'min-w-0' : 'contents'}
       // Ä5: der BEHÄLTER nennt seine Fläche (dieselbe Zusage wie beim
       // Gliederungs-Blatt) — sonst malte ein klebender Sockel darin `paper` auf
       // ein `paper-raised`-Blatt.
