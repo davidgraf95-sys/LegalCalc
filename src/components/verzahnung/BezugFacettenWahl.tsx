@@ -29,7 +29,12 @@ import { STATUS_LABEL, type BezugStatus } from '../../lib/verzahnung/facetten';
 import type { BezugsBilanz, KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { ZeichenLegende } from './ZeichenLegende';
 
-/** Gemeinsame Schalter-Optik der Streifen (identisch zu ZeitraumWahl/HistAnsichtWahl). */
+/** Gemeinsame Schalter-Optik der Streifen.
+ *  S1-Nachzug 17.8.2026 (Architektur-Prüfer C1): der Klammer-Zusatz «identisch zu
+ *  ZeitraumWahl/HistAnsichtWahl» ist entfernt — beide Komponenten existieren nicht
+ *  mehr (`ZeitraumWahl` mit W2·7-BEZUG/B5, `HistAnsichtWahl` mit S1/F1). Ein
+ *  Verweis auf einen toten Namen führt die nächste Leserin in die Irre; die Optik
+ *  steht seither allein hier. */
 const KNOPF = 'rounded px-1.5 py-0.5 text-xs transition-colors';
 const AKTIV = 'bg-brass-100/60 font-medium text-ink-900';
 const RUHIG = 'text-ink-500 hover:bg-brass-100/40';

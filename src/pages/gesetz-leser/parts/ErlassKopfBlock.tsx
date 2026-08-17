@@ -75,13 +75,23 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
         </div>
       )}
       {/* W2·5i-HIST-ANSICHT (bewusster Verzicht, 26.7.2026): der KOPF-Apparat trägt
-          KEIN `data-fn-klasse`, folgt der dreiwertigen Historie-Wahl also nicht — er
-          bleibt in allen drei Ansichten vollständig sichtbar. Grund: die Ansicht «als
-          Chronologie» ersetzt die A-Einträge durch eine datierte Liste AM ARTIKELFUSS;
-          für den Erlass-Kopf gibt es keine solche Ersatzdarstellung, ein Ausblenden
-          hier wäre also reiner Informationsverlust (§8). Das Sidecar liefert `kl` für
-          die Kopf-Fussnoten mit — wer den Kopf später einbezieht, braucht dann eine
-          eigene Ersatzdarstellung, nicht bloss eine CSS-Regel. Der bestehende
+          KEIN `data-fn-klasse` und folgt dem Schalter «Änderungsvermerke» also nicht —
+          er bleibt in BEIDEN Stellungen vollständig sichtbar.
+
+          NEU BEGRÜNDET (S1-Nachzug 17.8.2026, Architektur-Prüfer C1): die alte
+          Begründung berief sich auf die dritte Ansicht «als Chronologie» — dort
+          ersetzte eine datierte Liste am Artikelfuss die A-Einträge, und für den
+          Erlass-Kopf gab es keine solche Ersatzdarstellung. Dieser Grund ist mit S1
+          ENTFALLEN (der Modus ist gestrichen, David F1), das ERGEBNIS bleibt aber
+          richtig — nur eben aus einem anderen, einfacheren Grund:
+
+          Der Kopf-Apparat hängt an KEINEM Vermerke-Schalter, weil ein Ausblenden hier
+          nichts verfeinern, sondern nur amtliche Substanz wegnehmen würde (§8,
+          konservative Richtung wie H0-Auflage 1). Am Artikelfuss trennt der Schalter
+          Änderungsvermerke von echten Verweisen — im Vorspann steht kein solches
+          Gemisch, das man trennen müsste. Das Sidecar liefert `kl` für die
+          Kopf-Fussnoten weiterhin mit; wer den Kopf später doch einbeziehen will,
+          braucht dafür einen eigenen Entscheid, nicht bloss eine CSS-Regel. Der
           `data-fussnoten`-Toggle wirkt hier unverändert weiter. */}
       {kopf.fussnoten && kopf.fussnoten.length > 0 && (
         <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">

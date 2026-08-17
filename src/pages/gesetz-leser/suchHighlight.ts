@@ -168,8 +168,10 @@ function istFussnotenMarker(el: Element): boolean {
  *
  * Bug-Check §9 vom 4.8.2026 (B2): der Walker hatte keinen Sichtbarkeitsfilter.
  * Schaltet der Nutzer «Fussnoten aus» (`html[data-fussnoten="aus"]` ⇒
- * `display:none` auf Marker + Apparat, index.css) oder die Hist-Chronologie ab,
- * lag der Text weiter im DOM — der Zähler meldete für OR «Fassung» 141, wovon 61
+ * `display:none` auf Marker + Apparat, index.css) oder die Änderungsvermerke ab
+ * (S1-Nachzug 17.8.2026: hier stand «die Hist-Chronologie» — jener dritte Modus ist
+ * mit S1 gestrichen, der Sachverhalt gilt unverändert für den zweiwertigen
+ * Schalter), lag der Text weiter im DOM — der Zähler meldete für OR «Fassung» 141, wovon 61
  * (43 %) in `display:none`-Teilbäumen lagen: unmalbar, und der Sprung dorthin
  * bewegte nichts. Eine Zahl, die Stellen mitzählt, die es auf dem Schirm nicht
  * gibt, lügt über den Zustand (§8).

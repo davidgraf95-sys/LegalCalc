@@ -12,10 +12,14 @@
 // Der Store trägt jetzt DREI zweiwertige Felder (8 statt 24 Kombinationen):
 //
 //  · `verweise` ist ERSATZLOS ENTFALLEN (F2). Er wirkte allein auf die gepunktete
-//    Unterstreichung der Verweis-Links BEI :hover (`index.css`, Regel entfernt);
-//    Farbe, Klickbarkeit, Anker und Ctrl+F waren nie betroffen und bleiben es
-//    nicht. Ein alt gespeichertes `"verweise"` steht nicht mehr in FELDER, wird
-//    beim Laden also ignoriert und beim nächsten Schreiben abgeräumt.
+//    Unterstreichung der Verweis-Links (`index.css`, Regel entfernt); Farbe,
+//    Klickbarkeit, Anker und Ctrl+F waren nie betroffen. Ein alt gespeichertes
+//    `"verweise"` steht nicht mehr in FELDER, wird beim Laden also ignoriert und
+//    beim nächsten Schreiben abgeräumt.
+//    KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7): hier stand «BEI :hover». Falsch —
+//    die Linie ist DAUERHAFT (`NormText.tsx:38`: `underline` unbedingt, bei Hover
+//    wechselt nur die Farbe). Der gestrichene Schalter nahm also eine permanente
+//    Linie weg, nicht eine Hover-Zierde. Offene Design-Frage Ä25, Fahrplan Kap. 7.
 //  · `histansicht` ist von DREI Werten ('aus' | 'fussnoten' | 'chronologie') auf
 //    ZWEI ('an' | 'aus') zurückgebaut (F1) und lebt seither als gewöhnliches
 //    Toggle-Feld in `FELDER` — die frühere Sonderbehandlung (eigener Setter,

@@ -8,7 +8,12 @@
 // ersatzlos entfallen.
 //
 // OPTIONEN-RÜCKBAU S1 (Kap. 4f, David F1/F2 «ja»): «Verweise» ist ERSATZLOS
-// entfallen (er wirkte nur auf eine gepunktete Unterstreichung bei :hover), und
+// entfallen (er wirkte auf die gepunktete Unterstreichung der Verweis-Links —
+// KORREKTUR S1-Nachzug 17.8.2026: hier stand «bei :hover», und das war falsch;
+// die Linie ist dauerhaft, `NormText.tsx:38` setzt `underline` unbedingt und
+// tauscht bei Hover nur die Farbe. Messung: StGB Art. 66a, 100 solche Links,
+// `text-decoration-line: underline` im Ruhezustand. Ob die Linie im Ruhezustand
+// stehen soll, ist die offene Design-Frage Ä25 — s. Fahrplan Kap. 7), und
 // die frühere DREIWERTIGE `HistAnsichtWahl` («aus · Fussnoten · Chronologie») ist
 // ein gewöhnlicher Switch «Änderungsvermerke» — dieselbe Bedienung wie in V3, ein
 // Store-Feld, ein Muster. Bleiben zwei Switches: Fussnoten · Änderungsvermerke.
