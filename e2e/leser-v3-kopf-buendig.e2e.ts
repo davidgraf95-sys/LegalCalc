@@ -242,7 +242,15 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
       .toBeGreaterThanOrEqual(zu.kopfUnten - 2)
 
     // AUFKLAPPEN — der Kopf schrumpft, und der Artikel bleibt wieder stehen.
-    await page.locator('[data-v3-gliederung-auf]').click()
+    // Ä79 (H4-II, 17./18.8.2026): der Griff heisst hier seit dem Fix
+    // `[data-v3-gliederung-schiene]` statt `[data-v3-gliederung-auf]`. Das ist
+    // KEINE Aufweichung der Aussage (§6.3): beide hingen am selben
+    // `setzeTocOffen(true)` des Rahmens und standen @1440 GLEICHZEITIG da — zwei
+    // ☰ für eine Handlung, 933 px auseinander an gegenüberliegenden
+    // Fensterkanten. Der Kopf-☰ weicht dort, wo die beschriftete Schiene
+    // dasselbe tut; die Zusage DIESES Tests (der Höhenausgleich aus
+    // `useStickAusgleich`) ist unverändert und wird unverändert gemessen.
+    await page.locator('[data-v3-gliederung-schiene]').click()
     await expect(page.locator('[data-v3-aside]')).toHaveCount(1)
     await page.waitForTimeout(400)
     const auf = await lage()

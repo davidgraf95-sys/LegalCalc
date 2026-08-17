@@ -41,16 +41,27 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 //    Vollzugsvermerk A-2.
 //
 // ✕ SCHLIESST DAS GESETZ, nicht die Anwendung: es führt zur Gesetzes-Übersicht,
-// in einem Pane pane-lokal (jedes Pane hat seinen eigenen Navigator). In der
-// EINZELANSICHT ist es seit A-2 das einzige ✕ der Seite. Im PANE steht daneben
-// weiterhin das ✕ der Pane-Titelleiste, das etwas anderes tut («dieses Fenster
-// schliessen») — die beiden sind nicht zusammenzulegen, weil eine Inhaltsseite
-// ihr eigenes Fenster nicht schliessen kann; unterscheidbar sind sie über ihren
-// Accessible-Name (§8) und über den Kontext (Fenster-Griffleiste vs. Inhalt).
+// in einem Pane pane-lokal (jedes Pane hat seinen eigenen Navigator).
+//
+// ── Ä46 (H4-II, 17./18.8.2026) · UND ES STEHT NICHT MEHR ÜBERALL ────────────
+// Hier stand bis zum H4-Vorbereitungslauf: «Im PANE steht daneben weiterhin das
+// ✕ der Pane-Titelleiste, das etwas anderes tut … die beiden sind nicht
+// zusammenzulegen … unterscheidbar über ihren Accessible-Name». Gemessen im
+// Split @1600 hiess das: je Pane zwei sichtbare ✕, 44 px übereinander
+// (Griffleiste y = 69, dieser Kopf y = 113) — gleiches Zeichen, gleiche Grösse,
+// gleiche Ecke, verschiedene Wirkung. Ein Accessible-Name allein trägt diese
+// Unterscheidung nicht: er ist genau das, was der Blick nicht liest (§8).
+// Zusammengelegt sind sie darum nach wie vor nicht — die INHALTS-Handlung
+// («zurück zur Übersicht») wandert nicht in das Fenster-✕, sie zeigt sich in
+// derselben Zeile bereits als benannter Rücksprung «‹ Gesetze» bzw. als volle
+// Krume, mit demselben Ziel `/gesetze` und derselben pane-lokalen Auflösung.
+// WO das ✕ steht, entscheidet `kopfStufen.zeigeSchliessKreuz` (rein, an jeder
+// Breite prüfbar) — diese Datei bekommt das Ergebnis als Prop und bleibt ohne
+// `imPane`- und ohne Breiten-Zweig (Kap. 10).
 
 export function LeserKopf({
   erlass, aktArtikel, fussnotenAnzahl, hatAenderungsvermerke, stufe, gliederungKnopf,
-  panelOeffner, onPanelOeffnen, suchZone,
+  panelOeffner, onPanelOeffnen, zeigeSchliessen, suchZone,
 }: {
   erlass: BrowseErlass;
   /** Laufender Artikel aus dem bestehenden Scroll-Spy («Art. 429»). */
@@ -70,6 +81,12 @@ export function LeserKopf({
    *  Weg, der bleibt, wenn der Zähler nach der F8-Regel weg ist und keine
    *  Tastatur da ist; Herleitung in `./LeserAnsichtV3`. */
   onPanelOeffnen?: () => void;
+  /** Ä46/H4-II — trägt diese Kopfzeile ihr eigenes ✕? Entschieden im Rahmen mit
+   *  `kopfStufen.zeigeSchliessKreuz(stufe, !imPane)`; die Herleitung (zwei ✕ je
+   *  Pane, Element-Budget auf `mini`) steht dort. Als Prop und nicht als
+   *  Ableitung hier, weil die Antwort von der PANE-LAGE abhängt und die kennt
+   *  nur der Rahmen (Kap. 10). */
+  zeigeSchliessen: boolean;
   /** ── Ä19 (H2b) · zweite Zeile des klebenden Kopf-BLOCKS ────────────────────
    *  Das Such-/Sprungfeld, wo die Gliederung NICHT als Spalte steht (Handy,
    *  Split-Pane, Desktop mit eingeklappter Gliederung). Vorher gab es in genau
@@ -231,22 +248,27 @@ export function LeserKopf({
           )}
         </nav>
 
-        {/* ── Griffe: ☰ (nur wenn nötig) · Ansicht · ✕ ────────────────────────
+        {/* ── Griffe: ⚖ · ☰ (nur wenn nötig) · Ansicht · ✕ (nur wo nötig) ─────
             Design-Grundlage Kap. 6: «Kopfzeile im Ruhezustand ≤ 4 Elemente,
-            davon ≤ 2 reine Icons». Ort + Ansicht + ✕ = 3; ☰ tritt nur hinzu,
-            wenn die Gliederung nicht ohnehin sichtbar ist. */}
+            davon ≤ 2 reine Icons». Ort + Ansicht = 2; ☰ tritt hinzu, wenn die
+            Gliederung nicht ohnehin sichtbar ist (und seit Ä79 auch nicht als
+            Schiene danebensteht), ⚖ trägt die Rechtsprechung, ✕ steht, wo es
+            kein Duplikat des Rücksprungs ist. Auf `mini` ergibt das
+            Ort · ⚖ N · ☰ · ··· — vier Elemente, zwei davon reine Icons. */}
         <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
           {panelOeffner}
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
             hatAenderungsvermerke={hatAenderungsvermerke} onPanelOeffnen={onPanelOeffnen} />
-          <button type="button" onClick={() => navigate('/gesetze')}
-            aria-label="Gesetz schliessen (zur Gesetzesübersicht)"
-            title="Gesetz schliessen (zur Gesetzesübersicht)"
-            data-v3-kopf-schliessen
-            className="lc-leiste-griff">
-            <span aria-hidden className="text-base leading-none">✕</span>
-          </button>
+          {zeigeSchliessen && (
+            <button type="button" onClick={() => navigate('/gesetze')}
+              aria-label="Gesetz schliessen (zur Gesetzesübersicht)"
+              title="Gesetz schliessen (zur Gesetzesübersicht)"
+              data-v3-kopf-schliessen
+              className="lc-leiste-griff">
+              <span aria-hidden className="text-base leading-none">✕</span>
+            </button>
+          )}
         </div>
       </div>
       {/* Ä19: die Such-Zone als zweite Zeile DESSELBEN klebenden Blocks — nicht

@@ -95,6 +95,26 @@ export function oeffnerLabel(anzahl: number | null): string {
 }
 
 /**
+ * Dasselbe für den Handy-Zuschnitt: nur die ZAHL, ohne Zähl-Substantiv.
+ *
+ * H4-II (17./18.8.2026). Auf `mini` ist die Kopfzeile innen 350 px breit
+ * (gemessen @390, StPO) — «⚖ 14 Entscheide» misst dort 115 px, «⚖ 14» rund 50.
+ * Die Ikone daneben sagt bereits, WOVON die Zahl handelt, und der volle
+ * Wortlaut steht unverkürzt im Accessible Name (`oeffnerName`), also dort, wo
+ * ihn ein Screenreader ohnehin liest. Der Chip ist damit kein «reines Icon» im
+ * Sinn der Design-Grundlage Kap. 6: er trägt eine Zahl.
+ *
+ * DIESELBE §8-SCHRANKE WIE OBEN, nicht eine zweite: keine Zahl, die wir nicht
+ * haben. `null` (noch nicht geladen) und `0` (geladen, nichts erfasst) ergeben
+ * die leere Zeichenkette — dann trägt der Chip nur die Ikone. Wer hier eine «0»
+ * schriebe, behauptete auf dem engsten Zuschnitt genau das, was `oeffnerLabel`
+ * auf den beiden anderen verbietet.
+ */
+export function oeffnerLabelKompakt(anzahl: number | null): string {
+  return anzahl !== null && anzahl > 0 ? String(anzahl) : '';
+}
+
+/**
  * Maschinell lesbarer Zähler am Öffner (`data-v3-panel-anzahl`).
  *
  * DIESELBE WAHRHEIT WIE DAS LABEL, nicht eine zweite: `undefined` überall, wo

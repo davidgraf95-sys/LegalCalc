@@ -1,8 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
   KOPF_SCHWELLE_KOMPAKT, KOPF_SCHWELLE_MINI,
-  kopfElemente, kopfHoehe, kopfStufe,
+  kopfElemente, kopfHoehe, kopfStufe, zeigeSchliessKreuz,
 } from '../pages/gesetz-leser/v3/kopfStufen';
+import { oeffnerLabel, oeffnerLabelKompakt, oeffnerName } from '../pages/gesetz-leser/v3/panelModell';
 
 // FAHRPLAN-LESER-V3 Kap. 4a — die Overflow-Regel der V3-Kopfzeile:
 //
@@ -71,6 +72,71 @@ describe('Overflow-Regel der V3-Kopfzeile (Kap. 4a)', () => {
       const r = rang[kopfStufe(b)];
       expect(r, `Zuschnitt springt bei ${b} px zurück`).toBeGreaterThanOrEqual(letzter);
       letzter = r;
+    }
+  });
+
+  // ── H4-II (17./18.8.2026) · NM-2: DER PANEL-ÖFFNER FÄLLT AUF KEINER BREITE ──
+  // BEFUND (Kontaktbogen H4 §2, gemessen @390 an StPO Art. 429): `panel` war ein
+  // `boolean` und auf `mini` `false` — im Ruhezustand stand dort KEIN Öffner in
+  // der Kopfzeile (`[data-v3-panel-oeffner]` sichtbar 0), der Weg zu den
+  // Entscheiden kostete zwei Taps statt einem. Neu schrumpft der Zähler, wie
+  // vorher schon die Krume: 'voll' | 'kompakt', kein Wert «weg».
+  // §6.3-DEKLARATION: das ist eine fachliche Änderung, keine Test-Anpassung an
+  // den Bau — die Aussage wird SCHÄRFER (vorher gar keine über `panel`).
+  // Rot zu bekommen: in `kopfElemente` `panel` für `mini` wieder auf einen
+  // dritten Wert bzw. `false` setzen.
+  it('auf JEDER Breite trägt der Kopf einen Panel-Zähler — voll oder als Chip', () => {
+    for (let b = 280; b <= 2000; b += 1) {
+      const el = kopfElemente(kopfStufe(b));
+      expect(['voll', 'kompakt'], `Panel-Öffner fehlt bei ${b} px`).toContain(el.panel);
+    }
+    expect(kopfElemente('voll').panel).toBe('voll');
+    expect(kopfElemente('kompakt').panel).toBe('voll');
+    expect(kopfElemente('mini').panel).toBe('kompakt');
+  });
+
+  // Der Chip trägt eine ZAHL oder nichts — nie eine erfundene 0 (§8). Dieselbe
+  // Schranke wie `oeffnerLabel`, an derselben Stelle geprüft, damit die beiden
+  // Gestalten nicht auseinanderlaufen können (§5).
+  it('der kompakte Zähler behauptet keine Zahl, die wir nicht haben', () => {
+    expect(oeffnerLabelKompakt(null)).toBe('');
+    expect(oeffnerLabelKompakt(0)).toBe('');
+    expect(oeffnerLabelKompakt(1)).toBe('1');
+    expect(oeffnerLabelKompakt(14)).toBe('14');
+    // Wo die lange Gestalt schweigt, schweigt auch die kurze — und umgekehrt.
+    for (const n of [null, 0, 1, 2, 14, 1443]) {
+      const lang = oeffnerLabel(n) !== 'Rechtsprechung';
+      expect(oeffnerLabelKompakt(n) !== '', `Zahl-Aussage weicht ab bei ${String(n)}`).toBe(lang);
+    }
+    // Der volle Wortlaut bleibt im Accessible Name — er ist es, der die
+    // Kürzung auf dem Handy überhaupt zulässig macht.
+    expect(oeffnerName(14, 'Art. 429')).toContain('14 Entscheide');
+  });
+
+  // ── Ä46 (H4-II) · DAS ✕ STEHT NUR, WO ES KEIN DUPLIKAT IST ──────────────────
+  // BEFUND, gemessen im Split @1600: je Pane ZWEI sichtbare ✕, 44 px
+  // übereinander — Griffleiste («Hauptfenster schliessen») und V3-Kopf («Gesetz
+  // schliessen, zur Gesetzesübersicht»). Und auf `mini` sprengte das ✕ zusammen
+  // mit dem neuen Zähler-Chip den Vier-Elemente-Deckel (Design-Grundlage Kap. 6).
+  // In beiden Lagen steht die Handlung («nach /gesetze») in derselben Zeile
+  // bereits als benannter Rücksprung — die Krume fällt auf keiner Breite weg
+  // (Test oben), die Zusage ist also nicht bedingt.
+  // Rot zu bekommen: `zeigeSchliessKreuz` auf `true` festnageln.
+  it('das Schliess-✕ weicht im Pane und auf dem Handy-Zuschnitt', () => {
+    expect(zeigeSchliessKreuz('voll', true)).toBe(true);
+    expect(zeigeSchliessKreuz('kompakt', true)).toBe(true);
+    expect(zeigeSchliessKreuz('mini', true)).toBe(false);
+    // Im Pane auf KEINER Stufe — dort trägt die Griffleiste das eine ✕.
+    for (const stufe of ['voll', 'kompakt', 'mini'] as const) {
+      expect(zeigeSchliessKreuz(stufe, false), `Pane trägt auf «${stufe}» ein zweites ✕`).toBe(false);
+    }
+    // Und wo das ✕ weicht, steht die Krume: die Aussage hängt zusammen, darum
+    // hier und nicht in zwei Dateien.
+    for (let b = 280; b <= 2000; b += 1) {
+      const stufe = kopfStufe(b);
+      if (zeigeSchliessKreuz(stufe, true) && zeigeSchliessKreuz(stufe, false)) continue;
+      expect(['voll', 'kurz'], `kein Rücksprung bei ${b} px, obwohl das ✕ weicht`)
+        .toContain(kopfElemente(stufe).krume);
     }
   });
 

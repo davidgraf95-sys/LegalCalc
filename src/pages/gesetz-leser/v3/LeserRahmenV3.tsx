@@ -26,7 +26,7 @@ import { useTrefferBlatt } from './useTrefferBlatt';
 import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
-import { kopfElemente, panelForm, useKopfStufe } from './kopfStufen';
+import { kopfElemente, panelForm, useKopfStufe, zeigeSchliessKreuz } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
@@ -207,9 +207,22 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Klassen-Zähler konnte «nichts erfasst» nicht von «lädt noch» trennen.
   const panelZahl = trefferZahl(bezuege.bezuegeFuer, bezuege.geladen, panelZiel.token);
 
+  // ── Ä79 (H4-II, 17./18.8.2026) · EIN ☰ FÜR DIE GLIEDERUNG, NICHT ZWEI ──────
+  // Gemessen @1440 mit eingeklappter Gliederung: ZWEI sichtbare ☰ für dieselbe
+  // Handlung — der Kopf-☰ ganz rechts (x = 1117, «Gliederung») und der Schienen-
+  // Knopf ganz links (x = 184, «Gliederung einblenden»), 933 px auseinander an
+  // gegenüberliegenden Fensterkanten. Das ist Ä79 und zugleich der Rest von Ä11.
+  // WELCHER bleibt, ist keine Geschmacksfrage: die Schiene steht dort, wo die
+  // Gliederung war und wieder erscheint, und sie ist BESCHRIFTET; der Kopf-☰ ist
+  // ein unbeschriftetes Zeichen auf der Gegenseite (derselbe Befund, aus dem
+  // 16.8.2026 die Schiene überhaupt entstand — Kommentar am Grid unten).
+  // Der Kopf-☰ verschwindet darum genau so lange, wie die Schiene sichtbar ist;
+  // unter der Schienen-Schwelle (kein `istXl`, also Handy und jedes schmale
+  // Pane) ist er unverändert der einzige Weg und bleibt.
+  const schieneSteht = hatLeiste && umgebung.istXl && !m.tocOffen;
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
-  const gliederungKnopf = hatLeiste && !zweiSpalten
+  const gliederungKnopf = hatLeiste && !zweiSpalten && !schieneSteht
     ? (
       <button type="button" data-v3-gliederung-auf
         aria-expanded={umgebung.istXl ? m.tocOffen : m.tocAuf}
@@ -237,12 +250,15 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         hatAenderungsvermerke={m.hatAenderungsvermerke}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
         // F8-Regel David 16.8.2026: «Rechtsprechung im Text» aus ⇒ Zähler UND
-        // Lasche weg (`panel.oeffnerSichtbar`, eine Stelle). Ä11: auf `mini` trägt die
-        // Kopfzeile den Zähler nicht — dort ist die Lasche der Öffner
-        // (`kopfElemente(stufe).panel`).
-        panelOeffner={panel.oeffnerSichtbar && kopfElemente(stufe).panel
+        // Lasche weg (`panel.oeffnerSichtbar`, eine Stelle) — unverändert der
+        // EINE wirksame Torwächter (Rot-Beweis in `leser-v3-panel-zaehler` (b)).
+        // H4-II: die STUFE entscheidet nur noch die GESTALT des Zählers, nicht
+        // mehr sein Dasein — auf `mini` steht er als Chip «⚖ 14» statt zu
+        // fehlen (`kopfElemente(stufe).panel`, NM-2-Blocker des Kontaktbogens).
+        panelOeffner={panel.oeffnerSichtbar
           ? (
             <PanelZaehler anzahl={panelZahl} artikelLabel={panelArtikel} offen={panel.offen}
+              form={kopfElemente(stufe).panel}
               // A3: dieselbe Id wie die Fläche — sonst ist `aria-controls` null.
               panelId={panel.offen ? panelId : undefined}
               onKlick={panel.umschalten} />
@@ -251,6 +267,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // A2: der Weg zum Panel, der keine Tastatur braucht und keinen Schalter —
         // steht in JEDEM Pane und auf JEDEM Zuschnitt (`./LeserAnsichtV3`).
         onPanelOeffnen={() => panel.oeffne('entscheide')}
+        // Ä46/H4-II: das ✕ steht, wo es NICHT das Duplikat des Rücksprungs
+        // «‹ Gesetze» ist — also in der vollflächigen Einzelansicht ausserhalb
+        // des Handy-Zuschnitts. Die eine Ableitung samt Messreihe (zwei ✕ je
+        // Pane, 44 px übereinander) steht in `./kopfStufen`.
+        zeigeSchliessen={zeigeSchliessKreuz(stufe, !umgebung.imPane)}
         suchZone={suchZone} />
 
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰

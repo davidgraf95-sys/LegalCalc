@@ -14,9 +14,24 @@
 // Flag ohne zweite Umschalt-Stelle in beide Panes trägt.
 //
 // GEPRÜFT WIRD DAS ELEMENT-INVENTAR, NICHT PIXEL: beide `[data-v3-kopf]`
-// tragen Kürzel, Ansicht-Öffner und ✕ — unabhängig von der (unterschiedlichen)
-// gemessenen Breite jedes Panes (`kopfElemente(stufe)` lässt nur Krume/
-// Volltitel fallen, nie diese drei, `./kopfStufen.ts`).
+// tragen Kürzel, Ansicht-Öffner und den Rücksprung zur Übersicht — unabhängig
+// von der (unterschiedlichen) gemessenen Breite jedes Panes
+// (`kopfElemente(stufe)` lässt nur Volltitel fallen, nie diese drei, und die
+// Krume schrumpft, statt zu verschwinden — `./kopfStufen.ts`).
+//
+// ── Ä46 (H4-II, 17./18.8.2026) · DER RÜCKSPRUNG STATT DES ✕ ────────────────
+// Bis hierher stand in dieser Liste das ✕ des V3-Kopfes. Gemessen im Split
+// @1600 trug jedes Pane damit ZWEI sichtbare ✕, 44 px übereinander: die
+// Pane-Griffleiste («Hauptfenster schliessen» / «‹BGFA› schliessen», y = 69)
+// und dieser Kopf («Gesetz schliessen — zur Gesetzesübersicht», y = 113).
+// Gleiches Zeichen, gleiche Ecke, verschiedene Wirkung, unterscheidbar allein
+// am Accessible Name — genau der Befund Ä46.
+// DIE PARITÄTS-AUSSAGE IST UNVERÄNDERT (§6.3): geprüft wird weiter, dass beide
+// Panes DENSELBEN Kopf mit DENSELBEN Bedienelementen tragen. Nur trägt die
+// Rücksprung-Handlung im Pane jetzt ihren Namen («‹ Gesetze») statt ein zweites
+// Mal dasselbe Zeichen; das Ziel `/gesetze` und die pane-lokale Auflösung sind
+// dieselben. Dass je Pane genau EIN ✕ übrig ist, misst
+// `leser-v3-h4-kopfwege` (b).
 import { test, expect, type Page } from '@playwright/test'
 
 function fehlerSammeln(page: Page): string[] {
@@ -26,7 +41,7 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
-test('H1 — beide Split-View-Panes tragen denselben V3-Kopf (Kürzel, Ansicht-Öffner, ✕)', async ({ page }) => {
+test('H1 — beide Split-View-Panes tragen denselben V3-Kopf (Kürzel, Ansicht-Öffner, Rücksprung)', async ({ page }) => {
   test.slow() // schwere Split-View-Interaktion (Präzedenz A17/FL-1)
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
@@ -61,12 +76,18 @@ test('H1 — beide Split-View-Panes tragen denselben V3-Kopf (Kürzel, Ansicht-�
   await expect(primaer.locator('[data-v3-kopf]')).toBeVisible()
   await expect(pane.locator('[data-v3-kopf]')).toBeVisible()
 
-  // Das Element-Inventar: Kürzel · Ansicht-Öffner · ✕ — in BEIDEN Panes.
+  // Das Element-Inventar: Kürzel · Ansicht-Öffner · Rücksprung — in BEIDEN Panes.
   for (const wurzel of [primaer, pane]) {
     const kopf = wurzel.locator('[data-v3-kopf]')
     await expect(kopf.locator('[data-v3-kopf-kuerzel]')).toBeVisible()
     await expect(kopf.locator('[data-v3-ansicht]')).toBeVisible()
-    await expect(kopf.locator('[data-v3-kopf-schliessen]')).toBeVisible()
+    // Ä46: der Weg zurück zur Übersicht, benannt statt als zweites ✕. Beide
+    // Panes liegen unter 900 px Elementbreite, tragen also die kurze Form.
+    const zurueck = kopf.locator('[data-v3-kopf-krume-kurz]')
+    await expect(zurueck).toBeVisible()
+    await expect(zurueck).toHaveAttribute('href', '/gesetze')
+    // Und der V3-Kopf trägt hier kein ✕ mehr — sonst stünden wieder zwei.
+    await expect(kopf.locator('[data-v3-kopf-schliessen]')).toHaveCount(0)
   }
   // Und die Kürzel unterscheiden sich inhaltlich (zwei verschiedene Gesetze,
   // keine zufällige Doppelung, die den Vergleich entwerten würde).
