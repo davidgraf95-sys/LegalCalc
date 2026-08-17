@@ -8,7 +8,8 @@ import { chapeauZielFremdgesetz } from '../../lib/fedlex';
 import { BildFigur, BildKacheln, type BildDaten, type BildKachel } from './BildElemente';
 import { zitatMitAusweis, heuteIso } from '../../lib/format';
 import { WJ } from './wortverbinder';
-import { staffelZeilen, normalisiereTarifText, StaffelTabelle, MehrspaltigeTabelle, TarifTabelle } from './ArtikelTabellen';
+import { StaffelTabelle, MehrspaltigeTabelle, TarifTabelle } from './ArtikelTabellen';
+import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // B2 (Bug-Check §9 zu W2·19-S8): der Aufhebungs-Platzhalter ist BEDIENUNG, kein
 // Wortlaut — er trägt darum dasselbe Meta-Attribut wie Zähler und Verweis-Chips.
 // Die Konstante wird IMPORTIERT statt abgeschrieben: die Ausgrenzung lebt in
