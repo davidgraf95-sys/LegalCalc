@@ -1448,6 +1448,45 @@ Inline-Box des `<button>`, bewiesen per DOM-Chirurgie (Ersatz durch echte Inline
    77 ch darüber (WCAG 80 ch hält überall). Entweder `max-w-normtext` wird für die
    17-px-Stufe schmaler, oder die Hausdecke geht bewusst auf 80.
 
+### ✅ Nachzug David-Befunde 17.8.2026 abends (B1–B3), Branch `fix/leser-v3-david-17-8`
+
+Drei Live-Befunde am Prod-Stand `afc008c19` unter `?leser=v3`. Alle drei zuerst
+**gemessen**, dann gefixt; neue Punkte **Ä67–Ä70** (Ä61–Ä66 sind S2).
+
+| # | Befund (Wortlaut David) | Ursache, gemessen | Fix |
+|---|---|---|---|
+| **B1 / Ä70** | «wenn die gliederung ausgeblendet ist funktioniert suche nicht mehr resp. resultat ist versteckt. andere lösung finden» | Der `trefferListe`-Zweig der Lesespalte hing an `!zweiSpalten` und traf damit die **eingeklappte** Spalte — ein Zweig, der etwas anderes tat als sein Kommentar («Rand-Fall ohne Leiste»). Die Liste lag @1440 **und** @1024 inline über dem Lesetext: **y = 755, Höhe 3596 px**, also unter der Falz, und schob den Gesetzestext um 3,6 Bildschirmhöhen nach unten | Trefferliste als **Blatt am Suchfeld** (`v3/LeserTrefferBlatt.tsx`, 18 rem, `max-h 50dvh`, kein Scrim, Esc/✕, Zähler-Zeile führt zurück). Der Inline-Zweig ist **gestrichen**, nicht verengt: `hatLeiste` ist `eintraege.length > 0`, der angekündigte Rand-Fall ist unerreichbar (§17) |
+| **B2 / Ä68+Ä69** | «wenn änderungsvermerke abgewählt wird dann verschwinden auch fussnoten» | `[data-histansicht=aus]` blendete `[data-fn-klasse="A"]` und den A-only-Apparat aus. `kl:'A'` ist beim Bund die **Regel**: StPO Apparat-Einträge sichtbar **285 → 98**, Marker **285 → 105**; ZGB **809 → 90** bzw. **809 → 173**. Der Schalter war faktisch ein zweiter Fussnoten-Schalter (§8) | **Entkoppelt** (Entscheid David): Fussnoten-Schalter trägt Marker + Apparat **aller** Klassen, Vermerke-Schalter **nur** `[data-hist-slot]`. Ä27-Hinweis samt `hinweis`-Slot gestrichen — die erklärte Kreuz-Abhängigkeit gibt es nicht mehr |
+| **B3 / Ä67** | «um das suchfeld erscheint bei klick darin ein braun umrundetes feld dass abgeschnitten ist» | `outline` liegt aussen (`offset 0`): Ring x = **182…466**, Clip `[data-v3-leiste-scroller]` (`overflow-x: hidden`) beginnt bei **184** ⇒ linke Kante **2 px abgeschnitten**, hell wie dunkel; gescrollt trifft es die obere Kante | `outline-offset: -2px` — der Ring liegt vollständig **im** Element und kann von keinem Vorfahren mehr beschnitten werden (Wurzel statt Umschiffung, §17). Höhen der Kopf-Zone unberührt: `outline` nimmt nie Platz |
+
+**Warum B1 ein Blatt und keine aufziehende Spalte:** die zweite Option wurde
+**gemessen verworfen** — das Grid wechselt `2.25rem → 18rem`, der zentrierte
+Satzspiegel wandert @1440 um **126 px** seitwärts, und zwar beim Tippen und bei
+Esc wieder zurück. Genau diesen Sprung hat David am 16.8. gerügt. Das Blatt liegt
+`absolute` und verschiebt den Lesetext um **0 px** (Spec (e) misst es).
+
+**Die Anbieten-Regel bleibt — gemessen, nicht geschlossen.** Korpus 17.8. (1420
+Sidecars gegen 205 Shards mit Einträgen): **0** Erlasse tragen `kl:'A'` ohne
+Fassungszeile, die `kl:'A'`-Bedingung überanbietet also heute nirgends. Neuer
+Wächter in `aenderungsvermerke-schalter.test.ts` wird rot, sobald das kippt.
+
+**Deklarierte fachliche Änderungen (§6.3), beide in BEIDEN Hüllen** (die Regeln
+hängen an `.lc-leser`, nicht am Flag — sonst zwei Bedeutungen für ein
+Steuerelement, §5/FL-1): die A-Zusicherungen in `hist-ansicht-w25i` sind
+**umgekehrt**, jede als zweiseitige Sonde, dazu neu die **2×2-Matrix** über Bund
+(BGBM) und Kanton (BS-640.100); `leser-optionen` prüft statt des Ä27-Hinweises
+dessen Abwesenheit **plus** die Unabhängigkeit selbst. Nachtrag in
+`bibliothek/normen/hist-ansicht-h0-trennbarkeit.md` §7.4a — H0-Auflage 1 gilt
+jetzt für **jede** Klasse, ist also strenger erfüllt als zuvor.
+
+**Rot-Beweise (§6.7), am Vorzustand gesehen:** 15 von 28 Fällen rot — u. a.
+«Vermerke=aus nimmt Apparat-Zeilen mit — Expected 29, Received 8» (BGBM) ·
+«A-Marker 0 verschwindet mit den Änderungsvermerken» · «Ring links um 2 px vom
+Clip ‹data-v3-leiste-scroller› beschnitten» (hell **und** dunkel) · «Trefferliste
+fehlt ganz — Expected 1, Received 0». Ein Fehlschlag war **Prüfmechanik statt
+Sache** und ist protokolliert: die gescrollte Leiste kam nur 55 px weit (Baum
+eingeklappt), die Spec klappt jetzt erst auf und sichert die Scrollbarkeit positiv.
+
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
 | Punkt | Regel |

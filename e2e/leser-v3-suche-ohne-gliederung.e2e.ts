@@ -63,8 +63,18 @@ async function suche(page: Page, wort = BEGRIFF): Promise<void> {
   await expect(page.locator('[data-v3-treffer-weg]')).toBeVisible({ timeout: 15000 })
 }
 
-/** Liegt das Rechteck VOLLSTÄNDIG im Viewport? Genau das war beim Prod-Stand
- *  falsch, während `isVisible()` true meldete. */
+/**
+ * Liegt das Rechteck VOLLSTÄNDIG im Viewport? Genau das war beim Prod-Stand
+ * falsch, während `isVisible()` true meldete.
+ *
+ * GEMESSEN WIRD DAS BLATT, NICHT DIE LISTE. Beim ersten Lauf dieser Fassung stand
+ * hier `[data-treffer-liste]` — und die ist im Blatt 4519 px hoch (StPO,
+ * «Entschädigung»), weil sie darin SCROLLT. Die Zusicherung wäre damit nur
+ * erfüllbar gewesen, wenn das Blatt jede Trefferzeile gleichzeitig zeigt; das
+ * verlangt niemand und widerspräche dem Höhendeckel aus Ä19. Die Frage, die
+ * Davids Befund stellt, lautet: sieht man das Ergebnis, ohne suchen zu müssen —
+ * also ist die FLÄCHE im Bild und steht oben drin etwas Lesbares.
+ */
 async function imViewport(page: Page, wahl: string): Promise<{ drin: boolean; box: unknown }> {
   return page.locator(wahl).first().evaluate((el) => {
     const r = el.getBoundingClientRect()
@@ -89,9 +99,16 @@ for (const breite of [1024, 1440]) {
     await expect(liste).toBeVisible()
 
     // DER KERN DES BEFUNDS: nicht «im DOM», sondern «im Bild». Beim Prod-Stand
-    // begann das Rechteck bei y = 755 und war 3596 px hoch.
-    const { drin, box } = await imViewport(page, '[data-treffer-liste]')
-    expect(drin, `Trefferliste nicht vollständig im Viewport: ${JSON.stringify(box)}`).toBe(true)
+    // begann das Rechteck bei y = 755 und war 3596 px hoch — es begann also
+    // unterhalb der Falz. Gemessen wird die FLÄCHE, auf der die Liste liegt.
+    const { drin, box } = await imViewport(page, '[data-v3-treffer-blatt]')
+    expect(drin, `Treffer-Blatt nicht vollständig im Viewport: ${JSON.stringify(box)}`).toBe(true)
+
+    // Und darin steht wirklich etwas Lesbares: die erste Trefferzeile liegt
+    // ebenfalls ganz im Bild. Ohne diese zweite Sonde wäre ein leeres,
+    // korrekt platziertes Blatt grün (§6.7).
+    const ersteZeile = await imViewport(page, '[data-v3-treffer-blatt] [data-treffer-artikel]')
+    expect(ersteZeile.drin, `erste Trefferzeile nicht im Bild: ${JSON.stringify(ersteZeile.box)}`).toBe(true)
 
     // Sie hängt am FELD, nicht irgendwo: dasselbe Blatt, und das Blatt liegt in
     // der Such-Zone (die einzige Stelle, die ohne Spalte klebt).
@@ -156,7 +173,22 @@ test('(c) Klick auf einen Treffer springt — und lässt das Blatt offen (wie in
   await expect(blatt.locator('[data-treffer-liste]')).toHaveCount(1)
 })
 
-test('(d) Esc schliesst ohne Sprung — die Leseposition bleibt exakt stehen', async ({ page }) => {
+test('(d) Esc schliesst ohne Sprung — der gelesene Text bleibt exakt stehen', async ({ page }) => {
+  // ── WAS «KEIN SPRUNG» HIER HEISST, und warum nicht `scrollY` ────────────────
+  // GEMESSEN beim ersten Lauf dieser Fassung: nach Esc stand `scrollY` auf 876
+  // statt 900 — genau **24 px** weniger. Das ist kein Defekt, sondern die
+  // Gegenbewegung: die Such-Zone im klebenden Kopf schrumpft beim Leeren von
+  // `SUCH_H_AKTIV` (4.25 rem) auf `SUCH_H_RUHE` (2.75 rem), also um exakt diese
+  // 24 px (`v3/SuchZone.tsx`, B9). Alles darunter rückt 24 px hoch, und Chromes
+  // Scroll-Anchoring zieht `scrollY` um dieselben 24 px nach — damit der Leser
+  // NICHTS wandern sieht.
+  //
+  // Eine Zusicherung auf gleichbleibendes `scrollY` würde hier also das Gegenteil
+  // dessen verlangen, was Pos. 14 verspricht: sie wäre nur erfüllbar, wenn der
+  // Text tatsächlich springt. Gemessen wird darum die Grösse, um die es geht —
+  // die Lage eines Artikels IM BILD. (Die ältere Spec
+  // `leser-v3-esc-ohne-sprung` misst weiter `scrollY` und ist dort richtig: mit
+  // stehender Gliederungs-Spalte gibt es gar keine Such-Zone, die wachsen kann.)
   await page.setViewportSize({ width: 1440, height: 900 })
   await warteLeser(page)
   await gliederungZu(page)
@@ -167,14 +199,22 @@ test('(d) Esc schliesst ohne Sprung — die Leseposition bleibt exakt stehen', a
   // scrollY 0 wäre die Zusicherung trivial erfüllt (§6.7).
   await page.evaluate(() => window.scrollTo(0, 900))
   await expect.poll(async () => page.evaluate(() => window.scrollY)).toBeGreaterThan(100)
-  const vorher = await page.evaluate(() => window.scrollY)
+
+  // Ein Artikel, der gerade im Bild steht, ist der Zeuge.
+  const zeuge = page.locator('#lc-lesespalte [id^="art-"]').first()
+  const lage = () => zeuge.evaluate((el) => Math.round(el.getBoundingClientRect().top))
+  const vorher = await lage()
 
   await page.locator('[data-v3-suchsprung] input').first().press('Escape')
   // Esc IM FELD ist Pos. 14: leeren, nicht springen. Damit endet die Suche und
   // das Blatt ist weg.
   await expect(page.locator('[data-v3-treffer-blatt]')).toHaveCount(0)
   await expect(page.locator('[data-v3-suchsprung] input').first()).toHaveValue('')
-  expect(await page.evaluate(() => window.scrollY), 'Esc hat gescrollt').toBe(vorher)
+  const nachher = await lage()
+  expect(
+    Math.abs(nachher - vorher),
+    `Esc hat den Lesetext bewegt: ${vorher} px → ${nachher} px im Bild`,
+  ).toBeLessThanOrEqual(2)
 
   // Der zweite Weg heraus: ✕ am Blatt nimmt NUR das Blatt, die Suche bleibt —
   // und «Treffer anzeigen →» holt es zurück. Auch das ohne Scroll.

@@ -145,7 +145,19 @@ test('(c) Spalte GESCROLLT: auch die obere Kante bleibt ganz', async ({ page }) 
   await expect(page.locator('[data-v3-aside]')).toHaveCount(1)
   const scroller = page.locator('[data-v3-leiste-scroller]').first()
   await expect(scroller).toHaveCount(1)
-  await scroller.evaluate((el) => { el.scrollTop = 400 })
+
+  // Erst ALLE Gliederungsstufen aufklappen. Beim ersten Lauf dieser Fassung
+  // scrollte die Leiste sonst nur 55 px weit (der Baum steht eingeklappt), und
+  // die feste Marke «> 100» scheiterte an der PRÜFMECHANIK statt an der Sache —
+  // ein Fehlschlag, der nichts über den Ring aussagt.
+  await page.locator('[data-v3-alle]').click()
+  // POSITIV-Vorbedingung: die Leiste ist überhaupt scrollbar. Ohne sie liefe der
+  // Test gegen einen ungescrollten Scroller und behauptete nichts (§6.7).
+  await expect
+    .poll(async () => scroller.evaluate((el) => el.scrollHeight - el.clientHeight), { timeout: 15000 })
+    .toBeGreaterThan(200)
+
+  await scroller.evaluate((el) => { el.scrollTop = el.scrollHeight })
   await expect.poll(async () => scroller.evaluate((el) => el.scrollTop)).toBeGreaterThan(100)
   await fokussiere(page)
   pruefeGanz(await ringKanten(page), 'Spalte gescrollt')

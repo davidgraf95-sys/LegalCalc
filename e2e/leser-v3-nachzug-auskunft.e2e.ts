@@ -222,6 +222,16 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
 
     // Ä31: EIN Ring. Der Feldrahmen bleibt im Fokus neutral, das Outline sitzt
     // ohne Spalt — sonst sind es zwei messingfarbene Kanten.
+    //
+    // Ä67-NACHZUG (17.8.2026, deklariert §6.3): die Offset-Zusicherung lautete
+    // `=== '0px'` und wurde rot, als der Ring nach INNEN wanderte
+    // (`outline-offset: -2px`, David-Befund «abgeschnitten»). Sie prüfte den
+    // Buchstaben, gemeint war die Sache: ein POSITIVER Offset reisst einen Spalt
+    // zwischen Feldrahmen und Ring, und aus einer Kante werden zwei. Ein
+    // negativer Offset erzeugt keinen Spalt — er legt den Ring auf den Rahmen.
+    // Die Zusicherung sagt jetzt, was Ä31 meinte: **kein Spalt nach aussen**.
+    // Dass der Ring auch nirgends beschnitten wird, prüft
+    // `e2e/leser-v3-fokusring-suchfeld.e2e.ts` an allen vier Kanten.
     await feld.focus()
     const ring = await feld.evaluate((el) => {
       const s = getComputedStyle(el)
@@ -234,7 +244,10 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
     })
     expect(ring.outlineBreite, 'der Fokusring fehlt').toBe('2px')
     expect(ring.schatten, 'der box-shadow-Doppelring ist zurück').toBe('none')
-    expect(ring.offset, 'der 1-px-Spalt macht aus einer Kante zwei Ringe').toBe('0px')
+    expect(
+      parseFloat(ring.offset),
+      `ein Spalt nach aussen (outline-offset ${ring.offset}) macht aus einer Kante zwei Ringe`,
+    ).toBeLessThanOrEqual(0)
     expect(ring.rahmenFarbe, 'der Feldrahmen färbt sich im Fokus mit — zweite Messing-Kante')
       .not.toBe(ring.outlineFarbe)
 
