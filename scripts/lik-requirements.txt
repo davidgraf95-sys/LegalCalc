@@ -4,4 +4,7 @@
 # Alle übrigen Generatoren laufen in TypeScript via vite-node. Dieses Skript
 # steht bewusst ausserhalb von gate/golden/CI (manuell, nicht tor-relevant).
 # Installation:  python3 -m pip install -r requirements.txt
+# Liegt bewusst NICHT im Repo-Wurzelverzeichnis: eine requirements.txt in der Wurzel
+# lässt Vercel «Python» erkennen und `vercel build` im CI-Deploy an `uv` scheitern
+# (Vorfall 17.8.2026, erster CI-Deploy). Aufruf: pip install -r scripts/lik-requirements.txt
 openpyxl
