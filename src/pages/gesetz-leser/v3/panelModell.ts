@@ -1,6 +1,9 @@
 import { useCallback, useState } from 'react';
 import { labelMitBereich } from '../../../lib/normtext/darstellung';
 import { useBezuege } from '../bezuegeLaden';
+import { KLASSE_SCHALTER } from '../bezugAuswahl';
+import { bereichLabel, type Zeitbereich } from '../bezugZeit';
+import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { useLeserOptionen } from '../leserOptionen';
 import { STATUS_RANG, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
@@ -34,11 +37,41 @@ export type PanelReiter = 'entscheide' | 'aenderungen' | 'materialien';
  *  Reihenfolge = die Reihenfolge der Fragen am Gesetzesartikel: wie wird er
  *  ausgelegt (Entscheide) · wie ist er geworden (Änderungen) · woher kommt er
  *  (Materialien). */
-export const PANEL_REITER: readonly { id: PanelReiter; label: string; titel: string }[] = [
-  { id: 'entscheide', label: 'Entscheide', titel: 'Gerichtsentscheide zu diesem Artikel' },
-  { id: 'aenderungen', label: 'Änderungen', titel: 'Änderungserlasse dieses Erlasses' },
-  { id: 'materialien', label: 'Materialien', titel: 'Botschaften und Vernehmlassungen zu diesem Erlass' },
+export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
+  { id: 'entscheide', label: 'Entscheide' },
+  { id: 'aenderungen', label: 'Änderungen' },
+  { id: 'materialien', label: 'Materialien' },
 ];
+
+/**
+ * Erklärender Titel eines Reiters — ERLASS-NEUTRAL (H3-Nachzug C1).
+ *
+ * Bis hierher stand «zu diesem Artikel» als Literal in `PANEL_REITER`. An einem
+ * §-Erlass (BS-640.100) war das schlicht falsch (Ä23-Klasse). Das Zähl-Substantiv
+ * kommt darum aus der EINEN Ableitung (`./erlassAnsicht`), und weil der Titel
+ * damit vom Erlass abhängt, ist er eine Funktion und kein Feld: ein Feld hätte
+ * verlangt, die Tabelle je Erlass neu zu bauen — und die Reiter-ORDNUNG hängt
+ * nicht am Erlass (§5, eine Quelle je Frage).
+ */
+export function reiterTitel(id: PanelReiter, wort: BestimmungsWort): string {
+  if (id === 'entscheide') return `Gerichtsentscheide zu ${bestimmungDativ(wort)}`;
+  if (id === 'aenderungen') return 'Änderungserlasse dieses Erlasses';
+  return 'Botschaften und Vernehmlassungen zu diesem Erlass';
+}
+
+/**
+ * Alle Öffner des Panels an einem Marker (A3, H3-Nachzug).
+ *
+ * Sie stehen ausserhalb der Panel-Fläche — in der klebenden Kopfzeile und im
+ * «Ansicht ▾»-Menü —, und die Aussenklick-Regel des Panels muss sie kennen: ohne
+ * die Ausnahme schliesst ihr `pointerdown` das Panel, das ihr `click` gleich
+ * darauf wieder öffnet (der Knopf hätte sichtbar nichts getan). EIN Sammel-Marker
+ * statt einer Aufzählung von Selektoren, damit ein dritter Öffner nicht
+ * vergessen werden kann; er steht hier und nicht in der Komponenten-Datei, weil
+ * `react-refresh/only-export-components` (Tor `lint`) dort keinen zweiten Export
+ * duldet.
+ */
+export const OEFFNER_SELEKTOR = '[data-v3-panel-oeffner]';
 
 /**
  * Beschriftung des Panel-Öffners.
@@ -81,6 +114,28 @@ export function oeffnerName(anzahl: number | null, artikelLabel: string | null):
   if (anzahl === null) return `Rechtsprechung und Kontext${ort} öffnen`;
   if (anzahl <= 0) return `Rechtsprechung und Kontext${ort} öffnen — keine Entscheide erfasst`;
   return `Rechtsprechung und Kontext${ort} öffnen — ${anzahl} ${anzahl === 1 ? 'Entscheid' : 'Entscheide'}`;
+}
+
+/**
+ * Kurzstand der Instanz-Wahl für die Filterzeile: «BGE» · «BGE +2» · «keine».
+ *
+ * Ä47: die Klappe muss ihren Stand NENNEN, sonst ist eine eingeklappte Facette
+ * ein verstecktes Filter — und ein Ergebnis, dessen Einschränkung man nicht sieht,
+ * ist eine falsche Auskunft über den Bestand (§8). Die Kurznamen kommen aus
+ * `KLASSE_SCHALTER` (derselben Quelle wie die Schalter selbst, §5).
+ */
+export function instanzStand(klassen: readonly BezugStatus[]): string {
+  const erste = klassen[0];
+  if (erste === undefined) return 'keine';
+  return klassen.length === 1
+    ? KLASSE_SCHALTER[erste]
+    : `${KLASSE_SCHALTER[erste]} +${klassen.length - 1}`;
+}
+
+/** Kurzstand des Zeitraums. `bereichLabel` liefert bei offenem Bereich `null` —
+ *  daraus wird «alle», nie eine erfundene Jahreszahl (§8). */
+export function zeitStand(bereich: Zeitbereich): string {
+  return bereichLabel(bereich) ?? 'alle';
 }
 
 /**
@@ -170,12 +225,20 @@ export function usePanelBezuege(erlassKey: string | undefined, jeGeoeffnet: bool
 /**
  * Trefferzahl am Öffner: Kanten des GELESENEN Artikels nach Facetten-Filter.
  *
- * `null` = wir wissen es nicht (Shard nicht geladen) ⇒ der Öffner zeigt keine
- * Zahl (§8, siehe `oeffnerLabel`). Die Unterscheidung «lädt noch» gegen «leer»
- * kann NICHT aus `bezuegeFuer` kommen: die Hook gibt in beiden Fällen
- * `undefined` zurück (Begründung dort). Sie kommt darum aus `geladen` — dem
- * Klassen-Zähler des Erlasses, der genau dann Einträge hat, wenn ein Shard
- * ausgewertet wurde.
+ * `null` = wir wissen es nicht (Lade-Versuch noch offen) ⇒ der Öffner zeigt
+ * keine Zahl (§8, siehe `oeffnerLabel`). Die Unterscheidung «lädt noch» gegen
+ * «leer» kann NICHT aus `bezuegeFuer` kommen: die Hook gibt in beiden Fällen
+ * `undefined` zurück (Begründung dort). Sie kommt darum aus `geladen` — und
+ * zwar seit dem H3-Nachzug (A1) aus dem **Lade-Ende-Signal von `useBezuege`**,
+ * nicht mehr aus dem Klassen-Zähler des Erlasses.
+ *
+ * ── WARUM DER KLASSEN-ZÄHLER DAFÜR UNTAUGLICH WAR (gemessen 17.8.2026) ──────
+ * `shardGeladen(klassenImErlass)` hiess «nicht leer ⇒ ausgewertet». Ein Erlass
+ * ohne Shard bekommt aber ein `{}`, das sich von «noch nicht geladen» nicht
+ * unterscheidet — der Zustand blieb an 1149 von 1459 Erlassen (79 %) für immer
+ * «lädt noch». Die Funktion ist darum gestrichen, nicht bewacht (§17): ein
+ * Signal, das die entscheidende Lage nicht ausdrücken KANN, lässt sich nicht
+ * durch einen Test retten.
  */
 export function trefferZahl(
   bezuegeFuer: (artikel: string) => { kanten: readonly Bezug[] } | undefined,
@@ -231,10 +294,4 @@ export function panelBezug(
  */
 export function normZitat(artikelLabel: string | null, kuerzel: string): string {
   return artikelLabel ? `${artikelLabel} ${kuerzel}` : kuerzel;
-}
-
-/** Ist ein Bezugs-Shard ausgewertet? Einziges verlässliches «geladen»-Signal der
- *  Bezugs-Hook (§8, siehe `trefferZahl`). */
-export function shardGeladen(klassenImErlass: Readonly<Record<string, unknown>>): boolean {
-  return Object.keys(klassenImErlass).length > 0;
 }

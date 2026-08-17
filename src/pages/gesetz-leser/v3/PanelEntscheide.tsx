@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
-import { BezugFacettenWahl } from '../../../components/verzahnung/BezugFacettenWahl';
-import { BezugZeitWahl } from '../../../components/verzahnung/BezugZeitWahl';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import { KLASSE_KURZ } from '../bezugAuswahl';
 import type { Histogramm, Zeitbereich } from '../bezugZeit';
+import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { gruppiereKanten } from './panelModell';
-import { PanelSachgebiet } from './PanelSachgebiet';
+import { PanelFilterZeile } from './PanelFilterZeile';
 
 // ─── Reiter «Entscheide» (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─────────────────────
 //
@@ -43,6 +42,10 @@ import { PanelSachgebiet } from './PanelSachgebiet';
 // «Rechtsprechung ▾» hängen. H3 verschiebt ihren MOUNT-PUNKT — genau das, was
 // ihr Dateikopf seit B4 verspricht («B5 mountet dieselbe Datei im Header»). Kein
 // Umbau, keine Kopie, ein Zustand (§5).
+//
+// Ä47 (H3-Nachzug): der Mount-Punkt ist jetzt `./PanelFilterZeile` — EINE Zeile
+// mit zwei benannten Klappen statt vier gestapelter Steuer-Blöcke (348 px
+// gemessen). Die geteilten Bausteine selbst sind dabei nicht angefasst worden.
 
 /** Eine Fundstelle: Zitierung · Datum · Regeste-Kurzzeile, verlinkt auf den
  *  Entscheid. `?norm=` trägt die Fundstellen-Absicht — das Ziel springt zur
@@ -69,15 +72,19 @@ function Fundstelle({ b, normZitat }: { b: Bezug; normZitat: string }) {
 }
 
 export function PanelEntscheide({
-  kanten, normZitat, artikelLabel, geladen, klassen, kantone, kantoneVerfuegbar, klassenImErlass,
-  histogramm, bereich, onKlassen, onKantone, onBereich,
+  kanten, normZitat, artikelLabel, geladen, bestimmungsWort, klassen, kantone, kantoneVerfuegbar,
+  klassenImErlass, histogramm, bereich, onKlassen, onKantone, onBereich,
 }: {
   /** Kanten des GELESENEN Artikels nach Facetten-Filter; `undefined` = keine. */
   kanten?: readonly Bezug[];
   normZitat: string;
   artikelLabel: string | null;
-  /** Ist ein Shard ausgewertet? Trennt «lädt noch» von «nichts erfasst» (§8). */
+  /** Ist der Lade-VERSUCH durch? Trennt «lädt noch» von «nichts erfasst» (§8).
+   *  A1: kommt aus `useBezuege().geladen` — nach einem 404 ebenfalls `true`. */
   geladen: boolean;
+  /** Zähl-Substantiv des Erlasses (C1) — «zu diesem Artikel» bzw. «zu diesem
+   *  Paragraphen». Nie ein Bund-Vorgabewert, nie hier abgeleitet (§5). */
+  bestimmungsWort: BestimmungsWort;
   klassen: readonly BezugStatus[];
   kantone: readonly string[];
   kantoneVerfuegbar: readonly string[];
@@ -92,15 +99,10 @@ export function PanelEntscheide({
 
   return (
     <div data-v3-panel-reiter-inhalt="entscheide">
-      {/* ── Filterzeile: Instanz · Kanton · Zeit · (Sachgebiet) ──────────────── */}
-      <div data-v3-panel-filter className="border-b border-line pb-1.5">
-        <BezugFacettenWahl klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
-          klassenImErlass={klassenImErlass} onKlassen={onKlassen} onKantone={onKantone} />
-        <BezugZeitWahl bereich={bereich} histogramm={histogramm} onBereich={onBereich} />
-        {/* Vierter Filter — heute ohne Daten und darum ohne Element (Kap. 14).
-            Die Datenlogik bleibt `W2·7-VZUI-SACHGEBIET` (Risikopfad). */}
-        <PanelSachgebiet gebiete={[]} gewaehlt={[]} onGebiete={() => {}} />
-      </div>
+      {/* ── EINE Filterzeile (Ä47) · Herleitung in `./PanelFilterZeile` ──────── */}
+      <PanelFilterZeile klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
+        klassenImErlass={klassenImErlass} histogramm={histogramm} bereich={bereich}
+        onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
 
       {/* ── Fundstellen des gelesenen Artikels ────────────────────────────────
           §8, DREI ZUSTÄNDE, DREI SÄTZE — nie derselbe für zwei Lagen:
@@ -111,13 +113,14 @@ export function PanelEntscheide({
           Bestands-Zustand vermischt: der Nutzer läse eine Aussage über den
           Korpus, wo eine über seinen eigenen Schalter stünde. */}
       {klassen.length === 0 ? (
-        <p className="px-2.5 py-3 text-body-s text-ink-500">
-          Keine Instanz eingeschaltet — oben zuschalten, dann erscheinen die Entscheide zu diesem Artikel.
+        <p data-v3-panel-lage="bedienung" className="px-2.5 py-3 text-body-s text-ink-500">
+          Keine Instanz eingeschaltet — oben zuschalten, dann erscheinen die Entscheide
+          zu {bestimmungDativ(bestimmungsWort)}.
         </p>
       ) : !geladen ? (
-        <p className="px-2.5 py-3 text-body-s text-ink-500">Entscheide werden geladen …</p>
+        <p data-v3-panel-lage="laedt" className="px-2.5 py-3 text-body-s text-ink-500">Entscheide werden geladen …</p>
       ) : gruppen.length === 0 ? (
-        <p className="px-2.5 py-3 text-body-s text-ink-500">
+        <p data-v3-panel-lage="bestand" className="px-2.5 py-3 text-body-s text-ink-500">
           {artikelLabel
             ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
             : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
@@ -126,7 +129,7 @@ export function PanelEntscheide({
         <div className="px-2.5 py-1">
           {gruppen.map(([status, liste]) => (
             <section key={status} data-v3-panel-gruppe={status} className="pt-2 first:pt-1">
-              <p className="lc-overline" title={`${STATUS_LABEL[status]} — ${liste.length} Fundstelle(n) an ${artikelLabel ?? 'diesem Artikel'}`}>
+              <p className="lc-overline" title={`${STATUS_LABEL[status]} — ${liste.length} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}>
                 {KLASSE_KURZ[status]}
                 <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{liste.length}</span>
               </p>

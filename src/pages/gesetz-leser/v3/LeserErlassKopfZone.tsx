@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { grundartMeta, kopfOverline } from '../helpers';
 import { ErlassLeserKopf } from '../parts';
 import { AmtlichesPdf } from '../parts/AmtlichesPdf';
@@ -23,15 +22,16 @@ import type { LeserV3Modell } from './leserV3Modell';
 // beides sagte der V3-Kopf weniger als der Ist-Kopf, obwohl es dieselbe
 // Komponente ist.
 
-export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort, fassungsWahl }: {
+// C4 (H3-Nachzug): der Slot `fassungsWahl` ist gestrichen — über drei Etappen von
+// keinem Aufrufer gesetzt (§17, Herleitung im Rahmen). Die Zeitmaschine (W2·5g)
+// bekommt ihren Platz, wenn sie gebaut wird, und dann mit einem Konsumenten.
+export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort }: {
   m: LeserV3Modell;
   erlass: NonNullable<LeserV3Modell['erlass']>;
   artikelAnzahl: number;
   // B8 (H2b-Nachzug): der TYP aus `./erlassAnsicht`, nie ein neues Literal —
   // sonst stünde «Paragraphen» ein zweites Mal in `v3/` (Fundament-Sonde).
   bestimmungsWort: BestimmungsWort;
-  /** W2·5g — Fassungswahl/Zeitmaschine, vor den übrigen Aktionen. */
-  fassungsWahl?: ReactNode;
 }) {
   const meta = grundartMeta(erlass.key);
   return (
@@ -45,7 +45,6 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
       hinweis="Snapshot — massgeblich ist die amtliche Fassung"
       aktionen={
         <>
-          {fassungsWahl}
           <ReiterAktion kuerzel={erlass.kuerzel} onGeoeffnet={() => {
             m.setReiterToast(true);
             const toastRef = m.refs.reiterToastTimerRef;

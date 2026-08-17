@@ -1,5 +1,6 @@
 import { useRef, type ReactNode } from 'react';
-import { PANEL_REITER, type PanelReiter } from './panelModell';
+import type { BestimmungsWort } from './erlassAnsicht';
+import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 
 // ─── Das Panel selbst: EIN Ort, DREI Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
 //
@@ -28,7 +29,8 @@ import { PANEL_REITER, type PanelReiter } from './panelModell';
 // leere Fläche (dieselbe Regel wie bei den H1-Slots des Rahmens).
 
 export function LeserPanel({
-  panelId, titelId, artikelLabel, reiter, setReiter, inhalt, onSchliessen, fuss, panelRef, kopfExtra,
+  panelId, titelId, artikelLabel, bestimmungsWort, reiter, setReiter, inhalt, onSchliessen,
+  fuss, panelRef, kopfExtra,
 }: {
   panelId: string;
   /** Id der Überschrift — der Aufrufer setzt sie als `aria-labelledby` an die
@@ -38,6 +40,10 @@ export function LeserPanel({
    *  der Scroll-Spy keine Leseposition kennt — dann steht dort nichts statt
    *  eines erfundenen «Art. 1» (§8). */
   artikelLabel: string | null;
+  /** C1 (H3-Nachzug): Zähl-Substantiv des Erlasses — der Reiter-Titel sagt «zu
+   *  diesem Artikel» bzw. «zu diesem Paragraphen». Kommt aus der EINEN Ableitung
+   *  (`./erlassAnsicht`), wird hier nie abgeleitet (§5). */
+  bestimmungsWort: BestimmungsWort;
   reiter: PanelReiter;
   setReiter: (r: PanelReiter) => void;
   inhalt: Readonly<Record<PanelReiter, ReactNode>>;
@@ -100,7 +106,7 @@ export function LeserPanel({
             <button key={r.id} type="button" role="tab" id={`${panelId}-tab-${r.id}`}
               data-v3-panel-reiter={r.id}
               aria-selected={aktiv} aria-controls={`${panelId}-tafel-${r.id}`}
-              tabIndex={aktiv ? 0 : -1} title={r.titel}
+              tabIndex={aktiv ? 0 : -1} title={reiterTitel(r.id, bestimmungsWort)}
               onClick={() => setReiter(r.id)}
               className={`-mb-px rounded-t-md border-b-2 px-2 py-1 text-body-s transition-colors ${
                 aktiv ? 'border-brass-500 font-medium text-ink-900' : 'border-transparent text-ink-500 hover:text-brass-700'

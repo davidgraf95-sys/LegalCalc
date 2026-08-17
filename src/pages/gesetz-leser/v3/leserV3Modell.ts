@@ -96,10 +96,9 @@ export interface LeserV3Modell {
   sektionMeta: ReturnType<typeof useArtikelAbleitungen>['sektionMeta'];
   margAnzeige: Map<string, { teile: string[]; ab: number }>;
   internRefs: InternRefs | undefined;
-  // Die drei Artikel-Beigaben werden aus dem GETEILTEN Zustand abgeleitet
-  // statt hier neu typisiert: eine zweite Typ-Definition für dieselbe Sache
-  // liefe unbemerkt auseinander (§5).
-  bezuegeFuer: ReturnType<typeof useLeserZustand>['bezuegeFuer'];
+  // Aus dem GETEILTEN Zustand abgeleitet statt neu typisiert (§5). C3: `bezuegeFuer`
+  // ist weg — seit H3 (`bezuegeVorladen: false`) durchgehend `undefined` und ohne
+  // Leser, also eine Falle; Kanten kommen aus `usePanelBezuege` (`./panelModell`).
   revisionFuer: ReturnType<typeof useLeserZustand>['revisionFuer'];
   historieFuer: ReturnType<typeof useLeserZustand>['historieFuer'];
 
@@ -205,14 +204,13 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
     manifest, setManifest, currency, setCurrency,
-    bezuegeFuer, revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
+    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
     // Als `…Ref` benannt: die Lint-Regel `react-hooks/immutability` erkennt
     // einen Ref am Namen, und dieser wird beschrieben.
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer: reiterToastTimerRef,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
     // H3 · Panel-Nachladen (Kap. 7): kein Bezugs-Shard beim Seitenaufruf. Die
-    // Rechtsprechung steht im Panel und lädt beim Öffnen (`./panelModell`);
-    // `bezuegeFuer` ist hier durchgehend `undefined` (Pos. 12).
+    // Rechtsprechung steht im Panel und lädt beim Öffnen (`./panelModell`).
   } = useLeserZustand({ bezuegeVorladen: false });
   const {
     offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
@@ -401,7 +399,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
       gliederungsTiefe, fussnotenAnzahl, kantonErlassAnzahl, nichtKonsolidiert, nichtKonsolidiertSeit,
       vorher, nachher,
       sekPos, artIndex, sektionMeta, margAnzeige, internRefs,
-      bezuegeFuer, revisionFuer, historieFuer,
+      revisionFuer, historieFuer,
       aktArtikel, aktivToken, artTokens, aktivIds, offen, setOffen, tocBaum, setTocBaum,
       tocToggleGruppe,
       tocOffen, setTocOffen, tocAuf, setTocAuf,

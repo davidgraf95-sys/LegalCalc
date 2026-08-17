@@ -22,7 +22,7 @@ import { useCallback, type ReactNode } from 'react';
 // ist sie in der Spalte (D/S) und im Bottom-Sheet (H) dasselbe Bauteil.
 
 export function LeserSeitenleiste({
-  uebersicht, suchFeld, baum, baumTitel, onAlleAuf, onAlleZu, onAnfang, alleOffen, extra,
+  uebersicht, suchFeld, baum, baumTitel, onAlleAuf, onAlleZu, onAnfang, alleOffen,
   baumKnoepfe = true,
 }: {
   /** Übersichtsbox (Kap. 4b ①). `null` = noch nicht ladbar ⇒ Zeile entfällt. */
@@ -48,9 +48,10 @@ export function LeserSeitenleiste({
   onAnfang: () => void;
   /** Steuert nur die Beschriftung des einen Knopfes (auf/zu), kein Zustand. */
   alleOffen: boolean;
-  /** Erweiterungspunkt: zusätzliche Blöcke UNTER dem Baum (Kontext-Reiter,
-   *  H3-Panel-Anschluss). Nicht gesetzt ⇒ nichts gerendert, kein Abstand. */
-  extra?: ReactNode;
+  // C4 (H3-Nachzug): der Slot `extra` («zusätzliche Blöcke unter dem Baum») ist
+  // gestrichen. Gedacht war er als Anschluss für die Kontext-Reiter — die stehen
+  // seit H3 im Panel, und der Slot hatte über drei Etappen keinen Aufrufer (§17,
+  // Herleitung im Rahmen).
   /** Ä32 (H2b-Nachzug): Steht in Zone B wirklich der GLIEDERUNGSBAUM? Nur dann
    *  hat «alles auf/zu» ein Ziel. `false` setzt der Aufrufer, während die
    *  Trefferliste an seinem Platz liegt — Herleitung unten am Markup. */
@@ -167,7 +168,6 @@ export function LeserSeitenleiste({
           </div>
         </div>
         <div data-v3-leiste-baum>{baum}</div>
-        {extra && <div data-v3-leiste-extra className="mt-4 border-t border-line pt-3">{extra}</div>}
       </div>
     </div>
   );

@@ -383,14 +383,33 @@ describe('B9 · Die Höhe der Such-Zone steht bei der Such-Zone (Architektur-Nac
   // Höhe sie behaupten, in `SuchZone.tsx` — ohne Wächter dazwischen. `--nt-stick`
   // (Sprung-Offset aller Anker) rechnet die Zone mit: eine stille Abweichung
   // verschiebt jeden Artikel-Sprung (Klasse LM-003).
-  it('SuchZone.tsx exportiert die zwei Höhen, der Rahmen importiert sie', () => {
+  // C5a (H3-Nachzug): der VERBRAUCHER der zwei Höhen ist von `LeserRahmenV3.tsx`
+  // nach `leserGeometrie.ts` gewandert (die CSS-Variablen sind dort eine reine
+  // Funktion). Die ZUSAGE ist unverändert und sogar strenger geworden: das
+  // rem-Literal-Verbot gilt jetzt für BEIDE Dateien, nicht nur für den Rahmen.
+  it('SuchZone.tsx exportiert die zwei Höhen, die Geometrie importiert sie', () => {
     const zone = ohneKommentare(LIES('SuchZone.tsx'));
     expect(traegt(zone, /export const SUCH_H_RUHE\b/)).toBe(true);
     expect(traegt(zone, /export const SUCH_H_AKTIV\b/)).toBe(true);
+    const geo = ohneKommentare(LIES('leserGeometrie.ts'));
+    expect(traegt(geo, /SUCH_H_AKTIV/), 'die Geometrie benutzt die Konstante nicht').toBe(true);
+    for (const datei of ['leserGeometrie.ts', 'LeserRahmenV3.tsx']) {
+      expect(traegt(ohneKommentare(LIES(datei)), /'4\.25rem'|'2\.75rem'/),
+        `in ${datei} steht ein rem-Literal für die Zonen-Höhe`).toBe(false);
+    }
+  });
+
+  // C5a: und der Rahmen rechnet die Geometrie nicht mehr selbst. Ohne diese Zeile
+  // wäre die Auslagerung eine Verschiebung, die man rückgängig machen kann, ohne
+  // dass etwas rot wird (§6.7).
+  it('die Geometrie steht in EINER Funktion — der Rahmen ruft sie nur', () => {
+    const geo = ohneKommentare(LIES('leserGeometrie.ts'));
+    expect(traegt(geo, /export function leserCssVariablen\(/)).toBe(true);
+    expect(traegt(geo, /'--nt-stick'/), 'die Sprung-Offset-Variable steht nicht in der Geometrie').toBe(true);
     const rahmen = ohneKommentare(LIES('LeserRahmenV3.tsx'));
-    expect(traegt(rahmen, /SUCH_H_AKTIV/), 'der Rahmen benutzt die Konstante nicht').toBe(true);
-    expect(traegt(rahmen, /'4\.25rem'|'2\.75rem'/),
-      'im Rahmen steht noch ein rem-Literal für die Zonen-Höhe').toBe(false);
+    expect(traegt(rahmen, /leserCssVariablen\(/), 'der Rahmen benutzt die Geometrie nicht').toBe(true);
+    expect(traegt(rahmen, /'--nt-stick'/),
+      'der Rahmen setzt `--nt-stick` wieder selbst — zwei Geometrie-Quellen (LM-003)').toBe(false);
   });
 });
 

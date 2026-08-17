@@ -85,12 +85,24 @@ function V3Switch({ an, label, titel, onKlick, ariaLabel, hinweis }: {
   );
 }
 
-export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
+export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, onPanelOeffnen }: {
   /** `true` = Handy-Zuschnitt: der Öffner zeigt «···» statt «Ansicht ▾»
    *  (Fahrplan Kap. 4a). Reine Beschriftung — der Accessible-Name bleibt in
    *  beiden Zuschnitten «Ansicht», und die Elemente des Panels sind identisch. */
   kompakt: boolean;
   fussnotenAnzahl: number | null;
+  /**
+   * A2 (H3-Nachzug) · «Entscheide & Kontext …» — der Weg zum Panel, der IMMER da ist.
+   *
+   * BEFUND, gemessen 17.8.2026: mit «Rechtsprechung im Text: aus» verschwinden
+   * Zähler und Lasche (F8, richtig), und danach gab es auf `mini` KEINEN
+   * bedienbaren Weg mehr zum Panel — nur noch die Taste «r». Auf einem Telefon
+   * ohne Hardware-Tastatur war die Fläche damit unerreichbar. Davids F8-Regel
+   * verspricht ausdrücklich das Gegenteil: «Panel bleibt über ‹Ansicht ▾› und
+   * Tastatur erreichbar». Der Eintrag ist die Einlösung dieses Versprechens und
+   * steht darum UNABHÄNGIG von der Schalterstellung.
+   */
+  onPanelOeffnen?: () => void;
 }) {
   const opt = useLeserOptionen();
   const schrift = useSchriftskala();
@@ -228,6 +240,23 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
                 className="min-h-6 px-2 py-1 text-xs text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A+</button>
             </span>
           </div>
+
+          {/* ── A2 · Der Weg zum Panel, der keine Tastatur braucht ────────────
+              KEIN `role="menuitem"`: das Panel ist eine ehrliche Disclosure
+              (R2/A4-Präzedenz), und ein einzelnes Menü-Element in einer
+              `role="group"` verspräche eine Pfeiltasten-Bedienung, die es hier
+              nicht gibt. Ein gewöhnlicher Knopf mit sprechendem Namen.
+              Er SCHLIESST das Menü mit — sonst stünde das Dropdown über der
+              Fläche, die es gerade geöffnet hat (dieselbe Falle wie Ä19). */}
+          {onPanelOeffnen && (
+            <button type="button" data-v3-ansicht-panel-auf data-v3-panel-oeffner
+              onClick={() => { setOffen(false); onPanelOeffnen(); }}
+              title="Gerichtsentscheide, Änderungen und Materialien zur gelesenen Bestimmung"
+              className="mt-1 flex w-full items-center justify-between gap-3 rounded-md border-t border-line px-2.5 pb-0.5 pt-2 text-left text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-700">
+              <span>Entscheide &amp; Kontext …</span>
+              <span aria-hidden className="shrink-0 text-brass-700">⚖</span>
+            </button>
+          )}
         </div>
       )}
     </div>

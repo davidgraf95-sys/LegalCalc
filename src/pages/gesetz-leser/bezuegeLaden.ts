@@ -97,6 +97,28 @@ export interface ArtikelBezuege {
 export function useBezuege(erlassKey: string | undefined): {
   /** Ist überhaupt eine Facette aktiv? Nur dann wird geladen und gerendert. */
   aktiv: boolean;
+  /**
+   * Ist der Lade-VERSUCH für diesen Erlass abgeschlossen? (H3-Nachzug A1)
+   *
+   * ── DER BEFUND, DEN DAS BEHEBT (gemessen 17.8.2026) ──────────────────────
+   * Das V3-Panel leitete «geladen» aus `klassenImErlass` ab («nicht leer ⇒ ein
+   * Shard wurde ausgewertet»). Bei einem Erlass OHNE Shard ist das dauerhaft
+   * falsch: `ladeBezugsShard` löst 404 zu `null` auf, `klassenImShard(null)`
+   * gibt `{}` zurück — die Ableitung sagt für immer «lädt noch». Gemessen an
+   * ZH-211.11 (`?leser=v3`): nach 8 s stand im Reiter «Entscheide» nur
+   * «Entscheide werden geladen …», und das an **1149 von 1459** Erlassen (79 %;
+   * 311 Bezugs-Shards, kein einziger für ZH).
+   *
+   * Ein «Fetch fertig»-Signal ist aus dem ERGEBNIS grundsätzlich nicht
+   * ableitbar — «leer» und «noch nichts da» sehen darin gleich aus. Es muss von
+   * der Stelle kommen, die den Fetch kennt: von hier. Nach einem 404 ist der
+   * Wert bewusst `true` — «wir haben nachgesehen, es gibt nichts» ist Wissen
+   * und darf nicht als Unwissen erscheinen (§8).
+   *
+   * `aktiv === false` (alle Instanzen abgewählt) lädt nichts und meldet darum
+   * auch nichts: dort gilt der BEDIEN-Zustand, nicht der Wissens-Zustand.
+   */
+  geladen: boolean;
   bezuegeFuer: (artikel: string) => ArtikelBezuege | undefined;
   /** Kantone, zu denen dieser Erlass wirklich Kanten hat (leer, solange der
    *  Shard nicht geladen ist) — speist den Kanton-Schalter im «Ansicht ▾». */
@@ -222,7 +244,11 @@ export function useBezuege(erlassKey: string | undefined): {
     return histogrammAusShard(shard.shard, klassen, kantone);
   }, [aktiv, shard, erlassKey, klassen, kantone]);
 
-  return { aktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm, bereich };
+  // A1: das Lade-Ende. `shard` wird auch bei 404 gesetzt (`shard: null`) — genau
+  // darin liegt die Auskunft, die aus `klassenImErlass` nicht zu holen ist.
+  const geladen = aktiv && shard != null && shard.key === erlassKey;
+
+  return { aktiv, geladen, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm, bereich };
 }
 
 /** Geteilte Leer-Instanzen: halten die Referenz stabil, solange nichts geladen

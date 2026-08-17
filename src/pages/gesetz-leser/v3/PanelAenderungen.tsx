@@ -69,7 +69,11 @@ export function PanelAenderungen({ stand, quelleUrl }: {
               </span>
               <span className="mt-0.5 block text-micro leading-snug text-ink-600">
                 {marker
-                  ? 'Änderung über einen Sammelerlass anderer SR — nur das Datum ist erfasst.'
+                  // C2 (H3-Nachzug): «anderer SR» war Bundes-Wortlaut an einer
+                  // datengetriebenen Zeile — SR-Nummern führt nur das Bundesrecht,
+                  // der Satz stand aber auch an Kantons-Erlassen. Die Auskunft
+                  // bleibt dieselbe, ohne die Bund-Annahme (Erlass-Neutralität).
+                  ? 'Änderung über einen Sammelerlass — nur das Datum ist erfasst.'
                   : titel ?? 'Änderungserlass (ohne erfassten Titel).'}
                 {' '}
                 <a href={r.quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">amtlich ↗</a>

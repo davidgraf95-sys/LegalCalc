@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import {
-  PANEL_REITER, gruppiereKanten, normZitat, oeffnerLabel, oeffnerName, panelBezug, shardGeladen,
+  PANEL_REITER, gruppiereKanten, normZitat, oeffnerLabel, oeffnerName, panelBezug, reiterTitel,
   trefferZahl, zaehlerAttribut,
 } from '../pages/gesetz-leser/v3/panelModell';
 import { kopfElemente, panelForm } from '../pages/gesetz-leser/v3/kopfStufen';
@@ -143,15 +143,17 @@ describe('gruppiereKanten — Rangordnung strukturell, nie nach Zähler', () => 
   });
 });
 
-describe('trefferZahl / shardGeladen — «lädt noch» ist nicht «leer»', () => {
+describe('trefferZahl — «lädt noch» ist nicht «leer»', () => {
   const leer = () => undefined;
-  it('ohne geladenen Shard: null, nicht 0', () => {
-    expect(shardGeladen({})).toBe(false);
+  // A1 (H3-Nachzug): das «geladen»-Argument kommt aus `useBezuege().geladen`, nicht
+  // mehr aus einem Klassen-Zähler. `shardGeladen` ist mit dem Befund gestrichen —
+  // die Funktion KONNTE einen Erlass ohne Shard nicht von einem ladenden trennen
+  // (Herleitung in `panelModell.trefferZahl` und `bezuegeLaden.geladen`).
+  it('vor dem Lade-Ende: null, nicht 0', () => {
     expect(trefferZahl(leer, false, '429')).toBeNull();
   });
 
-  it('mit geladenem Shard und ohne Kante am Artikel: gewusste 0', () => {
-    expect(shardGeladen({ bge: { dokumente: 3, kanten: 5 } })).toBe(true);
+  it('nach dem Lade-Ende und ohne Kante am Artikel: gewusste 0', () => {
     expect(trefferZahl(leer, true, '429')).toBe(0);
   });
 
@@ -172,7 +174,21 @@ describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
   it('jeder Reiter trägt Label UND erklärenden Titel (kein nackter Kurzname)', () => {
     for (const r of PANEL_REITER) {
       expect(r.label.length, r.id).toBeGreaterThan(2);
-      expect(r.titel.length, r.id).toBeGreaterThan(10);
+      expect(reiterTitel(r.id, 'Artikel').length, r.id).toBeGreaterThan(10);
+    }
+  });
+
+  // C1 (H3-Nachzug): der Titel des Entscheid-Reiters trug «zu diesem Artikel» als
+  // Literal — an einem §-Erlass (BS-640.100) schlicht falsch (Ä23-Klasse).
+  it('der Entscheid-Reiter nennt die Bestimmung des ERLASSES, nicht «Artikel»', () => {
+    expect(reiterTitel('entscheide', 'Artikel')).toBe('Gerichtsentscheide zu diesem Artikel');
+    expect(reiterTitel('entscheide', 'Paragraphen')).toBe('Gerichtsentscheide zu diesem Paragraphen');
+  });
+
+  it('die beiden ERLASS-weiten Reiter hängen nicht am Zähl-Substantiv', () => {
+    for (const wort of ['Artikel', 'Paragraphen'] as const) {
+      expect(reiterTitel('aenderungen', wort)).toBe('Änderungserlasse dieses Erlasses');
+      expect(reiterTitel('materialien', wort)).toContain('zu diesem Erlass');
     }
   });
 });

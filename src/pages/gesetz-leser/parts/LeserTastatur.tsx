@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { tastendruckGehoertPane } from '../panePrioritaet';
 import { NAVIGATION, belegung } from './leserTastaturBelegung';
 
 // ─── W2·10-UI-NAV/R8 · Tastatur-Navigation j/k + «?»-Overlay ──────────────────
@@ -46,7 +47,7 @@ function istEingabe(ziel: EventTarget | null): boolean {
   return /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable === true;
 }
 
-export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel }: {
+export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekundaerenPane = false }: {
   /** Artikel-Tokens in DOKUMENT-Reihenfolge (Reader: aus `eintraege`). j/k gehen
    *  auf dieser Liste einen Schritt — nie auf einer DOM-Abfrage: die wäre bei
    *  `content-visibility:auto` von der Renderreihenfolge abhängig. */
@@ -72,6 +73,21 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel }: {
    * zweite (F8).
    */
   onPanel?: () => void;
+  /**
+   * LESER-V3 H3-NACHZUG A2 · In WELCHEM Pane steckt dieser Leser?
+   *
+   * BEFUND, gemessen 17.8.2026 im Split: der Reader durfte diesen Listener nur
+   * im PRIMÄREN Pane rendern, weil zwei globale keydown-Listener j/k doppelt
+   * springen liessen. Folge: «r» aus dem sekundären Pane öffnete das Panel des
+   * PRIMÄREN — das Kürzel bediente die Fläche, in der man gerade nicht liest.
+   *
+   * Vorgabe `false` = Ist-Verhalten Zeichen für Zeichen (Einzelansicht bzw.
+   * primäres Pane; die Ist-Hülle setzt die Prop nicht, FL-4). Setzt ein Aufrufer
+   * sie je Pane, darf der Listener in BEIDEN Panes laufen: er beansprucht den
+   * Tastendruck dann nur, wenn der Fokus in seinem Pane steht — dieselbe Regel
+   * und dieselbe Quelle wie bei ⌘K (`../panePrioritaet`, dort die Messwerte).
+   */
+  imSekundaerenPane?: boolean;
 }) {
   const [hilfeOffen, setHilfeOffen] = useState(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
@@ -93,6 +109,10 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel }: {
   // Render des Rahmens ab- und neu registriert wird.
   const panelRef = useRef(onPanel);
   useEffect(() => { panelRef.current = onPanel; }, [onPanel]);
+  // A2: wie `sprungRef` über eine Ref — der Effekt unten hat bewusst KEINE
+  // Abhängigkeiten (ein Listener je Leser, für die ganze Lebensdauer).
+  const paneRolleRef = useRef(imSekundaerenPane);
+  useEffect(() => { paneRolleRef.current = imSekundaerenPane; }, [imSekundaerenPane]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -101,6 +121,11 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel }: {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       // Guard 2: Eingabefelder tippen Buchstaben, sie navigieren nicht.
       if (istEingabe(e.target)) return;
+      // Guard 2b (A2): Zuständigkeit VOR allem anderen — ein fremdes Pane darf
+      // weder `preventDefault` rufen noch etwas öffnen. In der Einzelansicht ist
+      // das immer wahr (kein `[data-pane]` im Baum), das Ist-Verhalten bleibt
+      // damit unberührt. Herleitung und Messwerte: `../panePrioritaet`.
+      if (!tastendruckGehoertPane(paneRolleRef.current)) return;
       // «?» SCHLIESST das eigene Overlay — auch dann, wenn es selbst das offene
       // Modal ist. Dieser eine Zweig steht vor Guard 3, weil er der einzige ist,
       // der eine Selbst-Ausnahme rechtfertigt: er RÄUMT den Dialog weg, statt

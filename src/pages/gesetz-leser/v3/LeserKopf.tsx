@@ -33,7 +33,9 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // hier führt zur Gesetzes-Übersicht — in einem Pane pane-lokal, weil jedes
 // Pane seinen eigenen Navigator hat. Der Accessible-Name sagt es aus (§8).
 
-export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf, panelOeffner, suchZone }: {
+export function LeserKopf({
+  erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf, panelOeffner, onPanelOeffnen, suchZone,
+}: {
   erlass: BrowseErlass;
   /** Laufender Artikel aus dem bestehenden Scroll-Spy («Art. 429»). */
   aktArtikel: string | null;
@@ -46,6 +48,10 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
   /** H3 — Öffner des Rechtsprechungs-Panels («⚖ 14 Entscheide →»). Leer
    *  gelassen kostet er nichts: kein Platzhalter, keine reservierte Fläche. */
   panelOeffner?: ReactNode;
+  /** A2 (H3-Nachzug) — dieselbe Fläche, geöffnet aus dem «Ansicht ▾»-Menü. Der
+   *  Weg, der bleibt, wenn der Zähler nach der F8-Regel weg ist und keine
+   *  Tastatur da ist; Herleitung in `./LeserAnsichtV3`. */
+  onPanelOeffnen?: () => void;
   /** ── Ä19 (H2b) · zweite Zeile des klebenden Kopf-BLOCKS ────────────────────
    *  Das Such-/Sprungfeld, wo die Gliederung NICHT als Spalte steht (Handy,
    *  Split-Pane, Desktop mit eingeklappter Gliederung). Vorher gab es in genau
@@ -169,7 +175,8 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
         <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
           {panelOeffner}
           {gliederungKnopf}
-          <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl} />
+          <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
+            onPanelOeffnen={onPanelOeffnen} />
           <button type="button" onClick={() => navigate('/gesetze')}
             aria-label="Gesetz schliessen (zur Gesetzesübersicht)"
             title="Gesetz schliessen (zur Gesetzesübersicht)"

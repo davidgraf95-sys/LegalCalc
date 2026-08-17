@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties, type ReactNode } from 'react';
+import { useId, useRef } from 'react';
 import { grundartMeta } from '../helpers';
 import { ErlassKopfBlock } from '../parts';
 // Geteilte ANSICHTS-ZUSTÄNDE (Fehlseite · Currency-Pin · pdf-embed · Laden).
@@ -12,15 +12,17 @@ import { LeserTastatur } from '../parts/LeserTastatur';
 import { LeserKopf } from './LeserKopf';
 import { LeserSeitenleiste } from './LeserSeitenleiste';
 import { LeserGliederung } from './LeserGliederung';
+import { LeserGliederungSchiene } from './LeserGliederungSchiene';
 import { LeserLesespalte } from './LeserLesespalte';
 import { LeserLeisteSheet } from './LeserLeisteSheet';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { PanelZaehler } from './LeserPanelOeffner';
-import { normZitat, panelBezug, shardGeladen, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
+import { normZitat, panelBezug, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
-import { SuchZone, SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
-import { kopfElemente, kopfHoehe, panelForm, useKopfStufe } from './kopfStufen';
+import { SuchZone } from './SuchZone';
+import { leserCssVariablen } from './leserGeometrie';
+import { kopfElemente, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
@@ -45,18 +47,23 @@ import { useLeserV3Modell } from './leserV3Modell';
 // hinter ☰. Die Regel dahinter, auf allen drei Breiten dieselbe: das Feld ist das
 // oberste Element des klebenden Blocks.
 //
-// ── ERWEITERUNGSPUNKTE (Fundament-Auflage 3, Auftrag David 16.8.2026) ───────
-// Die kommenden Etappen hängen an benannten, typisierten Slots — nicht an
-// TODO-Kommentaren im JSX. Wer sie füllt, ändert **eine** Prop-Zeile:
+// ── DIE DREI ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4, H3-Nachzug) ────────────
+// H1 hatte `beiwerkSlot` · `fassungsWahl` · `leisteExtra` als `ReactNode`-Slots
+// vorgesehen (Fundament-Auflage 3). Befund des Architektur-Reviews 17.8.2026:
 //
-//   beiwerkSlot    S2 · Beiwerk-Zone mit reservierter Mindesthöhe je Artikel
-//                  (Fassung · Entscheid-Zähler · Fussnoten), Pos. 13.
-//   fassungsWahl   W2·5g · Zeitmaschine/Fassungswahl neben dem Erlass-Kopf.
-//   leisteExtra    Zusätzliche Blöcke am Fuss der Seitenleiste (Kontext-Reiter).
+//  · Der EINZIGE Aufrufer (`../GesetzLeserV3.tsx`) setzt keinen von ihnen — seit
+//    H1, über drei Etappen.
+//  · `beiwerkSlot` hielt zudem nicht, was sein Kommentar versprach («Beiwerk-Zone
+//    je Artikel»): gebaut war EIN ReactNode am Fuss der Lesespalte
+//    (`LeserLesespalte`), also kein Slot je Artikel. Und S2 — die Etappe, für die
+//    er gedacht war — baut die Beiwerk-Zone im KERN (`parts/ArtikelLeser`,
+//    Kap. 1.3) und braucht ihn darum nicht.
 //
-// Alle sind `ReactNode | undefined`. Ein nicht gesetzter Slot rendert **nichts**
-// — kein leerer Kasten, keine Fläche, kein CLS: ein Erweiterungspunkt darf im
-// Grundzustand nichts kosten (§15).
+// Damit gilt §17 in der Fassung vom 13.8.2026: was nicht scheitern kann, wird
+// gestrichen statt bewacht — und ein Erweiterungspunkt, dessen künftiger Füller
+// bereits einen anderen Weg nimmt, ist keiner. Dieselbe Begründung, mit der H3
+// `panelOeffner`/`panelSlot` gestrichen hat (Präzedenz `LeserV3Kontext.ts`).
+// Sie sind in der Historie greifbar, wenn ein echter Konsument auftritt.
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
 // `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
@@ -78,21 +85,14 @@ import { useLeserV3Modell } from './leserV3Modell';
 export interface LeserRahmenV3Props {
   ebene: string;
   schluessel: string;
-  /** S2 — Beiwerk-Zone unter dem Lesetext (Fassung · Zähler · Fussnoten).
-   *  Der Rahmen reicht ihn an `LeserLesespalte` durch; ungesetzt rendert die
-   *  Spalte dafür KEIN Element (kein leerer Kasten, kein CLS). */
-  beiwerkSlot?: ReactNode;
-  /** W2·5g — Fassungswahl/Zeitmaschine in den Aktionen des Erlass-Kopfs. */
-  fassungsWahl?: ReactNode;
-  /** Zusätzliche Blöcke am Fuss der Seitenleiste (Kontext-Reiter u. Ä.). */
-  leisteExtra?: ReactNode;
 }
 
-export function LeserRahmenV3({
-  ebene, schluessel, beiwerkSlot, fassungsWahl, leisteExtra,
-}: LeserRahmenV3Props) {
+export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
   const { stufe, kopfRef } = useKopfStufe();
+  // A3: die Id der Panel-Fläche entsteht HIER — Öffner und Fläche stehen in
+  // verschiedenen Teilbäumen und brauchen dieselbe (`aria-controls`).
+  const panelId = useId();
   // H3 · Panel: Zustand und Bezugs-Daten. BEIDE Hooks stehen VOR den frühen
   // Rückgaben (Hooks laufen nicht bedingt) und kosten im Ruhezustand nichts —
   // `usePanelBezuege` bekommt den Erlass-Key erst, wenn das Panel einmal offen
@@ -154,8 +154,7 @@ export function LeserRahmenV3({
       onAlleAuf={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, true])) }))}
       onAlleZu={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, false])) }))}
       alleOffen={m.alleKnotenIds.length > 0 && m.alleKnotenIds.every((id) => m.tocBaum[id] === true)}
-      onAnfang={m.zumAnfang}
-      extra={leisteExtra} />
+      onAnfang={m.zumAnfang} />
   );
 
   // Ä19: Wo die Gliederung NICHT als Spalte steht, trägt der klebende Kopf-Block
@@ -186,7 +185,10 @@ export function LeserRahmenV3({
   // Lasche und keinen Zähler, das per `r` geöffnete Panel muss trotzdem rendern
   // (`panelModell`, `offen` ist bewusst nicht mit `oeffnerSichtbar` verrechnet).
   const panelZone = panel.oeffnerSichtbar || panel.offen;
-  const panelZahl = trefferZahl(bezuege.bezuegeFuer, shardGeladen(bezuege.klassenImErlass), panelZiel.token);
+  // A1: die Zahl gilt nur, wenn der Lade-VERSUCH durch ist — `bezuege.geladen`
+  // kommt aus der Hook, die den Fetch kennt (Herleitung dort). Der abgelöste
+  // Klassen-Zähler konnte «nichts erfasst» nicht von «lädt noch» trennen.
+  const panelZahl = trefferZahl(bezuege.bezuegeFuer, bezuege.geladen, panelZiel.token);
 
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
@@ -207,28 +209,12 @@ export function LeserRahmenV3({
       data-leser-v3="rahmen"
       className="lc-leser space-y-5"
       data-grundart={meta.grundart ?? undefined}
-      // ── Die EINE Stelle, an der Kopf-Geometrie steht (Risiko R1) ────────
-      // `--leser-kopf-h` behält seine Ist-BEDEUTUNG (Topbar + App-Leiste) —
-      // sie umzudeuten hätte das geteilte `GliederungSheet` still verstellt,
-      // das daraus seine Höhe rechnet (§5: eine Variable, eine Bedeutung).
-      // `--nt-stick` speist sich daraus und ist damit automatisch richtig,
-      // wenn die Kopfzeile ihre Stufe wechselt — genau das fehlte im Ist-Stand.
-      style={{
-        '--leser-v3-kopf-h': kopfHoehe(stufe),
-        '--leser-v3-kopf-top': umgebung.imPane ? '0rem' : 'var(--leser-kopf-h)',
-        '--leser-kopf-h': 'calc(4rem + 2.25rem)',
-        // Ä19: Höhe der Such-Zone — 0, wo die Leiste als Spalte das Feld trägt.
-        // Zwei feste Werte, damit `--nt-stick` unten aus derselben Quelle rechnet.
-        // B9: die zwei Werte gehören der Zone (`./SuchZone`), nicht dieser Datei.
-        '--leser-v3-such-h': suchZoneKlebt ? (m.sucheAktiv ? SUCH_H_AKTIV : SUCH_H_RUHE) : '0rem',
-        // Ä1: Wrapper-Polsterung, die der Kopf verschluckt. Vorgabe in index.css
-        // (Shell `py-8 sm:py-12`); im Pane sind es `py-6` (Pane.tsx).
-        ...(umgebung.imPane ? { '--leser-v3-kopf-luecke': '1.5rem' } : {}),
-        '--leser-sub-h': umgebung.imPane ? 'var(--leser-v3-kopf-h)' : '0rem',
-        '--nt-stick': umgebung.imPane
-          ? 'calc(var(--leser-sub-h) + var(--leser-v3-such-h))'
-          : 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h) + var(--leser-v3-such-h))',
-      } as CSSProperties}>
+      // Die Geometrie (sechs voneinander abhängige CSS-Variablen, Risiko R1) ist
+      // eine reine Funktion in `./leserGeometrie` — dort steht auch die Herleitung
+      // samt LM-003. Der Rahmen sagt nur noch, WELCHE Lage gilt (C5a, §6.6).
+      style={leserCssVariablen({
+        stufe, vollflaechig: !umgebung.imPane, suchZoneKlebt, sucheAktiv: m.sucheAktiv,
+      })}>
 
       <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
         stufe={stufe} gliederungKnopf={gliederungKnopf}
@@ -239,9 +225,14 @@ export function LeserRahmenV3({
         panelOeffner={panel.oeffnerSichtbar && kopfElemente(stufe).panel
           ? (
             <PanelZaehler anzahl={panelZahl} artikelLabel={panelArtikel} offen={panel.offen}
+              // A3: dieselbe Id wie die Fläche — sonst ist `aria-controls` null.
+              panelId={panel.offen ? panelId : undefined}
               onKlick={panel.umschalten} />
           )
           : undefined}
+        // A2: der Weg zum Panel, der keine Tastatur braucht und keinen Schalter —
+        // steht in JEDEM Pane und auf JEDEM Zuschnitt (`./LeserAnsichtV3`).
+        onPanelOeffnen={() => panel.oeffne('entscheide')}
         suchZone={suchZone} />
 
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
@@ -290,20 +281,8 @@ export function LeserRahmenV3({
           ? { gridTemplateColumns: m.tocOffen ? '18rem minmax(0,1fr)' : '2.25rem minmax(0,1fr)' }
           : undefined}>
         {hatLeiste && umgebung.istXl && !m.tocOffen && (
-          // Die Schiene: ein einziger Knopf, senkrecht beschriftet, klebend auf
-          // Höhe des Lesetexts. Senkrecht, weil 2.25 rem für «Gliederung»
-          // waagrecht nicht reichen und eine Abkürzung («Gl.») niemandem hilft;
-          // `writing-mode` dreht echten Text, es bleibt vorlesbar und
-          // durchsuchbar — kein Bild, kein `aria-label` als Ersatz für Inhalt.
-          <div className="sticky self-start" style={{ top: 'var(--nt-stick)' }}>
-            <button type="button" data-v3-gliederung-schiene
-              onClick={() => m.setTocOffen(true)}
-              aria-expanded={false} title="Gliederung einblenden"
-              className="flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors hover:border-brass-300 hover:bg-paper-sunken/60 hover:text-brass-700">
-              <span aria-hidden className="text-base leading-none">☰</span>
-              <span className="[writing-mode:vertical-rl] [text-orientation:mixed]">Gliederung</span>
-            </button>
-          </div>
+          // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
+          <LeserGliederungSchiene onAuf={() => m.setTocOffen(true)} />
         )}
         {zweiSpalten && (
           <aside role="navigation" aria-label="Gliederung" data-v3-aside
@@ -346,11 +325,11 @@ export function LeserRahmenV3({
           {/* Der geteilte Erlass-Kopf (Kap. 4e) — Prop-Weitergabe in
               `./LeserErlassKopfZone` (H3-Auslagerung, §6.6). */}
           <LeserErlassKopfZone m={m} erlass={erlass} artikelAnzahl={eintraege.length}
-            bestimmungsWort={bestimmungsWort} fassungsWahl={fassungsWahl} />
+            bestimmungsWort={bestimmungsWort} />
 
           {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
 
-          <LeserLesespalte m={m} beiwerkSlot={beiwerkSlot}
+          <LeserLesespalte m={m}
             // Rand-Fall: keine Leiste, aber breit genug — dann stünde die
             // Trefferliste nirgends. Lieber über dem Text als verschwunden (§8).
             trefferListe={m.sucheAktiv && !zweiSpalten && umgebung.istXl
@@ -362,10 +341,12 @@ export function LeserRahmenV3({
             füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
             und liegt ausserhalb des Flusses. */}
         {panelZone && (
-          <LeserPanelZone form={panelForm(stufe, !umgebung.imPane)} paneZiel={overlayZiel} paneRolle={paneRolle}
+          <LeserPanelZone form={panelForm(stufe, !umgebung.imPane)} panelId={panelId}
+            paneZiel={overlayZiel} paneRolle={paneRolle}
             zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
             normZitat={normZitat(panelArtikel, erlass.kuerzel)}
-            artikelLabel={panelArtikel} aktArtikel={panelZiel.token} zaehler={panelZahl} />
+            artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort}
+            aktArtikel={panelZiel.token} />
         )}
       </div>
 
@@ -399,13 +380,18 @@ export function LeserRahmenV3({
           <WeiterlesenChip label={m.weiterlesen.label}
             onWeiterlesen={m.weiterlesenSprung} onVerwerfen={m.weiterlesenVerwerfen} />
         )}
-        {!umgebung.istSekundaer && (
-          // H3 · «r» zieht das Panel auf (KEINE zweite Tastaturebene, Kap. 4h) —
-          // der Weg, der bleibt, wenn Zähler und Lasche nach der F8-Regel weg
-          // sind; darum UNABHÄNGIG von `oeffnerSichtbar` gesetzt.
-          <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
-            onPanel={() => panel.oeffne('entscheide')} />
-        )}
+        {/* H3 · «r» zieht das Panel auf (KEINE zweite Tastaturebene, Kap. 4h) —
+            der Weg, der bleibt, wenn der Zähler nach der F8-Regel weg ist; darum
+            UNABHÄNGIG von `oeffnerSichtbar` gesetzt.
+            A2 (Nachzug): der Listener läuft jetzt in BEIDEN Panes. Vorher stand er
+            unter `!istSekundaer` — mit der Folge, dass «r» aus dem sekundären Pane
+            das PRIMÄRE Panel aufzog (gemessen 17.8.2026). Doppelte j/k-Sprünge
+            verhindert nicht mehr die Abwesenheit des Listeners, sondern seine
+            Zuständigkeitsprüfung: er beansprucht den Tastendruck nur, wenn der
+            Fokus in SEINEM Pane steht — dieselbe Regel wie bei ⌘K, aus derselben
+            Quelle (`../panePrioritaet`). */}
+        <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
+          onPanel={() => panel.oeffne('entscheide')} imSekundaerenPane={umgebung.istSekundaer} />
       </div>
     </div>
   );
