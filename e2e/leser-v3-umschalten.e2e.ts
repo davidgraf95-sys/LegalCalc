@@ -65,12 +65,17 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     // und wirkt darum in BEIDEN Hüllen. Ein Umbau, der nur in einer Hülle greift,
     // wäre ein zweiter Speicher (§5) — genau das, was FL-6 ausschliesst.
     //
-    // Der Fall ist zugleich der Parität-Beweis für die Zusage der Etappe: bei
-    // «aus» bleibt keine Historie-Spur im Lesekörper, und «keine» heisst in
-    // BEIDEN Hüllen keine. Geprüft wird die «Fassung»-Zeile
+    // Der Fall ist zugleich der Parität-Beweis: was «aus» wegnimmt, nimmt es in
+    // BEIDEN Hüllen weg. Geprüft wird die «Fassung»-Zeile
     // (`[data-historie-zeile]`), weil sie der Träger ist, der vor S1 an gar
     // keinem Schalter hing (Befund K4) — sie ist die Stelle, an der eine
     // halbe Umsetzung auffällt.
+    //
+    // Ä68-PRÄZISIERUNG (David 17.8.2026 abends): sie ist seit der Entkopplung der
+    // EINZIGE Träger. Die frühere Formel «bei aus bleibt keine Historie-Spur im
+    // Lesekörper» gilt so nicht mehr und wird hier auch nicht mehr behauptet: die
+    // A-Fussnoten sind amtlicher Fussnotentext und bleiben stehen — sie hängen am
+    // Fussnoten-Schalter (Messreihe und Herleitung: `hist-ansicht-w25i.e2e.ts`).
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
 
