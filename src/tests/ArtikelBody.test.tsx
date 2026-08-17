@@ -148,9 +148,28 @@ describe('Lesesicht H/I/J — Pop pro Element, kleinere Marken, feste Rinne', ()
   const out = () => renderToString(
     <ArtikelBody bloecke={bloecke} artikel="1" passus={{ absatz: null }} zitierKontext={zk} className="space-y-3" />,
   );
-  it('J: Pop pro Element wieder da — <p>/<li> tragen den vertikalen Lift (hover:-translate-y-0.5)', () => {
+  // ── §6.3-DEKLARATION · Ae8 (LESER-V3 H2b, 17.8.2026) ───────────────────────
+  // DER FRUEHERE FALL: «J: Pop pro Element wieder da — <p>/<li> tragen den
+  // vertikalen Lift (hover:-translate-y-0.5)». Er bewachte genau das, was der
+  // Aesthetik-Review H1 als Befund Ae8 gemeldet hat: der Hover hob die Zeile um
+  // 2 px an und fuellte 588 px Breite mit `brass-200/60` (gemessen an StPO 429).
+  //
+  // ZWEI REGELN DER DESIGN-GRUNDLAGE STANDEN DAGEGEN: Kap. 8 Nr. 3 «keine
+  // Farbflaeche ohne Bedeutung — Brass ist Signal, nicht Tapete» (Brass traegt im
+  // Leser die Treffer-Hervorhebung und die aktive Zeile; auf einem blossen
+  // Mauskontakt entwertet es beide) und Kap. 7 «keine Animation ohne
+  // Zustandswechsel» — ein Hover ist kein Zustand.
+  //
+  // DIESE ZWEI FAELLE SIND DARUM UMGEKEHRT, nicht gestrichen: der Apparat bewacht
+  // weiter dieselbe Stelle, nur mit der neuen Regel. Ein blosses Loeschen haette
+  // die Flaeche unbewacht gelassen, und der naechste Umbau haette den Lift
+  // unbemerkt zurueckgebracht (§17-Gegengewicht: umkehren statt streichen, wenn
+  // die Sorge bleibt).
+  it('Ae8: KEIN vertikaler Lift am Hover — eine Bewegung ohne Zustandswechsel', () => {
     const o = out();
-    expect(o).toContain('hover:-translate-y-0.5');
+    expect(o, 'hover:-translate-y-* ist eine Animation ohne Zustandswechsel (Kap. 7)')
+      .not.toContain('hover:-translate-y-');
+    expect(o).not.toContain('hover:translate-');
   });
   it('J: der Block-<div> selbst poppt NICHT (kein Pop auf der Block-Klasse)', () => {
     // Bei passus=null sind alle Blöcke nicht zitiert → Block-<div>-Klasse ist
@@ -168,8 +187,17 @@ describe('Lesesicht H/I/J — Pop pro Element, kleinere Marken, feste Rinne', ()
     expect(o).not.toContain('hover:ring-');
     expect(o).not.toContain('hover:shadow-');
   });
-  it('P5/P7: dezenter Hintergrund-Hover am Item bleibt erhalten', () => {
-    expect(out()).toContain('hover:bg-brass-200/60');
+  it('Ae8: der Hintergrund-Hover bleibt — aber in der ruhenden Flaeche, nicht in Brass', () => {
+    const o = out();
+    // Die Geste bleibt sichtbar (§8: der zitierbare Passus zeigt sich weiterhin) …
+    expect(o, 'der Hover ist ganz verschwunden — die Zitierbarkeit waere unsichtbar')
+      .toContain('hover:bg-paper-sunken');
+    // … und Brass bleibt dem Signal vorbehalten (Treffer, aktive Zeile).
+    expect(o, 'Brass als Hover-Flaeche entwertet die Treffer-Hervorhebung (Kap. 8 Nr. 3)')
+      .not.toContain('hover:bg-brass-');
+    // Absatz und Aufzaehlungszeile tragen DIESELBE Flaeche (§5).
+    expect([...o.matchAll(/hover:bg-[a-z0-9/-]+/g)].map((t) => t[0]).filter((k, i, a) => a.indexOf(k) === i))
+      .toEqual(['hover:bg-paper-sunken']);
   });
   it('I/H: zk-Absatzmarke ist kleiner (text-body-s) und feste Rinnen-Box (inline-block w-9, kein mr-3)', () => {
     const o = renderToString(

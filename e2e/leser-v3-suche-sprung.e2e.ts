@@ -131,20 +131,36 @@ test.describe('FL-5 — EIN Feld für Suchen und Springen', () => {
     expect(fehler).toEqual([])
   })
 
-  test('(e) ⌘K bei ZUGEKLAPPTER Gliederungsspalte zieht sie auf und fokussiert', async ({ page }) => {
+  // ── §6.3-DEKLARATION (H2b, Ä19) · DIE PRÄMISSE DIESES FALLS IST WEG ────────
+  // Bis H2 lautete er «⌘K bei ZUGEKLAPPTER Gliederungsspalte ZIEHT SIE AUF und
+  // fokussiert», und er prüfte auf dem Weg dorthin `suchFeld → toHaveCount(0)`:
+  // ohne Spalte gab es kein Feld im DOM. Genau das WAR der Ä19-Befund — in dieser
+  // Lage (wie im Split und auf dem Handy) hatte der Leser keine erreichbare
+  // Suche. Seit H2b trägt der klebende Kopf-Block die Such-Zone; das Feld ist
+  // immer da, und ein «zieht die Spalte auf» hätte keinen Gegenstand mehr.
+  //
+  // WAS DER FALL WEITERHIN PRÜFT (seine Sache, unverändert): ⌘K erreicht das Feld
+  // des Lesers, und die globale Header-Suche kommt nicht dazwischen (Bug-Check
+  // B1 — zwei Empfänger für eine Absicht). NEU HINZU, und das ist eine
+  // VERSCHÄRFUNG: das Kürzel darf die Spalte NICHT mehr aufziehen. Täte es das,
+  // wanderte das Feld beim Tastendruck aus dem Kopf in die eben geöffnete Spalte,
+  // der nachgereichte Fokus träfe ein Element mitten im Austausch, und der Nutzer
+  // bekäme einen Layout-Sprung für eine Taste, die nur fokussieren soll.
+  test('(e) ⌘K bei zugeklappter Gliederung fokussiert das Feld — ohne die Spalte aufzuziehen', async ({ page }) => {
     test.slow()
     const fehler = await oeffneStPO(page)
 
-    // @1440 steht die Spalte offen — zuklappen, dann ist das Feld nicht im DOM.
-    // Genau dort tat ⌘K bis zum B1-Nachzug gar nichts (der Listener hing am
-    // Feld, das Feld gab es nicht).
     await page.locator('[data-v3-gliederung-zu]').click()
     await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
-    await expect(suchFeld(page)).toHaveCount(0)
+    // Ä19: das Feld ist trotzdem da — und zwar im klebenden Kopf-Block.
+    await expect(suchFeld(page)).toHaveCount(1)
+    expect(await suchFeld(page).evaluate((el) => !!el.closest('[data-v3-kopf]')),
+      'ohne Spalte muss das Feld im Kopf-Block stehen (Ä19)').toBe(true)
 
     await page.keyboard.press('Control+k')
-    await expect(page.locator('[data-v3-aside]')).toBeVisible()
     await expect(suchFeld(page)).toBeFocused()
+    // Die Spalte bleibt zu: kein Sprung, kein Umzug des fokussierten Feldes.
+    await expect(page.locator('[data-v3-aside]'), '⌘K hat die Gliederungsspalte aufgezogen').toHaveCount(0)
     await expect(headerDropdown(page)).toHaveCount(0)
     await expect(headerFeld(page)).not.toBeFocused()
 

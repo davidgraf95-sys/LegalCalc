@@ -516,7 +516,13 @@
      ÄNDERT SICH EINE DER BEIDEN POLSTERUNGEN, wird `leser-v3-kopf-buendig.e2e.ts`
      rot: die Spec misst die Lücke auf H/D/S gegen 0 statt sie zu behaupten. */
   [data-leser-v3="rahmen"] { --leser-v3-kopf-luecke: 2rem; }
-  @media (min-width: 640px) {
+  /* `theme('screens.sm')` statt einer rohen 640: der Wrapper schaltet mit dem
+     Tailwind-`sm`-Praefix (`py-8 sm:py-12`), also muss die Schwelle aus derselben
+     Quelle kommen (§5, D2 «keine Magic-Numbers») — dieselbe Schreibweise wie die
+     `not all and (min-width: theme('screens.sm'))`-Regel weiter unten. Eine rohe
+     Zahl loeste zudem den Waechter `src/tests/tap-ziel-token.test.ts` aus, der jede
+     nackte `min-width`-Zahl in dieser Datei meldet (gesehen 17.8.2026). */
+  @media (min-width: theme('screens.sm')) {
     [data-leser-v3="rahmen"] { --leser-v3-kopf-luecke: 3rem; }
   }
 
