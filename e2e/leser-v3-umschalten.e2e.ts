@@ -108,6 +108,73 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     expect(fehler).toEqual([])
   })
 
+  // ── D1 (S1-Rest, gebaut im H3-Nachzug 17.8.2026) ──────────────────────────
+  // «Änderungsvermerke» wird auch in V3 nur noch ANGEBOTEN, wenn der Erlass
+  // Vermerke trägt. Die Bedingung ist NICHT nachgebaut: V3 zieht dieselbe
+  // Funktion `bieteAenderungsvermerkeSchalter` aus `../berechnungen`, die V1
+  // seit S1 zieht (§5) — Regel, drei Zustände und Korpus-Messung stehen dort
+  // und in `src/tests/aenderungsvermerke-schalter.test.ts`.
+  //
+  // VORHER, gemessen am gebauten H3-Stand: auf BS-640.100 und ZH-211.11 stand
+  // der Schalter unbedingt im «Ansicht ▾»-Panel (3 `role=switch`), obwohl es
+  // dort nichts zu blenden gibt — V1 hatte ihn an derselben Stelle schon nicht
+  // mehr. Genau diese Asymmetrie war die offene S1-Nachzug-Zeile B3.
+  //
+  // PAAR aus Positiv und Negativ, bewusst beides (Muster aus
+  // `leser-optionen.e2e.ts`): eine Sonde, die nur die Abwesenheit prüft, wäre
+  // auch mit einem generell verschwundenen Schalter grün.
+  //
+  // ROT ZU BEKOMMEN (§6.7): in `v3/LeserAnsichtV3.tsx` die Bedingung
+  // `hatAenderungsvermerke && …` vor dem zweiten `V3Switch` entfernen ⇒ die
+  // beiden Negativ-Fälle melden «expected count 0, received 1» und der
+  // Schalter-Zähler 2 → 3.
+  test('(a3) D1: «Änderungsvermerke» nur bei Erlassen, die Vermerke tragen — dieselbe Quelle wie V1', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const panel = page.locator('[data-v3-ansicht-panel]')
+    const oeffne = async (pfad: string) => {
+      await page.goto(`${pfad}?leser=v3`)
+      await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
+      // Vorbedingung: die Artikel sind da. Sonst prüfte die Sonde den
+      // Lade-Zustand, in dem die Funktion bewusst KONSERVATIV anbietet
+      // (`erlassGeladen === false`, Herleitung in `../berechnungen`) — und
+      // wäre je nach Laufzeit einmal grün und einmal rot.
+      await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 })
+      await page.locator('[data-v3-ansicht]').click()
+      await expect(panel).toBeVisible()
+    }
+
+    // POSITIV — StPO: 187 von 283 Fussnoten sind `kl:'A'`, dazu ein
+    // Historie-Shard. Alle drei V3-Schalter stehen.
+    await oeffne('/gesetze/bund/STPO')
+    await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(1)
+    await expect(panel.getByRole('switch')).toHaveCount(3)
+
+    // NEGATIV 1 — BS-640.100 (StG BS): 16 Fussnoten, KEINE klassifiziert, kein
+    // Historie-Shard. Der Fussnoten-Schalter bleibt (die 16 sind da und er
+    // blendet sie wirklich aus), «Rechtsprechung im Text» auch.
+    await oeffne('/gesetze/kanton/BS-640.100')
+    await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0)
+    await expect(panel.getByRole('switch', { name: 'Fussnoten' })).toHaveCount(1)
+    await expect(panel.getByRole('switch')).toHaveCount(2)
+    // §8: nichts weggeblendet — es gibt hier wirklich keine Fassungs-Zeile.
+    await expect(page.locator('[data-historie-zeile]')).toHaveCount(0)
+
+    // NEGATIV 2 — ZH-211.11: gar KEIN Struktur-Sidecar (404 → `null`). Der
+    // zweideutige `null`-Fall, an dem eine naive Fassung scheitert: bei
+    // geladenem Erlass heisst kein Sidecar «keine Fussnoten, also auch keine
+    // Vermerke». Er zählt Paragraphen, nicht Artikel — darum eigener Anker.
+    await page.goto('/gesetze/kanton/ZH-211.11?leser=v3')
+    await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('.lc-leser article').first()).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-ansicht]').click()
+    await expect(panel).toBeVisible()
+    await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0)
+    await expect(panel.getByRole('switch')).toHaveCount(2)
+
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
   test('(b) #art-429 bleibt beim Wechsel V3→V1→V3 im Viewport (Erlass + Anker gehen nicht verloren)', async ({ page }) => {
     test.slow() // grosser Erlass (StPO)
     const fehler = fehlerSammeln(page)

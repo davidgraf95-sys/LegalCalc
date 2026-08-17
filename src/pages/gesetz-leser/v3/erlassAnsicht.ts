@@ -71,6 +71,24 @@ export function zaehlform(n: number, wort: BestimmungsWort): string {
   return n === 1 && wort === 'Paragraphen' ? 'Paragraph' : wort;
 }
 
+/**
+ * «diesem Artikel» / «diesem Paragraphen» — die DATIV-Einzahl (H3-Nachzug C1).
+ *
+ * Eigene Ableitung und nicht `zaehlform(1, …)`: die Zählform liefert den
+ * NOMINATIV («1 Paragraph»), im Dativ steht dieselbe Bestimmung als «diesem
+ * Paragraphen» (schwache Deklination). Wer die Zählform hier zweitverwendete,
+ * schrieb «zu diesem Paragraph» — ein Grammatikfehler an einer Kernauskunft,
+ * genau die Klasse, gegen die `zaehlform` gebaut wurde (§8).
+ *
+ * ANLASS (Architektur-Review 17.8.2026, C1): «Artikel» stand hart im Code an
+ * drei Stellen des Panels (`PANEL_REITER`-Titel, Bedien- und Bestands-Satz im
+ * Reiter «Entscheide») — an BS-640.100 (§-Erlass) las man dort «zu diesem
+ * Artikel». Dieselbe Fehlerklasse wie Ä23, nur eine Etappe später.
+ */
+export function bestimmungDativ(wort: BestimmungsWort): string {
+  return wort === 'Paragraphen' ? 'diesem Paragraphen' : 'diesem Artikel';
+}
+
 /** Die Ebene-Stufe der Brotkrume: Beschriftung + Ziel der gefilterten Übersicht. */
 export interface EbeneAngabe {
   label: string;

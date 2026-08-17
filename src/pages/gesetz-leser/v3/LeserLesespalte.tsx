@@ -26,17 +26,16 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Verantwortungen, von denen genau eine eingefroren ist. So sieht man der
 // Dateiliste an, welche das ist.
 
-export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
+// ── `beiwerkSlot` IST GESTRICHEN (C4, H3-Nachzug 17.8.2026) ──────────────────
+// Er war als «Beiwerk-Zone je Artikel» angekündigt, gebaut war EIN ReactNode am
+// Fuss der Spalte — und über drei Etappen hat ihn kein Aufrufer gesetzt. S2, die
+// Etappe, für die er gedacht war, baut die Zone im KERN (`parts/ArtikelLeser`,
+// Kap. 1.3) und braucht ihn nicht. §17: gestrichen statt bewacht; Herleitung im
+// Rahmen (`LeserRahmenV3`, «DIE DREI ERWEITERUNGS-SLOTS SIND GESTRICHEN»).
+export function LeserLesespalte({ m, trefferListe }: {
   m: LeserV3Modell;
   /** Trefferliste für den Rand-Fall ohne Leiste (sonst steht sie dort). */
   trefferListe?: ReactNode;
-  /** S2 — Beiwerk-Zone am Fuss des Lesetexts (Fassung · Entscheid-Zähler ·
-   *  Fussnoten), Pos. 13. Der Rahmen reicht sie durch; in H1 ist sie NICHT
-   *  gesetzt und rendert dann gar kein Element — kein leerer Kasten, kein CLS
-   *  (§15), und der Pixelvergleich PX bleibt byte-gleich. Der Slot steht hier
-   *  statt nur im Rahmen-Interface, damit S2 einen echten Anschluss vorfindet
-   *  und nicht erst die Naht bauen muss (Architektur-Review A2, 16.8.2026). */
-  beiwerkSlot?: ReactNode;
 }) {
   const { erlass, eintraege, struktur, sektionen, ohneGliederung, basisPfad, vorher, nachher } = m;
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
@@ -52,10 +51,30 @@ export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
     if (el) sekRef.current.set(id, el); else sekRef.current.delete(id);
   };
 
+  // ── H3 · POS. 12 · KEIN `bezuege` MEHR AM ARTIKEL ─────────────────────────
+  // Bis H2 stand hier `bezuege={m.bezuegeFuer(e.artikel)}` und der Kern rendete
+  // darunter die `BezuegeZeile` — je Instanz eine waagrecht scrollbare Chip-Linie
+  // (277 Z.). Genau die ist Pos. 12 («12 Entscheide im Fliesstext»): sie verlässt
+  // den Lesekörper. In V3 stehen die Entscheide im Panel (Kap. 4d).
+  //
+  // DER PROP-VERTRAG DES KERNS GENÜGT — KEINE KERN-ÄNDERUNG. `ArtikelLeser`
+  // rendert bei ungesetztem `bezuege` die `LeitfallZeile`, und die kehrt ohne
+  // `leitfaelle` mit `null` zurück: unter dem Artikel steht nichts. Die Prop
+  // WEGZULASSEN ist damit der ganze Umbau. `revision` und `historie` bleiben —
+  // sie sind Fassungs-Auskunft, nicht Rechtsprechung.
+  //
+  // UND KEIN ZÄHLER HIER (Entscheid H3, im Vollzugsvermerk begründet): ein
+  // Zähler je Artikel bräuchte die Trefferzahl beim ersten Paint. Die kommt aus
+  // dem Bezugs-Shard, und der wird seit H3 erst beim Öffnen des Panels geladen —
+  // die Zahl erschiene also erst nach dem Öffnen, und zwar an JEDEM Artikel
+  // gleichzeitig. Das wäre ein Layout-Sprung über das ganze Dokument, ausgelöst
+  // vom Öffnen des Panels: exakt das, was `leser-v3-kontext-cls` verbietet. Der
+  // Zähler je Artikel gehört in die höhenfeste Beiwerk-Zone von **S2** — dort ist
+  // der Platz reserviert, bevor die Zahl kommt.
   const artikel = (e: (typeof eintraege)[number]) => (
     <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)}
       intern={m.internRefs} marg={m.margAnzeige.get(e.artikel)?.teile} margBasis={m.margAnzeige.get(e.artikel)?.ab}
-      bezuege={m.bezuegeFuer(e.artikel)} revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
+      revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
       istAnhang={istAnhangToken(e.artikel)} />
   );
 
@@ -107,8 +126,6 @@ export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
         )}
         {sektionen.map((s) => renderSektion(s, true, 0))}
       </div>
-
-      {beiwerkSlot}
 
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
         {vorher ? <Link to={erlassPfad(vorher)} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}

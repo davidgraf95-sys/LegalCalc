@@ -94,13 +94,93 @@ const VERBOTEN: [string, RegExp][] = [
   ['KontextPanel', /\bKontextPanel\b/],
 ];
 
+// H3 · NUR DIREKT (nicht transitiv): `BezuegeZeile` ist der Artikelfuss der
+// Ist-Hülle, den V3 durch das Panel ablöst (Pos. 12). Das Verbot gilt bewusst
+// nur für den V3-Quelltext selbst — transitiv steht die Zeile weiterhin im Graph,
+// weil der KERN (`parts/ArtikelLeser`) sie rendert, wenn ein Aufrufer `bezuege`
+// setzt. Genau das tut V3 nicht mehr; der Kern bleibt unangetastet.
+const VERBOTEN_DIREKT: [string, RegExp][] = [
+  ['BezuegeZeile', /\bBezuegeZeile\b/],
+];
+
 describe('Keine Ist-Hülle: die alten Bausteine sind aus v3/ nicht erreichbar', () => {
   it('keine V3-Datei berührt die Ist-Hülle (Code, nicht Kommentare)', () => {
     for (const datei of ALLE_DATEIEN) {
       const quelle = ohneKommentare(LIES(datei));
-      for (const [name, muster] of VERBOTEN) {
+      for (const [name, muster] of [...VERBOTEN, ...VERBOTEN_DIREKT]) {
         expect(traegt(quelle, muster), `${datei} berührt die Ist-Hülle (${name})`).toBe(false);
       }
+    }
+  });
+});
+
+// ─── H3 · DIE ZUSAGEN DES RECHTSPRECHUNGS-PANELS ────────────────────────────
+//
+// Vier Quellensonden, die je einen Rückschritt rot machen, den ein DOM-Test
+// nicht sieht.
+
+describe('H3 — Pos. 12: der Lesekörper führt keine Bezüge mehr', () => {
+  it('die Lesespalte setzt die `bezuege`-Prop des Kerns NICHT', () => {
+    const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
+    expect(traegt(quelle, /\bbezuege=/), 'LeserLesespalte.tsx setzt `bezuege` — die Entscheid-Linien sind zurück').toBe(false);
+  });
+
+  it('Positiv-Sonde: sie setzt `revision`/`historie` weiterhin (sonst prüfte das Verbot nur eine leere Datei)', () => {
+    const quelle = ohneKommentare(LIES('LeserLesespalte.tsx'));
+    expect(traegt(quelle, /\brevision=/)).toBe(true);
+    expect(traegt(quelle, /\bhistorie=/)).toBe(true);
+  });
+
+  it('der Adapter schaltet das Vorladen des Bezugs-Shards ab (Nachladen, Kap. 7)', () => {
+    const quelle = ohneKommentare(LIES('leserV3Modell.ts'));
+    expect(traegt(quelle, /bezuegeVorladen:\s*false/),
+      'leserV3Modell.ts lädt die Bezüge wieder beim Seitenaufruf — das Nachladen ist ausgehebelt').toBe(true);
+  });
+});
+
+describe('H3 — EIN Auto-Zu für alle Flächen (§5)', () => {
+  const HOOK = 'usePopoverAutoZu.ts';
+
+  it('der Hook trägt die Mechanik wirklich (sonst prüfte das Verbot nichts)', () => {
+    const quelle = ohneKommentare(LIES(HOOK));
+    expect(traegt(quelle, /pointerdown/)).toBe(true);
+    expect(traegt(quelle, /wheel/)).toBe(true);
+    expect(traegt(quelle, /useDialogFokus/)).toBe(true);
+  });
+
+  it('KEINE andere V3-Datei registriert Aussenklick- oder Wisch-Schliessen selbst', () => {
+    for (const datei of ALLE_DATEIEN) {
+      if (datei === HOOK) continue;
+      const quelle = ohneKommentare(LIES(datei));
+      expect(traegt(quelle, /addEventListener\(\s*'pointerdown'/), `${datei} hat eine zweite Aussenklick-Kopie`).toBe(false);
+      expect(traegt(quelle, /addEventListener\(\s*'wheel'/), `${datei} hat eine zweite Wisch-Kopie`).toBe(false);
+    }
+  });
+
+  it('beide Flächen benutzen ihn — das Ansicht-Menü UND das Panel', () => {
+    expect(traegt(ohneKommentare(LIES('LeserAnsichtV3.tsx')), /usePopoverAutoZu\(/)).toBe(true);
+    expect(traegt(ohneKommentare(LIES('LeserPanelZone.tsx')), /usePopoverAutoZu\(/)).toBe(true);
+  });
+});
+
+describe('H3 — SEO: der Prerender-Pfad kennt die Bezüge nicht (§7-Befund)', () => {
+  // Der Fahrplan verlangt «der Prerender behält die Bezüge im HTML». Gemessen:
+  // er hatte sie nie. Diese Sonde hält den EIGENTLICHEN Schutz fest — der
+  // Prerender-Pfad darf sich nie an die Hülle oder an die Bezugs-Ladeschicht
+  // hängen, sonst könnte eine Hüllen-Entscheidung das SEO-HTML verändern.
+  const PFADE = ['src/lib/seo-detail.ts', 'scripts/prerender.ts'];
+
+  it('Positiv-Sonde: die Dateien existieren und schreiben Erlass-HTML', () => {
+    expect(readFileSync(PFADE[0]!, 'utf8')).toContain('erlassVolltextHtml');
+    expect(readFileSync(PFADE[1]!, 'utf8')).toContain('erlassVolltextHtml');
+  });
+
+  it('weder seo-detail noch prerender berühren Bezüge, norm-index oder die V3-Hülle', () => {
+    for (const p of PFADE) {
+      const quelle = ohneKommentare(readFileSync(p, 'utf8'));
+      expect(traegt(quelle, /bezuege/i), `${p} berührt die Bezugs-Schicht`).toBe(false);
+      expect(traegt(quelle, /norm-index/), `${p} berührt den norm-index`).toBe(false);
+      expect(traegt(quelle, /gesetz-leser\/v3/), `${p} berührt die V3-Hülle`).toBe(false);
     }
   });
 });
@@ -272,11 +352,15 @@ describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2
   // Typ aus `v3/` hängen, FL-4) und `inhalt-volltext.tsx` (V1, eingefroren). Die
   // Sonde deckt darum `v3/`, und genau das ist die Zusage.
 
-  it('erlassAnsicht.ts trägt Typ, Ableitung und Zählform (sonst prüfte das Verbot nichts)', () => {
+  it('erlassAnsicht.ts trägt Typ, Ableitung, Zählform und Dativ (sonst prüfte das Verbot nichts)', () => {
     const quelle = ohneKommentare(LIES(QUELLE_DER_WAHRHEIT));
     expect(traegt(quelle, /export type BestimmungsWort\b/), 'BestimmungsWort fehlt').toBe(true);
     expect(traegt(quelle, /export function bestimmungsWort\(/), 'bestimmungsWort() fehlt').toBe(true);
     expect(traegt(quelle, /export function zaehlform\(/), 'zaehlform() fehlt').toBe(true);
+    // C1 (H3-Nachzug): die Dativ-Einzahl («zu diesem Artikel»/«zu diesem
+    // Paragraphen») ist die Form, die das Panel braucht — sie hat dieselbe eine
+    // Quelle, sonst wäre das Verbot unten nur ein Verbot ohne Ausweg.
+    expect(traegt(quelle, /export function bestimmungDativ\(/), 'bestimmungDativ() fehlt').toBe(true);
   });
 
   it('kein «Paragraphen»-Literal in einer anderen v3/-Datei', () => {
@@ -286,6 +370,31 @@ describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2
       expect(traegt(quelle, /Paragraphen/),
         `${datei} trägt das Wort «Paragraphen» im Code — Typ und Zählform gehören nach ${QUELLE_DER_WAHRHEIT}`).toBe(false);
     }
+  });
+
+  // ── C1 (H3-Nachzug): DAS VERBOT WAR EINSEITIG ──────────────────────────────
+  // Bis hierher stand nur «Paragraphen» auf dem Index — «Artikel» durfte frei im
+  // Code liegen. Genau daran ist H3 gescheitert: `panelModell.PANEL_REITER` trug
+  // «Gerichtsentscheide zu diesem Artikel», `PanelEntscheide` zweimal «diesem
+  // Artikel», und an BS-640.100 (ein §-Erlass) war das dreimal falsch. Ein Verbot,
+  // das nur die eine Hälfte des Paares kennt, fängt die häufigere Hälfte nicht:
+  // die Bund-Annahme ist die Vorgabe, die man versehentlich hinschreibt.
+  //
+  // `\bArtikel\b` mit Wortgrenze trifft nur das WORT — nicht `artikelLabel`,
+  // nicht `ArtikelLeser`, nicht `aktArtikel` und nicht `data-…-artikel` (§7:
+  // Identitäts-Treffer, nie Substring-Präsenz).
+  it('C1 · auch kein «Artikel»-Literal in einer anderen v3/-Datei', () => {
+    for (const datei of ALLE_DATEIEN) {
+      if (datei === QUELLE_DER_WAHRHEIT) continue;
+      const quelle = ohneKommentare(LIES(datei));
+      expect(traegt(quelle, /\bArtikel\b/),
+        `${datei} schreibt «Artikel» als Wort in den Code — an einem §-Erlass ist das falsch; `
+        + `das Zähl-Substantiv kommt aus ${QUELLE_DER_WAHRHEIT} (bestimmungsWort/bestimmungDativ)`).toBe(false);
+    }
+  });
+
+  it('C1 · Positiv-Sonde: erlassAnsicht.ts trägt das Wort wirklich (sonst prüfte das Verbot eine leere Menge)', () => {
+    expect(traegt(ohneKommentare(LIES(QUELLE_DER_WAHRHEIT)), /\bArtikel\b/)).toBe(true);
   });
 
   it('kein zweiter Ableitungs-Ternär über bestimmungsEtikett in v3/', () => {
@@ -303,14 +412,33 @@ describe('B9 · Die Höhe der Such-Zone steht bei der Such-Zone (Architektur-Nac
   // Höhe sie behaupten, in `SuchZone.tsx` — ohne Wächter dazwischen. `--nt-stick`
   // (Sprung-Offset aller Anker) rechnet die Zone mit: eine stille Abweichung
   // verschiebt jeden Artikel-Sprung (Klasse LM-003).
-  it('SuchZone.tsx exportiert die zwei Höhen, der Rahmen importiert sie', () => {
+  // C5a (H3-Nachzug): der VERBRAUCHER der zwei Höhen ist von `LeserRahmenV3.tsx`
+  // nach `leserGeometrie.ts` gewandert (die CSS-Variablen sind dort eine reine
+  // Funktion). Die ZUSAGE ist unverändert und sogar strenger geworden: das
+  // rem-Literal-Verbot gilt jetzt für BEIDE Dateien, nicht nur für den Rahmen.
+  it('SuchZone.tsx exportiert die zwei Höhen, die Geometrie importiert sie', () => {
     const zone = ohneKommentare(LIES('SuchZone.tsx'));
     expect(traegt(zone, /export const SUCH_H_RUHE\b/)).toBe(true);
     expect(traegt(zone, /export const SUCH_H_AKTIV\b/)).toBe(true);
+    const geo = ohneKommentare(LIES('leserGeometrie.ts'));
+    expect(traegt(geo, /SUCH_H_AKTIV/), 'die Geometrie benutzt die Konstante nicht').toBe(true);
+    for (const datei of ['leserGeometrie.ts', 'LeserRahmenV3.tsx']) {
+      expect(traegt(ohneKommentare(LIES(datei)), /'4\.25rem'|'2\.75rem'/),
+        `in ${datei} steht ein rem-Literal für die Zonen-Höhe`).toBe(false);
+    }
+  });
+
+  // C5a: und der Rahmen rechnet die Geometrie nicht mehr selbst. Ohne diese Zeile
+  // wäre die Auslagerung eine Verschiebung, die man rückgängig machen kann, ohne
+  // dass etwas rot wird (§6.7).
+  it('die Geometrie steht in EINER Funktion — der Rahmen ruft sie nur', () => {
+    const geo = ohneKommentare(LIES('leserGeometrie.ts'));
+    expect(traegt(geo, /export function leserCssVariablen\(/)).toBe(true);
+    expect(traegt(geo, /'--nt-stick'/), 'die Sprung-Offset-Variable steht nicht in der Geometrie').toBe(true);
     const rahmen = ohneKommentare(LIES('LeserRahmenV3.tsx'));
-    expect(traegt(rahmen, /SUCH_H_AKTIV/), 'der Rahmen benutzt die Konstante nicht').toBe(true);
-    expect(traegt(rahmen, /'4\.25rem'|'2\.75rem'/),
-      'im Rahmen steht noch ein rem-Literal für die Zonen-Höhe').toBe(false);
+    expect(traegt(rahmen, /leserCssVariablen\(/), 'der Rahmen benutzt die Geometrie nicht').toBe(true);
+    expect(traegt(rahmen, /'--nt-stick'/),
+      'der Rahmen setzt `--nt-stick` wieder selbst — zwei Geometrie-Quellen (LM-003)').toBe(false);
   });
 });
 

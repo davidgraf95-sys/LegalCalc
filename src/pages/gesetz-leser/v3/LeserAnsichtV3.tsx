@@ -1,6 +1,6 @@
-import { useEffect, useId, useRef, useState } from 'react';
-import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { useId, useRef, useState } from 'react';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
+import { usePopoverAutoZu } from './usePopoverAutoZu';
 import {
   HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
 } from '../leserOptionen';
@@ -16,16 +16,15 @@ import {
 // `histUmschalten`) ist damit ersatzlos entfallen — `histansicht` ist ein
 // gewöhnliches zweiwertiges Feld, und alle drei Schalter laufen durch `schalte`.
 //
-// S1-NACHZUG B3 — OFFEN in V3, mit Grund (17.8.2026): der Schalter
-// «Änderungsvermerke» wird in V1 nur noch angeboten, wenn der Erlass Vermerke
-// TRÄGT (§8, Herleitung in `../berechnungen`). In V3 steht er weiter unbedingt.
-// Nicht aus Nachlässigkeit: die Bedingung braucht einen Prop-Weg über
-// `leserV3Modell.ts` → `LeserRahmenV3.tsx` → `LeserKopf.tsx`, und alle drei
-// Dateien werden von den Etappen H2b und H3 GERADE umgebaut (H3 mit
-// unfestgeschriebenen Änderungen im Worktree). Doppelt bauen wäre ein
-// Drei-Wege-Konflikt (§0 Ziff. 5: Treffer melden, nicht doppelt bauen). V3 ist
-// zudem noch nicht ausgeliefert (H4-Flip wartet auf David), die Asymmetrie
-// trifft also keine Nutzerin. Nachzug-Zeile steht in FAHRPLAN-LESER-V3 Kap. 7.
+// S1-NACHZUG B3 / D1 — ERLEDIGT im H3-Nachzug (17.8.2026): der Schalter
+// «Änderungsvermerke» wird auch hier nur angeboten, wenn der Erlass Vermerke
+// TRÄGT (§8). Die Bedingung ist NICHT nachgebaut — sie kommt als eine Prop
+// `hatAenderungsvermerke` über `leserV3Modell.ts` → `LeserRahmenV3.tsx` →
+// `LeserKopf.tsx` und wird dort mit `bieteAenderungsvermerkeSchalter` aus
+// `../berechnungen` abgeleitet, DERSELBEN Funktion, die V1 seit S1 zieht (§5).
+// Der Bau war bis zum Rebase auf den gelandeten S1-Stand blockiert: die drei
+// Dateien lagen zugleich unter H2b und H3 (Drei-Wege-Konflikt, §0 Ziff. 5) und
+// die Quelle stand erst mit PR #547 auf main.
 //
 // Was hier NICHT steht und bewusst nicht:
 //  · Rechtsprechungs-Facetten (Instanz/Kanton/Zeit) — die ziehen in H3 ins
@@ -85,12 +84,35 @@ function V3Switch({ an, label, titel, onKlick, ariaLabel, hinweis }: {
   );
 }
 
-export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
+export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke, onPanelOeffnen }: {
   /** `true` = Handy-Zuschnitt: der Öffner zeigt «···» statt «Ansicht ▾»
    *  (Fahrplan Kap. 4a). Reine Beschriftung — der Accessible-Name bleibt in
    *  beiden Zuschnitten «Ansicht», und die Elemente des Panels sind identisch. */
   kompakt: boolean;
   fussnotenAnzahl: number | null;
+  /**
+   * D1 (S1-Rest, H3-Nachzug 17.8.2026) · Trägt dieser Erlass überhaupt
+   * Änderungsvermerke? Nur dann wird der Schalter angeboten (§8).
+   *
+   * Der Wert kommt aus dem MODELL (`leserV3Modell.ts` → `LeserRahmenV3` →
+   * `LeserKopf`), abgeleitet mit `bieteAenderungsvermerkeSchalter` aus
+   * `../berechnungen` — DERSELBEN Funktion, die V1 seit S1 zieht (§5). Hier steht
+   * keine eigene Bedingung: eine zweite Ableitung derselben Frage wäre eine
+   * zweite Wahrheit, und sie liefe beim ersten Nachjustieren auseinander.
+   */
+  hatAenderungsvermerke: boolean;
+  /**
+   * A2 (H3-Nachzug) · «Entscheide & Kontext …» — der Weg zum Panel, der IMMER da ist.
+   *
+   * BEFUND, gemessen 17.8.2026: mit «Rechtsprechung im Text: aus» verschwinden
+   * Zähler und Lasche (F8, richtig), und danach gab es auf `mini` KEINEN
+   * bedienbaren Weg mehr zum Panel — nur noch die Taste «r». Auf einem Telefon
+   * ohne Hardware-Tastatur war die Fläche damit unerreichbar. Davids F8-Regel
+   * verspricht ausdrücklich das Gegenteil: «Panel bleibt über ‹Ansicht ▾› und
+   * Tastatur erreichbar». Der Eintrag ist die Einlösung dieses Versprechens und
+   * steht darum UNABHÄNGIG von der Schalterstellung.
+   */
+  onPanelOeffnen?: () => void;
 }) {
   const opt = useLeserOptionen();
   const schrift = useSchriftskala();
@@ -99,33 +121,13 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
   const panelRef = useRef<HTMLDivElement>(null);
   const panelId = useId();
 
-  useDialogFokus(offen, panelRef, () => setOffen(false));
-
-  useEffect(() => {
-    if (!offen) return;
-    const klick = (e: PointerEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOffen(false);
-    };
-    document.addEventListener('pointerdown', klick);
-    return () => document.removeEventListener('pointerdown', klick);
-  }, [offen]);
-
-  // LM-009: eine echte Scroll-GESTE schliesst; NICHT das generische `scroll`-
-  // Ereignis — ein Schalter verändert die Höhe des Fliesstexts, der Browser
-  // gleicht per Scroll-Anchoring aus und feuerte `scroll` ohne Nutzer-Geste,
-  // was das eben geöffnete Panel wieder schloss (Herleitung: LeserAnsichtMenu.tsx).
-  useEffect(() => {
-    if (!offen) return;
-    const schliesse = () => setOffen(false);
-    window.addEventListener('wheel', schliesse, { passive: true });
-    window.addEventListener('touchmove', schliesse, { passive: true });
-    window.addEventListener('resize', schliesse);
-    return () => {
-      window.removeEventListener('wheel', schliesse);
-      window.removeEventListener('touchmove', schliesse);
-      window.removeEventListener('resize', schliesse);
-    };
-  }, [offen]);
+  // H3 · GETEILTES AUTO-ZU (§5). Bis H2 standen hier drei lokale Effekte:
+  // Fokus-Falle/Esc (`useDialogFokus`), Aussenklick und Wisch-Geste (LM-009).
+  // H3 bringt eine zweite aufziehbare Fläche — das Rechtsprechungs-Panel —, und
+  // zwei Kopien derselben Bedien-Zusage laufen beim ersten Nachjustieren
+  // auseinander. Die Mechanik liegt darum in `./usePopoverAutoZu`; die Herleitung
+  // beider Effekte (samt LM-009) steht dort im Kopf, nicht mehr hier.
+  usePopoverAutoZu({ offen, schliesse: () => setOffen(false), wrapRef, panelRef, modus: 'popover' });
 
   const schalte = (feld: OptFeld, an: boolean) => setzeOption(feld, an ? 'aus' : 'an');
 
@@ -146,7 +148,10 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
         aria-label="Ansicht"
         data-v3-ansicht
         className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
-        title="Darstellung: Fussnoten · Änderungsvermerke · Rechtsprechung im Text · Grösse des Gesetzestexts"
+        // D1: der Tooltip nennt nur, was das Panel wirklich trägt — sonst
+        // versprach er auf vermerkfreien Erlassen einen Schalter, den es dort
+        // nicht gibt (dieselbe §8-Sorge wie die Bedingung unten).
+        title={`Darstellung: Fussnoten${hatAenderungsvermerke ? ' · Änderungsvermerke' : ''} · Rechtsprechung im Text · Grösse des Gesetzestexts`}
       >
         {kompakt
           ? <span aria-hidden>···</span>
@@ -176,6 +181,12 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
               samt «Fassung»-Zeile aus; echte Verweise, Grauzone und
               Publikationsnachweise bleiben in jeder Stellung sichtbar
               (H0-Auflage 1, §1/§8). */}
+          {/* D1: … und nur, wenn dieser Erlass Vermerke TRÄGT. Auf BS-640.100 und
+              ZH-211.11 blieb dem Schalter sonst eine Layout-Raffung von 40 px je
+              Artikel — die Beschriftung versprach mehr, als sie hielt (§8). Die
+              Stellung im geteilten Store bleibt unberührt: nicht angeboten heisst
+              nicht zurückgesetzt (`leser-v3-umschalten` (a3)). */}
+          {hatAenderungsvermerke && (
           <V3Switch
             an={opt.histansicht === 'an'}
             label="Änderungsvermerke"
@@ -184,6 +195,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
             hinweis={opt.fussnoten === 'aus' ? HINWEIS_VERMERKE_OHNE_FUSSNOTEN : undefined}
             onKlick={() => schalte('histansicht', opt.histansicht === 'an')}
           />
+          )}
           {/* Umwidmung des `leitfaelle`-Schalters (Kap. 4f): er steuert in V3
               «Rechtsprechung im Text». Regel aus dem V-0-Entscheid David
               16.8.2026: ist er AUS, verschwindet in V3 auch der Öffner des
@@ -248,6 +260,23 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
                 className="min-h-6 px-2 py-1 text-xs text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A+</button>
             </span>
           </div>
+
+          {/* ── A2 · Der Weg zum Panel, der keine Tastatur braucht ────────────
+              KEIN `role="menuitem"`: das Panel ist eine ehrliche Disclosure
+              (R2/A4-Präzedenz), und ein einzelnes Menü-Element in einer
+              `role="group"` verspräche eine Pfeiltasten-Bedienung, die es hier
+              nicht gibt. Ein gewöhnlicher Knopf mit sprechendem Namen.
+              Er SCHLIESST das Menü mit — sonst stünde das Dropdown über der
+              Fläche, die es gerade geöffnet hat (dieselbe Falle wie Ä19). */}
+          {onPanelOeffnen && (
+            <button type="button" data-v3-ansicht-panel-auf data-v3-panel-oeffner
+              onClick={() => { setOffen(false); onPanelOeffnen(); }}
+              title="Gerichtsentscheide, Änderungen und Materialien zur gelesenen Bestimmung"
+              className="mt-1 flex w-full items-center justify-between gap-3 rounded-md border-t border-line px-2.5 pb-0.5 pt-2 text-left text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-700">
+              <span>Entscheide &amp; Kontext …</span>
+              <span aria-hidden className="shrink-0 text-brass-700">⚖</span>
+            </button>
+          )}
         </div>
       )}
     </div>

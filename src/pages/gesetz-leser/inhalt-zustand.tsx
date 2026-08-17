@@ -31,7 +31,27 @@ import { klappZeile } from './tocAutoZuklappen';
 const PANE_BREIT_PX = 1024;
 
 // ─── Block 1 · Daten-, Shard- und Such-Zustand ───────────────────────────────
-export function useLeserZustand() {
+export function useLeserZustand({ bezuegeVorladen = true }: {
+  /**
+   * H3 (LESER-V3, Panel-Nachladen) — DER EINE SCHALTER, der entscheidet, ob der
+   * Bezugs-Shard beim SEITENAUFRUF geholt wird.
+   *
+   * Vorgabe `true` = Ist-Verhalten, Zeichen für Zeichen: die Ist-Hülle rendert
+   * unter jedem Artikel eine Bezüge-Zeile und braucht die Daten darum sofort.
+   * Sie ruft diese Hook ohne Argument und ist von H3 unberührt (FL-4).
+   *
+   * `false` setzt die V3-Hülle: dort steht die Rechtsprechung im Panel, und das
+   * lädt erst beim Öffnen (`v3/panelModell.ts`). Ohne diesen Schalter lief der
+   * Lade-Effekt in `useBezuege` weiter — das Nachladen wäre eine Behauptung
+   * geblieben, während der Shard (BGG 300 KB gzip) unverändert über die Leitung
+   * ginge: die Hook lädt in ihrem EIGENEN Effekt, nicht beim Konsumieren.
+   *
+   * Umgesetzt als «Key oder undefined», nicht als zweiter Zweig im Effekt:
+   * `useBezuege` kehrt ohne `erlassKey` früh zurück, und `bezuegeFuer` gibt dann
+   * ohnehin `undefined` — eine Bedingung, die schon da war (§5, kein neuer Pfad).
+   */
+  bezuegeVorladen?: boolean;
+} = {}) {
   const [erlass, setErlass] = useState<BrowseErlass | null>(null);
   const [eintraege, setEintraege] = useState<NormSnapshot[] | null>(null);
   const [struktur, setStruktur] = useState<StrukturMap | null>(null);
@@ -61,7 +81,7 @@ export function useLeserZustand() {
   const {
     aktiv: bezuegeAktiv, bezuegeFuer, kantoneVerfuegbar, klassenImErlass, histogramm: bezugHistogramm,
     bereich: bezugBereich,
-  } = useBezuege(erlass?.key);
+  } = useBezuege(bezuegeVorladen ? erlass?.key : undefined);
   const [fehler, setFehler] = useState(false);
   // W2·10-UI-NAV/N0d·O3: kurze Bestätigung nach «In neuem Reiter» — der Reader
   // wird bei der ?r-Instanz-Navigation NICHT neu gemountet (gleicher key=schluessel),

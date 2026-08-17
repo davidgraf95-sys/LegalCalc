@@ -62,7 +62,11 @@ const ERLASS: BrowseErlass = {
 function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: KopfStufe }) {
   return renderToString(
     <MemoryRouter>
-      <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3} {...props} />
+      {/* D1: der Kopf reicht `hatAenderungsvermerke` nur durch — hier `true`, damit
+          die Fälle unten unverändert den vollen Schalter-Satz sehen; die Bedingung
+          selbst prüft `e2e/leser-v3-umschalten` (a3) am gerenderten Erlass. */}
+      <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3}
+        hatAenderungsvermerke {...props} />
     </MemoryRouter>,
   );
 }
@@ -159,18 +163,20 @@ describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
   // Aussage, die den Unterschied trägt: das Feld liegt INNERHALB des klebenden
   // Blocks, nicht davor. Das ist nach §6.3 eine fachliche Änderung mit eigener
   // Begründung, kein stillschweigend nachgezogener Test.
-  it('Übersicht → [Feld → Baumkopf] klebend → Baum → Extra', () => {
+  // C4 (H3-Nachzug): der Slot `extra` ist gestrichen (§17, kein Aufrufer über drei
+  // Etappen) — die Reihenfolge-Zusage endet darum beim Baum. Die tragende Aussage
+  // des Falls («das Feld liegt IM klebenden Block, nicht davor») bleibt Wort für
+  // Wort dieselbe; nur das nicht mehr existierende Element fällt aus der Kette.
+  it('Übersicht → [Feld → Baumkopf] klebend → Baum', () => {
     const html = renderLeiste({
       uebersicht: <div data-marker-u>U</div>,
       suchFeld: <div data-marker-f>F</div>,
-      extra: <div data-marker-e>E</div>,
     });
     const iU = html.indexOf('data-marker-u');
     const iF = html.indexOf('data-marker-f');
     const iBaumkopf = html.indexOf('data-v3-leiste-baumkopf');
     const iB = html.indexOf('data-marker-baum');
-    const iE = html.indexOf('data-marker-e');
-    expect([iU, iF, iBaumkopf, iB, iE].every((i) => i >= 0)).toBe(true);
+    expect([iU, iF, iBaumkopf, iB].every((i) => i >= 0)).toBe(true);
     // Die Übersichtsbox bleibt oben und ausserhalb — sie ist
     // Ankunfts-Information, kein Werkzeug, und darf wegscrollen.
     expect(iU).toBeLessThan(iBaumkopf);
@@ -181,7 +187,6 @@ describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
     // … und darin ZUOBERST, vor der Gliederungs-Kopfzeile.
     expect(iF).toBeLessThan(html.indexOf('data-v3-alle'));
     expect(iF).toBeLessThan(iB);
-    expect(iB).toBeLessThan(iE);
   });
 
   it('suchFeld={undefined} (Sheet-Fall): [data-v3-leiste-feld] fehlt GANZ', () => {
@@ -189,15 +194,12 @@ describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
     expect(html).not.toContain('data-v3-leiste-feld');
   });
 
-  it('extra ungesetzt: kein data-v3-leiste-extra im Markup', () => {
-    const html = renderLeiste({});
-    expect(html).not.toContain('data-v3-leiste-extra');
-  });
-
-  it('extra gesetzt: erscheint (Gegenprobe zur vorigen Zeile)', () => {
-    const html = renderLeiste({ extra: <div data-marker-e>E</div> });
-    expect(html).toContain('data-v3-leiste-extra');
-    expect(html).toContain('data-marker-e');
+  // C4: der Slot ist weg — die Zone kann darum nicht mehr erscheinen. Die Sonde
+  // bleibt als NEGATIV-Beweis des Rückbaus stehen (sie wird rot, wenn jemand die
+  // Zone ohne Aufrufer wieder einbaut); die Gegenprobe mit gesetztem Slot fällt
+  // ersatzlos, weil es nichts mehr zu setzen gibt.
+  it('C4: die Extra-Zone existiert nicht mehr', () => {
+    expect(renderLeiste({})).not.toContain('data-v3-leiste-extra');
   });
 });
 

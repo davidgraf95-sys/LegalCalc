@@ -53,6 +53,17 @@ export interface KopfElemente {
   artikel: true;
   /** Öffner «Ansicht ▾» bzw. «···». Bleibt IMMER (Fahrplan Kap. 4a). */
   ansicht: true;
+  /**
+   * H3/Ä11 — Zähler «⚖ 14 Entscheide» in der Kopfzeile.
+   *
+   * AUF `mini` NICHT: dort stehen bereits Ort · ☰ · ··· · ✕, und die
+   * Design-Grundlage Kap. 6 deckelt die Ruhezustand-Kopfzeile auf VIER Elemente.
+   * Der Öffner verschwindet damit nicht — er lebt auf dem Handy-Zuschnitt
+   * ausschliesslich als Randlasche, also in der Daumenzone statt in der engsten
+   * Zeile des Bildschirms. Das ist der Teil von Ä11 («Split-Pane-Icon-Flut»),
+   * den H3 zu verantworten hat: die neue Fläche vergrössert die Kopfzeile nicht.
+   */
+  panel: boolean;
 }
 
 export function kopfElemente(stufe: KopfStufe): KopfElemente {
@@ -62,7 +73,56 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
     kuerzel: true,
     artikel: true,
     ansicht: true,
+    panel: stufe !== 'mini',
   };
+}
+
+/**
+ * WELCHE GESTALT hat das Panel-Blatt? (Kap. 4d)
+ *
+ * Beides sind Überlagerungen — sie nehmen dem Lesetext keine Spalte weg und
+ * brechen ihn darum nie neu um (Rechnung zur gestrichenen Grid-Spalte im
+ * Rahmen). Nur die KANTE, an der sie hängen, unterscheidet sie:
+ *
+ *   'rechts'  22 rem breit, am rechten Rand, von der Kopf-Unterkante bis zum
+ *             Fensterboden — die Gestalt, die die Skizze für D zeigt («Panel
+ *             rechts 22rem»). Das Panel ist Beiwerk und verhält sich auch so:
+ *             kein Scrim, keine Modalität, keine Fokus-Falle; der Lesetext
+ *             daneben bleibt scrollbar und anklickbar (Ä52, `usePopoverAutoZu`
+ *             Modus `beiwerk`).
+ *
+ *             ── EHRLICHE EINSCHRÄNKUNG, GEMESSEN (Ä60, 17.8.2026) ──────────
+ *             «Der Lesetext bleibt links sichtbar UND LESBAR» stand hier bis
+ *             zum H3-Nachzug als unbedingte Zusage. Sie ist NICHT eingelöst:
+ *             gemessen @1440 liegt die Lesespalte bei x 580…1200 und das Blatt
+ *             bei x 1088…1440 — es verdeckt die äusseren **112 px jeder Zeile**
+ *             (18 % der Spaltenbreite), die Zeilenenden fehlen also. Und keine
+ *             feste Breite behebt das: @1440 misst der Rand rechts der Spalte
+ *             240 px, @1280 nur 160 — dieselbe Arithmetik, die schon die
+ *             angedockte Spalte unmöglich gemacht hat (Rechnung im Rahmen).
+ *             Die Zusage gehört darum zum offenen Spalten-Entscheid (H4,
+ *             Vollzugsvermerk H3); bis dahin sagt dieser Kommentar, was das
+ *             Blatt WIRKLICH tut (§8 — ein Kommentar, der mehr verspricht als
+ *             der Bau hält, ist die Sorte Beleg, die niemand nachprüft).
+ *   'unten'   Bottom-Sheet über die ganze Breite — die Gestalt für H (Daumenzone)
+ *             und für jede geteilte Fläche (dort verbietet die harte Regel eine
+ *             dritte vertikale Fläche, und ein 22-rem-Streifen in einer
+ *             600-px-Spalte liesse vom Text nichts übrig).
+ *
+ * `vollflaechig` = der Leser hat die ganze Seite für sich (Einzelansicht). Die
+ * Prop heisst NICHT `imPane`, und das ist kein Kosmetik-Entscheid: die
+ * Fundament-Sonde lässt `imPane` nur in den Wurzel-Dateien zu — zu Recht, denn
+ * eine Datei, die den Hüllen-Zustand selbst liest, verzweigt auf ihn. Diese
+ * Funktion verzweigt auf eine EIGENSCHAFT DER FLÄCHE, die ihr der Rahmen
+ * mitteilt; die eine Übersetzung (`!umgebung.imPane`) steht dort. Der erste Bau
+ * hiess hier `imPane` und wurde von der Sonde zurückgewiesen (17.8.2026).
+ *
+ * Gemessen 17.8.2026 am ersten Bildbogen: auf D @1440 wirkte das Bottom-Sheet
+ * wie ein Vollbild-Dialog — es verdeckte den ganzen Gesetzestext, obwohl das
+ * Panel Beiwerk ist. Genau das behebt die Unterscheidung.
+ */
+export function panelForm(stufe: KopfStufe, vollflaechig: boolean): 'rechts' | 'unten' {
+  return vollflaechig && stufe === 'voll' ? 'rechts' : 'unten';
 }
 
 /** Höhe der Kopfzeile je Stufe (Design-Grundlage Kap. 3: H 48 px · D 56 px ·

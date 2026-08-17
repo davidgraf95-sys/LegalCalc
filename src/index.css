@@ -1189,6 +1189,14 @@
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
   .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
   .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+  /* Senkrechte Rand-SCHIENE des Lesers V3 (H3-Nachzug C5b): der schmale,
+     senkrecht beschriftete Öffner, wenn die Gliederung eingeklappt ist. Bis zum
+     Nachzug stand die Wertekette als 13 Utilities im JSX — Design-Werte gehören
+     zu den anderen `lc-leiste-*`-Klassen (§13), nicht in eine Layout-Datei. */
+  .lc-leiste-schiene {
+    @apply flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors;
+  }
+  .lc-leiste-schiene:hover { border-color: var(--brass-300); background: var(--well); color: var(--brass-700); }
 
   /* Sticky-Chrome-Kopf (Topbar) — LM-001/LM-006 (W2·17-UI-BEFUNDE-B3, K-01):
      vormals ein «Glas»-Effekt (96 % Deckkraft + blur(12px)). FAHRPLAN-GESETZES-UX.md
