@@ -92,10 +92,36 @@ Wie oben: `npm run build` + `vite preview`, Chromium, V3-Rahmen (`?leser=v3`),
 `content-visibility` am Mess-Artikel erzwungen, Element-Screenshot `#art-<N>`
 + 40 px Rand. Hell 390/720/1440, dazu 2× dunkel @1440.
 
+## Nachzug nach drei Prüfern (17.8.2026) — was sich am Bild geändert hat
+Die `*-NACHZUG.png` unter `nachher/` zeigen den Stand NACH dem Prüfer-Nachzug.
+Vier Stellen sind es, an denen man den Unterschied sieht:
+
+| Bild | Was zu sehen ist |
+|---|---|
+| `stgb-66a-verweise-1440-{hell,dunkel}-NACHZUG.png` | **Ä25 zurückgenommen.** Die Inline-Verweise tragen wieder die dauerhaft gepunktete Unterstreichung — wie vor S2 und wie der Fussnoten-Apparat. S2 hatte sie im Ruhezustand entfernt (nur Farbe + `font-medium`, Linie erst bei Hover); dann blieb als Unterscheidung faktisch nur die Farbe, und die trägt gemessen 1.00 : 1 auf `/rechner/verjaehrung`, 1.06 : 1 auf den übrigen Rechner-Seiten, 2.14 : 1 im Leser — gegen die 3 : 1 der WCAG-Technik G183. **Die Design-Frage wartet auf David** (Fahrplan Kap. 7, Ä25) |
+| `or-336c-lit-cbis-{1440,390}-hell-NACHZUG.png` | **Ä61 behoben.** Die Marken `cbis.` `cter.` `cquater.` `cquinquies.` stehen in ihrer Spalte, der Item-Text beginnt dahinter. Vorher lief die Marken-Tinte über den Text («cbisvor», «cquatersolange») — gemessen +10 / +10 / +35.2 / +60.41 px, in BEIDEN Hüllen gleich |
+| `or-sektionskoepfe-1440-hell-NACHZUG.png` | **Ä7-Rest behoben.** Die dritte Randtitel-Stufe der Sektionsköpfe («1. Im Allgemeinen», «2. Betreffend Nebenpunkte») läuft auf der Randtitel-Stufe 13 px Sans statt auf 11 px Serif — vorher war ein Gliederungskopf leiser als der Sachtitel des einzelnen Artikels darunter. Die Stufen darüber («A.» 16 px Serif, «I.» 14 px Serif) sind bewusst unverändert |
+| `zgb-684-marginalien-1440-hell-NACHZUG.png` | **Ä62 am Objekt.** Die Fussnotenmarke (`611`, nach «Tageslicht.») klebt am letzten Wort. Vorher fiel sie in 13 von 532 Fällen (StGB) allein an den Zeilenanfang |
+
+**Zeilenlänge — eine Messung für alle Zahlen** (Methode der Spec, @1440): ZGB 68 ·
+OR 71 · StPO 73 · VMWG 74 · **StGB 77 ch**. Die WCAG-Decke (80 ch) hält überall,
+die engere Hausdecke von 75 ch nicht mehr überall; das ist ein offener
+Gestaltungsentscheid und im Fahrplan als solcher notiert. Die Zeile «68 / 68 / 56
+→ 73 / 71 / 61 ch» in der Tabelle oben bleibt als S2-Beleg stehen (StPO/OR/BS),
+verbindlich für künftige Vergleiche ist die vollständige Reihe hier.
+
+**Zweiter Vorbehalt für Davids Auge:** der Fussnoten-Apparat ist von 12 px auf
+11 px gefallen (kleinste Schrift im Leser, @390 am kritischsten). Kontrast selbst
+gemessen: 5.10 : 1 hell (`#6F6B61` auf `#FCFAF6`), 5.52 : 1 dunkel (`#918D83` auf
+`#16150F`) — über der AA-Schwelle 4.5 : 1. Die Frage ist nicht die Norm, sondern
+das Gefühl am Objekt.
+
 ## Dateien
 `stpo-429-{390,1440,720}-{ist,v1,v2}.png` (9) · `or-336c-{…}.png` (9) ·
 `dunkel-{stpo-429,or-336c}-1440-v1.png` (2) · `bogen.html` · diese Datei ·
 `nachher/{stpo-429,or-336c}-{390,720,1440}-s2.png` (6) +
 `nachher/dunkel-{stpo-429,or-336c}-1440-s2.png` (2) + `nachher/messwerte.json` ·
+`nachher/{stgb-66a-verweise-1440-hell,stgb-66a-verweise-1440-dunkel,or-336c-lit-cbis-1440-hell,or-336c-lit-cbis-390-hell,or-sektionskoepfe-1440-hell,zgb-684-marginalien-1440-hell}-NACHZUG.png`
+(6, der Prüfer-Nachzug) ·
 `vorher/px-{or-336c,stpo-429}-VORHER-s1-baseline.png` (2, die abgelöste
 PX-Baseline).
