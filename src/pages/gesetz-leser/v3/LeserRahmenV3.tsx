@@ -20,8 +20,7 @@ import { LeserPanelZone } from './LeserPanelZone';
 import { PanelZaehler } from './LeserPanelOeffner';
 import { normZitat, panelBezug, trefferZahl, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
-import { SuchZone } from './SuchZone';
-import { LeserTrefferBlatt } from './LeserTrefferBlatt';
+import { suchZoneAufbau } from './suchZoneAufbau';
 import { useTrefferBlatt } from './useTrefferBlatt';
 import { leserCssVariablen } from './leserGeometrie';
 import { kopfElemente, panelForm, useKopfStufe } from './kopfStufen';
@@ -165,28 +164,17 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Ä19: Wo die Gliederung NICHT als Spalte steht, trägt der klebende Kopf-Block
   // das Feld (Regel in `./SuchZone`) — ausser das Blatt ist offen, dann es (A2).
   const suchZoneKlebt = hatLeiste && !zweiSpalten;
-  // Ä70: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
-  // eingeklappter Gliederung), liegt die Trefferliste als Blatt AM FELD; darunter
-  // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg. Herleitung und die
-  // Messung, die «Spalte aufziehen» ausschloss: `./LeserTrefferBlatt`.
-  const blattAmFeld = suchZoneKlebt && umgebung.istXl && m.sucheAktiv;
-  const suchZone = suchZoneKlebt
-    ? (
-      <SuchZone suchFeld={blattOffen ? undefined : suchFeld} sucheAktiv={m.sucheAktiv}
-        bestimmungen={m.treffer.length} fundstellen={m.fundstellen}
-        bestimmungsWort={bestimmungsWort}
-        // Die eine Geste «zeig mir die Treffer»: Blatt am Feld @≥1024 px, sonst Sheet.
-        onListe={() => { if (umgebung.istXl) trefferBlatt.oeffne(); else m.setTocAuf(true); }}
-        blatt={blattAmFeld && trefferBlatt.offen
-          ? (
-            <LeserTrefferBlatt onSchliessen={trefferBlatt.schliesse}
-              // DASSELBE Bauteil wie in der Spalte, dieselbe Registry (§5) — die
-              // Weiche Baum/Treffer sitzt weiterhin nur in `LeserGliederung`.
-              liste={<LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />} />
-          )
-          : undefined} />
-    )
-    : undefined;
+  // Zusammensetzung in `./suchZoneAufbau` (Auslagerung des Integrations-Nachzugs
+  // 17.8.2026, §6.6 — Anlass und Messung dort). Der Rahmen sagt weiterhin, OB die
+  // Zone klebt und WAS darin steht; `useTrefferBlatt` bleibt oben im Rahmen,
+  // damit der Offen-Zustand keinen Lagewechsel verliert.
+  const suchZone = suchZoneAufbau({
+    klebt: suchZoneKlebt, istXl: umgebung.istXl, sucheAktiv: m.sucheAktiv,
+    blattOffen, suchFeld, bestimmungsWort,
+    liste: <LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />,
+    bestimmungen: m.treffer.length, fundstellen: m.fundstellen,
+    trefferBlatt, onSheet: () => m.setTocAuf(true),
+  });
 
   // ── H3 · Panel: WO es steht, WAS am Öffner steht ──────────────────────────
   // Die Overlay-Wurzel und die Pane-Rolle stehen hier EINMAL — Gliederungs-Blatt
