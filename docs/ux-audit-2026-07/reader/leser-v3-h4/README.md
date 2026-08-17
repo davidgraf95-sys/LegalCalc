@@ -378,13 +378,25 @@ ein Paritätsbeweis, den nichts fährt.
 | **B-Specs umhängen** | 1240, 1610, 1622 | §7 dieses Bogens | **BLOCKER VOR FLIP** — sonst Timeout-Hänger statt Fehlermeldungen |
 | **Flaker** | 1746 | §6 dieses Bogens | **teilweise**; 2 von 3 brauchen CI-Forensik, nicht mehr lokale Läufe |
 | **Ä9 Regler-Doppel** | 527, 938 | globaler App-Schriftregler im Leser noch zusätzlich sichtbar | **kann H5 tragen** — Duplikat, nichts unbedienbar. *Nachzug 17.8. abends: hing nominell an A-2; der Regler sitzt aber in der Topbar, nicht in der abgelösten Leiste — der Punkt ist von A-2 unabhängig* |
-| **A-2 Leisten-Verschmelzung** | 527, 644, 995 | zwei Leisten statt einer, 37 px Chrome-Preis; berührt `src/components/layout/**` | **kann H5 tragen** (Fahrplan nennt «H4/H5») |
+| ~~**A-2 Leisten-Verschmelzung**~~ | 527, 644, 995 | zwei Leisten statt einer, 37 px Chrome-Preis; berührt `src/components/layout/**` | ✅ **erledigt 17.8.2026** (Vollzugsvermerk «A-2 Leisten-Verschmelzung», Fahrplan Kap. 7). **Arch 6, korrigiert 18.8.2026:** diese Zeile führte den Punkt weiter, als könne H5 die 37 px noch abräumen. Das ist überholt — das Band der App-Leiste **bleibt**, transparent und `pointer-events-none`, und der Leser-Kopf verschluckt es über `--leser-v3-app-band`. Ohne die Reservierung rückte `main#inhalt` 102 → 65 px hoch und das Bestands-Tor `leser-kopf-cls-s3` riss v3 @390 mit **0.0573 gegen 0.05**. Der Messwert ist seit dem Nachzug 17.8. **`APP_BAND_H` = 36 px** (`2.25rem`, Bug 8), nicht 37. Sichtbar gewonnen sind die 37 px trotzdem (Chrome D @1440 159 → 121 px, H @390 195 → 157 px). **Für H5 bleibt hier nichts zu löschen** |
 | **Ä33/Ä34** | 941–944 | Chrome bis zur Lesefläche @390 = 183 px (22 %) ruhend, 207 px (25 %) mit Suche | **braucht Davids Entscheid** — es gibt keinen Zielwert, nur den Messwert |
 | **Ä63 Handy-Einzug** | 548, 1404 | OR/ZGB @390 Einzug x = 80 px gegen StPO 44 px | **kann H5 tragen** — Typografie-Detail |
 | **Ä64 Regler-Hierarchie** | 549, 1404 | Schriftregler skaliert nur `[data-lese]`; Hierarchie kippt bei 130 % | **braucht Davids Entscheid** — Umbau auf em-relative Tokens |
 | **Ä57/Ä58** | 826 | Panel-Kopf ohne Warnzeichen bei «noch nicht im Text»; Chips gerahmt, ☰ nicht | **kann H5 tragen** |
 | **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite — Ursache des NM-2-Verlusts auf H | **BLOCKER VOR FLIP**, zusammen mit NM-2 |
 | **`leser-lesemass` umhängen · `LeserRahmenV3`-Schnitt** | 1240 | Test-Umzug bzw. Datei-Schnitt | **kann H5 tragen** |
+| **Panel-Reiter-Leiste bricht nicht um** (neu, 18.8.2026 gemessen) | Vermerk «H4-Vorbereitung II», Kap. 7 | Die Leiste hat @1440 **334 px** Platz; die drei Reiter belegen 269 px + 24 px Abstände, also bleiben **41 px**. Ein vierter Reiter passt damit an keiner ehrlichen Beschriftung («Steckbrief» 82 px, «Erlass» 55, «Norm» 51) — gebaut verschluckte die Leiste ihr viertes Fach (`scrollWidth` 369 gegen `clientWidth` 334). Fix wäre **ein Wort** an `[role="tablist"]` in `v3/LeserPanel.tsx` (`flex-wrap` oder `overflow-x-auto`) | **kann H5 tragen** — heute nichts unbedienbar (die Klappe über der Tafel löst den Steckbrief-Fall ohne Fach). **Aber:** Kap. 14 sieht für «Zitat-Export & Fussnoten-Ausgabe» ausdrücklich «vierter Reiter oder Fusszeile» als Platz vor — der vierte Reiter ist mit dieser Messung keine Option mehr, solange die Leiste nicht umbricht |
+
+**Stand nach «H4-Vorbereitung II — Übersicht/Blatt» (18.8.2026).** Geschlossen
+sind **Ä80** (Steckbrief-Chronologie/Präposition), **Ä84** (Blatt-Kopf-Raster auf
+allen drei Breiten), die **Steckbrief-Erreichbarkeit** (@1440 mit eingeklappter
+Gliederung war er nicht im DOM; @720/@390 war er schon in zwei Schritten da) und
+die beiden Hygiene-Punkte **Arch 5**/**Arch 6** — Arch 6 betraf genau die
+A-2-Zeile in der Tabelle oben. Messwerte, Rot-Beweise und die verworfene
+Reiter-Variante stehen im Fahrplan-Vermerk. **Unberührt geblieben, weil
+David-Fragen:** Ä75 («SR» bei Kantonen), Ä81 (Steckbrief dupliziert den
+Erlass-Kopf) und Arch 7 (Treffer-Blatt ohne `usePopoverAutoZu`; Empfehlung im
+Vermerk: Beiwerk, nicht Popover).
 
 ---
 

@@ -996,6 +996,20 @@ derselbe Kopf (`e2e/leser-kopf-paritaet`), ein Feld sucht **und** springt
 
 **Zwei Abweichungen** (Herleitung im Kontaktbogen, Ziff. 4):
 
+> **Arch 5 · Kürzel-Kollision, aufgelöst 18.8.2026 (H4-Vorbereitung II).** Die
+> beiden Kürzel **A-1** und **A-2** sind in diesem Fahrplan **zweimal** vergeben:
+> hier für die zwei H1-ABWEICHUNGEN (Schriftgrössen-Regler · Leisten-Verschmelzung)
+> und in **Kap. 12** für zwei H1-ABNAHMEKRITERIEN (`scrollAnker.ts`-Claim ·
+> `#art_N` → `#art-`). Belegte Kürzel werden nicht neu vergeben (Regel Ä45b) —
+> vergeben wurden sie hier trotzdem, und umbenennen ist heute teurer als der
+> Fehler: die Leisten-Verschmelzung heisst in 15 Fahrplan-Stellen, im Kontaktbogen
+> und in Davids Übergabe schlicht «A-2». **Es gilt darum ein Verweis statt einer
+> Umnummerierung:** ein unqualifiziertes **«A-1»/«A-2» meint immer die
+> ABWEICHUNGEN dieses Vermerks**; die beiden Kap.-12-Zeilen sind seit dem
+> 16.8.2026 erledigt und durchgestrichen und werden nirgends sonst zitiert — wo
+> sie doch gemeint sind, heissen sie **«A-1 (Kap. 12)»** bzw. **«A-2 (Kap. 12)»**.
+> Für neue Kürzel gilt unverändert: **A-9 und höher**, nie eine Lücke füllen.
+
 - **A-1 Schriftgrössen-Regler.** Er bedient den bestehenden globalen Skala-Store
   (`lexmetrik-schriftskala`) statt eines zweiten 4-Stufen-Speichers. Grund: ein
   zweiter Speicher für dieselbe Frage wäre eine zweite Wahrheit (§5), und die
@@ -1797,15 +1811,15 @@ unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
 | # | Befund | Wohin |
 |---|---|---|
 | **Ä79** | @1440 mit eingeklappter Gliederung stehen ZWEI ☰ (Kopf-☰ + Schiene) für dieselbe Handlung | H4 |
-| **Ä80** | Steckbrief-Reihenfolge Erlassdatum → In Kraft → Stand; Präposition «vom» steht im WERT statt im Etikett | H4 |
+| ~~**Ä80**~~ | Steckbrief-Reihenfolge Erlassdatum → In Kraft → Stand; Präposition «vom» steht im WERT statt im Etikett | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten |
 | **Ä81** | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | H4-Entscheid «nur der Kopf warnt» |
 | **Ä82** | Zwei Linien zwischen Ingress und Sektionskopf | S-Strang |
 | **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | H4 / `layout` |
-| **Ä84** | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | H4 |
-| **—** | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | H4 |
+| ~~**Ä84**~~ | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten (gemessen 688 px, nicht 680) |
+| ~~**—**~~ | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Der Befund traf NUR @1440 mit eingeklappter Gliederung; @720/@390 war der Steckbrief schon in zwei Schritten da (gemessen) |
 | **Ä75** | «SR» als Etikett bei Kantonen | **wartet auf David** |
-| **Arch 5** | Etikett «A-2» doppelt belegt | H4 |
-| **Arch 6** | H5-Liste nennt das 37-px-Band der App-Leiste noch als zu entfernen | H4 |
+| ~~**Arch 5**~~ | Etikett «A-2» doppelt belegt | ✅ **erledigt 18.8.2026** — Verweis statt Umnummerierung, im Vollzugsvermerk H1 (Kap. 7) und in Kap. 12. **Auch A-1 war doppelt belegt** — miterledigt |
+| ~~**Arch 6**~~ | H5-Liste nennt das 37-px-Band der App-Leiste noch als zu entfernen | ✅ **erledigt 18.8.2026** — die Liste steht im **Kontaktbogen** `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md` §8, nicht im Fahrplan; dort korrigiert und datiert |
 | **Arch 7** | Treffer-Blatt ohne `usePopoverAutoZu` — Klick daneben schliesst es nicht | **David-Frage** (Beiwerk oder Popover?) |
 
 **Sofort miterledigt (je eine Zeile, keine Bau-Fläche):** Bug 5 Kommentar in
@@ -1813,6 +1827,84 @@ unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
 `uebersichtAngaben.ts` korrigiert · Bug 7 der §8-Satz «keine amtliche Quelle
 hinterlegt» wiederhergestellt · Bug 8 `APP_BAND_H` 37 → gemessene 36 px
 (`2.25rem`), nur weil `leser-v3-kopf-buendig` grün bleibt.
+
+### ✅ H4-Vorbereitung II — Übersicht/Blatt (17./18.8.2026, Branch `feat/leser-v3-h4v2-uebersicht`)
+
+Die drei Übersicht-/Blatt-Zeilen aus «Für H4 vorgemerkt» plus die beiden
+Fahrplan-Hygiene-Punkte. **Kein Flip** — `leserFlag.ts` bleibt V1, V3 nur unter
+`?leser=v3`. Parallel lief der Schwester-Auftrag «Kopf/Panel-Öffner»
+(`feat/leser-v3-h4v2-kopf`) auf dateidisjunkter Fläche.
+
+| Befund | Messung VORHER | Fix | Spec |
+|---|---|---|---|
+| **Ä80** Steckbrief-Chronologie und Präposition | StPO @1440, Box aufgeklappt: `Art · Erlassgeber · Erlassdatum «vom 5. Oktober 2007» · Stand «01.04.2025» · In Kraft seit «01.01.2011» · Aufbau`. Der Stand zerschnitt die Kette; «vom» stand im WERT, also begannen zwei Datumszeilen mit einer Ziffer und eine mit einem Wort — `tabular-nums` richtet an einer Kante aus, an der nichts steht | Reihenfolge **Erlass vom → In Kraft seit → Stand → Aufgehoben per** (Fedlex' «Beschluss/Inkrafttreten»-Ordnung, dieselbe Folge wie im Erlass-Kopf, §5). Präposition ins ETIKETT, Wert ein reines Datum. `ohneVom` als Muster mit Wortgrenze statt `slice(4)`: die Sidecars schreiben «vom …», «Vom …» (BS-640.100) und manche gar nichts (§7) | `src/tests/leser-v3-uebersicht.test.ts` Ä80 (a)–(e) · e2e `leser-v3-uebersicht` (d) misst BS-640.100 @1440 **und** @390 |
+| **Steckbrief bei eingeklappter Gliederung unerreichbar** | `[data-v3-uebersicht]` @1440 Gliederung offen **1**, eingeklappt **0** — nicht unsichtbar, sondern aus dem DOM (Ctrl+F, Screenreader), obwohl §8 an dieser Box das Gegenteil zusagt. @720 und @390: Start 0, nach ☰ 1, «Stand» nach dem zweiten Klick sichtbar — **dort war nichts zu heilen**. Der Befund ist EINER, und er sitzt auf dem Desktop | Dieselbe `<details>`-Klappe wie in der Leiste erscheint **über** der Panel-Tafel, und zwar nur in der Lage, in der sie sonst fehlte (`zweiSpalten \|\| blattOffen ? null : Box`). Panel aufziehen (1) + Klappe öffnen (2). EINE Ableitung (`uebersichtsAngaben`), EIN Bauteil — kein zweiter Steckbrief, darum bleibt Ä28 «die Warnung genau einmal» heil | e2e `leser-v3-uebersicht` «Steckbrief — auf jeder Breite in höchstens zwei Schritten» (a) @1440 eingeklappt · (b) @720/@390 · (c) Doppelanzeige in BEIDE Richtungen |
+| **Ä84** Blatt-Kopf-Raster | StPO/«Entschädigung»: D-Blatt @1440 Kopf «Treffer» \| «✕ ausblenden», `[data-v3-anfang]` = **null**. H-Blatt @390 Sockel 358 × 34 px mit **genau einem** Kind «↑ Anfang» (x = 308), Split/Sheet @720 ebenso (x = 638). Suchbereich-Segment 270 px im D-Blatt, **358 @390**, **688 @720** — für die 18-rem-Leiste kalibriert, ohne Deckel auf das 2,5-fache gedehnt (der Prüfer nannte «680 px») | Die Kopf-Zeile entsteht nur, wenn sie mehr als ein Element ordnet; bleibt nur «↑ Anfang», entfällt sie samt Knopf (§17 «gestrichen statt bewacht» — Ä32 hatte den Nachbarn «alles auf/zu» schon aus demselben Zustand entfernt, und das D-Blatt kommt seit Ä76 ohne aus). Segment auf `w-[min(100%,18rem)]`. In der SPALTE unberührt: dort steht «Treffer» daneben | e2e `leser-v3-suche-ohne-gliederung` (h) @390 und @720 |
+
+**Messung NACHHER** (chromium, `?leser=v3`, 0 Konsolenfehler auf jeder Breite):
+
+| | vorher | nachher |
+|---|---|---|
+| Steckbrief-Kette StPO | `datum · stand · inkraft`, Wert «vom 5. Oktober 2007» | `datum · inkraft · stand`, Etikett «Erlass vom», Wert «5. Oktober 2007» |
+| Steckbrief BS-640.100 | «Vom 12. April 2000» | «12. April 2000», Etikett «Erlass vom»; Zeilen Art · Erlassgeber · Erlass vom · Stand · Aufbau · Sachgebiet |
+| Steckbrief @1440 eingeklappt | 0 im DOM | 1 nach 2 Klicks, «Stand» sichtbar |
+| Blatt-Kopf-Kinder @390 / @720 | 1 / 1 (Höhe 34 px) | 0 / 0 (Höhe 0 px) |
+| Segment D / @390 / @720 | 270 / 358 / 688 px | 270 / 288 / 288 px |
+
+**Der vierte Panel-Reiter wurde gebaut und AN DER MESSUNG verworfen** (§0 Ziff. 3
+— die Zahl entscheidet, nicht die Absicht). Reiter-Leiste @1440: Platz 334 px,
+drei bestehende Reiter 269 px, Abstände 24 px ⇒ **41 px Budget** für einen
+vierten. Kein ehrliches Wort passt: «Steckbrief» 82 px · «Übersicht» 78 ·
+«Herkunft» 73 · «Quelle» 57 · «Erlass» 55 · «Norm» 51 · «Info» 40. Gebaut
+verschluckte die Leiste ihr viertes Fach («Materialien» abgeschnitten,
+`scrollWidth` 369 gegen `clientWidth` 334). Die beiden Auswege und ihre Kosten:
+Umbruch/Scroll der Reiter-Leiste = **ein Wort in `LeserPanel.tsx`** (Bau-Fläche
+des parallelen Kopf-Auftrags, gesperrt — als offener Punkt übergeben) oder ein
+breiteres Panel (22 → 25 rem), was gemessen **48 px mehr Lesetext verdeckt**
+(heute 104 px @1440, 184 px @1280, 24 px @1600) und damit die H3-Zusage
+«Lesetext bleibt links sichtbar und lesbar» verletzt. Gewählt ist darum die
+Klappe über der Tafel — sie braucht kein Fach.
+*Nebenbefund für Kap. 14:* die Zeile «Zitat-Export & Fussnoten-Ausgabe» sieht als
+Platz ausdrücklich «vierter Reiter oder Fusszeile» vor. Der vierte Reiter ist mit
+dieser Messung **keine Option mehr**, solange die Leiste nicht umbricht — es
+bleibt die Fusszeile (`fuss`-Anschluss in `LeserPanel`).
+
+**Rot-Beweise (§6.7), alle vor dem Fix gegen das `dist/` des Basis-Stands
+`6ca1609b3` gesehen:**
+Vitest Ä80 (a) `expected [ 'datum', 'stand', 'inkraft' ] to deeply equal
+[ 'datum', 'inkraft', 'stand' ]` · (b) `expected 'Erlassdatum' to be 'Erlass vom'`
+· (c) dieselbe Kette mit `aufgehoben`. e2e: «Steckbrief-Klappe im Panel nicht
+gefunden» (a) · Doppelanzeige-Fall (c) · «@1440: «Erlassdatum» trägt die
+Präposition im Wert: «Vom 12. April 2000»» (d) · `leser-v3-suche-ohne-gliederung`
+(h) @390 und @720 «der Blatt-Kopf trägt GENAU EIN Element (Höhe 34 px)».
+**(b) @720/@390 war schon grün** — die Positiv-Sonde, die zeigt, dass der Befund
+nicht dort lag.
+
+**§6.3 deklariert:** `leser-v3-uebersicht.test.ts` Fall (a)/(c) tragen die neuen
+Etiketten. Das ist eine fachliche Änderung, kein Refactoring — die alten Zusagen
+waren die Beschreibung des gerügten Zustands.
+
+**Ausnahme im Kern, benannt:** EINE Zeile in `LeserRahmenV3.tsx` (die Prop
+`steckbrief` an `<LeserPanelZone>`) — die im Auftrag vorgesehene ≤-3-Zeilen-
+Ausnahme. `LeserKopf.tsx`, `LeserPanel.tsx`, `LeserPanelOeffner.tsx`,
+`LeserGliederungSchiene.tsx`, `kopfStufen.ts` und `useKopfAnspruch.ts` sind
+unberührt.
+
+**Nicht entschieden, weil David-Fragen:** **Ä75** («SR» als Etikett bei
+Kantonen), **Ä81** (Steckbrief dupliziert den Erlass-Kopf), **Arch 7**
+(Treffer-Blatt ohne `usePopoverAutoZu`). Zu Arch 7 nur die Empfehlung, ohne Bau:
+**Beiwerk, nicht Popover.** Das Blatt ist ausdrücklich kein modaler Dialog — man
+soll bei offener Liste weiterlesen, scrollen und im Feld tippen —, und ein
+Aussenklick-Schliesser nähme genau das: jeder Klick in den Text, jede
+Textmarkierung neben dem Blatt beendete die Trefferliste, die man gerade
+abarbeitet. Der Weg heraus ist bereits benannt (✕ «ausblenden») und mit Esc
+belegt; das Panel darf `usePopoverAutoZu` tragen, weil es die Fläche beansprucht,
+das Blatt beansprucht sie nicht.
+
+**Bilder** (hell/dunkel, Suffix `-v2`, die bestehenden 24 unangetastet):
+`docs/ux-audit-2026-07/reader/leser-v3-h4/bilder/` — `stpo-steckbrief-D`,
+`bs-640.100-steckbrief-D`, `stpo-steckbrief-panel-D`, `stpo-steckbrief-H`,
+`stpo-trefferblatt-H`.
 
 ### Fenster-Deckel und Flip-Kriterien
 
@@ -2045,6 +2137,14 @@ nicht geschätzt — ein geschätzter Zielwert wäre eine Zahl ohne Messbedingun
 
 Diese drei Punkte standen im Entwurf nur unter «Mitdenk-Hinweise» und werden erfahrungsgemäss
 vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
+
+> **Arch 5 · Kürzel-Kollision, aufgelöst 18.8.2026 (H4-Vorbereitung II).** Die
+> Kürzel **A-1** und **A-2** dieser Tabelle sind NICHT dieselben wie die **A-1**
+> und **A-2** des Vollzugsvermerks H1 in Kap. 7 (Schriftgrössen-Regler ·
+> Leisten-Verschmelzung). Ein unqualifiziertes «A-2» im Fahrplan meint immer die
+> **Leisten-Verschmelzung**; die beiden Zeilen hier heissen zur Unterscheidung
+> **«A-1 (Kap. 12)»** und **«A-2 (Kap. 12)»** und sind seit dem 16.8.2026
+> erledigt. Herleitung des Verweises statt einer Umnummerierung: dort.
 
 | # | Kriterium | Prüfung |
 |---|---|---|
