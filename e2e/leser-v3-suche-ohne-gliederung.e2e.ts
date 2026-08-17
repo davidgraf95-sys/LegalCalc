@@ -250,25 +250,36 @@ test('(e) das Öffnen verschiebt den Lesetext um 0 px — darum ein Blatt und ke
     .toEqual(vorher)
 })
 
-test('(f) Split-Pane: dieselbe Regel, und je Pane genau ein Blatt', async ({ page }) => {
-  // Im Split sind die Panes schmaler als die xl-Schwelle — dort bleibt das
-  // Bottom-Sheet der Weg (Platz für ein Blatt daneben gibt es nicht). Geprüft
-  // wird darum, dass die Liste auch dort ERREICHBAR ist und dass die Wahl
-  // zwischen Blatt und Sheet nicht beide gleichzeitig erzeugt (§5).
+test('(f) mit STEHENDER Spalte gibt es kein Blatt — nie zwei Listen', async ({ page }) => {
+  // Die Kehrseite von (a): das Blatt ist der Ersatz für die fehlende Spalte, nicht
+  // ein zweiter Ort daneben. Zwei Listen gleichzeitig wären die Doppelwahrheit,
+  // die `LeserGliederung` ausdrücklich ausschliesst (§5).
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v3')
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('StPO', { timeout: 30000 })
-  await expect(page.locator('[data-v3-suchsprung] input').first()).toBeVisible({ timeout: 20000 })
+  await warteLeser(page)
+  await suche(page, BEGRIFF)
 
-  const feld = page.locator('[data-v3-suchsprung] input').first()
-  await feld.click()
-  await feld.fill(BEGRIFF)
-  await expect(page.locator('[data-treffer-liste]').first()).toBeVisible({ timeout: 15000 })
-
-  // Mit STEHENDER Spalte gibt es KEIN Blatt — die Liste steht in der Spalte, und
-  // zwei Listen gleichzeitig wären die Doppelwahrheit, die `LeserGliederung`
-  // ausdrücklich ausschliesst.
   await expect(page.locator('[data-v3-aside]')).toHaveCount(1)
   await expect(page.locator('[data-v3-treffer-blatt]')).toHaveCount(0)
   await expect(page.locator('[data-treffer-liste]')).toHaveCount(1)
+})
+
+test('(g) Split-Pane: schmale Panes behalten das Bottom-Sheet, und nie beides', async ({ page }) => {
+  // Im Split @1600 misst jedes Pane rund 590 px und unterschreitet damit die
+  // xl-Schwelle — dort gibt es keinen Platz für ein Blatt NEBEN dem Text, und der
+  // Weg zur Liste bleibt das Bottom-Sheet (Kap. 4b). Geprüft wird, dass die
+  // Blatt-Weiche diese Breite nicht mit erwischt: sonst hinge das Blatt in einem
+  // 590-px-Pane und verdeckte genau den Text, für den Ä19 es gebaut hat.
+  test.slow() // zwei volle Leser-Instanzen
+  await page.setViewportSize({ width: 1600, height: 900 })
+  await page.goto('/gesetze/bund/STPO?leser=v3&p=/gesetze/bund/BGBM%3Fleser%3Dv3')
+  await expect(page.locator('[data-pane="sekundaer"] [data-v3-kopf]')).toBeVisible({ timeout: 30000 })
+  // Positiv-Sonde: es gibt wirklich zwei Felder (§6.7).
+  await expect(page.locator('[data-v3-suchsprung] input')).toHaveCount(2, { timeout: 20000 })
+
+  const feld = page.locator('[data-pane="primaer"] [data-v3-suchsprung] input')
+  await feld.click()
+  await feld.fill(BEGRIFF)
+  // Der Zähler-Weg steht auch hier — die Liste ist erreichbar, nur anders.
+  await expect(page.locator('[data-pane="primaer"] [data-v3-treffer-weg]')).toBeVisible({ timeout: 15000 })
+  await expect(page.locator('[data-v3-treffer-blatt]'), 'Blatt im schmalen Pane').toHaveCount(0)
 })

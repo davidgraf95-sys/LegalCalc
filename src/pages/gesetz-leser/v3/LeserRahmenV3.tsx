@@ -109,9 +109,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Rückbau; der Zweig war unerreichbar, Beleg im Vollzugsvermerk).
   const suchFeldRef = useRef<HTMLInputElement>(null);
   useSuchSprungKuerzel({ feldRef: suchFeldRef, imSekundaerenPane: umgebung.istSekundaer });
-  // Ä70: Offen-Zustand des Treffer-Blattes am Feld (Herleitung dort). Steht VOR
-  // den frühen Rückgaben — Hooks laufen nicht bedingt — und kostet im
-  // Ruhezustand nichts (ein `useState` mit `null`).
+  // Ä70: Offen-Zustand des Treffer-Blattes (Herleitung in `./LeserTrefferBlatt`).
+  // Vor den frühen Rückgaben — Hooks laufen nicht bedingt.
   const trefferBlatt = useTrefferBlatt(m.sucheBegriff);
 
   // Frühe Ansichten (Fehlseite · Currency-Pin · pdf-embed · nur-live-link) und
@@ -165,11 +164,10 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Ä19: Wo die Gliederung NICHT als Spalte steht, trägt der klebende Kopf-Block
   // das Feld (Regel in `./SuchZone`) — ausser das Blatt ist offen, dann es (A2).
   const suchZoneKlebt = hatLeiste && !zweiSpalten;
-  // Ä70: Wo die Spalte fehlt, aber Platz neben dem Text ist (Desktop mit
-  // eingeklappter Gliederung), liegt die Trefferliste als Blatt AM FELD. Darunter
-  // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg — dort gibt es keinen
-  // Platz daneben. Herleitung und die Messung, die «Spalte automatisch aufziehen»
-  // ausgeschlossen hat: `./LeserTrefferBlatt`.
+  // Ä70: Fehlt die Spalte, ist aber Platz neben dem Text (Desktop mit
+  // eingeklappter Gliederung), liegt die Trefferliste als Blatt AM FELD; darunter
+  // (Handy · schmales Pane) bleibt das Bottom-Sheet der Weg. Herleitung und die
+  // Messung, die «Spalte aufziehen» ausschloss: `./LeserTrefferBlatt`.
   const blattAmFeld = suchZoneKlebt && umgebung.istXl && m.sucheAktiv;
   const suchZone = suchZoneKlebt
     ? (
@@ -349,24 +347,10 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
           {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
 
-          {/* ── Ä70 · DIE INLINE-TREFFERLISTE IST GESTRICHEN (17.8.2026) ──────
-              Hier stand `trefferListe={m.sucheAktiv && !zweiSpalten && istXl …}`,
-              angekündigt als «Rand-Fall: keine Leiste, aber breit genug». Der Code
-              hielt das nicht: `!zweiSpalten` ist auch bei EINGEKLAPPTER Spalte
-              wahr, und genau dort schlug er zu — gemessen am Prod-Stand landete die
-              Liste 3596 px hoch bei y = 755 inline über dem Lesetext, also unter
-              der Falz, und schob den ganzen Gesetzestext um 3,6 Bildschirmhöhen
-              nach unten. Das IST Davids Befund «resultat ist versteckt».
-              Der Fall mit Leiste liegt jetzt im Blatt am Feld
-              (`./LeserTrefferBlatt`, dort auch die Messreihe).
-              Und der angekündigte Rand-Fall wird GESTRICHEN statt verengt: er ist
-              unerreichbar. `hatLeiste` ist `eintraege.length > 0` — ohne Leiste
-              gibt es keinen einzigen Artikel, also auch keinen Treffer und keinen
-              Lesetext, über dem eine Liste stehen könnte. Ein Zweig, den keine
-              Eingabe erreicht, ist toter Code (§17 in der Fassung 13.8.2026, wie
-              `beiwerkSlot`/`panelOeffner`/`LeserV3Kontext` zuvor); mit ihm fällt
-              der `trefferListe`-Prop der Lesespalte. In der Historie greifbar,
-              falls je ein Erlass ohne Artikel durchsuchbar wird. */}
+          {/* Ä70: der `trefferListe`-Prop ist gestrichen — er traf die
+              EINGEKLAPPTE Spalte statt des angekündigten Rand-Falls, und der ist
+              unerreichbar. Herleitung samt Messreihe steht am Bauteil, das sie
+              betrifft (`./LeserLesespalte`, `./LeserTrefferBlatt`). */}
           <LeserLesespalte m={m} />
         </div>
 
