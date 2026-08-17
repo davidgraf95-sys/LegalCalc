@@ -2001,6 +2001,39 @@ preview` aus `dist/`, App-Seitenleiste eingeklappt = Leser-Vorgabe Ä1c):
 Waagrechter Überlauf in allen Zellen **0**. Bei geschlossenem Panel ist der
 Rahmen auf JEDER Breite unverändert 1072 px — die Aufweitung hängt am offenen
 Blatt, nicht am Seitenaufruf (Positiv-Sonde im e2e-Fall (a)).
+*(Nachher-Spalten unabhängig nachgemessen 18.8.2026 nach dem Wiederaufsetzen des
+Baus, Chromium headless gegen `dist/`, Port 4648: Rahmen offen 975 · 976 · 1102 ·
+1232 · 1344 · 1344, verdeckt 161 · 0 · 0 · 0 · 0 · 0, Titel 328 · 0 · 0 · 0 · 0 ·
+0, Überlauf durchgehend 0. Die Tabelle steht damit auf zwei getrennten
+Messläufen.)*
+
+**Split-View @1440, zwei Panes (Aufgabe 1 des Auftrags — je Pane gemessen):**
+
+| Pane | Pane-Breite | Rahmen vorher → nachher | Absatz | ch | Blatt-Gestalt | verdeckt |
+|---|---|---|---|---|---|---|
+| primär (StPO) | 718 | 670 → **670** | 600 | 68 | `unten` (Bottom-Sheet) | 0 waagrecht |
+| sekundär (ZGB) | 718 | 670 → **670** | 580 | 64 | `unten` | 0 waagrecht |
+
+Im geteilten Fenster ändert Ä60 (c) **nichts** — und das ist die Absicht, nicht
+eine Lücke: `rahmenBild` gibt die eigene Spur nur, wo das Blatt sonst ÜBER dem
+Text läge (`ruheForm === 'rechts'`), und im Pane ist die Gestalt ausnahmslos
+`'unten'` (harte Regel «nie drei vertikale Flächen im Split-View»,
+Design-Grundlage Kap. 8 Nr. 8). Der Pane-Rahmen bleibt darum vor **und** nach dem
+Öffnen 670 px, der Absatz 600 px — kein CLS, kein Umbruch. Gemessen wird die
+Pane-Breite, nicht der Viewport (`raum` liest das umgebende `<main>`), sonst hätte
+ein 1440er-Fenster im Split zwei je 718 px breite Panes auf 84 rem aufgeweitet.
+
+**Abgleich mit dem Wortlaut des Entscheids (§7 — Abweichung offengelegt).** Der
+Auftrag las Davids (c) als «ab ~1280 nebeneinander; zwischen 1024 und 1279
+schiebt das Blatt den Text zur Seite». Gebaut ist die Zusage **ab 1024 px**
+erfüllt (nichts verdeckt, nicht erst ab 1280), und *geschoben* wird nicht zuerst
+der Text, sondern die **Gliederung**: sie weicht zwischen 1024 und 1391 px auf
+ihre Schiene, und der Text wird nur unter ~1140 px schmaler (@1024 504 statt
+620). Die Abweichung geht in Davids Richtung und folgt §1: das Lesemass ist die
+fachliche Grösse, die Gliederung ist ein Klick entfernt. Wer die wörtliche
+Lesart will, müsste zwischen 1140 und 1391 die Gliederungsspalte stehen lassen
+und den Text auf ~430 px (≈ 49 ch) drücken — dieselbe Quetschung, die Weg (2)
+des Spalten-Entscheids ausgeschlossen hat.
 
 **Die eine Zahl, aus der alles folgt:** `LESER_MAX_REM` = 18 + 2 + 40 + 2 + 22 =
 **84 rem** (1344 px) — die Summe der drei Spuren samt Abständen, und keinen
