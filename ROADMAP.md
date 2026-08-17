@@ -228,6 +228,29 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **WARTET AUF DAVID (fachlich, §7):** SF-F1 — bleibt die Art.-63-Verlängerung bei gehemmter Frist erhalten (sonst verkürzt die Hemmung eine Verwirkungsfrist)? · SF-F2 — Wartefrist-Ablauf in den Betreibungsferien ergibt früheren «frühesten Handlungstag» (4.1.) als dieselbe Frist als Handlungsfrist (6.1.) — gewollt? Katalog-Zeilen «fachlich vorzulegen» dort.
 - [x] **`QS-UI-HIGHLIGHT` · `::highlight()`-Registry je Leser-Instanz** — **erledigt 16.8.2026 mit `W2·5m-LESER-V3`/H2** (Buchführung je Instanz in `suchHighlight.ts`; Rot-Beweis `src/tests/suchHighlight.test.ts`, Browser-Beweis `e2e/leser-v3-highlight-split.e2e.ts`; Detail: Vollzugsvermerk H2 in `fahrplaene/FAHRPLAN-LESER-V3.md`). Rest bewusst offen: zwei ENTSCHEID-Panes teilen weiterhin eine Modul-Instanz (unverändert gegenüber dem Vorzustand). Ursprünglicher Befund: — eine Registry, drei Schreiber: im Split-View löscht das Rail-Suchfeld die Markierung des Nachbar-Panes. Reine Darstellung. **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §9.
   <!-- @meta id: QS-UI-HIGHLIGHT · status: done · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/entscheidLeserRegeln.ts, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+- [ ] **`QS-DATA-INGEST-DRIFT` · Ingest-Strecke ist in drei Tagen 3× langsamer geworden — `suche.test.ts` reisst dadurch seinen Hook-Deckel** *(gemessen S1-Nachzug 17.8.2026, §17)*
+  <!-- @meta id: QS-DATA-INGEST-DRIFT · status: ready · blocker: null · dep: [] · kollision: [scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M -->
+  Befund: `scripts/datenhaltung/suche.test.ts` fiel im Vollauf mit «Hook timed out in
+  95000ms» (`beforeAll`). **Nicht der Deckel ist falsch, die Basis ist gewandert.**
+  Der Deckel wurde am 14.8.2026 sauber kalibriert (Ist + 3 sd) gegen eine
+  ISOLIERTE Datei-Dauer von **10.85 s** (n=5, sd 0.45) und einen Lastfaktor ~4.7×.
+  Neu gemessen am 17.8.2026, gleiche Maschine, unbelastet: **35.26 · 33.32 ·
+  25.56 s** (Mittel 31.4) — die Ingest-Strecke kostet das **Dreifache**. Mit dem
+  dokumentierten Lastfaktor liegt der Hook unter Last bei ~150 s und reisst 95 s
+  systematisch, nicht zufällig.
+  Nullprobe (§0 Ziff. 3): `scripts/datenhaltung/**` und die Korpus-Projektionen sind
+  auf `feat/leser-v3-s1` **byte-identisch zu `main`** (`git diff origin/main...HEAD`
+  leer für diesen Pfad) — die Eingaben des Tests sind dieselben, der Defekt liegt
+  also auf `main`. Rate im Vollauf dort gemessen: **1 rot in 2 Läufen** (rot bei
+  113 s Gesamtdauer, grün bei 67 s ⇒ lastabhängig).
+  **Wurzel-Fix, nicht Deckel-Anhebung (§17):** zuerst klären, WARUM die Strecke 3×
+  teurer wurde — Korpus-Zuwachs seit 14.8. oder eine Regression in
+  `ingest.ts`/`fts.ts`. Den Deckel erst danach neu bemessen, nach demselben
+  Protokoll wie am 14.8. (n=5 isoliert + n=5 unter gedeckelter Parallel-Last, Ist +
+  max(3 sd, 25 %)). Den Hook NICHT durch ein gecachtes DB-Artefakt entlasten: er
+  baut beide HOT-DBs über dieselben ingest+fts-Bausteine wie `datenhaltung:build`,
+  und genau das ist die Aussage der Datei (§1 vor Tempo — Begründung steht im
+  Datei-Kommentar).
 - [x] **`QS-E2E-STABIL` · Lokale e2e-/Test-Budgets an gemessene Streuung binden** — offen: (a) Budget-Modul `e2e/helpers/` statt 4 gegabelter Stellen; (b) `leser-r1-r2`-Wurzel per CI-Forensik (kein UI-Bau ins Blaue, nicht per Timeout maskieren); (c) norm-sprung/Erst-Render → `QS-PERF`. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.4.
   <!-- @meta id: QS-E2E-STABIL · status: done · blocker: null · dep: [] · kollision: [playwright.config.ts, e2e/a11y.e2e.ts, scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
 - [x] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.1.

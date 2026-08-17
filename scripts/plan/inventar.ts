@@ -114,6 +114,13 @@ export const INVENTAR: readonly string[] = [
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
   'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
 
+  // §14-Intake 17.8.2026 (S1-Nachzug, §17): der Vollauf riss den Hook-Deckel von
+  // scripts/datenhaltung/suche.test.ts. Nullprobe: der Pfad ist byte-identisch zu
+  // main, der Defekt liegt dort. Wurzel ist eine BASIS-Drift — die isolierte
+  // Ingest-Dauer ist seit der Deckel-Kalibrierung vom 14.8. von 10.85 s auf ~31 s
+  // gestiegen (3x in drei Tagen). Deckel-Anhebung erst nach der Ursache (§17).
+  'QS-DATA-INGEST-DRIFT',
+
   // Entscheid David 13.8.2026 («ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok»):
   // W2·5k-LINIEN-KONZEPT entschieden (Variante V1), Rückbau-Bau-Schritt angelegt.
   // §14-Intake 4./5.8.2026 (Nacht-Landekette): Nebenbefunde der adversarialen Gegenprüfungen
