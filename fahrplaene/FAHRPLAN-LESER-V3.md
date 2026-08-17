@@ -1076,6 +1076,93 @@ legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
 
 ---
 
+### ✅ Vollzugsvermerk ÜBERSICHTSBOX (17.8.2026, Branch `feat/leser-v3-uebersicht`)
+
+**Auftrag David:** «das übersichtfeld ist sehr unästhetisch. insbesondere wenn es
+aufgeklappt ist. mach das schöner und orientiere dich an fedlex.»
+**Bilder:** `docs/ux-audit-2026-07/reader/leser-v3-uebersicht/{vorher,nachher}/`
+(je 30 Aufnahmen: fünf Erlassarten × hell/dunkel × D 1440 / H 390 / Split, Ruhe
+und aufgeklappt) + `README.md` mit der Fedlex-Referenz daneben. Werkzeuge
+committet (`schuss.mjs`, `mass.mjs`); jede Position unten ist **gemessen**.
+
+**Ist-Mängel** (D 1440, aufgeklappt): Ruhezeile komplett in der Mono-Stimme und
+darum an **allen fünf** Erlassen **dreizeilig** · vier `truncate`-Zeilen kappten
+still Text (StPO 282 px · BS-640.100 284 px · LugÜ 98 px · VMWG 66 px · «Stand:»
+je 57 px), erreichbar nur im `title` · zweites Etikett «ERLASS-ÜBERSICHT» samt
+zweiter Linie IN einer Box, die schon «Übersicht» heisst · «massgeblich ist die
+amtliche Fassung» an der StPO **2×** · **zwei** Klapp-Ebenen, hinter der zweiten
+die §8-Sätze · vier Label-Breiten (21/36/46/38 px) statt einer Wertspalte.
+**Wurzel:** die Box rief `parts/ErlassUebersicht` — den GETEILTEN Baustein der
+breiten Zone C der Ist-Hülle, dort richtig kalibriert, in 18 rem falsch.
+
+| Nr. | Was gebaut wurde | Beleg |
+|---|---|---|
+| **Ä70** | Steckbrief nach Fedlex' «Allgemeine Informationen»: Label/Wert-Raster (`.lc-v3-steckbrief`, 5 rem + 1fr), EINE Sans-Stimme mit `tabular-nums`, kein `truncate` (Werte brechen um), EINE Haarlinie oben/unten statt Kasten und Zwischenüberschrift, 4-px-Raster. Ruhezeile **3 → 1** Zeile (der Stand wandert in die Liste). Auswahl neu als reine Funktion `v3/uebersichtAngaben.ts`, die Komponente rendert nur | `leser-v3-uebersicht` (Vitest 16 · e2e 9) |
+| **Ä71** | Fassungs-Kennung gestrichen: in Datumsform derselbe Wert wie der Stand in anderer Notation (§5), in Hash-Form an **1231 von 1469** Erlassen (84 %) — Maschinen-Provenienz, keine Leser-Auskunft; §7 Bst. d trägt die Drift-ERKENNUNG, nicht der abgedruckte Hash | `leser-v3-uebersicht.test` |
+| **Ä72** | Zweite Klappe «Mehr zu diesem Erlass» weg — die vier §8-Sätze (Erfassungsgrad, Etikett-Entwurf, fehlende amtliche Gliederung, Teilerfassungs-Beleg) stehen jetzt offen. Ein Ehrlichkeits-Hinweis hinter zwei Klicks ist keiner (§8) | `leser-v3-bauteile`, e2e |
+| **Ä74** | `nurErlassdatum` verlangte «(Stand am …)» und liess die kantonale Form «(Stand …)» durch: **1182 von 1420** Sidecars zeigten den Stand zweimal untereinander (BS-640.100: «Vom 12. April 2000 (Stand 1. Januar 2026)» über «Stand 01.01.2026»). Wurzel-Fix in der EINEN geteilten Ableitung — wirkt in beiden Hüllen | `gesetz-leser-uebersicht-s6`, e2e Ä74 |
+
+**Nachführung Ä5 / Ä10 / Ä28.** Ä5 (entrahmt, hängendes «·» weg) gilt unverändert
+und ist durch Ä70 **vollendet**: die letzte Linie im Inneren und die letzte
+gestapelte Fläche sind weg. Ä10 (Handy-Überlauf, damals «nicht reproduzierbar»)
+ist jetzt **gemessen bewacht** — @390 im Gliederungs-Blatt gilt
+`scrollWidth − clientWidth ≤ 1` für Box UND Blatt. Ä28 (Warnung doppelt) war bis
+hierher nur halb erledigt: B5 entfernte den zweiten Warn-Satz, der Grundhinweis
+mit demselben Schluss-Halbsatz blieb stehen — jetzt steht der Sachverhalt in der
+Box **genau einmal**, im Wortlaut des Erlass-Kopfs (`nichtKonsolidiertSatz`,
+S3/F5) statt in einem zweiten eigenen.
+
+**Der Doppelungs-Entscheid** (der Auftrag verlangt ihn ausdrücklich): Die
+Rechtfertigung «die Box hält fest, was der Kopf beim Scrollen verliert» ist
+**nachgeprüft falsch** — die Box steht ausserhalb des klebenden Blocks und
+scrollt selbst weg (Kap. 4b; `leser-v3-seitenleiste-ordnung` (b) misst genau
+das). Wer tief in Art. 429 liest, hat weder Kopf noch Box. Also: **Kopf** =
+welcher Erlass, wie aktuell, wo die amtliche Fassung. **Box** = woher er kommt
+und wie er gebaut ist. Gestrichen, weil der Kopf es im selben Bild sagt:
+Grundhinweis, Standausweis-Satz, Umfang-Zeile. Bewusst geblieben trotz
+Teil-Dopplung: die Datums-KETTE Erlassdatum → In Kraft seit → Stand — im Kopf
+eine «·»-Kette, hier Fedlex' Chronologie und der Grund, eine Steckbrief-Liste
+überhaupt aufzuklappen.
+
+**Zwei erklärte Abweichungen.** (1) Der Auftrag nennt «Sans 13 px»; gebaut ist
+`body-s` (14 px) — die Haus-Skala hat für die Leiste keine 13er-Stufe, und
+`leser-rand` (13 px) ist die Marginalien-Rolle des Lesekörpers; sie zu borgen
+gäbe einem Token eine zweite Bedeutung (§5, so auch der Kommentar in
+`tailwind.config.js`). (2) Fedlex richtet Werte rechts aus; hier linksbündig —
+nach der Label-Spalte bleiben rund 184 px, und ein umbrechender Wert liefe
+rechtsbündig mit ausgefranstem linkem Rand.
+
+**Rot-Beweis (§6.7).** Vitest: sechs gleichzeitige Sabotagen (Stand zurück in die
+Ruhezeile · Stand-Guard entfernt · Fassungs-Kennung zurück · Grundhinweis zurück
+· zweite Klappe zurück · `aufgehoben`-Grenze entfernt) ⇒ **12 von 42** Fällen
+rot, danach 42/42 grün. Browser: `dd` auf `nowrap/ellipsis` (der Ist-Zustand vor
+Ä70) + Raster auf `auto 1fr` ⇒ **5 von 9** rot, gemessene Kappung Erlassgeber
+15/79/157 px, Sachgebiet 414 px, Wertkanten 227 **und** 246 px. Ä74 zusätzlich
+gegen den Build VOR dem Fix rot gesehen. §6.3-Deklaration: `leser-v3-bauteile`
+ist neu gefasst (die Box ist kein `children`-Behälter mehr) — alle vier
+bestehenden Zusagen Zeichen für Zeichen erhalten, keine gelockert, zwei neu dazu.
+
+**Offen, bewusst nicht hier gebaut.**
+- **Ä73** — keine Höhen-Reservierung für die Warn-Zelle. Die Box liegt im Aside,
+  die CLS-Sonde misst die Lesespalte; eine Reserve bräuchte die vier
+  Fenster-Messwerte, die der Kopf mit `kopf-stand*` hat — ein einzelner geratener
+  Wert wäre schlechter als keiner.
+- **Ä75 — «SR» an kantonalen Erlassen (wartet auf David, §7).** Gezählt über
+  `register.json`: **1187** Erlasse ohne Präfix im `sr`-Feld bekommen ein hart
+  kodiertes «SR » vorangestellt — davon nur 230 Bund, also **957 kantonale**
+  Erlasse tragen die Bezeichnung der *eidgenössischen* Systematischen
+  Rechtssammlung. Weitere **275** führen ihr eigenes Präfix im Feld und lesen
+  sich darum «SR LS 211.11» / «SR bGS 1.1» (34 Präfix-Varianten über alle
+  Kantone). **Nicht in dieser Etappe gefixt und ausdrücklich nicht geraten:** die
+  richtige Sammlungs-Bezeichnung je Kanton ist eine amtliche Angabe (§7, Quelle +
+  Stand) und braucht Davids fachliche Abnahme. Sie betrifft ausserdem den
+  geteilten **Erlass-Kopf** (S3, in diesem Auftrag tabu) und `helpers.baueZitat`
+  — «Art. 7 OR, SR 220 (Stand …)» ist die Zitierform, die Nutzer kopieren. Ein
+  Alleingang in der Box hätte zwei verschiedene Bezeichnungen für dieselbe Nummer
+  nebeneinander auf einen Bildschirm gestellt.
+
+---
+
 ### Strang S (in place, wirkt in beiden Hüllen)
 
 | E | Inhalt | Vorbedingung | Tests | Abnahme-Kriterium | Aufwand |
