@@ -126,10 +126,17 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
                  Krume mehr daneben, und wenn der Platz nicht reicht, soll die
                  Erlass-Abkürzung am Ende abgeschnitten werden — nie die
                  Artikelnummer am Anfang. */}
+          {/* `data-ort-artikel` (Ä1, LESER-V3 H2b): die ORTSANGABE dieser Leiste,
+              adressierbar gemacht. Der Ästhetik-Review H1 meldete, sie nenne im
+              Split einen anderen Artikel als die Lesespalte — ein §7-Fehler, wenn
+              er zutrifft. Prüfbar war das nicht: die Angabe hing an einer
+              Utility-Klasse (`.num`), und die erste Mono-Zahl des Dokuments ist
+              woanders (SR-Nummer). Die Marke ist der Testanker für
+              `e2e/leser-v3-ortsangabe.e2e.ts`; sie ändert nichts an der Anzeige. */}
           {daten.artikel && (
             <>
-              <span className="num min-w-0 truncate text-micro font-medium text-ink-700 sm:hidden">{daten.artikel}</span>
-              <span className="num hidden shrink-0 text-micro font-medium text-ink-700 sm:inline">
+              <span data-ort-artikel className="num min-w-0 truncate text-micro font-medium text-ink-700 sm:hidden">{daten.artikel}</span>
+              <span data-ort-artikel className="num hidden shrink-0 text-micro font-medium text-ink-700 sm:inline">
                 <span aria-hidden className="mr-1 text-ink-300">·</span>{artikelKurz}
               </span>
             </>

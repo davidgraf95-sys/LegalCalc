@@ -39,7 +39,8 @@
    "materialien-m3-edoeb.e2e.ts",
    "norm-sprung.e2e.ts",
    "rechtsprechung.e2e.ts",
-   "smoke.e2e.ts"
+   "smoke.e2e.ts",
+   "leser-v3-auskunft.e2e.ts"
   ],
   "4": [
    "gesetze-rechtsgebiet-g6.e2e.ts",
@@ -80,7 +81,8 @@
    "leser-suche-vertrag-b8.e2e.ts",
    "suche-q-fokus-s1-s6.e2e.ts",
    "verlauf-o1.e2e.ts",
-   "leser-v3-flag.e2e.ts"
+   "leser-v3-flag.e2e.ts",
+   "leser-v3-kopf-buendig.e2e.ts"
   ],
   "7": [
    "leser-kontext-e4.e2e.ts",
@@ -93,7 +95,8 @@
    "international-kanonik-ia6.e2e.ts",
    "leser-r1-r2.e2e.ts",
    "leser-toc-sprung.e2e.ts",
-   "leser-ohne-gliederungslinie.e2e.ts"
+   "leser-ohne-gliederungslinie.e2e.ts",
+   "leser-v3-suchfeld-ueberall.e2e.ts"
   ],
   "8": [
    "leser-spy-w25d.e2e.ts",
@@ -105,7 +108,8 @@
    "materialien-m2-seco.e2e.ts",
    "qsui-hierarchie.e2e.ts",
    "uinav-o2-sidebar.e2e.ts",
-   "uinav-v2-v4-normchip.e2e.ts"
+   "uinav-v2-v4-normchip.e2e.ts",
+   "leser-v3-ortsangabe.e2e.ts"
   ]
  }
 }
