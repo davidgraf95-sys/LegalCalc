@@ -57,13 +57,35 @@ describe('Die Vorrangregel lebt in zwei Dateien und ist nur als Paar wahr', () =
   it('V3 beansprucht die Taste in der CAPTURE-Phase und ruft dort preventDefault', () => {
     expect(KUERZEL).toContain("window.addEventListener('keydown', taste, { capture: true })");
     expect(KUERZEL).toContain("window.removeEventListener('keydown', taste, { capture: true })");
-    // preventDefault VOR onKuerzel — sonst hinge der Vorrang daran, dass das
-    // Öffnen der Fläche nicht wirft.
+    // preventDefault VOR onKuerzel — sonst hinge der Vorrang daran, dass ein
+    // etwaiger Öffner-Callback nicht wirft.
+    // §6.3-NACHZUG (H2b-Nachzug, A3): `onKuerzel` ist optional geworden, der
+    // Aufruf heisst darum `onKuerzel?.()`. Die geprüfte ZUSAGE ist unverändert
+    // (Reihenfolge preventDefault → Callback), nur die Schreibweise folgt dem
+    // Code. Grund der Optionalität: Vollzugsvermerk H2b-Nachzug (§17-Rückbau).
     const iPd = KUERZEL.indexOf('e.preventDefault()');
-    const iCb = KUERZEL.indexOf('onKuerzel()');
+    const iCb = KUERZEL.indexOf('onKuerzel?.()');
     expect(iPd, 'preventDefault fehlt').toBeGreaterThan(-1);
     expect(iCb, 'onKuerzel wird nicht gerufen').toBeGreaterThan(-1);
     expect(iPd, 'preventDefault steht NACH onKuerzel').toBeLessThan(iCb);
+  });
+
+  it('A3 · die Pane-Zuständigkeit wird VOR preventDefault geprüft', () => {
+    // BEFUND 17.8.2026 (Split @1600): zwei Listener am Fenster, beide riefen
+    // `preventDefault` und zogen Fokus — der zuletzt registrierte gewann, der
+    // Fokus landete quer im anderen Pane. Die Wache muss VOR dem Beanspruchen
+    // stehen: reklamiert ein fremdes Pane den Tastendruck, schweigt zusätzlich
+    // die Header-Suche (sie prüft `defaultPrevented`) und NIEMAND bedient ihn.
+    const iWache = KUERZEL.indexOf('tastendruckGehoertMir(imSekundaerenPane)');
+    const iPd = KUERZEL.indexOf('e.preventDefault()');
+    expect(iWache, 'die Pane-Wache fehlt').toBeGreaterThan(-1);
+    expect(iWache, 'die Pane-Wache steht NACH preventDefault').toBeLessThan(iPd);
+    // Die Auflösung liest den FOKUS, nicht einen beim Registrieren eingefrorenen
+    // Zustand — sonst wäre sie nach einem Pane-Wechsel veraltet.
+    expect(KUERZEL).toContain('document.activeElement');
+    expect(KUERZEL).toContain("closest?.('[data-pane]')");
+    expect(RAHMEN, 'der Rahmen gibt seine Pane-Rolle nicht durch')
+      .toContain('imSekundaerenPane: umgebung.istSekundaer');
   });
 
   it('die Header-Suche zieht sich bei bereits beanspruchtem Tastendruck zurück', () => {
@@ -77,10 +99,25 @@ describe('Die Vorrangregel lebt in zwei Dateien und ist nur als Paar wahr', () =
     expect(RAHMEN, 'der Rahmen ruft das Kürzel-Hook nicht').toContain('useSuchSprungKuerzel(');
   });
 
-  it('das Kürzel öffnet zuerst die Fläche: @≥1024 px die Spalte, darunter das Sheet', () => {
-    // Der eigentliche B1-Nachzug: bei `tocOffen=false` gab es @xl kein Feld zu
-    // fokussieren. Beide Zweige müssen im Rahmen stehen.
-    expect(RAHMEN).toContain('if (umgebung.istXl) m.setTocOffen(true);');
-    expect(RAHMEN).toContain('else m.setTocAuf(true);');
+  it('das Kürzel muss keine Fläche mehr öffnen — das Feld ist immer im DOM', () => {
+    // ── §17-RÜCKBAU (H2b-Nachzug) · ERSETZT die frühere Zusage ────────────────
+    // Diese Prüfung verlangte bis hierher, dass der Rahmen bei ⌘K erst eine
+    // Fläche aufzieht (`setTocOffen`/`setTocAuf`) — der B1-Nachzug von H1, als
+    // das Feld bei zugeklappter Spalte gar nicht im DOM war. Ä19 (klebende
+    // Such-Zone) und A2 (Feld im offenen Blatt) haben diese Lage beseitigt: bei
+    // vorhandenen Einträgen steht das Feld IMMER im DOM, der Öffner-Zweig war
+    // damit unerreichbar. `e2e/leser-v3-suche-sprung.e2e.ts` (e) verlangt
+    // ausdrücklich das Gegenteil der alten Zusage — «⌘K hat die
+    // Gliederungsspalte aufgezogen» ist dort ein FEHLER. Zwei Tore, die
+    // Gegensätzliches fordern, sind kein Schutz; das jüngere gewinnt, und diese
+    // Sonde bewacht jetzt den Rückbau statt den entfernten Zweig.
+    expect(RAHMEN, 'der Rahmen öffnet bei ⌘K wieder eine Fläche')
+      .not.toContain('m.setTocOffen(true);\n      else');
+    expect(RAHMEN, 'der Rahmen ruft das Kürzel-Hook nicht mehr ohne Öffner')
+      .toContain('useSuchSprungKuerzel({ feldRef: suchFeldRef');
+    // Positiv-Sonde: das Feld ist in JEDER Lage vorhanden, weil die Zone es
+    // trägt, wo die Spalte fehlt — sonst bewachte der Rückbau eine Lücke.
+    expect(RAHMEN).toContain('const suchZoneKlebt = hatLeiste && !zweiSpalten;');
+    expect(RAHMEN, 'das Blatt bekommt das Feld nicht').toContain('sprungFeld={suchFeld}');
   });
 });

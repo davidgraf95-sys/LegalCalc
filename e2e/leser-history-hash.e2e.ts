@@ -120,6 +120,19 @@ test.describe('LM-201 — Routenwechsel auf kürzere Seite: kein Frame mit alter
 
     // Navigation auf eine kürzere, nie besuchte Seite (Startseite) — per Klick
     // (echte SPA-Navigation), nicht per goto (Vollreload hätte keine alte Position).
+    //
+    // Ä1c (H2b, fachliche Änderung): im Gesetz-Leser startet die App-Seitenleiste
+    // eingeklappt (istGesetzLeserPfad, useSeitenleiste/Shell.tsx) — die Sidebar
+    // (und mit ihr `nav[aria-label="Hauptnavigation"]`) ist dann gar nicht im DOM
+    // (Shell.tsx: `{!seitenleiste.eingeklappt && (<Sidebar />…)}`). Auf Desktop
+    // (ab `lg`, dieser Test läuft auf 1440×900) trägt NUR die Sidebar das Logo als
+    // Startseiten-Link — Topbar.tsx Zeile 111 ist bewusst `lg:hidden` ("Logo nur
+    // unterhalb lg — ab lg trägt die Seitenleiste die Marke"). Der reale,
+    // immer sichtbare Nutzerweg ist der Topbar-Knopf «Seitenleiste einblenden»
+    // (Topbar.tsx, unabhängig vom Leser-Pfad gerendert): er öffnet die Sidebar,
+    // danach ist der Startseiten-Link da und klickbar — das prüft DOM-Probe
+    // (isVisible/boundingBox) vor diesem Fix belegt.
+    await page.getByRole('button', { name: 'Seitenleiste einblenden' }).click()
     await page.locator('nav[aria-label="Hauptnavigation"] a[aria-label="LexMetrik – Startseite"]').click()
     await expect(page).toHaveURL(/\/$/, { timeout: 15000 })
     await page.waitForFunction(() => (window as unknown as { __lm201?: unknown[] }).__lm201!.length >= 4, undefined, { timeout: 15000 })

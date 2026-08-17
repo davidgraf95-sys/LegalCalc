@@ -103,31 +103,57 @@ test.describe('H2 / Pos. 14 — Suche verlassen bewegt den Lesetext um 0 px', ()
   })
 })
 
-test.describe('H2 / Pos. 14 — im Handy-Sheet leert Esc das Feld, ohne das Sheet zu schliessen', () => {
-  test('(d) @390: Esc im Sheet-Feld leert nur', async ({ page }) => {
+// ── §6.3-NACHZUG (A2, H2b-Nachzug 17.8.2026) · WEM GEHÖRT `Esc` IM BLATT? ───
+// Dieser Block prüfte bis hierher: «Esc im Sheet-Feld leert nur, das Sheet steht
+// noch». Die Zusage ist BEWUSST UMGEDREHT, und das ist eine fachliche Änderung,
+// keine Lockerung — Grund und Messung:
+//  · Das Blatt trägt `role="dialog"`. Im ARIA-Dialog-Muster schliesst Esc den
+//    Dialog (WCAG 2.1.2); jede App, jeder Browser tut das. Ein Dialog, der auf
+//    Esc etwas anderes macht, ist eine Falle.
+//  · Der alte Fall war zudem nur SCHEINBAR ein Sheet-Fall: `[data-v3-suchsprung]
+//    input` traf seit Ä19 das Feld im KOPF-Block, nicht im Blatt — das Blatt hatte
+//    gar keines. Gemessen 17.8.2026 @390 bei offenem Treffer-Blatt: Ctrl+K
+//    fokussierte das VERDECKTE Kopf-Feld, Tippen landete unsichtbar. Der Test war
+//    grün, während die Bedienung unerreichbar war.
+//  · WAS BLEIBT, ist der Kern von Pos. 14: Esc SPRINGT NICHT. Genau das prüft
+//    dieser Fall jetzt zusätzlich — der Scroll-Offset bleibt beim Schliessen
+//    stehen, und der Suchbegriff geht nicht verloren.
+//  · Das Leeren per Esc bleibt geprüft, wo das Feld NICHT in einem Dialog steht:
+//    Fälle (a)–(c) oben @1440 und `e2e/leser-v3-blatt.e2e.ts` (b) am Schluss.
+// ROT ZU BEKOMMEN (§6.7): in `v3/LeserRahmenV3.tsx` `escLeert={!blattOffen}` auf
+// `escLeert` setzen ⇒ das Blatt bleibt offen und der Begriff ist gelöscht.
+test.describe('A2 / Pos. 14 — im Blatt schliesst Esc den Dialog, ohne zu springen', () => {
+  test('(d) @390: Esc im Blatt-Feld schliesst das Blatt, Begriff und Scrollposition bleiben', async ({ page }) => {
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 780 })
     await page.goto('/gesetze/bund/STPO?leser=v3')
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
-    // ☰ öffnet Gliederung + Suchfeld gemeinsam (Kap. 4b: auf H liegen sie im
-    // selben Bottom-Sheet).
+    // ☰ öffnet die Gliederung als Blatt — und mit ihr das Such-/Sprungfeld, das
+    // dort seit A2 zuoberst steht (Ä18: eine Reihenfolge auf allen Breiten).
     const oeffner = page.locator('[data-v3-gliederung-auf]').first()
     await expect(oeffner).toBeVisible({ timeout: 20_000 })
     await oeffner.click()
-    const feld = suchFeld(page).first()
-    await expect(feld).toBeVisible({ timeout: 20_000 })
+    const blatt = page.locator('[data-gliederung-sheet]')
+    await expect(blatt).toBeVisible({ timeout: 20_000 })
+    const feld = blatt.locator('[data-v3-suchsprung] input')
+    await expect(feld, 'im Blatt steht kein Suchfeld — der Fokus müsste es verlassen')
+      .toHaveCount(1, { timeout: 20_000 })
 
     await feld.fill('Entschädigung')
     await feld.focus()
+    const vorher = await scrollY(page)
+
     await page.keyboard.press('Escape')
-    // Feld leer …
-    await expect(feld).toHaveValue('')
-    // … und das Sheet steht noch. `stopPropagation` im Feld hält den
-    // Tastendruck fest; sonst lägen «Feld leeren» und «Sheet schliessen» auf
-    // demselben Druck, und der Leser verlöre die Gliederung mit der Suche.
-    await expect(feld).toBeVisible()
+
+    // Der Dialog ist zu …
+    await expect(blatt, 'Esc hat das Blatt nicht geschlossen').toHaveCount(0, { timeout: 10_000 })
+    // … der Begriff steht weiterhin (Esc im Dialog schliesst, es löscht nicht) …
+    await expect(suchFeld(page).first()).toHaveValue('Entschädigung')
+    // … und NICHTS ist gesprungen (Kern von Pos. 14).
+    expect(await scrollY(page), 'das Schliessen hat gescrollt').toBe(vorher)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

@@ -501,6 +501,31 @@
     display: none;
   }
 
+  /* ── Ä1 (LESER-V3 H2b) · die Polsterung, die der V3-Kopf verschluckt ────────
+     Der Route-Wrapper polstert den Seiteninhalt oben (`py-8 sm:py-12` in
+     `components/layout/Shell.tsx`); im Split-View-Pane sind es `py-6`
+     (`components/layout/Pane.tsx`). Gemessen 17.8.2026 @1440 lagen dadurch 48 px
+     Leerzone zwischen Krumen-Leiste und V3-Kopf — die beim ersten Scroll auf 0
+     zusammenfielen, weil der Kopf dann klebt. Eine klebende Leiste soll aber in
+     JEDEM Zustand dasselbe Bild geben.
+     Der Wert steht HIER und nicht in der Komponente, weil er dem Wrapper gehört
+     und dessen Schwelle (640 px) teilen muss; `LeserKopf.tsx` liest ihn nur und
+     bleibt damit ohne Breakpoint- und ohne `imPane`-Zweig (Kap. 10). Den
+     Pane-Wert setzt der Rahmen inline — er ist der einzige Ort, der `imPane`
+     kennen darf.
+     ÄNDERT SICH EINE DER BEIDEN POLSTERUNGEN, wird `leser-v3-kopf-buendig.e2e.ts`
+     rot: die Spec misst die Lücke auf H/D/S gegen 0 statt sie zu behaupten. */
+  [data-leser-v3="rahmen"] { --leser-v3-kopf-luecke: 2rem; }
+  /* `theme('screens.sm')` statt einer rohen 640: der Wrapper schaltet mit dem
+     Tailwind-`sm`-Praefix (`py-8 sm:py-12`), also muss die Schwelle aus derselben
+     Quelle kommen (§5, D2 «keine Magic-Numbers») — dieselbe Schreibweise wie die
+     `not all and (min-width: theme('screens.sm'))`-Regel weiter unten. Eine rohe
+     Zahl loeste zudem den Waechter `src/tests/tap-ziel-token.test.ts` aus, der jede
+     nackte `min-width`-Zahl in dieser Datei meldet (gesehen 17.8.2026). */
+  @media (min-width: theme('screens.sm')) {
+    [data-leser-v3="rahmen"] { --leser-v3-kopf-luecke: 3rem; }
+  }
+
   /* ── LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Pkt. 4) ────────────────
      Befund: «Schriftgrössen-Regler wirkt auf die ganze Seite.» Ursache war der
      GLOBALE Steller (`useSchriftskala.ts`), der `font-size` am <html> setzt —
@@ -826,6 +851,40 @@
     outline: none; border-color: var(--brass-600);
     box-shadow: var(--ring); /* abgesetzter Doppelring — klar sichtbar auf Papier */
   }
+  /* ── Ä14 (LESER-V3 H2b) · EIN Fokusring statt drei Kanten ───────────────────
+     `.lc-input:focus` setzt drei Dinge zugleich: Rahmenfarbe, 2-px-Papier-Saum
+     und 2-px-Messingring (`--ring`). Gemessen am 32-px-Such-/Sprungfeld der
+     V3-Leiste ist das die auffälligste Fläche des ganzen Lesers. Diese Klasse
+     ersetzt den Doppelring durch EINEN 2-px-Ring in der Rolle `focus`
+     (Design-Grundlage Kap. 4) — nicht weniger sichtbar, nur einmal.
+     Sie steht NACH `.lc-input:focus` und trägt eine Klasse mehr, gewinnt also
+     ohne `!important`; betroffen ist nur, wer sie ausdrücklich trägt —
+     `.lc-input` bleibt für die ganze App unverändert (FL-4).
+     `outline` statt `box-shadow`: forced-colors zeichnet Outlines selbst, der
+     UA-Fallback weiter unten bleibt damit ohne Konkurrenz. */
+  /* ── Ä31 (H2b-Nachzug) · WIRKLICH EIN RING, NICHT ZWEI ─────────────────────
+     Ä14 nahm den `box-shadow` weg, liess aber `border-color: var(--focus)` und
+     `outline-offset: 1px` stehen. Gemessen 17.8.2026 am Feld der V3-Leiste:
+     `outline 2px solid rgb(130,98,37)` · `outline-offset 1px` · `border-top 1px
+     rgb(130,98,37)` — der 1-px-Spalt zwischen Feldrahmen und Outline macht aus
+     zwei messingfarbenen Kanten wieder zwei sichtbare Ringe. Ä14 war damit nur
+     «teilweise» erledigt, wie die Ästhetik-Prüfung notiert hat.
+     JETZT: der Rahmen bleibt im Fokus NEUTRAL (`--line`, unverändert gegenüber
+     dem Ruhezustand), der Ring sitzt ohne Spalt am Feld (`outline-offset: 0`).
+     Es gibt genau EINE Messing-Kante — die des Rings. */
+  .lc-input.lc-v3-feld:focus, .lc-input.lc-v3-feld:focus-visible {
+    border-color: var(--line);
+    box-shadow: none;
+    outline: 2px solid var(--focus);
+    outline-offset: 0;
+  }
+  /* ── Ä5 (LESER-V3 H2b) · Fläche des klebenden Leisten-Sockels ───────────────
+     Der Sockel muss OPAK sein (sonst läuft der Gliederungsbaum beim Scrollen
+     sichtbar darunter durch), darf aber nicht seine eigene Fläche behaupten: in
+     der Spalte liegt er auf `--paper`, im Bottom-Sheet auf `--paper-raised`
+     (gemessen 17.8.2026 als sichtbare Tonkante). Der BEHÄLTER setzt
+     `--leser-leiste-flaeche`; ohne Angabe bleibt es beim Vorzustand `--paper`. */
+  .lc-leiste-sockel { background: var(--leser-leiste-flaeche, var(--paper)); }
   /* LM-160/LM-165 (W2·17-UI-BEFUNDE B6, K-15): das `aria-invalid`-Attribut trägt
      bereits die a11y-Semantik (mehrere Formulare setzen es), aber ohne sichtbare
      Markierung blieb das fehlerhafte Feld optisch von jedem anderen ununterscheidbar
@@ -1208,6 +1267,19 @@
   details > summary::-webkit-details-marker { display: none; }
   details > summary::after { content: '  ▸'; color: var(--ink-400); font-size: .7em; }
   details[open] > summary::after { content: '  ▾'; }
+  /* ── Ä5/Ä27 (H2b-Nachzug) · NUR EIN DISCLOSURE-ZEICHEN ─────────────────────
+     Ä5 entfernte das hängende «·» aus der V3-Übersichtszeile, ihr zweites
+     hängendes Zeichen blieb: die Regel oben hängt an JEDE `<summary>` ein «▸»
+     ANS ENDE, und `v3/UebersichtBox.tsx` setzt bereits ein eigenes «▸» VORN,
+     das beim Aufklappen dreht. Gemessen 17.8.2026 (LugÜ @1440,
+     `getComputedStyle(el,'::after').content` = `"  ▸"`, dazu der Textknoten
+     «▸» im ersten Kind): das Zeichen war nicht weg, es war umgezogen.
+     GESTRICHEN wird das GLOBALE für diese eine Box, nicht das eigene: das
+     eigene sitzt vor dem Etikett (wo der Leser es erwartet), dreht sich statt
+     seinen Inhalt zu tauschen, und kann nicht als einzelnes Zeichen ans
+     Zeilenende umbrechen. Die App-weite Regel bleibt für alle anderen
+     `<details>` unverändert (FL-4). */
+  details[data-v3-uebersicht] > summary::after { content: none; }
 
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */

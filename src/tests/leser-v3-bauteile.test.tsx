@@ -231,11 +231,16 @@ describe('UebersichtBox — zu im Grundzustand, Zusammenfassung bleibt im DOM', 
       </UebersichtBox>,
     );
     const iWarnung = html.indexOf('data-marker-warnung');
-    // Der Kinder-Wrapper trägt die feste Klasse `border-t border-line px-2 py-2`
-    // (Quelle: UebersichtBox.tsx) — die Warnung muss VOR dessen Öffnungstag
-    // stehen, sonst wäre sie IN den Kindern verschachtelt statt eine eigene
-    // Zeile davor.
-    const iKinderWrapper = html.indexOf('class="border-t border-line px-2 py-2"');
+    // §6.3-DEKLARATION (H2b, Ä5): der Anker wandert, die geprüfte Sache nicht.
+    // Bis H2 hing dieser Test an der Klassen-Kette `border-t border-line px-2
+    // py-2` des Kinder-Wrappers. Ä5 hat die Box entrahmt (Weissraum statt Kasten,
+    // Design-Grundlage Kap. 8 Nr. 1) und dabei diese Klassen geändert — der Test
+    // wäre an einer GESTALTUNGS-Änderung gescheitert, obwohl die geprüfte
+    // STRUKTUR-Zusage («die Warnung steht VOR den Kindern, nicht darin») unberührt
+    // ist. Er hängt jetzt an der Identität `data-v3-uebersicht-inhalt`. Dieselbe
+    // Lehre wie der `data-fn-ref`-Fix aus H2: ein Wächter darf ein Element nicht
+    // über sein Aussehen suchen. Keine Assertion gelockert.
+    const iKinderWrapper = html.indexOf('data-v3-uebersicht-inhalt');
     expect(iWarnung).toBeGreaterThan(-1);
     expect(iKinderWrapper).toBeGreaterThan(-1);
     expect(iWarnung).toBeLessThan(iKinderWrapper);

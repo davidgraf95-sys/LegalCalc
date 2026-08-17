@@ -33,19 +33,43 @@ export function UebersichtBox({ zusammenfassung, warnung, children }: {
   children: ReactNode;
 }) {
   return (
-    <details data-v3-uebersicht className="group rounded-md border border-line bg-paper-sunken">
+    // ── Ä5 (H2b) · WEISSRAUM, DANN LINIE — KEIN KASTEN ────────────────────────
+    // Bis H2 war die Box ein gerahmter, getönter Kasten (`border border-line
+    // bg-paper-sunken`, gemessen 1 px rundum auf `paper-sunken`) und damit die
+    // einzige Fläche der Leiste, die aussah wie ein Bauteil. Design-Grundlage
+    // Kap. 8 Nr. 1 verbietet genau das: «Keine Rahmen/Boxen um jedes Element —
+    // Trennung über Weissraum, dann Linie». Und der Kasten war zugleich die
+    // Wurzel des zweiten Ä5-Befunds: er trug einen DRITTEN Farbton unter den
+    // klebenden Sockel (Sheet `paper-raised` · Sockel `paper` · Box
+    // `paper-sunken`, alle drei gemessen 17.8.2026) — gestapelte Töne, die beim
+    // Scrollen als wandernder Streifen sichtbar werden.
+    // Jetzt: keine Fläche, kein Rahmen. Die Zugehörigkeit trägt der Weissraum,
+    // die AUFGEKLAPPTE Box grenzt sich mit EINER Linie ab (`group-open`) — die
+    // war vorher als `border-t` im Inneren schon da und wird nur noch sichtbar,
+    // wenn es etwas abzugrenzen gibt.
+    <details data-v3-uebersicht className="group">
       <summary
         data-v3-uebersicht-zeile
-        className="flex cursor-pointer list-none items-start gap-1.5 rounded-md px-2 py-1.5 text-micro leading-snug text-ink-600 transition-colors hover:text-brass-700 [&::-webkit-details-marker]:hidden">
+        className="flex cursor-pointer list-none items-start gap-1.5 rounded-sm py-1 text-micro leading-snug text-ink-600 transition-colors hover:text-brass-700 [&::-webkit-details-marker]:hidden">
         <span aria-hidden className="mt-px shrink-0 transition-transform group-open:rotate-90">▸</span>
+        {/* Ä5 · das hängende «·» ist weg. Es stand zwischen «Übersicht» und einer
+            Zusammenfassung, die ihre Teile SELBST mit «·» fügt — ein vierter
+            Trenner derselben Zeichenform, der beim Umbruch als einzelnes Zeichen
+            am Zeilenende hing. Der Weissraum trennt Etikett und Werte
+            zuverlässiger als ein Zeichen, das umbrechen kann (Kap. 8 Nr. 8:
+            keine Dekoration ohne Funktion). */}
         <span className="min-w-0">
-          <span className="font-medium text-ink-700">Übersicht</span>
-          <span aria-hidden className="mx-1 text-ink-300">·</span>
+          <span className="font-medium text-ink-700">Übersicht</span>{' '}
           <span className="num [overflow-wrap:anywhere]">{zusammenfassung}</span>
         </span>
       </summary>
-      {warnung && <div className="px-2 pb-1.5">{warnung}</div>}
-      <div className="border-t border-line px-2 py-2">{children}</div>
+      {warnung && <div data-v3-uebersicht-warnung className="pb-1.5 pl-4">{warnung}</div>}
+      {/* `data-v3-uebersicht-inhalt` statt einer Klassen-Kette als Testanker: die
+          Reihenfolge «Warnung VOR den Kindern» ist eine Zusage über die Struktur
+          und darf nicht an Utility-Klassen hängen, die eine Gestaltungsänderung
+          mitnimmt (dieselbe Lehre wie der `data-fn-ref`-Fix in H2: eine Regel darf
+          ein Element nicht über sein Aussehen suchen). */}
+      <div data-v3-uebersicht-inhalt className="mt-1 border-t border-line pl-4 pt-2">{children}</div>
     </details>
   );
 }

@@ -82,7 +82,10 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
         ) : (
           <span className="truncate text-body-s font-medium text-ink-800">{label}</span>
         )}
-        {artikel && <span className="num shrink-0 text-micro font-medium text-ink-700">· {artikel}</span>}
+        {/* `data-ort-artikel` (Ä1, LESER-V3 H2b): Testanker der Ortsangabe —
+            Herleitung in `InhaltsKopf.tsx` und `e2e/leser-v3-ortsangabe.e2e.ts`.
+            Reine Kennzeichnung, keine Anzeige-Änderung. */}
+        {artikel && <span data-ort-artikel className="num shrink-0 text-micro font-medium text-ink-700">· {artikel}</span>}
         {stand && <span className="num shrink-0 text-micro text-ink-500">· Stand {stand}</span>}
         {rolle === 'primaer' && <span className="sr-only">(aktuelle Adresse)</span>}
       </div>

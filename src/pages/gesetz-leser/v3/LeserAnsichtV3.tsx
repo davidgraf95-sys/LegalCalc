@@ -146,7 +146,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
         aria-label="Ansicht"
         data-v3-ansicht
         className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
-        title="Darstellung: Fussnoten · Änderungsvermerke · Rechtsprechung im Text · Schriftgrösse"
+        title="Darstellung: Fussnoten · Änderungsvermerke · Rechtsprechung im Text · Grösse des Gesetzestexts"
       >
         {kompakt
           ? <span aria-hidden>···</span>
@@ -213,15 +213,38 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl }: {
               TREUE-GRENZE gehalten: die Vorgabestufe emittiert gar keine
               Deklaration (`:not()` im Selektor), der Normtext bleibt exakt
               1.125 rem — der Pixelvergleich PX läuft mit der Änderung 4/4 grün. */}
-          <div role="group" aria-label="Schriftgrösse" className="mt-1 flex items-center justify-between gap-3 border-t border-line px-2.5 pb-0.5 pt-2">
-            <span className="text-body-s text-ink-700">Schriftgrösse</span>
+          {/* ── Ä9 (H2b) · ZWEI STELLER, ZWEI NAMEN ──────────────────────────
+              BEFUND, gemessen 17.8.2026 @1440 im Leser: ZWEI Regler mit
+              `role="group"` und dem IDENTISCHEN Namen «Schriftgrösse» —
+              einer in der Topbar (global, `useSchriftskala`), einer hier. Beide
+              zeigten «A− 100 % A+». Der Nutzer konnte nicht wissen, welcher was
+              tut; ein Screenreader las zweimal dasselbe.
+              WAS H2 SCHON GELÖST HAT: die Stellen sind nicht mehr dieselbe Frage
+              — der globale skaliert die ganze Anwendung (WCAG 1.4.4), dieser nur
+              den Normtext (`leserSchrift.ts`). Es blieb ein BENENNUNGS-Fehler.
+              WARUM DER GLOBALE REGLER IM LESER NICHT VERSCHWINDET (Entscheid
+              H2b, im Vollzugsvermerk deklariert): ihn im Leser auszublenden hätte
+              genau zwei Wege — (a) an einen Leser-Pfad gebunden: dann verliert die
+              EINGEFRORENE Ist-Hülle ihren einzigen Schriftregler, denn sie hat
+              keinen eigenen (FL-4-Bruch); (b) an das V3-Flag gebunden: dann wüsste
+              die App-Topbar vom Flag, dessen Schaltpunkt ausdrücklich die eine
+              Fassade ist (FL-1). Beide Wege kosten mehr, als der Befund wiegt.
+              Behoben wird darum die Ursache der Verwechslung: dieser Regler sagt,
+              WAS er vergrössert. «Im Leser nur EIN Regler für den Gesetzestext»
+              ist damit erfüllt; der zweite ist ein anderes Werkzeug mit anderem
+              Namen. Ob der App-Regler im Leser dennoch weichen soll, entscheidet
+              David (Vollzugsvermerk, offener Punkt). */}
+          <div role="group" aria-label="Grösse des Gesetzestexts" className="mt-1 flex items-center justify-between gap-3 border-t border-line px-2.5 pb-0.5 pt-2">
+            <span className="text-body-s text-ink-700">Gesetzestext</span>
             <span className="inline-flex items-center gap-0.5 rounded-md border border-line">
               <button type="button" onClick={schrift.kleiner} disabled={!schrift.kannKleiner}
-                aria-label="Schrift verkleinern" title="Schrift verkleinern"
+                aria-label="Gesetzestext verkleinern" title="Gesetzestext verkleinern — die Anwendung bleibt gleich gross"
+                data-v3-schrift="kleiner"
                 className="min-h-6 px-2 py-1 text-xs text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A−</button>
               <span aria-hidden className="num min-w-[2.6rem] text-center text-micro text-ink-500">{schrift.prozent} %</span>
               <button type="button" onClick={schrift.groesser} disabled={!schrift.kannGroesser}
-                aria-label="Schrift vergrössern" title="Schrift vergrössern"
+                aria-label="Gesetzestext vergrössern" title="Gesetzestext vergrössern — die Anwendung bleibt gleich gross"
+                data-v3-schrift="groesser"
                 className="min-h-6 px-2 py-1 text-xs text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A+</button>
             </span>
           </div>

@@ -38,23 +38,24 @@ function fehlerSammeln(page: Page): string[] {
 const normtext = (page: Page) => page.locator('#art-1 .text-body-l').first()
 const kopf = (page: Page) => page.locator('[data-v3-kopf]')
 const leiste = (page: Page) => page.locator('[data-v3-aside]')
-// Ä9 (Ästhetik-Review 16.8.2026) BEISST HIER: «A+» gibt es ZWEIMAL — in der
-// App-Leiste (globaler Regler, wirkt absichtlich auf die ganze Seite) und im
-// Ansicht-Menü des Lesers (neuer Leser-Regler). Ein `getByRole`-Treffer ohne
-// Bezugsraum erwischt @1440 den APP-Regler, und der Test misst dann korrekt
-// dessen globale Wirkung — und meldet sie als Fehlschlag des Leser-Reglers.
-// Der Selektor ist darum auf das Ansicht-Panel eingeschränkt. Dass zwei gleich
-// beschriftete Knöpfe nebeneinander stehen, bleibt der offene Befund Ä9.
-// BEIDE Knöpfe müssen gescopt sein, nicht nur «A+». `Schrift verkleinern` gibt
-// es ebenfalls zweimal (`components/layout/Topbar.tsx` und
-// `v3/LeserAnsichtV3.tsx`); ungescopt bediente der Rückweg dieser Spec den
-// APP-Regler, während der Hinweg den Leser-Regler bediente. Der Test hätte dann
-// zwei verschiedene Steller gegeneinander gemessen und den Fehlschlag dem
-// falschen zugeschrieben. Gefunden 16.8.2026, als der Hinweg zum ersten Mal
-// überhaupt bis zum Rückweg durchlief.
+// Ä9 (Ästhetik-Review H1) BISS HIER — mit H2b ist die Ursache behoben.
+// VORGESCHICHTE: «Schrift vergrössern»/«Schrift verkleinern» gab es ZWEIMAL mit
+// identischem Namen — in der App-Leiste (`components/layout/Topbar.tsx`, global,
+// WCAG 1.4.4) und im Ansicht-Menü des Lesers (`v3/LeserAnsichtV3.tsx`, nur
+// Normtext). Ein `getByRole`-Treffer ohne Bezugsraum erwischte @1440 den
+// APP-Regler; der Rückweg dieser Spec bediente dann einen anderen Steller als der
+// Hinweg und schrieb den Fehlschlag dem falschen zu (gefunden 16.8.2026, als der
+// Hinweg zum ersten Mal überhaupt bis zum Rückweg durchlief).
+// H2b: der Leser-Regler heisst jetzt «Gesetzestext vergrössern/verkleinern»,
+// seine Gruppe «Grösse des Gesetzestexts» — beide Namen kommen im Dokument je
+// genau einmal vor (gemessen 17.8.2026: `[role=group][aria-label=
+// "Schriftgrösse"]` bleibt bei 1, auch mit offenem Panel; vorher 2).
+// DER PANEL-SCOPE BLEIBT: er sagt zusätzlich aus, dass der Regler DORT steht
+// (Ä9: «im Leser nur EIN Regler, und zwar im Ansicht-Menü»). Ein eindeutiger Name
+// allein bewiese den Ort nicht — der Test ist damit schärfer, nicht lockerer.
 const panel = (page: Page) => page.locator('[data-v3-ansicht-panel]')
-const groesser = (page: Page) => panel(page).getByRole('button', { name: 'Schrift vergrössern' })
-const kleiner = (page: Page) => panel(page).getByRole('button', { name: 'Schrift verkleinern' })
+const groesser = (page: Page) => panel(page).getByRole('button', { name: 'Gesetzestext vergrössern' })
+const kleiner = (page: Page) => panel(page).getByRole('button', { name: 'Gesetzestext verkleinern' })
 
 async function schriftgroesse(wahl: ReturnType<typeof normtext>): Promise<number> {
   return wahl.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))

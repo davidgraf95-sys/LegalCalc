@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
-import { badgesFuer, type ArtikelFundstelle, type LeserTreffer, type SuchBereich } from '../leserSuche';
+import { badgesFuer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
 import { SuchBereichWahl } from './SuchBereichWahl';
+import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 
 // ═══ Trefferliste V3 — Verzeichnis in Erlass-Reihenfolge (H2, Kap. 4b Pos. 5) ═
 //
@@ -46,6 +47,15 @@ export interface LeserTrefferListeProps {
   treffer: LeserTreffer[];
   begriff: string;
   fundstellen: number;
+  /** Ä23 (H2b) · Zähl-Substantiv aus dem Datenmodell: kantonale Erlasse zählen
+   *  «Paragraphen», nicht «Artikel». Es stand hier an ZWEI Stellen als Literal —
+   *  gemessen 17.8.2026 an ZH-211.11: «9 Artikel · 15 Fundstellen» in einem
+   *  Erlass, der durchweg «§» führt. Kein Vorgabewert: ein stiller Rückfall auf
+   *  «Artikel» wäre genau der Bund-Standard, den die Erlass-Neutralität
+   *  ausschliesst (Fundament-Auflage 2) — der Aufrufer MUSS sich äussern.
+   *  B8 (H2b-Nachzug): Typ und Zählform kommen aus `./erlassAnsicht`, nicht mehr
+   *  als Literal-Union je Datei. */
+  bestimmungsWort: BestimmungsWort;
   fussnotenAus: boolean;
   /** 0-basierte laufende Fundstelle der ↑↓-Navigation; -1 = noch keine. */
   position: number;
@@ -63,9 +73,11 @@ export interface LeserTrefferListeProps {
   onSprungStelle: (token: string, rang: number) => void;
 }
 
-/** Ein Kontext-Schnipsel mit markiertem Begriff — aus den QUELL-Strings. */
-function Schnipsel({ f }: { f: ArtikelFundstelle }) {
-  const a = f.ausschnitt;
+/** Ein Kontext-Schnipsel mit markiertem Begriff — aus den QUELL-Strings.
+ *  Nimmt den `Ausschnitt` selbst, nicht die Fundstelle drumherum: Ä17 zeigt
+ *  denselben Baustein auch für den Artikel-Ausschnitt (`LeserTreffer.ausschnitt`),
+ *  der zu keiner einzelnen `ArtikelFundstelle` gehört. */
+function Schnipsel({ a }: { a: Ausschnitt }) {
   return (
     // `[overflow-wrap:anywhere]`: echter Fliesstext-Auszug, kein kontrolliertes
     // Label — ein unbrechbares Lauftext-Fragment sprengte sonst den Scroller.
@@ -76,7 +88,7 @@ function Schnipsel({ f }: { f: ArtikelFundstelle }) {
 }
 
 export function LeserTrefferListe({
-  treffer, begriff, fundstellen, fussnotenAus, position, aktivStelle,
+  treffer, begriff, fundstellen, bestimmungsWort, fussnotenAus, position, aktivStelle,
   bereich, setzeBereich, fundstellenFuer, onZurueck, onVor, onSprung, onSprungStelle,
 }: LeserTrefferListeProps) {
   const hatSprung = fundstellen > 0;
@@ -117,12 +129,48 @@ export function LeserTrefferListe({
         style={{ top: 'var(--toc-deckel, 0px)' }}
         className="sticky z-10 space-y-1 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
         <SuchBereichWahl wert={bereich} setzeWert={setzeBereich} />
-        <div className="flex items-center gap-1">
-          <p className="min-h-5 min-w-0 flex-1 truncate">
-            <span className="num">{treffer.length}</span> Artikel
-            <span aria-hidden className="mx-1 text-ink-300">·</span>
-            <span className="num">{fundstellen}</span>
-            {fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}
+        <div className="flex items-start gap-1">
+          {/* ── Ä15 (H2b) · KEINE ELLIPSE AN EINER KERNAUSKUNFT ────────────────
+              Gemessen 17.8.2026 in der 280-px-Leiste: «49 Artikel · 110
+              Fundstellen» braucht 176 px in einer 148 px breiten Zelle — das
+              `truncate` schnitt genau die Zahl weg, um die es geht. §8 verbietet
+              das: eine Kernauskunft wird umgebrochen oder gekürzt, nie
+              angeschnitten.
+              GEWÄHLT: Umbruch, nicht Abkürzung. «9 Art. · 15 Stellen» spart drei
+              Zeichen und kostet die Ehrlichkeit der Zahl («Stellen» ist keine
+              amtliche Einheit); die zweite Zeile kostet 16 px in einer Zone, die
+              nur während einer Suche existiert. `min-h-5` bleibt als
+              Ein-Zeilen-Reservierung — der Umbruch tritt erst ein, wenn die Zahl
+              ihn braucht, und dann durch eine Nutzer-Eingabe (§15.2). */}
+          {/* ── Ä30 (H2b-Nachzug) · DER UMBRUCH SITZT AM TRENNER ──────────────
+              Ä15 erlaubte den Umbruch statt der Ellipse — aber ohne zu sagen, WO.
+              Gemessen 17.8.2026 an BS-154.125 («Gericht»): der Browser brach
+              irgendwo, «15 Paragraphen · 62 Fundstellen» stand zweizeilig mit
+              «Paragraphen» allein in Zeile 2, an langen Wörtern auch dreizeilig
+              («285 / Paragraphen · 2203 / Fundstellen»). Eine Zahl von ihrer
+              Einheit zu trennen ist an einer Kernauskunft dasselbe Übel wie die
+              Ellipse (§8).
+              JETZT: jedes Segment «Zahl + Einheit» ist ein eigener,
+              nicht-umbrechbarer Block (`whitespace-nowrap`), und es gibt GENAU
+              EINE Bruchstelle — die hinter dem Trenner «·».
+              Zwei Punkte, die dabei gemessen werden mussten:
+              (1) Der Trenner klebt am ERSTEN Segment, nicht zwischen den beiden.
+              Stünde er frei, könnte er als einzelnes Zeichen an den Anfang der
+              zweiten Zeile rutschen — genau das hängende Zeichen, das Ä5 aus der
+              Übersichtszeile entfernt hat.
+              (2) Die Leerzeichen um den Trenner sind ECHTE Textknoten (`{' '}`),
+              nicht `mx-1`. Ohne sie hat die Zeile GAR KEINE Bruchstelle: JSX
+              verschluckt Zeilenumbrüche zwischen Elementen, der Absatz kann
+              nicht umbrechen, und dann ellipsiert er wieder — gemessen 17.8.2026
+              an der StPO/«Kosten» mit `mx-1`: 176 px in 148 px, Höhe 20 px, also
+              EINE Zeile mit Überlauf. Der Ä30-Fix hätte damit Ä15 gebrochen. */}
+          <p className="min-h-5 min-w-0 flex-1 leading-snug">
+            <span className="whitespace-nowrap">
+              <span className="num">{treffer.length}</span> {zaehlform(treffer.length, bestimmungsWort)}
+              {' '}<span aria-hidden className="text-ink-300">·</span>
+            </span>
+            {' '}
+            <span className="whitespace-nowrap"><span className="num">{fundstellen}</span>{fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}</span>
           </p>
           {hatSprung && (
             <>
@@ -150,7 +198,10 @@ export function LeserTrefferListe({
         // §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
         // Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
         <p className="px-1 py-2 text-body-s text-ink-500">
-          Kein Artikel gefunden für «{begriff}»
+          {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. B8: die Einzahl
+              kommt aus derselben `zaehlform` wie oben — hier stand sonst eine
+              dritte Schreibweise derselben Regel. */}
+          Kein {zaehlform(1, bestimmungsWort)} gefunden für «{begriff}»
           {bereich !== 'alles' && <> im gewählten Suchbereich</>}.
         </p>
       )}
@@ -182,13 +233,48 @@ export function LeserTrefferListe({
                   aria-current={aktiv ? 'location' : undefined}
                   aria-expanded={offen}
                   className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'hover:bg-paper-sunken/60'}`}>
+                  {/* ── Ä10/Ä26 (H2b-Nachzug) · DAS ETIKETT SPRENGT DIE LEISTE NICHT
+                      Gemessen 17.8.2026 (LugÜ, Suche «Gericht»): `shrink-0` am
+                      Etikett war für «Art. 47» richtig und für Anhänge falsch —
+                      «Protokoll 1 über bestimmte Zuständigkeits-, Verfahrens- und
+                      Vollstreckungsfragen» ist 80 Zeichen lang und trug den
+                      Scroller auf `scrollWidth` **699 px in `clientWidth` 280 px**
+                      (Blatt @390 ebenso: 699/366). Der Fundstellen-Zähler rechts
+                      lag damit hunderte Pixel ausserhalb des Sichtfelds — die
+                      Leiste hatte einen horizontalen Scroller, den sie ausdrücklich
+                      nicht haben darf (`overflow-x-hidden`, S9-Zusage).
+                      JETZT: das Etikett darf schrumpfen (`min-w-0 truncate`, voller
+                      Wortlaut im `title` und im Erlass selbst), der ZÄHLER behält
+                      `shrink-0` und bleibt sichtbar — er ist die Auskunft, die die
+                      Zeile hier gibt. Der Randtitel gibt weiterhin zuerst nach:
+                      er hat `flex-1`, das Etikett nicht. */}
                   <span className="flex items-baseline gap-2">
-                    <span className="num shrink-0 text-body-s font-semibold text-ink-800">{t.label}</span>
+                    <span className="num min-w-0 truncate text-body-s font-semibold text-ink-800" title={t.label}>{t.label}</span>
                     {t.randtitel && (
                       <span className="min-w-0 flex-1 truncate font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
                     )}
                     <span className="ml-auto shrink-0 text-micro tabular-nums text-ink-500">{t.fundstellen}</span>
                   </span>
+                  {/* ── Ä17 (H2b) · DER SCHNIPSEL IST ZURÜCK ────────────────────
+                      Gemessen 17.8.2026: im Ruhezustand zeigte die Liste NULL
+                      Kontext-Ausschnitte («Art. 47 · Kosten · 4»), V1 zeigte je
+                      Zeile einen. Damit war die Liste ein Verzeichnis von
+                      Nummern: man musste jeden Artikel aufklappen, um zu sehen,
+                      ob er die gesuchte Stelle trägt — 49 Klicks für eine
+                      Sichtprüfung, die vorher ein Blick war.
+                      Gezeigt wird der Ausschnitt, den `LeserTreffer` OHNEHIN
+                      trägt (`ausschnitt`, erste bzw. stärkste Fundstelle,
+                      leserSuche.ts) — kein zusätzlicher Lauf, keine zweite
+                      Quelle, kein Preis (§15): `fundstellenFuer` bleibt dem
+                      aufgeklappten Artikel vorbehalten.
+                      NUR im zugeklappten Zustand: aufgeklappt steht dieselbe
+                      Stelle als Zeile mit Rang 1 darunter, und zweimal derselbe
+                      Ausschnitt wäre eine Dopplung (§5). */}
+                  {!offen && t.ausschnitt && (
+                    <span data-treffer-schnipsel className="mt-0.5 flex">
+                      <Schnipsel a={t.ausschnitt} />
+                    </span>
+                  )}
                   {badges.length > 0 && (
                     // Herkunfts-Badge: SICHTBARER Text, nie nur `title` — der
                     // Leser sieht, warum der Artikel trifft, auch wenn im
@@ -217,7 +303,7 @@ export function LeserTrefferListe({
                             className={`flex w-full items-baseline gap-1.5 rounded px-1.5 py-1 text-left transition-colors ${
                               stelleAktiv ? 'bg-brass-100/60' : 'hover:bg-paper-sunken/60'}`}>
                             <span aria-hidden className="shrink-0 text-micro tabular-nums text-ink-400">{f.rang + 1}</span>
-                            <Schnipsel f={f} />
+                            <Schnipsel a={f.ausschnitt} />
                           </button>
                         </li>
                       );

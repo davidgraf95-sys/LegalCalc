@@ -21,7 +21,8 @@ import { useRef, type RefObject } from 'react';
 // `setSuche('')`: jeder Sprung-Aufruf, auch ein «zurück an den Anfang», wäre
 // eine Bewegung, die niemand angefordert hat. `stopPropagation` hält den
 // Tastendruck zudem beim Feld — ein Esc, das die Trefferliste leert, soll nicht
-// zusätzlich das Sheet schliessen, in dem das Feld steht.
+// zusätzlich ein Overlay schliessen. AUSNAHME seit A2 (H2b-Nachzug): steht das
+// Feld IN einem modalen Blatt, gehört Esc dem Dialog (`escLeert={false}`).
 //
 // `⌘K`/`Ctrl+K` und `/` liegen NICHT hier, sondern im Rahmen
 // (`./suchKuerzel`): das Feld ist bei zugeklappter Spalte gar nicht im DOM, ein
@@ -29,9 +30,13 @@ import { useRef, type RefObject } from 'react';
 
 export function SuchSprungFeld({
   wert, setzeWert, loeseArtikel, onSprung, feldRef, onVor, onZurueck, hatTreffer = false,
+  platzhalter = 'Im Gesetz suchen …', escLeert = true,
 }: {
   wert: string;
   setzeWert: (v: string) => void;
+  /** Ä20 (H2b) — Platzhalter, aus dem Erlass abgeleitet (`erlassAnsicht.suchPlatzhalter`).
+   *  Vorgabe ohne Beispiel: ein §-Erlass soll nie «Art. 429» angeboten bekommen. */
+  platzhalter?: string;
   /** «Art. 429» → Token, sonst `null`. Fehlt sie (Snapshot noch nicht da),
    *  bleibt das Feld eine reine Suche — nie ein totes Sprung-Versprechen (§8). */
   loeseArtikel?: (eingabe: string) => string | null;
@@ -44,6 +49,18 @@ export function SuchSprungFeld({
   /** Gibt es überhaupt Fundstellen? Ohne sie tun ↑↓ und Enter nichts — und das
    *  Feld verspricht sie dann auch nicht (§8). */
   hatTreffer?: boolean;
+  /** ── A2 (H2b-Nachzug) · WEM GEHÖRT `Esc`? ─────────────────────────────────
+   *  Vorgabe `true` = das Ist-Verhalten von Pos. 14: Esc leert das Feld, springt
+   *  nicht, und hält den Tastendruck bei sich (`stopPropagation`).
+   *
+   *  `false` setzt der Aufrufer dort, wo das Feld IN einem modalen Blatt steht.
+   *  Dann gewinnt der Dialog: Esc schliesst ihn (ARIA-Dialog-Pattern, WCAG 2.1.2)
+   *  statt still den Suchbegriff zu löschen. GEMESSEN 17.8.2026 @390 mit offenem
+   *  Treffer-Blatt: Esc leerte das Feld und liess das Blatt offen stehen — der
+   *  Leser drückte die Taste, die jeden Dialog schliesst, und verlor stattdessen
+   *  seine Eingabe. Geleert wird im Blatt über das ✕ am Feld, das dort sichtbar
+   *  neben der Eingabe steht. */
+  escLeert?: boolean;
 }) {
   const eigenerRef = useRef<HTMLInputElement>(null);
   const ref = feldRef ?? eigenerRef;
@@ -55,14 +72,36 @@ export function SuchSprungFeld({
       <div className="relative">
         <input
           ref={ref}
-          type="search"
+          // ── Ä16 (H2b) · EINE LÖSCHUNG, NICHT ZWEI ───────────────────────────
+          // Gemessen 17.8.2026: das Feld war `type="search"`, Chromium malt dazu
+          // seinen eigenen `::-webkit-search-cancel-button`, und daneben stand
+          // `data-v3-such-leeren` — zwei ✕ mit derselben Wirkung, eines davon
+          // ohne zugänglichen Namen und ohne 24-px-Trefferfläche.
+          // GEWÄHLT: `type="text"` statt einer `appearance:none`-Regel auf dem
+          // UA-Pseudoelement. Der Grund ist nicht Geschmack — eine Regel gegen
+          // ein herstellereigenes Pseudoelement bewacht niemand, sie fällt
+          // stillschweigend aus, sobald ein Browser sie umbenennt, und sie müsste
+          // je Engine wiederholt werden. `type="text"` entfernt die Ursache statt
+          // ihre Wirkung zu übermalen. Was `type="search"` beitrug, wird
+          // ausdrücklich ersetzt: `role="searchbox"` trägt die Semantik,
+          // `inputMode`/`enterKeyHint` die mobile Tastatur — das Feldverhalten
+          // (Esc leert, Enter springt/rückt vor) liegt seit je im `onKeyDown`
+          // dieser Datei und nie beim UA.
+          type="text"
+          role="searchbox"
+          inputMode="search"
+          enterKeyHint="search"
+          autoComplete="off"
+          spellCheck={false}
           value={wert}
           onChange={(e) => setzeWert(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Escape') {
+            if (e.key === 'Escape' && escLeert) {
               // Kein Sprung, kein Scroll — nur leeren (Pos. 14). Und nicht
-              // weiterreichen: im Sheet läge sonst «Feld leeren» und «Sheet
+              // weiterreichen: sonst läge «Feld leeren» und «umgebendes Overlay
               // schliessen» auf demselben Tastendruck.
+              // A2: steht das Feld in einem modalen Blatt, ist `escLeert` false —
+              // dann läuft dieser Zweig gar nicht und Esc erreicht den Dialog.
               e.preventDefault();
               e.stopPropagation();
               setzeWert('');
@@ -89,16 +128,28 @@ export function SuchSprungFeld({
               else if (hatTreffer) onVor?.();
             }
           }}
-          placeholder="Suchen oder «Art. 429» …"
-          aria-label="Im Gesetz suchen oder zu einem Artikel springen"
+          placeholder={platzhalter}
+          aria-label="Im Gesetz suchen oder zu einer Bestimmung springen"
           aria-describedby={token ? 'v3-sprung-hinweis' : undefined}
           // `pr-16` bzw. `pr-8`: Platz für ✕ und ⌘K, damit lange Eingaben nicht
           // unter den Bedienzeichen verschwinden.
-          className={`lc-input h-8 w-full min-w-0 py-0 pl-2.5 text-body-s ${wert !== '' ? 'pr-16 sm:pr-20' : 'pr-8 sm:pr-10'}`}
+          //
+          // ── Ä14 (H2b) · EIN 2-px-RING IN DER FOKUS-ROLLE ─────────────────────
+          // `.lc-input` setzt im Fokus DREI Dinge zugleich: Rahmenfarbe auf
+          // `brass-600`, dazu `--ring` = `0 0 0 2px var(--surface), 0 0 0 4px
+          // var(--focus)` — gemessen also ein 2-px-Papier-Saum PLUS ein 2-px-
+          // Messingring PLUS eine dritte Kante am Feldrahmen. Auf einem 32-px-Feld
+          // in einer 280-px-Leiste ist das die auffälligste Fläche des ganzen
+          // Lesers. `.lc-v3-feld` ersetzt den Doppelring durch EINEN 2-px-Ring in
+          // der Rolle `focus` (Design-Grundlage Kap. 4) — nicht weniger sichtbar,
+          // nur einmal. Eigene Klasse statt Änderung an `.lc-input`: das Feld ist
+          // V3-Bestand, `.lc-input` trägt die ganze App (FL-4).
+          className={`lc-input lc-v3-feld h-8 w-full min-w-0 py-0 pl-2.5 text-body-s ${wert !== '' ? 'pr-16 sm:pr-20' : 'pr-8 sm:pr-10'}`}
         />
-        {/* ✕ — sichtbar und mit Namen, statt sich auf das native Kreuz von
-            `type="search"` zu verlassen: das erscheint je nach Browser gar
-            nicht, trägt keinen zugänglichen Namen und ist kein 44-px-Ziel.
+        {/* ✕ — sichtbar und mit Namen. Es ist seit Ä16 (H2b) das EINZIGE: das
+            native Kreuz von `type="search"` erschien je nach Browser gar nicht,
+            trug keinen zugänglichen Namen und war kein 44-px-Ziel — darum trägt
+            das Feld jetzt `type="text"` und dieser Knopf die Löschung allein.
             WICHTIG (Pos. 14): der Knopf leert NUR. Kein Sprung, kein Scroll,
             kein Fokusverlust — der Fokus bleibt im Feld, damit die nächste
             Eingabe ohne Umweg beginnt. */}
