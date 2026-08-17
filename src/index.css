@@ -378,7 +378,8 @@
   html { -webkit-tap-highlight-color: transparent; }
   :focus:not(:focus-visible) { outline: none; }
 
-  /* ── W2·5d G2a: Leser-Options-Leiste (Fussnoten/Verweise) ─────────────────
+  /* ── W2·5d G2a: Leser-Options-Toggles (seit S1: Fussnoten · Änderungsvermerke
+        · Rechtsprechung im Text; «Verweise» ersatzlos entfallen) ─────────────
      Rein visuelle Darstellungs-Toggles (leserOptionen.tsx) — data-*-Attribute am
      <html>, hier per CSS ausgewertet. Default 'an' = KEINE Regel greift = heutige
      Darstellung byte-gleich (R6). Alle Regeln auf `.lc-leser` gescopt, damit NUR
