@@ -81,14 +81,69 @@ const N_SPECS = [
 ]
 
 // ── Auf die ALTE Hülle gepinnt, bis H5 sie löscht ───────────────────────────
-// Diese Specs sagen etwas über die Ist-Hülle aus, das in V3 kein Gegenstück hat
-// und auch keines bekommen soll — sie sterben mit `leser-v1`, nicht vorher.
-// Wer hier etwas einträgt, verlängert die Lebenszeit von V1-Code; die Liste ist
-// darum bewusst kurz und jede Zeile nennt ihren Grund.
-const V1_PINNED: string[] = [
-  // (H4: leer — jede B-Spec ist entweder umgehängt, hüllenneutral oder als
-  // Doppelung gelöscht. Belegt im Kontaktbogen H4 §7, Spalte «Verdikt».)
+// Diese Specs prüfen einen MONTAGEPUNKT der Ist-Hülle, den V3 planmässig
+// aufgegeben hat — die Rechtsprechungs-/Materialien-Auskunft steht in V3 nicht
+// mehr am Artikelfuss und nicht mehr im Gliederungs-Scroller, sondern im Panel
+// (Kap. 4d, Pos. 12). Die geprüfte SACHE lebt weiter, ihr Ort nicht.
+//
+// WARUM PINNEN UND NICHT UMHÄNGEN: die Fälle messen Wirkung an genau diesem Ort
+// (Zähler «5 von 16» an der Zeile unter dem Artikel, Kontextfenster im
+// `[data-toc]`-Scroller). Auf V3 umgeschrieben wären sie keine geänderten,
+// sondern NEUE Tests — und die gehören zu den `leser-v3-*`-Specs, nicht in eine
+// Ist-Hüllen-Datei, die H5 löscht. Gepinnt bleiben sie bis dahin scharf: die
+// alte Hülle ist bis H5 der freigegebene Rückweg und darf nicht unbewacht sein.
+//
+// H5-AUFLAGE, damit hier nichts still verschwindet: was diese Dateien an der
+// V1-Zeile prüfen und **keine** `leser-v3-*`-Spec am Panel prüft, ist im
+// Kontaktbogen H4 §7 als Deckungslücke benannt. H5 löscht die Dateien erst,
+// wenn die Lücke geschlossen ist.
+//
+// GEMESSEN, nicht vermutet: Voll-Lauf `--project=chromium` am Flip-Stand
+// 18.8.2026 (634 Tests, 47 rot) — die Zuordnung unten folgt diesem Lauf.
+
+// (a) GANZE Datei ist Ist-Hüllen-Struktur ⇒ läuft NUR im Rückweg-Projekt.
+const V1_NUR = [
+  // 6/6 rot: `[data-rechtsprechung-menu]` (Chip-Menü der Ist-Hülle) und
+  // `[data-bezuege-zeile]` am Artikelfuss. V3-Seite: `leser-v3-panel-facetten`.
+  '**/bezuege-facetten-b4.e2e.ts',
+  // 12/12 rot: derselbe Montagepunkt plus der Zeitstrahl am Chip-Menü.
+  '**/bezuege-zeitstrahl-b5.e2e.ts',
+  // 3/3 rot: das Kontextfenster IM `[data-toc]`-Scroller (E4-Korrektur David
+  // 25.7.2026). V3 hat dort keinen Scroller-Nachbar mehr; V3-Seite:
+  // `leser-v3-kontext-cls`.
+  '**/leser-kontext-e4.e2e.ts',
+  // 2/2 rot: das mobile Suchfeld liegt in der Ist-Hülle hinter einem Knopf
+  // («Im Gesetz suchen»), den V3 nicht hat — dort steht das Feld immer im
+  // klebenden Kopf-Block. V3-Seite: `leser-v3-suchfeld-ueberall` (b) für den
+  // Ort, `leser-v3-blatt` + `leser-v3-treffer-reihenfolge` für die Trefferliste.
+  '**/leser-trefferliste-overlay-mobil-w219.e2e.ts',
+  // 2/2 rot: BEIDE Fälle brauchen als Einstieg das ⧉ «nebeneinander öffnen» an
+  // der Bezüge-Zeile unter dem Artikel — mit Pos. 12 aufgegeben; V3 verlinkt im
+  // Panel, es öffnet dort nicht daneben. Bug 1 misst zudem eine Mechanik der
+  // alten Hülle (Seed-Hash beim imPane-Wechsel). V3-Seite: `leser-kopf-paritaet`
+  // (Split über NormPopover, V3-Kopf im Pane) und `leser-v3-highlight-split`.
+  // H5-Auflage: A34/Bug1 (Leseposition beim Öffnen) und Bug2 («Ansicht» bleibt
+  // im Split sichtbar) brauchen ein V3-Gegenstück mit V3-Einstieg.
+  '**/split-view-a34.e2e.ts',
 ]
+
+// (b) GEMISCHTE Datei: V3-taugliche Fälle daneben. Sie läuft in BEIDEN
+//     Projekten; die Ist-Hüllen-Fälle tragen im Test einen projekt-abhängigen
+//     `test.skip` mit Begründung (Muster: `leser-v3-umschalten` (c)). So bleibt
+//     jeder grüne Fall im Regelprojekt scharf, statt die ganze Datei zu
+//     verschieben.
+const V1_GEMISCHT = [
+  '**/leitfaelle-chips.e2e.ts',        // 3/6 rot (Auflistung + Kurztext-Popover am Chip)
+  '**/verzahnung.e2e.ts',              // 6/11 rot (Kontextgruppen am Artikelfuss)
+  '**/normrevision-badge.e2e.ts',      // 2/3 rot (↻-Badge an der Leitfall-Zeile)
+  '**/materialien-m5-verzahnung.e2e.ts', // 2/3 rot (Materialien-Gruppe im Kontextfenster)
+  '**/rechtsprechung.e2e.ts',          // 1/n rot (Kontext-Panel-Gruppe im Reader)
+  '**/leser-breite-a37.e2e.ts',        // 1/3 rot (Spaltenmass der 2-Spalten-Zelle der Ist-Hülle)
+  '**/druck-fundstellen-z2.e2e.ts',    // 1/7 rot (⧉ an der Bezüge-Zeile als Split-Einstieg)
+  '**/leser-weiterlesen-r4-r8.e2e.ts', // 1/10 rot (Vorrang der Kopf-Suche auf «/» und ⌘K)
+]
+
+const V1_PINNED = [...V1_NUR, ...V1_GEMISCHT]
 
 // ── A-7 · Pixelvergleich (PX), OPT-IN ───────────────────────────────────────
 // Läuft NUR mit `PX=1` und dann in einem eigenen Projekt. Grund, Kap. 12 A-7:
@@ -190,7 +245,12 @@ export default defineConfig({
       // PX_SPECS mit ausschliessen: `chromium` hat kein `testMatch` und würde
       // die Pixel-Spec sonst im Normallauf mitnehmen — also genau das, was der
       // Opt-in verhindern soll.
-      testIgnore: [...SCHWERE_SPECS, ...PX_SPECS],
+      // V1_NUR mit ausschliessen (H4-Flip): diese Dateien prüfen einen
+      // Montagepunkt, den V3 aufgegeben hat — im Regelprojekt liefen sie nach
+      // dem Flip in Timeouts statt in Fehlermeldungen (gemessen 18.8.2026).
+      // V1_GEMISCHT bleibt hier drin: dort skippen die betroffenen Fälle
+      // einzeln, damit die V3-taugliche Hälfte weiterläuft.
+      testIgnore: [...SCHWERE_SPECS, ...PX_SPECS, ...V1_NUR],
       timeout: process.env.CI ? 90_000 : 30_000,
     },
     // ── Rest-Projekt: dieselben N-Specs gegen die ALTE Hülle ────────────────

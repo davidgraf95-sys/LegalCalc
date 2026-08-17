@@ -47,9 +47,21 @@ test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', ()
     await expect(suche).toBeVisible({ timeout: 20000 });
     // Genau EIN Suchfeld (kein Doppel aus mehreren Positionen).
     await expect(suche).toHaveCount(1);
-    // Das Feld liegt im Inhalts-Kopf (data-such-slot im data-inhalt-kopf) …
-    await expect(suche.locator('xpath=ancestor::*[@data-such-slot]')).toHaveCount(1);
-    await expect(suche.locator('xpath=ancestor::*[@data-inhalt-kopf]')).toHaveCount(1);
+    // Das Feld liegt im Inhalts-Kopf …
+    // H4-UMHÄNGUNG (Flip 18.8.2026): die Kopf-Zone heisst in der Ist-Hülle
+    // `data-such-slot`/`data-inhalt-kopf`, in V3 `data-v3-kopf` (A-2 hat die
+    // beiden Leisten zu EINER verschmolzen, die Slots gibt es dort nicht mehr).
+    // Der geprüfte Sachverhalt ist unverändert und bleibt eine harte Zusage: das
+    // Feld hängt in der klebenden Kopf-Zone, nicht irgendwo im Fluss. Geprüft
+    // wird «in EINER der beiden Kopf-Zonen» statt in beiden zugleich — sonst
+    // wäre der Fall in genau einer Hülle konstruktiv rot, ohne dass sich etwas
+    // verschlechtert hätte (§6.7).
+    const kopfZonen = await suche.evaluate((el) => ({
+      istHuelle: !!el.closest('[data-such-slot]') && !!el.closest('[data-inhalt-kopf]'),
+      v3: !!el.closest('[data-v3-kopf]'),
+    }));
+    expect(kopfZonen.istHuelle || kopfZonen.v3,
+      `Suchfeld sitzt in keiner Kopf-Zone (Ist-Hülle: ${kopfZonen.istHuelle}, V3: ${kopfZonen.v3})`).toBe(true);
     // … die frühere full-width Such-Leiste (data-such-bar) existiert in der
     // Einzelansicht NICHT mehr (rückstandsfrei entfernt, David 19.7.2026) …
     await expect(page.locator('[data-such-bar]')).toHaveCount(0);

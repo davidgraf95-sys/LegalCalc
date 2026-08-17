@@ -11,6 +11,7 @@
 // Diese Spec misst den echten `print`-Medienzustand (page.emulateMedia) im
 // gebauten Stand — keine CSS-Textsuche, sondern computed styles am DOM.
 import { test, expect } from '@playwright/test'
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 const ERLASS = '/gesetze/bund/OR'
 
@@ -116,7 +117,16 @@ test.describe('Z2 · Druck der Fundstelle', () => {
   // das kein `main …`-Nachfahren-Selektor trifft). Ergebnis vor dem Fix: der
   // Ausdruck endet nach EINER Seite, während derselbe Erlass ohne Split über
   // hunderte Seiten läuft. Dieser Test öffnet den zweiten Pane real und misst.
-  test('Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten', async ({ page }) => {
+  test('Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten', async ({ page }, info) => {
+    // Der Fall braucht als EINSTIEG das ⧉ «nebeneinander öffnen» an der
+    // Bezüge-Zeile unter dem Artikel — genau der Ort, den V3 mit Pos. 12
+    // aufgegeben hat (`v3/PanelEntscheide` verlinkt, es öffnet nicht daneben).
+    // Die GEMESSENE Sache (der Split-Ausdruck wird nicht auf eine Seite
+    // geklemmt) gilt in V3 unverändert, ihr Einstieg fehlt — deshalb
+    // Projektwechsel statt Umschreiben; ein neuer Einstieg wäre ein neuer Test.
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'das ⧉ an der Bezüge-Zeile als Einstieg in den Split',
+      'Deckungslücke für den DRUCK im Split — H5-Auflage (Kontaktbogen H4 §7); der Split selbst ist über `leser-kopf-paritaet` und `leser-v3-highlight-split` gedeckt'))
     test.slow() // schwere Split-View-Interaktion (Panes + idle-Shards + Scroll)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/ZGB#art-1')

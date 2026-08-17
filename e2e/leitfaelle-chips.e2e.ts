@@ -27,6 +27,7 @@
 // der jüngste — geprüft wird darum die Existenz des Chips, nicht sein Platz.
 // OR Art. 4 trägt weiterhin keinen Bucket.
 import { test, expect, type Page } from '@playwright/test'
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -36,7 +37,10 @@ function fehlerSammeln(page: Page): string[] {
 }
 
 test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
-  test('(a) Artikel MIT Entscheiden zeigt die Auflistung + Entscheid-Link', async ({ page }) => {
+  test('(a) Artikel MIT Entscheiden zeigt die Auflistung + Entscheid-Link', async ({ page }, info) => {
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'die Auflistung am Artikelfuss (`[data-bezuege-zeile]`, mit Pos. 12 aufgegeben)',
+      '`leser-v3-panel-facetten` (a) für den Ort, `leser-v3-panel-zaehler` für den Zähler'))
     // ZEITBUDGET, KEINE ASSERTION (§6.3 — CI-Empirie 29.7.2026, PR #406): dieser
     // Fall riss auf dem 2-vCPU-Runner über alle drei Retries das 90-s-Budget.
     // Gemessen gegen dist unter CPU-Drossel (Sonde 29.7.2026, Kosten JE KLICK):
@@ -93,7 +97,10 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
     expect(fehler).toEqual([])
   })
 
-  test('(b) ohne Treffer und ohne aktive Facette steht am Artikelfuss NICHTS', async ({ page }) => {
+  test('(b) ohne Treffer und ohne aktive Facette steht am Artikelfuss NICHTS', async ({ page }, info) => {
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'der Artikelfuss als Ort der Auskunft',
+      '`leser-v3-panel-nachzug` (f) — im Lesekörper hängt kein Öffner mehr'))
     await page.goto('/gesetze/bund/OR')
     // Anker Art. 4: im OR-Shard weiterhin ohne Bucket (verifiziert 28.7.2026).
     const artOhne = page.locator('#art-4')
@@ -128,7 +135,13 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
   // hin LESBAR (bisher nur `title`), trägt die beiden Wege «Öffnen»/«Daneben
   // öffnen», ist per Tastatur erreichbar und wieder schliessbar — und er hängt
   // NIE im Erst-Markup (§15).
-  test('(d) V3: Chip zeigt den Kurztext auf Hover + Tastatur, Esc schliesst', async ({ page }) => {
+  test('(d) V3: Chip zeigt den Kurztext auf Hover + Tastatur, Esc schliesst', async ({ page }, info) => {
+    // «V3» im Titel meint die UI-NAV-Ausbaustufe (W2·10), NICHT die Leser-Hülle
+    // V3 — der Chip hängt an der Zeile am Artikelfuss und ist dort mit Pos. 12
+    // entfallen. Namenskollision, hier einmal ausgeschrieben.
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'der Entscheid-Chip an der Zeile unter dem Artikel',
+      'Deckungslücke — das Kurztext-Popover am Panel-Chip ist H5-Auflage (Kontaktbogen H4 §7)'))
     // Wie (a): die OR-Seite mit ~500 Artikeln + Shard-Resolve reisst auf dem
     // 2-vCPU-Runner das Default-Budget. Zeitbudget, keine Assertion (§6.3).
     test.slow()

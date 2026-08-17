@@ -269,7 +269,17 @@ test.describe('W2·5d-SPY — Bezugslinie entscheidet, nicht das Beobachtungs-Ba
     // Feld bewegt zu Recht nichts), und innerhalb einer Zeile steht das Chevron
     // vor dem Sprungknopf — das Chevron klappt nur auf. `:not([aria-expanded])`
     // trifft genau den Knopf, den der Test immer meinte.
-    const ziel = page.locator('[data-toc] li[data-sektion-id] button:not([aria-expanded])').first()
+    // H4-UMHÄNGUNG (Flip 18.8.2026) — gleicher Befund, gleiche Begründung wie in
+    // `leser-ruecksprung-r5-r7` (dort ausführlich): `:not([aria-expanded])`
+    // trennt in V3 NICHTS mehr, weil der Titel-Knopf dort selbst
+    // `aria-expanded` trägt (er klappt einen geschlossenen Ast beim Sprung mit
+    // auf, `SektionBaumTOC`). Gemessen 18.8.2026: der Locator fand 0 Elemente
+    // und lief ins 120-s-Budget, ohne je etwas zu prüfen — ein Tor, das nicht
+    // scheitern KANN, sondern nur hängt (§6.7). Trennscharf in BEIDEN Hüllen ist
+    // `title`: den trägt der Titel-Knopf (voller Etikett-Text), das Chevron
+    // nicht (es hat nur `aria-label`). Die geprüfte Sache ist unverändert — ein
+    // Gliederungs-Eintrag ist fokussierbar und springt per Enter.
+    const ziel = page.locator('[data-toc] li[data-sektion-id] button[title]:visible').first()
     await ziel.focus()
     await expect(ziel).toBeFocused()
     const vorher = await page.evaluate(() => Math.round(window.scrollY))
