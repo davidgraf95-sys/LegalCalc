@@ -58,7 +58,7 @@ export const SUCH_H_RUHE = '2.75rem';
 export const SUCH_H_AKTIV = '4.25rem';
 
 export function SuchZone({
-  suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
+  suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe, blatt,
 }: {
   /** Das Such-/Sprungfeld. Oberstes Element — das ist die ganze Zusage (Ä19).
    *
@@ -77,11 +77,23 @@ export function SuchZone({
   /** Zähl-Substantiv aus dem Datenmodell (Ä23) — nie ein Bund-Vorgabewert.
    *  B8: Typ und Zählform aus `./erlassAnsicht` (eine Quelle). */
   bestimmungsWort: BestimmungsWort;
-  /** Weg zur vollen Trefferliste: Spalte aufziehen bzw. Blatt öffnen. */
+  /** Weg zur vollen Trefferliste: Blatt am Feld öffnen bzw. Bottom-Sheet. */
   onListe: () => void;
+  /** ── Ä70 (17.8.2026) · DIE TREFFERLISTE, ANGEHÄNGT AN DIESE ZONE ───────────
+   *  Gesetzt, wo die Gliederung als Spalte fehlt, aber Platz neben dem Text ist
+   *  (Desktop mit eingeklappter Spalte) — dann liegt die Liste als Blatt DIREKT
+   *  unter dem Feld statt inline über dem Lesetext, wo sie 3596 px hoch unter der
+   *  Falz verschwand (Befund und Messreihe: `./LeserTrefferBlatt`).
+   *  Es hängt an DIESER Zone, weil «die Liste steht, wo das Feld steht» die eine
+   *  Regel ist, die Ä19 für alle Breiten gesetzt hat — und weil die Zone das
+   *  einzige Element ist, das in JEDER Lage ohne Spalte klebt. */
+  blatt?: ReactNode;
 }) {
   return (
-    <div data-v3-such-zone className="flex flex-col justify-start gap-1 pb-2"
+    // `relative`: der Bezugsrahmen des Blattes (`absolute top-full`). Es nimmt
+    // keinen Platz — die Zonen-Höhe bleibt allein `--leser-v3-such-h`, und die
+    // Höhen-Konstanten oben behalten ihre Gültigkeit (B9-Wächter unberührt).
+    <div data-v3-such-zone className="relative flex flex-col justify-start gap-1 pb-2"
       style={{ height: 'var(--leser-v3-such-h)' }}>
       {suchFeld}
       {sucheAktiv && (
@@ -100,6 +112,7 @@ export function SuchZone({
           <span aria-hidden className="ml-auto shrink-0">Treffer anzeigen →</span>
         </button>
       )}
+      {blatt}
     </div>
   );
 }
