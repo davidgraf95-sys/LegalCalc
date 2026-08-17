@@ -36,7 +36,7 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // Δ0.1190, wenn die Artikelliste zu diesem Zeitpunkt SCHON GEMALT ist — dann
 // liegt das 976×312 grosse Lese-Grid in seiner Wirkfläche. Ob sie gemalt ist,
 // entscheidet die Parallel-Last. Der Badge selbst tauchte in keinem der Läufe
-// unter den Top-Quellen auf: seine Höhe ist reserviert (`mt-4 min-h-hist-zeile`,
+// unter den Top-Quellen auf: seine Höhe ist reserviert (`mt-4 min-h-beiwerk`,
 // ArtikelHistorie.tsx), er trägt ~0 bei.
 //
 // Das ist DIESELBE Fehlerklasse, die `helpers/cls.ts` am 20.7.2026 schon einmal
@@ -58,7 +58,7 @@ import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
 // gelockert». Der Bug-Check-Prüfer hat sie als nicht-scheiterbar gemeldet; die
 // Mutations-Sonde (§6.7) bestätigt das. Gemessen, alles WARM, chromium:
 //
-//   Mutation: `min-h-hist-zeile` am Slot entfernt (ArtikelLeser.tsx) —
+//   Mutation: `min-h-beiwerk` am Slot entfernt (ArtikelLeser.tsx) —
 //   also genau der Defekt, den der Satz benennt («die Reservierung greift nicht»).
 //     · GEOMETRIE  → ROT: «Artikel 2 verschoben: 1516 → 1552»,
 //                    Seitenhöhe 10735 → 10807.

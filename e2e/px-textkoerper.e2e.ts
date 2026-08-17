@@ -261,7 +261,19 @@ const FAELLE = [
 // Mess-Artikel ab — in BEIDEN Hüllen gleich und mit von Hand nachgezogener
 // Einschliessung, damit weiterhin das AUSGELIEFERTE Bild gemessen wird. Die
 // Toleranz wurde NICHT angefasst: `maxDiffPixelRatio` steht unverändert bei
-// 0.001, und die Baseline ist nicht neu aufgenommen worden.
+// 0.001.
+//
+// NACHZUG-KORREKTUR 17.8.2026 (Architektur-Prüfer 4): der Halbsatz «und die
+// Baseline ist nicht neu aufgenommen worden» galt bis S1 und ist mit S2 FALSCH
+// geworden. S2 ändert die Typografie des Lesekörpers absichtlich (F3 = V2,
+// Entscheid David 17.8.2026) und setzt die Baseline darum DEKLARIERT neu — mit
+// beigelegtem Vorher-Bild in
+// `docs/ux-audit-2026-07/reader/leser-v3-s2/vorher/px-*-VORHER-s1-baseline.png`
+// und der Messbedingung im Vollzugsvermerk S2. Der S2-NACHZUG setzt sie ein
+// zweites Mal, weil die Marken-Geometrie (Ä61 lit.-Spalte, Ä62 Marken-Waisen)
+// den Textkörper erneut verändert; das zugehörige Vorher-Bild liegt im
+// Unterordner `vorher/` derselben Etappe. Neu gesetzt wird ausschliesslich die
+// BASELINE, nie die Toleranz (§6).
 //
 // ROT-BEWEIS (§6.7), beides in diesem Lauf gesehen, nicht behauptet: ohne die
 // Abschaltung 40 276 px (V3 leer); mit Abschaltung, aber OHNE nachgezogene
@@ -272,21 +284,19 @@ const FAELLE = [
 // gemessen und eine Gestaltungs-/Treue-Frage für David — PX misst seit der
 // Klemme ausdrücklich den TEXT-KERN und nicht den Satzspiegel.
 //
-// OFFEN BLEIBT ZWEITENS EIN 1-PX-HÖHEN-WACKLER — hier notiert, weil eine Lehre,
-// die nur im Chat steht, keine ist. Nach dem Fix oben lief das Tor grün (2/2,
-// Exit 0); ein späterer Lauf mit UNVERÄNDERTEM Code riss bei StPO Art. 429 im
-// ZWEITEN Schritt mit «Expected an image 640px by 856px, received 640px by
-// 857px» (31 508 px). Nicht die Tinte wich ab, sondern die HÖHE um 1 px, und
-// zwar in V3. Plausibler Mechanismus, noch nicht bewiesen: die Artikelhöhe ist
-// gebrochen (gemessen 1526.34 px bei OR 336c), und der Artikel sitzt in V3
-// 56 px tiefer — je nach Bruchteil der y-Position rundet der Bild-Ausschnitt
-// auf 856 oder 857 Zeilen. Messbedingung: macOS, warmer Preview, 1440×900,
-// `retries: 0`; gesehen in 1 von 4 Läufen (StPO), OR war in allen 4 stabil.
-// EINE GRÖSSEN-ABWEICHUNG IST DURCH KEINE TOLERANZ ZU DECKEN — Playwright
-// vergleicht Bildmasse hart, `maxDiffPixelRatio` greift daran gar nicht. Der
-// Wurzel-Fix (y-Position vor der Aufnahme auf ganze Pixel legen, ohne dass
-// Playwrights eigenes Scroll-in-View sie wieder verstellt) ist eigene Arbeit
-// und ausdrücklich NICHT in dieser Etappe erledigt.
+// DER 1-PX-HÖHEN-WACKLER IST BEHOBEN — hier stand bis S2 «OFFEN BLEIBT ZWEITENS
+// …, der Wurzel-Fix ist eigene Arbeit und ausdrücklich NICHT in dieser Etappe
+// erledigt». Das ist überholt (Nachzug-Korrektur 17.8.2026, Architektur-Prüfer 4):
+// die Diagnose und der Fix stehen vollständig im Kopf dieser Datei bei
+// `MESS_HOEHE_PX`. Kurzfassung, damit hier keine zweite Wahrheit entsteht (§5):
+// der Wackler («Expected an image 640px by 856px, received 640px by 857px») kam
+// nicht von gebrochenen Artikelhöhen, sondern davon, dass der Mess-Artikel bei
+// Fensterhöhe 900 GENAU auf der Fenstergrenze lag — Playwright nimmt ein nicht
+// passendes Element scrollend auf, und die Rasterung der 11-px-Schriften
+// verschiebt sich dabei (1869 px Abweichung, 5/5 reproduzierbar). Fix:
+// `MESS_HOEHE_PX = 1800` — derselbe Gedanke wie die erzwungene BREITE — plus der
+// Wächter in `artikelBild`, der rot wird, wenn ein künftiger Mess-Artikel doch
+// nicht mehr ins Fenster passt. Nullprobe auf der Basis `788e4d4a5` 2/2 grün.
 test.describe('A-7 · PX — der Text-Kern ist in V1 und V3 pixelgleich', () => {
   for (const f of FAELLE) {
     test(`${f.name}: V3-Artikel gleicht bei gleicher Breite der V1-Baseline`, async ({ page }) => {

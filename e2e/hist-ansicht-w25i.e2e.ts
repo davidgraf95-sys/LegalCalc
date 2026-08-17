@@ -228,7 +228,7 @@ test('S1-ZUSAGE: «aus» lässt KEINE Historie-Spur im Lesekörper — und der D
   await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
 
   // (3) KEINE Fassungs-Spur mehr — weder die Zeile noch der reservierte Slot.
-  // Der Slot MIT: seine reservierte Höhe (mt-4 + min-h-hist-zeile = 16+24 px)
+  // Der Slot MIT: seine reservierte Höhe (mt-4 + min-h-beiwerk = 16+24 px)
   // bliebe sonst als Phantom-Lücke unter jedem Artikel stehen, und «aus» hätte
   // doch eine Spur hinterlassen.
   await expect(fassung).toBeHidden();

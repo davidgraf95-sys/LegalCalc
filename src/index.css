@@ -278,10 +278,21 @@
     --timer-fs:clamp(1.8rem, 5vw, 2.4rem);
     --vorschau-fs:.92rem;
     --vorschau-fs-kompakt:.88rem;
-    /* FUSSNOTENMARKE (W2·5m-LESER-V3 · S2, Design-Grundlage Kap. 2.3): EIN Token
-       statt SECHS zeichengleicher `text-[0.62em]`-Literale (`ArtikelBody.tsx`
-       FnRef, `ArtikelLeser.tsx` 2×, `SektionKopf.tsx`, `ErlassKopfBlock.tsx`,
-       `helpers.tsx` margLabel) — die Marke ist EINE Auszeichnung, nicht sechs.
+    /* HOCHGESTELLTE ZEICHEN IM WORTLAUT (W2·5m-LESER-V3 · S2, Design-Grundlage
+       Kap. 2.3): EIN Token statt SECHS zeichengleicher `text-[0.62em]`-Literale
+       (`ArtikelBody.tsx` FnRef, `ArtikelLeser.tsx` 2×, `SektionKopf.tsx`,
+       `ErlassKopfBlock.tsx`, `helpers.tsx` margLabel).
+
+       ROLLENNEUTRALER NAME (Nachzug 17.8.2026, Architektur-Prüfer 6): das Token
+       hiess `--fn-marke` und trug damit den Namen EINER seiner zwei Rollen. Es
+       setzt aber ZWEI Fachinhalte: (a) die Fussnotenmarke (FnRef, Trenn-Komma
+       zwischen mehreren Marken) und (b) das Ordnungs-Suffix «bis»/«ter» an
+       Marginalien und Artikelnummern (`helpers.tsx` margLabel, LM-107). Beide
+       sind dasselbe TYPOGRAFISCHE Merkmal — ein hochgestelltes Zeichen im
+       Wortlaut, das dem Fliesstext folgen muss —, aber fachlich verschieden. Ein
+       Name nach der einen Rolle liest sich am zweiten Gebrauchsort als Fehler
+       und verleitet zum Abspalten eines zweiten Werts; ein neutraler Name hält
+       die eine Auszeichnung an EINER Stelle (§5).
        ENTSCHEID DAVID 17.8.2026 am Bildbogen: hochgestellt und OHNE Klammern
        (V1-Form) auf dem V2-Satzspiegel — «v2 gefällt mir besser aber fussnoten
        hochgestellt». Die V2-Spalte des Fahrplans (Kap. 8) sah runde Klammern und
@@ -290,8 +301,8 @@
        dem Leser-Schriftregler folgt statt zu entkoppeln; gemessen wächst sie
        dadurch von 0.62 em × 18 px = 11.2 px auf 0.72 em × 17 px = 12.2 px — die
        Marke wird also lesbarer, nicht kleiner. Gebrauch:
-       `text-[length:var(--fn-marke)]` (Token-Escape der Schranke B2). */
-    --fn-marke:.72em;
+       `text-[length:var(--hochgestellt)]` (Token-Escape der Schranke B2). */
+    --hochgestellt:.72em;
     /* Display = Geist (Wunsch David 6.6.2026): die Serife Fraunces ist aus
        der UI entfernt; PDF-Berichte behalten ihre eingebetteten Schriften. */
     /* Rank 11: 'Geist Fallback'/'Source Serif 4 Fallback' (metrik-angepasstes

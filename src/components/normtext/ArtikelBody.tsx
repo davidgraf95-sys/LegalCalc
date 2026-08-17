@@ -191,14 +191,44 @@ export function FnRef({ artikel, nr, klasse, kl }: {
     setAuf((v) => !v);
   };
   return (
-    <span ref={ankerRef} className="relative" data-fn-klasse={kl}>
+    // Ä62 · KEINE MARKEN-WAISE (S2-Nachzug 17.8.2026, Ästhetik-Prüfer):
+    // `whitespace-nowrap` am Träger PLUS ein Wort-Verbinder INNERHALB des Trägers.
+    //
+    // BEFUND, gemessen @1440 (Waisen = Marke steht allein am Anfang der Folgezeile,
+    // obwohl der Text davor noch Platz hatte): StGB 13 von 532 Marken (V3) bzw. 16
+    // von 532 (V1), StPO 8 von 276 — vorbestehend, in BEIDEN Hüllen.
+    //
+    // WARUM DER BESTEHENDE WORT-VERBINDER NICHT REICHTE — und warum die zuerst
+    // vermutete Ursache falsch war: die Diagnose lautete «`[data-fn-ref]` ist
+    // `inline-block`, also eine Umbruch-Gelegenheit ⇒ auf `display:inline` stellen».
+    // GEMESSEN ist das ein No-op (13 Waisen vor und nach der Umstellung): der
+    // Marker ist ein `<button>`, und Blink erzwingt für Buttons unabhängig von der
+    // CSS-Angabe eine atomare Inline-Box (`display` meldet weiter `inline-block`).
+    // Der Gegenbeweis: ersetzt man die Buttons per DOM-Chirurgie durch echte
+    // Inline-`<span>`s, fallen die Waisen auf 0 (532/532 bzw. 276/276 geprüft) —
+    // die atomare Box IST der Umbruchpunkt, und ein A31-Wort-Verbinder VOR ihr
+    // verhindert den Bruch nicht (UAX#14 LB11 greift auf die Zeichenkette, nicht
+    // auf die Grenze zur atomaren Box).
+    //
+    // Die Umstellung auf `<span role="button">` wäre der DOM-/A11y-Weg gewesen;
+    // gebaut ist der kleinere: der Träger wird zum Nicht-Umbruch-Kontext, und der
+    // Verbinder wandert IN ihn hinein. Damit ist die Kette [Text][WJ][Marke] an
+    // beiden Grenzen geschlossen — vor dem WJ verbietet LB11 den Bruch, innerhalb
+    // des Trägers gibt es keine Umbruch-Gelegenheit mehr. Auch `overflow-wrap:
+    // anywhere` (S13, langes Kompositum) wurde als Ursache geprüft und
+    // ausgeschlossen: `break-word` und `normal` ändern die Waisen-Zahl nicht.
+    // WIRKUNG, gemessen: 13 → 0 (StGB V3), 8 → 0 (StPO V3), 16 → 0 (StGB V1).
+    // Der äussere `{WJ}` an den Marker-Aufrufstellen bleibt unberührt (A31); er ist
+    // jetzt redundant, aber zeichen- und wirkungsneutral.
+    <span ref={ankerRef} className="relative whitespace-nowrap" data-fn-klasse={kl}>
+      {WJ}
       {/* `data-fn-ref` ist die MASCHINEN-Kennung des Fussnoten-Markers: der
           `data-fussnoten`-Toggle in `index.css` greift darüber und nie über den
           accessible name (Treuebruch 16.8.2026 — die frühere Namensregel traf
           auch den Schalter «Fussnoten (N)» im Ansicht-Menü). Wächter:
           `src/tests/fussnoten-toggle-huellenneutral.test.ts`. */}
       <button type="button" data-fn-ref onClick={umschalten} aria-expanded={auf} aria-label={`Fussnote ${nr}`}
-        className={`num align-super text-[length:var(--fn-marke)] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
+        className={`num align-super text-[length:var(--hochgestellt)] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
       {auf && html && pos && typeof document !== 'undefined' && createPortal(
         <span ref={popRef} role="note" dangerouslySetInnerHTML={{ __html: html }}
           style={{ top: pos.top, left: pos.left }}
@@ -503,7 +533,16 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
    *  AUS → das Popover bleibt zeichenidentisch (golden, §6). */
   autolink?: boolean;
   /** Lesesicht: macht Absatz-/lit.-/Ziff.-Marken zu Zitat-Knöpfen. Default aus
-   *  → Popover byte-gleich (golden, §6). */
+   *  → Popover byte-gleich (golden, §6).
+   *
+   *  ACHTUNG, ZWEITE WIRKUNG (S2-Nachzug 17.8.2026, Architektur-Prüfer 8): dieses
+   *  Prop ist AUCH der Typografie-Schalter des Block-Wrappers. Ist es gesetzt,
+   *  FÄLLT `leading-relaxed` (1.625) am Block — nur dann liefert der Leser die
+   *  Zeilenhöhe seiner eigenen Stufe (`leser-text`, lh 1.55, Entscheid F3 = V2,
+   *  David 17.8.2026). Ist es NICHT gesetzt (Popover/Vorschau), bleibt
+   *  `leading-relaxed` unverändert stehen. Herleitung an der Stelle unten
+   *  («Zeilenhöhe der Stufe»); wer das Prop künftig auch ausserhalb der Lesesicht
+   *  setzt, ändert damit die Zeilenhöhe mit. */
   zitierKontext?: ZitierKontext;
   /** Lesesicht: bare Artikelverweise auf denselben Erlass als Sprung-Links. */
   intern?: InternRefs;
@@ -672,12 +711,27 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                   : 'text-ink-700'
               }`}
             >
+              {/* Ä61 · MARKEN-SPALTE: `min-w-6`, NICHT `w-6` (S2-Nachzug 17.8.2026,
+                  Ästhetik-Prüfer). `w-6` ist eine FESTE Breite von 24 px; der
+                  Marker ist rechts in ihr ausgerichtet und `shrink-0`. Eine Marke,
+                  die breiter ist als 24 px, kann die Box damit nicht dehnen — ihre
+                  Tinte läuft rechts aus der Box heraus, quer über den Item-Text.
+                  GEMESSEN am gebauten Stand @1440 (OR Art. 336c, BEIDE Hüllen
+                  identisch, also vorbestehend): `cbis.` und `cter.` ragen je 10 px
+                  in den Text, `cquater.` 35.2 px, `cquinquies.` 60.41 px; AIG
+                  Art. 5 `abis.` 10 px. Die einstelligen Marken (`a.`–`d.`) blieben
+                  8 px VOR der Textkante — der Defekt trifft also genau die
+                  Ordnungs-Suffixe des Schweizer Rechts (bis/ter/quater/quinquies).
+                  `min-w-6` hält die 24-px-Spalte als MINDESTbreite: alle normalen
+                  Marken bleiben an derselben Kante ausgerichtet wie bisher, und nur
+                  die lange Marke schiebt IHREN eigenen Text um ihren Überschuss
+                  nach rechts. Hängend, aber nie überlappend. */}
               {istStrich
                 ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
                 : zk && !ohneZitierMarke
-                  ? <ZitierMarke klasse="shrink-0 w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
+                  ? <ZitierMarke klasse="shrink-0 min-w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
                   : zk
-                    ? <span className="num shrink-0 w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
+                    ? <span className="num shrink-0 min-w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
                     : <span className="num shrink-0 font-semibold text-ink-500">{markeAnzeige}</span>}
               <span className="min-w-0 [overflow-wrap:anywhere] hyphens-manual">
                 {/* S13 (BS-Audit 23.6.2026): lange Komposita in Aufzählungen

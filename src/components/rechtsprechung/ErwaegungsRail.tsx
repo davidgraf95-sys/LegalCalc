@@ -126,7 +126,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
               zeile erscheint erst beim Tippen; wüchse sie ein, schöbe sie das
               Verzeichnis darunter nach unten (gemessen 4.8.2026 unter 6×-Drossel:
               CLS 0.00023 statt 0). Der Slot steht ab dem ersten Render und wird
-              GEFÜLLT, nicht eingeschoben — dasselbe Muster wie `min-h-hist-zeile`
+              GEFÜLLT, nicht eingeschoben — dasselbe Muster wie `min-h-beiwerk`
               am Artikelfuss. Zwei Zeilen `text-micro` passen in `min-h-8`; die
               längste Fassung («3 von 16 Treffer in 2 Erwägungen · übrige
               ausserhalb») bleibt bei 15 rem Railbreite darunter. */}

@@ -37,18 +37,18 @@ const WORTLAUT_DATEIEN = [
 ] as const;
 
 // Der EINE zugelassene Arbitrary-Wert, und zwar als Token-Escape, nicht als Wert:
-// `text-[length:var(--fn-marke)]` reicht die CSS-Variable `--fn-marke` (index.css)
+// `text-[length:var(--hochgestellt)]` reicht die CSS-Variable `--hochgestellt` (index.css)
 // durch, weil Tailwind für em-relative Grössen keine Stufe anbieten kann — die
 // Fussnotenmarke MUSS em-relativ bleiben, damit sie dem Fliesstext und dem
 // Schriftgrössen-Regler folgt statt sich zu entkoppeln. Ein Token bleibt es, weil
 // der WERT genau einmal definiert ist (index.css), nicht an sechs Klassen.
-const TOKEN_ESCAPE = /text-\[length:var\(--fn-marke\)\]/g;
+const TOKEN_ESCAPE = /text-\[length:var\(--hochgestellt\)\]/g;
 
 describe('S2 · Leser-Typografie-Tokens', () => {
   it('die drei Leser-Stufen stehen mit den Werten des Entscheids in tailwind.config.js', () => {
     const cfg = lies('../../tailwind.config.js');
     // V2-Spalte des Fahrplans Kap. 8, mit der EINEN Abweichung beim Marker
-    // (hochgestellt statt in Klammern — die betrifft `--fn-marke`, nicht diese Stufen).
+    // (hochgestellt statt in Klammern — die betrifft `--hochgestellt`, nicht diese Stufen).
     const erwartet: Array<[string, string, string]> = [
       ['leser-text', '1.0625rem', '1.55'],   // Fliesstext 17 px
       ['leser-rand', '0.8125rem', '1.35'],   // Marginalie/Randtitel 13 px, Sans
@@ -62,7 +62,7 @@ describe('S2 · Leser-Typografie-Tokens', () => {
     }
   });
 
-  it('kein rohes text-[…] oder leading-[…] im Leser-Wortlaut (nur der --fn-marke-Escape)', () => {
+  it('kein rohes text-[…] oder leading-[…] im Leser-Wortlaut (nur der --hochgestellt-Escape)', () => {
     // WICHTIG: Kommentare zuerst raus. Sonst hält der Wächter die eigene
     // Herleitung für einen Verstoss — die Kommentare oben ZITIEREN `leading-[1.65]`
     // als das, was abgelöst wurde, und das muss zitierbar bleiben.
@@ -120,9 +120,9 @@ describe('S2 · Leser-Typografie-Tokens', () => {
       .toEqual([]);
   });
 
-  it('--fn-marke ist genau EINMAL definiert (§5) und em-relativ', () => {
+  it('--hochgestellt ist genau EINMAL definiert (§5) und em-relativ', () => {
     const css = lies('../index.css');
-    const defs = [...css.matchAll(/--fn-marke\s*:\s*([^;]+);/g)].map((m) => m[1].trim());
+    const defs = [...css.matchAll(/--hochgestellt\s*:\s*([^;]+);/g)].map((m) => m[1].trim());
     expect(defs, 'Fussnotenmarke ist nicht genau einmal definiert (§5)').toHaveLength(1);
     // em-relativ, nicht rem/px: die Marke muss dem Fliesstext UND dem
     // Schriftgrössen-Regler folgen. Ein rem-Wert entkoppelte sie von beidem.

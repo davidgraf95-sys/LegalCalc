@@ -76,7 +76,7 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
                   die Zeile amtliche Marker trägt (`fnNrs` aus FN-2). */}
               {z.fnNrs && z.fnNrs.length > 0 && (
                 <span className="ml-0.5" data-fn-marker>{z.fnNrs.map((nr, j) => (
-                  <span key={nr}>{j > 0 && <span className="align-super text-[length:var(--fn-marke)] text-ink-500">,</span>}<FnRef artikel="kopf" nr={nr} /></span>
+                  <span key={nr}>{j > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel="kopf" nr={nr} /></span>
                 ))}</span>
               )}
             </p>

@@ -290,7 +290,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // trägt Komma UND Marker, verschwindet also als Ganzes.
   const fnMarker = artOffen && fnArtikelEbene.length > 0
     ? <span data-fn-marker>{fnArtikelEbene.map((nr, i) => (
-        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[length:var(--fn-marke)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
       ))}</span>
     : null;
   // VERWEISE: im Artikel genannte, auflösbare (Bund-)Normverweise als Chips am
@@ -445,7 +445,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
                       Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
                   {artOffen && fnProSektion[m]?.map((nr, j) => (
-                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[length:var(--fn-marke)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
                   ))}
                 </div>
               ))}
@@ -631,7 +631,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
               Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem
-              ERSTEN Render und reserviert die eine Chip-Zeile (`min-h-hist-zeile`,
+              ERSTEN Render und reserviert die eine Chip-Zeile (`min-h-beiwerk`,
               Token — gemessen exakt 24 px, deterministisch über alle Artikel), damit
               der idle-Shard-Resolve reservierten Platz FÜLLT statt sichtbare Artikel
               zu schieben (Messung 20.7.: sonst CLS 0.0227 statt 0.0002 unter 6×). Der
@@ -645,7 +645,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               «Fassung»-Zeile an gar keinem Schalter — bei «Änderungsvermerke aus»
               blieb die Fassungshistorie als einzige Historie-Spur im Lesetext
               stehen. Ausgeblendet wird der SLOT, nicht nur die Zeile darin: sonst
-              bliebe seine reservierte Höhe (`mt-4 min-h-hist-zeile` = 16+24 px) als
+              bliebe seine reservierte Höhe (`mt-4 min-h-beiwerk` = 16+24 px) als
               Phantom-Lücke unter jedem Artikel zurück, und «aus» hätte doch eine
               Spur hinterlassen. Der Inhalt bleibt im DOM (A1-Mechanik, David
               5.7.2026: `display:none`, nie gelöscht) und «an» stellt ihn
@@ -733,7 +733,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       Mini-Ziffern wäre unlesbar), aber die FARBE wird auf dieselbe brass-700-
                       Familie gehoben — der Leser verbindet Marke↔Eintrag über die Farbe, wie
                       im Fliesstext. brass-700 ist bereits an der Marke selbst AA-geprüft
-                      (kleinere Schrift, `--fn-marke`) und trägt hier bei 11px erst recht
+                      (kleinere Schrift, `--hochgestellt`) und trägt hier bei 11px erst recht
                       (S2: der Apparat läuft auf `text-leser-fn`). */}
                   {fn.nr && <span className="num mr-1 text-brass-700">{fn.nr}</span>}
                   {fnTextMitLinks(fn)}

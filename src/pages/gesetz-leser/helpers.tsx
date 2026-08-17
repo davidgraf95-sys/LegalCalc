@@ -201,13 +201,20 @@ export function margLabel(label: string): ReactNode {
   const ord = label.match(MARG_ORD);
   // LM-107: der nackte <sup> übernahm bislang den Browser-Default
   // `font-size: smaller` (browserabhängig, ~0.75em der jeweils UMGEBENDEN
-  // Schrift) — dadurch erscheint dasselbe «bis»/«ter» im Gliederungsbaum
-  // (text-xs-Kontext → 9px) und in der Artikel-Überschrift (text-base-Kontext
-  // → 12px) in zwei Grössen derselben Ansicht. Fix: derselbe deterministische
-  // Multiplikator wie bei den bestehenden hochgestellten Fussnoten-Markern
-  // (ArtikelBody.tsx FnRef-Button, `text-[length:var(--fn-marke)]`) statt des UA-Defaults —
-  // keine neue Grössen-Systematik, nur der bereits etablierte Wert.
-  if (ord) return <Fragment>{ord[1]}<sup className="text-[length:var(--fn-marke)]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
+  // Schrift) — dadurch erschien dasselbe «bis»/«ter» im Gliederungsbaum und in
+  // der Artikel-Überschrift in ZWEI Grössen derselben Ansicht. Fix: derselbe
+  // deterministische Multiplikator wie bei den hochgestellten Fussnoten-Markern
+  // (ArtikelBody.tsx FnRef-Button) statt des UA-Defaults — keine neue
+  // Grössen-Systematik, nur der bereits etablierte Wert.
+  //
+  // NACHZUG 17.8.2026 (Architektur-Prüfer 6): das gemeinsame Token heisst jetzt
+  // `--hochgestellt` (vorher `--fn-marke`). Hier trägt es das ORDNUNGS-SUFFIX
+  // einer Marginalie, nicht eine Fussnotenmarke — der alte Name benannte nur die
+  // andere der beiden Rollen. Die früher an dieser Stelle genannten Absolutwerte
+  // «9 px / 12 px» sind mit S2 überholt (Wert 0.72 em statt 0.62 em, Fliesstext
+  // 17 px statt 18 px); sie werden EINMAL am Token in `src/index.css` gerechnet
+  // und darum hier nicht wiederholt (§5).
+  if (ord) return <Fragment>{ord[1]}<sup className="text-[length:var(--hochgestellt)]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
   const bu = label.match(MARG_BUCHST);
   if (bu) return <Fragment>{bu[1]}<em>{bu[2]}</em>{label.slice(bu[0].length)}</Fragment>;
   return label;

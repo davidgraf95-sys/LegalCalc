@@ -16,7 +16,7 @@ import { formatiereDatum } from '../helpers';
 // Viewport, die Artikel darunter sind SICHTBAR — der idle-Shard-Resolve schob sie
 // alle. Gemessen unter 6× CPU-Drossel: CLS 0.0227 gegen 0.0002 auf main (Faktor
 // ~100), auf dem CI-Runner 0.0550 gegen Budget 0.05. Darum reserviert der Slot in
-// ArtikelLeser (`mt-4 min-h-hist-zeile`) die eine Chip-Zeile ab dem ERSTEN Render,
+// ArtikelLeser (`mt-4 min-h-beiwerk`) die eine Chip-Zeile ab dem ERSTEN Render,
 // und `schaetzeArtikelHoehe` trägt sie in `contain-intrinsic-size` für die
 // off-screen-Artikel nach. Diese Komponente rendert deshalb OHNE eigenen
 // Aussenabstand (der sitzt am Slot), damit reservierte und gefüllte Höhe exakt
@@ -99,7 +99,7 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
 
   return (
     // Kein eigener Aussenabstand mehr: den trägt der reservierte Slot in
-    // ArtikelLeser (`mt-4 min-h-hist-zeile`), damit reservierte und gefüllte
+    // ArtikelLeser (`mt-4 min-h-beiwerk`), damit reservierte und gefüllte
     // Höhe exakt zusammenfallen (§15.2, sonst schiebt der Resolve doch wieder).
     <div data-historie-zeile>
       <div className="flex flex-wrap items-center gap-2">
