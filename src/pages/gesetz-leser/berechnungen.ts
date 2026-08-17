@@ -153,15 +153,28 @@ function textZeilen(text: string | undefined, proZeile = 68): number {
 export function schaetzeArtikelHoehe(e: NormSnapshot): number {
   const ZEILE = 30;        // px je Fliesstext-Zeile
   // G-HIST-UI (§15.2, 20.7.2026): der reservierte Fassungs-Slot am Artikel-Fuss
-  // (`mt-4 min-h-hist-zeile` in ArtikelLeser) ist 16 + 24 px hoch und steht bei
-  // JEDEM Artikel — er gehört darum in die Platzhalter-Höhe der off-screen-Artikel
-  // (`contain-intrinsic-size`), sonst schiebt das Aufblenden beim Hereinscrollen.
+  // (`mt-4 min-h-beiwerk` in ArtikelLeser, bis S2 `min-h-hist-zeile`) ist
+  // 16 + 24 px hoch — er gehört darum in die Platzhalter-Höhe der off-screen-
+  // Artikel (`contain-intrinsic-size`), sonst schiebt das Aufblenden beim
+  // Hereinscrollen.
   //
   // KORREKTUR S1-NACHZUG (17.8.2026, Bug-Check B4): «bei JEDEM Artikel» stimmt
   // seit S1 nicht mehr unbedingt. Steht der Schalter «Änderungsvermerke» auf
   // `aus`, blendet `html[data-histansicht="aus"] .lc-leser [data-hist-slot]`
   // (index.css) den SLOT aus — dann sind diese 40 px nicht da, und die Schätzung
   // überreserviert um 40 px je off-screen-Artikel.
+  //
+  // KORREKTUR S2 · Ä26 (17.8.2026): «bei JEDEM Artikel» stimmt jetzt auch OHNE
+  // Schalter nicht mehr. Der Slot trägt seine Mindesthöhe nur noch, wenn der
+  // Artikel Fussnoten führt — nur dort kann der Generator je einen Historie-
+  // Eintrag erzeugen (Herleitung und Korpus-Messung stehen am Slot selbst,
+  // `ArtikelLeser.tsx`). Korpusweit betrifft die Reservierung damit 17 547 von
+  // 53 849 Artikeln; bei den übrigen überreserviert die Schätzung um 40 px.
+  //
+  // Auch das bleibt bewusst ungerechnet, aus DEMSELBEN Grund wie unten: die
+  // Fussnoten stehen im Struktur-Sidecar, diese Funktion bekommt nur den
+  // Snapshot-Eintrag `e`. Sie hier einzuspeisen hiesse, eine reine Funktion (§2)
+  // an einen zweiten, asynchron eintreffenden Datenweg zu binden.
   //
   // Bewusst NICHT nachgerechnet: die Richtung ist die tolerierte. Die Zusage der
   // Schätzung lautet «echte Höhe ≤ Schätzung» (s. Kalibrierung oben) — zu HOCH

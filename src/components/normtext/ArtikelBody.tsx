@@ -2,12 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { absatzNorm, bestimmePassusZiel, type PassusInfo } from '../../lib/normtext/passusZiel';
-import { trenneAenderungshistorie, absatzMarke, gruppiereTausender, gruppiereBetraege, istAufgehoben } from '../../lib/normtext/darstellung';
+import { trenneAenderungshistorie, absatzMarke, gruppiereBetraege, istAufgehoben } from '../../lib/normtext/darstellung';
 import { NormText, type InternRefs } from '../NormText';
 import { chapeauZielFremdgesetz } from '../../lib/fedlex';
 import { BildFigur, BildKacheln, type BildDaten, type BildKachel } from './BildElemente';
 import { zitatMitAusweis, heuteIso } from '../../lib/format';
 import { WJ } from './wortverbinder';
+import { StaffelTabelle, MehrspaltigeTabelle, TarifTabelle } from './ArtikelTabellen';
+import { staffelZeilen, normalisiereTarifText } from './tarifText';
 // B2 (Bug-Check §9 zu W2·19-S8): der Aufhebungs-Platzhalter ist BEDIENUNG, kein
 // Wortlaut — er trägt darum dasselbe Meta-Attribut wie Zähler und Verweis-Chips.
 // Die Konstante wird IMPORTIERT statt abgeschrieben: die Ausgrenzung lebt in
@@ -191,14 +193,44 @@ export function FnRef({ artikel, nr, klasse, kl }: {
     setAuf((v) => !v);
   };
   return (
-    <span ref={ankerRef} className="relative" data-fn-klasse={kl}>
+    // Ä62 · KEINE MARKEN-WAISE (S2-Nachzug 17.8.2026, Ästhetik-Prüfer):
+    // `whitespace-nowrap` am Träger PLUS ein Wort-Verbinder INNERHALB des Trägers.
+    //
+    // BEFUND, gemessen @1440 (Waisen = Marke steht allein am Anfang der Folgezeile,
+    // obwohl der Text davor noch Platz hatte): StGB 13 von 532 Marken (V3) bzw. 16
+    // von 532 (V1), StPO 8 von 276 — vorbestehend, in BEIDEN Hüllen.
+    //
+    // WARUM DER BESTEHENDE WORT-VERBINDER NICHT REICHTE — und warum die zuerst
+    // vermutete Ursache falsch war: die Diagnose lautete «`[data-fn-ref]` ist
+    // `inline-block`, also eine Umbruch-Gelegenheit ⇒ auf `display:inline` stellen».
+    // GEMESSEN ist das ein No-op (13 Waisen vor und nach der Umstellung): der
+    // Marker ist ein `<button>`, und Blink erzwingt für Buttons unabhängig von der
+    // CSS-Angabe eine atomare Inline-Box (`display` meldet weiter `inline-block`).
+    // Der Gegenbeweis: ersetzt man die Buttons per DOM-Chirurgie durch echte
+    // Inline-`<span>`s, fallen die Waisen auf 0 (532/532 bzw. 276/276 geprüft) —
+    // die atomare Box IST der Umbruchpunkt, und ein A31-Wort-Verbinder VOR ihr
+    // verhindert den Bruch nicht (UAX#14 LB11 greift auf die Zeichenkette, nicht
+    // auf die Grenze zur atomaren Box).
+    //
+    // Die Umstellung auf `<span role="button">` wäre der DOM-/A11y-Weg gewesen;
+    // gebaut ist der kleinere: der Träger wird zum Nicht-Umbruch-Kontext, und der
+    // Verbinder wandert IN ihn hinein. Damit ist die Kette [Text][WJ][Marke] an
+    // beiden Grenzen geschlossen — vor dem WJ verbietet LB11 den Bruch, innerhalb
+    // des Trägers gibt es keine Umbruch-Gelegenheit mehr. Auch `overflow-wrap:
+    // anywhere` (S13, langes Kompositum) wurde als Ursache geprüft und
+    // ausgeschlossen: `break-word` und `normal` ändern die Waisen-Zahl nicht.
+    // WIRKUNG, gemessen: 13 → 0 (StGB V3), 8 → 0 (StPO V3), 16 → 0 (StGB V1).
+    // Der äussere `{WJ}` an den Marker-Aufrufstellen bleibt unberührt (A31); er ist
+    // jetzt redundant, aber zeichen- und wirkungsneutral.
+    <span ref={ankerRef} className="relative whitespace-nowrap" data-fn-klasse={kl}>
+      {WJ}
       {/* `data-fn-ref` ist die MASCHINEN-Kennung des Fussnoten-Markers: der
           `data-fussnoten`-Toggle in `index.css` greift darüber und nie über den
           accessible name (Treuebruch 16.8.2026 — die frühere Namensregel traf
           auch den Schalter «Fussnoten (N)» im Ansicht-Menü). Wächter:
           `src/tests/fussnoten-toggle-huellenneutral.test.ts`. */}
       <button type="button" data-fn-ref onClick={umschalten} aria-expanded={auf} aria-label={`Fussnote ${nr}`}
-        className={`num align-super text-[0.62em] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
+        className={`num align-super text-[length:var(--hochgestellt)] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
       {auf && html && pos && typeof document !== 'undefined' && createPortal(
         <span ref={popRef} role="note" dangerouslySetInnerHTML={{ __html: html }}
           style={{ top: pos.top, left: pos.left }}
@@ -223,105 +255,6 @@ export function FnRef({ artikel, nr, klasse, kl }: {
 // Quelle uneinheitlich gross/klein). Rein Darstellung (§3): beide Formen werden
 // zum gedämpften, einheitlichen «aufgehoben»; gilt für Absätze UND Items.
 
-// Tarif-Staffel-Tabelle (z. B. ZH GebV OG § 4) landet aus dem PDF-Snapshot als
-// EIN Fliesstext-Block («… bis 1000 25 % … über 1000 bis 5000 250 …»), weil die
-// PDF-Spalten beim Extrahieren verschmelzen. Rein für die DARSTELLUNG (§3, Text
-// unverändert) zerlegen wir solche Staffeln in Zeilen je Streitwert-Band —
-// deutlich lesbarer als der eine Blob. Bewusst ENG getriggert (Fee-Table-Marker
-// + mindestens zwei «über N»-Bänder), damit normale Absätze nie zerschnitten
-// werden. Bandgrenze: «über <Zahl>» — das nachfolgende « <Ziffer>» grenzt sauber
-// gegen «übersteigenden» ab (dort folgt kein « Ziffer»). KEINE \b-Wortgrenze:
-// Umlaute zählen in JS-Regex nicht als \w, «\büber» würde nie matchen. Die erste
-// Zeile (Kopf + erstes Band) wird vor «bis <Zahl>» getrennt.
-function staffelZeilen(text: string): string[] | null {
-  // (1) Gerichtsgebühren-Staffel «über N …» (ZH GebV OG § 4-Stil).
-  if (/zuzügl\.|Grundgebühr|betragen/.test(text) && (text.match(/über \d/g) ?? []).length >= 2) {
-    const zeilen = text
-      .split(/(?=über \d)/)
-      .flatMap((s, i) => (i === 0 ? s.split(/(?=bis \d)/) : [s]))
-      .map((s) => s.trim())
-      .filter(Boolean);
-    if (zeilen.length >= 3) return zeilen;
-  }
-  // (2) Anhang-Tarif-Staffel mit «–»-Bändern (ZH NotGebV-Anhang-Stil:
-  //     «… –höchstens 1 Jahr im Rahmen von 100–1000 –mehr als 1 Jahr …»). Mehrere
-  //     « –<Wort>»-Bänder mit Gebühren-Marke (‰ / «im Rahmen von» / Fr.). Jedes
-  //     Band auf eine eigene Zeile; der Teil vor dem ersten «–» bleibt Kopf.
-  //     ENG getriggert (≥2 Bänder + Marke), damit normale Absätze nie zerschnitten
-  //     werden. Rein Darstellung (§3) — der Text bleibt unverändert.
-  const baender = text.match(/ –\p{L}/gu) ?? [];
-  if (baender.length >= 2 && /‰|im Rahmen von|Fr\./.test(text)) {
-    const zeilen = text.split(/(?= –\p{L})/u).map((s) => s.trim()).filter(Boolean);
-    if (zeilen.length >= 3) return zeilen;
-  }
-  // (3) Prozent-/Promille-Staffel mit «vom Mehrbetrag über …» (Notariats-/
-  //     Grundbuchtarife, z. B. BS Notariatstarif: «… bis CHF 2 Mio. 0,25%, vom
-  //     Mehrbetrag über CHF 2 Mio. 0,2%, vom Mehrbetrag über 5 Mio. 0,1% …»).
-  //     NUR Zeilenumbrüche an den Band-Markern «vom Mehrbetrag über» bzw.
-  //     «plus N ‰/%» — der WORTLAUT bleibt unverändert (kein Ziffern-Trennen,
-  //     §1), darum risikolos. ENG: Tarif-Marke (‰/Promille/Mehrbetrag) + ≥2 Bänder.
-  if (/‰|promille|mehrbetrag/i.test(text)) {
-    const marker = text.match(/vom Mehrbetrag über|plus \d/g) ?? [];
-    if (marker.length >= 2) {
-      const zeilen = text.split(/(?=vom Mehrbetrag über|plus \d)/).map((s) => s.trim()).filter(Boolean);
-      if (zeilen.length >= 3) return zeilen;
-    }
-  }
-  return null;
-}
-
-// Tarif-/Anhang-Text aus PDF-Spalten verschmilzt Wort und Zahl ohne das Trenn-
-// Leerzeichen («Allgemeinen1.1.1», «Verkehrswert1‰», «mindestens100», «1‰4.1»).
-// Rein für die DARSTELLUNG (§3): das vom PDF verschluckte Leerzeichen zwischen
-// Buchstabe↔Ziffer bzw. ‰↔Ziffer wieder einfügen. Der WORTLAUT bleibt unangetastet
-// — es wird NUR ein fehlendes Trenn-Leerzeichen ergänzt, kein Zeichen geändert,
-// entfernt oder umgestellt (Freigabe David 17.6.2026: Darstellung darf normalisiert
-// werden, solange der Wortlaut nicht angefasst wird).
-function normalisiereTarifText(text: string): string {
-  return text
-    .replace(/(\p{L})(\d)/gu, '$1 $2')
-    .replace(/(‰)(\d)/gu, '$1 $2')
-    .replace(/ {2,}/g, ' ')
-    .trim();
-}
-
-// TABELLEN-REGEL (Auftrag David 20.6.2026): erkannte Tarif-/Gebühren-Staffeln
-// (staffelZeilen) werden als gestylte Tabelle dargestellt — umrandeter Block,
-// abgesetzte Kopfzeile, Zeilen-Trenner je Band, tabular-nums. REIN DARSTELLUNG
-// (§3): der Wortlaut je Zeile bleibt unverändert; verschmolzene PDF-Ziffern
-// werden NICHT neu getrennt (§1). Wird sowohl für Absatz-Blöcke als auch für
-// Tarif-Items (lit./Ziff.) verwendet — viele Notariats-/Grundbuchtarife stehen
-// als Items.
-// Reiner Text je Zeile (wie die ursprüngliche Staffel-Darstellung) — kein
-// Autolink/NormText in den Tabellen-Zeilen: Tarif-Bänder enthalten ohnehin keine
-// zitierten Normen, und so bleibt das Markup einfach (keine verschachtelten
-// Fragmente/Key-Themen). Reine Darstellung (§3), Wortlaut unverändert.
-function StaffelTabelle({ zeilen }: { zeilen: string[] }) {
-  return (
-    <span className="mt-1.5 block rounded-md border border-line overflow-hidden [text-indent:0] [font-variant-numeric:tabular-nums]">
-      {zeilen.map((z, j) => (
-        <span key={j}
-          className={`block px-3 py-1.5 leading-snug ${
-            j === 0 ? 'font-medium text-ink-800 bg-paper-sunken/40' : 'border-t border-rule-artikel'
-          }`}>
-          {z}
-        </span>
-      ))}
-    </span>
-  );
-}
-
-// Hilfsfunktion: Zelle gilt als (rechtsbündiger) Betrag, wenn sie Ziffern
-// enthält, aber kein Wort mit ≥4 Buchstaben (à la «über», «bis», «zuzügl.»,
-// «übersteigenden») — lange Text-Zellen bleiben linksbündig. AUSNAHME: reine
-// Positions-/Tarif-Nummern («1.1.1.1», «1.», «5000») sind KEINE Beträge → bleiben
-// linksbündig zur Hierarchie. Rein Darstellung (§3); steuert Ausrichtung.
-function istNumerischeZelle(s: string): boolean {
-  const t = s.trim();
-  if (t === '' || /^\d+(\.\d+)*\.?$/.test(t)) return false;
-  return /\d/.test(t) && !/[A-Za-zÀ-ÿ]{4,}/.test(t);
-}
-
 // M6 (Auftrag David): Erkennt einen Chapeau-Absatz, der die Bestimmungen eines
 // FREMDEN Gesetzes für anwendbar erklärt — «… gelten … die folgenden Bestimmungen
 // des … (BVG) … über:» (ZGB Art. 89a Abs. 6/7 → BVG). Die nachfolgenden Items
@@ -340,134 +273,6 @@ function etabliertFremdgesetz(absatzText: string, eigenesKuerzel?: string): bool
     if (m[1].toUpperCase() !== eigen) return true; // ein fremdes Gesetzeskürzel (BVG/FZG ≠ ZGB)
   }
   return false;
-}
-
-// Spaltentyp des kanonischen Modells (M10, T-B1) — spiegelt
-// scripts/normtext/tabelle-normalisieren.ts; hier lokal, weil die Render-Schicht
-// nicht aus scripts/ importiert (§3-Schichtentrennung).
-type TabSpalte = { typ: 'bereich' | 'zahl' | 'text' | 'betrag'; titel: string };
-
-// N-Spalten-Tabelle aus block.mehrspaltig. Dispatcht: kanonisches `spalten`-Modell
-// (Bund, M10) → dumme typgesteuerte Projektion; Alt-`{kopf,zeilen}` (Kanton/Legacy)
-// → unveränderter Alt-Renderer (abwärtskompatibel, byte-gleiche Darstellung).
-function MehrspaltigeTabelle({ spalten, kopf, zeilen }: { spalten?: TabSpalte[]; kopf?: string[]; zeilen: string[][] }) {
-  if (spalten && spalten.length > 0) return <KanonischeTabelle spalten={spalten} zeilen={zeilen} />;
-  return <LegacyMehrspaltigeTabelle kopf={kopf} zeilen={zeilen} />;
-}
-
-// Kanonische Tabelle (T-C1–C6/T-D1–D7): N = spalten.length, Ausrichtung +
-// Tausender-Gruppierung rein typgesteuert; KEINE Inhalts-Heuristik, KEIN Padding
-// (§3 dumme Projektion). Zell-Wortlaut unverändert (nur Tausender-Apostroph = Anzeige).
-function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: string[][] }) {
-  const N = spalten.length;
-  // Defensive (T-E5): empfängt der Renderer trotz Gate eine aritätsverletzende
-  // Zeile, rendert er linear (verlustfrei, alle Werte in Quellreihenfolge) statt
-  // ein verschobenes Gitter — heilt nie, wirft nie.
-  if (zeilen.some((z) => z.length !== N)) {
-    return (
-      <span data-mehrspaltig="" className="mt-1.5 block text-ink-700">
-        {zeilen.map((z, ri) => (
-          <span key={ri} className="block leading-snug">{z.filter((c) => c.trim() !== '').join(' · ')}</span>
-        ))}
-      </span>
-    );
-  }
-  const rechts = (typ: TabSpalte['typ']) => typ === 'zahl' || typ === 'betrag';
-  const gruppieren = (typ: TabSpalte['typ']) => typ !== 'text'; // bereich/zahl/betrag: Swiss-Apostroph
-  const hatKopf = spalten.some((s) => s.titel !== '');
-  const zelleCls = (typ: TabSpalte['typ'], kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${rechts(typ) ? ' text-right whitespace-nowrap [font-variant-numeric:tabular-nums]' : ''}${
-      kopfZeile || rechts(typ) ? ' font-medium text-ink-800' : ' text-ink-700'
-    }`;
-  return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0]">
-      {/* ARIA-Tabellen-Semantik auf den display:table-Spans; je Datenzeile genau
-          N cell zu N columnheader (folgt aus T-B2). Echtes <table> ist im
-          Phrasing-/<p>-Kontext nicht möglich. */}
-      <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full w-max">
-        {hatKopf && (
-          <span role="row" className="table-row bg-paper-sunken/40">
-            {spalten.map((s, ci) => (
-              <span key={ci} role="columnheader" className={zelleCls(s.typ, true)}>{s.titel}</span>
-            ))}
-          </span>
-        )}
-        {zeilen.map((z, ri) => (
-          <span key={ri} role="row" className="table-row">
-            {z.map((cell, ci) => (
-              <span
-                key={ci}
-                role="cell"
-                className={`${zelleCls(spalten[ci].typ, false)}${ri > 0 || hatKopf ? ' border-t border-rule-artikel' : ''}`}
-              >
-                {gruppieren(spalten[ci].typ) ? gruppiereTausender(cell) : cell}
-              </span>
-            ))}
-          </span>
-        ))}
-      </span>
-    </span>
-  );
-}
-
-// Alt-Renderer für Legacy-`{kopf,zeilen}` (Kanton/nicht migrierte Bund-Fallbacks):
-// UNVERÄNDERT übernommen — Inhalts-Heuristik + Padding bleiben, damit Kanton-Tabellen
-// byte-gleich rendern (L0-Abwärtskompatibilität). Bund nutzt KanonischeTabelle.
-function LegacyMehrspaltigeTabelle({ kopf, zeilen }: { kopf?: string[]; zeilen: string[][] }) {
-  const spalten = Math.max(kopf?.length ?? 0, ...zeilen.map((z) => z.length));
-  const padZeile = (z: string[]) => {
-    const padded = [...z];
-    while (padded.length < spalten) padded.push('');
-    return padded;
-  };
-  const spalteNumerisch = Array.from({ length: spalten }, (_, ci) =>
-    zeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
-  );
-  const zelleCls = (ci: number, kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ''}${
-      kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
-    }`;
-  return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] [font-variant-numeric:tabular-nums]">
-      <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full w-max">
-        {kopf && kopf.length > 0 && (
-          <span role="row" className="table-row bg-paper-sunken/40">
-            {padZeile(kopf).map((h, ci) => (
-              <span key={ci} role="columnheader" className={zelleCls(ci, true)}>{h}</span>
-            ))}
-          </span>
-        )}
-        {zeilen.map((z, ri) => (
-          <span key={ri} role="row" className="table-row">
-            {padZeile(z).map((cell, ci) => (
-              <span
-                key={ci}
-                role="cell"
-                className={`${zelleCls(ci, false)}${ri > 0 || (kopf && kopf.length) ? ' border-t border-rule-artikel' : ''}`}
-              >
-                {gruppiereTausender(cell)}
-              </span>
-            ))}
-          </span>
-        ))}
-      </span>
-    </span>
-  );
-}
-
-// 2-Spalten-Tarif (Beschreibung | Betrag) aus strukturiertem block.tabelle.
-// Reine Darstellung (§3); Wortlaut je Zelle unverändert.
-function TarifTabelle({ zeilen }: { zeilen: Array<{ beschreibung: string; betrag: string }> }) {
-  return (
-    <span role="table" aria-label="Tarif-Tabelle" className="mt-1.5 block rounded-md border border-line overflow-hidden [text-indent:0] [font-variant-numeric:tabular-nums]">
-      {zeilen.map((z, j) => (
-        <span key={j} role="row" className={`flex items-baseline justify-between gap-4 px-3 py-1.5 leading-snug ${j > 0 ? 'border-t border-rule-artikel' : ''}`}>
-          <span role="cell" className="text-ink-700">{z.beschreibung}</span>
-          <span role="cell" className="shrink-0 text-right font-medium text-ink-800">{gruppiereTausender(z.betrag)}</span>
-        </span>
-      ))}
-    </span>
-  );
 }
 
 export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, fnKlasse, intern }: {
@@ -503,7 +308,16 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
    *  AUS → das Popover bleibt zeichenidentisch (golden, §6). */
   autolink?: boolean;
   /** Lesesicht: macht Absatz-/lit.-/Ziff.-Marken zu Zitat-Knöpfen. Default aus
-   *  → Popover byte-gleich (golden, §6). */
+   *  → Popover byte-gleich (golden, §6).
+   *
+   *  ACHTUNG, ZWEITE WIRKUNG (S2-Nachzug 17.8.2026, Architektur-Prüfer 8): dieses
+   *  Prop ist AUCH der Typografie-Schalter des Block-Wrappers. Ist es gesetzt,
+   *  FÄLLT `leading-relaxed` (1.625) am Block — nur dann liefert der Leser die
+   *  Zeilenhöhe seiner eigenen Stufe (`leser-text`, lh 1.55, Entscheid F3 = V2,
+   *  David 17.8.2026). Ist es NICHT gesetzt (Popover/Vorschau), bleibt
+   *  `leading-relaxed` unverändert stehen. Herleitung an der Stelle unten
+   *  («Zeilenhöhe der Stufe»); wer das Prop künftig auch ausserhalb der Lesesicht
+   *  setzt, ändert damit die Zeilenhöhe mit. */
   zitierKontext?: ZitierKontext;
   /** Lesesicht: bare Artikelverweise auf denselben Erlass als Sprung-Links. */
   intern?: InternRefs;
@@ -672,12 +486,27 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                   : 'text-ink-700'
               }`}
             >
+              {/* Ä61 · MARKEN-SPALTE: `min-w-6`, NICHT `w-6` (S2-Nachzug 17.8.2026,
+                  Ästhetik-Prüfer). `w-6` ist eine FESTE Breite von 24 px; der
+                  Marker ist rechts in ihr ausgerichtet und `shrink-0`. Eine Marke,
+                  die breiter ist als 24 px, kann die Box damit nicht dehnen — ihre
+                  Tinte läuft rechts aus der Box heraus, quer über den Item-Text.
+                  GEMESSEN am gebauten Stand @1440 (OR Art. 336c, BEIDE Hüllen
+                  identisch, also vorbestehend): `cbis.` und `cter.` ragen je 10 px
+                  in den Text, `cquater.` 35.2 px, `cquinquies.` 60.41 px; AIG
+                  Art. 5 `abis.` 10 px. Die einstelligen Marken (`a.`–`d.`) blieben
+                  8 px VOR der Textkante — der Defekt trifft also genau die
+                  Ordnungs-Suffixe des Schweizer Rechts (bis/ter/quater/quinquies).
+                  `min-w-6` hält die 24-px-Spalte als MINDESTbreite: alle normalen
+                  Marken bleiben an derselben Kante ausgerichtet wie bisher, und nur
+                  die lange Marke schiebt IHREN eigenen Text um ihren Überschuss
+                  nach rechts. Hängend, aber nie überlappend. */}
               {istStrich
                 ? <span className="shrink-0 select-none text-ink-500">{markeAnzeige}</span>
                 : zk && !ohneZitierMarke
-                  ? <ZitierMarke klasse="shrink-0 w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
+                  ? <ZitierMarke klasse="shrink-0 min-w-6 text-right !font-medium !text-ink-500 text-body-s" zitat={itemZitat} ausweis={ausweisBasis}>{markeAnzeige}</ZitierMarke>
                   : zk
-                    ? <span className="num shrink-0 w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
+                    ? <span className="num shrink-0 min-w-6 text-right font-medium text-ink-500 text-body-s">{markeAnzeige}</span>
                     : <span className="num shrink-0 font-semibold text-ink-500">{markeAnzeige}</span>}
               <span className="min-w-0 [overflow-wrap:anywhere] hyphens-manual">
                 {/* S13 (BS-Audit 23.6.2026): lange Komposita in Aufzählungen
@@ -847,7 +676,20 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             key={i}
             ref={blockStark ? (passusRef as React.Ref<HTMLDivElement>) : undefined}
             data-passus={blockStark ? 'true' : 'false'}
-            className={`${zitierKontext ? '' : 'text-body-s '}leading-relaxed ${
+            /* S2 (F3 = V2, David 17.8.2026 am Bildbogen): im LESER trägt dieser
+               Block-Wrapper KEINEN eigenen Zeilenabstand mehr. `leading-relaxed`
+               (1.625) stand hier unbedingt und schlug damit die Zeilenhöhe der
+               Fliesstext-Stufe — die Absätze liefen auf 1.625, nicht auf den 1.55
+               des Entscheids (und vor S2 auf 1.625 statt der behaupteten 1.65 des
+               Containers). Gemessen aufgefallen, nicht gelesen: der WCAG-Fall in
+               `e2e/leser-lesemass.e2e.ts` blieb grün, als die Stufe versuchsweise
+               auf lh 1.4 gesetzt wurde — ein Wert, der durchschlagen MÜSSTE.
+               Genau das verbietet die Design-Grundlage Kap. 8 Nr. 4 («kein fixer
+               Leading-Wert über alle Grössen»): der Zeilenabstand gehört zur Stufe.
+               AUSSERHALB des Lesers bleibt alles unverändert (`text-body-s` hat
+               lh 1.5 und braucht den lockereren Wert weiterhin) — die Änderung ist
+               auf den Reader-Zweig gescopt, Vorschau/Popover sind byte-gleich. */
+            className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${
               blockStark
                 ? 'rounded-md border-l-4 border-brass-500 bg-brass-100 px-3 py-2 text-ink-900'
                 : blockDezent

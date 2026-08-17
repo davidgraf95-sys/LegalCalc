@@ -537,12 +537,18 @@ vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
 | **Ä21** | Kanton-Kopf zeigt den Titel **dreimal**: App-Krume, Leser-Krume, H1. Bei ZH-211.11 schärfer als beim Bund, weil dort das Register-Kürzel bereits der volle Name ist — Kürzel und Volltitel sind wortgleich. Wenn Kürzel = Volltitel: nur einmal ausgeben (`LeserKopf.tsx`) | ✅ **erledigt in H2b**, in H2b-NACHZUG **geschärft** — `zeigeVolltitel()` prüft neu WORTGLEICHHEIT statt `startsWith` (Ä36) |
 | **Ä22** | LugÜ-Titel wird silbengetrennt umbrochen | **S3** (mit Ä6, Erlass-Kopf) |
 | **Ä23** | **«Artikel» ist in `LeserTrefferListe.tsx` hart kodiert** (2 Stellen) — `bestimmungsWort` existiert bereits in `LeserRahmenV3.tsx`, gehört nach `erlassAnsicht.ts` und muss durchgereicht werden, damit §-Erlasse in der Trefferliste nicht «Artikel» zählen | ✅ **erledigt in H2b**, in H2b-NACHZUG **vollzogen** — H2b reichte den Wert durch, liess ihn aber als Literal an fünf Stellen stehen; jetzt Typ + Ableitung + Zählform in `erlassAnsicht.ts`, bewacht (Ä42) |
-| **Ä4** | Beiwerk-Chips laufen über den Rand | **H3/S2** |
+| **Ä4** | Beiwerk-Chips laufen über den Rand | ~~H3/S2~~ ⇒ **H3** — in S2 reproduziert und vermessen (Scroll-Streifen `.lc-bezug-linie`, scrollWidth 875 gegen clientWidth 414 @1440; 17 Nachfahren über die Artikelkante, bis 232 px @720; kein Dokument-Überlauf). Nicht dort behoben, weil **H3 diese Chip-Zeile durch den Zähler «⚖ n Entscheide →» ersetzt** (F4) — Detail im Vollzugsvermerk S2 |
 | **Ä6** | Erlass-Kopf | **S3** |
-| **Ä7** | Randtitel über Artikelnummer (Hierarchie) | **S2** |
+| **Ä7** | Randtitel über Artikelnummer (Hierarchie) | **S2** ✅ gebaut — drei sichtbare Stufen (Nummer 16 px bold ink-900 > Blatt 13 px semibold ink-800 > Vorfahren 13 px regular ink-600). **Rest im S2-Nachzug** erledigt: die dritte Randtitel-Stufe der SEKTIONSKÖPFE lief noch auf `text-micro` (11 px Serif 500, lh 1.2) — leiser als der Blatt-Randtitel des Artikels darunter und so klein wie der Apparat; sie steht jetzt auf `leser-rand`. Stufen 0/1 der Gliederungsköpfe bewusst unverändert (David hat sie nicht am Bogen gesehen, §7) |
 | **Ä11** | Split-Pane-Icon-Flut | **H3/H4** |
-| **Ä25** | **Verweis-Unterstreichung steht dauerhaft im Ruhezustand** (nicht «nur bei Hover», wie fünf Doku-Stellen behaupteten) — gemessen 100 gepunktete Linien in StGB Art. 66a | ✅ **S1-Nachzug (Abweichung offengelegt)**: Faktenkorrektur gebaut, **Design-Umbau NICHT** — ohne Linie trüge die Farbe allein (hell 2.04 : 1, dunkel 1.14 : 1 gegen den Fliesstext; G183 verlangt 3 : 1). Braucht ein neues Verweis-Token oder ein leiseres Nicht-Farb-Signal → **S2**. Herleitung und Ist-Bilder: «Offen aus S1» |
-| **Ä26** | Historie-Slot reserviert 40 px auch dann, wenn der Erlass nie eine Fassung trägt (Phantom-Lücke unter jedem Artikel) | **S2** (Beiwerk-Zone, Grundlage Kap. 3 Pos. 13) — bewusst nicht in S1: das Vorziehen fasst die Reservierung an, die der Badge-Test exakt prüft |
+| **Ä25** | **Verweis-Unterstreichung steht dauerhaft im Ruhezustand** (nicht «nur bei Hover», wie fünf Doku-Stellen behaupteten) — gemessen 100 gepunktete Linien in StGB Art. 66a | ⏸ **wartet auf David.** S1 korrigierte die Fakten und baute den Design-Umbau NICHT; S2 baute ihn (Ruhe = `font-medium` + Farbe, Linie erst bei Hover/Fokus); der **S2-Nachzug hat ihn ZURÜCKGENOMMEN** — Ist-Stand ist wieder die dauerhafte gepunktete Linie. Grund: `INLINE_CLASS` (`NormText.tsx`) ist die Verweis-Klasse der **ganzen Site**, nicht des Lesers (~20 prerenderte Rechner-/Vorlagen-Seiten), und ohne Linie trägt allein die Farbe — gemessen **1.00 : 1** auf `/rechner/verjaehrung`, **1.06 : 1** auf den übrigen Rechner-Seiten, **2.14 : 1** im Leser, gegen die 3 : 1 der WCAG-Technik G183. Die axe-Ausnahme `link-in-text-block` ist ein David-Entscheid (`docs/ux-audit-2026-07/BERICHT.md` B-2) und wird von einer Typografie-Etappe nicht ausgeweitet. **Der Entscheid, den David fällt:** Design-Grundlage Kap. 8 («Linie erst bei Hover») gegen G183 (3 : 1 nötig; im Dunkelmodus in keiner der 14 Rollen erreichbar — Rechnung im Vollzugsvermerk S2 und an `VERWEIS_INLINE_CLASS`). **Empfehlung: Linie behalten.** Ist-Bilder: `docs/ux-audit-2026-07/reader/leser-v3-s1/ae25-ist-ruhezustand-stgb-66a-{light,dark}.png` |
+| **Ä26** | Historie-Slot reserviert 40 px auch dann, wenn der Erlass nie eine Fassung trägt (Phantom-Lücke unter jedem Artikel) | **S2** ✅ gebaut — Reserve folgt **artikelweise** dem Datenmodell (`fussAnzeige.length > 0 \|\| historie`; der Generator baut Historie-Einträge nur aus Artikel-Fussnoten ⇒ Invariante, 0 Gegenbeispiele in 24 511 Artikeln). Korpusweit 25 403 → 17 547 reservierende Artikel (−31 %); BS-640.100 **−264 von 278** (Nachzug-Korrektur 17.8.2026: der Nenner ist 278, nicht 292 — die 14 aufgehobenen Artikel starten eingeklappt und rendern die Beiwerk-Zone gar nicht, konnten also nie reservieren; die 14 Fussnoten-Artikel sind eine davon **disjunkte** Menge, am Korpus geprüft). **Ausdrücklich KEINE Ebenen-Weiche** (`erlass.ebene` wäre ein Erlass-Sonderpfad) — Rot-Beweis dazu im Vollzugsvermerk |
+| **Ä61** | lit.-Marke läuft über den Item-Text («cbisvor», «cquatersolange», «abismüssen») | **S2-Nachzug** ✅ gebaut — `w-6` (feste 24-px-Spalte) → `min-w-6`. Gemessen @1440 vorher, in beiden Hüllen identisch: OR 336c `cbis.`/`cter.` +10 px, `cquater.` +35.2 px, `cquinquies.` +60.41 px; AIG 5 `abis.` +10 px. Neue Spec `e2e/leser-marken-geometrie.e2e.ts`, Rot-Beweis 5/5 |
+| **Ä62** | Fussnotenmarke fällt allein an den Zeilenanfang | **S2-Nachzug** ✅ gebaut — Marker-Träger `whitespace-nowrap` + Wort-Verbinder INNERHALB. Gemessen vorher: StGB 13/532 (V3) bzw. 16/532 (V1), StPO 8/276; nachher je 0. Die im Auftrag vermutete Ursache (`inline-block`) ist **widerlegt** — Blink erzwingt für `<button>` unabhängig von `display` eine atomare Inline-Box; Gegenbeweis per DOM-Chirurgie. Herleitung an `FnRef` |
+| **Ä63** | Handy-Einzug: OR/ZGB @390 beginnt der Fliesstext bei x = 80 px (StPO 44 px) — zwei Einzüge für dieselbe Rolle | **H4/S3** — in S2 nur festgehalten, nicht behoben (kein Nachzug: der Wert hängt am hängenden Einzug `pl-9`, der Kap. 4c mitentscheidet) |
+| **Ä64** | Der Schriftregler skaliert nur `[data-lese]` — Randtitel, Apparat und Marken bleiben stehen, bei 130 % kippt die Hierarchie | **H4** — in S2 nur festgehalten. Die Stufen müssten em-relativ am Lesekörper hängen statt an eigenen rem-Tokens; das ist ein Skalen-Umbau, kein Nachzug |
+| **Ä65** | Doku-Drift: der Reserve-Kommentar in `tailwind.config.js` beschrieb `erlass.ebene === 'bund'`, gebaut ist `fussAnzeige.length > 0 \|\| historie` | **S2-Nachzug** ✅ erledigt — Wortlaut aus `berechnungen.ts` übernommen, die Ebenen-Weiche ausdrücklich als NICHT gebaut benannt |
+| **Ä66** | Apparat-Links und Fliesstext-Verweise sprachen zwei Verweis-Sprachen (Apparat mit Linie, Fliesstext ohne) | **S2-Nachzug** ✅ erledigt — **durch die Ä25-Rücknahme**, ohne eigenen Eingriff: der Fliesstext trägt wieder dieselbe gepunktete Linie wie der Apparat |
 | **Ä27** | Bei «Fussnoten: aus» steht «Änderungsvermerke ✓ an», sichtbar ist aber nur die «Fassung»-Zeile — die Abhängigkeit ist im flachen Menü unerkennbar | ✅ **S1-Nachzug**: Hinweiszeile am Schalter, nur bei «Fussnoten: aus», V1 **und** V3 aus einer Konstante (`HINWEIS_VERMERKE_OHNE_FUSSNOTEN`); als `aria-describedby`, nicht im Namen |
 
 **Deckel-Stand:** H2 ist der zweite der höchstens fünf H-PRs (Kap. 7).
@@ -1075,7 +1081,7 @@ legt ihn bei Bedarf mit bekanntem Konsumenten neu an).
 | E | Inhalt | Vorbedingung | Tests | Abnahme-Kriterium | Aufwand |
 |---|---|---|---|---|---|
 | **S1** | Optionen-Rückbau: Historie zweiwertig, «Fassung»-Overline an denselben Schalter, «Verweise» streichen, Migration alter Werte (Pos. 8) | **F1 + F2 schriftlich «ja»** | **2 N neu**: `hist-ansicht-w25i`, `gesetze-historie-badge`; `leser-optionen` bleibt grün; Vitest-Migration | «Änderungsvermerke: aus» lässt keine Historie-Spur im Lesekörper zurück, und der DOM bleibt vollständig. | **S** |
-| **S2** | Artikel-Raster (Beiwerk-Zone) + Typografie-Tokens (Pos. 13, 19) | **F3 entschieden, nach Bild-Bogen** (Kap. 8) | 2: `leser-breite-a37`, `leser-lesemass` | Das Umschalten aller drei Schalter erzeugt an keinem Artikel einen Layout-Sprung, und der Satzspiegel entspricht der von David gewählten Variante. | **M** |
+| **S2** ✅ **gebaut 17.8.2026** (Vollzugsvermerk unten) | Artikel-Raster (Beiwerk-Zone) + Typografie-Tokens (Pos. 13, 19) | **F3 entschieden 17.8.2026: V2 + Fussnote hochgestellt** (Kap. 8) | 2: `leser-breite-a37`, `leser-lesemass` | Der Satzspiegel entspricht der von David gewählten Variante (V2, gemessen 17 px / lh 1.55). — **Der erste Halbsatz «Umschalten aller drei Schalter erzeugt keinen Layout-Sprung» ist mit David-Entscheid A1 (5.7.2026) NICHT erfüllbar** und darum durch die verlustfreie Rundlauf-Zusage ersetzt; Herleitung und beide Zusagen im Vollzugsvermerk S2. | **M** |
 | **S3** | Erlass-Kopf + Standausweis-Wortlaut (Pos. 11, 18) | **F5 «ja»** | 3 Vitest + 1 e2e-Wortlaut; `aufhebung-kopf` bleibt grün | UI-Kopf und prerenderter SEO-Kopf tragen **denselben** neuen Wortlaut, und die Warnung erscheint genau bei den fünf betroffenen Erlassen. | **S/M** |
 | **S4** ✅ | Sortierung der Suchtreffer auf Erlass-Reihenfolge — **erledigt 16.8.2026 mit H2** (deklarierte Verhaltensänderung, wirkt in beiden Hüllen) | keine | Vitest an der Sortierfunktion; `leser-r1-r2`, `leser-suche-vertrag-b8` bleiben grün | Die Sortierfunktion liefert Dokumentreihenfolge als Primärschlüssel, bewiesen ohne Browser. | **S** |
 
@@ -1234,6 +1240,214 @@ diese drei Dateien anfasst, reicht `hatAenderungsvermerke` mit durch.
 | `hist-ansicht-w25i` läuft nur im Projekt `chromium` | Die Spec steht in keiner der Listen `N_SPECS`/`V3_SPECS`, `--project=leser-v3` sammelt sie also nicht. Die V3-Seite der S1-Zusage ist über `leser-v3-umschalten` (a2) gedeckt (läuft in BEIDEN Projekten, mit Rot-Beweis). Das Umhängen der Spec-Listen ist ausdrücklich **H4** (Kap. 10) — hier bewusst nicht angefasst |
 | Vitest-Suite trägt einen last-abhängigen Flake **auf main** | Nullprobe auf dem unveränderten Basis-Commit `19a989f9`: **1/4 rot**, `allgemeineFrist.property.test.ts` mit 30-s-Timeout (`import 335 s` = massive Contention). Auf HEAD dieselbe Datei, 1/3. Ein Lauf unter Doppellast (Gate + volle Playwright-Matrix gleichzeitig) traf statt dessen `ArtikelBody`/`tap-ziel-token`. Ohne Nebenlast ist `npm run gate` grün. Nicht S1s Verursachung, aber offen |
 
+### ✅ Vollzugsvermerk S2 (17.8.2026, Branch `feat/leser-v3-s2`)
+
+**Entscheid, der die Etappe auslöste:** David 17.8.2026 am Bildbogen, «v2 gefällt
+mir besser aber fussnoten hochgestellt» ⇒ **F3 = V2, Marke hochgestellt ohne
+Klammern** (Kap. 8, dort auch die abgelöste V1-Empfehlung).
+
+| Zusage | Nachweis |
+|---|---|
+| Fliesstext auf der V2-Stufe | Token `leser-text` 1.0625 rem / lh 1.55 (`tailwind.config.js:138`), gesetzt in `ArtikelLeser.tsx:551`. **Gemessen 17.00 px / 26.35 px = lh 1.55** an StPO/OR/BS-640.100, je @390/720/1440 |
+| Der rohe `leading-[1.65]`-Override fällt | weg in `ArtikelLeser.tsx`; Wächter `src/tests/leser-typo-tokens.test.ts` (5 Fälle) + `check:design-tokens` grün |
+| Marginalie/Randtitel 0.8125 rem Sans | Token `leser-rand`, `helpers.tsx:margStufeStil` + `ArtikelLeser.tsx:459`. Gemessen 13 px |
+| Fussnoten-Apparat 0.6875 rem / lh 1.3 | Token `leser-fn`, gemessen 11 px — an **allen drei** Apparat-Stellen (Artikelfuss, Aufhebungsnotiz, Kopf-Apparat) |
+| Fussnotenmarke hochgestellt, klammerlos | `--hochgestellt: .72em` (`index.css`) ersetzt **6×** `text-[0.62em]`; e2e prüft `vertical-align: super`, kein «(» im Markentext, Grösse 0.72 em. **Nachzug 17.8.2026:** das Token hiess `--fn-marke` und trug damit den Namen nur EINER seiner zwei Rollen — es setzt die Fussnotenmarke UND das Ordnungs-Suffix «bis/ter» an Marginalien; der Name ist jetzt rollenneutral (Arch-Prüfer 6) |
+| WCAG 1.4.8 | lh 1.55; ≤ 80 ch gegated an 390/720/1440 in `e2e/leser-lesemass.e2e.ts`. **Zeichen je Zeile @1440, EINE Messung mit der Methode des Tors (Nachzug 17.8.2026, Arch-Prüfer 9):** ZGB 68 · OR 71 · StPO 73 · VMWG 74 · **StGB 77**. Die WCAG-Decke (80) hält überall; die engere HAUSdecke von 75 ch nicht mehr überall — Detail und offener Entscheid im Nachzug-Abschnitt |
+| Lesemass 42 rem unverändert | `max-w-normtext`, `leser-breite-a37` grün |
+| Beiwerk-Zone als EIN Ort | `[data-beiwerk]` umschliesst Verweise · Rechtsprechung · Fassungs-Slot · Apparat (`ArtikelLeser.tsx:595–703`) |
+| Ä26 Phantom-Lücke | Reserve folgt dem Datenmodell **artikelweise**: `fussAnzeige.length > 0 \|\| historie`. Reservierende Artikel korpusweit **25 403 → 17 547 (−31 %)**; BS-640.100 **264 von 278 Slots weg (95 %)** (Nachzug-Korrektur: der Nenner ist 278 — die 14 aufgehobenen Artikel starten eingeklappt und rendern die Beiwerk-Zone nie, konnten also nie reservieren; die 14 Fussnoten-Artikel sind davon disjunkt, am Korpus geprüft), OR 1092 von 1686, StPO 346 von 480 |
+| Ä7 Randtitel-Hierarchie | drei sichtbare Stufen: Artikelnummer 16 px bold ink-900 > Blatt 13 px semibold ink-800 > Vorfahren 13 px regular ink-600. **Nachzug:** die dritte Stufe der SEKTIONSKÖPFE (`SektionKopf.tsx`) lief noch auf `text-micro` 11 px Serif 500 und war damit leiser als das Blatt darunter — jetzt auf `leser-rand` |
+| Ä-(b) Datums-Mischform | Stand-Zeile trägt EINE Auszeichnung (`tabular-nums` an der Zeile, `.num`-Mono raus); Risikopfad `src/lib/normtext/**` unberührt |
+| Ä25 Verweis-Linie | ⏸ **im Nachzug ZURÜCKGENOMMEN — wartet auf David.** S2 baute «Ruhe ohne Linie»; der Ist-Stand ist wieder die dauerhafte gepunktete Linie. Der **Unmöglichkeitsbeweis für ein Farb-Token bleibt gültig** (dunkel verlangt L ≤ 0.1983 für 3:1 gegen den Text UND L ≥ 0.2084 für 4.5:1 über dem Grund — leeres Intervall). Zurückgenommen wurde die zweite Weiche, weil die Klasse die ganze Site trägt; Messwerte und Entscheid-Vorlage im Nachzug-Abschnitt. Der §5-Nebenfund (`INLINE_CLASS`-Duplikat) **bleibt entdoppelt**, die zusammengesetzten Strings sind byte-gleich zum Stand vor S2 |
+| A-1 Regler, vier Stufen | Grundlagen-Faktoren `[1.0, 1.08, 1.18, 1.3]` × 1.0625 rem ⇒ **17 / 18.36 / 20.06 / 22.1 px** (100·108·118·130 %), im Browser bestätigt (`leser-v3-schriftskala` 3/3) |
+| Golden byte-gleich | `golden:vergleich` → «IDENTISCH — 256 Fälle byte-gleich» |
+
+**Kern-Berührungen (deklariert, nur Klassen/Tokens — kein Wortlaut, kein DOM):**
+`ArtikelLeser.tsx` 293/448/459/527/551/595–707 · `ArtikelBody.tsx` 846
+(`leading-relaxed` nur im Leser-Zweig) · `ErlassKopfBlock.tsx` 39–52/111 ·
+`SektionKopf.tsx` 88 · `helpers.tsx` 189/391–421 · `index.css` 291/533–580 ·
+`leserSchrift.ts` 44–70 · `tailwind.config.js` 129–140/252.
+
+#### Drei Wurzel-Fixe, die S2 nicht bestellt hatte (§17)
+
+1. **Der Entscheid war nicht geliefert.** Der Absatztext lief auf lh **1.625**,
+   nicht auf den 1.55 des Entscheids: `ArtikelBody` setzte `leading-relaxed`
+   unbedingt auf den Block-Wrapper und schlug die Zeilenhöhe der Stufe. Auch der
+   Ist-Wert «1.65» war nie gerendert (Basis-Messung: Container 29.7 px,
+   Absatztext 29.25 px). **Gefunden nur, weil ein Rot-Beweis GRÜN blieb** — die
+   Stufe versuchsweise auf lh 1.4 gesetzt, und der WCAG-Fall merkte nichts.
+   Lehre als Wächter verankert (`leser-typo-tokens.test.ts`: keine Leading-Klasse
+   auf demselben Element wie eine Leser-Stufe).
+2. **A-1 hing an einem Utility-Namen.** Die CSS-Regel des Schriftgrössen-Reglers
+   selektierte `.text-body-l`; nach dem Stufen-Tausch hätte sie STILL nichts mehr
+   getroffen (Regler wirkungslos, kein Tor rot — «Tor, das nicht scheitern kann»,
+   §6.7). Sie hängt jetzt an `[data-lese]`, dem Attribut auf demselben Element.
+   Zwei neue Wächter: Selektor darf kein `text-*`-Utility tragen; die Regler-Basis
+   wird aus `tailwind.config.js` GELESEN statt abgeschrieben. Beide rot gesehen.
+3. **PX-Tor: der notierte «1-px-Höhen-Wackler» ist behoben.** Der Spec-Kopf führte
+   ihn als «ausdrücklich NICHT in dieser Etappe erledigt». Diagnose: V1 und V3
+   rendern den Artikel bis aufs letzte Merkmal gleich (beide 784.921875 px hoch,
+   gleiche Subpixel-Phase 0.1875, gleiche Grössen/Farben/Dekorationen/`:target`);
+   unterschiedlich ist nur die y-Position (V3 sitzt 56 px tiefer). Bei Fensterhöhe
+   900 lag der Artikel GENAU auf der Bruchstelle — teils im Fenster, teils darüber
+   —, und Playwright nimmt ein nicht passendes Element scrollend auf, was die
+   Rasterung der 11-px-Schriften verschiebt (1869 px, 5/5 reproduzierbar).
+   **Nullprobe** (§0 Ziff. 3, am Anfang): Basis `788e4d4a5` mit frischer Baseline
+   im eigenen Worktree **2/2 grün**; gegen die committete Baseline 2/2 rot mit
+   «640×856 statt 640×857» = genau der notierte Wackler. Fix: `MESS_HOEHE_PX =
+   1800` (derselbe Gedanke wie die erzwungene BREITE) plus ein Wächter, der rot
+   wird, wenn ein Mess-Artikel doch nicht ins Fenster passt.
+
+#### PX-Baseline: deklarierte Neusetzung (die im Fahrplan zugelassene Ausnahme)
+
+Neu gesetzt, weil die Typografie sich absichtlich ändert. **Vorher-Bild
+beigelegt:** `docs/ux-audit-2026-07/reader/leser-v3-s2/vorher/px-{or-336c,stpo-429}-VORHER-s1-baseline.png`.
+Danach **5× grün, Exit 0** (Messbedingung: macOS/darwin, warmer Preview,
+`workers=1`, `retries: 0`, keine Parallel-Last). Bemerkenswert: beim Setzen wurde
+die Baseline nur EINMAL je Fall geschrieben — V3 traf die V1-Aufnahme exakt, die
+Hüllen-Parität hält also byte-genau.
+
+#### Der Konflikt im Abnahmekriterium — beide Zusagen, offengelegt (§7)
+
+Das Kriterium der Etappe lautet: «Das Umschalten aller drei Schalter erzeugt an
+keinem Artikel einen Layout-Sprung.» Das ist mit **David-Entscheid A1 vom
+5.7.2026** («AUS» = die Fussnoten VERSCHWINDEN, statt gedämpft zu werden) **nicht
+erfüllbar**: der Apparat misst je Artikel 27–187 px, und ihn höhenfest zu
+reservieren wäre genau das verbotene Dämpfen — ein Boden fängt nur, was kleiner
+ist als er selbst. **Nicht eigenmächtig gegen A1 gelöst.** Gebaut ist, was ohne
+A1-Verletzung reservierbar ist (Fassungs-/Bezugs-Zeile), und der Apparat bleibt
+A1-konform. Zwei Nebenbefunde: es sind seit S1 **zwei** Schalter, nicht drei
+(«Rechtsprechung» ist ein Dropdown); und die Toggle-Δ-Messung über Artikelhöhen
+ist bei grossen Erlassen durch `content-visibility` verfälscht (off-screen-Artikel
+melden ihre Platzhalterhöhe).
+
+Statt der unerfüllbaren Zusage ist die **verlustfreie Rundlauf-Zusage** gegated:
+an→aus→an stellt jede Artikelhöhe exakt wieder her, und der Fall prüft zuerst,
+dass der Schalter überhaupt WIRKT. Genau diese Fehlerklasse (eine Reserve, die
+den Schalter überlebt) hat Ä26 und S1-K4 erzeugt — und auf der Basis war sie
+real: BS-640.100 hinterliess beim Rundlauf von «Änderungsvermerke» einen Rest von
+**53 px**, jetzt **0 px** auf allen drei Erlassen.
+
+**CLS vorher/nachher** (gleiches Skript, Basis `788e4d4a5` gegen diesen Stand):
+
+| @1440 | StPO | OR | BS-640.100 |
+|---|---|---|---|
+| vorher | 0.00461 | 0.04339 | 0.00855 |
+| nachher | 0.00542 | 0.04480 | 0.00868 |
+
+Die Differenzen (+0.0008 / +0.0014 / +0.0001) liegen in der Streuung, und die
+Messung lief **nicht lastisoliert** (ein zweiter Preview-Server lief parallel) —
+darum ausdrücklich **keine Verbesserungs- und keine Verschlechterungs-Behauptung**
+(§0 Ziff. 3). Die Aussage, die trägt: CLS bleibt in derselben Grössenordnung, und
+die Kopf-CLS-Wächter (`leser-kopf-cls-s3`, 4/4) bleiben grün.
+
+#### Nicht gebaut, mit Grund
+
+| Punkt | Stand |
+|---|---|
+| **Ä-(a) Titel-Reservierung** (`min-h-titel-2z` 2.35em ⇒ ~37 px Leerraum bei einzeiligem Titel; 8 von 12 geprüften Erlassen sind @1280 einzeilig) | **Untersucht, NICHT geändert.** Ohne die Reservierung bleibt `leser-kopf-cls-s3` grün (4/4) — aber diese Spec misst den **Sidecar**-Nachschub, nicht den Font-Swap, gegen den die Reservierung steht. Der Versuch, den Swap direkt zu messen (woff2 blockieren), ist **fehlgeschlagen**: beide Läufe zeigten die Webfont, das Ergebnis beweist nichts. Auf einer Fläche mit datiertem CLS-Vorfall (0.0227 am 9.8.2026) wird ohne Beweis nicht geändert (§6). **Nächstes Experiment, konkret:** Fallback über `document.fonts` erzwingen statt über Netz-Blockade, Zeilenzahl des `h1` je Erlass web↔fallback @1280/390 vergleichen; nur bei 0 Abweichungen die Reserve streichen. Heimat **H4/S3-Nachzug** |
+| **Ä4 Beiwerk-Chips über den Rand** | **Reproduziert und vermessen, NICHT behoben.** `.lc-bezug-linie` ist ein horizontaler Scroll-Streifen (scrollWidth 875 gegen clientWidth 414 @1440); 17 Nachfahren der Beiwerk-Zone ragen rechts über die Artikelkante, bis **232 px @720**. Kein Dokument-Überlauf (Seiten-Scrollbreite 0) — der Inhalt wird still beschnitten. Am Objekt sichtbar in `nachher/stpo-429-1440-s2.png`. **Grund für den Aufschub:** H3 ersetzt genau diese Chip-Zeile durch den leisen Zähler «⚖ n Entscheide →» (F4); eine Überarbeitung hier wäre verworfene Arbeit und eine Kollision mit der H3-Baufläche. Zugewiesen an **H3** |
+| **Sachüberschrift 16 px → 13 px** | Folgt der V2-Zeile, die David gewählt hat, berührt aber den Auftrag vom 26.6.2026 («darf nicht zu einem blassen Abschnittslabel verkümmern»). Gegengesteuert mit Gewicht und Farbe (semibold, ink-800 statt V2-ink-600). **Wartet auf Davids Auge** an `nachher/` |
+| **Toter Zweig in `gesetze-marginalie`** | Die Vorfahren-Zusicherungen laufen **nie** — alle 11 ZGB-Stapel haben genau EIN Kind; über ZGB und OR 40 000 px gescrollt kein einziger mehrstufiger Stapel. Belegt durch einen Rot-Beweis, der grün blieb (Blatt auf `semibold text-ink-400`, also heller als jeder Vorfahr ⇒ 4/4 grün). **Vorbestehend, nicht von S2 verursacht.** Die Zusicherungen bleiben (sie sind richtig, nur unerreicht), der falsche Eindruck von Deckung nicht: Befund steht an der Spec. Ein zuerst gebauter «verschmolzen»-Fall ist wieder **entfernt** — er war aus demselben Grund unerreichbar (§6.7/§17) |
+| **ROADMAP-Deckel** | `check:steuerdeckel` rot: ROADMAP.md 100.5 KB > 100 KB. **Nicht von S2** — die Datei ist byte-identisch zum Basis-Commit `788e4d4a5`, das Tor war schon dort rot. Gehört zum Doku-Rotationscommit des S1-Branches |
+
+**§6.3-Anpassungen an Bestands-Tests, deklariert** (drei Dateien, je mit
+Begründung an der Stelle): `src/tests/leser-schriftskala.test.ts` (Stufenwerte,
+1.0625 rem, Selektor — dazu zwei NEUE Wächter), `e2e/leser-v3-schriftskala.e2e.ts`
+(Selektor + `STUFEN_PX`), `e2e/gesetze-marginalie.e2e.ts` (Prominenz über
+Gewicht/Farbe statt über absolute Grösse). Kein `refactor(`-Commit fasst eine
+Testdatei an.
+
+**Tore (nackt, Exit-Code):** `npm run gate` 42/43 (einzig rot:
+`check:steuerdeckel`, s. o.) · `check:design-tokens` 0 · `check:e2e-shards` 0
+(90 Specs) · `check:testtreue` 0 · `check:perf-budget` 0 · `check:linien-kanon` 0
+· `golden:vergleich` 0 · `npm run build` 0 · `npx tsc -b` 0 · Playwright
+chromium 54/54 (inkl. aller sechs N-Specs) · V3-/Kopf-Batterie 29/29 · restliche
+V3-Specs 21/21 · `leser-v3-schriftskala` 3/3 · `leser-kopf-cls-s3` 4/4 ·
+`a11y --project=schwer` 47/47 · `PX=1 --project=px` **5/5**. Der bekannte Flake
+`allgemeineFrist.property` trat in keinem Lauf auf.
+
+**Rot-Beweise (§6.7), je einmal gesehen:** Config-Drift der Regler-Basis
+(«Regler-Basis und Fliesstext-Stufe laufen auseinander (§5)») · `text-*`-Utility
+zurück im Schriftskala-Selektor · Stufen-Wert in `tailwind.config.js` verstellt ·
+Fliesstext-Override zurück · **Ä26 auf `erlass.ebene === 'bund'` zurückgedreht
+⇒ «Reserve fehlt (Ä26-Regel greift nicht auf Kantonsrecht ⇒ Erlass-Sonderpfad)»**
+· PX-Fensterhöhe zu klein ⇒ Wächter mit Handlungsanweisung · «Schalter wirkt
+nicht» im Rundlauf-Fall. Zwei Beweise sind bewusst als MISSLUNGEN protokolliert,
+weil sie grün blieben und damit einen echten Defekt aufdeckten (lh-Override,
+toter Marginalie-Zweig).
+
+#### Nachzug nach drei Prüfern (17.8.2026)
+
+Drei unabhängige Prüfungen: Bug-Check · Ästhetik **7/10** · Architektur **8,5/10**
+(«ja mit Nachzug»). Je Befund eine Zeile, jeder reproduziert, bevor er behoben wurde.
+
+**Nummernkreis:** die S2-Ästhetik vergab Ä52–Ä57 und kollidierte damit mit dem
+H3-Nachzug (Ä52–Ä59). Die S2-Punkte heissen darum **Ä61–Ä66** (Ä52→Ä61 · Ä53→Ä62 ·
+Ä54→Ä63 · Ä55→Ä64 · Ä56→Ä65 · Ä57→Ä66); die alten Nummern gelten für H3.
+
+| Befund | Stand |
+|---|---|
+| **Ä25 Verweis-Linie** | ⏸ **zurückgenommen, wartet auf David.** Ist-Stand wieder dauerhafte Linie. Gemessener Kontrast Link↔Umgebung ohne Linie: **1.00 : 1** (`/rechner/verjaehrung`), **1.06 : 1** (übrige Rechner-Seiten), **2.14 : 1** (Leser) gegen die 3 : 1 der WCAG-Technik G183 — die Klasse `INLINE_CLASS` trägt ~20 prerenderte Rechner-/Vorlagen-Seiten, nicht nur den Leser, und die axe-Ausnahme `link-in-text-block` ist ein David-Entscheid (BERICHT.md B-2). **Entscheid:** Design-Grundlage Kap. 8 gegen G183. **Empfehlung: Linie behalten.** Ä66 (zwei Verweis-Sprachen) ist damit ohne eigenen Eingriff erledigt |
+| **A1 / Ä65 Doku-Drift** | ✅ `tailwind.config.js` beschrieb die Ä26-Reserve als `erlass.ebene === 'bund'`; gebaut ist artikelweise `fussAnzeige.length > 0 \|\| historie`. Wortlaut aus `berechnungen.ts` übernommen |
+| **A2 / Ä61 Marken-Kollision** | ✅ `w-6` → `min-w-6`. Gemessen @1440, **beide Hüllen identisch** (vorbestehend): OR 336c `cbis.`/`cter.` je +10 px, `cquater.` +35.2, `cquinquies.` +60.41; AIG 5 `abis.` +10. Neue Spec, Rot-Beweis 5/5. **Kern-Berührung** |
+| **A3 / Ä62 Marken-Waisen** | ✅ Träger `whitespace-nowrap` + Wort-Verbinder INNERHALB. Vorher StGB 13/532 (V3), 16/532 (V1), StPO 8/276 → **je 0**. Die Auftrags-Ursache (`inline-block`) ist **widerlegt**: Blink erzwingt für `<button>` unabhängig von `display` eine atomare Inline-Box (13 Waisen vor UND nach `display:inline`); `overflow-wrap: anywhere` ebenfalls ausgeschlossen. Beweis über DOM-Chirurgie. **Kern-Berührung** |
+| **A4 / Ä7-Rest** | ✅ dritte Randtitel-Stufe der Sektionsköpfe von `text-micro` (11 px Serif 500) auf `leser-rand` (13 px Sans). Stufen 0/1 bewusst unverändert (§7) |
+| **B1/B10 toter Zweig** | ✅ die Vorfahren-Schleife in `gesetze-marginalie` lief nie (11 von 11 ZGB-Stapeln mit genau EINEM Kind) — nach §17(2) **gestrichen statt bewacht**; an ihre Stelle EINE lebende, vollständige Blatt-Zusicherung (13 px / 600 / ink-800). Rot-Beweis gesehen |
+| **B2 Token-Rename** | ✅ `min-h-hist-zeile` → `min-h-beiwerk` restlos in den lebenden Dateien, inkl. der Rot-Beweis-Anleitung in `gesetze-historie-badge` |
+| **B3 PX-Kommentare** | ✅ «Baseline nicht neu aufgenommen» und «Wurzel-Fix NICHT in dieser Etappe» stehen auf dem Ist-Stand |
+| **B4 Token-Name** | ✅ `--fn-marke` → `--hochgestellt` (zwei Fachinhalte: Fussnotenmarke + Marginalien-Suffix); stale «9px/12px» entfernt |
+| **B5 Hülle** | ✅ `leser-lesemass` sagt im Kopf, welche Hülle es prüft (Ist-Hülle; Stufe ist Kern, nur der Regler ist V3-gegated) und hat EINEN Fall unter `?leser=v3` mit Positiv-Sicherung. Rot-Beweis: Flag entfernt ⇒ «Expected 1, Received 0» |
+| **B6 Prop-Doku** | ✅ `zitierKontext` trägt am Vertrag die Doku seiner zweiten Wirkung (der Typografie-Schalter) |
+| **B7 Zahlen** | ✅ EINE Messung, Methode des Tors, @1440: **ZGB 68 · OR 71 · StPO 73 · VMWG 74 · StGB 77 ch**. Korrigiert: `tailwind.config.js` («70–72 ch, ≥ 3 ch Luft» war die 18-px-Zahl), `ArtikelLeser.tsx` («53–58 ch»), Ä26-Nenner (278 statt 292 ⇒ **264** Slots weg) |
+| **B9 später** | ✅ nur eingetragen: **Ä63** Handy-Einzug (OR/ZGB @390 x = 80 gegen StPO 44) → H4/S3 · **Ä64** Regler skaliert nur `[data-lese]`, Hierarchie kippt bei 130 % → H4 |
+
+**PX-Baseline erneut deklariert neu gesetzt.** Ä61/Ä62 verändern den Textkörper
+(Marken-Spalte und Marken-Umbruch), die S2-Aufnahme galt also nicht mehr. Vorher-Bilder
+`vorher/px-{or-336c,stpo-429}-VORHER-s2-nachzug.png`; Messbedingung wie oben (macOS,
+warmer Preview, `workers=1`, `retries: 0`, keine Parallel-Last). Wie in S2 wurde die
+Baseline je Fall nur EINMAL geschrieben — V3 traf die V1-Aufnahme exakt, die
+Hüllen-Parität hält byte-genau.
+
+**Tore des Nachzugs (nackt, Exit-Code):** `npm run gate` **GRÜN** (43/43 Sub-Checks;
+`check:steuerdeckel` ist inzwischen grün) · `check:testtreue` 0 · `check:e2e-shards` 0
+(91 Specs) · `check:design-tokens` 0 · `check:perf-budget` 0 · `golden:vergleich` 0
+(«IDENTISCH — 256 Fälle byte-gleich») · `npm run build` 0 · `npx tsc -b` 0 ·
+Playwright `chromium` auf `leser-*`/`gesetze-*` **247/247** · Projekt `leser-v3` auf
+`leser-v3-*`/`leser-kopf-*` **32/32 + 1 skip** · `gesetze-marginalie` in beiden
+Projekten 8/8 · `leser-marken-geometrie` 5/5 · `PX=1 --project=px` **5/5** ·
+`a11y --project=schwer` **47/47** (hell + dunkel).
+
+**Rot-Beweise des Nachzugs (§6.7), je einmal gesehen:** die neue Spec
+`leser-marken-geometrie` 5/5 rot gegen den Stand vor dem Fix, mit den Messzahlen im
+Fehlertext (`cquinquies.» +60.41 px`, «13 von 532 Marken») · Blatt-Stufe in
+`gesetze-marginalie` auf 16 px verstellt ⇒ «Erwartet 16, erhalten 13» · der neue
+V3-Fall in `leser-lesemass` ohne `?leser=v3` gefahren ⇒ «Expected 1, Received 0» (er
+kann nicht still gegen die Ist-Hülle grün werden) · die neue Spec ohne Eintrag in
+`shard-gruppen.json` ⇒ «FEHLT: leser-marken-geometrie.e2e.ts». **Zwei Kandidaten sind
+als MISSLUNGEN protokolliert und haben genau dadurch die Auftrags-Ursache widerlegt:**
+`display:inline` am Fussnoten-Marker (13 Waisen vorher UND nachher) und
+`overflow-wrap: break-word`/`normal` (unverändert 13/8) — die Ursache ist die atomare
+Inline-Box des `<button>`, bewiesen per DOM-Chirurgie (Ersatz durch echte Inline-Spans
+⇒ 0 Waisen).
+
+**Vorbehalte für Davids Auge** (nichts davon entscheidet ein Test, §8):
+1. **Sachüberschrift 13 px** statt 16 px — folgt der V2-Zeile, berührt aber den
+   Auftrag vom 26.6.2026 («darf nicht zu einem blassen Abschnittslabel verkümmern»);
+   gegengesteuert mit semibold/ink-800.
+2. **Fussnoten-Apparat 11 px** (vorher 12 px) — die kleinste Schrift im Leser, @390
+   am kritischsten. Kontrast selbst nachgemessen (StPO Art. 429, `[data-fn-apparat]`
+   auf der 11-px-Stufe): **5.10 : 1 hell** (`#6F6B61` auf `#FCFAF6`) und
+   **5.52 : 1 dunkel** (`#918D83` auf `#16150F`) — beides über der AA-Schwelle
+   4.5 : 1, die bei 11 px gilt. *(Der Bug-Check hatte 4.98 : 1 für hell notiert; nicht
+   reproduziert, gemessen sind 5.10 : 1. Die dunkle Zahl deckt sich.)* Die Frage ist
+   also nicht die Lesbarkeit im Normsinn, sondern ob es sich am Objekt zu klein
+   anfühlt.
+3. **Lesemass:** die Hausdecke 75 ch hat beim VMWG 1 ch Luft, das StGB liegt mit
+   77 ch darüber (WCAG 80 ch hält überall). Entweder `max-w-normtext` wird für die
+   17-px-Stufe schmaler, oder die Hausdecke geht bewusst auf 80.
+
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
 | Punkt | Regel |
@@ -1296,17 +1510,36 @@ die Kommentar-Referenzen `index.css:867,909`.
 
 ## 8 · Typografie-Varianten (Pos. 19, entscheidet S2)
 
-| Kennwert | Ist | **V1 «ruhiger Satzspiegel»** | **V2 «amtsnah kompakt»** |
+> **ENTSCHIEDEN — David 17.8.2026 am Bildbogen**
+> (`docs/ux-audit-2026-07/reader/leser-v3-s2/bogen.html`), Wortlaut
+> «v2 gefällt mir besser aber fussnoten hochgestellt»: **Spalte V2 «amtsnah
+> kompakt» ist GEWÄHLT**, mit **einer Abweichung** — die Fussnotenmarke bleibt
+> **hochgestellt und ohne Klammern** (V1-Form). Gebaut in S2, Nachweise im
+> Vollzugsvermerk S2 (Kap. 7).
+
+| Kennwert | Ist | **V1 «ruhiger Satzspiegel»** | **V2 «amtsnah kompakt» ✅ GEWÄHLT** |
 |---|---|---|---|
-| Fliesstext | `text-body-l` 1.125 rem / lh 1.6, Override `leading-[1.65]` (`ArtikelLeser.tsx:563`) | 1.1875 rem (19 px) / lh 1.7 | 1.0625 rem (17 px) / lh 1.55 |
-| Lesemass | `max-w-normtext` 42 rem ≈ 70–72 ch | 40 rem ≈ 64–66 ch | 42 rem ≈ 76 ch |
-| Marginalie/Randtitel | Stufen nach `gesetze-marginalie` | 0.875 rem, Serif, ink-600 | 0.8125 rem, Sans, ink-600 |
-| Titelstufen | h3 20 / h2 25.6 / h1 32 (`tailwind.config.js:59-60`) | 20 / 24 / 30, Overline in Kapitälchen | unverändert |
-| Absatzziffern (¹ ² ³) | inline | **hängend** in der Marge, ink-500 | inline, halbfett |
-| Fussnotenmarke | hochgestellt, klassenabhängig | 0.72 em hochgestellt, ohne Klammer | in runden Klammern, 0.8 em |
-| Fussnoten-Body | `text-micro` 0.6875 rem / lh 1.2 | 0.75 rem / lh 1.45 | 0.6875 rem / lh 1.3 |
-| Einzug je Stufe | 20 px, max 5 Stufen | unverändert | unverändert |
-| WCAG 1.4.8 (≤ 80 ch, lh ≥ 1.5) | erfüllt | erfüllt | erfüllt (76 ch, lh 1.55) |
+| Fliesstext | `text-body-l` 1.125 rem / lh 1.6, Override `leading-[1.65]` (`ArtikelLeser.tsx:563`) | 1.1875 rem (19 px) / lh 1.7 | ✅ 1.0625 rem (17 px) / lh 1.55 — Token `leser-text`; **gemessen 17.00 px / 26.35 px = 1.55** |
+| Lesemass | `max-w-normtext` 42 rem ≈ 70–72 ch | 40 rem ≈ 64–66 ch | ✅ 42 rem, unverändert |
+| Marginalie/Randtitel | Stufen nach `gesetze-marginalie` | 0.875 rem, Serif, ink-600 | ✅ 0.8125 rem, Sans — Token `leser-rand`; **Blatt abweichend ink-800/semibold** (Auftrag David 26.6.2026, s. Vermerk) |
+| Titelstufen | h3 20 / h2 25.6 / h1 32 (`tailwind.config.js:59-60`) | 20 / 24 / 30, Overline in Kapitälchen | ✅ unverändert |
+| Absatzziffern (¹ ² ³) | inline | **hängend** in der Marge, ink-500 | ✅ inline, halbfett |
+| Fussnotenmarke | hochgestellt, klassenabhängig | 0.72 em hochgestellt, ohne Klammer | ⚠️ **ABWEICHUNG David 17.8.2026:** NICHT in Klammern/0.8 em, sondern **0.72 em hochgestellt ohne Klammer** (V1-Form) — Token `--hochgestellt` (im Nachzug rollenneutral umbenannt, vorher `--fn-marke`), ersetzt 6× `text-[0.62em]` |
+| Fussnoten-Body | ~~`text-micro` 0.6875 rem / lh 1.2~~ → **am Code gemessen `text-xs` 12 px / lh 1.5**; der Ist-Vermerk war falsch (§7) | 0.75 rem / lh 1.45 | ✅ 0.6875 rem / lh 1.3 — Token `leser-fn`; gemessen 11 px |
+| Einzug je Stufe | 20 px, max 5 Stufen | unverändert | ✅ unverändert |
+| WCAG 1.4.8 (≤ 80 ch, lh ≥ 1.5) | erfüllt | erfüllt | ✅ erfüllt — **gemessen 73/71/61 ch @1440 (StPO/OR/BS-640.100), lh 1.55**; an 390/720/1440 gegated |
+
+**KORREKTUR ZUM IST-STAND, gemessen (S2, 17.8.2026).** Der Absatztext lief NIE
+auf lh 1.65. `ArtikelBody` setzte `leading-relaxed` (1.625) unbedingt auf den
+Block-Wrapper und schlug damit die Zeilenhöhe des Containers — der Ist-Wert
+«1.65» in der Spalte links ist nur der CONTAINER-Wert, gerendert waren **1.625**.
+Auf der Basis `788e4d4a5` nachgemessen: Container 29.7 px, Absatztext 29.25 px
+= 18 × 1.625. S2 nimmt den Override im Leser-Zweig heraus; erst damit liefert der
+Leser die 1.55 des Entscheids wirklich. Gefunden wurde es nur, weil ein
+Rot-Beweis GRÜN blieb (Stufe versuchsweise auf lh 1.4 gesetzt — der WCAG-Fall
+merkte nichts). Lehre: eine Grössen-Stufe ist erst geliefert, wenn kein
+Leading-Token daneben auf demselben Element steht; Wächter dafür ist jetzt
+`src/tests/leser-typo-tokens.test.ts`.
 
 **Token-Schranke:** `check:design-tokens` verbietet rohe Grössen wie `text-[19px]`
 (`scripts/check-design-tokens.ts` Z. 4-7) — jede neue Grösse tritt als **Token** in
@@ -1322,7 +1555,17 @@ Breiten (390 / 1440 / 720 px = Pane) und drei Zustände (Ist · V1 · V2), V1/V2
 
 ## 9 · Entscheide F1–F6 — als harte Vorbedingungen
 
-> **Entscheide David 16.8.2026 (Chat, «go, empfehlungen übernehmen, bau den prototyp»):** F1 ja · F2 ja · F4 ja · F5 ja · F6 nein · **F3 = V1 (19 px) · F7 = A (Kopf mit «Ansicht ▾») · F8 = Panel-Randlasche behalten; **Regel David 16.8.: Schalter «Rechtsprechung im Text» aus ⇒ Zähler UND Randlasche weg** (Panel bleibt über «Ansicht ▾»/Tastatur erreichbar; H3) — entschieden am Prototyp V-0, David 16.8.2026 («V1, a, Lasche behalten — weiter mit H1»)** · Design-Grundlage D-A Regler ja · D-B Dunkelmodus behalten (14 Rollen) · D-C Serif behalten. Blocker `david-go-leser-v3` gelöst; Schritt auf wip.
+> **Entscheide David 16.8.2026 (Chat, «go, empfehlungen übernehmen, bau den prototyp»):** F1 ja · F2 ja · F4 ja · F5 ja · F6 nein · ~~**F3 = V1 (19 px)**~~ **← ABGELÖST, s. nächster Absatz** · F7 = A (Kopf mit «Ansicht ▾») · F8 = Panel-Randlasche behalten; **Regel David 16.8.: Schalter «Rechtsprechung im Text» aus ⇒ Zähler UND Randlasche weg** (Panel bleibt über «Ansicht ▾»/Tastatur erreichbar; H3) — entschieden am Prototyp V-0, David 16.8.2026 («V1, a, Lasche behalten — weiter mit H1») · Design-Grundlage D-A Regler ja · D-B Dunkelmodus behalten (14 Rollen) · D-C Serif behalten. Blocker `david-go-leser-v3` gelöst; Schritt auf wip.
+
+> **Entscheid David 17.8.2026 (am Bildbogen `docs/ux-audit-2026-07/reader/leser-v3-s2/bogen.html`),
+> Wortlaut «v2 gefällt mir besser aber fussnoten hochgestellt»:
+> F3 = V2 «amtsnah kompakt» (17 px / lh 1.55) + Fussnotenmarke HOCHGESTELLT,
+> ohne Klammern.** Dieser Entscheid **löst die F3-Empfehlung «V1» vom 16.8.2026
+> ab** — sie war ausdrücklich unverbindlich «bis nach dem 18-Bilder-Vergleich»
+> (Kap. 8), und der Vergleich hat jetzt stattgefunden. Die alte Zeile bleibt oben
+> durchgestrichen stehen, damit die Reihenfolge der Entscheide nachvollziehbar
+> bleibt. Gebaut in **S2**; Nachweise, Messwerte und die eine Abweichung von der
+> V2-Spalte im Vollzugsvermerk S2 (Kap. 7).
 
 Keine Etappe startet ohne ihre Vorbedingung. Fehlt der Entscheid, wartet die Etappe — sie wird
 **nicht** «auf Verdacht nach Empfehlung» gebaut (Council A/D: sonst liegt ein fertiger
@@ -1332,7 +1575,7 @@ Test-Rewrite vor, den David kippen könnte).
 |---|---|---|---|---|
 | **F1** | Heute gibt es drei Einstellungen dafür, wie Änderungsvermerke im Gesetzestext erscheinen (aus / bei den Fussnoten / als datierte Liste). Auf zwei reduzieren? | … nur noch «Änderungsvermerke: an/aus». Die datierte Liste entfällt; die Information selbst geht nicht verloren, sie steht dann bei den Fussnoten. | **Ja** — dritter Modus für dieselbe Information; er kommt als eigener Schritt zurück, falls Bedarf entsteht | **S1** |
 | **F2** | Der Schalter «Verweise» soll weg. | … keinen Unterschied im Alltag: der Schalter wirkt heute nur auf eine gepunktete Linie unter Querverweisen. Farbe, Klickbarkeit und Ctrl+F bleiben in jedem Fall. **KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7):** «die ohnehin erst beim Darüberfahren mit der Maus erscheint» war FALSCH; die Linie stand im Ruhezustand. David hat also auf einer zu harmlosen Beschreibung entschieden. Der Entscheid wird NICHT eigenmächtig umgedeutet: er bleibt in Kraft (die Linie ist Zierde), und die Frage «soll die Linie im Ruhezustand überhaupt stehen?» ist als eigener Punkt Ä25 geführt — sie ist eine Design-Frage, keine Rückbau-Frage. | **Ja** | **S1** |
-| **F3** | Zwei Schriftbilder für den Gesetzestext stehen zur Wahl. | … bei **V1** grössere Schrift und kürzere Zeilen (ruhiger, mehr Weissraum); bei **V2** ein kompakteres Bild, näher am amtlichen Fedlex-Aussehen (mehr Text pro Bildschirm). | **V1** — Entscheid aber **erst nach** dem 18-Bilder-Vergleich (Kap. 8); vorher ist die Empfehlung unverbindlich | **S2** |
+| **F3** | Zwei Schriftbilder für den Gesetzestext stehen zur Wahl. | … bei **V1** grössere Schrift und kürzere Zeilen (ruhiger, mehr Weissraum); bei **V2** ein kompakteres Bild, näher am amtlichen Fedlex-Aussehen (mehr Text pro Bildschirm). | ~~**V1**~~ ⇒ **ENTSCHIEDEN 17.8.2026: V2** + Fussnote hochgestellt (am Bildbogen; die V1-Empfehlung war bis zum Bildvergleich unverbindlich) | **S2** ✅ gebaut |
 | **F4** | Unter jedem Artikel stehen heute scrollbare Zeilen mit Gerichtsentscheiden. Ersetzen durch eine leise Zeile «⚖ 14 Entscheide →», die ein Seitenfenster öffnet? | … einen ruhigen Gesetzestext ohne Entscheid-Zeilen; ein Klick auf den Zähler öffnet das Fenster mit allen Entscheiden samt Filtern. Kein Entscheid wird unerreichbar. | **Ja** | **H3** |
 | **F5** | Der Standausweis im Erlass-Kopf soll neu formuliert werden. | … statt «geltend geprüft am 14.08.2026 (maschinell)» neu «gegen Fedlex-Konsolidierung geprüft am 14.08.2026 (maschinell)» — und dort, wo es zutrifft, den Klartextsatz «Fedlex hat eine seit 01.07.2025 geltende Änderung noch nicht in den Text eingearbeitet». Heute betrifft das fünf Erlasse. | **Ja, beides** — der Chip sagt, *was* geprüft wurde, die Warnzeile, *was trotzdem fehlt* | **S3** |
 | **F6** | Blätter-Pfeile «voriger/nächster Artikel» aufnehmen? | … einen zusätzlichen Knopf im Kopf oder am Artikelfuss — bequem beim Durchlesen, aber ein Element mehr statt weniger. | **Nein, nicht in V3** — nach der Landung als eigener kleiner Schritt bewerten | — |

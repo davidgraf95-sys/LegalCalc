@@ -6,6 +6,14 @@
 // im Vollzugsvermerk suchen muss.
 //
 // ROT GESEHEN (§6.7) — Sabotage → Ausgabe, je Fall am Ende des Kommentars.
+//
+// WERKZEUG-FALLE beim Nachvollziehen der Rot-Beweise (verbrannt 17.8.2026,
+// S2×H3-Vereinigung): der e2e-Server ist `npm run preview` und bedient `dist/`,
+// mit `reuseExistingServer` ausserhalb von CI. Eine Sabotage in `src/**` wirkt
+// darum ERST nach `npm run build` — ohne Neubau bleibt der Fall grün und die
+// Sabotage sieht wie ein Tor aus, das nicht scheitern kann. Reihenfolge:
+// sabotieren → `npm run build` → Fall laufen lassen → zurücksetzen → `npm run
+// build`. Sabotagen in `e2e/**` (Schwellen, Assertions) wirken sofort.
 import { test, expect, type Page } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
 
@@ -189,17 +197,32 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // die Fläche: sheet.y 100, erwartet > 380».
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
-    await warteLeser(page)
-    // ZUM ARTIKEL scrollen, BEVOR das Sheet aufgeht: @390 beginnt die Artikelliste
-    // erst bei y ≈ 1100 (Erlass-Kopf + Übersichtsbox darüber) — im Ruhezustand ist
+    // ZUM ARTIKEL springen, BEVOR das Sheet aufgeht: @390 beginnt die Artikelliste
+    // erst weit unten (Erlass-Kopf + Übersichtsbox darüber) — im Ruhezustand ist
     // oberhalb des Sheets gar kein Artikel, und die Messung sagte dann nichts über
     // das Sheet, sondern über die Startposition der Seite.
-    const artikel = page.locator('#lc-lesespalte article').first()
+    //
+    // GEMESSEN am ANKER, nicht per `scrollIntoViewIfNeeded` (S2-Vereinigung
+    // 17.8.2026): der minimale Scroll hört auf, sobald der Artikel IRGENDWO im
+    // 844-px-Fenster steht — unter der S2-Typografie ist der Inhalt oberhalb
+    // gewachsen, und er landet dann bei y = 392 in der unteren Bildhälfte, also
+    // dort, wo das Sheet sitzt (Streifen −12.6 px). Das ist keine Aussage über das
+    // Sheet, sondern über eine Scroll-Heuristik, die kein Leser je erzeugt: der
+    // Leser kommt über den Anker-Sprung, und der legt den Artikelkopf unter die
+    // Klebekante des Kopfs (gemessen y = 192.4 bei scrollY 882, Kopf-Unterkante
+    // 193). Die Spec misst darum den Weg des Lesers.
+    await page.goto('/gesetze/bund/STPO?leser=v3#art-1')
+    await warteLeser(page)
+    const artikel = page.locator('#art-1')
     await expect(artikel).toBeAttached({ timeout: 20_000 })
-    await artikel.scrollIntoViewIfNeeded()
-    await page.waitForTimeout(300)
+    await page.waitForTimeout(800)
     const aBoxVorher = (await artikel.boundingBox())!
+    // VORBEDINGUNG: der Sprung hat stattgefunden. Ohne sie könnte ein misslungener
+    // Anker-Sprung (Artikel gar nicht im Bild) den Fall still grün färben.
+    const kopfUnten = await page.locator('[data-v3-kopf]').boundingBox()
+      .then((b) => b!.y + b!.height)
+    expect(aBoxVorher.y, `Anker-Sprung misslungen: Artikel y ${aBoxVorher.y}, Kopf-Unterkante ${kopfUnten}`)
+      .toBeLessThanOrEqual(kopfUnten + 8)
     await panelAufziehen(page)
 
     const sheet = page.locator('[data-v3-panel-form="unten"]')
@@ -217,8 +240,16 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // worden (das Sheet liegt über ihm, es verdrängt ihn nicht).
     const aBox = (await artikel.boundingBox())!
     expect(aBox.y, `Artikel verschoben: ${aBoxVorher.y} → ${aBox.y}`).toBeCloseTo(aBoxVorher.y, 0)
-    expect(aBox.y, `kein Artikel-Streifen oberhalb des Sheets (Artikel y ${aBox.y}, Sheet y ${box.y})`)
-      .toBeLessThan(box.y)
+    // Und zwar ein LESBARER Streifen, nicht ein Pixel-Splitter. Die frühere Fassung
+    // verlangte nur `aBox.y < box.y` — damit wäre ein 1 px hoher Artikel-Rest über
+    // dem Sheet grün gewesen, obwohl vom Artikel nichts zu lesen ist. Gemessen
+    // 17.8.2026 @390: Artikel y 192.4, Sheet y 379.8 ⇒ 187.4 px Streifen, der
+    // Artikelkopf samt erster Absatzzeile steht frei. Die Schwelle 120 px lässt
+    // Raum für Zeilenhöhen-Varianz der drei S2-Textgrössen und bleibt weit unter
+    // dem Ist — sie ist STRENGER als die alte Zusage, nicht lockerer.
+    const streifen = box.y - aBox.y
+    expect(streifen, `Artikel-Streifen oberhalb des Sheets zu schmal: ${streifen} px (Artikel y ${aBox.y}, Sheet y ${box.y})`)
+      .toBeGreaterThanOrEqual(120)
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 

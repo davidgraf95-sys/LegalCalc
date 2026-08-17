@@ -161,16 +161,36 @@ describe('Leser-Schriftskala — Regler', () => {
     const { schrift, optionen } = await ladeStore(null);
     expect(schrift.schriftProzent('normal')).toBe(100);
     const werte = optionen.SCHRIFT_STUFEN.map((s) => schrift.schriftProzent(s));
-    expect(werte).toEqual([100, 111, 122, 133]);
+    // S2 · A-1 (DEKLARIERTE fachliche Änderung, §6.3 — kein Refactoring): die
+    // Skala lief auf [100, 111, 122, 133] (absolute rem-Werte 1.125/1.25/1.375/
+    // 1.5). Sie liegt jetzt auf den FAKTOREN der Design-Grundlage Kap. 2.3
+    // ([1.0, 1.08, 1.18, 1.3], Entscheid D-A), was erst mit S2 möglich wurde:
+    // bis dahin hing die Vorgabestufe am site-weiten `body-l`, und H1/H2 mussten
+    // den Normtext byte-gleich halten. Mit der eigenen Leser-Stufe `leser-text`
+    // (F3 = V2, David 17.8.2026) hat der Regler eine eigene Basis.
+    expect(werte).toEqual([100, 108, 118, 130]);
     for (let i = 1; i < werte.length; i++) expect(werte[i]).toBeGreaterThan(werte[i - 1]);
   });
 });
 
 describe('Leser-Schriftskala — Treue-Grenze und §5-Spiegel', () => {
-  it('die Vorgabestufe verändert die Normtext-Grösse NICHT (byte-gleich)', async () => {
+  it('die Vorgabestufe ist die Fliesstext-Stufe selbst — aus tailwind.config.js gelesen, nicht abgeschrieben', async () => {
     const { schrift } = await ladeStore(null);
-    // 1.125 rem IST `text-body-l` aus tailwind.config.js — die heutige Grösse.
-    expect(schrift.SCHRIFT_REM.normal).toBe(1.125);
+    // S2 (DEKLARIERTE fachliche Änderung, §6.3): der Wert war 1.125 rem
+    // (`text-body-l`); F3 = V2 (David 17.8.2026) setzt den Leser-Fliesstext auf
+    // `leser-text` = 1.0625 rem.
+    //
+    // VERSCHÄRFUNG statt bloss neuer Zahl: bisher stand hier eine ABGESCHRIEBENE
+    // Konstante — der Test hätte nicht gemerkt, wenn `leser-text` in
+    // tailwind.config.js wandert und der Regler auf der alten Basis sitzenbleibt
+    // (die Vorgabestufe zeigte dann «100 %», während der Normtext eine andere
+    // Grösse trägt). Der Wert wird darum aus der Config GELESEN. §5: eine Quelle.
+    const cfg = readFileSync(fileURLToPath(new URL('../../tailwind.config.js', import.meta.url)), 'utf8');
+    const stufe = /'leser-text':\s*\[\s*'([0-9.]+)rem'/.exec(cfg);
+    expect(stufe, 'Stufe «leser-text» steht nicht mehr in tailwind.config.js').not.toBeNull();
+    expect(schrift.SCHRIFT_REM.normal, 'Regler-Basis und Fliesstext-Stufe laufen auseinander (§5)')
+      .toBe(Number(stufe![1]));
+    expect(schrift.SCHRIFT_REM.normal).toBe(1.0625);
   });
 
   it('«normal» ist aus dem CSS-Selektor ausgenommen ⇒ keine Regel im Grundzustand (R6)', () => {
@@ -179,8 +199,32 @@ describe('Leser-Schriftskala — Treue-Grenze und §5-Spiegel', () => {
     // auch im Grundzustand eine font-size-Deklaration emittiert — rechnerisch
     // derselbe Wert, aber die Zusage «Vorgabestufe rührt den Normtext nicht an»
     // wäre nur noch behauptet statt konstruktiv erzwungen (§6).
-    expect(css).toContain('html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv .text-body-l');
+    expect(css).toContain('html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv [data-lese]');
     expect(css).not.toMatch(/html\[data-leserschrift="normal"\]\s*\{[^}]*--lm-leser-schrift/);
+  });
+
+  it('S2-WURZELFIX: der Selektor hängt an einem Daten-Attribut, nie an einem Grössen-Utility', () => {
+    const css = readFileSync(fileURLToPath(new URL('../index.css', import.meta.url)), 'utf8');
+    // DER BEFUND (S2, 17.8.2026): der Selektor endete auf `.text-body-l` — den
+    // Utility-Klassennamen der DAMALIGEN Fliesstext-Stufe. S2 tauscht die Stufe
+    // auf `text-leser-text`; die Regel hätte danach STILL nichts mehr getroffen,
+    // der Schriftgrössen-Regler wäre wirkungslos geworden, und KEIN Tor hätte es
+    // gemeldet — genau die Klasse «Tor, das nicht scheitern kann» (§6.7). Ein
+    // Utility-Name ist kein Vertrag: er wechselt mit jeder Grössen-Entscheidung.
+    // Der Selektor hängt darum an `[data-lese]`, dem Attribut, das `ArtikelBody`
+    // auf DEMSELBEN Element setzt, das die Grössen-Klasse trägt.
+    //
+    // Dieser Fall bewacht die Lehre gegen die Rückkehr: er scheitert, sobald ein
+    // Grössen-Utility zurück in den Selektor wandert — auch unter einem anderen
+    // Namen als dem alten.
+    const cssOhneKommentare = css.replace(/\/\*[\s\S]*?\*\//g, '');
+    const eintrag = [...cssOhneKommentare.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+      .find(([, sel, koerper]) => sel.includes('data-leserschrift') && /font-size/.test(koerper));
+    expect(eintrag, 'keine font-size-Regel der Schriftskala gefunden').toBeTruthy();
+    const selektorZeile = eintrag![1].split('\n').pop()!.trim();
+    expect(selektorZeile, 'Schriftskala hängt wieder an einem text-*-Utility statt an [data-lese]')
+      .not.toMatch(/\.text-[a-z0-9-]/);
+    expect(selektorZeile).toContain('[data-lese]');
   });
 
   it('die rem-Werte in index.css und SCHRIFT_REM stimmen überein', async () => {

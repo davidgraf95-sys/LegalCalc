@@ -172,9 +172,21 @@ describe('Lesesicht H/I/J — Pop pro Element, kleinere Marken, feste Rinne', ()
     expect(o).not.toContain('hover:translate-');
   });
   it('J: der Block-<div> selbst poppt NICHT (kein Pop auf der Block-Klasse)', () => {
-    // Bei passus=null sind alle Blöcke nicht zitiert → Block-<div>-Klasse ist
-    // exakt «leading-relaxed text-ink-700» (kein Lift/scale/ring/shadow).
-    expect(out()).toContain('class="leading-relaxed text-ink-700"');
+    // Bei passus=null sind alle Blöcke nicht zitiert → die Block-<div>-Klasse
+    // trägt NUR die Farbe, keinen Lift/scale/ring/shadow.
+    //
+    // S2 · DEKLARIERTE FACHLICHE ÄNDERUNG (§6.3): hier stand
+    // «leading-relaxed text-ink-700». Der `leading-relaxed`-Anteil ist im
+    // LESESICHT-Zweig (`zitierKontext` gesetzt, wie hier) entfallen — er stand
+    // unbedingt auf dem Block-Wrapper und schlug damit die Zeilenhöhe der
+    // Fliesstext-Stufe: die Absätze liefen auf 1.625 statt auf die 1.55, die
+    // David am 17.8.2026 mit F3 = V2 gewählt hat. Herleitung an der Stelle in
+    // `ArtikelBody.tsx`. Ausserhalb der Lesesicht (Popover/Vorschau) ist
+    // `leading-relaxed` unverändert vorhanden — das deckt `NormPopover.test.tsx`
+    // (golden) ab, und genau darum bleibt dieser Fall auf die Lesesicht bezogen.
+    expect(out()).toContain('class="text-ink-700"');
+    // Die Zusicherung des Falls selbst, unverändert: kein Pop auf dem Block.
+    expect(out()).not.toContain('class="leading-relaxed text-ink-700"');
   });
   it('J/P6: kein Clipping (kein scale, kein -mx-2, kein will-change-transform)', () => {
     const o = out();

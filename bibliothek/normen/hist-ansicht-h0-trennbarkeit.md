@@ -251,7 +251,7 @@ Stellungen** sichtbar.
    Der dritte Träger kam mit S1 dazu (Befund K4): bis dahin hing die
    Fassungs-Zeile an gar keinem Schalter und blieb bei «aus» als einzige
    Historie-Spur im Lesetext stehen. Ausgeblendet wird der SLOT, nicht nur die
-   Zeile darin — sonst bliebe seine reservierte Höhe (`mt-4 min-h-hist-zeile` =
+   Zeile darin — sonst bliebe seine reservierte Höhe (`mt-4 min-h-beiwerk` =
    16 + 24 px) als Phantom-Lücke unter jedem Artikel zurück.
 
 **Unverändert:** kein Substanz-Träger ist erfasst; der Normtext ist von keiner

@@ -33,9 +33,55 @@ import { RechtsprechungText } from './RechtsprechungLink';
 // Browser); der erzeugte Text ist zeichenidentisch zum heutigen plain {text}
 // (nur zusätzliche <a>-Hüllen), Golden/PDF-Pfade nutzen NormText nicht.
 
+// ─── Ä25/Ä61 · VERWEIS-AUSZEICHNUNG IM FLIESSTEXT ───────────────────────────
 // Dezenter Inline-Stil (gepunktete Unterstreichung) — fügt sich in den
 // Fliesstext ein, anders als der Pillen-Chip an strukturierten Stellen.
-const INLINE_CLASS = 'underline decoration-dotted underline-offset-2 hover:text-brass-700';
+//
+// STAND 17.8.2026: die Linie bleibt im RUHEZUSTAND. S2 hatte sie versuchsweise
+// auf «Linie erst bei hover/focus-visible» umgestellt (Design-Grundlage Kap. 8);
+// der S2-Nachzug hat das ZURÜCKGENOMMEN, und die Design-Frage geht als Entscheid
+// an David (Fahrplan Kap. 7, Ä-Tabelle Ä25). Drei gemessene Gründe:
+//
+//  1. REICHWEITE. Diese Klasse ist die Verweis-Auszeichnung der GANZEN Site,
+//     nicht des Lesers: NormText steht in Tarif-Hinweisen, Gates-/Ergebnis-
+//     Warnungen und Vorlagen-Texten (~20 prerenderte Rechner-/Vorlagen-Seiten).
+//     Eine Leser-Typografie-Etappe darf sie nicht mitziehen.
+//  2. WCAG G183. Ohne Linie unterscheidet den Verweis nur noch die FARBE; G183
+//     verlangt dafür ≥ 3 : 1 gegen den umgebenden Text. Gemessen am gebauten
+//     S2-Stand (chromium, 17.8.2026): 1.00 : 1 auf `/rechner/verjaehrung`
+//     (Link und Fliesstext tragen dort dieselbe Farbe), 1.06 : 1 auf den
+//     übrigen Rechner-Seiten, 2.14 : 1 im Leser. Die Schwelle ist damit an
+//     jeder gemessenen Stelle verfehlt, im Ruhezustand blieb faktisch KEIN
+//     nichtfarbliches Signal ausser dem Schriftgewicht.
+//  3. AXE-AUSNAHME. `link-in-text-block` ist eine ausdrückliche Ausnahme mit
+//     David-Entscheid (`docs/ux-audit-2026-07/BERICHT.md` B-2); ihre Reichweite
+//     eigenmächtig auszuweiten ist kein Nachzug.
+//
+// Warum ein FARB-Token die Frage nicht löst (S2-Rechnung, hier aufbewahrt, weil
+// sie in Davids Entscheid eingeht): ein Verweis-Token müsste ZWEI Schranken
+// zugleich halten — ≥ 3 : 1 gegen den Fliesstext (G183) UND ≥ 4.5 : 1 gegen den
+// Grund (AA für Linktext, SC 1.4.3). In relativer Leuchtdichte L (WCAG-2.x-
+// Formel, gerechnet 17.8.2026 aus den Ist-Tokens):
+//
+//   DUNKEL — Fliesstext #DCD9D2 (L 0.6949) auf Grund #16150F (L 0.0074):
+//     3 : 1 gegen den Text verlangt   L ≤ 0.1983
+//     4.5 : 1 über dem Grund verlangt L ≥ 0.2084
+//     ⇒ das Intervall ist LEER — es gibt keinen solchen Farbwert.
+//   HELL — Fliesstext #2B2924 (L 0.0223) auf Grund #FCFAF6 (L 0.9346):
+//     heller als der Text: L ∈ [0.1668, 0.1738] ⇒ existiert als ~ein einziger
+//     Ton, nützt aber nichts, solange die dunkle Seite leer ist.
+//
+// §5 (Ä25-Nebenfund, BEHALTEN): der String stand zeichengleich in
+// `NormText.tsx` UND `KantonNormText.tsx`. Er ist EINE exportierte Konstante —
+// sonst laufen Bund- und Kanton-Verweise beim nächsten Eingriff auseinander. Der
+// farbfreie Teil steht getrennt, weil der kantonale §-Trigger dieselbe Linie,
+// aber eine andere Hover-Farbe braucht. Jede FARB-Utility bleibt LITERAL in der
+// Datei, die sie verwendet — Tailwind liest seine Klassen aus dem Quelltext,
+// eine zur Laufzeit zusammengesetzte Farbklasse wäre ein stiller No-op (die
+// Bug-Klasse, die `check:design-tokens` Prüfung 2/3 verfolgt).
+export const VERWEIS_RUHE = 'underline decoration-dotted underline-offset-2';
+export const VERWEIS_INLINE_CLASS = `${VERWEIS_RUHE} hover:text-brass-700`;
+const INLINE_CLASS = VERWEIS_INLINE_CLASS;
 
 // ─── Interne Querverweise (Lesesicht, Deep-Research-Befund 7) ───────────────
 // In der Gesetzes-Lesesicht sind BARE Artikelverweise («nach Artikel 6a»,

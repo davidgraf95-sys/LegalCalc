@@ -21,10 +21,34 @@
 // gemessen — genau die Grössen, die der Befund auseinanderhält.
 //
 // ROT ZU BEKOMMEN (§6.7): in `index.css` den Scope der Regel von
-// `.lc-leser .nt-art-cv .text-body-l` auf `html` verkürzen (Fall a und b werden
-// rot: Kopf und Seitenleiste wachsen mit) oder in `leserSchrift.ts`
-// `setzeLeserSchrift` aus `groesser` entfernen (Fall a rot: nichts wächst).
+// `.lc-leser[data-leser-v3="rahmen"] .nt-art-cv [data-lese]` auf `html` verkürzen
+// (Fall a und b werden rot: Kopf und Seitenleiste wachsen mit) oder in
+// `leserSchrift.ts` `setzeLeserSchrift` aus `groesser` entfernen (Fall a rot:
+// nichts wächst).
+//
+// ── S2 · DEKLARIERTE FACHLICHE ÄNDERUNG (§6.3, kein Refactoring) ─────────────
+// Zwei Dinge sind mit S2 nachgezogen, beide als Folge von Entscheiden:
+//  ① DER SELEKTOR. Der Normtext wurde über die Utility-Klasse `.text-body-l`
+//     gegriffen. F3 = V2 (David 17.8.2026 am Bildbogen) tauscht die
+//     Fliesstext-Stufe auf `text-leser-text` — die Spec wartete danach 90 s auf
+//     ein Element, das es nicht mehr gibt (genau so gesehen, dreimal:
+//     «Test timeout … waiting for locator('#art-1 .text-body-l')»). Sie greift
+//     jetzt `[data-lese]`, dasselbe Daten-Attribut, an dem auch die CSS-Regel
+//     hängt — ein Vertrag statt eines Utility-Namens, die Lehre des A-1-Wurzelfix.
+//  ② DIE STUFENWERTE. Die Skala lag auf 18/20/22/24 px (absolute rem-Werte);
+//     A-1 zieht sie auf die Faktoren der Design-Grundlage Kap. 2.3
+//     ([1.0, 1.08, 1.18, 1.3], Entscheid D-A) über der neuen Basis 1.0625 rem.
+//     Erwartet sind darum 17 / 18.36 / 20.06 / 22.1 px (`STUFEN_PX` unten). Dass
+//     diese Werte zu `SCHRIFT_REM` und zu `tailwind.config.js` passen, bewacht
+//     `src/tests/leser-schriftskala.test.ts` — hier zählt die gerenderte Wirkung.
 import { test, expect, type Page } from '@playwright/test'
+
+/**
+ * Die vier Stufen in gerechneten Pixeln bei 16-px-Wurzel (S2 · A-1):
+ * 1.0625 · 1.1475 · 1.25375 · 1.38125 rem. Bruchwerte sind gewollt — sie sind das
+ * Produkt der Grundlagen-FAKTOREN, nicht handgesetzte Rundwerte.
+ */
+const STUFEN_PX = [17, 18.36, 20.06, 22.1] as const
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -35,7 +59,7 @@ function fehlerSammeln(page: Page): string[] {
 
 /** Der Normtext selbst — der Fliesstext-Container von Art. 1, nicht die
  *  Überschrift und nicht der Fussnoten-Apparat. */
-const normtext = (page: Page) => page.locator('#art-1 .text-body-l').first()
+const normtext = (page: Page) => page.locator('#art-1 [data-lese]').first()
 const kopf = (page: Page) => page.locator('[data-v3-kopf]')
 const leiste = (page: Page) => page.locator('[data-v3-aside]')
 // Ä9 (Ästhetik-Review H1) BISS HIER — mit H2b ist die Ursache behoben.
@@ -130,10 +154,11 @@ test.describe('Leser-Schriftskala — der Regler bewegt NUR den Normtext', () =>
     const start = await schriftgroesse(normtext(page))
     const kopfStart = await schriftgroesse(kopf(page))
     const leisteStart = await schriftgroesse(leiste(page))
-    // Die Vorgabestufe IST die heutige Normtext-Grösse (text-body-l = 1.125 rem
-    // bei 16-px-Wurzel). Wäre das nicht so, hätte die neue Skala den Ist-Stand
-    // verschoben und der Pixelvergleich der V3-Paritätsspecs wäre hinfällig.
-    expect(start, 'Vorgabestufe verschiebt die Normtext-Grösse').toBe(18)
+    // Die Vorgabestufe IST die Fliesstext-Stufe des Lesers (S2: `leser-text` =
+    // 1.0625 rem bei 16-px-Wurzel = 17 px; bis S2 `text-body-l` = 18 px). Wäre das
+    // nicht so, verschöbe der REGLER die Grundeinstellung — und der
+    // Pixelvergleich der V3-Paritätsspecs wäre hinfällig.
+    expect(start, 'Vorgabestufe verschiebt die Normtext-Grösse').toBe(STUFEN_PX[0])
 
     const treppe: number[] = [start]
     // Vier Stufen ⇒ DREI wirksame Klicks. Der Anschlag wird danach an der
@@ -153,7 +178,7 @@ test.describe('Leser-Schriftskala — der Regler bewegt NUR den Normtext', () =>
       await page.waitForTimeout(120)
       treppe.push(await schriftgroesse(normtext(page)))
     }
-    expect(treppe, `Treppe ${treppe.join(' → ')} px`).toEqual([18, 20, 22, 24])
+    expect(treppe, `Treppe ${treppe.join(' → ')} px`).toEqual([...STUFEN_PX])
     await expect(groesser(page), 'oberer Anschlag ist nicht gesperrt — die Skala kann über ihr Vokabular hinauslaufen')
       .toBeDisabled()
 
@@ -179,14 +204,14 @@ test.describe('Leser-Schriftskala — der Regler bewegt NUR den Normtext', () =>
     const kopfVorher = await schriftgroesse(kopf(page))
     await groesser(page).click()
     await groesser(page).click()
-    await expect.poll(() => schriftgroesse(normtext(page)), { timeout: 5_000 }).toBe(22)
+    await expect.poll(() => schriftgroesse(normtext(page)), { timeout: 5_000 }).toBe(STUFEN_PX[2])
 
     await page.reload()
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     // Nach dem Reload trägt der Normtext die gewählte Stufe bereits beim ersten
     // Paint (`wendeLeserOptionenAn` setzt `data-leserschrift` vor dem Render) —
     // und die Kopfzeile steht unverändert da.
-    expect(await schriftgroesse(normtext(page)), 'Stufe hat den Reload nicht überlebt').toBe(22)
+    expect(await schriftgroesse(normtext(page)), 'Stufe hat den Reload nicht überlebt').toBe(STUFEN_PX[2])
     expect(await schriftgroesse(kopf(page)), 'Kopfzeile nach Reload verstellt').toBe(kopfVorher)
 
     expect(fehler).toEqual([])

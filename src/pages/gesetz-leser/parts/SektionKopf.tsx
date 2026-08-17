@@ -48,11 +48,36 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
   // oberste Stufe prominent (h2), dann h3, body-l, sonst base. font-semibold liegt
   // am Titel-Span (unten). Nur existierende Tokens (§13).
   const randStufe = Math.min(randTiefe, 2);
+  // ── Ä7-REST (S2-Nachzug 17.8.2026, Ästhetik-Prüfer) ─────────────────────────
+  // Die DRITTE Randtitel-Stufe lief auf `text-micro` = 11 px, Serif, Gewicht 500,
+  // lh 1.2 (gemessen @1440 am OR: «1. Im Allgemeinen», «2. Betreffend Nebenpunkte»).
+  // Damit war ein SEKTIONS-Kopf, der mehrere Artikel zusammenfasst, LEISER als der
+  // Sachtitel eines einzelnen Artikels darunter (gemessen: Blatt-Randtitel 13 px,
+  // Gewicht 600, Sans) und so klein wie der Fussnoten-Apparat (11 px) — die
+  // Hierarchie war an dieser Stelle nicht bloss flach, sondern verkehrt.
+  //
+  // Die dritte Stufe geht darum auf DIESELBE Randtitel-Stufe, die David am
+  // Bildbogen gewählt hat (F3 = V2, «Marginalie/Randtitel 0.8125 rem, Sans»,
+  // Token `leser-rand` = 13 px / lh 1.35) und die `helpers.tsx:margStufeStil` für
+  // die Randtitel AM ARTIKEL schon trägt — EINE Randtitel-Stufe für beide Orte
+  // (§5) statt zweier Systeme.
+  //
+  // ABGRENZUNG, ausdrücklich NICHT geändert (§7): die Stufen 0 und 1 bleiben bei
+  // `text-base`/`text-body-s` und Serif. David hat am Bogen den Satzspiegel des
+  // ARTIKELS gesehen, nicht die Gliederungsköpfe; sie von 16 auf 13 px zu senken
+  // wäre eine Änderung ohne Vorlage. Die Stufung bleibt 16 > 14 > 13 px — jetzt
+  // aber nicht mehr nach unten offen.
   const titelStil = s.randtitel
-    ? (randStufe === 0 ? 'text-base' : randStufe === 1 ? 'text-body-s' : 'text-micro')
+    ? (randStufe === 0 ? 'text-base' : randStufe === 1 ? 'text-body-s' : 'text-leser-rand')
     : s.ebene === 0 ? 'text-h2' : s.ebene === 1 ? 'text-h3' : s.ebene === 2 ? 'text-body-l' : 'text-base';
   const titelFont = s.randtitel
-    ? `font-serif ${randStufe === 2 ? 'font-medium' : 'font-semibold'} text-ink-800`
+    ? (randStufe === 2
+        // Dritte Stufe = Randtitel-Sprache: Sans (Zwei-Stimmen-Regel, Grundlage
+        // Kap. 2.1 — Serif ist der Wortlaut, Sans das Beiwerk) mit `font-medium`,
+        // damit sie unter der zweiten Stufe (Serif 600) UND unter dem
+        // Blatt-Randtitel am Artikel (Sans 600) bleibt.
+        ? 'font-sans font-medium text-ink-800'
+        : 'font-serif font-semibold text-ink-800')
     : 'font-display font-semibold text-ink-900';
   // G11: section-heading-Fussnoten-Marker. FnRef ist selbst ein <button> und darf
   // NICHT im Toggle-<button> liegen (verschachtelte Buttons) → der Marker sitzt als
@@ -85,7 +110,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
         {sekFn && (
           <span className="shrink-0" data-fn-marker>
             {sekFn.map((f, i) => (
-              <span key={`${f.artikel}-${f.nr}`}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={f.artikel} nr={f.nr} /></span>
+              <span key={`${f.artikel}-${f.nr}`}>{i > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={f.artikel} nr={f.nr} /></span>
             ))}
           </span>
         )}
