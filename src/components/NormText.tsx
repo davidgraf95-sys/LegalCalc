@@ -33,9 +33,57 @@ import { RechtsprechungText } from './RechtsprechungLink';
 // Browser); der erzeugte Text ist zeichenidentisch zum heutigen plain {text}
 // (nur zusätzliche <a>-Hüllen), Golden/PDF-Pfade nutzen NormText nicht.
 
-// Dezenter Inline-Stil (gepunktete Unterstreichung) — fügt sich in den
-// Fliesstext ein, anders als der Pillen-Chip an strukturierten Stellen.
-const INLINE_CLASS = 'underline decoration-dotted underline-offset-2 hover:text-brass-700';
+// ─── Ä25 · VERWEIS-AUSZEICHNUNG IM FLIESSTEXT (S2, 17.8.2026) ───────────────
+// Dezenter Inline-Stil — fügt sich in den Fliesstext ein, anders als der
+// Pillen-Chip an strukturierten Stellen.
+//
+// AUFTRAG (Design-Grundlage Kap. 8): «Erst bei Hover/Fokus: … Verweis-
+// Unterstreichung» — der Ruhezustand soll die gepunktete Linie NICHT tragen.
+// S1 hat den Umbau ausgesetzt, weil die Linie zu entfernen den Verweis auf
+// «Farbe allein» reduziert hätte (WCAG-Technik G183: dafür braucht die
+// Linkfarbe ≥ 3 : 1 gegen den umgebenden Text; gemessen waren es 2.04 : 1 hell
+// und 1.14 : 1 dunkel).
+//
+// S2 HAT DIE FRAGE ZU ENDE GERECHNET — das Ergebnis ist ein UNMÖGLICHKEITS-
+// BEWEIS, nicht eine Farbwahl. Ein Verweis-Token müsste ZWEI Schranken zugleich
+// halten: ≥ 3 : 1 gegen den Fliesstext (G183) UND ≥ 4.5 : 1 gegen den Grund
+// (AA für Linktext, SC 1.4.3). In relativer Leuchtdichte L (WCAG-2.x-Formel,
+// gerechnet 17.8.2026 aus den Ist-Tokens):
+//
+//   DUNKEL — Fliesstext #DCD9D2 (L 0.6949) auf Grund #16150F (L 0.0074):
+//     3 : 1 gegen den Text verlangt   L ≤ 0.1983   (heller als der Text geht
+//        nicht — der Text steht selbst schon bei 12.97 : 1 über dem Grund)
+//     4.5 : 1 über dem Grund verlangt L ≥ 0.2084
+//     ⇒ das Intervall ist LEER. Es gibt keinen solchen Farbwert — nicht nur
+//       keinen in den 14 Rollen der Grundlage, sondern überhaupt keinen.
+//   HELL — Fliesstext #2B2924 (L 0.0223) auf Grund #FCFAF6 (L 0.9346):
+//     dunkler als der Text: L ≤ −0.0259 ⇒ unmöglich (negativ)
+//     heller als der Text:  L ∈ [0.1668, 0.1738] ⇒ existiert, aber als ~ein
+//       einziger Ton — und nützt nichts, solange die dunkle Seite leer ist.
+//
+// FOLGE: Ä25 ist über die FARBE nicht lösbar. Der Auftrag bot dafür ausdrücklich
+// die zweite Weiche — «ODER ein leises Nicht-Farb-Signal im Ruhezustand». Genau
+// das ist gebaut: der Verweis trägt im Ruhezustand `font-medium` (500, eines der
+// vier zugelassenen Gewichte, Grundlage Kap. 2.1) und die Akzentfarbe; die LINIE
+// tritt bei `hover` UND `focus-visible` hinzu. Damit ist keine Aussage
+// hover-only (Grundlage Kap. 8: «Hover verbirgt Zierde, nie Funktion»): das
+// Gewicht steht immer — auch auf Touch, wo es kein Hover gibt — und die Tastatur
+// bekommt dasselbe Signal wie die Maus.
+//
+// §5 (Ä25-Nebenfund): der String stand zeichengleich in `NormText.tsx` UND
+// `KantonNormText.tsx`. Er ist jetzt EINE exportierte Konstante — sonst laufen
+// Bund- und Kanton-Verweise beim nächsten Eingriff auseinander.
+// Der farbfreie Teil (Ruhe-Gewicht + Linie erst bei Hover/Fokus). Getrennt
+// exportiert, weil der kantonale §-Trigger dieselbe Ruhe-Regel, aber eine andere
+// Hover-Farbe braucht — und weil Tailwind seine Klassen aus dem QUELLTEXT liest:
+// eine zur Laufzeit zusammengesetzte oder ersetzte Klasse (`.replace(…)`) würde
+// gar nicht generiert und wäre ein stiller No-op (genau die Bug-Klasse, die
+// `check:design-tokens` Prüfung 2/3 verfolgt). Darum steht jede Farb-Utility als
+// LITERAL in der Datei, die sie verwendet.
+export const VERWEIS_RUHE =
+  'font-medium no-underline underline-offset-2 hover:underline hover:decoration-dotted focus-visible:underline focus-visible:decoration-dotted';
+export const VERWEIS_INLINE_CLASS = `${VERWEIS_RUHE} hover:text-brass-700`;
+const INLINE_CLASS = VERWEIS_INLINE_CLASS;
 
 // ─── Interne Querverweise (Lesesicht, Deep-Research-Befund 7) ───────────────
 // In der Gesetzes-Lesesicht sind BARE Artikelverweise («nach Artikel 6a»,

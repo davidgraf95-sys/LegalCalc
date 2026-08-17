@@ -205,9 +205,9 @@ export function margLabel(label: string): ReactNode {
   // (text-xs-Kontext → 9px) und in der Artikel-Überschrift (text-base-Kontext
   // → 12px) in zwei Grössen derselben Ansicht. Fix: derselbe deterministische
   // Multiplikator wie bei den bestehenden hochgestellten Fussnoten-Markern
-  // (ArtikelBody.tsx FnRef-Button, `text-[0.62em]`) statt des UA-Defaults —
+  // (ArtikelBody.tsx FnRef-Button, `text-[length:var(--fn-marke)]`) statt des UA-Defaults —
   // keine neue Grössen-Systematik, nur der bereits etablierte Wert.
-  if (ord) return <Fragment>{ord[1]}<sup className="text-[0.62em]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
+  if (ord) return <Fragment>{ord[1]}<sup className="text-[length:var(--fn-marke)]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
   const bu = label.match(MARG_BUCHST);
   if (bu) return <Fragment>{bu[1]}<em>{bu[2]}</em>{label.slice(bu[0].length)}</Fragment>;
   return label;
@@ -409,7 +409,35 @@ export function margStufeStil(level: number, istBlatt: boolean): string {
   // «1. Im / Allgemeinen» — die Fortsetzungszeile rückt via text-indent:-1em +
   // pl-[1em] auf die Titel-Startspalte ein (Fedlex-AVOID). Reine Darstellung (§3).
   const hang = '[text-indent:-1em] pl-[1em]';
-  if (istBlatt) return `${hang} text-base font-semibold text-ink-800`;
-  if (level <= 0) return `${hang} text-body-s font-medium uppercase tracking-wide text-ink-500`;
-  return `${hang} text-body-s text-ink-600`;
+  // S2 · Ä7 «Randtitel über Artikelnummer (Hierarchie)» + F3 = V2, Spalte
+  // «Marginalie/Randtitel 0.8125 rem, Sans, ink-600» (David 17.8.2026 am
+  // Bildbogen; die Aufnahme legte die V2-Regel über `.font-serif.leading-snug
+  // > div`, also über GENAU diese drei Stufen — David hat sie so gesehen).
+  //
+  // DER BEFUND, gemessen am gebauten Stand: Artikelnummer und Blatt-Randtitel
+  // liefen beide auf 16 px (`text-base`), die Nummer bold/ink-900, das Blatt
+  // semibold/ink-800 — zwei fast gleich laute Stimmen übereinander, also keine
+  // Hierarchie. Ä7 wird von der RANDTITEL-Seite gelöst, nicht durch Vergrössern
+  // der Artikelnummer: V2 sagt ausdrücklich «Titelstufen unverändert», und die
+  // Nummer auf die 20-px-Stufe `leser-art` der Grundlage Kap. 2.2 zu heben wäre
+  // eine Änderung, die David am Bogen NICHT gesehen hat (§7). Ergebnis sind die
+  // drei sichtbaren Stufen, die Grundlage Kap. 2.3 als Höchstzahl nennt:
+  //   Artikelnummer 16 px bold ink-900  >  Blatt 13 px semibold ink-800
+  //                                     >  Vorfahren 13 px regular ink-600.
+  // `font-sans` überschreibt den Serif-Container des Randtitel-Blocks
+  // (ArtikelLeser) — Zwei-Stimmen-Regel: Serif ist der Wortlaut, Sans das
+  // Beiwerk (Grundlage Kap. 2.1).
+  //
+  // EINE ABWEICHUNG, offengelegt: das BLATT behält `text-ink-800` statt der
+  // V2-Farbe ink-600. Das Blatt ist die Sachüberschrift des Artikels, und ein
+  // datierter David-Auftrag (26.6.2026, oben im Kommentar) verlangt, dass sie
+  // nicht «zu einem blassen Abschnittslabel verkümmert» — ~83 % aller Randtitel
+  // sind genau dieser Fall. ink-800 gegen ink-600 ist eine Kontrast-ERHÖHUNG
+  // (13.94 : 1 gegen 7.36 : 1, Grundlage Kap. 4), also nie ein A11y-Risiko; die
+  // Hierarchie trägt hier das Gewicht, nicht die Farbe.
+  // Stufe 0 gewinnt zugleich Kontrast: ink-500 → ink-600 (V2-Spalte; 5.10 : 1 →
+  // 7.36 : 1, damit AAA statt knapp AA bei 13 px Versalien).
+  if (istBlatt) return `${hang} font-sans text-leser-rand font-semibold text-ink-800`;
+  if (level <= 0) return `${hang} font-sans text-leser-rand font-medium uppercase tracking-wide text-ink-600`;
+  return `${hang} font-sans text-leser-rand text-ink-600`;
 }

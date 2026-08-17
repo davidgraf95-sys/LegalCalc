@@ -1,5 +1,6 @@
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../lib/fedlex';
 import { NormChip } from './vorlagen/NormChip';
+import { VERWEIS_INLINE_CLASS, VERWEIS_RUHE } from './NormText';
 import { KantonQuelleLink } from './KantonQuelleLink';
 import { RechtsprechungText } from './RechtsprechungLink';
 
@@ -28,8 +29,16 @@ import { RechtsprechungText } from './RechtsprechungLink';
 // Reste laufen durch RechtsprechungText (BGE/BGer). Reine Darstellung (§3),
 // progressive enhancement (SSR-Erstrender = <a>/Text, Popover erst im Browser).
 
-const INLINE_CLASS = 'underline decoration-dotted underline-offset-2 hover:text-brass-700';
-const KANTON_CLASS = 'underline decoration-dotted underline-offset-2 hover:text-ink-800 cursor-pointer';
+// Ä25 (S2, 17.8.2026): Bund- und Kanton-Verweise tragen DENSELBEN Inline-Stil —
+// der String stand hier zeichengleich ein zweites Mal (§5-Nebenfund aus der
+// S1-Prüfung) und ist jetzt importiert. Herleitung, Kontrast-Rechnung und der
+// Unmöglichkeitsbeweis für ein Farb-Token stehen an `VERWEIS_INLINE_CLASS`
+// (NormText.tsx) — nicht hier verdoppeln.
+const INLINE_CLASS = VERWEIS_INLINE_CLASS;
+// Der kantonale «§»-Trigger folgt derselben Ruhe-/Hover-Regel; nur die
+// Hover-Farbe bleibt ink-800 (er springt nicht nach Fedlex, sondern öffnet ein
+// Popover) und der Zeiger bleibt der Hand-Zeiger.
+const KANTON_CLASS = `${VERWEIS_RUHE} hover:text-ink-800 cursor-pointer`;
 
 // Kantonaler «§»-Designator + optional Abs./lit./Ziff. (für die präzise
 // Markierung im Popover via parsePassus). NUR «§» — siehe Sicherung (a) unten;

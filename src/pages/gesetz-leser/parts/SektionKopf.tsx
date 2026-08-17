@@ -85,7 +85,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
         {sekFn && (
           <span className="shrink-0" data-fn-marker>
             {sekFn.map((f, i) => (
-              <span key={`${f.artikel}-${f.nr}`}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={f.artikel} nr={f.nr} /></span>
+              <span key={`${f.artikel}-${f.nr}`}>{i > 0 && <span className="align-super text-[length:var(--fn-marke)] text-ink-500">,</span>}<FnRef artikel={f.artikel} nr={f.nr} /></span>
             ))}
           </span>
         )}

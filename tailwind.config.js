@@ -107,6 +107,37 @@ export default {
         h1: ['2rem', { lineHeight: '1.15' }],
         display: ['2.25rem', { lineHeight: '1.05' }],
         'display-l': ['2.75rem', { lineHeight: '1.05' }],
+        // ── LESER-SATZSPIEGEL (W2·5m-LESER-V3 · S2, Pos. 19) ────────────────
+        // Entscheid David 17.8.2026 am Bildbogen `docs/ux-audit-2026-07/reader/
+        // leser-v3-s2/bogen.html` («v2 gefällt mir besser aber fussnoten
+        // hochgestellt») ⇒ Variante **V2 «amtsnah kompakt»** aus FAHRPLAN-
+        // LESER-V3 Kap. 8 / Design-Grundlage Kap. 2.4, mit der EINEN Abweichung
+        // «Fussnotenmarke hochgestellt statt in runden Klammern» (die Marke ist
+        // keine Grösse dieser Skala, sondern das em-relative Token `--fn-marke`
+        // in index.css — sie MUSS relativ bleiben, damit sie dem Fliesstext und
+        // dem Schriftregler folgt).
+        //
+        // Nur DREI Stufen treten neu ein, nicht die sieben der Grundlage
+        // Kap. 2.2: `leser-titel`/`leser-h`/`leser-chrome`/`leser-mikro` wären
+        // wertgleiche Zweitnamen für `h1`/`h2`/`body-s`/`overline` — ein zweiter
+        // Name für denselben Wert ist genau die zweite Wahrheit, die §5
+        // verbietet. `leser-art` (20 px Artikelnummer) ist bewusst NICHT
+        // eingeführt: V2 sagt «Titelstufen unverändert», und die Artikelnummer
+        // zu vergrössern hätte David am Bogen nicht gesehen (Ä7 wird über die
+        // Randtitel-Seite gelöst, s. `helpers.tsx` margStufeStil).
+        //
+        //  · `leser-text` 17 px / lh 1.55 — Normtext-Fliesstext. Ersetzt das
+        //    Paar `text-body-l leading-[1.65]` (18 px / 1.65) am Artikel-Körper:
+        //    der rohe `leading-[…]`-Override fällt damit weg, die Zeilenhöhe
+        //    gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
+        //    über alle Grössen»). WCAG 1.4.8: lh 1.55 ≥ 1.5, Lesemass 42 rem.
+        //  · `leser-rand` 13 px / lh 1.35 — Marginalie/Randtitel, Sans, label-2.
+        //  · `leser-fn`   11 px / lh 1.3  — Fussnoten-Apparat am Artikelfuss
+        //    (war `text-xs leading-normal` = 12 px / 1.5; Kap. 8 nennt als Ist
+        //    `text-micro`, gemessen am Code war es `text-xs`).
+        'leser-text': ['1.0625rem', { lineHeight: '1.55' }],
+        'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
+        'leser-fn': ['0.6875rem', { lineHeight: '1.3' }],
       },
       borderRadius: {
         sm: 'var(--radius-sm)', md: 'var(--radius-md)', lg: 'var(--radius-lg)',
@@ -158,11 +189,26 @@ export default {
       // Gemessen auf /gesetze/bund/MWSTV#art-165 unter 6× CPU-Drossel: CLS 0.0227
       // gegen 0.0002 ohne die Zeile (94 Zeilen, jede exakt 24 px hoch — die Badge
       // ist immer EINE Chip-Zeile, die Timeline klappt nur auf ECHTEN Klick auf
-      // ⇒ input-behaftet, CLS-exkludiert). `hist-zeile` reserviert diese eine
+      // ⇒ input-behaftet, CLS-exkludiert). `beiwerk` reserviert diese eine
       // Zeile am Slot, der ab dem ERSTEN Render steht: der Shard-Resolve füllt
       // reservierten Platz, statt Platz zu schaffen → kein Shift. Reserviert nur
-      // Platz, versteckt/kürzt nichts (§15/2); Artikel ohne Historie-Eintrag
-      // (und Erlasse ganz ohne Shard) gewinnen etwas Weissraum am Fuss.
+      // Platz, versteckt/kürzt nichts (§15/2).
+      // S2-UMBENENNUNG (W2·5m-LESER-V3, Pos. 13): der Token hiess `hist-zeile`
+      // und ist jetzt `beiwerk` — er reserviert den BODEN DER BEIWERK-ZONE
+      // (`[data-beiwerk]`, ArtikelLeser), nicht «eine Historie-Zeile». Der WERT
+      // bleibt 1.5 rem, und das ist gemessen statt gerundet: die Chip-Zeile ist
+      // exakt 24 px hoch (Sonde 17.8.2026 @1440, alle 480 Slots der StPO und
+      // 1598 des OR identisch 24.00 px). Die Design-Grundlage Kap. 3 nennt für
+      // die Zone 2.5 rem; das ist ABWEICHEND NICHT übernommen (§7): 40 px Boden
+      // unter einer 24 px hohen Zeile hiesse 16 px Leerraum an jedem
+      // reservierenden Artikel — also genau die Phantom-Lücke (Ä26), gegen die
+      // dieselbe Etappe antritt. Ein Boden kann ohnehin nur Elemente auffangen,
+      // die kleiner sind als er; der Fussnoten-Apparat misst gemessen 27–187 px
+      // und wird von keinem Token-Wert höhenfest.
+      // S2 · Ä26: die Reservierung wird nur noch dort gesetzt, wo überhaupt eine
+      // Fassungs-Zeile eintreffen kann (`erlass.ebene === 'bund'` — 209 Shards
+      // im Korpus, alle Bund, kein einziger der 1231 Kanton-Erlasse). Herleitung
+      // und Korpus-Messung am Slot selbst (ArtikelLeser.tsx).
       // `inhalt-region` (Footer-CLS /gesetze, David 25.7.2026, §15.2): EIN
       // Rahmen um die drei exklusiven Inhalts-Zustände der Übersicht
       // (Landeplatz / Trefferregion / Ebenen-Panel) reserviert von Anfang an
@@ -200,10 +246,10 @@ export default {
       // Reserviert nur Platz, versteckt/kürzt nichts (§15/2, §8: der volle
       // Wortlaut steht immer). In der Tailwind-Skala und NICHT als
       // `min-height`-Regel in index.css — das ist die Hausform für
-      // Höhen-Reservierungen (`titel-2z`, `hist-zeile`, `inhalt-region`), und
+      // Höhen-Reservierungen (`titel-2z`, `beiwerk`, `inhalt-region`), und
       // `src/tests/tap-ziel-token.test.ts` hält index.css frei von rohen
       // min-height-Zahlen (F9: dort gehört nur var(--tap-ziel) hin).
-      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', 'hist-zeile': '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
+      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

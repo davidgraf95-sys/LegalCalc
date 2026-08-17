@@ -278,6 +278,20 @@
     --timer-fs:clamp(1.8rem, 5vw, 2.4rem);
     --vorschau-fs:.92rem;
     --vorschau-fs-kompakt:.88rem;
+    /* FUSSNOTENMARKE (W2·5m-LESER-V3 · S2, Design-Grundlage Kap. 2.3): EIN Token
+       statt SECHS zeichengleicher `text-[0.62em]`-Literale (`ArtikelBody.tsx`
+       FnRef, `ArtikelLeser.tsx` 2×, `SektionKopf.tsx`, `ErlassKopfBlock.tsx`,
+       `helpers.tsx` margLabel) — die Marke ist EINE Auszeichnung, nicht sechs.
+       ENTSCHEID DAVID 17.8.2026 am Bildbogen: hochgestellt und OHNE Klammern
+       (V1-Form) auf dem V2-Satzspiegel — «v2 gefällt mir besser aber fussnoten
+       hochgestellt». Die V2-Spalte des Fahrplans (Kap. 8) sah runde Klammern und
+       0.8 em vor; beides ist damit abgelöst. Wert 0.72 em = der Grundlagen-Wert.
+       Er MUSS em-relativ bleiben, damit die Marke dem Fliesstext (S2: 17 px) und
+       dem Leser-Schriftregler folgt statt zu entkoppeln; gemessen wächst sie
+       dadurch von 0.62 em × 18 px = 11.2 px auf 0.72 em × 17 px = 12.2 px — die
+       Marke wird also lesbarer, nicht kleiner. Gebrauch:
+       `text-[length:var(--fn-marke)]` (Token-Escape der Schranke B2). */
+    --fn-marke:.72em;
     /* Display = Geist (Wunsch David 6.6.2026): die Serife Fraunces ist aus
        der UI entfernt; PDF-Berichte behalten ihre eingebetteten Schriften. */
     /* Rank 11: 'Geist Fallback'/'Source Serif 4 Fallback' (metrik-angepasstes
@@ -544,20 +558,41 @@
      nicht zur Bau-Fläche. Neue Hooks tragen ein eigenes Attribut
      (`[data-hist-slot]` oben) — ein Utility-Klassenname ist kein Vertrag.
 
+     S2 · A-1-NACHZUG, WURZEL-FIX DAZU: genau dieser Satz ist eingelöst. Der
+     Selektor griff `.text-body-l`; S2 tauscht die Fliesstext-Stufe auf
+     `text-leser-text` — die Regel hätte danach STILL nichts mehr getroffen, der
+     Regler wäre wirkungslos geworden, und kein Tor hätte es gemeldet (genau die
+     Klasse «Tor, das nicht scheitern kann», §6.7). Der Selektor hängt jetzt an
+     `[data-lese]`, dem Daten-Attribut, das `ArtikelBody` auf DEMSELBEN Element
+     setzt, das die Grössen-Klasse trägt (ArtikelBody.tsx) — ein Vertrag statt
+     eines Utility-Namens. `src/tests/leser-schriftskala.test.ts` prüft, dass der
+     Selektor kein `text-`-Utility mehr enthält.
+
      R6/BYTE-GLEICHHEIT: Die Vorgabestufe `normal` ist über das `:not()` vom
      Selektor AUSGENOMMEN — sie emittiert keine Deklaration, die Normtext-Grösse
-     bleibt exakt `text-body-l` (1.125 rem) und damit pixelidentisch zum
-     Ist-Stand. Fehlt das Attribut ganz (Prerender vor `wendeLeserOptionenAn`),
-     greift ebenfalls nichts. Umschalten ist klick-getrieben ⇒ der Reflow liegt
-     binnen 500 ms nach der Eingabe (CLS-exkludiert) und rendert nichts neu (§15).
+     bleibt exakt `text-leser-text` (1.0625 rem) und damit pixelidentisch zum
+     Stand ohne Regler. Fehlt das Attribut ganz (Prerender vor
+     `wendeLeserOptionenAn`), greift ebenfalls nichts. Umschalten ist
+     klick-getrieben ⇒ der Reflow liegt binnen 500 ms nach der Eingabe
+     (CLS-exkludiert) und rendert nichts neu (§15).
 
-     Die rem-Werte sind in `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`)
-     gespiegelt, weil dort der Anzeigewert «xxx %» daraus entsteht;
-     `src/tests/leser-schriftskala.test.ts` prüft beide Listen gegeneinander, so
+     S2 · A-1: die VIER STUFEN sind auf die Faktoren der Design-Grundlage
+     Kap. 2.3 gezogen — `[1.0, 1.08, 1.18, 1.3]`, Entscheid D-A, Vorbild
+     `EntscheidLeser.tsx:204`. Bis S2 lief die Skala auf `[1.0, 1.111, 1.222,
+     1.333]` (absolute 1.125/1.25/1.375/1.5 rem); die Grundlagen-Faktoren waren
+     nicht anwendbar, weil die Vorgabestufe an das SITE-Token `body-l` gebunden
+     war und H1/H2 den Normtext byte-gleich halten mussten. Mit `leser-text` hat
+     der Leser eine eigene Basis, also greifen sie jetzt:
+       normal 1.0625 rem (17.00 px) · mittel 1.1475 (18.36) ·
+       gross 1.25375 (20.06) · sehr-gross 1.38125 (22.10)
+     Anzeigewerte damit 100 · 108 · 118 · 130 %. Die Werte sind in
+     `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) gespiegelt, weil dort
+     der Anzeigewert entsteht; `src/tests/leser-schriftskala.test.ts` prüft beide
+     Listen gegeneinander UND die Vorgabestufe gegen `tailwind.config.js`, so
      dass sie nicht auseinanderlaufen können (§5). ── */
-  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.25rem; }
-  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.375rem; }
-  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.5rem; }
+  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.1475rem; }
+  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.25375rem; }
+  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.38125rem; }
   /* FL-4-NACHZUG (Pruefer-Befund zu PR #539, 16.8.2026): `data-leserschrift` wird
      GLOBAL am <html> gesetzt, unabhaengig davon, ob die V3-Huelle aktiv ist. Ohne
      zusaetzlichen Scope traf die Regel auch `.lc-leser` in der Ist-Huelle (V1) —
@@ -566,8 +601,8 @@
      selbst (LeserRahmenV3.tsx traegt beide Attribute auf demselben Element) — die
      Regel greift damit KONSTRUKTIV nur, wenn V3 aktiv ist; in V1 fehlt das
      Attribut, der Selektor kann nie treffen. */
-  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv .text-body-l {
-    font-size: var(--lm-leser-schrift, 1.125rem);
+  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv [data-lese] {
+    font-size: var(--lm-leser-schrift, 1.0625rem);
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen

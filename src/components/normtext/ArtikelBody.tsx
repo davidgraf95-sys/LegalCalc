@@ -198,7 +198,7 @@ export function FnRef({ artikel, nr, klasse, kl }: {
           auch den Schalter «Fussnoten (N)» im Ansicht-Menü). Wächter:
           `src/tests/fussnoten-toggle-huellenneutral.test.ts`. */}
       <button type="button" data-fn-ref onClick={umschalten} aria-expanded={auf} aria-label={`Fussnote ${nr}`}
-        className={`num align-super text-[0.62em] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
+        className={`num align-super text-[length:var(--fn-marke)] font-medium text-brass-700 hover:text-brass-800 ${klasse ?? ''}`}>{nr}</button>
       {auf && html && pos && typeof document !== 'undefined' && createPortal(
         <span ref={popRef} role="note" dangerouslySetInnerHTML={{ __html: html }}
           style={{ top: pos.top, left: pos.left }}

@@ -127,12 +127,27 @@ export function ErlassLeserKopf({
     artikelAnzahl != null ? <><span className="num">{artikelAnzahl}</span> {wort}</> : null,
   ].filter(Boolean) as ReactNode[];
 
+  // S2 · Ä-(b) «Die Stand-Zeile mischt Datumsformen» (Nachtrag S3, Ästhetik-
+  // Gegenprüfung 16.8.2026): `Stand 01.04.2025` lief in der Mono-Auszeichnung
+  // `.num`, das Datum im Standausweis daneben proportional — gleiche Grösse, zwei
+  // Anmutungen in EINEM Satz. Aufgelöst zu EINER Auszeichnung, und zwar in
+  // Richtung der Design-Grundlage Kap. 2.1: die Mono-Stimme ist dort ausdrücklich
+  // «auf SR-Nr./Aktenzeichen begrenzt» — Daten gehören nicht dazu. Beide Daten
+  // laufen jetzt in der Kopf-Stimme mit `tabular-nums` (Grundlage Kap. 2.3:
+  // «tabular-nums für Beträge/Daten/Artikelnummern»); die Auszeichnung sitzt am
+  // <p> der Zeile, damit sie AUCH den Standausweis trifft, der als reiner String
+  // aus `erlassKopfText.ts` kommt. Damit bleibt der Risikopfad
+  // `src/lib/normtext/**` unberührt (§5: derselbe String steht im prerenderten
+  // SEO-Kopf; ihn in ein Fragment zu zerlegen hätte beide Seiten und den
+  // Gegenprüfungs-Hash angefasst — dieselbe Falle, die S3 bei `ANHANG_DOMINANZ`
+  // schon notiert hat). Die SR-Nummer in der Fakten-Zeile darüber behält `.num`:
+  // sie IST der Fall, für den die Mono-Stimme reserviert ist.
   const stand = [
-    erlass.stand ? <>Stand <span className="num">{datumCh(erlass.stand)}</span></> : null,
+    erlass.stand ? <>Stand {datumCh(erlass.stand)}</> : null,
     // K-1: Ur-Inkrafttreten (Fedlex `dateEntryInForce`, build-time projiziert ⇒
     // CLS 0). Distinkt vom «Stand» (Konsolidierung) — nur Bund; Kanton trägt es
     // nicht (§8). «vom …» wird NICHT gedoppelt (steht im Ingress).
-    erlass.inkraftSeit ? <>in Kraft seit <span className="num">{datumCh(erlass.inkraftSeit)}</span></> : null,
+    erlass.inkraftSeit ? <>in Kraft seit {datumCh(erlass.inkraftSeit)}</> : null,
     // F5-Standausweis. Prerender-stabil (Sidecar zur Bauzeit erhoben, keine
     // Client-Datums-Logik). Wortlaut aus `erlassKopfText` — derselbe String
     // steht im prerenderten SEO-Kopf (§5, `seo-detail.ts`).
@@ -194,8 +209,10 @@ export function ErlassLeserKopf({
           tailwind.config.js — dort stehen die vier Fenster-Werte samt Messfall),
           nicht geschätzt: schmal brechen dieselben Sätze über mehr Zeilen. */}
       <div className="min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md space-y-1">
+        {/* S2 · Ä-(b): `tabular-nums` an der ZEILE — eine Auszeichnung für beide
+            Daten, auch für das im String steckende (s. Herleitung oben). */}
         {stand.length > 0 && (
-          <p className="text-xs leading-snug text-ink-500">
+          <p className="text-xs leading-snug tabular-nums text-ink-500">
             {stand.map((s, i) => (
               <span key={i}>{i > 0 && <span className="text-ink-300" aria-hidden> · </span>}{s}</span>
             ))}

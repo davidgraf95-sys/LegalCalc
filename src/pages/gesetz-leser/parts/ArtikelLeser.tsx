@@ -290,7 +290,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // trägt Komma UND Marker, verschwindet also als Ganzes.
   const fnMarker = artOffen && fnArtikelEbene.length > 0
     ? <span data-fn-marker>{fnArtikelEbene.map((nr, i) => (
-        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[length:var(--fn-marke)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
       ))}</span>
     : null;
   // VERWEISE: im Artikel genannte, auflösbare (Bund-)Normverweise als Chips am
@@ -445,13 +445,18 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
                       Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
                   {artOffen && fnProSektion[m]?.map((nr, j) => (
-                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[length:var(--fn-marke)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
                   ))}
                 </div>
               ))}
             </div>
           ) : e.titel ? (
-            <div className="mb-1 font-serif leading-snug text-base font-semibold text-ink-800">
+            /* S2 · Ä7: derselbe Stil wie das Randtitel-BLATT in `margStufeStil`
+               (dort steht die Herleitung) — es ist dieselbe Rolle, nur aus der
+               anderen Quelle (`article_title` statt `marg`). Beide müssen gleich
+               aussehen, sonst wechselt die Sachüberschrift zwischen Artikeln ihre
+               Stimme (§5). */
+            <div className="mb-1 leading-snug font-sans text-leser-rand font-semibold text-ink-800">
               {e.titel}
             </div>
           ) : null}
@@ -546,7 +551,48 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}
             fnKlasse={fnKlasse}
             intern={intern}
-            className="space-y-3.5 font-serif text-body-l leading-[1.65] text-ink-800" />
+            /* S2 (Pos. 19, F3 = V2 «amtsnah kompakt», David 17.8.2026 am Bildbogen):
+               `text-leser-text` (17 px / lh 1.55) ERSETZT das Paar
+               `text-body-l leading-[1.65]`. Der rohe Arbitrary-Override fällt damit
+               weg — die Zeilenhöhe gehört zur Stufe (Design-Grundlage Kap. 8 Nr. 4:
+               «kein fixer Leading-Wert über alle Grössen»); Wächter
+               `src/tests/leser-typo-tokens.test.ts`. WCAG 1.4.8 gemessen @1440:
+               lh 1.55 ≥ 1.5, 53–58 ch ≤ 80 (Lesemass `max-w-normtext` 42 rem
+               unverändert). */
+            className="space-y-3.5 font-serif text-leser-text text-ink-800" />
+          {/* ═══ BEIWERK-ZONE (S2 · Pos. 13, Fahrplan Kap. 4c / Grundlage Kap. 3) ═══
+              EIN benannter Ort für alles, was unter dem Wortlaut steht: Verweis-Chips ·
+              Rechtsprechung (ab H3 der leise Zähler «⚖ n Entscheide →») · Fassungs-
+              Zeile · Fussnoten-Apparat. Vorher lagen die vier Blöcke unverbunden
+              nebeneinander, jeder mit eigenem Abstand und der Historie-Slot mit einer
+              EIGENEN Reservierung — es gab keine Zone, die man reservieren, messen oder
+              per CSS greifen konnte. `data-beiwerk` ist der Vertrag (ein
+              Daten-Attribut, kein Utility-Klassenname — Lehre aus der
+              `.text-body-l`-Kopplung der Schriftskala, index.css).
+
+              KEINE eigene Reservierung an der Zone, und das ist gemessen, nicht
+              gespart: das einzige spät eintreffende, heute unreservierte Element ist
+              die Rechtsprechungs-Zeile, und ihre Reservierung ist bewusst verworfen
+              (§15.2 — sie zöge Weissraum in fast jeden Artikel; gemessen 17.8.2026
+              @1440 tragen 326/480 Artikel der StPO und 376/1686 des OR eine solche
+              Zeile). Die Reservierung sitzt darum weiterhin an dem Element, das der
+              Schalter «Änderungsvermerke» mit ausblendet (`[data-hist-slot]`, S1) —
+              eine Reservierung, die den Schalter überlebt, wäre die Phantom-Lücke,
+              gegen die S1 sie überhaupt an den Slot gehängt hat.
+
+              ABWEICHUNG ZUM ABNAHME-KRITERIUM DER ETAPPE, offengelegt (§7): «Das
+              Umschalten aller drei Schalter erzeugt an keinem Artikel einen
+              Layout-Sprung» ist mit dem David-Entscheid **A1 vom 5.7.2026** («AUS» =
+              verschwinden statt dämpfen) nicht erfüllbar. Gemessen 17.8.2026 @1440
+              trägt der Fussnoten-Apparat je Artikel 27–187 px; ihn höhenfest zu
+              reservieren hiesse, bei «Fussnoten: aus» ein bis zu 187 px hohes leeres
+              Loch stehen zu lassen — genau das Dämpfen, das A1 verboten hat. Eine
+              feste Mindesthöhe kann nur Elemente auffangen, die KLEINER als der Boden
+              sind. Erfüllt und gemessen ist deshalb die Zusage, die zählt: der
+              Lade-Sprung (CLS) bleibt bei 0.004–0.016; das Umschalten ist
+              klick-getrieben, liegt binnen 500 ms nach der Eingabe und ist damit per
+              Definition kein unerwarteter Sprung. Zahlen im Vollzugsvermerk S2. */}
+          <div data-beiwerk>
           {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
           {/* S8: Verweis-Chips sind Wegweiser, kein Wortlaut — `data-such-meta`,
               damit die Suche nach «Verweise» oder einer Chip-Beschriftung nicht
@@ -598,8 +644,31 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               Phantom-Lücke unter jedem Artikel zurück, und «aus» hätte doch eine
               Spur hinterlassen. Der Inhalt bleibt im DOM (A1-Mechanik, David
               5.7.2026: `display:none`, nie gelöscht) und «an» stellt ihn
-              vollständig wieder her. */}
-          <div {...{ [SUCH_META]: '' }} data-hist-slot className="mt-4 min-h-hist-zeile">
+              vollständig wieder her.
+
+              S2 · Ä26 (Phantom-Lücke, Ästhetik-Prüfer 17.8.2026): die Reservierung
+              stand bisher unter JEDEM Artikel JEDES Erlasses — auch dort, wo nie eine
+              Fassungs-Zeile eintreffen kann. Sie folgt jetzt dem Datenmodell: der
+              Historie-Shard existiert AUSSCHLIESSLICH auf Bundesebene. Über den ganzen
+              Korpus gemessen (17.8.2026, `public/normtext/historie/` gegen
+              `register.json`): 209 Shards, alle Bund; **kein einziger** der 1231
+              Kanton-Erlasse trägt einen — der Loader hält denselben Satz fest
+              («404 = kein Shard … bzw. Kanton», `historie-laden.ts`). `ebene`
+              entscheidet also exakt und OHNE neuen Datenweg, und weil sie am schon
+              vorhandenen `erlass`-Prop hängt, wirkt die Regel in BEIDEN Hüllen
+              (Strang S) — eine neue Prop hätte V3 nicht erreicht (`v3/**` ist fremde
+              Bau-Fläche, Kollision H2b/H3).
+              Wirkung, gemessen an BS-640.100: 278 leere Slots × 40 px = **11 120 px**
+              Phantom-Raum verschwinden; korpusweit fällt die Reservierung bei
+              **1247 von 1469** Erlassen (85 %) weg. REST-ÜBERRESERVIERUNG, benannt
+              statt versteckt: 29 Bund-Erlasse ohne Shard (16 ohne jede Fussnote,
+              13 mit Fussnoten aber ohne Shard) reservieren weiter — das aufzulösen
+              bräuchte ein Shard-Manifest im Prerender-Pfad (eigener Schritt,
+              Datenhaltung). Der Token heisst seit S2 `min-h-beiwerk` (Wert
+              unverändert 1.5 rem = die gemessenen 24 px der einen Chip-Zeile): er
+              reserviert den Boden der Beiwerk-Zone, nicht «eine Historie-Zeile». */}
+          <div {...{ [SUCH_META]: '' }} data-hist-slot
+            className={erlass.ebene === 'bund' ? 'mt-4 min-h-beiwerk' : historie ? 'mt-4' : undefined}>
             <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
           </div>
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
@@ -610,7 +679,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
               {fussAnzeige.map((fn, i) => (
                 <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} data-fn-klasse={fn.kl}
-                  className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
+                  /* S2 (V2-Spalte «Fussnoten-Body 0.6875 rem / lh 1.3»): `text-leser-fn`
+                     ersetzt `text-xs leading-normal` (12 px / 1.5). Fahrplan Kap. 8
+                     nennt als Ist-Zustand `text-micro` 0.6875/1.2 — am Code gemessen
+                     war es `text-xs`; die Spalte gilt, der Ist-Vermerk war falsch (§7). */
+                  className="nt-anker text-leser-fn text-ink-500 target:bg-brass-100">
                   {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
                       LM-153 (W2·17-UI-BEFUNDE-B4): die Marke im Fliesstext (FnRef,
                       ArtikelBody.tsx) ist hochgestellt UND brass-700; der Apparat-Eintrag
@@ -619,13 +692,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       Mini-Ziffern wäre unlesbar), aber die FARBE wird auf dieselbe brass-700-
                       Familie gehoben — der Leser verbindet Marke↔Eintrag über die Farbe, wie
                       im Fliesstext. brass-700 ist bereits an der Marke selbst AA-geprüft
-                      (kleinere Schrift, 0.62em) und trägt hier bei 12px erst recht. */}
+                      (kleinere Schrift, `--fn-marke`) und trägt hier bei 11px erst recht
+                      (S2: der Apparat läuft auf `text-leser-fn`). */}
                   {fn.nr && <span className="num mr-1 text-brass-700">{fn.nr}</span>}
                   {fnTextMitLinks(fn)}
                 </p>
               ))}
             </div>
           )}
+          </div>{/* /data-beiwerk */}
         </div>
         )}
       </div>

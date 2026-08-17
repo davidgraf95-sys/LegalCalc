@@ -44,17 +44,27 @@ import { SCHRIFT_STUFEN, setzeLeserSchrift, useLeserSchriftStufe, type LeserSchr
  * Vitest-Datei `src/tests/leser-schriftskala.test.ts` prüft die Spiegelung
  * gegen die CSS-Datei, damit die beiden nicht auseinanderlaufen können (§5).
  *
- * `normal` = 1.125 rem ist KEIN frei gewählter Wert, sondern exakt das
- * bestehende `text-body-l` aus tailwind.config.js — die heutige Grösse.
+ * `normal` = 1.0625 rem ist KEIN frei gewählter Wert, sondern exakt die
+ * Fliesstext-Stufe `leser-text` aus tailwind.config.js (F3 = V2, David
+ * 17.8.2026) — die Grösse, die der Leser ohne Regler zeigt.
+ *
+ * S2 · A-1-NACHZUG: die drei Oberstufen sind die FAKTOREN der Design-Grundlage
+ * Kap. 2.3 auf dieser Basis — `[1.0, 1.08, 1.18, 1.3]`, Entscheid D-A, Vorbild
+ * `EntscheidLeser.tsx:204`. Bis S2 lief die Skala auf `[1.0, 1.111, 1.222,
+ * 1.333]`; die Grundlagen-Faktoren waren nicht anwendbar, weil die Vorgabestufe
+ * am SITE-weiten `body-l` hing und H1/H2 den Normtext byte-gleich halten
+ * mussten. Mit `leser-text` hat der Leser eine eigene Basis — der Regler läuft
+ * damit auf EINER Quelle, ohne zweiten Speicher; V1 bleibt unberührt, weil die
+ * Regel in `index.css` auf das V3-Root gescopt ist (FL-4).
  */
 export const SCHRIFT_REM: Readonly<Record<LeserSchrift, number>> = {
-  normal: 1.125,
-  mittel: 1.25,
-  gross: 1.375,
-  'sehr-gross': 1.5,
+  normal: 1.0625,
+  mittel: 1.1475,
+  gross: 1.25375,
+  'sehr-gross': 1.38125,
 };
 
-/** Anzeigewert in Prozent, bezogen auf die Vorgabestufe: 100 · 111 · 122 · 133. */
+/** Anzeigewert in Prozent, bezogen auf die Vorgabestufe: 100 · 108 · 118 · 130. */
 export function schriftProzent(s: LeserSchrift): number {
   return Math.round((SCHRIFT_REM[s] / SCHRIFT_REM.normal) * 100);
 }
