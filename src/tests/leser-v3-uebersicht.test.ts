@@ -75,7 +75,7 @@ describe('ruheZeile — die eine Zeile im Ruhezustand', () => {
 });
 
 describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', () => {
-  it('(a) Bund/Bundesgesetz mit Warnung: Art, Datum, Stand, In Kraft seit, Quelle', () => {
+  it('(a) Bund/Bundesgesetz mit Warnung: Art, Erlass vom, In Kraft seit, Stand, Quelle', () => {
     const a = uebersichtsAngaben(eingabe({
       erlass: erlassBauen({
         key: 'STPO', kuerzel: 'StPO', sr: '312.0', stand: '2025-04-01',
@@ -90,7 +90,11 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     }));
 
     expect(a.ruhe).toBe('SR 312.0 · 480 Artikel');
-    expect(labels(a)).toEqual(['Art', 'Erlassgeber', 'Erlassdatum', 'Stand', 'In Kraft seit', 'Aufbau']);
+    // Ä80 (H4-Vorbereitung II, deklarierte fachliche Änderung — §6.3): die Kette
+    // lief bis hierher «Erlassdatum · Stand · In Kraft seit» und trug die
+    // Präposition im Wert. Beides ist umgestellt; die Herleitung samt Messwerten
+    // steht im Ä80-Block unten und in `uebersichtAngaben.ts`.
+    expect(labels(a)).toEqual(['Art', 'Erlassgeber', 'Erlass vom', 'In Kraft seit', 'Stand', 'Aufbau']);
     // «Aufbau», nicht «Gliederung»: im Handy-Blatt trägt der Blatt-Kopf bereits
     // die Zone «Gliederung», und Ä10 hat genau diese Doppelnennung abgeräumt.
     // Der bestehende Wächter `leser-v3-auskunft` hat den Rückfall gefangen
@@ -98,7 +102,7 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     expect(labels(a)).not.toContain('Gliederung');
     // Die formelhafte Stand-Klammer ist weg — der Stand steht eine Zeile
     // tiefer mit seinem maschinellen Wert (§5, sonst zweimal dasselbe Datum).
-    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('vom 5. Oktober 2007');
+    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('5. Oktober 2007');
     expect(a.zeilen.find((z) => z.id === 'organ')?.wert)
       .toBe('Die Bundesversammlung der Schweizerischen Eidgenossenschaft');
     expect(a.zeilen.find((z) => z.id === 'stand')?.wert).toBe('01.04.2025');
@@ -137,7 +141,7 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     // Ohne Sidecar-Kopf gibt es weder Erlassgeber noch Erlassdatum — und dann
     // auch KEINE leere Zeile (§8).
     expect(labels(a)).not.toContain('Erlassgeber');
-    expect(labels(a)).not.toContain('Erlassdatum');
+    expect(labels(a)).not.toContain('Erlass vom');
   });
 
   it('(d) Kanton mit §-Etikett: «Kanton BS · Gesetz», Erfassungsgrad als §8-Hinweis', () => {
@@ -166,6 +170,90 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Kanton ZH · Verordnung');
     expect(a.hinweise.some((h) => h.includes('«Paragraphen»'))).toBe(true);
     expect(a.hinweise.some((h) => h.includes('«Artikel»'))).toBe(false);
+  });
+});
+
+// ─── Ä80 · Fedlex-Chronologie und die Präposition im ETIKETT (H4-Vorb. II) ───
+//
+// BEFUND (Ästhetik-Prüfer 17.8.2026 abends, hier vor dem Fix reproduziert):
+// die Liste stand «Erlassdatum · vom 5. Oktober 2007» / «Stand · 01.04.2025» /
+// «In Kraft seit · 01.01.2011» — zwei Fehler in einem Block.
+//
+//  (1) REIHENFOLGE. Der Stand stand ZWISCHEN Erlassdatum und Inkrafttreten und
+//      zerschnitt damit die Chronologie, für die man eine Steckbrief-Liste
+//      überhaupt aufklappt. Fedlex ordnet «Beschluss → Inkrafttreten» und setzt
+//      den Stand ans Ende der Kette (docs/ux-audit-2026-07/fedlex/or-top.png);
+//      der Erlass-Kopf führt dieselbe Kette in derselben Folge. Die Box war die
+//      einzige Stelle im Haus, die sie anders sortierte (§5).
+//  (2) PRÄPOSITION. «vom» stand im WERT. Damit war die Wertspalte keine
+//      Wertspalte mehr: zwei der drei Datumszeilen begannen mit einer Ziffer,
+//      die dritte mit einem Wort — `tabular-nums` richtet nichts aus, was nicht
+//      an derselben Kante beginnt, und das Etikett («Erlassdatum») sagte weniger
+//      als der Wert. Fedlex hält es umgekehrt: das Label trägt die Sprache
+//      («Beschluss», «Inkrafttreten»), der Wert nur das Datum.
+//
+// ROT ZU BEKOMMEN (§6.7): in `uebersichtAngaben.ts` die `zeilen.push`-Reihenfolge
+// wieder auf datum → stand → inkraft stellen ⇒ Fall (a) rot; das Etikett auf
+// «Erlassdatum» zurücksetzen bzw. `ohneVom` weglassen ⇒ Fall (b) rot.
+describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Etikett', () => {
+  const dreiDaten = () => uebersichtsAngaben(eingabe({
+    erlass: erlassBauen({
+      key: 'STPO', kuerzel: 'StPO', sr: '312.0', stand: '2025-04-01',
+      inkraftSeit: '2011-01-01',
+    }),
+    kopf: { erlassdatum: 'vom 5. Oktober 2007 (Stand am 1. April 2025)' } as UebersichtsEingabe['kopf'],
+    erlassTyp: 'gesetz', anzahl: 480,
+  }));
+
+  it('(a) die Datums-Kette läuft chronologisch: Erlass vom → In Kraft seit → Stand', () => {
+    const ids = dreiDaten().zeilen.map((z) => z.id).filter((id) => ['datum', 'inkraft', 'stand'].includes(id));
+    expect(ids).toEqual(['datum', 'inkraft', 'stand']);
+  });
+
+  it('(b) die Präposition steht im ETIKETT, der Wert ist ein reines Datum', () => {
+    const a = dreiDaten();
+    const datum = a.zeilen.find((z) => z.id === 'datum');
+    expect(datum?.label).toBe('Erlass vom');
+    expect(datum?.wert).toBe('5. Oktober 2007');
+    // Kein Wert der drei Datumszeilen beginnt mit einem Wort — sonst richtet
+    // `tabular-nums` an einer Kante aus, an der nichts steht.
+    for (const id of ['datum', 'inkraft', 'stand']) {
+      const z = a.zeilen.find((x) => x.id === id);
+      expect(z?.wert, `Zeile «${id}» beginnt nicht mit einer Ziffer: «${z?.wert}»`).toMatch(/^\d/);
+      expect(z?.ziffern, `Zeile «${id}» ohne tabular-nums`).toBe(true);
+    }
+  });
+
+  it('(c) die Aufhebung schliesst die Kette ab, sie zerschneidet sie nicht', () => {
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ stand: '2025-04-01', inkraftSeit: '2011-01-01', aufgehoben: { seit: '2026-01-01' } }),
+      kopf: { erlassdatum: 'vom 5. Oktober 2007' } as UebersichtsEingabe['kopf'],
+    }));
+    const ids = a.zeilen.map((z) => z.id).filter((id) => ['datum', 'inkraft', 'stand', 'aufgehoben'].includes(id));
+    expect(ids).toEqual(['datum', 'inkraft', 'stand', 'aufgehoben']);
+  });
+
+  it('(d) ohne «vom» im Sidecar geht kein Zeichen verloren (Kantons-Schreibweisen)', () => {
+    // Nicht alle Sidecars schreiben «vom …». Ein Fix, der stumpf die ersten vier
+    // Zeichen abschneidet, verstümmelte diese Erlasse — darum eine Identitäts-
+    // Prüfung mit Wortgrenze statt eines `slice` (§7).
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ key: 'BS-640.100', ebene: 'kanton', kanton: 'BS', stand: '2026-01-01' }),
+      kopf: { erlassdatum: '12. April 2000' } as UebersichtsEingabe['kopf'],
+    }));
+    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('12. April 2000');
+  });
+
+  it('(e) BS-640.100 ohne Sidecar-Kopf: Ä80 erzeugt keine leere Datums-Zeile', () => {
+    // Der Kantons-Erlass der Probe trägt @1440 gemessen NUR «Art» und «Stand»
+    // (kein Erlassdatum, kein Inkrafttreten im Sidecar). Ä80 darf daran nichts
+    // verschlechtern — insbesondere keine Zeile «Erlass vom» ohne Wert (§8).
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ key: 'BS-640.100', ebene: 'kanton', kanton: 'BS', sr: '640.100', stand: '2026-01-01' }),
+      erlassTyp: 'gesetz', bestimmungsWort: 'Paragraphen', anzahl: 292,
+    }));
+    expect(labels(a)).toEqual(['Art', 'Stand']);
+    expect(a.zeilen.every((z) => z.wert.trim().length > 0)).toBe(true);
   });
 });
 
