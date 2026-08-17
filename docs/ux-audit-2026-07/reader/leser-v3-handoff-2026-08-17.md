@@ -1,39 +1,86 @@
-# Übergabe Gesetz-Leser V3 — Stand 17.8.2026 mittags (Session 17.8., Pause wegen Laptop-Neustart)
+# Übergabe Gesetz-Leser V3 — Stand 17.8.2026 spätabends (Session 17.8., Orchestrator)
 
-Massgeblich sind `fahrplaene/FAHRPLAN-LESER-V3.md` (Kap. 7 Etappen + Vollzugsvermerke H1/H2/H2b/S1/S3,
-Kap. 8/9 Entscheide, Kap. 12, Kap. 14) und die ROADMAP-Checkliste `W2·5m-LESER-V3`. Diese Datei ist der
-Momentaufnahme-Zeiger für die Folge-Session. Vorgängerfassung: `archiv/`-los, in git-Historie (#541).
+Massgeblich sind `fahrplaene/FAHRPLAN-LESER-V3.md` (Kap. 7 Etappen + Vollzugsvermerke,
+Kap. 8/9 Entscheide, Kap. 12, Kap. 14) und der Kontaktbogen
+`docs/ux-audit-2026-07/reader/leser-v3-h4/README.md` (alle offenen David-Punkte gebündelt).
+Diese Datei ist der Momentaufnahme-Zeiger für die Folge-Session; Vorgängerfassung in
+git-Historie (Commit `932df3a90`).
 
-## Gelandet (main, live)
-- **#539 H2** (Suchverhalten V3 + S4 + PX + QS-UI-HIGHLIGHT) — Merge `19a989f93`, live 17.8. vormittags.
-- **#547 S1** (Änderungsvermerke zweiwertig, «Verweise» weg, Migration; beide Hüllen; Ästhetik 8/10, Architektur 8,5/10) — Merge `2538dd356`, **live** (Prod-Build `2538dd35` geprüft).
-- **#548 H2b** (Ästhetik-Nachzug: Kopf bündig, Suchfeld je Pane/im Blatt, App-Seitenleiste eingeklappt (Schlüssel `.v2`), ⌘K pane-bewusst, Ä1–Ä23 + Ä35–Ä44; Ästhetik 6,5/10, Architektur 8/10) — Merge `98558b561`, **live** (Prod-Build `98558b56`).
-- Deploy läuft aus der CI (Job «Deploy (Prod, Vercel CLI)»); bekannter CI-Flake `leser-ohne-gliederungslinie:71` (Shard 7, OR, «Ansicht»-Knopf nicht in 20 s) → `gh run rerun <id> --failed` (heute 1×, dann grün).
+## Gelandet (main, live — Prod-Build geprüft)
+- **#539 H2** (Suchverhalten V3) — Merge `19a989f93`.
+- **#547 S1** (Änderungsvermerke zweiwertig) — Merge `2538dd356`.
+- **#548 H2b** (Ästhetik-Nachzug) — Merge `98558b561`.
+- **#549 H3** (Rahmen/Blatt/Gliederung) — Merge `2992501b0`.
+- **#550 S2** (Typografie V2 + Fussnote) — Merge `afc008c19`.
+- Live-Vergleich: https://lexmetrik.vercel.app/gesetze/bund/STPO?leser=v3 vs. ohne Flag.
+- Ästhetik-Verlauf: H1 5,5 · H2 6,0 · H2b 6,5 · H3 6 · S1 8 · S2 7 · Nachzug 7.
 
-## Entscheide David 17.8.2026 (neu, gelten)
-- **F3 = V2 «amtsnah kompakt» + Fussnotenmarke hochgestellt** (Wortlaut «v2 gefällt mir besser aber
-  fussnoten hochgestellt», am Bildbogen `docs/ux-audit-2026-07/reader/leser-v3-s2/bogen.html`, auch als
-  Artefakt https://claude.ai/code/artifact/4569ae72-18ba-4dae-9105-afeabb48b9b1). Ersetzt «F3 = V1».
+## Offen — PR #551 (Stand bei Übergabe: OPEN, CI läuft)
+`feat/leser-v3-nachzug-17-8`, HEAD `c7b2ceb20`, Worktree `LexMetrik-nachzug`. Beim
+Aufgreifen zuerst `gh pr view 551 --json state,mergeCommit,statusCheckRollup` prüfen —
+bei `MERGED` als gelandet führen (SHA nachtragen), bei CI-Rot Diagnose vor Fix (§0.2).
+
+Inhalt:
+- **A-2 Leisten-Verschmelzung:** eine Kopfzeile statt zwei (`KopfDaten.kopfzeileSelbst`,
+  `PaneKopf.nurSteuerung`, `useKopfAnspruch`), Chrome-Ersparnis Desktop −38 px / Handy −38 px.
+- **Drei Live-Befunde David:** Treffer-Blatt am Suchfeld (`LeserTrefferBlatt`/`useTrefferBlatt`);
+  Fussnoten von Änderungsvermerken entkoppelt (Fussnoten = Marker+Apparat aller Klassen,
+  Vermerke = nur `[data-hist-slot]`, beide eigene Hüllen); Fokusring `outline-offset −2px`.
+- **Übersichtsbox** als Fedlex-Steckbrief (`uebersichtAngaben.ts`, Ä70–Ä75).
+- **H4-Vorbereitung ohne Flip:** Kontaktbogen `leser-v3-h4/README.md`, `useElementBreite`,
+  Flaker-Wurzel Ä24 (`e2e/helpers/leserBereit.ts`), `useStickAusgleich`.
+- Drei Prüfer durch: Bug · Ästhetik 7/10 · Architektur 8,5/10.
+
+## Entscheide David 17.8.2026 (gelten)
+- **F3 = V2** «amtsnah kompakt» (17 px/1.55) **+ Fussnote hochgestellt** (Bildbogen).
 - «arbeite token sparend, delegiere viel» — Orchestrator-Rolle bestätigt.
-- Bild-Bogen-Commit lokal auf main: `493cda91a` (kommt mit dem Sammel-Push).
+- «bring alles Angefangene zu Ende, dann Prompt für nächste Session» → diese Übergabe.
+- Kopfzeile verschmelzen · Übersichtsbox nach Fedlex-Vorbild · drei Live-Befunde (siehe PR #551).
 
-## Offene Etappen — exakter Zustand (Worktrees `LexMetrik-h3`, `LexMetrik-s2` bleiben stehen)
-| Etappe | Branch / Worktree | Zustand | Nächster Handgriff |
-|---|---|---|---|
-| **H3** | `feat/leser-v3-h3` · `LexMetrik-h3` | Bau + drei Prüfer (Bug 3 vor Merge · Ästhetik **6/10** · Architektur 8,5/10) + **Nachzug fertig** (c7ed252d5: Lade-Ende-Signal, Ansicht-Öffner je Pane, `r` pane-bewusst, Blatt ab Kopf-Unterkante + nicht-modal auf D, echtes Bottom-Sheet, kompakte `PanelFilterZeile`, BestimmungsWort/Sonde beidseitig, `leserGeometrie.ts`/`LeserGliederungSchiene.tsx`, tote Slots weg; **§7-Abweichung: Randlasche GESTRICHEN** (16 px im Normtext @390, wortgleiches Doppel des Kopf-Chips) → wartet auf David; Ä60: D-Blatt deckt 112 px jeder Textzeile → Spalten-Entscheid H4). Rebase-Agent läuft: `rebase --onto origin/main 9555f96e8`, D1 (S1-Rest: «Änderungsvermerke»-Schalter in V3 nur bei Erlassen mit Vermerken) | nach Rebase-Rückgabe: PR mit Trailer (`Roadmap: W2·5m-LESER-V3` / `Roadmap-Status: ready`), CI, `gh pr merge --squash`, Deploy-Check |
-| **S2** | `feat/leser-v3-s2` · `LexMetrik-s2` (auf main 2538dd356 umgehängt, 9a5eb98b7) | Bau fertig (V2 17 px/1.55, Fussnote hochgestellt, Beiwerk-Zone artikelweise aus dem Datenmodell, A-1 Regler `[data-lese]`, PX-Wurzelfix `MESS_HOEHE_PX`), drei Prüfer (Bug · Ästhetik **7/10** · Architektur 8,5/10). **Nachzug-Agent läuft** (Orchestrator-Entscheid: **Ä25 zurückgenommen** — `NormText.INLINE_CLASS` ist site-weit, Kontrast 1.00:1 auf Rechnerseiten; Ä25 → wartet auf David; Ä52-Marker-Kollision + Ä53-Marken-Waisen (Kern), Ä7 Sektionsköpfe, Doku-Drifts, Token-Rename-Reste) | nach Nachzug: Rebase auf main (nach H3-Merge), Tore, PR, CI, Merge |
-| **H4-Vorbereitung** | — | noch nicht begonnen | Flip-Kriterien Kap. 7 sammeln (acht N-Tests unter Flag, `leser-kopf-paritaet`, PX, NM-Tabelle, CLS, axe, Kantons-Probe, drei Flaker mit Wurzel-Fix), vier B-Specs umhängen, Kontaktbogen; **HALT vor dem Flip (Davids Ja)** |
+## Wartet auf David — gebündelt im H4-Kontaktbogen
+`docs/ux-audit-2026-07/reader/leser-v3-h4/README.md`:
+1. **H4-Umschalten** (V3 als Standard) Ja/Nein; Blocker: NM-2 Handy (prüfen, ob H3-Nachzug
+   «Ansicht ▾»-Öffner das schon löst), Ä60 Spalten-Entscheid (1024/1072-Grenze), Ä46 zwei ✕,
+   B-Spec-Umhängung.
+2. Randlasche gestrichen (H3, gegen F8 «behalten») — drei Optionen im H3-Vermerk.
+3. Ä25 Verweis-Linie (Design-Grundlage Kap. 8 vs. WCAG G183 — Empfehlung: behalten).
+4. Ä75 «SR» bei Kantonserlassen (957 hart kodiert).
+5. Ä81 Steckbrief dupliziert Erlass-Kopf (Stand 3×) → «nur Kopf warnt»?
+6. Treffer-Blatt deckt Textrand 38–86 px — so lassen? Kein Aussenklick-Schluss.
+7. Am Bild: Sachüberschrift 13 px, Fussnoten-Apparat 11 px (Folgen V2), Lesemass 75→80 ch?
+8. K4-Hinweis S1: «Änderungsvermerke aus» blendet auch «Gilt seit»/Zeitleiste aus.
+9. Vercel-Wurzelfix (Dashboard/Token/Plan) · lokal `git config --unset core.hooksPath`.
 
-## §17-Funde dieser Session (verankert)
-- `allgemeineFrist.property.test.ts` (`tageZwischen`, 1000 Läufe, 12.8 s isoliert / >30 s unter Last) → Zeitbudget 120 s im S1-Branch, `numRuns` unverändert.
-- `leser-ohne-gliederungslinie:71` lokal auf unverändertem main 6/6 rot (Projekt `leser-v3`) → QS-PERF-Zeile (Wurzel createRoot→hydrateRoot); CI-Läufe waren bisher grün — bei CI-Rot `gh run rerun --failed`, nicht lockern.
-- `scripts/datenhaltung/suche.test.ts` Hook-Deckel 95 s, Ingest 3× langsamer als Kalibrierung 14.8. → ROADMAP `QS-DATA-INGEST-DRIFT` (S1-Branch).
-- Reader-Kopf reflowt nach Client-Takeover +161 px (Lade-Sprung) → QS-PERF-Zeile (S1-Branch).
-- Muster (S1-Nachzug-Agent): drei Deckel gegen isolierte Werte bemessen, Streuung frisst die Reserve — QS-PERF/QS-DATA-INGEST-DRIFT zusammen angehen.
-- ANHANG_DOMINANZ-Doppel (`gliederungsModell.ts` 0.5 vs. `erlassKopfText.ts` 0.9): NICHT in H2b (Risikoklassen nicht mischen) — eigener kleiner Risikopfad-PR mit Gegenprüfung, offen.
+## Nächste Bauschritte (Reihenfolge)
+1. Kontaktbogen von David beantworten lassen.
+2. Bei Ja: **H4-Flip** — Flag-Default, B-Specs umhängen/löschen, N/V3-Listen in
+   `playwright.config.ts`, Kap.-10-Korrektur (`hist-ansicht-w25i`/`gesetze-historie-badge`
+   NICHT in `N_SPECS`).
+3. **H5** — Löschung alte Hülle + Flag (Löschliste Fahrplan Zeile H5, inkl.
+   `LeserAnsichtMenu`/`OptSwitch`, `KontextPanel` samt Kante `inhalt-ansichten`;
+   `BezugFacettenWahl` NICHT löschen; 37-px-Band bleibt).
+4. Offene H4-Zeilen: Ä9 Regler-Doppel Topbar, Ä33/Ä34/Ä83 App-Topbar Suchkästchen @390,
+   Ä54 Handy-Einzug, Ä55 Regler-Hierarchie, Ä79 zwei ☰, Ä80/Ä84, `leser-lesemass` umhängen,
+   `LeserRahmenV3`-Schnitt (Sonde 420, Adapter 419).
+5. ANHANG_DOMINANZ-Doppel (Risikopfad, eigener PR mit Gegenprüfung).
+6. §17-Positionen: QS-PERF (Kopf-Reflow +161 px, `leser-ohne-gliederungslinie` unter
+   4 Workern, createRoot→hydrateRoot), QS-DATA-INGEST-DRIFT, PX-Lastfall (QS-E2E-STABIL),
+   Vitest-Zeitbudgets schwerer Sweeps unter Parallel-Last.
 
-## Feste Regeln (David 16./17.8.), unverändert
-Drei Prüfer je Etappe vor Merge (Bug · Ästhetik Screens H/D/S hell/dunkel · Architektur/Erlass-Neutralität, anderes Modell) → Befunde als Nachzug mit frischem Agent in denselben PR; Ä-Checkliste bis zum Schluss (Nummernkreis: S1-Prüfung vergab Ä25–Ä27, H2b-Nachzug Ä35–Ä44); Bund- + Kantons-Probe unter `?leser=v3`; Split-View mitdenken; Suchfeld oberstes sticky Element; «Rechtsprechung im Text» aus ⇒ Zähler UND Lasche weg; Kern unangetastet ausser deklarierter Ausnahme (S-Strang); Golden byte-gleich; Commit-Typen ehrlich, `-F`, nie amend/stash/reset; §14.7 wörtlich in jeden Sub-Agenten-Auftrag; Unteragenten enden mit prüfbarer Rückgabe.
+## Feste Regeln (David, unverändert)
+Drei Prüfer je Etappe vor Merge (Bug · Ästhetik hell/dunkel · Architektur/Erlass-Neutralität,
+anderes Modell) → Nachzug mit frischem Agent in denselben PR; Ä-Checkliste bis zum Schluss
+(Nummernkreise: Ä25–Ä27 S1, Ä35–Ä44 H2b, Ä45–Ä59 H3, Ä61–Ä66 S2, Ä67–Ä69+Ä76 Fix,
+Ä70–Ä75 Übersicht, Ä77–Ä85 Nachzug); Bund- + Kantons-Probe; Split-View; Suchfeld oberstes
+sticky Element; Kern unangetastet ausser deklarierter Ausnahme; Golden byte-gleich;
+Commit-Typen ehrlich, `-F`, nie amend/stash/reset; §14.7 wörtlich in jeden Sub-Agenten-Auftrag;
+Unteragenten enden mit prüfbarer Rückgabe; Merge und Aufräumen nie in einer Kommandozeile;
+nach Merge `state == MERGED` prüfen; bekannter CI-Flake `leser-ohne-gliederungslinie:71`
+Shard 7 → `gh run rerun <id> --failed`.
 
-## Wartet auf David
-H4-Umschalten (Kontaktbogen) · Vercel-Wurzelfix (Dashboard/Token/Plan) · lokal `git config --unset core.hooksPath` · **Ä-K4-Hinweis:** «Änderungsvermerke: aus» blendet auch «Gilt seit» und Fassungs-Zeitleiste aus (Plan Pos. 8; mehr als F1 wörtlich) — Einspruch möglich, sonst gilt es.
+## Werkzeug-Hinweise
+Deploy = CI-Job «Deploy (Prod, Vercel CLI)»; Live-Check
+`curl -s https://lexmetrik.vercel.app/ | grep lexmetrik-build` == Merge-SHA; Vercel-Tageslimit
+hinfällig (CI-Deploy). Agenten-Briefe dieser Session unter
+`/Users/david/Developer/LexMetrik-briefs-2026-08-17/`. Playwright-Port ist worktree-abhängig;
+e2e-Server ist `preview` auf `dist/` → nach `src`-Änderung `npm run build`.
