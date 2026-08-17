@@ -106,6 +106,12 @@ on:
   # Workflow-Änderung, die die Aktivierung (David-Gate G7) voraussetzt.
   merge_group:
   workflow_dispatch:
+    inputs:
+      probe:
+        description: 'Rot-Beweis (§6.7): «ohne-token» faehrt den Deploy-Job mit LEEREM VERCEL_TOKEN — er muss rot werden und darf nichts ausliefern. Leer lassen = normaler Volllauf, kein Deploy.'
+        required: false
+        default: ''
+        type: string
 
 concurrency:
   group: ci-${{ github.ref }}
@@ -692,3 +698,118 @@ jobs:
       - run: npx -y npm@11 ci
       - name: Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)
         run: npm run check:merge-schutz
+
+  # ── Prod-Deploy aus der CI (QS-AUTOMATIK, Entscheid David 17.8.2026, «Weg b») ─
+  # ANLASS: Vercel legte bei JEDEM Push auf JEDEN Branch ein Deployment an — auch
+  # das sofort «Canceled by Ignored Build Step». Am 16.8.2026 abends riss das die
+  # Free-Grenze von 100 Deployments/Tag; der Prod-Deploy von #540 war 24 h
+  # blockiert. Wurzel-Fix (§17): Die Git-Auto-Deploys sind aus
+  # (`vercel.json` → `git.deploymentEnabled: false`), Prod liefert dieser Job.
+  # Ein Deployment entsteht jetzt nur noch je Merge auf main, nicht je Push.
+  #
+  # «MERGE NACH main IST DER DEPLOY» BLEIBT WAHR (§9): der Merge löst diesen Job
+  # aus. Neu ist nur, dass er ERST NACH grünen Toren liefert — vorher baute
+  # Vercel parallel zur CI und konnte einen Stand ausliefern, dessen Tore noch
+  # liefen oder rot wurden.
+  #
+  # needs (§6.7-Fehlerseite): diff · tore · bau · e2e sind genau die Jobs, die
+  # OHNE Job-`if:` immer laufen (ihre Steps quittieren bei doku/code-fern
+  # innerlich). Ein Job mit eigenem `if:` — insbesondere `perf` — darf hier NICHT
+  # hinein: ein übersprungener `needs`-Job zieht den abhängigen Job in den Skip,
+  # ein `code-fern`-Merge würde also still NIE ausgeliefert.
+  #
+  # BUILD-PARITÄT: `vercel pull` holt die Projekt-Einstellungen, `vercel build`
+  # fährt `buildCommand` aus vercel.json — dort seit 17.8.2026 explizit
+  # `npm run build` (gen:suchindex + tsc -b + vite build + prerender), damit die
+  # Kette nicht mehr an der impliziten Vite-Preset-Auflösung hängt (§5).
+  # Absichtlich KEIN Download des `dist`-Artefakts aus `bau` und kein eigenes
+  # `npm ci`: `vercel build` installiert und baut selbst, genau wie es die
+  # Plattform tat — jeder Fremd-dist wäre ein zweiter Bauweg.
+  deploy:
+    name: Deploy (Prod, Vercel CLI)
+    needs: [diff, tore, bau, e2e]
+    if: >-
+      (github.event_name == 'push' && github.ref == 'refs/heads/main'
+        && needs.diff.outputs.art != 'doku')
+      || (github.event_name == 'workflow_dispatch'
+        && github.event.inputs.probe == 'ohne-token')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    # Seriell: zwei gleichzeitige Prod-Deploys sind ein Rennen um denselben
+    # Alias. `cancel-in-progress: false` — ein laufender Deploy wird NIE
+    # abgeschnitten, der nächste Merge wartet.
+    concurrency:
+      group: prod-deploy
+      cancel-in-progress: false
+    env:
+      # Wie `bau`/`tore`: der prerenderte Stand entsteht in der Produkt-Zeitzone,
+      # nicht in UTC — sonst läge ein anderer Bau live als der getestete.
+      TZ: Europe/Zurich
+      VERCEL_ORG_ID: team_jfUx2xb2Jo3RVYUFYsIW94lG
+      VERCEL_PROJECT_ID: prj_1xdIoeM6YjmelXq6DSMpywDOXq2x
+      # Speist `<meta name="lexmetrik-build">` (vite.config.ts liest
+      # VERCEL_GIT_COMMIT_SHA). Im CI-Build setzt die Variable niemand — ohne
+      # diese Zeile stünde «dev» in der Seite und der Prod-Stand-Wächter
+      # (`pruefeBuildStand`, scripts/betrieb/prod-smoke.ts) wäre zu Recht rot.
+      VERCEL_GIT_COMMIT_SHA: ${{ github.sha }}
+      VERCEL_GIT_COMMIT_REF: main
+      # Reihenfolge ist Absicht: `A && secret || ''`. Die naive Fassung
+      # `probe && '' || secret` liefert IMMER das Secret, weil der leere String
+      # falsy ist und `||` weiterfällt — die Probe wäre wirkungslos grün.
+      VERCEL_TOKEN: ${{ github.event.inputs.probe != 'ohne-token' && secrets.VERCEL_TOKEN || '' }}
+    steps:
+      # §6.7: Dieser Schritt ist der scheiterbare Teil des Tors. Rot-Beweis über
+      # `workflow_dispatch` mit probe=ohne-token — siehe PR-Body.
+      - name: Token-Vorprüfung (Rot ohne Secret)
+        run: |
+          set -euo pipefail
+          if [ -z "${VERCEL_TOKEN:-}" ]; then
+            echo "::error::VERCEL_TOKEN leer — kein Prod-Deploy. Secret setzen unter Settings → Secrets and variables → Actions → VERCEL_TOKEN (Scope: Team david-legal-projects)."
+            exit 1
+          fi
+          echo "VERCEL_TOKEN vorhanden (Wert wird nie ausgegeben — §18)."
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - name: Vercel — Projekt-Einstellungen ziehen (production)
+        run: npx -y vercel@latest pull --yes --environment=production --token="$VERCEL_TOKEN"
+      - name: Vercel — Build (frisch, buildCommand aus vercel.json)
+        run: npx -y vercel@latest build --prod --token="$VERCEL_TOKEN"
+      - name: Vercel — Deploy (prebuilt → Prod)
+        id: deploy
+        run: |
+          set -euo pipefail
+          url=$(npx -y vercel@latest deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN")
+          echo "url=${url}" >> "$GITHUB_OUTPUT"
+          echo "Deployment-URL: ${url}"
+      # Der Deploy-Befehl kehrt zurück, sobald das Deployment bereit ist; die
+      # Umschaltung der Produktions-Aliasse braucht danach noch Sekunden. Darum
+      # drei Versuche — und dann hart rot: ein Job, der «deployed» meldet, ohne
+      # dass der Stand live ist, ist genau der Vorfall vom 15./16.8.2026
+      # (sieben Merges auf main, nie ausgeliefert, Prod-Smoke sah nur HTTP 200).
+      - name: Nachkontrolle — live ausgelieferter Build == dieser Commit
+        run: |
+          set -euo pipefail
+          soll="${GITHUB_SHA:0:8}"
+          for versuch in 1 2 3; do
+            ist=$(curl -sS --max-time 20 https://lexmetrik.vercel.app/ \
+              | grep -o 'lexmetrik-build" content="[0-9a-f]*' \
+              | cut -d'"' -f3 || true)
+            echo "Versuch ${versuch}: live='${ist:-<leer>}' soll='${soll}'"
+            if [ "${ist:-}" = "${soll}" ]; then
+              echo "Prod liefert ${soll} aus."
+              exit 0
+            fi
+            # Bewusst `if` statt `[ … ] && sleep`: unter `set -e` würde der
+            # fehlschlagende Test im letzten Durchlauf den Job sofort beenden —
+            # die ::error::-Zeile darunter käme nie zur Ausgabe.
+            if [ "$versuch" -lt 3 ]; then sleep 20; fi
+          done
+          echo "::error::Prod liefert '${ist:-<leer>}' statt '${soll}' — Deploy gemeldet, aber nicht live. Nicht mergen/weiterbauen, bis geklärt (docs/betrieb/rollback-runbook.md)."
+          exit 1

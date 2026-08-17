@@ -92,6 +92,24 @@ Vercel» existiert damit nicht mehr; ein Admin-Bypass hat keinen Anlass. Ein
 Vercel-Rot auf `main` (echter Build-Fehler) bleibt Rot — sichtbar über den
 Prod-Deploy-Status, nicht über einen PR-Check.
 
+**Stand 17.8.2026 — alles darüber ist Historie.** Der Ignored Build Step
+reichte nicht: Vercel legte trotzdem für JEDEN Push auf JEDEN Branch ein
+Deployment an und zählte es ans Tageslimit, auch wenn es sofort «Canceled by
+Ignored Build Step» hiess. Am 16.8. abends riss das die 100/Tag und blockierte
+Prod 24 h (Vorfall #540). Wurzel-Fix (Entscheid David «Weg b»):
+**Git-Auto-Deploys sind aus** (`vercel.json` → `git.deploymentEnabled: false`),
+Prod liefert der CI-Job «Deploy (Prod, Vercel CLI)» per
+`vercel deploy --prebuilt --prod`. Damit gilt:
+
+- Ein Deployment entsteht **je Merge auf `main`**, nicht je Push. Das
+  Tageslimit ist für Branch-Arbeit kein Thema mehr; `update-branch` und
+  Zwischen-Pushes kosten keinen Deploy.
+- **Kein Vercel-Commit-Status mehr** — weder grün noch rot, auch nicht auf
+  `main`. Sein Fehlen ist der Normalfall, kein Verdacht; Deploy-Rot steht im
+  Actions-Lauf des Merge-Commits.
+- `scripts/vercel-ignore.sh` und sein Tor bleiben als Sicherung liegen, falls
+  Git-Deploy je wieder eingeschaltet wird; im Normalbetrieb läuft es nie.
+
 ### Warum der Trailer zusätzlich in den PR-Body gehört (Schritt 9)
 
 **Denselben Trailer-Block zusätzlich als eigenen Absatz in den PR-BODY**

@@ -79,6 +79,10 @@ Alles andere — inkl. jede Risikopfad-Berührung — Normalpfad (Stationen A–
   diese Session orchestriert und landet.
 - **WIP-Commit nach jedem Teilschritt** (F5) — nie über längere Arbeit
   uncommittet bleiben.
+- **Auftrags-Wachstum ⇒ neuer Agent.** Kommen unterwegs Zusatzpunkte (Prüfer-
+  Befunde, David-Anmerkungen), bekommt sie ein frischer Agent mit frischem
+  Kontext als eigener Nachzug — nie in den laufenden Bau nachschieben (16.8.
+  2026: H2-Agent lieferte nach ~470k Token sichtbar weniger als beauftragt).
 - **Nebenfunde in den Plan**, nie in diese Session oder als Chip:
   Checklisten-Zeile im Dach-Schritt, sonst ROADMAP-Schritt (Skill `auftrag`
   Ziff. 3), weiterbauen.
@@ -103,7 +107,9 @@ einen **Stillstands-Anker** (Hintergrund-Lauf: alle 5 min `git fetch`; wenn
 25 min kein neuer main-Merge UND noch PRs offen ⇒ Meldung «STILLSTAND»,
 worauf die Session SELBST eingreift: Konflikt lösen, Hand-Merge bei allen
 Required grün, Nachzug). Ein Wächter, der «nachzieht», ist keine Landung —
-massgeblich ist der Merge-Zeitstempel auf origin/main.
+massgeblich ist der Merge-Zeitstempel auf origin/main. **Wächter-Form:** Hintergrund-Bash mit
+`until … done` (eine Meldung bei Ende), nicht Monitor-Streams — die liefen am
+16.8.2026 mehrfach still aus, ohne ein Ereignis zu liefern.
 
 Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge,
 Bug-Check, serielle Landung, CI-Grün, Nachkontrolle). Schlusspunkt:
