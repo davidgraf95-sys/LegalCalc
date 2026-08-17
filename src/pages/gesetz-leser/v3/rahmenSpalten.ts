@@ -261,9 +261,15 @@ export function useRahmenRaum(): {
     if (ziel) uebernimm(ziel);
   }, [uebernimm]);
 
+  // KEINE Messung im Effekt-Körper (Lint `react-hooks/set-state-in-effect`, rot
+  // gesehen im `npm run gate` vom 18.8.2026): ein `setState` direkt im Effekt
+  // erzeugt eine Kaskaden-Renderung. Und es wäre die DRITTE Messung derselben
+  // Zahl — der Callback-Ref oben misst beim Einhängen, und `ResizeObserver`
+  // liefert für jedes neu beobachtete Ziel von sich aus eine erste Meldung.
+  // Verhalten bleibt damit gleich; bewiesen an `leser-v3-rahmen` (a)–(f2), die
+  // ALLE eine gemessene Aufweitung voraussetzen und ohne sie rot werden.
   useEffect(() => {
     if (!el || typeof ResizeObserver === 'undefined') return;
-    uebernimm(el);
     const haupt = el.closest('main');
     const eltern = el.parentElement;
     const ro = new ResizeObserver(() => uebernimm(el));

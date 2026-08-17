@@ -2098,6 +2098,24 @@ Verhaltensneutralität behauptet — Ä60 IST eine gewollte Verhaltensänderung)
 Bedienhandlung, die der frühere Aussenklick nötig machte. Beide Zusagen
 unverändert, Begründung steht in der jeweiligen Spec.
 
+**Übergabe an den Flip-Branch (nicht selbst gemacht, weil TABU):**
+`e2e/shard-gruppen.json` gehört dem Flip-Auftrag; die neue Spec ist dort noch
+nicht eingetragen, und `npm run check:e2e-shards` ist genau deshalb rot
+(«FEHLT: leser-v3-rahmen.e2e.ts — in keiner Gruppe zugeordnet», Union-Wächter:
+108 gesammelt / 107 in Gruppen). Die Spec trägt ihre Zuordnung schon im Kopf
+(`// @shard-gruppe: 3`), der Eintrag ist also ein Generatorlauf
+(`node scripts/e2e-shard-gruppen-generieren.mjs`) und keine Wahl. Zwei Agenten
+dieselbe JSON-Datei schreiben zu lassen wäre die Kollision, die das TABU
+verhindert — darum benannt statt gebaut.
+
+**Ein Lint-Befund, im Bau gefangen** (nicht im Nachhinein geglättet): der erste
+Bau messte den Raum zusätzlich im Effekt-Körper (`useRahmenRaum`), was
+`react-hooks/set-state-in-effect` als Kaskaden-Renderung meldet — rot gesehen im
+`npm run gate` vom 18.8.2026. Die Zeile war ohnehin die dritte Messung derselben
+Zahl (Callback-Ref beim Einhängen · erste `ResizeObserver`-Meldung · Effekt) und
+ist gestrichen, nicht unterdrückt; `leser-v3-rahmen` (a)–(f2) bleiben grün und
+setzen alle eine gemessene Aufweitung voraus.
+
 **Offen und benannt:** im Band **948–1023 px** Fenster bleibt es beim
 überlagernden Blatt — 161 px verdeckter Text, 328 px verdeckter Titel. Das ist
 kein Versehen, sondern Davids Grenze «unter 1024 bleibt alles wie heute»; der Bau
