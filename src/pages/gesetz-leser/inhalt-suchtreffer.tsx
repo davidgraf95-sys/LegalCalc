@@ -117,7 +117,9 @@ export function useSuchTreffer({
     const beob = new MutationObserver(() => { lies(); setAnsichtTick((n) => n + 1); });
     beob.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle', 'data-verweise'],
+      // S1: `data-verweise` ist entfallen (der Schalter ist gestrichen). Die drei
+      // verbliebenen Attribute sind genau die drei Schalter aus Kap. 4f.
+      attributeFilter: ['data-fussnoten', 'data-histansicht', 'data-leitfaelle'],
     });
     return () => beob.disconnect();
   }, []);

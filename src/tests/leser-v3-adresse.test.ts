@@ -57,7 +57,10 @@ const V3_REIN = [
   'src/pages/gesetz-leser/v3/LeserAnsichtV3.tsx',
   'src/pages/gesetz-leser/v3/UebersichtBox.tsx',
   'src/pages/gesetz-leser/v3/kopfStufen.ts',
-  'src/pages/gesetz-leser/v3/v3Optionen.ts',
+  // `v3Optionen.ts` ist mit S1 ENTFALLEN (Optionen-Rückbau, David F1/F2 «ja»):
+  // die Abbildung zwischen dreiwertigem Store und zweiwertiger V3-Sicht hat kein
+  // Gegenüber mehr, seit `histansicht` selbst zweiwertig ist. Kein Ersatz-Eintrag
+  // — die Datei gibt es nicht, und `readFileSync` würde hier zu Recht werfen.
 ];
 
 describe('V3-Hülle: der EINE erlaubte Adress-Schreiber (LM-202)', () => {

@@ -40,7 +40,7 @@ type GrundartMeta = ReturnType<typeof grundartMeta>;
 
 export function LeserVolltextInhalt({
   erlass, eintraege, struktur, kopf, currency, vorher, nachher,
-  sektionen, ohneGliederung, gliederungsTiefe, fussnotenAnzahl, meta,
+  sektionen, ohneGliederung, gliederungsTiefe, fussnotenAnzahl, hatAenderungsvermerke = true, meta,
   internRefs, margAnzeige, kantonSys, basisPfad, renderSektion,
   imPane, istXl, overlayWurzel, treffer, suche, sucheDebounced, setSuche,
   tocBaumEl, tocOffen, tocAuf, setTocOffen, setTocAuf, springeZuArtikel,
@@ -66,6 +66,9 @@ export function LeserVolltextInhalt({
   /** Amtliche Gliederungstiefe (Kennzahl der Erlass-Übersicht, strukturTiefe.ts). */
   gliederungsTiefe: number;
   fussnotenAnzahl: number | null;
+  /** S1-Nachzug B3: trägt der Erlass Änderungsvermerke? (Schalter-Sichtbarkeit;
+   *  Default `true` = anbieten, konservativ). */
+  hatAenderungsvermerke?: boolean;
   meta: GrundartMeta;
   internRefs: InternRefs | undefined;
   margAnzeige: Map<string, { teile: string[]; ab: number }>;
@@ -321,7 +324,8 @@ export function LeserVolltextInhalt({
       // dieselbe Komponente, nicht mehr eine zweite Kopie (§5).
       <LeserMenuPaar kantoneVerfuegbar={kantoneVerfuegbar} klassenImErlass={klassenImErlass}
         bezugHistogramm={bezugHistogramm} bezugBereich={bezugBereich}
-        fussnotenAnzahl={fussnotenAnzahl} />
+        fussnotenAnzahl={fussnotenAnzahl}
+        hatAenderungsvermerke={hatAenderungsvermerke} />
     )
     : null;
 

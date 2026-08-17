@@ -58,9 +58,12 @@ test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle,
 
   // A4: die Switches togglen — jeder reagiert ohne Hänger. «Linien» ist mit dem
   // Linien-Rückbau V1 (16.8.2026, Entscheid David 13.8.2026) aus dem Menü
-  // entfallen; geprüfter Sachverhalt (Reaktionszeit je Schalter unter Drossel)
-  // unverändert (§6.3: deklariert).
-  for (const name of ['Fussnoten', 'Verweise'] as const) {
+  // entfallen, «Verweise» mit dem Optionen-Rückbau S1 (17.8.2026, Entscheid
+  // David F2); an seine Stelle tritt der zweite verbliebene Schalter
+  // «Änderungsvermerke». Geprüfter Sachverhalt (Reaktionszeit je Schalter unter
+  // Drossel) unverändert (§6.3: deklariert). Der Testerlass BV trägt 131
+  // `kl:'A'`-Fussnoten, der Schalter ist dort also angeboten (S1-Nachzug B3).
+  for (const name of ['Fussnoten', 'Änderungsvermerke'] as const) {
     t0 = Date.now();
     const sw = gruppe.getByRole('switch', { name });
     const vorher = await sw.getAttribute('aria-checked');

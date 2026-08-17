@@ -1,16 +1,16 @@
 // @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 
-// W2·5d G2a — Leser-Options-Leiste (Fussnoten/Verweise): reine data-*-/
-// CSS-Toggles am <html>, persistent (localStorage) + Pre-Paint (main.tsx, CSP-
-// konform ohne Inline-Script). Belegt R6 (Grundzustand = heutige Darstellung,
-// Toggle rein CSS) und R9 (Fussnoten-«AUS» DÄMPFT, versteckt NIE — Ctrl+F/
-// Screenreader/Print bleiben). Positiv UND negativ (AN sichtbar ↔ AUS reduziert).
+// W2·5d G2a — Leser-Options-Leiste: reine data-*-/CSS-Toggles am <html>,
+// persistent (localStorage) + Pre-Paint (main.tsx, CSP-konform ohne
+// Inline-Script). Belegt R6 (Grundzustand = heutige Darstellung, Toggle rein CSS)
+// und R9/A1 (Fussnoten-«AUS» lässt Marker und Apparat VERSCHWINDEN, löscht sie
+// nie — der Text bleibt im DOM). Positiv UND negativ (AN sichtbar ↔ AUS weg).
 //
 // Der Reader liefert prerendertes Crawler-HTML → auf den Client-Takeover warten
 // (die Options-Leiste existiert NUR im React-DOM = App-Ready-Marker), bevor
 // geklickt wird. Erlass-Wahl: die Toggle-Semantik ist seitengrössen-unabhängig
-// (Attribut + CSS) — Fussnoten/Verweise laufen darum auf dem KLEINEN BGBM
+// (Attribut + CSS) — die Toggles laufen darum auf dem KLEINEN BGBM
 // (~22 KB Snapshot, 25 Fussnoten-Marker, 62 Verweis-Links), NICHT auf dem
 // 1686-Artikel-OR: dessen Voll-Re-Render (Apparat-Toggle) + Ganzseiten-Style-
 // Recalc starvten den gedrosselten CI-Runner ins 30s-Test-Timeout (CI-Befund
@@ -23,6 +23,17 @@ import { test, expect, type Page } from '@playwright/test';
 // sie prüften genau das entfernte Verhalten (§6.3: deklariert, kein Refactoring).
 // Dass im Lesetext KEINE Gliederungslinie mehr erscheint, hält jetzt
 // `leser-ohne-gliederungslinie.e2e.ts` fest.
+//
+// ── S1 · OPTIONEN-RÜCKBAU (deklarierte fachliche Änderung, §6.3) ─────────────
+// Entscheid David F2 «ja» (16.8.2026): der Schalter «Verweise» ist ERSATZLOS
+// GESTRICHEN. Sein Toggle-Fall («AUS unterdrückt die dotted Unterstreichung»)
+// fällt mit ihm — er prüfte genau das entfernte Verhalten. Was der Schalter
+// NICHT betraf, war ohnehin nie hier gedeckt und bleibt unverändert: Farbe,
+// href, Klickbarkeit und Ctrl+F der Verweis-Links (`verweis-u.e2e.ts`).
+// An seine Stelle im Menü tritt der zweiwertige Schalter «Änderungsvermerke»
+// (F1) — die Zahl der Schalter bleibt damit ZWEI, ihre NAMEN ändern sich. Der
+// Vertrag dieses Schalters liegt vollständig unter `hist-ansicht-w25i.e2e.ts`;
+// hier wird nur die Bestückung des Menüs festgehalten.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -42,7 +53,7 @@ async function ansichtOeffnen(page: Page): Promise<void> {
   await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
 }
 
-test('Options-Leiste: zwei role=switch (Fussnoten/Verweise) — «Entscheide» via «Rechtsprechung ▾», «Linien» seit dem Rückbau V1 entfallen', async ({ page }) => {
+test('Options-Leiste: zwei role=switch (Fussnoten/Änderungsvermerke) — «Entscheide» via «Rechtsprechung ▾», «Linien» und «Verweise» entfallen', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
@@ -50,17 +61,99 @@ test('Options-Leiste: zwei role=switch (Fussnoten/Verweise) — «Entscheide» v
   // W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere Schalter «Entscheide» ist
   // entfallen — er steuerte dieselbe Sache wie das Dropdown «Rechtsprechung ▾».
   // LINIEN-RÜCKBAU V1 (Entscheid David 13.8.2026): «Linien» ist ebenfalls entfallen,
-  // die Gliederungslinie im Lesetext gibt es nicht mehr. Bleiben zwei Schalter.
+  // die Gliederungslinie im Lesetext gibt es nicht mehr.
+  // S1 (Entscheid David F2, 16.8.2026): «Verweise» ist gestrichen; an seine Stelle
+  // tritt der zweiwertige «Änderungsvermerke». Bleiben zwei Schalter.
   await expect(gruppe.getByRole('switch')).toHaveCount(2);
   await expect(gruppe.getByRole('switch', { name: 'Linien' })).toHaveCount(0);
-  for (const name of ['Fussnoten', 'Verweise']) {
+  // Negativ-Sonde gegen die Rückkehr: eine entfernte Steuerung, die niemand
+  // vermisst, schleicht sich beim nächsten Merge sonst wieder ein.
+  await expect(gruppe.getByRole('switch', { name: 'Verweise' })).toHaveCount(0);
+  for (const name of ['Fussnoten', 'Änderungsvermerke']) {
     await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
   }
   const html = page.locator('html');
   // Kein `data-linien` mehr am <html> — das Attribut existierte nur für die Linie.
   await expect(html).not.toHaveAttribute('data-linien', /.*/);
+  // Und kein `data-verweise`: der Schalter ist weg, also darf auch die Weiche weg
+  // sein — ein zurückgelassenes Attribut wäre der stille Rest, an dem eine
+  // CSS-Regel später wieder anwachsen könnte.
+  await expect(html).not.toHaveAttribute('data-verweise', /.*/);
   await expect(html).toHaveAttribute('data-fussnoten', 'an');
-  await expect(html).toHaveAttribute('data-verweise', 'an');
+  await expect(html).toHaveAttribute('data-histansicht', 'an');
+});
+
+// ── S1-NACHZUG B3 (Bug-Check 17.8.2026, §8) ──────────────────────────────────
+// «Änderungsvermerke» wird nur angeboten, wenn der Erlass Vermerke TRÄGT. Auf
+// Erlassen ohne klassifizierte Historie blieb dem Schalter nur eine
+// Layout-Raffung von 40 px je Artikel; die faktischen Änderungs-Fussnoten OHNE
+// Klasse bleiben dort sichtbar (H0-Auflage 1) — die Beschriftung versprach mehr,
+// als sie hielt. Die Bedingung kommt aus dem DATENMODELL, nicht aus der Herkunft
+// (kein `if (kanton)`): Regel und Korpus-Messung stehen in
+// `src/tests/aenderungsvermerke-schalter.test.ts`, hier die gerenderte Wirkung.
+//
+// PAAR aus Positiv und Negativ, bewusst beides: eine Bedingung, die nur die
+// Abwesenheit prüft, wäre auch mit einem generell verschwundenen Schalter grün.
+test('B3: Erlass MIT Änderungsvermerken bietet den Schalter (StPO)', async ({ page }) => {
+  // StPO: 187 von 283 Fussnoten sind `kl:'A'`, dazu ein Historie-Shard.
+  await warteReader(page, '/gesetze/bund/STPO', 'art-1');
+  await ansichtOeffnen(page);
+  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  await expect(gruppe.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(1);
+  await expect(gruppe.getByRole('switch')).toHaveCount(2);
+});
+
+test('B3: Erlass OHNE Änderungsvermerke bietet ihn nicht (BS-640.100)', async ({ page }) => {
+  // BS-640.100 (StG BS) trägt 16 Fussnoten, KEINE davon klassifiziert, und keinen
+  // Historie-Shard ⇒ es gibt hier nichts, was der Schalter ein- oder ausblenden
+  // könnte. Bug-Check-Messung: `[data-historie-zeile]` = 0.
+  await warteReader(page, '/gesetze/kanton/BS-640.100', 'art-1');
+  await ansichtOeffnen(page);
+  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  await expect(gruppe).toBeVisible();
+  await expect(gruppe.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0);
+  // Der Fussnoten-Schalter BLEIBT — die 16 unklassifizierten Fussnoten sind da und
+  // er blendet sie wirklich aus. Nur EIN Schalter also, nicht null.
+  await expect(gruppe.getByRole('switch', { name: 'Fussnoten' })).toHaveCount(1);
+  await expect(gruppe.getByRole('switch')).toHaveCount(1);
+  // Und die faktischen Fussnoten stehen im Dokument (nichts weggeblendet, §8).
+  await expect(page.locator('[data-historie-zeile]')).toHaveCount(0);
+});
+
+// ── Ä27 (Ästhetik-Prüfer 17.8.2026) ─────────────────────────────────────────
+// Bei «Fussnoten: aus» steht «Änderungsvermerke ✓ an», sichtbar sind aber weder
+// Marker noch Apparat — nur die «Fassung»-Zeile, die dem Fussnoten-Schalter nicht
+// folgt. Im flachen Menü ist die Abhängigkeit unerkennbar; die Unterzeile sagt sie.
+test('Ä27: Hinweis am Änderungsvermerke-Schalter NUR bei «Fussnoten: aus»', async ({ page }) => {
+  const HINWEIS = 'Marker und Apparat sind mit den Fussnoten ausgeblendet';
+  await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
+  await ansichtOeffnen(page);
+  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const vermerke = gruppe.getByRole('switch', { name: 'Änderungsvermerke' });
+
+  // Grundzustand «Fussnoten: an» — KEIN Hinweis (er wäre dort falsch: Marker und
+  // Apparat sind sichtbar). Negativ zuerst, damit die Zeile nicht bloss «irgendwo
+  // steht», sondern an die Bedingung gebunden ist.
+  await expect(gruppe.getByText(HINWEIS)).toHaveCount(0);
+
+  await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'aus');
+  await expect(gruppe.getByText(HINWEIS)).toHaveCount(1);
+  // Die Auskunft muss auch ohne Blick auf den Bildschirm ankommen — als
+  // DESCRIPTION des Schalters, nicht als Name (§13/F2: Farbe und Nähe tragen nie
+  // allein). Der NAME bleibt «Änderungsvermerke»: stünde der Satz darin, hiesse
+  // der Schalter «… mit den Fussnoten ausgeblendet» und wäre nicht mehr von
+  // seinem Nachbarn «Fussnoten» zu unterscheiden (beim Bau real passiert).
+  const beschriebenVon = await vermerke.getAttribute('aria-describedby');
+  expect(beschriebenVon, 'aria-describedby fehlt').toBeTruthy();
+  await expect(page.locator(`#${beschriebenVon}`)).toHaveText(HINWEIS);
+  // Der Schalter selbst steht weiter auf «an» — der Hinweis erklärt, er lügt nicht.
+  await expect(vermerke).toHaveAttribute('aria-checked', 'true');
+
+  // Zurückschalten nimmt den Hinweis wieder weg.
+  await gruppe.getByRole('switch', { name: 'Fussnoten' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'an');
+  await expect(gruppe.getByText(HINWEIS)).toHaveCount(0);
 });
 
 test('Fussnoten-Toggle: AN sichtbar → AUS VERSCHWINDEN (A1, David 5.7.2026), Text bleibt im DOM, kein CLS beim Toggle', async ({ page }) => {
@@ -114,24 +207,32 @@ test('Fussnoten-Toggle: AN sichtbar → AUS VERSCHWINDEN (A1, David 5.7.2026), T
   expect(cls).toBe(0);
 });
 
-test('Verweise-Toggle: AUS unterdrückt die (dotted) Link-Unterstreichung, der Link bleibt', async ({ page }) => {
+test('S1: die Verweis-Links behalten OHNE den Schalter alles, was sie tragen', async ({ page }) => {
+  // ── ERSATZ für den gestrichenen «Verweise»-Toggle-Fall (§6.3, deklariert) ──
+  // Der Schalter ist weg (F2), sein Toggle-Fall damit gegenstandslos. Was David
+  // in F2 ausdrücklich zugesichert bekam, ist NICHT gegenstandslos: «Farbe,
+  // Klickbarkeit und Ctrl+F bleiben in jedem Fall.» Genau das hält diese Zeile
+  // fest — und sie ist strenger als der alte Fall, weil sie prüft, dass die
+  // Unterstreichung bei :hover WEITER ERSCHEINT (der Wegfall der Option darf
+  // nicht heissen, dass die Regel «aus» eingebrannt wurde).
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
-  // Artikel-Fliesstext-Verweis (U-VERWEIS/A11: auch der Ingress trägt jetzt
-  // dotted Links — der läge unter dem Sticky-Kopf und finge den Hover ab).
-  const link = page.locator('.lc-leser [id^="art-"] .decoration-dotted').first();
-  const anzahl = await page.locator('.lc-leser [id^="art-"] .decoration-dotted').count();
+  // `a.decoration-dotted` und nicht `.decoration-dotted`: dieselbe Utility trägt
+  // auch der Kopier-Knopf der Artikel-Nummer (`<button>`, kein href) — er stand
+  // beim ersten Lauf dieser Fassung als erster Treffer da. Die Zusage aus F2
+  // betrifft die VERWEIS-LINKS, also wird auf das Element gezielt, das eine
+  // Adresse haben kann.
+  const links = page.locator('.lc-leser [id^="art-"] a.decoration-dotted');
+  const link = links.first();
+  const anzahl = await links.count();
   test.skip(anzahl === 0, 'kein Verweis-Link auf dieser Seite');
 
   await link.scrollIntoViewIfNeeded();
-  // POSITIV: Grundzustand → :hover unterstreicht (heutiges Verhalten).
+  // POSITIV: :hover unterstreicht — unverändert das heutige Verhalten.
   await link.hover();
   expect(await link.evaluate((el) => getComputedStyle(el).textDecorationLine)).toContain('underline');
-
-  // NEGATIV: «Verweise» AUS (im «Ansicht»-Dropdown) → keine Unterstreichung, aber
-  // Link (href/Klick) bleibt.
-  await ansichtOeffnen(page);
-  await page.getByRole('switch', { name: 'Verweise' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-verweise', 'aus');
-  await link.hover();
-  expect(await link.evaluate((el) => getComputedStyle(el).textDecorationLine)).toBe('none');
+  // Klickbarkeit/Anker: der Link trägt weiter ein Ziel.
+  await expect(link).toHaveAttribute('href', /.+/);
+  // Ctrl+F: der Verweis-Text ist sichtbarer Text, nicht versteckt.
+  expect(((await link.textContent()) ?? '').trim().length).toBeGreaterThan(0);
+  await expect(link).toBeVisible();
 });

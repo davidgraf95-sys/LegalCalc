@@ -172,6 +172,22 @@ uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan er
   gliederungslinie.e2e.ts:71` und `e2e/leser-r1-r2.e2e.ts:544` (20-s-Budget) und
   schliesst zugleich Punkt (b) von `QS-E2E-STABIL`. Messreihe und Nullproben:
   [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
+  **Nullprobe 17.8.2026 (S1-Nachzug), lokal warm:** `e2e/leser-ohne-gliederungslinie.e2e.ts
+  --project=leser-v3 --repeat-each=3` fällt auf **unverändertem `main` (19a989f93)
+  6 von 6** (beide Tests, alle Wiederholungen, «Test timeout of 30000ms exceeded»
+  beim Warten auf den «Ansicht»-Knopf). Das ist keine Zuschreibung aus der Doku,
+  sondern gemessen: der Worktree wurde dafür auf `main` gestellt und neu gebaut.
+  Damit ist belegt, dass der Deckel gegen die **Erst-Render-Zeit des OR/ZGB**
+  reisst und nicht gegen eine Feature-Änderung — der Fix gehört hierher, nicht in
+  eine Spec-Anpassung.
+  **Neu 17.8.2026 (S1-Nachzug, §17) — Reader-Kopf reflowt nach dem Client-Takeover:**
+  gemessen `header 161 → 238 px`, `h1 49 → 75 px` (+161 px), Quelle
+  `div.flex.shrink-0`. Für die Nutzerin ein Lade-Sprung; der CLS-Beitrag ist
+  **bimodal 0.006 ↔ 0.119** und kippt allein mit der Parallel-Last (ob das Lese-Grid
+  zum Reflow-Zeitpunkt schon gemalt ist). Gedeckt ist er nur nachgelagert
+  (`check:perf-lighthouse`, post-merge) — kein Merge-Blocker. Fix gehört in die
+  Startlast: Kopf-Geometrie vor dem Takeover reservieren, statt die Schranke zu
+  heben (§8). Diagnose: `e2e/gesetze-historie-badge.e2e.ts`, Datei-Kopf.
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1.
 - **Datenhaltung / VPS-Gate** *(QS-DATA)*. Trägt nur das David-Gate: E3-Serving + E4-UI-Panels
   <!-- @meta id: QS-DATA · status: blocked · blocker: vps-bestellung-david · dep: [] · kollision: [scripts/datenhaltung, daten] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
@@ -211,23 +227,34 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   · [ ] **Geltende BMV in den Korpus aufnehmen** — die seit 1.3.2026 geltende Nachfolge-Verordnung (Totalrevision `cc/2025/408`, gleiche SR 412.103.1) fehlt; Nutzer finden nur den historischen Text. **Risikopfad** ⇒ Gegenprüfung. (fusioniert 15.8., vormals `QS-KORPUS-BMV`; Fahrplan: [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §20.4)
   · [ ] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — 23 amtliche Sektionen liegen ausserhalb des `div#annex`-Containers und fehlen im Snapshot. **Risikopfad** ⇒ Gegenprüfung; golden-Diff erwartet (neue amtliche Substanz). (fusioniert 15.8., vormals `QS-KORPUS-SCOPE`; Fahrplan: [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §19)
   · [ ] **Entscheid-Datumsfehler im Rechtsprechungs-Register bereinigen** — `bge_151_II_475` trägt 1999 statt 2025; Datum gegen bger.ch verifizieren, in der Pipeline-Quelle korrigieren (nie im Projektions-JSON, §5), Register-Sweep nach weiteren Band/Jahr-Diskrepanzen, Projektion neu erzeugen. **Risikopfad** ⇒ Gegenprüfung. (fusioniert 15.8., vormals `QS-KORPUS-RSPR-DATUM`; Fahrplan: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md))
-- [x] **`QS-E2E-SHARD-GEN` · Shard-Zuordnung in die Spec, JSON generieren** — `e2e/shard-gruppen.json` ist der häufigste Merge-Konflikt-Ort. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.5.
-  <!-- @meta id: QS-E2E-SHARD-GEN · status: done · blocker: null · dep: [] · kollision: [e2e, scripts/e2e-shard-gruppen.mjs, .gitattributes] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
 - [ ] **`QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines** *(Entscheid David 7.8.2026)* — je Engine ein Invarianten-Katalog («eine Frist endet nie vor ihrem Beginn»), tausende generierte Eingaben. **Die Invarianten-Formulierung ist fachlich**: Katalog mit Gegenprüfung härten und David vorlegen (§7); je Invariante einmal rot zeigen (§6.7). Inline, kein Fahrplan.
   <!-- @meta id: QS-CODE-PROP · status: ready · blocker: null · dep: [] · kollision: [src/tests, package.json] · worktree: ja · 26x: nein · groesse: M -->
   - [ ] **`nichtKonsolidiert`-Marker bei Staatsverträgen falsch-positiv (FZA, Gegenprüfung S3 16.8.2026)** — `scripts/normtext/revisionen-generieren.ts:233` setzt `dateForce > korpusStand`, kennt aber «in Kraft ≠ angewendet ab» nicht: Fedlex-Konsolidierung 15.12.2020 enthält AS 2021 12 bereits (Fussnote «Bereinigt gemäss Beschluss Nr. 1/2020 … angewendet ab 1. Jan. 2021»), Warnung «seit 01.01.2021 geltend, nicht eingearbeitet» ist falsch (§1/§8). Wurzel-Fix: AS-Fundstelle im Konsolidierungs-XML als Konsolidiert-Beleg werten; Gegenrechnung über alle 87 Marker; Gegenprüfung Pflicht. Ergänzend `revisionen.ts:130` Kommentar (BMV-Begründung) berichtigen; Warnung auch in den Prerender-Standausweis (`seo-detail.ts`) übernehmen (§8 für Suchmaschinen).
   - [x] Runde 1 gebaut 15.8.: 12 Engines, 81 Invarianten, 99 fast-check-Tests (7,6 s), Katalog `bibliothek/register/property-invarianten-2026-08-15.md`; 89/89 Rot-Beweise; **kein Engine-Defekt** — Fund schkgFristen: Art. 63 S. 2 SchKG («bis zum dritten Tag nach DEREN Ende» = Ende der Ferien) macht Fristende nicht-monoton, normkonform (Pin SF-8).
   - [ ] **WARTET AUF DAVID (fachlich, §7):** SF-F1 — bleibt die Art.-63-Verlängerung bei gehemmter Frist erhalten (sonst verkürzt die Hemmung eine Verwirkungsfrist)? · SF-F2 — Wartefrist-Ablauf in den Betreibungsferien ergibt früheren «frühesten Handlungstag» (4.1.) als dieselbe Frist als Handlungsfrist (6.1.) — gewollt? Katalog-Zeilen «fachlich vorzulegen» dort.
-- [x] **`QS-UI-HIGHLIGHT` · `::highlight()`-Registry je Leser-Instanz** — **erledigt 16.8.2026 mit `W2·5m-LESER-V3`/H2** (Buchführung je Instanz in `suchHighlight.ts`; Rot-Beweis `src/tests/suchHighlight.test.ts`, Browser-Beweis `e2e/leser-v3-highlight-split.e2e.ts`; Detail: Vollzugsvermerk H2 in `fahrplaene/FAHRPLAN-LESER-V3.md`). Rest bewusst offen: zwei ENTSCHEID-Panes teilen weiterhin eine Modul-Instanz (unverändert gegenüber dem Vorzustand). Ursprünglicher Befund: — eine Registry, drei Schreiber: im Split-View löscht das Rail-Suchfeld die Markierung des Nachbar-Panes. Reine Darstellung. **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §9.
-  <!-- @meta id: QS-UI-HIGHLIGHT · status: done · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/entscheidLeserRegeln.ts, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
-- [x] **`QS-E2E-STABIL` · Lokale e2e-/Test-Budgets an gemessene Streuung binden** — offen: (a) Budget-Modul `e2e/helpers/` statt 4 gegabelter Stellen; (b) `leser-r1-r2`-Wurzel per CI-Forensik (kein UI-Bau ins Blaue, nicht per Timeout maskieren); (c) norm-sprung/Erst-Render → `QS-PERF`. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.4.
-  <!-- @meta id: QS-E2E-STABIL · status: done · blocker: null · dep: [] · kollision: [playwright.config.ts, e2e/a11y.e2e.ts, scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
-- [x] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.1.
-  <!-- @meta id: QS-TOK-DECKEL · status: done · blocker: null · dep: [] · kollision: [archiv] · worktree: nein · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
-- [x] **`QS-HOOKS-AUSBAU` · Vier Hook-/Konfig-Ausbauten** — **FREIGEGEBEN David 14.8.2026** (Chat, wörtlich: «alle hooks freigegeben»; zuvor «punkt 1 freigegeben»): alle vier Punkte baubar — (1) SubagentStop-Wache §14.7 · (2) `.claude/rules`-Pfad-Scoping · (3) SessionEnd-Lehren-Check · (4) `/sandbox` prüfen. Jeder neue Wächter einmal rot zeigen (§6.7); Anwendung/Wirkung David im Ergebnis zeigen. **Detail:** [state-of-the-art-abgleich-2026-08-07.md](bibliothek/recherche/state-of-the-art-abgleich-2026-08-07.md) § «Lücken».
-  <!-- @meta id: QS-HOOKS-AUSBAU · status: done · blocker: null · dep: [] · kollision: [.claude/hooks, CLAUDE.md] · worktree: nein · 26x: nein · groesse: M -->
-- [x] **`QS-TYP-LUECKE` · Typprüfung deckt scripts/ und e2e/ nicht — 33 reale Fehler, teils Risikopfad** — Werkzeug-Analyse 14.8.2026 (Zweit-Session, verifiziert): tsc -b prüft nur src/ + vite.config; in scripts/normtext, scripts/materialien, scripts/datenhaltung liegen belegte Null-/Union-Fehler (struktur-run.ts:84/93, check-bezuege.ts:367, soft-law-snapshot.ts:118ff, abk-aliase-generieren.ts:865, masse-ingest.ts:94ff) — ein durchrutschendes undefined erzeugt stille Korpus-Lücken, die Byte-Golden nie sehen. Zu bauen: tsconfig für scripts/+e2e (references), die realen Fehler fixen (Risikopfad-Anteile mit Gegenprüfung), Tor bleibt tsc -b. Bekannt seit Juli (BACKLOG-AUDIT-WERKZEUGE-2026-07 Z. 50), war nie Plan-Schritt.
-  <!-- @meta id: QS-TYP-LUECKE · status: done · blocker: null · dep: [] · kollision: [tsconfig.json, scripts/normtext, scripts/materialien, scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M -->
+- [ ] **`QS-DATA-INGEST-DRIFT` · Ingest-Strecke ist in drei Tagen 3× langsamer geworden — `suche.test.ts` reisst dadurch seinen Hook-Deckel** *(gemessen S1-Nachzug 17.8.2026, §17)*
+  <!-- @meta id: QS-DATA-INGEST-DRIFT · status: ready · blocker: null · dep: [] · kollision: [scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M -->
+  Befund: `scripts/datenhaltung/suche.test.ts` fiel im Vollauf mit «Hook timed out in
+  95000ms» (`beforeAll`). **Nicht der Deckel ist falsch, die Basis ist gewandert.**
+  Der Deckel wurde am 14.8.2026 sauber kalibriert (Ist + 3 sd) gegen eine
+  ISOLIERTE Datei-Dauer von **10.85 s** (n=5, sd 0.45) und einen Lastfaktor ~4.7×.
+  Neu gemessen am 17.8.2026, gleiche Maschine, unbelastet: **35.26 · 33.32 ·
+  25.56 s** (Mittel 31.4) — die Ingest-Strecke kostet das **Dreifache**. Mit dem
+  dokumentierten Lastfaktor liegt der Hook unter Last bei ~150 s und reisst 95 s
+  systematisch, nicht zufällig.
+  Nullprobe (§0 Ziff. 3): `scripts/datenhaltung/**` und die Korpus-Projektionen sind
+  auf `feat/leser-v3-s1` **byte-identisch zu `main`** (`git diff origin/main...HEAD`
+  leer für diesen Pfad) — die Eingaben des Tests sind dieselben, der Defekt liegt
+  also auf `main`. Rate im Vollauf dort gemessen: **1 rot in 2 Läufen** (rot bei
+  113 s Gesamtdauer, grün bei 67 s ⇒ lastabhängig).
+  **Wurzel-Fix, nicht Deckel-Anhebung (§17):** zuerst klären, WARUM die Strecke 3×
+  teurer wurde — Korpus-Zuwachs seit 14.8. oder eine Regression in
+  `ingest.ts`/`fts.ts`. Den Deckel erst danach neu bemessen, nach demselben
+  Protokoll wie am 14.8. (n=5 isoliert + n=5 unter gedeckelter Parallel-Last, Ist +
+  max(3 sd, 25 %)). Den Hook NICHT durch ein gecachtes DB-Artefakt entlasten: er
+  baut beide HOT-DBs über dieselben ingest+fts-Bausteine wie `datenhaltung:build`,
+  und genau das ist die Aussage der Datei (§1 vor Tempo — Begründung steht im
+  Datei-Kommentar).
 - [ ] **`QS-MONITOR-ROT` · Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** — Aktivierungs-Audit 14.8.2026: `normen-monitor.yml` 5/5 Läufe failure (seit 6.7., Issue #166 offen, 8 rote Läufe in Folge); scheiternde Schritte `check:netz` und LIK-Reihe (BFS O-1.6). Rechtsstand-relevant. DIAGNOSE 14.8. (Session-Befund, Issue #166 beantwortet): Monitor korrekt, Rot ist ECHT — Checkliste: · [ ] LIK-Reihe 2026-05→2026-07 nachziehen (scripts/lik-reihe-generieren.py; amtliche Werte ⇒ Gegenprüfung trotz formal fehlendem Risikopfad-Flag) · [x] 14 nicht-kanonische Fedlex-Pins repariert (#497, 2 Gegenprüfungs-Runden 14/14 SPARQL-rederiviert; PR von 574 auf 10 Dateien entbläht — Automaten-Churn inkl. 115 Kanton-Dateien ist Befund (a2)) · [x] Frische-Automat: gen:historie/check:historie in Kaskade+Prüfliste nachgerüstet (Nullprobe-belegt) · [ ] 10 ESTV-MWST-Snapshot-Drifts aktualisieren (Risikopfad Materialien) · [ ] AIG-Botschaft BOTSCHAFT-2025-3067 nachführen (botschaften-netz rot, Klasse d — materialien:botschaften-Generator; Risikopfad) · [ ] VRV-Vernehmlassung VERN-2026-79 bereinigen (vernehmlassungen-netz rot, Klasse d — Verfahren live nicht mehr gelistet; Risikopfad) · [x] Rest-Sondierung 14.8.: 8 weitere Netz-Tore einzeln GRÜN (caches/zitate/rss-oc/normtext/pdf/pdf-quellen/revisionen/abk) — nur materialien-netz + fedlex-versionen noch offen · [ ] Materialien-System-Befunde 14.8. (aus Korpus-Nachzug, je §17-Wurzel-Fix nötig): (a) `npm run materialien` löscht in DB-losen Worktrees still 11 kanten-Artefakte — Orphan-Bereinigung bei fehlender DB überspringen; (b) Generator-Abgänge ohne Grabstein/Logzeile — Zu-/Abgänge ausgeben, Abgänge bestätigungspflichtig; (c) VERN-Schlüssel erbt mutable Fedlex-Projektnummer (79→78-Umnummerierung belegt) — intrinsische Identität wie bei fga-URIs; (d) botschaften-netz-Stichprobe = 8 feste Keys, blind für Register-Zuwachs (9 neue Erlasse monatelang ungeprüft) — Vollabgleich Grundmenge↔Roh-Dateien; (e) VERN-shas rauschen (stand=Abfragedatum im Hash); (f) Botschaften-Roh ohne ORDER BY — deterministisch sortieren; (h) Fussnoten-Link-Extraktor erzeugt «Link .»-Leerzeichen bei Satzend-Links (TGBV Fn 20/32 belegt, Muster main-weit) — Fix im Extraktor, nie in den Daten; (a2) Frische-Automat fasst bei Bund-Läufen 115 Kanton-Dateien mit Datums-Churn an (Verletzung der eigenen Reset-Invariante cache.sh:31); (g) Generator-Kaskade als EIN Kommando (materialien ⇒ normtext:revisionen ⇒ gen:zaehler — am 14.8. kostete das einzelweise Entdecken zwei CI-Rotläufe auf #499) · [ ] Verfahrens-Gap: Reparatur-Arm (Mo 04:43) vs. Detektions-Arm (Mo 05:17) — Cadence/Reihenfolge entscheiden; check:netz-&&-Kette zeigt nur ersten Befund (eigener deklarierter Schritt, §17).
   <!-- @meta id: QS-MONITOR-ROT · status: ready · blocker: null · dep: [] · kollision: [.github/workflows, scripts/normtext] · worktree: ja · 26x: nein · groesse: M -->
   - [x] ESTV-MWST-Drift 15.8. behoben: MI 05 + Branchen-Info 04 Snapshots nachgezogen (Gegenprüfung bestanden), check:materialien-netz 48/48 drift-frei; Monitor-Rotgrund seit 10.8. damit weg.
@@ -309,12 +336,6 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   · [ ] **Tabellen in Gesetzen lesbar machen** — Beispiel-Defekt `/gesetze/kanton/BS-154.810#art-29`; Extraktion = Risikopfad ⇒ `QS-GP` + golden byte-gleich, Zellinhalte exakt wie Quelle, mehrdeutig ⇒ Block als Text belassen (§1). **Grenze zu `W2·13-KANTONE-K7`** beachten (dort die PDF-Extraktion davor, hier die Darstellung). (fusioniert 15.8., vormals `W2·5j-TABELLEN`; Fahrplan: [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §18)
   · [ ] **Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG: drei Sprachfassungen je Erlass + Synopse-UI; heute ist nur `de` befüllt. Berührt Extraktion (`scripts/normtext`, Risikopfad) ⇒ `QS-GP`-Gegenprüfung Pflicht. (fusioniert 15.8., vormals `W2·6-MEHRSPRACH`; Fahrplan: [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13)
  
-- [x] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
-  <!-- @meta id: W2·5h-GESETZ-UI · status: done · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
-  **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
-  der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
-  **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
-  - [x] **Gliederungslinie im Lesetext entfernen** *(gebaut 16.8.2026, PR feat/w2-5h-gesetz-ui)* *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
 - [ ] **5m-LESER-V3 · Gesetz-Leser V3: Hülle neu, Kern unangetastet** *(Auftrag David 16.8.2026, 19 Positionen; Konzept + Council-Review 16.8.2026)*:
   <!-- @meta id: W2·5m-LESER-V3 · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/kontext, src/components/suche, src/components/layout, e2e, src/index.css, tailwind.config.js] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-LESER-V3.md -->
   Radikale Vereinfachung der Leser-Oberfläche nach Apple-HIG-Prinzipien (Kopfzeile, Seitenleiste mit Übersichtsbox + einem Such-/Sprungfeld + Gliederung, Rechtsprechungs-Panel statt Dropdown, Typografie, Erlass-Kopf, Split-View einheitlich); Hülle neu **hinter Schalter `?leser=v3`** in der bestehenden Fassade (Hybrid/Strangler), Kern (`ArtikelBody`, `ArtikelLeser`, Datenlogik) unangetastet, Golden byte-gleich. Deckel: max. 5 Hüllen-PRs, dann Umschalten + Löschung der alten Hülle. **Detail:** [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) (Kurzfassung für David zuoberst; Kap. 7 Etappen H1–H5/S1–S4, Kap. 9 Fragen F1–F6).
@@ -565,6 +586,12 @@ Bau-Auflagen, keine Steuerung — vor dem Bau des jeweiligen Werkzeugs lesen.
   [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md), je Strang ein § (§1–§20),
   dort auch die Herkunft (AP-3/AP-4) und die drei begründet im Root gebliebenen Dateien. Die frühere
   20-zeilige Strang-Liste hier war ein zweites Inhaltsverzeichnis derselben Datei (Chronik 3.8.2026).
+- **Token-Ökonomie-Fundament** (Baseline-Messung, Steuer-Doku-Diät, Dispatch/Prozess, Werkzeuge/Output,
+  Code-Struktur — §§1–8 fertig) — wörtlich in
+  [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md); §11.1/§11.2 (`QS-TOK-DECKEL`/
+  `QS-TOK-AUFRAEUMEN`) am 17.8.2026 done in die Chronik überführt, Link hier bewusst stehen gelassen
+  (Regel 7) — weitere lebende Verweise ausserhalb ROADMAP.md: `FAHRPLAN-GESETZES-UX.md` §5 T20,
+  `docs/token-oekonomie/*`.
 
 ---
 *Verschlankt 14.8.2026 (`QS-PLAN-EINFACH`): Schritt-Prosa auf Zielform gekürzt; abgelöste Wortlaute

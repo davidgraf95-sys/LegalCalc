@@ -44,7 +44,7 @@ erkennen) in **Klicks und Sekunden vorher/nachher**, als Tabelle in jedem Kontak
 | Frage | Dann sieht der Nutzer … | Empfehlung |
 |---|---|---|
 | F1 Den dritten Historie-Modus «Chronologie» streichen? | … nur noch «Änderungsvermerke: an/aus» statt drei Wahlmöglichkeiten für dieselbe Information. | **Ja** |
-| F2 Den Schalter «Verweise» streichen? | … keinen Unterschied — der Schalter wirkt heute nur auf eine gepunktete Linie, die erst beim Darüberfahren mit der Maus erscheint. | **Ja** |
+| F2 Den Schalter «Verweise» streichen? | … keinen Unterschied — der Schalter wirkt heute nur auf eine gepunktete Linie unter Querverweisen. **KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7):** der Satzteil «die erst beim Darüberfahren mit der Maus erscheint» war FALSCH — die Linie stand dauerhaft da. Der Entscheid «Ja» bleibt richtig (die Linie ist Zierde, nicht Funktion), aber er nahm dem Nutzer mehr weg als beschrieben. | **Ja** |
 | F3 Schriftbild-Variante V1 oder V2? | … bei V1 grössere, luftigere Zeilen (19 px, kürzere Zeilen); bei V2 ein kompakteres, amtsnäheres Bild (17 px). Du entscheidest **nach** dem Bildvergleich. | **V1** |
 | F4 Entscheide unter dem Artikel nur noch als Zähler («14 Entscheide») statt als Zeilen? | … einen ruhigen Gesetzestext; die Entscheide stehen einen Klick entfernt im Seitenfenster, keiner geht verloren. | **Ja** |
 | F5 Standausweis-Wortlaut ändern? | … statt «geltend geprüft am 14.08.2026» neu «gegen Fedlex-Konsolidierung geprüft am 14.08.2026» plus einen Klartext-Satz, wenn Fedlex einer geltenden Änderung hinterherhinkt. | **Ja** |
@@ -116,7 +116,7 @@ laufen bei **jedem** PR und liegen ausserhalb von allem, was hier gebaut wird.
 |---|---|---|---|
 | K1 | **Zwei Kopfzeilen-Welten.** Einzelansicht trägt `InhaltsKopf` (17 opts-Felder); Split-View ruft ihn **gar nicht** und baut die Leiste `data-such-bar` pane-lokal nach. | `inhalt-kopfmeldung.tsx:96-124` | Jede Kopf-Änderung wird zweimal gebaut und zweimal getestet (Pos. 6). |
 | K2 | **Zwei Suchwege, ein Ziel.** In-Gesetz-Suche (1 129 Z.) vs. Quickjump (121 Z.) — zwei Felder, zwei Orte. | Ist-Inventar §5/§6 | David will ein Feld (Pos. 4). |
-| K3 | **Optionsvielfalt ohne Bedarfsnachweis:** 24 Grundkombinationen. Der Schalter «Verweise» wirkt nachweislich nur auf die gepunktete Unterstreichung **bei :hover**. | `leserOptionen.ts:88,122,182`; `index.css:468-472` | F2. |
+| K3 | **Optionsvielfalt ohne Bedarfsnachweis:** 24 Grundkombinationen. Der Schalter «Verweise» wirkte nur auf die gepunktete Unterstreichung der Verweis-Links. **KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7):** «**bei :hover**» war falsch. Gemessen am gebauten Stand (StGB Art. 66a, chromium): `NormText.tsx` `INLINE_CLASS = 'underline decoration-dotted underline-offset-2 hover:text-brass-700'` — `underline` ist UNBEDINGT, nur die FARBE wechselt bei Hover. `text-decoration-line: underline`, `style: dotted` im Ruhezustand, **100 solche Links in diesem einen Artikel**. Der Befund K3 (Optionsvielfalt) bleibt gültig, seine Begründung war zu schwach angesetzt. | `NormText.tsx:38`; `KantonNormText.tsx:31` | F2. |
 | K4 | **Historie ist doppelt benannt und nur halb geschaltet.** `data-histansicht="aus"` blendet ausschliesslich `[data-fn-klasse="A"]` aus (`index.css:437-464`). Die vom Nutzer gesehene «Fassung»-Marke ist eine **andere**, ungeschaltete Komponente: `ArtikelHistorie.tsx:106-107`, unbedingt gerendert in `ArtikelLeser.tsx:605-607`. | eigene Sonde | Vollständige Erklärung für Pos. 8 — **kein Schalter-Bug, sondern zwei Dinge mit einem Namen**. |
 | K5 | **Kontext-Panel ohne eigenen Ort:** 765 Z. hängen *im* Gliederungs-Scroller als Zone C. | `inhalt-volltext.tsx:654-661` | Ursache des Überlaufens (Pos. 17). |
 
@@ -261,7 +261,7 @@ S  Sheet über dem Pane — Regel: NIE drei vertikale Flächen.  H  Bottom-Sheet
 |---|---|---|---|
 | `fussnoten` | an/aus | **behalten** | amtlicher Apparat; David-Entscheid A1 |
 | `histansicht` | aus/fussnoten/chronologie | **auf 2 Werte** (an/aus) | dritter Modus für dieselbe Information; **Vorbedingung F1** |
-| `verweise` | an/aus | **streichen** | wirkt nur auf die Hover-Unterstreichung (`index.css:468-472`); **Vorbedingung F2** |
+| `verweise` | an/aus | **streichen** | wirkt auf die gepunktete Unterstreichung der Verweis-Links. **KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7):** «nur auf die **Hover**-Unterstreichung» war falsch — die Linie war DAUERHAFT (Messung s. Kap. 2 K3). **Vorbedingung F2** |
 | `leitfaelle` | an/aus | **umwidmen** → «Rechtsprechung im Text: an/aus» | Facetten wandern ins Panel |
 | Facetten Klasse/Kanton/Zeit | Mehrfachwahl | **umziehen** ins Panel | Ort statt Anzahl |
 | `lesePosition`, `PANES_KEY` | — | **behalten** | Rückkehr an die Lesestelle; Split-Vertrag |
@@ -269,6 +269,8 @@ S  Sheet über dem Pane — Regel: NIE drei vertikale Flächen.  H  Bottom-Sheet
 Ziel: **3 zweiwertige Schalter** (Fussnoten · Änderungsvermerke · Rechtsprechung) → **8 statt 24
 Kombinationen**. **Migration:** gespeichertes `histansicht:"chronologie"` liest V3 als `"an"`;
 unbekannte Werte fallen auf den Default (Vitest-Fall Pflicht).
+
+✅ S1 gebaut 17.8.2026 (Branch `feat/leser-v3-s1`) — Vollzugsvermerk in Kap. 7.
 
 ### (g) URL/Hash-Vertrag — unverändert
 
@@ -415,7 +417,7 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **H2b** | **Ästhetik-Nachzug** — die Positionen des Ästhetik-Reviews H1, die H2 aus Deckelgründen liegen liess (s. Ä-Tabelle im Vollzugsvermerk H2). Inhalt: **Ä1** Leerzone unter der Krumen-Leiste schliessen + Krumen-Leiste zeigt im Split den falschen Artikel (**Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle) + **App-Seitenleiste im Leser eingeklappt starten** · **Ä5** Seitenleiste als drei gerahmte Kästen, hängendes «·», Durchschimmern unter dem klebenden Block · **Ä8** Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung) · **Ä9** Schriftregler doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EINER · **Ä10** Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser · **Ä14** Fokusring am Suchfeld doppelt/dick | **Ä1 berührt als einzige Position `src/components/layout/**`** (App-Seitenleiste, Krumen-Leiste) — bis hierher war die Fläche für alle H-Etappen TABU. Sie wird darum mit **deklarierter Whitelist** geöffnet: nur die Dateien, die den Seitenleisten-Default und die Krumen-Quelle tragen, jede mit Nennung im PR. Alles andere in `layout/` bleibt gesperrt. Übrige Positionen: `src/pages/gesetz-leser/v3/**`, `src/index.css` | +150 / −80 | keine neuen Tore nötig — die Positionen sind an den Ästhetik-Screens abzunehmen, nicht an Zusicherungen; Ausnahme **Ä1 Krumen-Wahrheit**: eigener Test, weil eine falsche Ortsangabe ein §7-Fehler ist und kein Geschmack | Die sechs Positionen sind **sinnvoll umgesetzt, nicht abgehakt** (Drei-Prüfer-Regel oben, Prüfer 2), die Krumen-Leiste nennt im Split denselben Artikel wie die Lesespalte, und ohne Flag ist der Ist-Stand unverändert. | **M** |
 | **H3** | **Panel/Sheet für Rechtsprechung + Kontext** — Pos. 3, 12, 17; **Vorbedingung F4**. Enthält **Panel-Nachladen** (s. u.) | neu: `LeserPanel.tsx` (3 Reiter, vierter Filter «Sachgebiet» **vorgesehen**, Datenlogik dazu bleibt `W2·7-VZUI-SACHGEBIET`) · behalten: `bezuegeLaden`, `bezugAuswahl`, `bezugZeit`, `bezugPortion` (Datenlogik unverändert) | +450 / −0 | 4: `leser-v3-panel-facetten`, `leser-v3-panel-zaehler`, `leser-v3-kontext-cls`, `leser-v3-prerender-bezuege` | Jeder Entscheid, der heute unter einem Artikel erreichbar ist, ist über Zähler → Panel erreichbar, in beiden Panes, ohne dritte vertikale Fläche — und das prerenderte HTML trägt die Bezüge unverändert. | **L** |
 | **H4** | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `playwright.config.ts` | ±0 | 0 neu (11 alte B-Tests werden entfernt/umgehängt) | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
-| **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
+| **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, **`LeserAnsichtMenu.tsx` samt der darin definierten `OptSwitch`** (S1-Nachzug 17.8.2026, Architektur-Prüfer C3 — namentlich aufgeführt, weil `OptSwitch` die V1-KOPIE von `V3Switch` ist: gleiche Optik, gleiche ARIA-Mechanik, seit dem Ä27-Nachzug auch gleiche `hinweis`/`aria-describedby`-Logik. Sie darf H5 nicht überleben, sonst bleibt die Doppelung als zweite Wahrheit stehen, §5), `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
 
 ### ✅ Vollzugsvermerk H2 (16.8.2026, Branch `feat/leser-v3-h2`)
 
@@ -539,6 +541,9 @@ vergrössern. Sie sind darum als **benannte Positionen** eingetragen, nicht als
 | **Ä6** | Erlass-Kopf | **S3** |
 | **Ä7** | Randtitel über Artikelnummer (Hierarchie) | **S2** |
 | **Ä11** | Split-Pane-Icon-Flut | **H3/H4** |
+| **Ä25** | **Verweis-Unterstreichung steht dauerhaft im Ruhezustand** (nicht «nur bei Hover», wie fünf Doku-Stellen behaupteten) — gemessen 100 gepunktete Linien in StGB Art. 66a | ✅ **S1-Nachzug (Abweichung offengelegt)**: Faktenkorrektur gebaut, **Design-Umbau NICHT** — ohne Linie trüge die Farbe allein (hell 2.04 : 1, dunkel 1.14 : 1 gegen den Fliesstext; G183 verlangt 3 : 1). Braucht ein neues Verweis-Token oder ein leiseres Nicht-Farb-Signal → **S2**. Herleitung und Ist-Bilder: «Offen aus S1» |
+| **Ä26** | Historie-Slot reserviert 40 px auch dann, wenn der Erlass nie eine Fassung trägt (Phantom-Lücke unter jedem Artikel) | **S2** (Beiwerk-Zone, Grundlage Kap. 3 Pos. 13) — bewusst nicht in S1: das Vorziehen fasst die Reservierung an, die der Badge-Test exakt prüft |
+| **Ä27** | Bei «Fussnoten: aus» steht «Änderungsvermerke ✓ an», sichtbar ist aber nur die «Fassung»-Zeile — die Abhängigkeit ist im flachen Menü unerkennbar | ✅ **S1-Nachzug**: Hinweiszeile am Schalter, nur bei «Fussnoten: aus», V1 **und** V3 aus einer Konstante (`HINWEIS_VERMERKE_OHNE_FUSSNOTEN`); als `aria-describedby`, nicht im Namen |
 
 **Deckel-Stand:** H2 ist der zweite der höchstens fünf H-PRs (Kap. 7).
 
@@ -767,6 +772,112 @@ Erlassen gewarnt.
 | `lc-chip-geltend`/`lc-chip-vorbehalt` sind tot | Nach dem Chip-Rückbau in `src/` unbenutzt. Ihr Rückbau berührt das Farb-Wörterbuch in `DESIGN-REGLEMENT-NORMTEXT.md` §264-269/304 — eine Design-Autoritäts-Entscheidung, keine Nebenwirkung eines UI-PR (§17-Rückbau als eigener Schritt) |
 | Falschverweis in diesem Fahrplan | Kap. 14 nennt «die 8 Befunde aus `FAHRPLAN-UI-NAVIGATION.md` §15». Diese Datei hat kein §15; die Befunde stehen in **`FAHRPLAN-UI-BEFUNDE.md` §15** (LM-181/183/184/188/197). Unten korrigiert |
 
+### ✅ Vollzugsvermerk S1 (17.8.2026, Branch `feat/leser-v3-s1`)
+
+**Gebaut.** Optionen-Rückbau der GETEILTEN Schicht (Strang S, wirkt in beiden
+Hüllen) auf **3 zweiwertige Schalter → 8 statt 24 Kombinationen**. Vorbedingungen
+F1/F2 lagen schriftlich vor (Kap. 9, David 16.8.2026).
+
+| Zusage | Nachweis |
+|---|---|
+| `histansicht` zweiwertig (F1) | `HistAnsicht`, `HIST_ANSICHTEN`, `setzeHistAnsicht`, `useHistAnsicht` und die Sonderzeile für `data-histansicht` sind **weg**: das Feld läuft als gewöhnliches `OptFeld` in `FELDER` mit. Damit entfällt auch `v3/v3Optionen.ts` samt `histZuSicht`/`sichtZuHist`/`histUmschalten` (Datei gelöscht) — ihr Zweck war die Abbildung auf den dritten Wert. Der «Chronologie»-Modus ist restlos zurückgebaut: `<ol data-hist-chrono>`, drei CSS-Regeln, `baueChronologie` + `ChronoFussnote`/`ChronoEintrag`. `fnNrSortKey` **bleibt** (ordnet den Apparat) |
+| «Verweise» gestrichen (F2) | Feld, beide Menü-Schalter, `data-verweise` (auch aus dem `attributeFilter` von `inhalt-suchtreffer.tsx`) und die CSS-Regel auf `.decoration-dotted` sind entfernt; kein Toter-Code-Rest (`grep -rnE '\bverweise\b' src e2e` findet nur noch die Verweis-CHIPS und -Links, eine andere Sache). Was F2 zusagte, ist positiv gedeckt: `leser-optionen` prüft, dass Farbe, `href`, Ctrl+F **und die Unterstreichung** bleiben — die Regel wurde nicht auf «aus» eingebrannt. **KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7):** hier stand «die **:hover**-Unterstreichung». Falsch: die gepunktete Linie ist DAUERHAFT (`NormText.tsx:38`, `underline` unbedingt; gemessen an StGB Art. 66a, 100 Links, `text-decoration-line: underline` im Ruhezustand). Der Vollzug selbst ist unberührt — der Schalter ist weg und die Linie bleibt in jeder Stellung; nur die Beschreibung ihres Zustands war falsch |
+| «Fassung»-Overline am selben Schalter (Befund K4) | Sie hing an gar keinem Schalter und blieb bei «aus» als einzige Historie-Spur stehen. Neu `[data-hist-slot]` + eine Regel. Ausgeblendet wird der **Slot**, nicht nur die Zeile: sonst bliebe seine reservierte Höhe (16+24 px) als Phantom-Lücke unter jedem Artikel — «aus» hätte doch eine Spur hinterlassen |
+| **Kern-Berührung deklariert** | `src/pages/gesetz-leser/parts/ArtikelLeser.tsx`, genau zwei Stellen: **Z. 221–225** (Chronologie-Berechnung entfernt, vier Importe verwaisten mit) und **Z. 594–620** (`data-hist-slot` am Historie-Slot; der `<ol data-hist-chrono>`-Block darunter entfernt). **Kein Wortlaut, kein Layout des Normtexts** — Golden 256/256 byte-gleich belegt es |
+| Migration alter Werte, Vitest **Pflicht** | Reine, exportierte `migriereOptFelder()` in `leserOptionen.ts` + `src/tests/leser-optionen-migration.test.ts` (8 Fälle): `hist:"chronologie"` UND `"fussnoten"` → `"an"` (beide bedeuteten «Vermerke sichtbar» — «aus» wäre §8-Substanzverlust), `"aus"` → `"aus"`, 12 unbekannte Werte → Default ohne Wurf, `verweise` ignoriert und beim nächsten Schreiben abgeräumt. Zusätzlich derselbe Weg im Browser (`hist-ansicht-w25i`: Alt-Speicher via `addInitScript`, Schalter steht danach auf «an», Vermerke sichtbar, kein `data-verweise` am `<html>`) |
+| Zusage der Etappe: keine Spur, DOM vollständig | `hist-ansicht-w25i` prüft alle drei Träger GEMEINSAM (Marker · Apparat-Rahmen · Fassungs-Slot) und die DOM-Vollständigkeit mit unverändertem Text — und die Rückkehr über «an». Parität: `leser-v3-umschalten` **(a2)** zeigt denselben Vorgang V3→V1 |
+| Golden byte-gleich | `npm run golden:vergleich` → **IDENTISCH, 256 Fälle** (kein Golden neu geschrieben) |
+
+**Rot-Beweise (§6.7), je einzeln erzeugt und zurückgenommen:**
+
+| Mutation | Wird rot |
+|---|---|
+| `[data-hist-slot]`-Regel aus `index.css` entfernt | `hist-ansicht-w25i` «S1-ZUSAGE» + «Schalter bei Fussnoten aus», `leser-v3-umschalten` (a2) — 3 Tests, **beide Hüllen** |
+| `min-h-hist-zeile` am Slot entfernt | `gesetze-historie-badge` «Reservierung hält»: «Artikel 2 verschoben: 1516 → 1552». Der alte CLS-Test wäre bei diesem below-fold-Sprung vermutlich grün geblieben — der neue ist strenger |
+| Schalter-Beschriftung geändert | `leser-optionen` (Bestückung) + `leser-kopf-v2` (B-2) |
+| `chronologie`→`aus` in `migriereOptFelder` | 2 Vitest-Fälle |
+| `verweise` wieder in `FELDER` | 2 Vitest-Fälle |
+| *(ungeplant, aber echt)* Die Alt-Fassung von `leser-schriftskala.test.ts` wurde beim ersten Lauf von selbst rot (`'an'` statt `'chronologie'`, `verweise`/`hist` nicht mehr geschrieben) — der Bestandstest hat die Migration gefangen, bevor der neue sie prüfte |
+
+**Flake-Wurzel `gesetze-historie-badge` (Kap. 14 wies sie S1 zu) — kein Timeout,
+keine Retry-Erhöhung:**
+
+| | vorher | nachher |
+|---|---|---|
+| ganze Datei, lokal warm, volle Parallelität (10 Kerne / 5 Worker) | **1/10 rot** | **0/40 rot** |
+| nur dieser Test, isoliert | 0/20 | — |
+| isoliert, CPU-Drossel 1×/4×/8× | 0/13, CLS stabil 0.0058–0.0075 | 0/7, CLS **0.00000** (inkl. 6×) |
+
+Treiber ist **Parallel-Last, nicht CPU-Tempo**, und die Streuung ist bimodal
+(≈0.006 gegen 0.119) — keine Wolke um die Schwelle. Ursache: `buffered: true`
+rechnete dem Badge das Lade-CLS der GANZEN Seite zu. Dominant ist der Reader-Kopf
+nach dem Client-Takeover (`⇑Wachser: header +161px→238, h1 +49px→75`); er tritt in
+jedem Lauf auf (Δ0.0052 in 20 Sonden-Läufen) und wird nur dann zu Δ0.1190, wenn
+die Artikelliste zu dem Zeitpunkt schon gemalt ist — dann liegt das 976×312-Grid
+in seiner Wirkfläche. Der Badge selbst tauchte in **keinem** Lauf unter den
+Top-Quellen auf; seine Höhe ist reserviert. Das ist dieselbe Fehlerklasse, die
+`helpers/cls.ts` am 20.7.2026 schon einmal behoben hat (Messfenster-Korrektur
+`nurAbInstall`) — für diesen Test damals ausdrücklich NICHT, mit der Begründung
+«für einen Lade-CLS-Test ist das genau richtig». Der Satz stimmt für ein
+Seiten-Budget, nicht für einen Badge-Test (§6.7). Fix: Shard per `page.route`
+anhalten, Beobachter erst nach fertigem Reader, dann freigeben — und die
+Reservierung exakt prüfen (y der Folgeartikel und `scrollHeight` unverändert).
+
+**KORREKTUR S1-NACHZUG (17.8.2026, Bug-Check B2/§6.7):** die Budget-Zusicherung
+(`expect(cls).toBeLessThan(0.05)`) ist aus diesem Test **gestrichen** — sie
+konnte den Defekt nicht melden, den sie benannte. Mutations-Sonde (Reservierung
+`min-h-hist-zeile` entfernt): Geometrie **rot** («Artikel 2 verschoben:
+1516 → 1552», Seitenhöhe 10735 → 10807), CLS **0.00000 und damit grün**, weil
+alle hist-Slots von BGBM below-fold liegen. Gegenprobe mit dem Slot IM Ausschnitt:
+CLS 0.0118515625 (3/3 bitgleich) — reisst 0.05 ebenfalls nicht. Der Test wird von
+den drei Geometrie-Zeilen getragen; der handgerollte PerformanceObserver ist mit
+der Zusicherung entfallen, der Timeline-Test nutzt wieder `helpers/cls.ts` (§5).
+
+#### Nachzug nach drei Prüfern (17.8.2026)
+
+Drei unabhängige Prüfer (Bug-Check · Ästhetik · Architektur) haben S1 geprüft;
+hier je Befund eine Zeile mit Beleg. Nicht umgesetzt: **B3 in V3** (Kollision) und
+**D1/Ä25 Design-Umbau** (Abweichung, s. «Offen aus S1»).
+
+| Befund | Was · Beleg |
+|---|---|
+| **A1** blockierend | `leser-kopf-a9.e2e.ts` klickte den gestrichenen Schalter «Verweise». Rot reproduziert («Test timeout of 50000ms exceeded · waiting for … switch { name: 'Verweise' }»), auf `'Änderungsvermerke'` gezogen (§6.3 deklariert: geprüfte Sache = Reaktionszeit je Schalter, unverändert) → 1 passed (22.5 s). `grep`-Sweep gross/klein: zwei veraltete Kommentare nachgezogen (`main.tsx`, `index.css`); Domänen-Begriffe (`normverweise`) und Migrations-Specs bewusst unberührt |
+| **B1** | «gedeckt im Lighthouse-Tor `check:perf-budget` (CLS ≤ 0.05)» war doppelt falsch: `check:perf-budget` misst gzip-**Bytes** (Chrome-frei), die CLS-Schranke lebt in `scripts/perf/lighthouse-budget.ts` = `check:perf-lighthouse`, und der Job läuft erst **nach** dem Merge (ci.yml `perf`: `if: … != 'pull_request'`). An beiden Stellen korrigiert; Kopf-Reflow (+161 px, CLS bimodal 0.006 ↔ 0.119) als Zeile in ROADMAP-Schritt **QS-PERF** (`check:plan` grün) |
+| **B2** | CLS-Zusicherung des Badge-Tests **gestrichen** (§6.7) — Mutations-Sonde: Reservierung weg ⇒ Geometrie rot (art2 1516 → 1552), CLS 0.00000 und grün; Gegenprobe mit dem Slot im Ausschnitt 0.0118515625 (3/3 bitgleich) reisst 0.05 ebenfalls nicht. Die drei Geometrie-Zeilen tragen den Test. Der handgerollte PerformanceObserver fiel mit; der Timeline-Test nutzt wieder `helpers/cls.ts` (§5) |
+| **B3** | Schalter «Änderungsvermerke» nur, wenn der Erlass Vermerke trägt (§8) — reine Ableitung in `berechnungen.ts`, **zwei** Träger (`kl:'A'` + Historie-Shard), **drei** Eingaben (die dritte, `erlassGeladen`, weil `ladeStruktur` 404 und «lädt noch» beide auf `null` abbildet — ohne sie behielte ZH-211.11 den Schalter). Korpus-Messung: 1217/1420 ohne `kl:'A'`, davon 2 mit wirksamer Fassungs-Zeile. Rot-Beweis + 12 Vitest, e2e positiv/negativ (StPO ja, BS-640.100 nein). **V3 offen**, s. u. |
+| **B4** | Kommentar `HIST_SLOT = 40` nachgezogen («bei JEDEM Artikel» gilt bei «aus» nicht mehr). Bewusst nicht nachgerechnet: tolerierte Richtung «echte Höhe ≤ Schätzung», und eine Options-Abhängigkeit band eine reine Funktion an einen Darstellungs-Store (§2/§3/§15). Nur Kommentar |
+| **C1** | Vier veraltete Begründungen: `ErlassKopfBlock.tsx` **neu begründet** (der «Chronologie»-Grund ist weg, das Ergebnis bleibt richtig — im Vorspann steht kein Gemisch aus Vermerk und Verweis, das zu trennen wäre; Ausblenden wäre reine Substanz-Wegnahme, §8) · `ArtikelBody.tsx` **NUR-KOMMENTAR-BERÜHRUNG DES KERNS, deklariert** · `suchHighlight.ts` · `BezugFacettenWahl.tsx` (Verweis auf die toten Namen `ZeitraumWahl`/`HistAnsichtWahl` entfernt) |
+| **C2** | §11: `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md` Ziff. 7.4 auf **zwei Stellungen** und den **dritten Träger `[data-hist-slot]`** nachgezogen, datiert, mit der Folgeauflage aus B3; `INDEX.md` mitgezogen. `check:bibliothek` grün |
+| **C3** | H5-Löschliste nennt jetzt **`LeserAnsichtMenu.tsx` samt `OptSwitch`** namentlich (die V1-Kopie von `V3Switch` darf H5 nicht überleben, §5). `fnNrSortKey` ≡ `ArtikelBody.tsx:114-123` als Zeile in «Offen aus S1» (Heimat `src/lib/normtext/`, Risikopfad ⇒ Gegenprüfung) |
+| **C4** | `leserOptionen.ts` von **531 → 443 Zeilen** (Kommentaranteil 53 % → 45 %); vor S1 waren es 486, das Ziel «kürzer als vorher» ist um 43 Zeilen erreicht. Gekürzt wurde ausschliesslich die Chronik der gestrichenen Felder (sie steht hier); die mechanischen Gründe (CSP, stabile `getSnapshot`-Referenz, sofortiges Zurückschreiben der Zeitraum-Migration, Hydration-Getter) stehen unverändert |
+| **D1/Ä25** | Faktenfehler an **sieben** Stellen datiert korrigiert; **Design-Umbau abweichend nicht gebaut** (§7) — Begründung und Messung in «Offen aus S1» |
+| **D2/Ä27** | Hinweiszeile am Schalter, nur bei «Fussnoten: aus», V1 **und** V3 aus einer Konstante. Als `aria-describedby` und NICHT im `aria-label`: im Namen hiess der Schalter «… mit den Fussnoten ausgeblendet» und wurde dadurch von seinem Nachbarn «Fussnoten» ununterscheidbar — zwei bestehende Specs kippten sofort («strict mode violation … resolved to 2 elements»). Im Bau aufgetreten und behoben |
+| **D3/Ä26** | Nicht gebaut, gehört S2 (Beiwerk-Zone) — als Zeile in «Offen aus S1» und in die Ä-Tabelle |
+| **E1** | §17-Wurzelfix des main-Flakes `allgemeineFrist.property.test.ts`. Gemessen je Test: `tageZwischen` **12 775 ms** isoliert gegen 484 ms für die sieben anderen (96 % der Datei); unter Parallel-Last Datei 26.26 s, dieser Test also ~25.8 s bei 30 s Deckel — der Abstand ist kleiner als die Lastschwankung. Fester Zeit-Budget `{ timeout: 120_000 }` mit Begründung, **`numRuns` unverändert** (Prüftiefe auf Rechtslogik bleibt, §1 vor §15) |
+
+**Kollision, gemeldet statt doppelt gebaut (§0 Ziff. 5).** B3 ist in V1 gebaut und
+in **V3 offen**. Die Bedingung braucht einen Prop-Weg über `v3/leserV3Modell.ts` →
+`v3/LeserRahmenV3.tsx` → `v3/LeserKopf.tsx`; alle drei liegen auf fremder
+Bau-Fläche: `origin/feat/leser-v3-h2b` ändert sie (offen, nicht in `main`), und der
+Worktree `LexMetrik-h3` hält sie samt `inhalt-zustand.tsx` **unfestgeschrieben**
+geändert. Darum läuft die V1-Ableitung bewusst über `inhalt.tsx` (`eintraege` +
+`historieFuer`) statt über `inhalt-zustand.tsx`. V3 ist nicht ausgeliefert
+(H4-Flip wartet auf David), die Asymmetrie trifft also keine Nutzerin; der Vermerk
+steht im Datei-Kopf von `v3/LeserAnsichtV3.tsx`. **Nachzug-Auflage für H3/H4:** wer
+diese drei Dateien anfasst, reicht `hatAenderungsvermerke` mit durch.
+
+**Offen aus S1 (nicht stillschweigend erledigt):**
+
+| Punkt | Grund |
+|---|---|
+| **Echter Befund, nicht S1s Fläche: der Reader-Kopf reflowt nach dem Takeover um +161 px** | Aus der Flake-Diagnose gefallen. Für den Nutzer ein Lade-Sprung (bimodal 0.006 ↔ 0.119, lastabhängig). **KORREKTUR S1-Nachzug (17.8.2026, B1):** hier stand «gedeckt im Lighthouse-Tor `check:perf-budget` (CLS ≤ 0.05)» — falsch. `check:perf-budget` ist Chrome-frei und misst gzip-**Bytes** der Bundle-Topologie; die CLS-Schranke lebt in `scripts/perf/lighthouse-budget.ts` (`clsMax: 0.05`, OR + Startseite) = `check:perf-lighthouse`, und dieser Job läuft **erst nach dem Merge** (ci.yml, Job `perf`: `if: github.event_name != 'pull_request'`), ist also kein Merge-Blocker. Als Checklisten-Zeile im Roadmap-Schritt **QS-PERF** angelegt; gehört in die Auslieferung/Startlast, nicht in einen Optionen-Rückbau |
+| **Ä25 · Verweis-Unterstreichung im Ruhezustand — Faktenfehler korrigiert, Design-Änderung ABWEICHEND NICHT gebaut (§7)** | Der Auftrag lautete: Ruhe = Verweisfarbe ohne Linie, Linie erst bei `hover`/`focus-visible` (Design-Grundlage `docs/ux-audit-2026-07/reader/leser-v3-design-grundlage.md` §8). Der **Faktenteil ist umgesetzt**: die Behauptung «wirkt nur bei :hover» ist an fünf Stellen datiert korrigiert (Kap. «Kurzfassung» F2, Kap. 2 K3, Kap. 4f, Kap. 9 F2, Vollzugsvermerk S1) und in `NormText.tsx`-Nachbarschaft (`LeserAnsichtMenu.tsx`, `leserOptionen.ts`). Der **Farb-/Linien-Umbau ist NICHT gebaut** — gemessen am gebauten Stand (chromium, StGB Art. 66a, 100 Inline-Verweise) trägt der Ruhezustand die Linie UND die Akzentfarbe, und der Farbabstand zum Fliesstext beträgt: **hell 2.04 : 1** (Link `#826225` gegen Fliesstext `#3C3932`), **dunkel 1.14 : 1** (`#D8BD78` gegen `#CFCCC5`). Die Linie zu entfernen liesse die Verweise also **durch Farbe allein** unterschieden, unter der 3 : 1-Schwelle der WCAG-Technik G183 — und damit gegen die Hausregel «Farbe trägt NIE allein» (§13/F2, `index.css:718`) und gegen die Auflage derselben Design-Grundlage «**Nie** hover-only … Hover verbirgt Zierde, nie Funktion» (auf Touch gibt es kein Hover). Der Umbau braucht darum ZUERST einen Entscheid, der über einen Nachzug hinausgeht: entweder ein neues Verweis-Token mit ≥ 3 : 1 gegen den Fliesstext in **beiden** Themen (Farbwert = Design-/David-Entscheid, DESIGN-REGLEMENT verbietet das Reparieren durch Werte-Tausch) oder ein leiseres Nicht-Farb-Signal im Ruhezustand. Heimat: **S2** (Typografie/Beiwerk, Kap. 8). Ist-Bilder für den Entscheid am Objekt: `docs/ux-audit-2026-07/reader/leser-v3-s1/ae25-ist-ruhezustand-stgb-66a-{light,dark}.png` |
+| **Ä25-Nebenfund: `INLINE_CLASS` steht zweimal** | `src/components/NormText.tsx:38` und `src/components/KantonNormText.tsx:31` tragen denselben String zeichengleich (§5). Wer Ä25 baut, muss beide ändern, sonst laufen Bund- und Kanton-Verweise auseinander. Entdopplung gehört zum Ä25-Bau, nicht davor |
+| **Ä26 · Historie-Slot reserviert 40 px auch ohne je eine Fassung (Phantom-Lücke)** | Ästhetik-Prüfer 17.8.2026. Bewusst **nicht** in S1 gebaut: der Slot ist die Beiwerk-Zone, deren Neuordnung Etappe **S2** trägt (Grundlage Kap. 3 Pos. 13). Ein Vorziehen würde die Reservierung anfassen, die der Badge-Test exakt prüft — ohne die S2-Zonen-Entscheide wäre es Raten |
+| **`berechnungen.ts:176 fnNrSortKey` ≡ `ArtikelBody.tsx:114-123` (key) zeichengleich** | Architektur-Prüfer 17.8.2026: dieselbe Sortierregel für Fussnoten-Nummern zweimal im Code (§5). Entdopplung in eine spätere Etappe, **Heimat `src/lib/normtext/`**; Risikopfad (Fussnoten-Reihung am amtlichen Apparat) ⇒ **Gegenprüfung Pflicht**, darum nicht als Nebenzug im Nachzug |
+| `hist-ansicht-w25i` läuft nur im Projekt `chromium` | Die Spec steht in keiner der Listen `N_SPECS`/`V3_SPECS`, `--project=leser-v3` sammelt sie also nicht. Die V3-Seite der S1-Zusage ist über `leser-v3-umschalten` (a2) gedeckt (läuft in BEIDEN Projekten, mit Rot-Beweis). Das Umhängen der Spec-Listen ist ausdrücklich **H4** (Kap. 10) — hier bewusst nicht angefasst |
+| Vitest-Suite trägt einen last-abhängigen Flake **auf main** | Nullprobe auf dem unveränderten Basis-Commit `19a989f9`: **1/4 rot**, `allgemeineFrist.property.test.ts` mit 30-s-Timeout (`import 335 s` = massive Contention). Auf HEAD dieselbe Datei, 1/3. Ein Lauf unter Doppellast (Gate + volle Playwright-Matrix gleichzeitig) traf statt dessen `ArtikelBody`/`tap-ziel-token`. Ohne Nebenlast ist `npm run gate` grün. Nicht S1s Verursachung, aber offen |
+
 ### Panel-Nachladen (H3) — Startlast senken, ohne SEO zu verlieren
 
 | Punkt | Regel |
@@ -864,7 +975,7 @@ Test-Rewrite vor, den David kippen könnte).
 | # | Frage in Alltagssprache | Konsequenz «dann sieht der Nutzer …» | Empfehlung | Blockiert |
 |---|---|---|---|---|
 | **F1** | Heute gibt es drei Einstellungen dafür, wie Änderungsvermerke im Gesetzestext erscheinen (aus / bei den Fussnoten / als datierte Liste). Auf zwei reduzieren? | … nur noch «Änderungsvermerke: an/aus». Die datierte Liste entfällt; die Information selbst geht nicht verloren, sie steht dann bei den Fussnoten. | **Ja** — dritter Modus für dieselbe Information; er kommt als eigener Schritt zurück, falls Bedarf entsteht | **S1** |
-| **F2** | Der Schalter «Verweise» soll weg. | … keinen Unterschied im Alltag: der Schalter wirkt heute nur auf eine gepunktete Linie unter Querverweisen, die ohnehin erst beim Darüberfahren mit der Maus erscheint. Farbe, Klickbarkeit und Ctrl+F bleiben in jedem Fall. | **Ja** | **S1** |
+| **F2** | Der Schalter «Verweise» soll weg. | … keinen Unterschied im Alltag: der Schalter wirkt heute nur auf eine gepunktete Linie unter Querverweisen. Farbe, Klickbarkeit und Ctrl+F bleiben in jedem Fall. **KORREKTUR S1-Nachzug 17.8.2026 (Ä25, §7):** «die ohnehin erst beim Darüberfahren mit der Maus erscheint» war FALSCH; die Linie stand im Ruhezustand. David hat also auf einer zu harmlosen Beschreibung entschieden. Der Entscheid wird NICHT eigenmächtig umgedeutet: er bleibt in Kraft (die Linie ist Zierde), und die Frage «soll die Linie im Ruhezustand überhaupt stehen?» ist als eigener Punkt Ä25 geführt — sie ist eine Design-Frage, keine Rückbau-Frage. | **Ja** | **S1** |
 | **F3** | Zwei Schriftbilder für den Gesetzestext stehen zur Wahl. | … bei **V1** grössere Schrift und kürzere Zeilen (ruhiger, mehr Weissraum); bei **V2** ein kompakteres Bild, näher am amtlichen Fedlex-Aussehen (mehr Text pro Bildschirm). | **V1** — Entscheid aber **erst nach** dem 18-Bilder-Vergleich (Kap. 8); vorher ist die Empfehlung unverbindlich | **S2** |
 | **F4** | Unter jedem Artikel stehen heute scrollbare Zeilen mit Gerichtsentscheiden. Ersetzen durch eine leise Zeile «⚖ 14 Entscheide →», die ein Seitenfenster öffnet? | … einen ruhigen Gesetzestext ohne Entscheid-Zeilen; ein Klick auf den Zähler öffnet das Fenster mit allen Entscheiden samt Filtern. Kein Entscheid wird unerreichbar. | **Ja** | **H3** |
 | **F5** | Der Standausweis im Erlass-Kopf soll neu formuliert werden. | … statt «geltend geprüft am 14.08.2026 (maschinell)» neu «gegen Fedlex-Konsolidierung geprüft am 14.08.2026 (maschinell)» — und dort, wo es zutrifft, den Klartextsatz «Fedlex hat eine seit 01.07.2025 geltende Änderung noch nicht in den Text eingearbeitet». Heute betrifft das fünf Erlasse. | **Ja, beides** — der Chip sagt, *was* geprüft wurde, die Warnzeile, *was trotzdem fehlt* | **S3** |

@@ -4,8 +4,25 @@
 // die darstellungsoptionen (fussnoten linien verweise) sollen im kopf sein mit
 // drop down menu.» Die frühere G2a-Chip-Leiste entfällt und geht in EIN «Ansicht»-
 // Dropdown im aktionen-Slot des ErlassLeserKopf auf (§3.1: keine Wucherung).
-// Seit dem Linien-Rückbau V1 (16.8.2026) sind es zwei Switches — «Fussnoten»
-// (mit Änderungshistorie-Wahl) und «Verweise»; «Linien» ist ersatzlos entfallen.
+// Seit dem Linien-Rückbau V1 (16.8.2026) sind es zwei Switches; «Linien» ist
+// ersatzlos entfallen.
+//
+// OPTIONEN-RÜCKBAU S1 (Kap. 4f, David F1/F2 «ja»): «Verweise» ist ERSATZLOS
+// entfallen (er wirkte auf die gepunktete Unterstreichung der Verweis-Links —
+// KORREKTUR S1-Nachzug 17.8.2026: hier stand «bei :hover», und das war falsch;
+// die Linie ist dauerhaft, `NormText.tsx:38` setzt `underline` unbedingt und
+// tauscht bei Hover nur die Farbe. Messung: StGB Art. 66a, 100 solche Links,
+// `text-decoration-line: underline` im Ruhezustand. Ob die Linie im Ruhezustand
+// stehen soll, ist die offene Design-Frage Ä25 — s. Fahrplan Kap. 7), und
+// die frühere DREIWERTIGE `HistAnsichtWahl` («aus · Fussnoten · Chronologie») ist
+// ein gewöhnlicher Switch «Änderungsvermerke» — dieselbe Bedienung wie in V3, ein
+// Store-Feld, ein Muster. Bleiben zwei Switches: Fussnoten · Änderungsvermerke.
+//
+// Der Änderungsvermerke-Switch steht UNBEDINGT da (früher nur bei «Fussnoten an»,
+// §13 F4). Seit S1 hängt an ihm auch die «Fassung»-Zeile am Artikelfuss, die NICHT
+// zum Fussnoten-Apparat gehört und `data-fussnoten` nicht folgt — bei «Fussnoten
+// aus» wirkt er also weiter, und ein wirksames Steuerelement wegzunehmen wäre
+// seinerseits der F4-Fehler (nur spiegelbildlich).
 //
 // A11y (ehrliche Disclosure, NICHT role=menu): Switches sind Formular-Steuerelemente,
 // kein Menü — ein role=menu verspräche eine Pfeiltasten-Bedienung, die es nicht
@@ -20,11 +37,10 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { useDialogFokus } from '../../components/layout/useDialogFokus';
 import {
-  setzeOption, setzeHistAnsicht, useLeserOptionen, useHistAnsicht,
-  type OptFeld, type HistAnsicht,
+  HINWEIS_VERMERKE_OHNE_FUSSNOTEN, setzeOption, useLeserOptionen, type OptFeld,
 } from './leserOptionen';
 
-function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
+function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz, hinweis }: {
   feld: OptFeld;
   an: boolean;
   label: string;
@@ -33,14 +49,28 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
   ariaLabel?: string;
   /** Kleines Zusatz-Signal rechts vom Label (z. B. der Fussnoten-Zähler N). */
   zusatz?: ReactNode;
+  /** Ä27: erklärende Zeile UNTER dem Schalter — sagt, warum die Stellung «an»
+   *  gerade nichts zeigt. Sie ist DESCRIPTION, nicht Name (`aria-describedby`).
+   *
+   *  Gelernt beim Bau (17.8.2026): zuerst stand der Satz im `aria-label`, also im
+   *  Accessible-NAME. Damit hiess der Schalter «Änderungsvermerke — Marker und
+   *  Apparat sind mit den Fussnoten ausgeblendet» — und enthielt das Wort
+   *  «Fussnoten», den Namen des NACHBAR-Schalters. Zwei bestehende Specs wurden
+   *  sofort rot («strict mode violation: … resolved to 2 elements»), und genau
+   *  dieselbe Doppeldeutigkeit träfe eine Nutzerin, die per Namen navigiert. Ein
+   *  Name benennt das Steuerelement; eine Begründung ist eine Beschreibung. */
+  hinweis?: string;
 }) {
+  const hinweisId = useId();
   return (
+    <div>
     <button
       type="button"
       role="switch"
       aria-checked={an}
       aria-label={ariaLabel}
-      title={titel}
+      aria-describedby={hinweis ? hinweisId : undefined}
+      title={hinweis ? `${titel}. ${hinweis}` : titel}
       onClick={() => setzeOption(feld, an ? 'aus' : 'an')}
       className={`flex w-full items-center justify-between gap-3 rounded-md px-2.5 py-1.5 text-left text-body-s transition-colors hover:bg-brass-100/40 ${
         an ? 'text-ink-900' : 'text-ink-600'
@@ -62,51 +92,16 @@ function OptSwitch({ feld, an, label, titel, ariaLabel, zusatz }: {
         {an ? '✓' : '○'} {an ? 'an' : 'aus'}
       </span>
     </button>
-  );
-}
-
-/**
- * W2·5i-HIST-ANSICHT: dreiwertige Wahl «Änderungshistorie: aus · als Fussnoten ·
- * als Chronologie». Bedienmuster wie die übrigen Streifen (role="group" +
- * `aria-pressed`, KEIN `role=radiogroup` — das verspräche eine Pfeiltasten-
- * Bedienung, die es hier nicht gibt; dieselbe Ehrlichkeits-Lehre wie beim
- * Dropdown selbst).
- *
- * Was «aus» ausblendet, ist bewusst ENG (H0-Auflage 1, `bibliothek/normen/
- * hist-ansicht-h0-trennbarkeit.md`): NUR die build-seitig als Änderungsvermerk
- * klassifizierten Fussnoten (`kl:'A'`). Echte Verweise, die Grauzone, reine
- * Publikationsnachweise, Unklares UND jede Fussnote ohne Klasse (alle Kanton-
- * Sidecars) bleiben in JEDER Ansicht sichtbar — die Sicherheitsrichtung ist
- * einseitig: nie amtliche Substanz verstecken (§1/§8).
- */
-function HistAnsichtWahl() {
-  const hist = useHistAnsicht();
-  const stufen: readonly [HistAnsicht, string, string][] = [
-    ['aus', 'aus', 'Änderungsvermerke ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar'],
-    ['fussnoten', 'Fussnoten', 'Änderungsvermerke wie bisher im Fussnoten-Apparat am Artikelfuss (Grundeinstellung)'],
-    ['chronologie', 'Chronologie', 'Änderungsvermerke stattdessen als zeitlich sortierte Liste am Artikelfuss'],
-  ];
-  return (
-    <div role="group" aria-label="Darstellung der Änderungshistorie" className="flex flex-wrap items-center gap-1 px-2.5 pt-1.5 pb-0.5">
-      <span className="lc-overline mr-1">Änderungshistorie</span>
-      {stufen.map(([wert, label, titel]) => {
-        const aktiv = hist === wert;
-        return (
-          <button
-            key={wert}
-            type="button"
-            aria-pressed={aktiv}
-            data-hist-wahl={wert}
-            onClick={() => setzeHistAnsicht(wert)}
-            title={titel}
-            className={`rounded px-1.5 py-0.5 text-xs transition-colors ${
-              aktiv ? 'bg-brass-100/60 font-medium text-ink-900' : 'text-ink-500 hover:bg-brass-100/40'
-            }`}
-          >
-            {label}
-          </button>
-        );
-      })}
+    {/* AUSSERHALB des Knopfes: läge die Zeile darin, zöge die Namensberechnung
+        ihren Text in den Accessible-Name (s. `hinweis` oben) — sie mit
+        `aria-hidden` davor zu schützen hätte sie zugleich vor dem Screenreader
+        versteckt, also genau vor der Nutzerin, für die sie gedacht ist. Als
+        Geschwister ist sie sichtbar UND vorlesbar, und sie ist kein Klickziel
+        (ein Hinweis soll nicht schalten). `ink-500` statt `ink-400`: dieselbe
+        AA-Auflage wie beim «aus»-Wort (§13/F2). */}
+    {hinweis && (
+      <p id={hinweisId} className="px-2.5 pb-1 text-micro leading-snug text-ink-500">{hinweis}</p>
+    )}
     </div>
   );
 }
@@ -128,8 +123,13 @@ function HistAnsichtWahl() {
  *  nicht geladen ⇒ Zähler erscheint erst danach; da er in einem geschlossenen,
  *  absolut positionierten Panel steckt, wächst im sichtbaren Kopf keine Zahl nach
  *  (CLS 0). */
-export function LeserAnsichtMenu({ fussnotenAnzahl = null }: {
+export function LeserAnsichtMenu({ fussnotenAnzahl = null, hatAenderungsvermerke = true }: {
   fussnotenAnzahl?: number | null;
+  /** S1-Nachzug B3 (§8): trägt DIESER Erlass Änderungsvermerke? `false` ⇒ der
+   *  Schalter «Änderungsvermerke» wird gar nicht gerendert, weil er hier nichts
+   *  ein- oder ausblenden könnte. Default `true` = anbieten (konservativ, s.
+   *  `bieteAenderungsvermerkeSchalter` in `./berechnungen`). */
+  hatAenderungsvermerke?: boolean;
 }) {
   const opt = useLeserOptionen();
   const [offen, setOffen] = useState(false);
@@ -188,7 +188,7 @@ export function LeserAnsichtMenu({ fussnotenAnzahl = null }: {
         aria-label="Ansicht"
         data-ansicht-menu
         className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
-        title="Darstellung: Fussnoten (mit Änderungshistorie), Verweise"
+        title="Darstellung: Fussnoten · Änderungsvermerke"
       >
         {/* Enger Platz in der Sticky-Positionsleiste (@390): Label nur ≥lg, sonst
             reines Icon (Accessible-Name bleibt über aria-label «Ansicht» erhalten).
@@ -227,20 +227,36 @@ export function LeserAnsichtMenu({ fussnotenAnzahl = null }: {
               : undefined}
             titel="Fussnoten ein- oder ausblenden — AUS lässt Marker und Apparat verschwinden (der Normtext bleibt durchsuchbar)"
           />
-          {/* W2·5i-HIST-ANSICHT (§14-Intake David 20.7.2026): die dreiwertige
-              Historie-Wahl sitzt UNTER dem Fussnoten-Schalter, weil sie ihn
-              verfeinert — im OR sind ~83 % der Fussnoten Änderungsvermerke, hier
-              trennt man sie von den echten Verweisen. Nur sichtbar, wenn Fussnoten
-              überhaupt AN sind: bei «Fussnoten aus» ist der ganze Apparat weg, die
-              Wahl also wirkungslos → kein totes Steuerelement (§13 F4, gleiches
-              Muster wie der Kanton-Streifen unter «Instanzen»). */}
-          {opt.fussnoten === 'an' && <HistAnsichtWahl />}
-          <OptSwitch
-            feld="verweise"
-            an={opt.verweise === 'an'}
-            label="Verweise"
-            titel="Verweis-Links unterstreichen oder schlicht darstellen (der Link bleibt aktiv)"
-          />
+          {/* S1 (Kap. 4f, F1): der Änderungsvermerke-Schalter sitzt UNTER dem
+              Fussnoten-Schalter, weil er ihn verfeinert — im OR sind ~83 % der
+              Fussnoten Änderungsvermerke, hier trennt man sie von den echten
+              Verweisen. «aus» blendet AUSSCHLIESSLICH `kl:'A'` aus (H0-Auflage 1,
+              `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`): echte Verweise
+              (V), Grauzone (G), Publikationsnachweise (Z), Unklares (U) UND jede
+              Fussnote ohne Klasse (alle Kanton-Sidecars) bleiben sichtbar. Die
+              Sicherheitsrichtung ist einseitig — nie amtliche Substanz verstecken
+              (§1/§8). Zur unbedingten Sichtbarkeit s. Datei-Kopf. */}
+          {/* S1-NACHZUG B3 (§8): nur, wenn der Erlass Vermerke TRÄGT. Auf
+              Kantonserlassen und Staatsverträgen ohne klassifizierte Historie
+              (gemessen: `[data-historie-zeile]` = 0 auf ZH-211.11, BS-640.100,
+              LugÜ) blieb dem Schalter nur eine Layout-Raffung von 40 px je
+              Artikel — die faktischen Änderungs-Fussnoten ohne Klasse bleiben
+              dort sichtbar (H0-Auflage 1, gewollt). Die Beschriftung versprach
+              also mehr, als sie hielt. Die Bedingung kommt aus dem DATENMODELL,
+              nicht aus der Herkunft — kein `if (kanton)`; Herleitung und
+              Korpus-Messung bei `zaehleAenderungsvermerke` in `./berechnungen`. */}
+          {hatAenderungsvermerke && (
+            <OptSwitch
+              feld="histansicht"
+              an={opt.histansicht === 'an'}
+              label="Änderungsvermerke"
+              titel="Änderungsvermerke ein- oder ausblenden — echte Verweise, Grauzone und Publikationsnachweise bleiben sichtbar"
+              // Ä27: bei «Fussnoten: aus» steht hier «✓ an», sichtbar ist aber nur
+              // die «Fassung»-Zeile — Marker und Apparat hängen am Fussnoten-
+              // Schalter. Im flachen Menü ist diese Abhängigkeit sonst unerkennbar.
+              hinweis={opt.fussnoten === 'aus' ? HINWEIS_VERMERKE_OHNE_FUSSNOTEN : undefined}
+            />
+          )}
           {/* W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere 4. Schalter
               «Entscheide» ist ENTFALLEN. Er blendete die Kanten-Zeile per CSS
               aus und steuerte damit dieselbe Sache wie das Dropdown

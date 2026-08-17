@@ -131,9 +131,15 @@ export function FnRef({ artikel, nr, klasse, kl }: {
   artikel: string; nr: string; klasse?: string;
   /** W2·5i-HIST-ANSICHT: build-seitige Fussnoten-KLASSE ('A'|'V'|'G'|'Z'|'U', Sidecar-
    *  Feld `kl`) als `data-fn-klasse` am Marker-Träger. Steuert AUSSCHLIESSLICH die
-   *  CSS-Sichtbarkeit der Ansicht «Änderungshistorie: aus / als Chronologie» — nur
-   *  'A' ist dort dämpfbar (H0-Auflage 1). Fehlt der Wert (Kanton-Sidecars), trägt
-   *  der Marker kein Attribut und bleibt in JEDER Ansicht sichtbar (konservativ). */
+   *  CSS-Sichtbarkeit des Schalters «Änderungsvermerke» (an/aus) — nur 'A' ist dort
+   *  dämpfbar (H0-Auflage 1). Fehlt der Wert (Kanton-Sidecars), trägt der Marker kein
+   *  Attribut und bleibt in JEDER Stellung sichtbar (konservativ).
+   *
+   *  NUR-KOMMENTAR-BERÜHRUNG DES KERNS (S1-Nachzug 17.8.2026, Architektur-Prüfer C1,
+   *  ausdrücklich deklariert): hier stand «der Ansicht "Änderungshistorie: aus / als
+   *  Chronologie"» — ein Vokabular, das S1 gestrichen hat (dreiwertig → zweiwertig,
+   *  David F1). Verhalten, Attributname und Werte sind UNVERÄNDERT; geändert ist
+   *  ausschliesslich dieser Satz. */
   kl?: string;
 }) {
   const [auf, setAuf] = useState(false);

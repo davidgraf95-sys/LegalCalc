@@ -1,61 +1,43 @@
 // ─── Leser-Options-Store (W2·5d G2a) — Darstellungs-Toggles, KEINE Rechtslogik (§3) ─
 //
-// Persistente, rein visuelle Lese-Umschalter für den Gesetzes-Reader
-// (FAHRPLAN-GESETZES-UX.md §3 + V2/A23): «Fussnoten» (Marker-Prominenz),
-// «Verweise» (Link-Unterstreichung) und — seit V2·B-1 (David 10.7.2026,
-// überstimmt «genau drei Toggles») — «Entscheide» (Leitfall-Zeilen ein/aus).
-// Die Bedien-Oberfläche rendert `LeserAnsichtMenu.tsx`.
+// Persistente, rein visuelle Lese-Umschalter des Gesetzes-Readers. Drei
+// zweiwertige Felder (`fussnoten` · `histansicht` · `leitfaelle`) plus drei
+// JS-konsumierte Filterwerte (Schriftstufe, Bezugs-Facetten, Bezugs-Zeitraum) in
+// EINEM localStorage-Schlüssel und EINEM Hörer-Satz (§5). Bedien-Oberfläche:
+// `LeserAnsichtMenu.tsx` (V1) und `v3/LeserAnsichtV3.tsx` (V3), beide auf DIESEM
+// Store. Chronik der gestrichenen Felder (`verweise`, `linien`, `zeitraum`,
+// dreiwertiges `hist`) steht im Vollzugsvermerk S1, FAHRPLAN-LESER-V3 Kap. 7 —
+// hier nur, was beim Ändern des Codes noch gebraucht wird:
 //
-// LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026 «ja linien ganz
-// entfernen»): das frühere Feld `linien` (K11-Tri-State an/aus/auto) ist samt
-// Schalter, `data-linien`-Attribut und CSS-Regeln ENTFALLEN — mit ihm der einzige
-// Grund für den Wert 'auto'. Ein alt gespeichertes `"linien"` im localStorage wird
-// beim Laden ignoriert (es steht nicht mehr in FELDER) und beim nächsten Schreiben
-// abgeräumt; es kann nichts mehr einschalten. Herleitung:
-// FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3.
+// TOGGLES = data-*-Attribut am <html> + CSS, KEIN React-State im Artikel-Baum.
+// Umschalten rendert nur die Switch-Buttons neu, nie die Artikelliste (§15); ein
+// Attributsatz am <html> heisst, dass Einzelansicht und jedes Split-Pane
+// derselben Wahl folgen. Gesetzt wird IMPERATIV (Vorbild `components/thema.ts`),
+// nicht per Inline-Script im Head — die CSP (`vercel.json script-src 'self'`)
+// verbietet das; `main.tsx` ruft `wendeLeserOptionenAn()` vor dem ersten Paint
+// aus dem gebündelten Modul ⇒ kein Flackern, kein Hydration-Mismatch. Default
+// 'an' emittiert KEINE CSS-Regel (R6: Grundzustand byte-gleich), alle Regeln
+// sind auf `.lc-leser` gescopt (index.css) ⇒ nur der Reader ist betroffen.
 //
-// Mechanik der Toggles = data-*-Attribute + CSS, KEIN React-State-Zweig im
-// Artikel-Baum (§15: das Toggeln rendert die Artikelliste NICHT neu). Vorbild ist
-// die Theme-Mechanik (components/thema.ts): die Attribute werden IMPERATIV am
-// <html> gesetzt — bewusst KEIN Inline-Script im index.html-Head, weil die CSP
-// (vercel.json `script-src 'self'`) Inline-Scripte verbietet. Die Anwendung vor
-// dem ersten Paint erledigt main.tsx via `wendeLeserOptionenAn()` (analog
-// `wendeThemaAn`/`wendeSchriftskalaAn`), das aus dem gebündelten Modul-Script
-// läuft (same-origin, CSP-konform) → kein Flackern, kein Hydration-Mismatch.
+// FILTERWERTE (Facetten, Kantone, Von-Bis) sind JS-konsumiert, kein Attribut:
+// sie entscheiden, WELCHER Shard geladen wird — das kann CSS nicht. Sie werden
+// über Primitiv-/Referenz-stabile Selektoren abonniert, damit ein fremder Toggle
+// sie nicht re-rendern lässt (§15). `getSnapshot` MUSS eine stabile Referenz
+// liefern: darum zwei Strings statt eines `{von, bis}`-Objekts und Arrays, die
+// nur im Setter ersetzt werden — ein je Aufruf neu gebauter Wert liesse React
+// schleifen.
 //
-// Beim Umschalten schreibt `setzeOption` das Attribut direkt ans <html> und
-// benachrichtigt die Hörer; nur die Switch-Buttons (useLeserOptionen) rendern
-// neu — der Normtext bleibt unberührt (CSS greift auf das geänderte Attribut).
-// Global (ein Attributsatz am <html>) ⇒ beide Reader-Instanzen (Einzelansicht
-// UND jedes Split-View-Pane) folgen derselben Wahl ohne Re-Render.
+// GESTRICHENE SCHLÜSSEL im Bestands-Speicher (`verweise`, `linien`, `zeitraum`,
+// `hist`) stehen nicht in FELDER und werden beim Laden ignoriert; `speichere()`
+// räumt sie beim nächsten Schreiben ab. `hist` wird als EINZIGER noch GELESEN —
+// `migriereOptFelder` bildet ihn ab (unten). Bei `zeitraum` ist das Abräumen
+// nicht Kosmetik: bliebe er stehen, rechnete die Migration bei jedem Laden gegen
+// ein neues «heute», und «letzte 5 Jahre» rutschte täglich weiter.
 //
-// Fussnoten/Verweise/Entscheide: Default 'an' = heutige Darstellung → data-*="an"
-// ist ein CSS-No-op (R6: Grundzustand byte-gleich). Alle CSS-Regeln sind auf
-// `.lc-leser` gescopt (index.css), damit sie NUR den Reader treffen.
-//
-// W2·7-BEZUG/B5 (David 28.7.2026): die frühere Stufen-Wahl «alle · 20 · 10 · 5 J.»
-// (V2·B-2) ist ENTFALLEN und durch einen VON-BIS-BEREICH ersetzt — Zeitstrahl mit
-// Zieh-Auswahl plus zwei Datumsfeldern im Dropdown «Rechtsprechung ▾». Er lebt wie
-// die Facetten als JS-konsumierter Filterwert im SELBEN persistenten Store und wird
-// über PRIMITIV-Selektoren (`useBezugVon`/`useBezugBis`, je nur ein String)
-// abonniert: so re-rendern die Abonnenten nur bei echter Bereichs-Änderung, nicht
-// bei jedem anderen Toggle (§15). Zwei Strings statt eines Objekts, weil
-// `getSnapshot` eine STABILE Referenz liefern muss — ein je Aufruf neu gebautes
-// `{von, bis}` liesse React schleifen.
-//
-// EINMALIGE MIGRATION der Alt-Wahl: ein gespeichertes `zeitraum: '5'|'10'|'20'`
-// wird zu `bezugVon = heute minus n Jahre` (`migriereZeitraum`, bezugZeit.ts),
-// 'alle' zu offenen Enden. Sie greift nur, solange kein Bereich gespeichert ist,
-// und wird sofort zurückgeschrieben — sonst wanderte der Grenzwert mit jedem
-// Sitzungstag weiter, und der Filter zeigte jeden Tag etwas anderes an.
-
-// W2·7-BEZUG/B4: die Facetten-Auswahl der Bezüge (Status-Klassen + Kantone) lebt
-// im SELBEN persistenten Store — ein localStorage-Schlüssel, ein Hörer-Satz (§5),
-// wie der Zeit-Bereich und die Historie-Ansicht. Sie ist ebenso JS-konsumiert (kein
-// data-*-Attribut): welche Klassen gewählt sind, entscheidet, WELCHER Shard
-// geladen und welche Kanten gerendert werden — das kann CSS nicht. Abonniert wird
-// über Selektoren mit STABILER Referenz (nur bei echter Änderung ein Re-Render),
-// darum werden die Arrays beim Setzen einmal neu gebaut und danach geteilt (§15).
+// Ä25 (S1-Nachzug 17.8.2026, §7): der gestrichene Schalter `verweise` wirkte auf
+// eine DAUERHAFTE gepunktete Unterstreichung, nicht — wie hier und an vier
+// weiteren Stellen behauptet — auf eine Hover-Zierde (`NormText.tsx:38` setzt
+// `underline` unbedingt). Offene Design-Frage, Fahrplan Kap. 7 «Offen aus S1».
 
 import { useSyncExternalStore } from 'react';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
@@ -63,61 +45,83 @@ import { DEFAULT_KLASSEN, normalisiereKantone, normalisiereKlassen } from './bez
 import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
 import { heuteIso } from '../../lib/format';
 
-export type OptFeld = 'fussnoten' | 'verweise' | 'leitfaelle';
+/**
+ * Die drei zweiwertigen Lese-Schalter:
+ *
+ * · `fussnoten`    — amtlicher Apparat + Marker (A1: «aus» = verschwinden).
+ * · `histansicht`  — Änderungsvermerke. «aus» blendet AUSSCHLIESSLICH `kl:'A'`
+ *                    aus; V/G/Z/U und jede Fussnote OHNE Klasse bleiben sichtbar
+ *                    (H0-Auflage 1, `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`
+ *                    Ziff. 7.4 — dort auch die drei Träger der CSS-Regel).
+ * · `leitfaelle`   — Rechtsprechungs-Hinweise im Lesetext.
+ */
+export type OptFeld = 'fussnoten' | 'histansicht' | 'leitfaelle';
 export type OptWert = 'an' | 'aus';
 export type LeserOptionen = Record<OptFeld, OptWert>;
 
 /**
- * W2·5i-HIST-ANSICHT: DREIWERTIGE Darstellung der Änderungshistorie.
+ * LESER-SCHRIFTSKALA (David 16.8.2026, Punkt 4) — vier Stufen NUR für den
+ * Normtext. Der globale App-Regler (`components/layout/useSchriftskala.ts`)
+ * skaliert per `font-size` am <html> die ganze Anwendung mit; genau das war der
+ * gemeldete Fehler, er bleibt aber als Barrierefreiheits-Einstellung unangetastet.
  *
- * · `fussnoten`   — Default = die heutige Darstellung (Apparat am Artikelfuss).
- *                   CSS-No-op, damit der Grundzustand byte-gleich bleibt (R6).
- * · `aus`         — die Änderungsvermerke werden gedämpft (Marker + Apparat-
- *                   Eintrag). NUR Klasse 'A'; V/G/Z/U und alle Fussnoten OHNE
- *                   Klasse bleiben sichtbar (H0-Auflage 1).
- * · `chronologie` — dieselben 'A'-Einträge, aber als chronologisch sortierte
- *                   Liste am Artikelfuss statt als Fussnoten-Apparat.
- *
- * Bewusst KEIN `OptFeld`/`OptWert`: die Union der Toggles ist zweiwertig
- * ('an'|'aus'). Ein drittes, semantisch anderes Wort in
- * dieselbe Union zu drücken machte jeden Toggle-Aufruf typunsicher (`setzeOption
- * ('fussnoten', 'chronologie')` wäre compilierbar und sinnlos). Der Wert lebt
- * darum wie der Zeit-Bereich als eigenes Feld im SELBEN persistenten Store — ein
- * Store, ein localStorage-Schlüssel, ein Hörer-Satz (§5).
- */
-export type HistAnsicht = 'aus' | 'fussnoten' | 'chronologie';
-
-/**
- * LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Punkt 4: «Schriftgrössen-Regler
- * wirkt auf die ganze Seite»).
- *
- * VIER Stufen für die Grösse des NORMTEXTS im Leser — und nur dort. Der globale
- * App-Regler (`components/layout/useSchriftskala.ts`, Schlüssel
- * `lexmetrik-schriftskala`) setzt `font-size` am `<html>` und skaliert damit
- * jedes rem-Token der ganzen Anwendung: Kopfzeile, Seitenleiste, Topbar. Das ist
- * als globale Barrierefreiheits-Einstellung richtig und bleibt unangetastet —
- * als «Schriftgrösse» IM Lesewerkzeug war es der gemeldete Fehler.
- *
- * Der Wert lebt wie `HistAnsicht` als eigenes Feld im SELBEN persistenten Store:
- * ein localStorage-Schlüssel, ein Hörer-Satz (§5), geteilt von V1 und V3 — kein
- * zweiter Schriftgrössen-Speicher.
- *
- * Bewusst NAMEN statt Zahlen: die Stufe ist eine Nutzerwahl, keine Rechengrösse.
- * Ein gespeicherter Faktor müsste bei jeder Änderung der Skala neu gesnappt
- * werden (so wie `stufeIndex` es global tun muss); ein Name bleibt gültig, und
- * die Whitelist-Prüfung beim Laden ist derselbe Einzeiler wie bei den Toggles.
- *
- * `normal` = die heutige Normtext-Grösse (`text-body-l` = 1.125rem). Es emittiert
- * KEINE CSS-Regel (index.css) ⇒ die Vorgabestufe ist byte-gleich zum Ist-Stand
- * (R6/§6) und der Pixelvergleich der V3-Paritätsspecs bleibt gültig.
+ * Eigenes Feld statt `OptFeld`, weil VIERwertig. NAMEN statt Zahlen: ein
+ * gespeicherter Faktor müsste bei jeder Skalen-Änderung neu gesnappt werden, ein
+ * Name bleibt gültig. `normal` emittiert KEINE CSS-Regel (index.css) ⇒ die
+ * Vorgabestufe ist byte-gleich zum Ist-Stand (R6/§6), der Pixelvergleich der
+ * V3-Paritätsspecs bleibt gültig.
  */
 export type LeserSchrift = 'normal' | 'mittel' | 'gross' | 'sehr-gross';
 
 const KEY = 'lm.leser.optionen';
-const FELDER: readonly OptFeld[] = ['fussnoten', 'verweise', 'leitfaelle'];
-const DEFAULT: LeserOptionen = { fussnoten: 'an', verweise: 'an', leitfaelle: 'an' };
-const HIST_ANSICHTEN: readonly HistAnsicht[] = ['aus', 'fussnoten', 'chronologie'];
-const DEFAULT_HIST: HistAnsicht = 'fussnoten';
+const FELDER: readonly OptFeld[] = ['fussnoten', 'histansicht', 'leitfaelle'];
+const DEFAULT: LeserOptionen = { fussnoten: 'an', histansicht: 'an', leitfaelle: 'an' };
+
+/** Alt-Schlüssel des dreiwertigen Historie-Felds (vor S1). */
+const ALT_HIST_KEY = 'hist';
+/** Alt-Werte, die «Änderungsvermerke sichtbar» BEDEUTETEN (beide Darstellungen). */
+const ALT_HIST_AN: readonly string[] = ['fussnoten', 'chronologie'];
+
+/**
+ * S1-MIGRATION — gespeicherte Optionen → die drei zweiwertigen Felder.
+ *
+ * REIN und deterministisch (§2): kein Speicher, kein DOM, keine Uhr — und darum
+ * eigene exportierte Funktion statt Zweig in `lade()`. Der Fall, der wehtut, ist
+ * ein Bestands-Speicher, und der ist im Browser nicht mehr nachstellbar, sobald
+ * er einmal überschrieben wurde (`src/tests/leser-optionen-migration.test.ts`).
+ *
+ * Drei Regeln, jede aus §8 «keine Nutzerwahl still kippen»:
+ *  1. `histansicht: 'an'|'aus'` — schon migriert, gilt unverändert.
+ *  2. Sonst Alt-Schlüssel `hist`: 'aus' → 'aus'; 'fussnoten' UND 'chronologie'
+ *     → 'an'. Beide Alt-Werte bedeuteten «die Vermerke sind da», nur in zwei
+ *     Darstellungen — sie auf 'aus' abzubilden nähme dem Nutzer Substanz weg,
+ *     die er ausdrücklich bestellt hatte.
+ *  3. Alles andere fällt auf den Default. Ein unbekannter Wert darf NIE
+ *     durchrutschen: er landete als `data-histansicht="…"` am <html>, wo keine
+ *     Regel greift — der Schalter stünde dann falsch zu einer Stellung, die es
+ *     nicht gibt (gleiche Sicherung wie bei der Schriftskala).
+ */
+export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): LeserOptionen {
+  const opt: LeserOptionen = { ...DEFAULT };
+  for (const f of FELDER) if (roh[f] === 'an' || roh[f] === 'aus') opt[f] = roh[f] as OptWert;
+  if (roh.histansicht !== 'an' && roh.histansicht !== 'aus') {
+    const alt = roh[ALT_HIST_KEY];
+    opt.histansicht = alt === 'aus'
+      ? 'aus'
+      : (typeof alt === 'string' && ALT_HIST_AN.includes(alt) ? 'an' : DEFAULT.histansicht);
+  }
+  return opt;
+}
+/**
+ * Ä27 (S1-Nachzug 17.8.2026): Hinweiszeile am Schalter «Änderungsvermerke», NUR
+ * bei «Fussnoten: aus». Dort zeigt er weiter «✓ an», sichtbar ist aber nur die
+ * «Fassung»-Zeile — Marker und Apparat hängen am Fussnoten-Schalter, und im
+ * flachen Menü ist diese Abhängigkeit unerkennbar (§8). EINE Konstante, weil V1
+ * und V3 denselben Satz zeigen müssen (§5).
+ */
+export const HINWEIS_VERMERKE_OHNE_FUSSNOTEN =
+  'Marker und Apparat sind mit den Fussnoten ausgeblendet';
+
 /** Aufsteigend — die Reihenfolge IST die Regler-Achse (`leserSchrift.ts`). */
 export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gross', 'sehr-gross'];
 const DEFAULT_SCHRIFT: LeserSchrift = 'normal';
@@ -131,7 +135,6 @@ const KEINE_KANTONE: readonly string[] = [];
 
 interface GeladenerZustand {
   opt: LeserOptionen;
-  hist: HistAnsicht;
   schrift: LeserSchrift;
   bezugKlassen: readonly BezugStatus[];
   bezugKantone: readonly string[];
@@ -144,20 +147,19 @@ interface GeladenerZustand {
 
 function lade(): GeladenerZustand {
   const grund = {
-    opt: { ...DEFAULT }, hist: DEFAULT_HIST, schrift: DEFAULT_SCHRIFT,
+    opt: { ...DEFAULT }, schrift: DEFAULT_SCHRIFT,
     bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
     bezugVon: '', bezugBis: '', migriert: false,
   };
   try {
     const roh = localStorage.getItem(KEY);
     if (!roh) return grund;
-    const o = JSON.parse(roh) as Partial<Record<OptFeld, unknown>>
-      & { zeitraum?: unknown; hist?: unknown; schrift?: unknown; bezugKlassen?: unknown;
+    const o = JSON.parse(roh) as Record<string, unknown>
+      & { zeitraum?: unknown; schrift?: unknown; bezugKlassen?: unknown;
           bezugKantone?: unknown; bezugVon?: unknown; bezugBis?: unknown };
-    const opt: LeserOptionen = { ...DEFAULT };
-    for (const f of FELDER) if (o[f] === 'an' || o[f] === 'aus') opt[f] = o[f] as OptWert;
-    const hist = HIST_ANSICHTEN.includes(o.hist as HistAnsicht) ? (o.hist as HistAnsicht) : DEFAULT_HIST;
-    // Schrift-Stufe: dieselbe Whitelist-Prüfung wie `hist` — was nicht im
+    // S1: Whitelist-Prüfung UND Alt-Wert-Abbildung in einer reinen Funktion.
+    const opt = migriereOptFelder(o);
+    // Schrift-Stufe: dieselbe Whitelist-Prüfung wie oben — was nicht im
     // Vokabular steht (fehlend, `undefined`, Zahl, Alt-Wort, manipulierter
     // Speicher), fällt auf die Vorgabestufe. Ein unbekannter Wert darf NIE
     // durchrutschen: er landete sonst als `data-leserschrift="…"` am <html>,
@@ -188,7 +190,7 @@ function lade(): GeladenerZustand {
       ? normalisiereKlassen(o.bezugKlassen)
       : (opt.leitfaelle === 'aus' ? [] : DEFAULT_BEZUG_KLASSEN);
     const bezugKantone = Array.isArray(o.bezugKantone) ? normalisiereKantone(o.bezugKantone) : KEINE_KANTONE;
-    return { opt, hist, schrift, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
+    return { opt, schrift, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
   } catch {
     // localStorage gesperrt (privater Modus) ODER kaputtes JSON → Default.
     return grund;
@@ -199,13 +201,12 @@ function lade(): GeladenerZustand {
 // `aktuell`/`aktuellVon`/`aktuellBis` werden nur bei echten Änderungen ersetzt.
 const start = typeof window === 'undefined'
   ? {
-      opt: { ...DEFAULT }, hist: DEFAULT_HIST, schrift: DEFAULT_SCHRIFT,
+      opt: { ...DEFAULT }, schrift: DEFAULT_SCHRIFT,
       bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
       bezugVon: '', bezugBis: '', migriert: false,
     }
   : lade();
 let aktuell: LeserOptionen = start.opt;
-let aktuellHist: HistAnsicht = start.hist;
 let aktuellSchrift: LeserSchrift = start.schrift;
 let aktuellKlassen: readonly BezugStatus[] = start.bezugKlassen;
 let aktuellKantone: readonly string[] = start.bezugKantone;
@@ -214,11 +215,10 @@ let aktuellBis: string = start.bezugBis;
 
 function speichere(): void {
   try {
-    // `zeitraum` wird NICHT mitgeschrieben: das Feld ist mit B5 entfallen, und
-    // ein weitergeschleppter Alt-Wert liesse die Migration bei jedem Laden neu
-    // greifen. Ein einziges Schreiben räumt ihn ab.
+    // Die gestrichenen Schlüssel (`zeitraum`, `hist`, `verweise`, `linien`)
+    // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
     localStorage.setItem(KEY, JSON.stringify({
-      ...aktuell, hist: aktuellHist, schrift: aktuellSchrift,
+      ...aktuell, schrift: aktuellSchrift,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
       bezugVon: aktuellVon, bezugBis: aktuellBis,
     }));
@@ -234,14 +234,13 @@ function speichere(): void {
 if (start.migriert) speichere();
 
 /** Wendet die gespeicherten Toggle-Optionen VOR dem ersten Render an (Aufruf in
- *  main.tsx, analog `wendeThemaAn`). Setzt data-fussnoten/-verweise/-leitfaelle
+ *  main.tsx, analog `wendeThemaAn`). Setzt data-fussnoten/-histansicht/-leitfaelle
  *  am <html>; Default 'an' ⇒ CSS-No-op ⇒ byte-gleiche heutige Darstellung. Der
  *  Zeit-Bereich ist JS-konsumiert (kein data-*-Attribut). */
 export function wendeLeserOptionenAn(): void {
   if (typeof document === 'undefined') return;
   const g = lade();
   aktuell = g.opt;
-  aktuellHist = g.hist;
   aktuellSchrift = g.schrift;
   // B4: JS-konsumiert (kein data-*-Attribut) — die Weiche «welcher Shard» und
   // die Gruppierung der Kanten sind React-Zustand, nicht CSS.
@@ -251,11 +250,10 @@ export function wendeLeserOptionenAn(): void {
   aktuellBis = g.bezugBis;
   if (g.migriert) speichere();
   const el = document.documentElement;
+  // S1: `histansicht` läuft in DIESER Schleife mit (kein Sonderweg mehr) — der
+  // Attributname folgt dem Feldnamen, also bleibt `data-histansicht` wie bisher
+  // die eine CSS-Weiche. Default 'an' emittiert KEINE Regel ⇒ byte-gleich (R6).
   for (const f of FELDER) el.setAttribute(`data-${f}`, aktuell[f]);
-  // W2·5i: die Historie-Ansicht ist CSS-getrieben wie die Toggles → dasselbe
-  // Pre-Paint-Attribut am <html> (kein Flackern, kein Hydration-Mismatch). Der
-  // Default 'fussnoten' emittiert KEINE CSS-Regel ⇒ Grundzustand byte-gleich (R6).
-  el.setAttribute('data-histansicht', aktuellHist);
   // Leser-Schriftskala: CSS-getrieben wie die Toggles, also dasselbe
   // Pre-Paint-Attribut am <html>. Das ATTRIBUT steht global, die WIRKUNG nicht:
   // die einzige Regel, die es auswertet, ist auf `.lc-leser .nt-art-cv` gescopt
@@ -296,21 +294,7 @@ export function setzeBezugZeit(von: string, bis: string): void {
   hoerer.forEach((f) => f());
 }
 
-/** W2·5i: Historie-Ansicht setzen. Wie `setzeOption`: Attribut direkt ans <html>
- *  (KEIN Artikel-Re-Render — die Umschaltung ist rein CSS, die Chronologie-Liste
- *  liegt bereits im DOM), persistieren, Hörer benachrichtigen. Nur die drei
- *  Auswahl-Buttons rendern neu (Primitiv-Selektor `useHistAnsicht`). */
-export function setzeHistAnsicht(h: HistAnsicht): void {
-  if (h === aktuellHist) return;
-  aktuellHist = h;
-  speichere();
-  if (typeof document !== 'undefined') {
-    document.documentElement.setAttribute('data-histansicht', h);
-  }
-  hoerer.forEach((f) => f());
-}
-
-/** Leser-Schriftskala setzen. Mechanik wie `setzeHistAnsicht`: Attribut direkt
+/** Leser-Schriftskala setzen. Mechanik wie `setzeOption`: Attribut direkt
  *  ans <html>, persistieren, Hörer benachrichtigen — KEIN Artikel-Re-Render, die
  *  Umschaltung ist reines CSS (§15). Ein unbekannter Wert kann hier nicht
  *  eintreten (Typ), und `lade()` fängt ihn beim nächsten Start ab. */
@@ -380,16 +364,9 @@ export function useLeserOptionen(): LeserOptionen {
   return useSyncExternalStore(abonniere, getSnapshot, getServerSnapshot);
 }
 
-/**
- * W2·7-BEZUG/B5: Primitiv-Selektoren auf die beiden Bereichs-Enden.
- *
- * Bewusst ZWEI Hooks auf zwei Strings statt eines Hooks auf ein `{von, bis}`:
- * `getSnapshot` muss eine stabile Referenz liefern, ein je Aufruf frisch
- * gebautes Objekt liesse React schleifen. Strings vergleicht `Object.is`
- * wertweise — obwohl jeder beliebige Toggle die Hörer benachrichtigt, rendern
- * die Abonnenten nur bei echter Bereichs-Änderung neu (§15-Zusage). Wer beide
- * Enden als Objekt braucht, baut es im eigenen `useMemo` zusammen.
- */
+/** B5: Primitiv-Selektoren auf die beiden Bereichs-Enden. ZWEI Hooks auf zwei
+ *  Strings statt einer auf `{von, bis}` — Begründung (stabile Referenz) im
+ *  Datei-Kopf. Wer beide Enden als Objekt braucht, baut es im eigenen `useMemo`. */
 function getVonSnapshot(): string {
   return aktuellVon;
 }
@@ -406,21 +383,6 @@ export function useBezugBis(): string {
   return useSyncExternalStore(abonniere, getBisSnapshot, getLeerSnapshot);
 }
 
-/** W2·5i: Primitiv-Selektor auf die Historie-Ansicht — gibt NUR den String zurück,
- *  also re-rendern die Abonnenten nur bei echter Änderung (Object.is). Bewusst
- *  ausschliesslich vom Auswahl-Steuerelement abonniert: die Artikel-Darstellung
- *  folgt dem `data-histansicht`-Attribut per CSS, nicht per React-State (§15 —
- *  Umschalten rendert den Normtext nicht neu). */
-function getHistSnapshot(): HistAnsicht {
-  return aktuellHist;
-}
-function getHistServerSnapshot(): HistAnsicht {
-  return DEFAULT_HIST;
-}
-export function useHistAnsicht(): HistAnsicht {
-  return useSyncExternalStore(abonniere, getHistSnapshot, getHistServerSnapshot);
-}
-
 /** Primitiv-Selektor auf die Leser-Schriftstufe — nur ein String, also rendern
  *  die Abonnenten (die drei Regler-Elemente) bei fremden Toggles nicht neu
  *  (Object.is, §15). Der Normtext folgt dem `data-leserschrift`-Attribut per
@@ -435,15 +397,10 @@ export function useLeserSchriftStufe(): LeserSchrift {
   return useSyncExternalStore(abonniere, getSchriftSnapshot, getSchriftServerSnapshot);
 }
 
-/**
- * W2·7-BEZUG/B4: Selektoren auf die Bezugs-Facetten.
- *
- * `getSnapshot` MUSS eine stabile Referenz liefern (sonst warnt React und
- * schleift). Die Arrays werden darum ausschliesslich in `setzeBezugKlassen`/
- * `setzeBezugKantone` ersetzt und dazwischen geteilt — im Grundzustand ist es
- * sogar dieselbe Modul-Konstante (`DEFAULT_BEZUG_KLASSEN`), sodass der
- * unveränderte Reader gar keinen Re-Render sieht.
- */
+/** B4: Selektoren auf die Bezugs-Facetten. Die Arrays werden ausschliesslich in
+ *  den Settern ersetzt und dazwischen geteilt; im Grundzustand ist es dieselbe
+ *  Modul-Konstante (`DEFAULT_BEZUG_KLASSEN`), sodass der unveränderte Reader gar
+ *  keinen Re-Render sieht. */
 function getKlassenSnapshot(): readonly BezugStatus[] {
   return aktuellKlassen;
 }

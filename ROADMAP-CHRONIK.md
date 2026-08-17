@@ -2433,3 +2433,45 @@ Arbeitsschritt).
   <!-- @meta id: QS-CURRENCY-TESTS · status: done · blocker: null · dep: [] · kollision: [scripts/fedlex-cache.sh, src/tests] · worktree: ja · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
 
 **Abschluss 15.8.2026:** 15 neue Vitest-Fälle (`fedlex-cache-befund.test.ts` neu, `fedlex-wiedervorlage.test.ts` erweitert), jeder per Mutation mindestens einmal rot gezeigt (5 Mutationen), 0 Produktionscode-Zeilen, Golden 256/256 byte-gleich; FAHRPLAN-FEDLEX-PORTFOLIO §18.2 korrigiert (Bau-Fläche war fälschlich `scripts/fedlex-cache.sh`, real `src/tests/`).
+
+# Umschichtung 17.8.2026 — erledigte Schritte aus dem Steuerungsplan (S1-Nachzug, Deckel-Rotation)
+
+## QS-E2E-SHARD-GEN — Shard-Zuordnung in die Spec, JSON generieren *(done, verschoben 17.8.2026)*
+
+- [x] **`QS-E2E-SHARD-GEN` · Shard-Zuordnung in die Spec, JSON generieren** — `e2e/shard-gruppen.json` ist der häufigste Merge-Konflikt-Ort. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.5.
+  <!-- @meta id: QS-E2E-SHARD-GEN · status: done · blocker: null · dep: [] · kollision: [e2e, scripts/e2e-shard-gruppen.mjs, .gitattributes] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
+
+## QS-UI-HIGHLIGHT — `::highlight()`-Registry je Leser-Instanz *(done, verschoben 17.8.2026)*
+
+- [x] **`QS-UI-HIGHLIGHT` · `::highlight()`-Registry je Leser-Instanz** — **erledigt 16.8.2026 mit `W2·5m-LESER-V3`/H2** (Buchführung je Instanz in `suchHighlight.ts`; Rot-Beweis `src/tests/suchHighlight.test.ts`, Browser-Beweis `e2e/leser-v3-highlight-split.e2e.ts`; Detail: Vollzugsvermerk H2 in `fahrplaene/FAHRPLAN-LESER-V3.md`). Rest bewusst offen: zwei ENTSCHEID-Panes teilen weiterhin eine Modul-Instanz (unverändert gegenüber dem Vorzustand). Ursprünglicher Befund: — eine Registry, drei Schreiber: im Split-View löscht das Rail-Suchfeld die Markierung des Nachbar-Panes. Reine Darstellung. **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §9.
+  <!-- @meta id: QS-UI-HIGHLIGHT · status: done · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/inhalt.tsx, src/pages/entscheidLeserRegeln.ts, src/pages/EntscheidLeser.tsx] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## QS-E2E-STABIL — Lokale e2e-/Test-Budgets an gemessene Streuung binden *(done, verschoben 17.8.2026)*
+
+- [x] **`QS-E2E-STABIL` · Lokale e2e-/Test-Budgets an gemessene Streuung binden** — offen: (a) Budget-Modul `e2e/helpers/` statt 4 gegabelter Stellen; (b) `leser-r1-r2`-Wurzel per CI-Forensik (kein UI-Bau ins Blaue, nicht per Timeout maskieren); (c) norm-sprung/Erst-Render → `QS-PERF`. **Detail:** [FAHRPLAN-LERNPHASE-2026.md](fahrplaene/FAHRPLAN-LERNPHASE-2026.md) §3.4.
+  <!-- @meta id: QS-E2E-STABIL · status: done · blocker: null · dep: [] · kollision: [playwright.config.ts, e2e/a11y.e2e.ts, scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-LERNPHASE-2026.md -->
+
+## QS-TOK-DECKEL — Root-Markdown-Deckel 22 → ~20 *(done, verschoben 17.8.2026)*
+
+- [x] **`QS-TOK-DECKEL` · Root-Markdown-Deckel 22 → ~20** — datierte Audit-/Backlog-Dateien nach `archiv/`, Verweise nachziehen. Reine Doku. **Detail:** [FAHRPLAN-TOKEN-OEKONOMIE.md](fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md) §11.1.
+  <!-- @meta id: QS-TOK-DECKEL · status: done · blocker: null · dep: [] · kollision: [archiv] · worktree: nein · 26x: nein · groesse: S · fahrplan: fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md -->
+
+## QS-HOOKS-AUSBAU — Vier Hook-/Konfig-Ausbauten *(done, verschoben 17.8.2026)*
+
+- [x] **`QS-HOOKS-AUSBAU` · Vier Hook-/Konfig-Ausbauten** — **FREIGEGEBEN David 14.8.2026** (Chat, wörtlich: «alle hooks freigegeben»; zuvor «punkt 1 freigegeben»): alle vier Punkte baubar — (1) SubagentStop-Wache §14.7 · (2) `.claude/rules`-Pfad-Scoping · (3) SessionEnd-Lehren-Check · (4) `/sandbox` prüfen. Jeder neue Wächter einmal rot zeigen (§6.7); Anwendung/Wirkung David im Ergebnis zeigen. **Detail:** [state-of-the-art-abgleich-2026-08-07.md](bibliothek/recherche/state-of-the-art-abgleich-2026-08-07.md) § «Lücken».
+  <!-- @meta id: QS-HOOKS-AUSBAU · status: done · blocker: null · dep: [] · kollision: [.claude/hooks, CLAUDE.md] · worktree: nein · 26x: nein · groesse: M -->
+
+## QS-TYP-LUECKE — Typprüfung deckt scripts/ und e2e/ nicht — 33 reale Fehler, teils Risikopfad *(done, verschoben 17.8.2026)*
+
+- [x] **`QS-TYP-LUECKE` · Typprüfung deckt scripts/ und e2e/ nicht — 33 reale Fehler, teils Risikopfad** — Werkzeug-Analyse 14.8.2026 (Zweit-Session, verifiziert): tsc -b prüft nur src/ + vite.config; in scripts/normtext, scripts/materialien, scripts/datenhaltung liegen belegte Null-/Union-Fehler (struktur-run.ts:84/93, check-bezuege.ts:367, soft-law-snapshot.ts:118ff, abk-aliase-generieren.ts:865, masse-ingest.ts:94ff) — ein durchrutschendes undefined erzeugt stille Korpus-Lücken, die Byte-Golden nie sehen. Zu bauen: tsconfig für scripts/+e2e (references), die realen Fehler fixen (Risikopfad-Anteile mit Gegenprüfung), Tor bleibt tsc -b. Bekannt seit Juli (BACKLOG-AUDIT-WERKZEUGE-2026-07 Z. 50), war nie Plan-Schritt.
+  <!-- @meta id: QS-TYP-LUECKE · status: done · blocker: null · dep: [] · kollision: [tsconfig.json, scripts/normtext, scripts/materialien, scripts/datenhaltung] · worktree: ja · 26x: nein · groesse: M -->
+
+## W2·5h-GESETZ-UI — Gesetzes-Webseite: UX-Pass *(done, verschoben 17.8.2026)*
+
+- [x] **5h-GESETZ-UI · Gesetzes-Webseite: UX-Pass** *(Ideen-Intake 20.7.2026 · reine UI/Darstellung)*:
+  <!-- @meta id: W2·5h-GESETZ-UI · status: done · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser, src/pages/GesetzLeser.tsx, src/components/normtext, src/components/suche, scripts/check-linien-kanon.ts, e2e] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-GESETZES-UX.md -->
+  **Folgeschritt aus `QS-UI`** (Davids Sequenz: erst app-weit, dann die Gesetzes-Seite): UX-Pass auf
+  der Gesetzes-Webseite inkl. Kopfzeilen-Bündel — reine UI/Darstellung, amtliche Substanz unangetastet.
+  **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
+  - [x] **Gliederungslinie im Lesetext entfernen** *(gebaut 16.8.2026, PR feat/w2-5h-gesetz-ui)* *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
+

@@ -60,6 +60,54 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     expect(fehler).toEqual([])
   })
 
+  test('(a2) S1: «Änderungsvermerke aus» in V3 wirkt in V1 GENAUSO — geteilte Optionen-Schicht', async ({ page }) => {
+    // S1 ist eine Etappe des Strangs S: sie baut die GETEILTE Optionen-Schicht um
+    // und wirkt darum in BEIDEN Hüllen. Ein Umbau, der nur in einer Hülle greift,
+    // wäre ein zweiter Speicher (§5) — genau das, was FL-6 ausschliesst.
+    //
+    // Der Fall ist zugleich der Parität-Beweis für die Zusage der Etappe: bei
+    // «aus» bleibt keine Historie-Spur im Lesekörper, und «keine» heisst in
+    // BEIDEN Hüllen keine. Geprüft wird die «Fassung»-Zeile
+    // (`[data-historie-zeile]`), weil sie der Träger ist, der vor S1 an gar
+    // keinem Schalter hing (Befund K4) — sie ist die Stelle, an der eine
+    // halbe Umsetzung auffällt.
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+
+    await page.goto('/gesetze/bund/BGBM?leser=v3')
+    await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('#art-2')).toBeVisible({ timeout: 20_000 })
+    await page.locator('#art-2').scrollIntoViewIfNeeded()
+
+    // POSITIV-Vorbedingung: die Fassungs-Zeile ist überhaupt da (sie wächst mit
+    // dem idle-Shard-Resolve ein). Ohne sie prüfte die Negativ-Zusicherung
+    // nichts — ein Tor, das nicht scheitern kann (§6.7).
+    const fassungV3 = page.locator('#art-2 [data-historie-zeile]')
+    await expect(fassungV3).toBeVisible({ timeout: 15_000 })
+
+    await page.locator('[data-v3-ansicht]').click()
+    await expect(page.locator('[data-v3-ansicht-panel]')).toBeVisible()
+    await page.getByRole('switch', { name: 'Änderungsvermerke' }).click()
+    await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus')
+    await page.locator('#art-2').scrollIntoViewIfNeeded()
+    await expect(fassungV3).toBeHidden()
+
+    // Wechsel auf V1 — derselbe Erlass, derselbe localStorage-Origin.
+    await page.goto('/gesetze/bund/BGBM?leser=v1')
+    await expect(page.locator('[data-leser-v3="rahmen"]')).toHaveCount(0)
+    await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus')
+    await expect(page.locator('#art-2')).toBeVisible({ timeout: 20_000 })
+    await page.locator('#art-2').scrollIntoViewIfNeeded()
+    // Dieselbe Kennung in der Ist-Hülle: die Zeile ist im DOM (der Shard lädt),
+    // aber unsichtbar — kein zweiter, unabhängiger Speicher und keine Hülle, die
+    // den Schalter anders auslegt.
+    const fassungV1 = page.locator('#art-2 [data-historie-zeile]')
+    await expect(fassungV1).toHaveCount(1, { timeout: 15_000 })
+    await expect(fassungV1).toBeHidden()
+
+    expect(fehler).toEqual([])
+  })
+
   test('(b) #art-429 bleibt beim Wechsel V3→V1→V3 im Viewport (Erlass + Anker gehen nicht verloren)', async ({ page }) => {
     test.slow() // grosser Erlass (StPO)
     const fehler = fehlerSammeln(page)

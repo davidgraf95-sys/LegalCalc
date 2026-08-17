@@ -2,15 +2,33 @@
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-// W2·5i-HIST-ANSICHT / H1 — «Änderungshistorie: aus / als Fussnoten / als Chronologie».
+// ÄNDERUNGSVERMERKE: AN/AUS — ZWEIWERTIG seit S1 (FAHRPLAN-LESER-V3 Kap. 4f,
+// Entscheid David F1 «ja», 16.8.2026).
 //
-// Der Schritt trägt EINE nicht verhandelbare Auflage (H0-Auflage 1, Vollbericht
-// `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`): ausblendbar ist AUSSCHLIESSLICH
-// die build-seitig als reine Änderungshistorie klassifizierte Fussnote (`kl:'A'` im
-// Sidecar → `data-fn-klasse="A"` im DOM). Echte Verweise, Grauzone, Publikations-
-// nachweise, Unklares und alles OHNE Klasse bleiben in JEDER Ansicht sichtbar. Genau
-// das prüfen die Tests hier — nicht nur, dass «aus» etwas ausblendet, sondern dass es
-// das RICHTIGE ausblendet und nichts darüber hinaus.
+// ── DEKLARIERTE FACHLICHE ÄNDERUNG (§6.3) ────────────────────────────────────
+// Diese Datei prüfte bis S1 eine DREIWERTIGE Wahl («aus · als Fussnoten · als
+// Chronologie»). Der dritte Modus ist gestrichen, also fallen die beiden
+// Chronologie-Tests (Sortierbeweis, «ohne Datum») und der Drei-Knöpfe-Test — sie
+// prüften genau das entfernte Verhalten. KEINE Assertion wurde gelockert: der
+// Vertrag ist an zwei Stellen STRENGER geworden.
+//
+//   (1) Neu: «aus» lässt KEINE Historie-Spur im Lesekörper. Bis S1 hing die
+//       «Fassung»-Zeile am Artikelfuss (`[data-historie-zeile]`, «Gilt seit …» +
+//       Fassungs-Zeitleiste) an GAR KEINEM Schalter (Kap. 5, Befund K4) — bei
+//       «Änderungsvermerke aus» blieb sie als einzige Historie stehen, und der
+//       Schalter hielt nicht, was er verspricht (§8). Der Test unten fordert das
+//       Verschwinden von Marker, Apparat-Zeile UND Fassungs-Zeile gemeinsam.
+//   (2) Neu: DOM-Vollständigkeit wird für alle drei zugleich geprüft, nicht nur
+//       für die Apparat-Zeile.
+//
+// ── DIE NICHT VERHANDELBARE AUFLAGE ──────────────────────────────────────────
+// H0-Auflage 1 (Vollbericht `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`):
+// ausblendbar ist AUSSCHLIESSLICH die build-seitig als reine Änderungshistorie
+// klassifizierte Fussnote (`kl:'A'` im Sidecar → `data-fn-klasse="A"` im DOM).
+// Echte Verweise (V), Grauzone (G), Publikationsnachweise (Z), Unklares (U) und
+// alles OHNE Klasse bleiben in BEIDEN Stellungen sichtbar. Die Tests prüfen
+// darum nicht nur, DASS «aus» etwas ausblendet, sondern dass es das RICHTIGE
+// ausblendet und nichts darüber hinaus.
 //
 // Erlass-Wahl BGBM (16 Artikel, ~21 KB Snapshot) = derselbe kleine Träger wie in
 // `leser-optionen.e2e.ts`: die Toggle-Semantik ist seitengrössen-unabhängig (Attribut +
@@ -18,11 +36,10 @@ import AxeBuilder from '@axe-core/playwright';
 //
 // Die Fixtures sind am Bestand VERIFIZIERT (Sidecar public/normtext/struktur/bund/
 // BGBM.json, Stand 26.7.2026):
+//   · Art. 2  → trägt einen Historie-Shard-Eintrag ⇒ «Fassung»-Zeile «Gilt seit 01.01.2025»
 //   · Art. 4  → fn 12 kl=A · fn 13 kl=V («SR 0.142.112.681») · fn 14 kl=A
 //   · Art. 5  → fn 15 kl=Z («BBl 2017 2175») · fn 16 kl=V · fn 17 kl=A
-//   · Art. 9  → fn 25/26 (2021-01-01) · fn 27 (2006-07-01) · fn 28 (2007-01-01), alle A
-//               ⇒ Apparat-Reihenfolge 25,26,27,28 vs. Chronologie 27,28,25,26
-//   · Art. 12 → fn 30 kl=A OHNE Datum («BRB vom 17. Juni 1996.») ⇒ «ohne Datum»
+//   · Art. 9  → fn 25/26/27/28, ALLE kl=A ⇒ Apparat ohne nicht-A-Zeile
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -31,19 +48,26 @@ async function warteReader(page: Page, url: string, artId: string): Promise<void
   await expect(page.locator(`#${artId}`)).toBeVisible({ timeout: 20000 });
   await page.evaluate(() => document.fonts?.ready);
   // Die Fussnoten kommen aus dem lazy geladenen Struktur-Sidecar — erst wenn der
-  // Apparat steht, sind Klassen und Chronologie im DOM.
+  // Apparat steht, sind die Klassen im DOM.
   await expect(page.locator('.lc-leser [data-fn-apparat]').first()).toBeAttached({ timeout: 20000 });
   await page.waitForTimeout(200);
 }
 
+// IDEMPOTENT (Befund beim ersten Lauf dieser Fassung): ein Klick auf einen
+// Schalter schliesst das Panel NICHT. Ein zweiter blinder Klick auf «Ansicht»
+// hätte es darum zugeklappt, und die folgende Zusicherung wäre am fehlenden Panel
+// gescheitert — ein Fehlschlag der Prüfmechanik, nicht der Sache.
 async function ansichtOeffnen(page: Page): Promise<void> {
-  await page.getByRole('button', { name: 'Ansicht' }).first().click();
-  await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
+  const panel = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  if (!(await panel.isVisible())) {
+    await page.getByRole('button', { name: 'Ansicht' }).first().click();
+  }
+  await expect(panel).toBeVisible();
 }
 
-/** Die dreiwertige Wahl im «Ansicht»-Panel. */
-function histWahl(page: Page, wert: 'aus' | 'fussnoten' | 'chronologie') {
-  return page.locator(`[aria-label="Darstellung der Änderungshistorie"] [data-hist-wahl="${wert}"]`);
+/** Der EINE zweiwertige Schalter (S1) — kein Streifen mit drei Knöpfen mehr. */
+function vermerkeSchalter(page: Page) {
+  return page.getByRole('switch', { name: 'Änderungsvermerke' });
 }
 
 /** Apparat-Zeile einer Fussnote dieses Artikels (id = fn-<artikel>-<nr>). */
@@ -51,22 +75,24 @@ function apparatZeile(page: Page, artikel: string, nr: string) {
   return page.locator(`#fn-${artikel}-${nr}`);
 }
 
-test('Grundzustand: «als Fussnoten» ist Default, Attribut am <html>, drei Wahl-Knöpfe', async ({ page }) => {
+test('Grundzustand: «an» ist Default, Attribut am <html>, EIN zweiwertiger Schalter', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
   // R6: der Default emittiert keine CSS-Regel — die Darstellung ist die heutige.
-  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'fussnoten');
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'an');
   await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Darstellung der Änderungshistorie"]');
-  await expect(gruppe).toBeVisible();
-  await expect(gruppe.getByRole('button')).toHaveCount(3);
-  // Ehrlicher Aktiv-Zustand (aria-pressed, kein role=radiogroup — es gibt keine
-  // Pfeiltasten-Bedienung, die man versprechen dürfte).
-  await expect(histWahl(page, 'fussnoten')).toHaveAttribute('aria-pressed', 'true');
-  await expect(histWahl(page, 'aus')).toHaveAttribute('aria-pressed', 'false');
-  await expect(histWahl(page, 'chronologie')).toHaveAttribute('aria-pressed', 'false');
+  const schalter = vermerkeSchalter(page);
+  await expect(schalter).toBeVisible();
+  await expect(schalter).toHaveAttribute('aria-checked', 'true');
+  // S1: der dreiwertige Streifen ist WEG — und zwar restlos, samt seiner
+  // Gruppen-Beschriftung und seiner drei `data-hist-wahl`-Knöpfe. Ohne diese
+  // Negativ-Sonde könnte die alte Bedienung beim nächsten Merge zurückkommen,
+  // ohne dass etwas rot wird (Präzedenz: der Wächter gegen die Alt-Zeitraum-Wahl
+  // in `leser-kopf-v2.e2e.ts`).
+  await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toHaveCount(0);
+  await expect(page.locator('[data-hist-wahl]')).toHaveCount(0);
 });
 
-test('«aus» dämpft NUR Klasse A — Verweis (V) und Publikationsnachweis (Z) bleiben sichtbar', async ({ page }) => {
+test('«aus» blendet NUR Klasse A aus — Verweis (V) und Publikationsnachweis (Z) bleiben sichtbar', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
 
   const a12 = apparatZeile(page, '4', '12');       // A — Änderungsvermerk
@@ -102,8 +128,9 @@ test('«aus» dämpft NUR Klasse A — Verweis (V) und Publikationsnachweis (Z) 
     }).observe({ type: 'layout-shift' });
   });
 
-  await histWahl(page, 'aus').click();
+  await vermerkeSchalter(page).click();
   await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
+  await expect(vermerkeSchalter(page)).toHaveAttribute('aria-checked', 'false');
 
   // NEGATIV, der Kern der Auflage: A weg — V und Z BLEIBEN.
   await expect(a12).toBeHidden();
@@ -126,8 +153,8 @@ test('«aus» dämpft NUR Klasse A — Verweis (V) und Publikationsnachweis (Z) 
   expect(sichtbarerText).toContain('0.142.112.681');   // die V-Fussnote ist mit-sichtbar
 
   // POSITIV zurück: Wiederherstellung vollständig.
-  await histWahl(page, 'fussnoten').click();
-  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'fussnoten');
+  await vermerkeSchalter(page).click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'an');
   await expect(a12).toBeVisible();
   await expect(a14).toBeVisible();
 
@@ -135,7 +162,7 @@ test('«aus» dämpft NUR Klasse A — Verweis (V) und Publikationsnachweis (Z) 
   expect(await page.evaluate(() => (window as unknown as { __cls: number }).__cls)).toBe(0);
 });
 
-test('«aus» dämpft auch die A-MARKER im Wortlaut, nicht nur den Apparat', async ({ page }) => {
+test('«aus» blendet auch die A-MARKER im Wortlaut aus, nicht nur den Apparat', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
   const aMarker = page.locator('.lc-leser [data-fn-klasse="A"] button[aria-label^="Fussnote"]');
   const vMarker = page.locator('.lc-leser [data-fn-klasse="V"] button[aria-label^="Fussnote"]');
@@ -145,7 +172,7 @@ test('«aus» dämpft auch die A-MARKER im Wortlaut, nicht nur den Apparat', asy
   expect(vAnzahl, 'BGBM trägt V-Marker im Wortlaut').toBeGreaterThan(0);
 
   await ansichtOeffnen(page);
-  await histWahl(page, 'aus').click();
+  await vermerkeSchalter(page).click();
   await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
 
   // Alle A-Marker unsichtbar, alle V-Marker weiter sichtbar; Zahl im DOM unverändert.
@@ -155,99 +182,106 @@ test('«aus» dämpft auch die A-MARKER im Wortlaut, nicht nur den Apparat', asy
   expect(await vMarker.count()).toBe(vAnzahl);
 });
 
-test('«als Chronologie»: A-Einträge chronologisch am Artikelfuss, Verweise bleiben im Apparat', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/BGBM', 'art-9');
+test('S1-ZUSAGE: «aus» lässt KEINE Historie-Spur im Lesekörper — und der DOM bleibt vollständig', async ({ page }) => {
+  // Das ist die Zusage der Etappe S1 (Fahrplan Kap. 7). Drei Träger müssen
+  // GEMEINSAM verschwinden; bis S1 verschwanden nur die ersten zwei:
+  //   (1) die A-Marker im Wortlaut,
+  //   (2) die Apparat-Zeilen der Klasse A (samt Rahmen, wo NUR A darin steht),
+  //   (3) die «Fassung»-Zeile am Artikelfuss — sie hing an keinem Schalter (K4).
+  // Und alle drei müssen im DOM BLEIBEN (A1-Mechanik, David 5.7.2026:
+  // `display:none`, nie gelöscht), damit «an» sie vollständig wiederherstellt.
+  await warteReader(page, '/gesetze/bund/BGBM', 'art-2');
 
-  const chrono = page.locator('#art-9 [data-hist-chrono]');
-  // Liegt IMMER im DOM (kein Nachladen beim Umschalten), aber nur in ihrer Ansicht sichtbar.
-  await expect(chrono).toBeAttached();
-  await expect(chrono).toBeHidden();
+  const art2 = page.locator('#art-2');
+  await art2.scrollIntoViewIfNeeded();
+  const fassung = art2.locator('[data-historie-zeile]');
+  const slot = art2.locator('[data-hist-slot]');
+  // Sichtbarkeits-Zählung der A-Marker. `checkVisibility()` und NICHT
+  // `offsetParent`/`display` am Element selbst: ausgeblendet wird der VORFAHR
+  // (`[data-fn-klasse="A"]`), das Knopf-Element trägt weiter `display: inline`.
+  // Und NICHT `contentVisibilityAuto`: die Artikel stehen unter
+  // `content-visibility: auto` — würde man vom Scrollen übersprungene Teilbäume
+  // als «unsichtbar» zählen, wäre die Zusicherung schon durch Scrollposition
+  // erfüllt und damit wertlos (§6.7). Der Standard-Modus meldet genau das, was
+  // hier gemeint ist: von einer CSS-Regel weggeschaltet.
+  const aMarkerSichtbar = () => page
+    .locator('.lc-leser [data-fn-klasse="A"] button[aria-label^="Fussnote"]')
+    .evaluateAll((els) => els.filter((el) => (el as HTMLElement).checkVisibility()).length);
+  // Der Badge wächst mit dem idle-Shard-Resolve ein — POSITIV-Vorbedingung: ohne
+  // ihn prüfte die Negativ-Zusicherung unten nichts (§6.7).
+  await expect(fassung).toBeVisible({ timeout: 15000 });
+  await expect(fassung.getByText('Fassung', { exact: true })).toBeVisible();
+  const badgeText = (await fassung.textContent())?.trim() ?? '';
+  expect(badgeText, 'Fassungs-Zeile ohne Text — die Sonde unten wäre wertlos').toContain('Gilt seit');
+
+  // Art. 9 trägt AUSSCHLIESSLICH A-Fussnoten: sein Apparat darf bei «aus» samt
+  // Rahmen weg sein, sonst bliebe eine leere Trennlinie stehen.
+  const apparat9 = page.locator('#art-9 [data-fn-apparat]');
+  await page.locator('#art-9').scrollIntoViewIfNeeded();
+  await expect(apparat9).toBeVisible();
+  // POSITIV-Vorbedingung auch für die Marker: es gibt überhaupt welche, und sie
+  // sind sichtbar (sonst zählte die Null unten nichts, §6.7).
+  expect(await aMarkerSichtbar(), 'BGBM zeigt A-Marker im Grundzustand').toBeGreaterThan(0);
 
   await ansichtOeffnen(page);
-  await histWahl(page, 'chronologie').click();
-  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'chronologie');
-  await chrono.scrollIntoViewIfNeeded();
-  await expect(chrono).toBeVisible();
+  await vermerkeSchalter(page).click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
 
-  // SORTIERBEWEIS: Apparat-Reihenfolge ist die Fussnoten-Nummer (25,26,27,28), die
-  // Chronologie ordnet nach Inkraftsetzung → 2006, 2007, 2021, 2021. Die Liste muss
-  // also GEGEN die Nummern-Reihenfolge stehen, sonst wäre sie eine Durchreiche.
-  // Datum GEZIELT über `[data-hist-datum]` lesen, nicht über die Span-Position:
-  // seit B4 steht die Fussnoten-Nummer als erstes Kind, ein positionsabhängiger
-  // Selektor las sonst die Nummer als «Jahr» (Befund beim B4-Einbau selbst).
-  const jahre = await chrono.locator('li [data-hist-datum]').evaluateAll((els) =>
-    els.map((el) => (el.textContent ?? '').trim()));
-  expect(jahre.length).toBeGreaterThanOrEqual(4);
-  const zahlen = jahre.map((t) => Number((t.match(/(\d{4})$/) ?? [])[1] ?? NaN));
-  // Die ISO-Attribute sind der eigentliche Sortierschlüssel — auch die prüfen.
-  const isos = await chrono.locator('li [data-hist-datum]').evaluateAll((els) =>
-    els.map((el) => el.getAttribute('data-hist-datum') ?? ''));
-  expect(isos.filter(Boolean)).toEqual([...isos.filter(Boolean)].sort());
-  for (let i = 1; i < zahlen.length; i++) {
-    expect(zahlen[i], `Chronologie aufsteigend: ${jahre.join(' | ')}`).toBeGreaterThanOrEqual(zahlen[i - 1]);
-  }
-  expect(zahlen[0]).toBe(2006);
-  expect(zahlen[zahlen.length - 1]).toBe(2021);
+  // (3) KEINE Fassungs-Spur mehr — weder die Zeile noch der reservierte Slot.
+  // Der Slot MIT: seine reservierte Höhe (mt-4 + min-h-hist-zeile = 16+24 px)
+  // bliebe sonst als Phantom-Lücke unter jedem Artikel stehen, und «aus» hätte
+  // doch eine Spur hinterlassen.
+  await expect(fassung).toBeHidden();
+  await expect(slot).toBeHidden();
+  // (2) Apparat samt Rahmen weg, wo er nur A trägt.
+  await page.locator('#art-9').scrollIntoViewIfNeeded();
+  await expect(apparat9).toBeHidden();
+  // (1) kein sichtbarer A-Marker im ganzen Lesekörper.
+  expect(await aMarkerSichtbar(), 'A-Marker noch sichtbar').toBe(0);
 
-  // Gegenprüfungs-Befund B4: jede Chronologie-Zeile nennt ihre Fussnoten-NUMMER,
-  // sonst ist der Marker im Wortlaut (²⁷) keinem Eintrag zuzuordnen. Erste Zeile =
-  // fn 27 (2006-07-01), letzte = fn 26 (2021, Tie-Break nach Nummer hinter fn 25).
+  // DOM-VOLLSTÄNDIGKEIT (§8): alles ist noch da, mit unverändertem Text.
   // `textContent`, NICHT `innerText`: die Artikel stehen unter
   // `content-visibility: auto` (W2.8) — dort liefert `innerText` für nicht
-  // gerenderte Teilbäume einen LEEREN String, und die Zusicherung wäre still wahr
-  // bzw. still falsch, je nach Scroll-Zustand. `textContent` ist layout-unabhängig.
-  const zeilen = await chrono.locator('li').evaluateAll((lis) =>
-    lis.map((li) => (li.textContent ?? '').trim()));
-  expect(zeilen[0].startsWith('27')).toBe(true);
-  for (const nr of ['25', '26', '27', '28']) {
-    expect(zeilen.some((z) => z.startsWith(nr)), `Chronologie nennt fn ${nr}`).toBe(true);
-  }
+  // gerenderte Teilbäume einen LEEREN String, und die Zusicherung wäre still
+  // wahr. `textContent` ist layout-unabhängig.
+  await expect(fassung).toHaveCount(1);
+  expect((await fassung.textContent())?.trim() ?? '').toBe(badgeText);
+  await expect(apparat9).toHaveCount(1);
+  expect((await apparat9.textContent())?.trim() ?? '').toContain('Eingefügt durch');
 
-  // Die A-Zeilen sind aus dem Apparat verschwunden (sie stehen jetzt oben) …
-  await expect(apparatZeile(page, '9', '27')).toBeHidden();
-  // … ihr Wortlaut bleibt aber im DOM (R9/§8) und das Marker-Popover findet ihn.
-  expect((await apparatZeile(page, '9', '27').textContent())?.trim() ?? '').toContain('Eingefügt durch');
+  // Und der NORMTEXT des Artikels ist unberührt — sichtbar und findbar. Hier
+  // ebenfalls `textContent` statt `innerText`: Art. 2 liegt weit unten, sein
+  // Teilbaum ist vom `content-visibility: auto` übersprungen, und `innerText`
+  // lieferte dafür einen LEEREN String (genau so beim ersten Lauf dieser Fassung
+  // passiert — die Zeile wäre still falsch geworden). Die SICHTBARKEIT prüft die
+  // Locator-Zusicherung, die eine Bounding-Box auswertet und vom Übersprungenen
+  // nicht getäuscht wird.
+  await art2.scrollIntoViewIfNeeded();
+  await expect(art2).toBeVisible();
+  expect(((await art2.textContent()) ?? '').length).toBeGreaterThan(20);
 
-  // Art. 9 trägt AUSSCHLIESSLICH A-Fussnoten ⇒ der Apparat hätte nur noch unsichtbare
-  // Zeilen. Die `:not(:has(> :not([data-fn-klasse="A"])))`-Regel nimmt dann auch seinen
-  // Rahmen mit, damit keine leere Trennlinie stehen bleibt.
-  await expect(page.locator('#art-9 [data-fn-apparat]')).toBeHidden();
-
-  // Gegenprobe auf einem Artikel MIT Verweis: dort bleibt der Apparat (samt Rahmen)
-  // stehen, weil er eine nicht-A-Zeile trägt — der V-Eintrag ist sichtbar, erscheint
-  // aber NICHT in der Chronologie (die zeigt nur Änderungsvermerke).
-  await page.locator('#art-4').scrollIntoViewIfNeeded();
-  await expect(page.locator('#art-4 [data-fn-apparat]')).toBeVisible();
-  await expect(apparatZeile(page, '4', '13')).toBeVisible();
-  // Ebenfalls `textContent`: mit `innerText` wäre diese Negativ-Zusicherung schon
-  // durch einen leeren String erfüllt (content-visibility) und damit wertlos.
-  const chrono4 = (await page.locator('#art-4 [data-hist-chrono]').textContent()) ?? '';
-  expect(chrono4.length, 'Chronologie von Art. 4 ist nicht leer (sonst prüft die Zeile unten nichts)').toBeGreaterThan(10);
-  expect(chrono4).not.toContain('0.142.112.681');
-});
-
-test('Chronologie ist ehrlich bei fehlendem Datum («ohne Datum», §8)', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/BGBM', 'art-12');
+  // POSITIV zurück: «an» stellt alle drei vollständig wieder her.
   await ansichtOeffnen(page);
-  await histWahl(page, 'chronologie').click();
-  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'chronologie');
-  // BGBM Art. 12 fn 30 = «BRB vom 17. Juni 1996.» — Klasse A, aber KEINE
-  // «in Kraft seit»-Klausel ⇒ kein Sortierdatum. Statt zu raten (oder das Datum
-  // aus dem Fliesstext zu greifen) sagt die Zeile es aus.
-  const chrono = page.locator('#art-12 [data-hist-chrono]');
-  await chrono.scrollIntoViewIfNeeded();
-  await expect(chrono).toBeVisible();
-  await expect(chrono).toContainText('ohne Datum');
-  await expect(chrono).toContainText('BRB vom 17. Juni 1996');
+  await vermerkeSchalter(page).click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'an');
+  await art2.scrollIntoViewIfNeeded();
+  await expect(fassung).toBeVisible();
+  await expect(slot).toBeVisible();
+  await page.locator('#art-9').scrollIntoViewIfNeeded();
+  await expect(apparat9).toBeVisible();
+  expect(await aMarkerSichtbar(), 'A-Marker nach «an» nicht wiederhergestellt').toBeGreaterThan(0);
 });
 
 test('Persistenz + Pre-Paint: die Wahl übersteht den Reload ohne Flackern', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
   await ansichtOeffnen(page);
-  await histWahl(page, 'aus').click();
+  await vermerkeSchalter(page).click();
   await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
   const ls = await page.evaluate(() => localStorage.getItem('lm.leser.optionen'));
-  expect(ls).toContain('"hist":"aus"');
+  // S1: der Wert steht unter dem NEUEN Schlüssel (das dreiwertige `hist` ist weg).
+  expect(ls).toContain('"histansicht":"aus"');
+  expect(ls, 'Alt-Schlüssel `hist` weiter geschrieben — die Migration griffe bei jedem Laden neu').not.toContain('"hist":');
+  expect(ls, 'gestrichener Schalter `verweise` weiter geschrieben').not.toContain('"verweise"');
 
   await page.reload();
   // Pre-Paint (wendeLeserOptionenAn in main.tsx, CSP-konform aus dem Modul-Script):
@@ -256,6 +290,30 @@ test('Persistenz + Pre-Paint: die Wahl übersteht den Reload ohne Flackern', asy
   await expect(page.locator('#art-4')).toBeVisible();
   await expect(apparatZeile(page, '4', '12')).toBeHidden();
   await expect(apparatZeile(page, '4', '13')).toBeVisible();
+});
+
+test('S1-MIGRATION im Browser: ein gespeichertes «chronologie» steht als «an» da', async ({ page }) => {
+  // Der Bestands-Speicher eines Nutzers von VOR S1 — genau der Fall, der sich
+  // später nicht mehr nachstellen lässt. Die Regeln selbst liegen DOM-frei unter
+  // `src/tests/leser-optionen-migration.test.ts`; hier zählt, dass der Pre-Paint-
+  // Pfad (main.tsx → wendeLeserOptionenAn) sie wirklich anwendet und der Schalter
+  // danach richtig steht. «chronologie» hiess «Vermerke sichtbar» ⇒ «an», nie
+  // «aus» (§8: dem Nutzer nicht wegnehmen, was er ausdrücklich bestellt hat).
+  await page.addInitScript(() => {
+    try {
+      localStorage.setItem('lm.leser.optionen', JSON.stringify({
+        fussnoten: 'an', verweise: 'aus', leitfaelle: 'an', hist: 'chronologie',
+      }));
+    } catch { /* privater Modus */ }
+  });
+  await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'an');
+  // Der gestrichene Schalter kann nichts mehr bewirken: kein Attribut am <html>.
+  await expect(page.locator('html')).not.toHaveAttribute('data-verweise', /.*/);
+  await ansichtOeffnen(page);
+  await expect(vermerkeSchalter(page)).toHaveAttribute('aria-checked', 'true');
+  // Und die Vermerke sind wirklich da (nicht bloss der Schalter richtig gestellt).
+  await expect(apparatZeile(page, '4', '12')).toBeVisible();
 });
 
 test('«aus»: GRAUZONE (G) und UNKLAR (U) bleiben sichtbar — Auflage 1 vollständig', async ({ page }) => {
@@ -278,7 +336,7 @@ test('«aus»: GRAUZONE (G) und UNKLAR (U) bleiben sichtbar — Auflage 1 vollst
   await expect(g41).toHaveAttribute('data-fn-klasse', 'G');
 
   await ansichtOeffnen(page);
-  await histWahl(page, 'aus').click();
+  await vermerkeSchalter(page).click();
   await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
 
   await expect(a34).toBeHidden();
@@ -289,11 +347,45 @@ test('«aus»: GRAUZONE (G) und UNKLAR (U) bleiben sichtbar — Auflage 1 vollst
   await expect(g41).toContainText('Siehe auch die UeB');
 });
 
-test('axe: das offene Panel MIT der neuen Wahl und die Chronologie-Ansicht sind sauber', async ({ page }, testInfo) => {
-  // Das neue Steuerelement lebt in einem Panel, das die a11y.e2e.ts-Stichprobe NICHT
-  // öffnet (die scannt den Reader mit geschlossenem Menü) — und die Chronologie-Liste
-  // ist eine neue Textfläche mit eigenem Kontrast. Beide werden hier gescannt, sonst
-  // wäre die axe-Zusage für diesen Schritt leer.
+test('Der Schalter bleibt bei «Fussnoten aus» stehen — weil er dort weiter wirkt', async ({ page }) => {
+  // ── DEKLARIERTE UMKEHR (§6.3) ────────────────────────────────────────────
+  // Bis S1 stand hier das Gegenteil: die Historie-Wahl wurde bei «Fussnoten aus»
+  // ENTFERNT, weil sie nur den Fussnoten-Apparat betraf und dort wirkungslos war
+  // (§13 F4, kein totes Steuerelement). Seit S1 hängt an demselben Schalter auch
+  // die «Fassung»-Zeile, und die folgt `data-fussnoten` NICHT — sie kommt aus dem
+  // Historie-Shard, nicht aus dem Apparat. Der Schalter ist bei «Fussnoten aus»
+  // also nachweislich WIRKSAM, und ihn wegzunehmen wäre derselbe F4-Fehler,
+  // nur spiegelbildlich: eine wirksame Bedienung, die man nicht erreichen kann.
+  await warteReader(page, '/gesetze/bund/BGBM', 'art-2');
+  const art2 = page.locator('#art-2');
+  await art2.scrollIntoViewIfNeeded();
+  const fassung = art2.locator('[data-historie-zeile]');
+  await expect(fassung).toBeVisible({ timeout: 15000 });
+
+  await ansichtOeffnen(page);
+  await page.getByRole('switch', { name: 'Fussnoten' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'aus');
+
+  // POSITIV — der Beweis der Wirksamkeit: bei «Fussnoten aus» steht die
+  // Fassungs-Zeile weiter da (sie ist kein Fussnoten-Apparat) …
+  await art2.scrollIntoViewIfNeeded();
+  await expect(fassung).toBeVisible();
+  // … der Schalter ist erreichbar …
+  await ansichtOeffnen(page);
+  await expect(vermerkeSchalter(page)).toBeVisible();
+  // … und er nimmt sie weg. Genau das konnte man vor S1 nicht.
+  await vermerkeSchalter(page).click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
+  await art2.scrollIntoViewIfNeeded();
+  await expect(fassung).toBeHidden();
+});
+
+test('axe: das offene Panel mit dem zweiwertigen Schalter ist sauber', async ({ page }, testInfo) => {
+  // Das Steuerelement lebt in einem Panel, das die a11y.e2e.ts-Stichprobe NICHT
+  // öffnet (die scannt den Reader mit geschlossenem Menü) — ohne diesen Scan wäre
+  // die axe-Zusage für diesen Schritt leer. Gescannt wird BEIDES: das offene
+  // Panel und die Seite in der Stellung «aus» (dort verschwinden Elemente, und
+  // ein verwaistes `aria-controls` oder ein leerer Rahmen fiele hier auf).
   const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
   // Gleiche Determinismus-Vorkehrungen wie a11y.e2e.ts: Theme gepinnt (sonst
   // entscheidet die Uhrzeit über hell/dunkel → flaky Kontraste) und reduzierte
@@ -304,8 +396,10 @@ test('axe: das offene Panel MIT der neuen Wahl und die Chronologie-Ansicht sind 
   await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' });
   await warteReader(page, '/gesetze/bund/BGBM', 'art-9');
   await ansichtOeffnen(page);
-  await histWahl(page, 'chronologie').click();
-  await expect(page.locator('#art-9 [data-hist-chrono]')).toBeVisible();
+  await vermerkeSchalter(page).click();
+  await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus');
+  await ansichtOeffnen(page);
+  await expect(vermerkeSchalter(page)).toBeVisible();
 
   const ergebnis = await new AxeBuilder({ page }).withTags(TAGS).analyze();
   // Gleiche Tor-Politik wie a11y.e2e.ts: critical/serious gaten. `link-in-text-block`
@@ -327,21 +421,4 @@ test('axe: das offene Panel MIT der neuen Wahl und die Chronologie-Ansicht sind 
     schwer.map((v) => `${v.id} (${v.impact}): ${v.help} — z. B. ${v.nodes[0]?.target.join(' ')}`),
     'axe hist-ansicht: keine critical/serious-Verstösse',
   ).toEqual([]);
-});
-
-test('Kein totes Steuerelement: «Fussnoten AUS» entfernt die Historie-Wahl (§13 F4)', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
-  await ansichtOeffnen(page);
-  await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toBeVisible();
-  // Bei «Fussnoten aus» verschwindet der ganze Apparat — eine Historie-Wahl darin
-  // wäre wirkungslos, also wird sie nicht angeboten.
-  await page.getByRole('switch', { name: 'Fussnoten' }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-fussnoten', 'aus');
-  await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toHaveCount(0);
-  // Und die Chronologie-Liste folgt dem Fussnoten-Toggle mit (sie ist Apparat-Ersatz,
-  // kein Umweg um ihn).
-  await expect(page.locator('#art-4 [data-hist-chrono]')).toBeHidden();
-  // Zurück: die Wahl ist wieder da.
-  await page.getByRole('switch', { name: 'Fussnoten' }).click();
-  await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toBeVisible();
 });

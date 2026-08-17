@@ -378,7 +378,8 @@
   html { -webkit-tap-highlight-color: transparent; }
   :focus:not(:focus-visible) { outline: none; }
 
-  /* ── W2·5d G2a: Leser-Options-Leiste (Fussnoten/Verweise) ─────────────────
+  /* ── W2·5d G2a: Leser-Options-Toggles (seit S1: Fussnoten · Änderungsvermerke
+        · Rechtsprechung im Text; «Verweise» ersatzlos entfallen) ─────────────
      Rein visuelle Darstellungs-Toggles (leserOptionen.tsx) — data-*-Attribute am
      <html>, hier per CSS ausgewertet. Default 'an' = KEINE Regel greift = heutige
      Darstellung byte-gleich (R6). Alle Regeln auf `.lc-leser` gescopt, damit NUR
@@ -420,8 +421,8 @@
      (`src/components/normtext/ArtikelBody.tsx`) — eindeutig, hüllenneutral, und
      der Schalter trägt sie nicht. Damit greift die Regel in V1 wieder überall
      (auch im Kopf) und lässt in V3 den Schalter in Ruhe.
-     Die drei Attribut-Selektoren darunter waren nie betroffen: `data-fn-marker`,
-     `data-fn-apparat` und `data-hist-chrono` existieren ausschliesslich am
+     Die Attribut-Selektoren darunter waren nie betroffen: `data-fn-marker` und
+     `data-fn-apparat` existieren ausschliesslich am
      Normtext. Hinweis: `[data-fn-marker]` ist KEIN Ersatz-Scope für den Marker —
      gemessen liegen 19/29 (BGBM) bzw. 476/847 (OR) Marker-Buttons ausserhalb
      eines solchen Clusters.
@@ -431,71 +432,62 @@
      unbedenklich und bleibt unverändert.) */
   html[data-fussnoten="aus"] .lc-leser [data-fn-ref],
   html[data-fussnoten="aus"] .lc-leser [data-fn-marker],
-  html[data-fussnoten="aus"] .lc-leser [data-fn-apparat],
-  html[data-fussnoten="aus"] .lc-leser [data-hist-chrono] {
+  html[data-fussnoten="aus"] .lc-leser [data-fn-apparat] {
     display: none;
   }
 
-  /* ── W2·5i-HIST-ANSICHT: «Änderungshistorie: aus / als Fussnoten / als
-     Chronologie» (§14-Intake David 20.7.2026, gebaut 26.7.2026 nach dem
-     H0-Verdikt `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`).
+  /* ── ÄNDERUNGSVERMERKE an/aus (§14-Intake David 20.7.2026, gebaut 26.7.2026
+     nach dem H0-Verdikt `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`;
+     ZWEIWERTIG seit S1, Entscheid David F1 «ja» — FAHRPLAN-LESER-V3 Kap. 4f).
+
+     S1-RÜCKBAU: Der dritte Wert «chronologie» und seine drei Regeln sind
+     ERSATZLOS ENTFALLEN, mit ihnen `[data-hist-chrono]` (das Element gibt es im
+     DOM nicht mehr, ArtikelLeser.tsx). Geblieben ist genau eine Weiche: an/aus.
 
      Der TRAGENDE Satz (H0-Auflage 1, nicht verhandelbar): ausgeblendet wird
      ausschliesslich `[data-fn-klasse="A"]` — die build-seitig als reine
      Änderungshistorie klassifizierten Fussnoten. Echte Verweise ("V"), die
      Grauzone ("G"), Publikationsnachweise ("Z"), Unklares ("U") UND jede
      Fussnote OHNE Klasse (alle Kanton-Sidecars tragen kein `kl`) bleiben in
-     JEDER der drei Ansichten sichtbar. Attribut-Selektoren greifen nur bei
+     BEIDEN Stellungen sichtbar. Attribut-Selektoren greifen nur bei
      exakt "A" — eine fehlende Klasse blendet also nie etwas aus (§8/§1).
 
-     R9/§8: `display:none` trifft NUR Marker-Ziffern und Apparat-Zeilen, NIE
-     einen Substanz-Träger — der Normtext selbst ist von keiner dieser Regeln
-     erfasst und bleibt in jeder Ansicht sichtbar, durchsuchbar (Ctrl+F) und im
-     Ausdruck. Gleiche Mechanik und gleiche Begründung wie der bestehende
-     data-fussnoten-Toggle darüber; der `<p id="fn-…">`-Quellblock bleibt im DOM,
-     weshalb das Marker-Popover (liest `innerHTML`) auch in der Chronologie-
-     Ansicht weiterarbeitet.
+     R9/§8: `display:none` trifft NUR Marker-Ziffern, Apparat-Zeilen und die
+     abgeleitete Fassungs-Metazeile, NIE einen Substanz-Träger — der Normtext
+     selbst ist von keiner dieser Regeln erfasst und bleibt in jeder Stellung
+     sichtbar, durchsuchbar (Ctrl+F) und im Ausdruck. Gleiche Mechanik und
+     gleiche Begründung wie der data-fussnoten-Toggle darüber (A1, David
+     5.7.2026: «AUS» = verschwinden statt dämpfen); der `<p id="fn-…">`-Quellblock
+     bleibt im DOM, weshalb das Marker-Popover (liest `innerHTML`) weiterarbeitet.
 
-     Default 'fussnoten' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6).
-     Beide Umschaltungen sind klick-getrieben ⇒ der Reflow liegt binnen 500 ms
-     nach der Eingabe (CLS-exkludiert), und weil Apparat UND Chronologie-Liste
-     dauerhaft im DOM liegen, wird beim Umschalten nichts nachgeladen. ── */
+     Default 'an' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6). Die
+     Umschaltung ist klick-getrieben ⇒ der Reflow liegt binnen 500 ms nach der
+     Eingabe (CLS-exkludiert) und lädt nichts nach. ── */
 
   /* «aus»: Änderungsvermerke ganz weg — Marker und Apparat-Zeile. */
   html[data-histansicht="aus"] .lc-leser [data-fn-klasse="A"] {
     display: none;
   }
 
-  /* «als Chronologie»: die A-Zeilen verlassen den nummerierten Apparat und
-     erscheinen stattdessen als datierte Liste. Die INLINE-Marker bleiben
-     absichtlich stehen — sie sind der Bezugspunkt im Wortlaut, und ihr Popover
-     zeigt den Vermerk an Ort und Stelle. */
-  html[data-histansicht="chronologie"] .lc-leser [data-fn-apparat] [data-fn-klasse="A"] {
-    display: none;
-  }
-
-  /* Die Chronologie-Liste liegt immer im DOM und ist NUR in ihrer Ansicht
-     sichtbar (in «aus» ebenso weg wie der Apparat — sonst zeigte «aus» die
-     Historie doppelt gedreht wieder an). */
-  .lc-leser [data-hist-chrono] {
-    display: none;
-  }
-  html[data-histansicht="chronologie"] .lc-leser [data-hist-chrono] {
-    display: block;
-  }
   /* Trägt der Apparat NUR noch unsichtbare A-Zeilen, bliebe seine Trennlinie
      als leerer Strich stehen. `:not(:has(…))` prüft, ob überhaupt eine
      nicht-A-Zeile darin steckt; fehlt sie, verschwindet der Rahmen mit. */
-  html[data-histansicht="chronologie"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))),
   html[data-histansicht="aus"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))) {
     display: none;
   }
 
-  /* Verweise AUS: die Unterstreichung der Verweis-Links (dotted, heute nur bei
-     :hover) wird unterdrückt — Farbe und Anker/Funktion bleiben (§3.1: «schaltet
-     nur die Unterstreichung»). Ctrl+F/Klick unberührt. */
-  html[data-verweise="aus"] .lc-leser .decoration-dotted {
-    text-decoration-line: none;
+  /* S1 (Befund K4): die «Fassung»-Zeile am Artikelfuss (ArtikelHistorie.tsx —
+     «Gilt seit …»-Badge + Fassungs-Zeitleiste) hing bis S1 an GAR KEINEM
+     Schalter. Sie ist dieselbe Information wie die A-Fussnoten, nur aus dem
+     Historie-Shard aggregiert — bei «Änderungsvermerke aus» blieb sie als
+     einzige Historie-Spur im Lesetext stehen, und der Schalter hielt nicht, was
+     er verspricht (§8).
+     Ausgeblendet wird der SLOT (`[data-hist-slot]`), nicht nur die Zeile darin:
+     der Slot reserviert 16+24 px ab dem ersten Render (§15.2, CLS) und bliebe
+     sonst als Phantom-Lücke unter jedem Artikel zurück. Inhalt bleibt im DOM
+     (A1-Mechanik), «an» stellt ihn vollständig wieder her. */
+  html[data-histansicht="aus"] .lc-leser [data-hist-slot] {
+    display: none;
   }
 
   /* Entscheide AUS (V2·B-1, David 10.7.2026): die verlinkten Bundesgerichts-
@@ -521,9 +513,11 @@
      liegen INNERHALB dieser Hülle (LeserRahmenV3). Der Scope ist deshalb
      `.nt-art-cv` — die Artikel-Hülle, die es in V1 wie V3 gibt (ArtikelLeser) —
      und darin der Fliesstext-Container. Auf eine Tailwind-Utility zu selektieren
-     ist hier gängige Praxis (Blaupause: die `[data-verweise="aus"]`-Regel oben
-     auf `.decoration-dotted`); der Normtext-Container trägt kein eigenes
-     Daten-Attribut, und die Komponente gehörte nicht zur Bau-Fläche.
+     war hier gängige Praxis (Blaupause war die mit S1 entfallene
+     `[data-verweise="aus"]`-Regel auf `.decoration-dotted`); der Normtext-
+     Container trägt kein eigenes Daten-Attribut, und die Komponente gehörte
+     nicht zur Bau-Fläche. Neue Hooks tragen ein eigenes Attribut
+     (`[data-hist-slot]` oben) — ein Utility-Klassenname ist kein Vertrag.
 
      R6/BYTE-GLEICHHEIT: Die Vorgabestufe `normal` ist über das `:not()` vom
      Selektor AUSGENOMMEN — sie emittiert keine Deklaration, die Normtext-Grösse
