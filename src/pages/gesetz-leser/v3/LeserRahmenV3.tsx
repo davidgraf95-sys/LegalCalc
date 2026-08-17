@@ -1,10 +1,7 @@
 import { useRef, type CSSProperties, type ReactNode } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { createPortal } from 'react-dom';
-import { naechsteInstanz, merkeTab } from '../../../lib/tabs';
 import { grundartMeta, kopfOverline } from '../helpers';
 import { ErlassKopfBlock, ErlassLeserKopf } from '../parts';
-import { ErlassUebersicht } from '../parts/ErlassUebersicht';
 import { GliederungSheet } from '../parts/GliederungSheet';
 import { AmtlichesPdf } from '../parts/AmtlichesPdf';
 // Geteilte ANSICHTS-ZUSTÄNDE (Fehlseite · Currency-Pin · pdf-embed · Laden).
@@ -20,10 +17,12 @@ import { LeserSeitenleiste } from './LeserSeitenleiste';
 import { LeserGliederung } from './LeserGliederung';
 import { LeserLesespalte } from './LeserLesespalte';
 import { SuchSprungFeld } from './SuchSprungFeld';
-import { UebersichtBox } from './UebersichtBox';
+import { SuchZone } from './SuchZone';
+import { ReiterAktion } from './ReiterAktion';
 import { kopfHoehe, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
-import { overlineGebiet, uebersichtsZeile } from './erlassAnsicht';
+import { overlineGebiet, suchPlatzhalter, titelKennung } from './erlassAnsicht';
+import { LeserUebersicht } from './LeserUebersicht';
 import { useLeserV3Modell } from './leserV3Modell';
 
 // ═══ LESER V3 · Rahmen (FAHRPLAN-LESER-V3, Etappe H1) ═══════════════════════
@@ -34,14 +33,16 @@ import { useLeserV3Modell } from './leserV3Modell';
 // die Datei, die man liest, um die Hülle zu verstehen.
 //
 // DER AUFBAU, VON OBEN:
-//   LeserKopf            klebt · Ort · Ansicht · ✕            (Kap. 4a)
+//   LeserKopf   klebt · Ort · Ansicht · ✕ · [Such-Zone, wenn keine Spalte] (4a/Ä19)
 //   ┌ aside ────────────┬ Zelle ───────────────────────────┐
 //   │ Übersicht (zu)    │ ErlassLeserKopf                  │  (Kap. 4b/4e)
-//   │ Such-/Sprungfeld  │ ErlassKopfBlock (Ingress)        │
+//   │ Feld klebt zuoberst│ ErlassKopfBlock (Ingress)       │
 //   │ Gliederung klebt  │ Lesespalte  ← KERN, eingefroren  │  (Kap. 1.3)
 //   └───────────────────┴──────────────────────────────────┘
-// Unter 1024 px wird aus der Spalte ein Bottom-Sheet hinter ☰ — dasselbe
-// Bauteil, anderer Behälter.
+// OHNE Spalte (Handy · Split-Pane · Gliederung eingeklappt) wandert das Feld in
+// den klebenden Kopf-Block (`./SuchZone`) und die Gliederung in ein Bottom-Sheet
+// hinter ☰. Die Regel dahinter, auf allen drei Breiten dieselbe: das Feld ist das
+// oberste Element des klebenden Blocks.
 //
 // ── ERWEITERUNGSPUNKTE (Fundament-Auflage 3, Auftrag David 16.8.2026) ───────
 // Die kommenden Etappen hängen an benannten, typisierten Slots — nicht an
@@ -57,9 +58,8 @@ import { useLeserV3Modell } from './leserV3Modell';
 //   leisteExtra    Zusätzliche Blöcke am Fuss der Seitenleiste (Kontext-Reiter).
 //
 // Alle sind `ReactNode | undefined`. Ein nicht gesetzter Slot rendert **nichts**
-// — kein leerer Kasten, keine reservierte Fläche, kein CLS. Das ist Absicht:
-// ein Erweiterungspunkt darf im Grundzustand nichts kosten (§15), sonst zahlt
-// jeder Leser für eine Etappe, die es noch nicht gibt.
+// — kein leerer Kasten, keine Fläche, kein CLS: ein Erweiterungspunkt darf im
+// Grundzustand nichts kosten (§15).
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
 // `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
@@ -69,11 +69,8 @@ import { useLeserV3Modell } from './leserV3Modell';
 // Sprung-Offset der Anker aus derselben Quelle (Risiko R1, Lehre LM-003).
 //
 // Bis 16.8. lag `umgebung` zusätzlich in einem React-Kontext
-// (`LeserV3Kontext.ts`, Provider hier, `useLeserV3Kontext` dort). Der hatte
-// nach dem Fundament-Umbau NULL Konsumenten: alle Bauteile bekommen, was sie
-// brauchen, als Prop. Gestrichen statt bewacht (§17 Rückbau, Architektur-Review
-// A2); braucht H3 eine Verteilung ohne Prop-Drilling, legt es sie in fünf
-// Zeilen neu an — mit dem dann bekannten Konsumenten.
+// (`LeserV3Kontext.ts`) mit NULL Konsumenten — alle Bauteile bekommen ihre Werte
+// als Prop. Gestrichen statt bewacht (§17 Rückbau, Architektur-Review A2).
 
 export interface LeserRahmenV3Props {
   ebene: string;
@@ -95,7 +92,6 @@ export interface LeserRahmenV3Props {
 export function LeserRahmenV3({
   ebene, schluessel, panelOeffner, panelSlot, beiwerkSlot, fassungsWahl, leisteExtra,
 }: LeserRahmenV3Props) {
-  const navigate = useNavigate();
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
   const { stufe, kopfRef } = useKopfStufe();
 
@@ -108,8 +104,11 @@ export function LeserRahmenV3({
     feldRef: suchFeldRef,
     onKuerzel: () => {
       if ((m.eintraege?.length ?? 0) === 0) return;
-      // @≥1024 px: zugeklappte Spalte aufziehen (sonst gäbe es kein Feld zu
-      // fokussieren). Darunter: Bottom-Sheet öffnen. Beides idempotent.
+      // Ä19: das Feld ist seit der Such-Zone (`./SuchZone`) in jeder Breite im
+      // DOM. Dann NICHTS öffnen — sonst wanderte es beim Tastendruck aus dem Kopf
+      // in die eben geöffnete Spalte und der nachgereichte Fokus träfe ein
+      // Element, das gerade ausgetauscht wird. Nur der Rest-Fall öffnet.
+      if (suchFeldRef.current) return;
       if (umgebung.istXl) m.setTocOffen(true);
       else m.setTocAuf(true);
     },
@@ -130,9 +129,14 @@ export function LeserRahmenV3({
   const hatLeiste = eintraege.length > 0;
   const zweiSpalten = umgebung.istXl && hatLeiste && m.tocOffen;
 
+  // Ä20 · Platzhalter-Beispiel = amtliches Etikett des ERSTEN Eintrags («Art. 1»
+  // bzw. «§ 1»), nie aus dem Bestimmungswort gebaut (§5, `./erlassAnsicht`).
+  const beispielBestimmung = eintraege[0]?.artikelLabel ?? null;
+
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
       onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
+      platzhalter={suchPlatzhalter(beispielBestimmung)}
       // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
       // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).
       hatTreffer={m.fundstellen > 0}
@@ -142,35 +146,32 @@ export function LeserRahmenV3({
 
   const leiste = (imSheet: boolean) => (
     <LeserSeitenleiste
-      uebersicht={(
-        <UebersichtBox zusammenfassung={uebersichtsZeile(erlass, eintraege.length, bestimmungsWort)}
-          warnung={m.nichtKonsolidiert
-            ? (
-              <p className="flex items-start gap-1 text-micro leading-snug text-warn-700">
-                <span aria-hidden className="shrink-0">⚠</span>
-                <span>Eine in Kraft getretene Änderung ist noch nicht eingearbeitet — massgeblich ist die amtliche Fassung.</span>
-              </p>
-            )
-            : undefined}>
-          <ErlassUebersicht erlass={erlass} kopf={m.kopf} currency={m.currency?.[erlass.key]}
-            erlassTyp={meta.erlassTyp} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
-            bestimmungsEtikettStatus={meta.bestimmungsEtikettStatus}
-            gliederungsTiefe={m.gliederungsTiefe} kennzahlen={m.gliederung.kennzahlen}
-            kantonSys={m.kantonSys} kantonErlassAnzahl={m.kantonErlassAnzahl}
-            nichtKonsolidiert={m.nichtKonsolidiert} />
-        </UebersichtBox>
-      )}
-      // Im Sheet trägt dessen eigene Anatomie das Feld bereits zuoberst
-      // (§5 — nie zwei Eingaben für dieselbe Absicht, genau der Fehler K2).
+      uebersicht={<LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}
+      // Ä19: Feld nur in der SPALTE — ohne Spalte trägt es die Such-Zone des
+      // Kopf-Blocks (`./SuchZone`), ein zweites im Sheet wäre der Fehler K2 (§5).
       suchFeld={imSheet ? undefined : suchFeld}
-      baum={<LeserGliederung m={m} />}
-      baumTitel={m.sucheAktiv ? 'Treffer' : 'Gliederung'}
+      baum={<LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />}
+      // Ä10: im Sheet benennt der Sheet-Kopf die Zone (sonst «Gliederung» doppelt).
+      baumTitel={imSheet ? undefined : (m.sucheAktiv ? 'Treffer' : 'Gliederung')}
       onAlleAuf={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, true])) }))}
       onAlleZu={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, false])) }))}
       alleOffen={m.alleKnotenIds.length > 0 && m.alleKnotenIds.every((id) => m.tocBaum[id] === true)}
       onAnfang={m.zumAnfang}
       extra={leisteExtra} />
   );
+
+  // Ä19: Wo die Gliederung NICHT als Spalte steht, trägt der klebende Kopf-Block
+  // das Feld — Herleitung und Regel in `./SuchZone`.
+  const suchZoneKlebt = hatLeiste && !zweiSpalten;
+  const suchZone = suchZoneKlebt
+    ? (
+      <SuchZone suchFeld={suchFeld} sucheAktiv={m.sucheAktiv}
+        bestimmungen={m.treffer.length} fundstellen={m.fundstellen}
+        bestimmungsWort={bestimmungsWort}
+        // Die eine Geste «zeig mir die Leiste»: Spalte @≥1024 px, Sheet darunter.
+        onListe={() => { if (umgebung.istXl) m.setTocOffen(true); else m.setTocAuf(true); }} />
+    )
+    : undefined;
 
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
@@ -201,14 +202,21 @@ export function LeserRahmenV3({
         '--leser-v3-kopf-h': kopfHoehe(stufe),
         '--leser-v3-kopf-top': umgebung.imPane ? '0rem' : 'var(--leser-kopf-h)',
         '--leser-kopf-h': 'calc(4rem + 2.25rem)',
+        // Ä19: Höhe der Such-Zone — 0, wo die Leiste als Spalte das Feld trägt.
+        // Zwei feste Werte, damit `--nt-stick` unten aus derselben Quelle rechnet.
+        '--leser-v3-such-h': suchZoneKlebt ? (m.sucheAktiv ? '4.25rem' : '2.75rem') : '0rem',
+        // Ä1: Wrapper-Polsterung, die der Kopf verschluckt. Vorgabe in index.css
+        // (Shell `py-8 sm:py-12`); im Pane sind es `py-6` (Pane.tsx).
+        ...(umgebung.imPane ? { '--leser-v3-kopf-luecke': '1.5rem' } : {}),
         '--leser-sub-h': umgebung.imPane ? 'var(--leser-v3-kopf-h)' : '0rem',
         '--nt-stick': umgebung.imPane
-          ? 'var(--leser-sub-h)'
-          : 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h))',
+          ? 'calc(var(--leser-sub-h) + var(--leser-v3-such-h))'
+          : 'calc(var(--leser-kopf-h) + var(--leser-v3-kopf-h) + var(--leser-v3-such-h))',
       } as CSSProperties}>
 
       <LeserKopf erlass={erlass} aktArtikel={m.aktArtikel} fussnotenAnzahl={m.fussnotenAnzahl}
-        stufe={stufe} gliederungKnopf={gliederungKnopf} panelOeffner={panelOeffner} />
+        stufe={stufe} gliederungKnopf={gliederungKnopf} panelOeffner={panelOeffner}
+        suchZone={suchZone} />
 
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
           (Kap. 4b). Wiederverwendet wird die bestehende Sheet-Anatomie
@@ -232,11 +240,18 @@ export function LeserRahmenV3({
           // wandert darum MIT: ein Attribut an der Sheet-Wurzel, gesetzt aus
           // derselben Quelle, aus der auch der Adress-Schreiber seine
           // Pane-Weiche zieht (`istSekundaer`, nicht `imPane` — B1-Falle).
-          <div data-v3-pane={umgebung.istSekundaer ? 'sekundaer' : 'primaer'}>
+          // Ä5: der BEHÄLTER nennt seine Fläche, der klebende Leisten-Sockel liest
+          // sie (`.lc-leiste-sockel`, index.css) — sonst malte er `paper` auf ein
+          // `paper-raised`-Blatt (gemessen 17.8.2026 als Tonkante).
+          <div data-v3-pane={umgebung.istSekundaer ? 'sekundaer' : 'primaer'}
+            style={{ '--leser-leiste-flaeche': 'var(--paper-raised)' } as CSSProperties}>
             <GliederungSheet sheetRef={m.refs.tocDrawerRef} inPane={ziel != null}
               onSchliessen={() => m.setTocAuf(false)}
               pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
-              sprungFeld={suchFeld} baum={leiste(true)} />
+              // Ä19: kein `sprungFeld` — es steht in der Such-Zone des Kopf-Blocks.
+              // Ä10: der Blatt-Kopf benennt die Zone; die Leiste darin schweigt.
+              titel={m.sucheAktiv ? 'Treffer' : 'Gliederung'}
+              baum={leiste(true)} />
           </div>
         );
         return ziel ? createPortal(sheet, ziel) : sheet;
@@ -328,22 +343,20 @@ export function LeserRahmenV3({
           <ErlassLeserKopf erlass={erlass} artikelAnzahl={eintraege.length} bestimmungsWort={bestimmungsWort}
             currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
             kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
+            // Ä-(d) aus S3: bei sehr langen Titeln steht die Kennung VOR dem Titel
+            // statt am Ende einer dreizeiligen H1 (`erlassAnsicht.titelKennung`).
+            kennung={titelKennung(erlass)}
             overline={kopfOverline(erlass, meta.erlassTyp, overlineGebiet(erlass, m.kantonSys))}
             hinweis="Snapshot — massgeblich ist die amtliche Fassung"
             aktionen={
               <>
                 {fassungsWahl}
-                <button type="button"
-                  onClick={() => {
-                    const ziel = naechsteInstanz(window.location.pathname + window.location.hash);
-                    merkeTab(ziel, erlass.kuerzel);
-                    navigate(ziel);
-                    m.setReiterToast(true);
-                    const toastRef = m.refs.reiterToastTimerRef;
-                    if (toastRef.current) window.clearTimeout(toastRef.current);
-                    toastRef.current = window.setTimeout(() => m.setReiterToast(false), 3200);
-                  }}
-                  className="lc-chip hover:text-brass-700" title="Diesen Erlass zusätzlich in einem neuen Reiter öffnen">⧉ In neuem Reiter</button>
+                <ReiterAktion kuerzel={erlass.kuerzel} onGeoeffnet={() => {
+                  m.setReiterToast(true);
+                  const toastRef = m.refs.reiterToastTimerRef;
+                  if (toastRef.current) window.clearTimeout(toastRef.current);
+                  toastRef.current = window.setTimeout(() => m.setReiterToast(false), 3200);
+                }} />
                 {erlass.pdfUrl && (
                   <AmtlichesPdf href={erlass.pdfUrl} stand={erlass.pdfStand ?? erlass.stand} extern />
                 )}
@@ -356,7 +369,7 @@ export function LeserRahmenV3({
             // Rand-Fall: keine Leiste, aber breit genug — dann stünde die
             // Trefferliste nirgends. Lieber über dem Text als verschwunden (§8).
             trefferListe={m.sucheAktiv && !zweiSpalten && umgebung.istXl
-              ? <LeserGliederung m={m} />
+              ? <LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />
               : undefined} />
         </div>
       </div>

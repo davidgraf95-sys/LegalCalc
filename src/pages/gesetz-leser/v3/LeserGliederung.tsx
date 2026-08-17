@@ -27,10 +27,17 @@ import type { LeserV3Modell } from './leserV3Modell';
 // kostet ein neuer Trefferbaustein genau eine Zeile Import und einen Aufruf.
 // Der alte Baustein bleibt unangetastet — er trägt weiter die Ist-Hülle (FL-4).
 
-export function LeserGliederung({ m }: { m: LeserV3Modell }) {
+export function LeserGliederung({ m, bestimmungsWort }: {
+  m: LeserV3Modell;
+  /** Ä23 (H2b): Zähl-Substantiv für die Trefferliste — «Artikel» bzw.
+   *  «Paragraphen». Durchgereicht statt hier neu abgeleitet: die Ableitung steht
+   *  genau einmal, im Rahmen (§5). */
+  bestimmungsWort: 'Artikel' | 'Paragraphen';
+}) {
   if (m.sucheAktiv) {
     return (
       <LeserTrefferListe treffer={m.treffer} begriff={m.sucheBegriff} fundstellen={m.fundstellen}
+        bestimmungsWort={bestimmungsWort}
         fussnotenAus={m.fussnotenAus} position={m.trefferPos} aktivStelle={m.aktivStelle}
         bereich={m.suchBereich} setzeBereich={m.setzeSuchBereich}
         fundstellenFuer={m.fundstellenFuer}

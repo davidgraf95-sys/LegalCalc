@@ -28,8 +28,27 @@ import {
 export function ErlassLeserKopf({
   erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', kennzahlen = null,
   aktionen, hinweis, currency, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
+  kennung = null,
 }: {
   erlass: BrowseErlass;
+  /** ── Ä-(d) aus S3 (LESER-V3 H2b) · Kennung VOR dem Titel ──────────────────
+   *  `null` (Vorgabe) = die S3-Zitierform «Volltitel (Kürzel)» bleibt Zeichen für
+   *  Zeichen, wie sie ist — die Ist-Hülle setzt die Prop nicht und ist damit
+   *  unverändert (FL-4).
+   *
+   *  Ein Wert = der Kopf stellt die Kennung VOR den Titel und lässt das
+   *  Klammer-Suffix weg. Anlass (gemessen 17.8.2026 am LugÜ): bei sehr langen
+   *  Staatsvertrags-Titeln stand das Kürzel am Ende einer dreizeiligen, 147 px
+   *  hohen H1 — wer den Erlass wiedererkennen will, sucht genau diese vier
+   *  Zeichen und findet sie zuletzt. Dieselbe Information, andere Reihenfolge,
+   *  nichts doppelt.
+   *
+   *  WER entscheidet, steht NICHT hier: die Regel ist erlassabhängig und liegt
+   *  darum in der Hülle (`v3/erlassAnsicht.titelKennung`, rein und unit-geprüft).
+   *  Dieser Kopf ist geteilte Darstellung (§3) und darf keine Erlass-Weiche
+   *  tragen — und er darf auch nicht aus `v3/` importieren (Abhängigkeitsrichtung
+   *  Hülle → geteilte Schicht, nie umgekehrt). */
+  kennung?: string | null;
   overline: ReactNode;
   /** Artikelzahl (Snapshot); null = keine Zählung (pdf-embed). */
   artikelAnzahl: number | null;
@@ -79,7 +98,11 @@ export function ErlassLeserKopf({
   const titelOhneSuffix = erlass.titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const kuerzel = erlass.kuerzel.trim();
   const titelRedundant = titelOhneSuffix.toLowerCase() === kuerzel.toLowerCase();
-  const titelZeile = !kuerzel || titelRedundant
+  // Ä-(d): mit `kennung` trägt der Titel das Klammer-Suffix nicht mehr — die
+  // Kennung steht als eigenes, vorangestelltes Element in derselben H1 (sie
+  // bleibt damit Teil des zugänglichen Namens der Überschrift, wird nur zuerst
+  // gelesen). Ohne `kennung` bleibt die Zeile Zeichen für Zeichen die von S3.
+  const titelZeile = !kuerzel || titelRedundant || kennung
     ? (titelOhneSuffix || kuerzel)
     : `${titelOhneSuffix} (${kuerzel})`;
 
@@ -126,6 +149,18 @@ export function ErlassLeserKopf({
           2-Zeilen-Höhe gegen den font-display-Swap (CLS 0); nur
           Platz-Reservierung — der volle Titel steht immer (§15/2). */}
       <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] hyphens-auto min-h-titel-2z">
+        {/* Ä-(d): die Kennung als eigene, nicht umbrechende Marke VOR dem Titel.
+            Kein zweites Element neben der H1 und kein `aria-label`-Ersatz — sie
+            ist Teil desselben Namens und bleibt darum in der Überschrift; nur
+            ihre Stelle wechselt. `whitespace-nowrap`, damit «LugÜ» nie über zwei
+            Zeilen reisst; der Punkt-Trenner ist `aria-hidden`, weil er die
+            Aussprache nur unterbrechen würde. */}
+        {kennung && (
+          <>
+            <span data-kopf-kennung className="whitespace-nowrap">{kennung}</span>
+            <span aria-hidden className="mx-2 font-normal text-ink-300">·</span>
+          </>
+        )}
         {titelZeile}
       </h1>
 

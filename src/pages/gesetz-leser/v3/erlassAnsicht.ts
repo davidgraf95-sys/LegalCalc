@@ -94,6 +94,81 @@ export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'key'>): string 
   return `/gesetze/${erlass.ebene}/${encodeURIComponent(erlass.key)}`;
 }
 
+/**
+ * Ä20 (H2b) — Platzhalter des Such-/Sprungfelds, aus dem Erlass abgeleitet.
+ *
+ * BEFUND (gemessen 17.8.2026): der Platzhalter lautete fest «Suchen oder
+ * «Art. 429» …» — auch an einem §-Erlass, wo es keinen «Art. 429» gibt und der
+ * Leser sonst durchweg «§» liest (ZH-211.11). Ein Platzhalter, der ein
+ * Sprungziel nennt, das dieser Erlass nicht kennt, ist ein totes Versprechen
+ * (§8) und eine Bund-Annahme im erlassneutralen Rahmen.
+ *
+ * `beispiel` ist das ETIKETT einer echten Bestimmung DIESES Erlasses (die
+ * erste) — nicht ein aus dem Bestimmungswort gebasteltes Muster: das Etikett
+ * kommt aus demselben Datenmodell, das der Sprung auflöst, und ist damit
+ * garantiert eingebbar. Fehlt es (Snapshot noch nicht da), verspricht das Feld
+ * keinen Sprung, sondern nennt nur die Suche.
+ */
+export function suchPlatzhalter(beispiel: string | null): string {
+  return beispiel ? `Suchen oder «${beispiel}» …` : 'Im Gesetz suchen …';
+}
+
+/**
+ * Ä21 (H2b) — trägt der Volltitel neben dem Kürzel noch eine eigene Auskunft?
+ *
+ * BEFUND (gemessen 17.8.2026 an ZH-211.11): dort IST das Register-Kürzel der
+ * volle Name («Gebührenverordnung des Obergerichts (GebV OG)»), und der Titel
+ * setzt nur noch die Fundstelle dahinter («… (LS 211.11)»). Die V3-Ortsangabe
+ * schrieb beides nebeneinander, die App-Krume darüber ein drittes Mal — derselbe
+ * Name dreimal in zwei Zentimetern.
+ *
+ * Regel: beginnt der Titel mit dem Kürzel, sagt er nichts Neues und entfällt.
+ * Sonst bleibt er (StPO, VMWG, LugÜ und jeder Bundeserlass sind unberührt).
+ * Bewusst `startsWith` und nicht Gleichheit: der Zusatz «(LS 211.11)» ist die
+ * SR-Angabe, die die Übersichtsbox ohnehin führt (§5).
+ */
+export function zeigeVolltitel(erlass: Pick<BrowseErlass, 'titel' | 'kuerzel'>): boolean {
+  const kuerzel = erlass.kuerzel.trim().toLowerCase();
+  if (!kuerzel) return true;
+  return !erlass.titel.trim().toLowerCase().startsWith(kuerzel);
+}
+
+/**
+ * Ab welcher Titellänge (Zeichen) die Kennung VOR den Titel wandert.
+ *
+ * Kalibriert, nicht geraten: gemessen @1440 in der V3-Lesezelle (752 px, `text-h1`)
+ * braucht der LugÜ-Titel mit 158 Zeichen drei Zeilen (147 px), der VMWG-Titel mit
+ * 63 Zeichen eine (75 px). 80 Zeichen ist die Grenze, an der der Titel die zweite
+ * Zeile verlässt — bis dahin bleibt die S3-Zitierform «Volltitel (Kürzel)»
+ * unangetastet.
+ */
+export const TITEL_LANG_ZEICHEN = 80;
+
+/**
+ * Ä-(d) aus S3 (H2b) — die KENNUNG eines Erlasses, wenn sie vor den Titel gehört.
+ *
+ * BEFUND (gemessen 17.8.2026): bei Staatsverträgen mit sehr langem Volltitel
+ * stand das Kürzel am Ende einer dreizeiligen H1 — «… in Zivil- und
+ * Handelssachen (LugÜ)». Wer den Erlass wiedererkennen will, sucht genau diese
+ * vier Zeichen und findet sie zuletzt.
+ *
+ * `null` = die gewohnte Zitierform «Volltitel (Kürzel)» bleibt (S3-Entscheid Ä6,
+ * der ausdrücklich EINE Angabe in EINER Farbe wollte). Ein Wert = der Kopf setzt
+ * die Kennung voran und lässt das Klammer-Suffix weg — dieselbe Information,
+ * andere Reihenfolge, nichts doppelt.
+ *
+ * Zwei Ausschlüsse, beide aus dem Datenmodell und nicht aus `if (staatsvertrag)`:
+ * ohne Kürzel gibt es keine Kennung, und wo der Titel mit dem Kürzel BEGINNT
+ * (ZH-Fall, s. `zeigeVolltitel`), wäre die Voranstellung eine Dopplung.
+ */
+export function titelKennung(erlass: Pick<BrowseErlass, 'titel' | 'kuerzel'>): string | null {
+  const kuerzel = erlass.kuerzel.trim();
+  if (!kuerzel) return null;
+  const titel = erlass.titel.trim();
+  if (titel.toLowerCase().startsWith(kuerzel.toLowerCase())) return null;
+  return titel.length > TITEL_LANG_ZEICHEN ? kuerzel : null;
+}
+
 /** Brotkrume für die App-Leiste: Gesetze › Ebene › Kürzel. */
 export function brotkrume(
   erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>,

@@ -29,7 +29,7 @@ import type { ReactNode, RefObject } from 'react';
 // §3: keine Rechtslogik — Props rein, Sprünge macht der Reader.
 
 export function GliederungSheet({
-  sheetRef, inPane, onSchliessen, pfad, aktArtikelLabel, sprungFeld, baum,
+  sheetRef, inPane, onSchliessen, pfad, aktArtikelLabel, sprungFeld, baum, titel = 'Gliederung',
 }: {
   /** Fokus-/Dialog-Ref des Readers (useDialogFokus: Esc, Fokusfang, Rückgabe). */
   sheetRef: RefObject<HTMLDivElement | null>;
@@ -40,8 +40,20 @@ export function GliederungSheet({
   pfad: string[];
   /** «Sie sind hier»: Label des aktuell gelesenen Artikels (kann null sein). */
   aktArtikelLabel: string | null;
-  sprungFeld: ReactNode;
+  /** Quickjump-Zone ZUOBERST. `undefined` = die Zone entfällt ganz (samt Linie).
+   *
+   *  Ä19 (LESER-V3 H2b): V3 hat sein Such-/Sprungfeld in den KLEBENDEN Block der
+   *  Kopfzeile gezogen, wo die Gliederung nicht als Spalte steht — es ist dort
+   *  ohne jede Geste erreichbar. Ein zweites Feld im Blatt wäre danach genau die
+   *  Doppel-Eingabe, die Pos. 4 beseitigt hat (§5, Fehler K2).
+   *  Die Ist-Hülle setzt die Prop unverändert und bekommt Zeichen für Zeichen
+   *  dieselbe Zone wie bisher (FL-4). */
+  sprungFeld?: ReactNode;
   baum: ReactNode;
+  /** Ä10 (LESER-V3 H2b): Titel des Blatts. Vorgabe «Gliederung» = Ist-Verhalten.
+   *  V3 gibt hier «Gliederung» bzw. «Treffer» durch und lässt die Leiste im Blatt
+   *  ihre eigene Überschrift weg — das Wort stand sonst zweimal übereinander. */
+  titel?: string;
 }) {
   return (
     <>
@@ -66,7 +78,7 @@ export function GliederungSheet({
         <div className="shrink-0 border-b border-line">
           <div aria-hidden className="mx-auto mt-2 h-1 w-10 rounded-full bg-line" />
           <div className="flex items-center justify-between px-4 py-1.5">
-            <p className="lc-overline">Gliederung</p>
+            <p className="lc-overline">{titel}</p>
             <button type="button" onClick={onSchliessen} aria-label="Gliederung schliessen"
               className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-500 hover:text-brass-700">
               <span aria-hidden className="text-base leading-none">✕</span>
@@ -112,8 +124,10 @@ export function GliederungSheet({
             <p className="text-micro leading-snug text-ink-500">Noch keine Leseposition erfasst.</p>
           )}
         </div>
-        {/* 3 · Quickjump «Art. N» */}
-        <div className="shrink-0 border-b border-line px-4 py-2">{sprungFeld}</div>
+        {/* 3 · Quickjump «Art. N» — entfällt ganz, wenn kein Feld geliefert wird
+            (Ä19/H2b): ein leerer, bordierter Streifen wäre eine Fläche ohne
+            Inhalt (Design-Grundlage Kap. 8 Nr. 1). */}
+        {sprungFeld && <div className="shrink-0 border-b border-line px-4 py-2">{sprungFeld}</div>}
         {/* 4 · Gliederungsbaum — einziger Scroller des Sheets. `overflow-x-hidden`
             (Zusatzpunkt David 9.8.2026, W2·19-GLIEDERUNG/S9): dieselbe Garantie
             wie in der Desktop-Spalte ([data-toc], inhalt-volltext.tsx) — kein

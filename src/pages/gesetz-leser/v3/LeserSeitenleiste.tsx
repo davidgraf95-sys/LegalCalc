@@ -22,7 +22,7 @@ import { useCallback, type ReactNode } from 'react';
 // ist sie in der Spalte (D/S) und im Bottom-Sheet (H) dasselbe Bauteil.
 
 export function LeserSeitenleiste({
-  uebersicht, suchFeld, baum, baumTitel = 'Gliederung', onAlleAuf, onAlleZu, onAnfang, alleOffen, extra,
+  uebersicht, suchFeld, baum, baumTitel, onAlleAuf, onAlleZu, onAnfang, alleOffen, extra,
 }: {
   /** Übersichtsbox (Kap. 4b ①). `null` = noch nicht ladbar ⇒ Zeile entfällt. */
   uebersicht?: ReactNode;
@@ -32,7 +32,14 @@ export function LeserSeitenleiste({
   suchFeld?: ReactNode;
   /** Gliederungsbaum ODER — solange gesucht wird — die Trefferliste (Kap. 4b). */
   baum: ReactNode;
-  /** Überschrift über dem klebenden Block; wechselt mit dem Inhalt. */
+  /** Überschrift über dem klebenden Block; wechselt mit dem Inhalt.
+   *
+   *  Ä10 (H2b): `undefined` = KEINE eigene Überschrift. Gebraucht dort, wo der
+   *  Behälter die Zone schon benennt — im Bottom-Sheet stand «Gliederung»
+   *  zweimal übereinander (Sheet-Kopf + dieses `h2`, gemessen 17.8.2026: zwei
+   *  Textknoten mit identischem Inhalt in einem 390-px-Blatt). Die Leiste
+   *  behauptet damit keine Zonen-Benennung mehr, die ihr Behälter besser kennt —
+   *  und bleibt ohne `imSheet`-Verzweigung (§3: sie kennt ihren Behälter nicht). */
   baumTitel?: string;
   onAlleAuf: () => void;
   onAlleZu: () => void;
@@ -105,10 +112,21 @@ export function LeserSeitenleiste({
             16.8.): 1. Such-/Sprungfeld ganz oben · 2. Gliederungs-Kopfzeile ·
             3. der scrollbare Baum. Die Übersichtsbox bleibt darüber und scrollt
             weiterhin weg — sie ist Ankunfts-Information, kein Werkzeug. */}
-        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf className="sticky top-0 z-10 -mt-0.5 space-y-2 bg-paper pb-2 pt-0.5">
+        {/* ── Ä5 (H2b) · DER SOCKEL TRÄGT DIE FLÄCHE SEINES BEHÄLTERS ──────────
+            Bis H2 stand hier fest `bg-paper`. In der Spalte ist das richtig, im
+            Bottom-Sheet nicht: das Sheet liegt auf `paper-raised`, der Sockel
+            malte darauf ein `paper`-Rechteck (gemessen 17.8.2026: rgb(255,254,252)
+            gegen rgb(252,250,246)) — eine sichtbare, wandernde Kante, sobald man
+            in der Leiste scrollt. Gestapelte Töne sind ausdrücklich verboten
+            (Design-Grundlage Kap. 5).
+            `.lc-leiste-sockel` liest `--leser-leiste-flaeche` und fällt auf
+            `--paper` zurück; den Wert setzt der BEHÄLTER (der Rahmen am
+            Sheet-Träger). Damit bleibt die Leiste ohne Behälter-Verzweigung (§3)
+            und es gibt weiterhin genau EINE opake Fläche über dem Baum. */}
+        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf className="lc-leiste-sockel sticky top-0 z-10 -mt-0.5 space-y-2 pb-2 pt-0.5">
           {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
           <div className="flex items-center justify-between gap-2">
-            <h2 className="lc-overline">{baumTitel}</h2>
+            {baumTitel ? <h2 className="lc-overline">{baumTitel}</h2> : <span aria-hidden />}
             <div className="flex shrink-0 items-center gap-1">
               <button type="button" data-v3-alle
                 onClick={alleOffen ? onAlleZu : onAlleAuf}

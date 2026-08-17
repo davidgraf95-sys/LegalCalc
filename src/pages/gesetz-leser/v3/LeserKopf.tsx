@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
-import { ebeneAngabe } from './erlassAnsicht';
+import { ebeneAngabe, zeigeVolltitel } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
@@ -33,7 +33,7 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // hier führt zur Gesetzes-Übersicht — in einem Pane pane-lokal, weil jedes
 // Pane seinen eigenen Navigator hat. Der Accessible-Name sagt es aus (§8).
 
-export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf, panelOeffner }: {
+export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederungKnopf, panelOeffner, suchZone }: {
   erlass: BrowseErlass;
   /** Laufender Artikel aus dem bestehenden Scroll-Spy («Art. 429»). */
   aktArtikel: string | null;
@@ -46,6 +46,16 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
   /** H3 — Öffner des Rechtsprechungs-Panels («⚖ 14 Entscheide →»). Leer
    *  gelassen kostet er nichts: kein Platzhalter, keine reservierte Fläche. */
   panelOeffner?: ReactNode;
+  /** ── Ä19 (H2b) · zweite Zeile des klebenden Kopf-BLOCKS ────────────────────
+   *  Das Such-/Sprungfeld, wo die Gliederung NICHT als Spalte steht (Handy,
+   *  Split-Pane, Desktop mit eingeklappter Gliederung). Vorher gab es in genau
+   *  diesen drei Lagen gar kein erreichbares Feld — gemessen im Split @1440:
+   *  `[data-v3-suchsprung] input` count === 0.
+   *  Die Kopf-ZEILE bleibt davon unberührt: ihre Element-Zahl ändert sich nicht
+   *  (Design-Grundlage Kap. 6, ≤ 4 Elemente). Der Rahmen entscheidet, ob es die
+   *  Zone gibt, und legt ihre Höhe als `--leser-v3-such-h` aus — diese Datei
+   *  rendert sie nur (§3) und bleibt ohne Breiten-Zweig. */
+  suchZone?: ReactNode;
 }) {
   const navigate = useNavigate();
   const el = kopfElemente(stufe);
@@ -71,7 +81,25 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
     <div
       data-v3-kopf
       className="sticky z-[17] -mx-1 mb-4 border-b border-line bg-paper px-1"
-      style={{ top: 'var(--leser-v3-kopf-top)' }}
+      // ── Ä1 (H2b) · KEINE LEERZONE UNTER DER KRUMEN-LEISTE ──────────────────
+      // Gemessen 17.8.2026 @1440: die Krumen-Leiste endet bei y = 102, der
+      // V3-Kopf begann bei y = 150 — 48 px Leerzone im Ruhezustand, die beim
+      // ersten Scroll auf 0 zusammenfiel (dann klebt der Kopf bei y = 100). Der
+      // Nutzer sah also eine Lücke, die sich beim Scrollen von selbst schloss:
+      // zwei verschiedene Bilder derselben Kopfzone.
+      // Die 48 px sind die Polsterung des ROUTE-Wrappers (`py-8 sm:py-12` in
+      // `components/layout/Shell.tsx`, im Pane `py-6` in `Pane.tsx`) — sie gehört
+      // dem Seiteninhalt, nicht einer klebenden Leiste. Der Kopf verschluckt sie
+      // darum genau einmal, über `--leser-v3-kopf-luecke`: die Vorgabe steht in
+      // `src/index.css` (mit derselben 640-px-Schwelle wie der Wrapper), der
+      // Pane-Wert kommt inline vom Rahmen. DIESE Datei kennt weiterhin keinen
+      // `imPane`- und keinen Breakpoint-Zweig (Kap. 10) — sie liest eine Variable.
+      // BEWACHT: `e2e/leser-v3-kopf-buendig.e2e.ts` misst die Lücke auf H/D/S
+      // gegen 0 und wird rot, wenn eine der beiden Polsterungen sich ändert.
+      style={{
+        top: 'var(--leser-v3-kopf-top)',
+        marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))',
+      }}
     >
       <div className="flex items-center gap-2 sm:gap-3" style={{ height: 'var(--leser-v3-kopf-h)' }}>
         {/* ── Ortsangabe: EINE schrumpfende Zone (Krume + laufender Artikel) ── */}
@@ -83,8 +111,28 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
               <span aria-hidden className="shrink-0 text-ink-300">›</span>
             </>
           )}
-          <span data-v3-kopf-kuerzel className="shrink-0 font-medium text-ink-800">{erlass.kuerzel}</span>
-          {el.volltitel && (
+          {/* Ä21: seit der Volltitel entfallen kann, ist das Kürzel manchmal der
+              GANZE Name (ZH-211.11: 45 Zeichen). Es darf darum schrumpfen statt
+              die Zone zu sprengen — `truncate` statt `shrink-0`. Es bleibt damit
+              sichtbar (`kopfElemente.kuerzel === true`), und die Zusage «der
+              Artikel fällt nie» wird sogar STÄRKER: er trägt weiterhin `shrink-0`
+              und gibt jetzt zuletzt nach. Bewusst OHNE `title`: den Volltitel hier
+              als Tooltip nachzuschieben hiesse, ihn doch wieder mitzuführen — er
+              steht in der H1 unmittelbar darunter. */}
+          <span data-v3-kopf-kuerzel className="min-w-0 truncate font-medium text-ink-800">{erlass.kuerzel}</span>
+          {/* ── Ä21 (H2b) · DER NAME STEHT EINMAL ─────────────────────────────
+              Gemessen 17.8.2026 an ZH-211.11: «Gebührenverordnung des
+              Obergerichts (GebV OG)» stand in der App-Krume, direkt darunter als
+              V3-Kürzel UND ein drittes Mal als Volltitel daneben — weil dort das
+              Register-Kürzel bereits der volle Name ist. Drei Ausgaben derselben
+              Angabe in zwei Zentimetern (§5).
+              Die Entscheidung liegt in `erlassAnsicht.zeigeVolltitel` (rein,
+              erlassneutral, unit-geprüft): trägt der Titel neben dem Kürzel keine
+              eigene Auskunft, entfällt er. Bund, Verordnung und Staatsvertrag
+              sind unberührt — dort sagt der Volltitel etwas anderes als das
+              Kürzel. Der volle Wortlaut bleibt im `title` des Kürzels erreichbar,
+              es verschwindet also keine Information (§8). */}
+          {el.volltitel && zeigeVolltitel(erlass) && (
             <span className="min-w-0 truncate text-ink-500" title={`${erlass.titel} · ${ebene.label}`}>{erlass.titel}</span>
           )}
           {/* Der laufende Artikel fällt NIE (Kap. 4a) — darum `shrink-0`: beim
@@ -115,6 +163,12 @@ export function LeserKopf({ erlass, aktArtikel, fussnotenAnzahl, stufe, gliederu
           </button>
         </div>
       </div>
+      {/* Ä19: die Such-Zone als zweite Zeile DESSELBEN klebenden Blocks — nicht
+          als eigenes `sticky`-Element darunter. Zwei gestapelte Sticky-Blöcke
+          hätten zwei `top`-Werte, zwei z-Ebenen und zwischen sich den `mb-4`
+          dieses Kopfes als durchscheinenden Spalt gebraucht. Ein Block, eine
+          Kante, eine Höhe (`--leser-v3-kopf-h` + `--leser-v3-such-h`). */}
+      {suchZone}
     </div>
   );
 }
