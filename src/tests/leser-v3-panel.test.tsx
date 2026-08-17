@@ -4,7 +4,7 @@ import {
   PANEL_REITER, gruppiereKanten, normZitat, oeffnerLabel, oeffnerName, panelBezug, shardGeladen,
   trefferZahl, zaehlerAttribut,
 } from '../pages/gesetz-leser/v3/panelModell';
-import { kopfElemente } from '../pages/gesetz-leser/v3/kopfStufen';
+import { kopfElemente, panelForm } from '../pages/gesetz-leser/v3/kopfStufen';
 import { PanelSachgebiet } from '../pages/gesetz-leser/v3/PanelSachgebiet';
 import { belegung } from '../pages/gesetz-leser/parts/leserTastaturBelegung';
 import type { Bezug } from '../lib/rechtsprechung/bezuege';
@@ -182,6 +182,22 @@ describe('Ä11 — wo der Öffner steht', () => {
     expect(kopfElemente('mini').panel).toBe(false);
     expect(kopfElemente('kompakt').panel).toBe(true);
     expect(kopfElemente('voll').panel).toBe(true);
+  });
+});
+
+describe('panelForm — welche Kante das Blatt nimmt', () => {
+  it('nur auf der breitesten Stufe UND mit ganzer Seite: rechts angeschlagen (Skizze D)', () => {
+    expect(panelForm('voll', true)).toBe('rechts');
+  });
+
+  it('jede geteilte Fläche bekommt das Bottom-Sheet — «nie drei vertikale Flächen»', () => {
+    expect(panelForm('voll', false)).toBe('unten');
+    expect(panelForm('kompakt', false)).toBe('unten');
+  });
+
+  it('auf schmalen Stufen unten, auch wenn die Seite ganz zur Verfügung steht (Daumenzone)', () => {
+    expect(panelForm('kompakt', true)).toBe('unten');
+    expect(panelForm('mini', true)).toBe('unten');
   });
 });
 

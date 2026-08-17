@@ -94,6 +94,12 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   })
 
   test('(e) axe: das GEÖFFNETE Panel ist AA-sauber, auf D und auf H', async ({ page }) => {
+    // ZWEI Viewports × zwei Shard-Ladevorgänge × zwei axe-Läufe in einem Fall:
+    // unter 5 parallelen Workern lief er ins 30-s-Test-Budget (gemessen
+    // 17.8.2026, isoliert grün, workers=2 grün). `test.slow()` ist das
+    // Repo-Mittel dafür (Präzedenz `leser-kopf-paritaet`) — es verdreifacht das
+    // BUDGET und lockert keine einzige Zusage.
+    test.slow()
     // Die bestehende a11y-Stichprobe (`e2e/a11y.e2e.ts`) läuft nur im Projekt
     // `chromium` und öffnet das Panel nicht — eine neue Fläche, die man nur
     // geschlossen scannt, ist ungescannt (derselbe Befund wie beim

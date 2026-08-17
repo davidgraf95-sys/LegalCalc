@@ -21,7 +21,7 @@ import { normZitat, panelBezug, shardGeladen, trefferZahl, usePanelBezuege, useP
 import { SuchSprungFeld } from './SuchSprungFeld';
 // B9 (H2b-Nachzug): die zwei Zonen-Höhen gehören der Such-Zone, nicht hierher.
 import { SuchZone, SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
-import { kopfElemente, kopfHoehe, useKopfStufe } from './kopfStufen';
+import { kopfElemente, kopfHoehe, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 // B8 (H2b-Nachzug): EINE Ableitung des Bestimmungsworts. `overlineGebiet`,
 // `titelKennung` und `ReiterAktion` sind mit dem Erlass-Kopf nach
@@ -369,7 +369,7 @@ export function LeserRahmenV3({
             füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
             und liegt ausserhalb des Flusses. */}
         {panelZone && (
-          <LeserPanelZone paneZiel={overlayZiel} paneRolle={paneRolle}
+          <LeserPanelZone form={panelForm(stufe, !umgebung.imPane)} paneZiel={overlayZiel} paneRolle={paneRolle}
             zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
             normZitat={normZitat(panelArtikel, erlass.kuerzel)}
             artikelLabel={panelArtikel} aktArtikel={panelZiel.token} zaehler={panelZahl} />

@@ -27,8 +27,10 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // keinen Layout-Sprung (§15/2, CLS).
 
 export function LeserPanelZone({
-  paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat, artikelLabel, aktArtikel, zaehler,
+  form, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat, artikelLabel, aktArtikel, zaehler,
 }: {
+  /** Gestalt des Blatts — `panelForm(stufe, imPane)` im Rahmen entscheidet. */
+  form: 'rechts' | 'unten';
   /** Overlay-Wurzel des Panes (nur im Pane gesetzt) — dieselbe Schicht, in die
    *  das Gliederungs-Blatt portaliert (§5, H2-Befund: die Rolle wandert MIT). */
   paneZiel: HTMLElement | null;
@@ -117,17 +119,27 @@ export function LeserPanelZone({
         <>
           <div className={imPaneBlatt ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : 'fixed inset-0 z-40 bg-ink-900/30'}
             onClick={schliesse} aria-hidden />
+          {/* Die Kante: rechts (D) oder unten (H/Pane) — `panelForm`. Beides
+              `fixed`/`absolute`, also ohne Platzbedarf im Fluss. `w-[22rem]` ist
+              die Zahl der Skizze; `max-w` hält sie auf schmalen Fenstern im Bild. */}
           <div role="dialog" aria-modal={imPaneBlatt ? undefined : true} aria-labelledby={titelId}
+            data-v3-panel-form={form}
             className={`${imPaneBlatt
               ? 'pointer-events-auto absolute inset-x-0 bottom-0 top-8 z-50'
-              : 'fixed inset-x-0 bottom-0 z-50'} flex flex-col`}
+              : form === 'rechts'
+                ? 'fixed bottom-0 right-0 z-50 w-[22rem] max-w-[calc(100vw-2rem)] p-2'
+                : 'fixed inset-x-0 bottom-0 z-50'} flex flex-col`}
             style={imPaneBlatt ? undefined : { top: 'var(--leser-kopf-h)', maxHeight: 'calc(100dvh - var(--leser-kopf-h))' }}>
             <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt}
               onSchliessen={schliesse} panelRef={panelRef}
-              // Griffleiste wie im Gliederungs-Blatt: dieselbe Geste, dieselbe
-              // Optik — ein zweites Sheet-Idiom wäre die schlechtere Wucherung.
-              kopfExtra={<div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-line" />} />
+              // Griffleiste NUR am unten angeschlagenen Blatt: sie ist das Zeichen
+              // für «von unten wischbar» (dieselbe Geste und Optik wie im
+              // Gliederungs-Blatt, §5). Am rechten Rand wäre sie ein Versprechen
+              // ohne Geste (§8).
+              kopfExtra={form === 'unten'
+                ? <div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-line" />
+                : undefined} />
           </div>
         </>
       )}

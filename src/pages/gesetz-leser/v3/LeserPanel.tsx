@@ -69,10 +69,13 @@ export function LeserPanel({
   }
 
   return (
-    // Nur oben gerundet: das Blatt klebt an der Bildschirm- bzw. Pane-Kante, und
-    // eine unten gerundete Ecke gegen diese Kante ist ein Bildfehler, kein Detail.
+    // `rounded-xl` mit vollem Rahmen: die Zone gibt dem rechts angeschlagenen
+    // Blatt eine Polsterung (`p-2`), es steht dort also frei im Bild; das unten
+    // angeschlagene füllt die Breite und stösst an die Kante, wo die untere
+    // Rundung unsichtbar bleibt. EINE Kantenregel für beide Gestalten statt zwei
+    // Sonderfälle — die Gestalt entscheidet die Zone, nicht diese Datei (§3).
     <div ref={panelRef} tabIndex={-1} id={panelId} data-v3-panel
-      className="flex min-h-0 flex-col overflow-hidden rounded-t-xl border-t border-line bg-paper-raised shadow-lg">
+      className="flex min-h-0 flex-col overflow-hidden rounded-xl border border-line bg-paper-raised shadow-lg">
       {kopfExtra}
       {/* ── Kopf: WAS ist das, WORAUF bezieht es sich, WEG damit ─────────────── */}
       <div className="flex shrink-0 items-baseline justify-between gap-2 border-b border-line px-2.5 py-1.5">

@@ -77,6 +77,38 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
   };
 }
 
+/**
+ * WELCHE GESTALT hat das Panel-Blatt? (Kap. 4d)
+ *
+ * Beides sind Überlagerungen — sie nehmen dem Lesetext keine Spalte weg und
+ * brechen ihn darum nie neu um (Rechnung zur gestrichenen Grid-Spalte im
+ * Rahmen). Nur die KANTE, an der sie hängen, unterscheidet sie:
+ *
+ *   'rechts'  22 rem breit, volle Höhe, am rechten Rand — die Gestalt, die die
+ *             Skizze für D zeigt («Panel rechts 22rem»). Der Lesetext bleibt
+ *             links davon sichtbar und lesbar; das Panel ist Beiwerk und sieht
+ *             auch so aus.
+ *   'unten'   Bottom-Sheet über die ganze Breite — die Gestalt für H (Daumenzone)
+ *             und für jede geteilte Fläche (dort verbietet die harte Regel eine
+ *             dritte vertikale Fläche, und ein 22-rem-Streifen in einer
+ *             600-px-Spalte liesse vom Text nichts übrig).
+ *
+ * `vollflaechig` = der Leser hat die ganze Seite für sich (Einzelansicht). Die
+ * Prop heisst NICHT `imPane`, und das ist kein Kosmetik-Entscheid: die
+ * Fundament-Sonde lässt `imPane` nur in den Wurzel-Dateien zu — zu Recht, denn
+ * eine Datei, die den Hüllen-Zustand selbst liest, verzweigt auf ihn. Diese
+ * Funktion verzweigt auf eine EIGENSCHAFT DER FLÄCHE, die ihr der Rahmen
+ * mitteilt; die eine Übersetzung (`!umgebung.imPane`) steht dort. Der erste Bau
+ * hiess hier `imPane` und wurde von der Sonde zurückgewiesen (17.8.2026).
+ *
+ * Gemessen 17.8.2026 am ersten Bildbogen: auf D @1440 wirkte das Bottom-Sheet
+ * wie ein Vollbild-Dialog — es verdeckte den ganzen Gesetzestext, obwohl das
+ * Panel Beiwerk ist. Genau das behebt die Unterscheidung.
+ */
+export function panelForm(stufe: KopfStufe, vollflaechig: boolean): 'rechts' | 'unten' {
+  return vollflaechig && stufe === 'voll' ? 'rechts' : 'unten';
+}
+
 /** Höhe der Kopfzeile je Stufe (Design-Grundlage Kap. 3: H 48 px · D 56 px ·
  *  S 48 px). EINE Quelle — der Rahmen legt sie als `--leser-v3-kopf-h` aus und
  *  die Sprung-Offsets (`--nt-stick`) rechnen daraus (Risiko R1). */
