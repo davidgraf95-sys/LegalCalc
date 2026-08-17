@@ -51,9 +51,17 @@ async function luecke(page: Page, krumeWahl: string): Promise<number> {
  *  ist; nach oben −2, weil der Kopf konstruktiv bündig anschliesst und 1–2 px
  *  Überlappung nur aus Sub-Pixel-Rundung entstehen könnten (gemessen 17.8.2026:
  *  0 px auf allen drei Breiten, keine Überlappung).
- *  ROT IN BEIDE RICHTUNGEN (§6.7): in `v3/LeserKopf.tsx` die Zeile
- *  `marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))'` ENTFERNEN ⇒ +48/+32/
- *  +24 px; sie auf `marginTop: '-4rem'` setzen ⇒ −64/−64/−64 px. Beide gemessen. */
+ *  ROT IN BEIDE RICHTUNGEN (§6.7), beides am 17.8.2026 gemessen:
+ *   · NACH OBEN: in `v3/LeserKopf.tsx` die Zeile
+ *     `marginTop: 'calc(-1 * var(--leser-v3-kopf-luecke, 0px))'` entfernen ⇒
+ *     +48 px (a) / +32 px (b) / +24 px (c).
+ *   · NACH UNTEN: `top: 'var(--leser-v3-kopf-top)'` auf `top: '0rem'` setzen ⇒
+ *     im Ruhezustand 0 px, GESCROLLT −101 px: der Kopf klebt an der
+ *     Fensterkante und schiebt sich unter die opake Krumen-Leiste, die
+ *     Ortsangabe ist verdeckt. GEGENPROBE, die NICHT trägt und darum hier
+ *     steht: `marginTop: '-4rem'` bleibt grün — im Ruhezustand schluckt die
+ *     Wrapper-Polsterung den Wert, im geklebten Zustand klemmt `top` ihn ab.
+ *     Wer die untere Schranke prüfen will, muss also am `top` drehen. */
 const LUECKE_MIN = -2
 const LUECKE_MAX = 0
 

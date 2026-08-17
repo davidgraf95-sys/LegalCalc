@@ -143,14 +143,26 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
-  // ── B9 (H2b-Nachzug) · DIE AUSGELEGTE HÖHE IST DIE GEMESSENE ──────────────
+  // ── B9 (H2b-Nachzug) · DIE AUSGELEGTE HÖHE DECKT DAS MARKUP ───────────────
   // `--leser-v3-such-h` speist `--nt-stick`, also den Sprung-Offset JEDES
   // Artikel-Ankers. Die zwei Werte standen als rem-Literale im Rahmen, das
-  // Markup in `SuchZone.tsx` — ohne Wächter dazwischen (Klasse LM-003). Jetzt
-  // exportiert die Zone die Konstanten, und diese Spec misst, dass sie stimmen.
+  // Markup in `SuchZone.tsx` — ohne Wächter dazwischen (Klasse LM-003).
+  //
+  // WAS HIER GEMESSEN WIRD, und was NICHT: die Zone trägt `height: var(--leser-v3
+  // -such-h)` im Style. Ihre gemessene Höhe ist der Variable darum IMMER gleich —
+  // ein Vergleich der beiden wäre eine Tautologie und könnte nicht scheitern
+  // (§6.7; genau so gebaut, im Sabotage-Lauf als blind ERKANNT und ersetzt).
+  // Geprüft wird stattdessen die NATÜRLICHE Höhe des Markups: die Spec setzt
+  // `height: auto`, misst, und stellt zurück. Gemessen 17.8.2026 @390 (BGFA):
+  // Ruhe natürlich 40 px gegen ausgelegt 44 px · mit Suche 64 gegen 68 — die
+  // Auslegung trägt konstant 4 px Reserve (halbe Zeile), damit ein Umbruch im
+  // Zähler die Zone nicht sprengt. Die Schranke lässt genau das zu und nicht mehr.
   // ROT ZU BEKOMMEN (§6.7): `SUCH_H_RUHE` in `v3/SuchZone.tsx` auf `'3.5rem'`
-  // setzen ⇒ ausgelegt 56 px, gemessen 44 px.
-  test('(e) die Höhe der Such-Zone stimmt mit der ausgelegten Variable überein', async ({ page }) => {
+  // setzen ⇒ ausgelegt 56 px, natürlich 40 px, Reserve 16 px > 4;
+  // auf `'2rem'` ⇒ ausgelegt 32 px < natürlich 40 px (Inhalt läuft heraus).
+  const RESERVE_MAX = 4
+
+  test('(e) die ausgelegte Höhe der Such-Zone deckt ihr Markup — ohne Luft', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/gesetze/bund/BGFA?leser=v3')
@@ -161,26 +173,35 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
       const wurzel = document.querySelector('[data-leser-v3="rahmen"]') as HTMLElement | null
       if (!zone || !wurzel) return null
       const roh = getComputedStyle(wurzel).getPropertyValue('--leser-v3-such-h').trim()
-      // rem → px über eine Sonde, damit die Spec keine 16-px-Annahme trifft.
-      const probe = document.createElement('div')
-      probe.style.cssText = `position:absolute;visibility:hidden;height:${roh}`
-      wurzel.appendChild(probe)
-      const ausgelegt = Math.round(probe.getBoundingClientRect().height)
-      probe.remove()
-      return { ausgelegt, gemessen: Math.round(zone.getBoundingClientRect().height), roh }
+      const ausgelegt = Math.round(zone.getBoundingClientRect().height)
+      // Natürliche Höhe: kurz freigeben, messen, zurückstellen.
+      const vorher = zone.style.height
+      zone.style.height = 'auto'
+      const natuerlich = Math.round(zone.getBoundingClientRect().height)
+      zone.style.height = vorher
+      return { roh, ausgelegt, natuerlich }
     })
 
     const ruhe = await mass()
     expect(ruhe, 'Zone oder Rahmen nicht gefunden').not.toBe(null)
-    expect(ruhe!.gemessen, `Ruhezustand: ausgelegt ${ruhe!.roh} = ${ruhe!.ausgelegt} px, gemessen ${ruhe!.gemessen} px`)
-      .toBe(ruhe!.ausgelegt)
+    expect(ruhe!.ausgelegt,
+      `Ruhe: ausgelegt ${ruhe!.roh} = ${ruhe!.ausgelegt} px deckt die natürlichen ${ruhe!.natuerlich} px nicht`)
+      .toBeGreaterThanOrEqual(ruhe!.natuerlich)
+    expect(ruhe!.ausgelegt - ruhe!.natuerlich,
+      `Ruhe: ${ruhe!.ausgelegt - ruhe!.natuerlich} px Reserve über dem Markup (erlaubt ${RESERVE_MAX})`)
+      .toBeLessThanOrEqual(RESERVE_MAX)
 
     // Mit laufender Suche wächst die Zone um die Zähler-Zeile — der zweite Wert.
     await page.locator('[data-v3-such-zone] input').fill('Anwalt')
     await expect(page.locator('[data-v3-treffer-weg]')).toBeVisible({ timeout: 15_000 })
     const aktiv = await mass()
-    expect(aktiv!.gemessen, `mit Suche: ausgelegt ${aktiv!.roh} = ${aktiv!.ausgelegt} px, gemessen ${aktiv!.gemessen} px`)
-      .toBe(aktiv!.ausgelegt)
+    expect(aktiv!.ausgelegt,
+      `mit Suche: ausgelegt ${aktiv!.roh} = ${aktiv!.ausgelegt} px deckt die natürlichen ${aktiv!.natuerlich} px nicht`)
+      .toBeGreaterThanOrEqual(aktiv!.natuerlich)
+    expect(aktiv!.ausgelegt - aktiv!.natuerlich,
+      `mit Suche: ${aktiv!.ausgelegt - aktiv!.natuerlich} px Reserve (erlaubt ${RESERVE_MAX})`)
+      .toBeLessThanOrEqual(RESERVE_MAX)
+    // Positiv-Sonde: die Zone wächst überhaupt — sonst prüften beide Fälle dasselbe.
     expect(aktiv!.ausgelegt, 'die Zone wächst mit der Suche gar nicht — Fall untauglich')
       .toBeGreaterThan(ruhe!.ausgelegt)
 
