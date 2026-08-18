@@ -4,6 +4,7 @@
 // Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI } from './helpers/budgets'
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -52,7 +53,10 @@ test.describe('/rechtsprechung — Übersicht', () => {
 })
 
 test.describe('Verzahnung im Gesetzes-Reader', () => {
-  test('BGG zeigt im Kontext-Panel die «Bundesgerichtsentscheide»-Gruppe', async ({ page }) => {
+  test('BGG zeigt im Kontext-Panel die «Bundesgerichtsentscheide»-Gruppe', async ({ page }, info) => {
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'das B3-Kontext-Panel am Fuss des Lesers (`KontextPanel.tsx`, nur Ist-Hülle)',
+      '`leser-v3-panel-facetten` (b) — die drei Reiter des V3-Panels, mit Maus und Tastatur'))
     // Verzahnung läuft jetzt über das einheitliche B3-Kontext-Panel (Norm ↔
     // Entscheid ↔ Material ↔ Werkzeug, KontextPanel.tsx) — die Entscheid-Gruppe
     // trägt den Titel «Bundesgerichtsentscheide». (Locator 28.6. an das deployte

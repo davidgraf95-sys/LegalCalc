@@ -3,7 +3,25 @@
 Vorbereitung der Etappe **H4** des Roadmap-Schritts `W2·5m-LESER-V3` (Fahrplan
 `fahrplaene/FAHRPLAN-LESER-V3.md`, Kap. 7). Stand 17.8.2026, Branch
 `feat/leser-v3-h4-vorbereitung`, Basis `a516f12ef` (= S2 inkl. Nachzug).
-**Der Umschalter wurde NICHT umgelegt** — der Default bleibt V1.
+
+> ## ✅ DER UMSCHALTER IST UMGELEGT — 18.8.2026
+>
+> **Grundlage: Davids Ja vom 17.8.2026 spätabends** (Chat, wörtlich «ja und c,
+> mach so») — damit ist Kriterium 9 der Matrix unten erfüllt und **Ä60 = (c)**
+> entschieden (breiterer Leser-Rahmen; baut ein eigener PR).
+> Gebaut auf Branch `feat/leser-v3-h4-flip`, Basis `f918a0b12`.
+>
+> **Was gilt seither:** ohne Adresszusatz sieht jede Besucherin **V3**. Der
+> Rückweg ist `?leser=v1` und wird gemerkt (eigener Schlüssel `lm.leser.v1`,
+> damit der alte `lm.leser.v3='1'` niemandem still das Gegenteil seiner Wahl
+> zeigt). Die alte Hülle bleibt bis **H5** lauffähig; H5 folgt spätestens einen
+> PR später.
+>
+> **Der Text unterhalb dieser Zeile ist der Stand VOR dem Flip** und bleibt zur
+> Nachvollziehbarkeit unverändert stehen — er ist die Grundlage, auf der David
+> entschieden hat. Was der Flip selbst gemessen hat, steht in §1 unter
+> «Flip-Stand 18.8.2026»; was am Testapparat geschehen ist, in §7 unter
+> «Vollzug».
 
 **Messbedingung für alles hier** (§0 Ziff. 3c — eine Zahl ohne Bedingung ist
 keine Zahl): macOS Apple Silicon, `vite preview` gegen frisch gebautes `dist/`,
@@ -79,6 +97,50 @@ Umschalter nicht ohne dein Ja um.
 ---
 
 ## 1 · Kriterien-Matrix (Kap. 7, «alle, nicht auswählbar»)
+
+### ✅ Flip-Stand 18.8.2026 — dieselben Kriterien, am geflippten Stand nachgemessen
+
+Die Matrix darunter entstand **vor** dem Flip, mit V1 als Grundzustand und V3
+unter Flag. Sie ist die Grundlage von Davids Ja und bleibt unverändert stehen.
+Diese Tabelle misst dieselben Kriterien noch einmal **am Flip-Stand**, also
+gegen den neuen Grundzustand — ohne Adresszusatz.
+
+**Messbedingung:** macOS Apple Silicon, `vite preview` gegen frisch gebautes
+`dist/` (Basis `f918a0b12` + Flip-Commits), 1280 × 900 sofern nicht anders
+vermerkt, je Kombination ein frischer Browser-Kontext (kalt), `reducedMotion:
+reduce`, Thema per `localStorage` gepinnt **und** `colorScheme` emuliert.
+Rohdaten `flip-stand.json`.
+
+| # | Kriterium | Ergebnis | Zahl am Flip-Stand |
+|---|---|---|---|
+| 1 | unveränderte **N-Tests** grün — jetzt im **Default**-Projekt gegen V3 | ✅ | **43 Fälle über 9 N-Spec-Dateien, 0 rot** (`leser-v3-flag` 3 · `leser-suche-vertrag-b8` 5 · `leser-ohne-gliederungslinie` 2 · `gesetze-marginalie` 4 · `gesetze-pdf-download` 2 · `gesetze-ux-9punkte` 9 · `gesetze-ux-g3b-anhang` 6 · `gesetze-ux-g3a` 4 · `leser-kopf-g2b` 8). Gegenprobe alte Hülle: `--project=leser-v1` **132 passed, Exit 0** |
+| 2 | **`leser-kopf-paritaet`** grün | ✅ | 1 Fall, beide Split-View-Panes, im **Default**-Projekt gegen V3 — vor dem Flip lief er im Flag-Projekt |
+| 3 | **PX** (Pixelvergleich) grün | ✅ **3/3 in Ruhe** | `PX=1 --project=px` dreimal hintereinander: **2 passed, Exit 0 · 24.0 s / 24.0 s / 23.9 s**. Der Lastfall aus der Matrix unten (2/5 unmittelbar nach einem 8-Worker-Lauf) ist damit **nicht** entkräftet — er bleibt der offene §17-Punkt, hier wurde die Ruhe-Bedingung gemessen |
+| 4 | **NM** in keiner der drei Aufgaben verschlechtert | ⚠️ unverändert wie unten | Der Flip ändert am Bedienweg nichts — er ändert, wer ihn ohne Adresszusatz sieht. NM-2 bleibt der ausgewiesene Preis (+1 Schritt gegenüber V1), NM-1/NM-3 bleiben besser |
+| 5 | **CLS ≤ Ist-Stand** | ✅ *(mit einem gemeldeten Fall)* | `leser-kopf-cls-s3` **4/4 grün seriell** (`--workers=1`). Im 5-Worker-Voll-Lauf riss `v3 @390` einmal — **seriell grün**, also Parallel-Last, kein Produktbefund (Messbedingung nennen: §0 Ziff. 3c). **Gemeldet, nicht verrechnet:** `leser-r1-r2:517` misst @390 unter 6× Drossel CLS 0.0202 gegen Budget 0 — der eine offen rote Fall, Begründung in §7c |
+| 6 | **axe** grün, hell **und** dunkel | ✅ | **0 critical/serious in 10 Kombinationen** (5 Erlasse × hell/dunkel), alle **ohne Flag**, also gegen V3 als Grundzustand. Dokumentiert bleibt je 1 × der begründete `link-in-text-block` (B-2). Tags `wcag2a`/`wcag2aa`/`wcag21a`/`wcag21aa` wie `e2e/a11y.e2e.ts` |
+| 7 | **Kantons-Probe** grün, ohne Flag | ✅ | **BS-640.100** (292 Bestimmungen) und **ZH-211.11** (23) ohne Adresszusatz: V3-Rahmen 1 · V3-Kopf 1 · Gliederung 1 · **0 Konsolenfehler**; V1-Menü 0. Bund-Probe gleich: StPO (480) · VMWG (32) · LugÜ (91). Die `h1` trägt in allen fünf Fällen den amtlichen Titel |
+| 8 | drei bekannte **Flaker** mit Wurzel-Fix | ⚠️ teilweise, unverändert | `leser-ohne-gliederungslinie` **2/2 grün seriell** (im Voll-Lauf unter 5 Workern einmal rot — dieselbe Signatur wie am 17.8., Wurzel Locator-Kosten). 2 von 3 weiterhin nicht reproduzierbar |
+| 9 | **David-Go** nach Kontaktbogen | ✅ **erteilt 17.8.2026** | Chat, wörtlich «ja und c, mach so» |
+| — | **Rückweg wirksam** *(neu, erst am Flip-Stand prüfbar)* | ✅ | `?leser=v1` auf BS-640.100: V3-Rahmen **0**, V1-Ansicht-Menü **1**, gemerkt `lm.leser.v1='1'`. Der Rückweg ist damit **positiv** belegt, nicht bloss über die Abwesenheit des V3-Rahmens |
+
+**Rot-Beweis, dass die umgehängten Specs wirklich V3 messen (§6.7).** Der Default
+wurde lokal für einen Lauf auf V1 zurückgestellt (`leserFlag.ts`, neu gebaut,
+danach zurückgenommen — im Branch ist davon nichts):
+
+| Spec | gegen den ALTEN Default | gegen den Flip-Stand |
+|---|---|---|
+| `leser-optionen:76` (auf drei Schalter umgehängt) | **ROT** — `getByRole('switch', {name: 'Rechtsprechung im Text'})`: *element(s) not found* | grün |
+| `leser-v3-umschalten` (c) (R10 gespiegelt) | **ROT** — `[data-leser-v3="rahmen"]`: erwartet 1, erhalten **0** | grün |
+| `gesetze-ux-g3a` (Parität, in `N_SPECS`) | **grün** | grün |
+
+Die dritte Zeile ist die Kontrollgruppe: eine echte Paritäts-Spec muss in beiden
+Hüllen grün sein, sonst misst sie die Hülle statt den Normtext.
+
+---
+
+### Die Matrix vor dem Flip (17./18.8.2026) — Entscheidungsgrundlage, unverändert
+
 
 | # | Kriterium | Ergebnis | Zahl |
 |---|---|---|---|
@@ -378,7 +440,114 @@ ein weiterer lokaler Lauf, sondern die CI-Forensik am rohen Shard-Log.
 
 ---
 
-## 7 · B-Specs — Umhäng-Liste für H4 (Vorbereitung, kein Umbau)
+## 7 · B-Specs — Umhäng-Liste für H4 ✅ **VOLLZOGEN 18.8.2026**
+
+> **Vollzug, und was die Liste unten NICHT wusste.** Die Umhängung ist gebaut
+> (Commits `39f3a27d5`, `b92a5956c`, `dc9301893`). Die Arbeitsliste unten war
+> **unvollständig**: sie entstand per Grep gegen die Ist-Hülle und kannte sechs
+> betroffene Dateien. Der erste **Voll-Lauf am Flip-Stand**
+> (`npx playwright test --project=chromium`, 634 Tests, 18.8.2026) meldete **47
+> rot in 18 Dateien** — **zwölf Dateien mehr**, als hier stehen. Das ist der
+> belegte Grund, warum die Reihenfolge «erst flippen, dann messen, dann
+> umhängen» richtig war und eine Grep-Liste den Lauf nicht ersetzt (§0 Ziff. 3:
+> Verteilung statt Einzelwert).
+>
+> Die zwölf zusätzlichen Dateien fallen alle in **eine** Klasse, die die Liste
+> unten strukturell nicht sehen konnte: sie greppte nach Hüllen-Selektoren
+> (`.lc-leser > header`, `data-such-slot`), nicht nach **Montagepunkten**. Die
+> Rechtsprechungs- und Materialien-Auskunft stand in V1 am **Artikelfuss** und im
+> **Gliederungs-Scroller**; V3 hat sie mit Pos. 12 / Kap. 4d ins Panel gezogen.
+> Jede Spec, die dort etwas behauptet, ist in V3 nicht falsch, sondern
+> **gegenstandslos** — und keine davon trägt einen der gegreppten Selektoren.
+
+### 7a · Vollzugs-Tabelle (gemessen am Flip-Stand, 18.8.2026)
+
+Verdikte: **UMGEHÄNGT** = Anker/Selektor an V3 nachgezogen, Aussage unverändert ·
+**GEPINNT (ganz)** = Datei läuft nur noch im Projekt `leser-v1` (`V1_NUR`) ·
+**GEPINNT (Fall)** = Datei läuft in beiden Projekten, der Einzelfall trägt
+`test.skip` mit Begründung (`V1_GEMISCHT`, Muster `e2e/helpers/istHuelle.ts`) ·
+**GELÖSCHT** = Fall entfallen, Nichttrage-Nachweis in der Spalte rechts.
+
+| Spec (Fälle rot/total) | Verdikt | Was geschah · V3-Deckung bzw. Lücke |
+|---|---|---|
+| `gesetze-ux-g3a` | **UMGEHÄNGT** | `.lc-leser > header` → `.lc-leser header` (gemessen BV @1440: direktes Kind 0/1, Nachfahre 1/1). Steht seither in `N_SPECS` = läuft in BEIDEN Hüllen. Der `, header`-Fallback fiel — er wich auf den Topbar-Header aus und konnte nicht scheitern (§6.7) |
+| `leser-kopf-g2b` | **UMGEHÄNGT** | dieselbe Selektor-Korrektur, ebenfalls zurück in `N_SPECS` |
+| `leser-kopf-v2` | **UMGEHÄNGT** | Fussnotenmarke `[data-fn-ref]` statt `button[aria-label^="Fussnote"]` (der alte Selektor griff nach dem Flip den Menü-Schalter); B-1 misst die Facetten-Wirkung im Panel statt an der Bezüge-Zeile |
+| `leser-optionen` | **UMGEHÄNGT + 1 Paar GELÖSCHT** | drei `role=switch` statt zwei, beim NAMEN geprüft statt gezählt. Gelöscht: das B3-Paar — Nichttrage-Nachweis `leser-v3-umschalten` (a2) prüft dieselbe Aussage an denselben Erlassen **plus** dem null-Fall ZH-211.11 |
+| `leser-r1-r2` | **UMGEHÄNGT · 1 Fall OFFEN ROT** | Sheet-/Quickjump-Fall auf das EINE Feld (Pos. 4); ehrliche Ablehnung als sichtbarer Satz statt `role="alert"`. Ein Fall gelöscht («Desktop-TOC-Kopf trägt denselben Baustein» — `leser-v3-suchfeld-ueberall` (a)/(c) sagt strenger, dass es nur EINEN gibt). **Offen rot: A9-DoD, s. 7c** |
+| `leser-ruecksprung-r5-r7` | **UMGEHÄNGT** | `tocSprung` über `button[title]` statt `:not([aria-expanded])` (in V3 trägt auch der Titel-Knopf `aria-expanded`; gemessen 0 statt 39 Treffer, 90-s-Leerlauf). Rücksprung-Orakel wird gemessen statt auf die V1-Kopfhöhe 88 px gesetzt |
+| `leser-v3-umschalten` (1/n) | **UMGEHÄNGT** | R10 **gespiegelt**: ohne Flag rendert V3, `?leser=v1` führt zurück. Beide Richtungen im Fall, V1-Beweis POSITIV über `[data-ansicht-menu]` |
+| `leser-spy-w25d` (1/4) | **UMGEHÄNGT** | derselbe `aria-expanded`-Befund wie bei r5-r7 — der Locator fand 0 Elemente und lief ins 120-s-Budget, ohne je zu prüfen |
+| `leser-adresse-lm202` (1/16) | **UMGEHÄNGT** | Locator nimmt beide Feldnamen (V1 «Zu Artikel springen», V3 «Im Gesetz suchen oder zu einer Bestimmung springen») |
+| `leser-suche-a35-a40-a41` (1/4) | **UMGEHÄNGT** | Kopf-Zone `[data-v3-kopf]` neben `data-such-slot`/`data-inhalt-kopf`; geprüft wird «in EINER der beiden», weil A-2 die zwei Leisten verschmolzen hat |
+| `bezuege-facetten-b4` (6/6) | **GEPINNT (ganz)** | `[data-rechtsprechung-menu]` + `[data-bezuege-zeile]`. V3-Deckung: `leser-v3-panel-facetten` (a) prüft den ORT der drei Facetten. **Lücke: ihre WIRKUNG** (Zähler «5 von 16», Persistenz, Kanton-Schnitt) ist am V3-Panel unbewacht |
+| `bezuege-zeitstrahl-b5` (12/12) | **GEPINNT (ganz)** | derselbe Montagepunkt + Zeitstrahl. **Lücke: Von-Bis-Wirkung und die zwei MIGRATIONS-Fälle** («5 J.» → Von-Datum, «alle» bleibt offen) am V3-Panel unbewacht |
+| `leser-kontext-e4` (3/3) | **GEPINNT (ganz)** | Kontextfenster IM `[data-toc]`-Scroller (David 25.7.2026). V3-Deckung: `leser-v3-kontext-cls` |
+| `leser-trefferliste-overlay-mobil-w219` (2/2) | **GEPINNT (ganz)** | mobiles Feld liegt in V1 hinter dem Knopf «Im Gesetz suchen». V3-Deckung: `leser-v3-suchfeld-ueberall` (b), `leser-v3-blatt`, `leser-v3-treffer-reihenfolge` |
+| `split-view-a34` (2/2) | **GEPINNT (ganz)** | beide Fälle brauchen das ⧉ an der Bezüge-Zeile als Einstieg; Bug 1 misst zudem V1-Mechanik (Seed-Hash beim imPane-Wechsel). V3-Deckung: `leser-kopf-paritaet` (Split über NormPopover), `leser-v3-highlight-split`. **Lücke: A34/Bug1 (Leseposition beim Öffnen) und Bug2 («Ansicht» bleibt im Split sichtbar) mit V3-Einstieg** |
+| `verzahnung` (6/11) | **GEPINNT (Fall)** | 5 Fälle hüllenneutral und weiter scharf. **Lücke: MM4 ★-Wortlaut-Vergleich, MM5 «via Art. N» am Panel-Entscheid, Erwägungs-Sprung ab Panel** |
+| `leitfaelle-chips` (3/6) | **GEPINNT (Fall)** | «(d) V3» im Titel meint die UI-NAV-Stufe, nicht die Hülle. **Lücke: Kurztext-Popover am Panel-Chip** |
+| `normrevision-badge` (2/3) | **GEPINNT (Fall)** | ↻ an der Leitfall-Zeile. Die Temporal-Regel selbst deckt `src/tests` DOM-frei. **Lücke: ↻ am V3-Panel-Entscheid** |
+| `materialien-m5-verzahnung` (2/3) | **GEPINNT (Fall)** | **Die gewichtigste Lücke** — hier hängen RECHTSDATEN (kuratiertes «via Art. 24», Dokument-Stand, async-Merge). V3 HAT den Reiter «Materialien» (`v3/PanelMaterialien.tsx`), aber keine Spec weist die Daten dort nach |
+| `rechtsprechung` (1/n) | **GEPINNT (Fall)** | B3-Kontext-Panel am Leser-Fuss (`KontextPanel.tsx`, nur Ist-Hülle). V3-Deckung: `leser-v3-panel-facetten` (b) |
+| `leser-breite-a37` (1/3) | **GEPINNT (Fall)** | gemessen: V3 640 px (`max-w-reading`) gegen V1 672 px (`max-w-normtext`) — der Wert gehört zur 784-px-Zelle der alten Hülle. Die Zahl NICHT auf 640 gezogen: **Ä60 (c) ändert die V3-Rahmenbreite im Parallel-PR**, ein Anker, den ein anderer PR gleichzeitig verstellt, ist keiner |
+| `druck-fundstellen-z2` (1/7) | **GEPINNT (Fall)** | ⧉ an der Bezüge-Zeile als Split-Einstieg. **Lücke: der Druck IM Split für V3** |
+| `leser-weiterlesen-r4-r8` (1/10) | **GEPINNT (Fall)** | **kein Defekt, ein entschiedener Vorrangwechsel**: «/» und ⌘K gehören im V3-Leser dem Leser-Feld, nicht der Kopf-Suche (`v3/suchKuerzel.ts`, Bug-Check B1 16.8.2026). V3-Deckung: `leser-v3-suche-sprung` + `src/tests/leser-v3-kuerzel.test.ts` |
+| `hist-ansicht-w25i` | **UNBERÜHRT, grün** | die §7-Zeile unten verlangte Umhängen «(verifiziert)». Nachgemessen 18.8.2026: alle 10 Fälle laufen im Regelprojekt gegen V3 **ohne jede Änderung** grün. Nicht angefasst — ein Umbau ohne Fehlschlag ist keiner (§0 Ziff. 2) |
+| `gesetze-historie-badge` · `leser-kopf-cls-s3` · `leser-marken-geometrie` · `leser-kopf-a9` · `leser-lesemass` · `leser-gliederung-a33` · `leser-gliederung-kein-overflow` · `leser-history-hash` · `leser-suche-klappzustand` · `leser-toc-sprung` · `leser-position-u` | **UNBERÜHRT, grün** | alle im Voll-Lauf gegen V3 grün. Die §7-Zeilen unten führten sechs davon als «UMHÄNGEN — Verdacht»; der Verdacht ist **widerlegt**, und keine Zeile wurde «auf Verdacht» angefasst |
+
+### 7b · H5-Auflage: die Deckungslücken, an einer Stelle
+
+H5 löscht die Ist-Hülle **erst**, wenn für jede Zeile hier eine `leser-v3-*`-Spec
+steht. Sonst verschwindet mit der alten Hülle auch der Wächter, und niemand
+merkt es. Nach Gewicht:
+
+1. **Materialien-Daten am V3-Panel** (`materialien-m5-verzahnung`) — Rechtsdaten,
+   höchstes Gewicht: kuratiertes Sublabel «via Art. 24», Dokument-Stand,
+   async-Merge des Soft-Law-Shards.
+2. **Facetten- und Zeitstrahl-WIRKUNG am V3-Panel** (`bezuege-facetten-b4`,
+   `bezuege-zeitstrahl-b5`) — inkl. der beiden Migrations-Fälle gespeicherter
+   Alt-Stufen. `leser-v3-panel-facetten` prüft heute nur den Ort.
+3. **★-Wortlaut-Gleichheit und «via Art. N»** am Panel-Entscheid (`verzahnung`
+   MM4/MM5) sowie das **↻** (`normrevision-badge`).
+4. **Erwägungs-Sprung und Kurztext-Popover** ab Panel-Chip (`verzahnung`
+   Fundstelle A, `leitfaelle-chips` (d)).
+5. **A34/Bug1 + Bug2 mit V3-Einstieg** und der **Druck im Split**
+   (`split-view-a34`, `druck-fundstellen-z2`).
+
+### 7c · Offen rot, und warum es nicht von diesem PR behoben wird
+
+`leser-r1-r2:517` (A9-DoD, «Suche, Fundstellen-Sprung und Gliederungs-Sheet ohne
+Layout-Shift») misst @390 unter 6× CPU-Drossel **CLS 0.0202 gegen Budget 0**
+(zweimal gemessen: im Voll-Lauf und seriell mit `--workers=1`; Quelle laut Sonde
+ein `DIV` der Such-Zone, der beim Suchstart um 24 px wächst und die Lesespalte
+schiebt).
+
+Drei Gründe, warum hier nichts gelockert und nichts gepinnt wird:
+
+- **Die Assertion ist hüllenneutral richtig.** «Kein Layout-Sprung ohne
+  Nutzereingabe» gilt in V3 genauso. Diesen Fall an die alte Hülle zu pinnen
+  hiesse, einen echten V3-Befund zu verstecken (§8) — anders als bei allen
+  Zeilen in 7a, wo der geprüfte ORT verschwunden ist.
+- **Das Budget nachzugeben wäre §6.3-Bruch.** Ein Tor, dessen Zahl man an den
+  Ist-Wert schiebt, misst nichts mehr.
+- **Der Fix liegt in `src/pages/gesetz-leser/v3/SuchZone`** — dieselbe Fläche,
+  die der Ä60-(c)-PR gerade umbaut, und er widerspricht
+  `leser-v3-suchfeld-ueberall` (e) («die ausgelegte Höhe der Such-Zone deckt ihr
+  Markup — ohne Luft»). Höhe reservieren heisst dort Luft einbauen. **Das ist
+  ein Entscheid, kein Handgriff** — und er gehört in den Rahmen-PR, nicht in den
+  Flip-PR.
+
+**Einordnung:** kein Rechenfehler und kein Normtext-Befund (der Golden-Beweis ist
+byte-gleich, s. Tore); ein Bedien-Detail auf dem Handy unter künstlicher
+Drossel. Es blockiert den Flip nicht, aber es ist der **eine offene rote Fall**
+des Standes und darf nicht als grün gemeldet werden.
+
+---
+
+### 7d · Die ursprüngliche Arbeitsliste (Stand 17.8.2026, unverändert)
+
+*Sie bleibt als Grundlage stehen — 7a nennt, wo sie recht hatte und wo nicht.*
 
 Grundlage: `playwright.config.ts` (Listen `N_SPECS`/`V3_SPECS`, Z. 41–100).
 **Verifiziert** heisst: an Datei:Zeile belegt. **Verdacht** heisst: per Grep

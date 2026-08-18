@@ -6,6 +6,32 @@ import { test, expect, type Page } from '@playwright/test';
 // Der Reader liefert prerendertes Crawler-HTML → auf den Client-Takeover warten
 // (die Options-Leiste existiert NUR im React-DOM), bevor geprüft wird. BV ist ein
 // kleiner, ABER geschachtelter Erlass (2-Spalten-Lesemodus) — CI-fest.
+//
+// ── H4-UMHÄNGUNG (Flip 18.8.2026, Kontaktbogen H4 §7) ───────────────────────
+// Drei Nachführungen, alle gemessen, keine davon eine Lockerung (§6.3):
+//
+// (1) `.lc-leser > header` → `.lc-leser header`. Beide Hüllen rendern DENSELBEN
+//     `<header>` (`parts/ErlassLeserKopf.tsx`, §5); V3 hängt ihn nur eine Zone
+//     tiefer (`v3/LeserErlassKopfZone`). Gemessen 18.8.2026 an BV @1440:
+//     direktes Kind 0 (V3) / 1 (V1), Nachfahre 1 in BEIDEN.
+// (2) Die «immer sichtbare Positionsleiste» heisst in V3 anders: die Krume
+//     trägt dort `aria-label="Ort im Gesetz"` statt `"Brotkrümel"` (gemessen:
+//     V1 → Brotkrümel, V3 → Ort im Gesetz). Der Selektor nennt beide Namen; die
+//     AUSSAGE — der Ansicht-Öffner steht in der klebenden Ortsleiste und NICHT
+//     im wegscrollenden Erlass-Kopf (A26) — bleibt Wort für Wort dieselbe.
+// (3) `aria-controls` setzt V3 bewusst nur im GEÖFFNETEN Zustand
+//     (`v3/LeserAnsichtV3.tsx`: «kein Sprung, der ins Leere führt», §8). Die
+//     Prüfung wandert deshalb hinter das Öffnen — und wird dort STRENGER: statt
+//     «irgendein nichtleerer Wert» verlangt sie jetzt, dass die Kennung auf das
+//     wirklich vorhandene Optionen-Panel zeigt. Ob das Attribut im
+//     GESCHLOSSENEN Zustand steht, bleibt bewusst ungeprüft — genau darin
+//     unterscheiden sich die Hüllen, und beide Wege sind vertretbar.
+//
+// Damit ist die Datei wieder paritätsfähig und steht seit H4 in `N_SPECS`.
+const KOPF = '.lc-leser header';
+/** Die klebende Ortsleiste, in beiden Hüllen (A26). */
+const ORTSLEISTE = 'nav[aria-label="Brotkrümel"], nav[aria-label="Ort im Gesetz"]';
+
 async function warteReader(page: Page, url: string): Promise<void> {
   await page.goto(url);
   await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 });
@@ -15,7 +41,7 @@ async function warteReader(page: Page, url: string): Promise<void> {
 test('Kopf-Zusammenführung + A26: EIN <header> (Overline/Titel), «Ansicht»-Dropdown in der immer sichtbaren Positionsleiste', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BV');
   // Genau EIN Leser-Kopf (kein duplizierter Block): der <header> mit der Overline.
-  const header = page.locator('.lc-leser > header');
+  const header = page.locator(KOPF);
   await expect(header).toHaveCount(1);
   await expect(header.getByText('Bundesverfassung', { exact: false }).first()).toBeTruthy();
   // A26 (David 11.7.2026): das «Ansicht»-Dropdown ist AUS dem weggescrollenden
@@ -23,7 +49,7 @@ test('Kopf-Zusammenführung + A26: EIN <header> (Overline/Titel), «Ansicht»-Dr
   // Brotkrümel) gewandert — damit die Darstellungsoptionen jederzeit erreichbar
   // sind, während man im Gesetz ist. Im Kopf steht es daher nicht mehr.
   await expect(header.getByRole('button', { name: 'Ansicht' })).toHaveCount(0);
-  const leiste = page.locator('div.sticky', { has: page.locator('nav[aria-label="Brotkrümel"]') });
+  const leiste = page.locator('div.sticky', { has: page.locator(ORTSLEISTE) });
   const ansicht = leiste.getByRole('button', { name: 'Ansicht' });
   await expect(ansicht).toBeVisible();
   await expect(ansicht).toHaveAttribute('aria-expanded', 'false');
@@ -38,10 +64,16 @@ test('Kopf-Zusammenführung + A26: EIN <header> (Overline/Titel), «Ansicht»-Dr
 test('A4 «Ansicht»-Dropdown: Öffnen fokussiert den Inhalt, Escape schliesst + gibt Fokus zurück', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BV');
   const trigger = page.getByRole('button', { name: 'Ansicht' }).first();
-  await expect(trigger).toHaveAttribute('aria-controls', /.+/);
   await trigger.click();
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
   await expect(gruppe).toBeVisible();
+  // `aria-controls` im GEÖFFNETEN Zustand — und die Kennung zeigt auf das
+  // Panel, das wirklich da ist (H4: V3 setzt das Attribut bewusst nur, solange
+  // es ein Ziel gibt; ein Sprung ins Leere wäre §8-widrig). Vorher stand die
+  // Prüfung vor dem Klick und verlangte nur «irgendein nichtleerer Wert».
+  const ziel = await trigger.getAttribute('aria-controls');
+  expect(ziel, 'Auslöser nennt das Panel, das er aufzieht').toBeTruthy();
+  await expect(page.locator(`#${ziel}`)).toHaveAttribute('aria-label', 'Darstellungsoptionen');
   // Fokus ist beim Öffnen in das Panel gewandert (erstes fokussierbares Element).
   const fokusImPanel = await page.evaluate(() => {
     const g = document.querySelector('[aria-label="Darstellungsoptionen"]');
@@ -75,7 +107,7 @@ test('A4 «Ansicht»-Dropdown: Öffnen fokussiert den Inhalt, Escape schliesst +
 // Sicherheit zusätzlich um den ALTEN Wortlaut ergänzt, damit ein Rückfall auffällt.
 test('Standausweis F5 + «nächste Fassung ab …» (BV)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BV');
-  const header = page.locator('.lc-leser > header');
+  const header = page.locator(KOPF);
   await expect(header.getByText(/gegen Fedlex-Konsolidierung geprüft am \d{2}\.\d{2}\.\d{4} \(maschinell\)/)).toBeVisible();
   await expect(header.getByText(/nächste Fassung ab \d{2}\.\d{2}\.\d{4}/)).toBeVisible();
   // §8: kein «gültig»/«verifiziert» als eigenes Wort ausserhalb der zugelassenen Formel.
@@ -87,7 +119,7 @@ test('Standausweis F5 + «nächste Fassung ab …» (BV)', async ({ page }) => {
 
 test('Standausweis ohne künftige Fassung (BKV)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BKV');
-  const header = page.locator('.lc-leser > header');
+  const header = page.locator(KOPF);
   await expect(header.getByText(/gegen Fedlex-Konsolidierung geprüft am \d{2}\.\d{2}\.\d{4} \(maschinell\)/)).toBeVisible();
   await expect(header.getByText(/nächste Fassung ab/)).toHaveCount(0);
 });
@@ -95,7 +127,7 @@ test('Standausweis ohne künftige Fassung (BKV)', async ({ page }) => {
 test('Stand-Zeile bricht mobil @390 um — kein horizontaler Seiten-Overflow', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await warteReader(page, '/gesetze/bund/BV');
-  await expect(page.locator('.lc-leser > header').getByText(/Fedlex-Konsolidierung geprüft am/)).toBeVisible();
+  await expect(page.locator(KOPF).getByText(/Fedlex-Konsolidierung geprüft am/)).toBeVisible();
   const overflow = await page.evaluate(() =>
     document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
   expect(overflow).toBe(false);
@@ -106,7 +138,7 @@ test('Stand-Zeile bricht mobil @390 um — kein horizontaler Seiten-Overflow', a
 // Lesen sichtbar sein (nicht bloss im `title`) und ein Datum nennen.
 test('S3/F5: nicht konsolidierte Änderung steht im Klartext im Kopf (STPO)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/STPO');
-  const header = page.locator('.lc-leser > header');
+  const header = page.locator(KOPF);
   await expect(
     header.getByText(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung noch nicht in den Text eingearbeitet/),
   ).toBeVisible();
@@ -127,7 +159,7 @@ test('S3/F5: nicht konsolidierte Änderung steht im Klartext im Kopf (STPO)', as
 // beweist mehr als OR es konnte, §17.)
 test('S3/§7: künftig in Kraft tretende Änderung erzeugt KEINE Warnung (BV)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BV');
-  const header = page.locator('.lc-leser > header');
+  const header = page.locator(KOPF);
   await expect(header.getByText(/noch nicht in den Text eingearbeitet/)).toHaveCount(0);
   await expect(header.getByText(/Snapshot — massgeblich ist die amtliche Fassung/)).toBeVisible();
 });

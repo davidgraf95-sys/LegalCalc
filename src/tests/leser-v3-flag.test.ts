@@ -1,49 +1,64 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
-  LESER_V3_KEY, leserFlagAuswerten, leserFlagLesen, leserFlagSchreiben,
+  LESER_V1_KEY, leserFlagAuswerten, leserFlagLesen, leserFlagSchreiben,
 } from '../pages/gesetz-leser/leserFlag';
 
 // FAHRPLAN-LESER-V3 Kap. 5 (FL-1…FL-3, FL-6) + Risiko R10 «Das Flag leckt».
 //
-// Diese Datei ist der von FL-3 verlangte Vitest-Beweis, dass der Grundzustand
-// AUS ist. Sie prüft die REINE Auswertung (§2) statt die Komponente — dieselbe
-// Aussage, aber ohne DOM und ohne Render-Kosten.
+// Diese Datei ist der von FL-3 verlangte Vitest-Beweis über den Grundzustand.
+// Sie prüft die REINE Auswertung (§2) statt die Komponente — dieselbe Aussage,
+// aber ohne DOM und ohne Render-Kosten.
 //
-// Jede der vier Aussagen ist einzeln rot zu bekommen: Default-Zweig auf 'v3'
-// drehen, Query-Zweige vertauschen, oder LESER_V3_KEY auf den Optionen-
-// Schlüssel setzen.
+// ═══ H4 · GESPIEGELT (Flip, David-Ja 17.8.2026) ════════════════════════════
+// Bis H4 lautete die Aussage «Grundzustand ist AUS ⇒ V1». Sie ist mit dem Flip
+// FALSCH GEWORDEN und darum hier ehrlich umgeschrieben — eine DEKLARIERTE
+// fachliche Änderung (§6.3: bei einem Refactoring dürften Tests nicht wandern;
+// dies ist keines, sondern der Verhaltenswechsel selbst). Was gleich bleibt:
+// jede Aussage ist einzeln rot zu bekommen — Default-Zweig auf 'v1' drehen,
+// Query-Zweige vertauschen, oder LESER_V1_KEY auf den Optionen-Schlüssel setzen.
 
-describe('Fassaden-Flag V1/V3 (FL-3, R10)', () => {
-  it('Grundzustand ist AUS: ohne Parameter und ohne Speicher rendert V1', () => {
-    expect(leserFlagAuswerten('', null)).toEqual({ modus: 'v1', speichern: null });
-    expect(leserFlagAuswerten('?foo=bar', null)).toEqual({ modus: 'v1', speichern: null });
-    // Auch ein fremder/kaputter Speicherwert darf nicht anschalten.
-    expect(leserFlagAuswerten('', '0').modus).toBe('v1');
-    expect(leserFlagAuswerten('', 'true').modus).toBe('v1');
+describe('Fassaden-Flag V1/V3 nach dem H4-Flip (FL-3, R10)', () => {
+  it('Grundzustand ist V3: ohne Parameter und ohne Speicher rendert der neue Leser', () => {
+    expect(leserFlagAuswerten('', null)).toEqual({ modus: 'v3', speichern: null });
+    expect(leserFlagAuswerten('?foo=bar', null)).toEqual({ modus: 'v3', speichern: null });
+    // Auch ein fremder/kaputter Speicherwert darf nicht auf die alte Hülle
+    // zurückwerfen — nur die ausdrückliche `'1'` tut das.
+    expect(leserFlagAuswerten('', '0').modus).toBe('v3');
+    expect(leserFlagAuswerten('', 'true').modus).toBe('v3');
   });
 
-  it('?leser=v3 schaltet an und merkt es sich', () => {
-    expect(leserFlagAuswerten('?leser=v3', null)).toEqual({ modus: 'v3', speichern: 'setzen' });
+  it('?leser=v1 ist der Rückweg und merkt sich die Wahl', () => {
+    expect(leserFlagAuswerten('?leser=v1', null)).toEqual({ modus: 'v1', speichern: 'setzen' });
     // Mehrere Parameter, beliebige Reihenfolge.
-    expect(leserFlagAuswerten('?x=1&leser=v3', null).modus).toBe('v3');
+    expect(leserFlagAuswerten('?x=1&leser=v1', null).modus).toBe('v1');
   });
 
-  it('?leser=v1 schaltet aus und löscht die Merkung — auch bei gesetztem Flag', () => {
-    expect(leserFlagAuswerten('?leser=v1', '1')).toEqual({ modus: 'v1', speichern: 'loeschen' });
+  it('?leser=v3 kehrt zum Standard zurück und löscht die Merkung — auch bei gesetztem Flag', () => {
+    expect(leserFlagAuswerten('?leser=v3', '1')).toEqual({ modus: 'v3', speichern: 'loeschen' });
   });
 
   it('ohne Parameter entscheidet allein der Speicher', () => {
-    expect(leserFlagAuswerten('', '1')).toEqual({ modus: 'v3', speichern: null });
+    expect(leserFlagAuswerten('', '1')).toEqual({ modus: 'v1', speichern: null });
   });
 
   it('Optionen sind GETEILT, nicht dupliziert (FL-6, §5)', () => {
     // Der Hüllen-Schalter hat einen EIGENEN Schlüssel und fasst den
     // Optionen-Store nicht an. Gäbe es einen zweiten Optionen-Schlüssel je
     // Hülle, wären es zwei gepflegte Wahrheiten (§5).
-    expect(LESER_V3_KEY).toBe('lm.leser.v3');
-    expect(LESER_V3_KEY).not.toBe('lm.leser.optionen');
-    expect(LESER_V3_KEY.startsWith('lm.leser.optionen')).toBe(false);
+    expect(LESER_V1_KEY).toBe('lm.leser.v1');
+    expect(LESER_V1_KEY).not.toBe('lm.leser.optionen');
+    expect(LESER_V1_KEY.startsWith('lm.leser.optionen')).toBe(false);
+  });
+
+  it('der Flip hat den SCHLÜSSEL mitgedreht — kein stiller Bedeutungswechsel', () => {
+    // Der alte Schlüssel `lm.leser.v3='1'` hiess «V3 gewünscht». Bliebe er in
+    // Gebrauch, bekäme genau der Nutzer, der V3 ausdrücklich gewählt hat, nach
+    // dem Flip V1 — das Gegenteil seiner Wahl, an fremden Browsern, ohne dass
+    // es hier irgendwo rot würde. Mit dem eigenen Schlüssel ist der Alt-Eintrag
+    // wirkungslos, und der V3-Wähler von gestern sieht V3 (den neuen Default).
+    expect(LESER_V1_KEY).not.toBe('lm.leser.v3');
+    expect(leserFlagAuswerten('', null).modus, 'Alt-Eintrag ist inert ⇒ Default gilt').toBe('v3');
   });
 });
 
@@ -52,13 +67,19 @@ describe('Fassaden-Flag V1/V3 (FL-3, R10)', () => {
 // `Pane.tsx` schickt BEIDE Split-Panes durch denselben `RouteSwitch` und damit
 // durch dieselbe Fassade. Der Vollzug der Merkung lief in einem `useEffect` —
 // also NACH dem Render. Rendert das zweite Pane, bevor der Effekt des ersten
-// gelaufen ist, liest es `null` und rendert V1 neben V3. FL-1 verspricht das
-// Gegenteil: EIN Flag schaltet beide.
+// gelaufen ist, liest es `null` und rendert die andere Hülle daneben. FL-1
+// verspricht das Gegenteil: EIN Flag schaltet beide.
 //
 // Der Test bildet genau diese Reihenfolge ab, statt sie zu behaupten: erst der
 // Fall «Vollzug sofort» (so ist es jetzt), dann die Gegenprobe «Vollzug
 // aufgeschoben» (so war es) — sie muss den Fehler zeigen, sonst prüft der erste
 // Fall nichts.
+//
+// H4-FLIP: der Parameter im Test ist `?leser=v1`, nicht mehr `?leser=v3`. Grund
+// ist §6.7, nicht Kosmetik — nach dem Flip ist V3 der Default, das zweite Pane
+// stünde also auch OHNE gelesenen Speicherwert in V3, und beide Sonden wären
+// grundlos grün. Nur der Parameter, der VOM Default WEGFÜHRT, kann das Rennen
+// überhaupt zeigen.
 
 function speicherAttrappe() {
   const daten = new Map<string, string>();
@@ -87,20 +108,20 @@ describe('Flag-Rennen: zwei Panes, EIN Speicherwert (B2, FL-1)', () => {
     const { api } = speicherAttrappe();
     vi.stubGlobal('localStorage', api);
 
-    const a = pane('?leser=v3', true);       // primäres Pane, trägt den Parameter
+    const a = pane('?leser=v1', true);       // primäres Pane, trägt den Parameter
     const b = pane('', true);                // sekundäres Pane, ohne Parameter
-    expect(a.modus).toBe('v3');
-    expect(b.modus, 'zweites Pane rendert die alte Hülle neben der neuen').toBe('v3');
+    expect(a.modus).toBe('v1');
+    expect(b.modus, 'zweites Pane rendert die andere Hülle daneben').toBe('v1');
   });
 
   it('Gegenprobe — Vollzug AUFGESCHOBEN (der alte useEffect) zerreisst die Panes', () => {
     const { api } = speicherAttrappe();
     vi.stubGlobal('localStorage', api);
 
-    const a = pane('?leser=v3', false);      // Effekt steht noch aus
+    const a = pane('?leser=v1', false);      // Effekt steht noch aus
     const b = pane('', false);
-    expect(a.modus).toBe('v3');
-    expect(b.modus, 'ohne den Fehler wäre die Sonde oben grundlos grün').toBe('v1');
+    expect(a.modus).toBe('v1');
+    expect(b.modus, 'ohne den Fehler wäre die Sonde oben grundlos grün').toBe('v3');
     a.nachziehen();
     b.nachziehen();
     expect(leserFlagLesen()).toBe('1');
