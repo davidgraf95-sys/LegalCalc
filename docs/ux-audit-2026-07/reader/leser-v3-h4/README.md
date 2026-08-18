@@ -93,6 +93,50 @@ Umschalter nicht ohne dein Ja um.
 
 ## 1 · Kriterien-Matrix (Kap. 7, «alle, nicht auswählbar»)
 
+### ✅ Flip-Stand 18.8.2026 — dieselben Kriterien, am geflippten Stand nachgemessen
+
+Die Matrix darunter entstand **vor** dem Flip, mit V1 als Grundzustand und V3
+unter Flag. Sie ist die Grundlage von Davids Ja und bleibt unverändert stehen.
+Diese Tabelle misst dieselben Kriterien noch einmal **am Flip-Stand**, also
+gegen den neuen Grundzustand — ohne Adresszusatz.
+
+**Messbedingung:** macOS Apple Silicon, `vite preview` gegen frisch gebautes
+`dist/` (Basis `f918a0b12` + Flip-Commits), 1280 × 900 sofern nicht anders
+vermerkt, je Kombination ein frischer Browser-Kontext (kalt), `reducedMotion:
+reduce`, Thema per `localStorage` gepinnt **und** `colorScheme` emuliert.
+Rohdaten `flip-stand.json`.
+
+| # | Kriterium | Ergebnis | Zahl am Flip-Stand |
+|---|---|---|---|
+| 1 | unveränderte **N-Tests** grün — jetzt im **Default**-Projekt gegen V3 | ✅ | **43 Fälle über 9 N-Spec-Dateien, 0 rot** (`leser-v3-flag` 3 · `leser-suche-vertrag-b8` 5 · `leser-ohne-gliederungslinie` 2 · `gesetze-marginalie` 4 · `gesetze-pdf-download` 2 · `gesetze-ux-9punkte` 9 · `gesetze-ux-g3b-anhang` 6 · `gesetze-ux-g3a` 4 · `leser-kopf-g2b` 8). Gegenprobe alte Hülle: `--project=leser-v1` **132 passed, Exit 0** |
+| 2 | **`leser-kopf-paritaet`** grün | ✅ | 1 Fall, beide Split-View-Panes, im **Default**-Projekt gegen V3 — vor dem Flip lief er im Flag-Projekt |
+| 3 | **PX** (Pixelvergleich) grün | ✅ **3/3 in Ruhe** | `PX=1 --project=px` dreimal hintereinander: **2 passed, Exit 0 · 24.0 s / 24.0 s / 23.9 s**. Der Lastfall aus der Matrix unten (2/5 unmittelbar nach einem 8-Worker-Lauf) ist damit **nicht** entkräftet — er bleibt der offene §17-Punkt, hier wurde die Ruhe-Bedingung gemessen |
+| 4 | **NM** in keiner der drei Aufgaben verschlechtert | ⚠️ unverändert wie unten | Der Flip ändert am Bedienweg nichts — er ändert, wer ihn ohne Adresszusatz sieht. NM-2 bleibt der ausgewiesene Preis (+1 Schritt gegenüber V1), NM-1/NM-3 bleiben besser |
+| 5 | **CLS ≤ Ist-Stand** | ✅ *(mit einem gemeldeten Fall)* | `leser-kopf-cls-s3` **4/4 grün seriell** (`--workers=1`). Im 5-Worker-Voll-Lauf riss `v3 @390` einmal — **seriell grün**, also Parallel-Last, kein Produktbefund (Messbedingung nennen: §0 Ziff. 3c). **Gemeldet, nicht verrechnet:** `leser-r1-r2:517` misst @390 unter 6× Drossel CLS 0.0202 gegen Budget 0 — der eine offen rote Fall, Begründung in §7c |
+| 6 | **axe** grün, hell **und** dunkel | ✅ | **0 critical/serious in 10 Kombinationen** (5 Erlasse × hell/dunkel), alle **ohne Flag**, also gegen V3 als Grundzustand. Dokumentiert bleibt je 1 × der begründete `link-in-text-block` (B-2). Tags `wcag2a`/`wcag2aa`/`wcag21a`/`wcag21aa` wie `e2e/a11y.e2e.ts` |
+| 7 | **Kantons-Probe** grün, ohne Flag | ✅ | **BS-640.100** (292 Bestimmungen) und **ZH-211.11** (23) ohne Adresszusatz: V3-Rahmen 1 · V3-Kopf 1 · Gliederung 1 · **0 Konsolenfehler**; V1-Menü 0. Bund-Probe gleich: StPO (480) · VMWG (32) · LugÜ (91). Die `h1` trägt in allen fünf Fällen den amtlichen Titel |
+| 8 | drei bekannte **Flaker** mit Wurzel-Fix | ⚠️ teilweise, unverändert | `leser-ohne-gliederungslinie` **2/2 grün seriell** (im Voll-Lauf unter 5 Workern einmal rot — dieselbe Signatur wie am 17.8., Wurzel Locator-Kosten). 2 von 3 weiterhin nicht reproduzierbar |
+| 9 | **David-Go** nach Kontaktbogen | ✅ **erteilt 17.8.2026** | Chat, wörtlich «ja und c, mach so» |
+| — | **Rückweg wirksam** *(neu, erst am Flip-Stand prüfbar)* | ✅ | `?leser=v1` auf BS-640.100: V3-Rahmen **0**, V1-Ansicht-Menü **1**, gemerkt `lm.leser.v1='1'`. Der Rückweg ist damit **positiv** belegt, nicht bloss über die Abwesenheit des V3-Rahmens |
+
+**Rot-Beweis, dass die umgehängten Specs wirklich V3 messen (§6.7).** Der Default
+wurde lokal für einen Lauf auf V1 zurückgestellt (`leserFlag.ts`, neu gebaut,
+danach zurückgenommen — im Branch ist davon nichts):
+
+| Spec | gegen den ALTEN Default | gegen den Flip-Stand |
+|---|---|---|
+| `leser-optionen:76` (auf drei Schalter umgehängt) | **ROT** — `getByRole('switch', {name: 'Rechtsprechung im Text'})`: *element(s) not found* | grün |
+| `leser-v3-umschalten` (c) (R10 gespiegelt) | **ROT** — `[data-leser-v3="rahmen"]`: erwartet 1, erhalten **0** | grün |
+| `gesetze-ux-g3a` (Parität, in `N_SPECS`) | **grün** | grün |
+
+Die dritte Zeile ist die Kontrollgruppe: eine echte Paritäts-Spec muss in beiden
+Hüllen grün sein, sonst misst sie die Hülle statt den Normtext.
+
+---
+
+### Die Matrix vor dem Flip (17./18.8.2026) — Entscheidungsgrundlage, unverändert
+
+
 | # | Kriterium | Ergebnis | Zahl |
 |---|---|---|---|
 | 1 | unveränderte **N-Tests** grün unter Flag | ✅ | Projekt `leser-v3`: **110 passed, 1 skipped, Exit 0**; Gegenprobe Projekt `chromium` über dieselben N-Specs plus die vier B-Specs plus die zwei S1-Specs: **77 passed, Exit 0** |

@@ -2256,7 +2256,7 @@ diese Frage am Bild und nicht am Text beantwortet wird.
 | Kategorie | Bestand | Wirkung |
 |---|---|---|
 | e2e **N** (Normtext-Treue) | ~10 | **KORRIGIERT 18.8.2026 am Flip-Stand (H4), gemessen statt behauptet.** Doppelt — also in BEIDEN Hüllen — laufen genau die Namen, die in `playwright.config.ts` unter `N_SPECS` stehen: `leser-v3-flag`, `leser-suche-vertrag-b8`, `leser-ohne-gliederungslinie`, `gesetze-marginalie`, `gesetze-pdf-download`, `gesetze-ux-9punkte`, `gesetze-ux-g3b-anhang` und seit H4 wieder `gesetze-ux-g3a` + `leser-kopf-g2b`. **Nicht doppelt und nie doppelt gewesen: `hist-ansicht-w25i` und `gesetze-historie-badge`** — die Zeile führte sie als Teil der Parität, in der Liste standen sie nie. Der Widerspruch ist hiermit zugunsten des Gemessenen aufgelöst: sie bleiben einfach laufende Specs im Default-Projekt (also seit dem Flip gegen V3), und `hist-ansicht-w25i` ist dort ohne jede Änderung grün — nachgemessen 18.8.2026, alle 10 Fälle. Die Liste wird dafür **nicht** aufgebläht: Parität kostet doppelte CI-Zeit, und beide Dateien prüfen den Änderungsvermerke-Vertrag, nicht den Normtext. *(Vorgeschichte: die Zahl «8» stand am 16.8.2026 neben einer Aufzählung von zehn Namen; korrigiert im Vollzug H1, Befund aus der Vorprobe V-2.)* |
-| e2e **B** (Bedienung/Layout) | ~17 | **11 neu geschrieben, aber nur EINMAL** (gegen V3, nicht als Interim + Endzustand): 10 in H1–H3 + `leser-breite-a37`/`leser-lesemass` in S2. Die alten Gegenstücke fallen in H4/H5 |
+| e2e **B** (Bedienung/Layout) | ~17 | **11 neu geschrieben, aber nur EINMAL** (gegen V3, nicht als Interim + Endzustand): 10 in H1–H3 + `leser-breite-a37`/`leser-lesemass` in S2. **Die alten Gegenstücke fallen NICHT in H4, sondern in H5** — korrigiert 18.8.2026 am Flip-Stand: H4 hat sie auf die alte Hülle GEPINNT (Projekt `leser-v1`), weil die alte Hülle bis H5 der freigegebene Rückweg ist und nicht unbewacht sein darf. Gelöscht wurden in H4 nur 2 Fälle, und zwar als Doppelung mit Nichttrage-Nachweis. Der Löschtermin ist H5, gebunden an die Deckungslücken in Kontaktbogen H4 §7b. *(Nebenbefund derselben Messung: `leser-breite-a37` ist keine reine V3-Spec — ihr Spaltenmass-Fall misst die 784-px-Zelle der ALTEN Hülle und ist gepinnt.)* |
 | e2e **P** (Perf/CLS) | ~5 | 2 neu, 3 bleiben |
 | Vitest (DOM-frei) | 21 | ~4 berührt: `leser-suche-w219`, `gesetz-leser-uebersicht-s6`, `hist-chronologie` (entfällt mit dem Modus), `kontext`/`kontext-artikel-s7`; **neu**: Fassaden-Default (R10), Optionen-Migration, Sortierung (S4) |
 | Infrastruktur | — | **Playwright-Projekt `leser-v3`** neben `schwer`/`chromium` — Aufwand **S**; **CI-Zeit der Leser-Suite ×2 im Fenster** (Shard-Balance beobachten) |
@@ -2268,17 +2268,36 @@ diese Frage am Bild und nicht am Text beantwortet wird.
 `check:design-tokens` (S2) · `check:perf-budget` (H3-Nachladen, gemessen) ·
 `check:seo-index` (H3 Prerender-Bezüge, S3 Wortlaut).
 
-**B-Specs der Ist-Hülle laufen im Flag-Projekt erst ab H4 (umgehängt).** Vier der
-zehn als «N» geführten Specs prüfen die STRUKTUR der Ist-Hülle, nicht den
-Normtext, und können gegen eine neue Hülle konstruktiv nicht grün werden:
+**B-Specs der Ist-Hülle — VOLLZOGEN IN H4 (18.8.2026).** Vier der
+zehn als «N» geführten Specs prüften die STRUKTUR der Ist-Hülle, nicht den
+Normtext, und konnten gegen eine neue Hülle konstruktiv nicht grün werden:
 `gesetze-ux-g3a` (`.lc-leser > header` als direktes Kind), `leser-optionen`
 («genau zwei `role=switch`»), `leser-r1-r2` (das zweite Sprungfeld, das Pos. 4
 beseitigt), `leser-ruecksprung-r5-r7` (Schwelle «< 140 px», auf das Ist-Chrome
 von 100 px kalibriert; V3 landet auf 156 px). Seit dem H1-Nachzug (16.8.2026,
-CI-Anlass Run 31962198006 Shard 4/8) fährt das Playwright-Projekt `leser-v3`
-darum **sechs** N-Specs plus die V3-eigenen Specs; im Projekt `chromium` laufen
-die vier unverändert weiter und schützen dort die alte Hülle. Umgehängt bzw.
-entfernt werden sie in **H4**.
+CI-Anlass Run 31962198006 Shard 4/8) fuhr das Flag-Projekt darum **sechs**
+N-Specs plus die V3-eigenen Specs.
+
+**Stand seit H4:** alle vier sind umgehängt; `gesetze-ux-g3a` steht — zusammen
+mit `leser-kopf-g2b` — wieder in `N_SPECS` und läuft damit in BEIDEN Hüllen,
+`leser-optionen`/`leser-r1-r2`/`leser-ruecksprung-r5-r7` laufen im Regelprojekt
+gegen V3. Das Projekt heisst jetzt `leser-v1` und trägt den Rückweg; die
+V3-eigenen Specs brauchen keine eigene Liste mehr, weil sie im Regelprojekt
+zuhause sind.
+
+**Die Zahl der berührten Bestands-Specs war grob unterschätzt.** Dieser Absatz
+sprach von vier Dateien, die Etappen-Tabelle von «11 alten B-Tests». Der
+Voll-Lauf am Flip-Stand meldete **47 rote Fälle in 18 Dateien**; insgesamt sind
+**25 Bestands-Dateien** berührt (10 umgehängt, 5 ganz und 9 fallweise auf die
+alte Hülle gepinnt, 2 Fälle als Doppelung gelöscht, 12 nachgemessen und
+unberührt gelassen). Der Grund und die Lehre stehen im Vollzugsvermerk «H4 — DER
+FLIP» (Kap. 7): eine Grep-Liste findet Selektoren, der Flip verschiebt
+**Montagepunkte**. Zwei neue Listen tragen das im Code:
+`V1_NUR` (ganze Datei) und `V1_GEMISCHT` (Einzelfall mit projekt-abhängigem
+`test.skip`, Muster `e2e/helpers/istHuelle.ts`) in `playwright.config.ts`.
+**Beide Listen sind H5-Arbeitsvorrat, nicht Dauerzustand** — jede Zeile nennt,
+welche `leser-v3-*`-Spec die Sache in V3 prüft, und wo dort «Deckungslücke»
+steht, ist H5 blockiert, bis sie geschlossen ist (Liste: Kontaktbogen H4 §7b).
 
 **Neue Treue-Grenze PX (Pixelvergleich).** Über die DOM-Tests hinaus wird der Textkörper
 `.lc-leser article` ab H1 pixelweise gegen V1 verglichen (StPO Art. 429, OR Art. 336c, gleiche
