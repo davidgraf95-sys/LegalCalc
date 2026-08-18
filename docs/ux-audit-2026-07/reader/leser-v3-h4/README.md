@@ -543,6 +543,44 @@ byte-gleich, s. Tore); ein Bedien-Detail auf dem Handy unter künstlicher
 Drossel. Es blockiert den Flip nicht, aber es ist der **eine offene rote Fall**
 des Standes und darf nicht als grün gemeldet werden.
 
+#### Nachgemessen in der H4-Integration (18.8.2026) — drei Zahlen
+
+Messbedingung durchgehend: `vite preview` aus `dist/`, Chromium,
+`/gesetze/bund/BV` @390, CPU-Drossel 6×, Beobachter nach `#art-1`, nur Schritt 1
+(«Suche beginnen»). Alle Reihen bit-stabil über ihre Läufe — Geometrie, kein
+Rauschen.
+
+| Messung | Ergebnis |
+|---|---|
+| **Ursache, punktgenau** | `[data-v3-such-zone]` 44 px (Ruhe) → 68 px (Suche läuft), also `SUCH_H_RUHE` 2.75rem → `SUCH_H_AKTIV` 4.25rem. Protokollierter Shift `DIV 178·666 → 202·642` = dieselben 24 px. Δ**0.0202**; die zweite Zeile Δ0.0016 ist die bekannte fremde Topbar-Grundlast |
+| **Nullprobe gegen die alte Hülle** (§0 Ziff. 3) — dieselbe Geste, derselbe Build, `?leser=v1`, n=3 | **CLS 0.5509 / 0.5524 / 0.5524** (Mittel 0.5519), Grossbeitrag Δ0.5436 aus den `.lc-reveal`-Blöcken des V1-Suchmodus. V3 ist an dieser Geste **rund 27× besser** als der Ist-Stand — das Flip-Kriterium «CLS ≤ Ist-Stand» (Kap. 7) ist hier klar erfüllt. Der rote Fall misst kein V3-Defizit, er misst V3 gegen die **Null**, die V1 nie erreicht hat |
+| **Messbedingung, die den Fall rot macht** — `fill()` gegen echtes Tippen (`click()` + `pressSequentially`), je n=2 | `fill()`: input-frei **0.0218**, als Input verbucht 0.0000. Echtes Tippen: input-frei **0.0016** (nur die fremde Topbar), als Input verbucht **0.0202**. Der Browser flaggt den Shift bei echter Eingabe `hadRecentInput = true` — für einen realen Leser ist er nach der CLS-Definition **ausgeschlossen**, genau wie es der Kopf von `v3/SuchZone` seit H2b behauptet |
+
+**Die zwei Wege — beide kosten etwas Sichtbares, keiner ist ohne
+Gestaltungsentscheid zu haben. Wartet auf David.**
+
+1. **Höhe dauerhaft reservieren** (`--leser-v3-such-h` konstant auf
+   `SUCH_H_AKTIV`). Der Sprung verschwindet vollständig. **Preis:** 24 px
+   dauerhaft leerer Raum im klebenden Kopf-Block — und zwar genau auf den
+   Breiten, wo er am teuersten ist (Handy, Split-Panes, Desktop mit
+   eingeklappter Gliederung), weil der Block dort das ganze Chrome ist.
+   Zusätzlich fällt damit die Positiv-Sonde von `leser-v3-suchfeld-ueberall` (e)
+   («die Zone wächst überhaupt») — die Zusage müsste ehrlich neu geschrieben
+   werden, nicht gelockert.
+2. **Die zweite Zeile immer zeigen, mit wechselndem Inhalt.** Die Zone bleibt
+   konstant 68 px hoch; im Ruhezustand trägt die zweite Zeile eine ruhige
+   Standort-Angabe (Gliederungspfad der sichtbaren Stelle), bei laufender Suche
+   den Zähler «N Artikel · M Fundstellen · Treffer anzeigen →». Kein Sprung,
+   kein Leerraum. **Preis:** ein Element mehr im Dauerbild und eine neue
+   inhaltliche Zusage, die es heute nicht gibt — also echtes Design, nicht
+   Nacharbeit.
+
+**Der dritte Weg wird ausdrücklich NICHT empfohlen:** die Geste im Test von
+`fill()` auf echtes Tippen umzustellen. Sie würde den Fall grün machen und wäre
+metrisch sogar begründbar (Messung 3) — aber der Sprung bliebe sichtbar, und der
+Test hörte auf, ihn zu zeigen. Ob LexMetrik hier strenger sein will als CLS, ist
+Davids Entscheid; bis er fällt, bleibt der Fall rot und ehrlich (§8).
+
 ---
 
 ### 7d · Die ursprüngliche Arbeitsliste (Stand 17.8.2026, unverändert)

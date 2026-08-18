@@ -513,6 +513,47 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
 // ihr Markup — ohne Luft»). Das ist ein ENTSCHEID, keine Nacharbeit, und die
 // Fläche `v3/**` gehört in diesem PR einem anderen Bau. Der Befund steht darum
 // im Kontaktbogen H4 §1/§8 und wartet dort.
+//
+// ── NACHGEMESSEN IN DER H4-INTEGRATION (18.8.2026) · DREI ZAHLEN, KEINE FIXE ──
+// Reproduziert am Integrationsstand (`vite preview` aus `dist/`, Chromium,
+// /gesetze/bund/BV @390, `Emulation.setCPUThrottlingRate` 6, Beobachter nach
+// `#art-1`, nur Schritt 1 «Suche beginnen»). Alle drei Messreihen sind
+// bit-stabil über ihre Läufe, das ist Geometrie und kein Rauschen:
+//
+//   (1) URSACHE BESTÄTIGT, punktgenau. `[data-v3-such-zone]` misst im
+//       Ruhezustand 44 px und mit laufender Suche 68 px (`SUCH_H_RUHE` 2.75rem
+//       → `SUCH_H_AKTIV` 4.25rem). Der protokollierte Shift lautet
+//       `DIV 178·666 → 202·642` — dieselben 24 px, eine Ebene tiefer. Der Wert
+//       ist Δ0.0202; die zweite Zeile (Δ0.0016, Griffzone der Topbar) ist die
+//       bekannte fremde Grundlast und wird nicht zugerechnet.
+//
+//   (2) NULLPROBE GEGEN DIE ALTE HÜLLE (§0 Ziff. 3), dieselbe Geste, derselbe
+//       Build, `?leser=v1`, n=3: **CLS 0.5509–0.5524** (Mittel 0.5519). Der
+//       Grossbeitrag Δ0.5436 sind die `.lc-reveal`-Blöcke des V1-Suchmodus.
+//       V3 ist an dieser Geste also nicht schlechter als der Ist-Stand, sondern
+//       **rund 27× besser** — das Flip-Kriterium «CLS ≤ Ist-Stand» (Kap. 7) ist
+//       an dieser Stelle klar erfüllt. Der rote Fall misst kein V3-Defizit, er
+//       misst V3 gegen die **Null**, und diese Null hat V1 nie erreicht.
+//
+//   (3) MESSBEDINGUNG, die den Fall überhaupt erst rot macht: `fill()` setzt
+//       den Wert programmatisch. Der Browser sieht keine Nutzereingabe und
+//       flaggt den Shift `hadRecentInput = false`. Mit ECHTEM Tippen
+//       (`click()` + `pressSequentially`, n=2) verbucht derselbe Shift sich als
+//       `hadRecentInput = true`: input-frei bleiben dann 0.0016 (nur die fremde
+//       Topbar), die 0.0202 wandern in den Input-Topf. Für einen realen Leser
+//       ist dieser Sprung nach der CLS-Definition also **ausgeschlossen** — er
+//       ist Folge seiner eigenen Tastatureingabe, genau wie es der Kopf von
+//       `v3/SuchZone` seit H2b behauptet («das ist eine Tastatur-Eingabe,
+//       CLS-exkludiert, §15.2»).
+//
+// WAS DARAUS FOLGT — und was ausdrücklich NICHT: Die Geste im Test bleibt
+// unangetastet, das Budget bleibt 0. Weder das eine noch das andere zu ändern
+// ist Sache der Integration: (3) ist ein Argument dafür, dass die Messung
+// strenger ist als die Metrik — aber der Sprung ist trotzdem sichtbar, und ob
+// LexMetrik hier strenger sein WILL als CLS, ist ein Entscheid, kein Handgriff.
+// Die zwei Wege stehen im Kontaktbogen H4 §7c; beide kosten etwas Sichtbares
+// (24 px Dauer-Reserve im klebenden Block gegen einen selbst ausgelösten
+// 24-px-Sprung), und keiner davon ist ohne Gestaltungsentscheid zu haben.
 test.describe('A9-DoD — Flüssigkeit unter CPU-Drossel 6×', () => {
   test('Suche, Fundstellen-Sprung und Gliederungs-Sheet ohne Layout-Shift (CLS 0)', async ({ page }) => {
     test.slow();
