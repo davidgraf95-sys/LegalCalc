@@ -92,7 +92,8 @@
    "verlauf-o1.e2e.ts",
    "leser-v3-flag.e2e.ts",
    "leser-v3-kopf-buendig.e2e.ts",
-   "leser-v3-prerender-bezuege.e2e.ts"
+   "leser-v3-prerender-bezuege.e2e.ts",
+   "leser-kein-seitenueberlauf.e2e.ts"
   ],
   "7": [
    "leser-kontext-e4.e2e.ts",

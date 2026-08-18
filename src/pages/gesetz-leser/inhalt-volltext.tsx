@@ -751,10 +751,15 @@ export function LeserVolltextInhalt({
           )}
           {kontextPanelLesespalte}
 
+          {/* B6 (H4-Nachzug 18.8.2026): `min-w-0` + `[overflow-wrap:anywhere]`
+              gegen den 81-px-Seitenüberlauf @390 an ZH-211.11 — gemessen in
+              BEIDEN Hüllen, gleiche Ursache (Flex-Kind ohne `min-w-0` an einem
+              Kürzel, das der Volltitel ist). Herleitung, Messung und der
+              fehlzugeordnete Ausgangsbefund: `v3/LeserLesespalte.tsx` (§5). */}
           <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
-            {vorher ? <Link to={`/gesetze/${vorher.ebene}/${encodeURIComponent(vorher.key)}`} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
-            <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">Übersicht</Link>
-            {nachher ? <Link to={`/gesetze/${nachher.ebene}/${encodeURIComponent(nachher.key)}`} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
+            {vorher ? <Link to={`/gesetze/${vorher.ebene}/${encodeURIComponent(vorher.key)}`} className="min-w-0 text-brass-700 hover:underline [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
+            <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-brass-700">Übersicht</Link>
+            {nachher ? <Link to={`/gesetze/${nachher.ebene}/${encodeURIComponent(nachher.key)}`} className="min-w-0 text-right text-brass-700 hover:underline [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
           </nav>
         </div>
       </div>
