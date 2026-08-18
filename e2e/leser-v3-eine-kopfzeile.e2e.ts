@@ -128,10 +128,14 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(m.kopfOben).toBeGreaterThanOrEqual((m.topbarUnten ?? 0) - 2)
     expect(m.kopfUnten, `Chrome bis zur Lesefläche ${m.kopfUnten} px — erlaubt ist ${VORHER_D} − ${APP_LEISTE_H}`)
       .toBeLessThanOrEqual(VORHER_D - APP_LEISTE_H)
-    // EIN Schliess-Griff, und zwar der des Gesetzes (der App-✕ «zur Startseite»
-    // ist mit seiner Leiste gegangen; die Topbar trägt die App-Navigation).
-    expect(m.kreuze.length, `Schliess-Griffe: ${m.kreuze.join(' | ')}`).toBe(1)
-    expect(m.kreuze[0]).toMatch(/Gesetz schliessen/)
+    // ── Ä87/Ä91 (H4-Nachzug 18.8.2026) · KEIN Schliess-Griff mehr ──────────
+    // Hier stand «EIN Schliess-Griff, und zwar der des Gesetzes». Gemessen
+    // 18.8.2026 @1440 lag genau dieses ✕ bei offenem Beiwerk-Blatt 47 px über
+    // dessen eigenem ✕ (y 80 / y 127) — zwei gleiche Zeichen, zwei Wirkungen.
+    // Es ist gestrichen; sein Ziel `/gesetze` steht in derselben Zeile als
+    // beschriftete Krume (Zusicherung (b) unten). Die Aussage bleibt damit
+    // scharf: im RUHEZUSTAND trägt die ganze Kopfzone NULL Schliess-Griffe.
+    expect(m.kreuze.length, `Schliess-Griffe: ${m.kreuze.join(' | ')}`).toBe(0)
     expect(m.ortsangabenImChrome, 'die App-Leiste nennt noch eine Ortsangabe').toBe(0)
 
     // (b) Die Kopfzeile trägt die VOLLE Krume — klickbar, mit den Zielen der
@@ -141,7 +145,8 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     await expect(ort.getByRole('link', { name: 'Bund' })).toHaveAttribute('href', '/gesetze')
     await expect(page.locator('[data-v3-kopf-kuerzel]')).toHaveText('StPO')
     await expect(page.locator('[data-v3-kopf] [data-v3-ansicht]')).toBeVisible()
-    await expect(page.locator('[data-v3-kopf-schliessen]')).toBeVisible()
+    await expect(page.locator('[data-v3-kopf-schliessen]'),
+      'Ä87: das Kopf-✕ ist gestrichen — der Rücksprung steht als Krume').toHaveCount(0)
     const krumeText = (await ort.innerText()).replace(/\s+/g, ' ')
     expect(krumeText, `Krume lautet «${krumeText}»`).toContain('Gesetze › Bund › StPO')
 
@@ -224,9 +229,10 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     for (const wahl of ['[data-pane="primaer"]', '[data-pane="sekundaer"]']) {
       await expect(page.locator(`${wahl} [data-v3-kopf]`)).toHaveCount(1)
       await expect(page.locator(`${wahl} [data-v3-kopf-kuerzel]`)).toBeVisible()
-      // Ä46 (H4-II): im Pane trägt der V3-Kopf kein eigenes ✕ mehr — es war das
-      // zweite Kreuz je Pane (44 px unter dem der Griffleiste) und zugleich das
-      // Duplikat des Rücksprungs, der hier steht und dasselbe Ziel hat.
+      // Ä46 (H4-II) / Ä87 (H4-Nachzug): der V3-Kopf trägt kein eigenes ✕ mehr —
+      // im Pane war es das zweite Kreuz (44 px unter dem der Griffleiste), seit
+      // 18.8.2026 ist es auf JEDER Breite gestrichen; das Duplikat des
+      // Rücksprungs, der hier steht und dasselbe Ziel hat.
       await expect(page.locator(`${wahl} [data-v3-kopf-schliessen]`)).toHaveCount(0)
       await expect(page.locator(`${wahl} [data-v3-kopf-krume-kurz]`)).toBeVisible()
     }

@@ -242,4 +242,91 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
     // offene Blatt gebunden, nicht an den Seitenaufruf.
     expect((await messen(page)).rahmen, 'der Rahmen bleibt nach dem Schliessen aufgeweitet').toBe(1072)
   })
+
+  // ── (e2) Ä88 · derselbe Satz dort, wo das Blatt die Gliederung FALTET ──────
+  // Zwischen 1024 und 1391 px reicht der Raum nicht für Spalte UND Blatt: die
+  // Gliederung weicht auf ihre Schiene, die Such-Zone wandert in den klebenden
+  // Kopf (Ä19), und der wächst um 44 px. (e) misst @1440 — dort passiert das
+  // gar nicht, der Fall konnte den Mangel also nicht sehen.
+  //
+  // GEMESSEN VOR DEM FIX (18.8.2026, StPO Art. 429, `scratchpad/a-mess.cjs`):
+  //   @1024  Kopfhöhe 57 → 101 px · Abstand Block→Artikel −1 → **−45** px
+  //          (die Artikel-Überschrift lag hinter dem Kopf, also unsichtbar)
+  //   @1150  57 → 101 px · Abstand −1 → −1 px   (Chromium-Anchoring trug)
+  //   @1280  57 → 101 px · Abstand −1 → −1 px
+  //
+  // GEMESSEN WIRD DER ABSTAND, NICHT DIE y-KOORDINATE — und das ist keine
+  // Aufweichung, sondern die Invariante von `useStickAusgleich`: der gelesene
+  // Artikel behält seinen Platz UNTER der Unterkante des klebenden Blocks. Eine
+  // Prüfung auf `y` allein wäre @1150/@1280 rot, obwohl dort nichts verloren
+  // geht (Kopf und Artikel wandern gemeinsam um 44 px), und @1024 grün gewesen,
+  // wo die Überschrift verschwand.
+  //
+  // ROT ZU BEKOMMEN (§6.7, gefahren 18.8.2026): in `v3/LeserRahmenV3.tsx` die
+  // Wicklung `panel = { …, umschalten: () => mitAusgleich(…) }` entfernen (dann
+  // läuft das Öffnen am Ausgleich vorbei) oder in `v3/useStickAusgleich.ts` die
+  // `lage` wieder nur aus `tocOffen` bilden.
+  for (const breite of [1024, 1150, 1280]) {
+    test(`(e2) @${breite}: das Blatt faltet die Gliederung, die Lesestelle bleibt stehen`, async ({ page }) => {
+      await leserLaden(page, breite)
+      const abstand = () => page.evaluate(() => {
+        const kopf = document.querySelector('[data-v3-kopf]')!.getBoundingClientRect()
+        const art = document.getElementById('art-429')!.getBoundingClientRect()
+        return Math.round(art.top - kopf.bottom)
+      })
+      const vorher = await abstand()
+      await panelAufziehen(page)
+      // Die Faltung muss WIRKLICH stattfinden, sonst prüfte der Fall nichts
+      // (§6.7 b): Schiene statt Spalte, und der Kopf trägt jetzt die Such-Zone.
+      await expect(page.locator('[data-v3-gliederung-schiene]')).toBeVisible()
+      await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+      const nachher = await abstand()
+      expect(Math.abs(nachher - vorher),
+        `@${breite}: der Abstand Kopf→Artikel wandert um ${nachher - vorher} px (${vorher} → ${nachher})`)
+        .toBeLessThanOrEqual(4)
+      // Und die Überschrift steht wirklich im Bild — der eigentliche Ä88-Verlust
+      // war, dass sie hinter den gewachsenen Kopf rutschte.
+      expect(nachher, `@${breite}: die Artikel-Überschrift liegt ${-nachher} px hinter dem Kopf`)
+        .toBeGreaterThanOrEqual(-4)
+    })
+  }
+
+  // ── (g) P1-1 · EIN Klick auf die Schiene, wenn das Blatt ihren Platz hat ───
+  // BEFUND (Bug-Check 18.8.2026, Repro `p1/r2-schiene.cjs`, hier @1280
+  // nachgemessen): klappt man die Gliederung ZUERST ein und öffnet DANN das
+  // Blatt, blieb der Schienen-Griff wirkungslos —
+  //
+  //   Schritt                     [data-v3-aside]   Grid
+  //   ────────────────────────────────────────────────────────────────
+  //   Gliederung zu                     0           36px 1004px
+  //   Blatt offen                       0           36px 780px 352px
+  //   1. Klick auf die Schiene          0           36px 780px 352px   ← nichts
+  //   2. Klick auf die Schiene          1           288px 752px
+  //
+  // Dazwischen stand `tocOffen` still auf `true`: ein Zustand ohne Bild, der
+  // beim nächsten Esc als aufspringende Gliederung sichtbar geworden wäre.
+  // URSACHE: `rahmenSpalten.schieneHoltPlatz` fragte nach `tocOffen` statt nach
+  // der Lage (Herleitung am Feld dort).
+  //
+  // ROT ZU BEKOMMEN (§6.7, gefahren 18.8.2026): in `v3/rahmenSpalten.ts`
+  // `schieneHoltPlatz` wieder auf `blattSpur && tocOffen && !gliederungSpalte`.
+  test('(g) @1280: ein Klick auf die Schiene holt die Gliederung zurück — auch von zu', async ({ page }) => {
+    const fehler: string[] = []
+    page.on('pageerror', (e) => fehler.push(e.message))
+    await leserLaden(page, 1280)
+    await page.locator('[data-v3-gliederung-zu]').click()
+    await expect(page.locator('[data-v3-gliederung-schiene]')).toBeVisible()
+    await panelAufziehen(page)
+    // Ausgangslage wirklich hergestellt: Schiene UND Blatt-Spur stehen.
+    await expect(page.locator('[data-v3-panel-form="spalte"]')).toBeVisible()
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+
+    await page.locator('[data-v3-gliederung-schiene]').click()
+    // EIN Klick: die Spalte steht, das Blatt hat ihr den Platz zurückgegeben.
+    await expect(page.locator('[data-v3-aside]'), 'nach EINEM Schienen-Klick fehlt die Gliederungsspalte')
+      .toBeVisible({ timeout: 10_000 })
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-gliederung-schiene]')).toHaveCount(0)
+    expect(fehler, fehler.join(' | ')).toEqual([])
+  })
 })

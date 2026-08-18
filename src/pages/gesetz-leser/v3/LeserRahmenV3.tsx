@@ -13,8 +13,8 @@ import { LeserTastatur } from '../parts/LeserTastatur';
 import { LeserKopf } from './LeserKopf';
 import { LeserSeitenleiste } from './LeserSeitenleiste';
 import { LeserGliederung } from './LeserGliederung';
-import { LeserGliederungSchiene } from './LeserGliederungSchiene';
 import { LeserLesespalte } from './LeserLesespalte';
+import { LeserLeseZeile } from './LeserLeseZeile';
 import { LeserLeisteSheet } from './LeserLeisteSheet';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
@@ -320,83 +320,38 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           titel={m.sucheAktiv ? 'Treffer' : 'Gliederung'} baum={leiste(true)} />
       )}
 
-      {/* ── Die Lese-Zeile: Gliederung/Schiene · Text · Beiwerk-Spur ──────────
-          WELCHE Spuren auf welcher Breite stehen, WIE breit der Rahmen dafür
-          wird und warum das Grid auch eingeklappt stehen bleibt: `./rahmenSpalten`
-          (Befund David 16.8., Ä60 (c) 17./18.8., beide mit Messreihe). */}
-      <div
-        className={bild.spalten
-          ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
-          : ''}
-        style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
-        {schieneSteht && (
-          // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
-          <LeserGliederungSchiene onAuf={schieneAuf} />
-        )}
-        {zweiSpalten && (
-          <aside role="navigation" aria-label="Gliederung" data-v3-aside
-            // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:
-            // `top` ist derselbe Ausdruck wie der Sprung-Offset der Anker, damit
-            // Spalte und Sprung konstruktiv nicht auseinanderlaufen (LM-003).
-            // `flex flex-col` + `maxHeight` ist die tragende Kombination — NICHT
-            // `overflow-hidden` mit `h-full` im Kind: `height:100%` löst gegen
-            // eine Maximalhöhe nicht auf, der Scroller wüchse auf die volle
-            // Inhaltshöhe und der Überschuss würde stumm abgeschnitten
-            // (reproduziert am OR @1440×900).
-            className="sticky flex min-h-0 flex-col self-start"
-            style={{
-              top: 'var(--nt-stick)',
-              maxHeight: umgebung.imPane
-                ? 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)'
-                : 'calc(100vh - var(--nt-stick) - 1.5rem)',
-            }}>
-            <div className="flex items-center justify-end pb-1">
-              <button type="button" data-v3-gliederung-zu onClick={() => setzeTocOffen(false)}
-                aria-expanded={m.tocOffen} title="Gliederung ausblenden"
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur
-                    «ausblenden» — Wort für Wort dasselbe wie «Seitenleiste
-                    ausblenden» der App-Leiste zwei Zentimeter weiter oben, aber
-                    mit anderer Wirkung. Zwei gleich beschriftete Knöpfe, die
-                    Verschiedenes tun, sind eine Falle (§8). Der Knopf sagt
-                    jetzt, WAS er ausblendet. */}
-                <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
-              </button>
-            </div>
-            {leiste(false)}
-          </aside>
-        )}
-
-        {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis
-            H1 über die VOLLE Breite und schob die Seitenleiste bei 1440 px
-            unter die Falz — obwohl sie in V3 die Hauptnavigation ist. */}
-        <div className="min-w-0 space-y-5">
+      {/* Die Lese-Zeile — die drei Spuren nebeneinander (`./LeserLeseZeile`,
+          Auslagerung H4-Nachzug 18.8.2026, §6.6). Der Rahmen entscheidet ihre
+          Gestalt (`bild` aus `./rahmenSpalten`) und füllt ihre Slots; WIE die
+          Spuren stehen, steht dort. */}
+      <LeserLeseZeile bild={bild} vollflaechig={!umgebung.imPane} tocOffen={m.tocOffen}
+        onSchieneAuf={schieneAuf} onGliederungZu={() => setzeTocOffen(false)}
+        leiste={leiste(false)}
+        zelle={<>
           {/* Der geteilte Erlass-Kopf (Kap. 4e) — Prop-Weitergabe in
               `./LeserErlassKopfZone` (H3-Auslagerung, §6.6). */}
           <LeserErlassKopfZone m={m} erlass={erlass} artikelAnzahl={eintraege.length}
             bestimmungsWort={bestimmungsWort} />
-
           {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
-
           {/* Ä76: der `trefferListe`-Prop ist gestrichen — er traf die
               EINGEKLAPPTE Spalte statt des angekündigten Rand-Falls, und der ist
               unerreichbar. Herleitung samt Messreihe steht am Bauteil, das sie
               betrifft (`./LeserLesespalte`, `./LeserTrefferBlatt`). */}
           <LeserLesespalte m={m} />
-        </div>
-
-        {/* H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus
-            füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
-            und liegt ausserhalb des Flusses. */}
-        {panelZone && (
-          <LeserPanelZone form={bild.blattForm} panelId={panelId}
-            paneZiel={overlayZiel} paneRolle={paneRolle}
-            zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
-            normZitat={normZitat(panelArtikel, erlass.kuerzel)}
-            artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token}
-            steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
-        )}
-      </div>
+        </>}
+        // H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus
+        // füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
+        // und liegt ausserhalb des Flusses.
+        panelZone={panelZone
+          ? (
+            <LeserPanelZone form={bild.blattForm} panelId={panelId}
+              paneZiel={overlayZiel} paneRolle={paneRolle}
+              zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
+              normZitat={normZitat(panelArtikel, erlass.kuerzel)}
+              artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token}
+              steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
+          )
+          : null} />
 
       {/* R4 «Weiterlesen» + R8 Tastatur — dieselben BAUSTEINE wie die Ist-Hülle
           (Kap. 4h: KEINE zweite Tastaturebene), direkt aus `parts/` statt über
