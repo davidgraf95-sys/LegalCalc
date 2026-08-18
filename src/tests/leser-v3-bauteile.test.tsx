@@ -264,29 +264,50 @@ describe('UebersichtBox — zu im Grundzustand, Zusammenfassung bleibt im DOM', 
     expect(html).toContain('data-v3-uebersicht-zeile');
   });
 
-  it('die Warnung steht VOR dem zugeklappten Kinder-Block, nicht darin verschachtelt', () => {
+  it('die Warn-Zelle steht VOR dem zugeklappten Kinder-Block, nicht darin verschachtelt', () => {
     const html = renderToString(
-      <UebersichtBox angaben={{ ...ANGABEN_LEER, warnung: 'nicht konsolidiert' }} />,
+      <UebersichtBox angaben={{ ...ANGABEN_LEER, vorbehalt: 'nächste Fassung ab 01.01.2027' }} />,
     );
     // §6.3-DEKLARATION (H2b, Ä5): der Anker wandert, die geprüfte Sache nicht.
     // Bis H2 hing dieser Test an der Klassen-Kette `border-t border-line px-2
     // py-2` des Kinder-Wrappers. Ä5 hat die Box entrahmt (Weissraum statt Kasten,
     // Design-Grundlage Kap. 8 Nr. 1) und dabei diese Klassen geändert — der Test
     // wäre an einer GESTALTUNGS-Änderung gescheitert, obwohl die geprüfte
-    // STRUKTUR-Zusage («die Warnung steht VOR den Kindern, nicht darin») unberührt
+    // STRUKTUR-Zusage («die Zelle steht VOR den Kindern, nicht darin») unberührt
     // ist. Er hängt jetzt an der Identität `data-v3-uebersicht-inhalt`. Dieselbe
     // Lehre wie der `data-fn-ref`-Fix aus H2: ein Wächter darf ein Element nicht
     // über sein Aussehen suchen. Keine Assertion gelockert.
-    // Ä70: der Marker ist jetzt der ECHTE Anker der Warn-Zelle statt eines
+    // Ä70: der Marker ist der ECHTE Anker der Warn-Zelle statt eines
     // eingeschleusten Test-Knotens — die Box baut die Zeile selbst.
-    const iWarnung = html.indexOf('data-v3-uebersicht-warnung');
+    // §6.3-DEKLARATION, ZWEITE STUFE (Ä81, 18.8.2026): der AUSLÖSER wechselt von
+    // `warnung` auf `vorbehalt`. Die Konsolidierungs-Warnung steht seit Ä81 nur
+    // noch im Erlass-Kopf (sie stand gemessen zweimal gleichzeitig sichtbar auf
+    // der Seite); die Zelle selbst gibt es weiterhin, und die geprüfte Zusage
+    // gilt unverändert für ihren verbliebenen Inhalt. Der Fall darunter sichert
+    // die Ä81-Aussage direkt.
+    const iZelle = html.indexOf('data-v3-uebersicht-warnung');
     const iKinderWrapper = html.indexOf('data-v3-uebersicht-inhalt');
-    expect(iWarnung).toBeGreaterThan(-1);
+    expect(iZelle).toBeGreaterThan(-1);
     expect(iKinderWrapper).toBeGreaterThan(-1);
-    expect(iWarnung).toBeLessThan(iKinderWrapper);
+    expect(iZelle).toBeLessThan(iKinderWrapper);
   });
 
-  it('ohne Warnung: keine Warn-Zeile im Markup', () => {
+  it('Ä81: die Konsolidierungs-Warnung steht NICHT mehr in der Box — nur im Kopf', () => {
+    // Gemessen 18.8.2026 (StPO, D 1440, Box zu wie aufgeklappt): der Satz stand
+    // zweimal gleichzeitig sichtbar auf der Seite — in der Leiste und im
+    // Erlass-Kopf. Die Box zieht ihre Grenze selbst anders (Kopf = wie aktuell,
+    // Box = woher und wie gebaut); eine offene Konsolidierung ist «wie aktuell».
+    // Das FELD bleibt im reinen Modell — nur diese Ausgabe entfällt.
+    // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` die `warnung`-Zeile
+    // wieder in die Warn-Zelle setzen.
+    const html = renderToString(
+      <UebersichtBox angaben={{ ...ANGABEN_LEER, warnung: 'nicht konsolidiert' }} />,
+    );
+    expect(html).not.toContain('nicht konsolidiert');
+    expect(html).not.toContain('data-v3-uebersicht-warnung');
+  });
+
+  it('ohne Warnung UND ohne Vorbehalt: keine Warn-Zelle im Markup', () => {
     const html = renderToString(<UebersichtBox angaben={ANGABEN_LEER} />);
     expect(html).not.toContain('data-v3-uebersicht-warnung');
   });
