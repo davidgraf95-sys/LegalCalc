@@ -1,5 +1,5 @@
 import { formatiereDatum, grundartMeta, titelOhneKlammerSuffix, verifiziertesSachgebiet } from '../helpers';
-import { GEBIET_LABEL } from '../../../lib/normtext/register';
+import { GEBIET_LABEL, type ErlassTyp } from '../../../lib/normtext/register';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 
@@ -171,9 +171,89 @@ export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'key'>): string 
  * kommt aus demselben Datenmodell, das der Sprung auflöst, und ist damit
  * garantiert eingebbar. Fehlt es (Snapshot noch nicht da), verspricht das Feld
  * keinen Sprung, sondern nennt nur die Suche.
+ *
+ * ── Ä112 (Live-Ästhetik-Prüfung 18.8.2026) · DAS FELD NENNT SEINEN ERLASS ────
+ *
+ * GEMESSEN am Live-Stand @720–1440: ZWEI Suchfelder standen übereinander, keine
+ * 60 px auseinander, und beide begannen mit demselben Wort —
+ *   App-Topbar: «Suchen oder Norm springen …»   (sucht die ganze Anwendung)
+ *   Leser:      «Suchen oder «Art. 1» …»        (sucht IN diesem Erlass)
+ * Der Unterschied ist der wichtigste, den die beiden Felder haben, und keines
+ * der beiden sagte ihn. Wer im oberen Feld «Entschädigung» tippt, bekommt die
+ * Anwendung durchsucht und wundert sich, dass die Trefferliste des Erlasses
+ * leer bleibt.
+ *
+ * BEHOBEN WIRD DAS UNTERE FELD, NICHT DIE TOPBAR: die Topbar trägt die ganze
+ * App (`components/layout/**`, FL-4) und ist hier ausdrücklich nicht
+ * anzufassen; das Leser-Feld dagegen KENNT seinen Erlass. Das Kürzel kommt aus
+ * dem Datenmodell (`erlass.kuerzel`) — erlassneutral, kein `if (bund)`, keine
+ * Liste: was im Register steht, steht im Platzhalter.
+ *
+ * `kuerzel` fehlt nie (Registerfeld); ist es leer, bleibt die alte, allgemeine
+ * Form stehen, statt ein «Im  suchen» mit Loch zu drucken (§8).
  */
-export function suchPlatzhalter(beispiel: string | null): string {
-  return beispiel ? `Suchen oder «${beispiel}» …` : 'Im Gesetz suchen …';
+export function suchPlatzhalter(beispiel: string | null, kuerzel?: string): string {
+  return `${suchOrt(kuerzel)}${beispiel ? ` oder «${beispiel}» …` : ' …'}`;
+}
+
+/** Ä112 · der halbe Satz, den Platzhalter UND zugänglicher Name teilen — EINE
+ *  Quelle für beide (§5). Ohne Kürzel die alte, allgemeine Form. */
+function suchOrt(kuerzel?: string): string {
+  return kuerzel?.trim() ? `Im ${kuerzel.trim()} suchen` : 'Im Gesetz suchen';
+}
+
+/**
+ * Ä112 · der ZUGÄNGLICHE NAME des Such-/Sprungfelds.
+ *
+ * Er nennt denselben Erlass wie der Platzhalter — und zusätzlich die zweite
+ * Fähigkeit des Feldes (springen), die der Platzhalter nur als Beispiel zeigt.
+ * Eigene Funktion statt eines zweiten Literals im Rahmen: der Name ist die
+ * Auskunft, auf die ein Screenreader-Nutzer angewiesen ist, und er darf nicht
+ * auseinanderlaufen, wenn jemand den Platzhalter nachjustiert.
+ */
+export function suchFeldName(kuerzel?: string): string {
+  return `${suchOrt(kuerzel)} oder zu einer Bestimmung springen`;
+}
+
+/**
+ * Ä108 (Live-Ästhetik-Prüfung 18.8.2026) · DIE ZEILE «ART» TRÄGT DIE ERLASSART
+ * ODER SIE ENTSTEHT NICHT.
+ *
+ * GEMESSEN am FR-Erlass 635.1.1: dort stand «Art · Kanton FR». Das Feld
+ * versprach die Erlassart und lieferte die EBENE — eine Auskunft, die im selben
+ * Bild schon zweimal steht (Kopf-Overline «Kanton FR», Krume «Kanton FR ›»).
+ * Ursache: die Box baute ihren Wert mit `kopfOverline`, und die fällt ohne
+ * bekannten `erlassTyp` auf die Ebene zurück — richtig für eine OVERLINE, die
+ * nie leer sein darf, falsch für eine Label/Wert-Zeile, die entfallen kann (§8:
+ * «Art — Kanton FR» ist keine Erlassart, sondern ein leeres Versprechen).
+ *
+ * JETZT: der Wert kommt direkt aus dem `erlassTyp` des Registers. Ist er dort
+ * nicht geführt, entsteht keine Zeile — dieselbe Regel, nach der schon «Stand»
+ * ohne Wert entfällt (B8). Der Bund behält seinen belegten Vorgabewert
+ * «Bundesgesetz» (byte-verträglich zum Vorzustand, `kopfOverline`); ihn hier zu
+ * streichen wäre eine zweite, ungefragte Änderung.
+ *
+ * Erlass-neutral (Fundament-Auflage 2): liest `rechtsgebiet`/`ebene`/`erlassTyp`,
+ * nie eine Kantonsliste. Der Ebene-Zusatz «Kanton XX ·» entfällt — er ist die
+ * Auskunft des Kopfes, nicht die dieser Zeile (§5).
+ */
+export function erlassArt(
+  erlass: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet'>,
+  erlassTyp: ErlassTyp | undefined,
+): string | null {
+  if (erlass.rechtsgebiet === 'international') {
+    return erlassTyp === 'staatsvertrag' ? 'Staatsvertrag' : null;
+  }
+  if (erlass.ebene === 'bund') {
+    return erlassTyp === 'verfassung' ? 'Bundesverfassung'
+      : erlassTyp === 'verordnung' ? 'Verordnung'
+      : erlassTyp === 'staatsvertrag' ? 'Staatsvertrag'
+      : 'Bundesgesetz';
+  }
+  return erlassTyp === 'gesetz' ? 'Gesetz'
+    : erlassTyp === 'verordnung' ? 'Verordnung'
+    : erlassTyp === 'verfassung' ? 'Verfassung'
+    : null;
 }
 
 /**

@@ -516,7 +516,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   <a href={amtlich} target="_blank" rel="noopener noreferrer"
                     className="text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
                     aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen (neues Fenster)`}
-                    title="Amtliche Fassung an genau dieser Stelle (Fedlex)">amtliche Fassung ↗</a>
+                    // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel — der
+                    // sichtbare Text folgt dem `aria-label` und dem `title`
+                    // darüber, die schon immer «Amtliche Fassung» sagten.
+                    title="Amtliche Fassung an genau dieser Stelle (Fedlex)">Amtliche Fassung ↗</a>
                 )}
               </span>
             )}

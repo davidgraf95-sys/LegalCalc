@@ -1,3 +1,4 @@
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // @shard-gruppe: 4
 // W2·10-UI-NAV-URL — Adress-Modell des Gesetzes-Lesers (LM-202).
 //
@@ -115,7 +116,7 @@ test.describe('LM-202 — expliziter Anker-Klick setzt die Adresse', () => {
     // darum BEIDE Namen und bleibt damit in beiden Hüllen scharf; die geprüfte
     // Sache — drei Sprünge fluten den Verlauf nicht — ist Wort für Wort dieselbe.
     const feld = page
-      .getByRole('searchbox', { name: 'Im Gesetz suchen oder zu einer Bestimmung springen' })
+      .getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
       .or(page.getByRole('textbox', { name: 'Zu Artikel springen' }))
       .first()
     await expect(feld).toBeVisible({ timeout: 10000 })

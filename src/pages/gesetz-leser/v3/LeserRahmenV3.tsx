@@ -29,7 +29,7 @@ import { leserCssVariablen } from './leserGeometrie';
 import { rahmenBild, useRahmenRaum } from './rahmenSpalten';
 import { kopfElemente, kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
-import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
+import { bestimmungsWort as bestimmungsWortVon, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
 import { useLeserV3Modell } from './leserV3Modell';
 
@@ -172,7 +172,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
       onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
-      platzhalter={suchPlatzhalter(beispielBestimmung)} escLeert={!gliederungsSheetOffen}
+      // Ä112 (18.8.2026): der Platzhalter nennt den Erlass — sonst standen
+      // @720–1440 zwei fast gleich beschriftete Suchfelder übereinander
+      // (Topbar vs. Leser). Herleitung in `./erlassAnsicht.suchPlatzhalter`.
+      platzhalter={suchPlatzhalter(beispielBestimmung, m.erlass?.kuerzel)}
+      ariaName={suchFeldName(m.erlass?.kuerzel)} escLeert={!gliederungsSheetOffen}
       // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
       // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).
       hatTreffer={m.fundstellen > 0}
@@ -257,7 +261,15 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       <button type="button" data-v3-gliederung-auf
         aria-expanded={umgebung.istXl ? m.tocOffen : m.tocAuf}
         onClick={() => { if (umgebung.istXl) setzeTocOffen(true); else m.setTocAuf((v) => !v); }}
-        title="Gliederung" aria-label="Gliederung" className={kopfGriffKlassen(stufe === 'mini')}>
+        // ── Ä111 (18.8.2026) · ZWEI ☰, ZWEI ZIELE ──────────────────────────
+        // GEMESSEN @390: zwei ☰ in derselben Kopfzone — links das der App-Topbar
+        // («Navigation öffnen»), rechts dieses. Der Name sagte nur, WAS
+        // dahinterliegt, nicht was der Klick tut; ein Screenreader las an beiden
+        // ein Substantiv. JETZT nennt er die Handlung, wortgleich mit
+        // «Gliederung ausblenden» (`LeserLeseZeile`) und «Gliederung einblenden»
+        // (Schiene). Die GLYPHE bleibt: ein zweites Zeichen wäre eine
+        // Entscheidung über das App-Icon-Set (`Icon.tsx`) und damit H5.
+        title="Gliederung öffnen" aria-label="Gliederung öffnen" className={kopfGriffKlassen(stufe === 'mini')}>
         <span aria-hidden className={kopfGlypheKlassen(stufe === 'mini')}>☰</span>
       </button>
     )

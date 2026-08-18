@@ -757,6 +757,31 @@ ein Paritätsbeweis, den nichts fährt.
 | **C5 · Fussnoten-Marker ohne `aria-controls`** (Klick-Test) | — | Der Marker wechselt `aria-expanded`, verweist aber auf nichts | **kann H5 tragen** — der Marker sitzt im **Kern-Render** (`components/normtext/ArtikelBody.tsx`), und das per Portal geöffnete `span[role="note"]` trägt heute gar keine `id`. Ein `aria-controls` verlangt also eine erzeugte id im Kern-Markup, das die Golden-Ausgaben decken |
 | **C1 · Gliederung/Steckbrief über Reload vergessen** (Klick-Test) | Vermerk «H4-Nachzug — Teil B», Kap. 7 | Layout-Zustände überleben den Reload nicht, die Optionen schon | ✅ **entschieden 18.8.2026 (Teil B): bewusst NICHT persistieren** — Optionen sind Lese-Präferenzen über alle Erlasse, Gliederungs- und Steckbrief-Zustand sind Ankunfts-Zustände EINES Erlasses; dazu käme ein Pre-Paint-Lesen (§15.2) |
 
+### Nachtrag 18.8.2026 · Säuberung nach der Live-Ästhetik-Prüfung
+
+Der Live-Prüfer hat den gebauten Standard gegen dieselben Massstäbe gemessen
+(Note **8/10**, Protokoll `aesthetik-live-2026-08-18.md`) und **Ä97–Ä125**
+gemeldet. Die Säuberung (Branch `feat/leser-v3-saeuberung-bau`, Vollzugsvermerk
+im Fahrplan Kap. 7) hat davon **18 Zeilen geschlossen**; die Tabelle oben ändert
+sich dadurch an drei Stellen:
+
+| Zeile oben | Was der Nachtrag ändert |
+|---|---|
+| **Ä81 ✅** | Der dort ausdrücklich **nicht mitentschiedene** `vorbehalt` («nächste Fassung ab …») ist jetzt entschieden — **Ä97**. Am OR @1440 stand er gemessen zweimal gleichzeitig; die Box trägt seither **gar keine** Warn-Zelle mehr, beide Aussagen gehören dem Kopf |
+| **Ä75 ✅** | Die positive Hälfte («kantonale Sigle ins Datenmodell») bleibt H5/Korpus — **aber die §7-Lücke, die sie offenliess, ist zu**: **Ä98**, der Zitat-Text trug «SR» auch über kantonalen Nummern und schrieb damit eine falsche Fundstelle in die Zwischenablage. `baueZitat` liest jetzt dieselbe Weiche wie die sichtbare Kopfzeile |
+| **B1/B7/B2 ✅** | Der dort neu gesetzte Wortlaut «Rechtsprechung anzeigen» ist mit **Ä115** noch einmal geschärft: «Rechtsprechung in der Kopfzeile» — dieselbe Wirkung, aber ein Substantiv wie seine beiden Nachbarn, statt eines Satzes, den das Zustandszeichen daneben zu Ende spricht |
+
+**Neu offen für H5** (aus derselben Prüfung, in dieser Etappe bewusst nicht
+gebaut — je mit Grund im Fahrplan Kap. 7, Tabelle Ä97–Ä125): **Ä99** (die
+Übersichtsbox klebt; die Doku sagte bis 18.8. das Gegenteil — korrigiert, Bau
+offen), **Ä104** (Treffer im Randtitel markieren = Suchlogik, keine
+Beschriftung), **Ä109**, **Ä123**, **Ä124**, **Ä125** sowie die **App-Hälften**
+von Ä110/Ä111/Ä112/Ä118 (`components/layout/**`, `NormPopover`, `NormChip` — in
+dieser Etappe TABU).
+
+**Weiterhin bei David** (unverändert, nicht gebaut): **Ä33/Ä34** (Chrome-Anteil
+@390), **Ä64 = Ä113** (Regler-Hierarchie bei 130 %).
+
 **Stand nach dem H4-Nachzug, Teil B (18.8.2026).** Geschlossen sind seit dem
 Nachzug **Ä84** vollständig (Ä94 — der allein stehende «↑ Anfang» füllt jetzt den
 Stummel neben dem Segment, statt gestrichen zu werden; **kein Entscheid nötig**),

@@ -187,7 +187,11 @@ export function jahrImBereich(jahr: number, b: Zeitbereich): boolean {
  */
 export function bereichLabel(b: Zeitbereich): string | null {
   if (istBereichOffen(b)) return null;
-  if (b.von !== '' && b.bis !== '') return `${fmtIsoStrict(b.von)} – ${fmtIsoStrict(b.bis)}`;
+  // Ä117 (18.8.2026): BIS-Strich ohne Spatien. Mit Spatien las sich der
+  // Halbgeviertstrich als Gedankenstrich und stand damit in derselben Rolle wie
+  // das «—» daneben (Benennungs-Glossar «ein Zeichen»). «Art. 1–10» im
+  // Sektionskopf hält es seit je so — jetzt beide Spannen gleich.
+  if (b.von !== '' && b.bis !== '') return `${fmtIsoStrict(b.von)}–${fmtIsoStrict(b.bis)}`;
   return b.von !== '' ? `ab ${fmtIsoStrict(b.von)}` : `bis ${fmtIsoStrict(b.bis)}`;
 }
 

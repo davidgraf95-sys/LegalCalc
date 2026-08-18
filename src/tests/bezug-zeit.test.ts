@@ -147,7 +147,10 @@ describe('bereichLabel', () => {
   it('nennt beide Enden, einzeln oder als Spanne — Schweizer Datumsform', () => {
     expect(bereichLabel({ von: '2020-06-15', bis: '' })).toBe('ab 15.06.2020');
     expect(bereichLabel({ von: '', bis: '2024-03-31' })).toBe('bis 31.03.2024');
-    expect(bereichLabel({ von: '2020-06-15', bis: '2024-03-31' })).toBe('15.06.2020 – 31.03.2024');
+    // Ä117 (18.8.2026): BIS-Strich OHNE Spatien. Mit Spatien stand der
+    // Halbgeviertstrich in der Rolle des Gedankenstrichs, für den der Leser
+    // «—» führt — die Spanne schreibt sich wie «Art. 1–10» (Benennungs-Glossar).
+    expect(bereichLabel({ von: '2020-06-15', bis: '2024-03-31' })).toBe('15.06.2020–31.03.2024');
   });
 });
 

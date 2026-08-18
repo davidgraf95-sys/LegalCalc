@@ -188,9 +188,9 @@ also trägt sie die ganze Kette. Vollzugsvermerk am Ende von Kap. 7.)*
 ### (b) Seitenleiste — feste Reihenfolge, nur der Baum ist sticky
 
 ```
-D/S │ ▸ Übersicht  (SR 312.0 · 480 Art. · Stand …)       │  scrollt MIT weg
-    │ [ Suchen oder «Art. 429» …                    ⌘K ] │  scrollt MIT weg
-    │ Gliederung          [alles auf/zu]   [↑ Anfang]    │  ◀ ab hier sticky
+D/S │ ▸ Übersicht  (SR 312.0 · 480 Art.)                 │  klebt mit (Ä99)
+    │ [ Im StPO suchen oder «Art. 429» …            ⌘K ] │  klebt mit (Ä99)
+    │ Gliederung          [alles auf/zu]   [↑ Anfang]    │  klebt zusätzlich
     │  1. Teil … / 1. Titel …                            │  Spalte 18rem/15rem
 H   Gliederung + Suchfeld als Bottom-Sheet hinter ☰; «↑ Anfang» schwebt unten
     rechts, mit Text-Label, erst ab > 4 Bildschirmhöhen (NN/g).
@@ -200,7 +200,8 @@ H   Gliederung + Suchfeld als Bottom-Sheet hinter ☰; «↑ Anfang» schwebt un
 |---|---|---|
 | **Eine** Übersichtsbox, nicht sticky (Fedlex hat drei) | neu (Pos. 10) | **Simplicity** |
 | **Ein** Feld für Suche und Sprung — «Art. 429» erkennt `loeseArtikelEingabe` (`suchTreffer.ts:38-42`) und springt, sonst Volltextsuche | neu, löst K2 | **Simplicity**, **Agency** |
-| **Korrektur 16.8.2026 (David):** das Feld gehört in den KLEBENDEN Block und steht dort **zuoberst** — Reihenfolge: 1. Such-/Sprungfeld · 2. Gliederungs-Kopfzeile · 3. scrollbarer Baum. Die Skizze oben zeigt es noch über dem klebenden Bereich; das war falsch: «Das Suchfeld muss immer zugreifbar sein, auch wenn ich in der Gliederung scrolle.» Die Übersichtsbox bleibt darüber und scrollt weiterhin weg — sie ist Ankunfts-Information, kein Werkzeug. Umgesetzt in H2 | korrigiert | **Agency** |
+| **Korrektur 16.8.2026 (David):** das Feld gehört in den KLEBENDEN Block und steht dort **zuoberst** — Reihenfolge: 1. Such-/Sprungfeld · 2. Gliederungs-Kopfzeile · 3. scrollbarer Baum. Die Skizze oben zeigt es noch über dem klebenden Bereich; das war falsch: «Das Suchfeld muss immer zugreifbar sein, auch wenn ich in der Gliederung scrolle.» Umgesetzt in H2 | korrigiert | **Agency** |
+| **Ä99 · KORREKTUR 18.8.2026 (Live-Prüfung) — «scrollt MIT weg» stimmt nicht.** Die Skizze oben und der frühere Zusatz «die Übersichtsbox bleibt darüber und scrollt weiterhin weg» beschreiben einen Zustand, den der gebaute Leser nie hatte. GEMESSEN am Live-Stand (StPO, Anker `#art-429`, scrollY 247 790): die Box steht bei y = 148 — sichtbar, in **jeder** Scroll-Lage. MECHANIK, im Code eindeutig: `sticky` sitzt am `<aside data-v3-aside>` (`v3/LeserLeseZeile.tsx`, `top: var(--nt-stick)`), und dieses Aside **enthält** die Box; der Baum-Sockel klebt darin ein zweites Mal auf `top-0` (`v3/LeserSeitenleiste.tsx`). Es klebt also die ganze Leiste, nicht nur der Baum. ZWEI FOLGEN, beide bisher falsch beschrieben: (1) das Suchfeld ist **nicht** das oberste Element des klebenden Bereichs — davor stehen im Aside die Box und «‹ Gliederung ausblenden», und beim Scrollen der LEISTE wandert das Feld selbst aus dem Bild (klebend ist dort nur der Baum-Sockel, `top-0`); (2) eine AUFGEKLAPPTE Box klebt am Seiten-Scroll mit und nimmt dem Baum rund 240 px. Nicht gebaut, bewusst: ob die Box aus dem Sticky-Container gelöst wird oder ob «die Leiste klebt als Ganzes» der richtige Entscheid ist, ist eine Layout-Frage für **H5** (offene Zeile in Kap. 7). Hier steht ab jetzt der Ist-Zustand, nicht die Absicht von 16.8. | **korrigiert 18.8.2026** | Ehrlichkeit vor Skizze |
 | Gliederung sticky | behalten | **Flexibility** (Kontext bewahren) |
 | «alles ein-/ausklappen» als sichtbarer Knopf, **kein** Shortcut (W3C ARIA APG: globales Auf/Zu ist kein Tastatur-Standard) | neu (Pos. 16) | **Familiarity** |
 | «↑ Anfang», genau **ein** Knopf pro Seite, Text-Label | neu (Pos. 15) | **Agency** |
@@ -1177,12 +1178,24 @@ Box **genau einmal**, im Wortlaut des Erlass-Kopfs (`nichtKonsolidiertSatz`,
 S3/F5) statt in einem zweiten eigenen.
 
 **Der Doppelungs-Entscheid** (der Auftrag verlangt ihn ausdrücklich): Die
-Rechtfertigung «die Box hält fest, was der Kopf beim Scrollen verliert» ist
-**nachgeprüft falsch** — die Box steht ausserhalb des klebenden Blocks und
-scrollt selbst weg (Kap. 4b; `leser-v3-seitenleiste-ordnung` (b) misst genau
-das). Wer tief in Art. 429 liest, hat weder Kopf noch Box. Also: **Kopf** =
+Rechtfertigung «die Box hält fest, was der Kopf beim Scrollen verliert» hält
+nicht — die Box sagt nichts, was der Kopf im selben Bild nicht auch sagt. Also:
+**Kopf** =
 welcher Erlass, wie aktuell, wo die amtliche Fassung. **Box** = woher er kommt
-und wie er gebaut ist. Gestrichen, weil der Kopf es im selben Bild sagt:
+und wie er gebaut ist.
+
+> **KORREKTUR 18.8.2026 (Ä99).** Die Begründung oben stand bis heute mit einem
+> zusätzlichen, FALSCHEN Satz da: «die Box steht ausserhalb des klebenden Blocks
+> und scrollt selbst weg … wer tief in Art. 429 liest, hat weder Kopf noch Box».
+> Gemessen am Live-Stand klebt die Box (Herleitung und Messwerte: Kap. 4b,
+> Ä99-Zeile). Der Arbeitsteilungs-Entscheid **bleibt unverändert richtig** — er
+> trägt sich selbst («zwei Ankunfts-Auskünfte nebeneinander sind eine zu viel»)
+> und brauchte das Scroll-Argument nie. Gestrichen ist nur das Argument, nicht
+> der Schluss. Dass die Sonde `leser-v3-seitenleiste-ordnung` (b) grün ist,
+> widerlegt das nicht: sie misst die REIHENFOLGE der Leisten-Elemente, nicht
+> ihre Sticky-Lage — ein Wächter, dem man mehr zutraute, als er prüft.
+
+Gestrichen, weil der Kopf es im selben Bild sagt:
 Grundhinweis, Standausweis-Satz, Umfang-Zeile. Bewusst geblieben trotz
 Teil-Dopplung: die Datums-KETTE Erlassdatum → In Kraft seit → Stand — im Kopf
 eine «·»-Kette, hier Fedlex' Chronologie und der Grund, eine Steckbrief-Liste
@@ -2439,6 +2452,97 @@ Wächter, samt Herleitung im Kopfkommentar.
 scheitert unverändert mit **0.0202** — derselbe Wert und dieselbe Quelle wie im
 Flip-Vermerk beschrieben. Er wartet auf Davids Entscheid und wurde weder
 angefasst noch gelockert.
+
+---
+
+### ✅ Säuberung nach Live-Prüfung (18.8.2026), Branch `feat/leser-v3-saeuberung-bau`
+
+**Auftrag David, wörtlich:** «… es nochmals sauberer gemacht werden soll. alles
+richtig benannt usw.» — nach der Live-Ästhetik- und Benennungs-Prüfung am
+gebauten V3-Standard (`docs/ux-audit-2026-07/reader/leser-v3-h4/aesthetik-live-2026-08-18.md`,
+Note **8/10**, Build `2298d577`).
+
+**Was diese Etappe ist und was nicht.** Sie ändert kein Layout, keine Struktur
+und keine Rechenlogik — sie räumt Wörter, Doppelungen und Zeichen-Flut weg. Der
+Prüfer hat das ausdrücklich so eingeordnet: «Nichts davon ist Struktur — alles
+ist Säuberung.» Der grösste Einzelbefund war **Benennungs-Streuung**; sie hat
+darum eine eigene, bewachte Wahrheit bekommen (Design-Grundlage Kap. 11
+«Benennung (Glossar, 18.8.2026)», Wächter `src/tests/leser-benennung.test.ts`).
+
+| Ä | vorher (gemessen am Live-Stand) | Fix | Spec |
+|---|---|---|---|
+| **Ä98** | Zitat-Kopie am Kantonserlass: «§ 1 …, **SR** LS 211.11» / «… SR RSF 635.1.1» / «… SR 640.100» — die Zwischenablage trug eine Fundstelle, die die SR des Bundes nicht führt (§7-nah) | `baueZitat` liest `kennungText` statt `SR ${sr}`; die Signatur nimmt `ebene` (die Kennung ist Funktion der Ebene, nie des Kürzels). Ä75 hatte die sichtbare Hälfte schon gezogen — jetzt speist EINE Weiche beide Ausgaben (§5) | `stand-ausweis` (Bund byte-gleich) · `leser-v3-uebersicht` (Kennung je Ebene) |
+| **Ä97** | OR @1440: «⚠ nächste Fassung ab 01.10.2026» gleichzeitig in der Übersichtsbox UND in der Stand-Zeile des Erlass-Kopfs | Wie Ä81: nur der Kopf. Die Box trägt damit **gar keine** Warn-Zelle mehr; die Felder `warnung`/`vorbehalt` bleiben im reinen Modell | `leser-v3-bauteile` — der Fall prüfte bisher die Reihenfolge einer Zelle, die es nicht mehr gibt; umgeschrieben mit §6.3-Deklaration + Rot-Rezept |
+| **Ä100** | Ingress-Fussnoten → erster Sektionskopf: **zwei** Linien ~25 px auseinander, beide in der Rolle `rule-struktur` | Die Vorspann-Kante fällt; die Stufen-Linie des Sektionskopfs ist der Kanon. Ohne Sektionen steht Weissraum statt einer Struktur-Linie ohne Struktur | bestehende Linien-Sonden (`check:linien-kanon`, `leser-ohne-gliederungslinie`) |
+| **Ä101** | Erlass-Titel-h1 mit `hyphens-auto`: «Aner-kennung» (LugÜ), «Strafprozess-ordnung» (StPO) | `hyphens-auto` weg, `[overflow-wrap:anywhere]` bleibt (fängt das übergrosse Einzelwort ohne Trennstrich) | Bilder `-saeuberung` (Kopf @390/@1440) |
+| **Ä102** | Trefferlisten-Gruppenkopf in Versal-Mono mit Ellipse: «3. TITEL: PARTEIEN UND ANDERE…», @1440 **und** @390 | Normalschreibung, Sans-Beiwerk-Stimme, zwei Zeilen erlaubt. Der Gliederungsort ist Kernauskunft (Ä15/Ä96-Klasse) | `leser-v3-blatt` / `leser-v3-treffer-reihenfolge` (Bestand) |
+| **Ä103** | Zähler «–/88» vor der ersten Navigation; @390 zweizeilig im Kasten | «Fundstelle 0 von 88», einzeilig (`whitespace-nowrap`). Wert bleibt datenseitig (§4.4) | `leser-benennung` (Glossar-Eintrag «Trefferzähler») |
+| **Ä106** | 25 × ★ unter der Overline «LEITENTSCHEIDE 25» | ★ gestrichen. `gruppiereKanten` legt je Status eine Gruppe an — innerhalb einer Gruppe konnte die Marke nie etwas unterscheiden (§17: gestrichen statt bewacht) | `leser-v3-panel` (Gruppen-Overline trägt Wort + Zahl) |
+| **Ä110** | Ein Fedlex-Link, drei Namen: Kopf «↗ geltende Fassung», Artikel/Sektionskopf «amtliche Fassung ↗», Box «geltende Fassung»; dazu gemischte Gross-/Kleinschreibung in der Aktionszeile | Überall «**Amtliche Fassung ↗**», Pfeil hinten, alle Aktions-Labels gross beginnend | `leser-benennung` · `aufhebung-kopf` · `leser-v3-uebersicht` |
+| **Ä111** | Zwei ☰ in derselben Kopfzone @390 (Topbar «Navigation öffnen» / Leser «Gliederung») | Der Leser-Griff heisst «**Gliederung öffnen**» — die Handlung, nicht die Sache. Glyphe unverändert (App-Icon-Set = H5) | `leser-benennung` (eigener Fall, Rot-Rezept am Fall) |
+| **Ä112** | Zwei fast gleich beschriftete Suchfelder übereinander @720–1440 | Leser-Feld nennt den Erlass: Platzhalter «Im StPO suchen oder «Art. 1» …» **und** `aria-label` aus derselben Quelle (`suchOrt`). Topbar unangetastet | `leser-benennung` · `leser-v3-erlassansicht` |
+| **Ä114** | «Ansicht» (Öffner) · «Darstellungsoptionen» (aria) · «DARSTELLUNG» (Overline) · «Darstellung: …» (title) | Vier Stellen, ein Wort: «**Ansicht**» | `leser-benennung` |
+| **Ä115** | «Rechtsprechung anzeigen ✓ an» las sich als Satz, die Nachbarn sind Substantive | «**Rechtsprechung in der Kopfzeile**» — der Schalter benennt die Sache, das Zeichen den Zustand | `leser-v3-umschalten` (F8-Regel unverändert) |
+| **Ä116** | Schalter «Änderungsvermerke» schaltet ein Element namens «FASSUNG · Gilt seit …» | Schalter heisst «**Fassung**» wie das Element | `leser-benennung` |
+| **Ä117** | «–» und «—» gemischt in derselben Rolle | Gedankenstrich «—» ohne Ausnahme; Bis-Strich «–» ohne Spatien («01.01.2019–31.12.2021») | `leser-benennung` (Verbot + Positiv-Sonde) · `bezug-zeit` · `bezug-zeitstrahl` |
+| **Ä118** | Ein Feature, vier Wörter (Reiter · Fenster · Pane · Split-View) — und «Reiter» zugleich für die Panel-Reiter | Leser-eigene Stelle: «**In neuem Fenster**». App-Hälfte (Topbar/Griffleiste) bleibt S-Zeile | `leser-benennung` |
+| **Ä119** | «Übersicht» doppelt belegt: Steckbrief-Box **und** Fussnav-Link auf `/gesetze` | Box behält «Übersicht», der Link heisst «**Alle Gesetze**» | `leser-benennung` |
+| **Ä120** | Segment «Titel» direkt über einem Trefferkopf «2. TITEL» | «**Überschriften**» — benennt die Menge (inkl. Randtitel) und kollidiert mit keiner Gliederungsstufe | `leser-v3-suchbereich` · `leser-benennung` |
+| **Ä121** | «amtlich ↗» ohne Zielangabe; 5 × dieselbe Zeile «Änderung über einen Sammelerlass — nur das Datum ist erfasst.»; Erklärtext klebt an der Reiterlinie | Link nennt sein Ziel («**Fedlex ↗**», belegt: 405 Botschaften + 824 Vernehmlassungen + 914 Revisionen, alle auf fedlex.admin.ch); Marker-Zeilen tragen nur noch «Sammelerlass», die Erklärung steht **einmal** unter der Liste; `pt-1.5` Luft | `leser-v3-panel-nachzug` (Bestand) · `leser-benennung` |
+| **Ä107** | Steckbrief mischt Datumsformen: «5. Oktober 2007» über «01.01.2011» / «01.04.2025»; FR bereits «01.05.1996» | EIN Format. Neue Datei `v3/datumsForm.ts` (Wortform → dd.MM.jjjj, DE/FR-Monatstabelle, strenge Identität mit Rückfall auf den amtlichen Wortlaut). **Belegt, nicht geraten:** 1420 Sidecars — 1062 Wortform, 330 bereits numerisch, 1 Klammer-Variante | `leser-v3-uebersicht` (Ä80-Block, drei Fälle mit §6.3-Deklaration) |
+| **Ä108** | FR-Erlass: «Art · Kanton FR» — das Feld versprach die Erlassart und lieferte die Ebene | `erlassArt` in `v3/erlassAnsicht.ts` (dort gehört der Ebene-Zugriff hin, Fundament-Auflage 2); ohne bekannte Grundart **entsteht keine Zeile**. Etikett heisst «Erlassart» («Art» ist im Recht die Abkürzung des Artikels) | `leser-v3-uebersicht` · `leser-v3-fundament` (hat den Ebene-Zugriff am falschen Ort gefangen) |
+| **Ä122** | §8-Hinweise in Innensprache: «Kanton FR: dünn, 6 Erlasse erfasst.» / «Zähl-Etikett «Artikel» noch nicht amtlich verifiziert (Entwurf).» | Klartext ohne Hausjargon; `STUFE_WORT` bleibt an der Kantonsliste, wo es sortiert | `leser-v3-uebersicht` |
+| — | Kopfzeile «**Snapshot** — massgeblich ist die amtliche Fassung» | «**Kopie vom 01.04.2025** — …»; ohne Stand die Form ohne Datum (2 von 1469) | `leser-benennung` (dieser Punkt lieferte den ersten Rot-Beweis der neuen Sonde) |
+
+**Der Wächter hat sich selbst gefangen (§6.7).** Der erste Entwurf von
+`leser-benennung.test.ts` trug eine zusätzliche JSX-Kommentar-Regel
+`\{\s*\/\*…`; `\s` schliesst den Zeilenumbruch ein, und damit fing der Ausdruck
+auch dort an, wo eine geschweifte Klammer am Zeilenende steht und der nächste
+Nicht-Leerraum ein Doc-Kommentar ist. In `v3/LeserAnsichtV3.tsx` verschwand so
+**ein Treffer über 6466 Zeichen (Zeile 80–187)** — Props-Block **und** die
+Attribute des Öffner-Knopfs — aus dem geprüften Text. Die Sonde meldete grün für
+ein Wort, das im `aria-label` stand. Aufgefallen ist es nur, weil der Rot-Beweis
+tatsächlich gefahren wurde: der künstlich eingebaute Rückfall blieb grün. Der
+Filter ist jetzt wortgleich mit `leser-v3-fundament.test.ts`.
+
+**Zwei bestehende Tore haben echte Rückfälle gefangen**, nicht sich selbst:
+`leser-v3-fundament` den Ebene-Zugriff ausserhalb `erlassAnsicht.ts` (Ä108) und
+denselben Wächter für Dateigrösse/Rangfolge — daraus ist `v3/datumsForm.ts`
+entstanden statt eines gewachsenen `uebersichtAngaben.ts`.
+
+#### Ä97–Ä125 · Status nach dieser Etappe
+
+| Ä | Schwere | Status |
+|---|---|---|
+| Ä97 Vorbehalt doppelt | N | ✅ erledigt |
+| Ä98 «SR» im Zitat-Text | N (§7-nah) | ✅ erledigt |
+| Ä99 Box klebt / Doku falsch | S + Doku-N | ✅ **Doku korrigiert** (Kap. 4b + Ä81-Vermerk, datiert). **Bau offen → H5:** Box aus dem Sticky-Container lösen oder «die Leiste klebt als Ganzes» als Entscheid festschreiben. Messwert: Box y = 148 bei scrollY 247 790 |
+| Ä100 Doppellinie Ingress | N | ✅ erledigt |
+| Ä101 `hyphens` im h1 | N | ✅ erledigt |
+| Ä102 Gruppenkopf ellipsiert | N | ✅ erledigt |
+| Ä103 Zähler «–/88» | N | ✅ erledigt |
+| Ä104 «Randtitel»-Chip, Treffer im Randtitel unmarkiert | N/S | ⏳ **offen → H5.** Nicht gebaut: der Chip zu streichen ist billig, den Treffer IM Randtitel zu markieren heisst, den Highlight-Walker auf ein zweites Feld zu führen — das ist Suchlogik (`suchHighlight.ts`), nicht Beschriftung, und gehört nicht in eine Säuberung |
+| Ä105 Verweise-Zeile doppelt zu den Inline-Links | S | ⏳ offen → **S-Strang / Beiwerk-Entscheid** (unverändert) |
+| Ä106 ★-Flut | N | ✅ erledigt |
+| Ä107 Datumsformate | N | ✅ erledigt |
+| Ä108 «Art: Kanton FR» | N | ✅ erledigt |
+| Ä109 Kantonale Sigle uneinheitlich | S | ⏳ offen → **H5/Korpus** (Registerfeld je Kanton + Verifikation, §7; identisch mit der positiven Hälfte von Ä75) |
+| Ä110 Fedlex-Link-Namen | N | ✅ erledigt (Leser-Fläche). **App-Hälfte offen → H5:** `NormPopover`, `NormChip`, `parts/ErlassUebersicht` (V1) |
+| Ä111 zwei ☰ | N (aria) / S (Glyphe) | ✅ aria erledigt · Glyphe offen → **H5** (App-Icon-Set) |
+| Ä112 zwei Suchfelder | N | ✅ Leser-Feld erledigt. **Topbar offen → H5** (`components/layout/**`, TABU in dieser Etappe) |
+| Ä113 = Ä64 Regler-Hierarchie 130 % | **D** | ⏳ **wartet auf David** — nicht gebaut |
+| Ä114 «Ansicht» | N | ✅ erledigt |
+| Ä115 Schalter-Satz | N | ✅ erledigt |
+| Ä116 Schalter ≠ Element | N | ✅ erledigt |
+| Ä117 Gedankenstrich | N | ✅ erledigt (Leser-Fläche + `NormPopover`) |
+| Ä118 Fenster/Reiter | N (Leser) / S (App) | ✅ Leser erledigt · App-Hälfte offen → **H5** |
+| Ä119 «Übersicht» doppelt | N | ✅ erledigt |
+| Ä120 «Titel» kollidiert | N | ✅ erledigt |
+| Ä121 «amtlich ↗» / Zeilen-Dopplung | N (Text) / S (Struktur) | ✅ Text erledigt. **Offen → H5:** der Jargon «Fedlex-Graphen (SR-Taxonomie)» steht im `reichweite`-STRING des Revisions-Sidecars, also in `public/normtext/**` (Risikopfad) — ein UI-Nachzug betritt ihn nicht |
+| Ä122 Innenjargon im Steckbrief | N | ✅ erledigt |
+| Ä123 Kopf-Chip drei Gesichter | S | ⏳ offen → **H5** (Zahl als Badge, Chip-Wortlaut konstant) |
+| Ä124 «BIS» als Wortteil, «[tab]» im Label | S | ⏳ offen → **Korpus/Kern-Render.** Nur aus dem DOM-Inventar belegt, ohne Bild — vor dem Bau reproduzieren (§0.2) |
+| Ä125 Gliederung folgt der Lesestelle uneinheitlich | S | ⏳ offen → **Messreihe.** Ein Lauf je Modus ist ein Verdacht, keine Zuschreibung (§0.3): 10 Kaltläufe je Modus, dann entscheiden |
 
 ---
 

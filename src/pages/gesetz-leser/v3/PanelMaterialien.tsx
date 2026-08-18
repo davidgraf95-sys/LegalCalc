@@ -33,7 +33,7 @@ export function PanelMaterialien({ stand, quelleUrl }: {
     return (
       <p data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-3 text-body-s text-ink-500">
         Materialien konnten nicht geladen werden. Amtliche Quelle:{' '}
-        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">geltende Fassung ↗</a>
+        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">Amtliche Fassung ↗</a>
       </p>
     );
   }
@@ -62,7 +62,17 @@ export function PanelMaterialien({ stand, quelleUrl }: {
                 </span>
                 <span className="mt-0.5 block text-micro leading-snug text-ink-600">
                   {b.titel}{' '}
-                  <a href={b.quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">amtlich ↗</a>
+                  {/* Ä121 (18.8.2026): der Link nannte kein Ziel und stand in
+                      derselben Zeile neben «Curia Vista ↗», das seines nennt.
+                      Ein Adjektiv ist keine Ortsangabe (§8) — der Link führt in
+                      die amtliche Sammlung, also heisst er «Fedlex ↗».
+                      BELEGT (gezählt 18.8.2026 in `public/materialien/register.json`):
+                      alle 405 Botschaften und alle 824 Vernehmlassungen liegen auf
+                      fedlex.admin.ch; die Behörden-Ressourcen mit anderen Hosts
+                      (SECO, ESTV, EDÖB) stehen ausdrücklich NICHT in diesem Reiter
+                      («Soft Law bleibt draussen», Dateikopf). Der Name ist damit
+                      keine Annahme, sondern der gezählte Bestand. */}
+                  <a href={b.quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">Fedlex ↗</a>
                   {b.parlamentUrl && (
                     <>{' · '}<a href={b.parlamentUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">Curia Vista ↗</a></>
                   )}
@@ -89,7 +99,8 @@ export function PanelMaterialien({ stand, quelleUrl }: {
                 </span>
                 <span className="mt-0.5 block text-micro leading-snug text-ink-600">
                   {v.titel}{' '}
-                  <a href={v.quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">amtlich ↗</a>
+                  {/* Ä121: dasselbe Ziel, derselbe Name (Herleitung oben). */}
+                  <a href={v.quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">Fedlex ↗</a>
                 </span>
               </li>
             ))}

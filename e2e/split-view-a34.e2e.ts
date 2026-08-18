@@ -1,3 +1,4 @@
+import { ANSICHT_NAME } from './helpers/leserBeschriftung';
 // @shard-gruppe: 8
 // E3/A34 (David 16.7.2026, ANMERKUNGEN Ziff. 6) — Split-View des Gesetz-Lesers:
 //  Bug 1: Öffnet man aus dem Gesetz einen verlinkten BGE im Split-View, sprang das
@@ -91,7 +92,7 @@ test('A34/Bug2 (≥lg): «Ansicht»-Menü im Split-View bleibt beim Scrollen sic
   // Beweis über den globalen Options-State (<html data-fussnoten>, leserOptionen.ts),
   // den das Menü treibt (unabhängig davon, ob das Panel nach dem Klick offen bleibt).
   await ansicht.click()
-  await expect(primaer.getByRole('group', { name: 'Darstellungsoptionen' })).toBeVisible()
+  await expect(primaer.getByRole('group', { name: ANSICHT_NAME })).toBeVisible()
   const vorher = await page.evaluate(() => document.documentElement.getAttribute('data-fussnoten') ?? 'an')
   await primaer.getByRole('switch', { name: /Fussnoten/ }).first().click()
   await expect.poll(() => page.evaluate(() => document.documentElement.getAttribute('data-fussnoten') ?? 'an'))

@@ -1,13 +1,19 @@
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
-import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad';
+import { erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
 import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
-import { formatiereDatum, kennungText, kopfOverline, verifiziertesSachgebiet } from '../helpers';
-import { teilerfassung, nurErlassdatum, erlassOrgan } from '../erlassUebersichtDaten';
-import type { BestimmungsWort } from './erlassAnsicht';
+import { formatiereDatum, kennungText, verifiziertesSachgebiet } from '../helpers';
+import { teilerfassung, erlassOrgan } from '../erlassUebersichtDaten';
+import { erlassArt, type BestimmungsWort } from './erlassAnsicht';
+import { datumsAngabe } from './datumsForm';
+
+// Weiter von hier aus greifbar: die Datums-Schreibung ist eine eigene Sache und
+// lebt seit Ä107 in `./datumsForm` — die Sonden der Box prüfen sie über diesen
+// Namen (§5, EIN Zugang statt zweier Importpfade).
+export { datumsAngabe, numerischesDatum } from './datumsForm';
 
 // ═══ Übersichtsbox → Angaben (David-Auftrag 17.8.2026, «orientiere dich an
 //     fedlex») ══════════════════════════════════════════════════════════════
@@ -84,9 +90,14 @@ import type { BestimmungsWort } from './erlassAnsicht';
 //
 // GEBLIEBEN ist alles, was NUR die Box trägt: Erlassart, erlassgebendes Organ,
 // Erlassdatum, Gliederungstiefe/Anhang, das volle Sachgebiet, die amtlichen
-// Ziele — und die vier §8-Sätze über die Grenzen unserer eigenen Erfassung, die
-// bis hierher hinter einer ZWEITEN Klappe («Mehr zu diesem Erlass») lagen. Ein
-// Ehrlichkeits-Hinweis, für den man zweimal klicken muss, ist keiner (§8).
+// Ziele — und die §8-Sätze über die Grenzen unserer eigenen Erfassung (bis Ä72
+// hinter einer ZWEITEN Klappe; ein Ehrlichkeits-Hinweis, für den man zweimal
+// klicken muss, ist keiner).
+//
+// SÄUBERUNG 18.8.2026 (Ä97/107/108/110/122): Vorbehalt raus (Kopf-Sache, wie
+// Ä81), EIN Datumsformat (`./datumsForm`), «Erlassart» statt «Art · Kanton FR»
+// (`./erlassAnsicht.erlassArt`), «Amtliche Fassung» als EINER Name, §8-Sätze in
+// Klartext. Belege: `docs/ux-audit-2026-07/reader/leser-v3-h4/aesthetik-live-2026-08-18.md`.
 
 /** Eine Zeile der Label/Wert-Liste. `label` ist die Sprache, `id` der Anker. */
 export interface UebersichtZeile {
@@ -183,66 +194,6 @@ export function ruheZeile(
 }
 
 /**
- * Präpositionen, die ein Sidecar-Erlassdatum einleiten kann — BELEGT, nicht
- * geraten. Gezählt über alle 1420 Struktur-Sidecars (18.8.2026, kein Netz):
- * «Vom» 890 · «vom» 493 · gar keine 27 · «du» 10 (FR/VS). Andere Formen kommen
- * im Korpus nicht vor; käme eine dazu, fängt sie der Rückfall in `datumsAngabe`
- * auf, statt still verstümmelt zu werden.
- *
- * WARUM EIN MUSTER MIT WORTGRENZE UND KEIN `slice(4)`: 27 Sidecars schreiben das
- * Datum ohne Präposition («12. April 2000», gemessen an BS-640.100 im
- * Ä74-Befund). Ein stumpfes Abschneiden verstümmelte diese Gruppe still — der
- * Wert begänne mit «April 2000». Darum eine Identitäts-Prüfung mit Wortgrenze
- * (§7): getroffen wird nur ein führendes Listenwort, gefolgt von Weissraum.
- */
-const PRAEPOSITION = /^(?:vom|du)\s+/i;
-
-/**
- * Die fremdsprachigen Geschwister der «(Stand …)»-Klammer, die `nurErlassdatum`
- * schneidet. Gezählt an denselben 1420 Sidecars: «(Stand …)» 1409 (dort erledigt)
- * · «(version …)» 5 · «(état …)» 5 · «(Fassung in Kraft getreten am …)» 1.
- *
- * WARUM NICHT «jede Schluss-Klammer»: `nurErlassdatum` lässt «vom 1. Januar 2000
- * (AS 2000 1)» ausdrücklich stehen (Fundstellen-Angabe, `gesetz-leser-uebersicht-s6`),
- * und diese Regel darf sie nicht hintenherum doch schneiden. Getroffen wird nur,
- * was eine FASSUNG bezeichnet — dieselbe Aussage wie «Stand», in einer anderen
- * Sprache. `Etat` ohne Akzent steht daneben, weil derselbe Erlass je nach
- * Ausgabe-Kodierung beides liefert.
- *
- * NUR IN V3. Die Ist-Hülle rendert ihre Übersicht weiter aus dem blossen
- * `nurErlassdatum` — die eingefrorene Hülle hängt nie an der neuen (FL-4).
- */
-const FASSUNGS_KLAMMER = /\s*\((?:Fassung|État|Etat|Version)\b[^)]*\)\s*$/i;
-
-/**
- * Ä80 + P1-2 · Das Sidecar-Erlassdatum wird zur Label/Wert-Zeile: die
- * Präposition wandert ins Etikett («vom 5. Oktober 2007» → Label «Erlass vom»,
- * Wert «5. Oktober 2007»), die Fassungs-Klammer fällt weg (sie steht als
- * eigene Zeile «Stand» direkt darunter — Ä74).
- *
- * DER RÜCKFALL IST DER KERN DES FIXES (Bug-Check 18.8.2026). Ein Etikett «Erlass
- * vom» ist eine ZUSAGE an den Wert: dass dort ein Datum steht und sonst nichts.
- * Bis hierher wurde sie auch dann gegeben, wenn beide Muster danebengriffen —
- * am FR-Erlass 635.1.1 stand «Erlass vom · du 01.05.1996 (version entrée en
- * vigueur le 01.03.2024)», also die Präposition doppelt und der Stand ein
- * zweites Mal. Beginnt der Wert nach beiden Schnitten nicht mit einer Ziffer,
- * halten wir die Zusage nicht: das Etikett fällt auf das neutrale «Erlassdatum»
- * zurück (so heisst es in V1), der Wortlaut bleibt unangetastet, und
- * `tabular-nums` entfällt — eine Zahlen-Kante an einem Wort auszurichten ist der
- * Ä80-Fehler in umgekehrter Richtung.
- *
- * `null` = nach dem Schnitt bleibt nichts (27 Sidecars tragen NUR die Klammer,
- * z. B. «(Stand am 4. September 2024)»). Dann entsteht keine Zeile (§8).
- */
-export function datumsAngabe(erlassdatum: string): Omit<UebersichtZeile, 'id'> | null {
-  const ohneKlammer = nurErlassdatum(erlassdatum).replace(FASSUNGS_KLAMMER, '').trim();
-  const wert = ohneKlammer.replace(PRAEPOSITION, '').trim();
-  if (!wert) return null;
-  const ziffern = /^\d/.test(wert);
-  return { label: ziffern ? 'Erlass vom' : 'Erlassdatum', wert, ziffern };
-}
-
-/**
  * Erlass → Angaben der Übersichtsbox. Erlass-neutral: jede Zeile entsteht aus
  * dem Datenmodell und entfällt, wo der Erlass die Angabe nicht trägt — kein
  * `if (bund)`, keine leere Wertspalte (Fundament-Auflage 2, Auftrag David
@@ -259,12 +210,15 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
 
   const zeilen: UebersichtZeile[] = [];
 
-  // ── Art · «Bundesgesetz» / «Verordnung» / «Kanton BS · Gesetz» ────────────
-  // Dieselbe Ableitung, die der Erlass-Kopf für seine Overline nutzt (§5) —
-  // aber OHNE das Sachgebiet: das bekommt unten seine eigene Zeile, mit dem
-  // vollen Pfad statt nur der obersten Stufe.
-  const art = kopfOverline(erlass, e.erlassTyp, null);
-  if (art) zeilen.push({ id: 'art', label: 'Art', wert: art });
+  // ── Erlassart · «Bundesgesetz» / «Verordnung» / «Gesetz» ──────────────────
+  // Ä108: der Wert kommt aus `erlassArt` (`./erlassAnsicht`, Herleitung dort),
+  // nicht mehr aus der Kopf-Overline; ohne bekannte Grundart entfällt die Zeile.
+  // Das ETIKETT heisst «Erlassart»: «Art» ist im Recht zugleich die Abkürzung
+  // für den Artikel, und die Ruhezeile daneben zählt «480 Artikel» — dasselbe
+  // Wort für zwei Sachen. Reiht sich zu «Erlassgeber»/«Erlassdatum».
+  // Das Sachgebiet bekommt unten seine eigene Zeile mit dem vollen Pfad.
+  const art = erlassArt(erlass, e.erlassTyp);
+  if (art) zeilen.push({ id: 'art', label: 'Erlassart', wert: art });
 
   // ── Erlassgeber · «Der Schweizerische Bundesrat» ──────────────────────────
   // Aus der amtlichen Präambel. DIE Zeile, an der die alte Box scheiterte:
@@ -357,15 +311,19 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // ── Amtliche Ziele ────────────────────────────────────────────────────────
   const links: UebersichtLink[] = [];
   let hinweiseOhneQuelle = false;
+  // Ä110 (18.8.2026): EIN Ziel, EIN Name. Derselbe Link hiess an drei Stellen
+  // dreierlei («↗ geltende Fassung» / «amtliche Fassung ↗» / «geltende
+  // Fassung»); der Benennungs-Glossar setzt «Amtliche Fassung». Herleitung und
+  // Messwerte: `../parts/ErlassLeserKopf.tsx`.
   if (erlass.quelleUrl) {
     links.push({
       id: 'quelle', zeichen: '↗',
-      label: lebt ? 'geltende Fassung' : 'amtliche (aufgehobene) Fassung',
+      label: lebt ? 'Amtliche Fassung' : 'Amtliche (aufgehobene) Fassung',
       href: erlass.quelleUrl,
     });
   }
   if (erlass.pdfUrl) {
-    links.push({ id: 'pdf', zeichen: '⬇', label: 'amtliches PDF', href: erlass.pdfUrl });
+    links.push({ id: 'pdf', zeichen: '⬇', label: 'Amtliches PDF', href: erlass.pdfUrl });
   }
   // §8 (Bug-Check 17.8.2026, Nachzug): V1 sagt an dieser Stelle ausdrücklich
   // «keine amtliche Quelle hinterlegt» (`../parts/ErlassUebersicht.tsx`), V3
@@ -379,13 +337,25 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   if (hinweiseOhneQuelle) hinweise.push('Keine amtliche Quelle hinterlegt.');
   const beleg = teilerfassung(erlass.key);
   if (beleg) hinweise.push(`${beleg.befund} (geprüft ${formatiereDatum(beleg.geprueftAm)})`);
+  // ── Ä122 (18.8.2026) · DER §8-BLOCK SPRICHT ZUM LESER, NICHT ZUM BAUER ────
+  // GEMESSEN am FR-Erlass 635.1.1: «Kanton FR: dünn, 6 Erlasse erfasst.
+  // Zähl-Etikett «Artikel» noch nicht amtlich verifiziert (Entwurf).» — «dünn»
+  // ist der Name einer INTERNEN Sortierstufe (`erfassungsgrad.STUFE_WORT`, für
+  // die Rangfolge der Kantonsliste), «Zähl-Etikett»/«(Entwurf)» sind Begriffe
+  // unseres Datenmodells. Dieser Block sagt, wo unsere Erfassung an ihre Grenze
+  // kommt (§8) — in Hausjargon sagt er es nicht. Aussage unverändert, Sprache
+  // gerade; `STUFE_WORT` selbst bleibt, es ist an der Kantonsliste richtig (§5).
   const grad = erlass.kanton && e.kantonErlassAnzahl != null
     ? erfassungsgrad(erlass.kanton, e.kantonErlassAnzahl) : null;
   if (grad) {
-    hinweise.push(`Kanton ${grad.kanton}: ${STUFE_WORT[grad.stufe]}, ${grad.n} Erlasse erfasst.`);
+    hinweise.push(
+      `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`,
+    );
   }
   if (e.bestimmungsEtikettStatus === 'entwurf') {
-    hinweise.push(`Zähl-Etikett «${e.bestimmungsWort}» noch nicht amtlich verifiziert (Entwurf).`);
+    hinweise.push(
+      `Die Bestimmungen dieses Erlasses sind hier als «${e.bestimmungsWort}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,
+    );
   }
   if (e.kennzahlen && !e.kennzahlen.hatSidecar) {
     hinweise.push('Für diesen Erlass ist keine amtliche Gliederung erfasst — die Leiste listet die Bestimmungen.');

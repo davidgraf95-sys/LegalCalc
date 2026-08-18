@@ -128,7 +128,11 @@ test.describe('B5 · Zeitstrahl und Von-Bis-Datum', () => {
     // Der aktive Bereich wird BENANNT — ein Filter, der still wirkt, ist der
     // §8-Verstoss, den das Signal verhindert.
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen'))
-      .toContainText('01.01.2025 – 31.12.2026');
+      // Ä117 (18.8.2026): BIS-Strich ohne Spatien. Mit Spatien stand der
+      // Halbgeviertstrich in der Rolle des Gedankenstrichs, für den der Leser
+      // «—» führt; die Spanne schreibt sich wie «Art. 1–10»
+      // (Benennungs-Glossar, Design-Grundlage Kap. 11).
+      .toContainText('01.01.2025–31.12.2026');
   });
 
   test('ein Zug über den GANZEN Strahl heisst «alle», nicht «die heutigen Ränder»', async ({ page }) => {

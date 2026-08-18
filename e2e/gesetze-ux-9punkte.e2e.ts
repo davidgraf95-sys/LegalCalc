@@ -1,6 +1,7 @@
 // @shard-gruppe: 6
 import { test, expect } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 // Visuelle + funktionale Verifikation der 9 Gesetze-UX-Punkte (Auftrag David
 // 26.6.2026). Screenshots landen unter test-results/ux9/ zur Sichtprüfung.
@@ -119,7 +120,7 @@ test.describe('Gesetze-UX 9 Punkte', () => {
     // Tief scrollen, dann suchen → vor dem Fix rutschte der sticky-Container raus.
     await page.evaluate(() => window.scrollTo(0, 4000));
     await page.waitForTimeout(150);
-    const suche = page.getByRole('searchbox', { name: 'Im Gesetz suchen' });
+    const suche = page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME });
     await suche.fill('Vertrag');
     await page.waitForTimeout(300);
     await expect(suche).toBeInViewport();
