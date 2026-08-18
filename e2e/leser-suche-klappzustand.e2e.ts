@@ -31,6 +31,18 @@ import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // dem Flake-Herd, Kopf von leser-r1-r2.e2e.ts).
 import { test, expect, type Page } from '@playwright/test'
 
+// ── Ä103 (18.8.2026) · DER ZÄHLER NENNT SEINE EINHEIT ───────────────────────
+// V3 schreibt seit der Säuberung «Fundstelle 3 von 17», die Ist-Hülle weiter
+// «3/17»; vor dem ersten Sprung stand dort «–/17» — ein Bruch ohne Zähler.
+// Die Sonden prüfen darum die ZAHLEN, nicht das Trennzeichen: `laufendeStelle`
+// zieht die erste Zahl heraus (ohne zweite Zahl = «–», also 0). Die
+// Prüfaussage ist unverändert (§6.3-Deklaration).
+async function laufendeStelle(page: import('@playwright/test').Page): Promise<number> {
+  const t = await page.locator('[data-treffer-position]').innerText()
+  const zahlen = t.match(/\d+/g)?.map(Number) ?? []
+  return zahlen.length >= 2 ? zahlen[0] : 0
+}
+
 test.describe.configure({ timeout: 120_000 })
 
 const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
@@ -104,23 +116,24 @@ test.describe('B3/B4 — Treffer in einer zugeklappten Sektion', () => {
     expect(await schalteSektion(page, token, false)).toBe(true)
 
     const vor = page.locator('[data-treffer-vor]')
-    const pos = page.locator('[data-treffer-position]')
+    await expect(page.locator('[data-treffer-position]')).toBeVisible({ timeout: 20_000 })
     await expect(vor).toBeVisible({ timeout: 15_000 })
     // Vor der ersten Navigation «–/n» (nichts Erfundenes, §8) — das ist auch der
     // Wert, auf dem der Defekt die Anzeige FESTHIELT.
-    await expect(pos).toContainText('–')
+    await expect.poll(() => laufendeStelle(page), { timeout: 20_000 }).toBe(0)
 
     const gesehen: string[] = []
     for (let i = 0; i < 3; i++) {
       await vor.click()
       await page.waitForTimeout(400)
-      gesehen.push(((await pos.textContent()) ?? '').trim())
+      gesehen.push(((await page.locator('[data-treffer-position]').textContent()) ?? '').trim())
     }
     // Drei Schritte, drei verschiedene Positionen. Vor dem Fix stand hier
     // dreimal «–/n»: `setNav` lief nie, also berechnete jeder weitere Klick aus
     // derselben Ausgangslage dieselbe Zielposition.
     expect(new Set(gesehen).size, `Positionsanzeige nach drei «weiter»: ${gesehen.join(' | ')}`).toBe(3)
-    expect(gesehen[0], 'erster Schritt landet auf Fundstelle 1').toMatch(/^1\//)
+    // Ä103: der Zähler nennt seine Einheit («Fundstelle 1 von 17»), V1 weiter «1/17».
+    expect(gesehen[0], 'erster Schritt landet auf Fundstelle 1').toMatch(/^(Fundstelle )?1[ /]/)
   })
 
   test('B4 — eine wieder aufgeklappte Sektion wird markiert (der Observer kennt den Klapp-Zustand)', async ({ page }) => {

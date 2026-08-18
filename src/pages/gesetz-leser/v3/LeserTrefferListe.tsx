@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
 import { badgesFuer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
-import { SuchBereichWahl } from './SuchBereichWahl';
+import { TrefferLeiste } from './TrefferLeiste';
 import { useAnfangSlot } from './anfangSlot';
 import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 
@@ -136,102 +136,14 @@ export function LeserTrefferListe({
 
   return (
     <div {...{ [SUCH_META]: '' }} data-treffer-liste className="pb-2">
-      {/* B6-Erbe: klebt UNTER Zone A. `--toc-deckel` setzt die Leiste selbst;
-          der Rückfall 0px hält den Vorzustand, falls die Marke einmal fehlt.
-          §15.2 CLS 0: feste Zeilenhöhen, ab dem ersten Render vorhanden — der
-          Zähler ist datenseitig und steht sofort, es wächst nichts nach. */}
-      <div data-treffer-leiste
-        style={{ top: 'var(--toc-deckel, 0px)' }}
-        className="sticky z-10 space-y-1 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
-        {/* ── Ä94 (H4-Nachzug 18.8.2026) · DER STUMMEL NIMMT DEN KNOPF AUF ─────
-            Gemessen im Handy-Sheet (390, StPO/«Entschädigung»): das Segment stand
-            mit 288 px in einem 358-px-Kasten — 70 px Stummel rechts —, und genau
-            darüber klebte eine eigene 34-px-Zeile, die ausser «↑ Anfang» (62 px)
-            nichts trug. Zwei Fehler, eine Bewegung: die Leiste gibt den Knopf ab
-            (`./anfangSlot`), er füllt den Stummel, und die halbleere Zeile
-            entfällt. Das Segment behält seine Breite (288 = 18 rem, seine
-            Kalibrierung), verliert aber die Lücke.
-            NICHT in die Zähler-Zeile darunter: die trägt schon Zähler, Stand
-            «–/88» und die beiden 44-px-Sprungknöpfe und misst damit @390
-            rechnerisch 361 px in 358 — ein fünftes Element hätte den Zähler
-            umbrechen lassen, also die Kernauskunft verschlechtert, um eine
-            Kernauskunft zu retten (Ä15). */}
-        <div className="flex items-center gap-2">
-          <SuchBereichWahl wert={bereich} setzeWert={setzeBereich} />
-          {onAnfang && (
-            <button type="button" data-v3-anfang onClick={onAnfang}
-              title="Zum Anfang des Erlasses"
-              className="lc-leiste-griff ml-auto shrink-0 gap-1 px-1.5 text-micro">
-              <span aria-hidden>↑</span><span>Anfang</span>
-            </button>
-          )}
-        </div>
-        <div className="flex items-start gap-1">
-          {/* ── Ä15 (H2b) · KEINE ELLIPSE AN EINER KERNAUSKUNFT ────────────────
-              Gemessen 17.8.2026 in der 280-px-Leiste: «49 Artikel · 110
-              Fundstellen» braucht 176 px in einer 148 px breiten Zelle — das
-              `truncate` schnitt genau die Zahl weg, um die es geht. §8 verbietet
-              das: eine Kernauskunft wird umgebrochen oder gekürzt, nie
-              angeschnitten.
-              GEWÄHLT: Umbruch, nicht Abkürzung. «9 Art. · 15 Stellen» spart drei
-              Zeichen und kostet die Ehrlichkeit der Zahl («Stellen» ist keine
-              amtliche Einheit); die zweite Zeile kostet 16 px in einer Zone, die
-              nur während einer Suche existiert. `min-h-5` bleibt als
-              Ein-Zeilen-Reservierung — der Umbruch tritt erst ein, wenn die Zahl
-              ihn braucht, und dann durch eine Nutzer-Eingabe (§15.2). */}
-          {/* ── Ä30 (H2b-Nachzug) · DER UMBRUCH SITZT AM TRENNER ──────────────
-              Ä15 erlaubte den Umbruch statt der Ellipse — aber ohne zu sagen, WO.
-              Gemessen 17.8.2026 an BS-154.125 («Gericht»): der Browser brach
-              irgendwo, «15 Paragraphen · 62 Fundstellen» stand zweizeilig mit
-              «Paragraphen» allein in Zeile 2, an langen Wörtern auch dreizeilig
-              («285 / Paragraphen · 2203 / Fundstellen»). Eine Zahl von ihrer
-              Einheit zu trennen ist an einer Kernauskunft dasselbe Übel wie die
-              Ellipse (§8).
-              JETZT: jedes Segment «Zahl + Einheit» ist ein eigener,
-              nicht-umbrechbarer Block (`whitespace-nowrap`), und es gibt GENAU
-              EINE Bruchstelle — die hinter dem Trenner «·».
-              Zwei Punkte, die dabei gemessen werden mussten:
-              (1) Der Trenner klebt am ERSTEN Segment, nicht zwischen den beiden.
-              Stünde er frei, könnte er als einzelnes Zeichen an den Anfang der
-              zweiten Zeile rutschen — genau das hängende Zeichen, das Ä5 aus der
-              Übersichtszeile entfernt hat.
-              (2) Die Leerzeichen um den Trenner sind ECHTE Textknoten (`{' '}`),
-              nicht `mx-1`. Ohne sie hat die Zeile GAR KEINE Bruchstelle: JSX
-              verschluckt Zeilenumbrüche zwischen Elementen, der Absatz kann
-              nicht umbrechen, und dann ellipsiert er wieder — gemessen 17.8.2026
-              an der StPO/«Kosten» mit `mx-1`: 176 px in 148 px, Höhe 20 px, also
-              EINE Zeile mit Überlauf. Der Ä30-Fix hätte damit Ä15 gebrochen. */}
-          <p className="min-h-5 min-w-0 flex-1 leading-snug">
-            <span className="whitespace-nowrap">
-              <span className="num">{treffer.length}</span> {zaehlform(treffer.length, bestimmungsWort)}
-              {' '}<span aria-hidden className="text-ink-300">·</span>
-            </span>
-            {' '}
-            <span className="whitespace-nowrap"><span className="num">{fundstellen}</span>{fundstellen === 1 ? ' Fundstelle' : ' Fundstellen'}</span>
-          </p>
-          {hatSprung && (
-            <>
-              {/* Ä103: EINE Zeile — `whitespace-nowrap` hält Wort und Zahlen
-                  zusammen (dieselbe Ä30-Regel wie an der Zählzeile darüber). */}
-              <span data-treffer-position role="status" aria-live="polite"
-                className="shrink-0 whitespace-nowrap text-micro tabular-nums text-ink-500">
-                Fundstelle <span className="num">{laufend}</span> von <span className="num">{fundstellen}</span>
-              </span>
-              {/* A9-DoD: 44×44-px-Tap-Ziele, echte <button>, aria-label. */}
-              <button type="button" onClick={onZurueck} data-treffer-zurueck
-                aria-label="Vorherige Fundstelle" title="Vorherige Fundstelle (↑)"
-                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
-                <span aria-hidden className="text-base leading-none">↑</span>
-              </button>
-              <button type="button" onClick={onVor} data-treffer-vor
-                aria-label="Nächste Fundstelle" title="Nächste Fundstelle (↓)"
-                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-ink-600 transition-colors hover:bg-paper-sunken/60 hover:text-brass-700">
-                <span aria-hidden className="text-base leading-none">↓</span>
-              </button>
-            </>
-          )}
-        </div>
-      </div>
+      {/* Die klebende Werkzeugzeile (Segment · «↑ Anfang» · Zähler · ↑↓).
+          Eigene Datei seit Ä103 (§6.6): sie trägt fünf gemessene Befunde
+          (Ä15/Ä30/Ä84/Ä94/Ä103) mit ihren Herleitungen, und die Liste darunter
+          hat mit keinem davon zu tun. */}
+      <TrefferLeiste
+        anzahl={treffer.length} fundstellen={fundstellen} bestimmungsWort={bestimmungsWort}
+        laufend={laufend} hatSprung={hatSprung} bereich={bereich} setzeBereich={setzeBereich}
+        onAnfang={onAnfang} onZurueck={onZurueck} onVor={onVor} />
 
       {/* §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
           Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
@@ -286,7 +198,12 @@ export function LeserTrefferListe({
                 // nicht für einen Gliederungstitel (DESIGN-REGLEMENT A2).
                 // JETZT: Normalschreibung, zwei Zeilen, kein `title`-Ersatz;
                 // `aria-hidden` bleibt (die Trefferzeile trägt ihre Fundstelle).
-                <li aria-hidden className="px-1 pb-0.5 pt-3 text-micro font-medium leading-snug text-ink-500">
+                // `data-treffer-gruppe` als Anker: die Sonden hingen bis Ä102
+                // an der Klasse `lc-overline` — also am AUSSEHEN. Genau das
+                // verbietet die H2-Lehre (`data-fn-ref`): ein Wächter sucht ein
+                // Element über seine Identität, sonst nimmt ihn die nächste
+                // Gestaltungsänderung mit.
+                <li data-treffer-gruppe aria-hidden className="px-1 pb-0.5 pt-3 text-micro font-medium leading-snug text-ink-500">
                   <span className="line-clamp-2">{kopf}</span>
                 </li>
               )}

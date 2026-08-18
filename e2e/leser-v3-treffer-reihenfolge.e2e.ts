@@ -41,6 +41,18 @@ async function listenPositionen(page: Page): Promise<number[]> {
   })
 }
 
+// ── Ä103 (18.8.2026) · DER ZÄHLER NENNT SEINE EINHEIT ───────────────────────
+// V3 schreibt seit der Säuberung «Fundstelle 3 von 17», die Ist-Hülle weiter
+// «3/17»; vor dem ersten Sprung stand dort «–/17» — ein Bruch ohne Zähler.
+// Die Sonden prüfen darum die ZAHLEN, nicht das Trennzeichen: `laufendeStelle`
+// zieht die erste Zahl heraus (ohne zweite Zahl = «–», also 0). Die
+// Prüfaussage ist unverändert (§6.3-Deklaration).
+async function laufendeStelle(page: import('@playwright/test').Page): Promise<number> {
+  const t = await page.locator('[data-treffer-position]').innerText()
+  const zahlen = t.match(/\d+/g)?.map(Number) ?? []
+  return zahlen.length >= 2 ? zahlen[0] : 0
+}
+
 test.describe('H2 — Trefferliste in Erlass-Reihenfolge, je Artikel gruppiert', () => {
   test('(a) die Liste läuft mit dem Gesetz mit, nicht nach Relevanz', async ({ page }) => {
     test.slow()
@@ -66,7 +78,13 @@ test.describe('H2 — Trefferliste in Erlass-Reihenfolge, je Artikel gruppiert',
     await suchFeld(page).fill('Entschädigung')
     await expect(page.locator('[data-treffer-artikel]').first()).toBeVisible({ timeout: 30_000 })
 
-    const koepfe = await page.locator('[data-treffer-liste] li.lc-overline').allInnerTexts()
+    // §6.3-DEKLARATION (Ä102, 18.8.2026): der Anker wandert, die geprüfte Sache
+    // nicht. Bis heute hing der Locator an der KLASSE `lc-overline` — also am
+    // Aussehen. Ä102 hat den Zwischenkopf aus der Versal-Overline in
+    // Normalschreibung genommen (die Ellipse traf den Gliederungsort, eine
+    // Kernauskunft); der Wächter hängt jetzt an der Identität
+    // `data-treffer-gruppe`. Dieselbe Lehre wie der `data-fn-ref`-Fix aus H2.
+    const koepfe = await page.locator('[data-treffer-liste] li[data-treffer-gruppe]').allInnerTexts()
     expect(koepfe.length, 'keine Gruppenköpfe — Testfall trägt nicht').toBeGreaterThan(1)
     expect(new Set(koepfe).size, `doppelte Gruppenköpfe: ${koepfe.join(' | ')}`).toBe(koepfe.length)
 
@@ -113,14 +131,13 @@ test.describe('H2 — Trefferliste in Erlass-Reihenfolge, je Artikel gruppiert',
     await suchFeld(page).fill('Entschädigung')
     await expect(page.locator('[data-treffer-position]')).toBeVisible({ timeout: 30_000 })
 
-    const stand = () => page.locator('[data-treffer-position]').innerText()
     await suchFeld(page).focus()
     await page.keyboard.press('ArrowDown')
-    await expect.poll(stand, { timeout: 20_000 }).toContain('1/')
+    await expect.poll(() => laufendeStelle(page), { timeout: 20_000 }).toBe(1)
     await page.keyboard.press('ArrowDown')
-    await expect.poll(stand, { timeout: 20_000 }).toContain('2/')
+    await expect.poll(() => laufendeStelle(page), { timeout: 20_000 }).toBe(2)
     await page.keyboard.press('ArrowUp')
-    await expect.poll(stand, { timeout: 20_000 }).toContain('1/')
+    await expect.poll(() => laufendeStelle(page), { timeout: 20_000 }).toBe(1)
 
     // Und der Text bleibt beim Feld: ↑↓ dürfen die Schreibmarke nicht bewegen
     // und nichts an der Eingabe ändern.
