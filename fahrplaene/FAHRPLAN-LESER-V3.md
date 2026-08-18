@@ -1824,13 +1824,21 @@ unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
 | ~~**Ä80**~~ | Steckbrief-Reihenfolge Erlassdatum → In Kraft → Stand; Präposition «vom» steht im WERT statt im Etikett | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten |
 | **Ä81** | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | H4-Entscheid «nur der Kopf warnt» |
 | **Ä82** | Zwei Linien zwischen Ingress und Sektionskopf | S-Strang |
-| **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | H4 / `layout` |
+| **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | ⏳ **gemessen 18.8.2026, NICHT gebaut** — `input` 42 × 44 px auf jeder Seite; kein Leser-Befund, sondern `HeaderSuche`/`Topbar`. Begründung im Vermerk «H4-Nachzug Teil A» (Kap. 7) → QS-/H5-Zeile |
 | **Ä84** | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | ⏳ **teilweise 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Erledigt: das Segment (gemessen 688 px, nicht 680) hat einen Deckel. **OFFEN und jetzt begründet:** das allein stehende «↑ Anfang» widerspricht **Ä32**, das den Knopf im Treffer-Blatt ausdrücklich behält — **Entscheid nötig** |
 | ~~**—**~~ | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Der Befund traf NUR @1440 mit eingeklappter Gliederung; @720/@390 war der Steckbrief schon in zwei Schritten da (gemessen) |
 | **Ä75** | «SR» als Etikett bei Kantonen | **wartet auf David** |
 | ~~**Arch 5**~~ | Etikett «A-2» doppelt belegt | ✅ **erledigt 18.8.2026** — Verweis statt Umnummerierung, im Vollzugsvermerk H1 (Kap. 7) und in Kap. 12. **Auch A-1 war doppelt belegt** — miterledigt |
 | ~~**Arch 6**~~ | H5-Liste nennt das 37-px-Band der App-Leiste noch als zu entfernen | ✅ **erledigt 18.8.2026** — die Liste steht im **Kontaktbogen** `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md` §8, nicht im Fahrplan; dort korrigiert und datiert |
-| **Arch 7** | Treffer-Blatt ohne `usePopoverAutoZu` — Klick daneben schliesst es nicht | **David-Frage** (Beiwerk oder Popover?) |
+| ~~**Arch 7**~~ | Treffer-Blatt ohne `usePopoverAutoZu` — Klick daneben schliesst es nicht | ✅ **entschieden 18.8.2026: BEIWERK, kein Popover** (Empfehlung Agent U, Orchestrator übernommen; **David hat Stopp-Recht**). Kein Aussenklick-Schluss — Herleitung im Vermerk «H4-Nachzug Teil A» (Kap. 7) |
+| ~~**P1-1**~~ | Schienen-Griff @1024–1391 wirkungslos beim ersten Klick, stiller `tocOffen` | ✅ **erledigt 18.8.2026** — Vermerk «H4-Nachzug Teil A» (Kap. 7), `leser-v3-rahmen` (g) |
+| ~~**Ä87**~~ | Panel offen auf D: Kopf-✕ und Panel-✕ gestapelt (47 px) | ✅ **erledigt 18.8.2026** — das Kopf-✕ ist gestrichen; Auflage «Einzelansicht 1 ✕» datiert ersetzt durch «höchstens ein ✕ je Kopfzeile» (Kap. 7) |
+| ~~**Ä88**~~ | Schiebe-Modus 1024–1391: Panel-Öffnen faltet die Gliederung, `#art-429` verschwindet hinter dem Kopf | ✅ **erledigt 18.8.2026** — Stick-Ausgleich trägt beide Auslöser; `leser-v3-rahmen` (e2) auf 1024/1150/1280 |
+| ~~**Ä89**~~ | Steckbrief-Klappe zwischen Reiterleiste und Reiter-Inhalt | ✅ **erledigt 18.8.2026** — Zeile über die Reiter, ausserhalb des `tabpanel`; `leser-v3-uebersicht` (c2)/(c3) |
+| ~~**Ä90**~~ | Kopf @390 drei Icon-Bauformen | ✅ **erledigt 18.8.2026** — eine Bauform, 32-px-Ziel. Der Icon-**Deckel** («≤ 2 reine Icons») bleibt gerissen und ist datiert als «drei, aber eine Bauform» geführt (Kap. 7); die Zahl gehört zu Ä33/Ä34 |
+| ~~**Ä91**~~ | Kopf @720 fünf Elemente, Ansicht-Öffner mit drei Gesichtern | ✅ **erledigt 18.8.2026** — vier Elemente, zwei Gesichter (Kap. 7) |
+| ~~**Ä92**~~ | Menüzeile «Entscheide & Kontext …» ist zweiter Öffner neben dem Chip | ✅ **erledigt 18.8.2026** — Öffner-Ordnung «ein Öffner je Breite», F8-Regel unberührt (Kap. 7) |
+| **Ä9-Rest** | globaler A−/A+ neben dem Leser-Regler | ⏳ **gemessen 18.8.2026, NICHT gebaut** — im Ruhezustand stehen die beiden gar nicht nebeneinander; der saubere Weg kostet drei `layout/`-Dateien und nähme `?leser=v1` den einzigen Regler → **H5** (Kap. 7) |
 
 **Sofort miterledigt (je eine Zeile, keine Bau-Fläche):** Bug 5 Kommentar in
 `LeserTrefferBlatt.tsx` korrigiert · Bug 6 Beispiel-Kommentar `gebiet` in
@@ -1848,20 +1856,26 @@ nennt die drei Fehlermeldungen wörtlich (§6.7).
 | Befund | Messung vorher | Fix | Spec |
 |---|---|---|---|
 | **NM-2 auf H** — Flip-Blocker des Kontaktbogens | @390 (StPO Art. 429): `[data-v3-panel-oeffner]` sichtbar **0**, Randlasche 0; die Entscheide kosteten **2 Taps** («···» → «Entscheide & Kontext …») gegen **1** auf D/S. **§7-Korrektur:** der Bogen schrieb «nicht per Tap erreichbar» — der Menü-Weg trug, er war nur doppelt so teuer | `kopfElemente(…).panel` ist `'voll' \| 'kompakt'` statt `boolean` (dieselbe Bauform wie `krume` seit V2, kein Wert «weg»); auf `mini` Chip «⚖ N» ohne Zähl-Substantiv. Platz gemessen @390: Zeile innen 350 px, Ort-Zone 258 px mit 144 px Inhalt (**115 px frei**), Griff-Zone 84 px; Chip 24 px ohne, ~45 px mit Zahl. **Nachher 1 Tap auf allen drei Breiten** | `leser-v3-h4-kopfwege` (a) je 390/720/1280 · (a2) Element-Deckel · (a3) F8-Regel unberührt; Unit `leser-v3-kopfstufen` |
-| **Ä46** — zwei ✕ je Pane | Split @1600: je Pane **2** sichtbare ✕, 44 px übereinander (Griffleiste y = 69 «Hauptfenster schliessen» / «‹BGFA› schliessen», V3-Kopf y = 113 «Gesetz schliessen»), unterscheidbar allein am Accessible Name | Neue reine Funktion `zeigeSchliessKreuz(stufe, vollflaechig)`. Der V3-✕ führte auf `/gesetze` — **genau dorthin wie die erste Krumen-Stufe in derselben Zeile**, und die fällt seit V2 auf keiner Breite weg. Er weicht darum im Pane (Ä46) und auf `mini` (Element-Deckel). **Nachher 1 ✕ je Pane**, das der Fenster-Steuerung | `leser-v3-h4-kopfwege` (b); nachgezogen `leser-kopf-paritaet`, `leser-v3-eine-kopfzeile` (b2)/(d), `leser-v3-blatt` (c) |
+| **Ä46** — zwei ✕ je Pane *(seit 18.8.2026 überholt: das ✕ ist ganz gestrichen, Ä87 — `zeigeSchliessKreuz` gibt es nicht mehr)* | Split @1600: je Pane **2** sichtbare ✕, 44 px übereinander (Griffleiste y = 69 «Hauptfenster schliessen» / «‹BGFA› schliessen», V3-Kopf y = 113 «Gesetz schliessen»), unterscheidbar allein am Accessible Name | Neue reine Funktion `zeigeSchliessKreuz(stufe, vollflaechig)`. Der V3-✕ führte auf `/gesetze` — **genau dorthin wie die erste Krumen-Stufe in derselben Zeile**, und die fällt seit V2 auf keiner Breite weg. Er weicht darum im Pane (Ä46) und auf `mini` (Element-Deckel). **Nachher 1 ✕ je Pane**, das der Fenster-Steuerung | `leser-v3-h4-kopfwege` (b); nachgezogen `leser-kopf-paritaet`, `leser-v3-eine-kopfzeile` (b2)/(d), `leser-v3-blatt` (c) |
 | **Ä79** — zwei ☰ @1440 | Gliederung eingeklappt: Kopf-☰ x = 1117 · Schienen-☰ x = 184 — **933 px auseinander an gegenüberliegenden Fensterkanten**, eine Handlung | Der Kopf-☰ entfällt, solange die **beschriftete** Schiene steht (`schieneSteht` in `LeserRahmenV3`); unter der Schienen-Schwelle (kein `istXl`, also H und jedes schmale Pane) bleibt er unverändert. **Nachher 1** | `leser-v3-h4-kopfwege` (c), (c2) als Gegenprobe @390; `leser-v3-kopf-buendig` (e) grün mit dem Schienen-Griff |
 
 **Ehrlicher Rest, ungeschönt.** (a) Die zweite Hälfte der Design-Grundlage
 Kap. 6 («≤ 2 reine Icons») ist @390 **nicht** eingelöst: der Chip zeigt im
 Ruhezustand nur die Ikone, weil die Zahl vor dem Nachladen des Bezugs-Shards
 niemand kennt und eine erfundene «0» §8 verbietet — vorher standen dort
-☰ · ··· · ✕, also ebenfalls drei. Unverändert, nicht verbessert. (b) In der
-Einzelansicht @720 (`kompakt`) trägt die Kopfzeile **fünf** Elemente und riss den
-Vier-Elemente-Deckel schon vor H4-II; der Hebel wäre derselbe, berührt aber die
-Ä46-Auflage «Einzelansicht bleibt bei 1» und wartet auf einen Entscheid.
+☰ · ··· · ✕, also ebenfalls drei. Unverändert, nicht verbessert.
+*(Nachgeführt 18.8.2026, H4-Nachzug Teil A: die drei Icons stehen weiterhin, aber
+in EINER Bauform und mit 32-px-Ziel statt 24 — Ä90. Der Deckel bleibt gerissen.)*
+(b) In der Einzelansicht @720 (`kompakt`) trägt die Kopfzeile **fünf** Elemente
+und riss den Vier-Elemente-Deckel schon vor H4-II; der Hebel wäre derselbe,
+berührt aber die Ä46-Auflage «Einzelansicht bleibt bei 1» und wartet auf einen
+Entscheid. *(ERLEDIGT 18.8.2026, H4-Nachzug Teil A — Ä91: das ✕ fällt auf jeder
+Breite, die Auflage ist datiert ersetzt durch «höchstens ein ✕ je Kopfzeile,
+Rücksprung immer beschriftet». Nachher vier Elemente @720.)*
 (c) §7-Abweichung, offengelegt: auf `mini` sinkt die ✕-Zahl der Einzelansicht von
 1 auf **0**. Verloren geht nichts — das Ziel `/gesetze` steht dort als
 beschrifteter Rücksprung, und ein Wort ist eine bessere Auskunft als ein Zeichen.
+*(Seit 18.8.2026 gilt das für JEDE Breite, nicht nur `mini` — Ä87.)*
 
 **§6.3-Deklarationen** (fachliche Änderungen, keine Anpassung an den Bau):
 `leser-v3-eine-kopfzeile` (b2) Schliess-Griffe @390 1 → 0 samt Klick-Probe auf den
@@ -2290,6 +2304,66 @@ rote Fall** dieses Standes und darf nicht als grün gemeldet werden (§8).
 gehören zum parallelen **Ä60-(c)**-PR (breiterer Leser-Rahmen). Keine
 H5-Löschung: die V1-Hülle ist vollständig lauffähig, und das Projekt `leser-v1`
 ist die letzte Stelle im Repo, die sie fährt.
+
+### ✅ H4-Nachzug (18.8.2026) — Teil A: Kopf · Rahmen · Panel
+
+Branch `feat/leser-v3-h4-nachzug-a`, Basis `32c2865d2`. Zehn Befunde aus drei
+Prüfläufen am gelandeten H4-Stand (Bug-Check P1, Ästhetik P2, Architektur P3)
+und dem Klick-Test. **Jeder Fix wurde vor dem Bau reproduziert und danach an
+derselben Stelle erneut gemessen** (Skript `scratchpad/a-mess.cjs`, StPO
+Art. 429 bzw. VMWG, Chromium, kalt); jede neue Spec ist einmal **rot gesehen**
+worden (§6.7, Belege in der letzten Spalte).
+
+| Befund | Messung vorher | Fix | Spec |
+|---|---|---|---|
+| **P1-1** `rahmenSpalten.schieneHoltPlatz` — der Schienen-Griff war wirkungslos | @1280, Gliederung ZUERST eingeklappt, dann Blatt geöffnet: 1. Klick auf die Schiene ⇒ `[data-v3-aside]` **0**, Grid unverändert `36px 780px 352px`; erst der 2. Klick brachte `288px 752px`. Dazwischen stand `tocOffen` still auf `true` — ein Zustand ohne Bild | Die Bedingung fragte nach `tocOffen` statt nach der LAGE. Neu `blattSpur && !vollesLesemass`: die Schiene holt genau dann Platz, wenn Blatt und Spalte nicht zusammen passen. **Nachher 1 Klick** ⇒ `aside` 1, Panel 0, Grid `288px 752px` | `leser-v3-rahmen` (g); Rot-Beweis: alte Bedingung zurücksetzen ⇒ «nach EINEM Schienen-Klick fehlt die Gliederungsspalte» |
+| **Ä88** Panel-Öffnen faltet die Gliederung, der Kopf wächst 44 px | Abstand klebender Block → `#art-429`: @1024 **−1 → −45 px** (die Artikel-Überschrift lag hinter dem Kopf), @1150/@1280 −1 → −1 (Chromium-Anchoring trug), @1440 keine Faltung. Kopfhöhe je 57 → 101 px | `useStickAusgleich` kennt statt `tocOffen` eine **Lage** (`tocOffen·panelOffen`) und gibt statt eines Setters die Klammer `mitAusgleich`. Der Rahmen wickelt den PANEL-ZUSTAND, nicht die Aufrufpunkte — ein vergessener Aufrufpunkt wäre genau der Sprung. **Nachher @1024 −1 → 0**, @1150/1280/1440 unverändert | `leser-v3-rahmen` (e2) je 1024/1150/1280 auf die **Abstands**-Invariante (nicht auf `y`: die y-Prüfung wäre @1150/1280 grundlos rot und @1024 grundlos grün) |
+| **Ä87** zwei ✕ übereinander | @1440 mit offenem Blatt: Kopf-✕ y = **80**, Blatt-✕ y = **127** — 47 px, gleiches Zeichen, zwei Wirkungen | **Das Kopf-✕ ist ersatzlos gestrichen**, auf jeder Breite. `zeigeSchliessKreuz` entfällt mit ihm: die Bedingung «zeige es, wenn kein beschrifteter Rücksprung dasteht» kann nicht `true` werden, also wäre sie ein Tor ohne Fallhöhe (§6.7/§17). **Nachher 0 im Ruhezustand, 1 mit offenem Blatt** | `leser-v3-h4-kopfwege` (d); die Zusage darunter unit-bewiesen an `erlassAnsicht.hatRuecksprung` (Bund · Kanton · Staatsvertrag), nachgezogen `leser-v3-eine-kopfzeile`, `leser-v3-panel-nachzug` |
+| **Ä91** fünf Elemente @720, drei Öffner-Gesichter | @720 Ruhezustand: Ort · ⚖ · ☰ · Ansicht · ✕ = **5** gegen Deckel 4. Ansicht-Öffner: «···» @390, «◧▾» zwischen 640 und 1023 px, «◧ Ansicht ▾» ab 1024 — das mittlere Gesicht war die Folge eines `lg:`-Präfixes, also des VIEWPORTS statt des gemessenen Zuschnitts (Kap. 10) | Mit dem ✕ fällt das fünfte Element; das Wort «Ansicht» hängt jetzt am Zuschnitt (`kompakt`), nicht am Breakpoint. **Nachher: @720 vier Elemente, zwei Gesichter über 390/720/900/1024/1440, kein Zeilen-Überlauf** | `leser-v3-h4-kopfwege` (e) misst Gesichter und Element-Zahl über fünf Breiten |
+| **Ä90** drei Icon-Bauformen @390 | ⚖ Chip 24×24 auf `--well` · ☰ nackt 24×24 transparent · ··· Pille 28×24 — drei Umrisse für drei gleich wichtige Griffe, alle auf der WCAG-2.5.8-Untergrenze | EINE Bauform aus einer Quelle (`kopfStufen.kopfGriffKlassen` / `kopfGlypheKlassen`, gelesen von den drei Dateien, die die Griffe bauen). Auf dem Handy-Zuschnitt 32-px-Ziel, 20-px-Glyphe. **Nachher 32×32 · 32×32 · 44×32, gleiche Fläche, gleiche Rundung, Zeile ohne Überlauf (350/350 px)** | `leser-v3-h4-kopfwege` (f); Rot-Beweis einzeln gefahren (nur `kopfGriffKlassen` zurückgesetzt ⇒ «Griff 24×24, erwartet ≥ 32») |
+| **Ä92** zwei Öffner für eine Fläche | @390 UND @1440 bei aufgezogenem Menü: `[data-v3-panel-zaehler]` **1** und `[data-v3-ansicht-panel-auf]` **1** — verschiedener Wortlaut, dieselbe Fläche | Öffner-Ordnung **«ein Öffner je Breite»**: derselbe Torwächter `panel.oeffnerSichtbar` entscheidet BEIDE, der Menü-Eintrag erscheint genau dann, wenn kein Chip steht. Davids F8-Regel bleibt wörtlich eingelöst (Schalter aus ⇒ Chip weg, Eintrag da, Taste «r» immer). **Nachher 1 / 0 bzw. 0 / 1** | `leser-v3-h4-kopfwege` (g); `(a3)` prüft die F8-Regel unverändert weiter |
+| **B2** (Klick-Test) Beschriftung ≠ Wirkung | Schalter «Rechtsprechung im Text»: Bezugs-/Leitfall-Zeilen im V3-Lesetext **0 vor und 0 nach** dem Umlegen; was wirklich wechselte, war der Kopf-Zähler (1 → 0). V3 reicht dem Kern weder `bezuege` noch `leitfaelle` (Pos. 12, H3) | Wortlaut an die Wirkung: **«Rechtsprechung anzeigen»**, Tooltip nennt Zähler und die beiden Ersatzwege. Das geteilte Store-Feld heisst weiter `leitfaelle` und wirkt in V1 unverändert auf den Lesetext — EIN Feld, zwei Oberflächen, jede nach ihrer eigenen Wirkung beschriftet (§5/§8) | `leser-v3-h4-kopfwege` (a3)/(g) fassen den Schalter am neuen Namen |
+| **Ä89 · P3 (3c)** Steckbrief-Zeile am falschen Ort | @1440, Gliederung eingeklappt, Panel offen: Klappe y = **245**, Reiter-Leiste y = **208** — die Zeile lag UNTER den Reitern und INNERHALB von `[role=tabpanel]`. Der Bau-Kommentar behauptete zudem, der Defekt sitze «auf dem Desktop», montierte die Zeile aber in jeder Lage ohne stehende Leiste | Die Zeile ist eine **Prop des Panels** (`LeserPanel.steckbrief`) und steht zwischen Kopf und Reiter-Leiste — der Rückgabe-Punkt, den der Bau selbst notiert hatte. Sie ist damit genau einmal im DOM, unabhängig vom Reiter. Kommentar auf die wahre Bedingung gebracht: nicht «welche Breite», sondern «steht die Leiste gerade irgendwo» (`leisteSteht`). **Nachher y 208 < 244, `imTabpanel` false** | `leser-v3-uebersicht` (c2) Lage + `overflow-x`, (c3) @390 in allen drei erreichbaren Kombinationen genau EINE Warnung (Ä28) |
+| **Agent-U-Wunsch** Reiter-Leiste ohne Umbruch | @1440: drei Reiter 269 px von 334 px; ein vierter (Kap. 14, Zitat-Export) wurde am Rand abgeschnitten (`scrollWidth` 369 gegen `clientWidth` 334) | `overflow-x: auto` mit `scrollbar-width: none`, Reiter `shrink-0 whitespace-nowrap`. Ein vierter Reiter ist damit **möglich**, ohne dass er heute gebaut wäre | `leser-v3-uebersicht` (c2) misst `overflow-x` |
+| **P3 (3b)** ein Wort für zwei Flächen | `blattOffen` bezeichnete im selben Bau das Gliederungs-Sheet UND das Beiwerk-Blatt; die Leisten-Montage stand als namenlose Formel `zweiSpalten \|\| blattOffen` da | Drei Namen für drei Dinge: `gliederungsSheetOffen` · `panel.offen` · `leisteSteht`. Der Prop-Name von `suchZoneAufbau` (fremde Bau-Fläche) bleibt unberührt, die umbenannte Quelle steht davor | reines Umbenennen, von den bestehenden Specs mitgetragen |
+| **B1** (Klick-Test) Artikel-Tap liess das Blatt offen | @390 VMWG, Tap auf «Art. 1 — Geltungsbereich»: `[data-gliederung-sheet]` **1 → 1**; der Tap auf eine Sektion schloss es (1 → 0). Der Leser stand auf dem Ziel und sah es nicht | `setTocAuf(false)` im Artikel-Sprung. **§7-Abweichung:** der Auftrag nennt `inhalt.tsx:199` — dort fehlte die Zeile ebenfalls und ist ergänzt, für V3 aber wirkungslos: V3 hat seit H1 seinen eigenen Sprung in `leserV3Modell.ts`. **Nachgezogen sind beide**; ausserhalb der Blatt-Lage ist der Aufruf wirkungslos, V1 verhält sich unverändert. **Nachher 1 → 0** | `leser-v3-h4-gliederungswege` (a) + (b) als Sektions-Gegenprobe |
+| **B7** (Klick-Test) Taste «t» zielte in den Steckbrief | @1440: `[data-toc]` ist der SCROLLER, und darin steht seit H2b zuoberst der Steckbrief — «t» fokussierte gemessen den Link «↗ geltende Fassung» (Fedlex), nicht den Baum | Neue geteilte Marke `data-toc-baum` am Baum-Container; die Taste sucht dort und fällt sonst auf den Scroller zurück (V1 unverändert — dort steht der Steckbrief unter dem Baum). **Nachher Fokus auf «Einklappen» im Baum** | `leser-v3-h4-gliederungswege` (c) misst beides am selben DOM: neues Ziel UND was der alte Selektor getroffen hätte |
+
+#### Drei Auflagen, datiert angepasst — nicht stillschweigend gebrochen
+
+1. **«Einzelansicht behält 1 ✕» (Ä46-Auflage).** Sie gilt nicht mehr. Neu:
+   **«Höchstens EIN ✕ je Kopfzeile, und der Rücksprung ist immer beschriftet.»**
+   Anlass ist kein Geschmack, sondern der gemessene Ä87-Befund (zwei ✕, 47 px
+   übereinander) und der Ä91-Befund (fünf Elemente @720). Die Handlung «zur
+   Übersicht» ist nicht verloren: sie steht auf jeder Breite als Wort — als
+   Kette «Gesetze › Bund ›» oder als Rücksprung «‹ Gesetze», beide mit Ziel
+   `/gesetze`. Die Zusage hängt an `erlassAnsicht.hatRuecksprung` und ist dort
+   unit-bewiesen, statt angenommen zu werden.
+2. **Icon-Deckel «≤ 2 reine Icons» (Design-Grundlage Kap. 6).** @390 stehen
+   weiterhin **drei** (⚖ · ☰ · ···) — neu aber in **einer** Bauform und mit
+   32-px-Ziel statt 24. Der Deckel bleibt damit **gerissen**, und das steht
+   hier, statt weggeglättet zu werden (§8). Die Zahl selbst gehört zu Ä33/Ä34
+   (Griff-Zahl), nicht zu Ä90: sie zu senken hiesse eine Handlung zu entfernen,
+   und genau das hat H4-II gerade rückgängig gemacht.
+3. **Arch 7 «Blatt bleibt Beiwerk» — ENTSCHIEDEN** (Empfehlung Agent U,
+   Orchestrator übernommen 18.8.2026; David hat Stopp-Recht). Das Treffer-Blatt
+   bekommt **kein** `usePopoverAutoZu`: ein Klick daneben schliesst es nicht.
+   Begründung in einer Zeile — es ist Beiwerk zum Lesetext, kein aufgezogenes
+   Menü; wer im Text weiterliest oder markiert, verliert seine Trefferliste
+   sonst genau dann, wenn er sie braucht. Dieselbe Unterscheidung, die Ä52 für
+   das Panel und Ä86 für die Spalte schon getroffen hat.
+
+#### Zwei Befunde NICHT gebaut — mit Grund und Zahl
+
+**Ä9-Rest** (globaler A−/A+ neben dem Leser-Regler) und **Ä83/C6** (leeres
+44-px-Suchkästchen der App-Topbar @390) verlangen beide eine Änderung in
+`src/components/layout/**`. Der Auftrag liess dafür **eine** deklarierte Zeile
+zu; beide brauchen mehr:
+
+| Befund | Gemessen 18.8.2026 | Warum nicht mit einer Zeile |
+|---|---|---|
+| **Ä9-Rest** | @1440 im Leser: App-Regler sichtbar (133 × 35 px), Leser-Regler **nur im aufgezogenen «Ansicht ▾»** — die beiden stehen im Ruhezustand also gar nicht nebeneinander. @390 ist der App-Regler ohnehin aus (`hidden lg:inline-flex`) | Die Topbar kennt die Route nicht und soll sie nicht kennen. Der saubere Weg ist ein zweites Feld an `KopfDaten` («die Seite trägt ihren eigenen Schriftregler»), das die Seite meldet — das sind drei Dateien in `layout/` plus die Leser-Wurzel. `kopfzeileSelbst` dafür mitzubenutzen wäre eine zweite Bedeutung auf einem Flag (§5). **Und der Preis ist real:** unter `?leser=v1` hat die Ist-Hülle keinen eigenen Regler; ein routen-gebundenes Ausblenden nähme ihr den einzigen. → **H5-Zeile** (dort fällt V1, und der Einwand mit ihm) |
+| **Ä83 / C6** | @390 auf JEDER Seite (V1 wie V3): `input` der Topbar-Suche **42 × 44 px** ohne sichtbaren Platzhalter — ein Stummel, kein Feld | Kein Leser-Befund: er betrifft `HeaderSuche`/`Topbar` global und damit jede Seite der App. Er in einem Leser-PR zu beheben hiesse, die Fläche eines anderen Bereichs ohne dessen Messreihe zu verändern. → **QS-/H5-Zeile** mit der Zahl |
 
 ---
 
