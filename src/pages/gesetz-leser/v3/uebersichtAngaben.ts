@@ -5,7 +5,7 @@ import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad
 import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
-import { formatiereDatum, kopfOverline, verifiziertesSachgebiet } from '../helpers';
+import { formatiereDatum, kennungText, kopfOverline, verifiziertesSachgebiet } from '../helpers';
 import { teilerfassung, nurErlassdatum, erlassOrgan } from '../erlassUebersichtDaten';
 import type { BestimmungsWort } from './erlassAnsicht';
 
@@ -165,16 +165,81 @@ export interface UebersichtsEingabe {
  *
  * Fehlende Angaben entfallen ERSATZLOS: ein Erlass ohne SR-Nummer (12 von 1469,
  * gezählt 17.8.2026) bekommt keinen Platzhalter.
+ *
+ * Ä75 (18.8.2026): das Etikett «SR» kommt aus `kennungText` und steht nur, wo es
+ * zutrifft — am Kantonserlass stand hier «SR 640.100» über einer Nummer der
+ * kantonalen Gesetzessammlung (Herleitung und der Grund gegen ein erfundenes
+ * Kantons-Kürzel: `../helpers`).
  */
 export function ruheZeile(
-  erlass: Pick<BrowseErlass, 'sr'>,
+  erlass: Pick<BrowseErlass, 'ebene' | 'sr'>,
   anzahl: number | null,
   bestimmungsWort: BestimmungsWort,
 ): string {
   return [
-    erlass.sr ? `SR ${erlass.sr}` : null,
+    kennungText(erlass),
     anzahl != null ? `${anzahl} ${bestimmungsWort}` : null,
   ].filter(Boolean).join(' · ');
+}
+
+/**
+ * Präpositionen, die ein Sidecar-Erlassdatum einleiten kann — BELEGT, nicht
+ * geraten. Gezählt über alle 1420 Struktur-Sidecars (18.8.2026, kein Netz):
+ * «Vom» 890 · «vom» 493 · gar keine 27 · «du» 10 (FR/VS). Andere Formen kommen
+ * im Korpus nicht vor; käme eine dazu, fängt sie der Rückfall in `datumsAngabe`
+ * auf, statt still verstümmelt zu werden.
+ *
+ * WARUM EIN MUSTER MIT WORTGRENZE UND KEIN `slice(4)`: 27 Sidecars schreiben das
+ * Datum ohne Präposition («12. April 2000», gemessen an BS-640.100 im
+ * Ä74-Befund). Ein stumpfes Abschneiden verstümmelte diese Gruppe still — der
+ * Wert begänne mit «April 2000». Darum eine Identitäts-Prüfung mit Wortgrenze
+ * (§7): getroffen wird nur ein führendes Listenwort, gefolgt von Weissraum.
+ */
+const PRAEPOSITION = /^(?:vom|du)\s+/i;
+
+/**
+ * Die fremdsprachigen Geschwister der «(Stand …)»-Klammer, die `nurErlassdatum`
+ * schneidet. Gezählt an denselben 1420 Sidecars: «(Stand …)» 1409 (dort erledigt)
+ * · «(version …)» 5 · «(état …)» 5 · «(Fassung in Kraft getreten am …)» 1.
+ *
+ * WARUM NICHT «jede Schluss-Klammer»: `nurErlassdatum` lässt «vom 1. Januar 2000
+ * (AS 2000 1)» ausdrücklich stehen (Fundstellen-Angabe, `gesetz-leser-uebersicht-s6`),
+ * und diese Regel darf sie nicht hintenherum doch schneiden. Getroffen wird nur,
+ * was eine FASSUNG bezeichnet — dieselbe Aussage wie «Stand», in einer anderen
+ * Sprache. `Etat` ohne Akzent steht daneben, weil derselbe Erlass je nach
+ * Ausgabe-Kodierung beides liefert.
+ *
+ * NUR IN V3. Die Ist-Hülle rendert ihre Übersicht weiter aus dem blossen
+ * `nurErlassdatum` — die eingefrorene Hülle hängt nie an der neuen (FL-4).
+ */
+const FASSUNGS_KLAMMER = /\s*\((?:Fassung|État|Etat|Version)\b[^)]*\)\s*$/i;
+
+/**
+ * Ä80 + P1-2 · Das Sidecar-Erlassdatum wird zur Label/Wert-Zeile: die
+ * Präposition wandert ins Etikett («vom 5. Oktober 2007» → Label «Erlass vom»,
+ * Wert «5. Oktober 2007»), die Fassungs-Klammer fällt weg (sie steht als
+ * eigene Zeile «Stand» direkt darunter — Ä74).
+ *
+ * DER RÜCKFALL IST DER KERN DES FIXES (Bug-Check 18.8.2026). Ein Etikett «Erlass
+ * vom» ist eine ZUSAGE an den Wert: dass dort ein Datum steht und sonst nichts.
+ * Bis hierher wurde sie auch dann gegeben, wenn beide Muster danebengriffen —
+ * am FR-Erlass 635.1.1 stand «Erlass vom · du 01.05.1996 (version entrée en
+ * vigueur le 01.03.2024)», also die Präposition doppelt und der Stand ein
+ * zweites Mal. Beginnt der Wert nach beiden Schnitten nicht mit einer Ziffer,
+ * halten wir die Zusage nicht: das Etikett fällt auf das neutrale «Erlassdatum»
+ * zurück (so heisst es in V1), der Wortlaut bleibt unangetastet, und
+ * `tabular-nums` entfällt — eine Zahlen-Kante an einem Wort auszurichten ist der
+ * Ä80-Fehler in umgekehrter Richtung.
+ *
+ * `null` = nach dem Schnitt bleibt nichts (27 Sidecars tragen NUR die Klammer,
+ * z. B. «(Stand am 4. September 2024)»). Dann entsteht keine Zeile (§8).
+ */
+export function datumsAngabe(erlassdatum: string): Omit<UebersichtZeile, 'id'> | null {
+  const ohneKlammer = nurErlassdatum(erlassdatum).replace(FASSUNGS_KLAMMER, '').trim();
+  const wert = ohneKlammer.replace(PRAEPOSITION, '').trim();
+  if (!wert) return null;
+  const ziffern = /^\d/.test(wert);
+  return { label: ziffern ? 'Erlass vom' : 'Erlassdatum', wert, ziffern };
 }
 
 /**
@@ -209,24 +274,42 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   const organ = erlassOrgan(kopf);
   if (organ) zeilen.push({ id: 'organ', label: 'Erlassgeber', wert: organ });
 
-  // ── Erlassdatum · «vom 5. Oktober 2007» ───────────────────────────────────
-  // Der amtliche Wortlaut des Sidecars, ohne die formelhafte Stand-Klammer am
-  // Ende (`nurErlassdatum`, §5 — dieselbe Ableitung wie die Ist-Hülle): der
-  // Stand steht in der Zeile darunter mit seinem maschinellen Wert.
-  const datum = kopf?.erlassdatum ? nurErlassdatum(kopf.erlassdatum) : null;
-  if (datum) zeilen.push({ id: 'datum', label: 'Erlassdatum', wert: datum, ziffern: true });
+  // ══ DIE DATUMS-KETTE · Erlass vom → In Kraft seit → Stand (Ä80) ═══════════
+  // Vier Zeilen, EINE Chronologie, in der Folge, in der ein Erlass sie durch-
+  // läuft: beschlossen → in Kraft → auf diesem Stand → (allenfalls) aufgehoben.
+  //
+  // Ä80 (Ästhetik-Prüfer 17.8.2026 abends) hat hier zwei Dinge gerügt, und beide
+  // sind an der reinen Funktion zu heilen, nicht am Markup:
+  //  (1) Der Stand stand ZWISCHEN Erlassdatum und Inkrafttreten. Fedlex ordnet
+  //      «Beschluss → Inkrafttreten» und der Erlass-Kopf führt dieselbe Kette in
+  //      derselben Folge — die Box war die einzige Stelle, die anders sortierte
+  //      (§5). Jetzt: eine Reihenfolge, eine Quelle.
+  //  (2) Die Präposition «vom» stand im WERT. Das nimmt der Wertspalte ihre
+  //      Kante: «vom 5. Oktober 2007» beginnt mit einem Wort, «01.04.2025» mit
+  //      einer Ziffer, und `tabular-nums` richtet nichts aus, was nicht an
+  //      derselben Stelle anfängt. Fedlex hält es umgekehrt — das Label trägt
+  //      die Sprache, der Wert nur das Datum. Darum «Erlass vom» als Etikett;
+  //      «In Kraft seit» und «Stand» tragen ihre Präposition ohnehin schon dort.
+  //      Der Wortlaut lehnt sich an Fedlex an, ohne dessen Kommentar-Text.
 
-  // ── Stand · «01.04.2025» ──────────────────────────────────────────────────
-  // B8 (Bug-Check 9.8.2026): zwei VD-Erlasse tragen `stand: ""`. «Stand» ohne
-  // Wert wäre ein leeres Versprechen — dann entfällt die Zeile (2 von 1469).
-  if (erlass.stand) {
-    zeilen.push({ id: 'stand', label: 'Stand', wert: formatiereDatum(erlass.stand), ziffern: true });
-  }
+  // ── Erlass vom · «5. Oktober 2007» ────────────────────────────────────────
+  // `datumsAngabe` schneidet die Fassungs-Klammer (Ä74 — sonst steht der Stand
+  // zweimal untereinander), hebt die Präposition ins Etikett (Ä80) und gibt das
+  // Etikett wieder her, wo sie ihre Zusage nicht halten kann (P1-2).
+  const datum = kopf?.erlassdatum ? datumsAngabe(kopf.erlassdatum) : null;
+  if (datum) zeilen.push({ id: 'datum', ...datum });
+
   if (erlass.inkraftSeit) {
     zeilen.push({
       id: 'inkraft', label: 'In Kraft seit',
       wert: formatiereDatum(erlass.inkraftSeit), ziffern: true,
     });
+  }
+  // ── Stand · «01.04.2025» ──────────────────────────────────────────────────
+  // B8 (Bug-Check 9.8.2026): zwei VD-Erlasse tragen `stand: ""`. «Stand» ohne
+  // Wert wäre ein leeres Versprechen — dann entfällt die Zeile (2 von 1469).
+  if (erlass.stand) {
+    zeilen.push({ id: 'stand', label: 'Stand', wert: formatiereDatum(erlass.stand), ziffern: true });
   }
   if (erlass.aufgehoben) {
     zeilen.push({

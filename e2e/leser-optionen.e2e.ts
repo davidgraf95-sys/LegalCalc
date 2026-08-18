@@ -34,6 +34,27 @@ import { test, expect, type Page } from '@playwright/test';
 // (F1) — die Zahl der Schalter bleibt damit ZWEI, ihre NAMEN ändern sich. Der
 // Vertrag dieses Schalters liegt vollständig unter `hist-ansicht-w25i.e2e.ts`;
 // hier wird nur die Bestückung des Menüs festgehalten.
+//
+// ── H4-UMHÄNGUNG (Flip 18.8.2026, Kontaktbogen H4 §7) ───────────────────────
+// Drei Nachführungen, alle gemessen, keine davon eine Lockerung (§6.3):
+//
+// (1) Die Bestückung ist in V3 DREI Schalter, nicht zwei: dazu kommt
+//     «Rechtsprechung anzeigen» (F8-Entscheid David 16.8.2026; seit dem
+//     H4-Nachzug 18.8.2026 nach seiner Wirkung benannt, B2,
+//     `v3/LeserAnsichtV3.tsx`). Statt einer blossen Zahl nennt der Fall jetzt
+//     die Schalter beim NAMEN und prüft die Zahl zusätzlich — eine Zahl allein
+//     wäre auch dann grün, wenn ein Schalter gegen einen anderen getauscht
+//     würde.
+// (2) Das B3-Paar («Erlass MIT / OHNE Änderungsvermerken») ist GELÖSCHT, nicht
+//     umgehängt. NICHTTRAGE-NACHWEIS: `leser-v3-umschalten.e2e.ts` prüft
+//     dieselbe Aussage an denselben Erlassen (StPO positiv, BS-640.100 negativ)
+//     und zusätzlich am `null`-Fall ZH-211.11, den es hier nie gab — die
+//     Löschung nimmt keine Abdeckung weg, sie beendet eine Doppelung (§5).
+// (3) Die Fussnotenmarke fasste `.lc-leser button[aria-label^="Fussnote"]`.
+//     Nach dem Flip greift dieser Selektor den MENÜ-SCHALTER «Fussnoten (26)»
+//     statt der Marke im Text (gemessen: 24 × auf `role=switch` aufgelöst) —
+//     der Fall hätte geprüft, ob sich der Schalter selbst versteckt. Ziel ist
+//     `[data-fn-ref]`, die Marke selbst.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -53,7 +74,7 @@ async function ansichtOeffnen(page: Page): Promise<void> {
   await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
 }
 
-test('Options-Leiste: zwei role=switch (Fussnoten/Änderungsvermerke) — «Entscheide» via «Rechtsprechung ▾», «Linien» und «Verweise» entfallen', async ({ page }) => {
+test('Options-Leiste: drei role=switch (Fussnoten/Änderungsvermerke/Rechtsprechung anzeigen) — «Entscheide» via Panel, «Linien» und «Verweise» entfallen', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
@@ -64,14 +85,23 @@ test('Options-Leiste: zwei role=switch (Fussnoten/Änderungsvermerke) — «Ents
   // die Gliederungslinie im Lesetext gibt es nicht mehr.
   // S1 (Entscheid David F2, 16.8.2026): «Verweise» ist gestrichen; an seine Stelle
   // tritt der zweiwertige «Änderungsvermerke». Bleiben zwei Schalter.
-  await expect(gruppe.getByRole('switch')).toHaveCount(2);
+  // H4: die drei beim NAMEN, die Zahl als Deckel dahinter — so fällt auch ein
+  // Tausch auf, nicht nur ein Zuwachs.
+  // B2 (H4-Nachzug 18.8.2026), §6.3-DEKLARATION — fachliche Änderung, nicht
+  // Anpassung an den Bau: der dritte Schalter hiess «Rechtsprechung im Text» und
+  // versprach damit eine Wirkung auf den LESETEXT. Gemessen sind es in V3 **0**
+  // Bezugs-/Leitfall-Zeilen vor UND nach dem Umlegen — was wirklich wechselt,
+  // ist der Zugang in der Kopfzeile (Zähler 1 → 0). Der Name folgt jetzt der
+  // Wirkung; die geprüfte Aussage («genau diese drei, keine mehr, keine
+  // weniger») ist unverändert. Herleitung: `v3/LeserAnsichtV3.tsx`.
+  for (const name of ['Fussnoten', 'Änderungsvermerke', 'Rechtsprechung anzeigen']) {
+    await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
+  }
+  await expect(gruppe.getByRole('switch')).toHaveCount(3);
   await expect(gruppe.getByRole('switch', { name: 'Linien' })).toHaveCount(0);
   // Negativ-Sonde gegen die Rückkehr: eine entfernte Steuerung, die niemand
   // vermisst, schleicht sich beim nächsten Merge sonst wieder ein.
   await expect(gruppe.getByRole('switch', { name: 'Verweise' })).toHaveCount(0);
-  for (const name of ['Fussnoten', 'Änderungsvermerke']) {
-    await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
-  }
   const html = page.locator('html');
   // Kein `data-linien` mehr am <html> — das Attribut existierte nur für die Linie.
   await expect(html).not.toHaveAttribute('data-linien', /.*/);
@@ -83,42 +113,15 @@ test('Options-Leiste: zwei role=switch (Fussnoten/Änderungsvermerke) — «Ents
   await expect(html).toHaveAttribute('data-histansicht', 'an');
 });
 
-// ── S1-NACHZUG B3 (Bug-Check 17.8.2026, §8) ──────────────────────────────────
-// «Änderungsvermerke» wird nur angeboten, wenn der Erlass Vermerke TRÄGT. Auf
-// Erlassen ohne klassifizierte Historie blieb dem Schalter nur eine
-// Layout-Raffung von 40 px je Artikel; die faktischen Änderungs-Fussnoten OHNE
-// Klasse bleiben dort sichtbar (H0-Auflage 1) — die Beschriftung versprach mehr,
-// als sie hielt. Die Bedingung kommt aus dem DATENMODELL, nicht aus der Herkunft
-// (kein `if (kanton)`): Regel und Korpus-Messung stehen in
-// `src/tests/aenderungsvermerke-schalter.test.ts`, hier die gerenderte Wirkung.
-//
-// PAAR aus Positiv und Negativ, bewusst beides: eine Bedingung, die nur die
-// Abwesenheit prüft, wäre auch mit einem generell verschwundenen Schalter grün.
-test('B3: Erlass MIT Änderungsvermerken bietet den Schalter (StPO)', async ({ page }) => {
-  // StPO: 187 von 283 Fussnoten sind `kl:'A'`, dazu ein Historie-Shard.
-  await warteReader(page, '/gesetze/bund/STPO', 'art-1');
-  await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
-  await expect(gruppe.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(1);
-  await expect(gruppe.getByRole('switch')).toHaveCount(2);
-});
-
-test('B3: Erlass OHNE Änderungsvermerke bietet ihn nicht (BS-640.100)', async ({ page }) => {
-  // BS-640.100 (StG BS) trägt 16 Fussnoten, KEINE davon klassifiziert, und keinen
-  // Historie-Shard ⇒ es gibt hier nichts, was der Schalter ein- oder ausblenden
-  // könnte. Bug-Check-Messung: `[data-historie-zeile]` = 0.
-  await warteReader(page, '/gesetze/kanton/BS-640.100', 'art-1');
-  await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
-  await expect(gruppe).toBeVisible();
-  await expect(gruppe.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0);
-  // Der Fussnoten-Schalter BLEIBT — die 16 unklassifizierten Fussnoten sind da und
-  // er blendet sie wirklich aus. Nur EIN Schalter also, nicht null.
-  await expect(gruppe.getByRole('switch', { name: 'Fussnoten' })).toHaveCount(1);
-  await expect(gruppe.getByRole('switch')).toHaveCount(1);
-  // Und die faktischen Fussnoten stehen im Dokument (nichts weggeblendet, §8).
-  await expect(page.locator('[data-historie-zeile]')).toHaveCount(0);
-});
+// ── S1-NACHZUG B3 · GELÖSCHT IN H4 (Flip 18.8.2026) ─────────────────────────
+// Hier stand das Paar «Erlass MIT / OHNE Änderungsvermerke bietet den Schalter»
+// (StPO positiv, BS-640.100 negativ). Es ist mit dem Flip ENTFALLEN, weil es
+// eine Doppelung war (§5): `leser-v3-umschalten.e2e.ts` prüft dieselbe Aussage
+// an denselben zwei Erlassen und zusätzlich am zweideutigen `null`-Fall
+// ZH-211.11 (kein Struktur-Sidecar), den es hier nie gab. Die Regel selbst und
+// ihre Korpus-Messung liegen unverändert in
+// `src/tests/aenderungsvermerke-schalter.test.ts`. Gelöscht wurde also die
+// zweite Kopie, nicht die Abdeckung.
 
 // ── Ä69 · DER Ä27-HINWEIS IST WEG, UND DAS IST DER PUNKT ────────────────────
 // DEKLARIERTE UMKEHR (§6.3, Entscheid David 17.8.2026 abends). Hier stand «Ä27:
@@ -177,7 +180,7 @@ test('Fussnoten-Toggle: AN sichtbar → AUS VERSCHWINDEN (A1, David 5.7.2026), T
   // `[data-fn-apparat]`), statt nur gedämpft zu werden. Trade-off: die Marker-
   // Ziffern + Apparat-Texte verlassen Ctrl+F — NUR sie, nie der Normtext; der
   // Fussnotentext bleibt im DOM (`#fn-…`) und «Fussnoten AN» stellt alles wieder her.
-  const marker = page.locator('.lc-leser button[aria-label^="Fussnote"]').first();
+  const marker = page.locator('.lc-leser [data-fn-ref]').first();
   await expect(marker).toBeVisible({ timeout: 15000 });
   const nrText = (await marker.textContent())?.trim() ?? '';
   expect(nrText.length).toBeGreaterThan(0);

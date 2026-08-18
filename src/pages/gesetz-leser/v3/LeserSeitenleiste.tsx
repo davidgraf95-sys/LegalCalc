@@ -1,4 +1,5 @@
 import { useCallback, type ReactNode } from 'react';
+import { AnfangSlot } from './anfangSlot';
 
 // ─── Seitenleiste V3 — feste Reihenfolge, nur der Baum klebt (Kap. 4b) ──────
 //
@@ -84,6 +85,12 @@ export function LeserSeitenleiste({
     // ohnehin mit `null`, worauf hier nichts Neues entsteht.
   }, []);
 
+  // Ä94: Die Kopfzeile von Zone A steht, sobald sie etwas ZU SAGEN hat — eine
+  // Überschrift oder den Auf/Zu-Knopf des Baumes. Bleibt nur «↑ Anfang» übrig,
+  // trägt die Zeile keinen eigenen Inhalt mehr; dann geht der Knopf in den Slot
+  // (siehe `./anfangSlot`) und die Zeile entfällt.
+  const zeigtZeile = Boolean(baumTitel) || baumKnoepfe;
+
   return (
     // `flex-1 min-h-0` statt `h-full`: der Vorfahre (die klebende Spalte) hat eine
     // `max-height`, KEINE feste Höhe — und `height:100%` löst gegen eine
@@ -129,7 +136,15 @@ export function LeserSeitenleiste({
             `--paper` zurück; den Wert setzt der BEHÄLTER (der Rahmen am
             Sheet-Träger). Damit bleibt die Leiste ohne Behälter-Verzweigung (§3)
             und es gibt weiterhin genau EINE opake Fläche über dem Baum. */}
-        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf className="lc-leiste-sockel sticky top-0 z-10 -mt-0.5 space-y-2 pb-2 pt-0.5">
+        {/* Ä94: Der Sockel BLEIBT als Element, auch wenn er nichts trägt — er ist
+            der Messpunkt für `--toc-deckel` und der Anschluss des Mitscroll-Nudge
+            (`data-toc-zone-a`). Leer verliert er nur seine Polster: die Messung
+            liefert dann 0 px, und die Trefferliste klebt zuoberst statt unter
+            einem 10-px-Gespenst. Ihn wegzulassen hiesse, den Deckel auf seinem
+            letzten Wert einfrieren zu lassen. */}
+        <div ref={zoneARef} data-toc-zone-a data-v3-leiste-baumkopf
+          className={`lc-leiste-sockel sticky top-0 z-10 space-y-2 ${
+            suchFeld || zeigtZeile ? '-mt-0.5 pb-2 pt-0.5' : ''}`}>
           {suchFeld && <div data-v3-leiste-feld>{suchFeld}</div>}
           {/* ── Ä32 (H2b-Nachzug) · «ALLES AUF» GEHÖRT DEM BAUM ────────────────
               BEFUND (Ästhetik-Prüfung 17.8.2026, `lugue-H-hell-suche-liste`): im
@@ -146,28 +161,46 @@ export function LeserSeitenleiste({
               der Aufrufer sagt es über `baumKnoepfe`). «↑ Anfang» bleibt in
               beiden Zuständen: es bezieht sich auf den ERLASS, nicht auf den
               Baum, und ist «genau EIN Knopf pro Seite» (Pos. 15). */}
-          <div className={`flex items-center gap-2 ${baumTitel ? 'justify-between' : 'justify-end'}`}>
-            {baumTitel && <h2 className="lc-overline">{baumTitel}</h2>}
-            <div className="flex shrink-0 items-center gap-1">
-              {baumKnoepfe && (
-                <button type="button" data-v3-alle
-                  onClick={alleOffen ? onAlleZu : onAlleAuf}
-                  aria-expanded={alleOffen}
-                  title={alleOffen ? 'Alle Gliederungsstufen zuklappen' : 'Alle Gliederungsstufen aufklappen'}
+          {/* ── Ä94 (H4-Nachzug 18.8.2026) · EINE ZEILE OHNE INHALT IST KEINE ──
+              Ä32 liess die Zeile stehen, auch wenn von ihr nur «↑ Anfang» übrig
+              war. Gemessen im Handy-Sheet (390, StPO/«Entschädigung»): 358 × 34 px
+              klebende Fläche für einen 62-px-Knopf — 246 px leer, und direkt
+              darunter die zweite klebende Leiste der Trefferliste mit einem
+              70-px-Loch neben dem Segment. Statt zwei halbleerer Balken gibt die
+              Zeile den Knopf jetzt ab (`AnfangSlot`, Herleitung dort) und
+              entfällt selbst. Entweder–oder, nie beides: Pos. 15 bleibt
+              strukturell erfüllt statt bewacht. */}
+          {zeigtZeile && (
+            <div className={`flex items-center gap-2 ${baumTitel ? 'justify-between' : 'justify-end'}`}>
+              {baumTitel && <h2 className="lc-overline">{baumTitel}</h2>}
+              <div className="flex shrink-0 items-center gap-1">
+                {baumKnoepfe && (
+                  <button type="button" data-v3-alle
+                    onClick={alleOffen ? onAlleZu : onAlleAuf}
+                    aria-expanded={alleOffen}
+                    title={alleOffen ? 'Alle Gliederungsstufen zuklappen' : 'Alle Gliederungsstufen aufklappen'}
+                    className="lc-leiste-griff gap-1 px-1.5 text-micro">
+                    <span aria-hidden>{alleOffen ? '⌃' : '⌄'}</span>
+                    <span>{alleOffen ? 'alles zu' : 'alles auf'}</span>
+                  </button>
+                )}
+                <button type="button" data-v3-anfang onClick={onAnfang}
+                  title="Zum Anfang des Erlasses"
                   className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                  <span aria-hidden>{alleOffen ? '⌃' : '⌄'}</span>
-                  <span>{alleOffen ? 'alles zu' : 'alles auf'}</span>
+                  <span aria-hidden>↑</span><span>Anfang</span>
                 </button>
-              )}
-              <button type="button" data-v3-anfang onClick={onAnfang}
-                title="Zum Anfang des Erlasses"
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                <span aria-hidden>↑</span><span>Anfang</span>
-              </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
-        <div data-v3-leiste-baum>{baum}</div>
+        {/* `data-toc-baum` ist — wie `data-toc` darüber — KEIN Testhaken,
+            sondern ein geteilter Anschluss: die Taste «t» (`parts/LeserTastatur`)
+            setzt den Fokus auf das erste Ziel im BAUM. Ohne die Marke suchte sie
+            im ganzen Scroller und traf seit H2b den Quell-Link im Steckbrief,
+            der hier zuoberst steht (Klick-Test B7, 18.8.2026). */}
+        <div data-v3-leiste-baum data-toc-baum>
+          <AnfangSlot.Provider value={zeigtZeile ? null : onAnfang}>{baum}</AnfangSlot.Provider>
+        </div>
       </div>
     </div>
   );

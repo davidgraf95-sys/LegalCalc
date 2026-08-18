@@ -103,14 +103,44 @@ export interface KopfElemente {
   /**
    * H3/Ä11 — Zähler «⚖ 14 Entscheide» in der Kopfzeile.
    *
-   * AUF `mini` NICHT: dort stehen bereits Ort · ☰ · ··· · ✕, und die
-   * Design-Grundlage Kap. 6 deckelt die Ruhezustand-Kopfzeile auf VIER Elemente.
-   * Der Öffner verschwindet damit nicht — er lebt auf dem Handy-Zuschnitt
-   * ausschliesslich als Randlasche, also in der Daumenzone statt in der engsten
-   * Zeile des Bildschirms. Das ist der Teil von Ä11 («Split-Pane-Icon-Flut»),
-   * den H3 zu verantworten hat: die neue Fläche vergrössert die Kopfzeile nicht.
+   * ── H4-II (17./18.8.2026) · ER SCHRUMPFT, ER FÄLLT NICHT ──────────────────
+   * Das Feld war bis hierher ein `boolean` und auf `mini` `false`: die
+   * Design-Grundlage Kap. 6 deckelt die Ruhezustand-Kopfzeile auf VIER
+   * Elemente, und dort standen bereits Ort · ☰ · ··· · ✕. Die Randlasche, die
+   * den Zähler auf dem Handy ersetzen sollte, ist im H3-Nachzug gestrichen
+   * worden (sie lag gemessen 16 px IM Normtext) — seither führte auf `mini`
+   * kein Öffner mehr in der Kopfzeile zur Rechtsprechung. Gemessen
+   * 17.8.2026 @390 (StPO Art. 429): `[data-v3-panel-oeffner]` sichtbar **0**,
+   * der Weg über «···» → «Entscheide & Kontext …» kostete **2 Taps** gegen
+   * einen auf D/S (NM-2 des Kontaktbogens H4, dort der Flip-Blocker).
+   *
+   * DARUM ZWEI WERTE statt eines Flags — dieselbe Bauform wie `krume` (V2), und
+   * aus demselben Grund: ein Zuschnitt, der eine Handlung auf einer von drei
+   * Breiten ENTFERNT, ist keiner.
+   *   'voll'     «⚖ 14 Entscheide» — Ikone, Zahl, Zähl-Substantiv;
+   *   'kompakt'  «⚖ 14» — Ikone und Zahl, ohne Wort. Gemessen @390 bleiben in
+   *              der Ort-Zone 115 px frei (Zeile 350 px, Ort-Inhalt 144 px,
+   *              Griff-Zone 84 px); der Chip misst 24 px ohne und rund 45 px
+   *              mit Zahl.
+   *              EHRLICHER REST, gemessen 18.8.2026: im RUHEZUSTAND trägt er
+   *              nur die Ikone — die Zahl kennt niemand, bevor der Bezugs-Shard
+   *              geladen ist, und eine erfundene 0 verbietet §8
+   *              (`panelModell.oeffnerLabelKompakt`, dieselbe Schranke wie bei
+   *              `oeffnerLabel`, das auf D/S solange «Rechtsprechung» schreibt).
+   *              Er ist damit auf `mini` bis zum ersten Öffnen ein reines Icon,
+   *              und die zweite Hälfte der Design-Grundlage Kap. 6 («≤ 2 reine
+   *              Icons») bleibt @390 mit ⚖ · ☰ · ··· gerissen — genauso wie
+   *              vorher mit ☰ · ··· · ✕. Kein Rückschritt, aber auch kein
+   *              Fortschritt; als offener Punkt im Kontaktbogen geführt.
+   * Einen dritten Wert «weg» gibt es nicht, und genau das prüft
+   * `leser-v3-kopfstufen.test.ts` über jede Breite — eine Aussage über den
+   * Rückgabewert, nicht über abwesenden Code (§6.7).
+   *
+   * DAS ELEMENT-BUDGET HÄLT TROTZDEM: das ✕ weicht, weil es das Duplikat des
+   * sichtbaren Rücksprungs «‹ Gesetze» ist — seit dem H4-Nachzug auf JEDER
+   * Breite (Ä87/Ä91, Herleitung und Messreihe im Block unter dieser Funktion).
    */
-  panel: boolean;
+  panel: 'voll' | 'kompakt';
 }
 
 export function kopfElemente(stufe: KopfStufe): KopfElemente {
@@ -120,8 +150,116 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
     kuerzel: true,
     artikel: true,
     ansicht: true,
-    panel: stufe !== 'mini',
+    panel: stufe === 'mini' ? 'kompakt' : 'voll',
   };
+}
+
+// ═══ Ä87/Ä91 (H4-Nachzug 18.8.2026) · DAS KOPF-✕ IST GESTRICHEN ══════════════
+//
+// Hier stand `zeigeSchliessKreuz(stufe, vollflaechig)` = «✕ überall ausser im
+// Pane und auf `mini`». Es ist ersatzlos weg, und zwar gemessen:
+//
+//   Lage                          Befund 18.8.2026 (`scratchpad/a-mess.cjs`)
+//   ────────────────────────────────────────────────────────────────────────
+//   D @1440, Blatt offen          ZWEI sichtbare ✕, 47 px übereinander
+//                                 (Kopf y = 80 «Gesetz schliessen», Blatt
+//                                 y = 127 «Rechtsprechung und Kontext
+//                                 schliessen») — Ä87
+//   S @720, Ruhezustand           FÜNF Elemente in der Zeile: Ort · ⚖ · ☰ ·
+//                                 «Ansicht» · ✕; der Deckel der Design-
+//                                 Grundlage Kap. 6 liegt bei vier — Ä91
+//   Pane, jede Stufe              schon vorher 0 (Ä46)
+//   mini                          schon vorher 0 (Element-Budget)
+//
+// DIE REGEL, DIE AN SEINE STELLE TRITT (Auflage-Anpassung im Fahrplan, datiert
+// 18.8.2026): **höchstens EIN ✕ je Kopfzeile, und der Rücksprung ist immer
+// beschriftet.** Das Ziel `/gesetze` steht auf JEDER Breite als Wort in der
+// Ort-Zone — als volle Kette «Gesetze › Bund ›» oder als Rücksprung
+// «‹ Gesetze», beides aus `erlassAnsicht.brotkrume` mit `to: '/gesetze'`. Ein
+// Wort ist die bessere Auskunft als ein Zeichen (§8), und ein zweites Zeichen
+// mit demselben Ziel ist der §5-Befund, den Ä56 an der anderen Ecke der Zeile
+// schon erledigt hat.
+//
+// WARUM GESTRICHEN UND NICHT AUF EINE BEDINGUNG GESTELLT: die Bedingung wäre
+// «zeige das ✕, wenn KEIN beschrifteter Rücksprung dasteht» — und die erste
+// Krumen-Stufe trägt ihr `to` unbedingt. Ein Prädikat, das nicht `true` werden
+// kann, ist ein Tor, das nicht scheitern kann (§6.7/§17: streichen statt
+// bewachen). Die Zusage, auf der die Streichung ruht, wird dort geprüft, wo sie
+// entsteht: `erlassAnsicht.hatRuecksprung` samt Unit-Beweis über Bund, Kanton
+// und Staatsvertrag — DIESE Funktion kann rot werden, indem man `to` aus der
+// ersten Krumen-Stufe nimmt.
+//
+// §7-ABWEICHUNG, weiterhin offengelegt: der Auftrag zu Ä46 sagte «Einzelansicht
+// bleibt bei 1 ✕». Sie ist jetzt auf jeder Breite 0. Die Auflage ist im
+// Fahrplan datiert angepasst (David-Prüfer-Befund Ä87, nicht Geschmack).
+
+// ═══ Ä90 (H4-Nachzug 18.8.2026) · EINE BAUFORM FÜR ALLE KOPF-GRIFFE ══════════
+//
+// BEFUND, gemessen @390 an StPO Art. 429 (`scratchpad/a-mess.cjs`, 18.8.2026):
+// die drei Griffe der Kopfzeile trugen DREI Bauformen —
+//
+//   Griff   Klassen                             Fläche    Grund
+//   ────────────────────────────────────────────────────────────────────────
+//   ⚖       lc-leiste-griff + -fest             24×24 px  Chip auf `--well`
+//   ☰       lc-leiste-griff                     24×24 px  nackt, transparent
+//   ···     lc-leiste-griff + -fest + sm:-Zweig 28×24 px  Pille, breiter
+//
+// Drei Zeichen nebeneinander, drei verschiedene Umrisse, gleiche Wichtigkeit:
+// die Zeile las sich als Sammlung statt als Leiste (Design-Grundlage Kap. 6).
+// Dazu 24 px Zielfläche — das ist die WCAG-2.5.8-Untergrenze, auf einem Gerät,
+// auf dem der Finger das einzige Werkzeug ist, also der schlechteste noch
+// zulässige Wert.
+//
+// DARUM ZWEI KONSTANTEN STATT DREI KLASSENLISTEN IM MARKUP: die Bauform ist eine
+// Aussage über die ganze Zeile und darf nicht an drei Stellen gepflegt werden
+// (§5 — die drei Griffe entstehen in drei Dateien: `./LeserPanelOeffner`,
+// `./LeserRahmenV3`, `./LeserAnsichtV3`). Sie stehen HIER, weil hier auch die
+// Stufe entsteht, die sie auswählt.
+//
+// EHRLICHER REST, unverändert benannt: die zweite Hälfte des Deckels von Kap. 6
+// («≤ 2 reine Icons») bleibt @390 mit ⚖ · ☰ · ··· gerissen. Neu ist, dass die
+// drei WIE EINE FAMILIE aussehen und 32 px Ziel tragen — der Deckel selbst ist
+// als «drei, aber eine Bauform» im Fahrplan datiert nachgeführt; der Rest gehört
+// zu Ä33/Ä34 (Griff-Zahl), nicht hierher.
+
+/** Die EINE Bauform eines Kopf-Griffs (⚖ · ☰ · «Ansicht»). Chip auf `--well`,
+ *  damit alle Griffe derselben Zeile denselben Umriss haben. */
+export const KOPF_GRIFF = 'lc-leiste-griff lc-leiste-griff-fest';
+
+/**
+ * Klassen des Kopf-Griffs.
+ *
+ * Auf dem Handy-Zuschnitt wächst das Ziel von 24 auf **32 px**
+ * (`min-h-8 min-w-8`): die Kopfzeile ist dort 48 px hoch, das Ziel passt also
+ * ohne Umbruch, und in der Ort-Zone bleibt Platz (Zeile 350 px, Griff-Zone
+ * vorher 84 px). Sonst bleibt `--tap-ziel`: dort bedient eine Maus, und ein
+ * grösserer Chip nähme dem Ort Platz, den er braucht.
+ *
+ * `mini` als BOOLEAN und nicht als `KopfStufe`: die drei Aufrufer haben die
+ * Antwort bereits in der Hand (`form === 'kompakt'`, `kompakt`,
+ * `stufe === 'mini'`) und sollen die Stufe nicht neu kennen müssen (§3).
+ */
+export function kopfGriffKlassen(mini: boolean): string {
+  return mini ? `${KOPF_GRIFF} min-h-8 min-w-8` : KOPF_GRIFF;
+}
+
+/**
+ * Grösse der ICON-Glyphe im Griff — auf dem Handy-Zuschnitt 20 px, sonst die
+ * Schriftgrösse des Griffs.
+ *
+ * `text-h3` ist die 20-px-Stufe der Repo-Skala (`tailwind.config.js`,
+ * 1.25 rem) und NICHT die gleich grosse Tailwind-Default-Klasse: die sind vom
+ * DESIGN-REGLEMENT (B2/F7, §13) ausgeschlossen und werden von
+ * `check:design-tokens` gemeldet — rot gesehen 18.8.2026. Der Name der Stufe
+ * meint hier keine Überschrift, sondern schlicht ihre Grösse; `leading-none`
+ * nimmt die mitgelieferte Zeilenhöhe wieder heraus, weil eine Glyphe in einem
+ * 32-px-Ziel keine braucht.
+ *
+ * Getrennt von den Griff-Klassen, weil sonst auch die Zahl im Zähler-Chip
+ * mitwüchse — sie ist Text, keine Glyphe.
+ */
+export function kopfGlypheKlassen(mini: boolean): string {
+  return mini ? 'text-h3 leading-none' : 'leading-none';
 }
 
 /**
@@ -143,14 +281,16 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
  *             zum H3-Nachzug als unbedingte Zusage. Sie ist NICHT eingelöst:
  *             gemessen @1440 liegt die Lesespalte bei x 580…1200 und das Blatt
  *             bei x 1088…1440 — es verdeckt die äusseren **112 px jeder Zeile**
- *             (18 % der Spaltenbreite), die Zeilenenden fehlen also. Und keine
- *             feste Breite behebt das: @1440 misst der Rand rechts der Spalte
- *             240 px, @1280 nur 160 — dieselbe Arithmetik, die schon die
- *             angedockte Spalte unmöglich gemacht hat (Rechnung im Rahmen).
- *             Die Zusage gehört darum zum offenen Spalten-Entscheid (H4,
- *             Vollzugsvermerk H3); bis dahin sagt dieser Kommentar, was das
- *             Blatt WIRKLICH tut (§8 — ein Kommentar, der mehr verspricht als
- *             der Bau hält, ist die Sorte Beleg, die niemand nachprüft).
+ *             (18 % der Spaltenbreite; @1280: 192, @1024: 320), die Zeilenenden
+ *             fehlen also. Und keine feste Breite behebt das: @1440 misst der
+ *             Rand rechts der Spalte 240 px, @1280 nur 160.
+ *             ── SEIT Ä60 (c) IST DIESE FUNKTION NICHT MEHR DAS LETZTE WORT ──
+ *             David-Entscheid 17.8.2026: der Leser-Rahmen wird breiter, und
+ *             `rahmenSpalten.rahmenBild` gibt dem Blatt dort eine EIGENE Spur
+ *             (`'spalte'`). `'rechts'` bleibt die Gestalt für den ENGEN Rahmen
+ *             — Fenster unter 1024 px, ausgeklappte App-Seitenleiste —, und
+ *             dort gilt die Messreihe oben unverändert. Dieser Kommentar sagt
+ *             sie darum weiter, statt sie wegzuglätten (§8).
  *   'unten'   Bottom-Sheet über die ganze Breite — die Gestalt für H (Daumenzone)
  *             und für jede geteilte Fläche (dort verbietet die harte Regel eine
  *             dritte vertikale Fläche, und ein 22-rem-Streifen in einer

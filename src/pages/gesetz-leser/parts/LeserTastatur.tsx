@@ -168,8 +168,18 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekunda
         // Ist keine Gliederungs-Spalte da (schmale Breite, Erlass ohne Struktur),
         // passiert NICHTS — lieber ein wirkungsloser Tastendruck als ein Fokus,
         // der irgendwohin springt (§8).
+        // ── B7 (Klick-Test 18.8.2026) · «GLIEDERUNG» IST NICHT DER GANZE TOC ──
+        // `[data-toc]` markiert den SCROLLER der Seitenleiste, nicht den Baum.
+        // In V3 liegt darin seit H2b zuerst der Erlass-STECKBRIEF
+        // (`data-v3-leiste-uebersicht`) und darin ein Link auf die amtliche
+        // Quelle — «t» setzte den Fokus also gemessen auf einen externen Link
+        // statt in die Gliederung. `[data-toc-baum]` benennt den Baum selbst;
+        // fehlt die Marke (Ist-Hülle V1, wo der Steckbrief UNTER dem Baum
+        // steht), bleibt es beim Scroller, und dort ist das erste Ziel ohnehin
+        // eine Baumzeile. Ein Rückfall, der V1 unverändert lässt.
         const toc = document.querySelector<HTMLElement>('[data-toc]');
-        const ziel = toc?.querySelector<HTMLElement>('a[href], button:not([disabled])');
+        const baum = toc?.querySelector<HTMLElement>('[data-toc-baum]') ?? toc;
+        const ziel = baum?.querySelector<HTMLElement>('a[href], button:not([disabled])');
         if (!ziel) return;
         e.preventDefault();
         ziel.focus();

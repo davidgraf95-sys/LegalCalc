@@ -151,10 +151,15 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
 
     const vorher = await geometrie(page)
     await shiftBeobachten(page)
-    // Auf `mini` trägt die Kopfzeile keinen Zähler (Ä11) — und seit dem H3-Nachzug
-    // auch keine Randlasche mehr (Ä53: sie lag 16 px im Normtext). Der Öffner ist
-    // dort der Menü-Eintrag; die Zuschnitt-Regel steht in `helpers/panelOeffnen`.
-    await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
+    // Vorbedingung, nicht die Sachaussage dieses Tests: WO der Öffner auf `mini`
+    // steht. Bis H4-II stand hier `toHaveCount(0)` — die Kopfzeile trug auf
+    // diesem Zuschnitt keinen Zähler (Ä11), und seit dem H3-Nachzug auch keine
+    // Randlasche mehr (Ä53: sie lag 16 px im Normtext); der Öffner war der
+    // Menü-Eintrag. Genau das war der NM-2-Blocker — zwei Taps statt einem.
+    // Seit H4-II trägt die Kopfzeile hier den Chip «⚖ N», und zwar GENAU EINEN
+    // (zwei Öffner für eine Fläche waren Ä56). Die geprüfte Zusage darunter —
+    // das Blatt bewegt den Lesetext nicht — ist unberührt (§6.3).
+    await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
     await panelAufziehen(page)
     await page.waitForTimeout(600)
 

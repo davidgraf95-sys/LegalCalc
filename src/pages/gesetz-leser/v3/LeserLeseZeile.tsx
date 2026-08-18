@@ -1,0 +1,101 @@
+import type { ReactNode } from 'react';
+import { LeserGliederungSchiene } from './LeserGliederungSchiene';
+import type { RahmenBild } from './rahmenSpalten';
+
+// ─── Die Lese-Zeile: Gliederung/Schiene · Text · Beiwerk-Spur ────────────────
+//
+// Herausgelöst aus `LeserRahmenV3.tsx` (H4-Nachzug 18.8.2026, §6.6 — die Datei
+// stand nach den vier Ä-Fixen bei 447 Zeilen gegen eine 420er-Sonde). Der
+// Anlass ist die Zeilenzahl, der GRUND ist ein anderer und trägt allein: dies
+// hier ist die einzige Stelle, an der die drei SPUREN nebeneinander stehen, und
+// wer wissen will, wie die Breiten-Entscheidung aus `./rahmenSpalten` zu Markup
+// wird, soll genau eine Datei lesen müssen.
+//
+// WELCHE Spuren auf welcher Breite stehen, WIE breit der Rahmen dafür wird und
+// warum das Grid auch eingeklappt stehen bleibt: `./rahmenSpalten` (Befund
+// David 16.8., Ä60 (c) 17./18.8., beide mit Messreihe). Diese Datei ENTSCHEIDET
+// nichts davon — sie bekommt das fertige `RahmenBild` und ordnet an (§3); ihre
+// Inhalte kommen als Slots herein, sie kennt weder Modell noch Erlass.
+
+export function LeserLeseZeile({
+  bild, vollflaechig, tocOffen, onSchieneAuf, onGliederungZu, leiste, zelle, panelZone,
+}: {
+  /** Die Breiten-Entscheidung. `bild.spalten === undefined` = kein Grid, alles
+   *  steht untereinander wie vor Ä60 (c). */
+  bild: RahmenBild;
+  /** Nur für die Höhen-Rechnung der Spalte: in der Einzelansicht deckelt das
+   *  FENSTER, sonst die Pane-Höhe. Die Prop heisst NICHT `imPane`, und das ist
+   *  kein Kosmetik-Entscheid — dieselbe Begründung wie bei `kopfStufen.panelForm`:
+   *  die Fundament-Sonde lässt `imPane` nur in den Wurzel-Dateien zu, denn eine
+   *  Datei, die den Hüllen-Zustand selbst liest, verzweigt auf ihn. Diese Datei
+   *  verzweigt auf eine EIGENSCHAFT DER FLÄCHE, die ihr der Rahmen mitteilt. */
+  vollflaechig: boolean;
+  /** Zustand für `aria-expanded` am «Gliederung ausblenden»-Griff. */
+  tocOffen: boolean;
+  /** Klick auf die Schiene. Was er alles tut (Blatt schliessen, wenn es ihren
+   *  Platz hat), entscheidet der Rahmen aus `bild.schieneHoltPlatz`. */
+  onSchieneAuf: () => void;
+  /** Klick auf «‹ Gliederung ausblenden». Läuft im Rahmen durch den
+   *  Stick-Ausgleich, sonst kostete das Einklappen die Leseposition (V6). */
+  onGliederungZu: () => void;
+  /** Inhalt der Gliederungsspalte (Übersicht · Feld · Baum). */
+  leiste: ReactNode;
+  /** Rechte Zelle: Erlass-Kopf, Ingress und Lesekörper. */
+  zelle: ReactNode;
+  /** Panel-Zone — im Spalten-Modus die dritte Spur, sonst ohne Box und
+   *  ausserhalb des Flusses. `null`, solange es weder Öffner noch Panel gibt. */
+  panelZone: ReactNode;
+}) {
+  return (
+    <div
+      className={bild.spalten
+        ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
+        : ''}
+      style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
+      {bild.schiene && (
+        // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
+        <LeserGliederungSchiene onAuf={onSchieneAuf} />
+      )}
+      {bild.gliederungSpalte && (
+        <aside role="navigation" aria-label="Gliederung" data-v3-aside
+          // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:
+          // `top` ist derselbe Ausdruck wie der Sprung-Offset der Anker, damit
+          // Spalte und Sprung konstruktiv nicht auseinanderlaufen (LM-003).
+          // `flex flex-col` + `maxHeight` ist die tragende Kombination — NICHT
+          // `overflow-hidden` mit `h-full` im Kind: `height:100%` löst gegen
+          // eine Maximalhöhe nicht auf, der Scroller wüchse auf die volle
+          // Inhaltshöhe und der Überschuss würde stumm abgeschnitten
+          // (reproduziert am OR @1440×900).
+          className="sticky flex min-h-0 flex-col self-start"
+          style={{
+            top: 'var(--nt-stick)',
+            maxHeight: vollflaechig
+              ? 'calc(100vh - var(--nt-stick) - 1.5rem)'
+              : 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)',
+          }}>
+          <div className="flex items-center justify-end pb-1">
+            <button type="button" data-v3-gliederung-zu onClick={onGliederungZu}
+              aria-expanded={tocOffen} title="Gliederung ausblenden"
+              className="lc-leiste-griff gap-1 px-1.5 text-micro">
+              {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur «ausblenden» —
+                  Wort für Wort dasselbe wie «Seitenleiste ausblenden» der
+                  App-Leiste zwei Zentimeter weiter oben, aber mit anderer
+                  Wirkung. Zwei gleich beschriftete Knöpfe, die Verschiedenes
+                  tun, sind eine Falle (§8). Der Knopf sagt jetzt, WAS er
+                  ausblendet. */}
+              <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
+            </button>
+          </div>
+          {leiste}
+        </aside>
+      )}
+
+      {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis H1
+          über die VOLLE Breite und schob die Seitenleiste bei 1440 px unter die
+          Falz — obwohl sie in V3 die Hauptnavigation ist. */}
+      <div className="min-w-0 space-y-5">{zelle}</div>
+
+      {panelZone}
+    </div>
+  );
+}

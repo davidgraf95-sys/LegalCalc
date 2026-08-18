@@ -254,6 +254,33 @@ describe('S3 — Kantons-Probe (Bund-Fokus, «bricht nicht»)', () => {
     expect(html).toContain('min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md');
   });
 
+  // ── Ä75 (Orchestrator-Entscheid 18.8.2026, David hat Stopp-Recht) ─────────
+  // «SR» heisst Systematische Rechtssammlung DES BUNDES. Der Kopf setzte es vor
+  // JEDE Nummer — gemessen an BS-640.100 und ZH-211.11 stand dort «SR 640.100»
+  // bzw. «SR 211.11». Das ist eine falsche Fundstellenangabe, keine
+  // Beschriftungs-Ungenauigkeit; die Nummer steht darum nackt, bis die kantonale
+  // Sammlungs-Sigle im Datenmodell steht (Herleitung: `helpers.kennungEtikett`).
+  // ROT ZU BEKOMMEN (§6.7): `kennungEtikett` fest auf `'SR'` ⇒ (a) rot; auf
+  // `null` ⇒ (b) rot. Beides so gemessen.
+  it('Ä75 (a) der Kantons-Kopf trägt kein «SR» — die Nummer steht nackt', () => {
+    const mitNummer: BrowseErlass = { ...kantonal, sr: '640.100' };
+    const html = renderToString(
+      <ErlassLeserKopf erlass={mitNummer} overline="Kanton" artikelAnzahl={12}
+        bestimmungsWort="Paragraphen" hinweis="H" />,
+    );
+    expect(html).toContain('640.100');
+    expect(html).not.toContain('SR 640.100');
+    expect(html).not.toMatch(/SR\s*<span class="num">/);
+  });
+
+  it('Ä75 (b) der Bundes-Kopf trägt es weiterhin', () => {
+    const bund = erlasse.find((e) => e.ebene === 'bund' && e.sr)!;
+    const html = renderToString(
+      <ErlassLeserKopf erlass={bund} overline="Bund" artikelAnzahl={12} hinweis="H" />,
+    );
+    expect(html).toMatch(/SR\s*<span class="num">/);
+  });
+
   it('Kantonserlass ohne SR und ohne Inkrafttreten erzeugt keine leeren Trenner', () => {
     const ohne: BrowseErlass = { ...kantonal, sr: null, inkraftSeit: undefined, stand: '2026-01-01' };
     const html = renderToString(

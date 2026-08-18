@@ -316,3 +316,66 @@ test('(g) Split-Pane: schmale Panes behalten das Bottom-Sheet, und nie beides', 
   await expect(page.locator('[data-pane="primaer"] [data-v3-treffer-weg]')).toBeVisible({ timeout: 15000 })
   await expect(page.locator('[data-v3-treffer-blatt]'), 'Blatt im schmalen Pane').toHaveCount(0)
 })
+
+// ═══ Ä84 (Ästhetik-Prüfer 17.8.2026) · DAS SEGMENT WÄCHST NICHT MIT ═══════════
+//
+// GEMESSEN am Ist-Stand (StPO, «Entschädigung», chromium, Projekt `leser-v3`):
+//
+//   Breite                Suchbereich-Segment   Blatt-Kopf
+//   ──────────────────────────────────────────────────────────────────────────
+//   D-Blatt @1440              270 px           «Treffer» | «✕ ausblenden»
+//   H-Blatt @390               358 px           NUR «↑ Anfang», rechts, x = 308
+//   Split/Sheet @720           688 px           NUR «↑ Anfang», rechts, x = 638
+//
+// Ä84 nennt zwei Dinge. GEPRÜFT WIRD HIER DAS EINE, DAS OHNE WIDERSPRUCH ZU
+// HEILEN WAR: das Segment ist für die 18-rem-Leiste kalibriert (vier kurze
+// Wörter, je `flex-1`) und dehnte sich ohne Deckel auf die Breite seines
+// Behälters — @720 auf das 2,5-fache. Vier Schalter über 688 px sind keine
+// Werkzeugzeile mehr: die Trefferliste darunter bleibt schmal, und das Segment
+// liest sich als Reiter-Leiste einer Zone, die es nicht gibt.
+//
+// NICHT GEHEILT, und das ist ein Befund, keine Lücke: das allein stehende
+// «↑ Anfang» im Blatt-Kopf. Es zu entfernen war gebaut und ist an **Ä32**
+// gescheitert — `e2e/leser-v3-blatt` (d) hält ausdrücklich fest, dass der Knopf
+// im Treffer-Blatt BLEIBT («es bezieht sich auf den Erlass, nicht auf den
+// Baum», Pos. 15). Das Tor hat den Widerspruch gefangen (1 failed, 149 passed).
+// Einen ehrlichen Partner für die linke Hälfte gibt es nicht: den Zonen-Namen
+// trägt der Sheet-Kopf bereits (Ä10), und der Zähler steht eine Zeile tiefer in
+// der Trefferliste — ihn zu wiederholen wäre Ä78. Der Punkt bleibt darum offen
+// und ist im Vermerk «H4-Vorbereitung II» als Entscheid übergeben.
+//
+// ROT ZU BEKOMMEN (§6.7): in `v3/SuchBereichWahl.tsx` die Breiten-Klasse
+// `w-[min(100%,18rem)]` entfernen ⇒ (h) meldet 358 px @390 bzw. 688 px @720.
+// So gemessen, bevor der Deckel gebaut wurde.
+for (const breite of [390, 720]) {
+  test(`(h) @${breite}: das Suchbereich-Segment behält seine Kalibrierung`, async ({ page }) => {
+    await page.setViewportSize({ width: breite, height: 844 })
+    await warteLeser(page)
+    // Ohne Spalte trägt die Such-Zone das Feld; der Weg zur Liste ist das Sheet.
+    await suche(page)
+    await page.locator('[data-v3-treffer-weg]').click()
+    const leiste = page.locator('[data-v3-leiste]')
+    await expect(leiste).toBeVisible({ timeout: 15000 })
+    // POSITIV-Vorbedingung: es ist wirklich die TREFFERLISTE im Blatt, nicht der
+    // Baum — sonst prüfte alles Weitere den falschen Zustand (§6.7).
+    await expect(leiste.locator('[data-treffer-liste]')).toHaveCount(1)
+
+    const befund = await page.evaluate(() => {
+      const seg = document.querySelector('[data-v3-leiste] [data-v3-suchbereich]') as HTMLElement | null
+      const scroller = document.querySelector('[data-v3-leiste-scroller]') as HTMLElement | null
+      return {
+        segBreite: seg ? Math.round(seg.getBoundingClientRect().width) : null,
+        segEltern: seg?.parentElement ? Math.round(seg.parentElement.getBoundingClientRect().width) : null,
+        ueberlauf: scroller ? scroller.scrollWidth - scroller.clientWidth : 0,
+      }
+    })
+
+    expect(befund.segBreite, 'Suchbereich-Segment nicht gefunden').not.toBeNull()
+    // 18 rem = 288 px; die 1-px-Toleranz fängt das Sub-Pixel-Runden.
+    expect(befund.segBreite!,
+      `Segment ${befund.segBreite} px in ${befund.segEltern} px Behälter`).toBeLessThanOrEqual(289)
+    // Und es schrumpft mit, wo weniger Platz ist — sonst risse es das Blatt auf.
+    expect(befund.segBreite!).toBeLessThanOrEqual((befund.segEltern ?? 0) + 1)
+    expect(befund.ueberlauf, 'das Blatt scrollt waagrecht').toBeLessThanOrEqual(1)
+  })
+}

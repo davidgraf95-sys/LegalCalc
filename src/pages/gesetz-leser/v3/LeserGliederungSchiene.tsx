@@ -19,6 +19,24 @@
 // Grid stehen, die linke Spur wird zur Schiene mit beschriftetem Öffner: der
 // Öffner steht DORT, wo die Gliederung war, die Fläche gewinnt echte 15.75 rem,
 // und die Bewegung ist eine Breitenänderung statt eines Umbruchs.
+//
+// ── Ä79 (H4-II, 17./18.8.2026) · SEITHER IST SIE DER EINE GRIFF ─────────────
+// Der Absatz darüber beschreibt, warum die Schiene entstand — der Kopf-☰ blieb
+// dabei stehen. Gemessen @1440 mit eingeklappter Gliederung standen damit ZWEI
+// sichtbare ☰ für DIESELBE Handlung: dieser hier bei x = 184 («Gliederung
+// einblenden») und der Kopf-☰ bei x = 1117 («Gliederung») — **933 px
+// auseinander an gegenüberliegenden Fensterkanten**. Das ist Ä79, und es ist
+// derselbe Befund, den der Absatz darüber gerade beheben wollte, nur eine
+// Etappe später: der unbeschriftete 24-px-Knopf auf der Gegenseite war noch da.
+//
+// WELCHER BLEIBT, ist darum keine Geschmacksfrage — dieser: er steht am Ort der
+// Gliederung und er ist BESCHRIFTET. Der Rahmen lässt den Kopf-☰ genau so lange
+// weg, wie diese Schiene sichtbar ist (`schieneSteht` in `./LeserRahmenV3`);
+// unter der Schienen-Schwelle (kein `istXl`, also Handy und jedes schmale Pane)
+// gibt es keine Schiene, und dort ist der Kopf-☰ unverändert der einzige Weg.
+// BEWACHT: `e2e/leser-v3-h4-kopfwege` (c) misst @1440 den Kopf-☰ gegen 0 UND
+// klickt danach diese Schiene — eine Abwesenheit ohne funktionierenden Ersatz
+// wäre ein Verlust, kein Aufräumen (§6.7 b); (c2) hält @390 die Gegenprobe.
 
 export function LeserGliederungSchiene({ onAuf }: { onAuf: () => void }) {
   return (

@@ -291,6 +291,9 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const springeZuArtikel = useCallback((token: string) => {
     scrollVorSucheRef.current = null;
     setSuche('');
+    // B1: das Gliederungs-BLATT geht mit zu — Befund, Messreihe und die
+    // §7-Abweichung zum genannten Fundort stehen in `e2e/leser-v3-h4-gliederungswege`.
+    setTocAuf(false);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
       setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });

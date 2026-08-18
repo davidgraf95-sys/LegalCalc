@@ -124,7 +124,13 @@ test.describe('A3 — ⌘K bedient das Pane, in dem der Fokus steht', () => {
       // Fokus vom Feld nehmen, ohne das Pane zu verlassen: der Kopf des Panes
       // trägt einen echten Knopf. So ist der Fall der ECHTE — «⌘K aus dem Pane,
       // aber nicht aus dem Feld».
-      await page.locator(`[data-pane="${start}"] [data-v3-kopf-schliessen]`).focus()
+      // Ä46 (H4-II, 17./18.8.2026): das war bis dahin `[data-v3-kopf-schliessen]`;
+      // im Pane gibt es dieses ✕ nicht mehr (zweites Kreuz je Pane, Duplikat des
+      // Rücksprungs). Der «Ansicht»-Öffner steht dort unverändert und ist
+      // ebenso ein echter, fokussierbarer Knopf im Kopf DIESES Panes — die
+      // Aussage des Tests (⌘K trifft das Pane, in dem der Fokus steht) ist
+      // unberührt (§6.3).
+      await page.locator(`[data-pane="${start}"] [data-v3-ansicht]`).focus()
 
       await page.keyboard.press('Control+k')
 
@@ -200,6 +206,93 @@ test.describe('Ä32/B11 — das Blatt zeigt und benennt, was es zeigt', () => {
       return feld.compareDocumentPosition(ort) & Node.DOCUMENT_POSITION_FOLLOWING ? 'feld-zuerst' : 'ort-zuerst'
     })
     expect(reihenfolge, 'das Feld steht nicht zuoberst (Ä18)').toBe('feld-zuerst')
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+})
+
+// ═══ Ä94/Ä96 (H4-Nachzug 18.8.2026) · KEIN LEERER BALKEN, KEIN GESCHNITTENER
+//     RANDTITEL ══════════════════════════════════════════════════════════════
+//
+// Ä94 (gemessen 18.8.2026, `vite preview`, StPO/«Entschädigung», 390×844):
+//   Zone A (`data-v3-leiste-baumkopf`)  358 × 34 px, Inhalt «↑ Anfang» (62 px)
+//                                       → 246 px leer, eigene klebende Schicht
+//   Segment (`data-v3-suchbereich`)     288 px im 358-Kasten → 70 px Stummel
+// Zwei klebende Balken übereinander, der obere zu 69 % leer, der untere mit
+// einem Loch neben dem Segment. Der eine Befund löst den anderen: die Leiste gibt
+// «↑ Anfang» ab (`v3/anfangSlot.ts`), es füllt den Stummel (288 + 8 + 62 = 358),
+// und die halbleere Zeile entfällt. Nachher: Zone A 0 px hoch, Trefferliste
+// beginnt 34 px höher (y 261 → 227), Blatt-Inhalt 4052 → 3738 px.
+// Ä32 bleibt unangetastet: «↑ Anfang» ist weiterhin GENAU EINMAL im Blatt (Fall
+// (d) oben prüft das unverändert) — es hat nur den Platz gewechselt.
+//
+// Ä96 (gemessen 18.8.2026, StPO/«Kosten», D 1440, Spalte 280 px, erste acht
+// Trefferzeilen): DREI Randtitel liefen in die Ellipse (244/198/206 px in 178),
+// während die Kontext-Schnipsel zwei bis drei Zeilen hoch waren (30–45 px).
+// Nachher: kein Randtitel mehr angeschnitten, jeder Schnipsel einzeilig (15 px).
+//
+// ROT ZU BEKOMMEN (§6.7): in `v3/LeserSeitenleiste.tsx` `zeigtZeile` fest auf
+// `true` ⇒ (f) rot (Zone A wieder 34 px, «↑ Anfang» nicht in der Treffer-Leiste);
+// in `v3/LeserTrefferListe.tsx` am Randtitel `line-clamp-2` gegen `truncate`
+// tauschen bzw. `einzeilig` am Kopf-Schnipsel weglassen ⇒ (g) rot. So gemessen.
+test.describe('Ä94/Ä96 — die Werkzeugzeile trägt etwas, der Randtitel bleibt ganz', () => {
+  test('(f) @390: keine leere Kopfzeile über der Trefferliste, kein Stummel', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await trefferBlattOeffnen(page, 'Entschädigung')
+
+    const blatt = page.locator('[data-gliederung-sheet]')
+    await expect(blatt.locator('[data-treffer-liste]')).toBeVisible({ timeout: 15_000 })
+
+    // Zone A trägt im Treffer-Blatt nichts mehr — also auch keine Höhe.
+    const zoneA = await blatt.locator('[data-v3-leiste-baumkopf]').boundingBox()
+    expect(zoneA?.height ?? -1, 'Zone A ist über der Trefferliste wieder ein leerer Balken').toBe(0)
+
+    // «↑ Anfang» steht jetzt IN der Werkzeugzeile der Trefferliste — und dort
+    // rechts, nicht irgendwo: es füllt genau den Stummel neben dem Segment.
+    const anfang = blatt.locator('[data-treffer-leiste] [data-v3-anfang]')
+    await expect(anfang, '«↑ Anfang» steht nicht in der Werkzeugzeile').toHaveCount(1)
+    const seg = await blatt.locator('[data-v3-suchbereich]').boundingBox()
+    const knopf = await anfang.boundingBox()
+    expect(seg && knopf, 'Segment oder Knopf nicht messbar').toBeTruthy()
+    // Gleiche Zeile (Grundlinien-Abstand < eine Zeilenhöhe) …
+    expect(Math.abs((seg!.y + seg!.height / 2) - (knopf!.y + knopf!.height / 2)))
+      .toBeLessThan(12)
+    // … und der Knopf steht RECHTS vom Segment, ohne es zu überlappen.
+    expect(knopf!.x, '«↑ Anfang» überlappt das Segment').toBeGreaterThanOrEqual(seg!.x + seg!.width)
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  test('(g) @1440: kein Randtitel wird angeschnitten, jeder Schnipsel ist einzeilig', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-such-zone] input, [data-v3-leiste-feld] input').first().fill('Kosten')
+    await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 15_000 })
+    await expect(page.locator('[data-treffer-artikel]').first()).toBeVisible({ timeout: 15_000 })
+
+    const mass = await page.locator('[data-treffer-artikel]').evaluateAll((els) => els.slice(0, 8).map((el) => {
+      const rt = el.querySelector('[data-treffer-randtitel]') as HTMLElement | null
+      const sn = el.querySelector('[data-treffer-schnipsel] .lc-such-ausschnitt') as HTMLElement | null
+      const zeilen = (e: HTMLElement) => Math.round(e.getBoundingClientRect().height / parseFloat(getComputedStyle(e).lineHeight))
+      return {
+        titel: rt ? { text: rt.textContent ?? '', breit: rt.scrollWidth > rt.clientWidth + 1, zeilen: zeilen(rt) } : null,
+        schnipselZeilen: sn ? zeilen(sn) : null,
+      }
+    }))
+    expect(mass.length, 'keine Trefferzeilen gemessen').toBeGreaterThan(3)
+    for (const z of mass) {
+      if (z.titel) {
+        expect(z.titel.breit, `Randtitel angeschnitten: «${z.titel.text}»`).toBe(false)
+        expect(z.titel.zeilen, `Randtitel über zwei Zeilen: «${z.titel.text}»`).toBeLessThanOrEqual(2)
+      }
+      if (z.schnipselZeilen !== null) {
+        expect(z.schnipselZeilen, 'Kopf-Schnipsel ist nicht einzeilig').toBe(1)
+      }
+    }
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

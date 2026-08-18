@@ -231,19 +231,37 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     expect(fehler).toEqual([])
   })
 
-  test('(c) Grundzustand: ohne Flag existiert [data-leser-v3="rahmen"] NICHT (R10)', async ({ page }, info) => {
-    // Diese Zusage ist projekt-ABHÄNGIG: im Projekt `leser-v3` setzt der
-    // `storageState` das Flag, «ohne Flag» gibt es dort also gar nicht. Sie
-    // gehört ins Projekt `chromium` — und wird für die Flag-Seite bereits von
-    // `leser-v3-flag.e2e.ts:27` geführt, das beide Projekte ausdrücklich
-    // unterscheidet. Ohne diesen Wächter wäre der Test im Flag-Projekt
-    // konstruktiv rot (reproduziert 16.8.2026 beim Zuschnitt des Projekts).
-    test.skip(info.project.name === 'leser-v3',
-      'R10 ist die Aussage ohne Flag — im Flag-Projekt sinnlos, dort deckt sie leser-v3-flag.e2e.ts')
+  // ── H4-FLIP (18.8.2026): R10 GESPIEGELT, deklarierte fachliche Änderung ────
+  // Bis H4 lautete die Zusage «ohne Flag existiert [data-leser-v3="rahmen"]
+  // NICHT» — sie hielt den Grundzustand V1 fest. Mit dem Flip (David-Ja
+  // 17.8.2026) ist V3 der Grundzustand; dieselbe Aussage unverändert
+  // stehenzulassen wäre nicht Treue, sondern eine falsche Behauptung über das
+  // Produkt. Der GEPRÜFTE SACHVERHALT bleibt derselbe: der Grundzustand ist
+  // eindeutig, und das Flag leckt nicht (R10) — nur zeigt er jetzt V3, und der
+  // Rückweg `?leser=v1` zeigt V1. Beide Richtungen stehen hier, damit kein
+  // Zweig grundlos grün werden kann (§6.7).
+  test('(c) Grundzustand: ohne Flag rendert V3 — und `?leser=v1` führt zurück (R10)', async ({ page }, info) => {
+    // Diese Zusage ist projekt-ABHÄNGIG: im Projekt `leser-v1` setzt der
+    // `storageState` den Rückweg-Schlüssel, «ohne Flag» gibt es dort also gar
+    // nicht. Sie gehört ins Projekt `chromium` — und wird für die Rückweg-Seite
+    // bereits von `leser-v3-flag.e2e.ts` geführt, das beide Projekte
+    // ausdrücklich unterscheidet. Ohne diesen Wächter wäre der Test im
+    // Rückweg-Projekt konstruktiv rot (dieselbe Lage wie vor dem Flip, nur
+    // gespiegelt; reproduziert 16.8.2026 beim Zuschnitt des Projekts).
+    test.skip(info.project.name === 'leser-v1',
+      'R10 ist die Aussage ohne Flag — im Rückweg-Projekt sinnlos, dort deckt sie leser-v3-flag.e2e.ts')
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await expect(page.locator('[data-leser-v3="rahmen"]')).toHaveCount(1)
+
+    // Und der Rückweg wirkt: derselbe Erlass mit `?leser=v1` zeigt die alte
+    // Hülle POSITIV (`[data-ansicht-menu]`), nicht bloss die Abwesenheit des
+    // V3-Rahmens — eine Abwesenheit wäre auch bei einer kaputten Seite erfüllt.
+    await page.goto('/gesetze/bund/BGFA?leser=v1')
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await expect(page.locator('[data-leser-v3="rahmen"]')).toHaveCount(0)
+    await expect(page.locator('[data-ansicht-menu]')).toHaveCount(1)
 
     expect(fehler).toEqual([])
   })

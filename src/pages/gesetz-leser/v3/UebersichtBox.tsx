@@ -79,7 +79,7 @@ import type { UebersichtsAngaben } from './uebersichtAngaben';
 //    schlechter lesbar als linksbündig.
 
 export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
-  const { ruhe, zeilen, links, warnung, vorbehalt, hinweise } = angaben;
+  const { ruhe, zeilen, links, vorbehalt, hinweise } = angaben;
   return (
     // ── Ä5 (H2b) · WEISSRAUM, DANN LINIE — KEIN KASTEN ────────────────────────
     // Bis H2 war die Box ein gerahmter, getönter Kasten (`border border-line
@@ -126,20 +126,37 @@ export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
           Fenster-Messwerte, die der Kopf mit `kopf-stand*` hat; ein einzelner
           geratener Wert wäre schlechter als keiner. Als Ä73 vermerkt, nicht
           stillschweigend weggelassen. */}
-      {(warnung || vorbehalt) && (
+      {/* ── Ä81 (H4-Nachzug 18.8.2026) · NUR DER KOPF WARNT ────────────────────
+          GEMESSEN 18.8.2026 (StPO, D 1440, Box zu UND aufgeklappt): der Satz
+          «… noch nicht in den Text eingearbeitet — massgeblich ist die amtliche
+          Fassung.» stand ZWEIMAL gleichzeitig sichtbar auf der Seite —
+            1× `div[data-v3-uebersicht-warnung]` hier in der Seitenleiste,
+            1× `p < div < header` im Erlass-Kopf.
+          Ä28 hatte die Dopplung INNERHALB der Box abgeräumt und die Seiten-Summe
+          dabei ausdrücklich auf zwei festgeschrieben. Das war der Zwischenstand,
+          nicht das Ziel: die Box zieht ihre Grenze selbst anders (Herleitung in
+          `./uebersichtAngaben`) —
+            Kopf = WELCHER Erlass, WIE AKTUELL, WO die amtliche Fassung
+            Box  = WOHER er kommt und WIE er gebaut ist
+          — und eine offene Konsolidierung ist «wie aktuell», also Kopf-Sache. Ein
+          zweiter Ruf an derselben Falz macht die Warnung nicht dringlicher,
+          sondern beiläufiger (Design-Grundlage Kap. 1 Nr. 3).
+          Der Leser verliert nichts: der Kopf warnt auf JEDER Breite und steht vor
+          dem ersten Artikel, während die Box unter xl im Sheet liegt und erst
+          geöffnet werden muss — die Warnung wäre dort die spätere von beiden.
+          Das Feld `warnung` bleibt im reinen Modell samt seinen Sonden (es ist die
+          Aussage über den Erlass, unabhängig davon, wer sie zeigt); nur diese
+          Ausgabe entfällt.
+          NICHT MITENTSCHIEDEN ist der `vorbehalt` («nächste Fassung ab …»): er
+          steht im Kopf als Chip und hier als Zeile, die Dopplung ist aber nicht
+          gemessen (kein Probe-Erlass mit `naechsteFassungAb` im Korpus zur Hand).
+          Offen im Fahrplan, nicht stillschweigend mitgenommen. */}
+      {vorbehalt && (
         <div data-v3-uebersicht-warnung className="space-y-1 pb-1.5 pl-4 pt-0.5">
-          {warnung && (
-            <p className="flex items-start gap-1 text-xs leading-snug text-warn-700">
-              <span aria-hidden className="shrink-0">⚠</span>
-              <span>{warnung}</span>
-            </p>
-          )}
-          {vorbehalt && (
-            <p className="flex items-start gap-1 text-xs leading-snug text-warn-700">
-              <span aria-hidden className="shrink-0">⚠</span>
-              <span>{vorbehalt}</span>
-            </p>
-          )}
+          <p className="flex items-start gap-1 text-xs leading-snug text-warn-700">
+            <span aria-hidden className="shrink-0">⚠</span>
+            <span>{vorbehalt}</span>
+          </p>
         </div>
       )}
 

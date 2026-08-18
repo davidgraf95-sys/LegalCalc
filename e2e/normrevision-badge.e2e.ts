@@ -7,6 +7,7 @@
 // getByRole matcht das aria-label, nicht den sichtbaren Glyph (CI-Lektion #124).
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -16,7 +17,10 @@ function fehlerSammeln(page: Page): string[] {
 }
 
 test.describe('Normrevisions-Badge im ArtikelLeser (AIG)', () => {
-  test('(a) Entscheid VOR der Revision → ↻-Badge mit Revisionsdatum + AS-Fundstelle', async ({ page }) => {
+  test('(a) Entscheid VOR der Revision → ↻-Badge mit Revisionsdatum + AS-Fundstelle', async ({ page }, info) => {
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'der Leitfall-Link samt ↻-Badge an der Zeile unter dem Artikel',
+      'Deckungslücke — das ↻ am V3-Panel-Entscheid ist H5-Auflage (Kontaktbogen H4 §7); die Temporal-Regel selbst deckt `src/tests` DOM-frei'))
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze/bund/AIG')
     const art5 = page.locator('#art-5')
@@ -38,7 +42,10 @@ test.describe('Normrevisions-Badge im ArtikelLeser (AIG)', () => {
     expect(fehler).toEqual([])
   })
 
-  test('(b) Entscheid NACH der Revision → kein Badge (gleich, UI-still)', async ({ page }) => {
+  test('(b) Entscheid NACH der Revision → kein Badge (gleich, UI-still)', async ({ page }, info) => {
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'derselbe Ort wie in (a)',
+      'wie (a) — H5-Auflage'))
     await page.goto('/gesetze/bund/AIG')
     // §6.3-DEKLARATION (28.7.2026, W2·7-BEZUG/B4): der Anker 2C_1060/2020 ist im
     // Manifest `bger`/routine — ein kuratiertes Bundesgerichtsurteil, KEIN amtlich

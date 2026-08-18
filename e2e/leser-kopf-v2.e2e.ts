@@ -13,6 +13,46 @@ import { test, expect, type Page } from '@playwright/test';
 //          Von-Bis-Datum im Dropdown «Rechtsprechung ▾»
 //          (`bezuege-zeitstrahl-b5.e2e.ts`); der Test unten prüft jetzt die
 //          ABWESENHEIT der Alt-Steuerung — §6.3-Deklaration an Ort.
+//
+// ── H4-UMHÄNGUNG (Flip 18.8.2026, Kontaktbogen H4 §7) ───────────────────────
+// Zwei Nachführungen, beide gemessen:
+//
+// (1) K-2 fasste die Fussnotenmarke über `.lc-leser button[aria-label^=
+//     "Fussnote"]`. Nach dem Flip greift dieser Selektor den MENÜ-SCHALTER
+//     «Fussnoten (26)» statt der Marke im Text (gemessen 18.8.2026: 24 × auf
+//     `role=switch` aufgelöst) — der Test hätte dann geprüft, ob sich der
+//     Schalter selbst versteckt. Ziel ist `[data-fn-ref]`, die Marke selbst;
+//     dieselbe Korrektur hat `leser-v3-umschalten` schon vollzogen.
+// (2) B-1 mass die Facetten-Wirkung an der Bezüge-Zeile UNTER dem Artikel. Die
+//     gibt es in V3 nicht mehr — H3 hat sie bewusst entfernt (Pos. 12,
+//     Entscheid F4), die Entscheide stehen im Panel. Der Test misst die
+//     GLEICHE Sache am neuen Ort: Facette ab ⇒ keine Auflistung, Facette an ⇒
+//     wieder da. Ein blosses Löschen wäre falsch gewesen — keine `leser-v3-*`-
+//     Spec prüfte diese Wirkung (nachgesehen in `leser-v3-panel-facetten`,
+//     `-panel-zaehler`, `-panel-nachzug`: dort steht die ANWESENHEIT der
+//     Facetten, nicht ihre Wirkung auf die Liste).
+//
+// ── P1-3 (Bug-Check 18.8.2026) · DIE ERHÖHTEN WARTEZEITEN, DEKLARIERT ───────
+// Derselbe Umhäng-Commit (`b92a5956c`) hat in B-1 zwei Wartezeiten von 15 000 auf
+// 20 000 ms gesetzt und für das Panel eine dritte mit 20 000 ms neu angelegt —
+// still, ohne Vermerk. Das wird hier nachgeholt: eine unbegründet verlängerte
+// Wartezeit ist von einer LOCKERUNG nicht zu unterscheiden (§6.3).
+//
+// SIE IST KEINE LOCKERUNG, sondern die Folge des UMZUGS. B-1 mass die
+// Facetten-Wirkung früher an der Bezüge-Zeile, die MIT dem Artikel gerendert
+// wurde; sie misst sie jetzt im Kontext-Panel, das erst auf Nutzer-Geste öffnet
+// und seine Sidecars DANN nachlädt (`v3/panelKontextLaden.ts`: Fetch erst, wenn
+// das Panel einmal offen war — ausdrücklich nicht beim Seitenaufruf). Die
+// Wartezeit deckt jetzt einen Netzweg mit, den es an der alten Stelle nicht gab.
+// 20 000 ms ist dabei kein neuer Wert, sondern genau der, den die beiden
+// Reader-Wartungen dieser Datei (`warteReader`) schon vorher trugen.
+// GEPRÜFTE AUSSAGE UNVERÄNDERT: Facette ab ⇒ keine Auflistung, Facette an ⇒
+// wieder da. Keine Assertion entfernt, keine aufgeweicht.
+//
+// NICHT BETROFFEN ist `gesetze-ux-g3a`: der Bug-Check nannte sie in einem Atemzug
+// mit dieser Datei; nachgesehen 18.8.2026 (`git show b92a5956c -- …`) hat der
+// Commit dort KEINE Wartezeit angefasst — ihr einziger 20 000er
+// (`warteVerweiskarte`) stand schon vorher so da, nur mit einem anderen Selektor.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -45,7 +85,7 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
   await expect(fn).toBeVisible({ timeout: 15000 });
   await expect(fn).toHaveAttribute('aria-checked', 'true'); // Default: Fussnoten an
 
-  const marker = page.locator('.lc-leser button[aria-label^="Fussnote"]').first();
+  const marker = page.locator('.lc-leser [data-fn-ref]').first();
   await expect(marker).toBeVisible();
 
   // CLS-Beobachter (nur künftige Shifts): der toggle-getriebene Reflow liegt binnen
@@ -90,23 +130,33 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
 // Sachverhalt bleibt, nur die Darstellung, an der er gemessen wird, ist neu.
 test('B-1: die Facetten-Wahl blendet die Entscheid-Auflistung aus und wieder ein', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG', 'art-1');
-  const art = page.locator('#art-10');
-  await art.scrollIntoViewIfNeeded();
-  // Grundzustand: eine Facette aktiv (Leitentscheide) ⇒ die Auflistung steht da.
-  const gruppe = art.locator('[data-bezug-gruppe="bge"]');
-  await expect(gruppe).toBeVisible({ timeout: 15000 });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.locator('#art-10').scrollIntoViewIfNeeded();
 
-  // AUS: letzte Facette abwählen ⇒ NICHTS unter dem Artikel. Anders als der
-  // frühere CSS-Schalter versteckt das nicht bloss — es wird auch nichts geladen.
-  await page.locator('[data-rechtsprechung-menu]').first().click();
-  const bge = page.locator('[data-bezug-klasse="bge"]');
+  // Der Ort der Auflistung ist seit H3 das Panel, nicht der Artikelfuss (Pos. 12).
+  await page.locator('[data-v3-panel-zaehler]').first().click();
+  const panel = page.locator('[data-v3-panel]');
+  await expect(panel).toBeVisible({ timeout: 20000 });
+
+  // Grundzustand: eine Facette aktiv (Leitentscheide) ⇒ die Auflistung steht da.
+  const gruppe = panel.locator('[data-v3-panel-gruppe="bge"]');
+  await expect(gruppe).toBeVisible({ timeout: 20000 });
+  await expect(panel.locator('[data-v3-panel-entscheid]').first()).toBeVisible();
+
+  // AUS: letzte Facette abwählen ⇒ KEINE Auflistung mehr. Anders als der frühere
+  // CSS-Schalter versteckt das nicht bloss — es wird auch nichts geladen.
+  const filter = panel.locator('[data-v3-panel-filter]');
+  await filter.locator('[data-v3-panel-klappe]').first().click();
+  const bge = filter.locator('[data-bezug-klasse="bge"]');
   await expect(bge).toHaveAttribute('aria-pressed', 'true'); // Default an
   await bge.click();
-  await expect(art.locator('[data-bezuege-zeile]')).toHaveCount(0);
+  await expect(panel.locator('[data-v3-panel-gruppe="bge"]')).toHaveCount(0);
+  await expect(panel.locator('[data-v3-panel-entscheid]')).toHaveCount(0);
 
   // AN zurück: Auflistung wieder da.
   await bge.click();
-  await expect(gruppe).toBeVisible({ timeout: 15000 });
+  await expect(gruppe).toBeVisible({ timeout: 20000 });
+  await expect(panel.locator('[data-v3-panel-entscheid]').first()).toBeVisible();
 });
 
 // §6.3-DEKLARATION (deklarierte fachliche Änderung, kein Refactoring):

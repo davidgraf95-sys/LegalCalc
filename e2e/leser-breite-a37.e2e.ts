@@ -1,5 +1,6 @@
 // @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 // E6/A37 (David 16.7.2026, §10.10) — «Ingesamt gib dem Gesetz mehr platz. Zitat
 // Links ist auch sehr weit rechts. Nutze den Platz der zur Verfügung steht.
@@ -83,7 +84,19 @@ test.describe('E6/A37 — Zitat-Link fluchtet mit der Textkante (kein toter Steg
     });
   }
 
-  test('OR: Lesespalte auf max-w-normtext (42rem) gedeckelt und in der 2-Spalten-Zelle zentriert', async ({ page }) => {
+  test('OR: Lesespalte auf max-w-normtext (42rem) gedeckelt und in der 2-Spalten-Zelle zentriert', async ({ page }, info) => {
+    // GEMESSEN 18.8.2026 am Flip-Stand: V3 deckelt die Lesespalte auf 640px
+    // (`max-w-reading`), die Ist-Hülle auf 672px (`max-w-normtext`) — der Wert
+    // gehört zur 784-px-Zelle des Zwei-Spalten-Layouts der ALTEN Hülle. Die Zahl
+    // hier auf 640 zu ziehen wäre doppelt falsch: sie beschreibt eine andere
+    // Geometrie, UND die V3-Rahmenbreite ist mit Ä60 (Option c, David 17.8.2026)
+    // gerade in Arbeit — ein Wert, den ein Parallel-PR im selben Zug ändert, ist
+    // kein Anker. Die V3-Lesebreite bewacht `leser-lesemass` (≤ 75 ch) und, nach
+    // Ä60, der Rahmen-PR. Die übrigen Fälle dieser Datei (Kanten-Flucht,
+    // Overflow 390–1920) sind hüllenneutral und bleiben im Regelprojekt scharf.
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'das Spaltenmass der 784-px-Zelle des Zwei-Spalten-Layouts',
+      '`leser-lesemass` (Zeilenmass ≤ 75 ch, hüllenneutral) — der V3-Zielwert entsteht mit Ä60 (c)'))
     await ladeReader(page, 'OR');
     const geo = await ersterArtikelGeo(page);
     expect(geo).not.toBeNull();

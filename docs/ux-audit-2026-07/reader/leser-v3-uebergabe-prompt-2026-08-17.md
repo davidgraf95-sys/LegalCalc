@@ -3,7 +3,7 @@ Nutze den Skill `bauschritt` für den ganzen Session-Zyklus. Schritt: W2·5m-LES
 Auftrag David (Dauer-Go, Wortlaut 16.8.: «jetzt bau bis ich stop sage» → «bau bis h4»): Baue die Etappen des Plans `fahrplaene/FAHRPLAN-LESER-V3.md` in dieser Reihenfolge, je eigener PR: **H2 landen → H2b (Ästhetik-Nachzug) → H3 (Panel) → S1 (Historie zweiwertig) → S2-Bildbogen (Ja am Bild) → alle H4-Umschalt-Kriterien erfüllen und den Kontaktbogen erstellen — HALT vor dem H4-Umschalten selbst (Davids Ja).**
 
 Einstieg (Pflicht, in dieser Reihenfolge, Slices lesen):
-1. `docs/ux-audit-2026-07/reader/leser-v3-handoff-2026-08-17.md` (Übergabe: Stand, offene Etappen, Regeln, Wartepunkte)
+1. `docs/ux-audit-2026-07/reader/leser-v3-handoff-2026-08-18.md` (Übergabe: Stand, offene Etappen, Regeln, Wartepunkte)
 2. `npm run fahrplan -- fahrplaene/FAHRPLAN-LESER-V3.md 7` (Etappen + Vollzug), dann Kap. 9 (Entscheide F1–F8/D-A–D-C), Kap. 12 (Abnahmekriterien), Kap. 14 (Verhältnis zu anderen Schritten)
 3. `docs/ux-audit-2026-07/reader/leser-v3-design-grundlage.md` Kap. 0–8 (Design-Massstab)
 4. Memory `leser-v3-dauer-go-2026-08-16` und STRUKTUR-Karte «Session 16./17.8.2026»

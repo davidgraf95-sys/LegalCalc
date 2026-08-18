@@ -135,10 +135,38 @@ export function LeserLesespalte({ m }: {
         {sektionen.map((s) => renderSektion(s, true, 0))}
       </div>
 
+      {/* ── B9 (Klick-Test) → B6 (H4-Nachzug 18.8.2026) · DIE SEITE LÄUFT QUER ─
+          GEMELDET war «ZH-211.11 § 4: Tabelle 81 px Seiten-Überlauf @390 trotz
+          `.lc-scroll-x`». NACHGEMESSEN 18.8.2026 (390×844, V3 UND V1, je 81 px
+          Überlauf) ist die Zuordnung FALSCH — und das ist der eigentliche Fund:
+            · Die Tabelle in § 4 ist 1002 px breit und sitzt KORREKT in ihrem
+              Scroller (`span.lc-scroll-x`: clientWidth 312, scrollWidth 1002,
+              `overflow-x: auto`). Sie läuft nirgends über. Wer sie über ihren
+              `getBoundingClientRect` misst, misst die Breite INNERHALB des
+              Scrollers und hält sie für Seitenbreite.
+            · Der einzige UNGEKLIPPTE Überläufer der Seite ist dieser Link:
+              «Notariatsgebührenverordnung (NotGebV) ›», 191 px breit, rechte
+              Kante bei 471 in einem 390-Fenster — exakt die gemeldeten 81 px.
+              (Sonde: jedes Element mit `right > clientWidth`, das KEINEN
+              klippenden Vorfahren hat. Ohne diesen zweiten Filter meldet eine
+              Überlauf-Sonde den Inhalt jedes Scrollers mit.)
+          URSACHE: drei Flex-Kinder ohne `min-w-0`. Ein Flex-Kind schrumpft nicht
+          unter seine `min-content`-Breite, und die ist hier das längste Wort —
+          «Notariatsgebührenverordnung». Dass der Kürzel-Wert an diesem Erlass der
+          Volltitel ist, ist ein eigener DATEN-Befund (Klick-Test C3); die Zeile
+          darf aber an KEINEM Wert brechen: ein Kürzel ist eine Zeichenkette aus
+          den Daten, keine Zusage über ihre Länge.
+          FIX: `min-w-0` lässt schrumpfen, `[overflow-wrap:anywhere]` lässt das
+          lange Wort umbrechen statt hinauszuragen; «Übersicht» in der Mitte hält
+          seine Breite (`shrink-0`), sie ist kurz und konstant. KEIN Ellipsis: der
+          Name des Nachbar-Erlasses ist die ganze Auskunft dieser Zeile (§8,
+          Ä15-Klasse). Wortgleich in `../inhalt-volltext.tsx` — V1 zeigt denselben
+          Überlauf aus derselben Ursache (§5).
+          Wächter: `e2e/leser-kein-seitenueberlauf.e2e.ts`, beide Hüllen. */}
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
-        {vorher ? <Link to={erlassPfad(vorher)} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">Übersicht</Link>
-        {nachher ? <Link to={erlassPfad(nachher)} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
+        {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-brass-700 hover:underline [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
+        <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-brass-700">Übersicht</Link>
+        {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-brass-700 hover:underline [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
   );

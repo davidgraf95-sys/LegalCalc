@@ -144,8 +144,8 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
   // ROT ZU BEKOMMEN (§6.7), je Fall:
   //  Ä27 in `src/index.css` die Regel `details[data-v3-uebersicht] > summary::after
   //      { content: none; }` entfernen ⇒ `::after` misst wieder `"  ▸"`.
-  //  Ä28 in `v3/LeserUebersicht.tsx` `nichtKonsolidiert={m.nichtKonsolidiert}`
-  //      wieder an `ErlassUebersicht` durchreichen ⇒ zwei Warnsätze.
+  //  Ä28/Ä81 in `v3/UebersichtBox.tsx` die `warnung`-Zeile wieder in die
+  //      Warn-Zelle setzen ⇒ der Sachverhalt steht zweimal auf der Seite.
   //  Ä30 in `v3/LeserTrefferListe.tsx` die zwei `whitespace-nowrap`-Spans
   //      entfernen ⇒ der Umbruch trennt Zahl und Einheit.
   //  Ä31 in `src/index.css` `.lc-input.lc-v3-feld:focus` auf `border-color:
@@ -174,54 +174,60 @@ test.describe('Ä27/Ä28/Ä30/Ä31 — jede Auskunft genau einmal, jeder Ring ge
     expect(['none', 'normal', '""']).toContain(glyph.nach)
     expect(glyph.fremd, 'die App-weite Disclosure-Regel ist mitgestrichen worden').toContain('▸')
 
-    // Ä28: Box aufklappen — der Sachverhalt steht genau einmal.
+    // ── Ä81 (H4-Nachzug 18.8.2026) · DER SACHVERHALT STEHT EINMAL AUF DER
+    //    SEITE — UND ZWAR IM KOPF ────────────────────────────────────────────
+    // §6.3-DEKLARATION, zweite Stufe. Ä28 hatte hier «genau einmal IN DER BOX»
+    // gesichert und die Seiten-Summe damit auf zwei festgeschrieben. Gemessen
+    // 18.8.2026 (StPO, D 1440, Box zu wie aufgeklappt) standen beide Vorkommen
+    // GLEICHZEITIG SICHTBAR: `div[data-v3-uebersicht-warnung]` in der Leiste und
+    // `p < div < header` im Erlass-Kopf. Die Box zieht ihre Grenze selbst anders
+    // (Kopf = wie aktuell · Box = woher und wie gebaut), und eine offene
+    // Konsolidierung ist «wie aktuell».
+    // Die geprüfte SACHE bleibt: der Sachverhalt steht genau EINMAL — nur ist
+    // die Zählfläche jetzt die SEITE statt der Box, und der Ort ist benannt.
+    // Nichts ist gelockert: aus einer Zahl («1 in der Box») werden drei
+    // Bedingungen (1 auf der Seite · 0 in der Box · 1 im Kopf).
+    // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` die `warnung`-Zeile
+    // wieder in die Warn-Zelle setzen ⇒ aufDerSeite 2, inDerBox 1.
     await page.locator('[data-v3-uebersicht-zeile]').click()
     await expect(page.locator('[data-v3-uebersicht-inhalt]')).toBeVisible({ timeout: 10_000 })
-    const warnungen = await page.evaluate(() => {
+    const warn = await page.evaluate(() => {
+      // Nur BLATT-Absätze zählen, sonst zählt jede Hülle den Satz mit.
+      const alle = [...document.querySelectorAll('p, li, dd')]
+        .filter((el) => /Änderung noch nicht in den Text eingearbeitet/i.test(el.textContent ?? ''))
+        .filter((el) => !el.querySelector('p, li, dd'))
       const box = document.querySelector('[data-v3-uebersicht]') as HTMLElement
-      return [...box.querySelectorAll('p')]
-        .map((p) => (p.textContent ?? '').replace(/\s+/g, ' ').trim())
-        // §6.3-DEKLARATION (Ä70, 17.8.2026): die geprüfte SACHE ist unverändert
-        // — «der Konsolidierungs-Sachverhalt steht in der Box genau einmal».
-        // Geändert hat sich der Satz, den die Box dafür setzt, und zwar
-        // ABSICHTLICH: sie führte bis hierher einen EIGENEN Wortlaut («Eine in
-        // Kraft getretene Änderung ist noch nicht eingearbeitet …») neben dem
-        // des Erlass-Kopfs — zwei Formulierungen für einen Sachverhalt, also
-        // genau die zweite Wahrheit, gegen die Ä28 gebaut wurde. Sie nimmt jetzt
-        // `nichtKonsolidiertSatz` aus `lib/normtext/erlassKopfText.ts` (S3/F5),
-        // denselben String wie Erlass-Kopf und prerenderter SEO-Kopf (§5).
-        // Das Muster ist NICHT gelockert, sondern auf den Kern gestellt, den
-        // beide Fassungen tragen — und die Sonden darunter sind STRENGER als
-        // vorher (Zeitbezug und «⚠»-Freiheit kommen dazu).
-        .filter((t) => /Änderung noch nicht in den Text eingearbeitet/i.test(t))
+      const imKopf = alle.filter((el) => el.closest('header') !== null)
+      const p = imKopf[0] ?? null
+      const marke = p?.querySelector('[aria-hidden]')
+      return {
+        aufDerSeite: alle.length,
+        inDerBox: alle.filter((el) => box.contains(el)).length,
+        imKopf: imKopf.length,
+        satzKopf: (p?.textContent ?? '').replace(/\s+/g, ' ').trim(),
+        marke: (marke?.textContent ?? '').trim(),
+        // Der Satz selbst — also das, was ein Screenreader vorliest.
+        vorgelesen: [...(p?.childNodes ?? [])]
+          .filter((n) => !(n instanceof Element) || !n.hasAttribute('aria-hidden'))
+          .map((n) => n.textContent ?? '').join('').replace(/\s+/g, ' ').trim(),
+      }
     })
-    expect(warnungen.length, `Warnsätze: ${JSON.stringify(warnungen)}`).toBe(1)
+    expect(warn.aufDerSeite, `Warnsätze auf der Seite: ${warn.aufDerSeite}`).toBe(1)
+    expect(warn.inDerBox, 'die Box warnt ein zweites Mal (Ä81)').toBe(0)
+    expect(warn.imKopf, 'der Erlass-Kopf warnt nicht mehr').toBe(1)
     // Positiv-Sonde: der eine Satz ist der GETEILTE aus `erlassKopfText.ts` —
     // mit Zeitbezug und mit dem Verweis auf die amtliche Fassung.
-    expect(warnungen[0]).toMatch(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung/)
-    expect(warnungen[0]).toContain('massgeblich ist die amtliche Fassung')
+    expect(warn.satzKopf).toMatch(/Fedlex hat eine seit \d{2}\.\d{2}\.\d{4} geltende Änderung/)
+    expect(warn.satzKopf).toContain('massgeblich ist die amtliche Fassung')
     // Das «⚠» ist redundante Verstärkung und darf nie alleiniger
     // Bedeutungsträger sein (DESIGN-REGLEMENT B3): es steht in einem EIGENEN
     // `aria-hidden`-Element vor dem Satz, nicht im Satz. Geprüft wird darum die
     // TRENNUNG, nicht die Abwesenheit im `textContent` des Absatzes — dort
     // erscheint das Zeichen selbstverständlich mit (erster Anlauf 17.8.2026
     // prüfte genau das Falsche und wurde zu Recht rot).
-    const zeichen = await page.evaluate(() => {
-      const box = document.querySelector('[data-v3-uebersicht]') as HTMLElement
-      const p = [...box.querySelectorAll('p')]
-        .find((el) => /Änderung noch nicht in den Text eingearbeitet/i.test(el.textContent ?? ''))
-      const marke = p?.querySelector('[aria-hidden]')
-      return {
-        marke: (marke?.textContent ?? '').trim(),
-        // Der Satz selbst — also das, was ein Screenreader vorliest — trägt es nicht.
-        satz: [...(p?.childNodes ?? [])]
-          .filter((n) => !(n instanceof Element) || !n.hasAttribute('aria-hidden'))
-          .map((n) => n.textContent ?? '').join('').trim(),
-      }
-    })
-    expect(zeichen.marke, 'das ⚠ steht nicht in einem eigenen aria-hidden-Element').toBe('⚠')
-    expect(zeichen.satz, 'das ⚠ steckt im vorgelesenen Satz').not.toContain('⚠')
-    expect(zeichen.satz).toContain('massgeblich ist die amtliche Fassung')
+    expect(warn.marke, 'das ⚠ steht nicht in einem eigenen aria-hidden-Element').toBe('⚠')
+    expect(warn.vorgelesen, 'das ⚠ steckt im vorgelesenen Satz').not.toContain('⚠')
+    expect(warn.vorgelesen).toContain('massgeblich ist die amtliche Fassung')
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

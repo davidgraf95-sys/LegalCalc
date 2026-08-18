@@ -6,9 +6,19 @@
 //
 //   Zuschnitt              Öffner
 //   ────────────────────────────────────────────────────────────────────────────
-//   voll / kompakt         Zähler in der Kopfzeile (`[data-v3-panel-zaehler]`)
-//   mini (H, schmales Pane) Eintrag im «···»-Menü («Entscheide & Kontext …»)
+//   voll / kompakt         Zähler «⚖ 14 Entscheide» (`[data-v3-panel-zaehler]`)
+//   mini (H, schmales Pane) derselbe Zähler als Chip «⚖ 14» (H4-II, s. u.)
 //   überall                das Menü zusätzlich — der F8-Weg, wenn der Zähler weg ist
+//
+// ── H4-II (17./18.8.2026) ────────────────────────────────────────────────────
+// Die Zeile für `mini` hiess bis dahin «Eintrag im ···-Menü», und genau das war
+// der NM-2-Befund des Kontaktbogens H4: @390 stand im Ruhezustand KEIN Öffner in
+// der Kopfzeile, der Weg zu den Entscheiden kostete zwei Taps statt einem.
+// Seither trägt auch `mini` den Zähler — als Chip ohne Zähl-Substantiv, damit
+// die Zeile bei vier Elementen bleibt (`v3/kopfStufen.kopfElemente(…).panel`).
+// DIE FUNKTION UNTEN BLEIBT UNVERÄNDERT: ihr Menü-Zweig ist weiterhin nötig,
+// denn mit «Rechtsprechung im Text: aus» (F8) gibt es auf JEDEM Zuschnitt keinen
+// Zähler — dann ist das Menü der Weg.
 //
 // Bis zum Nachzug klickte jede Spec ihre eigene Variante
 // (`[data-v3-panel-lasche], [data-v3-panel-zaehler]`). Die Randlasche ist

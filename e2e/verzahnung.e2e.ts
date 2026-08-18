@@ -5,6 +5,7 @@
 // neuen Flächen. Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 // EIN Leitentscheid-aria-label an allen vier Fundorten (Magic Moment 4) —
 // dieselbe Konstante wie in StatusBadge.tsx (Textgleichheit ist der Testinhalt).
@@ -18,7 +19,10 @@ function fehlerSammeln(page: Page): string[] {
 }
 
 // ── MM1: Steuerbeamter auf Art. 16 DBG — Artikel/Erlass als Hub ──────────────
-test('MM1: DBG-Fuss trägt ≥2 Kontextgruppen mit Overline + Zähler + Hinweis; CLS ≈ 0', async ({ page }) => {
+test('MM1: DBG-Fuss trägt ≥2 Kontextgruppen mit Overline + Zähler + Hinweis; CLS ≈ 0', async ({ page }, info) => {
+  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+    'der Kontext-Abschnitt am Artikelfuss des Lesers (`section[aria-labelledby="kontext-titel"]`)',
+    '`leser-v3-kontext-cls` für die CLS-Zusage, `leser-v3-panel-facetten`/`-nachzug` für die Gruppen im Panel'))
   const fehler = fehlerSammeln(page)
   await page.goto('/gesetze/bund/DBG')
   await expect(page.locator('#art-16')).toBeAttached()
@@ -137,7 +141,12 @@ test('MM3 (Mobile): kein ⧉ im NormPopover unter lg', async ({ page }) => {
 })
 
 // ── MM4: Studentin am ★ — EIN aria-label an allen vier Fundorten ─────────────
-test('MM4: ★-aria-label textgleich in Reader, Panel, Leitfall-Zeile und Suche; Tooltip fokussier-/klickbar', async ({ page }) => {
+test('MM4: ★-aria-label textgleich in Reader, Panel, Leitfall-Zeile und Suche; Tooltip fokussier-/klickbar', async ({ page }, info) => {
+  // Der Fall vergleicht VIER Orte, darunter die Leitfall-Zeile im Leser — die
+  // gibt es in V3 nicht mehr, der Vergleich hat dort nur noch drei Beine.
+  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+    'die Leitfall-Zeile im Leser als einer der vier verglichenen Orte',
+    'Deckungslücke — der ★-Wortlaut-Vergleich Panel↔Suche↔Entscheid ist H5-Auflage (Kontaktbogen H4 §7)'))
   // (a) Reader-Kopf (Volltext-Badge, interaktiv): das aria-label trägt der
   // fokussierbare Begriff-Button selbst (accessible name, kein aria-label auf
   // role-losem Span — axe aria-prohibited-attr).
@@ -185,7 +194,10 @@ test('MM4: ★-aria-label textgleich in Reader, Panel, Leitfall-Zeile und Suche;
 })
 
 // ── MM5: Nutzer am Erlass-Ende — Top-Entscheide MIT Artikel-Sublabel ─────────
-test('MM5: jeder OR-Panel-Entscheid trägt das «via Art. N»-Sublabel', async ({ page }) => {
+test('MM5: jeder OR-Panel-Entscheid trägt das «via Art. N»-Sublabel', async ({ page }, info) => {
+  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+    'das Kontext-Panel am Artikelfuss des Lesers',
+    'Deckungslücke — «via Art. N» am V3-Panel-Entscheid ist H5-Auflage (Kontaktbogen H4 §7)'))
   await page.goto('/gesetze/bund/OR')
   const kontext = page.locator('section[aria-labelledby="kontext-titel"]')
   await kontext.scrollIntoViewIfNeeded()
@@ -198,7 +210,10 @@ test('MM5: jeder OR-Panel-Entscheid trägt das «via Art. N»-Sublabel', async (
 })
 
 // ── Fundstellen-Landung je Linkquelle (Zusatzauftrag David 3.7.2026) ──────────
-test('Fundstelle A (Gesetz-Chip): ZGB Art. 684 → BGE 151 III 377 landet auf der Erwägung', async ({ page }) => {
+test('Fundstelle A (Gesetz-Chip): ZGB Art. 684 → BGE 151 III 377 landet auf der Erwägung', async ({ page }, info) => {
+  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+    'der Entscheid-Chip an der Zeile unter dem Artikel als Einstieg in die Erwägung',
+    'Deckungslücke — der Erwägungs-Sprung ab V3-Panel ist H5-Auflage (Kontaktbogen H4 §7)'))
   await page.goto('/gesetze/bund/ZGB#art-684')
   const art = page.locator('#art-684')
   const chip = art.locator('a[href*="bge_151_III_377"]').first()
@@ -319,7 +334,12 @@ for (const [name, url] of [
   ['entscheid-fuss', '/rechtsprechung/bge_151_III_377'],
   ['gesetz-panel-ZGB', '/gesetze/bund/ZGB'],
 ] as const) {
-  test(`a11y: ${name} ohne critical/serious-Verstösse (Kontext-Bereich)`, async ({ page }) => {
+  test(`a11y: ${name} ohne critical/serious-Verstösse (Kontext-Bereich)`, async ({ page }, info) => {
+    // Nur der LESER-Fall hängt an der Ist-Hülle; `/rechtsprechung/...` ist
+    // hüllenneutral und bleibt im Regelprojekt scharf.
+    test.skip(url.startsWith('/gesetze') && nichtIstHuelle(info.project.name), istHuellenGrund(
+      'der Kontext-Abschnitt im Leser',
+      '`leser-v3-panel-facetten` (e) — axe auf dem GEÖFFNETEN Panel, D und H'))
     await page.addInitScript(() => { try { localStorage.setItem('lexmetrik-thema', 'hell') } catch { /* egal */ } })
     await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' })
     await page.goto(url)
@@ -342,7 +362,10 @@ for (const [name, url] of [
   ['gesetz-artikel', '/gesetze/bund/ZGB#art-684'],
   ['entscheid-fuss', '/rechtsprechung/bger_8C_559_2025'],
 ] as const) {
-  test(`Mobil 390px: ${name} ohne horizontalen Overflow`, async ({ page }) => {
+  test(`Mobil 390px: ${name} ohne horizontalen Overflow`, async ({ page }, info) => {
+    test.skip(url.startsWith('/gesetze') && nichtIstHuelle(info.project.name), istHuellenGrund(
+      'der Kontext-Abschnitt im Leser',
+      '`leser-v3-panel-nachzug` (e) — Bottom-Sheet @390 ohne Overflow'))
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto(url)
     const kontext = page.locator('section[aria-labelledby="kontext-titel"]')

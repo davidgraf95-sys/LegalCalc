@@ -1,4 +1,5 @@
-import { oeffnerLabel, oeffnerName, zaehlerAttribut } from './panelModell';
+import { oeffnerLabel, oeffnerLabelKompakt, oeffnerName, zaehlerAttribut } from './panelModell';
+import { kopfGlypheKlassen, kopfGriffKlassen, type KopfElemente } from './kopfStufen';
 
 // ─── Der Öffner des Panels — EINER je Zuschnitt (H3, F8; Nachzug Ä53/Ä56) ─────
 //
@@ -27,17 +28,37 @@ import { oeffnerLabel, oeffnerName, zaehlerAttribut } from './panelModell';
 //
 //   Zuschnitt   Öffner                                  Grund
 //   ────────────────────────────────────────────────────────────────────────────
-//   voll        Zähler in der Kopfzeile                 Platz ist da, Zahl ist da
-//   kompakt     Zähler in der Kopfzeile                 dito
-//   mini        Eintrag im «···»-Menü                   Kopfzeile ist bei 4 (Kap. 6)
+//   voll        Zähler «⚖ 14 Entscheide»                Platz ist da, Zahl ist da
+//   kompakt     Zähler «⚖ 14 Entscheide»                dito
+//   mini        Zähler-Chip «⚖ 14»                      H4-II, s. u.
 //   alle        Eintrag im «Ansicht ▾»/«···»-Menü       F8-Weg, wenn der Schalter aus ist
 //   alle        Taste «r»                               F8-Weg (Kap. 4h)
 //
 // Der Menü-Eintrag steht auf JEDEM Zuschnitt und in JEDEM Pane (A2) — er ist der
 // Weg, den Davids F8-Regel ausdrücklich offen halten will («Panel bleibt über
-// ‹Ansicht ▾› und Tastatur erreichbar»), und auf `mini` ist er der einzige
-// sichtbare. Die Abweichung von «Lasche behalten» ist im Vollzugsvermerk als
-// §7-Abweichung ausgewiesen und wartet auf Davids Bestätigung.
+// ‹Ansicht ▾› und Tastatur erreichbar»). Die Abweichung von «Lasche behalten»
+// ist im Vollzugsvermerk als §7-Abweichung ausgewiesen und wartet auf Davids
+// Bestätigung.
+//
+// ── H4-II (17./18.8.2026) · AUF `mini` STEHT DER ZÄHLER JETZT AUCH ──────────
+// Bis hierher trug die Zeile «mini | Eintrag im ···-Menü | Kopfzeile ist bei 4».
+// Gemessen am gebauten Stand (@390, StPO Art. 429) hiess das: `[data-v3-panel-
+// oeffner]` im Ruhezustand **0**, und der Weg zu den Entscheiden kostete **zwei
+// Taps** («···» aufziehen, dann «Entscheide & Kontext …») gegen einen auf D und
+// S. Das ist der NM-2-Befund des Kontaktbogens H4 und dort der Flip-Blocker:
+// nicht «unerreichbar», wie der Bogen zunächst schrieb, aber doppelt so teuer
+// auf dem Gerät, auf dem der Finger das einzige Werkzeug ist.
+//
+// Der VIER-ELEMENTE-Deckel von Kap. 6 bleibt gewahrt, weil ein anderes Element
+// weicht: das ✕ war auf `mini` das Duplikat des sichtbaren Rücksprungs
+// «‹ Gesetze» in derselben Zeile (beide auf `/gesetze`) — Herleitung und
+// Messreihe in `./kopfStufen`, `zeigeSchliessKreuz`. Die Zeile trägt danach
+// Ort · ⚖ · ☰ · ··· .
+// NICHT eingelöst ist die zweite Hälfte des Deckels («≤ 2 reine Icons»): der
+// Chip zeigt im Ruhezustand nur die Ikone, weil die Zahl vor dem Nachladen
+// niemand kennt (§8). Vorher standen dort ☰ · ··· · ✕, also ebenfalls drei —
+// die Lage ist unverändert, nicht verbessert; sie steht als offener Punkt im
+// Kontaktbogen H4.
 //
 // ── DIE REGEL DAVIDS, UND WO SIE STEHT ──────────────────────────────────────
 // «Rechtsprechung im Text» AUS ⇒ der Zähler verschwindet. Diese Datei prüft das
@@ -47,14 +68,15 @@ import { oeffnerLabel, oeffnerName, zaehlerAttribut } from './panelModell';
 // jeder Stellung: «aus» heisst «ich will keinen Hinweis sehen», nicht «ich
 // verzichte auf den Zugang».
 //
-// ── WARUM DER ZÄHLER AUF DEM HANDY-ZUSCHNITT FEHLT (Ä11) ────────────────────
-// Design-Grundlage Kap. 6: «Kopfzeile im Ruhezustand ≤ 4 Elemente». Auf `mini`
-// stehen dort schon Ort · ☰ · ··· · ✕. Die Zuordnung steht in
-// `kopfElemente(stufe).panel`, damit sie eine prüfbare Aussage über einen
-// Rückgabewert ist und nicht über abwesenden Code (§6.7).
+// ── WELCHE GESTALT der Zähler hat, entscheidet die STUFE (§5) ───────────────
+// Die Zuordnung steht in `kopfElemente(stufe).panel` (`'voll' | 'kompakt'`),
+// damit sie eine prüfbare Aussage über einen Rückgabewert ist und nicht über
+// abwesenden Code (§6.7). Diese Datei liest den Wert, sie leitet ihn nicht ab —
+// eine zweite Ableitung derselben Frage wäre eine zweite Wahrheit.
 
-/** Zähler in der Kopfzeile: «⚖ 14 Entscheide». Ohne bekannte Zahl «⚖ Rechtsprechung». */
-export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, onKlick }: {
+/** Zähler in der Kopfzeile: «⚖ 14 Entscheide» bzw. auf `mini` «⚖ 14».
+ *  Ohne bekannte Zahl «⚖ Rechtsprechung» bzw. die blosse Ikone. */
+export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, form, onKlick }: {
   anzahl: number | null;
   artikelLabel: string | null;
   offen: boolean;
@@ -66,8 +88,14 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, onKlick }: 
    *  in `LeserPanelZone` per `useId` und wurde nie durchgereicht — `aria-controls`
    *  war am Kopf-Zähler auf JEDER Desktop-Breite `null` (gemessen @1024/@1440). */
   panelId?: string;
+  /** H4-II · Gestalt des Chips, aus `kopfElemente(stufe).panel`. Der Rahmen
+   *  reicht sie herein; diese Datei kennt die Stufe nicht und soll sie nicht
+   *  kennen (§3 — sie rendert, sie entscheidet nicht). */
+  form: KopfElemente['panel'];
   onKlick: () => void;
 }) {
+  const kompakt = form === 'kompakt';
+  const text = kompakt ? oeffnerLabelKompakt(anzahl) : oeffnerLabel(anzahl);
   return (
     <button
       type="button"
@@ -82,14 +110,20 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, onKlick }: 
       // `panelModell`), damit ein dritter Öffner nicht vergessen werden kann.
       data-v3-panel-oeffner
       data-v3-panel-anzahl={zaehlerAttribut(anzahl)}
-      className="lc-leiste-griff lc-leiste-griff-fest gap-1 px-1.5"
+      data-v3-panel-zaehler-form={form}
+      // Ä90: die EINE Bauform der Kopf-Griffe — Umriss und Zielgrösse kommen
+      // aus `kopfStufen`, nicht aus einer Klassenliste je Griff (§5).
+      className={`${kopfGriffKlassen(kompakt)} ${kompakt ? 'gap-0.5 px-1' : 'gap-1 px-1.5'}`}
     >
-      <span aria-hidden>⚖</span>
+      <span aria-hidden className={kopfGlypheKlassen(kompakt)}>⚖</span>
       {/* `tabular-nums` + `whitespace-nowrap`: die Zahl wechselt mit der
           Leseposition (Scroll-Spy). Proportionale Ziffern liessen den Knopf bei
           jedem Artikelwechsel um Bruchteile atmen und schöben die Nachbarn —
-          eine Bewegung in der klebenden Kopfzeile, die niemand angefordert hat. */}
-      <span className="num tabular-nums whitespace-nowrap">{oeffnerLabel(anzahl)}</span>
+          eine Bewegung in der klebenden Kopfzeile, die niemand angefordert hat.
+          H4-II: auf `mini` kann der Text leer sein (keine Zahl bekannt) — dann
+          entfällt das `span` ganz, statt eine 0 zu behaupten oder eine leere
+          Box mit `gap` stehen zu lassen (§8). */}
+      {text && <span className="num tabular-nums whitespace-nowrap">{text}</span>}
     </button>
   );
 }

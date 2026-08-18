@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties } from 'react';
+import { useRef, type CSSProperties, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { setzeBezugKantone, setzeBezugKlassen, setzeBezugZeit, useBezugKantone, useBezugKlassen } from '../leserOptionen';
 import type { BestimmungsWort } from './erlassAnsicht';
@@ -12,20 +12,26 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 
 // ─── WO das Panel steht (H3, Kap. 4d) ────────────────────────────────────────
 //
-// EIN Blatt (Sheet) über der Fläche, in zwei Gestalten (`panelForm`):
+// DREI Gestalten seit Ä60 (c). Welche gilt, entscheidet `rahmenSpalten.rahmenBild`
+// im Rahmen — diese Datei ordnet an, sie entscheidet nicht (§3):
 //
-//   'rechts'  D, Einzelansicht — 22 rem am rechten Rand, NICHT modal. Der
-//             Lesetext links bleibt sichtbar UND bedienbar; das Panel ist
-//             Beiwerk und verhält sich auch so (Ä52, s. u.).
+//   'spalte'  D, Einzelansicht, aufgeweiteter Rahmen — eine EIGENE Spur neben
+//             dem Text. Keine Überlagerung, kein verdecktes Zeilenende; im
+//             Fluss und darum `sticky` statt `fixed`. Das ist die Gestalt, die
+//             der Fahrplan von Anfang an vorsah («D: Panel rechts 22 rem»).
+//   'rechts'  D, Einzelansicht, ENGER Rahmen — 22 rem am rechten Rand, NICHT
+//             modal. Der Lesetext links bleibt sichtbar UND bedienbar; das
+//             Panel ist Beiwerk und verhält sich auch so (Ä52, s. u.).
 //   'unten'   H und jedes Pane — echtes Bottom-Sheet, modal. Es reicht von der
 //             Unterkante nach oben und lässt den Artikel darüber stehen (Ä55).
 //
-// WARUM KEINE ANGEDOCKTE SPALTE AUF D: die Rechnung steht im Rahmen
-// (`LeserRahmenV3`, «KEINE DRITTE SPUR») — der Seitenrahmen ist auf 70 rem
-// gedeckelt (gemessen 1072 px auf jeder Desktop-Breite), 18 + 40 + 22 rem
-// brauchen 1344. Ein Zweig, den keine Breite erreicht, ist toter Code (§17).
-// Der Blatt-Modus erfüllt die harte Regel «NIE drei vertikale Flächen» ohnehin
-// in jeder Lage, nicht nur im Pane.
+// WARUM DIE SPALTE ERST JETZT: bis H4 deckelte der Seitenrahmen auf 70 rem
+// (gemessen 1072 px auf jeder Desktop-Breite), 18 + 40 + 22 rem samt Abständen
+// brauchen 84 rem = 1344. Der Zweig war nicht falsch, ihm fehlten 272 px —
+// David-Entscheid (c) vom 17.8.2026 gibt sie ihm (`rahmenSpalten.ts`).
+// UNBERÜHRT bleibt die harte Regel «NIE drei vertikale Flächen» im geteilten
+// Fenster (Design-Grundlage Kap. 8 Nr. 8, ausdrücklich «im Split-View»): im
+// Pane ist die Gestalt weiterhin ausnahmslos `'unten'`.
 //
 // ═══ Ä52 (H3-Nachzug) · DAS BLATT DECKTE DEN KOPF, DEN ES BEDIENT ════════════
 // Gemessen 17.8.2026: das Blatt begann auf D bei `top: var(--leser-kopf-h)` =
@@ -75,10 +81,11 @@ const BLATT_ANTEIL = 55;
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, bestimmungsWort, aktArtikel,
+  artikelLabel, bestimmungsWort, aktArtikel, steckbrief,
 }: {
-  /** Gestalt des Blatts — `panelForm(stufe, vollflaechig)` im Rahmen entscheidet. */
-  form: 'rechts' | 'unten';
+  /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet (sie folgt
+   *  `panelForm`, ausser wo der aufgeweitete Rahmen eine eigene Spur trägt). */
+  form: 'rechts' | 'unten' | 'spalte';
   /** Id der Fläche. Kommt vom RAHMEN, nicht aus einem lokalen `useId` (A3): die
    *  Öffner stehen ausserhalb dieser Datei und brauchen dieselbe Id für ihr
    *  `aria-controls` — zwei `useId` hätten zwei Ids ergeben, und eine davon
@@ -96,6 +103,10 @@ export function LeserPanelZone({
   artikelLabel: string | null;
   bestimmungsWort: BestimmungsWort;
   aktArtikel: string | null;
+  /** Der Erlass-Steckbrief als Tafel — oder `null`, wenn er gerade OFFEN in der
+   *  Leiste steht. Die Weiche trifft der Rahmen (er kennt Spalte und Blatt),
+   *  nicht diese Datei (§3): sie ordnet an, sie entscheidet nicht. */
+  steckbrief?: ReactNode;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -113,7 +124,9 @@ export function LeserPanelZone({
 
   usePopoverAutoZu({
     offen, schliesse, wrapRef, panelRef,
-    modus: modal ? 'blatt' : 'beiwerk',
+    // Ä60 (c): die eigene Spur ist Layout, kein aufgezogenes Blatt — sie kennt
+    // darum keinen Aussenklick (Herleitung samt Messung in `usePopoverAutoZu`).
+    modus: modal ? 'blatt' : form === 'spalte' ? 'spalte' : 'beiwerk',
     // Die Öffner liegen ausserhalb von `wrapRef` (Kopfzeile, «Ansicht ▾»-Menü) —
     // ohne diese Ausnahme schlösse ihr `pointerdown` das Panel, das ihr `click`
     // gleich darauf wieder öffnete (Herleitung in `usePopoverAutoZu`).
@@ -126,6 +139,51 @@ export function LeserPanelZone({
   const revisionen = useRevisionen(erlassKey, zustand.jeGeoeffnet);
   const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
 
+  // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
+  //
+  // BEFUND (Integrations-Fund 17.8., @1440 reproduziert): die Übersichtsbox lebt
+  // in der Seitenleiste. Klappt man die Gliederung ein — die Geste, mit der man
+  // Breite für den Text gewinnt —, sinkt `[data-v3-uebersicht]` von 1 auf 0: der
+  // Steckbrief ist dann nicht unsichtbar, sondern aus dem DOM, also auch für
+  // Ctrl+F und Screenreader fort.
+  //
+  // ── WARUM KEIN VIERTER REITER ─────────────────────────────────────────────
+  // Der vierte Reiter «Steckbrief» war gebaut und ist AN DER MESSUNG gescheitert,
+  // nicht am Geschmack. Gemessen 17.8.2026 @1440 an der Reiter-Leiste des Panels:
+  //
+  //   Platz (clientWidth)            334 px
+  //   drei bestehende Reiter          269 px  (Entscheide 89 · Änderungen 94 ·
+  //                                            Materialien 87)
+  //   Abstände + Innenabstand          24 px
+  //   ⇒ Budget für einen vierten       41 px
+  //
+  // Kein ehrliches Wort passt: «Steckbrief» misst 82 px, «Übersicht» 78,
+  // «Herkunft» 73, «Quelle» 57, «Erlass» 55, «Norm» 51. Gewählt ist darum eine
+  // eigene ZEILE: dieselbe `<details>`-Klappe wie in der Leiste (§5 — EIN
+  // Bauteil, EINE Ableitung `uebersichtsAngaben`), zugeklappt genau eine Zeile
+  // hoch, ohne ein Fach in der Reiter-Leiste zu beanspruchen.
+  //
+  // ── Ä89 / P3 (3c) · WO SIE STEHT UND WANN — beides berichtigt 18.8.2026 ────
+  // (1) LAGE. Hier wickelte diese Datei den Steckbrief um JEDE Tafel; er lag
+  //     damit innerhalb des `role="tabpanel"`. Gemessen @1440: Klappe y = 245,
+  //     Reiter-Leiste y = 208 — die Zeile stand UNTER den Reitern, obwohl sie zu
+  //     keinem gehört. Der Abstrich stand als Rückgabe-Punkt schon hier
+  //     («die saubere Stelle wäre … `LeserPanel.tsx`»); er ist eingelöst: die
+  //     Zeile ist eine PROP des Panels und steht über der Reiter-Leiste.
+  // (2) WANN. Hier stand «der Defekt … sitzt auf dem Desktop mit eingeklappter
+  //     Gliederung» — der Bau montierte die Zeile aber in JEDER Lage, in der die
+  //     Seitenleiste ihn nicht trägt, also auch @390 bei geschlossenem
+  //     Gliederungs-Sheet (Architektur-Review P3 (3c)). DAS IST RICHTIG SO, und
+  //     der Kommentar sagt es jetzt: die Frage ist nicht «welche Breite», sondern
+  //     «steht die Leiste gerade irgendwo». Genau diese eine Frage beantwortet
+  //     der Rahmen als `leisteSteht` (Spalte ODER Sheet) und schickt das Ergebnis
+  //     als `steckbrief`-Prop herein; er entscheidet, diese Datei ordnet an (§3).
+  //     BEWACHT @390: `leser-v3-uebersicht` (c3) misst in allen drei Lagen —
+  //     nur Panel, nur Blatt, beides —, dass der Konsolidierungs-Vorbehalt genau
+  //     EINMAL auf der Seite steht (Ä28), und zwar im Erlass-Kopf. Gezählt wird
+  //     seit der Integration A×B (18.8.2026) die SEITE statt des Box-Fachs
+  //     `[data-v3-uebersicht-warnung]`: Ä81 aus Nachzug B hat der Box die
+  //     `warnung`-Ausgabe genommen, das Fach trägt nur noch den `vorbehalt`.
   const inhalt = {
     entscheide: (
       <PanelEntscheide
@@ -146,7 +204,19 @@ export function LeserPanelZone({
   // ── Die Fläche ────────────────────────────────────────────────────────────
   // Anschlag-Kante und Deckel je Gestalt. Alle drei Zweige sind `fixed` bzw.
   // `absolute`, brauchen also keinen Platz im Fluss (§15/2, CLS 0).
-  const flaeche = form === 'rechts' && !imPaneBlatt
+  const flaeche = form === 'spalte' && !imPaneBlatt
+    // Ä60 (c) · D breit · EIGENE Spur: das Blatt liegt NICHT mehr über dem Text,
+    // sondern neben ihm. Es ist damit das einzige der drei Bilder, das im Fluss
+    // steht — `sticky` statt `fixed`, und die Höhe rechnet aus derselben Quelle
+    // wie die Gliederungsspalte gegenüber (`--nt-stick`, Risiko R1/LM-003).
+    ? {
+      klassen: 'sticky flex min-h-0 flex-col self-start',
+      stil: {
+        top: 'var(--nt-stick)',
+        maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)',
+      } as CSSProperties,
+    }
+    : form === 'rechts' && !imPaneBlatt
     // D · rechts angeschlagen, von der Kopf-Unterkante bis zum Fensterboden.
     ? {
       klassen: 'fixed bottom-0 right-0 z-50 w-[22rem] max-w-[calc(100vw-2rem)] p-2',
@@ -175,7 +245,11 @@ export function LeserPanelZone({
       // (derselbe Mechanismus, den der Rahmen für Toast/Weiterlesen beschreibt).
       // Die DOM-Vorfahrenkette bleibt unberührt: `data-v3-pane` trägt weiter
       // (H2-Befund), und die CSS-Variable unten erbt an die Kinder.
-      className="contents"
+      // Ä60 (c): GENAU EINE Lage braucht die Box — die eigene Spur. Dort ist der
+      // Träger das Grid-Kind, und `contents` liesse die Spur ins Leere laufen.
+      // Geschlossen bleibt er auch dort ohne Box: sonst stünde eine 22-rem-Spur
+      // samt `gap-8` im Bild, in der nichts steht.
+      className={form === 'spalte' && offen ? 'min-w-0' : 'contents'}
       // Ä5: der BEHÄLTER nennt seine Fläche (dieselbe Zusage wie beim
       // Gliederungs-Blatt) — sonst malte ein klebender Sockel darin `paper` auf
       // ein `paper-raised`-Blatt.
@@ -211,7 +285,9 @@ export function LeserPanelZone({
               // ohne Geste (§8).
               kopfExtra={form === 'unten'
                 ? <div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-line" />
-                : undefined} />
+                : undefined}
+              // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
+              steckbrief={steckbrief} />
           </div>
         </>
       )}

@@ -416,4 +416,194 @@
       "konsolfehler": 0
     }
   ]
+,
+  "h4ii": {
+    "erzeugt": "2026-08-17T21:46:28.465Z",
+    "anlass": "H4-Vorbereitung II — Kopf/Panel (NM-2, Ä46, Ä79), Branch feat/leser-v3-h4v2-kopf",
+    "basis": "http://localhost:4504 (vite preview gegen frisch gebautes dist/ im Worktree LexMetrik-h4k)",
+    "erlass": "STPO, Anker #art-429",
+    "laeufe": 3,
+    "messbedingung": "macOS Apple Silicon, je Lauf frischer Browser-Kontext (kalt), ungedrosselt, keine Parallel-Last; Zeit vom ersten Tap bis die ERSTE Entscheid-Gruppe im Panel sichtbar ist",
+    "methoden_hinweis": "EIGENE Messreihe, nicht fortgeschrieben aus ergebnisse[] oben: das Skript der Reihe vom 17.8. liegt nicht im Repo, und sein Ziel-Kriterium war ein anderes (msMedian 1233 auf D gegen 134 hier). Vergleichbar sind darum die SCHRITTE (Taps), nicht die absoluten ms; die ms sind innerhalb dieser Reihe vorher/nachher vergleichbar.",
+    "vorher": [
+      {
+        "breiteTag": "D",
+        "breitePx": 1280,
+        "huelle": "v3",
+        "aufgabe": "NM-2",
+        "erreicht": true,
+        "laeufeOk": "3/3",
+        "schritte": 1,
+        "klicks": 1,
+        "tasten": 0,
+        "msMedian": 134,
+        "msAlle": [
+          137,
+          134,
+          133
+        ],
+        "protokoll": [
+          "Tap: Zähler in der Kopfzeile"
+        ],
+        "ruhe": {
+          "panelOeffnerSichtbar": 1,
+          "panelOeffnerImDom": 1,
+          "zaehlerSichtbar": 1,
+          "randlascheSichtbar": 0,
+          "kopfArtikelImDom": 1,
+          "kopfzeileElemente": 2
+        },
+        "konsolfehler": 0
+      },
+      {
+        "breiteTag": "S",
+        "breitePx": 720,
+        "huelle": "v3",
+        "aufgabe": "NM-2",
+        "erreicht": true,
+        "laeufeOk": "3/3",
+        "schritte": 1,
+        "klicks": 1,
+        "tasten": 0,
+        "msMedian": 122,
+        "msAlle": [
+          114,
+          122,
+          132
+        ],
+        "protokoll": [
+          "Tap: Zähler in der Kopfzeile"
+        ],
+        "ruhe": {
+          "panelOeffnerSichtbar": 1,
+          "panelOeffnerImDom": 1,
+          "zaehlerSichtbar": 1,
+          "randlascheSichtbar": 0,
+          "kopfArtikelImDom": 1,
+          "kopfzeileElemente": 2
+        },
+        "konsolfehler": 0
+      },
+      {
+        "breiteTag": "H",
+        "breitePx": 390,
+        "huelle": "v3",
+        "aufgabe": "NM-2",
+        "erreicht": true,
+        "laeufeOk": "3/3",
+        "schritte": 2,
+        "klicks": 2,
+        "tasten": 0,
+        "msMedian": 116,
+        "msAlle": [
+          104,
+          161,
+          116
+        ],
+        "protokoll": [
+          "Tap: «···» (Ansicht-Menü)",
+          "Tap: «Entscheide & Kontext …»"
+        ],
+        "ruhe": {
+          "panelOeffnerSichtbar": 0,
+          "panelOeffnerImDom": 0,
+          "zaehlerSichtbar": 0,
+          "randlascheSichtbar": 0,
+          "kopfArtikelImDom": 1,
+          "kopfzeileElemente": 2
+        },
+        "konsolfehler": 0
+      }
+    ],
+    "nachher": [
+      {
+        "breiteTag": "D",
+        "breitePx": 1280,
+        "huelle": "v3",
+        "aufgabe": "NM-2",
+        "erreicht": true,
+        "laeufeOk": "3/3",
+        "schritte": 1,
+        "klicks": 1,
+        "tasten": 0,
+        "msMedian": 125,
+        "msAlle": [
+          121,
+          125,
+          126
+        ],
+        "protokoll": [
+          "Tap: Zähler in der Kopfzeile"
+        ],
+        "ruhe": {
+          "panelOeffnerSichtbar": 1,
+          "panelOeffnerImDom": 1,
+          "zaehlerSichtbar": 1,
+          "randlascheSichtbar": 0,
+          "kopfArtikelImDom": 1,
+          "kopfzeileElemente": 2
+        },
+        "konsolfehler": 0
+      },
+      {
+        "breiteTag": "S",
+        "breitePx": 720,
+        "huelle": "v3",
+        "aufgabe": "NM-2",
+        "erreicht": false,
+        "laeufeOk": "2/3",
+        "schritte": 1,
+        "klicks": 1,
+        "tasten": 0,
+        "msMedian": 142,
+        "msAlle": [
+          25045,
+          138,
+          142
+        ],
+        "protokoll": [
+          "Tap: Zähler in der Kopfzeile",
+          "ABBRUCH: TimeoutError: locator.waitFor: Timeout 25000ms exceeded.\nCall log:\n  - waiting for locator('[data-v3-panel] [data-v3-panel-gruppe]').first() to be visible\n"
+        ],
+        "ruhe": {
+          "panelOeffnerSichtbar": 1,
+          "panelOeffnerImDom": 1,
+          "zaehlerSichtbar": 1,
+          "randlascheSichtbar": 0,
+          "kopfArtikelImDom": 1,
+          "kopfzeileElemente": 2
+        },
+        "konsolfehler": 5
+      },
+      {
+        "breiteTag": "H",
+        "breitePx": 390,
+        "huelle": "v3",
+        "aufgabe": "NM-2",
+        "erreicht": true,
+        "laeufeOk": "3/3",
+        "schritte": 1,
+        "klicks": 1,
+        "tasten": 0,
+        "msMedian": 127,
+        "msAlle": [
+          127,
+          134,
+          126
+        ],
+        "protokoll": [
+          "Tap: Zähler in der Kopfzeile"
+        ],
+        "ruhe": {
+          "panelOeffnerSichtbar": 1,
+          "panelOeffnerImDom": 1,
+          "zaehlerSichtbar": 1,
+          "randlascheSichtbar": 0,
+          "kopfArtikelImDom": 1,
+          "kopfzeileElemente": 2
+        },
+        "konsolfehler": 0
+      }
+    ]
+  }
 }

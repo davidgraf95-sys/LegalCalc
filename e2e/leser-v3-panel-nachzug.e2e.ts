@@ -144,7 +144,14 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     await warteLeser(page)
     await panelAufziehen(page)
 
-    const blatt = page.locator('[data-v3-panel-form="rechts"]')
+    // ── §6.3-ANPASSUNG, DEKLARIERT (Ä60 (c), David-Entscheid 17.8.2026) ──────
+    // Der Fall stand auf `[data-v3-panel-form="rechts"]`. @1440 trägt die Fläche
+    // seit dem breiteren Rahmen die Gestalt `spalte`. Die vier Zusagen dieses
+    // Falls — beginnt unter dem Kopf · kein Scrim · `role=region` · der Lesetext
+    // bleibt anklickbar — gelten für BEIDE Gestalten und werden hier unverändert
+    // gemessen, nur an der Fläche statt an einem Gestalt-Namen. WELCHE Gestalt
+    // auf welcher Breite gilt, prüft `leser-v3-rahmen.e2e.ts`.
+    const blatt = page.locator('[data-v3-panel-form]')
     await expect(blatt).toBeVisible()
     const kopf = (await page.locator('[data-v3-kopf]').boundingBox())!
     const box = (await blatt.boundingBox())!
@@ -153,7 +160,10 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // ── DIE HARTE ZUSAGE: KEIN BEDIENELEMENT DES KOPFS LIEGT UNTER DEM BLATT ──
     // Das ist der Befund Ä52 wörtlich («deckt den V3-Kopf samt Öffner,
     // ‹Ansicht ▾›, ✕»), und er ist ohne Toleranz messbar.
-    for (const griff of ['[data-v3-panel-zaehler]', '[data-v3-ansicht]', '[data-v3-kopf-schliessen]']) {
+    // Ä87/Ä91 (H4-Nachzug 18.8.2026): `[data-v3-kopf-schliessen]` stand hier als
+    // dritter Griff — das Kopf-✕ ist gestrichen (Herleitung `v3/kopfStufen.ts`),
+    // der ☰ tritt an seine Stelle, sobald die Gliederung nicht als Spalte steht.
+    for (const griff of ['[data-v3-panel-zaehler]', '[data-v3-ansicht]']) {
       const g = (await page.locator(griff).boundingBox())!
       expect(box.y, `${griff} liegt unter dem Blatt (Griff-Unterkante ${g.y + g.height})`)
         .toBeGreaterThanOrEqual(g.y + g.height)
@@ -181,8 +191,11 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // ein Klick in den Lesetext erreicht den Text. Lag dort ein Scrim, bricht
     // Playwright mit «subtree intercepts pointer events» ab — genau das ist die
     // Messung, und sie ist stärker als jedes Attribut.
-    // (Der Klick schliesst das Beiwerk-Blatt per Aussenklick — erwartetes
-    // Verhalten eines nicht-modalen Panels und darum am Ende des Falls.)
+    // (In der Gestalt `rechts` schliesst der Klick das Beiwerk-Blatt per
+    // Aussenklick; in der Gestalt `spalte` nicht — sie ist Layout und kein
+    // aufgezogenes Blatt, Herleitung samt Messung in `usePopoverAutoZu`. Für die
+    // Messung hier ist beides gleich: geprüft wird, dass NICHTS den Zeiger
+    // abfängt. Der Klick steht darum weiterhin am Ende des Falls.)
     const artikel = page.locator('#lc-lesespalte article').first()
     await artikel.scrollIntoViewIfNeeded()
     await expect(artikel).toBeVisible()
