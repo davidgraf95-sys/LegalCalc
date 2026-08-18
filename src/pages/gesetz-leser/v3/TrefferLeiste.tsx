@@ -126,9 +126,21 @@ export function TrefferLeiste({
           {hatSprung && (
             // Ä103: `whitespace-nowrap` hält Wort und Zahlen zusammen
             // (dieselbe Ä30-Regel wie an der Zählzeile darüber).
+            // ── P1-2 (Bug-Check-Nachzug 18.8.2026) · «FUNDSTELLE 0 VON 88» ──
+            // GEMESSEN direkt nach einer Suche, vor dem ersten Sprung: die
+            // Zeile las «Fundstelle 0 von 88». Es GIBT keine nullte Fundstelle
+            // — die Zeile beantwortete «wo bin ich» mit einer Position, die
+            // der Erlass nicht kennt (§8), und weil sie `aria-live` trägt,
+            // sprach ein Screenreader sie bei jedem Tastendruck mit aus.
+            // JETZT sagt sie in diesem Zustand, was wirklich der Fall ist —
+            // es ist noch keine gewählt — und wiederholt dahinter den Umfang,
+            // damit die Live-Ansage für sich allein verständlich bleibt (wer
+            // sie hört, sieht die Zählzeile darüber nicht).
             <p data-treffer-position role="status" aria-live="polite"
               className="min-h-4 whitespace-nowrap text-micro tabular-nums text-ink-500">
-              Fundstelle <span className="num">{laufend}</span> von <span className="num">{fundstellen}</span>
+              {laufend > 0
+                ? <>Fundstelle <span className="num">{laufend}</span> von <span className="num">{fundstellen}</span></>
+                : <>keine gewählt <span aria-hidden className="text-ink-300">·</span> <span className="num">{fundstellen}</span> {fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</>}
             </p>
           )}
         </div>

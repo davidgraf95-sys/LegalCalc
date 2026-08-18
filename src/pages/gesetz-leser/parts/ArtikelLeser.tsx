@@ -5,6 +5,7 @@ import { type InternRefs } from '../../../components/NormText';
 import { trenneAenderungshistorie, labelMitBereich, artikelGanzAufgehoben } from '../../../lib/normtext/darstellung';
 import type { Fussnote } from '../../../lib/normtext/browse';
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
+import { NEUER_TAB } from '../benennung';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { MehrKante } from '../../../components/verzahnung/MehrKante';
@@ -515,7 +516,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 {amtlich && (
                   <a href={amtlich} target="_blank" rel="noopener noreferrer"
                     className="text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
-                    aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen (neues Fenster)`}
+                    aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen ${NEUER_TAB}`}
                     // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel — der
                     // sichtbare Text folgt dem `aria-label` und dem `title`
                     // darüber, die schon immer «Amtliche Fassung» sagten.

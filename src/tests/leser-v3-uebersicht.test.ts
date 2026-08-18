@@ -465,3 +465,52 @@ describe('P3-1 · Erfassungs-Hinweis: je Stufe die Aussage, die die Daten decken
     expect(satz).not.toMatch(/\bAuswahl\b|\bdünn\b/);
   });
 });
+
+// ═══ P3-4 (Architektur-Gegenprüfung 18.8.2026) · DIE DREI UNGEDECKTEN ═══════
+//     ZWEIGE VON `datumsForm`
+//
+// Die Gegenprüfung hat an `v3/datumsForm.ts` keine Fehlfunktion gefunden,
+// sondern eine LÜCKE IN DER DECKUNG: die drei Zweige, die den amtlichen
+// Wortlaut vor einer Umschreibung schützen, waren von keiner Sonde berührt —
+// der Rückfall auf «Erlassdatum», die französische Monatstabelle und die
+// Plausibilitätsschranke. Genau diese drei entscheiden, ob ein Datum
+// UMGESCHRIEBEN oder unangetastet gelassen wird; ein stiller Fehler dort
+// erzeugt eine falsche amtliche Angabe (§1/§7), keinen Schönheitsfehler.
+//
+// Diese Sonden sind ab dem ersten Lauf grün — sie beweisen keinen Fix, sie
+// halten Verhalten fest, das heute nur der Code behauptet. Rot zu bekommen
+// (§6.7, je einzeln nachgefahren 18.8.2026): in `datumsAngabe` den Rückfall
+// entfernen und immer «Erlass vom» setzen ⇒ (a); in `MONATE` die
+// französischen Einträge streichen ⇒ (b); in `baueDatum` die Schranke
+// `tag > 31` entfernen ⇒ (c).
+describe('P3-4 · datumsForm: wann ein Datum NICHT umgeschrieben wird', () => {
+  const datumsZeile = (erlassdatum: string) => uebersichtsAngaben(eingabe({
+    erlass: erlassBauen({}), kopf: { erlassdatum } as UebersichtsEingabe['kopf'],
+  })).zeilen.find((z) => z.id === 'datum');
+
+  it('(a) Rückfall: unlesbarer Wortlaut behält Etikett «Erlassdatum» und bleibt roh', () => {
+    const z = datumsZeile('vom Anfang des Jahres 1907');
+    expect(z?.label).toBe('Erlassdatum');
+    expect(z?.wert).toBe('Anfang des Jahres 1907');
+    // Kein `tabular-nums` an einem Wort — die Zahlen-Kante hätte nichts,
+    // woran sie ausrichten könnte (Ä80 in umgekehrter Richtung).
+    expect(z?.ziffern).toBeFalsy();
+  });
+
+  it('(b) französische Monatsnamen werden numerisch, fremde nie geraten', () => {
+    expect(datumsZeile('du 5. octobre 2007')).toMatchObject({
+      label: 'Erlass vom', wert: '05.10.2007', ziffern: true,
+    });
+    expect(datumsZeile('du 5. décembre 1996')?.wert).toBe('05.12.1996');
+    // Ein Monatsname AUSSERHALB der Tabelle wird nie geraten (§7).
+    expect(datumsZeile('du 5. Wintermonat 1907')?.label).toBe('Erlassdatum');
+  });
+
+  it('(c) unplausible Tages-/Monatszahl: lieber der amtliche Wortlaut als ein gebogenes Datum', () => {
+    for (const roh of ['vom 32. Oktober 2007', 'vom 32.10.2007', 'vom 5.13.2007', 'vom 0. Oktober 2007']) {
+      const z = datumsZeile(roh);
+      expect(z?.label, `«${roh}» wurde umgeschrieben`).toBe('Erlassdatum');
+      expect(z?.ziffern).toBeFalsy();
+    }
+  });
+});

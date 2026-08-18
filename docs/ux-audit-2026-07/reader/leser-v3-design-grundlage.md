@@ -389,7 +389,14 @@ V3-Fläche. Ausdrücklich **nicht** erfasst und darum weiter mit den alten Wört
 unterwegs:
 
 - die eingefrorene Ist-Hülle (`inhalt-*.tsx`, `LeserAnsichtMenu.tsx`,
-  `parts/ErlassUebersicht.tsx`) — sie bleibt bis **H5** unangetastet (FL-4);
+  `parts/ErlassUebersicht.tsx`) — sie bleibt bis **H5** unangetastet (FL-4).
+  **Eine deklarierte Ausnahme (P1-4, 18.8.2026):** der Fedlex-Link der
+  V1-Übersicht hiess weiter «↗ geltende Fassung», während der V3-Kopf
+  drei Zentimeter daneben «Amtliche Fassung ↗» sagte — derselbe Link auf
+  dieselbe URL unter zwei Namen. FL-4 schützt die *Mechanik* der Ist-Hülle,
+  nicht eine Beschriftung, die falsch orientiert; geändert ist genau dieses
+  eine Wort, aus der geteilten Quelle `src/pages/gesetz-leser/benennung.ts`
+  (dort stehen die Wörter, die über die Hüllen-Grenze laufen — und nur die);
 - die App-Rahmen (`components/layout/**` Topbar/Pane-Griffleiste,
   `components/NormPopover.tsx`, `components/vorlagen/NormChip.tsx`) — dort
   stehen «Reiter & Split-View», «Suchen oder Norm springen …» und «↗ geltende

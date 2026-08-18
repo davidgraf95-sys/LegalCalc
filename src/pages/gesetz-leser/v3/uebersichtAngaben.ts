@@ -5,15 +5,18 @@ import { erfassungsgrad, type Erfassungsgrad } from '../../../lib/normtext/erfas
 import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
+import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../benennung';
 import { formatiereDatum, kennungText, verifiziertesSachgebiet } from '../helpers';
 import { teilerfassung, erlassOrgan } from '../erlassUebersichtDaten';
 import { erlassArt, type BestimmungsWort } from './erlassAnsicht';
 import { datumsAngabe } from './datumsForm';
 
-// Weiter von hier aus greifbar: die Datums-Schreibung ist eine eigene Sache und
-// lebt seit Ä107 in `./datumsForm` — die Sonden der Box prüfen sie über diesen
-// Namen (§5, EIN Zugang statt zweier Importpfade).
-export { datumsAngabe, numerischesDatum } from './datumsForm';
+// P3-3 (Architektur-Gegenprüfung 18.8.2026): hier stand ein Re-Export
+// `export { datumsAngabe, numerischesDatum } from './datumsForm'` mit der
+// Begründung, die Sonden der Box griffen darüber zu. Gemessen: KEIN Aufrufer
+// im Repo, weder Quelle noch Test — die Begründung war nie eingelöst, und ein
+// zweiter Importpfad auf dieselbe Sache ist genau das, was §5 verbietet.
+// Wer die Datums-Schreibung braucht, importiert sie aus `./datumsForm`.
 
 // ═══ Übersichtsbox → Angaben (David-Auftrag 17.8.2026, «orientiere dich an
 //     fedlex») ══════════════════════════════════════════════════════════════
@@ -118,7 +121,9 @@ export interface UebersichtLink {
   id: string;
   label: string;
   href: string;
-  /** Zeichen vor dem Label: ↗ verlässt die Seite, ⬇ liefert eine Datei. */
+  /** Das Zeichen am Label: «↗» verlässt die Seite, «⬇» liefert eine Datei.
+   *  WO es steht, entscheidet die Darstellung (Ä110-Rest, `./UebersichtBox`):
+   *  «↗» folgt dem Ziel, «⬇» geht ihm voran. Hier steht nur, WELCHES. */
   zeichen: '↗' | '⬇';
 }
 
@@ -350,7 +355,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   if (erlass.quelleUrl) {
     links.push({
       id: 'quelle', zeichen: '↗',
-      label: lebt ? 'Amtliche Fassung' : 'Amtliche (aufgehobene) Fassung',
+      label: lebt ? AMTLICHE_FASSUNG : AMTLICHE_FASSUNG_AUFGEHOBEN,
       href: erlass.quelleUrl,
     });
   }
