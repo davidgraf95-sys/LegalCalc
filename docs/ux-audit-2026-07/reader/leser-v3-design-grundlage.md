@@ -365,9 +365,12 @@ alten Wörter zitieren.
 | Rechtsprechungs-Fläche | **Rechtsprechung** (Chip konstant) | — | Ä115/Ä123 |
 | Schalter für die Fassungs-Zeile | **Fassung** | Änderungsvermerke | Ä116 |
 | Gliederungs-Griff (☰ des Lesers) | **Gliederung öffnen / ausblenden** | Gliederung (nacktes Substantiv) | Ä111 |
-| Suchfeld des Lesers | **Im ‹Kürzel› suchen oder «Art. 1» …** | Suchen oder «Art. 1» … | Ä112 |
+| Suchfeld — Platzhalter | **Im Erlass suchen oder «Art. 1» …** (Beispiel erlassgerecht, «§ 1» am §-Erlass) | Suchen oder «Art. 1» … · Im ‹Kürzel› suchen … | Ä112/Ä126 |
+| Suchfeld — zugänglicher Name | **Im Erlass ‹Kürzel› suchen oder zu einer Bestimmung springen** | Im ‹Kürzel› suchen … | Ä126 |
 | Suchbereich | Alles · **Überschriften** · Text · Fussnoten | Titel | Ä120 |
-| Trefferzähler | **Fundstelle n von m** | –/88 | Ä103 |
+| Trefferzähler — laufende Stelle | **Fundstelle n von m** · vor dem ersten Sprung **keine gewählt · m Fundstellen** | –/88 · «Fundstelle 0 von m» | Ä103/P1-2 |
+| Externer Link, der auswärts öffnet (aria) | **(neuer Tab)** | (neues Fenster) · (öffnet in neuem Tab) | Ä127 |
+| Schalter für die Rechtsprechungs-Zone | **Rechtsprechung im Kopf** | Rechtsprechung in der Kopfzeile · Rechtsprechung anzeigen | Ä115/Ä128 |
 | Kopf-Standausweis | **Kopie vom …** | Snapshot | — |
 | Erlassart im Steckbrief | **Erlassart** (nur mit bekannter Grundart) | Art · «Art: Kanton FR» | Ä108 |
 

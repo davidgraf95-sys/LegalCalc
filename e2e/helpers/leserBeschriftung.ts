@@ -13,7 +13,7 @@
 // `docs/ux-audit-2026-07/reader/leser-v3-design-grundlage.md`, Kap. 11):
 //
 //   Ä114  Ansicht-Menü      V3 «Ansicht»                    V1 «Darstellungsoptionen»
-//   Ä112  Leser-Suchfeld    V3 «Im ‹Kürzel› suchen oder …»  V1 «Im Gesetz suchen»
+//   Ä126  Leser-Suchfeld    V3 «Im Erlass ‹Kürzel› suchen …»  V1 «Im Gesetz suchen»
 //
 // V1 bleibt bis H5 unangetastet (FL-4) — die Abweichung ist also Absicht und
 // kein Rückstand. Sie verschwindet, wenn die Ist-Hülle fällt; dann fällt diese
@@ -61,19 +61,19 @@ export const ANSICHT_NAME = /^(Ansicht|Darstellungsoptionen)$/;
 /**
  * Der zugängliche Name des Leser-Suchfelds.
  *
- * V3 nennt seit Ä112 den Erlass («Im StPO suchen oder zu einer Bestimmung
- * springen»), V1 sagt «Im Gesetz suchen». Gemeinsam ist beiden der Kern «Im …
- * suchen» — daran hängt das Muster, und zwar mit `Im` als Anker: ein blosses
- * /suchen/ träfe auch das APP-Suchfeld der Topbar («Suchen oder Norm springen
- * …») und damit genau die Verwechslung, die Ä112 gerade behoben hat.
+ * V3 nennt seit Ä112/Ä126 den Erlass («Im Erlass StPO suchen oder zu einer
+ * Bestimmung springen»), V1 sagt «Im Gesetz suchen». Gemeinsam ist beiden der
+ * Kern «Im … suchen» — daran hängt das Muster, und zwar mit `Im` als Anker: ein
+ * blosses /suchen/ träfe auch das APP-Suchfeld der Topbar («Suchen oder Norm
+ * springen …») und damit genau die Verwechslung, die Ä112 behoben hat.
+ *
+ * Ä126 hat den Wortlaut der V3-Hälfte verschoben (Kürzel raus aus dem
+ * sichtbaren Platzhalter, «Erlass» als Substantiv davor) — das Muster blieb
+ * dabei UNVERÄNDERT gültig. Das ist kein Zufall, sondern der Grund, warum hier
+ * ein Namens-Muster steht und kein Literal: die Beschriftung darf sich
+ * bewegen, solange sie ihre Sache noch benennt.
  */
 export const LESER_SUCHFELD_NAME = /^Im .+ suchen/;
-
-/**
- * Der Öffner-Knopf des Suchfelds (nur V1/@390 — V3 hat das Feld offen im Kopf).
- * Gleicher Wortlaut wie das Feld selbst, darum dasselbe Muster.
- */
-export const LESER_SUCHE_KNOPF_NAME = /^Im .+ suchen$/;
 
 /**
  * Der Schalter für die Fassungs-Zeile am Artikelfuss.

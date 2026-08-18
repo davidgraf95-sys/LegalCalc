@@ -1,7 +1,7 @@
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
-import { erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
+import { erfassungsgrad, type Erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
 import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
@@ -194,6 +194,38 @@ export function ruheZeile(
 }
 
 /**
+ * §8 · Was die Box über die ERFASSUNG der kantonalen Sammlung sagt, aus der
+ * dieser Erlass stammt — eine reine Funktion des Erfassungsgrads.
+ *
+ * ── P3-1 (Architektur-Gegenprüfung 18.8.2026) · EINE LATENTE UNWAHRHEIT ─────
+ * Ä122 hatte den Satz auf «… der Bestand ist nicht vollständig» festgeschrieben
+ * — UNABHÄNGIG von `grad.stufe`. Heute fällt das nicht auf, weil
+ * `ENUMERATIONS_BELEGE` leer ist und darum kein Kanton die Stufe `vollstaendig`
+ * erreicht. Es ist aber genau die Sorte Aussage, die beim ERSTEN hinterlegten
+ * Enumerations-Beleg still falsch wird: die Box behauptete dann eine Lücke, die
+ * die Daten ausdrücklich verneinen (§8 «nie mehr und nie weniger sagen, als
+ * belegt ist»). Ein §8-Satz, der die Stufe ignoriert, aus der er entsteht, ist
+ * keine Auskunft, sondern eine Konstante mit Auskunfts-Anstrich.
+ *
+ * Eigene, exportierte Funktion und nicht ein `if` im Rumpf: nur so lässt sich
+ * die `vollstaendig`-Lage heute überhaupt prüfen — `uebersichtsAngaben` käme
+ * ohne einen Stub in `erfassungsgrad` nie dorthin (Sonde in
+ * `src/tests/leser-v3-uebersicht.test.ts`, rot gefahren 18.8.2026).
+ *
+ * Sprache wie in Ä122: kein Hausjargon, keine interne Stufen-Bezeichnung
+ * («dünn»/«Auswahl» bleiben der Kantonsliste, §5).
+ */
+export function erfassungsgradSatz(grad: Erfassungsgrad): string {
+  // `vollstaendig` entsteht NUR mit hinterlegtem Enumerations-Beleg (belegtes
+  // amtliches Total N, Quelle, Stand — `erfassungsgrad.ts`). Dann ist die
+  // Vollständigkeit belegt und nicht geschätzt, und die Box darf sie sagen.
+  if (grad.stufe === 'vollstaendig') {
+    return `Aus dem Kanton ${grad.kanton} sind alle ${grad.n} Erlasse der amtlichen Sammlung erfasst.`;
+  }
+  return `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`;
+}
+
+/**
  * Erlass → Angaben der Übersichtsbox. Erlass-neutral: jede Zeile entsteht aus
  * dem Datenmodell und entfällt, wo der Erlass die Angabe nicht trägt — kein
  * `if (bund)`, keine leere Wertspalte (Fundament-Auflage 2, Auftrag David
@@ -347,11 +379,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // gerade; `STUFE_WORT` selbst bleibt, es ist an der Kantonsliste richtig (§5).
   const grad = erlass.kanton && e.kantonErlassAnzahl != null
     ? erfassungsgrad(erlass.kanton, e.kantonErlassAnzahl) : null;
-  if (grad) {
-    hinweise.push(
-      `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`,
-    );
-  }
+  if (grad) hinweise.push(erfassungsgradSatz(grad));
   if (e.bestimmungsEtikettStatus === 'entwurf') {
     hinweise.push(
       `Die Bestimmungen dieses Erlasses sind hier als «${e.bestimmungsWort}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,

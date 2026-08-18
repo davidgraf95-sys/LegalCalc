@@ -1,4 +1,5 @@
 import { useRef, type RefObject } from 'react';
+import { suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 
 // ─── EIN Feld für Suchen UND Springen (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 4) ────
 //
@@ -30,7 +31,10 @@ import { useRef, type RefObject } from 'react';
 
 export function SuchSprungFeld({
   wert, setzeWert, loeseArtikel, onSprung, feldRef, onVor, onZurueck, hatTreffer = false,
-  platzhalter = 'Im Gesetz suchen …', ariaName = 'Im Gesetz suchen oder zu einer Bestimmung springen', escLeert = true,
+  // Ä126: die Vorgaben sind KEINE dritten Literale, sondern dieselbe Quelle
+  // ohne Erlass-Kürzel (§5) — sonst trüge ein Aufrufer ohne Erlass die Wörter
+  // der Ist-Hülle («Im Gesetz suchen») mitten in die V3-Fläche.
+  platzhalter = suchPlatzhalter(null), ariaName = suchFeldName(), escLeert = true,
 }: {
   wert: string;
   setzeWert: (v: string) => void;

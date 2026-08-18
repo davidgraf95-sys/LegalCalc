@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  ruheZeile, uebersichtsAngaben, type UebersichtsEingabe,
+  erfassungsgradSatz, ruheZeile, uebersichtsAngaben, type UebersichtsEingabe,
 } from '../pages/gesetz-leser/v3/uebersichtAngaben';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
@@ -428,5 +428,40 @@ describe('uebersichtsAngaben — die Grenzen, die §8 verlangt', () => {
     const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({}) }));
     const alles = [...a.zeilen.map((z) => z.wert), ...a.hinweise, a.warnung ?? ''].join(' ');
     expect(alles).not.toMatch(/Massgeblich ist stets/i);
+  });
+});
+
+// ═══ P3-1 (Architektur-Gegenprüfung 18.8.2026) · DER §8-SATZ FOLGT DER STUFE ═
+//
+// BEFUND: der Erfassungs-Hinweis der Box («… der Bestand ist nicht
+// vollständig») stand fest, unabhängig von `grad.stufe`. Heute erreicht kein
+// Kanton die Stufe `vollstaendig` (`ENUMERATIONS_BELEGE` ist leer, K-2c) — die
+// Unwahrheit ist also LATENT und wird beim ersten hinterlegten
+// Enumerations-Beleg still scharf. Genau darum wird sie hier gegen einen
+// STUB geprüft und nicht gegen die heutigen Daten: eine Sonde, die erst rot
+// wird, wenn der Fehler schon ausgeliefert ist, bewacht nichts (§6.7).
+//
+// Rot gefahren 18.8.2026 mit dem Vorzustand: bei Stufe `vollstaendig` sagte der
+// Satz «… sind bisher 859 Erlasse erfasst — der Bestand ist nicht vollständig.»
+describe('P3-1 · Erfassungs-Hinweis: je Stufe die Aussage, die die Daten decken', () => {
+  it('unvollständige Sammlung (Auswahl/dünn): der Vorbehalt steht da', () => {
+    for (const stufe of ['auswahl', 'duenn'] as const) {
+      const satz = erfassungsgradSatz({ kanton: 'BS', n: 859, stufe });
+      expect(satz).toContain('bisher');
+      expect(satz).toContain('nicht vollständig');
+    }
+  });
+
+  it('belegt vollständige Sammlung: KEIN Vorbehalt, und das Total ist belegt', () => {
+    const satz = erfassungsgradSatz({
+      kanton: 'BS', n: 859, stufe: 'vollstaendig',
+      belegtN: 859, belegStand: '2026-08-18', belegQuelle: 'https://www.gesetzessammlung.bs.ch/',
+    });
+    expect(satz, 'die Box behauptet eine Lücke, die der Enumerations-Beleg verneint (§8)')
+      .not.toContain('nicht vollständig');
+    expect(satz).toContain('859');
+    // Kein Hausjargon — «vollständig»/«Auswahl»/«dünn» sind interne Stufenworte
+    // und bleiben der Kantonsliste (Ä122/§5).
+    expect(satz).not.toMatch(/\bAuswahl\b|\bdünn\b/);
   });
 });
