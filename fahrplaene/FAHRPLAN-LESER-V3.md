@@ -1822,12 +1822,12 @@ unter der 420-Zeilen-Sonde bleibt und der Adapter der grösste Baustein.
 |---|---|---|
 | ~~**Ä79**~~ | @1440 mit eingeklappter Gliederung stehen ZWEI ☰ (Kopf-☰ x = 1117 + Schiene x = 184) für dieselbe Handlung | ✅ **erledigt 17./18.8.2026 mit H4-II** — der Kopf-☰ weicht, solange die beschriftete Schiene steht; Vermerk am Ende von Kap. 7, bewacht von `leser-v3-h4-kopfwege` (c)/(c2) |
 | ~~**Ä80**~~ | Steckbrief-Reihenfolge Erlassdatum → In Kraft → Stand; Präposition «vom» steht im WERT statt im Etikett | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten |
-| **Ä81** | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | H4-Entscheid «nur der Kopf warnt» |
+| ~~**Ä81**~~ | Steckbrief dupliziert den Erlass-Kopf auf dem Ankunftsbild (Stand 3×) | ✅ **erledigt 18.8.2026 mit dem H4-Nachzug Teil B** — gemessen stand die Warnzeile ZWEIMAL gleichzeitig sichtbar (Leiste + Kopf); jetzt warnt nur der Kopf. Der «Stand» im Steckbrief BLEIBT (Fedlex-Steckbrief). Entscheid mit Provenienz in Kap. 9, Messung im Vermerk «H4-Nachzug — Teil B» |
 | **Ä82** | Zwei Linien zwischen Ingress und Sektionskopf | S-Strang |
 | **Ä83** | App-Topbar @390: leeres 44-px-Suchkästchen (betrifft V1 ebenso) | H4 / `layout` |
-| **Ä84** | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | ⏳ **teilweise 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Erledigt: das Segment (gemessen 688 px, nicht 680) hat einen Deckel. **OFFEN und jetzt begründet:** das allein stehende «↑ Anfang» widerspricht **Ä32**, das den Knopf im Treffer-Blatt ausdrücklich behält — **Entscheid nötig** |
+| ~~**Ä84**~~ | H-/Split-Blatt: «↑ Anfang» steht allein, Zähler-Position, Segment 680 px | ✅ **vollständig erledigt 18.8.2026 mit dem H4-Nachzug Teil B** (Ä94). Der Widerspruch zu **Ä32** löst sich ohne Entscheid: der Knopf wird nicht gestrichen, sondern **abgegeben** — die Leiste reicht ihn in die Werkzeugzeile der Trefferliste, wo er genau den 70-px-Stummel neben dem Segment füllt (288 + 8 + 62 = 358). Zone A 34 → 0 px, «↑ Anfang» weiterhin GENAU EINMAL im Blatt. Messung im Vermerk «H4-Nachzug — Teil B» |
 | ~~**—**~~ | Steckbrief ist bei eingeklappter Gliederung unerreichbar (Integrations-Fund) | ✅ **erledigt 18.8.2026** — Vermerk «H4-Vorbereitung II» unten. Der Befund traf NUR @1440 mit eingeklappter Gliederung; @720/@390 war der Steckbrief schon in zwei Schritten da (gemessen) |
-| **Ä75** | «SR» als Etikett bei Kantonen | **wartet auf David** |
+| ~~**Ä75**~~ | «SR» als Etikett bei Kantonen | ✅ **erledigt 18.8.2026 mit dem H4-Nachzug Teil B** (Orchestrator-Entscheid, **David hat Stopp-Recht**) — «SR» nur am Bundeserlass, die kantonale Nummer steht nackt. KEIN Ersatzkürzel: die kantonalen Sammlungen führen eigene Siglen (BS «SG», ZH «LS», AG «SAR», BE «BSG»), die nicht das Kantonskürzel sind — «BS 640.100» wäre erfunden (§7). Entscheid mit Provenienz in Kap. 9 |
 | ~~**Arch 5**~~ | Etikett «A-2» doppelt belegt | ✅ **erledigt 18.8.2026** — Verweis statt Umnummerierung, im Vollzugsvermerk H1 (Kap. 7) und in Kap. 12. **Auch A-1 war doppelt belegt** — miterledigt |
 | ~~**Arch 6**~~ | H5-Liste nennt das 37-px-Band der App-Leiste noch als zu entfernen | ✅ **erledigt 18.8.2026** — die Liste steht im **Kontaktbogen** `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md` §8, nicht im Fahrplan; dort korrigiert und datiert |
 | **Arch 7** | Treffer-Blatt ohne `usePopoverAutoZu` — Klick daneben schliesst es nicht | **David-Frage** (Beiwerk oder Popover?) |
@@ -2291,6 +2291,66 @@ gehören zum parallelen **Ä60-(c)**-PR (breiterer Leser-Rahmen). Keine
 H5-Löschung: die V1-Hülle ist vollständig lauffähig, und das Projekt `leser-v1`
 ist die letzte Stelle im Repo, die sie fährt.
 
+### ✅ H4-Nachzug (18.8.2026) — Teil B · Übersicht/Blatt/Tests, Branch `feat/leser-v3-h4-nachzug-b`
+
+Nachzug zum H4-Flip, zweite von zwei parallelen Flächen (Teil A: Kopf/Rahmen/
+Panel). Quelle der Befunde: Bug-Check P1, Ästhetik-Prüfung P2, Architektur-
+Gegenprüfung P3 und der Klick-Test 17./18.8.2026 — dessen Protokoll liegt seit
+diesem Nachzug als Beleg unter
+`docs/ux-audit-2026-07/reader/leser-v3-h4/klicktest-2026-08-18.md` (§11).
+
+| Befund | Messung vorher | Fix | Spec |
+|---|---|---|---|
+| **P1-2** FR/VS-Sidecars: «Erlass vom · du 01.05.1996 (version entrée en vigueur le 01.03.2024)» | Über **alle 1420 Struktur-Sidecars** gezählt (Repo-Stand `32c2865d2`, kein Netz): erstes Wort «Vom» 890 · «vom» 493 · ohne Präposition 27 · **«du» 10**; Schluss-Klammer «(Stand …)» 1409 · «(version …)» 5 · «(état …)» 5 · «(Fassung in Kraft getreten am …)» 1. **10 von 1420** Werten begannen nicht mit einer Ziffer, obwohl das Etikett «Erlass vom» genau das zusagt | `datumsAngabe` in `uebersichtAngaben.ts`: **belegte** Präpositions-Liste (`vom`/`du`), **belegte** Fassungs-Klammer-Liste (`Fassung`/`État`/`Etat`/`Version`) — und darunter der Rückfall, der die Zusage zurücknimmt, statt sie falsch zu geben: beginnt der Wert nach beiden Schnitten nicht mit einer Ziffer, heisst das Etikett neutral «Erlassdatum» und `tabular-nums` entfällt. Kein Sprach-Zweig, kein `if (kanton)`. `nurErlassdatum` bleibt unangetastet — V1 hängt daran (FL-4). **Nachher 0 von 1420**, 11 Werte geändert | `leser-v3-uebersicht.test.ts` «P1-2» (a)–(e); Rot-Beweis vorher: 4 Fälle rot |
+| **Ä94/Ä84-Rest** Treffer-Blatt @390: Segment als Stummel, «↑ Anfang» allein | Handy-Sheet 390×844, StPO/«Entschädigung»: Zone A **358 × 34 px** für einen 62-px-Knopf (246 px leer, eigene klebende Schicht); Segment **288 px im 358-Kasten** = 70 px Stummel — zwei klebende Balken übereinander, der obere zu 69 % leer, der untere mit einem Loch daneben | Der eine Befund löst den anderen: die Leiste **gibt den Knopf ab** (neuer Slot `v3/anfangSlot.ts`), er füllt den Stummel (288 + 8 + 62 = 358), die halbleere Zeile entfällt. Der Ä84-Deckel bleibt unangetastet — seine 688-px-Messung für den Split gilt weiter. **Ä32 hält**: «↑ Anfang» steht weiterhin genau einmal im Blatt, es hat nur den Platz gewechselt. Nachher Zone A **34 → 0 px**, Trefferliste beginnt bei y 227 statt 261, Blattinhalt **4052 → 3738 px** | `leser-v3-blatt` (f) neu; (d) unverändert grün (prüft die «genau einmal»-Zusage) |
+| **Ä96** D-Trefferzeilen: Randtitel ellipsiert, Schnipsel bricht um | StPO/«Kosten», D 1440, Spalte 280 px, erste acht Zeilen: **3 von 8** Randtiteln in der Ellipse (244/198/206 px in 178), Schnipsel 2–3 Zeilen hoch (30–45 px), nur einer einzeilig | Die Zeile gab die Höhe dem Beiwerk und schnitt die Kernauskunft. Der Randtitel ist die amtliche Sachüberschrift — Ä15-Klasse, also umbrechen statt anschneiden (`line-clamp-2`); der Schnipsel IST ein Ausschnitt, ihn zu kürzen ist sein Wesen (`line-clamp-1`, **nur am Artikelkopf** — in der aufgeklappten Fundstellenliste ist er der Inhalt). **Nachher 0 von 8** angeschnitten, alle Schnipsel 15 px; Fall Art. 135 netto **13 px kürzer** bei vollständigem Titel | `leser-v3-blatt` (g) neu |
+| **B6** (Klick-Test) Panel «Änderungen» meldet einen Fehler, den es nicht gibt | `public/normtext/revisionen/` trägt **227 Sidecars, davon 0 kantonale**. Die Revisionen liegen als **eine Datei je Erlass**; wo keine liegt, antwortet der Server 404, und `ladeSidecar` bildet `!res.ok` auf denselben `null`-Wert ab wie einen echten Fetch-Fehler. Für rund 1200 Erlasse war die Fehlermeldung der **Normalzustand** | Der Satz behauptet keine Ursache mehr, die wir nicht kennen, sondern nennt **beide**: «Kein Änderungsverlauf verfügbar — für diesen Erlass ist keiner erfasst, oder die Quelle war nicht erreichbar.» «Materialien» hat das Problem nicht, weil es EIN Manifest zieht: dort ist «Manifest da, Erlass nicht drin» eine leere Liste. **Wurzelfix** (404 von Netzfehler trennen) liegt in `src/lib/normtext/**` = Risikopfad → eigener Schritt, s. unten | — (Wortlaut; der Zustand ist von aussen nicht von einem echten Fehler unterscheidbar) |
+| **Ä75** «SR» über kantonalen Nummern | Gemessen an BS-640.100 («SR 640.100») und ZH-211.11 («SR 211.11») in Ruhezeile und Erlass-Kopf | `kennungEtikett`/`kennungText` in `helpers.tsx`: «SR» nur am Bundeserlass, die kantonale Nummer steht nackt. **Kein Ersatzkürzel** — Entscheid und Begründung in Kap. 9. **Nachher 0** «SR»-Treffer an BS-640.100 und ZH-211.11, am Bund unverändert | `leser-v3-uebersicht.test.ts` «Ä75»; `leser-kopf-standausweis-s3` Ä75 (a)/(b) |
+| **Ä81** Steckbrief wiederholt die Warnung des Kopfs | StPO, D 1440, Box zu **wie** aufgeklappt: der Satz «… noch nicht in den Text eingearbeitet …» steht **zweimal gleichzeitig sichtbar** — `div[data-v3-uebersicht-warnung]` in der Leiste und `p < div < header` im Erlass-Kopf | Nur der Kopf warnt. Die Box zieht ihre Grenze selbst so (Kopf = *wie aktuell*, Box = *woher und wie gebaut*), und eine offene Konsolidierung ist «wie aktuell». Der Kopf warnt auf **jeder** Breite und steht vor dem ersten Artikel; die Box liegt unter xl im Sheet. Das Feld `warnung` bleibt im reinen Modell samt Sonden — nur die Ausgabe entfällt | `leser-v3-uebersicht.e2e` «Warnung genau einmal», jetzt seitenweit statt boxweit; Rot-Beweis geführt |
+| **B9** (Klick-Test): 81 px Seiten-Überlauf @390 an ZH-211.11 | 390×844, **beide Hüllen je 81 px**. Der gemeldete Verursacher — die § 4-Tabelle — ist **korrekt gefasst** (Scroller `clientWidth` 312, `scrollWidth` 1002, `overflow-x: auto`). Einziger **ungeklippter** Überläufer: der Nachbar-Erlass-Link «Notariatsgebührenverordnung (NotGebV) ›», 191 px breit, rechte Kante **471** bei Fenster 390 | Drei Flex-Kinder ohne `min-w-0`: ein Flex-Kind schrumpft nicht unter seine `min-content`-Breite, und die ist hier das längste Wort. `min-w-0` + `[overflow-wrap:anywhere]` an beiden Nachbar-Links, `shrink-0` an «Übersicht». Kein Ellipsis — der Name des Nachbarerlasses ist die ganze Auskunft der Zeile. Wortgleich in beiden Hüllen; **kein Kern-Render** berührt, `golden:vergleich` 256 Fälle byte-gleich | `leser-kein-seitenueberlauf.e2e.ts` neu, beide Hüllen, **mit Positiv-Sonde** (die breite Tabelle IST da und IST gefasst) |
+| **P1-4** «Kein Artikel gefunden» ist stumm | `leser-r1-r2` hatte den Verlust beim Flip selbst gemeldet: die V1-Absage war `role="alert"`, die V3-Absage gar keine Live-Region | `role="status"` an einer **immer gemounteten** Meldezelle (`data-treffer-leer`, `empty:hidden` hält sie ohne Inhalt aus dem Fluss) — eine Region, die erst mit ihrem Inhalt entsteht, wird von einem Teil der Screenreader nicht gelesen. `status` statt `alert`, weil eine Auskunft die laufende Ansage nicht unterbrechen soll: beim Tippen wäre das jede Taste. Gleiche Fassung in beiden Hüllen (§5) | `leser-r1-r2` Quickjump-Fall, Rot-Beweis geführt |
+| **P1-3** still erhöhte Wartezeiten | `git show b92a5956c`: in `leser-kopf-v2` B-1 zwei Wartezeiten 15 000 → 20 000 ms, plus eine neue mit 20 000 ms | Im Kopfkommentar deklariert, mit dem Grund: B-1 misst seit H3 im **Kontext-Panel**, das seine Sidecars erst nach der Öffnungs-Geste nachlädt — die Wartezeit deckt einen Netzweg mit, den es an der alten Stelle nicht gab; 20 000 ist kein neuer Wert, sondern der der `warteReader` derselben Datei. **Richtigstellung:** `gesetze-ux-g3a` hat derselbe Commit **nicht** angefasst — der Bug-Check nannte beide Dateien in einem Atemzug | — (Deklaration) |
+| **P3-8** gelöschter Quickjump-Fall ohne prüfbaren Nachweis | Der Nichttrage-Nachweis nannte nur einen Dateinamen | Datei:Zeile nachgetragen (`leser-v3-suchfeld-ueberall.e2e.ts:51/83/119`) **und** die Pin-Frage entschieden: **nicht** in `V1_GEMISCHT`. Gepinnt gehört, was NUR V1 kann; der gelöschte Fall prüfte eine Doppelung, die V1 aus einem **Mangel** hatte (zwei Felder für eine Absicht, Fehler K2) — sie einzufrieren hiesse, einen behobenen Mangel als Vertrag weiterzuführen | — (Deklaration) |
+| **C1** (Klick-Test) Gliederung-zu / Steckbrief-auf über Reload vergessen | 3/3 Reloads; die Optionen (Fussnoten etc.) bleiben | **Entscheid: bewusst NICHT persistieren.** Die Optionen sind Lese-**Präferenzen** und gelten über alle Erlasse; Gliederungs- und Steckbrief-Zustand sind **Ankunfts**-Zustände eines einzelnen Erlasses. Wer die Gliederung an einem Erlass einklappt, hat nicht gesagt «zeig mir nie wieder eine Gliederung» — die Struktur ist das erste Navigationsmittel, und sie beim nächsten Erlass fehlen zu lassen wäre der teurere Fehler. Dazu käme ein Preis: ein Layout-Zustand müsste **vor dem ersten Paint** gelesen werden, sonst springt die Seite (§15.2) | — (Entscheid, kein Bau) |
+
+**Ein Befund war fehlzugeordnet — und das ist die Lehre daraus (§0/2).** B9 kam
+als Tabellen-Fehler herein («der Scroll-Wrapper greift nicht»). Beide Zahlen des
+Berichts stimmten, die Ursache nicht: `getBoundingClientRect` einer Tabelle **im**
+Scroller liefert ihre volle Breite (1002 px), nicht die sichtbare — wer nach
+«breiten Elementen» sucht, findet zuerst sie. Eine Überlauf-Sonde muss darum als
+zweite Bedingung prüfen, dass das Element **keinen klippenden Vorfahren** hat;
+ohne diesen Filter meldet sie den Inhalt jedes Scrollers mit und kann «gefasst»
+nicht von «hinausgeragt» unterscheiden. Genau diese Bedingung trägt der neue
+Wächter, samt Herleitung im Kopfkommentar.
+
+**Bewusst nicht gebaut, mit Grund**
+
+- **C5** (`aria-controls` am Fussnoten-Marker): der Marker sitzt im **Kern-Render**
+  (`components/normtext/ArtikelBody.tsx`), und das per Portal geöffnete
+  `span[role="note"]` trägt heute **gar keine `id`**, auf die verwiesen werden
+  könnte. Ein `aria-controls` verlangt also eine erzeugte id im Kern-Markup, das
+  die Golden-Ausgaben decken — eigener Schritt, H5.
+- **Wurzelfix zu B6**: `ladeSidecar` (`src/lib/normtext/revisionen.ts`) müsste 404
+  von einem Fetch-Fehler trennen. Die Datei ist **Risikopfad** (`istRisikoPfad`,
+  `scripts/gegenpruefung/kern.ts`) und trägt beide Hüllen — ein UI-Nachzug betritt
+  sie nicht. §17: hinterlegt, nicht umschifft.
+- **Kantonale Sammlungs-Sigle** (Ä75, die positive Hälfte): braucht ein Feld im
+  Register und eine Verifikation je Kanton (§7). H5/Korpus.
+- **`vorbehalt`-Dopplung** («nächste Fassung ab …»): steht im Kopf als Chip und in
+  der Box als Zeile — die Dopplung ist aber **nicht gemessen**, im Korpus lag kein
+  Probe-Erlass mit `naechsteFassungAb` vor. Ä81 hat sie darum ausdrücklich nicht
+  mitentschieden.
+- **`erlassAnsicht.uebersichtsZeile`** hat **keinen Render-Aufrufer** mehr (nur noch
+  Unit-Tests). §17-Rückbau-Kandidat, hier nicht angefasst, weil ausserhalb der
+  Nachzug-Fläche — H5.
+- **A1, B3, B4, B8, B10, C2, C3, C4, C7**: zurückgestellt, je mit einer Zeile
+  Begründung im Klick-Test-Protokoll (dort §3 und §4).
+
+**Ein Fall bleibt rot und wird hier nicht zugedeckt:** `leser-r1-r2` (CLS @390)
+scheitert unverändert mit **0.0202** — derselbe Wert und dieselbe Quelle wie im
+Flip-Vermerk beschrieben. Er wartet auf Davids Entscheid und wurde weder
+angefasst noch gelockert.
+
 ---
 
 ## 8 · Typografie-Varianten (Pos. 19, entscheidet S2)
@@ -2362,6 +2422,39 @@ Breiten (390 / 1440 / 720 px = Pane) und drei Zustände (Ist · V1 · V2), V1/V2
 > *(Ablage abweichend vom Auftrag: der Auftrag nannte «Kap. 8» für Entscheide —
 > Kap. 8 trägt die Typografie-Varianten, die Entscheide stehen hier in Kap. 9.
 > Eingetragen wurde dort, wo die übrigen David-Entscheide stehen.)*
+
+> **Ä75 und Ä81 — entschieden 18.8.2026 vom Orchestrator, David hat Stopp-Recht.**
+> Beide standen seit dem 17.8. als «wartet auf David» und blockierten den
+> H4-Nachzug. Sie sind hier entschieden, weil beide **keine Geschmacksfragen**
+> sind, sondern Richtigkeits- und Dopplungsfragen mit einer messbaren Antwort —
+> und weil ein Nachzug, der auf zwei solche Antworten wartet, den Flip-Stand mit
+> zwei bekannten Fehlern stehen lässt. **Provenienz: Orchestrator 18.8.2026, im
+> Nachzug-Brief so vergeben; David kann jederzeit stoppen, dann wird
+> zurückgebaut.**
+>
+> **Ä75 = «SR» nur am Bundeserlass.** «SR» heisst Systematische Rechtssammlung
+> DES BUNDES. Über BS-640.100 und ZH-211.11 stand es trotzdem — das ist keine
+> Beschriftungs-Ungenauigkeit, sondern eine **falsche Fundstellenangabe** an einem
+> Rechtstext (§7/§1). Die kantonale Nummer steht darum nackt. **Kein
+> Ersatzkürzel**, und das ist der eigentliche Entscheid: naheliegend wäre «BS
+> 640.100» gewesen — und es wäre erfunden. Die kantonalen Sammlungen führen eigene
+> Siglen, die **nicht** das Kantonskürzel sind (Basel-Stadt «SG», Zürich «LS»,
+> Aargau «SAR», Bern «BSG»); ein aus `erlass.kanton` gebautes Kürzel sähe amtlich
+> aus und wäre es nicht, und eine 26-Zeilen-Tabelle im Code wäre die hart kodierte
+> Kantonsliste, die die Erlass-Neutralität ausschliesst. Eine Nummer ohne
+> Sammlungs-Angabe ist unvollständig; eine Nummer mit der **falschen** Sammlung
+> ist falsch. Die Sigle ins Datenmodell zu nehmen (Feld im Register, Verifikation
+> je Kanton) ist ein eigener Schritt — H5/Korpus.
+>
+> **Ä81 = nur der Kopf warnt; der «Stand» im Steckbrief bleibt.** Gemessen stand
+> die Konsolidierungs-Warnung an der StPO @1440 **zweimal gleichzeitig sichtbar**
+> (Leiste und Erlass-Kopf). Die Arbeitsteilung, die die Box sich selbst gegeben
+> hat, entscheidet die Frage: Kopf = *welcher Erlass, wie aktuell, wo die amtliche
+> Fassung*; Box = *woher er kommt und wie er gebaut ist*. Eine offene
+> Konsolidierung ist «wie aktuell» — also Kopf. Der «Stand» dagegen **bleibt** in
+> der Box: er ist dort Teil der Datums-KETTE (Erlass vom → In Kraft seit → Stand),
+> also der Chronologie, für die man einen Steckbrief überhaupt aufklappt — das ist
+> Fedlex' «Beschluss/Inkrafttreten»-Block und eine bewusste, benannte Dopplung.
 
 Keine Etappe startet ohne ihre Vorbedingung. Fehlt der Entscheid, wartet die Etappe — sie wird
 **nicht** «auf Verdacht nach Empfehlung» gebaut (Council A/D: sonst liegt ein fertiger
