@@ -85,7 +85,7 @@ const LIES = (rel: string) => readFileSync(`${WURZEL}/${rel}`, 'utf8');
  * AUFGEFALLEN ist es nur, weil der Rot-Beweis geführt wurde (der künstlich
  * eingebaute Rückfall blieb grün) — genau der Zweck von §6.7.
  * JETZT: dieselben zwei Regeln wie im Fundament-Wächter, Zeilen- VOR
- * Blockkommentaren. Ein `{/* … *​/}` hinterlässt dabei ein nacktes Klammerpaar;
+ * Blockkommentaren. Ein JSX-Kommentar hinterlässt dabei ein nacktes Klammerpaar;
  * für Zeichenketten-Sonden ist das folgenlos.
  */
 function ohneKommentare(quelle: string): string {
