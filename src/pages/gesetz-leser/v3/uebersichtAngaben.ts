@@ -5,7 +5,7 @@ import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad
 import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
-import { formatiereDatum, kopfOverline, verifiziertesSachgebiet } from '../helpers';
+import { formatiereDatum, kennungText, kopfOverline, verifiziertesSachgebiet } from '../helpers';
 import { teilerfassung, nurErlassdatum, erlassOrgan } from '../erlassUebersichtDaten';
 import type { BestimmungsWort } from './erlassAnsicht';
 
@@ -165,14 +165,19 @@ export interface UebersichtsEingabe {
  *
  * Fehlende Angaben entfallen ERSATZLOS: ein Erlass ohne SR-Nummer (12 von 1469,
  * gezählt 17.8.2026) bekommt keinen Platzhalter.
+ *
+ * Ä75 (18.8.2026): das Etikett «SR» kommt aus `kennungText` und steht nur, wo es
+ * zutrifft — am Kantonserlass stand hier «SR 640.100» über einer Nummer der
+ * kantonalen Gesetzessammlung (Herleitung und der Grund gegen ein erfundenes
+ * Kantons-Kürzel: `../helpers`).
  */
 export function ruheZeile(
-  erlass: Pick<BrowseErlass, 'sr'>,
+  erlass: Pick<BrowseErlass, 'ebene' | 'sr'>,
   anzahl: number | null,
   bestimmungsWort: BestimmungsWort,
 ): string {
   return [
-    erlass.sr ? `SR ${erlass.sr}` : null,
+    kennungText(erlass),
     anzahl != null ? `${anzahl} ${bestimmungsWort}` : null,
   ].filter(Boolean).join(' · ');
 }

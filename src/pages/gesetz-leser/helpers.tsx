@@ -39,6 +39,44 @@ export function internerErlassFuerSr(sr: string): { key: string; ebene: 'bund' |
 export const formatiereDatum = datumCh;
 
 /**
+ * Ä75 (Orchestrator-Entscheid 18.8.2026, David hat Stopp-Recht) · Das Etikett der
+ * systematischen Nummer — «SR» am BUNDESERLASS, `null` am Kantonserlass.
+ *
+ * BEFUND: «SR» heisst Systematische Rechtssammlung DES BUNDES. Über kantonalen
+ * Nummern stand es trotzdem — gemessen an BS-640.100 («SR 640.100») und
+ * ZH-211.11 («SR 211.11»), in der Ruhezeile der Übersichtsbox und im
+ * Erlass-Kopf. Das ist keine Ungenauigkeit in der Beschriftung, sondern eine
+ * falsche Fundstellenangabe: BS-640.100 steht in der Gesetzessammlung des
+ * Kantons Basel-Stadt, nicht in der SR des Bundes.
+ *
+ * WARUM KEIN POSITIVES KANTONS-ETIKETT (§7): naheliegend wäre «BS 640.100» — und
+ * es wäre erfunden. Die kantonalen Sammlungen führen EIGENE Siglen, die nicht das
+ * Kantonskürzel sind (Basel-Stadt «SG», Zürich «LS», Aargau «SAR», Bern «BSG»).
+ * Ein aus `erlass.kanton` gebautes Kürzel sähe amtlich aus und wäre es nicht;
+ * eine 26-Zeilen-Tabelle im Code wäre die hart kodierte Kantonsliste, die die
+ * Erlass-Neutralität ausschliesst — und jede ihrer Zeilen müsste einzeln gegen
+ * die amtliche Sammlung geprüft werden. Bis die Sigle im Datenmodell steht
+ * (Fahrplan H5: Feld im Register + Verifikation je Kanton), steht die Nummer
+ * nackt. Eine Nummer ohne Sammlungs-Angabe ist unvollständig; eine Nummer mit
+ * der falschen Sammlung ist falsch.
+ *
+ * Rein und deterministisch (§2), erlass-neutral: die Weiche liest `ebene`, nie
+ * eine Liste von Kantonen.
+ */
+export function kennungEtikett(erlass: Pick<BrowseErlass, 'ebene'>): string | null {
+  return erlass.ebene === 'bund' ? 'SR' : null;
+}
+
+/** Etikett + Nummer als EIN String (Ruhezeile). Der Erlass-Kopf braucht die Zahl
+ *  getrennt (Mono-Auszeichnung `.num` gilt der Nummer, nicht dem Etikett) und
+ *  liest darum `kennungEtikett` — dieselbe Weiche, zwei Formen, EINE Regel (§5). */
+export function kennungText(erlass: Pick<BrowseErlass, 'ebene' | 'sr'>): string | null {
+  if (!erlass.sr) return null;
+  const etikett = kennungEtikett(erlass);
+  return etikett ? `${etikett} ${erlass.sr}` : erlass.sr;
+}
+
+/**
  * N13 (BS-Audit 23.6.2026) — das VERIFIZIERTE amtliche Sachgebiet eines
  * kantonalen Erlasses, oder `null`.
  *

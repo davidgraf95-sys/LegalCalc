@@ -46,22 +46,40 @@ const labels = (a: ReturnType<typeof uebersichtsAngaben>) => a.zeilen.map((z) =>
 
 describe('ruheZeile — die eine Zeile im Ruhezustand', () => {
   it('Bund mit SR: «SR 312.0 · 480 Artikel»', () => {
-    expect(ruheZeile({ sr: '312.0' }, 480, 'Artikel')).toBe('SR 312.0 · 480 Artikel');
+    expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel')).toBe('SR 312.0 · 480 Artikel');
   });
 
   it('§-Erlass zählt Paragraphen, nicht Artikel (Ä23)', () => {
-    expect(ruheZeile({ sr: '211.11' }, 23, 'Paragraphen')).toBe('SR 211.11 · 23 Paragraphen');
+    expect(ruheZeile({ ebene: 'kanton', sr: '211.11' }, 23, 'Paragraphen'))
+      .toBe('211.11 · 23 Paragraphen');
+  });
+
+  // ── Ä75 (Orchestrator-Entscheid 18.8.2026, David hat Stopp-Recht) ──────────
+  // «SR» heisst Systematische Rechtssammlung DES BUNDES. Über ZH-211.11 und
+  // BS-640.100 stand es trotzdem — eine falsche Fundstellenangabe, keine
+  // Beschriftungs-Ungenauigkeit. Kein Ersatz-Kürzel: die kantonalen Sammlungen
+  // führen eigene Siglen (BS «SG», ZH «LS», AG «SAR»), die weder im Datenmodell
+  // stehen noch aus `erlass.kanton` ableitbar sind; sie zu erfinden wäre §7.
+  // ROT ZU BEKOMMEN: in `helpers.tsx` `kennungEtikett` fest auf `'SR'` ⇒ beide
+  // Kantons-Fälle rot; auf `null` ⇒ der Bundes-Fall rot.
+  it('Ä75: der Kantonserlass trägt kein «SR» — der Bundeserlass schon', () => {
+    expect(ruheZeile({ ebene: 'kanton', sr: '640.100' }, 292, 'Paragraphen'))
+      .not.toContain('SR');
+    expect(ruheZeile({ ebene: 'kanton', sr: '640.100' }, 292, 'Paragraphen'))
+      .toBe('640.100 · 292 Paragraphen');
+    expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel'))
+      .toBe('SR 312.0 · 480 Artikel');
   });
 
   it('ohne SR-Nummer entfällt das Glied ERSATZLOS — kein «SR —» (§8)', () => {
     // 12 von 1469 Erlassen tragen keine SR-Nummer (gezählt 17.8.2026).
-    const z = ruheZeile({ sr: '' }, 42, 'Artikel');
+    const z = ruheZeile({ ebene: 'bund', sr: '' }, 42, 'Artikel');
     expect(z).toBe('42 Artikel');
     expect(z).not.toContain('SR');
   });
 
   it('ohne Snapshot (nur-live-link/pdf-embed) keine erfundene Null', () => {
-    const z = ruheZeile({ sr: '101' }, null, 'Artikel');
+    const z = ruheZeile({ ebene: 'bund', sr: '101' }, null, 'Artikel');
     expect(z).toBe('SR 101');
     expect(z).not.toContain('0 Artikel');
   });
@@ -70,7 +88,7 @@ describe('ruheZeile — die eine Zeile im Ruhezustand', () => {
     // Ist-Befund: mit «Stand …» lief die Zeile an allen fünf Probe-Erlassen
     // über DREI Zeilen. Der Stand steht weiterhin in der Liste und im
     // Erlass-Kopf — er verschwindet nicht, er sprengt nur die Ruhezeile nicht.
-    expect(ruheZeile({ sr: '312.0' }, 480, 'Artikel')).not.toMatch(/Stand/);
+    expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel')).not.toMatch(/Stand/);
   });
 });
 
@@ -153,7 +171,8 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
       erlassTyp: 'gesetz', anzahl: 292, bestimmungsWort: 'Paragraphen',
       kantonErlassAnzahl: 859, gliederungsTiefe: 5,
     }));
-    expect(a.ruhe).toBe('SR 640.100 · 292 Paragraphen');
+    // Ä75: kein «SR» über einer kantonalen Nummer (Herleitung im Fall oben).
+    expect(a.ruhe).toBe('640.100 · 292 Paragraphen');
     expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Kanton BS · Gesetz');
     expect(a.hinweise.some((h) => h.startsWith('Kanton BS:'))).toBe(true);
   });

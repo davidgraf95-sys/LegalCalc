@@ -32,10 +32,36 @@ export function PanelAenderungen({ stand, quelleUrl }: {
   if (!stand.fertig) {
     return <p data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-3 text-body-s text-ink-500">Änderungen werden geladen …</p>;
   }
+  // ── B6 (Klick-Test 18.8.2026) · EIN FEHLER, DER KEINER WAR ────────────────
+  // BEFUND: an einem Kantonserlass meldete der Reiter «Änderungsverlauf konnte
+  // nicht geladen werden» — ohne Netzfehler, bei intakter Verbindung, jedes Mal.
+  //
+  // URSACHE, gemessen 18.8.2026: `public/normtext/revisionen/` trägt 227
+  // Sidecars, davon 0 kantonale (`ls | grep -c '^[A-Z][A-Z]-'`). Die
+  // Revisionen liegen als EINE DATEI JE ERLASS; wo keine liegt, antwortet der
+  // Server 404, und `ladeSidecar` (`lib/normtext/revisionen.ts`) bildet
+  // `!res.ok` auf denselben `null`-Wert ab wie einen echten Fetch-Fehler. Für
+  // rund 1200 Erlasse war die Fehlermeldung damit der NORMALZUSTAND — und eine
+  // Fehlermeldung, die nichts meldet, ist die schlechteste Art zu schweigen (§8).
+  //
+  // Der Reiter «Materialien» hat das Problem nicht: er zieht EIN Manifest für
+  // alle Erlasse. Dort heisst «Manifest da, Erlass nicht drin» = leere Liste =
+  // «nicht erfasst», und `null` bleibt dem echten Fehler vorbehalten.
+  //
+  // WARUM HIER NUR DER WORTLAUT: die Unterscheidung 404 ↔ Netzfehler gehört an
+  // die Wurzel, in `ladeSidecar` — und `src/lib/normtext/**` ist Risiko-Pfad
+  // (`istRisikoPfad`, `scripts/gegenpruefung/kern.ts`), an dem V1 mithängt.
+  // Dieser UI-Nachzug betritt ihn nicht; der Wurzel-Fix steht als eigener
+  // Schritt im Fahrplan (§17 — hinterlegt, nicht umschifft).
+  // SOLANGE behauptet der Satz keine Ursache, die wir nicht kennen: er nennt
+  // BEIDE Möglichkeiten. Das ist die ehrliche Auskunft im Sinn von §8, nicht die
+  // bequeme — «nicht erfasst» allein wäre im seltenen echten Fehlerfall genauso
+  // falsch wie «konnte nicht geladen werden» im häufigen Normalfall.
   if (stand.wert === null) {
     return (
       <p data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-3 text-body-s text-ink-500">
-        Änderungsverlauf konnte nicht geladen werden. Amtliche Quelle:{' '}
+        Kein Änderungsverlauf verfügbar — für diesen Erlass ist keiner erfasst,
+        oder die Quelle war nicht erreichbar. Amtliche Quelle:{' '}
         <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">geltende Fassung ↗</a>
       </p>
     );
