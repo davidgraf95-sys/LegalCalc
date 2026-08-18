@@ -40,7 +40,15 @@ unter 8-Worker-Last entstanden ist, steht es dabei.
 > «···»-Menü). Nachgemessen und richtiggestellt in §2. Jetzt ist es **ein
 > Fingertipp wie überall sonst**. Ebenfalls erledigt: die zwei Schliess-Kreuze je
 > Fenster und die zwei Gliederungs-Knöpfe auf dem breiten Bildschirm.
-> **Der Umschalter ist weiterhin nicht umgelegt und wartet auf dein Ja.**
+>
+> **NACHGEFÜHRT 18.8.2026 — der Umschalter IST umgelegt.** Der Satz an dieser
+> Stelle lautete bis hierher «weiterhin nicht umgelegt und wartet auf dein Ja»
+> und war seit dem Abend des 17.8. überholt: Du hast das Ja gegeben («ja und c,
+> mach so»), und der Flip ist gebaut — `src/pages/GesetzLeser.tsx`,
+> Grundzustand `'v3'`. Der ganze Bogen unterhalb ist als Entscheidungsvorlage
+> geschrieben; er bleibt im Wortlaut stehen, weil die Messungen darin die
+> Grundlage des Entscheids sind, ist aber ab hier **Protokoll, nicht Frage**.
+> Der Rückweg `?leser=v1` steht bis H5.
 
 **Von den acht technischen Bedingungen sind sieben erfüllt.** Was noch offen ist,
 steht unten. Das Seitenblatt, das auf dem Desktop die Zeilenenden des
@@ -90,9 +98,13 @@ Frage an dich:
    nicht mehr darunter (das war Ä59). Unter 1024 px bleibt alles wie bisher —
    genau die Grenze, die du gezogen hast.
 2. **B-Specs umhängen** — reine Prüfstrassen-Arbeit, kein Entscheid nötig.
+   ✅ **vollzogen 18.8.2026**, s. §7/§7a.
 
-**Die Frage bleibt also offen und liegt weiterhin bei dir**; ich lege den
-Umschalter nicht ohne dein Ja um.
+**BEANTWORTET am 17.8.2026 spätabends: «ja und c, mach so».** Damit ist der
+Umschalter umgelegt — V3 ist der Standard-Leser, `?leser=v1` bleibt bis H5 der
+Rückweg. Die zwei Punkte oben sind beide erledigt. Was hier ab jetzt noch auf
+dich wartet, sind **keine Flip-Fragen mehr**, sondern die drei einzelnen Punkte
+in §8 («Wartet auf David»).
 
 ---
 
