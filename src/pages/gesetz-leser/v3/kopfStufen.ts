@@ -243,11 +243,23 @@ export function kopfGriffKlassen(mini: boolean): string {
   return mini ? `${KOPF_GRIFF} min-h-8 min-w-8` : KOPF_GRIFF;
 }
 
-/** Grösse der ICON-Glyphe im Griff — auf dem Handy-Zuschnitt 20 px (`text-xl`),
- *  sonst die Schriftgrösse des Griffs. Getrennt von den Griff-Klassen, weil
- *  sonst auch die Zahl im Zähler-Chip mitwüchse (sie ist Text, keine Glyphe). */
+/**
+ * Grösse der ICON-Glyphe im Griff — auf dem Handy-Zuschnitt 20 px, sonst die
+ * Schriftgrösse des Griffs.
+ *
+ * `text-h3` ist die 20-px-Stufe der Repo-Skala (`tailwind.config.js`,
+ * 1.25 rem) und NICHT die gleich grosse Tailwind-Default-Klasse: die sind vom
+ * DESIGN-REGLEMENT (B2/F7, §13) ausgeschlossen und werden von
+ * `check:design-tokens` gemeldet — rot gesehen 18.8.2026. Der Name der Stufe
+ * meint hier keine Überschrift, sondern schlicht ihre Grösse; `leading-none`
+ * nimmt die mitgelieferte Zeilenhöhe wieder heraus, weil eine Glyphe in einem
+ * 32-px-Ziel keine braucht.
+ *
+ * Getrennt von den Griff-Klassen, weil sonst auch die Zahl im Zähler-Chip
+ * mitwüchse — sie ist Text, keine Glyphe.
+ */
 export function kopfGlypheKlassen(mini: boolean): string {
-  return mini ? 'text-xl leading-none' : 'leading-none';
+  return mini ? 'text-h3 leading-none' : 'leading-none';
 }
 
 /**
