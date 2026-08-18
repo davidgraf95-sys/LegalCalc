@@ -4,7 +4,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
   datumCh, naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
-import { titelOhneKlammerSuffix } from '../helpers';
+import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
 // führung, §3.3): Ersetzt die zwei früher duplizierten <header>-Blöcke (Snapshot
@@ -122,8 +122,16 @@ export function ErlassLeserKopf({
   // Fakten- und Stand-Segmente werden als Liste gebaut und mit einem Mittepunkt
   // gefügt — so kann kein führender/doppelter Trenner entstehen, wenn ein Wert
   // fehlt (Kanton ohne SR, VD-Erlasse mit leerem `stand`, pdf-embed ohne Zählung).
+  // Ä75 (18.8.2026): das Etikett «SR» steht nur am BUNDESERLASS. Über kantonalen
+  // Nummern war es eine falsche Fundstellenangabe (BS-640.100 steht nicht in der
+  // SR des Bundes) — die Weiche und der Grund, warum kein Kantons-Kürzel an seine
+  // Stelle tritt, stehen bei `kennungText` in `../helpers`. Die Mono-Auszeichnung
+  // `.num` bleibt an der ZAHL: sie gilt der Nummer, nicht dem Etikett
+  // (Design-Grundlage Kap. 2.1 «auf SR-Nr./Aktenzeichen begrenzt»).
   const fakten = [
-    erlass.sr ? <>SR <span className="num">{erlass.sr}</span></> : null,
+    erlass.sr
+      ? <>{kennungEtikett(erlass) ? `${kennungEtikett(erlass)} ` : ''}<span className="num">{erlass.sr}</span></>
+      : null,
     artikelAnzahl != null ? <><span className="num">{artikelAnzahl}</span> {wort}</> : null,
   ].filter(Boolean) as ReactNode[];
 

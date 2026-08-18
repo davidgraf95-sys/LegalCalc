@@ -687,23 +687,37 @@ ein Paritätsbeweis, den nichts fährt.
 | **Ä57/Ä58** | 826 | Panel-Kopf ohne Warnzeichen bei «noch nicht im Text»; Chips gerahmt, ☰ nicht | **kann H5 tragen** |
 | **Randlasche (F8)** | 772 | die Lasche hält an keiner Breite | **kein Flip-Blocker mehr** — sie war die *vermutete* Ursache des NM-2-Aufschlags auf H; der ist mit dem Kopf-Chip behoben, ohne dass die Lasche zurückkehrt. Was bleibt, ist Davids Bestätigung der §7-Abweichung zu F8 («Lasche behalten»). **Nachgeführt 18.8.2026:** David hat (c) gewählt, der Platz ist mit Ä60 da — die Lasche bleibt trotzdem gestrichen, weil an derselben Breite bereits der Kopf-Zähler steht und «ein Öffner je Breite» gilt. Der Platz ist da, gebraucht wird er nicht |
 | **`leser-lesemass` umhängen · `LeserRahmenV3`-Schnitt** | 1240 | Test-Umzug bzw. Datei-Schnitt | **kann H5 tragen** |
-| **Ä84-Rest · «↑ Anfang» steht allein** (18.8.2026 gemessen) | Vermerk «H4-Vorbereitung II», Kap. 7 | Im Treffer-Blatt @390/@720 trägt der Blatt-Kopf **genau ein** Element (34 px hoch, linke Hälfte leer); das D-Blatt @1440 hat dort gar keines. Streichen widerspricht **Ä32** (`e2e/leser-v3-blatt` (d) hält den Knopf fest) | **braucht einen Entscheid** — nichts ist unbedienbar, aber zwei Prüferbefunde widersprechen sich. Empfehlung im Vermerk: streichen, das D-Blatt beweist die Entbehrlichkeit |
+| ~~**Ä84-Rest · «↑ Anfang» steht allein**~~ | Vermerk «H4-Nachzug — Teil B», Kap. 7 | Im Treffer-Blatt @390 trug der Blatt-Kopf **genau ein** Element (358 × 34 px für einen 62-px-Knopf, 246 px leer) — und direkt darunter stand das Suchbereich-Segment mit 288 px in einem 358-Kasten, also 70 px Stummel | ✅ **erledigt 18.8.2026 (Teil B, Ä94) — ohne dass ein Entscheid nötig war.** Der Widerspruch zu **Ä32** («der Knopf bleibt im Blatt») löst sich, weil der Knopf nicht gestrichen, sondern **abgegeben** wird: die Leiste reicht ihn in die Werkzeugzeile der Trefferliste, wo er genau den Stummel füllt (288 + 8 + 62 = 358). Zone A **34 → 0 px**, Blattinhalt 4052 → 3738 px, «↑ Anfang» weiterhin GENAU EINMAL im Blatt (`leser-v3-blatt` (d) unverändert grün, (f) neu) |
 | **Panel-Reiter-Leiste bricht nicht um** (neu, 18.8.2026 gemessen) | Vermerk «H4-Vorbereitung II», Kap. 7 | Die Leiste hat @1440 **334 px** Platz; die drei Reiter belegen 269 px + 24 px Abstände, also bleiben **41 px**. Ein vierter Reiter passt damit an keiner ehrlichen Beschriftung («Steckbrief» 82 px, «Erlass» 55, «Norm» 51) — gebaut verschluckte die Leiste ihr viertes Fach (`scrollWidth` 369 gegen `clientWidth` 334). Fix wäre **ein Wort** an `[role="tablist"]` in `v3/LeserPanel.tsx` (`flex-wrap` oder `overflow-x-auto`) | **kann H5 tragen** — heute nichts unbedienbar (die Klappe über der Tafel löst den Steckbrief-Fall ohne Fach). **Aber:** Kap. 14 sieht für «Zitat-Export & Fussnoten-Ausgabe» ausdrücklich «vierter Reiter oder Fusszeile» als Platz vor — der vierte Reiter ist mit dieser Messung keine Option mehr, solange die Leiste nicht umbricht |
+| **Ä75 ✅** | 1214, 1830 | «SR» stand über kantonalen Nummern («SR 640.100», «SR 211.11») — eine falsche Fundstellenangabe, keine Beschriftungsfrage | ✅ **erledigt 18.8.2026 (Teil B), Orchestrator-Entscheid mit Davids Stopp-Recht** — «SR» nur am Bundeserlass, die kantonale Nummer steht nackt. KEIN Ersatzkürzel: die kantonalen Sammlungen führen eigene Siglen (BS «SG», ZH «LS», AG «SAR», BE «BSG»), «BS 640.100» wäre erfunden (§7). Die Sigle ins Datenmodell zu nehmen ist H5/Korpus. Begründung in Fahrplan Kap. 9 |
+| **Ä81 ✅** | 1825 | Die Konsolidierungs-Warnung stand ZWEIMAL gleichzeitig sichtbar (Übersichtsbox + Erlass-Kopf, gemessen StPO @1440) | ✅ **erledigt 18.8.2026 (Teil B), Orchestrator-Entscheid mit Davids Stopp-Recht** — nur der Kopf warnt; der «Stand» im Steckbrief BLEIBT (er ist dort Teil der Datums-Kette, nicht der Aktualitäts-Aussage). Begründung in Fahrplan Kap. 9 |
+| **B6 · «Änderungen» meldete einen Fehler, den es nicht gab** (Klick-Test) | Vermerk «H4-Nachzug — Teil B», Kap. 7 | An jedem Kantonserlass «Änderungsverlauf konnte nicht geladen werden» — ohne Netzfehler. Gemessen: 227 Revisions-Sidecars, davon 0 kantonale; 404 und Fetch-Fehler enden beide als `null` | ✅ **Wortlaut erledigt 18.8.2026 (Teil B)** — der Satz nennt jetzt beide Möglichkeiten. **Der Wurzelfix bleibt offen:** 404 von Netzfehler trennen heisst `src/lib/normtext/revisionen.ts` anfassen = Risikopfad, eigener Schritt (§17 hinterlegt) |
+| **B9 · 81 px Seiten-Überlauf @390** (Klick-Test) | Vermerk «H4-Nachzug — Teil B», Kap. 7 | Gemeldet als Tabellen-Fehler an ZH-211.11 § 4; nachgemessen ist die Tabelle korrekt gefasst, der Überläufer ist der Nachbar-Erlass-Link | ✅ **erledigt 18.8.2026 (Teil B)** — `min-w-0` + `[overflow-wrap:anywhere]` in beiden Hüllen; neuer Wächter `e2e/leser-kein-seitenueberlauf.e2e.ts` |
+| **C5 · Fussnoten-Marker ohne `aria-controls`** (Klick-Test) | — | Der Marker wechselt `aria-expanded`, verweist aber auf nichts | **kann H5 tragen** — der Marker sitzt im **Kern-Render** (`components/normtext/ArtikelBody.tsx`), und das per Portal geöffnete `span[role="note"]` trägt heute gar keine `id`. Ein `aria-controls` verlangt also eine erzeugte id im Kern-Markup, das die Golden-Ausgaben decken |
+| **C1 · Gliederung/Steckbrief über Reload vergessen** (Klick-Test) | Vermerk «H4-Nachzug — Teil B», Kap. 7 | Layout-Zustände überleben den Reload nicht, die Optionen schon | ✅ **entschieden 18.8.2026 (Teil B): bewusst NICHT persistieren** — Optionen sind Lese-Präferenzen über alle Erlasse, Gliederungs- und Steckbrief-Zustand sind Ankunfts-Zustände EINES Erlasses; dazu käme ein Pre-Paint-Lesen (§15.2) |
 
-**Stand nach «H4-Vorbereitung II — Übersicht/Blatt» (18.8.2026).** Geschlossen
-sind **Ä80** (Steckbrief-Chronologie/Präposition), die **Steckbrief-Erreichbarkeit** (@1440 mit eingeklappter
-Gliederung war er nicht im DOM; @720/@390 war er schon in zwei Schritten da) und
-die beiden Hygiene-Punkte **Arch 5**/**Arch 6** — Arch 6 betraf genau die
-A-2-Zeile in der Tabelle oben. Messwerte, Rot-Beweise und die verworfene
-Reiter-Variante stehen im Fahrplan-Vermerk. **Ä84 ist nur zur Hälfte erledigt:**
-das Suchbereich-Segment hat einen Deckel (270/288/288 px statt 270/358/688), das
-allein stehende «↑ Anfang» im Blatt-Kopf bleibt — es zu streichen war gebaut und
-machte `e2e/leser-v3-blatt` (d) rot, weil **Ä32 den Knopf dort ausdrücklich
-behält**. Zwei Prüferbefunde derselben Zone widersprechen sich; die drei Wege und
-eine Empfehlung stehen im Fahrplan-Vermerk. **Braucht einen Entscheid.** **Unberührt geblieben, weil
-David-Fragen:** Ä75 («SR» bei Kantonen), Ä81 (Steckbrief dupliziert den
-Erlass-Kopf) und Arch 7 (Treffer-Blatt ohne `usePopoverAutoZu`; Empfehlung im
-Vermerk: Beiwerk, nicht Popover).
+**Stand nach dem H4-Nachzug, Teil B (18.8.2026).** Geschlossen sind seit dem
+Nachzug **Ä84** vollständig (Ä94 — der allein stehende «↑ Anfang» füllt jetzt den
+Stummel neben dem Segment, statt gestrichen zu werden; **kein Entscheid nötig**),
+**Ä96** (Randtitel ohne Ellipse, Schnipsel einzeilig), **Ä75** und **Ä81** (beide
+per Orchestrator-Entscheid, **David hat Stopp-Recht** — Begründung in Fahrplan
+Kap. 9) sowie aus dem Klick-Test **B6** (Wortlaut), **B9** und **C1**
+(Entscheid). Dazu die Test-Nachzüge **P1-2/P1-3/P1-4** und **P3-8**. Der
+Klick-Test liegt vollständig als Beleg unter
+`klicktest-2026-08-18.md` in diesem Ordner.
+
+**Was aus Teil B offen bleibt, benannt statt weggeglättet:** der **Wurzelfix zu
+B6** (404 von Netzfehler trennen — Risikopfad `src/lib/normtext/**`), die
+**kantonale Sammlungs-Sigle** (Ä75 positive Hälfte, braucht ein Registerfeld und
+Verifikation je Kanton), **C5** (`aria-controls` verlangt eine erzeugte id im
+Kern-Markup) und die **`vorbehalt`-Dopplung** («nächste Fassung ab …»), die Ä81
+ausdrücklich NICHT mitentschieden hat, weil sie nicht gemessen werden konnte —
+im Korpus lag kein Probe-Erlass mit `naechsteFassungAb` vor.
+
+**Unverändert offen aus «H4-Vorbereitung II»:** **Arch 7** (Treffer-Blatt ohne
+`usePopoverAutoZu`; Empfehlung im Vermerk: Beiwerk, nicht Popover) und der eine
+rote Fall `leser-r1-r2` (CLS @390, **0.0202**, unverändert und nicht gelockert).
+
 
 ---
 

@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
 import { badgesFuer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
 import { SuchBereichWahl } from './SuchBereichWahl';
+import { useAnfangSlot } from './anfangSlot';
 import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 
 // ═══ Trefferliste V3 — Verzeichnis in Erlass-Reihenfolge (H2, Kap. 4b Pos. 5) ═
@@ -77,11 +78,17 @@ export interface LeserTrefferListeProps {
  *  Nimmt den `Ausschnitt` selbst, nicht die Fundstelle drumherum: Ä17 zeigt
  *  denselben Baustein auch für den Artikel-Ausschnitt (`LeserTreffer.ausschnitt`),
  *  der zu keiner einzelnen `ArtikelFundstelle` gehört. */
-function Schnipsel({ a }: { a: Ausschnitt }) {
+function Schnipsel({ a, einzeilig = false }: { a: Ausschnitt; einzeilig?: boolean }) {
   return (
     // `[overflow-wrap:anywhere]`: echter Fliesstext-Auszug, kein kontrolliertes
     // Label — ein unbrechbares Lauftext-Fragment sprengte sonst den Scroller.
-    <span className="lc-such-ausschnitt min-w-0 flex-1 text-micro leading-snug text-ink-600 [overflow-wrap:anywhere]">
+    //
+    // ── Ä96 (H4-Nachzug 18.8.2026) · DER SCHNIPSEL DARF GEKÜRZT WERDEN ────────
+    // `einzeilig` gilt am ARTIKELKOPF (Herleitung dort). In der aufgeklappten
+    // Fundstellen-Liste NICHT: dort ist der Schnipsel die einzige Auskunft der
+    // Zeile — was hier wegfiele, wäre nicht Kontext, sondern der Inhalt.
+    <span className={`lc-such-ausschnitt min-w-0 flex-1 text-micro leading-snug text-ink-600 [overflow-wrap:anywhere] ${
+      einzeilig ? 'line-clamp-1' : ''}`}>
       {a.vor}<mark>{a.treffer}</mark>{a.nach}
     </span>
   );
@@ -91,6 +98,10 @@ export function LeserTrefferListe({
   treffer, begriff, fundstellen, bestimmungsWort, fussnotenAus, position, aktivStelle,
   bereich, setzeBereich, fundstellenFuer, onZurueck, onVor, onSprung, onSprungStelle,
 }: LeserTrefferListeProps) {
+  // Ä94: «↑ Anfang», wenn die Leiste ihn abgegeben hat — `null`, wo sie ihn
+  // selbst zeigt (Spalte) oder wo gar keine Leiste steht (Blatt am Feld).
+  // Herleitung, warum ein Slot und kein Prop: `./anfangSlot`.
+  const onAnfang = useAnfangSlot();
   const hatSprung = fundstellen > 0;
   const anzeige = position < 0 ? '–' : String(position + 1);
 
@@ -128,7 +139,29 @@ export function LeserTrefferListe({
       <div data-treffer-leiste
         style={{ top: 'var(--toc-deckel, 0px)' }}
         className="sticky z-10 space-y-1 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
-        <SuchBereichWahl wert={bereich} setzeWert={setzeBereich} />
+        {/* ── Ä94 (H4-Nachzug 18.8.2026) · DER STUMMEL NIMMT DEN KNOPF AUF ─────
+            Gemessen im Handy-Sheet (390, StPO/«Entschädigung»): das Segment stand
+            mit 288 px in einem 358-px-Kasten — 70 px Stummel rechts —, und genau
+            darüber klebte eine eigene 34-px-Zeile, die ausser «↑ Anfang» (62 px)
+            nichts trug. Zwei Fehler, eine Bewegung: die Leiste gibt den Knopf ab
+            (`./anfangSlot`), er füllt den Stummel, und die halbleere Zeile
+            entfällt. Das Segment behält seine Breite (288 = 18 rem, seine
+            Kalibrierung), verliert aber die Lücke.
+            NICHT in die Zähler-Zeile darunter: die trägt schon Zähler, Stand
+            «–/88» und die beiden 44-px-Sprungknöpfe und misst damit @390
+            rechnerisch 361 px in 358 — ein fünftes Element hätte den Zähler
+            umbrechen lassen, also die Kernauskunft verschlechtert, um eine
+            Kernauskunft zu retten (Ä15). */}
+        <div className="flex items-center gap-2">
+          <SuchBereichWahl wert={bereich} setzeWert={setzeBereich} />
+          {onAnfang && (
+            <button type="button" data-v3-anfang onClick={onAnfang}
+              title="Zum Anfang des Erlasses"
+              className="lc-leiste-griff ml-auto shrink-0 gap-1 px-1.5 text-micro">
+              <span aria-hidden>↑</span><span>Anfang</span>
+            </button>
+          )}
+        </div>
         <div className="flex items-start gap-1">
           {/* ── Ä15 (H2b) · KEINE ELLIPSE AN EINER KERNAUSKUNFT ────────────────
               Gemessen 17.8.2026 in der 280-px-Leiste: «49 Artikel · 110
@@ -194,17 +227,30 @@ export function LeserTrefferListe({
         </div>
       </div>
 
-      {treffer.length === 0 && (
-        // §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
-        // Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
-        <p className="px-1 py-2 text-body-s text-ink-500">
-          {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. B8: die Einzahl
-              kommt aus derselben `zaehlform` wie oben — hier stand sonst eine
-              dritte Schreibweise derselben Regel. */}
-          Kein {zaehlform(1, bestimmungsWort)} gefunden für «{begriff}»
-          {bereich !== 'alles' && <> im gewählten Suchbereich</>}.
-        </p>
-      )}
+      {/* §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
+          Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
+          ── P1-4 (Bug-Check 18.8.2026) · DIE ABSAGE WIRD ANGESAGT ──────────────
+          `leser-r1-r2` hat den Verlust beim H4-Flip ausdrücklich als offenen
+          Befund gemeldet: die V1-Absage war eine Live-Region und wurde
+          vorgelesen, diese hier nicht. Für einen blinden Leser war die Absage
+          damit genauso stumm wie eine leere Liste.
+          `status`, nicht `alert`: eine Auskunft, keine Störung — `alert`
+          unterbräche beim Tippen jede laufende Ansage. IMMER GEMOUNTET, damit die
+          Region schon dasteht, bevor sich ihr Inhalt ändert (eine erst mit dem
+          Text entstehende Region überliest ein Teil der Screenreader);
+          `empty:hidden` hält sie ohne Inhalt aus dem Fluss — kein Leerraum, kein
+          CLS. Gleiche Fassung in `../parts/TrefferListe.tsx` (§5). */}
+      <p data-treffer-leer role="status" className="px-1 py-2 text-body-s text-ink-500 empty:hidden">
+        {treffer.length === 0 && (
+          <>
+            {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. B8: die Einzahl
+                kommt aus derselben `zaehlform` wie oben — hier stand sonst eine
+                dritte Schreibweise derselben Regel. */}
+            Kein {zaehlform(1, bestimmungsWort)} gefunden für «{begriff}»
+            {bereich !== 'alles' && <> im gewählten Suchbereich</>}.
+          </>
+        )}
+      </p>
 
       <ul className="space-y-0.5">
         {zeilen.map(({ t, kopf }) => {
@@ -248,10 +294,32 @@ export function LeserTrefferListe({
                       `shrink-0` und bleibt sichtbar — er ist die Auskunft, die die
                       Zeile hier gibt. Der Randtitel gibt weiterhin zuerst nach:
                       er hat `flex-1`, das Etikett nicht. */}
+                  {/* ── Ä96 (H4-Nachzug 18.8.2026) · DER RANDTITEL IST KEIN BEIWERK
+                      Gemessen 18.8.2026 (StPO/«Kosten», D 1440, Spalte 280 px,
+                      erste acht Trefferzeilen): DREI von acht Randtiteln liefen
+                      in die Ellipse — «Entschädigung der amtlichen Verteidigung»
+                      244 px in 178, «Entschädigung und Kostentragung» 198 in 178,
+                      «Unberechtigte Zeugnisverweigerung» 206 in 178 —, während
+                      der Kontext-Schnipsel darunter über zwei bis drei Zeilen
+                      lief (30–45 px, nur einer der acht einzeilig).
+                      Die Zeile gab also die Höhe dem Beiwerk und schnitt die
+                      Kernauskunft: der Randtitel ist die amtliche Sachüberschrift
+                      der Bestimmung — er sagt, WORUM es geht, und ist damit
+                      dieselbe Klasse Auskunft wie der Zähler in Ä15, den §8
+                      ausdrücklich umbrechen statt anschneiden lässt. Der
+                      Schnipsel dagegen IST ein Ausschnitt; ihn zu kürzen ist sein
+                      Wesen, nicht sein Verlust — und wer mehr will, klappt den
+                      Artikel auf und bekommt jede Fundstelle voll.
+                      JETZT: Randtitel bis zwei Zeilen ohne Ellipse
+                      (`line-clamp-2` fängt nur den pathologischen Fall),
+                      Schnipsel einzeilig. Rechnerisch am Fall Art. 135: Titel
+                      17 → 34 px, Schnipsel 45 → 15 px, Zeile netto 13 px KÜRZER
+                      bei vollständigem Titel. `title` bleibt als Ergänzung, nie
+                      als Ersatz (S3 «KEIN title-ERSATZ»). */}
                   <span className="flex items-baseline gap-2">
                     <span className="num min-w-0 truncate text-body-s font-semibold text-ink-800" title={t.label}>{t.label}</span>
                     {t.randtitel && (
-                      <span className="min-w-0 flex-1 truncate font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
+                      <span data-treffer-randtitel className="line-clamp-2 min-w-0 flex-1 font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
                     )}
                     <span className="ml-auto shrink-0 text-micro tabular-nums text-ink-500">{t.fundstellen}</span>
                   </span>
@@ -272,7 +340,7 @@ export function LeserTrefferListe({
                       Ausschnitt wäre eine Dopplung (§5). */}
                   {!offen && t.ausschnitt && (
                     <span data-treffer-schnipsel className="mt-0.5 flex">
-                      <Schnipsel a={t.ausschnitt} />
+                      <Schnipsel a={t.ausschnitt} einzeilig />
                     </span>
                   )}
                   {badges.length > 0 && (

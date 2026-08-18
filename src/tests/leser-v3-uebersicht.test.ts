@@ -46,22 +46,40 @@ const labels = (a: ReturnType<typeof uebersichtsAngaben>) => a.zeilen.map((z) =>
 
 describe('ruheZeile — die eine Zeile im Ruhezustand', () => {
   it('Bund mit SR: «SR 312.0 · 480 Artikel»', () => {
-    expect(ruheZeile({ sr: '312.0' }, 480, 'Artikel')).toBe('SR 312.0 · 480 Artikel');
+    expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel')).toBe('SR 312.0 · 480 Artikel');
   });
 
   it('§-Erlass zählt Paragraphen, nicht Artikel (Ä23)', () => {
-    expect(ruheZeile({ sr: '211.11' }, 23, 'Paragraphen')).toBe('SR 211.11 · 23 Paragraphen');
+    expect(ruheZeile({ ebene: 'kanton', sr: '211.11' }, 23, 'Paragraphen'))
+      .toBe('211.11 · 23 Paragraphen');
+  });
+
+  // ── Ä75 (Orchestrator-Entscheid 18.8.2026, David hat Stopp-Recht) ──────────
+  // «SR» heisst Systematische Rechtssammlung DES BUNDES. Über ZH-211.11 und
+  // BS-640.100 stand es trotzdem — eine falsche Fundstellenangabe, keine
+  // Beschriftungs-Ungenauigkeit. Kein Ersatz-Kürzel: die kantonalen Sammlungen
+  // führen eigene Siglen (BS «SG», ZH «LS», AG «SAR»), die weder im Datenmodell
+  // stehen noch aus `erlass.kanton` ableitbar sind; sie zu erfinden wäre §7.
+  // ROT ZU BEKOMMEN: in `helpers.tsx` `kennungEtikett` fest auf `'SR'` ⇒ beide
+  // Kantons-Fälle rot; auf `null` ⇒ der Bundes-Fall rot.
+  it('Ä75: der Kantonserlass trägt kein «SR» — der Bundeserlass schon', () => {
+    expect(ruheZeile({ ebene: 'kanton', sr: '640.100' }, 292, 'Paragraphen'))
+      .not.toContain('SR');
+    expect(ruheZeile({ ebene: 'kanton', sr: '640.100' }, 292, 'Paragraphen'))
+      .toBe('640.100 · 292 Paragraphen');
+    expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel'))
+      .toBe('SR 312.0 · 480 Artikel');
   });
 
   it('ohne SR-Nummer entfällt das Glied ERSATZLOS — kein «SR —» (§8)', () => {
     // 12 von 1469 Erlassen tragen keine SR-Nummer (gezählt 17.8.2026).
-    const z = ruheZeile({ sr: '' }, 42, 'Artikel');
+    const z = ruheZeile({ ebene: 'bund', sr: '' }, 42, 'Artikel');
     expect(z).toBe('42 Artikel');
     expect(z).not.toContain('SR');
   });
 
   it('ohne Snapshot (nur-live-link/pdf-embed) keine erfundene Null', () => {
-    const z = ruheZeile({ sr: '101' }, null, 'Artikel');
+    const z = ruheZeile({ ebene: 'bund', sr: '101' }, null, 'Artikel');
     expect(z).toBe('SR 101');
     expect(z).not.toContain('0 Artikel');
   });
@@ -70,7 +88,7 @@ describe('ruheZeile — die eine Zeile im Ruhezustand', () => {
     // Ist-Befund: mit «Stand …» lief die Zeile an allen fünf Probe-Erlassen
     // über DREI Zeilen. Der Stand steht weiterhin in der Liste und im
     // Erlass-Kopf — er verschwindet nicht, er sprengt nur die Ruhezeile nicht.
-    expect(ruheZeile({ sr: '312.0' }, 480, 'Artikel')).not.toMatch(/Stand/);
+    expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel')).not.toMatch(/Stand/);
   });
 });
 
@@ -153,7 +171,8 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
       erlassTyp: 'gesetz', anzahl: 292, bestimmungsWort: 'Paragraphen',
       kantonErlassAnzahl: 859, gliederungsTiefe: 5,
     }));
-    expect(a.ruhe).toBe('SR 640.100 · 292 Paragraphen');
+    // Ä75: kein «SR» über einer kantonalen Nummer (Herleitung im Fall oben).
+    expect(a.ruhe).toBe('640.100 · 292 Paragraphen');
     expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Kanton BS · Gesetz');
     expect(a.hinweise.some((h) => h.startsWith('Kanton BS:'))).toBe(true);
   });
@@ -193,8 +212,8 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
 //      («Beschluss», «Inkrafttreten»), der Wert nur das Datum.
 //
 // ROT ZU BEKOMMEN (§6.7): in `uebersichtAngaben.ts` die `zeilen.push`-Reihenfolge
-// wieder auf datum → stand → inkraft stellen ⇒ Fall (a) rot; das Etikett auf
-// «Erlassdatum» zurücksetzen bzw. `ohneVom` weglassen ⇒ Fall (b) rot.
+// wieder auf datum → stand → inkraft stellen ⇒ Fall (a) rot; in `datumsAngabe`
+// das Etikett fest auf «Erlassdatum» setzen bzw. `PRAEPOSITION` leeren ⇒ (b) rot.
 describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Etikett', () => {
   const dreiDaten = () => uebersichtsAngaben(eingabe({
     erlass: erlassBauen({
@@ -254,6 +273,80 @@ describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Et
     }));
     expect(labels(a)).toEqual(['Art', 'Stand']);
     expect(a.zeilen.every((z) => z.wert.trim().length > 0)).toBe(true);
+  });
+});
+
+// ─── P1-2 · Ä80 hielt nur auf Deutsch (Bug-Check 18.8.2026) ─────────────────
+//
+// BEFUND (Repro `p1/r4-erlassdatum-fr.cjs`, D 1440, Steckbrief aufgeklappt): am
+// FR-Erlass 635.1.1 stand die Zeile
+//     «Erlass vom  du 01.05.1996 (version entrée en vigueur le 01.03.2024)»
+// — Ä80 hebt die Präposition nur, wenn sie «vom» heisst, und Ä74 schneidet nur
+// die Klammer, die «(Stand …)» heisst. Beide Muster sind deutsch, die Sidecars
+// sind es nicht. Ergebnis: Etikett und Wert sagten die Präposition doppelt, der
+// Wert begann mit einem Wort statt einer Ziffer (`tabular-nums` richtet dann an
+// einer Kante aus, an der nichts steht), und die Fassungs-Angabe stand ein
+// zweites Mal untereinander — genau der Ä74-Befund, nur auf Französisch.
+//
+// GEMESSEN über alle 1420 Struktur-Sidecars des Repos (Stand 32c2865d2, kein
+// Netz, `scratchpad/mess-erlassdatum.mjs`):
+//   erstes Wort      «Vom» 890 · «vom» 493 · ohne Präposition 27 · «du» 10
+//   Schluss-Klammer  «(Stand …)» 1409 · «(version …)» 5 · «(état …)» 5
+//                    · «(Fassung in Kraft getreten am …)» 1
+// Vorher trugen 10 von 1420 Erlassen einen Wert, der nicht mit einer Ziffer
+// beginnt (alle FR/VS); 11 Werte ändern sich durch den Fix, nachher sind es 0.
+//
+// ERLASS-NEUTRALITÄT (Fundament-Auflage 2): kein `if (kanton === 'FR')` und kein
+// Sprach-Zweig — es gibt genau EINE Präpositions-Liste und EINE Klammer-Liste,
+// beide belegt durch die Zählung oben, und darunter ein Rückfall, der jede
+// nicht gelistete Schreibweise auffängt, statt sie zu verstümmeln (§7).
+//
+// ROT ZU BEKOMMEN (§6.7): in `uebersichtAngaben.ts` das «du» aus `PRAEPOSITION`
+// entfernen ⇒ (a)/(b) rot; `FASSUNGS_KLAMMER` auf `/(?!x)x/` setzen ⇒ (a)/(b)/(c)
+// rot; das Etikett fest auf «Erlass vom» verdrahten ⇒ (d) rot.
+describe('P1-2 — fremdsprachige Erlassdaten (FR/VS-Sidecars)', () => {
+  const datumsZeile = (erlassdatum: string) => uebersichtsAngaben(eingabe({
+    erlass: erlassBauen({ key: 'FR-635.1.1', ebene: 'kanton', kanton: 'FR', sr: '635.1.1' }),
+    kopf: { erlassdatum } as UebersichtsEingabe['kopf'],
+  })).zeilen.find((z) => z.id === 'datum');
+
+  it('(a) FR-635.1.1 «du 01.05.1996 (version entrée en vigueur le 01.03.2024)»', () => {
+    const z = datumsZeile('du 01.05.1996 (version entrée en vigueur le 01.03.2024)');
+    expect(z?.wert).toBe('01.05.1996');
+    expect(z?.label).toBe('Erlass vom');
+    expect(z?.ziffern).toBe(true);
+  });
+
+  it('(b) VS-178.104 «du 26.11.2008 (état 01.01.2011)»', () => {
+    const z = datumsZeile('du 26.11.2008 (état 01.01.2011)');
+    expect(z?.wert).toBe('26.11.2008');
+    expect(z?.label).toBe('Erlass vom');
+  });
+
+  it('(c) FR-130.11-de: deutsche Klammer, die nicht «Stand» heisst (Ä74-Rest)', () => {
+    // Der Fall beweist, dass die Lücke keine Sprach-Lücke ist, sondern eine
+    // Muster-Lücke: derselbe Erlass trägt auf Deutsch «(Fassung in Kraft
+    // getreten am …)» und lief bis hierher ebenfalls ungeschnitten durch.
+    expect(datumsZeile('vom 30.11.2010 (Fassung in Kraft getreten am 01.12.2025)')?.wert)
+      .toBe('30.11.2010');
+  });
+
+  it('(d) unbekannte Schreibweise: Rückfall-Etikett statt falscher Zusage', () => {
+    // Beginnt der Wert nach beiden Schnitten nicht mit einer Ziffer, ist die
+    // Präposition unbekannt. Dann wird NICHTS geraten: der Wortlaut bleibt
+    // Zeichen für Zeichen stehen, das Etikett fällt auf das neutrale
+    // «Erlassdatum» zurück (so heisst es in V1), und `tabular-nums` entfällt.
+    const z = datumsZeile('dal 12 aprile 2000');
+    expect(z?.wert).toBe('dal 12 aprile 2000');
+    expect(z?.label).toBe('Erlassdatum');
+    expect(z?.ziffern).toBeFalsy();
+  });
+
+  it('(e) reine Klammer ohne Datum erzeugt gar keine Zeile (§8)', () => {
+    // 27 Sidecars tragen ein Erlassdatum, das NUR aus der Stand-Klammer besteht
+    // (z. B. APOSTILLE.json «(Stand am 4. September 2024)»). Nach dem Schnitt
+    // bleibt nichts — dann entfällt die Zeile, statt leer dazustehen.
+    expect(datumsZeile('(Stand am 4. September 2024)')).toBeUndefined();
   });
 });
 

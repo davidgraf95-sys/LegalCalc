@@ -31,6 +31,28 @@ import { test, expect, type Page } from '@playwright/test';
 //     Spec prüfte diese Wirkung (nachgesehen in `leser-v3-panel-facetten`,
 //     `-panel-zaehler`, `-panel-nachzug`: dort steht die ANWESENHEIT der
 //     Facetten, nicht ihre Wirkung auf die Liste).
+//
+// ── P1-3 (Bug-Check 18.8.2026) · DIE ERHÖHTEN WARTEZEITEN, DEKLARIERT ───────
+// Derselbe Umhäng-Commit (`b92a5956c`) hat in B-1 zwei Wartezeiten von 15 000 auf
+// 20 000 ms gesetzt und für das Panel eine dritte mit 20 000 ms neu angelegt —
+// still, ohne Vermerk. Das wird hier nachgeholt: eine unbegründet verlängerte
+// Wartezeit ist von einer LOCKERUNG nicht zu unterscheiden (§6.3).
+//
+// SIE IST KEINE LOCKERUNG, sondern die Folge des UMZUGS. B-1 mass die
+// Facetten-Wirkung früher an der Bezüge-Zeile, die MIT dem Artikel gerendert
+// wurde; sie misst sie jetzt im Kontext-Panel, das erst auf Nutzer-Geste öffnet
+// und seine Sidecars DANN nachlädt (`v3/panelKontextLaden.ts`: Fetch erst, wenn
+// das Panel einmal offen war — ausdrücklich nicht beim Seitenaufruf). Die
+// Wartezeit deckt jetzt einen Netzweg mit, den es an der alten Stelle nicht gab.
+// 20 000 ms ist dabei kein neuer Wert, sondern genau der, den die beiden
+// Reader-Wartungen dieser Datei (`warteReader`) schon vorher trugen.
+// GEPRÜFTE AUSSAGE UNVERÄNDERT: Facette ab ⇒ keine Auflistung, Facette an ⇒
+// wieder da. Keine Assertion entfernt, keine aufgeweicht.
+//
+// NICHT BETROFFEN ist `gesetze-ux-g3a`: der Bug-Check nannte sie in einem Atemzug
+// mit dieser Datei; nachgesehen 18.8.2026 (`git show b92a5956c -- …`) hat der
+// Commit dort KEINE Wartezeit angefasst — ihr einziger 20 000er
+// (`warteVerweiskarte`) stand schon vorher so da, nur mit einem anderen Selektor.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);

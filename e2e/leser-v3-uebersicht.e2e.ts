@@ -154,14 +154,32 @@ test.describe('Ä70/Ä72 — eine Stimme, eine Klappe, eine Warnung', () => {
     // zweimal — einmal im Erlass-Kopf, einmal in der Box —, und in der Box
     // genau einmal. Bis Ä70 stand er in der Box zweimal (Warnung + Grundhinweis
     // mit demselben Schluss-Halbsatz).
-    const inDerBox = await page.evaluate(() => {
+    // ── Ä81 (H4-Nachzug 18.8.2026) · NUR DER KOPF WARNT ─────────────────────
+    // Der Absatz oben war Ä28s ZWISCHENSTAND: die Doppelung INNERHALB der Box war
+    // abgeräumt, die auf der Seite blieb — und wurde hier sogar festgeschrieben.
+    // GEMESSEN 18.8.2026 (StPO, D 1440, Box zu wie aufgeklappt): beide Vorkommen
+    // sind GLEICHZEITIG SICHTBAR — `div[data-v3-uebersicht-warnung]` in der
+    // Leiste und `p < div < header` im Erlass-Kopf. Die Box zieht ihre Grenze
+    // selbst anders (Kopf = wie aktuell · Box = woher und wie gebaut), und eine
+    // offene Konsolidierung ist «wie aktuell». Also: genau EINMAL auf der Seite,
+    // und zwar im Kopf.
+    // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` die `warnung`-Zeile
+    // wieder in die Warn-Zelle setzen ⇒ (inDerBox 1, aufDerSeite 2) rot.
+    const warnungen = await page.evaluate(() => {
+      // Nur die BLATT-Absätze zählen — sonst zählt jede Hülle den Satz mit.
+      const alle = [...document.querySelectorAll('p, li, dd')]
+        .filter((p) => /noch nicht in den Text eingearbeitet/.test(p.textContent ?? ''))
+        .filter((p) => !p.querySelector('p, li, dd'))
       const box = document.querySelector('[data-v3-uebersicht]') as HTMLElement
-      return [...box.querySelectorAll('p, li, dd')]
-        .map((p) => (p.textContent ?? '').replace(/\s+/g, ' ').trim())
-        .filter((t) => /massgeblich ist/i.test(t))
+      return {
+        aufDerSeite: alle.length,
+        inDerBox: alle.filter((p) => box.contains(p)).length,
+        imKopf: alle.filter((p) => p.closest('header') !== null).length,
+      }
     })
-    expect(inDerBox.length, `«massgeblich ist …» in der Box: ${JSON.stringify(inDerBox)}`).toBe(1)
-    expect(inDerBox[0]).toContain('noch nicht in den Text eingearbeitet')
+    expect(warnungen.inDerBox, 'die Box warnt ein zweites Mal (Ä81)').toBe(0)
+    expect(warnungen.imKopf, 'der Erlass-Kopf warnt nicht mehr').toBe(1)
+    expect(warnungen.aufDerSeite, 'die Warnung steht nicht genau einmal auf der Seite').toBe(1)
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
