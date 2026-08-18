@@ -276,8 +276,16 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
             // Schalter benennt jetzt die SACHE, die er ein- und ausschaltet —
             // seinen Zustand sagt das Zeichen rechts, nicht das Verb.
             // Glossar: die Fläche heisst «Rechtsprechung» (Chip konstant).
-            label="Rechtsprechung in der Kopfzeile"
-            titel="Zähler und Zugang zur Rechtsprechung in der Kopfzeile ein- oder ausblenden — das Panel bleibt über «Ansicht ▾» und die Taste «r» erreichbar"
+            // ── Ä128 (Ästhetik-Nachzug 18.8.2026) · DER EINZIGE ZWEIZEILER ──
+            // GEMESSEN im aufgezogenen Ansicht-Menü: «Rechtsprechung in der
+            // Kopfzeile» war die einzige Beschriftung, die umbrach — die
+            // Schalterliste bekam dadurch eine unruhige Kante, und der Umbruch
+            // fiel ausgerechnet auf den Schalter, der ohnehin am meisten
+            // erklärt. «Im Kopf» sagt dasselbe: der Erlass-KOPF ist im Leser
+            // eine benannte Zone, keine Umschreibung. Die Wirkung bleibt Wort
+            // für Wort im `titel` stehen, wo Platz dafür ist.
+            label="Rechtsprechung im Kopf"
+            titel="Zähler und Zugang zur Rechtsprechung im Erlass-Kopf ein- oder ausblenden — das Panel bleibt über «Ansicht ▾» und die Taste «r» erreichbar"
             onKlick={() => schalte('leitfaelle', opt.leitfaelle === 'an')}
           />
 

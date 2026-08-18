@@ -5,6 +5,7 @@ import type { ErlassTyp } from '../../../lib/normtext/register';
 import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
+import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../benennung';
 import { formatiereDatum, kopfOverline, verifiziertesSachgebiet } from '../helpers';
 import {
   teilerfassung, nurErlassdatum, erlassOrgan, istDatumsToken,
@@ -190,17 +191,26 @@ export function ErlassUebersicht({
       )}
 
       {/* Quelle: die breiteste Provenienz-Zeile (§7 b/c) — der Live-Link auf die
-          geltende Fassung und, wo vorhanden, das amtliche PDF der gepinnten
-          Fassung. Bei GANZ aufgehobenem Erlass entfällt der «geltende
+          amtliche Fassung und, wo vorhanden, das amtliche PDF der gepinnten
+          Fassung.
+          ── P1-4 (Bug-Check-Nachzug 18.8.2026) · EIN ZIEL, EIN NAME, AUCH HIER
+          Der V3-Kopf sagt seit Ä110 «Amtliche Fassung ↗»; diese Zeile sagte
+          drei Zentimeter daneben weiter «↗ geltende Fassung» — derselbe Link
+          auf dieselbe Fedlex-URL, zwei Namen, und wer die Hüllen vergleicht,
+          hält es für zwei Ziele. FL-4 («V1 bis H5 unangetastet») schützt die
+          MECHANIK der Ist-Hülle, nicht eine Beschriftung, die nachweislich
+          falsch orientiert; geändert wird darum genau das eine Wort, aus der
+          geteilten Quelle `../benennung` — alles andere an dieser Datei bleibt,
+          wie es ist. Bei GANZ aufgehobenem Erlass entfällt der «geltende
           Fassung»-Link (er führte auf die aufgehobene Konsolidierung) — dieselbe
           §8-Regel wie im Erlass-Kopf. */}
       <p className="truncate text-micro leading-snug">
         <span className="text-ink-500">Quelle: </span>
         {erlass.quelleUrl && !erlass.aufgehoben && (
-          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">↗ geltende Fassung</a>
+          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">{AMTLICHE_FASSUNG} ↗</a>
         )}
         {erlass.quelleUrl && erlass.aufgehoben && (
-          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">↗ amtliche (aufgehobene) Fassung</a>
+          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">{AMTLICHE_FASSUNG_AUFGEHOBEN} ↗</a>
         )}
         {erlass.pdfUrl && (
           <>{erlass.quelleUrl && PUNKT}

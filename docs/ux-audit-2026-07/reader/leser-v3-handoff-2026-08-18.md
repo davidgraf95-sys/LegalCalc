@@ -58,6 +58,34 @@ Abschnitt «✅ Säuberung nach Live-Prüfung (18.8.2026)».
   Jargon «Fedlex-Graphen (SR-Taxonomie)» im Revisions-Sidecar (Risikopfad).
 - **Bei David:** Ä113 (= Ä64) Regler-Hierarchie bei 130 % · Ä33/Ä34 Chrome @390.
 
+### Säuberungs-PR — die drei Prüfer und ihr Nachzug (Branch `feat/leser-v3-saeuberung-nachzug`)
+Bug-Check: **1 Bug vor Merge**, 3 Nachzüge · Live-Ästhetik: **8,5/10** (vorher
+8/10) · Architektur: **8/10**, Merge ja mit Nachzug. Alles in DEMSELBEN PR
+nachgezogen; Tabelle mit Messwerten im Fahrplan Kap. 7, Abschnitt
+«Prüfer-Ergebnisse zu dieser Etappe (18.8.2026) und ihr Nachzug».
+- **Vor Merge:** **Ä126** (= P1-1 = P3-2) — der Such-Platzhalter trug das
+  Registerfeld `kuerzel`: ZH-211.11 @390 **465 px in einem 280-px-Feld** und im
+  Genus falsch. Gelöst durch Trennung: sichtbar «Im Erlass suchen oder «§ 1» …»
+  (datenfrei, längenfest), das Kürzel nur im zugänglichen Namen als Apposition
+  («Im Erlass StPO suchen …»), dort bis 20 Zeichen. · **P3-1** — der
+  §8-Erfassungssatz ignorierte `grad.stufe` (latent falsch ab dem ersten
+  Enumerations-Beleg); jetzt `erfassungsgradSatz`, Sonde gegen einen Stub.
+- **Nachzug:** P1-2 Trefferzähler «Fundstelle 0 von 88» → «keine gewählt · 88
+  Fundstellen» · P1-3 falscher Beispiel-Kommentar an `baueZitat` · P1-4
+  V1-Übersichtslink über die neue geteilte Wortquelle
+  `src/pages/gesetz-leser/benennung.ts` (deklarierte FL-4-Ausnahme) ·
+  Ä110-Rest Pfeil hinten · Ä127 «(neuer Tab)» statt zwei Wortlauten ·
+  Ä128 «Rechtsprechung im Kopf» · P3-3 toter Re-Export · P3-4 doppelte
+  «(Stand …)»-Klammer (GWV_FINMA) plus drei `datumsForm`-Sonden.
+- **Neue Wortquelle:** `src/pages/gesetz-leser/benennung.ts` trägt GENAU die
+  Beschriftungen, die über die Hüllen-Grenze V1/V3 laufen — nicht mehr. Wörter
+  nur einer Hülle bleiben am Bauteil, wo ihre Herleitung steht.
+- **§17-Zeile (offene QS):** CI-Shard «Browser» wurde am 18.8. **zweimal**
+  `cancelled` beim Chromium-Download; der Deploy-Job wurde daraufhin
+  **still übersprungen**, ohne dass ein Test rot war. Wurzel-Fix-Kandidat:
+  automatischer Rerun `cancelled` Shards ohne Test-Rot, **oder** der
+  Deploy-Job meldet ein Überspringen laut (statt still grün zu wirken).
+
 ## Entscheide David (gelten, Wortlaut)
 - **17.8.** «ja und c, mach so» → H4-Flip **und** Ä60 = (c).
 - **17.8.** «v2 gefällt mir besser aber fussnoten hochgestellt» → F3 = V2

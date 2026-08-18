@@ -1,19 +1,22 @@
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
-import { erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
+import { erfassungsgrad, type Erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
 import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
+import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../benennung';
 import { formatiereDatum, kennungText, verifiziertesSachgebiet } from '../helpers';
 import { teilerfassung, erlassOrgan } from '../erlassUebersichtDaten';
 import { erlassArt, type BestimmungsWort } from './erlassAnsicht';
 import { datumsAngabe } from './datumsForm';
 
-// Weiter von hier aus greifbar: die Datums-Schreibung ist eine eigene Sache und
-// lebt seit Ä107 in `./datumsForm` — die Sonden der Box prüfen sie über diesen
-// Namen (§5, EIN Zugang statt zweier Importpfade).
-export { datumsAngabe, numerischesDatum } from './datumsForm';
+// P3-3 (Architektur-Gegenprüfung 18.8.2026): hier stand ein Re-Export
+// `export { datumsAngabe, numerischesDatum } from './datumsForm'` mit der
+// Begründung, die Sonden der Box griffen darüber zu. Gemessen: KEIN Aufrufer
+// im Repo, weder Quelle noch Test — die Begründung war nie eingelöst, und ein
+// zweiter Importpfad auf dieselbe Sache ist genau das, was §5 verbietet.
+// Wer die Datums-Schreibung braucht, importiert sie aus `./datumsForm`.
 
 // ═══ Übersichtsbox → Angaben (David-Auftrag 17.8.2026, «orientiere dich an
 //     fedlex») ══════════════════════════════════════════════════════════════
@@ -118,7 +121,9 @@ export interface UebersichtLink {
   id: string;
   label: string;
   href: string;
-  /** Zeichen vor dem Label: ↗ verlässt die Seite, ⬇ liefert eine Datei. */
+  /** Das Zeichen am Label: «↗» verlässt die Seite, «⬇» liefert eine Datei.
+   *  WO es steht, entscheidet die Darstellung (Ä110-Rest, `./UebersichtBox`):
+   *  «↗» folgt dem Ziel, «⬇» geht ihm voran. Hier steht nur, WELCHES. */
   zeichen: '↗' | '⬇';
 }
 
@@ -191,6 +196,38 @@ export function ruheZeile(
     kennungText(erlass),
     anzahl != null ? `${anzahl} ${bestimmungsWort}` : null,
   ].filter(Boolean).join(' · ');
+}
+
+/**
+ * §8 · Was die Box über die ERFASSUNG der kantonalen Sammlung sagt, aus der
+ * dieser Erlass stammt — eine reine Funktion des Erfassungsgrads.
+ *
+ * ── P3-1 (Architektur-Gegenprüfung 18.8.2026) · EINE LATENTE UNWAHRHEIT ─────
+ * Ä122 hatte den Satz auf «… der Bestand ist nicht vollständig» festgeschrieben
+ * — UNABHÄNGIG von `grad.stufe`. Heute fällt das nicht auf, weil
+ * `ENUMERATIONS_BELEGE` leer ist und darum kein Kanton die Stufe `vollstaendig`
+ * erreicht. Es ist aber genau die Sorte Aussage, die beim ERSTEN hinterlegten
+ * Enumerations-Beleg still falsch wird: die Box behauptete dann eine Lücke, die
+ * die Daten ausdrücklich verneinen (§8 «nie mehr und nie weniger sagen, als
+ * belegt ist»). Ein §8-Satz, der die Stufe ignoriert, aus der er entsteht, ist
+ * keine Auskunft, sondern eine Konstante mit Auskunfts-Anstrich.
+ *
+ * Eigene, exportierte Funktion und nicht ein `if` im Rumpf: nur so lässt sich
+ * die `vollstaendig`-Lage heute überhaupt prüfen — `uebersichtsAngaben` käme
+ * ohne einen Stub in `erfassungsgrad` nie dorthin (Sonde in
+ * `src/tests/leser-v3-uebersicht.test.ts`, rot gefahren 18.8.2026).
+ *
+ * Sprache wie in Ä122: kein Hausjargon, keine interne Stufen-Bezeichnung
+ * («dünn»/«Auswahl» bleiben der Kantonsliste, §5).
+ */
+export function erfassungsgradSatz(grad: Erfassungsgrad): string {
+  // `vollstaendig` entsteht NUR mit hinterlegtem Enumerations-Beleg (belegtes
+  // amtliches Total N, Quelle, Stand — `erfassungsgrad.ts`). Dann ist die
+  // Vollständigkeit belegt und nicht geschätzt, und die Box darf sie sagen.
+  if (grad.stufe === 'vollstaendig') {
+    return `Aus dem Kanton ${grad.kanton} sind alle ${grad.n} Erlasse der amtlichen Sammlung erfasst.`;
+  }
+  return `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`;
 }
 
 /**
@@ -318,7 +355,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   if (erlass.quelleUrl) {
     links.push({
       id: 'quelle', zeichen: '↗',
-      label: lebt ? 'Amtliche Fassung' : 'Amtliche (aufgehobene) Fassung',
+      label: lebt ? AMTLICHE_FASSUNG : AMTLICHE_FASSUNG_AUFGEHOBEN,
       href: erlass.quelleUrl,
     });
   }
@@ -347,11 +384,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // gerade; `STUFE_WORT` selbst bleibt, es ist an der Kantonsliste richtig (§5).
   const grad = erlass.kanton && e.kantonErlassAnzahl != null
     ? erfassungsgrad(erlass.kanton, e.kantonErlassAnzahl) : null;
-  if (grad) {
-    hinweise.push(
-      `Aus dem Kanton ${grad.kanton} sind bisher ${grad.n} Erlasse erfasst — der Bestand ist nicht vollständig.`,
-    );
-  }
+  if (grad) hinweise.push(erfassungsgradSatz(grad));
   if (e.bestimmungsEtikettStatus === 'entwurf') {
     hinweise.push(
       `Die Bestimmungen dieses Erlasses sind hier als «${e.bestimmungsWort}» gezählt — ob das die amtliche Bezeichnung ist, ist noch nicht geprüft.`,

@@ -2520,19 +2520,19 @@ entstanden statt eines gewachsenen `uebersichtAngaben.ts`.
 | Ä100 Doppellinie Ingress | N | ✅ erledigt |
 | Ä101 `hyphens` im h1 | N | ✅ erledigt |
 | Ä102 Gruppenkopf ellipsiert | N | ✅ erledigt |
-| Ä103 Zähler «–/88» | N | ✅ erledigt |
+| Ä103 Zähler «–/88» | N | ✅ erledigt · **Nachzug P1-2** (18.8.): vor dem ersten Sprung stand «Fundstelle 0 von 88» — eine nullte Fundstelle gibt es nicht; jetzt «keine gewählt · 88 Fundstellen» |
 | Ä104 «Randtitel»-Chip, Treffer im Randtitel unmarkiert | N/S | ⏳ **offen → H5.** Nicht gebaut: der Chip zu streichen ist billig, den Treffer IM Randtitel zu markieren heisst, den Highlight-Walker auf ein zweites Feld zu führen — das ist Suchlogik (`suchHighlight.ts`), nicht Beschriftung, und gehört nicht in eine Säuberung |
 | Ä105 Verweise-Zeile doppelt zu den Inline-Links | S | ⏳ offen → **S-Strang / Beiwerk-Entscheid** (unverändert) |
 | Ä106 ★-Flut | N | ✅ erledigt |
 | Ä107 Datumsformate | N | ✅ erledigt |
 | Ä108 «Art: Kanton FR» | N | ✅ erledigt |
 | Ä109 Kantonale Sigle uneinheitlich | S | ⏳ offen → **H5/Korpus** (Registerfeld je Kanton + Verifikation, §7; identisch mit der positiven Hälfte von Ä75) |
-| Ä110 Fedlex-Link-Namen | N | ✅ erledigt (Leser-Fläche). **App-Hälfte offen → H5:** `NormPopover`, `NormChip`, `parts/ErlassUebersicht` (V1) |
+| Ä110 Fedlex-Link-Namen | N | ✅ erledigt (Leser-Fläche) · **Nachzug (18.8.):** Pfeilstellung in der Übersichtsbox gerichtet (Ä110-Rest) und `parts/ErlassUebersicht` (V1) über die geteilte Wortquelle `gesetz-leser/benennung.ts` nachgezogen (P1-4). **App-Hälfte offen → H5:** `NormPopover`, `NormChip` |
 | Ä111 zwei ☰ | N (aria) / S (Glyphe) | ✅ aria erledigt · Glyphe offen → **H5** (App-Icon-Set) |
-| Ä112 zwei Suchfelder | N | ✅ Leser-Feld erledigt. **Topbar offen → H5** (`components/layout/**`, TABU in dieser Etappe) |
+| Ä112 zwei Suchfelder | N | ✅ Leser-Feld erledigt · **korrigiert durch Ä126** (18.8.): das Kürzel im sichtbaren Platzhalter war zu lang und im Genus falsch. **Topbar offen → H5** (`components/layout/**`, TABU in dieser Etappe) |
 | Ä113 = Ä64 Regler-Hierarchie 130 % | **D** | ⏳ **wartet auf David** — nicht gebaut |
 | Ä114 «Ansicht» | N | ✅ erledigt |
-| Ä115 Schalter-Satz | N | ✅ erledigt |
+| Ä115 Schalter-Satz | N | ✅ erledigt · **Nachzug Ä128** (18.8.): «Rechtsprechung in der Kopfzeile» war der einzige Zweizeiler im Menü → «Rechtsprechung im Kopf» |
 | Ä116 Schalter ≠ Element | N | ✅ erledigt |
 | Ä117 Gedankenstrich | N | ✅ erledigt (Leser-Fläche + `NormPopover`) |
 | Ä118 Fenster/Reiter | N (Leser) / S (App) | ✅ Leser erledigt · App-Hälfte offen → **H5** |
@@ -2543,6 +2543,47 @@ entstanden statt eines gewachsenen `uebersichtAngaben.ts`.
 | Ä123 Kopf-Chip drei Gesichter | S | ⏳ offen → **H5** (Zahl als Badge, Chip-Wortlaut konstant) |
 | Ä124 «BIS» als Wortteil, «[tab]» im Label | S | ⏳ offen → **Korpus/Kern-Render.** Nur aus dem DOM-Inventar belegt, ohne Bild — vor dem Bau reproduzieren (§0.2) |
 | Ä125 Gliederung folgt der Lesestelle uneinheitlich | S | ⏳ offen → **Messreihe.** Ein Lauf je Modus ist ein Verdacht, keine Zuschreibung (§0.3): 10 Kaltläufe je Modus, dann entscheiden |
+| Ä126 Such-Platzhalter trägt das Registerkürzel | **N (Bug)** | ✅ erledigt (vor Merge) |
+| Ä127 «Fenster» doppelt belegt (Split ↔ Browser) | N (aria) | ✅ erledigt |
+| Ä128 einziger Zweizeiler im Ansicht-Menü | N | ✅ erledigt |
+
+#### Prüfer-Ergebnisse zu dieser Etappe (18.8.2026) und ihr Nachzug
+
+Die Säuberung ist von **drei** Prüfern unabhängig durchgesehen worden, bevor
+sie gelandet ist:
+
+| Prüfung | Ergebnis | Verdikt |
+|---|---|---|
+| **Bug-Check** (P1) | 1 Bug vor dem Merge (P1-1 = Ä126), 3 Nachzüge, 1 H5-Zeile | Merge nach Behebung von P1-1 |
+| **Live-Ästhetik** (P2) | **8,5 / 10** (vorher 8/10); 3 Ä-Nachzüge, Rest S/H5 | Merge ja |
+| **Architektur** (P3) | **8 / 10**; 1 latente Unwahrheit, 1 toter Export, 1 Deckungslücke | Merge ja mit Nachzug |
+
+**Vor dem Merge behoben** (Branch `feat/leser-v3-saeuberung-nachzug`):
+
+| Nr. | Befund (gemessen) | Fix |
+|---|---|---|
+| **Ä126** = P1-1 = P3-2 | Such-Platzhalter «Im ‹Kürzel› suchen …» trug das Registerfeld `kuerzel`. ZH-211.11 @390: **465 px in einem 280-px-Feld**, und im Genus falsch («die Verordnung»). Ursache sind zwei Eigenschaften des Feldes: keine Längengrenze (753 der 1469 Werte > 20 Zeichen, längster 521) und beliebiges Genus | Trennung statt Rücknahme: der sichtbare Platzhalter trägt keine Daten mehr («Im Erlass suchen oder «§ 1» …», Beispiel weiter erlassgerecht aus Ä20) — der Ä112-Unterschied zur Topbar bleibt gesagt. Der Erlass steht im **zugänglichen Namen** als Apposition («Im Erlass StPO suchen oder zu einer Bestimmung springen»): so regiert der Artikel das Substantiv und nie das Kürzel, in jedem Genus, ohne Genus-Tabelle im Code. Über 20 Zeichen entfällt es auch dort |
+| **P3-1** | Der §8-Erfassungssatz der Box stand fest auf «… der Bestand ist nicht vollständig», unabhängig von `grad.stufe`. Latent falsch: mit dem ersten Enumerations-Beleg behauptet die Box eine Lücke, die die Daten verneinen | Eigene, prüfbare Funktion `erfassungsgradSatz`; Satz je Stufe. Sonde gegen einen `vollstaendig`-Stub, weil `ENUMERATIONS_BELEGE` heute leer ist — eine Sonde, die erst rot wird, wenn der Fehler ausgeliefert ist, bewacht nichts (§6.7) |
+
+**Nachzug im selben PR:**
+
+| Nr. | Befund | Fix |
+|---|---|---|
+| **P1-2** | Trefferzähler vor dem ersten Sprung: «Fundstelle 0 von 88»; die Zeile trägt `aria-live`, ein Screenreader sprach sie mit | «keine gewählt · 88 Fundstellen» — mit Umfang dahinter, damit die Live-Ansage für sich verständlich bleibt |
+| **P1-3** | Kommentar an `baueZitat` behauptete das Ergebnis «§ 1 GebV OG»; real trägt `kuerzel` an ZH-211.11 den Volltitel | Kommentar korrigiert und auf das H5-Feld (Sigle aus dem Register) verwiesen — der Bau selbst war richtig |
+| **P1-4** | V1-Übersicht «↗ geltende Fassung» gegen V3-Kopf «Amtliche Fassung ↗» | Geteilte Wortquelle `src/pages/gesetz-leser/benennung.ts`; V1 sonst unangetastet, im Glossar als FL-4-Ausnahme deklariert |
+| **Ä110-Rest** | «↗ Amtliche Fassung» in der Box gegen «Amtliche Fassung ↗» im Kopf | Regel an der Bedeutung des Zeichens: «↗» führt weg und folgt, «⬇» holt her und geht voran |
+| **Ä127** | Dieselbe Tatsache dreifach benannt — «(neues Fenster)» (Artikel/Sektionskopf) und «(öffnet in neuem Tab)» (PDF); «Fenster» ist im Leser zugleich die Split-Fläche (Ä118) | Einheitlich «**(neuer Tab)**», Glossar-Zeile ergänzt |
+| **Ä128** | «Rechtsprechung in der Kopfzeile» — einziger Zweizeiler im Ansicht-Menü | «**Rechtsprechung im Kopf**»; volle Wirkung unverändert im `title` |
+| **P3-3** | Toter Re-Export `datumsAngabe, numerischesDatum` in `uebersichtAngaben` — Begründung («die Sonden greifen darüber zu») nie eingelöst, kein Aufrufer im Repo | Gestrichen (§5/§17: gestrichen statt bewacht) |
+| **P3-4** | `nurErlassdatum` schnitt nur EINE Stand-Klammer. GWV_FINMA: «vom 3. Juni 2015 (Stand am 1. Januar 2023) (Stand am 1. Januar 2023)» (1 von 1420 Sidecars) — die erste blieb über der Zeile «Stand · 01.01.2023» stehen | `(?:…)+` statt einer Klammer; Enge unverändert (fremde Klammer stoppt den Schnitt). Dazu Sonden für die drei ungedeckten `datumsForm`-Zweige (Rückfall, FR-Monate, Plausibilitätsschranke) |
+
+**Offen aus den drei Prüfungen → H5 / S-Strang:** P1-5 (die e2e-Unions in
+`e2e/helpers/leserBeschriftung.ts` auf die V3-Wörter verengen, sobald die
+Ist-Hülle fällt) · BS-Zitat mit nackter Nummer bis zur Sigle im Register
+(Ä109) · Bund-Vorgabe «Bundesgesetz» ohne `erlassTyp` · Erlass-Kopf `min-h`
+75 + 54 px Leerräume (CLS-Abwägung) · Ä124 «Achter Titelbis» (Korpusdaten) ·
+Ä123 Chip-Gesichter nach dem Nachladen.
 
 ---
 

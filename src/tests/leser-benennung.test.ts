@@ -232,14 +232,20 @@ describe('Ä111/Ä112: zwei Griffe derselben Glyphe, zwei verschiedene Namen', (
     expect(/aria-label="Gliederung"/.test(rahmen)).toBe(false);
   });
 
-  it('das Leser-Suchfeld nennt seinen Erlass — im Platzhalter UND im Namen', () => {
+  it('das Leser-Suchfeld nennt seinen Erlass — im NAMEN, nicht im Platzhalter', () => {
     const ansicht = ohneKommentare(LIES('v3/erlassAnsicht.ts'));
-    // Beide Ausgaben teilen EINE Quelle (`suchOrt`), damit sie nicht
-    // auseinanderlaufen; geprüft wird, dass beide Funktionen existieren und das
-    // Kürzel entgegennehmen.
-    expect(ansicht).toMatch(/export function suchPlatzhalter\([^)]*kuerzel/);
+    // ── Ä126 (18.8.2026) · DIE SIGNATUR IST DIE ZUSAGE ────────────────────
+    // Bis hierher stand hier das Gegenteil: der Platzhalter MUSSTE das Kürzel
+    // entgegennehmen. Gemessen an ZH-211.11 @390 waren das 465 px in einem
+    // 280-px-Feld — das Registerfeld `kuerzel` ist nicht längenbeschränkt
+    // (753/1469 über 20 Zeichen, längster Wert 521). Der Platzhalter darf
+    // darum GAR KEINE Daten mehr annehmen; die Zusage steht in der Signatur,
+    // wo ein späterer Bau sie nicht versehentlich unterläuft.
+    expect(ansicht).toMatch(/export function suchPlatzhalter\(beispiel: string \| null\): string/);
+    expect(ansicht).not.toMatch(/export function suchPlatzhalter\([^)]*kuerzel/);
     expect(ansicht).toMatch(/export function suchFeldName\(kuerzel/);
-    expect(ansicht).toContain('Im ${kuerzel.trim()} suchen');
+    // Genusfrei: der Artikel regiert «Erlass», das Kürzel steht als Apposition.
+    expect(ansicht).toContain('Im Erlass ${k} suchen');
     const feld = ohneKommentare(LIES('v3/SuchSprungFeld.tsx'));
     expect(feld).toContain('aria-label={ariaName}');
   });

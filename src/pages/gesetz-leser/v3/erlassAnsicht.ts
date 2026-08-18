@@ -185,31 +185,68 @@ export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'key'>): string 
  *
  * BEHOBEN WIRD DAS UNTERE FELD, NICHT DIE TOPBAR: die Topbar trägt die ganze
  * App (`components/layout/**`, FL-4) und ist hier ausdrücklich nicht
- * anzufassen; das Leser-Feld dagegen KENNT seinen Erlass. Das Kürzel kommt aus
- * dem Datenmodell (`erlass.kuerzel`) — erlassneutral, kein `if (bund)`, keine
- * Liste: was im Register steht, steht im Platzhalter.
+ * anzufassen; das Leser-Feld dagegen weiss, dass es einen EINZELNEN Erlass
+ * durchsucht — und sagt es seither («Im Erlass suchen …»).
  *
- * `kuerzel` fehlt nie (Registerfeld); ist es leer, bleibt die alte, allgemeine
- * Form stehen, statt ein «Im  suchen» mit Loch zu drucken (§8).
+ * ── Ä126 (Bug-Check P1-1 · Architektur P3-2, 18.8.2026) · NICHT DAS KÜRZEL ──
+ *
+ * Ä112 setzte dafür das REGISTERKÜRZEL in den sichtbaren Platzhalter. Gemessen
+ * am Live-Stand ZH-211.11 @390 stand dort «Im Gebührenverordnung des
+ * Obergerichts (GebV OG) suchen oder «§ 1» …» — 465 px in einem 280 px breiten
+ * Feld, also mehr als die Hälfte der Auskunft abgeschnitten, und obendrein
+ * grammatisch falsch («die Verordnung»).
+ *
+ * Beides folgt aus zwei Eigenschaften des Feldes `kuerzel`, die Ä112 übersehen
+ * hat: es ist NICHT längenbeschränkt (gezählt am Register: 753 der 1469 Werte
+ * über 20 Zeichen, der längste 521) und es hat ein beliebiges GENUS, das ein
+ * festes «Im» nicht treffen kann (StPO, ZPO, BV sind Feminina).
+ *
+ * DIE TRENNUNG, die beides zugleich löst — und Ä112 nicht zurücknimmt:
+ *   • SICHTBAR trägt der Platzhalter keine Daten mehr, nur die Sache selbst
+ *     («Im Erlass suchen»). Er ist damit längenfest, und der Unterschied zur
+ *     Topbar, um den es Ä112 ging, bleibt gesagt: «Im Erlass» gegen «Norm».
+ *     Das Sprung-Beispiel bleibt erlassgerecht aus dem Datenmodell (Ä20).
+ *   • DER ZUGÄNGLICHE NAME nennt den Erlass; dort zählen keine Pixel. Das
+ *     Kürzel steht als APPOSITION zu «Erlass» — so regiert der Artikel das
+ *     Substantiv und nie das Kürzel, in jedem Genus, ohne Genus-Tabelle im
+ *     Code (die wäre Rechtsdaten-Pflege für eine Grammatikfrage).
+ *
+ * Sonde: `src/tests/leser-v3-erlassansicht.test.ts` (Ä126), rot gefahren am
+ * Vorzustand mit 68 statt ≤ 37 Zeichen.
  */
-export function suchPlatzhalter(beispiel: string | null, kuerzel?: string): string {
-  return `${suchOrt(kuerzel)}${beispiel ? ` oder «${beispiel}» …` : ' …'}`;
+export function suchPlatzhalter(beispiel: string | null): string {
+  return `${SUCH_ORT}${beispiel ? ` oder «${beispiel}» …` : ' …'}`;
 }
 
-/** Ä112 · der halbe Satz, den Platzhalter UND zugänglicher Name teilen — EINE
- *  Quelle für beide (§5). Ohne Kürzel die alte, allgemeine Form. */
+/** Ä126 · der halbe Satz, den Platzhalter UND zugänglicher Name teilen — EINE
+ *  Quelle für beide (§5), und die einzige Stelle ohne Daten darin. */
+const SUCH_ORT = 'Im Erlass suchen';
+
+/**
+ * Ä126 · ab wann ein Registerwert kein Kürzel mehr ist.
+ *
+ * DOKUMENTIERT, NICHT GERATEN (gezählt am Register 18.8.2026, 1469 Erlasse):
+ * bis 20 Zeichen stehen dort Abkürzungen und knappe Ein-Wort-Titel («ZGB»,
+ * «OR», «HRegV», «Feuerschutzverordnung»); darüber beginnen die Volltitel, bis
+ * 521 Zeichen. Ein Volltitel im zugänglichen Namen ist gesprochen kein
+ * Orientierungspunkt mehr, sondern Lärm vor der eigentlichen Auskunft — dann
+ * lieber die Sache ohne Namen (§8: nichts behaupten, was nicht trägt).
+ */
+export const KUERZEL_NAME_MAX = 20;
+
 function suchOrt(kuerzel?: string): string {
-  return kuerzel?.trim() ? `Im ${kuerzel.trim()} suchen` : 'Im Gesetz suchen';
+  const k = kuerzel?.trim();
+  return k && k.length <= KUERZEL_NAME_MAX ? `Im Erlass ${k} suchen` : SUCH_ORT;
 }
 
 /**
- * Ä112 · der ZUGÄNGLICHE NAME des Such-/Sprungfelds.
+ * Ä112/Ä126 · der ZUGÄNGLICHE NAME des Such-/Sprungfelds.
  *
- * Er nennt denselben Erlass wie der Platzhalter — und zusätzlich die zweite
- * Fähigkeit des Feldes (springen), die der Platzhalter nur als Beispiel zeigt.
- * Eigene Funktion statt eines zweiten Literals im Rahmen: der Name ist die
- * Auskunft, auf die ein Screenreader-Nutzer angewiesen ist, und er darf nicht
- * auseinanderlaufen, wenn jemand den Platzhalter nachjustiert.
+ * Er nennt den Erlass — und zusätzlich die zweite Fähigkeit des Feldes
+ * (springen), die der Platzhalter nur als Beispiel zeigt. Eigene Funktion statt
+ * eines zweiten Literals im Rahmen: der Name ist die Auskunft, auf die ein
+ * Screenreader-Nutzer angewiesen ist, und er darf nicht auseinanderlaufen, wenn
+ * jemand den Platzhalter nachjustiert.
  */
 export function suchFeldName(kuerzel?: string): string {
   return `${suchOrt(kuerzel)} oder zu einer Bestimmung springen`;

@@ -283,6 +283,28 @@ describe('S6 — reine Ableitungen', () => {
       .toBe('vom 1. Januar 2000 (Stand am 1. Juli 2026) Nachtrag');
   });
 
+  // ── P3-4 (Bug-Check-Nachzug 18.8.2026) · ZWEI KLAMMERN SIND AUCH ZWEI ─────
+  // GEMESSEN am Bundeserlass GWV_FINMA (`public/normtext/struktur/bund/`): das
+  // Sidecar trägt «vom 3. Juni 2015 (Stand am 1. Januar 2023) (Stand am
+  // 1. Januar 2023)» — dieselbe Klammer doppelt. `String.replace` mit einem
+  // `$`-verankerten Muster schneidet genau EINE; in der Übersichtsbox blieb die
+  // erste stehen, direkt über der Zeile «Stand · 01.01.2023». Also genau die
+  // Dopplung, gegen die diese Funktion gebaut ist — Ä74 hatte sie nur um eine
+  // Ebene verschoben.
+  // GEZÄHLT über alle 1420 Sidecars: 1 Fall. Ein Einzelfall rechtfertigt keine
+  // Datenkorrektur an der Quelle (der Wortlaut ist amtlich), wohl aber ein
+  // Muster, das sich nicht auf die Zahl der Klammern verlässt.
+  it('nurErlassdatum schneidet ALLE Stand-Klammern am Ende, nicht nur die letzte (P3-4)', () => {
+    expect(nurErlassdatum('vom 3. Juni 2015 (Stand am 1. Januar 2023) (Stand am 1. Januar 2023)'))
+      .toBe('vom 3. Juni 2015');
+    expect(nurErlassdatum('Vom 12. April 2000 (Stand 1. Januar 2026) (Stand 1. Januar 2026)'))
+      .toBe('Vom 12. April 2000');
+    // Die Negativ-Sonden von Ä74 bleiben gültig: eine FREMDE Klammer davor
+    // stoppt den Schnitt, sie ist eine eigene Aussage.
+    expect(nurErlassdatum('vom 1. Januar 2000 (AS 2000 1) (Stand am 1. Juli 2026)'))
+      .toBe('vom 1. Januar 2000 (AS 2000 1)');
+  });
+
   it('erlassOrgan liest die autor-Zeile ohne Schluss-Komma', () => {
     expect(erlassOrgan(kopf)).toBe('Die Bundesversammlung der Schweizerischen Eidgenossenschaft');
     expect(erlassOrgan(null)).toBeNull();

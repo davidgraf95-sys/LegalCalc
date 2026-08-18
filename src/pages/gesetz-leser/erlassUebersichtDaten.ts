@@ -116,7 +116,15 @@ export function teilerfassung(erlassKey: string): TeilerfassungsBeleg | undefine
  * eine korrigierte Zweitkopie in `v3/` wäre die zweite Wahrheit, die §5 verbietet.
  */
 export function nurErlassdatum(erlassdatum: string): string {
-  return erlassdatum.replace(/\s*\(Stand(?: am)? [^)]*\)\s*$/, '').trim();
+  // P3-4 (Bug-Check-Nachzug 18.8.2026): `(?:…)+` statt EINER Klammer.
+  // GEMESSEN an GWV_FINMA: «vom 3. Juni 2015 (Stand am 1. Januar 2023) (Stand
+  // am 1. Januar 2023)» — dieselbe Klammer doppelt (1 von 1420 Sidecars). Ein
+  // `$`-verankertes `replace` schnitt nur die letzte; die erste blieb über der
+  // Zeile «Stand · 01.01.2023» stehen, also genau die Dopplung, gegen die diese
+  // Funktion gebaut ist, eine Ebene höher. Die Enge bleibt unangetastet:
+  // geschnitten wird weiter NUR eine Kette von Stand-Klammern am Ende, und
+  // jede fremde Klammer davor («(AS 2000 1)») stoppt sie.
+  return erlassdatum.replace(/(?:\s*\(Stand(?: am)? [^)]*\))+\s*$/, '').trim();
 }
 
 /** Das erlassgebende Organ aus der amtlichen Präambel (ohne Schluss-Komma). */

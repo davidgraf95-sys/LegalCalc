@@ -201,10 +201,23 @@ export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
         {links.length > 0 && (
           <p data-v3-uebersicht-quellen className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-0.5 text-xs">
             {links.map((l) => (
+              // ── Ä110-REST (Ästhetik-Nachzug 18.8.2026) · DER PFEIL STEHT
+              //    HINTEN ────────────────────────────────────────────────────
+              // Ä110 hat den NAMEN vereinheitlicht («Amtliche Fassung»), die
+              // ZEICHENSTELLUNG aber nur im Erlass-Kopf gerichtet: dort steht
+              // «Amtliche Fassung ↗», hier stand «↗ Amtliche Fassung» — zwei
+              // Formen desselben Links, zwei Handbreit auseinander.
+              // DIE REGEL, die beide Zeichen erklärt: «↗» sagt «führt weg» und
+              // folgt darum dem Ziel wie ein Nachsatz; «⬇» sagt «holt her» und
+              // geht dem Ziel voran, wie am Kopf-Chip «⬇ Amtliches PDF». Sie
+              // hängt an der Bedeutung des Zeichens, nicht an einer Liste von
+              // Links, und gilt darum auch für ein künftiges drittes Ziel.
               <a key={l.id} data-v3-uebersicht-link={l.id} href={l.href}
                 target="_blank" rel="noopener noreferrer"
                 className="text-brass-700 hover:underline">
-                <span aria-hidden>{l.zeichen}</span> {l.label}
+                {l.zeichen === '↗'
+                  ? <>{l.label} <span aria-hidden>↗</span></>
+                  : <><span aria-hidden>{l.zeichen}</span> {l.label}</>}
               </a>
             ))}
           </p>

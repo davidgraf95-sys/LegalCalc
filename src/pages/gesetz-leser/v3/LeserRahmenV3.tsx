@@ -172,10 +172,12 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
       onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
-      // Ä112 (18.8.2026): der Platzhalter nennt den Erlass — sonst standen
-      // @720–1440 zwei fast gleich beschriftete Suchfelder übereinander
-      // (Topbar vs. Leser). Herleitung in `./erlassAnsicht.suchPlatzhalter`.
-      platzhalter={suchPlatzhalter(beispielBestimmung, m.erlass?.kuerzel)}
+      // Ä112/Ä126 (18.8.2026): der Platzhalter nennt die SACHE («Im Erlass
+      // suchen») — sonst standen @720–1440 zwei fast gleich beschriftete
+      // Suchfelder übereinander (Topbar vs. Leser). Das KÜRZEL steht nur im
+      // zugänglichen Namen: es ist im Register nicht längenbeschränkt und
+      // sprengte @390 das Feld. Herleitung in `./erlassAnsicht.suchPlatzhalter`.
+      platzhalter={suchPlatzhalter(beispielBestimmung)}
       ariaName={suchFeldName(m.erlass?.kuerzel)} escLeert={!gliederungsSheetOffen}
       // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
       // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).

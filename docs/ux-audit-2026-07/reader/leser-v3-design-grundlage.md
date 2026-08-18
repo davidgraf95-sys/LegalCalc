@@ -365,9 +365,12 @@ alten Wörter zitieren.
 | Rechtsprechungs-Fläche | **Rechtsprechung** (Chip konstant) | — | Ä115/Ä123 |
 | Schalter für die Fassungs-Zeile | **Fassung** | Änderungsvermerke | Ä116 |
 | Gliederungs-Griff (☰ des Lesers) | **Gliederung öffnen / ausblenden** | Gliederung (nacktes Substantiv) | Ä111 |
-| Suchfeld des Lesers | **Im ‹Kürzel› suchen oder «Art. 1» …** | Suchen oder «Art. 1» … | Ä112 |
+| Suchfeld — Platzhalter | **Im Erlass suchen oder «Art. 1» …** (Beispiel erlassgerecht, «§ 1» am §-Erlass) | Suchen oder «Art. 1» … · Im ‹Kürzel› suchen … | Ä112/Ä126 |
+| Suchfeld — zugänglicher Name | **Im Erlass ‹Kürzel› suchen oder zu einer Bestimmung springen** | Im ‹Kürzel› suchen … | Ä126 |
 | Suchbereich | Alles · **Überschriften** · Text · Fussnoten | Titel | Ä120 |
-| Trefferzähler | **Fundstelle n von m** | –/88 | Ä103 |
+| Trefferzähler — laufende Stelle | **Fundstelle n von m** · vor dem ersten Sprung **keine gewählt · m Fundstellen** | –/88 · «Fundstelle 0 von m» | Ä103/P1-2 |
+| Externer Link, der auswärts öffnet (aria) | **(neuer Tab)** | (neues Fenster) · (öffnet in neuem Tab) | Ä127 |
+| Schalter für die Rechtsprechungs-Zone | **Rechtsprechung im Kopf** | Rechtsprechung in der Kopfzeile · Rechtsprechung anzeigen | Ä115/Ä128 |
 | Kopf-Standausweis | **Kopie vom …** | Snapshot | — |
 | Erlassart im Steckbrief | **Erlassart** (nur mit bekannter Grundart) | Art · «Art: Kanton FR» | Ä108 |
 
@@ -386,7 +389,14 @@ V3-Fläche. Ausdrücklich **nicht** erfasst und darum weiter mit den alten Wört
 unterwegs:
 
 - die eingefrorene Ist-Hülle (`inhalt-*.tsx`, `LeserAnsichtMenu.tsx`,
-  `parts/ErlassUebersicht.tsx`) — sie bleibt bis **H5** unangetastet (FL-4);
+  `parts/ErlassUebersicht.tsx`) — sie bleibt bis **H5** unangetastet (FL-4).
+  **Eine deklarierte Ausnahme (P1-4, 18.8.2026):** der Fedlex-Link der
+  V1-Übersicht hiess weiter «↗ geltende Fassung», während der V3-Kopf
+  drei Zentimeter daneben «Amtliche Fassung ↗» sagte — derselbe Link auf
+  dieselbe URL unter zwei Namen. FL-4 schützt die *Mechanik* der Ist-Hülle,
+  nicht eine Beschriftung, die falsch orientiert; geändert ist genau dieses
+  eine Wort, aus der geteilten Quelle `src/pages/gesetz-leser/benennung.ts`
+  (dort stehen die Wörter, die über die Hüllen-Grenze laufen — und nur die);
 - die App-Rahmen (`components/layout/**` Topbar/Pane-Griffleiste,
   `components/NormPopover.tsx`, `components/vorlagen/NormChip.tsx`) — dort
   stehen «Reiter & Split-View», «Suchen oder Norm springen …» und «↗ geltende

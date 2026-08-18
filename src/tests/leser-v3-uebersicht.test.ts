@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  ruheZeile, uebersichtsAngaben, type UebersichtsEingabe,
+  erfassungsgradSatz, ruheZeile, uebersichtsAngaben, type UebersichtsEingabe,
 } from '../pages/gesetz-leser/v3/uebersichtAngaben';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
@@ -428,5 +428,89 @@ describe('uebersichtsAngaben — die Grenzen, die §8 verlangt', () => {
     const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({}) }));
     const alles = [...a.zeilen.map((z) => z.wert), ...a.hinweise, a.warnung ?? ''].join(' ');
     expect(alles).not.toMatch(/Massgeblich ist stets/i);
+  });
+});
+
+// ═══ P3-1 (Architektur-Gegenprüfung 18.8.2026) · DER §8-SATZ FOLGT DER STUFE ═
+//
+// BEFUND: der Erfassungs-Hinweis der Box («… der Bestand ist nicht
+// vollständig») stand fest, unabhängig von `grad.stufe`. Heute erreicht kein
+// Kanton die Stufe `vollstaendig` (`ENUMERATIONS_BELEGE` ist leer, K-2c) — die
+// Unwahrheit ist also LATENT und wird beim ersten hinterlegten
+// Enumerations-Beleg still scharf. Genau darum wird sie hier gegen einen
+// STUB geprüft und nicht gegen die heutigen Daten: eine Sonde, die erst rot
+// wird, wenn der Fehler schon ausgeliefert ist, bewacht nichts (§6.7).
+//
+// Rot gefahren 18.8.2026 mit dem Vorzustand: bei Stufe `vollstaendig` sagte der
+// Satz «… sind bisher 859 Erlasse erfasst — der Bestand ist nicht vollständig.»
+describe('P3-1 · Erfassungs-Hinweis: je Stufe die Aussage, die die Daten decken', () => {
+  it('unvollständige Sammlung (Auswahl/dünn): der Vorbehalt steht da', () => {
+    for (const stufe of ['auswahl', 'duenn'] as const) {
+      const satz = erfassungsgradSatz({ kanton: 'BS', n: 859, stufe });
+      expect(satz).toContain('bisher');
+      expect(satz).toContain('nicht vollständig');
+    }
+  });
+
+  it('belegt vollständige Sammlung: KEIN Vorbehalt, und das Total ist belegt', () => {
+    const satz = erfassungsgradSatz({
+      kanton: 'BS', n: 859, stufe: 'vollstaendig',
+      belegtN: 859, belegStand: '2026-08-18', belegQuelle: 'https://www.gesetzessammlung.bs.ch/',
+    });
+    expect(satz, 'die Box behauptet eine Lücke, die der Enumerations-Beleg verneint (§8)')
+      .not.toContain('nicht vollständig');
+    expect(satz).toContain('859');
+    // Kein Hausjargon — «vollständig»/«Auswahl»/«dünn» sind interne Stufenworte
+    // und bleiben der Kantonsliste (Ä122/§5).
+    expect(satz).not.toMatch(/\bAuswahl\b|\bdünn\b/);
+  });
+});
+
+// ═══ P3-4 (Architektur-Gegenprüfung 18.8.2026) · DIE DREI UNGEDECKTEN ═══════
+//     ZWEIGE VON `datumsForm`
+//
+// Die Gegenprüfung hat an `v3/datumsForm.ts` keine Fehlfunktion gefunden,
+// sondern eine LÜCKE IN DER DECKUNG: die drei Zweige, die den amtlichen
+// Wortlaut vor einer Umschreibung schützen, waren von keiner Sonde berührt —
+// der Rückfall auf «Erlassdatum», die französische Monatstabelle und die
+// Plausibilitätsschranke. Genau diese drei entscheiden, ob ein Datum
+// UMGESCHRIEBEN oder unangetastet gelassen wird; ein stiller Fehler dort
+// erzeugt eine falsche amtliche Angabe (§1/§7), keinen Schönheitsfehler.
+//
+// Diese Sonden sind ab dem ersten Lauf grün — sie beweisen keinen Fix, sie
+// halten Verhalten fest, das heute nur der Code behauptet. Rot zu bekommen
+// (§6.7, je einzeln nachgefahren 18.8.2026): in `datumsAngabe` den Rückfall
+// entfernen und immer «Erlass vom» setzen ⇒ (a); in `MONATE` die
+// französischen Einträge streichen ⇒ (b); in `baueDatum` die Schranke
+// `tag > 31` entfernen ⇒ (c).
+describe('P3-4 · datumsForm: wann ein Datum NICHT umgeschrieben wird', () => {
+  const datumsZeile = (erlassdatum: string) => uebersichtsAngaben(eingabe({
+    erlass: erlassBauen({}), kopf: { erlassdatum } as UebersichtsEingabe['kopf'],
+  })).zeilen.find((z) => z.id === 'datum');
+
+  it('(a) Rückfall: unlesbarer Wortlaut behält Etikett «Erlassdatum» und bleibt roh', () => {
+    const z = datumsZeile('vom Anfang des Jahres 1907');
+    expect(z?.label).toBe('Erlassdatum');
+    expect(z?.wert).toBe('Anfang des Jahres 1907');
+    // Kein `tabular-nums` an einem Wort — die Zahlen-Kante hätte nichts,
+    // woran sie ausrichten könnte (Ä80 in umgekehrter Richtung).
+    expect(z?.ziffern).toBeFalsy();
+  });
+
+  it('(b) französische Monatsnamen werden numerisch, fremde nie geraten', () => {
+    expect(datumsZeile('du 5. octobre 2007')).toMatchObject({
+      label: 'Erlass vom', wert: '05.10.2007', ziffern: true,
+    });
+    expect(datumsZeile('du 5. décembre 1996')?.wert).toBe('05.12.1996');
+    // Ein Monatsname AUSSERHALB der Tabelle wird nie geraten (§7).
+    expect(datumsZeile('du 5. Wintermonat 1907')?.label).toBe('Erlassdatum');
+  });
+
+  it('(c) unplausible Tages-/Monatszahl: lieber der amtliche Wortlaut als ein gebogenes Datum', () => {
+    for (const roh of ['vom 32. Oktober 2007', 'vom 32.10.2007', 'vom 5.13.2007', 'vom 0. Oktober 2007']) {
+      const z = datumsZeile(roh);
+      expect(z?.label, `«${roh}» wurde umgeschrieben`).toBe('Erlassdatum');
+      expect(z?.ziffern).toBeFalsy();
+    }
   });
 });

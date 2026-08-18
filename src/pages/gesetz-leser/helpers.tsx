@@ -125,7 +125,16 @@ export function verifiziertesSachgebiet(
 // (`kennungEtikett`/`kennungText` oben); der Zitat-Bau hing als einzige Stelle
 // noch am fest verdrahteten `SR ${sr}` — eine zweite Wahrheit über dieselbe
 // Frage (§5). Jetzt speist EINE Weiche beide Ausgaben: sichtbar «LS 211.11»,
-// kopiert «§ 1 GebV OG, LS 211.11 (Stand …)».
+// kopiert «§ 1 ‹kuerzel›, LS 211.11 (Stand …)».
+// ── P1-3 (Bug-Check-Nachzug 18.8.2026) · WAS DAS BEISPIEL WIRKLICH ERGIBT ───
+// Hier stand «§ 1 GebV OG, LS 211.11 (Stand …)» — das UNTERSTELLTE, das Feld
+// `kuerzel` trage an ZH-211.11 die Sigle. Nachgesehen im Register: es trägt
+// «Gebührenverordnung des Obergerichts (GebV OG)», das Zitat lautet also
+// «§ 1 Gebührenverordnung des Obergerichts (GebV OG), LS 211.11 (Stand …)».
+// Der Bau ist richtig und bleibt unangetastet — falsch war die Erwartung an die
+// DATEN. Dass viele Registerkürzel Volltitel sind, ist eine Datenfrage und
+// steht als H5-Feld im Fahrplan (Sigle aus dem Register); ein Kommentar, der
+// sie stillschweigend als gelöst annimmt, verdeckt sie (§8).
 // Darum braucht die Signatur `ebene`: die Kennung ist eine Funktion der EBENE,
 // nie des Kürzels und nie einer Kantonsliste (Herleitung bei `kennungEtikett`).
 export function baueZitat(
