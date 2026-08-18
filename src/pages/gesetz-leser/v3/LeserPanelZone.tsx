@@ -178,8 +178,12 @@ export function LeserPanelZone({
   //     «steht die Leiste gerade irgendwo». Genau diese eine Frage beantwortet
   //     der Rahmen als `leisteSteht` (Spalte ODER Sheet) und schickt das Ergebnis
   //     als `steckbrief`-Prop herein; er entscheidet, diese Datei ordnet an (§3).
-  //     BEWACHT @390: `leser-v3-uebersicht` misst mit offenem Sheet UND offenem
-  //     Panel, dass `[data-v3-uebersicht-warnung]` genau EINMAL steht (Ä28).
+  //     BEWACHT @390: `leser-v3-uebersicht` (c3) misst in allen drei Lagen —
+  //     nur Panel, nur Blatt, beides —, dass der Konsolidierungs-Vorbehalt genau
+  //     EINMAL auf der Seite steht (Ä28), und zwar im Erlass-Kopf. Gezählt wird
+  //     seit der Integration A×B (18.8.2026) die SEITE statt des Box-Fachs
+  //     `[data-v3-uebersicht-warnung]`: Ä81 aus Nachzug B hat der Box die
+  //     `warnung`-Ausgabe genommen, das Fach trägt nur noch den `vorbehalt`.
   const inhalt = {
     entscheide: (
       <PanelEntscheide

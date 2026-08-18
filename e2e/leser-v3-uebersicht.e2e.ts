@@ -423,19 +423,51 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
   // ohne stehende Leiste, also auch @390. Das ist richtig so — geprüft wird
   // darum die Zusage selbst (Ä28): in allen drei erreichbaren Kombinationen
   // steht die Warnung genau einmal.
-  // Gemessen 18.8.2026 @390 (StPO): nur Panel {Steckbrief 1, Warnung 1} · nur
-  // Sheet {0, 1} · Sheet UND Panel {0, 1}.
+  //
+  // ── Ä81-NACHZUG (Integration A×B, 18.8.2026) · WORAN GEZÄHLT WIRD ─────────
+  // Dieser Fall entstand im H4-Nachzug A und zählte `[data-v3-uebersicht-warnung]`
+  // — das Warn-Fach der Box. Parallel entschied Nachzug B mit Ä81 «NUR DER KOPF
+  // WARNT» und nahm der Box die `warnung`-Ausgabe (`v3/UebersichtBox.tsx`; das
+  // Fach trägt seither nur noch den `vorbehalt`). Beide Zweige waren für sich
+  // grün; erst zusammengeführt war der Fall ROT — gemessen im Integrationslauf
+  // 18.8.2026: erwartet 1, vorhanden 0.
+  // §6.3-DEKLARATION: die geprüfte SACHE bleibt Ä28 («der Sachverhalt steht
+  // genau einmal, in jeder der drei Lagen»), die ZÄHLFLÄCHE wandert mit Ä81 vom
+  // Box-Fach auf die SEITE — dieselbe Bewegung, die B in den beiden anderen
+  // Fällen dieser Datei und in `leser-v3-nachzug-auskunft` schon vollzogen hat.
+  // Gelockert wird nichts: aus EINER Zahl («1 im Box-Fach») werden DREI
+  // Bedingungen je Lage (1 auf der Seite · 1 im Kopf · 0 im Box-Fach).
+  // GEMESSEN 18.8.2026 @390 (StPO), {Steckbrief, Seite, Kopf, Box-Fach}:
+  //   Grundzustand 0/1/1/0 · nur Panel 1/1/1/0 · nur Blatt 0/1/1/0 ·
+  //   Blatt UND Panel 0/1/1/0.
+  // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` die `warnung`-Zeile wieder
+  // in die Warn-Zelle setzen ⇒ Seite 2, Box-Fach 1 in den Lagen (2) und (3).
   test('(c3) @390: Warnung genau einmal — mit Panel, mit Blatt, mit beidem', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/gesetze/bund/STPO?leser=v3')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(400)
 
+    // Nur BLATT-Absätze zählen, sonst zählt jede Hülle den Satz mit — dieselbe
+    // Zählweise wie in den beiden Ä81-Fällen oben und in `nachzug-auskunft`.
+    const warnLage = () => page.evaluate(() => {
+      const blatt = [...document.querySelectorAll('p, li, dd')]
+        .filter((el) => /noch nicht in den Text eingearbeitet/.test(el.textContent ?? ''))
+        .filter((el) => !el.querySelector('p, li, dd'))
+      return {
+        aufDerSeite: blatt.length,
+        imKopf: blatt.filter((el) => el.closest('header') !== null).length,
+        imBoxFach: document.querySelectorAll('[data-v3-uebersicht-warnung]').length,
+      }
+    })
+    const einmalImKopf = { aufDerSeite: 1, imKopf: 1, imBoxFach: 0 }
+
     // (1) nur das Panel: die Leiste steht nirgends, das Panel trägt den Steckbrief.
     await page.locator('[data-v3-panel-zaehler]').first().click()
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(1)
-    await expect(page.locator('[data-v3-uebersicht-warnung]')).toHaveCount(1)
+    expect(await warnLage(), 'nur Panel: die Warnung steht nicht genau einmal im Kopf')
+      .toEqual(einmalImKopf)
     await page.locator('[data-v3-panel-zu]').click()
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
 
@@ -443,7 +475,8 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     await page.locator('[data-v3-gliederung-auf]').click()
     await expect(page.locator('[data-gliederung-sheet]')).toBeVisible({ timeout: 10_000 })
     await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(0)
-    await expect(page.locator('[data-v3-uebersicht-warnung]')).toHaveCount(1)
+    expect(await warnLage(), 'nur Blatt: die Box warnt neben dem Kopf ein zweites Mal (Ä81)')
+      .toEqual(einmalImKopf)
 
     // (3) BEIDES offen. Der Scrim des modalen Blatts fängt echte Zeiger ab —
     // der Chip wird darum per DOM-Klick betätigt; erreichbar ist die Lage über
@@ -453,8 +486,8 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     await expect(page.locator('[data-gliederung-sheet]')).toBeVisible()
     await expect(page.locator('[data-v3-panel-steckbrief]'),
       'mit stehendem Blatt trägt das Panel den Steckbrief ein zweites Mal').toHaveCount(0)
-    await expect(page.locator('[data-v3-uebersicht-warnung]'),
-      'Ä28: die Warnung steht @390 mit Blatt UND Panel doppelt').toHaveCount(1)
+    expect(await warnLage(), 'Ä28/Ä81: die Warnung steht @390 mit Blatt UND Panel doppelt')
+      .toEqual(einmalImKopf)
   })
 
   test('(d) BS-640.100 @390 und @1440: die Kantons-Zeilen bleiben sinnvoll (Ä80-Probe)', async ({ page }) => {
