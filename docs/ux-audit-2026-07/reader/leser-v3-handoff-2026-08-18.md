@@ -27,6 +27,37 @@ PR-Body: `/Users/david/Developer/LexMetrik-briefs-2026-08-17/h4-pr-body.md`.
   rot. (c3) zählt jetzt die **Seite**: 1 Seite · 1 Kopf · 0 Box, je Lage. Zweiter
   Fund: `check:e2e-shards` rot — `shard-gruppen.json` hinkte der Annotation nach.
 
+## Säuberung nach der Live-Prüfung (18.8.2026, Branch `feat/leser-v3-saeuberung-bau`)
+Auftrag David wörtlich: «… es nochmals sauberer gemacht werden soll. alles
+richtig benannt usw.» Grundlage: Live-Protokoll
+`…/leser-v3-h4/aesthetik-live-2026-08-18.md` (Note **8/10**, Ä97–Ä125).
+Vollzugsvermerk mit Tabelle Ä | vorher | Fix | Spec: **Fahrplan Kap. 7**,
+Abschnitt «✅ Säuberung nach Live-Prüfung (18.8.2026)».
+- **18 Ä-Zeilen geschlossen**: Ä97 · Ä98 · Ä100–Ä103 · Ä106–Ä108 · Ä110–Ä112 ·
+  Ä114–Ä117 · Ä119–Ä122 (Beschriftungen, Doppelungen, Zeichen-Flut; kein Layout,
+  keine Struktur, keine Rechenlogik).
+- **NEU: das Benennungs-Glossar ist die eine Wahrheit** —
+  `…/leser-v3-design-grundlage.md` **Kap. 11 «Benennung (Glossar, 18.8.2026)»**,
+  bewacht von `src/tests/leser-benennung.test.ts`. Wer eine Beschriftung setzt,
+  schlägt dort nach; wer ein Wort ändern will, ändert es dort zuerst.
+- **Wichtig für jede Folge-Session:** vier Namen unterscheiden sich jetzt je
+  Hülle (V3 ≠ V1). Die eine Quelle für e2e-Locators ist
+  `e2e/helpers/leserBeschriftung.ts` — **nie** wieder ein Literal in die Spec.
+  Sie fällt mit H5 ersatzlos weg.
+- **Davids Regel «Suchfeld oberstes sticky Element» ist am gebauten Stand NICHT
+  eingelöst** (Ä99). Gemessen klebt die GANZE Seitenleiste, samt Übersichtsbox:
+  `sticky` sitzt am `<aside data-v3-aside>`, nicht am Baum. Die Doku behauptete
+  bis 18.8. das Gegenteil («scrollt MIT weg») — **korrigiert und datiert**
+  (Fahrplan Kap. 4b + Ä81-Vermerk). **Der Bau ist offen (H5)** und ist eine
+  Layout-Frage, keine Beschriftungsfrage: entweder die Box aus dem
+  Sticky-Container lösen oder «die Leiste klebt als Ganzes» als Entscheid
+  festschreiben. Das gehört David vorgelegt, weil es seine Regel berührt.
+- **Offen aus derselben Prüfung (H5):** Ä104 (Treffer im Randtitel markieren =
+  Suchlogik) · Ä105 · Ä109 · Ä123 · Ä124 · Ä125 · die **App-Hälften** von
+  Ä110/Ä111/Ä112/Ä118 (`components/layout/**`, `NormPopover`, `NormChip`) · der
+  Jargon «Fedlex-Graphen (SR-Taxonomie)» im Revisions-Sidecar (Risikopfad).
+- **Bei David:** Ä113 (= Ä64) Regler-Hierarchie bei 130 % · Ä33/Ä34 Chrome @390.
+
 ## Entscheide David (gelten, Wortlaut)
 - **17.8.** «ja und c, mach so» → H4-Flip **und** Ä60 = (c).
 - **17.8.** «v2 gefällt mir besser aber fussnoten hochgestellt» → F3 = V2

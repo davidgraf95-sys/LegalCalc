@@ -131,10 +131,24 @@ async function gemeldet(page: Page): Promise<number> {
 }
 
 /** Zahl aus «i/n» der Positionsanzeige. */
+/**
+ * Laufende Fundstelle und Gesamtzahl — aus BEIDEN Hüllen.
+ *
+ * §6.3-DEKLARATION (Ä103, 18.8.2026): V3 schreibt seit der Säuberung
+ * «Fundstelle 3 von 17», die Ist-Hülle weiter «3/17». Gemessen am Live-Stand
+ * stand vor der ersten Navigation «–/88» — ein Bruch, dessen Zähler fehlt, und
+ * @390 zweizeilig im Kasten. Die neue Form nennt die Einheit und setzt vor dem
+ * ersten Sprung die ehrliche **0** statt eines Gedankenstrichs.
+ * Der Helfer liest darum ZAHLEN, nicht ein Trennzeichen: er zieht die beiden
+ * Zahlen aus dem Text, egal ob «/» oder «von» dazwischen steht. Damit misst er
+ * in beiden Hüllen dieselbe Sache — die Prüfaussage ist unverändert.
+ */
 async function position(page: Page): Promise<{ i: number; n: number }> {
   const t = await page.locator('[data-treffer-position]').innerText();
-  const [i, n] = t.split('/').map((s) => Number(s.trim()));
-  return { i, n };
+  const zahlen = t.match(/\d+/g)?.map(Number) ?? [];
+  // V1 vor dem ersten Sprung: «–/17» ⇒ nur EINE Zahl. Das ist dieselbe Aussage
+  // wie die V3-Null, in der alten Schreibweise.
+  return zahlen.length >= 2 ? { i: zahlen[0], n: zahlen[1] } : { i: 0, n: zahlen[0] ?? 0 };
 }
 
 /** Grösse der gemalten Highlight-Menge (CSS Custom Highlight API). */
@@ -327,7 +341,7 @@ test.describe('S8 — Trefferliste in der Leiste, Lesespalte vollständig', () =
 
     const vor = page.locator('[data-treffer-vor]');
     const zurueck = page.locator('[data-treffer-zurueck]');
-    const pos = page.locator('[data-treffer-position]');
+    await expect(page.locator('[data-treffer-position]')).toBeVisible({ timeout: 20_000 });
     await expect(vor).toBeVisible({ timeout: 20_000 });
 
     // A9-DoD Tap-Ziele: beide Knöpfe mindestens 44×44 px.
@@ -337,21 +351,24 @@ test.describe('S8 — Trefferliste in der Leiste, Lesespalte vollständig', () =
       expect(box!.height, 'Tap-Ziel Höhe').toBeGreaterThanOrEqual(44);
     }
 
-    // Vor der ersten Navigation: «–/n» (nichts Erfundenes, §8).
-    await expect(pos).toContainText('–');
+    // Vor der ersten Navigation steht keine laufende Stelle (§8, nichts
+    // Erfundenes). Ä103 (18.8.2026): V3 schreibt das als «Fundstelle 0 von n»,
+    // V1 als «–/n» — dieselbe Aussage, zwei Schreibweisen. Geprüft wird die
+    // AUSSAGE über `position()`, nicht das Trennzeichen.
+    await expect.poll(async () => (await position(page)).i, { timeout: 20_000 }).toBe(0);
     await vor.click();
-    await expect(pos).toContainText(/^1\//);
+    await expect.poll(async () => (await position(page)).i, { timeout: 20_000 }).toBe(1);
     await vor.click();
-    await expect(pos).toContainText(/^2\//);
+    await expect.poll(async () => (await position(page)).i, { timeout: 20_000 }).toBe(2);
     await zurueck.click();
-    await expect(pos).toContainText(/^1\//);
+    await expect.poll(async () => (await position(page)).i, { timeout: 20_000 }).toBe(1);
     // Zyklisch: von der ersten zurück auf die letzte.
     await zurueck.click();
     await expect.poll(async () => { const p = await position(page); return p.i === p.n; }, { timeout: 20_000 }).toBe(true);
     // Tastatur: die Knöpfe sind echte <button> und per Enter bedienbar.
     await vor.focus();
     await page.keyboard.press('Enter');
-    await expect(pos).toContainText(/^1\//);
+    await expect.poll(async () => (await position(page)).i, { timeout: 20_000 }).toBe(1);
     // Der Sprung markiert seinen Ziel-Artikel im Wortlaut (kein DOM-Umbau).
     await expect.poll(async () => page.locator('article.lc-ziel-blink').count(), { timeout: 20_000 })
       .toBeGreaterThan(0);
