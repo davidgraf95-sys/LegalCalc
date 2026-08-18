@@ -6,6 +6,7 @@
 // FL-1…FL-6 gelten, bleibt `inhalt.tsx` (V1) eingefroren — dieser Test prüft
 // darum nur, dass V3 sich an die geteilten Wahrheiten hält, nie den V1-Code.
 import { test, expect, type Page } from '@playwright/test'
+import { VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -92,7 +93,7 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
 
     await page.locator('[data-v3-ansicht]').click()
     await expect(page.locator('[data-v3-ansicht-panel]')).toBeVisible()
-    await page.getByRole('switch', { name: 'Änderungsvermerke' }).click()
+    await page.getByRole('switch', { name: VERMERKE_SCHALTER_NAME }).click()
     await expect(page.locator('html')).toHaveAttribute('data-histansicht', 'aus')
     await page.locator('#art-2').scrollIntoViewIfNeeded()
     await expect(fassungV3).toBeHidden()
@@ -152,14 +153,14 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     // POSITIV — StPO: 187 von 283 Fussnoten sind `kl:'A'`, dazu ein
     // Historie-Shard. Alle drei V3-Schalter stehen.
     await oeffne('/gesetze/bund/STPO')
-    await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(1)
+    await expect(panel.getByRole('switch', { name: VERMERKE_SCHALTER_NAME })).toHaveCount(1)
     await expect(panel.getByRole('switch')).toHaveCount(3)
 
     // NEGATIV 1 — BS-640.100 (StG BS): 16 Fussnoten, KEINE klassifiziert, kein
     // Historie-Shard. Der Fussnoten-Schalter bleibt (die 16 sind da und er
     // blendet sie wirklich aus), «Rechtsprechung im Text» auch.
     await oeffne('/gesetze/kanton/BS-640.100')
-    await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0)
+    await expect(panel.getByRole('switch', { name: VERMERKE_SCHALTER_NAME })).toHaveCount(0)
     await expect(panel.getByRole('switch', { name: 'Fussnoten' })).toHaveCount(1)
     await expect(panel.getByRole('switch')).toHaveCount(2)
     // §8: nichts weggeblendet — es gibt hier wirklich keine Fassungs-Zeile.
@@ -174,7 +175,7 @@ test.describe('FL-6 — Umschalten V1 ↔ V3 verliert nichts', () => {
     await expect(page.locator('.lc-leser article').first()).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-ansicht]').click()
     await expect(panel).toBeVisible()
-    await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toHaveCount(0)
+    await expect(panel.getByRole('switch', { name: VERMERKE_SCHALTER_NAME })).toHaveCount(0)
     await expect(panel.getByRole('switch')).toHaveCount(2)
 
     expect(fehler, fehler.join('\n')).toEqual([])

@@ -1,6 +1,7 @@
 // @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
 // ÄNDERUNGSVERMERKE: AN/AUS — zweiwertig seit S1, ENTKOPPELT seit Ä68
 // (Entscheid David 17.8.2026 abends, FAHRPLAN-LESER-V3 Kap. 4f/7).
@@ -67,7 +68,7 @@ async function warteReader(page: Page, url: string, artId: string): Promise<void
 // hätte es darum zugeklappt, und die folgende Zusicherung wäre am fehlenden Panel
 // gescheitert — ein Fehlschlag der Prüfmechanik, nicht der Sache.
 async function ansichtOeffnen(page: Page): Promise<void> {
-  const panel = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const panel = page.locator(ANSICHT_PANEL).first();
   if (!(await panel.isVisible())) {
     await page.getByRole('button', { name: 'Ansicht' }).first().click();
   }
@@ -76,7 +77,7 @@ async function ansichtOeffnen(page: Page): Promise<void> {
 
 /** Der EINE zweiwertige Schalter (S1) — kein Streifen mit drei Knöpfen mehr. */
 function vermerkeSchalter(page: Page) {
-  return page.getByRole('switch', { name: 'Änderungsvermerke' });
+  return page.getByRole('switch', { name: VERMERKE_SCHALTER_NAME });
 }
 
 /** Apparat-Zeile einer Fussnote dieses Artikels (id = fn-<artikel>-<nr>). */

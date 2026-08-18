@@ -1,5 +1,6 @@
 // @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
+import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
 // FAHRPLAN-GESETZESDARSTELLUNG-V2 — koordinierter Kopf-PR (A22/A23, David 10.7.2026):
 //   · K-1  «in Kraft seit …» in der Meta-Zeile (Ur-Inkrafttreten, Fedlex
@@ -64,7 +65,7 @@ async function warteReader(page: Page, url: string, artId: string): Promise<void
 
 async function ansichtOeffnen(page: Page): Promise<void> {
   await page.getByRole('button', { name: 'Ansicht' }).first().click();
-  await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
+  await expect(page.locator(ANSICHT_PANEL).first()).toBeVisible();
 }
 
 test('K-1: «in Kraft seit» in der Meta-Zeile (Bund), nicht beim Kanton', async ({ page }) => {
@@ -80,7 +81,7 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
   // «Ansicht»-Dropdown gewandert — role=switch mit dem Zähler N im Accessible-Name
   // («Fussnoten (N)») und dem Zähler-Badge daneben. Menü öffnen und darauf zugreifen.
   await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const gruppe = page.locator(ANSICHT_PANEL).first();
   const fn = gruppe.getByRole('switch', { name: /^Fussnoten \(\d+\)$/ }); // Zähler im Namen
   await expect(fn).toBeVisible({ timeout: 15000 });
   await expect(fn).toHaveAttribute('aria-checked', 'true'); // Default: Fussnoten an
@@ -175,7 +176,7 @@ test('B-1: die Facetten-Wahl blendet die Entscheid-Auflistung aus und wieder ein
 test('B-2: die Alt-Zeitraum-Wahl ist aus dem Ansicht-Menü ENTFERNT (B5)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG', 'art-1');
   await ansichtOeffnen(page);
-  const panel = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const panel = page.locator(ANSICHT_PANEL).first();
   await expect(panel).toBeVisible();
   await expect(page.locator('[aria-label="Zeitraum der Entscheide"]')).toHaveCount(0);
   for (const label of ['20 J.', '10 J.', '5 J.']) {
@@ -190,5 +191,5 @@ test('B-2: die Alt-Zeitraum-Wahl ist aus dem Ansicht-Menü ENTFERNT (B5)', async
   // geworden. Die AUSSAGE der Zeile ist unverändert — «das Menü trägt weiter seine
   // Historie-Bedienung» — nur ihr Griff ist der neue; der Vertrag des Schalters
   // selbst liegt unter `hist-ansicht-w25i.e2e.ts`.
-  await expect(panel.getByRole('switch', { name: 'Änderungsvermerke' })).toBeVisible();
+  await expect(panel.getByRole('switch', { name: VERMERKE_SCHALTER_NAME })).toBeVisible();
 });

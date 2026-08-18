@@ -3,6 +3,7 @@
 // Klick führt in die Lesesicht (Volltext + TOC + In-Gesetz-Suche), keine
 // Console-/Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -94,7 +95,7 @@ test.describe('Lesesicht (über Klick aus der Übersicht)', () => {
     await page.goto('/gesetze/bund/VGKE')
     await expect(page.locator('#art-1')).toBeVisible({ timeout: 20000 })
     await expect(page.getByText('Gliederung', { exact: true })).toBeVisible({ timeout: 20000 })
-    const suche = page.getByRole('searchbox', { name: 'Im Gesetz suchen' })
+    const suche = page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
     await expect(suche).toBeVisible({ timeout: 20000 })
     // Standort beim Scrollen: der Scroll-Spy markiert die aktive Gliederung im
     // Inhaltsverzeichnis (data-toc-aktiv).

@@ -1,6 +1,7 @@
 // @shard-gruppe: 2
 import { test, expect, type Page } from '@playwright/test';
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER } from './helpers/budgets';
+import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
 // W2·5d U-KOPF — A9-Querschnitt (Bedienbarkeit + Flüssigkeit unter CPU-Throttle).
 // Beweist, dass die Kopf-Interaktionen (A4 «Ansicht»-Dropdown öffnen +
@@ -52,7 +53,7 @@ test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle,
   // A4: Dropdown öffnen (Budget grosszügig, gedrosselt).
   let t0 = Date.now();
   await trigger.click();
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const gruppe = page.locator(ANSICHT_PANEL).first();
   await expect(gruppe).toBeVisible({ timeout: REAKTIONS_LATTE });
   expect(Date.now() - t0, 'Dropdown öffnen zu langsam').toBeLessThan(REAKTIONS_BUDGET);
 
@@ -63,7 +64,9 @@ test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle,
   // «Änderungsvermerke». Geprüfter Sachverhalt (Reaktionszeit je Schalter unter
   // Drossel) unverändert (§6.3: deklariert). Der Testerlass BV trägt 131
   // `kl:'A'`-Fussnoten, der Schalter ist dort also angeboten (S1-Nachzug B3).
-  for (const name of ['Fussnoten', 'Änderungsvermerke'] as const) {
+  // Ä116 (18.8.2026): der zweite Schalter heisst in V3 «Fassung», in der
+  // Ist-Hülle weiter «Änderungsvermerke» (helpers/leserBeschriftung).
+  for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME] as const) {
     t0 = Date.now();
     const sw = gruppe.getByRole('switch', { name });
     const vorher = await sw.getAttribute('aria-checked');

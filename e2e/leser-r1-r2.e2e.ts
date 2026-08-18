@@ -65,10 +65,11 @@
 //    Öffnungs-Schritt entfällt darum; gemessen wird unverändert CLS 0 über
 //    Suche, Sprünge und Sheet.
 import { test, expect, type Page } from '@playwright/test';
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 test.describe.configure({ timeout: 120_000 });
 
-const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' });
+const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME });
 const leiste = (page: Page) => page.locator('[data-treffer-leiste]');
 const liste = (page: Page) => page.locator('[data-treffer-liste]');
 const sheet = (page: Page) => page.locator('[data-gliederung-sheet]');

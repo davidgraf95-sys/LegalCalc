@@ -1,6 +1,7 @@
 // @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test';
 import { ANSICHT_OEFFNER, warteLeserBereit } from './helpers/leserBereit';
+import { ANSICHT_PANEL } from './helpers/leserBeschriftung';
 
 // LINIEN-RÜCKBAU V1 — die Gliederungslinie im Lesetext bleibt weg.
 //
@@ -95,7 +96,7 @@ test('OR Art. 319 (Tiefe 4): keine Gliederungslinie, kein Schalter «Linien» im
   // Sachaussage unverändert; der zugängliche Name des Öffners ist weiter in
   // `leser-kopf-a9.e2e.ts`/`leser-kopf-g2b.e2e.ts` gedeckt.
   await page.locator(ANSICHT_OEFFNER).first().click();
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const gruppe = page.locator(ANSICHT_PANEL).first();
   await expect(gruppe).toBeVisible();
   await expect(gruppe.getByRole('switch', { name: 'Linien' })).toHaveCount(0);
 });

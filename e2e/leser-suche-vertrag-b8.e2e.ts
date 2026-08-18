@@ -1,3 +1,4 @@
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // @shard-gruppe: 6
 // W2·19-S8 · Bug-Check §9 — Tore für den §4.4-Vertrag «gemalte ≤ gezählte» (B8).
 //
@@ -29,7 +30,7 @@ import { test, expect, type Page } from '@playwright/test'
 
 test.describe.configure({ timeout: 120_000 })
 
-const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' })
+const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
 
 async function oeffne(page: Page, pfad: string): Promise<void> {
   await page.setViewportSize({ width: 1440, height: 900 })

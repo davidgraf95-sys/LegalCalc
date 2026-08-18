@@ -1,3 +1,4 @@
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // @shard-gruppe: 4
 // W2·19-S8 · Bug-Check §9 — Suche × Klapp-Zustand der Lesespalte (B3 + B4).
 //
@@ -32,7 +33,7 @@ import { test, expect, type Page } from '@playwright/test'
 
 test.describe.configure({ timeout: 120_000 })
 
-const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' })
+const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
 const BEGRIFF = 'Berufsregeln'
 
 async function oeffneUndSuche(page: Page): Promise<string> {

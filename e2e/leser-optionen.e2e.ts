@@ -1,5 +1,6 @@
 // @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
+import { ANSICHT_PANEL, RECHTSPRECHUNG_SCHALTER_NAME, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
 // W2·5d G2a — Leser-Options-Leiste: reine data-*-/CSS-Toggles am <html>,
 // persistent (localStorage) + Pre-Paint (main.tsx, CSP-konform ohne
@@ -68,16 +69,18 @@ async function warteReader(page: Page, url: string, artId: string): Promise<void
 
 // W2·5d U-KOPF/A4: die Switches liegen jetzt im «Ansicht»-Dropdown — vor jedem
 // Switch-Zugriff öffnen. Das Panel (role=group) ist absolut positioniert (kein
-// Layout-Shift der Seite) und trägt aria-label="Darstellungsoptionen".
+// Layout-Shift der Seite); sein Name heisst seit Ä114 in V3 «Ansicht» und in
+// der Ist-Hülle weiter «Darstellungsoptionen» — beide Fälle deckt
+// `ANSICHT_PANEL` (helpers/leserBeschriftung).
 async function ansichtOeffnen(page: Page): Promise<void> {
   await page.getByRole('button', { name: 'Ansicht' }).first().click();
-  await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
+  await expect(page.locator(ANSICHT_PANEL).first()).toBeVisible();
 }
 
 test('Options-Leiste: drei role=switch (Fussnoten/Änderungsvermerke/Rechtsprechung anzeigen) — «Entscheide» via Panel, «Linien» und «Verweise» entfallen', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const gruppe = page.locator(ANSICHT_PANEL).first();
   await expect(gruppe).toBeVisible();
   // W2·7-BEZUG/B4 (Vorgabe David 28.7.2026): der frühere Schalter «Entscheide» ist
   // entfallen — er steuerte dieselbe Sache wie das Dropdown «Rechtsprechung ▾».
@@ -94,7 +97,8 @@ test('Options-Leiste: drei role=switch (Fussnoten/Änderungsvermerke/Rechtsprech
   // ist der Zugang in der Kopfzeile (Zähler 1 → 0). Der Name folgt jetzt der
   // Wirkung; die geprüfte Aussage («genau diese drei, keine mehr, keine
   // weniger») ist unverändert. Herleitung: `v3/LeserAnsichtV3.tsx`.
-  for (const name of ['Fussnoten', 'Änderungsvermerke', 'Rechtsprechung anzeigen']) {
+  // Ä115/Ä116: zwei der drei Namen sind in V3 gewechselt (helpers/leserBeschriftung).
+  for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME, RECHTSPRECHUNG_SCHALTER_NAME]) {
     await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
   }
   await expect(gruppe.getByRole('switch')).toHaveCount(3);
@@ -143,8 +147,8 @@ test('Ä69: kein Hinweis mehr am Vermerke-Schalter — er hängt in keiner Stell
   const ALT_HINWEIS = 'Marker und Apparat sind mit den Fussnoten ausgeblendet';
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
-  const vermerke = gruppe.getByRole('switch', { name: 'Änderungsvermerke' });
+  const gruppe = page.locator(ANSICHT_PANEL).first();
+  const vermerke = gruppe.getByRole('switch', { name: VERMERKE_SCHALTER_NAME });
   await expect(vermerke).toHaveCount(1);
 
   // (1) In BEIDEN Stellungen des Fussnoten-Schalters keine Hinweiszeile — und
