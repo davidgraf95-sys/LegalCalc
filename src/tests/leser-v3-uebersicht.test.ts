@@ -112,7 +112,10 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     // lief bis hierher «Erlassdatum · Stand · In Kraft seit» und trug die
     // Präposition im Wert. Beides ist umgestellt; die Herleitung samt Messwerten
     // steht im Ä80-Block unten und in `uebersichtAngaben.ts`.
-    expect(labels(a)).toEqual(['Art', 'Erlassgeber', 'Erlass vom', 'In Kraft seit', 'Stand', 'Aufbau']);
+    // Ä108 (18.8.2026, deklarierte fachliche Änderung §6.3): das Etikett heisst
+    // «Erlassart» — «Art» ist im Recht zugleich die Abkürzung des Artikels, und
+    // die Ruhezeile daneben zählt «480 Artikel».
+    expect(labels(a)).toEqual(['Erlassart', 'Erlassgeber', 'Erlass vom', 'In Kraft seit', 'Stand', 'Aufbau']);
     // «Aufbau», nicht «Gliederung»: im Handy-Blatt trägt der Blatt-Kopf bereits
     // die Zone «Gliederung», und Ä10 hat genau diese Doppelnennung abgeräumt.
     // Der bestehende Wächter `leser-v3-auskunft` hat den Rückfall gefangen
@@ -120,7 +123,9 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     expect(labels(a)).not.toContain('Gliederung');
     // Die formelhafte Stand-Klammer ist weg — der Stand steht eine Zeile
     // tiefer mit seinem maschinellen Wert (§5, sonst zweimal dasselbe Datum).
-    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('5. Oktober 2007');
+    // Ä107 (18.8.2026): EIN Datumsformat — die Wortform des Sidecars wird zur
+    // Schweizer Ziffernform, wie sie «In Kraft seit»/«Stand» darunter tragen.
+    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('05.10.2007');
     expect(a.zeilen.find((z) => z.id === 'organ')?.wert)
       .toBe('Die Bundesversammlung der Schweizerischen Eidgenossenschaft');
     expect(a.zeilen.find((z) => z.id === 'stand')?.wert).toBe('01.04.2025');
@@ -130,7 +135,9 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     // «⚠» steckt NICHT im String (DESIGN-REGLEMENT B3).
     expect(a.warnung).not.toContain('⚠');
     expect(a.links.map((l) => l.id)).toEqual(['quelle', 'pdf']);
-    expect(a.links[0].label).toBe('geltende Fassung');
+    // Ä110 (18.8.2026): EIN Name für EIN Ziel — «Amtliche Fassung», dieselbe
+    // Schreibung wie im Erlass-Kopf, am Artikel und am Sektionskopf.
+    expect(a.links[0].label).toBe('Amtliche Fassung');
   });
 
   it('(b) Verordnung: dieselben Zeilen, anderer Art-Wert — kein `if (verordnung)`', () => {
@@ -173,8 +180,14 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
     }));
     // Ä75: kein «SR» über einer kantonalen Nummer (Herleitung im Fall oben).
     expect(a.ruhe).toBe('640.100 · 292 Paragraphen');
-    expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Kanton BS · Gesetz');
-    expect(a.hinweise.some((h) => h.startsWith('Kanton BS:'))).toBe(true);
+    // Ä108: die Zeile trägt die ERLASSART, nicht die Ebene. «Kanton BS» steht
+    // im selben Bild schon in der Kopf-Overline und in der Krume; hier war es
+    // ein Wert, der die Frage des Etiketts nicht beantwortet.
+    expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Gesetz');
+    // Ä122 (18.8.2026): derselbe §8-Hinweis, ohne die interne Stufen-Vokabel
+    // «dünn/Auswahl/vollständig» (die gehört an die Kantonsliste, wo sie
+    // SORTIERT). Geprüft bleibt, dass Kanton und Zahl darin vorkommen.
+    expect(a.hinweise.some((h) => h.includes('Kanton BS') && h.includes('859'))).toBe(true);
   });
 
   it('(e) Kanton mit Etikett-Entwurf: der §8-Satz nennt das eigene Zähl-Wort (K6/Ä23)', () => {
@@ -186,7 +199,8 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
       erlassTyp: 'verordnung', anzahl: 23, bestimmungsWort: 'Paragraphen',
       bestimmungsEtikettStatus: 'entwurf',
     }));
-    expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Kanton ZH · Verordnung');
+    expect(a.zeilen.find((z) => z.id === 'art')?.wert).toBe('Verordnung');
+    // Ä122: derselbe Satz in Klartext — er nennt weiter das eigene Zähl-Wort.
     expect(a.hinweise.some((h) => h.includes('«Paragraphen»'))).toBe(true);
     expect(a.hinweise.some((h) => h.includes('«Artikel»'))).toBe(false);
   });
@@ -233,7 +247,11 @@ describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Et
     const a = dreiDaten();
     const datum = a.zeilen.find((z) => z.id === 'datum');
     expect(datum?.label).toBe('Erlass vom');
-    expect(datum?.wert).toBe('5. Oktober 2007');
+    // Ä107 (18.8.2026, deklarierte fachliche Änderung §6.3): EIN Datumsformat
+    // im Steckbrief. Die Wortform stand zwischen zwei numerischen Zeilen und
+    // liess `tabular-nums` ins Leere laufen; Herleitung und Zählung (1062 von
+    // 1420 Sidecars in Wortform) in `v3/datumsForm.ts`.
+    expect(datum?.wert).toBe('05.10.2007');
     // Kein Wert der drei Datumszeilen beginnt mit einem Wort — sonst richtet
     // `tabular-nums` an einer Kante aus, an der nichts steht.
     for (const id of ['datum', 'inkraft', 'stand']) {
@@ -260,7 +278,9 @@ describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Et
       erlass: erlassBauen({ key: 'BS-640.100', ebene: 'kanton', kanton: 'BS', stand: '2026-01-01' }),
       kopf: { erlassdatum: '12. April 2000' } as UebersichtsEingabe['kopf'],
     }));
-    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('12. April 2000');
+    // Ä107: die Präpositions-Regel bleibt geprüft — der Wert geht nicht
+    // verloren, er steht nur numerisch («12.04.2000» statt «April 2000»).
+    expect(a.zeilen.find((z) => z.id === 'datum')?.wert).toBe('12.04.2000');
   });
 
   it('(e) BS-640.100 ohne Sidecar-Kopf: Ä80 erzeugt keine leere Datums-Zeile', () => {
@@ -271,7 +291,7 @@ describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Et
       erlass: erlassBauen({ key: 'BS-640.100', ebene: 'kanton', kanton: 'BS', sr: '640.100', stand: '2026-01-01' }),
       erlassTyp: 'gesetz', bestimmungsWort: 'Paragraphen', anzahl: 292,
     }));
-    expect(labels(a)).toEqual(['Art', 'Stand']);
+    expect(labels(a)).toEqual(['Erlassart', 'Stand']);
     expect(a.zeilen.every((z) => z.wert.trim().length > 0)).toBe(true);
   });
 });
@@ -370,7 +390,8 @@ describe('uebersichtsAngaben — die Grenzen, die §8 verlangt', () => {
     expect(a.warnung).toBeNull();
     expect(a.vorbehalt).toBeNull();
     expect(a.zeilen.find((z) => z.id === 'aufgehoben')?.wert).toBe('01.01.2020');
-    expect(a.links[0].label).toBe('amtliche (aufgehobene) Fassung');
+    // Ä110: EIN Name, EINE Schreibung für den Fedlex-Link (Benennungs-Glossar).
+    expect(a.links[0].label).toBe('Amtliche (aufgehobene) Fassung');
   });
 
   it('angekündigte Fassung: eigener Satz, nicht in die Warnung gemischt', () => {

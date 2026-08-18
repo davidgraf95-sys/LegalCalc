@@ -261,21 +261,14 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       <button type="button" data-v3-gliederung-auf
         aria-expanded={umgebung.istXl ? m.tocOffen : m.tocAuf}
         onClick={() => { if (umgebung.istXl) setzeTocOffen(true); else m.setTocAuf((v) => !v); }}
-        // ── Ä111 (Live-Ästhetik-Prüfung 18.8.2026) · ZWEI ☰, ZWEI ZIELE ────
-        // GEMESSEN @390: in derselben Kopfzone stehen zwei ☰ übereinander —
-        // links das der App-Topbar («Navigation öffnen»), rechts dieses. Gleiche
-        // Glyphe, verschiedene Ziele. Der Name sagte bis hierher nur, WAS
-        // dahinterliegt («Gliederung»), nicht was der Klick TUT; ein
-        // Screenreader las an beiden Knöpfen ein Substantiv und liess offen,
-        // welcher die Seitennavigation und welcher das Inhaltsverzeichnis
-        // dieses Erlasses öffnet.
-        // JETZT: der Name nennt die Handlung — «Gliederung öffnen»,
-        // Glossar-Eintrag «Gliederungs-Griff → Gliederung öffnen/schliessen»,
-        // wortgleich mit «Gliederung ausblenden» am Gegenstück
-        // (`LeserLeseZeile`) und «Gliederung einblenden» an der Schiene.
-        // NICHT geändert ist die GLYPHE: ein zweites Zeichen für dieselbe Sache
-        // wäre eine Design-Entscheidung über das App-Icon-Set (`Icon.tsx`,
-        // Topbar) und damit H5 — hier steht nur der Name gerade.
+        // ── Ä111 (18.8.2026) · ZWEI ☰, ZWEI ZIELE ──────────────────────────
+        // GEMESSEN @390: zwei ☰ in derselben Kopfzone — links das der App-Topbar
+        // («Navigation öffnen»), rechts dieses. Der Name sagte nur, WAS
+        // dahinterliegt, nicht was der Klick tut; ein Screenreader las an beiden
+        // ein Substantiv. JETZT nennt er die Handlung, wortgleich mit
+        // «Gliederung ausblenden» (`LeserLeseZeile`) und «Gliederung einblenden»
+        // (Schiene). Die GLYPHE bleibt: ein zweites Zeichen wäre eine
+        // Entscheidung über das App-Icon-Set (`Icon.tsx`) und damit H5.
         title="Gliederung öffnen" aria-label="Gliederung öffnen" className={kopfGriffKlassen(stufe === 'mini')}>
         <span aria-hidden className={kopfGlypheKlassen(stufe === 'mini')}>☰</span>
       </button>

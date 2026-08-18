@@ -1,5 +1,5 @@
 import { formatiereDatum, grundartMeta, titelOhneKlammerSuffix, verifiziertesSachgebiet } from '../helpers';
-import { GEBIET_LABEL } from '../../../lib/normtext/register';
+import { GEBIET_LABEL, type ErlassTyp } from '../../../lib/normtext/register';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 
@@ -213,6 +213,47 @@ function suchOrt(kuerzel?: string): string {
  */
 export function suchFeldName(kuerzel?: string): string {
   return `${suchOrt(kuerzel)} oder zu einer Bestimmung springen`;
+}
+
+/**
+ * Ä108 (Live-Ästhetik-Prüfung 18.8.2026) · DIE ZEILE «ART» TRÄGT DIE ERLASSART
+ * ODER SIE ENTSTEHT NICHT.
+ *
+ * GEMESSEN am FR-Erlass 635.1.1: dort stand «Art · Kanton FR». Das Feld
+ * versprach die Erlassart und lieferte die EBENE — eine Auskunft, die im selben
+ * Bild schon zweimal steht (Kopf-Overline «Kanton FR», Krume «Kanton FR ›»).
+ * Ursache: die Box baute ihren Wert mit `kopfOverline`, und die fällt ohne
+ * bekannten `erlassTyp` auf die Ebene zurück — richtig für eine OVERLINE, die
+ * nie leer sein darf, falsch für eine Label/Wert-Zeile, die entfallen kann (§8:
+ * «Art — Kanton FR» ist keine Erlassart, sondern ein leeres Versprechen).
+ *
+ * JETZT: der Wert kommt direkt aus dem `erlassTyp` des Registers. Ist er dort
+ * nicht geführt, entsteht keine Zeile — dieselbe Regel, nach der schon «Stand»
+ * ohne Wert entfällt (B8). Der Bund behält seinen belegten Vorgabewert
+ * «Bundesgesetz» (byte-verträglich zum Vorzustand, `kopfOverline`); ihn hier zu
+ * streichen wäre eine zweite, ungefragte Änderung.
+ *
+ * Erlass-neutral (Fundament-Auflage 2): liest `rechtsgebiet`/`ebene`/`erlassTyp`,
+ * nie eine Kantonsliste. Der Ebene-Zusatz «Kanton XX ·» entfällt — er ist die
+ * Auskunft des Kopfes, nicht die dieser Zeile (§5).
+ */
+export function erlassArt(
+  erlass: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet'>,
+  erlassTyp: ErlassTyp | undefined,
+): string | null {
+  if (erlass.rechtsgebiet === 'international') {
+    return erlassTyp === 'staatsvertrag' ? 'Staatsvertrag' : null;
+  }
+  if (erlass.ebene === 'bund') {
+    return erlassTyp === 'verfassung' ? 'Bundesverfassung'
+      : erlassTyp === 'verordnung' ? 'Verordnung'
+      : erlassTyp === 'staatsvertrag' ? 'Staatsvertrag'
+      : 'Bundesgesetz';
+  }
+  return erlassTyp === 'gesetz' ? 'Gesetz'
+    : erlassTyp === 'verordnung' ? 'Verordnung'
+    : erlassTyp === 'verfassung' ? 'Verfassung'
+    : null;
 }
 
 /**
