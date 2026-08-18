@@ -163,7 +163,9 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
         // D1: der Tooltip nennt nur, was das Panel wirklich trägt — sonst
         // versprach er auf vermerkfreien Erlassen einen Schalter, den es dort
         // nicht gibt (dieselbe §8-Sorge wie die Bedingung unten).
-        title={`Darstellung: Fussnoten${hatAenderungsvermerke ? ' · Änderungsvermerke' : ''} · Rechtsprechung im Text · Grösse des Gesetzestexts`}
+        // B2 (18.8.2026): derselbe Wortlaut wie am Schalter unten — der Tooltip
+        // versprach «im Text», was V3 nicht einlöst (Herleitung dort).
+        title={`Darstellung: Fussnoten${hatAenderungsvermerke ? ' · Änderungsvermerke' : ''} · Rechtsprechung anzeigen · Grösse des Gesetzestexts`}
       >
         {/* ── Ä91 (H4-Nachzug 18.8.2026) · ZWEI GESICHTER, NICHT DREI ────────
             Gemessen 18.8.2026 trug dieser Öffner DREI verschiedene Gestalten:
