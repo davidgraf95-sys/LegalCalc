@@ -17,6 +17,21 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 //   popover    «Ansicht ▾» im Kopf          ja           ja           ja
 //   blatt      Panel als MODALES Sheet      ja           ja           nein
 //   beiwerk    Panel als Blatt rechts (D)   NEIN         ja           nein
+//   spalte     Panel als eigene Spur (Ä60)  NEIN         NEIN         nein
+//
+// ── `spalte` — DER VIERTE MODUS, UND WARUM ER KEINEN AUSSENKLICK KENNT ───────
+// Ä60 (c), 18.8.2026: seit der Rahmen breiter werden darf, steht das Panel auf D
+// nicht mehr ÜBER dem Text, sondern als eigene Spur NEBEN ihm (`rahmenSpalten`).
+// Damit ist es kein aufgezogenes Blatt mehr, sondern Teil des Layouts — und
+// einen Layout-Bestandteil, den ein Klick irgendwohin wegräumt, erwartet niemand.
+//
+// GEMESSEN, nicht gemeint (18.8.2026 @1440, erster Bau MIT Aussenklick): der
+// Klick auf «Gliederung ausblenden» schloss zuerst das Panel; der Rahmen fiel
+// dabei von 1344 auf 1072 px zurück, der Knopf wanderte unter dem Zeiger weg und
+// sein `click` erreichte ihn nie — die Gliederung blieb offen. Ein Aussenklick,
+// der die Fläche unter der Hand verschiebt, frisst genau den Klick, für den er
+// gedacht war (rot gesehen an `leser-v3-uebersicht` (c)). Geschlossen wird die
+// Spur über ✕, Esc oder den Zähler — drei benannte Wege.
 //
 // Esc schliesst in ALLEN Modi und gibt den Fokus an den Öffner zurück — das ist
 // die Zusage, die keine Fläche verhandeln darf (WCAG 2.1.2/2.4.3).
@@ -56,7 +71,10 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Browser gleicht per Scroll-Anchoring aus und feuerte `scroll` ohne Geste; das
 // eben geöffnete Panel schloss sich von selbst.
 
-export type AutoZuModus = 'popover' | 'blatt' | 'beiwerk';
+export type AutoZuModus = 'popover' | 'blatt' | 'beiwerk' | 'spalte';
+
+/** Die zwei Modi OHNE Fokus-Falle: das Panel ist dort Beiwerk, kein Dialog. */
+const OHNE_FALLE: AutoZuModus[] = ['beiwerk', 'spalte'];
 
 export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, aussenAusnahme }: {
   offen: boolean;
@@ -79,17 +97,17 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
 
   // Fokus-Falle + Esc + Fokus-Rückgabe aus der GETEILTEN Mechanik — dieselbe,
   // die das Ist-Menü und das Gliederungs-Blatt verwenden (§5). NICHT im Modus
-  // `beiwerk`: dort ist die Falle gerade das, was nicht sein darf (Kopf oben).
-  useDialogFokus(offen && modus !== 'beiwerk', panelRef, () => schliesseRef.current());
+  // `beiwerk`/`spalte`: dort ist die Falle gerade das, was nicht sein darf (Kopf oben).
+  useDialogFokus(offen && !OHNE_FALLE.includes(modus), panelRef, () => schliesseRef.current());
 
-  // ── `beiwerk`: Fokus hinein, Esc, Rückgabe — OHNE Falle ───────────────────
+  // ── `beiwerk`/`spalte`: Fokus hinein, Esc, Rückgabe — OHNE Falle ─────────
   // Bewusst KEIN Aufruf von `useDialogFokus` mit abgeschalteter Falle: die Falle
   // ist dort die Hälfte der Zusage, und ein Schalter «Dialog ohne Dialog» hätte
   // jeden ihrer sieben Aufrufer betroffen (§5 — geteilte Mechanik nicht für einen
   // Sonderfall umbauen). Fokussiert wird der Container selbst (`tabIndex={-1}`);
   // von dort wandert Tab regulär in die Fläche und wieder heraus.
   useEffect(() => {
-    if (!offen || modus !== 'beiwerk') return;
+    if (!offen || !OHNE_FALLE.includes(modus)) return;
     const wurzel = panelRef.current;
     if (wurzel == null) return;
     const vorher = document.activeElement as HTMLElement | null;
@@ -104,9 +122,9 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     };
   }, [offen, modus, panelRef]);
 
-  // ── Aussenklick ───────────────────────────────────────────────────────────
+  // ── Aussenklick — in JEDEM Modus ausser `spalte` (Herleitung im Kopf) ─────
   useEffect(() => {
-    if (!offen || !wrapRef) return;
+    if (!offen || !wrapRef || modus === 'spalte') return;
     const klick = (e: PointerEvent) => {
       const wurzel = wrapRef.current;
       if (!wurzel) return;
@@ -118,7 +136,7 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     };
     document.addEventListener('pointerdown', klick);
     return () => document.removeEventListener('pointerdown', klick);
-  }, [offen, wrapRef, aussenAusnahme]);
+  }, [offen, wrapRef, aussenAusnahme, modus]);
 
   // ── Wisch-/Grössen-Geste (nur `popover`, Herleitung LM-009 im Kopf) ───────
   useEffect(() => {

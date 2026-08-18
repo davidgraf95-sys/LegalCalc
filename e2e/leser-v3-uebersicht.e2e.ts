@@ -333,16 +333,21 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
 
     // ── GEGENPROBE in derselben Sitzung (§6.7) ────────────────────────────────
     // Ohne sie prüfte der Fall nur, dass die Klappe NIE erscheint. Die Gliederung
-    // wird darum eingeklappt und das Panel danach NEU aufgezogen — in dieser
-    // Reihenfolge, weil ein Klick neben das Panel es schliesst (`usePopoverAutoZu`,
-    // Modus «beiwerk»): klappte man bei offenem Panel ein, prüfte man ein Panel,
-    // das es in dem Moment gar nicht mehr gibt. Genau so ist diese Zeile beim
-    // ersten Lauf rot geworden — «0 statt 1» —, und der Befund war die Spec,
-    // nicht das Produkt.
+    // wird darum eingeklappt — dann trägt die Leiste den Steckbrief nicht mehr,
+    // und das Panel muss ihn übernehmen.
+    //
+    // §6.3-ANPASSUNG, DEKLARIERT (Ä60 (c), David-Entscheid 17.8.2026): hier stand
+    // «einklappen ⇒ `[data-v3-uebersicht]` 0 ⇒ Panel NEU aufziehen», weil ein
+    // Klick neben das Panel es schloss. Beides gilt @1440 nicht mehr: das Panel
+    // ist dort eine eigene SPUR (Layout, kein Blatt) und kennt keinen
+    // Aussenklick, es bleibt also offen — und der Steckbrief wandert im selben
+    // Augenblick hinein, weshalb `[data-v3-uebersicht]` gar nie auf 0 fällt.
+    // Die geprüfte Zusage ist unverändert und sogar strenger: der Steckbrief ist
+    // UMGEZOGEN, nicht verdoppelt (Ä28) — und der Umzug geschieht ohne zweite
+    // Bedienhandlung.
     await page.locator('[data-v3-gliederung-zu]').click()
-    await expect(page.locator('[data-v3-uebersicht]')).toHaveCount(0)
-    await page.locator('[data-v3-panel-zaehler]').first().click()
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
 
     await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(1)
     // Weiterhin genau EINE Label/Wert-Liste auf der Seite — der Steckbrief ist

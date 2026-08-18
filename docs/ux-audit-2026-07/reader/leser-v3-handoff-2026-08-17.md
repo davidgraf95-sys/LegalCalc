@@ -37,6 +37,15 @@ Inhalt:
 
 ## Wartet auf David — gebündelt im H4-Kontaktbogen
 `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md`:
+> **Nachtrag 18.8.2026** (Branch `feat/leser-v3-h4-rahmen`): Ziff. 1 und 2 sind
+> erledigt — David hat am 17.8. spätabends **(c)** entschieden («ja und c, mach
+> so»), **Ä60 ist gebaut** (Beiwerk-Blatt als eigene Spur, verdeckt ab Fenster
+> 1024 px 0 px statt 320/257/192/112; Ä59 mit derselben Messung), und die
+> Randlasche bleibt gestrichen, weil an derselben Breite der Kopf-Zähler steht.
+> Vom Blocker-Trio unter Ziff. 1 ist damit nur noch die **B-Spec-Umhängung**
+> offen; Vollzugsvermerk «Ä60 (c) breiterer Leser-Rahmen» in
+> `fahrplaene/FAHRPLAN-LESER-V3.md` Kap. 7. Der Rest dieser Liste gilt unverändert.
+
 1. **H4-Umschalten** (V3 als Standard) Ja/Nein; Blocker: NM-2 Handy (prüfen, ob H3-Nachzug
    «Ansicht ▾»-Öffner das schon löst), Ä60 Spalten-Entscheid (1024/1072-Grenze), Ä46 zwei ✕,
    B-Spec-Umhängung.

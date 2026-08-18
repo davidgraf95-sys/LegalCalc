@@ -31,10 +31,27 @@
 // Der heutige Entscheid `istXl` misst den VIEWPORT gegen 1024. Würde er auf das
 // Rahmen-Element umgestellt, verschöbe sich die Zwei-Spalten-Grenze von
 // Viewport 1024 auf Viewport **1072** — die Gliederungsspalte verschwände auf
-// jedem Fenster zwischen 1024 und 1071 px. Das ist genau der offene
+// jedem Fenster zwischen 1024 und 1071 px. Das ist genau der
 // S-Breiten-/Spalten-Entscheid (Ä60, Vollzugsvermerk H3) und gehört nicht in
 // einen Schritt, der «Verhalten unverändert» zugesichert hat (§6.3). Die Zahl
 // steht hier, damit der Entscheid mit ihr getroffen wird und nicht ohne sie.
+//
+// ── NACHGEFÜHRT 18.8.2026: Ä60 IST ENTSCHIEDEN — DIE UMSTELLUNG BLEIBT AUS ──
+// David hat am 17.8.2026 Option (c) gewählt, der Leser-Rahmen darf breiter
+// werden (`./rahmenSpalten.ts`). Die Tabelle oben ist am gebauten H4-Stand
+// nachgemessen und gilt unverändert (Viewport 1000/1023/1024/1050/1071/1072/
+// 1100/1120/1150 → Rahmen 952/975/976/1002/1023/1024/1052/1072/1072), denn die
+// Aufweitung hängt am OFFENEN Beiwerk-Blatt; bei geschlossenem deckelt
+// `max-w-content` weiter auf 1072 px. `istXl` bleibt darum am Viewport — jetzt
+// aus drei gemessenen Gründen statt aus einem offenen Entscheid: (1) diese
+// Verschiebung, (2) die Alternative `raum` (`./rahmenSpalten`) liegt zwar richtig
+// (Fenster − 48 px ⇒ Schwelle 976 ⟺ Viewport 1024), misst aber `clientWidth` und
+// damit OHNE Scrollbar, während `PANE_BREIT_PX` ausdrücklich border-box misst,
+// «damit die Scrollbar die Schwelle nicht verschiebt» (Differenz 0 px auf macOS,
+// 15 px auf Chromium/Linux), (3) `istXl` lebt in `inhalt-zustand.tsx` und trägt
+// BEIDE Hüllen — V3 allein umzuhängen erzeugte eine dritte Wahrheit, statt eine
+// zu beseitigen. Abschluss mit H5, wenn V1 fällt: dort ist es eine Streichung,
+// keine Verschiebung (Kap. 12 A-8).
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 /** Die drei Platz-Lagen der Skizze (Kap. 4). Reihenfolge = abnehmender Platz. */
