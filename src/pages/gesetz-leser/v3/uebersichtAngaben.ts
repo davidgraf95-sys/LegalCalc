@@ -178,25 +178,63 @@ export function ruheZeile(
 }
 
 /**
- * Ä80 · Die Präposition wandert ins Etikett — «vom 5. Oktober 2007» → «5. Oktober
- * 2007», Label «Erlass vom».
+ * Präpositionen, die ein Sidecar-Erlassdatum einleiten kann — BELEGT, nicht
+ * geraten. Gezählt über alle 1420 Struktur-Sidecars (18.8.2026, kein Netz):
+ * «Vom» 890 · «vom» 493 · gar keine 27 · «du» 10 (FR/VS). Andere Formen kommen
+ * im Korpus nicht vor; käme eine dazu, fängt sie der Rückfall in `datumsAngabe`
+ * auf, statt still verstümmelt zu werden.
  *
- * WARUM EIN MUSTER MIT WORTGRENZE UND KEIN `slice(4)`: die Sidecars schreiben
- * das Erlassdatum nicht einheitlich. Fedlex liefert «vom 5. Oktober 2007»,
- * kantonale Snapshots auch gross («Vom 12. April 2000», so gemessen an
- * BS-640.100 im Ä74-Befund) und manche ganz ohne Präposition («12. April 2000»).
- * Ein stumpfes Abschneiden verstümmelte die dritte Gruppe still — der Wert
- * begänne mit «April 2000». Darum eine Identitäts-Prüfung mit Wortgrenze (§7):
- * getroffen wird nur ein führendes «vom», gefolgt von Weissraum; sonst bleibt
- * der Wortlaut Zeichen für Zeichen stehen.
- *
- * NUR IN V3. Die Ist-Hülle rendert ihre Übersicht weiter aus
- * `nurErlassdatum` — die eingefrorene Hülle hängt nie an der neuen (FL-4), und
- * die Verlagerung ins Etikett ist eine Gestaltungsentscheidung dieser Box, keine
- * Korrektur an den Daten.
+ * WARUM EIN MUSTER MIT WORTGRENZE UND KEIN `slice(4)`: 27 Sidecars schreiben das
+ * Datum ohne Präposition («12. April 2000», gemessen an BS-640.100 im
+ * Ä74-Befund). Ein stumpfes Abschneiden verstümmelte diese Gruppe still — der
+ * Wert begänne mit «April 2000». Darum eine Identitäts-Prüfung mit Wortgrenze
+ * (§7): getroffen wird nur ein führendes Listenwort, gefolgt von Weissraum.
  */
-export function ohneVom(erlassdatum: string): string {
-  return erlassdatum.replace(/^vom\s+/i, '');
+const PRAEPOSITION = /^(?:vom|du)\s+/i;
+
+/**
+ * Die fremdsprachigen Geschwister der «(Stand …)»-Klammer, die `nurErlassdatum`
+ * schneidet. Gezählt an denselben 1420 Sidecars: «(Stand …)» 1409 (dort erledigt)
+ * · «(version …)» 5 · «(état …)» 5 · «(Fassung in Kraft getreten am …)» 1.
+ *
+ * WARUM NICHT «jede Schluss-Klammer»: `nurErlassdatum` lässt «vom 1. Januar 2000
+ * (AS 2000 1)» ausdrücklich stehen (Fundstellen-Angabe, `gesetz-leser-uebersicht-s6`),
+ * und diese Regel darf sie nicht hintenherum doch schneiden. Getroffen wird nur,
+ * was eine FASSUNG bezeichnet — dieselbe Aussage wie «Stand», in einer anderen
+ * Sprache. `Etat` ohne Akzent steht daneben, weil derselbe Erlass je nach
+ * Ausgabe-Kodierung beides liefert.
+ *
+ * NUR IN V3. Die Ist-Hülle rendert ihre Übersicht weiter aus dem blossen
+ * `nurErlassdatum` — die eingefrorene Hülle hängt nie an der neuen (FL-4).
+ */
+const FASSUNGS_KLAMMER = /\s*\((?:Fassung|État|Etat|Version)\b[^)]*\)\s*$/i;
+
+/**
+ * Ä80 + P1-2 · Das Sidecar-Erlassdatum wird zur Label/Wert-Zeile: die
+ * Präposition wandert ins Etikett («vom 5. Oktober 2007» → Label «Erlass vom»,
+ * Wert «5. Oktober 2007»), die Fassungs-Klammer fällt weg (sie steht als
+ * eigene Zeile «Stand» direkt darunter — Ä74).
+ *
+ * DER RÜCKFALL IST DER KERN DES FIXES (Bug-Check 18.8.2026). Ein Etikett «Erlass
+ * vom» ist eine ZUSAGE an den Wert: dass dort ein Datum steht und sonst nichts.
+ * Bis hierher wurde sie auch dann gegeben, wenn beide Muster danebengriffen —
+ * am FR-Erlass 635.1.1 stand «Erlass vom · du 01.05.1996 (version entrée en
+ * vigueur le 01.03.2024)», also die Präposition doppelt und der Stand ein
+ * zweites Mal. Beginnt der Wert nach beiden Schnitten nicht mit einer Ziffer,
+ * halten wir die Zusage nicht: das Etikett fällt auf das neutrale «Erlassdatum»
+ * zurück (so heisst es in V1), der Wortlaut bleibt unangetastet, und
+ * `tabular-nums` entfällt — eine Zahlen-Kante an einem Wort auszurichten ist der
+ * Ä80-Fehler in umgekehrter Richtung.
+ *
+ * `null` = nach dem Schnitt bleibt nichts (27 Sidecars tragen NUR die Klammer,
+ * z. B. «(Stand am 4. September 2024)»). Dann entsteht keine Zeile (§8).
+ */
+export function datumsAngabe(erlassdatum: string): Omit<UebersichtZeile, 'id'> | null {
+  const ohneKlammer = nurErlassdatum(erlassdatum).replace(FASSUNGS_KLAMMER, '').trim();
+  const wert = ohneKlammer.replace(PRAEPOSITION, '').trim();
+  if (!wert) return null;
+  const ziffern = /^\d/.test(wert);
+  return { label: ziffern ? 'Erlass vom' : 'Erlassdatum', wert, ziffern };
 }
 
 /**
@@ -250,11 +288,11 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   //      Der Wortlaut lehnt sich an Fedlex an, ohne dessen Kommentar-Text.
 
   // ── Erlass vom · «5. Oktober 2007» ────────────────────────────────────────
-  // Zwei Ableitungen hintereinander, beide geteilt (§5): `nurErlassdatum`
-  // entfernt die formelhafte Stand-Klammer (Ä74 — sonst steht der Stand zweimal
-  // untereinander), `ohneVom` hebt die Präposition ins Etikett.
-  const datum = kopf?.erlassdatum ? ohneVom(nurErlassdatum(kopf.erlassdatum)) : null;
-  if (datum) zeilen.push({ id: 'datum', label: 'Erlass vom', wert: datum, ziffern: true });
+  // `datumsAngabe` schneidet die Fassungs-Klammer (Ä74 — sonst steht der Stand
+  // zweimal untereinander), hebt die Präposition ins Etikett (Ä80) und gibt das
+  // Etikett wieder her, wo sie ihre Zusage nicht halten kann (P1-2).
+  const datum = kopf?.erlassdatum ? datumsAngabe(kopf.erlassdatum) : null;
+  if (datum) zeilen.push({ id: 'datum', ...datum });
 
   if (erlass.inkraftSeit) {
     zeilen.push({

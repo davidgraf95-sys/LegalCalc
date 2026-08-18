@@ -193,8 +193,8 @@ describe('uebersichtsAngaben — je Erlassart dieselben Regeln, andere Werte', (
 //      («Beschluss», «Inkrafttreten»), der Wert nur das Datum.
 //
 // ROT ZU BEKOMMEN (§6.7): in `uebersichtAngaben.ts` die `zeilen.push`-Reihenfolge
-// wieder auf datum → stand → inkraft stellen ⇒ Fall (a) rot; das Etikett auf
-// «Erlassdatum» zurücksetzen bzw. `ohneVom` weglassen ⇒ Fall (b) rot.
+// wieder auf datum → stand → inkraft stellen ⇒ Fall (a) rot; in `datumsAngabe`
+// das Etikett fest auf «Erlassdatum» setzen bzw. `PRAEPOSITION` leeren ⇒ (b) rot.
 describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Etikett', () => {
   const dreiDaten = () => uebersichtsAngaben(eingabe({
     erlass: erlassBauen({
@@ -254,6 +254,80 @@ describe('Ä80 — Chronologie Erlass → In Kraft → Stand, Präposition im Et
     }));
     expect(labels(a)).toEqual(['Art', 'Stand']);
     expect(a.zeilen.every((z) => z.wert.trim().length > 0)).toBe(true);
+  });
+});
+
+// ─── P1-2 · Ä80 hielt nur auf Deutsch (Bug-Check 18.8.2026) ─────────────────
+//
+// BEFUND (Repro `p1/r4-erlassdatum-fr.cjs`, D 1440, Steckbrief aufgeklappt): am
+// FR-Erlass 635.1.1 stand die Zeile
+//     «Erlass vom  du 01.05.1996 (version entrée en vigueur le 01.03.2024)»
+// — Ä80 hebt die Präposition nur, wenn sie «vom» heisst, und Ä74 schneidet nur
+// die Klammer, die «(Stand …)» heisst. Beide Muster sind deutsch, die Sidecars
+// sind es nicht. Ergebnis: Etikett und Wert sagten die Präposition doppelt, der
+// Wert begann mit einem Wort statt einer Ziffer (`tabular-nums` richtet dann an
+// einer Kante aus, an der nichts steht), und die Fassungs-Angabe stand ein
+// zweites Mal untereinander — genau der Ä74-Befund, nur auf Französisch.
+//
+// GEMESSEN über alle 1420 Struktur-Sidecars des Repos (Stand 32c2865d2, kein
+// Netz, `scratchpad/mess-erlassdatum.mjs`):
+//   erstes Wort      «Vom» 890 · «vom» 493 · ohne Präposition 27 · «du» 10
+//   Schluss-Klammer  «(Stand …)» 1409 · «(version …)» 5 · «(état …)» 5
+//                    · «(Fassung in Kraft getreten am …)» 1
+// Vorher trugen 10 von 1420 Erlassen einen Wert, der nicht mit einer Ziffer
+// beginnt (alle FR/VS); 11 Werte ändern sich durch den Fix, nachher sind es 0.
+//
+// ERLASS-NEUTRALITÄT (Fundament-Auflage 2): kein `if (kanton === 'FR')` und kein
+// Sprach-Zweig — es gibt genau EINE Präpositions-Liste und EINE Klammer-Liste,
+// beide belegt durch die Zählung oben, und darunter ein Rückfall, der jede
+// nicht gelistete Schreibweise auffängt, statt sie zu verstümmeln (§7).
+//
+// ROT ZU BEKOMMEN (§6.7): in `uebersichtAngaben.ts` das «du» aus `PRAEPOSITION`
+// entfernen ⇒ (a)/(b) rot; `FASSUNGS_KLAMMER` auf `/(?!x)x/` setzen ⇒ (a)/(b)/(c)
+// rot; das Etikett fest auf «Erlass vom» verdrahten ⇒ (d) rot.
+describe('P1-2 — fremdsprachige Erlassdaten (FR/VS-Sidecars)', () => {
+  const datumsZeile = (erlassdatum: string) => uebersichtsAngaben(eingabe({
+    erlass: erlassBauen({ key: 'FR-635.1.1', ebene: 'kanton', kanton: 'FR', sr: '635.1.1' }),
+    kopf: { erlassdatum } as UebersichtsEingabe['kopf'],
+  })).zeilen.find((z) => z.id === 'datum');
+
+  it('(a) FR-635.1.1 «du 01.05.1996 (version entrée en vigueur le 01.03.2024)»', () => {
+    const z = datumsZeile('du 01.05.1996 (version entrée en vigueur le 01.03.2024)');
+    expect(z?.wert).toBe('01.05.1996');
+    expect(z?.label).toBe('Erlass vom');
+    expect(z?.ziffern).toBe(true);
+  });
+
+  it('(b) VS-178.104 «du 26.11.2008 (état 01.01.2011)»', () => {
+    const z = datumsZeile('du 26.11.2008 (état 01.01.2011)');
+    expect(z?.wert).toBe('26.11.2008');
+    expect(z?.label).toBe('Erlass vom');
+  });
+
+  it('(c) FR-130.11-de: deutsche Klammer, die nicht «Stand» heisst (Ä74-Rest)', () => {
+    // Der Fall beweist, dass die Lücke keine Sprach-Lücke ist, sondern eine
+    // Muster-Lücke: derselbe Erlass trägt auf Deutsch «(Fassung in Kraft
+    // getreten am …)» und lief bis hierher ebenfalls ungeschnitten durch.
+    expect(datumsZeile('vom 30.11.2010 (Fassung in Kraft getreten am 01.12.2025)')?.wert)
+      .toBe('30.11.2010');
+  });
+
+  it('(d) unbekannte Schreibweise: Rückfall-Etikett statt falscher Zusage', () => {
+    // Beginnt der Wert nach beiden Schnitten nicht mit einer Ziffer, ist die
+    // Präposition unbekannt. Dann wird NICHTS geraten: der Wortlaut bleibt
+    // Zeichen für Zeichen stehen, das Etikett fällt auf das neutrale
+    // «Erlassdatum» zurück (so heisst es in V1), und `tabular-nums` entfällt.
+    const z = datumsZeile('dal 12 aprile 2000');
+    expect(z?.wert).toBe('dal 12 aprile 2000');
+    expect(z?.label).toBe('Erlassdatum');
+    expect(z?.ziffern).toBeFalsy();
+  });
+
+  it('(e) reine Klammer ohne Datum erzeugt gar keine Zeile (§8)', () => {
+    // 27 Sidecars tragen ein Erlassdatum, das NUR aus der Stand-Klammer besteht
+    // (z. B. APOSTILLE.json «(Stand am 4. September 2024)»). Nach dem Schnitt
+    // bleibt nichts — dann entfällt die Zeile, statt leer dazustehen.
+    expect(datumsZeile('(Stand am 4. September 2024)')).toBeUndefined();
   });
 });
 
