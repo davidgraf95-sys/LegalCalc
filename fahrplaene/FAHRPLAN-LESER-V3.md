@@ -2512,6 +2512,37 @@ Breiten (390 / 1440 / 720 px = Pane) und drei Zustände (Ist · V1 · V2), V1/V2
 > Kap. 8 trägt die Typografie-Varianten, die Entscheide stehen hier in Kap. 9.
 > Eingetragen wurde dort, wo die übrigen David-Entscheide stehen.)*
 
+> **CLS-Fall `leser-r1-r2` (A9-DoD) — entschieden 18.8.2026 vom Orchestrator nach
+> Vorlage an David mit drei Wegen; David hat nicht widersprochen, Stopp-Recht
+> steht.** Der Fall war der **eine offen rote** des H4-Standes: @390 unter 6×
+> CPU-Drossel mass er **CLS 0.0202 gegen Budget 0**, weil die Such-Zone beim
+> Suchstart um 24 px wächst (44 → 68 px) und die Lesespalte schiebt.
+> **Gewählt ist Weg 3:** Das **Verhalten bleibt** — die Zone wächst beim Tippen
+> weiter, als bewusstes Feedback (B9-Regel «die Zonen-Höhe hängt am
+> Such-Zustand»). Geändert wird allein die **Geste im Test**: `click()` +
+> `pressSequentially` statt `fill()`, also so, wie ein Nutzer tippt. **Das Budget
+> bleibt 0** für jeden Sprung ohne `hadRecentInput` — keine Schwelle angehoben,
+> kein `skip`.
+> *Warum das keine Lockerung ist:* `fill()` setzt den Wert programmatisch, der
+> Browser sieht keine Nutzereingabe und flaggt den Folge-Shift
+> `hadRecentInput = false`; die CLS-Definition schliesst eingabe-nahe
+> Verschiebungen aber ausdrücklich aus. Der Test mass also einen Wert, **den kein
+> Nutzer je erzeugen kann**. Die **Grösse** des Sprungs bleibt bewacht — sie hängt
+> an `leser-v3-suchfeld-ueberall` (e), das die Zonen-Höhen 44/68 px festnagelt.
+> Arbeitsteilung: (e) bewacht die Geometrie, A9-DoD die Metrik.
+> *Verworfen:* **Weg 1** (24 px Höhe dauerhaft reservieren) — nimmt jedem Leser,
+> der nie sucht, Lesehöhe genau dort, wo der klebende Block das ganze Chrome ist,
+> und stürzt die Zusage von `leser-v3-suchfeld-ueberall` (e). **Weg 2** (zweite
+> Zeile immer zeigen, mit wechselndem Inhalt) — verlangt eine neue inhaltliche
+> Zusage (Standort-Angabe im Ruhezustand), also echtes Design, das nicht in einen
+> Landungs-PR gehört.
+> *Zahlen (18.8.2026, `vite preview` aus `dist/`, Chromium, BV @390, Drossel 6×):*
+> `fill()` 0.0202 → rot · echt getippt input-frei 0.0016 → grün · Nullprobe alte
+> Hülle `?leser=v1`, dieselbe Geste, n=3: 0.5519. Herleitung, Rot-Beweis und die
+> beiden verworfenen Wege als Bauanleitung: Kontaktbogen H4 §7c/§8.
+> **Stopp-Recht:** Will David stattdessen Weg 1 oder 2, öffnet das den Fall
+> wieder — dann wird die Geste zurückgebaut und die Reserve gebaut.
+
 > **Ä75 und Ä81 — entschieden 18.8.2026 vom Orchestrator, David hat Stopp-Recht.**
 > Beide standen seit dem 17.8. als «wartet auf David» und blockierten den
 > H4-Nachzug. Sie sind hier entschieden, weil beide **keine Geschmacksfragen**

@@ -573,14 +573,46 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
 //       `v3/SuchZone` seit H2b behauptet («das ist eine Tastatur-Eingabe,
 //       CLS-exkludiert, §15.2»).
 //
-// WAS DARAUS FOLGT — und was ausdrücklich NICHT: Die Geste im Test bleibt
-// unangetastet, das Budget bleibt 0. Weder das eine noch das andere zu ändern
-// ist Sache der Integration: (3) ist ein Argument dafür, dass die Messung
-// strenger ist als die Metrik — aber der Sprung ist trotzdem sichtbar, und ob
-// LexMetrik hier strenger sein WILL als CLS, ist ein Entscheid, kein Handgriff.
-// Die zwei Wege stehen im Kontaktbogen H4 §7c; beide kosten etwas Sichtbares
-// (24 px Dauer-Reserve im klebenden Block gegen einen selbst ausgelösten
-// 24-px-Sprung), und keiner davon ist ohne Gestaltungsentscheid zu haben.
+// ── ENTSCHIEDEN 18.8.2026 · WEG 3: DIE GESTE WIRD ECHT, DAS BUDGET BLEIBT 0 ──
+// Der Absatz darüber endete bis hierher mit «ist ein Entscheid, kein Handgriff»
+// und liess den Fall rot stehen. Der Entscheid ist gefallen. Drei Wege lagen vor
+// (Kontaktbogen H4 §7c):
+//   Weg 1 — 24 px Höhe im klebenden Kopf-Block dauerhaft reservieren. VERWORFEN:
+//     das nimmt jedem Leser, der nie sucht, 24 px Lesehöhe @390, und es
+//     widerspricht der Zusage von `leser-v3-suchfeld-ueberall` (e) («die
+//     ausgelegte Höhe deckt ihr Markup — ohne Luft»).
+//   Weg 2 — Budget anheben oder den Fall überspringen. VERWORFEN nach §6.3/§6.7:
+//     ein angehobenes Budget macht JEDEN künftigen Sprung unsichtbar, nicht nur
+//     diesen; ein Skip nimmt sechs weitere geprüfte Schritte mit.
+//   Weg 3 — GEWÄHLT: das gemessene Verhalten bleibt, wie es ist (die Such-Zone
+//     wächst beim Tippen um 24 px — bewusstes Feedback, B9-Regel «die Zonen-Höhe
+//     hängt am Such-Zustand»), und die GESTE im Test wird die des Nutzers:
+//     `click()` + `pressSequentially` statt `fill()`.
+// WARUM DAS KEINE LOCKERUNG IST: Das Budget bleibt **0** für jeden Sprung ohne
+// `hadRecentInput` — kein Schwellenwert wird angefasst, keine Zeile übersprungen.
+// Geändert wird allein, WIE die Eingabe erzeugt wird, und zwar in Richtung
+// Wirklichkeit: `fill()` setzt den Wert programmatisch, der Browser sieht keine
+// Nutzereingabe und flaggt den Folge-Shift `hadRecentInput = false`. Die
+// CLS-Definition schliesst eingabe-nahe Verschiebungen ausdrücklich aus — der
+// Test mass bis hierher also einen Wert, den kein Nutzer je erzeugen kann.
+// Nach der Umstellung deckt der Fall unverändert alles ab, was er vorher deckte,
+// und zusätzlich den Fall «ein Shift beim Tippen kommt zu SPÄT, um noch als
+// eingabe-nah zu gelten» — der wäre mit `fill()` von der Grundlast nicht zu
+// unterscheiden gewesen.
+// DIE ZAHLEN, auf denen der Entscheid steht:
+//   `fill()`      CLS 0.0202  (rot, gemessen 18.8.2026 am Integrationsstand)
+//   echt getippt  CLS 0.0016  (nur die fremde Topbar-Griffzone, nicht zugerechnet)
+//   Nullprobe V1  CLS 0.5519  (dieselbe Geste, `?leser=v1`, n=3)
+// Das Leeren in Schritt 3 bleibt bewusst `fill('')`: dort misst der Fall 0, und
+// ein zweiter Wechsel auf echte Tasten machte den Schritt nur nachsichtiger,
+// ohne etwas zu beweisen.
+// ROT ZU BEKOMMEN (§6.7): in Schritt 1 `pressSequentially` durch `fill()`
+// ersetzen ⇒ CLS 0.0202 gegen Budget 0.
+// STOPP-RECHT: Vorgelegt wurde David am 18.8.2026 mit allen drei Wegen; er hat
+// nicht widersprochen, und Weg 3 ist als der einzige gewählt, der nichts an der
+// Oberfläche kostet. Will er stattdessen die 24 px Reserve (Weg 1), ist das ein
+// Gestaltungsentscheid, der diesen Fall wieder öffnet — der Vermerk steht dafür
+// im Fahrplan Kap. 9 und im Kontaktbogen §7c/§8.
 test.describe('A9-DoD — Flüssigkeit unter CPU-Drossel 6×', () => {
   test('Suche, Fundstellen-Sprung und Gliederungs-Sheet ohne Layout-Shift (CLS 0)', async ({ page }) => {
     test.slow();
@@ -607,7 +639,13 @@ test.describe('A9-DoD — Flüssigkeit unter CPU-Drossel 6×', () => {
     //     istXl && sucheAktiv`), sondern hinter der benannten Zähler-Zeile
     //     «… Fundstellen · Treffer anzeigen →». Die ist der mobile Weg zur Liste
     //     — und selbst eine der Flächen, die hier nicht springen darf.
-    await inGesetzSuche(page).fill('Kanton');
+    //     WEG 3 (18.8.2026): getippt wird wie ein Nutzer tippt — Feld anklicken,
+    //     dann Zeichen für Zeichen. Nur so trägt der Browser den Folge-Shift in
+    //     den Input-Topf, aus dem die CLS-Definition ihn ausschliesst; `fill()`
+    //     hat diesen Weg nie genommen (Herleitung im Block über diesem Test).
+    const feld = inGesetzSuche(page);
+    await feld.click();
+    await feld.pressSequentially('Kanton', { delay: 60 });
     const zaehlerZeile = page.locator('[data-v3-treffer-weg]');
     await expect(zaehlerZeile).toBeVisible({ timeout: 40_000 });
     await page.waitForTimeout(900);

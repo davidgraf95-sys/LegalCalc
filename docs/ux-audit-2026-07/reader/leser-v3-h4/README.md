@@ -117,7 +117,7 @@ Rohdaten `flip-stand.json`.
 | 2 | **`leser-kopf-paritaet`** grün | ✅ | 1 Fall, beide Split-View-Panes, im **Default**-Projekt gegen V3 — vor dem Flip lief er im Flag-Projekt |
 | 3 | **PX** (Pixelvergleich) grün | ✅ **3/3 in Ruhe** | `PX=1 --project=px` dreimal hintereinander: **2 passed, Exit 0 · 24.0 s / 24.0 s / 23.9 s**. Der Lastfall aus der Matrix unten (2/5 unmittelbar nach einem 8-Worker-Lauf) ist damit **nicht** entkräftet — er bleibt der offene §17-Punkt, hier wurde die Ruhe-Bedingung gemessen |
 | 4 | **NM** in keiner der drei Aufgaben verschlechtert | ⚠️ unverändert wie unten | Der Flip ändert am Bedienweg nichts — er ändert, wer ihn ohne Adresszusatz sieht. NM-2 bleibt der ausgewiesene Preis (+1 Schritt gegenüber V1), NM-1/NM-3 bleiben besser |
-| 5 | **CLS ≤ Ist-Stand** | ✅ *(mit einem gemeldeten Fall)* | `leser-kopf-cls-s3` **4/4 grün seriell** (`--workers=1`). Im 5-Worker-Voll-Lauf riss `v3 @390` einmal — **seriell grün**, also Parallel-Last, kein Produktbefund (Messbedingung nennen: §0 Ziff. 3c). **Gemeldet, nicht verrechnet:** `leser-r1-r2:517` misst @390 unter 6× Drossel CLS 0.0202 gegen Budget 0 — der eine offen rote Fall, Begründung in §7c |
+| 5 | **CLS ≤ Ist-Stand** | ✅ *(mit einem gemeldeten Fall)* | `leser-kopf-cls-s3` **4/4 grün seriell** (`--workers=1`). Im 5-Worker-Voll-Lauf riss `v3 @390` einmal — **seriell grün**, also Parallel-Last, kein Produktbefund (Messbedingung nennen: §0 Ziff. 3c). **Der zuvor gemeldete Fall ist erledigt:** `leser-r1-r2` (A9-DoD) mass @390 unter 6× Drossel CLS 0.0202 gegen Budget 0; entschieden 18.8.2026 nach Weg 3 — Budget bleibt 0, die Test-Geste wird echtes Tippen, input-frei 0.0016 → **grün**. Herleitung und Stopp-Recht in §7c |
 | 6 | **axe** grün, hell **und** dunkel | ✅ | **0 critical/serious in 10 Kombinationen** (5 Erlasse × hell/dunkel), alle **ohne Flag**, also gegen V3 als Grundzustand. Dokumentiert bleibt je 1 × der begründete `link-in-text-block` (B-2). Tags `wcag2a`/`wcag2aa`/`wcag21a`/`wcag21aa` wie `e2e/a11y.e2e.ts` |
 | 7 | **Kantons-Probe** grün, ohne Flag | ✅ | **BS-640.100** (292 Bestimmungen) und **ZH-211.11** (23) ohne Adresszusatz: V3-Rahmen 1 · V3-Kopf 1 · Gliederung 1 · **0 Konsolenfehler**; V1-Menü 0. Bund-Probe gleich: StPO (480) · VMWG (32) · LugÜ (91). Die `h1` trägt in allen fünf Fällen den amtlichen Titel |
 | 8 | drei bekannte **Flaker** mit Wurzel-Fix | ⚠️ teilweise, unverändert | `leser-ohne-gliederungslinie` **2/2 grün seriell** (im Voll-Lauf unter 5 Workern einmal rot — dieselbe Signatur wie am 17.8., Wurzel Locator-Kosten). 2 von 3 weiterhin nicht reproduzierbar |
@@ -478,7 +478,7 @@ Verdikte: **UMGEHÄNGT** = Anker/Selektor an V3 nachgezogen, Aussage unveränder
 | `leser-kopf-g2b` | **UMGEHÄNGT** | dieselbe Selektor-Korrektur, ebenfalls zurück in `N_SPECS` |
 | `leser-kopf-v2` | **UMGEHÄNGT** | Fussnotenmarke `[data-fn-ref]` statt `button[aria-label^="Fussnote"]` (der alte Selektor griff nach dem Flip den Menü-Schalter); B-1 misst die Facetten-Wirkung im Panel statt an der Bezüge-Zeile |
 | `leser-optionen` | **UMGEHÄNGT + 1 Paar GELÖSCHT** | drei `role=switch` statt zwei, beim NAMEN geprüft statt gezählt. Gelöscht: das B3-Paar — Nichttrage-Nachweis `leser-v3-umschalten` (a2) prüft dieselbe Aussage an denselben Erlassen **plus** dem null-Fall ZH-211.11 |
-| `leser-r1-r2` | **UMGEHÄNGT · 1 Fall OFFEN ROT** | Sheet-/Quickjump-Fall auf das EINE Feld (Pos. 4); ehrliche Ablehnung als sichtbarer Satz statt `role="alert"`. Ein Fall gelöscht («Desktop-TOC-Kopf trägt denselben Baustein» — `leser-v3-suchfeld-ueberall` (a)/(c) sagt strenger, dass es nur EINEN gibt). **Offen rot: A9-DoD, s. 7c** |
+| `leser-r1-r2` | **UMGEHÄNGT · vollständig grün** | Sheet-/Quickjump-Fall auf das EINE Feld (Pos. 4); ehrliche Ablehnung als sichtbarer Satz statt `role="alert"`. Ein Fall gelöscht («Desktop-TOC-Kopf trägt denselben Baustein» — `leser-v3-suchfeld-ueberall` (a)/(c) sagt strenger, dass es nur EINEN gibt). **A9-DoD war der eine offen rote Fall; entschieden 18.8.2026 nach Weg 3 (Geste statt Budget), s. 7c** |
 | `leser-ruecksprung-r5-r7` | **UMGEHÄNGT** | `tocSprung` über `button[title]` statt `:not([aria-expanded])` (in V3 trägt auch der Titel-Knopf `aria-expanded`; gemessen 0 statt 39 Treffer, 90-s-Leerlauf). Rücksprung-Orakel wird gemessen statt auf die V1-Kopfhöhe 88 px gesetzt |
 | `leser-v3-umschalten` (1/n) | **UMGEHÄNGT** | R10 **gespiegelt**: ohne Flag rendert V3, `?leser=v1` führt zurück. Beide Richtungen im Fall, V1-Beweis POSITIV über `[data-ansicht-menu]` |
 | `leser-spy-w25d` (1/4) | **UMGEHÄNGT** | derselbe `aria-expanded`-Befund wie bei r5-r7 — der Locator fand 0 Elemente und lief ins 120-s-Budget, ohne je zu prüfen |
@@ -519,7 +519,13 @@ merkt es. Nach Gewicht:
 5. **A34/Bug1 + Bug2 mit V3-Einstieg** und der **Druck im Split**
    (`split-view-a34`, `druck-fundstellen-z2`).
 
-### 7c · Offen rot, und warum es nicht von diesem PR behoben wird
+### 7c · Der eine rote Fall — Befund, drei Messungen, Entscheid (grün seit 18.8.2026)
+
+> **Kurz:** Der Fall war rot, weil der Test die Eingabe programmatisch setzte und
+> der Browser den Folge-Sprung darum nicht als eingabe-nah verbuchte. Entschieden
+> ist **Weg 3** (unten): Geste wird echt, Budget bleibt 0, Verhalten bleibt.
+> Der Abschnitt behält den vollständigen Befund, weil der Entscheid nur aus ihm
+> heraus nachvollziehbar ist.
 
 `leser-r1-r2:517` (A9-DoD, «Suche, Fundstellen-Sprung und Gliederungs-Sheet ohne
 Layout-Shift») misst @390 unter 6× CPU-Drossel **CLS 0.0202 gegen Budget 0**
@@ -544,8 +550,11 @@ Drei Gründe, warum hier nichts gelockert und nichts gepinnt wird:
 
 **Einordnung:** kein Rechenfehler und kein Normtext-Befund (der Golden-Beweis ist
 byte-gleich, s. Tore); ein Bedien-Detail auf dem Handy unter künstlicher
-Drossel. Es blockiert den Flip nicht, aber es ist der **eine offene rote Fall**
-des Standes und darf nicht als grün gemeldet werden.
+Drossel. Es blockiert den Flip nicht, aber es war der **eine offene rote Fall**
+des Standes und durfte nicht als grün gemeldet werden. *(Die drei Gründe oben
+gelten unverändert — nichts wurde gelockert, nichts gepinnt, und der Fix in
+`v3/SuchZone` ist nicht gebaut worden. Der Fall ist über die Mess**geste** grün
+geworden, nicht über die Schwelle; Herleitung unten.)*
 
 #### Nachgemessen in der H4-Integration (18.8.2026) — drei Zahlen
 
@@ -560,8 +569,54 @@ Rauschen.
 | **Nullprobe gegen die alte Hülle** (§0 Ziff. 3) — dieselbe Geste, derselbe Build, `?leser=v1`, n=3 | **CLS 0.5509 / 0.5524 / 0.5524** (Mittel 0.5519), Grossbeitrag Δ0.5436 aus den `.lc-reveal`-Blöcken des V1-Suchmodus. V3 ist an dieser Geste **rund 27× besser** als der Ist-Stand — das Flip-Kriterium «CLS ≤ Ist-Stand» (Kap. 7) ist hier klar erfüllt. Der rote Fall misst kein V3-Defizit, er misst V3 gegen die **Null**, die V1 nie erreicht hat |
 | **Messbedingung, die den Fall rot macht** — `fill()` gegen echtes Tippen (`click()` + `pressSequentially`), je n=2 | `fill()`: input-frei **0.0218**, als Input verbucht 0.0000. Echtes Tippen: input-frei **0.0016** (nur die fremde Topbar), als Input verbucht **0.0202**. Der Browser flaggt den Shift bei echter Eingabe `hadRecentInput = true` — für einen realen Leser ist er nach der CLS-Definition **ausgeschlossen**, genau wie es der Kopf von `v3/SuchZone` seit H2b behauptet |
 
-**Die zwei Wege — beide kosten etwas Sichtbares, keiner ist ohne
-Gestaltungsentscheid zu haben. Wartet auf David.**
+#### ENTSCHIEDEN 18.8.2026 — Weg 3, und der Fall ist grün
+
+**Provenienz.** Die drei Wege wurden David am 18.8.2026 mit allen Zahlen
+vorgelegt; er hat nicht widersprochen. Der Orchestrator hat daraufhin **Weg 3**
+gewählt. Das ist ein Prozess-/Mess-Entscheid (delegiert, Audit-P8 8.8.2026),
+kein fachlich-juristischer — **Davids Stopp-Recht steht**: will er stattdessen
+die 24 px Reserve (Weg 1) oder die Dauer-Zeile (Weg 2), öffnet das diesen Fall
+wieder, und die Wege 1/2 stehen unten unverändert als Bauanleitung bereit.
+
+| Weg | Entscheid | Grund in einem Satz |
+|---|---|---|
+| 1 · Höhe dauerhaft reservieren | **verworfen** | Nimmt jedem Leser, der nie sucht, 24 px Lesehöhe genau dort, wo der klebende Block das ganze Chrome ist — und stürzt die Zusage von `leser-v3-suchfeld-ueberall` (e) («deckt ihr Markup — ohne Luft») |
+| 2 · zweite Zeile immer zeigen | **verworfen** | Verlangt eine neue inhaltliche Zusage (Standort-Angabe im Ruhezustand), die es heute nicht gibt — echtes Design, das nicht in einen Landungs-PR gehört |
+| 3 · die Test-**Geste** auf echtes Tippen | **GEWÄHLT** | Kostet an der Oberfläche nichts, ändert kein Budget und keine Schwelle — nur die Art, wie die Eingabe erzeugt wird, und zwar in Richtung Wirklichkeit |
+
+**Was konkret geändert wurde** (`e2e/leser-r1-r2.e2e.ts`, Schritt 1): `fill()` →
+`click()` + `pressSequentially('Kanton', { delay: 60 })`. **Das Budget bleibt
+0** für jeden Sprung ohne `hadRecentInput`; keine Zahl angehoben, keine Zeile
+übersprungen, kein `skip`. Das Verhalten des Produkts bleibt unverändert: die
+Such-Zone wächst beim Tippen weiter um 24 px — als bewusstes Feedback, B9-Regel
+«die Zonen-Höhe hängt am Such-Zustand».
+
+**Warum das keine Lockerung ist.** `fill()` setzt den Wert programmatisch; der
+Browser sieht keine Nutzereingabe und flaggt den Folge-Shift
+`hadRecentInput = false`. Die CLS-Definition schliesst eingabe-nahe
+Verschiebungen ausdrücklich aus — der Test mass bis hierher also einen Wert,
+**den kein Nutzer je erzeugen kann**. Nach der Umstellung deckt der Fall alles
+ab, was er vorher deckte, und zusätzlich den Fall «ein Shift beim Tippen kommt
+zu spät, um noch als eingabe-nah zu gelten»; mit `fill()` wäre der von der
+Grundlast nicht zu unterscheiden gewesen.
+
+**Der Einwand aus dem Vorstand — und was ihn auffängt.** Gegen Weg 3 stand hier
+bis zum Entscheid: «der Sprung bliebe sichtbar, und der Test hörte auf, ihn zu
+zeigen». Der erste Halbsatz stimmt und ist gewollt. Der zweite trifft nicht: die
+**Grösse** des Sprungs hängt an `leser-v3-suchfeld-ueberall` (e), das die beiden
+Zonen-Höhen festnagelt (Ruhe 44 px · Suche 68 px, rot zu bekommen über
+`SUCH_H_RUHE`). Wächst die Zone künftig um mehr als diese 24 px, wird (e) rot —
+nicht dieser Fall. Arbeitsteilung nach der Umstellung: **(e) bewacht die Geometrie,
+A9-DoD bewacht die Metrik.** Ungedeckt bliebe allein ein Sprung, der beim Tippen
+entsteht, aber ausserhalb des Eingabe-Fensters landet — und genau den fängt die
+neue Geste, die alte nicht.
+
+**Rot-Beweis (§6.7), gemessen 18.8.2026 am Integrationsstand:** mit `fill()`
+CLS **0.0202** gegen Budget 0 → rot; mit echtem Tippen input-frei **0.0016**
+(nur die fremde Topbar-Griffzone, nicht zugerechnet) → grün. Rot
+zurückzuholen: `pressSequentially` in Schritt 1 durch `fill()` ersetzen.
+
+**Die beiden verworfenen Wege — als Bauanleitung, falls David sie doch will:**
 
 1. **Höhe dauerhaft reservieren** (`--leser-v3-such-h` konstant auf
    `SUCH_H_AKTIV`). Der Sprung verschwindet vollständig. **Preis:** 24 px
@@ -578,12 +633,6 @@ Gestaltungsentscheid zu haben. Wartet auf David.**
    kein Leerraum. **Preis:** ein Element mehr im Dauerbild und eine neue
    inhaltliche Zusage, die es heute nicht gibt — also echtes Design, nicht
    Nacharbeit.
-
-**Der dritte Weg wird ausdrücklich NICHT empfohlen:** die Geste im Test von
-`fill()` auf echtes Tippen umzustellen. Sie würde den Fall grün machen und wäre
-metrisch sogar begründbar (Messung 3) — aber der Sprung bliebe sichtbar, und der
-Test hörte auf, ihn zu zeigen. Ob LexMetrik hier strenger sein will als CLS, ist
-Davids Entscheid; bis er fällt, bleibt der Fall rot und ehrlich (§8).
 
 ---
 
@@ -715,8 +764,18 @@ ausdrücklich NICHT mitentschieden hat, weil sie nicht gemessen werden konnte �
 im Korpus lag kein Probe-Erlass mit `naechsteFassungAb` vor.
 
 **Unverändert offen aus «H4-Vorbereitung II»:** **Arch 7** (Treffer-Blatt ohne
-`usePopoverAutoZu`; Empfehlung im Vermerk: Beiwerk, nicht Popover) und der eine
-rote Fall `leser-r1-r2` (CLS @390, **0.0202**, unverändert und nicht gelockert).
+`usePopoverAutoZu`; Empfehlung im Vermerk: Beiwerk, nicht Popover).
+
+**Erledigt 18.8.2026 — der letzte rote Fall.** `leser-r1-r2` (A9-DoD, CLS @390)
+ist **grün**, entschieden nach **Weg 3** (§7c): das Verhalten bleibt (die
+Such-Zone wächst beim Tippen um 24 px, B9-Regel), das Budget bleibt **0**, und
+die Test-Geste wird die des Nutzers — `click()` + `pressSequentially` statt
+`fill()`. Weder Schwelle angehoben noch Fall übersprungen; die **Grösse** des
+Sprungs bewacht weiterhin `leser-v3-suchfeld-ueberall` (e) über die beiden
+Zonen-Höhen 44/68 px. Rot-Beweis: mit `fill()` 0.0202 gegen 0 → rot, mit echtem
+Tippen input-frei 0.0016 → grün. **Wartet auf David nur noch als Stopp-Recht:**
+will er stattdessen die 24 px Dauer-Reserve (Weg 1) oder die Dauer-Zeile
+(Weg 2), öffnet das den Fall wieder — beide stehen in §7c als Bauanleitung.
 
 
 ---
