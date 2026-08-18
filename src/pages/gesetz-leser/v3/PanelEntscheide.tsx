@@ -47,9 +47,33 @@ import { PanelFilterZeile } from './PanelFilterZeile';
 // mit zwei benannten Klappen statt vier gestapelter Steuer-Blöcke (348 px
 // gemessen). Die geteilten Bausteine selbst sind dabei nicht angefasst worden.
 
-/** Eine Fundstelle: Zitierung · Datum · Regeste-Kurzzeile, verlinkt auf den
- *  Entscheid. `?norm=` trägt die Fundstellen-Absicht — das Ziel springt zur
- *  ersten Erwägung, die diese Norm zitiert (dieselbe Zusage wie am Artikelfuss). */
+/**
+ * Eine Fundstelle: Zitierung · Datum · Regeste-Kurzzeile, verlinkt auf den
+ * Entscheid. `?norm=` trägt die Fundstellen-Absicht — das Ziel springt zur
+ * ersten Erwägung, die diese Norm zitiert (dieselbe Zusage wie am Artikelfuss).
+ *
+ * ── Ä106 (Live-Ästhetik-Prüfung 18.8.2026) · DAS ★ IST GESTRICHEN ───────────
+ *
+ * GEMESSEN am Live-Stand (StPO Art. 429, Reiter «Entscheide»): unter der
+ * Overline «LEITENTSCHEIDE 25» trugen ALLE 25 Zeilen ein ★ — fünfundzwanzig
+ * Zeichen für eine Auskunft, die der Gruppenkopf zwei Zeilen darüber einmal
+ * gibt. Die Marke war als Auszeichnung IN einer gemischten Liste gedacht
+ * («und nur als EIN Zusatz», Dichte-Regel); gemischte Listen gibt es hier aber
+ * nicht: `gruppiereKanten` (`./panelModell`) legt je Status eine eigene Gruppe
+ * an — innerhalb einer Gruppe haben ausnahmslos alle Einträge denselben Status.
+ * Das ★ konnte also NIE etwas unterscheiden. Design-Grundlage Kap. 6 nennt
+ * genau das die Icon-Flut: ein Zeichen, das an jedem Element steht, trägt keine
+ * Information mehr.
+ *
+ * Die Auskunft bleibt vollständig (§8): der Gruppenkopf nennt die Klasse im
+ * Wort («Leitentscheide») UND die Zahl — eine Marke, eine Zahl, wie es der
+ * Prüfbefund verlangt.
+ *
+ * WÄRE die Gruppierung je aufgehoben (eine Liste über alle Instanzen), gehörte
+ * die Marke zurück — dann trüge sie wieder einen Unterschied. Sie steht in der
+ * Historie dieser Datei, nicht in einer toten Bedingung (§17: gestrichen statt
+ * bewacht).
+ */
 function Fundstelle({ b, normZitat }: { b: Bezug; normZitat: string }) {
   return (
     <li data-v3-panel-entscheid={b.key} className="border-t border-line/60 py-1.5 first:border-t-0">
@@ -58,10 +82,6 @@ function Fundstelle({ b, normZitat }: { b: Bezug; normZitat: string }) {
         <span className="flex items-baseline gap-2">
           <span className="num shrink-0 text-body-s font-medium text-brass-700 group-hover:underline">{b.zitierung}</span>
           <span className="num shrink-0 text-micro text-ink-500">{datumAnzeige(b.datum)}</span>
-          {/* ★ nur beim Leitentscheid, und nur als EIN Zusatz (Dichte-Regel) */}
-          {b.facetten.status === 'bge' && (
-            <span aria-hidden title="Amtlich publizierter Leitentscheid" className="shrink-0 text-micro text-brass-700">★</span>
-          )}
         </span>
         {b.regesteKurz && (
           <span className="mt-0.5 block text-micro leading-snug text-ink-600">{b.regesteKurz}</span>

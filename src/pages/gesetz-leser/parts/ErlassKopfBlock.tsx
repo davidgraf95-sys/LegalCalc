@@ -52,7 +52,28 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
     return 'font-serif text-leser-text text-ink-700';
   };
   return (
-    <section aria-label="Ingress" className="mx-auto w-full max-w-normtext space-y-3 border-b border-rule-struktur pb-5">
+    // ── Ä100 (Live-Ästhetik-Prüfung 18.8.2026) · EINE LINIE, NICHT ZWEI ──────
+    // GEMESSEN @1440 UND @390 (StPO): zwischen dem Ingress-Fussnoten-Apparat und
+    // dem ersten Sektionskopf standen ZWEI waagrechte Linien rund 25 px
+    // auseinander — die `border-b` dieses Blocks und die `border-t` des ersten
+    // Sektionskopfs (`parts/SektionKopf.tsx`: `ebene <= 1` ⇒ «border-t
+    // border-rule-struktur pt-4»). Beide in DERSELBEN Rolle `rule-struktur`,
+    // beide an derselben Fuge. Design-Grundlage Kap. 3 lässt pro Ebene genau
+    // eine Linienrolle zu; DESIGN-REGLEMENT §Linien-Kanon Regel 2 nennt die
+    // Häufung ausdrücklich «Gleisbett».
+    // WELCHE FÄLLT: diese. Die Linie des Sektionskopfs gehört zur STUFE und
+    // wiederholt sich bei jedem obersten Teil/Titel/Abschnitt — sie ist der
+    // Kanon. Die hier war die einmalige Kante eines Vorspanns, und der trennt
+    // sich vom Folgenden bereits durch `pb-5` Weissraum plus die Stufenlinie
+    // darunter («Trennung über Weissraum, dann Linie», Kap. 8 Nr. 1).
+    // TRÄGT DER ERLASS GAR KEINE SEKTIONEN (`ohneGliederung`), steht zwischen
+    // Ingress und erstem Artikel jetzt Weissraum statt einer Linie — dasselbe
+    // Bild wie zwischen zwei Artikeln, und damit richtiger als vorher: eine
+    // Struktur-Linie ohne Struktur dahinter war eine Behauptung.
+    // GETEILTE DATEI: der Block trägt V1 UND V3 (`inhalt-volltext.tsx`,
+    // `inhalt-ansichten.tsx`, `v3/LeserRahmenV3.tsx`). Die Änderung wirkt in
+    // beiden Hüllen gleich — deklariert, nicht nebenbei.
+    <section aria-label="Ingress" className="mx-auto w-full max-w-normtext space-y-3 pb-5">
       {kopf.erlassdatum && (
         <p className="font-serif text-body-s text-ink-500">{kopf.erlassdatum}</p>
       )}

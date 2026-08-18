@@ -1,5 +1,6 @@
 // @shard-gruppe: 4
 import { test, expect, type Page } from '@playwright/test';
+import { ANSICHT_PANEL } from './helpers/leserBeschriftung';
 
 // W2·5d G2b — Kopf-Zusammenführung + «Zitat kopieren» (A27: Sticky Section-
 // Kontextkopf entfernt — Orientierung im Inhalts-Kopf, Zitat je Artikel).
@@ -55,7 +56,7 @@ test('Kopf-Zusammenführung + A26: EIN <header> (Overline/Titel), «Ansicht»-Dr
   await expect(ansicht).toHaveAttribute('aria-expanded', 'false');
   await ansicht.click();
   await expect(ansicht).toHaveAttribute('aria-expanded', 'true');
-  await expect(leiste.locator('[aria-label="Darstellungsoptionen"]')).toBeVisible();
+  await expect(leiste.locator(ANSICHT_PANEL)).toBeVisible();
 });
 
 // U-KOPF/A4 a11y: das «Ansicht»-Dropdown ist eine ehrliche Disclosure (kein
@@ -65,7 +66,7 @@ test('A4 «Ansicht»-Dropdown: Öffnen fokussiert den Inhalt, Escape schliesst +
   await warteReader(page, '/gesetze/bund/BV');
   const trigger = page.getByRole('button', { name: 'Ansicht' }).first();
   await trigger.click();
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  const gruppe = page.locator(ANSICHT_PANEL).first();
   await expect(gruppe).toBeVisible();
   // `aria-controls` im GEÖFFNETEN Zustand — und die Kennung zeigt auf das
   // Panel, das wirklich da ist (H4: V3 setzt das Attribut bewusst nur, solange
@@ -73,12 +74,16 @@ test('A4 «Ansicht»-Dropdown: Öffnen fokussiert den Inhalt, Escape schliesst +
   // Prüfung vor dem Klick und verlangte nur «irgendein nichtleerer Wert».
   const ziel = await trigger.getAttribute('aria-controls');
   expect(ziel, 'Auslöser nennt das Panel, das er aufzieht').toBeTruthy();
-  await expect(page.locator(`#${ziel}`)).toHaveAttribute('aria-label', 'Darstellungsoptionen');
+  // Ä114 (18.8.2026): V3 nennt das Panel «Ansicht», V1 weiter
+  // «Darstellungsoptionen» — dieselbe Fläche, zwei Hüllen (helpers/leserBeschriftung).
+  await expect(page.locator(`#${ziel}`)).toHaveAttribute('aria-label', /^(Ansicht|Darstellungsoptionen)$/);
   // Fokus ist beim Öffnen in das Panel gewandert (erstes fokussierbares Element).
-  const fokusImPanel = await page.evaluate(() => {
-    const g = document.querySelector('[aria-label="Darstellungsoptionen"]');
+  // Der Selektor wird HINEINGEREICHT — im Browser-Kontext gibt es die
+  // Helper-Konstante nicht (sie lebt im Node-Prozess des Testläufers).
+  const fokusImPanel = await page.evaluate((sel) => {
+    const g = document.querySelector(sel);
     return g != null && g.contains(document.activeElement);
-  });
+  }, ANSICHT_PANEL);
   expect(fokusImPanel).toBe(true);
   // Escape schliesst und gibt den Fokus an den Auslöser zurück.
   await page.keyboard.press('Escape');
@@ -161,7 +166,12 @@ test('S3/§7: künftig in Kraft tretende Änderung erzeugt KEINE Warnung (BV)', 
   await warteReader(page, '/gesetze/bund/BV');
   const header = page.locator(KOPF);
   await expect(header.getByText(/noch nicht in den Text eingearbeitet/)).toHaveCount(0);
-  await expect(header.getByText(/Snapshot — massgeblich ist die amtliche Fassung/)).toBeVisible();
+  // Ä-Rest der Live-Prüfung (18.8.2026): der Grundhinweis beginnt nicht mehr mit
+  // dem englischen «Snapshot», sondern mit «Kopie vom <Stand>» — Klartext an der
+  // Stelle, die einem Juristen sagt, WAS er vor sich hat (Glossar, Design-
+  // Grundlage Kap. 11). Die Ist-Hülle sagt weiter «Snapshot»; darum ein Muster,
+  // das beide Hüllen deckt — geprüft ist der Satz, nicht sein erstes Wort.
+  await expect(header.getByText(/(Kopie vom \d{2}\.\d{2}\.\d{4}|Snapshot) — massgeblich ist die amtliche Fassung/)).toBeVisible();
 });
 
 test('«Zitat kopieren»: deterministisches Zitat (Kürzel + SR + Stand) in die Zwischenablage', async ({ page, context }) => {

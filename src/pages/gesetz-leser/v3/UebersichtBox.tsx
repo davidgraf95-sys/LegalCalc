@@ -79,7 +79,9 @@ import type { UebersichtsAngaben } from './uebersichtAngaben';
 //    schlechter lesbar als linksbündig.
 
 export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
-  const { ruhe, zeilen, links, vorbehalt, hinweise } = angaben;
+  // Ä97: `warnung` und `vorbehalt` werden hier BEWUSST nicht entnommen — beide
+  // Aussagen gehören dem Erlass-Kopf (Herleitung unten an ihrer alten Stelle).
+  const { ruhe, zeilen, links, hinweise } = angaben;
   return (
     // ── Ä5 (H2b) · WEISSRAUM, DANN LINIE — KEIN KASTEN ────────────────────────
     // Bis H2 war die Box ein gerahmter, getönter Kasten (`border border-line
@@ -147,18 +149,26 @@ export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
           Das Feld `warnung` bleibt im reinen Modell samt seinen Sonden (es ist die
           Aussage über den Erlass, unabhängig davon, wer sie zeigt); nur diese
           Ausgabe entfällt.
-          NICHT MITENTSCHIEDEN ist der `vorbehalt` («nächste Fassung ab …»): er
-          steht im Kopf als Chip und hier als Zeile, die Dopplung ist aber nicht
-          gemessen (kein Probe-Erlass mit `naechsteFassungAb` im Korpus zur Hand).
-          Offen im Fahrplan, nicht stillschweigend mitgenommen. */}
-      {vorbehalt && (
-        <div data-v3-uebersicht-warnung className="space-y-1 pb-1.5 pl-4 pt-0.5">
-          <p className="flex items-start gap-1 text-xs leading-snug text-warn-700">
-            <span aria-hidden className="shrink-0">⚠</span>
-            <span>{vorbehalt}</span>
-          </p>
-        </div>
-      )}
+          NICHT MITENTSCHIEDEN war der `vorbehalt` («nächste Fassung ab …») — er
+          ist es jetzt (Ä97, s. u.). */}
+      {/* ── Ä97 (Live-Ästhetik-Prüfung 18.8.2026) · JETZT GEMESSEN ─────────────
+          Ä81 hat den Vorbehalt ausdrücklich offengelassen, weil zur Messung kein
+          Erlass mit `naechsteFassungAb` zur Hand war. Am Live-Stand ist er da:
+          das OR trägt @1440 gleichzeitig
+            1× «⚠ nächste Fassung ab 01.10.2026» hier in der Seitenleiste,
+            1× denselben Satz in der Stand-Zeile des Erlass-Kopfs
+          (`parts/ErlassLeserKopf.tsx`, `stand`-Kette, `text-warn-700`).
+          Damit gilt für ihn Wort für Wort die Ä81-Begründung: eine angekündigte
+          Fassung ist eine Aussage darüber, WIE AKTUELL der Text ist — und das ist
+          Kopf-Sache, nicht Steckbrief-Sache. Der Kopf warnt auf jeder Breite und
+          steht vor dem ersten Artikel; die Box liegt unter xl im Sheet und muss
+          erst geöffnet werden.
+          Das Feld `vorbehalt` bleibt im reinen Modell samt seinen Sonden (es ist
+          die Aussage über den Erlass, unabhängig davon, wer sie zeigt) — nur
+          diese Ausgabe entfällt, genau wie bei `warnung`. Damit trägt die Box
+          KEINE Warn-Zelle mehr; die Herleitung oben bleibt als Begründung dafür
+          stehen, warum keine zurückkehren darf, ohne dass jemand den Kopf
+          gegenprüft. */}
 
       {/* `data-v3-uebersicht-inhalt` statt einer Klassen-Kette als Testanker:
           die Reihenfolge «Warnung VOR den Kindern» ist eine Zusage über die
@@ -191,10 +201,23 @@ export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
         {links.length > 0 && (
           <p data-v3-uebersicht-quellen className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-0.5 text-xs">
             {links.map((l) => (
+              // ── Ä110-REST (Ästhetik-Nachzug 18.8.2026) · DER PFEIL STEHT
+              //    HINTEN ────────────────────────────────────────────────────
+              // Ä110 hat den NAMEN vereinheitlicht («Amtliche Fassung»), die
+              // ZEICHENSTELLUNG aber nur im Erlass-Kopf gerichtet: dort steht
+              // «Amtliche Fassung ↗», hier stand «↗ Amtliche Fassung» — zwei
+              // Formen desselben Links, zwei Handbreit auseinander.
+              // DIE REGEL, die beide Zeichen erklärt: «↗» sagt «führt weg» und
+              // folgt darum dem Ziel wie ein Nachsatz; «⬇» sagt «holt her» und
+              // geht dem Ziel voran, wie am Kopf-Chip «⬇ Amtliches PDF». Sie
+              // hängt an der Bedeutung des Zeichens, nicht an einer Liste von
+              // Links, und gilt darum auch für ein künftiges drittes Ziel.
               <a key={l.id} data-v3-uebersicht-link={l.id} href={l.href}
                 target="_blank" rel="noopener noreferrer"
                 className="text-brass-700 hover:underline">
-                <span aria-hidden>{l.zeichen}</span> {l.label}
+                {l.zeichen === '↗'
+                  ? <>{l.label} <span aria-hidden>↗</span></>
+                  : <><span aria-hidden>{l.zeichen}</span> {l.label}</>}
               </a>
             ))}
           </p>

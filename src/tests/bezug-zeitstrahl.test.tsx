@@ -165,7 +165,7 @@ describe('B5 · Markup der Zeit-Steuerung', () => {
     const s = renderToString(
       <BezugZeitWahl bereich={{ von: '2019-01-01', bis: '2021-12-31' }} histogramm={h} onBereich={() => {}} />,
     );
-    expect(s).toContain('01.01.2019 – 31.12.2021');
+    expect(s).toContain('01.01.2019–31.12.2021');
     expect(s).toContain('Zeitraum aufheben');
   });
 

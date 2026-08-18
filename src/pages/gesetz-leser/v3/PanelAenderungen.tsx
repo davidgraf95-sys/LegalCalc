@@ -62,7 +62,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
       <p data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-3 text-body-s text-ink-500">
         Kein Änderungsverlauf verfügbar — für diesen Erlass ist keiner erfasst,
         oder die Quelle war nicht erreichbar. Amtliche Quelle:{' '}
-        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">geltende Fassung ↗</a>
+        <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">Amtliche Fassung ↗</a>
       </p>
     );
   }
@@ -74,9 +74,23 @@ export function PanelAenderungen({ stand, quelleUrl }: {
       </p>
     );
   }
+  // ── Ä121 (Live-Ästhetik-Prüfung 18.8.2026) · DIE ERKLÄRUNG STEHT EINMAL ───
+  // GEMESSEN am Live-Stand (StPO, Reiter «Änderungen»): FÜNF Zeilen trugen Wort
+  // für Wort denselben Satz «Änderung über einen Sammelerlass — nur das Datum
+  // ist erfasst.». Er erklärt eine EIGENSCHAFT DER ERFASSUNG, nicht die einzelne
+  // Änderung — fünfmal gedruckt sagt er nichts fünfmal, er verdrängt nur die
+  // Daten, für die die Liste da ist. Jetzt: die betroffenen Zeilen tragen die
+  // kurze Marke «Sammelerlass» in derselben Meta-Zeile, in der schon «noch nicht
+  // im Text» steht, und der erklärende Satz steht EINMAL unter der Liste, wo die
+  // Fussnote hingehört. Die Auskunft geht nicht verloren (§8), sie wird nur
+  // nicht mehr wiederholt.
+  const hatSammelerlass = revisionen.some((r) => r.art === 'sammelerlass-marker');
   return (
     <div data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-1">
-      {reichweite && <p className="pb-1 text-micro text-ink-500">{reichweite}</p>}
+      {/* Ä121: `pt-1.5` — der Erklärtext klebte an der Reiterlinie darüber
+          (gemessen 0 px Luft). Eine Zeile, die eine Liste einleitet, gehört
+          näher an die Liste als an die Kante des Behälters (4-px-Raster). */}
+      {reichweite && <p className="pb-1 pt-1.5 text-micro text-ink-500">{reichweite}</p>}
       <ul>
         {revisionen.map((r) => {
           const titel = revisionTitel(r, 'de');
@@ -87,27 +101,40 @@ export function PanelAenderungen({ stand, quelleUrl }: {
               <span className="flex items-baseline gap-2">
                 <span className="num shrink-0 text-body-s font-medium text-ink-800">{datumAnzeige(r.dateEntryInForce)}</span>
                 {r.roFundstelle && <span className="num shrink-0 text-micro text-ink-500">{r.roFundstelle}</span>}
+                {/* C2 (H3-Nachzug) bleibt gültig: KEIN «anderer SR» — SR-Nummern
+                    führt nur das Bundesrecht, die Zeile steht auch am Kanton. */}
+                {marker && (
+                  <span data-v3-panel-sammelerlass className="shrink-0 text-micro text-ink-500">Sammelerlass</span>
+                )}
                 {r.nichtKonsolidiert && (
                   <span className="shrink-0 text-micro text-ink-500" title="In Kraft, im gepinnten Normtext aber noch nicht eingearbeitet">
                     noch nicht im Text
                   </span>
                 )}
               </span>
+              {/* Ä121: die Zeile entsteht nur, wenn sie etwas zu sagen hat. Beim
+                  Sammelerlass-Marker gibt es keinen Titel — dort blieb bis
+                  hierher nur die wiederholte Erklärung plus ein Link ohne Ziel. */}
               <span className="mt-0.5 block text-micro leading-snug text-ink-600">
-                {marker
-                  // C2 (H3-Nachzug): «anderer SR» war Bundes-Wortlaut an einer
-                  // datengetriebenen Zeile — SR-Nummern führt nur das Bundesrecht,
-                  // der Satz stand aber auch an Kantons-Erlassen. Die Auskunft
-                  // bleibt dieselbe, ohne die Bund-Annahme (Erlass-Neutralität).
-                  ? 'Änderung über einen Sammelerlass — nur das Datum ist erfasst.'
-                  : titel ?? 'Änderungserlass (ohne erfassten Titel).'}
-                {' '}
-                <a href={r.quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="whitespace-nowrap text-brass-700">amtlich ↗</a>
+                {marker ? null : <>{titel ?? 'Änderungserlass (ohne erfassten Titel).'}{' '}</>}
+                {/* Ä121: «amtlich ↗» nannte kein Ziel — fünfmal derselbe Link mit
+                    demselben nichtssagenden Wort. Genannt wird jetzt, WOHIN er
+                    führt: die AS-Fundstelle, wenn das Sidecar sie trägt, sonst
+                    die Sammlung selbst («Fedlex ↗»). Beides ist eine echte
+                    Ortsangabe statt eines Adjektivs. */}
+                <a href={r.quelleUrl} rel="nofollow noopener noreferrer" target="_blank"
+                  className="whitespace-nowrap text-brass-700">Fedlex ↗</a>
               </span>
             </li>
           );
         })}
       </ul>
+      {hatSammelerlass && (
+        <p data-v3-panel-sammelerlass-hinweis className="border-t border-line/60 pt-1.5 text-micro leading-snug text-ink-500">
+          «Sammelerlass» heisst: die Änderung kam über einen Erlass, der mehrere
+          Gesetze zugleich ändert — erfasst ist davon nur das Datum.
+        </p>
+      )}
     </div>
   );
 }

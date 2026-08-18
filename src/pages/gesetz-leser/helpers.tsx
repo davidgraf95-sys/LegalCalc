@@ -109,16 +109,41 @@ export function verifiziertesSachgebiet(
 
 // «Zitat kopieren» (W2·5d G2b, FAHRPLAN §3.3/K12b): EIN deterministisches Zitat-
 // Format aus der vorliegenden Provenienz (§7 a–d): Fundstelle (Art./§ + Kürzel) +
-// amtliche SR-Nummer (wo vorhanden) + Stand. Rein deterministisch (§2), keine
+// amtliche Kennung (wo vorhanden) + Stand. Rein deterministisch (§2), keine
 // Heuristik — `artikelLabel` trägt bereits «Art. 7» bzw. «§ 7» (labelMitBereich),
 // die Abs./lit. bleibt bewusst weg (am Kopf/Artikel nicht eindeutig bestimmbar,
 // §8 «nichts Erfundenes»). Beispiel: «Art. 7 OR, SR 220 (Stand 01.01.2025)».
+//
+// ── Ä98 (Live-Ästhetik-Prüfung 18.8.2026) · DIE ZWISCHENABLAGE TRUG EINE
+//    FALSCHE FUNDSTELLE ──────────────────────────────────────────────────────
+// GEMESSEN am Live-Stand (Accessible-Name-Inventar, drei Kantonserlasse): der
+// Knopf «Zitat kopieren» erzeugte «§ 1 …, SR LS 211.11», «… SR RSF 635.1.1»,
+// «… SR 640.100». Die Systematische Sammlung des BUNDES führt keine dieser
+// Nummern — was hier in die Zwischenablage ging, war eine Quellenangabe, die es
+// so nicht gibt, und sie wandert von dort in Rechtsschriften (§7, §1).
+// Ä75 hatte die Weiche für die SICHTBARE Kopfzeile schon gezogen
+// (`kennungEtikett`/`kennungText` oben); der Zitat-Bau hing als einzige Stelle
+// noch am fest verdrahteten `SR ${sr}` — eine zweite Wahrheit über dieselbe
+// Frage (§5). Jetzt speist EINE Weiche beide Ausgaben: sichtbar «LS 211.11»,
+// kopiert «§ 1 ‹kuerzel›, LS 211.11 (Stand …)».
+// ── P1-3 (Bug-Check-Nachzug 18.8.2026) · WAS DAS BEISPIEL WIRKLICH ERGIBT ───
+// Hier stand «§ 1 GebV OG, LS 211.11 (Stand …)» — das UNTERSTELLTE, das Feld
+// `kuerzel` trage an ZH-211.11 die Sigle. Nachgesehen im Register: es trägt
+// «Gebührenverordnung des Obergerichts (GebV OG)», das Zitat lautet also
+// «§ 1 Gebührenverordnung des Obergerichts (GebV OG), LS 211.11 (Stand …)».
+// Der Bau ist richtig und bleibt unangetastet — falsch war die Erwartung an die
+// DATEN. Dass viele Registerkürzel Volltitel sind, ist eine Datenfrage und
+// steht als H5-Feld im Fahrplan (Sigle aus dem Register); ein Kommentar, der
+// sie stillschweigend als gelöst annimmt, verdeckt sie (§8).
+// Darum braucht die Signatur `ebene`: die Kennung ist eine Funktion der EBENE,
+// nie des Kürzels und nie einer Kantonsliste (Herleitung bei `kennungEtikett`).
 export function baueZitat(
-  erlass: Pick<BrowseErlass, 'kuerzel' | 'sr' | 'stand'>,
+  erlass: Pick<BrowseErlass, 'ebene' | 'kuerzel' | 'sr' | 'stand'>,
   artikelLabel: string,
 ): string {
   const teile = [`${artikelLabel} ${erlass.kuerzel}`.trim()];
-  if (erlass.sr) teile.push(`SR ${erlass.sr}`);
+  const kennung = kennungText(erlass);
+  if (kennung) teile.push(kennung);
   let s = teile.join(', ');
   if (erlass.stand) s += ` (Stand ${formatiereDatum(erlass.stand)})`;
   return s;
@@ -428,8 +453,13 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
     // übrigen externen Aktionen dieser Datei — AmtlichesPdf/«In neuem Reiter» tragen
     // ebenfalls ein `title` statt eines Icons je Einzel-Fundstelle, da ein Apparat
     // mehrere Zitate in einer dichten Zeile aneinanderreiht).
+    // Ä117 (18.8.2026): Gedankenstrich «—», nicht «–». Der Leser mischte beide
+    // Zeichen in derselben Rolle (hier, `NormPopover`); App-weit ist «—» der
+    // Bestand (Benennungs-Glossar, Design-Grundlage Kap. 9). Der Halbgeviert-
+    // strich bleibt dem BIS-Strich vorbehalten («Art. 1–10», Zeitbereich) —
+    // zwei Rollen, zwei Zeichen, keine Mischung.
     return (
-      <a key={i} href={url} target="_blank" rel="noopener noreferrer" title="Amtliche Fedlex-Quelle – öffnet in neuem Tab"
+      <a key={i} href={url} target="_blank" rel="noopener noreferrer" title="Amtliche Fedlex-Quelle — öffnet in neuem Tab"
         className="text-brass-700 underline decoration-dotted underline-offset-2">{kinder}</a>
     );
   });

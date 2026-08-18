@@ -1,6 +1,7 @@
 // @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
 import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 // E5-Welle (David 16.7.2026, §10.10) — A35 · A40 · A41.
 //
@@ -37,7 +38,7 @@ import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 // Budget greift nur bei Überschreitung und verlangsamt grüne Läufe nicht.
 test.describe.configure({ timeout: 120_000 });
 
-const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' });
+const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME });
 const headerFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ });
 
 test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', () => {

@@ -263,32 +263,33 @@ describe('UebersichtBox — zu im Grundzustand, Zusammenfassung bleibt im DOM', 
     expect(html).toContain('data-v3-uebersicht-zeile');
   });
 
-  it('die Warn-Zelle steht VOR dem zugeklappten Kinder-Block, nicht darin verschachtelt', () => {
+  it('Ä97: die Box trägt GAR KEINE Warn-Zelle mehr — beide Aussagen gehören dem Kopf', () => {
+    // ── §6.3-DEKLARATION, DRITTE UND LETZTE STUFE (Ä97, 18.8.2026) ──────────
+    // Dieser Fall hiess bis heute «die Warn-Zelle steht VOR dem zugeklappten
+    // Kinder-Block» und prüfte eine REIHENFOLGE. Die Reihenfolge gibt es nicht
+    // mehr, weil es die Zelle nicht mehr gibt:
+    //   Ä81 (H4-Nachzug) nahm die Konsolidierungs-Warnung aus der Box — sie
+    //     stand gemessen zweimal gleichzeitig sichtbar auf der Seite.
+    //   Ä97 (Live-Prüfung) nimmt den VORBEHALT aus demselben Grund. Ä81 hatte
+    //     ihn ausdrücklich offengelassen, weil kein Erlass mit
+    //     `naechsteFassungAb` zur Hand war; am Live-Stand trägt das OR @1440
+    //     «⚠ nächste Fassung ab 01.10.2026» gleichzeitig in der Box UND in der
+    //     Stand-Zeile des Erlass-Kopfs.
+    // Damit wandert die geprüfte Zusage von «die Zelle steht an der richtigen
+    // Stelle» zu «es gibt keine Zelle»: der Kopf sagt, WIE AKTUELL der Erlass
+    // ist, die Box, WOHER er kommt und WIE er gebaut ist.
+    // Die FELDER bleiben im reinen Modell samt ihren Sonden
+    // (`leser-v3-uebersicht.test.ts`) — nur diese Ausgabe entfällt.
+    // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` den `vorbehalt`-Block
+    // wieder einsetzen.
     const html = renderToString(
       <UebersichtBox angaben={{ ...ANGABEN_LEER, vorbehalt: 'nächste Fassung ab 01.01.2027' }} />,
     );
-    // §6.3-DEKLARATION (H2b, Ä5): der Anker wandert, die geprüfte Sache nicht.
-    // Bis H2 hing dieser Test an der Klassen-Kette `border-t border-line px-2
-    // py-2` des Kinder-Wrappers. Ä5 hat die Box entrahmt (Weissraum statt Kasten,
-    // Design-Grundlage Kap. 8 Nr. 1) und dabei diese Klassen geändert — der Test
-    // wäre an einer GESTALTUNGS-Änderung gescheitert, obwohl die geprüfte
-    // STRUKTUR-Zusage («die Zelle steht VOR den Kindern, nicht darin») unberührt
-    // ist. Er hängt jetzt an der Identität `data-v3-uebersicht-inhalt`. Dieselbe
-    // Lehre wie der `data-fn-ref`-Fix aus H2: ein Wächter darf ein Element nicht
-    // über sein Aussehen suchen. Keine Assertion gelockert.
-    // Ä70: der Marker ist der ECHTE Anker der Warn-Zelle statt eines
-    // eingeschleusten Test-Knotens — die Box baut die Zeile selbst.
-    // §6.3-DEKLARATION, ZWEITE STUFE (Ä81, 18.8.2026): der AUSLÖSER wechselt von
-    // `warnung` auf `vorbehalt`. Die Konsolidierungs-Warnung steht seit Ä81 nur
-    // noch im Erlass-Kopf (sie stand gemessen zweimal gleichzeitig sichtbar auf
-    // der Seite); die Zelle selbst gibt es weiterhin, und die geprüfte Zusage
-    // gilt unverändert für ihren verbliebenen Inhalt. Der Fall darunter sichert
-    // die Ä81-Aussage direkt.
-    const iZelle = html.indexOf('data-v3-uebersicht-warnung');
-    const iKinderWrapper = html.indexOf('data-v3-uebersicht-inhalt');
-    expect(iZelle).toBeGreaterThan(-1);
-    expect(iKinderWrapper).toBeGreaterThan(-1);
-    expect(iZelle).toBeLessThan(iKinderWrapper);
+    expect(html).not.toContain('nächste Fassung ab 01.01.2027');
+    expect(html).not.toContain('data-v3-uebersicht-warnung');
+    // Positiv-Sonde: der Kinder-Block, vor dem die Zelle stand, ist unberührt —
+    // die Box hat eine Ausgabe verloren, nicht ihre Struktur.
+    expect(html).toContain('data-v3-uebersicht-inhalt');
   });
 
   it('Ä81: die Konsolidierungs-Warnung steht NICHT mehr in der Box — nur im Kopf', () => {
@@ -319,8 +320,8 @@ describe('UebersichtBox — zu im Grundzustand, Zusammenfassung bleibt im DOM', 
     const html = renderToString(
       <UebersichtBox angaben={{
         ...ANGABEN_LEER,
-        zeilen: [{ id: 'art', label: 'Art', wert: 'Bundesgesetz' }],
-        links: [{ id: 'quelle', label: 'geltende Fassung', href: 'https://x.test', zeichen: '↗' as const }],
+        zeilen: [{ id: 'art', label: 'Erlassart', wert: 'Bundesgesetz' }],
+        links: [{ id: 'quelle', label: 'Amtliche Fassung', href: 'https://x.test', zeichen: '↗' as const }],
         hinweise: ['Kanton BS: Teilbestand, 859 Erlasse erfasst.'],
       }} />,
     );

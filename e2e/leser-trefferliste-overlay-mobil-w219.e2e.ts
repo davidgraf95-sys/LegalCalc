@@ -8,12 +8,13 @@
 // Leichter Referenz-Erlass (BGFA, wie leser-r1-r2.e2e.ts — vermeidet den
 // dort belegten Flake-Herd «zweiter schwerer OR-Reader je Worker», §17).
 import { test, expect, type Page } from '@playwright/test';
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 const LEICHT = '/gesetze/bund/BGFA';
 const BEGRIFF = 'Berufsregeln';
 
-const sucheKnopf = (page: Page) => page.getByRole('button', { name: 'Im Gesetz suchen' });
-const sucheFeld = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' });
+const sucheKnopf = (page: Page) => page.getByRole('button', { name: LESER_SUCHFELD_NAME });
+const sucheFeld = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME });
 const liste = (page: Page) => page.locator('[data-treffer-liste]');
 
 async function oeffneMobil(page: Page) {

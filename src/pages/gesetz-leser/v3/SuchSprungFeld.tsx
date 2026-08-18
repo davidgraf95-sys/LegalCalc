@@ -1,4 +1,5 @@
 import { useRef, type RefObject } from 'react';
+import { suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 
 // ─── EIN Feld für Suchen UND Springen (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 4) ────
 //
@@ -30,13 +31,24 @@ import { useRef, type RefObject } from 'react';
 
 export function SuchSprungFeld({
   wert, setzeWert, loeseArtikel, onSprung, feldRef, onVor, onZurueck, hatTreffer = false,
-  platzhalter = 'Im Gesetz suchen …', escLeert = true,
+  // Ä126: die Vorgaben sind KEINE dritten Literale, sondern dieselbe Quelle
+  // ohne Erlass-Kürzel (§5) — sonst trüge ein Aufrufer ohne Erlass die Wörter
+  // der Ist-Hülle («Im Gesetz suchen») mitten in die V3-Fläche.
+  platzhalter = suchPlatzhalter(null), ariaName = suchFeldName(), escLeert = true,
 }: {
   wert: string;
   setzeWert: (v: string) => void;
   /** Ä20 (H2b) — Platzhalter, aus dem Erlass abgeleitet (`erlassAnsicht.suchPlatzhalter`).
    *  Vorgabe ohne Beispiel: ein §-Erlass soll nie «Art. 429» angeboten bekommen. */
   platzhalter?: string;
+  /** Ä112 (18.8.2026) — der zugängliche Name. Er trägt DIESELBE Auskunft wie
+   *  der Platzhalter: WELCHER Erlass durchsucht wird. Ein Screenreader-Nutzer
+   *  hörte bis hierher an beiden Feldern der Seite «suchen» und hatte keinen
+   *  Anhalt, welches der App und welches dem Erlass gehört (§8) — der
+   *  Platzhalter allein löst das nicht, er ist für den Namen nur der Rückfall.
+   *  Vorgabe = der Wortlaut bis 18.8., damit ein Aufrufer ohne Erlass (Sonden,
+   *  Ist-Hülle) unverändert bleibt. */
+  ariaName?: string;
   /** «Art. 429» → Token, sonst `null`. Fehlt sie (Snapshot noch nicht da),
    *  bleibt das Feld eine reine Suche — nie ein totes Sprung-Versprechen (§8). */
   loeseArtikel?: (eingabe: string) => string | null;
@@ -129,7 +141,7 @@ export function SuchSprungFeld({
             }
           }}
           placeholder={platzhalter}
-          aria-label="Im Gesetz suchen oder zu einer Bestimmung springen"
+          aria-label={ariaName}
           aria-describedby={token ? 'v3-sprung-hinweis' : undefined}
           // `pr-16` bzw. `pr-8`: Platz für ✕ und ⌘K, damit lange Eingaben nicht
           // unter den Bedienzeichen verschwinden.

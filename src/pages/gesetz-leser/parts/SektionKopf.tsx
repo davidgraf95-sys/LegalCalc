@@ -1,5 +1,6 @@
 import { FnRef } from '../../../components/normtext/ArtikelBody';
 import type { Sektion } from '../../../lib/normtext/browse';
+import { NEUER_TAB } from '../benennung';
 import { romanFrei, margLabel } from '../helpers';
 
 // Gliederungs-Überschrift im Fliesstext: klappbar (Fedlex-analog), volle
@@ -137,8 +138,9 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
         {amtlichUrl && (
           <a href={amtlichUrl} target="_blank" rel="noopener noreferrer"
             className="shrink-0 text-micro text-ink-500 no-underline opacity-0 transition-opacity group-hover/sekkopf:opacity-100 focus-visible:opacity-100 hover:text-brass-700 [@media(hover:none)]:opacity-100"
-            aria-label={`Amtliche Fassung von «${s.label}» auf Fedlex öffnen (neues Fenster)`}
-            title="Amtliche Fassung an genau dieser Stelle (Fedlex)">amtliche Fassung ↗</a>
+            aria-label={`Amtliche Fassung von «${s.label}» auf Fedlex öffnen ${NEUER_TAB}`}
+            // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel (s. ArtikelLeser).
+            title="Amtliche Fassung an genau dieser Stelle (Fedlex)">Amtliche Fassung ↗</a>
         )}
       </span>
     </div>

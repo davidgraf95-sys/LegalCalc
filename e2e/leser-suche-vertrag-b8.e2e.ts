@@ -1,3 +1,4 @@
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // @shard-gruppe: 6
 // W2·19-S8 · Bug-Check §9 — Tore für den §4.4-Vertrag «gemalte ≤ gezählte» (B8).
 //
@@ -27,9 +28,21 @@
 // überlebt jede Korpus-Regeneration.
 import { test, expect, type Page } from '@playwright/test'
 
+// ── Ä103 (18.8.2026) · DER ZÄHLER NENNT SEINE EINHEIT ───────────────────────
+// V3 schreibt seit der Säuberung «Fundstelle 3 von 17», die Ist-Hülle weiter
+// «3/17»; vor dem ersten Sprung stand dort «–/17» — ein Bruch ohne Zähler.
+// Die Sonden prüfen darum die ZAHLEN, nicht das Trennzeichen: `laufendeStelle`
+// zieht die erste Zahl heraus (ohne zweite Zahl = «–», also 0). Die
+// Prüfaussage ist unverändert (§6.3-Deklaration).
+async function laufendeStelle(page: import('@playwright/test').Page): Promise<number> {
+  const t = await page.locator('[data-treffer-position]').innerText()
+  const zahlen = t.match(/\d+/g)?.map(Number) ?? []
+  return zahlen.length >= 2 ? zahlen[0] : 0
+}
+
 test.describe.configure({ timeout: 120_000 })
 
-const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' })
+const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
 
 async function oeffne(page: Page, pfad: string): Promise<void> {
   await page.setViewportSize({ width: 1440, height: 900 })
@@ -166,7 +179,7 @@ test.describe('B8 — der §4.4-Vertrag an den Klassen, die ihn wirklich brachen
     const vor = page.locator('[data-treffer-vor]')
     await expect(vor).toBeVisible({ timeout: 20_000 })
     await vor.click()
-    await expect(page.locator('[data-treffer-position]')).toContainText(/^1\//)
+    await expect.poll(() => laufendeStelle(page), { timeout: 20_000 }).toBe(1)
 
     // Der aktive Eintrag benennt den Artikel; dort MUSS jetzt eine gemalte
     // Stelle liegen — sonst hat der Sprung ein Ziel behauptet, das es nicht

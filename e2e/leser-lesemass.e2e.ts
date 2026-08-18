@@ -1,5 +1,6 @@
 // @shard-gruppe: 2
 import { test, expect, type Page } from '@playwright/test';
+import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
 // ══ WELCHE HÜLLE PRÜFT DIESE DATEI? (Nachzug 17.8.2026, Arch-Prüfer 7) ════════
 //
@@ -274,23 +275,24 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
     const vorher = await hoehen();
     expect(vorher.length, 'keine Artikel gemessen').toBeGreaterThan(3);
 
-    const schalten = async (name: string) => {
+    const schalten = async (name: string | RegExp) => {
       await page.getByRole('button', { name: 'Ansicht' }).first().click();
-      const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+      const gruppe = page.locator(ANSICHT_PANEL).first();
       await expect(gruppe).toBeVisible();
       await gruppe.getByRole('switch', { name }).click();
       await page.keyboard.press('Escape');
       await page.waitForTimeout(150);
     };
 
-    for (const name of ['Fussnoten', 'Änderungsvermerke']) {
+    // Ä116: V3 «Fassung» / V1 «Änderungsvermerke» (helpers/leserBeschriftung).
+    for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME]) {
       await schalten(name);          // an → aus
       const aus = await hoehen();
       // Der Schalter muss überhaupt WIRKEN — sonst wäre der Rundlauf unten
       // trivial grün (ein Schalter ohne Wirkung besteht ihn immer, §6.7).
-      expect(aus.join(','), `Schalter «${name}» ändert gar nichts`).not.toBe(vorher.join(','));
+      expect(aus.join(','), `Schalter «${String(name)}» ändert gar nichts`).not.toBe(vorher.join(','));
       await schalten(name);          // aus → an
-      expect(await hoehen(), `Schalter «${name}»: Rundlauf lässt einen Rest zurück`).toEqual(vorher);
+      expect(await hoehen(), `Schalter «${String(name)}»: Rundlauf lässt einen Rest zurück`).toEqual(vorher);
     }
   });
 });

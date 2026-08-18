@@ -165,7 +165,14 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
         // nicht gibt (dieselbe §8-Sorge wie die Bedingung unten).
         // B2 (18.8.2026): derselbe Wortlaut wie am Schalter unten — der Tooltip
         // versprach «im Text», was V3 nicht einlöst (Herleitung dort).
-        title={`Darstellung: Fussnoten${hatAenderungsvermerke ? ' · Änderungsvermerke' : ''} · Rechtsprechung anzeigen · Grösse des Gesetzestexts`}
+        // ── Ä114 (18.8.2026) · EIN WORT FÜR EIN MENÜ ──────────────────────
+        // GEMESSEN am Live-Stand hiess dieselbe Fläche viermal anders: Öffner
+        // «Ansicht», `aria-label` des Panels «Darstellungsoptionen», Overline
+        // «DARSTELLUNG», Tooltip «Darstellung: …». Ein Screenreader-Nutzer und
+        // ein sehender Nutzer sprachen damit über zwei verschiedene Menüs.
+        // Der Benennungs-Glossar (Design-Grundlage Kap. 9) setzt «Ansicht» —
+        // das Wort, das am Öffner steht und das der Nutzer zuerst sieht.
+        title={`Ansicht: Fussnoten${hatAenderungsvermerke ? ' · Fassung' : ''} · Rechtsprechung · Grösse des Gesetzestexts`}
       >
         {/* ── Ä91 (H4-Nachzug 18.8.2026) · ZWEI GESICHTER, NICHT DREI ────────
             Gemessen 18.8.2026 trug dieser Öffner DREI verschiedene Gestalten:
@@ -189,11 +196,13 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           id={panelId}
           tabIndex={-1}
           role="group"
-          aria-label="Darstellungsoptionen"
+          aria-label="Ansicht"
           data-v3-ansicht-panel
           className="absolute right-0 top-full z-40 mt-1.5 flex w-[15rem] max-w-[calc(100vw-2rem)] flex-col gap-0.5 rounded-lg border border-line bg-paper-raised p-1.5 shadow-lg"
         >
-          <p className="lc-overline px-2.5 pb-1 pt-0.5">Darstellung</p>
+          {/* Ä114: dasselbe Wort wie am Öffner und im `aria-label` — der
+              Glossar-Eintrag «Menü der Darstellungsschalter → Ansicht». */}
+          <p className="lc-overline px-2.5 pb-1 pt-0.5">Ansicht</p>
           <V3Switch
             an={opt.fussnoten === 'an'}
             label="Fussnoten"
@@ -219,9 +228,16 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           {hatAenderungsvermerke && (
           <V3Switch
             an={opt.histansicht === 'an'}
-            label="Änderungsvermerke"
+            label="Fassung"
             // Ä68: derselbe Wortlaut wie in V1 (§5) — und er beschreibt jetzt die
             // ganze Wirkung, nicht mehr einen Teil davon.
+            // ── Ä116 (18.8.2026) · SCHALTER UND ELEMENT HEISSEN GLEICH ────
+            // Der Schalter hiess «Änderungsvermerke», das Element, das er
+            // schaltet, trägt die Overline «FASSUNG · Gilt seit …». Wer den
+            // Schalter umlegte, musste erraten, dass die Zeile mit dem anderen
+            // Namen gemeint war. Ä68 hat die WIRKUNG schon geklärt (nur die
+            // Fassungs-Zeile, nie eine Fussnote) — jetzt folgt ihr der Name.
+            // Glossar: «Fassungs-Zeile → Fassung» überall.
             titel="Fassungs-Zeile am Artikelfuss ein- oder ausblenden («Gilt seit …» samt Zeitleiste) — der amtliche Fussnoten-Apparat bleibt in beiden Stellungen sichtbar"
             // Ä69: die Ä27-Hinweiszeile ist gestrichen — die Kreuz-Abhängigkeit,
             // die sie erklärte, gibt es nicht mehr (`../leserOptionen`).
@@ -253,8 +269,23 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               eigenen Wirkung.) */}
           <V3Switch
             an={opt.leitfaelle === 'an'}
-            label="Rechtsprechung anzeigen"
-            titel="Zähler und Zugang zur Rechtsprechung in der Kopfzeile ein- oder ausblenden — das Panel bleibt über «Ansicht ▾» und die Taste «r» erreichbar"
+            // ── Ä115 (18.8.2026) · DREI SCHALTER, EINE WORTART ────────────
+            // «Rechtsprechung anzeigen» las sich mit dem Zustandszeichen
+            // daneben als Satz («Rechtsprechung anzeigen ✓ an»), während die
+            // beiden Nachbarn Substantive sind («Fussnoten», «Fassung»). Der
+            // Schalter benennt jetzt die SACHE, die er ein- und ausschaltet —
+            // seinen Zustand sagt das Zeichen rechts, nicht das Verb.
+            // Glossar: die Fläche heisst «Rechtsprechung» (Chip konstant).
+            // ── Ä128 (Ästhetik-Nachzug 18.8.2026) · DER EINZIGE ZWEIZEILER ──
+            // GEMESSEN im aufgezogenen Ansicht-Menü: «Rechtsprechung in der
+            // Kopfzeile» war die einzige Beschriftung, die umbrach — die
+            // Schalterliste bekam dadurch eine unruhige Kante, und der Umbruch
+            // fiel ausgerechnet auf den Schalter, der ohnehin am meisten
+            // erklärt. «Im Kopf» sagt dasselbe: der Erlass-KOPF ist im Leser
+            // eine benannte Zone, keine Umschreibung. Die Wirkung bleibt Wort
+            // für Wort im `titel` stehen, wo Platz dafür ist.
+            label="Rechtsprechung im Kopf"
+            titel="Zähler und Zugang zur Rechtsprechung im Erlass-Kopf ein- oder ausblenden — das Panel bleibt über «Ansicht ▾» und die Taste «r» erreichbar"
             onKlick={() => schalte('leitfaelle', opt.leitfaelle === 'an')}
           />
 
