@@ -227,17 +227,30 @@ export function LeserTrefferListe({
         </div>
       </div>
 
-      {treffer.length === 0 && (
-        // §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
-        // Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
-        <p className="px-1 py-2 text-body-s text-ink-500">
-          {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. B8: die Einzahl
-              kommt aus derselben `zaehlform` wie oben — hier stand sonst eine
-              dritte Schreibweise derselben Regel. */}
-          Kein {zaehlform(1, bestimmungsWort)} gefunden für «{begriff}»
-          {bereich !== 'alles' && <> im gewählten Suchbereich</>}.
-        </p>
-      )}
+      {/* §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
+          Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
+          ── P1-4 (Bug-Check 18.8.2026) · DIE ABSAGE WIRD ANGESAGT ──────────────
+          `leser-r1-r2` hat den Verlust beim H4-Flip ausdrücklich als offenen
+          Befund gemeldet: die V1-Absage war eine Live-Region und wurde
+          vorgelesen, diese hier nicht. Für einen blinden Leser war die Absage
+          damit genauso stumm wie eine leere Liste.
+          `status`, nicht `alert`: eine Auskunft, keine Störung — `alert`
+          unterbräche beim Tippen jede laufende Ansage. IMMER GEMOUNTET, damit die
+          Region schon dasteht, bevor sich ihr Inhalt ändert (eine erst mit dem
+          Text entstehende Region überliest ein Teil der Screenreader);
+          `empty:hidden` hält sie ohne Inhalt aus dem Fluss — kein Leerraum, kein
+          CLS. Gleiche Fassung in `../parts/TrefferListe.tsx` (§5). */}
+      <p data-treffer-leer role="status" className="px-1 py-2 text-body-s text-ink-500 empty:hidden">
+        {treffer.length === 0 && (
+          <>
+            {/* Ä23 · zweite Stelle, an der «Artikel» hart stand. B8: die Einzahl
+                kommt aus derselben `zaehlform` wie oben — hier stand sonst eine
+                dritte Schreibweise derselben Regel. */}
+            Kein {zaehlform(1, bestimmungsWort)} gefunden für «{begriff}»
+            {bereich !== 'alles' && <> im gewählten Suchbereich</>}.
+          </>
+        )}
+      </p>
 
       <ul className="space-y-0.5">
         {zeilen.map(({ t, kopf }) => {

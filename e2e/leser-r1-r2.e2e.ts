@@ -473,6 +473,17 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
     await feld.fill('Art. 99999');
     await feld.press('Enter');
     await expect(page.getByText(/Kein Artikel gefunden für/)).toBeVisible({ timeout: 20_000 });
+    // ── P1-4 (Bug-Check 18.8.2026) · UND SIE WIRD ANGESAGT ──────────────────
+    // Der Flip hat die Absage von einer Live-Region (V1: `role="alert"`) auf
+    // stummen Text umgestellt — oben im Kopf als offener Befund gemeldet, nicht
+    // weggeglättet. Jetzt behoben: `role="status"` an der immer gemounteten
+    // Meldezelle (`v3/LeserTrefferListe.tsx`, gleiche Fassung in
+    // `parts/TrefferListe.tsx`). `status` statt `alert`, weil eine Auskunft die
+    // laufende Ansage nicht unterbrechen soll — beim Tippen wäre das jede Taste.
+    // ROT ZU BEKOMMEN (§6.7): das `role="status"` dort entfernen.
+    const meldung = page.locator('[data-treffer-leer]');
+    await expect(meldung).toHaveAttribute('role', 'status');
+    await expect(meldung).toContainText(/Kein Artikel gefunden für/);
     await expect(page.locator('#art-1')).not.toBeInViewport();
 
     // Bekannter Artikel (mit «Art.»-Präfix + Punkt): Sprung + Sheet zu.
@@ -487,6 +498,22 @@ test.describe('R2 — Mobile Gliederung als volles Bottom-Sheet', () => {
   // gibt es nur noch EINES, und dass es überall genau einmal steht, prüft
   // `leser-v3-suchfeld-ueberall.e2e.ts` (a)/(b)/(c) strenger, als dieser Fall
   // es je konnte. Kein Verlust an Abdeckung, ein Wegfall der Doppelung.
+  //
+  // P3-8 (Architektur-Gegenprüfung 18.8.2026) verlangte hier DATEI:ZEILE statt
+  // eines blossen Dateinamens — ein Nachweis, den man erst suchen muss, ist
+  // keiner. Nachgetragen, Stand 18.8.2026 (Zeilen wandern; massgeblich bleiben
+  // die Fall-Buchstaben, die Nummern sind die Abkürzung):
+  //   (a) e2e/leser-v3-suchfeld-ueberall.e2e.ts:51  — Split: JE Pane genau EIN
+  //       sichtbares Feld, ohne eine Geste.
+  //   (b) e2e/leser-v3-suchfeld-ueberall.e2e.ts:83  — @390 steht es im klebenden
+  //       Kopf-Block, nicht im Blatt.
+  //   (c) e2e/leser-v3-suchfeld-ueberall.e2e.ts:119 — @1440 mit eingeklappter
+  //       Gliederung bleibt es da.
+  // NICHT in `V1_GEMISCHT` gepinnt (playwright.config.ts), und das ist der
+  // Entscheid, nicht das Versäumnis: gepinnt gehört, was NUR V1 kann. Der
+  // gelöschte Fall prüfte eine Doppelung, die V1 aus einem MANGEL hatte (zwei
+  // Felder für eine Absicht, Fehler K2) — sie in V1 einzufrieren hiesse, einen
+  // behobenen Mangel als Vertrag weiterzuführen.
 });
 
 // ── OFFENER BEFUND AUS DEM H4-FLIP (18.8.2026) — bewusst NICHT weggeglättet ──

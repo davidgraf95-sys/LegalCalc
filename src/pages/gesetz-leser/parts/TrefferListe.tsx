@@ -158,10 +158,22 @@ export function TrefferListe({
         )}
       </div>
 
-      {treffer.length === 0 && (
-        // §8: ehrliche Leerzeile statt eines leeren Kastens.
-        <p className="px-1 py-2 text-body-s text-ink-500">Kein Artikel gefunden für «{begriff}».</p>
-      )}
+      {/* §8: ehrliche Leerzeile statt eines leeren Kastens.
+          ── P1-4 (Bug-Check 18.8.2026) · DIE ABSAGE WIRD ANGESAGT ──────────────
+          Der Satz war stumm: wer blind sucht, tippt, hört nichts und weiss nicht,
+          ob die Suche noch läuft oder nichts gefunden hat. Die Sprung-Absage
+          daneben («… gibt es in diesem Erlass nicht») ist seit je eine
+          Live-Region — die Such-Absage ist derselbe Sachverhalt und bekommt
+          dieselbe Ansage.
+          `status`, nicht `alert`: es ist eine Auskunft, keine Störung; `alert`
+          unterbricht die laufende Ansage, und das wäre beim Tippen jede Taste.
+          IMMER GEMOUNTET, nicht zusammen mit dem Text: eine Live-Region, die erst
+          mit ihrem Inhalt entsteht, wird von einem Teil der Screenreader nicht
+          vorgelesen — sie muss vor der Änderung dastehen. `empty:hidden` hält sie
+          ohne Inhalt aus dem Fluss (kein Leerraum, kein CLS). */}
+      <p data-treffer-leer role="status" className="px-1 py-2 text-body-s text-ink-500 empty:hidden">
+        {treffer.length === 0 && <>Kein Artikel gefunden für «{begriff}».</>}
+      </p>
 
       <ul className="space-y-0.5">
         {zeilen.map(({ t, kopf }) => {
