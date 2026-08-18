@@ -17,10 +17,28 @@ import type { SuchBereich } from '../leserSuche';
 // Reihe aus `<button aria-pressed>` wäre eine Mehrfachwahl-Zusage, die hier
 // falsch ist.
 
-/** Beschriftungen — kurz, weil sie nebeneinander in einer schmalen Spalte stehen. */
+/**
+ * Beschriftungen — kurz, weil sie nebeneinander in einer schmalen Spalte stehen.
+ *
+ * ── Ä120 (Live-Ästhetik-Prüfung 18.8.2026) · «TITEL» KOLLIDIERTE ────────────
+ * GEMESSEN am Live-Stand: der Schalter «Titel» stand unmittelbar über einem
+ * Trefferlisten-Zwischenkopf «2. TITEL» — dasselbe Wort, zwei Bedeutungen, acht
+ * Pixel auseinander. «Titel» ist im Gesetz eine GLIEDERUNGSSTUFE (Teil › Titel ›
+ * Abschnitt); der Schalter meint aber jede Überschrift, den Randtitel des
+ * einzelnen Artikels eingeschlossen (`lang` sagt das seit je). «Überschriften»
+ * benennt genau diese Menge und ist im Erlass kein Fachbegriff für eine Stufe —
+ * Glossar «Suchbereich → Alles · Überschriften · Text · Fussnoten».
+ *
+ * DAS SEGMENT TRÄGT DAS WORT: die Reihe ist `flex-wrap` mit `flex-1` je Knopf
+ * und auf `min(100%, 18rem)` gedeckelt (Ä84) — «Überschriften» ist vier Zeichen
+ * länger als das bisher längste «Fussnoten» und bricht im engsten Fall in eine
+ * zweite Segment-Zeile, statt die Beschriftung zu kappen. Das ist dieselbe
+ * Entscheidung wie in der Trefferliste darunter (§8: umbrechen, nie
+ * anschneiden), und die Zone existiert ohnehin nur während einer Suche.
+ */
 const LABEL: Record<SuchBereich, { kurz: string; lang: string }> = {
   alles: { kurz: 'Alles', lang: 'Im ganzen Erlass suchen' },
-  titel: { kurz: 'Titel', lang: 'Nur in Randtiteln und Gliederungstiteln suchen' },
+  titel: { kurz: 'Überschriften', lang: 'Nur in Randtiteln und Gliederungstiteln suchen' },
   text: { kurz: 'Text', lang: 'Nur im Wortlaut suchen (mit Tabellen)' },
   fussnoten: { kurz: 'Fussnoten', lang: 'Nur im Fussnoten-Apparat suchen' },
 };

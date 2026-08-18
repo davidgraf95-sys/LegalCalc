@@ -103,7 +103,19 @@ export function LeserTrefferListe({
   // Herleitung, warum ein Slot und kein Prop: `./anfangSlot`.
   const onAnfang = useAnfangSlot();
   const hatSprung = fundstellen > 0;
-  const anzeige = position < 0 ? '–' : String(position + 1);
+  // ── Ä103 (Live-Ästhetik-Prüfung 18.8.2026) · «–/88» IST KEINE AUSKUNFT ────
+  // GEMESSEN am Live-Stand (StPO/«Entschädigung», @390 und @1440): vor dem
+  // ersten ↑↓-Sprung stand dort «–/88». Der Bruchstrich behauptet ein
+  // Verhältnis, dessen Zähler fehlt; ein Gedankenstrich als Zahl ist ein
+  // Platzhalter, und die Zeile sagte damit weder «du bist noch nirgends» noch
+  // «es gibt 88». @390 kam hinzu, dass die Kurzform zweizeilig in ihren Kasten
+  // brach (Zähler über den Pfeilen).
+  // JETZT: ausgeschriebene Auskunft «Fundstelle 0 von 88» — 0 ist die ehrliche
+  // Zahl vor dem ersten Sprung (Glossar «Trefferzähler → Fundstelle n von m»),
+  // und das Wort nennt, was gezählt wird. Der Wert bleibt DATENSEITIG (§4.4):
+  // `position`/`fundstellen` kommen aus `leserSuche.ts`, hier wird nur
+  // beschriftet.
+  const laufend = position < 0 ? 0 : position + 1;
 
   // Deckel und Handauf-Zustand hängen am BEGRIFF (Gültigkeits-Schlüssel): eine
   // neue Anfrage fängt wieder bei 200 an und klappt alles zu, sonst bliebe eine
@@ -207,9 +219,13 @@ export function LeserTrefferListe({
           </p>
           {hatSprung && (
             <>
+              {/* Ä103: EINE Zeile, nicht zwei. Das Wort «Fundstelle» steht als
+                  eigener, nicht umbrechender Block vor der Zahlenkante, damit
+                  es @390 nicht zwischen Zahl und Einheit reisst — dieselbe
+                  Ä30-Regel wie an der Zählzeile darüber. */}
               <span data-treffer-position role="status" aria-live="polite"
-                className="shrink-0 text-micro tabular-nums text-ink-500">
-                <span className="num">{anzeige}</span>/<span className="num">{fundstellen}</span>
+                className="shrink-0 whitespace-nowrap text-micro tabular-nums text-ink-500">
+                Fundstelle <span className="num">{laufend}</span> von <span className="num">{fundstellen}</span>
               </span>
               {/* A9-DoD: 44×44-px-Tap-Ziele, echte <button>, aria-label. */}
               <button type="button" onClick={onZurueck} data-treffer-zurueck
@@ -269,8 +285,27 @@ export function LeserTrefferListe({
                 // EINMAL — der Zwischenkopf ist damit das, wonach er aussieht.
                 // `lc-overline` trägt die kalibrierte ink-600-Basis; ein
                 // Dimm-Override wäre bei 11 px ein AA-Fail (check:design-tokens).
-                <li aria-hidden className="lc-overline px-1 pb-0.5 pt-3">
-                  <span className="line-clamp-1" title={kopf}>{kopf}</span>
+                // ── Ä102 (Live-Ästhetik-Prüfung 18.8.2026) · DER GLIEDERUNGS-
+                //     ORT WIRD NICHT ANGESCHNITTEN ─────────────────────────────
+                // GEMESSEN @1440 UND @390: «3. TITEL: PARTEIEN UND ANDERE…» —
+                // der Zwischenkopf lief in `lc-overline` (Versalien, Mono-nah,
+                // +0.12 em Sperrung) und wurde von `line-clamp-1` gekappt. Zwei
+                // Fehler in einem Element:
+                //  (1) Die Ellipse traf eine KERNAUSKUNFT. Wo im Gesetz eine
+                //      Fundstelle liegt, ist die halbe Antwort der Suche — §8
+                //      lässt sie umbrechen oder kürzen, nie anschneiden (Ä15,
+                //      Ä96 haben in derselben Liste schon so entschieden).
+                //  (2) Versalien + Sperrung sind die teuerste Schreibweise pro
+                //      Zeichen und zugleich die langsamste zu lesen
+                //      (DESIGN-REGLEMENT A2: «Kein ALL-CAPS-Fliesstext» — die
+                //      Overline-Rolle ist für DREI, VIER Wörter gedacht, nicht
+                //      für einen amtlichen Gliederungstitel).
+                // JETZT: Normalschreibung in der Sans-Beiwerk-Stimme, zwei
+                // Zeilen erlaubt, kein `title`-Ersatz nötig. Der Kopf bleibt
+                // `aria-hidden` — er ist eine visuelle Gruppierung, die
+                // Trefferzeile darunter trägt ihre Fundstelle selbst.
+                <li aria-hidden className="px-1 pb-0.5 pt-3 text-micro font-medium leading-snug text-ink-500">
+                  <span className="line-clamp-2">{kopf}</span>
                 </li>
               )}
               <li data-treffer-artikel={t.token} data-fundstellen-zahl={t.fundstellen}>

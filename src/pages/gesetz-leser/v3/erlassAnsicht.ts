@@ -171,9 +171,48 @@ export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'key'>): string 
  * kommt aus demselben Datenmodell, das der Sprung auflöst, und ist damit
  * garantiert eingebbar. Fehlt es (Snapshot noch nicht da), verspricht das Feld
  * keinen Sprung, sondern nennt nur die Suche.
+ *
+ * ── Ä112 (Live-Ästhetik-Prüfung 18.8.2026) · DAS FELD NENNT SEINEN ERLASS ────
+ *
+ * GEMESSEN am Live-Stand @720–1440: ZWEI Suchfelder standen übereinander, keine
+ * 60 px auseinander, und beide begannen mit demselben Wort —
+ *   App-Topbar: «Suchen oder Norm springen …»   (sucht die ganze Anwendung)
+ *   Leser:      «Suchen oder «Art. 1» …»        (sucht IN diesem Erlass)
+ * Der Unterschied ist der wichtigste, den die beiden Felder haben, und keines
+ * der beiden sagte ihn. Wer im oberen Feld «Entschädigung» tippt, bekommt die
+ * Anwendung durchsucht und wundert sich, dass die Trefferliste des Erlasses
+ * leer bleibt.
+ *
+ * BEHOBEN WIRD DAS UNTERE FELD, NICHT DIE TOPBAR: die Topbar trägt die ganze
+ * App (`components/layout/**`, FL-4) und ist hier ausdrücklich nicht
+ * anzufassen; das Leser-Feld dagegen KENNT seinen Erlass. Das Kürzel kommt aus
+ * dem Datenmodell (`erlass.kuerzel`) — erlassneutral, kein `if (bund)`, keine
+ * Liste: was im Register steht, steht im Platzhalter.
+ *
+ * `kuerzel` fehlt nie (Registerfeld); ist es leer, bleibt die alte, allgemeine
+ * Form stehen, statt ein «Im  suchen» mit Loch zu drucken (§8).
  */
-export function suchPlatzhalter(beispiel: string | null): string {
-  return beispiel ? `Suchen oder «${beispiel}» …` : 'Im Gesetz suchen …';
+export function suchPlatzhalter(beispiel: string | null, kuerzel?: string): string {
+  return `${suchOrt(kuerzel)}${beispiel ? ` oder «${beispiel}» …` : ' …'}`;
+}
+
+/** Ä112 · der halbe Satz, den Platzhalter UND zugänglicher Name teilen — EINE
+ *  Quelle für beide (§5). Ohne Kürzel die alte, allgemeine Form. */
+function suchOrt(kuerzel?: string): string {
+  return kuerzel?.trim() ? `Im ${kuerzel.trim()} suchen` : 'Im Gesetz suchen';
+}
+
+/**
+ * Ä112 · der ZUGÄNGLICHE NAME des Such-/Sprungfelds.
+ *
+ * Er nennt denselben Erlass wie der Platzhalter — und zusätzlich die zweite
+ * Fähigkeit des Feldes (springen), die der Platzhalter nur als Beispiel zeigt.
+ * Eigene Funktion statt eines zweiten Literals im Rahmen: der Name ist die
+ * Auskunft, auf die ein Screenreader-Nutzer angewiesen ist, und er darf nicht
+ * auseinanderlaufen, wenn jemand den Platzhalter nachjustiert.
+ */
+export function suchFeldName(kuerzel?: string): string {
+  return `${suchOrt(kuerzel)} oder zu einer Bestimmung springen`;
 }
 
 /**

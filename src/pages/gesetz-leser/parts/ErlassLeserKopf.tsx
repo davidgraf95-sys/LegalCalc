@@ -175,7 +175,20 @@ export function ErlassLeserKopf({
           index.css). min-h-titel-2z (§15.2) reserviert unverändert die
           2-Zeilen-Höhe gegen den font-display-Swap (CLS 0); nur
           Platz-Reservierung — der volle Titel steht immer (§15/2). */}
-      <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] hyphens-auto min-h-titel-2z">
+      {/* ── Ä101 (Live-Ästhetik-Prüfung 18.8.2026) · KEINE SILBENTRENNUNG IM
+          ERLASS-TITEL ────────────────────────────────────────────────────────
+          GEMESSEN @1440 und @390: `hyphens-auto` trennte die Überschrift mitten
+          im Namen — «Aner-kennung» (LugÜ), «Strafprozess-ordnung» (StPO). Der
+          Titel ist der NAME des Erlasses und die grösste Type der Seite;
+          Design-Grundlage Kap. 8 Nr. 7 verbietet die automatische Trennung
+          ausdrücklich für Überschriften (der Browser trennt nach Wörterbuch,
+          nicht nach Kompositum-Fuge, und in einer 32-px-Serif sieht man jeden
+          Fehlgriff). `[overflow-wrap:anywhere]` BLEIBT: es fängt den
+          pathologischen Fall — ein einzelnes Wort, das breiter ist als die
+          Spalte — und bricht dann ohne Trennstrich, statt die Zeile zu sprengen.
+          Zwei Regeln, zwei Aufgaben: keine Kosmetik-Trennung, aber auch kein
+          Überlauf. */}
+      <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] min-h-titel-2z">
         {/* Ä-(d): die Kennung als eigene, nicht umbrechende Marke VOR dem Titel.
             Kein zweites Element neben der H1 und kein `aria-label`-Ersatz — sie
             ist Teil desselben Namens und bleibt darum in der Überschrift; nur
@@ -243,9 +256,23 @@ export function ErlassLeserKopf({
       {/* Aktionen-Zeile (Skizze 4e): Icon + Label als ruhige Text-Links, keine
           Chip-Kästen. Ist-Verhalten unverändert — dieselben URLs, dasselbe
           target/rel, derselbe `aktionen`-Slot in derselben Reihenfolge. */}
+      {/* ── Ä110 (Live-Ästhetik-Prüfung 18.8.2026) · EIN ZIEL, EIN NAME ──────
+          GEMESSEN hiess DERSELBE Fedlex-Link an drei Stellen dreierlei: hier
+          «↗ geltende Fassung», am Artikel und am Sektionskopf «amtliche Fassung
+          ↗», in der Übersichtsbox «geltende Fassung». Und die Zeile mischte die
+          Schreibung: ein klein beginnendes Label neben zwei gross beginnenden
+          («⧉ In neuem Reiter», «⬇ Amtliches PDF»).
+          JETZT, nach dem Benennungs-Glossar (Design-Grundlage, Abschnitt
+          «Benennung»): der Link heisst überall «Amtliche Fassung ↗» — der Pfeil
+          HINTEN, weil er das Verlassen der Seite ankündigt und darum ans Ende
+          der Beschriftung gehört, nicht davor. «geltende» fällt weg: es doppelt
+          die Aussage der Stand-Zeile darüber und ist am aufgehobenen Erlass
+          gerade falsch (dieser Zweig läuft dort ohnehin nicht — `lebt`).
+          Alle Beschriftungen der Zeile beginnen jetzt gross; das ist die eine
+          Schreibung, die Ä110 verlangt. */}
       <div className="lc-kopf-aktionen flex flex-wrap items-center gap-x-5 gap-y-0.5 text-xs">
         {erlass.quelleUrl && lebt && (
-          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip">↗ geltende Fassung</a>
+          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip">Amtliche Fassung ↗</a>
         )}
         {aktionen}
       </div>

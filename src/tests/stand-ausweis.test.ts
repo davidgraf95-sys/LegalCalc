@@ -68,7 +68,10 @@ describe('Pfad 1 — Reader-Artikel-Zitat-Kopie (baueZitat + Ausweis)', () => {
   // Reproduziert exakt ArtikelLeser.kopiere('zitat'): baueZitat trägt bereits die
   // Fassung als «(Stand …)» → der Ausweis ergänzt NUR Abruf + Permalink (kein
   // doppeltes Standdatum, §5).
-  const erlass = { kuerzel: 'OR', sr: '220', stand: '2025-01-01' };
+  // Ä98 (18.8.2026): `baueZitat` liest seit dem Säuberungs-Nachzug die EBENE —
+  // die Kennung «SR» gilt nur dem Bundesrecht (`helpers.kennungText`). Der Fall
+  // hier ist das OR, also Bund; die Kopie bleibt Zeichen für Zeichen dieselbe.
+  const erlass = { ebene: 'bund' as const, kuerzel: 'OR', sr: '220', stand: '2025-01-01' };
   const kopie = zitatMitAusweis(baueZitat(erlass, 'Art. 7'), { abruf: ABRUF, permalink: PERMALINK });
 
   it('enthält Stand + Abruf + URL', () => {

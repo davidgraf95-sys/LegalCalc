@@ -165,7 +165,22 @@ export function LeserLesespalte({ m }: {
           Wächter: `e2e/leser-kein-seitenueberlauf.e2e.ts`, beide Hüllen. */}
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
         {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-brass-700 hover:underline [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
-        <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-brass-700">Übersicht</Link>
+        {/* ── Ä119 (Live-Ästhetik-Prüfung 18.8.2026) · «ÜBERSICHT» WAR DOPPELT
+            BELEGT ───────────────────────────────────────────────────────────
+            GEMESSEN am Live-Stand @1440: das Wort «Übersicht» bezeichnete auf
+            DERSELBEN Seite zwei verschiedene Dinge — die Steckbrief-Box der
+            Seitenleiste («▸ Übersicht  SR 312.0 · 480 Artikel») und diesen Link
+            in der Fuss-Navigation, der auf `/gesetze` führt, also die Liste
+            ALLER Erlasse. Wer «Übersicht» gelesen hatte und es unten wiederfand,
+            durfte den Steckbrief erwarten und bekam die Gesetzesliste.
+            ENTSCHIEDEN (Glossar, Design-Grundlage Abschnitt «Benennung»): die
+            Box behält «Übersicht» — sie steht dort seit H2b, ist der häufigere
+            Begriff und meint tatsächlich eine Übersicht ÜBER DIESEN Erlass. Der
+            Link sagt jetzt, wohin er führt: «Alle Gesetze».
+            `shrink-0` bleibt (B6): die Beschriftung ist kurz und konstant, sie
+            gibt in der Zeile nicht nach — nachgeben sollen die Erlass-Namen
+            links und rechts, deren Länge aus den Daten kommt. */}
+        <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-brass-700">Alle Gesetze</Link>
         {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-brass-700 hover:underline [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
