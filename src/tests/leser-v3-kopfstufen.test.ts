@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   KOPF_SCHWELLE_KOMPAKT, KOPF_SCHWELLE_MINI,
-  kopfElemente, kopfHoehe, kopfStufe, zeigeSchliessKreuz,
+  kopfElemente, kopfHoehe, kopfStufe,
 } from '../pages/gesetz-leser/v3/kopfStufen';
 import { oeffnerLabel, oeffnerLabelKompakt, oeffnerName } from '../pages/gesetz-leser/v3/panelModell';
 
@@ -113,31 +113,26 @@ describe('Overflow-Regel der V3-Kopfzeile (Kap. 4a)', () => {
     expect(oeffnerName(14, 'Art. 429')).toContain('14 Entscheide');
   });
 
-  // ── Ä46 (H4-II) · DAS ✕ STEHT NUR, WO ES KEIN DUPLIKAT IST ──────────────────
-  // BEFUND, gemessen im Split @1600: je Pane ZWEI sichtbare ✕, 44 px
-  // übereinander — Griffleiste («Hauptfenster schliessen») und V3-Kopf («Gesetz
-  // schliessen, zur Gesetzesübersicht»). Und auf `mini` sprengte das ✕ zusammen
-  // mit dem neuen Zähler-Chip den Vier-Elemente-Deckel (Design-Grundlage Kap. 6).
-  // In beiden Lagen steht die Handlung («nach /gesetze») in derselben Zeile
-  // bereits als benannter Rücksprung — die Krume fällt auf keiner Breite weg
-  // (Test oben), die Zusage ist also nicht bedingt.
-  // Rot zu bekommen: `zeigeSchliessKreuz` auf `true` festnageln.
-  it('das Schliess-✕ weicht im Pane und auf dem Handy-Zuschnitt', () => {
-    expect(zeigeSchliessKreuz('voll', true)).toBe(true);
-    expect(zeigeSchliessKreuz('kompakt', true)).toBe(true);
-    expect(zeigeSchliessKreuz('mini', true)).toBe(false);
-    // Im Pane auf KEINER Stufe — dort trägt die Griffleiste das eine ✕.
-    for (const stufe of ['voll', 'kompakt', 'mini'] as const) {
-      expect(zeigeSchliessKreuz(stufe, false), `Pane trägt auf «${stufe}» ein zweites ✕`).toBe(false);
-    }
-    // Und wo das ✕ weicht, steht die Krume: die Aussage hängt zusammen, darum
-    // hier und nicht in zwei Dateien.
+  // ── Ä87/Ä91 (H4-Nachzug 18.8.2026) · DAS ✕ IST WEG, DER RÜCKSPRUNG BLEIBT ──
+  // Hier stand `zeigeSchliessKreuz`. Die Funktion ist gestrichen (Messreihe im
+  // Kopf von `kopfStufen.ts`): das Kopf-✕ lag @1440 bei offenem Blatt 47 px über
+  // dessen eigenem ✕ und war @720 das fünfte Element einer Zeile, die vier
+  // trägt. Was BLEIBEN muss, ist die Zusage, auf der die Streichung ruht — auf
+  // JEDER Breite steht ein beschrifteter Weg nach `/gesetze` in derselben Zeile.
+  // Genau das prüft dieser Fall, und zwar an beiden Hälften der Aussage:
+  // der Krumen-Zuschnitt fällt nie weg, und die erste Krumen-Stufe trägt ein Ziel.
+  // Rot zu bekommen (§6.7, gefahren 18.8.2026): in `kopfElemente` einen dritten
+  // Krumen-Wert einführen, oder in `erlassAnsicht.brotkrume` das `to` der ersten
+  // Stufe entfernen.
+  it('auf jeder Breite steht ein beschrifteter Rücksprung — das ✕ braucht es nicht', () => {
     for (let b = 280; b <= 2000; b += 1) {
-      const stufe = kopfStufe(b);
-      if (zeigeSchliessKreuz(stufe, true) && zeigeSchliessKreuz(stufe, false)) continue;
-      expect(['voll', 'kurz'], `kein Rücksprung bei ${b} px, obwohl das ✕ weicht`)
-        .toContain(kopfElemente(stufe).krume);
+      expect(['voll', 'kurz'], `kein Rücksprung-Zuschnitt bei ${b} px`)
+        .toContain(kopfElemente(kopfStufe(b)).krume);
     }
+    // Dass die erste Krumen-Stufe wirklich ein ZIEL trägt (sonst wäre der
+    // «Rücksprung» ein stummes Wort und `LeserKopf` liesse ihn weg), prüft
+    // `leser-v3-erlassansicht.test.ts` an `hatRuecksprung` — dort, wo die Krume
+    // entsteht.
   });
 
   it('die Kopfhöhe folgt der Design-Grundlage (H/S 48 px · D 56 px)', () => {

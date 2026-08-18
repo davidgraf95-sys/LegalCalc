@@ -61,7 +61,8 @@
    "verweis-u.e2e.ts",
    "leser-v3-treffer-deckel.e2e.ts",
    "leser-v3-panel-facetten.e2e.ts",
-   "leser-v3-h4-kopfwege.e2e.ts"
+   "leser-v3-h4-kopfwege.e2e.ts",
+   "leser-v3-h4-gliederungswege.e2e.ts"
   ],
   "5": [
    "plz-wahl.e2e.ts",

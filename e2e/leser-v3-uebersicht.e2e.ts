@@ -360,6 +360,85 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
+  // ── (c2) Ä89 · die Klappe steht ÜBER den Reitern, nicht in einer Tafel ─────
+  // BEFUND (Ästhetik-Prüfung, @1440 nachgemessen 18.8.2026): die Zeile lag bei
+  // y = 245, die Reiter-Leiste bei y = 208 — also UNTER den Reitern, und
+  // `[role=tabpanel]` enthielt sie (`imTabpanel: true`). Sie gehört aber zum
+  // PANEL: ein Screenreader las sie als Teil von «Entscheide», und beim
+  // Reiterwechsel wurde sie ab- und wieder aufgebaut.
+  //
+  // ROT ZU BEKOMMEN (§6.7, gefahren 18.8.2026): in `v3/LeserPanelZone.tsx` die
+  // Zeile wieder um die Tafeln wickeln, statt sie als `steckbrief`-Prop an
+  // `LeserPanel` zu geben.
+  test('(c2) Ä89 · @1440: die Steckbrief-Zeile liegt über der Reiter-Leiste und ausserhalb der Tafel', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await expect(page.locator('[data-v3-uebersicht]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-gliederung-zu]').click()
+    await page.locator('[data-v3-panel-zaehler]').first().click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(1)
+
+    const lage = await page.evaluate(() => {
+      const sb = document.querySelector('[data-v3-panel-steckbrief]')!
+      const tl = document.querySelector('[data-v3-panel] [role=tablist]')!
+      const tp = document.querySelector('[data-v3-panel] [role=tabpanel]')!
+      return {
+        sbY: Math.round(sb.getBoundingClientRect().y),
+        tablistY: Math.round(tl.getBoundingClientRect().y),
+        imTabpanel: tp.contains(sb),
+        // Und die Reiter-Leiste kann seit dem Nachzug waagrecht scrollen — ohne
+        // das ist ein vierter Reiter (Kap. 14) unmöglich, er würde am Rand
+        // abgeschnitten (gemessen: scrollWidth 369 gegen clientWidth 334).
+        ovx: getComputedStyle(tl).overflowX,
+      }
+    })
+    expect(lage.imTabpanel, 'die Steckbrief-Zeile liegt im tabpanel eines Reiters').toBe(false)
+    expect(lage.sbY, `Steckbrief y=${lage.sbY} liegt nicht über der Reiter-Leiste y=${lage.tablistY}`)
+      .toBeLessThan(lage.tablistY)
+    expect(lage.ovx, 'die Reiter-Leiste kann nicht waagrecht scrollen').toBe('auto')
+  })
+
+  // ── (c3) P3 (3c) · @390 steht die Warnung genau EINMAL — auch mit beidem ───
+  // Der Kommentar am Bau sagte bis 18.8.2026, der Defekt «sitze auf dem Desktop
+  // mit eingeklappter Gliederung»; montiert wurde die Zeile aber in JEDER Lage
+  // ohne stehende Leiste, also auch @390. Das ist richtig so — geprüft wird
+  // darum die Zusage selbst (Ä28): in allen drei erreichbaren Kombinationen
+  // steht die Warnung genau einmal.
+  // Gemessen 18.8.2026 @390 (StPO): nur Panel {Steckbrief 1, Warnung 1} · nur
+  // Sheet {0, 1} · Sheet UND Panel {0, 1}.
+  test('(c3) @390: Warnung genau einmal — mit Panel, mit Blatt, mit beidem', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(400)
+
+    // (1) nur das Panel: die Leiste steht nirgends, das Panel trägt den Steckbrief.
+    await page.locator('[data-v3-panel-zaehler]').first().click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(1)
+    await expect(page.locator('[data-v3-uebersicht-warnung]')).toHaveCount(1)
+    await page.locator('[data-v3-panel-zu]').click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+
+    // (2) nur das Gliederungs-Blatt: dort steht die Box, das Panel schweigt.
+    await page.locator('[data-v3-gliederung-auf]').click()
+    await expect(page.locator('[data-gliederung-sheet]')).toBeVisible({ timeout: 10_000 })
+    await expect(page.locator('[data-v3-panel-steckbrief]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-uebersicht-warnung]')).toHaveCount(1)
+
+    // (3) BEIDES offen. Der Scrim des modalen Blatts fängt echte Zeiger ab —
+    // der Chip wird darum per DOM-Klick betätigt; erreichbar ist die Lage über
+    // die Taste «r», sobald der Fokus die Blatt-Falle verlässt.
+    await page.locator('[data-v3-panel-zaehler]').first().evaluate((e: HTMLElement) => e.click())
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-gliederung-sheet]')).toBeVisible()
+    await expect(page.locator('[data-v3-panel-steckbrief]'),
+      'mit stehendem Blatt trägt das Panel den Steckbrief ein zweites Mal').toHaveCount(0)
+    await expect(page.locator('[data-v3-uebersicht-warnung]'),
+      'Ä28: die Warnung steht @390 mit Blatt UND Panel doppelt').toHaveCount(1)
+  })
+
   test('(d) BS-640.100 @390 und @1440: die Kantons-Zeilen bleiben sinnvoll (Ä80-Probe)', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     for (const [w, h] of [[1440, 900], [390, 844]] as const) {

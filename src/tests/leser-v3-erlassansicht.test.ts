@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { brotkrume, ebeneAngabe, overlineGebiet, uebersichtsZeile } from '../pages/gesetz-leser/v3/erlassAnsicht';
+import { brotkrume, ebeneAngabe, hatRuecksprung, overlineGebiet, uebersichtsZeile } from '../pages/gesetz-leser/v3/erlassAnsicht';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { KantonSystematik } from '../lib/normtext/systematik';
 
@@ -148,5 +148,31 @@ describe('brotkrume — genau drei Stufen, die letzte ohne `to`', () => {
     // Die ersten beiden Stufen SIND klickbar.
     expect(b[0].to).toBeDefined();
     expect(b[1].to).toBeDefined();
+  });
+});
+
+// ═══ Ä87/Ä91 (H4-Nachzug 18.8.2026) · DIE ZUSAGE UNTER DEM GESTRICHENEN ✕ ════
+//
+// Das Kopf-✕ «Gesetz schliessen» ist weg (Messreihe und Herleitung im Kopf von
+// `v3/kopfStufen.ts`). Es DARF weg, weil sein Ziel `/gesetze` in derselben Zeile
+// als beschriftetes Wort steht — als volle Kette oder als Rücksprung
+// «‹ Gesetze». Diese Zusage ruht auf einer einzigen Eigenschaft der Krume, und
+// die wird hier geprüft statt angenommen: nähme jemand der ersten Stufe ihr
+// `to`, stünde die V3-Kopfzeile ohne jeden Weg nach oben da — still, und auf
+// jeder Breite.
+//
+// Rot zu bekommen (§6.7, gefahren 18.8.2026): in `brotkrume` beim ersten
+// Eintrag `to: '/gesetze'` weglassen.
+describe('hatRuecksprung — die Kopfzeile hat auf jeder Ebene einen Weg nach oben', () => {
+  const FAELLE: [string, Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>][] = [
+    ['Bund', { ebene: 'bund', kanton: null, rechtsgebiet: 'privat', kuerzel: 'StPO' }],
+    ['Kanton BS', { ebene: 'kanton', kanton: 'BS', rechtsgebiet: 'oeffentlich', kuerzel: 'GebT' }],
+    ['Staatsvertrag', { ebene: 'bund', kanton: null, rechtsgebiet: 'international', kuerzel: 'LugÜ' }],
+  ];
+  it.each(FAELLE)('%s: erste Krumen-Stufe trägt ein Ziel', (_name, e) => {
+    expect(hatRuecksprung(e)).toBe(true);
+    // Und zwar DASSELBE Ziel, das das ✕ hatte — sonst wäre die Streichung ein
+    // Verlust und keine Entdopplung (§5).
+    expect(brotkrume(e)[0]?.to).toBe('/gesetze');
   });
 });

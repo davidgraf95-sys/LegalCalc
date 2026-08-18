@@ -265,3 +265,27 @@ export function brotkrume(
     { label: erlass.kuerzel },
   ];
 }
+
+/**
+ * Trägt die Kopfzeile einen BESCHRIFTETEN Rücksprung zur Gesetzesübersicht?
+ *
+ * ── WOZU DIESE FRAGE EINEN NAMEN HAT (Ä87/Ä91, H4-Nachzug 18.8.2026) ────────
+ * Das Kopf-✕ («Gesetz schliessen — zur Übersicht») ist gestrichen, weil sein
+ * Ziel `/gesetze` in derselben Zeile schon als WORT steht: die erste Stufe der
+ * Krume, auf `voll` als Kette «Gesetze › Bund ›», auf `kompakt`/`mini` als
+ * Rücksprung «‹ Gesetze» (Herleitung und Messreihe in `./kopfStufen`, Block
+ * «DAS KOPF-✕ IST GESTRICHEN»). Diese Streichung ruht auf genau EINER Zusage —
+ * dass die erste Krumen-Stufe immer ein Ziel trägt. Eine Zusage, auf der etwas
+ * ruht, gehört geprüft und nicht angenommen (§6.7): nimmt jemand das `to` aus
+ * `brotkrume` (oder tritt eine Ebene hinzu, die keines liefert), wird diese
+ * Funktion `false` und der Unit-Beweis in `leser-v3-erlassansicht.test.ts` rot
+ * — statt dass still eine Kopfzeile ohne jeden Weg nach oben entsteht.
+ *
+ * Sie ist bewusst KEINE zweite Ableitung: sie liest `brotkrume`, die eine
+ * Quelle, und behauptet nichts eigenes (§5).
+ */
+export function hatRuecksprung(
+  erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>,
+): boolean {
+  return brotkrume(erlass)[0]?.to != null;
+}

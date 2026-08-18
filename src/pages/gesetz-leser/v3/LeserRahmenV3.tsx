@@ -13,8 +13,8 @@ import { LeserTastatur } from '../parts/LeserTastatur';
 import { LeserKopf } from './LeserKopf';
 import { LeserSeitenleiste } from './LeserSeitenleiste';
 import { LeserGliederung } from './LeserGliederung';
-import { LeserGliederungSchiene } from './LeserGliederungSchiene';
 import { LeserLesespalte } from './LeserLesespalte';
+import { LeserLeseZeile } from './LeserLeseZeile';
 import { LeserLeisteSheet } from './LeserLeisteSheet';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
@@ -27,7 +27,7 @@ import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
 import { rahmenBild, useRahmenRaum } from './rahmenSpalten';
-import { kopfElemente, panelForm, useKopfStufe, zeigeSchliessKreuz } from './kopfStufen';
+import { kopfElemente, kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
@@ -41,7 +41,7 @@ import { useLeserV3Modell } from './leserV3Modell';
 // die Datei, die man liest, um die Hülle zu verstehen.
 //
 // DER AUFBAU, VON OBEN:
-//   LeserKopf   klebt · Ort · Ansicht · ✕ · [Such-Zone, wenn keine Spalte] (4a/Ä19)
+//   LeserKopf   klebt · Ort · ⚖ · ☰ · Ansicht · [Such-Zone ohne Spalte] (4a/Ä19)
 //   ┌ aside ────────────┬ Zelle ───────────────────────────┐
 //   │ Übersicht (zu)    │ ErlassLeserKopf                  │  (Kap. 4b/4e)
 //   │ Feld klebt zuoberst│ ErlassKopfBlock (Ingress)       │
@@ -82,11 +82,6 @@ export interface LeserRahmenV3Props {
 export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const { modell: m, umgebung } = useLeserV3Modell({ ebene, schluessel });
   const { stufe, kopfRef } = useKopfStufe();
-  // V6: Höhenausgleich beim Ein-/Ausklappen der Gliederung — Befund, Messreihe und
-  // der Vertrag von `setzeTocOffen`/`wurzelRef`: `./useStickAusgleich`. Scroller aus
-  // derselben `paneRoot`-Auflösung wie «↑ Anfang» (§5).
-  const { wurzelRef, setzeTocOffen } = useStickAusgleich(m.tocOffen, m.setTocOffen,
-    paneRoot(umgebung.imPane, umgebung.wurzel), m.aktivToken);
   // A3: die Id der Panel-Fläche entsteht HIER — Öffner und Fläche stehen in
   // verschiedenen Teilbäumen und brauchen dieselbe (`aria-controls`).
   const panelId = useId();
@@ -94,8 +89,28 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Rückgaben (Hooks laufen nicht bedingt) und kosten im Ruhezustand nichts —
   // `usePanelBezuege` bekommt den Erlass-Key erst, wenn das Panel einmal offen
   // war, und ohne Key lädt die Bezugs-Hook nicht (Nachladen, Kap. 7).
-  const panel = usePanelZustand();
-  const bezuege = usePanelBezuege(m.erlass?.key, panel.jeGeoeffnet);
+  const rohPanel = usePanelZustand();
+  const bezuege = usePanelBezuege(m.erlass?.key, rohPanel.jeGeoeffnet);
+  // V6/Ä88: Höhenausgleich, wenn der klebende Kopf-Block wächst — Befund,
+  // Messreihe und der Vertrag von `mitAusgleich`/`wurzelRef`:
+  // `./useStickAusgleich`. Scroller aus derselben `paneRoot`-Auflösung wie
+  // «↑ Anfang» (§5). Die LAGE trägt seit dem H4-Nachzug BEIDE Auslöser: die
+  // Gliederung faltet den Kopf, und seit Ä60 (c) faltet das Beiwerk-Blatt
+  // zwischen 1024 und 1391 px die Gliederung — also auch den Kopf.
+  const { wurzelRef, mitAusgleich } = useStickAusgleich(
+    `${m.tocOffen}·${rohPanel.offen}`,
+    paneRoot(umgebung.imPane, umgebung.wurzel), m.aktivToken);
+  const setzeTocOffen = (auf: boolean) => mitAusgleich(() => m.setTocOffen(auf));
+  // Ä88: JEDER Weg, der das Blatt auf- oder zumacht, läuft durch den Ausgleich —
+  // Kopf-Zähler, Menü-Eintrag, Taste «r», das ✕ und Esc des Blattes selbst.
+  // Gewickelt wird darum der ZUSTAND, nicht jeder Aufrufpunkt: ein vergessener
+  // Aufrufpunkt wäre genau der Sprung, den diese Zeile verhindert (§5).
+  const panel = {
+    ...rohPanel,
+    oeffne: (r?: Parameters<typeof rohPanel.oeffne>[0]) => mitAusgleich(() => rohPanel.oeffne(r)),
+    schliesse: () => mitAusgleich(rohPanel.schliesse),
+    umschalten: () => mitAusgleich(rohPanel.umschalten),
+  };
   // Ä60 (c) · WIE BREIT der Rahmen ist und WELCHE Spuren er trägt: `./rahmenSpalten`
   // (Herleitung, Messreihe und die eine Schwelle stehen dort). Gemessen wird der
   // RAUM im `<main>`, nicht das eigene Element — sonst entschiede der Rahmen über
@@ -137,7 +152,18 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     blattOffen: panel.offen, ruheForm: panelForm(stufe, !umgebung.imPane),
   });
   const zweiSpalten = bild.gliederungSpalte;
-  const blattOffen = !umgebung.istXl && m.tocAuf && hatLeiste; // A2: Feld im Blatt
+  // ── P3 (3b) · DREI NAMEN FÜR DREI DINGE (H4-Nachzug 18.8.2026) ────────────
+  // Bis hierher hiess die Zeile darunter `blattOffen` — und im selben Bau hiess
+  // auch das BEIWERK-Blatt so (`rahmenBild({ blattOffen: panel.offen })`,
+  // `bild.blattForm`). Zwei Flächen, ein Wort: der Architektur-Review 18.8.2026
+  // hat es als (3b) gemeldet, und die dritte Formulierung stand weiter unten als
+  // `zweiSpalten || blattOffen` — eine Frage ohne Namen.
+  //   `gliederungsSheetOffen`  das GLIEDERUNGS-Sheet (☰, unter der Spaltenschwelle)
+  //   `panel.offen`            das BEIWERK-Blatt (Rechtsprechung & Kontext)
+  //   `leisteSteht`            trägt die Seitenleiste den Steckbrief gerade
+  //                            irgendwo — als Spalte ODER im Sheet?
+  const gliederungsSheetOffen = !umgebung.istXl && m.tocAuf && hatLeiste; // A2: Feld im Blatt
+  const leisteSteht = zweiSpalten || gliederungsSheetOffen;
 
   // Ä20 · Platzhalter-Beispiel = amtliches Etikett des ERSTEN Eintrags («Art. 1»
   // bzw. «§ 1»), nie aus dem Bestimmungswort gebaut (§5, `./erlassAnsicht`).
@@ -146,7 +172,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const suchFeld = (
     <SuchSprungFeld wert={m.suche} setzeWert={m.setSuche} loeseArtikel={m.loeseArtikel}
       onSprung={m.springeZuArtikel} feldRef={suchFeldRef}
-      platzhalter={suchPlatzhalter(beispielBestimmung)} escLeert={!blattOffen}
+      platzhalter={suchPlatzhalter(beispielBestimmung)} escLeert={!gliederungsSheetOffen}
       // H2 (Kap. 4h): ↑↓ und Enter bedienen dieselbe Fundstellen-Folge wie die
       // ↑↓-Knöpfe im Kopf der Trefferliste — EIN Weg, zwei Bedienarten (§5).
       hatTreffer={m.fundstellen > 0}
@@ -180,7 +206,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // damit der Offen-Zustand keinen Lagewechsel verliert.
   const suchZone = suchZoneAufbau({
     klebt: suchZoneKlebt, istXl: umgebung.istXl, sucheAktiv: m.sucheAktiv,
-    blattOffen, suchFeld, bestimmungsWort,
+    // `blattOffen` ist der PROP-Name von `suchZoneAufbau` (Fläche des
+    // Übersicht-/Blatt-Auftrags) — hier steht die umbenannte Quelle davor.
+    blattOffen: gliederungsSheetOffen, suchFeld, bestimmungsWort,
     liste: <LeserGliederung m={m} bestimmungsWort={bestimmungsWort} />,
     bestimmungen: m.treffer.length, fundstellen: m.fundstellen,
     trefferBlatt, onSheet: () => m.setTocAuf(true),
@@ -213,19 +241,24 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Gliederung eingeklappt, ODER das Beiwerk-Blatt hat ihren Platz. Im zweiten
   // Fall wäre «einblenden» ohne das Schliessen des Blatts eine Zusage ohne
   // Wirkung (der Platz reicht nicht für beide), also tut der Griff beides.
-  const schieneAuf = () => {
-    setzeTocOffen(true);
-    if (bild.schieneHoltPlatz) panel.schliesse();
-  };
+  // P1-1 (18.8.2026): BEIDE Zustandswechsel in EINER Klammer — der Ausgleich
+  // misst dann einmal und rechnet mit der Lage NACH beiden (früher zwei Aufrufe,
+  // also zwei Messungen desselben Vorher-Werts).
+  const schieneAuf = () => mitAusgleich(() => {
+    m.setTocOffen(true);
+    if (bild.schieneHoltPlatz) rohPanel.schliesse();
+  });
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Design-Grundlage Kap. 6, Icon-Flut-Verbot).
+  // Ä90: dieselbe Bauform wie ⚖ und «Ansicht» (`kopfStufen.kopfGriffKlassen`) —
+  // bis 17.8. war dies der einzige NACKTE Griff der Zeile.
   const gliederungKnopf = hatLeiste && !zweiSpalten && !schieneSteht
     ? (
       <button type="button" data-v3-gliederung-auf
         aria-expanded={umgebung.istXl ? m.tocOffen : m.tocAuf}
         onClick={() => { if (umgebung.istXl) setzeTocOffen(true); else m.setTocAuf((v) => !v); }}
-        title="Gliederung" aria-label="Gliederung" className="lc-leiste-griff">
-        <span aria-hidden>☰</span>
+        title="Gliederung" aria-label="Gliederung" className={kopfGriffKlassen(stufe === 'mini')}>
+        <span aria-hidden className={kopfGlypheKlassen(stufe === 'mini')}>☰</span>
       </button>
     )
     : undefined;
@@ -264,12 +297,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               onKlick={panel.umschalten} />
           )
           : undefined}
-        // A2: der Weg zum Panel, der keine Tastatur braucht und keinen Schalter —
-        // steht in JEDEM Pane und auf JEDEM Zuschnitt (`./LeserAnsichtV3`).
-        onPanelOeffnen={() => panel.oeffne('entscheide')}
-        // Ä46/H4-II: das ✕ steht, wo es NICHT das Duplikat des Rücksprungs
-        // «‹ Gesetze» ist — die eine Ableitung samt Messreihe: `./kopfStufen`.
-        zeigeSchliessen={zeigeSchliessKreuz(stufe, !umgebung.imPane)}
+        // A2/Ä92: der Weg zum Panel OHNE Tastatur und ohne Zähler — und genau
+        // dann, wenn kein Zähler dasteht. «Ein Öffner je Breite» (Fahrplan
+        // Kap. 7): derselbe Torwächter `panel.oeffnerSichtbar` entscheidet
+        // BEIDE Öffner, damit sie nie zugleich stehen und nie zugleich fehlen.
+        onPanelOeffnen={panel.oeffnerSichtbar ? undefined : () => panel.oeffne('entscheide')}
         suchZone={suchZone} />
 
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
@@ -278,7 +310,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           §5, kein zweiter Overlay-Mechanismus. Portal-Vertrag und Pane-Rolle:
           `./LeserLeisteSheet` (H3-Auslagerung = B10-Auflage des H2b-Nachzugs,
           §6.6); der Rahmen entscheidet OB, WOHIN und WAS darin steht. */}
-      {blattOffen && (
+      {gliederungsSheetOffen && (
         <LeserLeisteSheet ziel={overlayZiel} paneRolle={paneRolle}
           sheetRef={m.refs.tocDrawerRef} onSchliessen={() => m.setTocAuf(false)}
           pfad={m.siePfad} aktArtikelLabel={m.siePfadArtikel}
@@ -288,83 +320,38 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           titel={m.sucheAktiv ? 'Treffer' : 'Gliederung'} baum={leiste(true)} />
       )}
 
-      {/* ── Die Lese-Zeile: Gliederung/Schiene · Text · Beiwerk-Spur ──────────
-          WELCHE Spuren auf welcher Breite stehen, WIE breit der Rahmen dafür
-          wird und warum das Grid auch eingeklappt stehen bleibt: `./rahmenSpalten`
-          (Befund David 16.8., Ä60 (c) 17./18.8., beide mit Messreihe). */}
-      <div
-        className={bild.spalten
-          ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
-          : ''}
-        style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
-        {schieneSteht && (
-          // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
-          <LeserGliederungSchiene onAuf={schieneAuf} />
-        )}
-        {zweiSpalten && (
-          <aside role="navigation" aria-label="Gliederung" data-v3-aside
-            // Geometrie WÖRTLICH wie die Ist-Spalte, und aus demselben Grund:
-            // `top` ist derselbe Ausdruck wie der Sprung-Offset der Anker, damit
-            // Spalte und Sprung konstruktiv nicht auseinanderlaufen (LM-003).
-            // `flex flex-col` + `maxHeight` ist die tragende Kombination — NICHT
-            // `overflow-hidden` mit `h-full` im Kind: `height:100%` löst gegen
-            // eine Maximalhöhe nicht auf, der Scroller wüchse auf die volle
-            // Inhaltshöhe und der Überschuss würde stumm abgeschnitten
-            // (reproduziert am OR @1440×900).
-            className="sticky flex min-h-0 flex-col self-start"
-            style={{
-              top: 'var(--nt-stick)',
-              maxHeight: umgebung.imPane
-                ? 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)'
-                : 'calc(100vh - var(--nt-stick) - 1.5rem)',
-            }}>
-            <div className="flex items-center justify-end pb-1">
-              <button type="button" data-v3-gliederung-zu onClick={() => setzeTocOffen(false)}
-                aria-expanded={m.tocOffen} title="Gliederung ausblenden"
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur
-                    «ausblenden» — Wort für Wort dasselbe wie «Seitenleiste
-                    ausblenden» der App-Leiste zwei Zentimeter weiter oben, aber
-                    mit anderer Wirkung. Zwei gleich beschriftete Knöpfe, die
-                    Verschiedenes tun, sind eine Falle (§8). Der Knopf sagt
-                    jetzt, WAS er ausblendet. */}
-                <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
-              </button>
-            </div>
-            {leiste(false)}
-          </aside>
-        )}
-
-        {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis
-            H1 über die VOLLE Breite und schob die Seitenleiste bei 1440 px
-            unter die Falz — obwohl sie in V3 die Hauptnavigation ist. */}
-        <div className="min-w-0 space-y-5">
+      {/* Die Lese-Zeile — die drei Spuren nebeneinander (`./LeserLeseZeile`,
+          Auslagerung H4-Nachzug 18.8.2026, §6.6). Der Rahmen entscheidet ihre
+          Gestalt (`bild` aus `./rahmenSpalten`) und füllt ihre Slots; WIE die
+          Spuren stehen, steht dort. */}
+      <LeserLeseZeile bild={bild} vollflaechig={!umgebung.imPane} tocOffen={m.tocOffen}
+        onSchieneAuf={schieneAuf} onGliederungZu={() => setzeTocOffen(false)}
+        leiste={leiste(false)}
+        zelle={<>
           {/* Der geteilte Erlass-Kopf (Kap. 4e) — Prop-Weitergabe in
               `./LeserErlassKopfZone` (H3-Auslagerung, §6.6). */}
           <LeserErlassKopfZone m={m} erlass={erlass} artikelAnzahl={eintraege.length}
             bestimmungsWort={bestimmungsWort} />
-
           {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
-
           {/* Ä76: der `trefferListe`-Prop ist gestrichen — er traf die
               EINGEKLAPPTE Spalte statt des angekündigten Rand-Falls, und der ist
               unerreichbar. Herleitung samt Messreihe steht am Bauteil, das sie
               betrifft (`./LeserLesespalte`, `./LeserTrefferBlatt`). */}
           <LeserLesespalte m={m} />
-        </div>
-
-        {/* H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus
-            füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
-            und liegt ausserhalb des Flusses. */}
-        {panelZone && (
-          <LeserPanelZone form={bild.blattForm} panelId={panelId}
-            paneZiel={overlayZiel} paneRolle={paneRolle}
-            zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
-            normZitat={normZitat(panelArtikel, erlass.kuerzel)}
-            artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token}
-            steckbrief={zweiSpalten || blattOffen ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
-        )}
-      </div>
+        </>}
+        // H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus
+        // füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
+        // und liegt ausserhalb des Flusses.
+        panelZone={panelZone
+          ? (
+            <LeserPanelZone form={bild.blattForm} panelId={panelId}
+              paneZiel={overlayZiel} paneRolle={paneRolle}
+              zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
+              normZitat={normZitat(panelArtikel, erlass.kuerzel)}
+              artikelLabel={panelArtikel} bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token}
+              steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
+          )
+          : null} />
 
       {/* R4 «Weiterlesen» + R8 Tastatur — dieselben BAUSTEINE wie die Ist-Hülle
           (Kap. 4h: KEINE zweite Tastaturebene), direkt aus `parts/` statt über

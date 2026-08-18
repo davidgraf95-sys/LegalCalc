@@ -126,7 +126,28 @@ export interface RahmenBild {
   gliederungSpalte: boolean;
   /** Steht statt ihrer die schmale Schiene? */
   schiene: boolean;
-  /** Muss ein Klick auf die Schiene das Blatt schliessen? (Es hat ihren Platz.) */
+  /**
+   * Muss ein Klick auf die Schiene das Blatt schliessen? (Es hat ihren Platz.)
+   *
+   * ── P1-1 (Bug-Check 18.8.2026) · DIE FRAGE HING AM FALSCHEN ZUSTAND ────────
+   * Bis zum H4-Nachzug lautete die Bedingung `blattSpur && tocOffen &&
+   * !gliederungSpalte` — sie las also, ob der Nutzer die Gliederung GERADE
+   * offen hat. Reproduziert @1280 (StPO, `p1/r2-schiene.cjs`): klappt man die
+   * Gliederung ZUERST ein und öffnet DANN das Blatt, ist `tocOffen` falsch, der
+   * Schienen-Griff schliesst das Blatt also nicht — und weil der Platz für
+   * beide nicht reicht, bleibt die Spalte aus. Gemessen: `[data-v3-aside]`
+   * nach dem ersten Klick **0**, Grid unverändert `36px 780px 352px`; erst der
+   * ZWEITE Klick brachte sie (`288px 752px`). Dazwischen stand `tocOffen`
+   * still auf `true`, ohne dass etwas sichtbar war — der nächste Esc hätte die
+   * Gliederung aufspringen lassen.
+   *
+   * Die Frage ist nicht «hat der Nutzer die Gliederung offen», sondern «steht
+   * die Schiene, WEIL das Blatt ihren Platz hat». Genau das ist
+   * `blattSpur && !vollesLesemass`: unterhalb von 84 rem schliessen sich Spalte
+   * und Blatt aus (Herleitung oben), oberhalb nicht — dort holt der Griff
+   * keinen Platz, er blendet nur ein. Beweis: `leser-v3-rahmenspalten.test.ts`
+   * («ein Klick genügt»), Sichtbeweis `leser-v3-rahmen` (g).
+   */
   schieneHoltPlatz: boolean;
   /** `grid-template-columns` der Lese-Zeile; `undefined` = kein Grid (wie bisher). */
   spalten: string | undefined;
@@ -156,7 +177,9 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
     blattForm: blattSpur ? 'spalte' : ruheForm,
     gliederungSpalte,
     schiene,
-    schieneHoltPlatz: blattSpur && tocOffen && !gliederungSpalte,
+    // P1-1: NICHT `tocOffen` (siehe Feld-Kommentar) — die Schiene holt genau
+    // dann Platz, wenn das Blatt eine Spur hat und beide nicht zusammen passen.
+    schieneHoltPlatz: blattSpur && !vollesLesemass,
     spalten: spaltenLage
       ? `${gliederungSpalte ? `${SPUR_GLIEDERUNG}rem` : `${SPUR_SCHIENE}rem`} minmax(0,1fr)`
         + (blattSpur ? ` ${SPUR_BLATT}rem` : '')

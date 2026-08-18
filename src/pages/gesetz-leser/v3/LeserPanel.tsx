@@ -30,7 +30,7 @@ import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 
 export function LeserPanel({
   panelId, titelId, artikelLabel, bestimmungsWort, reiter, setReiter, inhalt, onSchliessen,
-  fuss, panelRef, kopfExtra,
+  fuss, panelRef, kopfExtra, steckbrief,
 }: {
   panelId: string;
   /** Id der Überschrift — der Aufrufer setzt sie als `aria-labelledby` an die
@@ -52,6 +52,25 @@ export function LeserPanel({
   panelRef: React.RefObject<HTMLDivElement | null>;
   /** Griffleiste des Blatt-Modus (Wisch-Griff) — im Spalten-Modus ungesetzt. */
   kopfExtra?: ReactNode;
+  /**
+   * Ä89 (H4-Nachzug 18.8.2026) · Der Erlass-STECKBRIEF als Zeile des Panels.
+   *
+   * Er stand bis hierher INNERHALB der aktiven Tafel — der Aufrufer wickelte ihn
+   * um jeden Reiter-Inhalt (`LeserPanelZone.mitSteckbrief`) und schrieb den
+   * Abstrich selbst dazu: «die saubere Stelle wäre zwischen Reiter-Leiste und
+   * Scroller — das ist `LeserPanel.tsx` und bleibt als Rückgabe-Punkt offen».
+   * Gemessen 18.8.2026 @1440 (StPO, Gliederung eingeklappt, Panel offen): die
+   * Klappe lag bei y = 245, die Reiter-Leiste bei y = 208 — also UNTER den
+   * Reitern, obwohl sie zu keinem gehört, und `[role=tabpanel]` enthielt sie
+   * (`imTabpanel: true`). Das ist der Rückgabe-Punkt, hier eingelöst: der
+   * Steckbrief steht jetzt zwischen Kopf und Reiter-Leiste — über den Reitern,
+   * unter dem Paneltitel, wie es der Ästhetik-Befund Ä89 verlangt.
+   *
+   * Er bleibt damit genau EINMAL im DOM, unabhängig vom Reiterwechsel; die
+   * Ä28-Zusage «die Warnung steht genau einmal» hängt nicht mehr daran, dass
+   * nur die aktive Tafel gemountet ist.
+   */
+  steckbrief?: ReactNode;
 }) {
   const leisteRef = useRef<HTMLDivElement>(null);
 
@@ -97,9 +116,27 @@ export function LeserPanel({
         </button>
       </div>
 
-      {/* ── Reiter-Leiste ─────────────────────────────────────────────────────── */}
+      {/* ── Ä89 · Steckbrief-Zeile ÜBER den Reitern ──────────────────────────
+          Sie gehört dem PANEL, nicht einer seiner Tafeln: wer den Reiter
+          wechselt, soll sie nicht verlieren — und der Screenreader soll sie
+          nicht als Teil von «Entscheide» vorgelesen bekommen. Ohne Inhalt
+          rendert hier nichts: kein Rahmen, keine Höhe, kein CLS (dieselbe
+          Regel wie beim Fuss unten). */}
+      {steckbrief && (
+        <div data-v3-panel-steckbrief className="shrink-0 border-b border-line px-2.5 py-1">{steckbrief}</div>
+      )}
+
+      {/* ── Reiter-Leiste ─────────────────────────────────────────────────────
+          `overflow-x-auto` mit `scrollbar-width:none` (Agent-U-Wunsch, H4-II):
+          gemessen 18.8.2026 @1440 füllen die drei Reiter 269 px von 334 px
+          Platz — ein VIERTER (Kap. 14 «Zitat-Export») passt nicht und wurde
+          bisher am Rand abgeschnitten (`scrollWidth` 369 gegen `clientWidth`
+          334, gebaut und verworfen). Eine Leiste, die ihr viertes Fach
+          verschluckt, ist die Falle; eine, die waagrecht scrollt, ist die
+          kleinste ehrliche Antwort. `shrink-0` an den Reitern, sonst quetscht
+          Flexbox sie in die vorhandene Breite statt zu scrollen. */}
       <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
-        className="flex shrink-0 gap-1 border-b border-line px-1.5 pt-1.5">
+        className="flex shrink-0 gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {
           const aktiv = r.id === reiter;
           return (
@@ -108,7 +145,7 @@ export function LeserPanel({
               aria-selected={aktiv} aria-controls={`${panelId}-tafel-${r.id}`}
               tabIndex={aktiv ? 0 : -1} title={reiterTitel(r.id, bestimmungsWort)}
               onClick={() => setReiter(r.id)}
-              className={`-mb-px rounded-t-md border-b-2 px-2 py-1 text-body-s transition-colors ${
+              className={`-mb-px shrink-0 whitespace-nowrap rounded-t-md border-b-2 px-2 py-1 text-body-s transition-colors ${
                 aktiv ? 'border-brass-500 font-medium text-ink-900' : 'border-transparent text-ink-500 hover:text-brass-700'
               }`}>
               {r.label}

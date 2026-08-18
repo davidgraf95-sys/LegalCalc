@@ -210,6 +210,17 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     // Kein Zurück zur Vor-Such-Position (wir springen ja gezielt zum Artikel).
     scrollVorSucheRef.current = null;
     setSuche('');
+    // ── B1 (Klick-Test 18.8.2026) · DAS GLIEDERUNGS-BLATT GEHT MIT ZU ────────
+    // Gemessen @390 an der VMWG: ein Tap auf eine SEKTION im Blatt schloss es
+    // (`inhalt-sprung.tsx`, dort `setTocAuf(false)` im `flushSync`), ein Tap auf
+    // einen ARTIKEL nicht — dieser Sprung läuft hier durch, und hier fehlte die
+    // Zeile. Der Leser stand danach auf dem Zielartikel und sah davon nichts:
+    // das Blatt deckte ihn zu. Zwei Einträge derselben Liste, zwei verschiedene
+    // Ausgänge — genau die Sorte Unterschied, die niemand lernen kann (§8).
+    // Ausserhalb der Blatt-Lage (Desktop-Spalte) ist der Aufruf wirkungslos:
+    // `tocAuf` ist dort ohnehin `false`, es gibt nichts zu schliessen. V1 und V3
+    // teilen diesen Pfad und bekommen darum dasselbe Verhalten (§5).
+    setTocAuf(false);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
       setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
@@ -270,7 +281,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // vor dem Sprung stehen (Herleitung: inhalt-hooks.tsx bei `spyNachlauf`).
       window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
     }, 110));
-    // Bewusst draussen: setSuche/setOffen/setAktivIds/setTocBaum (useState-Setter,
+    // Bewusst draussen: setSuche/setOffen/setAktivIds/setTocBaum/setTocAuf (useState-Setter,
     // von React als stabil garantiert) und scrollVorSucheRef/manuellZuRef/
     // tocBaumTimer/jumpLockRef (useRef-Objekte, über die Lebenszeit identisch).
     // Seit dem T14-Split kommen sie aus ./inhalt-zustand herein, wo die Regel

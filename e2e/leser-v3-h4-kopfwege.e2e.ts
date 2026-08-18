@@ -22,7 +22,8 @@
 //  · (c) @1440 eingeklappt: «☰ für ‹Gliederung öffnen›: 2, erwartet 1».
 // Wieder rot zu bekommen ist jeder Fall an genau einer Stelle:
 //  · (a) in `v3/kopfStufen.ts` `panel` auf `mini` wieder auf «weg» setzen,
-//  · (b) in `v3/kopfStufen.ts` `zeigeSchliessKreuz` auf `true` festnageln,
+//  · (b) in `v3/LeserKopf.tsx` das ✕ wieder einsetzen (H4-Nachzug 18.8.2026:
+//        `zeigeSchliessKreuz` ist gestrichen, siehe (d) unten),
 //  · (c) in `v3/LeserRahmenV3.tsx` den `schieneSteht`-Term aus `gliederungKnopf`
 //        entfernen.
 import { test, expect, type Page } from '@playwright/test'
@@ -121,7 +122,11 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
 
     await page.locator('[data-v3-ansicht]').click()
-    await page.getByRole('switch', { name: 'Rechtsprechung im Text' }).click()
+    // B2 (H4-Nachzug 18.8.2026): der Schalter heisst nach seiner WIRKUNG —
+    // «Rechtsprechung im Text» war eine Zusage, die V3 nicht einlöst (0
+    // Bezugs-Zeilen im Lesetext, gemessen). Wortlaut-Herleitung in
+    // `v3/LeserAnsichtV3.tsx`.
+    await page.getByRole('switch', { name: 'Rechtsprechung anzeigen' }).click()
     await page.keyboard.press('Escape')
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
 
@@ -181,6 +186,137 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     await page.locator('[data-v3-gliederung-schiene]').click()
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 10_000 })
     expect(fehler, fehler.join(' | ')).toEqual([])
+  })
+
+  // ══ H4-NACHZUG (18.8.2026) · Ä87 · Ä91 · Ä90 · Ä92 ═══════════════════════
+  //
+  // Vier Befunde derselben Zeile, alle am gebauten H4-Stand gemessen
+  // (`scratchpad/a-mess.cjs`, StPO Art. 429):
+  //   Ä87  @1440 mit offenem Blatt ZWEI ✕, 47 px übereinander (Kopf y = 80,
+  //        Blatt y = 127).
+  //   Ä91  @720 FÜNF Elemente in der Zeile (Ort · ⚖ · ☰ · Ansicht · ✕) gegen
+  //        einen Deckel von vier; und der Ansicht-Öffner trug drei Gesichter
+  //        («···» · «◧▾» · «◧ Ansicht ▾»), weil das Wort an einem `lg:`-Präfix
+  //        hing, also am Viewport statt am gemessenen Zuschnitt (Kap. 10).
+  //   Ä90  @390 drei Bauformen (⚖ Chip 24 px · ☰ nackt 24 px · ··· Pille 28 px).
+  //   Ä92  Chip UND Menü-Eintrag zugleich: zwei Öffner für eine Fläche.
+  //
+  // WIEDER ROT ZU BEKOMMEN — je Fall an genau einer Stelle:
+  //   (d) in `v3/LeserKopf.tsx` das ✕ wieder einsetzen;
+  //   (e) in `v3/LeserAnsichtV3.tsx` das Wort «Ansicht» wieder mit
+  //       `className="hidden lg:inline"` versehen;
+  //   (f) in `v3/kopfStufen.ts` `kopfGriffKlassen` auf `lc-leiste-griff`
+  //       zurücksetzen (dann fehlt dem ☰ der Chip-Umriss und das 32-px-Ziel);
+  //   (g) in `v3/LeserRahmenV3.tsx` `onPanelOeffnen` wieder unbedingt setzen.
+  test('(d) Ä87 · @1440 mit offenem Blatt steht genau EIN ✕ — das des Blatts', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+    await warteLeser(page)
+    await page.waitForTimeout(400)
+    // Ruhezustand: gar kein ✕ — der Rücksprung steht als Wort in der Ort-Zone.
+    await expect(page.locator('[data-v3-kopf-schliessen]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
+      .getByRole('link', { name: 'Gesetze' })).toHaveAttribute('href', '/gesetze')
+
+    await page.locator('[data-v3-panel-zaehler]').click()
+    await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
+    // Und mit offenem Blatt: genau eines, und zwar das des Blatts.
+    const kreuze = await page.evaluate(() => [...document.querySelectorAll('button')]
+      .filter((b) => (b.textContent ?? '').trim() === '✕'
+        && b.getBoundingClientRect().width > 0)
+      .map((b) => ({ name: b.getAttribute('aria-label') ?? '?', y: Math.round(b.getBoundingClientRect().y) })))
+    expect(kreuze.length, `✕ @1440 mit offenem Blatt: ${JSON.stringify(kreuze)}`).toBe(1)
+    expect(kreuze[0].name).toMatch(/Rechtsprechung und Kontext schliessen/)
+    expect(fehler, fehler.join(' | ')).toEqual([])
+  })
+
+  test('(e) Ä91 · der Ansicht-Öffner hat ZWEI Gesichter, nicht drei — und @720 hält der Deckel', async ({ page }) => {
+    // Ein Gesicht je Zuschnitt: «···» auf `mini`, «◧ Ansicht ▾» sonst. Die
+    // frühere dritte Gestalt «◧▾» trat genau zwischen 640 und 1023 px auf; die
+    // Breiten unten liegen darum beidseits dieser Lücke.
+    const gesichter = new Map<number, string>()
+    for (const [w, h] of [[390, 844], [720, 900], [900, 900], [1024, 800], [1440, 900]] as const) {
+      await page.setViewportSize({ width: w, height: h })
+      await page.goto('/gesetze/bund/STPO?leser=v3')
+      await warteLeser(page)
+      await page.waitForTimeout(300)
+      const m = await page.evaluate(() => {
+        const zeile = document.querySelector('[data-v3-kopf]')!.firstElementChild!
+        const griffe = zeile.lastElementChild!
+        const oeffner = document.querySelector('[data-v3-ansicht]')!
+        return {
+          gesicht: (oeffner.textContent ?? '').replace(/\s+/g, ''),
+          elemente: 1 /* Ort-Zone */ + griffe.children.length,
+          ueberlauf: zeile.scrollWidth - zeile.clientWidth,
+        }
+      })
+      gesichter.set(w, m.gesicht)
+      expect(m.elemente, `Kopfzeile @${w} trägt ${m.elemente} Elemente`).toBeLessThanOrEqual(4)
+      expect(m.ueberlauf, `Kopfzeile @${w} läuft über (${m.ueberlauf} px)`).toBeLessThanOrEqual(0)
+    }
+    const verschiedene = new Set(gesichter.values())
+    expect(verschiedene.size,
+      `Ansicht-Öffner zeigt ${verschiedene.size} Gesichter: ${JSON.stringify([...gesichter])}`).toBe(2)
+    expect(gesichter.get(390)).toBe('···')
+    // Und das Wort steht ÜBERALL sonst — auch unter 1024 px, wo das `lg:`-Präfix
+    // es verschluckte (das ist der Kern von Ä91).
+    for (const w of [720, 900, 1024, 1440]) {
+      expect(gesichter.get(w), `@${w}: der Öffner zeigt «${gesichter.get(w)}»`).toContain('Ansicht')
+    }
+  })
+
+  test('(f) Ä90 · @390 tragen alle Kopf-Griffe EINE Bauform und ein 32-px-Ziel', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+    await warteLeser(page)
+    await page.waitForTimeout(400)
+    const griffe = await page.evaluate(() => [...document.querySelectorAll(
+      '[data-v3-kopf-griffe] > *, [data-v3-kopf-griffe] > div > button')]
+      .filter((e) => e.tagName === 'BUTTON')
+      .map((e) => {
+        const r = e.getBoundingClientRect()
+        const cs = getComputedStyle(e)
+        return { w: Math.round(r.width), h: Math.round(r.height), bg: cs.backgroundColor, radius: cs.borderTopLeftRadius }
+      }))
+    expect(griffe.length, 'auf `mini` stehen drei Griffe: ⚖ · ☰ · ···').toBe(3)
+    // EINE Bauform: gleiche Fläche, gleiche Rundung, gleiche Höhe.
+    expect(new Set(griffe.map((g) => g.bg)).size, `Flächen: ${griffe.map((g) => g.bg).join(' | ')}`).toBe(1)
+    expect(new Set(griffe.map((g) => g.radius)).size).toBe(1)
+    expect(new Set(griffe.map((g) => g.h)).size).toBe(1)
+    // Und ein Ziel, das ein Finger trifft (32 px; WCAG 2.5.8 verlangt 24).
+    for (const g of griffe) {
+      expect(g.h, `Griff ${g.w}×${g.h}`).toBeGreaterThanOrEqual(32)
+      expect(g.w, `Griff ${g.w}×${g.h}`).toBeGreaterThanOrEqual(32)
+    }
+  })
+
+  test('(g) Ä92 · ein Öffner je Breite: Chip ODER Menü-Eintrag, nie beide', async ({ page }) => {
+    for (const [w, h] of [[390, 844], [1440, 900]] as const) {
+      await page.setViewportSize({ width: w, height: h })
+      await page.goto('/gesetze/bund/STPO?leser=v3')
+      await warteLeser(page)
+      await page.waitForTimeout(300)
+      // Mit Zähler: der Menü-Eintrag fehlt — auch bei AUFGEZOGENEM Menü, denn
+      // genau dort standen bis 18.8.2026 beide (gemessen: chip 1, Eintrag 1).
+      await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
+      await page.locator('[data-v3-ansicht]').click()
+      await expect(page.locator('[data-v3-ansicht-panel]')).toBeVisible()
+      await expect(page.locator('[data-v3-ansicht-panel-auf]'),
+        `@${w}: Menü-Eintrag steht neben dem Chip`).toHaveCount(0)
+      // Ohne Zähler (F8-Regel): der Eintrag tritt an seine Stelle — der Zugang
+      // bleibt, die Doppelung verschwindet.
+      await page.getByRole('switch', { name: 'Rechtsprechung anzeigen' }).click()
+      await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(0)
+      await expect(page.locator('[data-v3-ansicht-panel-auf]')).toHaveCount(1)
+      await page.locator('[data-v3-ansicht-panel-auf]').click()
+      await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
+      // Zurückstellen — der Store ist geteilt und überlebt die Navigation.
+      await page.locator('[data-v3-panel-zu]').click()
+      await page.locator('[data-v3-ansicht]').click()
+      await page.getByRole('switch', { name: 'Rechtsprechung anzeigen' }).click()
+      await page.keyboard.press('Escape')
+    }
   })
 
   test('(c2) Ä79 · @390 gibt es keine Schiene — dort bleibt der Kopf-☰', async ({ page }) => {

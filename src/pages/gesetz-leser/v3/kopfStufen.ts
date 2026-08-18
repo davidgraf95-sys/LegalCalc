@@ -136,9 +136,9 @@ export interface KopfElemente {
    * `leser-v3-kopfstufen.test.ts` über jede Breite — eine Aussage über den
    * Rückgabewert, nicht über abwesenden Code (§6.7).
    *
-   * DAS ELEMENT-BUDGET HÄLT TROTZDEM: auf `mini` weicht dafür das ✕, weil es
-   * dort das Duplikat des sichtbaren Rücksprungs «‹ Gesetze» ist — siehe
-   * `zeigeSchliessKreuz` unten.
+   * DAS ELEMENT-BUDGET HÄLT TROTZDEM: das ✕ weicht, weil es das Duplikat des
+   * sichtbaren Rücksprungs «‹ Gesetze» ist — seit dem H4-Nachzug auf JEDER
+   * Breite (Ä87/Ä91, Herleitung und Messreihe im Block unter dieser Funktion).
    */
   panel: 'voll' | 'kompakt';
 }
@@ -154,48 +154,112 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
   };
 }
 
+// ═══ Ä87/Ä91 (H4-Nachzug 18.8.2026) · DAS KOPF-✕ IST GESTRICHEN ══════════════
+//
+// Hier stand `zeigeSchliessKreuz(stufe, vollflaechig)` = «✕ überall ausser im
+// Pane und auf `mini`». Es ist ersatzlos weg, und zwar gemessen:
+//
+//   Lage                          Befund 18.8.2026 (`scratchpad/a-mess.cjs`)
+//   ────────────────────────────────────────────────────────────────────────
+//   D @1440, Blatt offen          ZWEI sichtbare ✕, 47 px übereinander
+//                                 (Kopf y = 80 «Gesetz schliessen», Blatt
+//                                 y = 127 «Rechtsprechung und Kontext
+//                                 schliessen») — Ä87
+//   S @720, Ruhezustand           FÜNF Elemente in der Zeile: Ort · ⚖ · ☰ ·
+//                                 «Ansicht» · ✕; der Deckel der Design-
+//                                 Grundlage Kap. 6 liegt bei vier — Ä91
+//   Pane, jede Stufe              schon vorher 0 (Ä46)
+//   mini                          schon vorher 0 (Element-Budget)
+//
+// DIE REGEL, DIE AN SEINE STELLE TRITT (Auflage-Anpassung im Fahrplan, datiert
+// 18.8.2026): **höchstens EIN ✕ je Kopfzeile, und der Rücksprung ist immer
+// beschriftet.** Das Ziel `/gesetze` steht auf JEDER Breite als Wort in der
+// Ort-Zone — als volle Kette «Gesetze › Bund ›» oder als Rücksprung
+// «‹ Gesetze», beides aus `erlassAnsicht.brotkrume` mit `to: '/gesetze'`. Ein
+// Wort ist die bessere Auskunft als ein Zeichen (§8), und ein zweites Zeichen
+// mit demselben Ziel ist der §5-Befund, den Ä56 an der anderen Ecke der Zeile
+// schon erledigt hat.
+//
+// WARUM GESTRICHEN UND NICHT AUF EINE BEDINGUNG GESTELLT: die Bedingung wäre
+// «zeige das ✕, wenn KEIN beschrifteter Rücksprung dasteht» — und die erste
+// Krumen-Stufe trägt ihr `to` unbedingt. Ein Prädikat, das nicht `true` werden
+// kann, ist ein Tor, das nicht scheitern kann (§6.7/§17: streichen statt
+// bewachen). Die Zusage, auf der die Streichung ruht, wird dort geprüft, wo sie
+// entsteht: `erlassAnsicht.hatRuecksprung` samt Unit-Beweis über Bund, Kanton
+// und Staatsvertrag — DIESE Funktion kann rot werden, indem man `to` aus der
+// ersten Krumen-Stufe nimmt.
+//
+// §7-ABWEICHUNG, weiterhin offengelegt: der Auftrag zu Ä46 sagte «Einzelansicht
+// bleibt bei 1 ✕». Sie ist jetzt auf jeder Breite 0. Die Auflage ist im
+// Fahrplan datiert angepasst (David-Prüfer-Befund Ä87, nicht Geschmack).
+
+// ═══ Ä90 (H4-Nachzug 18.8.2026) · EINE BAUFORM FÜR ALLE KOPF-GRIFFE ══════════
+//
+// BEFUND, gemessen @390 an StPO Art. 429 (`scratchpad/a-mess.cjs`, 18.8.2026):
+// die drei Griffe der Kopfzeile trugen DREI Bauformen —
+//
+//   Griff   Klassen                             Fläche    Grund
+//   ────────────────────────────────────────────────────────────────────────
+//   ⚖       lc-leiste-griff + -fest             24×24 px  Chip auf `--well`
+//   ☰       lc-leiste-griff                     24×24 px  nackt, transparent
+//   ···     lc-leiste-griff + -fest + sm:-Zweig 28×24 px  Pille, breiter
+//
+// Drei Zeichen nebeneinander, drei verschiedene Umrisse, gleiche Wichtigkeit:
+// die Zeile las sich als Sammlung statt als Leiste (Design-Grundlage Kap. 6).
+// Dazu 24 px Zielfläche — das ist die WCAG-2.5.8-Untergrenze, auf einem Gerät,
+// auf dem der Finger das einzige Werkzeug ist, also der schlechteste noch
+// zulässige Wert.
+//
+// DARUM ZWEI KONSTANTEN STATT DREI KLASSENLISTEN IM MARKUP: die Bauform ist eine
+// Aussage über die ganze Zeile und darf nicht an drei Stellen gepflegt werden
+// (§5 — die drei Griffe entstehen in drei Dateien: `./LeserPanelOeffner`,
+// `./LeserRahmenV3`, `./LeserAnsichtV3`). Sie stehen HIER, weil hier auch die
+// Stufe entsteht, die sie auswählt.
+//
+// EHRLICHER REST, unverändert benannt: die zweite Hälfte des Deckels von Kap. 6
+// («≤ 2 reine Icons») bleibt @390 mit ⚖ · ☰ · ··· gerissen. Neu ist, dass die
+// drei WIE EINE FAMILIE aussehen und 32 px Ziel tragen — der Deckel selbst ist
+// als «drei, aber eine Bauform» im Fahrplan datiert nachgeführt; der Rest gehört
+// zu Ä33/Ä34 (Griff-Zahl), nicht hierher.
+
+/** Die EINE Bauform eines Kopf-Griffs (⚖ · ☰ · «Ansicht»). Chip auf `--well`,
+ *  damit alle Griffe derselben Zeile denselben Umriss haben. */
+export const KOPF_GRIFF = 'lc-leiste-griff lc-leiste-griff-fest';
+
 /**
- * Trägt die Kopfzeile ihr eigenes ✕ («Gesetz schliessen — zur Übersicht»)?
+ * Klassen des Kopf-Griffs.
  *
- * ── DER BEFUND, GEMESSEN 17.8.2026 ──────────────────────────────────────────
- * Das ✕ navigiert auf `/gesetze`. Genau dorthin führt auch die erste Stufe der
- * Krume, die seit dem V2-Nachzug auf JEDER Breite in derselben Kopfzeile steht
- * — als volle Kette «Gesetze › Bund ›» oder als Rücksprung «‹ Gesetze»
- * (`erlassAnsicht.brotkrume`, `to: '/gesetze'`). Zwei Bedienelemente, ein Ziel,
- * eine Zeile. Das ist derselbe §5-Befund, der Ä56 erledigt hat, nur an der
- * anderen Ecke der Zeile.
+ * Auf dem Handy-Zuschnitt wächst das Ziel von 24 auf **32 px**
+ * (`min-h-8 min-w-8`): die Kopfzeile ist dort 48 px hoch, das Ziel passt also
+ * ohne Umbruch, und in der Ort-Zone bleibt Platz (Zeile 350 px, Griff-Zone
+ * vorher 84 px). Sonst bleibt `--tap-ziel`: dort bedient eine Maus, und ein
+ * grösserer Chip nähme dem Ort Platz, den er braucht.
  *
- * Zwei Lagen machen ihn zum echten Mangel, und nur dort weicht das ✕:
- *
- *   IM PANE (Ä46). Gemessen im Split @1600: je Pane ZWEI sichtbare ✕, 44 px
- *   übereinander (Griffleiste y = 69 «Hauptfenster schliessen» / «‹BGFA›
- *   schliessen», V3-Kopf y = 113 «Gesetz schliessen»), unterscheidbar allein
- *   am Accessible Name. Eine Inhaltsseite kann ihr eigenes Fenster nicht
- *   schliessen — das ✕ gehört der Fenster-Steuerung; die INHALTS-Handlung
- *   («zurück zur Übersicht») bleibt, aber sie zeigt sich als benanntes Wort in
- *   der Ort-Zone statt als zweites gleiches Zeichen (§8).
- *
- *   AUF `mini`. Dort ist die Zeile 350 px breit und die Design-Grundlage
- *   Kap. 6 deckelt sie auf vier Elemente. Mit dem Zähler-Chip (oben) wären es
- *   fünf. Von den fünf ist das ✕ das einzige, dessen Handlung nebenan schon
- *   sichtbar steht — es weicht, und die Zeile bleibt bei vier: Ort · ⚖ · ☰ ·
- *   ··· (gemessen 18.8.2026 an StPO und BS-640.100). Die zweite Hälfte des
- *   Deckels («≤ 2 reine Icons») ist damit NICHT eingelöst und war es vorher
- *   auch nicht — siehe den ehrlichen Rest am Feld `panel` oben.
- *
- * `vollflaechig` und nicht `imPane`: dieselbe Begründung wie bei `panelForm`
- * — die Fundament-Sonde lässt `imPane` nur in den Wurzel-Dateien zu, und diese
- * Funktion verzweigt auf eine EIGENSCHAFT DER FLÄCHE, die ihr der Rahmen
- * mitteilt.
- *
- * §7-ABWEICHUNG, offengelegt: der Auftrag zu Ä46 sagt «Einzelansicht bleibt bei
- * 1». Auf `voll`/`kompakt` ist sie das; auf `mini` sinkt sie auf 0, weil das
- * Element-Budget sonst nicht zu halten ist. Verloren geht dabei nichts — das
- * Ziel `/gesetze` steht dort als beschrifteter Rücksprung, und ein Wort ist
- * eine bessere Auskunft als ein Zeichen.
+ * `mini` als BOOLEAN und nicht als `KopfStufe`: die drei Aufrufer haben die
+ * Antwort bereits in der Hand (`form === 'kompakt'`, `kompakt`,
+ * `stufe === 'mini'`) und sollen die Stufe nicht neu kennen müssen (§3).
  */
-export function zeigeSchliessKreuz(stufe: KopfStufe, vollflaechig: boolean): boolean {
-  return vollflaechig && stufe !== 'mini';
+export function kopfGriffKlassen(mini: boolean): string {
+  return mini ? `${KOPF_GRIFF} min-h-8 min-w-8` : KOPF_GRIFF;
+}
+
+/**
+ * Grösse der ICON-Glyphe im Griff — auf dem Handy-Zuschnitt 20 px, sonst die
+ * Schriftgrösse des Griffs.
+ *
+ * `text-h3` ist die 20-px-Stufe der Repo-Skala (`tailwind.config.js`,
+ * 1.25 rem) und NICHT die gleich grosse Tailwind-Default-Klasse: die sind vom
+ * DESIGN-REGLEMENT (B2/F7, §13) ausgeschlossen und werden von
+ * `check:design-tokens` gemeldet — rot gesehen 18.8.2026. Der Name der Stufe
+ * meint hier keine Überschrift, sondern schlicht ihre Grösse; `leading-none`
+ * nimmt die mitgelieferte Zeilenhöhe wieder heraus, weil eine Glyphe in einem
+ * 32-px-Ziel keine braucht.
+ *
+ * Getrennt von den Griff-Klassen, weil sonst auch die Zahl im Zähler-Chip
+ * mitwüchse — sie ist Text, keine Glyphe.
+ */
+export function kopfGlypheKlassen(mini: boolean): string {
+  return mini ? 'text-h3 leading-none' : 'leading-none';
 }
 
 /**

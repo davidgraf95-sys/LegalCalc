@@ -39,7 +39,8 @@ import { test, expect, type Page } from '@playwright/test';
 // Drei Nachführungen, alle gemessen, keine davon eine Lockerung (§6.3):
 //
 // (1) Die Bestückung ist in V3 DREI Schalter, nicht zwei: dazu kommt
-//     «Rechtsprechung im Text» (F8-Entscheid David 16.8.2026,
+//     «Rechtsprechung anzeigen» (F8-Entscheid David 16.8.2026; seit dem
+//     H4-Nachzug 18.8.2026 nach seiner Wirkung benannt, B2,
 //     `v3/LeserAnsichtV3.tsx`). Statt einer blossen Zahl nennt der Fall jetzt
 //     die Schalter beim NAMEN und prüft die Zahl zusätzlich — eine Zahl allein
 //     wäre auch dann grün, wenn ein Schalter gegen einen anderen getauscht
@@ -73,7 +74,7 @@ async function ansichtOeffnen(page: Page): Promise<void> {
   await expect(page.locator('[aria-label="Darstellungsoptionen"]').first()).toBeVisible();
 }
 
-test('Options-Leiste: drei role=switch (Fussnoten/Änderungsvermerke/Rechtsprechung im Text) — «Entscheide» via Panel, «Linien» und «Verweise» entfallen', async ({ page }) => {
+test('Options-Leiste: drei role=switch (Fussnoten/Änderungsvermerke/Rechtsprechung anzeigen) — «Entscheide» via Panel, «Linien» und «Verweise» entfallen', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
@@ -86,7 +87,14 @@ test('Options-Leiste: drei role=switch (Fussnoten/Änderungsvermerke/Rechtsprech
   // tritt der zweiwertige «Änderungsvermerke». Bleiben zwei Schalter.
   // H4: die drei beim NAMEN, die Zahl als Deckel dahinter — so fällt auch ein
   // Tausch auf, nicht nur ein Zuwachs.
-  for (const name of ['Fussnoten', 'Änderungsvermerke', 'Rechtsprechung im Text']) {
+  // B2 (H4-Nachzug 18.8.2026), §6.3-DEKLARATION — fachliche Änderung, nicht
+  // Anpassung an den Bau: der dritte Schalter hiess «Rechtsprechung im Text» und
+  // versprach damit eine Wirkung auf den LESETEXT. Gemessen sind es in V3 **0**
+  // Bezugs-/Leitfall-Zeilen vor UND nach dem Umlegen — was wirklich wechselt,
+  // ist der Zugang in der Kopfzeile (Zähler 1 → 0). Der Name folgt jetzt der
+  // Wirkung; die geprüfte Aussage («genau diese drei, keine mehr, keine
+  // weniger») ist unverändert. Herleitung: `v3/LeserAnsichtV3.tsx`.
+  for (const name of ['Fussnoten', 'Änderungsvermerke', 'Rechtsprechung anzeigen']) {
     await expect(gruppe.getByRole('switch', { name })).toHaveAttribute('aria-checked', 'true');
   }
   await expect(gruppe.getByRole('switch')).toHaveCount(3);

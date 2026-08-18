@@ -1,5 +1,5 @@
 import { oeffnerLabel, oeffnerLabelKompakt, oeffnerName, zaehlerAttribut } from './panelModell';
-import type { KopfElemente } from './kopfStufen';
+import { kopfGlypheKlassen, kopfGriffKlassen, type KopfElemente } from './kopfStufen';
 
 // ─── Der Öffner des Panels — EINER je Zuschnitt (H3, F8; Nachzug Ä53/Ä56) ─────
 //
@@ -111,9 +111,11 @@ export function PanelZaehler({ anzahl, artikelLabel, offen, panelId, form, onKli
       data-v3-panel-oeffner
       data-v3-panel-anzahl={zaehlerAttribut(anzahl)}
       data-v3-panel-zaehler-form={form}
-      className={`lc-leiste-griff lc-leiste-griff-fest ${kompakt ? 'gap-0.5 px-1' : 'gap-1 px-1.5'}`}
+      // Ä90: die EINE Bauform der Kopf-Griffe — Umriss und Zielgrösse kommen
+      // aus `kopfStufen`, nicht aus einer Klassenliste je Griff (§5).
+      className={`${kopfGriffKlassen(kompakt)} ${kompakt ? 'gap-0.5 px-1' : 'gap-1 px-1.5'}`}
     >
-      <span aria-hidden>⚖</span>
+      <span aria-hidden className={kopfGlypheKlassen(kompakt)}>⚖</span>
       {/* `tabular-nums` + `whitespace-nowrap`: die Zahl wechselt mit der
           Leseposition (Scroll-Spy). Proportionale Ziffern liessen den Knopf bei
           jedem Artikelwechsel um Bruchteile atmen und schöben die Nachbarn —

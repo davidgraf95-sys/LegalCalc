@@ -160,7 +160,10 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // ── DIE HARTE ZUSAGE: KEIN BEDIENELEMENT DES KOPFS LIEGT UNTER DEM BLATT ──
     // Das ist der Befund Ä52 wörtlich («deckt den V3-Kopf samt Öffner,
     // ‹Ansicht ▾›, ✕»), und er ist ohne Toleranz messbar.
-    for (const griff of ['[data-v3-panel-zaehler]', '[data-v3-ansicht]', '[data-v3-kopf-schliessen]']) {
+    // Ä87/Ä91 (H4-Nachzug 18.8.2026): `[data-v3-kopf-schliessen]` stand hier als
+    // dritter Griff — das Kopf-✕ ist gestrichen (Herleitung `v3/kopfStufen.ts`),
+    // der ☰ tritt an seine Stelle, sobald die Gliederung nicht als Spalte steht.
+    for (const griff of ['[data-v3-panel-zaehler]', '[data-v3-ansicht]']) {
       const g = (await page.locator(griff).boundingBox())!
       expect(box.y, `${griff} liegt unter dem Blatt (Griff-Unterkante ${g.y + g.height})`)
         .toBeGreaterThanOrEqual(g.y + g.height)

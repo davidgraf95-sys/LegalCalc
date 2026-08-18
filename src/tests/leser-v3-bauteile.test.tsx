@@ -65,13 +65,12 @@ function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: K
       {/* D1: der Kopf reicht `hatAenderungsvermerke` nur durch — hier `true`, damit
           die Fälle unten unverändert den vollen Schalter-Satz sehen; die Bedingung
           selbst prüft `e2e/leser-v3-umschalten` (a3) am gerenderten Erlass. */}
-      {/* Ä46/H4-II: `zeigeSchliessen` kommt vom Rahmen (Herleitung in
-          `v3/kopfStufen.zeigeSchliessKreuz`). Vorbelegt mit `true` = die
-          vollflächige Einzelansicht, damit die Fälle unten unverändert den
-          bisherigen Kopf sehen; die REGEL selbst prüft
-          `leser-v3-kopfstufen.test.ts` an der reinen Funktion. */}
+      {/* Ä87/Ä91 (H4-Nachzug 18.8.2026): die Prop `zeigeSchliessen` ist weg —
+          die Kopfzeile trägt auf keiner Breite mehr ein ✕, ihr Ziel steht als
+          beschrifteter Rücksprung in der Ort-Zone (Herleitung in
+          `v3/kopfStufen.ts`, Zusage geprüft in `erlassAnsicht.hatRuecksprung`). */}
       <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3}
-        hatAenderungsvermerke zeigeSchliessen {...props} />
+        hatAenderungsvermerke {...props} />
     </MemoryRouter>,
   );
 }
