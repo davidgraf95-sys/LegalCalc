@@ -41,6 +41,34 @@ import { useLayoutEffect, useRef } from 'react';
 // des Chromes die Leseposition nicht kosten darf, ist eine Zusage über die
 // Geometrie und gehört neben ihre Messung — dasselbe Argument, mit dem
 // `./leserGeometrie` aus dem Rahmen herausgelöst wurde.
+//
+// ═══ Ä88 (H4-Nachzug 18.8.2026) · ES GIBT EINEN ZWEITEN AUSLÖSER ═════════════
+//
+// Seit Ä60 (c) faltet auch das BEIWERK-BLATT die Gliederung: zwischen 1024 und
+// 1391 px reicht der Raum nicht für Spalte und Blatt, die Gliederung weicht auf
+// ihre Schiene — und damit wandert die Such-Zone in den klebenden Kopf (Ä19),
+// der Block wächst um dieselben 44 px. Bis zum Nachzug lief dieser Weg NICHT
+// durch den Ausgleich; gemessen 18.8.2026 (StPO Art. 429, Panel über den
+// Kopf-Zähler aufgezogen, `scratchpad/a-mess.cjs`):
+//
+//   Viewport   Kopfhöhe        Abstand Block→Artikel   Befund
+//   1024        57 → 101 px     −1 → −45 px            Artikelkopf 44 px HINTER
+//                                                       dem Kopf, also unsichtbar
+//   1150        57 → 101 px     −1 →  −1 px            Anchoring hält
+//   1280        57 → 101 px     −1 →  −1 px            Anchoring hält
+//   1440        57 →  57 px     −1 →  −1 px            keine Faltung, kein Fall
+//
+// Die Zahlenreihe zeigt genau, warum die Korrektur GEMESSEN und nicht gerechnet
+// wird (Absatz oben): dieselbe Höhenänderung kostet auf einer Breite 44 px
+// Leseposition und auf der nächsten null. Eine feste `scrollBy(44)` hätte 1150
+// und 1280 kaputt gemacht, um 1024 zu heilen.
+//
+// DARAUS DIE VERALLGEMEINERUNG: die Hook kennt nicht mehr `tocOffen`, sondern
+// eine LAGE — eine Zeichenkette aus allen Zuständen, deren Wechsel die Höhe des
+// klebenden Blocks ändern kann. Und statt eines Setters gibt sie eine Klammer
+// zurück (`mitAusgleich`), durch die JEDE solche Handlung läuft: Gliederung
+// ein/aus, Blatt auf/zu, und der Schienen-Griff, der beides zugleich tut (dann
+// EINE Messung, nicht zwei).
 
 export interface StickAusgleich {
   /** An die Leser-WURZEL hängen. Der klebende Block wird darunter gesucht, damit
@@ -49,19 +77,25 @@ export interface StickAusgleich {
    *  beide teilen sich ein `ref={(el) => {…}}`, das bewusst nichts zurückgibt —
    *  ein Rückgabewert wäre in React 19 eine Aufräumfunktion. */
   wurzelRef: React.RefObject<HTMLDivElement | null>;
-  /** DER EINE WEG, `tocOffen` zu setzen: merkt zuerst die Höhe des klebenden
-   *  Blocks, setzt dann. Alle Bedienpunkte (☰ · Schiene · «ausblenden») gehen
-   *  hier durch; ein weiterer, der `setTocOffen` direkt riefe, bekäme den Sprung
-   *  zurück — darum reicht der Rahmen den Setter herein statt ihn selbst zu rufen. */
-  setzeTocOffen: (auf: boolean) => void;
+  /** DIE EINE KLAMMER um jede Handlung, die den klebenden Block wachsen oder
+   *  schrumpfen lassen kann: sie misst zuerst den Abstand, führt dann aus.
+   *  Alle Bedienpunkte (☰ · Schiene · «ausblenden» · Panel auf/zu) gehen hier
+   *  durch; einer, der seinen Setter direkt riefe, bekäme den Sprung zurück —
+   *  darum reicht der Rahmen die Handlung herein statt sie selbst zu rufen.
+   *  Mehrere Zustandswechsel in EINER Handlung sind ausdrücklich erlaubt (der
+   *  Schienen-Griff): React fasst sie zu einem Commit zusammen, der Ausgleich
+   *  läuft danach genau einmal. */
+  mitAusgleich: (handlung: () => void) => void;
 }
 
 /**
  * Hält die Leseposition, wenn der klebende Kopf-Block seine Höhe ändert.
  *
- * @param tocOffen der Zustand, dessen Wechsel die Höhe ändert — er triggert den
- *   Ausgleich.
- * @param setTocOffen sein Setter; kommt gekapselt als `setzeTocOffen` zurück.
+ * @param lage Zeichenkette aus allen Zuständen, deren Wechsel die Höhe des
+ *   klebenden Blocks ändern kann (Gliederung offen · Blatt offen). Sie triggert
+ *   den Ausgleich. EIN Auslöser statt zweier Effekte: der Schienen-Griff ändert
+ *   beide Zustände in einem Commit, und zwei Effekte hätten den Ausgleich
+ *   doppelt gefahren.
  * @param scroller der Scroll-Container dieses Lesers — im Pane dessen Wurzel,
  *   sonst `null` für das Fenster. Der Rahmen löst ihn mit `berechnungen.paneRoot`
  *   auf, also mit DERSELBEN Funktion wie «↑ Anfang» und der Artikel-Sprung (§5);
@@ -75,8 +109,7 @@ export interface StickAusgleich {
  *   wird nicht gescrollt; ungefragt zu scrollen wäre schlimmer als nichts.
  */
 export function useStickAusgleich(
-  tocOffen: boolean,
-  setTocOffen: (auf: boolean) => void,
+  lage: string,
   scroller: HTMLElement | null,
   bezugsToken: string | null,
 ): StickAusgleich {
@@ -116,17 +149,17 @@ export function useStickAusgleich(
     // Unter 1 px ist es Rundung, kein Sprung.
     if (Math.abs(delta) < 1) return;
     (scroller ?? window).scrollBy({ top: delta, behavior: 'auto' });
-    // Nur der Umschalt-Zustand triggert; `abstand` liest Refs, der Scroller wird
-    // beim Auslösen gelesen, nicht beim Einhängen.
+    // Nur die Lage triggert; `abstand` liest Refs, der Scroller wird beim
+    // Auslösen gelesen, nicht beim Einhängen.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tocOffen]);
+  }, [lage]);
 
   return {
     wurzelRef,
-    setzeTocOffen: (auf: boolean) => {
+    mitAusgleich: (handlung: () => void) => {
       tokenRef.current = bezugsToken;
       vorherRef.current = abstand();
-      setTocOffen(auf);
+      handlung();
     },
   };
 }

@@ -1,6 +1,7 @@
 import { useId, useRef, useState } from 'react';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
+import { kopfGlypheKlassen, kopfGriffKlassen } from './kopfStufen';
 import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
 
 // ─── «Ansicht ▾» der V3-Kopfzeile (FAHRPLAN-LESER-V3 Kap. 4a/4f, H1) ─────────
@@ -94,15 +95,30 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
    */
   hatAenderungsvermerke: boolean;
   /**
-   * A2 (H3-Nachzug) · «Entscheide & Kontext …» — der Weg zum Panel, der IMMER da ist.
+   * A2 (H3-Nachzug) · «Entscheide & Kontext …» — der Weg zum Panel, der bleibt,
+   * wenn der Zähler weg ist.
    *
-   * BEFUND, gemessen 17.8.2026: mit «Rechtsprechung im Text: aus» verschwinden
-   * Zähler und Lasche (F8, richtig), und danach gab es auf `mini` KEINEN
-   * bedienbaren Weg mehr zum Panel — nur noch die Taste «r». Auf einem Telefon
-   * ohne Hardware-Tastatur war die Fläche damit unerreichbar. Davids F8-Regel
+   * BEFUND, gemessen 17.8.2026: mit «Rechtsprechung: aus» verschwinden Zähler
+   * und Lasche (F8, richtig), und danach gab es auf `mini` KEINEN bedienbaren
+   * Weg mehr zum Panel — nur noch die Taste «r». Auf einem Telefon ohne
+   * Hardware-Tastatur war die Fläche damit unerreichbar. Davids F8-Regel
    * verspricht ausdrücklich das Gegenteil: «Panel bleibt über ‹Ansicht ▾› und
-   * Tastatur erreichbar». Der Eintrag ist die Einlösung dieses Versprechens und
-   * steht darum UNABHÄNGIG von der Schalterstellung.
+   * Tastatur erreichbar».
+   *
+   * ── Ä92 (H4-Nachzug 18.8.2026) · ABER NICHT NEBEN DEM ZÄHLER ──────────────
+   * Bis hierher stand der Eintrag UNABHÄNGIG von der Schalterstellung, also
+   * auch dann, wenn der Chip zwei Zentimeter weiter oben schon dasselbe tut.
+   * Gemessen 18.8.2026 @390 UND @1440: `[data-v3-panel-zaehler]` = 1 und
+   * `[data-v3-ansicht-panel-auf]` = 1 — zwei Öffner für eine Fläche, mit
+   * verschiedenem Wortlaut («⚖ 14 Entscheide» / «Entscheide & Kontext …»).
+   * Das ist derselbe §5-Befund, an dem schon die Randlasche gefallen ist
+   * (Ä53/Ä56), nur im Menü statt am Rand.
+   * DIE ORDNUNG, die daraus folgt («ein Öffner je Breite», Fahrplan Kap. 7):
+   * der Eintrag erscheint GENAU DANN, wenn kein Chip sichtbar ist — also genau
+   * in der Lage, für die Davids F8-Regel ihn verlangt. `undefined` heisst
+   * darum nicht «nicht gebaut», sondern «der Chip trägt den Weg schon»; die
+   * Entscheidung trifft der RAHMEN aus `panel.oeffnerSichtbar`, der einen
+   * Quelle dieser Frage (§5), nicht diese Datei.
    */
   onPanelOeffnen?: () => void;
 }) {
@@ -139,15 +155,30 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
         aria-controls={offen ? panelId : undefined}
         aria-label="Ansicht"
         data-v3-ansicht
-        className="lc-leiste-griff lc-leiste-griff-fest gap-0.5 px-1 sm:gap-1 sm:px-1.5"
+        // Ä90: EINE Bauform für alle Kopf-Griffe (`kopfStufen`), und die
+        // Abstufung folgt dem gemessenen KOPF-Zuschnitt (`kompakt`), nicht
+        // einem Viewport-Breakpoint — `sm:` hätte im Pane das Fenster gemessen
+        // (Kap. 10, dieselbe Falle wie beim früheren `lg:` unten).
+        className={`${kopfGriffKlassen(kompakt)} ${kompakt ? 'gap-0.5 px-1' : 'gap-1 px-1.5'}`}
         // D1: der Tooltip nennt nur, was das Panel wirklich trägt — sonst
         // versprach er auf vermerkfreien Erlassen einen Schalter, den es dort
         // nicht gibt (dieselbe §8-Sorge wie die Bedingung unten).
         title={`Darstellung: Fussnoten${hatAenderungsvermerke ? ' · Änderungsvermerke' : ''} · Rechtsprechung im Text · Grösse des Gesetzestexts`}
       >
+        {/* ── Ä91 (H4-Nachzug 18.8.2026) · ZWEI GESICHTER, NICHT DREI ────────
+            Gemessen 18.8.2026 trug dieser Öffner DREI verschiedene Gestalten:
+            «···» auf `mini`, «◧ Ansicht ▾» ab 1024 px Fenster — und dazwischen,
+            zwischen 640 und 1023 px, ein stummes «◧▾». Der dritte war keine
+            Absicht, sondern die Folge eines `lg:`-Präfixes: es misst den
+            VIEWPORT, während der ganze Kopf-Zuschnitt an der gemessenen
+            Element-Breite hängt (Kap. 10). Im Pane hätte dasselbe Präfix ein
+            «Ansicht» auch dort gezeigt, wo die Spalte 620 px misst.
+            JETZT: das Wort hängt am Zuschnitt. Wo Platz ist («voll»/«kompakt»)
+            steht «◧ Ansicht ▾», auf dem Handy «···» — kein drittes Gesicht.
+            Der Accessible-Name bleibt in beiden Fällen «Ansicht». */}
         {kompakt
-          ? <span aria-hidden>···</span>
-          : <><span aria-hidden>◧</span><span className="hidden lg:inline">Ansicht</span><span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span></>}
+          ? <span aria-hidden className={kopfGlypheKlassen(true)}>···</span>
+          : <><span aria-hidden>◧</span><span>Ansicht</span><span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span></>}
       </button>
 
       {offen && (
@@ -195,15 +226,33 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
             onKlick={() => schalte('histansicht', opt.histansicht === 'an')}
           />
           )}
-          {/* Umwidmung des `leitfaelle`-Schalters (Kap. 4f): er steuert in V3
-              «Rechtsprechung im Text». Regel aus dem V-0-Entscheid David
-              16.8.2026: ist er AUS, verschwindet in V3 auch der Öffner des
-              Panels — Zähler UND Lasche. Panel und Lasche selbst kommen in H3;
-              H1 hält nur den Platz frei. */}
+          {/* ── B2 (Klick-Test 18.8.2026) · DIE BESCHRIFTUNG WAR EINE ZUSAGE,
+                 DIE V3 NICHT EINLÖST ────────────────────────────────────────
+              Hier stand «Rechtsprechung im Text», Tooltip «Hinweise auf
+              Entscheide im Lesetext ein- oder ausblenden». Gemessen am gebauten
+              Stand (StPO Art. 429, @1440 und @390): Bezugs-/Leitfall-Zeilen im
+              V3-Lesetext **0** — vor UND nach dem Umlegen. Der Schalter kann
+              dort nichts ausblenden, weil V3 gar nichts einblendet:
+              `LeserLesespalte` reicht dem Kern weder `bezuege` noch
+              `leitfaelle` weiter (Pos. 12, H3 — die Entscheide stehen im
+              Panel). Das CSS `html[data-leitfaelle="aus"] [data-leitfall-zeile]`
+              greift weiter, es findet in V3 nur keine Zeile.
+              WAS ER WIRKLICH TUT — und was jetzt dransteht: er nimmt den
+              ZUGANG aus der Kopfzeile. Gemessen wechselt `[data-v3-panel-
+              zaehler]` beim Umlegen von 1 auf 0; das ist Davids F8-Regel vom
+              16.8.2026 («aus ⇒ Zähler UND Lasche weg»), und der Zugang bleibt
+              über den Menü-Eintrag unten und die Taste «r». Eine Beschriftung,
+              die etwas anderes verspricht als sie tut, ist der §8-Fall, den
+              dieser Nachzug an mehreren Ecken einsammelt.
+              (Im GETEILTEN Store heisst das Feld weiter `leitfaelle` und wirkt
+              in V1 unverändert auf den Lesetext — dort steht sein eigener,
+              zutreffender Wortlaut in `LeserRechtsprechungMenu`. §5 bleibt
+              gewahrt: EIN Feld, zwei Oberflächen, jede beschriftet nach ihrer
+              eigenen Wirkung.) */}
           <V3Switch
             an={opt.leitfaelle === 'an'}
-            label="Rechtsprechung im Text"
-            titel="Hinweise auf Entscheide im Lesetext ein- oder ausblenden"
+            label="Rechtsprechung anzeigen"
+            titel="Zähler und Zugang zur Rechtsprechung in der Kopfzeile ein- oder ausblenden — das Panel bleibt über «Ansicht ▾» und die Taste «r» erreichbar"
             onKlick={() => schalte('leitfaelle', opt.leitfaelle === 'an')}
           />
 

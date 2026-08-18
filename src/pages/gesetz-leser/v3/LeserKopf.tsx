@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Fragment, type ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
@@ -7,9 +7,9 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
 //
-//   D  │ Gesetze › Bund › StPO   Art. 429                Ansicht ▾   ✕ │
-//   S  │ StPO   Art. 429                        Ansicht ▾ ✕│
-//   H  │ StPO · Art. 429   ☰   ···  ✕│
+//   D  │ Gesetze › Bund › StPO   Art. 429      ⚖ 14 Entscheide  Ansicht ▾ │
+//   S  │ ‹ Gesetze  StPO   Art. 429     ⚖ 14 Entscheide  ☰  Ansicht ▾│
+//   H  │ ‹ Gesetze StPO · Art. 429   ⚖  ☰  ···│
 //
 // ── A-2 · «DIE EINE» IST SEIT 17.8.2026 WÖRTLICH GEMEINT ────────────────────
 // Bis dahin sass diese Zeile UNTER der App-Krumen-Leiste, die denselben Ort
@@ -40,28 +40,23 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 //    dass er beim Scrollen nicht mitläuft, ist der bewusste Preis, siehe
 //    Vollzugsvermerk A-2.
 //
-// ✕ SCHLIESST DAS GESETZ, nicht die Anwendung: es führt zur Gesetzes-Übersicht,
-// in einem Pane pane-lokal (jedes Pane hat seinen eigenen Navigator).
-//
-// ── Ä46 (H4-II, 17./18.8.2026) · UND ES STEHT NICHT MEHR ÜBERALL ────────────
-// Hier stand bis zum H4-Vorbereitungslauf: «Im PANE steht daneben weiterhin das
-// ✕ der Pane-Titelleiste, das etwas anderes tut … die beiden sind nicht
-// zusammenzulegen … unterscheidbar über ihren Accessible-Name». Gemessen im
-// Split @1600 hiess das: je Pane zwei sichtbare ✕, 44 px übereinander
-// (Griffleiste y = 69, dieser Kopf y = 113) — gleiches Zeichen, gleiche Grösse,
-// gleiche Ecke, verschiedene Wirkung. Ein Accessible-Name allein trägt diese
-// Unterscheidung nicht: er ist genau das, was der Blick nicht liest (§8).
-// Zusammengelegt sind sie darum nach wie vor nicht — die INHALTS-Handlung
-// («zurück zur Übersicht») wandert nicht in das Fenster-✕, sie zeigt sich in
-// derselben Zeile bereits als benannter Rücksprung «‹ Gesetze» bzw. als volle
-// Krume, mit demselben Ziel `/gesetze` und derselben pane-lokalen Auflösung.
-// WO das ✕ steht, entscheidet `kopfStufen.zeigeSchliessKreuz` (rein, an jeder
-// Breite prüfbar) — diese Datei bekommt das Ergebnis als Prop und bleibt ohne
-// `imPane`- und ohne Breiten-Zweig (Kap. 10).
+// ── Ä46/Ä87/Ä91 · DIESE ZEILE TRÄGT KEIN ✕ MEHR (H4-Nachzug 18.8.2026) ──────
+// Bis 17.8. stand hier ein ✕ «Gesetz schliessen», das auf `/gesetze` führte.
+// Es ist in drei Schritten gefallen: im Pane (Ä46 — zwei ✕ je Pane, 44 px
+// übereinander), auf `mini` (Element-Budget), und mit dem H4-Nachzug ganz
+// (Ä87: @1440 lag es bei offenem Blatt 47 px über dessen ✕; Ä91: @720 war es
+// das fünfte Element einer Zeile, die vier trägt).
+// Verloren geht nichts: das Ziel `/gesetze` steht auf JEDER Breite links als
+// beschriftetes Wort — als volle Kette «Gesetze › Bund ›» oder als Rücksprung
+// «‹ Gesetze», beide aus `erlassAnsicht.brotkrume` und beide pane-lokal
+// aufgelöst (`<Link>` gegen den Pane-Navigator). Die Zusage, dass dieser
+// Rücksprung immer da ist, hängt an `erlassAnsicht.hatRuecksprung` und ist
+// dort unit-bewiesen; die Auflage «höchstens ein ✕ je Kopfzeile, Rücksprung
+// immer beschriftet» samt Messreihe steht in `./kopfStufen`.
 
 export function LeserKopf({
   erlass, aktArtikel, fussnotenAnzahl, hatAenderungsvermerke, stufe, gliederungKnopf,
-  panelOeffner, onPanelOeffnen, zeigeSchliessen, suchZone,
+  panelOeffner, onPanelOeffnen, suchZone,
 }: {
   erlass: BrowseErlass;
   /** Laufender Artikel aus dem bestehenden Scroll-Spy («Art. 429»). */
@@ -81,12 +76,6 @@ export function LeserKopf({
    *  Weg, der bleibt, wenn der Zähler nach der F8-Regel weg ist und keine
    *  Tastatur da ist; Herleitung in `./LeserAnsichtV3`. */
   onPanelOeffnen?: () => void;
-  /** Ä46/H4-II — trägt diese Kopfzeile ihr eigenes ✕? Entschieden im Rahmen mit
-   *  `kopfStufen.zeigeSchliessKreuz(stufe, !imPane)`; die Herleitung (zwei ✕ je
-   *  Pane, Element-Budget auf `mini`) steht dort. Als Prop und nicht als
-   *  Ableitung hier, weil die Antwort von der PANE-LAGE abhängt und die kennt
-   *  nur der Rahmen (Kap. 10). */
-  zeigeSchliessen: boolean;
   /** ── Ä19 (H2b) · zweite Zeile des klebenden Kopf-BLOCKS ────────────────────
    *  Das Such-/Sprungfeld, wo die Gliederung NICHT als Spalte steht (Handy,
    *  Split-Pane, Desktop mit eingeklappter Gliederung). Vorher gab es in genau
@@ -98,7 +87,6 @@ export function LeserKopf({
    *  rendert sie nur (§3) und bleibt ohne Breiten-Zweig. */
   suchZone?: ReactNode;
 }) {
-  const navigate = useNavigate();
   const el = kopfElemente(stufe);
   // Ebene-Beschriftung aus dem Datenmodell, nicht aus `if (bund)` — die eine
   // Ableitung steht in `./erlassAnsicht` (Fundament-Auflage 2).
@@ -248,28 +236,23 @@ export function LeserKopf({
           )}
         </nav>
 
-        {/* ── Griffe: ⚖ · ☰ (nur wenn nötig) · Ansicht · ✕ (nur wo nötig) ─────
+        {/* ── Griffe: ⚖ · ☰ (nur wenn nötig) · Ansicht ────────────────────────
             Design-Grundlage Kap. 6: «Kopfzeile im Ruhezustand ≤ 4 Elemente,
             davon ≤ 2 reine Icons». Ort + Ansicht = 2; ☰ tritt hinzu, wenn die
             Gliederung nicht ohnehin sichtbar ist (und seit Ä79 auch nicht als
-            Schiene danebensteht), ⚖ trägt die Rechtsprechung, ✕ steht, wo es
-            kein Duplikat des Rücksprungs ist. Auf `mini` ergibt das
-            Ort · ⚖ · ☰ · ··· — vier Elemente (die Icon-Hälfte des Deckels ist
-            dort weiterhin gerissen, ehrlicher Vermerk in `./kopfStufen`). */}
-        <div className="flex shrink-0 items-center gap-1 sm:gap-1.5">
+            Schiene danebensteht), ⚖ trägt die Rechtsprechung.
+            Ä87/Ä91 (H4-Nachzug 18.8.2026): das ✕ ist WEG — auf jeder Breite und
+            in jeder Lage. Gemessen stand es @1440 bei offenem Blatt 47 px über
+            dessen eigenem ✕ und machte @720 das fünfte Element aus einer Zeile,
+            die vier trägt. Sein Ziel `/gesetze` steht links als beschriftetes
+            Wort (Krume bzw. «‹ Gesetze»); Herleitung, Messreihe und die neue
+            Auflage «höchstens ein ✕ je Kopfzeile» in `./kopfStufen`. Damit
+            ergibt jede Stufe höchstens Ort · ⚖ · ☰ · Ansicht = vier. */}
+        <div data-v3-kopf-griffe className="flex shrink-0 items-center gap-1 sm:gap-1.5">
           {panelOeffner}
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
             hatAenderungsvermerke={hatAenderungsvermerke} onPanelOeffnen={onPanelOeffnen} />
-          {zeigeSchliessen && (
-            <button type="button" onClick={() => navigate('/gesetze')}
-              aria-label="Gesetz schliessen (zur Gesetzesübersicht)"
-              title="Gesetz schliessen (zur Gesetzesübersicht)"
-              data-v3-kopf-schliessen
-              className="lc-leiste-griff">
-              <span aria-hidden className="text-base leading-none">✕</span>
-            </button>
-          )}
         </div>
       </div>
       {/* Ä19: die Such-Zone als zweite Zeile DESSELBEN klebenden Blocks — nicht

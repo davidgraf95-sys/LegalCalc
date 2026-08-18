@@ -167,7 +167,12 @@ export function LeserSeitenleiste({
             </div>
           </div>
         </div>
-        <div data-v3-leiste-baum>{baum}</div>
+        {/* `data-toc-baum` ist — wie `data-toc` darüber — KEIN Testhaken,
+            sondern ein geteilter Anschluss: die Taste «t» (`parts/LeserTastatur`)
+            setzt den Fokus auf das erste Ziel im BAUM. Ohne die Marke suchte sie
+            im ganzen Scroller und traf seit H2b den Quell-Link im Steckbrief,
+            der hier zuoberst steht (Klick-Test B7, 18.8.2026). */}
+        <div data-v3-leiste-baum data-toc-baum>{baum}</div>
       </div>
     </div>
   );
