@@ -48,6 +48,14 @@ export function SuchBereichWahl({
     // Zone, die es nicht gibt. `min(100%, 18rem)` gibt allen drei Blättern
     // DASSELBE Raster und lässt das schmalste unangetastet — der Deckel greift
     // erst, wo mehr Platz da ist als die Kalibrierung braucht.
+    //
+    // Ä94 (18.8.2026) rügte den Rest dieser Rechnung: im H-Blatt blieben rechts
+    // 358 − 288 = 70 px Stummel. Der Deckel ist deswegen NICHT gelockert worden —
+    // seine Messung oben gilt unverändert, und 18 rem ist die Breite, für die die
+    // vier Wörter kalibriert sind. Gefüllt wird der Stummel stattdessen von
+    // «↑ Anfang» (62 px), das über dieser Zeile allein in einer eigenen
+    // 34-px-Leiste stand: 288 + 8 Fuge + 62 = 358, exakt der Kasten. Ein Befund
+    // hat den anderen aufgelöst — Herleitung in `./anfangSlot`.
     <div data-v3-suchbereich role="radiogroup" aria-label="Suchbereich"
       className="flex w-[min(100%,18rem)] flex-wrap items-center gap-0.5 rounded-md bg-paper-sunken/50 p-0.5">
       {REIHE.map((b) => {
