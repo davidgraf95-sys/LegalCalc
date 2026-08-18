@@ -1211,7 +1211,13 @@ bestehenden Zusagen Zeichen für Zeichen erhalten, keine gelockert, zwei neu daz
   die CLS-Sonde misst die Lesespalte; eine Reserve bräuchte die vier
   Fenster-Messwerte, die der Kopf mit `kopf-stand*` hat — ein einzelner geratener
   Wert wäre schlechter als keiner.
-- **Ä75 — «SR» an kantonalen Erlassen (wartet auf David, §7).** Gezählt über
+- **Ä75 — «SR» an kantonalen Erlassen.** *(Stand 18.8.2026: die NEGATIVE Hälfte ist
+  entschieden und gebaut — «SR» steht nur noch am Bundeserlass, die kantonale
+  Nummer nackt; Entscheid in Kap. 9, Bau im Vermerk «H4-Nachzug — Teil B».
+  Der Absatz hier beschreibt den Befundstand vom 17.8. und bleibt als Zählung
+  stehen: seine Zahlen sind der Grund, warum die POSITIVE Hälfte — die richtige
+  Sammlungs-Sigle je Kanton — weiterhin offen ist und Davids Abnahme braucht.)*
+  Gezählt über
   `register.json`: **1187** Erlasse ohne Präfix im `sr`-Feld bekommen ein hart
   kodiertes «SR » vorangestellt — davon nur 230 Bund, also **957 kantonale**
   Erlasse tragen die Bezeichnung der *eidgenössischen* Systematischen
@@ -1921,7 +1927,13 @@ Platz ausdrücklich «vierter Reiter oder Fusszeile» vor. Der vierte Reiter ist
 dieser Messung **keine Option mehr**, solange die Leiste nicht umbricht — es
 bleibt die Fusszeile (`fuss`-Anschluss in `LeserPanel`).
 
-**Ä84 · der Teil, der offen bleibt — und warum das ein Ergebnis ist.** Das
+**Ä84 · der Teil, der offen blieb — und warum das ein Ergebnis war.**
+*(NACHGEFÜHRT 18.8.2026: seit dem H4-Nachzug Teil B (Ä94) ist auch dieser Teil
+erledigt, und zwar OHNE den hier verlangten Entscheid — der Knopf wird nicht
+gestrichen, sondern abgegeben: die Leiste reicht ihn in die Werkzeugzeile der
+Trefferliste, wo er genau den 70-px-Stummel neben dem Segment füllt. Der Absatz
+bleibt stehen, weil er die Sackgasse dokumentiert, aus der der Ausweg gefunden
+wurde.)* Das
 allein stehende «↑ Anfang» im Blatt-Kopf zu streichen war gebaut, und
 `e2e/leser-v3-blatt` (d) wurde davon rot (1 failed, 149 passed): **Ä32 behält den
 Knopf im Treffer-Blatt ausdrücklich** — «es bezieht sich auf den Erlass, nicht
@@ -1964,7 +1976,10 @@ unberührt.
 
 **Nicht entschieden, weil David-Fragen:** **Ä75** («SR» als Etikett bei
 Kantonen), **Ä81** (Steckbrief dupliziert den Erlass-Kopf), **Arch 7**
-(Treffer-Blatt ohne `usePopoverAutoZu`). Zu Arch 7 nur die Empfehlung, ohne Bau:
+(Treffer-Blatt ohne `usePopoverAutoZu`). *(NACHGEFÜHRT 18.8.2026: Ä75 und Ä81
+sind mit dem H4-Nachzug Teil B entschieden und gebaut — Orchestrator-Entscheid,
+David hat Stopp-Recht; Wortlaut und Begründung in Kap. 9. Offen bleibt allein
+Arch 7.)* Zu Arch 7 nur die Empfehlung, ohne Bau:
 **Beiwerk, nicht Popover.** Das Blatt ist ausdrücklich kein modaler Dialog — man
 soll bei offener Liste weiterlesen, scrollen und im Feld tippen —, und ein
 Aussenklick-Schliesser nähme genau das: jeder Klick in den Text, jede
