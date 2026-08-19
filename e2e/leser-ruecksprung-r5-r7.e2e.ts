@@ -49,8 +49,19 @@ const chip = (page: Page) => page.getByRole('button', { name: /zurück zu/ });
 // Das trennscharfe Merkmal ist jetzt `aria-expanded`: das hat das Chevron (und
 // nur das), weil es einen Auf-/Zu-Zustand ansagt. Geprüft wird unverändert
 // dasselbe — ein sichtbarer, anklickbarer Sprungknopf einer Baumzeile.
+// H4-UMHÄNGUNG (Flip 18.8.2026): `:not([aria-expanded])` trennt in V3 NICHTS
+// mehr. Der Titel-Knopf trägt dort seinerseits `aria-expanded` — seit S4 klappt
+// er einen geschlossenen Ast beim Sprung mit auf (`SektionBaumTOC`:
+// `aria-expanded={hatKinder && titelKlapptAuf ? auf : undefined}`), und
+// `titelKlapptAuf` setzt nur die V3-Leiste. Gemessen 18.8.2026 an BV @1440:
+// `button:not([aria-expanded])` = 0 (V3) gegen 39 (V1) — der Locator lief in
+// sein 90-s-Budget, ohne je etwas zu prüfen.
+// Trennscharf in BEIDEN Hüllen ist `title`: der Titel-Knopf trägt ihn (den
+// vollen Etikett-Text), das Chevron nicht (es hat nur `aria-label`
+// «Auf-/Einklappen»). Gemessen: 39 Treffer in beiden Hüllen, davon 0 Chevrons.
+// `:visible` bleibt unverändert load-bearing (s. o.).
 const tocSprung = (page: Page) =>
-  page.locator('[data-toc] li[data-sektion-id] button:not([aria-expanded]):visible');
+  page.locator('[data-toc] li[data-sektion-id] button[title]:visible');
 
 // ── R3 · Die Kopie trägt den amtlichen Deep-Link ─────────────────────────────
 test.describe('R3 — zitierfähige Referenz', () => {
@@ -89,12 +100,25 @@ test.describe('R5 — Rücksprung-Chip', () => {
     await warteReader(page, '/gesetze/bund/BV');
 
     // Ein Stück weit hineinlesen, damit es überhaupt etwas zu verlassen gibt.
+    // H4 (Flip 18.8.2026): danach 60 px WEITERSCHIEBEN. Ohne das landet Art. 8
+    // mit seiner Oberkante genau auf der Bezugslinie, und «welcher Artikel wird
+    // gerade gelesen» ist eine Grenzentscheidung — V1 (Kopf ~88 px) und V3
+    // (Kopf 156 px) fielen dort auseinander (gemessen: Chip sagte «Art. 8»,
+    // das Orakel unten rechnete «Art. 7»). Der Schubs macht die Antwort
+    // EINDEUTIG, ohne die Aussage des Falls zu berühren.
     await page.locator('#art-8').scrollIntoViewIfNeeded();
+    await page.evaluate(() => window.scrollBy(0, 60));
     await page.waitForTimeout(400);
+    // Die Bezugslinie ist die Unterkante der klebenden Kopfzeile — was darunter
+    // rutscht, liest niemand mehr. Sie wird GEMESSEN statt gesetzt: die 88 px,
+    // die hier standen, waren die V1-Kopfhöhe und damit eine Hüllen-Konstante
+    // in einem Test, der die Hülle gar nicht meint.
     const vorher = await page.evaluate(() => {
+      const kopf = document.querySelector('[data-inhalt-kopf], [data-v3-kopf]');
+      const bezug = kopf ? kopf.getBoundingClientRect().bottom : 88;
       const arts = document.querySelectorAll<HTMLElement>('article[id^="art-"]');
       let letzter = '';
-      for (const el of arts) { if (el.getBoundingClientRect().top <= 88) letzter = el.id; else break; }
+      for (const el of arts) { if (el.getBoundingClientRect().top <= bezug) letzter = el.id; else break; }
       return { id: letzter, y: Math.round(window.scrollY) };
     });
     expect(vorher.id, 'vor dem Sprung wird ein Artikel gelesen').not.toBe('');
@@ -301,6 +325,14 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
 
     await page.goto('/gesetze/bund/BV#art-9999');
     const overlay = page.getByRole('status').filter({ hasText: /Springe zu/ });
+    // H4 (Flip 18.8.2026): ZUERST warten, bis der Reader wirklich da ist. Die
+    // Auswertung unten liest die Frame-Proben; `toHaveCount(0)` allein ist als
+    // Gatter untauglich, weil es schon bei t≈0 erfüllt ist — solange das Overlay
+    // noch gar nicht erschienen ist. Der Fall lief damit auf die Vorbedingung
+    // «Reader hat Artikel gerendert» und meldete `undefined` statt einer
+    // Sachaussage. Gemessen am Flip-Stand: Overlay 624–2247 ms, erste Artikel
+    // 2247 ms — beide Hüllen tragen das Feature, nur die Messung war ein Rennen.
+    await expect(page.locator('article[id^="art-"]').first()).toBeAttached({ timeout: 40000 });
     // Grosszügig über die alte 6000-ms-Kappe hinaus warten: WÜRDE der Schleier
     // wieder so lange stehen, liefe dieser Test in die Assertion unten, nicht in
     // einen Timeout — die Fehlermeldung nennt dann die gemessene Standzeit.

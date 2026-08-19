@@ -219,12 +219,120 @@ gelöschtem `kl`.
 
 ### 7.4 Auflage 1 in der UI: was ausblendbar ist
 
+*(Nachgezogen S1, 17.8.2026 — Stand des gebauten Reader-Codes. Der Absatz sprach
+von DREI Ansichten und von ZWEI Trägern; beides stimmt nicht mehr. Die Auflage 1
+selbst ist unverändert, nur ihre Umsetzung ist es nicht.)*
+
 Ausgeblendet wird ausschliesslich `[data-fn-klasse="A"]` — der Attribut-Selektor
-greift nur bei exakt `A`. V/G/Z/U **und** alles ohne Klasse bleiben in allen drei
-Ansichten sichtbar. `display:none` trifft nur Marker-Ziffern und Apparat-Zeilen,
-nie einen Substanz-Träger; der Normtext ist von keiner Regel erfasst und bleibt
-sichtbar, durchsuchbar und im Ausdruck (R9/§8). Der `<p id="fn-…">`-Quellblock
-bleibt im DOM, weshalb das Marker-Popover auch in der Chronologie-Ansicht trägt.
+greift nur bei exakt `A`. V/G/Z/U **und** alles ohne Klasse bleiben in **beiden
+Stellungen** sichtbar.
+
+**Zwei Änderungen gegenüber der Erstfassung:**
+
+1. **Zwei Stellungen statt drei Ansichten.** Der Schalter ist mit dem
+   Optionen-Rückbau S1 (Entscheid David F1, 16.8.2026) zweiwertig geworden
+   («Änderungsvermerke: an | aus»); die dritte Ansicht «als Chronologie» ist
+   ersatzlos gestrichen. Der letzte Satz der Erstfassung — der `<p id="fn-…">`-
+   Quellblock bleibt im DOM, «weshalb das Marker-Popover auch in der
+   Chronologie-Ansicht trägt» — gilt sachlich weiter (der Block bleibt im DOM,
+   das Popover trägt in beiden Stellungen), nur den benannten Modus gibt es nicht
+   mehr.
+
+2. **DREI Träger, nicht zwei.** «`display:none` trifft nur Marker-Ziffern und
+   Apparat-Zeilen» war ab S1 unvollständig. Der Schalter blendet aus (`index.css`,
+   alle Regeln auf `.lc-leser` gescopt):
+
+   | Träger | Was | Seit |
+   |---|---|---|
+   | `[data-fn-klasse="A"]` | Marker-Ziffer am Wort | W2·5i |
+   | `[data-fn-apparat]` ohne Nicht-A-Kind | die Apparat-Zeile am Artikelfuss | W2·5i |
+   | **`[data-hist-slot]`** | die **«Fassung»-Overline/Zeitleiste** am Artikelfuss (`ArtikelLeser.tsx`) | **S1** |
+
+   Der dritte Träger kam mit S1 dazu (Befund K4): bis dahin hing die
+   Fassungs-Zeile an gar keinem Schalter und blieb bei «aus» als einzige
+   Historie-Spur im Lesetext stehen. Ausgeblendet wird der SLOT, nicht nur die
+   Zeile darin — sonst bliebe seine reservierte Höhe (`mt-4 min-h-beiwerk` =
+   16 + 24 px) als Phantom-Lücke unter jedem Artikel zurück.
+
+**Unverändert:** kein Substanz-Träger ist erfasst; der Normtext ist von keiner
+Regel betroffen und bleibt sichtbar, durchsuchbar und im Ausdruck (R9/§8). Alle
+Regeln arbeiten mit `display:none` auf Beiwerk, der DOM bleibt vollständig.
+
+**Folgeauflage aus S1-Nachzug (17.8.2026, §8):** weil «aus» auf einem Erlass ohne
+`kl:'A'` und ohne Fassungs-Zeile GAR NICHTS ausblendet, wird der Schalter dort
+nicht mehr angeboten. Gemessen über den ganzen Korpus: 1217 von 1420 Erlassen
+tragen keine `kl:'A'`-Fussnote; von diesen haben 6 einen Historie-Shard und
+genau 2 (MONTREAL, PVUE) darin Einträge — nur dort wirkt der Schalter noch über
+den dritten Träger. Regel und Belege:
+`src/pages/gesetz-leser/berechnungen.ts` (`bieteAenderungsvermerkeSchalter`) +
+`src/tests/aenderungsvermerke-schalter.test.ts`.
+
+### 7.4a Nachtrag 17.8.2026 abends — EIN Träger statt drei (Entscheid David)
+
+*(Ersetzt die Träger-Tabelle in 7.4. Die Auflage 1 selbst ist unverändert — sie
+wird jetzt sogar strenger erfüllt als zuvor.)*
+
+**Anlass, wörtlich:** «wenn änderungsvermerke abgewählt wird dann verschwinden
+auch fussnoten.» Der Befund trifft zu. Gemessen 17.8.2026 @1440 in der Stellung
+Fussnoten = an · Änderungsvermerke = aus:
+
+| Erlass | Apparat-Einträge sichtbar | Marker sichtbar | Apparat-Kästen |
+|---|---|---|---|
+| StPO | 285 → **98** | 285 → **105** | 135 → 56 |
+| ZGB | 809 → **90** | 809 → **173** | 531 → 105 |
+
+Die Ursache liegt in der Klassenverteilung, nicht im Selektor: `kl:'A'` ist beim
+Bundesrecht die **Regel**, nicht der Sonderfall (ZGB 719 von 809 Einträgen). Ein
+Schalter, der «alle A-Fussnoten» ausblendet, blendet damit faktisch den
+**amtlichen Fussnoten-Apparat** aus — und war so ein zweiter, versteckter
+Fussnoten-Schalter. Das ist §8-widrig: die Beschriftung sagt «Änderungsvermerke»,
+die Wirkung war «Fussnoten».
+
+**Entscheid David 17.8.2026: Fussnoten unabhängig von Änderungsvermerken.** Zwei
+Schalter, zwei **disjunkte** Flächen:
+
+| Schalter | Fläche | Träger |
+|---|---|---|
+| Fussnoten | Marker **und** Apparat, **alle** Klassen (auch `kl:'A'`) | `[data-fn-ref]` · `[data-fn-marker]` · `[data-fn-apparat]` |
+| Änderungsvermerke | **nur** die abgeleitete Fassungs-Zeile | `[data-hist-slot]` |
+
+Die beiden Regeln auf `[data-fn-klasse="A"]` und auf den A-only-Apparat sind
+**ersatzlos entfallen** (`index.css`). Der dritte Träger aus 7.4 ist damit der
+**einzige**; die A-Fussnote bleibt vollständig abwählbar, nur über den Schalter,
+dem sie sachlich gehört.
+
+**Warum die Auflage 1 dadurch strenger erfüllt ist:** sie verlangte, dass V, G, Z,
+U und alles ohne Klasse vom Vermerke-Schalter unberührt bleiben. Das gilt jetzt
+für **jede** Klasse — der Schalter fasst den Fussnoten-Apparat überhaupt nicht
+mehr an. Die Sicherheitsrichtung ist unverändert einseitig: nie amtliche Substanz
+hinter einer Beschriftung verstecken, die etwas anderes verspricht.
+
+**Gilt in beiden Hüllen.** Die Regeln hängen an `.lc-leser`, nicht am V3-Flag.
+Den Schalter in V1 gekoppelt zu lassen hiesse, dasselbe Steuerelement mit zwei
+Bedeutungen zu führen (§5).
+
+**Die Anbieten-Regel bleibt unverändert — gemessen, nicht geschlossen.** Nach der
+Entkopplung beschreibt die `kl:'A'`-Bedingung in `bieteAenderungsvermerkeSchalter`
+keine Wirkung mehr; sie kann nur noch überanbieten. Gemessen über alle 1420
+Struktur-Sidecars gegen alle 209 Historie-Shards (205 mit Einträgen), 17.8.2026:
+
+| Fall | Anzahl |
+|---|---|
+| `kl:'A'` > 0 **und** Fassungszeile | 203 → Schalter wirksam |
+| `kl:'A'` > 0 **ohne** Fassungszeile | **0** → gäbe einen toten Schalter |
+| `kl:'A'` = 0 **mit** Fassungszeile | 2 (MONTREAL, PVUE) |
+
+{203} ∪ {2} ist genau die Menge der 205 Shards mit Einträgen — die Redundanz ist
+heute vollständig gedeckt und bleibt darum stehen (§1). Der Tag, an dem ein
+Erlass mit `kl:'A'` ohne Historie-Einträge dazukommt, ist der Tag, an dem sie
+fallen muss; Wächter dafür ist `src/tests/aenderungsvermerke-schalter.test.ts`
+(«Ä68: kein Erlass trägt kl:A ohne Fassungszeile»), der dann rot wird und den
+Erlass benennt.
+
+**Belege:** `src/index.css` (Regel-Block Ä68) · `e2e/hist-ansicht-w25i.e2e.ts`
+(A-Zusicherungen umgekehrt, je zweiseitig, plus 2×2-Matrix über Bund und Kanton) ·
+`e2e/leser-optionen.e2e.ts` (Ä69). Rot-Beweis am Vorzustand gesehen: «Vermerke=aus
+nimmt Apparat-Zeilen mit — Expected 29, Received 8» (BGBM).
 
 ### 7.5 Auflage 5 (ZITAT) — bleibt David-Entscheid
 

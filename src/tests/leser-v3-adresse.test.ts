@@ -57,7 +57,10 @@ const V3_REIN = [
   'src/pages/gesetz-leser/v3/LeserAnsichtV3.tsx',
   'src/pages/gesetz-leser/v3/UebersichtBox.tsx',
   'src/pages/gesetz-leser/v3/kopfStufen.ts',
-  'src/pages/gesetz-leser/v3/v3Optionen.ts',
+  // `v3Optionen.ts` ist mit S1 ENTFALLEN (Optionen-Rückbau, David F1/F2 «ja»):
+  // die Abbildung zwischen dreiwertigem Store und zweiwertiger V3-Sicht hat kein
+  // Gegenüber mehr, seit `histansicht` selbst zweiwertig ist. Kein Ersatz-Eintrag
+  // — die Datei gibt es nicht, und `readFileSync` würde hier zu Recht werfen.
 ];
 
 describe('V3-Hülle: der EINE erlaubte Adress-Schreiber (LM-202)', () => {
@@ -109,8 +112,23 @@ describe('V3-Hülle: der Kern bleibt unangetastet (Treue-Grenze, Kap. 1.3)', () 
     // einzige verbleibende Wache, und der misst erst im Browser.
     const spalte = LIES('src/pages/gesetz-leser/v3/LeserLesespalte.tsx');
     expect(traegt(spalte, /<ArtikelLeser key=\{e\.id\}/), 'V3 rendert den Kern nicht mehr').toBe(true);
-    expect(traegt(spalte, /id="lc-lesespalte" className="mx-auto w-full max-w-normtext"/),
-      'Lesespalte weicht von der Ist-Geometrie ab (A37-Lesemass)').toBe(true);
+    // ── Ä2 · DEKLARIERTE ÄNDERUNG DES SATZSPIEGELS (16.8.2026, H2) ─────────
+    // Hier stand `max-w-normtext` (42 rem) — die byte-gleich übernommene
+    // Ist-Geometrie. Neu gilt `max-w-reading` (40 rem), ebenfalls ein
+    // Haus-Token. Anlass: in V3 nimmt die 18-rem-Seitenleiste vorher Breite,
+    // gemessen blieben @1280 nur 556–616 px übrig — der Lesetext war schmaler
+    // als sein eigenes Mass und schwankte mit dem Klapp-Zustand der Leiste.
+    //
+    // WAS DIESE ZEILE WEITERHIN BEWACHT und was nicht: sie hält fest, dass die
+    // Lesespalte ihr Mass aus EINEM Token zieht und zentriert bleibt — nicht
+    // mehr, welchen Wert das Token hat. Der Wert ist seit dem Entscheid vom
+    // 16.8. eine Gestaltungsfrage (Ä2) und keine Treue-Frage: die Treue des
+    // Textes misst PX, und PX misst seither bei ERZWUNGEN gleicher
+    // Artikelbreite, ist vom Satzspiegel also unabhängig
+    // (`e2e/px-textkoerper.e2e.ts`). Ohne diese Trennung risse jede
+    // Layout-Entscheidung das Treue-Tor mit.
+    expect(traegt(spalte, /id="lc-lesespalte" className="mx-auto w-full max-w-reading"/),
+      'Lesespalte zieht ihr Mass nicht mehr aus dem einen Token (Ä2: max-w-reading)').toBe(true);
   });
 
   it('die Kopfzeile trägt keine `imPane`-Verzweigung (Kap. 10, Paritäts-Grund)', () => {

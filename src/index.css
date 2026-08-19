@@ -278,6 +278,31 @@
     --timer-fs:clamp(1.8rem, 5vw, 2.4rem);
     --vorschau-fs:.92rem;
     --vorschau-fs-kompakt:.88rem;
+    /* HOCHGESTELLTE ZEICHEN IM WORTLAUT (W2·5m-LESER-V3 · S2, Design-Grundlage
+       Kap. 2.3): EIN Token statt SECHS zeichengleicher `text-[0.62em]`-Literale
+       (`ArtikelBody.tsx` FnRef, `ArtikelLeser.tsx` 2×, `SektionKopf.tsx`,
+       `ErlassKopfBlock.tsx`, `helpers.tsx` margLabel).
+
+       ROLLENNEUTRALER NAME (Nachzug 17.8.2026, Architektur-Prüfer 6): das Token
+       hiess `--fn-marke` und trug damit den Namen EINER seiner zwei Rollen. Es
+       setzt aber ZWEI Fachinhalte: (a) die Fussnotenmarke (FnRef, Trenn-Komma
+       zwischen mehreren Marken) und (b) das Ordnungs-Suffix «bis»/«ter» an
+       Marginalien und Artikelnummern (`helpers.tsx` margLabel, LM-107). Beide
+       sind dasselbe TYPOGRAFISCHE Merkmal — ein hochgestelltes Zeichen im
+       Wortlaut, das dem Fliesstext folgen muss —, aber fachlich verschieden. Ein
+       Name nach der einen Rolle liest sich am zweiten Gebrauchsort als Fehler
+       und verleitet zum Abspalten eines zweiten Werts; ein neutraler Name hält
+       die eine Auszeichnung an EINER Stelle (§5).
+       ENTSCHEID DAVID 17.8.2026 am Bildbogen: hochgestellt und OHNE Klammern
+       (V1-Form) auf dem V2-Satzspiegel — «v2 gefällt mir besser aber fussnoten
+       hochgestellt». Die V2-Spalte des Fahrplans (Kap. 8) sah runde Klammern und
+       0.8 em vor; beides ist damit abgelöst. Wert 0.72 em = der Grundlagen-Wert.
+       Er MUSS em-relativ bleiben, damit die Marke dem Fliesstext (S2: 17 px) und
+       dem Leser-Schriftregler folgt statt zu entkoppeln; gemessen wächst sie
+       dadurch von 0.62 em × 18 px = 11.2 px auf 0.72 em × 17 px = 12.2 px — die
+       Marke wird also lesbarer, nicht kleiner. Gebrauch:
+       `text-[length:var(--hochgestellt)]` (Token-Escape der Schranke B2). */
+    --hochgestellt:.72em;
     /* Display = Geist (Wunsch David 6.6.2026): die Serife Fraunces ist aus
        der UI entfernt; PDF-Berichte behalten ihre eingebetteten Schriften. */
     /* Rank 11: 'Geist Fallback'/'Source Serif 4 Fallback' (metrik-angepasstes
@@ -378,7 +403,8 @@
   html { -webkit-tap-highlight-color: transparent; }
   :focus:not(:focus-visible) { outline: none; }
 
-  /* ── W2·5d G2a: Leser-Options-Leiste (Fussnoten/Verweise) ─────────────────
+  /* ── W2·5d G2a: Leser-Options-Toggles (seit S1: Fussnoten · Änderungsvermerke
+        · Rechtsprechung im Text; «Verweise» ersatzlos entfallen) ─────────────
      Rein visuelle Darstellungs-Toggles (leserOptionen.tsx) — data-*-Attribute am
      <html>, hier per CSS ausgewertet. Default 'an' = KEINE Regel greift = heutige
      Darstellung byte-gleich (R6). Alle Regeln auf `.lc-leser` gescopt, damit NUR
@@ -402,73 +428,122 @@
      dem Klick (input-exkludiert) → kein CLS-Beitrag; der Default AN emittiert keine
      Regel (byte-gleich, R6). Druck folgt dem Toggle: bei AUS wird der Apparat auch
      im Ausdruck weggelassen (display:none wirkt in @media print gleichermassen). */
-  html[data-fussnoten="aus"] .lc-leser button[aria-label^="Fussnote"],
+  /* ── H2 · WURZEL-FIX (§17), zwei Vorfälle 16.8.2026, beide nachgemessen ────
+     (1) URSPRÜNGLICHER DEFEKT (David-Befund): Der Marker-Selektor griff über den
+     ACCESSIBLE NAME (`button[aria-label^="Fussnote"]`) und traf damit alles, was
+     «Fussnote…» heisst. In der V3-Hülle liegt das Ansicht-Menü innerhalb von
+     `.lc-leser`, und der Schalter dort heisst `aria-label="Fussnoten (283)"`.
+     Folge: ein Klick auf «Fussnoten» setzte `data-fussnoten="aus"` und blendete
+     den Schalter aus, mit dem man es rückgängig macht — der Nutzer kam nicht
+     mehr an ihn heran. In V1 hatte die (schon immer zu weite) Regel keine Ziele.
+     (2) FEHLGRIFF BEIM ERSTEN FIX: Der Selektor wurde auf `#lc-lesespalte`
+     verengt. Gemessen an der Ist-Hülle (BGBM, Preview): 4 von 29 Marker-Buttons
+     liegen AUSSERHALB der Lesespalte — Erlasskopf und Ingress. Dort schaltete
+     der Toggle seither gar nicht mehr; das ist eine Verhaltensänderung an der
+     eingefrorenen V1 und verletzt FL-4 (ohne Flag bitgleich).
+     WURZEL: Eine CSS-Regel darf Elemente nicht über ihren TEXT suchen. Der
+     Marker trägt jetzt die eigene Kennung `data-fn-ref`
+     (`src/components/normtext/ArtikelBody.tsx`) — eindeutig, hüllenneutral, und
+     der Schalter trägt sie nicht. Damit greift die Regel in V1 wieder überall
+     (auch im Kopf) und lässt in V3 den Schalter in Ruhe.
+     Die Attribut-Selektoren darunter waren nie betroffen: `data-fn-marker` und
+     `data-fn-apparat` existieren ausschliesslich am
+     Normtext. Hinweis: `[data-fn-marker]` ist KEIN Ersatz-Scope für den Marker —
+     gemessen liegen 19/29 (BGBM) bzw. 476/847 (OR) Marker-Buttons ausserhalb
+     eines solchen Clusters.
+     Wächter: `src/tests/fussnoten-toggle-huellenneutral.test.ts` (rot gezeigt).
+     (Der DOM-Walker in `suchHighlight.ts` benutzt noch dieselbe Namensregel, ist
+     aber von Haus aus auf den Artikel-Container beschränkt — dort ist sie
+     unbedenklich und bleibt unverändert.) */
+  html[data-fussnoten="aus"] .lc-leser [data-fn-ref],
   html[data-fussnoten="aus"] .lc-leser [data-fn-marker],
-  html[data-fussnoten="aus"] .lc-leser [data-fn-apparat],
-  html[data-fussnoten="aus"] .lc-leser [data-hist-chrono] {
+  html[data-fussnoten="aus"] .lc-leser [data-fn-apparat] {
     display: none;
   }
 
-  /* ── W2·5i-HIST-ANSICHT: «Änderungshistorie: aus / als Fussnoten / als
-     Chronologie» (§14-Intake David 20.7.2026, gebaut 26.7.2026 nach dem
-     H0-Verdikt `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`).
+  /* ── ÄNDERUNGSVERMERKE an/aus (§14-Intake David 20.7.2026, gebaut 26.7.2026
+     nach dem H0-Verdikt `bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`;
+     ZWEIWERTIG seit S1, Entscheid David F1 «ja» — FAHRPLAN-LESER-V3 Kap. 4f).
 
-     Der TRAGENDE Satz (H0-Auflage 1, nicht verhandelbar): ausgeblendet wird
-     ausschliesslich `[data-fn-klasse="A"]` — die build-seitig als reine
-     Änderungshistorie klassifizierten Fussnoten. Echte Verweise ("V"), die
-     Grauzone ("G"), Publikationsnachweise ("Z"), Unklares ("U") UND jede
-     Fussnote OHNE Klasse (alle Kanton-Sidecars tragen kein `kl`) bleiben in
-     JEDER der drei Ansichten sichtbar. Attribut-Selektoren greifen nur bei
-     exakt "A" — eine fehlende Klasse blendet also nie etwas aus (§8/§1).
+     S1-RÜCKBAU: Der dritte Wert «chronologie» und seine drei Regeln sind
+     ERSATZLOS ENTFALLEN, mit ihnen `[data-hist-chrono]` (das Element gibt es im
+     DOM nicht mehr, ArtikelLeser.tsx). Geblieben ist genau eine Weiche: an/aus.
 
-     R9/§8: `display:none` trifft NUR Marker-Ziffern und Apparat-Zeilen, NIE
-     einen Substanz-Träger — der Normtext selbst ist von keiner dieser Regeln
-     erfasst und bleibt in jeder Ansicht sichtbar, durchsuchbar (Ctrl+F) und im
-     Ausdruck. Gleiche Mechanik und gleiche Begründung wie der bestehende
-     data-fussnoten-Toggle darüber; der `<p id="fn-…">`-Quellblock bleibt im DOM,
-     weshalb das Marker-Popover (liest `innerHTML`) auch in der Chronologie-
-     Ansicht weiterarbeitet.
+     ── Ä68 · ENTKOPPELT (Entscheid David 17.8.2026, ersetzt die S1-Auslegung) ──
+     BEFUND, wörtlich: «wenn änderungsvermerke abgewählt wird dann verschwinden
+     auch fussnoten.» Er trifft zu, und zwar massiv. Gemessen 17.8.2026 abends
+     @1440 (Stellung Fussnoten = an, Änderungsvermerke = aus):
 
-     Default 'fussnoten' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6).
-     Beide Umschaltungen sind klick-getrieben ⇒ der Reflow liegt binnen 500 ms
-     nach der Eingabe (CLS-exkludiert), und weil Apparat UND Chronologie-Liste
-     dauerhaft im DOM liegen, wird beim Umschalten nichts nachgeladen. ── */
+       StPO   Apparat-Einträge sichtbar 285 → 98   · Marker 285 → 105
+              Apparat-Boxen 135 → 56   (79 Kästen ganz weg)
+       ZGB    Apparat-Einträge sichtbar 809 → 90   · Marker 809 → 173
+              Apparat-Boxen 531 → 105  (426 Kästen ganz weg)
 
-  /* «aus»: Änderungsvermerke ganz weg — Marker und Apparat-Zeile. */
-  html[data-histansicht="aus"] .lc-leser [data-fn-klasse="A"] {
+     Wer die Änderungsvermerke abwählte, verlor damit fast neun Zehntel des
+     amtlichen Fussnoten-Apparats — obwohl der Fussnoten-Schalter auf «an» stand.
+     Die Ursache waren die beiden Regeln, die hier standen: die erste blendete
+     `[data-fn-klasse="A"]` aus (Marker IM Fliesstext UND Apparat-Eintrag), die
+     zweite den ganzen Apparat-Kasten, sobald darin nur noch A-Zeilen lagen. Auf
+     dem ZGB sind 719 von 809 Einträgen `kl:'A'` — die Klasse ist beim Bundesrecht
+     die REGEL, nicht der Sonderfall, und damit war «Änderungsvermerke aus» de
+     facto ein zweiter, versteckter Fussnoten-Schalter.
+
+     DIE NEUE, EINE WAHRHEIT — zwei Schalter, zwei disjunkte Flächen:
+       Fussnoten-Schalter        Marker UND Apparat, ALLE Klassen (auch `kl:'A'`)
+       Änderungsvermerke-Schalter  NUR die abgeleitete Historie-Zeile
+                                   (`[data-hist-slot]`: «Gilt seit …» + Zeitleiste)
+     Der Fussnoten-Schalter trifft die Klasse `A` seit je mit (`[data-fn-ref]`/
+     `[data-fn-marker]`/`[data-fn-apparat]` kennen keine Klassen) — die A-Fussnote
+     ist also weiterhin abwählbar, nur nicht mehr über den falschen Schalter.
+
+     H0-AUFLAGE 1 BLEIBT GEWAHRT, sie wird sogar strenger erfüllt: sie verlangte,
+     dass echte Verweise ("V"), Grauzone ("G"), Publikationsnachweise ("Z"),
+     Unklares ("U") und jede Fussnote OHNE Klasse vom Vermerke-Schalter
+     UNBERÜHRT bleiben. Das gilt jetzt für JEDE Klasse — der Schalter fasst den
+     Fussnoten-Apparat überhaupt nicht mehr an
+     (`bibliothek/normen/hist-ansicht-h0-trennbarkeit.md`, Nachtrag 17.8.2026).
+
+     WIRKSAM BLEIBT DER SCHALTER: gemessen über den ganzen Korpus (1420
+     Struktur-Sidecars, 209 Historie-Shards, davon 205 mit Einträgen, 17.8.2026)
+     tragen **0** Erlasse eine `kl:'A'`-Fussnote OHNE Fassungszeile. Die
+     Anbieten-Regel (`bieteAenderungsvermerkeSchalter`, berechnungen.ts) bleibt
+     darum unverändert richtig — sie kann nach der Entkopplung nur noch
+     überanbieten, und das tut sie heute an keinem einzigen Erlass.
+
+     R9/§8: `display:none` trifft NUR die abgeleitete Fassungs-Metazeile, NIE
+     einen Substanz-Träger — der Normtext bleibt in jeder Stellung sichtbar,
+     durchsuchbar (Ctrl+F) und im Ausdruck. Gleiche Mechanik wie der
+     data-fussnoten-Toggle darüber (A1, David 5.7.2026: «AUS» = verschwinden statt
+     dämpfen); der Inhalt bleibt im DOM.
+
+     Default 'an' emittiert KEINE Regel ⇒ Grundzustand byte-gleich (R6). Die
+     Umschaltung ist klick-getrieben ⇒ der Reflow liegt binnen 500 ms nach der
+     Eingabe (CLS-exkludiert) und lädt nichts nach.
+
+     GILT IN BEIDEN HÜLLEN, und das ist gewollt: die Regeln hängen an
+     `.lc-leser`, nicht am V3-Flag. Den Schalter in V1 gekoppelt zu lassen
+     hiesse, dasselbe Steuerelement mit zwei Bedeutungen zu führen (§5) — und
+     eine flag-abhängige CSS-Regel wäre ein zweiter Schaltpunkt neben der einen
+     Fassade (FL-1). Deklarierte fachliche Änderung an V1, nicht Refactoring;
+     die Vorgabestellung ist unberührt, PX misst im Grundzustand (R6). ── */
+
+  /* S1 (Befund K4): die «Fassung»-Zeile am Artikelfuss (ArtikelHistorie.tsx —
+     «Gilt seit …»-Badge + Fassungs-Zeitleiste) hing bis S1 an GAR KEINEM
+     Schalter. Sie ist die aus dem Historie-Shard AGGREGIERTE Auskunft — nicht
+     amtlicher Fussnotentext, sondern eine daraus abgeleitete Metazeile; bei
+     «Änderungsvermerke aus» blieb sie als einzige Historie-Spur im Lesetext
+     stehen, und der Schalter hielt nicht, was er verspricht (§8).
+
+     Ä68 (17.8.2026): diese Regel ist seit der Entkopplung die EINZIGE des
+     Schalters — genau deshalb ist der Schalter jetzt ehrlich. Er blendet das
+     Abgeleitete aus und lässt den amtlichen Apparat, aus dem es abgeleitet ist,
+     stehen; wer auch den nicht sehen will, hat den Fussnoten-Schalter.
+     Ausgeblendet wird der SLOT (`[data-hist-slot]`), nicht nur die Zeile darin:
+     der Slot reserviert 16+24 px ab dem ersten Render (§15.2, CLS) und bliebe
+     sonst als Phantom-Lücke unter jedem Artikel zurück. Inhalt bleibt im DOM
+     (A1-Mechanik), «an» stellt ihn vollständig wieder her. */
+  html[data-histansicht="aus"] .lc-leser [data-hist-slot] {
     display: none;
-  }
-
-  /* «als Chronologie»: die A-Zeilen verlassen den nummerierten Apparat und
-     erscheinen stattdessen als datierte Liste. Die INLINE-Marker bleiben
-     absichtlich stehen — sie sind der Bezugspunkt im Wortlaut, und ihr Popover
-     zeigt den Vermerk an Ort und Stelle. */
-  html[data-histansicht="chronologie"] .lc-leser [data-fn-apparat] [data-fn-klasse="A"] {
-    display: none;
-  }
-
-  /* Die Chronologie-Liste liegt immer im DOM und ist NUR in ihrer Ansicht
-     sichtbar (in «aus» ebenso weg wie der Apparat — sonst zeigte «aus» die
-     Historie doppelt gedreht wieder an). */
-  .lc-leser [data-hist-chrono] {
-    display: none;
-  }
-  html[data-histansicht="chronologie"] .lc-leser [data-hist-chrono] {
-    display: block;
-  }
-  /* Trägt der Apparat NUR noch unsichtbare A-Zeilen, bliebe seine Trennlinie
-     als leerer Strich stehen. `:not(:has(…))` prüft, ob überhaupt eine
-     nicht-A-Zeile darin steckt; fehlt sie, verschwindet der Rahmen mit. */
-  html[data-histansicht="chronologie"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))),
-  html[data-histansicht="aus"] .lc-leser [data-fn-apparat]:not(:has(> :not([data-fn-klasse="A"]))) {
-    display: none;
-  }
-
-  /* Verweise AUS: die Unterstreichung der Verweis-Links (dotted, heute nur bei
-     :hover) wird unterdrückt — Farbe und Anker/Funktion bleiben (§3.1: «schaltet
-     nur die Unterstreichung»). Ctrl+F/Klick unberührt. */
-  html[data-verweise="aus"] .lc-leser .decoration-dotted {
-    text-decoration-line: none;
   }
 
   /* Entscheide AUS (V2·B-1, David 10.7.2026): die verlinkten Bundesgerichts-
@@ -480,6 +555,96 @@
      bleiben im DOM (Ctrl+F/Screenreader-neutral wie der Fussnoten-Toggle). */
   html[data-leitfaelle="aus"] .lc-leser [data-leitfall-zeile] {
     display: none;
+  }
+
+  /* ── Ä1 (LESER-V3 H2b) · die Polsterung, die der V3-Kopf verschluckt ────────
+     Der Route-Wrapper polstert den Seiteninhalt oben (`py-8 sm:py-12` in
+     `components/layout/Shell.tsx`); im Split-View-Pane sind es `py-6`
+     (`components/layout/Pane.tsx`). Gemessen 17.8.2026 @1440 lagen dadurch 48 px
+     Leerzone zwischen Krumen-Leiste und V3-Kopf — die beim ersten Scroll auf 0
+     zusammenfielen, weil der Kopf dann klebt. Eine klebende Leiste soll aber in
+     JEDEM Zustand dasselbe Bild geben.
+     Der Wert steht HIER und nicht in der Komponente, weil er dem Wrapper gehört
+     und dessen Schwelle (640 px) teilen muss; `LeserKopf.tsx` liest ihn nur und
+     bleibt damit ohne Breakpoint- und ohne `imPane`-Zweig (Kap. 10). Den
+     Pane-Wert setzt der Rahmen inline — er ist der einzige Ort, der `imPane`
+     kennen darf.
+     ÄNDERT SICH EINE DER BEIDEN POLSTERUNGEN, wird `leser-v3-kopf-buendig.e2e.ts`
+     rot: die Spec misst die Lücke auf H/D/S gegen 0 statt sie zu behaupten. */
+  [data-leser-v3="rahmen"] { --leser-v3-kopf-luecke: 2rem; }
+  /* `theme('screens.sm')` statt einer rohen 640: der Wrapper schaltet mit dem
+     Tailwind-`sm`-Praefix (`py-8 sm:py-12`), also muss die Schwelle aus derselben
+     Quelle kommen (§5, D2 «keine Magic-Numbers») — dieselbe Schreibweise wie die
+     `not all and (min-width: theme('screens.sm'))`-Regel weiter unten. Eine rohe
+     Zahl loeste zudem den Waechter `src/tests/tap-ziel-token.test.ts` aus, der jede
+     nackte `min-width`-Zahl in dieser Datei meldet (gesehen 17.8.2026). */
+  @media (min-width: theme('screens.sm')) {
+    [data-leser-v3="rahmen"] { --leser-v3-kopf-luecke: 3rem; }
+  }
+
+  /* ── LESER-SCHRIFTSKALA (David-Anmerkung 16.8.2026, Pkt. 4) ────────────────
+     Befund: «Schriftgrössen-Regler wirkt auf die ganze Seite.» Ursache war der
+     GLOBALE Steller (`useSchriftskala.ts`), der `font-size` am <html> setzt —
+     gemessen wuchs die Kopfzeile von 16 px auf 20.8 px mit. Er bleibt für die
+     ganze App bestehen (Barrierefreiheit, WCAG 1.4.4); DIESE Skala beantwortet
+     die andere Frage — «der Gesetzestext ist mir zu klein» — und darf darum
+     genau eines vergrössern: den Normtext.
+
+     Warum nicht auf `.lc-leser` selbst: die Kopfzeile und die Seitenleiste
+     liegen INNERHALB dieser Hülle (LeserRahmenV3). Der Scope ist deshalb
+     `.nt-art-cv` — die Artikel-Hülle, die es in V1 wie V3 gibt (ArtikelLeser) —
+     und darin der Fliesstext-Container. Auf eine Tailwind-Utility zu selektieren
+     war hier gängige Praxis (Blaupause war die mit S1 entfallene
+     `[data-verweise="aus"]`-Regel auf `.decoration-dotted`); der Normtext-
+     Container trägt kein eigenes Daten-Attribut, und die Komponente gehörte
+     nicht zur Bau-Fläche. Neue Hooks tragen ein eigenes Attribut
+     (`[data-hist-slot]` oben) — ein Utility-Klassenname ist kein Vertrag.
+
+     S2 · A-1-NACHZUG, WURZEL-FIX DAZU: genau dieser Satz ist eingelöst. Der
+     Selektor griff `.text-body-l`; S2 tauscht die Fliesstext-Stufe auf
+     `text-leser-text` — die Regel hätte danach STILL nichts mehr getroffen, der
+     Regler wäre wirkungslos geworden, und kein Tor hätte es gemeldet (genau die
+     Klasse «Tor, das nicht scheitern kann», §6.7). Der Selektor hängt jetzt an
+     `[data-lese]`, dem Daten-Attribut, das `ArtikelBody` auf DEMSELBEN Element
+     setzt, das die Grössen-Klasse trägt (ArtikelBody.tsx) — ein Vertrag statt
+     eines Utility-Namens. `src/tests/leser-schriftskala.test.ts` prüft, dass der
+     Selektor kein `text-`-Utility mehr enthält.
+
+     R6/BYTE-GLEICHHEIT: Die Vorgabestufe `normal` ist über das `:not()` vom
+     Selektor AUSGENOMMEN — sie emittiert keine Deklaration, die Normtext-Grösse
+     bleibt exakt `text-leser-text` (1.0625 rem) und damit pixelidentisch zum
+     Stand ohne Regler. Fehlt das Attribut ganz (Prerender vor
+     `wendeLeserOptionenAn`), greift ebenfalls nichts. Umschalten ist
+     klick-getrieben ⇒ der Reflow liegt binnen 500 ms nach der Eingabe
+     (CLS-exkludiert) und rendert nichts neu (§15).
+
+     S2 · A-1: die VIER STUFEN sind auf die Faktoren der Design-Grundlage
+     Kap. 2.3 gezogen — `[1.0, 1.08, 1.18, 1.3]`, Entscheid D-A, Vorbild
+     `EntscheidLeser.tsx:204`. Bis S2 lief die Skala auf `[1.0, 1.111, 1.222,
+     1.333]` (absolute 1.125/1.25/1.375/1.5 rem); die Grundlagen-Faktoren waren
+     nicht anwendbar, weil die Vorgabestufe an das SITE-Token `body-l` gebunden
+     war und H1/H2 den Normtext byte-gleich halten mussten. Mit `leser-text` hat
+     der Leser eine eigene Basis, also greifen sie jetzt:
+       normal 1.0625 rem (17.00 px) · mittel 1.1475 (18.36) ·
+       gross 1.25375 (20.06) · sehr-gross 1.38125 (22.10)
+     Anzeigewerte damit 100 · 108 · 118 · 130 %. Die Werte sind in
+     `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) gespiegelt, weil dort
+     der Anzeigewert entsteht; `src/tests/leser-schriftskala.test.ts` prüft beide
+     Listen gegeneinander UND die Vorgabestufe gegen `tailwind.config.js`, so
+     dass sie nicht auseinanderlaufen können (§5). ── */
+  html[data-leserschrift="mittel"]     { --lm-leser-schrift: 1.1475rem; }
+  html[data-leserschrift="gross"]      { --lm-leser-schrift: 1.25375rem; }
+  html[data-leserschrift="sehr-gross"] { --lm-leser-schrift: 1.38125rem; }
+  /* FL-4-NACHZUG (Pruefer-Befund zu PR #539, 16.8.2026): `data-leserschrift` wird
+     GLOBAL am <html> gesetzt, unabhaengig davon, ob die V3-Huelle aktiv ist. Ohne
+     zusaetzlichen Scope traf die Regel auch `.lc-leser` in der Ist-Huelle (V1) —
+     dort gibt es aber keinen Regler, um die Stufe wieder zurueckzustellen (nur der
+     Rueckweg ueber V3 half). `.lc-leser[data-leser-v3="rahmen"]` ist das V3-Root
+     selbst (LeserRahmenV3.tsx traegt beide Attribute auf demselben Element) — die
+     Regel greift damit KONSTRUKTIV nur, wenn V3 aktiv ist; in V1 fehlt das
+     Attribut, der Selektor kann nie treffen. */
+  html[data-leserschrift]:not([data-leserschrift="normal"]) .lc-leser[data-leser-v3="rahmen"] .nt-art-cv [data-lese] {
+    font-size: var(--lm-leser-schrift, 1.0625rem);
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen
@@ -763,6 +928,66 @@
     outline: none; border-color: var(--brass-600);
     box-shadow: var(--ring); /* abgesetzter Doppelring — klar sichtbar auf Papier */
   }
+  /* ── Ä14 (LESER-V3 H2b) · EIN Fokusring statt drei Kanten ───────────────────
+     `.lc-input:focus` setzt drei Dinge zugleich: Rahmenfarbe, 2-px-Papier-Saum
+     und 2-px-Messingring (`--ring`). Gemessen am 32-px-Such-/Sprungfeld der
+     V3-Leiste ist das die auffälligste Fläche des ganzen Lesers. Diese Klasse
+     ersetzt den Doppelring durch EINEN 2-px-Ring in der Rolle `focus`
+     (Design-Grundlage Kap. 4) — nicht weniger sichtbar, nur einmal.
+     Sie steht NACH `.lc-input:focus` und trägt eine Klasse mehr, gewinnt also
+     ohne `!important`; betroffen ist nur, wer sie ausdrücklich trägt —
+     `.lc-input` bleibt für die ganze App unverändert (FL-4).
+     `outline` statt `box-shadow`: forced-colors zeichnet Outlines selbst, der
+     UA-Fallback weiter unten bleibt damit ohne Konkurrenz. */
+  /* ── Ä31 (H2b-Nachzug) · WIRKLICH EIN RING, NICHT ZWEI ─────────────────────
+     Ä14 nahm den `box-shadow` weg, liess aber `border-color: var(--focus)` und
+     `outline-offset: 1px` stehen. Gemessen 17.8.2026 am Feld der V3-Leiste:
+     `outline 2px solid rgb(130,98,37)` · `outline-offset 1px` · `border-top 1px
+     rgb(130,98,37)` — der 1-px-Spalt zwischen Feldrahmen und Outline macht aus
+     zwei messingfarbenen Kanten wieder zwei sichtbare Ringe. Ä14 war damit nur
+     «teilweise» erledigt, wie die Ästhetik-Prüfung notiert hat.
+     JETZT: der Rahmen bleibt im Fokus NEUTRAL (`--line`, unverändert gegenüber
+     dem Ruhezustand), der Ring sitzt ohne Spalt am Feld. Es gibt genau EINE
+     Messing-Kante — die des Rings. */
+  /* ── Ä67 (David-Befund 17.8.2026 abends) · DER RING LIEGT INNEN ─────────────
+     BEFUND, wörtlich: «um das suchfeld erscheint bei klick darin ein braun
+     umrundetes feld dass abgeschnitten ist.»
+     GEMESSEN (StPO/V3 @1440, Gliederung als Spalte, Feld fokussiert): das Feld
+     liegt bei x = 184…464, der Ring — `outline` liegt IMMER aussen — bei
+     x = 182…466. Der Scroller der Seitenleiste (`[data-v3-leiste-scroller]`,
+     `overflow-x: hidden` · `overflow-y: auto`) beginnt aber exakt bei x = 184.
+     Die linke Ring-Kante lag damit **2 px ausserhalb des Clips** und war
+     abgeschnitten; beim Scrollen der Leiste trifft dasselbe die obere Kante, weil
+     der klebende Sockel nur `pt-0.5` (2 px) über dem Feld führt.
+     WURZEL: nicht der Scroller, sondern der Ring. `overflow-x: hidden` ist an
+     dieser Stelle tragend (langer Baumtitel darf die Leiste nicht waagrecht
+     scrollen — `e2e/leser-gliederung-kein-overflow.e2e.ts`), und `overflow-y`
+     IST der Scroller. Ein Ring, der aus seinem Element herausragt, ist in jedem
+     scrollenden Behälter angreifbar; der Behälter zu ändern behebt genau einen
+     Fundort und lädt den nächsten ein (§17: Wurzel, nicht Umschiffung).
+     FIX: `outline-offset: -2px` zieht den 2 px breiten Ring in die Feldfläche —
+     er deckt den 1-px-Rahmen und 1 px Polster, liegt also VOLLSTÄNDIG im
+     Element. Damit kann ihn kein Vorfahre mehr beschneiden, heute wie künftig.
+     Sichtbarkeit unverändert: dieselbe Rolle `focus`, dieselbe Breite 2 px, nur
+     innen statt aussen (WCAG 2.4.7/2.4.11 — der Indikator behält Fläche und
+     Kontrast; die Nachbarfarben sind Feldfläche innen, Behälterfläche aussen).
+     KEINE Wirkung auf die Höhenwächter des Kopf-Blocks (H2b B9): `outline` nimmt
+     in keiner Stellung Platz ein, `SUCH_H_RUHE`/`SUCH_H_AKTIV` bleiben gültig.
+     Wächter: `e2e/leser-v3-fokusring-suchfeld.e2e.ts` (vier Kanten gegen den
+     engsten Clip, hell und dunkel, Spalte UND Kopf-Zone), rot gezeigt. */
+  .lc-input.lc-v3-feld:focus, .lc-input.lc-v3-feld:focus-visible {
+    border-color: var(--line);
+    box-shadow: none;
+    outline: 2px solid var(--focus);
+    outline-offset: -2px;
+  }
+  /* ── Ä5 (LESER-V3 H2b) · Fläche des klebenden Leisten-Sockels ───────────────
+     Der Sockel muss OPAK sein (sonst läuft der Gliederungsbaum beim Scrollen
+     sichtbar darunter durch), darf aber nicht seine eigene Fläche behaupten: in
+     der Spalte liegt er auf `--paper`, im Bottom-Sheet auf `--paper-raised`
+     (gemessen 17.8.2026 als sichtbare Tonkante). Der BEHÄLTER setzt
+     `--leser-leiste-flaeche`; ohne Angabe bleibt es beim Vorzustand `--paper`. */
+  .lc-leiste-sockel { background: var(--leser-leiste-flaeche, var(--paper)); }
   /* LM-160/LM-165 (W2·17-UI-BEFUNDE B6, K-15): das `aria-invalid`-Attribut trägt
      bereits die a11y-Semantik (mehrere Formulare setzen es), aber ohne sichtbare
      Markierung blieb das fehlerhafte Feld optisch von jedem anderen ununterscheidbar
@@ -1067,6 +1292,14 @@
   .lc-leiste-griff:hover { background: var(--well); color: var(--brass-700); }
   .lc-leiste-griff-fest { background: var(--well); color: var(--ink-700); padding: 0 6px; }
   .lc-leiste-griff-fest:hover { background: var(--surface); color: var(--brass-700); }
+  /* Senkrechte Rand-SCHIENE des Lesers V3 (H3-Nachzug C5b): der schmale,
+     senkrecht beschriftete Öffner, wenn die Gliederung eingeklappt ist. Bis zum
+     Nachzug stand die Wertekette als 13 Utilities im JSX — Design-Werte gehören
+     zu den anderen `lc-leiste-*`-Klassen (§13), nicht in eine Layout-Datei. */
+  .lc-leiste-schiene {
+    @apply flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors;
+  }
+  .lc-leiste-schiene:hover { border-color: var(--brass-300); background: var(--well); color: var(--brass-700); }
 
   /* Sticky-Chrome-Kopf (Topbar) — LM-001/LM-006 (W2·17-UI-BEFUNDE-B3, K-01):
      vormals ein «Glas»-Effekt (96 % Deckkraft + blur(12px)). FAHRPLAN-GESETZES-UX.md
@@ -1145,6 +1378,60 @@
   details > summary::-webkit-details-marker { display: none; }
   details > summary::after { content: '  ▸'; color: var(--ink-400); font-size: .7em; }
   details[open] > summary::after { content: '  ▾'; }
+  /* ── Ä5/Ä27 (H2b-Nachzug) · NUR EIN DISCLOSURE-ZEICHEN ─────────────────────
+     Ä5 entfernte das hängende «·» aus der V3-Übersichtszeile, ihr zweites
+     hängendes Zeichen blieb: die Regel oben hängt an JEDE `<summary>` ein «▸»
+     ANS ENDE, und `v3/UebersichtBox.tsx` setzt bereits ein eigenes «▸» VORN,
+     das beim Aufklappen dreht. Gemessen 17.8.2026 (LugÜ @1440,
+     `getComputedStyle(el,'::after').content` = `"  ▸"`, dazu der Textknoten
+     «▸» im ersten Kind): das Zeichen war nicht weg, es war umgezogen.
+     GESTRICHEN wird das GLOBALE für diese eine Box, nicht das eigene: das
+     eigene sitzt vor dem Etikett (wo der Leser es erwartet), dreht sich statt
+     seinen Inhalt zu tauschen, und kann nicht als einzelnes Zeichen ans
+     Zeilenende umbrechen. Die App-weite Regel bleibt für alle anderen
+     `<details>` unverändert (FL-4). */
+  details[data-v3-uebersicht] > summary::after { content: none; }
+
+  /* ── Ä70 (17.8.2026, David: «mach das schöner und orientiere dich an
+        Fedlex») · STECKBRIEF-RASTER DER ÜBERSICHTSBOX ────────────────────────
+     Fedlex setzt links neben den Erlass eine Karte «Allgemeine Informationen»:
+     Label links, Wert rechts, je Paar EINE Zeile («Abkürzung OR», «Beschluss
+     30. März 1911», «Inkrafttreten 1. Januar 1912»). Der RHYTHMUS ist übernommen,
+     der Kasten nicht — Design-Grundlage Kap. 8 Nr. 1 verbietet Rahmen um jedes
+     Element («Trennung über Weissraum, dann Linie»), und die Box war bis H2b
+     genau so ein Kasten (Ä5). Darum: EINE Haarlinie über und EINE unter der
+     Liste; die Zeilen trennt der Weissraum des 4-px-Rasters (Kap. 3).
+
+     Warum hier und nicht als Utility-Kette an der Komponente: die Spaltenbreite
+     ist EIN Mass für alle Zeilen (§5) — an jeder Zeile wiederholt wäre sie
+     sieben Wahrheiten, von denen man eine vergisst.
+
+     GEMESSEN 17.8.2026 (D 1440, Leiste 18 rem): die Box ist 280 px breit, nach
+     dem Klapp-Einzug bleiben 264 px. 5 rem Label + 0.5 rem Spalte lässt dem Wert
+     rund 184 px — genug, dass «Die Bundesversammlung der Schweizerischen
+     Eidgenossenschaft» in Zeilen UMBRICHT statt (wie im Ist) 282 px still
+     abgeschnitten zu werden.
+
+     KEIN `truncate` und kein `title`-Ersatz: der schwerste Ist-Befund war genau
+     dieser stille Textverlust (StPO 282 px · BS-640.100 284 px · LugÜ 98 px ·
+     VMWG 66 px) — ein Tooltip ist keine Auskunft (§8). */
+  .lc-v3-steckbrief > dl {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding-block: .5rem;
+  }
+  .lc-v3-steckbrief > dl > div {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    column-gap: .5rem;
+    padding-block: .25rem;
+  }
+  /* Die zwei Textrollen der Grundlage Kap. 4: `label-2` (ink-600) für das
+     Etikett, `label-1` (ink-800) für den Wert. EINE Grösse, zwei Rollen — nicht
+     zwei Grössen; die Grösse selbst kommt als Haus-Token von der Komponente
+     (`text-body-s`), damit `check:design-tokens` sie sieht. */
+  .lc-v3-steckbrief dt { color: var(--ink-600); }
+  .lc-v3-steckbrief dd { color: var(--ink-800); overflow-wrap: anywhere; }
 
   /* Sprung-Hervorhebung: Ziel-Artikel kurz mit Messing-Fläche markieren
      (Hash-Sprung aus dem Popover / TOC, Rubrik V «Gesetze»). */

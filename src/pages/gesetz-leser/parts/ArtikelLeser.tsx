@@ -5,6 +5,7 @@ import { type InternRefs } from '../../../components/NormText';
 import { trenneAenderungshistorie, labelMitBereich, artikelGanzAufgehoben } from '../../../lib/normtext/darstellung';
 import type { Fussnote } from '../../../lib/normtext/browse';
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
+import { NEUER_TAB } from '../benennung';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { MehrKante } from '../../../components/verzahnung/MehrKante';
@@ -17,11 +18,10 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 import { verifizierLinkArtikel } from '../../../lib/normtext/verifikationslink';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
-import { extrahiereFussnotenRevision, kanonArtikelToken } from '../../../lib/verzahnung/revisionen-extrakt';
 import { margStufeStil, fnTextMitLinks, baueZitat, margLabel } from '../helpers';
 import { SUCH_META } from '../suchHighlight';
-import { zitatMitAusweis, heuteIso, fmtDatumLang } from '../../../lib/format';
-import { schaetzeArtikelHoehe, baueChronologie, fnNrSortKey } from '../berechnungen';
+import { zitatMitAusweis, heuteIso } from '../../../lib/format';
+import { schaetzeArtikelHoehe, fnNrSortKey } from '../berechnungen';
 import { BezuegeZeile } from './BezuegeZeile';
 import type { ArtikelBezuege } from '../bezuegeLaden';
 import { urlMitHash } from '../../../lib/liveUrlSync';
@@ -218,23 +218,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Eintrag leer → kein data-fn-klasse → in JEDER Ansicht sichtbar (§8).
   const fnKlasse: Record<string, string> = {};
   for (const f of fussAnzeige) if (f.nr && f.kl) fnKlasse[f.nr] = f.kl;
-  // W2·5i: Chronologie-Reihung der ÄNDERUNGSVERMERKE dieses Artikels. Keine neue
-  // Datenquelle und kein neuer Parser — reiner Render über `fussAnzeige` (die
-  // Sidecar-Fussnoten, die sowieso schon geladen sind) mit dem BESTEHENDEN
-  // Datums-Extraktor aus dem Revisions-Extrakt (§5: das «in Kraft seit …»-Muster,
-  // das Datums-Fenster und der deutsche Monats-Parser leben genau dort, nicht hier).
-  // Die Reihenfolge-Regel selbst steht als reine, geprüfte Funktion in
-  // ./berechnungen (baueChronologie) — hier bleibt nur der Aufruf.
-  const chronologie = baueChronologie<Fussnote>(
-    fussAnzeige,
-    // `hostToken` MUSS mit (PR #376, Fremd-Adressierungs-Wächter): eine Klausel
-    // wie «… Art. 40c in Kraft vom 1. Jan. 2025 …» in der Gliederungstitel-
-    // Fussnote von AHVG Art. 39 datiert Art. 40c, NICHT den Host. Ohne den Token
-    // verwürfe der Wächter solche Klauseln konservativ ganz — die Chronologie
-    // zeigte dann «ohne Datum», obwohl das Datum bekannt ist. Mit dem Token
-    // stimmt sie mit den Revisions-Shards überein (EINE Wahrheit, §5).
-    (text) => extrahiereFussnotenRevision(text, kanonArtikelToken(e.artikel))?.iso ?? null,
-  );
+  // S1 (Optionen-Rückbau, David F1 «ja»): die frühere Chronologie-Reihung dieses
+  // Artikels ist ENTFALLEN — mit dem dritten Historie-Modus fällt die zweite
+  // Darstellung derselben Vermerke weg. Die Vermerke selbst sind unberührt: sie
+  // stehen im Fussnoten-Apparat unten, mit Nummer, Wortlaut und AS/BBl-Link.
   for (const f of fussAnzeige) {
     if (!f.nr) continue;
     if (f.sektion) { (fnProSektion[f.sektion] ??= []).push(f.nr); continue; }
@@ -304,7 +291,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // trägt Komma UND Marker, verschwindet also als Ganzes.
   const fnMarker = artOffen && fnArtikelEbene.length > 0
     ? <span data-fn-marker>{fnArtikelEbene.map((nr, i) => (
-        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+        <span key={nr} data-fn-klasse={fnKlasse[nr]}>{i > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
       ))}</span>
     : null;
   // VERWEISE: im Artikel genannte, auflösbare (Bund-)Normverweise als Chips am
@@ -459,13 +446,18 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       A31: Wort-Verbinder (U+2060) klebt den Marker DIREKT an die
                       Marginalie (kein Abstand, kein Umbruch auf eine eigene Zeile). */}
                   {artOffen && fnProSektion[m]?.map((nr, j) => (
-                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
+                    <span key={nr} data-fn-marker data-fn-klasse={fnKlasse[nr]}>{WJ}{j > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel={e.artikel} nr={nr} /></span>
                   ))}
                 </div>
               ))}
             </div>
           ) : e.titel ? (
-            <div className="mb-1 font-serif leading-snug text-base font-semibold text-ink-800">
+            /* S2 · Ä7: derselbe Stil wie das Randtitel-BLATT in `margStufeStil`
+               (dort steht die Herleitung) — es ist dieselbe Rolle, nur aus der
+               anderen Quelle (`article_title` statt `marg`). Beide müssen gleich
+               aussehen, sonst wechselt die Sachüberschrift zwischen Artikeln ihre
+               Stimme (§5). */
+            <div className="mb-1 font-sans text-leser-rand font-semibold text-ink-800">
               {e.titel}
             </div>
           ) : null}
@@ -524,8 +516,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 {amtlich && (
                   <a href={amtlich} target="_blank" rel="noopener noreferrer"
                     className="text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
-                    aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen (neues Fenster)`}
-                    title="Amtliche Fassung an genau dieser Stelle (Fedlex)">amtliche Fassung ↗</a>
+                    aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen ${NEUER_TAB}`}
+                    // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel — der
+                    // sichtbare Text folgt dem `aria-label` und dem `title`
+                    // darüber, die schon immer «Amtliche Fassung» sagten.
+                    title="Amtliche Fassung an genau dieser Stelle (Fedlex)">Amtliche Fassung ↗</a>
                 )}
               </span>
             )}
@@ -533,7 +528,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 auf Klick (hinter dem Fussnoten-Schalter), wie jede andere Fussnote.
                 Die Statuszeile «· aufgehoben» oben bleibt unabhängig immer sichtbar. */}
             {ganzAufgehoben && aufhebungNotiz.length > 0 && (
-              <span data-fn-apparat className="basis-full pl-6 text-xs leading-snug text-ink-500">
+              /* S2: `text-leser-fn` wie der Haupt-Apparat am Artikelfuss. Beide tragen
+                 `data-fn-apparat`, sind also dieselbe Rolle — bis S2 lief dieser hier
+                 auf `text-xs` (12 px) und der andere auf 11 px, zwei Grössen für eine
+                 Sache (§5). Der eigene `leading-snug` fällt mit: die Zeilenhöhe kommt
+                 aus der Stufe. */
+              <span data-fn-apparat className="basis-full pl-6 text-leser-fn text-ink-500">
                 {aufhebungNotiz.map((fn, i) => (
                   <span key={i}>{i > 0 && '; '}{fnTextMitLinks(fn)}</span>
                 ))}
@@ -560,7 +560,57 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}
             fnKlasse={fnKlasse}
             intern={intern}
-            className="space-y-3.5 font-serif text-body-l leading-[1.65] text-ink-800" />
+            /* S2 (Pos. 19, F3 = V2 «amtsnah kompakt», David 17.8.2026 am Bildbogen):
+               `text-leser-text` (17 px / lh 1.55) ERSETZT das Paar
+               `text-body-l leading-[1.65]`. Der rohe Arbitrary-Override fällt damit
+               weg — die Zeilenhöhe gehört zur Stufe (Design-Grundlage Kap. 8 Nr. 4:
+               «kein fixer Leading-Wert über alle Grössen»); Wächter
+               `src/tests/leser-typo-tokens.test.ts`. WCAG 1.4.8 gemessen @1440:
+               lh 1.55 ≥ 1.5 und ≤ 80 ch (Lesemass `max-w-normtext` 42 rem
+               unverändert).
+
+               EINE ZAHL, EINE MESSUNG (Nachzug 17.8.2026, Arch-Prüfer 9): hier stand
+               «53–58 ch», im Fahrplan «73 / 71 / 61 ch» — zwei Zahlen für dieselbe
+               Sache. Massgeblich ist die Methode des Tors (`e2e/leser-lesemass.e2e.ts`:
+               längster mehrzeiliger Fliesstext-Absatz, Textlänge / Zeilenkisten).
+               Damit @1440 gemessen: ZGB 68 · OR 71 · StPO 73 · VMWG 74 · StGB 77 ch.
+               Die 80-ch-Decke der WCAG hält überall; die engere HAUSdecke von 75 ch
+               nicht mehr überall (StGB 77) — Notiz an der Schwelle im Tor und als
+               offener Punkt im Vollzugsvermerk S2. */
+            className="space-y-3.5 font-serif text-leser-text text-ink-800" />
+          {/* ═══ BEIWERK-ZONE (S2 · Pos. 13, Fahrplan Kap. 4c / Grundlage Kap. 3) ═══
+              EIN benannter Ort für alles, was unter dem Wortlaut steht: Verweis-Chips ·
+              Rechtsprechung (ab H3 der leise Zähler «⚖ n Entscheide →») · Fassungs-
+              Zeile · Fussnoten-Apparat. Vorher lagen die vier Blöcke unverbunden
+              nebeneinander, jeder mit eigenem Abstand und der Historie-Slot mit einer
+              EIGENEN Reservierung — es gab keine Zone, die man reservieren, messen oder
+              per CSS greifen konnte. `data-beiwerk` ist der Vertrag (ein
+              Daten-Attribut, kein Utility-Klassenname — Lehre aus der
+              `.text-body-l`-Kopplung der Schriftskala, index.css).
+
+              KEINE eigene Reservierung an der Zone, und das ist gemessen, nicht
+              gespart: das einzige spät eintreffende, heute unreservierte Element ist
+              die Rechtsprechungs-Zeile, und ihre Reservierung ist bewusst verworfen
+              (§15.2 — sie zöge Weissraum in fast jeden Artikel; gemessen 17.8.2026
+              @1440 tragen 326/480 Artikel der StPO und 376/1686 des OR eine solche
+              Zeile). Die Reservierung sitzt darum weiterhin an dem Element, das der
+              Schalter «Änderungsvermerke» mit ausblendet (`[data-hist-slot]`, S1) —
+              eine Reservierung, die den Schalter überlebt, wäre die Phantom-Lücke,
+              gegen die S1 sie überhaupt an den Slot gehängt hat.
+
+              ABWEICHUNG ZUM ABNAHME-KRITERIUM DER ETAPPE, offengelegt (§7): «Das
+              Umschalten aller drei Schalter erzeugt an keinem Artikel einen
+              Layout-Sprung» ist mit dem David-Entscheid **A1 vom 5.7.2026** («AUS» =
+              verschwinden statt dämpfen) nicht erfüllbar. Gemessen 17.8.2026 @1440
+              trägt der Fussnoten-Apparat je Artikel 27–187 px; ihn höhenfest zu
+              reservieren hiesse, bei «Fussnoten: aus» ein bis zu 187 px hohes leeres
+              Loch stehen zu lassen — genau das Dämpfen, das A1 verboten hat. Eine
+              feste Mindesthöhe kann nur Elemente auffangen, die KLEINER als der Boden
+              sind. Erfüllt und gemessen ist deshalb die Zusage, die zählt: der
+              Lade-Sprung (CLS) bleibt bei 0.004–0.016; das Umschalten ist
+              klick-getrieben, liegt binnen 500 ms nach der Eingabe und ist damit per
+              Definition kein unerwarteter Sprung. Zahlen im Vollzugsvermerk S2. */}
+          <div data-beiwerk>
           {/* VERWEISE: auflösbare Normverweise des Artikels als Chips (Referenz David). */}
           {/* S8: Verweis-Chips sind Wegweiser, kein Wortlaut — `data-such-meta`,
               damit die Suche nach «Verweise» oder einer Chip-Beschriftung nicht
@@ -594,15 +644,85 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
               Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
               Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem
-              ERSTEN Render und reserviert die eine Chip-Zeile (`min-h-hist-zeile`,
+              ERSTEN Render und reserviert die eine Chip-Zeile (`min-h-beiwerk`,
               Token — gemessen exakt 24 px, deterministisch über alle Artikel), damit
               der idle-Shard-Resolve reservierten Platz FÜLLT statt sichtbare Artikel
               zu schieben (Messung 20.7.: sonst CLS 0.0227 statt 0.0002 unter 6×). Der
               Aussenabstand sitzt hier am Slot, nicht in der Zeile — sonst fallen
               reservierte und gefüllte Höhe auseinander. */}
           {/* S8: «Gilt seit»-Badge und Fassungs-Timeline sind abgeleitete
-              Metadaten, kein Wortlaut (§4.4) — `data-such-meta`. */}
-          <div {...{ [SUCH_META]: '' }} className="mt-4 min-h-hist-zeile">
+              Metadaten, kein Wortlaut (§4.4) — `data-such-meta`.
+
+              S1 (Kap. 4f, Befund K4): der Slot trägt `data-hist-slot`, damit der
+              Schalter «Änderungsvermerke» ihn MIT ausblenden kann. Bis S1 hing die
+              «Fassung»-Zeile an gar keinem Schalter — bei «Änderungsvermerke aus»
+              blieb die Fassungshistorie als einzige Historie-Spur im Lesetext
+              stehen. Ausgeblendet wird der SLOT, nicht nur die Zeile darin: sonst
+              bliebe seine reservierte Höhe (`mt-4 min-h-beiwerk` = 16+24 px) als
+              Phantom-Lücke unter jedem Artikel zurück, und «aus» hätte doch eine
+              Spur hinterlassen. Der Inhalt bleibt im DOM (A1-Mechanik, David
+              5.7.2026: `display:none`, nie gelöscht) und «an» stellt ihn
+              vollständig wieder her.
+
+              S2 · Ä26 (Phantom-Lücke, Ästhetik-Prüfer 17.8.2026): die Reservierung
+              stand bisher unter JEDEM Artikel JEDES Erlasses — auch dort, wo nie eine
+              Fassungs-Zeile eintreffen kann (auf BS-640.100 sind das 292 von 292).
+              Sie folgt jetzt dem Datenmodell, und zwar ARTIKELWEISE.
+
+              DIE FRAGE, die die Reservierung stellen MUSS: «kann in DIESEM Slot je
+              eine Fassungs-Zeile eintreffen?» Sie ist am Datenmodell exakt
+              beantwortbar, weil der Erzeuger sie selbst so stellt:
+              `scripts/normtext/historie-generieren.ts` baut die Shard-Einträge
+              AUSSCHLIESSLICH aus den gespeicherten Fussnoten des jeweiligen Artikels
+              (`artikel[<token>].fussnoten` → `baueArtikelHistorie`). Ein Artikel ohne
+              Fussnote kann darum keinen Eintrag bekommen — das ist eine
+              GENERATOR-INVARIANTE, keine Korpus-Zufälligkeit. Empirisch gegengeprüft
+              (17.8.2026, alle 209 Shards gegen alle Struktur-Sidecars): 24 511
+              Artikel, 13 093 mit Historie-Eintrag, davon **0** ohne Fussnote.
+
+              KEINE EBENEN-WEICHE. Ein früherer S2-Zwischenstand hing die Reserve an
+              `erlass.ebene === 'bund'`. Das traf den Korpus von heute (209 Shards,
+              alle Bund — der Generator liest nur `struktur/bund`), war aber ein
+              ERLASS-SONDERPFAD in einer Komponente, die erlass-neutral rendern soll:
+              die Eigenschaft heisst «kann eine Fassungs-Zeile tragen», nicht «ist
+              Bundesrecht». Genau diesen Fehler hat S1-B3 an derselben Mechanik schon
+              einmal vermieden (`zaehleAenderungsvermerke`, berechnungen.ts: «das
+              entscheidet das DATENMODELL, nicht die Herkunft»); wäre `ebene`
+              stehengeblieben, hätte der Tag, an dem der Generator Kantonsrecht
+              aufnimmt, eine stille Phantom-Lücke erzeugt statt eines Testfehlers.
+
+              WARUM ARTIKELWEISE UND NICHT ERLASSWEISE: die Shard-Existenz (404 vs.
+              Treffer) ist erst NACH dem idle-Fetch bekannt — also genau dann, wenn
+              die Zeile schon eintrifft. Eine Reserve, die auf diese Antwort wartet,
+              käme zu spät und müsste bei 404 wieder einfallen (ein Sprung nach oben,
+              den es heute nicht gibt). Die Fussnoten dagegen kommen mit dem
+              Struktur-Sidecar, aus dem auch der Apparat direkt darunter rendert
+              (`fussAnzeige`, s. u.) — Reserve und Apparat erscheinen im SELBEN Paint,
+              der spätere Shard-Resolve füllt nur noch. Die Reserve ist damit
+              MONOTON: sie verschwindet nie wieder.
+
+              `historie` steht als zweite Bedingung im ODER, obwohl die Invariante ihn
+              überflüssig macht: träfe je ein Eintrag ohne Fussnote ein, bekäme der
+              Slot trotzdem seinen Boden. Die Regel kann so nur überreservieren, nie
+              einen Sprung durchlassen (§1 — lieber die Prüfung verdoppeln).
+
+              WIRKUNG, gemessen (17.8.2026): korpusweit reservieren 17 547 statt
+              25 403 Artikel (−31 %); auf BS-640.100 fallen 278 von 292 Slots weg
+              (95 %), auf dem OR 1092 von 1686, auf der StPO 346 von 480.
+              REST-ÜBERRESERVIERUNG, benannt statt versteckt: 4454 Artikel tragen
+              Fussnoten, aber keinen Eintrag (25 % der reservierenden) — darunter die
+              14 Fussnoten-Artikel von BS-640.100, für die es heute gar keinen Shard
+              geben kann. Das enger zu ziehen bräuchte ein Shard-Manifest im
+              Prerender-Pfad (eigener Schritt, Datenhaltung). VERWORFEN als engere
+              Regel: «Artikel trägt eine `kl:'A'`-Fussnote» reserviert nur 13 046,
+              verfehlt aber 182 Artikel MIT Eintrag (u. a. ZGB Art. 159, 181, 451) —
+              unsound, das wären 182 echte Sprünge.
+
+              Der Token heisst seit S2 `min-h-beiwerk` (Wert unverändert 1.5 rem = die
+              gemessenen 24 px der einen Chip-Zeile): er reserviert den Boden der
+              Beiwerk-Zone, nicht «eine Historie-Zeile». */}
+          <div {...{ [SUCH_META]: '' }} data-hist-slot
+            className={fussAnzeige.length > 0 || historie ? 'mt-4 min-h-beiwerk' : undefined}>
             <ArtikelHistorieZeile historie={historie} artikel={e.artikel} />
           </div>
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
@@ -613,7 +733,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
               {fussAnzeige.map((fn, i) => (
                 <p key={i} id={fn.nr ? `fn-${e.artikel}-${fn.nr}` : undefined} data-fn-klasse={fn.kl}
-                  className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
+                  /* S2 (V2-Spalte «Fussnoten-Body 0.6875 rem / lh 1.3»): `text-leser-fn`
+                     ersetzt `text-xs leading-normal` (12 px / 1.5). Fahrplan Kap. 8
+                     nennt als Ist-Zustand `text-micro` 0.6875/1.2 — am Code gemessen
+                     war es `text-xs`; die Spalte gilt, der Ist-Vermerk war falsch (§7). */
+                  className="nt-anker text-leser-fn text-ink-500 target:bg-brass-100">
                   {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
                       LM-153 (W2·17-UI-BEFUNDE-B4): die Marke im Fliesstext (FnRef,
                       ArtikelBody.tsx) ist hochgestellt UND brass-700; der Apparat-Eintrag
@@ -622,55 +746,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                       Mini-Ziffern wäre unlesbar), aber die FARBE wird auf dieselbe brass-700-
                       Familie gehoben — der Leser verbindet Marke↔Eintrag über die Farbe, wie
                       im Fliesstext. brass-700 ist bereits an der Marke selbst AA-geprüft
-                      (kleinere Schrift, 0.62em) und trägt hier bei 12px erst recht. */}
+                      (kleinere Schrift, `--hochgestellt`) und trägt hier bei 11px erst recht
+                      (S2: der Apparat läuft auf `text-leser-fn`). */}
                   {fn.nr && <span className="num mr-1 text-brass-700">{fn.nr}</span>}
                   {fnTextMitLinks(fn)}
                 </p>
               ))}
             </div>
           )}
-          {/* W2·5i-HIST-ANSICHT: dieselben Änderungsvermerke, chronologisch geordnet.
-              Liegt IMMER im DOM (wie Apparat und Leitfall-Zeilen) und wird allein per
-              `data-histansicht`-CSS ein-/ausgeblendet: das Umschalten ist damit ein
-              reiner Attribut-Wechsel am <html> — kein React-Re-Render der Artikelliste
-              (§15) und kein Nachladen. Mengenmässig sind das die A-Fussnoten GENAU
-              DIESES Artikels (im Schnitt ~0.7 je Artikel), also keine relevante
-              DOM-Last; sichtbar ist zu jedem Zeitpunkt nur EINE der beiden Listen. */}
-          {chronologie.length > 0 && (
-            <ol data-hist-chrono className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
-              {chronologie.map((fn, i) => (
-                <li key={i} className="text-xs leading-normal text-ink-500">
-                  {/* Gegenprüfungs-Befund B4 (26.7.2026): die Fussnoten-NUMMER gehört
-                      auch in die Chronologie-Zeile. Ohne sie ist der Marker im Wortlaut
-                      (¹¹⁶) keinem Eintrag mehr zuzuordnen — der Leser sieht eine
-                      Datumsliste ohne Anschluss an den Text. Gleiche Darstellung wie im
-                      Apparat (`num`, ink-500), damit die Zuordnung optisch trägt.
-                      LM-151 (W2·17-UI-BEFUNDE-B4): drei Bestandteile (Nummer/Sortier-
-                      Datum/Fussnotentext) liefen ohne TEXTLICHEN Trenner ineinander
-                      («1061. Oktober 2025Eingefügt …») — `mr-1`/`mr-1.5` setzen nur
-                      CSS-Abstand, kein Zeichen; für Text-Selektion/Screenreader blieb
-                      kein Zwischenraum. Explizite Trenn-Zeichen (` · `, `: `) statt
-                      reiner Margin schliessen die Lücke, ohne den amtlichen
-                      Fussnotentext (`fn.fn.text`) anzutasten (§1/§7). LM-153: Nummer
-                      brass-700 statt ink-500 — dieselbe Farbfamilie wie die Marke im
-                      Fliesstext (FnRef), gleiche Begründung wie im Apparat oben. */}
-                  {fn.fn.nr && <span className="num mr-1 text-brass-700">{fn.fn.nr}</span>}
-                  {/* Das Datum ist der SORTIERSCHLÜSSEL — es sichtbar zu machen ist
-                      §8-Ehrlichkeit: der Leser sieht, wonach geordnet wurde, und dass
-                      undatierte Vermerke am Ende stehen (kein stilles Rateergebnis). */}
-                  {fn.fn.nr && <span aria-hidden className="text-ink-300 mr-1">·</span>}
-                  {/* S8: das Sortier-Datum ist von UNS gesetzter Anzeigetext,
-                      nicht amtlicher Fussnotenwortlaut — `data-such-meta`,
-                      damit es keine Fundstelle malt, die niemand zählt (§4.4). */}
-                  <span {...{ [SUCH_META]: '' }} data-hist-datum={fn.iso ?? ''} className="num tabular-nums text-ink-600">
-                    {fn.iso ? fmtDatumLang(fn.iso) : 'ohne Datum'}
-                  </span>
-                  <span aria-hidden className="mr-1.5">:</span>
-                  {fnTextMitLinks(fn.fn)}
-                </li>
-              ))}
-            </ol>
-          )}
+          </div>{/* /data-beiwerk */}
         </div>
         )}
       </div>

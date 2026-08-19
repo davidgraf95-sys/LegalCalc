@@ -9,6 +9,7 @@ import { ArtikelLeser, SektionKopf, SektionBaumTOC } from './parts';
 import { ArtikelIndex } from './parts/ArtikelIndex';
 import {
   paneRoot, istAnhangToken, findeArt, kuratiereTocSektionen,
+  zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter,
 } from './berechnungen';
 import { baueGliederungsModell, findeSynthPfad } from './gliederungsModell';
 import { useArtikelKontext } from './artikelKontext';
@@ -156,6 +157,23 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     return n;
   }, [struktur]);
 
+  // S1-NACHZUG B3 (§8): Trägt dieser Erlass überhaupt Änderungsvermerke? Nur dann
+  // wird der Schalter angeboten — sonst versprach er eine Wirkung, die es hier
+  // nicht gibt (auf ZH-211.11/BS-640.100/LugÜ blieb ihm nur eine Layout-Raffung
+  // von 40 px je Artikel). Herleitung, Korpus-Messung und die Begründung der ZWEI
+  // Träger stehen bei `zaehleAenderungsvermerke` in `./berechnungen`.
+  //
+  // Die «Fassung»-Zeile wird über `historieFuer` geprüft und NICHT über den
+  // Shard selbst: der Shard liegt im Zustands-Hook, und `historieFuer` ist genau
+  // die Frage, die der Artikel-Fuss auch stellt (eine Wahrheit, §5). Der Lookup
+  // ist ein Objekt-Zugriff je Artikel und läuft nur, wenn `eintraege` oder der
+  // Shard wechselt — nicht je Render (§15). `some` bricht beim ersten Treffer ab.
+  const hatAenderungsvermerke = useMemo(() => bieteAenderungsvermerkeSchalter(
+    zaehleAenderungsvermerke(struktur),
+    (eintraege ?? []).some((e) => historieFuer(e.artikel) !== undefined),
+    eintraege !== null,
+  ), [struktur, eintraege, historieFuer]);
+
   // §6.6-Split: Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht-/Such-Slot)
   // — verhaltensneutral in ./inhalt-hooks (EIN useEffect). Steht NACH
   // `fussnotenAnzahl` (TDZ des A26-Ansicht-Slots), wie zuvor inline.
@@ -164,6 +182,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
   // der amtlichen Gliederung (inhalt-hooks.tsx, `zeigeGliederung`).
   useInhaltsKopfMeldung({
     erlass, aktArtikel, meldeInhaltsKopf, imPane, eintraege, fussnotenAnzahl,
+    hatAenderungsvermerke,
     kantoneVerfuegbar, klassenImErlass, bezugHistogramm, bezugBereich,
     suche, setSuche, istXl, tocOffen, tocAuf, setTocOffen, setTocAuf,
   });
@@ -191,6 +210,17 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
     // Kein Zurück zur Vor-Such-Position (wir springen ja gezielt zum Artikel).
     scrollVorSucheRef.current = null;
     setSuche('');
+    // ── B1 (Klick-Test 18.8.2026) · DAS GLIEDERUNGS-BLATT GEHT MIT ZU ────────
+    // Gemessen @390 an der VMWG: ein Tap auf eine SEKTION im Blatt schloss es
+    // (`inhalt-sprung.tsx`, dort `setTocAuf(false)` im `flushSync`), ein Tap auf
+    // einen ARTIKEL nicht — dieser Sprung läuft hier durch, und hier fehlte die
+    // Zeile. Der Leser stand danach auf dem Zielartikel und sah davon nichts:
+    // das Blatt deckte ihn zu. Zwei Einträge derselben Liste, zwei verschiedene
+    // Ausgänge — genau die Sorte Unterschied, die niemand lernen kann (§8).
+    // Ausserhalb der Blatt-Lage (Desktop-Spalte) ist der Aufruf wirkungslos:
+    // `tocAuf` ist dort ohnehin `false`, es gibt nichts zu schliessen. V1 und V3
+    // teilen diesen Pfad und bekommen darum dasselbe Verhalten (§5).
+    setTocAuf(false);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
       setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
@@ -251,7 +281,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
       // vor dem Sprung stehen (Herleitung: inhalt-hooks.tsx bei `spyNachlauf`).
       window.setTimeout(() => { scrolle(); jumpLockRef.current = false; loeseSpyNachlauf(); }, 400);
     }, 110));
-    // Bewusst draussen: setSuche/setOffen/setAktivIds/setTocBaum (useState-Setter,
+    // Bewusst draussen: setSuche/setOffen/setAktivIds/setTocBaum/setTocAuf (useState-Setter,
     // von React als stabil garantiert) und scrollVorSucheRef/manuellZuRef/
     // tocBaumTimer/jumpLockRef (useRef-Objekte, über die Lebenszeit identisch).
     // Seit dem T14-Split kommen sie aus ./inhalt-zustand herein, wo die Regel
@@ -507,6 +537,7 @@ export function GesetzLeserInhalt({ ebene, schluessel }: { ebene: string; schlue
         erlass={erlass} eintraege={eintraege} struktur={struktur} kopf={kopf} currency={currency}
         vorher={vorher} nachher={nachher}
         sektionen={sektionen} ohneGliederung={ohneGliederung} gliederungsTiefe={gliederungsTiefe} fussnotenAnzahl={fussnotenAnzahl}
+        hatAenderungsvermerke={hatAenderungsvermerke}
         meta={meta} internRefs={internRefs} margAnzeige={margAnzeige} kantonSys={kantonSys}
         basisPfad={basisPfad} renderSektion={renderSektion}
         imPane={imPane} istXl={istXl} overlayWurzel={overlayWurzel}

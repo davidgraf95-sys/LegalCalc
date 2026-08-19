@@ -1,3 +1,4 @@
+import { NEUER_TAB } from '../benennung';
 import { formatiereDatum } from '../helpers';
 
 // W2·5d U-PDF / A12 — EINE Download-Aktion für das AMTLICHE PDF der gepinnten
@@ -6,7 +7,8 @@ import { formatiereDatum } from '../helpers';
 // wird die Aktion vom Aufrufer weggelassen (nie Schein-Amtlichkeit, nie
 // render-eigenes PDF — FAHRPLAN-GESETZES-UX §10.5). Zwei Quellen, EINE Anatomie:
 //   · Bund/Kanton-Snapshot → externe amtliche URL (Fedlex-Filestore / LexWork),
-//     `extern` öffnet in neuem Tab (cross-origin `download` ist nur ein Hinweis).
+//     `extern` öffnet in einem neuen Tab (cross-origin `download` ist nur ein
+//     Hinweis); den Zusatz im aria-Namen setzt Ä127 einheitlich (`../benennung`).
 //   · Staatsvertrag/pdf-embed → same-origin gehostetes PDF (`extern=false`),
 //     `download` erzwingt den Speicherdialog.
 // A9-DoD: `<a>` ist tastaturfokussierbar, `lc-chip` trägt das 24px-Tap-Ziel
@@ -30,7 +32,7 @@ export function AmtlichesPdf({ href, stand, extern, dateiname }: {
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : { download: dateiname ?? true })}
       className="lc-chip hover:text-brass-700"
-      aria-label={`Amtliches PDF${fassung} herunterladen${extern ? ' (öffnet in neuem Tab)' : ''}`}
+      aria-label={`Amtliches PDF${fassung} herunterladen${extern ? ` ${NEUER_TAB}` : ''}`}
       title="Amtliches PDF der geltenden Fassung — massgeblich ist die amtliche Quelle"
     >
       ⬇ Amtliches PDF{fassung}

@@ -4,7 +4,7 @@
 // Hooks, Effekte und das Rendering bleiben in inhalt.tsx. Die useMemo-Rümpfe rufen
 // diese Funktionen mit denselben Deps auf (byte-gleiche Ableitung, golden + e2e).
 import type { RefObject } from 'react';
-import type { Sektion } from '../../lib/normtext/browse';
+import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 
 // ─── Pane-Scoping-Helfer (B-2.5) — MODUL-Ebene = referenzstabil ────────────
@@ -153,9 +153,37 @@ function textZeilen(text: string | undefined, proZeile = 68): number {
 export function schaetzeArtikelHoehe(e: NormSnapshot): number {
   const ZEILE = 30;        // px je Fliesstext-Zeile
   // G-HIST-UI (§15.2, 20.7.2026): der reservierte Fassungs-Slot am Artikel-Fuss
-  // (`mt-4 min-h-hist-zeile` in ArtikelLeser) ist 16 + 24 px hoch und steht bei
-  // JEDEM Artikel — er gehört darum in die Platzhalter-Höhe der off-screen-Artikel
-  // (`contain-intrinsic-size`), sonst schiebt das Aufblenden beim Hereinscrollen.
+  // (`mt-4 min-h-beiwerk` in ArtikelLeser, bis S2 `min-h-hist-zeile`) ist
+  // 16 + 24 px hoch — er gehört darum in die Platzhalter-Höhe der off-screen-
+  // Artikel (`contain-intrinsic-size`), sonst schiebt das Aufblenden beim
+  // Hereinscrollen.
+  //
+  // KORREKTUR S1-NACHZUG (17.8.2026, Bug-Check B4): «bei JEDEM Artikel» stimmt
+  // seit S1 nicht mehr unbedingt. Steht der Schalter «Änderungsvermerke» auf
+  // `aus`, blendet `html[data-histansicht="aus"] .lc-leser [data-hist-slot]`
+  // (index.css) den SLOT aus — dann sind diese 40 px nicht da, und die Schätzung
+  // überreserviert um 40 px je off-screen-Artikel.
+  //
+  // KORREKTUR S2 · Ä26 (17.8.2026): «bei JEDEM Artikel» stimmt jetzt auch OHNE
+  // Schalter nicht mehr. Der Slot trägt seine Mindesthöhe nur noch, wenn der
+  // Artikel Fussnoten führt — nur dort kann der Generator je einen Historie-
+  // Eintrag erzeugen (Herleitung und Korpus-Messung stehen am Slot selbst,
+  // `ArtikelLeser.tsx`). Korpusweit betrifft die Reservierung damit 17 547 von
+  // 53 849 Artikeln; bei den übrigen überreserviert die Schätzung um 40 px.
+  //
+  // Auch das bleibt bewusst ungerechnet, aus DEMSELBEN Grund wie unten: die
+  // Fussnoten stehen im Struktur-Sidecar, diese Funktion bekommt nur den
+  // Snapshot-Eintrag `e`. Sie hier einzuspeisen hiesse, eine reine Funktion (§2)
+  // an einen zweiten, asynchron eintreffenden Datenweg zu binden.
+  //
+  // Bewusst NICHT nachgerechnet: die Richtung ist die tolerierte. Die Zusage der
+  // Schätzung lautet «echte Höhe ≤ Schätzung» (s. Kalibrierung oben) — zu HOCH
+  // ist der gewünschte Fehler, der Platzhalter schrumpft beim Rendern statt zu
+  // wachsen, und die Ankertreue bleibt grün. Den Wert vom Options-Zustand
+  // abhängig zu machen hiesse, eine reine Funktion (§2/§3) an einen
+  // Darstellungs-Store zu binden und die `contain-intrinsic-size` jedes Artikels
+  // beim Umschalten neu zu schreiben — genau der Re-Render des Normtexts, den die
+  // CSS-Mechanik vermeidet (§15). Nur der Kommentar zieht nach.
   const HIST_SLOT = 40;
   let h = 104 + HIST_SLOT; // Artikelkopf: «Art. N» + Trenner (border-t + pt-7 mt-7) + Basisabstand + Fassungs-Slot
   if (e.titel) h += 30;    // amtlicher Randtitel/Sachüberschrift (eine Zeile)
@@ -170,57 +198,109 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
   return Math.max(120, Math.round(h));
 }
 
-// ─── W2·5i-HIST-ANSICHT: Chronologie der Änderungsvermerke ────────────────────
+// ─── Fussnoten-Reihung ────────────────────────────────────────────────────────
 //
-// Ansicht «Änderungshistorie: als Chronologie» zeigt die als Änderungsvermerk
-// klassifizierten Fussnoten EINES Artikels nicht als nummerierten Apparat, sondern
-// zeitlich geordnet. Das ist reine Darstellung (§3): keine neue Datenquelle, kein
-// eigener Parser — die Fussnoten sind die schon geladenen Sidecar-Fussnoten, das
-// Datum kommt aus dem BESTEHENDEN Revisions-Extrakt (§5). Hier lebt allein die
-// REIHUNG, und die ist deterministisch und total geordnet (§2):
+// S1 (Optionen-Rückbau, David F1 «ja», 17.8.2026): die frühere `baueChronologie`
+// — Reihung derselben Änderungsvermerke als zeitlich geordnete Zweitdarstellung —
+// ist ERSATZLOS ENTFALLEN, samt `ChronoFussnote`/`ChronoEintrag` und der eigenen
+// Testdatei. Mit dem dritten Historie-Modus fällt ihr einziger Aufrufer weg
+// (§17-Rückbau: was nichts mehr bedient, wird gestrichen, nicht bewacht).
 //
-//   1. aufsteigend nach ISO-Datum (lexikografischer String-Vergleich — kein
-//      `new Date`, keine Zeitzone),
-//   2. UNDATIERTE immer ans Ende (nie zwischen datierte gemischt),
-//   3. bei gleichem Datum UND unter den Undatierten: nach Fussnoten-Nummer
-//      (numerisch, dann Buchstaben-Suffix «95a»).
+// `fnNrSortKey` BLEIBT: er ordnet den regulären Fussnoten-Apparat in
+// `ArtikelLeser` (numerisch, dann Buchstaben-Suffix «95a») und ist dort weiter im
+// Einsatz. Als reine Funktion ist er direkt prüfbar
+// (src/tests/fn-nr-sortierung.test.ts).
+
+// ─── Trägt dieser Erlass überhaupt Änderungsvermerke? (S1-Nachzug B3) ─────────
 //
-// Punkt 3 ist der Grund, warum die Reihung hier und nicht inline in der Komponente
-// steht: ohne Schlussschlüssel entschiede die Eingabe-Reihenfolge, und die Ordnung
-// wäre nur so stabil wie die Sidecar-Sortierung. Als reine Funktion ist sie direkt
-// prüfbar (src/tests/hist-chronologie.test.ts).
-export interface ChronoFussnote { nr: string; kl?: string; text?: string }
-export interface ChronoEintrag<T extends ChronoFussnote> { fn: T; iso: string | null }
+// BEFUND (Bug-Check 17.8.2026): «Änderungsvermerke: aus» wirkte auf
+// Kantonserlassen und Staatsverträgen NUR als Layout-Raffung (−40 px je Artikel),
+// weil dort gar keine Vermerke existieren — `[data-historie-zeile]` = 0 auf
+// ZH-211.11, BS-640.100 und LugÜ. Die faktischen Änderungs-Fussnoten ohne
+// Klasse blieben sichtbar (H0-Auflage 1, gewollt: eine fehlende Klasse blendet
+// nie etwas aus). Der Schalter versprach damit mehr, als er hielt (§8).
+//
+// FIX: der Schalter wird nur angeboten, wenn der Erlass Vermerke TRÄGT — und das
+// entscheidet das DATENMODELL, nicht die Herkunft. Kein `if (kanton)`: die
+// Eigenschaft ist «hat klassifizierte Historie», nicht «ist kantonal». Es gibt
+// Bundes-Staatsverträge ohne Vermerke und (s. u.) Staatsverträge mit Fassungs-
+// zeile, aber ohne klassifizierte Fussnote; eine Herkunfts-Weiche träfe beide falsch.
+//
+// ── Ä68-NACHZUG (Entscheid David 17.8.2026): DIE REGEL BLEIBT, IHR GRUND ÄNDERT
+// SICH ────────────────────────────────────────────────────────────────────────
+// Bis zur Entkopplung blendete der Schalter ZWEI Dinge aus, und darum fragte er
+// nach zwei Trägern:
+//   1. `[data-fn-klasse="A"]` + der dadurch leere `[data-fn-apparat]`
+//      → Quelle: `kl: 'A'` im Struktur-Sidecar (`zaehleAenderungsvermerke`).
+//   2. `[data-hist-slot]`, die «Fassung»-Zeile am Artikelfuss
+//      → Quelle: der Historie-Shard (`historie/<KEY>.json`).
+// SEIT Ä68 (index.css) blendet er NUR noch Nr. 2 aus. Streng genommen wäre die
+// Frage damit allein `hatFassungsZeile`; Nr. 1 ist keine Wirkung des Schalters
+// mehr, sondern die des Fussnoten-Schalters.
+//
+// GEMESSEN, statt geschlossen (17.8.2026, alle 1420 Struktur-Sidecars gegen alle
+// 209 Historie-Shards, davon 205 mit Einträgen):
+//   `kl:'A'` > 0 UND Fassungszeile   203  → Schalter wirksam, Regel unverändert richtig
+//   `kl:'A'` > 0 OHNE Fassungszeile    0  → **kein einziger** Erlass
+//   `kl:'A'` = 0 MIT Fassungszeile     2  (MONTREAL, PVUE) → nur Nr. 2 trägt
+// Die `kl:'A'`-Bedingung kann nach der Entkopplung also nur noch ÜBERANBIETEN,
+// und sie tut es heute an null Erlassen: {203} ∪ {2} ist genau die Menge der 205
+// Shards mit Einträgen. Sie bleibt darum stehen (§1: lieber die Prüfung
+// verdoppeln, als ein wirksames Steuerelement stillschweigend wegzunehmen) — aber
+// als Redundanz mit gemessener Deckung, nicht mehr als eigene Wirkung.
+// NÄHME der Korpus je einen Erlass mit `kl:'A'` ohne Historie-Einträge auf, bekäme
+// er einen wirkungslosen Schalter (§8). Das ist die eine Stelle, an der diese
+// Redundanz schaden kann — Wächter samt Messung:
+// `src/tests/aenderungsvermerke-schalter.test.ts`.
+export function zaehleAenderungsvermerke(struktur: StrukturMap | null | undefined): number | null {
+  // null = Sidecar noch nicht geladen. Bewusst UNTERSCHIEDEN von 0: «weiss ich
+  // noch nicht» darf nicht wie «gibt es nicht» wirken (§8).
+  if (!struktur) return null;
+  let n = 0;
+  for (const v of Object.values(struktur)) {
+    for (const fn of v?.fussnoten ?? []) if (fn.kl === 'A') n += 1;
+  }
+  return n;
+}
+
+/**
+ * Soll der Schalter «Änderungsvermerke» angeboten werden?
+ *
+ *  · `vermerke`         — Ergebnis von `zaehleAenderungsvermerke`; `null` heisst
+ *                         «kein Struktur-Sidecar da».
+ *  · `hatFassungsZeile` — trägt mindestens ein Artikel einen Historie-Eintrag?
+ *  · `erlassGeladen`    — sind die Artikel des Erlasses eingetroffen?
+ *
+ * Die DREI Zustände von `vermerke` müssen auseinandergehalten werden, und genau
+ * daran wäre eine naive Fassung gescheitert (Befund beim Bau, 17.8.2026):
+ *
+ *   0    — Sidecar da, keine Vermerke        ⇒ nicht anbieten
+ *   > 0  — Sidecar da, Vermerke da           ⇒ anbieten
+ *   null — kein Sidecar. ZWEIDEUTIG, und `ladeStruktur` löst beide Fälle
+ *          gleich auf (404 → null, browse.ts): «lädt noch» ODER «gibt es
+ *          gar nicht». `erlassGeladen` entscheidet. Ohne diese Unterscheidung
+ *          behielte ZH-211.11 den Schalter — der Erlass hat überhaupt kein
+ *          Struktur-Sidecar und war einer der drei gemeldeten Fälle.
+ *
+ * KONSERVATIV bleibt nur die echte Unwissenheit (`erlassGeladen === false`):
+ * dort wird ANGEBOTEN. Ein Steuerelement zu verschweigen, dessen Wirkung man noch
+ * nicht kennt, wäre die falsche Richtung — und der umgekehrte Fehler ist harmlos,
+ * weil das Panel im Grundzustand geschlossen ist (kein CLS, dieselbe Begründung
+ * wie beim nachwachsenden Fussnoten-Zähler in `LeserAnsichtMenu`). Kein Sidecar
+ * bei geladenem Erlass heisst dagegen: gar keine Fussnoten, also auch keine
+ * Vermerke — das ist Wissen, keine Unwissenheit.
+ */
+export function bieteAenderungsvermerkeSchalter(
+  vermerke: number | null,
+  hatFassungsZeile: boolean,
+  erlassGeladen: boolean,
+): boolean {
+  if (vermerke === null && !erlassGeladen) return true;
+  return (vermerke ?? 0) > 0 || hatFassungsZeile;
+}
 
 /** Fussnoten-Nummer → Sortierschlüssel [Zahl, Suffix]; unparsbar ⇒ ans Ende. */
 export function fnNrSortKey(nr: string | undefined): [number, string] {
   const m = /^(\d+)([a-z]*)$/i.exec((nr ?? '').trim());
   return m ? [parseInt(m[1], 10), m[2].toLowerCase()] : [Number.POSITIVE_INFINITY, nr ?? ''];
-}
-
-/**
- * Änderungsvermerke (`kl === 'A'`) eines Artikels → chronologisch geordnete Liste.
- * `datumVon` liefert das ISO-Datum einer Fussnote (injiziert, damit die Reihung
- * ohne den Revisions-Extrakt prüfbar bleibt und der Extrakt EINE Quelle bleibt).
- *
- * Bewusst NUR 'A': V/G/Z/U und Fussnoten ohne Klasse gehören nicht in die
- * Chronologie — sie bleiben im regulären Apparat und in jeder Ansicht sichtbar
- * (H0-Auflage 1). Keine Fussnote steht je NUR in der Chronologie.
- */
-export function baueChronologie<T extends ChronoFussnote>(
-  fussnoten: readonly T[],
-  datumVon: (text: string) => string | null,
-): Array<ChronoEintrag<T>> {
-  return fussnoten
-    .filter((f) => f.kl === 'A')
-    .map((fn) => ({ fn, iso: datumVon(fn.text ?? '') }))
-    .sort((a, b) => {
-      if (a.iso !== b.iso) {
-        if (a.iso == null) return 1;      // undatiert immer ans Ende
-        if (b.iso == null) return -1;
-        return a.iso < b.iso ? -1 : 1;
-      }
-      const ka = fnNrSortKey(a.fn.nr), kb = fnNrSortKey(b.fn.nr);
-      return ka[0] - kb[0] || ka[1].localeCompare(kb[1]);
-    });
 }

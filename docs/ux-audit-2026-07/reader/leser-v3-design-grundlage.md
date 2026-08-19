@@ -267,6 +267,17 @@ Tastatur und Touch erreichbar — Hover verbirgt Zierde, nie Funktion.
 9. Keine dauerhaft sichtbaren Sekundäraktionen (**S**, Fehler Nr. 4 der Referenz-Recherche).
 10. Kein Radius/Abstand pro Komponente frei gewählt (**S**, Fehler Nr. 5).
 
+**Das WERKZEUG darf breiter sein als eine Textseite — der TEXT nicht** (Ä60 (c),
+Entscheid David 17.8.2026, gebaut 18.8.2026). Nr. 7 verbietet volle Fensterbreite
+für **Fliesstext**, nicht für den Rahmen um ihn herum: der Gesetz-Leser ist ein
+Arbeitsplatz aus drei Spuren — Gliederung 18 rem · Lesespalte 40 rem · Beiwerk
+22 rem —, und die brauchen samt Abständen 84 rem. Sein Rahmen wächst darum bei
+offenem Beiwerk-Blatt auf **höchstens** diese 84 rem (`v3/rahmenSpalten.ts`),
+nie darüber hinaus; die Lesespalte bleibt in jeder Lage auf ihrem Lesemass, und
+reicht der Platz nicht, weicht die **Gliederung** auf ihre Schiene, nie das
+Lesemass. Für jede andere Seite gilt `max-w-content` (70 rem) unverändert — die
+Aufweitung ist eine Eigenschaft dieses einen Werkzeugs, kein neuer Seitenrahmen.
+
 ---
 
 ## 9 · Ist → Soll: Änderungen am Reglement
@@ -318,3 +329,80 @@ W-1 und W-2 sind unstrittig — beide bewachen Regeln, die sonst nur im Text ste
 Kostenwarnung:** Pixelvergleiche sind auf CI-Linux die häufigste Flake-Quelle, und das Repo hat bewusst bis heute
 keinen. Empfehlung: erst nach H1 bauen, die Basisrate der Fehlschläge messen (kalt und warm getrennt) und nur
 behalten, wenn sie unter 1 von 40 Läufen liegt — sonst ersatzlos streichen statt tolerieren (§17-Gegengewicht).
+
+---
+
+## 11 · Benennung (Glossar, 18.8.2026)
+
+**Anlass, gemessen.** Die Live-Ästhetik- und Benennungs-Prüfung vom 18.8.2026
+(`leser-v3-h4/aesthetik-live-2026-08-18.md`, Note 8/10) hat den grössten
+Einzelabzug nicht für Layout oder Farbe vergeben, sondern für **Benennungs-
+Streuung**: dieselbe Sache hiess je nach Ort verschieden — im sichtbaren Text,
+im `aria-label`, im `title` und im Platzhalter oft alle vier Mal anders. Das ist
+kein Geschmacksfehler. Wer «Ansicht» sucht und «Darstellung» liest, hält es für
+ein zweites Menü; und wenn der Screenreader etwas anderes sagt als das Auge
+liest, sprechen ein blinder und ein sehender Nutzer über verschiedene Flächen
+(§8).
+
+**Diese Tabelle ist ab jetzt die eine Wahrheit.** Wer eine Beschriftung setzt,
+schlägt hier nach — und wer ein Wort ändern will, ändert es hier zuerst und dann
+im Code. Der Wächter dazu ist `src/tests/leser-benennung.test.ts` (Quellensonde
+über `src/pages/gesetz-leser/v3/**` plus die vier geteilten Bausteine, die V3
+sichtbar rendert): er prüft je Eintrag, dass das gewählte Wort vorkommt **und**
+die verworfenen nicht. Kommentare zählen nicht mit — die Herleitungen dürfen die
+alten Wörter zitieren.
+
+| Sache | Begriff (verbindlich) | verworfen | Ä |
+|---|---|---|---|
+| Menü der Darstellungsschalter | **Ansicht** | Darstellung · Darstellungsoptionen · DARSTELLUNG | Ä114 |
+| Steckbrief-Box der Seitenleiste | **Übersicht** | Steckbrief (nur Doku/Tests) | Ä119 |
+| Fussnav-Link auf `/gesetze` | **Alle Gesetze** | Übersicht | Ä119 |
+| Fedlex-Link am Erlass/Artikel/Sektionskopf | **Amtliche Fassung ↗** | geltende Fassung · ↗ geltende Fassung · amtliche Fassung ↗ (klein) | Ä110 |
+| Quell-Link in einer Panel-Liste | **Fedlex ↗** (bzw. der Name der Sammlung) | amtlich ↗ | Ä121 |
+| Amtliches PDF | **Amtliches PDF** | amtliches PDF (klein) | Ä110 |
+| Zweite Lesefläche (Split) | **Fenster** («In neuem Fenster») | Reiter · Pane · Split-View · Layout-Link | Ä118 |
+| Reiter des Kontext-Panels | **Reiter** (Entscheide · Änderungen · Materialien) | — | Ä118 |
+| Rechtsprechungs-Fläche | **Rechtsprechung** (Chip konstant) | — | Ä115/Ä123 |
+| Schalter für die Fassungs-Zeile | **Fassung** | Änderungsvermerke | Ä116 |
+| Gliederungs-Griff (☰ des Lesers) | **Gliederung öffnen / ausblenden** | Gliederung (nacktes Substantiv) | Ä111 |
+| Suchfeld — Platzhalter | **Im Erlass suchen oder «Art. 1» …** (Beispiel erlassgerecht, «§ 1» am §-Erlass) | Suchen oder «Art. 1» … · Im ‹Kürzel› suchen … | Ä112/Ä126 |
+| Suchfeld — zugänglicher Name | **Im Erlass ‹Kürzel› suchen oder zu einer Bestimmung springen** | Im ‹Kürzel› suchen … | Ä126 |
+| Suchbereich | Alles · **Überschriften** · Text · Fussnoten | Titel | Ä120 |
+| Trefferzähler — laufende Stelle | **Fundstelle n von m** · vor dem ersten Sprung **keine gewählt · m Fundstellen** | –/88 · «Fundstelle 0 von m» | Ä103/P1-2 |
+| Externer Link, der auswärts öffnet (aria) | **(neuer Tab)** | (neues Fenster) · (öffnet in neuem Tab) | Ä127 |
+| Schalter für die Rechtsprechungs-Zone | **Rechtsprechung im Kopf** | Rechtsprechung in der Kopfzeile · Rechtsprechung anzeigen | Ä115/Ä128 |
+| Kopf-Standausweis | **Kopie vom …** | Snapshot | — |
+| Erlassart im Steckbrief | **Erlassart** (nur mit bekannter Grundart) | Art · «Art: Kanton FR» | Ä108 |
+
+**Schreibung.** Beschriftungen von Aktionen und Links beginnen gross
+(«Amtliche Fassung ↗», «In neuem Fenster», «Amtliches PDF»); das gilt auch für
+die Inline-Aktion am Artikel und am Sektionskopf — sie tragen denselben Namen
+wie der Kopf, sonst wäre «ein Name» wieder zwei.
+
+**Zeichen.** Gedankenstrich ist **«—»** (Geviert), ohne Ausnahme. Der
+Halbgeviertstrich «–» bleibt dem **Bis-Strich** vorbehalten und steht dort
+**ohne Spatien**: «Art. 1–10», «01.01.2019–31.12.2021». Guillemets «…» wie im
+DESIGN-REGLEMENT; Schweizer «ss» statt «ß».
+
+**Geltungsbereich und was bewusst offen bleibt.** Der Wächter deckt die
+V3-Fläche. Ausdrücklich **nicht** erfasst und darum weiter mit den alten Wörtern
+unterwegs:
+
+- die eingefrorene Ist-Hülle (`inhalt-*.tsx`, `LeserAnsichtMenu.tsx`,
+  `parts/ErlassUebersicht.tsx`) — sie bleibt bis **H5** unangetastet (FL-4).
+  **Eine deklarierte Ausnahme (P1-4, 18.8.2026):** der Fedlex-Link der
+  V1-Übersicht hiess weiter «↗ geltende Fassung», während der V3-Kopf
+  drei Zentimeter daneben «Amtliche Fassung ↗» sagte — derselbe Link auf
+  dieselbe URL unter zwei Namen. FL-4 schützt die *Mechanik* der Ist-Hülle,
+  nicht eine Beschriftung, die falsch orientiert; geändert ist genau dieses
+  eine Wort, aus der geteilten Quelle `src/pages/gesetz-leser/benennung.ts`
+  (dort stehen die Wörter, die über die Hüllen-Grenze laufen — und nur die);
+- die App-Rahmen (`components/layout/**` Topbar/Pane-Griffleiste,
+  `components/NormPopover.tsx`, `components/vorlagen/NormChip.tsx`) — dort
+  stehen «Reiter & Split-View», «Suchen oder Norm springen …» und «↗ geltende
+  Fassung». Das ist die **App-Hälfte von Ä112/Ä118/Ä110** und eine Entscheidung
+  über die ganze Anwendung, nicht über den Leser; sie steht als S-Zeile im
+  Fahrplan.
+
+Wer den Geltungsbereich später ausweitet, ändert die Dateiliste im Wächter — und
+sieht an der Zahl der roten Fälle sofort, wie viel noch offen ist.

@@ -63,7 +63,10 @@ describe('ErlassLeserKopf — Aufhebungs-Banner', () => {
   it('unterdrückt Standausweis und «geltende Fassung» bei aufgehobenem Erlass (§8)', () => {
     const out = html(aufgehoben, currency);
     expect(out).not.toContain('Fedlex-Konsolidierung geprüft');
-    expect(out).not.toContain('geltende Fassung');
+    // Ä110 (18.8.2026): der Link heisst «Amtliche Fassung ↗». Geprüft bleibt,
+    // dass der Kopf am aufgehobenen Erlass KEINEN Link auf die (aufgehobene)
+    // Konsolidierung anbietet — nur das Wort hat gewechselt.
+    expect(out).not.toContain('Amtliche Fassung ↗');
     // Der alte Wortlaut darf auch nicht als Rest zurückkommen.
     expect(out).not.toContain('geltend geprüft');
   });
@@ -73,7 +76,7 @@ describe('ErlassLeserKopf — Aufhebungs-Banner', () => {
     expect(out).not.toContain('lc-notice-danger');
     expect(out).not.toContain('Aufgehoben per');
     expect(out).toContain(standausweisSatz('2026-07-10'));
-    expect(out).toContain('geltende Fassung');
+    expect(out).toContain('Amtliche Fassung ↗');
     // §7/§8: «(maschinell)» bleibt tragend, kein Verifikations-Wortfeld.
     expect(out).toContain('(maschinell)');
     expect(out).not.toContain('verifiziert');

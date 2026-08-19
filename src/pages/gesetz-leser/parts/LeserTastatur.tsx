@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
+import { tastendruckGehoertPane } from '../panePrioritaet';
+import { NAVIGATION, belegung } from './leserTastaturBelegung';
 
 // ─── W2·10-UI-NAV/R8 · Tastatur-Navigation j/k + «?»-Overlay ──────────────────
 //
@@ -34,19 +36,10 @@ import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 // Ruhezustand — im geschlossenen Zustand rendert sie `null`, das prerenderte
 // Markup bleibt unberührt (golden byte-gleich).
 
-/** Die Tastenbelegung — EINE Quelle für Auswertung UND Overlay (§5). Ein Eintrag,
- *  der hier fehlt, taucht auch in der Hilfe nicht auf; ein Eintrag, der hier steht
- *  und nicht wirkt, fiele beim Lesen der Hilfe sofort auf. */
-const BELEGUNG: readonly { taste: string; wirkung: string }[] = [
-  { taste: 'j', wirkung: 'Zum nächsten Artikel' },
-  { taste: 'k', wirkung: 'Zum vorigen Artikel' },
-  { taste: 't', wirkung: 'Fokus in die Gliederung' },
-  { taste: '?', wirkung: 'Diese Übersicht öffnen' },
-  { taste: 'Esc', wirkung: 'Übersicht schliessen' },
-];
-
-/** Tasten, die dieser Listener beansprucht (ohne «?»/Escape, die separat laufen). */
-const NAVIGATION = new Set(['j', 'k', 't']);
+// Belegung UND die beanspruchten Tasten liegen in `./leserTastaturBelegung` —
+// eine Komponenten-Datei darf nichts anderes exportieren (Fast Refresh,
+// `react-refresh/only-export-components`), und die Liste soll ohne Browser
+// prüfbar bleiben (§6.7).
 
 function istEingabe(ziel: EventTarget | null): boolean {
   const el = ziel as HTMLElement | null;
@@ -54,7 +47,7 @@ function istEingabe(ziel: EventTarget | null): boolean {
   return /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable === true;
 }
 
-export function LeserTastatur({ tokens, aktivToken, onSprung }: {
+export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekundaerenPane = false }: {
   /** Artikel-Tokens in DOKUMENT-Reihenfolge (Reader: aus `eintraege`). j/k gehen
    *  auf dieser Liste einen Schritt — nie auf einer DOM-Abfrage: die wäre bei
    *  `content-visibility:auto` von der Renderreihenfolge abhängig. */
@@ -66,6 +59,35 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
   /** Sprung zum Token — der Reader reicht `springeZuArtikel` herein (EIN
    *  Sprung-Mechanismus für Quickjump, Treffer, Tastatur). */
   onSprung: (token: string) => void;
+  /**
+   * LESER-V3 H3 · «r» zieht das Rechtsprechungs-/Kontext-Panel auf.
+   *
+   * UNGESETZT ⇒ die Taste ist unbelegt und steht auch nicht in der Hilfe: die
+   * Ist-Hülle hat kein Panel und bleibt Zeichen für Zeichen, wie sie war (FL-4).
+   * KEINE ZWEITE TASTATUREBENE (Kap. 4h): V3 registriert keinen eigenen
+   * keydown-Listener, sondern reicht eine Funktion in DEN einen herein.
+   *
+   * WARUM DAS KÜRZEL ÜBERHAUPT NÖTIG IST: Regel David 16.8.2026 — mit «Rechts­
+   * prechung im Text: aus» verschwinden Zähler UND Randlasche. Dann muss das
+   * Panel anders erreichbar bleiben; «Ansicht ▾» ist der eine Weg, «r» der
+   * zweite (F8).
+   */
+  onPanel?: () => void;
+  /**
+   * LESER-V3 H3-NACHZUG A2 · In WELCHEM Pane steckt dieser Leser?
+   *
+   * BEFUND, gemessen 17.8.2026 im Split: der Reader durfte diesen Listener nur
+   * im PRIMÄREN Pane rendern, weil zwei globale keydown-Listener j/k doppelt
+   * springen liessen. Folge: «r» aus dem sekundären Pane öffnete das Panel des
+   * PRIMÄREN — das Kürzel bediente die Fläche, in der man gerade nicht liest.
+   *
+   * Vorgabe `false` = Ist-Verhalten Zeichen für Zeichen (Einzelansicht bzw.
+   * primäres Pane; die Ist-Hülle setzt die Prop nicht, FL-4). Setzt ein Aufrufer
+   * sie je Pane, darf der Listener in BEIDEN Panes laufen: er beansprucht den
+   * Tastendruck dann nur, wenn der Fokus in seinem Pane steht — dieselbe Regel
+   * und dieselbe Quelle wie bei ⌘K (`../panePrioritaet`, dort die Messwerte).
+   */
+  imSekundaerenPane?: boolean;
 }) {
   const [hilfeOffen, setHilfeOffen] = useState(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
@@ -83,6 +105,14 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
   useEffect(() => { tokenRef.current = tokens; }, [tokens]);
   useEffect(() => { aktivRef.current = aktivToken; }, [aktivToken]);
   useEffect(() => { sprungRef.current = onSprung; }, [onSprung]);
+  // Wie `sprungRef`: über eine Ref gelesen, damit der Listener nicht bei jedem
+  // Render des Rahmens ab- und neu registriert wird.
+  const panelRef = useRef(onPanel);
+  useEffect(() => { panelRef.current = onPanel; }, [onPanel]);
+  // A2: wie `sprungRef` über eine Ref — der Effekt unten hat bewusst KEINE
+  // Abhängigkeiten (ein Listener je Leser, für die ganze Lebensdauer).
+  const paneRolleRef = useRef(imSekundaerenPane);
+  useEffect(() => { paneRolleRef.current = imSekundaerenPane; }, [imSekundaerenPane]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -91,6 +121,11 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       // Guard 2: Eingabefelder tippen Buchstaben, sie navigieren nicht.
       if (istEingabe(e.target)) return;
+      // Guard 2b (A2): Zuständigkeit VOR allem anderen — ein fremdes Pane darf
+      // weder `preventDefault` rufen noch etwas öffnen. In der Einzelansicht ist
+      // das immer wahr (kein `[data-pane]` im Baum), das Ist-Verhalten bleibt
+      // damit unberührt. Herleitung und Messwerte: `../panePrioritaet`.
+      if (!tastendruckGehoertPane(paneRolleRef.current)) return;
       // «?» SCHLIESST das eigene Overlay — auch dann, wenn es selbst das offene
       // Modal ist. Dieser eine Zweig steht vor Guard 3, weil er der einzige ist,
       // der eine Selbst-Ausnahme rechtfertigt: er RÄUMT den Dialog weg, statt
@@ -118,14 +153,33 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
         return;
       }
       if (!NAVIGATION.has(e.key)) return;
+      if (e.key === 'r') {
+        // Ohne Panel ist die Taste unbelegt — und zwar wirklich: kein
+        // `preventDefault`, damit ein blankes «r» dort bleibt, was es war.
+        const oeffne = panelRef.current;
+        if (!oeffne) return;
+        e.preventDefault();
+        oeffne();
+        return;
+      }
       if (e.key === 't') {
         // Fokus in die Gliederung. Kein Aufklappen, kein Sprung: die Taste
         // verschiebt nur den Fokus dorthin, ab da bedient Tab/Enter den Baum.
         // Ist keine Gliederungs-Spalte da (schmale Breite, Erlass ohne Struktur),
         // passiert NICHTS — lieber ein wirkungsloser Tastendruck als ein Fokus,
         // der irgendwohin springt (§8).
+        // ── B7 (Klick-Test 18.8.2026) · «GLIEDERUNG» IST NICHT DER GANZE TOC ──
+        // `[data-toc]` markiert den SCROLLER der Seitenleiste, nicht den Baum.
+        // In V3 liegt darin seit H2b zuerst der Erlass-STECKBRIEF
+        // (`data-v3-leiste-uebersicht`) und darin ein Link auf die amtliche
+        // Quelle — «t» setzte den Fokus also gemessen auf einen externen Link
+        // statt in die Gliederung. `[data-toc-baum]` benennt den Baum selbst;
+        // fehlt die Marke (Ist-Hülle V1, wo der Steckbrief UNTER dem Baum
+        // steht), bleibt es beim Scroller, und dort ist das erste Ziel ohnehin
+        // eine Baumzeile. Ein Rückfall, der V1 unverändert lässt.
         const toc = document.querySelector<HTMLElement>('[data-toc]');
-        const ziel = toc?.querySelector<HTMLElement>('a[href], button:not([disabled])');
+        const baum = toc?.querySelector<HTMLElement>('[data-toc-baum]') ?? toc;
+        const ziel = baum?.querySelector<HTMLElement>('a[href], button:not([disabled])');
         if (!ziel) return;
         e.preventDefault();
         ziel.focus();
@@ -159,7 +213,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung }: {
         className="lc-card w-full max-w-sm space-y-3 p-4">
         <h2 className="text-body-l font-semibold">Tastatur-Kurzbefehle</h2>
         <dl className="space-y-2">
-          {BELEGUNG.map((b) => (
+          {belegung(onPanel != null).map((b) => (
             <div key={b.taste} className="flex items-baseline gap-3">
               <dt className="lc-chip shrink-0 justify-center px-2">{b.taste}</dt>
               <dd className="text-body-s text-ink-700">{b.wirkung}</dd>

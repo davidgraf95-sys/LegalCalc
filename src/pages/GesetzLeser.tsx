@@ -16,6 +16,11 @@ import { leserFlagAuswerten, leserFlagLesen, leserFlagSchreiben } from './gesetz
 // Die REGEL selbst steht in `./gesetz-leser/leserFlag` — sie muss DOM-frei
 // prüfbar sein, und Komponenten-Dateien dürfen nichts anderes exportieren
 // (react-refresh). Hier bleibt nur der Vollzug.
+//
+// SEIT H4 (Flip, David-Ja 17.8.2026) ist der Grundzustand `'v3'` — diese Datei
+// ist davon UNBERÜHRT geblieben: sie fragt die Regel und rendert, was diese
+// sagt. Genau darum ist der Flip eine Ein-Datei-Änderung (FL-2). Der Rückweg
+// `?leser=v1` läuft durch denselben Aufruf.
 
 export function GesetzLeser() {
   const { ebene, key: keyRoh } = useParams<{ ebene: string; key: string }>();

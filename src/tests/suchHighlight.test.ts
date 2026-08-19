@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { findeVorkommen, SUCH_HIGHLIGHT, SUCH_META } from '../pages/gesetz-leser/suchHighlight';
+import {
+  findeVorkommen, SUCH_HIGHLIGHT, SUCH_META,
+  neueHighlightInstanz, setzeSuchHighlightRanges,
+} from '../pages/gesetz-leser/suchHighlight';
 
 // A35 (David 16.7.2026): Treffer-Highlight in der In-Gesetz-Suche. Hier die reine
 // Offset-Findung (die DOM-/Highlight-API-Verdrahtung deckt e2e ab, Chromium).
@@ -97,5 +100,141 @@ describe('findeVorkommen — Faltung der Tausender-Schreibweisen (B1)', () => {
 
   it('Text ohne Ziffern bleibt zeichengleich (kein Offset-Versatz)', () => {
     expect(findeVorkommen("Der Anwalt's Vertrag", 'vertrag')).toEqual([[13, 20]]);
+  });
+});
+
+// ═══ QS-UI-HIGHLIGHT — EINE Registry-Position, mehrere Leser-Instanzen ════════
+//
+// ROADMAP-Schritt `QS-UI-HIGHLIGHT`, von FAHRPLAN-LESER-V3 Kap. 14 in Etappe H2
+// absorbiert: «im Split-View löscht das Suchfeld eines Panes die Markierung des
+// Nachbar-Panes».
+//
+// DER MECHANISMUS, gegen den hier geprüft wird. Die CSS Custom Highlight API
+// kennt je NAMEN genau eine Menge, und `SUCH_HIGHLIGHT` ist ein Modul-Konstant-
+// String. Jede Leser-Instanz schrieb bisher direkt auf diese eine Position:
+// `reg.set(...)` beim Malen, `reg.delete(...)` beim Aufräumen. Im Split-View
+// (zwei Gesetz-Panes, oder Gesetz + Entscheid) genügte darum das Leeren EINES
+// Suchfelds, um die Markierung des Nachbarn mitzulöschen — der Nachbar hatte
+// weiter einen Begriff im Feld, seine Fundstellen leuchteten aber nicht mehr.
+//
+// WARUM DIE ANTWORT NICHT «ein zweiter Highlight-Name» ist: `::highlight(name)`
+// ist eine statische CSS-Regel (index.css). Ein pane-abhängiger Name verlangte
+// je Pane eine eigene CSS-Regel — eine zweite Wahrheit über dieselbe Darstellung
+// (§5) und ein Deckel auf der Pane-Zahl. Stattdessen bleibt es bei EINER
+// Registry-Position und EINER CSS-Regel; buchgeführt werden die RANGES je
+// Instanz, und geschrieben wird stets ihre Vereinigung. Wer seine Menge leert,
+// nimmt genau seine Ranges heraus — die des Nachbarn bleiben stehen.
+//
+// Der Test läuft ohne Browser: die API wird über `globalThis` gelesen
+// (`highlightApi()`), also genügen ein Doppel für `CSS.highlights` und für
+// `Highlight`. Geprüft wird die BUCHFÜHRUNG, nicht das Malen — Letzteres deckt
+// die e2e-Sonde `leser-v3-highlight-split` im echten Chromium ab.
+describe('QS-UI-HIGHLIGHT — Instanz-Buchführung der Highlight-Registry', () => {
+  interface Doppel {
+    reg: Map<string, { ranges: unknown[] }>;
+    /** Instanz erzeugen UND für den Abbau vormerken. */
+    instanz: (name: string) => symbol;
+    aufraeumen: () => void;
+  }
+
+  /**
+   * Stellt `CSS.highlights` + `Highlight` an `globalThis` bereit.
+   *
+   * `aufraeumen` leert ausserdem jede in diesem Test erzeugte Instanz. Das ist
+   * keine Test-Kosmetik, sondern spiegelt die Lebensdauer-Zusage des Moduls: die
+   * Buchführung ist MODUL-Zustand und überlebt den einzelnen Leser, darum meldet
+   * sich jede Instanz beim Unmount mit einer leeren Menge ab. Ohne dieselbe
+   * Disziplin im Test schleppte der nächste Test die Ranges des vorigen mit —
+   * genau daran ist dieser Block beim ersten Grün-Lauf aufgefallen (zwei
+   * Fehlschläge, `['a9','b1','b1']` statt `['a9','b1']`).
+   */
+  function stelleApi(): Doppel {
+    const g = globalThis as unknown as { CSS?: unknown; Highlight?: unknown };
+    const vorherCss = g.CSS;
+    const vorherHl = g.Highlight;
+    const reg = new Map<string, { ranges: unknown[] }>();
+    g.CSS = { highlights: reg };
+    g.Highlight = class { ranges: unknown[]; constructor(...r: unknown[]) { this.ranges = r; } };
+    const erzeugte: symbol[] = [];
+    return {
+      reg,
+      instanz: (name) => { const i = neueHighlightInstanz(name); erzeugte.push(i); return i; },
+      aufraeumen: () => {
+        for (const i of erzeugte) setzeSuchHighlightRanges([], i);
+        g.CSS = vorherCss;
+        g.Highlight = vorherHl;
+      },
+    };
+  }
+
+  /** Range-Doppel: die Buchführung reicht sie nur durch, sie liest sie nie aus. */
+  function ranges(...namen: string[]): Range[] {
+    return namen.map((n) => ({ __name: n }) as unknown as Range);
+  }
+
+  it('DER DEFEKT: Pane A leert sein Feld — die Markierung von Pane B bleibt stehen', () => {
+    const { reg, instanz, aufraeumen } = stelleApi();
+    try {
+      const paneA = instanz('pane-a');
+      const paneB = instanz('pane-b');
+
+      setzeSuchHighlightRanges(ranges('a1', 'a2'), paneA);
+      setzeSuchHighlightRanges(ranges('b1'), paneB);
+      // Beide Panes malen — EINE Registry-Position trägt die Vereinigung.
+      expect(reg.get(SUCH_HIGHLIGHT)!.ranges).toHaveLength(3);
+
+      // Pane A leert sein Suchfeld (leere Menge = der Aufräum-Pfad des Lesers).
+      setzeSuchHighlightRanges([], paneA);
+
+      // GENAU HIER stand der Defekt: vorher war die Position jetzt GELÖSCHT und
+      // Pane B leuchtete nicht mehr, obwohl sein Feld unverändert gefüllt war.
+      const nachher = reg.get(SUCH_HIGHLIGHT);
+      expect(nachher, 'Pane B hat seine Markierung verloren').toBeDefined();
+      expect(nachher!.ranges).toHaveLength(1);
+      expect((nachher!.ranges[0] as { __name: string }).__name).toBe('b1');
+    } finally { aufraeumen(); }
+  });
+
+  it('leeren beide Panes, verschwindet die Registry-Position ganz (kein Rest)', () => {
+    const { reg, instanz, aufraeumen } = stelleApi();
+    try {
+      const paneA = instanz('pane-a');
+      const paneB = instanz('pane-b');
+      setzeSuchHighlightRanges(ranges('a1'), paneA);
+      setzeSuchHighlightRanges(ranges('b1'), paneB);
+      setzeSuchHighlightRanges([], paneA);
+      setzeSuchHighlightRanges([], paneB);
+      // `delete` statt einer leeren Menge: eine leere `Highlight`-Instanz in der
+      // Registry stehen zu lassen wäre ein Zustand, den niemand sieht und der
+      // beim nächsten Leser-Start als «da» gelesen würde (§8).
+      expect(reg.has(SUCH_HIGHLIGHT)).toBe(false);
+    } finally { aufraeumen(); }
+  });
+
+  it('eine Instanz ersetzt beim Neu-Setzen stets ihre EIGENE Menge, nie die fremde', () => {
+    const { reg, instanz, aufraeumen } = stelleApi();
+    try {
+      const paneA = instanz('pane-a');
+      const paneB = instanz('pane-b');
+      setzeSuchHighlightRanges(ranges('a1', 'a2', 'a3'), paneA);
+      setzeSuchHighlightRanges(ranges('b1'), paneB);
+      // Pane A tippt weiter — neue, kleinere Trefferzahl.
+      setzeSuchHighlightRanges(ranges('a9'), paneA);
+      const namen = reg.get(SUCH_HIGHLIGHT)!.ranges.map((r) => (r as { __name: string }).__name);
+      expect(namen.sort()).toEqual(['a9', 'b1']);
+    } finally { aufraeumen(); }
+  });
+
+  it('ohne verfügbare API bleibt alles geräuschlos (SSR/alte Browser)', () => {
+    // Kein Doppel gestellt: `highlightApi()` liefert null. Die Buchführung darf
+    // dann weder werfen noch etwas anlegen — die Trefferliste bleibt voll
+    // funktionsfähig, nur ohne Paint-Schicht (Modulkommentar oben).
+    expect(() => setzeSuchHighlightRanges(ranges('x'), neueHighlightInstanz('solo'))).not.toThrow();
+  });
+
+  it('zwei Instanzen sind verschieden, auch bei gleichem Namen', () => {
+    // Der Name ist reine Diagnose-Beschriftung; die Identität trägt das Symbol.
+    // Sonst teilten sich zwei Gesetz-Panes wieder eine Buchungszeile.
+    expect(neueHighlightInstanz('leser')).not.toBe(neueHighlightInstanz('leser'));
   });
 });

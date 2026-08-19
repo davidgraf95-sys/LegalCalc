@@ -39,6 +39,44 @@ export function internerErlassFuerSr(sr: string): { key: string; ebene: 'bund' |
 export const formatiereDatum = datumCh;
 
 /**
+ * Ä75 (Orchestrator-Entscheid 18.8.2026, David hat Stopp-Recht) · Das Etikett der
+ * systematischen Nummer — «SR» am BUNDESERLASS, `null` am Kantonserlass.
+ *
+ * BEFUND: «SR» heisst Systematische Rechtssammlung DES BUNDES. Über kantonalen
+ * Nummern stand es trotzdem — gemessen an BS-640.100 («SR 640.100») und
+ * ZH-211.11 («SR 211.11»), in der Ruhezeile der Übersichtsbox und im
+ * Erlass-Kopf. Das ist keine Ungenauigkeit in der Beschriftung, sondern eine
+ * falsche Fundstellenangabe: BS-640.100 steht in der Gesetzessammlung des
+ * Kantons Basel-Stadt, nicht in der SR des Bundes.
+ *
+ * WARUM KEIN POSITIVES KANTONS-ETIKETT (§7): naheliegend wäre «BS 640.100» — und
+ * es wäre erfunden. Die kantonalen Sammlungen führen EIGENE Siglen, die nicht das
+ * Kantonskürzel sind (Basel-Stadt «SG», Zürich «LS», Aargau «SAR», Bern «BSG»).
+ * Ein aus `erlass.kanton` gebautes Kürzel sähe amtlich aus und wäre es nicht;
+ * eine 26-Zeilen-Tabelle im Code wäre die hart kodierte Kantonsliste, die die
+ * Erlass-Neutralität ausschliesst — und jede ihrer Zeilen müsste einzeln gegen
+ * die amtliche Sammlung geprüft werden. Bis die Sigle im Datenmodell steht
+ * (Fahrplan H5: Feld im Register + Verifikation je Kanton), steht die Nummer
+ * nackt. Eine Nummer ohne Sammlungs-Angabe ist unvollständig; eine Nummer mit
+ * der falschen Sammlung ist falsch.
+ *
+ * Rein und deterministisch (§2), erlass-neutral: die Weiche liest `ebene`, nie
+ * eine Liste von Kantonen.
+ */
+export function kennungEtikett(erlass: Pick<BrowseErlass, 'ebene'>): string | null {
+  return erlass.ebene === 'bund' ? 'SR' : null;
+}
+
+/** Etikett + Nummer als EIN String (Ruhezeile). Der Erlass-Kopf braucht die Zahl
+ *  getrennt (Mono-Auszeichnung `.num` gilt der Nummer, nicht dem Etikett) und
+ *  liest darum `kennungEtikett` — dieselbe Weiche, zwei Formen, EINE Regel (§5). */
+export function kennungText(erlass: Pick<BrowseErlass, 'ebene' | 'sr'>): string | null {
+  if (!erlass.sr) return null;
+  const etikett = kennungEtikett(erlass);
+  return etikett ? `${etikett} ${erlass.sr}` : erlass.sr;
+}
+
+/**
  * N13 (BS-Audit 23.6.2026) — das VERIFIZIERTE amtliche Sachgebiet eines
  * kantonalen Erlasses, oder `null`.
  *
@@ -71,16 +109,41 @@ export function verifiziertesSachgebiet(
 
 // «Zitat kopieren» (W2·5d G2b, FAHRPLAN §3.3/K12b): EIN deterministisches Zitat-
 // Format aus der vorliegenden Provenienz (§7 a–d): Fundstelle (Art./§ + Kürzel) +
-// amtliche SR-Nummer (wo vorhanden) + Stand. Rein deterministisch (§2), keine
+// amtliche Kennung (wo vorhanden) + Stand. Rein deterministisch (§2), keine
 // Heuristik — `artikelLabel` trägt bereits «Art. 7» bzw. «§ 7» (labelMitBereich),
 // die Abs./lit. bleibt bewusst weg (am Kopf/Artikel nicht eindeutig bestimmbar,
 // §8 «nichts Erfundenes»). Beispiel: «Art. 7 OR, SR 220 (Stand 01.01.2025)».
+//
+// ── Ä98 (Live-Ästhetik-Prüfung 18.8.2026) · DIE ZWISCHENABLAGE TRUG EINE
+//    FALSCHE FUNDSTELLE ──────────────────────────────────────────────────────
+// GEMESSEN am Live-Stand (Accessible-Name-Inventar, drei Kantonserlasse): der
+// Knopf «Zitat kopieren» erzeugte «§ 1 …, SR LS 211.11», «… SR RSF 635.1.1»,
+// «… SR 640.100». Die Systematische Sammlung des BUNDES führt keine dieser
+// Nummern — was hier in die Zwischenablage ging, war eine Quellenangabe, die es
+// so nicht gibt, und sie wandert von dort in Rechtsschriften (§7, §1).
+// Ä75 hatte die Weiche für die SICHTBARE Kopfzeile schon gezogen
+// (`kennungEtikett`/`kennungText` oben); der Zitat-Bau hing als einzige Stelle
+// noch am fest verdrahteten `SR ${sr}` — eine zweite Wahrheit über dieselbe
+// Frage (§5). Jetzt speist EINE Weiche beide Ausgaben: sichtbar «LS 211.11»,
+// kopiert «§ 1 ‹kuerzel›, LS 211.11 (Stand …)».
+// ── P1-3 (Bug-Check-Nachzug 18.8.2026) · WAS DAS BEISPIEL WIRKLICH ERGIBT ───
+// Hier stand «§ 1 GebV OG, LS 211.11 (Stand …)» — das UNTERSTELLTE, das Feld
+// `kuerzel` trage an ZH-211.11 die Sigle. Nachgesehen im Register: es trägt
+// «Gebührenverordnung des Obergerichts (GebV OG)», das Zitat lautet also
+// «§ 1 Gebührenverordnung des Obergerichts (GebV OG), LS 211.11 (Stand …)».
+// Der Bau ist richtig und bleibt unangetastet — falsch war die Erwartung an die
+// DATEN. Dass viele Registerkürzel Volltitel sind, ist eine Datenfrage und
+// steht als H5-Feld im Fahrplan (Sigle aus dem Register); ein Kommentar, der
+// sie stillschweigend als gelöst annimmt, verdeckt sie (§8).
+// Darum braucht die Signatur `ebene`: die Kennung ist eine Funktion der EBENE,
+// nie des Kürzels und nie einer Kantonsliste (Herleitung bei `kennungEtikett`).
 export function baueZitat(
-  erlass: Pick<BrowseErlass, 'kuerzel' | 'sr' | 'stand'>,
+  erlass: Pick<BrowseErlass, 'ebene' | 'kuerzel' | 'sr' | 'stand'>,
   artikelLabel: string,
 ): string {
   const teile = [`${artikelLabel} ${erlass.kuerzel}`.trim()];
-  if (erlass.sr) teile.push(`SR ${erlass.sr}`);
+  const kennung = kennungText(erlass);
+  if (kennung) teile.push(kennung);
   let s = teile.join(', ');
   if (erlass.stand) s += ` (Stand ${formatiereDatum(erlass.stand)})`;
   return s;
@@ -109,6 +172,27 @@ export function grundartMeta(key: string): {
     bestimmungsEtikett: s.bestimmungsEtikett,
     bestimmungsEtikettStatus: s.bestimmungsEtikettStatus,
   };
+}
+
+/**
+ * B1 (H2b-Nachzug) — der Volltitel OHNE das Klammer-Suffix, das Fedlex und die
+ * kantonalen Register anhängen («… (Strafprozessordnung, StPO)», «… (LS 211.11)»).
+ *
+ * WARUM HIER UND NICHT ZWEIMAL. Genau diese Zeichenkette ist es, die der
+ * Erlass-Kopf DRUCKT (`parts/ErlassLeserKopf.tsx`), und genau sie muss darum auch
+ * gemessen werden, wenn über ihre LÄNGE entschieden wird (`v3/erlassAnsicht`
+ * `titelKennung`) oder über ihre GLEICHHEIT mit dem Kürzel (`zeigeVolltitel`).
+ * Bis zum Nachzug lag die Regex nur im Kopf, die Entscheidungen massen `titel`
+ * roh — gemessen 17.8.2026 bekamen dadurch **46 von 1469** Erlassen die
+ * vorangestellte Kennung, obwohl ihr angezeigter Titel unter der Schwelle liegt
+ * (MSchG: roh 81 Zeichen, angezeigt 60; ebenso FusG, PartG, URV, BetmG, IRSG).
+ * Eine Länge, die etwas anderes misst als das Gedruckte, ist keine Kalibrierung.
+ *
+ * Rein und deterministisch (§2): nur das LETZTE Klammerpaar am Ende fällt, und
+ * nur, wenn es dort steht — «Verordnung (EU) 2016/679 über …» bleibt unberührt.
+ */
+export function titelOhneKlammerSuffix(titel: string): string {
+  return titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
 }
 
 // Kopf-Overline JE GRUNDART (W2·5d G3a, FAHRPLAN §2.2 + §5.1): das Kopf-Label
@@ -180,13 +264,20 @@ export function margLabel(label: string): ReactNode {
   const ord = label.match(MARG_ORD);
   // LM-107: der nackte <sup> übernahm bislang den Browser-Default
   // `font-size: smaller` (browserabhängig, ~0.75em der jeweils UMGEBENDEN
-  // Schrift) — dadurch erscheint dasselbe «bis»/«ter» im Gliederungsbaum
-  // (text-xs-Kontext → 9px) und in der Artikel-Überschrift (text-base-Kontext
-  // → 12px) in zwei Grössen derselben Ansicht. Fix: derselbe deterministische
-  // Multiplikator wie bei den bestehenden hochgestellten Fussnoten-Markern
-  // (ArtikelBody.tsx FnRef-Button, `text-[0.62em]`) statt des UA-Defaults —
-  // keine neue Grössen-Systematik, nur der bereits etablierte Wert.
-  if (ord) return <Fragment>{ord[1]}<sup className="text-[0.62em]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
+  // Schrift) — dadurch erschien dasselbe «bis»/«ter» im Gliederungsbaum und in
+  // der Artikel-Überschrift in ZWEI Grössen derselben Ansicht. Fix: derselbe
+  // deterministische Multiplikator wie bei den hochgestellten Fussnoten-Markern
+  // (ArtikelBody.tsx FnRef-Button) statt des UA-Defaults — keine neue
+  // Grössen-Systematik, nur der bereits etablierte Wert.
+  //
+  // NACHZUG 17.8.2026 (Architektur-Prüfer 6): das gemeinsame Token heisst jetzt
+  // `--hochgestellt` (vorher `--fn-marke`). Hier trägt es das ORDNUNGS-SUFFIX
+  // einer Marginalie, nicht eine Fussnotenmarke — der alte Name benannte nur die
+  // andere der beiden Rollen. Die früher an dieser Stelle genannten Absolutwerte
+  // «9 px / 12 px» sind mit S2 überholt (Wert 0.72 em statt 0.62 em, Fliesstext
+  // 17 px statt 18 px); sie werden EINMAL am Token in `src/index.css` gerechnet
+  // und darum hier nicht wiederholt (§5).
+  if (ord) return <Fragment>{ord[1]}<sup className="text-[length:var(--hochgestellt)]">{ord[2]}</sup>{label.slice(ord[0].length)}</Fragment>;
   const bu = label.match(MARG_BUCHST);
   if (bu) return <Fragment>{bu[1]}<em>{bu[2]}</em>{label.slice(bu[0].length)}</Fragment>;
   return label;
@@ -362,8 +453,13 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
     // übrigen externen Aktionen dieser Datei — AmtlichesPdf/«In neuem Reiter» tragen
     // ebenfalls ein `title` statt eines Icons je Einzel-Fundstelle, da ein Apparat
     // mehrere Zitate in einer dichten Zeile aneinanderreiht).
+    // Ä117 (18.8.2026): Gedankenstrich «—», nicht «–». Der Leser mischte beide
+    // Zeichen in derselben Rolle (hier, `NormPopover`); App-weit ist «—» der
+    // Bestand (Benennungs-Glossar, Design-Grundlage Kap. 9). Der Halbgeviert-
+    // strich bleibt dem BIS-Strich vorbehalten («Art. 1–10», Zeitbereich) —
+    // zwei Rollen, zwei Zeichen, keine Mischung.
     return (
-      <a key={i} href={url} target="_blank" rel="noopener noreferrer" title="Amtliche Fedlex-Quelle – öffnet in neuem Tab"
+      <a key={i} href={url} target="_blank" rel="noopener noreferrer" title="Amtliche Fedlex-Quelle — öffnet in neuem Tab"
         className="text-brass-700 underline decoration-dotted underline-offset-2">{kinder}</a>
     );
   });
@@ -388,7 +484,35 @@ export function margStufeStil(level: number, istBlatt: boolean): string {
   // «1. Im / Allgemeinen» — die Fortsetzungszeile rückt via text-indent:-1em +
   // pl-[1em] auf die Titel-Startspalte ein (Fedlex-AVOID). Reine Darstellung (§3).
   const hang = '[text-indent:-1em] pl-[1em]';
-  if (istBlatt) return `${hang} text-base font-semibold text-ink-800`;
-  if (level <= 0) return `${hang} text-body-s font-medium uppercase tracking-wide text-ink-500`;
-  return `${hang} text-body-s text-ink-600`;
+  // S2 · Ä7 «Randtitel über Artikelnummer (Hierarchie)» + F3 = V2, Spalte
+  // «Marginalie/Randtitel 0.8125 rem, Sans, ink-600» (David 17.8.2026 am
+  // Bildbogen; die Aufnahme legte die V2-Regel über `.font-serif.leading-snug
+  // > div`, also über GENAU diese drei Stufen — David hat sie so gesehen).
+  //
+  // DER BEFUND, gemessen am gebauten Stand: Artikelnummer und Blatt-Randtitel
+  // liefen beide auf 16 px (`text-base`), die Nummer bold/ink-900, das Blatt
+  // semibold/ink-800 — zwei fast gleich laute Stimmen übereinander, also keine
+  // Hierarchie. Ä7 wird von der RANDTITEL-Seite gelöst, nicht durch Vergrössern
+  // der Artikelnummer: V2 sagt ausdrücklich «Titelstufen unverändert», und die
+  // Nummer auf die 20-px-Stufe `leser-art` der Grundlage Kap. 2.2 zu heben wäre
+  // eine Änderung, die David am Bogen NICHT gesehen hat (§7). Ergebnis sind die
+  // drei sichtbaren Stufen, die Grundlage Kap. 2.3 als Höchstzahl nennt:
+  //   Artikelnummer 16 px bold ink-900  >  Blatt 13 px semibold ink-800
+  //                                     >  Vorfahren 13 px regular ink-600.
+  // `font-sans` überschreibt den Serif-Container des Randtitel-Blocks
+  // (ArtikelLeser) — Zwei-Stimmen-Regel: Serif ist der Wortlaut, Sans das
+  // Beiwerk (Grundlage Kap. 2.1).
+  //
+  // EINE ABWEICHUNG, offengelegt: das BLATT behält `text-ink-800` statt der
+  // V2-Farbe ink-600. Das Blatt ist die Sachüberschrift des Artikels, und ein
+  // datierter David-Auftrag (26.6.2026, oben im Kommentar) verlangt, dass sie
+  // nicht «zu einem blassen Abschnittslabel verkümmert» — ~83 % aller Randtitel
+  // sind genau dieser Fall. ink-800 gegen ink-600 ist eine Kontrast-ERHÖHUNG
+  // (13.94 : 1 gegen 7.36 : 1, Grundlage Kap. 4), also nie ein A11y-Risiko; die
+  // Hierarchie trägt hier das Gewicht, nicht die Farbe.
+  // Stufe 0 gewinnt zugleich Kontrast: ink-500 → ink-600 (V2-Spalte; 5.10 : 1 →
+  // 7.36 : 1, damit AAA statt knapp AA bei 13 px Versalien).
+  if (istBlatt) return `${hang} font-sans text-leser-rand font-semibold text-ink-800`;
+  if (level <= 0) return `${hang} font-sans text-leser-rand font-medium uppercase tracking-wide text-ink-600`;
+  return `${hang} font-sans text-leser-rand text-ink-600`;
 }

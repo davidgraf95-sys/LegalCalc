@@ -36,14 +36,44 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
   const hatPraeambel = !!kopf.praeambel?.length;
   if (!kopf.erlassdatum && !hatPraeambel) return null;
   const verlinkbar = ingressVerlinkbar(kopf.erlassdatum);
+  // S2 (F3 = V2, David 17.8.2026): Ingress und Präambel sind AMTLICHER WORTLAUT und
+  // stehen in derselben Lesespalte (`max-w-normtext`) unmittelbar über den Artikeln.
+  // Sie laufen darum auf derselben Fliesstext-Stufe `leser-text` (17 px / lh 1.55)
+  // wie der Artikeltext — vorher `text-body-l` (18 px) plus rohem
+  // `leading-[1.65]`-Override, also GRÖSSER und lockerer als der Artikeltext, den
+  // sie einleiten. Hätte S2 nur `ArtikelLeser` umgestellt, wäre genau hier eine
+  // sichtbare Stufe entstanden, die es vorher nicht gab (§5: der Wortlaut hat EINE
+  // Stimme). Der Zeilenabstand gehört jetzt zur Stufe statt an die Klasse
+  // (Design-Grundlage Kap. 8 Nr. 4: kein fixer Leading-Wert über alle Grössen).
   const zeilenStil = (rolle: string): string => {
-    if (rolle === 'verb') return 'font-serif text-body-l text-ink-800';
-    if (rolle === 'autor') return 'font-serif text-body-l text-ink-800';
+    if (rolle === 'verb') return 'font-serif text-leser-text text-ink-800';
+    if (rolle === 'autor') return 'font-serif text-leser-text text-ink-800';
     // ingress (Rechtsgrundlage) + praeambel (materiell, BV) ruhig im Lesefluss
-    return 'font-serif text-body-l leading-[1.65] text-ink-700';
+    return 'font-serif text-leser-text text-ink-700';
   };
   return (
-    <section aria-label="Ingress" className="mx-auto w-full max-w-normtext space-y-3 border-b border-rule-struktur pb-5">
+    // ── Ä100 (Live-Ästhetik-Prüfung 18.8.2026) · EINE LINIE, NICHT ZWEI ──────
+    // GEMESSEN @1440 UND @390 (StPO): zwischen dem Ingress-Fussnoten-Apparat und
+    // dem ersten Sektionskopf standen ZWEI waagrechte Linien rund 25 px
+    // auseinander — die `border-b` dieses Blocks und die `border-t` des ersten
+    // Sektionskopfs (`parts/SektionKopf.tsx`: `ebene <= 1` ⇒ «border-t
+    // border-rule-struktur pt-4»). Beide in DERSELBEN Rolle `rule-struktur`,
+    // beide an derselben Fuge. Design-Grundlage Kap. 3 lässt pro Ebene genau
+    // eine Linienrolle zu; DESIGN-REGLEMENT §Linien-Kanon Regel 2 nennt die
+    // Häufung ausdrücklich «Gleisbett».
+    // WELCHE FÄLLT: diese. Die Linie des Sektionskopfs gehört zur STUFE und
+    // wiederholt sich bei jedem obersten Teil/Titel/Abschnitt — sie ist der
+    // Kanon. Die hier war die einmalige Kante eines Vorspanns, und der trennt
+    // sich vom Folgenden bereits durch `pb-5` Weissraum plus die Stufenlinie
+    // darunter («Trennung über Weissraum, dann Linie», Kap. 8 Nr. 1).
+    // TRÄGT DER ERLASS GAR KEINE SEKTIONEN (`ohneGliederung`), steht zwischen
+    // Ingress und erstem Artikel jetzt Weissraum statt einer Linie — dasselbe
+    // Bild wie zwischen zwei Artikeln, und damit richtiger als vorher: eine
+    // Struktur-Linie ohne Struktur dahinter war eine Behauptung.
+    // GETEILTE DATEI: der Block trägt V1 UND V3 (`inhalt-volltext.tsx`,
+    // `inhalt-ansichten.tsx`, `v3/LeserRahmenV3.tsx`). Die Änderung wirkt in
+    // beiden Hüllen gleich — deklariert, nicht nebenbei.
+    <section aria-label="Ingress" className="mx-auto w-full max-w-normtext space-y-3 pb-5">
       {kopf.erlassdatum && (
         <p className="font-serif text-body-s text-ink-500">{kopf.erlassdatum}</p>
       )}
@@ -67,7 +97,7 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
                   die Zeile amtliche Marker trägt (`fnNrs` aus FN-2). */}
               {z.fnNrs && z.fnNrs.length > 0 && (
                 <span className="ml-0.5" data-fn-marker>{z.fnNrs.map((nr, j) => (
-                  <span key={nr}>{j > 0 && <span className="align-super text-[0.62em] text-ink-500">,</span>}<FnRef artikel="kopf" nr={nr} /></span>
+                  <span key={nr}>{j > 0 && <span className="align-super text-[length:var(--hochgestellt)] text-ink-500">,</span>}<FnRef artikel="kopf" nr={nr} /></span>
                 ))}</span>
               )}
             </p>
@@ -75,13 +105,23 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
         </div>
       )}
       {/* W2·5i-HIST-ANSICHT (bewusster Verzicht, 26.7.2026): der KOPF-Apparat trägt
-          KEIN `data-fn-klasse`, folgt der dreiwertigen Historie-Wahl also nicht — er
-          bleibt in allen drei Ansichten vollständig sichtbar. Grund: die Ansicht «als
-          Chronologie» ersetzt die A-Einträge durch eine datierte Liste AM ARTIKELFUSS;
-          für den Erlass-Kopf gibt es keine solche Ersatzdarstellung, ein Ausblenden
-          hier wäre also reiner Informationsverlust (§8). Das Sidecar liefert `kl` für
-          die Kopf-Fussnoten mit — wer den Kopf später einbezieht, braucht dann eine
-          eigene Ersatzdarstellung, nicht bloss eine CSS-Regel. Der bestehende
+          KEIN `data-fn-klasse` und folgt dem Schalter «Änderungsvermerke» also nicht —
+          er bleibt in BEIDEN Stellungen vollständig sichtbar.
+
+          NEU BEGRÜNDET (S1-Nachzug 17.8.2026, Architektur-Prüfer C1): die alte
+          Begründung berief sich auf die dritte Ansicht «als Chronologie» — dort
+          ersetzte eine datierte Liste am Artikelfuss die A-Einträge, und für den
+          Erlass-Kopf gab es keine solche Ersatzdarstellung. Dieser Grund ist mit S1
+          ENTFALLEN (der Modus ist gestrichen, David F1), das ERGEBNIS bleibt aber
+          richtig — nur eben aus einem anderen, einfacheren Grund:
+
+          Der Kopf-Apparat hängt an KEINEM Vermerke-Schalter, weil ein Ausblenden hier
+          nichts verfeinern, sondern nur amtliche Substanz wegnehmen würde (§8,
+          konservative Richtung wie H0-Auflage 1). Am Artikelfuss trennt der Schalter
+          Änderungsvermerke von echten Verweisen — im Vorspann steht kein solches
+          Gemisch, das man trennen müsste. Das Sidecar liefert `kl` für die
+          Kopf-Fussnoten weiterhin mit; wer den Kopf später doch einbeziehen will,
+          braucht dafür einen eigenen Entscheid, nicht bloss eine CSS-Regel. Der
           `data-fussnoten`-Toggle wirkt hier unverändert weiter. */}
       {kopf.fussnoten && kopf.fussnoten.length > 0 && (
         <div data-fn-apparat className="mt-3 border-t border-rule-artikel pt-2 space-y-1">
@@ -89,7 +129,12 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
               (getElementById) und des #-Sprungs; `nt-anker`/`target:` wie im Artikel-
               Apparat (ArtikelLeser). Nummernlose Zeilen (nr='') tragen keinen Anker. */}
           {kopf.fussnoten.map((fn, i) => (
-            <p key={i} id={fn.nr ? `fn-kopf-${fn.nr}` : undefined} className="nt-anker text-xs leading-normal text-ink-500 target:bg-brass-100">
+            /* S2 (F3 = V2): `text-leser-fn` (11 px / lh 1.3) wie der Artikel-Apparat —
+               die Klassenkette war bis S2 zeichengleich mit ihm (`text-xs
+               leading-normal`), und sie muss es bleiben: es ist dieselbe Rolle am
+               anderen Ort (§5). Der Kommentar unten nennt diese Kopplung schon für
+               die Farbe; sie gilt für die Grösse genauso. */
+            <p key={i} id={fn.nr ? `fn-kopf-${fn.nr}` : undefined} className="nt-anker text-leser-fn text-ink-500 target:bg-brass-100">
               {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
                   LM-153 (W2·17-UI-BEFUNDE-B4): brass-700 statt ink-500 — dieselbe
                   Auszeichnung wie die Marke im Fliesstext (FnRef, ArtikelBody.tsx),

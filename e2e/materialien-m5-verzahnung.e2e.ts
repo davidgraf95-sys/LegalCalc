@@ -1,5 +1,6 @@
 // @shard-gruppe: 1
 import { test, expect, type Page } from '@playwright/test'
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 // ─── E6a·M5: Amtliche-Materialien-Delta in der Verzahnungs-UI ───────────────
 // Prüft am gebauten dist: (1) die «Amtliche Materialien»-Gruppe am Gesetz-Fuss
@@ -15,7 +16,15 @@ function fehlerSammeln(page: Page): string[] {
   return fehler
 }
 
-test('DSG-Reader: «Amtliche Materialien»-Gruppe mit kuratiertem Art.-Sublabel + Dokument-Stand', async ({ page }) => {
+test('DSG-Reader: «Amtliche Materialien»-Gruppe mit kuratiertem Art.-Sublabel + Dokument-Stand', async ({ page }, info) => {
+  // Die Sache ist RECHTSDATEN (kuratiertes «via Art. 24», Dokument-Stand) und
+  // wiegt darum schwerer als eine Bedienfrage: V3 hat den Reiter
+  // «Materialien» (`v3/PanelMaterialien.tsx`), aber KEINE Spec, die diese
+  // Daten dort nachweist. Die Lücke steht als H5-Auflage im Kontaktbogen und
+  // ist dort ausdrücklich als die gewichtigste der Liste vermerkt.
+  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+    'die Materialien-Gruppe im Kontextfenster des Lesers',
+    'Deckungslücke — Reiter «Materialien» in V3 vorhanden, aber datenseitig unbewacht; H5-Auflage (Kontaktbogen H4 §7)'))
   const fehler = fehlerSammeln(page)
   await page.goto('/gesetze/bund/DSG')
 
@@ -32,7 +41,10 @@ test('DSG-Reader: «Amtliche Materialien»-Gruppe mit kuratiertem Art.-Sublabel 
   expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
 })
 
-test('DSG-Reader @390: async Soft-Law-Dokument erscheint, kein horizontaler Overflow (§15)', async ({ page }) => {
+test('DSG-Reader @390: async Soft-Law-Dokument erscheint, kein horizontaler Overflow (§15)', async ({ page }, info) => {
+  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+    'der Erlass-Ebene-Zähler `<details>` im Kontextfenster des Lesers',
+    'wie oben — H5-Auflage'))
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 390, height: 900 })
   await page.goto('/gesetze/bund/DSG')

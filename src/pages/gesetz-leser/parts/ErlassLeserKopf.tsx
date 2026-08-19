@@ -4,6 +4,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
   datumCh, naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
+import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
 // führung, §3.3): Ersetzt die zwei früher duplizierten <header>-Blöcke (Snapshot
@@ -28,8 +29,27 @@ import {
 export function ErlassLeserKopf({
   erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', kennzahlen = null,
   aktionen, hinweis, currency, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
+  kennung = null,
 }: {
   erlass: BrowseErlass;
+  /** ── Ä-(d) aus S3 (LESER-V3 H2b) · Kennung VOR dem Titel ──────────────────
+   *  `null` (Vorgabe) = die S3-Zitierform «Volltitel (Kürzel)» bleibt Zeichen für
+   *  Zeichen, wie sie ist — die Ist-Hülle setzt die Prop nicht und ist damit
+   *  unverändert (FL-4).
+   *
+   *  Ein Wert = der Kopf stellt die Kennung VOR den Titel und lässt das
+   *  Klammer-Suffix weg. Anlass (gemessen 17.8.2026 am LugÜ): bei sehr langen
+   *  Staatsvertrags-Titeln stand das Kürzel am Ende einer dreizeiligen, 147 px
+   *  hohen H1 — wer den Erlass wiedererkennen will, sucht genau diese vier
+   *  Zeichen und findet sie zuletzt. Dieselbe Information, andere Reihenfolge,
+   *  nichts doppelt.
+   *
+   *  WER entscheidet, steht NICHT hier: die Regel ist erlassabhängig und liegt
+   *  darum in der Hülle (`v3/erlassAnsicht.titelKennung`, rein und unit-geprüft).
+   *  Dieser Kopf ist geteilte Darstellung (§3) und darf keine Erlass-Weiche
+   *  tragen — und er darf auch nicht aus `v3/` importieren (Abhängigkeitsrichtung
+   *  Hülle → geteilte Schicht, nie umgekehrt). */
+  kennung?: string | null;
   overline: ReactNode;
   /** Artikelzahl (Snapshot); null = keine Zählung (pdf-embed). */
   artikelAnzahl: number | null;
@@ -76,10 +96,17 @@ export function ErlassLeserKopf({
   // ordnung» in ZWEI Farben; Skizze 4e dreht das auf die gewohnte Zitierform
   // «Volltitel (Kürzel)» in EINER Farbe — zweifarbige Titel lasen sich wie zwei
   // Angaben, obwohl es eine ist (Ä6).
-  const titelOhneSuffix = erlass.titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  // B1 (H2b-Nachzug): die Regex lebt jetzt EINMAL in `helpers` — dieselbe
+  // Zeichenkette, über die `v3/erlassAnsicht` Länge und Gleichheit entscheidet
+  // (§5: gemessen wird, was gedruckt wird). Verhalten hier unverändert.
+  const titelOhneSuffix = titelOhneKlammerSuffix(erlass.titel);
   const kuerzel = erlass.kuerzel.trim();
   const titelRedundant = titelOhneSuffix.toLowerCase() === kuerzel.toLowerCase();
-  const titelZeile = !kuerzel || titelRedundant
+  // Ä-(d): mit `kennung` trägt der Titel das Klammer-Suffix nicht mehr — die
+  // Kennung steht als eigenes, vorangestelltes Element in derselben H1 (sie
+  // bleibt damit Teil des zugänglichen Namens der Überschrift, wird nur zuerst
+  // gelesen). Ohne `kennung` bleibt die Zeile Zeichen für Zeichen die von S3.
+  const titelZeile = !kuerzel || titelRedundant || kennung
     ? (titelOhneSuffix || kuerzel)
     : `${titelOhneSuffix} (${kuerzel})`;
 
@@ -95,17 +122,40 @@ export function ErlassLeserKopf({
   // Fakten- und Stand-Segmente werden als Liste gebaut und mit einem Mittepunkt
   // gefügt — so kann kein führender/doppelter Trenner entstehen, wenn ein Wert
   // fehlt (Kanton ohne SR, VD-Erlasse mit leerem `stand`, pdf-embed ohne Zählung).
+  // Ä75 (18.8.2026): das Etikett «SR» steht nur am BUNDESERLASS. Über kantonalen
+  // Nummern war es eine falsche Fundstellenangabe (BS-640.100 steht nicht in der
+  // SR des Bundes) — die Weiche und der Grund, warum kein Kantons-Kürzel an seine
+  // Stelle tritt, stehen bei `kennungText` in `../helpers`. Die Mono-Auszeichnung
+  // `.num` bleibt an der ZAHL: sie gilt der Nummer, nicht dem Etikett
+  // (Design-Grundlage Kap. 2.1 «auf SR-Nr./Aktenzeichen begrenzt»).
   const fakten = [
-    erlass.sr ? <>SR <span className="num">{erlass.sr}</span></> : null,
+    erlass.sr
+      ? <>{kennungEtikett(erlass) ? `${kennungEtikett(erlass)} ` : ''}<span className="num">{erlass.sr}</span></>
+      : null,
     artikelAnzahl != null ? <><span className="num">{artikelAnzahl}</span> {wort}</> : null,
   ].filter(Boolean) as ReactNode[];
 
+  // S2 · Ä-(b) «Die Stand-Zeile mischt Datumsformen» (Nachtrag S3, Ästhetik-
+  // Gegenprüfung 16.8.2026): `Stand 01.04.2025` lief in der Mono-Auszeichnung
+  // `.num`, das Datum im Standausweis daneben proportional — gleiche Grösse, zwei
+  // Anmutungen in EINEM Satz. Aufgelöst zu EINER Auszeichnung, und zwar in
+  // Richtung der Design-Grundlage Kap. 2.1: die Mono-Stimme ist dort ausdrücklich
+  // «auf SR-Nr./Aktenzeichen begrenzt» — Daten gehören nicht dazu. Beide Daten
+  // laufen jetzt in der Kopf-Stimme mit `tabular-nums` (Grundlage Kap. 2.3:
+  // «tabular-nums für Beträge/Daten/Artikelnummern»); die Auszeichnung sitzt am
+  // <p> der Zeile, damit sie AUCH den Standausweis trifft, der als reiner String
+  // aus `erlassKopfText.ts` kommt. Damit bleibt der Risikopfad
+  // `src/lib/normtext/**` unberührt (§5: derselbe String steht im prerenderten
+  // SEO-Kopf; ihn in ein Fragment zu zerlegen hätte beide Seiten und den
+  // Gegenprüfungs-Hash angefasst — dieselbe Falle, die S3 bei `ANHANG_DOMINANZ`
+  // schon notiert hat). Die SR-Nummer in der Fakten-Zeile darüber behält `.num`:
+  // sie IST der Fall, für den die Mono-Stimme reserviert ist.
   const stand = [
-    erlass.stand ? <>Stand <span className="num">{datumCh(erlass.stand)}</span></> : null,
+    erlass.stand ? <>Stand {datumCh(erlass.stand)}</> : null,
     // K-1: Ur-Inkrafttreten (Fedlex `dateEntryInForce`, build-time projiziert ⇒
     // CLS 0). Distinkt vom «Stand» (Konsolidierung) — nur Bund; Kanton trägt es
     // nicht (§8). «vom …» wird NICHT gedoppelt (steht im Ingress).
-    erlass.inkraftSeit ? <>in Kraft seit <span className="num">{datumCh(erlass.inkraftSeit)}</span></> : null,
+    erlass.inkraftSeit ? <>in Kraft seit {datumCh(erlass.inkraftSeit)}</> : null,
     // F5-Standausweis. Prerender-stabil (Sidecar zur Bauzeit erhoben, keine
     // Client-Datums-Logik). Wortlaut aus `erlassKopfText` — derselbe String
     // steht im prerenderten SEO-Kopf (§5, `seo-detail.ts`).
@@ -125,7 +175,32 @@ export function ErlassLeserKopf({
           index.css). min-h-titel-2z (§15.2) reserviert unverändert die
           2-Zeilen-Höhe gegen den font-display-Swap (CLS 0); nur
           Platz-Reservierung — der volle Titel steht immer (§15/2). */}
-      <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] hyphens-auto min-h-titel-2z">
+      {/* ── Ä101 (Live-Ästhetik-Prüfung 18.8.2026) · KEINE SILBENTRENNUNG IM
+          ERLASS-TITEL ────────────────────────────────────────────────────────
+          GEMESSEN @1440 und @390: `hyphens-auto` trennte die Überschrift mitten
+          im Namen — «Aner-kennung» (LugÜ), «Strafprozess-ordnung» (StPO). Der
+          Titel ist der NAME des Erlasses und die grösste Type der Seite;
+          Design-Grundlage Kap. 8 Nr. 7 verbietet die automatische Trennung
+          ausdrücklich für Überschriften (der Browser trennt nach Wörterbuch,
+          nicht nach Kompositum-Fuge, und in einer 32-px-Serif sieht man jeden
+          Fehlgriff). `[overflow-wrap:anywhere]` BLEIBT: es fängt den
+          pathologischen Fall — ein einzelnes Wort, das breiter ist als die
+          Spalte — und bricht dann ohne Trennstrich, statt die Zeile zu sprengen.
+          Zwei Regeln, zwei Aufgaben: keine Kosmetik-Trennung, aber auch kein
+          Überlauf. */}
+      <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] min-h-titel-2z">
+        {/* Ä-(d): die Kennung als eigene, nicht umbrechende Marke VOR dem Titel.
+            Kein zweites Element neben der H1 und kein `aria-label`-Ersatz — sie
+            ist Teil desselben Namens und bleibt darum in der Überschrift; nur
+            ihre Stelle wechselt. `whitespace-nowrap`, damit «LugÜ» nie über zwei
+            Zeilen reisst; der Punkt-Trenner ist `aria-hidden`, weil er die
+            Aussprache nur unterbrechen würde. */}
+        {kennung && (
+          <>
+            <span data-kopf-kennung className="whitespace-nowrap">{kennung}</span>
+            <span aria-hidden className="mx-2 font-normal text-ink-300">·</span>
+          </>
+        )}
         {titelZeile}
       </h1>
 
@@ -155,8 +230,10 @@ export function ErlassLeserKopf({
           tailwind.config.js — dort stehen die vier Fenster-Werte samt Messfall),
           nicht geschätzt: schmal brechen dieselben Sätze über mehr Zeilen. */}
       <div className="min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md space-y-1">
+        {/* S2 · Ä-(b): `tabular-nums` an der ZEILE — eine Auszeichnung für beide
+            Daten, auch für das im String steckende (s. Herleitung oben). */}
         {stand.length > 0 && (
-          <p className="text-xs leading-snug text-ink-500">
+          <p className="text-xs leading-snug tabular-nums text-ink-500">
             {stand.map((s, i) => (
               <span key={i}>{i > 0 && <span className="text-ink-300" aria-hidden> · </span>}{s}</span>
             ))}
@@ -179,9 +256,23 @@ export function ErlassLeserKopf({
       {/* Aktionen-Zeile (Skizze 4e): Icon + Label als ruhige Text-Links, keine
           Chip-Kästen. Ist-Verhalten unverändert — dieselben URLs, dasselbe
           target/rel, derselbe `aktionen`-Slot in derselben Reihenfolge. */}
+      {/* ── Ä110 (Live-Ästhetik-Prüfung 18.8.2026) · EIN ZIEL, EIN NAME ──────
+          GEMESSEN hiess DERSELBE Fedlex-Link an drei Stellen dreierlei: hier
+          «↗ geltende Fassung», am Artikel und am Sektionskopf «amtliche Fassung
+          ↗», in der Übersichtsbox «geltende Fassung». Und die Zeile mischte die
+          Schreibung: ein klein beginnendes Label neben zwei gross beginnenden
+          («⧉ In neuem Reiter», «⬇ Amtliches PDF»).
+          JETZT, nach dem Benennungs-Glossar (Design-Grundlage, Abschnitt
+          «Benennung»): der Link heisst überall «Amtliche Fassung ↗» — der Pfeil
+          HINTEN, weil er das Verlassen der Seite ankündigt und darum ans Ende
+          der Beschriftung gehört, nicht davor. «geltende» fällt weg: es doppelt
+          die Aussage der Stand-Zeile darüber und ist am aufgehobenen Erlass
+          gerade falsch (dieser Zweig läuft dort ohnehin nicht — `lebt`).
+          Alle Beschriftungen der Zeile beginnen jetzt gross; das ist die eine
+          Schreibung, die Ä110 verlangt. */}
       <div className="lc-kopf-aktionen flex flex-wrap items-center gap-x-5 gap-y-0.5 text-xs">
         {erlass.quelleUrl && lebt && (
-          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip">↗ geltende Fassung</a>
+          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip">Amtliche Fassung ↗</a>
         )}
         {aktionen}
       </div>

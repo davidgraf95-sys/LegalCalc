@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { brotkrume, ebeneAngabe, overlineGebiet, uebersichtsZeile } from '../pages/gesetz-leser/v3/erlassAnsicht';
+import {
+  brotkrume, ebeneAngabe, hatRuecksprung, overlineGebiet, suchFeldName, suchPlatzhalter,
+  uebersichtsZeile,
+} from '../pages/gesetz-leser/v3/erlassAnsicht';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { KantonSystematik } from '../lib/normtext/systematik';
 
@@ -148,5 +151,102 @@ describe('brotkrume — genau drei Stufen, die letzte ohne `to`', () => {
     // Die ersten beiden Stufen SIND klickbar.
     expect(b[0].to).toBeDefined();
     expect(b[1].to).toBeDefined();
+  });
+});
+
+// ═══ Ä87/Ä91 (H4-Nachzug 18.8.2026) · DIE ZUSAGE UNTER DEM GESTRICHENEN ✕ ════
+//
+// Das Kopf-✕ «Gesetz schliessen» ist weg (Messreihe und Herleitung im Kopf von
+// `v3/kopfStufen.ts`). Es DARF weg, weil sein Ziel `/gesetze` in derselben Zeile
+// als beschriftetes Wort steht — als volle Kette oder als Rücksprung
+// «‹ Gesetze». Diese Zusage ruht auf einer einzigen Eigenschaft der Krume, und
+// die wird hier geprüft statt angenommen: nähme jemand der ersten Stufe ihr
+// `to`, stünde die V3-Kopfzeile ohne jeden Weg nach oben da — still, und auf
+// jeder Breite.
+//
+// Rot zu bekommen (§6.7, gefahren 18.8.2026): in `brotkrume` beim ersten
+// Eintrag `to: '/gesetze'` weglassen.
+describe('hatRuecksprung — die Kopfzeile hat auf jeder Ebene einen Weg nach oben', () => {
+  const FAELLE: [string, Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet' | 'kuerzel'>][] = [
+    ['Bund', { ebene: 'bund', kanton: null, rechtsgebiet: 'privat', kuerzel: 'StPO' }],
+    ['Kanton BS', { ebene: 'kanton', kanton: 'BS', rechtsgebiet: 'oeffentlich', kuerzel: 'GebT' }],
+    ['Staatsvertrag', { ebene: 'bund', kanton: null, rechtsgebiet: 'international', kuerzel: 'LugÜ' }],
+  ];
+  it.each(FAELLE)('%s: erste Krumen-Stufe trägt ein Ziel', (_name, e) => {
+    expect(hatRuecksprung(e)).toBe(true);
+    // Und zwar DASSELBE Ziel, das das ✕ hatte — sonst wäre die Streichung ein
+    // Verlust und keine Entdopplung (§5).
+    expect(brotkrume(e)[0]?.to).toBe('/gesetze');
+  });
+});
+
+// ═══ Ä126 (Bug-Check P1-1 / Architektur P3-2, 18.8.2026) · DAS SUCHFELD ══════
+//
+// GEMESSEN am Live-Stand nach der Säuberung: an ZH-211.11 lautete der
+// Platzhalter «Im Gebührenverordnung des Obergerichts (GebV OG) suchen oder
+// «§ 1» …» — 465 px in einem 280 px breiten Feld (@390), also über die halbe
+// Auskunft abgeschnitten, und dazu grammatisch falsch («die Verordnung»).
+//
+// ZWEI FEHLER, EINE URSACHE: Ä112 hatte den Erlass in den SICHTBAREN Platzhalter
+// gesetzt und dabei zwei Eigenschaften des Registerfelds `kuerzel` übersehen —
+// es ist NICHT längenbeschränkt (753 der 1469 Werte sind länger als 20 Zeichen,
+// der längste 521) und es hat ein beliebiges Genus, das der feste Artikel «Im»
+// nicht treffen kann (StPO/ZPO/BV sind Feminina).
+//
+// DIE TRENNUNG, die beides löst: der sichtbare Platzhalter trägt gar keine
+// Daten mehr («Im Erlass suchen oder «§ 1» …» — konstante Länge, das
+// Sprung-Beispiel bleibt erlassgerecht aus Ä20); der Erlass wandert in den
+// ZUGÄNGLICHEN NAMEN, wo Pixel nicht zählen, und steht dort als Apposition zu
+// «Erlass» — damit regiert der Artikel das Substantiv und nie das Kürzel, in
+// jedem Genus. Über der Längenschwelle entfällt das Kürzel auch dort: was
+// länger ist als 20 Zeichen, ist im Register kein Kürzel mehr, sondern ein
+// Volltitel, und der ist gesprochen Lärm statt Orientierung.
+//
+// PROXY UND SEINE KALIBRIERUNG (die Sonde ist DOM-frei, §2): gemessen wird die
+// ZEICHENZAHL. Der Faktor stammt aus genau jener Live-Messung — 68 Zeichen
+// ≙ 465 px bei `text-body-s`, also ~6,84 px/Zeichen; das nutzbare Innenmass des
+// Felds @390 sind 280 px abzüglich Polsterung und Lupe ≈ 256 px ⇒ 37 Zeichen.
+// Ein Proxy ist kein Pixelmass; er fängt die Fehlerklasse, die hier auftrat
+// (eine unbegrenzte DATENlänge im Platzhalter), und er kann scheitern (§6.7 —
+// rot gefahren 18.8.2026 gegen den Vorzustand: 68 > 37).
+const PLATZHALTER_MAX_ZEICHEN = 37;
+
+describe('Ä126 · Such-Platzhalter und Feldname: erlassneutral, genusfrei, längenfest', () => {
+  /** Der ECHTE Registerwert von ZH-211.11 — der Fall aus der Live-Messung. */
+  const VOLLTITEL = 'Gebührenverordnung des Obergerichts (GebV OG)';
+
+  it('der Platzhalter wächst nicht mit dem Kürzel', () => {
+    // ROT-BEWEIS 18.8.2026: mit der Ä112-Signatur — `suchPlatzhalter(beispiel,
+    // VOLLTITEL)`, wie sie `LeserRahmenV3` aufrief — stand hier «Im
+    // Gebührenverordnung des Obergerichts (GebV OG) suchen oder «§ 1» …»,
+    // 68 statt ≤ 37 Zeichen. Dass das Kürzel gar nicht mehr HINEINGEREICHT
+    // werden kann, hält die Quellensonde in `leser-benennung.test.ts` fest;
+    // hier steht die Wirkung.
+    for (const beispiel of ['§ 1', 'Art. 1', null]) {
+      expect(suchPlatzhalter(beispiel).length,
+        `Platzhalter «${suchPlatzhalter(beispiel)}» überschreitet das Feld @390`,
+      ).toBeLessThanOrEqual(PLATZHALTER_MAX_ZEICHEN);
+    }
+  });
+
+  it('das Sprung-Beispiel bleibt erlassgerecht (Ä20 unangetastet)', () => {
+    expect(suchPlatzhalter('§ 1')).toContain('«§ 1»');
+    expect(suchPlatzhalter('Art. 1')).toContain('«Art. 1»');
+    // Ohne Etikett verspricht das Feld keinen Sprung (§8).
+    expect(suchPlatzhalter(null)).not.toContain('«');
+  });
+
+  it('der zugängliche Name nennt ein wirkliches Kürzel — und sonst nichts', () => {
+    expect(suchFeldName('StPO')).toBe('Im Erlass StPO suchen oder zu einer Bestimmung springen');
+    const ohne = 'Im Erlass suchen oder zu einer Bestimmung springen';
+    expect(suchFeldName(VOLLTITEL)).toBe(ohne);
+    expect(suchFeldName(undefined)).toBe(ohne);
+    expect(suchFeldName('   ')).toBe(ohne);
+  });
+
+  it('der Artikel regiert «Erlass», nie das Kürzel — in jedem Genus', () => {
+    for (const k of ['StPO', 'ZPO', 'BV', 'OR', 'GebV OG', VOLLTITEL, '']) {
+      expect(suchFeldName(k), `Genus-Falle bei «${k}»`).toMatch(/^Im Erlass\b/);
+    }
   });
 });

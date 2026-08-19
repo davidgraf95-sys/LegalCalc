@@ -132,6 +132,43 @@ export interface LeserSuchIndex {
   artikel: SuchArtikel[];
 }
 
+// ─── H2 · Suchbereich (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 5) ───────────────────
+/**
+ * Welcher Teil des Erlasses durchsucht wird. Die vier Werte sind eine
+ * GRUPPIERUNG der sechs Feldklassen oben, keine zweite Feldeinteilung (§5):
+ *
+ *  · `alles`     — alle sechs Felder (Vorgabe, entspricht dem Verhalten vor H2)
+ *  · `titel`     — `m` + `n` + `g`: primäre und nachrangige Randtitel sowie der
+ *                  Gliederungspfad. Für den Juristen ist das «wie heisst die
+ *                  Bestimmung», nicht «was steht darin».
+ *  · `text`      — `t` + `tb`: Fliesstext/Aufzählungen samt Tabellen, Bild-Alt
+ *                  und `grundlage`. Alles, was zum Wortlaut selbst gehört.
+ *  · `fussnoten` — `f`: der amtliche Fussnoten-Apparat.
+ *
+ * WAS DER BEREICH STEUERT UND WAS NICHT (§8, ehrlich statt bequem). Er steuert
+ * die TREFFERLISTE, die Zähler und die ↑↓-Folge — also alles, was aus den Daten
+ * kommt. Er steuert NICHT die Hervorhebung im Wortlaut: `sammleTrefferRanges`
+ * malt jedes Vorkommen des Begriffs im sichtbaren Text, und das bleibt so. Beide
+ * Zusagen sind für sich wahr und beantworten verschiedene Fragen («welche
+ * Stellen führe ich auf» gegen «wo steht das Wort»); sie zu vermengen hiesse,
+ * dem DOM-Walker eine Feldkenntnis anzudichten, die er nicht hat. Der Fahrplan
+ * führt das als bewusste Grenze, nicht als offenen Rest.
+ */
+export type SuchBereich = 'alles' | 'titel' | 'text' | 'fussnoten';
+
+/** Feldklassen je Bereich — die EINE Zuordnung, hier und nirgends sonst. */
+const BEREICH_FELDER: Record<SuchBereich, ReadonlySet<SuchFeld>> = {
+  alles: new Set<SuchFeld>(['t', 'm', 'n', 'g', 'tb', 'f']),
+  titel: new Set<SuchFeld>(['m', 'n', 'g']),
+  text: new Set<SuchFeld>(['t', 'tb']),
+  fussnoten: new Set<SuchFeld>(['f']),
+};
+
+/** Gehört dieses Feld zum gewählten Bereich? */
+export function imBereich(feld: SuchFeld, bereich: SuchBereich): boolean {
+  return BEREICH_FELDER[bereich].has(feld);
+}
+
 // ─── Index-Aufbau ────────────────────────────────────────────────────────────
 
 /** Nicht-leerer, markup-freier Text — leere Bausteine kosten sonst Schleifenzeit. */
@@ -306,6 +343,46 @@ export interface LeserTreffer {
 /** Ausschnitt-Länge (Spec §4.3: «Snippet ≤ 120 Zeichen um die erste Fundstelle»). */
 export const AUSSCHNITT_MAX = 120;
 
+/**
+ * Ä29 (H2b-Nachzug) — SCHNITT AN DER WORTGRENZE.
+ *
+ * BEFUND (Ästhetik-Prüfung 17.8.2026): Kontext-Ausschnitte begannen mitten im
+ * Wort — «… on erhebt» statt «… Behörde erhebt». Ein angeschnittener Wortrest
+ * liest sich wie ein Tippfehler und kostet genau den Kontext, für den der
+ * Ausschnitt da ist (§8).
+ *
+ * Die beiden Funktionen rücken die Schnittkante auf die nächste Wortgrenze, und
+ * zwar **nur nach innen**: der Ausschnitt wird dadurch höchstens kürzer, nie
+ * länger als `AUSSCHNITT_MAX`. Ist in der Nähe keine Grenze (eine lange
+ * Zahlen-/Zeichenkette ohne Leerraum), bleibt der harte Schnitt — ein Ausschnitt,
+ * der auf eine Wortgrenze WARTET, verschluckte sonst die Fundstelle selbst.
+ * `GRENZ_FENSTER` ist darum klein: es soll ein angeschnittenes Wort verwerfen,
+ * nicht den Kontext neu zuschneiden.
+ *
+ * Rein und deterministisch (§2). GETEILTE WIRKUNG: `baueAusschnitt` speist die
+ * Trefferlisten BEIDER Hüllen — der Befund ist heute live, der Fix wirkt in
+ * beiden (deklariert wie Ä8).
+ */
+const GRENZ_FENSTER = 16;
+
+function wortAnfangAb(text: string, roh: number, schranke: number): number {
+  if (roh <= 0) return 0;
+  if (/\s/.test(text[roh - 1] ?? '')) return roh; // Kante steht schon am Trenner
+  for (let i = roh + 1; i <= Math.min(schranke, roh + GRENZ_FENSTER); i += 1) {
+    if (/\s/.test(text[i - 1] ?? '')) return i;
+  }
+  return roh;
+}
+
+function wortEndeBis(text: string, roh: number, schranke: number): number {
+  if (roh >= text.length) return text.length;
+  if (/\s/.test(text[roh] ?? '')) return roh;
+  for (let i = roh - 1; i >= Math.max(schranke, roh - GRENZ_FENSTER); i -= 1) {
+    if (/\s/.test(text[i] ?? '')) return i;
+  }
+  return roh;
+}
+
 function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuelle): Ausschnitt {
   const treffer = text.slice(von, bis);
   const rest = Math.max(0, AUSSCHNITT_MAX - treffer.length);
@@ -313,8 +390,10 @@ function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuel
   // NACH dem Begriff steht, trägt die Aussage meist weiter.
   const vorLaenge = Math.floor(rest / 3);
   const nachLaenge = rest - vorLaenge;
-  const abVor = Math.max(0, von - vorLaenge);
-  const bisNach = Math.min(text.length, bis + nachLaenge);
+  // Ä29: erst hart rechnen, dann nach innen auf die Wortgrenze rücken. Die
+  // Fundstelle (`von`/`bis`) ist die Schranke — sie wird nie angetastet.
+  const abVor = wortAnfangAb(text, Math.max(0, von - vorLaenge), von);
+  const bisNach = wortEndeBis(text, Math.min(text.length, bis + nachLaenge), bis);
   return {
     vor: (abVor > 0 ? '… ' : '') + text.slice(abVor, von),
     treffer,
@@ -326,25 +405,59 @@ function baueAusschnitt(text: string, von: number, bis: number, quelle: SuchQuel
 /**
  * Erlass-lokale Suche über alle Felder.
  *
- * SORTIERUNG (Spec §4.2), vollständig hier und nirgends sonst:
- *  1. höchstes getroffenes Feldgewicht, `t > m > n > g > tb > f`
- *  2. Fundstellenzahl absteigend
- *  3. Artikelreihenfolge (Dokument-Position) aufsteigend
- * Alle drei Stufen sind total und deterministisch — bei gleicher Eingabe kommt
- * dieselbe Liste heraus (§2).
+ * SORTIERUNG — **Dokument-Reihenfolge**, vollständig hier und nirgends sonst:
+ * aufsteigend nach `pos`, der Artikel-Position im Erlass. EINE Stufe, total und
+ * deterministisch (§2): `pos` ist der Laufindex über `eintraege` (Aufbau des
+ * Index oben, Z. 167) und darum je Artikel eindeutig — es gibt keinen
+ * Gleichstand, den eine zweite Stufe brechen könnte.
  *
- * B11 (Bug-Check §9 zu S8) — EHRLICHKEIT ZU STUFE 3. Hier stand, Stufe 3 mache
- * die Ordnung strikt und mache damit die Sortierstabilität der Engine
- * unerheblich. Das ist der Sache nach richtig, aber es ist keine PRÜFBARE
- * Aussage: die Artikel kommen bereits in Dokument-Reihenfolge aus dem Index,
- * `pos` ist also aufsteigend, und ein `sort` ohne Stufe 3 verhielte sich in
- * jeder stabilen Implementierung beobachtungsgleich. Kein Black-Box-Test kann
- * die Mutante töten — der zugehörige Testname behauptete darum mehr, als er
- * zeigt, und ist mitkorrigiert. Stufe 3 bleibt: sie ist eine BEWUSSTE
- * §2-Redundanz, die die Ordnung unabhängig von einer Engine-Zusage festnagelt,
- * und keine Zeile, die man wegkürzen sollte, weil ein Tor sie nicht sieht.
+ * ─── S4 · DEKLARIERTE VERHALTENSÄNDERUNG (FAHRPLAN-LESER-V3 Kap. 7, Strang S) ─
+ *
+ * Bis hierher galt eine dreistufige RANGFOLGE: (1) höchstes getroffenes
+ * Feldgewicht `t > m > n > g > tb > f`, (2) Fundstellenzahl absteigend, (3)
+ * Dokument-Position. Die Liste war damit nach Relevanz geordnet — und das ist
+ * für ein VERZEICHNIS NEBEN dem vollständigen Wortlaut die falsche Ordnung.
+ * Drei Folgen, alle drei am Bestand belegt:
+ *
+ *  ① Das Verzeichnis konnte seinem Text nicht folgen. Seit S8 bleibt die
+ *    Lesespalte vollständig; die Trefferliste steht daneben und soll sagen, wo
+ *    im Erlass die Stellen liegen. In der Rangfolge stand OR Art. 336c
+ *    irgendwo zwischen Art. 41 und Art. 962 — die Liste hatte keine Richtung,
+ *    der man mit dem Finger folgen kann.
+ *  ② Die Gruppenköpfe logen der Form nach. Die Liste setzt einen Zwischenkopf
+ *    bei jedem Wechsel des Top-Kapitels; in der Rangfolge sprang das Kapitel
+ *    hin und her, dasselbe Kapitel erschien mehrfach. Erst in
+ *    Dokument-Reihenfolge ist ein Gruppenkopf das, wonach er aussieht: die
+ *    einmalige Überschrift über einem zusammenhängenden Abschnitt.
+ *  ③ Die ↑↓-Navigation lief gegen die Leserichtung. `fundstellenFolge` baut die
+ *    flache Folge in LISTEN-Reihenfolge; «nächste Fundstelle» sprang darum im
+ *    Erlass vor und zurück. Jetzt heisst «nächste» das, was der Jurist erwartet:
+ *    die nächste weiter unten im Gesetz.
+ *
+ * WAS DIE RANGFOLGE GELEISTET HAT, GEHT NICHT VERLOREN — es wechselt den Ort:
+ * das getroffene Feld steht weiter an jedem Treffer (`topFeld`, `felder`) und
+ * wird als Herkunfts-Badge SICHTBAR angezeigt (`badgesFuer`), statt sich
+ * unsichtbar in einer Listenposition auszudrücken; der Ausschnitt kommt
+ * unverändert aus dem stärksten getroffenen Feld. Wer nach Relevanz sucht statt
+ * zu blättern, ist beim GLOBALEN Suchindex richtig — der rangiert weiterhin
+ * (`src/lib/suche/artikelRanking.ts`), und genau diese Arbeitsteilung war der
+ * Grund, hier nie `sucherTerme()` zu übernehmen (§7-Abweichung oben).
+ *
+ * B11-ERBE. Der frühere Kommentar hielt fest, dass die alte Stufe 3 von keinem
+ * Black-Box-Test getötet werden kann, weil die Artikel ohnehin in
+ * Dokument-Reihenfolge aus dem Index kommen. Das gilt jetzt umgekehrt und
+ * schärfer: die Ordnung IST die Index-Ordnung, und der `sort` nagelt sie
+ * unabhängig von einer Engine-Zusage zur Sortierstabilität fest (bewusste
+ * §2-Redundanz). Die beiden alten Stufen sind GESTRICHEN, nicht auskommentiert
+ * und nicht als Rückfall behalten: bei eindeutigem `pos` könnte kein Test sie je
+ * erreichen, und was nicht scheitern kann, wird gestrichen statt bewacht
+ * (§17-Gegengewicht).
  */
-export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): LeserTreffer[] {
+export function sucheImErlass(
+  index: LeserSuchIndex | null,
+  begriff: string,
+  bereich: SuchBereich = 'alles',
+): LeserTreffer[] {
   const b = begriff.trim();
   if (!index || b === '') return [];
 
@@ -361,6 +474,11 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
     let ausschnittGewicht = -1;
 
     for (const seg of a.segmente) {
+      // H2: der Bereich filtert VOR dem Zählen, nicht danach. Nur so bleiben
+      // `fundstellen`, `malbarkeiten` und damit die ganze ↑↓-Folge auf
+      // derselben Menge — ein Nachfilter über `felder` verlöre die Zuordnung
+      // Fundstelle → Rang, an der schon B5 einmal gebrochen ist.
+      if (!imBereich(seg.feld, bereich)) continue;
       const stellen = findeVorkommen(seg.text, b);
       if (stellen.length === 0) continue;
       gesamt += stellen.length;
@@ -387,11 +505,68 @@ export function sucheImErlass(index: LeserSuchIndex | null, begriff: string): Le
     });
   }
 
-  treffer.sort((x, y) =>
-    FELD_GEWICHT[y.topFeld] - FELD_GEWICHT[x.topFeld]
-    || y.fundstellen - x.fundstellen
-    || x.pos - y.pos);
+  treffer.sort((x, y) => x.pos - y.pos);
   return treffer;
+}
+
+/**
+ * Eine einzelne Fundstelle EINES Artikels, fertig für die Anzeige (H2).
+ *
+ * `rang` ist derselbe 0-basierte Rang, den `fundstellenFolge` je Artikel vergibt
+ * — die Zeile in der Trefferliste und der Schritt der ↑↓-Navigation sind damit
+ * dieselbe Sache und nicht zwei Zählungen nebeneinander (§5).
+ */
+export interface ArtikelFundstelle {
+  rang: number;
+  feld: SuchFeld;
+  quelle: SuchQuelle;
+  malbar: Malbarkeit;
+  ausschnitt: Ausschnitt;
+}
+
+/**
+ * Die Fundstellen EINES Artikels mit je eigenem Kontext-Ausschnitt (H2).
+ *
+ * WARUM EINZELN UND NICHT IN `sucheImErlass`. Ein Ausschnitt je Fundstelle ist
+ * genau das, was die V3-Trefferliste unter dem Artikelkopf zeigt — aber ihn für
+ * ALLE Treffer im Voraus zu bauen wäre die teuerste Zeile des Lesers: «der» im
+ * OR ergibt rund 1146 Treffer-Artikel mit zusammen einigen zehntausend
+ * Fundstellen, und das bei JEDEM Tastendruck. `LeserTreffer` trägt darum
+ * weiterhin genau EINEN Ausschnitt (den aus dem stärksten Feld) für die
+ * Artikelzeile; die Einzelstellen holt die Liste hier nach, und zwar nur für
+ * den Artikel, den sie gerade aufklappt. Der Lauf kostet ein Artikel-Segment-Set.
+ *
+ * REIHENFOLGE-VERTRAG: die Schleife läuft über dieselben Segmente in derselben
+ * Ordnung wie `sucheImErlass`, mit demselben Bereichs-Filter. Nur deshalb ist
+ * `rang` hier und dort dieselbe Zahl. Wer eine der beiden Schleifen umbaut,
+ * muss die andere mit umbauen — `src/tests/leser-suche-w219.test.ts` hält den
+ * Vertrag fest, statt ihn nur zu behaupten.
+ */
+export function artikelFundstellen(
+  index: LeserSuchIndex | null,
+  token: string,
+  begriff: string,
+  bereich: SuchBereich = 'alles',
+): ArtikelFundstelle[] {
+  const b = begriff.trim();
+  if (!index || b === '') return [];
+  const a = index.artikel.find((x) => x.token === token);
+  if (!a) return [];
+  const out: ArtikelFundstelle[] = [];
+  let rang = 0;
+  for (const seg of a.segmente) {
+    if (!imBereich(seg.feld, bereich)) continue;
+    for (const [von, bis] of findeVorkommen(seg.text, b)) {
+      out.push({
+        rang: rang++,
+        feld: seg.feld,
+        quelle: seg.quelle,
+        malbar: seg.malbar,
+        ausschnitt: baueAusschnitt(seg.text, von, bis, seg.quelle),
+      });
+    }
+  }
+  return out;
 }
 
 /** Datenseitiger Kopf-Zähler «N Artikel · M Fundstellen» (§4.4 Ziff. 1). */

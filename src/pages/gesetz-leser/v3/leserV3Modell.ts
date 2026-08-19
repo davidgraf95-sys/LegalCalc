@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
+import { useCallback, useEffect, useMemo, useState, type Dispatch, type MutableRefObject, type RefObject, type SetStateAction } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { aktualisiereTabArtikel } from '../../../lib/tabs';
 import { baueGliederungsbaum, type CurrencyMap, type ErlassKopf, type Sektion, type StrukturMap } from '../../../lib/normtext/browse';
@@ -6,13 +6,11 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { InternRefs } from '../../../components/NormText';
-import type { LeserTreffer } from '../leserSuche';
+import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
 import { strukturTiefe } from '../strukturTiefe';
 import { pfadZu } from '../helpers';
-import { paneRoot, findeArt, kuratiereTocSektionen } from '../berechnungen';
+import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
 import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
-import { brotkrume } from './erlassAnsicht';
-import { formatiereDatum } from '../helpers';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
@@ -27,9 +25,9 @@ import type { LesePosition } from '../lesePosition';
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
 //
 // WAS DIESE DATEI IST: die **einzige** Stelle, an der die V3-Hülle die geteilte
-// Leser-Maschinerie berührt. Sie ruft die Hooks, verdrahtet ihre Refs und
-// liefert ein **typisiertes Modell** (`LeserV3Modell`) heraus. Kein Markup, kein
-// Layout, keine Entscheidung über Aussehen.
+// Leser-Maschinerie berührt. Sie ruft die Hooks, verdrahtet ihre Refs und liefert
+// ein **typisiertes Modell** (`LeserV3Modell`) heraus. Kein Markup, kein Layout,
+// keine Entscheidung über Aussehen.
 //
 // WARUM ES SIE GIBT (Fundament-Auflage 1, Auftrag David 16.8.2026):
 //
@@ -43,18 +41,14 @@ import type { LesePosition } from '../lesePosition';
 //     Sprung-Mechanik und Suchtreffer — Dinge, die BEIDE Hüllen brauchen. Die
 //     Ist-HÜLLE ist `inhalt.tsx` (Orchestrierung) und `inhalt-volltext.tsx`
 //     (Markup) samt Menüs; **auf keines von beiden zeigt V3**, und die Sonde
-//     `src/tests/leser-v3-adresse.test.ts` hält das fest. Der saubere Endzustand
-//     ist die Umbenennung der geteilten Module in einen neutralen Namensraum —
-//     sie gehört zu H5, wo die Ist-Hülle ohnehin fällt, und nicht in H1, wo sie
-//     eine eingefrorene Datei (FL-4) anfassen müsste.
-//  ③ TESTBARE GRENZE. Was V3 an Daten hat, steht als ein Interface da. Ein
-//     Architektur-Prüfer muss nicht den Rahmen lesen, um es zu wissen.
+//     `src/tests/leser-v3-adresse.test.ts` hält das fest. Endzustand ist die
+//     Umbenennung der geteilten Module in einen neutralen Namensraum — in H5, wo
+//     die Ist-Hülle ohnehin fällt, nicht in H1 (eingefrorene Datei, FL-4).
+//  ③ TESTBARE GRENZE. Was V3 an Daten hat, steht als EIN Interface da — ein Architektur-Prüfer muss nicht den Rahmen lesen, um es zu wissen.
 //
-// WAS BEWUSST **NICHT** HIER PASSIERT: die Hook-Reihenfolge ist byte-gleich zur
-// Ist-Hülle übernommen — nicht aus Bequemlichkeit, sondern weil diese Hooks
-// geteilte Refs und Timer über ihre Reihenfolge koppeln (der §6.6-Split hat das
-// ausdrücklich als Bedingung festgehalten). Eine „aufgeräumte" Reihenfolge wäre
-// keine Verbesserung, sondern eine stille Verhaltensänderung (§6).
+// WAS BEWUSST **NICHT** HIER PASSIERT: die Hook-Reihenfolge ist byte-gleich zur Ist-Hülle
+// übernommen — nicht aus Bequemlichkeit, sondern weil diese Hooks geteilte Refs und Timer
+// über ihre Reihenfolge koppeln (ausdrückliche Bedingung des §6.6-Splits); eine „aufgeräumte" Reihenfolge wäre eine stille Verhaltensänderung (§6).
 
 /** Was die V3-Hülle über den geöffneten Erlass weiss. Vollständig — es gibt
  *  keinen zweiten Kanal, und keine Komponente holt Daten selbst nach. */
@@ -80,6 +74,8 @@ export interface LeserV3Modell {
 
   gliederungsTiefe: number;
   fussnotenAnzahl: number | null;
+  /** D1 · trägt dieser Erlass überhaupt Änderungsvermerke? Geteilte Quelle mit V1 (§5). */
+  hatAenderungsvermerke: boolean;
   kantonErlassAnzahl: number | null;
   nichtKonsolidiert: boolean;
   /** S3/F5-Nachzug: ISO-Datum des frühesten nicht konsolidierten Inkrafttretens
@@ -96,10 +92,9 @@ export interface LeserV3Modell {
   sektionMeta: ReturnType<typeof useArtikelAbleitungen>['sektionMeta'];
   margAnzeige: Map<string, { teile: string[]; ab: number }>;
   internRefs: InternRefs | undefined;
-  // Die drei Artikel-Beigaben werden aus dem GETEILTEN Zustand abgeleitet
-  // statt hier neu typisiert: eine zweite Typ-Definition für dieselbe Sache
-  // liefe unbemerkt auseinander (§5).
-  bezuegeFuer: ReturnType<typeof useLeserZustand>['bezuegeFuer'];
+  // Aus dem GETEILTEN Zustand abgeleitet statt neu typisiert (§5). C3: `bezuegeFuer`
+  // ist weg — seit H3 (`bezuegeVorladen: false`) durchgehend `undefined` und ohne
+  // Leser; Kanten kommen aus `usePanelBezuege` (`./panelModell`).
   revisionFuer: ReturnType<typeof useLeserZustand>['revisionFuer'];
   historieFuer: ReturnType<typeof useLeserZustand>['historieFuer'];
 
@@ -130,8 +125,20 @@ export interface LeserV3Modell {
   fussnotenAus: boolean;
   trefferPos: number;
   trefferAktivToken: string | null;
+  /** H2 · Suchbereich (Kap. 4b, Pos. 5) — Zustand der V3-Huelle, kein Speicher.
+   *  Absichtlich NICHT persistiert: ein beim naechsten Besuch stillschweigend
+   *  eingeschraenkter Suchbereich liesse Treffer verschwinden, ohne dass jemand
+   *  ihn gesetzt zu haben glaubt (§8). */
+  suchBereich: SuchBereich;
+  setzeSuchBereich: (b: SuchBereich) => void;
+  /** H2 · Artikel + Rang der laufenden Fundstelle — hebt EINE Listenzeile hervor. */
+  aktivStelle: { token: string; rang: number } | null;
+  /** H2 · Fundstellen EINES Artikels auf Abruf (nur fuer aufgeklappte Artikel). */
+  fundstellenFuer: (token: string) => ArtikelFundstelle[];
   springeZuFundstelle?: (delta: number) => void;
   springeZuTreffer?: (token: string) => void;
+  /** H2 · Sprung zu GENAU einer Fundstelle (Artikel + Rang darin). */
+  springeZuStelle?: (token: string, rang: number) => void;
   /** «Art. 429» → Token. `undefined`, solange der Snapshot fehlt. */
   loeseArtikel?: (eingabe: string) => string | null;
   siePfad: string[];
@@ -152,16 +159,12 @@ export interface LeserV3Modell {
   reiterToast: boolean;
   setReiterToast: Dispatch<SetStateAction<boolean>>;
 
-  /**
-   * Die Refs GEBÜNDELT — bewusst nicht als lose Felder neben den Daten.
-   *
-   * Zwei Gründe, und der erste ist gemessen: die Lint-Regel `react-hooks/refs`
-   * kann einem flachen Objekt nicht ansehen, welches Feld ein Ref ist, und
-   * meldete darum JEDEN Zugriff auf das Modell als «Ref-Zugriff im Render»
-   * (10 Fehler, 16.8.2026). Der zweite ist der eigentliche: Daten und
-   * veränderliche Zeiger sind zwei verschiedene Dinge, und wer sie mischt,
-   * lädt genau die Verwechslung ein, vor der die Regel warnt.
-   */
+  /** Die Refs GEBÜNDELT, nicht als lose Felder neben den Daten. Zwei Gründe, der
+   *  erste gemessen: `react-hooks/refs` sieht einem flachen Objekt nicht an,
+   *  welches Feld ein Ref ist, und meldete JEDEN Modell-Zugriff als «Ref-Zugriff
+   *  im Render» (10 Fehler, 16.8.2026). Der zweite ist der eigentliche: Daten und
+   *  veränderliche Zeiger sind zwei Dinge — wer sie mischt, lädt genau die
+   *  Verwechslung ein, vor der die Regel warnt. */
   refs: {
     /** Registrierte Sektions-Elemente (Sprungziele des Baums). */
     sekRef: MutableRefObject<Map<string, HTMLElement>>;
@@ -193,12 +196,14 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const {
     erlass, setErlass, eintraege, setEintraege, struktur, setStruktur, kopf, setKopf,
     manifest, setManifest, currency, setCurrency,
-    bezuegeFuer, revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
+    revisionFuer, historieFuer, nichtKonsolidiert, nichtKonsolidiertSeit,
     // Als `…Ref` benannt: die Lint-Regel `react-hooks/immutability` erkennt
     // einen Ref am Namen, und dieser wird beschrieben.
     fehler, setFehler, reiterToast, setReiterToast, reiterToastTimer: reiterToastTimerRef,
     suche, setSuche, sucheDebounced, scrollVorSucheRef, sucheVorherRef,
-  } = useLeserZustand();
+    // H3 · Panel-Nachladen (Kap. 7): kein Bezugs-Shard beim Seitenaufruf. Die
+    // Rechtsprechung steht im Panel und lädt beim Öffnen (`./panelModell`).
+  } = useLeserZustand({ bezuegeVorladen: false });
   const {
     offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
@@ -253,21 +258,27 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     for (const v of Object.values(struktur)) n += v?.fussnoten?.length ?? 0;
     return n;
   }, [struktur]);
+  // D1: Schalter «Änderungsvermerke» nur bei Erlassen, die sie TRAGEN — dieselbe
+  // Funktion wie V1 seit S1, nicht nachgebaut (§5). Drei Zustände, zweiter Träger
+  // «Fassung»-Zeile und Korpus-Messung: `../berechnungen`.
+  const hatAenderungsvermerke = useMemo(() => bieteAenderungsvermerkeSchalter(
+    zaehleAenderungsvermerke(struktur),
+    (eintraege ?? []).some((e) => historieFuer(e.artikel) !== undefined), eintraege !== null,
+  ), [struktur, eintraege, historieFuer]);
 
-  // ── Meldung an die App-Leiste (Ortsangabe, KEINE Bedienelemente) ──────────
-  // V3 meldet Brotkrume · Stand · laufenden Artikel und sonst nichts: die
-  // Bedienung lebt in der eigenen Kopfzeile und in der Seitenleiste. Sie
-  // zusätzlich zu melden hiesse, dieselbe Funktion an zwei Orten anzubieten
-  // (§5) — und im Pane gäbe es sie dort ohnehin nicht (der PaneKopf trägt keine
-  // Slots), womit genau die Kopf-Asymmetrie zurückkäme, die H1 beseitigt.
-  useEffect(() => {
-    if (!erlass) return;
-    meldeInhaltsKopf({
-      breadcrumb: brotkrume(erlass),
-      stand: erlass.stand ? formatiereDatum(erlass.stand) : null,
-      artikel: aktArtikel ? `${aktArtikel} ${erlass.kuerzel}` : null,
-    });
-  }, [erlass, aktArtikel, meldeInhaltsKopf]);
+  // ── A-2 · DIE MELDUNG AN DIE APP-LEISTE IST WEG (David 17.8.2026) ──────────
+  // Hier stand bis 17.8. ein Effekt, der Krume · Stand · laufenden Artikel an
+  // die App-Krumen-Leiste meldete — die dieselben drei Angaben 37 px über der
+  // V3-Kopfzeile ein zweites Mal ausgab (gemessen @1440: zwei `nav`-Krumen,
+  // zwei ✕). Die Leiste entfällt; damit hat KEINE der drei Angaben mehr einen
+  // Leser, und sie werden gestrichen statt weitergemeldet (§17 Rückbau).
+  // Was übrig bleibt, ist ein einziger, datenunabhängiger Satz («ich trage die
+  // Kopfzeile selbst») — und der steht bewusst NICHT hier, sondern im
+  // Einsprungspunkt `../GesetzLeserV3.tsx`: dieses Modell läuft erst, wenn der
+  // lazy Rahmen-Chunk da ist, und bis dahin rendert die Shell die Leiste, die
+  // danach 37 px zusammenfällt (gemessen: 19 Frames, CLS 0.030 statt 0.005).
+  // Die Rücknahme beim Verlassen bleibt geteilt (`useLeserDaten`, ein
+  // `meldeInhaltsKopf(null)` beim Abbau — darum wird der Wert weiter durchgereicht).
 
   const { sekPos, artIndex, sektionMeta, artLabelByToken, margAnzeige } = useArtikelAbleitungen({
     sektionen, eintraege, struktur,
@@ -280,6 +291,9 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const springeZuArtikel = useCallback((token: string) => {
     scrollVorSucheRef.current = null;
     setSuche('');
+    // B1: das Gliederungs-BLATT geht mit zu — Befund, Messreihe und die
+    // §7-Abweichung zum genannten Fundort stehen in `e2e/leser-v3-h4-gliederungswege`.
+    setTocAuf(false);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
       setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
@@ -329,6 +343,11 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const springeZuSektion = useSektionSprung({
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
+    // Pos. 14: Suche beginnen ODER beenden bewegt den Lesetext um 0 px. Die
+    // Ist-Hülle scrollt an beiden Punkten (an den Anfang, dann zurück) — der
+    // Anlass dafür (gefilterte, geschrumpfte Lesespalte) besteht in V3 nicht.
+    // Herleitung am Effekt in `inhalt-sprung.tsx`, Beweis `leser-v3-esc-ohne-sprung`.
+    scrollBeiSuchwechsel: false,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
@@ -349,13 +368,18 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const sucheTrim = sucheDebounced.trim().toLowerCase();
   const { vorher, nachher } = useNachbarn({ manifest, erlass });
   const sucheFeldLeer = suche.trim() === '';
+  // H2: der Suchbereich ist Hüllen-Zustand. Er steht HIER und nicht in der
+  // Trefferliste, weil er in die Datenableitung eingeht (`useSuchTreffer`) und
+  // nicht bloss die Darstellung filtert — die Liste bekommt ihn als Prop (§3).
+  const [suchBereich, setzeSuchBereich] = useState<SuchBereich>('alles');
   const {
     leseRef, treffer, fundstellen, fussnotenAus, trefferPos, aktivToken: trefferAktivToken,
-    springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
+    springeZuFundstelle, springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer,
+    loeseArtikel, siePfad, siePfadArtikel,
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur,
     sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
-    offen, setOffen, imPane, wurzel,
+    offen, setOffen, imPane, wurzel, bereich: suchBereich,
   });
 
   // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,
@@ -373,16 +397,18 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
     modell: {
       erlass, eintraege, struktur, kopf, currency, fehler, manifest, kantonSys,
       sektionen, ohneGliederung, gliederung, alleKnotenIds,
-      gliederungsTiefe, fussnotenAnzahl, kantonErlassAnzahl, nichtKonsolidiert, nichtKonsolidiertSeit,
+      gliederungsTiefe, fussnotenAnzahl, hatAenderungsvermerke, kantonErlassAnzahl,
+      nichtKonsolidiert, nichtKonsolidiertSeit,
       vorher, nachher,
       sekPos, artIndex, sektionMeta, margAnzeige, internRefs,
-      bezuegeFuer, revisionFuer, historieFuer,
+      revisionFuer, historieFuer,
       aktArtikel, aktivToken, artTokens, aktivIds, offen, setOffen, tocBaum, setTocBaum,
       tocToggleGruppe,
       tocOffen, setTocOffen, tocAuf, setTocAuf,
       suche, setSuche, sucheAktiv: sucheBegriff !== '', sucheBegriff,
       treffer, fundstellen, fussnotenAus, trefferPos, trefferAktivToken,
-      springeZuFundstelle, springeZuTreffer, loeseArtikel, siePfad, siePfadArtikel,
+      suchBereich, setzeSuchBereich, aktivStelle, fundstellenFuer,
+      springeZuFundstelle, springeZuTreffer, springeZuStelle, loeseArtikel, siePfad, siePfadArtikel,
       springeZuArtikel, springeZuSektion, zumAnfang,
       weiterlesen, weiterlesenSprung, weiterlesenVerwerfen, basisPfad,
       reiterToast, setReiterToast,

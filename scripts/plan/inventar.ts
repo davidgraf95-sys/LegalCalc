@@ -60,6 +60,12 @@
 // QS-KORPUS. Folge-Bereinigung nach Regel 4: die dep [W2·6-RESOLVER] von
 // W2·6-UEBERSICHT ist Prosa geworden («erst nach dem Resolver-Teil»). W3·12
 // (26x-Slot-Inhaber) und W3·15-RICHTER (blocked) bleiben eigenstaendig.
+// UMSCHICHTUNG 17.8.2026 (Deckel-Rotation, Anlass: Wächter `struktur-rotieren.py
+// --check` rot, ROADMAP.md 100.5 KB über dem 100-KB-Ceiling, S1-Nachzug legte zwei
+// neue §17-Zeilen QS-PERF/QS-DATA-INGEST-DRIFT an): sieben erledigte Schritte →
+// Chronik-Abschnitt «Umschichtung 17.8.2026». Entfernt: QS-E2E-SHARD-GEN ·
+// QS-UI-HIGHLIGHT · QS-E2E-STABIL · QS-TOK-DECKEL · QS-HOOKS-AUSBAU · QS-TYP-LUECKE
+// · W2·5h-GESETZ-UI.
 export const INVENTAR: readonly string[] = [
   'W1·4',
   'W2·6', 'W2·8', 'W2·9',
@@ -74,7 +80,7 @@ export const INVENTAR: readonly string[] = [
   'W2·13-KANTONE',
 
   // Ideen-Intake 20.7.2026 (§14): 8 Alleinstellungs-Ideen verortet.
-  'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5h-GESETZ-UI', 'W2·5m-LESER-V3', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
+  'W1·5-PRAXIS', 'W2·5g-ZEIT', 'W2·5m-LESER-V3', 'W2·14-SIGNAL', 'W3·15-RICHTER', 'QS-UI',
 
   // §14-Intake 20.7.2026 (2. Welle, Befunde des Tages). Label-Vergabe bewusst geprüft:
   // W2·5e/5f sind VERBRANNT (am 20.7. doppelt vergeben, danach auf 5g/5h umbenannt) —
@@ -107,12 +113,19 @@ export const INVENTAR: readonly string[] = [
   'QS-FRIT-DRIFT', // QS-BASIS-MQ gestrichen 3.8.2026 (David-Verzicht Merge Queue, nur Org-Repos; Chronik)
   // QS-AUTOMATIK-WT fusioniert 3.8.2026 in QS-AUTOMATIK-BERICHT (gleiche Datei
   // scripts/check-ci-laeufe.ts, gleiche Risiko-Klasse; Begründung in der Chronik).
-  'QS-TOK-DECKEL',
+  // QS-TOK-DECKEL done -> Chronik 17.8.2026 (Umschichtung, s. Kopf).
 
   // Entscheide-Paket David 3.8.2026 spätabends: BMV-Nachfolger fehlt im Korpus (PR #422-Befund);
   // Linien-Neukonzeption nach zweifachem Live-Verdikt (12.7. A28 + 3.8. PR #423 geschlossen) —
   // Konzept-Schritt mit David-Abnahme vor Vollbau, nie wieder blosse Default-Umkehr.
-  'QS-E2E-STABIL', 'QS-UI-HIGHLIGHT', 'QS-E2E-SHARD-GEN',
+  // QS-E2E-STABIL/QS-UI-HIGHLIGHT/QS-E2E-SHARD-GEN done -> Chronik 17.8.2026 (Umschichtung, s. Kopf).
+
+  // §14-Intake 17.8.2026 (S1-Nachzug, §17): der Vollauf riss den Hook-Deckel von
+  // scripts/datenhaltung/suche.test.ts. Nullprobe: der Pfad ist byte-identisch zu
+  // main, der Defekt liegt dort. Wurzel ist eine BASIS-Drift — die isolierte
+  // Ingest-Dauer ist seit der Deckel-Kalibrierung vom 14.8. von 10.85 s auf ~31 s
+  // gestiegen (3x in drei Tagen). Deckel-Anhebung erst nach der Ursache (§17).
+  'QS-DATA-INGEST-DRIFT',
 
   // Entscheid David 13.8.2026 («ja linien ganz entfernen. 2 es reicht. 3 nein. 4. ok»):
   // W2·5k-LINIEN-KONZEPT entschieden (Variante V1), Rückbau-Bau-Schritt angelegt.
@@ -144,13 +157,13 @@ export const INVENTAR: readonly string[] = [
 
   // State-of-the-Art-Abgleich 7.8.2026 (Web-Recherche gegen Anthropic-Doku):
   // Hook-/Konfig-Ausbauten, gesperrte Fläche ⇒ blocked bis David-Freigabe.
-  'QS-HOOKS-AUSBAU',
+  // QS-HOOKS-AUSBAU done -> Chronik 17.8.2026 (Umschichtung, s. Kopf).
   'QS-EFFIZIENZ',
   // Fusion 15.8.2026 (BAUPLAN-UMBAU): Dach der Korpus-Pflege — nimmt die drei
   // Risikopfad-Reparaturen BMV/SCOPE/RSPR-DATUM als Checklisten-Zeilen auf.
   'QS-KORPUS',
   'QS-MONITOR-ROT',
-  'QS-TYP-LUECKE',
+  // QS-TYP-LUECKE done -> Chronik 17.8.2026 (Umschichtung, s. Kopf).
 
   // Entscheid David 7.8.2026 (Überregulierungs-Frage) + Reglement-Audit PR #460:
   // Prosa-Diät und Verweis-Heilung als eigene Bau-Schritte.

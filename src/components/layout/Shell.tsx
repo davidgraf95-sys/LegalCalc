@@ -13,7 +13,7 @@ import { PaneKopf } from './PaneKopf';
 import { usePaneDnd } from './usePaneDnd';
 import { PaneProvider } from './PaneKontext';
 import { InhaltsKopf } from './InhaltsKopf';
-import { InhaltsKopfMeldeProvider, istInhaltsPfad, kopfVonPfad, type KopfDaten } from './InhaltsKopfKontext';
+import { InhaltsKopfMeldeProvider, istGesetzLeserPfad, istInhaltsPfad, kopfVonPfad, type KopfDaten } from './InhaltsKopfKontext';
 import { tabSchluessel } from '../../lib/tabs';
 import { verlaufLabel, erlassVonPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { useDialogFokus } from './useDialogFokus';
@@ -83,7 +83,18 @@ export function Shell({ children }: { children: ReactNode }) {
   const schubladeRef = useRef<HTMLDivElement>(null);
   const primaerWurzel = useRef<HTMLElement>(null); // Scroll-/Query-Wurzel des primären Panes (B-2.5)
   const primaerOverlay = useRef<HTMLDivElement>(null); // Overlay-Schicht des primären Panes (Drawer)
-  const seitenleiste = useSeitenleiste();
+  // ── Ä1c (LESER-V3 H2b) · im Gesetz-Leser startet die App-Leiste eingeklappt ──
+  // Der Leser trägt seine eigene Hauptnavigation (die Gliederung) unmittelbar
+  // daneben; die 256 px der App-Leiste gingen dort dem Lesetext verloren, ohne
+  // etwas beizutragen (Design-Grundlage Kap. 1 Nr. 1: ≥ 60 % der Fläche gehören
+  // dem Normtext). Es ist eine VORGABE, keine Sperre: `useSeitenleiste`
+  // unterscheidet seit H2b «noch nicht gewählt» von «gewählt», und eine einmal
+  // getroffene Nutzerwahl gewinnt hier wie überall.
+  // Bewusst der Gesetz-Leser und nicht «jede Inhaltsseite»: nur er hat eine
+  // zweite, gleichwertige Navigationsspalte. Und bewusst OHNE Kenntnis des
+  // V3-Flags — die Vorgabe gilt für beide Hüllen, der Befund ist in beiden derselbe
+  // (FL-1: das Flag hat genau einen Schaltpunkt, und der ist nicht hier).
+  const seitenleiste = useSeitenleiste({ vorgabeEingeklappt: istGesetzLeserPfad(pathname) });
   // R3 (Auftrag David 30.6.2026): globale Schriftskala (A−/A+) statt
   // Inhaltsbreite-Umschalter. Der Hook skaliert die Wurzel-rem (Effekt) und
   // liefert die Steuer-API für die Topbar. Die zentrale Inhaltsspalte läuft nun
@@ -321,6 +332,11 @@ export function Shell({ children }: { children: ReactNode }) {
         {!seitenleiste.eingeklappt && (
           <>
             <aside
+              // A1 (H2b-Nachzug): Testanker. Der Wächter der Ä1c-Vorgabe muss die
+              // APP-Leiste messen, nicht «das erste <aside>» — im Leser ist das
+              // sonst die V3-Gliederung (18 rem), und die Sonde wäre grün, während
+              // die App-Leiste offen daneben steht (genau so blieb A1 unbemerkt).
+              data-app-seitenleiste
               className="hidden lg:flex lg:flex-col shrink-0 sticky top-0 h-screen overflow-y-auto border-r border-line"
               style={{ width: seitenleiste.breite, background: 'color-mix(in srgb, var(--paper-sunken) 35%, var(--paper))' }}
             >
@@ -360,7 +376,10 @@ export function Shell({ children }: { children: ReactNode }) {
 
           {/* Einzelansicht-Kopf (kein Split-View): Breadcrumb · aktueller Artikel ·
               Stand · ✕→Start. Analog zur Pane-Titelleiste, aber ohne Verschiebe-
-              Steuerung. Im Multipane übernimmt der PaneKopf. */}
+              Steuerung. Im Multipane übernimmt der PaneKopf.
+              A-2: Ob die Leiste überhaupt eine ist, entscheidet die Inhaltsseite
+              über `kopfzeileSelbst` — die Komponente bleibt montiert (sie trägt
+              die zwei Sprung-Rückmeldungen), rendert dann aber keine Leiste. */}
           {!multipane && istInhaltsPfad(pathname) && (
             <InhaltsKopf daten={kopfDaten ?? kopfVonPfad(pathname, manifeste)}
               breiteKlasse={inhaltsbreiteKlasse} onSchliessen={() => navigate('/')} />
@@ -382,6 +401,7 @@ export function Shell({ children }: { children: ReactNode }) {
                 className={multipane ? `flex flex-col flex-1 min-w-0 border-l-2 ${dnd.spalte(0).ueber ? 'border-l-brass-700' : 'border-l-transparent'} max-lg:flex-none max-lg:w-full max-lg:snap-start` : 'contents'}>
                 {multipane && (
                   <PaneKopf {...titelVon(pathname)} breadcrumb={kopfDaten?.breadcrumb} onBreadcrumb={(to) => navigate(to)} artikel={kopfDaten?.artikel}
+                    nurSteuerung={kopfDaten?.kopfzeileSelbst}
                     rolle="primaer" onSchliessen={schliesseHaupt}
                     onRechts={() => verschiebePane(0, 1)} kannRechts={pane.sekundaer.length > 0}
                     ziehbar {...dnd.griff(0)} />

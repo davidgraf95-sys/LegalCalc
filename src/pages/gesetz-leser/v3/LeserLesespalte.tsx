@@ -26,17 +26,25 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Verantwortungen, von denen genau eine eingefroren ist. So sieht man der
 // Dateiliste an, welche das ist.
 
-export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
+// ── `beiwerkSlot` IST GESTRICHEN (C4, H3-Nachzug 17.8.2026) ──────────────────
+// Er war als «Beiwerk-Zone je Artikel» angekündigt, gebaut war EIN ReactNode am
+// Fuss der Spalte — und über drei Etappen hat ihn kein Aufrufer gesetzt. S2, die
+// Etappe, für die er gedacht war, baut die Zone im KERN (`parts/ArtikelLeser`,
+// Kap. 1.3) und braucht ihn nicht. §17: gestrichen statt bewacht; Herleitung im
+// Rahmen (`LeserRahmenV3`, «DIE DREI ERWEITERUNGS-SLOTS SIND GESTRICHEN»).
+// ── `trefferListe` IST GESTRICHEN (Ä76, 17.8.2026) ───────────────────────────
+// Der Prop hängte die Trefferliste INLINE über den Lesetext, angekündigt für den
+// Rand-Fall «keine Leiste, aber breit genug». Zwei Gründe, beide gemessen:
+//  · Er traf den falschen Fall. Die Bedingung im Rahmen lautete `!zweiSpalten`
+//    und schlug damit bei EINGEKLAPPTER Gliederung zu — dort lag die Liste 3596 px
+//    hoch bei y = 755 unter der Falz und schob den Gesetzestext um 3,6
+//    Bildschirmhöhen nach unten (Davids Befund «resultat ist versteckt»). Dieser
+//    Fall liegt jetzt im Blatt am Feld (`./LeserTrefferBlatt`).
+//  · Der angekündigte Fall ist unerreichbar. «Keine Leiste» heisst
+//    `eintraege.length === 0`, also kein Artikel — dann gibt es weder Treffer noch
+//    Lesetext. §17: gestrichen statt verengt.
+export function LeserLesespalte({ m }: {
   m: LeserV3Modell;
-  /** Trefferliste für den Rand-Fall ohne Leiste (sonst steht sie dort). */
-  trefferListe?: ReactNode;
-  /** S2 — Beiwerk-Zone am Fuss des Lesetexts (Fassung · Entscheid-Zähler ·
-   *  Fussnoten), Pos. 13. Der Rahmen reicht sie durch; in H1 ist sie NICHT
-   *  gesetzt und rendert dann gar kein Element — kein leerer Kasten, kein CLS
-   *  (§15), und der Pixelvergleich PX bleibt byte-gleich. Der Slot steht hier
-   *  statt nur im Rahmen-Interface, damit S2 einen echten Anschluss vorfindet
-   *  und nicht erst die Naht bauen muss (Architektur-Review A2, 16.8.2026). */
-  beiwerkSlot?: ReactNode;
 }) {
   const { erlass, eintraege, struktur, sektionen, ohneGliederung, basisPfad, vorher, nachher } = m;
   // Refs einzeln herausgezogen: die Lint-Regel `react-hooks/refs` erkennt einen
@@ -52,10 +60,30 @@ export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
     if (el) sekRef.current.set(id, el); else sekRef.current.delete(id);
   };
 
+  // ── H3 · POS. 12 · KEIN `bezuege` MEHR AM ARTIKEL ─────────────────────────
+  // Bis H2 stand hier `bezuege={m.bezuegeFuer(e.artikel)}` und der Kern rendete
+  // darunter die `BezuegeZeile` — je Instanz eine waagrecht scrollbare Chip-Linie
+  // (277 Z.). Genau die ist Pos. 12 («12 Entscheide im Fliesstext»): sie verlässt
+  // den Lesekörper. In V3 stehen die Entscheide im Panel (Kap. 4d).
+  //
+  // DER PROP-VERTRAG DES KERNS GENÜGT — KEINE KERN-ÄNDERUNG. `ArtikelLeser`
+  // rendert bei ungesetztem `bezuege` die `LeitfallZeile`, und die kehrt ohne
+  // `leitfaelle` mit `null` zurück: unter dem Artikel steht nichts. Die Prop
+  // WEGZULASSEN ist damit der ganze Umbau. `revision` und `historie` bleiben —
+  // sie sind Fassungs-Auskunft, nicht Rechtsprechung.
+  //
+  // UND KEIN ZÄHLER HIER (Entscheid H3, im Vollzugsvermerk begründet): ein
+  // Zähler je Artikel bräuchte die Trefferzahl beim ersten Paint. Die kommt aus
+  // dem Bezugs-Shard, und der wird seit H3 erst beim Öffnen des Panels geladen —
+  // die Zahl erschiene also erst nach dem Öffnen, und zwar an JEDEM Artikel
+  // gleichzeitig. Das wäre ein Layout-Sprung über das ganze Dokument, ausgelöst
+  // vom Öffnen des Panels: exakt das, was `leser-v3-kontext-cls` verbietet. Der
+  // Zähler je Artikel gehört in die höhenfeste Beiwerk-Zone von **S2** — dort ist
+  // der Platz reserviert, bevor die Zahl kommt.
   const artikel = (e: (typeof eintraege)[number]) => (
     <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)}
       intern={m.internRefs} marg={m.margAnzeige.get(e.artikel)?.teile} margBasis={m.margAnzeige.get(e.artikel)?.ab}
-      bezuege={m.bezuegeFuer(e.artikel)} revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
+      revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
       istAnhang={istAnhangToken(e.artikel)} />
   );
 
@@ -85,8 +113,21 @@ export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
   };
 
   return (
-    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-normtext">
-      {trefferListe && <div className="mb-8 border-b border-line pb-4">{trefferListe}</div>}
+    // ── Ä2 · SATZSPIEGEL V3 = 40 rem (Entscheid 16.8.2026, Design-Grundlage
+    // Kap. 3) ──────────────────────────────────────────────────────────────
+    // Bis hierher stand `max-w-normtext` (42 rem), byte-gleich aus der
+    // Ist-Hülle. Gemessen blieben davon in V3 aber nur 556–616 px @1280 übrig,
+    // weil die 18-rem-Seitenleiste vorher Breite nimmt: der Lesetext war
+    // schmaler als sein eigenes Mass und schwankte mit dem Klapp-Zustand.
+    // `max-w-reading` (40 rem) ist ein BESTEHENDES Haus-Token, kein Ad-hoc-Wert.
+    //
+    // DEKLARIERTE ÄNDERUNG AN DER PX-REGION: der Textkörper wird schmaler, die
+    // V3-Baseline ist einmalig neu gesetzt. Zulässig, weil PX seit dem
+    // Entscheid vom 16.8. bei GLEICHER Artikelbreite misst
+    // (`e2e/px-textkoerper.e2e.ts`) — es beweist den Text-KERN, nicht den
+    // Satzspiegel. Ohne diese Trennung risse jede Layout-Entscheidung das
+    // Treue-Tor mit, und genau daran wäre es unbrauchbar geworden.
+    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
       <div className="space-y-2">
         {ohneGliederung.length > 0 && (
           <div className="space-y-5 mb-6">{ohneGliederung.map(artikel)}</div>
@@ -94,12 +135,53 @@ export function LeserLesespalte({ m, trefferListe, beiwerkSlot }: {
         {sektionen.map((s) => renderSektion(s, true, 0))}
       </div>
 
-      {beiwerkSlot}
-
+      {/* ── B9 (Klick-Test) → B6 (H4-Nachzug 18.8.2026) · DIE SEITE LÄUFT QUER ─
+          GEMELDET war «ZH-211.11 § 4: Tabelle 81 px Seiten-Überlauf @390 trotz
+          `.lc-scroll-x`». NACHGEMESSEN 18.8.2026 (390×844, V3 UND V1, je 81 px
+          Überlauf) ist die Zuordnung FALSCH — und das ist der eigentliche Fund:
+            · Die Tabelle in § 4 ist 1002 px breit und sitzt KORREKT in ihrem
+              Scroller (`span.lc-scroll-x`: clientWidth 312, scrollWidth 1002,
+              `overflow-x: auto`). Sie läuft nirgends über. Wer sie über ihren
+              `getBoundingClientRect` misst, misst die Breite INNERHALB des
+              Scrollers und hält sie für Seitenbreite.
+            · Der einzige UNGEKLIPPTE Überläufer der Seite ist dieser Link:
+              «Notariatsgebührenverordnung (NotGebV) ›», 191 px breit, rechte
+              Kante bei 471 in einem 390-Fenster — exakt die gemeldeten 81 px.
+              (Sonde: jedes Element mit `right > clientWidth`, das KEINEN
+              klippenden Vorfahren hat. Ohne diesen zweiten Filter meldet eine
+              Überlauf-Sonde den Inhalt jedes Scrollers mit.)
+          URSACHE: drei Flex-Kinder ohne `min-w-0`. Ein Flex-Kind schrumpft nicht
+          unter seine `min-content`-Breite, und die ist hier das längste Wort —
+          «Notariatsgebührenverordnung». Dass der Kürzel-Wert an diesem Erlass der
+          Volltitel ist, ist ein eigener DATEN-Befund (Klick-Test C3); die Zeile
+          darf aber an KEINEM Wert brechen: ein Kürzel ist eine Zeichenkette aus
+          den Daten, keine Zusage über ihre Länge.
+          FIX: `min-w-0` lässt schrumpfen, `[overflow-wrap:anywhere]` lässt das
+          lange Wort umbrechen statt hinauszuragen; «Übersicht» in der Mitte hält
+          seine Breite (`shrink-0`), sie ist kurz und konstant. KEIN Ellipsis: der
+          Name des Nachbar-Erlasses ist die ganze Auskunft dieser Zeile (§8,
+          Ä15-Klasse). Wortgleich in `../inhalt-volltext.tsx` — V1 zeigt denselben
+          Überlauf aus derselben Ursache (§5).
+          Wächter: `e2e/leser-kein-seitenueberlauf.e2e.ts`, beide Hüllen. */}
       <nav className="mt-12 border-t border-line pt-5 flex justify-between gap-4 text-body-s" aria-label="Weitere Erlasse">
-        {vorher ? <Link to={erlassPfad(vorher)} className="text-brass-700 hover:underline">‹ {vorher.kuerzel}</Link> : <span />}
-        <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">Übersicht</Link>
-        {nachher ? <Link to={erlassPfad(nachher)} className="text-brass-700 hover:underline text-right">{nachher.kuerzel} ›</Link> : <span />}
+        {vorher ? <Link to={erlassPfad(vorher)} className="min-w-0 text-brass-700 hover:underline [overflow-wrap:anywhere]">‹ {vorher.kuerzel}</Link> : <span />}
+        {/* ── Ä119 (Live-Ästhetik-Prüfung 18.8.2026) · «ÜBERSICHT» WAR DOPPELT
+            BELEGT ───────────────────────────────────────────────────────────
+            GEMESSEN am Live-Stand @1440: das Wort «Übersicht» bezeichnete auf
+            DERSELBEN Seite zwei verschiedene Dinge — die Steckbrief-Box der
+            Seitenleiste («▸ Übersicht  SR 312.0 · 480 Artikel») und diesen Link
+            in der Fuss-Navigation, der auf `/gesetze` führt, also die Liste
+            ALLER Erlasse. Wer «Übersicht» gelesen hatte und es unten wiederfand,
+            durfte den Steckbrief erwarten und bekam die Gesetzesliste.
+            ENTSCHIEDEN (Glossar, Design-Grundlage Abschnitt «Benennung»): die
+            Box behält «Übersicht» — sie steht dort seit H2b, ist der häufigere
+            Begriff und meint tatsächlich eine Übersicht ÜBER DIESEN Erlass. Der
+            Link sagt jetzt, wohin er führt: «Alle Gesetze».
+            `shrink-0` bleibt (B6): die Beschriftung ist kurz und konstant, sie
+            gibt in der Zeile nicht nach — nachgeben sollen die Erlass-Namen
+            links und rechts, deren Länge aus den Daten kommt. */}
+        <Link to="/gesetze" className="shrink-0 text-ink-500 hover:text-brass-700">Alle Gesetze</Link>
+        {nachher ? <Link to={erlassPfad(nachher)} className="min-w-0 text-right text-brass-700 hover:underline [overflow-wrap:anywhere]">{nachher.kuerzel} ›</Link> : <span />}
       </nav>
     </div>
   );

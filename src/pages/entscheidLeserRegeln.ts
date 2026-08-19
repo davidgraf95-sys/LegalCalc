@@ -1,5 +1,5 @@
 import { gruppiereErwaegungen, segmente } from '../lib/rechtsprechung/abschnitte';
-import { SUCH_HIGHLIGHT, findeVorkommen } from './gesetz-leser/suchHighlight';
+import { findeVorkommen, neueHighlightInstanz, setzeSuchHighlightRanges } from './gesetz-leser/suchHighlight';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 
 // ─── Reine Regeln des Entscheid-Lesers (W2·17-UI-BEFUNDE-B2, Los E) ──────────
@@ -237,39 +237,49 @@ export function sammleNennungen(container: Element | null, zitat: string): Nennu
   return treffer;
 }
 
-// Die CSS Custom Highlight API ist (je nach TS-lib) nicht typisiert — darum über
-// eine schmale, lokale Struktur an `globalThis` gelesen (wie in suchHighlight.ts).
-type HighlightCtor = new (...ranges: Range[]) => object;
-interface HighlightGlobals {
-  Highlight?: HighlightCtor;
-  CSS?: { highlights?: Map<string, object> };
-}
-function highlightApi(): { reg: Map<string, object>; Ctor: HighlightCtor } | null {
-  const g = globalThis as unknown as HighlightGlobals;
-  const reg = g.CSS?.highlights;
-  const Ctor = g.Highlight;
-  if (!reg || typeof Ctor !== 'function') return null;
-  return { reg, Ctor };
-}
+// ─── QS-UI-HIGHLIGHT: auch der Entscheid-Leser bucht auf einer Instanz ───────
+//
+// Hier stand bis zum 16.8.2026 eine ZWEITE, lokale Kopie von `highlightApi()`,
+// die direkt auf die Registry-Position `SUCH_HIGHLIGHT` schrieb und sie mit
+// `reg.delete(…)` wieder räumte. Damit reichte der Defekt aus QS-UI-HIGHLIGHT
+// über den Gesetz-Leser hinaus: steht ein Entscheid neben einem Gesetz — genau
+// der Split-View, den `split-view-a34.e2e.ts` öffnet —, nahm `loescheNennungen()`
+// beim Verlassen die Treffer-Markierung des GESETZES mit. Dieselbe Ursache, nur
+// durch eine andere Tür. Beides läuft jetzt über die eine Buchführung in
+// `suchHighlight.ts`; ein zweiter Schreiber auf dieselbe Position wäre die
+// §5-Doppelwahrheit, an der sich solche Regeln auseinanderentwickeln.
+//
+// EINE Instanz für BEIDE Pfade dieses Lesers, und zwar bewusst: der
+// Entscheid-Leser hat genau eine Markierungs-Schicht im Lesetext, und «Suche
+// schlägt Herkunfts-Nennung» ist sein erklärtes Verhalten (EntscheidLeser.tsx).
+// Zwei Instanzen liessen beide gleichzeitig leuchten — eine stille
+// Verhaltensänderung an einer Fläche, die dieser Bauschritt nicht umbaut.
+//
+// OFFEN, bewusst nicht hier gelöst: zwei ENTSCHEID-Panes nebeneinander teilen
+// sich weiterhin diese eine Modul-Instanz und überschreiben einander —
+// unverändert gegenüber dem Vorzustand und ausserhalb von QS-UI-HIGHLIGHT, das
+// den Gesetz-Leser als Befund nennt. Vermerkt im Fahrplan, Kap. 14.
+export const ENTSCHEID_HIGHLIGHT_INSTANZ = neueHighlightInstanz('entscheid-leser');
 
 /** Markiert die wörtlichen Nennungen; ohne Treffer bzw. ohne API wird gelöscht. */
 export function maleNennungen(container: Element | null, zitat: string): number {
-  const api = highlightApi();
   const treffer = sammleNennungen(container, zitat);
-  if (!api) return treffer.length;
-  if (treffer.length === 0) { api.reg.delete(SUCH_HIGHLIGHT); return 0; }
-  const doc = container!.ownerDocument!;
+  const doc = container?.ownerDocument;
+  if (treffer.length === 0 || !doc) {
+    setzeSuchHighlightRanges([], ENTSCHEID_HIGHLIGHT_INSTANZ);
+    return treffer.length;
+  }
   const ranges = treffer.map((t) => {
     const r = doc.createRange();
     r.setStart(t.knoten, t.start);
     r.setEnd(t.knoten, t.ende);
     return r;
   });
-  api.reg.set(SUCH_HIGHLIGHT, new api.Ctor(...ranges));
+  setzeSuchHighlightRanges(ranges, ENTSCHEID_HIGHLIGHT_INSTANZ);
   return ranges.length;
 }
 
 /** Nimmt die Markierung zurück (Verlassen der Seite, Wechsel in den Lesemodus). */
 export function loescheNennungen(): void {
-  highlightApi()?.reg.delete(SUCH_HIGHLIGHT);
+  setzeSuchHighlightRanges([], ENTSCHEID_HIGHLIGHT_INSTANZ);
 }

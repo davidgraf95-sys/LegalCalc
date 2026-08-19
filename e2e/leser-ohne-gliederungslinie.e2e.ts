@@ -1,5 +1,7 @@
 // @shard-gruppe: 7
 import { test, expect, type Page } from '@playwright/test';
+import { ANSICHT_OEFFNER, warteLeserBereit } from './helpers/leserBereit';
+import { ANSICHT_PANEL } from './helpers/leserBeschriftung';
 
 // LINIEN-RÜCKBAU V1 — die Gliederungslinie im Lesetext bleibt weg.
 //
@@ -24,7 +26,12 @@ import { test, expect, type Page } from '@playwright/test';
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
   // App-Ready: der «Ansicht»-Trigger rendert nur der Client (nicht im Crawler-HTML).
-  await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 });
+  // Seit 17.8.2026 über die geteilte ATTRIBUT-Wartung: die frühere Rolle+Name-
+  // Abfrage rechnete für jeden der 13 518 OR-Knöpfe den zugänglichen Namen aus
+  // und riss unter 4× CPU-Drossel dieses 20-s-Budget 5/5 (Wurzel von Ä24).
+  // Messreihe und Herleitung: `e2e/helpers/leserBereit.ts`. Budget und
+  // Sachaussage unverändert (§6.3).
+  await warteLeserBereit(page);
   await expect(page.locator(`#${artId}`)).toBeVisible({ timeout: 20000 });
   await page.evaluate(() => document.fonts?.ready);
   await page.waitForTimeout(300);
@@ -73,8 +80,23 @@ test('OR Art. 319 (Tiefe 4): keine Gliederungslinie, kein Schalter «Linien» im
 
   expect((await sektionsKanten(page, 'art-319')).mitKante, 'OR ohne Gliederungslinie').toBe(0);
 
-  await page.getByRole('button', { name: 'Ansicht' }).first().click();
-  const gruppe = page.locator('[aria-label="Darstellungsoptionen"]').first();
+  // Auch der KLICK über das Attribut, nicht über Rolle+Name — DERSELBE
+  // Mechanismus wie oben: jeder Klick-Versuch löst die Rolle+Name-Abfrage über
+  // 13 518 Knöpfe NEU auf. Beobachtet 17.8.2026 in einem Lauf unter 8-Worker-Last:
+  // «locator.click: Test timeout of 30000ms exceeded · waiting for
+  // getByRole('button', {name: 'Ansicht'})», 7/10.
+  // EHRLICHE EINSCHRÄNKUNG ZUR BEWEISLAGE: dieser 7/10-Wert ist KEIN saubereres
+  // A/B — auf derselben Maschine liefen gleichzeitig drei fremde
+  // Agenten-Sessions (Worktrees `LexMetrik-fix`, `-krume`, `-uebersicht`), und
+  // Wiederholungen kippten die Arm-Reihenfolge (18/20 gegen 16/20, danach 10/20
+  // gegen 17/20). Belastbar ist allein die prozessinterne Messung mit 4×
+  // CPU-Drossel, zweimal gefahren: Rolle+Name 28.2–29.1 s (5/5 über dem
+  // 20-s-Budget) gegen Attribut 17.8–19.9 s (0/5 über). Diese Zeile folgt also
+  // dem GEMESSENEN Mechanismus, nicht einer Rate ohne Bedingung (§0 Ziff. 3c).
+  // Sachaussage unverändert; der zugängliche Name des Öffners ist weiter in
+  // `leser-kopf-a9.e2e.ts`/`leser-kopf-g2b.e2e.ts` gedeckt.
+  await page.locator(ANSICHT_OEFFNER).first().click();
+  const gruppe = page.locator(ANSICHT_PANEL).first();
   await expect(gruppe).toBeVisible();
   await expect(gruppe.getByRole('switch', { name: 'Linien' })).toHaveCount(0);
 });

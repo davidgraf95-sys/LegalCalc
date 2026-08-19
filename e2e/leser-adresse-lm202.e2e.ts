@@ -1,3 +1,4 @@
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // @shard-gruppe: 4
 // W2·10-UI-NAV-URL — Adress-Modell des Gesetzes-Lesers (LM-202).
 //
@@ -108,7 +109,16 @@ test.describe('LM-202 — expliziter Anker-Klick setzt die Adresse', () => {
     // darum NICHT um drei erhöhen. Der Router-Weg der Text-Querverweise
     // (Ziff. 2 oben) pusht bewusst EINEN Eintrag je Klick: dort ist der Klick
     // ein Ortswechsel, den «Zurück» rückgängig machen können muss.
-    const feld = page.getByRole('textbox', { name: 'Zu Artikel springen' }).first()
+    // H4-UMHÄNGUNG (Flip 18.8.2026): V1 trug ZWEI Felder («Im Gesetz suchen» +
+    // «Zu Artikel springen»), V3 nur noch EINES — genau das ist Pos. 4 des
+    // Fahrplans. Der Sprungweg ist derselbe (`springeZuArtikel` per
+    // `replaceState`), nur das Eingabefeld ist jetzt eines. Der Locator nimmt
+    // darum BEIDE Namen und bleibt damit in beiden Hüllen scharf; die geprüfte
+    // Sache — drei Sprünge fluten den Verlauf nicht — ist Wort für Wort dieselbe.
+    const feld = page
+      .getByRole('searchbox', { name: LESER_SUCHFELD_NAME })
+      .or(page.getByRole('textbox', { name: 'Zu Artikel springen' }))
+      .first()
     await expect(feld).toBeVisible({ timeout: 10000 })
     const verlaufVorher = await page.evaluate(() => history.length)
     for (const nr of ['31', '18', '10']) {

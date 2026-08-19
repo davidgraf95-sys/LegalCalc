@@ -1,4 +1,5 @@
 import { useEffect, type RefObject } from 'react';
+import { tastendruckGehoertPane } from '../panePrioritaet';
 
 // ─── ⌘K / «/» im V3-Leser · Vorrang vor der Header-Suche (Bug-Check B1) ──────
 //
@@ -46,25 +47,42 @@ export function istSuchKuerzel(e: {
   return e.key === '/' && !e.metaKey && !e.ctrlKey && !inEingabe(e.target ?? null);
 }
 
-export function useSuchSprungKuerzel({ feldRef, onKuerzel }: {
+// A3 (H2b-Nachzug) — WELCHES PANE beansprucht den Tastendruck? Die Regel samt
+// Messwerten steht in `../panePrioritaet`: sie gilt seit dem H3-Nachzug für BEIDE
+// Kürzel-Wege (⌘K/«/» hier, j/k/t/r/«?» in `parts/LeserTastatur`), und eine
+// zweite Kopie wäre beim ersten Nachjustieren auseinandergelaufen (§5).
+
+export function useSuchSprungKuerzel({ feldRef, onKuerzel, imSekundaerenPane = false }: {
   /** Ziel des Fokus. Darf beim Tastendruck noch `null` sein — siehe unten. */
   feldRef: RefObject<HTMLInputElement | null>;
-  /** Läuft VOR dem Fokus: öffnet die Fläche, in der das Feld steht (Spalte
-   *  @≥1024 px bzw. Bottom-Sheet darunter). */
-  onKuerzel: () => void;
+  /** Läuft VOR dem Fokus: öffnet die Fläche, in der das Feld steht.
+   *
+   *  §17-RÜCKBAU (H2b-Nachzug): SEIT Ä19/A2 braucht es das nicht mehr — das Feld
+   *  ist in JEDER Lage im DOM (Spalte · klebende Kopf-Zone · offenes Blatt), und
+   *  `e2e/leser-v3-suche-sprung.e2e.ts` (e) verlangt ausdrücklich, dass ⌘K die
+   *  Gliederungsspalte NICHT aufzieht. Der Rahmen setzt die Prop darum nicht
+   *  mehr; sie bleibt als Erweiterungspunkt für eine Fläche, die es heute nicht
+   *  gibt — ein Aufrufer, der sein Feld erst bauen muss, hätte hier den Ort. */
+  onKuerzel?: () => void;
+  /** A3 — Rolle des Panes, in dem dieser Leser steckt. Vorgabe `false` deckt die
+   *  Einzelansicht und das primäre Pane; nur der sekundäre Leser setzt `true`. */
+  imSekundaerenPane?: boolean;
 }) {
   useEffect(() => {
     const taste = (e: KeyboardEvent) => {
       if (!istSuchKuerzel(e)) return;
+      // A3: erst die Zuständigkeit, dann alles andere — ein fremdes Pane darf
+      // weder `preventDefault` rufen noch Fokus ziehen.
+      if (!tastendruckGehoertPane(imSekundaerenPane)) return;
       // Muss VOR `onKuerzel` stehen: die Vorrangregel gilt auch dann, wenn das
       // Öffnen der Fläche wirft oder nichts zu tun hat.
       e.preventDefault();
-      onKuerzel();
+      onKuerzel?.();
       // Nach dem Öffnen existiert das Feld erst nach dem React-Commit —
       // der Fokus wird darum nachgereicht statt sofort versucht.
       requestAnimationFrame(() => feldRef.current?.focus());
     };
     window.addEventListener('keydown', taste, { capture: true });
     return () => window.removeEventListener('keydown', taste, { capture: true });
-  }, [onKuerzel, feldRef]);
+  }, [onKuerzel, feldRef, imSekundaerenPane]);
 }

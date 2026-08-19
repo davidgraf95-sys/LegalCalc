@@ -1,5 +1,7 @@
 // @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
+import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
+import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 // E5-Welle (David 16.7.2026, §10.10) — A35 · A40 · A41.
 //
@@ -36,11 +38,36 @@ import { test, expect, type Page } from '@playwright/test';
 // Budget greift nur bei Überschreitung und verlangsamt grüne Läufe nicht.
 test.describe.configure({ timeout: 120_000 });
 
-const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: 'Im Gesetz suchen' });
+const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_SUCHFELD_NAME });
 const headerFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ });
 
 test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', () => {
-  test('Suchfeld sitzt OBEN im Inhalts-Kopf, NICHT in einer eigenen Leiste oder der Gliederungsspalte', async ({ page }) => {
+  test('Suchfeld sitzt OBEN im Inhalts-Kopf, NICHT in einer eigenen Leiste oder der Gliederungsspalte', async ({ page }, info) => {
+    // ── H4-FLIP, GEPINNT (Flip 18.8.2026) ───────────────────────────────────
+    // Erster Versuch war ein UMHÄNGEN (Kopf-Zone `[data-v3-kopf]` neben den
+    // V1-Slots). Er wurde ROT und hat damit etwas Besseres gezeigt als die
+    // Vermutung: die Sache dieses Falls gilt in V3 nicht mehr. Gemessen an
+    // OR (18.8.2026, Sonde über die Vorfahrenkette des Feldes):
+    //
+    //   @390  input < div[data-v3-suchsprung] < div[data-v3-such-zone]
+    //                < div[data-v3-kopf]                       → im Kopf ✔
+    //   @1280 input < div[data-v3-suchsprung] < div[data-v3-leiste-feld]
+    //                < div[data-toc-zone-a] < div[data-toc] < aside[data-v3-aside]
+    //
+    // Auf dem Desktop steht das Feld in V3 also GENAU DORT, wo dieser Fall es
+    // verbietet: in der Gliederungsspalte, in der klebenden Zone A des
+    // Scrollers. Das ist kein Defekt, sondern die Anordnung aus Kap. 4 — ein
+    // Feld, eine Spalte, mit dem Baum darunter. Die Zusage «nicht in der
+    // Gliederungsspalte» ist eine Aussage über die ALTE Anordnung mit zwei
+    // Leisten; sie bleibt für die alte Hülle scharf und wandert mit ihr.
+    //
+    // Die V3-Zusage ist NICHT schwächer, nur anders verortet: `genau EIN Feld,
+    // erreichbar ohne Geste, auf jeder Breite` steht in
+    // `leser-v3-suchfeld-ueberall` (a)/(b)/(c) — inklusive der Sonderlage
+    // «Gliederung eingeklappt», die es in V1 gar nicht gab.
+    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
+      'die Anordnung mit zwei Leisten, in der das Suchfeld ausserhalb der Gliederungsspalte sitzt',
+      '`leser-v3-suchfeld-ueberall` (a)/(b)/(c) — genau EIN Feld, ohne Geste, auf jeder Breite; @390 im Kopf-Block, @1280 in Zone A der Spalte'));
     await page.goto('/gesetze/bund/OR');
     await expect(page.locator('#art-1')).toBeVisible({ timeout: 20000 });
     const suche = inGesetzSuche(page);

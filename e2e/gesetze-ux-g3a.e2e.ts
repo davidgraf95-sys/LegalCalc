@@ -1,5 +1,6 @@
 // @shard-gruppe: 4
 import { test, expect, type Page } from '@playwright/test';
+import { warteLeserBereit } from './helpers/leserBereit';
 
 // W2·5d G3a — Per-Grundart-Darstellung im Gesetzes-Reader (FAHRPLAN §2.2):
 // erlassTyp-Kopf-Label, KANTON §-Label (⑥, Anker bleibt #art-/R8),
@@ -10,19 +11,45 @@ import { test, expect, type Page } from '@playwright/test';
 // Reine Darstellung (§3) — die Grundart kommt zur Laufzeit aus dem Register
 // (SSoT, §5), NICHT aus der BrowseErlass. Reader = prerendertes Crawler-HTML →
 // auf den Client-Takeover warten, bevor geprüft wird.
-async function warteKopf(page: Page, url: string): Promise<void> {
+//
+// ── H4-UMHÄNGUNG (Flip 18.8.2026, Kontaktbogen H4 §7) ───────────────────────
+// Diese Datei war eine B-Spec: sie fasste den Erlass-Kopf über `.lc-leser >
+// header` — ein DIREKTES Kind. Beide Hüllen rendern denselben `<header>`
+// (`parts/ErlassLeserKopf.tsx`, §5), aber V3 hängt ihn eine Zone tiefer
+// (`v3/LeserErlassKopfZone`). Gemessen 18.8.2026 an BV @1440: `.lc-leser >
+// header` = 0 in V3 / 1 in V1, `.lc-leser header` = 1 in BEIDEN. Der Selektor
+// wandert deshalb auf den Nachfahren-Ausdruck; die geprüfte AUSSAGE ist
+// unverändert (Overline, Zähl-Substantiv, Kopf-Etikett), kein Timeout, keine
+// Assertion gelockert (§6.3). Damit ist die Datei wieder paritätsfähig und
+// steht seit H4 in `N_SPECS` — sie läuft in BEIDEN Hüllen.
+//
+// `warteReader` fasste den Öffner über Rolle+Name; das ist die teure Abfrage aus
+// der Ä24-Forensik und läuft jetzt über die EINE Bereitschafts-Wartung
+// (`helpers/leserBereit`, §5), die den hüllenrichtigen Öffner kennt. Der
+// ZUGÄNGLICHE NAME des Öffners bleibt in `leser-kopf-a9` und `leser-kopf-g2b`
+// geprüft — er geht hier nicht verloren.
+//
+// `warteKopf` (nur der DSGVO-Fall) trug `'.lc-leser > header, header'`. Der
+// Fallback war dort das EINZIGE, was je griff: die LIVE_VERWEIS-Karte hat gar
+// keinen Leser — gemessen 18.8.2026 an DSGVO, in BEIDEN Hüllen `.lc-leser` = 0,
+// `<header>` im Leser = 0. Gewartet wurde also auf den globalen Topbar-Header,
+// der schon steht, bevor die Karte gerendert ist: eine Wartung, die nicht
+// scheitern kann (§6.7). Sie fasst jetzt die Karte selbst über ihre `<h1>`.
+const KOPF = '.lc-leser header';
+
+async function warteVerweiskarte(page: Page, url: string): Promise<void> {
   await page.goto(url);
-  await expect(page.locator('.lc-leser > header, header').first()).toBeVisible({ timeout: 20000 });
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible({ timeout: 20000 });
 }
 async function warteReader(page: Page, url: string): Promise<void> {
   await page.goto(url);
-  await expect(page.getByRole('button', { name: 'Ansicht' }).first()).toBeVisible({ timeout: 20000 });
+  await warteLeserBereit(page);
 }
 
 // ── erlassTyp-Kopf-Label (§5.1, behebt «Verordnung als Bundesgesetz») ──────────
 test('Kopf-Label: Verordnung wird als «Verordnung» betitelt, nicht «Bundesgesetz» (VMWG)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/VMWG');
-  const header = page.locator('.lc-leser > header');
+  const header = page.locator(KOPF);
   const overline = header.locator('.lc-overline').first();
   await expect(overline).toContainText('Verordnung');
   await expect(overline).not.toContainText('Bundesgesetz');
@@ -35,7 +62,7 @@ test('Kopf-Label: Verordnung wird als «Verordnung» betitelt, nicht «Bundesges
 // Bundesgesetz. Linien-Kanon Teil B (OR-Gate) ist seit dem Rückbau 16.8.2026 gestrichen.
 test('Kopf-Label: Gesetz bleibt «Bundesgesetz» (ELG)', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ELG');
-  await expect(page.locator('.lc-leser > header .lc-overline').first()).toContainText('Bundesgesetz');
+  await expect(page.locator(`${KOPF} .lc-overline`).first()).toContainText('Bundesgesetz');
 });
 
 // ── ⑥ KANTON §-Label: sichtbares «§ N», Anker bleibt #art- (R8) ────────────────
@@ -50,12 +77,12 @@ test('KANTON §-Label: Body zeigt «§», Kopf zählt «Paragraphen», Anker ble
   const id = await ersteArt.getAttribute('id');
   expect(id).toMatch(/^art-/);
   // Kopf-Zähl-Substantiv «Paragraphen» statt «Artikel».
-  await expect(page.locator('.lc-leser > header').getByText(/\d+\s+Paragraphen/)).toBeVisible();
+  await expect(page.locator(KOPF).getByText(/\d+\s+Paragraphen/)).toBeVisible();
 });
 
 // ── ⑧ LIVE_VERWEIS: ehrliche Verweiskarte statt Fehlerseite (DSGVO) ────────────
 test('LIVE_VERWEIS: Verweiskarte mit amtlichem Live-Link + ehrlichem Hinweis, keine Fehlerseite (DSGVO)', async ({ page }) => {
-  await warteKopf(page, '/gesetze/bund/DSGVO');
+  await warteVerweiskarte(page, '/gesetze/bund/DSGVO');
   // Ehrlicher §8-Hinweis + prominenter amtlicher Link; KEINE «nicht verfügbar»-Fehlerseite.
   await expect(page.getByText(/nicht als In-App-Volltext gehostet/i)).toBeVisible();
   await expect(page.getByRole('link', { name: /Amtliche Fassung öffnen/i })).toBeVisible();

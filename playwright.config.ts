@@ -39,36 +39,33 @@ const E2E_PORT = process.env.E2E_PORT ?? (process.env.CI ? CI_PORT : portAusPfad
 const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 
 // ── N-Specs: Normtext-Treue (FAHRPLAN-LESER-V3 Kap. 10) ─────────────────────
-// Diese Specs prüfen, dass am NORMTEXT nichts verrutscht — Optionen-Schalter,
-// Fundstellen/Quickjump, Rücksprung, Such-Vertrag, Marginalien, PDF-Download,
-// die neun UX-Punkte, Kopf-Label, Anhang-Behandlung und den Linien-Rückbau.
-// Sie laufen im Fenster DOPPELT: im Projekt `chromium` ohne Flag gegen den
-// Ist-Stand und im Projekt `leser-v3` mit gesetztem Flag gegen die neue Hülle.
-// Diese Doppelung IST der Paritätsbeweis — eine Hülle, die den Normtext
-// verändert, wird auf genau einer Seite rot.
+// Diese Specs prüfen, dass am NORMTEXT nichts verrutscht — Fundstellen/Quickjump,
+// Such-Vertrag, Marginalien, PDF-Download, die neun UX-Punkte, Anhang-Behandlung,
+// Kopf-Label und den Linien-Rückbau.
+// Sie laufen im Fenster DOPPELT: im Default-Projekt `chromium` gegen die neue
+// Hülle (seit dem H4-Flip ist V3 der Grundzustand) und im Projekt `leser-v1`
+// mit gesetztem Rückweg-Flag gegen die alte. Diese Doppelung IST der
+// Paritätsbeweis — eine Hülle, die den Normtext verändert, wird auf genau einer
+// Seite rot. Der H4-Flip hat die Doppelung nur GESPIEGELT, nicht aufgehoben:
+// bewiesen wird weiterhin dieselbe Aussage, nur steht jetzt V3 im Regelprojekt.
 //
-// SECHS, nicht zehn — Vollzug des Vorproben-Befunds (Kap. 7, 16.8.2026).
-// Die Liste stand bis dahin auf zehn Namen. Vier davon können gegen eine NEUE
-// Hülle konstruktiv nicht grün werden, weil sie die STRUKTUR der Ist-Hülle
-// prüfen, die V3 planmässig ersetzt — nicht den Normtext:
-//   gesetze-ux-g3a          `.lc-leser > header` als direktes Kind (3 ×)
-//   leser-optionen          «genau zwei role=switch» — V3 hat die drei aus Kap. 4f
-//   leser-r1-r2             das zweite Feld «Zu Artikel springen», das Pos. 4 beseitigt
-//   leser-ruecksprung-r5-r7 Rücksprung «< 140 px» — V3 landet auf 156 px (64+36+56)
-// Sie im Flag-Projekt zu führen hiesse, jede Hüllen-Änderung als
-// Normtext-Verletzung zu melden — ein Tor, das das Falsche misst, ist schlimmer
-// als keines (§6.7). Sie sind damit **B-Specs**: im Projekt `chromium` gegen den
-// Ist-Stand laufen sie unverändert weiter (dort sind sie der Schutz der alten
-// Hülle) und werden erst in H4 umgehängt. CI-Anlass: Run 31962198006, Shard 4/8,
-// `[leser-v3] › e2e/gesetze-ux-g3a.e2e.ts:23`.
+// Sie endet mit H5: fällt die alte Hülle, fällt das Projekt `leser-v1`, und die
+// N-Specs laufen wie jede andere Spec einfach im `chromium`-Projekt.
 //
-// Was bleibt, ist der Paritätsbeweis, der wirklich einer ist: sechs Specs, die
-// in BEIDEN Hüllen grün sind.
+// GESCHICHTE der Liste (Kap. 7, 16.8.2026). Sie stand einmal auf zehn Namen.
+// Vier davon konnten gegen die NEUE Hülle konstruktiv nicht grün werden, weil
+// sie die STRUKTUR der Ist-Hülle prüfen, die V3 planmässig ersetzt — nicht den
+// Normtext: `gesetze-ux-g3a`, `leser-optionen`, `leser-r1-r2`,
+// `leser-ruecksprung-r5-r7`. Sie waren damit B-Specs und wurden bis H4
+// zurückgestellt. In H4 sind sie auf V3 umgehängt (Selektoren und Schwellen an
+// der neuen Hülle nachgemessen, Assertion-Aussage unverändert); `gesetze-ux-g3a`
+// und `leser-kopf-g2b` sind seither wieder paritätsfähig und stehen unten.
 const N_SPECS = [
-  // Kein N-Test, sondern der Selbsttest des Flag-Projekts: er sieht den
-  // V3-Marker POSITIV und schliesst damit aus, dass `leser-v3` still gegen V1
-  // läuft und grün ist, ohne etwas zu prüfen (§6.7). Läuft absichtlich in
-  // BEIDEN Projekten — `chromium` beweist den Grundzustand AUS (R10).
+  // Kein N-Test, sondern der Selbsttest der Projekt-Trennung: er sieht den
+  // V3-Marker POSITIV bzw. seine Abwesenheit und schliesst damit aus, dass ein
+  // Projekt still gegen die falsche Hülle läuft und grün ist, ohne etwas zu
+  // prüfen (§6.7). Läuft absichtlich in BEIDEN Projekten — `chromium` beweist
+  // seit H4 den Grundzustand V3, `leser-v1` den wirksamen Rückweg.
   '**/leser-v3-flag.e2e.ts',
   '**/leser-suche-vertrag-b8.e2e.ts',
   '**/leser-ohne-gliederungslinie.e2e.ts',
@@ -76,15 +73,97 @@ const N_SPECS = [
   '**/gesetze-pdf-download.e2e.ts',
   '**/gesetze-ux-9punkte.e2e.ts',
   '**/gesetze-ux-g3b-anhang.e2e.ts',
+  // H4: nach dem Kopf-Selektor-Umzug auf `[data-v3-kopf]` wieder paritätsfähig
+  // (Kontaktbogen H4 §7). Beide prüfen Aussagen über den Erlass-Kopf, die in
+  // BEIDEN Hüllen gelten müssen — Etikett/Zähl-Substantiv bzw. Zitierform.
+  '**/gesetze-ux-g3a.e2e.ts',
+  '**/leser-kopf-g2b.e2e.ts',
 ]
 
-// Die e2e der neuen Hülle selbst. Sie brauchen das Flag und liefen bisher NUR
-// im Projekt `chromium`, das den Flag-Zustand über den Query-Parameter setzt —
-// im Flag-Projekt liefen sie gar nicht mit, obwohl genau dort ihr Zuhause ist.
-const V3_SPECS = [
-  '**/leser-v3-*.e2e.ts',
-  '**/leser-kopf-paritaet.e2e.ts',
+// ── Auf die ALTE Hülle gepinnt, bis H5 sie löscht ───────────────────────────
+// Diese Specs prüfen einen MONTAGEPUNKT der Ist-Hülle, den V3 planmässig
+// aufgegeben hat — die Rechtsprechungs-/Materialien-Auskunft steht in V3 nicht
+// mehr am Artikelfuss und nicht mehr im Gliederungs-Scroller, sondern im Panel
+// (Kap. 4d, Pos. 12). Die geprüfte SACHE lebt weiter, ihr Ort nicht.
+//
+// WARUM PINNEN UND NICHT UMHÄNGEN: die Fälle messen Wirkung an genau diesem Ort
+// (Zähler «5 von 16» an der Zeile unter dem Artikel, Kontextfenster im
+// `[data-toc]`-Scroller). Auf V3 umgeschrieben wären sie keine geänderten,
+// sondern NEUE Tests — und die gehören zu den `leser-v3-*`-Specs, nicht in eine
+// Ist-Hüllen-Datei, die H5 löscht. Gepinnt bleiben sie bis dahin scharf: die
+// alte Hülle ist bis H5 der freigegebene Rückweg und darf nicht unbewacht sein.
+//
+// H5-AUFLAGE, damit hier nichts still verschwindet: was diese Dateien an der
+// V1-Zeile prüfen und **keine** `leser-v3-*`-Spec am Panel prüft, ist im
+// Kontaktbogen H4 §7 als Deckungslücke benannt. H5 löscht die Dateien erst,
+// wenn die Lücke geschlossen ist.
+//
+// GEMESSEN, nicht vermutet: Voll-Lauf `--project=chromium` am Flip-Stand
+// 18.8.2026 (634 Tests, 47 rot) — die Zuordnung unten folgt diesem Lauf.
+
+// (a) GANZE Datei ist Ist-Hüllen-Struktur ⇒ läuft NUR im Rückweg-Projekt.
+const V1_NUR = [
+  // 6/6 rot: `[data-rechtsprechung-menu]` (Chip-Menü der Ist-Hülle) und
+  // `[data-bezuege-zeile]` am Artikelfuss. V3-Seite: `leser-v3-panel-facetten`.
+  '**/bezuege-facetten-b4.e2e.ts',
+  // 12/12 rot: derselbe Montagepunkt plus der Zeitstrahl am Chip-Menü.
+  '**/bezuege-zeitstrahl-b5.e2e.ts',
+  // 3/3 rot: das Kontextfenster IM `[data-toc]`-Scroller (E4-Korrektur David
+  // 25.7.2026). V3 hat dort keinen Scroller-Nachbar mehr; V3-Seite:
+  // `leser-v3-kontext-cls`.
+  '**/leser-kontext-e4.e2e.ts',
+  // 2/2 rot: das mobile Suchfeld liegt in der Ist-Hülle hinter einem Knopf
+  // («Im Gesetz suchen»), den V3 nicht hat — dort steht das Feld immer im
+  // klebenden Kopf-Block. V3-Seite: `leser-v3-suchfeld-ueberall` (b) für den
+  // Ort, `leser-v3-blatt` + `leser-v3-treffer-reihenfolge` für die Trefferliste.
+  '**/leser-trefferliste-overlay-mobil-w219.e2e.ts',
+  // 2/2 rot: BEIDE Fälle brauchen als Einstieg das ⧉ «nebeneinander öffnen» an
+  // der Bezüge-Zeile unter dem Artikel — mit Pos. 12 aufgegeben; V3 verlinkt im
+  // Panel, es öffnet dort nicht daneben. Bug 1 misst zudem eine Mechanik der
+  // alten Hülle (Seed-Hash beim imPane-Wechsel). V3-Seite: `leser-kopf-paritaet`
+  // (Split über NormPopover, V3-Kopf im Pane) und `leser-v3-highlight-split`.
+  // H5-Auflage: A34/Bug1 (Leseposition beim Öffnen) und Bug2 («Ansicht» bleibt
+  // im Split sichtbar) brauchen ein V3-Gegenstück mit V3-Einstieg.
+  '**/split-view-a34.e2e.ts',
 ]
+
+// (b) GEMISCHTE Datei: V3-taugliche Fälle daneben. Sie läuft in BEIDEN
+//     Projekten; die Ist-Hüllen-Fälle tragen im Test einen projekt-abhängigen
+//     `test.skip` mit Begründung (Muster: `leser-v3-umschalten` (c)). So bleibt
+//     jeder grüne Fall im Regelprojekt scharf, statt die ganze Datei zu
+//     verschieben.
+const V1_GEMISCHT = [
+  '**/leitfaelle-chips.e2e.ts',        // 3/6 rot (Auflistung + Kurztext-Popover am Chip)
+  '**/verzahnung.e2e.ts',              // 6/11 rot (Kontextgruppen am Artikelfuss)
+  '**/normrevision-badge.e2e.ts',      // 2/3 rot (↻-Badge an der Leitfall-Zeile)
+  '**/materialien-m5-verzahnung.e2e.ts', // 2/3 rot (Materialien-Gruppe im Kontextfenster)
+  '**/rechtsprechung.e2e.ts',          // 1/n rot (Kontext-Panel-Gruppe im Reader)
+  '**/leser-breite-a37.e2e.ts',        // 1/3 rot (Spaltenmass der 2-Spalten-Zelle der Ist-Hülle)
+  '**/druck-fundstellen-z2.e2e.ts',    // 1/7 rot (⧉ an der Bezüge-Zeile als Split-Einstieg)
+  '**/leser-weiterlesen-r4-r8.e2e.ts', // 1/10 rot (Vorrang der Kopf-Suche auf «/» und ⌘K)
+  // 1/4 rot. Der Fall war zuerst UMGEHÄNGT und wurde dabei rot — und hat damit
+  // die Vermutung widerlegt: in V3 steht das Suchfeld @1280 IN der
+  // Gliederungsspalte (Zone A des Scrollers, gemessen 18.8.2026), also genau
+  // dort, wo dieser Fall es verbietet. Kein Defekt, sondern die Anordnung aus
+  // Kap. 4; die Zusage gehört zur alten Zwei-Leisten-Anordnung.
+  '**/leser-suche-a35-a40-a41.e2e.ts',
+]
+
+const V1_PINNED = [...V1_NUR, ...V1_GEMISCHT]
+
+// ── A-7 · Pixelvergleich (PX), OPT-IN ───────────────────────────────────────
+// Läuft NUR mit `PX=1` und dann in einem eigenen Projekt. Grund, Kap. 12 A-7:
+// die Baseline entsteht lokal auf macOS, der CI-Runner ist Linux — Font-
+// Rasterung und Hinting unterscheiden sich dort systematisch, das Tor wäre auf
+// CI zuverlässig rot ohne jede Aussage über den Textkörper. Ein Tor mit
+// bekannter, sachfremder Ausfallursache gehört nicht in die Shards (§0 Ziff. 3:
+// keine Rate ohne Messbedingung). Die Linux-Baseline ist ein eigener Schritt.
+//
+// Weil die Datei ohne `PX=1` von KEINEM Projekt gesammelt wird, sieht der
+// Shard-Union-Wächter sie nicht und verlangt keine Gruppenzuordnung — genau so
+// ist es gewollt, und darum trägt sie bewusst keine `@shard-gruppe`-Kopfzeile.
+const PX_SPECS = ['**/px-*.e2e.ts']
+const PX_AN = process.env.PX === '1'
 
 export default defineConfig({
   testDir: './e2e',
@@ -169,25 +248,42 @@ export default defineConfig({
     },
     {
       name: 'chromium',
-      testIgnore: SCHWERE_SPECS,
+      // PX_SPECS mit ausschliessen: `chromium` hat kein `testMatch` und würde
+      // die Pixel-Spec sonst im Normallauf mitnehmen — also genau das, was der
+      // Opt-in verhindern soll.
+      // V1_NUR mit ausschliessen (H4-Flip): diese Dateien prüfen einen
+      // Montagepunkt, den V3 aufgegeben hat — im Regelprojekt liefen sie nach
+      // dem Flip in Timeouts statt in Fehlermeldungen (gemessen 18.8.2026).
+      // V1_GEMISCHT bleibt hier drin: dort skippen die betroffenen Fälle
+      // einzeln, damit die V3-taugliche Hälfte weiterläuft.
+      testIgnore: [...SCHWERE_SPECS, ...PX_SPECS, ...V1_NUR],
       timeout: process.env.CI ? 90_000 : 30_000,
     },
-    // ── Flag-Projekt: dieselben N-Specs gegen die V3-Hülle ──────────────────
+    // ── Rest-Projekt: dieselben N-Specs gegen die ALTE Hülle ────────────────
+    // Bis H4 hiess dieses Projekt `leser-v3` und trug das Flag zur NEUEN Hülle.
+    // Mit dem Flip (David-Ja 17.8.2026) ist V3 der Grundzustand, und derselbe
+    // Mechanismus trägt jetzt den RÜCKWEG: `leser-v1`. Der Paritätsbeweis
+    // bleibt Wort für Wort derselbe, er ist nur gespiegelt.
+    //
     // Aktivierung über `storageState` statt über einen Query-Parameter: die
     // Specs navigieren selbst (`page.goto('/gesetze/…')`) und wüssten von
-    // einem `?leser=v3`-Suffix nichts — es müsste in jede einzelne Spec
+    // einem `?leser=v1`-Suffix nichts — es müsste in jede einzelne Spec
     // hinein, und das wäre eine inhaltliche Änderung bestehender Specs (§6.3
     // verbietet genau das bei einem Struktur-Schritt). `storageState` legt
-    // `lm.leser.v3` VOR dem ersten Laden in den Speicher des Origins; die
+    // `lm.leser.v1` VOR dem ersten Laden in den Speicher des Origins; die
     // Fassade (`src/pages/GesetzLeser.tsx`) liest ihn beim ersten Render.
     // Die Specs bleiben Zeichen für Zeichen unangetastet.
     // Das Origin muss den dynamischen Port tragen (Port-Wahl oben), sonst
-    // greift der Speicher-Eintrag ins Leere und das Projekt testete still V1
-    // — also genau das Tor, das nicht scheitern kann. Der Rot-Beweis der
-    // Vorprobe (V-2) schliesst diesen Fall aus.
+    // greift der Speicher-Eintrag ins Leere und das Projekt testete still V3
+    // — also genau das Tor, das nicht scheitern kann. `leser-v3-flag.e2e.ts`
+    // (in N_SPECS) schliesst diesen Fall aus, indem es die Abwesenheit des
+    // V3-Markers hier POSITIV prüft.
+    //
+    // MIT H5 FÄLLT DIESES PROJEKT (samt `V1_PINNED`) — es ist die letzte Stelle
+    // im Repo, die die alte Hülle noch fährt.
     {
-      name: 'leser-v3',
-      testMatch: [...N_SPECS, ...V3_SPECS],
+      name: 'leser-v1',
+      testMatch: [...N_SPECS, ...V1_PINNED],
       timeout: process.env.CI ? 90_000 : 30_000,
       use: {
         storageState: {
@@ -195,12 +291,24 @@ export default defineConfig({
           origins: [
             {
               origin: `http://localhost:${E2E_PORT}`,
-              localStorage: [{ name: 'lm.leser.v3', value: '1' }],
+              localStorage: [{ name: 'lm.leser.v1', value: '1' }],
             },
           ],
         },
       },
     },
+    // Nur mit `PX=1` vorhanden — s. Herleitung an PX_SPECS oben.
+    ...(PX_AN
+      ? [{
+          name: 'px',
+          testMatch: PX_SPECS,
+          timeout: 120_000,
+          // Kein `retries`: ein Pixel-Tor, das sich beim zweiten Versuch
+          // beruhigt, misst Rauschen und nicht den Textkörper. Die Flake-Rate
+          // soll SICHTBAR sein, nicht wegretried werden (§0 Ziff. 3).
+          retries: 0,
+        }]
+      : []),
   ],
   webServer: {
     command: `npm run preview -- --port ${E2E_PORT} --strictPort`,

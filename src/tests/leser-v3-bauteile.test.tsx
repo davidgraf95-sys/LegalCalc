@@ -62,7 +62,15 @@ const ERLASS: BrowseErlass = {
 function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: KopfStufe }) {
   return renderToString(
     <MemoryRouter>
-      <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3} {...props} />
+      {/* D1: der Kopf reicht `hatAenderungsvermerke` nur durch — hier `true`, damit
+          die Fälle unten unverändert den vollen Schalter-Satz sehen; die Bedingung
+          selbst prüft `e2e/leser-v3-umschalten` (a3) am gerenderten Erlass. */}
+      {/* Ä87/Ä91 (H4-Nachzug 18.8.2026): die Prop `zeigeSchliessen` ist weg —
+          die Kopfzeile trägt auf keiner Breite mehr ein ✕, ihr Ziel steht als
+          beschrifteter Rücksprung in der Ort-Zone (Herleitung in
+          `v3/kopfStufen.ts`, Zusage geprüft in `erlassAnsicht.hatRuecksprung`). */}
+      <LeserKopf erlass={ERLASS} aktArtikel="Art. 429" fussnotenAnzahl={3}
+        hatAenderungsvermerke {...props} />
     </MemoryRouter>,
   );
 }
@@ -97,23 +105,39 @@ describe('LeserAnsichtV3 — `aria-controls` zeigt nie auf ein Panel, das es nic
   });
 });
 
-describe('LeserKopf — «Gesetze» und der Volltitel fallen unter 900 px', () => {
-  it('Stufe "voll": Gesetze-Krume UND Volltitel sind da', () => {
+// §6.3-DEKLARATION (V2, Nachzug 17.8.2026): unter 900 px fiel die Krume bis
+// hierher GANZ weg — genau das war der Befund. Seit A-2 steht darüber keine
+// App-Leiste mehr, die den Weg nach oben auffängt, und das ✕ springt an der
+// Ebene vorbei. Neu schrumpft die Kette auf einen Rücksprung «‹ Gesetze» statt
+// zu verschwinden. Geprüft wird darum dieselbe Zone mit einer PRÄZISEREN
+// Aussage: was fällt, ist die KETTE (Ebene-Stufe + «›») und der Volltitel — der
+// Rücksprung bleibt. Kein Aufweichen: die Ebene-Stufe wird auf beiden engen
+// Zuschnitten weiterhin ausdrücklich als abwesend geprüft.
+describe('LeserKopf — die Kette und der Volltitel fallen unter 900 px, die Krume nicht', () => {
+  it('Stufe "voll": ganze Kette (Gesetze › Bund ›) UND Volltitel sind da', () => {
     const html = renderKopf({ stufe: 'voll' });
     expect(html).toContain('>Gesetze<');
+    expect(html).toContain('>Bund<');
     expect(html).toContain('Obligationenrecht');
+    // Die volle Kette ist NICHT der Rücksprung — sonst prüften die zwei Tests
+    // unten dasselbe Element unter anderem Namen.
+    expect(html).not.toContain('data-v3-kopf-krume-kurz');
   });
 
-  it('Stufe "kompakt": beides ist weg', () => {
+  it('Stufe "kompakt": Kette und Volltitel weg, Rücksprung «‹ Gesetze» da', () => {
     const html = renderKopf({ stufe: 'kompakt' });
-    expect(html).not.toContain('>Gesetze<');
+    expect(html).not.toContain('>Bund<');
     expect(html).not.toContain('Obligationenrecht');
+    expect(html).toContain('data-v3-kopf-krume-kurz');
+    expect(html).toContain('href="/gesetze"');
   });
 
-  it('Stufe "mini": beides bleibt weg', () => {
+  it('Stufe "mini": dasselbe — auch auf dem engsten Zuschnitt bleibt der Weg nach oben', () => {
     const html = renderKopf({ stufe: 'mini' });
-    expect(html).not.toContain('>Gesetze<');
+    expect(html).not.toContain('>Bund<');
     expect(html).not.toContain('Obligationenrecht');
+    expect(html).toContain('data-v3-kopf-krume-kurz');
+    expect(html).toContain('href="/gesetze"');
   });
 });
 
@@ -146,22 +170,43 @@ function renderLeiste(props: Partial<Parameters<typeof LeserSeitenleiste>[0]> = 
 }
 
 describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
-  it('Übersicht → Feld → Baumkopf → Baum → Extra', () => {
+  // ── DEKLARIERTE VERTRAGSÄNDERUNG H2 (David 16.8.2026) ─────────────────────
+  // Bis H1 lautete der Vertrag «Übersicht → Feld → Baumkopf → Baum → Extra»,
+  // wobei das FELD ÜBER dem klebenden Block stand und mit der Übersichtsbox
+  // wegscrollte. Davids Befund am gebauten Stand: «Das Suchfeld muss immer
+  // zugreifbar sein, auch wenn ich in der Gliederung scrolle» — wer tief im
+  // Baum der StPO stand, musste erst die Leiste hochscrollen, um zu suchen.
+  //
+  // NEU: das Feld ist Teil des KLEBENDEN Blocks und steht dort ZUOBERST.
+  // Reihenfolge: Übersicht (scrollt weg) → [ Feld → Gliederungs-Kopfzeile ]
+  // klebend → Baum → Extra. Der Test prüft jetzt genau das, inklusive der
+  // Aussage, die den Unterschied trägt: das Feld liegt INNERHALB des klebenden
+  // Blocks, nicht davor. Das ist nach §6.3 eine fachliche Änderung mit eigener
+  // Begründung, kein stillschweigend nachgezogener Test.
+  // C4 (H3-Nachzug): der Slot `extra` ist gestrichen (§17, kein Aufrufer über drei
+  // Etappen) — die Reihenfolge-Zusage endet darum beim Baum. Die tragende Aussage
+  // des Falls («das Feld liegt IM klebenden Block, nicht davor») bleibt Wort für
+  // Wort dieselbe; nur das nicht mehr existierende Element fällt aus der Kette.
+  it('Übersicht → [Feld → Baumkopf] klebend → Baum', () => {
     const html = renderLeiste({
       uebersicht: <div data-marker-u>U</div>,
       suchFeld: <div data-marker-f>F</div>,
-      extra: <div data-marker-e>E</div>,
     });
     const iU = html.indexOf('data-marker-u');
     const iF = html.indexOf('data-marker-f');
     const iBaumkopf = html.indexOf('data-v3-leiste-baumkopf');
     const iB = html.indexOf('data-marker-baum');
-    const iE = html.indexOf('data-marker-e');
-    expect([iU, iF, iBaumkopf, iB, iE].every((i) => i >= 0)).toBe(true);
-    expect(iU).toBeLessThan(iF);
-    expect(iF).toBeLessThan(iBaumkopf);
-    expect(iBaumkopf).toBeLessThan(iB);
-    expect(iB).toBeLessThan(iE);
+    expect([iU, iF, iBaumkopf, iB].every((i) => i >= 0)).toBe(true);
+    // Die Übersichtsbox bleibt oben und ausserhalb — sie ist
+    // Ankunfts-Information, kein Werkzeug, und darf wegscrollen.
+    expect(iU).toBeLessThan(iBaumkopf);
+    // DAS FELD LIEGT IM KLEBENDEN BLOCK, nicht davor: sein Marker steht im
+    // Markup NACH dem Blockanfang. Genau diese Zeile hätte den Vorzustand rot
+    // gemacht — dort stand das Feld davor.
+    expect(iBaumkopf).toBeLessThan(iF);
+    // … und darin ZUOBERST, vor der Gliederungs-Kopfzeile.
+    expect(iF).toBeLessThan(html.indexOf('data-v3-alle'));
+    expect(iF).toBeLessThan(iB);
   });
 
   it('suchFeld={undefined} (Sheet-Fall): [data-v3-leiste-feld] fehlt GANZ', () => {
@@ -169,63 +214,128 @@ describe('LeserSeitenleiste — feste Dokument-Reihenfolge', () => {
     expect(html).not.toContain('data-v3-leiste-feld');
   });
 
-  it('extra ungesetzt: kein data-v3-leiste-extra im Markup', () => {
-    const html = renderLeiste({});
-    expect(html).not.toContain('data-v3-leiste-extra');
-  });
-
-  it('extra gesetzt: erscheint (Gegenprobe zur vorigen Zeile)', () => {
-    const html = renderLeiste({ extra: <div data-marker-e>E</div> });
-    expect(html).toContain('data-v3-leiste-extra');
-    expect(html).toContain('data-marker-e');
+  // C4: der Slot ist weg — die Zone kann darum nicht mehr erscheinen. Die Sonde
+  // bleibt als NEGATIV-Beweis des Rückbaus stehen (sie wird rot, wenn jemand die
+  // Zone ohne Aufrufer wieder einbaut); die Gegenprobe mit gesetztem Slot fällt
+  // ersatzlos, weil es nichts mehr zu setzen gibt.
+  it('C4: die Extra-Zone existiert nicht mehr', () => {
+    expect(renderLeiste({})).not.toContain('data-v3-leiste-extra');
   });
 });
 
 // ═══ UebersichtBox ═══════════════════════════════════════════════════════
 
+// §6.3-DEKLARATION (Ä70, 17.8.2026 — David: «mach das schöner und orientiere
+// dich an Fedlex»). Die vier Fälle unten prüfen dieselben vier Zusagen wie vor
+// dem Umbau; geändert hat sich, WOMIT die Box gefüttert wird. Bis Ä70 nahm sie
+// eine fertige Zeichenkette (`zusammenfassung`), einen fertigen Warn-Knoten
+// (`warnung`) und beliebige `children` — die Box war also ein Behälter, der über
+// seinen Inhalt nichts wusste, und die Auswahl der Angaben lag beim Aufrufer.
+// Jetzt nimmt sie EIN typisiertes Ergebnis (`angaben`) aus der reinen Funktion
+// `uebersichtsAngaben`; die Box rendert nur noch. Ein Kinder-Slot existiert nicht
+// mehr, weil es nichts mehr einzuhängen gibt.
+//
+// KEINE Assertion ist gelockert: «zu im Grundzustand», «die Zusammenfassung
+// steht im DOM», «die Warnung steht VOR dem Klapp-Inhalt» und «ohne Warnung kein
+// Warn-Markup» sind Zeichen für Zeichen dieselben Prüfungen. Neu hinzu kommt
+// unten, was der Umbau ZUSÄTZLICH verspricht (genau EINE Klappe). Die
+// Zeilen-Auswahl je Erlassart prüft der neue Vitest `leser-v3-uebersicht.test.ts`
+// — nicht hier, weil sie zur reinen Funktion gehört, nicht zum Bauteil.
+const ANGABEN_LEER = {
+  ruhe: 'SR 210 · 480 Artikel',
+  zeilen: [],
+  links: [],
+  warnung: null,
+  vorbehalt: null,
+  hinweise: [],
+};
+
 describe('UebersichtBox — zu im Grundzustand, Zusammenfassung bleibt im DOM', () => {
   it('<details> trägt KEIN `open`-Attribut', () => {
-    const html = renderToString(
-      <UebersichtBox zusammenfassung="SR 210 · 480 Artikel · Stand 01.01.2026">
-        <div>Inhalt</div>
-      </UebersichtBox>,
-    );
+    const html = renderToString(<UebersichtBox angaben={ANGABEN_LEER} />);
     expect(html).toContain('data-v3-uebersicht');
     expect(/<details[^>]*\bopen\b[^>]*>/i.test(html)).toBe(false);
   });
 
   it('die Zusammenfassung steht im DOM (Ctrl+F/Screenreader, §8) — trotz zugeklappt', () => {
-    const html = renderToString(
-      <UebersichtBox zusammenfassung="SR 210 · 480 Artikel · Stand 01.01.2026">
-        <div>Inhalt</div>
-      </UebersichtBox>,
-    );
-    expect(html).toContain('SR 210 · 480 Artikel · Stand 01.01.2026');
+    const html = renderToString(<UebersichtBox angaben={ANGABEN_LEER} />);
+    expect(html).toContain('SR 210 · 480 Artikel');
     expect(html).toContain('data-v3-uebersicht-zeile');
   });
 
-  it('die Warnung steht VOR dem zugeklappten Kinder-Block, nicht darin verschachtelt', () => {
+  it('Ä97: die Box trägt GAR KEINE Warn-Zelle mehr — beide Aussagen gehören dem Kopf', () => {
+    // ── §6.3-DEKLARATION, DRITTE UND LETZTE STUFE (Ä97, 18.8.2026) ──────────
+    // Dieser Fall hiess bis heute «die Warn-Zelle steht VOR dem zugeklappten
+    // Kinder-Block» und prüfte eine REIHENFOLGE. Die Reihenfolge gibt es nicht
+    // mehr, weil es die Zelle nicht mehr gibt:
+    //   Ä81 (H4-Nachzug) nahm die Konsolidierungs-Warnung aus der Box — sie
+    //     stand gemessen zweimal gleichzeitig sichtbar auf der Seite.
+    //   Ä97 (Live-Prüfung) nimmt den VORBEHALT aus demselben Grund. Ä81 hatte
+    //     ihn ausdrücklich offengelassen, weil kein Erlass mit
+    //     `naechsteFassungAb` zur Hand war; am Live-Stand trägt das OR @1440
+    //     «⚠ nächste Fassung ab 01.10.2026» gleichzeitig in der Box UND in der
+    //     Stand-Zeile des Erlass-Kopfs.
+    // Damit wandert die geprüfte Zusage von «die Zelle steht an der richtigen
+    // Stelle» zu «es gibt keine Zelle»: der Kopf sagt, WIE AKTUELL der Erlass
+    // ist, die Box, WOHER er kommt und WIE er gebaut ist.
+    // Die FELDER bleiben im reinen Modell samt ihren Sonden
+    // (`leser-v3-uebersicht.test.ts`) — nur diese Ausgabe entfällt.
+    // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` den `vorbehalt`-Block
+    // wieder einsetzen.
     const html = renderToString(
-      <UebersichtBox zusammenfassung="…" warnung={<span data-marker-warnung>nicht konsolidiert</span>}>
-        <div>Inhalt</div>
-      </UebersichtBox>,
+      <UebersichtBox angaben={{ ...ANGABEN_LEER, vorbehalt: 'nächste Fassung ab 01.01.2027' }} />,
     );
-    const iWarnung = html.indexOf('data-marker-warnung');
-    // Der Kinder-Wrapper trägt die feste Klasse `border-t border-line px-2 py-2`
-    // (Quelle: UebersichtBox.tsx) — die Warnung muss VOR dessen Öffnungstag
-    // stehen, sonst wäre sie IN den Kindern verschachtelt statt eine eigene
-    // Zeile davor.
-    const iKinderWrapper = html.indexOf('class="border-t border-line px-2 py-2"');
-    expect(iWarnung).toBeGreaterThan(-1);
-    expect(iKinderWrapper).toBeGreaterThan(-1);
-    expect(iWarnung).toBeLessThan(iKinderWrapper);
+    expect(html).not.toContain('nächste Fassung ab 01.01.2027');
+    expect(html).not.toContain('data-v3-uebersicht-warnung');
+    // Positiv-Sonde: der Kinder-Block, vor dem die Zelle stand, ist unberührt —
+    // die Box hat eine Ausgabe verloren, nicht ihre Struktur.
+    expect(html).toContain('data-v3-uebersicht-inhalt');
   });
 
-  it('ohne warnung-Prop: keine Warn-Zeile im Markup', () => {
+  it('Ä81: die Konsolidierungs-Warnung steht NICHT mehr in der Box — nur im Kopf', () => {
+    // Gemessen 18.8.2026 (StPO, D 1440, Box zu wie aufgeklappt): der Satz stand
+    // zweimal gleichzeitig sichtbar auf der Seite — in der Leiste und im
+    // Erlass-Kopf. Die Box zieht ihre Grenze selbst anders (Kopf = wie aktuell,
+    // Box = woher und wie gebaut); eine offene Konsolidierung ist «wie aktuell».
+    // Das FELD bleibt im reinen Modell — nur diese Ausgabe entfällt.
+    // ROT ZU BEKOMMEN (§6.7): in `v3/UebersichtBox.tsx` die `warnung`-Zeile
+    // wieder in die Warn-Zelle setzen.
     const html = renderToString(
-      <UebersichtBox zusammenfassung="…"><div>Inhalt</div></UebersichtBox>,
+      <UebersichtBox angaben={{ ...ANGABEN_LEER, warnung: 'nicht konsolidiert' }} />,
     );
-    expect(html).not.toContain('data-marker-warnung');
+    expect(html).not.toContain('nicht konsolidiert');
+    expect(html).not.toContain('data-v3-uebersicht-warnung');
+  });
+
+  it('ohne Warnung UND ohne Vorbehalt: keine Warn-Zelle im Markup', () => {
+    const html = renderToString(<UebersichtBox angaben={ANGABEN_LEER} />);
+    expect(html).not.toContain('data-v3-uebersicht-warnung');
+  });
+
+  // ── NEU mit Ä70 ──────────────────────────────────────────────────────────
+  it('genau EINE Klappe — die zweite Ebene «Mehr zu diesem Erlass» ist weg', () => {
+    // Ist-Befund 17.8.2026: die aufgeklappte Box trug ein zweites `<details>`,
+    // und dahinter lagen die §8-Sätze über die Grenzen der eigenen Erfassung.
+    // Ein Ehrlichkeits-Hinweis hinter zwei Klicks ist keiner (§8).
+    const html = renderToString(
+      <UebersichtBox angaben={{
+        ...ANGABEN_LEER,
+        zeilen: [{ id: 'art', label: 'Erlassart', wert: 'Bundesgesetz' }],
+        links: [{ id: 'quelle', label: 'Amtliche Fassung', href: 'https://x.test', zeichen: '↗' as const }],
+        hinweise: ['Kanton BS: Teilbestand, 859 Erlasse erfasst.'],
+      }} />,
+    );
+    expect((html.match(/<details/g) ?? []).length).toBe(1);
+    // Positiv-Sonde: der §8-Satz steht wirklich da, er ist nicht mit der
+    // zweiten Klappe verschwunden.
+    expect(html).toContain('859 Erlasse erfasst');
+  });
+
+  it('keine Zeile ohne Wert — eine leere Angabe erzeugt gar kein Label (§8)', () => {
+    const html = renderToString(<UebersichtBox angaben={ANGABEN_LEER} />);
+    // Ohne Zeilen entsteht die Liste gar nicht; ein «SR —» kann so nicht
+    // entstehen, weil es kein Label ohne zugehörigen Wert gibt.
+    expect(html).not.toContain('data-v3-uebersicht-liste');
   });
 });
 
