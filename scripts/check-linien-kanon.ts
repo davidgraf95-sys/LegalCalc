@@ -42,6 +42,9 @@ const fehler: string[] = [];
 // QS-TOK/P5: parts.tsx ist ein Barrel — die markierten Struktur-Elemente
 // (data-normtext-linie) leben in den Geschwister-Dateien unter parts/. Alle
 // Marker-Träger müssen gescannt werden, sonst prüft das Tor sie nicht mehr.
+// `inhalt.tsx` (Ist-Hülle) gelöscht 21.8.2026 (H5) — aus der Liste entfernt;
+// die markierten Struktur-Elemente leben in den geteilten `parts/`-Dateien,
+// die V3 (wie zuvor V1) rendert.
 const READER = [
   'src/pages/gesetz-leser/parts.tsx',
   'src/pages/gesetz-leser/parts/ArtikelLeser.tsx',
@@ -49,7 +52,6 @@ const READER = [
   'src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
   'src/pages/gesetz-leser/parts/SektionKopf.tsx',
   'src/pages/gesetz-leser/parts/SektionBaumTOC.tsx',
-  'src/pages/gesetz-leser/inhalt.tsx',
 ];
 const MARKER = 'data-normtext-linie';
 const VERBOTEN = /border-line(\/\d+)?\b/;

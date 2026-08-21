@@ -274,7 +274,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   // Leser, und sie werden gestrichen statt weitergemeldet (§17 Rückbau).
   // Was übrig bleibt, ist ein einziger, datenunabhängiger Satz («ich trage die
   // Kopfzeile selbst») — und der steht bewusst NICHT hier, sondern im
-  // Einsprungspunkt `../GesetzLeserV3.tsx`: dieses Modell läuft erst, wenn der
+  // Einsprungspunkt `../../GesetzLeser.tsx` (bis H5: `GesetzLeserV3.tsx`): dieses Modell läuft erst, wenn der
   // lazy Rahmen-Chunk da ist, und bis dahin rendert die Shell die Leiste, die
   // danach 37 px zusammenfällt (gemessen: 19 Frames, CLS 0.030 statt 0.005).
   // Die Rücknahme beim Verlassen bleibt geteilt (`useLeserDaten`, ein

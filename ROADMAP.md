@@ -385,9 +385,11 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 - **Merkposten:** `register.json` steht bei 97 % des 780-KB-gzip-Deckels — wer es weiter belädt,
   reisst `check:perf-budget`; Lösung ist eine eigene Projektion, nie das Anheben der Schranke (§8).
 - [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — ✅ V1a/V1b/V1c gebaut 3./4.7.2026 (Chronik):
-  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/v3/PanelMaterialien.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, reine UI auf vorhandenen Daten (§3). Offen:
-  V2 (E3-Serving) · V3 (E6a) — an den Datenstrang gekoppelt.
+  V2 (E3-Serving) · V3 (E6a) — an den Datenstrang gekoppelt. Rest-Umfang nach H5 (21.8.2026,
+  W2·5m-LESER-V3): «Passende Werkzeuge» und `kontextSoftLaw` (Behörden-Ressourcen) sind kein
+  Material zur Entstehung und gehören nicht in den Panel-Reiter «Materialien» (Kontaktbogen H4 §7a).
   **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
   - [ ] «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen (`bezugAuswahl.ts`/`bezuegeLaden.ts`) — Code-Zusage ohne Deckung ist keine Option (§5/§8). §13.
   - [ ] **VZUI-SACHGEBIET · Sachgebiet-Facette an der Norm↔Entscheid-Kante** — deterministisch aus der amtlichen BGE-Bandnummer I–V (§2, keine Heuristik). Extraktion = Risikopfad ⇒ Gegenprüfung. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12.

@@ -5,11 +5,11 @@ import { useMeldeInhaltsKopf } from '../../../components/layout/InhaltsKopfKonte
 //
 // BEFUND des Ästhetik-Reviews, reproduziert an `/gesetze/bund/EMRK` (pdf-embed),
 // `/gesetze/bund/DSGVO` (nur-live-link) und `/gesetze/bund/GIBTSNICHT`
-// (Fehlseite), je mit `?leser=v3`: `../GesetzLeserV3.tsx` meldet
-// `KopfDaten.kopfzeileSelbst` UNBEDINGT — die App-Krumen-Leiste schweigt also.
-// Auf genau diesen drei Wegen kehrt `./LeserRahmenV3` aber früh zurück und
+// (Fehlseite): `../../GesetzLeser.tsx` (bis H5: `gesetz-leser/GesetzLeserV3.tsx`)
+// meldet `KopfDaten.kopfzeileSelbst` UNBEDINGT — die App-Krumen-Leiste schweigt
+// also. Auf genau diesen drei Wegen kehrt `./LeserRahmenV3` aber früh zurück und
 // rendert `./LeserKopf` nie. Ergebnis: weder App-Krume noch Leser-Krume noch ✕ —
-// eine Seite ohne jeden Weg zurück. In V1 trug die Leiste ihn.
+// eine Seite ohne jeden Weg zurück. Die frühere Ist-Hülle trug ihn.
 //
 // DIE KORREKTUR IST EINE RÜCKNAHME, KEINE ZWEITE QUELLE. `meldeInhaltsKopf(null)`
 // heisst nicht «kein Kopf», sondern «ich melde nichts» — die Shell fällt dann auf
@@ -21,7 +21,7 @@ import { useMeldeInhaltsKopf } from '../../../components/layout/InhaltsKopfKonte
 // RESERVIERT datenunabhängig und synchron — sie muss, denn der Rahmen ist `lazy`,
 // und ohne die Reservierung rendert die Shell die Leiste und lässt sie danach um
 // 37 px zusammenfallen (gemessen 17.8.2026 @1440 StPO: CLS 0.030 statt 0.005;
-// Messreihe in `../GesetzLeserV3.tsx`). Dieser Hook KORRIGIERT die Reservierung,
+// Messreihe in `../../GesetzLeser.tsx`). Dieser Hook KORRIGIERT die Reservierung,
 // sobald die Daten sagen, dass sie falsch war. Die Reihenfolge ist gesichert: die
 // Fassade ist beim Eintreffen des Chunks längst montiert, ihr Layout-Effekt hat
 // konstante Deps und läuft nicht erneut.

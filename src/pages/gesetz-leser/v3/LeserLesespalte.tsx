@@ -121,12 +121,12 @@ export function LeserLesespalte({ m }: {
     // schmaler als sein eigenes Mass und schwankte mit dem Klapp-Zustand.
     // `max-w-reading` (40 rem) ist ein BESTEHENDES Haus-Token, kein Ad-hoc-Wert.
     //
-    // DEKLARIERTE ÄNDERUNG AN DER PX-REGION: der Textkörper wird schmaler, die
-    // V3-Baseline ist einmalig neu gesetzt. Zulässig, weil PX seit dem
-    // Entscheid vom 16.8. bei GLEICHER Artikelbreite misst
-    // (`e2e/px-textkoerper.e2e.ts`) — es beweist den Text-KERN, nicht den
-    // Satzspiegel. Ohne diese Trennung risse jede Layout-Entscheidung das
-    // Treue-Tor mit, und genau daran wäre es unbrauchbar geworden.
+    // DEKLARIERTE ÄNDERUNG AN DER PX-REGION (Herleitung, historisch): der
+    // Textkörper wurde schmaler, die V3-Baseline damals einmalig neu gesetzt —
+    // zulässig, weil der frühere Pixelvergleich (`e2e/px-textkoerper.e2e.ts`,
+    // A-7, V1 gegen V3) bei GLEICHER Artikelbreite mass, den Text-KERN also
+    // unabhängig vom Satzspiegel bewies. Mit H5 (21.8.2026) gelöscht — V1, das
+    // Vergleichsziel, gibt es nicht mehr.
     <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
       <div className="space-y-2">
         {ohneGliederung.length > 0 && (

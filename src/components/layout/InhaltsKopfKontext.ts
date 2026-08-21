@@ -44,7 +44,7 @@ export interface KopfDaten {
    *  ERWEITERUNGSPUNKT, KEIN SONDERFALL (FL-1): hier steht nichts über den
    *  Gesetzes-Leser und nichts über ein Flag. `layout/**` erfährt aus dem
    *  Vertrag nur, WER die Kopfzeile trägt — nicht, welche Hülle gerade läuft.
-   *  Wer das Feld nicht meldet (alle Ist-Seiten, V1), bekommt die Leiste
+   *  Wer das Feld nicht meldet (alle übrigen Inhaltsseiten), bekommt die Leiste
    *  unverändert (FL-4).
    *
    *  Wer es meldet, meldet die übrigen Felder NICHT mehr — auch `breadcrumb`
@@ -54,7 +54,8 @@ export interface KopfDaten {
    *  Daten: die Meldung ist ein KONSTANTER Satz und kann darum im ersten
    *  Render-Commit stehen, bevor irgendein Snapshot geladen ist — sonst rendert
    *  die Shell die Leiste und lässt sie danach zusammenfallen (Layout-Sprung
-   *  §15.2; die Messung steht in `pages/gesetz-leser/GesetzLeserV3.tsx`). */
+   *  §15.2; die Messung steht in `pages/GesetzLeser.tsx`,
+   *  bis H5 (21.8.2026) `gesetz-leser/GesetzLeserV3.tsx`). */
   kopfzeileSelbst?: boolean;
 }
 

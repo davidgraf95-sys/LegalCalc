@@ -1,22 +1,23 @@
 /**
- * Der Fussnoten-Toggle (`html[data-fussnoten="aus"]`) muss in BEIDEN Leser-Hüllen
- * gleich schalten — der eingefrorenen Ist-Hülle V1 und der V3-Hülle hinter dem Flag.
+ * Der Fussnoten-Toggle (`html[data-fussnoten="aus"]`) — hüllenneutrale
+ * CSS-Regel (`.lc-leser`-Scope, kein React-Zweig im Artikel-Baum).
  *
  * ANLASS (Treuebruch 16.8.2026, gemessen, PR #539 / Stand 5e90082e3): Die Regel
  * suchte den Fussnoten-MARKER über seinen ACCESSIBLE NAME
  * (`button[aria-label^="Fussnote"]`) und traf damit in V3 auch den SCHALTER im
  * Ansicht-Menü («Fussnoten (283)») — er blendete sich selbst aus. Der Fix
- * verengte den Selektor damals auf `#lc-lesespalte`. Gemessen an der Ist-Hülle
- * (BGBM, localhost-Preview): 4 von 29 Marker-Buttons liegen AUSSERHALB
- * `#lc-lesespalte` (Erlasskopf/Ingress) — die Verengung schaltete V1 dort still
- * ab und verletzte die Zusage FL-4 (ohne Flag bitgleich).
+ * verengte den Selektor damals auf `#lc-lesespalte`. Gemessen an der damaligen
+ * Ist-Hülle (BGBM, localhost-Preview, inzwischen mit H5 gelöscht): 4 von 29
+ * Marker-Buttons lagen AUSSERHALB `#lc-lesespalte` (Erlasskopf/Ingress) — die
+ * Verengung schaltete dort still ab und verletzte die damalige Zusage FL-4
+ * (ohne Flag bitgleich).
  *
  * WURZEL-FIX: Der Marker trägt eine eigene Kennung `data-fn-ref`
  * (`src/components/normtext/ArtikelBody.tsx`); die CSS-Regel greift darüber und
  * gar nicht mehr über Text. Der Schalter trägt die Kennung nicht.
  *
- * Dieses Tor hält beides fest — es ist billiger als ein zweites e2e und deckt
- * genau den Mechanismus, der bis zur CI unbemerkt blieb.
+ * Dieses Tor hält den Mechanismus fest, der ursprünglich bis zur CI unbemerkt
+ * blieb — es ist billiger als ein zweites e2e.
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
@@ -74,7 +75,9 @@ describe('Fussnoten-Toggle schaltet hüllenneutral (V1 = V3)', () => {
   });
 
   it('der Ansicht-Schalter trägt die Marker-Kennung nicht (sonst blendet er sich selbst aus)', () => {
-    for (const datei of ['../pages/gesetz-leser/LeserAnsichtMenu.tsx', '../pages/gesetz-leser/v3/LeserAnsichtV3.tsx']) {
+    // `LeserAnsichtMenu.tsx` (Ist-Hülle) gelöscht 21.8.2026 (H5) — nur noch
+    // der eine verbliebene Ansicht-Schalter wird geprüft.
+    for (const datei of ['../pages/gesetz-leser/v3/LeserAnsichtV3.tsx']) {
       const quelle = readFileSync(fileURLToPath(new URL(datei, import.meta.url)), 'utf8');
       expect(quelle, `${datei} trägt data-fn-ref — der Schalter blendet sich selbst aus`).not.toMatch(
         /data-fn-ref\b/,

@@ -13,8 +13,10 @@
 //     `onKantone`. Wer sie mountet, entscheidet, woher der Zustand kommt.
 //   · OHNE KENNTNIS IHRER UMGEBUNG — kein Bezug auf Kopfzeile, Menü, Panel oder
 //     Reader. Sie rendert einen Streifen und sonst nichts.
-// Heute mountet sie `LeserAnsichtMenu` (die vorhandene Persistenz- und
-// Pre-Paint-Mechanik liegt dort). B5 mountet dieselbe Datei im Header.
+// Heute mountet sie `v3/PanelFilterZeile.tsx` hinter der Klappe «Instanzen»
+// im Leser-Panel (H3, Kap. 4d) — bis H5 (21.8.2026) ausserdem
+// `LeserAnsichtMenu` der Ist-Hülle (die vorhandene Persistenz- und
+// Pre-Paint-Mechanik lag dort).
 //
 // STRIKT GETRENNT von der ANZEIGE-Schicht: die Kantenliste am Artikelfuss
 // (`gesetz-leser/parts/BezuegeZeile.tsx`) weiss nichts von dieser Steuerung und
