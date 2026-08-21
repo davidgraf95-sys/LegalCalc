@@ -54,7 +54,7 @@ export function RechtsgebietUebersicht({ erlasse }: { erlasse: BrowseErlass[] })
               'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5',
               'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-x-5',
             )}>
-              {g.erlasse.map((e) => <ErlassZeile key={e.key} e={e} />)}
+              {g.erlasse.map((e) => <ErlassZeile key={e.key} e={e} variant="leitgesetz" />)}
             </div>
           </div>
         ))}
