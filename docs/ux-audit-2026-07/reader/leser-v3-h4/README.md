@@ -521,11 +521,33 @@ merkt es. Nach Gewicht:
 1. **Materialien-Daten am V3-Panel** (`materialien-m5-verzahnung`) — Rechtsdaten,
    höchstes Gewicht: kuratiertes Sublabel «via Art. 24», Dokument-Stand,
    async-Merge des Soft-Law-Shards.
+   **21.8.2026 (§7b-Deckungsprüfung):** geprüft und ausdrücklich NICHT gebaut —
+   `PanelMaterialien.tsx` schliesst Soft-Law/kuratierte Nachträge bewusst aus
+   dem Reiter aus («SOFT LAW BLEIBT DRAUSSEN», Dateikopf-Kommentar dort: eine
+   dritte/vierte Sache neben Entstehung/In-Arbeit, kein blosser Bau-Rückstand).
+   Nachbau wäre >150 Zeilen (Shard-Merge, kuratiertes Sublabel, Erlass-Ebene-
+   Zähler) UND ein Produktentscheid (gehört Soft-Law überhaupt in diesen
+   Reiter?), keine reine Test-Deckungslücke. **Zusicherung in V3 bewusst
+   entfallen — Alt-Spec fällt in H5 ersatzlos; David-Veto offen.**
 2. **Facetten- und Zeitstrahl-WIRKUNG am V3-Panel** (`bezuege-facetten-b4`,
    `bezuege-zeitstrahl-b5`) — inkl. der beiden Migrations-Fälle gespeicherter
    Alt-Stufen. `leser-v3-panel-facetten` prüft heute nur den Ort.
 3. **★-Wortlaut-Gleichheit und «via Art. N»** am Panel-Entscheid (`verzahnung`
    MM4/MM5) sowie das **↻** (`normrevision-badge`).
+   **21.8.2026 (§7b-Deckungsprüfung):** MM4 und MM5 geprüft und ausdrücklich
+   NICHT gebaut — beides dokumentierte V3-Produktentscheide, kein Bau-
+   Rückstand. **MM4 (★):** `PanelEntscheide.tsx` Ä106-Kommentar («DAS ★ IST
+   GESTRICHEN», Live-Ästhetik-Prüfung 18.8.2026) — die Leitfall-Zeile, an der
+   der Vier-Orte-Vergleich seinen dritten Bein hatte, ist absichtlich
+   entfallen; der Gruppenkopf trägt die Auskunft bereits im Wort. **MM5 («via
+   Art. N»):** architektonisch entfallen — das V3-Panel ist gemäss Dateikopf
+   («an EINEM Ort», Kap. 4d) IMMER auf den gelesenen Artikel gescopet, nie
+   erlass-weit aggregiert; ohne Aggregat gibt es keine Mehrdeutigkeit, die ein
+   Artikel-Sublabel auflösen müsste. Ein Nachbau widerspräche der erklärten
+   Architektur und wäre zudem >150 Zeilen. **Zusicherung in V3 bewusst
+   entfallen (Verweis auf die Ä106- bzw. Kap.-4d-Kommentare oben) — Alt-Spec
+   fällt in H5 ersatzlos; David-Veto offen.** Das ↻ (`normrevision-badge`)
+   bleibt offen — anders als MM4/MM5 eine reine Bau-Lücke, kein Entscheid.
 4. **Erwägungs-Sprung und Kurztext-Popover** ab Panel-Chip (`verzahnung`
    Fundstelle A, `leitfaelle-chips` (d)).
 5. **A34/Bug1 + Bug2 mit V3-Einstieg** und der **Druck im Split**
