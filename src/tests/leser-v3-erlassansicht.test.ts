@@ -20,11 +20,14 @@ import type { KantonSystematik } from '../lib/normtext/systematik';
 // umstellen.
 
 describe('ebeneAngabe — die drei Ebenen des Korpus', () => {
-  it('Bund: Label «Bund», Ziel die ungefilterte Übersicht', () => {
+  // Cowork-Befund 14 (18.8.2026, fachliche Korrektur): das Ziel zeigte vorher
+  // auf `/gesetze` — dasselbe Ziel wie die Krumen-Stufe «Gesetze» davor, also
+  // faktisch keine Filterung. Jetzt die gefilterte Bund-Übersicht.
+  it('Bund: Label «Bund», Ziel die gefilterte Bund-Übersicht', () => {
     const e: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet'> = {
       ebene: 'bund', kanton: null, rechtsgebiet: 'privat',
     };
-    expect(ebeneAngabe(e)).toEqual({ label: 'Bund', to: '/gesetze' });
+    expect(ebeneAngabe(e)).toEqual({ label: 'Bund', to: '/gesetze?ebene=bund' });
   });
 
   it('Kanton BS: Label «Kanton BS», Ziel mit Ebene- und Kantonsfilter', () => {
@@ -136,7 +139,9 @@ describe('brotkrume — genau drei Stufen, die letzte ohne `to`', () => {
     const b = brotkrume(e);
     expect(b).toHaveLength(3);
     expect(b[0]).toEqual({ label: 'Gesetze', to: '/gesetze' });
-    expect(b[1]).toEqual({ label: 'Bund', to: '/gesetze' });
+    // Cowork-Befund 14 (18.8.2026, fachliche Korrektur, s. o.): «Bund» führt
+    // nicht mehr zum selben Ziel wie «Gesetze».
+    expect(b[1]).toEqual({ label: 'Bund', to: '/gesetze?ebene=bund' });
     expect(b[2]).toEqual({ label: 'OR' });
   });
 

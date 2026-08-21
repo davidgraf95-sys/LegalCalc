@@ -142,7 +142,9 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     // alten Leiste — plus Kürzel, Ortsangabe und Ansicht.
     const ort = page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
     await expect(ort.getByRole('link', { name: 'Gesetze' })).toHaveAttribute('href', '/gesetze')
-    await expect(ort.getByRole('link', { name: 'Bund' })).toHaveAttribute('href', '/gesetze')
+    // Cowork-Befund 14 (18.8.2026, fachliche Korrektur): «Bund» zeigte vorher
+    // auf dasselbe Ziel wie «Gesetze» — jetzt auf die gefilterte Bund-Übersicht.
+    await expect(ort.getByRole('link', { name: 'Bund' })).toHaveAttribute('href', '/gesetze?ebene=bund')
     await expect(page.locator('[data-v3-kopf-kuerzel]')).toHaveText('StPO')
     await expect(page.locator('[data-v3-kopf] [data-v3-ansicht]')).toBeVisible()
     await expect(page.locator('[data-v3-kopf-schliessen]'),
@@ -390,6 +392,60 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
       await expect(kurz).toHaveAttribute('href', '/gesetze')
       await expect(kurz).toBeVisible()
     }
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  // ── (j) DIE RESERVIERUNG ÜBERLEBT JEDEN PFADWECHSEL (Cowork-Befund 1/53) ──
+  //
+  // BEFUND (externe Test-Session 18.8.2026, Mechanik dort vermessen): nach einem
+  // Erlass-Wechsel (ZGB → OR) oder der Zurücktaste in einen zuvor besuchten
+  // Erlass erschien die App-Krumen-Leiste im LAUTEN Zustand («‹ Gesetze › StPO ✕»,
+  // z-19) GENAU AUF der V3-Werkzeugleiste (z-17, gleiches top 64 px) und
+  // übermalte «Rechtsprechung» und «Ansicht»; ihr ✕ führte auf die Startseite
+  // (Befunde 1, 4, 15, 17, 53). WURZEL im Code: die Shell setzt ihre Kopfdaten
+  // bei JEDEM Pfadwechsel zurück (Shell.tsx, «frische Seite meldet neu»), aber
+  // die Melde-Effekte des Lesers (`useKopfAnspruch`, Fassaden-Reservierung)
+  // hingen nicht am Pfad — sie meldeten nur beim Mount, und der Leser bleibt
+  // beim Erlass-Wechsel gemountet. Danach griff der `kopfVonPfad`-Fallback.
+  // ROT ZU BEKOMMEN (§6.7, am 21.8.2026 gesehen): in `useKopfAnspruch.ts` den
+  // `pathname` wieder aus den Deps nehmen ⇒ nach dem Wechsel misst `appLeisten` 1.
+  test('(j) Erlass-Wechsel und Zurücktaste: die App-Leiste bleibt still', async ({ page }) => {
+    test.slow() // drei Leser-Ladevorgänge in einer Sitzung
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+
+    // Client-seitiger Wechsel in einen ZWEITEN Erlass über die Fuss-Navigation
+    // («<Kürzel> ›», exakt die Repro der Test-Session). Kein `page.goto`: ein
+    // Vollreload wäre der Erstaufruf, den (a) schon prüft — der Befund braucht
+    // den Route-Param-Wechsel bei GEMOUNTETEM Leser.
+    await page.locator('nav[aria-label="Weitere Erlasse"] a').last().click()
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(400)
+    let m = await chrome(page)
+    expect(m.appLeisten, 'App-Leiste laut nach Erlass-Wechsel (Befund 1)').toBe(0)
+    expect(m.appKrumen, 'zweite Krume nach Erlass-Wechsel').toBe(0)
+
+    // Zurücktaste in den vorher besuchten Erlass (Befund 53).
+    await page.goBack() // → BGFA, client-seitig (popstate)
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(400)
+    m = await chrome(page)
+    expect(m.appLeisten, 'App-Leiste laut nach Zurücktaste (Befund 53)').toBe(0)
+    expect(m.appKrumen, 'zweite Krume nach Zurücktaste').toBe(0)
+    // Und die Werkzeugleiste ist BEDIENBAR: der oberste Treffer am «Ansicht»-Griff
+    // ist der Griff selbst, nicht der Container der App-Leiste (elementFromPoint —
+    // exakt die Messung der Test-Session).
+    const oben = await page.evaluate(() => {
+      const griff = document.querySelector('[data-v3-kopf] [data-v3-ansicht]')
+      if (!griff) return 'kein-griff'
+      const r = griff.getBoundingClientRect()
+      const el = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2)
+      return el && (griff === el || griff.contains(el) || el.contains(griff)) ? 'griff' : `verdeckt:${el?.className}`
+    })
+    expect(oben, 'die V3-Werkzeugleiste ist übermalt').toBe('griff')
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

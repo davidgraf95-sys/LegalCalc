@@ -152,3 +152,47 @@ test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
     expect(passt).toBe(true)
   })
 })
+
+// Cowork-Befund 38 (21.8.2026): Fokus per Tab ins Topbar-Suchfeld öffnete das
+// Vorschlagsfenster (Leerzustand: Verlauf + Einstiege) — jede Zeile war darin
+// ein echter `<a>`-Tab-Stopp, bis zu 9× Tab liess den Fokus im Widget hängen,
+// erst Escape löste zuverlässig. Fix: SucheLeerzustand.tsx rendert seither
+// dieselbe ARIA-Listbox wie die Trefferliste (role=option, Pfeiltasten + Enter
+// über das steuernde Feld) — TAB verlässt das Feld wie jedes normale Kontrollelement.
+test.describe('Tastaturfalle in der globalen Suche (Cowork-Befund 38)', () => {
+  test('Tab verlässt das leere Suchfeld (Verlauf/Einstiege-Fenster) in ≤3 Schritten', async ({ page }) => {
+    await page.goto('/')
+    const feld = sucheFeld(page)
+    await feld.click()
+    // Leerzustand offen (kein Text getippt) — genau der Befund-38-Auslöser.
+    await expect(page.getByRole('listbox', { name: /Verlauf und Einstiege/ })).toBeVisible()
+    await expect(feld).toBeFocused()
+
+    let verlassen = false
+    for (let i = 0; i < 3 && !verlassen; i++) {
+      await page.keyboard.press('Tab')
+      verlassen = !(await feld.evaluate((el) => el === document.activeElement))
+    }
+    expect(verlassen, 'Tab liess den Fokus > 3 Schritte im Suchfeld/-fenster hängen').toBe(true)
+    // Der Fokus landet auf einem ECHTEN Folge-Element ausserhalb des Feldes,
+    // nicht auf einer Listbox-Option (role=option ist bewusst kein Tab-Stopp).
+    await expect(page.locator(':focus')).not.toHaveAttribute('role', 'option')
+  })
+
+  test('Pfeiltasten navigieren die Vorschläge weiterhin (Combobox-Muster bleibt intakt)', async ({ page }) => {
+    await page.goto('/')
+    const feld = sucheFeld(page)
+    await feld.click()
+    const box = page.getByRole('listbox', { name: /Verlauf und Einstiege/ })
+    await expect(box).toBeVisible()
+    await expect(feld).toHaveAttribute('aria-expanded', 'true')
+    await page.keyboard.press('ArrowDown')
+    const aktivId = await feld.getAttribute('aria-activedescendant')
+    expect(aktivId).toBeTruthy()
+    // Attribut-Selektor statt `#id` — die Options-ID enthält `:`/`/` (aus
+    // React `useId()` bzw. der Route), ungültig als roher ID-Selektor.
+    await expect(box.locator(`[id="${aktivId}"]`)).toHaveAttribute('aria-selected', 'true')
+    // Der Fokus selbst bleibt beim Pfeil-Navigieren im Feld (Combobox-Muster).
+    await expect(feld).toBeFocused()
+  })
+})

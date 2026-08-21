@@ -102,7 +102,9 @@ export function ebeneAngabe(
     return { label: 'International', to: '/gesetze?ebene=international' };
   }
   if (erlass.ebene === 'bund') {
-    return { label: 'Bund', to: '/gesetze' };
+    // Cowork-Befund 14 (18.8.2026): «Bund» zeigte auf dasselbe Ziel wie «Gesetze»
+    // (beide `/gesetze`) — die gefilterte Übersicht braucht `?ebene=bund`.
+    return { label: 'Bund', to: '/gesetze?ebene=bund' };
   }
   const kt = erlass.kanton ?? '';
   return { label: `Kanton ${kt}`, to: `/gesetze?ebene=kanton&kt=${encodeURIComponent(kt)}` };

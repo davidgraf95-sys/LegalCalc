@@ -284,7 +284,13 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
         // Muster lc-fineprint): auf brass-getönten Flächen (Hero) fällt ink-500
         // bei 11px unter AA (axe 4.23:1) — ink-600 trägt AA in beiden Themes.
         <p className="mt-2 px-1 text-micro leading-snug text-ink-600">
-          Durchsucht: {abdeckung.volltext} Bund-Erlasse im Volltext · {abdeckung.bge} BGE ·
+          {/* «Erlasse (Bund + International)», nicht «Bund-Erlasse» (Cowork-Befund
+              32, 18.8.2026): die Zahl zählt alle Volltext-Snapshots der Ebene
+              `bund` — darunter die Staatsverträge/EU-Erlasse, die unter dieser
+              Ebene geführt werden. Die /gesetze-Kachel «Bundesrecht» zählt den
+              Katalog OHNE International (201 vs. 227): zwei Mengen, die ohne
+              Benennung wie ein Widerspruch lasen (§8). */}
+          Durchsucht: {abdeckung.volltext} Erlasse im Volltext (Bund + International) · {abdeckung.bge} BGE ·
           {' '}kantonale Erlasse ({abdeckung.kantonTitel}): nur nach Titel.{' '}
           <Link to="/abdeckung" onClick={onAuswahl} className="text-brass-700 no-underline hover:text-brass-600">Was ist drin? →</Link>
         </p>

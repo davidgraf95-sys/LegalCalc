@@ -7,6 +7,11 @@ import type { Histogramm, Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { gruppiereKanten } from './panelModell';
 import { PanelFilterZeile } from './PanelFilterZeile';
+import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideKontext';
+
+// Befund 6b (Cowork 21.8.2026): Weiterzug-Klammerzusatz-Erklärung — Muster,
+// Text und Prüf-Funktion stehen in `PanelEntscheideKontext.ts`
+// (react-refresh/only-export-components, Muster wie `InhaltsKopfKontext.ts`).
 
 // ─── Reiter «Entscheide» (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─────────────────────
 //
@@ -79,8 +84,18 @@ function Fundstelle({ b, normZitat }: { b: Bezug; normZitat: string }) {
     <li data-v3-panel-entscheid={b.key} className="border-t border-line/60 py-1.5 first:border-t-0">
       <Link to={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
         className="group block no-underline">
-        <span className="flex items-baseline gap-2">
-          <span className="num shrink-0 text-body-s font-medium text-brass-700 group-hover:underline">{b.zitierung}</span>
+        {/* Befund 6a (Cowork 21.8.2026): beide Spans standen bisher `shrink-0`
+            ohne `min-w-0` in der `overflow-x-hidden`-Ahnenbox (LeserPanel.tsx)
+            — bei schmalem Panel wurde die Zitierung hart abgeschnitten, ohne
+            dass der volle Text je erreichbar war (§8: Informationsverlust).
+            `flex-wrap` + `min-w-0`/`break-words` an der Zitierung: sie
+            umbricht statt abzuschneiden, das kurze Datum darf bei Bedarf in
+            die nächste Zeile rutschen (kein Informationsverlust dort, es
+            bleibt vollständig lesbar) — kein Sprung im Zeilen-Rhythmus, nur
+            eine zusätzliche Zeile bei sehr schmalem Panel. `title` als
+            zusätzlicher, verlustfreier Zugriff auf den vollen Wortlaut. */}
+        <span className="flex flex-wrap items-baseline gap-x-2">
+          <span title={b.zitierung} className="num min-w-0 max-w-full break-words text-body-s font-medium text-brass-700 group-hover:underline">{b.zitierung}</span>
           <span className="num shrink-0 text-micro text-ink-500">{datumAnzeige(b.datum)}</span>
         </span>
         {b.regesteKurz && (
@@ -152,6 +167,11 @@ export function PanelEntscheide({
               <p className="lc-overline" title={`${STATUS_LABEL[status]} — ${liste.length} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}>
                 {KLASSE_KURZ[status]}
                 <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{liste.length}</span>
+                {/* Befund 6b: EIN Hinweis je Gruppe, nicht je Zeile (Ä106). */}
+                {traegtWeiterzugHinweis(liste) && (
+                  <span aria-label={WEITERZUG_ERKLAERUNG} title={WEITERZUG_ERKLAERUNG}
+                    className="ml-1 normal-case font-normal text-ink-400">ⓘ</span>
+                )}
               </p>
               {/* KEINE Portionierung, kein «weitere 5»: die Liste im Panel darf
                   senkrecht wachsen, das Panel scrollt ohnehin. Die Kappung am

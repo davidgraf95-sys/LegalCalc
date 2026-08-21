@@ -92,8 +92,34 @@ export function LeserLeseZeile({
 
       {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis H1
           über die VOLLE Breite und schob die Seitenleiste bei 1440 px unter die
-          Falz — obwohl sie in V3 die Hauptnavigation ist. */}
-      <div className="min-w-0 space-y-5">{zelle}</div>
+          Falz — obwohl sie in V3 die Hauptnavigation ist.
+
+          Auftrag David 21.8.2026 · SCROLL-BLUR: eine dezente Verlaufskante am
+          Kopf-Unterrand (wo `--nt-stick` endet) und am unteren Viewport-Rand,
+          damit Text sanft unter dem klebenden Kopf verschwindet statt hart zu
+          schneiden — wie in Chat-Oberflächen. Reines CSS, keine Scroll-Handler
+          (§15): `position: sticky` folgt automatisch dem jeweils NÄHEREN
+          Scroll-Container — dem Fenster in der Einzelansicht, dem
+          `overflow-y-auto`-Pane im Split-View (`components/layout/Shell.tsx`)
+          — ohne dass diese Datei wissen muss, welcher Fall gerade gilt.
+          `h-0` an den beiden äusseren Trägern: sie nehmen im Fluss KEINEN Platz
+          ein (kein CLS, keine zusätzliche Lücke in `space-y-5`) — der sichtbare
+          Streifen ist ein `overflow-visible`-Kind, das aus der Null-Höhe heraus
+          über den scrollenden Text ragt. Eigene Ebene AUSSERHALB von
+          `LeserLesespalte` (PX-gesperrt, s. dort) — kein Byte dort angefasst.
+          `bg-paper`: dieselbe opake Fläche wie der klebende Kopf
+          (`LeserKopf.tsx`), also nahtlos; Token statt Hex, beide Themes über
+          die CSS-Variable `--paper`. `print:hidden`: im Druck nur Ballast. */}
+      <div className="relative min-w-0">
+        <div aria-hidden data-v3-blur="oben" className="pointer-events-none sticky z-10 h-0 overflow-visible print:hidden"
+          style={{ top: 'var(--nt-stick)' }}>
+          <div className="h-8 bg-gradient-to-b from-paper to-transparent" />
+        </div>
+        <div className="space-y-5">{zelle}</div>
+        <div aria-hidden data-v3-blur="unten" className="pointer-events-none sticky bottom-0 z-10 h-0 overflow-visible print:hidden">
+          <div className="-mt-8 h-8 bg-gradient-to-t from-paper to-transparent" />
+        </div>
+      </div>
 
       {panelZone}
     </div>

@@ -59,8 +59,15 @@ export function Footer() {
             <a href="https://www.fedlex.admin.ch" target="_blank" rel="noopener noreferrer"
               className="text-brass-700 hover:text-brass-600 no-underline">fedlex.admin.ch</a>
           </p>
+          {/* Präzisiert (Cowork-Befund 31, 18.8.2026): der Pauschalsatz «Ihre
+              Eingaben verlassen den Browser nicht» stand im Widerspruch zur
+              Online-Volltextsuche, deren Fusszeile ehrlich sagt, dass
+              Suchbegriffe den Browser dafür verlassen (§8). Der Satz nennt
+              jetzt seinen Geltungsbereich; die Ausnahme steht dort, wo sie
+              anfällt — an der Online-Suche selbst. */}
           <p className="text-body-s text-ink-500 leading-relaxed">
-            Ihre Eingaben verlassen den Browser nicht.
+            Eingaben in Rechnern und Vorlagen verlassen den Browser nicht; nur
+            Online-Suchen senden die Suchbegriffe an den jeweiligen Suchdienst.
           </p>
         </div>
       </div>

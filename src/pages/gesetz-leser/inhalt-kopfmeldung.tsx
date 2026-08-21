@@ -81,9 +81,11 @@ export function useInhaltsKopfMeldung(opts: {
       ? 'International'
       : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`;
     // Ebene-Segment klickbar → gefilterte Gesetzes-Übersicht (?ebene=/?kt=).
+    // Cowork-Befund 14 (18.8.2026): «Bund» zeigte auf dasselbe Ziel wie «Gesetze»
+    // (beide `/gesetze`) — die gefilterte Übersicht braucht `?ebene=bund`.
     const ebeneTo = erlass.rechtsgebiet === 'international'
       ? '/gesetze?ebene=international'
-      : erlass.ebene === 'bund' ? '/gesetze'
+      : erlass.ebene === 'bund' ? '/gesetze?ebene=bund'
         : `/gesetze?ebene=kanton&kt=${encodeURIComponent(erlass.kanton ?? '')}`;
     // A35 (David 19.7.2026): ☰-Gliederungsknopf, den das In-Gesetz-Suchfeld im Kopf
     // mitführt (löst die frühere `data-such-bar`-Position ab, die in der Einzelansicht
