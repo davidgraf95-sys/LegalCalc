@@ -37,7 +37,16 @@ export function gruppiereNachRechtsgebiet(erlasse: BrowseErlass[]): Rechtsgebiet
   for (const liste of map.values()) {
     liste.sort((a, b) => a.rang - b.rang || a.kuerzel.localeCompare(b.kuerzel, 'de'));
   }
-  return GEBIETE
+  const gruppen = GEBIETE
     .filter((g) => map.has(g.id))
     .map((g) => ({ gebiet: g.id, label: g.label, erlasse: map.get(g.id)! }));
+  // Kein Wert fällt still raus (§8, Gegenprüfung 21.8.2026): trägt ein Erlass
+  // ein Rechtsgebiet, das (noch) nicht in GEBIETE deklariert ist — möglich,
+  // weil die `as Record`-Casts in register.ts den Compile-Schutz aushebeln —,
+  // erscheint er in einer Rest-Rubrik am Ende statt zu verschwinden. Der
+  // Wächter-Test in rechtsgebiet-gruppierung.test.ts hält den Fall rot-fähig.
+  const deklariert = new Set<Rechtsgebiet>(GEBIETE.map((g) => g.id));
+  const rest = [...map.entries()].filter(([id]) => !deklariert.has(id));
+  for (const [id, liste] of rest) gruppen.push({ gebiet: id, label: 'Weitere Erlasse', erlasse: liste });
+  return gruppen;
 }

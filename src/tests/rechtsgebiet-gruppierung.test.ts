@@ -47,4 +47,16 @@ describe('gruppiereNachRechtsgebiet — J3 (SSoT-Achse, GEBIETE-Reihenfolge)', (
     const g = gruppiereNachRechtsgebiet(liste);
     expect(g.reduce((n, x) => n + x.erlasse.length, 0)).toBe(liste.length);
   });
+
+  // Gegenprüfungs-Hinweis 21.8.2026 (Code-Lupe J3): `GEBIETE.filter(map.has)`
+  // droppt jeden Rechtsgebiet-Wert STILL, der nicht in GEBIETE deklariert ist —
+  // und die `as Record`-Casts in register.ts hebeln den Compile-Schutz aus. Ein
+  // künftiges 8. Union-Mitglied ohne GEBIETE-Eintrag verschwände stumm aus der
+  // Übersicht (§8). Dieser Wächter macht den Fall laut: jeder Wert, der einem
+  // Erlass zugewiesen werden kann, muss eine Rubrik bekommen.
+  it('WÄCHTER: kein Rechtsgebiet-Wert fällt still aus der Übersicht', () => {
+    const g = gruppiereNachRechtsgebiet([be({ rechtsgebiet: 'nicht-deklariert' as BrowseErlass['rechtsgebiet'] })]);
+    expect(g.reduce((n, x) => n + x.erlasse.length, 0),
+      'ein Erlass mit undeklariertem Rechtsgebiet verschwand still — GEBIETE nachziehen').toBe(1);
+  });
 });
