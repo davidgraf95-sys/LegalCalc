@@ -503,13 +503,39 @@ Baseline **nicht** neu aufgenommen. Rot-Beweis (§6.7), beides gesehen: ohne
 Abschaltung 40 276 px; mit Abschaltung, aber ohne Einschliessung 4383 px
 (StPO 429) bzw. 15 350 px (OR 336c). **Das Tor kann scheitern.**
 
-**⚠ ENTSCHEID DAVID — Satzspiegel, bleibt offen.** Dass V3 den Text schmaler
-setzt als V1, ist gemessen und durch die Auflösung oben **nicht** erledigt: PX
-misst seit der Klemme ausdrücklich den **Text-Kern**, nicht den Satzspiegel.
-«Der Textkörper ändert sich nicht um ein Pixel» (Kap. 7 PX) und «die neue Hülle
-hat eine 18-rem-Seitenleiste» (Kap. 4b) sind bei gleicher Fensterbreite nach wie
-vor nicht gleichzeitig erfüllbar; welche Zusage weicht, entscheidet keine
-Bau-Etappe nebenbei (§7). Der Punkt hängt mit **Ä2** zusammen.
+**✅ ENTSCHIEDEN (David 21.8.2026): Text wächst dynamisch bis zum
+Lesemass-Deckel.** Wörtlicher Auftrag: «können wir machen, dass der
+gesetzestext bei verfügbarer breite vom bildschirm oder wenn gliederung
+eingeklappt ist breiter wird». Damit zugleich erledigt: Cowork-Befund 50
+(«Gliederung ausblenden: Lesespalte gewinnt nichts») und dieser Satzspiegel-
+Punkt. Gebaut: `LESEMASS_MAX` (45 rem = 720 px,
+`pages/gesetz-leser/v3/rahmenSpalten.ts`) hebt den Deckel von `#lc-lesespalte`
+UND `.max-w-normtext` (Artikel-Fliesstext + Ingress) NUR innerhalb der
+V3-Wurzel (`index.css`, `.lc-leser[data-leser-v3="rahmen"]`); die Grid-Zelle
+selbst war über `rahmenBild`/`useRahmenRaum` (A-8, «eine Breiten-Quelle»)
+längst breiter, als der alte 40-rem-Deckel je nutzte (@1440 752 px offen /
+1004 px eingeklappt) — `width:100%` + `max-width` lässt die Spalte darum ohne
+neue Messung bis zum neuen Deckel wachsen und STOPPT dort (Randluft statt
+Vollbreite, Design-Grundlage Kap. 8 Nr. 7). Gemessen @1440: ZGB 68→75 ch,
+OR 71→77 ch, StPO 73→75 ch, VMWG 74→74 ch (Absatz bricht gleich), StGB
+77→78 ch — alle mit Reserve unter der WCAG-Decke (SC 1.4.8, ≤ 80 ch); ein
+erster Versuch mit 46 rem trieb StGB auf 81 ch, darum 45 rem. Damit
+zugleich ENTSCHIEDEN (vormals offener Punkt am Vollzugsvermerk S2, Kap. 8):
+die Hausdecke von `leser-lesemass.e2e.ts` (R5) steigt von 75 auf 80 ch — eine
+Zahl statt zweier knapp beieinanderliegender. **Offengelegte Abweichung
+(§7):** die Zielspanne des Auftrags («~75–90 Zeichen») wird nur am unteren
+Rand erfüllt (75–78 ch statt bis 90) — Ursache ist die vorbestehende, bereits
+geprüfte SC-1.4.8-Zusage (≤ 80 ch), die bei weiterem Wachstum an StGB zuerst
+reisst; sie hat Vorrang vor der Zielspanne. Split-View: dieselbe CSS-Regel
+greift uniform in beiden Panes, keine Sonderbehandlung nötig oder gebaut.
+Deklarierte Verhaltensänderung an `leser-lesemass.e2e.ts` (Hausdecke) und der
+PX-Satzspiegel-Trennung (Ä2) — Branch `feat/leser-lesemass-dynamisch`.
+**Nachzug 21.8.2026 (CI-Rot PR #559):** der erste Wuchs liess die Lese-Zelle
+beim Öffnen des Beiwerk-Blatts auf 40 rem zurückfallen (Ä59/Ä60(c) reservierte
+die Blatt-Spur nur beim tatsächlichen Öffnen) — behoben, indem `rahmenBild`
+(`RahmenBild.lesemassMaxRem`) dieselbe Blatt-Spur-Reserve STATISCH, unabhängig
+vom Blatt-Zustand rechnet: der Wuchs respektiert die Blatt-Spur, Ä60(c) bleibt
+unverändert gültig.
 
 #### Ästhetik-Review H1 (5,5/10) — was H2 nimmt und was bleibt
 

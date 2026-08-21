@@ -647,6 +647,33 @@
     font-size: var(--lm-leser-schrift, 1.0625rem);
   }
 
+  /* Auftrag David 21.8.2026 · LESEMASS-DECKEL STATT VOLLBREITE (Herleitung,
+     Messreihe und die Konstante `LESEMASS_MAX`: `pages/gesetz-leser/v3/
+     rahmenSpalten.ts`). `#lc-lesespalte` (`LeserLesespalte`) trug bislang das
+     feste Tailwind-Token `max-w-reading` (40rem) — unabhängig davon, wie viel
+     Platz die Grid-Zelle (`rahmenBild.spalten`, "eine Breiten-Quelle", A-8)
+     tatsächlich bot. `width:100%` + `max-width` ist bereits das Muster von
+     `max-w-reading`; hier wird nur der DECKEL angehoben, nicht das Muster
+     ersetzt — die Spalte schrumpft in schmalen Zellen weiterhin wie bisher
+     und wächst jetzt zusätzlich bis zum neuen Deckel, statt bei 640px
+     stehenzubleiben.
+     `.max-w-normtext` (Artikel-Fliesstext `ArtikelLeser` + Ingress
+     `ErlassKopfBlock`, beide UNVERÄNDERT im Markup) bekommt DENSELBEN Deckel —
+     sonst bekäme die ungedeckelte Kopfzeile (Art. N · Zitat/Link, volle
+     Zellenbreite) einen anderen rechten Rand als der gedeckelte Fliesstext,
+     exakt der Fehler, den E6/A37 behoben hat (`e2e/leser-breite-a37.e2e.ts`).
+     Beide Selektoren sind auf `.lc-leser[data-leser-v3="rahmen"]` gescoped —
+     dasselbe Konstrukt wie der Schriftregler zwei Regeln oberhalb — und
+     treffen darum NIE in V1 (Ist-Hülle): dort fehlt das Attribut, die Regel
+     kann nicht greifen, `max-w-reading`/`max-w-normtext` bleiben dort bei
+     ihren Ist-Werten (40rem bzw. 42rem). ID-Selektor (`#lc-lesespalte`) und
+     die zusätzliche Attribut-Bedingung sind beide für sich schon spezifischer
+     als die einfachen Tailwind-Utility-Klassen, kein `!important` nötig. */
+  .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte,
+  .lc-leser[data-leser-v3="rahmen"] .max-w-normtext {
+    max-width: var(--leser-lesemass-max, 45rem);
+  }
+
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen
      Layout/Paint. Inhalt bleibt im DOM (Suche/Anker/Screenreader/Crawler
      unberührt), nur der Render-ZEITPUNKT ändert (§6.4). contain-intrinsic-size

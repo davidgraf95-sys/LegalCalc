@@ -1,4 +1,4 @@
-import { isValidElement, useId, useRef } from 'react';
+import { isValidElement, useId, useRef, type CSSProperties } from 'react';
 import { grundartMeta } from '../helpers';
 import { paneRoot } from '../berechnungen';
 import { ErlassKopfBlock } from '../parts';
@@ -290,6 +290,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         ...leserCssVariablen({
           stufe, vollflaechig: !umgebung.imPane, suchZoneKlebt, sucheAktiv: m.sucheAktiv,
         }),
+        // FIX PR #559 (Herleitung `rahmenSpalten.RahmenBild.lesemassMaxRem`): löst den 45rem-Fallback ab, reserviert die Blatt-Spur statisch.
+        ...({ '--leser-lesemass-max': `${bild.lesemassMaxRem}rem` } as CSSProperties),
         // Ä60 (c): die Aufweitung. `undefined`, solange das Blatt keine eigene
         // Spur hat — dann ist der Rahmen Zeichen für Zeichen der bisherige.
         ...bild.breite,
