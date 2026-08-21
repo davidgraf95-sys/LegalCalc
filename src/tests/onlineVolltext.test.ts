@@ -82,6 +82,11 @@ describe('onlineVolltext: 200-Fall', () => {
     expect(g!.gesamt).toBe(4);
     // Kein Volltext im Treffer — nur Snippet als Untertitel (§15).
     expect(g!.treffer[0].untertitel).toContain('Zeugnis');
+    // Cowork-Befund 30 (18.8.2026): die FTS5-Snippet-Klammern (`[Verjährung]`)
+    // um den Treffer-Term sind entfernt — der Client hebt selbst mit <mark>
+    // hervor (SuchResultate.markiere); die Klammern wären doppelte Auszeichnung.
+    expect(g!.treffer[1].untertitel).toBe('… Verjährung …');
+    expect(g!.treffer[1].untertitel).not.toMatch(/[[\]]/);
   });
 
   it('200 mit leerer Antwort → GAR keine Gruppe (null)', async () => {

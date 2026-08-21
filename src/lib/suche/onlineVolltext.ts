@@ -96,19 +96,32 @@ export function entscheidTrefferHref(id: string): string {
   return `/rechtsprechung/${encodeURIComponent(id)}`;
 }
 
+// Cowork-Befund 30 (18.8.2026): der Entscheid-Snippet der Edge-Suche kommt aus
+// SQLite FTS5' `snippet()` (scripts/datenhaltung/suche-kern.ts,
+// SQL_ENTSCHEIDE_TREFFER) — die markiert Treffer-Terme serverseitig mit
+// `[`/`]` (highlight_start/highlight_end). Der Client hebt Treffer aber ZUSÄTZLICH
+// selbst mit <mark> hervor (SuchResultate.markiere, matched gegen `q`) — ohne
+// diesen Schritt standen die Klammern als Textzeichen NEBEN der eigenen
+// Hervorhebung im Auszug («…[257d] [OR] möglich…»). Nur EIN-Wort-Klammern
+// (genau die Treffer-Term-Form aus `baueFtsMatch`) werden entfernt, damit ein
+// zufälliges «[…]» im Originaltext (käme es je vor) nicht verstümmelt wird.
+function entferneSnippetKlammern(snippet: string): string {
+  return snippet.replace(/\[([\p{L}\p{N}][\p{L}\p{N}-]*)\]/gu, '$1');
+}
+
 /** Antwort → geteilte SuchTreffer. Artikel zuerst, dann Entscheide (feste Ordnung). */
 function baueTreffer(antwort: SucheApiAntwort): { treffer: SuchTreffer[]; gesamt: number } {
   const artikel: SuchTreffer[] = (antwort.artikel?.treffer ?? []).map((t) => ({
     id: t.id,
     label: t.titel,
-    untertitel: t.snippet,
+    untertitel: entferneSnippetKlammern(t.snippet),
     marke: { text: 'Gesetz', ton: 'soft' as const, redundant: true },
     href: artikelTrefferHref(t.fundstelle),
   }));
   const entscheide: SuchTreffer[] = (antwort.entscheide?.treffer ?? []).map((t) => ({
     id: t.id,
     label: t.titel,
-    untertitel: t.snippet,
+    untertitel: entferneSnippetKlammern(t.snippet),
     marke: { text: 'Entscheid', ton: 'soft' as const, redundant: true },
     href: entscheidTrefferHref(t.id),
   }));
