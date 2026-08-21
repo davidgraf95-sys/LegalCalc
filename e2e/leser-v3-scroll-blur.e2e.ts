@@ -15,13 +15,11 @@ test.describe('Scroll-Blur an der Lesespalte (V3)', () => {
     const spalte = page.locator('#lc-lesespalte')
     await expect(spalte).toBeVisible({ timeout: 20_000 })
 
-    // Die beiden Träger sind die Geschwister der Lesespalten-Zelle — direkte
-    // Kinder desselben Wrappers (`relative min-w-0`, LeserLeseZeile.tsx).
-    const zelle = spalte.locator('xpath=../..')
-    const traeger = zelle.locator('> div')
-    await expect(traeger).toHaveCount(3) // oben-Träger · Zelle (space-y-5) · unten-Träger
-    const oben = traeger.first()
-    const unten = traeger.last()
+    // Die beiden Träger tragen ein Datenattribut (LeserLeseZeile.tsx) — robuster
+    // als die frühere DOM-Positions-Kette (#lc-lesespalte → ../.. → > div), die
+    // im parallelen Voll-Lauf sporadisch nicht auflöste (Timeout, 21.8.2026).
+    const oben = page.locator('[data-v3-blur="oben"]')
+    const unten = page.locator('[data-v3-blur="unten"]')
 
     // Kein Layout-Einfluss (kein CLS): beide Träger nehmen im Fluss 0 Höhe ein.
     await expect(oben).toHaveCSS('height', '0px')
@@ -53,8 +51,7 @@ test.describe('Scroll-Blur an der Lesespalte (V3)', () => {
     await page.setViewportSize({ width: 1600, height: 900 })
     await page.goto('/gesetze/bund/STPO?leser=v3&p=/gesetze/bund/BGFA%3Fleser%3Dv3')
     await expect(page.locator('[data-pane="sekundaer"] #lc-lesespalte')).toBeVisible({ timeout: 20_000 })
-    const spalte = page.locator('[data-pane="sekundaer"] #lc-lesespalte')
-    const oben = spalte.locator('xpath=../..').locator('> div').first()
+    const oben = page.locator('[data-pane="sekundaer"] [data-v3-blur="oben"]')
     await expect(oben).toHaveCSS('position', 'sticky')
     await expect(oben).toHaveCSS('height', '0px')
   })

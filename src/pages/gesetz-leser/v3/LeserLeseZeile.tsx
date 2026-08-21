@@ -111,12 +111,12 @@ export function LeserLeseZeile({
           (`LeserKopf.tsx`), also nahtlos; Token statt Hex, beide Themes über
           die CSS-Variable `--paper`. `print:hidden`: im Druck nur Ballast. */}
       <div className="relative min-w-0">
-        <div aria-hidden className="pointer-events-none sticky z-10 h-0 overflow-visible print:hidden"
+        <div aria-hidden data-v3-blur="oben" className="pointer-events-none sticky z-10 h-0 overflow-visible print:hidden"
           style={{ top: 'var(--nt-stick)' }}>
           <div className="h-8 bg-gradient-to-b from-paper to-transparent" />
         </div>
         <div className="space-y-5">{zelle}</div>
-        <div aria-hidden className="pointer-events-none sticky bottom-0 z-10 h-0 overflow-visible print:hidden">
+        <div aria-hidden data-v3-blur="unten" className="pointer-events-none sticky bottom-0 z-10 h-0 overflow-visible print:hidden">
           <div className="-mt-8 h-8 bg-gradient-to-t from-paper to-transparent" />
         </div>
       </div>
