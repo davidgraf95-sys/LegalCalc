@@ -179,8 +179,11 @@ export function Gesetze() {
   // Flash der falschen Sicht); der Effect unten schreibt die kanonische URL.
   const ansichtAlias = istRechtsgebietAlias(params);
   const ebeneParam = params.get('ebene');
+  // Cowork-Befund 39 (18.8.2026): `?ebene=kantone` (Plural) fiel still auf die
+  // Standard-Übersicht zurück statt die Kanton-Säule zu zeigen — toleranter
+  // Alias, kein neuer kanonischer Wert (der bleibt Singular `kanton`).
   const gewaehlt: Ebene | null = ansichtAlias ? 'bund'
-    : ebeneParam === 'kanton' ? 'kanton'
+    : ebeneParam === 'kanton' || ebeneParam === 'kantone' ? 'kanton'
     : ebeneParam === 'international' ? 'international'
     : ebeneParam === 'bund' ? 'bund' : null;
   const ebene: Ebene = gewaehlt ?? 'bund';
