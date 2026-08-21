@@ -142,7 +142,9 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     // alten Leiste — plus Kürzel, Ortsangabe und Ansicht.
     const ort = page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
     await expect(ort.getByRole('link', { name: 'Gesetze' })).toHaveAttribute('href', '/gesetze')
-    await expect(ort.getByRole('link', { name: 'Bund' })).toHaveAttribute('href', '/gesetze')
+    // Cowork-Befund 14 (18.8.2026, fachliche Korrektur): «Bund» zeigte vorher
+    // auf dasselbe Ziel wie «Gesetze» — jetzt auf die gefilterte Bund-Übersicht.
+    await expect(ort.getByRole('link', { name: 'Bund' })).toHaveAttribute('href', '/gesetze?ebene=bund')
     await expect(page.locator('[data-v3-kopf-kuerzel]')).toHaveText('StPO')
     await expect(page.locator('[data-v3-kopf] [data-v3-ansicht]')).toBeVisible()
     await expect(page.locator('[data-v3-kopf-schliessen]'),
