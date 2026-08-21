@@ -1,5 +1,5 @@
-// IA-3 · A–Z-/Kürzel-Register (FAHRPLAN-GESETZES-UX §11.5): reine Gruppier-/
-// Filter-Helfer für den Browse-Zwilling auf /gesetze. Deterministische
+// IA-3 · A–Z-/Kürzel-Register (FAHRPLAN-GESETZES-UX §11.5): reine Gruppier-
+// Helfer für den Browse-Zwilling auf /gesetze. Deterministische
 // Einsortierung (dokumentiert in az-register.ts):
 //   – Anfangsklasse = erster Buchstabe des TITELS (title-only, H1: Nutzer kennt
 //     das Kürzel nicht), Diakritika gefaltet (Ä→A, Ö→O, Ü→U, É→E; DIN 5007-1,
@@ -11,7 +11,7 @@
 // register.json-Manifest (BrowseErlass[]).
 import { describe, it, expect } from 'vitest';
 import {
-  anfangsklasse, gruppiereAZ, filterTitelKuerzel, ebeneLabel,
+  anfangsklasse, gruppiereAZ, ebeneLabel,
   AZ_KLASSEN, ZIFFERN_KLASSE,
 } from '../pages/gesetze-teile/az-register';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
@@ -98,34 +98,6 @@ describe('gruppiereAZ — vollständig, deterministisch sortiert', () => {
   it('Ziffern-Titel liegen in der Sammelklasse', () => {
     const g = gruppiereAZ(liste);
     expect(g.get(ZIFFERN_KLASSE)!.map((e) => e.key)).toEqual(['N2']);
-  });
-});
-
-describe('filterTitelKuerzel — title-only (Titel + Kürzel, KEIN zweiter Index)', () => {
-  const liste = [
-    erlass({ key: 'OR', kuerzel: 'OR', titel: 'Bundesgesetz betreffend die Ergänzung des Schweizerischen Zivilgesetzbuches (Fünfter Teil: Obligationenrecht)', sr: '220' }),
-    erlass({ key: 'USG-BS', kuerzel: 'ÜStG', titel: 'Übertretungsstrafgesetz', ebene: 'kanton', kanton: 'BS' }),
-  ];
-
-  it('matcht Titel-Substring, gross-/kleinschreibungs-unabhängig', () => {
-    expect(filterTitelKuerzel(liste, 'obligationen').map((e) => e.key)).toEqual(['OR']);
-  });
-
-  it('matcht das Kürzel', () => {
-    expect(filterTitelKuerzel(liste, 'or').map((e) => e.key)).toEqual(['OR']);
-  });
-
-  it('matcht diakritika-gefaltet in beide Richtungen (ubertretung ↔ Übertretung)', () => {
-    expect(filterTitelKuerzel(liste, 'ubertretung').map((e) => e.key)).toEqual(['USG-BS']);
-    expect(filterTitelKuerzel(liste, 'Übertretung').map((e) => e.key)).toEqual(['USG-BS']);
-  });
-
-  it('matcht NICHT die SR-Nummer (title-only, kein Voll-Filter-Duplikat)', () => {
-    expect(filterTitelKuerzel(liste, '220')).toEqual([]);
-  });
-
-  it('leerer Term → leere Liste (das Register zeigt dann die Buchstaben-Sicht)', () => {
-    expect(filterTitelKuerzel(liste, '   ')).toEqual([]);
   });
 });
 

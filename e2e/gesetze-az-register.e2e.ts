@@ -7,10 +7,14 @@
 //   – Einsortierung: Ü unter U (DIN 5007-1); Buchstaben-Leiste A–Z + «0–9» als
 //     Navigation, leere Klassen deaktiviert (Anzahl im aria-label, §11.6.8).
 //   – Ebenen-Mix Bund/Kanton/International korrekt gelabelt.
-//   – Title-only-Filter (Titel/Kürzel) auf dem BEREITS geladenen register.json —
-//     kein zweiter Index (K10), kein dritter Suchpfad (A5).
 //   – §11.6.5 Perf: CLS 0 unter CPU-Throttle 6× (input-freie Shifts).
 //   – §11.6.9 Mobil @390: Sektion kollabiert, kein H-Overflow.
+// J3-Säuberung (Cowork-Befund 18, 18.8.2026): das frühere eigene Titel/
+// Kürzel-Filterfeld dieses Registers ist entfernt (redundant mit dem
+// Gesetze.tsx-Browse-Filter) — dessen Deckung lebt jetzt in
+// gesetze-ia4-scope.e2e.ts (Feld «Gesetze durchsuchen …») und
+// az-register.test.ts (Gruppierung). Diese Spec beweist nur noch die
+// verbleibende Buchstaben-Navigation.
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
 
@@ -89,15 +93,15 @@ test.describe('IA-3 · A–Z-Register — Budget-Walk + Einsortierung', () => {
     await expect(intl).toBeVisible()
   })
 
-  test('Title-only-Filter: Titel/Kürzel-Match mit Treffer-Zähler, diakritika-tolerant', async ({ page }) => {
+  test('Leerer Startzustand: schlanker Hinweis statt reservierter Register-Box (Befund 19)', async ({ page }) => {
     await page.goto('/gesetze')
-    const filter = page.getByRole('searchbox', { name: 'A–Z-Register filtern (Titel oder Kürzel)' })
-    // diakritika-gefaltet: «ubertretungsstrafgesetz» findet «Übertretungsstrafgesetz».
-    await filter.fill('ubertretungsstrafgesetz')
-    await expect(page.getByText(/Treffer im Register für/)).toBeVisible()
-    await expect(page.getByRole('link', { name: /Übertretungsstrafgesetz/ }).first()).toBeVisible()
-    // Der Filter ersetzt die HeaderSuche NICHT (kein dritter Suchpfad, A5):
-    // die Sprung-Karte bleibt daneben bestehen.
+    // Kein Buchstabe gewählt ⇒ kein Scroll-Container, nur der Hinweis-Satz —
+    // die frühere fixe h-96-Leerfläche ist weg (Rechtsgebiets-Übersicht trägt
+    // jetzt den gehaltvollen Default-Inhalt des Landeplatzes).
+    await expect(page.getByRole('region', { name: 'Register-Liste' })).toHaveCount(0)
+    await expect(page.getByText(/Einen Anfangsbuchstaben wählen/)).toBeVisible()
+    // Die Sprung-Karte (HeaderSuche-CTA) bleibt unverändert daneben bestehen
+    // (kein dritter Suchpfad, A5).
     await expect(page.getByRole('button', { name: /Direkt zum Artikel springen/ })).toBeVisible()
   })
 
@@ -142,11 +146,9 @@ test.describe('IA-3 · Perf/CLS + Mobil (§11.6.5/§11.6.9)', () => {
     await expect(page.getByText(/Titel unter «V»/)).toBeVisible({ timeout: 15_000 })
     expect(Date.now() - t0, 'V-Klasse öffnen zu langsam').toBeLessThan(8000)
 
-    // Klassen-Wechsel + Filter-Tippen (alles input-gebunden ⇒ CLS-frei).
+    // Klassen-Wechsel (input-gebunden ⇒ CLS-frei).
     await leiste(page).getByRole('button', { name: /^G — / }).click()
     await expect(page.getByText(/Titel unter «G»/)).toBeVisible({ timeout: 15_000 })
-    await page.getByRole('searchbox', { name: 'A–Z-Register filtern (Titel oder Kürzel)' }).fill('gesetz')
-    await expect(page.getByText(/Treffer im Register für/)).toBeVisible({ timeout: 15_000 })
     // Innen-Scroll der Register-Liste: Scrollen ist KEIN «recent input» — hier
     // darf strukturell nichts nachwachsen (CI-Befund PR #347: die früheren
     // content-visibility-Zeilen wuchsen genau so input-frei ein).

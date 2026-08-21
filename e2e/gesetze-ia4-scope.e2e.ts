@@ -7,9 +7,11 @@
 //     programmatisch mit dem Input verknüpft (aria-describedby → id).
 //   – Chip-Klick weitet die Ergebnisliste NACHWEISBAR (ZH-Scope ohne Treffer
 //     → alle Ebenen: Bund-Treffer erscheinen); zweiter Klick engt zurück.
-//   – A–Z-Register: bereits alle Ebenen ⇒ nur Label, KEIN Chip (§3.1).
 //   – KEIN dritter Suchpfad (O5/A5): der Chip ändert nur den Scope des
 //     bestehenden Filters; §11.6.5 CLS 0 unter CPU-Throttle 6×.
+// J3-Säuberung (Cowork-Befund 18, 18.8.2026): das A–Z-Register trug hier ein
+// eigenes, redundantes Filterfeld (bereits «alle Ebenen», kein Chip nötig) —
+// entfernt, siehe gesetze-az-register.e2e.ts.
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
 
@@ -33,11 +35,6 @@ test.describe('IA-4 · Scope-Label je Ebene + programmatische Verknüpfung', () 
     await expect(chip(page)).toHaveCount(0)
     // Programmatische Verknüpfung: aria-describedby des Feldes zeigt auf das Label.
     await expect(feld(page)).toHaveAttribute('aria-describedby', 'gesetze-filter-scope')
-
-    // A–Z-Register (filtert BEREITS über alle Ebenen): ehrliches Label, kein Chip.
-    const azFeld = page.getByRole('searchbox', { name: 'A–Z-Register filtern (Titel oder Kürzel)' })
-    await expect(azFeld).toHaveAttribute('aria-describedby', 'az-register-scope')
-    await expect(page.locator('#az-register-scope')).toContainText('Filtert: alle Ebenen')
     expect(fehler).toEqual([])
   })
 
