@@ -6,7 +6,7 @@ import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { PanelAenderungen } from './PanelAenderungen';
 import { PanelMaterialien } from './PanelMaterialien';
-import { useMaterialien, useRevisionen } from './panelKontextLaden';
+import { useArtikelRevisionShard, useMaterialien, useRevisionen } from './panelKontextLaden';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 
@@ -140,6 +140,9 @@ export function LeserPanelZone({
   // `panelKontextLaden`). Die Hooks laufen unbedingt — das GATE ist ihr Argument,
   // nicht ein `if` um den Aufruf.
   const revisionen = useRevisionen(erlassKey, zustand.jeGeoeffnet);
+  // §7b-Deckungslücke (normrevision-badge.e2e.ts): derselbe Nachlade-Rhythmus,
+  // andere Quelle (Herleitung in `panelKontextLaden.ts`).
+  const artikelRevisionen = useArtikelRevisionShard(erlassKey, zustand.jeGeoeffnet);
   const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
@@ -191,6 +194,7 @@ export function LeserPanelZone({
     entscheide: (
       <PanelEntscheide
         kanten={aktArtikel ? bezuege.bezuegeFuer(aktArtikel)?.kanten : undefined}
+        aktArtikel={aktArtikel} revisionShard={artikelRevisionen.wert}
         normZitat={normZitat} artikelLabel={artikelLabel} bestimmungsWort={bestimmungsWort}
         // A1: das Lade-ENDE kommt aus der Hook, die den Fetch kennt — nicht aus
         // dem Klassen-Zähler (der bei einem Erlass ohne Shard für immer leer ist).

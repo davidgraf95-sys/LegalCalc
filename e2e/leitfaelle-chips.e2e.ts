@@ -141,7 +141,7 @@ test.describe('Rechtsprechungs-Auflistung im ArtikelLeser (OR)', () => {
     // entfallen. Namenskollision, hier einmal ausgeschrieben.
     test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
       'der Entscheid-Chip an der Zeile unter dem Artikel',
-      'Deckungslücke — das Kurztext-Popover am Panel-Chip ist H5-Auflage (Kontaktbogen H4 §7)'))
+      'V3-Deckung: e2e/leser-v3-panel-kurztext.e2e.ts (21.8.2026, §7b Pos. 3)'))
     // Wie (a): die OR-Seite mit ~500 Artikeln + Shard-Resolve reisst auf dem
     // 2-vCPU-Runner das Default-Budget. Zeitbudget, keine Assertion (§6.3).
     test.slow()
