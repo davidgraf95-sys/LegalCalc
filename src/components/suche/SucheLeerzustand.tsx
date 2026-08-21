@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { ZuletztEintrag } from '../../lib/zuletztVerwendet';
 import { VerlaufIcon } from '../layout/VerlaufIcon';
 import { suchOptionId } from './suchOptionId';
-import type { FlacherTreffer } from './trefferAuswahl';
+import { EINSTIEGE } from './SucheLeerzustandKontext';
 
 // ─── Leerzustand der Suche (⌘K / Fokus ohne Eingabe) — UI-NAV O1, Schritt 2 ──
 //
@@ -15,32 +15,10 @@ import type { FlacherTreffer } from './trefferAuswahl';
 // `verlauf` kommt als Prop vom Aufrufer (EIN `useZuletzt()`-Aufruf, geteilt mit
 // der Tastatur-Navigation — Cowork-Befund 38, 21.8.2026, s. unten).
 //
-// Kuratierte Einstiege = stabile Übersichts-Routen (reine Navigation, keine
-// Rechtswerte, §13): der schnelle Sprung in die vier Korpus-Rubriken + Rechner.
-
-export const EINSTIEGE: ReadonlyArray<{ route: string; label: string }> = [
-  { route: '/gesetze', label: 'Gesetze' },
-  { route: '/rechtsprechung', label: 'Rechtsprechung' },
-  { route: '/materialien', label: 'Materialien' },
-  { route: '/rechner', label: 'Rechner' },
-  { route: '/vorlagen', label: 'Vorlagen' },
-];
-
-// Cowork-Befund 38 (21.8.2026): der Leerzustand rendere früher jede Zeile als
-// echten `<Link>` — ein Tastatur-Nutzer, der per Tab ins Suchfeld gelangt,
-// musste danach bis zu 9× Tab drücken (5 Verlauf- + 5 Einstieg-Zeilen), bis der
-// Fokus das Suchfeld-Widget verliess (WCAG 2.1.2 nahe Tastaturfalle — erst Escape
-// löste zuverlässig). Fix: dasselbe Listbox/Options-Muster wie SuchResultate.tsx
-// (role=option, Pfeiltasten + Enter über die STEUERNDE Eingabe, Tab verlässt das
-// Feld sofort). `leerOptionen` liefert die dazu passende flache Options-Liste —
-// dieselben generischen Helfer (aktivePosition/naechsterKey/…, trefferAuswahl.ts)
-// wie die Trefferliste, nur mit eigenem Gruppen-Namensraum («verlauf»/«einstieg»).
-export function leerOptionen(verlauf: ZuletztEintrag[], listboxId: string): FlacherTreffer[] {
-  return [
-    ...verlauf.map((e) => ({ oid: suchOptionId(listboxId, 'verlauf', e.route), href: e.route })),
-    ...EINSTIEGE.map((e) => ({ oid: suchOptionId(listboxId, 'einstieg', e.route), href: e.route })),
-  ];
-}
+// `EINSTIEGE` (kuratierte Übersichts-Routen) und `leerOptionen` (flache
+// Options-Liste für die Tastatur-Navigation) stehen in
+// `SucheLeerzustandKontext.ts` (react-refresh/only-export-components — Muster
+// wie `InhaltsKopfKontext.ts` neben `InhaltsKopf.tsx`).
 
 const ZEILE_CLS = 'group/z flex items-center gap-2.5 px-4 py-2 text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-800 cursor-pointer';
 

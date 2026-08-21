@@ -2,7 +2,8 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUniversalSuche } from '../suche/useUniversalSuche';
 import { SuchResultate } from '../suche/SuchResultate';
-import { SucheLeerzustand, leerOptionen } from '../suche/SucheLeerzustand';
+import { SucheLeerzustand } from '../suche/SucheLeerzustand';
+import { leerOptionen } from '../suche/SucheLeerzustandKontext';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
 import { useZuletzt } from './useZuletzt';
 

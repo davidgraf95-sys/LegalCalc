@@ -607,10 +607,10 @@ export function useLeserSprungSpy(opts: {
     };
     // Refs/Setter (jumpLock/…/setAktivIds) + artLabelByToken sind stabil bzw. bewusst
     // ausgelassen; Deps byte-identisch zum früheren Inline-Effekt (Rank 9-Kopplung).
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     // S5: `gliederungsKnoten` kommt aus demselben useMemo-Takt wie `sektionen`
     // (Modell-Deps: kuratierter Baum + Snapshot + Sidecar) — der Effekt läuft
     // dadurch nicht öfter neu als zuvor, sieht aber nie eine veraltete Zuordnung.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sektionen, ohneGliederung, gliederungsKnoten, umhaengPraefix, basisPfad, paneLocationSearch, offen, sucheDebounced, istSekundaer, imPane, wurzel]);
 
   // Aktiven Eintrag im TOC sichtbar halten — sanft, nur den TOC-Container, nie die

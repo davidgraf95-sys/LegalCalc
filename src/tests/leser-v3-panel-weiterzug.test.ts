@@ -8,7 +8,7 @@
 // zeigt — reine Zeichenketten-Prüfung, keine Rechtslogik (§3), darum hier
 // ohne Bau des vollen Panels getestet.
 import { describe, it, expect } from 'vitest';
-import { traegtWeiterzugHinweis, WEITERZUG_MUSTER } from '../pages/gesetz-leser/v3/PanelEntscheide';
+import { traegtWeiterzugHinweis, WEITERZUG_MUSTER } from '../pages/gesetz-leser/v3/PanelEntscheideKontext';
 import type { Bezug } from '../lib/rechtsprechung/bezuege';
 
 function bezug(regesteKurz: string | null): Bezug {
