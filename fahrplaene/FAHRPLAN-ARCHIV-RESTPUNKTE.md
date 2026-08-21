@@ -658,7 +658,8 @@ Sektionen weiter oben.
 - **UX-PUNKTELISTE E-Optional · globaler Schalter «aufgehobene Normen ausblenden» nie gebaut**
   *(Batch E «Optional», verzahnt mit C2)*: das Ansicht-Menü des Lesers kennt nur
   `linien|fussnoten|verweise|leitfaelle` (`src/pages/gesetz-leser/leserOptionen.ts:65`,
-  `LeserAnsichtMenu.tsx`); aufgehobene Artikel sind heute fix eine gedämpfte Einzeile mit
+  `LeserAnsichtV3.tsx`; `LeserAnsichtMenu.tsx` in H5 gelöscht, 21.8.2026); aufgehobene
+  Artikel sind heute fix eine gedämpfte Einzeile mit
   AS-Aufhebungsnotiz (`ArtikelLeser.tsx:431/450`), ohne Ausblende-Option. Entweder als fünftes
   `OptFeld` nachziehen **oder** bewusst streichen mit der Begründung, dass eine ausgeblendete Norm
   dem Leser eine Lücke verschweigt (§8). Detail `archiv/FAHRPLAN-UX-PUNKTELISTE.md` Batch E,

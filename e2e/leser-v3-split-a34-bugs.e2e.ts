@@ -5,8 +5,9 @@
 // Sachverhalt, ANDERER Einstieg: der ⧉ «nebeneinander öffnen» sitzt in V3 nicht
 // mehr an der Bezüge-Zeile unter dem Artikel (Pos. 12 hat sie aufgegeben),
 // sondern am Panel-Chip (`KanteMitVorschau`, §7b Pos. 3, seit PR #558). Der
-// alte Fall bleibt bis H5 auf `leser-v1` gepinnt (Kontaktbogen H4 §7); diese
-// Datei liefert das V3-Gegenstück, das dort als offene Lücke vermerkt war.
+// alte Fall blieb bis H5 (PR #560, 21.8.2026) auf `leser-v1` gepinnt
+// (Kontaktbogen H4 §7); diese Datei liefert das V3-Gegenstück, das dort als
+// offene Lücke vermerkt war.
 //
 //  Bug 1: Öffnet man aus dem Gesetz einen verlinkten BGE im Split-View, darf
 //         das Gesetz-Pane NICHT auf einen früher angeklickten Artikel

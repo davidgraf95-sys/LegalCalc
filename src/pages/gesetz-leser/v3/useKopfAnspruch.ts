@@ -5,7 +5,7 @@ import { useMeldeInhaltsKopf } from '../../../components/layout/InhaltsKopfKonte
 //
 // BEFUND des Ästhetik-Reviews, reproduziert an `/gesetze/bund/EMRK` (pdf-embed),
 // `/gesetze/bund/DSGVO` (nur-live-link) und `/gesetze/bund/GIBTSNICHT`
-// (Fehlseite): `../../GesetzLeser.tsx` (bis H5: `gesetz-leser/GesetzLeserV3.tsx`)
+// (Fehlseite): `../../GesetzLeser.tsx` (bis H5, 21.8.2026: `gesetz-leser/GesetzLeserV3.tsx`)
 // meldet `KopfDaten.kopfzeileSelbst` UNBEDINGT — die App-Krumen-Leiste schweigt
 // also. Auf genau diesen drei Wegen kehrt `./LeserRahmenV3` aber früh zurück und
 // rendert `./LeserKopf` nie. Ergebnis: weder App-Krume noch Leser-Krume noch ✕ —

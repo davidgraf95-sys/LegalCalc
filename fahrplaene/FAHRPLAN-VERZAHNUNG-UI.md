@@ -435,7 +435,9 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
   Massen-Entscheide bleibt `W2·6-DATA` E3/E4 — hier ausschliesslich der kuratierte Korpus.
 - **B4 · Filter-UI (Darstellungsschicht, §3).** Im Gesetz-Leser an-/abwählbar nach Instanz/Ebene,
   Kanton, Leitentscheid-Status; **Default konservativ** (Leitentscheide an, Rest zuschaltbar);
-  Persistenz im «Ansicht ▾»-Menü (`LeserAnsichtMenu.tsx`; UI-Heimat: `FAHRPLAN-GESETZES-UX.md`
+  Persistenz im «Ansicht ▾»-Menü (`LeserAnsichtV3.tsx` unter `src/pages/gesetz-leser/v3/`,
+  Options-Persistenz `leserOptionen.ts`; `LeserAnsichtMenu.tsx` in H5 gelöscht, 21.8.2026 —
+  Nachfolger LeserAnsichtV3/leserOptionen; UI-Heimat: `FAHRPLAN-GESETZES-UX.md`
   §15 K7). Trefferzahlen je Facette mit ehrlicher Grundgesamtheit ausweisen (§8). Die
   Interaktions-Grammatik aus §1 (KantenChip, KontextGruppe) gilt unverändert — B4 erweitert sie
   um Facetten-Schalter, ersetzt sie nicht.
@@ -473,7 +475,8 @@ Entscheidkategorien** erweitert — alles über Filter an- und abwählbar (Kanto
 - **Sequenz:** B1 → B2/B3 (parallel möglich) → B4 → B5 → B6 (je nach B-Landung des
   Vorgängers, eigene Bau-Einheiten; B5/B6 teilen die Werkzeugleisten-Fläche ⇒ seriell,
   §14.3/§12). Kollisions-Abgleich mit `W2·7-VZUI` (KontextPanel) und `W2·5h-GESETZ-UI`
-  (LeserAnsichtMenu) — Worktree-Pflicht §12.
+  (Ansicht-Menü, `LeserAnsichtV3.tsx`; `LeserAnsichtMenu.tsx` in H5 gelöscht, 21.8.2026) —
+  Worktree-Pflicht §12.
 
 ---
 
@@ -575,7 +578,8 @@ ausgewiesen (§8), wie schon bei den B7-Zählern.
 ### §12.3 Darstellung — Filter, nicht zweiter Chip-Zusatz
 
 Die Facette erscheint als **Filter-Facette im «Rechtsprechung ▾»-Menü** (B5-Fläche,
-`LeserAnsichtMenu`-Analogie), zusammen mit den bestehenden Schaltern Instanz/Ebene/Kanton/Status
+Analogie zum Ansicht-Menü `LeserAnsichtV3.tsx`; Vorgänger `LeserAnsichtMenu.tsx` in H5
+gelöscht, 21.8.2026), zusammen mit den bestehenden Schaltern Instanz/Ebene/Kanton/Status
 und dem Zeitstrahl. Sie erscheint **nicht** als zusätzlicher Zusatz am Chip: die Dichte-Regel aus
 **§1.2 gilt unverändert** — EIN Zusatz je Chip (Fundstellen-Sublabel ODER ★-Glyph), sonst wird aus
 der Chip-Reihe wieder die Chip-Wüste, gegen die §0/1c gebaut wurde. Wer die Facette am Chip sehen
@@ -587,7 +591,8 @@ Die Ableitung berührt die **Extraktions-/Datenschicht** der Kanten ⇒ **Risiko
 `npm run check:gegenpruefung` **pflichtig** (Skill `gegenpruefung`), Generator deterministisch,
 **zwei Läufe byte-gleich**, golden byte-gleich. Die reine Filter-UI darüber ist Darstellung (§3).
 Sequenz/Kollision: teilt die Fläche mit `W2·7-BEZUG`/B4+B5 (`bezugAuswahl.ts`,
-`BezugFacettenWahl.tsx`, `LeserAnsichtMenu.tsx`) und mit `W2·5h-GESETZ-UI` — Worktree-Pflicht (§12).
+`BezugFacettenWahl.tsx`, `LeserAnsichtV3.tsx`; Vorgänger `LeserAnsichtMenu.tsx` in H5
+gelöscht, 21.8.2026) und mit `W2·5h-GESETZ-UI` — Worktree-Pflicht (§12).
 
 ### §12.5 DoD
 

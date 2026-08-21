@@ -14,9 +14,19 @@
 // Eine Datei, die alle Beschriftungen einsammelte, verlöre genau das (§1: die
 // Herleitung gehört zum Bauteil, nicht in ein Wörterbuch).
 //
-// FL-4 BLEIBT GEWAHRT. V1 ist bis H5 eingefroren; hier wird nichts an ihrer
-// Mechanik geändert, nur EIN Wort geteilt, das in beiden Hüllen dasselbe Ziel
-// benennt. Fällt die Ist-Hülle, fällt diese Datei mit ihr (§17-Rückbau).
+// FL-4 BLEIB GEWAHRT, bis H5 die Ist-Hülle löschte (PR #560, 21.8.2026): bis
+// dahin war V1 eingefroren, hier wurde nichts an ihrer Mechanik geändert, nur
+// EIN Wort geteilt, das in beiden Hüllen dasselbe Ziel benannte.
+//
+// KORRIGIERT 21.8.2026 (H5-Nachlese): die hier vorausgesagte Regel «fällt die
+// Ist-Hülle, fällt diese Datei mit ihr» hat sich NICHT bewahrheitet — die
+// Datei blieb, weil ihre Importer (`AmtlichesPdf.tsx`, `ArtikelLeser.tsx`,
+// `ErlassUebersicht.tsx`, `SektionKopf.tsx`, `v3/uebersichtAngaben.ts`)
+// durchweg V3 sind. Ihr Zweck ist seither nicht mehr «über die Hüllen-Grenze
+// laufen» (es gibt nur noch eine Hülle), sondern schlicht: geteilte
+// Beschriftungen mehrerer V3-Bauteile an einem Ort. §17-Rückbau bleibt
+// offen — zu prüfen, ob die Datei aufzulösen ist (Wörter an ihre einzigen
+// Verwender zurückverschieben) oder als geteilte Quelle sinnvoll bleibt.
 
 /** Ä110 · der Live-Link auf die amtliche Fassung — Pfeil «↗» steht HINTEN. */
 export const AMTLICHE_FASSUNG = 'Amtliche Fassung';

@@ -1105,7 +1105,8 @@ bliebe eine Wette gegen dieses Urteil. Der konservative, ehrliche Zustand ist: n
 aufdrängen. Weitere Justage nur auf neues, positives David-Signal.
 
 **Das FEATURE bleibt — nur das AUFDRÄNGEN endet.** Der K11-Tri-State-NUTZER-Schalter
-«Linien» (`data-linien` an/aus/auto, global, `LeserAnsichtMenu`) ist voll funktionsfähig:
+«Linien» (`data-linien` an/aus/auto, global, damals `LeserAnsichtMenu` — in H5 gelöscht,
+21.8.2026, Nachfolger `LeserAnsichtV3.tsx`) ist voll funktionsfähig:
 wer die Gliederungslinie will, klickt «Linien AN» und bekommt den EINEN Guide auf genau
 `guideEbene`. `strukturTiefe`/`guideEbene`/`dichteAmGuide` bleiben voll berechnet (sie
 steuern, WO der Guide sitzt und OB der Schalter erscheint — `zeigeLinien = guideEbene
@@ -1695,7 +1696,9 @@ Stand · ✕) — NICHT die globale Topbar.
 - **K7 · «Ansicht ▾» als Personalisierungs-Zentrum.** Deutlich mehr personalisierbar
   (Kanton-Auswahl u. a.); Andockpunkt für die Bezüge-Facetten-Filter aus `W2·7-BEZUG`
   (`FAHRPLAN-VERZAHNUNG-UI.md` §9 B4) und die Fassungshistorie-Auswahl (W2·5i).
-  `LeserAnsichtMenu.tsx` hat Persistenz + Pre-Paint-Mechanik — dort einklinken, kein neues Menü.
+  `LeserAnsichtV3.tsx` (`src/pages/gesetz-leser/v3/`, Options-Persistenz `leserOptionen.ts`)
+  hat Persistenz + Pre-Paint-Mechanik — dort einklinken, kein neues Menü. (Vorgänger
+  `LeserAnsichtMenu.tsx` in H5 gelöscht, 21.8.2026.)
 
 **Prior-Art zuerst nachmessen (§8, kein Doppelbau):** M4/M5/M7/M8 aus
 `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (Suche/Gliederung responsiv · kompakt zum Header ·

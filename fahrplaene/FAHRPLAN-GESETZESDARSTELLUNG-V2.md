@@ -180,8 +180,9 @@ Bedienung: Wer Fussnoten abschaltet, verliert die echten Verweise mit; wer sie a
 
 ### §7.2 Bau-Vorschlag
 Dreiwertige Auswahl **«Änderungshistorie: aus / als Fussnoten / als Chronologie»**, eingeklinkt in das
-bestehende **«Ansicht ▾»**-Menü (`src/pages/gesetz-leser/LeserAnsichtMenu.tsx` — hat Persistenz **und**
-Pre-Paint-Mechanik bereits; kein neues Menü bauen). **Verweis-Fussnoten unabhängig davon** schaltbar.
+bestehende **«Ansicht ▾»**-Menü (`src/pages/gesetz-leser/v3/LeserAnsichtV3.tsx` — hat Persistenz
+**und** Pre-Paint-Mechanik bereits; kein neues Menü bauen; `LeserAnsichtMenu.tsx` in H5 gelöscht,
+21.8.2026, Nachfolger LeserAnsichtV3/leserOptionen). **Verweis-Fussnoten unabhängig davon** schaltbar.
 Löst nebenbei das bekannte Leerraum-Residuum im Reader.
 
 ### §7.3 ZWINGENDE Vorstufe H0 — Trennbarkeit messen, bevor gebaut wird

@@ -33,7 +33,7 @@
 //  · in `src/components/layout/InhaltsKopf.tsx` den Block
 //    `if (daten.kopfzeileSelbst) { … }` entfernen ⇒ (a)/(b) messen wieder zwei
 //    Krumen-Leisten, zwei ✕ und 159 px Chrome;
-//  · in `src/pages/GesetzLeser.tsx` (bis H5: `gesetz-leser/GesetzLeserV3.tsx`)
+//  · in `src/pages/GesetzLeser.tsx` (bis H5, 21.8.2026: `gesetz-leser/GesetzLeserV3.tsx`)
 //    die Meldung `meldeInhaltsKopf({ kopfzeileSelbst: true, … })` streichen
 //    ⇒ dasselbe;
 //  · in `src/pages/gesetz-leser/v3/kopfStufen.ts` `krume` auf einem Zuschnitt

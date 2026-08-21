@@ -1,7 +1,11 @@
 // ─── Ist-Hüllen-Fälle in GEMISCHTEN Spec-Dateien · H4-Flip, 18.8.2026 ────────
 //
 // LAGE. Mit dem Flip (David-Ja 17.8.2026) rendert das Regelprojekt `chromium`
-// den V3-Leser; die alte Hülle läuft bis H5 im Projekt `leser-v1`. Einige
+// den V3-Leser; die alte Hülle lief bis H5 (PR #560, 21.8.2026) im Projekt
+// `leser-v1` — seither ist das Projekt aus `playwright.config.ts` entfernt und
+// dieses Modul hat keine Aufrufer mehr (grep-geprüft 21.8.2026, H5-Nachlese) —
+// Rückbau-Kandidat §17, hier nicht gelöscht (Doku-Nachlese, kein Code-Rückbau).
+// Einige
 // Bestands-Specs prüfen einen MONTAGEPUNKT, den V3 planmässig aufgegeben hat —
 // die Rechtsprechungs-Auskunft steht nicht mehr am Artikelfuss, das
 // Kontextfenster nicht mehr im Gliederungs-Scroller, das mobile Suchfeld nicht

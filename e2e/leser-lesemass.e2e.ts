@@ -8,7 +8,8 @@ import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftu
 // `ladeReader` navigiert nach `/gesetze/bund/<KEY>` OHNE `?leser=v3` — bis
 // 18.8.2026 traf das damit die IST-HÜLLE (V1), weil V1 der ausgelieferte
 // Default war. Seit dem H4-Flip (PR #552, 18.8.2026) ist **V3 der Standard**
-// (`?leser=v1` erreicht die alte Hülle noch, bis H5 sie entfernt) — dieselbe
+// (`?leser=v1` erreichte die alte Hülle noch, bis H5 [PR #560, 21.8.2026]
+// sie entfernte) — dieselbe
 // Navigation trifft seither also V3. Der folgende Absatz galt VOR dem Flip und
 // steht als Beleg dafür, dass die Fliesstext-STUFE (Schriftgrösse/Zeilenhöhe)
 // in beiden Hüllen identisch war; für das LESEMASS (diese Datei) gilt das seit
