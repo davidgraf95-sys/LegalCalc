@@ -105,3 +105,65 @@ describe('Befund 29 — Gesetzestext-Suche verknüpft Terme per UND (Cowork 21.8
     expect(treffer.map((t) => t.id)).toContain('art:VORTEST:9');
   });
 });
+
+// ─── Umlaut-Befund (Gegenprüfung 21.8.2026): UND-Filter gegen roh-lowercase
+// Haystack ───────────────────────────────────────────────────────────────
+//
+// `sucherTerme`/`tokens()` normalisiert die getippten Terme über
+// `normalisiereBegriff` (NFKD, diakritika-bereinigt: «Kündigung» → «kundigung»).
+// `haystack()` in artikelVolltext.ts durchlief bis zu diesem Fix nur
+// `.toLowerCase()` — der Haystack behielt «kündigung» mit Umlaut. Darum traf
+// `trifftWortgrenze` bei JEDER Mehrwort-Query mit Umlaut auf 0 Kandidaten
+// (`'kündigung'.indexOf('kundigung') === -1`), obwohl ein Einzelterm («Kündigung»
+// allein) weiterhin traf — der UND-Filter griff nur ab zwei signifikanten Termen.
+const UMLAUT_EINTRAEGE = [
+  { k: 'OR', ku: 'OR', eb: 'bund' as const, kt: '', a: '271', l: 'Art. 271',
+    t: 'regelt die miete und die fristlose kündigung des mietverhältnisses aus wichtigen gründen',
+    m: '', n: '', g: '', tb: '', f: '' },
+];
+const sucheUmlaut = baueSuchFn(UMLAUT_EINTRAEGE as never, FlexSearch);
+
+describe('Umlaut-Befund — UND-Filter normalisiert den Haystack wie die Terme (Gegenprüfung 21.8.2026)', () => {
+  it('«fristlose Kündigung» (2 Terme, Umlaut) findet den Artikel', () => {
+    const treffer = sucheUmlaut('fristlose Kündigung', 10);
+    expect(treffer.map((t) => t.id)).toContain('art:OR:271');
+  });
+
+  it('«Kündigung Miete» (2 Terme, umgekehrte Reihenfolge) findet denselben Artikel', () => {
+    const treffer = sucheUmlaut('Kündigung Miete', 10);
+    expect(treffer.map((t) => t.id)).toContain('art:OR:271');
+  });
+});
+
+// ─── Befund B2 (Gegenprüfung 21.8.2026): UND-Filter tötet den Synonym-Recall ─
+//
+// `expandiereSuchbegriff('vaterschaftsurlaub')` liefert u. a. «urlaub»/«geburt»
+// (s. src/tests/suchVokabular.test.ts). Ein Artikel, der das Kompositum
+// «vaterschaftsurlaub» selbst nie im Wortlaut führt, aber «urlaub»/«geburt»
+// enthält, kommt über die Synonym-Ausweitung in den Recall-Pool — der UND-Filter
+// verlangte bislang trotzdem den LITERALEN Term und filterte ihn wieder heraus,
+// sobald ein zweiter Term («lohn») dazukam.
+const B2_EINTRAEGE = [
+  // Trifft «vaterschaftsurlaub» NUR über die Synonyme «urlaub»/«geburt», «lohn» literal.
+  { k: 'EOG', ku: 'EOG', eb: 'bund' as const, kt: '', a: '16i', l: 'Art. 16i',
+    t: 'die entschädigung während des urlaubs nach der geburt eines kindes entspricht dem lohn',
+    m: '', n: '', g: '', tb: '', f: '' },
+  // Trifft NUR «lohn» — weder «vaterschaftsurlaub» literal noch dessen Synonyme
+  // («urlaub», «geburt», …) kommen im Text vor.
+  { k: 'OR', ku: 'OR', eb: 'bund' as const, kt: '', a: '322', l: 'Art. 322',
+    t: 'der arbeitgeber zahlt dem arbeitnehmer den vereinbarten lohn pünktlich aus',
+    m: '', n: '', g: '', tb: '', f: '' },
+];
+const sucheB2 = baueSuchFn(B2_EINTRAEGE as never, FlexSearch);
+
+describe('Befund B2 — UND-Filter lässt Synonym-Treffer durch (Gegenprüfung 21.8.2026)', () => {
+  it('«vaterschaftsurlaub lohn»: Kompositum+Zweitwort findet den Synonym-Kandidaten (EOG 16i)', () => {
+    const treffer = sucheB2('vaterschaftsurlaub lohn', 10);
+    expect(treffer.map((t) => t.id)).toContain('art:EOG:16i');
+  });
+
+  it('ein Kandidat, der auch via Synonym KEINEN der Terme trägt, bleibt gefiltert (OR 322)', () => {
+    const treffer = sucheB2('vaterschaftsurlaub lohn', 10);
+    expect(treffer.map((t) => t.id)).not.toContain('art:OR:322');
+  });
+});
