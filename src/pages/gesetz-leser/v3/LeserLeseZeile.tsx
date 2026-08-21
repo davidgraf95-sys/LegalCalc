@@ -109,15 +109,24 @@ export function LeserLeseZeile({
           `LeserLesespalte` (PX-gesperrt, s. dort) — kein Byte dort angefasst.
           `bg-paper`: dieselbe opake Fläche wie der klebende Kopf
           (`LeserKopf.tsx`), also nahtlos; Token statt Hex, beide Themes über
-          die CSS-Variable `--paper`. `print:hidden`: im Druck nur Ballast. */}
+          die CSS-Variable `--paper`. `print:hidden`: im Druck nur Ballast.
+
+          Auftrag David 21.8.2026 · DEZENTER: die erste Fassung wirkte zu
+          kräftig — Höhe halbiert (h-8 → h-4, 32px → 16px) UND die
+          Startdeckung abgeschwächt (`from-paper` volldeckend →
+          `from-paper/70`, Opacity-Modifier auf demselben Token, Tailwind
+          3.4 löst ihn per `color-mix()` auf — Beleg-Präzedenz
+          `EntscheidLeser.tsx` `bg-paper/95`, `SuchBereichWahl.tsx`
+          `bg-paper/60`). `-mt-4` zieht mit der neuen Höhe mit, sonst
+          verschöbe sich der untere Streifen vom Viewport-Rand weg. */}
       <div className="relative min-w-0">
         <div aria-hidden data-v3-blur="oben" className="pointer-events-none sticky z-10 h-0 overflow-visible print:hidden"
           style={{ top: 'var(--nt-stick)' }}>
-          <div className="h-8 bg-gradient-to-b from-paper to-transparent" />
+          <div className="h-4 bg-gradient-to-b from-paper/70 to-transparent" />
         </div>
         <div className="space-y-5">{zelle}</div>
         <div aria-hidden data-v3-blur="unten" className="pointer-events-none sticky bottom-0 z-10 h-0 overflow-visible print:hidden">
-          <div className="-mt-8 h-8 bg-gradient-to-t from-paper to-transparent" />
+          <div className="-mt-4 h-4 bg-gradient-to-t from-paper/70 to-transparent" />
         </div>
       </div>
 
