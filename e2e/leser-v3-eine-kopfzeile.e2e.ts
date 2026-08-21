@@ -412,15 +412,14 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     test.slow() // drei Leser-Ladevorgänge in einer Sitzung
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/BGFA?leser=v3')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
-    // Client-seitiger Wechsel in einen ZWEITEN Erlass: Krume → Katalog → ZGB.
-    // Kein `page.goto` — ein Vollreload wäre der Erstaufruf, den (a) schon prüft.
-    await page.locator('[data-v3-kopf] nav[aria-label="Ort im Gesetz"]')
-      .getByRole('link', { name: 'Gesetze' }).click()
-    await page.locator('a[href="/gesetze?ebene=bund"]').first().click()
-    await page.locator('a[href$="/gesetze/bund/ZGB"]').first().click()
+    // Client-seitiger Wechsel in einen ZWEITEN Erlass über die Fuss-Navigation
+    // («<Kürzel> ›», exakt die Repro der Test-Session). Kein `page.goto`: ein
+    // Vollreload wäre der Erstaufruf, den (a) schon prüft — der Befund braucht
+    // den Route-Param-Wechsel bei GEMOUNTETEM Leser.
+    await page.locator('nav[aria-label="Weitere Erlasse"] a').last().click()
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(400)
     let m = await chrome(page)
@@ -428,8 +427,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(m.appKrumen, 'zweite Krume nach Erlass-Wechsel').toBe(0)
 
     // Zurücktaste in den vorher besuchten Erlass (Befund 53).
-    await page.goBack() // → Katalog
-    await page.goBack() // → STPO
+    await page.goBack() // → BGFA, client-seitig (popstate)
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(400)
     m = await chrome(page)

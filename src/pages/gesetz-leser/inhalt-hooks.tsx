@@ -71,7 +71,7 @@ export function useLeserDaten(opts: {
   setFehler: Dispatch<SetStateAction<boolean>>;
 }): void {
   const {
-    ebene, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
+    ebene, schluessel, navigate, erlass, istSekundaer,
     setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
   } = opts;
 
@@ -132,9 +132,17 @@ export function useLeserDaten(opts: {
   }, [erlass, istSekundaer]);
 
   // A/A2/A3/F: Kopf melden — die Meldung selbst steht in useInhaltsKopfMeldung (nach
-  // `fussnotenAnzahl`, das der A26-Ansicht-Slot braucht; TDZ). Hier nur das
-  // Aufräumen. Beim Verlassen den Kopf räumen (Shell setzt bei Routenwechsel ohnehin zurück).
-  useEffect(() => () => meldeInhaltsKopf(null), [meldeInhaltsKopf]);
+  // `fussnotenAnzahl`, das der A26-Ansicht-Slot braucht; TDZ).
+  //
+  // DAS UNMOUNT-CLEANUP `meldeInhaltsKopf(null)` IST GESTRICHEN (Cowork-Befund
+  // 1/53, Fix 21.8.2026). Es war doppelt («Shell setzt bei Routenwechsel ohnehin
+  // zurück», stand hier wörtlich) und WISCHTE in V3 die Kopf-Reservierung weg:
+  // beim Erlass-Wechsel remountet der Modell-Baum, `useKopfAnspruch` meldet im
+  // Layout-Effekt (vor dem Paint) — dieses passive Cleanup des ALTEN Baums lief
+  // danach und setzte den Slot auf null → die App-Leiste erschien laut über der
+  // V3-Werkzeugleiste. Ein Unmount OHNE Pfadwechsel existiert in der
+  // Einzelansicht nicht; im Split fängt der Pane-Provider die Meldung.
+  // Rot-Beweis: `e2e/leser-v3-eine-kopfzeile.e2e.ts` (j).
 }
 
 // ── Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht + Suche) ───────
