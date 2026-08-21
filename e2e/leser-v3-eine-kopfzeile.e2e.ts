@@ -450,6 +450,41 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
+  // ── (k) AUCH DER RÜCKWEG AUS ENTSCHEID/MATERIAL LÄSST DIE LEISTE STILL ────
+  //
+  // BEFUND David 21.8.2026 (nach dem (j)-Fix): «der gleiche bug … liegt noch
+  // vor wenn ich von entscheid rückwärts auf das gesetz gehe». Gleiche Wurzel,
+  // anderer Melder: EntscheidLeser/MaterialLeser räumten ihre Kopf-Meldung im
+  // passiven Unmount-Cleanup — das lief NACH dem Layout-Effekt des wieder
+  // montierten Gesetz-Lesers und wischte dessen Reservierung weg. ROT ZU
+  // BEKOMMEN (§6.7, 21.8.2026 gesehen): das Cleanup in `EntscheidLeser.tsx`
+  // wieder einsetzen ⇒ nach goBack misst `appLeisten` 1.
+  test('(k) Entscheid öffnen und Zurücktaste: die App-Leiste bleibt still', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    // OR Art. 41: verlässliche «viele BGE»-Stelle (der Standard-Instanzfilter
+    // zeigt nur BGE — ein Artikel ohne BGE-Treffer liesse den Test ohne Link
+    // verhungern, gesehen 21.8. an SchKG Art. 10).
+    await page.goto('/gesetze/bund/OR#art-41')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    // Panel öffnen und client-seitig in einen Entscheid navigieren.
+    await page.locator('[data-v3-panel-oeffner]').click()
+    const entscheid = page.locator('a[href^="/rechtsprechung/"]:visible').first()
+    await expect(entscheid).toBeVisible({ timeout: 20_000 })
+    await entscheid.click()
+    await expect(page).toHaveURL(/\/rechtsprechung\//, { timeout: 20_000 })
+    await page.waitForTimeout(400)
+    // Zurück in den Gesetz-Leser (Befund-Repro).
+    await page.goBack()
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(400)
+    const m = await chrome(page)
+    expect(m.appLeisten, 'App-Leiste laut nach Zurück aus dem Entscheid').toBe(0)
+    expect(m.appKrumen, 'zweite Krume nach Zurück aus dem Entscheid').toBe(0)
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
   // ── (i) V1 · WO KEIN V3-KOPF STEHT, MUSS DIE APP-LEISTE ZURÜCKKOMMEN ──────
   //
   // BEFUND (Ästhetik-Review 17.8.2026): die Fassade meldete `kopfzeileSelbst`
