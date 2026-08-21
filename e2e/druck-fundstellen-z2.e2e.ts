@@ -12,6 +12,7 @@
 // gebauten Stand — keine CSS-Textsuche, sondern computed styles am DOM.
 import { test, expect } from '@playwright/test'
 import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
+import { panelAufziehen } from './helpers/panelOeffnen';
 
 const ERLASS = '/gesetze/bund/OR'
 
@@ -126,7 +127,7 @@ test.describe('Z2 · Druck der Fundstelle', () => {
     // Projektwechsel statt Umschreiben; ein neuer Einstieg wäre ein neuer Test.
     test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
       'das ⧉ an der Bezüge-Zeile als Einstieg in den Split',
-      'Deckungslücke für den DRUCK im Split — H5-Auflage (Kontaktbogen H4 §7); der Split selbst ist über `leser-kopf-paritaet` und `leser-v3-highlight-split` gedeckt'))
+      'V3-Deckung: Fall «V3: Split-View-Ausdruck …» weiter unten in dieser Datei (21.8.2026, §7b Pos. 5); der Split selbst ist über `leser-kopf-paritaet` und `leser-v3-highlight-split` gedeckt'))
     test.slow() // schwere Split-View-Interaktion (Panes + idle-Shards + Scroll)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/ZGB#art-1')
@@ -160,6 +161,46 @@ test.describe('Z2 · Druck der Fundstelle', () => {
     expect(mass.paneUeberhang, `Pane-Überhang ${mass.paneUeberhang}px wird abgeschnitten`).toBeLessThanOrEqual(2)
     // (b) Und das Dokument bleibt vielseitig statt auf eine Bildschirmhöhe
     //     zusammenzufallen (der Split-Ausdruck war ~1 Seite, ohne Split ~hunderte).
+    expect(mass.doku, `Split-Ausdruck ${mass.doku}px vs. ${ohneSplit}px ohne Split`).toBeGreaterThan(20_000)
+  })
+
+  // ── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 5) ──
+  // Deckt den Test darüber für V3: derselbe Sachverhalt (Split-Ausdruck bleibt
+  // nicht auf eine Seite geklemmt), anderer EINSTIEG — das ⧉ sitzt jetzt am
+  // Panel-Chip (`KanteMitVorschau`, §7b Pos. 3), nicht mehr an der
+  // Bezüge-Zeile. ROT GESEHEN (§6.7) VOR dem `PanelEntscheide.tsx`-Umbau: kein
+  // ⧉-Knopf am Chip, `getByRole('button', {name:/nebeneinander öffnen/})`
+  // fand nichts.
+  test('V3: Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten', async ({ page }) => {
+    test.slow() // schwere Split-View-Interaktion (Panes + idle-Shards + Scroll)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/ZGB?leser=v3#art-684')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+
+    // Referenz: derselbe Erlass OHNE Split — so hoch druckt er wirklich.
+    await page.emulateMedia({ media: 'print' })
+    const ohneSplit = await page.evaluate(() => document.documentElement.scrollHeight)
+    expect(ohneSplit, 'Referenz: der Erlass ist vielseitig').toBeGreaterThan(20_000)
+    await page.emulateMedia({ media: 'screen' })
+
+    // Zweiten Pane über den ⧉ am Panel-Chip öffnen.
+    await panelAufziehen(page)
+    const panel = page.locator('[data-v3-panel]')
+    const ersterEintrag = panel.locator('[data-v3-panel-entscheid]').first()
+    await expect(ersterEintrag).toBeVisible({ timeout: 20_000 })
+    await ersterEintrag.getByRole('button', { name: /nebeneinander öffnen/ }).click()
+    await expect(page.locator('[data-pane="sekundaer"]')).toBeVisible({ timeout: 10_000 })
+
+    await page.emulateMedia({ media: 'print' })
+    const mass = await page.evaluate(() => {
+      const primaer = document.querySelector('[data-pane="primaer"]') as HTMLElement
+      return {
+        doku: document.documentElement.scrollHeight,
+        paneUeberhang: primaer.scrollHeight - primaer.clientHeight,
+      }
+    })
+
+    expect(mass.paneUeberhang, `Pane-Überhang ${mass.paneUeberhang}px wird abgeschnitten`).toBeLessThanOrEqual(2)
     expect(mass.doku, `Split-Ausdruck ${mass.doku}px vs. ${ohneSplit}px ohne Split`).toBeGreaterThan(20_000)
   })
 })

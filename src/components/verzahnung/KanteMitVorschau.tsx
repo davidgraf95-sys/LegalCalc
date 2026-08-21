@@ -52,11 +52,16 @@ const OEFFNEN_MS = HOVER_OEFFNEN_MS;
 const SCHLIESSEN_MS = HOVER_SCHLIESSEN_MS;
 
 export const KanteMitVorschau = memo(function KanteMitVorschau({
-  ziel, zitierung, kurztext, leitentscheid = false, revidiert, titel, statusLabel, className = '',
+  ziel, zitierung, sublabel, kurztext, leitentscheid = false, revidiert, titel, statusLabel, className = '',
 }: {
   /** Interner Reader-Pfad (trägt bereits `?norm=`). */
   ziel: string;
   zitierung: string;
+  /** Fundstellen-Sublabel am Chip selbst (z. B. Datum oder «via Art. N») —
+   *  reine Durchreiche an `KantenChip` (Panel-Entscheide, W2·5m-LESER-V3/§7b:
+   *  die Panel-Zelle zeigte das Datum bisher separat, `KantenChip` kennt dafür
+   *  bereits genau diesen Slot, §5 — kein zweiter Anzeige-Pfad). */
+  sublabel?: string;
   /** Bestandstext aus dem Shard; null/leer ⇒ keine Vorschau (§8: nichts erfinden). */
   kurztext?: string | null;
   leitentscheid?: boolean;
@@ -75,6 +80,11 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
   // Tastatur-Merkung als REF: sie überlebt jedes Re-Render und wird von keinem
   // durchgereichten Fokus-Ereignis überschrieben (B1 (1)).
   const perTastatur = useRef(false);
+  // §7b-BEFUND (21.8.2026, PanelEntscheide-Integration — Fehler war LATENT,
+  // nicht neu: reproduziert auch am alten Standort, `leitfaelle-chips.e2e.ts`
+  // (d) gegen Projekt `leser-v1`, Zeile 202, VOR jeder Änderung hier). Siehe
+  // Herleitung an `schliesse`/`onFocus` unten.
+  const schliessendRef = useRef(false);
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [autoFokus, setAutoFokus] = useState(false);
   const kastenId = useId();
@@ -100,14 +110,31 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
     stoppUhr();
     setRect(null);
     setAutoFokus(false);
-    if (fokusZurueck && perTastatur.current) zelle.current?.querySelector('a')?.focus();
+    // §7b-BUGFIX: `setRect(null)` ist in React 18 auch aus einem nativen
+    // Listener (Esc-Handler in `RegestePopover`) automatisch gebatched — der
+    // Kasten steht im DOM also noch, wenn die Zeile darunter synchron läuft.
+    // `.focus()` löst SOFORT (synchron, noch im selben Tick) `onFocus` weiter
+    // unten aus; ohne diese Sperre sah der die zurückkehrende Fokus-Geste als
+    // NEUEN Öffnungsgrund an (`imKasten` prüft nur den PORTAL-Kasten, nicht
+    // die Zelle selbst) und riss den gerade geschlossenen Kasten in derselben
+    // Bewegung wieder auf — ein Escape blieb wirkungslos, sobald die Vorschau
+    // per Tastatur geöffnet worden war (nur DANN läuft dieser Zweig, `pointerleave`
+    // gibt keinen Fokus zurück). Reproduziert (§0.2) BEIDSEITIG, unabhängig von
+    // der V3-Integration: `leitfaelle-chips.e2e.ts` (d) schlug mit exakt diesem
+    // Bild auch am alten Standort (Projekt `leser-v1`) fehl — ein latenter
+    // Fehler, den erst die neue V3-Deckung hier sichtbar gemacht hat.
+    if (fokusZurueck && perTastatur.current) {
+      schliessendRef.current = true;
+      zelle.current?.querySelector('a')?.focus();
+      schliessendRef.current = false;
+    }
     perTastatur.current = false;
   }, []);
   /** Liegt der Knoten im portalierten Kasten? (Fokus-Aussiebung, siehe Kopf.) */
   const imKasten = (n: Node | null | undefined) => !!n && !!kasten.current?.contains(n);
 
   if (!hatVorschau) {
-    return <Zelle ref={zelle} className={className} {...{ ziel, zitierung, leitentscheid, revidiert, titel, kannOeffnen, istOffen, oeffneDaneben }} />;
+    return <Zelle ref={zelle} className={className} {...{ ziel, zitierung, sublabel, leitentscheid, revidiert, titel, kannOeffnen, istOffen, oeffneDaneben }} />;
   }
   return (
     <span
@@ -131,6 +158,9 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
         // Fokus IM Kasten ist kein neuer Öffnungsgrund — er würde nur die
         // Tastatur-Merkung und das Anker-Rechteck neu setzen (B1 (1)).
         if (imKasten(e.target)) return;
+        // §7b-BUGFIX: die eigene Fokus-RÜCKGABE aus `schliesse` ist ebenfalls
+        // kein neuer Öffnungsgrund — Herleitung dort.
+        if (schliessendRef.current) return;
         oeffne(false);
       }}
       onBlur={(e) => {
@@ -144,7 +174,7 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
         else if (e.key === 'Escape' && rect) { e.preventDefault(); schliesse(true); }
       }}
     >
-      <KantenChip to={ziel} label={zitierung} kategorie="entscheid"
+      <KantenChip to={ziel} label={zitierung} sublabel={sublabel} kategorie="entscheid"
         leitentscheid={leitentscheid} revidiert={revidiert} titel={titel ?? zitierung}
         // B2: der Chip sagt, dass er etwas aufgeklappt hat und was. `aria-controls`
         // NUR im offenen Zustand — eine Referenz auf einen nicht existierenden
@@ -179,11 +209,12 @@ function SplitKnopf({ zitierung, onClick }: { zitierung: string; onClick: () => 
   );
 }
 
-function Zelle({ ref, className, ziel, zitierung, leitentscheid, revidiert, titel, kannOeffnen, istOffen, oeffneDaneben }: {
+function Zelle({ ref, className, ziel, zitierung, sublabel, leitentscheid, revidiert, titel, kannOeffnen, istOffen, oeffneDaneben }: {
   ref: React.Ref<HTMLSpanElement>;
   className: string;
   ziel: string;
   zitierung: string;
+  sublabel?: string;
   leitentscheid: boolean;
   revidiert?: ArtikelRevision | null;
   titel?: string;
@@ -193,7 +224,7 @@ function Zelle({ ref, className, ziel, zitierung, leitentscheid, revidiert, tite
 }) {
   return (
     <span className={`inline-flex items-center ${className}`} ref={ref}>
-      <KantenChip to={ziel} label={zitierung} kategorie="entscheid"
+      <KantenChip to={ziel} label={zitierung} sublabel={sublabel} kategorie="entscheid"
         leitentscheid={leitentscheid} revidiert={revidiert} titel={titel ?? zitierung} />
       {kannOeffnen && !istOffen(ziel) && (
         <SplitKnopf zitierung={zitierung} onClick={() => oeffneDaneben(ziel)} />

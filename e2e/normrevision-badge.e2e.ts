@@ -20,7 +20,7 @@ test.describe('Normrevisions-Badge im ArtikelLeser (AIG)', () => {
   test('(a) Entscheid VOR der Revision → ↻-Badge mit Revisionsdatum + AS-Fundstelle', async ({ page }, info) => {
     test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
       'der Leitfall-Link samt ↻-Badge an der Zeile unter dem Artikel',
-      'Deckungslücke — das ↻ am V3-Panel-Entscheid ist H5-Auflage (Kontaktbogen H4 §7); die Temporal-Regel selbst deckt `src/tests` DOM-frei'))
+      'V3-Deckung: e2e/leser-v3-panel-revision-badge.e2e.ts (a) (21.8.2026, §7b Pos. 3); die Temporal-Regel selbst deckt `src/tests` DOM-frei'))
     const fehler = fehlerSammeln(page)
     await page.goto('/gesetze/bund/AIG')
     const art5 = page.locator('#art-5')
@@ -45,7 +45,7 @@ test.describe('Normrevisions-Badge im ArtikelLeser (AIG)', () => {
   test('(b) Entscheid NACH der Revision → kein Badge (gleich, UI-still)', async ({ page }, info) => {
     test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
       'derselbe Ort wie in (a)',
-      'wie (a) — H5-Auflage'))
+      'V3-Deckung: e2e/leser-v3-panel-revision-badge.e2e.ts (b) (21.8.2026, §7b Pos. 3)'))
     await page.goto('/gesetze/bund/AIG')
     // §6.3-DEKLARATION (28.7.2026, W2·7-BEZUG/B4): der Anker 2C_1060/2020 ist im
     // Manifest `bger`/routine — ein kuratiertes Bundesgerichtsurteil, KEIN amtlich

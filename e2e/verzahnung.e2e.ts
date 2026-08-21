@@ -213,7 +213,7 @@ test('MM5: jeder OR-Panel-Entscheid trägt das «via Art. N»-Sublabel', async (
 test('Fundstelle A (Gesetz-Chip): ZGB Art. 684 → BGE 151 III 377 landet auf der Erwägung', async ({ page }, info) => {
   test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
     'der Entscheid-Chip an der Zeile unter dem Artikel als Einstieg in die Erwägung',
-    'Deckungslücke — der Erwägungs-Sprung ab V3-Panel ist H5-Auflage (Kontaktbogen H4 §7)'))
+    'V3-Deckung: e2e/leser-v3-panel-erwaegungssprung.e2e.ts (21.8.2026, §7b Pos. 4)'))
   await page.goto('/gesetze/bund/ZGB#art-684')
   const art = page.locator('#art-684')
   const chip = art.locator('a[href*="bge_151_III_377"]').first()

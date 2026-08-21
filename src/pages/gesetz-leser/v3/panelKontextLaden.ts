@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { revisionenFuerNorm, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { botschaftenFuer, type BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
+import { ladeRevisionShard, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
 
 // ─── Nachladen der Reiter «Änderungen» und «Materialien» (H3, Kap. 7) ────────
 //
@@ -40,6 +41,25 @@ export function useRevisionen(erlassKey: string | undefined, laden: boolean): Ge
     if (!laden || !erlassKey) return;
     let lebt = true;
     void revisionenFuerNorm([erlassKey]).then((a) => { if (lebt) setStand({ key: erlassKey, wert: a }); });
+    return () => { lebt = false; };
+  }, [erlassKey, laden]);
+  if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
+  return { wert: stand.wert, fertig: true };
+}
+
+// ── §7b-DECKUNGSLÜCKE GESCHLOSSEN (21.8.2026, normrevision-badge.e2e.ts) ─────
+// Derselbe Lade-/Gate-Rhythmus wie `useRevisionen` oben, andere Quelle: der
+// erlass-lokale Revisions-Shard (`ladeRevisionShard`, seit V1c bestandsfest,
+// bisher nur vom Ist-KontextPanel gemountet). `null` = Erlass ohne
+// Revisions-Beleg (kein Fehler, §8 — `ladeRevisionShard` unterscheidet das
+// bereits vom Fetch-Fehler, der dort ebenfalls `null` liefert und dafür den
+// Promise-Cache NICHT setzt, also beim nächsten Aufruf erneut versucht).
+export function useArtikelRevisionShard(erlassKey: string | undefined, laden: boolean): Geladen<RevisionShard | null> {
+  const [stand, setStand] = useState<{ key: string; wert: RevisionShard | null } | null>(null);
+  useEffect(() => {
+    if (!laden || !erlassKey) return;
+    let lebt = true;
+    void ladeRevisionShard(erlassKey).then((s) => { if (lebt) setStand({ key: erlassKey, wert: s }); });
     return () => { lebt = false; };
   }, [erlassKey, laden]);
   if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
