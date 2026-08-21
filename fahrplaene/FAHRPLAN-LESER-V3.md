@@ -2585,6 +2585,50 @@ Ist-Hülle fällt) · BS-Zitat mit nackter Nummer bis zur Sigle im Register
 75 + 54 px Leerräume (CLS-Abwägung) · Ä124 «Achter Titelbis» (Korpusdaten) ·
 Ä123 Chip-Gesichter nach dem Nachladen.
 
+#### Cowork-Sichtung 18.8.2026, Triage 21.8.2026
+
+Externe Test-Session (18.8.2026, Chrome Desktop, Live-Site), 53 Befunde
+Gesetzes-Bereich; Triage-Tabelle `~/.claude/plans/ich-gebe-dir-gleich-quirky-lobster.md`.
+Sofort-Bündel sind gebaut (Verdikt-Liste unten); die restlichen, nicht in
+einem Sofort-Bündel behandelten Leser-Befunde stehen hier als **neue
+Positionen Ä129–Ä141** — jede mit dem Vermerk **Cowork 18.8.2026,
+unverifiziert — vor Bau reproduzieren** (kein Befund wird ungeprüft geglaubt,
+§7/§14.7).
+
+| Ä | Befund (Cowork-Nr.) | Kern |
+|---|---|---|
+| **Ä129** | 5 | Rechtsprechungs-Panel überlagert den Lesetext, die Spalte springt ~35 px, ein Button wandert dabei unter dem Zeiger weg |
+| **Ä130** | 9 | Das Ansicht-Menü öffnet ÜBER dem Rechtsprechungs-Panel statt sich mit ihm auszuschliessen |
+| **Ä131** | 10 | Norm-Vorschau öffnet auf Hover, ist 400 px hoch und trägt ein eigenes ✕ — Hover- und Klick-Modell stehen uneinheitlich nebeneinander |
+| **Ä132** | 11 | Die In-Erlass-Suche ersetzt die Gliederung vollständig statt sie zu überlagern |
+| **Ä133** | 20 | «Weiterlesen bei Art. X» liegt dauerhaft über dem Inhalt und kollidiert bei schmaler Breite mit «Ansicht» |
+| **Ä134** | 35 | Die Beschriftung des Rechtsprechungs-Buttons wechselt beim Scrollen und kehrt nach dem Schliessen nicht zum Ausgangswort zurück |
+| **Ä135** | 50 | Gliederung ausblenden macht das Suchfeld seitenbreit, ohne dass die Lesespalte an Breite gewinnt |
+| **Ä136** | 12+27 | Der Reiterstapel wächst unsichtbar bis ☰13 und zählt reine Navigationsansichten («Zuletzt geöffnet», «Gesetz öffnen») als eigene Reiter mit |
+| **Ä137** | 51 | Zwei Seitenleisten gleichzeitig sichtbar; die globale App-Leiste führt Bund/Kantone/International doppelt zur Krume |
+| **Ä138** | 21/23/24/25/26/28 | Split-/Reiter-Sammelbefund, sechs Teilsymptome: asymmetrische Pane-Buttons (21) · Mehrfach-Öffnen desselben Erlasses, auch ausserhalb des Split belegt (ZGB dreifach, 23) · gezogene Spaltenbreite wird beim dritten Fenster verworfen (24) · «Layout-Link kopieren» ohne Rückmeldung (25) · aktive Zeile ohne ⧉-Kennzeichnung (26) · «Hauptfenster schliessen» ohne Nennung des Erlassnamens (28) |
+| **Ä139** | 16 | Die URL wird auf Grossschreibung umgeschrieben, die Anzeige bleibt gemischt — zwei Schreibweisen derselben Referenz |
+| **Ä140** | 22 | Split-Fenster zeigen sekundenlang Art. 1 und springen dann von selbst; gemessene Offsets −248k/−397k px nach ~9 s |
+| **Ä141** | 3+52 | EINE Position (zwei Befunde, gleiche Wurzel vermutet): Compositor-Zeichnung hinkt hinterher — weisser Schirm bis zum ersten Scroll-Tick bzw. die ganze Seite wird um den Scroll-Offset versetzt gezeichnet; DOM ist beide Male korrekt, heilt in 2–3 s. Chromium-Verdacht bei > 500 k px Seitenhöhe. **Abhilfe-These Virtualisierung (Skill `perf`) — NICHT blind bauen**, erst am Ist-Stand reproduzieren |
+
+**Triage-Verdikt (Kurzliste, Details in den Commits):**
+
+| Befund | Verdikt | Beleg |
+|---|---|---|
+| 1, 4, 15, 17, 53 | ✅ erledigt | Commit `b19497f25` |
+| 31, 32 | ✅ erledigt | Commit `994550d13` |
+| 13 | ✅ erledigt | Commit `3fade7e0b` |
+| 14 | ✅ erledigt | Commit `e4b49829c` |
+| 39 | ✅ erledigt | Commit `191cc2128` |
+| 40 | ✅ erledigt | Commit `2657bbb10` |
+| 30 | ✅ erledigt | Commit `23f1b4b20` |
+| 34 | ✅ erledigt | Commit `576591952` |
+| 29 | ✅ erledigt (auf diesem Branch bereits committet, abweichend vom Auftragsstand «in Arbeit») | Commit `f4ad6ad78` |
+| 2 | ⏳ nicht bestätigt | Sprung kommt in 0,7 s (lokal) bzw. 1,8 s (live) — spürbar, aber kein Ausfall; der im Befund genannte ZPO-Anker `art-430` existiert im Korpus nicht (Fehlmessung an einem Nicht-Ziel) |
+| 3 | ⏳ nicht bestätigt (headless) | malt sauber im headless Lauf; DOM war laut Befund selbst korrekt — Compositor-Verdacht bleibt offen, siehe Ä141 |
+| 6b | ✅ geklärt, kein Datenfehler | Entscheid-Titel/Unterzeile-Differenz ist der amtliche Weiterzug-Zusatz (272 von 3'795 Einträgen betroffen) |
+| 38 | läuft (Welle 2, anderer Branch/Agent) | a11y-Tastaturfalle globale Suche, `layout/**` — nicht Teil dieser Einsortierung |
+
 ---
 
 ## 8 · Typografie-Varianten (Pos. 19, entscheidet S2)
