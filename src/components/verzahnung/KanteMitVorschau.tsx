@@ -75,6 +75,11 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
   // Tastatur-Merkung als REF: sie überlebt jedes Re-Render und wird von keinem
   // durchgereichten Fokus-Ereignis überschrieben (B1 (1)).
   const perTastatur = useRef(false);
+  // §7b-BEFUND (21.8.2026, PanelEntscheide-Integration — Fehler war LATENT,
+  // nicht neu: reproduziert auch am alten Standort, `leitfaelle-chips.e2e.ts`
+  // (d) gegen Projekt `leser-v1`, Zeile 202, VOR jeder Änderung hier). Siehe
+  // Herleitung an `schliesse`/`onFocus` unten.
+  const schliessendRef = useRef(false);
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [autoFokus, setAutoFokus] = useState(false);
   const kastenId = useId();
@@ -100,7 +105,24 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
     stoppUhr();
     setRect(null);
     setAutoFokus(false);
-    if (fokusZurueck && perTastatur.current) zelle.current?.querySelector('a')?.focus();
+    // §7b-BUGFIX: `setRect(null)` ist in React 18 auch aus einem nativen
+    // Listener (Esc-Handler in `RegestePopover`) automatisch gebatched — der
+    // Kasten steht im DOM also noch, wenn die Zeile darunter synchron läuft.
+    // `.focus()` löst SOFORT (synchron, noch im selben Tick) `onFocus` weiter
+    // unten aus; ohne diese Sperre sah der die zurückkehrende Fokus-Geste als
+    // NEUEN Öffnungsgrund an (`imKasten` prüft nur den PORTAL-Kasten, nicht
+    // die Zelle selbst) und riss den gerade geschlossenen Kasten in derselben
+    // Bewegung wieder auf — ein Escape blieb wirkungslos, sobald die Vorschau
+    // per Tastatur geöffnet worden war (nur DANN läuft dieser Zweig, `pointerleave`
+    // gibt keinen Fokus zurück). Reproduziert (§0.2) BEIDSEITIG, unabhängig von
+    // der V3-Integration: `leitfaelle-chips.e2e.ts` (d) schlug mit exakt diesem
+    // Bild auch am alten Standort (Projekt `leser-v1`) fehl — ein latenter
+    // Fehler, den erst die neue V3-Deckung hier sichtbar gemacht hat.
+    if (fokusZurueck && perTastatur.current) {
+      schliessendRef.current = true;
+      zelle.current?.querySelector('a')?.focus();
+      schliessendRef.current = false;
+    }
     perTastatur.current = false;
   }, []);
   /** Liegt der Knoten im portalierten Kasten? (Fokus-Aussiebung, siehe Kopf.) */
@@ -131,6 +153,9 @@ export const KanteMitVorschau = memo(function KanteMitVorschau({
         // Fokus IM Kasten ist kein neuer Öffnungsgrund — er würde nur die
         // Tastatur-Merkung und das Anker-Rechteck neu setzen (B1 (1)).
         if (imKasten(e.target)) return;
+        // §7b-BUGFIX: die eigene Fokus-RÜCKGABE aus `schliesse` ist ebenfalls
+        // kein neuer Öffnungsgrund — Herleitung dort.
+        if (schliessendRef.current) return;
         oeffne(false);
       }}
       onBlur={(e) => {
