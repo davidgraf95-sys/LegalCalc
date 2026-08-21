@@ -38,8 +38,10 @@ test.describe('UI-NAV O1 — Verlauf-Initiative', () => {
     await expect(suchBereich.getByText('Zuletzt geöffnet', { exact: true })).toBeVisible()
     await expect(suchBereich.getByText('Einstieg', { exact: true })).toBeVisible()
 
-    // Ein kuratierter Einstieg navigiert in die Rubrik.
-    await suchBereich.getByRole('link', { name: 'Gesetze', exact: true }).click()
+    // Ein kuratierter Einstieg navigiert in die Rubrik. Seit Befund 38
+    // (Commit 00a586b1e) sind die Zeilen role=option in einer role=listbox
+    // statt eigener <Link>-Tab-Stopps (a11y-Umbau SucheLeerzustand.tsx).
+    await suchBereich.getByRole('option', { name: 'Gesetze', exact: true }).click()
     await expect(page).toHaveURL(/\/gesetze$/)
     expect(fehler).toEqual([])
   })
