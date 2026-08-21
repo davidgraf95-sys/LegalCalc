@@ -29,7 +29,7 @@ import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 // leere Fläche (dieselbe Regel wie bei den H1-Slots des Rahmens).
 
 export function LeserPanel({
-  panelId, titelId, artikelLabel, bestimmungsWort, reiter, setReiter, inhalt, onSchliessen,
+  panelId, titelId, artikelLabel, bestimmungsWort, erlassKuerzel, reiter, setReiter, inhalt, onSchliessen,
   fuss, panelRef, kopfExtra, steckbrief,
 }: {
   panelId: string;
@@ -44,6 +44,15 @@ export function LeserPanel({
    *  diesem Artikel» bzw. «zu diesem Paragraphen». Kommt aus der EINEN Ableitung
    *  (`./erlassAnsicht`), wird hier nie abgeleitet (§5). */
   bestimmungsWort: BestimmungsWort;
+  /**
+   * Cowork-Befund 34 (18.8.2026): der Panel-Kopf trug in JEDEM Reiter dieselbe
+   * Artikel-Angabe («· Art. 1») — in «Änderungen»/«Materialien» gilt der
+   * Inhalt aber dem GANZEN Erlass, nicht dem gerade gelesenen Artikel (§8:
+   * eine irreführende Ortsangabe ist keine ehrliche). Nur der Reiter
+   * «Entscheide» zeigt darum weiter `artikelLabel`; die anderen beiden zeigen
+   * stattdessen das Erlass-Kürzel.
+   */
+  erlassKuerzel: string;
   reiter: PanelReiter;
   setReiter: (r: PanelReiter) => void;
   inhalt: Readonly<Record<PanelReiter, ReactNode>>;
@@ -106,7 +115,12 @@ export function LeserPanel({
       <div className="flex shrink-0 items-baseline justify-between gap-2 border-b border-line px-2.5 py-1.5">
         <p id={titelId} className="lc-overline min-w-0 truncate">
           Rechtsprechung &amp; Kontext
-          {artikelLabel && <span className="num ml-1 font-normal normal-case text-ink-600">· {artikelLabel}</span>}
+          {/* Befund 34: nur «Entscheide» bezieht sich auf den Artikel — die
+              anderen Reiter gelten dem Erlass, darum dessen Kürzel statt der
+              (dort irreführenden) Artikel-Angabe. */}
+          {reiter === 'entscheide'
+            ? artikelLabel && <span className="num ml-1 font-normal normal-case text-ink-600">· {artikelLabel}</span>
+            : <span className="ml-1 font-normal normal-case text-ink-600">· {erlassKuerzel}</span>}
         </p>
         <button type="button" onClick={onSchliessen} data-v3-panel-zu
           aria-label="Rechtsprechung und Kontext schliessen"

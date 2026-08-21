@@ -81,7 +81,7 @@ const BLATT_ANTEIL = 55;
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, bestimmungsWort, aktArtikel, steckbrief,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief,
 }: {
   /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet (sie folgt
    *  `panelForm`, ausser wo der aufgeweitete Rahmen eine eigene Spur trägt). */
@@ -101,6 +101,9 @@ export function LeserPanelZone({
   quelleUrl: string;
   normZitat: string;
   artikelLabel: string | null;
+  /** Befund 34: Kürzel des Erlasses — Panel-Kopf-Angabe für «Änderungen»/
+   *  «Materialien» (die gelten dem ganzen Erlass, nicht dem Artikel). */
+  erlassKuerzel: string;
   bestimmungsWort: BestimmungsWort;
   aktArtikel: string | null;
   /** Der Erlass-Steckbrief als Tafel — oder `null`, wenn er gerade OFFEN in der
@@ -276,7 +279,7 @@ export function LeserPanelZone({
             className={`${flaeche.klassen} flex flex-col`}
             style={flaeche.stil}>
             <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
-              bestimmungsWort={bestimmungsWort}
+              bestimmungsWort={bestimmungsWort} erlassKuerzel={erlassKuerzel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt}
               onSchliessen={schliesse} panelRef={panelRef}
               // Griffleiste NUR am unten angeschlagenen Blatt: sie ist das Zeichen
