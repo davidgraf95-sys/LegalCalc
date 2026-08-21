@@ -26,14 +26,13 @@ const BREITEN = [
 // Currency-Sidecar UND die Warnzeile aus dem Revisions-Sidecar). Gemessen wird
 // @390, wo die Sätze am ehesten neu umbrechen. Der Beobachter startet vor der
 // Navigation, damit er das Einwachsen sieht (Muster aus leser-kontext-e4).
-// Beide Hüllen: die Reservierung muss in der Ist-Hülle UND in V3 tragen. Sie
-// sind nicht austauschbar — V3 stellt den Kopf in eine Spalte neben der
-// Seitenleiste (@1280 nur 656 px statt 976 px), dort brechen dieselben Sätze
-// über mehr Zeilen. Genau daran ist der frühere `xl`-Schritt der Reservierung
-// gescheitert (Prüferbefund 16.8.2026); ohne diesen Lauf fiele das erst beim
-// Umschalten in H4 auf.
+// V3 stellt den Kopf in eine Spalte neben der Seitenleiste (@1280 nur 656 px
+// statt 976 px), dort brechen dieselben Sätze über mehr Zeilen. Genau daran
+// ist der frühere `xl`-Schritt der Reservierung gescheitert (Prüferbefund
+// 16.8.2026). Bis H5 lief dieselbe Messung zusätzlich gegen die Ist-Hülle
+// (`?leser=v1`) — mit ihrer Löschung (21.8.2026) entfällt der zweite Lauf,
+// er hätte nur noch dasselbe V3 unter einem wirkungslosen Parameter gemessen.
 const HUELLEN = [
-  { name: 'ist-huelle', q: '?leser=v1' },
   { name: 'v3', q: '?leser=v3' },
 ] as const;
 

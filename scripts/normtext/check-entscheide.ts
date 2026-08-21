@@ -67,8 +67,8 @@ const BUDGET_MB = 1024;
 // Regeländerung, identische Rückgabewerte.
 const NORM_INDEX_BUDGET_MB = 8;
 // Per-Shard-Deckel (Linse 3, 28.7.2026, §15). Der Monolith-Deckel oben sagt NICHTS
-// über die je Seite tatsächlich geladene Menge: der ArtikelLeser (gesetz-leser/
-// inhalt.tsx, KontextPanel.tsx) zieht über `ladeLeitfallShard` genau EINEN Shard
+// über die je Seite tatsächlich geladene Menge: der Leser (gesetz-leser/
+// artikelKontext.ts, KontextPanel.tsx) zieht über `ladeLeitfallShard` genau EINEN Shard
 // je Erlass. Der Backfill hat die grossen Shards ~3.5× wachsen lassen (Ist
 // 28.7.2026, KiB wie unten gemessen: STPO 584, STGB 437, ZPO 426, OR 419,
 // ZGB 398), und für sie gab es bis jetzt gar keinen Deckel: ein weiterer

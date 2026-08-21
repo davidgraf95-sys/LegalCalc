@@ -2,7 +2,6 @@
 import { test, expect, type Page } from '@playwright/test'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
 import { DROSSEL } from './helpers/budgets'
-import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 // ─── W2·10-UI-NAV/R4 + R8 ────────────────────────────────────────────────────
 //
@@ -189,34 +188,13 @@ test('R8: j/k gehen Artikel vor/zurück, «?» öffnet die Übersicht, Escape gi
   await expect(dialog).toBeHidden()
 })
 
-test('R8-Koexistenz: im Reader bleiben «/» und ⌘K die Suche, und j tippt im Suchfeld einen Buchstaben', async ({ page }, info) => {
-  // KEIN Defekt, sondern ein ENTSCHEIDENER Vorrangwechsel: im V3-Leser gehören
-  // «/» und ⌘K dem Such-/Sprungfeld des Lesers, nicht der Kopf-Suche
-  // (`v3/suchKuerzel.ts`, Bug-Check B1 vom 16.8.2026 — vorher öffneten BEIDE
-  // Empfänger gleichzeitig). Dieser Fall hält die V1-Zusage fest und bleibt
-  // darum an der Ist-Hülle; er ist in V3 nicht rot, sondern überholt.
-  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
-    'der Vorrang der Kopf-Suche auf «/» und ⌘K im Leser',
-    '`leser-v3-suche-sprung` (⌘K/«/» ins Leser-Feld) und `src/tests/leser-v3-kuerzel.test.ts` (die Regel DOM-frei, alle Kombinationen)'))
-  await page.goto(ERLASS)
-  await readerBereit(page)
-  const feld = page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
-
-  // «/» gehört weiterhin der HeaderSuche (Kontrakt tastatur.e2e.ts) — auch auf
-  // der Seite, auf der der neue Listener läuft.
-  await page.keyboard.press('/')
-  await expect(feld).toBeFocused()
-  await page.keyboard.press('Escape')
-
-  await page.keyboard.press('Control+k')
-  await expect(feld).toBeFocused()
-
-  // Guard 2: im Eingabefeld navigiert «j» nicht, es tippt.
-  const vorher = await page.evaluate(() => window.scrollY)
-  await page.keyboard.type('jk')
-  await expect(feld).toHaveValue('jk')
-  expect(await page.evaluate(() => window.scrollY), 'kein Sprung aus dem Eingabefeld heraus').toBe(vorher)
-})
+// «R8-Koexistenz: im Reader bleiben / und ⌘K die Suche» GELÖSCHT 21.8.2026
+// (H5) — hielt die Ist-Hüllen-Zusage fest (Vorrang der Kopf-Suche auf «/» und
+// ⌘K im Leser). Kein Defekt, ein entschiedener Vorrangwechsel: im V3-Leser
+// gehören «/» und ⌘K dem Such-/Sprungfeld des Lesers, nicht der Kopf-Suche
+// (`v3/suchKuerzel.ts`, Bug-Check B1 16.8.2026). V3-Deckung:
+// `leser-v3-suche-sprung` (⌘K/«/» ins Leser-Feld) und
+// `src/tests/leser-v3-kuerzel.test.ts` (die Regel DOM-frei, alle Kombinationen).
 
 test('R8/B1: bei OFFENEM «?»-Overlay navigiert j/k nicht — der Dialog-Guard nimmt sich nicht selbst aus', async ({ page }) => {
   // §9-Bug-Check B1. Die erste Fassung nahm das EIGENE Overlay pauschal von

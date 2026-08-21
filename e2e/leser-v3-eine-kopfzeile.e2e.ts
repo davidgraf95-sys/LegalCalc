@@ -33,8 +33,9 @@
 //  · in `src/components/layout/InhaltsKopf.tsx` den Block
 //    `if (daten.kopfzeileSelbst) { … }` entfernen ⇒ (a)/(b) messen wieder zwei
 //    Krumen-Leisten, zwei ✕ und 159 px Chrome;
-//  · in `src/pages/gesetz-leser/GesetzLeserV3.tsx` die Meldung
-//    `meldeInhaltsKopf({ kopfzeileSelbst: true, … })` streichen ⇒ dasselbe;
+//  · in `src/pages/GesetzLeser.tsx` (bis H5: `gesetz-leser/GesetzLeserV3.tsx`)
+//    die Meldung `meldeInhaltsKopf({ kopfzeileSelbst: true, … })` streichen
+//    ⇒ dasselbe;
 //  · in `src/pages/gesetz-leser/v3/kopfStufen.ts` `krume` auf einem Zuschnitt
 //    abschalten ⇒ (b)/(f) verlieren «Gesetze ›» und die Ebene-Stufe, (b2)/(h)
 //    den Rücksprung «‹ Gesetze»;
@@ -268,27 +269,9 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
-  test('(e) OHNE Flag ist die App-Leiste unverändert da (FL-4)', async ({ page }) => {
-    const fehler = fehlerSammeln(page)
-    await page.setViewportSize({ width: 1440, height: 900 })
-    // `?leser=v1` und nicht «kein Parameter»: im Projekt `leser-v3` steht das
-    // Flag im localStorage, ein Aufruf ohne Parameter liefe dort in V3 und die
-    // Sonde prüfte nichts (`pages/gesetz-leser/leserFlag.ts`).
-    await page.goto('/gesetze/bund/STPO?leser=v1')
-    await expect(page.locator('[data-inhalt-kopf]')).toBeVisible({ timeout: 20_000 })
-    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
-    await page.waitForTimeout(600)
-
-    const m = await chrome(page)
-    expect(m.appLeisten, 'die App-Leiste fehlt in V1 — FL-4 gebrochen').toBe(1)
-    expect(m.appKrumen, 'die Brotkrümel-Navigation der App-Leiste fehlt in V1').toBe(1)
-    expect(m.leserKrumen, 'V1 zeigt eine V3-Kopfzeile').toBe(0)
-    expect(m.ortsangabenImChrome, 'V1 verliert die Ortsangabe der App-Leiste').toBeGreaterThan(0)
-    const leiste = await page.locator('[data-inhalt-kopf]').innerText()
-    expect(leiste, `App-Leiste in V1: ${leiste}`).toContain('Stand')
-
-    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
-  })
+  // «(e) OHNE Flag ist die App-Leiste unverändert da (FL-4)» GELÖSCHT
+  // 21.8.2026 (H5) — prüfte `[data-inhalt-kopf]` der Ist-Hülle (FL-4, mit dem
+  // Flag-Code gefallen). Kein Rückweg mehr, den man ohne Flag prüfen könnte.
 
   test('(f) erlass-neutral: Kanton BS zeigt «Gesetze › Kanton BS › …»', async ({ page }) => {
     const fehler = fehlerSammeln(page)

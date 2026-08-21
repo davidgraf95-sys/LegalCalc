@@ -80,18 +80,19 @@ describe('Eine Naht: die sechs geteilten inhalt-*-Module', () => {
   });
 });
 
-// Reihenfolge der Muster bewusst so, dass '../inhalt' NICHT versehentlich
-// '../inhalt-hooks' o.ä. mitfängt: der String-Vergleich verlangt die
-// schliessende Anführung direkt nach 'inhalt'.
+// GELÖSCHT 21.8.2026 (H5): die Einträge zur Ist-Hülle selbst (`../inhalt`,
+// `../inhalt-volltext`, `LeserMenuPaar`, `LeserAnsichtMenu`,
+// `LeserRechtsprechungMenu`, `../parts/InGesetzSuche`) prüften ein Verbot, das
+// mit der gelöschten Hülle nicht mehr scheitern KANN — kein Quelltext im Repo
+// trägt diese Namen mehr, weder in noch ausserhalb von `v3/` (§6.7: ein Tor,
+// das nicht scheitern kann, ist gefährlicher als keines). `KontextPanel` und
+// `ArtikelSprungFeld` bleiben: beide Bausteine leben weiter (`KontextPanel` in
+// `inhalt-ansichten.tsx`s Fehl-/Früh-Ansichten, `ArtikelSprungFeld` in
+// `GliederungSheet.tsx`) und das Verbot, sie ein zweites Mal direkt aus `v3/`
+// zu berühren, ist weiterhin ein echtes.
 const VERBOTEN: [string, RegExp][] = [
-  ['../inhalt (Ist-Orchestrierung)', /from '\.\.\/inhalt'/],
-  ['../inhalt-volltext', /from '\.\.\/inhalt-volltext'/],
-  ['LeserMenuPaar', /\bLeserMenuPaar\b/],
-  ['LeserAnsichtMenu', /\bLeserAnsichtMenu\b/],
-  ['LeserRechtsprechungMenu', /\bLeserRechtsprechungMenu\b/],
-  ['../parts/InGesetzSuche', /\bInGesetzSuche\b/],
-  ['../parts/ArtikelSprungFeld', /\bArtikelSprungFeld\b/],
   ['KontextPanel', /\bKontextPanel\b/],
+  ['../parts/ArtikelSprungFeld', /\bArtikelSprungFeld\b/],
 ];
 
 // H3 · NUR DIREKT (nicht transitiv): `BezuegeZeile` ist der Artikelfuss der

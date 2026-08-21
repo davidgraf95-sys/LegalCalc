@@ -44,11 +44,12 @@
 // bei QS-PERF (Ä24-Übergabe). Wer hier eine Zahl senken will, senkt sie dort.
 import { expect, type Page } from '@playwright/test'
 
-/** Der Öffner des Ansicht-Menüs, je Hülle. Beide sind reine Attribut-Abfragen
- *  (O(1) im Selektor-Engine), beide existieren nur im Client-Render:
- *  `data-ansicht-menu` = Ist-Hülle (`LeserAnsichtMenu.tsx`),
- *  `data-v3-ansicht` = V3-Hülle (`v3/LeserAnsichtV3.tsx`). */
-export const ANSICHT_OEFFNER = '[data-ansicht-menu], [data-v3-ansicht]'
+/** Der Öffner des Ansicht-Menüs (`v3/LeserAnsichtV3.tsx`) — reine
+ *  Attribut-Abfrage (O(1) im Selektor-Engine), existiert nur im Client-Render.
+ *  Bis H5 (21.8.2026) stand hier zusätzlich `[data-ansicht-menu]` der
+ *  Ist-Hülle (`LeserAnsichtMenu.tsx`); mit deren Löschung entfällt die
+ *  zweite Hälfte. */
+export const ANSICHT_OEFFNER = '[data-v3-ansicht]'
 
 /** Wartet, bis die Client-Hülle des Lesers übernommen hat. Budget unverändert
  *  20 s — das ist die Schranke, gegen die die Specs seit je laufen. */

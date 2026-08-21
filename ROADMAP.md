@@ -345,11 +345,11 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [x] **Vorprobe H1** ✅ erledigt 16.8.2026 (Chronik). Kap. 6.
   - [x] **H1 Fundament** ✅ erledigt 16.8.2026 (Chronik). Kap. 7.
   - [x] **H2 Suche** ✅ erledigt 16.8.2026 (Chronik). Kap. 7.
-  - [ ] **H2b Ästhetik-Nachzug** — Ä1 (Leerzone/Krumen-Wahrheit + App-Seitenleiste eingeklappt), Ä5, Ä8, Ä9, Ä10, Ä14; Ä1 öffnet `src/components/layout/**` mit deklarierter Whitelist. Neu dazu aus dem H2-Kontaktbogen: zwei nicht unterscheidbare ✕ im Suchfeld, ellipsierender Trefferzähler, drei offene axe-Verstösse. Kap. 7.
-  - [ ] **H3 Rechtsprechung/Kontext** — Seitenpanel/Sheet mit Instanz · Kanton · Zeitstrahl · Reiter Entscheide/Änderungen/Materialien; Inline nur Zähler (**F4**). Kap. 7.
-  - [ ] **H4 Umschalten** — V3 wird Hauptroute; Bild-Vergleich je Breite (Handy · voll · Split) als Abnahme; David-Go. Kap. 7.
-  - [ ] **H5 Löschung** — alte Hülle raus (Streich-Massstab aufraeumen.md §3, Beweis vor Löschung), Zielzahlen Kap. 10. Kap. 7.
-  - [ ] **§7b-Lücken schliessen: fünf leser-v3-Testdeckungen** — Materialien-Panel (`e2e/materialien-m5-verzahnung.e2e.ts:25,45`) · Facetten/Zeitstrahl = ↻-Badge/Revisionsdatum (`e2e/normrevision-badge.e2e.ts:21,46`) · ★-Wortlaut/via Art. N (`e2e/verzahnung.e2e.ts:147,198`) · Erwägungs-Sprung/Popover (`e2e/verzahnung.e2e.ts:214`, `e2e/leitfaelle-chips.e2e.ts:142`) · Druck im Split (`e2e/druck-fundstellen-z2.e2e.ts:127`) — Vorbedingung H5, Beleg: zehn `test.skip`-Sperren mit `istHuellenGrund(...'H5-Auflage'...)` an den genannten Stellen (Zeilen verifiziert 21.8.2026 gegen den Ist-Stand, weichen leicht von den im Auftrag genannten Zeilen ab — §7).
+  - [x] **H2b Ästhetik-Nachzug** ✅ vollzogen 17.8.2026 (Vollzugsvermerk Kap. 7; Ä-Reste als Positionen weitergeführt) — Ä1 (Leerzone/Krumen-Wahrheit + App-Seitenleiste eingeklappt), Ä5, Ä8, Ä9, Ä10, Ä14; Ä1 öffnet `src/components/layout/**` mit deklarierter Whitelist. Neu dazu aus dem H2-Kontaktbogen: zwei nicht unterscheidbare ✕ im Suchfeld, ellipsierender Trefferzähler, drei offene axe-Verstösse. Kap. 7.
+  - [x] **H3 Rechtsprechung/Kontext** ✅ vollzogen 17.8.2026 (Kap. 7) — Seitenpanel/Sheet mit Instanz · Kanton · Zeitstrahl · Reiter Entscheide/Änderungen/Materialien; Inline nur Zähler (**F4**). Kap. 7.
+  - [x] **H4 Umschalten** ✅ vollzogen 18.8.2026 (PR #552, Vermerk «H4 — DER FLIP») — V3 wird Hauptroute; Bild-Vergleich je Breite (Handy · voll · Split) als Abnahme; David-Go. Kap. 7.
+  - [x] **H5 Löschung** ✅ vollzogen 21.8.2026 (dieser PR; Vollzugsvermerk Kap. 7, −4900 Zeilen) — alte Hülle raus (Streich-Massstab aufraeumen.md §3, Beweis vor Löschung), Zielzahlen Kap. 10. Kap. 7.
+  - [x] **§7b-Lücken schliessen: fünf leser-v3-Testdeckungen** ✅ erledigt 21.8.2026 (PR #558 + H5-Nachbau Panel-Filter/Split) — Materialien-Panel (`e2e/materialien-m5-verzahnung.e2e.ts:25,45`) · Facetten/Zeitstrahl = ↻-Badge/Revisionsdatum (`e2e/normrevision-badge.e2e.ts:21,46`) · ★-Wortlaut/via Art. N (`e2e/verzahnung.e2e.ts:147,198`) · Erwägungs-Sprung/Popover (`e2e/verzahnung.e2e.ts:214`, `e2e/leitfaelle-chips.e2e.ts:142`) · Druck im Split (`e2e/druck-fundstellen-z2.e2e.ts:127`) — Vorbedingung H5, Beleg: zehn `test.skip`-Sperren mit `istHuellenGrund(...'H5-Auflage'...)` an den genannten Stellen (Zeilen verifiziert 21.8.2026 gegen den Ist-Stand, weichen leicht von den im Auftrag genannten Zeilen ab — §7).
   - [ ] **S1 Historie-Modell** — «Änderungsvermerke: an/aus», bei «aus» keine Spur im Lesetext (Sichtbarkeits-Wächter §8) — **wartet auf F1/F2**. Kap. 7.
   - [ ] **S2 Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
   - [x] **S3 Erlass-Kopf + Standausweis-Wortlaut** ✅ gebaut 16.8.2026 (Chronik). Kap. 7.
@@ -385,9 +385,11 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 - **Merkposten:** `register.json` steht bei 97 % des 780-KB-gzip-Deckels — wer es weiter belädt,
   reisst `check:perf-budget`; Lösung ist eine eigene Projektion, nie das Anheben der Schranke (§8).
 - [ ] **7-VZUI · Verzahnung sichtbar machen** *(David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)* — ✅ V1a/V1b/V1c gebaut 3./4.7.2026 (Chronik):
-  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/inhalt.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · kollision: [src/pages/gesetz-leser/parts.tsx, src/components/kontext/KontextPanel.tsx, src/pages/EntscheidLeser.tsx, src/components/NormPopover.tsx, src/components/suche/SuchResultate.tsx, src/pages/gesetz-leser/bezugAuswahl.ts, src/pages/gesetz-leser/bezuegeLaden.ts, src/pages/gesetz-leser/v3/PanelMaterialien.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, reine UI auf vorhandenen Daten (§3). Offen:
-  V2 (E3-Serving) · V3 (E6a) — an den Datenstrang gekoppelt.
+  V2 (E3-Serving) · V3 (E6a) — an den Datenstrang gekoppelt. Rest-Umfang nach H5 (21.8.2026,
+  W2·5m-LESER-V3): «Passende Werkzeuge» und `kontextSoftLaw` (Behörden-Ressourcen) sind kein
+  Material zur Entstehung und gehören nicht in den Panel-Reiter «Materialien» (Kontaktbogen H4 §7a).
   **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
   - [ ] «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen (`bezugAuswahl.ts`/`bezuegeLaden.ts`) — Code-Zusage ohne Deckung ist keine Option (§5/§8). §13.
   - [ ] **VZUI-SACHGEBIET · Sachgebiet-Facette an der Norm↔Entscheid-Kante** — deterministisch aus der amtlichen BGE-Bandnummer I–V (§2, keine Heuristik). Extraktion = Risikopfad ⇒ Gegenprüfung. **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12.

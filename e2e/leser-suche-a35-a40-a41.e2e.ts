@@ -1,6 +1,5 @@
 // @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test';
-import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 
 // E5-Welle (David 16.7.2026, §10.10) — A35 · A40 · A41.
@@ -42,47 +41,14 @@ const inGesetzSuche = (page: Page) => page.getByRole('searchbox', { name: LESER_
 const headerFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ });
 
 test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', () => {
-  test('Suchfeld sitzt OBEN im Inhalts-Kopf, NICHT in einer eigenen Leiste oder der Gliederungsspalte', async ({ page }, info) => {
-    // ── H4-FLIP, GEPINNT (Flip 18.8.2026) ───────────────────────────────────
-    // Erster Versuch war ein UMHÄNGEN (Kopf-Zone `[data-v3-kopf]` neben den
-    // V1-Slots). Er wurde ROT und hat damit etwas Besseres gezeigt als die
-    // Vermutung: die Sache dieses Falls gilt in V3 nicht mehr. Gemessen an
-    // OR (18.8.2026, Sonde über die Vorfahrenkette des Feldes):
-    //
-    //   @390  input < div[data-v3-suchsprung] < div[data-v3-such-zone]
-    //                < div[data-v3-kopf]                       → im Kopf ✔
-    //   @1280 input < div[data-v3-suchsprung] < div[data-v3-leiste-feld]
-    //                < div[data-toc-zone-a] < div[data-toc] < aside[data-v3-aside]
-    //
-    // Auf dem Desktop steht das Feld in V3 also GENAU DORT, wo dieser Fall es
-    // verbietet: in der Gliederungsspalte, in der klebenden Zone A des
-    // Scrollers. Das ist kein Defekt, sondern die Anordnung aus Kap. 4 — ein
-    // Feld, eine Spalte, mit dem Baum darunter. Die Zusage «nicht in der
-    // Gliederungsspalte» ist eine Aussage über die ALTE Anordnung mit zwei
-    // Leisten; sie bleibt für die alte Hülle scharf und wandert mit ihr.
-    //
-    // Die V3-Zusage ist NICHT schwächer, nur anders verortet: `genau EIN Feld,
-    // erreichbar ohne Geste, auf jeder Breite` steht in
-    // `leser-v3-suchfeld-ueberall` (a)/(b)/(c) — inklusive der Sonderlage
-    // «Gliederung eingeklappt», die es in V1 gar nicht gab.
-    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
-      'die Anordnung mit zwei Leisten, in der das Suchfeld ausserhalb der Gliederungsspalte sitzt',
-      '`leser-v3-suchfeld-ueberall` (a)/(b)/(c) — genau EIN Feld, ohne Geste, auf jeder Breite; @390 im Kopf-Block, @1280 in Zone A der Spalte'));
-    await page.goto('/gesetze/bund/OR');
-    await expect(page.locator('#art-1')).toBeVisible({ timeout: 20000 });
-    const suche = inGesetzSuche(page);
-    await expect(suche).toBeVisible({ timeout: 20000 });
-    // Genau EIN Suchfeld (kein Doppel aus mehreren Positionen).
-    await expect(suche).toHaveCount(1);
-    // Das Feld liegt im Inhalts-Kopf (data-such-slot im data-inhalt-kopf) …
-    await expect(suche.locator('xpath=ancestor::*[@data-such-slot]')).toHaveCount(1);
-    await expect(suche.locator('xpath=ancestor::*[@data-inhalt-kopf]')).toHaveCount(1);
-    // … die frühere full-width Such-Leiste (data-such-bar) existiert in der
-    // Einzelansicht NICHT mehr (rückstandsfrei entfernt, David 19.7.2026) …
-    await expect(page.locator('[data-such-bar]')).toHaveCount(0);
-    // … und das Feld liegt NICHT innerhalb der Gliederungsspalte (aside/[data-toc]).
-    await expect(suche.locator('xpath=ancestor::aside')).toHaveCount(0);
-  });
+  // «Suchfeld sitzt OBEN im Inhalts-Kopf, NICHT in einer eigenen Leiste oder
+  // der Gliederungsspalte» GELÖSCHT 21.8.2026 (H5) — prüfte `data-such-slot`/
+  // `data-inhalt-kopf`/`data-such-bar`, die alte Zwei-Leisten-Anordnung, die
+  // mit der Ist-Hülle fällt. War bereits am H4-Flip (18.8.2026) auf V1
+  // gepinnt: die Zusage «nicht in der Gliederungsspalte» gilt nur für die
+  // ALTE Anordnung — in V3 steht das Feld @1280 bewusst in der
+  // Gliederungsspalte (Kap. 4). V3-Deckung: `leser-v3-suchfeld-ueberall`
+  // (a)/(b)/(c) — genau EIN Feld, ohne Geste, auf jeder Breite.
 
   test('«Vertrag» im OR wird im Treffertext gehighlighted (CSS Custom Highlight API)', async ({ page }) => {
     await page.goto('/gesetze/bund/OR');

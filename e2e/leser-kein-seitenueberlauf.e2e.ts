@@ -29,9 +29,10 @@
 // Erlass der Volltitel ist, ist ein eigener Daten-Befund (Klick-Test C3); die
 // Zeile darf aber an KEINEM Wert brechen.
 //
-// ROT ZU BEKOMMEN (§6.7): in `v3/LeserLesespalte.tsx` bzw.
-// `inhalt-volltext.tsx` das `min-w-0` an den beiden Nachbar-Links entfernen ⇒
-// beide Fälle rot mit 81 px. So gemessen.
+// ROT ZU BEKOMMEN (§6.7): in `v3/LeserLesespalte.tsx` das `min-w-0` an den
+// beiden Nachbar-Links entfernen ⇒ rot mit 81 px. So gemessen (damals an
+// beiden Hüllen — `inhalt-volltext.tsx`, die V1-Fassung, ist mit H5,
+// 21.8.2026, gelöscht).
 import { test, expect, type Page } from '@playwright/test'
 
 /** Elemente, die über die Fensterbreite ragen UND von niemandem geklippt werden. */
@@ -60,7 +61,9 @@ async function ueberlaeufer(page: Page): Promise<{ ueberlauf: number; quellen: s
   })
 }
 
-for (const [name, suffix] of [['V3', ''], ['V1', '?leser=v1']] as const) {
+// `['V1', '?leser=v1']` GELÖSCHT 21.8.2026 (H5) — die Ist-Hülle, gegen die
+// dieser Zweig lief, existiert nicht mehr.
+for (const [name, suffix] of [['V3', '']] as const) {
   test(`${name} @390: ZH-211.11 läuft nicht quer — die Tabelle bleibt im Scroller`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto(`/gesetze/kanton/ZH-211.11${suffix}`)

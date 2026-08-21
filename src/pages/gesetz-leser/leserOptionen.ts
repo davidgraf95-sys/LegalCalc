@@ -4,10 +4,11 @@
 // zweiwertige Felder (`fussnoten` · `histansicht` · `leitfaelle`) plus drei
 // JS-konsumierte Filterwerte (Schriftstufe, Bezugs-Facetten, Bezugs-Zeitraum) in
 // EINEM localStorage-Schlüssel und EINEM Hörer-Satz (§5). Bedien-Oberfläche:
-// `LeserAnsichtMenu.tsx` (V1) und `v3/LeserAnsichtV3.tsx` (V3), beide auf DIESEM
-// Store. Chronik der gestrichenen Felder (`verweise`, `linien`, `zeitraum`,
-// dreiwertiges `hist`) steht im Vollzugsvermerk S1, FAHRPLAN-LESER-V3 Kap. 7 —
-// hier nur, was beim Ändern des Codes noch gebraucht wird:
+// `v3/LeserAnsichtV3.tsx`, auf DIESEM Store (bis H5, 21.8.2026, ebenso
+// `LeserAnsichtMenu.tsx` der inzwischen gelöschten Ist-Hülle). Chronik der
+// gestrichenen Felder (`verweise`, `linien`, `zeitraum`, dreiwertiges `hist`)
+// steht im Vollzugsvermerk S1, FAHRPLAN-LESER-V3 Kap. 7 — hier nur, was beim
+// Ändern des Codes noch gebraucht wird:
 //
 // TOGGLES = data-*-Attribut am <html> + CSS, KEIN React-State im Artikel-Baum.
 // Umschalten rendert nur die Switch-Buttons neu, nie die Artikelliste (§15); ein

@@ -27,7 +27,9 @@ const LIES = (p: string) => readFileSync(p, 'utf8');
 const HOOKS = 'src/pages/gesetz-leser/inhalt-hooks.tsx';
 const ANKER = 'src/pages/gesetz-leser/scrollAnker.ts';
 const ARTIKEL = 'src/pages/gesetz-leser/parts/ArtikelLeser.tsx';
-const INHALT = 'src/pages/gesetz-leser/inhalt.tsx';
+// H5 (21.8.2026): `inhalt.tsx` (Ist-Hülle, Orchestrierung) gelöscht — der
+// Anker-Klick-Schreiber lebt seither im V3-Adapter.
+const SPRUNG_ADAPTER = 'src/pages/gesetz-leser/v3/leserV3Modell.ts';
 // B4 (§9-Bug-Check 4.8.2026): `App.tsx` trägt den DRITTEN Scroll-Listener des
 // Lesewegs (die Positions-Map der Scroll-Wiederherstellung) und stand zunächst
 // nicht unter der Sonde — ein dort eingezogener Adress-Sync wäre unbemerkt
@@ -41,13 +43,15 @@ const APP = 'src/App.tsx';
 // Adress-Sync wäre unbemerkt geblieben — exakt die Lücke, die B4 für `App.tsx`
 // geschlossen hat. Deklarierte Prüf-VERSTÄRKUNG, keine Aufweichung: kein
 // bestehender Satz ist gelockert, es kommen nur Dateien unter dieselben Verbote.
+// `inhalt-overlays.tsx` (Ist-Hülle) gelöscht 21.8.2026 (H5) — aus der Liste
+// entfernt, die übrigen fünf Module bleiben (geteilte Naht, weiterhin von
+// `v3/leserV3Modell.ts` gezogen).
 const SPLIT_MODULE = [
   'src/pages/gesetz-leser/inhalt-sprung.tsx',
   'src/pages/gesetz-leser/inhalt-suchtreffer.tsx',
   'src/pages/gesetz-leser/inhalt-zustand.tsx',
   'src/pages/gesetz-leser/inhalt-ableitungen.tsx',
   'src/pages/gesetz-leser/inhalt-weiterlesen.tsx',
-  'src/pages/gesetz-leser/inhalt-overlays.tsx',
 ];
 
 // Boolesche Sonden statt `toMatch` auf der ganzen Datei: ein Fehlschlag soll
@@ -139,7 +143,7 @@ describe('Scroll-Pfade des Lesers schreiben nie in die Adresse (LM-202)', () => 
 
 describe('Die zwei erlaubten Adress-Schreiber (LM-202)', () => {
   it('(a) Anker-Klick: springeZuArtikel setzt #art-Token per replaceState', () => {
-    const quelle = LIES(INHALT);
+    const quelle = LIES(SPRUNG_ADAPTER);
     expect(traegt(quelle, /window\.history\.replaceState\(null, '', ziel\)/), 'Anker-Klick schreibt nicht mehr').toBe(true);
     // replace, nicht push: der Sprung innerhalb desselben Dokuments ist kein
     // Ortswechsel und darf den Verlauf nicht fluten (LM-209-Ökonomie).

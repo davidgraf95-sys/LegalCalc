@@ -122,11 +122,10 @@ describe('V3-Hülle: der Kern bleibt unangetastet (Treue-Grenze, Kap. 1.3)', () 
     // WAS DIESE ZEILE WEITERHIN BEWACHT und was nicht: sie hält fest, dass die
     // Lesespalte ihr Mass aus EINEM Token zieht und zentriert bleibt — nicht
     // mehr, welchen Wert das Token hat. Der Wert ist seit dem Entscheid vom
-    // 16.8. eine Gestaltungsfrage (Ä2) und keine Treue-Frage: die Treue des
-    // Textes misst PX, und PX misst seither bei ERZWUNGEN gleicher
-    // Artikelbreite, ist vom Satzspiegel also unabhängig
-    // (`e2e/px-textkoerper.e2e.ts`). Ohne diese Trennung risse jede
-    // Layout-Entscheidung das Treue-Tor mit.
+    // 16.8. eine Gestaltungsfrage (Ä2) und keine Treue-Frage. Der frühere
+    // Pixelvergleich `e2e/px-textkoerper.e2e.ts` (A-7, V1 gegen V3) ist mit H5
+    // (21.8.2026) gelöscht — sein Vergleichsziel V1 gibt es nicht mehr; eine
+    // Golden-Baseline für den Text-KERN allein bleibt ein offener Folgeschritt.
     expect(traegt(spalte, /id="lc-lesespalte" className="mx-auto w-full max-w-reading"/),
       'Lesespalte zieht ihr Mass nicht mehr aus dem einen Token (Ä2: max-w-reading)').toBe(true);
   });

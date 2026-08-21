@@ -148,18 +148,18 @@ export function useLeserDaten(opts: {
 // ── Kopf-Meldung (Breadcrumb · Stand · Live-Artikel · Ansicht + Suche) ───────
 // W2·19-GLIEDERUNG/S9 (§6.6-Split, Schlankheits-Schwelle): nach dem
 // Schwachstelle-8-Fix (`zeigeGliederung` auf `eintraege.length` statt
-// `sektionen.length`) stand diese Datei bei 804/800 Zeilen. Der Hook ist
-// unverändert byte-gleich — nur ausgelagert nach ./inhalt-kopfmeldung.tsx
-// (Fassade, Begründung dort).
+// `sektionen.length`) stand diese Datei bei 804/800 Zeilen. Der Hook stand
+// bis H5 (21.8.2026) unverändert byte-gleich ausgelagert in der
+// Ist-Hüllen-Fassade `./inhalt-kopfmeldung.tsx` (mit ihr gelöscht) —
+// V3 trägt die Kopf-Meldung seither über den eigenen Weg
+// (`GesetzLeser.tsx`/`v3/LeserKopf.tsx`).
 //
-// DER RE-EXPORT IST WEG (Architektur-Review A1, 16.8.2026). Er hielt den
-// Importpfad `from './inhalt-hooks'` in `inhalt.tsx` bequem stabil und zog dafür
-// `inhalt-kopfmeldung` — und damit `LeserMenuPaar` + `InGesetzSuche` — in JEDEN
-// Importeur dieser Datei. Seit H1 ist das auch der V3-Adapter
-// (`v3/leserV3Modell.ts`): die neue Hülle trug die alte Kopfleiste im Bundle,
-// ohne sie je zu nennen. `inhalt.tsx` importiert den Hook jetzt direkt aus
-// `./inhalt-kopfmeldung`; bewacht wird das von der transitiven Sonde in
-// `src/tests/leser-v3-fundament.test.ts` (einmal rot gezeigt, §6.7).
+// DER RE-EXPORT IST SEIT LANGEM WEG (Architektur-Review A1, 16.8.2026): er
+// hielt einst den Importpfad `from './inhalt-hooks'` bequem stabil, zog dafür
+// aber `inhalt-kopfmeldung` — und damit die Ist-Hüllen-Menükomponenten — in
+// jeden Importeur dieser Datei, auch den V3-Adapter. Bewacht wurde das von der
+// transitiven Sonde in `src/tests/leser-v3-fundament.test.ts` (einmal rot
+// gezeigt, §6.7); mit H5 ist der ganze bewachte Weg entfallen.
 
 // ── Hash-Sprung-Seed + geteilter Aktiv-Artikel-Beobachter (Scroll-Spy) + TOC-
 //    Mitscroll + Nutzer-Interaktions-Guard + Scroll-Anker ──────────────────────

@@ -309,7 +309,7 @@ Suchlücke** mehr gibt (Council D/E — das Problem ist unter (III) gegenstandsl
 | FL-4 | **Die alte Hülle wird im Fenster eingefroren.** Keine Verbesserung, kein Redesign, keine neuen Optionen dort — nur Fehlerbehebungen mit Live-Wirkung. Damit gibt es zu keinem Zeitpunkt zwei gepflegte Wahrheiten. |
 | FL-5 | **Die Suche geht nie verloren.** Die alte Hülle behält ihr Suchfeld unverändert bis H5. Die neue Hülle bringt ihr eigenes Feld **ab H1** mit — H1 ist erst abnahmefähig, wenn in V3 gesucht **und** gesprungen werden kann. Ein Zustand «Kopf neu, Suche fehlt» existiert in keinem PR. |
 | FL-6 | **Umschalten verliert die Leseposition nicht.** Beim Wechsel V1↔V3 bleiben Erlass und `#art-`-Anker erhalten; die Optionen (`lm.leser.optionen`) sind **geteilt**, nicht dupliziert (§5). e2e-Nachweis in H1. |
-| FL-7 | **Das Flag ist Zuwachs auf Zeit.** Es wird in H5 mit der alten Hülle **entfernt**; die Entfernung ist Abnahmezeile von H5, nicht Nacharbeit (§17-Gegengewicht). |
+| FL-7 ✅ **VOLLZOGEN 21.8.2026** | **Das Flag ist Zuwachs auf Zeit.** Es wurde in H5 mit der alten Hülle **entfernt**; die Entfernung war Abnahmezeile von H5, nicht Nacharbeit (§17-Gegengewicht). `leserFlag.ts` gelöscht, kein Flag-Code mehr im Repo (Vollzugsvermerk H5, Kap. 7). |
 
 ---
 
@@ -421,7 +421,7 @@ Dazu zwei Regeln, die den Erfolg **am Nutzer** und **am Bild** messen, nicht an 
 | **H2b** | **Ästhetik-Nachzug** — die Positionen des Ästhetik-Reviews H1, die H2 aus Deckelgründen liegen liess (s. Ä-Tabelle im Vollzugsvermerk H2). Inhalt: **Ä1** Leerzone unter der Krumen-Leiste schliessen + Krumen-Leiste zeigt im Split den falschen Artikel (**Wahrheitsproblem §7**, eine Ortsangabe aus EINER Scroll-Spy-Quelle) + **App-Seitenleiste im Leser eingeklappt starten** · **Ä5** Seitenleiste als drei gerahmte Kästen, hängendes «·», Durchschimmern unter dem klebenden Block · **Ä8** Hover auf lit. a füllt einen breiten beigen Block (Farbfläche ohne Bedeutung) · **Ä9** Schriftregler doppelt (App-Leiste UND Ansicht-Menü) — im Leser nur EINER · **Ä10** Handy-Sheet: «GLIEDERUNG» doppelt, Überlauf in der Übersicht, «···»-Popover öffnet links statt am Auslöser · **Ä14** Fokusring am Suchfeld doppelt/dick | **Ä1 berührt als einzige Position `src/components/layout/**`** (App-Seitenleiste, Krumen-Leiste) — bis hierher war die Fläche für alle H-Etappen TABU. Sie wird darum mit **deklarierter Whitelist** geöffnet: nur die Dateien, die den Seitenleisten-Default und die Krumen-Quelle tragen, jede mit Nennung im PR. Alles andere in `layout/` bleibt gesperrt. Übrige Positionen: `src/pages/gesetz-leser/v3/**`, `src/index.css` | +150 / −80 | keine neuen Tore nötig — die Positionen sind an den Ästhetik-Screens abzunehmen, nicht an Zusicherungen; Ausnahme **Ä1 Krumen-Wahrheit**: eigener Test, weil eine falsche Ortsangabe ein §7-Fehler ist und kein Geschmack | Die sechs Positionen sind **sinnvoll umgesetzt, nicht abgehakt** (Drei-Prüfer-Regel oben, Prüfer 2), die Krumen-Leiste nennt im Split denselben Artikel wie die Lesespalte, und ohne Flag ist der Ist-Stand unverändert. | **M** |
 | **H3** ✅ | **Panel/Sheet für Rechtsprechung + Kontext** — Pos. 3, 12, 17; **Vorbedingung F4**. Enthält **Panel-Nachladen** (s. u.) | neu: `LeserPanel.tsx` (3 Reiter, vierter Filter «Sachgebiet» **vorgesehen**, Datenlogik dazu bleibt `W2·7-VZUI-SACHGEBIET`) · behalten: `bezuegeLaden`, `bezugAuswahl`, `bezugZeit`, `bezugPortion` (Datenlogik unverändert) | +450 / −0 | 4: `leser-v3-panel-facetten`, `leser-v3-panel-zaehler`, `leser-v3-kontext-cls`, `leser-v3-prerender-bezuege` | Jeder Entscheid, der heute unter einem Artikel erreichbar ist, ist über Zähler → Panel erreichbar, in beiden Panes, ohne dritte vertikale Fläche — und das prerenderte HTML trägt die Bezüge unverändert. *(Erfüllt; zwei Teile GEMESSEN ANDERS als vorgesehen: das prerenderte HTML trug nie Bezüge, und die 22-rem-SPALTE passt nicht in den 70-rem-Seitenrahmen — Rechnung, Ersatz und nötiger Entscheid im Vollzugsvermerk H3.)* | **L** |
 | **H4** ✅ **VOLLZOGEN 18.8.2026** (Vermerk «H4 — DER FLIP» am Ende dieses Kapitels) | **Flip** — Flag-Default auf **an**; alte B-Tests gegen die alte Hülle löschen bzw. auf V3 umhängen | geändert: Fassade (Default), `leserFlag.ts`, `playwright.config.ts`, 14 Spec-Dateien | ±0 | **0 neu; 25 Bestands-Dateien berührt** — 10 umgehängt, 5 ganz + 9 fallweise auf die alte Hülle gepinnt, 2 Doppelungen gelöscht. Die Vorab-Schätzung «11 alte B-Tests» lag um mehr als das Doppelte zu tief; der Grund steht im Vermerk | Alle acht unveränderten N-Tests, `leser-kopf-paritaet`, CLS ≤ Ist-Stand und axe sind unter dem neuen Default grün, und David hat nach Kontaktbogen zugestimmt. | **M** |
-| **H5** | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, **`LeserAnsichtMenu.tsx` samt der darin definierten `OptSwitch`** (S1-Nachzug 17.8.2026, Architektur-Prüfer C3 — namentlich aufgeführt, weil `OptSwitch` die V1-KOPIE von `V3Switch` ist: gleiche Optik, gleiche ARIA-Mechanik, seit dem Ä27-Nachzug auch gleiche `hinweis`/`aria-describedby`-Logik. Sie darf H5 nicht überleben, sonst bleibt die Doppelung als zweite Wahrheit stehen, §5), `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) · **`components/kontext/KontextPanel.tsx`** — und dann zwingend die Kante `v3/leserV3Modell` → `../inhalt-ansichten` → `KontextPanel` mitschneiden. **NICHT auf die Liste** gehört `components/verzahnung/BezugFacettenWahl.tsx`: geteilter Baustein, den V3 im Panel selbst mountet (Korrektur H3-Nachzug 17.8.2026); ebenfalls **nicht** `gesetz-leser/berechnungen.ts` mit `bieteAenderungsvermerkeSchalter` — geteilte Quelle, die V1 UND V3 tragen (D1, H3-Nachzug 17.8.2026) · dazu die dann leere `v3/GesetzLeserV3.tsx`-Naht und `helpers/panelOeffnen.ts`, sobald es nur noch EINE Hülle gibt | **−2 500 bis −3 200** | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
+| **H5** ✅ **VOLLZOGEN 21.8.2026** (Vermerk «Vollzugsvermerk H5» am Ende dieses Kapitels) | **Löschung der alten Hülle + Flag** — Pos. 9 | entfernt: alte Hüllen-Dateien ohne eingehende Referenz, `inhalt-kopfmeldung.tsx`, `data-such-bar`-Pfad, **`LeserAnsichtMenu.tsx` samt der darin definierten `OptSwitch`** (S1-Nachzug 17.8.2026, Architektur-Prüfer C3 — namentlich aufgeführt, weil `OptSwitch` die V1-KOPIE von `V3Switch` ist: gleiche Optik, gleiche ARIA-Mechanik, seit dem Ä27-Nachzug auch gleiche `hinweis`/`aria-describedby`-Logik. Sie darf H5 nicht überleben, sonst bleibt die Doppelung als zweite Wahrheit stehen, §5), `LeserMenuPaar`, `LeserRechtsprechungMenu`, Flag-Code, tote `data-linien`-Kommentare (`inhalt-zustand.tsx:365`, `leserOptionen.ts:9-15`) · ~~`components/kontext/KontextPanel.tsx` — und dann zwingend die Kante `v3/leserV3Modell` → `../inhalt-ansichten` → `KontextPanel` mitschneiden~~ **ABWEICHUNG im Vollzug: bleibt** — `EntscheidLeser.tsx`/`MaterialLeser.tsx` mounten sie eigenständig, Fehllöschung vermieden (Herleitung im Vollzugsvermerk). **NICHT auf die Liste** gehört `components/verzahnung/BezugFacettenWahl.tsx`: geteilter Baustein, den V3 im Panel selbst mountet (Korrektur H3-Nachzug 17.8.2026); ebenfalls **nicht** `gesetz-leser/berechnungen.ts` mit `bieteAenderungsvermerkeSchalter` — geteilte Quelle, die V1 UND V3 tragen (D1, H3-Nachzug 17.8.2026) · dazu die dann leere `v3/GesetzLeserV3.tsx`-Naht (in `GesetzLeser.tsx` aufgegangen) · `helpers/panelOeffnen.ts` — Fahrplan-Zeile war ungenau, s. Vollzugsvermerk | **−5 439 / +495** (Leser-Scope, gemessen nach Rebase auf `origin/main`/#559) | 0 neu | Jede gelöschte Datei hat den Nichttrage-Nachweis **vor** der Löschung, alle Tore sind grün bei byte-gleichem Golden, und im Repo existiert kein Flag-Code mehr. | **M** |
 
 ### ✅ Vollzugsvermerk H2 (16.8.2026, Branch `feat/leser-v3-h2`)
 
@@ -2657,6 +2657,149 @@ unverifiziert — vor Bau reproduzieren** (kein Befund wird ungeprüft geglaubt,
 
 ---
 
+### ✅ Vollzugsvermerk H5 — Löschung der alten Hülle + Flag (21.8.2026, Branch `feat/leser-v3-h5-abriss`)
+
+**Vorbedingung neu geprüft, nicht nur übernommen (§7):** Der Auftrag ging von
+«alle fünf §7b-Deckungslücken sind gedeckt bzw. als bewusst entfallen
+vermerkt» aus (PR #558). Verifiziert und dabei zwei der fünf Positionen noch
+offen vorgefunden — Pos. 2 (Facetten-/Zeitstrahl-WIRKUNG am V3-Panel) und
+Pos. 5 (A34/Bug1+Bug2 mit V3-Einstieg) trugen weder eine `leser-v3-*`-Spec
+noch einen «bewusst entfallen»-Vermerk. Beide in dieser Etappe selbst
+geschlossen, nach demselben Muster wie PR #558 (rot gesehen, V3-Deckung
+benannt, §6.3 gewahrt) — Details am Fundort: Kontaktbogen H4 §7b, neue Specs
+`e2e/leser-v3-panel-bezuege-wirkung.e2e.ts` (9 Fälle) und
+`e2e/leser-v3-split-a34-bugs.e2e.ts` (2 Fälle).
+
+**Abweichung von der H5-Löschliste, deklariert (§7): `components/kontext/
+KontextPanel.tsx` bleibt.** Die Liste ging davon aus, die Komponente lebe nur
+noch in der Ist-Hülle und in `inhalt-ansichten.tsx`s Fehl-/Früh-Ansichten
+(Kante `v3/leserV3Modell` → `../inhalt-ansichten` → `KontextPanel`). GEPRÜFT
+(Grep über echte Importe, nicht nur Kommentare): `KontextPanel` wird
+zusätzlich von `src/pages/EntscheidLeser.tsx` (`typ="entscheid"`) und
+`src/pages/MaterialLeser.tsx` (`typ="material"`) direkt gemountet — zwei
+Reader ausserhalb des Gesetzes-Lesers, die mit H5 nichts zu tun haben. Der
+`typ="norm"`-Zweig bleibt zudem über `inhalt-ansichten.tsx`s `FruehAnsicht`
+(pdf-embed/nur-live-link, von V3 gebraucht) belegt. Jeder der drei `typ`-Werte
+hat also nach H5 einen lebenden Aufrufer — die Datei wäre eine Fehllöschung
+gewesen (§1 vor Aufräum-Ziel). Löschliste korrigiert; die Kante
+`inhalt-ansichten` → `KontextPanel` bleibt unangetastet. Die Firewall-Sonde
+`src/tests/leser-v3-fundament.test.ts` behält den `KontextPanel`-Eintrag
+darum bewusst (einzige verbliebene lebende Ausnahme, weiterhin bewacht).
+
+**A-8 bleibt offen — H5 löst die Blockade nicht auf.** Die A-8-Zeile (Kap. 12)
+nahm an, die Streichung von `istXl` zugunsten der einen Breiten-Quelle
+(`useElementBreite`) werde mit H5 möglich, weil `inhalt-zustand.tsx` dann nur
+noch V3 trägt. Das ist zwar jetzt der Fall — aber die dort selbst gemessene
+Zahl bleibt: eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf
+1072 px, die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und
+1071 px. Das ist keine Streichung ohne Verhaltensänderung, sondern dieselbe
+sichtbare Verschiebung, die A-8 seit dem 16.8. offenhält — H5 (Löschung von
+V1) und die Zwei-Quellen-Frage (`istXl` vs. `useElementBreite`) sind zwei
+unabhängige Probleme, das zweite bleibt nach dieser Etappe unverändert offen.
+`istXl` unangetastet gelassen.
+
+**Ä9-Rest (Kap. 7, «→ H5»):** der Einwand «`?leser=v1` verlöre unter einem
+routen-gebundenen Ausblenden seinen einzigen Schriftregler» ist mit der
+Löschung von V1 gegenstandslos geworden — es gibt keinen zweiten Regler mehr,
+den ein Ausblenden nehmen könnte. Das macht die UX-Frage selbst (globaler
+A−/A+ neben dem Leser-Regler) aber nicht erledigt: sie bleibt ungebaut,
+jetzt ohne den V1-Einwand, ein eigener kleiner Schritt (drei `layout/`-Dateien
+plus die Leser-Wurzel, Herleitung unverändert am Fundort).
+
+**Gelöscht (Nichttrage-Nachweis je Datei vor der Löschung, Grep gegen echte
+Importe):**
+
+*Ganze Dateien, `src/pages/gesetz-leser/`:* `inhalt.tsx` (571 Z., V1-
+Orchestrierung, einziger Importeur `GesetzLeser.tsx`) · `inhalt-volltext.tsx`
+(768 Z., einziger Code-Importeur `inhalt.tsx`) · `inhalt-kopfmeldung.tsx`
+(148 Z., einziger Importeur `inhalt.tsx`) · `inhalt-overlays.tsx` (44 Z.,
+dito) · `LeserAnsichtMenu.tsx` samt `OptSwitch` (286 Z.) ·
+`LeserMenuPaar.tsx` (53 Z.) · `LeserRechtsprechungMenu.tsx` (278 Z.) ·
+`parts/InGesetzSuche.tsx` (nur von `inhalt-kopfmeldung.tsx` gebraucht,
+V3 hat sein eigenes `SuchZone.tsx`) · `leserFlag.ts` (110 Z., Flag-Code) ·
+`GesetzLeserV3.tsx` (73 Z., «Naht» — Inhalt nicht gelöscht, sondern
+wortgleich in `src/pages/GesetzLeser.tsx` aufgegangen, dessen frühere
+8-Zeilen-Fassade damit ebenfalls entfällt).
+
+*Test-Dateien ohne hüllenneutralen Rest* (V1-Struktur-Render via
+`LeserVolltextInhalt`/`leserFlag`, kein salvage-fähiger Teil):
+`src/tests/gesetz-leser-kontext-a32.test.tsx` (126 Z.) ·
+`src/tests/gesetz-leser-leiste-ohne-sektionen-w219.test.tsx` (92 Z.) ·
+`src/tests/leser-v3-flag.test.ts` (168 Z.) ·
+`e2e/leser-v3-flag.e2e.ts` (145 Z., Projekt-Trennungs-Selbsttest, gegenstandslos
+ohne Rückweg-Projekt) · `e2e/px-textkoerper.e2e.ts` (A-7, 446 Z., Opt-in,
+ganze Datei war ein V1↔V3-Pixelvergleich; Vergleichsziel V1 fällt weg, eine
+V3-Golden-Baseline ist ein offener Folgeschritt, keiner dieser Etappe).
+
+*Teilweise: einzelne V1-only-Fälle aus gemischten Dateien entfernt*, mit
+V3-Deckung im Kommentar an Ort und Stelle — `verzahnung.e2e.ts` (MM1/MM4/MM5/
+Fundstelle A + zwei `/gesetze`-Fälle aus den a11y-/Overflow-Schleifen),
+`leitfaelle-chips.e2e.ts` ((a)/(b)/(d)), `normrevision-badge.e2e.ts`
+((a)/(b)), `materialien-m5-verzahnung.e2e.ts` (zwei Fälle, §7b Pos. 1),
+`rechtsprechung.e2e.ts` (ein Fall), `druck-fundstellen-z2.e2e.ts` (der
+V1-Split-Fall), `leser-weiterlesen-r4-r8.e2e.ts` (R8-Koexistenz),
+`leser-suche-a35-a40-a41.e2e.ts` (die alte Zwei-Leisten-Anordnung),
+`leser-breite-a37.e2e.ts` (die 672-px-Spaltenbreite der alten 784-px-Zelle —
+Fahrplan Kap. 12 A-8 nennt das explizit eine Streichung, keine Verschiebung),
+`leser-v3-umschalten.e2e.ts` (vier von sechs Fällen — FL-6-Umschalten selbst;
+D1/B3 bleiben, prüften schon vorher nur V3), `leser-v3-fokusring-
+suchfeld.e2e.ts` (Fall (d)), `leser-kein-seitenueberlauf.e2e.ts` (der
+V1-Zweig der Schleife), `leser-kopf-cls-s3.e2e.ts` (der `ist-huelle`-Zweig),
+`leser-v3-eine-kopfzeile.e2e.ts` (Fall (e)).
+
+**Testapparat:** `playwright.config.ts` — `N_SPECS`/`V1_NUR`/`V1_GEMISCHT`/
+`V1_PINNED` und das Projekt `leser-v1` (storageState-Rückweg) vollständig
+entfernt; nur noch `chromium` (+ `schwer`, optional `px`). Alle vormaligen
+N-Specs laufen jetzt im Regelprojekt mit. `e2e/helpers/leserBereit.ts` und
+`e2e/helpers/leserBeschriftung.ts` auf die eine verbliebene Hülle verschlankt
+(Konstanten-NAMEN unverändert, §6.3 — nur ihre Definitionen). `e2e/shard-
+gruppen.json` neu generiert.
+
+**Tote `data-linien`-Kommentare** (`inhalt-zustand.tsx`, `leserOptionen.ts`)
+gekürzt — die Geschichte (Rückbau 13./16.8.2026) bleibt in einem Satz
+belegt, ohne die volle frühere Herleitung mitzuschleppen.
+
+**`data-such-bar`-Pfad:** fiel mit `inhalt.tsx`/`inhalt-volltext.tsx`/
+`inhalt-kopfmeldung.tsx`; `parts/InGesetzSuche.tsx` (der geteilte Baustein,
+den nur die Ist-Hülle noch mountete) fiel mit ihr.
+
+**`helpers/panelOeffnen.ts`** — in der Löschliste genannt, existiert im Repo
+unter diesem Pfad nicht (weder `src/` noch als Fund über die Kern-Umfang-
+Beschreibung hinaus): `e2e/helpers/panelOeffnen.ts` (Playwright-Testhelfer,
+nicht betroffen — bedient nur das Panel-Öffnen in Tests, unabhängig von der
+Hüllenzahl) existierte schon vor H5 und bleibt unverändert. Fahrplan-Zeile
+war ungenau; hier richtiggestellt, kein Bau-Rückstand.
+
+**Selbst-Grep vor dem Schluss-Commit** (`grep -rniE 'leser=v1|leserFlag|
+LeserAnsichtMenu|OptSwitch|LeserMenuPaar|LeserRechtsprechungMenu|
+KontextPanel|inhalt-kopfmeldung|GesetzLeserV3' src e2e scripts fahrplaene
+ROADMAP.md .claude/skills docs`): verbliebene Treffer sind ausschliesslich
+(a) `KontextPanel` an den — jetzt geprüft lebenden — Aufrufstellen, (b)
+datierte «gestrichen/gelöscht in H5 (21.8.2026)»-Vermerke in Code-Kommentaren
+und Testdateien, (c) Chronik-/Kontaktbogen-Dateien unter
+`docs/ux-audit-2026-07/**` sowie ältere, bereits abgeschlossene Fahrplan-
+Kapitel (FAHRPLAN-GESETZES-UX.md, FAHRPLAN-VERZAHNUNG-UI.md,
+FAHRPLAN-DATENHALTUNG.md u. a. — historische Bauetappen vor H5, keine lebende
+Spec) und (d) die Ä-/Kap.-Historie in dieser Datei, hier nachgeführt.
+
+**Zeilenbilanz** (`src/pages/gesetz-leser`, `src/tests`, `e2e`, gemessen
+`git diff --shortstat` gegen `origin/main` nach Rebase auf #559): **−5439 /
++495** — deutlich über der Schätzung (−2500 bis −3200): wie schon beim
+H4-Flip lag die Vorab-Zählung zu tief, weil eine Grep-Liste keine
+Voll-Lauf-Inventur ersetzt (§0 Ziff. 3;
+dieselbe Lehre wie am H4-Flip, hier bestätigt).
+
+**Tore:** `npx tsc -b` grün · `npm run build` grün (1458 Erlass-Detailseiten
+weiterhin prerendert — der Prerender-Pfad ist hüllenunabhängig, unberührt) ·
+`npx vitest run` grün (375 Dateien, 6254 Tests, 2 skip) · `npm run gate`
+(voll) GRÜN, inkl. `check:linien-kanon` und `check:plan` (ROADMAP-Kollisions-
+pfad auf `inhalt.tsx` korrigiert). Volle Leser-Batterie und
+`npm run test:e2e` komplett: Ergebnis im Bau-Bericht dieser Etappe.
+
+FL-7 damit vollzogen: kein Flag-Code mehr im Repo.
+
+---
+
 ## 8 · Typografie-Varianten (Pos. 19, entscheidet S2)
 
 > **ENTSCHIEDEN — David 17.8.2026 am Bildbogen**
@@ -2946,7 +3089,7 @@ vergessen (Council A). Ohne sie gilt H1 als **nicht abgeschlossen**:
 | ~~A-2~~ | ~~**`#art_N` → `#art-` korrigiert.**~~ **ERLEDIGT** (Vorprobe 16.8.2026): die genannte Datei `02-referenzen.md` existiert im Repo nicht (Scratchpad); der einzige `#art_`-Treffer steht in eingefangenem Fedlex-Fremd-HTML (`docs/ux-audit-2026-07/fedlex/inspect.json`) und ist dort korrekt. Verbindlich bleibt `#art-<token>` (`inhalt-sprung.tsx:159`). | — |
 | A-3 | **`EntscheidLeser.tsx:409` ist ausserhalb des Leser-Scopes** und wird in H1 mit angefasst (Guard-Parität für den Tab-Titel, Pos. 7). | **ERLEDIGT** in der Vorprobe dieses PRs. `EntscheidLeser.tsx` setzte `document.title` **ohne** Guard (so steht es bis heute auf `main`, Z. 408–411) — im Split-View trug der Browser-Reiter darum den Entscheid, obwohl das Hauptfenster das Gesetz zeigte (§8: der Reiter log über seinen Inhalt). Der Guard `if (rolle === 'sekundaer') return;` ist ergänzt und liegt unter der Quellensonde `src/tests/tab-titel-paritaet.test.ts`, die BEIDE Leser prüft. Im PR-Body benannt, wie die Zeile es verlangt. *(Selbstkorrektur 16.8.2026: der Vollzugsvermerk notierte hier zuerst «die Parität besteht bereits» — gemessen am Arbeitsbaum statt an `main`, also am Zustand NACH dem eigenen Fix. Der Befund war echt; die Nullprobe gegen die Basis fehlte.)* |
 | **A-7** | **Abweichung, deklariert 16.8.2026 — der Pixelvergleich PX fehlt in H1.** Kap. 10 schreibt ihn «ab H1» vor; H1 liefert ihn NICHT. **Folge: H2.** Begründung: `toHaveScreenshot` ist im Repo bisher nirgends im Einsatz — die Flake-Basisrate eines Pixel-Tors auf diesem CI-Runner ist unbekannt, und ein Tor, dessen Ausfallrate man nicht kennt, erzeugt rote Läufe ohne Aussage (§0 Ziff. 3: Rate immer mit Messbedingung). Dazu kommt, dass die Baseline erst mit der Design-Grundlage **W-3** fachlich feststeht; eine Baseline, die S2 ohnehin neu setzt, in H1 einzufrieren hiesse, zweimal zu messen. In H1 tragen die DOM-Sonden und `check:linien-kanon` die Kern-Grenze. | Offen bis H2 — dort mit gemessener Flake-Rate (Stichprobe gegen die vermutete Rate dimensioniert, kalt **und** warm) |
-| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | **TEILWEISE ERLEDIGT 17.8.2026** (H4-Vorbereitung, Branch `feat/leser-v3-h4-vorbereitung`): `src/pages/gesetz-leser/v3/useElementBreite.ts` ist gebaut und trägt die drei Schwellen UND die Messung; `kopfStufen.ts` leitet nur noch weiter (Verhalten byte-gleich, bewiesen über jede Breite 200–2000 px; Rot-Beweis zweistufig in `src/tests/leser-v3-elementbreite.test.ts`). **NICHT angeschlossen — mit Zahl:** der Zwei-Spalten-Entscheid bleibt an `istXl` (Viewport ≥ 1024). Gemessen am gebauten Stand ist das Rahmen-Element bis ~1120 px Viewport konstant **48 px schmaler** als das Fenster und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem): Viewport 640/900/1023/1024/1100/1280/1440 → Rahmen 592/852/975/976/1052/1072/1072. Eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf **1072** — die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**. **STAND 18.8.2026 (nach Ä60 (c)): weiterhin NICHT umgehängt — mit drei Zahlen statt einer.** (1) Die alte Zahl gilt unverändert: nachgemessen am gebauten H4-Stand über 1000–1150 px ist das Rahmen-Element bei GESCHLOSSENEM Blatt weiter Fenster − 48 px und ab 1120 px auf 1072 gedeckelt (VP 1023→975 · 1024→976 · 1071→1023 · **1072→1024** · 1120→1072 · 1150→1072), die Spaltengrenze wanderte also nach wie vor von Viewport 1024 auf **1072**, und die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Die Aufweitung aus Ä60 (c) ändert daran nichts, weil sie am OFFENEN Blatt hängt — als Schwelle wäre sie sogar rückgekoppelt (der Rahmen entschiede über seine Breite anhand seiner Breite). (2) Die neue Messgrösse `raum` (Breite im `<main>`, `rahmenSpalten.ts`) läge richtig — Fenster − 48 px, also Schwelle 976 ⟺ Viewport 1024 —, misst im Pane aber `clientWidth` und damit OHNE Scrollbar; `PANE_BREIT_PX` misst border-box ausdrücklich deshalb, «damit die Scrollbar die Schwelle nicht verschiebt». Der Unterschied ist die Scrollbarbreite (macOS Overlay 0 px, Chromium/Linux 15 px) — also genau die Sorte Abweichung, die auf einer Maschine unsichtbar bleibt und auf der anderen zuschlägt. (3) `istXl` lebt in `inhalt-zustand.tsx` und trägt **beide** Hüllen; V3 allein umzuhängen erzeugte eine DRITTE Wahrheit statt eine zu beseitigen. A-8 wird darum mit **H5** abgeschlossen, wenn V1 fällt — dort ist es eine Streichung, keine Verschiebung. |
+| **A-8** | **Abweichung, deklariert 16.8.2026 — S-Breite.** Unter 1024 px zeigt V3 die Seitenleiste als **Sheet** statt als 15-rem-Spalte, wie sie `PANE_BREIT_PX` nahelegt. **Entscheid: H4.** Begründung: heute entscheiden zwei Quellen unabhängig über denselben Platz — `istXl` (Rahmen, 1024-px-Schwelle) und `kopfStufe` (Kopfzeile, 900/640 px). Eine dritte Schwelle in H1 einzuziehen, hiesse eine dritte Wahrheit über die Breite (§5). H4 führt **eine** Breiten-Quelle (`useElementBreite`) mit den Modi `d`/`s`/`sheet` ein; dort — und nur dort — wird die S-Breite entschieden. | **TEILWEISE ERLEDIGT 17.8.2026** (H4-Vorbereitung, Branch `feat/leser-v3-h4-vorbereitung`): `src/pages/gesetz-leser/v3/useElementBreite.ts` ist gebaut und trägt die drei Schwellen UND die Messung; `kopfStufen.ts` leitet nur noch weiter (Verhalten byte-gleich, bewiesen über jede Breite 200–2000 px; Rot-Beweis zweistufig in `src/tests/leser-v3-elementbreite.test.ts`). **NICHT angeschlossen — mit Zahl:** der Zwei-Spalten-Entscheid bleibt an `istXl` (Viewport ≥ 1024). Gemessen am gebauten Stand ist das Rahmen-Element bis ~1120 px Viewport konstant **48 px schmaler** als das Fenster und ab da auf **1072 px gedeckelt** (`max-w-content`, 70 rem): Viewport 640/900/1023/1024/1100/1280/1440 → Rahmen 592/852/975/976/1052/1072/1072. Eine Umstellung verschöbe die Spaltengrenze von Viewport 1024 auf **1072** — die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Das ist keine Verhaltensneutralität (§6.3), sondern der offene Spalten-Entscheid **Ä60**. **STAND 18.8.2026 (nach Ä60 (c)): weiterhin NICHT umgehängt — mit drei Zahlen statt einer.** (1) Die alte Zahl gilt unverändert: nachgemessen am gebauten H4-Stand über 1000–1150 px ist das Rahmen-Element bei GESCHLOSSENEM Blatt weiter Fenster − 48 px und ab 1120 px auf 1072 gedeckelt (VP 1023→975 · 1024→976 · 1071→1023 · **1072→1024** · 1120→1072 · 1150→1072), die Spaltengrenze wanderte also nach wie vor von Viewport 1024 auf **1072**, und die Gliederungsspalte verschwände auf jedem Fenster zwischen 1024 und 1071 px. Die Aufweitung aus Ä60 (c) ändert daran nichts, weil sie am OFFENEN Blatt hängt — als Schwelle wäre sie sogar rückgekoppelt (der Rahmen entschiede über seine Breite anhand seiner Breite). (2) Die neue Messgrösse `raum` (Breite im `<main>`, `rahmenSpalten.ts`) läge richtig — Fenster − 48 px, also Schwelle 976 ⟺ Viewport 1024 —, misst im Pane aber `clientWidth` und damit OHNE Scrollbar; `PANE_BREIT_PX` misst border-box ausdrücklich deshalb, «damit die Scrollbar die Schwelle nicht verschiebt». Der Unterschied ist die Scrollbarbreite (macOS Overlay 0 px, Chromium/Linux 15 px) — also genau die Sorte Abweichung, die auf einer Maschine unsichtbar bleibt und auf der anderen zuschlägt. (3) `istXl` lebt in `inhalt-zustand.tsx` und trägt **beide** Hüllen; V3 allein umzuhängen erzeugte eine DRITTE Wahrheit statt eine zu beseitigen. A-8 wird darum mit **H5** abgeschlossen, wenn V1 fällt — dort ist es eine Streichung, keine Verschiebung. **STAND 21.8.2026 (H5 vollzogen): A-8 bleibt trotzdem offen.** `inhalt-zustand.tsx` trägt jetzt zwar nur noch V3 — aber die Zahl aus (1)/(2) oben ist unverändert wahr: eine Umstellung auf `useElementBreite` verschöbe die Spaltengrenze weiterhin von Viewport 1024 auf 1072 px, dieselbe sichtbare Verhaltensänderung wie am 18.8. H5 löst also nur den «zwei Hüllen»-Teil der Begründung auf, nicht die eigentliche Zwei-Quellen-Frage — die bleibt ein eigener, unabhängiger Entscheid (Ä60-Nachfolge), keine Streichung ohne Rest. `istXl` unangetastet gelassen (Vollzugsvermerk H5, Kap. 7). |
 
 ---
 
@@ -2990,7 +3133,7 @@ stillschweigend doppelt gebaut (§17-Gegengewicht, Kollisionsregel).
 |---|---|---|---|
 | **`QS-UI-HIGHLIGHT`** (ROADMAP:210) — `::highlight()`-Registry je Leser-Instanz; heute löscht im Split-View das Rail-Suchfeld die Markierung des Nachbar-Panes | Genau der Defekt, den ein Suchfeld pro Pane erzeugt. V3 hat **ein** Suchfeld je Pane mit pane-eigener Registry | **H2** | Registry ist an die Pane-Wurzel gebunden (nicht global); e2e: Suche in Pane A löscht Markierung in Pane B **nicht**; danach `QS-UI-HIGHLIGHT` in ROADMAP als erledigt abhaken mit Zeiger hierher |
 | **`W2·10-UI-NAV` / `B14`** (ROADMAP:434) — «Brotkrume, Kopfzeilen und Seitenmeta (K-19a)», 8 Befunde, davon 3 «hoch» | Deckungsgleich mit Pos. 1 (Kopfzeile) und Pos. 18 (Seitenmeta) | **H1** (Krume/Kopf) + **S3** (Seitenmeta) | Die **8 Befunde aus `FAHRPLAN-UI-BEFUNDE.md` §15 werden als Abnahme-Checkliste in den H1- bzw. S3-PR kopiert** *(Dateiname korrigiert 16.8.2026 beim S3-Bau: `FAHRPLAN-UI-NAVIGATION.md` hat kein §15 — die Befunde LM-181/183/184/188/197 stehen in UI-BEFUNDE)* und einzeln abgehakt — nicht «sinngemäss mitgemacht». Die 3 Hoch-Befunde sind Blocker der jeweiligen Etappe |
-| **`W2·7-VZUI`** (ROADMAP:349) — Verzahnung sichtbar machen, Rest-Umfang am `KontextPanel` | H3 **ersetzt** das KontextPanel durch das V3-Panel | **H3** | Nach H3 prüfen, welche VZUI-Restzeilen inhaltlich noch offen sind; erledigte Zeilen in ROADMAP abhaken, Rest umformulieren — der Schritt darf nicht mit einer Komponente weiterleben, die es nicht mehr gibt |
+| **`W2·7-VZUI`** (ROADMAP:349) — Verzahnung sichtbar machen, Rest-Umfang am `KontextPanel` | H3 **ersetzt** das KontextPanel durch das V3-Panel für den Gesetzes-Leser | **H3, nachgeführt H5 (21.8.2026)** | ✅ Nachgeführt: ROADMAP-Kollisionspfad auf `v3/PanelMaterialien.tsx` korrigiert (die alte Zeile zeigte auf das inzwischen gelöschte `inhalt.tsx`), Rest-Umfang («Passende Werkzeuge»/`kontextSoftLaw`) dort vermerkt. **`KontextPanel.tsx` selbst bleibt im Repo** (H5-Vollzugsvermerk, Kap. 7) — die Komponente lebt weiter für Entscheid-/Material-Leser, nur der Gesetzes-Leser-Zweig ist mit V3 abgelöst |
 | **`W2·7-VZUI-SACHGEBIET`** (ROADMAP:355) — Sachgebiet-Facette aus der BGE-Bandnummer | V3 sieht im Panel **den vierten Filter «Sachgebiet» baulich vor** (Platz, Reiter-Layout, Filterzeile) | **H3** (nur Hülle) | Filter-Platzhalter existiert und ist bei fehlenden Daten sauber ausgeblendet (kein leeres Steuerelement). **Die Datenlogik bleibt ausdrücklich `W2·7-VZUI-SACHGEBIET`** — Risikopfad mit Gegenprüfung, nicht Teil von V3 |
 | **`QS-PERF`-Restposten** (ROADMAP:163) — Klickpfad Gliederungszeile **161 ms @4×**, Lese-Kadenz-TBT, langer Artikel-Index | Alle drei liegen in der Hülle, die V3 ohnehin neu setzt | **H1** (Messlatte) | Die 161 ms sind die **Messlatte, die H1 unterbieten muss — nicht nur halten**. Messung unter denselben Bedingungen (4× CPU-Drossel, kalt), Zahl im Kontaktbogen neben NM-1 |
 | **Wording Anhang-Dominanz** — «N Artikel» im Erlass-Kopf ist falsch, wo Anhänge dominieren; richtig «Einträge» | Teil der Fakten-Zeile des neuen Erlass-Kopfs | **S3** | Kopf zählt und benennt korrekt; Wortlaut an **beiden** Stellen (`ErlassLeserKopf.tsx`, `seo-detail.ts`) — §5 wie beim Standausweis |
