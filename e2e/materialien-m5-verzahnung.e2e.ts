@@ -1,13 +1,20 @@
 // @shard-gruppe: 1
 import { test, expect, type Page } from '@playwright/test'
-import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
 
 // ─── E6a·M5: Amtliche-Materialien-Delta in der Verzahnungs-UI ───────────────
-// Prüft am gebauten dist: (1) die «Amtliche Materialien»-Gruppe am Gesetz-Fuss
-// vereint kuratierte + async Soft-Law-Kanten mit Fundstellen-Sublabel + Stand;
-// (2) der kuratierte Nachtrag DATABREACH → «via Art. 24»; (3) die
-// nur-verweis-Badge auf der MaterialLeser-Karte; (4) kein Overflow @390, keine
-// Konsolenfehler.
+//
+// GELÖSCHT 21.8.2026 (H5): «DSG-Reader: Amtliche Materialien-Gruppe mit
+// kuratiertem Art.-Sublabel + Dokument-Stand» und «DSG-Reader @390: async
+// Soft-Law-Dokument erscheint» prüften das Ist-Hüllen-Kontextfenster
+// (`components/kontext/KontextPanel.tsx`). Kontaktbogen H4 §7b Pos. 1
+// (21.8.2026, §7b-Deckungsprüfung): geprüft und ausdrücklich NICHT
+// nachgebaut — `v3/PanelMaterialien.tsx` schliesst Soft-Law/kuratierte
+// Nachträge bewusst aus dem Reiter aus (Dateikopf-Kommentar dort, «SOFT LAW
+// BLEIBT DRAUSSEN»: eine dritte/vierte Sache neben Entstehung/In-Arbeit,
+// kein Bau-Rückstand — ein Nachbau widerspräche der erklärten V3-
+// Architektur und wäre zudem ein Produktentscheid, keine Testlücke).
+// Zusicherung in V3 bewusst entfallen, Alt-Spec fällt ersatzlos.
+// Verbleibt: die dritte Spec unten, hüllenneutral (MaterialLeser-Karte).
 
 function fehlerSammeln(page: Page): string[] {
   const fehler: string[] = []
@@ -15,57 +22,6 @@ function fehlerSammeln(page: Page): string[] {
   page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
   return fehler
 }
-
-test('DSG-Reader: «Amtliche Materialien»-Gruppe mit kuratiertem Art.-Sublabel + Dokument-Stand', async ({ page }, info) => {
-  // Die Sache ist RECHTSDATEN (kuratiertes «via Art. 24», Dokument-Stand) und
-  // wiegt darum schwerer als eine Bedienfrage: V3 hat den Reiter
-  // «Materialien» (`v3/PanelMaterialien.tsx`), aber KEINE Spec, die diese
-  // Daten dort nachweist. Die Lücke steht als H5-Auflage im Kontaktbogen und
-  // ist dort ausdrücklich als die gewichtigste der Liste vermerkt.
-  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
-    'die Materialien-Gruppe im Kontextfenster des Lesers',
-    'Deckungslücke — Reiter «Materialien» in V3 vorhanden, aber datenseitig unbewacht; H5-Auflage (Kontaktbogen H4 §7)'))
-  const fehler = fehlerSammeln(page)
-  await page.goto('/gesetze/bund/DSG')
-
-  // Gruppen-Überschrift (Overline «Legt aus · Amtliche Materialien»).
-  const gruppe = page.getByRole('heading', { name: /Amtliche Materialien/ })
-  await expect(gruppe).toBeVisible({ timeout: 15000 })
-
-  // Kuratierter M5-Nachtrag: DATABREACH → via Art. 24 (sync, in-Bundle).
-  const dbLink = page.getByRole('link', { name: /Meldung von Datensicherheitsverletzungen/ })
-  await expect(dbLink).toBeVisible()
-  await expect(dbLink).toContainText('via Art. 24')
-  await expect(dbLink).toContainText('Stand')
-
-  expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
-})
-
-test('DSG-Reader @390: async Soft-Law-Dokument erscheint, kein horizontaler Overflow (§15)', async ({ page }, info) => {
-  test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
-    'der Erlass-Ebene-Zähler `<details>` im Kontextfenster des Lesers',
-    'wie oben — H5-Auflage'))
-  const fehler = fehlerSammeln(page)
-  await page.setViewportSize({ width: 390, height: 900 })
-  await page.goto('/gesetze/bund/DSG')
-
-  // W2·5d U-VERWEIS/A13: reine Erlass-Ebene-Kanten liegen jetzt DEZENTER hinter
-  // dem Zähler («n Dokumente auf Erlass-Ebene», <details>) — erst aufklappen.
-  const zaehler = page.getByText(/Dokumente? auf Erlass-Ebene/)
-  await expect(zaehler).toBeVisible({ timeout: 15000 })
-  await zaehler.click()
-
-  // Ein per Adapter erfasstes EDÖB-DB-Dokument (nur im register.json + Shard, NICHT
-  // im in-Bundle-Register) — beweist den async-Loader + Merge.
-  await expect(
-    page.getByRole('link', { name: /Anmeldeformulare(n)? für Mietwohnungen/ }),
-  ).toBeVisible({ timeout: 15000 })
-
-  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
-  expect(overflow, `horizontaler Overflow ${overflow}px bei 390px`).toBeLessThanOrEqual(1)
-
-  expect(fehler, `Konsolen-/Seitenfehler:\n${fehler.join('\n')}`).toEqual([])
-})
 
 test('MaterialLeser-Karte trägt die nur-verweis-Badge (V3-Vorzug E6a·M5)', async ({ page }) => {
   const fehler = fehlerSammeln(page)
