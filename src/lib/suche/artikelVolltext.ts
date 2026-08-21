@@ -104,6 +104,49 @@ type FlexLike = {
   Charset?: { LatinBalance?: unknown };
 };
 
+// ─── UND-Verknüpfung + Wortgrenzen-Schutz (Befund 29, Cowork 21.8.2026) ──────
+//
+// FlexSearch verknüpft eine MEHRWORT-Anfrage bei `suggest: true` faktisch NICHT
+// per UND, sondern näherungsweise: «OR 257d» traf dann jeden Artikel, dessen
+// irgendein Feld ein Wort mit dem Präfix «or» führt (Ordnung, Organisation, …)
+// — «257d» wurde von diesen zahlreichen Treffern schlicht aus dem POOL-Fenster
+// verdrängt, bevor der Einzelterm je an die Reihe kam (verifiziert: `doc.search
+// ('or 257d', {suggest:true})` traf Dokumente, die nur EINEN der beiden Begriffe
+// enthalten; `suggest:false` verknüpft dieselbe Anfrage korrekt per UND).
+//
+// Fix: der Recall-Pool bleibt wie bisher (FlexSearch liefert weiterhin die
+// Kandidatenmenge, inkl. Synonym-Ausweitung) — zusätzlich muss bei ≥2
+// signifikanten Termen JEDER Term den Kandidaten an einer WORTGRENZE treffen
+// (Präfix-Match ab Wortanfang, exakt die Semantik von `tokenize:'forward'` —
+// «or» matcht «Ordnung», nie ein Fragment mitten im Wort). Längere Terme
+// («Miet» → «Mietzins») sind von dieser Prüfung unberührt, da sie schon vorher
+// nur an Wortgrenzen griffen (Wortpräfix-Match, kein Substring-Match).
+const WORTGRENZEN_FELDER = ['t', 'l', 'm', 'n', 'g', 'tb', 'f', 'ku', 'k'] as const;
+const haystackCache = new WeakMap<IndexEintrag, string>();
+
+function haystack(e: IndexEintrag): string {
+  let h = haystackCache.get(e);
+  if (h === undefined) {
+    h = WORTGRENZEN_FELDER.map((f) => (e as unknown as Record<string, string>)[f] ?? '').join(' ').toLowerCase();
+    haystackCache.set(e, h);
+  }
+  return h;
+}
+
+/** Trifft `term` den Kandidaten an einer WORTGRENZE (Wortanfang), nie als
+ *  Fragment mitten in einem längeren Wort? Spiegelt FlexSearch
+ *  `tokenize:'forward'` — Grundlage der UND-Verknüpfung unten. */
+function trifftWortgrenze(e: IndexEintrag, term: string): boolean {
+  const h = haystack(e);
+  let i = h.indexOf(term);
+  while (i !== -1) {
+    const davor = i === 0 ? '' : h[i - 1];
+    if (!/[a-z0-9]/.test(davor)) return true;
+    i = h.indexOf(term, i + 1);
+  }
+  return false;
+}
+
 export type Ebene = 'bund' | 'kanton';
 /** Aufbau- UND Recall-Reihenfolge: Bund zuerst (s. baueSucher). */
 const EBENEN_REIHE: readonly Ebene[] = ['bund', 'kanton'];
@@ -241,8 +284,17 @@ export function baueSucher(eintraege: IndexEintrag[], FlexSearch: FlexLike): Suc
         }
       }
     }
+    // UND-Verknüpfung (Befund 29): bei ≥2 signifikanten Termen («OR 257d») muss
+    // JEDER Term an einer Wortgrenze treffen — sonst würde ein zweiter Term
+    // faktisch ignoriert, sobald ein freizügiger erster Term (z. B. das kurze
+    // «or») den Kandidaten-Pool allein schon füllt. Ein einzelner Term bleibt
+    // unverändert (kein AND nötig, keine Verschlechterung von «Miet» → «Mietzins»).
+    const gefiltert = orig.length >= 2
+      ? kandidaten.filter((e) => orig.every((t) => trifftWortgrenze(e, t)))
+      : kandidaten;
+
     // RE-RANGIERUNG (S4): deterministische Relevanz statt FlexSearch-Roh-Ordnung.
-    return rangiere(kandidaten, q, limit).map((e) => treffer(e, q));
+    return rangiere(gefiltert, q, limit).map((e) => treffer(e, q));
   };
 
   return {

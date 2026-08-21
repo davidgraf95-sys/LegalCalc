@@ -57,3 +57,51 @@ describe('Artikel-Treffer — kantonale Herkunft ist erkennbar (W2·5)', () => {
     expect(t!.marke?.text).toBe('Gesetzestext');
   });
 });
+
+// ─── Befund 29 (Cowork 21.8.2026): «OR 257d» matchte Teilzeichenketten ──────
+//
+// FlexSearch verknüpfte eine Mehrwort-Anfrage bei `suggest:true` faktisch NICHT
+// per UND: «OR 257d» traf jeden Artikel, dessen Marginalie/Kürzel ein Wort mit
+// dem Präfix «or» führt (Ordnung, Organisation, …) — der zweite Term «257d»
+// wurde von diesen zahlreichen Treffern aus dem Kandidaten-Pool verdrängt, bevor
+// er je einzeln zum Zug kam. Fix: `trifftWortgrenze` + UND-Filter in
+// `artikelVolltext.ts` (`suche()`).
+const BEFUND29_EINTRAEGE = [
+  // Trifft BEIDE Terme: «or» über das Kürzel «OR», «257d» über das Label.
+  { k: 'OR', ku: 'OR', eb: 'bund' as const, kt: '', a: '257_d', l: 'Art. 257d',
+    t: 'ist der mieter mit der zahlung im rückstand', m: '', n: '', g: '', tb: '', f: '' },
+  // Trifft NUR «or» (Kürzel beginnt mit «Or») — «257d» kommt nirgends vor.
+  { k: 'ORDNUNG', ku: 'Ordnungsbussenverordnung', eb: 'bund' as const, kt: '', a: '1', l: '§ 1',
+    t: 'ordnungswidrigkeiten werden mit busse bestraft', m: '', n: '', g: '', tb: '', f: '' },
+  // Trifft NUR «257d» (im Label) — «or» kommt nirgends als Wortanfang vor.
+  { k: 'ZGB', ku: 'ZGB', eb: 'bund' as const, kt: '', a: '257_d', l: '§ 257d',
+    t: 'diese bestimmung regelt einen anderen sachverhalt', m: '', n: '', g: '', tb: '', f: '' },
+  // «or» kommt nur MITTEN im Wort vor («vorschrift») — nie an einer Wortgrenze.
+  { k: 'VORTEST', ku: 'Vorschriftensammlung', eb: 'bund' as const, kt: '', a: '9', l: '§ 9',
+    t: 'diese vorschrift gilt subsidiär', m: '', n: '', g: '', tb: '', f: '' },
+];
+const sucheBefund29 = baueSuchFn(BEFUND29_EINTRAEGE as never, FlexSearch);
+
+describe('Befund 29 — Gesetzestext-Suche verknüpft Terme per UND (Cowork 21.8.2026)', () => {
+  it('UND-Verknüpfung: «or 257d» liefert nur den Treffer, der BEIDE Terme trägt', () => {
+    const treffer = sucheBefund29('or 257d', 10);
+    expect(treffer.map((t) => t.id)).toContain('art:OR:257_d');
+    expect(treffer.map((t) => t.id)).not.toContain('art:ORDNUNG:1'); // nur «or»
+    expect(treffer.map((t) => t.id)).not.toContain('art:ZGB:257_d'); // nur «257d»
+  });
+
+  it('Wortgrenze: der kurze Term «or» trifft nicht mitten im Wort («vorschrift»)', () => {
+    // Einzelterm (kein UND-Filter) — «or» darf «Ordnung» treffen, nicht «vorschrift».
+    const treffer = sucheBefund29('or', 10);
+    expect(treffer.map((t) => t.id)).toContain('art:ORDNUNG:1');
+    expect(treffer.map((t) => t.id)).not.toContain('art:VORTEST:9');
+  });
+
+  it('längere Terme bleiben Teilwort-Suche (unverändert, kein UND-Regression)', () => {
+    // «vorschrift» als eigener, längerer Term trifft weiterhin ganz normal —
+    // die UND-Verschärfung betrifft nur die Kombination mehrerer Terme, nicht
+    // die Teilwort-Suche eines einzelnen längeren Terms.
+    const treffer = sucheBefund29('vorschrift', 10);
+    expect(treffer.map((t) => t.id)).toContain('art:VORTEST:9');
+  });
+});
