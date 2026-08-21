@@ -530,6 +530,12 @@ reisst; sie hat Vorrang vor der Zielspanne. Split-View: dieselbe CSS-Regel
 greift uniform in beiden Panes, keine Sonderbehandlung nötig oder gebaut.
 Deklarierte Verhaltensänderung an `leser-lesemass.e2e.ts` (Hausdecke) und der
 PX-Satzspiegel-Trennung (Ä2) — Branch `feat/leser-lesemass-dynamisch`.
+**Nachzug 21.8.2026 (CI-Rot PR #559):** der erste Wuchs liess die Lese-Zelle
+beim Öffnen des Beiwerk-Blatts auf 40 rem zurückfallen (Ä59/Ä60(c) reservierte
+die Blatt-Spur nur beim tatsächlichen Öffnen) — behoben, indem `rahmenBild`
+(`RahmenBild.lesemassMaxRem`) dieselbe Blatt-Spur-Reserve STATISCH, unabhängig
+vom Blatt-Zustand rechnet: der Wuchs respektiert die Blatt-Spur, Ä60(c) bleibt
+unverändert gültig.
 
 #### Ästhetik-Review H1 (5,5/10) — was H2 nimmt und was bleibt
 

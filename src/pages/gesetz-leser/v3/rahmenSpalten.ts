@@ -126,6 +126,18 @@ export const LESEMASS_MAX = 45;
 /**
  * Deckel des Leser-Rahmens (rem) = die Summe seiner drei Spuren samt Abständen.
  * NICHT `max-w-content`: der gilt für jede andere Seite unverändert weiter.
+ *
+ * BLEIBT auf `LESEMASS` (40), nicht `LESEMASS_MAX` (45): diese Zahl entscheidet
+ * NUR, wie weit der RAHMEN wachsen darf und ob die Gliederung ihre Spalte
+ * behält (`vollesLesemass` unten) — beides seit H4 gemessen und unverändert
+ * (`leser-v3-rahmenspalten.test.ts`: 84 rem = 1344 px, Rückung −112 px @1440).
+ * Sie an `LESEMASS_MAX` zu hängen, sähe nach «derselben Quelle» aus, verschöbe
+ * aber diese Schwelle auf 89 rem = 1424 px — mehr, als @1440 real an Raum
+ * steht (≈1392 px) — und liesse die Gliederungsspalte dort in die Schiene
+ * kippen: sie bräche genau die Zusage, die dieser Fix halten soll (aside=1
+ * bleibt, `leser-v3-rahmen.e2e.ts` (a)). Die eigentliche Reserve für
+ * `LESEMASS_MAX` steht darum NICHT hier, sondern in `RahmenBild.lesemassMaxRem`
+ * (Kommentar dort).
  */
 export const LESER_MAX_REM = SPUR_GLIEDERUNG + SPUR_ABSTAND + LESEMASS + SPUR_ABSTAND + SPUR_BLATT; // 84
 
@@ -199,6 +211,36 @@ export interface RahmenBild {
   spalten: string | undefined;
   /** Aufweitung des Wurzelelements; `undefined` = unverändert wie bisher. */
   breite: CSSProperties | undefined;
+  /**
+   * Deckel für `--leser-lesemass-max` (rem) — STATISCH, unabhängig von
+   * `blattOffen` (Fix 21.8.2026, CI-Rot PR #559).
+   *
+   * ── DER BEFUND ───────────────────────────────────────────────────────────
+   * `LESEMASS_MAX` (`index.css`, `--leser-lesemass-max`) stand bis zu diesem
+   * Fix als FLACHER Wert (45 rem, immer) am Wurzelelement — unabhängig davon,
+   * ob das Blatt gerade eine Spur belegt. Geschlossen füllte die Lese-Zelle
+   * (`minmax(0,1fr)`) den ganzen Rahmen und der Deckel griff bei 45 rem;
+   * offen nimmt dieselbe Zelle nur, was der Rahmen NACH Gliederung, Blatt und
+   * zwei Abständen übrig lässt — bei voller Gliederungsspalte @1440 sind das
+   * strukturell nur 40 rem (`LESER_MAX_REM` reserviert exakt so viel, siehe
+   * dort). Der flache Deckel wechselte beim Öffnen also von 45 auf faktisch
+   * 40 rem — ein Reflow, den Ä60(c) («die Spur nimmt den freien Rand, nie den
+   * Text») und die CLS-Zusage (`leser-v3-kontext-cls.e2e.ts`) ausschliessen.
+   *
+   * ── DER FIX: DIESELBE RESERVE, IMMER ────────────────────────────────────
+   * Statt den Deckel erst beim Öffnen schrumpfen zu lassen, rechnet er die
+   * Blatt-Spur-Reserve STATISCH ein — sobald der Raum eine Spur überhaupt
+   * ERLAUBEN würde (`ruheForm === 'rechts' && spaltenLage && passt`, exakt die
+   * Bedingung von `blattSpur` MINUS `blattOffen`). Ob die Gliederung dabei als
+   * Spalte oder Schiene stünde, folgt derselben Fallunterscheidung wie
+   * `gliederungSpalte`, nur mit `blattSpur` hypothetisch `true` gerechnet
+   * (`!blattSpur || vollesLesemass` wird dann zu `vollesLesemass`) — das ist
+   * `gliederungWennOffen` unten. Keine neue Konstante: dieselben `SPUR_*` und
+   * derselbe `LESER_MAX_REM`, nur diesmal für die TEXT-Zelle statt für den
+   * Rahmen gerechnet. `blattOffen` fliesst nirgends ein — der Wert ist beim
+   * ersten Render derselbe wie nach jedem Klick auf den Panel-Zähler.
+   */
+  lesemassMaxRem: number;
 }
 
 /**
@@ -219,6 +261,23 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
   const gliederungSpalte = spaltenLage && tocOffen && (!blattSpur || vollesLesemass);
   const schiene = spaltenLage && !gliederungSpalte;
 
+  // `lesemassMaxRem` (Feld-Kommentar bei `RahmenBild`): dieselbe Bedingung wie
+  // `blattSpur`, aber OHNE `blattOffen` — «könnte das Blatt hier je eine Spur
+  // bekommen», nicht «hat es gerade eine».
+  const blattSpurMoeglich = ruheForm === 'rechts' && spaltenLage && passt;
+  const gliederungWennOffen = spaltenLage && tocOffen && vollesLesemass;
+  const seiteWennOffenRem = gliederungWennOffen ? SPUR_GLIEDERUNG : SPUR_SCHIENE;
+  // Der Rahmen selbst wüchse (`aufweitung`) auch nur bis `LESER_MAX_REM`, nie
+  // über den echten Raum hinaus — dieselbe Klammer wie dort, nachgerechnet für
+  // die Zelle statt für den Wurzel-Kasten (kein Duplikat: `aufweitung` liefert
+  // hier keinen Wert zurück, sie hängt an `blattOffen`).
+  const rootWennOffenPx = raum
+    ? Math.max(raum.ruhePx, Math.min(LESER_MAX_REM * rem, raum.raumPx))
+    : null;
+  const lesemassMaxRem = blattSpurMoeglich && rootWennOffenPx != null
+    ? Math.min(LESEMASS_MAX, rootWennOffenPx / rem - seiteWennOffenRem - 2 * SPUR_ABSTAND - SPUR_BLATT)
+    : LESEMASS_MAX;
+
   return {
     blattForm: blattSpur ? 'spalte' : ruheForm,
     gliederungSpalte,
@@ -231,6 +290,7 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
         + (blattSpur ? ` ${SPUR_BLATT}rem` : '')
       : undefined,
     breite: blattSpur && raum ? aufweitung(raum, LESER_MAX_REM * rem) : undefined,
+    lesemassMaxRem,
   };
 }
 
