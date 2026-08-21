@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
-import { useZuletzt } from '../layout/useZuletzt';
+import type { ReactNode } from 'react';
+import type { ZuletztEintrag } from '../../lib/zuletztVerwendet';
 import { VerlaufIcon } from '../layout/VerlaufIcon';
+import { suchOptionId } from './suchOptionId';
+import type { FlacherTreffer } from './trefferAuswahl';
 
 // ─── Leerzustand der Suche (⌘K / Fokus ohne Eingabe) — UI-NAV O1, Schritt 2 ──
 //
@@ -10,13 +12,13 @@ import { VerlaufIcon } from '../layout/VerlaufIcon';
 //
 // Synchron/CLS-frei: das Panel erscheint nur auf Fokus (Nutzer-Interaktion, nie im
 // ersten Paint) → keine localStorage-/Hydration-Divergenz im Prerender (§15.2).
-// `useZuletzt` liefert den Verlauf reaktiv (nach dem Mount) — im SSR leer, was
-// hier ohnehin nie gerendert wird.
+// `verlauf` kommt als Prop vom Aufrufer (EIN `useZuletzt()`-Aufruf, geteilt mit
+// der Tastatur-Navigation — Cowork-Befund 38, 21.8.2026, s. unten).
 //
 // Kuratierte Einstiege = stabile Übersichts-Routen (reine Navigation, keine
 // Rechtswerte, §13): der schnelle Sprung in die vier Korpus-Rubriken + Rechner.
 
-const EINSTIEGE: ReadonlyArray<{ route: string; label: string }> = [
+export const EINSTIEGE: ReadonlyArray<{ route: string; label: string }> = [
   { route: '/gesetze', label: 'Gesetze' },
   { route: '/rechtsprechung', label: 'Rechtsprechung' },
   { route: '/materialien', label: 'Materialien' },
@@ -24,43 +26,73 @@ const EINSTIEGE: ReadonlyArray<{ route: string; label: string }> = [
   { route: '/vorlagen', label: 'Vorlagen' },
 ];
 
-const ZEILE_CLS = 'flex items-center gap-2.5 px-4 py-2 no-underline text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-800';
+// Cowork-Befund 38 (21.8.2026): der Leerzustand rendere früher jede Zeile als
+// echten `<Link>` — ein Tastatur-Nutzer, der per Tab ins Suchfeld gelangt,
+// musste danach bis zu 9× Tab drücken (5 Verlauf- + 5 Einstieg-Zeilen), bis der
+// Fokus das Suchfeld-Widget verliess (WCAG 2.1.2 nahe Tastaturfalle — erst Escape
+// löste zuverlässig). Fix: dasselbe Listbox/Options-Muster wie SuchResultate.tsx
+// (role=option, Pfeiltasten + Enter über die STEUERNDE Eingabe, Tab verlässt das
+// Feld sofort). `leerOptionen` liefert die dazu passende flache Options-Liste —
+// dieselben generischen Helfer (aktivePosition/naechsterKey/…, trefferAuswahl.ts)
+// wie die Trefferliste, nur mit eigenem Gruppen-Namensraum («verlauf»/«einstieg»).
+export function leerOptionen(verlauf: ZuletztEintrag[], listboxId: string): FlacherTreffer[] {
+  return [
+    ...verlauf.map((e) => ({ oid: suchOptionId(listboxId, 'verlauf', e.route), href: e.route })),
+    ...EINSTIEGE.map((e) => ({ oid: suchOptionId(listboxId, 'einstieg', e.route), href: e.route })),
+  ];
+}
 
-export function SucheLeerzustand({ onAuswahl }: { onAuswahl?: () => void }) {
-  const verlauf = useZuletzt().slice(0, 5);
+const ZEILE_CLS = 'group/z flex items-center gap-2.5 px-4 py-2 text-body-s text-ink-700 transition-colors hover:bg-brass-100/40 hover:text-brass-800 cursor-pointer';
+
+export function SucheLeerzustand({ verlauf, listboxId, aktivId, onNavigate }: {
+  /** Verlauf-Einträge (bereits auf 5 gekappt) — EIN geteilter useZuletzt()-Aufruf
+   *  beim Aufrufer, damit Anzeige und Tastatur-Navigation (leerOptionen) exakt
+   *  dieselbe Liste sehen. */
+  verlauf: ZuletztEintrag[];
+  /** ARIA-Listbox-ID des steuernden Felds (wie SuchResultate) — macht jede Zeile
+   *  zu einer role=option statt eines eigenen Tab-Stopps (Befund 38). */
+  listboxId: string;
+  /** Options-ID des per Pfeiltasten hervorgehobenen Eintrags. */
+  aktivId?: string;
+  /** Maus/Touch-Navigation (Optionen sind keine `<a>` mehr, s. SuchResultate). */
+  onNavigate: (href: string) => void;
+}) {
+  const zeile = (oid: string, href: string, inhalt: ReactNode) => (
+    <li key={oid} role="option" id={oid} aria-selected={oid === aktivId}
+      onClick={() => onNavigate(href)}
+      className={`${ZEILE_CLS}${oid === aktivId ? ' bg-brass-100/40' : ''}`}>
+      {inhalt}
+    </li>
+  );
 
   return (
-    <div className="lc-card overflow-hidden">
+    <div className="lc-card overflow-hidden" role="listbox" id={listboxId} aria-label="Suche — Verlauf und Einstiege">
       {verlauf.length > 0 && (
-        <div className="border-b border-line">
+        <div role="group" aria-label="Zuletzt geöffnet" className="border-b border-line">
           <p className="lc-overline px-4 pt-3 pb-1">Zuletzt geöffnet</p>
-          <ul className="pb-1.5">
-            {verlauf.map((e) => (
-              <li key={e.route}>
-                <Link to={e.route} onClick={onAuswahl} className={ZEILE_CLS}>
-                  <VerlaufIcon typ={e.typ} className="shrink-0 text-ink-500" />
-                  <span className="min-w-0 flex-1 truncate">{e.titel}</span>
-                  <span aria-hidden className="text-ink-300">→</span>
-                </Link>
-              </li>
-            ))}
+          <ul role="none" className="pb-1.5">
+            {verlauf.map((e) => zeile(suchOptionId(listboxId, 'verlauf', e.route), e.route, (
+              <>
+                <VerlaufIcon typ={e.typ} className="shrink-0 text-ink-500" />
+                <span className="min-w-0 flex-1 truncate">{e.titel}</span>
+                <span aria-hidden className="text-ink-300 transition-all group-hover/z:translate-x-0.5 group-hover/z:text-brass-500">→</span>
+              </>
+            )))}
           </ul>
           {/* §8: der Verlauf liegt nur lokal. */}
           <p className="px-4 pb-2 text-micro leading-snug text-ink-500">Nur auf diesem Gerät</p>
         </div>
       )}
 
-      <div>
+      <div role="group" aria-label="Einstieg">
         <p className="lc-overline px-4 pt-3 pb-1">Einstieg</p>
-        <ul className="pb-1.5">
-          {EINSTIEGE.map((e) => (
-            <li key={e.route}>
-              <Link to={e.route} onClick={onAuswahl} className={ZEILE_CLS}>
-                <span className="min-w-0 flex-1 truncate">{e.label}</span>
-                <span aria-hidden className="text-ink-300">→</span>
-              </Link>
-            </li>
-          ))}
+        <ul role="none" className="pb-1.5">
+          {EINSTIEGE.map((e) => zeile(suchOptionId(listboxId, 'einstieg', e.route), e.route, (
+            <>
+              <span className="min-w-0 flex-1 truncate">{e.label}</span>
+              <span aria-hidden className="text-ink-300 transition-all group-hover/z:translate-x-0.5 group-hover/z:text-brass-500">→</span>
+            </>
+          )))}
         </ul>
       </div>
     </div>

@@ -1,9 +1,10 @@
-import { useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUniversalSuche } from '../suche/useUniversalSuche';
 import { SuchResultate } from '../suche/SuchResultate';
-import { SucheLeerzustand } from '../suche/SucheLeerzustand';
+import { SucheLeerzustand, leerOptionen } from '../suche/SucheLeerzustand';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
+import { useZuletzt } from './useZuletzt';
 
 // ─── Globale Suche im Top-Streifen (UI-Welle: Dropdown überall) ─────────────
 //
@@ -70,20 +71,34 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   // flacheTreffer (SSoT, §5) enthält am Gruppenende auch die «alle N Treffer»-
   // Option (mehrHref) — so ist der Sprung auch per Tastatur erreichbar (a11y).
   const flach = flacheTreffer(gruppen, listboxId);
-  const [aktivKey, setAktivKey] = useState<string | null>(null);
-  // Bei neuer Query zurücksetzen (Render-Phasen-Abgleich statt setState-im-Effekt).
-  const [letzteQuery, setLetzteQuery] = useState(q);
-  if (q !== letzteQuery) {
-    setLetzteQuery(q);
-    setAktivKey(null);
-  }
-  const aktivPos = aktivePosition(flach, aktivKey);
   // UI-NAV O1: das Feld öffnet auch LEER (⌘K/Fokus) → Verlauf + kuratierte
   // Einstiege (SucheLeerzustand). `feldLeer` an `wert` (nicht am nachhängenden `q`),
   // damit der Leerzustand beim ersten Tastendruck sofort den Treffern weicht.
   const feldLeer = wert.trim() === '';
   const zeigtPanel = offen && !feldLeer;
   const zeigtLeer = offen && feldLeer;
+  // Befund 38 (21.8.2026): EIN geteilter useZuletzt()-Aufruf für Anzeige UND
+  // Pfeiltasten-Navigation (leerOptionen) — dieselbe Liste, kein zweiter, evtl.
+  // abweichender Hook-Stand in SucheLeerzustand. Die Listbox-Options-Liste des
+  // Leerzustands hat einen eigenen Namensraum (Gruppen «verlauf»/«einstieg»,
+  // suchOptionId) und kollidiert nie mit den Treffer-oids aus `flach`.
+  const verlauf = useZuletzt().slice(0, 5);
+  const flachLeer = useMemo(() => leerOptionen(verlauf, listboxId), [verlauf, listboxId]);
+  // Aktive Pfeil-Auswahl: EIN Key-State über beide Listen hinweg (Panel/Leer sind
+  // nie gleichzeitig sichtbar, s. zeigtPanel/zeigtLeer oben) — welche Liste
+  // gerade gilt, entscheidet `feldLeer`.
+  const aktivListe = feldLeer ? flachLeer : flach;
+  const [aktivKey, setAktivKey] = useState<string | null>(null);
+  // Bei neuer Query ODER beim Wechsel leer↔Treffer zurücksetzen (Render-Phasen-
+  // Abgleich statt setState-im-Effekt) — sonst zeigt aria-activedescendant auf
+  // eine oid aus der jeweils ANDEREN Liste (harmlos dank aktivePosition-Fallback
+  // -1, aber unnötig verwirrend beim Umschalten).
+  const [letzterStand, setLetzterStand] = useState({ q, feldLeer });
+  if (q !== letzterStand.q || feldLeer !== letzterStand.feldLeer) {
+    setLetzterStand({ q, feldLeer });
+    setAktivKey(null);
+  }
+  const aktivPos = aktivePosition(aktivListe, aktivKey);
   // Fokusmodus = mobil UND Suche offen. Bewusst an `offen` gekoppelt statt an ein
   // eigenes onFocus/onBlur: ein Blur feuert auch beim Antippen eines Treffers —
   // der Streifen würde mitten im Tap neu umbrechen und den Tap verschieben.
@@ -93,7 +108,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   useEffect(() => { onFokusModus?.(breit); }, [breit, onFokusModus]);
   // Beim Verlassen der Komponente den Streifen nicht im Fokusmodus zurücklassen.
   useEffect(() => () => onFokusModus?.(false), [onFokusModus]);
-  const aktivId = zeigtPanel && aktivPos >= 0 ? flach[aktivPos].oid : undefined;
+  const aktivId = (zeigtPanel || zeigtLeer) && aktivPos >= 0 ? aktivListe[aktivPos].oid : undefined;
 
   // Globale Fokus-Shortcuts: «/» UND ⌘K/Ctrl-K fokussieren das Feld (A5 — die
   // frühere Palette ist entfallen, der Shortcut bleibt nützlich). In Eingabe-
@@ -179,19 +194,23 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
 
   // Pfeil-/Enter-Navigation wie im Hero (§5): Enter öffnet den hervorgehobenen
   // bzw. — ohne Auswahl — den obersten Treffer der ersten nicht-leeren Gruppe.
+  // Läuft über `aktivListe` (Treffer ODER Leerzustand-Optionen, je nach
+  // `feldLeer`) — Befund 38: Pfeiltasten navigieren die Vorschläge, TAB bleibt
+  // dagegen dem Browser überlassen und verlässt das Feld sofort (kein eigener
+  // Tab-Handler hier — genau das ist der Fix).
   const aufTaste = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'ArrowDown' && flach.length > 0) {
+    if (e.key === 'ArrowDown' && aktivListe.length > 0) {
       e.preventDefault();
       setOffen(true);
-      setAktivKey((k) => naechsterKey(flach, k));
-    } else if (e.key === 'ArrowUp' && flach.length > 0) {
+      setAktivKey((k) => naechsterKey(aktivListe, k));
+    } else if (e.key === 'ArrowUp' && aktivListe.length > 0) {
       e.preventDefault();
-      setAktivKey((k) => vorigerKey(flach, k));
+      setAktivKey((k) => vorigerKey(aktivListe, k));
     } else if (e.key === 'Enter') {
-      const ziel = gewaehlterHref(flach, aktivKey)
-        ?? gruppen.find((g) => g.treffer.length > 0)?.treffer[0]?.href;
+      const ziel = gewaehlterHref(aktivListe, aktivKey)
+        ?? (feldLeer ? undefined : gruppen.find((g) => g.treffer.length > 0)?.treffer[0]?.href);
       if (ziel) { navigate(ziel); auswahl(); }
-      else if (wert.trim() !== '') { setEnterQ(wert.trim()); setOffen(true); } // Puffer: öffnen, sobald geladen
+      else if (!feldLeer && wert.trim() !== '') { setEnterQ(wert.trim()); setOffen(true); } // Puffer: öffnen, sobald geladen
     }
   };
 
@@ -215,8 +234,13 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         aria-keyshortcuts="/ Meta+K Control+K"
         autoComplete="off"
         role="combobox"
-        aria-expanded={zeigtPanel}
-        aria-controls={zeigtPanel ? listboxId : undefined}
+        // Befund 38: aria-expanded/-controls galten bisher NUR im Treffer-Panel —
+        // der Leerzustand (SucheLeerzustand) öffnete visuell denselben Dropdown,
+        // meldete das aber nicht (aria-expanded blieb false). Beide Panel-Arten
+        // sind jetzt dieselbe ARIA-Listbox (`listboxId`), also gilt dieselbe
+        // Bedingung für beide.
+        aria-expanded={zeigtPanel || zeigtLeer}
+        aria-controls={(zeigtPanel || zeigtLeer) ? listboxId : undefined}
         aria-activedescendant={aktivId}
         aria-autocomplete="list"
       />
@@ -274,7 +298,10 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         <div className="absolute left-0 right-0 top-full mt-2 z-30 max-h-[70vh] overflow-y-auto overscroll-contain rounded-lg bg-paper max-[1400px]:fixed max-[1400px]:inset-x-2 max-[1400px]:left-2 max-[1400px]:right-2 max-[1400px]:top-[3.75rem] max-[1400px]:mt-0">
           {zeigtLeer
             // UI-NAV O1: Leerzustand (⌘K/Fokus ohne Eingabe) — Verlauf + Einstiege.
-            ? <SucheLeerzustand onAuswahl={auswahl} />
+            // Listbox-Modus (Befund 38): Maus-Klick navigiert UND schliesst/leert
+            // das Feld in einem Zug (wie Enter/Tastatur-Auswahl).
+            ? <SucheLeerzustand verlauf={verlauf} listboxId={listboxId} aktivId={aktivId}
+                onNavigate={(href) => { navigate(href); auswahl(); }} />
             : <SuchResultate gruppen={gruppen} allesGeladen={allesGeladen} q={q} onAuswahl={auswahl} listboxId={listboxId} aktivId={aktivId}
                 vorschlag={vorschlag} abdeckung={abdeckung} onVorschlag={uebernehmeVorschlag}
                 onNavigate={(href) => navigate(href)} />}
