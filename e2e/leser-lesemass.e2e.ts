@@ -275,6 +275,35 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
     await page.evaluate(() => document.fonts?.ready);
     await page.waitForTimeout(300);
 
+    // ROBUSTE SETTLE-BEDINGUNG (§6.3, Anlass: Rot-Beweis 21.8.2026 nach
+    // `LESEMASS_MAX`, Diagnose s. u.) ─────────────────────────────────────────
+    // Artikel jenseits der ersten Bildschirmseite tragen `content-visibility:
+    // auto` (`.nt-art-cv`, index.css) — solange sie NIE echtes Layout hatten,
+    // liefert `getBoundingClientRect()` nicht die echte Höhe, sondern den
+    // JS-GESCHÄTZTEN Platzhalter (`contain-intrinsic-size`, `schaetzeArtikelHoehe`
+    // in `gesetz-leser/berechnungen.ts` — bewusst grosszügig kalibriert auf die
+    // SCHMALERE V1-Spalte, «echte Höhe ≤ Schätzung», s. dortiger Kommentar).
+    // Seit `LESEMASS_MAX` (V3, 45rem statt ~42rem) klafft diese Schätzung bei
+    // nie-gerenderten Artikeln spürbar weiter auseinander (BGBM Art. 4:
+    // Schätzung 931px vs. echte 842px — Diagnose-Messung, kein Zufallswert).
+    // Ohne diesen Schritt liefert die ERSTE Messung («vorher») die Schätzung,
+    // jede Messung NACH dem ersten Schalter-Klick (der wegen einer anderen
+    // DOM-Änderung anderswo im Baum ein echtes Layout erzwingt) aber die echte
+    // Höhe — der Test verglich also Schätzung mit Wirklichkeit, nicht Wirklichkeit
+    // mit Wirklichkeit, und der «Rest» war ein Mess-Artefakt, kein Schalter-Bug
+    // (belegt: reines Warten ohne Schalter über 2 s hält die Schätzung stabil bei
+    // 931px; einmaliges Durchscrollen OHNE jeden Schalter-Klick senkt sie bereits
+    // auf die echten 842px). Fix: vor der Baseline-Messung einmal schrittweise
+    // durchscrollen — jeder Artikel bekommt so vor «vorher» ein echtes Layout,
+    // exakt wie ein realer Leser es beim Ankommen auf der Seite ohnehin auslöst.
+    const gesamt = await page.evaluate(() => document.body.scrollHeight);
+    for (let y = 0; y < gesamt; y += 850) {
+      await page.evaluate((yy) => window.scrollTo(0, yy), y);
+      await page.waitForTimeout(80);
+    }
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(200);
+
     const hoehen = () => page.evaluate(() => Array.from(document.querySelectorAll('article[id^="art-"]'))
       .map((a) => Math.round(a.getBoundingClientRect().height)));
 
