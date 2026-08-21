@@ -33,6 +33,10 @@ import { KantonAuswahl } from './gesetze-teile/KantonAuswahl';
 // IA-3 (§11.5): A–Z-/Kürzel-Register — Browse-Zwilling zum Norm-Sprung auf dem
 // Landeplatz; rechnet auf dem BEREITS geladenen Manifest (kein zweiter Index, K10).
 import { AzRegister } from './gesetze-teile/AzRegister';
+// J3 (ROADMAP W2·10-UI-NAV, Idee David 16.8.2026, dejure.org-Vorbild): dichte
+// Rechtsgebiets-Übersicht als gehaltvoller Default-Inhalt des Landeplatzes —
+// SSoT-Details in RechtsgebietUebersicht.tsx.
+import { RechtsgebietUebersicht } from './gesetze-teile/RechtsgebietUebersicht';
 // IA-4 (§11.5): Scope des lokalen Browse-Filterfelds — Default = aktive Ebene,
 // der Chip «auf alle Ebenen erweitern» weitet mit EINEM Klick (O5). Reine
 // Teilmengen-Bildung auf dem geladenen Manifest (kein dritter Suchpfad, A5;
@@ -381,6 +385,10 @@ export function Gesetze() {
                   Gliederungs-Modus demoted — der Zugang lebt im Gliederungs-
                   Umschalter der Säulen (A15/A14); `?ansicht=rechtsgebiet` bleibt
                   auflösbarer Alias (IA-5, A15: Tür NICHT entfernt). */}
+              {/* J3: dichte Rechtsgebiets-Übersicht als gehaltvoller Default-
+                  Inhalt (Cowork-Befund 19, 18.8.2026) — VOR dem A–Z-Register,
+                  das damit zum zweiten, alphabetischen Zugang wird. */}
+              <RechtsgebietUebersicht erlasse={erlasse} />
               {/* IA-3 (§11.5): A–Z-Register am ENDE des Landeplatzes — wächst nur
                   nach unten (§15.2), alle Listen-Wechsel sind input-getrieben. */}
               <AzRegister erlasse={erlasse} />
