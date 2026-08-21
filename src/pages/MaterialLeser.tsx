@@ -53,7 +53,10 @@ export function MaterialLeser() {
     const kurz = mat.titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? mat.titel;
     meldeKopf({ breadcrumb: [{ label: 'Materialien', to: '/materialien' }, { label: kurz }] });
   }, [imPane, data, key, meldeKopf]);
-  useEffect(() => () => meldeKopf(null), [meldeKopf]);
+  // KEIN Unmount-Cleanup `meldeKopf(null)` — gleiche Wurzel wie im
+  // EntscheidLeser (Befund David 21.8.2026, Herleitung dort): die Shell setzt
+  // bei jedem Pfadwechsel zurück, das passive Cleanup wischte sonst die
+  // Kopf-Reservierung der Folgeseite weg.
 
   const laden = !data || data.key !== key;
   const material = laden ? null : data.material;

@@ -403,7 +403,12 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       ],
     });
   }, [snap, meldeInhaltsKopf]);
-  useEffect(() => () => meldeInhaltsKopf(null), [meldeInhaltsKopf]);
+  // KEIN Unmount-Cleanup `meldeInhaltsKopf(null)` (Befund David 21.8.2026,
+  // gleiche Wurzel wie Cowork 1/53): die Shell setzt bei jedem Pfadwechsel
+  // ohnehin zurück; das passive Cleanup lief NACH dem Layout-Effekt der
+  // Folgeseite und wischte beim Zurück in den Gesetz-Leser dessen frische
+  // Kopf-Reservierung weg — die App-Leiste übermalte die V3-Werkzeugleiste.
+  // Rot-Beweis: `e2e/leser-v3-eine-kopfzeile.e2e.ts` (k).
 
   // Browser-Tab: Zitierung des Entscheids.
   useEffect(() => {
