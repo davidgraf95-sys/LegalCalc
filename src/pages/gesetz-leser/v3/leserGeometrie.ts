@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import { kopfHoehe, type KopfStufe } from './kopfStufen';
 import { SUCH_H_AKTIV, SUCH_H_RUHE } from './SuchZone';
+import { LESEMASS_MAX } from './rahmenSpalten';
 
 // ═══ Die EINE Stelle, an der die Geometrie des Lesers V3 gerechnet wird ══════
 //
@@ -108,6 +109,11 @@ export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
     // nächsten Umbau nicht mehr auseinanderzuhalten (§5).
     '--leser-v3-app-band': vollflaechig ? APP_BAND_H : '0rem',
     '--leser-sub-h': vollflaechig ? '0rem' : 'var(--leser-v3-kopf-h)',
+    // Auftrag David 21.8.2026 (`./rahmenSpalten`, LESEMASS_MAX): der Deckel des
+    // Lesemasses, EINMAL benannt, von `index.css` gelesen (`#lc-lesespalte`
+    // und `.max-w-normtext` im V3-Wurzelbaum). Zustandsunabhängig — anders als
+    // die übrigen Variablen hier gilt derselbe Wert in jeder Lage.
+    '--leser-lesemass-max': `${LESEMASS_MAX}rem`,
     '--nt-stick': vollflaechig
       ? `calc(${APP_TOPBAR_H} + var(--leser-v3-kopf-h) + var(--leser-v3-such-h))`
       : 'calc(var(--leser-sub-h) + var(--leser-v3-such-h))',

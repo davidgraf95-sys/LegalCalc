@@ -77,6 +77,52 @@ const SPUR_ABSTAND = 2;
 /** Lesemass der Lesespalte (rem) = `max-w-reading`, `LeserLesespalte`. */
 const LESEMASS = 40;
 
+// ── LESEMASS_MAX · Auftrag David 21.8.2026, wörtlich «können wir machen, dass
+//    der gesetzestext bei verfügbarer breite vom bildschirm oder wenn
+//    gliederung eingeklappt ist breiter wird» — zugleich Erledigung von
+//    Cowork-Befund 50 und der ENTSCHEID zum offenen Satzspiegel-Punkt (Kap. 5
+//    im Fahrplan): der Text DARF breiter werden, aber mit einem Deckel statt
+//    Vollbreite (Design-Grundlage Kap. 8 Nr. 7 «nie Fensterbreite für
+//    Fliesstext»). ─────────────────────────────────────────────────────────
+//
+// HERLEITUNG (gemessen 21.8.2026 am gebauten Stand, längster mehrzeiliger
+// Fliesstext-Absatz je Erlass @1440, Methode von `leser-lesemass.e2e.ts`):
+//   · `leser-lesemass.e2e.ts` bewacht als HARTE Zusage SC 1.4.8 (WCAG): Zeile
+//     ≤ 80 ch. Diese Zusage gilt unverändert weiter — der Auftrag nennt eine
+//     Zielspanne «~75–90 Zeichen», nicht eine Anhebung der WCAG-Decke; wo
+//     beides zusammentrifft, gewinnt die geprüfte Accessibility-Zusage.
+//   · Erster Versuch 46 rem: StGB (nicht in `ERLASSE`, aber real ausgeliefert)
+//     stieg auf 81 ch — ÜBER der Decke. 45 rem = 720 px bringt StGB auf 78 ch
+//     zurück (2 ch Reserve) und hält alle anderen Stichproben darunter: ZGB 68→75,
+//     OR 71→77, StPO 73→75, VMWG 74→74 ch (unverändert — der längste Absatz
+//     bricht an derselben Stelle um). +5 rem = **+12.5 %** gegenüber `LESEMASS`
+//     — spürbar breiter, aber knapper als «ein Viertel», weil StGB die 80-ch-
+//     Decke schon bei deutlich weniger Zuwachs erreicht (Ausgangswert 73 ch bei
+//     40 rem war bereits nah an der Decke). Die 75–90-ch-Zielspanne des
+//     Auftrags wird damit nur am UNTEREN Rand erfüllt — offengelegte
+//     Abweichung (§7): Ursache ist die vorbestehende SC-1.4.8-Zusage, nicht
+//     eine engere Lesung des Auftrags.
+//
+// WARUM EIN DECKEL UND KEINE VOLLBREITE: die Lese-Zelle (`minmax(0,1fr)` in
+// `rahmenBild.spalten`) ist bei offener Gliederung @1440 bereits 752 px breit,
+// eingeklappt (Schiene) 1004 px — beides mehr als der Deckel. `width:100%` +
+// `max-width` (unverändertes CSS-Muster von `max-w-reading`) liefert genau die
+// verlangte Eigenschaft von selbst: die Spalte wächst mit dem verfügbaren Raum
+// der GRID-Zelle (schon vorhanden über `useRahmenRaum`/`rahmenBild`, "eine
+// Breiten-Quelle", A-8) und STOPPT am Deckel — der Rest geht in Randluft. Keine
+// dritte Schwelle, keine neue Messung: die Zelle ist längst dynamisch, nur der
+// Deckel selbst war bislang zu knapp gesetzt, um je zu greifen.
+//
+// ANWENDUNG: `#lc-lesespalte` (`LeserLesespalte`) UND `.max-w-normtext`
+// (Artikel-Fliesstext `ArtikelLeser` + Ingress `ErlassKopfBlock`) werden NUR
+// innerhalb des V3-Wurzelelements (`index.css`,
+// `.lc-leser[data-leser-v3="rahmen"]`) auf denselben Wert gehoben — sonst
+// bekäme die Kopfzeile (ungedeckelt, volle Zellenbreite) einen anderen rechten
+// Rand als der Fliesstext (genau der Fehler, den A37 behoben hat). V1 (Ist-
+// Hülle) ist unberührt: die Selektoren sind auf `[data-leser-v3="rahmen"]`
+// gescoped, das V1 nie trägt.
+export const LESEMASS_MAX = 45;
+
 /**
  * Deckel des Leser-Rahmens (rem) = die Summe seiner drei Spuren samt Abständen.
  * NICHT `max-w-content`: der gilt für jede andere Seite unverändert weiter.

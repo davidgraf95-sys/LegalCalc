@@ -2,20 +2,25 @@
 import { test, expect, type Page } from '@playwright/test';
 import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
-// ══ WELCHE HÜLLE PRÜFT DIESE DATEI? (Nachzug 17.8.2026, Arch-Prüfer 7) ════════
+// ══ WELCHE HÜLLE PRÜFT DIESE DATEI? (Nachzug 17.8.2026, Arch-Prüfer 7;
+//    KORRIGIERT 21.8.2026 nach dem H4-Flip) ═══════════════════════════════════
 //
-// Diese Frage war unbeantwortet, und das war der Mangel: `ladeReader` navigiert
-// nach `/gesetze/bund/<KEY>` OHNE `?leser=v3`, und die Datei steht in keiner der
-// Projektlisten von `playwright.config.ts` (`N_SPECS`/`V3_SPECS`) — sie läuft also
-// nur im Projekt `chromium` und gegen die IST-HÜLLE (V1).
+// `ladeReader` navigiert nach `/gesetze/bund/<KEY>` OHNE `?leser=v3` — bis
+// 18.8.2026 traf das damit die IST-HÜLLE (V1), weil V1 der ausgelieferte
+// Default war. Seit dem H4-Flip (PR #552, 18.8.2026) ist **V3 der Standard**
+// (`?leser=v1` erreicht die alte Hülle noch, bis H5 sie entfernt) — dieselbe
+// Navigation trifft seither also V3. Der folgende Absatz galt VOR dem Flip und
+// steht als Beleg dafür, dass die Fliesstext-STUFE (Schriftgrösse/Zeilenhöhe)
+// in beiden Hüllen identisch war; für das LESEMASS (diese Datei) gilt das seit
+// dem Auftrag David 21.8.2026 («LESEMASS_MAX», `pages/gesetz-leser/v3/
+// rahmenSpalten.ts`) NICHT mehr — V3 setzt seither einen höheren Deckel als V1.
 //
-// Das ist für die R5-Fälle richtig und bleibt so: die Lesespalte ist Kern-Sache
-// (S-Strang), das Lesemass-Token `max-w-normtext` und die Typo-Stufe
-// `text-leser-text` sind NICHT V3-gegated, und die Ist-Hülle ist heute die
-// ausgelieferte. Gemessen bestätigt: die Fliesstext-Stufe liefert in V1 dieselben
-// 17.00 px / 26.35 px wie in V3. V3-gegated ist allein der SCHRIFTREGLER
-// (index.css: `.lc-leser[data-leser-v3="rahmen"] … [data-lese]`) — also die
-// Vergrösserung, nicht die Grundstufe.
+// Das ist für die R5-Fälle nicht mehr «egal, welche Hülle», sondern deren
+// Kern: die Zahlen unten sind V3-Zahlen. Gemessen war vor dem Flip bestätigt,
+// dass die Fliesstext-STUFE in V1 dieselben 17.00 px / 26.35 px liefert wie in
+// V3 — das bleibt unverändert wahr, nur bindet das Lesemass jetzt zusätzlich
+// an `LESEMASS_MAX` (nur V3). V3-gegated war bis dahin allein der
+// SCHRIFTREGLER (index.css: `.lc-leser[data-leser-v3="rahmen"] … [data-lese]`).
 //
 // Damit die Zusage der Etappe aber nicht nur AM RANDE der neuen Hülle geprüft ist,
 // steht unten EIN Fall ausdrücklich unter `?leser=v3` (StPO 429). Der Query-
@@ -25,7 +30,8 @@ import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftu
 // vorgezogen.
 //
 // R5 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Typo-Skala): die Lesespalte hält ein
-// komfortables Zeilenmass — Desktop ≤ 75 ch @ 1440px, Mobil hinreichend breit @ 390px.
+// komfortables Zeilenmass — Desktop ≤ 80 ch @ 1440px (Herleitung der Zahl unten,
+// «DIE 80-ch-SCHWELLE»), Mobil hinreichend breit @ 390px.
 // Der frühere Ist-Fehler: arbitrary max-w-[52/56rem] (zu breit) + auf Mobil ~16 ch
 // (5 gestapelte Guide-Linien à ~24px = ~120px Fraß). Fix: max-w-reading (Token) +
 // Guide-/Einzug-Kollaps mobil → gemessen ~32–34 ch (2× der ~16-ch-Basis).
@@ -297,36 +303,38 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
   });
 });
 
-// ── DIE 75-ch-SCHWELLE, BEWUSST GESETZT (Nachzug 17.8.2026, Arch-Prüfer 9) ────
+// ── DIE 80-ch-SCHWELLE (Nachzug 17.8.2026, Arch-Prüfer 9; ENTSCHIEDEN
+//    21.8.2026, Auftrag David «gesetzestext … breiter») ──────────────────────
 //
-// Die Schwelle unten ist die HAUSdecke (DESIGN-REGLEMENT-NORMTEXT §Typo-Skala),
-// nicht die WCAG-Decke (SC 1.4.8 = 80 ch; die prüft der S2-Block oben an drei
-// Breiten). Bis zum Nachzug hiess es dazu «empirisch ~70–72 ch, ≥ 3 ch Luft». Mit
-// F3 = V2 stimmt das nicht mehr: bei 17 px statt 18 px passt MEHR Text in dieselbe
-// 42-rem-Spalte. NEU GEMESSEN @1440 mit `messeMaxCharsPerLine` oben:
+// Die Schwelle stand hier bis 21.8.2026 auf 75 (HAUSdecke,
+// DESIGN-REGLEMENT-NORMTEXT §Typo-Skala) — ENGER als die WCAG-Decke (SC 1.4.8
+// = 80 ch, die der S2-Block oben an drei Breiten prüft). Mit F3 = V2 (17 px)
+// gemessen war sie schon ohne LESEMASS_MAX knapp: ZGB 68 · OR 71 · StPO 73 ·
+// VMWG 74 · StGB 77 ch — VMWG mit 1 ch Luft, StGB (nicht in `ERLASSE`) DARÜBER.
+// Der Vollzugsvermerk S2 nannte zwei Auswege («Lesemass schmaler» oder
+// «Hausdecke auf WCAG 80 heben») und liess die Wahl offen.
 //
-//   ZGB 68 ch · OR 71 ch · StPO 73 ch · VMWG 74 ch · StGB 77 ch
+// David 21.8.2026 hat den Text ausdrücklich BREITER gemacht (`LESEMASS_MAX`,
+// `pages/gesetz-leser/v3/rahmenSpalten.ts` — Auftrag, Erledigung von
+// Cowork-Befund 50 und dem offenen Satzspiegel-Punkt), nicht schmaler — die
+// erste Option ist damit vom Tisch, die zweite ENTSCHIEDEN: die Hausdecke
+// steigt auf die WCAG-Marke, EINE Zahl statt zwei knapp beieinanderliegender.
+// NEU GEMESSEN @1440 (V3, `LESEMASS_MAX` = 45 rem = 720 px):
 //
-// Protokolliert statt weggeglättet: die drei geprüften Erlasse halten die 75, das
-// VMWG aber nur mit 1 ch Luft — und das StGB liegt mit 77 ch DARÜBER. Das StGB
-// steht NICHT in `ERLASSE`; die Liste ist Bestand aus R5 und wird hier nicht
-// erweitert, denn das wäre kein Nachzug, sondern ein neues ROTES Tor auf eine
-// Hausschwelle, deren Wert nach dem Stufenwechsel erst neu zu entscheiden ist.
+//   ZGB 75 ch · OR 77 ch · StPO 75 ch · VMWG 74 ch · StGB 78 ch
 //
-// ENTSCHEID, DER OFFEN BLEIBT (David, Vollzugsvermerk S2): entweder wird das
-// Lesemass für die 17-px-Stufe schmaler (Änderung an `max-w-normtext`, wirkt im
-// ganzen Reader), oder die Hausdecke wird bewusst auf die WCAG-Marke 80 ch
-// gehoben. Beides ist ein Gestaltungsentscheid, keiner, den ein Nachzug fällt
-// (§7). Bis dahin bleibt die Schwelle bei 75 — sie KANN scheitern (VMWG 1 ch
-// Luft) und ist damit kein Schein-Tor.
-test.describe('R5 · Lesemass Desktop (≤ 75 ch @ 1440)', () => {
+// `LESEMASS_MAX` selbst ist an StGB (77→81 ch bei einem ersten Versuch mit
+// 46 rem) kalibriert, DAMIT die 80-ch-Decke bei jeder Stichprobe Reserve
+// behält (Herleitung: `rahmenSpalten.ts`) — sie ist darum weiterhin KEIN
+// Schein-Tor: eine künftige Verbreiterung ohne erneute Messung reisst sie.
+test.describe('R5 · Lesemass Desktop (≤ 80 ch @ 1440)', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
   for (const key of ERLASSE) {
-    test(`${key}: Lesespalte ≤ 75 ch`, async ({ page }) => {
+    test(`${key}: Lesespalte ≤ 80 ch`, async ({ page }) => {
       await ladeReader(page, key);
       const m = await messeMaxCharsPerLine(page);
       expect(m, `${key}: mehrzeiliger Fliesstext-Absatz gefunden`).not.toBeNull();
-      expect(m!.ch, `${key} @1440: ${m!.ch} ch (${m!.px}px) muss ≤ 75 sein`).toBeLessThanOrEqual(75);
+      expect(m!.ch, `${key} @1440: ${m!.ch} ch (${m!.px}px) muss ≤ 80 sein (SC 1.4.8, wie S2 oben)`).toBeLessThanOrEqual(80);
     });
   }
 });
