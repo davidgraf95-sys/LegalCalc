@@ -52,8 +52,13 @@ test.describe('IA-3 · A–Z-Register — Budget-Walk + Einsortierung', () => {
     await leiste(page).getByRole('button', { name: /^Z — / }).press('Enter'); interaktionen++
     await expect(page.getByText(/Titel unter «Z»/)).toBeVisible()
 
-    // (2) Titel (ohne Kürzel-Kenntnis erkennbar) → In-App-Reader.
-    await page.getByRole('link', { name: /Zivilstandsverordnung/ }).click(); interaktionen++
+    // (2) Titel (ohne Kürzel-Kenntnis erkennbar) → In-App-Reader. Scope auf die
+    // Register-Liste (J3: dieselbe Zivilstandsverordnung steht seit der
+    // Rechtsgebiets-Übersicht ZUSÄTZLICH weiter oben auf dem Landeplatz —
+    // zwei legitime Wege zum selben Erlass, kein Bug; der Budget-Walk misst
+    // ausdrücklich den Register-Pfad).
+    await page.getByRole('region', { name: 'Register-Liste' })
+      .getByRole('link', { name: /Zivilstandsverordnung/ }).click(); interaktionen++
     await expect(page).toHaveURL(/\/gesetze\/bund\/ZSTV$/)
 
     expect(interaktionen, 'Budget §11.3 «Erlass ohne Kürzel-Kenntnis»').toBeLessThanOrEqual(2)
