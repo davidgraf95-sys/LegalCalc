@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import { ROUTEN_MANIFEST } from './routesManifest';
 import { lazyRetry } from './lazyRetry';
 import { importGesetzLeser, importEntscheidLeser } from './leserPrefetch';
@@ -78,6 +78,17 @@ function AltRouteRedirect() {
   return <Navigate to={`/${search}`} replace />;
 }
 
+// Cowork-Befund 13 (18.8.2026): `/gesetze/:ebene` (ohne Schlüssel — z. B. ein
+// abgeschnittener/veralteter Link auf `/gesetze/bund`) lieferte 404 statt der
+// gefilterten Übersicht. `/gesetze/:ebene/:key` (Zeile unten) bleibt die
+// Lesesicht; diese Route fängt NUR den Zwei-Segment-Fall ab. Unbekannte Ebene
+// (Tippfehler, alter Wert) → neutral `/gesetze` statt eines zweiten 404.
+function EbeneRedirect() {
+  const { ebene } = useParams();
+  const bekannt = ebene === 'bund' || ebene === 'kanton' || ebene === 'international';
+  return <Navigate to={bekannt ? `/gesetze?ebene=${ebene}` : '/gesetze'} replace />;
+}
+
 /**
  * Die EINE Routendefinition der App. Rendert pfadabhängig die passende Seite.
  * Muss in einem Router-Kontext (BrowserRouter) stehen.
@@ -113,6 +124,7 @@ export function RouteSwitch({ location }: { location?: string }) {
       <Route path="/rechner/:slug" element={<RechnerStub />} />
       {/* Rubrik V «Gesetze»: Übersicht (prerendert) + Lesesicht (SPA-Fallback) */}
       <Route path="/gesetze" element={<Gesetze />} />
+      <Route path="/gesetze/:ebene" element={<EbeneRedirect />} />
       <Route path="/gesetze/:ebene/:key" element={<GesetzLeser />} />
       {/* Rubrik VI «Rechtsprechung»: Übersicht (prerendert) + Reader (SPA-Fallback) */}
       <Route path="/rechtsprechung" element={<Rechtsprechung />} />
