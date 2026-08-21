@@ -2475,3 +2475,17 @@ Arbeitsschritt).
   **Detail:** [FAHRPLAN-GESETZES-UX.md](fahrplaene/FAHRPLAN-GESETZES-UX.md) §17.
   - [x] **Gliederungslinie im Lesetext entfernen** *(gebaut 16.8.2026, PR feat/w2-5h-gesetz-ui)* *(Entscheid David 13.8.2026: V1 «Linien ganz entfernen»)* — Rückbau der Guide-Mechanik; Übersicht trägt allein die Seitenleiste. **Deklarierte Verhaltensänderung** (§6): Vorher/Nachher-Beweis Pflicht, Linien-Kanon Teil A unberührt. [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §9.3.
 
+# Umschichtung 21.8.2026 — Steuerdeckel-Rotation (ROADMAP.md > 100 KB)
+
+## W2·5m-LESER-V3 — sechs datierte ✅-Teilerfolge *(Schritt bleibt OFFEN; Prosa verschoben 21.8.2026)*
+
+Konvention 22.7.2026: datierte Teilerfolgs-Prosa aus einem noch offenen Schritt wandert
+wörtlich hierher, im Plan bleibt je Teilerfolg ein ✅-Einzeiler mit Pointer. Wortlaut wie
+am 21.8.2026 in `ROADMAP.md` gestanden:
+
+  - [x] **Phase 0b · Design-Fundament** *(erledigt 16.8.2026: docs/ux-audit-2026-07/reader/leser-v3-design-grundlage.md)* — Design-Recherche (Apple-Lese-Oberflächen · Best-in-class Web-Leser · Rechtstext-Typografie + Ist-Tokens) → verdichtete Design-Grundlage (Schriftsystem, Abstandsraster, Farbrollen, Radien/Schatten, Ikonen, Bewegung) als Eingabe für V-0; Auftrag David 16.8.2026 («bevor wir bauen noch eine design recherche als fundament»). Kap. 6.
+  - [x] **V-0 · Klick-Prototyp** *(gebaut 16.8.2026, docs/ux-audit-2026-07/reader/leser-v3-prototyp/; David: F3=V1, F7=A, F8=Lasche)* — statischer HTML-Prototyp mit echtem StPO-Text, drei Breiten, Variante A (Kopf mit «Ansicht ▾») / B (Kopf ohne Menü, Schalter im Panel-Reiter «Anzeige»); David entscheidet am Bild (**F7**). Kap. 6.
+  - [x] **Vorprobe H1** *(erledigt 16.8.2026, PR H1; Protokoll docs/ux-audit-2026-07/reader/leser-v3-vorprobe.md — V-1/V-2 bestanden, V-3 nicht kalibrierbar: das Repo kennt keinen Feature-Flag-Präzedenzfall)* — Fassade als Schaltpunkt (`?leser=v3`), Flag-Playwright-Projekt (N-Tests laufen auch gegen V3), Nullprobe Flag-aus, Basisrate Etappen/Woche aus dem Verlauf. Kap. 6.
+  - [x] **H1 Fundament** *(erledigt 16.8.2026; Kontaktbogen docs/ux-audit-2026-07/reader/leser-v3-h1/README.md — Sucheingaben im Gesetz 2 → 1, Kopf ohne `imPane`-Verzweigung, Kern byte-gleich; Tab-Titel-Parität war bereits gegeben, s. Fahrplan Kap. 12 A-3)* — Rahmen · ein Kopf (Ort · Artikel · ein Menü) · Seitenleiste mit Übersichtsbox (nicht sticky) + einem Such-/Sprungfeld + Gliederung (sticky, «alles ein-/aus», «↑ Anfang») · Tab-Titel-Parität Split-View. Kap. 7.
+  - [x] **H2 Suche** *(erledigt 16.8.2026; Kontaktbogen `docs/ux-audit-2026-07/reader/leser-v3-h2/README.md` — Trefferliste als Verzeichnis mit einer Zeile je Fundstelle, Suchbereich, ✕/Esc ohne Scroll-Bewegung; Bund-Probe StPO/VMWG/LugÜ ohne Sonderpfad, CLS 0/0, axe 52 Regeln mit 3 offenen Verstössen; NM-Zahlen unverändert bzw. auf dem Handy +1 Schritt — ausgewiesen, nicht geglättet. Ästhetik-Nachzug ausgelagert nach **H2b**, Detail Fahrplan Kap. 7)* — Treffer in Erlass-Reihenfolge, gruppiert je Artikel, Suchbereich; ✕ ohne Sprung (Scroll-Position). Kap. 7.
+  - [x] **S3 Erlass-Kopf + Standausweis-Wortlaut** *(gebaut 16.8.2026, Branch `feat/leser-v3-s3`; Belege docs/ux-audit-2026-07/reader/leser-v3-s3/)* — Fakten/Status/Aktionen getrennt, «gegen Fedlex-Konsolidierung geprüft am …» (**F5**; Pos. 11 geklärt: Fedlex selbst nicht konsolidiert). Kap. 7.
