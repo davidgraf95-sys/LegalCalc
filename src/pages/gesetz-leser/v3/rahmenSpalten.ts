@@ -77,9 +77,67 @@ const SPUR_ABSTAND = 2;
 /** Lesemass der Lesespalte (rem) = `max-w-reading`, `LeserLesespalte`. */
 const LESEMASS = 40;
 
+// ── LESEMASS_MAX · Auftrag David 21.8.2026, wörtlich «können wir machen, dass
+//    der gesetzestext bei verfügbarer breite vom bildschirm oder wenn
+//    gliederung eingeklappt ist breiter wird» — zugleich Erledigung von
+//    Cowork-Befund 50 und der ENTSCHEID zum offenen Satzspiegel-Punkt (Kap. 5
+//    im Fahrplan): der Text DARF breiter werden, aber mit einem Deckel statt
+//    Vollbreite (Design-Grundlage Kap. 8 Nr. 7 «nie Fensterbreite für
+//    Fliesstext»). ─────────────────────────────────────────────────────────
+//
+// HERLEITUNG (gemessen 21.8.2026 am gebauten Stand, längster mehrzeiliger
+// Fliesstext-Absatz je Erlass @1440, Methode von `leser-lesemass.e2e.ts`):
+//   · `leser-lesemass.e2e.ts` bewacht als HARTE Zusage SC 1.4.8 (WCAG): Zeile
+//     ≤ 80 ch. Diese Zusage gilt unverändert weiter — der Auftrag nennt eine
+//     Zielspanne «~75–90 Zeichen», nicht eine Anhebung der WCAG-Decke; wo
+//     beides zusammentrifft, gewinnt die geprüfte Accessibility-Zusage.
+//   · Erster Versuch 46 rem: StGB (nicht in `ERLASSE`, aber real ausgeliefert)
+//     stieg auf 81 ch — ÜBER der Decke. 45 rem = 720 px bringt StGB auf 78 ch
+//     zurück (2 ch Reserve) und hält alle anderen Stichproben darunter: ZGB 68→75,
+//     OR 71→77, StPO 73→75, VMWG 74→74 ch (unverändert — der längste Absatz
+//     bricht an derselben Stelle um). +5 rem = **+12.5 %** gegenüber `LESEMASS`
+//     — spürbar breiter, aber knapper als «ein Viertel», weil StGB die 80-ch-
+//     Decke schon bei deutlich weniger Zuwachs erreicht (Ausgangswert 73 ch bei
+//     40 rem war bereits nah an der Decke). Die 75–90-ch-Zielspanne des
+//     Auftrags wird damit nur am UNTEREN Rand erfüllt — offengelegte
+//     Abweichung (§7): Ursache ist die vorbestehende SC-1.4.8-Zusage, nicht
+//     eine engere Lesung des Auftrags.
+//
+// WARUM EIN DECKEL UND KEINE VOLLBREITE: die Lese-Zelle (`minmax(0,1fr)` in
+// `rahmenBild.spalten`) ist bei offener Gliederung @1440 bereits 752 px breit,
+// eingeklappt (Schiene) 1004 px — beides mehr als der Deckel. `width:100%` +
+// `max-width` (unverändertes CSS-Muster von `max-w-reading`) liefert genau die
+// verlangte Eigenschaft von selbst: die Spalte wächst mit dem verfügbaren Raum
+// der GRID-Zelle (schon vorhanden über `useRahmenRaum`/`rahmenBild`, "eine
+// Breiten-Quelle", A-8) und STOPPT am Deckel — der Rest geht in Randluft. Keine
+// dritte Schwelle, keine neue Messung: die Zelle ist längst dynamisch, nur der
+// Deckel selbst war bislang zu knapp gesetzt, um je zu greifen.
+//
+// ANWENDUNG: `#lc-lesespalte` (`LeserLesespalte`) UND `.max-w-normtext`
+// (Artikel-Fliesstext `ArtikelLeser` + Ingress `ErlassKopfBlock`) werden NUR
+// innerhalb des V3-Wurzelelements (`index.css`,
+// `.lc-leser[data-leser-v3="rahmen"]`) auf denselben Wert gehoben — sonst
+// bekäme die Kopfzeile (ungedeckelt, volle Zellenbreite) einen anderen rechten
+// Rand als der Fliesstext (genau der Fehler, den A37 behoben hat). V1 (Ist-
+// Hülle) ist unberührt: die Selektoren sind auf `[data-leser-v3="rahmen"]`
+// gescoped, das V1 nie trägt.
+export const LESEMASS_MAX = 45;
+
 /**
  * Deckel des Leser-Rahmens (rem) = die Summe seiner drei Spuren samt Abständen.
  * NICHT `max-w-content`: der gilt für jede andere Seite unverändert weiter.
+ *
+ * BLEIBT auf `LESEMASS` (40), nicht `LESEMASS_MAX` (45): diese Zahl entscheidet
+ * NUR, wie weit der RAHMEN wachsen darf und ob die Gliederung ihre Spalte
+ * behält (`vollesLesemass` unten) — beides seit H4 gemessen und unverändert
+ * (`leser-v3-rahmenspalten.test.ts`: 84 rem = 1344 px, Rückung −112 px @1440).
+ * Sie an `LESEMASS_MAX` zu hängen, sähe nach «derselben Quelle» aus, verschöbe
+ * aber diese Schwelle auf 89 rem = 1424 px — mehr, als @1440 real an Raum
+ * steht (≈1392 px) — und liesse die Gliederungsspalte dort in die Schiene
+ * kippen: sie bräche genau die Zusage, die dieser Fix halten soll (aside=1
+ * bleibt, `leser-v3-rahmen.e2e.ts` (a)). Die eigentliche Reserve für
+ * `LESEMASS_MAX` steht darum NICHT hier, sondern in `RahmenBild.lesemassMaxRem`
+ * (Kommentar dort).
  */
 export const LESER_MAX_REM = SPUR_GLIEDERUNG + SPUR_ABSTAND + LESEMASS + SPUR_ABSTAND + SPUR_BLATT; // 84
 
@@ -153,6 +211,36 @@ export interface RahmenBild {
   spalten: string | undefined;
   /** Aufweitung des Wurzelelements; `undefined` = unverändert wie bisher. */
   breite: CSSProperties | undefined;
+  /**
+   * Deckel für `--leser-lesemass-max` (rem) — STATISCH, unabhängig von
+   * `blattOffen` (Fix 21.8.2026, CI-Rot PR #559).
+   *
+   * ── DER BEFUND ───────────────────────────────────────────────────────────
+   * `LESEMASS_MAX` (`index.css`, `--leser-lesemass-max`) stand bis zu diesem
+   * Fix als FLACHER Wert (45 rem, immer) am Wurzelelement — unabhängig davon,
+   * ob das Blatt gerade eine Spur belegt. Geschlossen füllte die Lese-Zelle
+   * (`minmax(0,1fr)`) den ganzen Rahmen und der Deckel griff bei 45 rem;
+   * offen nimmt dieselbe Zelle nur, was der Rahmen NACH Gliederung, Blatt und
+   * zwei Abständen übrig lässt — bei voller Gliederungsspalte @1440 sind das
+   * strukturell nur 40 rem (`LESER_MAX_REM` reserviert exakt so viel, siehe
+   * dort). Der flache Deckel wechselte beim Öffnen also von 45 auf faktisch
+   * 40 rem — ein Reflow, den Ä60(c) («die Spur nimmt den freien Rand, nie den
+   * Text») und die CLS-Zusage (`leser-v3-kontext-cls.e2e.ts`) ausschliessen.
+   *
+   * ── DER FIX: DIESELBE RESERVE, IMMER ────────────────────────────────────
+   * Statt den Deckel erst beim Öffnen schrumpfen zu lassen, rechnet er die
+   * Blatt-Spur-Reserve STATISCH ein — sobald der Raum eine Spur überhaupt
+   * ERLAUBEN würde (`ruheForm === 'rechts' && spaltenLage && passt`, exakt die
+   * Bedingung von `blattSpur` MINUS `blattOffen`). Ob die Gliederung dabei als
+   * Spalte oder Schiene stünde, folgt derselben Fallunterscheidung wie
+   * `gliederungSpalte`, nur mit `blattSpur` hypothetisch `true` gerechnet
+   * (`!blattSpur || vollesLesemass` wird dann zu `vollesLesemass`) — das ist
+   * `gliederungWennOffen` unten. Keine neue Konstante: dieselben `SPUR_*` und
+   * derselbe `LESER_MAX_REM`, nur diesmal für die TEXT-Zelle statt für den
+   * Rahmen gerechnet. `blattOffen` fliesst nirgends ein — der Wert ist beim
+   * ersten Render derselbe wie nach jedem Klick auf den Panel-Zähler.
+   */
+  lesemassMaxRem: number;
 }
 
 /**
@@ -173,6 +261,23 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
   const gliederungSpalte = spaltenLage && tocOffen && (!blattSpur || vollesLesemass);
   const schiene = spaltenLage && !gliederungSpalte;
 
+  // `lesemassMaxRem` (Feld-Kommentar bei `RahmenBild`): dieselbe Bedingung wie
+  // `blattSpur`, aber OHNE `blattOffen` — «könnte das Blatt hier je eine Spur
+  // bekommen», nicht «hat es gerade eine».
+  const blattSpurMoeglich = ruheForm === 'rechts' && spaltenLage && passt;
+  const gliederungWennOffen = spaltenLage && tocOffen && vollesLesemass;
+  const seiteWennOffenRem = gliederungWennOffen ? SPUR_GLIEDERUNG : SPUR_SCHIENE;
+  // Der Rahmen selbst wüchse (`aufweitung`) auch nur bis `LESER_MAX_REM`, nie
+  // über den echten Raum hinaus — dieselbe Klammer wie dort, nachgerechnet für
+  // die Zelle statt für den Wurzel-Kasten (kein Duplikat: `aufweitung` liefert
+  // hier keinen Wert zurück, sie hängt an `blattOffen`).
+  const rootWennOffenPx = raum
+    ? Math.max(raum.ruhePx, Math.min(LESER_MAX_REM * rem, raum.raumPx))
+    : null;
+  const lesemassMaxRem = blattSpurMoeglich && rootWennOffenPx != null
+    ? Math.min(LESEMASS_MAX, rootWennOffenPx / rem - seiteWennOffenRem - 2 * SPUR_ABSTAND - SPUR_BLATT)
+    : LESEMASS_MAX;
+
   return {
     blattForm: blattSpur ? 'spalte' : ruheForm,
     gliederungSpalte,
@@ -185,6 +290,7 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
         + (blattSpur ? ` ${SPUR_BLATT}rem` : '')
       : undefined,
     breite: blattSpur && raum ? aufweitung(raum, LESER_MAX_REM * rem) : undefined,
+    lesemassMaxRem,
   };
 }
 

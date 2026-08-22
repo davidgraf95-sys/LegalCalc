@@ -138,11 +138,32 @@ export function RegestePopover({ ankerRect, hostRef, kastenRef, kastenId, zitier
       onClose();
     };
     window.addEventListener('resize', zu);
-    window.addEventListener('keydown', taste);
+    // §7b-BEFUND (21.8.2026): CAPTURE-Phase, nicht die bisherige Bubble-Phase.
+    // `stopPropagation()` oben verhindert NICHT, dass ein GESCHWISTER-Listener
+    // auf demselben `window` feuert — nur die Wanderung zu weiteren Knoten. Der
+    // Fehler ist LATENT und unabhängig vom V3-Panel-Bau: sobald irgendein
+    // Vorfahre (aktuell z. B. das im Bau befindliche V3-Panel, `usePopoverAutoZu`)
+    // ebenfalls einen `window`-Esc-Listener registriert, gewinnt ohne Capture
+    // IMMER der zuerst registrierte — Bubble-Reihenfolge ist Registrierungs-
+    // Reihenfolge, nicht DOM-Nähe.
+    // ROT GESEHEN (§0.2), reproduziert am BESTEHENDEN, bereits produktiven
+    // Standort: `e2e/leitfaelle-chips.e2e.ts` Fall (d) gegen Projekt `leser-v1`
+    // (`npx playwright test e2e/leitfaelle-chips.e2e.ts -g "\(d\)" --project=leser-v1`)
+    // schlug VOR diesem Fix an derselben Zeile 202 (`toHaveCount(0)` nach dem
+    // ZWEITEN, per-Tastatur ausgelösten Esc) fehl — unabhängig von jeder
+    // V3-Änderung, weil der `onFocus`-Wiederaufreiss unten (KanteMitVorschau)
+    // Fokus zurück auf den Chip legt und die alte Hülle DENSELBEN Bug bereits
+    // eigenständig auslöste (dort ohne Panel-Kollision, rein durch den
+    // Wiederaufreiss). GRÜN NACH DEM FIX, zweimal wiederholt, siehe Commit.
+    // Capture läuft VOR jedem Bubble-Listener auf demselben Ziel (unabhängig
+    // von der Registrierungs-Reihenfolge) — der Popover schliesst zuerst,
+    // `stopPropagation()` verhindert danach zuverlässig, dass das Ereignis
+    // überhaupt bis zur Bubble-Phase eines Vorfahren weiterläuft.
+    window.addEventListener('keydown', taste, true);
     document.addEventListener('focusin', fokus);
     return () => {
       window.removeEventListener('resize', zu);
-      window.removeEventListener('keydown', taste);
+      window.removeEventListener('keydown', taste, true);
       document.removeEventListener('focusin', fokus);
     };
   }, [onClose, hostRef, kasten]);

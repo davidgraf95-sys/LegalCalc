@@ -286,7 +286,7 @@ export function zaehleAenderungsvermerke(struktur: StrukturMap | null | undefine
  * dort wird ANGEBOTEN. Ein Steuerelement zu verschweigen, dessen Wirkung man noch
  * nicht kennt, wäre die falsche Richtung — und der umgekehrte Fehler ist harmlos,
  * weil das Panel im Grundzustand geschlossen ist (kein CLS, dieselbe Begründung
- * wie beim nachwachsenden Fussnoten-Zähler in `LeserAnsichtMenu`). Kein Sidecar
+ * wie beim nachwachsenden Fussnoten-Zähler in `v3/LeserAnsichtV3.tsx`). Kein Sidecar
  * bei geladenem Erlass heisst dagegen: gar keine Fussnoten, also auch keine
  * Vermerke — das ist Wissen, keine Unwissenheit.
  */

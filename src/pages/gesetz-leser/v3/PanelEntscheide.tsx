@@ -1,5 +1,9 @@
-import { Link } from 'react-router-dom';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
+import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
+import {
+  entscheidDatum, klassifiziereFassungsBezug, revisionFuerToken,
+  type ArtikelRevision, type RevisionShard,
+} from '../../../lib/verzahnung/artikel-revisionen';
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
 import { KLASSE_KURZ } from '../bezugAuswahl';
@@ -7,6 +11,11 @@ import type { Histogramm, Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { gruppiereKanten } from './panelModell';
 import { PanelFilterZeile } from './PanelFilterZeile';
+import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideKontext';
+
+// Befund 6b (Cowork 21.8.2026): Weiterzug-Klammerzusatz-Erklärung — Muster,
+// Text und Prüf-Funktion stehen in `PanelEntscheideKontext.ts`
+// (react-refresh/only-export-components, Muster wie `InhaltsKopfKontext.ts`).
 
 // ─── Reiter «Entscheide» (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─────────────────────
 //
@@ -73,30 +82,74 @@ import { PanelFilterZeile } from './PanelFilterZeile';
  * die Marke zurück — dann trüge sie wieder einen Unterschied. Sie steht in der
  * Historie dieser Datei, nicht in einer toten Bedingung (§17: gestrichen statt
  * bewacht).
+ *
+ * ── §7b-DECKUNGSLÜCKE GESCHLOSSEN (21.8.2026, Kontaktbogen H4 §7b Pos. 3/5,
+ *    Optik-Entscheid David 21.8.2026 nach Drei-Varianten-Vergleich) ─────────
+ *
+ * Bis hierhin war die Zeile ein blosser `<Link>` — kein Kurztext-Popover, kein
+ * ⧉-Einstieg, kein ↻. Alle drei trägt bereits `KanteMitVorschau` (`W2·10-UI-NAV`,
+ * bisher nur an der V1a-Leitfall-Zeile und den B4/B7-Bezüge-Linien gemountet,
+ * §5: EIN Bauteil statt einer dritten Kopie):
+ *   · Kurztext-Popover auf Hover/Fokus/↓, Esc schliesst (deckt
+ *     `leitfaelle-chips.e2e.ts` Fall (d), s. `leser-v3-panel-kurztext.e2e.ts`).
+ *   · ⧉ «nebeneinander öffnen» am Chip (Pane-Gating via `usePaneSteuerung`) —
+ *     derselbe Einstieg, den `druck-fundstellen-z2.e2e.ts` für den
+ *     Split-Ausdruck braucht (V3-Fall in derselben Datei).
+ *   · ↻-Badge («Norm seit dem Entscheid revidiert») via `revidiertFuer` unten
+ *     (deckt `normrevision-badge.e2e.ts`, s. `leser-v3-panel-revision-badge.e2e.ts`).
+ * Das Datum wandert in den `sublabel`-Slot des Chips (`KantenChip` kennt genau
+ * diesen Platz bereits, §5 — kein zweiter Anzeige-Pfad).
+ *
+ * DAVID-VORGABE 21.8.2026 (wörtlich, nach Vorlage dreier Varianten): «man soll
+ * regeste direkt lesen können, damit man weiss um was der entscheid geht» —
+ * die Regeste steht darum ZUSÄTZLICH zum Chip als eigene, lesbare Zeile
+ * (`text-body-s`/14px, NICHT `text-micro` — Davids ausdrücklicher Einwand
+ * gegen eine Kompakt-Variante mit Mikroschrift) direkt darunter, zweizeilig
+ * gedeckelt (`line-clamp-2`). Das Popover bleibt VERTIEFUNG für den
+ * ungekürzten Text, nie der einzige Zugang. Quelle ausschliesslich
+ * `regesteKurz` aus dem Shard — nichts generiert (§2).
  */
-function Fundstelle({ b, normZitat }: { b: Bezug; normZitat: string }) {
+function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
+  b: Bezug; normZitat: string; statusLabel: string; revidiert: ArtikelRevision | null;
+}) {
   return (
     <li data-v3-panel-entscheid={b.key} className="border-t border-line/60 py-1.5 first:border-t-0">
-      <Link to={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
-        className="group block no-underline">
-        <span className="flex items-baseline gap-2">
-          <span className="num shrink-0 text-body-s font-medium text-brass-700 group-hover:underline">{b.zitierung}</span>
-          <span className="num shrink-0 text-micro text-ink-500">{datumAnzeige(b.datum)}</span>
-        </span>
-        {b.regesteKurz && (
-          <span className="mt-0.5 block text-micro leading-snug text-ink-600">{b.regesteKurz}</span>
-        )}
-      </Link>
+      <KanteMitVorschau
+        ziel={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
+        zitierung={b.zitierung}
+        sublabel={datumAnzeige(b.datum)}
+        kurztext={b.regesteKurz}
+        statusLabel={statusLabel}
+        revidiert={revidiert} />
+      {b.regesteKurz && (
+        <p className="mt-1 text-body-s leading-snug text-ink-700 line-clamp-2">{b.regesteKurz}</p>
+      )}
     </li>
   );
 }
 
+/** §V1c-Klassifikation EINER Kante, gegen den bereits feststehenden Artikel
+ *  des Panels — kein `viaArtikel`-Aggregat nötig (Herleitung Kontaktbogen H4
+ *  §7b): das V3-Panel ist ohnehin je EINEN Artikel gescopet (Dateikopf), der
+ *  Artikel-Token steht also schon fest, bevor die Klassifikation beginnt. */
+function revidiertFuer(b: Bezug, artikel: string | null, shard: RevisionShard | null): ArtikelRevision | null {
+  if (!artikel) return null;
+  const rev = revisionFuerToken(shard, artikel);
+  const eingestuft = klassifiziereFassungsBezug(entscheidDatum(b.datum, b.facetten.status), rev);
+  return eingestuft === 'revidiert' ? (rev ?? null) : null;
+}
+
 export function PanelEntscheide({
-  kanten, normZitat, artikelLabel, geladen, bestimmungsWort, klassen, kantone, kantoneVerfuegbar,
+  kanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, bestimmungsWort, klassen, kantone, kantoneVerfuegbar,
   klassenImErlass, histogramm, bereich, onKlassen, onKantone, onBereich,
 }: {
   /** Kanten des GELESENEN Artikels nach Facetten-Filter; `undefined` = keine. */
   kanten?: readonly Bezug[];
+  /** Artikel-Token des Panels (§7b: Grundlage der ↻-Klassifikation, s. o.). */
+  aktArtikel: string | null;
+  /** Erlass-lokaler Revisions-Shard, oder `null` = kein Beleg/noch nicht
+   *  geladen — beide klassifizieren als 'unbekannt' (§8, `revisionFuerToken`). */
+  revisionShard: RevisionShard | null;
   normZitat: string;
   artikelLabel: string | null;
   /** Ist der Lade-VERSUCH durch? Trennt «lädt noch» von «nichts erfasst» (§8).
@@ -152,6 +205,11 @@ export function PanelEntscheide({
               <p className="lc-overline" title={`${STATUS_LABEL[status]} — ${liste.length} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}>
                 {KLASSE_KURZ[status]}
                 <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{liste.length}</span>
+                {/* Befund 6b: EIN Hinweis je Gruppe, nicht je Zeile (Ä106). */}
+                {traegtWeiterzugHinweis(liste) && (
+                  <span aria-label={WEITERZUG_ERKLAERUNG} title={WEITERZUG_ERKLAERUNG}
+                    className="ml-1 normal-case font-normal text-ink-400">ⓘ</span>
+                )}
               </p>
               {/* KEINE Portionierung, kein «weitere 5»: die Liste im Panel darf
                   senkrecht wachsen, das Panel scrollt ohnehin. Die Kappung am
@@ -159,7 +217,10 @@ export function PanelEntscheide({
                   eine Aussage über die Daten — sie mitzuschleppen hiesse, eine
                   Einschränkung ohne ihren Grund zu übernehmen. */}
               <ul className="mt-0.5">
-                {liste.map((b) => <Fundstelle key={b.key} b={b} normZitat={normZitat} />)}
+                {liste.map((b) => (
+                  <Fundstelle key={b.key} b={b} normZitat={normZitat} statusLabel={STATUS_LABEL[status]}
+                    revidiert={revidiertFuer(b, aktArtikel, revisionShard)} />
+                ))}
               </ul>
             </section>
           ))}

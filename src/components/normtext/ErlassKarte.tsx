@@ -75,8 +75,27 @@ function KarteInhalt({ e }: { e: BrowseErlass }) {
 // Kompakte Zeile für untergeordnetes Ausführungsrecht (Verordnungen/Reglemente):
 // dezent, einzeilig — damit die Leitgesetze (Karten) prominent bleiben
 // (Praktikabilität, Auftrag David). Gleiche Verlinkung wie die Karte.
-export function ErlassZeile({ e }: { e: BrowseErlass }) {
-  const inhalt = (
+//
+// `variant='leitgesetz'` (J3-Nachzug, Auftrag David 21.8.2026): für Listen, in
+// denen die Zeile selbst das Leitgesetz ist (Rechtsgebiets-Übersicht /gesetze)
+// kehrt sich die Hierarchie um — der ausgeschriebene Titel ist die Hauptaussage
+// (bestehende `text-body-s`, umbricht statt `truncate`/Abschneiden), Kürzel +
+// SR-Nr. rücken als sekundäre Mono-Angabe dahinter. Default (`'kompakt'`,
+// unverändert) bleibt für RechtsgebietSicht/geteilt.tsx, wo die Verordnung nur
+// über ihr Leitgesetz identifiziert werden muss, nicht über den eigenen Titel.
+export function ErlassZeile({ e, variant = 'kompakt' }: { e: BrowseErlass; variant?: 'kompakt' | 'leitgesetz' }) {
+  const inhalt = variant === 'leitgesetz' ? (
+    <>
+      <span className="text-body-s text-ink-800 leading-snug break-words">{e.titel}</span>
+      <span className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5 num text-micro text-ink-500">
+        <span className="font-medium text-ink-600">{e.kuerzel}</span>
+        {e.sr && <span>SR {e.sr}</span>}
+        {/* §8: aufgehobener Erlass sichtbar markiert, bleibt aber verlinkt/lesbar. */}
+        {e.aufgehoben && <span className="lc-badge lc-badge-danger">aufgehoben</span>}
+        {e.status === 'nur-live-link' && <span aria-hidden className="text-brass-700">↗ Live-Link</span>}
+      </span>
+    </>
+  ) : (
     <>
       <span className="font-medium text-ink-700 shrink-0">{e.kuerzel}</span>
       {/* §8: aufgehobener Erlass sichtbar markiert, bleibt aber verlinkt/lesbar. */}
@@ -86,7 +105,9 @@ export function ErlassZeile({ e }: { e: BrowseErlass }) {
       {e.status === 'nur-live-link' && <span aria-hidden className="text-xs text-brass-700 shrink-0">↗</span>}
     </>
   );
-  const cls = 'flex items-baseline gap-2 text-body-s no-underline rounded px-2 py-1 hover:bg-brass-100/30 transition-colors min-w-0';
+  const cls = variant === 'leitgesetz'
+    ? 'flex flex-col gap-0.5 text-body-s no-underline rounded px-2 py-1.5 hover:bg-brass-100/30 transition-colors min-w-0'
+    : 'flex items-baseline gap-2 text-body-s no-underline rounded px-2 py-1 hover:bg-brass-100/30 transition-colors min-w-0';
   const oeffne = useErlassOeffnen();
   const basePath = `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
   return istLesbar(e)

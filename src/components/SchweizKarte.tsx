@@ -32,11 +32,26 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer
   const codes = Object.keys(KANTONE_KARTE.paths);
   const idx = (k: string) => codes.indexOf(k);
   const name = (k: string) => (nameFuer ? nameFuer(k) : k);
-  // Aktiven/gehoverten Kanton zuletzt zeichnen → Rand nicht von Nachbarn überdeckt.
-  const eintraege = Object.entries(KANTONE_KARTE.paths).sort(
-    ([a], [b]) => (a === aktiv || a === hover ? 1 : 0) - (b === aktiv || b === hover ? 1 : 0),
-  );
+  // Cowork-Befund 40 (18.8.2026): die Liste wurde FRÜHER hier nach
+  // aktiv/hover sortiert (Kommentar unten war «Aktiven/gehoverten Kanton
+  // zuletzt zeichnen»), damit sein Rand nicht von Nachbarn überdeckt wird.
+  // Das reordnete aber die INTERAKTIVEN <path>-Elemente noch VOR dem Klick —
+  // schon `onMouseEnter` (das jede reale Zeigergeste vor dem Klick auslöst)
+  // löste den Re-Render/Reorder aus. Trifft der Mausklick dann denselben
+  // Bildschirmpunkt, kann `mousedown`/`mouseup` durch die geänderte
+  // Maler-Reihenfolge auf verschiedene Elemente fallen — der Browser liefert
+  // dann GAR KEIN `click` an den Pfad (Ziel-Divergenz), und erst der ZWEITE
+  // Klick (Reorder bereits stabil) traf. Reproduziert 18.8.2026 (echtes
+  // Hover-dann-Klick-Gesten-Muster via Playwright: 1. Klick wirkungslos, 2.
+  // Klick setzt `kt=`; ein Klick OHNE vorherige Zeigerbewegung traf sofort).
+  // Fix: fixe Grund-Reihenfolge (keine Sortierung mehr) — der Hervorhebungs-
+  // Rand kommt stattdessen über einen SEPARATEN, nicht-interaktiven Overlay-
+  // Pfad ganz am Ende (unten), der nur zeichnet, nie einen Klick fängt.
+  const eintraege = Object.entries(KANTONE_KARTE.paths);
   const gezeigt = hover ?? aktiv ?? null;
+  const gezeigtPfad = gezeigt ? KANTONE_KARTE.paths[gezeigt] : undefined;
+  const gezeigtIst = gezeigt !== null && aktiv === gezeigt;
+  const gezeigtWaehlbar = gezeigt !== null && (verfuegbar ? verfuegbar(gezeigt) : true);
   return (
     <div className={className ?? 'w-full max-w-[40rem] mx-auto'}>
       {/* Bildunterschrift: zeigt, was unter dem Zeiger/Fokus liegt. */}
@@ -79,6 +94,21 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer
             </path>
           );
         })}
+        {/* Nicht-interaktiver Overlay-Pfad: zeichnet den gerade hervorgehobenen
+            Kanton (Hover/aktiv) EIN zweites Mal obenauf, damit sein Rand nicht
+            von Nachbarn überdeckt wird — ohne dafür die interaktiven Pfade
+            oben umzusortieren (Befund 40). `pointerEvents="none"`: fängt
+            selbst nie einen Klick, auch nicht bei überlappenden Rand-Pixeln. */}
+        {gezeigtPfad && (
+          <path d={gezeigtPfad} aria-hidden pointerEvents="none"
+            style={{
+              fill: !gezeigtWaehlbar ? 'var(--line-strong)' : farbe(idx(gezeigt as string), gezeigtIst ? 'aktiv' : 'hover'),
+              stroke: gezeigtIst ? 'var(--brass-700)' : 'var(--paper)',
+              strokeWidth: gezeigtIst ? 1.6 : 0.8,
+              opacity: gezeigtWaehlbar ? 1 : 0.8,
+            }}
+            className="transition-[fill]" />
+        )}
       </svg>
     </div>
   );

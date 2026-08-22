@@ -1,8 +1,11 @@
 // IA-3 · A–Z-/Kürzel-Register (FAHRPLAN-GESETZES-UX §11.5): reine, testbare
-// Gruppier-/Filter-Helfer für den Browse-Zwilling auf /gesetze (Muster M6
+// Gruppier-Helfer für den Browse-Zwilling auf /gesetze (Muster M6
 // gesetze-im-internet). Darstellungsschicht-Ableitung (§3) — KEINE Rechtslogik,
 // KEIN zweiter Suchindex (K10): alles rechnet auf dem bereits client-geladenen
-// register.json-Manifest (BrowseErlass[]).
+// register.json-Manifest (BrowseErlass[]). Das frühere Titel/Kürzel-Filterfeld
+// dieses Registers ist entfernt (J3-Säuberung, Cowork-Befund 18, 18.8.2026) —
+// die Freitext-Suche lebt allein im Gesetze.tsx-Browse-Filter, siehe
+// AzRegister.tsx-Kopfkommentar.
 //
 // Einsortierung (deterministisch, dokumentiert — §8 «nie raten»):
 //   1. Anfangsklasse = erstes Zeichen des TITELS (title-only; H1: der Nutzer
@@ -58,18 +61,6 @@ export function gruppiereAZ(erlasse: BrowseErlass[]): Map<string, BrowseErlass[]
     liste.sort((a, b) => kollation.compare(a.titel, b.titel) || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
   }
   return m;
-}
-
-/** Title-only-Filter (Titel + Kürzel, diakritika- und case-gefaltet beidseitig).
- *  Bewusst KEIN SR-/Kanton-Match — das ist der bestehende Übersichts-Filter
- *  (browse.ts filtern); hier nur der Register-Zwilling (K10, kein Duplikat).
- *  Leerer Term → leere Liste (die Buchstaben-Sicht trägt dann die Anzeige). */
-export function filterTitelKuerzel(erlasse: BrowseErlass[], term: string): BrowseErlass[] {
-  const s = falte(term.trim());
-  if (!s) return [];
-  return erlasse
-    .filter((e) => falte(e.titel).includes(s) || falte(e.kuerzel).includes(s))
-    .sort((a, b) => kollation.compare(a.titel, b.titel) || (a.key < b.key ? -1 : a.key > b.key ? 1 : 0));
 }
 
 /** Ebenen-Label eines Registereintrags — dieselbe Säulen-Logik wie Gesetze.tsx

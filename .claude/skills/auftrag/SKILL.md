@@ -126,6 +126,18 @@ Rückgabe-Schema, Modell-Default stecken in der Definition. Fallback:
 `docs/token-oekonomie/dispatch-template.md`): je Sub-Agent ein §-Slice,
 Pflicht-Rückgabe-Schema, `model` + `effort` explizit.
 
+Bau-/Prüf-Aufträge mit Webseiten-Sichtung (Browser-Sonden, Screenshots,
+Sichtprüfungen) geben zusätzlich den Verweis auf
+`.claude/rules/webseiten-pruefung.md` mit — pfad-gescopte Regeln erben
+Sub-Agenten nicht automatisch (Auftrag David 21.8.2026).
+
+**Nullproben brauchen Beleg (§14.7-Konkretisierung, Vorfall 21.8.2026):** Eine
+Agenten-Aussage «Vorbestand/Flake, per Nullprobe belegt» gilt nur mit
+Kommando + Ausgabe der Probe im Bericht; ohne Beleg gilt sie als nicht
+erbracht und die Haupt-Session misst selbst nach. Anlass: eine falsche
+Nullproben-Behauptung hätte eine echte Lesemass-Regression beinahe
+durchgelassen — erst die Gegen-Messung auf main fing sie.
+
 **Rollenteilung** (David 4./7.8.2026): Der Orchestrator delegiert Bau- und
 Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
 kleine verifizierte Fixes < ~30 Min, Konfig-Flächen (mit Davids Freigabe).

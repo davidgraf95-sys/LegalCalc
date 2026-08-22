@@ -409,11 +409,9 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   // (der data-fussnoten-Toggle der Options-Leiste, Default AN). Marker + Apparat
   // liegen IMMER im DOM (R9/§8, Ctrl+F/Print/Screenreader); «AUS» dämpft rein per
   // CSS (index.css), versteckt nie. Kein React-State-Zweig mehr im Artikel-Baum.
-  // LINIEN-RÜCKBAU V1 (16.8.2026, Entscheid David 13.8.2026): die frühere
-  // Gliederungslinie und ihr `data-linien`-Toggle sind ersatzlos entfallen —
-  // `renderSektion` emittiert nur noch den Einzug, und der ist dauerhaft
-  // (FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3). Es gibt hier also auch keinen
-  // Linien-State mehr, den man versehentlich als React-Zweig zurückholen könnte.
+  // Die Gliederungslinie ist ersatzlos entfallen (Entscheid David 13.8.2026,
+  // FAHRPLAN-GESETZESDARSTELLUNG-V2 §9.3) — `renderSektion` emittiert nur noch
+  // den dauerhaften Einzug, kein Linien-State.
   // N13: amtliche Kanton-Systematik (lazy) — liefert das echte Sachgebiet eines
   // kantonalen Erlasses für die Reader-Overline (statt Einheits-«Öffentliches Recht»).
   const [kantonSys, setKantonSys] = useState<Record<string, KantonSystematik>>({});

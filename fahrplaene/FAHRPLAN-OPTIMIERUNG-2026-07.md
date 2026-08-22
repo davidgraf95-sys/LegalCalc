@@ -410,7 +410,10 @@ Bau-Agent-Kette 16.7.2026 (Opus, abends — Fortsetzung nach den David-Gate-Frei
   `leitfaelleFuer` + CSS `data-leitfaelle="aus"` ohne Auslöser (benannt-tot seit #403/#404) ·
   **(G-e)** GFK≠FK-Entscheid David (SR 0.142.30, Aktenlage `bibliothek/recherche/
   fedlex-abkuerzungen-titleshort.md`; mechanisch harmlos, reine Anzeige-/Massgeblichkeitsfrage) ·
-  **(G-f)** Klein-UX aus B5/B6: `LeserAnsichtMenu`-Randklemmung bei ~320 px ·
+  **(G-f)** Klein-UX aus B5/B6: Rand-Klemmung des Ansicht-Menüs bei ~320 px — ursprüngliches
+  `LeserAnsichtMenu.tsx` in H5 gelöscht (21.8.2026), Nachfolger `LeserAnsichtV3.tsx` hat
+  denselben rechts-verankerten Dropdown (`absolute right-0 top-full … max-w-[calc(100vw-2rem)]`,
+  Zeile ~201) — Klemmungsrisiko bei schmalen Viewports damit weiterhin zu prüfen, nicht erledigt ·
   `schaetzeArtikelHoehe` kennt die Kanten-Zeile nicht (OR/41-Lade-CLS ~0.10 Bestand) ·
   KontextPanel lädt weiterhin den norm-index-Shard selbst (Doppel-Lade-Thema für W2·7-VZUI V2) ·
   **(G-g)** Dependabot-Wiedervorlage react-router (Fix erst mit react-router-dom 8.x;

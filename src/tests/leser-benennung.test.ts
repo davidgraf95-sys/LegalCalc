@@ -35,12 +35,14 @@ import path from 'node:path';
 // Geprüft wird `src/pages/gesetz-leser/v3/**` plus die GETEILTEN Bausteine, die
 // V3 sichtbar rendert (`parts/ErlassLeserKopf.tsx`, `parts/ArtikelLeser.tsx`,
 // `parts/SektionKopf.tsx`, `parts/ErlassKopfBlock.tsx`).
-// AUSDRÜCKLICH NICHT: die eingefrorene Ist-Hülle (`inhalt-*.tsx`,
-// `LeserAnsichtMenu.tsx`, `parts/ErlassUebersicht.tsx`) und die App-Rahmen
-// (`components/layout/**`, `components/NormPopover.tsx`). Beide tragen die
-// alten Wörter weiter — das ist Absicht und nicht Nachlässigkeit: V1 bleibt bis
-// H5 unangetastet (FL-4), die App-Hälfte von Ä112/Ä118 ist eine eigene
-// Entscheidung über die ganze Anwendung. Sie stehen als S-Zeilen im Fahrplan.
+// AUSDRÜCKLICH NICHT: `parts/ErlassUebersicht.tsx` (geteilter Baustein,
+// zusätzlich von den Fehl-/Früh-Ansichten in `inhalt-ansichten.tsx` gebraucht)
+// und die App-Rahmen (`components/layout/**`, `components/NormPopover.tsx`).
+// Sie tragen ältere Wörter weiter — das ist Absicht und nicht Nachlässigkeit:
+// die App-Hälfte von Ä112/Ä118 ist eine eigene Entscheidung über die ganze
+// Anwendung. Sie stehen als S-Zeilen im Fahrplan. (Die eingefrorene Ist-Hülle,
+// bis H5 hier ebenfalls ausdrücklich ausgenommen, ist mit H5 — 21.8.2026 —
+// gelöscht; die Ausnahme entfällt damit von selbst.)
 // Wer den Bereich später ausweitet, ändert die Liste hier — und sieht sofort,
 // wie viel noch offen ist.
 

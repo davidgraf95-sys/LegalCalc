@@ -262,11 +262,12 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               über den Menü-Eintrag unten und die Taste «r». Eine Beschriftung,
               die etwas anderes verspricht als sie tut, ist der §8-Fall, den
               dieser Nachzug an mehreren Ecken einsammelt.
-              (Im GETEILTEN Store heisst das Feld weiter `leitfaelle` und wirkt
-              in V1 unverändert auf den Lesetext — dort steht sein eigener,
-              zutreffender Wortlaut in `LeserRechtsprechungMenu`. §5 bleibt
-              gewahrt: EIN Feld, zwei Oberflächen, jede beschriftet nach ihrer
-              eigenen Wirkung.) */}
+              (Im geteilten Store heisst das Feld weiter `leitfaelle` — bis H5
+              wirkte es unverändert auf den Lesetext der Ist-Hülle, mit ihr
+              eigenem, dort zutreffenden Wortlaut in `LeserRechtsprechungMenu`;
+              beides ist mit der Ist-Hülle 21.8.2026 gelöscht. §5 blieb
+              gewahrt, solange es zwei Oberflächen gab: EIN Feld, jede
+              beschriftet nach ihrer eigenen Wirkung.) */}
           <V3Switch
             an={opt.leitfaelle === 'an'}
             // ── Ä115 (18.8.2026) · DREI SCHALTER, EINE WORTART ────────────

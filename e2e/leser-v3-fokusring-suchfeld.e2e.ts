@@ -163,13 +163,7 @@ test('(c) Spalte GESCROLLT: auch die obere Kante bleibt ganz', async ({ page }) 
   pruefeGanz(await ringKanten(page), 'Spalte gescrollt')
 })
 
-test('(d) V1 ist unberührt — der Ring dort ist der alte', async ({ page }) => {
-  // FL-4: `.lc-input` trägt die ganze App, nur `.lc-v3-feld` ist V3-Bestand. Die
-  // Änderung darf das Ist-Feld nicht mitziehen; ohne diese Sonde wäre eine
-  // versehentliche Verbreiterung auf `.lc-input` unbemerkt geblieben.
-  await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v1')
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('StPO', { timeout: 30000 })
-  const v3Feld = await page.locator('.lc-v3-feld').count()
-  expect(v3Feld, 'V1 trägt plötzlich das V3-Feld — die Fassaden-Grenze ist gerissen').toBe(0)
-})
+// «(d) V1 ist unberührt — der Ring dort ist der alte» GELÖSCHT 21.8.2026 (H5).
+// Bewachte die Fassaden-Grenze `.lc-input` (ganze App) vs. `.lc-v3-feld`
+// (nur V3) gegen die Ist-Hülle — mit deren Löschung gibt es kein zweites
+// Feld mehr, das mitgezogen werden könnte.

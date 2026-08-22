@@ -496,11 +496,11 @@ Verdikte: **UMGEHÄNGT** = Anker/Selektor an V3 nachgezogen, Aussage unveränder
 | `leser-spy-w25d` (1/4) | **UMGEHÄNGT** | derselbe `aria-expanded`-Befund wie bei r5-r7 — der Locator fand 0 Elemente und lief ins 120-s-Budget, ohne je zu prüfen |
 | `leser-adresse-lm202` (1/16) | **UMGEHÄNGT** | Locator nimmt beide Feldnamen (V1 «Zu Artikel springen», V3 «Im Gesetz suchen oder zu einer Bestimmung springen») |
 | `leser-suche-a35-a40-a41` (1/4) | **UMGEHÄNGT** | Kopf-Zone `[data-v3-kopf]` neben `data-such-slot`/`data-inhalt-kopf`; geprüft wird «in EINER der beiden», weil A-2 die zwei Leisten verschmolzen hat |
-| `bezuege-facetten-b4` (6/6) | **GEPINNT (ganz)** | `[data-rechtsprechung-menu]` + `[data-bezuege-zeile]`. V3-Deckung: `leser-v3-panel-facetten` (a) prüft den ORT der drei Facetten. **Lücke: ihre WIRKUNG** (Zähler «5 von 16», Persistenz, Kanton-Schnitt) ist am V3-Panel unbewacht |
-| `bezuege-zeitstrahl-b5` (12/12) | **GEPINNT (ganz)** | derselbe Montagepunkt + Zeitstrahl. **Lücke: Von-Bis-Wirkung und die zwei MIGRATIONS-Fälle** («5 J.» → Von-Datum, «alle» bleibt offen) am V3-Panel unbewacht |
+| `bezuege-facetten-b4` (6/6) | **GELÖSCHT 21.8.2026 (H5)** | `[data-rechtsprechung-menu]` + `[data-bezuege-zeile]` fallen mit der Ist-Hülle. V3-Deckung: `leser-v3-panel-facetten` (a, Ort) + `leser-v3-panel-bezuege-wirkung` (Kanton-Schnitt, Persistenz; §7b Pos. 2, geschlossen 21.8.2026) |
+| `bezuege-zeitstrahl-b5` (12/12) | **GELÖSCHT 21.8.2026 (H5)** | derselbe Montagepunkt + Zeitstrahl. V3-Deckung: `leser-v3-panel-bezuege-wirkung` (Von-Bis-Wirkung + beide Migrations-Fälle; §7b Pos. 2, geschlossen 21.8.2026) |
 | `leser-kontext-e4` (3/3) | **GEPINNT (ganz)** | Kontextfenster IM `[data-toc]`-Scroller (David 25.7.2026). V3-Deckung: `leser-v3-kontext-cls` |
 | `leser-trefferliste-overlay-mobil-w219` (2/2) | **GEPINNT (ganz)** | mobiles Feld liegt in V1 hinter dem Knopf «Im Gesetz suchen». V3-Deckung: `leser-v3-suchfeld-ueberall` (b), `leser-v3-blatt`, `leser-v3-treffer-reihenfolge` |
-| `split-view-a34` (2/2) | **GEPINNT (ganz)** | beide Fälle brauchen das ⧉ an der Bezüge-Zeile als Einstieg; Bug 1 misst zudem V1-Mechanik (Seed-Hash beim imPane-Wechsel). V3-Deckung: `leser-kopf-paritaet` (Split über NormPopover), `leser-v3-highlight-split`. **Lücke: A34/Bug1 (Leseposition beim Öffnen) und Bug2 («Ansicht» bleibt im Split sichtbar) mit V3-Einstieg** |
+| `split-view-a34` (2/2) | **GELÖSCHT 21.8.2026 (H5)** | beide Fälle brauchten das ⧉ an der Bezüge-Zeile als Einstieg; Bug 1 mass zudem V1-Mechanik (Seed-Hash beim imPane-Wechsel, kein V3-Gegenstück nötig). V3-Deckung: `leser-v3-split-a34-bugs` (Bug1/Bug2 mit dem ⧉ am Panel-Chip; §7b Pos. 5, geschlossen 21.8.2026) |
 | `verzahnung` (6/11) | **GEPINNT (Fall)** | 5 Fälle hüllenneutral und weiter scharf. **Lücke: MM4 ★-Wortlaut-Vergleich, MM5 «via Art. N» am Panel-Entscheid, Erwägungs-Sprung ab Panel** |
 | `leitfaelle-chips` (3/6) | **GEPINNT (Fall)** | «(d) V3» im Titel meint die UI-NAV-Stufe, nicht die Hülle. **Lücke: Kurztext-Popover am Panel-Chip** |
 | `normrevision-badge` (2/3) | **GEPINNT (Fall)** | ↻ an der Leitfall-Zeile. Die Temporal-Regel selbst deckt `src/tests` DOM-frei. **Lücke: ↻ am V3-Panel-Entscheid** |
@@ -518,18 +518,78 @@ H5 löscht die Ist-Hülle **erst**, wenn für jede Zeile hier eine `leser-v3-*`-
 steht. Sonst verschwindet mit der alten Hülle auch der Wächter, und niemand
 merkt es. Nach Gewicht:
 
+**Stand 21.8.2026: alle fünf Zeilen geschlossen** — Pos. 2 und Pos. 5
+(A34/Bug1+Bug2) im H5-Bau selbst (neue Specs, s. u.), Pos. 1/3/4 bereits mit
+PR #558. H5 darf die Ist-Hülle damit löschen.
+
 1. **Materialien-Daten am V3-Panel** (`materialien-m5-verzahnung`) — Rechtsdaten,
    höchstes Gewicht: kuratiertes Sublabel «via Art. 24», Dokument-Stand,
    async-Merge des Soft-Law-Shards.
+   **21.8.2026 (§7b-Deckungsprüfung):** geprüft und ausdrücklich NICHT gebaut —
+   `PanelMaterialien.tsx` schliesst Soft-Law/kuratierte Nachträge bewusst aus
+   dem Reiter aus («SOFT LAW BLEIBT DRAUSSEN», Dateikopf-Kommentar dort: eine
+   dritte/vierte Sache neben Entstehung/In-Arbeit, kein blosser Bau-Rückstand).
+   Nachbau wäre >150 Zeilen (Shard-Merge, kuratiertes Sublabel, Erlass-Ebene-
+   Zähler) UND ein Produktentscheid (gehört Soft-Law überhaupt in diesen
+   Reiter?), keine reine Test-Deckungslücke. **Zusicherung in V3 bewusst
+   entfallen — Alt-Spec fällt in H5 ersatzlos; David-Veto offen.**
 2. **Facetten- und Zeitstrahl-WIRKUNG am V3-Panel** (`bezuege-facetten-b4`,
    `bezuege-zeitstrahl-b5`) — inkl. der beiden Migrations-Fälle gespeicherter
    Alt-Stufen. `leser-v3-panel-facetten` prüft heute nur den Ort.
+   **21.8.2026 (§7b-Deckungsprüfung, H5): GESCHLOSSEN** —
+   `e2e/leser-v3-panel-bezuege-wirkung.e2e.ts` (neu, 9 Fälle) deckt Kanton-
+   Schnitt (Bundes-Kanten bleiben bei kantonalem Feinschnitt erhalten),
+   Persistenz der Instanz-/Zeit-Wahl über einen Neuladen, Von-Bis-Filterung
+   (inkl. vertauschter Eingabe, Zurücksetzen) und beide Migrations-Fälle
+   («5 J.» → Von-Datum, «alle» bleibt offen) — alle gegen dieselben,
+   UNVERÄNDERTEN geteilten Bausteine (`BezugFacettenWahl`/`BezugZeitWahl`,
+   §5), nur am neuen Montagepunkt (`PanelFilterZeile`). **Deklarierte
+   Abweichung, kein Bau-Rückstand:** die V1-Zähler-Formulierung «5 von 16»
+   («weitere laden») hat am Panel KEIN Gegenstück — `PanelEntscheide.tsx`
+   verzichtet seit H3 bewusst auf Portionierung (Dateikopf-Kommentar dort:
+   «KEINE Portionierung … die Liste im Panel darf senkrecht wachsen»), die
+   Liste zeigt darum immer die VOLLE gefilterte Menge statt einer Portion.
+   Die neue Spec prüft deshalb Listenlängen (`[data-v3-panel-entscheid]`
+   count) statt der V1-Zähler-Formulierung — derselbe geprüfte Sachverhalt,
+   an die Panel-Architektur angepasst. **Rot gesehen (§0.2) während der
+   Deckungsprüfung, dann als Testfehler erkannt und behoben:** ein erster
+   Entwurf navigierte ohne `#art-5`-Deep-Link und liess den Panel-Fallback
+   («ohne Leseposition gilt der erste Artikel», `panelModell.panelBezug`)
+   fälschlich auf den ERSTEN Artikel des Erlasses greifen (6 statt 16
+   Leitentscheide) — mit `#art-5` im Pfad (wie jede andere `leser-v3-*`-Spec,
+   die einen Artikel adressiert) ist der Fall deterministisch grün, 27/27 über
+   drei Wiederholungen.
 3. **★-Wortlaut-Gleichheit und «via Art. N»** am Panel-Entscheid (`verzahnung`
    MM4/MM5) sowie das **↻** (`normrevision-badge`).
+   **21.8.2026 (§7b-Deckungsprüfung):** MM4 und MM5 geprüft und ausdrücklich
+   NICHT gebaut — beides dokumentierte V3-Produktentscheide, kein Bau-
+   Rückstand. **MM4 (★):** `PanelEntscheide.tsx` Ä106-Kommentar («DAS ★ IST
+   GESTRICHEN», Live-Ästhetik-Prüfung 18.8.2026) — die Leitfall-Zeile, an der
+   der Vier-Orte-Vergleich seinen dritten Bein hatte, ist absichtlich
+   entfallen; der Gruppenkopf trägt die Auskunft bereits im Wort. **MM5 («via
+   Art. N»):** architektonisch entfallen — das V3-Panel ist gemäss Dateikopf
+   («an EINEM Ort», Kap. 4d) IMMER auf den gelesenen Artikel gescopet, nie
+   erlass-weit aggregiert; ohne Aggregat gibt es keine Mehrdeutigkeit, die ein
+   Artikel-Sublabel auflösen müsste. Ein Nachbau widerspräche der erklärten
+   Architektur und wäre zudem >150 Zeilen. **Zusicherung in V3 bewusst
+   entfallen (Verweis auf die Ä106- bzw. Kap.-4d-Kommentare oben) — Alt-Spec
+   fällt in H5 ersatzlos; David-Veto offen.** Das ↻ (`normrevision-badge`)
+   bleibt offen — anders als MM4/MM5 eine reine Bau-Lücke, kein Entscheid.
 4. **Erwägungs-Sprung und Kurztext-Popover** ab Panel-Chip (`verzahnung`
    Fundstelle A, `leitfaelle-chips` (d)).
 5. **A34/Bug1 + Bug2 mit V3-Einstieg** und der **Druck im Split**
-   (`split-view-a34`, `druck-fundstellen-z2`).
+   (`split-view-a34`, `druck-fundstellen-z2`). Druck im Split ist bereits
+   21.8.2026 mit §7b Pos. 3 geschlossen (`druck-fundstellen-z2.e2e.ts`, Fall
+   «V3: Split-View-Ausdruck …»). **A34/Bug1+Bug2, 21.8.2026 (§7b-
+   Deckungsprüfung, H5): GESCHLOSSEN** — `e2e/leser-v3-split-a34-bugs.e2e.ts`
+   (neu) mirrort beide Fälle mit dem V3-Einstieg: der ⧉ sitzt seit §7b Pos. 3
+   am Panel-Chip (`KanteMitVorschau`), nicht mehr an der Bezüge-Zeile. Bug 1
+   (Leseposition bleibt beim Split-Öffnen erhalten, kein Rücksprung auf Art. 1)
+   und Bug 2 (der «Ansicht»-Öffner bleibt im gescrollten Primär-Pane sichtbar
+   und schaltet wirklich) sind beide grün, 4/4 über zwei Wiederholungen. Bug 1s
+   V1-spezifische Zusatzmessung (Seed-Hash beim `imPane`-Wechsel) hat in V3
+   kein Gegenstück und entfällt — die geprüfte SACHE (kein Scroll-Rücksprung)
+   ist identisch geblieben.
 
 ### 7c · Der eine rote Fall — Befund, drei Messungen, Entscheid (grün seit 18.8.2026)
 

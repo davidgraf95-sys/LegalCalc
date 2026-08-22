@@ -11,7 +11,7 @@
 // Diese Spec misst den echten `print`-Medienzustand (page.emulateMedia) im
 // gebauten Stand — keine CSS-Textsuche, sondern computed styles am DOM.
 import { test, expect } from '@playwright/test'
-import { nichtIstHuelle, istHuellenGrund } from './helpers/istHuelle';
+import { panelAufziehen } from './helpers/panelOeffnen';
 
 const ERLASS = '/gesetze/bund/OR'
 
@@ -117,20 +117,23 @@ test.describe('Z2 · Druck der Fundstelle', () => {
   // das kein `main …`-Nachfahren-Selektor trifft). Ergebnis vor dem Fix: der
   // Ausdruck endet nach EINER Seite, während derselbe Erlass ohne Split über
   // hunderte Seiten läuft. Dieser Test öffnet den zweiten Pane real und misst.
-  test('Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten', async ({ page }, info) => {
-    // Der Fall braucht als EINSTIEG das ⧉ «nebeneinander öffnen» an der
-    // Bezüge-Zeile unter dem Artikel — genau der Ort, den V3 mit Pos. 12
-    // aufgegeben hat (`v3/PanelEntscheide` verlinkt, es öffnet nicht daneben).
-    // Die GEMESSENE Sache (der Split-Ausdruck wird nicht auf eine Seite
-    // geklemmt) gilt in V3 unverändert, ihr Einstieg fehlt — deshalb
-    // Projektwechsel statt Umschreiben; ein neuer Einstieg wäre ein neuer Test.
-    test.skip(nichtIstHuelle(info.project.name), istHuellenGrund(
-      'das ⧉ an der Bezüge-Zeile als Einstieg in den Split',
-      'Deckungslücke für den DRUCK im Split — H5-Auflage (Kontaktbogen H4 §7); der Split selbst ist über `leser-kopf-paritaet` und `leser-v3-highlight-split` gedeckt'))
+  // «Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten» GELÖSCHT
+  // 21.8.2026 (H5) — brauchte als Einstieg das ⧉ an der Ist-Hüllen-Bezüge-
+  // Zeile unter dem Artikel (mit Pos. 12 aufgegeben). V3-Deckung: der Fall
+  // «V3: Split-View-Ausdruck …» weiter unten in dieser Datei.
+
+  // ── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 5) ──
+  // Deckt den Test darüber für V3: derselbe Sachverhalt (Split-Ausdruck bleibt
+  // nicht auf eine Seite geklemmt), anderer EINSTIEG — das ⧉ sitzt jetzt am
+  // Panel-Chip (`KanteMitVorschau`, §7b Pos. 3), nicht mehr an der
+  // Bezüge-Zeile. ROT GESEHEN (§6.7) VOR dem `PanelEntscheide.tsx`-Umbau: kein
+  // ⧉-Knopf am Chip, `getByRole('button', {name:/nebeneinander öffnen/})`
+  // fand nichts.
+  test('V3: Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten', async ({ page }) => {
     test.slow() // schwere Split-View-Interaktion (Panes + idle-Shards + Scroll)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/ZGB#art-1')
-    await expect(page.locator('#art-1')).toBeAttached()
+    await page.goto('/gesetze/bund/ZGB?leser=v3#art-684')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
     // Referenz: derselbe Erlass OHNE Split — so hoch druckt er wirklich.
     await page.emulateMedia({ media: 'print' })
@@ -138,13 +141,12 @@ test.describe('Z2 · Druck der Fundstelle', () => {
     expect(ohneSplit, 'Referenz: der Erlass ist vielseitig').toBeGreaterThan(20_000)
     await page.emulateMedia({ media: 'screen' })
 
-    // Zweiten Pane real öffnen (Muster aus split-view-a34.e2e.ts).
-    const art = page.locator('#art-684')
-    await expect(async () => {
-      await art.scrollIntoViewIfNeeded()
-      await expect(art.getByRole('button', { name: /nebeneinander öffnen/ }).first()).toBeVisible({ timeout: 2000 })
-    }).toPass({ timeout: 20_000 })
-    await art.getByRole('button', { name: /nebeneinander öffnen/ }).first().click()
+    // Zweiten Pane über den ⧉ am Panel-Chip öffnen.
+    await panelAufziehen(page)
+    const panel = page.locator('[data-v3-panel]')
+    const ersterEintrag = panel.locator('[data-v3-panel-entscheid]').first()
+    await expect(ersterEintrag).toBeVisible({ timeout: 20_000 })
+    await ersterEintrag.getByRole('button', { name: /nebeneinander öffnen/ }).click()
     await expect(page.locator('[data-pane="sekundaer"]')).toBeVisible({ timeout: 10_000 })
 
     await page.emulateMedia({ media: 'print' })
@@ -156,10 +158,7 @@ test.describe('Z2 · Druck der Fundstelle', () => {
       }
     })
 
-    // (a) Das Primär-Pane clippt seinen eigenen Inhalt nicht mehr.
     expect(mass.paneUeberhang, `Pane-Überhang ${mass.paneUeberhang}px wird abgeschnitten`).toBeLessThanOrEqual(2)
-    // (b) Und das Dokument bleibt vielseitig statt auf eine Bildschirmhöhe
-    //     zusammenzufallen (der Split-Ausdruck war ~1 Seite, ohne Split ~hunderte).
     expect(mass.doku, `Split-Ausdruck ${mass.doku}px vs. ${ohneSplit}px ohne Split`).toBeGreaterThan(20_000)
   })
 })

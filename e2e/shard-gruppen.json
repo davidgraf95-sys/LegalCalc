@@ -24,7 +24,6 @@
    "leser-kopf-a9.e2e.ts",
    "leser-kopf-paritaet.e2e.ts",
    "leser-lesemass.e2e.ts",
-   "leser-trefferliste-overlay-mobil-w219.e2e.ts",
    "normrevision-badge.e2e.ts",
    "rechtsprechung-richter.e2e.ts",
    "verzahnung.e2e.ts",
@@ -44,7 +43,8 @@
    "leser-v3-auskunft.e2e.ts",
    "leser-v3-panel-zaehler.e2e.ts",
    "leser-marken-geometrie.e2e.ts",
-   "leser-v3-rahmen.e2e.ts"
+   "leser-v3-rahmen.e2e.ts",
+   "gesetze-rechtsgebiet-uebersicht-j3.e2e.ts"
   ],
   "4": [
    "gesetze-rechtsgebiet-g6.e2e.ts",
@@ -62,7 +62,10 @@
    "leser-v3-treffer-deckel.e2e.ts",
    "leser-v3-panel-facetten.e2e.ts",
    "leser-v3-h4-kopfwege.e2e.ts",
-   "leser-v3-h4-gliederungswege.e2e.ts"
+   "leser-v3-h4-gliederungswege.e2e.ts",
+   "leser-v3-panel-erwaegungssprung.e2e.ts",
+   "leser-v3-panel-kurztext.e2e.ts",
+   "leser-v3-panel-revision-badge.e2e.ts"
   ],
   "5": [
    "plz-wahl.e2e.ts",
@@ -84,22 +87,19 @@
   "6": [
    "fremdgesetz-verweis-aig.e2e.ts",
    "gesetze-ux-9punkte.e2e.ts",
-   "bezuege-zeitstrahl-b5.e2e.ts",
    "fn5-wortposition.e2e.ts",
    "gesetze-marginalie.e2e.ts",
    "gesetze-uebersicht-u.e2e.ts",
    "leser-suche-vertrag-b8.e2e.ts",
    "suche-q-fokus-s1-s6.e2e.ts",
    "verlauf-o1.e2e.ts",
-   "leser-v3-flag.e2e.ts",
    "leser-v3-kopf-buendig.e2e.ts",
    "leser-v3-prerender-bezuege.e2e.ts",
-   "leser-kein-seitenueberlauf.e2e.ts"
+   "leser-kein-seitenueberlauf.e2e.ts",
+   "leser-v3-panel-bezuege-wirkung.e2e.ts"
   ],
   "7": [
-   "leser-kontext-e4.e2e.ts",
    "schnellrechner-kalender.e2e.ts",
-   "bezuege-facetten-b4.e2e.ts",
    "gesetze-footer-cls.e2e.ts",
    "gesetze-ia5-rechtsgebiet-kanon.e2e.ts",
    "gesetze-ia7-sidebar-badges.e2e.ts",
@@ -114,7 +114,6 @@
   ],
   "8": [
    "leser-spy-w25d.e2e.ts",
-   "split-view-a34.e2e.ts",
    "gesetze-randtitel-6b.e2e.ts",
    "gesetze-ux-g3b-anhang.e2e.ts",
    "leser-breite-a37.e2e.ts",
@@ -125,7 +124,9 @@
    "uinav-v2-v4-normchip.e2e.ts",
    "leser-v3-ortsangabe.e2e.ts",
    "leser-v3-eine-kopfzeile.e2e.ts",
-   "leser-v3-uebersicht.e2e.ts"
+   "leser-v3-uebersicht.e2e.ts",
+   "leser-v3-scroll-blur.e2e.ts",
+   "leser-v3-split-a34-bugs.e2e.ts"
   ]
  }
 }

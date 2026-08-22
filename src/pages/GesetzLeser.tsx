@@ -1,42 +1,70 @@
-import { useLocation, useParams } from 'react-router-dom';
-import { GesetzLeserInhalt } from './gesetz-leser/inhalt';
-import { GesetzLeserV3 } from './gesetz-leser/GesetzLeserV3';
-import { leserFlagAuswerten, leserFlagLesen, leserFlagSchreiben } from './gesetz-leser/leserFlag';
+import { Suspense, lazy, useLayoutEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
+import { LadeAnzeige } from './gesetz-leser/inhalt-ansichten';
 
-// ═══ ABSCHNITT · Fassade = EINZIGER Schaltpunkt V1/V3 (FL-1, FL-2) ══════════
+// ═══ ABSCHNITT · Einsprungspunkt des Lesers ══════════════════════════════════
 //
-// Warum hier und nirgends sonst: `RouteSwitch.tsx:116` bindet `/gesetze/:ebene/
-// :key` an diese Fassade, und `Pane.tsx:126` schickt BEIDE Split-Panes durch
-// denselben `RouteSwitch`. Ein Flag an dieser einen Stelle schaltet damit
-// Einzelansicht und beide Panes gemeinsam (FL-1, e2e-Beleg in
-// `e2e/leser-v3-flag.e2e.ts`). Eine Nebenroute `/gesetze-v3/…` wäre falsch:
-// `basisPfad`, Teilen-Funktion und TOC-Anker zeigen auf `/gesetze/…` und liefen
-// ins Leere (FL-2).
+// GELÖSCHT 21.8.2026 (H5): bis dahin standen hier ZWEI Dateien — diese als
+// Fassade (FL-1/FL-2, entschied V1 vs. V3 über `leserFlag.ts`) und
+// `gesetz-leser/GesetzLeserV3.tsx` als «Naht» (Lazy-Boundary + `kopfzeileSelbst`-
+// Meldung). Mit dem Flag ist die Fassade gegenstandslos geworden (FL-7,
+// H5-Abnahmezeile), und die Naht war seit H1 ausdrücklich als DIE Stelle
+// angelegt, die «in H5 mit dem Flag verschwindet, nicht ihr Inhalt» — beide
+// Dateien sind hier zu einer verschmolzen, wortgleicher Inhalt.
 //
-// Die REGEL selbst steht in `./gesetz-leser/leserFlag` — sie muss DOM-frei
-// prüfbar sein, und Komponenten-Dateien dürfen nichts anderes exportieren
-// (react-refresh). Hier bleibt nur der Vollzug.
+// Diese Datei tut jetzt genau drei Dinge (vormals ②/①/③ der Naht):
 //
-// SEIT H4 (Flip, David-Ja 17.8.2026) ist der Grundzustand `'v3'` — diese Datei
-// ist davon UNBERÜHRT geblieben: sie fragt die Regel und rendert, was diese
-// sagt. Genau darum ist der Flip eine Ein-Datei-Änderung (FL-2). Der Rückweg
-// `?leser=v1` läuft durch denselben Aufruf.
+//  ① SIE HÄLT DEN LESER-BAUM AUS DEM START-BUNDLE. `check:perf-budget` misst
+//     das. Der Fallback ist derselbe `LadeAnzeige`-Platzhalter, den der Reader
+//     ohnehin während des Snapshot-Ladens zeigt — kein zweites Lade-Bild und
+//     keine kollabierende Höhe (§15/2 CLS).
+//
+//  ② SIE SAGT DER HÜLLE, DASS DER LESER SEINE KOPFZEILE SELBST TRÄGT (A-2,
+//     Auftrag David 17.8.2026). Ein Satz, `KopfDaten.kopfzeileSelbst` —
+//     daraufhin lässt `components/layout` die App-Krumen-Leiste weg
+//     (Einzelansicht) bzw. behält im Split nur die Fenster-Steuerung.
+//     WARUM HIER und nicht im Rahmen/Modell, wo die Krume entsteht: der Rahmen
+//     ist `lazy`. Meldete er es, rendert die Shell die Leiste, bis der Chunk da
+//     ist, und liesse sie danach um ihre 37 px zusammenfallen — gemessen
+//     17.8.2026 @1440 StPO: 19 Frames mit Leiste, CLS 0.0303–0.0309. Diese
+//     Datei rendert synchron mit der Route, die Meldung steht also vor dem
+//     ersten Paint des Lesers.
+//     SIE IST RESERVIERUNG, NICHT DAS LETZTE WORT (Nachzug 17.8.2026). Genau
+//     weil sie datenunabhängig sein MUSS, um vor dem ersten Paint zu stehen, ist
+//     sie auf drei Wegen falsch, auf denen der Rahmen früh zurückkehrt und nie
+//     einen Leser-Kopf rendert: pdf-embed (EMRK) · nur-live-link (DSGVO) ·
+//     Fehlseite. `v3/LeserRahmenV3.tsx` nimmt die Reservierung auf diesen drei
+//     Wegen zurück, sobald die Daten da sind (Herleitung dort am Effekt); der
+//     Lade-Platzhalter zählt ausdrücklich nicht dazu — für ihn existiert die
+//     Reservierung. Zurückgenommen wird sie beim Abbau, hier und geteilt in
+//     `useLeserDaten`.
+//
+//  ③ SIE VOLLZIEHT DIE ROUTE. `RouteSwitch.tsx:116` bindet `/gesetze/:ebene/
+//     :key` an diese Datei, und `Pane.tsx` schickt BEIDE Split-Panes durch
+//     denselben `RouteSwitch` — der Leser-Baum steht damit in Einzelansicht
+//     und beiden Panes gleichermassen.
+
+const LeserRahmenV3 = lazy(() =>
+  import('./gesetz-leser/v3/LeserRahmenV3').then((m) => ({ default: m.LeserRahmenV3 })));
 
 export function GesetzLeser() {
   const { ebene, key: keyRoh } = useParams<{ ebene: string; key: string }>();
-  const { search } = useLocation();
   const schluessel = keyRoh ? decodeURIComponent(keyRoh) : '';
-  const { modus, speichern } = leserFlagAuswerten(search, leserFlagLesen());
-
-  // SYNCHRON, nicht im `useEffect` (Bug-Check B2, 16.8.2026). `Pane.tsx:126`
-  // schickt BEIDE Split-Panes durch denselben `RouteSwitch` — und damit durch
-  // diese Fassade. Lief der Vollzug im Effekt, wertete das zweite Pane sein
-  // Flag noch VOR dem Effekt des ersten aus, las `null` und rendert V1 neben
-  // V3; FL-1 verspricht genau das Gegenteil («ein Flag schaltet beide»). Der
-  // Aufruf ist gegen die Aussenwelt idempotent (siehe `leserFlagSchreiben`) und
-  // berührt keinen React-Zustand — er darf darum im Render-Rumpf stehen.
-  leserFlagSchreiben(speichern);
-
-  const Huelle = modus === 'v3' ? GesetzLeserV3 : GesetzLeserInhalt;
-  return <Huelle key={schluessel} ebene={ebene ?? ''} schluessel={schluessel} />;
+  const meldeInhaltsKopf = useMeldeInhaltsKopf();
+  // `useLayoutEffect`, nicht `useEffect` — und das ist gemessen, nicht Geschmack:
+  // die Shell setzt ihre Kopfdaten bei JEDEM Pfadwechsel zurück (Shell.tsx, im
+  // Render-Rumpf). Ein passiver Effekt käme danach, also potenziell erst nach
+  // einem Paint — und dieser eine Frame zeigt die Leiste, die es nicht mehr
+  // geben soll. Der Layout-Effekt läuft vor dem Paint; die Leiste erscheint
+  // damit in keinem einzigen Frame (gemessen: 19 → 0 Frames, s. ② oben).
+  useLayoutEffect(() => {
+    meldeInhaltsKopf({ kopfzeileSelbst: true, breadcrumb: [] });
+    return () => meldeInhaltsKopf(null);
+  }, [meldeInhaltsKopf]);
+  return (
+    <Suspense fallback={<LadeAnzeige />}>
+      <LeserRahmenV3 key={schluessel} ebene={ebene ?? ''} schluessel={schluessel} />
+    </Suspense>
+  );
 }

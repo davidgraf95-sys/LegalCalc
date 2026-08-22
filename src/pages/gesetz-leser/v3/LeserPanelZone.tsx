@@ -6,7 +6,7 @@ import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { PanelAenderungen } from './PanelAenderungen';
 import { PanelMaterialien } from './PanelMaterialien';
-import { useMaterialien, useRevisionen } from './panelKontextLaden';
+import { useArtikelRevisionShard, useMaterialien, useRevisionen } from './panelKontextLaden';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 
@@ -81,7 +81,7 @@ const BLATT_ANTEIL = 55;
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, bestimmungsWort, aktArtikel, steckbrief,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief,
 }: {
   /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet (sie folgt
    *  `panelForm`, ausser wo der aufgeweitete Rahmen eine eigene Spur trägt). */
@@ -101,6 +101,9 @@ export function LeserPanelZone({
   quelleUrl: string;
   normZitat: string;
   artikelLabel: string | null;
+  /** Befund 34: Kürzel des Erlasses — Panel-Kopf-Angabe für «Änderungen»/
+   *  «Materialien» (die gelten dem ganzen Erlass, nicht dem Artikel). */
+  erlassKuerzel: string;
   bestimmungsWort: BestimmungsWort;
   aktArtikel: string | null;
   /** Der Erlass-Steckbrief als Tafel — oder `null`, wenn er gerade OFFEN in der
@@ -137,6 +140,9 @@ export function LeserPanelZone({
   // `panelKontextLaden`). Die Hooks laufen unbedingt — das GATE ist ihr Argument,
   // nicht ein `if` um den Aufruf.
   const revisionen = useRevisionen(erlassKey, zustand.jeGeoeffnet);
+  // §7b-Deckungslücke (normrevision-badge.e2e.ts): derselbe Nachlade-Rhythmus,
+  // andere Quelle (Herleitung in `panelKontextLaden.ts`).
+  const artikelRevisionen = useArtikelRevisionShard(erlassKey, zustand.jeGeoeffnet);
   const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
@@ -188,6 +194,7 @@ export function LeserPanelZone({
     entscheide: (
       <PanelEntscheide
         kanten={aktArtikel ? bezuege.bezuegeFuer(aktArtikel)?.kanten : undefined}
+        aktArtikel={aktArtikel} revisionShard={artikelRevisionen.wert}
         normZitat={normZitat} artikelLabel={artikelLabel} bestimmungsWort={bestimmungsWort}
         // A1: das Lade-ENDE kommt aus der Hook, die den Fetch kennt — nicht aus
         // dem Klassen-Zähler (der bei einem Erlass ohne Shard für immer leer ist).
@@ -276,7 +283,7 @@ export function LeserPanelZone({
             className={`${flaeche.klassen} flex flex-col`}
             style={flaeche.stil}>
             <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
-              bestimmungsWort={bestimmungsWort}
+              bestimmungsWort={bestimmungsWort} erlassKuerzel={erlassKuerzel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt}
               onSchliessen={schliesse} panelRef={panelRef}
               // Griffleiste NUR am unten angeschlagenen Blatt: sie ist das Zeichen

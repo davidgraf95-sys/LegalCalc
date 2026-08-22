@@ -389,7 +389,10 @@ V3-Fläche. Ausdrücklich **nicht** erfasst und darum weiter mit den alten Wört
 unterwegs:
 
 - die eingefrorene Ist-Hülle (`inhalt-*.tsx`, `LeserAnsichtMenu.tsx`,
-  `parts/ErlassUebersicht.tsx`) — sie bleibt bis **H5** unangetastet (FL-4).
+  `parts/ErlassUebersicht.tsx`) — sie blieb bis **H5** unangetastet (FL-4).
+  **Nachtrag 21.8.2026:** mit H5 (PR #560) ist die Ist-Hülle gelöscht, die
+  Ausnahme damit gegenstandslos; `parts/ErlassUebersicht.tsx` besteht fort,
+  gehört aber seither zu V3 (einzige verbliebene Hülle).
   **Eine deklarierte Ausnahme (P1-4, 18.8.2026):** der Fedlex-Link der
   V1-Übersicht hiess weiter «↗ geltende Fassung», während der V3-Kopf
   drei Zentimeter daneben «Amtliche Fassung ↗» sagte — derselbe Link auf
