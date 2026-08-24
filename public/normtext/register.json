@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-10",
+  "erzeugt": "2026-08-24",
   "erlasse": [
     {
       "key": "ZGB",
@@ -2980,9 +2980,9 @@
       "status": "snapshot",
       "datei": "bund/RDV.json",
       "artikelAnzahl": 37,
-      "stand": "2025-11-01",
+      "stand": "2026-08-20",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2012/713/de",
-      "fassungsToken": "20251101",
+      "fassungsToken": "20260820",
       "pdfPfad": null,
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/713/20251101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-713-20251101-de-pdf-a.pdf",
       "pdfStand": "2025-11-01",
@@ -29081,9 +29081,9 @@
       "status": "snapshot",
       "datei": "kanton/TI-ti-181.json",
       "artikelAnzahl": 46,
-      "stand": "2024-05-17",
+      "stand": "2027-01-01",
       "quelleUrl": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/pdfatto/atto/181",
-      "fassungsToken": "a82666505b4580f5071aeb604f5a174e6ba6a0ae2ea708e5d3df13dc0e41ba8a",
+      "fassungsToken": "b1de77a5a472c0bcdb6b2f9d1e882645ab024c4ddfa0997681528cb6dad5ef3e",
       "pdfPfad": null
     },
     {

@@ -1,5 +1,5 @@
 {
- "erzeugt": "2026-08-10",
+ "erzeugt": "2026-08-24",
  "kopf": {
   "srNummer": "946.51",
   "titel": "Bundesgesetz über die technischen Handelshemmnisse",
@@ -33,7 +33,8 @@
     "links": [
      {
       "label": "SR <b>101</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1999/404",
+      "rs": "101"
      }
     ],
     "absatz": null,
@@ -46,7 +47,8 @@
     "links": [
      {
       "label": "SR <b>0.632.31</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1960/590_635_621"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1960/590_635_621",
+      "rs": "0.632.31"
      }
     ],
     "absatz": null,
@@ -59,7 +61,8 @@
     "links": [
      {
       "label": "SR <b>0.632.401</b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1972/3115_3169_2949"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1972/3115_3169_2949",
+      "rs": "0.632.401"
      }
     ],
     "absatz": null,
@@ -72,7 +75,8 @@
     "links": [
      {
       "label": "SR <b>0.632.20 </b>",
-      "url": "https://fedlex.data.admin.ch/eli/cc/1995/2117_2117_2117"
+      "url": "https://fedlex.data.admin.ch/eli/cc/1995/2117_2117_2117",
+      "rs": "0.632.20"
      }
     ],
     "absatz": null,
@@ -857,7 +861,8 @@
      "links": [
       {
        "label": "SR <b>172.216.1</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1999/344"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1999/344",
+       "rs": "172.216.1"
       },
       {
        "label": "AS <b>2000</b> 187",
@@ -898,7 +903,8 @@
      "links": [
       {
        "label": "SR <b>172.021</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755"
+       "url": "https://fedlex.data.admin.ch/eli/cc/1969/737_757_755",
+       "rs": "172.021"
       }
      ],
      "absatz": "8",
@@ -953,7 +959,8 @@
      "links": [
       {
        "label": "SR<b> 171.10</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510",
+       "rs": "171.10"
       }
      ],
      "absatz": "4",
@@ -1297,7 +1304,8 @@
      "links": [
       {
        "label": "SR <b>311.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799"
+       "url": "https://fedlex.data.admin.ch/eli/cc/54/757_781_799",
+       "rs": "311.0"
       }
      ],
      "absatz": null,
@@ -1526,7 +1534,8 @@
      "links": [
       {
        "label": "SR <b>171.10</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2003/510",
+       "rs": "171.10"
       }
      ],
      "absatz": null,
@@ -1556,7 +1565,8 @@
      "links": [
       {
        "label": "SR <b>817.0</b>",
-       "url": "https://fedlex.data.admin.ch/eli/cc/2017/62"
+       "url": "https://fedlex.data.admin.ch/eli/cc/2017/62",
+       "rs": "817.0"
       }
      ],
      "absatz": "1",

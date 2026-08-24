@@ -106,6 +106,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung RVOV (SR 172.010.1)",
+    "datum": "2026-10-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (RVOV)",
+    "wert": "gepinnt 1.3.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung StGB (SR 311.0)",
     "datum": "2026-10-01",
     "quelle": "Tabelle",
@@ -268,6 +276,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung DBG (SR 642.11)",
+    "datum": "2027-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (DBG)",
+    "wert": "gepinnt 1.1.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung DesV (SR 232.121)",
     "datum": "2027-01-01",
     "quelle": "Tabelle",
@@ -377,14 +393,6 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (PATG)",
     "wert": "gepinnt 1.7.2025",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung RVOV (SR 172.010.1)",
-    "datum": "2027-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (RVOV)",
-    "wert": "gepinnt 1.3.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
@@ -513,14 +521,6 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (BV)",
     "wert": "gepinnt 3.3.2024",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung DBG (SR 642.11)",
-    "datum": "2029-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (DBG)",
-    "wert": "gepinnt 1.1.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {

@@ -1,9 +1,9 @@
 {
  "erlass": "RDV",
  "abdeckung": {
-  "fussnoten": 43,
+  "fussnoten": 42,
   "ereignis": 31,
-  "referenz": 11,
+  "referenz": 10,
   "unparsed": 1
  },
  "artikel": {
@@ -174,7 +174,7 @@
    ]
   },
   "9": {
-   "giltSeit": "2025-11-01",
+   "giltSeit": "2026-08-20",
    "ereignisse": [
     {
      "typ": "eingefuegt",
@@ -204,12 +204,12 @@
     },
     {
      "typ": "fassung",
-     "datum": "2025-11-01",
+     "datum": "2026-08-20",
      "wirkung": false,
      "quellen": [
       {
-       "label": "AS 2025 625",
-       "url": "https://fedlex.data.admin.ch/eli/oc/2025/625"
+       "label": "AS 2026 423",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2026/423"
       }
      ],
      "absatz": "8",
