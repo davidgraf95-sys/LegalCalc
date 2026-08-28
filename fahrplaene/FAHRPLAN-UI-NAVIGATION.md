@@ -269,13 +269,19 @@ präzisiert, nie autonom gekippt.
   anwenden, falls dort fehlend *(#57-Rest)*.
 - **Flächen:** `Rechtsprechung.tsx`, `EntscheidFilter.tsx`. *(#27 geändert.)*
 
-### J3 · Sachgebiets-Pipeline verfeinern — M · **Risiko-Pfad (QS-GP Pflicht)**
-- **Kern:** 230/607 Entscheide (38 %) in «sozial-abgaben» (Daten-bestätigt), Fehlklassierung
-  BGE 150 II 300 (BGFA unter Steuern). Fix nur **deterministisch**: Band-II-Pauschal-Mapping
-  ersetzen, Norm-Key→Gebiet-Regeln (BGFA/BV → Öffentliches Recht), ggf. «Steuern & Abgaben»
-  von «Sozialversicherung» trennen; **sofort (S):** Badge «maschinell zugeordnet» (§8,
-  StatusBadge-Vokabular existiert in VZUI). KEINE redaktionellen Einzel-Umklassierungen
-  (wäre Fachkuration → Zeitsperre). Quirks-Liste nach Q1/Q4-Muster.
+### J3 · Sachgebiets-Pipeline verfeinern — M · **Risiko-Pfad (QS-GP Pflicht)** ✅ gebaut 29.8.2026
+- **Kern (Ur-Befund 11.7.):** 230/607 Entscheide (38 %) in «sozial-abgaben», Fehlklassierung
+  BGE 150 II 300 (BGFA unter Steuern). Fix nur **deterministisch**; KEINE redaktionellen
+  Einzel-Umklassierungen (wäre Fachkuration → Zeitsperre).
+- **Umsetzung 29.8.2026 (Spec-Korrektur nach Ist-Messung, lebendige Spec):** Die Pauschale
+  sass nicht im Band-II-Mapping, sondern im Abteilungs-Default `2A/2C/2D → sozial-abgaben`
+  (53 Band-I- und 82 Band-II-BGE ohne Steuer-Signal im Topf). Gebaut: Default neu
+  `oeffentlich`, `NORM_SIGNAL` + BGFA→öffentlich; **BV bewusst NICHT als Signal** (kippte
+  echte Steuerfälle — §7-Abweichung, offengelegt); Bestands-Regen 119 Wechsel
+  (`scripts/normtext/remap-sachgebiet-j3.ts`); Badge/Titel «maschinell zugeordnet» im
+  Entscheid-Leser + Listen (§8). Regelwerk + Quirks: `bibliothek/rechtsprechung/`
+  `sachgebiet-klassierung-j3-2026-08-29.md`. Trennung «Steuern & Abgaben» von
+  «Sozialversicherung»: NICHT gebaut → §Y (Taxonomie über Rechtsprechung UND /gesetze).
 - **Flächen:** Erzeugungs-Pipeline `scripts/`, `register.json`, `browse.ts`. *(#23.)*
 
 ### J4 · «Neues vom Bundesgericht»-Karten — S–M
@@ -351,6 +357,11 @@ präzisiert, nie autonom gekippt.
 
 ## §Y · David-Entscheide (NICHT autonom bauen — als 3-Zeilen-Fragen vorlegen)
 
+0. **J3-Restfrage — «Steuern & Abgaben» von «Sozialversicherung» trennen?** *(29.8.2026)*:
+   Ein Sachgebiet trägt heute beide (nach J3-Regen 1725 Einträge). Trennung = neues
+   Rechtsgebiet in der geteilten Taxonomie (Rechtsprechung UND /gesetze, SSoT §5) —
+   deterministisch machbar (8C/9C/Band V → Sozialversicherung; DBG/StHG-Signal → Steuern),
+   aber Produktentscheid. Empfehlung: trennen, sobald der Kantons-Korpus wächst.
 1. **A6-Präzisierung Werkzeug-Chip** *(#1+#45)*: matcht die Query einen Katalog-Titel stark,
    den EINEN besten Werkzeug-Treffer als Chip in die Sprung-Zeile heben — Gruppenordnung
    darunter unverändert. (A6-Rangfolge ist Davids Entscheid vom 5.7. — Präzisierung, kein Kippen.)

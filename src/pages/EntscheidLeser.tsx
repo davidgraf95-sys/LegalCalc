@@ -656,6 +656,12 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           {snap.gerichtName}
           {snap.abteilung && <span className="text-ink-500"> · {snap.abteilung}</span>}
           <span className="text-brass-700"> · {GEBIET_LABEL[snap.sachgebiet]}</span>
+          {/* J3 (§8): Sachgebiet ist maschinell zugeordnet (Abteilung/Band/Norm-
+              Signal) — offen etikettieren, geteiltes StatusBadge-Vokabular. */}
+          {snap.kuratierung === 'maschinell' && (
+            <StatusBadge praedikat="maschinell" className="ml-2 align-middle"
+              detail="Sachgebiet aus Abteilung, Band und zitierten Normen abgeleitet" />
+          )}
         </p>
         {/* 2 Zitierung = Identitäts-Anker (stets, prominent). LM-019 (§8 B7): bei
             offenem Lesemodus blendet NUR der `<article>`-Body aus (weiter unten,
@@ -1035,6 +1041,12 @@ function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, mass
           {snap.gerichtName}
           {snap.abteilung && <span className="text-ink-500"> · {snap.abteilung}</span>}
           <span className="text-brass-700"> · {GEBIET_LABEL[snap.sachgebiet]}</span>
+          {/* J3 (§8): Sachgebiet ist maschinell zugeordnet (Abteilung/Band/Norm-
+              Signal) — offen etikettieren, geteiltes StatusBadge-Vokabular. */}
+          {snap.kuratierung === 'maschinell' && (
+            <StatusBadge praedikat="maschinell" className="ml-2 align-middle"
+              detail="Sachgebiet aus Abteilung, Band und zitierten Normen abgeleitet" />
+          )}
         </p>
         <h1 className="mt-2 text-h2 sm:text-h1 font-display font-semibold text-ink-900 num">{snap.zitierung}</h1>
         <p className="mt-1 text-xs text-ink-500">

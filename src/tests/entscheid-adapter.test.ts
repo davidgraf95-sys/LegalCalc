@@ -106,7 +106,16 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
   it('Abteilungs-Präfix', () => {
     expect(abteilungZuSachgebiet('5A_1100/2025')).toBe('privat');
     expect(abteilungZuSachgebiet('6B_1/2024')).toBe('straf');
-    expect(abteilungZuSachgebiet('2C_1/2024')).toBe('sozial-abgaben');
+    // J3 (29.8.2026, fachliche Änderung deklariert): Default der II. öffentlich-
+    // rechtlichen Abteilung ist 'oeffentlich' — Steuerfälle erkennt das Norm-
+    // Signal (DBG/StHG/…) bzw. legal_area, nicht mehr die Abteilungs-Pauschale.
+    expect(abteilungZuSachgebiet('2C_1/2024')).toBe('oeffentlich');
+    expect(abteilungZuSachgebiet('9C_1/2024')).toBe('sozial-abgaben');
+    // J3: BGFA als Norm-Signal → öffentlich (Anlassfall BGE 150 II 300), mit
+    // Vorrang vor Steuergesetzen (BGE 151 II 873: BGFA + Steueramtshilfe).
+    expect(normSignalSachgebiet(['BGFA'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['DBG', 'BGFA'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['DBG'])).toBe('sozial-abgaben');
   });
   it('legal_area-Fragmente', () => {
     expect(legalAreaZuSachgebiet('Civil law')).toBe('privat');

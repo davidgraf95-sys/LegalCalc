@@ -50,7 +50,7 @@ export function EntscheidZeile({ e, onNorm }: {
         {/* Metazeile — Rechtsgebiet, Status, angewandte Normen (klickbar). Chips
             mit relative/z über dem Overlay-Link, damit sie klickbar bleiben. */}
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-500">
-          <span className="text-brass-700">{GEBIET_LABEL[e.sachgebiet]}</span>
+          <span className="text-brass-700" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
           {synth && <span className="text-micro italic text-ink-500">ohne amtl. Regeste</span>}
           {/* §8-Ehrlichkeit (Block-B-Kontrakt): die Bezeichnung ist der amtliche
               Betreff der Trefferliste, KEINE Regeste — offen etikettieren. */}
