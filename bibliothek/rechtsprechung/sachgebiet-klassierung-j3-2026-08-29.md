@@ -52,8 +52,10 @@ Messung 29.8. zeigte, dass die aza-basierte Klassierung FEINER ist als das Band
 
 `scripts/normtext/remap-sachgebiet-j3.ts` (Scope eng: Bund-2er-Abteilung + BGE der
 Bände I/II mit 2er-aza; alles Übrige byte-gleich), zwei Läufe (Erstlauf + Korrektur-
-lauf nach Gegenprüfungs-Runde 1). Endstand gegen die Basis: **119 geänderte
-Snapshots**, im nutzersichtbaren Register **235 Wechsel** (BGE-Einträge ziehen je
+lauf nach Gegenprüfungs-Runde 1). Endstand gegen die Basis: **118 geänderte
+Snapshots** (Gegenprüfung Runde 2 nachgezählt; der Korrekturlauf änderte 10
+Snapshots = 20 Register-Wechsel, 4 kehrten auf den Basiswert zurück), im
+nutzersichtbaren Register **235 Wechsel** (BGE-Einträge ziehen je
 einen `__voll`-Verweis-Eintrag mit): 225 `sozial-abgaben → oeffentlich`,
 8 `privat → oeffentlich`, 2 `privat → sozial-abgaben`; Einträge vorher = nachher
 = 6341. Projektionen (register.json, norm-index, bezuege) regeneriert; dabei zog
@@ -94,6 +96,13 @@ Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
   Sozialversicherung teilen ein Sachgebiet (1621 Einträge nach Regen). Eine Trennung
   wäre eine Taxonomie-Änderung über Rechtsprechung UND /gesetze (SSoT) — Fahrplan
   sagt «ggf.», Entscheid liegt bei David (§Y-Vorlage, siehe Fahrplan §6/J3).
+- **Q-J3-7 · normKeys speisen sich auch aus dem Fliesstext (W2·6-NKEY):** beiläufige
+  Erlass-Nennungen im Erwägungstext können das Sachgebiet setzen — Beleg BGE
+  150 II 390 (CO₂-Sanktion): der MWSTG-Key stammt aus einer Definitionsklammer
+  «(vgl. Art. 70 ZG; Art. 51 MWSTG)», nicht aus dem Streitgegenstand; Ergebnis
+  `sozial-abgaben` vertretbar (Abgabecharakter), Herleitung schwach. Rückbau lohnt
+  nicht (Gegenprüfung Runde 2), aber Falle dokumentiert; Folgeschritt-Idee: Messung
+  «Steuer-Key nur im Fliesstext, nicht in der Regeste» über die normSignal-Fälle.
 - **Q-J3-4 · Kantonale Präfix-Kollision `BV`/`SG`:** In `KANT_PRAEFIX` meint `BV`
   Berufliche Vorsorge und `SG` das Schiedsgericht Sozialversicherung BS — nicht
   Bundesverfassung/St. Gallen. Nur Aktenzeichen-Ebene, keine Norm-Keys.
