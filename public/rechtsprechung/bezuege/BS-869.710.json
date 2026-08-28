@@ -3,7 +3,7 @@
 "erlass":"BS-869.710",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_sozialversicherungsgericht_EL.2021.11":{"zitierung":"Sozialversicherungsgericht BS EL.2021.11 vom 06.09.2023","regesteKurz":"Beschränkung der Vergütung für Hilfe und Betreuung zu Hause im Rahmen der jährlichen Krankheits- und Behinderungskosten…","datum":"2023-09-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_EL.2021.11":{"zitierung":"Sozialversicherungsgericht BS EL.2021.11 vom 06.09.2023","regesteKurz":"Beschränkung der Vergütung für Hilfe und Betreuung zu Hause im Rahmen der jährlichen Krankheits- und…","datum":"2023-09-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "16":[{"key":"bs_sozialversicherungsgericht_EL.2021.11","gewicht":null}]

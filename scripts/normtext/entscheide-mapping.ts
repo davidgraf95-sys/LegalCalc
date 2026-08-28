@@ -1031,7 +1031,14 @@ const ABTEILUNG: Record<string, Rechtsgebiet> = {
   '6B': 'straf', '6S': 'straf',
   '1B': 'prozess', '7B': 'prozess',
   '1C': 'oeffentlich', '1P': 'oeffentlich', '1E': 'oeffentlich',
-  '2C': 'sozial-abgaben', '2A': 'sozial-abgaben', '2D': 'sozial-abgaben',
+  // J3 (29.8.2026): Die II. öffentlich-rechtliche Abteilung (2A/2C/2D) führt das
+  // GESAMTE öffentliche Recht inkl. Steuern — ihr Default ist 'oeffentlich'.
+  // Steuerfälle erkennt vorrangig das Norm-Signal (DBG/StHG/…) bzw. die OCL-
+  // legal_area (Kette in mappeEntscheidOCL). Der frühere Default 'sozial-abgaben'
+  // war die Pauschale, die BGFA-/Grundrechts-/Vergabe-Fälle als «Steuern &
+  // Sozialversicherung» etikettierte (Messung 29.8.2026: 53 Band-I- und 82
+  // Band-II-BGE ohne jedes Steuer-Signal in diesem Topf).
+  '2C': 'oeffentlich', '2A': 'oeffentlich', '2D': 'oeffentlich',
   '8C': 'sozial-abgaben', '9C': 'sozial-abgaben',
 };
 export function abteilungZuSachgebiet(docket: string): Rechtsgebiet | null {
@@ -1062,8 +1069,19 @@ export function istMehrdeutigeOerAbteilung(docket: string): boolean {
 // Nennung derselben zwei Normen 'sozial-abgaben' (empirisch nachgestellt
 // 28.7.2026). Gleiche Eingabemenge → gleiches Sachgebiet ist §2; die Priorität
 // gehört in die Tabelle, nicht in die Laune der Drittextraktion.
+// J3 (29.8.2026): BGFA → öffentlich (Anwaltsaufsicht/Berufsrecht; Anlassfall
+// BGE 150 II 300 stand als «Steuern & Sozialversicherung»). Priorität VOR den
+// Steuergesetzen: ein BGFA-Fall mit Steuer-Berührung (z.B. Anwaltsgeheimnis in
+// der Steueramtshilfe, BGE 151 II 873) bleibt Berufsrecht → öffentlich.
+// Die im Fahrplan zusätzlich genannte BV-Regel («BV → öffentlich») ist BEWUSST
+// NICHT als Norm-Signal umgesetzt (§7-Abweichung, offengelegt): nahezu jeder
+// Steuerentscheid zitiert die BV (Art. 127) — als Signal würde sie echte
+// Steuerfälle ohne DBG/StHG-Nennung kippen. Ihren Zweck (verfassungsrechtliche
+// 2er-Fälle nicht als Steuern etikettieren) erfüllt der neue Abteilungs-Default
+// 'oeffentlich' der 2A/2C/2D (ABTEILUNG oben) deterministisch.
 const NORM_SIGNAL: ReadonlyArray<readonly [string, Rechtsgebiet]> = [
   ['AIG', 'oeffentlich'], ['ASYLG', 'oeffentlich'], ['BEWG', 'oeffentlich'],
+  ['BGFA', 'oeffentlich'],
   ['DBG', 'sozial-abgaben'], ['STHG', 'sozial-abgaben'], ['MWSTG', 'sozial-abgaben'],
   ['STG', 'sozial-abgaben'], ['VSTG', 'sozial-abgaben'],
 ];

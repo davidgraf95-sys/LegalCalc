@@ -3,8 +3,8 @@
 "erlass":"FDV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_149_IV_1":{"zitierung":"BGE 149 IV 1","regesteKurz":"Art. 23 Abs. 1, Art. 3 Abs. 1 lit. u UWG (in den bis 31. Dezember 2020 und seit 1. Januar 2021 geltenden Fassungen); Art. 88 Abs. 1 FDV; unlautere Handlung durch Nichtbeachtung eines sog. Sterneintrags im Telefonverzeichnis; Ausnahmeklause…","datum":"2022-11-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_150_II_489":{"zitierung":"BGE 150 II 489","regesteKurz":"a Art. 22 Abs. 1 RPG; Baubewilligungspflicht für die Verlegung von Leitungen im Boden. Im Boden ausserhalb der Bauzonen und im Uferbereich eines Flusses verlegte Fernmeldeleitungen sind bewilligungspflichtige Anlagen im Sinne von Art. 22 A…","datum":"2024-03-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_149_IV_1":{"zitierung":"BGE 149 IV 1","regesteKurz":"Art. 23 Abs. 1, Art. 3 Abs. 1 lit. u UWG (in den bis 31. Dezember 2020 und seit 1. Januar 2021 geltenden Fassungen); Art. 88 Abs. 1 FDV; unlautere Handlung durch Nichtbeachtung eines sog. Sterneintrags im Telefonverzeichnis;…","datum":"2022-11-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_II_489":{"zitierung":"BGE 150 II 489","regesteKurz":"a Art. 22 Abs. 1 RPG; Baubewilligungspflicht für die Verlegung von Leitungen im Boden. Im Boden ausserhalb der Bauzonen und im Uferbereich eines Flusses verlegte Fernmeldeleitungen sind bewilligungspflichtige Anlagen im Sinne von Art. 22…","datum":"2024-03-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
 "11":[{"key":"bge_149_IV_1","gewicht":0}],

@@ -3,7 +3,7 @@
 "erlass":"BS-510.200",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_appellationsgericht_SB.2020.100":{"zitierung":"Appellationsgericht BS SB.2020.100 vom 25.01.2022","regesteKurz":"grobe Verletzung der Verkehrsregeln, einfache Verletzung der Verkehrsregeln sowie mehrfache Nichtabgabe von Ausweisen u…","datum":"2022-01-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_SB.2020.100":{"zitierung":"Appellationsgericht BS SB.2020.100 vom 25.01.2022","regesteKurz":"grobe Verletzung der Verkehrsregeln, einfache Verletzung der Verkehrsregeln sowie mehrfache Nichtabgabe von Ausweisen…","datum":"2022-01-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "7":[{"key":"bs_appellationsgericht_SB.2020.100","gewicht":null}]
