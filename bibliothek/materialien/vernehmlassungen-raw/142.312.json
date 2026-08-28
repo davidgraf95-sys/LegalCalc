@@ -210,17 +210,17 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung der Asylverordnung 2 über Finanzierungsfragen"
+      "value": "Änderung der Asylverordnung 2 über Finanzierungsfragen (AsylV 2)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l'ordonnance n° 2 sur l'asile concernant les questions de financement"
+      "value": "Modification de l’ordonnance n° 2 sur l’asile concernant les questions de financement (OA 2)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell'Ordinanza n. 2 sull'asilo relativa alle questioni finanziarie"
+      "value": "Modifica dell’Ordinanza n. 2 sull’asilo relativa alle questioni finanziarie (OAsi 2)"
     },
     "start": {
       "type": "typed-literal",
