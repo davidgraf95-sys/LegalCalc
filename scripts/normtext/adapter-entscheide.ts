@@ -20,6 +20,7 @@ import { normalisiereErwaegung } from './erwaegung-normalisieren';
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
   statutesZuNormKeys, legalAreaZuSachgebiet, abteilungZuSachgebiet, gerichtstypFuerCourt,
+  zweierLegalAreaSignal, zweierRohSteuerSignal,
   gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe,
   istMehrdeutigeOerAbteilung, normSignalSachgebiet, normKeysVonSnapshot,
 } from './entscheide-mapping';
@@ -382,12 +383,17 @@ export function mappeEntscheidOCL(
     .replace(/^(?:BGE|ATF|DTF)\s+/i, '');
   const sachgebiet: Rechtsgebiet =
     opts.sachgebietHint
-    // C2-1: Für die mehrdeutige II. öffentlich-rechtliche Abteilung (2A/2C/2D,
-    // Steuern UND Migration) zuerst das eindeutige Norm-Signal (AIG→öffentlich,
-    // DBG/StHG→sozial-abgaben), dann die OCL legal_area — sonst landeten alle
-    // 2C-Migrationsfälle pauschal unter «sozial-abgaben».
+    // C2-1/J3: Für die mehrdeutige II. öffentlich-rechtliche Abteilung (2A/2C/
+    // 2D) entscheidet die Signal-Kette NUR noch die Steuer/Abgabe-Frage:
+    // Norm-Signal (AIG→öffentlich, DBG/StHG→sozial-abgaben, BGFA→öffentlich),
+    // dann Roh-«StG/Steuergesetz» (kantonale Steuergesetze ohne Register-Key),
+    // dann legal_area GEFILTERT auf 'sozial-abgaben' (Gegenprüfung 29.8.2026,
+    // F1: ungefiltertes 'civil' kippte 2D-Beschaffungsfälle nach «privat»).
+    // Kein Treffer → Abteilungs-Default 'oeffentlich' (Art. 30/31 BgerR).
     ?? (istMehrdeutigeOerAbteilung(docket)
-        ? (normSignalSachgebiet(signalKeys) ?? legalAreaZuSachgebiet(det.legal_area))
+        ? (normSignalSachgebiet(signalKeys)
+          ?? zweierRohSteuerSignal(det.statutes ?? [])
+          ?? zweierLegalAreaSignal(det.legal_area))
         : null)
     ?? abteilungZuSachgebiet(docket)        // BGer-Abteilung (z.B. 5A→privat) ist präziser …
     ?? kantonalSachgebiet(docket)           // … kantonale Aktenzeichen-Präfixe …

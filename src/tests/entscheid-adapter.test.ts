@@ -10,7 +10,7 @@ import {
   teileDispositivInline, extrahiereRubrum, azaAusBgeKopf, bgeRoemischSachgebiet,
   type OclDecision,
 } from '../../scripts/normtext/adapter-entscheide';
-import { statutesZuNormKeys, abteilungZuSachgebiet, legalAreaZuSachgebiet, istMehrdeutigeOerAbteilung, normSignalSachgebiet } from '../../scripts/normtext/entscheide-mapping';
+import { statutesZuNormKeys, abteilungZuSachgebiet, legalAreaZuSachgebiet, istMehrdeutigeOerAbteilung, normSignalSachgebiet, zweierLegalAreaSignal, zweierRohSteuerSignal } from '../../scripts/normtext/entscheide-mapping';
 
 const FIX = join(process.cwd(), 'src', 'tests', 'fixtures');
 const lade = (f: string) => JSON.parse(readFileSync(join(FIX, f), 'utf8'));
@@ -116,6 +116,14 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     expect(normSignalSachgebiet(['BGFA'])).toBe('oeffentlich');
     expect(normSignalSachgebiet(['DBG', 'BGFA'])).toBe('oeffentlich');
     expect(normSignalSachgebiet(['DBG'])).toBe('sozial-abgaben');
+    // J3-Gegenprüfungs-Korrekturen (29.8.2026): legal_area zählt auf der 2er-
+    // Abteilung nur noch für die Steuer/Abgabe-Frage (F1: 'civil' kippte
+    // 2D-Beschaffungsfälle nach 'privat'); kantonale Steuergesetze signalisieren
+    // über den Roh-String «StG»/«Steuergesetz» (F2: BGE 149 I 125).
+    expect(zweierLegalAreaSignal('civil')).toBeNull();
+    expect(zweierLegalAreaSignal('tax law')).toBe('sozial-abgaben');
+    expect(zweierRohSteuerSignal(['Art. 181 Abs. 2 STG'])).toBe('sozial-abgaben');
+    expect(zweierRohSteuerSignal(['Art. 14 STGB', 'Art. 1 VSTG'])).toBeNull();
   });
   it('legal_area-Fragmente', () => {
     expect(legalAreaZuSachgebiet('Civil law')).toBe('privat');

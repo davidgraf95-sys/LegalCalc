@@ -277,8 +277,9 @@ präzisiert, nie autonom gekippt.
   sass nicht im Band-II-Mapping, sondern im Abteilungs-Default `2A/2C/2D → sozial-abgaben`
   (53 Band-I- und 82 Band-II-BGE ohne Steuer-Signal im Topf). Gebaut: Default neu
   `oeffentlich`, `NORM_SIGNAL` + BGFA→öffentlich; **BV bewusst NICHT als Signal** (kippte
-  echte Steuerfälle — §7-Abweichung, offengelegt); Bestands-Regen 119 Wechsel
-  (`scripts/normtext/remap-sachgebiet-j3.ts`); Badge/Titel «maschinell zugeordnet» im
+  echte Steuerfälle — §7-Abweichung, offengelegt); Bestands-Regen 119 Snapshots /
+  235 Register-Wechsel (`scripts/normtext/remap-sachgebiet-j3.ts`; Gegenprüfungs-
+  Runde 1 «widerlegt» → F1–F3 eingebaut, Runde 2 siehe Bibliothek); Badge/Titel «maschinell zugeordnet» im
   Entscheid-Leser + Listen (§8). Regelwerk + Quirks: `bibliothek/rechtsprechung/`
   `sachgebiet-klassierung-j3-2026-08-29.md`. Trennung «Steuern & Abgaben» von
   «Sozialversicherung»: NICHT gebaut → §Y (Taxonomie über Rechtsprechung UND /gesetze).

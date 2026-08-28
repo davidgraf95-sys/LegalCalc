@@ -1031,11 +1031,16 @@ const ABTEILUNG: Record<string, Rechtsgebiet> = {
   '6B': 'straf', '6S': 'straf',
   '1B': 'prozess', '7B': 'prozess',
   '1C': 'oeffentlich', '1P': 'oeffentlich', '1E': 'oeffentlich',
-  // J3 (29.8.2026): Die II. öffentlich-rechtliche Abteilung (2A/2C/2D) führt das
-  // GESAMTE öffentliche Recht inkl. Steuern — ihr Default ist 'oeffentlich'.
-  // Steuerfälle erkennt vorrangig das Norm-Signal (DBG/StHG/…) bzw. die OCL-
-  // legal_area (Kette in mappeEntscheidOCL). Der frühere Default 'sozial-abgaben'
-  // war die Pauschale, die BGFA-/Grundrechts-/Vergabe-Fälle als «Steuern &
+  // J3 (29.8.2026, Beleg-Korrektur nach Gegenprüfung): Zuständigkeit der II.
+  // öffentlich-rechtlichen Abteilung (2A/2C/2D) nach Art. 30 BgerR (SR
+  // 173.110.131, Fassung 2026-02-01): Ausländerrecht, internationale Amtshilfe
+  // in Steuersachen, öffentliches Wirtschaftsrecht inkl. Beschaffungswesen und
+  // freie Berufe — «Steuern und Abgaben» sind SEIT 1.1.2023 bei der III.
+  // öffentlich-rechtlichen Abteilung (Art. 31 lit. a BgerR, AS 2023 65); der
+  // Altbestand 2A/2C bis 2022 enthält sie noch. Default darum 'oeffentlich';
+  // Steuer-/Abgabefälle erkennt die Signal-Kette (NORM_SIGNAL, zweier*-Signale,
+  // Kette in mappeEntscheidOCL). Der frühere Default 'sozial-abgaben' war die
+  // Pauschale, die BGFA-/Grundrechts-/Vergabe-Fälle als «Steuern &
   // Sozialversicherung» etikettierte (Messung 29.8.2026: 53 Band-I- und 82
   // Band-II-BGE ohne jedes Steuer-Signal in diesem Topf).
   '2C': 'oeffentlich', '2A': 'oeffentlich', '2D': 'oeffentlich',
@@ -1074,11 +1079,12 @@ export function istMehrdeutigeOerAbteilung(docket: string): boolean {
 // Steuergesetzen: ein BGFA-Fall mit Steuer-Berührung (z.B. Anwaltsgeheimnis in
 // der Steueramtshilfe, BGE 151 II 873) bleibt Berufsrecht → öffentlich.
 // Die im Fahrplan zusätzlich genannte BV-Regel («BV → öffentlich») ist BEWUSST
-// NICHT als Norm-Signal umgesetzt (§7-Abweichung, offengelegt): nahezu jeder
-// Steuerentscheid zitiert die BV (Art. 127) — als Signal würde sie echte
-// Steuerfälle ohne DBG/StHG-Nennung kippen. Ihren Zweck (verfassungsrechtliche
-// 2er-Fälle nicht als Steuern etikettieren) erfüllt der neue Abteilungs-Default
-// 'oeffentlich' der 2A/2C/2D (ABTEILUNG oben) deterministisch.
+// NICHT als Norm-Signal umgesetzt (§7-Abweichung, offengelegt; Gegenprüfung
+// 29.8.2026 bestätigt): 60 % der Entscheide mit Steuer-Key zitieren zusätzlich
+// die BV (gemessen 109/182 im Register) — als vorrangiges Signal kippte sie
+// diese echten Steuerfälle (Gegenbeleg BGE 149 I 125: zitiert Art. 8 BV, ist
+// reine Grundstücksteuer). Ihren Zweck (verfassungsrechtliche 2er-Fälle nicht
+// als Steuern etikettieren) erfüllt der Abteilungs-Default 'oeffentlich'.
 const NORM_SIGNAL: ReadonlyArray<readonly [string, Rechtsgebiet]> = [
   ['AIG', 'oeffentlich'], ['ASYLG', 'oeffentlich'], ['BEWG', 'oeffentlich'],
   ['BGFA', 'oeffentlich'],
@@ -1089,6 +1095,30 @@ export function normSignalSachgebiet(normKeys: Iterable<string>): Rechtsgebiet |
   const vorhanden = new Set<string>();
   for (const k of normKeys) vorhanden.add(String(k).toUpperCase());
   for (const [key, geb] of NORM_SIGNAL) if (vorhanden.has(key)) return geb;
+  return null;
+}
+
+// J3-Korrektur (Gegenprüfung 29.8.2026, Befund F1): Auf der 2er-Abteilung darf
+// die OCL-legal_area nur noch die EINE Frage beantworten, die der Abteilungs-
+// Default offen lässt — Steuer/Abgabe oder nicht. 'civil'/'criminal'-Werte der
+// Drittextraktion sind auf einer öffentlich-rechtlichen Abteilung per se
+// unplausibel und kippten Entscheide nach «Privatrecht» (Beleg: BGE 152 II 142,
+// 2D_14/2024 = subsidiäre Verfassungsbeschwerde, Beschaffungsrecht, stand als
+// 'privat'; ebenso BGE 151 II 46).
+export function zweierLegalAreaSignal(area: string | null | undefined): Rechtsgebiet | null {
+  return legalAreaZuSachgebiet(area) === 'sozial-abgaben' ? 'sozial-abgaben' : null;
+}
+
+// J3-Korrektur (Gegenprüfung 29.8.2026, Befund F2/Mindestkorrektur 4):
+// KANTONALE Steuergesetze tragen keinen Register-Key — statutesZuNormKeys
+// verwirft «StG» bewusst als föderal/kantonal mehrdeutig. Auf der 2er-Abteilung
+// ist «StG»/«Steuergesetz» in den ROH-zitierten Normen aber ein eindeutiges
+// Abgabe-Signal (Beleg: BGE 149 I 125, Walliser Grundstücksteuer, «Art. 181
+// Abs. 2 STG»). Wortgrenze schliesst StGB/VStG aus; NUR in der 2er-Kette
+// verwenden — ausserhalb bleibt StG mehrdeutig.
+const ZWEIER_STEUER_ROH = /steuergesetz|\bstg\b/i;
+export function zweierRohSteuerSignal(zitierteNormen: Iterable<string>): Rechtsgebiet | null {
+  for (const z of zitierteNormen) if (ZWEIER_STEUER_ROH.test(String(z))) return 'sozial-abgaben';
   return null;
 }
 
