@@ -8,7 +8,7 @@ import { VERNEHMLASSUNGEN } from '../lib/materialien/vernehmlassungen.generated'
 import { baueMaterialManifest } from '../../scripts/materialien/material-manifest';
 import { projiziereRegister, dbDokAusZustand } from '../../scripts/materialien/soft-law-projektion';
 import { ladeZustand } from '../../scripts/materialien/soft-law-zustand';
-import { ERLASS_REGISTER } from '../lib/normtext/register';
+import { ERLASS_REGISTER, GEBIETE } from '../lib/normtext/register';
 import { NAVIGATION } from '../lib/navigation';
 import { materialienFuerNorm } from '../lib/normtext/werkzeuge';
 import type { MaterialManifest } from '../lib/materialien/typen';
@@ -117,5 +117,42 @@ describe('Tor 4 — Norm↔Material-Brücke (additiv, kein toter Bezug)', () => 
     }
     // Ein Erlass ohne Material-Verzahnung liefert leer (kein erfundener Bezug).
     expect(materialienFuerNorm('NICHT_EXISTENT')).toEqual([]);
+  });
+});
+
+// ─── Wurzel-Fix zur W2-TRENNUNG (§17, 29.8.2026) ────────────────────────────
+//
+// ANLASS: Bei der Trennung des Doppel-Topfs blieben 138 Materialien-Einträge
+// still auf dem abgelösten Wert `'sozial-abgaben'` stehen — sie stammen aus der
+// persistierten Zustandsdatei `bibliothek/register/soft-law-zustand.jsonl`, die
+// niemand mitgezogen hatte. KEIN bestehendes Tor schlug an: `check:materialien`
+// prüft die Projektion nur gegen sich selbst, und der TypeScript-Compiler sieht
+// eine JSONL-Datei nicht. Der Fehler wäre in die Auslieferung gelaufen und
+// hätte 138 Dokumente in eine Rubrik gehängt, die es nicht mehr gibt.
+//
+// Diese Tore schliessen die Lücke an der Wurzel: Jedes Material — kuratiert,
+// generiert ODER aus dem Zustand geerntet — muss ein DEKLARIERTES Rechtsgebiet
+// tragen. Das gilt nicht nur für den einen abgelösten Wert, sondern für jeden
+// künftigen Tippfehler und jede künftige Taxonomie-Änderung.
+describe('Materialien tragen ausschliesslich deklarierte Rechtsgebiete (§17-Wurzelfix)', () => {
+  const GEBIET_IDS = new Set<string>(GEBIETE.map((g) => g.id));
+
+  it('die geerntete Zustandsdatei trägt kein undeklariertes Gebiet', () => {
+    // Der eigentliche Fundort des Fehlers: eine JSONL-Datei ausserhalb jeder
+    // Typprüfung, aus der 298 der 1557 Register-Einträge stammen.
+    const fremd = [...ladeZustand().letzterZustand.values()]
+      .filter((d) => !GEBIET_IDS.has(d.rechtsgebiet as string))
+      .map((d) => `${d.behoerde ?? '?'} ${d.nummer ?? d.titel ?? '?'} → ${d.rechtsgebiet}`);
+    expect(fremd).toEqual([]);
+  });
+
+  it('die ausgelieferte Projektion trägt kein undeklariertes Gebiet', () => {
+    const roh = JSON.parse(readFileSync('public/materialien/register.json', 'utf8')) as {
+      materialien: Array<{ key: string; rechtsgebiet: string }>;
+    };
+    const fremd = roh.materialien
+      .filter((m) => !GEBIET_IDS.has(m.rechtsgebiet))
+      .map((m) => `${m.key} → ${m.rechtsgebiet}`);
+    expect(fremd).toEqual([]);
   });
 });

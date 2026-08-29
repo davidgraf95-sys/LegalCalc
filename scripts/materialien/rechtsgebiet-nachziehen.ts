@@ -79,4 +79,46 @@ function nachziehen(pfad: string, fallback: Rechtsgebiet) {
 let n = 0;
 n += nachziehen('src/lib/materialien/botschaften.generated.ts', 'privat');
 n += nachziehen('src/lib/materialien/vernehmlassungen.generated.ts', 'oeffentlich');
-console.log(`[rg-nachzug] gesamt ${n} Wechsel — ${schreiben ? 'GESCHRIEBEN' : 'DRY-RUN, nichts geschrieben'}.`);
+console.log(`[rg-nachzug] generierte Register: ${n} Wechsel.`);
+
+// ─── Dritter Bestand: die persistierte Soft-Law-Zustandsdatei ────────────────
+//
+// `bibliothek/register/soft-law-zustand.jsonl` hält den geernteten Soft-Law-
+// Bestand fest; aus ihr speisen sich die 298 «DB»-Einträge von
+// public/materialien/register.json. Die ESTV-Adapter (adapter-estv-ks.ts,
+// adapter-estv-mwst.ts) schreiben das Rechtsgebiet beim Ernten hinein — die
+// Umstellung dort wirkt darum erst auf KÜNFTIGE Läufe. Ohne diesen Nachzug
+// bliebe der Alt-Wert im Bestand stehen (gemessen 29.8.2026: 140 Zeilen), und
+// die Projektion trüge ihn weiter in die ausgelieferte register.json.
+//
+// REGEL (dieselbe wie in den Adaptern): Absender entscheidet. ESTV =
+// Eidgenössische STEUERverwaltung — ihre Kreisschreiben, Rundschreiben und
+// MWST-Infos sind ausnahmslos Steuerdokumente. Jede andere Behörde im
+// Alt-Topf wird GEMELDET, nicht geraten (§8).
+function zustandNachziehen(pfad: string) {
+  const zeilen = readFileSync(pfad, 'utf8').split('\n');
+  let gewechselt = 0;
+  const ungeklaert: string[] = [];
+
+  const neu = zeilen.map((z) => {
+    if (!z.includes('"sozial-abgaben"')) return z;
+    const behoerde = /"behoerde":\s*"([^"]+)"/.exec(z)?.[1] ?? '?';
+    if (behoerde !== 'ESTV') {
+      ungeklaert.push(`${behoerde}: ${z.slice(0, 120)}`);
+      return z;
+    }
+    gewechselt++;
+    // Ohne Leerzeichen nach dem Doppelpunkt — die Zustandsdatei ist kompaktes
+    // JSONL; ein eingeschmuggeltes Leerzeichen wäre eine Formatabweichung
+    // gegenüber allen anderen Feldern derselben Zeile.
+    return z.replace(/"rechtsgebiet":\s*"sozial-abgaben"/, '"rechtsgebiet":"steuern"');
+  });
+
+  console.log(`[rg-nachzug] ${pfad}: ${gewechselt} Zeilen ESTV → steuern, ${ungeklaert.length} ungeklärt`);
+  for (const u of ungeklaert.slice(0, 10)) console.log(`             UNGEKLÄRT ${u}`);
+  if (schreiben) writeFileSync(pfad, neu.join('\n'), 'utf8');
+  return gewechselt;
+}
+
+n += zustandNachziehen('bibliothek/register/soft-law-zustand.jsonl');
+console.log(`[rg-nachzug] Endstand ${n} Wechsel — ${schreiben ? 'GESCHRIEBEN' : 'DRY-RUN'}.`);
