@@ -474,7 +474,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               ? <span className="inline-flex w-4 shrink-0" aria-hidden />
               : <button type="button" onClick={() => setArtOffen((v) => !v)} aria-expanded={artOffen}
                   aria-label={artOffen ? 'Artikel einklappen' : 'Artikel ausklappen'}
-                  className="inline-flex w-4 shrink-0 justify-center text-micro text-ink-300 hover:text-brass-700">{artOffen ? '▾' : '▸'}</button>}
+                  // F3/C5 (29.8.2026): ink-300 → ink-500 — einzige Affordanz
+                  // des Klapp-Knopfes, gemessen 2.28:1 hell / 2.34:1 dunkel
+                  // gegen `--paper`, unter der F2-Schwelle 3:1 für Nicht-Text.
+                  // Herleitung ausführlich am Zwilling in `SektionBaumTOC.tsx`.
+                  className="inline-flex w-4 shrink-0 justify-center text-micro text-ink-500 hover:text-brass-700">{artOffen ? '▾' : '▸'}</button>}
             {/* Anhang/Protokoll (③/⑤): «Anhang N»/«Protokoll N …» als Struktur-
                 Überschrift (font-display, Titel-Grösse) statt als Artikelnummer
                 (num/bold) — es ist ein Block-Titel, keine zitierbare Bestimmung. */}
@@ -533,7 +537,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                  auf `text-xs` (12 px) und der andere auf 11 px, zwei Grössen für eine
                  Sache (§5). Der eigene `leading-snug` fällt mit: die Zeilenhöhe kommt
                  aus der Stufe. */
-              <span data-fn-apparat className="basis-full pl-6 text-leser-fn text-ink-500">
+              /* T3 (29.8.2026): dieselbe Feinschrift-Spalte wie der Haupt-Apparat
+                 am Artikelfuss — es ist dieselbe Rolle (§5). */
+              <span data-fn-apparat className="basis-full pl-6 max-w-kleintext text-leser-fn text-ink-500">
                 {aufhebungNotiz.map((fn, i) => (
                   <span key={i}>{i > 0 && '; '}{fnTextMitLinks(fn)}</span>
                 ))}
@@ -736,8 +742,17 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   /* S2 (V2-Spalte «Fussnoten-Body 0.6875 rem / lh 1.3»): `text-leser-fn`
                      ersetzt `text-xs leading-normal` (12 px / 1.5). Fahrplan Kap. 8
                      nennt als Ist-Zustand `text-micro` 0.6875/1.2 — am Code gemessen
-                     war es `text-xs`; die Spalte gilt, der Ist-Vermerk war falsch (§7). */
-                  className="nt-anker text-leser-fn text-ink-500 target:bg-brass-100">
+                     war es `text-xs`; die Spalte gilt, der Ist-Vermerk war falsch (§7).
+
+                     T3 (Design-Qualitäts-Pass 29.8.2026): der Apparat lief auf der
+                     VOLLEN Lesespalte — gemessen @1440 am OR 640 px Kasten, längster
+                     Eintrag 108 ch/Zeile (5.88 px/ch), Einzelzeilen bis 128 ch. Auf
+                     11 px ist das keine lesbare Spalte mehr. `max-w-kleintext`
+                     (26 rem, Herleitung am Token in `tailwind.config.js`) setzt die
+                     Feinschrift auf ihr eigenes Mass; der Trenner darüber bleibt
+                     bewusst über die volle Spalte (Linien-Kanon §4b: der
+                     Artikel-Trenner trennt die SPALTE, nicht den Textblock). */
+                  className="nt-anker max-w-kleintext text-leser-fn text-ink-500 target:bg-brass-100">
                   {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
                       LM-153 (W2·17-UI-BEFUNDE-B4): die Marke im Fliesstext (FnRef,
                       ArtikelBody.tsx) ist hochgestellt UND brass-700; der Apparat-Eintrag

@@ -121,7 +121,7 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
                     <span aria-hidden className="flex-1 h-px bg-line" />
                   </div>
                 )}
-                <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>
+                <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
                   {u.items.map((e) => <SysZeile key={e.key} e={e} />)}
                 </div>
               </section>

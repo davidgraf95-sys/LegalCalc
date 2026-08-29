@@ -75,7 +75,14 @@ export function KontextGruppe({ titel, richtung, anzahl, children, hinweis, punk
         {titel}{anzahl !== undefined && <> <span className="num text-ink-500">{anzahl}</span></>}
       </h3>
       {children}
-      {hinweis && <p className="text-micro text-ink-500">{hinweis}</p>}
+      {/* T2 (Design-Qualitäts-Pass 29.8.2026): der Hinweis-Slot trägt keine
+          Halbzeile, sondern zwei bis drei ganze Sätze (Prüfstand-Angabe,
+          Methoden-Offenlegung §8) — auf der 11-px-Stufe ungedeckelt gemessen
+          92.5 ch/Zeile @1440 (`/gesetze/bund/EMRK`, «Zitierte Entscheide»),
+          über der WCAG-Decke SC 1.4.8 (80 ch). `max-w-kleintext` (Herleitung am
+          Token in `tailwind.config.js`) + eine Stufe hoch auf `text-xs`
+          (Zeilenhöhe 1.2 → 1.4). EIN Slot, alle KontextGruppen (§5). */}
+      {hinweis && <p className="max-w-kleintext text-xs text-ink-500">{hinweis}</p>}
     </div>
   );
 }

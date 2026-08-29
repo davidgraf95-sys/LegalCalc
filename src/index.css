@@ -333,8 +333,26 @@
        dem Leser-Schriftregler folgt statt zu entkoppeln; gemessen wächst sie
        dadurch von 0.62 em × 18 px = 11.2 px auf 0.72 em × 17 px = 12.2 px — die
        Marke wird also lesbarer, nicht kleiner. Gebrauch:
-       `text-[length:var(--hochgestellt)]` (Token-Escape der Schranke B2). */
-    --hochgestellt:.72em;
+       `text-[length:var(--hochgestellt)]` (Token-Escape der Schranke B2).
+
+       T5 · BODEN UNTER DEM EM-WERT (Design-Qualitäts-Pass 29.8.2026,
+       §1-nah). Der Absatz oben rechnet den Wert am FLIESSTEXT nach (0.72 em ×
+       17 px = 12.2 px) — die zweite Rolle des Tokens sitzt aber an der
+       MARGINALIE (`helpers.tsx` margLabel, Stufe `leser-rand` = 13 px), und
+       dort ergibt derselbe Faktor gemessen 9.36 px. In dieser Grösse ist das
+       Ordnungs-Suffix «bis»/«ter»/«quater» an einer Artikelnummer nicht mehr
+       sicher zu unterscheiden — und «Art. 336c» statt «Art. 336ᵗᵉʳ» ist keine
+       Kosmetik, sondern die falsche Fundstelle (§1: Rechtslogik vor Optik).
+       `max()` setzt darum EINEN Boden: 0.6875 rem = 11 px, dieselbe Stufe wie
+       `micro`/`leser-fn`, die kleinste Grösse, die das Haus überhaupt setzt.
+
+       Der em-Anteil bleibt führend und die Zusage darüber gilt unverändert:
+       ab 15.3 px Elternschrift gewinnt `0.72em` und die Marke folgt dem
+       Fliesstext wie bisher (am 17-px-Leser also unverändert 12.24 px). Nur
+       UNTER dieser Schwelle greift der Boden. Er entkoppelt die Marke auch
+       dort nicht vom Schriftregler: `rem` hängt an der Wurzel-Schriftgrösse,
+       und genau die verstellt der A−/A+-Regler der Topbar (R3). */
+    --hochgestellt:max(.72em,.6875rem);
     /* Display = Geist (Wunsch David 6.6.2026): die Serife Fraunces ist aus
        der UI entfernt; PDF-Berichte behalten ihre eingebetteten Schriften. */
     /* Rank 11: 'Geist Fallback'/'Source Serif 4 Fallback' (metrik-angepasstes
