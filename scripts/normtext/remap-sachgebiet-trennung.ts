@@ -49,7 +49,7 @@ import { join } from 'node:path';
 import {
   istMehrdeutigeOerAbteilung, normSignalSachgebiet, abteilungZuSachgebiet,
   zweierLegalAreaSignal, zweierRohSteuerSignal, kantonalSachgebiet,
-  legalAreaZuSachgebiet,
+  legalAreaZuSachgebiet, bgeBand,
 } from './entscheide-mapping';
 import { schreibeKorpus } from './entscheide-schreiben';
 import { alleSnapshots } from './snapshot-walker';
@@ -64,12 +64,8 @@ const schreiben = process.argv.slice(2).includes('--schreiben');
  *  genau das ist der Grund für diesen Lauf. */
 const ALT = 'sozial-abgaben';
 
-/** BGE-Band (römisch) aus «150 II 300» / «150_II_300» (Unterstrich-Normalisierung
- *  wie in remap-sachgebiet-j3.ts, Bug-Check B4 vom 29.8.2026). */
-function bgeBand(nummer: string): string | null {
-  const m = /\b(IV|III|II|I|V)\b/.exec(String(nummer).replace(/_/g, ' '));
-  return m ? m[1] : null;
-}
+// `bgeBand` lebt seit dem F1-Fix (29.8.2026) als EINE Quelle in
+// entscheide-mapping.ts (§5) — hier lag bis dahin eine Kopie.
 
 /** R2: die J3-Kette der 2er-Abteilung, ohne den Abteilungs-Default (der ist
  *  'oeffentlich' und kann hier nicht greifen — der Eintrag steht ja im

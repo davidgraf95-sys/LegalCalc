@@ -1051,11 +1051,29 @@ const ABTEILUNG: Record<string, Rechtsgebiet> = {
   // Sozialversicherung» etikettierte (Messung 29.8.2026: 53 Band-I- und 82
   // Band-II-BGE ohne jedes Steuer-Signal in diesem Topf).
   '2C': 'oeffentlich', '2A': 'oeffentlich', '2D': 'oeffentlich',
-  // W2-TRENNUNG (29.8.2026): 8C/9C sind die sozialrechtlichen Abteilungen
-  // (Art. 34/35 BgerR, SR 173.110.131) — nach der Trennung des Doppel-Topfs
-  // zeigen sie auf 'sozialversicherung', nie auf 'steuern'. Steuersachen liegen
-  // seit 1.1.2023 bei der III. öffentlich-rechtlichen Abteilung (Art. 31 lit. a
-  // BgerR, AS 2023 65), historisch bei der 2er — nie bei 8C/9C.
+  // W2-TRENNUNG (29.8.2026), KORRIGIERT nach Gegenprüfung Befund F1 (29.8.2026):
+  //
+  // 8C und 9C sind die beiden vormals «sozialrechtlichen» Abteilungen, seit dem
+  // 1.1.2023 amtlich III. und IV. öffentlich-rechtliche Abteilung (SR
+  // 173.110.131, Fassung 2026-02-01):
+  //   · Art. 31 BgerR = III. öffentlich-rechtliche Abteilung (Präfix 9C):
+  //     «a. Steuern und Abgaben; b. AHV; c. IV; d. EO; e. KV; f. berufliche
+  //     Vorsorge» — die Abteilung führt Steuern UND Sozialversicherung.
+  //   · Art. 32 BgerR = IV. öffentlich-rechtliche Abteilung (Präfix 8C): UV,
+  //     ALV, kantonale Sozialversicherung, Familienzulagen, Sozialhilfe,
+  //     Militärversicherung, EL — keine Steuersachen.
+  //
+  // Die frühere Fassung dieses Kommentars nannte «Art. 34/35 BgerR» und schloss
+  // «Steuersachen … nie bei 8C/9C» — beides ist amtlich widerlegt: Art. 34/35
+  // sind die zivil- bzw. strafrechtlichen Abteilungen, und Art. 31 lit. a weist
+  // die Steuern GERADE der 9C zu (AS 2023 65). Die Pauschale
+  // «9C ⇒ sozialversicherung» etikettierte darum jeden 9C-Steuerfall falsch
+  // (Messung 29.8.2026: 68 BGE des Abgabe-Bands II mit 9C-aza standen so als
+  // «Sozialversicherung», darunter reine DBG-/StHG-/MWSTG-Entscheide).
+  //
+  // Die Einträge hier bleiben der DEFAULT, der erst greift, NACHDEM die
+  // Steuer-Frage beantwortet ist: für 9C läuft `dritteOerSachgebiet` VOR dieser
+  // Tabelle (Kette in mappeEntscheidOCL). 8C ist unverändert eindeutig.
   '8C': 'sozialversicherung', '9C': 'sozialversicherung',
 };
 export function abteilungZuSachgebiet(docket: string): Rechtsgebiet | null {
@@ -1155,6 +1173,103 @@ const ZWEIER_STEUER_ROH = /steuergesetz|\bstg\b/i;
 export function zweierRohSteuerSignal(zitierteNormen: Iterable<string>): Rechtsgebiet | null {
   for (const z of zitierteNormen) if (ZWEIER_STEUER_ROH.test(String(z))) return 'steuern';
   return null;
+}
+
+// ─── III. öffentlich-rechtliche Abteilung (9C): Steuern UND Sozialversicherung ──
+//
+// ANLASS: Gegenprüfung 29.8.2026, Befund F1. Die Zeile `'9C': 'sozialversicherung'`
+// war eine Pauschale. Nach Art. 31 BgerR (SR 173.110.131, Fassung 2026-02-01)
+// führt die III. öffentlich-rechtliche Abteilung «a. Steuern und Abgaben»
+// NEBEN AHV/IV/EO/KV/beruflicher Vorsorge — sie ist damit, genau wie die 2er,
+// eine GEMISCHTE Abteilung und braucht dieselbe Behandlung: erst die
+// Sachfrage klären, dann den Default anwenden.
+const DRITTE_OER_ABTEILUNG = new Set(['9C']);
+export function istGemischteDritteOerAbteilung(docket: string): boolean {
+  const m = /^(\d[A-Z])/.exec(String(docket).trim());
+  return m ? DRITTE_OER_ABTEILUNG.has(m[1]) : false;
+}
+
+/** BGE-Band (römisch) aus der Sammlungs-Nummer «150 II 300» / «150_II_300».
+ *  Unterstriche werden normalisiert (Bug-Check B4, 29.8.2026: `_` ist ein
+ *  Wortzeichen, `\b` feuerte in der Unterstrich-Form nie — Einträge fielen
+ *  still aus dem Scope). Alt-Bände «Ia»/«Ib» (vor 1995) matcht das Muster
+ *  bewusst nicht — sie sind nicht im Korpus.
+ *  EINE Quelle (§5): lag bis zum F1-Fix (29.8.2026) als Kopie in
+ *  remap-sachgebiet-j3.ts UND remap-sachgebiet-trennung.ts. */
+export function bgeBand(nummer: string): string | null {
+  const m = /\b(IV|III|II|I|V)\b/.exec(String(nummer).replace(/_/g, ' '));
+  return m ? m[1] : null;
+}
+
+// Sozialversicherungs-Erlasse (SR 830–838). Ihre Mit-Zitierung macht ein
+// Steuer-Signal auf der 9C MEHRDEUTIG: die AHV-Beiträge Selbstständiger werden
+// nach Art. 23 AHVV aus der Steuermeldung der kantonalen Steuerbehörde
+// abgeleitet, ein echter AHV-Beitragsfall zitiert darum regelmässig das DBG.
+// GEMESSEN am Bestand (29.8.2026): von 69 Einträgen der 9C mit Steuer-Signal
+// tragen 16 zusätzlich einen dieser Erlasse — die Gegenbeispiele sind real und
+// nicht vernachlässigbar, darum der Guard (und nicht die rohe Signal-Kette).
+const SV_ERLASS_KEYS: ReadonlySet<string> = new Set([
+  'ATSG', 'ATSV', 'AHVG', 'AHVV', 'IVG', 'IVV', 'ELG', 'BVG', 'BVV2',
+  'KVG', 'KVV', 'UVG', 'UVV', 'MVG', 'EOG', 'FAMZG', 'AVIG', 'AVIV',
+]);
+export function hatSozialversicherungsErlass(normKeys: Iterable<string>): boolean {
+  for (const k of normKeys) if (SV_ERLASS_KEYS.has(String(k).toUpperCase())) return true;
+  return false;
+}
+
+/** Steuer-Signalkette der 9C — dieselben drei Signale wie auf der 2er, aber NUR
+ *  mit Steuer-Ausgang. Ein vorrangiges NORM_SIGNAL nach 'oeffentlich' (AIG,
+ *  AsylG, BewG, BGFA) heisst «kein Steuerfall» und liefert hier null; der
+ *  Aufrufer fällt dann auf den Abteilungs-Default. */
+export function dritteSteuerSignal(
+  normKeys: Iterable<string>,
+  zitierteNormen: Iterable<string>,
+  legalArea: string | null | undefined,
+): Rechtsgebiet | null {
+  if (normSignalSachgebiet(normKeys) === 'steuern') return 'steuern';
+  return zweierRohSteuerSignal(zitierteNormen) ?? zweierLegalAreaSignal(legalArea);
+}
+
+/**
+ * Sachgebiet eines Entscheids der III. öffentlich-rechtlichen Abteilung (9C).
+ * Liefert IMMER ein Gebiet — die Funktion ersetzt für 9C den Abteilungs-Default.
+ *
+ * Vorrang des BGE-BANDES (amtliche Systematik der Sammlung, §7): Band II ist
+ * das Band für Verwaltungs- und Abgaberecht, Band V das Sozialrechts-Band. Ein
+ * vom Bundesgericht selbst in Band II publizierter Entscheid ist nach eben
+ * dieser amtlichen Einordnung KEIN Sozialversicherungsfall — der Band schlägt
+ * darum den SV-Erlass-Guard. Empirisch bestätigt an allen 68 Band-II-Einträgen
+ * mit 9C-aza (29.8.2026): auch die mit BVG-/ATSG-/AHVG-Zitat sind Steuerfälle
+ * (BGE 150 II 20 «Art. 32 Abs. 2 DBG, Erneuerungsfonds», BGE 150 II 409
+ * «Beschwerdelegitimation … direkte Bundessteuer», BGE 151 II 345 «Art. 85
+ * MWSTG»). Band II ohne jedes Steuer-Signal → 'oeffentlich' (Verwaltungsrecht),
+ * nie 'sozialversicherung'.
+ *
+ * DEKLARIERTE GRENZE (§8, kein stiller Zustand): BGE 149 II 381 (9C_259/2023,
+ * Parteientschädigung bei «Überarztung», ATSG/KVG) ist der bekannte Grenzfall —
+ * inhaltlich Krankenversicherungsrecht, vom Bundesgericht aber in Band II
+ * publiziert und ohne Steuer-Signal, landet damit auf 'oeffentlich'. Der
+ * amtlichen Bandzuteilung zu folgen ist hier bewusst gewählt: die Alternative
+ * wäre eine redaktionelle Einzelfall-Zuordnung, und die ist auf diesem Pfad
+ * ausgeschlossen (§2 — deterministisch, keine Kuration).
+ */
+export function dritteOerSachgebiet(opts: {
+  normKeys: Iterable<string>;
+  zitierteNormen: Iterable<string>;
+  legalArea: string | null | undefined;
+  /** BGE-Band (röm.) oder null für ein bger-Urteil ohne Sammlungs-Band. */
+  band: string | null;
+}): Rechtsgebiet {
+  const normKeys = [...opts.normKeys];
+  const steuer = dritteSteuerSignal(normKeys, opts.zitierteNormen, opts.legalArea);
+  // Band V: Sozialrechts-Band der amtlichen Sammlung — eindeutig.
+  if (opts.band === 'V') return 'sozialversicherung';
+  // Band II: Verwaltungs-/Abgaberecht — nie Sozialversicherung.
+  if (opts.band === 'II') return steuer ?? 'oeffentlich';
+  // Sonst (bger-Urteil, BGE Band I/III/IV): Steuer-Signal nur, wenn KEIN
+  // Sozialversicherungs-Erlass mitzitiert ist (Art.-23-AHVV-Fälle, s.o.).
+  if (steuer && !hatSozialversicherungsErlass(normKeys)) return steuer;
+  return 'sozialversicherung';
 }
 
 import type { Gerichtstyp } from '../../src/lib/rechtsprechung/typen';

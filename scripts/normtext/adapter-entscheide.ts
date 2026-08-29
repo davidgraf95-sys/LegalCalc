@@ -23,6 +23,7 @@ import {
   zweierLegalAreaSignal, zweierRohSteuerSignal,
   gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe,
   istMehrdeutigeOerAbteilung, normSignalSachgebiet, normKeysVonSnapshot,
+  istGemischteDritteOerAbteilung, dritteOerSachgebiet, bgeBand,
 } from './entscheide-mapping';
 
 const API = 'https://mcp.opencaselaw.ch/api';
@@ -398,6 +399,20 @@ export function mappeEntscheidOCL(
           ?? zweierRohSteuerSignal(Array.isArray(det.statutes) ? det.statutes : [])
           ?? zweierLegalAreaSignal(det.legal_area))
         : null)
+    // F1 (Gegenprüfung 29.8.2026): Die III. öffentlich-rechtliche Abteilung (9C)
+    // führt nach Art. 31 lit. a BgerR AUCH «Steuern und Abgaben» — ihr
+    // Abteilungs-Default 'sozialversicherung' darf darum erst greifen, NACHDEM
+    // die Steuerfrage beantwortet ist. `band: null`, weil hier ein bger-Urteil
+    // klassiert wird; den Sammlungs-Band bringt der BGE-Pfad ein
+    // (holeBgeLeitentscheid), wo er dem Abteilungs-Signal vorgeht.
+    ?? (istGemischteDritteOerAbteilung(docket)
+        ? dritteOerSachgebiet({
+            normKeys: signalKeys,
+            zitierteNormen: Array.isArray(det.statutes) ? det.statutes : [],
+            legalArea: det.legal_area,
+            band: null,
+          })
+        : null)
     ?? abteilungZuSachgebiet(docket)        // BGer-Abteilung (z.B. 5A→privat) ist präziser …
     ?? kantonalSachgebiet(docket)           // … kantonale Aktenzeichen-Präfixe …
     ?? legalAreaZuSachgebiet(det.legal_area) // … als die grobe OCL legal_area (erst Fallback).
@@ -738,7 +753,31 @@ export async function holeBgeLeitentscheid(
   }
 
   const roemHint = bgeRoemischSachgebiet(String(det.docket_number ?? ''));
-  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: azaSnap?.sachgebiet ?? roemHint ?? undefined });
+  // F1 (Gegenprüfung 29.8.2026) — BAND-VORRANG bei 9C-aza:
+  // Der Hint nimmt sonst ungeprüft das Sachgebiet des unterliegenden Urteils.
+  // Für die III. öffentlich-rechtliche Abteilung (9C) ist das zu grob: sie führt
+  // nach Art. 31 lit. a BgerR Steuern UND Sozialversicherung, während der BGE-BAND
+  // die amtliche Einordnung der Sammlung selbst trägt (II = Verwaltungs-/Abgabe-,
+  // V = Sozialrecht). Bisher zog ein 9C-aza mit Default 'sozialversicherung' alle
+  // 68 Band-II-Leitentscheide mit — darunter reine DBG-/StHG-/MWSTG-Entscheide.
+  // Darum: bei 9C-aza entscheidet `dritteOerSachgebiet` MIT dem Band, aus den
+  // Normen beider Seiten (Sammlungs-Auszug + unterliegendes Urteil).
+  const azaAbteilungIst9C = istGemischteDritteOerAbteilung(String(azaAz ?? ''));
+  const bgeAzaHint: Rechtsgebiet | null = azaAbteilungIst9C
+    ? dritteOerSachgebiet({
+        normKeys: new Set<string>([
+          ...statutesZuNormKeys(Array.isArray(det.statutes) ? det.statutes : []),
+          ...(azaSnap?.normKeys ?? []),
+        ]),
+        zitierteNormen: [
+          ...(Array.isArray(det.statutes) ? det.statutes.map(String) : []),
+          ...(azaSnap?.zitierteNormen ?? []),
+        ],
+        legalArea: det.legal_area,
+        band: bgeBand(String(det.docket_number ?? det.bge_reference ?? '')),
+      })
+    : (azaSnap?.sachgebiet ?? null);
+  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeAzaHint ?? roemHint ?? undefined });
   if (!basis) return null;
   basis.gerichtName = 'Bundesgericht';
 

@@ -10,7 +10,7 @@ import {
   teileDispositivInline, extrahiereRubrum, azaAusBgeKopf, bgeRoemischSachgebiet,
   type OclDecision,
 } from '../../scripts/normtext/adapter-entscheide';
-import { statutesZuNormKeys, abteilungZuSachgebiet, legalAreaZuSachgebiet, istMehrdeutigeOerAbteilung, normSignalSachgebiet, zweierLegalAreaSignal, zweierRohSteuerSignal } from '../../scripts/normtext/entscheide-mapping';
+import { statutesZuNormKeys, abteilungZuSachgebiet, legalAreaZuSachgebiet, istMehrdeutigeOerAbteilung, normSignalSachgebiet, zweierLegalAreaSignal, zweierRohSteuerSignal, istGemischteDritteOerAbteilung, dritteOerSachgebiet, hatSozialversicherungsErlass, bgeBand } from '../../scripts/normtext/entscheide-mapping';
 
 const FIX = join(process.cwd(), 'src', 'tests', 'fixtures');
 const lade = (f: string) => JSON.parse(readFileSync(join(FIX, f), 'utf8'));
@@ -111,8 +111,9 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     // Signal (DBG/StHG/…) bzw. legal_area, nicht mehr die Abteilungs-Pauschale.
     expect(abteilungZuSachgebiet('2C_1/2024')).toBe('oeffentlich');
     // W2-TRENNUNG (29.8.2026, fachliche Änderung deklariert §6.3): 8C/9C sind die
-    // sozialrechtlichen Abteilungen — sie zeigen auf 'sozialversicherung', nicht
-    // mehr auf den Doppel-Topf 'sozial-abgaben'.
+    // vormals sozialrechtlichen Abteilungen — sie zeigen auf 'sozialversicherung',
+    // nicht mehr auf den Doppel-Topf 'sozial-abgaben'. Für 9C ist das seit der
+    // F1-Korrektur nur noch der DEFAULT nach der Steuerfrage (s.u.).
     expect(abteilungZuSachgebiet('9C_1/2024')).toBe('sozialversicherung');
     expect(abteilungZuSachgebiet('8C_1/2024')).toBe('sozialversicherung');
     // J3: BGFA als Norm-Signal → öffentlich (Anlassfall BGE 150 II 300), mit
@@ -136,6 +137,73 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     expect(legalAreaZuSachgebiet('Civil law')).toBe('privat');
     expect(legalAreaZuSachgebiet('criminal')).toBe('straf');
     expect(legalAreaZuSachgebiet(null)).toBeNull();
+  });
+
+  // ── F1 (Gegenprüfung 29.8.2026): III. öffentlich-rechtliche Abteilung (9C) ──
+  // Amtliche Grundlage, verifiziert am AKN-XML der Konsolidierung 2026-02-01
+  // (SR 173.110.131): Art. 31 lit. a «Steuern und Abgaben» NEBEN lit. b–f
+  // AHV/IV/EO/KV/berufliche Vorsorge. 9C ist damit eine GEMISCHTE Abteilung;
+  // die frühere Pauschale «9C ⇒ sozialversicherung» war falsch.
+  describe('9C: Steuern und Sozialversicherung in einer Abteilung', () => {
+    it('erkennt die 9C als gemischte Abteilung, 8C aber nicht', () => {
+      expect(istGemischteDritteOerAbteilung('9C_391/2023')).toBe(true);
+      expect(istGemischteDritteOerAbteilung('8C_510/2026')).toBe(false);
+      expect(istGemischteDritteOerAbteilung('2C_63/2023')).toBe(false);
+    });
+
+    it('BGE-Band schlägt das Abteilungs-Signal (amtliche Systematik der Sammlung)', () => {
+      // Band II = Verwaltungs-/Abgaberecht ⇒ NIE 'sozialversicherung', auch
+      // wenn ein Sozialversicherungs-Erlass mitzitiert ist. Anlassfall
+      // BGE 150 II 20 (9C_391/2023): Regeste «Art. 32 Abs. 2 DBG, steuerliche
+      // Behandlung des Erneuerungsfonds» — zitiert das BVG, ist Steuerrecht.
+      expect(dritteOerSachgebiet({
+        normKeys: ['BGG', 'BV', 'BVG', 'DBG', 'STHG', 'ZGB'],
+        zitierteNormen: [], legalArea: 'tax', band: 'II',
+      })).toBe('steuern');
+      // Band II ohne jedes Steuer-Signal → 'oeffentlich' (Verwaltungsrecht),
+      // nie 'sozialversicherung' (Anlassfall BGE 150 II 153, URG-Spruchgebühr).
+      expect(dritteOerSachgebiet({
+        normKeys: ['BGG', 'URG', 'URV', 'VWVG'],
+        zitierteNormen: [], legalArea: null, band: 'II',
+      })).toBe('oeffentlich');
+      // Band V = Sozialrechts-Band ⇒ immer 'sozialversicherung'.
+      expect(dritteOerSachgebiet({
+        normKeys: ['AHVG', 'DBG'], zitierteNormen: [], legalArea: 'tax', band: 'V',
+      })).toBe('sozialversicherung');
+    });
+
+    it('ohne Band-Signal: Steuer nur ohne mitzitierten Sozialversicherungs-Erlass', () => {
+      // Reiner Steuerfall der 9C (bger, kein Sammlungs-Band).
+      expect(dritteOerSachgebiet({
+        normKeys: ['DBG', 'STHG'], zitierteNormen: [], legalArea: 'tax', band: null,
+      })).toBe('steuern');
+      // GEGENBEISPIEL, das den Guard trägt: die AHV-Beiträge Selbstständiger
+      // werden nach Art. 23 AHVV aus der Steuermeldung abgeleitet — ein echter
+      // AHV-Beitragsfall zitiert darum das DBG. Gemessen 29.8.2026: 16 der 69
+      // 9C-Einträge mit Steuer-Signal tragen zusätzlich einen SV-Erlass.
+      expect(dritteOerSachgebiet({
+        normKeys: ['AHVG', 'AHVV', 'DBG', 'IVG'], zitierteNormen: [], legalArea: 'tax', band: null,
+      })).toBe('sozialversicherung');
+      // Ohne jedes Steuer-Signal bleibt es beim Abteilungs-Default.
+      expect(dritteOerSachgebiet({
+        normKeys: ['ATSG', 'KVG'], zitierteNormen: [], legalArea: null, band: null,
+      })).toBe('sozialversicherung');
+      // Roh-«StG» trägt auch auf der 9C (kantonale Steuergesetze ohne Register-Key).
+      expect(dritteOerSachgebiet({
+        normKeys: [], zitierteNormen: ['Art. 181 Abs. 2 STG'], legalArea: null, band: null,
+      })).toBe('steuern');
+    });
+
+    it('SV-Erlass-Guard und Bandparser', () => {
+      expect(hatSozialversicherungsErlass(['DBG', 'STHG'])).toBe(false);
+      expect(hatSozialversicherungsErlass(['DBG', 'ahvg'])).toBe(true);
+      expect(hatSozialversicherungsErlass(['ATSG'])).toBe(true);
+      // Unterstrich-Normalisierung (Bug-Check B4): BGE-Keys tragen «150_II_20».
+      expect(bgeBand('150 II 20')).toBe('II');
+      expect(bgeBand('150_II_20')).toBe('II');
+      expect(bgeBand('151 V 1')).toBe('V');
+      expect(bgeBand('9C_391/2023')).toBeNull();
+    });
   });
   // C2-1: Disambiguierung der mehrdeutigen II. öffentlich-rechtlichen Abteilung.
   it('2A/2C/2D sind mehrdeutig (Steuern UND Migration), eindeutige Abteilungen nicht', () => {
