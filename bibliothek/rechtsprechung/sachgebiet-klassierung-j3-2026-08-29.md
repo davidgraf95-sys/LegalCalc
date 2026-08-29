@@ -91,10 +91,13 @@ Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
 - **Q-J3-2 · `STG` ist totes Signal:** steht in `NORM_SIGNAL`, erzeugt aber nie
   einen Treffer, weil `STG` in `ABK_AUSSCHLUSS` liegt (föderal/kantonal mehrdeutig).
   Bewusst belassen (Dokumentation der Absicht), Wirkung null.
-- **Q-J3-3 · `sozial-abgaben` bleibt ein Doppel-Topf:** Steuern & Abgaben und
-  Sozialversicherung teilen ein Sachgebiet (1619 Einträge nach Regen). Eine Trennung
-  wäre eine Taxonomie-Änderung über Rechtsprechung UND /gesetze (SSoT) — Fahrplan
-  sagt «ggf.», Entscheid liegt bei David (§Y-Vorlage, siehe Fahrplan §6/J3).
+- **Q-J3-3 · ERLEDIGT 29.8.2026 — der Doppel-Topf ist getrennt:** ~~Steuern & Abgaben
+  und Sozialversicherung teilen ein Sachgebiet (1619 Einträge nach Regen).~~ David hat
+  am 29.8.2026 im Chat entschieden («ja trennen»); gebaut als **W2-TRENNUNG** (Branch
+  `feat/w2-sachgebiet-trennung`). Der Wert `sozial-abgaben` existiert nicht mehr — an
+  seine Stelle treten `steuern` («Steuern & Abgaben») und `sozialversicherung`
+  («Sozialversicherung»), in Rechtsprechung UND /gesetze (eine Taxonomie, §5).
+  Details siehe Abschnitt «Trennung des Doppel-Topfs» unten.
 - **Q-J3-8 · Re-Map-Signal breiter als Live-Signal (Bug-Check B2, 29.8.2026):**
   Der Re-Map speist die Kette aus den vollen `normKeys` (statutes + Fliesstext),
   der Live-Import BEWUSST nur aus den statutes (adapter-entscheide.ts, «schmale
@@ -142,3 +145,132 @@ Sachgebiets-Label (Leser-Köpfe, EntscheidZeile, EntscheidKarte).
 
 **Abnahme-Status:** maschinell umgesetzt, fachliche Abnahme der Klassierungs-Regeln
 durch David offen (§7); UI etikettiert das Sachgebiet seit J3 als «maschinell».
+
+## Trennung des Doppel-Topfs (W2-TRENNUNG, 29.8.2026)
+
+**Anlass:** Entscheid David im Chat, 29.8.2026, wörtlich «ja trennen» — auf die
+§Y-Vorlage Ziff. 0 des `fahrplaene/FAHRPLAN-UI-NAVIGATION.md` hin. Erledigt damit
+Q-J3-3.
+
+**Was sich geändert hat:** Die Sach-Achse `'sozial-abgaben'` («Steuern,
+Sozialversicherung & Abgaben») ist ersatzlos aus dem Typ `Rechtsgebiet` entfernt.
+An ihre Stelle treten zwei Achsen: `'steuern'` («Steuern & Abgaben») und
+`'sozialversicherung'` («Sozialversicherung»). Die Achse ist geteilt (§5) — sie
+trägt sowohl `ErlassRegistereintrag.rechtsgebiet` als auch
+`EntscheidSnapshot.sachgebiet` und das Rechtsgebiet der Materialien.
+
+### Zuordnungsregeln (deterministisch, §2 — keine Einzelfall-Kuration)
+
+**Gesetze — die amtliche SR-Systematik entscheidet.** Quelle: Fedlex-Rechts-
+taxonomie, abgefragt am 29.8.2026 über <https://fedlex.data.admin.ch/sparqlendpoint>
+(`skos:notation` vom Typ `id-systematique` → `skos:prefLabel@de`):
+
+| SR-Gruppe | amtlicher Titel | Ziel | Erlasse |
+|---|---|---|---|
+| 64 | Steuern | `steuern` | 9 (DBG, StHG, MWSTG, MWSTV, StG, VStG, VStV, QStV, BKV) |
+| 830–837 | Sozialversicherung (830 ATSG · 831 AHV/IV/BV · 832 Kranken-/Unfall · 833 Militär · 834 EO · 836 FamZ · 837 ALV) | `sozialversicherung` | 29 |
+| 822 / 823 | Arbeitnehmerschutz / Arbeitsmarkt und Arbeitsbeschaffung | `oeffentlich` | 7 (ArG, ArGV 1–5, EntsG) |
+
+Die dritte Zeile ist die einzige Stelle, an der die Trennung mehr tut als
+umbenennen, und sie ist bewusst so: Das Arbeitsgesetz und seine fünf Verordnungen
+sowie das Entsendegesetz sind öffentlich-rechtlicher Arbeitnehmerschutz — weder
+Steuer- noch Sozialversicherungsrecht. Sie sassen im Doppel-Topf nur, weil er der
+«Arbeit & Soziales»-Sammelplatz war. Unter dem Etikett «Sozialversicherung» wären
+sie für einen Juristen sichtbar falsch einsortiert; `oeffentlich` ist die Rubrik,
+in der Verwaltungsrecht ohnehin steht. Ihr `rang` wurde als geschlossener Block
+119–125 ans Ende der öffentlich-rechtlichen Reihe gesetzt (reine Anzeige-Ordnung,
+§3 — ihre alten Ränge 6/30/61/67–69/76 hätten sie zufällig weit nach oben
+gespült).
+
+**Rechtsprechung — Abteilung und Sammlungs-Band entscheiden.**
+
+| Regel | Grundlage | Ziel |
+|---|---|---|
+| BGer-Abteilung 8C / 9C | sozialrechtliche Abteilungen, Art. 34/35 BgerR (SR 173.110.131) | `sozialversicherung` |
+| BGE-Band V | Sozialrechts-Band der amtlichen Sammlung | `sozialversicherung` |
+| kant. Präfixe EL·IV·UV·ALV·EO·AHV·BV·KV·FZ, BS AL·AH·MV·SG | `KANT_PRAEFIX` (unverändert, Q-J3-4 beachten) | `sozialversicherung` |
+| `NORM_SIGNAL` DBG·StHG·MWStG·StG·VStG | J3-Kette der 2er-Abteilung | `steuern` |
+| Roh-«StG»/«Steuergesetz», gefilterte `legal_area` | J3-Kette (F2/F1) | `steuern` |
+| `legal_area` tax/steuer bzw. social/sozial (Fallback) | OCL-Feld | `steuern` / `sozialversicherung` |
+
+### §7-Abweichung vom Auftragswortlaut (offengelegt)
+
+Der Bau-Auftrag verlangte, `NORM_SIGNAL` um Sozialversicherungs-Erlasse zu
+ergänzen (AHVG, IVG, UVG, ATSG, KVG, BVG, ELG, AVIG → `sozialversicherung`). Das
+ist **bewusst nicht umgesetzt.** `NORM_SIGNAL` wird ausschliesslich in der Kette
+der II. öffentlich-rechtlichen Abteilung ausgewertet (`istMehrdeutigeOerAbteilung`,
+2A/2C/2D), und dort ist Sozialversicherung nach Art. 30/34/35 BgerR gar keine
+Zuständigkeit. Ein solches Signal stellte exakt den Defekt wieder her, den die
+J3-Gegenprüfung am 29.8.2026 als Befund B2 beseitigt hat: BGE 151 II 726
+(2C_565/2022, Verbleiberecht nach FZA) nennt das AHVG nur als Altersmassstab und
+wurde davon fälschlich als Sozialversicherungsfall etikettiert. Die echten
+Sozialversicherungsfälle klassieren die Abteilungs-Zeile (8C/9C) und das Band V —
+dort, wo die amtliche Geschäftsverteilung sie führt. Am Unit-Test festgenagelt
+(`normSignalSachgebiet(['AHVG'])` muss `null` bleiben).
+
+### Bestands-Regen
+
+`scripts/normtext/remap-sachgebiet-trennung.ts` (Scope: **nur** Snapshots mit
+`sachgebiet === 'sozial-abgaben'`; alles Übrige byte-gleich). Ergebnis:
+
+- 1267 Snapshots gewechselt → **40 `steuern` · 1227 `sozialversicherung`**,
+  **0 ungelöst**.
+- Register: 1619 Alt-Einträge → **79 `steuern` · 1540 `sozialversicherung`**
+  (BGE-Einträge ziehen je einen `__voll`-Verweis mit). Einträge vorher = nachher
+  = **6341**.
+- Fixpunkt bewiesen: zweiter DRY-RUN meldet 0 Einträge im Alt-Topf.
+- Diff-Reinheit belegt (Wort-Diff): in Snapshots und `register.json`
+  ausschliesslich `sachgebiet`-Werte geändert, kein weiteres Byte.
+
+Gesetze-Verteilung nachher (Bund): privat 30 · straf 11 · prozess 12 · schkg 5 ·
+oeffentlich 105 · **steuern 9** · **sozialversicherung 29** · international 37.
+
+Materialien: `scripts/materialien/rechtsgebiet-nachziehen.ts` rechnet die
+abgeleitete Rechtsgebiets-Spalte der beiden generierten Register offline mit der
+identischen Generator-Regel nach — 331 Wechsel (208 `sozialversicherung`, 91
+`steuern`, 32 `oeffentlich`), Fixpunkt bewiesen, Wort-Diff belegt: nur
+`rechtsgebiet`-Werte. Bewusst OHNE Fedlex-Netzlauf, sonst mischte sich die
+Tagesfrische ins Diff und die Verhaltensneutralität wäre nicht mehr beweisbar (§6).
+
+### Alt-URL-Kompatibilität
+
+`ALT_GEBIET_ALIAS` (in `src/lib/normtext/register.ts`) bildet den abgelösten Wert
+auf die **Vereinigung** seiner Nachfolger ab; `filterEntscheide` filtert darüber.
+Eine gespeicherte Facetten-URL `?rg=sozial-abgaben` zeigt damit exakt dieselbe
+Trefferliste wie vor der Trennung. Verworfen wurden: auf einen der beiden umleiten
+(verlöre die Hälfte der Treffer, §8) und den Filter still fallen lassen (zeigte
+plötzlich das ganze Korpus). Der Alias ist reine Eingabe-Toleranz — er wird nie
+geschrieben, erscheint in keiner Facette und in keinem Zähler.
+
+### Quirks der Trennung
+
+- **Q-TR-1 · CO2-Gesetz ist die eine offene Flanke.** `CO2_GESETZ` (SR 641.71)
+  steht als `oeffentlich`. Es war **nie** im Doppel-Topf, fällt aber unter die
+  SR-Gruppe 64 «Steuern» — das Tor `normtext-register.test.ts` führt es darum als
+  NAMENTLICHE Ausnahme (gefunden bei der Rot-Probe des Tors). Fedlex ordnet es
+  641 zu, weil es die CO2-Abgabe trägt; sein Gegenstand ist Klima- und Umweltrecht,
+  die Abgabe nur ein Instrument darin. Umklassierung wäre eine eigene fachliche
+  Frage → **wartet auf David.**
+- **Q-TR-2 · Sozialhilfe läuft unter «Sozialversicherung» mit.** Die Abteilung 8C
+  führt auch Sozialhilfe-Beschwerden; solche Entscheide tragen jetzt
+  `sozialversicherung` (Beleg: BGE 146 I 1, Genfer Sozialhilfegesetz, aza
+  8C_444/2019). Fachlich ist Sozialhilfe keine Sozialversicherung. Die
+  Abteilungs-Regel ist trotzdem die ehrlichste verfügbare — der Alternativweg wäre
+  redaktionelle Einzelfall-Kuration (per J3-Spec gesperrt). Das UI etikettiert das
+  Sachgebiet ohnehin als «maschinell» (§8).
+- **Q-TR-3 · Ein Steuer-Norm-Signal schlägt eine Sozialversicherungs-`legal_area`.**
+  Beleg BGE 147 II 248 (2C_404/2020): `legal_area` ist `social_insurance`, die
+  Regeste betrifft aber Art. 9 Abs. 2 lit. h StHG (Abzug von Krankheits- und
+  Unfallkosten) — das StHG-Signal gewinnt, das Ergebnis `steuern` ist richtig. Die
+  deklarierte Prioritätsordnung (Norm-Signal vor `legal_area`) ist hier belegt
+  besser als die Drittextraktion.
+- **Q-TR-4 · Der Alt-Wert lebt in Kommentaren weiter.** In `entscheide-mapping.ts`
+  und `adapter-entscheide.ts` stehen weiterhin Vorkommen von `'sozial-abgaben'` —
+  ausnahmslos in historischen Begründungs-Kommentaren (J3-Herleitung, B2-Befund).
+  Ein Grep auf den String ist darum kein Nachweis einer Rest-Verwendung; die
+  belastbare Prüfung ist der Typ (`Rechtsgebiet` kennt den Wert nicht mehr) plus
+  das Tor «kein Erlass trägt mehr den abgelösten Wert».
+
+**Abnahme-Status:** maschinell umgesetzt, fachliche Abnahme der Trennungs-Regeln
+durch David offen (§7). Adversariale Gegenprüfung ausstehend — `check:gegenpruefung`
+steht rot, wie es soll.

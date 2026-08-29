@@ -282,7 +282,7 @@ präzisiert, nie autonom gekippt.
   Runde 1 «widerlegt» → F1–F3 eingebaut, Runde 2 siehe Bibliothek); Badge/Titel «maschinell zugeordnet» im
   Entscheid-Leser + Listen (§8). Regelwerk + Quirks: `bibliothek/rechtsprechung/`
   `sachgebiet-klassierung-j3-2026-08-29.md`. Trennung «Steuern & Abgaben» von
-  «Sozialversicherung»: NICHT gebaut → §Y (Taxonomie über Rechtsprechung UND /gesetze).
+  «Sozialversicherung»: ~~NICHT gebaut~~ **ENTSCHIEDEN + GEBAUT 29.8.2026** (§Y Ziff. 0).
 - **Rest-Posten (Bug-Check 29.8.2026, B2):** Signal-Quelle vereinheitlichen —
   Live-Import (schmale statutes) vs. Re-Map (volle normKeys) klassieren 29/214
   Scope-Fälle aus verschiedener Eingabe (Quirk Q-J3-8 der Bibliotheks-Doku);
@@ -362,11 +362,25 @@ präzisiert, nie autonom gekippt.
 
 ## §Y · David-Entscheide (NICHT autonom bauen — als 3-Zeilen-Fragen vorlegen)
 
-0. **J3-Restfrage — «Steuern & Abgaben» von «Sozialversicherung» trennen?** *(29.8.2026)*:
-   Ein Sachgebiet trägt heute beide (nach J3-Regen 1725 Einträge). Trennung = neues
-   Rechtsgebiet in der geteilten Taxonomie (Rechtsprechung UND /gesetze, SSoT §5) —
-   deterministisch machbar (8C/9C/Band V → Sozialversicherung; DBG/StHG-Signal → Steuern),
-   aber Produktentscheid. Empfehlung: trennen, sobald der Kantons-Korpus wächst.
+0. **J3-Restfrage — «Steuern & Abgaben» von «Sozialversicherung» trennen?** *(29.8.2026)*
+   — ~~offen~~ **ENTSCHIEDEN 29.8.2026, David im Chat: «ja trennen»** → **GEBAUT** (W2-TRENNUNG,
+   Branch `feat/w2-sachgebiet-trennung`). Zwei Achsen statt einer: `steuern` («Steuern &
+   Abgaben») und `sozialversicherung` («Sozialversicherung»), in Rechtsprechung UND /gesetze
+   (eine Taxonomie, SSoT §5).
+   Deterministische Regeln, keine Einzelfall-Kuration: Gesetze nach amtlicher
+   SR-Systematik (Fedlex-Rechtstaxonomie, SPARQL-Abruf 29.8.: SR 64 «Steuern» → steuern ·
+   SR 83 «Sozialversicherung» → sozialversicherung · SR 82 «Arbeit» → oeffentlich);
+   Rechtsprechung über 8C/9C + BGE-Band V + kantonale Sozialversicherungs-Präfixe →
+   sozialversicherung, Steuer-Norm-Signal/Roh-StG/legal_area → steuern.
+   Bestands-Regen `scripts/normtext/remap-sachgebiet-trennung.ts`: 1267 Snapshots /
+   1619 Register-Einträge (79 steuern · 1540 sozialversicherung), Fixpunkt bewiesen,
+   Einträge vorher = nachher = 6341. Gesetze: 45 Erlasse (9 · 29 · 7). Alt-URLs
+   `?rg=sozial-abgaben` filtern über `ALT_GEBIET_ALIAS` auf die Vereinigung (§8).
+   **§7-Abweichung offengelegt:** Sozialversicherungs-Erlasse NICHT in `NORM_SIGNAL` —
+   die Liste wirkt nur auf der 2er-Abteilung, wo Sozialversicherung keine Zuständigkeit
+   ist (Art. 30/34/35 BgerR); ein solches Signal stellte den B2-Befund wieder her.
+   **Offen (David):** CO2-Gesetz (SR 641.71) steht als `oeffentlich`, war nie im Topf —
+   Umklassierung nach `steuern` wäre eigene fachliche Frage (Lenkungsabgabe vs. Klimarecht).
 1. **A6-Präzisierung Werkzeug-Chip** *(#1+#45)*: matcht die Query einen Katalog-Titel stark,
    den EINEN besten Werkzeug-Treffer als Chip in die Sprung-Zeile heben — Gruppenordnung
    darunter unverändert. (A6-Rangfolge ist Davids Entscheid vom 5.7. — Präzisierung, kein Kippen.)

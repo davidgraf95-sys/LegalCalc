@@ -652,19 +652,15 @@ export function azaAusBgeKopf(fullText: string | undefined): string | null {
   return k ? k[1].replace(/\s+/, '_') : null;
 }
 
-/** BGE-Band (römisch) → Sachgebiet: I/II öffentl., III Zivil→privat, IV straf,
- *  V Sozialversicherung (W2-TRENNUNG 29.8.2026: vorher der Doppel-Topf). */
+/** BGE-Band → Sachgebiet: I/II öffentl., III privat, IV straf, V Sozialvers.
+ *  (Band V ist das Sozialrechts-Band; Steuersachen stehen in I/II.) */
 export function bgeRoemischSachgebiet(docket: string): Rechtsgebiet | null {
   const m = /\b(IV|III|II|I|V)\b/.exec(String(docket));
   switch (m?.[1]) {
     case 'I': case 'II': return 'oeffentlich';
     case 'III': return 'privat';
     case 'IV': return 'straf';
-    // W2-TRENNUNG (29.8.2026): Band V der amtlichen Sammlung ist das
-    // Sozialrechts-Band — reine Sozialversicherung. Steuersachen erscheinen
-    // dort nie; sie stehen in Band I/II und werden von der Signal-Kette der
-    // 2er-Abteilung erkannt.
-    case 'V': return 'sozialversicherung';
+    case 'V': return 'sozialversicherung';   // W2-TRENNUNG 29.8.2026
     default: return null;
   }
 }
