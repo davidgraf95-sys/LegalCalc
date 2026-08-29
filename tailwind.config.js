@@ -179,9 +179,20 @@ export default {
       // 77 ch DARÜBER (es steht nicht in der gegateten Erlass-Liste, s. die Notiz an
       // der Schwelle in `leser-lesemass.e2e.ts`). Die WCAG-Decke SC 1.4.8 (≤ 80 ch)
       // ist in allen gemessenen Fällen gehalten und wird an drei Breiten gegated.
-      // Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist ein
-      // Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener Punkt) —
-      // hier wird die Zahl korrigiert, nicht der Wert geändert. Beide zentriert (mx-auto),
+      //
+      // DER OFFENE PUNKT IST GESCHLOSSEN (Entscheid David 29.8.2026, Variante 1C).
+      // Hier stand: «Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist
+      // ein Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener
+      // Punkt)». David hat entschieden: JA, aber nicht an diesem Token. Der
+      // Textkörper bekommt einen eigenen, in ZEICHEN rechnenden Deckel
+      // (`--leser-zeilenmass` ≈ 68 Zeichen, `src/index.css`), der neben dem
+      // Pixel-Deckel `--leser-lesemass-max` steht; der schmalere gewinnt. Grund
+      // für den zweiten Deckel statt einer kleineren Zahl HIER: `reading`/
+      // `normtext` gelten site-weit bzw. auch für die Kopfzeile und skalieren
+      // nicht mit dem Schriftregler — ein Zeichen-Deckel tut beides. Die Zahlen
+      // oben bleiben als Messprotokoll der 45-rem-Stufe stehen; das IST-Zeilenmass
+      // des Lesers steht in DESIGN-REGLEMENT-NORMTEXT §4b-C (67/66/66/64/63/56 ch).
+      // Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
       //
