@@ -105,21 +105,32 @@ export function befunde(z: Zeitreihe, chronik: string): Befund[] {
   // Fussnote: «seit Geburt nie rot» ist genauso gut ein Beleg dafür, dass das
   // Tor wirkt (niemand baut mehr den Fehler, den es fängt), wie dafür, dass es
   // nichts fängt. Die Messreihe kann diese beiden Fälle NICHT unterscheiden.
+  //
+  // EINE Sammelzeile statt eines Blocks je Tor (Steuerungs-Diät 29.8.2026):
+  // gemessen erzeugte die Regel ~30 wortgleiche Blöcke, die sich einzig im
+  // Tor-Namen und in zwei Zahlen unterschieden — vier Bildschirmseiten
+  // Vorschlagstext, in denen die anderen Regeln untergingen. Der Hinweis ist
+  // für alle Kandidaten identisch (es IST derselbe Chesterton-Vorbehalt), also
+  // steht er einmal da; die Namen und ihre Läufe stehen im Anlass.
   if (snaps.length >= MIN_SNAPSHOTS) {
-    for (const tor of Object.keys(kum.je).sort()) {
-      const z2 = kum.je[tor];
-      if (z2.rot !== 0 || z2.gesamt < NIE_ROT_MINDEST_LAEUFE) continue;
+    const kandidaten = Object.keys(kum.je)
+      .sort()
+      .filter((tor) => kum.je[tor].rot === 0 && kum.je[tor].gesamt >= NIE_ROT_MINDEST_LAEUFE);
+    if (kandidaten.length) {
       out.push({
         art: 'nie-rot',
-        titel: `\`${tor}\` auf Wirksamkeit prüfen — nie rot über die ganze Messreihe`,
+        titel:
+          kandidaten.length === 1
+            ? `\`${kandidaten[0]}\` auf Wirksamkeit prüfen — nie rot über die ganze Messreihe`
+            : `${kandidaten.length} Tore auf Wirksamkeit prüfen — nie rot über die ganze Messreihe`,
         anlass:
-          `${z2.gesamt} Läufe, 0 rot, über ${snaps.length} Snapshots; Schwelle ` +
-          `${NIE_ROT_MINDEST_LAEUFE} Läufe${chronikZusatz(chronik, tor)}`,
+          `über ${snaps.length} Snapshots je 0 rot; Schwelle ${NIE_ROT_MINDEST_LAEUFE} Läufe. ` +
+          kandidaten.map((tor) => `${tor} (${kum.je[tor].gesamt} Läufe${chronikZusatz(chronik, tor)})`).join(' · '),
         hinweis:
-          'PRÜFkandidat, kein Streich-Auftrag (Chesterton): «nie rot» belegt genauso gut, dass das Tor ' +
+          'PRÜFkandidaten, kein Streich-Auftrag (Chesterton): «nie rot» belegt genauso gut, dass das Tor ' +
           'wirkt — der Fehler wird nicht mehr gebaut, WEIL es da ist. Vor jeder Streichung die ' +
           'Sabotage-Probe: Defekt einpflanzen, prüfen ob es rot wird, byte-gleich zurückbauen. ' +
-          'Wird es rot, ist es wirksam und bleibt.',
+          'Wird es rot, ist es wirksam und bleibt. Je Tor einzeln entscheiden, nie als Paket.',
       });
     }
   }
@@ -216,9 +227,9 @@ function aufschluesselung(s: Snapshot): string {
  * Formatiert den Vorschlagsblock. Jede Vorschlagszeile trägt die ENTWURF-Marke;
  * ein `@meta`-Etikett wird bewusst NICHT erzeugt.
  *
- * Grund für das fehlende `@meta`: Eine erfundene ID stünde nicht im Inventar
- * (`scripts/plan/inventar.ts`) und machte `check:plan` Regel 1 rot, sobald
- * jemand den Block einfügt — oder, schlimmer, sie kollidierte mit einer echten.
+ * Grund für das fehlende `@meta`: Eine erfundene ID kollidierte womöglich mit
+ * einer echten (check:plan Regel 1, «id mehrfach etikettiert») oder trüge kein
+ * `feld:` und machte Regel 14 rot, sobald jemand den Block einfügt.
  * Das Etikett vergibt die übernehmende Session bewusst, nicht dieses Werkzeug.
  * Der Block sagt das in seinem Kopf, damit niemand es durch Ausprobieren lernt.
  */
@@ -236,7 +247,7 @@ export function bericht(z: Zeitreihe, chronik: string): string[] {
   z2.push('');
   z2.push('Dieses Werkzeug SCHLÄGT VOR und entscheidet nichts. Es schreibt keine Datei,');
   z2.push('committet nicht und öffnet keinen PR. Wer eine Zeile übernimmt, vergibt selbst');
-  z2.push('ID und `@meta` (eine erfundene ID stünde nicht im Inventar und machte check:plan');
+  z2.push('ID und `@meta` (eine erfundene ID kollidiert womöglich mit einer echten und macht check:plan');
   z2.push('rot) und verantwortet den Vorschlag als eigenen Entscheid.');
   z2.push('');
 
