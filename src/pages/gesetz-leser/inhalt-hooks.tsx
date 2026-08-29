@@ -10,8 +10,7 @@ import {
   type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
 } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
-import { tabTitel } from '../../lib/normtext/erlassKopfText';
-import { pfadZu } from './helpers';
+import { pfadZu, tabTitel } from './helpers';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
@@ -126,8 +125,8 @@ export function useLeserDaten(opts: {
   // Browser-Tab zeigt den Erlass: «OR (Obligationenrecht) — LexMetrik». Der
   // Wortlaut samt Redundanz-Weiche («EMRK (EMRK)» → «EMRK», Fehlerbuch-Befund,
   // auf Prod reproduziert 29.8.2026) steht als reine Funktion in
-  // `lib/normtext/erlassKopfText.ts` — dort, wo auch die übrigen Kopf-Textbausteine
-  // liegen, und damit prüfbar (§5: ein Formatierer, nicht zwei).
+  // `./helpers` (`tabTitel`) — rein, prüfbar, und ausserhalb des Risikopfads
+  // lib/normtext/ (§3; Begründung am Fundort).
   //
   // ACHTUNG beim Weiterbauen: `src/tests/tab-titel-paritaet.test.ts` ist eine
   // Quellensonde. Sie sucht die ERSTE Titel-Zuweisung in dieser Datei und prüft

@@ -79,27 +79,6 @@ export function nichtKonsolidiertSatz(seitIso: string | null): string {
 }
 
 /**
- * Browser-Reiter-Titel eines Erlasses: «OR (Obligationenrecht) — LexMetrik».
- * Der Kurztitel ist der Klammer-Inhalt am Ende des Volltitels (LEGES-Konvention),
- * sonst der Titel selbst.
- *
- * REDUNDANZ-WEICHE (Fehlerbuch, auf Prod reproduziert 29.8.2026): Wo das
- * Klammer-Suffix GENAU das Kürzel ist — typisch bei Staatsverträgen, «Konvention
- * zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)» —, stand im Reiter
- * «EMRK (EMRK) — LexMetrik». Die Klammer trägt dort keine Information mehr, also
- * entfällt sie, statt sie zu wiederholen. Es ist dieselbe Regel, die
- * `titelRedundant` in `pages/gesetz-leser/parts/ErlassLeserKopf.tsx` auf die H1
- * anwendet (case- und trim-unempfindlich) — der Reiter war der einzige
- * Ausspielungsort, der sie nicht zog. Alle nicht-redundanten Titel bleiben
- * Zeichen für Zeichen die von vorher.
- */
-export function tabTitel(kuerzel: string, titel: string): string {
-  const kurz = titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? titel;
-  const redundant = kurz.trim().toLowerCase() === kuerzel.trim().toLowerCase();
-  return redundant ? `${kuerzel} — LexMetrik` : `${kuerzel} (${kurz}) — LexMetrik`;
-}
-
-/**
  * Anteil Anhang-Einträge, ab dem die Fakten-Zeile nicht mehr «Artikel» zählt.
  * Fahrplan Kap. 14, Wording-Punkt «Anhang-Dominanz»: «N Artikel» ist falsch, wo
  * der Snapshot fast nur aus Anhang-Einträgen besteht (typisch bei Tarif- und

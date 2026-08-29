@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { tabTitel } from '../lib/normtext/erlassKopfText';
+import { tabTitel } from '../pages/gesetz-leser/helpers';
 
 // W2·18-FEHLERBUCH — Browser-Reiter «EMRK (EMRK) — LexMetrik».
 //
