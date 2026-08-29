@@ -130,12 +130,13 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
   // einmal…» hier, dieselbe Aussage nochmals mit Zahlen unten im Hauptteil) —
   // eine Zeile, die in jeder kopierten Session mitkostet. Zusammengeführt zu
   // EINER Aussage (Auftrag David 14.8.2026, «Bau-Prompt knapper formulieren»);
-  // die offenen Positionstexte stehen direkt im Prompt (leichter Pfad — bei
-  // klaren Punkten braucht es dafür kein zweites Lesen von ROADMAP.md).
+  // die offenen Positionstexte stehen direkt im Prompt (bei klaren Punkten
+  // braucht es dafür kein zweites Lesen von ROADMAP.md; der frühere «leichte
+  // Pfad» ist seit der Ritual-Diät 29.8.2026 der Normalfall).
   const dachZeilen = istDach
     ? [
         `Dach-Schritt mit Checkliste: ${info!.checkliste!.offen} von ${info!.checkliste!.gesamt} Positionen offen — sessionfüllende Auswahl SORTENREIN abarbeiten (Risiko- und Nicht-Risiko-Positionen nie im selben Paket), je Position ein eigener Commit, danach in ROADMAP.md abhaken.`,
-        `Offene Positionen (Spec für den leichten Pfad — bei klaren Punkten reicht dieser Text, ROADMAP.md nur bei Unklarheit zusätzlich lesen):`,
+        `Offene Positionen (bei klaren Punkten reicht dieser Text als Spec, ROADMAP.md nur bei Unklarheit zusätzlich lesen):`,
         ...info!.checkliste!.offenTexte.map((x) => `  - ${x}`),
         ``,
       ]
