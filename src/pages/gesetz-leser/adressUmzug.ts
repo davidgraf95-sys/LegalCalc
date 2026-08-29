@@ -18,7 +18,12 @@
 //      Alt-Form gar nicht erst, damit die Weiterleitung nur noch Alt-Bestand
 //      bedient und kein Dauerzustand wird.
 //
-// KEIN vercel.json-Redirect: der wäre der sauberste 301, liesse sich aber nur
+// KEIN vercel.json-Redirect — eine ABWÄGUNG, keine Notwendigkeit (Gegen-
+// prüfung 29.8.2026, Befund 3): eine GENERIERTE Redirect-Liste mit Drift-Tor
+// wäre nach dem bund-stubs-Muster machbar (Commit-Zeit-Generator, nicht
+// Build-Zeit). Gewählt: Client-Sprung + Stub mit canonical/noindex (Link-
+// Equity via canonical/follow). Bei SEO-Bedarf: Generator + Tor nachrüsten.
+// Ursprüngliche Begründung (unvollständig):
 // als Liste von 37 handgepflegten Schlüsseln schreiben — eine zweite Wahrheit
 // neben dem Register (§5), die beim 38. Staatsvertrag still falsch wird.
 // vercel.json kann nicht aus dem Register erzeugt werden, weil Vercel die Datei

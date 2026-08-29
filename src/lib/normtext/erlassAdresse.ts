@@ -125,8 +125,11 @@ const EBENE_JE_KEY: ReadonlyMap<string, RoutenEbene> = new Map(
  * der Fallback FÜR ALLE Keys, und damit lieferte `/gesetze/international/OR`
  * eine vollständige, funktionierende OR-Seite — mit der Brotkrume «Bund». Also
  * exakt Befund 45, nur spiegelverkehrt: eine zweite Adresse, deren URL der
- * angezeigten Ebene widerspricht (§5/§8). Registerautoritativ gibt es je Erlass
- * genau EINE Adresse, und jede andere leitet dorthin.
+ * angezeigten Ebene widerspricht (§5/§8). Registerautoritativ gilt das für
+ * jeden BUNDES-Erlass (ERLASS_REGISTER, 238 Keys): genau EINE Adresse, jede
+ * andere leitet dorthin. Kantons-Keys (1231) fallen auf das URL-Segment
+ * zurück — /gesetze/<beliebig>/AG-291.150 rendert (VORBESTEHENDE Klasse,
+ * Gegenprüfung 29.8.2026 Befund 1; Wurzel-Posten: FAHRPLAN-UI-NAVIGATION §7).
  */
 export function routenEbeneVonKey(key: string, fallback = 'bund'): string {
   return EBENE_JE_KEY.get(key) ?? fallback;

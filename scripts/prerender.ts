@@ -206,7 +206,7 @@ const snapshotEntscheide = entscheidManifest.filter((e) => e.bestand === 'snapsh
 // Absoluter Floor: fängt stilles Schrumpfen des Input-Manifests (eine fehlerhafte
 // Regenerierung), das der relative geschrieben+übersprungen===total-Check allein
 // NICHT sieht. Bei gewolltem grossem Datenabbau bewusst senken (wie ERWARTETE_ROUTEN).
-const ERLASS_FLOOR = 1400; // aktuell 1449 snapshot (218 Bund + 1231 Kanton)
+const ERLASS_FLOOR = 1400; // aktuell 1458 snapshot (227 Bund + 1231 Kanton; nachgeführt 29.8.2026)
 // Bewusst gesenkt 26.6.2026: «Leitentscheid» strikt auf amtliche BGE eingeengt (§8) →
 // der aufgeblähte 610er-Korpus (96 % falsch etikettiert) wich 327 ehrlichen Einträgen
 // (272 amtliche BGE + 55 routine). Floor unter dem neuen Ist, fängt weiter echte Verluste.
