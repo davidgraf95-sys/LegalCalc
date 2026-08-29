@@ -116,21 +116,105 @@ das Band-II-Veto schloss die Sozialversicherung ausnahmslos aus.
   selbst (SR 6 «Finanzen», Gruppe 651 «Internationale Amtshilfe in Steuersachen»)
   plus der an jeder Regeste belegte Gegenstand.
 
-### Offener Rest aus Runde 3 (gemessen, NICHT gebaut)
+### Offener Rest aus Runde 3 — Bände III/IV gebaut, Band I beziffert
 
-Der 9C-Default `sozialversicherung` greift auch dort, wo der BGE-Band ihn
-widerlegt: **5 Einträge** liegen ausserhalb der Bände II/V, tragen weder ein
-Steuer-Signal noch einen SV-Erlass und landen trotzdem auf
-`sozialversicherung` — darunter **BGE 151 III 168** (Band III = das
-ZIVILRECHTS-Band, `normKeys` ZGB/OR, `legal_area` civil), ferner BGE 149 I 305
-(Kostendeckungsprinzip Gewässerschutz), 149 I 343, 150 I 144 und bger
-9C_409/2025. Das ist dieselbe Fehlerklasse wie F1/F3 (Abteilungs-Default schlägt
-amtlichen Band), nur für die Bände III/IV/I. Der deterministische Wurzel-Fix
-liegt bereit und braucht keine neue Regel: `dritteOerSachgebiet` müsste den
-bereits deklarierten Band-Vorrang (`bgeRoemischSachgebiet`: III → privat, IV →
-straf) auch für diese Bände auswerten, statt nur für II und V. Bewusst NICHT in
-dieser Runde gebaut — der Auftrag umfasste G1–G4, und die Klasse braucht ihre
-eigene Messung und Rot-Probe. **Als nächster Schritt vorzumerken.**
+**Diese Notiz ist am 29.8.2026 in Runde 3b neu gemessen und ersetzt die frühere
+Fassung.** Die frühere Fassung war in drei Punkten falsch, und alle drei stehen
+hier korrigiert statt getilgt:
+
+1. Sie zählte «5 Einträge ausserhalb der Bände II/V». Gemessen am ausgelieferten
+   Register (6'341 Zeilen) waren es **17 BGE-Zeilen** mit `sozialversicherung`
+   ausserhalb Band V: 5× Band III, 11× Band I, 1× Band II.
+2. Sie nannte «bger 9C_409/2025» als Teil des Restes und der Prüfbericht
+   ergänzte, der Eintrag sei im Register nicht auffindbar. **Er ist auffindbar** —
+   die Suche traf nur die falsche Schlüsselform: `nummer` trägt den Schrägstrich
+   (`9C_409/2025`), der `key` trägt durchgehend Unterstriche
+   (`bger_9C_409_2025`, Datei `bund/bger/9C_409_2025.json`). Der Eintrag ist ein
+   **bger-Urteil ohne Sammlungs-Band** (Regeste «Invalidenversicherung», `normKeys`
+   nur BGG) — die Band-Klasse betrifft ihn gar nicht, und `sozialversicherung`
+   ist für ihn richtig. Er gehört nicht in diese Rest-Liste.
+3. Sie sprach von den «Bänden III/IV/I» als einer Klasse. Das sind zwei: Band III
+   und IV schliessen die Sozialversicherung nach der Systematik der Sammlung aus
+   (Zivil- bzw. Strafrechts-Band), Band I nicht — das Verfassungsrechts-Band
+   führt Grundrechtsfälle jeden Gegenstands, darunter echte
+   sozialversicherungsrechtliche.
+
+**GEBAUT (Runde 3b):** der Band-Vorrang III/IV in `dritteOerSachgebiet` plus die
+Ausdehnung des Band-Vetos in `bgeSachgebietHint` auf II/III/IV, festgenagelt an
+**Tor C** («BGE Band III/IV trägt nie sozialversicherung», beide Richtungen rot
+gezeigt). Er räumt **5 der 17** Fälle — alle fünf Band III, alle fünf an ihrer
+amtlichen Regeste als Zivilsache belegt (Regen: 10 Registerzeilen, weil jeder
+BGE zusätzlich seine `__voll`-Projektion des unterliegenden Urteils trägt):
+
+| BGE | aza | Regeste (amtlich) | neu |
+|---|---|---|---|
+| 151 III 168 | 9C_39/2024 | Allgemeinverbindlicherklärung GAV FAR Bauhauptgewerbe | privat |
+| 151 III 28 | 9C_298/2024 | Art. 2 Abs. 4 lit. a AVE GAV FAR; Unterstellung eines Betriebs | privat |
+| 151 III 143 | 9C_717/2023 | Art. 356 ff. OR, Art. 20 Abs. 3 AVG; Beitragspflicht des Personalverleihers | privat |
+| 148 III 201 | 9C_362/2021 | Art. 36 Abs. 2 VAG, Art. 92/94 VVG; Überschussanteile Lebensversicherung Säule 3a | privat |
+| 148 III 126 | 8C_317/2021 | GAV 2019 der SBB i.V.m. Art. 335b Abs. 3 OR; Probezeit | privat |
+
+Vier kamen über den 9C-Default, **einer über den 8C-Default** (148 III 126) —
+darum reichte der Band-Vorrang in `dritteOerSachgebiet` allein nicht und das
+generelle Band-Veto musste mit.
+
+**REST NACH DEM FIX: 12 BGE-Zeilen.** Einer davon ist kein Rest, sondern die
+deklarierte Ausnahme: **BGE 149 II 381** (Band II, 9C_259/2023, ATSG/KVG,
+«Überarztung») — G3, bewusst so. Die übrigen **11 liegen alle in Band I**, wo
+kein Band-Veto gilt und gelten darf. Je Fall das Urteil des Prüfers, ohne
+Einzelfall-Kuration:
+
+*Falsch klassiert, aber ohne deterministisches Signal (4):*
+
+- **BGE 150 I 144** (9C_648/2022) — Wehrpflichtersatzabgabe, Art. 3 WPEG. Eine
+  **Ersatzabgabe** und damit `steuern` (Art. 31 lit. a BgerR «Steuern und
+  Abgaben»), nicht Sozialversicherung. **Gemessen 29.8.2026, warum trotzdem
+  nicht gebaut:** ein Register-Key `WPEG` existiert im ganzen Bestand
+  **0×**; der Roh-String trifft ihn nur über die französische Kurzform «LTEO»
+  und dann **genau 1×** — nämlich diesen Eintrag. Ein Muster mit n = 1 ist keine
+  Regel, sondern eine als Regex verkleidete Einzelfall-Kuration (Präzedenz: das
+  verworfene «CDI»-Muster, Q-J3-5). Wieder aufnehmen, sobald der Korpus mehrere
+  WPE-Fälle trägt.
+- **BGE 149 I 343** (9C_266/2023) — Rechtsnatur der Rekurskommission der Gemeinde
+  Aigle *für kommunale Steuern und Abgaben*. Gegenstand ist Steuer-/Abgabe- und
+  Organisationsrecht; `normKeys` sind nur BGG/BV/EMRK, kein Erlass-Signal
+  erreichbar.
+- **BGE 149 I 305** (9C_633/2022) — Kausalabgabe im Gewässerschutz, Art. 127
+  Abs. 1 BV / Art. 60a GSchG. Gehört zu `oeffentlich`. Fällt unter die bereits
+  deklarierte Grenze **Q-J3-11**: Art. 127 BV ist aus dem BV-Abgabesignal bewusst
+  ausgenommen, weil er in jedem Gebührenfall beliebigen Gegenstands angerufen
+  wird.
+- **BGE 149 I 129** (8C_351/2022) — Auflösung des Arbeitsverhältnisses eines
+  Angehörigen der Armee-Spezialkräfte, Art. 20/37 BPG. Bundespersonalrecht,
+  gehört zu `oeffentlich`; dieselbe 8C-Nebenzuständigkeit wie BGE 149 II 337, nur
+  ohne Band-Veto, weil Band I.
+
+*Grenzfall — Verfahrensrecht im Sozialversicherungsprozess (2):*
+
+- **BGE 148 I 104** (8C_783/2021) — Rechtsschutz und Instanzenzug bei
+  personalrechtlichen Streitigkeiten (Schulkonkordat). Eher `oeffentlich`/
+  `prozess`; kein Erlass-Signal (`normKeys` nur BGG/BV).
+- **BGE 149 I 57** (8C_374/2022) — unentgeltlicher Rechtsbeistand, Art. 58/61
+  ATSG. Verfahrensfrage **innerhalb** des Sozialversicherungsprozesses; der
+  ATSG-Key ist echt, `sozialversicherung` vertretbar.
+
+*Sozialhilfe-Trio — bereits deklariert unter Q-TR-2 (3):* BGE 150 I 6 (Art. 12
+BV, Nothilfe bei fehlender Mitwirkung an IV-Abklärungen), BGE 146 I 1 (Genfer
+Sozialhilfegesetz), BGE 146 I 62 (§ 21 SHG/ZH). Sozialhilfe ist fachlich keine
+Sozialversicherung; die 8C-Abteilungsregel ist die ehrlichste verfügbare
+Näherung, das UI etikettiert «maschinell» (§8).
+
+*Richtig klassiert (2):* BGE 149 I 41 (9C_592/2021, Art. 6/9/16 IVG, erstmalige
+berufliche Ausbildung) und BGE 149 I 172 (8C_740/2021, Art. 65 Abs. 3 KVG,
+Prämienverbilligung) — beide tragen einen echten SV-Erlass.
+
+**Bilanz Band I: von 11 Einträgen sind 2 richtig, 2 vertretbar, 3 unter Q-TR-2
+deklariert und 4 falsch — davon 3 ohne jedes erreichbare Signal und einer (150 I
+144) nur über ein n=1-Muster.** Kein Band-I-Veto: es würde die 2 richtigen und
+die 2 vertretbaren mitreissen und wäre damit teurer als der Defekt. Der Weg
+dorthin führt über zusätzliche **Erlass-Signale** (WPEG/LTEO, GSchG-Kausalabgabe,
+BPG-Personalrecht), nicht über den Band — **bei der nächsten
+Korpus-Erweiterung nachmessen**, wenn die Muster mehr als einen Treffer haben.
 
 ## Quirks (Q-J3, nach Q1/Q4-Muster)
 
@@ -173,6 +257,13 @@ eigene Messung und Rot-Probe. **Als nächster Schritt vorzumerken.**
   Band-II-Einträgen mit Steuer- UND SV-Zitat sichtbar; nur trifft sie dort
   bereits die Band-Regel. Wächst der bger-Bestand (Urteile ohne Sammlungs-Band),
   wird der Guard scharf. Bei der nächsten Korpus-Erweiterung nachmessen.
+  **NACHTRAG 29.8.2026 (Runde 3b):** Der Guard ist seither noch schmaler
+  erreichbar. Von den 203 Einträgen mit 9C-Aktenzeichen liegen 123 in Band V,
+  68 in Band II, 4 in Band III, 7 in Band I und 1 ist ein bger-Urteil ohne
+  Sammlungs-Band; die 4 Band-III-Fälle nimmt jetzt der neue Band-Vorrang vorweg.
+  Es bleiben **8 Einträge** (7× Band I, 1× ohne Band), die den Guard-Zweig
+  überhaupt erreichen — davon weiterhin 0 mit gleichzeitigem Steuer- und
+  SR-830–838-Signal. Der Behalt-Entscheid bleibt unverändert.
 - **Q-J3-11 · Kausalabgaben mit Art. 127 BV bleiben `oeffentlich` (Rest von
   Q-J3-5, verkleinert 29.8.2026):** Das neue BV-Abgabesignal deckt Art. 128–133
   BV/Cst. (die Artikel, die je eine konkrete Bundesabgabe begründen). Art. 127

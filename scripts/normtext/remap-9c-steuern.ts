@@ -66,18 +66,27 @@ function neuesSachgebiet(snap: EntscheidSnapshot): Rechtsgebiet {
   });
 }
 
+/** Bände, in denen die amtliche Sammlung kein Sozialversicherungsrecht führt —
+ *  identisch zur Menge in `sachgebiet-klassierung.ts`. Band I fehlt bewusst
+ *  (Verfassungsrechts-Band, führt echte SV-Grundrechtsfälle). */
+const BAND_OHNE_SOZIALVERSICHERUNG = new Set(['II', 'III', 'IV']);
+
 /** Im Scope ist ein Snapshot aus ZWEI Gründen:
  *  (1) massgebliche Abteilung 9C — die gemischte Abteilung aus Art. 31 BgerR;
- *  (2) BGE des Bands II, der heute 'sozialversicherung' trägt — Band II ist
- *      das Verwaltungs-/Abgaberecht-Band, dort ist Sozialrecht nach der
- *      amtlichen Systematik ausgeschlossen. Grund (2) fängt die Fälle, deren
- *      aza NICHT 9C ist: die IV. Abteilung (8C) führt neben der
- *      Sozialversicherung auch öffentliches Personalrecht und Staatshaftung
- *      (BGE 149 II 337, BGE 148 II 73). */
+ *  (2) BGE eines Bandes ohne Sozialversicherung (II/III/IV), der heute
+ *      'sozialversicherung' trägt — Band II ist das Verwaltungs-/Abgaberecht-,
+ *      Band III das Zivilrechts-, Band IV das Strafrechts-Band; dort ist
+ *      Sozialrecht nach der amtlichen Systematik ausgeschlossen. Grund (2)
+ *      fängt die Fälle, deren aza NICHT 9C ist: die IV. Abteilung (8C) führt
+ *      neben der Sozialversicherung auch öffentliches Personalrecht und
+ *      Staatshaftung (BGE 149 II 337, BGE 148 II 73) sowie
+ *      GAV-/Arbeitsvertragsfälle, die in Band III publiziert werden (BGE 148
+ *      III 126, GAV der SBB i.V.m. Art. 335b OR — nachgezogen in Runde 3,
+ *      Auflage 1, 29.8.2026). */
 function imScopeStehend(snap: EntscheidSnapshot): boolean {
   if (istGemischteDritteOerAbteilung(massgeblichesAz(snap))) return true;
   return snap.gericht === 'bge'
-    && bgeBand(String(snap.nummer ?? '')) === 'II'
+    && BAND_OHNE_SOZIALVERSICHERUNG.has(String(bgeBand(String(snap.nummer ?? ''))))
     && snap.sachgebiet === 'sozialversicherung';
 }
 

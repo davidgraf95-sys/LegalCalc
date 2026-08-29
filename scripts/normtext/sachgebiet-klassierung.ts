@@ -229,12 +229,22 @@ const AMTSHILFE_STEUER_ROH = /\b(stahig|laaf|dba)\b/i;
 //     (Legalitäts-, Kostendeckungs-, Äquivalenzprinzip), Art. 134 ist eine
 //     negative Abgrenzungsnorm.
 //     GEMESSEN (29.8.2026): Die volle Spanne 127–134 trifft 44 Einträge, davon
-//     9 nicht-'steuern' — und die Fehlgriffe hängen ALLE an 127/134 (BGE 147 I
-//     16 Erschliessungsgebühr, 149 I 305 Gewässerschutz-Kostendeckungsprinzip,
-//     149 I 33 Genfer Volksinitiative, SG B 2023/225 Notfalldienstersatzabgabe,
-//     151 I 225 Abstimmung AHV-Finanzierung). Die Spanne 128–133 trifft 12
-//     Einträge; innerhalb der öör-Ketten, wo das Muster überhaupt läuft, sind
-//     es 11 — 7 bereits 'steuern' und 4 echte Abgabefälle (150 II 98
+//     9 nicht-'steuern'. VIER dieser Fehlgriffe hängen an 127/134 und fallen
+//     mit der Verengung weg (BGE 147 I 16 Erschliessungsgebühr, 149 I 305
+//     Gewässerschutz-Kostendeckungsprinzip, 149 I 33 Genfer Volksinitiative,
+//     SG B 2023/225 Notfalldienstersatzabgabe).
+//     KORRIGIERT nach Gegenprüfung Runde 3 (Befund H1, 29.8.2026): BGE 151 I
+//     225 (Abstimmungsbeschwerde zur AHV-Finanzierung) gehört NICHT in diese
+//     Liste — er trägt «Art. 130 Abs. 3ter CST» und matcht die verengte Spanne
+//     128–133 sehr wohl. Er bleibt 'oeffentlich' aus einem anderen Grund: sein
+//     unterliegendes Urteil ist 1C_487/2024, und die Roh-Signale laufen NUR in
+//     den öör-Ketten der 2er- und der 9C-Abteilung. Die I. öffentlich-
+//     rechtliche Abteilung (1C) erreicht das Muster nie — die Verengung schützt
+//     ihn nicht, das Abteilungs-Gate tut es. Die frühere Fassung schrieb der
+//     Verengung damit eine Wirkung zu, die sie in diesem Fall nicht hat.
+//     Die Spanne 128–133 trifft 12 Einträge; innerhalb der öör-Ketten, wo das
+//     Muster überhaupt läuft, sind es 11 (die zwölfte ist eben 151 I 225) —
+//     7 bereits 'steuern' und 4 echte Abgabefälle (150 II 98
 //     Handänderungssteuer, 151 II 442 Radio-/TV-Abgabe, 151 II 533 Zollabgabe,
 //     152 II 1 Erbschaftssteuer LU). Null Falschtreffer.
 //     Der Rest von Q-J3-5 bleibt bestehen: Kausalabgaben, die nur Art. 127
@@ -359,6 +369,25 @@ export function dritteOerSachgebiet(opts: {
   const steuer = dritteSteuerSignal(normKeys, opts.zitierteNormen, opts.legalArea);
   // Band V: Sozialrechts-Band der amtlichen Sammlung — eindeutig.
   if (opts.band === 'V') return 'sozialversicherung';
+  // Band III/IV (Gegenprüfung Runde 3, Auflage 1, 29.8.2026): die Fach-Bände
+  // Zivilrecht/SchKG bzw. Strafrecht. Der Band-Vorrang, den
+  // `bgeRoemischSachgebiet` für sie ohnehin deklariert (III→privat, IV→straf),
+  // muss VOR dem SV-Default dieser Funktion greifen — sonst überstimmt der
+  // Abteilungs-Default der 9C die amtliche Bandzuteilung. Der Vorrang ist hier
+  // HART (kein Steuer-Vorbehalt wie bei Band II): Band II grenzt als Abgabe-/
+  // Verwaltungsrecht-Band sachlich an Steuern UND Sozialversicherung, Band III
+  // und IV führen nach der Systematik der Sammlung weder das eine noch das
+  // andere. GEMESSEN am Bestand (29.8.2026, 6'341 Registerzeilen): vier
+  // Band-III-Leitentscheide mit 9C-aza standen so als «Sozialversicherung» —
+  // BGE 151 III 168, 151 III 28, 151 III 143 (Allgemeinverbindlicherklärung
+  // bzw. Vollzug eines Gesamtarbeitsvertrags, Art. 356 ff. OR / AVEG) und
+  // BGE 148 III 201 (Informationsanspruch aus dem Privatversicherungsvertrag,
+  // Art. 36 VAG / Art. 92 ff. VVG); alle vier sind an ihrer amtlichen Regeste
+  // als Zivilsache belegt. Band IV: null Treffer — der Zweig ist trotzdem
+  // deklariert, weil er dieselbe eine Regel trägt und nicht eine zweite.
+  // Am Tor festgenagelt (Tor C, rechtsprechung-sachgebiet-tore.test.ts).
+  if (opts.band === 'III') return 'privat';
+  if (opts.band === 'IV') return 'straf';
   // Band II: Verwaltungs-/Abgaberecht. Steuer-Signal gewinnt; ohne Steuer-Signal
   // schlägt ein positives SV-Erlass-Signal den Band (G3, Beleg im Kopf oben),
   // sonst Verwaltungsrecht.
@@ -366,7 +395,7 @@ export function dritteOerSachgebiet(opts: {
     if (steuer) return steuer;
     return hatSozialversicherungsErlass(normKeys) ? 'sozialversicherung' : 'oeffentlich';
   }
-  // Sonst (bger-Urteil, BGE Band I/III/IV): Steuer-Signal nur, wenn KEIN
+  // Sonst (bger-Urteil, BGE Band I): Steuer-Signal nur, wenn KEIN
   // Sozialversicherungs-Erlass mitzitiert ist (Art.-23-AHVV-Fälle, s.o.).
   if (steuer && !hatSozialversicherungsErlass(normKeys)) return steuer;
   return 'sozialversicherung';
@@ -508,7 +537,26 @@ export function sachgebietFuerEntscheid(opts: {
  * kantonale Hints). Der 9C-Zweig wertet ihn in `dritteOerSachgebiet` bereits
  * aus, samt der dort belegten Ausnahme (nur SV-Erlasse, kein Steuer-Signal —
  * BGE 149 II 381). Ein Veto darüber wäre eine zweite, widersprechende Wahrheit.
+ *
+ * J4 (Gegenprüfung Runde 3, Auflage 1, 29.8.2026) — VETO AUF DIE FACH-BÄNDE
+ * AUSGEDEHNT: Dieselbe Systematik schliesst das Sozialrecht auch aus Band III
+ * (Zivilrecht/SchKG) und Band IV (Strafrecht) aus. Der 8C-Default trug BGE 148
+ * III 126 (GAV der SBB i.V.m. Art. 335b OR) hinein — ein Fall, den der
+ * band-bewusste 9C-Zweig nie sieht. Am Tor C festgenagelt.
  */
+/** Bände, in denen die amtliche Sammlung kein Sozialversicherungsrecht führt —
+ *  II (Verwaltungs-/Abgaberecht), III (Zivilrecht/SchKG), IV (Strafrecht); das
+ *  Sozialrecht steht in Band V. Trägt das Veto unten für alle Zweige, die den
+ *  Band nicht selbst auswerten. III/IV nachgezogen in Runde 3 (Auflage 1,
+ *  29.8.2026): BGE 148 III 126 (GAV der SBB i.V.m. Art. 335b OR) kam über den
+ *  8C-Default, nicht über die 9C, und wäre vom band-bewussten 9C-Zweig allein
+ *  nie erreicht worden. Band I bleibt bewusst DRAUSSEN: das
+ *  Verfassungsrechts-Band führt Grundrechtsfälle jeden Gegenstands, darunter
+ *  echte sozialversicherungsrechtliche (z.B. BGE 149 I 172, Prämienverbilligung
+ *  nach Art. 65 Abs. 3 KVG) — dort wäre ein Veto falsch (offener Rest, siehe
+ *  bibliothek/rechtsprechung/sachgebiet-klassierung-j3-2026-08-29.md). */
+const BAND_OHNE_SOZIALVERSICHERUNG = new Set(['II', 'III', 'IV']);
+
 export function bgeSachgebietHint(opts: {
   /** Fundstelle des BGE, z.B. «150 II 20» — Quelle des Bandes. */
   fundstelle: string;
@@ -536,5 +584,5 @@ export function bgeSachgebietHint(opts: {
     });
   }
   const roh = opts.azaSachgebiet;
-  return (band === 'II' && roh === 'sozialversicherung') ? null : roh;
+  return (BAND_OHNE_SOZIALVERSICHERUNG.has(String(band)) && roh === 'sozialversicherung') ? null : roh;
 }

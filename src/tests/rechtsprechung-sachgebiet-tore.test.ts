@@ -139,3 +139,47 @@ describe('Tor B — Bundes-Steuererlass ohne Sozialversicherungs-Erlass ⇒ nie 
     expect(echteAusnahmen.length).toBeGreaterThan(0);
   });
 });
+
+describe('Tor C — BGE Band III/IV trägt nie «sozialversicherung»', () => {
+  // AMTLICHE GRUNDLAGE: Dieselbe Systematik der amtlichen Sammlung, die Tor A
+  // für Band II festhält, trennt auch die beiden übrigen Fach-Bände: Band III
+  // ist das Band für Zivilrecht samt Schuldbetreibungs- und Konkursrecht,
+  // Band IV das für Strafrecht und Strafvollzug; das Sozialversicherungsrecht
+  // steht in Band V. Ein vom Bundesgericht selbst in Band III oder IV
+  // publizierter Entscheid ist nach eben dieser Einordnung kein
+  // Sozialversicherungsfall — und zwar strenger als bei Band II: dort grenzt
+  // das Abgabe-/Verwaltungsrecht sachlich an die Sozialversicherung (darum die
+  // eine deklarierte Ausnahme G3), während Zivil- und Strafrecht die
+  // Sozialversicherung nach der Bandzuteilung überhaupt nicht führen.
+  //
+  // WAS DAS TOR FÄNGT (Gegenprüfung Runde 3, Auflage 1, 29.8.2026): Genau
+  // dieselbe Verwechslung wie Tor A, nur auf den Fach-Bänden — ein
+  // Abteilungs-Default der beiden sozialrechtlichen Abteilungen, der sich über
+  // den Band hinwegsetzt. Gemessen VOR dem Scharfstellen trug der Bestand fünf
+  // solche Einträge, alle fünf an ihrer amtlichen Regeste als Zivilsache
+  // belegt: BGE 151 III 168, 151 III 28 und 151 III 143 (Allgemein-
+  // verbindlicherklärung bzw. Vollzug eines Gesamtarbeitsvertrags, Art. 356 ff.
+  // OR / AVEG), BGE 148 III 201 (Informationsanspruch aus dem
+  // Privatversicherungsvertrag, Art. 36 VAG / Art. 92 ff. VVG) und BGE 148 III
+  // 126 (GAV der SBB i.V.m. Art. 335b OR). Vier davon kamen über den
+  // 9C-Default, einer (148 III 126) über den 8C-Default — das Tor deckt beide
+  // Wege, weil es am ausgelieferten Register misst und nicht an einer Kette.
+  //
+  // KEINE AUSNAHME: Anders als bei Tor A gibt es hier keine, und es soll keine
+  // geben — eine Bedingung ohne Wirkung gehörte gestrichen statt bewacht
+  // (§6.7/§17). Rot gezeigt am 29.8.2026 in beiden Richtungen.
+  const bandIIIIV = eintraege.filter(
+    (e) => e.gericht === 'bge' && ['III', 'IV'].includes(String(bgeBand(String(e.nummer ?? '')))),
+  );
+
+  it('kein Band-III/IV-Leitentscheid ist als Sozialversicherung klassiert', () => {
+    const verstoesse = bandIIIIV
+      .filter((e) => e.sachgebiet === 'sozialversicherung')
+      .map((e) => `${e.nummer} (${e.key})`);
+    expect(verstoesse).toEqual([]);
+  });
+
+  it('das Tor misst wirklich am Bestand (sonst prüfte es die leere Menge)', () => {
+    expect(bandIIIIV.length).toBeGreaterThan(400);
+  });
+});
