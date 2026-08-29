@@ -446,8 +446,8 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister; nur der VORWÄRTS-Fall (`naechsteFassungAb`).
   - [ ] **B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, gegen Build-Artefakte geprüft; Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.
   - [ ] **GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta je Gericht/Norm; eigenes Verdikt, Import-Kadenz sichtbar (§8).
-- [ ] **15-CLS · Echter CLS-Defekt auf `/gesetze` (0.109 @8× CPU)** *(§14-Intake 20.7.2026 · **Produktfehler**, reine UI)*
-  <!-- @meta id: W2·15-CLS · status: ready · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+- [~] **15-CLS · Echter CLS-Defekt auf `/gesetze` (0.109 @8× CPU)** *(§14-Intake 20.7.2026 · **Produktfehler**, reine UI)*
+  <!-- @meta id: W2·15-CLS · status: wip · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Gemessener Produktfehler auf `/gesetze`, reine UI.
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2.
 - [ ] **16-INVENTAR · Funktions-Inventar (Vorstufe der Bedienungsanleitung)** *(§14-Intake 20.7.2026, David: «erst wenn es Sinn ergibt» → Zweischritt, dies ist Schritt 1)*
