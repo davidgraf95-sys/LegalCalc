@@ -77,7 +77,7 @@
 //    NEUE Kollision laut, statt sie still zu schlucken (§6.7).
 
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
-import { ERLASS_REGISTER, type Rechtsgebiet } from '../../src/lib/normtext/register';
+import { ERLASS_REGISTER } from '../../src/lib/normtext/register';
 import {
   extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
 } from '../../src/lib/rechtsprechung/zitat-extraktion';
@@ -1008,126 +1008,19 @@ export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
   return { schluessel, literaturVerworfen, literaturNennungen, literaturSpannenZahl: spannen.length };
 }
 
-// legal_area (OCL) → Sachgebiet-Achse der Gesetze.
-const LEGAL_AREA: Array<[string, Rechtsgebiet]> = [
-  ['civil', 'privat'], ['zivil', 'privat'], ['private', 'privat'],
-  ['criminal', 'straf'], ['straf', 'straf'], ['penal', 'straf'],
-  ['debt', 'schkg'], ['betreibung', 'schkg'], ['insolvenc', 'schkg'],
-  ['tax', 'sozial-abgaben'], ['steuer', 'sozial-abgaben'], ['social', 'sozial-abgaben'], ['sozial', 'sozial-abgaben'],
-  ['procedure', 'prozess'], ['prozess', 'prozess'],
-  ['public', 'oeffentlich'], ['administrativ', 'oeffentlich'], ['oeffentlich', 'oeffentlich'],
-];
-export function legalAreaZuSachgebiet(area: string | null | undefined): Rechtsgebiet | null {
-  if (!area) return null;
-  const k = String(area).toLowerCase();
-  for (const [frag, geb] of LEGAL_AREA) if (k.includes(frag)) return geb;
-  return null;
-}
-
-// Abteilungs-Konvention des Bundesgerichts (Aktenzeichen-Präfix) → Sachgebiet.
-// Deklariert nach amtlicher Geschäftsverteilung (deterministisch, kein Raten).
-const ABTEILUNG: Record<string, Rechtsgebiet> = {
-  '4A': 'privat', '4C': 'privat', '5A': 'privat', '5C': 'privat', '5D': 'privat',
-  '6B': 'straf', '6S': 'straf',
-  '1B': 'prozess', '7B': 'prozess',
-  '1C': 'oeffentlich', '1P': 'oeffentlich', '1E': 'oeffentlich',
-  // J3 (29.8.2026, Beleg-Korrektur nach Gegenprüfung): Zuständigkeit der II.
-  // öffentlich-rechtlichen Abteilung (2A/2C/2D) nach Art. 30 BgerR (SR
-  // 173.110.131, Fassung 2026-02-01): Ausländerrecht, internationale Amtshilfe
-  // in Steuersachen, öffentliches Wirtschaftsrecht inkl. Beschaffungswesen und
-  // freie Berufe — «Steuern und Abgaben» sind SEIT 1.1.2023 bei der III.
-  // öffentlich-rechtlichen Abteilung (Art. 31 lit. a BgerR, AS 2023 65); der
-  // Altbestand 2A/2C bis 2022 enthält sie noch. Default darum 'oeffentlich';
-  // Steuer-/Abgabefälle erkennt die Signal-Kette (NORM_SIGNAL, zweier*-Signale,
-  // Kette in mappeEntscheidOCL). Der frühere Default 'sozial-abgaben' war die
-  // Pauschale, die BGFA-/Grundrechts-/Vergabe-Fälle als «Steuern &
-  // Sozialversicherung» etikettierte (Messung 29.8.2026: 53 Band-I- und 82
-  // Band-II-BGE ohne jedes Steuer-Signal in diesem Topf).
-  '2C': 'oeffentlich', '2A': 'oeffentlich', '2D': 'oeffentlich',
-  '8C': 'sozial-abgaben', '9C': 'sozial-abgaben',
-};
-export function abteilungZuSachgebiet(docket: string): Rechtsgebiet | null {
-  const m = /^(\d[A-Z])/.exec(String(docket).trim());
-  return m ? (ABTEILUNG[m[1]] ?? null) : null;
-}
-
-// Mehrdeutige BGer-Abteilungen: Die II. öffentlich-rechtliche Abteilung (2A/2C/2D)
-// führt SOWOHL Steuer- ALS AUCH Ausländer-/Migrationssachen — der pauschale
-// Abteilungs-Default «sozial-abgaben» ist für sie zu grob (C2-1). Für sie wird
-// vorrangig das eindeutige Norm-Signal ausgewertet.
-const ZWEIER_OER_ABTEILUNG = new Set(['2A', '2C', '2D']);
-export function istMehrdeutigeOerAbteilung(docket: string): boolean {
-  const m = /^(\d[A-Z])/.exec(String(docket).trim());
-  return m ? ZWEIER_OER_ABTEILUNG.has(m[1]) : false;
-}
-
-// Eindeutiges Sachgebiets-Signal aus den zitierten Normen (Register-keys):
-// Migrations-/Ausländerrecht → öffentlich; Steuerrecht → sozial-abgaben.
-// Kein Treffer → null (der Aufrufer fällt dann auf legal_area / Abteilung zurück).
-// DEKLARIERTE Priorität: die Reihenfolge dieser Liste entscheidet, welches
-// Signal gewinnt, wenn ein Entscheid mehrere trägt — Migrationsrecht (AIG,
-// AsylG, BewG) vor Steuerrecht (DBG, StHG, MWSTG, StG, VStG).
+// ─── Sachgebiets-Klassierung: ausgelagert, hier nur weitergereicht ──────────
 //
-// Früher wurde über die ÜBERGEBENEN Keys iteriert; das Ergebnis hing damit an
-// der Reihenfolge der statutes[] und kippte je Entscheid: ['Art. 5 AsylG',
-// 'Art. 12 DBG'] auf einem 2C-Fall lieferte 'oeffentlich', die umgekehrte
-// Nennung derselben zwei Normen 'sozial-abgaben' (empirisch nachgestellt
-// 28.7.2026). Gleiche Eingabemenge → gleiches Sachgebiet ist §2; die Priorität
-// gehört in die Tabelle, nicht in die Laune der Drittextraktion.
-// J3 (29.8.2026): BGFA → öffentlich (Anwaltsaufsicht/Berufsrecht; Anlassfall
-// BGE 150 II 300 stand als «Steuern & Sozialversicherung»). Priorität VOR den
-// Steuergesetzen: ein BGFA-Fall mit Steuer-Berührung (z.B. Anwaltsgeheimnis in
-// der Steueramtshilfe, BGE 151 II 873) bleibt Berufsrecht → öffentlich.
-// Die im Fahrplan zusätzlich genannte BV-Regel («BV → öffentlich») ist BEWUSST
-// NICHT als Norm-Signal umgesetzt (§7-Abweichung, offengelegt; Gegenprüfung
-// 29.8.2026 bestätigt): 60 % der Entscheide mit Steuer-Key zitieren zusätzlich
-// die BV (gemessen 109/182 im Register) — als vorrangiges Signal kippte sie
-// diese echten Steuerfälle (Gegenbeleg BGE 149 I 125: zitiert Art. 8 BV, ist
-// reine Grundstücksteuer). Ihren Zweck (verfassungsrechtliche 2er-Fälle nicht
-// als Steuern etikettieren) erfüllt der Abteilungs-Default 'oeffentlich'.
-const NORM_SIGNAL: ReadonlyArray<readonly [string, Rechtsgebiet]> = [
-  ['AIG', 'oeffentlich'], ['ASYLG', 'oeffentlich'], ['BEWG', 'oeffentlich'],
-  ['BGFA', 'oeffentlich'],
-  ['DBG', 'sozial-abgaben'], ['STHG', 'sozial-abgaben'], ['MWSTG', 'sozial-abgaben'],
-  ['STG', 'sozial-abgaben'], ['VSTG', 'sozial-abgaben'],
-];
-export function normSignalSachgebiet(normKeys: Iterable<string>): Rechtsgebiet | null {
-  const vorhanden = new Set<string>();
-  for (const k of normKeys) vorhanden.add(String(k).toUpperCase());
-  for (const [key, geb] of NORM_SIGNAL) if (vorhanden.has(key)) return geb;
-  return null;
-}
-
-// J3-Korrektur (Gegenprüfung 29.8.2026, Befund F1): Auf der 2er-Abteilung darf
-// die OCL-legal_area nur noch die EINE Frage beantworten, die der Abteilungs-
-// Default offen lässt — Steuer/Abgabe oder nicht. 'civil'/'criminal'-Werte der
-// Drittextraktion sind auf einer öffentlich-rechtlichen Abteilung per se
-// unplausibel und kippten Entscheide nach «Privatrecht» (Beleg: BGE 152 II 142,
-// 2D_14/2024 = subsidiäre Verfassungsbeschwerde, Beschaffungsrecht, stand als
-// 'privat'; ebenso BGE 151 II 46).
-// Bug-Check-Nachschärfung (B2 empirisch, 29.8.2026): auf den BEGRIFF filtern,
-// nicht auf den Ziel-Topf — der Topf 'sozial-abgaben' bündelt Steuern UND
-// Sozialversicherung, und 'social_insurance' passierte so wie zuvor 'civil'
-// (Beleg: BGE 151 II 726, 2C_565/2022 — Verbleiberecht nach FZA, AHVG nur als
-// Altersmassstab; Sozialversicherung liegt nach Art. 31/32 BgerR bei der III.
-// öffentlich-rechtlichen Abteilung bzw. den sozialrechtlichen, nie bei der 2er).
-const ZWEIER_LEGAL_AREA_STEUER = /tax|steuer|imp[oô]t|fiscal/i;
-export function zweierLegalAreaSignal(area: string | null | undefined): Rechtsgebiet | null {
-  return area && ZWEIER_LEGAL_AREA_STEUER.test(String(area)) ? 'sozial-abgaben' : null;
-}
-
-// J3-Korrektur (Gegenprüfung 29.8.2026, Befund F2/Mindestkorrektur 4):
-// KANTONALE Steuergesetze tragen keinen Register-Key — statutesZuNormKeys
-// verwirft «StG» bewusst als föderal/kantonal mehrdeutig. Auf der 2er-Abteilung
-// ist «StG»/«Steuergesetz» in den ROH-zitierten Normen aber ein eindeutiges
-// Abgabe-Signal (Beleg: BGE 149 I 125, Walliser Grundstücksteuer, «Art. 181
-// Abs. 2 STG»). Wortgrenze schliesst StGB/VStG aus; NUR in der 2er-Kette
-// verwenden — ausserhalb bleibt StG mehrdeutig.
-const ZWEIER_STEUER_ROH = /steuergesetz|\bstg\b/i;
-export function zweierRohSteuerSignal(zitierteNormen: Iterable<string>): Rechtsgebiet | null {
-  for (const z of zitierteNormen) if (ZWEIER_STEUER_ROH.test(String(z))) return 'sozial-abgaben';
-  return null;
-}
+// Die Regeln, aus welchen amtlichen Signalen ein Entscheid sein `sachgebiet`
+// bekommt, leben seit dem 29.8.2026 in ./sachgebiet-klassierung.ts (§6.6 —
+// diese Datei war mit der 9C-Korrektur über ihre Schwelle gewachsen). Der
+// Umzug war wortgleich und verhaltensneutral; diese Fassade hält alle
+// bestehenden Importe gültig, damit kein Aufrufer angefasst werden musste (§6).
+export {
+  legalAreaZuSachgebiet, abteilungZuSachgebiet, istMehrdeutigeOerAbteilung,
+  normSignalSachgebiet, zweierLegalAreaSignal, zweierRohSteuerSignal,
+  istGemischteDritteOerAbteilung, bgeBand, hatSozialversicherungsErlass,
+  dritteSteuerSignal, dritteOerSachgebiet, kantonalSachgebiet,
+} from './sachgebiet-klassierung';
 
 import type { Gerichtstyp } from '../../src/lib/rechtsprechung/typen';
 export function gerichtstypFuerCourt(court: string): Gerichtstyp {
@@ -1170,35 +1063,6 @@ export function gerichtAnzeigename(court: string, canton: string, courtName?: st
   return `${name} ${kt}`.trim();
 }
 
-// Kantonale Aktenzeichen-Präfixe → Sachgebiet (best-effort, deklariert, 'maschinell').
-const KANT_PRAEFIX: Array<[RegExp, Rechtsgebiet]> = [
-  [/^(EL|IV|UV|ALV|EO|AHV|BV|KV|FZ)\b/i, 'sozial-abgaben'],
-  [/^(ZR|ZB|ZK|ZG|PS|PQ|PC|PD|PF|RE|RU|NP|LB|LC|LF|RB|HG)\b/i, 'privat'],
-  [/^(SB|SK|UE|UH|US|BK|SU)\b/i, 'straf'],
-  [/^(WBE|VB|VWBE)\b/i, 'oeffentlich'],
-  // BS-Geschäftsarten (BS-Tranche §3.4) — jede Zeile an ≥3 echten Portal-Titeln
-  // verifiziert (Inventar 19.7.2026; bei Kleinst-Beständen MV/SG/K5/KR an ALLEN
-  // existierenden Dokumenten + Kopf-Instanz); unsichere Präfixe (DGZ/BO)
-  // bewusst weggelassen (ehrlich Default statt geraten):
-  //  AL Arbeitslosenversicherung · AH AHV · MV Militärversicherung · SG Schieds-
-  //  gericht Sozialversicherung (KVG-Tarif) — Sozialversicherung.
-  [/^(AL|AH|MV|SG)\b/i, 'sozial-abgaben'],
-  //  BES Beschwerde Strafsachen · HB Haftsachen · DGS Dreiergericht Strafsachen ·
-  //  ZS Strafsachen (Landesverweisung/Verkehrsregeln/erkennungsdienstlich).
-  [/^(BES|HB|DGS|ZS)\b/i, 'straf'],
-  //  BEZ Beschwerde Zivilsachen · KE Kindes-/Erwachsenenschutz · ZV Versicherungs-
-  //  gericht VVG (privatrechtliche Zusatzversicherung) · K5 Zivilgericht Kammer 5
-  //  (Bauhandwerkerpfandrecht/Arbeitsvertrag) · KR Kindesrückführung (HKÜ).
-  [/^(BEZ|KE|ZV|K5|KR)\b/i, 'privat'],
-  //  VD Verwaltungsrekurse · AUS Ausschaffungs-/Vorbereitungshaft · VG Verfassungs-
-  //  gericht · AK Anwaltsaufsicht (Disziplinarrecht BGFA) · DGV Dreiergericht Verwaltung.
-  [/^(VD|AUS|VG|AK|DGV)\b/i, 'oeffentlich'],
-];
-export function kantonalSachgebiet(docket: string): Rechtsgebiet | null {
-  const d = String(docket).trim();
-  for (const [re, g] of KANT_PRAEFIX) if (re.test(d)) return g;
-  return null;
-}
 
 /** ISO 'YYYY-MM-DD' → 'DD.MM.YYYY' für Zitierungen. */
 export function fmtDatumDe(iso: string): string {

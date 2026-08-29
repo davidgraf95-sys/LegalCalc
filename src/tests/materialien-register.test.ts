@@ -8,7 +8,8 @@ import { VERNEHMLASSUNGEN } from '../lib/materialien/vernehmlassungen.generated'
 import { baueMaterialManifest } from '../../scripts/materialien/material-manifest';
 import { projiziereRegister, dbDokAusZustand } from '../../scripts/materialien/soft-law-projektion';
 import { ladeZustand } from '../../scripts/materialien/soft-law-zustand';
-import { ERLASS_REGISTER } from '../lib/normtext/register';
+import { BEHOERDE_RECHTSGEBIET } from '../../scripts/materialien/adapter-typen';
+import { ERLASS_REGISTER, GEBIETE } from '../lib/normtext/register';
 import { NAVIGATION } from '../lib/navigation';
 import { materialienFuerNorm } from '../lib/normtext/werkzeuge';
 import type { MaterialManifest } from '../lib/materialien/typen';
@@ -117,5 +118,106 @@ describe('Tor 4 — Norm↔Material-Brücke (additiv, kein toter Bezug)', () => 
     }
     // Ein Erlass ohne Material-Verzahnung liefert leer (kein erfundener Bezug).
     expect(materialienFuerNorm('NICHT_EXISTENT')).toEqual([]);
+  });
+});
+
+// ─── Wurzel-Fix zur W2-TRENNUNG (§17, 29.8.2026) ────────────────────────────
+//
+// ANLASS: Bei der Trennung des Doppel-Topfs blieben 138 Materialien-Einträge
+// still auf dem abgelösten Wert `'sozial-abgaben'` stehen — sie stammen aus der
+// persistierten Zustandsdatei `bibliothek/register/soft-law-zustand.jsonl`, die
+// niemand mitgezogen hatte. KEIN bestehendes Tor schlug an: `check:materialien`
+// prüft die Projektion nur gegen sich selbst, und der TypeScript-Compiler sieht
+// eine JSONL-Datei nicht. Der Fehler wäre in die Auslieferung gelaufen und
+// hätte 138 Dokumente in eine Rubrik gehängt, die es nicht mehr gibt.
+//
+// Diese Tore schliessen die Lücke an der Wurzel: Jedes Material — kuratiert,
+// generiert ODER aus dem Zustand geerntet — muss ein DEKLARIERTES Rechtsgebiet
+// tragen. Das gilt nicht nur für den einen abgelösten Wert, sondern für jeden
+// künftigen Tippfehler und jede künftige Taxonomie-Änderung.
+describe('Materialien tragen ausschliesslich deklarierte Rechtsgebiete (§17-Wurzelfix)', () => {
+  const GEBIET_IDS = new Set<string>(GEBIETE.map((g) => g.id));
+
+  it('die geerntete Zustandsdatei trägt kein undeklariertes Gebiet', () => {
+    // Der eigentliche Fundort des Fehlers: eine JSONL-Datei ausserhalb jeder
+    // Typprüfung, aus der 298 der 1557 Register-Einträge stammen.
+    const fremd = [...ladeZustand().letzterZustand.values()]
+      .filter((d) => !GEBIET_IDS.has(d.rechtsgebiet as string))
+      .map((d) => `${d.behoerde ?? '?'} ${d.nummer ?? d.titel ?? '?'} → ${d.rechtsgebiet}`);
+    expect(fremd).toEqual([]);
+  });
+
+  it('die ausgelieferte Projektion trägt kein undeklariertes Gebiet', () => {
+    const roh = JSON.parse(readFileSync('public/materialien/register.json', 'utf8')) as {
+      materialien: Array<{ key: string; rechtsgebiet: string }>;
+    };
+    const fremd = roh.materialien
+      .filter((m) => !GEBIET_IDS.has(m.rechtsgebiet))
+      .map((m) => `${m.key} → ${m.rechtsgebiet}`);
+    expect(fremd).toEqual([]);
+  });
+});
+
+// ─── F5 (Gegenprüfung 29.8.2026): der persistierte Zustand gegen die REGEL ────
+//
+// Die beiden Tore oben prüfen den WERTEBEREICH — dass das Rechtsgebiet
+// überhaupt existiert. Das hätte die 138 gefangen, weil 'sozial-abgaben'
+// wegfiel. Es fängt aber NICHT den allgemeinen Fall: eine Regel-Änderung, die
+// bestehende Werte in ANDERE gültige Werte überführt (ESTV künftig nicht mehr
+// 'steuern'), liefe wieder still am persistierten Bestand vorbei.
+//
+// WARUM NICHT DIE ZWEI NAHELIEGENDEN WEGE — beide geprüft, beide verworfen:
+//
+//   (a) «Rechtsgebiet in den Zustands-sha aufnehmen.» Verworfen aus zwei
+//       Gründen. Erstens semantisch: der sha ist der Drift-Anker gegen die
+//       AMTLICHE QUELLE (§7 Bst. d). Nimmt er ein lokal ABGELEITETES Feld auf,
+//       sieht künftig jede interne Taxonomie-Änderung wie eine Änderung beim
+//       Absender aus — der Drift-Alarm verlöre seine Aussage. Zweitens
+//       wirkungslos für genau diesen Fall: ein sha ändert sich erst beim
+//       nächsten Ernte-Lauf; der stehen gebliebene Bestand wäre bis dahin
+//       unverändert falsch geblieben, also exakt wie geschehen.
+//
+//   (b) «Tor: Projektion-rechtsgebiet == Zustands-rechtsgebiet je Eintrag.»
+//       Verworfen — und zwar doppelt belegt. Erstens kann es die Sorge nicht
+//       tragen: `dokZeileNachBrowse` in soft-law-projektion.ts übernimmt das
+//       Feld wörtlich aus der Zustandszeile
+//       (`rechtsgebiet: z.rechtsgebiet as Rechtsgebiet`), die beiden Seiten
+//       sind per Konstruktion gleich. Zweitens GIBT ES DIESES TOR BEREITS: Tor
+//       2 weiter oben vergleicht das committete register.json gegen die frisch
+//       aus dem Zustand gebaute Projektion und meldet jede Abweichung — es war
+//       am 29.8.2026 GRÜN, während alle 138 Einträge falsch waren, weil
+//       Zustand und Projektion einträchtig denselben falschen Wert trugen.
+//       Ein zweites Tor derselben Bauart hätte daran nichts geändert.
+//
+// GEBAUT ist darum der dritte Weg: den persistierten Wert gegen die REGEL
+// prüfen, aus der er stammt (Absender → Rechtsgebiet, BEHOERDE_RECHTSGEBIET in
+// adapter-typen.ts). Dieses Tor WÄRE am 29.8.2026 rot gewesen: die Adapter
+// sagten bereits 'steuern', die Zustandsdatei noch 'sozial-abgaben'. Es ist
+// zugleich der §5-Fix — die Regel stand vorher dreimal als Literal in den
+// Adaptern und ein viertes Mal im Nachzieh-Skript, an keiner Stelle prüfbar.
+describe('F5 — persistierter Zustand stimmt mit der Absender-Regel überein', () => {
+  it('jede Zustandszeile trägt das Rechtsgebiet ihres Absenders', () => {
+    const abweichungen = [...ladeZustand().letzterZustand.values()]
+      .map((d) => {
+        const soll = BEHOERDE_RECHTSGEBIET[String(d.behoerde)];
+        if (soll === undefined) {
+          // Unbekannte Behörde ⇒ Fehler, nicht Durchlass: wer eine neue
+          // Soft-Law-Quelle anschliesst, trägt sie in die Regel ein (§8).
+          return `${d.behoerde}: Absender in BEHOERDE_RECHTSGEBIET nicht deklariert`;
+        }
+        return d.rechtsgebiet === soll
+          ? null
+          : `${d.behoerde} ${d.nummer ?? d.titel ?? d.id}: ist '${d.rechtsgebiet}', Regel sagt '${soll}'`;
+      })
+      .filter((x): x is string => x !== null);
+    expect(abweichungen).toEqual([]);
+  });
+
+  it('das Tor misst wirklich am Bestand und deckt alle Absender ab', () => {
+    // Gegenprobe gegen die leere Menge (§6.7).
+    const zeilen = [...ladeZustand().letzterZustand.values()];
+    expect(zeilen.length).toBeGreaterThan(100);
+    const absender = new Set(zeilen.map((d) => String(d.behoerde)));
+    expect([...absender].sort()).toEqual(['EDOEB', 'ESTV', 'SECO']);
   });
 });
