@@ -392,7 +392,10 @@ export function mappeEntscheidOCL(
     // Kein Treffer → Abteilungs-Default 'oeffentlich' (Art. 30/31 BgerR).
     ?? (istMehrdeutigeOerAbteilung(docket)
         ? (normSignalSachgebiet(signalKeys)
-          ?? zweierRohSteuerSignal(det.statutes ?? [])
+          // Array-Guard wie an der zitierteNormen-Stelle unten: OCL-Felder können
+          // als JSON-String ankommen — ein for…of über den String iteriert
+          // Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
+          ?? zweierRohSteuerSignal(Array.isArray(det.statutes) ? det.statutes : [])
           ?? zweierLegalAreaSignal(det.legal_area))
         : null)
     ?? abteilungZuSachgebiet(docket)        // BGer-Abteilung (z.B. 5A→privat) ist präziser …

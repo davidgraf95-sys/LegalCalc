@@ -15,9 +15,9 @@ Klassierungs-Kette je Entscheid (`mappeEntscheidOCL`, `scripts/normtext/entschei
    → sozial-abgaben) ?? **Roh-StG-Signal** (`zweierRohSteuerSignal`: «StG»/
    «Steuergesetz» in den Roh-zitierten Normen → sozial-abgaben; kantonale
    Steuergesetze tragen keinen Register-Key) ?? **`legal_area` GEFILTERT** auf die
-   Steuer/Abgabe-Frage (`zweierLegalAreaSignal`: nur `sozial-abgaben`-Werte zählen;
-   'civil'/'criminal' der Drittextraktion sind auf einer öffentlich-rechtlichen
-   Abteilung unplausibel) ?? **Abteilungs-Default `oeffentlich`
+   Steuer-Frage (`zweierLegalAreaSignal`: nur STEUER-Begriffe — tax/steuer/impôt/
+   fiscal — zählen; 'civil'/'criminal' UND 'social_insurance' sind auf der 2er-
+   Abteilung unplausibel, Art. 31/32 BgerR; Beleg BGE 151 II 726) ?? **Abteilungs-Default `oeffentlich`
    (neu J3; vorher pauschal `sozial-abgaben`)**.
 
    Amtliche Grundlage: Art. 30 BgerR (SR 173.110.131, Konsolidierung 2026-02-01,
@@ -52,11 +52,10 @@ Messung 29.8. zeigte, dass die aza-basierte Klassierung FEINER ist als das Band
 
 `scripts/normtext/remap-sachgebiet-j3.ts` (Scope eng: Bund-2er-Abteilung + BGE der
 Bände I/II mit 2er-aza; alles Übrige byte-gleich), zwei Läufe (Erstlauf + Korrektur-
-lauf nach Gegenprüfungs-Runde 1). Endstand gegen die Basis: **118 geänderte
-Snapshots** (Gegenprüfung Runde 2 nachgezählt; der Korrekturlauf änderte 10
-Snapshots = 20 Register-Wechsel, 4 kehrten auf den Basiswert zurück), im
-nutzersichtbaren Register **235 Wechsel** (BGE-Einträge ziehen je
-einen `__voll`-Verweis-Eintrag mit): 225 `sozial-abgaben → oeffentlich`,
+lauf nach Gegenprüfungs-Runde 1). Endstand gegen die Basis (nach Bug-Check-Nachschärfung B2, 29.8.2026): **119
+geänderte Snapshots**, im nutzersichtbaren Register **237 Wechsel** (BGE-Einträge
+ziehen je einen `__voll`-Verweis-Eintrag mit) (BGE-Einträge ziehen je
+einen `__voll`-Verweis-Eintrag mit): 227 `sozial-abgaben → oeffentlich`,
 8 `privat → oeffentlich`, 2 `privat → sozial-abgaben`; Einträge vorher = nachher
 = 6341. Projektionen (register.json, norm-index, bezuege) regeneriert; dabei zog
 die seit PR #476 (LM-168) stale Wortgrenzen-Kürzung von `regesteKurz` nach
@@ -93,9 +92,23 @@ Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
   einen Treffer, weil `STG` in `ABK_AUSSCHLUSS` liegt (föderal/kantonal mehrdeutig).
   Bewusst belassen (Dokumentation der Absicht), Wirkung null.
 - **Q-J3-3 · `sozial-abgaben` bleibt ein Doppel-Topf:** Steuern & Abgaben und
-  Sozialversicherung teilen ein Sachgebiet (1621 Einträge nach Regen). Eine Trennung
+  Sozialversicherung teilen ein Sachgebiet (1619 Einträge nach Regen). Eine Trennung
   wäre eine Taxonomie-Änderung über Rechtsprechung UND /gesetze (SSoT) — Fahrplan
   sagt «ggf.», Entscheid liegt bei David (§Y-Vorlage, siehe Fahrplan §6/J3).
+- **Q-J3-8 · Re-Map-Signal breiter als Live-Signal (Bug-Check B2, 29.8.2026):**
+  Der Re-Map speist die Kette aus den vollen `normKeys` (statutes + Fliesstext),
+  der Live-Import BEWUSST nur aus den statutes (adapter-entscheide.ts, «schmale
+  statutes-Menge»). Messung: 29/214 Scope-Snapshots (13,6 %) tragen ihr Signal in
+  einem Key, der in den Roh-zitierten Normen nicht vorkommt (z. B. 146 I 105:
+  VSTG nur im Fliesstext). Ein voller Live-Re-Import könnte diese Fälle anders
+  klassieren — beide Ketten sind gegen­geprüft-deterministisch, aber nicht
+  deckungsgleich (§5-Rest). Vereinheitlichung (eine Signal-Quelle für beide
+  Pfade) als Folge-Posten im Fahrplan §6/J3-Rest vermerkt.
+- **Q-J3-9 · Orphan-Wache ist binär (Bug-Check, 29.8.2026):** Die Harvest-Wache
+  in `soft-law-projektion-run.ts` prüft nur `kanten.length > 0` — eine TEILWEISE
+  gefüllte soft-law.db passierte sie, und die Orphan-Bereinigung löschte den
+  Rest. Gleiches Verhalten wie die Tor-Wache (`check-materialien.ts`); bei einem
+  echten Teil-Harvest-Fall beide zusammen härten.
 - **Q-J3-7 · normKeys speisen sich auch aus dem Fliesstext (W2·6-NKEY):** beiläufige
   Erlass-Nennungen im Erwägungstext können das Sachgebiet setzen — Beleg BGE
   150 II 390 (CO₂-Sanktion): der MWSTG-Key stammt aus einer Definitionsklammer
@@ -110,6 +123,12 @@ Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
 **Pflege:** Neue 2er-relevante Erlasse (z. B. StAhiG, BüG) bei Bedarf in
 `NORM_SIGNAL` deklarieren — Priorität ist die Listen-Reihenfolge, empirisch am
 Korpus messen (Muster: `remap-sachgebiet-j3.ts` DRY-RUN).
+
+**UI-Etikett (§8, Endstand nach Bug-Check B1):** Der Entscheid-Kopf trug das
+«maschinell»-StatusBadge BEREITS (V1.2/W2·7-VZUI) — der J3-Erstlauf hatte es
+dupliziert (dazu versal/mono im lc-overline), zurückgenommen 29.8.2026. J3
+ergänzt nur `title`-Hinweise «Sachgebiet maschinell zugeordnet» direkt am
+Sachgebiets-Label (Leser-Köpfe, EntscheidZeile, EntscheidKarte).
 
 **Abnahme-Status:** maschinell umgesetzt, fachliche Abnahme der Klassierungs-Regeln
 durch David offen (§7); UI etikettiert das Sachgebiet seit J3 als «maschinell».

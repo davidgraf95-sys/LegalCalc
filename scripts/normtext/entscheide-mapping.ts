@@ -1105,8 +1105,15 @@ export function normSignalSachgebiet(normKeys: Iterable<string>): Rechtsgebiet |
 // unplausibel und kippten Entscheide nach «Privatrecht» (Beleg: BGE 152 II 142,
 // 2D_14/2024 = subsidiäre Verfassungsbeschwerde, Beschaffungsrecht, stand als
 // 'privat'; ebenso BGE 151 II 46).
+// Bug-Check-Nachschärfung (B2 empirisch, 29.8.2026): auf den BEGRIFF filtern,
+// nicht auf den Ziel-Topf — der Topf 'sozial-abgaben' bündelt Steuern UND
+// Sozialversicherung, und 'social_insurance' passierte so wie zuvor 'civil'
+// (Beleg: BGE 151 II 726, 2C_565/2022 — Verbleiberecht nach FZA, AHVG nur als
+// Altersmassstab; Sozialversicherung liegt nach Art. 31/32 BgerR bei der III.
+// öffentlich-rechtlichen Abteilung bzw. den sozialrechtlichen, nie bei der 2er).
+const ZWEIER_LEGAL_AREA_STEUER = /tax|steuer|imp[oô]t|fiscal/i;
 export function zweierLegalAreaSignal(area: string | null | undefined): Rechtsgebiet | null {
-  return legalAreaZuSachgebiet(area) === 'sozial-abgaben' ? 'sozial-abgaben' : null;
+  return area && ZWEIER_LEGAL_AREA_STEUER.test(String(area)) ? 'sozial-abgaben' : null;
 }
 
 // J3-Korrektur (Gegenprüfung 29.8.2026, Befund F2/Mindestkorrektur 4):

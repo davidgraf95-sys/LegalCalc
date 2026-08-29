@@ -134,8 +134,8 @@ späteren Bau (nach A2); KEIN Code. Abnahme David offen.
 **Sachgebiets-Klassierung Rechtsprechung — J3-Regelwerk (W2·10-UI-NAV-J3):** [rechtsprechung/sachgebiet-klassierung-j3-2026-08-29.md](rechtsprechung/sachgebiet-klassierung-j3-2026-08-29.md) —
 Regel-Stand 29.8.2026 (deterministisch, §2): 2A/2C/2D-Default neu `oeffentlich` statt Pauschale
 `sozial-abgaben`; `NORM_SIGNAL` + BGFA→öffentlich (Anlassfall BGE 150 II 300); BV bewusst KEIN
-Signal (§7-Abweichung, kippte echte Steuerfälle). Bestands-Regen 118 Snapshots / 235 Register-Wechsel via
-`remap-sachgebiet-j3.ts` (Gegenprüfungs-Befunde F1–F3 eingebaut); Quirks Q-J3-1…7 (Offline-Signalquelle, totes STG, Doppel-Topf
+Signal (§7-Abweichung, kippte echte Steuerfälle). Bestands-Regen 119 Snapshots / 237 Register-Wechsel via
+`remap-sachgebiet-j3.ts` (Gegenprüfungs-Befunde F1–F3 eingebaut); Quirks Q-J3-1…9 (Offline-Signalquelle, totes STG, Doppel-Topf
 Steuern/Sozialversicherung → David-Entscheid, kantonale Präfix-Kollision BV/SG). Abnahme David offen.
 
 **Eidg. Gerichte BVGer/BStGer/BPatGer — Aufnahme/Bau (Auftrag 9, Batch 3):** [rechtsprechung/eidg-gerichte-aufnahme-2026-06-27.md](rechtsprechung/eidg-gerichte-aufnahme-2026-06-27.md) —

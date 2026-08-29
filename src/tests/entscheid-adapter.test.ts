@@ -122,6 +122,9 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     // über den Roh-String «StG»/«Steuergesetz» (F2: BGE 149 I 125).
     expect(zweierLegalAreaSignal('civil')).toBeNull();
     expect(zweierLegalAreaSignal('tax law')).toBe('sozial-abgaben');
+    // B2-Nachschärfung: Sozialversicherungs-legal_area zählt auf der 2er-
+    // Abteilung NICHT (Art. 31/32 BgerR; Beleg BGE 151 II 726, FZA-Verbleiberecht).
+    expect(zweierLegalAreaSignal('social_insurance')).toBeNull();
     expect(zweierRohSteuerSignal(['Art. 181 Abs. 2 STG'])).toBe('sozial-abgaben');
     expect(zweierRohSteuerSignal(['Art. 14 STGB', 'Art. 1 VSTG'])).toBeNull();
   });
