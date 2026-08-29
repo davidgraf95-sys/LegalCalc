@@ -39,7 +39,7 @@ test('③ GSchV: die «Anhänge»-Sektion ist im Gliederungs-TOC verlinkt', asyn
 // eId `annex_u1` («Protokoll 1 über …» als Sektions-Titel). Gleiches Verhalten
 // (data-anhang-Block + verlinkte Überschrift), kanonischer Anker.
 test('⑤ LugÜ: Protokolle rendern als abgesetzte data-anhang-Blöcke (kanonisch annex_u1)', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/LUGUE');
+  await warteReader(page, '/gesetze/international/LUGUE');
   const protokoll = page.locator('#art-annex_u1');
   await expect(protokoll).toBeVisible({ timeout: 20000 });
   await expect(protokoll).toHaveAttribute('data-anhang', '');
@@ -54,7 +54,7 @@ test('⑤ LugÜ: Protokolle rendern als abgesetzte data-anhang-Blöcke (kanonisc
 // (berechnungen.ts: decl|scope) auch die abgesetzte Anhang-Optik gesichert
 // (data-anhang-Block, identisch zu annex_u1).
 test('⑤ LugÜ: «Vorbehalte und Erklärungen» (decl_u2) rendern als abgesetzter data-anhang-Block', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/LUGUE');
+  await warteReader(page, '/gesetze/international/LUGUE');
   const erklaerungen = page.locator('#art-decl_u2');
   await expect(erklaerungen).toBeVisible({ timeout: 20000 });
   // decl/scope-Nachzug: abgesetzte Anhang-Optik wie annex_u1 (istAnhangToken).
@@ -72,7 +72,7 @@ test('⑤ LugÜ: «Vorbehalte und Erklärungen» (decl_u2) rendern als abgesetzt
 // ── ⑤ LugÜ Ratifikations-Tabelle: overflow-x-Container, KEIN Seiten-H-Overflow ─
 test('⑤ LugÜ @390: Ratifikations-Tabelle scrollt im Container, kein Seiten-H-Overflow', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 900 });
-  await warteReader(page, '/gesetze/bund/LUGUE');
+  await warteReader(page, '/gesetze/international/LUGUE');
   // Die Ratifikations-Tabelle sitzt in einem seitlich scrollbaren overflow-x-Container.
   const tabelle = page.locator('[data-mehrspaltig][role="group"]').first();
   await expect(tabelle).toBeVisible({ timeout: 20000 });
@@ -87,7 +87,7 @@ test('⑤ LugÜ @390: Ratifikations-Tabelle scrollt im Container, kein Seiten-H-
 // ── ⑤ LugÜ @1440: ebenfalls kein H-Overflow (Desktop-Regression) ──────────────
 test('⑤ LugÜ @1440: kein horizontaler Seiten-Overflow', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  await warteReader(page, '/gesetze/bund/LUGUE');
+  await warteReader(page, '/gesetze/international/LUGUE');
   await expect(page.locator('article[data-anhang]').first()).toBeVisible({ timeout: 20000 });
   const doc = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }));
   expect(doc.sw).toBeLessThanOrEqual(doc.cw + 1);

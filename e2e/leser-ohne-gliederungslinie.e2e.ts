@@ -18,10 +18,27 @@ import { ANSICHT_PANEL } from './helpers/leserBeschriftung';
 //      Kante, auch nicht am tiefsten Punkt des Korpus (ZGB Art. 684, Tiefe 5).
 //   2. NEGATIV — die Steuer-Attribute der alten Mechanik sind fort: kein
 //      `data-linien` am <html>, kein `data-guide-auto` am `.lc-leser`-Root.
-//   3. POSITIV — was BEWUSST blieb, ist noch da: der Einzug staffelt die
-//      Verschachtelung weiter (Rang 2 der Rangfolge DESIGN-REGLEMENT-NORMTEXT
-//      §4b «Typo > Einzug»), und zwar dauerhaft statt abschaltbar. Ohne diese
-//      Zeile könnte ein «Rückbau» den Fliesstext still flachziehen.
+//   3. NEGATIV (bis 29.8.2026 POSITIV) — auch der EINZUG staffelt nicht mehr:
+//      keine Gliederungs-Sektion trägt noch ein `padding-left`.
+//
+// ── ZIFF. 3 IST AM 29.8.2026 GEKIPPT (deklarierte fachliche Änderung, §6.3) ──
+// Hier stand die Gegenprobe «der Einzug staffelt die Verschachtelung weiter
+// (§4b Rang 2)» — sie hielt fest, was der Linien-Rückbau vom 16.8.2026 bewusst
+// stehen liess. David hat am 29.8.2026 auch das aufgehoben, wörtlich: «wichtige
+// änderung … im gesetz die staffelung aufzuheben. es soll alles auf der selben
+// höhe stehen. … analog zu fedlex». Die Zeile wird darum nicht gelöscht,
+// sondern UMGEKEHRT — und ihre Aussage wandert von der Sektion (wo sie nur ein
+// CSS-Wert war) auf das, worum es geht: die WIRKUNG am Lesetext. Ohne den
+// zweiten Teil wäre der Fall ein Schein-Tor (§6.7), denn `padding-left: 0`
+// liesse sich mit `margin-left` oder einem Wrapper folgenlos umgehen.
+//
+//   3a. keine Sektion trägt einen Einzug (die Mechanik ist fort);
+//   3b. ALLE Artikel-Textkörper der Seite stehen auf EINER linken Kante und
+//       haben EINE Breite (die Zusage, die David gegeben wurde).
+// Gemessen vor dem Entscheid @1440: ZGB 5 Kanten (574…654 px) / 5 Breiten
+// (540…620 px), OR 6 / 6, StGB 4 / 4. Danach je genau eine.
+// Der Deckel «≤ 70 ch» derselben Entscheidung liegt in
+// `e2e/leser-lesemass.e2e.ts` (Block T-1C) — dort steht die Messmethode.
 
 async function warteReader(page: Page, url: string, artId: string): Promise<void> {
   await page.goto(url);
@@ -62,13 +79,32 @@ async function sektionsKanten(page: Page, artId: string): Promise<{ sektionen: n
   }, artId);
 }
 
-test('ZGB Art. 684 (Tiefe 5): keine Gliederungslinie im Lesetext, Einzug bleibt', async ({ page }) => {
+/** Linke Kanten und Breiten ALLER gerenderten Artikel-Textkörper der Seite. */
+async function textkanten(page: Page): Promise<{ kanten: number[]; breiten: number[] }> {
+  return page.evaluate(() => {
+    const kanten = new Set<number>();
+    const breiten = new Set<number>();
+    document.querySelectorAll('article[id^="art-"] .max-w-normtext').forEach((d) => {
+      const r = d.getBoundingClientRect();
+      if (r.width > 0) { kanten.add(Math.round(r.left)); breiten.add(Math.round(r.width)); }
+    });
+    return { kanten: [...kanten].sort((a, b) => a - b), breiten: [...breiten].sort((a, b) => a - b) };
+  });
+}
+
+test('ZGB Art. 684 (Tiefe 5): keine Gliederungslinie im Lesetext, EINE Textkante', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/ZGB#art-684', 'art-684');
 
   const k = await sektionsKanten(page, 'art-684');
   expect(k.sektionen, 'Art. 684 steckt in Gliederungs-Sektionen').toBeGreaterThan(0);
   expect(k.mitKante, 'KEINE Sektion trägt mehr eine vertikale Gliederungslinie').toBe(0);
-  expect(k.mitEinzug, 'der Einzug staffelt die Verschachtelung weiter (§4b Rang 2)').toBeGreaterThan(0);
+  // 3a — die Einzug-Mechanik selbst ist fort (Entscheid David 29.8.2026).
+  expect(k.mitEinzug, 'eine Gliederungs-Sektion trägt wieder einen Tiefen-Einzug').toBe(0);
+  // 3b — und die Wirkung: ein Lesetext, eine Kante, eine Breite.
+  const t = await textkanten(page);
+  expect(t.kanten.length, 'kein Artikel-Textkörper gemessen').toBeGreaterThan(0);
+  expect(t.kanten, `ZGB: mehr als EINE linke Textkante (${t.kanten.join('/')}px)`).toHaveLength(1);
+  expect(t.breiten, `ZGB: mehr als EINE Textkörperbreite (${t.breiten.join('/')}px)`).toHaveLength(1);
 
   // Die Steuer-Attribute der alten Mechanik sind fort.
   await expect(page.locator('html')).not.toHaveAttribute('data-linien', /.*/);
@@ -79,6 +115,11 @@ test('OR Art. 319 (Tiefe 4): keine Gliederungslinie, kein Schalter «Linien» im
   await warteReader(page, '/gesetze/bund/OR#art-319', 'art-319');
 
   expect((await sektionsKanten(page, 'art-319')).mitKante, 'OR ohne Gliederungslinie').toBe(0);
+  // Der Erlass mit der TIEFSTEN Staffelung vor dem 29.8.2026 (sechs Kanten
+  // 554…654 px @1440) — hier zeigt sich eine Rückkehr des Einzugs zuerst.
+  const t = await textkanten(page);
+  expect(t.kanten.length, 'kein Artikel-Textkörper gemessen').toBeGreaterThan(0);
+  expect(t.kanten, `OR: mehr als EINE linke Textkante (${t.kanten.join('/')}px)`).toHaveLength(1);
 
   // Auch der KLICK über das Attribut, nicht über Rolle+Name — DERSELBE
   // Mechanismus wie oben: jeder Klick-Versuch löst die Rolle+Name-Abfrage über

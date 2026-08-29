@@ -4,6 +4,7 @@
 // Funktionen (§2/§3): aus Pfad bzw. aufgelöstem Erlass; kein DOM, kein Register.
 
 import { pfadTeil, erlassVonPfad, type VerlaufManifeste } from './verlaufLabel';
+import { routenEbene } from './normtext/erlassAdresse';
 
 export type TabKat = 'gesetze' | 'rechtsprechung' | 'vorlagen' | 'rechner' | 'sonstiges';
 
@@ -42,8 +43,10 @@ export const HERKUNFT_LABEL: Record<Herkunft, string> = {
 export function herkunftVon(path: string, m: VerlaufManifeste = {}): Herkunft | null {
   const e = erlassVonPfad(path, m);
   if (!e) return null;
-  if (e.rechtsgebiet === 'international') return 'international';
-  return e.ebene === 'bund' ? 'bund' : 'kanton';
+  // Die Vorrang-Regel «international schlägt Ebene» steht seit Befund 45 EINMAL
+  // (lib/normtext/erlassAdresse.ts) — dieselbe, aus der die Adresse gebaut wird.
+  // Vorher lag hier eine Kopie; Herkunfts-Reiter und URL konnten auseinanderlaufen.
+  return routenEbene(e);
 }
 
 /** Same-Group-Guard fürs Umsortieren (Drag&Drop UND Tastatur-Pfeile): ein Reiter

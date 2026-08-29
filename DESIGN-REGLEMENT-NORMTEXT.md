@@ -103,7 +103,8 @@ solches markiert — nie als Vollständigkeit ausgegeben.
   **An/Aus-Umschalter pro Gesetz** (zustandslos), ob die Striche angezeigt werden.
 - **Einheitliche linke Textkante.** Der Einzug ist gleich, ob ein Artikel
   nummerierte Absätze hat oder nur einen Block (`absatz=null`) — keine
-  springende Textkante zwischen Artikeln.
+  springende Textkante zwischen Artikeln. **Seit dem 29.8.2026 gilt das nicht
+  mehr nur zwischen Artikeln, sondern über den ganzen Erlass** (§4b-C).
 - **Aufgehobene Artikel: schlicht statt verspielt.** Ein voll aufgehobener
   Artikel zeigt als **dezente, immer sichtbare Statuszeile «· aufgehoben»** seinen
   Zustand (das *ist* der Artikelzustand, §2). Die amtliche **Aufhebungs-Zitatzeile**
@@ -145,11 +146,12 @@ Detailplan: `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
 ### §4b · Linien-Kanon & Lese-Typografie (W2·5d G1, 4.7.2026)
 
 Leitprinzip (aus Fedlex-Messung + SotA doppelt belegt): **Ruhe durch Reduktion.
-Hierarchie über Typo-Abstufung + Einzug, NICHT über Linien.** Der Fliesstext ist
-der Held; die Struktur flüstert (Gegen-Lehre zu Fedlex, wo «die Struktur schreit,
-der Rechtstext flüstert»). Rangfolge verbindlich: **Typo (Gewicht/Grösse) >
-Einzug. Farbe/Boxen nie.** Der frühere dritte Rang — «eine dezente Guide-Linie» —
-ist am 16.8.2026 **ersatzlos gestrichen** (Entscheid David 13.8.2026, §4b-A).
+Hierarchie über Typo-Abstufung, NICHT über Linien und NICHT über Einzug.** Der
+Fliesstext ist der Held; die Struktur flüstert (Gegen-Lehre zu Fedlex, wo «die
+Struktur schreit, der Rechtstext flüstert»). Rangfolge verbindlich: **Typo
+(Gewicht/Grösse) trägt die Tiefe allein. Einzug, Linien, Farbe, Boxen nie.**
+Der frühere zweite Rang «Einzug» ist am **29.8.2026** gestrichen (§4b-C), der
+frühere dritte «eine dezente Guide-Linie» am 16.8.2026 (§4b-A).
 
 **EINE Linien-Sprache — genau ZWEI benannte Rollen, sonst keine.** Vorher wurden
 für strukturgleiche Trenner 4–6 Ad-hoc-Opazitäten desselben `--line` frei gewählt
@@ -164,12 +166,13 @@ Art. 684 / OR Art. 319). Neu (Tokens in `src/index.css` `:root` **und**
 | **Struktur-Trenner** (oberste Sektionen Teil/Titel/Abschnitt, eine Spur kräftiger) | `border-t/-b border-rule-struktur` | `--rule-struktur` (14 % / 20 %) | Sektionskopf ebene ≤ 1, Ingress |
 
 Harte Regeln:
-1. **KEINE vertikale Guide-Linie** — Tiefe wird ausschliesslich über **Einzug**
-   getragen (16.8.2026, §4b-A; früher: höchstens EINE Linie auf einer aufbau-
-   abhängigen Ebene). Der Rollen-Token `--guide-gliederung` ist entfernt.
+1. **KEINE vertikale Guide-Linie** (16.8.2026, §4b-A; früher: höchstens EINE
+   Linie auf einer aufbau-abhängigen Ebene). Der Rollen-Token
+   `--guide-gliederung` ist entfernt. **Und kein Tiefen-Einzug** (29.8.2026,
+   §4b-C): die Tiefe trägt allein die Zwischen-Überschrift.
 2. **Innere Sektionen (ebene ≥ 2) und randtitel-promotete Knoten** («A.», «II.»)
    tragen **keine** Horizontal-Linie (die frühere feine ebene-2-Linie entfällt);
-   ihre Tiefe trägt Typo + Einzug.
+   ihre Tiefe trägt die Typo.
 3. **Marker-Scope + Chrome-Ausnahme:** die drei Rollen gelten NUR an den mit
    `data-normtext-linie` markierten strukturellen Containern. Chrome-Borders
    (Such-Boxen, Buttons, Drawer, Nav, Fussnoten-Popover, Tabellen-**Aussenbox**)
@@ -177,19 +180,15 @@ Harte Regeln:
    eigene, ausdrücklich ausgenommene Sprache — sie bleiben `border-line` bzw.
    Brass, nie mit der Linien-Sprache vermischt.
 
-**Einzug-Skala & Weissraum-Rhythmus.** Token `einzug` (`tailwind.config.js
-spacing`, 20px/Stufe): Desktop Tiefe *n* → `n × einzug`, **gedeckelt bei 5 Stufen**
-(V2·L-1 von 3 angehoben — tiefe Kodifikationen ZGB/OR verloren ab Ebene 3 die
-sichtbare Verschachtelung, David-Befund «Liniengliederung funktioniert praktisch
-nicht»). **Mobil kollabiert der Einzug NICHT mehr auf 0**, sondern trägt ein
-kleineres `einzug-mobil` (~0.75rem, `pl-einzug-mobil sm:pl-einzug`) — die
-Verschachtelung bleibt auch @390 flüsterleise lesbar. **CLS 0:** Einzug =
-`padding`. Seit dem 16.8.2026 ist der Einzug **dauerhaft** — der frühere Schalter
-«Linien AUS», der ihn über alle Ebenen auf 0 kollabierte, ist mit der Guide-Linie
-entfallen.
+**Einzug-Skala — AUFGEHOBEN am 29.8.2026, s. §4b-C.** Hier stand die Skala
+(`einzug` 20 px/Stufe, `einzug-mobil` 12 px, gedeckelt bei 5 Stufen). Die Tokens
+sind aus `tailwind.config.js` entfernt, der Wortlaut steht auf **einer** linken
+Kante.
 
-**Lese-Typografie.** Lesespalte **hart auf `max-w-reading` (40rem ≈ 66–71 ch)**,
-nie arbitrary `max-w-[…rem]` (R2). Fliesstext 18px Serif (über Fedlex 14px),
+**Lese-Typografie.** Lesespalte **hart auf einem benannten Token**, nie arbitrary
+`max-w-[…rem]` (R2). Seit dem 29.8.2026 sind es ZWEI Deckel, der schmalere
+gewinnt: der Pixel-Deckel `--leser-lesemass-max` (45 rem, 21.8.2026) und der
+Zeichen-Deckel `--leser-zeilenmass` (~68 Zeichen, §4b-C). Fliesstext 18px Serif (über Fedlex 14px),
 gedämpft `text-ink-800`, Flatterrand (nie Blocksatz). **`hyphens: manual`** (nicht
 `auto`) auf dem Normtext-Body — die deutsche Auto-Silbentrennung an schmalen
 Spalten war der sichtbare «Ge-werbes»-Treiber; `[overflow-wrap:anywhere]` bleibt
@@ -201,10 +200,13 @@ tracking-wide text-ink-500`, dazwischen `text-ink-600`; mehrzeilige Randtitel mi
 
 **Maschinell gegated:** R1 `check:linien-kanon` (marker-scoped, in `npm run gate`),
 R2 eslint (`no-restricted-syntax` gegen arbitrary `max-w-[…rem]` im Reader), R5
-als Playwright-e2e (Lesemass ≤ 75 ch @ 1440 / kein horizontaler Overflow @ 390);
+als Playwright-e2e (`leser-lesemass.e2e.ts`: WCAG-Decke ≤ 80 ch an drei Breiten,
+Haus-Deckel ≤ 70 ch @ 1440 an sechs Erlassen [Block T-1C], Mobil-Boden ≥ 34 ch /
+kein horizontaler Overflow @ 390);
 `leser-ohne-gliederungslinie.e2e.ts` hält fest, dass **keine** Guide-Linie
-zurückkommt und der Einzug bleibt (R4 «≤ 1 Guide je Artikel» ist damit
-gegenstandslos und entfallen). **`golden/lexmetrik-golden.json` bleibt byte-gleich**
+zurückkommt und **kein** Tiefen-Einzug — samt der Wirkungs-Gegenprobe «genau
+EINE linke Textkante und EINE Textkörperbreite je Seite» (R4 «≤ 1 Guide je
+Artikel» ist gegenstandslos und entfallen). **`golden/lexmetrik-golden.json` bleibt byte-gleich**
 (der Reader liegt nicht in der Engine-Golden-Matrix); der amtliche **Wortlaut ist
 unangetastet** (§1, Text-Extraktion vorher/nachher byte-gleich) — geändert sind
 ausschliesslich Klassen/Attribute.
@@ -235,8 +237,9 @@ Ob er per Kategorie, per Dichte-Schwelle oder per Default AN/AUS gesteuert wird,
 ändert an diesem Deckel nichts — **eine einzelne Linie kann «viele Ebenen»
 strukturell nicht abbilden.** Genau daran scheiterten alle drei Anläufe.
 
-**Was die Aufgabe stattdessen trägt:** im Fliesstext Typo + Einzug (§4b Ränge 1
-und 2, Einzug jetzt dauerhaft statt abschaltbar); für die Übersicht «wo bin ich in
+**Was die Aufgabe stattdessen trägt:** im Fliesstext die Typo (§4b Rang 1; der
+Einzug, den dieser Absatz bis zum 29.8.2026 als Rang 2 mitnannte, ist mit §4b-C
+ebenfalls fort); für die Übersicht «wo bin ich in
 der Struktur» die Seitenleiste mit Gliederungsbaum, Scroll-Spy und Sprungziel
 (`W2·19-GLIEDERUNG`, live seit 13.8.2026) — ein dafür gebautes, mächtigeres
 Werkzeug als eine Linie am Spaltenrand.
@@ -252,13 +255,81 @@ Vorher/Nachher-Beweis: `docs/ux-audit-2026-07/reader/linien-rueckbau-2026-08-16/
 das frühere Teil B (Aufbau-Regelwerk) wurde **gestrichen statt umgebaut**, weil
 sein Gegenstand nicht mehr existiert und es nicht mehr rot werden könnte (§6.7).
 Dass die Linie wegbleibt, hält `e2e/leser-ohne-gliederungslinie.e2e.ts` fest —
-inklusive der positiven Gegenprobe, dass der Einzug weiter staffelt.
+seit dem 29.8.2026 zusammen mit der Gegenprobe, dass auch der Einzug wegbleibt
+und der Lesetext auf EINER Kante steht (§4b-C).
+
+### §4b-C · Tiefen-Einzug — AUFGEHOBEN, EINE linke Textkante (Entscheid David 29.8.2026)
+
+**Der Wortlaut steht auf EINER linken Kante — über alle Gliederungstiefen, alle
+Erlasse, Desktop wie mobil.** Die Tiefe trägt allein die Zwischen-Überschrift.
+
+**Entscheid David 29.8.2026, wörtlich:** *«wichtige änderung … im gesetz die
+staffelung aufzuheben. es soll alles auf der selben höhe stehen. … analog zu
+fedlex»*. Damit ist die Regel «Tiefe ausschliesslich über Einzug» (§4b Rang 2,
+W2·5d G1 / V2·L-1) aufgehoben — ersetzt, nicht ergänzt.
+
+**Was der Einzug tatsächlich tat** (gemessen 29.8.2026, alle gerenderten
+`.max-w-normtext` je Erlass): weil die Gliederungs-`section`s INEINANDER
+stecken, summierten sich die 20-px-Stufen (mobil 12 px).
+
+| Erlass | Textkanten @1440 (vorher) | Textkörperbreiten | @390 |
+|---|---|---|---|
+| OR | **6** (554…654 px) | 540…640 px | 6 Kanten (20…80 px), 290…350 px |
+| ZGB | 5 (574…654) | 540…620 | 5 |
+| StGB | 4 | 540…620 | 4 |
+| BS-640.100 | 4 | 560…620 | 4 |
+| StPO | 3 | 600…640 | 3 |
+| VMWG | 1 | 640 | 1 |
+
+Der Effekt lief der Lesbarkeit zuwider: **je tiefer eine Bestimmung in der
+Kodifikation steht, desto schmaler wurde sie gesetzt** — die dichtesten Stellen
+des ZGB (Art. 105/125/208/416) bekamen die engste Spalte. Nach dem Rückbau hat
+jeder Erlass **genau eine** Kante und eine Breite.
+
+**Nicht betroffen — bewusst:**
+
+- Die **Absatz-Rinne** (`pl-9 -indent-9`, hängende Absatznummern in
+  `ArtikelBody`): amtliche Absatz-Auszeichnung, keine Gliederungstiefe.
+- Die **Gliederungs-Seitenleiste** (`SektionBaumTOC`): dort ist die Einrückung
+  ein Navigations-Baum, kein Fliesstext.
+- Der **Hänge-Einzug-Schutz** mehrzeiliger Randtitel (§4b «Lese-Typografie»).
+
+**Gebündelt entschieden (Variante 1C): Zeilenmass-Deckel ~68 Zeichen.** Mit
+einer Kante läuft jeder Erlass an denselben Pixel-Deckel, das Zeilenmass stieg
+gemessen auf 69–74 Zeichen. Der Textkörper trägt darum einen zweiten, in
+ZEICHEN rechnenden Deckel (`--leser-zeilenmass`, `src/index.css`); der
+schmalere der beiden gewinnt. Die Zahl ist ch-basiert hergeleitet: 1 CSS-`ch`
+misst in der Lese-Serife 0.5078 em, das mittlere Prosa-Zeichen 0.4805 em
+(Schlechtfall der Stichprobe) — 68 Zeichen entsprechen 64 CSS-`ch`. Der Deckel
+hängt an `--lm-leser-schrift` und **skaliert darum mit jeder Schriftstufe**.
+
+Messreihe @1440 (Methode `e2e/leser-lesemass.e2e.ts`, Zeichen je Zeile des
+längsten mehrzeiligen Absatzes):
+
+| | OR | ZGB | StGB | StPO | VMWG | BS-640.100 |
+|---|---|---|---|---|---|---|
+| vorher (Staffelung) | 68 | 64 | 69 | 68 | 74 | 56 |
+| eine Kante, ohne Deckel | 73 | 70 | 73 | 69 | 74 | 61 |
+| **mit Deckel (Ist)** | **67** | **66** | **66** | **64** | **63** | **56** |
+
+Die WCAG-Decke SC 1.4.8 (≤ 80 ch) bleibt mit ≥ 13 ch Reserve gehalten. Mobil
+@390 greift der Deckel nicht (591 px > Viewport); dort steigt das Zeilenmass
+durch den Wegfall der Engstelle (OR 33 → 37 ch).
+
+**Maschinell gegated:** `e2e/leser-lesemass.e2e.ts` Block **T-1C** (sechs
+Erlasse: genau eine Kante, eine Breite, ≤ 70 ch @ 1440) und der auf 34 ch
+angehobene Mobil-Boden; `e2e/leser-ohne-gliederungslinie.e2e.ts` Ziff. 3
+(keine Sektion mit `padding-left` **und** die Wirkungs-Gegenprobe). Beide
+Wächter wurden am 29.8.2026 je einmal rot gezeigt (§6.7; Rot-Beweis im Commit
+`test(leser): Wächter der einen Textkante deklariert nachgeführt`).
+Die Tokens `einzug` / `einzug-mobil` sind aus `tailwind.config.js` **entfernt**
+(§17 «gestrichen statt bewacht» — sie hatten genau einen Verbraucher).
 
 ### §4b-B · Farb-Wörterbuch der Referenzschicht (W2·5d V2·C-1, 10.7.2026, David «go zu allem»)
 
 Grundsatz (David 10.7.2026): **Farbe NUR auf der Referenz-/Verzahnungsschicht**
 (Chips, Badges, Kopf) — der **Normtext-Körper bleibt farbfrei** (Rangfolge §4b:
-Typo > Einzug; kein Ton im Lesefluss). Das Wörterbuch ist EIN Entscheid je
+die Typo trägt die Tiefe allein; kein Ton im Lesefluss). Das Wörterbuch ist EIN Entscheid je
 Farbe — kein Ton trägt zwei Bedeutungen:
 
 | Ton | Bedeutung (die EINE) | Trägt sie |
@@ -357,7 +428,8 @@ und **«Linien» ist am 16.8.2026 mit der Gliederungslinie ersatzlos entfallen**
 §3.1/§10.5 (UX) ist damit ausdrücklich überstimmt (A22/A23). Details am Ende von §4c.
 
 Die ursprünglich drei persistenten, **rein visuellen** Lese-Umschalter (Auftrag
-David): ~~**Linien** (Gliederungs-Guide + Einzug, entfallen 16.8.2026)~~,
+David): ~~**Linien** (Gliederungs-Guide entfallen 16.8.2026, der Einzug am
+29.8.2026, §4b-C)~~,
 **Fussnoten** (Marker + Apparat sichtbar/verschwunden), **Verweise**
 (Verweis-Link-Unterstreichung). Sie
 liegen seit U-KOPF/A4 (David 5.7.2026) in **einem «Ansicht»-Dropdown im aktionen-
@@ -374,10 +446,10 @@ U-KOPF-Nachtrag unten). Verbindliche Bau-Regeln:
    Thema/Schriftskala) — **kein Inline-Script** (`script-src 'self'`, vercel.json
    verbietet es). Persistenz in localStorage `lm.leser.optionen`.
 3. **Default = 'an' = heutige Darstellung** ⇒ `data-*="an"` ist ein CSS-No-op ⇒
-   Grundzustand **byte-gleich** (R6, `golden:vergleich` IDENTISCH). Die
-   Einzug-Klassen werden IMMER emittiert und sind seit dem 16.8.2026 dauerhaft —
-   der frühere `data-linien="aus"`-Zweig, der Guide + Einzug ausblendete, ist mit
-   der Gliederungslinie entfallen (§4b-A).
+   Grundzustand **byte-gleich** (R6, `golden:vergleich` IDENTISCH). Der frühere
+   `data-linien="aus"`-Zweig, der Guide + Einzug ausblendete, ist mit der
+   Gliederungslinie entfallen (§4b-A); die Einzug-Klassen, die er schaltete, gibt
+   es seit dem 29.8.2026 überhaupt nicht mehr (§4b-C).
 4. **Fussnoten-«AUS» lässt Marker + Apparat VERSCHWINDEN** (U-KOPF/A1, David
    5.7.2026 — überstimmt die frühere R9-Dämpfungs-Regel; s. U-KOPF-Nachtrag).
    `display:none` am Marker-Cluster (`button[aria-label^="Fussnote"]`,

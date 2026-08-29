@@ -240,10 +240,42 @@
     --space-6:24px; --space-8:32px; --space-12:48px; --space-16:64px; --space-24:96px;
     --control-h:44px;  /* Suchfeld, Toggle-Segmente */
     --pill-h:36px;     /* Rechtsgebiet-Pills */
-    /* Schweiz-Karte: Füll-Helligkeit (HSL-Lightness) je Zustand. Eigene Vars,
-       damit der Dunkelmodus die Pastelle dämpfen kann (sonst glühen sie grell).
-       Sättigung/Farbwinkel bleiben im Generator (SchweizKarte). */
-    --karte-l-basis:84%; --karte-l-hover:72%; --karte-l-aktiv:58%;
+    /* Schweiz-Karte: die FÜLLUNG kodiert den ERFASSUNGSGRAD (Entscheid David
+       29.8.2026 «2B», Design-Review-Befund F1). Vorher streute ein Goldwinkel
+       26 Zufalls-Pastelltöne über die Kantone — sie kodierten NICHTS und trugen
+       keine Legende. Jetzt: EIN Farbton (Messing 39° = der Farbwinkel von
+       --brass-500), drei Helligkeitsstufen, dichter erfasst = kräftiger. Die
+       Stufen trennt allein die LUMINANZ, nie der Farbton → auch bei Deuteran-/
+       Protanopie unterscheidbar (Befund F2). Gemessen hell (Playwright, 29.8.):
+       Kante gegen Füllung 4.59 / 6.54 / 8.87 / 10.47:1 — die F2-Forderung ≥3:1
+       ist die KANTE, sie trägt die Kantonstrennung. Die Stufen untereinander
+       liegen bei 1.36–1.42:1; sie sind bewusst gegenüber den alten Karten-Werten
+       (38/84 · 50/72 · 58/58) gespreizt, die nur 1.26–1.29:1 ergaben. Getragen
+       wird die Aussage ohnehin doppelt: Legende, Tooltip und Bildunterschrift
+       nennen Zahl und Zustands-Wort (§11.6.8). Kein neuer Farbwert — ein Ton,
+       drei Helligkeiten (§13/B3). Die Zuordnung Stufe→Token liegt EINMAL in
+       SchweizKarte.tsx, die Stufe selbst in lib/normtext/erfassungsgrad.ts (§5). */
+    --karte-duenn:hsl(39 34% 87%);
+    --karte-auswahl:hsl(39 50% 71%);
+    --karte-voll:hsl(39 60% 52%);
+    /* Kantone ohne erfasste Erlasse: neutral (chromafrei) UND schraffiert — die
+       Schraffur trägt den Unterschied auch ohne Farbwahrnehmung (§11.6.8
+       «nie nur Farbe»); die Luminanz allein täte es nicht (gemessen 1.18:1
+       gegen «dünn» in beiden Themes). Gilt für beide Modi, kein Override. */
+    --karte-leer:var(--paper-sunken);
+    /* Kantonsgrenze: Luminanz-Kante ≥3:1 gegen JEDE Füllung (Befund F2 — vorher
+       --paper mit <1.6:1, benachbarte Kantone verschmolzen). --ink-700 kippt mit
+       dem Modus (dunkle Tinte hell / helle Tinte dunkel) und trägt die Kante
+       darum in beiden Themes aus EINER Definition. */
+    --karte-kante:var(--ink-700);
+    /* Auswahl-/Hover-Ring: der Messing-Linienton (in BEIDEN Themes brass-500),
+       gezeichnet IM Gehäuse der Kante (s. SchweizKarte). Die ≥3:1-Kante gegen
+       jede Füllung trägt das GEHÄUSE — der Messing-Kern unterscheidet den Ring
+       nur von der gewöhnlichen Kantonsgrenze und tut das über Farbe UND
+       Strichstärke (3–6 statt 1 viewBox-Punkt). Gemessen Kern gegen Gehäuse:
+       3.70:1 hell, 1.74:1 dunkel — dunkel trägt darum die Strichstärke die
+       Unterscheidung, nicht die Luminanz. Kein Dunkel-Override nötig. */
+    --karte-marke:var(--brass-line);
     /* Radien – zurückhaltend; xl/2xl nur für grosse Container (Sektionen, Dialoge) */
     --radius-sm:4px; --radius-md:8px; --radius-lg:12px;
     --radius-xl:16px; --radius-2xl:24px;
@@ -301,8 +333,26 @@
        dem Leser-Schriftregler folgt statt zu entkoppeln; gemessen wächst sie
        dadurch von 0.62 em × 18 px = 11.2 px auf 0.72 em × 17 px = 12.2 px — die
        Marke wird also lesbarer, nicht kleiner. Gebrauch:
-       `text-[length:var(--hochgestellt)]` (Token-Escape der Schranke B2). */
-    --hochgestellt:.72em;
+       `text-[length:var(--hochgestellt)]` (Token-Escape der Schranke B2).
+
+       T5 · BODEN UNTER DEM EM-WERT (Design-Qualitäts-Pass 29.8.2026,
+       §1-nah). Der Absatz oben rechnet den Wert am FLIESSTEXT nach (0.72 em ×
+       17 px = 12.2 px) — die zweite Rolle des Tokens sitzt aber an der
+       MARGINALIE (`helpers.tsx` margLabel, Stufe `leser-rand` = 13 px), und
+       dort ergibt derselbe Faktor gemessen 9.36 px. In dieser Grösse ist das
+       Ordnungs-Suffix «bis»/«ter»/«quater» an einer Artikelnummer nicht mehr
+       sicher zu unterscheiden — und «Art. 336c» statt «Art. 336ᵗᵉʳ» ist keine
+       Kosmetik, sondern die falsche Fundstelle (§1: Rechtslogik vor Optik).
+       `max()` setzt darum EINEN Boden: 0.6875 rem = 11 px, dieselbe Stufe wie
+       `micro`/`leser-fn`, die kleinste Grösse, die das Haus überhaupt setzt.
+
+       Der em-Anteil bleibt führend und die Zusage darüber gilt unverändert:
+       ab 15.3 px Elternschrift gewinnt `0.72em` und die Marke folgt dem
+       Fliesstext wie bisher (am 17-px-Leser also unverändert 12.24 px). Nur
+       UNTER dieser Schwelle greift der Boden. Er entkoppelt die Marke auch
+       dort nicht vom Schriftregler: `rem` hängt an der Wurzel-Schriftgrösse,
+       und genau die verstellt der A−/A+-Regler der Topbar (R3). */
+    --hochgestellt:max(.72em,.6875rem);
     /* Display = Geist (Wunsch David 6.6.2026): die Serife Fraunces ist aus
        der UI entfernt; PDF-Berichte behalten ihre eingebetteten Schriften. */
     /* Rank 11: 'Geist Fallback'/'Source Serif 4 Fallback' (metrik-angepasstes
@@ -370,9 +420,20 @@
        ohne die -500-Mitten (Speiser der -bg-Mixe) zu verschieben. */
     --sage-line:var(--sage-700);
     --slate-line:var(--slate-700);
-    /* Schweiz-Karte im Dunkel: Pastelle deutlich dämpfen, sonst leuchten die
-       Kantonsflächen grell aus dem dunklen Papier. */
-    --karte-l-basis:30%; --karte-l-hover:42%; --karte-l-aktiv:55%;
+    /* Schweiz-Karte im Dunkel: NUR die drei Füllungen werden gedämpft — sonst
+       leuchtet die Karte grell aus dem dunklen Papier (der Grund, aus dem es
+       diese Dunkel-Werte überhaupt gibt). Kante, Neutral-Ton und Ring brauchen
+       KEINEN Override: --karte-kante hängt an --ink-700, das mit dem Modus
+       kippt (dunkle Tinte auf hellem Papier, helle Tinte auf dunklem) und in
+       beiden Richtungen die ≥3:1-Kante gegen jede Füllung trägt.
+       Die Skala bleibt «dichter = kräftiger»: gesättigter und eine Spur heller
+       innerhalb eines engen, dunklen Bandes. Gemessen dunkel (Playwright, 29.8.):
+       Kante gegen Füllung 3.06 / 4.34 / 6.61 / 11.96:1, Stufen untereinander
+       1.42–1.52:1. «vollständig» steht auf 36 %, nicht höher — ab 37 % fällt die
+       Kante auf 2.92:1 und reisst die F2-Schwelle. */
+    --karte-duenn:hsl(39 30% 22%);
+    --karte-auswahl:hsl(39 42% 30%);
+    --karte-voll:hsl(39 55% 36%);
     /* Schatten tiefer für Dunkel-Tiefe (Karten heben sich sonst nicht ab) */
     --shadow-sm:0 1px 2px rgba(0,0,0,.30);
     --shadow-md:0 1px 2px rgba(0,0,0,.30), 0 2px 8px rgba(0,0,0,.36);
@@ -669,9 +730,69 @@
      ihren Ist-Werten (40rem bzw. 42rem). ID-Selektor (`#lc-lesespalte`) und
      die zusätzliche Attribut-Bedingung sind beide für sich schon spezifischer
      als die einfachen Tailwind-Utility-Klassen, kein `!important` nötig. */
+  /* ── ZEILENMASS-DECKEL AM TEXTKÖRPER (Entscheid David 29.8.2026, Variante
+        1C — gebündelt mit der Aufhebung der Tiefen-Staffelung) ──────────────
+     `--leser-lesemass-max` (45rem) ist ein PIXEL-Deckel: er begrenzt, wie breit
+     die Spalte werden darf, sagt aber nichts darüber, wie viele ZEICHEN in eine
+     Zeile geraten. Solange die Staffelung den Text je nach Gliederungstiefe
+     verengte, fiel das nicht auf — der Deckel griff nur an den flachsten
+     Stellen. Mit EINER Kante (29.8.2026) läuft jeder Erlass an denselben
+     Deckel, und das Zeilenmass steigt sichtbar (gemessen @1440, Methode
+     `e2e/leser-lesemass.e2e.ts`: OR 68→73 · ZGB 64→70 · StGB 69→73 ·
+     StPO 68→69 · VMWG 74→74 · BS-640.100 56→61 ch).
+     Darum ein zweiter Deckel, der in ZEICHEN rechnet statt in Pixeln — der
+     schmalere der beiden gewinnt (`min()`):
+
+     · `--leser-zeichen` = 68 — das Zielmass, in der Einheit, in der alle
+       bisherigen Entscheide dieses Lesers stehen (Zeichen je Zeile nach der
+       Methode des Tors: Textlänge / Zeilenkästen des längsten mehrzeiligen
+       Absatzes). Die WCAG-Decke SC 1.4.8 (≤ 80 ch) bleibt unberührt darüber
+       stehen; 68 ist die HAUSzahl darunter, keine Ersetzung.
+     · `--leser-zeichenbreite` = 0.4805 — die mittlere Breite EINES Zeichens
+       deutscher Normtext-Prosa in der Lese-Serife, als Vielfaches der
+       Schriftgrösse. Ch-basiert hergeleitet, nicht geschätzt: 1 CSS-`ch`
+       (Breite der Ziffer «0») misst in dieser Serife 8.633 px bei 17 px
+       Schriftgrösse = 0.5078 em; das mittlere Prosa-Zeichen ist 5.4 % schmaler
+       (8.169 px = 0.4805 em, gemessen am DICHTESTEN Absatz der Stichprobe,
+       VMWG — Schlechtfall, nicht Mittelwert). 68 Zeichen entsprechen damit
+       64 CSS-`ch`. Die CSS-Einheit `ch` steht hier NICHT direkt, weil sie sich
+       auf die Schrift DES ELEMENTS bezieht: `#lc-lesespalte` trägt die
+       UI-Grotesk, nicht die Lese-Serife (und muss den Deckel trotzdem tragen,
+       sonst bekäme die Kopfzeile «Art. N · Zitat/Link» einen anderen rechten
+       Rand als der Fliesstext — der A37-Fehler). Ihr die Serife zu vererben
+       hiesse, die Schrift von 26 029 Nachfahren zu ändern (gemessen 29.8.2026).
+     · `--leser-rinne` = 2.25rem — die amtstreue Absatznummer-Rinne (`pl-9`
+       in `ArtikelBody`) liegt INNERHALB dieser Breite und trägt keinen
+       Fliesstext; sie wird darum aufgeschlagen, nicht mitgezählt.
+
+     SKALIERT MIT JEDER SCHRIFTSTUFE, weil der Deckel an `--lm-leser-schrift`
+     hängt (dem Regler-Token zwei Regeln oberhalb). GEMESSEN am Preview-Stand
+     (OR @1440, Lese-Zelle 640 px):
+       normal     17.00 px → Deckel 591 px → 67 ch   (Zeichen-Deckel bindet)
+       mittel     18.36 px → Deckel 636 px → 67 ch   (Zeichen-Deckel bindet)
+       gross      20.06 px → 640 px (Zelle) → 62 ch  (bindet nicht mehr)
+       sehr-gross 22.10 px → 640 px (Zelle) → 55 ch
+     Das Zeilenmass bleibt über die beiden unteren Stufen KONSTANT bei 67
+     Zeichen — genau das, was ein Pixel-Deckel nicht kann — und fällt darüber
+     von selbst darunter, weil die grössere Schrift weniger Zeichen in dieselbe
+     Zelle bringt. Der Deckel bindet also genau dort, wo er gebraucht wird;
+     darüber übernimmt der andere Arm von `min()` (der Pixel-Deckel bzw., wenn
+     die Grid-Zelle schmaler ist, diese).
+     WÄCHTER (§6.7): `e2e/leser-lesemass.e2e.ts`, Block «T-1C · Zeilenmass-
+     Deckel» — ≤ 70 ch an sechs Erlassen und EINE Textkante. Rot zu bekommen,
+     indem `--leser-zeichen` hochgesetzt oder die `min()`-Klammer entfernt
+     wird. */
+  .lc-leser[data-leser-v3="rahmen"] {
+    --leser-zeichen: 68;
+    --leser-zeichenbreite: 0.4805;
+    --leser-rinne: 2.25rem;
+    --leser-zeilenmass: calc(
+      var(--leser-zeichen) * var(--leser-zeichenbreite) * var(--lm-leser-schrift, 1.0625rem)
+      + var(--leser-rinne));
+  }
   .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte,
   .lc-leser[data-leser-v3="rahmen"] .max-w-normtext {
-    max-width: var(--leser-lesemass-max, 45rem);
+    max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass));
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen

@@ -98,7 +98,7 @@ test.describe('A5 — die Trefferliste sprengt ihre Leiste nicht', () => {
     test.slow() // Staatsvertrag mit Anhängen + Volltextsuche
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/LUGUE?leser=v3')
+    await page.goto('/gesetze/international/LUGUE?leser=v3')
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-suchsprung] input').fill('Gericht')
     await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 20_000 })

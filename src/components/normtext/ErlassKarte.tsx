@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { useErlassOeffnen, istErlassOffen } from '../../lib/useErlassOeffnen';
 import { werkzeugeFuerNorm } from '../../lib/normtext/werkzeuge';
+import { erlassPfad } from '../../lib/normtext/erlassAdresse';
 
 // Klick-Handler für eine Erlass-Verlinkung (Punkt G): der <Link> trägt weiter den
 // nackten Basispfad (SEO/Mittelklick/Cmd-Klick/Copy-Link). Nur der EINFACHE
@@ -53,7 +54,19 @@ function KarteInhalt({ e }: { e: BrowseErlass }) {
           )}
         </span>
       </div>
-      <p className="mt-1.5 text-body-s text-ink-600 leading-snug line-clamp-2">{e.titel}</p>
+      {/* Entscheid David 29.8.2026 «4 grösser» (Design-Review T8): der Karten-
+          TEXT steigt eine Stufe der bestehenden Skala, body-s → base (14→16 px).
+          Kein neuer Wert — `base` ist die in tailwind.config.js dokumentierte
+          16-px-Stufe, die auf /gesetze bisher übersprungen wurde (T8 mass hier
+          einen 18→14-Sprung). Das Kürzel (h3, 20 px) bleibt der Anker; die
+          Staffelung der Karte wird damit dicht statt gesprungen.
+          Die Meta-Zeile darunter bleibt BEWUSST auf xs (12 px): sie ist ein
+          Register aus Zahlen und Chips, kein Text. Mit 14 px gemessen (29.8.,
+          1280 px, Relevanz-Sicht) wuchs die Karte 166→200 px und der Stand-Chip
+          fiel bei StGB/SchKG auf eine eigene Zeile — die Zeile wurde unruhiger,
+          nicht lesbarer. Mit dem Titel allein: 166→168 px, unverändert 6 Karten
+          im Sichtfeld. */}
+      <p className="mt-1.5 text-base text-ink-600 leading-snug line-clamp-2">{e.titel}</p>
       <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         {e.sr && <span>SR <span className="num">{e.sr}</span></span>}
         {/* EIN Meta-Schema für alle Karten (Fehlerbuch-Befund 47, auf Prod
@@ -125,7 +138,7 @@ export function ErlassZeile({ e, variant = 'kompakt' }: { e: BrowseErlass; varia
     ? 'flex flex-col gap-0.5 text-body-s no-underline rounded px-2 py-1.5 hover:bg-brass-100/30 transition-colors min-w-0'
     : 'flex items-baseline gap-2 text-body-s no-underline rounded px-2 py-1 hover:bg-brass-100/30 transition-colors min-w-0';
   const oeffne = useErlassOeffnen();
-  const basePath = `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+  const basePath = erlassPfad(e);
   return istLesbar(e)
     ? <Link to={basePath} onClick={macheOeffnenHandler(e, basePath, oeffne)} className={cls}>{inhalt}</Link>
     : <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer" className={cls}>{inhalt}</a>;
@@ -169,7 +182,7 @@ export function SysZeile({ e }: { e: BrowseErlass }) {
   );
   const cls = 'group/z grid grid-cols-[auto_minmax(0,1fr)_auto] items-baseline gap-3 text-body-s no-underline rounded px-2 py-1 hover:bg-brass-100/30 transition-colors';
   const oeffne = useErlassOeffnen();
-  const basePath = `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+  const basePath = erlassPfad(e);
   return !istLesbar(e)
     ? <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer" className={cls}>{inhalt}</a>
     : (
@@ -199,7 +212,7 @@ export function ErlassKarte({ e }: { e: BrowseErlass }) {
       </a>
     );
   }
-  const basePath = `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+  const basePath = erlassPfad(e);
   return (
     <Link
       to={basePath}

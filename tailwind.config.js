@@ -56,6 +56,14 @@ export default {
         // FristenKalender/wizard bereits verwendet, war aber nie generiert
         // (stiller No-op — die Kreise/Flächen blieben transparent).
         paper: { DEFAULT: 'var(--paper)', raised: 'var(--paper-raised)', sunken: 'var(--paper-sunken)' },
+        // Kantonskarte (2B, 29.8.2026): Erfassungsgrad-Füllungen + Kante — Werte
+        // in index.css; hier registriert, damit das Farbwelt-Tor sie als
+        // Pflichtpaare prüfen kann (Bug-Check #568, §17).
+        karte: {
+          voll: 'var(--karte-voll)', auswahl: 'var(--karte-auswahl)',
+          duenn: 'var(--karte-duenn)', leer: 'var(--karte-leer)',
+          kante: 'var(--karte-kante)', marke: 'var(--karte-marke)',
+        },
         surface: { DEFAULT: 'var(--surface)', raised: 'var(--surface-raised)' },
         brass: {
           100: 'var(--brass-100)', 200: 'var(--brass-200)', 300: 'var(--brass-300)',
@@ -132,12 +140,25 @@ export default {
         //    gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
         //    über alle Grössen»). WCAG 1.4.8: lh 1.55 ≥ 1.5, Lesemass 42 rem.
         //  · `leser-rand` 13 px / lh 1.35 — Marginalie/Randtitel, Sans, label-2.
-        //  · `leser-fn`   11 px / lh 1.3  — Fussnoten-Apparat am Artikelfuss
+        //  · `leser-fn`   11 px / lh 1.45 — Fussnoten-Apparat am Artikelfuss
         //    (war `text-xs leading-normal` = 12 px / 1.5; Kap. 8 nennt als Ist
         //    `text-micro`, gemessen am Code war es `text-xs`).
+        //    ZEILENHÖHE 1.3 → 1.45 (T3, Design-Qualitäts-Pass 29.8.2026,
+        //    DEKLARIERTE fachliche Änderung, nicht Refactoring): die S2-V2-Spalte
+        //    setzte 1.3 für eine SCHMALE Fussnotenspalte an; gebaut wurde der
+        //    Apparat dann über die volle Lesespalte (gemessen @1440 am OR:
+        //    640 px Kasten, 108 ch/Zeile). 1.3 auf 11 px über 108 ch heisst
+        //    14.3 px Zeilenabstand bei 635 px Zeilenlänge — das Auge verliert
+        //    beim Rücksprung die Zeile (Doppelsprung/Zeilenwiederholung). Der
+        //    Apparat läuft seit T3 auf `max-w-kleintext` (26 rem ≈ 71 ch), also
+        //    genau auf der Spalte, für die 1.3 gedacht war; 1.45 gibt der
+        //    Feinschrift trotzdem die Luft, die WCAG 1.4.8 (≥ 1.5 für
+        //    Fliesstext) für Blocktext verlangt — knapp darunter, weil der
+        //    Apparat Referenz-, kein Lesetext ist. Die GRÖSSE bleibt
+        //    unangetastet (0.6875 rem, Entscheid David 17.8.2026 am Bildbogen).
         'leser-text': ['1.0625rem', { lineHeight: '1.55' }],
         'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
-        'leser-fn': ['0.6875rem', { lineHeight: '1.3' }],
+        'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
       },
       borderRadius: {
         sm: 'var(--radius-sm)', md: 'var(--radius-md)', lg: 'var(--radius-lg)',
@@ -166,20 +187,59 @@ export default {
       // 77 ch DARÜBER (es steht nicht in der gegateten Erlass-Liste, s. die Notiz an
       // der Schwelle in `leser-lesemass.e2e.ts`). Die WCAG-Decke SC 1.4.8 (≤ 80 ch)
       // ist in allen gemessenen Fällen gehalten und wird an drei Breiten gegated.
-      // Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist ein
-      // Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener Punkt) —
-      // hier wird die Zahl korrigiert, nicht der Wert geändert. Beide zentriert (mx-auto),
+      //
+      // DER OFFENE PUNKT IST GESCHLOSSEN (Entscheid David 29.8.2026, Variante 1C).
+      // Hier stand: «Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist
+      // ein Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener
+      // Punkt)». David hat entschieden: JA, aber nicht an diesem Token. Der
+      // Textkörper bekommt einen eigenen, in ZEICHEN rechnenden Deckel
+      // (`--leser-zeilenmass` ≈ 68 Zeichen, `src/index.css`), der neben dem
+      // Pixel-Deckel `--leser-lesemass-max` steht; der schmalere gewinnt. Grund
+      // für den zweiten Deckel statt einer kleineren Zahl HIER: `reading`/
+      // `normtext` gelten site-weit bzw. auch für die Kopfzeile und skalieren
+      // nicht mit dem Schriftregler — ein Zeichen-Deckel tut beides. Die Zahlen
+      // oben bleiben als Messprotokoll der 45-rem-Stufe stehen; das IST-Zeilenmass
+      // des Lesers steht in DESIGN-REGLEMENT-NORMTEXT §4b-C (67/66/66/64/63/56 ch).
+      // Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
-      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
-      // Einzug-Skala des Gesetzes-Readers (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT
-      // §Weissraum-Rhythmus): EINE Stufe = 20px. Tiefe wird über Einzug getragen
-      // (V2·L-1: gedeckelt bei 5 Stufen statt 3 — tiefe Kodifikationen ZGB/OR
-      // blieben zuvor ab Ebene 3 einzuglos gleich, die Verschachtelung war nicht
-      // mehr lesbar). MOBIL kollabiert der Einzug NICHT mehr auf 0 (`einzug-mobil`
-      // ~0.75rem, `pl-einzug-mobil sm:pl-einzug`) — die Verschachtelung bleibt
-      // auch @390 flüsterleise sichtbar; die eine Guide bleibt am Spaltenrand.
-      spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' },
+      //
+      // `kleintext` (24rem = 384px) = die Lesespalte der FEINSCHRIFT — Hinweise,
+      // Fussnoten-Apparat, alles auf der micro-/xs-Stufe (0.6875–0.75rem).
+      //
+      // WARUM EINE ZWEITE ZAHL (T2/T3, Design-Qualitäts-Pass 29.8.2026): die
+      // 80-ch-Decke (WCAG 2.2 SC 1.4.8, dieselbe wie beim Lesemass) ist eine
+      // ZEICHEN-Decke, keine Pixel-Decke — sie skaliert mit der Schriftgrösse.
+      // `reading` (40rem) hält sie auf der 18-px-Lead-Stufe (dort ~66–71 ch),
+      // NICHT auf der 11-px-Stufe: dieselben 640 px tragen dort gemessen
+      // 108 ch (Fussnoten-Apparat OR @1440) bzw. 163 ch (Hinweis
+      // `/gesetze/bund/EMRK`). Eine Feinschrift auf `reading` zu setzen sähe
+      // token-rein aus und verfehlte die Zusage; darum die zweite BENANNTE
+      // Zahl statt eines Arbitrary-Werts am Fundort (D2).
+      //
+      // WOHER DIE 24: nicht geschätzt, sondern über die VERTEILUNG gewählt.
+      // Gemessen wurden ALLE 743 mehrzeiligen Fussnoten-Absätze des OR @1440
+      // (Methode `e2e/leser-lesemass.e2e.ts`, Textlänge / Zeilenkästen):
+      //   ungedeckelt (640 px)   Median 68.5 · p90 94.3 · MAX 128.5 ch
+      //   26 rem (416 px)        Median 66.0 · p90 72.0 · MAX  84.5 ch
+      //   24 rem (384 px)        Median 63.0 · p90 69.5 · MAX  74.7 ch
+      // Ein Deckel, der nur den Median hält, ist keiner: erst 24 rem bringt
+      // AUCH die dichtesten Absätze (Abkürzungs- und Zahlenketten «AS 1959
+      // 858; 1964 965 Ziff. I-II», ~4.8 px/ch statt 5.9) unter die 80. Der
+      // EMRK-Hinweis liegt damit auf der xs-Stufe bei ~69 ch.
+      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '24rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
+      // ── DIE EINZUG-SKALA IST GESTRICHEN (Entscheid David 29.8.2026) ────────
+      // Hier standen `spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' }`
+      // — die Tiefen-Staffelung des Gesetzes-Lesers (W2·5d G1 / V2·L-1, 20 px je
+      // Stufe, mobil 12 px, gedeckelt bei 5 Stufen). David 29.8.2026 im Wortlaut:
+      // «wichtige änderung … im gesetz die staffelung aufzuheben. es soll alles
+      // auf der selben höhe stehen. … analog zu fedlex». Der Wortlaut steht
+      // seither auf EINER linken Kante; die Tiefe trägt allein die Zwischen-
+      // Überschrift (§4b Rang 1 «Typo»).
+      // Die Tokens hatten GENAU EINEN Verbraucher (`LeserLesespalte`), und der ist
+      // fort — §17 «gestrichen statt bewacht», kein toter Token im Design-System.
+      // Herleitung, Messreihe und Wächter: `pages/gesetz-leser/v3/
+      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT-NORMTEXT §4b.
       // CLS-Reservierungs-Tokens der Startseite (Startseite V3, §5): benannte
       // Mindesthöhen für die async-/localStorage-Module — Masse, keine Farben
       // (hell = dunkel). `modul-news` benennt den bisherigen Arbitrary-Wert der

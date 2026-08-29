@@ -16,6 +16,7 @@ import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gli
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
+import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
 
 // ═══ ABSCHNITT · Reader-Effekt-Hooks (§6.6-Split, W2·12-HYGIENE/B24) ═════════
 // Aus GesetzLeserInhalt ausgelagerte, side-effect-reine Custom-Hooks: die
@@ -79,11 +80,17 @@ export function useLeserDaten(opts: {
     let lebt = true;
     void ladeBrowseManifest().then((m) => { if (lebt) setManifest(m); });
     void ladeCurrency().then((c) => { if (lebt) setCurrency(c); });
-    void ladeStruktur(ebene, schluessel).then((s) => { if (lebt) setStruktur(s); });
-    void ladeErlassKopf(ebene, schluessel).then((k) => { if (lebt) setKopf(k); });
+    // `ebene` ist die ROUTEN-Ebene aus der Adresse; die Dateien liegen unter der
+    // DATEN-Ebene (Befund 45: `/gesetze/international/CISG` lädt
+    // `/normtext/struktur/bund/CISG.json`). Ohne diese Übersetzung wäre der Umzug
+    // ein STILLER Fehler — 404 auf das Sidecar heisst `null`, also Leser ohne
+    // Gliederung und ohne Erlass-Kopf, während die Seite sonst normal aussieht.
+    const daten = datenEbeneVonRoute(ebene);
+    void ladeStruktur(daten, schluessel).then((s) => { if (lebt) setStruktur(s); });
+    void ladeErlassKopf(daten, schluessel).then((k) => { if (lebt) setKopf(k); });
     // N13: Systematik-Bäume nur für die Kanton-Lesesicht laden; fehlen sie, bleibt
     // die Overline ohne Sachgebiet (§8 — nichts Erfundenes).
-    if (ebene === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
+    if (daten === 'kanton') void ladeKantonSystematik().then((s) => { if (lebt) setKantonSys(s); });
     void ladeErlass(schluessel).then(async (e) => {
       if (!lebt) return;
       if (!e) {
@@ -96,7 +103,7 @@ export function useLeserDaten(opts: {
         const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
         if (kandidaten.length === 1) {
           const ziel = kandidaten[0];
-          navigate(`/gesetze/${ziel.ebene}/${encodeURIComponent(ziel.key)}`, { replace: true });
+          navigate(erlassPfad(ziel), { replace: true });
           return;
         }
         setFehler(true);

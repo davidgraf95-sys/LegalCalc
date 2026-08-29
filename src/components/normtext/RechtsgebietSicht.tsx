@@ -9,6 +9,7 @@ import {
 import { getCalculator } from '../../lib/calculators';
 import { ErlassZeile } from './ErlassKarte';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // ─── Rechtsgebiets-Sicht (zweite Gliederung, «Gerüst» — G6/§4.4) ─────────────
 //
@@ -26,7 +27,7 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 /** Deep-Link in den Reader; enger Bereich springt auf seinen ersten Artikel
  *  (#art-<ankerVon> — der Reader-Anker bleibt `art-<token>`, K2/R8). */
 function mitgliedPfad(m: ThemaMitglied): string {
-  const base = `/gesetze/bund/${encodeURIComponent(m.key)}`;
+  const base = erlassPfadVonKey(m.key);
   return m.ankerVon ? `${base}#art-${m.ankerVon}` : base;
 }
 
@@ -69,7 +70,7 @@ function ThemaKarte({ t, proKey }: { t: RechtsgebietThema; proKey: Map<string, B
         <p className="text-body-s text-ink-600 max-w-reading">{t.kurz}</p>
       </div>
 
-      <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>
+      <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
         {mitglieder.map(({ m, e }) => <ThemaMitgliedZeile key={m.key + (m.spanne ?? '')} e={e} m={m} />)}
       </div>
 
@@ -123,7 +124,7 @@ function Grundgeruest({ erlasse }: { erlasse: BrowseErlass[] }) {
               <span className="font-sans font-semibold text-ink-900 text-body-l tracking-tight">{g.label}</span>
               <span className="num text-body-s text-ink-500 ml-auto">{items.length}</span>
             </summary>
-            <div className={pk('px-5 pb-4 pt-3 border-t border-line grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'px-5 pb-4 pt-3 border-t border-line grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>
+            <div className={pk('px-5 pb-4 pt-3 border-t border-line grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'px-5 pb-4 pt-3 border-t border-line grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
               {items.map((e) => <ErlassZeile key={e.key} e={e} />)}
             </div>
           </details>

@@ -166,6 +166,14 @@ export function Gesetze() {
   // nicht Bund + alle 25 anderen Kantone). Der Chip «auf alle Ebenen erweitern»
   // am Feld weitet mit EINEM Klick; client-only State, kein neuer Index (K10).
   const [alleEbenen, setAlleEbenen] = useState(false);
+  // Karte/Liste der Kantons-Übersicht (§4.3.3). Der Zustand liegt HIER und nicht
+  // mehr in KantonAuswahl: die Übersicht unmountet, sobald ein Kanton gewählt
+  // ist, und nahm die Wahl bisher mit ins Grab — wer über die Liste einstieg,
+  // landete auf dem Rückweg «← Alle Kantone» wieder auf der Karte
+  // (Fehlerbuch-Befund 41 «Umschalter weg nach Wahl», reproduziert 29.8.2026:
+  // Liste gewählt → Kanton → zurück → `Karte aria-pressed=true`). Client-only,
+  // nicht in der URL — es ist eine Vorliebe, kein teilbarer Ort (§4.3.3).
+  const [kantonsAnsicht, setKantonsAnsicht] = useState<'karte' | 'liste'>('karte');
 
   // Ebene (Bund/Kantone) UND der gewählte Kanton liegen in der URL (?ebene= / ?kt=)
   // — so verlinkt die App-Shell-Seitenleiste direkt auf den Kantone-Tab bzw. einen
@@ -606,6 +614,8 @@ export function Gesetze() {
                   gruppen={gruppiereNachKanton(kantGefiltert)}
                   alleKantone={kantone}
                   onWaehle={setzeKanton}
+                  ansicht={kantonsAnsicht}
+                  onAnsicht={setKantonsAnsicht}
                 />
               )}
               {kantGefiltert.length === 0 && <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>}
