@@ -42,9 +42,17 @@ describe('SchweizKarte — Aussage hängt nie nur an der Farbe (F1/§11.6.8)', (
     <SchweizKarte onWaehle={() => {}} nameFuer={(k) => (k === 'ZH' ? 'Zürich' : k)} gradFuer={grad} />,
   );
 
-  it('trägt Zahl und Zustands-Wort im Tooltip UND im aria-label', () => {
+  it('trägt Zahl und Zustands-Wort im Tooltip', () => {
     expect(html).toContain('<title>Zürich — 42 Erlasse · Auswahl</title>');
-    expect(html).toContain('aria-label="Zürich — 42 Erlasse · Auswahl"');
+  });
+
+  // Das aria-label bleibt der reine Name: es ist der NAME des Bedienelements,
+  // und die Kantons-Walks adressieren die Fläche exakt darüber
+  // (e2e gesetze-ia-v2-walks.e2e.ts:203, `{ name: 'Zürich', exact: true }`).
+  // Zahl und Zustands-Wort erreichen die Tastatur über die aria-live-
+  // Bildunterschrift, die onFocus denselben Zustand bekommt wie onMouseEnter.
+  it('lässt das aria-label der Fläche der reine Kantonsname sein', () => {
+    expect(html).toContain('aria-label="Zürich"');
   });
 
   it('nennt Kantone ohne erfasste Erlasse ehrlich beim Namen', () => {

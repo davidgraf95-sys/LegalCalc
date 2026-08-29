@@ -104,10 +104,14 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, 
   const [hover, setHover] = useState<string | null>(null);
   const name = (k: string) => (nameFuer ? nameFuer(k) : k);
   const grad = (k: string) => gradFuer?.(k) ?? null;
-  // Vollständige Beschriftung eines Kantons — EINE Quelle für aria-label,
-  // <title>-Tooltip und Bildunterschrift (§5). Damit trägt jeder Kanton seine
-  // Zahl und sein Zustands-Wort auch dort, wo Farbe nichts sagen kann.
-  const beschriftung = (k: string) => {
+  // Tooltip-Text: Name + Zahl + Zustands-Wort. Damit steht die Aussage der
+  // Füllung auch als TEXT bereit (§11.6.8 «nie nur Farbe») — für den Zeiger im
+  // <title>, für Zeiger UND Tastaturfokus zusätzlich in der aria-live-
+  // Bildunterschrift oben (onFocus setzt denselben Zustand wie onMouseEnter).
+  // Das aria-label bleibt bewusst der reine Kantonsname (bzw. «— keine
+  // Erlasse»): es ist der NAME des Bedienelements, und die Kantons-Walks
+  // adressieren die Fläche exakt darüber (e2e gesetze-ia-v2-walks §11.6).
+  const tooltip = (k: string) => {
     const g = grad(k);
     return g ? `${name(k)} — ${g.text}` : `${name(k)} — keine Erlasse`;
   };
@@ -180,12 +184,12 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, 
               onFocus={() => setHover(k)} onBlur={() => setHover((h) => (h === k ? null : h))}
               onKeyDown={waehlbar ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onWaehle(k); } } : undefined}
               tabIndex={waehlbar ? 0 : -1} role="button" aria-pressed={ist}
-              aria-label={waehlbar ? beschriftung(k) : `${name(k)} — keine Erlasse`}
+              aria-label={waehlbar ? name(k) : `${name(k)} — keine Erlasse`}
               style={{ fill, stroke: 'var(--karte-kante)', strokeWidth: KANTE }}
               className={waehlbar ? 'cursor-pointer' : 'cursor-default'}>
               {/* Tooltip trägt Zahl + Zustands-Wort — die Aussage der Füllung
                   steht damit auch als Text bereit (§11.6.8). */}
-              <title>{beschriftung(k)}</title>
+              <title>{tooltip(k)}</title>
             </path>
           );
         })}
