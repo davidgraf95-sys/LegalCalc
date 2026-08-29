@@ -20,6 +20,7 @@ import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useSuchTreffer } from '../inhalt-suchtreffer';
+import { erlassPfadRoh } from '../../../lib/normtext/erlassAdresse';
 import type { LesePosition } from '../lesePosition';
 
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
@@ -188,7 +189,11 @@ export interface LeserV3Umgebung {
 
 export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schluessel: string }):
 { modell: LeserV3Modell; umgebung: LeserV3Umgebung } {
-  const basisPfad = `/gesetze/${ebene}/${encodeURIComponent(schluessel)}`;
+  // `ebene` ist hier die ROUTEN-Ebene aus der Adresse, die diese Sicht gerade
+  // vollzieht — der Basispfad muss sie unverändert spiegeln (sonst zeigten die
+  // In-Seiten-Anker auf eine andere URL als die Adresszeile). Das Laden der
+  // Dateien benutzt weiter die Daten-Ebene, s. useLeserDaten.
+  const basisPfad = erlassPfadRoh(ebene, schluessel);
   const navigate = useNavigate();
   const location = useLocation();
 

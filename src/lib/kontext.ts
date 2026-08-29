@@ -21,6 +21,7 @@ import { ladeMaterialManifest } from './materialien/browse';
 import { ladeKantenShard } from './materialien/kanten-shard';
 import type { BrowseMaterial } from './materialien/typen';
 import type { Herkunft } from './verzahnung/typen';
+import { erlassPfad } from './normtext/erlassAdresse';
 
 export type { MaterialBezug, EntscheidRef };
 
@@ -111,7 +112,7 @@ export function normenFuer(normKeys: readonly string[]): NormBezug[] {
     seen.add(k);
     out.push({
       key: e.key, kuerzel: e.kuerzel, titel: e.titel, ebene: e.ebene,
-      pfad: `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`,
+      pfad: erlassPfad(e),
     });
   }
   return out;

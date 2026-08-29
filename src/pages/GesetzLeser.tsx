@@ -1,7 +1,8 @@
 import { Suspense, lazy, useLayoutEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useLocation, useParams } from 'react-router-dom';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import { LadeAnzeige } from './gesetz-leser/inhalt-ansichten';
+import { umzugsZiel } from './gesetz-leser/adressUmzug';
 
 // ═══ ABSCHNITT · Einsprungspunkt des Lesers ══════════════════════════════════
 //
@@ -51,6 +52,7 @@ const LeserRahmenV3 = lazy(() =>
 export function GesetzLeser() {
   const { ebene, key: keyRoh } = useParams<{ ebene: string; key: string }>();
   const schluessel = keyRoh ? decodeURIComponent(keyRoh) : '';
+  const { hash, search } = useLocation();
   const meldeInhaltsKopf = useMeldeInhaltsKopf();
   // `useLayoutEffect`, nicht `useEffect` — und das ist gemessen, nicht Geschmack:
   // die Shell setzt ihre Kopfdaten bei JEDEM Pfadwechsel zurück (Shell.tsx, im
@@ -62,6 +64,18 @@ export function GesetzLeser() {
     meldeInhaltsKopf({ kopfzeileSelbst: true, breadcrumb: [] });
     return () => meldeInhaltsKopf(null);
   }, [meldeInhaltsKopf]);
+
+  //  ④ SIE VOLLZIEHT DEN ADRESS-UMZUG (Befund 45, Entscheid David 29.8.2026).
+  //     Steht die Alt-Adresse eines Staatsvertrags in der Zeile, führt EIN
+  //     `replace`-Sprung auf die kanonische — mit Anker UND Query, sonst
+  //     überlebte ein versendeter Deep-Link `…/CISG#art-35` die Weiterleitung
+  //     nicht. `replace`: der Umzug hinterlässt keinen History-Eintrag, «Zurück»
+  //     führt dorthin, wo der Nutzer herkam, nicht in die Alt-Adresse zurück.
+  //     NACH den Hooks, damit die Hook-Reihenfolge über beide Zweige gleich
+  //     bleibt (Regeln der Hooks); der Rahmen-Chunk lädt in diesem Fall nie.
+  const ziel = umzugsZiel(ebene ?? '', schluessel);
+  if (ziel) return <Navigate replace to={{ pathname: ziel, search, hash }} />;
+
   return (
     <Suspense fallback={<LadeAnzeige />}>
       <LeserRahmenV3 key={schluessel} ebene={ebene ?? ''} schluessel={schluessel} />

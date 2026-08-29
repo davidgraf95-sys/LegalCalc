@@ -9,6 +9,7 @@ import { ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { ErlassUebersicht } from './parts/ErlassUebersicht';
 import { GesetzFehlSeite } from './FehlSeite';
+import { ebeneAngabe } from './v3/erlassAnsicht';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationskomponenten (Props rein, §3) — aus GesetzLeserInhalt
@@ -136,7 +137,9 @@ export function LiveVerweisAnsicht({ erlass, currency }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
 }) {
-  const verweisOverline = `${erlass.rechtsgebiet === 'international' ? 'International' : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`} · amtlicher Verweis`;
+  // Dieselbe Ebene-Beschriftung wie Brotkrume und Reiter-Herkunft — bis Befund
+  // 45 stand hier eine dritte Kopie der Vorrang-Regel (§5).
+  const verweisOverline = `${ebeneAngabe(erlass).label} · amtlicher Verweis`;
   return (
     <div className="space-y-5">
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}

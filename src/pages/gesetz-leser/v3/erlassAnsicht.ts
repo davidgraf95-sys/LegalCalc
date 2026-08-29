@@ -1,5 +1,6 @@
 import { formatiereDatum, grundartMeta, titelOhneKlammerSuffix, verifiziertesSachgebiet } from '../helpers';
 import { GEBIET_LABEL, type ErlassTyp } from '../../../lib/normtext/register';
+import { erlassPfad as adresse, routenEbene } from '../../../lib/normtext/erlassAdresse';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 
@@ -95,13 +96,20 @@ export interface EbeneAngabe {
   to: string;
 }
 
+// Welche Stufe die Brotkrume nennt, entscheidet NICHT diese Datei, sondern
+// `routenEbene` (lib/normtext/erlassAdresse.ts) — dieselbe Ableitung, aus der
+// die Adresse gebaut wird. Vor Befund 45 lief hier eine eigene Kopie der
+// Vorrang-Regel «international schlägt Ebene»; sie stand damit neben der
+// Adresse statt in ihr, und genau deshalb konnte die Brotkrume «International»
+// sagen, während die URL «bund» sagte (§5).
 export function ebeneAngabe(
   erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet'>,
 ): EbeneAngabe {
-  if (erlass.rechtsgebiet === 'international') {
+  const stufe = routenEbene(erlass);
+  if (stufe === 'international') {
     return { label: 'International', to: '/gesetze?ebene=international' };
   }
-  if (erlass.ebene === 'bund') {
+  if (stufe === 'bund') {
     // Cowork-Befund 14 (18.8.2026): «Bund» zeigte auf dasselbe Ziel wie «Gesetze»
     // (beide `/gesetze`) — die gefilterte Übersicht braucht `?ebene=bund`.
     return { label: 'Bund', to: '/gesetze?ebene=bund' };
@@ -146,7 +154,7 @@ export function uebersichtsZeile(
 }
 
 /**
- * Adresse eines Erlasses: `/gesetze/<ebene>/<key>`. Auch das ist eine
+ * Adresse eines Erlasses: `/gesetze/<routenEbene>/<key>`. Auch das ist eine
  * Erlass-spezifische Ableitung und gehört darum hierher — gefunden von der
  * Vertrags-Sonde `leser-v3-fundament.test.ts` (16.8.2026), die den Zugriff auf
  * `.ebene` in `LeserLesespalte.tsx` (Nachbar-Erlass-Links) als Verstoss gegen
@@ -154,9 +162,16 @@ export function uebersichtsZeile(
  * der einen erlaubten Stelle: würde die Route je Ebene anders aussehen, wäre
  * er der Ort, an dem man es vergisst. Statt die Zusage aufzuweichen, ist die
  * Ableitung hergezogen.
+ *
+ * Befund 45 (Entscheid David 29.8.2026) hat sie eine Etappe WEITER gezogen: die
+ * Route sieht je Ebene tatsächlich anders aus (Staatsverträge unter
+ * `/gesetze/international/`), und dieselbe Adresse braucht auch das Prerender,
+ * die Sitemap und die Suche — Stellen, die nichts aus der Lesesicht importieren
+ * dürfen. Die Formel steht deshalb in `lib/normtext/erlassAdresse.ts`; diese
+ * Funktion bleibt als benannte Zusage der Lesesicht bestehen und delegiert.
  */
-export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'key'>): string {
-  return `/gesetze/${erlass.ebene}/${encodeURIComponent(erlass.key)}`;
+export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | 'key'>): string {
+  return adresse(erlass);
 }
 
 /**

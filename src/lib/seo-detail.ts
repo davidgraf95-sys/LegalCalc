@@ -20,6 +20,7 @@
 import { SITE_URL, type RouteMetadaten } from './seo';
 import { naechsteFassungSatz, standausweisSatz } from './normtext/erlassKopfText';
 import { GEBIET_LABEL } from './normtext/register';
+import { erlassAltPfad, erlassPfad } from './normtext/erlassAdresse';
 import { ABSCHNITT_TITEL } from './rechtsprechung/abschnitte';
 import type { Rechtsgebiet } from './normtext/register';
 import type { BrowseErlass } from './normtext/browse-typen';
@@ -64,13 +65,20 @@ export function entscheidHatVolltext(snap: EntscheidSnapshot): boolean {
 }
 
 // ─── Pfade ─────────────────────────────────────────────────────────────────
-// encodeURIComponent lässt A-Za-z0-9 und _ . - ! ~ * ' ( ) unberührt; Bund-Keys
-// (UPPERCASE/_/Ziffern) bleiben damit identisch, Sonderzeichen (kantonale Keys
-// mit Leerzeichen) werden korrekt prozentkodiert — Pfad == sitemap-loc ==
-// canonical == Dateiname-Basis, durchgehend eine Form.
+// Die Erlass-Adresse leitet EINE Stelle ab (§5): lib/normtext/erlassAdresse.ts
+// — inklusive der Prozentkodierung, die Pfad == sitemap-loc == canonical ==
+// Dateiname-Basis in einer Form hält. Hier steht nur die Fassade, damit der
+// SEO-/Prerender-Weg dieselbe Adresse erzeugt wie der geklickte Link.
 
-export function erlassDetailPfad(e: Pick<BrowseErlass, 'ebene' | 'key'>): string {
-  return `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+export function erlassDetailPfad(e: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | 'key'>): string {
+  return erlassPfad(e);
+}
+
+/** Alt-Adresse eines umgezogenen Erlasses (Befund 45, Entscheid David
+ *  29.8.2026) — Quelle des Redirect-Stubs im Prerender. null, wenn der Erlass
+ *  nie umgezogen ist (alle Bund-/Kantonserlasse ausser Staatsverträgen). */
+export function erlassAltDetailPfad(e: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | 'key'>): string | null {
+  return erlassAltPfad(e);
 }
 
 export function entscheidDetailPfad(e: Pick<BrowseEntscheid, 'key'>): string {
