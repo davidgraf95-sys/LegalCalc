@@ -172,7 +172,12 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
         // ein sehender Nutzer sprachen damit über zwei verschiedene Menüs.
         // Der Benennungs-Glossar (Design-Grundlage Kap. 9) setzt «Ansicht» —
         // das Wort, das am Öffner steht und das der Nutzer zuerst sieht.
-        title={`Ansicht: Fussnoten${hatAenderungsvermerke ? ' · Fassung' : ''} · Rechtsprechung · Grösse des Gesetzestexts`}
+        // «nur» wie im Gruppen-Namen und im sichtbaren Wort darunter (Entscheid
+        // David 5B, 29.8.2026): der Öffner-Tooltip kündigt an, was das Menü
+        // enthält — stünde hier «Grösse des Gesetzestexts» und drinnen «Nur
+        // Gesetzestext», trüge dieselbe Sache im selben Menü zwei Namen, genau
+        // der Ä114-Fehler eine Ebene tiefer.
+        title={`Ansicht: Fussnoten${hatAenderungsvermerke ? ' · Fassung' : ''} · Rechtsprechung · Grösse nur des Gesetzestexts`}
       >
         {/* ── Ä91 (H4-Nachzug 18.8.2026) · ZWEI GESICHTER, NICHT DREI ────────
             Gemessen 18.8.2026 trug dieser Öffner DREI verschiedene Gestalten:

@@ -152,11 +152,18 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
         {/* max-w-xl deckelt die Feldbreite auf Desktop; im mobilen Fokusmodus ist
             der Viewport ohnehin schmaler, das Feld füllt also den Streifen.
             C1/B10/L3: unter 480 px trägt die Zone im Ruhezustand die 44-px-Lupe
-            (`HeaderSuche`). `min-w-11` statt `min-w-0` hält sie dort — sonst
-            schrumpfte die flex-1-Hülle weiter unter ihr eigenes Bedienelement und
-            die Lupe stünde über der Hüllenkante. Nur die Untergrenze wechselt;
-            die Zone bleibt dieselbe flex-1-Zone in jeder Breite. */}
-        <div className="flex-1 min-w-0 max-[480px]:min-w-11 max-w-xl">
+            (`HeaderSuche`). Die Lupe hält ihre 44 px selbst — `min-w-11 shrink-0`
+            an IHR, nicht an dieser Hülle.
+            NACHGEMESSEN 29.8.2026 (Korrekturrunde, warm, Chromium gegen dist/):
+            hier stand zusätzlich ein `max-[480px]:min-w-11`, das nie band. Die
+            flex-1-Hülle bekommt den Restplatz und ist auf jeder geprüften Breite
+            weiter als ihr Inhalt — 72 px @320, 112 @360, 152 @400, 212 @460, auf
+            allen vier Routen (/gesetze · / · Leser V3 · /rechtsprechung), und
+            zwar mit UND ohne die Untergrenze identisch (16/16 Messpunkte). Die
+            Lupe stand dabei nie über der Hüllenkante, sondern 28 px darin. Die
+            Untergrenze ist darum gestrichen statt bewacht (§17): sie trug keine
+            Wirkung, aber die Behauptung einer. */}
+        <div className="flex-1 min-w-0 max-w-xl">
           <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
@@ -166,12 +173,26 @@ export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeit
               fokussieren ihr Feld (Hinweis-kbd sitzt im Feld). */}
           {/* ── C2 · DER VERLAUF-TRIGGER WEICHT UNTER 480 px ────────────────
               Zweite Hälfte derselben Rechnung wie beim Logo. Der Verlauf ist der
-              einzige Werkzeug-Knopf mit einem ZWEITEN, wortgleichen Zugang: das
-              Suchfeld öffnet leer den `SucheLeerzustand`, und der zeigt genau
-              diese Liste — aus DERSELBEN Quelle (`useZuletzt`, §5), nicht aus
-              einer Kopie. Reiter, Farbschema und Sprache haben das nicht und
-              bleiben darum stehen. Ab 480 px ist der Trigger unverändert da
-              (Gegenprobe im Tor). */}
+              einzige Werkzeug-Knopf mit einem ZWEITEN Zugang: das Suchfeld
+              öffnet leer den `SucheLeerzustand`, und der speist sich aus
+              DERSELBEN Quelle (`useZuletzt` → `lib/zuletztVerwendet.ts`, §5),
+              nicht aus einer Kopie. Reiter, Farbschema und Sprache haben das
+              nicht und bleiben darum stehen. Ab 480 px ist der Trigger
+              unverändert da (Gegenprobe im Tor).
+              GRENZE DIESES ARGUMENTS, nachgemessen 29.8.2026 (Korrekturrunde):
+              der Zweitzugang ist dieselbe Quelle, aber NICHT dieselbe Länge —
+              `zuletztVerwendet.ts` hält MAX = 12, `HeaderSuche` kappt den
+              Leerzustand auf 5. Unter 480 px sind die Einträge 6–12 damit ohne
+              Bedien-Weg (erreichbar bleiben sie über die Suche selbst und über
+              normale Navigation, es ist eine Komfort-Lücke, keine Sackgasse).
+              Die frühere Fassung dieses Kommentars behauptete «genau diese
+              Liste» — das war zu stark und ist hier korrigiert statt still
+              stehengelassen (§8). Die Kappung wird NICHT im Vorbeigehen gehoben:
+              5 Verlaufs-Zeilen + kuratierte Einstiege ist die gewachsene
+              Anordnung des Leerzustands (UI-NAV O1), und 12 Zeilen schöben die
+              Einstiege unter die Falz. Ob der Leerzustand unter 480 px die volle
+              Liste zeigen soll, ist ein Anordnungs-Entscheid für David —
+              offener Punkt in der Rückgabe der Bau-Einheit W2·11-MOBILKOPF. */}
           <div className="max-[480px]:hidden"><VerlaufUebersicht /></div>
           <ReiterUebersicht />
           <ThemaUmschalter />

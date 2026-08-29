@@ -128,8 +128,16 @@ test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
   // ROT ZU BEKOMMEN: in `HeaderSuche.tsx` `onClick={fokussiere}` an der Lupe
   // durch `onClick={() => setOffen(true)}` ersetzen ⇒ das Feld erscheint, trägt
   // aber keinen Fokus (der Fokus-Wunsch über das Render hinweg ist genau das,
-  // was der versteckte Zustand braucht); oder das `max-[480px]:min-w-11` in
-  // `Topbar.tsx` streichen ⇒ die Lupe steht @320 über der Hüllenkante.
+  // was der versteckte Zustand braucht); oder `min-h-11 min-w-11` an der Lupe
+  // selbst streichen ⇒ sie unterschreitet das 44-px-Komfortziel.
+  // GESTRICHEN 29.8.2026 (Korrekturrunde) war ein DRITTER, nachgemessen
+  // FALSCHER Rot-Weg: «das `max-[480px]:min-w-11` in `Topbar.tsx` streichen ⇒
+  // die Lupe steht @320 über der Hüllenkante». Sie tut es nicht. Die flex-1-
+  // Hülle ist auf jeder geprüften Breite weiter als ihr Inhalt (72 px @320 …
+  // 212 @460), mit und ohne Untergrenze identisch; die Lupe ist `shrink-0` und
+  // hält ihre 44 px ohnehin selbst. Die Untergrenze ist daraufhin aus
+  // `Topbar.tsx` entfernt worden (§17). Ein Rot-Weg, der nicht rot wird, ist
+  // schlimmer als keiner — er lässt ein Tor stärker aussehen, als es ist (§6.7).
   test('@320 öffnet die Lupe das Feld über die volle Streifenbreite', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 800 })
     await waerme(page)
@@ -158,8 +166,25 @@ test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
     // ✕ führt zurück — Lupe wieder da, Fokus nicht auf <body> (S6-Zusage).
     await page.locator('header.sticky button[aria-label="Suche schliessen"]').click()
     await expect(lupe).toBeVisible()
-    expect(await page.evaluate(() => document.activeElement?.getAttribute('aria-label')),
-      'Fokus nach dem ✕ verloren').toBe('Navigation öffnen')
+    // ── KORREKTURRUNDE 29.8.2026 · DAS TOR RANNTE, NICHT DIE APP ─────────────
+    // Diese Stelle las `document.activeElement` EINMALIG und war damit lokal
+    // 12/12 rot (`--repeat-each=12 --workers=1`, warm, gegen dist/) — nicht weil
+    // der Fokus ausbliebe, sondern weil er noch unterwegs war: der Streifen gibt
+    // ihn per React-Effekt zurück, sobald das Ziel wieder sichtbar IST.
+    // GEMESSEN am gebauten Stand, ms vom ✕-Klick bis `document.activeElement`
+    // == ☰, 6 Läufe: 22.8 · 11.5 · 9.5 · 11.7 · 11.5 · 9.2.
+    // Auf dem langsamen CI-Runner hätte die vorangehende Sichtbarkeits-Prüfung
+    // dieses Fenster überdeckt — das Tor wäre dort grün und lokal rot gewesen,
+    // also ein Fall, der die MASCHINE misst statt die Software.
+    // Die Zusage bleibt wörtlich und gleich streng: nach dem ✕ trägt der ☰ den
+    // Fokus, nicht <body>. Nur die Ablesung wartet die Übergabe ab, mit einem
+    // Budget rund zwei Zehnerpotenzen über der gemessenen Dauer.
+    // ROT ZU BEKOMMEN: in `HeaderSuche.tsx` den Aufruf `onFokusZurueck?.()` im
+    // ✕-Knopf streichen ⇒ der Fokus fällt auf <body>, der Poll läuft ins Budget.
+    await expect
+      .poll(async () => page.evaluate(() => document.activeElement?.getAttribute('aria-label')),
+        { timeout: 2000, message: 'Fokus nach dem ✕ verloren' })
+      .toBe('Navigation öffnen')
   })
 
   // Gegenprobe: die Entlastung gilt NUR unter 480 px. Darüber muss der Streifen
