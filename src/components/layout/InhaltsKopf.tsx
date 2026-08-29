@@ -156,7 +156,18 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
               className={`min-w-0 items-center gap-1 ${
                 i < letzter || daten.artikel ? 'hidden sm:inline-flex' : 'inline-flex'
               }`}>
-              {i > 0 && <span aria-hidden className="hidden text-ink-300 sm:inline">›</span>}
+              {/* C5 (Design-Qualitäts-Pass 29.8.2026) · KRUMEN-TRENNER ink-300 →
+                  ink-400, gemeinsame Herleitung für alle fünf Trenner-Stellen
+                  (hier, PaneKopf, LeserKopf ›/‹, GliederungSheet). Gemessen
+                  gegen `--paper`: ink-300 hell 2.28:1 / dunkel 2.34:1 — der
+                  Trenner trägt die Gliederung der Ortsangabe und verschwand.
+                  ink-400 misst hell 3.30 / dunkel 3.65 (auf `--well` 3.13 /
+                  3.83) und hält die F2-Schwelle 3:1 in BEIDEN Themes.
+                  Bewusst NICHT ink-500 wie die Klapp-Dreiecke: die Krumen-Links
+                  selbst laufen auf ink-500 (PaneKopf.tsx) — ein gleich starker
+                  Trenner nähme ihnen die Hierarchie. Der Trenner ist Struktur,
+                  kein Bedienelement (aria-hidden). */}
+              {i > 0 && <span aria-hidden className="hidden text-ink-400 sm:inline">›</span>}
               {b.to
                 ? <Link to={b.to} className="truncate no-underline hover:text-brass-700">{b.label}</Link>
                 : <span className={`truncate ${i === letzter ? 'font-medium text-ink-800' : ''}`}>{b.label}</span>}

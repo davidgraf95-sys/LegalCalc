@@ -474,7 +474,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               ? <span className="inline-flex w-4 shrink-0" aria-hidden />
               : <button type="button" onClick={() => setArtOffen((v) => !v)} aria-expanded={artOffen}
                   aria-label={artOffen ? 'Artikel einklappen' : 'Artikel ausklappen'}
-                  className="inline-flex w-4 shrink-0 justify-center text-micro text-ink-300 hover:text-brass-700">{artOffen ? '▾' : '▸'}</button>}
+                  // F3/C5 (29.8.2026): ink-300 → ink-500 — einzige Affordanz
+                  // des Klapp-Knopfes, gemessen 2.28:1 hell / 2.34:1 dunkel
+                  // gegen `--paper`, unter der F2-Schwelle 3:1 für Nicht-Text.
+                  // Herleitung ausführlich am Zwilling in `SektionBaumTOC.tsx`.
+                  className="inline-flex w-4 shrink-0 justify-center text-micro text-ink-500 hover:text-brass-700">{artOffen ? '▾' : '▸'}</button>}
             {/* Anhang/Protokoll (③/⑤): «Anhang N»/«Protokoll N …» als Struktur-
                 Überschrift (font-display, Titel-Grösse) statt als Artikelnummer
                 (num/bold) — es ist ein Block-Titel, keine zitierbare Bestimmung. */}
