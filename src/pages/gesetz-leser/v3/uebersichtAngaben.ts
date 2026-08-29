@@ -187,16 +187,11 @@ export interface UebersichtsEingabe {
  * kantonalen Gesetzessammlung (Herleitung und der Grund gegen ein erfundenes
  * Kantons-Kürzel: `../helpers`).
  */
-/*
- * ANHANG-DOMINANZ (Fehlerbuch, auf Prod reproduziert 29.8.2026): `kennzahlen` ist
- * NEU und OPTIONAL. Die Ruhezeile war der DRITTE Ort, an dem dieselbe Zahl ein
- * eigenes Substantiv bekam — sie druckte «Übersicht 607 Artikel» an SG-3849,
- * während 590 der 607 Einträge (97 %) Anhang-Einträge sind. Erlass-Kopf und
- * Erlass-Übersicht ziehen die Regel `zaehlWort` bereits; hier fehlte sie.
- * Fehlen die Kennzahlen (alle Alt-Aufrufer, u. a. die Sonden in
- * `leser-v3-uebersicht.test.ts`), liefert `zaehlWort` unverändert das
- * Basis-Wort — die Zeile bleibt dann Zeichen für Zeichen die von vorher.
- */
+/* ANHANG-DOMINANZ (Fehlerbuch 29.8.2026): `kennzahlen` ist neu und OPTIONAL. Die
+ * Ruhezeile war der DRITTE Ort, an dem dieselbe Zahl ihr Substantiv selbst
+ * wählte — «Übersicht 607 Artikel» an SG-3849 bei 590/607 Anhang-Einträgen.
+ * Ohne Kennzahlen (alle Alt-Aufrufer) gibt `zaehlWort` das Basis-Wort, die Zeile
+ * bleibt zeichengleich. Rot-Beweis: `anhang-dominanz-ausspielungen.test.ts`. */
 export function ruheZeile(
   erlass: Pick<BrowseErlass, 'ebene' | 'sr'>,
   anzahl: number | null,
@@ -332,14 +327,11 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // Zeilen-Etikett darf einen Zonen-Namen nicht zurückholen. Das Tor hat einen
   // echten Rückfall gefangen, nicht sich selbst — der Wächter bleibt
   // unangetastet, die Bezeichnung weicht aus.
-  // «Anhang» → «N im Anhang» (Fehlerbuch, 29.8.2026): das nackte Wort sagte nur
-  // DASS ein Anhang existiert. Bei SG-3849 tragen 590 von 607 Einträgen den
-  // Anhang — dass der Erlass fast vollständig aus ihm besteht, war daraus nicht
-  // zu lesen, und genau das ist die Angabe, die «Aufbau» geben soll. Die Zahl
-  // kommt aus denselben Kennzahlen, aus denen die Ruhezeile oben schon ihr
-  // Zähl-Wort ableitet (§5). Neutrale Benennung «im Anhang»: wie die
-  // Anhang-Einträge amtlich heissen (Ziffern, Artikel, Positionen), wechselt je
-  // Erlass — wir behaupten es nicht (§8).
+  // «Anhang» → «N im Anhang» (Fehlerbuch 29.8.2026): das nackte Wort sagte nur,
+  // DASS ein Anhang existiert — dass SG-3849 zu 590/607 aus ihm besteht, ist
+  // genau die Angabe, die «Aufbau» geben soll. Zahl aus denselben Kennzahlen wie
+  // das Zähl-Wort der Ruhezeile (§5). «im Anhang» bleibt neutral: wie die
+  // Einträge amtlich heissen, wechselt je Erlass (§8).
   const anhang = e.kennzahlen?.anhangArtikel ?? 0;
   const glied = [
     e.gliederungsTiefe > 0
