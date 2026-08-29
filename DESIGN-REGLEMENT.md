@@ -485,7 +485,7 @@ dritte Schrift (§15). Regel erfüllt, keine Code-Änderung nötig.
 
 *Zusatz 29.8.2026 (Entscheid David, Antwort 3 «Regel»; Review-Befund T6).* Der
 Design-Qualitäts-Pass fand, dass Mono nicht nur Zahlen trägt: `.lc-overline`
-setzt `font-mono` und erscheint rund 600× pro Seite — mit **Wörtern** darin
+setzt `font-mono` und erscheint 260× im Code (gemessen 29.8.2026, grep über src/) — mit **Wörtern** darin
 («RECHTSSAMMLUNG SCHWEIZ», «GLIEDERUNG», «ERFASSUNGSGRAD»). Formal ein Verstoss
 gegen «Mono nur Zahlen/Aktenzeichen». Zur Wahl standen: die ~600 Vorkommen
 umstellen oder die Regel schärfen. **David hat die Regel gewählt.** Sie lautet
