@@ -723,10 +723,18 @@
        Fliesstext; sie wird darum aufgeschlagen, nicht mitgezählt.
 
      SKALIERT MIT JEDER SCHRIFTSTUFE, weil der Deckel an `--lm-leser-schrift`
-     hängt (dem Regler-Token zwei Regeln oberhalb): bei «sehr-gross» (22.1 px)
-     rechnet er auf 758 px, `min()` gibt dann den 720-px-Pixeldeckel zurück —
-     das Zeilenmass fällt dort ohnehin auf ~57 Zeichen. Der Deckel bindet also
-     genau dort, wo er gebraucht wird.
+     hängt (dem Regler-Token zwei Regeln oberhalb). GEMESSEN am Preview-Stand
+     (OR @1440, Lese-Zelle 640 px):
+       normal     17.00 px → Deckel 591 px → 67 ch   (Zeichen-Deckel bindet)
+       mittel     18.36 px → Deckel 636 px → 67 ch   (Zeichen-Deckel bindet)
+       gross      20.06 px → 640 px (Zelle) → 62 ch  (bindet nicht mehr)
+       sehr-gross 22.10 px → 640 px (Zelle) → 55 ch
+     Das Zeilenmass bleibt über die beiden unteren Stufen KONSTANT bei 67
+     Zeichen — genau das, was ein Pixel-Deckel nicht kann — und fällt darüber
+     von selbst darunter, weil die grössere Schrift weniger Zeichen in dieselbe
+     Zelle bringt. Der Deckel bindet also genau dort, wo er gebraucht wird;
+     darüber übernimmt der andere Arm von `min()` (der Pixel-Deckel bzw., wenn
+     die Grid-Zelle schmaler ist, diese).
      WÄCHTER (§6.7): `e2e/leser-lesemass.e2e.ts`, Block «T-1C · Zeilenmass-
      Deckel» — ≤ 70 ch an sechs Erlassen und EINE Textkante. Rot zu bekommen,
      indem `--leser-zeichen` hochgesetzt oder die `min()`-Klammer entfernt
