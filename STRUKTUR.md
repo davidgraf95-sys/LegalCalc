@@ -30,6 +30,19 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 29.8.2026 (Abend) — Steuerungs-Diät: Plan-Neuschnitt + Ritual-Diät (#577, #576, #578; §17-Lehre)
+
+**Gelandet + live:** #577 Plan-Neuschnitt (ROADMAP 102→46 KB, 7 Baufelder statt Herkunfts-Stränge,
+`feld:` ersetzt `kollision`/26x/slot/groesse/worktree, fahrplaene/ 1,71 MB→0,42 MB, `inventar.ts`
+gelöscht, check:plan 13→10 Regeln; löst Council-Entscheid 3.7. ab, Auftrag David 29.8.) · #576
+Ritual-Diät (bauschritt: leichter Pfad = Normalfall, Station A 6→3/E 8→4; token-baseline.mjs
+gelöscht — ein Messweg; tor-schutz Regel 1 auf Kommando-Position, 12/12 Fälle) · #578 Nachzug tote
+Verweise = **Selbsttest neues Ritual: ~9 min Wandzeit inkl. CI, Ritual-Anteil 2 Befehle + 1 Commit.**
+**§17-Lehre (im Repo verankert, ROADMAP-Kopf + PR-Bodies):** Die 44 Produkt-Tore laufen in 14 s und
+bleiben; der Kostentreiber war die Steuerung selbst (42 % Steuerungs-Commits, Deckel-Tretmühle bei
+1 Byte Luft). Offen: Spec-Bindung W2·5l-NORMTEXT-B2/SEO-A11Y (§-Nachzug, Checkliste), Worktrees
+lexmetrik-wt-frische/-trennung fremder Sessions stehen noch.
+
 ## Session 28./29.8.2026 (Nacht+Tag) — UI-Grossoffensive «Ordnung & Sauberkeit»: 8 Landungen (#564–#571, #573), Design-Pass, 10 David-Entscheide, Rechtsgebiets-Trennung
 
 **Gelandet + live (je Deploy-Probe):** #564 Sachgebiets-Klassierung (2er-Pauschale ersetzt,
