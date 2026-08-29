@@ -3,8 +3,8 @@
 "erlass":"BPV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_149_IV_57":{"zitierung":"BGE 149 IV 57","regesteKurz":"Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten Einladu…","datum":"2022-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_149_I_129":{"zitierung":"BGE 149 I 129","regesteKurz":"Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für oblig…","datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_149_IV_57":{"zitierung":"BGE 149 IV 57","regesteKurz":"Art. 322 quinquies und 322 sexies StGB; Vorteilsgewährung und Vorteilsannahme. Prüfung der Tatbestandsmerkmale der Straftaten gemäss Art. 322 quinquies und Art. 322 sexies StGB im Zusammenhang einerseits mit der vorwiegend privaten…","datum":"2022-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_I_129":{"zitierung":"BGE 149 I 129","regesteKurz":"Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für…","datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
 "2":[{"key":"bge_149_I_129","gewicht":0}],

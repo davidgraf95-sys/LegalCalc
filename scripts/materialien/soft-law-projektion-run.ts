@@ -45,9 +45,23 @@ const register = projiziereRegister(datum, dbDocs);
 mkdirSync(dirname(REGISTER_PFAD), { recursive: true });
 writeFileSync(REGISTER_PFAD, JSON.stringify(register, null, 2) + '\n', 'utf8');
 
-// (2) Kanten-Shards + Orphan-Bereinigung
-const { dateien, downgrades, nichtProjiziert } = projiziereShards(datum, kanten, dokMeta, baueKorpusInfo());
-const { geschrieben, entfernt } = schreibeShardsUndBereinige(dateien);
+// (2) Kanten-Shards + Orphan-Bereinigung — NUR mit Harvest-Kanten (J3-Lehre
+// 29.8.2026, §17): eine fehlende oder hohle soft-law.db (nur Blob-Ingest,
+// norm_referenzen leer — z.B. frischer Worktree oder nach datenhaltung:build)
+// lieferte kanten=[] und die Orphan-Bereinigung LOESCHTE alle committeten
+// Shards (33k Zeilen, Beinahe-Datenverlust). Gleiche Bedingung wie die
+// `reprojektionsfaehig`-Wache in check-materialien.ts (Falsch-Rot 21.7.2026):
+// ohne Kanten bleiben die committeten Shards unangetastet, protokolliert.
+let dateien: ReturnType<typeof projiziereShards>['dateien'] = [];
+let downgrades: ReturnType<typeof projiziereShards>['downgrades'] = [];
+let nichtProjiziert: ReturnType<typeof projiziereShards>['nichtProjiziert'] = [];
+let geschrieben = 0, entfernt = 0;
+if (kanten.length > 0) {
+  ({ dateien, downgrades, nichtProjiziert } = projiziereShards(datum, kanten, dokMeta, baueKorpusInfo()));
+  ({ geschrieben, entfernt } = schreibeShardsUndBereinige(dateien));
+} else {
+  console.log('soft-law-projektion: keine Harvest-Kanten (DB fehlt oder hohl) — Shards bleiben unangetastet (kein Orphan-Loeschen).');
+}
 for (const d of downgrades) console.log(`  Downgrade: ${d.dok} · ${d.erlass} Art. ${d.artikel} → Erlass-Ebene (${d.grund})`);
 for (const n of nichtProjiziert) console.log(`  nicht projiziert: ${n.dok} · ${n.erlass} (${n.grund})`);
 

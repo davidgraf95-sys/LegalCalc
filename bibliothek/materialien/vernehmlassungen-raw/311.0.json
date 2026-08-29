@@ -669,50 +669,11 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/44/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
     },
     "titelDe": {
       "type": "literal",
@@ -806,6 +767,45 @@
       "type": "typed-literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-06-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Introduction du trust (modification du code des obligations)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+    },
+    "start": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-01-12"
+    },
+    "ende": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-04-30"
     }
   },
   {

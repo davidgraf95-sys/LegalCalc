@@ -3,7 +3,7 @@
 "erlass":"BS-952.560",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_appellationsgericht_VD.2025.13":{"zitierung":"Appellationsgericht BS VD.2025.13 vom 13.10.2025","regesteKurz":"Verkehrsanordnung Fatiostrasse, Jungstrasse des Amtes für Mobilität vom 16. März 2024 (Beschwerde beim Bundesgericht hä…","datum":"2025-10-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.13":{"zitierung":"Appellationsgericht BS VD.2025.13 vom 13.10.2025","regesteKurz":"Verkehrsanordnung Fatiostrasse, Jungstrasse des Amtes für Mobilität vom 16. März 2024 (Beschwerde beim Bundesgericht…","datum":"2025-10-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "4":[{"key":"bs_appellationsgericht_VD.2025.13","gewicht":null}],
