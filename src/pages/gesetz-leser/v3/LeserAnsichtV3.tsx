@@ -328,8 +328,19 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               ist damit erfüllt; der zweite ist ein anderes Werkzeug mit anderem
               Namen. Ob der App-Regler im Leser dennoch weichen soll, entscheidet
               David (Vollzugsvermerk, offener Punkt). */}
-          <div role="group" aria-label="Grösse des Gesetzestexts" className="mt-1 flex items-center justify-between gap-3 border-t border-line px-2.5 pb-0.5 pt-2">
-            <span className="text-body-s text-ink-700">Gesetzestext</span>
+          {/* ── ENTSCHEID DAVID 5B (29.8.2026) · «NUR» IST DAS TRAGENDE WORT ──
+              Ä9 (oben) hat diesem Regler bereits einen eigenen Namen gegeben —
+              «Gesetzestext» hier, «Schriftgrösse» dort. Das reichte nicht: der
+              App-Regler in der Topbar trug gar keinen SICHTBAREN Scope, also
+              stand «Gesetzestext» neben einem namenlosen Zwilling und las sich
+              als Beschriftung DESSELBEN Werkzeugs (Design-Review C4, erneut
+              gemessen 29.8.2026: beide gleichzeitig auf 120 % / 118 %). Seit
+              David 5B tragen BEIDE ihren Scope sichtbar: «Ganze Seite» in
+              `components/layout/Topbar.tsx`, «Nur Gesetzestext» hier. Das «Nur»
+              ist kein Füllwort — es ist die Abgrenzung, die den Unterschied ohne
+              Screenreader lesbar macht (§8). */}
+          <div role="group" aria-label="Grösse nur des Gesetzestexts" className="mt-1 flex items-center justify-between gap-3 border-t border-line px-2.5 pb-0.5 pt-2">
+            <span className="text-body-s text-ink-700">Nur Gesetzestext</span>
             <span className="inline-flex items-center gap-0.5 rounded-md border border-line">
               <button type="button" onClick={schrift.kleiner} disabled={!schrift.kannKleiner}
                 aria-label="Gesetzestext verkleinern" title="Gesetzestext verkleinern — die Anwendung bleibt gleich gross"

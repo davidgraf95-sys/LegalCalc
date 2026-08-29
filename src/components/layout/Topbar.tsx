@@ -83,28 +83,48 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
             Name wird von Screenreadern nicht zuverlässig vorgelesen); disabled an
             den Anschlägen (§13/F4); Tastatur + sichtbarer Fokus über die globale
             :focus-visible-Outline. Ab lg, mobil aus (knapper Topbar-Platz). */}
-        <div role="group" aria-label="Schriftgrösse" className="hidden lg:inline-flex shrink-0 items-center gap-0.5 rounded-lg border border-line bg-surface p-0.5">
-          <button
-            type="button"
-            aria-label="Schrift verkleinern"
-            disabled={!schrift.kannKleiner}
-            onClick={schrift.kleiner}
-            className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
-          >
-            A<span aria-hidden>−</span>
-          </button>
-          {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
-              ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
-          <span aria-live="polite" className="w-12 select-none text-center text-micro tabular-nums text-ink-500">{schrift.prozent} %</span>
-          <button
-            type="button"
-            aria-label="Schrift vergrössern"
-            disabled={!schrift.kannGroesser}
-            onClick={schrift.groesser}
-            className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
-          >
-            A<span aria-hidden>+</span>
-          </button>
+        {/* ── C4 · ENTSCHEID DAVID 5B (29.8.2026) · BEIDE REGLER SAGEN, WAS SIE STELLEN
+            BEFUND (Design-Review C4, gemessen 17.8. und erneut 29.8.2026 @1440
+            im Leser): zwei sichtbar gleich aussehende «A− 100 % A+»-Regler
+            standen gleichzeitig auf 120 % und 118 % — dieser hier skaliert die
+            ganze Anwendung über die Wurzel-rem (`useSchriftskala`, WCAG 1.4.4),
+            der im «Ansicht»-Menü nur den Normtext (`leserSchrift.ts`). Der
+            Unterschied stand ausschliesslich im `aria-label`; wer sieht, sah
+            zweimal dasselbe Bedienelement (= Fehlerbuch-18, dort als «Kern:
+            Scope nur im aria-label» präzisiert).
+            ENTSCHEID: nicht einen Regler streichen, sondern beide beschriften —
+            der Scope steht sichtbar davor, in derselben Anordnung wie im Menü
+            (Wort links, Steller rechts), damit die zwei als ZWEI Werkzeuge
+            lesbar sind statt als Dopplung. Gegenstück: «Nur Gesetzestext» in
+            `v3/LeserAnsichtV3.tsx`; das Wort «Nur» dort trägt die Abgrenzung.
+            Der Regler bleibt ab lg sichtbar und mobil aus (Streifen-Platz, C2). */}
+        <div role="group" aria-label="Schriftgrösse der ganzen Seite" className="hidden lg:inline-flex shrink-0 items-center gap-1.5">
+          <span aria-hidden className="select-none whitespace-nowrap text-micro text-ink-500">Ganze Seite</span>
+          <span className="inline-flex items-center gap-0.5 rounded-lg border border-line bg-surface p-0.5">
+            <button
+              type="button"
+              aria-label="Ganze Seite verkleinern"
+              title="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+              disabled={!schrift.kannKleiner}
+              onClick={schrift.kleiner}
+              className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
+            >
+              A<span aria-hidden>−</span>
+            </button>
+            {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
+                ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
+            <span aria-live="polite" className="w-12 select-none text-center text-micro tabular-nums text-ink-500">{schrift.prozent} %</span>
+            <button
+              type="button"
+              aria-label="Ganze Seite vergrössern"
+              title="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+              disabled={!schrift.kannGroesser}
+              onClick={schrift.groesser}
+              className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
+            >
+              A<span aria-hidden>+</span>
+            </button>
+          </span>
         </div>
 
         {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke.
