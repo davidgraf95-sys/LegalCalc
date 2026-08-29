@@ -2,7 +2,7 @@
   "normtext.db": {
     "artikel": {
       "zeilen": 56113,
-      "sha": "a58f8e55d66a95a935142fbc536d711230cb94f0dfe064e1ead855e2c5bf3463"
+      "sha": "c4f88b4dcb0982a8f012c99c76ae8c748962bfa40f8f366a29058fd0ac82b9e1"
     },
     "datei": {
       "zeilen": 1458,
@@ -10,15 +10,15 @@
     },
     "dokument": {
       "zeilen": 1653,
-      "sha": "105ad1b894c6a9ffba6fb184cdede55a4506200748a16339a576a5fda501aa15"
+      "sha": "6e1bae42846c16c2e501ddf2b325742064891efba2ed2e51ede5c29cf2137c43"
     },
     "eintrag": {
       "zeilen": 56113,
-      "sha": "5a77961be03fa2f78e22229e71082b93959c5812b762ea9d590249a4a1eecab2"
+      "sha": "ad42b6a97a37d3c36a7bae870608be7be19433e647b44d4d4f67fa83ddfff2ff"
     },
     "erlass_fassungen": {
       "zeilen": 1458,
-      "sha": "a02c28ba5b64821936726fba6364023a03d0a74e9fe9b82619f6513c97dae7ef"
+      "sha": "5e7ee45e8d7c39919ba99b3de71cf9350396c1fe2e639c10995993b76cb2c4ae"
     },
     "erlasse": {
       "zeilen": 1458,

@@ -354,7 +354,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2004/362/de",
       "fassungsToken": "20250601",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/362/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-362-20250601-de-pdf-a.pdf",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/362/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-362-20250601-de-pdf-a-1.pdf",
       "pdfStand": "2025-06-01",
       "inkraftSeit": "2004-07-01"
     },
@@ -543,7 +543,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2013/3/de",
       "fassungsToken": "20240101",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2013/3/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2013-3-20240101-de-pdf-a-1.pdf",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2013/3/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2013-3-20240101-de-pdf-a-3.pdf",
       "pdfStand": "2024-01-01",
       "inkraftSeit": "2013-02-01"
     },
@@ -645,7 +645,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de",
       "fassungsToken": "20260612",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-54-757_781_799-20260612-de-pdf-a.pdf",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-54-757_781_799-20260612-de-pdf-a-2.pdf",
       "pdfStand": "2026-06-12",
       "inkraftSeit": "1942-01-01"
     },
@@ -2984,8 +2984,8 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2012/713/de",
       "fassungsToken": "20260820",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/713/20251101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-713-20251101-de-pdf-a.pdf",
-      "pdfStand": "2025-11-01",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/713/20260820/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-713-20260820-de-pdf-a-1.pdf",
+      "pdfStand": "2026-08-20",
       "inkraftSeit": "2012-12-01"
     },
     {
@@ -4475,7 +4475,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2002/243/de",
       "fassungsToken": "20201215",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/243/20201215/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-243-20201215-de-pdf-a-1.pdf",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/243/20201215/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-243-20201215-de-pdf-a-3.pdf",
       "pdfStand": "2020-12-15",
       "inkraftSeit": "2002-06-01"
     },
@@ -4865,7 +4865,7 @@
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1970/851_851_851/de",
       "fassungsToken": "20210210",
       "pdfPfad": null,
-      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1970/851_851_851/20210210/de/pdf-a/fedlex-data-admin-ch-eli-cc-1970-851_851_851-20210210-de-pdf-a.pdf",
+      "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1970/851_851_851/20210210/de/pdf-a/fedlex-data-admin-ch-eli-cc-1970-851_851_851-20210210-de-pdf-a-1.pdf",
       "pdfStand": "2021-02-10",
       "inkraftSeit": "1970-05-28"
     },
@@ -28911,7 +28911,7 @@
       "status": "snapshot",
       "datei": "kanton/SZ-213.512.json",
       "artikelAnzahl": 7,
-      "stand": "2027-02-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.sz.ch/public/upload/assets/7361/213_512.pdf",
       "fassungsToken": "711e11894a7cfedd9b19b3869013b491c0bcab26449751e4fcf77ec608a78f8f",
       "pdfPfad": null
@@ -29081,9 +29081,9 @@
       "status": "snapshot",
       "datei": "kanton/TI-ti-181.json",
       "artikelAnzahl": 46,
-      "stand": "2027-01-01",
+      "stand": "2024-05-17",
       "quelleUrl": "https://m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/pdfatto/atto/181",
-      "fassungsToken": "b1de77a5a472c0bcdb6b2f9d1e882645ab024c4ddfa0997681528cb6dad5ef3e",
+      "fassungsToken": "a82666505b4580f5071aeb604f5a174e6ba6a0ae2ea708e5d3df13dc0e41ba8a",
       "pdfPfad": null
     },
     {
