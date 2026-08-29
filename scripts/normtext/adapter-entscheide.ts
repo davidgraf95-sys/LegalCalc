@@ -19,12 +19,12 @@ import { normalisiereErwaegung } from './erwaegung-normalisieren';
 // hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
-  statutesZuNormKeys, legalAreaZuSachgebiet, abteilungZuSachgebiet, gerichtstypFuerCourt,
-  zweierLegalAreaSignal, zweierRohSteuerSignal,
-  gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe,
-  istMehrdeutigeOerAbteilung, normSignalSachgebiet, normKeysVonSnapshot,
-  istGemischteDritteOerAbteilung, dritteOerSachgebiet, bgeBand,
+  statutesZuNormKeys, gerichtstypFuerCourt,
+  gerichtAnzeigename, fmtDatumDe, normKeysVonSnapshot,
 } from './entscheide-mapping';
+import {
+  sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet,
+} from './sachgebiet-klassierung';
 
 const API = 'https://mcp.opencaselaw.ch/api';
 
@@ -382,41 +382,17 @@ export function mappeEntscheidOCL(
   const docket = String(det.docket_number ?? det.decision_id)
     .replace(/^(\d[A-Z])\s+(?=\d)/, '$1_')
     .replace(/^(?:BGE|ATF|DTF)\s+/i, '');
-  const sachgebiet: Rechtsgebiet =
-    opts.sachgebietHint
-    // C2-1/J3: Für die mehrdeutige II. öffentlich-rechtliche Abteilung (2A/2C/
-    // 2D) entscheidet die Signal-Kette NUR noch die Steuer/Abgabe-Frage:
-    // Norm-Signal (AIG→öffentlich, DBG/StHG→'steuern', BGFA→öffentlich),
-    // dann Roh-«StG/Steuergesetz» (kantonale Steuergesetze ohne Register-Key),
-    // dann legal_area GEFILTERT auf Steuer-Begriffe (Gegenprüfung 29.8.2026,
-    // F1: ungefiltertes 'civil' kippte 2D-Beschaffungsfälle nach «privat»).
-    // Kein Treffer → Abteilungs-Default 'oeffentlich' (Art. 30/31 BgerR).
-    ?? (istMehrdeutigeOerAbteilung(docket)
-        ? (normSignalSachgebiet(signalKeys)
-          // Array-Guard wie an der zitierteNormen-Stelle unten: OCL-Felder können
-          // als JSON-String ankommen — ein for…of über den String iteriert
-          // Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
-          ?? zweierRohSteuerSignal(Array.isArray(det.statutes) ? det.statutes : [])
-          ?? zweierLegalAreaSignal(det.legal_area))
-        : null)
-    // F1 (Gegenprüfung 29.8.2026): Die III. öffentlich-rechtliche Abteilung (9C)
-    // führt nach Art. 31 lit. a BgerR AUCH «Steuern und Abgaben» — ihr
-    // Abteilungs-Default 'sozialversicherung' darf darum erst greifen, NACHDEM
-    // die Steuerfrage beantwortet ist. `band: null`, weil hier ein bger-Urteil
-    // klassiert wird; den Sammlungs-Band bringt der BGE-Pfad ein
-    // (holeBgeLeitentscheid), wo er dem Abteilungs-Signal vorgeht.
-    ?? (istGemischteDritteOerAbteilung(docket)
-        ? dritteOerSachgebiet({
-            normKeys: signalKeys,
-            zitierteNormen: Array.isArray(det.statutes) ? det.statutes : [],
-            legalArea: det.legal_area,
-            band: null,
-          })
-        : null)
-    ?? abteilungZuSachgebiet(docket)        // BGer-Abteilung (z.B. 5A→privat) ist präziser …
-    ?? kantonalSachgebiet(docket)           // … kantonale Aktenzeichen-Präfixe …
-    ?? legalAreaZuSachgebiet(det.legal_area) // … als die grobe OCL legal_area (erst Fallback).
-    ?? 'oeffentlich';
+  // Die Signal-Kette selbst steht in sachgebiet-klassierung.ts (§6.6-Auszug
+  // 29.8.2026) — hier wird nur eingesammelt, was sie braucht.
+  const sachgebiet: Rechtsgebiet = sachgebietFuerEntscheid({
+    hint: opts.sachgebietHint ?? null,
+    docket,
+    normKeys: signalKeys,
+    // Array-Guard: OCL-Felder können als JSON-String ankommen — ein for…of über
+    // den String iteriert Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
+    zitierteNormen: Array.isArray(det.statutes) ? det.statutes : [],
+    legalArea: det.legal_area,
+  });
   const gerichtName = gerichtAnzeigename(court, canton, det.court_name as string | undefined);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
@@ -667,18 +643,10 @@ export function azaAusBgeKopf(fullText: string | undefined): string | null {
   return k ? k[1].replace(/\s+/, '_') : null;
 }
 
-/** BGE-Band → Sachgebiet: I/II öffentl., III privat, IV straf, V Sozialvers.
- *  (Band V ist das Sozialrechts-Band; Steuersachen stehen in I/II.) */
-export function bgeRoemischSachgebiet(docket: string): Rechtsgebiet | null {
-  const m = /\b(IV|III|II|I|V)\b/.exec(String(docket));
-  switch (m?.[1]) {
-    case 'I': case 'II': return 'oeffentlich';
-    case 'III': return 'privat';
-    case 'IV': return 'straf';
-    case 'V': return 'sozialversicherung';   // W2-TRENNUNG 29.8.2026
-    default: return null;
-  }
-}
+// `bgeRoemischSachgebiet` steht seit dem §6.6-Auszug vom 29.8.2026 in
+// sachgebiet-klassierung.ts; hier nur weitergereicht, damit bestehende
+// Importe aus diesem Modul gültig bleiben (§6).
+export { bgeRoemischSachgebiet };
 
 /**
  * Holt einen amtlichen Leitentscheid (BGE) und reichert ihn mit dem vollständigen
@@ -752,47 +720,25 @@ export async function holeBgeLeitentscheid(
     }
   }
 
+  // Sachgebiet des Leitentscheids: Band-Vorrang und Band-II-Veto stehen in
+  // sachgebiet-klassierung.ts (F1/F3 der Gegenprüfung vom 29.8.2026).
   const roemHint = bgeRoemischSachgebiet(String(det.docket_number ?? ''));
-  // F1 (Gegenprüfung 29.8.2026) — BAND-VORRANG bei 9C-aza:
-  // Der Hint nimmt sonst ungeprüft das Sachgebiet des unterliegenden Urteils.
-  // Für die III. öffentlich-rechtliche Abteilung (9C) ist das zu grob: sie führt
-  // nach Art. 31 lit. a BgerR Steuern UND Sozialversicherung, während der BGE-BAND
-  // die amtliche Einordnung der Sammlung selbst trägt (II = Verwaltungs-/Abgabe-,
-  // V = Sozialrecht). Bisher zog ein 9C-aza mit Default 'sozialversicherung' alle
-  // 68 Band-II-Leitentscheide mit — darunter reine DBG-/StHG-/MWSTG-Entscheide.
-  // Darum: bei 9C-aza entscheidet `dritteOerSachgebiet` MIT dem Band, aus den
-  // Normen beider Seiten (Sammlungs-Auszug + unterliegendes Urteil).
-  const bgeBandRoem = bgeBand(String(det.docket_number ?? det.bge_reference ?? ''));
-  const azaAbteilungIst9C = istGemischteDritteOerAbteilung(String(azaAz ?? ''));
-  const bgeAzaHint: Rechtsgebiet | null = azaAbteilungIst9C
-    ? dritteOerSachgebiet({
-        normKeys: new Set<string>([
-          ...statutesZuNormKeys(Array.isArray(det.statutes) ? det.statutes : []),
-          ...(azaSnap?.normKeys ?? []),
-        ]),
-        zitierteNormen: [
-          ...(Array.isArray(det.statutes) ? det.statutes.map(String) : []),
-          ...(azaSnap?.zitierteNormen ?? []),
-        ],
-        legalArea: det.legal_area,
-        band: bgeBandRoem,
-      })
-    : (azaSnap?.sachgebiet ?? null);
-  // BAND-II-VETO, GENERELL (F3 vom 29.8.2026): Band II ist das Band für
-  // Verwaltungs- und Abgaberecht — 'sozialversicherung' ist dort nach der
-  // amtlichen Systematik der Sammlung ausgeschlossen (Sozialrecht steht in
-  // Band V). Das gilt nicht nur für 9C-aza: Die IV. öffentlich-rechtliche
-  // Abteilung (8C) führt neben der Sozialversicherung auch öffentliches
-  // Personalrecht und Staatshaftung, und ihr Abteilungs-Default zog zwei
-  // Band-II-Leitentscheide mit (BGE 149 II 337, BPG-Kündigung einer
-  // SBB-Angestellten; BGE 148 II 73, Staatshaftung der ETHL wegen einer Lücke
-  // in der beruflichen Vorsorge). Beide sind Verwaltungsrecht. Fällt der Hint
-  // weg, greift `roemHint` = 'oeffentlich'. Am Tor festgenagelt
-  // (rechtsprechung-sachgebiet-tore.test.ts).
-  const hintNachVeto = (bgeBandRoem === 'II' && bgeAzaHint === 'sozialversicherung')
-    ? null
-    : bgeAzaHint;
-  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: hintNachVeto ?? roemHint ?? undefined });
+  const bgeHint = bgeSachgebietHint({
+    fundstelle: String(det.docket_number ?? det.bge_reference ?? ''),
+    azaAz,
+    azaSachgebiet: azaSnap?.sachgebiet ?? null,
+    // Normen BEIDER Seiten: Sammlungs-Auszug + unterliegendes Urteil.
+    normKeys: new Set<string>([
+      ...statutesZuNormKeys(Array.isArray(det.statutes) ? det.statutes : []),
+      ...(azaSnap?.normKeys ?? []),
+    ]),
+    zitierteNormen: [
+      ...(Array.isArray(det.statutes) ? det.statutes.map(String) : []),
+      ...(azaSnap?.zitierteNormen ?? []),
+    ],
+    legalArea: det.legal_area,
+  });
+  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeHint ?? roemHint ?? undefined });
   if (!basis) return null;
   basis.gerichtName = 'Bundesgericht';
 
