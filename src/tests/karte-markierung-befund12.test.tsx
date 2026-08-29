@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import { SchweizKarte, markierungen } from '../components/SchweizKarte';
+import { SchweizKarte } from '../components/SchweizKarte';
+import { markierungen } from '../components/schweizKarteMarkierung';
 
 // ── Fehlerbuch-Befund 12 (Prüfung 29.8.2026) ─────────────────────────────────
 // Die Karte zeichnete den hervorgehobenen Kanton über EINEN Overlay-Pfad, gespeist

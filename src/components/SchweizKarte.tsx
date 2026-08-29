@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { KANTONE_KARTE } from '../data/kantoneKarte';
 import { STUFE_WORT, type ErfassungsStufe } from '../lib/normtext/erfassungsgrad';
+import { markierungen } from './schweizKarteMarkierung';
 
 /** Was die Karte über einen Kanton weiss. `null` = keine erfassten Erlasse. */
 export interface KartenGrad {
@@ -34,22 +35,6 @@ const SCHRAFFUR_ID = 'karte-leer-schraffur';
 const KANTE = 1;
 const RING_INNEN = { stark: 3, weich: 2 } as const;
 const RING_GEHAEUSE = { stark: 6, weich: 4.5 } as const;
-
-/**
- * Welche Kantone einen Markierungs-Ring bekommen — die tragende Entscheidung
- * aus Fehlerbuch-Befund 12, als reine Funktion herausgezogen, damit sie prüfbar
- * ist (§6.7: ein Fix, der nicht rot gezeigt werden kann, ist keiner).
- *
- * ALT war `gezeigt = hover ?? aktiv`: EIN Ring, und Hover VERDRÄNGTE die
- * Auswahl. Wer über einen Nachbarn fuhr, verlor die Auswahl-Markierung unter der
- * Maus. NEU sind es zwei unabhängige Ringe; `hover === aktiv` zeichnet nur den
- * starken, damit derselbe Kanton nicht doppelt umrandet wird.
- */
-export function markierungen(aktiv: string | null | undefined, hover: string | null): {
-  aktiv: string | null; hover: string | null;
-} {
-  return { aktiv: aktiv ?? null, hover: hover && hover !== aktiv ? hover : null };
-}
 
 /**
  * Markierungs-Ring über einem Kanton: dunkles Gehäuse (--karte-kante) UNTER dem
