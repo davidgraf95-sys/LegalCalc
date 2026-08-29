@@ -1,29 +1,23 @@
 # Roadmap/Struktur aufräumen (Referenzdatei des Skills `bauschritt`)
 
 **Laden, wenn** die Steuer-Doku aufgeräumt werden soll — «räum die Roadmap
-auf», «Ceiling gerissen», `struktur-rotieren.py --check` rot, «ROADMAP zu
-gross», «Chronik-Überführung», «Fahrplan archivieren» — oder wenn der
-Re-Akkumulations-Wächter ein Steuerdokument über Budget meldet. Ziel:
-`ROADMAP.md` bleibt schlank, Erledigtes zieht wörtlich um (Vorbild
-`793e9aee3`, 3.8.2026: 117.4→97.7 KB).
+auf», «Ceiling gerissen», `struktur-rotieren.py --check` rot, «Chronik-
+Überführung», «Fahrplan archivieren» — oder wenn der Re-Akkumulations-Wächter
+ein Steuerdokument über Budget meldet. Ziel: `ROADMAP.md` bleibt schlank,
+Erledigtes zieht wörtlich um (Vorbild `793e9aee3`, 3.8.2026: 117.4→97.7 KB).
 
-**Leitplanke:** diese Datei trägt die Prozedur, keine Zahlen (Ceilings,
-Ist-Werte) — nur `struktur-rotieren.py` misst sie; ein Zahlen-Zweitstand
-würde beim nächsten Ceiling-Wechsel unbemerkt veralten (§5-Fehlerklasse).
+**Leitplanke:** diese Datei trägt die Prozedur, keine Zahlen — Ceilings misst
+nur `struktur-rotieren.py`; ein Zahlen-Zweitstand veraltet unbemerkt (§5).
 
-*Gestrafft 29.8.2026 (Ritual-Diät): Der «zwingende Zweitschritt
-`scripts/plan/inventar.ts`» ist ersatzlos entfallen — die Inventar-Datei und
-check:plan-Regel 1 existieren nicht mehr (Doppelbuchführung, Steuerungs-Diät).*
+*Gestrafft 29.8.2026 (Ritual-Diät): der «zwingende Zweitschritt
+`scripts/plan/inventar.ts`» ist ersatzlos entfallen — Inventar-Datei und
+check:plan-Regel 1 existieren nach der Steuerungs-Diät nicht mehr.*
 
 ## 1 · Ist-Messung
 
-```
-python3 .claude/hooks/struktur-rotieren.py --check
-```
-
-Einzige Messquelle — Exit 1 nennt Steuerdokument + Überschreitung. Ceilings
-liegen im Skript-Kopf (`BUDGET`-Dict), nicht hier (zwei Wahrheiten über
-denselben Wert). Ohne Ist-Messung kein Aufräumen (§0.3: Verdacht ≠ Ursache).
+`python3 .claude/hooks/struktur-rotieren.py --check` — einzige Messquelle,
+Exit 1 nennt Steuerdokument + Überschreitung; Ceilings stehen im Skript-Kopf
+(`BUDGET`-Dict). Ohne Ist-Messung kein Aufräumen (§0.3: Verdacht ≠ Ursache).
 
 ## 2 · Erledigtes wörtlich nach `ROADMAP-CHRONIK.md`
 
@@ -70,8 +64,8 @@ dessen Anlass entfallen ist, fällt. Jede Streichung bekommt in
   entfallen ist oder wer den Posten abgelöst hat>.
 ```
 
-Ohne diese Zeile verschwindet ein Posten stillschweigend — der Verlust, den
-§11 verhindern soll.
+Ohne sie verschwindet ein Posten stillschweigend — der Verlust, den §11
+verhindern soll.
 
 **Für CODE gilt derselbe Massstab in beweisbarer Form (Auftrag David
 14.8.2026, «was keine Fehlfunktion auslöst, kann weg» — präzisiert, weil
@@ -84,27 +78,26 @@ Löschung, nie löschen-und-schauen.
 
 ## 4 · Fahrplan-Archivierung — verify-then-archive
 
-`check:plan` koppelt zwei Regeln: **Regel 7** — jede `FAHRPLAN-*.md` unter
-`fahrplaene/` muss aus `ROADMAP.md` verlinkt sein; **Regel 9** umgekehrt —
-jeder `fahrplan:`-Zeiger muss auf eine existierende Datei zeigen. Reihenfolge:
+`check:plan` koppelt **Regel 7** (jede `FAHRPLAN-*.md` unter `fahrplaene/`
+muss aus `ROADMAP.md` verlinkt sein) und **Regel 9** (jeder `fahrplan:`-Zeiger
+muss auf eine existierende Datei zeigen). Darum in dieser Reihenfolge:
 
 1. **Verify.** `grep -rn <Basename> ROADMAP.md fahrplaene/ bibliothek/ docs/ *.md`
    — kein lebender Zeiger mehr? Nur dann weiter. Treffer ausserhalb der
    Steuer-Doku auf `archiv/…` umschreiben, `check:bibliothek` lokal grün VOR
    dem Push (Doku-Pushes laufen an der CI vorbei — Beleg 7.8.2026,
-   `2a890c50d`). **Nicht** gegen `ROADMAP-CHRONIK.md` grepen: Regel 7/9 lesen
-   die Chronik nicht.
-2. **Archive.** `git mv fahrplaene/FAHRPLAN-X.md archiv/`.
-
-Bleibt ein Schritt aktiv trotz archiviertem Fahrplan, den `fahrplan:`-Zeiger
-auf `archiv/…` umschreiben (Regel 9 prüft nur Existenz, nicht den Ort) und
-sichtbar markieren, dass Restpunkte noch zu extrahieren sind.
+   `2a890c50d`). **Nicht** gegen `ROADMAP-CHRONIK.md` grepen (Regel 7/9 lesen
+   die Chronik nicht).
+2. **Archive.** `git mv fahrplaene/FAHRPLAN-X.md archiv/`. Bleibt ein Schritt
+   aktiv trotz archiviertem Fahrplan, den Zeiger auf `archiv/…` umschreiben
+   (Regel 9 prüft nur Existenz, nicht den Ort) und sichtbar markieren, dass
+   Restpunkte noch zu extrahieren sind.
 
 **§-Diät lebender Fahrpläne (BAUPLAN-UMBAU 15.8.2026):** erledigte §§ wandern
 wörtlich nach `archiv/<FAHRPLAN-NAME>-erledigt.md` (datierter Block ans
-Dateiende, nie zusammenfassen); im Fahrplan bleibt je § eine Stub-Zeile
+Dateiende, nie zusammenfassen); im Fahrplan bleibt je § die Stub-Zeile
 `## §N — <Titel> ✅ (erledigt <Datum>, Wortlaut: archiv/…)`, damit Regel 11
-(Spec-Bindung) und bestehende §-Verweise weiter auflösen.
+(Spec-Bindung) und §-Verweise weiter auflösen.
 
 ## 5 · Tor-Reihenfolge
 
@@ -118,14 +111,12 @@ Chronik; ein Zwischenstand wäre rot.
 
 ## Verwaisungs-Sweep — vier Guards (Lehren 14.8.2026, QS-EFFIZIENZ)
 
-1. **Nur `git ls-files`-Bestand ist Kandidat** — Untracked/Gitignoriertes ist
-   Davids Lokalbestand (Beinahe-Fall COWORK.md).
-2. **Backlink-Suche ohne Verzeichnis-Ausschluss** — auch `archiv/` zählt;
-   Treffer dort als «nur historisch» ausweisen, nicht verschweigen.
-3. **`*.test.ts` ist nie verwaist** (Vitest-Autodiscovery), und Dateien mit
-   dokumentierter `vite-node <pfad>`-CLI im Kopf sind Werkzeuge — vorab
-   ausfiltern.
-4. **Löschen erst nach unabhängigem Guard im ausführenden Auftrag**
+1. Nur **`git ls-files`-Bestand** ist Kandidat (Beinahe-Fall COWORK.md).
+2. **Backlink-Suche ohne Verzeichnis-Ausschluss** — `archiv/`-Treffer als «nur
+   historisch» ausweisen, nicht verschweigen.
+3. **`*.test.ts` ist nie verwaist** (Vitest-Autodiscovery); Dateien mit
+   dokumentierter `vite-node <pfad>`-CLI im Kopf sind Werkzeuge — ausfiltern.
+4. **Löschen erst nach unabhängigem Guard** im ausführenden Auftrag
    (Basisnamen-Gegensuche vor jedem `git rm`) — der Sweep ist Verdacht.
 
 ## Nachbar-Instrumente · Wann NICHT
