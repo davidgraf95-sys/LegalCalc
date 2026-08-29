@@ -152,8 +152,11 @@ describe('parseNormQuery — Positivfälle (Deep-Link)', () => {
   });
 
   it('pdf-embed erhält KEINEN #art-Anker (kein gerenderter Volltext)', () => {
-    expect(href('EMRK 3')).toBe('/gesetze/bund/EMRK');
-    expect(href('emrk')).toBe('/gesetze/bund/EMRK');
+    // Die EMRK ist ein Staatsvertrag und steht seit Befund 45 (Entscheid David
+    // 29.8.2026) unter /gesetze/international/ — die Zusage dieses Falls ist der
+    // FEHLENDE #art-Anker, nicht die Ebene.
+    expect(href('EMRK 3')).toBe('/gesetze/international/EMRK');
+    expect(href('emrk')).toBe('/gesetze/international/EMRK');
   });
 
   it('liefert Erlass-Metadaten + Anzeige-Form des Artikels', () => {

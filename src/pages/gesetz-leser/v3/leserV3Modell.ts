@@ -8,7 +8,7 @@ import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { InternRefs } from '../../../components/NormText';
 import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
 import { strukturTiefe } from '../strukturTiefe';
-import { pfadZu } from '../helpers';
+import { basisAdresse, pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
 import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
@@ -20,7 +20,6 @@ import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useSuchTreffer } from '../inhalt-suchtreffer';
-import { erlassPfadRoh } from '../../../lib/normtext/erlassAdresse';
 import type { LesePosition } from '../lesePosition';
 
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
@@ -189,11 +188,7 @@ export interface LeserV3Umgebung {
 
 export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schluessel: string }):
 { modell: LeserV3Modell; umgebung: LeserV3Umgebung } {
-  // `ebene` ist hier die ROUTEN-Ebene aus der Adresse, die diese Sicht gerade
-  // vollzieht — der Basispfad muss sie unverändert spiegeln (sonst zeigten die
-  // In-Seiten-Anker auf eine andere URL als die Adresszeile). Das Laden der
-  // Dateien benutzt weiter die Daten-Ebene, s. useLeserDaten.
-  const basisPfad = erlassPfadRoh(ebene, schluessel);
+  const basisPfad = basisAdresse(ebene, schluessel);
   const navigate = useNavigate();
   const location = useLocation();
 

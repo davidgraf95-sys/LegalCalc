@@ -22,6 +22,7 @@ import { jsonLdFuerPfad, metaFuerPfad, prerenderRouten, SITE_URL } from '../src/
 import {
   entscheidHatVolltext,
   entscheidVolltextHtml,
+  erlassAltDetailPfad,
   erlassHatVolltext,
   erlassVolltextHtml,
   esc,
@@ -34,6 +35,7 @@ import {
   jsonLdFuerMaterial,
   materialDetailHtml,
 } from '../src/lib/seo-detail';
+import { routenEbene } from '../src/lib/normtext/erlassAdresse';
 import type { BrowseErlass } from '../src/lib/normtext/browse-typen';
 import type { NormSnapshotDatei } from '../src/lib/normtext/typen';
 import type { BrowseEntscheid } from '../src/lib/rechtsprechung/register';
@@ -234,6 +236,41 @@ function schreibeDetail(ziel: string, html: string): void {
   writeFileSync(ziel, html);
 }
 
+/**
+ * Redirect-Stub für eine umgezogene Alt-Adresse (Befund 45, Entscheid David
+ * 29.8.2026 «ja, mit Weiterleitungen»).
+ *
+ * Warum eine eigene, minimale Seite statt des normalen Templates: dieses
+ * Dokument soll NICHT indexiert werden und keinen zweiten Volltext derselben
+ * Norm tragen (§5 — sonst stünde derselbe Gesetzestext unter zwei URLs). Es
+ * trägt genau vier Dinge: `canonical` auf die neue Adresse (die Kanonik, die
+ * Crawler lesen), `robots noindex,follow` (der Link zählt, die Seite nicht),
+ * ein `meta refresh` (der Sprung ohne JavaScript) und einen sichtbaren Link
+ * (der Sprung ohne alles). Der Client-Redirect in GesetzLeser übernimmt für
+ * interne Navigationen, die den Server nie fragen — und er ist es auch, der
+ * den `#art-…`-Anker mitnimmt, den ein Server-Redirect ohnehin nie sieht.
+ */
+function umzugsStub(altPfad: string, canonical: string, titel: string): string {
+  return [
+    '<!doctype html>',
+    '<html lang="de">',
+    '<head>',
+    '<meta charset="utf-8" />',
+    '<meta name="viewport" content="width=device-width, initial-scale=1" />',
+    `<title>${esc(titel)}</title>`,
+    `<link rel="canonical" href="${esc(canonical)}" />`,
+    '<meta name="robots" content="noindex, follow" />',
+    `<meta http-equiv="refresh" content="0; url=${esc(canonical)}" />`,
+    '</head>',
+    '<body>',
+    `<p>Diese Adresse (<code>${esc(altPfad)}</code>) ist umgezogen.`,
+    ` <a href="${esc(canonical)}">Weiter zur geltenden Adresse</a>.</p>`,
+    '</body>',
+    '</html>',
+    '',
+  ].join('\n');
+}
+
 const gesetzeUrls: string[] = [];
 const rechtsprechungUrls: string[] = [];
 const materialienUrls: string[] = [];
@@ -265,8 +302,19 @@ for (const e of snapshotErlasse) {
     if (inhalt.includes('<script')) throw new Error('Inline-Script im Erlass-Volltext — Builder prüfen');
     const meta = metaFuerErlass(e);
     const html = rendereTemplate(meta, jsonLdFuerErlass(e), inhalt, meta.pfad);
-    schreibeDetail(join(DIST, 'gesetze', e.ebene, `${e.key}.html`), html);
+    // Die Datei liegt unter der ROUTEN-Ebene, nicht unter der Daten-Ebene — sonst
+    // stünde die Seite nicht an ihrer eigenen canonical-URL (Befund 45).
+    schreibeDetail(join(DIST, 'gesetze', routenEbene(e), `${e.key}.html`), html);
     gesetzeUrls.push(meta.canonical);
+    // Alt-Adresse als Redirect-Stub: erreichbar (kein 404), aber nicht in der
+    // Sitemap — eine gesitemappte URL, die auf eine andere kanonisiert, ist ein
+    // Widerspruch in sich (dieselbe Regel wie bei /international, s. seo.ts).
+    // Dateiname am ROHEN Key (wie oben), Adresse im Text prozentkodiert — die
+    // beiden Formen fallen bei Bund-Keys zusammen, aber nur eine ist der Pfad.
+    const alt = erlassAltDetailPfad(e);
+    if (alt) {
+      schreibeDetail(join(DIST, 'gesetze', e.ebene, `${e.key}.html`), umzugsStub(alt, meta.canonical, meta.titel));
+    }
   } catch (err) {
     detailFehler++;
     console.error(`FEHLER  /gesetze/${e.ebene}/${e.key}:`, err);

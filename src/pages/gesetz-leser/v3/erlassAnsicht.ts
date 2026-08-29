@@ -96,12 +96,8 @@ export interface EbeneAngabe {
   to: string;
 }
 
-// Welche Stufe die Brotkrume nennt, entscheidet NICHT diese Datei, sondern
-// `routenEbene` (lib/normtext/erlassAdresse.ts) — dieselbe Ableitung, aus der
-// die Adresse gebaut wird. Vor Befund 45 lief hier eine eigene Kopie der
-// Vorrang-Regel «international schlägt Ebene»; sie stand damit neben der
-// Adresse statt in ihr, und genau deshalb konnte die Brotkrume «International»
-// sagen, während die URL «bund» sagte (§5).
+// Die Stufe nennt `routenEbene` (erlassAdresse.ts) — dieselbe Ableitung wie die
+// Adresse. Vor Befund 45 lag hier eine Kopie: Krume «International», URL «bund».
 export function ebeneAngabe(
   erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet'>,
 ): EbeneAngabe {
@@ -161,14 +157,10 @@ export function uebersichtsZeile(
  * die Zusage oben meldete. Kein `if (bund)`, aber ein Lesezugriff ausserhalb
  * der einen erlaubten Stelle: würde die Route je Ebene anders aussehen, wäre
  * er der Ort, an dem man es vergisst. Statt die Zusage aufzuweichen, ist die
- * Ableitung hergezogen.
- *
- * Befund 45 (Entscheid David 29.8.2026) hat sie eine Etappe WEITER gezogen: die
- * Route sieht je Ebene tatsächlich anders aus (Staatsverträge unter
- * `/gesetze/international/`), und dieselbe Adresse braucht auch das Prerender,
- * die Sitemap und die Suche — Stellen, die nichts aus der Lesesicht importieren
- * dürfen. Die Formel steht deshalb in `lib/normtext/erlassAdresse.ts`; diese
- * Funktion bleibt als benannte Zusage der Lesesicht bestehen und delegiert.
+ * Ableitung hergezogen. Befund 45 (29.8.2026) zog sie eine Etappe WEITER — die
+ * Route sieht je Ebene tatsächlich anders aus, und Prerender/Sitemap/Suche
+ * brauchen dieselbe Adresse, dürfen aber nichts aus der Lesesicht importieren:
+ * Formel in `lib/normtext/erlassAdresse.ts`, dies bleibt die Zusage und delegiert.
  */
 export function erlassPfad(erlass: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | 'key'>): string {
   return adresse(erlass);

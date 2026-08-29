@@ -7,7 +7,7 @@ import { GRUNDART_SEED } from '../../lib/normtext/grundart.generated';
 import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../lib/normtext/systematik';
 import { norm } from '../../lib/suche/normQuery';
 import { datumCh } from '../../lib/normtext/erlassKopfText';
-import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
+import { erlassPfadRoh, erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // M11 (§5 Verzahnung): Reverse-Resolver SR-Nummer → interner Erlass, ABGELEITET
 // aus dem Register (keine Handtabelle, §3/§5 eine Quelle). Nur Bund-Erlasse, die
@@ -312,6 +312,21 @@ export function margLabel(label: string): ReactNode {
   const bu = label.match(MARG_BUCHST);
   if (bu) return <Fragment>{bu[1]}<em>{bu[2]}</em>{label.slice(bu[0].length)}</Fragment>;
   return label;
+}
+
+/** Basis-Adresse der Lesesicht, die gerade eine Route vollzieht.
+ *
+ *  Dünn, aber nicht überflüssig: sie hält die EINE Adress-Formel
+ *  (lib/normtext/erlassAdresse.ts) auch in `v3/leserV3Modell.ts` verfügbar, OHNE
+ *  dort eine Importzeile zu kosten — das v3/-Fundament steht per Auflage bei 420
+ *  Zeilen (`leser-v3-fundament.test.ts`), und der Adapter ist bis auf die letzte
+ *  Zeile ausgereizt. Die Alternative wäre eine zweite Formel im Adapter gewesen;
+ *  genau aus solchen Zweitformeln entstand Befund 45.
+ *
+ *  `ebene` ist die ROUTEN-Ebene aus der Adresse — nach dem Umzugs-Sprung in
+ *  `GesetzLeser` immer die kanonische. */
+export function basisAdresse(ebene: string, schluessel: string): string {
+  return erlassPfadRoh(ebene, schluessel);
 }
 
 // Pfad (Sektions-ids Wurzel→Treffer) zur ersten Sektion, die das Prädikat erfüllt.
