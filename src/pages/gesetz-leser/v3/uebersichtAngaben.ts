@@ -2,7 +2,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
 import { erfassungsgrad, type Erfassungsgrad } from '../../../lib/normtext/erfassungsgrad';
-import { nichtKonsolidiertSatz, naechsteFassungSatz } from '../../../lib/normtext/erlassKopfText';
+import { nichtKonsolidiertSatz, naechsteFassungSatz, zaehlWort } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
 import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../benennung';
@@ -187,14 +187,25 @@ export interface UebersichtsEingabe {
  * kantonalen Gesetzessammlung (Herleitung und der Grund gegen ein erfundenes
  * Kantons-Kürzel: `../helpers`).
  */
+/*
+ * ANHANG-DOMINANZ (Fehlerbuch, auf Prod reproduziert 29.8.2026): `kennzahlen` ist
+ * NEU und OPTIONAL. Die Ruhezeile war der DRITTE Ort, an dem dieselbe Zahl ein
+ * eigenes Substantiv bekam — sie druckte «Übersicht 607 Artikel» an SG-3849,
+ * während 590 der 607 Einträge (97 %) Anhang-Einträge sind. Erlass-Kopf und
+ * Erlass-Übersicht ziehen die Regel `zaehlWort` bereits; hier fehlte sie.
+ * Fehlen die Kennzahlen (alle Alt-Aufrufer, u. a. die Sonden in
+ * `leser-v3-uebersicht.test.ts`), liefert `zaehlWort` unverändert das
+ * Basis-Wort — die Zeile bleibt dann Zeichen für Zeichen die von vorher.
+ */
 export function ruheZeile(
   erlass: Pick<BrowseErlass, 'ebene' | 'sr'>,
   anzahl: number | null,
   bestimmungsWort: BestimmungsWort,
+  kennzahlen?: { artikelAnzahl: number; anhangArtikel: number } | null,
 ): string {
   return [
     kennungText(erlass),
-    anzahl != null ? `${anzahl} ${bestimmungsWort}` : null,
+    anzahl != null ? `${anzahl} ${zaehlWort(bestimmungsWort, kennzahlen)}` : null,
   ].filter(Boolean).join(' · ');
 }
 
@@ -321,12 +332,20 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   // Zeilen-Etikett darf einen Zonen-Namen nicht zurückholen. Das Tor hat einen
   // echten Rückfall gefangen, nicht sich selbst — der Wächter bleibt
   // unangetastet, die Bezeichnung weicht aus.
-  const anhang = (e.kennzahlen?.anhangArtikel ?? 0) > 0;
+  // «Anhang» → «N im Anhang» (Fehlerbuch, 29.8.2026): das nackte Wort sagte nur
+  // DASS ein Anhang existiert. Bei SG-3849 tragen 590 von 607 Einträgen den
+  // Anhang — dass der Erlass fast vollständig aus ihm besteht, war daraus nicht
+  // zu lesen, und genau das ist die Angabe, die «Aufbau» geben soll. Die Zahl
+  // kommt aus denselben Kennzahlen, aus denen die Ruhezeile oben schon ihr
+  // Zähl-Wort ableitet (§5). Neutrale Benennung «im Anhang»: wie die
+  // Anhang-Einträge amtlich heissen (Ziffern, Artikel, Positionen), wechselt je
+  // Erlass — wir behaupten es nicht (§8).
+  const anhang = e.kennzahlen?.anhangArtikel ?? 0;
   const glied = [
     e.gliederungsTiefe > 0
       ? `${e.gliederungsTiefe} ${e.gliederungsTiefe === 1 ? 'Ebene' : 'Ebenen'}`
       : null,
-    anhang ? 'Anhang' : null,
+    anhang > 0 ? `${anhang} im Anhang` : null,
   ].filter(Boolean).join(' · ');
   if (glied) zeilen.push({ id: 'aufbau', label: 'Aufbau', wert: glied, ziffern: true });
 
@@ -395,7 +414,7 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
   }
 
   return {
-    ruhe: ruheZeile(erlass, e.anzahl, e.bestimmungsWort),
+    ruhe: ruheZeile(erlass, e.anzahl, e.bestimmungsWort, e.kennzahlen),
     zeilen,
     links,
     warnung: lebt && e.nichtKonsolidiert ? nichtKonsolidiertSatz(e.nichtKonsolidiertSeit) : null,
