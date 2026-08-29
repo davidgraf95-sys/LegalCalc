@@ -9,10 +9,14 @@
 // Steuer-Prüfung greifen. Die Klassierung ist mit demselben Commit korrigiert
 // (`dritteOerSachgebiet`); dieses Skript zieht den BESTAND nach.
 //
-// SCOPE (bewusst eng, Muster remap-sachgebiet-trennung.ts): AUSSCHLIESSLICH
-// Snapshots, deren massgebliche Abteilung 9C ist — bei bger das Aktenzeichen
-// selbst, bei BGE das aza-Aktenzeichen des unterliegenden Urteils. Jeder andere
-// Entscheid bleibt byte-gleich; 8C wird nicht angefasst.
+// SCOPE (bewusst eng, Muster remap-sachgebiet-trennung.ts): Snapshots, deren
+// massgebliche Abteilung 9C ist — bei bger das Aktenzeichen selbst, bei BGE
+// das aza-Aktenzeichen des unterliegenden Urteils. NACHGEZOGEN am 29.8.2026
+// beim Scharfstellen des Band-II-Tors: zusätzlich BGE des Bands II, die
+// 'sozialversicherung' tragen, ohne dass ihr aza 9C wäre — die IV. Abteilung
+// (8C) führt neben der Sozialversicherung auch öffentliches Personalrecht und
+// Staatshaftung, und ihr Default zog zwei Leitentscheide mit. Jeder andere
+// Entscheid bleibt byte-gleich.
 //
 // DIE REGEL ist NICHT hier kodiert, sondern die eine produktive Funktion
 // `dritteOerSachgebiet` (§5) — dieses Skript wendet sie nur auf den Bestand an.
@@ -62,13 +66,28 @@ function neuesSachgebiet(snap: EntscheidSnapshot): Rechtsgebiet {
   });
 }
 
+/** Im Scope ist ein Snapshot aus ZWEI Gründen:
+ *  (1) massgebliche Abteilung 9C — die gemischte Abteilung aus Art. 31 BgerR;
+ *  (2) BGE des Bands II, der heute 'sozialversicherung' trägt — Band II ist
+ *      das Verwaltungs-/Abgaberecht-Band, dort ist Sozialrecht nach der
+ *      amtlichen Systematik ausgeschlossen. Grund (2) fängt die Fälle, deren
+ *      aza NICHT 9C ist: die IV. Abteilung (8C) führt neben der
+ *      Sozialversicherung auch öffentliches Personalrecht und Staatshaftung
+ *      (BGE 149 II 337, BGE 148 II 73). */
+function imScopeStehend(snap: EntscheidSnapshot): boolean {
+  if (istGemischteDritteOerAbteilung(massgeblichesAz(snap))) return true;
+  return snap.gericht === 'bge'
+    && bgeBand(String(snap.nummer ?? '')) === 'II'
+    && snap.sachgebiet === 'sozialversicherung';
+}
+
 function main() {
   const snaps: EntscheidSnapshot[] = [];
   const wechsel: Array<{ nr: string; gericht: string; alt: string; neu: Rechtsgebiet; band: string | null }> = [];
   let imScope = 0;
 
   for (const { snap } of alleSnapshots(PUB)) {
-    if (!istGemischteDritteOerAbteilung(massgeblichesAz(snap))) { snaps.push(snap); continue; }
+    if (!imScopeStehend(snap)) { snaps.push(snap); continue; }
     imScope++;
     const neu = neuesSachgebiet(snap);
     if (neu === snap.sachgebiet) { snaps.push(snap); continue; }

@@ -762,6 +762,7 @@ export async function holeBgeLeitentscheid(
   // 68 Band-II-Leitentscheide mit — darunter reine DBG-/StHG-/MWSTG-Entscheide.
   // Darum: bei 9C-aza entscheidet `dritteOerSachgebiet` MIT dem Band, aus den
   // Normen beider Seiten (Sammlungs-Auszug + unterliegendes Urteil).
+  const bgeBandRoem = bgeBand(String(det.docket_number ?? det.bge_reference ?? ''));
   const azaAbteilungIst9C = istGemischteDritteOerAbteilung(String(azaAz ?? ''));
   const bgeAzaHint: Rechtsgebiet | null = azaAbteilungIst9C
     ? dritteOerSachgebiet({
@@ -774,10 +775,24 @@ export async function holeBgeLeitentscheid(
           ...(azaSnap?.zitierteNormen ?? []),
         ],
         legalArea: det.legal_area,
-        band: bgeBand(String(det.docket_number ?? det.bge_reference ?? '')),
+        band: bgeBandRoem,
       })
     : (azaSnap?.sachgebiet ?? null);
-  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeAzaHint ?? roemHint ?? undefined });
+  // BAND-II-VETO, GENERELL (F3 vom 29.8.2026): Band II ist das Band für
+  // Verwaltungs- und Abgaberecht — 'sozialversicherung' ist dort nach der
+  // amtlichen Systematik der Sammlung ausgeschlossen (Sozialrecht steht in
+  // Band V). Das gilt nicht nur für 9C-aza: Die IV. öffentlich-rechtliche
+  // Abteilung (8C) führt neben der Sozialversicherung auch öffentliches
+  // Personalrecht und Staatshaftung, und ihr Abteilungs-Default zog zwei
+  // Band-II-Leitentscheide mit (BGE 149 II 337, BPG-Kündigung einer
+  // SBB-Angestellten; BGE 148 II 73, Staatshaftung der ETHL wegen einer Lücke
+  // in der beruflichen Vorsorge). Beide sind Verwaltungsrecht. Fällt der Hint
+  // weg, greift `roemHint` = 'oeffentlich'. Am Tor festgenagelt
+  // (rechtsprechung-sachgebiet-tore.test.ts).
+  const hintNachVeto = (bgeBandRoem === 'II' && bgeAzaHint === 'sozialversicherung')
+    ? null
+    : bgeAzaHint;
+  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: hintNachVeto ?? roemHint ?? undefined });
   if (!basis) return null;
   basis.gerichtName = 'Bundesgericht';
 
