@@ -12,9 +12,10 @@ import type { LeserV3Modell } from './leserV3Modell';
 // HIER STEHT DER TEIL, DER SICH NICHT ÄNDERN DARF. Markup, Klassen und
 // Reihenfolge sind byte-gleich aus der Ist-Hülle übernommen
 // (`inhalt-volltext.tsx` / `inhalt.tsx`) — die `#lc-lesespalte`-Identität, das
-// Lesemass `max-w-normtext mx-auto` (A37), die Einzug-Skala, die
-// `data-normtext-linie`-Marke und die Sortierung von Kindern und direkten
-// Artikeln nach Dokumentposition (6b/T8).
+// Lesemass `max-w-normtext mx-auto` (A37), die `data-normtext-linie`-Marke und
+// die Sortierung von Kindern und direkten Artikeln nach Dokumentposition
+// (6b/T8). Die frühere Einzug-Skala stand auch in dieser Aufzählung; sie ist
+// mit dem Entscheid David 29.8.2026 aufgehoben (Herleitung in `renderSektion`).
 //
 // Der Grund ist keine Vorsicht, sondern ein Tor: der Pixelvergleich PX (Kap. 7)
 // misst genau diese Region gegen V1. **Wer hier eine Klasse „aufräumt", bricht
@@ -87,22 +88,42 @@ export function LeserLesespalte({ m }: {
       istAnhang={istAnhangToken(e.artikel)} />
   );
 
-  const renderSektion = (s: Sektion, defOpen: boolean, tiefe: number, randTiefe = 0): ReactNode => {
+  const renderSektion = (s: Sektion, defOpen: boolean, randTiefe = 0): ReactNode => {
     const auf = istOffen(s.id, defOpen);
     const kinderRandTiefe = s.randtitel ? randTiefe + 1 : 0;
     // Kinder UND direkte Artikel in EINER nach Dokumentposition sortierten
     // Liste: ein Knoten kann seit 6b beides tragen.
     const inhalt = auf
       ? [
-          ...s.kinder.map((k) => ({ pos: m.sekPos.get(k.id) ?? Infinity, el: renderSektion(k, true, tiefe + 1, kinderRandTiefe) })),
+          ...s.kinder.map((k) => ({ pos: m.sekPos.get(k.id) ?? Infinity, el: renderSektion(k, true, kinderRandTiefe) })),
           ...s.artikel.map((e) => ({ pos: m.artIndex.get(e.artikel) ?? 0, el: artikel(e) })),
         ].sort((a, b) => a.pos - b.pos)
       : [];
-    // Einzug-Skala V2·L-1: Tiefe 1–5 je eine Stufe (20 px), mobil ~0.75rem —
-    // die Verschachtelung flüstert auch @390 weiter. CLS 0, weil padding.
-    const eingerueckt = tiefe > 0 && tiefe <= 5;
+    // ── EINE LINKE TEXTKANTE (Entscheid David 29.8.2026, wörtlich: «wichtige
+    //    änderung … im gesetz die staffelung aufzuheben. es soll alles auf der
+    //    selben höhe stehen. … analog zu fedlex») ────────────────────────────
+    // Hier stand die Einzug-Skala V2·L-1 (`pl-einzug-mobil sm:pl-einzug`, Tiefe
+    // 1–5 je eine 20-px-Stufe, mobil 12 px). Weil die `section`-Knoten INEINANDER
+    // stecken, summierten sich die Stufen: gemessen @1440 hatte das OR SECHS
+    // verschiedene linke Textkanten (554…654 px) und der Textkörper sechs
+    // verschiedene Breiten (540…640 px); mobil @390 fünf Stufen à 12 px
+    // (Kanten 20…80, Breiten 290…350 px). Ein Artikel war damit umso schmaler
+    // gesetzt, je tiefer er in der Kodifikation steht — die dichtesten Stellen
+    // des ZGB (Art. 105/125/208/416) bekamen die engste Spalte.
+    //
+    // NEU trägt die Tiefe allein die Zwischen-Überschrift (Typo-Rang 1 der
+    // Rangfolge DESIGN-REGLEMENT-NORMTEXT §4b) — der Wortlaut selbst steht auf
+    // EINER Kante, über alle Gliederungstiefen, Desktop wie mobil, wie bei
+    // Fedlex. Die ABSATZ-Rinne (hängende Absatznummern, `pl-9 -indent-9` in
+    // `ArtikelBody`) ist davon unberührt: sie ist amtliche Absatz-Auszeichnung,
+    // keine Gliederungstiefe.
+    //
+    // Der Parameter `tiefe` fällt mit (§17 «gestrichen statt bewacht»): er hatte
+    // nach dem Wegfall des Einzugs keinen Verbraucher mehr. `randTiefe` bleibt —
+    // über sie staffelt `SektionKopf` weiterhin die ÜBERSCHRIFT (Rang 1).
+    // Wächter: `e2e/leser-ohne-gliederungslinie.e2e.ts` («eine linke Textkante»).
     return (
-      <section key={s.id} data-normtext-linie className={`space-y-3 ${eingerueckt ? 'pl-einzug-mobil sm:pl-einzug' : ''}`}>
+      <section key={s.id} data-normtext-linie className="space-y-3">
         <SektionKopf s={s} refCb={regRef(s.id)} offen={auf} onToggle={() => toggle(s.id, defOpen)}
           bereich={m.sektionMeta.get(s.id)?.bereich} bereichEinzel={m.sektionMeta.get(s.id)?.einzel ?? false}
           amtlichUrl={verifizierLinkSektion(erlass, s.eId) ?? undefined}
@@ -132,7 +153,7 @@ export function LeserLesespalte({ m }: {
         {ohneGliederung.length > 0 && (
           <div className="space-y-5 mb-6">{ohneGliederung.map(artikel)}</div>
         )}
-        {sektionen.map((s) => renderSektion(s, true, 0))}
+        {sektionen.map((s) => renderSektion(s, true))}
       </div>
 
       {/* ── B9 (Klick-Test) → B6 (H4-Nachzug 18.8.2026) · DIE SEITE LÄUFT QUER ─

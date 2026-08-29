@@ -163,6 +163,19 @@ Call-Site-Einheiten (D-8) nicht → Pilot zuerst. Bau durch Opus (Daueranweisung
   «Ansicht»-Menü — muss §4c respektieren (Fussnoten-Chip bewusst prominent,
   David 10.7.); Farbsemantik ist durch C-2 bereits gebaut → nur UX-Bündelung offen.
 
+### D-10 · David-Entscheide 29.8.2026 (Vollzug)
+*(Abschnitt am 29.8.2026 angelegt; weitere Entscheide desselben Tages werden als
+eigene Zeile ANGEHÄNGT, nie über eine bestehende geschrieben.)*
+- **1C · Staffelung aufheben + Zeilenmass-Deckel — GEBAUT** (Branch
+  `feat/leser-eine-kante`). Wortlaut: *«wichtige änderung … im gesetz die
+  staffelung aufzuheben. es soll alles auf der selben höhe stehen. … analog zu
+  fedlex»*. Der Tiefen-Einzug im Gesetzes-Leser ist fort (jeder Erlass: genau
+  EINE linke Textkante statt bis zu sechs), dazu der gebündelt entschiedene
+  Zeichen-Deckel `--leser-zeilenmass` (~68 Zeichen, skaliert mit der
+  Schriftstufe). Regelwerk: **DESIGN-REGLEMENT-NORMTEXT §4b-C** (Messreihen,
+  Abgrenzung, Wächter). Damit ist auch der Satzspiegel-Vorbehalt aus dem
+  Vollzugsvermerk S2 geschlossen (Vermerk in `tailwind.config.js` nachgeführt).
+
 ### Abnahme-Artefakt (F4 der Kohärenz-Linse)
 Je Token-Einheit (D-3…D-7) wächst EIN Vorher/Nachher-Set: **4 Kernseiten
 (Startseite · Gesetz-Reader · Entscheid · Rechner) × hell/dunkel** + Squint-Test-

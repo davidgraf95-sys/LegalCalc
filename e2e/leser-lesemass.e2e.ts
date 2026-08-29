@@ -51,7 +51,25 @@ import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftu
 // mehrzeilige Fliesstext-<p> im Volltext; charsPerLine = Textlänge / Zeilenkästen
 // (range.getClientRects()). Der Reader liefert PRERENDERTES HTML, React ersetzt es
 // nach dem Fetch (render-then-replace) → erst auf #art-1 warten.
-const MOBIL_MIN_CH = 30; // robust erreicht (~32–34), 2× der ~16-ch-Basis; s. Abweichungsnotiz
+// ── DER MOBIL-BODEN STEIGT 30 → 34 (Entscheid David 29.8.2026, deklarierte
+//    fachliche Änderung nach §6.3 — kein stilles Anpassen an neue Zahlen) ────
+// Die Abweichungsnotiz oben nennt als Engstelle ausdrücklich «5 gestapelte
+// Guide-Linien à ~24px = ~120px Frass». Die Guide-Linien sind am 16.8.2026
+// gefallen, ihr EINZUG (`pl-einzug-mobil`, 12 px je Tiefe, bis 5 Stufen) blieb
+// und frass @390 weiter bis zu 60 px — die tiefsten Stellen des OR standen auf
+// 290 px statt 350 px Textkörperbreite. Mit der Aufhebung der Staffelung
+// (David 29.8.2026, «alles auf der selben höhe … analog zu fedlex») ist die
+// Engstelle FORT: jeder Artikel jedes Erlasses bekommt @390 dieselben 350 px.
+//
+// NEUE UNTERGRENZE AUS DER MESSUNG, SCHLECHTFALL-BASIERT (nicht Bestfall):
+// gemessen am Preview-Build @390 mit der Methode dieser Datei —
+//   ERLASSE:  OR 37 · ZGB 37 · VMWG 35 ch   (vorher OR 33 · ZGB 37 · VMWG 35)
+//   ausserhalb der Torliste: StGB 41 · StPO 36 · BS-640.100 33 ch
+// Massgeblich ist der schlechteste Fall der GEGATETEN Liste (VMWG 35), der
+// Boden liegt mit 1 ch Reserve darunter. Nicht auf 33 gesetzt (der frühere
+// Schlechtfall OR): dieser Wert existiert nicht mehr, und ein Boden unter dem
+// erreichten Schlechtfall bewacht nichts (§6.7).
+const MOBIL_MIN_CH = 34;
 
 const ERLASSE = ['ZGB', 'OR', 'VMWG'] as const;
 
@@ -365,6 +383,72 @@ test.describe('R5 · Lesemass Desktop (≤ 80 ch @ 1440)', () => {
       const m = await messeMaxCharsPerLine(page);
       expect(m, `${key}: mehrzeiliger Fliesstext-Absatz gefunden`).not.toBeNull();
       expect(m!.ch, `${key} @1440: ${m!.ch} ch (${m!.px}px) muss ≤ 80 sein (SC 1.4.8, wie S2 oben)`).toBeLessThanOrEqual(80);
+    });
+  }
+});
+
+// ── T-1C · ZEILENMASS-DECKEL UND EINE TEXTKANTE (Entscheid David 29.8.2026) ──
+//
+// Zwei Zusagen desselben Entscheids, die der 80-ch-Fall oben NICHT deckt:
+//
+//  (a) EINE KANTE. «es soll alles auf der selben höhe stehen … analog zu
+//      fedlex» — der Textkörper steht über alle Gliederungstiefen auf derselben
+//      linken Kante und hat dieselbe Breite. Gemessen wird an ALLEN gerenderten
+//      `.max-w-normtext` der Seite; vor dem Entscheid lieferte allein das OR
+//      @1440 SECHS verschiedene Kanten (554…654 px) und sechs Breiten
+//      (540…640 px), das ZGB fünf, das StGB vier.
+//  (b) ~68 ZEICHEN. Der Deckel `--leser-zeilenmass` (index.css, Variante 1C)
+//      hält das Zeilenmass unter der HAUSzahl 68, deutlich unter der
+//      WCAG-Decke 80. Gemessen am Preview-Build @1440:
+//        OR 67 · ZGB 66 · StGB 66 · StPO 64 · VMWG 63 · BS-640.100 56 ch
+//      Schwelle 70 = Schlechtfall 67 + 3 ch Reserve für Rundung und
+//      Font-Fallback; sie ist damit KEIN Schein-Tor (§6.7): ohne den Deckel
+//      lagen dieselben Erlasse bei 69–74 ch, jede Rücknahme reisst sie.
+//
+// Bewusst BEIDE Ebenen im selben Fall: die Kante ohne den Deckel liesse den
+// Text zu breit werden, der Deckel ohne die Kante wäre wieder tiefenabhängig.
+//
+// ROT ZU BEKOMMEN (§6.7): in `LeserLesespalte.tsx` das frühere
+// `pl-einzug-mobil sm:pl-einzug` an der `section` wiederherstellen (Fall a und,
+// über die verengten Spalten, auch die Breiten-Aussage), oder in `index.css`
+// `--leser-zeichen` auf 80 setzen bzw. die `min()`-Klammer entfernen (Fall b).
+const T1C_MAX_CH = 70;
+const T1C_ERLASSE = [
+  ['ZGB', 'bund/ZGB'], ['OR', 'bund/OR'], ['StGB', 'bund/STGB'],
+  ['StPO', 'bund/STPO'], ['VMWG', 'bund/VMWG'], ['BS-640.100', 'kanton/BS-640.100'],
+] as const;
+
+test.describe(`T-1C · Zeilenmass-Deckel (≤ ${T1C_MAX_CH} ch) und EINE Textkante @1440`, () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+  for (const [name, pfad] of T1C_ERLASSE) {
+    test(`${name}: eine linke Textkante, eine Breite, ≤ ${T1C_MAX_CH} ch`, async ({ page }) => {
+      await page.goto(`/gesetze/${pfad}`);
+      await expect(page.locator('#art-1')).toBeVisible({ timeout: 20000 });
+      await page.evaluate(() => document.fonts?.ready);
+      await page.evaluate(() => window.scrollTo(0, 400));
+      await page.waitForTimeout(300);
+
+      const geo = await page.evaluate(() => {
+        const kanten = new Set<number>();
+        const breiten = new Set<number>();
+        document.querySelectorAll('article[id^="art-"] .max-w-normtext').forEach((d) => {
+          const r = d.getBoundingClientRect();
+          if (r.width > 0) { kanten.add(Math.round(r.left)); breiten.add(Math.round(r.width)); }
+        });
+        return { kanten: [...kanten].sort((a, b) => a - b), breiten: [...breiten].sort((a, b) => a - b) };
+      });
+      // Positiv-Sicherung: der Fall muss überhaupt Textkörper gemessen haben,
+      // sonst wäre «genau eine Kante» durch eine leere Menge trivial erfüllt.
+      expect(geo.kanten.length, `${name}: kein Artikel-Textkörper gemessen`).toBeGreaterThan(0);
+      expect(geo.kanten, `${name}: mehr als EINE linke Textkante — die Staffelung ist zurück`)
+        .toHaveLength(1);
+      expect(geo.breiten, `${name}: mehr als EINE Textkörperbreite (${geo.breiten.join('/')}px)`)
+        .toHaveLength(1);
+
+      const m = await messeMaxCharsPerLine(page);
+      expect(m, `${name}: mehrzeiliger Fliesstext-Absatz gefunden`).not.toBeNull();
+      expect(m!.ch, `${name} @1440: ${m!.ch} ch (${m!.px}px) muss ≤ ${T1C_MAX_CH} sein (Haus-Deckel 1C)`)
+        .toBeLessThanOrEqual(T1C_MAX_CH);
     });
   }
 });
