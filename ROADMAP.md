@@ -277,13 +277,13 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 > `groesse: S|M|L` (S nur gebündelt nehmen · M sessionfüllend · L vorher schneiden — Schätzung,
 > kein Tor-Kriterium).
 
-<!-- @queue: W2·10-UI-NAV, W2·13-KANTONE, W2·6b-MAT-FINMA -->
+<!-- @queue: W2·13-KANTONE, W2·6b-MAT-FINMA, W2·11-DESIGN -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Gequeuete Querschnitt-Schritte steigen in die Hauptreihenfolge auf (Entscheid David 8.8.2026,
      «Prozess geht grundsätzlich vor»). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·10-UI-NAV`** — vom Dach ist nur noch `-J3` offen
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE`** — W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
 > (Risikopfad, eigene Session). Fokus-Dekret 24.7.2026 (David): die Gesetzesdarstellung steht im
 > Vordergrund — Gesetzes-Schritte prioritär, daneben `W2·6b-MAT-FINMA` (Bewerbungs-Kontext FINMA).
 > Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
@@ -307,13 +307,6 @@ stattdessen auf ihr `bibliothek/`-Dossier).
 - [ ] **L-3 (Auto-Default-Umkehr ZGB/OR)** — weiterhin **hinter David/Council-Gate**, NICHT in
   feat/v2-l1-l2 gebaut; Rest von A24 (L-1/L-2 gebaut, L-4 entfällt) und der erledigte Elter `5d`
   stehen in `ROADMAP-CHRONIK.md`. V2 §2 F4.
-- [ ] **10-UI-NAV · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
-  <!-- @meta id: W2·10-UI-NAV · status: ready · blocker: null · dep: [] · kollision: [src/components/suche, src/lib/suche, src/lib/universalSuche.ts, src/components/layout, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, src/pages/gesetz-leser, src/pages/GesetzLeser.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
-  Suche, Navigation und Auffindbarkeit über alle Oberflächen; reine Darstellungsschicht (§3).
-  Offen ist nur noch **-J3**. **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §8.
-  - [x] **Gesetzesübersicht nach Rechtsgebieten (Idee David 16.8.2026, dejure.org «Gesetze nach Rechtsgebieten»)** ✅ gebaut 21.8.2026 (PR folgt; nicht zu verwechseln mit W2·10-UI-NAV-J3 = Sachgebiets-Pipeline, eigener Schritt) — `/gesetze`: Erlasse je Rechtsgebiet gruppiert, dichte Spalten mit Kurztiteln als Linkliste; dieselbe Einteilung wie «Nach Sachgebiet» in der Rechtsprechung (SSoT). Reine Übersichtsseite, nach dem Leser-Umbau (W2·5m). Detail: FAHRPLAN-LESER-V3.md Kap. 14.
-  - [x] **UI-NAV-J3 · Sachgebiets-Pipeline verfeinern (J3)** — **bewusst allein**, weil Risiko-Pfad: `QS-GP` Pflicht + golden byte-gleich, eigene Gegenprüfungs-Runde. §6.
-    <!-- @meta id: W2·10-UI-NAV-J3 · status: done · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json, src/lib/normtext/browse.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
 - [ ] **11-DESIGN · Design-Wärme & Atmosphäre (Ultracode-Synthese 11.7.)** *(`[OF]`, reine Darstellung/Token-Schicht)*:
   <!-- @meta id: W2·11-DESIGN · status: ready · blocker: null · dep: [] · kollision: [src/index.css, tailwind.config.js, DESIGN-REGLEMENT.md, scripts/check-design-tokens.ts, src/components/rechtsprechung, src/pages/EntscheidLeser.tsx, src/components/forms, src/components/DatumsFeld.tsx, src/components/BetragsFeld.tsx, src/pages/Startseite.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
   Farbklima/Wärme/Typografie — Token-Schicht nach §13, Normtext-Körper bleibt farbfrei, golden
@@ -446,10 +439,6 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **B1 · Statischer Änderungs-Feed (🟢)** — RSS/Atom/JSON zur Build-Zeit aus `currency.json` + Verfallsregister; nur der VORWÄRTS-Fall (`naechsteFassungAb`).
   - [ ] **B2 · Client-Watchlist (🟢)** — localStorage-Liste gemerkter Normen, gegen Build-Artefakte geprüft; Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.
   - [ ] **GER · Gerichts-Delta mit ehrlicher Latenz (🟡)** — Build-Zeit-Delta je Gericht/Norm; eigenes Verdikt, Import-Kadenz sichtbar (§8).
-- [x] **15-CLS · Echter CLS-Defekt auf `/gesetze` (0.109 @8× CPU)** *(§14-Intake 20.7.2026 · **Produktfehler**, reine UI)*
-  <!-- @meta id: W2·15-CLS · status: done · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
-  Gemessener Produktfehler auf `/gesetze`, reine UI.
-  **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2.
 - [ ] **16-INVENTAR · Funktions-Inventar (Vorstufe der Bedienungsanleitung)** *(§14-Intake 20.7.2026, David: «erst wenn es Sinn ergibt» → Zweischritt, dies ist Schritt 1)*
   <!-- @meta id: W2·16-INVENTAR · status: ready · blocker: null · dep: [] · kollision: [src/lib/startseiteConfig.ts, bibliothek/INDEX.md] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Ehrliche Aufnahme dessen, was Lexmetrik heute kann — Quelle `startseiteConfig.ts` (§5),
@@ -479,8 +468,11 @@ stattdessen auf ihr `bibliothek/`-Dossier).
   - [ ] **B18 · Listen, Suche und Relevanz (K-19b)** — 8 Befunde (Blocker 0 · Hoch 1). §19.
   - [ ] **B19 · Eingabe- und Auswahlfelder — Detail (K-08b)** — 7 Befunde (Blocker 0 · Hoch 0). §20.
 - [ ] **18-FEHLERBUCH · Davids Alltags-Fehlerfunde (stehender Sammel-Schritt)** *(Entscheid David 8.8.2026 — Kleinvieh bündeln statt einzeln durch die volle Maschine)*
+  **Detail (Such-/Navigations-Posten):** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §7.
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · blocker: null · dep: [] · kollision: [src/components, src/pages] · worktree: nein · 26x: nein · groesse: M -->
-  - [ ] **Browser-Pane ist nicht Worktree-isoliert (§17-Werkzeugbefund 21.8.2026, zwei Agenten unabhängig)** — fremde Tabs/Navigationen zwischen parallelen Worktree-Sessions, `preview_start` mit launch.json-Name serviert den HAUPT-Checkout statt des Worktrees, resize wirkungslos. Wurzel-Fix: Worktree-bewusste launch.json-Auflösung bzw. je-Session-Pane; bis dahin Workaround eigener Playwright-Lauf (in Dispatch-Berichten dokumentiert).
+  - [ ] **⌘K-Wächter seit ≥16.8. auf CI im Erstversuch 69/69 rot — von retries:2 maskiert** *(Forensik 29.8.2026 über 69 main-Läufe; Hydration-Hypothese widerlegt (20× Drossel greift sofort). Eigener Diagnose-Auftrag; zugleich frisst er ein maxFailures-Budget — so lief das neue topbar-320-Tor in Gruppe 6 nie («10 did not run»). Retry-Politik = David-Frage. Skill lehren F2-Verschärfung (i).)*
+- [ ] **Leerflächen-Reservierung /gesetze messbasiert lösen (L1↔L2-Spannung)** *(Design-Review 29.8.: min-h-inhalt-region erzeugt bis 488 px Leerlauf auf ?ebene=bund; naive Verkleinerung brächte den Footer-Sprung (0.44 CLS) zurück — Fix braucht Messreihe, nicht Pixel-Jagd; App-weite Rahmen-Idee (EINE Reservierungs-Regel Route-Fallback+Platzhalter, App.tsx-Naht) als §10-Kandidat, siehe FAHRPLAN-PERFORMANCE dritter Posten.)*
+- [ ] **Browser-Pane ist nicht Worktree-isoliert (§17-Werkzeugbefund 21.8.2026, zwei Agenten unabhängig)** — fremde Tabs/Navigationen zwischen parallelen Worktree-Sessions, `preview_start` mit launch.json-Name serviert den HAUPT-Checkout statt des Worktrees, resize wirkungslos. Wurzel-Fix: Worktree-bewusste launch.json-Auflösung bzw. je-Session-Pane; bis dahin Workaround eigener Playwright-Lauf (in Dispatch-Berichten dokumentiert).
   - [ ] **FlexSearch `suggest:true` wirkt bei Mehrwort-Queries wie ODER/fuzzy** *(Wurzel von Cowork-Befund 29, Fix 21.8. nur in artikelVolltext.ts; Rest der Suche-Schicht systematisch nach weiteren `doc.search(mehrwort, {suggest:true})`-Stellen absuchen.)*
   - [ ] **EMRK-docTitle «EMRK (EMRK)»** *(Kürzel-Duplikat im title-Tag bei pdf-embed; Gegenprüfung J3 21.8., kosmetisch.)*
   - [ ] **Kantonskarte: aktiver Kanton verliert Hervorhebungs-Rand bei Hover über Nachbar** *(nur EIN Overlay `gezeigt = hover ?? aktiv`; Gegenprüfung 21.8., kosmetisch.)*

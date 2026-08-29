@@ -321,7 +321,7 @@ präzisiert, nie autonom gekippt.
 
 ## §7 · Zusatzposten der Linsen (neu aufgenommen)
 
-- **Kantons-Adressen ohne Segment-Wache (Gegenprüfung Intl-Routing 29.8.2026,
+- **Kantons-Adressen ohne Segment-Wache (W2·18-FEHLERBUCH; Gegenprüfung Intl-Routing 29.8.2026,
   Befund 1, VORBESTEHEND):** `/gesetze/<beliebig>/AG-291.150` rendert den
   Erlass statt zu leiten — `routenEbeneVonKey` kennt nur die 238 Bundes-Keys
   (ERLASS_REGISTER) und fällt für 1231 Kantons-Keys aufs URL-Segment zurück.

@@ -21,6 +21,11 @@ TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Sl
 2 ERST REPRODUZIEREN, DANN FIXEN. Kein Fix ohne vorher gesehenen Fehlschlag.
   Belege sind Identitaets-Treffer mit Wortgrenze, nie Substring-Praesenz
   (CLAUDE.md §7). Amtliche Werte mit Norm + Link + Stand.
+2b BELEGE ALTERN NICHT. Datierte Reproduktions- und Messangaben (Kommentare,
+  Chronik, Berichte) werden NIE an einen neuen Ist-Stand «nachgefuehrt», nur
+  ERGAENZT («damals /gesetze/bund/EMRK; seit Befund 45 kanonisch …/international/…»).
+  Ein Beleg, der seinem Datum widerspricht, ist falsifiziert, kein Update
+  (2 Vorfaelle 29.8.2026, Intl-Routing M7/M8 — Skill lehren F8).
 3 VERTEILUNG STATT EINZELWERT. Ein gerissenes Budget ist ein VERDACHT, keine
   Ursache. Vor jeder Zuschreibung an ein Feature: (a) Nullprobe — reiner
   Doku-PR (ci.yml klassiert ihn als art=doku) oder Re-Run auf unveraendertem

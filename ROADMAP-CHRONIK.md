@@ -2511,3 +2511,23 @@ am 21.8.2026 in `ROADMAP.md` gestanden:
   - [x] **H4 Umschalten** ✅ vollzogen 18.8.2026 (PR #552, Vermerk «H4 — DER FLIP») — V3 wird Hauptroute; Bild-Vergleich je Breite (Handy · voll · Split) als Abnahme; David-Go. Kap. 7.
   - [x] **H5 Löschung** ✅ vollzogen 21.8.2026 (dieser PR; Vollzugsvermerk Kap. 7, −4900 Zeilen) — alte Hülle raus (Streich-Massstab aufraeumen.md §3, Beweis vor Löschung), Zielzahlen Kap. 10. Kap. 7.
   - [x] **§7b-Lücken schliessen: fünf leser-v3-Testdeckungen** ✅ erledigt 21.8.2026 (PR #558 + H5-Nachbau Panel-Filter/Split) — Materialien-Panel (`e2e/materialien-m5-verzahnung.e2e.ts:25,45`) · Facetten/Zeitstrahl = ↻-Badge/Revisionsdatum (`e2e/normrevision-badge.e2e.ts:21,46`) · ★-Wortlaut/via Art. N (`e2e/verzahnung.e2e.ts:147,198`) · Erwägungs-Sprung/Popover (`e2e/verzahnung.e2e.ts:214`, `e2e/leitfaelle-chips.e2e.ts:142`) · Druck im Split (`e2e/druck-fundstellen-z2.e2e.ts:127`) — Vorbedingung H5, Beleg: zehn `test.skip`-Sperren mit `istHuellenGrund(...'H5-Auflage'...)` an den genannten Stellen (Zeilen verifiziert 21.8.2026 gegen den Ist-Stand, weichen leicht von den im Auftrag genannten Zeilen ab — §7).
+
+# Umschichtung 29.8.2026 — erledigte Schritte aus dem Steuerungsplan
+
+## W2·10-UI-NAV — UI-Nutzwert & Navigation *(done, verschoben 29.8.2026; Dach komplett mit Landung von J3 in PR #564, Trennungs-Nachzug PR #573)*
+
+- [ ] **10-UI-NAV · UI-Nutzwert & Navigation (Ultracode-Synthese 11.7.)** *(`[OF]`, reine UI/Navigation)*:
+  <!-- @meta id: W2·10-UI-NAV · status: done · blocker: null · dep: [] · kollision: [src/components/suche, src/lib/suche, src/lib/universalSuche.ts, src/components/layout, src/components/rechtsprechung, src/pages/Rechtsprechung.tsx, src/pages/gesetz-leser, src/pages/GesetzLeser.tsx] · worktree: ja · 26x: nein · groesse: L · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+  Suche, Navigation und Auffindbarkeit über alle Oberflächen; reine Darstellungsschicht (§3).
+  Offen ist nur noch **-J3**. **Detail:** [FAHRPLAN-UI-NAVIGATION.md](fahrplaene/FAHRPLAN-UI-NAVIGATION.md) §8.
+  - [x] **Gesetzesübersicht nach Rechtsgebieten (Idee David 16.8.2026, dejure.org «Gesetze nach Rechtsgebieten»)** ✅ gebaut 21.8.2026 (PR folgt; nicht zu verwechseln mit W2·10-UI-NAV-J3 = Sachgebiets-Pipeline, eigener Schritt) — `/gesetze`: Erlasse je Rechtsgebiet gruppiert, dichte Spalten mit Kurztiteln als Linkliste; dieselbe Einteilung wie «Nach Sachgebiet» in der Rechtsprechung (SSoT). Reine Übersichtsseite, nach dem Leser-Umbau (W2·5m). Detail: FAHRPLAN-LESER-V3.md Kap. 14.
+  - [x] **UI-NAV-J3 · Sachgebiets-Pipeline verfeinern (J3)** — **bewusst allein**, weil Risiko-Pfad: `QS-GP` Pflicht + golden byte-gleich, eigene Gegenprüfungs-Runde. §6.
+    <!-- @meta id: W2·10-UI-NAV-J3 · status: done · blocker: null · dep: [] · kollision: [scripts/rechtsprechung, public/rechtsprechung/register.json, src/lib/normtext/browse.ts] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-UI-NAVIGATION.md -->
+
+## W2·15-CLS — Echter CLS-Defekt auf /gesetze *(done, verschoben 29.8.2026; PR #565, CLS 0.4385→0.0000, Route im Perf-Tor)*
+
+- [x] **15-CLS · Echter CLS-Defekt auf `/gesetze` (0.109 @8× CPU)** *(§14-Intake 20.7.2026 · **Produktfehler**, reine UI)*
+  <!-- @meta id: W2·15-CLS · status: done · blocker: null · dep: [] · kollision: [src/pages/Gesetze.tsx, src/components/start] · worktree: ja · 26x: nein · groesse: M · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+  Gemessener Produktfehler auf `/gesetze`, reine UI.
+  **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2.
+

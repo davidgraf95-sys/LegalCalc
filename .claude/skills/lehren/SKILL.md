@@ -1,6 +1,6 @@
 ---
 name: lehren
-description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält zudem das Register der belegten Fehlerklassen F1–F6 samt Mechanismus und die Regel, in welcher FORM eine neue Lehre abzulegen ist.
+description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält zudem das Register der belegten Fehlerklassen F1–F9 samt Mechanismus und die Regel, in welcher FORM eine neue Lehre abzulegen ist.
 ---
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
@@ -31,7 +31,7 @@ nicht ins .md. **Netto-Prosa-Zuwachs ist zu begründen.**
 Und: **ein Tor ist erst ein Tor, wenn es einmal rot war.** Wer eines baut, zeigt
 den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
 
-## Register der belegten Fehlerklassen (Vorfälle 18.–20.7.2026)
+## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 
 | # | Klasse | Was passierte | Gegenmittel — wo es sitzt |
 |---|---|---|---|
@@ -49,6 +49,23 @@ den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
 | **F5** | Verlorene Agenten-Arbeit | ~6 Agenten-Tode, einmal ~2 h fast verloren. **2. Form 15.8.2026 (Wartetod):** ein `lex-daten`-Agent spawnte selbst eine Gegenprüfung und wartete 5 h auf deren Verdikt — Sub-Agenten können keine Nachrichten empfangen, das Verdikt landete beim Orchestrator; die fertige Arbeit lag uncommittet im Worktree. | Dispatch §0 Ziff. 4: WIP-Commit nach jedem Teilschritt. Muss den Agenten erreichen, **bevor** er stirbt — ein toter Agent liest nichts nach. **Wartetod:** Sub-Agenten spawnen nie etwas, auf dessen Antwort sie warten müssten — Gegenprüfung ist Orchestrator-Sache (`lex-daten.md` RISIKOPFAD-Zeile, Skill `auftrag` Ziff. 6); der Orchestrator prüft bei >2 h Stille den Worktree (`git status`) statt zu warten. |
 | **F6** | Doppelarbeit | 2 Sessions bauten denselben CLS-Fix in `SuchResultate.tsx`. **2. Vorfall 28.7.2026 TROTZ §0.5:** `W2·6-NKEY` doppelt gebaut (#397 gemergt, #398 verworfen — ein voller Opus-Bau entsorgt). Die PR-Sonde war blind (Parallel-PR noch nicht offen), der Remote-Branch `worktree-w26-nkey` der Parallel-Session **war sichtbar**; zudem stand der Schritt nie auf `wip`. | Dispatch §0 Ziff. 5, **eskaliert 28.7.2026** (Regel 5): drei Sonden statt einer — PR-Liste + `git ls-remote --heads origin` + `git worktree list` — und Früh-Push des eigenen Branchs. Orchestrator-Seite: Skill `auftrag` Ziff. 2 (@meta `wip` **vor** Baubeginn setzen und pushen). **Eskalation 5.8.2026** (Spiegel-Fall: wip überlebt das Session-Ende — QS-TOK/QS-TOK-AUFRAEUMEN standen nach gelandetem Bau stundenlang «im Bau»): `plan:next` warnt maschinell bei wip ohne Bau-Spur (Branch/Worktree/PR), Landung-Skill Schritt 9 schliesst den Status vor Session-Ende. |
 | **F7** | Zustands-Spiegel nur vorwärts getestet | 7.8.2026 (W2·10-UI-NAV-S): die neue `?q=`-URL-Spiegelung wurde nur vorwärts getestet (tippen → Adresse → Reload); die Gegenprüfung fand per History-Back einen deterministischen Verlust — die Echo-Merkung des Spiegels verfiel nie, ein Back wurde als eigenes Echo missdeutet und binnen 300 ms wieder überschrieben. | Wer eine Zustands↔URL-Spiegelung baut, testet auch **rückwärts** (Back/Forward, geteilte URL, Reload mitten im Debounce), nicht nur vorwärts. Wiederverwendbares Gegenmittel im Code: `src/components/suche/useSucheAusUrl.ts` (reine Übergangsfunktionen, Echo-Merkung verfällt nach genau einem Konsum) samt Unit-Kontrakt + e2e-Back-Szenario — neue Spiegelungen docken dort an statt eigene Merkung zu erfinden (§5). |
+
+| **F8** | Beleg ans Tor angepasst | 29.8.2026 (Intl-Routing, 3. Prüf-Durchgang M7/M8): ZWEI datierte Reproduktions-Kommentare wurden beim Bau auf die neue Adresse «nachgeführt» — und damit falsch (die Adresse existierte am Belegdatum nicht; einer widersprach der Chronik derselben Änderung). Auslöser war ein neues Kanonik-Tor, das die Kommentare gar nicht las — der Beleg wurde dem Tor geopfert, nicht der Wahrheit. | Dispatch-§0 Ziff. 7 (agents-Defs + dispatch-template, 29.8.2026): **Datierte Repro-/Messbelege werden nie nachgeführt, nur ergänzt** («damals /gesetze/bund/EMRK; seit Befund 45 kanonisch …»). Heilung in Ergänzungs-Form belegt (Commit im Intl-PR). |
+| **F9** | Stand-Leser nimmt Zukunft | 29.8.2026 (Frische-GP B1/B5): `leseTiStand` nahm das MAXIMUM aller «in vigore dal»-Daten der Quellseite — inkl. des Ankündigungs-Abschnitts «PROSSIME VARIAZIONI» → TI-181 bekam stand 1.1.2027 (16 Monate Zukunft) in den Grundbuchtarif-Risikopfad; gleiche Klasse vorbestehend: SZ-213.512 (2027-02-01). Dazu B2: der Zuklapp-Link «chiudi -» des neuen Seitenabschnitts landete als Normtext. | **Tor** `stand ≤ heute` über alle Snapshots (Frische-Fix-PR, rot gezeigt an TI+SZ) + Adapter-Wurzelfix (künftige Daten/Ankündigungs-Abschnitte beim Stand-Lesen ausgeschlossen, UI-Chrome-Filter). |
+
+**F2-Verschärfungen (29.8.2026, dritter und vierter Beleg der Familie):**
+(i) *Retry-/Abschneide-Maskierung:* Playwright-`retries:2` + `maxFailures`
+verdeckten, dass der ⌘K-Wächter seit ≥16.8. auf ALLEN Branches im Erstversuch
+rot ist (69/69) und dass ein neues Tor (topbar-320) in seiner Shard-Gruppe NIE
+lief («10 did not run») — beide Funde erst durch Hand-Forensik. Gegenmittel wie
+F2b/F2e: Erstversuchs-Rot und nicht-gelaufene Specs sind Meldungen; Diagnose-
+Posten im Fehlerbuch, Retry-Politik ist David-Entscheid.
+(ii) *Automatik prüft Teilmenge:* der Fedlex-Frische-Lauf fuhr 5 handverlesene
+Offline-Tore statt des Gates — drei Regressionen (Zähler/Revisionen/PDF-Quellen)
+liefen durch, und der verschärfte Merge-Schutz (574 Risiko-Dateien ohne Verdikt)
+blockierte drei Wochen-PRs in Folge still. Gegenmittel: Workflow auf Gate-Lauf
+(Frische-Fix-PR); die Auto-Merge-Politik auf Risikopfaden (Verdikt-Pflicht vs.
+David-Rahmen 16.7.) wartet auf David.
 
 ## Eine neue Lehre ablegen
 

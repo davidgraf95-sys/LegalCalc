@@ -31,6 +31,8 @@
 // ROADMAP.md 104.8 KB über dem 100-KB-Ceiling): sechs erledigte Schritte → Chronik-Abschnitt
 // «Umschichtung 8.8.2026». Entfernt: QS-E2E-TEMPO · QS-GP-BEREICH · W2·10-UI-NAV-S/-V/-J/-O.
 // Das Dach W2·10-UI-NAV bleibt (status ready) — offen ist dort nur noch -J3.
+// «Umschichtung 29.8.2026». Entfernt: W2·10-UI-NAV (Dach komplett, J3 in #564/#573
+// gelandet) · W2·10-UI-NAV-J3 · W2·15-CLS (#565).
 // Folge-Bereinigung nach Regel 4 (Präzedenz 5.8.2026): `dep: [QS-GP-BEREICH]` in QS-GP-PREPUSH
 // geleert, weil die Vorbedingung erledigt und ihr @meta mit in die Chronik gewandert ist.
 // UMSCHICHTUNG 13.8.2026 (Aufräum-Session, Anlass: Wächter `struktur-rotieren.py --check` rot,
@@ -71,7 +73,7 @@ export const INVENTAR: readonly string[] = [
   'W2·6', 'W2·8', 'W2·9',
   'W3·12', 'W3-AUSBAU',
   'LERNPHASE-AB', 'QS-GP', 'SEO-A11Y', 'QS-PERF', 'QS-DATA',
-  'W2·6-DATA', 'W2·7-VZUI', 'W2·10-UI-NAV', 'W2·11-DESIGN',
+  'W2·6-DATA', 'W2·7-VZUI', 'W2·11-DESIGN',
   'QS-OPT', 'QS-BASIS',
 
   // 'W2·12-HYGIENE' stand hier ein zweites Mal — Dublette entfernt 31.7.2026 (AP-6, QS-TOK).
@@ -86,7 +88,7 @@ export const INVENTAR: readonly string[] = [
   // W2·5e/5f sind VERBRANNT (am 20.7. doppelt vergeben, danach auf 5g/5h umbenannt) —
   // die Reihe wird darum bei 5i fortgesetzt, nicht mit den freigewordenen Buchstaben.
   // (W2·5j-TABELLEN, W2·6-FILTER und W2·6-RNAME sind am 15.8.2026 fusioniert — s. Kopf.)
-  'W2·15-CLS', 'W2·16-INVENTAR', 'W2·16-ANLEITUNG', 'QS-AUTOMATIK',
+  'W2·16-INVENTAR', 'W2·16-ANLEITUNG', 'QS-AUTOMATIK',
 
   // §14-Intake 24.7.2026 (Anmerkungs-Session David): FINMA-Materialien.
   'W2·6b-MAT-FINMA',
@@ -99,7 +101,6 @@ export const INVENTAR: readonly string[] = [
   // in Teilschritte zerlegt, die plan:next einzeln ausgibt und EINE Session abschliessen kann.
   // Der jeweilige Elter behält sein @meta und bleibt das Dach.
   'W2·6-RESOLVER',
-  'W2·10-UI-NAV-J3',
   'W2·13-KANTONE-DATEN',
   // David-Entscheide 2.8.2026 (Nutzer-Turn): die drei per Bestands-Entscheid zurückgestellten
   // UI-Befunde des Batches B1 entschieden (LM-048 verworfen, LM-041/LM-044 geöffnet) + zwei
