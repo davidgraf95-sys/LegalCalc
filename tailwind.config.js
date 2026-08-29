@@ -132,12 +132,25 @@ export default {
         //    gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
         //    über alle Grössen»). WCAG 1.4.8: lh 1.55 ≥ 1.5, Lesemass 42 rem.
         //  · `leser-rand` 13 px / lh 1.35 — Marginalie/Randtitel, Sans, label-2.
-        //  · `leser-fn`   11 px / lh 1.3  — Fussnoten-Apparat am Artikelfuss
+        //  · `leser-fn`   11 px / lh 1.45 — Fussnoten-Apparat am Artikelfuss
         //    (war `text-xs leading-normal` = 12 px / 1.5; Kap. 8 nennt als Ist
         //    `text-micro`, gemessen am Code war es `text-xs`).
+        //    ZEILENHÖHE 1.3 → 1.45 (T3, Design-Qualitäts-Pass 29.8.2026,
+        //    DEKLARIERTE fachliche Änderung, nicht Refactoring): die S2-V2-Spalte
+        //    setzte 1.3 für eine SCHMALE Fussnotenspalte an; gebaut wurde der
+        //    Apparat dann über die volle Lesespalte (gemessen @1440 am OR:
+        //    640 px Kasten, 108 ch/Zeile). 1.3 auf 11 px über 108 ch heisst
+        //    14.3 px Zeilenabstand bei 635 px Zeilenlänge — das Auge verliert
+        //    beim Rücksprung die Zeile (Doppelsprung/Zeilenwiederholung). Der
+        //    Apparat läuft seit T3 auf `max-w-kleintext` (26 rem ≈ 71 ch), also
+        //    genau auf der Spalte, für die 1.3 gedacht war; 1.45 gibt der
+        //    Feinschrift trotzdem die Luft, die WCAG 1.4.8 (≥ 1.5 für
+        //    Fliesstext) für Blocktext verlangt — knapp darunter, weil der
+        //    Apparat Referenz-, kein Lesetext ist. Die GRÖSSE bleibt
+        //    unangetastet (0.6875 rem, Entscheid David 17.8.2026 am Bildbogen).
         'leser-text': ['1.0625rem', { lineHeight: '1.55' }],
         'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
-        'leser-fn': ['0.6875rem', { lineHeight: '1.3' }],
+        'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
       },
       borderRadius: {
         sm: 'var(--radius-sm)', md: 'var(--radius-md)', lg: 'var(--radius-lg)',

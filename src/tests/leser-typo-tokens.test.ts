@@ -52,7 +52,14 @@ describe('S2 · Leser-Typografie-Tokens', () => {
     const erwartet: Array<[string, string, string]> = [
       ['leser-text', '1.0625rem', '1.55'],   // Fliesstext 17 px
       ['leser-rand', '0.8125rem', '1.35'],   // Marginalie/Randtitel 13 px, Sans
-      ['leser-fn', '0.6875rem', '1.3'],      // Fussnoten-Apparat 11 px
+      // Fussnoten-Apparat 11 px. ZEILENHÖHE 1.3 → 1.45 NACHGEFÜHRT (T3,
+      // Design-Qualitäts-Pass 29.8.2026): deklarierte fachliche Änderung
+      // (§6.3), kein aufgeweichter Wächter — die Prüfung bleibt exakt gleich
+      // streng und bindet weiterhin an EINEN festgelegten Wert; nur der Wert
+      // selbst ist entschieden worden. Herleitung samt Messung steht am Token
+      // in `tailwind.config.js`. Die GRÖSSE (0.6875 rem, Entscheid David
+      // 17.8.2026 am Bildbogen) ist unverändert gebunden.
+      ['leser-fn', '0.6875rem', '1.45'],
     ];
     for (const [name, groesse, lh] of erwartet) {
       const treffer = new RegExp(`'${name}':\\s*\\['([0-9.]+rem)',\\s*\\{\\s*lineHeight:\\s*'([0-9.]+)'`).exec(cfg);
