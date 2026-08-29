@@ -1036,8 +1036,10 @@ function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, mass
         <p className="lc-overline">
           {snap.gerichtName}
           {snap.abteilung && <span className="text-ink-500"> · {snap.abteilung}</span>}
-          {/* J3 (§8): Sachgebiet ist maschinell zugeordnet — der title sagt es an
-              Ort und Stelle; das Badge dazu trägt der Kopf bereits (V1.2, unten). */}
+          {/* J3 (§8): Sachgebiet ist maschinell zugeordnet — im Lesemodus-Overlay
+              gibt es kein StatusBadge (auch vor J3 nicht); der title ist hier der
+              einzige Hinweis (Hover; auf Touch nicht erreichbar — bekannter Rest,
+              Bibliotheks-Doku J3). */}
           <span className="text-brass-700" title={snap.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}> · {GEBIET_LABEL[snap.sachgebiet]}</span>
         </p>
         <h1 className="mt-2 text-h2 sm:text-h1 font-display font-semibold text-ink-900 num">{snap.zitierung}</h1>

@@ -120,6 +120,16 @@ Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
   Berufliche Vorsorge und `SG` das Schiedsgericht Sozialversicherung BS — nicht
   Bundesverfassung/St. Gallen. Nur Aktenzeichen-Ebene, keine Norm-Keys.
 
+**Offene Kleinreste aus Gegenprüfungs-Runde 3 (29.8.2026, alle leicht, beim
+Q-J3-8-Folge-Posten miterledigen):** (H2) der Array-Guard vor
+`zweierRohSteuerSignal` ist wirkungslos (String-Eingabe lieferte auch vorher
+null) und die Schwesterstelle `statutesZuNormKeys(det.statutes ?? [])` ist
+ungeschützt — beides angleichen oder beides streichen (§17 Ziff. 2); (H3) der
+Kommentar zum Unterstrich-Fix in `remap-sachgebiet-j3.ts` nennt den falschen
+Grund — richtig ist: 29 Unterstrich-Nummern existieren, aber alle bger/bpatger,
+`bgeBand` läuft nur auf `gericht==='bge'`; (H4) `/imp[oô]t/` matcht Substrings
+(korpus-irrelevant). Lesemodus-Overlay: Maschinen-Hinweis nur per Hover (§8-Rest).
+
 **Pflege:** Neue 2er-relevante Erlasse (z. B. StAhiG, BüG) bei Bedarf in
 `NORM_SIGNAL` deklarieren — Priorität ist die Listen-Reihenfolge, empirisch am
 Korpus messen (Muster: `remap-sachgebiet-j3.ts` DRY-RUN).
