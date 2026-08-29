@@ -2,7 +2,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, type Einheit } from './parse';
 import { resolve } from './aufloesen';
-import { parseEtikett, FELD_WERTE, istFeld } from './etikett';
+import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
 import { obersterMarkerId } from './marker';
 import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
