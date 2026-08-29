@@ -23,19 +23,25 @@
 // Sobald die Gliederung nachgezogen ist, gehört die Schranke auf die ganze Seite
 // gehoben (Rest-Vermerk in der Rückgabe der Bau-Einheit W2·11-MOBILKOPF).
 //
-// ROT ZU BEKOMMEN (§6.7): in `src/components/layout/Topbar.tsx` BEIDE
-// `max-[480px]:hidden` entfernen — am Logo-`<Link>` und an der Hülle um
-// `<VerlaufUebersicht/>`. Gemessen 29.8.2026 @320 auf `/gesetze`, warm:
-//   Fix                12 px → 0 px    (rechte Kante 320)
-//   nur Logo zurück            0 px    (rechte Kante 320) — GRÜN
-//   nur Verlauf zurück         0 px    (rechte Kante 320) — GRÜN
-//   beide zurück              12 px    (rechte Kante 332) — ROT
-// Dass die Einzelproben grün bleiben, ist kein Messfehler, sondern der Zustand
-// des Streifens: das Suchfeld ist `flex-1 min-w-0` und schluckt den Mangel, bis
-// es 0 px breit ist. Genau das ist der Nachbar-Befund C1/B10 — ein Feld, das
-// unter Druck verschwindet statt zu drücken. Sobald es (Posten a derselben
-// Bau-Einheit) unter 480 px zur 44-px-Lupe wird, kann es nicht mehr schlucken,
-// und dieses Tor wird auf JEDE einzelne Rücknahme rot.
+// ROT ZU BEKOMMEN (§6.7): in `src/components/layout/Topbar.tsx` das
+// `max-[480px]:hidden` am Logo-`<Link>` ODER an der Hülle um
+// `<VerlaufUebersicht/>` entfernen. Gemessen 29.8.2026 @320 auf `/gesetze`,
+// warm, gegen den dev-Server — je EINMAL vor und nach dem Lupen-Posten, weil
+// sich dazwischen die Empfindlichkeit des Tors ändert:
+//
+//                      vor der Lupe       mit der Lupe
+//   Fix (Soll)           0 px  grün         0 px  grün   (Kante 320)
+//   nur Logo zurück      0 px  GRÜN          6 px  rot   (Kante 326)
+//   nur Verlauf zurück   0 px  GRÜN          6 px  rot   (Kante 326)
+//   beide zurück        12 px  rot          56 px  rot   (Kante 332 / 376)
+//
+// Die beiden GRÜN in der linken Spalte sind kein Messfehler, sondern der
+// Zustand, den C1/B10 beschreibt: das Suchfeld war `flex-1 min-w-0` und
+// schluckte jeden Platzmangel, bis es 0 px breit war — ein Feld, das unter
+// Druck verschwindet statt zu drücken. Seit es unter 480 px eine 44-px-Lupe ist
+// (`min-w-11`, `HeaderSuche`), kann es nicht mehr schlucken, und das Tor ist auf
+// jede einzelne Rücknahme empfindlich. Wer die Lupe entfernt, macht dieses Tor
+// also wieder stumpf — dann gehört die Untergrenze zuerst zurück.
 import { test, expect, type Page } from '@playwright/test'
 
 /** Rechte Kante des am weitesten rechts stehenden Streifen-Elements. */
@@ -89,6 +95,49 @@ test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
     })
   }
 
+  // ── C1/B10/L3 · DIE LUPE IST DIE SUCHE, NICHT IHR PLATZHALTER ─────────────
+  // BEFUND, gemessen 29.8.2026 warm: das Suchfeld war @320 UND @375 genau 28 px
+  // breit — ein leerer Rahmen. Es reicht nicht, dass dort jetzt ein Knopf steht;
+  // geprüft wird, dass er die Suche AUFMACHT und das Feld dann benutzbar ist.
+  // Ohne diesen Fall wäre der Streifen-Überlauf oben auch mit einer toten Lupe
+  // grün (§6.7).
+  // ROT ZU BEKOMMEN: in `HeaderSuche.tsx` `onClick={fokussiere}` an der Lupe
+  // durch `onClick={() => setOffen(true)}` ersetzen ⇒ das Feld erscheint, trägt
+  // aber keinen Fokus (der Fokus-Wunsch über das Render hinweg ist genau das,
+  // was der versteckte Zustand braucht); oder das `max-[480px]:min-w-11` in
+  // `Topbar.tsx` streichen ⇒ die Lupe steht @320 über der Hüllenkante.
+  test('@320 öffnet die Lupe das Feld über die volle Streifenbreite', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 800 })
+    await waerme(page)
+    await page.goto('/gesetze')
+
+    const lupe = page.locator('header.sticky [data-suche-lupe]')
+    await expect(lupe).toBeVisible({ timeout: 20_000 })
+    expect(await lupe.evaluate((n) => Math.round(n.getBoundingClientRect().width)),
+      'Die Lupe unterschreitet das 44-px-Komfortziel (§13/F-Reihe)').toBeGreaterThanOrEqual(44)
+    // Vorbedingung: im Ruhezustand ist das Feld dort NICHT im Bild — sonst
+    // prüfte der Fall einen Streifen, der die Lupe gar nicht braucht.
+    await expect(page.locator('header.sticky input[type="search"]')).toBeHidden()
+
+    await lupe.click()
+    const feld = page.locator('header.sticky input[type="search"]')
+    await expect(feld).toBeFocused({ timeout: 10_000 })
+    const breite = await feld.evaluate((n) => Math.round(n.getBoundingClientRect().width))
+    // Der Fokusmodus gibt dem Feld den Streifen minus dessen Polsterung (2×16).
+    expect(breite, `Feldbreite nach dem Lupen-Tap @320: ${breite} px (vor dem Fix: 28 px)`)
+      .toBeGreaterThanOrEqual(240)
+
+    // Tippen erreicht das Feld, und die Trefferfläche öffnet.
+    await page.keyboard.type('or 257')
+    await expect(feld).toHaveValue('or 257')
+
+    // ✕ führt zurück — Lupe wieder da, Fokus nicht auf <body> (S6-Zusage).
+    await page.locator('header.sticky button[aria-label="Suche schliessen"]').click()
+    await expect(lupe).toBeVisible()
+    expect(await page.evaluate(() => document.activeElement?.getAttribute('aria-label')),
+      'Fokus nach dem ✕ verloren').toBe('Navigation öffnen')
+  })
+
   // Gegenprobe: die Entlastung gilt NUR unter 480 px. Darüber muss der Streifen
   // wieder vollständig sein — sonst hätte der Fix oben die Werkzeuge dauerhaft
   // entfernt und das Tor hätte das nicht gemerkt (§6.7).
@@ -102,6 +151,9 @@ test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
     await waerme(page)
     await expect(page.locator('header.sticky a[aria-label="LexMetrik – Startseite"]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('header.sticky button[aria-label="Verlauf – zuletzt geöffnet"]')).toBeVisible()
+    // …und das Feld steht dort wieder selbst im Streifen, ohne Lupe davor.
+    await expect(page.locator('header.sticky input[type="search"]')).toBeVisible()
+    await expect(page.locator('header.sticky [data-suche-lupe]')).toBeHidden()
 
     // Und dort läuft er ebenfalls nicht über.
     const { ueberlauf, quellen } = await streifenKante(page)

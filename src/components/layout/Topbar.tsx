@@ -124,8 +124,13 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
         </Link>
 
         {/* max-w-xl deckelt die Feldbreite auf Desktop; im mobilen Fokusmodus ist
-            der Viewport ohnehin schmaler, das Feld füllt also den Streifen. */}
-        <div className="flex-1 min-w-0 max-w-xl">
+            der Viewport ohnehin schmaler, das Feld füllt also den Streifen.
+            C1/B10/L3: unter 480 px trägt die Zone im Ruhezustand die 44-px-Lupe
+            (`HeaderSuche`). `min-w-11` statt `min-w-0` hält sie dort — sonst
+            schrumpfte die flex-1-Hülle weiter unter ihr eigenes Bedienelement und
+            die Lupe stünde über der Hüllenkante. Nur die Untergrenze wechselt;
+            die Zone bleibt dieselbe flex-1-Zone in jeder Breite. */}
+        <div className="flex-1 min-w-0 max-[480px]:min-w-11 max-w-xl">
           <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
 
