@@ -581,3 +581,69 @@ ROADMAP bleiben Titel, `@meta`, Kurzabsatz und Pointer. Steuert nicht — Spec-H
 > einen vorbestehenden CLS von **0.05–0.22** (3 Läufe, unverändertes A28-main; VMWG am höchsten,
 > STG schwankt ±0.12 zwischen Läufen) — unabhängig von den Linien. Wurzel-Fix hier miterledigen
 > oder als Messartefakt belegen (§17: nicht umschiffen).
+
+#### Abarbeitung §2-N beim Bau von `W2·15-CLS` (29.8.2026) — Wurzel benannt, Fix ist ein eigener Schritt
+
+**Lebendige Spec, Ziff. 1 — die Befund-Zahl in §2 ist überholt.** `/gesetze` misst nicht mehr
+0.109 @8×, sondern **0.4385** (Desktop 1440×900, n=5, Median; @4× identisch 0.4385; mobil
+412×823: 0.3364). Gemessen am 29.8.2026 gegen `main` 7ab30ea9e mit Playwright + CDP-Drossel,
+input-freie Shifts. Die Zahl **0.109 bleibt als historischer Messpunkt (20.7.2026) stehen** — sie
+ist nicht falsch, sondern älter; der Defekt ist seither gewachsen. Der Befund selbst («zwei
+unreservierte Platzhalter») hat sich exakt bestätigt: es sind genau zwei Shift-Ereignisse,
+0.1242 + 0.3143, beide mit dem FOOTER als Quelle.
+
+**§2-N ist REPRODUZIERT, aber nicht mit dem Wortlaut «Messartefakt» abzulegen.** Messreihe
+29.8.2026 (Desktop 1440×900, n=3, Median, identisch auf `main` 7ab30ea9e und auf dem
+W2·15-CLS-Branch — der Übersichts-Fix berührt die Leser-Seiten nicht):
+
+| Route | @8× | @4× |
+|---|---|---|
+| `/gesetze/bund/VMWG` | 0.0592 | 0.0004 (ein Lauf von drei: 0.0187) |
+| `/gesetze/bund/STG` | 0.0488 | 0.0062 |
+| `/gesetze/bund/OR` | 0.0413 | 0.0010 |
+| `/gesetze/bund/BV` | 0.0413 | 0.0010 |
+
+Die Werte liegen am unteren Rand des 3.8.-Bandes (0.05–0.22), die Rangfolge stimmt (VMWG am
+höchsten), und die STG-Streuung ist erklärt (siehe unten). **Kein Messartefakt:** der Sprung ist
+bei 8× über alle Läufe byte-stabil und geometrisch erklärbar.
+
+**Die Wurzel, exakt vermessen.** In allen vier Fällen dominiert **ein** Ereignis von **0.0403**
+mit der Quelle `DIV.lc-route`; die Zeitreihe zeigt `route-y` von **149 → 65**, also **84 px**
+nach oben. 84 px ist genau `--leser-v3-kopf-luecke` (3rem = 48 px oberhalb `sm`) +
+`--leser-v3-app-band` (2.25rem = 36 px) — die beiden Stücke, die `LeserKopf.tsx` per negativem
+`marginTop` verschluckt (Ä1/A-2, 17.8.2026). Der Ablauf: der Lade-Platzhalter `LadeAnzeige`
+(`src/pages/gesetz-leser/inhalt-ansichten.tsx`) reserviert zwar die **Höhe** (`min-h-screen`),
+aber **nicht diesen Ober-Versatz**; sein negativer Margin fehlt, der des geladenen Lesers
+kollabiert dann durch `.lc-route` hindurch und zieht die ganze Route 84 px hoch.
+Es ist damit **dieselbe Defekt-Klasse wie auf `/gesetze`** — ein Platzhalter, der die Geometrie
+seines Nachfolgers nicht trägt (§15.2) — nur an der Ober- statt an der Unterkante.
+
+**Warum er bei 4× verschwindet** (und warum STG «schwankt»): der Sprung entsteht nur, wenn der
+Platzhalter überhaupt **gemalt** wird. Bei 4× ist der Erlass-Datenpfad schneller als der erste
+Paint, der Platzhalter erscheint nie, CLS bleibt ~0.001. Bei 8× wird er deterministisch gemalt.
+Das ist ein **Wettlauf zwischen Laden und Paint**, keine Messungenauigkeit — und es erklärt die
+±0.12-Streuung vom 3.8. ohne Rest. Die restlichen Posten sind Rauschen: 5 × 0.0002 an
+Topbar-Bedienelementen (Rechteck unverändert, Sub-Pixel) und auf STG 5 × 0.0058 an `LI`-Knoten.
+
+**Warum der Fix NICHT in diesen Schritt gehört (§14.2, Wortlaut von §2 oben).** `LadeAnzeige` ist
+absichtlich **kontextfrei** (keine Props) und wird an drei Stellen benutzt, unter anderem als
+Suspense-Fallback in `GesetzLeser.tsx` und **innerhalb eines Panes**. Die beiden verschluckten
+Stücke haben aber je nach Fläche verschiedene Werte (`--leser-v3-kopf-luecke` 2rem/3rem
+ausserhalb, 1.5rem im Pane; `--leser-v3-app-band` 2.25rem ausserhalb, 0rem im Pane) und werden
+heute **erst auf dem Rahmen-Element** gesetzt, das während des Ladens noch nicht existiert. Der
+saubere Wurzel-Fix ist deshalb, **beide Variablen von `[data-leser-v3="rahmen"]` auf einen
+stabilen Vorfahren zu heben** (Route-Wrapper in `Shell.tsx` bzw. `Pane.tsx`), damit Platzhalter
+und geladener Leser dieselbe Geometrie lesen. Das berührt `Shell.tsx`, `Pane.tsx`, `index.css`,
+`LeserKopf.tsx` und `leserGeometrie.ts` und läuft gegen den bestehenden Wächter
+`e2e/leser-v3-kopf-buendig.e2e.ts` — eine eigene Bau-Einheit mit eigener Risiko-Klasse. Sie hier
+mitzunehmen hiesse genau das zu tun, wovor §2 warnt: einen Produktfehler mit einer fremden
+Baustelle vermischen. **Offener Posten für die Aufnahme in `QS-PERF`** (Zuordnung durch die
+Haupt-Session, CLAUDE.md §17: Wurzel-Fix hinterlegt, nicht umschifft).
+
+**Zweiter offener Posten — Deckel-Kalibrierung der neuen Tor-Route.** `/gesetze` ist seit
+29.8.2026 dritte gemessene Route in `scripts/perf/lighthouse-budget.ts`; assertiert wird nur
+**CLS ≤ 0.05** (geräteunabhängig, Rot-Beweis am Eintrag dokumentiert). LCP/TBT/TTI/Score stehen
+auf `null` = gemessen und gedruckt, aber nicht assertiert, weil für diese Route keine Erhebung
+auf unabhängigen CI-Runnern vorliegt. Nachzug: `perf-kalibrierung.yml` einmal darüber laufen
+lassen (der Messpunkt wird unter dem Schlüssel `uebersicht` bereits mitgedruckt) und die vier
+Deckel nach dem Muster der 3.8.-Nachmessung setzen.
