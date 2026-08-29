@@ -171,7 +171,21 @@ export default {
       // hier wird die Zahl korrigiert, nicht der Wert geändert. Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
-      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
+      //
+      // `kleintext` (26rem = 416px) = die Lesespalte der FEINSCHRIFT — Hinweise,
+      // Fussnoten-Apparat, alles auf der micro-/xs-Stufe (0.6875–0.75rem).
+      // WARUM EINE ZWEITE ZAHL (T2/T3, Design-Qualitäts-Pass 29.8.2026): die
+      // 80-ch-Decke (WCAG 2.2 SC 1.4.8, dieselbe wie beim Lesemass) ist eine
+      // ZEICHEN-Decke, keine Pixel-Decke — sie skaliert mit der Schriftgrösse.
+      // `reading` (40rem) hält sie auf der 18-px-Lead-Stufe (dort ~66–71 ch),
+      // NICHT auf der 11-px-Stufe: dieselben 640 px tragen dort gemessen
+      // 108 ch (Fussnoten-Apparat OR @1440, 5.88 px/ch) bzw. 126 ch (Hinweis
+      // `/gesetze/bund/EMRK`, 5.08 px/ch — kürzere Wörter, dichteres Bild).
+      // 26 rem ergibt bei beiden Bildern 71 bzw. 82 ch — die Decke gehalten,
+      // mit Reserve für dichtere Schriftbilder. Eine Feinschrift auf `reading`
+      // zu setzen sähe token-rein aus und verfehlte die Zusage; darum die
+      // zweite BENANNTE Zahl statt eines Arbitrary-Werts am Fundort (D2).
+      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '26rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
       // Einzug-Skala des Gesetzes-Readers (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT
       // §Weissraum-Rhythmus): EINE Stufe = 20px. Tiefe wird über Einzug getragen
       // (V2·L-1: gedeckelt bei 5 Stufen statt 3 — tiefe Kodifikationen ZGB/OR
