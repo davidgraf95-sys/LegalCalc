@@ -473,7 +473,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
   // BEFUND (Ästhetik-Review 17.8.2026): die Fassade meldete `kopfzeileSelbst`
   // UNBEDINGT — auf den drei Wegen, auf denen der Rahmen früh zurückkehrt
   // (Fehlseite · pdf-embed · nur-live-link), rendert sie aber nie eine Kopfzeile.
-  // Gemessen an `/gesetze/international/EMRK?leser=v3`: null Krumen, null ✕. Der Leser sass
+  // Gemessen 17.8.2026 an `/gesetze/bund/EMRK?leser=v3` (damalige Adresse; seit Befund 45 kanonisch `/gesetze/international/EMRK`): null Krumen, null ✕. Der Leser sass
   // auf einer Seite ohne jeden Weg zurück — in V1 trug die App-Leiste ihn.
   // Geprüft wird das SICHTBARE Ergebnis (Krume + Schliessen), nicht die Meldung:
   // eine Sonde auf `kopfzeileSelbst` bliebe grün, wenn die Leiste aus einem

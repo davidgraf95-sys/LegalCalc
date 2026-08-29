@@ -15,6 +15,14 @@
 //      springt, Neu und alles Übrige springen NICHT (eine Weiterleitung, die
 //      auch auf der Zieladresse feuert, ist eine Endlosschleife).
 
+
+// GRENZEN dieser Sonden (3. Prüf-Durchgang 29.8.2026, M9/M11/M12 — deklariert,
+// nicht behoben): (a) src/tests|fixtures werden übersprungen — Rückfälle dort
+// sind unsichtbar; (b) nur .ts/.tsx in vier Wurzeln — ausführbare .mjs-Mess-
+// skripte (docs/ux-audit) messen weiter am Stub; (c) namensbasierte Zugriffs-
+// Sonden fangen Optional-Chaining/Zwischenvariable/Import-Alias prinzipiell
+// nicht. Wer die Klasse dort dicht braucht: Scan-Wurzeln/Endungen erweitern.
+
 import { describe, expect, it } from 'vitest';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
@@ -123,7 +131,7 @@ describe('feste Erlass-Adressen im Repo sind kanonisch', () => {
       for (const p of dateien(wurzel)) {
         const rel = relative(join(SRC, '..'), p).replaceAll('\\', '/');
         const roh = readFileSync(p, 'utf8');
-        if (roh.includes(ABSICHT)) continue;
+        if (roh.slice(0, 600).includes(ABSICHT)) continue;  // M10: Marke zählt nur im Datei-KOPF (erste 600 Zeichen) — ein Code-String weiter unten legt die Sonde nicht mehr still
         for (const zeile of ohneKommentare(roh).split('\n')) {
           for (const m of zeile.matchAll(muster)) {
             let key: string;
