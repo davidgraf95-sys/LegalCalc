@@ -359,7 +359,10 @@ export function baueDokUndKanten(
     doktyp,
     titel: roh.titel,
     nummer: anzeigeNummer(b),
-    rechtsgebiet: 'sozial-abgaben',
+    // W2-TRENNUNG (29.8.2026): ESTV = Eidgenössische STEUERverwaltung —
+    // Kreis-/Rundschreiben zur direkten Bundessteuer und zur Verrechnungs-
+    // steuer sind ausnahmslos Steuerdokumente, nie Sozialversicherung.
+    rechtsgebiet: 'steuern',
     sprache: 'de',
     rang: dokRang(b),
     normKeys: erlasse,

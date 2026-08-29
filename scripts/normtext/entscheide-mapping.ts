@@ -1013,7 +1013,14 @@ const LEGAL_AREA: Array<[string, Rechtsgebiet]> = [
   ['civil', 'privat'], ['zivil', 'privat'], ['private', 'privat'],
   ['criminal', 'straf'], ['straf', 'straf'], ['penal', 'straf'],
   ['debt', 'schkg'], ['betreibung', 'schkg'], ['insolvenc', 'schkg'],
-  ['tax', 'sozial-abgaben'], ['steuer', 'sozial-abgaben'], ['social', 'sozial-abgaben'], ['sozial', 'sozial-abgaben'],
+  // W2-TRENNUNG (29.8.2026): Der Doppel-Topf 'sozial-abgaben' ist zerlegt. Die
+  // OCL-legal_area unterscheidet die beiden Hälften bereits selbst — die
+  // Steuer-Begriffe (tax/steuer) und die Sozialversicherungs-Begriffe (social/
+  // sozial, OCL-Wert 'social_insurance') standen schon vorher nebeneinander in
+  // dieser Liste und zeigten nur beide auf denselben Topf. Kein neues Signal,
+  // nur zwei Ziele statt einem.
+  ['tax', 'steuern'], ['steuer', 'steuern'],
+  ['social', 'sozialversicherung'], ['sozial', 'sozialversicherung'],
   ['procedure', 'prozess'], ['prozess', 'prozess'],
   ['public', 'oeffentlich'], ['administrativ', 'oeffentlich'], ['oeffentlich', 'oeffentlich'],
 ];
@@ -1044,7 +1051,12 @@ const ABTEILUNG: Record<string, Rechtsgebiet> = {
   // Sozialversicherung» etikettierte (Messung 29.8.2026: 53 Band-I- und 82
   // Band-II-BGE ohne jedes Steuer-Signal in diesem Topf).
   '2C': 'oeffentlich', '2A': 'oeffentlich', '2D': 'oeffentlich',
-  '8C': 'sozial-abgaben', '9C': 'sozial-abgaben',
+  // W2-TRENNUNG (29.8.2026): 8C/9C sind die sozialrechtlichen Abteilungen
+  // (Art. 34/35 BgerR, SR 173.110.131) — nach der Trennung des Doppel-Topfs
+  // zeigen sie auf 'sozialversicherung', nie auf 'steuern'. Steuersachen liegen
+  // seit 1.1.2023 bei der III. öffentlich-rechtlichen Abteilung (Art. 31 lit. a
+  // BgerR, AS 2023 65), historisch bei der 2er — nie bei 8C/9C.
+  '8C': 'sozialversicherung', '9C': 'sozialversicherung',
 };
 export function abteilungZuSachgebiet(docket: string): Rechtsgebiet | null {
   const m = /^(\d[A-Z])/.exec(String(docket).trim());
@@ -1062,7 +1074,7 @@ export function istMehrdeutigeOerAbteilung(docket: string): boolean {
 }
 
 // Eindeutiges Sachgebiets-Signal aus den zitierten Normen (Register-keys):
-// Migrations-/Ausländerrecht → öffentlich; Steuerrecht → sozial-abgaben.
+// Migrations-/Ausländerrecht → öffentlich; Steuerrecht → 'steuern'.
 // Kein Treffer → null (der Aufrufer fällt dann auf legal_area / Abteilung zurück).
 // DEKLARIERTE Priorität: die Reihenfolge dieser Liste entscheidet, welches
 // Signal gewinnt, wenn ein Entscheid mehrere trägt — Migrationsrecht (AIG,
@@ -1085,11 +1097,25 @@ export function istMehrdeutigeOerAbteilung(docket: string): boolean {
 // diese echten Steuerfälle (Gegenbeleg BGE 149 I 125: zitiert Art. 8 BV, ist
 // reine Grundstücksteuer). Ihren Zweck (verfassungsrechtliche 2er-Fälle nicht
 // als Steuern etikettieren) erfüllt der Abteilungs-Default 'oeffentlich'.
+// W2-TRENNUNG (29.8.2026) — DEKLARIERTE §7-ABWEICHUNG vom Auftragswortlaut:
+// Der Auftrag verlangte, hier zusätzlich Sozialversicherungs-Signale (AHVG,
+// IVG, UVG, ATSG, KVG, BVG, ELG, AVIG → 'sozialversicherung') aufzunehmen. Das
+// ist BEWUSST NICHT umgesetzt, weil diese Liste AUSSCHLIESSLICH in der Kette
+// der II. öffentlich-rechtlichen Abteilung ausgewertet wird
+// (`istMehrdeutigeOerAbteilung`, 2A/2C/2D) — und dort ist Sozialversicherung
+// nach Art. 30/34/35 BgerR gar keine Zuständigkeit. Ein Sozialversicherungs-
+// Signal an dieser Stelle würde exakt den Defekt wiederherstellen, den die
+// J3-Gegenprüfung am 29.8.2026 als Befund B2 beseitigt hat: BGE 151 II 726
+// (2C_565/2022, Verbleiberecht nach FZA) nennt das AHVG nur als Altersmassstab
+// und wurde davon fälschlich als Sozialversicherungsfall etikettiert. Die
+// echten Sozialversicherungsfälle klassiert die Abteilungs-Zeile (8C/9C) bzw.
+// das BGE-Band V — dort, wo die amtliche Geschäftsverteilung sie führt.
+// Die Steuer-Ziele wechseln nur ihren Namen ('sozial-abgaben' → 'steuern').
 const NORM_SIGNAL: ReadonlyArray<readonly [string, Rechtsgebiet]> = [
   ['AIG', 'oeffentlich'], ['ASYLG', 'oeffentlich'], ['BEWG', 'oeffentlich'],
   ['BGFA', 'oeffentlich'],
-  ['DBG', 'sozial-abgaben'], ['STHG', 'sozial-abgaben'], ['MWSTG', 'sozial-abgaben'],
-  ['STG', 'sozial-abgaben'], ['VSTG', 'sozial-abgaben'],
+  ['DBG', 'steuern'], ['STHG', 'steuern'], ['MWSTG', 'steuern'],
+  ['STG', 'steuern'], ['VSTG', 'steuern'],
 ];
 export function normSignalSachgebiet(normKeys: Iterable<string>): Rechtsgebiet | null {
   const vorhanden = new Set<string>();
@@ -1106,14 +1132,16 @@ export function normSignalSachgebiet(normKeys: Iterable<string>): Rechtsgebiet |
 // 2D_14/2024 = subsidiäre Verfassungsbeschwerde, Beschaffungsrecht, stand als
 // 'privat'; ebenso BGE 151 II 46).
 // Bug-Check-Nachschärfung (B2 empirisch, 29.8.2026): auf den BEGRIFF filtern,
-// nicht auf den Ziel-Topf — der Topf 'sozial-abgaben' bündelt Steuern UND
-// Sozialversicherung, und 'social_insurance' passierte so wie zuvor 'civil'
+// nicht auf den Ziel-Topf — der damalige Topf 'sozial-abgaben' bündelte Steuern
+// UND Sozialversicherung, und 'social_insurance' passierte so wie zuvor 'civil'
+// (seit der W2-TRENNUNG 29.8.2026 sind es zwei Töpfe; der Filter bleibt nötig,
+// weil 'social_insurance' auf der 2er-Abteilung weiterhin unplausibel ist)
 // (Beleg: BGE 151 II 726, 2C_565/2022 — Verbleiberecht nach FZA, AHVG nur als
 // Altersmassstab; Sozialversicherung liegt nach Art. 31/32 BgerR bei der III.
 // öffentlich-rechtlichen Abteilung bzw. den sozialrechtlichen, nie bei der 2er).
 const ZWEIER_LEGAL_AREA_STEUER = /tax|steuer|imp[oô]t|fiscal/i;
 export function zweierLegalAreaSignal(area: string | null | undefined): Rechtsgebiet | null {
-  return area && ZWEIER_LEGAL_AREA_STEUER.test(String(area)) ? 'sozial-abgaben' : null;
+  return area && ZWEIER_LEGAL_AREA_STEUER.test(String(area)) ? 'steuern' : null;
 }
 
 // J3-Korrektur (Gegenprüfung 29.8.2026, Befund F2/Mindestkorrektur 4):
@@ -1125,7 +1153,7 @@ export function zweierLegalAreaSignal(area: string | null | undefined): Rechtsge
 // verwenden — ausserhalb bleibt StG mehrdeutig.
 const ZWEIER_STEUER_ROH = /steuergesetz|\bstg\b/i;
 export function zweierRohSteuerSignal(zitierteNormen: Iterable<string>): Rechtsgebiet | null {
-  for (const z of zitierteNormen) if (ZWEIER_STEUER_ROH.test(String(z))) return 'sozial-abgaben';
+  for (const z of zitierteNormen) if (ZWEIER_STEUER_ROH.test(String(z))) return 'steuern';
   return null;
 }
 
@@ -1171,8 +1199,18 @@ export function gerichtAnzeigename(court: string, canton: string, courtName?: st
 }
 
 // Kantonale Aktenzeichen-Präfixe → Sachgebiet (best-effort, deklariert, 'maschinell').
+// W2-TRENNUNG (29.8.2026): Beide Zeilen, die vorher auf den Doppel-Topf
+// 'sozial-abgaben' zeigten, sind REINE Sozialversicherungs-Zeilen und zeigen
+// jetzt auf 'sozialversicherung' — EL Ergänzungsleistungen · IV Invaliden- ·
+// UV Unfall- · ALV/AL Arbeitslosen- · EO Erwerbsersatz · AHV/AH Alters- ·
+// BV berufliche Vorsorge (NICHT Bundesverfassung, Q-J3-4) · KV Kranken- ·
+// FZ Freizügigkeit · MV Militärversicherung · SG Schiedsgericht Sozial-
+// versicherung BS (NICHT St. Gallen, Q-J3-4). Kein Präfix trug je Steuersachen:
+// kantonale Steuerrekurse laufen unter den Verwaltungs-Präfixen (WBE/VB/VD),
+// die schon vorher auf 'oeffentlich' zeigten (gemessen 29.8.2026: 0 der 904
+// kantonalen Treffer wechselt nach 'steuern').
 const KANT_PRAEFIX: Array<[RegExp, Rechtsgebiet]> = [
-  [/^(EL|IV|UV|ALV|EO|AHV|BV|KV|FZ)\b/i, 'sozial-abgaben'],
+  [/^(EL|IV|UV|ALV|EO|AHV|BV|KV|FZ)\b/i, 'sozialversicherung'],
   [/^(ZR|ZB|ZK|ZG|PS|PQ|PC|PD|PF|RE|RU|NP|LB|LC|LF|RB|HG)\b/i, 'privat'],
   [/^(SB|SK|UE|UH|US|BK|SU)\b/i, 'straf'],
   [/^(WBE|VB|VWBE)\b/i, 'oeffentlich'],
@@ -1182,7 +1220,7 @@ const KANT_PRAEFIX: Array<[RegExp, Rechtsgebiet]> = [
   // bewusst weggelassen (ehrlich Default statt geraten):
   //  AL Arbeitslosenversicherung · AH AHV · MV Militärversicherung · SG Schieds-
   //  gericht Sozialversicherung (KVG-Tarif) — Sozialversicherung.
-  [/^(AL|AH|MV|SG)\b/i, 'sozial-abgaben'],
+  [/^(AL|AH|MV|SG)\b/i, 'sozialversicherung'],
   //  BES Beschwerde Strafsachen · HB Haftsachen · DGS Dreiergericht Strafsachen ·
   //  ZS Strafsachen (Landesverweisung/Verkehrsregeln/erkennungsdienstlich).
   [/^(BES|HB|DGS|ZS)\b/i, 'straf'],

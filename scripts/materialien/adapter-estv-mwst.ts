@@ -328,7 +328,9 @@ export function baueDokUndKanten(
     doktyp,
     titel: volltitel,
     nummer,
-    rechtsgebiet: 'sozial-abgaben',
+    // W2-TRENNUNG (29.8.2026): MWST-Infos/-Branchen-Infos der ESTV sind
+    // Steuerdokumente (MWSTG SR 641.20), nie Sozialversicherung.
+    rechtsgebiet: 'steuern',
     sprache: 'de',
     rang: (bereich.art === 'MI' ? 100 : 200) + Number(eintrag.nummer),
     normKeys: erlasse,

@@ -144,7 +144,7 @@ describe('serialisiereShard (Bucket-Split §0/B5)', () => {
 describe('projiziereRegister (Merge-Modell + Determinismus)', () => {
   const dbDoc: BrowseMaterial = {
     key: 'ESTV-MWST-MI-99', behoerde: 'ESTV', behoerdeName: 'Eidgenössische Steuerverwaltung', behoerdeKuerzel: 'ESTV',
-    doktyp: 'mwst-info', doktypLabel: 'MWST-Info', titel: 'DB-Dok', nummer: null, rechtsgebiet: 'sozial-abgaben',
+    doktyp: 'mwst-info', doktypLabel: 'MWST-Info', titel: 'DB-Dok', nummer: null, rechtsgebiet: 'steuern',
     sprache: 'de', status: 'nur-live-link', quelleUrl: 'https://x', stand: '2025-01-01', rang: 999, normKeys: [], hinweis: null, sha: 'x',
   };
   it('nur kuratiert (kein DB) ⇒ gleich baueMaterialManifest; deterministisch', () => {

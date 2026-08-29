@@ -385,9 +385,9 @@ export function mappeEntscheidOCL(
     opts.sachgebietHint
     // C2-1/J3: Für die mehrdeutige II. öffentlich-rechtliche Abteilung (2A/2C/
     // 2D) entscheidet die Signal-Kette NUR noch die Steuer/Abgabe-Frage:
-    // Norm-Signal (AIG→öffentlich, DBG/StHG→sozial-abgaben, BGFA→öffentlich),
+    // Norm-Signal (AIG→öffentlich, DBG/StHG→'steuern', BGFA→öffentlich),
     // dann Roh-«StG/Steuergesetz» (kantonale Steuergesetze ohne Register-Key),
-    // dann legal_area GEFILTERT auf 'sozial-abgaben' (Gegenprüfung 29.8.2026,
+    // dann legal_area GEFILTERT auf Steuer-Begriffe (Gegenprüfung 29.8.2026,
     // F1: ungefiltertes 'civil' kippte 2D-Beschaffungsfälle nach «privat»).
     // Kein Treffer → Abteilungs-Default 'oeffentlich' (Art. 30/31 BgerR).
     ?? (istMehrdeutigeOerAbteilung(docket)
@@ -652,14 +652,19 @@ export function azaAusBgeKopf(fullText: string | undefined): string | null {
   return k ? k[1].replace(/\s+/, '_') : null;
 }
 
-/** BGE-Band (römisch) → Sachgebiet: I/II öffentl., III Zivil→privat, IV straf, V Sozialvers. */
+/** BGE-Band (römisch) → Sachgebiet: I/II öffentl., III Zivil→privat, IV straf,
+ *  V Sozialversicherung (W2-TRENNUNG 29.8.2026: vorher der Doppel-Topf). */
 export function bgeRoemischSachgebiet(docket: string): Rechtsgebiet | null {
   const m = /\b(IV|III|II|I|V)\b/.exec(String(docket));
   switch (m?.[1]) {
     case 'I': case 'II': return 'oeffentlich';
     case 'III': return 'privat';
     case 'IV': return 'straf';
-    case 'V': return 'sozial-abgaben';
+    // W2-TRENNUNG (29.8.2026): Band V der amtlichen Sammlung ist das
+    // Sozialrechts-Band — reine Sozialversicherung. Steuersachen erscheinen
+    // dort nie; sie stehen in Band I/II und werden von der Signal-Kette der
+    // 2er-Abteilung erkannt.
+    case 'V': return 'sozialversicherung';
     default: return null;
   }
 }
