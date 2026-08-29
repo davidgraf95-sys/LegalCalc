@@ -522,7 +522,10 @@ async function main(): Promise<void> {
         `TTI ${(m.tti / 1000).toFixed(2)} s (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`})`,
       );
       if (!MESSEN_NUR) {
-        if (m.cls > s.clsMax) fehler.push(`${label}: CLS ${m.cls.toFixed(3)} > ${s.clsMax} (Layout-Sprung — §15/2, höchste Prio).`);
+        // §6.7-Backstop (Bug-Check #565 B1): liefert Lighthouse keinen numericValue
+        // (z.B. NO_FCP), wäre NaN > clsMax === false und die Route STILL grün —
+        // bei scoreMin:null (uebersicht) fing das sonst niemand.
+        if (!Number.isFinite(m.cls) || m.cls > s.clsMax) fehler.push(`${label}: CLS ${Number.isFinite(m.cls) ? m.cls.toFixed(3) : 'NICHT MESSBAR'} > ${s.clsMax} (Layout-Sprung — §15/2, höchste Prio).`);
         if (s.lcpMax !== null && m.lcp > s.lcpMax) fehler.push(`${label}: LCP ${(m.lcp / 1000).toFixed(2)} s > ${(s.lcpMax / 1000).toFixed(1)} s.`);
         // TBT wird seit 3.8.2026 auf dem NORMIERTEN Wert assertiert (Entscheid David
         // «Option normiert»), der Deckel selbst ist unverändert.

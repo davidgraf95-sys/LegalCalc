@@ -290,8 +290,11 @@ export function Gesetze() {
         intro="Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link — sowie die für die Schweiz massgeblichen Staatsverträge und EU-Verordnungen (International). Massgeblich bleibt stets die amtliche Quelle."
       />
 
+      {/* B2 (Bug-Check #565): auch der Fehlerpfad reserviert die Inhaltshöhe —
+          sonst kollabiert die Fläche auf die Notice und der Footer springt
+          (gemessen 0.195 CLS bei abgebrochenem Manifest-Abruf). */}
       {fehler && (
-        <div className="lc-notice lc-notice-warn">
+        <div className="lc-notice lc-notice-warn min-h-inhalt-region">
           Die Gesetzessammlung konnte nicht geladen werden. Bitte die Seite neu laden.
         </div>
       )}

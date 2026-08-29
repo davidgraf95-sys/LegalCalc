@@ -640,6 +640,15 @@ mitzunehmen hiesse genau das zu tun, wovor §2 warnt: einen Produktfehler mit ei
 Baustelle vermischen. **Offener Posten für die Aufnahme in `QS-PERF`** (Zuordnung durch die
 Haupt-Session, CLAUDE.md §17: Wurzel-Fix hinterlegt, nicht umschifft).
 
+**Dritter offener Posten — identischer Platzhalter-Defekt auf `/rechtsprechung`
+(Bug-Check #565, 29.8.2026):** `src/pages/Rechtsprechung.tsx:335-340` ist derselbe
+unreservierte Lade-Platzhalter; gemessen **CLS 0.5414 @8×** (zwei FOOTER-Sprünge
+0.1657 + 0.3755) — höher als der behobene /gesetze-Defekt. Fix nach demselben
+Muster (Höhen-Token am Platzhalter) + `/rechtsprechung` als vierte Tor-Route
+erwägen. Ebenfalls dort notiert: Fehlerpfad-CLS auf /gesetze ist seit 29.8. per
+Token auf der Notice mitgedeckt; App-weite Rahmen-Idee (EINE Reservierungs-Regel
+für Route-Fallback + Seiten-Platzhalter, App.tsx-Naht) als §10-Kandidat.
+
 **Zweiter offener Posten — Deckel-Kalibrierung der neuen Tor-Route.** `/gesetze` ist seit
 29.8.2026 dritte gemessene Route in `scripts/perf/lighthouse-budget.ts`; assertiert wird nur
 **CLS ≤ 0.05** (geräteunabhängig, Rot-Beweis am Eintrag dokumentiert). LCP/TBT/TTI/Score stehen
