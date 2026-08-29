@@ -6,6 +6,6 @@
 - `poc-linkedom-tiefenzaehler.ts` — W2·5b-POC, Verdikt «Regex bleibt» (Register-Beleg 5.7.2026)
 - `kanton-fuellpunkt-nachzug.ts` — Kanton-Nachzug Füllpunkt-Tarifzeilen G3b Schritt 3 (Klasse C), angewandt 5.7.2026
 - `kanton-spalten-nachzug.ts` — Kanton-Nachzug aufs kanonische `spalten`-Modell G3b Schritt 1 (Klasse A+D), angewandt 5.7.2026
-- `remap-sachgebiet.ts` — C2-Daten-Regen: Sachgebiet-Remap des Bestandskorpus mit reparierter Disambiguierungs-Logik
+- `remap-sachgebiet.ts` — GELÖSCHT 29.8.2026 (J3, Bug-Check B5): lief noch auf der Vor-J3-Kette (ungefilterte legal_area, kein StG-Signal) und hätte per `--schreiben` die F1/F2-Fehlklassierungen wieder eingespielt; Nachfolger ist `scripts/normtext/remap-sachgebiet-j3.ts`
 - `rubrum-bereinigen.ts` — Bestands-Reinigung implausibler Rubrum-Felder (Falsch-Positive des Best-effort-Extraktors)
 - `sachverhalt-strukturieren.ts` — Bestands-Strukturierung des Sachverhalts (Buchstaben-Abschnitte A.a/A.b …) mit Wort-Invariante

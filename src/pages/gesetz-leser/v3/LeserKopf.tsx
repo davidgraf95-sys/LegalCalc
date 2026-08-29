@@ -165,7 +165,8 @@ export function LeserKopf({
               {stufeKrume.to
                 ? <Link to={stufeKrume.to} className="shrink-0 truncate no-underline hover:text-brass-700">{stufeKrume.label}</Link>
                 : <span className="shrink-0 truncate">{stufeKrume.label}</span>}
-              <span aria-hidden className="shrink-0 text-ink-300">›</span>
+              {/* C5 (29.8.2026): Trenner ink-300 → ink-400, Herleitung in `layout/InhaltsKopf.tsx`. */}
+              <span aria-hidden className="shrink-0 text-ink-400">›</span>
             </Fragment>
           ))}
           {/* ── V2 (Nachzug 17.8.2026) · DER RÜCKSPRUNG, WO DIE KETTE NICHT PASST
@@ -182,7 +183,7 @@ export function LeserKopf({
           {el.krume === 'kurz' && rueckKrume?.to && (
             <Link to={rueckKrume.to} data-v3-kopf-krume-kurz
               className="shrink-0 truncate no-underline hover:text-brass-700">
-              <span aria-hidden className="mr-0.5 text-ink-300">‹</span>{rueckKrume.label}
+              <span aria-hidden className="mr-0.5 text-ink-400">‹</span>{rueckKrume.label}
             </Link>
           )}
           {/* ── A4 (H2b-Nachzug) · DIE KENNUNG WIRD NIE ELLIPSIERT ────────────

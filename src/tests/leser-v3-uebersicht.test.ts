@@ -44,6 +44,29 @@ function eingabe(p: Partial<UebersichtsEingabe> & { erlass: BrowseErlass }): Ueb
 
 const labels = (a: ReturnType<typeof uebersichtsAngaben>) => a.zeilen.map((z) => z.label);
 
+// ── «Aufbau»-Zeile: «N im Anhang» (Fehlerbuch 29.8.2026; Bug-Check #566 B4) ──
+// Die dritte Ausspielung derselben Anhang-Kennzahl (§5). ROT ZU BEKOMMEN: in
+// uebersichtAngaben.ts das `anhang > 0 ? … 'im Anhang'`-Glied entfernen oder
+// die Kennzahl-Quelle wechseln.
+describe('Aufbau-Zeile trägt die Anhang-Kennzahl sichtbar', () => {
+  it('SG-3849-Muster: 590 im Anhang erscheint in der Aufbau-Zeile', () => {
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({ ebene: 'kanton', sr: null, artikelAnzahl: 607 }),
+      anzahl: 607, gliederungsTiefe: 2,
+      kennzahlen: { anhangArtikel: 590 } as never,
+    }));
+    const aufbau = a.zeilen.find((z) => z.id === 'aufbau');
+    expect(aufbau?.wert).toBe('2 Ebenen · 590 im Anhang');
+  });
+  it('ohne Anhang keine Anhang-Angabe', () => {
+    const a = uebersichtsAngaben(eingabe({
+      erlass: erlassBauen({}), gliederungsTiefe: 1,
+      kennzahlen: { anhangArtikel: 0 } as never,
+    }));
+    expect(a.zeilen.find((z) => z.id === 'aufbau')?.wert).toBe('1 Ebene');
+  });
+});
+
 describe('ruheZeile — die eine Zeile im Ruhezustand', () => {
   it('Bund mit SR: «SR 312.0 · 480 Artikel»', () => {
     expect(ruheZeile({ ebene: 'bund', sr: '312.0' }, 480, 'Artikel')).toBe('SR 312.0 · 480 Artikel');

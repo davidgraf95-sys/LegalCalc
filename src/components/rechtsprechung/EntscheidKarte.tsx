@@ -44,7 +44,7 @@ export function EntscheidKarte({ e, onNorm }: {
             {verweis
               ? <span className="lc-badge lc-badge-soft">Vollständiges Urteil</span>
               : leit && <span className="lc-badge lc-badge-ok">Leitentscheid</span>}
-            <span className="lc-overline text-brass-700">{GEBIET_LABEL[e.sachgebiet]}</span>
+            <span className="lc-overline text-brass-700" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
           </span>
           <span className="flex shrink-0 items-center gap-1.5">
             {synth && <span className="text-ink-500 italic">ohne amtl. Regeste</span>}

@@ -10,7 +10,7 @@ import {
   type Sektion, type StrukturMap, type ErlassKopf, type CurrencyMap,
 } from '../../lib/normtext/browse';
 import type { KantonSystematik } from '../../lib/normtext/systematik';
-import { pfadZu } from './helpers';
+import { pfadZu, tabTitel } from './helpers';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
@@ -122,13 +122,24 @@ export function useLeserDaten(opts: {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ebene, schluessel]);
 
-  // Browser-Tab zeigt den Erlass: «OR (Obligationenrecht) — LexMetrik». Kurztitel
-  // = Klammer-Inhalt am Ende des Volltitels (LEGES-Konvention), sonst der Titel.
+  // Browser-Tab zeigt den Erlass: «OR (Obligationenrecht) — LexMetrik». Der
+  // Wortlaut samt Redundanz-Weiche («EMRK (EMRK)» → «EMRK», Fehlerbuch-Befund,
+  // auf Prod reproduziert 29.8.2026) steht als reine Funktion in
+  // `./helpers` (`tabTitel`) — rein, prüfbar, und ausserhalb des Risikopfads
+  // lib/normtext/ (§3; Begründung am Fundort).
+  //
+  // ACHTUNG beim Weiterbauen: `src/tests/tab-titel-paritaet.test.ts` ist eine
+  // Quellensonde. Sie sucht die ERSTE Titel-Zuweisung in dieser Datei und prüft
+  // in den 400 Zeichen davor die Guard-Parität mit dem Entscheid-Leser. Daraus
+  // folgen zwei Regeln für diese Stelle: (1) der `istSekundaer`-Guard bleibt
+  // unmittelbar vor der Zuweisung — erklärender Text gehört HIERHER, nicht in
+  // den Effekt-Rumpf; (2) die gesuchte Zeichenfolge darf in keinem Kommentar
+  // dieser Datei auftauchen, sonst verankert sich die Sonde am Kommentar und
+  // wird rot (genau so passiert beim Bau dieses Fixes, 29.8.2026).
   useEffect(() => {
     if (!erlass || typeof document === 'undefined') return;
     if (istSekundaer) return; // sekundäres Pane treibt den Browser-Tab-Titel nicht (B-2.5)
-    const kurz = erlass.titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? erlass.titel;
-    document.title = `${erlass.kuerzel} (${kurz}) — LexMetrik`;
+    document.title = tabTitel(erlass.kuerzel, erlass.titel);
   }, [erlass, istSekundaer]);
 
   // A/A2/A3/F: Kopf melden — die Meldung selbst steht in useInhaltsKopfMeldung (nach
