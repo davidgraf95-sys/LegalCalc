@@ -39,9 +39,11 @@ mechanisch; Definitionen: Lagebild-Seite «Arbeitsweise & Glossar»):
   übersetzen statt umbenennen. *(Ausnahme: die Etiketten-Konsolidierung
   15.8.2026 hat verwandte Schritte zu Dach-IDs verschmolzen — eine Fusion ist
   kein Umbenennen, der alte Anker lebt in der Chronik weiter.)*
-- **`kollision:` ist zugleich die Themen-Klassierung:** daraus leitet das
-  Lagebild den Wirkungsbereich ab. Ohne `kollision:` erscheint der Schritt ohne
-  Bereich.
+- **`feld:` ist zugleich die Themen-Klassierung** (Steuerungs-Diät 29.8.2026,
+  löst `kollision:` ab): genau einer der sieben Baufelder-Werte `leser` ·
+  `korpus` · `rechtsprechung` · `suche` · `design` · `werkzeuge` · `betrieb`;
+  daraus leitet das Lagebild den Wirkungsbereich ab, und danach wird gebündelt.
+  Ohne `feld:` ist der Schritt rot (`check:plan`).
 
 ## 2 · Vor dem Start: Plan-Stand abfragen
 
@@ -64,10 +66,11 @@ npm run plan:set -- <id> status=wip    # vor Baubeginn; status=done zum Abhaken
 
 ## 3 · Bündeln — aber nicht über-bündeln
 
-**Bündeln** bei verwandter Fläche (dieselben Dateien, dasselbe Subsystem,
+**Bündeln** bei verwandter Fläche — seit der Steuerungs-Diät 29.8.2026 ist
+das **gleiche `feld:`** der Schnitt (dieselben Dateien, dasselbe Subsystem,
 dieselbe Prüf-Fläche): einmal bauen, prüfen, deployen. **Nicht über-bündeln:**
 keine Risiko-Klassen mischen (Rechtsinhalt ≠ reines UI, §1/§3); nie zwei
-26×-Assets parallel.
+Vollausbauten über alle 26 Kantone parallel.
 
 **Sessionfüllend schneiden — Massstab HOCHKALIBRIERT (David 15.8.2026, ersetzt
 den vom 5.8.):** Referenz ist die ORCHESTRIERTE Session mit Unteragenten, die
