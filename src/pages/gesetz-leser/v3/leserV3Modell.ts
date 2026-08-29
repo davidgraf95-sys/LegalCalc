@@ -186,9 +186,9 @@ export interface LeserV3Umgebung {
   istXl: boolean;
 }
 
-export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schluessel: string }):
+export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: string; schluessel: string }):
 { modell: LeserV3Modell; umgebung: LeserV3Umgebung } {
-  const basisPfad = basisAdresse(ebene, schluessel);
+  const basisPfad = basisAdresse(routenSegment, schluessel);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -215,7 +215,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
   useLeserDaten({
-    ebene, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
+    ebene: routenSegment, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
     setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
   });
 
@@ -353,7 +353,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
 
   useLeserSprungSpy({
-    ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
+    ebene: routenSegment, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad,
     offen, sucheDebounced, aktivIds, tocBaum,
     gliederungsKnoten: gliederung.knoten, umhaengPraefix: gliederung.umhaengPraefix,

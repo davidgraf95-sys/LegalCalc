@@ -34,9 +34,9 @@ import { erlassPfadRoh, routenEbeneVonKey } from '../../lib/normtext/erlassAdres
  * null — die Fehlseite des Lesers bleibt dann zuständig, statt dass hier auf
  * eine geratene Adresse gesprungen wird.
  */
-export function umzugsZiel(ebene: string, schluessel: string): string | null {
+export function umzugsZiel(routenSegment: string, schluessel: string): string | null {
   if (!schluessel) return null;
-  const kanonisch = routenEbeneVonKey(schluessel, ebene);
-  if (kanonisch === ebene) return null;
+  const kanonisch = routenEbeneVonKey(schluessel, routenSegment);
+  if (kanonisch === routenSegment) return null;
   return erlassPfadRoh(kanonisch, schluessel);
 }

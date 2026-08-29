@@ -75,12 +75,68 @@ const QUELLE = 'src/lib/normtext/erlassAdresse.ts';
 // die steht in Messskripten (`perf/lighthouse-budget.ts`, `messung-cwv.ts`) als
 // fester Messpunkt, nicht als Ableitung. Verboten ist erst der Moment, in dem
 // ein Schlüssel oder eine Ebene VARIABEL in den Pfad wandert.
+// ZWEITER DURCHGANG (Gegenprüfung 29.8.2026): die geschärfte Fassung war immer
+// noch durchlässig, und zwar an beiden Stellen, an denen es darauf ankam —
+// `'/gesetze/bund/' + key` (die häufigere Verkettung) und der Aufruf mit einem
+// blossen Bezeichner `ebene` nach Destrukturierung. Zusätzlich war die neue
+// Fassade `basisAdresse` gar nicht genannt. Die Wurzel dahinter ist ein
+// NAMENSPROBLEM: Routen-Segment und Register-Feld hiessen beide `ebene`. Die
+// Parameter heissen jetzt `routenSegment`; damit lässt sich alles verbieten,
+// was `ebene` heisst, ohne einen richtigen Aufruf zu treffen.
+
+/** Die beiden Fassaden, die ein rohes Routen-Segment entgegennehmen. */
+const FASSADEN = '(?:erlassPfadRoh|basisAdresse)';
+/** Drei Zugriffsformen auf ein Feld namens `ebene`: Punkt, Klammer, Bezeichner. */
+const EBENE_ARGUMENT = String.raw`(?:[\w$]+\s*\.\s*ebene\b|[\w$]+\s*\[\s*['"]ebene['"]\s*\]|ebene\s*[,)])`;
+
 const VERBOTEN: { name: string; re: RegExp }[] = [
   { name: 'Template mit variabler Ebene', re: /`[^`]*\/gesetze\/\$\{/ },
   { name: 'Template mit variablem Schlüssel', re: /`[^`]*\/gesetze\/(bund|kanton|international)\/\$\{/ },
-  { name: 'String-Verkettung', re: /['"]\/gesetze\/?['"]\s*\+/ },
-  { name: 'Daten-Ebene in die Adresse gereicht', re: /erlassPfadRoh\(\s*[A-Za-z_$][\w$.]*\.ebene\b/ },
+  { name: 'String-Verkettung', re: /['"]\/gesetze\/(?:bund\/|kanton\/|international\/)?['"]\s*\+/ },
+  { name: 'Daten-Ebene in die Adresse gereicht', re: new RegExp(`${FASSADEN}\\(\\s*${EBENE_ARGUMENT}`) },
 ];
+
+// ── Feste Adressen im Repo müssen kanonisch sein ────────────────────────────
+//
+// Die Ausnahme oben («vollständig feste Adresse = fester Messpunkt») hatte ein
+// Loch, das die Gegenprüfung fand (29.8.2026, 2. Durchgang, Mangel 3): sie kann
+// `/gesetze/bund/OR` (richtig) nicht von `/gesetze/bund/EMRK` (umgezogen)
+// unterscheiden. `abnahme/responsive-audit/sweep.ts` mass darum an zwei
+// Alt-Adressen — stumm falsch, weil die Seite ja erscheint; gemessen wurde die
+// Weiterleitung. Dieselbe Falle traf acht e2e-Specs.
+//
+// Statt die Instanzen einzeln zu putzen, prüft das hier die KLASSE: jede feste
+// Erlass-Adresse im Repo muss die sein, die das Register vorsieht.
+// Eine Datei, die Alt-Adressen BRAUCHT — die Weiterleitungs-Specs — sagt es
+// einmal in ihrem Kopf. Dateiweit und nicht je Zeile, weil die Adresse dort
+// auch in Testnamen und Konstanten steht; eine Zeilen-Marke müsste in einen
+// Testnamen hinein und wäre dort Lärm.
+const ABSICHT = 'alt-adresse:absicht';
+
+describe('feste Erlass-Adressen im Repo sind kanonisch', () => {
+  it('keine Alt-Adresse in Code, Skripten, Messpunkten oder e2e', () => {
+    const wurzeln = ['src', 'scripts', 'e2e', 'abnahme'].map((d) => join(SRC, '..', d));
+    const kanonisch = new Map(ERLASS_REGISTER.map((e) => [e.key, routenEbene(e)] as const));
+    const muster = /\/gesetze\/(bund|kanton|international)\/([A-Za-z0-9_.%-]+)/g;
+    const sünder: string[] = [];
+    for (const wurzel of wurzeln) {
+      for (const p of dateien(wurzel)) {
+        const rel = relative(join(SRC, '..'), p).replaceAll('\\', '/');
+        const roh = readFileSync(p, 'utf8');
+        if (roh.includes(ABSICHT)) continue;
+        for (const zeile of ohneKommentare(roh).split('\n')) {
+          for (const m of zeile.matchAll(muster)) {
+            let key: string;
+            try { key = decodeURIComponent(m[2]); } catch { continue; }
+            const soll = kanonisch.get(key);
+            if (soll && soll !== m[1]) sünder.push(`${rel}: ${m[0]} → /gesetze/${soll}/${key}`);
+          }
+        }
+      }
+    }
+    expect(sünder, `feste Adressen zeigen auf die Alt-Form (Weiterleitung wird mitgemessen)`).toEqual([]);
+  });
+});
 
 describe('§5 — die Erlass-Adresse hat EINE Quelle', () => {
   it('kein zweiter Pfad-Formatierer in src/ und scripts/', () => {
@@ -107,6 +163,12 @@ describe('§5 — die Erlass-Adresse hat EINE Quelle', () => {
       "const c = '/gesetze/' + e.ebene + '/' + encodeURIComponent(e.key);",
       'const d = `${SITE_URL}/gesetze/bund/${e.key}`;',
       'const f = erlassPfadRoh(e.ebene, e.key);',
+      // Zweiter Durchgang der Gegenprüfung — diese fünf liefen vorher durch:
+      "const g = '/gesetze/bund/' + encodeURIComponent(e.key);",
+      'const h = "/gesetze/bund/" + key;',
+      'const i = erlassPfadRoh(ebene, key);',
+      "const j = erlassPfadRoh(e['ebene'], e.key);",
+      'const k = basisAdresse(e.ebene, e.key);',
     ];
     for (const zeile of rückfälle) {
       expect(VERBOTEN.some(({ re }) => re.test(zeile)), `nicht gefangen: ${zeile}`).toBe(true);
@@ -115,9 +177,14 @@ describe('§5 — die Erlass-Adresse hat EINE Quelle', () => {
     // Hindernis statt eines Wächters.
     const erlaubt = [
       "{ pfad: '/gesetze/bund/OR', label: 'fester Messpunkt' },",
-      'const g = erlassPfad(e);',
-      'const h = erlassPfadVonKey(e.key, e.ebene);',
-      'const i = erlassPfadRoh(routenEbene, schluessel);',
+      'const a = erlassPfad(e);',
+      'const b = erlassPfadVonKey(e.key, e.ebene);',
+      'const c = erlassPfadRoh(routenSegment, schluessel);',
+      'const d = basisAdresse(routenSegment, schluessel);',
+      'const e2 = erlassPfadRoh(kanonisch, t.key);',
+      // Das Register-Feld selbst lesen bleibt erlaubt — verboten ist nur, es in
+      // eine ADRESSE zu reichen.
+      "const f = e.ebene === 'bund' ? x : y;",
     ];
     for (const zeile of erlaubt) {
       expect(VERBOTEN.some(({ re }) => re.test(zeile)), `falsch gefangen: ${zeile}`).toBe(false);

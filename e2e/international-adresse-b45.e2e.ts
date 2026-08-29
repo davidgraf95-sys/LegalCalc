@@ -1,4 +1,7 @@
 // @shard-gruppe: 2
+// alt-adresse:absicht — DIESE Spec fährt Alt-Adressen absichtlich an; das Tor
+// «feste Erlass-Adressen sind kanonisch» (src/tests/erlass-adresse.test.ts)
+// überspringt sie deshalb. Nur Weiterleitungs-Specs dürfen diese Marke tragen.
 // ─── Befund 45 · Staatsverträge unter eigener Adresse ───────────────────────
 //
 // Cowork-Befund 45 (18.8.2026): Staatsverträge lagen unter `/gesetze/bund/…`,

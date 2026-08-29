@@ -73,10 +73,25 @@ export function erlassPfad(e: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | 'key
   return `/gesetze/${routenEbene(e)}/${encodeURIComponent(e.key)}`;
 }
 
-/** Adresse aus bereits bekannter Routen-Ebene und Schlüssel (Leser-Rahmen, der
- *  die Route vollzieht und den Erlass evtl. noch nicht aufgelöst hat). */
-export function erlassPfadRoh(routen: string, key: string): string {
-  return `/gesetze/${routen}/${encodeURIComponent(key)}`;
+/**
+ * Adresse aus einem bereits bekannten ROUTEN-SEGMENT und Schlüssel — für den
+ * Leser-Rahmen, der die Route vollzieht und den Erlass evtl. noch nicht
+ * aufgelöst hat.
+ *
+ * DER PARAMETER HEISST NICHT `ebene`, UND DAS IST DER PUNKT (Gegenprüfung
+ * 29.8.2026, Mangel 4 · zweiter Durchgang). Befund 45 konnte entstehen, weil
+ * das Segment in der Adresse und das Feld im Register denselben Namen tragen:
+ * `ebene`. Wer `erlassPfadRoh(e.ebene, e.key)` schreibt, ruft brav die eine
+ * Quelle und verdrahtet trotzdem die Daten-Ebene in die Adresse — der Fehler
+ * sieht dann aus wie seine eigene Lösung.
+ *
+ * Seit hier `routenSegment` steht, trägt keine legitime Aufrufstelle mehr
+ * etwas namens `ebene` herein; die Sonde in `erlass-adresse.test.ts` kann
+ * deshalb den blossen Bezeichner `ebene` an dieser Stelle verbieten, ohne
+ * richtige Aufrufe zu treffen.
+ */
+export function erlassPfadRoh(routenSegment: string, key: string): string {
+  return `/gesetze/${routenSegment}/${encodeURIComponent(key)}`;
 }
 
 /** Alt-Adresse desselben Erlasses (vor Befund 45), die dauerhaft weiterleitet.

@@ -323,10 +323,15 @@ export function margLabel(label: string): ReactNode {
  *  Zeile ausgereizt. Die Alternative wäre eine zweite Formel im Adapter gewesen;
  *  genau aus solchen Zweitformeln entstand Befund 45.
  *
- *  `ebene` ist die ROUTEN-Ebene aus der Adresse — nach dem Umzugs-Sprung in
- *  `GesetzLeser` immer die kanonische. */
-export function basisAdresse(ebene: string, schluessel: string): string {
-  return erlassPfadRoh(ebene, schluessel);
+ *  Der Parameter heisst `routenSegment`, nicht `ebene` — dieselbe Namenstrennung
+ *  wie in `erlassPfadRoh`, und die Sonde in `erlass-adresse.test.ts` bewacht
+ *  auch DIESE Fassade (Gegenprüfung 29.8.2026, zweiter Durchgang: sie war neu
+ *  in diesem Zweig und vom Tor nirgends genannt — `basisAdresse(e.ebene, e.key)`
+ *  wäre Befund 45 wörtlich gewesen und stumm durchgelaufen).
+ *
+ *  Nach dem Umzugs-Sprung in `GesetzLeser` ist das Segment immer das kanonische. */
+export function basisAdresse(routenSegment: string, schluessel: string): string {
+  return erlassPfadRoh(routenSegment, schluessel);
 }
 
 // Pfad (Sektions-ids Wurzel→Treffer) zur ersten Sektion, die das Prädikat erfüllt.

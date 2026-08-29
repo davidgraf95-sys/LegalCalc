@@ -50,7 +50,9 @@ const LeserRahmenV3 = lazy(() =>
   import('./gesetz-leser/v3/LeserRahmenV3').then((m) => ({ default: m.LeserRahmenV3 })));
 
 export function GesetzLeser() {
-  const { ebene, key: keyRoh } = useParams<{ ebene: string; key: string }>();
+  // `ebene` heisst in der Route so, im Register auch — darum hier einmal
+  // umbenannt: was aus der ADRESSE kommt, heisst ab hier `routenSegment`.
+  const { ebene: routenSegment, key: keyRoh } = useParams<{ ebene: string; key: string }>();
   const schluessel = keyRoh ? decodeURIComponent(keyRoh) : '';
   const { hash, search } = useLocation();
   const meldeInhaltsKopf = useMeldeInhaltsKopf();
@@ -73,12 +75,12 @@ export function GesetzLeser() {
   //     führt dorthin, wo der Nutzer herkam, nicht in die Alt-Adresse zurück.
   //     NACH den Hooks, damit die Hook-Reihenfolge über beide Zweige gleich
   //     bleibt (Regeln der Hooks); der Rahmen-Chunk lädt in diesem Fall nie.
-  const ziel = umzugsZiel(ebene ?? '', schluessel);
+  const ziel = umzugsZiel(routenSegment ?? '', schluessel);
   if (ziel) return <Navigate replace to={{ pathname: ziel, search, hash }} />;
 
   return (
     <Suspense fallback={<LadeAnzeige />}>
-      <LeserRahmenV3 key={schluessel} ebene={ebene ?? ''} schluessel={schluessel} />
+      <LeserRahmenV3 key={schluessel} ebene={routenSegment ?? ''} schluessel={schluessel} />
     </Suspense>
   );
 }
