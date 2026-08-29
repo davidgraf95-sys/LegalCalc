@@ -72,8 +72,10 @@ const SPUR_GLIEDERUNG = 18;
 const SPUR_SCHIENE = 2.25;
 /** Breite des Beiwerk-Blatts (rem) — Kap. 4d «Panel rechts 22rem». */
 const SPUR_BLATT = 22;
-/** Abstand zwischen zwei Spuren (rem) = `gap-8`. */
-const SPUR_ABSTAND = 2;
+/** Abstand zwischen zwei Spuren (rem) = `gap-5` (LeserLeseZeile.tsx).
+ *  2 → 1.25 rem am 29.8.2026 (Auftrag David: «weniger Abstand Gesetz ↔
+ *  Gliederung»); Folgewerte LESER_MAX_REM/RAUM_MIN_BLATT rechnen mit. */
+const SPUR_ABSTAND = 1.25;
 /** Lesemass der Lesespalte (rem) = `max-w-reading`, `LeserLesespalte`. */
 const LESEMASS = 40;
 
@@ -139,7 +141,7 @@ export const LESEMASS_MAX = 45;
  * `LESEMASS_MAX` steht darum NICHT hier, sondern in `RahmenBild.lesemassMaxRem`
  * (Kommentar dort).
  */
-export const LESER_MAX_REM = SPUR_GLIEDERUNG + SPUR_ABSTAND + LESEMASS + SPUR_ABSTAND + SPUR_BLATT; // 84
+export const LESER_MAX_REM = SPUR_GLIEDERUNG + SPUR_ABSTAND + LESEMASS + SPUR_ABSTAND + SPUR_BLATT; // 82.5 (seit 29.8.2026; vorher 84)
 
 /**
  * Kleinste Lesespalte, die das Blatt als Spur überhaupt rechtfertigt (rem).
@@ -153,7 +155,7 @@ export const LESER_MAX_REM = SPUR_GLIEDERUNG + SPUR_ABSTAND + LESEMASS + SPUR_AB
  */
 const LESE_MIN = 28;
 /** Raum (rem), unter dem das Blatt keine eigene Spur bekommt. */
-const RAUM_MIN_BLATT = SPUR_SCHIENE + SPUR_ABSTAND + LESE_MIN + SPUR_ABSTAND + SPUR_BLATT; // 56.25
+const RAUM_MIN_BLATT = SPUR_SCHIENE + SPUR_ABSTAND + LESE_MIN + SPUR_ABSTAND + SPUR_BLATT; // 54.75 (seit 29.8.2026; vorher 56.25)
 
 export interface RahmenRaum {
   /** Breite (px), die dem Leser im `<main>` zur Verfügung steht. */

@@ -48,6 +48,31 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer
   // Rand kommt stattdessen über einen SEPARATEN, nicht-interaktiven Overlay-
   // Pfad ganz am Ende (unten), der nur zeichnet, nie einen Klick fängt.
   const eintraege = Object.entries(KANTONE_KARTE.paths);
+  // LATENTER BEFUND, HEUTE FOLGENLOS (Fehlerbuch-Befund 12, Prüfung 29.8.2026) —
+  // BEWUSST NICHT GEFIXT, siehe unten.
+  //
+  // `hover ?? aktiv` heisst: es gibt genau EINEN Overlay-Pfad, und Hover
+  // verdrängt den aktiven Kanton daraus. Fährt der Zeiger über einen NACHBARN,
+  // verliert der aktive Kanton seinen kräftigen `brass-700`-Rand (Z. 106 f.) —
+  // die Auswahl-Markierung flackert unter der Maus weg und kehrt erst beim
+  // Verlassen zurück.
+  //
+  // Warum das heute niemandem auffällt: `aktiv` wird von KEINEM Aufrufer
+  // übergeben. Der einzige Produktions-Aufrufer ist
+  // `pages/gesetze-teile/KantonAuswahl.tsx` (Z. 142 ff.), und der reicht nur
+  // `onWaehle`/`nameFuer`/`verfuegbar`/`zusatzFuer` durch — die Karte wird
+  // ausgetauscht, sobald ein Kanton gewählt ist, es gibt also nie gleichzeitig
+  // einen aktiven Kanton UND eine hoverbare Karte. `aktiv` ist damit toter,
+  // aber scharfer Code: Wer die Karte im Detail-Zustand stehen lässt (genau das
+  // fordert Fehlerbuch-Befund 41) und dann `aktiv` durchreicht, erbt den Fehler
+  // sofort.
+  //
+  // Kein Verhaltens-Fix HIER: Die richtige Auflösung ist ein zweiter,
+  // dauerhafter Overlay-Pfad für `aktiv` unter dem Hover-Overlay — das ist eine
+  // Änderung an der Zeichen-/Farbschicht der Karte und gehört ins separate
+  // Kantonskarten-Paket (F1/F2), nicht in einen UI-Fix-Batch. Diese Notiz steht
+  // hier, damit der Befund am Fundort wartet und nicht im Fehlerbuch verhungert
+  // (§17: dieselbe Störung darf keine zweite Diagnose kosten).
   const gezeigt = hover ?? aktiv ?? null;
   const gezeigtPfad = gezeigt ? KANTONE_KARTE.paths[gezeigt] : undefined;
   const gezeigtIst = gezeigt !== null && aktiv === gezeigt;

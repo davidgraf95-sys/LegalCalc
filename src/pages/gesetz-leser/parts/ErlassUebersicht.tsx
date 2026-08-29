@@ -3,6 +3,7 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import type { CurrencyEintrag, ErlassKopf } from '../../../lib/normtext/browse';
 import type { ErlassTyp } from '../../../lib/normtext/register';
 import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad';
+import { zaehlWort } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
 import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../benennung';
@@ -89,7 +90,17 @@ export function ErlassUebersicht({
   // schon, die Übersicht nicht — jetzt beide.
   const zeigeKonsWarnung = nichtKonsolidiert && !erlass.aufgehoben;
 
-  const hatAnhang = (kennzahlen?.anhangArtikel ?? 0) > 0;
+  // ZÄHL-WORT: EINE Quelle für Kopf UND Übersicht (§5). Fehlerbuch-Befund
+  // «Übersicht 607 Artikel» an SG-3849, auf Prod reproduziert 29.8.2026: von den
+  // 607 Einträgen sind 590 (97 %) Anhang-Einträge — «607 Artikel» behauptet einen
+  // Erlass, den es so nicht gibt. Die Regel dagegen existierte längst
+  // (`zaehlWort`, ANHANG_DOMINANZ, Fahrplan Kap. 14) und lief auch schon, aber
+  // NUR im Erlass-Kopf: die Übersicht hatte ihren eigenen, ungeregelten
+  // Formatierer und druckte `bestimmungsWort` roh. Zwei Formatierer für dieselbe
+  // Zahl auf DERSELBEN Seite — genau der §5-Fall. Jetzt konsumieren beide
+  // dieselbe Funktion; die Übersicht bekommt kein zweites Wording.
+  const umfangWort = zaehlWort(bestimmungsWort, kennzahlen);
+  const anhang = kennzahlen?.anhangArtikel ?? 0;
   const beleg = teilerfassung(erlass.key);
   const grad = erlass.kanton && kantonErlassAnzahl != null
     ? erfassungsgrad(erlass.kanton, kantonErlassAnzahl) : null;
@@ -182,11 +193,20 @@ export function ErlassUebersicht({
 
       {artikelAnzahl !== null && (
         <Zeile label="Umfang:">
-          <span className="num">{artikelAnzahl}</span> {bestimmungsWort}
+          <span className="num">{artikelAnzahl}</span> {umfangWort}
           {gliederungsTiefe > 0 && (
             <>{PUNKT}<span className="num">{gliederungsTiefe}</span> Gliederungsebene{gliederungsTiefe === 1 ? '' : 'n'}</>
           )}
-          {hatAnhang && <>{PUNKT}Anhang</>}
+          {/* «davon N im Anhang» statt des blossen «· Anhang» (Fehlerbuch,
+              29.8.2026): das nackte Wort sagte nur DASS ein Anhang existiert.
+              Bei SG-3849 tragen 590 von 607 Einträgen den Anhang — dass der
+              Erlass fast vollständig aus ihm besteht, war aus «· Anhang» nicht
+              zu lesen. Die Zahl kommt deterministisch aus denselben
+              Gliederungs-Kennzahlen, aus denen `zaehlWort` oben schon entscheidet
+              (§5) — kein zweiter Zählweg. Neutrale Benennung «im Anhang»: wie die
+              Anhang-Einträge amtlich heissen (Ziffern, Artikel, Positionen),
+              wechselt je Erlass; wir behaupten es nicht (§8). */}
+          {anhang > 0 && <>{PUNKT}davon <span className="num">{anhang}</span> im Anhang</>}
         </Zeile>
       )}
 

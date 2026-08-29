@@ -3,8 +3,8 @@
 "erlass":"BS-164.150",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_appellationsgericht_VD.2020.23":{"zitierung":"Appellationsgericht BS VD.2020.23 vom 04.03.2022","regesteKurz":"Überführung der Stelle \"Lehrperson Berufsfachschule BKU (Berufskundlicher Unterricht)\" im Rahmen der Systempflege, Stel…","datum":"2022-03-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2020.24":{"zitierung":"Appellationsgericht BS VD.2020.24 vom 04.03.2022","regesteKurz":"Überführung der Stelle \"Lehrperson Primarstufe 1.-2. KL VS (Kindergarten) alle Themenbereiche\" im Rahmen der Systempfle…","datum":"2022-03-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2020.23":{"zitierung":"Appellationsgericht BS VD.2020.23 vom 04.03.2022","regesteKurz":"Überführung der Stelle \"Lehrperson Berufsfachschule BKU (Berufskundlicher Unterricht)\" im Rahmen der Systempflege,…","datum":"2022-03-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2020.24":{"zitierung":"Appellationsgericht BS VD.2020.24 vom 04.03.2022","regesteKurz":"Überführung der Stelle \"Lehrperson Primarstufe 1.-2. KL VS (Kindergarten) alle Themenbereiche\" im Rahmen der…","datum":"2022-03-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "3":[{"key":"bs_appellationsgericht_VD.2020.23","gewicht":null}],

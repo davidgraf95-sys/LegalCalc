@@ -30,7 +30,7 @@ import { BEHOERDEN } from './materialien/register';
 // build-time, KEIN Client-Fetch, §15.3), Zustands-Wort aus der IA-2-SSoT
 // erfassungsgrad.ts (KEINE zweite Zähl-Wahrheit, §5).
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
-import { erfassungsgrad, STUFE_WORT } from './normtext/erfassungsgrad';
+import { erfassungsgrad, STUFE_WORT, type ErfassungsStufe } from './normtext/erfassungsgrad';
 
 /** Blatt: ein Navigationsziel (Route, ggf. mit Query/Hash für eine Teilsicht). */
 export interface NavLink {
@@ -44,6 +44,21 @@ export interface NavLink {
   /** IA-7: vollständiger Accessible Name (Name + Zahl + Zustands-Wort,
    *  O4-Muster — nie nur Farbe/Zahl, §11.6.8). Nur gesetzt, wenn `zahl` gesetzt ist. */
   ariaLabel?: string;
+  /** Zustands-Wort zur `zahl` (Erfassungsgrad des Kantons), damit die Seitenleiste
+   *  dieselbe Einordnung SICHTBAR zeigt, die `ariaLabel` schon ansagt.
+   *
+   *  Fehlerbuch-Befund 44 (auf Prod reproduziert 29.8.2026): In der Seitenleiste
+   *  standen «Basel-Stadt 859» und «Aargau 4» nebeneinander als blosse Zahlen.
+   *  Ohne Einordnung liest sich die 4 wie «dieser Kanton hat vier Gesetze» statt
+   *  «wir haben vier davon erfasst» — die Mengen-Asymmetrie wird zur stillen
+   *  Falschaussage (§8). Kachel, Karten-Bildunterschrift und Kantons-Kopf trugen
+   *  das Wort längst; die Seitenleiste hatte es nur im aria-label, also für
+   *  Screenreader sichtbar und für Sehende nicht.
+   *
+   *  Der Wert kommt aus DERSELBEN `erfassungsgrad()`-Ableitung, die zwei Zeilen
+   *  weiter unten schon das aria-label speist — keine zweite Zähl-/Einstufungs-
+   *  Wahrheit (§5), nur ein zweiter Konsument. */
+  stufe?: ErfassungsStufe;
 }
 
 /** Knoten mit Kindern: entweder ein Abschnitt mit Überschrift oder eine
@@ -208,11 +223,17 @@ const GESETZE_KINDER: NavKnoten[] = [
       .sort((a, b) => KANTON_NAMEN[a].localeCompare(KANTON_NAMEN[b], 'de'))
       .map((kt) => {
         const n = STARTSEITE_ZAEHLER.kantonErlassZahlen[kt] ?? 0;
-        const wort = STUFE_WORT[erfassungsgrad(kt, n).stufe];
+        const grad = erfassungsgrad(kt, n);
+        const wort = STUFE_WORT[grad.stufe];
         const mengen = n === 0 ? 'keine Erlasse' : `${n} ${n === 1 ? 'Erlass' : 'Erlasse'}`;
         return {
           ...link(KANTON_NAMEN[kt], `/gesetze?ebene=kanton&kt=${kt}`),
           zahl: n,
+          // Dieselbe Ableitung wie das aria-label darunter — ein Aufruf, zwei
+          // Konsumenten (§5). Fehlerbuch-Befund 44: bis hierher war das
+          // Zustands-Wort AUSSCHLIESSLICH im Accessible Name, die Seitenleiste
+          // zeigte Sehenden nur die nackte Zahl.
+          stufe: grad.stufe,
           ariaLabel: `${KANTON_NAMEN[kt]} — ${mengen}, ${wort}`,
         };
       }),

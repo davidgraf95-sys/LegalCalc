@@ -75,7 +75,15 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           sah die Leiste aber schlicht vergessen aus (§8: fehlende Werkzeuge werden
           benannt, nicht kommentarlos weggelassen — Ergänzung des G2b-Entscheids,
           kein Bugfix, Dedup-Referenz FAHRPLAN-GESETZES-UX.md G2b-Ausführungsvermerk). */}
-      <p className="text-micro text-ink-500">
+      {/* T2 (Design-Qualitäts-Pass 29.8.2026): dieser Hinweis lief auf der
+          11-px-Stufe ungedeckelt über die volle Kopfbreite — gemessen @1440 auf
+          `/gesetze/bund/EMRK` 829 px in EINER Zeile = 163 ch (WCAG 2.2 SC 1.4.8
+          erlaubt 80). Zwei Änderungen, beide token-rein: die Feinschrift-
+          Lesespalte `max-w-kleintext` (Herleitung am Token in
+          `tailwind.config.js`) und eine Stufe hoch auf `text-xs` — 11 px trägt
+          eine Zeile mit drei Anführungspaaren und einem Gedankenstrich nicht,
+          und die xs-Stufe bringt zugleich die Zeilenhöhe von 1.2 auf 1.4. */}
+      <p className="max-w-kleintext text-xs text-ink-500">
         «Im Gesetz suchen», «§ Rechtsprechung» und «Ansicht» stehen hier nicht zur Verfügung — der Text liegt nur als amtliches PDF vor, nicht als durchsuchbarer Volltext.
       </p>
       {/* Eingebettetes amtliches PDF (same-origin → Browser-Viewer mit nativer

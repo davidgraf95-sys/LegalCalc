@@ -195,6 +195,36 @@ export function titelOhneKlammerSuffix(titel: string): string {
   return titel.replace(/\s*\([^)]*\)\s*$/, '').trim();
 }
 
+/**
+ * Browser-Reiter-Titel eines Erlasses: «OR (Obligationenrecht) — LexMetrik». Der
+ * Kurztitel ist der Klammer-Inhalt am Ende des Volltitels (LEGES-Konvention),
+ * sonst der Titel selbst.
+ *
+ * REDUNDANZ-WEICHE (Fehlerbuch, auf Prod reproduziert 29.8.2026): Wo das
+ * Klammer-Suffix GENAU das Kürzel ist — typisch bei Staatsverträgen, «Konvention
+ * zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)» —, stand im Reiter
+ * «EMRK (EMRK) — LexMetrik»: dasselbe Wort zweimal, die Klammer ohne jeden
+ * Informationswert. Sie entfällt dann, statt sich zu wiederholen. Es ist dieselbe
+ * Regel ANALOG zu `titelRedundant` in `parts/ErlassLeserKopf.tsx` (H1) — nicht
+ * identisch: hier zählt der Klammerinhalt, dort der Titel ohne Suffix (EMRK/IPRG
+ * treffen nur hier)
+ * (case- und trim-unempfindlich) — der Reiter war der einzige Ausspielungsort
+ * ohne sie. Nicht-redundante Titel bleiben Zeichen für Zeichen die von vorher.
+ *
+ * Warum HIER und nicht bei den übrigen Kopf-Textbausteinen in
+ * `lib/normtext/erlassKopfText.ts`: jene Datei liegt auf einem Risikopfad
+ * (`check:gegenpruefung`, Rechnen/Extraktion/Norm-Tarif). Ein Reiter-Titel ist
+ * reine Darstellung (§3) und hat dort nichts verloren — er würde sonst für jede
+ * Wortlaut-Änderung eine adversariale Gegenprüfung auslösen.
+ *
+ * Rein und deterministisch (§2). Rot-Beweis: `src/tests/tab-titel-redundanz.test.ts`.
+ */
+export function tabTitel(kuerzel: string, titel: string): string {
+  const kurz = titel.match(/\(([^)]+)\)\s*$/)?.[1] ?? titel;
+  const redundant = kurz.trim().toLowerCase() === kuerzel.trim().toLowerCase();
+  return redundant ? `${kuerzel} — LexMetrik` : `${kuerzel} (${kurz}) — LexMetrik`;
+}
+
 // Kopf-Overline JE GRUNDART (W2·5d G3a, FAHRPLAN §2.2 + §5.1): das Kopf-Label
 // leitet sich aus `erlassTyp` (Register, SSoT) ab statt aus der früheren
 // «ebene»-Heuristik, die JEDE Bund-Norm «Bundesgesetz» nannte — auch die 103

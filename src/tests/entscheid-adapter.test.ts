@@ -10,7 +10,7 @@ import {
   teileDispositivInline, extrahiereRubrum, azaAusBgeKopf, bgeRoemischSachgebiet,
   type OclDecision,
 } from '../../scripts/normtext/adapter-entscheide';
-import { statutesZuNormKeys, abteilungZuSachgebiet, legalAreaZuSachgebiet, istMehrdeutigeOerAbteilung, normSignalSachgebiet } from '../../scripts/normtext/entscheide-mapping';
+import { statutesZuNormKeys, abteilungZuSachgebiet, legalAreaZuSachgebiet, istMehrdeutigeOerAbteilung, normSignalSachgebiet, zweierLegalAreaSignal, zweierRohSteuerSignal } from '../../scripts/normtext/entscheide-mapping';
 
 const FIX = join(process.cwd(), 'src', 'tests', 'fixtures');
 const lade = (f: string) => JSON.parse(readFileSync(join(FIX, f), 'utf8'));
@@ -106,7 +106,27 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
   it('Abteilungs-Präfix', () => {
     expect(abteilungZuSachgebiet('5A_1100/2025')).toBe('privat');
     expect(abteilungZuSachgebiet('6B_1/2024')).toBe('straf');
-    expect(abteilungZuSachgebiet('2C_1/2024')).toBe('sozial-abgaben');
+    // J3 (29.8.2026, fachliche Änderung deklariert): Default der II. öffentlich-
+    // rechtlichen Abteilung ist 'oeffentlich' — Steuerfälle erkennt das Norm-
+    // Signal (DBG/StHG/…) bzw. legal_area, nicht mehr die Abteilungs-Pauschale.
+    expect(abteilungZuSachgebiet('2C_1/2024')).toBe('oeffentlich');
+    expect(abteilungZuSachgebiet('9C_1/2024')).toBe('sozial-abgaben');
+    // J3: BGFA als Norm-Signal → öffentlich (Anlassfall BGE 150 II 300), mit
+    // Vorrang vor Steuergesetzen (BGE 151 II 873: BGFA + Steueramtshilfe).
+    expect(normSignalSachgebiet(['BGFA'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['DBG', 'BGFA'])).toBe('oeffentlich');
+    expect(normSignalSachgebiet(['DBG'])).toBe('sozial-abgaben');
+    // J3-Gegenprüfungs-Korrekturen (29.8.2026): legal_area zählt auf der 2er-
+    // Abteilung nur noch für die Steuer/Abgabe-Frage (F1: 'civil' kippte
+    // 2D-Beschaffungsfälle nach 'privat'); kantonale Steuergesetze signalisieren
+    // über den Roh-String «StG»/«Steuergesetz» (F2: BGE 149 I 125).
+    expect(zweierLegalAreaSignal('civil')).toBeNull();
+    expect(zweierLegalAreaSignal('tax law')).toBe('sozial-abgaben');
+    // B2-Nachschärfung: Sozialversicherungs-legal_area zählt auf der 2er-
+    // Abteilung NICHT (Art. 31/32 BgerR; Beleg BGE 151 II 726, FZA-Verbleiberecht).
+    expect(zweierLegalAreaSignal('social_insurance')).toBeNull();
+    expect(zweierRohSteuerSignal(['Art. 181 Abs. 2 STG'])).toBe('sozial-abgaben');
+    expect(zweierRohSteuerSignal(['Art. 14 STGB', 'Art. 1 VSTG'])).toBeNull();
   });
   it('legal_area-Fragmente', () => {
     expect(legalAreaZuSachgebiet('Civil law')).toBe('privat');
