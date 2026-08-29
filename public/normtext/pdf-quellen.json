@@ -5955,7 +5955,7 @@
     "quelle": "fedlex"
   },
   "CMR": {
-    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1970/851_851_851/20210210/de/pdf-a/fedlex-data-admin-ch-eli-cc-1970-851_851_851-20210210-de-pdf-a.pdf",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1970/851_851_851/20210210/de/pdf-a/fedlex-data-admin-ch-eli-cc-1970-851_851_851-20210210-de-pdf-a-1.pdf",
     "stand": "2021-02-10",
     "quelle": "fedlex"
   },
@@ -6150,7 +6150,7 @@
     "quelle": "fedlex"
   },
   "FZA": {
-    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/243/20201215/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-243-20201215-de-pdf-a-1.pdf",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/243/20201215/de/pdf-a/fedlex-data-admin-ch-eli-cc-2002-243-20201215-de-pdf-a-3.pdf",
     "stand": "2020-12-15",
     "quelle": "fedlex"
   },
@@ -6610,8 +6610,8 @@
     "quelle": "fedlex"
   },
   "RDV": {
-    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/713/20251101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-713-20251101-de-pdf-a.pdf",
-    "stand": "2025-11-01",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2012/713/20260820/de/pdf-a/fedlex-data-admin-ch-eli-cc-2012-713-20260820-de-pdf-a-1.pdf",
+    "stand": "2026-08-20",
     "quelle": "fedlex"
   },
   "RPG": {
@@ -6705,7 +6705,7 @@
     "quelle": "fedlex"
   },
   "STGB": {
-    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-54-757_781_799-20260612-de-pdf-a.pdf",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/54/757_781_799/20260612/de/pdf-a/fedlex-data-admin-ch-eli-cc-54-757_781_799-20260612-de-pdf-a-2.pdf",
     "stand": "2026-06-12",
     "quelle": "fedlex"
   },
@@ -6745,7 +6745,7 @@
     "quelle": "lexwork"
   },
   "TGBV": {
-    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2013/3/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2013-3-20240101-de-pdf-a-1.pdf",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2013/3/20240101/de/pdf-a/fedlex-data-admin-ch-eli-cc-2013-3-20240101-de-pdf-a-3.pdf",
     "stand": "2024-01-01",
     "quelle": "fedlex"
   },
@@ -7050,7 +7050,7 @@
     "quelle": "fedlex"
   },
   "ZSTV": {
-    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/362/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-362-20250601-de-pdf-a.pdf",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2004/362/20250601/de/pdf-a/fedlex-data-admin-ch-eli-cc-2004-362-20250601-de-pdf-a-1.pdf",
     "stand": "2025-06-01",
     "quelle": "fedlex"
   }

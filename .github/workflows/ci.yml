@@ -498,9 +498,19 @@ jobs:
       # public/normtext/** (kein daten/*.db, kein Netz) und sind wanduhr-
       # unabhängig — anders als check:verfall oben. Gemessen 15.8.2026 unter
       # CI=1: 0.6 s + 0.9 s + 0.4 s = rund 2 s zusammen.
-      - name: Normtext-Korpus (Drift/Coverage · Struktur-Konsistenz · Verklebung)
+      # `check:stand-zukunft` steht hier seit 29.8.2026 (Gegenprüfung PR #572,
+      # Befunde B1/B5). Es prüft die quellenunabhängige Invariante «kein Stand
+      # liegt nach seinem Abrufdatum» über alle rund 56'000 Snapshot-Einträge und
+      # fing bei seiner Einführung genau die zwei falsch datierten Erlasse:
+      # TI-ti-181 (stand 2027-01-01 statt 17.5.2024, aus dem Ankündigungs-
+      # Abschnitt «PROSSIME VARIAZIONI») und SZ-213.512 (stand 2027-02-01, aus
+      # der SRSZ-Ausgabemarke — vorbestehend auf main). Offline, wanduhr-
+      # UNabhängig (Referenz ist das committete `abgerufen`, nicht die Systemzeit
+      # — darum färbt es anders als check:verfall keine fremden PRs rot).
+      # Gemessen 29.8.2026: unter 1 s.
+      - name: Normtext-Korpus (Drift/Coverage · Struktur-Konsistenz · Verklebung · Stand-Zukunft)
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:normtext && npm run check:struktur-konsistenz && npm run check:verklebung
+        run: npm run check:normtext && npm run check:struktur-konsistenz && npm run check:verklebung && npm run check:stand-zukunft
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM

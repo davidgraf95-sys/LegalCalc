@@ -63,6 +63,7 @@
 
 import { createHash } from 'node:crypto';
 import { dekodiereEntities } from './html-entities.ts';
+import { juengstesNichtZukunft, ohneZukunft } from './stand-zukunft.ts';
 
 export type HtmProfil = 'ne' | 'ge' | 'ti';
 
@@ -634,14 +635,58 @@ const IT_MONATE: Record<string, string> = {
 };
 
 /**
+ * Schneidet aus der TI-Portalseite das EINGEBETTETE Erlass-Dokument heraus.
+ *
+ * m3.ti.ch liefert kein Erlass-HTML, sondern eine Portalseite, in die ein
+ * vollständiges zweites HTML-Dokument (der Erlass, aus Word exportiert) eingenäht
+ * ist. Gemessen an atto 181 (29.8.2026): Portal-`<html>` bei Byte 127,
+ * Erlass-`<html>` bei 11'744, dessen `</html>` bei 105'723 — und ERST DANACH die
+ * Seiten-Beiwerke `<div id="col2Legge">` / `<div id="elencoVariazioni">`.
+ *
+ * WARUM DAS DER WURZEL-FIX IST (Gegenprüfung PR #572, B1 + B2). Ohne den Schnitt
+ * las der Parser die Portal-Umgebung als Erlasstext mit. Das erzeugte am
+ * 29.8.2026 ZWEI Defekte aus EINER Ursache:
+ *   * B1 — der Ankündigungs-Abschnitt «PROSSIME VARIAZIONI» nennt die künftige
+ *     Fassung («Variazione in vigore dal 01.01.2027», BU 2026, 281). Der
+ *     Stand-Leser nahm sie als jüngstes In-Kraft-Datum: `stand: 2027-01-01`
+ *     statt der geltenden Fassung vom 17.5.2024 (BU 2024, 131).
+ *   * B2 — die Zuklapp-Links desselben Abschnitts («chiudi -») landeten als zwei
+ *     Textblöcke in Art. 41. Das amtliche PDF kennt weder «chiudi» noch 2027.
+ *
+ * GEMESSEN gegen die Alternative (nur Zukunftsdaten filtern, 29.8.2026, atto 181):
+ *     ungefixt            stand=2027-01-01  chiudi-Blöcke=2  Artikel=46
+ *     nur Zukunftsfilter  stand=2024-05-17  chiudi-Blöcke=2  Artikel=46
+ *     Schnitt (dieser)    stand=2024-05-17  chiudi-Blöcke=0  Artikel=46
+ * Der Zukunftsfilter allein heilt das Symptom am Stand und lässt den Fremdtext
+ * im Normtext stehen; er greift ausserdem nur bei Beiwerk, das zufällig ein
+ * DATUM trägt. Der Schnitt entfernt die Ursache und deckt jede weitere
+ * Portal-Erweiterung mit ab. Der Zukunftsfilter bleibt trotzdem (unten) —
+ * er trägt den Fall, in dem eine künftige Fassung IM Dokument selbst datiert ist.
+ *
+ * Findet sich kein eingebettetes Dokument (nur EIN `<html>`), bleibt der Text
+ * unverändert — der Schnitt kann nichts verlieren, was er nicht sicher erkennt.
+ */
+export function tiErlassDokument(html: string): string {
+  const klein = html.toLowerCase();
+  const start = klein.lastIndexOf('<html');
+  if (start <= 0) return html; // kein oder nur das äusserste <html> → unverändert
+  const ende = klein.indexOf('</html>', start);
+  return ende === -1 ? html.slice(start) : html.slice(start, ende);
+}
+
+/**
  * TI-Stand: jüngstes In-Kraft-Datum aus den Fussnoten-Anmerkungen. Zwei reale
  * Formen (§7, live geprüft an atto 137 LTG + atto 148 tariffa notarile):
  *   (a) «in vigore dal D.M.YYYY»            (numerisch — neuere Erlasse, LTG)
  *   (b) «in vigore: D° mese YYYY»           (it. Monatsname — ältere, Notariat)
  * Das jüngste gefundene Datum ist der Erlass-Stand. Tags werden vorher gestrippt,
  * weil Tag/«°»/Monat in der TI-Ausgabe in getrennten Spans stehen.
+ *
+ * `referenz` (Abrufdatum) filtert Daten aus, die beim Abruf noch nicht galten:
+ * ein Erlass kann seine eigene künftige Fassung in einer Anmerkung datieren.
+ * Siehe `stand-zukunft.ts`. Leere Referenz → kein Filter (§6.7 lit. b).
  */
-export function leseTiStand(html: string): string {
+export function leseTiStand(html: string, referenz = ''): string {
   const text = html.replace(/<[^>]+>/g, ' ').replace(/&deg;/gi, '°');
   const daten: string[] = [];
   // (a) numerisch
@@ -655,9 +700,7 @@ export function leseTiStand(html: string): string {
     const mon = IT_MONATE[m[2].toLowerCase()];
     if (mon) daten.push(`${m[3]}-${mon}-${m[1].padStart(2, '0')}`);
   }
-  if (daten.length === 0) return '';
-  daten.sort();
-  return daten[daten.length - 1];
+  return juengstesNichtZukunft(daten, referenz);
 }
 
 /** TI-Titel: erstes <h1>/<title>-naher Erlasstitel. Best effort (rein
@@ -877,16 +920,23 @@ export function extrahiereHtmArtikel(
   html: string,
   token: string,
   profil: HtmProfil,
+  referenz = '',
 ): HtmArtikel | null {
-  const alle = extrahiereAlleHtmArtikel(html, profil);
+  const alle = extrahiereAlleHtmArtikel(html, profil, referenz);
   return alle.artikel[token] ?? null;
 }
 
 /** Extrahiert ALLE Artikel + Meta (titel, stand, quelleHash) aus dem .htm.
- *  Reine Funktion (kein Netz) — Kern für holeHtm und Tests. */
+ *  Reine Funktion (kein Netz) — Kern für holeHtm und Tests.
+ *
+ *  `referenz` = Abrufdatum (ISO). Es entscheidet ausschliesslich darüber, welche
+ *  In-Kraft-Daten als Stand in Frage kommen (kein Datum nach dem Abruf, s.
+ *  `stand-zukunft.ts`); Artikel-Extraktion und quelleHash sind davon unberührt,
+ *  die Funktion bleibt für gleiches (html, profil) deterministisch (§2). */
 export function extrahiereAlleHtmArtikel(
   html: string,
   profil: HtmProfil,
+  referenz = '',
 ): {
   meta: { titel: string; stand: string; quelleHash: string };
   artikel: Record<string, HtmArtikel>;
@@ -899,18 +949,26 @@ export function extrahiereAlleHtmArtikel(
     const segmente = leseParagraphen(html);
     artikel = geExtrahiere(segmente);
     titel = geTitel(segmente);
-    stand = geStand(html);
+    stand = ohneZukunft(geStand(html), referenz);
     // GE: Tarif-Tabellen als gepaarte Band↔Wert-items an die Einleitungsabsätze.
     geHängeTabellen(segmente, html, artikel);
   } else if (profil === 'ti') {
-    artikel = tiExtrahiere(html);
+    // TI: NUR das eingebettete Erlass-Dokument parsen — die Portal-Umgebung
+    // (Ankündigungen «PROSSIME VARIAZIONI», Zuklapp-Links «chiudi -») ist kein
+    // Normtext und war die gemeinsame Ursache von B1 und B2 (s. tiErlassDokument).
+    const dokument = tiErlassDokument(html);
+    artikel = tiExtrahiere(dokument);
+    // Titel weiterhin aus der GANZEN Seite: das <title> steht im Portal-Kopf,
+    // das eingebettete Word-Dokument trägt keines. Der Titel ist ohnehin rein
+    // informativ (der Erlass-Name kommt im Snapshot aus den Tarif-Daten) —
+    // unverändert zu lassen hält den Schnitt frei von Nebenwirkungen.
     titel = tiTitel(html);
-    stand = leseTiStand(html);
+    stand = leseTiStand(dokument, referenz);
   } else {
     const segmente = leseParagraphen(html);
     artikel = neExtrahiere(segmente);
     titel = neTitel(segmente);
-    stand = neStand(html);
+    stand = ohneZukunft(neStand(html), referenz);
     // NE: Gebührenstaffel-Tabellen an die Einleitungsabsätze hängen.
     for (const token of Object.keys(artikel)) {
       neHängeTabellen(html, token, artikel[token]);
@@ -934,10 +992,17 @@ export function extrahiereAlleHtmArtikel(
  * Holt eine HTM/HTML-Quelle (NE/GE latin-1, TI utf-8), extrahiert ALLE Artikel
  * und gibt sie samt einheitlichen Labels zurück (Vollabdeckung §7). meta trägt
  * titel/stand/quelleHash; der quelleHash deckt den GANZEN extrahierten Volltext ab.
+ *
+ * `referenz` ist das Abrufdatum (ISO) des laufenden Baus. Es wird NICHT aus der
+ * Systemuhr gelesen, sondern vom Aufrufer durchgereicht (§2) — im Snapshot-Bau
+ * ist es dasselbe `--datum=`, das später als `abgerufen` im Eintrag steht. Damit
+ * gilt für jeden geschriebenen Eintrag `stand <= abgerufen` schon beim Erzeugen,
+ * und `check:stand-zukunft` prüft dieselbe Invariante am Bestand nach.
  */
 export async function holeHtm(
   url: string,
   profil: HtmProfil,
+  referenz = '',
 ): Promise<HtmErgebnis> {
   // TI: …/pdfatto/atto/{N} (PDF-Zitat) → HTML-Seite …/legge/num/{N} ableiten.
   // NE/GE: die quelleUrl IST schon die .htm-Adresse.
@@ -952,6 +1017,6 @@ export async function holeHtm(
     profil === 'ti' ? new TextDecoder('utf-8').decode(buf) : dekodiereLatin1(buf);
   // Vollabdeckung (§7): ALLE extrahierten Artikel zurückgeben, nicht nur die
   // zitierten. Der quelleHash deckt ohnehin den Gesamttext ab.
-  const { meta, artikel, labels } = extrahiereAlleHtmArtikel(html, profil);
+  const { meta, artikel, labels } = extrahiereAlleHtmArtikel(html, profil, referenz);
   return { meta, artikel, labels };
 }
