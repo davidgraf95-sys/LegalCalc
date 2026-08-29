@@ -1121,13 +1121,17 @@ export function istMehrdeutigeOerAbteilung(docket: string): boolean {
 // ist BEWUSST NICHT umgesetzt, weil diese Liste AUSSCHLIESSLICH in der Kette
 // der II. öffentlich-rechtlichen Abteilung ausgewertet wird
 // (`istMehrdeutigeOerAbteilung`, 2A/2C/2D) — und dort ist Sozialversicherung
-// nach Art. 30/34/35 BgerR gar keine Zuständigkeit. Ein Sozialversicherungs-
+// nach Art. 30 BgerR gar keine Zuständigkeit (sie liegt nach Art. 31/32 bei
+// der III. und IV. öffentlich-rechtlichen Abteilung; ANKER-KORREKTUR
+// 29.8.2026, Gegenprüfung F2: hier stand «Art. 30/34/35 BgerR» — Art. 34/35
+// sind die zivil- bzw. strafrechtlichen Abteilungen). Ein Sozialversicherungs-
 // Signal an dieser Stelle würde exakt den Defekt wiederherstellen, den die
 // J3-Gegenprüfung am 29.8.2026 als Befund B2 beseitigt hat: BGE 151 II 726
 // (2C_565/2022, Verbleiberecht nach FZA) nennt das AHVG nur als Altersmassstab
 // und wurde davon fälschlich als Sozialversicherungsfall etikettiert. Die
-// echten Sozialversicherungsfälle klassiert die Abteilungs-Zeile (8C/9C) bzw.
-// das BGE-Band V — dort, wo die amtliche Geschäftsverteilung sie führt.
+// echten Sozialversicherungsfälle klassiert die Abteilungs-Zeile (8C bzw. 9C
+// nach `dritteOerSachgebiet`) bzw. das BGE-Band V — dort, wo die amtliche
+// Geschäftsverteilung sie führt.
 // Die Steuer-Ziele wechseln nur ihren Namen ('sozial-abgaben' → 'steuern').
 const NORM_SIGNAL: ReadonlyArray<readonly [string, Rechtsgebiet]> = [
   ['AIG', 'oeffentlich'], ['ASYLG', 'oeffentlich'], ['BEWG', 'oeffentlich'],

@@ -378,7 +378,15 @@ präzisiert, nie autonom gekippt.
    `?rg=sozial-abgaben` filtern über `ALT_GEBIET_ALIAS` auf die Vereinigung (§8).
    **§7-Abweichung offengelegt:** Sozialversicherungs-Erlasse NICHT in `NORM_SIGNAL` —
    die Liste wirkt nur auf der 2er-Abteilung, wo Sozialversicherung keine Zuständigkeit
-   ist (Art. 30/34/35 BgerR); ein solches Signal stellte den B2-Befund wieder her.
+   ist (Art. 30 BgerR; Sozialversicherung liegt nach Art. 31/32 bei der III./IV.
+   öffentlich-rechtlichen Abteilung — Anker-Korrektur 29.8.2026, hier stand
+   «Art. 30/34/35»); ein solches Signal stellte den B2-Befund wieder her.
+   **Korrektur F1 (29.8.2026, Gegenprüfungsrunde 1):** Die Pauschale
+   `'9C': 'sozialversicherung'` war falsch — Art. 31 lit. a BgerR weist der
+   III. öffentlich-rechtlichen Abteilung (Präfix 9C) AUCH «Steuern und Abgaben»
+   zu (AS 2023 65). Kette `dritteOerSachgebiet` + Bestands-Regen
+   `remap-9c-steuern.ts`: 71 Wechsel, Register-Verteilung danach
+   205 steuern · 1398 sozialversicherung, Einträge 6341 = 6341.
    **Offen (David):** CO2-Gesetz (SR 641.71) steht als `oeffentlich`, war nie im Topf —
    Umklassierung nach `steuern` wäre eigene fachliche Frage (Lenkungsabgabe vs. Klimarecht).
 1. **A6-Präzisierung Werkzeug-Chip** *(#1+#45)*: matcht die Query einen Katalog-Titel stark,

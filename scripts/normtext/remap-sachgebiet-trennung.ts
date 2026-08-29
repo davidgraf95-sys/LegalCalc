@@ -18,8 +18,14 @@
 // DIE REGELN (deterministisch, §2 — jede mit ihrer amtlichen Grundlage):
 //
 //   R1  Bund, Abteilung 8C/9C → sozialversicherung
-//       Die sozialrechtlichen Abteilungen des Bundesgerichts (Art. 34/35
-//       BgerR, SR 173.110.131). Sie führen nie Steuersachen.
+//       ÜBERHOLT durch den F1-Fix vom 29.8.2026 und nur noch historisch zu
+//       lesen (dieser Lauf ist abgeschlossen, sein Alt-Topf ist leer): der
+//       hier genannte Anker «Art. 34/35 BgerR» war falsch — das sind die
+//       zivil- bzw. strafrechtlichen Abteilungen. Massgeblich ist Art. 31
+//       (III. öff.-rechtl. Abt., Präfix 9C — führt nach lit. a AUCH «Steuern
+//       und Abgaben») bzw. Art. 32 (IV., Präfix 8C — keine Steuersachen),
+//       SR 173.110.131. Die Pauschale «9C ⇒ sozialversicherung» hat
+//       remap-9c-steuern.ts korrigiert.
 //   R2  Bund, Abteilung 2A/2C/2D → die J3-Signalkette, deren Steuer-Ausgänge
 //       jetzt 'steuern' heissen (NORM_SIGNAL DBG/StHG/MWStG/StG/VStG ??
 //       Roh-«StG»/«Steuergesetz» ?? auf Steuerbegriffe gefilterte legal_area).

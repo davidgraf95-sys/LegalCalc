@@ -168,8 +168,23 @@ taxonomie, abgefragt am 29.8.2026 über <https://fedlex.data.admin.ch/sparqlendp
 | SR-Gruppe | amtlicher Titel | Ziel | Erlasse |
 |---|---|---|---|
 | 64 | Steuern | `steuern` | 9 (DBG, StHG, MWSTG, MWSTV, StG, VStG, VStV, QStV, BKV) |
-| 830–837 | Sozialversicherung (830 ATSG · 831 AHV/IV/BV · 832 Kranken-/Unfall · 833 Militär · 834 EO · 836 FamZ · 837 ALV) | `sozialversicherung` | 29 |
+| 830–838 | Sozialversicherung (830 Allgemeiner Teil des Sozialversicherungsrechts · 831 Alters-, Hinterlassenen- und Invalidenversicherung · 832 Kranken- und Unfallversicherung · 833 Militärversicherung · 834 Erwerbsersatz · 836 Familienzulagen · 837 Arbeitslosenversicherung · 838 Mutterschaftsversicherung) | `sozialversicherung` | 29 |
 | 822 / 823 | Arbeitnehmerschutz / Arbeitsmarkt und Arbeitsbeschaffung | `oeffentlich` | 7 (ArG, ArGV 1–5, EntsG) |
+
+**Zur Vollständigkeit der SR-83-Reihe (nachgeprüft 29.8.2026, Fedlex-SPARQL,
+`skos:notation` Typ `id-systematique` → `skos:prefLabel@de`).** Die Regel nannte
+bis dahin «830–837» und war damit unvollständig: **838 «Mutterschaftsversicherung»**
+existiert als Taxonomie-Gruppe (`status = CURRENT`, `startDate 2021-12-21`),
+ist aber **korpusleer** — kein einziger konsolidierter Erlass ist darunter
+klassiert (ihre einzige Untergruppe 838.1 trägt das prefLabel «Erwerbsersatz»
+und ist ebenfalls leer). Das ist Taxonomie-Altbestand: das
+Mutterschaftsversicherungsgesetz von 1999 trat nie in Kraft, die
+Mutterschaftsentschädigung lebt heute in der EO (SR 834; Art. 31 lit. d BgerR
+nennt sie folgerichtig als «Erwerbsersatzordnung, einschliesslich
+Mutterschaft»). Die Regel deckt 838 jetzt ausdrücklich mit ab, damit ein
+künftig dort klassierter Erlass nicht durch die Maschen fällt. **835 gibt es
+nicht** — weder als Taxonomie-Eintrag noch als SR-Nummernpräfix; die
+Bereichsschreibweise «830–838» ist insofern lückenhaft und genau so gemeint.
 
 Die dritte Zeile ist die einzige Stelle, an der die Trennung mehr tut als
 umbenennen, und sie ist bewusst so: Das Arbeitsgesetz und seine fünf Verordnungen
@@ -186,8 +201,10 @@ gespült).
 
 | Regel | Grundlage | Ziel |
 |---|---|---|
-| BGer-Abteilung 8C / 9C | sozialrechtliche Abteilungen, Art. 34/35 BgerR (SR 173.110.131) | `sozialversicherung` |
+| BGer-Abteilung 8C | IV. öffentlich-rechtliche Abteilung, Art. 32 BgerR (SR 173.110.131): UV, ALV, kantonale SV, Familienzulagen, Sozialhilfe, MV, EL, Überbrückungsleistungen — keine Steuersachen | `sozialversicherung` |
+| BGer-Abteilung 9C | III. öffentlich-rechtliche Abteilung, Art. 31 BgerR — **gemischt**: lit. a «Steuern und Abgaben» neben lit. b–f AHV/IV/EO/KV/berufliche Vorsorge. Darum kein Pauschal-Ziel, sondern die Kette `dritteOerSachgebiet` (s. u.) | `steuern` / `sozialversicherung` / `oeffentlich` |
 | BGE-Band V | Sozialrechts-Band der amtlichen Sammlung | `sozialversicherung` |
+| BGE-Band II mit 9C-aza | Verwaltungs-/Abgaberecht-Band der amtlichen Sammlung — schlägt das Abteilungs-Signal, nie `sozialversicherung` | `steuern` (mit Steuer-Signal), sonst `oeffentlich` |
 | kant. Präfixe EL·IV·UV·ALV·EO·AHV·BV·KV·FZ, BS AL·AH·MV·SG | `KANT_PRAEFIX` (unverändert, Q-J3-4 beachten) | `sozialversicherung` |
 | `NORM_SIGNAL` DBG·StHG·MWStG·StG·VStG | J3-Kette der 2er-Abteilung | `steuern` |
 | Roh-«StG»/«Steuergesetz», gefilterte `legal_area` | J3-Kette (F2/F1) | `steuern` |
@@ -199,14 +216,66 @@ Der Bau-Auftrag verlangte, `NORM_SIGNAL` um Sozialversicherungs-Erlasse zu
 ergänzen (AHVG, IVG, UVG, ATSG, KVG, BVG, ELG, AVIG → `sozialversicherung`). Das
 ist **bewusst nicht umgesetzt.** `NORM_SIGNAL` wird ausschliesslich in der Kette
 der II. öffentlich-rechtlichen Abteilung ausgewertet (`istMehrdeutigeOerAbteilung`,
-2A/2C/2D), und dort ist Sozialversicherung nach Art. 30/34/35 BgerR gar keine
-Zuständigkeit. Ein solches Signal stellte exakt den Defekt wieder her, den die
+2A/2C/2D), und dort ist Sozialversicherung nach Art. 30 BgerR gar keine
+Zuständigkeit (sie liegt nach Art. 31/32 bei der III. und IV.
+öffentlich-rechtlichen Abteilung — hier stand bis zur Anker-Korrektur vom
+29.8.2026 «Art. 30/34/35 BgerR», was falsch war: Art. 34/35 sind die zivil-
+bzw. strafrechtlichen Abteilungen). Ein solches Signal stellte exakt den Defekt wieder her, den die
 J3-Gegenprüfung am 29.8.2026 als Befund B2 beseitigt hat: BGE 151 II 726
 (2C_565/2022, Verbleiberecht nach FZA) nennt das AHVG nur als Altersmassstab und
 wurde davon fälschlich als Sozialversicherungsfall etikettiert. Die echten
-Sozialversicherungsfälle klassieren die Abteilungs-Zeile (8C/9C) und das Band V —
-dort, wo die amtliche Geschäftsverteilung sie führt. Am Unit-Test festgenagelt
-(`normSignalSachgebiet(['AHVG'])` muss `null` bleiben).
+Sozialversicherungsfälle klassieren die Abteilungs-Zeile (8C bzw. die
+9C-Kette) und das Band V — dort, wo die amtliche Geschäftsverteilung sie führt.
+Am Unit-Test festgenagelt (`normSignalSachgebiet(['AHVG'])` muss `null` bleiben).
+
+### Die 9C-Kette (Korrektur F1 vom 29.8.2026)
+
+Amtliche Grundlage, am AKN-XML der Konsolidierung 2026-02-01 nachgeprüft
+(<https://www.fedlex.admin.ch/eli/cc/2006/834/de>): Art. 31 BgerR behandelt
+wörtlich «a. Steuern und Abgaben; b. Alters- und Hinterlassenenversicherung;
+c. Invalidenversicherung; d. Erwerbsersatzordnung, einschliesslich
+Mutterschaft; e. Krankenversicherung; f. berufliche Vorsorge». Eingefügt durch
+V des BGer vom 13.6.2022, in Kraft seit 1.1.2023 (AS 2023 65); zuvor standen
+die Steuern in Art. 30 Abs. 1 lit. b. Die 9C ist damit eine **gemischte**
+Abteilung, und die frühere Pauschale `'9C': 'sozialversicherung'` etikettierte
+jeden 9C-Steuerfall falsch (68 BGE des Abgabe-Bands II).
+
+`dritteOerSachgebiet` in der Reihenfolge:
+
+1. **BGE Band V** → `sozialversicherung` (Sozialrechts-Band).
+2. **BGE Band II** → Steuer-Signal ? `steuern` : `oeffentlich`. Nie
+   `sozialversicherung`: der amtliche Band ist die Systematik der Sammlung
+   selbst und schlägt das Abteilungs-Signal.
+3. **sonst** (bger ohne Band, BGE Band I/III/IV) → Steuer-Signal nur, wenn
+   **kein** Sozialversicherungs-Erlass (SR 830–838) mitzitiert ist; sonst
+   `sozialversicherung`.
+
+**Warum der Guard in Stufe 3, aber nicht in Stufe 2 — gemessen, nicht
+vermutet.** Die AHV-Beiträge Selbstständiger werden nach Art. 23 AHVV aus der
+Steuermeldung der kantonalen Steuerbehörde abgeleitet; ein echter
+AHV-Beitragsfall zitiert darum regelmässig das DBG. Am Bestand (29.8.2026):
+von 69 Einträgen der 9C mit Steuer-Signal tragen **16** zusätzlich einen
+SR-830–838-Erlass — die Gegenbeispiele sind real. Auf Band II greift der Guard
+dennoch nicht, weil dort an **allen 68** Einträgen empirisch gilt, dass auch
+die mit BVG-/ATSG-/AHVG-Zitat Steuerfälle sind: BGE 150 II 20 «Art. 32 Abs. 2
+DBG, steuerliche Behandlung des Erneuerungsfonds», BGE 150 II 409
+«Beschwerdelegitimation … direkte Bundessteuer», BGE 151 II 345 «Art. 85
+MWSTG», BGE 150 II 478 «Art. 23 StHG, Grundstückgewinnsteuer».
+
+**Deklarierte Grenze (§8).** BGE 149 II 381 (9C_259/2023, Parteientschädigung
+bei «Überarztung», ATSG/KVG) ist inhaltlich Krankenversicherungsrecht, wurde
+vom Bundesgericht aber in Band II publiziert und trägt kein Steuer-Signal — er
+landet damit auf `oeffentlich`. Der amtlichen Bandzuteilung zu folgen ist
+bewusst gewählt; die Alternative wäre eine redaktionelle Einzelfall-Zuordnung,
+und die ist auf diesem Pfad ausgeschlossen (§2).
+
+**Werkzeug-Falle, beim Verifizieren aufgefallen (29.8.2026).**
+entscheidsuche.ch liefert im Feld `meta.de` für die 9C-Sammlung
+(`CH_BGer_009_*`) die Bezeichnung «IV. Öffentlich-rechtliche Abteilung
+(II. Sozialrechtliche Abteilung)». Das ist **falsch** — die Urteilsrubren
+derselben Dokumente sagen «III. öffentlich-rechtliche Abteilung». Wer die
+Abteilung aus Aggregator-Metadaten ableitet, baut den Fehler ein; massgeblich
+sind Rubrum oder Präfix + BgerR.
 
 ### Bestands-Regen
 

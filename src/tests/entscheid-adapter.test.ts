@@ -220,7 +220,10 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     // W2-TRENNUNG (29.8.2026) — §7-ABWEICHUNG vom Auftragswortlaut, hier
     // festgenagelt: Sozialversicherungs-Erlasse sind BEWUSST KEIN Norm-Signal.
     // Diese Liste wirkt nur auf der II. öffentlich-rechtlichen Abteilung, und
-    // dort ist Sozialversicherung nach Art. 30/34/35 BgerR keine Zuständigkeit;
+    // dort ist Sozialversicherung nach Art. 30 BgerR keine Zuständigkeit (sie
+    // liegt nach Art. 31/32 bei der III./IV. Abteilung — Anker-Korrektur
+    // 29.8.2026: hier stand «Art. 30/34/35», Art. 34/35 sind aber die zivil-
+    // bzw. strafrechtlichen Abteilungen);
     // ein AHVG-Signal stellte den Gegenprüfungs-Befund B2 wieder her (BGE 151 II
     // 726: AHVG nur als Altersmassstab im FZA-Verbleiberecht).
     expect(normSignalSachgebiet(['AHVG'])).toBeNull();
