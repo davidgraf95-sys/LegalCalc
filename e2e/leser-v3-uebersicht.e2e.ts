@@ -36,7 +36,7 @@ function fehlerSammeln(page: Page): string[] {
 const ERLASSE = [
   { name: 'StPO (Bund, mit Warnung)', pfad: '/gesetze/bund/STPO?leser=v3' },
   { name: 'VMWG (Verordnung)', pfad: '/gesetze/bund/VMWG?leser=v3' },
-  { name: 'LugÜ (Staatsvertrag)', pfad: '/gesetze/bund/LUGUE?leser=v3' },
+  { name: 'LugÜ (Staatsvertrag)', pfad: '/gesetze/international/LUGUE?leser=v3' },
   { name: 'BS-640.100 (Kanton, §)', pfad: '/gesetze/kanton/BS-640.100?leser=v3' },
   { name: 'ZH-211.11 (Kanton, §)', pfad: '/gesetze/kanton/ZH-211.11?leser=v3' },
 ]

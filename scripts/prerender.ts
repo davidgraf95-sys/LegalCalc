@@ -22,6 +22,8 @@ import { jsonLdFuerPfad, metaFuerPfad, prerenderRouten, SITE_URL } from '../src/
 import {
   entscheidHatVolltext,
   entscheidVolltextHtml,
+  erlassAltDetailPfad,
+  erlassDetailPfad,
   erlassHatVolltext,
   erlassVolltextHtml,
   esc,
@@ -34,6 +36,7 @@ import {
   jsonLdFuerMaterial,
   materialDetailHtml,
 } from '../src/lib/seo-detail';
+import { routenEbene } from '../src/lib/normtext/erlassAdresse';
 import type { BrowseErlass } from '../src/lib/normtext/browse-typen';
 import type { NormSnapshotDatei } from '../src/lib/normtext/typen';
 import type { BrowseEntscheid } from '../src/lib/rechtsprechung/register';
@@ -203,7 +206,7 @@ const snapshotEntscheide = entscheidManifest.filter((e) => e.bestand === 'snapsh
 // Absoluter Floor: fängt stilles Schrumpfen des Input-Manifests (eine fehlerhafte
 // Regenerierung), das der relative geschrieben+übersprungen===total-Check allein
 // NICHT sieht. Bei gewolltem grossem Datenabbau bewusst senken (wie ERWARTETE_ROUTEN).
-const ERLASS_FLOOR = 1400; // aktuell 1449 snapshot (218 Bund + 1231 Kanton)
+const ERLASS_FLOOR = 1400; // aktuell 1458 snapshot (227 Bund + 1231 Kanton; nachgeführt 29.8.2026)
 // Bewusst gesenkt 26.6.2026: «Leitentscheid» strikt auf amtliche BGE eingeengt (§8) →
 // der aufgeblähte 610er-Korpus (96 % falsch etikettiert) wich 327 ehrlichen Einträgen
 // (272 amtliche BGE + 55 routine). Floor unter dem neuen Ist, fängt weiter echte Verluste.
@@ -234,6 +237,44 @@ function schreibeDetail(ziel: string, html: string): void {
   writeFileSync(ziel, html);
 }
 
+/**
+ * Redirect-Stub für eine umgezogene Alt-Adresse (Befund 45, Entscheid David
+ * 29.8.2026 «ja, mit Weiterleitungen»).
+ *
+ * WARUM KEIN `meta refresh` — gemessen, nicht überlegt. Die erste Fassung war
+ * genau das: ein minimales Dokument mit `<meta http-equiv="refresh">`. Der
+ * e2e-Wächter `international-adresse-b45.e2e.ts` wies sie zurück, weil der
+ * Fragment-Teil dabei VERLOREN geht: `…/bund/CISG#art-35` landete auf
+ * `…/international/CISG` — ohne Artikel, also am Erlass-Anfang. Der Browser
+ * hängt den ursprünglichen Hash nur dann an, wenn er einer echten HTTP-Location
+ * folgt; einem `meta refresh` auf eine hash-lose URL folgt er wörtlich. Genau
+ * solche Deep-Links stehen in versendeten Rechtsschriften (§1).
+ *
+ * Der Stub ist deshalb die normale App-Hülle: sie bootet, und der
+ * Client-Redirect (`gesetz-leser/adressUmzug.ts`) springt MIT Anker und Query.
+ * Was den Stub von einer echten Seite unterscheidet, sind drei Dinge — er trägt
+ * `canonical` auf die NEUE Adresse, `robots noindex,follow` (der Link zählt,
+ * die Seite nicht) und statt des Volltexts nur einen sichtbaren Link. Kein
+ * zweiter Gesetzestext unter einer zweiten URL (§5), und ohne JavaScript bleibt
+ * die Seite trotzdem benutzbar.
+ */
+function umzugsStub(altPfad: string, canonical: string, titel: string): string {
+  const hinweis =
+    `<p>Diese Adresse (<code>${esc(altPfad)}</code>) ist umgezogen.` +
+    ` <a href="${esc(canonical)}">Weiter zur geltenden Adresse</a>.</p>`;
+  const html = rendereTemplate(
+    {
+      titel,
+      beschreibung: 'Diese Adresse ist umgezogen — weiter zur geltenden Adresse des Erlasses.',
+      canonical,
+    },
+    null,
+    hinweis,
+    altPfad,
+  );
+  return html.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n  </head>');
+}
+
 const gesetzeUrls: string[] = [];
 const rechtsprechungUrls: string[] = [];
 const materialienUrls: string[] = [];
@@ -250,14 +291,14 @@ for (const e of snapshotErlasse) {
       continue;
     }
     if (!e.datei) {
-      console.warn(`SKIP  /gesetze/${e.ebene}/${e.key}: status snapshot ohne datei`);
+      console.warn(`SKIP  ${erlassDetailPfad(e)}: status snapshot ohne datei`);
       erlassUebersprungen++;
       continue;
     }
     const datei = JSON.parse(readFileSync(join(PUBLIC, 'normtext', e.datei), 'utf8')) as NormSnapshotDatei;
     if (!erlassHatVolltext(datei)) {
       // header-only «Volltext» wäre irreführend (§8) und thin content (W1.5) → nicht indexieren
-      console.warn(`SKIP  /gesetze/${e.ebene}/${e.key}: kein Artikel-Volltext`);
+      console.warn(`SKIP  ${erlassDetailPfad(e)}: kein Artikel-Volltext`);
       erlassUebersprungen++;
       continue;
     }
@@ -265,11 +306,22 @@ for (const e of snapshotErlasse) {
     if (inhalt.includes('<script')) throw new Error('Inline-Script im Erlass-Volltext — Builder prüfen');
     const meta = metaFuerErlass(e);
     const html = rendereTemplate(meta, jsonLdFuerErlass(e), inhalt, meta.pfad);
-    schreibeDetail(join(DIST, 'gesetze', e.ebene, `${e.key}.html`), html);
+    // Die Datei liegt unter der ROUTEN-Ebene, nicht unter der Daten-Ebene — sonst
+    // stünde die Seite nicht an ihrer eigenen canonical-URL (Befund 45).
+    schreibeDetail(join(DIST, 'gesetze', routenEbene(e), `${e.key}.html`), html);
     gesetzeUrls.push(meta.canonical);
+    // Alt-Adresse als Redirect-Stub: erreichbar (kein 404), aber nicht in der
+    // Sitemap — eine gesitemappte URL, die auf eine andere kanonisiert, ist ein
+    // Widerspruch in sich (dieselbe Regel wie bei /international, s. seo.ts).
+    // Dateiname am ROHEN Key (wie oben), Adresse im Text prozentkodiert — die
+    // beiden Formen fallen bei Bund-Keys zusammen, aber nur eine ist der Pfad.
+    const alt = erlassAltDetailPfad(e);
+    if (alt) {
+      schreibeDetail(join(DIST, 'gesetze', e.ebene, `${e.key}.html`), umzugsStub(alt, meta.canonical, meta.titel));
+    }
   } catch (err) {
     detailFehler++;
-    console.error(`FEHLER  /gesetze/${e.ebene}/${e.key}:`, err);
+    console.error(`FEHLER  ${erlassDetailPfad(e)}:`, err);
   }
 }
 console.log(`OK  ${gesetzeUrls.length} Erlass-Detailseiten (${erlassUebersprungen} übersprungen)`);

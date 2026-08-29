@@ -9,6 +9,7 @@ import {
 import { getCalculator } from '../../lib/calculators';
 import { ErlassZeile } from './ErlassKarte';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // ─── Rechtsgebiets-Sicht (zweite Gliederung, «Gerüst» — G6/§4.4) ─────────────
 //
@@ -26,7 +27,7 @@ import { usePaneKlasse } from '../layout/PaneKontext';
 /** Deep-Link in den Reader; enger Bereich springt auf seinen ersten Artikel
  *  (#art-<ankerVon> — der Reader-Anker bleibt `art-<token>`, K2/R8). */
 function mitgliedPfad(m: ThemaMitglied): string {
-  const base = `/gesetze/bund/${encodeURIComponent(m.key)}`;
+  const base = erlassPfadVonKey(m.key);
   return m.ankerVon ? `${base}#art-${m.ankerVon}` : base;
 }
 

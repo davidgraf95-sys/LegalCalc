@@ -321,6 +321,13 @@ präzisiert, nie autonom gekippt.
 
 ## §7 · Zusatzposten der Linsen (neu aufgenommen)
 
+- **Kantons-Adressen ohne Segment-Wache (Gegenprüfung Intl-Routing 29.8.2026,
+  Befund 1, VORBESTEHEND):** `/gesetze/<beliebig>/AG-291.150` rendert den
+  Erlass statt zu leiten — `routenEbeneVonKey` kennt nur die 238 Bundes-Keys
+  (ERLASS_REGISTER) und fällt für 1231 Kantons-Keys aufs URL-Segment zurück.
+  Wurzel-Fix: Entscheid gegen das gebaute Browse-Manifest statt Register;
+  danach Kanonik-Tor auf Kantons-Stichprobe ausweiten.
+
 | ID | Posten | Aufwand | Einordnung |
 |---|---|---|---|
 | **Z1** | **ICS-/Kalender-Export des Frist-Ergebnisses** («Verjährung Forderung X: 31.03.2027» nach Outlook/Fristenkontrolle) — haftungsrelevanteste Lücke der Praxis-Linse; von der Produktvision explizit gedeckt («rechnen/drucken/ICS»). Ist-Stand zuerst erheben; Export «ohne Gewähr»-gelabelt (§8), reine UI-Ausleitung ohne neues Rechenrisiko. | S–M | eigene kleine Einheit nach N0 |

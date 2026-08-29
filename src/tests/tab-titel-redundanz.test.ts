@@ -3,7 +3,7 @@ import { tabTitel } from '../pages/gesetz-leser/helpers';
 
 // W2·18-FEHLERBUCH — Browser-Reiter «EMRK (EMRK) — LexMetrik».
 //
-// BEFUND (auf Prod reproduziert 29.8.2026, /gesetze/bund/EMRK): Der Reiter-Titel
+// BEFUND (auf Prod reproduziert 29.8.2026, /gesetze/international/EMRK): Der Reiter-Titel
 // setzte sich aus Kürzel + Klammer-Kurztitel zusammen. Der Kurztitel ist per
 // LEGES-Konvention der Klammer-Inhalt am Ende des Volltitels — bei den
 // Staatsverträgen ist DAS aber genau das Kürzel («Konvention zum Schutze der

@@ -1,6 +1,7 @@
 import type { SuchTreffer } from '../universalSuche';
 import { sucherTerme, rangiere, type RankEintrag } from './artikelRanking';
 import { normalisiereBegriff, expandiereSuchbegriff } from './vokabular';
+import { erlassPfadVonKey } from '../normtext/erlassAdresse';
 
 // ─── Artikel-Volltextsuche (ROADMAP Schritt 5, FlexSearch) ──────────────────
 //
@@ -90,7 +91,7 @@ function treffer(e: IndexEintrag, q: string): SuchTreffer {
     marke: kantonal
       ? { text: e.kt, ton: 'soft' as const }
       : { text: 'Gesetzestext', ton: 'soft' as const, redundant: true },
-    href: `/gesetze/${e.eb}/${encodeURIComponent(e.k)}#art-${e.a}`,
+    href: `${erlassPfadVonKey(e.k, e.eb)}#art-${e.a}`,
   };
 }
 

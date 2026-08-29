@@ -43,9 +43,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { AZ_KLASSEN, gruppiereAZ, ebeneLabel } from './az-register';
+import { erlassPfad } from '../../lib/normtext/erlassAdresse';
 
 function AzZeile({ e }: { e: BrowseErlass }) {
-  const basePath = `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+  const basePath = erlassPfad(e);
   // Kürzel dezent daneben, wenn es echten Mehrwert trägt (nicht schon im Titel —
   // kantonale «kuerzel» sind oft der ganze Titel, vgl. SysZeile).
   const zeigeKuerzel = e.kuerzel && e.kuerzel !== e.titel && !e.titel.includes(e.kuerzel);

@@ -39,7 +39,7 @@ test.describe('W2·19-GLIEDERUNG/S9 — Leiste ohne horizontalen Overflow', () =
   test('HAdoptÜ (HAUE) — lange Anhang-/Titel-Etikette überlaufen nicht', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/HAUE')
+    await page.goto('/gesetze/international/HAUE')
     await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 40_000 })
     await page.waitForTimeout(500)
     await keinHorizontalerOverflow(page, '[data-toc]')
@@ -49,7 +49,7 @@ test.describe('W2·19-GLIEDERUNG/S9 — Leiste ohne horizontalen Overflow', () =
   test('Mobiles Gliederungs-Sheet — Baum-Scroller überläuft nicht', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/HAUE')
+    await page.goto('/gesetze/international/HAUE')
     await expect(page.locator('article').first()).toBeVisible({ timeout: 40_000 })
     await page.getByRole('button', { name: /Gliederung/ }).first().click()
     await expect(page.locator('[data-gliederung-sheet]')).toBeVisible({ timeout: 40_000 })

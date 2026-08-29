@@ -42,8 +42,17 @@ describe('erlassDetailPfad()', () => {
     expect(erlassDetailPfad(or)).toBe('/gesetze/bund/OR');
   });
   it('prozentkodiert Sonderzeichen (kantonale Keys mit Leerzeichen)', () => {
-    expect(erlassDetailPfad({ ebene: 'kanton', key: 'BS-BeE 786.100' })).toBe(
+    // `rechtsgebiet` gehört seit Befund 45 (Entscheid David 29.8.2026) zur
+    // Adress-Ableitung: es entscheidet, ob ein Erlass unter /gesetze/bund/ oder
+    // /gesetze/international/ steht. Hier ein kantonaler Erlass, also ein
+    // beliebiges Nicht-International-Gebiet.
+    expect(erlassDetailPfad({ ebene: 'kanton', rechtsgebiet: 'privat', key: 'BS-BeE 786.100' })).toBe(
       '/gesetze/kanton/BS-BeE%20786.100',
+    );
+  });
+  it('setzt Staatsverträge unter /gesetze/international/ (Befund 45)', () => {
+    expect(erlassDetailPfad({ ebene: 'bund', rechtsgebiet: 'international', key: 'CISG' })).toBe(
+      '/gesetze/international/CISG',
     );
   });
 });

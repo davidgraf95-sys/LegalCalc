@@ -7,6 +7,7 @@ import { bestimmePassusZiel } from '../lib/normtext/passusZiel';
 import { usePaneSteuerung } from './layout/usePaneLayout';
 import { ArtikelBody } from './normtext/ArtikelBody';
 import { VerweisKontext } from './kontext/VerweisKontext';
+import { erlassPfadVonKey } from '../lib/normtext/erlassAdresse';
 
 // Norm-Vorschau-Popover (§7 Zitat-Ausnahme): zeigt den Volltext des zitierten
 // Artikels aus einem Snapshot, die zitierte Stelle hervorgehoben, mit Stand +
@@ -107,7 +108,7 @@ export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onC
   // → key '<quelle>-<nr>' (= Snapshot-Datei-Stamm, vgl. browse-manifest).
   const idTeile = snapshot.id.split('/');
   const readerKey = snapshot.ebene === 'bund' ? snapshot.quelle : `${snapshot.quelle}-${idTeile[2] ?? ''}`;
-  const readerLink = `/gesetze/${snapshot.ebene}/${encodeURIComponent(readerKey)}#art-${snapshot.artikel}`;
+  const readerLink = `${erlassPfadVonKey(readerKey, snapshot.ebene)}#art-${snapshot.artikel}`;
 
   return (
     <div
