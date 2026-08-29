@@ -56,6 +56,14 @@ export default {
         // FristenKalender/wizard bereits verwendet, war aber nie generiert
         // (stiller No-op — die Kreise/Flächen blieben transparent).
         paper: { DEFAULT: 'var(--paper)', raised: 'var(--paper-raised)', sunken: 'var(--paper-sunken)' },
+        // Kantonskarte (2B, 29.8.2026): Erfassungsgrad-Füllungen + Kante — Werte
+        // in index.css; hier registriert, damit das Farbwelt-Tor sie als
+        // Pflichtpaare prüfen kann (Bug-Check #568, §17).
+        karte: {
+          voll: 'var(--karte-voll)', auswahl: 'var(--karte-auswahl)',
+          duenn: 'var(--karte-duenn)', leer: 'var(--karte-leer)',
+          kante: 'var(--karte-kante)', marke: 'var(--karte-marke)',
+        },
         surface: { DEFAULT: 'var(--surface)', raised: 'var(--surface-raised)' },
         brass: {
           100: 'var(--brass-100)', 200: 'var(--brass-200)', 300: 'var(--brass-300)',
@@ -179,9 +187,20 @@ export default {
       // 77 ch DARÜBER (es steht nicht in der gegateten Erlass-Liste, s. die Notiz an
       // der Schwelle in `leser-lesemass.e2e.ts`). Die WCAG-Decke SC 1.4.8 (≤ 80 ch)
       // ist in allen gemessenen Fällen gehalten und wird an drei Breiten gegated.
-      // Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist ein
-      // Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener Punkt) —
-      // hier wird die Zahl korrigiert, nicht der Wert geändert. Beide zentriert (mx-auto),
+      //
+      // DER OFFENE PUNKT IST GESCHLOSSEN (Entscheid David 29.8.2026, Variante 1C).
+      // Hier stand: «Ob das Lesemass für die 17-px-Stufe schmaler werden soll, ist
+      // ein Design-Entscheid und liegt bei David (Vollzugsvermerk S2, offener
+      // Punkt)». David hat entschieden: JA, aber nicht an diesem Token. Der
+      // Textkörper bekommt einen eigenen, in ZEICHEN rechnenden Deckel
+      // (`--leser-zeilenmass` ≈ 68 Zeichen, `src/index.css`), der neben dem
+      // Pixel-Deckel `--leser-lesemass-max` steht; der schmalere gewinnt. Grund
+      // für den zweiten Deckel statt einer kleineren Zahl HIER: `reading`/
+      // `normtext` gelten site-weit bzw. auch für die Kopfzeile und skalieren
+      // nicht mit dem Schriftregler — ein Zeichen-Deckel tut beides. Die Zahlen
+      // oben bleiben als Messprotokoll der 45-rem-Stufe stehen; das IST-Zeilenmass
+      // des Lesers steht in DESIGN-REGLEMENT-NORMTEXT §4b-C (67/66/66/64/63/56 ch).
+      // Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
       //
@@ -209,14 +228,18 @@ export default {
       // 858; 1964 965 Ziff. I-II», ~4.8 px/ch statt 5.9) unter die 80. Der
       // EMRK-Hinweis liegt damit auf der xs-Stufe bei ~69 ch.
       maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '24rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
-      // Einzug-Skala des Gesetzes-Readers (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT
-      // §Weissraum-Rhythmus): EINE Stufe = 20px. Tiefe wird über Einzug getragen
-      // (V2·L-1: gedeckelt bei 5 Stufen statt 3 — tiefe Kodifikationen ZGB/OR
-      // blieben zuvor ab Ebene 3 einzuglos gleich, die Verschachtelung war nicht
-      // mehr lesbar). MOBIL kollabiert der Einzug NICHT mehr auf 0 (`einzug-mobil`
-      // ~0.75rem, `pl-einzug-mobil sm:pl-einzug`) — die Verschachtelung bleibt
-      // auch @390 flüsterleise sichtbar; die eine Guide bleibt am Spaltenrand.
-      spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' },
+      // ── DIE EINZUG-SKALA IST GESTRICHEN (Entscheid David 29.8.2026) ────────
+      // Hier standen `spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' }`
+      // — die Tiefen-Staffelung des Gesetzes-Lesers (W2·5d G1 / V2·L-1, 20 px je
+      // Stufe, mobil 12 px, gedeckelt bei 5 Stufen). David 29.8.2026 im Wortlaut:
+      // «wichtige änderung … im gesetz die staffelung aufzuheben. es soll alles
+      // auf der selben höhe stehen. … analog zu fedlex». Der Wortlaut steht
+      // seither auf EINER linken Kante; die Tiefe trägt allein die Zwischen-
+      // Überschrift (§4b Rang 1 «Typo»).
+      // Die Tokens hatten GENAU EINEN Verbraucher (`LeserLesespalte`), und der ist
+      // fort — §17 «gestrichen statt bewacht», kein toter Token im Design-System.
+      // Herleitung, Messreihe und Wächter: `pages/gesetz-leser/v3/
+      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT-NORMTEXT §4b.
       // CLS-Reservierungs-Tokens der Startseite (Startseite V3, §5): benannte
       // Mindesthöhen für die async-/localStorage-Module — Masse, keine Farben
       // (hell = dunkel). `modul-news` benennt den bisherigen Arbitrary-Wert der

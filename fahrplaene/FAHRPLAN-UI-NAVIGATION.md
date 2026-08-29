@@ -441,6 +441,16 @@ präzisiert, nie autonom gekippt.
    Navigations-Rail (V5) ist zulässig.
 9. **Sektionsreihenfolge der Universalsuche umdrehen** *(#1-Rohvorschlag)* — überschreibt
    A6 (David 5.7.); zulässiger Weg = §Y-Frage 1 + Kappung in S5.
+10. **Teil-Dokument öffnen (nur eine Abteilung/ein Titel statt des ganzen Erlasses)**
+    *(Design-Review-Benchmark B8, 29.8.2026)* — **David-Entscheid 29.8.2026, Frage 9:
+    «nein».** Der Vorschlag stammte aus dem Benchmark gegen fremde Portale, die grosse
+    Erlasse stückeln, weil ihr Volltext nicht performant ist. LexMetrik hat dieses
+    Problem nicht: TOC und Volltext stehen gleichzeitig, und Ctrl+F über das GANZE
+    Gesetz ist Juristen-Kernwerkzeug (dieselbe Begründung wie Ziff. 2 oben,
+    CLAUDE.md §15.1). Ein Teil-Dokument wäre zudem eine zweite Adressierung desselben
+    Erlasses neben `/gesetze/<ebene>/<key>#anker` — also eine zweite Wahrheit über den
+    Ort (§5). **Nicht-Bauen-Notiz — nicht wiedervorlegen.** Wortlaut-Nachweis der
+    Entscheid-Mappe: `fahrplaene/FAHRPLAN-DESIGN-WAERME.md` §7.
 
 ---
 

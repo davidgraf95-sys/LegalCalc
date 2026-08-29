@@ -196,6 +196,14 @@ type Paar = { fg: string; bg: string; min: number; art: 'Text' | 'Nicht-Text'; q
 const TEXT = (fg: string, bg: string, quelle: string): Paar => ({ fg, bg, min: 4.5, art: 'Text', quelle });
 const NICHT = (fg: string, bg: string, quelle: string): Paar => ({ fg, bg, min: 3.0, art: 'Nicht-Text', quelle });
 const PFLICHT: Paar[] = [
+  // ── Kantonskarte (Bug-Check #568, 29.8.2026, §17-Wurzelfix): die Erfassungs-
+  // grad-Füllungen tragen ihre Bedienbarkeit über die Kanten-Trennung — dunkel
+  // liegt «vollständig» nur 0.05 über der 3:1-Schwelle; eine spätere
+  // --ink-700-/Basis-Korrektur risse F2 sonst STUMM. Kante = --karte-kante.
+  NICHT('karte-kante', 'karte-voll', 'Kantonskarte: Kanten-Trennung auf «vollständig»'),
+  NICHT('karte-kante', 'karte-auswahl', 'Kantonskarte: Kanten-Trennung auf «Auswahl»'),
+  NICHT('karte-kante', 'karte-duenn', 'Kantonskarte: Kanten-Trennung auf «dünn»'),
+  NICHT('karte-kante', 'karte-leer', 'Kantonskarte: Kanten-Trennung auf «keine Erlasse»'),
   // ── QS-UI 8a, Verschärfung Stufe 1a: Fliesstext-Basis ───────────────────────
   // Befund des Audits (4.8.2026): ink-900 — der TRAGENDE Fliesstext-Ton der
   // ganzen App — war in keinem einzigen Pflichtpaar vertreten. Geprüft waren
