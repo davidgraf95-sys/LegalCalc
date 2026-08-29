@@ -12,7 +12,7 @@ export type VerfallTermin = {
   rhythmus?: string;
 };
 
-export const VERFALL_STAND = "13.8.2026";
+export const VERFALL_STAND = "29.8.2026";
 export const VERFALL_QUELLE = "bibliothek/register/parameter-verfall.md";
 export const VERFALL_MANUELL_ANZAHL = 21;
 
@@ -160,6 +160,11 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
   },
   {
     "label": "GR Honorarverordnung (HV, BR 310.250): bis 31.12.2026 (Nachfolge 1.1.2027).",
+    "datum": "2026-12-31",
+    "quelle": "Freitext"
+  },
+  {
+    "label": "TI LTORF (Legge sulle tasse e gli emolumenti del registro fondiario, RL 216.200 = `TI-ti-181`): geltende Fassung 17.5.2024 gilt bis 31.12.2026 (Nachfolge 1.1.2027, Änderung BU 2026, 281).",
     "datum": "2026-12-31",
     "quelle": "Freitext"
   },

@@ -4,11 +4,13 @@ Alle **datierten Parameter** im Code: Werte, die sich ausserhalb des Repos ände
 und darum regelmässig geprüft werden müssen. Wer einen neuen datierten Wert
 verdrahtet, trägt ihn HIER ein (mit Fundstelle, Stand, Prüfrhythmus).
 
-Stand des Registers: 13.8.2026 (fortlaufend gepflegt — zuletzt inhaltlich
-ergänzt um die Fassungs-Bindung der PDF-erfassten Kantons-Snapshots; davor
-Fedlex-Pin-Kanonik/GL-LexWork-Migration/SG-GKV-Sunset; das Datum wird
-maschinell gelesen — `scripts/verfall-parse.ts` `registerStand()` — bei jeder
-inhaltlichen Ergänzung mitziehen, nicht nur beim jährlichen Audit).
+Stand des Registers: 29.8.2026 (fortlaufend gepflegt — zuletzt inhaltlich
+ergänzt um die angekündigte TI-LTORF-Fassung per 1.1.2027 samt der Feststellung,
+dass die Wiedervorlage-Automatik kantonale Quellen strukturell nicht sieht; davor
+die Fassungs-Bindung der PDF-erfassten Kantons-Snapshots, Fedlex-Pin-Kanonik/
+GL-LexWork-Migration/SG-GKV-Sunset; das Datum wird maschinell gelesen —
+`scripts/verfall-parse.ts` `registerStand()` — bei jeder inhaltlichen Ergänzung
+mitziehen, nicht nur beim jährlichen Audit).
 
 | Parameter | Fundstelle | Wert / Stand | Prüfrhythmus | Nächste Prüfung |
 |---|---|---|---|---|
@@ -220,7 +222,42 @@ Zwei Klassen, gefiltert über die SSoT `src/lib/normtext/aufhebungen.ts`
   1.7.2026). Nächste periodische Prüfung: Juni 2027 (kein publizierter Sunset).
 - **GR Honorarverordnung (HV, BR 310.250): bis 31.12.2026** (Nachfolge 1.1.2027).
 - **BE EAV (BSG 168.711, amtliche Anwälte): bis 31.12.2026** (Nachfolge 1.1.2027).
-- Quelle: OrdoLex-API `current_version`-Metadaten (Doppelcheck 5.6.2026).
+- **TI LTORF (Legge sulle tasse e gli emolumenti del registro fondiario, RL 216.200 = `TI-ti-181`): geltende Fassung 17.5.2024 gilt bis 31.12.2026** (Nachfolge 1.1.2027, Änderung BU 2026, 281).
+  Die Fassung vom 17.5.2024 (BU 2024, 131) ist bis dahin der `stand` des
+  Snapshots. Amtlicher Beleg: der Abschnitt «PROSSIME VARIAZIONI» der Erlass-Seite
+  `m3.ti.ch/CAN/RLeggi/public/index.php/raccolta-leggi/legge/num/181` (Abruf
+  29.8.2026), Änderungstext `www3.ti.ch/CAN/fu/2026/BU_028.pdf`. Massnahme am
+  Stichtag: `npm run normtext -- --datum=<ISO> --nur=kanton --kanton=TI`, danach
+  Register/Manifest nachziehen. **Nächste Prüfung: 1.1.2027.**
+- Quelle: OrdoLex-API `current_version`-Metadaten (Doppelcheck 5.6.2026); TI aus
+  dem Ankündigungs-Abschnitt der Erlass-Seite (29.8.2026).
+
+### Deklarierter Rest: die Wiedervorlage-Automatik sieht nur den Bund (29.8.2026)
+
+Die Einträge dieses Abschnitts werden **von Hand** geführt, und das ist kein
+Versehen, sondern eine Lücke mit Namen. Der AUTO-Block weiter oben («Künftige
+Fedlex-Konsolidierungen», P1-c) wird von `scripts/fedlex-wiedervorlage-generieren.ts`
+erzeugt; dessen Grundmenge ist ausdrücklich `register.json` gefiltert auf
+`ebene='bund'` und die Quelle ausschliesslich der Fedlex-SPARQL-Endpunkt
+(`jolux:dateApplicability`). Kantonale Sammlungen haben kein Gegenstück dazu:
+weder TI (`m3.ti.ch`, HTML-Ankündigungsabschnitt) noch die LexWork-/OrdoLex-Familie
+liefern angekündigte Fassungen über eine gemeinsame, maschinell abfragbare
+Schnittstelle. Eine künftige kantonale Fassung erreicht dieses Register darum nur,
+wenn ein Mensch sie einträgt.
+
+ANLASS: Am 29.8.2026 wurde die TI-Ankündigung zunächst nicht als Wiedervorlage,
+sondern als `stand` des Snapshots verbucht (2027-01-01 statt 17.5.2024) — die
+Extraktion las den Ankündigungs-Abschnitt als Teil des Erlasses. Der Wurzel-Fix
+sitzt im Adapter (`tiErlassDokument` in `scripts/normtext/adapter-htm.ts`) und im
+Tor `check:stand-zukunft`; beide verhindern die falsche Datierung, aber **keines
+von beiden erfasst die künftige Fassung als Termin**. Genau dafür steht dieser
+Eintrag hier.
+
+Solange kein Kantons-Wiedervorlage-Generator existiert, gilt: wer beim Bau oder
+bei einer Verifikation eine angekündigte kantonale Fassung sieht, trägt sie in
+diesem Abschnitt ein (S6). Ein Wurzel-Fix (§17) wäre ein Generator, der die
+Ankündigungs-Abschnitte der erfassten Kantons-Portale erntet — er ist **nicht**
+gebaut und hier bewusst nur benannt, nicht behauptet (§8).
 
 ## GebV SchKG (SR 281.35) — ~~Konsolidierung 1.1.2026 nur signiert~~ KORRIGIERT (S8, 7.6.2026)
 - ~~«HTML-Manifestation nicht publiziert (nur signiertes PDF)»~~ — **widerlegt
