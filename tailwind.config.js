@@ -209,14 +209,18 @@ export default {
       // 858; 1964 965 Ziff. I-II», ~4.8 px/ch statt 5.9) unter die 80. Der
       // EMRK-Hinweis liegt damit auf der xs-Stufe bei ~69 ch.
       maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '24rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
-      // Einzug-Skala des Gesetzes-Readers (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT
-      // §Weissraum-Rhythmus): EINE Stufe = 20px. Tiefe wird über Einzug getragen
-      // (V2·L-1: gedeckelt bei 5 Stufen statt 3 — tiefe Kodifikationen ZGB/OR
-      // blieben zuvor ab Ebene 3 einzuglos gleich, die Verschachtelung war nicht
-      // mehr lesbar). MOBIL kollabiert der Einzug NICHT mehr auf 0 (`einzug-mobil`
-      // ~0.75rem, `pl-einzug-mobil sm:pl-einzug`) — die Verschachtelung bleibt
-      // auch @390 flüsterleise sichtbar; die eine Guide bleibt am Spaltenrand.
-      spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' },
+      // ── DIE EINZUG-SKALA IST GESTRICHEN (Entscheid David 29.8.2026) ────────
+      // Hier standen `spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' }`
+      // — die Tiefen-Staffelung des Gesetzes-Lesers (W2·5d G1 / V2·L-1, 20 px je
+      // Stufe, mobil 12 px, gedeckelt bei 5 Stufen). David 29.8.2026 im Wortlaut:
+      // «wichtige änderung … im gesetz die staffelung aufzuheben. es soll alles
+      // auf der selben höhe stehen. … analog zu fedlex». Der Wortlaut steht
+      // seither auf EINER linken Kante; die Tiefe trägt allein die Zwischen-
+      // Überschrift (§4b Rang 1 «Typo»).
+      // Die Tokens hatten GENAU EINEN Verbraucher (`LeserLesespalte`), und der ist
+      // fort — §17 «gestrichen statt bewacht», kein toter Token im Design-System.
+      // Herleitung, Messreihe und Wächter: `pages/gesetz-leser/v3/
+      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT-NORMTEXT §4b.
       // CLS-Reservierungs-Tokens der Startseite (Startseite V3, §5): benannte
       // Mindesthöhen für die async-/localStorage-Module — Masse, keine Farben
       // (hell = dunkel). `modul-news` benennt den bisherigen Arbitrary-Wert der
