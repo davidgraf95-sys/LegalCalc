@@ -54,7 +54,7 @@ export function GruppenInhalt({ titel, items }: { titel: string; items: BrowseEr
       {verordnungen.length > 0 && (
         <div className="pl-3 border-l-2 border-line/70 ml-0.5">
           <p className="lc-overline mb-1">Verordnungen &amp; Ausführungsrecht</p>
-          <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-4')}>
+          <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-4 gap-y-2')}>
             {verordnungen.map((e) => <ErlassZeile key={e.key} e={e} />)}
           </div>
         </div>

@@ -22,6 +22,7 @@ import type { BrowseMaterial } from './materialien/typen';
 import { filtere as filtereMaterialien, vergleicheGlobal } from './materialien/browse';
 import type { NormQueryTreffer } from './suche/normQuery';
 import type { BgeSprung } from './suche/bgeQuery';
+import { erlassPfad } from './normtext/erlassAdresse';
 
 // 'sprung' = deterministischer Norm-Direktsprung (A5), von der Komponente VOR die
 // statischen Gruppen gehängt; er entsteht aus dem Parser normQuery.ts, nicht im
@@ -231,7 +232,7 @@ export function gesetzGruppe(erlasse: BrowseErlass[] | null, q: string, kappung 
     label: e.kuerzel ? `${e.kuerzel} · ${e.titel}` : e.titel,
     untertitel: [e.ebene === 'kanton' ? e.kanton : 'Bund', e.sr ? `SR ${e.sr}` : null].filter(Boolean).join(' · '),
     marke: e.ebene === 'kanton' && e.kanton ? { text: e.kanton, ton: 'soft' as const } : undefined,
-    href: `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`,
+    href: erlassPfad(e),
   }));
   return {
     id: 'gesetz', titel: 'Gesetze', treffer, gesamt: getroffen.length,

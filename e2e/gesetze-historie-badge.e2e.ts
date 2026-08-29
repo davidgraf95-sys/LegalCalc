@@ -163,7 +163,7 @@ test('Artikel ohne Historie-Eintrag zeigt kein Badge (BGBM Art. 6)', async ({ pa
 });
 
 test('Erlass ohne Historie-Shard zeigt nirgends ein Badge (CISG)', async ({ page }) => {
-  await warteReader(page, '/gesetze/bund/CISG', 'art-1');
+  await warteReader(page, '/gesetze/international/CISG', 'art-1');
   // Kurz warten, damit ein etwaiger (hier 404-) Shard-Fetch sicher durch ist.
   await page.waitForTimeout(1500);
   await expect(page.locator('[data-historie-zeile]')).toHaveCount(0);

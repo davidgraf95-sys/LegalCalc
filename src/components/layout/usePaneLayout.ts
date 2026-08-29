@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { tabSchluessel } from '../../lib/tabs';
+import { kanonisierePfad } from '../../lib/normtext/erlassAdresse';
 
 // ─── Pane-Layout (Split-View B-1) ──────────────────────────────────────────
 //
@@ -40,10 +41,18 @@ function saeubere(arr: unknown[]): string[] {
   const gesehen = new Set<string>();
   for (const x of arr) {
     if (typeof x !== 'string' || !x.startsWith('/')) continue;
-    const n = normPfad(x);
+    // Umgezogene Erlass-Adressen beim Einlesen nachziehen (Gegenprüfung
+    // 29.8.2026, Mangel 3): ein vor dem Umzug gespeichertes Pane und ein
+    // geteilter `?p=`-Link trugen die Alt-Adresse dauerhaft weiter. Das Pane
+    // rendert zwar richtig (der Leser springt), aber der GESPEICHERTE Zustand
+    // blieb für immer alt — die Weiterleitung wäre damit Dauerzustand statt
+    // Brücke. Vor der Dedup-Prüfung, damit Alt- und Neu-Form desselben
+    // Erlasses nicht als zwei Panes nebeneinander überleben.
+    const pfad = kanonisierePfad(x);
+    const n = normPfad(pfad);
     if (gesehen.has(n)) continue;
     gesehen.add(n);
-    sauber.push(x);
+    sauber.push(pfad);
     if (sauber.length >= MAX_SEKUNDAER) break;
   }
   return sauber;
@@ -113,7 +122,10 @@ export function usePaneLayout(): PaneLayout {
     catch { /* Speicher gesperrt — Zustand bleibt nur für die Sitzung */ }
   }, [sekundaer]);
 
-  const oeffneDaneben = useCallback((pfad: string) => {
+  const oeffneDaneben = useCallback((roh: string) => {
+    // Kanonisiert wie beim Einlesen (Mangel 3): auch ein zur Laufzeit
+    // übergebener Alt-Pfad darf nicht als Alt-Pfad in den Speicher wandern.
+    const pfad = kanonisierePfad(roh);
     const n = normPfad(pfad);
     // Vollen Pfad (inkl. #hash) speichern, Dedup über die Reiter-Identität.
     setSekundaer((s) => (s.length >= MAX_SEKUNDAER || s.some((x) => normPfad(x) === n) ? s : [...s, pfad]));
@@ -136,7 +148,7 @@ export function usePaneLayout(): PaneLayout {
   const ersetze = useCallback((i: number, pfad: string) => {
     // Vollen Pfad (inkl. #hash/?preset) speichern wie oeffneDaneben — sonst verlöre
     // das beförderte Hauptfenster sein Unter-Tab/Anker. Dedup läuft über normPfad.
-    setSekundaer((s) => (i < 0 || i >= s.length ? s : s.map((x, idx) => (idx === i ? pfad : x))));
+    setSekundaer((s) => (i < 0 || i >= s.length ? s : s.map((x, idx) => (idx === i ? kanonisierePfad(pfad) : x))));
   }, []);
 
   return { sekundaer, oeffneDaneben, schliesse, verschiebe, ersetze };

@@ -13,6 +13,7 @@ import { ERLASS_REGISTER } from './register';
 import { bundSnapshotRef } from './bundRef';
 import { MATERIAL_REGISTER, behoerdeVon, DOKTYP_LABEL } from '../materialien/register';
 import type { Herkunft } from '../verzahnung/typen';
+import { erlassPfad } from './erlassAdresse';
 
 // Exportiert für das Konsistenz-Tor (werkzeuge.test.ts): jede Karten-ID muss auf
 // eine existierende Katalog-Karte zeigen — sonst verschluckt `werkzeugeFuerNorm`
@@ -342,7 +343,7 @@ export function massgebendeErlasse(modus: 'rechner' | 'vorlage'): MassgebenderEr
   for (const e of ERLASS_REGISTER) {
     if (e.status !== 'snapshot') continue;
     if (!werkzeugeFuerNorm(e.key).some((w) => w.modus === modus)) continue;
-    out.push({ key: e.key, kuerzel: e.kuerzel, titel: e.titel, pfad: `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}` });
+    out.push({ key: e.key, kuerzel: e.kuerzel, titel: e.titel, pfad: erlassPfad(e) });
   }
   return out;
 }

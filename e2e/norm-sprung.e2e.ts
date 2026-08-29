@@ -8,6 +8,7 @@
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
+import { kopfSucheOeffnen } from './helpers/kopfSuche'
 
 // CI-Härtung 19.7.2026 (BEFUND 3b): die Sprung-Tests warten per 20-s-Latch auf den
 // EINMAL-Load des ~4-MB-Artikel-Index (P3 u. a.). Auf dem 2-vCPU-Runner unter
@@ -288,11 +289,26 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     expect(fehler).toEqual([])
   })
 
+  // ── §6.3-DEKLARATION (29.8.2026, Entscheid David C1/B10/L3) ────────────────
+  // GEÄNDERT ist NUR der Weg zum Feld, nicht die Zusage. Unter 480 px ist die
+  // globale Suche im Ruhezustand seit dem Design-Review eine 44-px-Lupe (Befund:
+  // das Feld war dort 28 px breit, ein leerer Rahmen ohne erkennbaren Zweck);
+  // das Feld erscheint nach dem Tap über die volle Streifenbreite. Der Fluss
+  // heisst darum jetzt «Lupe tippen → Feld offen → Sprung» statt «Feld tippen →
+  // Sprung». Der Helfer trifft die Breiten-Fallunterscheidung an EINER Stelle
+  // (`helpers/kopfSuche.ts`, §5).
+  // UNVERÄNDERT und gleich streng: der Norm-Sprung MUSS auf dem Telefon ohne ⌘K
+  // erreichbar sein, und die geöffnete Trefferfläche darf @390 keinen
+  // horizontalen Überlauf erzeugen — beide Assertions stehen wörtlich wie zuvor.
+  // ROT ZU BEKOMMEN: die Sprung-Gruppe mobil ausblenden ⇒ «Sprung» fehlt; die
+  // feste Seitenverankerung des Panels (`inset-x-2`) durch eine Feldbreite
+  // ersetzen ⇒ scrollWidth > clientWidth. NEU zusätzlich rot: eine tote Lupe
+  // (Knopf da, Feld ohne Fokus) reisst schon im Helfer — @390 wäre die Suche
+  // dann gar nicht mehr erreichbar, und genau das ist die Zusage dieses Falls.
   test('Mobil (390px): Suchleiste trägt den Sprung ohne ⌘K, kein Overflow', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto('/gesetze')
-    const feld = sucheFeld(page)
-    await feld.click()
+    const feld = await kopfSucheOeffnen(page)
     await feld.fill('OR 257d')
     await expect(listbox(page).getByText('Sprung', { exact: true })).toBeVisible()
     // Kein horizontaler Overflow bei offenem Panel auf 390px.

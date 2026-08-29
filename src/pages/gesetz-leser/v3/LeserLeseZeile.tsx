@@ -49,7 +49,9 @@ export function LeserLeseZeile({
   return (
     <div
       className={bild.spalten
-        ? 'grid gap-8 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
+        ? // gap-5 statt gap-8 (Auftrag David 29.8.2026: «weniger Abstand Gesetz ↔
+          // Gliederung») — muss mit SPUR_ABSTAND in rahmenSpalten.ts übereinstimmen.
+          'grid gap-5 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
         : ''}
       style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
       {bild.schiene && (

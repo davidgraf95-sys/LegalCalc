@@ -14,6 +14,12 @@
 // Abs./lit./Ziff./röm.) parst. Freitext («Kündigung», «Mietzins 2024») liefert
 // null → die Eingabe fällt in die normale Suche.
 
+// Die Adresse baut dieser Parser NICHT selbst (§5, Befund 45): `erlassAdresse`
+// entscheidet, ob ein Erlass unter `/gesetze/bund/` oder `/gesetze/international/`
+// steht. Die Minimal-Sicht unten trägt bewusst kein `rechtsgebiet` — darum die
+// Schlüssel-Variante, die das Register fragt, statt den Typ aufzublähen.
+import { erlassPfadVonKey } from '../normtext/erlassAdresse';
+
 /** Minimal-Sicht eines Erlasses für die Auflösung (BrowseErlass ist zuweisbar). */
 export interface NormErlass {
   key: string;
@@ -328,7 +334,7 @@ function loese(index: NormIndex, tokens: string[], filter?: (e: NormErlass) => b
 }
 
 function bauHref(e: NormErlass, artikelToken: string | null): string {
-  const basis = `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+  const basis = erlassPfadVonKey(e.key, e.ebene);
   // Anker nur für gerenderten Volltext (snapshot). pdf-embed/nur-live-link haben
   // keine #art-Anker → nur der Erlass wird geöffnet (§15 Funktions-Treue).
   return artikelToken && e.status === 'snapshot' ? `${basis}#art-${artikelToken}` : basis;

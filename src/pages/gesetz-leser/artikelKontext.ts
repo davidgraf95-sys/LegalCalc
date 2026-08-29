@@ -10,6 +10,7 @@ import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import type { ArtikelKontextAnsicht, KontextVerweis } from '../../lib/kontext';
 import { internerErlassFuerSr } from './helpers';
+import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // ═══ ABSCHNITT · Artikel-Kontext (W2·19-GLIEDERUNG/S7, Bau-Spec §5.2) ════════
 //
@@ -76,14 +77,14 @@ export function ausgehendeVerweise(
   for (const fn of struktur?.[token]?.fussnoten ?? []) {
     for (const l of fn.links) {
       if (l.intern) {
-        nimm({ label: l.label, pfad: `/gesetze/${l.intern.ebene}/${encodeURIComponent(l.intern.key)}`, url: l.url });
+        nimm({ label: l.label, pfad: erlassPfadVonKey(l.intern.key, l.intern.ebene), url: l.url });
         continue;
       }
       if (!l.rs) continue;
       const intern = internerErlassFuerSr(l.rs);
       nimm({
         label: l.label,
-        pfad: intern ? `/gesetze/${intern.ebene}/${encodeURIComponent(intern.key)}` : undefined,
+        pfad: intern ? erlassPfadVonKey(intern.key, intern.ebene) : undefined,
         url: l.url,
       });
     }

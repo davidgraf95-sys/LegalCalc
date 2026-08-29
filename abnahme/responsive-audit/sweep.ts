@@ -44,8 +44,12 @@ const MOTIVE: { name: string; route: string; aktion?: (page: Page) => Promise<vo
   { name: 'reader-bund-gross-ZGB', route: '/gesetze/bund/ZGB' },
   { name: 'reader-bund-klein-VMWG', route: '/gesetze/bund/VMWG' },
   { name: 'reader-kanton-AG', route: '/gesetze/kanton/AG-291.150' },
-  { name: 'reader-pdf-embed-EMRK', route: '/gesetze/bund/EMRK' },
-  { name: 'reader-lugue-anhaenge', route: '/gesetze/bund/LUGUE' },
+  // Staatsverträge stehen seit Befund 45 (29.8.2026) unter /gesetze/international/.
+  // Ein Messpunkt auf der Alt-Adresse misst die Weiterleitung mit statt der
+  // Seite — er wäre stumm falsch geblieben, weil die Seite ja erscheint
+  // (Gegenprüfung 29.8.2026, 2. Durchgang, Mangel 3).
+  { name: 'reader-pdf-embed-EMRK', route: '/gesetze/international/EMRK' },
+  { name: 'reader-lugue-anhaenge', route: '/gesetze/international/LUGUE' },
   // ── International / LugÜ (Anhänge!) ──
   { name: 'international-uebersicht', route: '/international' },
   // ── Rechtsprechung: Übersicht + EntscheidLeser ──

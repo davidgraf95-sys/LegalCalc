@@ -14,6 +14,7 @@ import { ladeEntscheidManifest } from '../../lib/rechtsprechung/browse';
 import { bundSnapshotRef } from '../../lib/normtext/bundRef';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import type { EntscheidSnapshot } from '../../lib/rechtsprechung/typen';
+import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // ─── EntscheidLeser: beide Verzahnungs-Richtungen am Dokumentfuss (V1.3) ─────
 //
@@ -119,7 +120,7 @@ export function ZitierteNormenGruppe({ abschnitte, zitierteNormen, regesteAnker,
           // Erlass-Brücke: nur wo ein Bund-Snapshot auflösbar ist (nie ein toter
           // Link, §8) — öffnet den Artikel im Pane, der Entscheid bleibt offen.
           const ref = bundSnapshotRef(norm);
-          const readerLink = ref ? `/gesetze/bund/${encodeURIComponent(ref.quelle)}#art-${ref.token}` : null;
+          const readerLink = ref ? `${erlassPfadVonKey(ref.quelle)}#art-${ref.token}` : null;
           const revidiert = revidiertFuer(norm);
           return (
             <span key={norm} className="inline-flex items-center">

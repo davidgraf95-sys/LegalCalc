@@ -40,6 +40,28 @@ test.describe('Kantons-Übersicht (G5 · §4.3)', () => {
     expect(fehler).toEqual([])
   })
 
+  // Fehlerbuch-Befund 41 (Prüfung 29.8.2026): «Karte/Umschalter weg nach Wahl».
+  // Der Umschalter lebt naturgemäss nur in der Übersicht — sie unmountet, sobald
+  // ein Kanton gewählt ist. Was daran wirklich stört, ist der Verlust der WAHL:
+  // Wer über die Liste einstieg, landete auf dem Rückweg «← Alle Kantone» wieder
+  // auf der Karte. Rot-Beweis 29.8.2026 vor dem Fix (Playwright, dev-Server):
+  // «nach Rückweg — Karte gedrückt: true | Liste gedrückt: false».
+  test('§4.3.3 Die Ansicht-Wahl überlebt die Kantons-Wahl (Fehlerbuch 41)', async ({ page }) => {
+    await page.goto('/gesetze?ebene=kanton')
+    const main = page.getByRole('main')
+    const ansicht = () => main.getByRole('group', { name: 'Ansicht' })
+    await ansicht().getByRole('button', { name: 'Liste' }).click()
+    await expect(ansicht().getByRole('button', { name: 'Liste' })).toHaveAttribute('aria-pressed', 'true')
+    // Kanton wählen → Detailsicht, Übersicht (samt Umschalter) unmountet.
+    await main.getByRole('button', { name: /Zürich/ }).first().click()
+    await expect(main.getByRole('button', { name: /Alle Kantone/ })).toBeVisible()
+    await expect(ansicht()).toHaveCount(0)
+    // Rückweg: die zuvor gewählte Sicht steht wieder da, nicht der Default.
+    await main.getByRole('button', { name: /Alle Kantone/ }).click()
+    await expect(ansicht().getByRole('button', { name: 'Liste' })).toHaveAttribute('aria-pressed', 'true')
+    await expect(ansicht().getByRole('button', { name: 'Karte' })).toHaveAttribute('aria-pressed', 'false')
+  })
+
   test('§4.3.2 Sortierung Alphabet/Erlass-Zahl/Region; Region gruppiert nach Grossregion', async ({ page }) => {
     await page.goto('/gesetze?ebene=kanton')
     const main = page.getByRole('main')

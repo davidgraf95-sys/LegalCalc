@@ -77,13 +77,13 @@ export function GliederungSheet({
         <p className="text-micro leading-snug text-ink-600 [overflow-wrap:anywhere]">
           {pfad.map((l, i) => (
             <span key={`${l}-${i}`}>
-              {i > 0 && <span aria-hidden className="mx-1 text-ink-300">›</span>}
+              {i > 0 && <span aria-hidden className="mx-1 text-ink-400">›</span>}
               {l}
             </span>
           ))}
           {aktArtikelLabel && (
             <>
-              {pfad.length > 0 && <span aria-hidden className="mx-1 text-ink-300">›</span>}
+              {pfad.length > 0 && <span aria-hidden className="mx-1 text-ink-400">›</span>}
               <span className="font-medium text-ink-900">{aktArtikelLabel}</span>
             </>
           )}

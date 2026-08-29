@@ -15,8 +15,10 @@ import type { Schriftskala } from './useSchriftskala';
 // Mobil zusätzlich der ☰-Schalter, der die Seitenleisten-Schublade öffnet
 // (onMenu, von Shell); auf Desktop ein Schalter, der die persistente
 // Seitenleiste ein-/ausklappt.
-export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalten, schrift }: {
+export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeitenleisteUmschalten, schrift }: {
   onMenu: () => void;
+  /** Ob die Off-Canvas-Schublade offen ist — nur dann existiert ihr DOM-Ziel. */
+  schubladeOffen: boolean;
   seitenleisteEingeklappt: boolean;
   onSeitenleisteUmschalten: () => void;
   /** Globale Schriftskala (A−/A+), R3 — ersetzt den früheren Breiten-Umschalter. */
@@ -56,7 +58,11 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
           ref={menuKnopf}
           className={`lc-btn lc-btn-ghost lc-btn-sm lg:hidden shrink-0 min-h-11 min-w-11 ${weicht}`}
           aria-label="Navigation öffnen"
-          aria-controls="seitenleisten-schublade"
+          aria-expanded={schubladeOffen}
+          // aria-controls nur bei offener Schublade: die Ziel-ID existiert erst
+          // dann im DOM — axe wertet den Dauer-Verweis als critical
+          // (aria-valid-attr-value; Bug-Check Mobile-Kopf 29.8.2026).
+          aria-controls={schubladeOffen ? 'seitenleisten-schublade' : undefined}
           onClick={onMenu}
         >
           <span aria-hidden className="text-base leading-none">☰</span>
@@ -83,39 +89,80 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
             Name wird von Screenreadern nicht zuverlässig vorgelesen); disabled an
             den Anschlägen (§13/F4); Tastatur + sichtbarer Fokus über die globale
             :focus-visible-Outline. Ab lg, mobil aus (knapper Topbar-Platz). */}
-        <div role="group" aria-label="Schriftgrösse" className="hidden lg:inline-flex shrink-0 items-center gap-0.5 rounded-lg border border-line bg-surface p-0.5">
-          <button
-            type="button"
-            aria-label="Schrift verkleinern"
-            disabled={!schrift.kannKleiner}
-            onClick={schrift.kleiner}
-            className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
-          >
-            A<span aria-hidden>−</span>
-          </button>
-          {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
-              ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
-          <span aria-live="polite" className="w-12 select-none text-center text-micro tabular-nums text-ink-500">{schrift.prozent} %</span>
-          <button
-            type="button"
-            aria-label="Schrift vergrössern"
-            disabled={!schrift.kannGroesser}
-            onClick={schrift.groesser}
-            className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
-          >
-            A<span aria-hidden>+</span>
-          </button>
+        {/* ── C4 · ENTSCHEID DAVID 5B (29.8.2026) · BEIDE REGLER SAGEN, WAS SIE STELLEN
+            BEFUND (Design-Review C4, gemessen 17.8. und erneut 29.8.2026 @1440
+            im Leser): zwei sichtbar gleich aussehende «A− 100 % A+»-Regler
+            standen gleichzeitig auf 120 % und 118 % — dieser hier skaliert die
+            ganze Anwendung über die Wurzel-rem (`useSchriftskala`, WCAG 1.4.4),
+            der im «Ansicht»-Menü nur den Normtext (`leserSchrift.ts`). Der
+            Unterschied stand ausschliesslich im `aria-label`; wer sieht, sah
+            zweimal dasselbe Bedienelement (= Fehlerbuch-18, dort als «Kern:
+            Scope nur im aria-label» präzisiert).
+            ENTSCHEID: nicht einen Regler streichen, sondern beide beschriften —
+            der Scope steht sichtbar davor, in derselben Anordnung wie im Menü
+            (Wort links, Steller rechts), damit die zwei als ZWEI Werkzeuge
+            lesbar sind statt als Dopplung. Gegenstück: «Nur Gesetzestext» in
+            `v3/LeserAnsichtV3.tsx`; das Wort «Nur» dort trägt die Abgrenzung.
+            Der Regler bleibt ab lg sichtbar und mobil aus (Streifen-Platz, C2). */}
+        <div role="group" aria-label="Schriftgrösse der ganzen Seite" className="hidden lg:inline-flex shrink-0 items-center gap-1.5">
+          <span aria-hidden className="select-none whitespace-nowrap text-micro text-ink-500">Ganze Seite</span>
+          <span className="inline-flex items-center gap-0.5 rounded-lg border border-line bg-surface p-0.5">
+            <button
+              type="button"
+              aria-label="Ganze Seite verkleinern"
+              title="Verkleinert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+              disabled={!schrift.kannKleiner}
+              onClick={schrift.kleiner}
+              className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
+            >
+              A<span aria-hidden>−</span>
+            </button>
+            {/* Live-Wertansage des aktuellen Prozentwerts (WCAG 4.1.3), tabular für
+                ruckelfreie Breite; w-12 hält die Breite stabil (Token, keine px). */}
+            <span aria-live="polite" className="w-12 select-none text-center text-micro tabular-nums text-ink-500">{schrift.prozent} %</span>
+            <button
+              type="button"
+              aria-label="Ganze Seite vergrössern"
+              title="Vergrössert die ganze Anwendung — der Gesetzestext hat im Menü «Ansicht» einen eigenen Regler"
+              disabled={!schrift.kannGroesser}
+              onClick={schrift.groesser}
+              className="rounded-md px-2.5 py-1 text-body-s font-medium text-ink-600 transition-colors hover:text-ink-900 disabled:pointer-events-none disabled:opacity-40"
+            >
+              A<span aria-hidden>+</span>
+            </button>
+          </span>
         </div>
 
-        {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke. */}
-        <Link to="/" className={`lg:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
+        {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke.
+            ── C2 (Design-Review 29.8.2026) · UNTER 480 px TRÄGT DIE SCHUBLADE DIE MARKE
+            Gemessen @320 im warmen Zustand (Verlauf + ein offener Reiter): der
+            Streifen brauchte 332 px in einem 320-px-Fenster, «de ▾» hing über der
+            Kante. Acht Bedienelemente à 44 px passen dort nicht nebeneinander —
+            eines muss weichen, und es ist das, was einen benannten Ersatz EINEN
+            Tap entfernt hat: der ☰-Schalter steht in derselben Ecke, die
+            Schublade zeigt unter 480 px die Marke (`Sidebar.tsx`, spiegelbildlich
+            dieselbe Schwelle) und darunter «Start» als ersten Nav-Eintrag. Ab
+            480 px steht das Logo unverändert hier. */}
+        <Link to="/" className={`lg:hidden max-[480px]:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
           <LexMetrikSiegel size={30} />
           {/* Wortmarke ab sm — auf schmalen Schirmen trägt die Suche die Mitte. */}
           <LexMetrikWortmarke className="hidden sm:block text-h3" />
         </Link>
 
         {/* max-w-xl deckelt die Feldbreite auf Desktop; im mobilen Fokusmodus ist
-            der Viewport ohnehin schmaler, das Feld füllt also den Streifen. */}
+            der Viewport ohnehin schmaler, das Feld füllt also den Streifen.
+            C1/B10/L3: unter 480 px trägt die Zone im Ruhezustand die 44-px-Lupe
+            (`HeaderSuche`). Die Lupe hält ihre 44 px selbst — `min-w-11 shrink-0`
+            an IHR, nicht an dieser Hülle.
+            NACHGEMESSEN 29.8.2026 (Korrekturrunde, warm, Chromium gegen dist/):
+            hier stand zusätzlich ein `max-[480px]:min-w-11`, das nie band. Die
+            flex-1-Hülle bekommt den Restplatz und ist auf jeder geprüften Breite
+            weiter als ihr Inhalt — 72 px @320, 112 @360, 152 @400, 212 @460, auf
+            allen vier Routen (/gesetze · / · Leser V3 · /rechtsprechung), und
+            zwar mit UND ohne die Untergrenze identisch (16/16 Messpunkte). Die
+            Lupe stand dabei nie über der Hüllenkante, sondern 28 px darin. Die
+            Untergrenze ist darum gestrichen statt bewacht (§17): sie trug keine
+            Wirkung, aber die Behauptung einer. */}
         <div className="flex-1 min-w-0 max-w-xl">
           <HeaderSuche onFokusModus={setSucheBreit} onFokusZurueck={() => { fokusWunsch.current = true; }} />
         </div>
@@ -124,7 +171,29 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
           {/* A5 (David 5.7.2026): kein eigener Palette-Knopf mehr — die
               HeaderSuche trägt den Norm-Sprung selbst; ⌘K/Ctrl-K und «/»
               fokussieren ihr Feld (Hinweis-kbd sitzt im Feld). */}
-          <VerlaufUebersicht />
+          {/* ── C2 · DER VERLAUF-TRIGGER WEICHT UNTER 480 px ────────────────
+              Zweite Hälfte derselben Rechnung wie beim Logo. Der Verlauf ist der
+              einzige Werkzeug-Knopf mit einem ZWEITEN Zugang: das Suchfeld
+              öffnet leer den `SucheLeerzustand`, und der speist sich aus
+              DERSELBEN Quelle (`useZuletzt` → `lib/zuletztVerwendet.ts`, §5),
+              nicht aus einer Kopie. Reiter, Farbschema und Sprache haben das
+              nicht und bleiben darum stehen. Ab 480 px ist der Trigger
+              unverändert da (Gegenprobe im Tor).
+              GRENZE DIESES ARGUMENTS, nachgemessen 29.8.2026 (Korrekturrunde):
+              der Zweitzugang ist dieselbe Quelle, aber NICHT dieselbe Länge —
+              `zuletztVerwendet.ts` hält MAX = 12, `HeaderSuche` kappt den
+              Leerzustand auf 5. Unter 480 px sind die Einträge 6–12 damit ohne
+              Bedien-Weg (erreichbar bleiben sie über die Suche selbst und über
+              normale Navigation, es ist eine Komfort-Lücke, keine Sackgasse).
+              Die frühere Fassung dieses Kommentars behauptete «genau diese
+              Liste» — das war zu stark und ist hier korrigiert statt still
+              stehengelassen (§8). Die Kappung wird NICHT im Vorbeigehen gehoben:
+              5 Verlaufs-Zeilen + kuratierte Einstiege ist die gewachsene
+              Anordnung des Leerzustands (UI-NAV O1), und 12 Zeilen schöben die
+              Einstiege unter die Falz. Ob der Leerzustand unter 480 px die volle
+              Liste zeigen soll, ist ein Anordnungs-Entscheid für David —
+              offener Punkt in der Rückgabe der Bau-Einheit W2·11-MOBILKOPF. */}
+          <div className="max-[480px]:hidden"><VerlaufUebersicht /></div>
           <ReiterUebersicht />
           <ThemaUmschalter />
           <SprachUmschalter />

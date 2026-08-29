@@ -32,7 +32,10 @@ describe('O4 · Kantons-Einstieg: Abdeckung ehrlich VOR dem Klick', () => {
 
   it('die Kontext-Zeile nennt die Einschränkung und den ehrlichen Rückfall', () => {
     const html = renderToString(
-      <MemoryRouter><KantonAuswahl gruppen={[]} alleKantone={[]} onWaehle={() => {}} /></MemoryRouter>,
+      // ansicht/onAnsicht liegen seit dem Fehlerbuch-41-Fix beim Aufrufer (der
+      // Zustand muss die Kantons-Wahl überleben, die Übersicht unmountet dabei).
+      // Für diese Prüfung der Kontext-Zeile zählt nur, dass sie überhaupt rendert.
+      <MemoryRouter><KantonAuswahl gruppen={[]} alleKantone={[]} onWaehle={() => {}} ansicht="karte" onAnsicht={() => {}} /></MemoryRouter>,
     );
     // Identitäts-Treffer auf den tragenden Halbsätzen, nicht auf einem Stichwort.
     expect(html).toContain('soweit sie hinterlegt ist');

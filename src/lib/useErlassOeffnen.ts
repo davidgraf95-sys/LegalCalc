@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ladeTabs, merkeTab, naechsteInstanz } from './tabs';
 import { pfadTeil } from './verlaufLabel';
+import { erlassPfadVonKey } from './normtext/erlassAdresse';
 
 // Öffnen eines Erlasses aus der Übersicht /gesetze (Punkt G, Auftrag David).
 // Reines Navigations-/Reiter-Werkzeug, KEINE Rechtslogik (§3): nur der Pfad
@@ -38,12 +39,15 @@ export function istErlassOffen(basePath: string): boolean {
 }
 
 /** Hook: liefert eine Öffnen-Funktion (ebene, key, kuerzel) → baut den Basispfad
- *  ('/gesetze/<ebene>/<encodeURIComponent(key)>'), wählt über zielPfadFuerOeffnen
- *  Basispfad oder neue Instanz, merkt den Reiter und navigiert dorthin. */
+ *  über `erlassAdresse` (§5). Das übergebene `ebene` ist die DATEN-Ebene des
+ *  Aufrufers; die ADRESSE kann davon abweichen — Staatsverträge stehen seit
+ *  Befund 45 unter `/gesetze/international/`. Wählt dann über
+ *  zielPfadFuerOeffnen Basispfad oder neue Instanz, merkt den Reiter und
+ *  navigiert dorthin. */
 export function useErlassOeffnen(): (ebene: string, key: string, kuerzel?: string) => void {
   const navigate = useNavigate();
   return useCallback((ebene: string, key: string, kuerzel?: string) => {
-    const basePath = `/gesetze/${ebene}/${encodeURIComponent(key)}`;
+    const basePath = erlassPfadVonKey(key, ebene);
     const ziel = zielPfadFuerOeffnen(basePath, ladeTabs().map((t) => t.path));
     merkeTab(ziel, kuerzel);
     navigate(ziel);

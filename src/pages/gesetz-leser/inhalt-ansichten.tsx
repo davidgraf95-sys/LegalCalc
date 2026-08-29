@@ -9,6 +9,8 @@ import { ErlassKopfBlock, ErlassLeserKopf } from './parts';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { ErlassUebersicht } from './parts/ErlassUebersicht';
 import { GesetzFehlSeite } from './FehlSeite';
+import { ebeneAngabe } from './v3/erlassAnsicht';
+import { routenEbene } from '../../lib/normtext/erlassAdresse';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationskomponenten (Props rein, §3) — aus GesetzLeserInhalt
@@ -61,7 +63,12 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           da am eingebetteten PDF Fussnoten/Verweise wirkungslos wären
           (keine toten Steuerelemente, §13 F4). */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
-        overline={`${erlass.ebene === 'bund' ? 'Staatsvertrag' : `Kanton ${erlass.kanton}`} · amtliches PDF`}
+        // «Staatsvertrag» hing hier an `ebene === 'bund'` — heute folgenlos, weil
+        // beide pdf-embed-Erlasse (EMRK, NYUE) Staatsverträge SIND, aber die
+        // Auskunft kam aus der falschen Frage: ein bundesrechtliches PDF ohne
+        // Staatsvertrags-Charakter hätte sich hier zu einem gemacht (§8). Jetzt
+        // aus derselben Ableitung wie Brotkrume und Adresse (Befund 45).
+        overline={`${routenEbene(erlass) === 'international' ? 'Staatsvertrag' : ebeneAngabe(erlass).label} · amtliches PDF`}
         hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
         aktionen={
           <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
@@ -75,7 +82,15 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           sah die Leiste aber schlicht vergessen aus (§8: fehlende Werkzeuge werden
           benannt, nicht kommentarlos weggelassen — Ergänzung des G2b-Entscheids,
           kein Bugfix, Dedup-Referenz FAHRPLAN-GESETZES-UX.md G2b-Ausführungsvermerk). */}
-      <p className="text-micro text-ink-500">
+      {/* T2 (Design-Qualitäts-Pass 29.8.2026): dieser Hinweis lief auf der
+          11-px-Stufe ungedeckelt über die volle Kopfbreite — gemessen @1440 auf
+          `/gesetze/bund/EMRK` 829 px in EINER Zeile = 163 ch (WCAG 2.2 SC 1.4.8
+          erlaubt 80). Zwei Änderungen, beide token-rein: die Feinschrift-
+          Lesespalte `max-w-kleintext` (Herleitung am Token in
+          `tailwind.config.js`) und eine Stufe hoch auf `text-xs` — 11 px trägt
+          eine Zeile mit drei Anführungspaaren und einem Gedankenstrich nicht,
+          und die xs-Stufe bringt zugleich die Zeilenhöhe von 1.2 auf 1.4. */}
+      <p className="max-w-kleintext text-xs text-ink-500">
         «Im Gesetz suchen», «§ Rechtsprechung» und «Ansicht» stehen hier nicht zur Verfügung — der Text liegt nur als amtliches PDF vor, nicht als durchsuchbarer Volltext.
       </p>
       {/* Eingebettetes amtliches PDF (same-origin → Browser-Viewer mit nativer
@@ -128,7 +143,9 @@ export function LiveVerweisAnsicht({ erlass, currency }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
 }) {
-  const verweisOverline = `${erlass.rechtsgebiet === 'international' ? 'International' : erlass.ebene === 'bund' ? 'Bund' : `Kanton ${erlass.kanton}`} · amtlicher Verweis`;
+  // Dieselbe Ebene-Beschriftung wie Brotkrume und Reiter-Herkunft — bis Befund
+  // 45 stand hier eine dritte Kopie der Vorrang-Regel (§5).
+  const verweisOverline = `${ebeneAngabe(erlass).label} · amtlicher Verweis`;
   return (
     <div className="space-y-5">
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}

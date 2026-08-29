@@ -321,6 +321,13 @@ präzisiert, nie autonom gekippt.
 
 ## §7 · Zusatzposten der Linsen (neu aufgenommen)
 
+- **Kantons-Adressen ohne Segment-Wache (Gegenprüfung Intl-Routing 29.8.2026,
+  Befund 1, VORBESTEHEND):** `/gesetze/<beliebig>/AG-291.150` rendert den
+  Erlass statt zu leiten — `routenEbeneVonKey` kennt nur die 238 Bundes-Keys
+  (ERLASS_REGISTER) und fällt für 1231 Kantons-Keys aufs URL-Segment zurück.
+  Wurzel-Fix: Entscheid gegen das gebaute Browse-Manifest statt Register;
+  danach Kanonik-Tor auf Kantons-Stichprobe ausweiten.
+
 | ID | Posten | Aufwand | Einordnung |
 |---|---|---|---|
 | **Z1** | **ICS-/Kalender-Export des Frist-Ergebnisses** («Verjährung Forderung X: 31.03.2027» nach Outlook/Fristenkontrolle) — haftungsrelevanteste Lücke der Praxis-Linse; von der Produktvision explizit gedeckt («rechnen/drucken/ICS»). Ist-Stand zuerst erheben; Export «ohne Gewähr»-gelabelt (§8), reine UI-Ausleitung ohne neues Rechenrisiko. | S–M | eigene kleine Einheit nach N0 |
@@ -456,6 +463,16 @@ präzisiert, nie autonom gekippt.
    Navigations-Rail (V5) ist zulässig.
 9. **Sektionsreihenfolge der Universalsuche umdrehen** *(#1-Rohvorschlag)* — überschreibt
    A6 (David 5.7.); zulässiger Weg = §Y-Frage 1 + Kappung in S5.
+10. **Teil-Dokument öffnen (nur eine Abteilung/ein Titel statt des ganzen Erlasses)**
+    *(Design-Review-Benchmark B8, 29.8.2026)* — **David-Entscheid 29.8.2026, Frage 9:
+    «nein».** Der Vorschlag stammte aus dem Benchmark gegen fremde Portale, die grosse
+    Erlasse stückeln, weil ihr Volltext nicht performant ist. LexMetrik hat dieses
+    Problem nicht: TOC und Volltext stehen gleichzeitig, und Ctrl+F über das GANZE
+    Gesetz ist Juristen-Kernwerkzeug (dieselbe Begründung wie Ziff. 2 oben,
+    CLAUDE.md §15.1). Ein Teil-Dokument wäre zudem eine zweite Adressierung desselben
+    Erlasses neben `/gesetze/<ebene>/<key>#anker` — also eine zweite Wahrheit über den
+    Ort (§5). **Nicht-Bauen-Notiz — nicht wiedervorlegen.** Wortlaut-Nachweis der
+    Entscheid-Mappe: `fahrplaene/FAHRPLAN-DESIGN-WAERME.md` §7.
 
 ---
 

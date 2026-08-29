@@ -354,6 +354,7 @@ export function Shell({ children }: { children: ReactNode }) {
           <PaneSteuerungProvider value={paneSteuerung}>
           <Topbar
             onMenu={() => setSchubladeOffen(true)}
+            schubladeOffen={schubladeOffen}
             seitenleisteEingeklappt={seitenleiste.eingeklappt}
             onSeitenleisteUmschalten={seitenleiste.umschalten}
             schrift={schriftskala}
