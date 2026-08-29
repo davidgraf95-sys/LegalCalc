@@ -56,6 +56,14 @@ export default {
         // FristenKalender/wizard bereits verwendet, war aber nie generiert
         // (stiller No-op — die Kreise/Flächen blieben transparent).
         paper: { DEFAULT: 'var(--paper)', raised: 'var(--paper-raised)', sunken: 'var(--paper-sunken)' },
+        // Kantonskarte (2B, 29.8.2026): Erfassungsgrad-Füllungen + Kante — Werte
+        // in index.css; hier registriert, damit das Farbwelt-Tor sie als
+        // Pflichtpaare prüfen kann (Bug-Check #568, §17).
+        karte: {
+          voll: 'var(--karte-voll)', auswahl: 'var(--karte-auswahl)',
+          duenn: 'var(--karte-duenn)', leer: 'var(--karte-leer)',
+          kante: 'var(--karte-kante)', marke: 'var(--karte-marke)',
+        },
         surface: { DEFAULT: 'var(--surface)', raised: 'var(--surface-raised)' },
         brass: {
           100: 'var(--brass-100)', 200: 'var(--brass-200)', 300: 'var(--brass-300)',
