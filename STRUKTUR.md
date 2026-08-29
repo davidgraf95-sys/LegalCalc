@@ -30,6 +30,39 @@ Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-G
 nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
 Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
 
+## Session 28./29.8.2026 (Nacht+Tag) — UI-Grossoffensive «Ordnung & Sauberkeit»: 8 Landungen (#564–#571, #573), Design-Pass, 10 David-Entscheide, Rechtsgebiets-Trennung
+
+**Gelandet + live (je Deploy-Probe):** #564 Sachgebiets-Klassierung (2er-Pauschale ersetzt,
+BGFA-Signal; 3 GP-Runden) · #565 CLS /gesetze 0.44→0.00 + Perf-Tor-Route · #566 UI-Batch 1
+(docTitle, Intl-Meta, «Einträge»-Regel, Sidebar-Einstufung) · #567 Lesbarkeits-Welle
+(Lesespalten-/Kleintext-Deckel, Fussnoten 128→75 ch, sup-Boden, Affordanz-Kontraste,
+Spur-Abstand 32→20 px auf David-Zuruf) · #568 Kantonskarte=Erfassungsgrad+Legende (2B/4) ·
+#569 Mobile-Kopf (Lupe <480 px, 320er-Tor, Regler beschriftet 5B) · #570 **Staffelung
+aufgehoben — eine Textkante wie Fedlex + 68-ch-Deckel (1C)**, strictPort-Fix ·
+#571 Staatsverträge → /gesetze/international mit Redirects (10) · #573 **Rechtsgebiets-
+Trennung Steuern/Sozialversicherung** (4 GP-Runden, Art. 31/32 BgerR; Rest 12/6341
+deklariert; David-Abnahme §7 offen: CO2-Frage Q-TR-1, verified). Offen in CI: #574
+Nachzüge, #572 Frische (Wurzelfixe B1–B5 gebaut: TI-Strukturschnitt, SZ-Zweistufen-Stand,
+Tor check:stand-zukunft, Workflow→volle Tore; GP-Runde 2 läuft).
+
+**Grundlage:** Design-Qualitäts-Pass (5 Review-Agenten + Fehlerbuch-Repro 9/14 bestätigt),
+Triage + Bauwellen im Session-Scratch; Davids 10 Entscheide («1C 2B 3 Regel 4 grösser 5B
+6 einziehen 7A 8 ja 9 nein 10 ja») protokolliert in FAHRPLAN-DESIGN-WAERME §7.
+**Prozess:** ~20 Unteragenten (Opus/kleiner), jede Risiko-Landung mit adversarialer GP
+(3 davon erst nach Widerlegungs-Runden), §9-Bug-Checks je PR.
+
+**Lehren verankert (Skill lehren):** F8 Beleg-ans-Tor-angepasst (→ §0-Ziff. 2b in allen
+Agent-Klassen) · F9 Stand-Leser-nimmt-Zukunft (→ Tor check:stand-zukunft) · F2-Verschärfungen
+(Retry-/maxFailures-Maskierung: ⌘K-Wächter 69/69 Erstversuch rot seit 16.8. unbemerkt;
+Automatik prüfte Tor-Teilmenge). Chronik-Umschichtung 29.8. (W2·10-UI-NAV komplett + W2·15-CLS).
+
+**Offen für Folge-Sessions:** Entscheid 6 einziehender Mobilkopf (Mechanik-Notizen im
+mkopf-Bericht) · TOC-nowrap @320 + Seiten-Tor · B2/B7/B3/B4/B1/B6-Benchmark-Features ·
+Kantons-Adress-Wache (FAHRPLAN-UI-NAV §7) · Rechtsprechung-CLS 0.54 (FAHRPLAN-PERF Posten 3) ·
+Leser-CLS-Wurzel §2-N · BS-Fassungs-Drift (13 Erlasse) · ⌘K-Diagnose (Fehlerbuch).
+**Wartet auf David:** CO2/verified (§7) · Verlauf 6–12 <480 px · Erfassungsgrad-4.-Stufe ·
+Retry-Politik · Frische-Auto-Merge-Politik (Verdikt-Pflicht vs. Rahmen 16.7.).
+
 ## Session 21.8.2026 — Cowork-Befunde abgearbeitet, J3-Rechtsgebiete, Lesemass, §7b, H5-Abriss — sieben Landungen (PR #554–#560, W2·5m-LESER-V3 + W2·10-UI-NAV)
 
 - **Orchestrierte Session (Auftrag David: nur orchestrieren, tokensparend, «bau bis alles gelandet ist»).** Sieben PRs seriell gelandet, alle live verifiziert: **#554** 13 Cowork-Befunde (18.8.) + Scroll-Blur (§9-Gegenprüfung fing zwei Suchfilter-Blocker: Umlaut-Haystack, Synonym-Recall) · **#555** J3 Gesetzesübersicht nach Rechtsgebieten inkl. Befunde 18/19 (W2·10-UI-NAV → done) · **#556** Blur dezenter · **#557** Kopf-Reservierung überlebt Zurück aus Entscheid/Material (Befund David, Rot-Beweis (k)) · **#558** §7b-Testdeckung + Panel-Variante C (David-Wahl aus drei Screenshot-Varianten) + Escape-Fix · **#559** Lesespalte dynamisch breiter (LESEMASS_MAX 45rem, Satzspiegel-Entscheid David; CI fing Blatt-Spur-Regression, gefixt) · **#560** **H5: alte Hülle + Flag gelöscht, ~4'900 Zeilen, volle Batterie 676/676** — Abnahme per Repo-weitem Altlast-Grep (bestanden; Nachlese-Commit führte 10 Fahrplan-/Kommentar-Altverweise nach).
