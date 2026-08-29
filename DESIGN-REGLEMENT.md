@@ -483,6 +483,26 @@ liegen im Gesetzes-Reader (`gesetz-leser/*`) und der Rechtsprechung
 (`RegesteBlock`/`EntscheidBody`/`EntscheidKarte`) — **null** Produkt-UI. Keine
 dritte Schrift (§15). Regel erfüllt, keine Code-Änderung nötig.
 
+*Zusatz 29.8.2026 (Entscheid David, Antwort 3 «Regel»; Review-Befund T6).* Der
+Design-Qualitäts-Pass fand, dass Mono nicht nur Zahlen trägt: `.lc-overline`
+setzt `font-mono` und erscheint rund 600× pro Seite — mit **Wörtern** darin
+(«RECHTSSAMMLUNG SCHWEIZ», «GLIEDERUNG», «ERFASSUNGSGRAD»). Formal ein Verstoss
+gegen «Mono nur Zahlen/Aktenzeichen». Zur Wahl standen: die ~600 Vorkommen
+umstellen oder die Regel schärfen. **David hat die Regel gewählt.** Sie lautet
+daher jetzt:
+
+> Mono trägt **Zahlen, Aktenzeichen und kleine STRUKTUR-ETIKETTEN**
+> (`.lc-overline`, Chip-Labels) — also Wörter, die eine Fläche *beschriften*,
+> nicht Wörter, die man *liest*.
+
+Die Grenze ist nicht die Wortart, sondern die Funktion: ein Etikett benennt eine
+Region (Overline über einer Sektion, Label an einem Chip) und wird gescannt; ein
+Satz wird gelesen und bleibt Sans bzw. — bei zitierfähigem Quelltext — Serif.
+Fliesstext, Lead-Absätze, Bildunterschriften und Hilfetexte gehören **nie** in
+die Mono-Stimme, auch nicht kurze. Beleg für die Abgrenzung am lebenden Objekt:
+`SchweizKarte.tsx` trägt das Overline «Erfassungsgrad» in Mono, den Zusatz
+«3 Erlasse · dünn» der Bildunterschrift dagegen bewusst nicht.
+
 **f — Linien unter der Tinte, Textur-NEIN.** Struktur-/Haarlinien sind immer
 schwächer als der ink-600-Sekundärtext und laufen nur über die color-mix-Tokens
 (`--line`, `--line-strong`, `--rule-*`). Explizites **NEIN**

@@ -262,3 +262,43 @@ Gesamtbild-Touchpoint statt 40 Einzeländerungen.
 Grenz-Hinweis. Steuert nicht — Spec-Heimat. **→ Bau-Spec: §2 (D-8.2) dieser Datei.***
 
 > **Grenze zu `W2·17-UI-BEFUNDE-B12`:** hier nur der Schriftart-Tausch (mono → Text), dort Verhalten und Zustände derselben Felder — nacheinander bauen, nicht gleichzeitig (`src/components/forms`, `DatumsFeld.tsx`, `BetragsFeld.tsx`).
+
+---
+
+## §7 · David-Entscheide 29.8.2026 (Design-Qualitäts-Pass Gesetzes-Bereich)
+
+Herkunft: Design-Qualitäts-Pass über den Gesetzes-Bereich (fünf Review-Agenten,
+Auftrag David 21.8.2026, ROADMAP-Schritt W2·11-DESIGN). Die Reports warfen zehn
+Fragen auf, die **Geschmack oder Produktrichtung** betreffen und darum nicht
+autonom entscheidbar waren (CLAUDE.md §17: fachliche/Geschmacks-Abnahme bleibt
+bei David). Sie wurden ihm am 29.8.2026 als nummerierte Liste vorgelegt.
+
+**Antwort David 29.8.2026, wörtlich:**
+
+> 1C 2B 3 Regel 4 grösser 5B 6 einziehen 7A 8 ja 9 nein 10 ja
+
+Aufgelöst — je eine Zeile, was der Entscheid bedeutet:
+
+| # | Antwort | Bedeutung |
+|---|---|---|
+| 1 | **C** | Satzspiegel: `ch`-Deckel am Textkörper, **68 ch** (statt «alles auf eine rem-Zahl»). Betrifft `tailwind.config.js` `max-w-reading` und die Lead-Absätze (T1/L5). |
+| 2 | **B** | Kantenskarte: die **Farbe kodiert den Erfassungsgrad** und bekommt eine sichtbare **Legende** (statt Einfarb-Karte). Quelle bleibt `lib/normtext/erfassungsgrad.ts` (§5). |
+| 3 | **Regel** | Zwei-Stimmen-Regel wird **erweitert** statt die ~600 Vorkommen umgestellt: kleine **Struktur-Etiketten** (`lc-overline`, `lc-chip`-Labels) gehören ausdrücklich zur Mono-Stimme (Review-Befund T6). Verankert in `DESIGN-REGLEMENT.md` §G/e. |
+| 4 | **grösser** | Die **Kartentexte** auf `/gesetze` steigen eine Schriftstufe (Review-Befund T8: die 16-px-Stufe fehlte, es sprang 18→14). |
+| 5 | **B** | **Beide** Schriftgrössen-Regler bleiben — aber je **beschriftet**, damit ihr verschiedener Wirkungsbereich sichtbar ist (Topbar = ganze App via `html`, Menü = Gesetzestext; Review-Befund C4). |
+| 6 | **einziehen** | Die mobile **Zusatzzeile der klebenden Kopfzeile zieht beim Scrollen ein** (statt stehenzubleiben) — sie belegte 157 px = 23.5 % der Höhe (C10). |
+| 7 | **A** | Beim Drilldown **bleibt die App-Leiste weg**; stattdessen wird der **Rückweg auffälliger** (L11). |
+| 8 | **ja** | Ein **zustandsloser Feed «neue Fassungen»** (RSS/JSON) wird gebaut (B11). Zustandslos = keine Nutzerkonten, keine gespeicherten Abos. |
+| 9 | **nein** | **KEIN Teil-Dokument-Öffnen** (nur eine Abteilung statt des ganzen Erlasses; B8). Als verworfen eingetragen in `fahrplaene/FAHRPLAN-UI-NAVIGATION.md` §Z Ziff. 10 — mit Grund, damit der Vorschlag nicht wiederkehrt. |
+| 10 | **ja** | International bekommt die eigene Route **`/gesetze/international`** mit **301-Redirects** von den bisherigen `/gesetze/bund/`-Adressen (Fehlerbuch-Befund 45). |
+
+**Bereits umgesetzt (Stand 29.8.2026):** Nr. 2 und Nr. 4 im Branch
+`feat/w2-11-kantonskarte` (Karten-Erfassungsgrad + Legende, Kartentexte eine
+Stufe grösser); Nr. 3 als Reglement-Zusatz in `DESIGN-REGLEMENT.md` §G/e;
+Nr. 9 als Nicht-Bauen-Notiz. **Offen:** Nr. 1, 5, 6, 7, 8, 10.
+
+**Warum diese Tabelle hier steht und nicht im Chat:** Ein Entscheid, der nur im
+Verlauf existiert, ist beim nächsten Bau-Auftrag verloren und wird ein zweites
+Mal gefragt (CLAUDE.md §17). Die Kurzform «1C 2B 3 Regel …» ist ohne die
+Fragenliste nicht rekonstruierbar — darum steht der Wortlaut **und** seine
+Auflösung nebeneinander.
