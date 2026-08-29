@@ -161,12 +161,18 @@ const KALIBRIER_BASIS = zahlAusUmgebung('PERF_KALIBRIER_BASIS', 1120);
 const KALIBRIER_MIN = 150;
 const KALIBRIER_MAX = 20_000;
 
+// `null` heisst: **gemessen und gedruckt, aber NICHT assertiert** — für eine
+// Route, die (noch) keine Runner-Kalibrierung hat. Ein aus der Luft gegriffener
+// Deckel auf einer runner-abhängigen Metrik ist entweder so weit, dass er nichts
+// fängt (§17: bewachen statt streichen), oder so eng, dass er Rausch-Rot
+// produziert; beides ist schlechter als eine ehrlich als «unkalibriert»
+// deklarierte Zahl im Bericht (§8). Eingeführt 29.8.2026 mit `/gesetze`.
 type Schwelle = {
-  clsMax: number;     // Cumulative Layout Shift (geräteunabhängig — der harte Regressions-Fänger)
-  lcpMax: number;     // Largest Contentful Paint (ms) — CPU-abhängig, grosszügiger Deckel
-  tbtMax: number;     // Total Blocking Time (ms) — bewertet auf dem NORMIERTEN Wert (3.8.2026)
-  ttiMax: number;     // Time To Interactive (ms)
-  scoreMin: number;   // Performance-Score 0..100
+  clsMax: number;          // Cumulative Layout Shift (geräteunabhängig — der harte Regressions-Fänger)
+  lcpMax: number | null;   // Largest Contentful Paint (ms) — CPU-abhängig, grosszügiger Deckel
+  tbtMax: number | null;   // Total Blocking Time (ms) — bewertet auf dem NORMIERTEN Wert (3.8.2026)
+  ttiMax: number | null;   // Time To Interactive (ms)
+  scoreMin: number | null; // Performance-Score 0..100
 };
 
 // ── Schwellen-Kalibrierung (NEU 20.7.2026, neues Messregime) ────────────────
@@ -255,6 +261,44 @@ const SCHWELLEN: Record<string, { url: string; label: string; s: Schwelle }> = {
     url: `${BASE}/`,
     label: 'Startseite',
     s: { clsMax: 0.05, lcpMax: 10000, tbtMax: 400, ttiMax: 12000, scoreMin: 55 },
+  },
+  // ── DRITTE ROUTE: /gesetze (Übersicht) — neu 29.8.2026, Schritt W2·15-CLS ──
+  //
+  // WARUM SIE FEHLTE UND WAS DAS GEKOSTET HAT: der CLS-Deckel lief auf
+  // `/gesetze/bund/OR` (Leser) und der Startseite — die ÜBERSICHT `/gesetze`
+  // war in keinem Budget. Genau dort sass ein Lade-CLS von **0.4385** (Desktop
+  // 1440×900, @8× und @4×, n=5, input-freie Shifts; mobil 412×823: 0.3364), und
+  // er ist an jedem Tor vorbeigelaufen. Ein Defekt, den kein Tor beobachtet,
+  // kommt wieder (§17) — darum ist die Verdrahtung hier der zweite, gleich
+  // wichtige Teil des Schritts, nicht Beiwerk.
+  //
+  // WAS ASSERTIERT WIRD — und warum nur das (§8, §6.7):
+  //   • **CLS 0.05** wie auf den beiden anderen Routen. CLS ist die
+  //     geräteunabhängige Metrik (der Block oben: «weiterhin der schärfste
+  //     geräteunabhängige Fänger»), sie braucht keine Runner-Kalibrierung, und
+  //     sie ist die Metrik der gefundenen Defekt-Klasse. Der Deckel KANN
+  //     scheitern und tut es nachweislich: gegen den ungefixten Stand
+  //     (main 7ab30ea9e, PERF_BASE_URL auf dessen dist) meldet dieses Script
+  //     «/gesetze (Übersicht): CLS 0.331 > 0.05» — Rot-Beweis 29.8.2026.
+  //   • **LCP/TBT/TTI/Score: `null` = gemessen, gedruckt, NICHT assertiert.**
+  //     Für diese vier ist der CI-Runner die bindende Grösse (Block oben), und
+  //     dafür fehlt hier die Erhebung: es gibt keine 8er-/16er-Matrix auf
+  //     unabhängigen Runnern für diese Route. Lokal (3 Läufe, 29.8.2026,
+  //     Faktor 0.661) misst sie Score 76 · LCP 5.02 s · TBT roh 2 ms ·
+  //     TTI 5.02 s; zum Vergleich lag die Startseite lokal bei TBT roh 22 ms
+  //     gegen 138–281 ms auf CI — der Lokal-CI-Abstand ist metrikweise 7–10×
+  //     und damit als Deckel-Grundlage untauglich. Ein geratener Deckel wäre
+  //     entweder so weit, dass er nichts fängt, oder so eng, dass er
+  //     Rausch-Rot erzeugt. Lieber eine ehrlich als «unkalibriert» gedruckte
+  //     Zahl als eine hübsche (§8).
+  //     NACHZUG: `perf-kalibrierung.yml` einmal über diese Route laufen lassen
+  //     (die druckt den Messpunkt bereits mit, Schlüssel `uebersicht`), dann
+  //     die vier Deckel nach dem Muster der 3.8.-Nachmessung setzen. Als
+  //     offener Posten in FAHRPLAN-PERFORMANCE.md §2 vermerkt.
+  uebersicht: {
+    url: `${BASE}/gesetze`,
+    label: '/gesetze (Übersicht)',
+    s: { clsMax: 0.05, lcpMax: null, tbtMax: null, ttiMax: null, scoreMin: null },
   },
 };
 
@@ -464,19 +508,25 @@ async function main(): Promise<void> {
       // Begründung im NORMIEREN-Block oben). Beide Werte gehen in den Bericht.
       const tbtBewertet = tbtNorm ?? m.tbt;
       bericht[key] = { ...m, tbtNorm: tbtNorm ?? null, tbtBewertet };
+      // «unkalibriert» statt einer Deckel-Zahl, wo die Schwelle `null` ist —
+      // der Wert wird gemessen und gedruckt, aber nicht assertiert (§8).
+      const d = (v: number | null, einheit = '') => (v === null ? 'unkalibriert' : `${v}${einheit}`);
       console.log(
         `  ${label}\n` +
-        `    Score ${m.score} (≥ ${s.scoreMin})  ` +
+        `    Score ${m.score} (≥ ${d(s.scoreMin)})  ` +
         `CLS ${m.cls.toFixed(3)} (≤ ${s.clsMax})  ` +
-        `LCP ${(m.lcp / 1000).toFixed(2)} s (≤ ${(s.lcpMax / 1000).toFixed(1)} s)  ` +
+        `LCP ${(m.lcp / 1000).toFixed(2)} s (≤ ${s.lcpMax === null ? 'unkalibriert' : `${(s.lcpMax / 1000).toFixed(1)} s`})  ` +
         (tbtNorm !== undefined
-          ? `TBT ${Math.round(tbtNorm)} ms normiert (≤ ${s.tbtMax}) · roh ${Math.round(m.tbt)} ms [Transparenz]  `
-          : `TBT ${Math.round(m.tbt)} ms roh (≤ ${s.tbtMax}, keine Kalibrierung)  `) +
-        `TTI ${(m.tti / 1000).toFixed(2)} s (≤ ${(s.ttiMax / 1000).toFixed(1)} s)`,
+          ? `TBT ${Math.round(tbtNorm)} ms normiert (≤ ${d(s.tbtMax)}) · roh ${Math.round(m.tbt)} ms [Transparenz]  `
+          : `TBT ${Math.round(m.tbt)} ms roh (≤ ${d(s.tbtMax)}, keine Kalibrierung)  `) +
+        `TTI ${(m.tti / 1000).toFixed(2)} s (≤ ${s.ttiMax === null ? 'unkalibriert' : `${(s.ttiMax / 1000).toFixed(1)} s`})`,
       );
       if (!MESSEN_NUR) {
-        if (m.cls > s.clsMax) fehler.push(`${label}: CLS ${m.cls.toFixed(3)} > ${s.clsMax} (Layout-Sprung — §15/2, höchste Prio).`);
-        if (m.lcp > s.lcpMax) fehler.push(`${label}: LCP ${(m.lcp / 1000).toFixed(2)} s > ${(s.lcpMax / 1000).toFixed(1)} s.`);
+        // §6.7-Backstop (Bug-Check #565 B1): liefert Lighthouse keinen numericValue
+        // (z.B. NO_FCP), wäre NaN > clsMax === false und die Route STILL grün —
+        // bei scoreMin:null (uebersicht) fing das sonst niemand.
+        if (!Number.isFinite(m.cls) || m.cls > s.clsMax) fehler.push(`${label}: CLS ${Number.isFinite(m.cls) ? m.cls.toFixed(3) : 'NICHT MESSBAR'} > ${s.clsMax} (Layout-Sprung — §15/2, höchste Prio).`);
+        if (s.lcpMax !== null && m.lcp > s.lcpMax) fehler.push(`${label}: LCP ${(m.lcp / 1000).toFixed(2)} s > ${(s.lcpMax / 1000).toFixed(1)} s.`);
         // TBT wird seit 3.8.2026 auf dem NORMIERTEN Wert assertiert (Entscheid David
         // «Option normiert»), der Deckel selbst ist unverändert.
         // §15-LOGIKVERLUST-BEWERTUNG: KEINE. Die Schwelle bleibt bei 6500 ms; es
@@ -486,15 +536,15 @@ async function main(): Promise<void> {
         // Wert genauso an — die Normierung teilt durch die Runner-Geschwindigkeit,
         // nicht durch die Seitenlast. Weder Inhalts-, Rechtsregel- noch
         // Funktions-Treue sind berührt (§15: reines Messregime, kein App-Code).
-        if (tbtBewertet > s.tbtMax) {
+        if (s.tbtMax !== null && tbtBewertet > s.tbtMax) {
           fehler.push(
             tbtNorm !== undefined
               ? `${label}: TBT ${Math.round(tbtNorm)} ms normiert > ${s.tbtMax} ms (roh ${Math.round(m.tbt)} ms).`
               : `${label}: TBT ${Math.round(m.tbt)} ms roh > ${s.tbtMax} ms (keine gültige Kalibrierung — Rohwert-Fallback).`,
           );
         }
-        if (m.tti > s.ttiMax) fehler.push(`${label}: TTI ${(m.tti / 1000).toFixed(2)} s > ${(s.ttiMax / 1000).toFixed(1)} s.`);
-        if (m.score < s.scoreMin) fehler.push(`${label}: Score ${m.score} < ${s.scoreMin}.`);
+        if (s.ttiMax !== null && m.tti > s.ttiMax) fehler.push(`${label}: TTI ${(m.tti / 1000).toFixed(2)} s > ${(s.ttiMax / 1000).toFixed(1)} s.`);
+        if (s.scoreMin !== null && m.score < s.scoreMin) fehler.push(`${label}: Score ${m.score} < ${s.scoreMin}.`);
       }
     }
 
