@@ -275,6 +275,10 @@ async function main(): Promise<void> {
         htmLimit(async (): Promise<{ skip: true } | { ok: true; ergebnis: Awaited<ReturnType<typeof holeHtm>> } | { ok: false; msg: string }> => {
           if (kantonTokens.get(`${g.kanton}/${htmLawIdSafe(g.quelleUrl)}`) === undefined) return { skip: true };
           try {
+            // Ohne `referenz`: dieses Tor vergleicht ausschliesslich den
+            // quelleHash gegen den committeten fassungsToken. Der Zukunftsfilter
+            // wirkt nur auf `meta.stand`, das hier nie gelesen wird — ihn zu
+            // setzen änderte kein Verdikt, brächte aber die Wanduhr in ein Tor.
             return { ok: true, ergebnis: await holeHtm(g.quelleUrl, g.profil) };
           } catch (err) {
             return { ok: false, msg: err instanceof Error ? err.message : String(err) };
@@ -379,6 +383,8 @@ async function main(): Promise<void> {
         pdfLimit(async (): Promise<{ skip: true } | { ok: true; ergebnis: Awaited<ReturnType<typeof holePdf>> } | { ok: false; msg: string }> => {
           if (kantonTokens.get(`${g.kanton}/${pdfLawIdSafe(g.profil, g.quelleUrl)}`) === undefined) return { skip: true };
           try {
+            // Ohne `referenz` — gleiche Begründung wie beim HTM-Zweig oben:
+            // verglichen wird der quelleHash, nicht der Stand.
             return { ok: true, ergebnis: await holePdf(g.quelleUrl, PDF_PROFILE[g.profil]) };
           } catch (err) {
             return { ok: false, msg: err instanceof Error ? err.message : String(err) };

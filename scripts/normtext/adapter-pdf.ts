@@ -65,6 +65,7 @@
 import { createHash } from 'node:crypto';
 import { segmentiereAnhangZiffern } from './anhang-segmenter.ts';
 import { extrahiereTarifTabelle, type TarifZeile } from './tarif-tabelle.ts';
+import { juengstesNichtZukunft, ohneZukunft } from './stand-zukunft.ts';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Typen
@@ -112,8 +113,15 @@ export interface PdfProfil {
   name: PdfProfilName;
   /** Leitet die PDF-URL aus der Tarif-quelleUrl ab. */
   pdfUrlAusQuelle: (quelleUrl: string) => string;
-  /** Liest den `stand` (ISO YYYY-MM-DD) aus dem gesamten Kopf-/Fuss-Rohtext. */
-  standLeser: (kopfFussText: string) => string;
+  /**
+   * Liest den `stand` (ISO YYYY-MM-DD) aus dem gesamten Kopf-/Fuss-Rohtext.
+   *
+   * `referenz` ist das Abrufdatum (ISO) des laufenden Baus, durchgereicht vom
+   * Aufrufer (kein Date.now, §2). Kein Leser darf ein Datum zurückgeben, das
+   * NACH der Referenz liegt: der Text kann nicht die Fassung sein, die es beim
+   * Abruf noch nicht gab (`stand-zukunft.ts`). Leere Referenz → kein Filter.
+   */
+  standLeser: (kopfFussText: string, referenz: string) => string;
   /** Artikel-Marker am Zeilenanfang: '§' (SZ) oder 'Art.' (TI/VD/JU). */
   marker: '§' | 'Art.';
 }
@@ -140,11 +148,49 @@ function juPdfUrl(quelleUrl: string): string {
 // Stand-Leser je Profil
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** SZ-Fuss «SRSZ D.M.YYYY» → ISO. */
-export function leseSzStand(text: string): string {
+/**
+ * SZ-Stand, zweistufig.
+ *
+ * (1) Die Marginalie «SRSZ D.M.YYYY» auf der Titelseite — die Ausgabe-Marke der
+ *     Loseblatt-Nachführung. Sie ist der Normalfall und bleibt unverändert.
+ *
+ * (2) Fällt (1) aus, weil die Marke NACH dem Abrufdatum liegt: das jüngste
+ *     tatsächliche In-Kraft-Datum aus dem Fussnoten-Apparat.
+ *
+ * WARUM STUFE 2 (29.8.2026, Gegenprüfung PR #572, B5). SZ druckt auf ein neu
+ * nachgeführtes Blatt die Marke der NÄCHSTEN Ausgabe. Gemessen an
+ * `SRSZ 213.512` (sz.ch/public/upload/assets/7361/213_512.pdf, Abruf 29.8.2026):
+ * die Fusszeile sagt «SRSZ 1.2.2027», während Fussnote 13 desselben PDF die
+ * geltende Fassung ausweist — «… und vom 27. Mai 2026 am 1. Juli 2026
+ * (Abl RE-SZ19-0000000045) in Kraft getreten». Der Snapshot trug darum seit
+ * Wochen `stand: 2027-02-01` für einen Text, der am 1.7.2026 in Kraft trat.
+ * Ein blosses Verwerfen des Zukunftsdatums hätte einen Snapshot OHNE Stand
+ * hinterlassen — und ein Zitat ohne Stand ist nach §7 (Zitat-Ausnahme lit. a)
+ * kein zulässiges Zitat. Stufe 2 liefert stattdessen den amtlich belegten Wert.
+ *
+ * Stufe 2 greift NUR in Texten, die «in Kraft getreten» enthalten — das ist im
+ * SRSZ ausschliesslich der Fussnoten-Apparat. Ohne diese Bindung würde jedes
+ * beliebige «am 3. März 1998» im Erlasskörper als Stand durchgehen (dieselbe
+ * Falle, gegen die `leseOrdolexStand` seine Klammer-Bindung hat).
+ *
+ * Verhaltensneutral für den Bestand: SZ-173.111 (SRSZ 1.2.2026), SZ-280.411
+ * (SRSZ 1.1.2015) und SZ-82040 tragen Marken in der Vergangenheit — dort
+ * entscheidet weiterhin Stufe 1, Stufe 2 läuft nie.
+ */
+export function leseSzStand(text: string, referenz = ''): string {
   const m = text.match(/SRSZ\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/);
-  if (!m) return '';
-  return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+  if (m) {
+    const marke = `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
+    const gueltig = ohneZukunft(marke, referenz);
+    if (gueltig) return gueltig;
+  }
+  if (!/in\s+Kraft\s+getreten/i.test(text)) return '';
+  const daten: string[] = [];
+  for (const t of text.matchAll(/\bam\s+(\d{1,2})\.\s*([A-Za-zäöü]+)\s+(\d{4})/gi)) {
+    const mon = DE_MONATE[t[2].toLowerCase()];
+    if (mon) daten.push(`${t[3]}-${mon}-${t[1].padStart(2, '0')}`);
+  }
+  return juengstesNichtZukunft(daten, referenz);
 }
 
 /** Italienische Monatsnamen → MM. */
@@ -153,20 +199,22 @@ const IT_MONATE: Record<string, string> = {
   giugno: '06', luglio: '07', agosto: '08', settembre: '09', ottobre: '10',
   novembre: '11', dicembre: '12',
 };
-/** TI-Kopf «(del 30 novembre 2010)» → ISO 2010-11-30. */
-export function leseTiStand(text: string): string {
+/** TI-Kopf «(del 30 novembre 2010)» → ISO 2010-11-30. `referenz` filtert Daten
+ *  nach dem Abruf aus (s. stand-zukunft.ts). */
+export function leseTiStand(text: string, referenz = ''): string {
   const m = text.match(/\bdel\s+(\d{1,2})\s+([a-zàèéìòù]+)\s+(\d{4})/i);
   if (!m) return '';
   const mon = IT_MONATE[m[2].toLowerCase()];
   if (!mon) return '';
-  return `${m[3]}-${mon}-${m[1].padStart(2, '0')}`;
+  return ohneZukunft(`${m[3]}-${mon}-${m[1].padStart(2, '0')}`, referenz);
 }
 
-/** VD-Kopf «Entrée en vigueur dès le DD.MM.YYYY» → ISO. */
-export function leseVdStand(text: string): string {
+/** VD-Kopf «Entrée en vigueur dès le DD.MM.YYYY» → ISO. `referenz` filtert Daten
+ *  nach dem Abruf aus (s. stand-zukunft.ts). */
+export function leseVdStand(text: string, referenz = ''): string {
   const m = text.match(/Entrée en vigueur dès le\s+(\d{2})\.(\d{2})\.(\d{4})/i);
   if (!m) return '';
-  return `${m[3]}-${m[2]}-${m[1]}`;
+  return ohneZukunft(`${m[3]}-${m[2]}-${m[1]}`, referenz);
 }
 
 /** Französische Monatsnamen → MM. */
@@ -176,12 +224,12 @@ const FR_MONATE: Record<string, string> = {
   septembre: '09', octobre: '10', novembre: '11', décembre: '12', decembre: '12',
 };
 /** JU-Kopf «du 24 mars 2010» (Erlassdatum) → ISO 2010-03-24. */
-export function leseJuStand(text: string): string {
+export function leseJuStand(text: string, referenz = ''): string {
   const m = text.match(/\bdu\s+(\d{1,2})(?:er)?\s+([a-zàâçéèêëîïôûù]+)\s+(\d{4})/i);
   if (!m) return '';
   const mon = FR_MONATE[m[2].toLowerCase()];
   if (!mon) return '';
-  return `${m[3]}-${mon}-${m[1].padStart(2, '0')}`;
+  return ohneZukunft(`${m[3]}-${mon}-${m[1].padStart(2, '0')}`, referenz);
 }
 
 /** Deutsche Monatsnamen → MM. */
@@ -198,7 +246,7 @@ const DE_MONATE: Record<string, string> = {
  * Der «Stand»/«état» ist das KONSOLIDIERUNGS-Datum (geltende Fassung, §7) — nicht
  * das Erlassdatum («vom …»/«du …»), das davor steht.
  */
-export function leseOrdolexStand(text: string): string {
+export function leseOrdolexStand(text: string, referenz = ''): string {
   // Der Konsolidierungskopf ist IMMER geklammert — «(Stand …)» / «(état …)» /
   // «(version entrée en vigueur le …)». Die Klammer-Bindung ist wichtig, weil der
   // Stand-Leser auch über den ungefilterten Body (textbasis/rohText) läuft: ohne
@@ -207,18 +255,18 @@ export function leseOrdolexStand(text: string): string {
   const de = text.match(/\(\s*Stand\s+(\d{1,2})\.\s*([A-Za-zäöü]+)\s+(\d{4})/i);
   if (de) {
     const mon = DE_MONATE[de[2].toLowerCase()];
-    if (mon) return `${de[3]}-${mon}-${de[1].padStart(2, '0')}`;
+    if (mon) return ohneZukunft(`${de[3]}-${mon}-${de[1].padStart(2, '0')}`, referenz);
   }
   const frNum = text.match(/\(\s*état\s+(?:au\s+)?(\d{1,2})\.(\d{1,2})\.(\d{4})/i);
-  if (frNum) return `${frNum[3]}-${frNum[2].padStart(2, '0')}-${frNum[1].padStart(2, '0')}`;
+  if (frNum) return ohneZukunft(`${frNum[3]}-${frNum[2].padStart(2, '0')}-${frNum[1].padStart(2, '0')}`, referenz);
   // FR-Konsolidierung: «(version entrée en vigueur le 01.07.2016)» — das
   // In-Kraft-Datum der geltenden Fassung ist der Stand (§7). «le» oder «dès le».
   const frVig = text.match(/\(\s*version\s+entrée en vigueur\s+(?:dès\s+)?le\s+(\d{1,2})\.(\d{1,2})\.(\d{4})/i);
-  if (frVig) return `${frVig[3]}-${frVig[2].padStart(2, '0')}-${frVig[1].padStart(2, '0')}`;
+  if (frVig) return ohneZukunft(`${frVig[3]}-${frVig[2].padStart(2, '0')}-${frVig[1].padStart(2, '0')}`, referenz);
   const frLang = text.match(/\(\s*état\s+au\s+(\d{1,2})(?:er)?\s+([a-zàâçéèêëîïôûù]+)\s+(\d{4})/i);
   if (frLang) {
     const mon = FR_MONATE[frLang[2].toLowerCase()];
-    if (mon) return `${frLang[3]}-${mon}-${frLang[1].padStart(2, '0')}`;
+    if (mon) return ohneZukunft(`${frLang[3]}-${mon}-${frLang[1].padStart(2, '0')}`, referenz);
   }
   return '';
 }
@@ -239,7 +287,7 @@ export const PDF_PROFILE: Record<PdfProfilName, PdfProfil> = {
   olexAt: {
     name: 'olexAt',
     pdfUrlAusQuelle: (u) => u,
-    standLeser: (t) => leseOrdolexStand(t) || leseTiStand(t),
+    standLeser: (t, referenz) => leseOrdolexStand(t, referenz) || leseTiStand(t, referenz),
     marker: 'Art.',
   },
   olexPar: { name: 'olexPar', pdfUrlAusQuelle: (u) => u, standLeser: leseOrdolexStand, marker: '§' },
@@ -1008,6 +1056,7 @@ const UA = 'Mozilla/5.0 (LexMetrik Normtext-Snapshot)';
 export async function holePdf(
   quelleUrl: string,
   profil: PdfProfil,
+  referenz = '',
 ): Promise<PdfErgebnis> {
   const pdfUrl = profil.pdfUrlAusQuelle(quelleUrl);
   const res = await fetch(pdfUrl, { headers: { 'User-Agent': UA } });
@@ -1048,16 +1097,23 @@ export async function holePdf(
   // novembre 2010)» / JU: «du 24 mars 2010» stehen NICHT im Kopfband, sondern in
   // den ersten Body-Zeilen vor dem ersten Artikel).
   const praeambel = zeilen.slice(0, 30).map((z) => z.text).join(' ');
+  //
+  // `referenz` (Abrufdatum, vom Aufrufer durchgereicht — kein Date.now, §2) geht
+  // in JEDEN Leser: keiner darf einen Stand liefern, den es beim Abruf noch nicht
+  // gab. Das ist die zweite Hälfte des Wurzel-Fixes vom 29.8.2026 (B5) — die
+  // erste ist der Strukturschnitt im HTM-Adapter. Beide sind nötig: SZ druckt das
+  // Zukunftsdatum ins amtliche Dokument selbst, dort schneidet kein Filter etwas
+  // weg (s. leseSzStand).
   const stand =
-    profil.standLeser(randText) ||
-    profil.standLeser(titel) ||
-    profil.standLeser(praeambel) ||
+    profil.standLeser(randText, referenz) ||
+    profil.standLeser(titel, referenz) ||
+    profil.standLeser(praeambel, referenz) ||
     // Body als Fallback, dann der UNGEFILTERTE Roh-Volltext: der SZ-«SRSZ
     // D.M.YYYY»-Stempel steht als Marginalie mitten auf der Titelseite (weder Band
     // noch Body). standLeser ist je Profil ein enges Datums-Muster → first match
     // = Konsolidierungsdatum; Fehlgriff praktisch ausgeschlossen.
-    profil.standLeser(textbasis) ||
-    profil.standLeser(rohText) ||
+    profil.standLeser(textbasis, referenz) ||
+    profil.standLeser(rohText, referenz) ||
     '';
   const quelleHash = berechnePdfQuelleHash(artikel);
 

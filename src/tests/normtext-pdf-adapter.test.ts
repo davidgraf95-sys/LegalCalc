@@ -96,6 +96,32 @@ describe('PDF-Adapter SZ (§-Profil, GebO SRSZ 173.111)', () => {
   it('Stand aus dem SZ-Fussband «SRSZ 1.2.2026» → 2026-02-01', () => {
     expect(leseSzStand(SZ_GEBO_RANDTEXT)).toBe('2026-02-01');
     expect(leseSzStand('ohne Marker')).toBe('');
+    // Vergangenheits-Marke bleibt Stufe 1, auch mit Referenz (verhaltensneutral).
+    expect(leseSzStand(SZ_GEBO_RANDTEXT, '2026-08-29')).toBe('2026-02-01');
+  });
+
+  // Regression zu PR #572, Befund B5 (29.8.2026). SZ druckt auf ein neu
+  // nachgeführtes Blatt die Ausgabe-Marke der NÄCHSTEN Nachführung. Bei
+  // SRSZ 213.512 stand «SRSZ 1.2.2027» im Fuss, während Fussnote 13 desselben
+  // PDF die geltende Fassung ausweist. Der Snapshot trug darum stand=2027-02-01
+  // für einen Text, der am 1.7.2026 in Kraft trat.
+  // Wortlaut gekürzt aus dem amtlichen PDF (sz.ch/.../7361/213_512.pdf, Abruf 29.8.2026).
+  const SZ_213512_FUSS =
+    'SRSZ 1.2.2027   5   § 7   13   31. Januar 1975; Änderungen vom 1. Juni 1999 sind am ' +
+    '1. Juli 1999 (Abl 1999 855), vom 19. Mai 2020 am 1. Juli 2020 (Abl 2020 1316) und ' +
+    'vom 27. Mai 2026 am 1. Juli 2026 (Abl RE-SZ19-0000000045) in Kraft getreten.';
+
+  it('B5: Ausgabe-Marke in der Zukunft → Stand aus dem Fussnoten-Apparat', () => {
+    expect(leseSzStand(SZ_213512_FUSS, '2026-08-29')).toBe('2026-07-01');
+    // Ohne Referenz bleibt es beim alten Verhalten (kein Filter) — so ist der
+    // Unterschied im Test sichtbar und nicht bloss behauptet.
+    expect(leseSzStand(SZ_213512_FUSS)).toBe('2027-02-01');
+  });
+
+  it('B5: Stufe 2 greift NUR im Fussnoten-Apparat («in Kraft getreten»)', () => {
+    // Ein Erlasskörper ohne die Bindungsphrase darf kein «am …»-Datum als Stand
+    // ausgeben — sonst wäre jeder Querverweis im Text ein Stand-Kandidat.
+    expect(leseSzStand('SRSZ 1.2.2027  Die Frist beginnt am 3. März 1998.', '2026-08-29')).toBe('');
   });
 });
 

@@ -11,6 +11,7 @@ import {
   berechneQuelleHash,
   tiHtmlUrlAusQuelle,
   leseTiStand,
+  tiErlassDokument,
 } from '../../scripts/normtext/adapter-htm.ts';
 import { GE_RTFMC_HTM } from './fixtures/htm-ge-rtfmc.ts';
 import { NE_LTFRAIS_HTM } from './fixtures/htm-ne-ltfrais.ts';
@@ -213,5 +214,72 @@ describe('HTM-Adapter — TI (m3.ti.ch)', () => {
     expect(alle.labels['8']).toBe('Art. 8');
     expect(alle.meta.stand).toBe('2015-02-10');
     expect(alle.meta.quelleHash).toMatch(/^[0-9a-f]{64}$/);
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TI-Portal-Umgebung (Regression zu PR #572, Befunde B1 + B2, 29.8.2026)
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// m3.ti.ch liefert das Erlass-Dokument EINGENÄHT in eine Portalseite. Hinter dem
+// `</html>` des Erlasses folgen die Seiten-Beiwerke — u. a. der Abschnitt
+// «PROSSIME VARIAZIONI» mit der KÜNFTIGEN Fassung und dessen Zuklapp-Links
+// «chiudi -». Beides trat am 29.8.2026 real auf (atto 181, BU 2026, 281, in Kraft
+// 1.1.2027) und erzeugte zwei Defekte aus einer Ursache: `stand: 2027-01-01`
+// statt 17.5.2024, und zwei «chiudi -»-Blöcke im Normtext von Art. 41.
+//
+// Der Rahmen unten ist der ECHTE Aufbau der Seite (Byte-Reihenfolge aus dem
+// Live-Abruf 29.8.2026), gekürzt auf die tragenden Teile.
+const TI_PORTAL_RAHMEN = (erlass: string): string => `<!DOCTYPE html>
+<html><head><title>CAN - Raccolta delle leggi del Cantone Ticino</title></head>
+<body><div id="col1Legge">
+${erlass}
+</div>
+<div id="col2Legge">
+  <div id="elencoVariazioni">
+    <h3 class="variazioni">PROSSIME VARIAZIONI<p><a ID="a1variazioni" href="javascript:apri('variazioni');">chiudi -</a></p></h3>
+    <div id="variazioni">
+      <h4 class="variazioni">MODIFICA<p><a ID="a1modifica" href="javascript:apri('modifica');">chiudi -</a></p></h4>
+      <ul id=modifica><li class="pdf"><a href="http://www3.ti.ch/CAN/fu/2026/BU_028.pdf">
+        <b>216.200</b><br><b>MODIFICA (BU 2026, 281)</b><br>
+        Variazione in vigore dal 01.01.2027<BR></a></li></ul>
+    </div>
+  </div>
+</div>
+</body></html>`;
+
+describe('HTM-Adapter — TI: Portal-Umgebung ist kein Normtext (B1/B2)', () => {
+  const seite = TI_PORTAL_RAHMEN(TI_LTG_HTML);
+
+  it('schneidet das eingebettete Erlass-Dokument heraus', () => {
+    const dok = tiErlassDokument(seite);
+    expect(dok).toContain('La presente legge stabilisce la tariffa');
+    expect(dok).not.toContain('PROSSIME VARIAZIONI');
+    expect(dok).not.toContain('chiudi');
+    expect(dok).not.toContain('01.01.2027');
+  });
+
+  it('B1: der Stand bleibt die GELTENDE Fassung, nicht die angekündigte', () => {
+    const alle = extrahiereAlleHtmArtikel(seite, 'ti', '2026-08-29');
+    expect(alle.meta.stand).toBe('2015-02-10');
+    // Gegenprobe — ohne den Schnitt griffe der Parser das Ankündigungsdatum:
+    expect(leseTiStand(seite)).toBe('2027-01-01');
+  });
+
+  it('B2: kein «chiudi -»-Block landet im Normtext', () => {
+    const alle = extrahiereAlleHtmArtikel(seite, 'ti', '2026-08-29');
+    for (const art of Object.values(alle.artikel)) {
+      for (const b of art.bloecke) expect(b.text).not.toMatch(/chiudi/i);
+    }
+    // Und der Erlass ist vollständig geblieben (kein Artikel-Verlust durch den Schnitt).
+    expect(Object.keys(alle.artikel).sort()).toEqual(['1', '8', '9']);
+  });
+
+  it('Zukunftsfilter greift auch OHNE Schnitt, wenn das Datum im Dokument steht', () => {
+    // Zweite Verteidigungslinie: eine künftige Fassung, die der Erlass SELBST
+    // in einer Anmerkung datiert, erreicht kein Strukturschnitt.
+    const text = 'in vigore dal 10.2.2015 - BU 2015, 38. Modifica; in vigore dal 1.1.2027 - BU 2026, 281.';
+    expect(leseTiStand(text, '2026-08-29')).toBe('2015-02-10');
+    expect(leseTiStand(text)).toBe('2027-01-01'); // ohne Referenz: kein Filter
   });
 });
