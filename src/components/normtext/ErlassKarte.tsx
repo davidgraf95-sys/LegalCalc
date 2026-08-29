@@ -56,11 +56,27 @@ function KarteInhalt({ e }: { e: BrowseErlass }) {
       <p className="mt-1.5 text-body-s text-ink-600 leading-snug line-clamp-2">{e.titel}</p>
       <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
         {e.sr && <span>SR <span className="num">{e.sr}</span></span>}
-        {e.status === 'snapshot'
-          ? <span><span className="num">{e.artikelAnzahl}</span> Artikel</span>
-          : e.status === 'pdf-embed'
-            ? <span className="text-ink-500">amtliches PDF</span>
-            : <span className="text-ink-500">nur Live-Link</span>}
+        {/* EIN Meta-Schema für alle Karten (Fehlerbuch-Befund 47, auf Prod
+            reproduziert 29.8.2026): «SR x.y · N Artikel · [Format] · Stand».
+            Vorher standen MENGE und FORMAT im selben Slot, im selben Ton, als
+            Zweig eines Entweder-oder — EMRK las sich als «SR 0.101 · amtliches
+            PDF», CISG als «SR 0.221.211.1 · 101 Artikel». Wer die beiden
+            International-Karten nebeneinander sah, konnte nicht erkennen, ob
+            EMRK keine Artikel HAT oder ob dort etwas anderes ausgesagt wird.
+            Jetzt sind es zwei getrennte Slots mit je eigener Stimme:
+
+            · MENGE — nur wo wir sie wirklich haben. `artikelAnzahl` ist laut
+              browse-typen.ts bei nicht-Snapshot-Erlassen 0; die Zahl hängt
+              deshalb an `> 0`, nicht am Status. Das ist zugleich die Wache
+              gegen ein «0 Artikel», das ein leeres Register behaupten würde,
+              wo in Wahrheit gar kein Snapshot existiert (§8).
+            · FORMAT — als Badge (`lc-badge-soft`, Token, §13/D2), also sichtbar
+              eine ANDERE Art von Aussage als eine Zahl. Volltext-Snapshots
+              tragen kein Tag: sie sind der Normalfall, und 1'300 Karten mit
+              «Volltext» zu beschriften wäre Lärm, keine Auskunft. */}
+        {e.artikelAnzahl > 0 && <span><span className="num">{e.artikelAnzahl}</span> Artikel</span>}
+        {e.status === 'pdf-embed' && <span className="lc-badge lc-badge-soft">amtliches PDF</span>}
+        {e.status === 'nur-live-link' && <span className="lc-badge lc-badge-soft">nur Live-Link</span>}
         <StandChip stand={e.stand} />
         {werkzeugAnzahl > 0 && (
           <span className="text-brass-700">
