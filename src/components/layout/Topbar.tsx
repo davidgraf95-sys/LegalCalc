@@ -15,8 +15,10 @@ import type { Schriftskala } from './useSchriftskala';
 // Mobil zusätzlich der ☰-Schalter, der die Seitenleisten-Schublade öffnet
 // (onMenu, von Shell); auf Desktop ein Schalter, der die persistente
 // Seitenleiste ein-/ausklappt.
-export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalten, schrift }: {
+export function Topbar({ onMenu, schubladeOffen, seitenleisteEingeklappt, onSeitenleisteUmschalten, schrift }: {
   onMenu: () => void;
+  /** Ob die Off-Canvas-Schublade offen ist — nur dann existiert ihr DOM-Ziel. */
+  schubladeOffen: boolean;
   seitenleisteEingeklappt: boolean;
   onSeitenleisteUmschalten: () => void;
   /** Globale Schriftskala (A−/A+), R3 — ersetzt den früheren Breiten-Umschalter. */
@@ -56,7 +58,11 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
           ref={menuKnopf}
           className={`lc-btn lc-btn-ghost lc-btn-sm lg:hidden shrink-0 min-h-11 min-w-11 ${weicht}`}
           aria-label="Navigation öffnen"
-          aria-controls="seitenleisten-schublade"
+          aria-expanded={schubladeOffen}
+          // aria-controls nur bei offener Schublade: die Ziel-ID existiert erst
+          // dann im DOM — axe wertet den Dauer-Verweis als critical
+          // (aria-valid-attr-value; Bug-Check Mobile-Kopf 29.8.2026).
+          aria-controls={schubladeOffen ? 'seitenleisten-schublade' : undefined}
           onClick={onMenu}
         >
           <span aria-hidden className="text-base leading-none">☰</span>
