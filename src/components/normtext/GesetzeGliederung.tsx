@@ -82,7 +82,7 @@ export function KantonRelevanzListe({ erlasse, sys }: {
         nach der amtlichen Systematik des Kantons. Für die volle amtliche
         Gliederung «Systematisch» wählen.
       </RelevanzHinweis>
-      <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>
+      <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
         {sortiert.map((e) => <SysZeile key={e.key} e={e} />)}
       </div>
     </div>
@@ -127,7 +127,7 @@ export function KantonGebietGruppen({ erlasse }: { erlasse: BrowseErlass[] }) {
                 unsuffixierte `bg-line` — hier angeglichen. */}
             <span aria-hidden className="flex-1 h-px bg-line" />
           </div>
-          <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5')}>
+          <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
             {g.items.map((e) => <SysZeile key={e.key} e={e} />)}
           </div>
         </section>

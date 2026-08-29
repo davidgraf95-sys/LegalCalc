@@ -255,7 +255,21 @@ const Zeile = memo(function Zeile({
               // der erste Klick schliesst sie. Der zweite öffnet beides.
               onClick={() => onToggle(k.ids, auf)}
               aria-expanded={auf} aria-label={auf ? 'Einklappen' : 'Aufklappen'}
-              className="shrink-0 text-ink-300 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
+              // F3/C5 (Design-Qualitäts-Pass 29.8.2026): ink-300 → ink-500.
+              // Das Dreieck ist die EINZIGE Affordanz dieses Knopfes (kein
+              // Rahmen, keine Fläche, 11 px). Gemessen gegen `--paper`:
+              // ink-300 hell 2.28:1 / dunkel 2.34:1 — DESIGN-REGLEMENT F2
+              // verlangt für Nicht-Text (UI-Komponenten, Icons) ≥ 3:1. Die
+              // Haarlinien-Ausnahme des F2b-Nachtrags D-4 («ink-400/ink-300
+              // sind Deko-Töne ohne 3:1-Anspruch») greift hier nicht: ein
+              // Bedienelement ist keine Deko. ink-500 misst hell 5.10 /
+              // dunkel 5.52 (well 4.83 / 5.79) — mit Abstand über der
+              // Nicht-Text-Schwelle und zugleich über der TEXT-Schwelle
+              // 4.5:1, was für eine Glyphe die ehrlichere Messlatte ist.
+              // ink-400 (hell 3.13 auf `--well`) hätte 0.13 Reserve gehabt.
+              // §5: dieselbe Stufe, die SprachUmschalter.tsx und die
+              // Formular-Chevrons für dasselbe Zeichen längst setzen.
+              className="shrink-0 text-ink-500 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
           )
           : <span className="shrink-0 w-4" aria-hidden />}
         {/* F5-Positionsmarke (§3.5): 2-px-Messingkante, Muster layout/Sidebar.tsx.

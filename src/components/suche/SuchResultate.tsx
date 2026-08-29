@@ -283,7 +283,14 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
         // 11px-Feinschrift in ink-600, nicht ink-500 (Auftrag David 25.6.2026,
         // Muster lc-fineprint): auf brass-getönten Flächen (Hero) fällt ink-500
         // bei 11px unter AA (axe 4.23:1) — ink-600 trägt AA in beiden Themes.
-        <p className="mt-2 px-1 text-micro leading-snug text-ink-600">
+        // T2 (Design-Qualitäts-Pass 29.8.2026): Abdeckungs-Zeile auf der
+        // 11-px-Stufe, gemessen @1440 auf `/suche` 630 px = 129 ch/Zeile
+        // (WCAG 2.2 SC 1.4.8: 80). `max-w-kleintext` ist die Feinschrift-
+        // Lesespalte (Herleitung am Token in `tailwind.config.js`). Die GRÖSSE
+        // bleibt hier `micro`: anders als die Hinweise im Leser trägt diese
+        // Zeile keinen Fliesstext, sondern eine Zahlen-Bilanz dicht unter dem
+        // Trefferzähler.
+        <p className="mt-2 px-1 max-w-kleintext text-micro leading-snug text-ink-600">
           {/* «Erlasse (Bund + International)», nicht «Bund-Erlasse» (Cowork-Befund
               32, 18.8.2026): die Zahl zählt alle Volltext-Snapshots der Ebene
               `bund` — darunter die Staatsverträge/EU-Erlasse, die unter dieser

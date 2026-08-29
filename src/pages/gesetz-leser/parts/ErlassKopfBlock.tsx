@@ -134,7 +134,9 @@ export function ErlassKopfBlock({ kopf, intern }: { kopf: ErlassKopf; intern?: I
                leading-normal`), und sie muss es bleiben: es ist dieselbe Rolle am
                anderen Ort (§5). Der Kommentar unten nennt diese Kopplung schon für
                die Farbe; sie gilt für die Grösse genauso. */
-            <p key={i} id={fn.nr ? `fn-kopf-${fn.nr}` : undefined} className="nt-anker text-leser-fn text-ink-500 target:bg-brass-100">
+            /* T3 (29.8.2026): `max-w-kleintext` zieht die Kopplung mit — dieselbe
+               Rolle, dieselbe Feinschrift-Spalte (§5). */
+            <p key={i} id={fn.nr ? `fn-kopf-${fn.nr}` : undefined} className="nt-anker max-w-kleintext text-leser-fn text-ink-500 target:bg-brass-100">
               {/* WCAG-AA (§13): Fussnoten-Nummer ist semantischer Text (kein aria-hidden).
                   LM-153 (W2·17-UI-BEFUNDE-B4): brass-700 statt ink-500 — dieselbe
                   Auszeichnung wie die Marke im Fliesstext (FnRef, ArtikelBody.tsx),

@@ -94,7 +94,8 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
           <span className="flex min-w-0 items-center gap-1 text-body-s">
             {breadcrumb.map((b, i) => (
               <span key={`${i}-${b.label}`} className="inline-flex min-w-0 items-center gap-1">
-                {i > 0 && <span aria-hidden className="shrink-0 text-ink-300">›</span>}
+                {/* C5 (29.8.2026): Trenner ink-300 → ink-400, Herleitung in `InhaltsKopf.tsx`. */}
+                {i > 0 && <span aria-hidden className="shrink-0 text-ink-400">›</span>}
                 {b.to && onBreadcrumb ? (
                   <button type="button" onClick={() => onBreadcrumb(b.to!)}
                     className="truncate text-ink-500 no-underline hover:text-brass-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:-outline-offset-2 rounded-sm">{b.label}</button>
