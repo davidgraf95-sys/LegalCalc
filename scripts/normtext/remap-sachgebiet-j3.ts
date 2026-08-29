@@ -35,7 +35,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   istMehrdeutigeOerAbteilung, normSignalSachgebiet, abteilungZuSachgebiet,
-  zweierLegalAreaSignal, zweierRohSteuerSignal,
+  zweierLegalAreaSignal, zweierRohSteuerSignal, bgeBand,
 } from './entscheide-mapping';
 import { schreibeKorpus } from './entscheide-schreiben';
 import { alleSnapshots } from './snapshot-walker';
@@ -48,16 +48,8 @@ const PUB = join(ROOT, 'public', 'rechtsprechung');
 const args = process.argv.slice(2);
 const schreiben = args.includes('--schreiben');
 
-/** BGE-Band (römisch) aus der Sammlungs-Nummer «150 II 300» / «150_II_300».
- *  Unterstriche werden normalisiert (Bug-Check B4, 29.8.2026: `_` ist ein
- *  Wortzeichen, `\b` feuerte in der Unterstrich-Form nie — still aus dem
- *  Scope gefallen). Alt-Bände «Ia»/«Ib» (vor 1995) matcht das Muster bewusst
- *  nicht — sie sind nicht im Korpus und blieben ausserhalb des I/II-Scopes.
- */
-function bgeBand(nummer: string): string | null {
-  const m = /\b(IV|III|II|I|V)\b/.exec(String(nummer).replace(/_/g, ' '));
-  return m ? m[1] : null;
-}
+// `bgeBand` lebt seit dem F1-Fix (29.8.2026) als EINE Quelle in
+// entscheide-mapping.ts (§5) — hier lag bis dahin eine Kopie.
 
 /** Reparierte 2er-Abteilungs-Kette — gleiche REGELN wie mappeEntscheidOCL (C2-1 +
  *  J3 + Gegenprüfungs-Korrekturen F1–F3, 29.8.2026). DEKLARIERTE Eingabe-Divergenz

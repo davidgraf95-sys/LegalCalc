@@ -163,7 +163,10 @@ describe('Snapshot-Assemblierung (§3.4) + Kollisionsregel (§3.2)', () => {
     expect(s.nummerSekundaer).toBe('SVG.2026.119');
     expect(s.fassungsToken).toBe('2026-07-10');        // aktualisiert als Drift-Token
     expect(s.sha).toBe(sha256EntscheidBloecke(s.abschnitte));
-    expect(s.sachgebiet).toBe('sozial-abgaben');       // IV-Präfix
+    // W2-TRENNUNG (29.8.2026): Das IV-Präfix (Invalidenversicherung) zeigt seit
+    // der Zerlegung des Doppel-Topfs auf 'sozialversicherung' statt auf
+    // 'sozial-abgaben' — deklarierte fachliche Änderung, §6.3.
+    expect(s.sachgebiet).toBe('sozialversicherung');   // IV-Präfix
     expect(s.quelleUrl).toContain('nF30_KEY=74438');
   });
 

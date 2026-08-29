@@ -34,9 +34,43 @@ export const GEBIETE: ReadonlyArray<{ id: Rechtsgebiet; label: string }> = [
   { id: 'prozess', label: 'Verfahrensrecht' },
   { id: 'schkg', label: 'Schuldbetreibung & Konkurs' },
   { id: 'oeffentlich', label: 'Öffentliches Recht' },
-  { id: 'sozial-abgaben', label: 'Steuern, Sozialversicherung & Abgaben' },
+  // W2-TRENNUNG (29.8.2026, Entscheid David «ja trennen»): zwei Achsen statt
+  // des früheren Doppel-Topfs 'sozial-abgaben' («Steuern, Sozialversicherung &
+  // Abgaben»). Reihenfolge bewusst benachbart — wer die alte Rubrik suchte,
+  // findet beide Nachfolger nebeneinander.
+  { id: 'steuern', label: 'Steuern & Abgaben' },
+  { id: 'sozialversicherung', label: 'Sozialversicherung' },
   { id: 'international', label: 'International / Staatsverträge' },
 ];
+
+/**
+ * Abgelöste Rechtsgebiets-Werte → ihre Nachfolger (Filter-/URL-Kompatibilität).
+ *
+ * W2-TRENNUNG (29.8.2026): Bis zur Trennung trug die Facetten-URL der
+ * Rechtsprechung `?rg=sozial-abgaben`; solche Links stehen in Lesezeichen,
+ * Mails und Suchmaschinen-Indizes. Der Wert ist kein Rechtsgebiet mehr — ohne
+ * Alias liefe er ins Leere und die Seite zeigte «keine Treffer», was schlicht
+ * falsch wäre (die Entscheide existieren, sie heissen nur anders).
+ *
+ * Gewählter Weg (der einfachste ehrliche der drei): der Alt-Wert filtert auf
+ * die VEREINIGUNG seiner Nachfolger — die Trefferliste ist exakt dieselbe wie
+ * vor der Trennung. Nicht gewählt: (a) auf einen der beiden umleiten (verlöre
+ * die Hälfte der Treffer, §8), (b) den Filter still fallen lassen (zeigte
+ * plötzlich das ganze Korpus). Der Alias ist reine EINGABE-Toleranz: er wird
+ * nie geschrieben, erscheint in keiner Facette und in keinem Zähler.
+ */
+export const ALT_GEBIET_ALIAS: Readonly<Record<string, readonly Rechtsgebiet[]>> = {
+  'sozial-abgaben': ['steuern', 'sozialversicherung'],
+};
+
+/**
+ * Ein Filterwert (auch ein abgelöster) → die Menge der Gebiete, die er meint.
+ * Unbekannter Wert → die einelementige Menge mit ihm selbst: ein Tippfehler
+ * filtert weiterhin auf null Treffer, statt still das ganze Korpus zu öffnen (§8).
+ */
+export function gebieteFuerFilter(wert: string): readonly Rechtsgebiet[] {
+  return ALT_GEBIET_ALIAS[wert] ?? [wert as Rechtsgebiet];
+}
 
 export const GEBIET_LABEL: Record<Rechtsgebiet, string> = Object.fromEntries(
   GEBIETE.map((g) => [g.id, g.label]),
@@ -104,21 +138,21 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   bund('RPG', 'RPG', 'Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)', '700', 'oeffentlich', 20),
   bund('USG', 'USG', 'Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)', '814.01', 'oeffentlich', 21),
   bund('GWG', 'GwG', 'Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)', '955.0', 'oeffentlich', 22),
-  bund('ATSG', 'ATSG', 'Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)', '830.1', 'sozial-abgaben', 20),
-  bund('BVG', 'BVG', 'Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)', '831.40', 'sozial-abgaben', 21),
-  bund('UVG', 'UVG', 'Bundesgesetz über die Unfallversicherung (UVG)', '832.20', 'sozial-abgaben', 22),
-  bund('AVIG', 'AVIG', 'Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)', '837.0', 'sozial-abgaben', 23),
+  bund('ATSG', 'ATSG', 'Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)', '830.1', 'sozialversicherung', 20),
+  bund('BVG', 'BVG', 'Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)', '831.40', 'sozialversicherung', 21),
+  bund('UVG', 'UVG', 'Bundesgesetz über die Unfallversicherung (UVG)', '832.20', 'sozialversicherung', 22),
+  bund('AVIG', 'AVIG', 'Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)', '837.0', 'sozialversicherung', 23),
   // ── Volltext-Ausbau Bund Batch 3 (23.6.2026, Promotion aus Stubs) ──
-  bund('IVG', 'IVG', 'Bundesgesetz über die Invalidenversicherung (IVG)', '831.20', 'sozial-abgaben', 24),
-  bund('FAMZG', 'FamZG', 'Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen (Familienzulagengesetz, FamZG)', '836.2', 'sozial-abgaben', 25),
-  bund('STHG', 'StHG', 'Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (Steuerharmonisierungsgesetz, StHG)', '642.14', 'sozial-abgaben', 26),
+  bund('IVG', 'IVG', 'Bundesgesetz über die Invalidenversicherung (IVG)', '831.20', 'sozialversicherung', 24),
+  bund('FAMZG', 'FamZG', 'Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen (Familienzulagengesetz, FamZG)', '836.2', 'sozialversicherung', 25),
+  bund('STHG', 'StHG', 'Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (Steuerharmonisierungsgesetz, StHG)', '642.14', 'steuern', 26),
   bund('AIG', 'AIG', 'Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)', '142.20', 'oeffentlich', 23),
   bund('ASYLG', 'AsylG', 'Asylgesetz (AsylG)', '142.31', 'oeffentlich', 24),
   bund('GLG', 'GlG', 'Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)', '151.1', 'oeffentlich', 25),
   bund('FINMAG', 'FINMAG', 'Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)', '956.1', 'oeffentlich', 26),
   bund('BGBB', 'BGBB', 'Bundesgesetz über das bäuerliche Bodenrecht (BGBB)', '211.412.11', 'privat', 24),
   // ── Volltext-Ausbau Bund Batch 4 (23.6.2026, Promotion aus Stubs) ──
-  bund('AHVG', 'AHVG', 'Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)', '831.10', 'sozial-abgaben', 27),
+  bund('AHVG', 'AHVG', 'Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)', '831.10', 'sozialversicherung', 27),
   bund('BANKG', 'BankG', 'Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG)', '952.0', 'oeffentlich', 27),
   bund('HMG', 'HMG', 'Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)', '812.21', 'oeffentlich', 28),
   // Verfahrensrecht
@@ -171,54 +205,54 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   bund('FINFRAG', 'FinfraG', 'Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)', '958.1', 'oeffentlich', 40),
   bund('VAG', 'VAG', 'Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)', '961.01', 'oeffentlich', 41),
   // Sozialversicherung
-  bund('ELG', 'ELG', 'Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG)', '831.30', 'sozial-abgaben', 28),
-  bund('FZG', 'FZG', 'Bundesgesetz über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)', '831.42', 'sozial-abgaben', 29),
-  bund('ENTSG', 'EntsG', 'Bundesgesetz über die flankierenden Massnahmen bei entsandten Arbeitnehmerinnen und Arbeitnehmern (Entsendegesetz, EntsG)', '823.20', 'sozial-abgaben', 30),
+  bund('ELG', 'ELG', 'Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG)', '831.30', 'sozialversicherung', 28),
+  bund('FZG', 'FZG', 'Bundesgesetz über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)', '831.42', 'sozialversicherung', 29),
+  bund('ENTSG', 'EntsG', 'Bundesgesetz über die flankierenden Massnahmen bei entsandten Arbeitnehmerinnen und Arbeitnehmern (Entsendegesetz, EntsG)', '823.20', 'oeffentlich', 125),
   // Steuern, Sozialversicherung & Abgaben
-  bund('KVG', 'KVG', 'Bundesgesetz über die Krankenversicherung', '832.10', 'sozial-abgaben', 1),
-  bund('KVV', 'KVV', 'Verordnung über die Krankenversicherung', '832.102', 'sozial-abgaben', 2),
-  bund('MWSTG', 'MWSTG', 'Bundesgesetz über die Mehrwertsteuer', '641.20', 'sozial-abgaben', 3),
-  bund('STG', 'StG', 'Bundesgesetz über die Stempelabgaben', '641.10', 'sozial-abgaben', 4, 'StG'),
-  bund('EOG', 'EOG', 'Bundesgesetz über den Erwerbsersatz (Erwerbsersatzordnung)', '834.1', 'sozial-abgaben', 5),
-  bund('ARG', 'ArG', 'Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)', '822.11', 'sozial-abgaben', 6, 'ArG'),
-  bund('DBG', 'DBG', 'Bundesgesetz über die direkte Bundessteuer', '642.11', 'sozial-abgaben', 7),
-  bund('VSTG', 'VStG', 'Bundesgesetz über die Verrechnungssteuer (Verrechnungssteuergesetz)', '642.21', 'sozial-abgaben', 8, 'VStG'),
+  bund('KVG', 'KVG', 'Bundesgesetz über die Krankenversicherung', '832.10', 'sozialversicherung', 1),
+  bund('KVV', 'KVV', 'Verordnung über die Krankenversicherung', '832.102', 'sozialversicherung', 2),
+  bund('MWSTG', 'MWSTG', 'Bundesgesetz über die Mehrwertsteuer', '641.20', 'steuern', 3),
+  bund('STG', 'StG', 'Bundesgesetz über die Stempelabgaben', '641.10', 'steuern', 4, 'StG'),
+  bund('EOG', 'EOG', 'Bundesgesetz über den Erwerbsersatz (Erwerbsersatzordnung)', '834.1', 'sozialversicherung', 5),
+  bund('ARG', 'ArG', 'Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)', '822.11', 'oeffentlich', 119, 'ArG'),
+  bund('DBG', 'DBG', 'Bundesgesetz über die direkte Bundessteuer', '642.11', 'steuern', 7),
+  bund('VSTG', 'VStG', 'Bundesgesetz über die Verrechnungssteuer (Verrechnungssteuergesetz)', '642.21', 'steuern', 8, 'VStG'),
   // ── Punkt 12 Batch 2 (24.6.2026, Bund-VERORDNUNGEN Volltext, Promotion aus
   //    nur-live-link-Stubs). Geltende Konsolidierung via date-geordnete Taxonomie-
   //    Abfrage (Resolver lieferte für viele die REPEALTE Vorgänger-VO) + Filestore-
   //    HTML-Inhalts-Sonde (art_1 + Artikelzahl == Snapshot) doppelt verifiziert
   //    (§7). Ausführungsrecht zu den Leitgesetzen. ──
-  bund('AHVV', 'AHVV', 'Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)', '831.101', 'sozial-abgaben', 51),
-  bund('IVV', 'IVV', 'Verordnung über die Invalidenversicherung (IVV)', '831.201', 'sozial-abgaben', 52),
-  bund('ELV', 'ELV', 'Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)', '831.301', 'sozial-abgaben', 53),
-  bund('BVV_2', 'BVV 2', 'Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)', '831.441.1', 'sozial-abgaben', 54, 'BVV 2'),
-  bund('UVV', 'UVV', 'Verordnung über die Unfallversicherung (UVV)', '832.202', 'sozial-abgaben', 55),
-  bund('AVIV', 'AVIV', 'Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)', '837.02', 'sozial-abgaben', 56),
-  bund('ATSV', 'ATSV', 'Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)', '830.11', 'sozial-abgaben', 57),
-  bund('KLV', 'KLV', 'Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV)', '832.112.31', 'sozial-abgaben', 58),
-  bund('MWSTV', 'MWSTV', 'Mehrwertsteuerverordnung (MWSTV)', '641.201', 'sozial-abgaben', 59),
-  bund('VSTV', 'VStV', 'Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)', '642.211', 'sozial-abgaben', 60, 'VStV'),
+  bund('AHVV', 'AHVV', 'Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)', '831.101', 'sozialversicherung', 51),
+  bund('IVV', 'IVV', 'Verordnung über die Invalidenversicherung (IVV)', '831.201', 'sozialversicherung', 52),
+  bund('ELV', 'ELV', 'Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)', '831.301', 'sozialversicherung', 53),
+  bund('BVV_2', 'BVV 2', 'Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)', '831.441.1', 'sozialversicherung', 54, 'BVV 2'),
+  bund('UVV', 'UVV', 'Verordnung über die Unfallversicherung (UVV)', '832.202', 'sozialversicherung', 55),
+  bund('AVIV', 'AVIV', 'Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)', '837.02', 'sozialversicherung', 56),
+  bund('ATSV', 'ATSV', 'Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)', '830.11', 'sozialversicherung', 57),
+  bund('KLV', 'KLV', 'Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV)', '832.112.31', 'sozialversicherung', 58),
+  bund('MWSTV', 'MWSTV', 'Mehrwertsteuerverordnung (MWSTV)', '641.201', 'steuern', 59),
+  bund('VSTV', 'VStV', 'Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)', '642.211', 'steuern', 60, 'VStV'),
   bund('VZAE', 'VZAE', 'Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)', '142.201', 'oeffentlich', 51),
   bund('VRV', 'VRV', 'Verkehrsregelnverordnung (VRV)', '741.11', 'oeffentlich', 52),
   bund('VZV', 'VZV', 'Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)', '741.51', 'oeffentlich', 53),
   bund('SSV', 'SSV', 'Signalisationsverordnung (SSV)', '741.21', 'oeffentlich', 54),
   bund('DSV', 'DSV', 'Verordnung über den Datenschutz (Datenschutzverordnung, DSV)', '235.11', 'oeffentlich', 55),
-  bund('ARGV1', 'ArGV 1', 'Verordnung 1 zum Arbeitsgesetz (Allgemeine Verordnung)', '822.111', 'sozial-abgaben', 61, 'ArGV 1'),
+  bund('ARGV1', 'ArGV 1', 'Verordnung 1 zum Arbeitsgesetz (Allgemeine Verordnung)', '822.111', 'oeffentlich', 120, 'ArGV 1'),
   bund('BEWV', 'BewV', 'Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)', '211.412.411', 'oeffentlich', 56, 'BewV'),
   bund('BUEV', 'BüV', 'Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)', '141.01', 'oeffentlich', 57, 'BüV'),
-  bund('FZV', 'FZV', 'Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)', '831.425', 'sozial-abgaben', 62),
+  bund('FZV', 'FZV', 'Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)', '831.425', 'sozialversicherung', 62),
   bund('KOV', 'KOV', 'Verordnung über die Geschäftsführung der Konkursämter (KOV)', '281.32', 'schkg', 51),
   bund('RPV', 'RPV', 'Raumplanungsverordnung (RPV)', '700.1', 'oeffentlich', 58),
   bund('VBB', 'VFRR', 'Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR)', '281.31', 'schkg', 52, 'VFRR'),
   bund('VOEB', 'VöB', 'Verordnung über das öffentliche Beschaffungswesen (VöB)', '172.056.11', 'oeffentlich', 59, 'VöB'),
   bund('VZG', 'VZG', 'Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken (VZG)', '281.42', 'schkg', 53),
-  bund('BVV3', 'BVV 3', 'Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3)', '831.461.3', 'sozial-abgaben', 63, 'BVV 3'),
-  bund('MVV', 'MVV', 'Verordnung über die Militärversicherung (MVV)', '833.11', 'sozial-abgaben', 64),
-  bund('EOV', 'EOV', 'Erwerbsersatzverordnung (EOV)', '834.11', 'sozial-abgaben', 65),
-  bund('FAMZV', 'FamZV', 'Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)', '836.21', 'sozial-abgaben', 66, 'FamZV'),
-  bund('ARGV2', 'ArGV 2', 'Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)', '822.112', 'sozial-abgaben', 67, 'ArGV 2'),
-  bund('ARGV3', 'ArGV 3', 'Verordnung 3 zum Arbeitsgesetz (ArGV 3) (Gesundheitsschutz)', '822.113', 'sozial-abgaben', 68, 'ArGV 3'),
-  bund('ARGV4', 'ArGV 4', 'Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)', '822.114', 'sozial-abgaben', 69, 'ArGV 4'),
+  bund('BVV3', 'BVV 3', 'Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3)', '831.461.3', 'sozialversicherung', 63, 'BVV 3'),
+  bund('MVV', 'MVV', 'Verordnung über die Militärversicherung (MVV)', '833.11', 'sozialversicherung', 64),
+  bund('EOV', 'EOV', 'Erwerbsersatzverordnung (EOV)', '834.11', 'sozialversicherung', 65),
+  bund('FAMZV', 'FamZV', 'Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)', '836.21', 'sozialversicherung', 66, 'FamZV'),
+  bund('ARGV2', 'ArGV 2', 'Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)', '822.112', 'oeffentlich', 121, 'ArGV 2'),
+  bund('ARGV3', 'ArGV 3', 'Verordnung 3 zum Arbeitsgesetz (ArGV 3) (Gesundheitsschutz)', '822.113', 'oeffentlich', 122, 'ArGV 3'),
+  bund('ARGV4', 'ArGV 4', 'Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)', '822.114', 'oeffentlich', 123, 'ArGV 4'),
   bund('VEV', 'VEV', 'Verordnung über die Einreise und die Visumerteilung (VEV)', '142.204', 'oeffentlich', 60),
   bund('VINTA', 'VIntA', 'Verordnung über die Integration von Ausländerinnen und Ausländern (VIntA)', '142.205', 'oeffentlich', 61, 'VIntA'),
   bund('ASYLV1', 'AsylV 1', 'Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)', '142.311', 'oeffentlich', 62, 'AsylV 1'),
@@ -248,7 +282,7 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   bund('RVOV', 'RVOV', 'Regierungs- und Verwaltungsorganisationsverordnung (RVOV)', '172.010.1', 'oeffentlich', 86),
   bund('VGKE', 'VGKE', 'Reglement über die Kosten und Entschädigungen vor dem Bundesverwaltungsgericht (VGKE)', '173.320.2', 'prozess', 51),
   bund('BETMKV', 'BetmKV', 'Verordnung über die Betäubungsmittelkontrolle (Betäubungsmittelkontrollverordnung, BetmKV)', '812.121.1', 'straf', 51, 'BetmKV'),
-  bund('QSTV', 'QStV', 'Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)', '642.118.2', 'sozial-abgaben', 70, 'QStV'),
+  bund('QSTV', 'QStV', 'Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)', '642.118.2', 'steuern', 70, 'QStV'),
   // ── Punkt 12 Batch 3 (25.6.2026): Promotion nur-live-link-Stub → Volltext ──
   bund('SORTG', 'SortG', 'Bundesgesetz über den Schutz von Pflanzenzüchtungen (Sortenschutzgesetz)', '232.16', 'privat', 18, 'SortG'),
   bund('PRG', 'PRG', 'Bundesgesetz über Pauschalreisen', '944.3', 'privat', 19, 'PRG'),
@@ -256,7 +290,7 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   bund('MSTG', 'MStG', 'Militärstrafgesetz (MStG)', '321.0', 'straf', 30, 'MStG'),
   bund('MSTP', 'MStP', 'Militärstrafprozess (MStP)', '322.1', 'straf', 31, 'MStP'),
   bund('IRSG', 'IRSG', 'Bundesgesetz über internationale Rechtshilfe in Strafsachen (Rechtshilfegesetz, IRSG)', '351.1', 'straf', 32, 'IRSG'),
-  bund('MVG', 'MVG', 'Bundesgesetz über die Militärversicherung (MVG)', '833.1', 'sozial-abgaben', 71, 'MVG'),
+  bund('MVG', 'MVG', 'Bundesgesetz über die Militärversicherung (MVG)', '833.1', 'sozialversicherung', 71, 'MVG'),
   bund('ENG', 'EnG', 'Energiegesetz (EnG)', '730.0', 'oeffentlich', 90, 'EnG'),
   bund('CO2_GESETZ', 'CO2-Gesetz', 'Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)', '641.71', 'oeffentlich', 91, 'CO2-Gesetz'),
   bund('EPG', 'EpG', 'Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)', '818.101', 'oeffentlich', 92, 'EpG'),
@@ -281,11 +315,11 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   bund('ZENTV', 'ZentV', 'Verordnung über kriminalpolizeiliche Zentralstellen des Bundes (ZentV)', '360.1', 'straf', 33, 'ZentV'),
   bund('ZAVV', 'ZAV', 'Verordnung über die Anwendung polizeilichen Zwangs und polizeilicher Massnahmen im Zuständigkeitsbereich des Bundes (Zwangsanwendungsverordnung, ZAV)', '364.3', 'straf', 34, 'ZAV'),
   bund('VGR', 'VGR', 'Geschäftsreglement für das Bundesverwaltungsgericht (VGR)', '173.320.1', 'prozess', 52, 'VGR'),
-  bund('BKV', 'BKV', 'Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)', '642.118.1', 'sozial-abgaben', 72, 'BKV'),
-  bund('VFV', 'VFV', 'Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)', '831.111', 'sozial-abgaben', 73, 'VFV'),
-  bund('VVK', 'VVK', 'Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung (VVK)', '832.105', 'sozial-abgaben', 74, 'VVK'),
-  bund('VKL', 'VKL', 'Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung (VKL)', '832.104', 'sozial-abgaben', 75, 'VKL'),
-  bund('ARGV5', 'ArGV 5', 'Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5)', '822.115', 'sozial-abgaben', 76, 'ArGV 5'),
+  bund('BKV', 'BKV', 'Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)', '642.118.1', 'steuern', 72, 'BKV'),
+  bund('VFV', 'VFV', 'Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)', '831.111', 'sozialversicherung', 73, 'VFV'),
+  bund('VVK', 'VVK', 'Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung (VVK)', '832.105', 'sozialversicherung', 74, 'VVK'),
+  bund('VKL', 'VKL', 'Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung (VKL)', '832.104', 'sozialversicherung', 75, 'VKL'),
+  bund('ARGV5', 'ArGV 5', 'Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5)', '822.115', 'oeffentlich', 124, 'ArGV 5'),
   bund('BBV', 'BBV', 'Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)', '412.101', 'oeffentlich', 101, 'BBV'),
   bund('BMV', 'BMV', 'Verordnung über die Berufsmaturität (Berufsmaturitätsverordnung)', '412.103.1', 'oeffentlich', 102, 'BMV'),
   bund('ZEMIS_V', 'ZEMIS-V', 'Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)', '142.513', 'oeffentlich', 103, 'ZEMIS-V'),

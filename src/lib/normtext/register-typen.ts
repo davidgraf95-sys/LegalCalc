@@ -14,10 +14,19 @@
 import type { FedlexGesetz } from '../fedlex';
 import type { ErlassAufhebung } from './aufhebungen';
 
-/** Kanzleirelevante Sach-Achsen. Bund deklariert je Erlass; Kanton-Default unten. */
+/** Kanzleirelevante Sach-Achsen. Bund deklariert je Erlass; Kanton-Default unten.
+ *
+ *  W2-TRENNUNG (29.8.2026, Entscheid David): Der frühere Doppel-Topf
+ *  `'sozial-abgaben'` («Steuern, Sozialversicherung & Abgaben») ist in ZWEI
+ *  Sach-Achsen zerlegt — `'steuern'` und `'sozialversicherung'`. Er bündelte
+ *  zwei Rechtsgebiete, die ausser der Zuständigkeitsnähe nichts teilen, und
+ *  war mit 1619/6341 Register-Einträgen der grösste Topf der Rechtsprechung
+ *  (Q-J3-3, bibliothek/rechtsprechung/sachgebiet-klassierung-j3-2026-08-29.md).
+ *  Der Alt-Wert ist KEIN gültiges Rechtsgebiet mehr; von aussen ankommende
+ *  Alt-URLs deckt `ALT_GEBIET_ALIAS` (register.ts) als Vereinigungs-Filter ab. */
 export type Rechtsgebiet =
   | 'privat' | 'straf' | 'prozess'
-  | 'oeffentlich' | 'schkg' | 'sozial-abgaben' | 'international';
+  | 'oeffentlich' | 'schkg' | 'steuern' | 'sozialversicherung' | 'international';
 
 export type Sprache = 'de' | 'fr' | 'it';
 // 'snapshot'      = strukturierter Volltext-Snapshot (public/normtext/.../KEY.json)

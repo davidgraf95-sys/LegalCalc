@@ -65,6 +65,9 @@ export interface SoftLawDok {
   doktyp: 'wegleitung';
   titel: string;
   nummer: string; // 'Art. N'
+  // Literal-eng (dieser Adapter kennt nur SECO). Der Wert MUSS zu
+  // BEHOERDE_RECHTSGEBIET.SECO in adapter-typen.ts passen — das Tor in
+  // materialien-register.test.ts prüft das am ausgelieferten Bestand (F5).
   rechtsgebiet: 'oeffentlich';
   sprache: 'de';
   rang: number;

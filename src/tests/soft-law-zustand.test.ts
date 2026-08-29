@@ -25,7 +25,7 @@ const DOK = {
   drift_token: 'sha1', quell_ids: { url_basis: 'https://x/1' }, sha: 'sha2',
   stand: '2025-10-31', stand_quelle: 'toc', quelle_url: 'https://x', abgerufen: '2026-07-03',
   titel: 'MWST-Info 04', behoerde: 'ESTV', doktyp: 'mwst-info', nummer: null,
-  rechtsgebiet: 'sozial-abgaben', sprache: 'de', rang: 999, normKeys: ['MWSTG'], hinweis: null,
+  rechtsgebiet: 'steuern', sprache: 'de', rang: 999, normKeys: ['MWSTG'], hinweis: null,
 };
 
 describe('soft-law-zustand: ladeZustand', () => {
