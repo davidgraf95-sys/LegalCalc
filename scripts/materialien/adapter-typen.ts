@@ -50,3 +50,28 @@ export interface AdapterErgebnis {
   indexSha: string;
   abgerufen: string;
 }
+
+// ─── Rechtsgebiet je Absender — EINE Quelle (§5) ──────────────────────────────
+//
+// ANLASS: Gegenprüfung 29.8.2026, Befund F5. Nach der W2-Trennung trugen 138
+// ausgelieferte Materialien weiterhin das abgelöste Rechtsgebiet
+// 'sozial-abgaben'. Die Adapter waren umgestellt, der PERSISTIERTE Bestand in
+// `bibliothek/register/soft-law-zustand.jsonl` nicht — und nichts verglich die
+// beiden. Die Regel selbst stand bis dahin dreimal als Literal in den Adaptern
+// und ein viertes Mal als Sonderfall im Nachzieh-Skript; es gab keinen Ort, an
+// dem sie prüfbar formuliert war.
+//
+// Die Regel ist deterministisch und braucht keine Einzelfall-Kenntnis: der
+// ABSENDER entscheidet. Die ESTV ist die Eidgenössische STEUERverwaltung —
+// ihre Kreisschreiben, Rundschreiben und MWST-Infos sind ausnahmslos
+// Steuerdokumente. SECO (Arbeitsmarkt/Wirtschaft) und EDÖB (Datenschutz)
+// produzieren Verwaltungsrecht.
+//
+// Wer eine neue Soft-Law-Quelle anschliesst, trägt sie hier ein; sonst meldet
+// das Tor in materialien-register.test.ts die unbekannte Behörde, statt sie
+// still durchzulassen.
+export const BEHOERDE_RECHTSGEBIET: Readonly<Record<string, Rechtsgebiet>> = {
+  ESTV: 'steuern',
+  SECO: 'oeffentlich',
+  EDOEB: 'oeffentlich',
+};

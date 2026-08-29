@@ -53,6 +53,7 @@ import {
   mwstDokId, mwstDoktyp, mwstAnzeigeNummer, istKuriertBekannt, type MwstPubArt,
 } from './estv-mwst-ids.ts';
 import type { SoftLawDok, NormRefKante, AdapterErgebnis } from './adapter-typen.ts';
+import { BEHOERDE_RECHTSGEBIET } from './adapter-typen.ts';
 
 export const ESTV_MWST_USER_AGENT = 'LexMetrik-Materialien/1.0 (+https://lexmetrik.vercel.app)';
 export const ESTV_MWST_BASE = 'https://www.gate.estv.admin.ch/mwst-webpublikationen/public';
@@ -330,7 +331,7 @@ export function baueDokUndKanten(
     nummer,
     // W2-TRENNUNG (29.8.2026): MWST-Infos/-Branchen-Infos der ESTV sind
     // Steuerdokumente (MWSTG SR 641.20), nie Sozialversicherung.
-    rechtsgebiet: 'steuern',
+    rechtsgebiet: BEHOERDE_RECHTSGEBIET.ESTV,
     sprache: 'de',
     rang: (bereich.art === 'MI' ? 100 : 200) + Number(eintrag.nummer),
     normKeys: erlasse,

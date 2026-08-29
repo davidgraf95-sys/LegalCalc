@@ -57,6 +57,7 @@ import { normalisiereZitat } from '../datenhaltung/normalisiere-zitat.ts';
 import { datumslabelNachIso, istDeutschesDatumslabel } from './datum-de.ts';
 import { artikelAusTitel } from './adapter-edoeb.ts'; // reine, geteilte Titel-Artikel-Extraktion (M3)
 import type { SoftLawDok, NormRefKante, AdapterErgebnis } from './adapter-typen.ts';
+import { BEHOERDE_RECHTSGEBIET } from './adapter-typen.ts';
 import type { DoktypId } from '../../src/lib/materialien/typen.ts';
 
 export const ESTV_KS_USER_AGENT = 'LexMetrik-Materialien/1.0 (+https://lexmetrik.vercel.app)';
@@ -362,7 +363,7 @@ export function baueDokUndKanten(
     // W2-TRENNUNG (29.8.2026): ESTV = Eidgenössische STEUERverwaltung —
     // Kreis-/Rundschreiben zur direkten Bundessteuer und zur Verrechnungs-
     // steuer sind ausnahmslos Steuerdokumente, nie Sozialversicherung.
-    rechtsgebiet: 'steuern',
+    rechtsgebiet: BEHOERDE_RECHTSGEBIET.ESTV,
     sprache: 'de',
     rang: dokRang(b),
     normKeys: erlasse,
