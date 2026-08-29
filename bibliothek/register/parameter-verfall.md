@@ -54,16 +54,18 @@ Laufdatum) je Bund-Volltext-Erlass geerntet — Fedlex führt künftige Fassunge
 bereits im Triplestore. Jede Zeile ist eine angekündigte künftige Fassung; am
 genannten Tag `scripts/fedlex-cache.sh` neu pinnen + §7-Verifikation. Massgeblich
 bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
-`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-08-14.
+`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-08-29.
 
 | Erlass (künftige Fassung) | Fundstelle | Aktuell gepinnt | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
 | Künftige Fassung ZEMIS-V (SR 142.513) | `scripts/fedlex-cache.sh` (ZEMIS_V) | gepinnt 1.8.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
+| Künftige Fassung RVOV (SR 172.010.1) | `scripts/fedlex-cache.sh` (RVOV) | gepinnt 1.3.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung OR (SR 220) | `scripts/fedlex-cache.sh` (OR) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung HRegV (SR 221.411) | `scripts/fedlex-cache.sh` (HREGV) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung StGB (SR 311.0) | `scripts/fedlex-cache.sh` (STGB) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung BBG (SR 412.10) | `scripts/fedlex-cache.sh` (BBG) | gepinnt 1.3.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung BBV (SR 412.101) | `scripts/fedlex-cache.sh` (BBV) | gepinnt 1.3.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
+| Künftige Fassung SSV (SR 741.21) | `scripts/fedlex-cache.sh` (SSV) | gepinnt 1.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung FIDLEG (SR 950.1) | `scripts/fedlex-cache.sh` (FIDLEG) | gepinnt 1.3.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung KAG (SR 951.31) | `scripts/fedlex-cache.sh` (KAG) | gepinnt 1.3.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
 | Künftige Fassung BankG (SR 952.0) | `scripts/fedlex-cache.sh` (BANKG) | gepinnt 1.1.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.10.2026 |
@@ -75,7 +77,6 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung AsylG (SR 142.31) | `scripts/fedlex-cache.sh` (ASYLG) | gepinnt 12.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VG (SR 170.32) | `scripts/fedlex-cache.sh` (VG) | gepinnt 15.6.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung ParlG (SR 171.10) | `scripts/fedlex-cache.sh` (PARLG) | gepinnt 2.3.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
-| Künftige Fassung RVOV (SR 172.010.1) | `scripts/fedlex-cache.sh` (RVOV) | gepinnt 1.3.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VwVG (SR 172.021) | `scripts/fedlex-cache.sh` (VWVG) | gepinnt 1.7.2022 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BPG (SR 172.220.1) | `scripts/fedlex-cache.sh` (BPG) | gepinnt 1.1.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BPV (SR 172.220.111.3) | `scripts/fedlex-cache.sh` (BPV) | gepinnt 1.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
@@ -85,13 +86,17 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung PatG (SR 232.14) | `scripts/fedlex-cache.sh` (PATG) | gepinnt 1.7.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung MWSTV (SR 641.201) | `scripts/fedlex-cache.sh` (MWSTV) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung CO2-Gesetz (SR 641.71) | `scripts/fedlex-cache.sh` (CO2_GESETZ) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung DBG (SR 642.11) | `scripts/fedlex-cache.sh` (DBG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung EnG (SR 730.0) | `scripts/fedlex-cache.sh` (ENG) | gepinnt 1.4.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung VZV (SR 741.51) | `scripts/fedlex-cache.sh` (VZV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung EBG (SR 742.101) | `scripts/fedlex-cache.sh` (EBG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung HMG (SR 812.21) | `scripts/fedlex-cache.sh` (HMG) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung AHVG (SR 831.10) | `scripts/fedlex-cache.sh` (AHVG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung IVG (SR 831.20) | `scripts/fedlex-cache.sh` (IVG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung ELG (SR 831.30) | `scripts/fedlex-cache.sh` (ELG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung KVV (SR 832.102) | `scripts/fedlex-cache.sh` (KVV) | gepinnt 1.8.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung KLV (SR 832.112.31) | `scripts/fedlex-cache.sh` (KLV) | gepinnt 1.8.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
+| Künftige Fassung UVV (SR 832.202) | `scripts/fedlex-cache.sh` (UVV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung AVIV (SR 837.02) | `scripts/fedlex-cache.sh` (AVIV) | gepinnt 1.8.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung BankV (SR 952.02) | `scripts/fedlex-cache.sh` (BANKV) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung ERV (SR 952.03) | `scripts/fedlex-cache.sh` (ERV) | gepinnt 24.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
@@ -99,15 +104,14 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung FINMA-GebV (SR 956.122) | `scripts/fedlex-cache.sh` (FINMA_GEBV) | gepinnt 1.3.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2027 |
 | Künftige Fassung FZV (SR 831.425) | `scripts/fedlex-cache.sh` (FZV) | gepinnt 1.8.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.6.2027 |
 | Künftige Fassung BVV 3 (SR 831.461.3) | `scripts/fedlex-cache.sh` (BVV3) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.6.2027 |
+| Künftige Fassung EOG (SR 834.1) | `scripts/fedlex-cache.sh` (EOG) | gepinnt 1.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.7.2027 |
 | Künftige Fassung BVG (SR 831.40) | `scripts/fedlex-cache.sh` (BVG) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 26.9.2027 |
 | Künftige Fassung GSchV (SR 814.201) | `scripts/fedlex-cache.sh` (GSCHV) | gepinnt 1.12.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2028 |
 | Künftige Fassung KVG (SR 832.10) | `scripts/fedlex-cache.sh` (KVG) | gepinnt 1.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2028 |
 | Künftige Fassung EOV (SR 834.11) | `scripts/fedlex-cache.sh` (EOV) | gepinnt 1.6.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2028 |
 | Künftige Fassung FAV (SR 784.101.2) | `scripts/fedlex-cache.sh` (FAV) | gepinnt 15.8.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.7.2028 |
 | Künftige Fassung BV (SR 101) | `scripts/fedlex-cache.sh` (BV) | gepinnt 3.3.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2029 |
-| Künftige Fassung DBG (SR 642.11) | `scripts/fedlex-cache.sh` (DBG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2029 |
 | Künftige Fassung StHG (SR 642.14) | `scripts/fedlex-cache.sh` (STHG) | gepinnt 1.1.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2029 |
-| Künftige Fassung ELG (SR 831.30) | `scripts/fedlex-cache.sh` (ELG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2029 |
 | Künftige Fassung FinfraG (SR 958.1) | `scripts/fedlex-cache.sh` (FINFRAG) | gepinnt 1.2.2024 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2029 |
 | Künftige Fassung BetmG (SR 812.121) | `scripts/fedlex-cache.sh` (BETMG) | gepinnt 1.9.2023 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.8.2029 |
 | Künftige Fassung BVV 2 (SR 831.441.1) | `scripts/fedlex-cache.sh` (BVV_2) | gepinnt 1.8.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2030 |
@@ -115,7 +119,6 @@ bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
 | Künftige Fassung VTS (SR 741.41) | `scripts/fedlex-cache.sh` (VTS) | gepinnt 1.7.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2031 |
 | Künftige Fassung GlG (SR 151.1) | `scripts/fedlex-cache.sh` (GLG) | gepinnt 1.7.2020 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.7.2032 |
 | Künftige Fassung VKL (SR 832.104) | `scripts/fedlex-cache.sh` (VKL) | gepinnt 1.6.2025 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.7.2032 |
-| Künftige Fassung AHVG (SR 831.10) | `scripts/fedlex-cache.sh` (AHVG) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2034 |
 | Künftige Fassung AHVV (SR 831.101) | `scripts/fedlex-cache.sh` (AHVV) | gepinnt 1.1.2026 | einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7) | 1.1.2034 |
 
 ### Aufgehobene und zur Aufhebung angekündigte Erlasse (Aufhebungs-Posten, G-AUFH-Follow-up #259)
