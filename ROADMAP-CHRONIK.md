@@ -2531,3 +2531,138 @@ am 21.8.2026 in `ROADMAP.md` gestanden:
   Gemessener Produktfehler auf `/gesetze`, reine UI.
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §2.
 
+
+
+---
+
+## Plan-Neuschnitt 29.8.2026 — ROADMAP nach sieben Baufeldern *(Auftrag David 29.8.2026 im Chat: «volle Handlungsfreiheit, radikal, Kontrolle abbauen wo nicht nötig»)*
+
+**Provenienz.** Der Council-Entscheid vom 3.7.2026 gegen eine ROADMAP-Restrukturierung ist durch
+diesen Auftrag ausdrücklich abgelöst. Die ROADMAP gliedert seither nach den sieben Baufeldern
+(`leser` · `korpus` · `rechtsprechung` · `suche` · `design` · `werkzeuge` · `betrieb`) statt nach
+Auftrags-Herkunft (Wellen/Querschnitt-Band); jeder Schritt trägt genau ein `feld:`, das zugleich die
+frühere `kollision:`-Globliste ersetzt. Die @meta-Felder `kollision`, `26x`, `slot`, `groesse` und
+`worktree` sind gestrichen (Begründung je Feld im Kopf von `scripts/plan/etikett.ts`), ebenso
+`scripts/plan/inventar.ts` und die check:plan-Regeln 1 (Inventar-Abdeckung), 5/5b/5c (26×-Slot) und
+6 (kollision-Pfade). **Alle Schritt-IDs sind unverändert** — lage.ts, Commit-Trailer und
+Branch-Namen hängen daran.
+
+**Kennzahlen:** ROADMAP.md 101 702 → 46 371 Bytes (−54 %); 43 Etiketten, unverändert; die vier
+grössten Einzelzeilen (QS-EFFIZIENZ-Checkliste 6,8 KB · W2·18-Fehlerbuchliste 11,8 KB ·
+QS-MONITOR-ROT-Checkliste 2,7 KB · QS-DATA-INGEST-DRIFT-Befund 1,6 KB) liegen jetzt wörtlich in
+zwei neuen Fahrplänen.
+
+### Was wohin ging — je Streichung eine Begründung
+
+- **Leitprinzip 4 (26×-Assets) und der `@slot-kette`-Block** — gestrichen, weil die Mechanik, die
+  sie trugen (`@meta`-Felder `26x`/`slot`, check.ts 5/5b/5c, zwei resolve()-Buckets), entfällt. Die
+  Sache selbst bleibt: «eine Datensäule fertig führen» steht als neues Leitprinzip 4, und die
+  konkrete Kette W3·12 → W2·6-DATA ist jetzt eine `dep`-Kante, die check:plan Regel 4/4c prüft.
+  Wortlaut:
+
+4. **Nie zwei 26×-Datenassets gleichzeitig offen** — eine Säule fertig führen. Die sechs 26×-Assets — **fertig gebaut + aus dem Slot entlassen**
+   (Abnahme ausstehend): Notariat-Grundbuch · Beurkundungs-Ausbau (entlassen 2.7.2026); **offen,
+   Reihenfolge = @slot-kette-Kommentar unten:** BGer-Massenkorpus (QS-DATA E3) · Gesetze-Import-3Tier
+   (W3·12) · Prozesskosten-Cockpit (W1·4-Rest) · Kantonale-Entscheide (E5). *Ein P0-Bugfix an einem Asset ist kein Daten-Bulklauf und **öffnet den
+   26×-Slot nicht**.*
+
+<!-- @slot-kette (dokumentarisch; harte Prüfung via @meta-Feld `slot: inhaber`, check.ts 5b)
+inhaber: W3·12 (Kanton-Gesetze, übergeben 20.7.2026 — E3 war seit 3.7.2026 fertig, der Slot nur nie zurückgegeben)
+kette: ~~E3(W2·6-DATA) ✅ 3.7.2026~~ · W3·12(Kanton-Gesetze) ← JETZT · Tarif-Bündel(W1·4) · E5(Kanton-Rechtsprechung, W2·6-DATA) · Gerichtsferien-Matrix
+begruendung-uebergabe: E3 ist gebaut (195 342 Entscheide, 2 Voll-Läufe determinismus-gleich, Gegenprüfung bestanden) ⇒ Leitprinzip 4 «eine Säule fertig führen» erfüllt. Der offene E3-**Serving**-Rest ist KEIN Massenimport, sondern hängt am David-Gate `vps-bestellung-david` — er rechtfertigt keine Slot-Bindung. Nächstes Kettenglied ist laut Kette W3·12 (Davids Reihenfolge-Entscheid 2.7.2026, `fahrplaene/FAHRPLAN-DATENHALTUNG.md` §10(1)); W1·4 wäre falsch (26x: nein — der frühere Zusatzgrund «eigener Blocker `wbqdyap3x`» ist mit der Entparkung vom 3.8.2026 entfallen).
+uebergabe: nur per explizitem `plan:set <id> slot=inhaber`-Commit; check:plan erzwingt höchstens EINEN Inhaber (muss 26x: ja)
+-->
+
+- **Zwei `@blockers`-Einträge mit «ERLEDIGT»-Vermerk** (`david-go-leser-v3`, `david-freigabe-hooks-ausbau`)
+  — aus dem Register entfernt, weil ihre Bindung gelöst ist und kein Schritt mehr auf sie zeigt; sie
+  standen dort nur noch als Beleg. Der Beleg steht jetzt hier:
+
+david-go-leser-v3: ERLEDIGT — Go David 16.8.2026 im Chat («go, empfehlungen übernehmen, bau den prototyp»): D-A/D-B/D-C und F1/F2/F4/F5 = Empfehlung, F6 nein, F3 + F7 entscheidet David am Prototyp (V-0). Eintrag bleibt als Beleg.
+david-freigabe-hooks-ausbau: ERLEDIGT — Freigabe David 14.8.2026 im Chat («alle hooks freigegeben»); Eintrag bleibt als Beleg, Bindung ist gelöst.
+
+- **Alle `- [x]`-Checklisten-Positionen der offenen Dach-Schritte** — aus der ROADMAP entfernt, weil
+  Erledigtes nicht steuert (Ausführungs-Protokoll Ziff. 4). Wortlaut vollständig:
+
+  - [x] **Vercel-Tageslimit durch Branch-Pushes (Vorfall 16.8.2026 abends: 100 Deployments/Tag Free gerissen — jeder Push auf jeden Branch erzeugt ein Deployment, auch «Canceled by Ignored Build Step»; Prod-Deploy von S3 (#540) 24 h blockiert)** — Wurzel-Fix gebaut 17.8.2026, Weg (b) nach Entscheid David: `vercel.json` → `git.deploymentEnabled: false` (Vercel deployt nichts mehr von selbst) + neuer CI-Job «Deploy (Prod, Vercel CLI)» in `ci.yml`, `needs: [diff, tore, bau, e2e]`, `concurrency: prod-deploy` seriell, `vercel pull`/`build`/`deploy --prebuilt --prod` mit `VERCEL_TOKEN`; `VERCEL_GIT_COMMIT_SHA: github.sha` speist `<meta name="lexmetrik-build">`, Nachkontrolle im Job (curl == Kurz-SHA, 3 Versuche) fängt «gemerged, aber nicht live» selbst. Ein Deployment entsteht jetzt je Merge auf main statt je Push. §6.7-Rot-Beweis: `workflow_dispatch` mit `probe=ohne-token` ⇒ «VERCEL_TOKEN leer». Sicherung `scripts/vercel-ignore.sh` + Tor bleiben liegen, falls Git-Deploy je wieder eingeschaltet wird.
+  - [x] Wächter-Zustandsbericht + Verwaiste-Worktree-Sonde — gebaut 15.8. (`npm run bericht:automatik`, check-ci-laeufe.ts --bericht; Rot-Beweis mit synthetischem Waisen-Worktree; Spec-Schärfung: «Diff leer» allein reicht nicht, zusätzlich «nichts uncommittet»). §3.1.
+  - [x] ~~Der Wächter selbst ist seit 12.8. rot: 403/bash -e~~ — Diagnose ÜBERHOLT (Befund-Korrektur 14.8.: Röte war korrektes Monitor-Urteil; 403-Lesung ist seit waechter.yml Z.118 optional mit ::warning). Rest-Wurzel offen: GITHUB_TOKEN kann Branch-Schutz strukturell nicht lesen (kein administration-Scope) ⇒ Kontext-Nachzug läuft faktisch nie — Wurzel-Fix braucht PAT-Secret (§18) oder andere Quelle für Required-Kontexte (eigener Punkt, wartet auf PLAN_BUCHUNG_TOKEN-Entscheid, gleicher PAT nutzbar).
+  - [x] Paritäts-Sonde gebaut 15.8. (check-tor-paritaet.ts unterscheidet PR-Pfad vs. Wächter-Pfad; erster Lauf ROT mit exakt den 5 vorhergesagten Toren — 4 in ci.yml verdrahtet (~5 s), check:verfall begründet auf Allowlist (wanduhrabhängig, K7); neue Regel 0: Workflow ohne lesbaren on:-Block = rot). §3.5.
+  - [x] Wächter-Autozug BEHIND-PRs gebaut 15.8. (waechter.yml Job `autozug`: max. 1 PR/Lauf, ältester, nur autoMergeRequest≠null ∧ BEHIND; stösst ci.yml per workflow_dispatch an, weil GITHUB_TOKEN-Pushes keine Workflows triggern — sonst «BEHIND»→«für immer blockiert»). Auswahl gegen Fixtures bewiesen; **erster LIVE-Lauf noch zu bestätigen** (Auftrag verbot PR/Merge). Fork-PRs: ::warning statt still. Code-Lupe 15.8., zwei Design-Grenzen (offen, keine Fehler): (A) BEHIND-Fälle, die erst NACH dem main-Push grün werden, wartet der Autozug bis zum Tages-Cron (Push-Lauf sieht oft noch `UNKNOWN`) — Kadenz-Entscheid ausstehend; (B) der `workflow_dispatch` von ci.yml fährt auch den Perf-Budget-Job (Lighthouse), den der PR-Pfad seit 26.7. bewusst überspringt — Rot dort blockiert den PR; ci.yml-Bedingung um `event_name != 'workflow_dispatch'` prüfen. §3.1.
+  - [x] **Deploy-Automatik-Ausfall 15./16.8. behoben** (7 Merges nicht live, weil der Ignored Build Step bei `fatal: bad object` skippte) — `ignoreCommand` auf «unsicher ⇒ bauen» umgestellt (`git cat-file -e` statt `rev-parse --verify`, das bei vollem 40-Hex-SHA auch ohne Objekt Exit 0 gibt; leerer/fehlerhafter Diff ⇒ bauen), Build-Kennung `<meta name="lexmetrik-build">` in jede prerenderte Seite, Prod-Smoke-Wächter «Prod hinkt hinter main» mit 30-min-Frische-Toleranz. Rot-Beweise: Shallow-Klon-Simulation (alt Exit 0 = falsches Skip, neu Exit 1), Tor `src/tests/vercel-ignore-command.test.ts` (8 Fälle inkl. Rot-Beweis gegen den alten String), `npm run smoke:prod` gegen die Live-Site rot. **Lehre:** ein Tor, das bei Unsicherheit «skip» sagt, ist schlimmer als keines — und ein Wächter, der nur HTTP 200 prüft, sieht eine tote Auslieferungskette nicht (24 h grün über 7 nicht ausgelieferten PRs).
+  - [x] Teilpass (b) Informationshierarchie 15.8.: Audit über alle Werkzeuge (14 Rechner, 6 gegatete, 4 Entscheid-Leser, 26 Vorlagen, 2 Mappen, 30 Formvorschrift-Badges) — **bereits überall konform** (seit 4.8. durch I1–I10/A9 gegatet), kein Bau; Fahrplan §2.3 nachgezogen.
+  - [x] Teilpass (e) Gate-Verschärfung, erster Zug 15.8.: `qsui-hierarchie.e2e.ts` meldete falsch rot (3–6/65 unter --workers≥14 — `.lc-route` fade-in ab opacity:0, `checkVisibility` auf dem Null-Frame false); Fix `emulateMedia({reducedMotion:'reduce'})` im beforeEach (Haus-Muster a11y/hist-ansicht) — 2× 65/65 grün unter workers=16.
+  - [x] **DESIGN-D0 · Deckkraft-Suffix-Klassen reparieren (Infrastruktur-Fund B4, 8.8.2026)** *(erledigt 16.8.2026)* — Tailwind-Klassen mit Opacity-Zusatz (`bg-brass-100/70` u. ä.) erzeugen am aktuellen Stand KEINE CSS-Regel und rendern unsichtbar (belegt: LM-156, unsichtbare Aktiv-Zeile der Gesetzes-Gliederung, PR #472); Repo-weiter Sweep nach betroffenen Stellen + Wurzel-Fix in `tailwind.config.js`, danach Sichtprüfung der Fundstellen. Vor D6–D8 ziehen (dieselbe Token-Fläche).
+  - [x] **Phase 0b · Design-Fundament** ✅ erledigt 16.8.2026 (Chronik). Kap. 6.
+  - [x] **V-0 · Klick-Prototyp** ✅ gebaut 16.8.2026 (Chronik). Kap. 6.
+  - [x] **Vorprobe H1** ✅ erledigt 16.8.2026 (Chronik). Kap. 6.
+  - [x] **H1 Fundament** ✅ erledigt 16.8.2026 (Chronik). Kap. 7.
+  - [x] **H2 Suche** ✅ erledigt 16.8.2026 (Chronik). Kap. 7.
+  - [x] **H2b Ästhetik-Nachzug** ✅ vollzogen 17.8.2026 (Chronik). Kap. 7.
+  - [x] **H3 Rechtsprechung/Kontext** ✅ vollzogen 17.8.2026 (Chronik). Kap. 7.
+  - [x] **H4 Umschalten** ✅ vollzogen 18.8.2026, PR #552 (Chronik). Kap. 7.
+  - [x] **H5 Löschung** ✅ vollzogen 21.8.2026, PR #560, −4900 Zeilen (Chronik). Kap. 7.
+  - [x] **§7b-Lücken schliessen** ✅ erledigt 21.8.2026, PR #558 + H5-Nachbau (Chronik).
+  - [x] **International-Erlasse unter `/gesetze/bund/`** — gebaut 29.8.2026 (Entscheid David: ja, mit Redirects). Kanonisch `/gesetze/international/:kuerzel`, Alt leitet dauerhaft. Herleitung: `lib/normtext/erlassAdresse`. *(Befund 45.)*
+
+- **Die Produktvisions-Sektion «So sieht das Taschenmesser aus»** — aus der ROADMAP entfernt, weil
+  sie den Nordstern beschreibt und keine Reihenfolge steuert; das Leitbild steht in CLAUDE.md, die
+  Informationsarchitektur in `fahrplaene/FAHRPLAN-GESAMTAUFBAU.md`. Wortlaut:
+
+## So sieht das Taschenmesser aus (Produktvision)
+
+**LexMetrik ist DIE EINE Anlaufplattform für alle Rechtsanwender** *(Nordstern geschärft, David
+3.7.2026)* — Kanzlei, Gericht, Inhouse, **Steuerbehörden, Ämter/Verwaltung, Notariate, Treuhänder**,
+Studierende — um **das Schweizer Recht zu konsultieren und damit zu arbeiten.** Ein vielseitiges
+Werkzeug, zu dem man zuerst greift; **alles auf amtlichen Quellen** (Fedlex, amtliche
+Entscheid-Sammlungen, amtliche Tarife/Materialien — Art. 5 URG, urheberrechtlich frei),
+**deterministisch gerechnet statt KI-geschätzt.**
+
+Die «Klingen» (= die Informationsarchitektur):
+
+- **Konsultieren.** Gesetze (Volltext + amtliche Systematik, **mehrsprachig DE/FR/IT zum
+  Vergleich**) · Rechtsprechung (BGE/BGer-Korpus, amtliche Regesten) · amtliche Materialien
+  (Botschaften/BBl) · **Gesetzgebung/Rechtsetzung** (was kommt: Vernehmlassung/Parlament/AS-BBl) · **Verwaltungsverordnungen/amtliche Praxis** (Kreisschreiben ESTV/BSV/FINMA/SEM, Weisungen, Merkblätter, Rundschreiben — Etappe E6a, Detail `fahrplaene/FAHRPLAN-DATENHALTUNG.md` §5).
+- **Rechnen.** Die deterministischen Klingen: Fristen · Streitwert · Prozesskosten · Verzug/
+  Forderung · Zuständigkeit/Rechtsweg · Verjährung · Beurkundung · Gründungen — jeder Wert mit
+  Norm + Link + Stand.
+- **Verzahnen (der Burggraben).** **Norm → Werkzeug → Schriftsatz** und zurück: vom Artikel in
+  den passenden Rechner/Entscheid, vom Rechen-Ergebnis in den kopierfertigen Begründungs-Absatz.
+  Und quer über den ganzen Korpus: **Norm ↔ Entscheid ↔ Material ↔ Verwaltungsverordnung** — ein
+  Kreisschreiben zeigt, welche Norm es auslegt; ein Entscheid, welchen Artikel er anwendet; eine
+  Botschaft hängt am Gesetz; von jedem Artikel zu allem, was ihn betrifft, und zurück. **Dieselbe
+  Graph-Struktur, nicht vier Silos — das Organisationsprinzip des gesamten Datenausbaus**
+  (Architektur `fahrplaene/FAHRPLAN-DATENHALTUNG.md` §0/§0bis/§1; Etappen E4/E5/E6), nicht nur der Rechner-Achse.
+- **Finden (der Griff).** Eine Auffindbarkeits-Schicht: zweiachsiger Einstieg (Rechtsgebiet ×
+  Aufgabe) + globale Suche → die richtige Klinge in einem Klick.
+
+Universell, nicht in Personas-Schubladen: dieselben Klingen dienen allen; einzig die Verpackung
+(Einstiege, Erklär-/Übungs-Layer) variiert. **Geparkt:** Dossier-/Mandatsverwaltung — alle
+Werkzeuge bleiben **strikt zustandslos** (rechnen/drucken/ICS, keine Persistenz von Falldaten).
+
+**Verzahnung als Rückgrat (Organisationsprinzip, kein Einzelfeature):** die tragenden Schritte dieses
+Plans sind Glieder EINES Graphen (Norm ↔ Entscheid ↔ Material ↔ VerwVO) — das kann kein einzelnes
+Amtsportal, darum ist die Verzahnung Burggraben UND das Einsortierungs-Kriterium für neue Schritte
+(§14: neue Doktypen docken an den Graphen an, nie als Silo). *Ehrliche Grenze: Plan-Doktrin, kein
+maschinelles Tor.* Glieder-Aufzählung und Code-Bestands-Inventar (kontext.ts/KontextPanel/norm-index):
+`fahrplaene/FAHRPLAN-DATENHALTUNG.md` §0bis.
+
+- **Detail-WIE offener Schritte** — nicht gestrichen, sondern in die Fahrpläne verschoben, wo die
+  ROADMAP nur noch Ziel und Grenze nennt (Zielform: Checkbox + @meta + 2–4 Zeilen):
+  - `QS-EFFIZIENZ`-Checkliste → neu `fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md` §1. Die
+    Auslagerung war als Posten in der Liste selbst vermerkt (Merge-Konflikt-Falle: 6 Konflikte in
+    EINER Zeile bei 15 offenen PRs, 16.8.2026) — hier vollzogen.
+  - `QS-KORPUS`, `QS-MONITOR-ROT`, `QS-DATA-INGEST-DRIFT`, `W2·18-FEHLERBUCH`, `QS-CODE-PROP` →
+    neu `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md` §§1–5. Diese fünf Dach-Schritte hatten als einzige
+    keinen eigenen Fahrplan und trugen ihre Befundlisten deshalb im Plan.
+  - `QS-PERF`-Messreihe (Erst-Render OR, Reader-Kopf-Reflow) → `fahrplaene/FAHRPLAN-PERFORMANCE.md`
+    §1. Wortlaut dort unverändert; in der ROADMAP bleibt der Ein-Satz-Befund mit der Zahl.
+
+- **Nicht angetastet:** alle Schritt-IDs, die `@queue`, der `⬆ OBERSTER OFFENER SCHRITT`-Marker,
+  das `@blockers`-Register (bis auf die zwei erledigten Einträge), der `@david-fragen`-Block,
+  Geparkt-Liste, Pflege & Termine.
+
+### Was die Auslagerung NICHT ist
+
+Kein Inhalt wurde gekürzt, zusammengefasst oder «nachgeführt». Datierte Mess- und
+Reproduktionsangaben stehen in den Zieldateien wörtlich wie zuvor (§0 Ziff. 2b: Belege altern
+nicht). Was hier als «gestrichen» geführt ist, steht in diesem Abschnitt vollständig im Wortlaut.

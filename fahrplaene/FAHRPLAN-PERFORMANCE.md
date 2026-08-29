@@ -552,6 +552,41 @@ Spec-Heimat. **→ Bau-Spec: «Die priorisierte Abarbeitung» dieser Datei.***
 
 ---
 
+### §1-N2 · ROADMAP-Spec QS-PERF — Nachzug (wörtlich verschoben 29.8.2026, Plan-Neuschnitt)
+
+Zwei Messblöcke, die bis zum 29.8.2026 im ROADMAP-Schritt `QS-PERF` standen — Erst-Render-Zeit
+des OR samt Nullprobe, und der Reader-Kopf-Reflow nach dem Client-Takeover. Wortlaut unverändert;
+die ROADMAP nennt nur noch den Ein-Satz-Befund mit der Zahl. Datierte Messangaben werden hier nie
+an einen neuen Ist-Stand nachgeführt, nur ergänzt (§0 Ziff. 2b).
+
+  (§15). Offen: M-Daten-Pfad (9,5-MB-`register.json` ist der lohnendste Hebel) +
+  Render-/Split-View-Feinschliff. **Neu 17.8.2026 — Erst-Render OR, vermessen:** der
+  Leser braucht auf dem OR (2038 Art.) **8,4–17,2 s bis zur Bedienbarkeit** auf einem
+  schnellen, unbelasteten Rechner, zweigipflig mit einem ungeklärten Sprung von ~6,8 s;
+  auf `main` wie im V3-Branch identisch (A/B je n=11, Arm-Unterschied ≤ 3,6 % und im
+  Vorzeichen wechselnd). Das ist die Wurzel des Shard-7-Rots auf `e2e/leser-ohne-
+  gliederungslinie.e2e.ts:71` und `e2e/leser-r1-r2.e2e.ts:544` (20-s-Budget) und
+  schliesst zugleich Punkt (b) von `QS-E2E-STABIL`. Messreihe und Nullproben:
+  [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
+  **Nullprobe 17.8.2026 (S1-Nachzug), lokal warm:** `e2e/leser-ohne-gliederungslinie.e2e.ts
+  --project=leser-v3 --repeat-each=3` fällt auf **unverändertem `main` (19a989f93)
+  6 von 6** (beide Tests, alle Wiederholungen, «Test timeout of 30000ms exceeded»
+  beim Warten auf den «Ansicht»-Knopf). Das ist keine Zuschreibung aus der Doku,
+  sondern gemessen: der Worktree wurde dafür auf `main` gestellt und neu gebaut.
+  Damit ist belegt, dass der Deckel gegen die **Erst-Render-Zeit des OR/ZGB**
+  reisst und nicht gegen eine Feature-Änderung — der Fix gehört hierher, nicht in
+  eine Spec-Anpassung.
+  **Neu 17.8.2026 (S1-Nachzug, §17) — Reader-Kopf reflowt nach dem Client-Takeover:**
+  gemessen `header 161 → 238 px`, `h1 49 → 75 px` (+161 px), Quelle
+  `div.flex.shrink-0`. Für die Nutzerin ein Lade-Sprung; der CLS-Beitrag ist
+  **bimodal 0.006 ↔ 0.119** und kippt allein mit der Parallel-Last (ob das Lese-Grid
+  zum Reflow-Zeitpunkt schon gemalt ist). Gedeckt ist er nur nachgelagert
+  (`check:perf-lighthouse`, post-merge) — kein Merge-Blocker. Fix gehört in die
+  Startlast: Kopf-Geometrie vor dem Takeover reservieren, statt die Schranke zu
+  heben (§8). Diagnose: `e2e/gesetze-historie-badge.e2e.ts`, Datei-Kopf.
+
+---
+
 ## §2 · ROADMAP-Spec W2·15-CLS (wörtlich verschoben 31.7.2026)
 
 > **→ Bau-Spec: «Nachlese aus #312/#314 + echter CLS-Defekt» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
