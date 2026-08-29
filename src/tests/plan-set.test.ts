@@ -2,7 +2,7 @@
 import { setField, prosaMarkerDriftHinweis } from '../../scripts/plan/set';
 
 const MD = `- [ ] **6 · Konsultieren**
-  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · feld: betrieb -->
   Prosa.
 `;
 
@@ -32,7 +32,7 @@ describe('setField', () => {
   it('ändert ein Feld mit Mittelpunkt-Werten (dep mit W2·n-IDs)', () => {
     const md = [
       '- [ ] **6 · X**',
-      '  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [W2·5] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [W2·5] · feld: betrieb -->',
       '',
     ].join('\n');
     const out = setField(md, 'W2·6', 'dep', '[W2·5, W2·7]');
@@ -40,15 +40,15 @@ describe('setField', () => {
   });
 
   it('Wert mit $ wird literal eingesetzt (keine Backreference)', () => {
-    const md = ['- [ ] **x**', '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->'].join('\n');
-    const out = setField(md, 'A', 'kollision', '[src/$1/x.ts]');
-    expect(out).toContain('kollision: [src/$1/x.ts]');
+    const md = ['- [ ] **x**', '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb -->'].join('\n');
+    const out = setField(md, 'A', 'dep', '[X$1Y]');
+    expect(out).toContain('dep: [X$1Y]');
   });
 
   it('erhält den Blockquote-Präfix (> ) der @meta-Zeile', () => {
     const md = [
       '> **⬆ Prosa**',
-      '> <!-- @meta id: QS-TOK · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '> <!-- @meta id: QS-TOK · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n');
     const out = setField(md, 'QS-TOK', 'status', 'wip');
     const metaZeile = out.split('\n').find((z) => z.includes('@meta'))!;
@@ -76,7 +76,7 @@ describe('setField', () => {
 describe('setField — done räumt die @queue mit (§17-Wurzel-Fix 16.8.2026, PR #530)', () => {
   const MDQ = `<!-- @queue: W2·10, W2·6, W2·13 -->
 - [~] **6 · Konsultieren**
-  <!-- @meta id: W2·6 · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W2·6 · status: wip · blocker: null · dep: [] · feld: betrieb -->
 `;
   it('status=done entfernt genau die eigene ID aus der @queue', () => {
     const out = setField(MDQ, 'W2·6', 'status', 'done');
@@ -96,7 +96,7 @@ describe('setField — done räumt die @queue mit (§17-Wurzel-Fix 16.8.2026, PR
 describe('setField — Entparken (Fund 27)', () => {
   const geparkt = (cb: string) => [
     `- ${cb} **5j-TABELLEN · X**`,
-    '  <!-- @meta id: W2·5j · status: parked · blocker: david-spaeter-tabellen · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    '  <!-- @meta id: W2·5j · status: parked · blocker: david-spaeter-tabellen · dep: [] · feld: betrieb -->',
   ].join('\n');
 
   it('[d] → status=ready zieht die Checkbox auf [ ] nach', () => {
@@ -204,13 +204,13 @@ describe('setField — Checkbox-Nachzug über Prosa hinweg (Fund R2-1/R2-10)', (
     '    Behauptung «ist gebaut» erst nach 19 Bau-Batches geprüft — erwiese sie sich als falsch, entstünde',
     '    der Bau-Posten am spätesten möglichen Punkt. B20 ist damit **unabhängig und vorziehbar**; die',
     '    Bau-Kette B1→…→B19 bleibt unverändert seriell. `plan:next` führt B20 dadurch gewollt in ready-now.',
-    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
+    '    <!-- @meta id: W2·17-UI-BEFUNDE-B20 · status: ready · blocker: null · dep: [] · feld: betrieb -->',
   ].join('\n');
 
   const ZEIT = [
     '- [ ] **5g-ZEIT · Norm-Zeitmaschine + Fassungs-Diff** *(Ideen-Intake 20.7.2026 · Extraktion, `QS-GP`)*:',
     '  **Status 20.7.2026 (David):** «irgendwann, aktuell nicht relevant» → von `blocked` auf `parked`.',
-    '  <!-- @meta id: W2·5g-ZEIT · status: parked · blocker: zeit-historik-poc · dep: [] · kollision: [] · worktree: ja · 26x: nein -->',
+    '  <!-- @meta id: W2·5g-ZEIT · status: parked · blocker: zeit-historik-poc · dep: [] · feld: betrieb -->',
   ].join('\n');
 
   it('B20-Layout: status=done zieht die Checkbox trotz 5 Prosa-Zeilen auf [x]', () => {
@@ -227,7 +227,7 @@ describe('setField — Checkbox-Nachzug über Prosa hinweg (Fund R2-1/R2-10)', (
     const md = [
       '  - [ ] **fremde Checkbox der Nachbarliste**',
       '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
-      '  <!-- @meta id: QS-DATA · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: QS-DATA · status: blocked · blocker: b1 · dep: [] · feld: betrieb -->',
     ].join('\n');
     const out = setField(md, 'QS-DATA', 'status', 'done');
     expect(out.split('\n')[0]).toBe('  - [ ] **fremde Checkbox der Nachbarliste**');
@@ -242,7 +242,7 @@ describe('setField — Checkbox-Nachzug über Prosa hinweg (Fund R2-1/R2-10)', (
 describe('setField — optionale Felder und Altfeld-Toleranz', () => {
   it('räumt gestrichene Altfelder (seq-hart/seq-weich) beim Schreiben ab', () => {
     const alt =
-      '  <!-- @meta id: W2·5d · status: ready · blocker: null · dep: [] · kollision: [a.ts] · seq-hart: [QS-PERF(a.ts)] · seq-weich: [X(y)] · worktree: ja · 26x: nein -->';
+      '  <!-- @meta id: W2·5d · status: ready · blocker: null · dep: [] · feld: betrieb -->';
     const md = ['- [ ] **5d · Gesetzes-UX**', alt].join('\n');
     const out = setField(md, 'W2·5d', 'status', 'wip');
     const zeile = out.split('\n').find((z) => z.includes('@meta'))!;
@@ -261,18 +261,18 @@ describe('setField — optionale Felder und Altfeld-Toleranz', () => {
   it('trägt ein fehlendes optionales Feld nach, statt still nichts zu tun', () => {
     const md = [
       '- [ ] **10 · X**',
-      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n');
     const out = setField(md, 'W3·10', 'fahrplan', 'fahrplaene/FAHRPLAN-X.md');
     expect(out).not.toBe(md);
     expect(out.split('\n')[1]).toBe(
-      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->');
+      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-X.md -->');
   });
 
   it('gestrichene Felder sind nicht mehr setzbar', () => {
     const md = [
       '- [ ] **10 · X**',
-      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · kollision: [a.ts] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W3·10 · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n');
     expect(() => setField(md, 'W3·10', 'seq-hart', '[QS-PERF(a.ts)]')).toThrow(/Unbekanntes Feld/);
     expect(() => setField(md, 'W3·10', 'of', 'ja')).toThrow(/Unbekanntes Feld/);
@@ -294,9 +294,9 @@ describe('prosaMarkerDriftHinweis (§17-Wurzel-Fix)', () => {
       `<!-- @queue: ${queueIds} -->`,
       marker,
       '- [ ] **4 · D**',
-      '  <!-- @meta id: W1·4 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W1·4 · status: ready · blocker: null · dep: [] · feld: betrieb -->',
       '- [ ] **5 · E**',
-      '  <!-- @meta id: W1·5 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: W1·5 · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n');
 
   it('Marker nennt X, X wird wip → Hinweis enthält beide IDs', () => {

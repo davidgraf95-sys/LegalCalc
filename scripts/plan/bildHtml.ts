@@ -349,11 +349,13 @@ function deckt(pfad: string, praefix: string): boolean {
 }
 
 /**
- * `kollision:`-Globs → Alltagsbegriffe, ohne Wiederholung und in der
- * Reihenfolge ihres ersten Auftretens. Zwei Globs desselben Bereichs
- * (`src/pages/**` und `src/pages/gesetze.tsx`) ergeben EINEN Eintrag.
+ * Pfade → Alltagsbegriffe, ohne Wiederholung und in der Reihenfolge ihres
+ * ersten Auftretens. Zwei Pfade desselben Bereichs (`src/pages/**` und
+ * `src/pages/gesetze.tsx`) ergeben EINEN Eintrag. Gefüttert wird die Funktion
+ * seit dem Plan-Neuschnitt 29.8.2026 aus `feldPfade()`, nicht mehr aus einer
+ * je Schritt gepflegten Globliste.
  */
-export function flaechenKlartext(globs: string[]): string[] {
+export function flaechenKlartext(globs: readonly string[]): string[] {
   const out: string[] = [];
   for (const glob of globs) {
     const pfad = glob.replace(/[*?{[].*$/, '').replace(/\/+$/, '');
@@ -371,16 +373,45 @@ export function flaechenKlartext(globs: string[]): string[] {
   return out;
 }
 
+/**
+ * **Baufeld → die Pfade, für die es steht** (Steuerungs-Diät 29.8.2026).
+ *
+ * Bis dahin trug JEDER Schritt seine eigene `kollision:`-Globliste — 44 von Hand
+ * gepflegte Pfadlisten, aus denen die Anzeige Alltagsbegriffe und
+ * Wirkungsbereiche ableitete. Die Listen drifteten gegen den echten Baum und
+ * mussten bei jeder Datei-Verschiebung nachgezogen werden. Jetzt nennt der
+ * Schritt sein Feld, und die Pfade stehen EINMAL hier (§5).
+ *
+ * Die Tabelle ist bewusst KEINE vollständige Aufzählung der Fläche, sondern die
+ * kanonischen Anker, die für die Anzeige-Ableitung genügen — sie beantwortet nur
+ * «welcher Wirkungsbereich» und «welcher Alltagsbegriff», nie «welche Datei».
+ * Über Parallelität entscheidet sie nichts: das tut `feld` direkt (aufloesen.ts).
+ */
+export const FELD_PFADE: Record<string, readonly string[]> = {
+  leser: ['src/pages/gesetz-leser', 'src/components/normtext'],
+  korpus: ['scripts/normtext', 'public/normtext', 'scripts/fedlex'],
+  rechtsprechung: ['scripts/rechtsprechung', 'public/rechtsprechung', 'src/lib/rechtsprechung'],
+  suche: ['scripts/datenhaltung', 'src/components/suche'],
+  design: ['src/index.css', 'tailwind.config.js', 'DESIGN-REGLEMENT.md', 'src/components'],
+  werkzeuge: ['src/lib', 'src/pages'],
+  betrieb: ['.github', 'scripts/plan', '.claude'],
+};
+
+/** Pfad-Anker eines Baufelds; leer bei fehlendem oder unbekanntem Feld (§8: nichts raten). */
+export function feldPfade(feld: string | null): readonly string[] {
+  return feld ? (FELD_PFADE[feld] ?? []) : [];
+}
+
 // ---------------------------------------------------------------------------
 // Wirkungsbereiche — «welchen Teil des Projekts berührt dieser Schritt?»
 // (Auftrag David 5.8.2026: «klassifiziere in themenbereiche» · «sessions
 // kommunizieren mit diesen bezeichnungen»)
 //
-// Abgeleitet wird MECHANISCH aus denselben `kollision:`-Globs wie
+// Abgeleitet wird MECHANISCH aus denselben Pfad-Ankern (`feldPfade`) wie
 // `flaechenKlartext` — eine Wahrheit, zwei Auflösungsgrade (§5): der
 // Alltagsbegriff sagt, WAS die Datei ist, der Wirkungsbereich, in welches der
 // sechs Themenfelder sie fällt. Eine gepflegte Zweitliste je Schritt gäbe es
-// nicht, weil sie still veralten würde.
+// nicht, weil sie still veralten würde — genau daran ist `kollision:` gescheitert.
 // ---------------------------------------------------------------------------
 
 /** Auffangkategorie für Pfade ohne Zuordnung — ehrlich benannt statt geraten (§8). */
@@ -389,7 +420,7 @@ export const UEBRIGE_TECHNIK = 'Übrige Technik';
 /**
  * Die sechs Wirkungsbereiche in KANONISCHER Reihenfolge. Sie bestimmt zugleich
  * die Reihenfolge der Badges: sonst entschiede die zufällige Reihenfolge der
- * `kollision:`-Globs darüber, wie ein Schritt beschriftet aussieht (§2).
+ * Pfad-Anker darüber, wie ein Schritt beschriftet aussieht (§2).
  */
 export const WIRKUNGSBEREICHE = [
   'Benutzeroberfläche',
@@ -470,12 +501,12 @@ export const BEREICH_PFADE: readonly (readonly [string, Wirkungsbereich])[] = [
 ];
 
 /**
- * `kollision:`-Globs → Wirkungsbereiche, ohne Wiederholung und in kanonischer
- * Reihenfolge. Ein Schritt darf mehrere tragen; ein nicht zuordenbarer Pfad
- * erzeugt «Übrige Technik». Ohne Globs bleibt die Liste LEER — «keine Fläche
- * deklariert» ist etwas anderes als «keinem Bereich zuzuordnen» (§8).
+ * Pfade → Wirkungsbereiche, ohne Wiederholung und in kanonischer Reihenfolge.
+ * Ein Schritt darf mehrere tragen; ein nicht zuordenbarer Pfad erzeugt «Übrige
+ * Technik». Ohne Pfade bleibt die Liste LEER — «kein Feld deklariert» ist etwas
+ * anderes als «keinem Bereich zuzuordnen» (§8).
  */
-export function wirkungsbereiche(globs: string[]): Wirkungsbereich[] {
+export function wirkungsbereiche(globs: readonly string[]): Wirkungsbereich[] {
   const gefunden = new Set<Wirkungsbereich>();
   for (const glob of globs) {
     const pfad = glob.replace(/[*?{[].*$/, '').replace(/\/+$/, '');
@@ -513,58 +544,19 @@ export function bereichKlasse(b: Wirkungsbereich | string): string {
  * vorher bewusst farblos, um die Seiten byte-gleich zu halten). Der Text bleibt
  * die primäre Unterscheidung, die Farbe kommt dazu — farbunabhängig lesbar.
  */
-export function bereichsBadges(globs: string[]): string {
-  const b = wirkungsbereiche(globs);
+export function bereichsBadges(feld: string | null): string {
+  const b = wirkungsbereiche(feldPfade(feld));
   if (!b.length) return '';
   return ` ${b.map((x) => `<span class="chip bz ${bereichKlasse(x)}" title="Wirkungsbereich">${esc(x)}</span>`).join(' ')}`;
 }
 
-/**
- * Klartext einer geschätzten Bau-Grösse: Badge-Text, Titel (Tooltip) und die
- * Chip-Klasse. EINE Tabelle für alle Anzeigeorte (§5) — das Wort steht nicht
- * dreimal im Markup.
- *
- * Farbwahl aus den BESTEHENDEN Chip-Klassen, ohne Stylesheet-Zusatz (dieselbe
- * Begründung wie bei `bereichsBadges`: ein neuer Selektor änderte alle vier
- * Seiten). Die Unterscheidung trägt darum der TEXT, nicht die Farbe — «Grösse L»
- * und «im Bau» sind beide gold, lesen sich aber nicht verwechselbar.
- */
-const GROESSE_TEXT: Record<string, { badge: string; titel: string; klasse: string }> = {
-  S: {
-    badge: 'Grösse S — nur gebündelt nehmen',
-    titel: 'Geschätzt: trägt nie allein eine Session. Der Skill «bauschritt» bündelt sie in Station A mit so vielen kollisionsfreien Nachbarn gleicher Risikoklasse, dass die Session gefüllt ist.',
-    klasse: 'ready',
-  },
-  M: {
-    badge: 'Grösse M — ein Session-Teil',
-    titel: 'Geschätzt: füllt einen TEIL der Session, nicht die ganze — eine orchestrierte Session landet mehrere M-Schritte nacheinander (Massstab David 15.8.2026); weitergebaut wird per Default, bis der Kontext zur Neige geht.',
-    klasse: 'done',
-  },
-  L: {
-    badge: 'Grösse L — nur bei echtem Zwang schneiden',
-    titel: 'Geschätzt: gross. Geschnitten wird erst, wenn echte Serialisierungs- oder Risiko-Zwänge es verlangen, nicht aus Gewohnheit (Massstab David 15.8.2026); bei Dach-Schritten gibt ohnehin die Checkliste die Auswahl vor.',
-    klasse: 'wip',
-  },
-};
-
-/**
- * Die geschätzte Bau-Grösse als Badge — Steuerhilfe für Davids Auswahl («nicht zu
- * grosse oder kleine nehmen», Auftrag 5.8.2026).
- *
- * Fehlt das `groesse:`-Feld, steht hier **«Grösse ungeschätzt»** statt einer
- * geratenen Einstufung. Aus Kollisionszahl oder Prosalänge eine Grösse abzuleiten
- * wäre genau die stille Zweitwahrheit, die §8 verbietet: die Schätzung ist ein
- * URTEIL und gehört ins `@meta`, nicht in den Renderer. Ein unbekanntes Vokabular
- * wird ebenso als «ungeschätzt» gezeigt — rot gemeldet hat es dann schon
- * `check:plan` Regel 12, und die Anzeige soll dabei nicht zusätzlich raten.
- */
-export function groesseBadge(groesse: string | null): string {
-  const g = groesse !== null ? GROESSE_TEXT[groesse] : undefined;
-  if (!g) {
-    return ` <span class="chip ready" title="Für diesen Schritt ist keine Grösse geschätzt (das @meta-Feld «groesse» fehlt) — hier wird nicht geraten.">Grösse ungeschätzt</span>`;
-  }
-  return ` <span class="chip ${g.klasse}" title="${esc(g.titel)}">${esc(g.badge)}</span>`;
-}
+// Der Grössen-Badge (`groesseBadge`, Tabelle `GROESSE_TEXT`) ist mit der
+// Steuerungs-Diät vom 29.8.2026 gestrichen — zusammen mit dem @meta-Feld
+// `groesse:`, aus dem er las. Das Feld war seit dem Audit vom 14.8.2026 ohne
+// Vokabelprüfung und ohne Tor; aus dem Bau-Prompt hatte David es schon am
+// 15.8.2026 entfernen lassen («das mit der grösse soll weg»). Damit blieb der
+// Lagebild-Badge sein letzter Leser: eine Schätzung, die niemand mehr pflegte,
+// aber jede Session las.
 
 /**
  * Ein Schritt in der Anzeige: **Klartext-Titel zuerst**, das Kürzel danach in
@@ -594,7 +586,7 @@ export function checklisteText(chk: { offen: number; gesamt: number } | null | u
 }
 
 /**
- * Kompakte Verknüpfungs-Zeile eines Schritts: dep-Richtung, Kollisions-Fläche,
+ * Kompakte Verknüpfungs-Zeile eines Schritts: dep-Richtung, gleiches Baufeld,
  * gleicher Fahrplan (Auftrag David 14.8.2026 — «zeigen was miteinander
  * verknüpft ist», ohne Graphik-Bibliothek). Reine Darstellung über bereits
  * erhobene IDs (s. `verknuepfungenAusEinheiten` in bildDaten.ts); jede Liste
@@ -604,7 +596,7 @@ export function checklisteText(chk: { offen: number; gesamt: number } | null | u
  * Erfundenes anzeigen).
  */
 export function verknuepfungenZeile(
-  v: { wartetAuf: string[]; blockiert: string[]; kollisionsPartner: string[]; fahrplanPartner: string[] },
+  v: { wartetAuf: string[]; blockiert: string[]; feldPartner: string[]; fahrplanPartner: string[] },
   titelVon: (id: string) => string,
   max = 3,
 ): string {
@@ -620,7 +612,7 @@ export function verknuepfungenZeile(
   const teile = [
     teil('wartet auf', v.wartetAuf),
     teil('blockiert', v.blockiert),
-    teil('nicht parallel mit', v.kollisionsPartner),
+    teil('nicht parallel mit', v.feldPartner),
     teil('gleiche Baustelle', v.fahrplanPartner),
   ].filter(Boolean);
   return teile.length ? `<p class="sub">${teile.join(' &nbsp;·&nbsp; ')}</p>` : '';
@@ -628,14 +620,14 @@ export function verknuepfungenZeile(
 
 /** Was der Block anzeigt. Alle Felder sind bereits erhoben — die Funktion rechnet nicht. */
 export interface WasPassiert {
-  /** Schritte auf `wip`: Klartext-Titel, Kürzel und ihre `kollision:`-Globs (roh). */
-  imBau: { titel: string; id: string; flaechen: string[] }[];
+  /** Schritte auf `wip`: Klartext-Titel, Kürzel und ihr Baufeld (`null` = keines deklariert). */
+  imBau: { titel: string; id: string; feld: string | null }[];
   /** Parallele Bau-Plätze (Worktrees ohne Haupt-Repo); `null` = nicht abfragbar. */
   bauplaetze: number | null;
   /** Letzte `main`-Commits; `null` = git nicht abfragbar. */
   gelandet: { datum: string; betreff: string }[] | null;
   /** Schritte, deren Blocker-NAME David nennt. */
-  wartetAufDavid: { titel: string; id: string; blocker: string; flaechen: string[] }[];
+  wartetAufDavid: { titel: string; id: string; blocker: string; feld: string | null }[];
   /**
    * Übrige blockierte Schritte — Blocker-Name ohne «david».
    *
@@ -667,11 +659,11 @@ export function wasGeradePassiert(d: WasPassiert): string {
   const imBau = d.imBau.length
     ? d.imBau
         .map((s) => {
-          const worte = flaechenKlartext(s.flaechen);
+          const worte = flaechenKlartext(feldPfade(s.feld));
           const betrifft = worte.length
             ? `Betrifft: ${esc(worte.join(' · '))}`
             : 'Betrifft: das ganze Projekt — für dieses Arbeitspaket ist kein Bereich eingegrenzt.';
-          return `<li><span class="s wip"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.flaechen)}<br><span class="sub">${betrifft}</span></div></li>`;
+          return `<li><span class="s wip"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.feld)}<br><span class="sub">${betrifft}</span></div></li>`;
         })
         .join('\n')
     : '<li><span class="s ready"></span><div>An keinem Arbeitspaket wird gerade gebaut.</div></li>';
@@ -687,7 +679,7 @@ export function wasGeradePassiert(d: WasPassiert): string {
 
   const david = d.wartetAufDavid.length
     ? d.wartetAufDavid
-        .map((s) => `<li><span class="s block"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.flaechen)}<br><span class="sub">wartet auf deine Entscheidung: ${esc(s.blocker)}</span></div></li>`)
+        .map((s) => `<li><span class="s block"></span><div>${schrittLabel(s.titel, s.id)}${bereichsBadges(s.feld)}<br><span class="sub">wartet auf deine Entscheidung: ${esc(s.blocker)}</span></div></li>`)
         .join('\n')
     : '<li><span class="s done"></span><div>Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.</div></li>';
 

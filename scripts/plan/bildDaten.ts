@@ -328,20 +328,19 @@ export function schrittIdInTitel(titel: string): string | null {
 //    Voraussetzungen, `blockiert` die anderen offenen Schritte, die IHRERSEITS
 //    auf diesen warten. Beides steckt in `etikett.dep`, nur die Blick-Richtung
 //    dreht sich um.
-//  * kollisionsPartner: andere offene Schritte, deren `kollision:`-Globs
-//    überlappen — also NICHT parallel bearbeitbar sind. Dieselbe Regel wie die
-//    Lane-Bildung in `resolve()` (`kollidiert()` aus aufloesen.ts, §5), kein
-//    zweiter Nachbau. Ein Schritt OHNE eigene Kollisions-Angabe bekommt keine
-//    Partner-Liste: `kollidiert([], x)` gilt konservativ als «kollidiert mit
-//    allem» (eigene Lane) — das für JEDEN anderen Schritt einzeln aufzuzählen
-//    wäre keine Information, nur Lärm.
+//  * feldPartner: andere offene Schritte mit DEMSELBEN `feld:` — also NICHT
+//    parallel bearbeitbar. Dieselbe Regel wie die Lane-Bildung in `resolve()`
+//    (`kollidiert()` aus aufloesen.ts, §5), kein zweiter Nachbau. Ein Schritt
+//    OHNE eigenes Feld bekommt keine Partner-Liste: `kollidiert(null, x)` gilt
+//    konservativ als «kollidiert mit allem» (eigene Lane) — das für JEDEN
+//    anderen Schritt einzeln aufzuzählen wäre keine Information, nur Lärm.
 //  * fahrplanPartner: andere offene Schritte mit demselben `fahrplan:`-Wert —
 //    dieselbe Baustelle, dasselbe Detail-Dokument.
 // ---------------------------------------------------------------------------
 export interface Verknuepfung {
   wartetAuf: string[];
   blockiert: string[];
-  kollisionsPartner: string[];
+  feldPartner: string[];
   fahrplanPartner: string[];
 }
 
@@ -354,16 +353,16 @@ export function verknuepfungenAusEinheiten(einheiten: Einheit[]): Map<string, Ve
   for (const e of offen) {
     const wartetAuf = e.etikett.dep.filter((d) => !doneIds.has(d));
     const blockiert = offen.filter((o) => o.id !== e.id && o.etikett.dep.includes(e.id)).map((o) => o.id);
-    const kollisionsPartner =
-      e.etikett.kollision.length === 0
+    const feldPartner =
+      e.etikett.feld === null
         ? []
         : offen
-            .filter((o) => o.id !== e.id && o.etikett.kollision.length > 0 && kollidiert(e.etikett.kollision, o.etikett.kollision))
+            .filter((o) => o.id !== e.id && o.etikett.feld !== null && kollidiert(e.etikett.feld, o.etikett.feld))
             .map((o) => o.id);
     const fahrplanPartner = e.etikett.fahrplan
       ? offen.filter((o) => o.id !== e.id && o.etikett.fahrplan === e.etikett.fahrplan).map((o) => o.id)
       : [];
-    out.set(e.id, { wartetAuf, blockiert, kollisionsPartner, fahrplanPartner });
+    out.set(e.id, { wartetAuf, blockiert, feldPartner, fahrplanPartner });
   }
   return out;
 }

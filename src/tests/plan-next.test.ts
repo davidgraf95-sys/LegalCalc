@@ -8,7 +8,7 @@ let posZaehler = 0;
 function einheit(id: string, p: Partial<Einheit['etikett']> = {}): Einheit {
   return {
     id, checkbox: null, sektion: 'Die geordnete Abarbeitung', pos: posZaehler++,
-    etikett: { id, status: 'ready', blocker: null, dep: [], kollision: [], worktree: false, asset26x: false, groesse: null, fahrplan: null, ...p },
+    etikett: { id, status: 'ready', blocker: null, dep: [], feld: null, fahrplan: null, ...p },
   };
 }
 
@@ -31,98 +31,57 @@ describe('resolve', () => {
     expect(b.readyNow).toContain('E');
   });
 
-  it('Lanes: disjunkte kollision parallel, deterministisch lexikografisch', () => {
+  it('Lanes: verschiedene Baufelder parallel, gleiches Feld in getrennte Lanes', () => {
     const b = resolve([
-      einheit('A', { kollision: ['a.ts'] }),
-      einheit('B', { kollision: ['b.ts'] }),
-      einheit('C', { kollision: ['a.ts'] }),
+      einheit('A', { feld: 'leser' }),
+      einheit('B', { feld: 'korpus' }),
+      einheit('C', { feld: 'leser' }),
     ]);
-    // A+B disjunkt → eine Lane; C kollidiert mit A → eigene Lane
+    // A+B verschiedene Felder → eine Lane; C teilt das Feld von A → eigene Lane
     expect(b.lanes).toEqual([['A', 'B'], ['C']]);
-  });
-
-  it('26x: ein wip belegt den Slot, zweites 26x nicht ready-now', () => {
-    const b = resolve([
-      einheit('P', { status: 'wip', asset26x: true }),
-      einheit('Q', { asset26x: true }),
-    ]);
-    expect(b.slot26xBelegtVon).toBe('P');
-    expect(b.readyNow).not.toContain('Q');
-    expect(b.wartet26xSlot).toContain('Q');
-  });
-
-  // GEÄNDERTE SEMANTIK 20.7.2026 (deklarierter fachlicher Schritt, §6 Ziff. 3):
-  // Rangfolge ist die ROADMAP-Dokumentreihenfolge (`pos`), nicht mehr die
-  // lexikografische ID. Vorher waren alle 23 ready-Einheiten gleichrangig und
-  // «oberster offener Schritt» war nicht beantwortbar. Hier steht B VOR A im
-  // Dokument, also bekommt B den 26×-Slot.
-  it('26x: zwei frische ready-26x → nur das dokument-erste ready-now, anderes wartet auf Slot', () => {
-    const b = resolve([
-      einheit('B', { asset26x: true }),
-      einheit('A', { asset26x: true }),
-    ]);
-    expect(b.readyNow).toEqual(['B']);
-    expect(b.wartet26xSlot).toEqual(['A']);
   });
 });
 
-// Der `slot: inhaber`-Zweig (next.ts, Befund 20.7.2026 bei der Slot-Übergabe
-// W2·6-DATA → W3·12): Ohne den ausdrücklichen Inhaber-Vorrang meldete next.ts
-// den Inhaber als «wartet auf 26×-Slot» — wartend auf den Slot, den er selbst
-// hält — und liess statt seiner den dokument-ersten anderen 26×-Schritt zu.
-describe('resolve — 26×-Slot-Inhaber (slot: inhaber)', () => {
-  it('Inhaber ist ready-now, obwohl ein anderes 26× im Dokument FRÜHER steht', () => {
+// Ersetzt die 26×-Slot-Sperre (Regeln 5/5b/5c, Felder `26x`/`slot`), gestrichen
+// mit der Steuerungs-Diät 29.8.2026. Die Nachfolge WARNT statt zu sperren: ein
+// Baufeld bündelt sieben statt hunderter Flächen, eine harte Sperre wäre darum
+// zu grob. Wer trotzdem baut, tut es im eigenen Worktree (§12).
+describe('resolve — Kollisionswarnung über das Baufeld', () => {
+  it('ein wip belegt sein Feld; ein ready-Schritt desselben Felds wird gemeldet', () => {
     const b = resolve([
-      einheit('FRUEH', { asset26x: true }),
-      einheit('INHABER', { asset26x: true, slot: 'inhaber' }),
+      einheit('P', { status: 'wip', feld: 'korpus' }),
+      einheit('Q', { feld: 'korpus' }),
     ]);
-    expect(b.readyNow).toContain('INHABER');
-    expect(b.readyNow).not.toContain('FRUEH');
-    // Der Inhaber darf NIE auf den Slot warten, den er selbst hält.
-    expect(b.wartet26xSlot).toEqual(['FRUEH']);
+    // Anders als beim alten 26×-Slot bleibt Q BAUBAR — die Warnung ersetzt die Sperre.
+    expect(b.readyNow).toEqual(['Q']);
+    expect(b.feldBelegt).toEqual([{ id: 'Q', feld: 'korpus', durch: 'P' }]);
   });
 
-  it('alle Nicht-Inhaber-26× warten auf den Slot, unabhängig von der Position', () => {
+  it('anderes Feld auf wip → keine Warnung', () => {
     const b = resolve([
-      einheit('VOR', { asset26x: true }),
-      einheit('HALTER', { asset26x: true, slot: 'inhaber' }),
-      einheit('NACH', { asset26x: true }),
+      einheit('P', { status: 'wip', feld: 'korpus' }),
+      einheit('Q', { feld: 'leser' }),
     ]);
-    expect(b.readyNow).toEqual(['HALTER']);
-    expect(b.wartet26xSlot).toEqual(['VOR', 'NACH']);
+    expect(b.feldBelegt).toEqual([]);
   });
 
-  it('Nicht-26×-Schritte bleiben vom Inhaber unberührt', () => {
-    const b = resolve([
-      einheit('NORMAL', { kollision: ['src/a.ts'] }),
-      einheit('INHABER', { asset26x: true, slot: 'inhaber' }),
-      einheit('ANDERES26X', { asset26x: true }),
-    ]);
-    expect(b.readyNow).toEqual(['NORMAL', 'INHABER']);
-    expect(b.wartet26xSlot).toEqual(['ANDERES26X']);
-  });
-
-  it('ohne Inhaber gilt weiter die Dokumentreihenfolge (Rückfall-Zweig)', () => {
-    const b = resolve([
-      einheit('ERST', { asset26x: true }),
-      einheit('ZWEIT', { asset26x: true }),
-    ]);
-    expect(b.readyNow).toEqual(['ERST']);
-    expect(b.wartet26xSlot).toEqual(['ZWEIT']);
+  it('Schritt ohne Feld erzeugt keine Warnung (nichts behauptet, was man nicht weiss)', () => {
+    const b = resolve([einheit('P', { status: 'wip', feld: 'korpus' }), einheit('Q')]);
+    expect(b.feldBelegt).toEqual([]);
   });
 });
 
 describe('resolve — Lane-Sicherheit + inArbeit (Sweep)', () => {
-  it('leere kollision → konservativ eigene Lane (nicht co-laned)', () => {
+  it('fehlendes feld → konservativ eigene Lane (nicht co-laned)', () => {
     const b = resolve([einheit('A'), einheit('B')]);
     expect(b.lanes).toEqual([['A'], ['B']]);
   });
-  it('Glob vs exakt auf derselben Datei → kollidiert (getrennte Lanes)', () => {
-    const b = resolve([einheit('A', { kollision: ['public/x/OR.json'] }), einheit('B', { kollision: ['public/x/*.json'] })]);
+  it('ein Schritt OHNE Feld kollidiert auch mit einem, der eines trägt', () => {
+    const b = resolve([einheit('A'), einheit('B', { feld: 'design' })]);
     expect(b.lanes).toEqual([['A'], ['B']]);
   });
-  it('disjunkte konkrete Pfade → co-laned', () => {
-    const b = resolve([einheit('A', { kollision: ['src/a.ts'] }), einheit('B', { kollision: ['src/b.ts'] })]);
+  it('verschiedene Felder → co-laned', () => {
+    const b = resolve([einheit('A', { feld: 'werkzeuge' }), einheit('B', { feld: 'suche' })]);
     expect(b.lanes).toEqual([['A', 'B']]);
   });
   it('wip-Einheit erscheint in inArbeit, nicht lautlos weg', () => {
@@ -133,8 +92,10 @@ describe('resolve — Lane-Sicherheit + inArbeit (Sweep)', () => {
 });
 
 // GEÄNDERTE SEMANTIK 24.7.2026 (deklarierter Tooling-Schritt): @queue-Rang vor
-// pos-Ordnung + Querschnitt-Band-Einheiten laufen «begleitend» statt als oberste.
-describe('resolve — @queue-Rang + Querschnitt-Filter', () => {
+// pos-Ordnung. Der frühere Querschnitt-Filter (Sektion «Querschnitt-Band» läuft
+// begleitend) ist mit dem Plan-Neuschnitt vom 29.8.2026 entfallen — die ROADMAP
+// gliedert nach Baufeldern, eine Querschnitt-Sektion gibt es nicht mehr.
+describe('resolve — @queue-Rang', () => {
   it('gequeuete IDs führen in Queue-Reihenfolge, auch gegen die pos-Ordnung', () => {
     const b = resolve([einheit('A'), einheit('B')], ['B', 'A']);
     expect(b.readyNow).toEqual(['B', 'A']);
@@ -143,17 +104,12 @@ describe('resolve — @queue-Rang + Querschnitt-Filter', () => {
     const b = resolve([einheit('X'), einheit('Y'), einheit('Z')], ['Z']);
     expect(b.readyNow).toEqual(['Z', 'X', 'Y']);
   });
-  it('Querschnitt-Band-ready landet in begleitend, nie als oberster', () => {
-    const qs: Einheit = { ...einheit('QS'), sektion: 'Querschnitt-Band (läuft begleitend' };
+  it('die Sektion steuert nichts mehr — ein Schritt aus jeder Sektion kann oberster sein', () => {
+    // Absicherung des Neuschnitts: früher hätte die Sektion «Querschnitt-Band»
+    // diesen Schritt aus readyNow herausgefiltert.
+    const qs: Einheit = { ...einheit('QS'), sektion: 'Betrieb & Prüfstrasse' };
     const b = resolve([qs, einheit('W')]);
-    expect(b.begleitend).toEqual(['QS']);
-    expect(b.readyNow).toEqual(['W']);
-  });
-  it('AUSNAHME: ein gequeueter Querschnitt-Schritt steigt in die Hauptreihenfolge auf (Entscheid David 8.8.2026, Prozess zuerst)', () => {
-    const qs: Einheit = { ...einheit('QS-P'), sektion: 'Querschnitt-Band (läuft begleitend' };
-    const b = resolve([einheit('W'), qs], ['QS-P']);
-    expect(b.readyNow).toEqual(['QS-P', 'W']);
-    expect(b.begleitend).toEqual([]);
+    expect(b.readyNow).toEqual(['QS', 'W']);
   });
   it('ohne Queue bleibt die pos-Ordnung unverändert (Rückwärtskompatibilität)', () => {
     const b = resolve([einheit('E1'), einheit('E2')]);

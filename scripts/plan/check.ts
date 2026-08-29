@@ -2,22 +2,10 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, type Einheit } from './parse';
 import { resolve } from './aufloesen';
-import { parseEtikett, type Status } from './etikett';
-import { INVENTAR } from './inventar';
+import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
 import { obersterMarkerId } from './marker';
 import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
-
-// (5c) Status, die den 26×-Slot halten, ohne ihn je zurückzugeben. next.ts sperrt
-// über `t.asset26x && inhaber26x && e.id !== inhaber26x` JEDEN anderen 26×-Schritt,
-// solange irgendein Schritt `slot: inhaber` trägt — unabhängig von dessen Status.
-// Steht der Inhaber auf `done`, arbeitet niemand mehr am Slot und niemand gibt ihn
-// frei: stiller Dauer-Stillstand aller 26×-Assets. `parked` und `blocked` stellen
-// dieselbe Falle — auch sie bauen nicht und geben nichts zurück. Zulässig bleiben
-// nur `ready` (Inhaber wartet auf seinen Bau) und `wip` (Inhaber baut).
-// Befund 20.7.2026 (Slot-Übergabe W2·6-DATA → W3·12): W2·6-DATA hielt den Slot
-// über den eigenen Abschluss hinaus; weder next.ts noch check.ts sah es.
-const SLOT_STILLSTAND: readonly Status[] = ['done', 'parked', 'blocked'];
 
 // (8.3) Status, die einen Schritt als Queue-Eintrag wertlos machen: er wird nicht
 // gebaut, hält aber einen Platz in der EINEN Prioritäts-Quelle. `blocked` gehört
@@ -90,20 +78,27 @@ export function pruefe(
   md: string,
   fahrplanDateien: string[],
   fileExists: (p: string) => boolean,
-  inventar: readonly string[] = INVENTAR,
   leseDatei: (p: string) => string | null = dateiLeser,
 ): Problem[] {
   const probleme: Problem[] = [];
   const { einheiten, blockers, queue } = parseRoadmap(md);
   const vorhanden = new Set(einheiten.map((e) => e.id));
 
-  // (1) Inventar-Abdeckung + keine Doppel
-  for (const id of inventar) if (!vorhanden.has(id)) probleme.push({ id, meldung: `Inventar-ID "${id}" hat kein @meta` });
+  // (1) Keine Doppel-IDs.
+  //
+  // Die frühere Inventar-Abdeckung (jede ID aus `scripts/plan/inventar.ts` hat
+  // ein @meta, und jedes @meta steht im Inventar) ist mit der Steuerungs-Diät
+  // vom 29.8.2026 gestrichen: sie war Doppelbuchführung — dieselbe ID-Menge
+  // einmal in der ROADMAP und einmal in einer TypeScript-Liste, die bei jeder
+  // Plan-Rotation von Hand nachgezogen werden musste (42 von 419 main-Commits
+  // in 30 Tagen fassten ausschliesslich diese Datei an, s. ci.yml-Kopf). Ihr
+  // historischer Anlass — «Waisen mergten grün, weil check:plan gar nicht in CI
+  // lief» — ist durch den CI-Einbau von check:plan behoben; seither sieht das
+  // Tor jede @meta-Zeile selbst. Was allein trug, bleibt: eine doppelt vergebene
+  // ID macht `plan:set` und jede dep-Auflösung mehrdeutig.
   const zaehl = new Map<string, number>();
   for (const e of einheiten) zaehl.set(e.id, (zaehl.get(e.id) ?? 0) + 1);
   for (const [id, n] of zaehl) if (n > 1) probleme.push({ id, meldung: `id "${id}" mehrfach etikettiert` });
-  const invSet = new Set(inventar);
-  for (const e of einheiten) if (!invSet.has(e.id)) probleme.push({ id: e.id, meldung: `@meta "${e.id}" ist nicht im Inventar (verwaist)` });
 
   for (const e of einheiten) {
     const t = e.etikett;
@@ -133,23 +128,35 @@ export function pruefe(
         probleme.push({ id: e.id, meldung: `status done, aber dep "${d}" ist ${ziel.etikett.status}` });
       }
     }
-    // (6) kollision-Pfade existieren (Globs: nur einfache Existenz des Pfads bzw. Verzeichnis-Präfix)
-    for (const k of t.kollision) {
-      const basis = k.replace(/[*?{[].*$/, '');
-      if (!fileExists(basis)) probleme.push({ id: e.id, meldung: `kollision-Pfad "${k}" existiert nicht` });
+    // (14) `feld`-Pflicht + Vokabular (Steuerungs-Diät 29.8.2026).
+    //
+    // Tritt an die Stelle der alten Regel 6 (Existenz jedes `kollision:`-Pfads).
+    // Das Feld steuert real: die Lane-Bildung in resolve() und die
+    // Kollisionswarnung von plan:next lesen es. Fehlt es, gilt der Schritt
+    // konservativ als «kollidiert mit allem» — das ist eine brauchbare
+    // Notfall-Semantik, aber kein zulässiger Dauerzustand: ein Plan, in dem die
+    // halbe Menge eine eigene Lane beansprucht, sagt über Parallelität nichts
+    // mehr. Ein falsch geschriebener Wert wäre schlimmer als ein fehlender —
+    // er sähe wie eine Zuordnung aus und bildete still eine achte, private
+    // Fläche. Darum Vokabular hart, mit der Wertliste in der Meldung.
+    if (t.feld === null) {
+      probleme.push({ id: e.id, meldung: `@meta ohne feld: — genau einen Wert setzen (${FELD_WERTE.join(' | ')})` });
+    } else if (!istFeld(t.feld)) {
+      probleme.push({ id: e.id, meldung: `feld "${t.feld}" ist kein Baufeld — zulässig: ${FELD_WERTE.join(' | ')}` });
     }
     // (9) fahrplan:-Pfad existiert. Bis AP-8 (31.7.2026) war das Feld ein blosser
     // Basename im Repo-Wurzel; seither trägt jeder Wert ein Verzeichnis-Präfix
     // (`fahrplaene/` bzw. `archiv/`). Damit ist eine Fehlerklasse entstanden —
     // falsches/fehlendes Präfix —, die keine Regel sehen konnte: Regel 7 prüft nur
-    // die Gegenrichtung (Datei→ROADMAP, per Basename), Regel 6 nur `kollision`.
+    // die Gegenrichtung (Datei→ROADMAP, per Basename).
     // Ein toter `fahrplan:`-Zeiger schickt die Bau-Session in ein ENOENT des
     // Slicers, ohne dass ein Tor rot wird (Endprüfungs-Funde 11/21, 31.7.2026).
     if (t.fahrplan && !fileExists(t.fahrplan)) {
       probleme.push({ id: e.id, meldung: `fahrplan "${t.fahrplan}" existiert nicht` });
     }
     // (12) — gestrichen (QS-PLAN-EINFACH 14.8.2026): Die `groesse`-Vokabelprüfung
-    // war laut Audit entbehrlich; das Feld selbst bleibt (reine Lese-Hilfe).
+    // war laut Audit entbehrlich. Das FELD selbst ist mit der Steuerungs-Diät
+    // vom 29.8.2026 ebenfalls gestrichen (reine Lese-Hilfe, kein Auswerter).
   }
   // (10) Checkbox-Bullet ohne gebundenes @meta — der Nullfall von Regel 2.
   //
@@ -234,22 +241,16 @@ export function pruefe(
   // (4b) Azyklie
   const z = zyklus(einheiten);
   if (z) probleme.push({ id: z, meldung: `dep-Graph hat einen Zyklus bei "${z}"` });
-  // (5) max. ein 26x auf wip
-  const wip26 = einheiten.filter((e) => e.etikett.asset26x && e.etikett.status === 'wip');
-  if (wip26.length > 1) probleme.push({ id: null, meldung: `zwei 26×-Assets gleichzeitig wip: ${wip26.map((e) => e.id).join(', ')}` });
-  // (5b) höchstens EIN 26×-Slot-Inhaber (Etikett-Übergabe); slot:inhaber verlangt 26x:ja
-  const slotInhaber = einheiten.filter((e) => e.etikett.slot === 'inhaber');
-  if (slotInhaber.length > 1) probleme.push({ id: null, meldung: `zwei 26×-Slot-Inhaber: ${slotInhaber.map((e) => e.id).join(', ')}` });
-  for (const e of slotInhaber) if (!e.etikett.asset26x) probleme.push({ id: e.id, meldung: `slot: inhaber ohne 26x: ja` });
-  // (5c) Slot-Inhaber muss den Slot auch zurückgeben können — s. SLOT_STILLSTAND.
-  for (const e of slotInhaber) {
-    if (SLOT_STILLSTAND.includes(e.etikett.status)) {
-      probleme.push({
-        id: e.id,
-        meldung: `slot: inhaber bei status ${e.etikett.status} — hält den 26×-Slot, gibt ihn aber nie zurück (Slot übergeben oder slot-Feld streichen)`,
-      });
-    }
-  }
+  // (5/5b/5c) — gestrichen (Steuerungs-Diät 29.8.2026). Die drei Regeln
+  // bewachten die 26×-Slot-Mechanik («nie zwei 26×-Datenassets gleichzeitig
+  // offen»): höchstens ein 26×-Schritt auf wip, höchstens ein `slot: inhaber`,
+  // und der Inhaber darf den Slot zurückgeben können. Mit den Feldern `26x` und
+  // `slot` fallen sie weg. Das Leitprinzip selbst ist nicht aufgehoben, es wird
+  // nur anders getragen: die betroffene Reihenfolge steht als `dep`/`blocker` am
+  // Schritt (W3·12 hielt den Slot, W2·6-DATA wartete darauf — jetzt ist das eine
+  // dep-Kante, die check.ts Regeln 4/4b/4c ohnehin prüfen), und gleichzeitige
+  // Arbeit auf derselben Fläche meldet die neue Feld-Warnung in plan:next.
+
   // (7) FAHRPLAN-Link-Check (eingegliedertes QS-PH)
   for (const f of fahrplanDateien) if (!md.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
 
