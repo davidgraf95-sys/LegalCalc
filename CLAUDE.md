@@ -228,7 +228,7 @@ wie §14.7 immer, nie lazy.)
 | Adversariale Gegenprüfung auf Risiko-Pfaden | Skill `gegenpruefung` |
 | Postmortem, Fehlerklassen, wo eine Regel hingehört, §17-Fünf-Schritte | Skill `lehren` |
 | Deploy, Merge-Schutz, Parallel-Sessions, Worktrees, serielle Landung | Skill `landung` (§9 + §12) |
-| Session-Lebenszyklus Einstieg → Bau → Landung → Weiterbau → Abschluss, leichter Pfad | Skill `bauschritt` |
+| Session-Lebenszyklus Einstieg → Bau → Landung → Weiterbau → Abschluss | Skill `bauschritt` |
 | Plan-/Struktur-Rotation, Chronik-Überführung, Deckel | Skill `bauschritt`, Datei `aufraeumen.md` |
 | Geräte-Last, Performance | Skill `perf` |
 | Design, Tokens, Sprache, UI-Zustände | `DESIGN-REGLEMENT.md` + Domänen-Reglemente |
