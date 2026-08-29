@@ -131,9 +131,21 @@ describe('S2 · Leser-Typografie-Tokens', () => {
     const css = lies('../index.css');
     const defs = [...css.matchAll(/--hochgestellt\s*:\s*([^;]+);/g)].map((m) => m[1].trim());
     expect(defs, 'Fussnotenmarke ist nicht genau einmal definiert (§5)').toHaveLength(1);
-    // em-relativ, nicht rem/px: die Marke muss dem Fliesstext UND dem
-    // Schriftgrössen-Regler folgen. Ein rem-Wert entkoppelte sie von beidem.
-    expect(defs[0], 'Fussnotenmarke muss em-relativ sein, sonst folgt sie dem Regler nicht')
-      .toMatch(/em$/);
+    // em-relativ, nicht rein absolut: die Marke muss dem Fliesstext UND dem
+    // Schriftgrössen-Regler folgen. Ein reiner px/rem-Wert entkoppelte sie.
+    //
+    // T5 (29.8.2026) NACHGEFÜHRT: der Wert ist seither `max(.72em,.6875rem)` —
+    // em-Anteil führend, darunter ein Lesbarkeits-Boden (Herleitung am Token in
+    // `index.css`). Die frühere Fassung prüfte `/em$/`; das band nicht die
+    // Eigenschaft, sondern die SCHREIBWEISE (und «.6875rem» endet ebenfalls auf
+    // «em» — der Wächter hätte einen reinen rem-Wert durchgelassen, solange er
+    // am Ende steht). Die Prüfung ist damit nicht gelockert, sondern schärfer:
+    // ein em-Term MUSS vorkommen, und ein rein absoluter Wert fällt jetzt
+    // wirklich durch. Rot gesehen: `--hochgestellt:.6875rem;` scheitert an der
+    // ersten Zusicherung, `--hochgestellt:12px;` an beiden.
+    expect(defs[0], 'Fussnotenmarke braucht einen em-relativen Anteil, sonst folgt sie dem Regler nicht')
+      .toMatch(/[0-9]em\b/);
+    expect(defs[0], 'Fussnotenmarke darf nicht rein absolut (px/rem) gesetzt sein')
+      .not.toMatch(/^[0-9.]+(px|rem)$/);
   });
 });
