@@ -132,6 +132,32 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
     expect(zweierLegalAreaSignal('social_insurance')).toBeNull();
     expect(zweierRohSteuerSignal(['Art. 181 Abs. 2 STG'])).toBe('steuern');
     expect(zweierRohSteuerSignal(['Art. 14 STGB', 'Art. 1 VSTG'])).toBeNull();
+    // G2a (Gegenprüfung Runde 3): internationale Steueramtshilfe. Das StAhiG
+    // (SR 651.1, fr «LAAF») hat keinen Register-Key; das DBA ist in diesen
+    // Verfahren die materielle Grundlage. Belege aus dem Bestand: BGE 148 II 349
+    // («Art. 14 Abs. 2 StAhiG»), BGE 151 II 630 («Art. 4 Abs. 2 LAAF»),
+    // BGE 147 II 13 («Art. 26 Abs. 1 DBA CH-US»).
+    expect(zweierRohSteuerSignal(['Art. 14 Abs. 2 STAHIG'])).toBe('steuern');
+    expect(zweierRohSteuerSignal(['Art. 4 Abs. 2 LAAF'])).toBe('steuern');
+    expect(zweierRohSteuerSignal(['Art. 26 Abs. 1 DBA'])).toBe('steuern');
+    // «CDI» ist bewusst KEIN Signal (0 zusätzliche Treffer am Bestand; im
+    // Französischen doppelt belegt mit contrat de durée indéterminée).
+    expect(zweierRohSteuerSignal(['Art. 26 CDI'])).toBeNull();
+    // G2b: BV-Artikel, die je eine konkrete Bundesabgabe begründen (128–133).
+    // Belege: BGE 152 II 1 («Art. 129 Abs. 1 BV», Erbschaftssteuer LU),
+    // BGE 151 II 533 («Art. 133 BV», Zollabgabe), BGE 151 II 442 («Art. 131 CST»).
+    expect(zweierRohSteuerSignal(['Art. 129 Abs. 1 BV'])).toBe('steuern');
+    expect(zweierRohSteuerSignal(['Art. 133 BV'])).toBe('steuern');
+    expect(zweierRohSteuerSignal(['Art. 131 CST'])).toBe('steuern');
+    // Art. 127 und 134 begründen keine Abgabe und sind ausgenommen — sonst
+    // kippten Kausalabgaben beliebigen Gegenstands (BGE 147 I 16
+    // Erschliessungsgebühr, BGE 149 I 33 Volksinitiative).
+    expect(zweierRohSteuerSignal(['Art. 127 Abs. 2 BV'])).toBeNull();
+    expect(zweierRohSteuerSignal(['Art. 134 CST'])).toBeNull();
+    // Wortgrenzen: weder die zweistellige Artikelnummer noch das BVG dürfen
+    // das Muster auslösen.
+    expect(zweierRohSteuerSignal(['Art. 13 Abs. 2 BV'])).toBeNull();
+    expect(zweierRohSteuerSignal(['Art. 130 Abs. 1 BVG'])).toBeNull();
   });
   it('legal_area-Fragmente', () => {
     expect(legalAreaZuSachgebiet('Civil law')).toBe('privat');
@@ -166,6 +192,20 @@ describe('abteilung/legalArea → Sachgebiet (deklariert)', () => {
         normKeys: ['BGG', 'URG', 'URV', 'VWVG'],
         zitierteNormen: [], legalArea: null, band: 'II',
       })).toBe('oeffentlich');
+      // G3 (Gegenprüfung Runde 3) — die EINE Ausnahme: ohne Steuer-Signal, aber
+      // mit reinem SV-Erlass-Bestand ist auch ein Band-II-Entscheid der 9C ein
+      // Sozialversicherungsfall (Anlassfall BGE 149 II 381, 9C_259/2023,
+      // Parteientschädigung bei «Überarztung», ATSG/KVG). Die Bandzuteilung ist
+      // dort eine Publikationsentscheidung der Sammlung, kein Gegenbeweis.
+      expect(dritteOerSachgebiet({
+        normKeys: ['ATSG', 'BGG', 'KVG'],
+        zitierteNormen: [], legalArea: 'social_insurance', band: 'II',
+      })).toBe('sozialversicherung');
+      // Die Ausnahme ist eng: sobald ein Steuer-Signal dazukommt, gewinnt es.
+      expect(dritteOerSachgebiet({
+        normKeys: ['ATSG', 'DBG', 'KVG'],
+        zitierteNormen: [], legalArea: null, band: 'II',
+      })).toBe('steuern');
       // Band V = Sozialrechts-Band ⇒ immer 'sozialversicherung'.
       expect(dritteOerSachgebiet({
         normKeys: ['AHVG', 'DBG'], zitierteNormen: [], legalArea: 'tax', band: 'V',

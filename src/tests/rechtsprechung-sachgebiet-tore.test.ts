@@ -12,7 +12,9 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { bgeBand, hatSozialversicherungsErlass } from '../../scripts/normtext/entscheide-mapping';
+import {
+  bgeBand, hatSozialversicherungsErlass, istGemischteDritteOerAbteilung,
+} from '../../scripts/normtext/entscheide-mapping';
 import type { BrowseEntscheid } from '../lib/rechtsprechung/register';
 
 const REGISTER = join('public', 'rechtsprechung', 'register.json');
@@ -25,6 +27,28 @@ const BUNDES_STEUER_KEYS = new Set(['DBG', 'STHG', 'MWSTG', 'VSTG']);
 
 function normKeysVon(e: BrowseEntscheid): string[] {
   return (e.normKeys ?? []).map((k) => String(k).toUpperCase());
+}
+
+/** Aktenzeichen des unterliegenden aza-Urteils. Steht NICHT im Register (dort
+ *  fehlt `azaUrteil`), darum aus der Snapshot-Datei des Eintrags gelesen — nur
+ *  für die wenigen Band-II-Einträge, die das Tor überhaupt prüft. */
+function azaAzVon(e: BrowseEntscheid): string {
+  if (!e.datei) return '';
+  const p = join('public', 'rechtsprechung', e.datei);
+  const wrap = JSON.parse(readFileSync(p, 'utf8')) as { eintraege?: Array<{ azaUrteil?: { aktenzeichen?: string } | null }> };
+  return String(wrap.eintraege?.[0]?.azaUrteil?.aktenzeichen ?? '');
+}
+
+/** Die EINE deklarierte Ausnahme vom Band-II-Veto (Gegenprüfung Runde 2, G3;
+ *  kodiert in `dritteOerSachgebiet`): ein Entscheid der III. öffentlich-
+ *  rechtlichen Abteilung (9C — die einzige, die nach Art. 31 BgerR Steuern UND
+ *  Sozialversicherung führt), der ausschliesslich Sozialversicherungs-Erlasse
+ *  und KEIN Bundes-Steuergesetz trägt. Strukturell geprüft, keine Fall-Liste. */
+function istErlaubteBandIIAusnahme(e: BrowseEntscheid): boolean {
+  const keys = normKeysVon(e);
+  return istGemischteDritteOerAbteilung(azaAzVon(e))
+    && hatSozialversicherungsErlass(keys)
+    && !keys.some((k) => BUNDES_STEUER_KEYS.has(k));
 }
 
 describe('Tor A — BGE Band II trägt nie «sozialversicherung»', () => {
@@ -41,19 +65,36 @@ describe('Tor A — BGE Band II trägt nie «sozialversicherung»', () => {
   // auch öffentliches Personalrecht und Staatshaftung: BGE 149 II 337,
   // BPG-Kündigung einer SBB-Angestellten; BGE 148 II 73, Staatshaftung der
   // ETHL). Ein Abteilungs-Default darf den Band nie überstimmen.
-  it('kein Band-II-Leitentscheid ist als Sozialversicherung klassiert', () => {
-    const verstoesse = eintraege
-      .filter((e) => e.gericht === 'bge')
-      .filter((e) => bgeBand(String(e.nummer ?? '')) === 'II')
-      .filter((e) => e.sachgebiet === 'sozialversicherung')
+  //
+  // EINE AUSNAHME, ENG UND STRUKTURELL (Gegenprüfung Runde 2, Befund G3,
+  // 29.8.2026): Ein 9C-Entscheid, der ausschliesslich Sozialversicherungs-
+  // Erlasse und kein Bundes-Steuergesetz trägt, IST ein Sozialversicherungsfall
+  // — die Bandzuteilung ist dann eine Publikationsentscheidung der Sammlung,
+  // kein Gegenbeweis (Anlassfall BGE 149 II 381, «Überarztung», ATSG/KVG).
+  // Das Tor bleibt dadurch scharf: Kehrte der 9C-Default zurück, verstiessen
+  // die 60 Band-II-Einträge MIT Steuer-Signal weiterhin (sie tragen einen
+  // Steuer-Key); kehrte der 8C-Default zurück, verstiessen BGE 149 II 337 und
+  // BGE 148 II 73 weiterhin (ihr aza ist nicht 9C). Rot gezeigt am 29.8.2026.
+  const bandII = eintraege.filter(
+    (e) => e.gericht === 'bge' && bgeBand(String(e.nummer ?? '')) === 'II',
+  );
+  const bandIISozial = bandII.filter((e) => e.sachgebiet === 'sozialversicherung');
+
+  it('kein Band-II-Leitentscheid ist als Sozialversicherung klassiert — ausser der deklarierten 9C-Ausnahme', () => {
+    const verstoesse = bandIISozial
+      .filter((e) => !istErlaubteBandIIAusnahme(e))
       .map((e) => `${e.nummer} (${e.key})`);
     expect(verstoesse).toEqual([]);
   });
 
+  it('die Ausnahme existiert wirklich — sonst wäre die Einschränkung tot', () => {
+    // Gegenprobe (§6.7, Muster Tor B): Gäbe es keinen einzigen Fall, der die
+    // Ausnahme braucht, wäre sie eine Bedingung ohne Wirkung und gehörte
+    // gestrichen statt bewacht (§17-Rückbau).
+    expect(bandIISozial.filter(istErlaubteBandIIAusnahme).length).toBeGreaterThan(0);
+  });
+
   it('das Tor misst wirklich am Bestand (sonst prüfte es die leere Menge)', () => {
-    const bandII = eintraege.filter(
-      (e) => e.gericht === 'bge' && bgeBand(String(e.nummer ?? '')) === 'II',
-    );
     expect(bandII.length).toBeGreaterThan(100);
   });
 });

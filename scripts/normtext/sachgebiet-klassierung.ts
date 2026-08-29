@@ -182,11 +182,74 @@ export function zweierLegalAreaSignal(area: string | null | undefined): Rechtsge
 // verwirft «StG» bewusst als föderal/kantonal mehrdeutig. Auf der 2er-Abteilung
 // ist «StG»/«Steuergesetz» in den ROH-zitierten Normen aber ein eindeutiges
 // Abgabe-Signal (Beleg: BGE 149 I 125, Walliser Grundstücksteuer, «Art. 181
-// Abs. 2 STG»). Wortgrenze schliesst StGB/VStG aus; NUR in der 2er-Kette
-// verwenden — ausserhalb bleibt StG mehrdeutig.
+// Abs. 2 STG»). Wortgrenze schliesst StGB/VStG aus; NUR in den öör-Ketten
+// verwenden (2A/2C/2D und — seit dem F1-Fix — 9C über `dritteSteuerSignal`);
+// ausserhalb bleibt StG mehrdeutig.
 const ZWEIER_STEUER_ROH = /steuergesetz|\bstg\b/i;
+
+// ─── Zwei Abgabe-Klassen OHNE Bundes-Steuer-Key (Gegenprüfung Runde 2, G2) ────
+//
+// Beide Muster lesen dieselbe Roh-Quelle wie `ZWEIER_STEUER_ROH` und gelten
+// darum unter derselben Einschränkung: NUR in den öffentlich-rechtlichen Ketten
+// (2A/2C/2D über `sachgebietFuerEntscheid`, 9C über `dritteSteuerSignal`).
+// Ausserhalb sind sie nicht ausgewertet — dort bliebe «DBA» oder ein
+// BV-Kompetenzartikel mehrdeutig.
+//
+// (a) INTERNATIONALE STEUERAMTSHILFE. Das Steueramtshilfegesetz (StAhiG, SR
+//     651.1, fr «LAAF») trägt KEINEN Register-Key — es ist im ERLASS_REGISTER
+//     nicht geführt, `normSignalSachgebiet` konnte es also nie sehen. Genau
+//     darum standen die Amtshilfe-Entscheide als 'oeffentlich', obwohl die
+//     amtliche SR-Systematik sie unter 6 «Finanzen» / 65 «Informationsaustausch
+//     in Steuersachen» führt und ihr Gegenstand die Steuererhebung eines
+//     Vertragsstaats ist. Mitgeführt wird das Doppelbesteuerungsabkommen
+//     («DBA»), das in diesen Verfahren die materielle Grundlage bildet.
+//     GEMESSEN am Bestand (29.8.2026, 5'093 Snapshots): `StAhiG|LAAF` trifft 9
+//     Einträge, `DBA` 8 — Vereinigung 13, davon 4 bereits 'steuern'. ALLE 13
+//     sind an ihrer amtlichen Regeste als Steuersache belegt («internationale
+//     Amtshilfe in Steuersachen», «Steueramtshilfe», DBA-Auslegung). Null
+//     Falschtreffer. Bewusst NICHT aufgenommen ist das französische «CDI»
+//     (Convention de double imposition): es trifft 6 Einträge und fügt der
+//     Vereinigung KEINEN einzigen hinzu (jeder trägt zusätzlich DBA oder LAAF),
+//     wäre also ein Muster ohne Wirkung (§17-Rückbau) — und «CDI» ist im
+//     französischen Rechtsgebrauch mit dem contrat de durée indéterminée
+//     doppelt belegt.
+const AMTSHILFE_STEUER_ROH = /\b(stahig|laaf|dba)\b/i;
+
+// (b) BUNDESVERFASSUNGS-ABGABEARTIKEL. Abgabefälle ohne jeden Erlass-Key
+//     (kantonale Erbschaftssteuer, Radio-/TV-Abgabe, Zollabgabe) zitieren
+//     regelmässig die BV-Norm, die den Bund zur betreffenden Abgabe ermächtigt:
+//     Art. 128 (direkte Bundessteuer), 129 (Steuerharmonisierung), 130 (MWST),
+//     131 (besondere Verbrauchssteuern), 132 (Stempelabgabe/Verrechnungs-
+//     steuer), 133 (Zölle).
+//     AUSGESCHLOSSEN sind Art. 127 und Art. 134 — und zwar aus einem
+//     sachlichen, an der Messung belegten Grund, nicht als nachträgliche
+//     Anpassung an Ausreisser: beide begründen KEINE Abgabe. Art. 127
+//     («Grundsätze der Besteuerung») ist die Grundsatznorm, die in JEDEM
+//     Kausalabgabe- und Gebührenfall beliebigen Gegenstands angerufen wird
+//     (Legalitäts-, Kostendeckungs-, Äquivalenzprinzip), Art. 134 ist eine
+//     negative Abgrenzungsnorm.
+//     GEMESSEN (29.8.2026): Die volle Spanne 127–134 trifft 44 Einträge, davon
+//     9 nicht-'steuern' — und die Fehlgriffe hängen ALLE an 127/134 (BGE 147 I
+//     16 Erschliessungsgebühr, 149 I 305 Gewässerschutz-Kostendeckungsprinzip,
+//     149 I 33 Genfer Volksinitiative, SG B 2023/225 Notfalldienstersatzabgabe,
+//     151 I 225 Abstimmung AHV-Finanzierung). Die Spanne 128–133 trifft 12
+//     Einträge; innerhalb der öör-Ketten, wo das Muster überhaupt läuft, sind
+//     es 11 — 7 bereits 'steuern' und 4 echte Abgabefälle (150 II 98
+//     Handänderungssteuer, 151 II 442 Radio-/TV-Abgabe, 151 II 533 Zollabgabe,
+//     152 II 1 Erbschaftssteuer LU). Null Falschtreffer.
+//     Der Rest von Q-J3-5 bleibt bestehen: Kausalabgaben, die nur Art. 127
+//     tragen, bleiben 'oeffentlich' — deklarierte Grenze, keine Kuration.
+const BV_ABGABE_ROH = /\bart\.\s*1(2[89]|3[0-3])\b.*\b(bv|cst|cost)\b/i;
+
+/** Roh-String-Signale für Steuern & Abgaben (§7-Beleg je Muster oben).
+ *  NUR in den öffentlich-rechtlichen Ketten aufrufen. */
 export function zweierRohSteuerSignal(zitierteNormen: Iterable<string>): Rechtsgebiet | null {
-  for (const z of zitierteNormen) if (ZWEIER_STEUER_ROH.test(String(z))) return 'steuern';
+  for (const z of zitierteNormen) {
+    const s = String(z);
+    if (ZWEIER_STEUER_ROH.test(s) || AMTSHILFE_STEUER_ROH.test(s) || BV_ABGABE_ROH.test(s)) {
+      return 'steuern';
+    }
+  }
   return null;
 }
 
@@ -253,20 +316,37 @@ export function dritteSteuerSignal(
  * das Band für Verwaltungs- und Abgaberecht, Band V das Sozialrechts-Band. Ein
  * vom Bundesgericht selbst in Band II publizierter Entscheid ist nach eben
  * dieser amtlichen Einordnung KEIN Sozialversicherungsfall — der Band schlägt
- * darum den SV-Erlass-Guard. Empirisch bestätigt an allen 68 Band-II-Einträgen
- * mit 9C-aza (29.8.2026): auch die mit BVG-/ATSG-/AHVG-Zitat sind Steuerfälle
- * (BGE 150 II 20 «Art. 32 Abs. 2 DBG, Erneuerungsfonds», BGE 150 II 409
- * «Beschwerdelegitimation … direkte Bundessteuer», BGE 151 II 345 «Art. 85
- * MWSTG»). Band II ohne jedes Steuer-Signal → 'oeffentlich' (Verwaltungsrecht),
- * nie 'sozialversicherung'.
+ * darum den SV-Erlass-Guard, SOLANGE ein Steuer-Signal vorliegt.
  *
- * DEKLARIERTE GRENZE (§8, kein stiller Zustand): BGE 149 II 381 (9C_259/2023,
- * Parteientschädigung bei «Überarztung», ATSG/KVG) ist der bekannte Grenzfall —
- * inhaltlich Krankenversicherungsrecht, vom Bundesgericht aber in Band II
- * publiziert und ohne Steuer-Signal, landet damit auf 'oeffentlich'. Der
- * amtlichen Bandzuteilung zu folgen ist hier bewusst gewählt: die Alternative
- * wäre eine redaktionelle Einzelfall-Zuordnung, und die ist auf diesem Pfad
- * ausgeschlossen (§2 — deterministisch, keine Kuration).
+ * NEU GEMESSEN (Gegenprüfung Runde 2, Befund G1/G3, 29.8.2026) — die frühere
+ * Fassung dieses Satzes behauptete, «alle 68 Band-II-Einträge mit 9C-aza» seien
+ * Steuerfälle. Das ist zu weit und wird hier durch die Messung ersetzt:
+ *   · 68 Band-II-Einträge mit 9C-aza, davon 60 MIT Steuer-Signal → 'steuern'
+ *     (darunter die mit BVG-/ATSG-/AHVG-Zitat: BGE 150 II 20 «Art. 32 Abs. 2
+ *     DBG, Erneuerungsfonds», BGE 150 II 409 «Beschwerdelegitimation … direkte
+ *     Bundessteuer», BGE 151 II 345 «Art. 85 MWSTG»);
+ *   · 8 OHNE Steuer-Signal, davon 7 ohne jeden Sozialversicherungs-Erlass
+ *     (Wasserrechtszins, Spruchgebühr, GAV-Anschlusspflicht …) → 'oeffentlich';
+ *   · GENAU EINER trägt einen SV-Erlass und kein Steuer-Signal: BGE 149 II 381
+ *     (9C_259/2023, Parteientschädigung bei «Überarztung», ATSG/KVG).
+ *
+ * DARUM DIE AUSNAHME (§1 vor amtlicher Systematik-Pauschale): Band II schliesst
+ * die Sozialversicherung nur so lange aus, wie kein positives, eigenständiges
+ * SV-Signal dagegensteht. Ein Entscheid, der ausschliesslich Erlasse der
+ * SR-Gruppe 830–838 trägt und KEIN Steuer-Signal, ist Sozialversicherungsrecht
+ * — die Bandzuteilung ist dann eine Publikationsentscheidung der Sammlung, kein
+ * Gegenbeweis. Die Ausnahme ist deterministisch (zwei geprüfte Bedingungen,
+ * keine Einzelfall-Liste) und am Bestand mit genau einem Treffer belegt.
+ *
+ * ENG GEHALTEN, weil die breite Fassung nachweislich schadet: «Band II ⇒
+ * sozialversicherung, sobald ein SV-Erlass vorliegt» hätte am Bestand SECHS
+ * Einträge gekippt und vier davon falsch — BGE 148 II 73 (Staatshaftung ETHL,
+ * AHVG/BVG nur mitzitiert), BGE 151 II 726 (Verbleiberecht FZA, AHVG als
+ * Altersmassstab — der Anlassfall des J3-Befunds B2), BGE 151 II 277 (AIG/FZA
+ * mit IVG-Zitat), BGE 148 II 16 (BPG/ArG mit BVG-Zitat). Die Ausnahme greift
+ * darum NUR auf der 9C — der Abteilung, die nach Art. 31 BgerR die
+ * Sozialversicherung überhaupt führt; die 8C- und 2er-Fälle bleiben vom
+ * generellen Band-II-Veto in `bgeSachgebietHint` gedeckt.
  */
 export function dritteOerSachgebiet(opts: {
   normKeys: Iterable<string>;
@@ -279,8 +359,13 @@ export function dritteOerSachgebiet(opts: {
   const steuer = dritteSteuerSignal(normKeys, opts.zitierteNormen, opts.legalArea);
   // Band V: Sozialrechts-Band der amtlichen Sammlung — eindeutig.
   if (opts.band === 'V') return 'sozialversicherung';
-  // Band II: Verwaltungs-/Abgaberecht — nie Sozialversicherung.
-  if (opts.band === 'II') return steuer ?? 'oeffentlich';
+  // Band II: Verwaltungs-/Abgaberecht. Steuer-Signal gewinnt; ohne Steuer-Signal
+  // schlägt ein positives SV-Erlass-Signal den Band (G3, Beleg im Kopf oben),
+  // sonst Verwaltungsrecht.
+  if (opts.band === 'II') {
+    if (steuer) return steuer;
+    return hatSozialversicherungsErlass(normKeys) ? 'sozialversicherung' : 'oeffentlich';
+  }
   // Sonst (bger-Urteil, BGE Band I/III/IV): Steuer-Signal nur, wenn KEIN
   // Sozialversicherungs-Erlass mitzitiert ist (Art.-23-AHVV-Fälle, s.o.).
   if (steuer && !hatSozialversicherungsErlass(normKeys)) return steuer;
@@ -417,6 +502,12 @@ export function sachgebietFuerEntscheid(opts: {
  * SBB-Angestellten; BGE 148 II 73, Staatshaftung der ETHL). Fällt der Hint weg,
  * greift der Band-Default 'oeffentlich'. Am Tor festgenagelt
  * (rechtsprechung-sachgebiet-tore.test.ts).
+ *
+ * G3 (Gegenprüfung Runde 2, 29.8.2026) — REICHWEITE DES VETOS PRÄZISIERT: Es
+ * gilt für die Zweige, die den Band nicht selbst auswerten (8C-, 2er- und
+ * kantonale Hints). Der 9C-Zweig wertet ihn in `dritteOerSachgebiet` bereits
+ * aus, samt der dort belegten Ausnahme (nur SV-Erlasse, kein Steuer-Signal —
+ * BGE 149 II 381). Ein Veto darüber wäre eine zweite, widersprechende Wahrheit.
  */
 export function bgeSachgebietHint(opts: {
   /** Fundstelle des BGE, z.B. «150 II 20» — Quelle des Bandes. */
@@ -431,13 +522,19 @@ export function bgeSachgebietHint(opts: {
   legalArea: string | null | undefined;
 }): Rechtsgebiet | null {
   const band = bgeBand(opts.fundstelle);
-  const roh = istGemischteDritteOerAbteilung(String(opts.azaAz ?? ''))
-    ? dritteOerSachgebiet({
-        normKeys: opts.normKeys,
-        zitierteNormen: opts.zitierteNormen,
-        legalArea: opts.legalArea,
-        band,
-      })
-    : opts.azaSachgebiet;
+  // 9C: `dritteOerSachgebiet` ist SELBST band-bewusst — sie kennt die
+  // Band-II-Regel samt ihrer einen deklarierten Ausnahme (SV-Erlass ohne
+  // Steuer-Signal, G3). Das generelle Veto unten würde diese Ausnahme sofort
+  // wieder kassieren und wäre damit eine zweite, widersprechende Wahrheit (§5);
+  // es gilt darum nur für die Zweige, die den Band NICHT selbst auswerten.
+  if (istGemischteDritteOerAbteilung(String(opts.azaAz ?? ''))) {
+    return dritteOerSachgebiet({
+      normKeys: opts.normKeys,
+      zitierteNormen: opts.zitierteNormen,
+      legalArea: opts.legalArea,
+      band,
+    });
+  }
+  const roh = opts.azaSachgebiet;
   return (band === 'II' && roh === 'sozialversicherung') ? null : roh;
 }

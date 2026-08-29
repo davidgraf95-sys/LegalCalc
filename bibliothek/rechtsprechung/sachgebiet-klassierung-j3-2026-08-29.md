@@ -70,6 +70,68 @@ echte Steuer-/Zollfälle (BGE 149 I 125, 149 II 129, 148 II 491, 150 II 390,
 Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
 1.1.2023 bei der III. Abteilung).
 
+**Gegenprüfungs-Runde 3 (29.8.2026) — Befunde G1–G4 gemessen und umgesetzt.**
+Ausgangslage: Band II ohne Bundes-Steuer-Key fiel pauschal auf `oeffentlich`, und
+das Band-II-Veto schloss die Sozialversicherung ausnahmslos aus.
+
+- **G2a · Internationale Steueramtshilfe.** Das StAhiG (SR 651.1, fr «LAAF»)
+  trägt keinen Register-Key — es ist im ERLASS_REGISTER nicht geführt, das
+  Norm-Signal konnte es nie sehen. Neues Roh-String-Signal `StAhiG|LAAF|DBA`,
+  **nur in den öör-Ketten**. Messung am Gesamtbestand (5'093 Snapshots):
+  `StAhiG|LAAF` 9 Treffer, `DBA` 8, Vereinigung 13 — alle 13 an der amtlichen
+  Regeste als Steuersache belegt, **0 Falschtreffer**. Das französische «CDI»
+  ist bewusst draussen: 6 Treffer, davon **0 zusätzliche** (jeder trägt auch DBA
+  oder LAAF) — ein Muster ohne Wirkung, und im Französischen mit *contrat de
+  durée indéterminée* doppelt belegt.
+- **G2b · Abgabefälle ohne jeden Erlass-Key.** Neues Signal auf die
+  BV-Artikel, die je eine konkrete Bundesabgabe begründen (Art. 128–133 BV/Cst.:
+  dBSt, Steuerharmonisierung, MWST, besondere Verbrauchssteuern,
+  Stempel-/Verrechnungssteuer, Zölle). Art. 127 und 134 ausgenommen (siehe
+  Q-J3-11). Messung: Spanne 127–134 trifft 44 Einträge mit 9 Nicht-Steuerfällen,
+  **alle** an 127/134 hängend; Spanne 128–133 trifft 12, innerhalb der öör-Ketten
+  11 — 7 bereits `steuern`, 4 echte Abgabefälle, **0 Falschtreffer**.
+- **G3 · Band-II-Veto mit einer Ausnahme.** Ein 9C-Entscheid, der ausschliesslich
+  SR-830–838-Erlasse und kein Steuer-Signal trägt, ist Sozialversicherungsrecht;
+  die Bandzuteilung ist dann eine Publikationsentscheidung der Sammlung, kein
+  Gegenbeweis. Am Bestand genau **ein** Treffer: BGE 149 II 381 (9C_259/2023,
+  «Überarztung», ATSG/KVG). Die vom Befund vorgeschlagene BREITE Fassung
+  («Band II + SV-Erlass ⇒ Sozialversicherung») ist **abgelehnt**: sie hätte 6
+  Einträge gekippt und 4 davon falsch (BGE 148 II 73 Staatshaftung ETHL,
+  151 II 726 Verbleiberecht FZA, 151 II 277, 148 II 16). Die Ausnahme greift nur
+  auf der 9C — der einzigen Abteilung, die nach Art. 31 BgerR die
+  Sozialversicherung überhaupt führt.
+- **G1 · Begründungssatz korrigiert.** Die Behauptung «alle 68 Band-II-Einträge
+  mit 9C-aza sind Steuerfälle» ist nachgemessen falsch: 68 Einträge, davon **60**
+  mit Steuer-Signal, 8 ohne — 7 davon ohne jeden SV-Erlass (`oeffentlich`), einer
+  mit (die G3-Ausnahme). Der Satz trägt jetzt diese Zahlen.
+- **Regen-Wirkung:** 14 Snapshots, im Register 28 Zeilen (`__voll`-Paare);
+  `oeffentlich` 1656 → 1628, `steuern` 205 → 231, `sozialversicherung` 1394 →
+  1396; Einträge vorher = nachher = 6341; Fixpunkt aller drei Remap-Skripte 0;
+  nur `sachgebiet`-Zeilen im Diff.
+- **§7-Abweichung offengelegt:** Der Auftrag zu Runde 3 nannte als Grundlage eine
+  «eigene Gesetzes-Regel SR 65 «Informationsaustausch in Steuersachen»». Eine
+  solche Regel existiert im Repo **nicht** — es gibt keine SR-Nummernkreis-Regel
+  für die Rechtsgebiets-Achse (geprüft: `register.ts`, `systematik.ts`,
+  `rechtsgebiet-thema.ts`). Tragend ist stattdessen die amtliche SR-Systematik
+  selbst (SR 6 «Finanzen», Gruppe 651 «Internationale Amtshilfe in Steuersachen»)
+  plus der an jeder Regeste belegte Gegenstand.
+
+### Offener Rest aus Runde 3 (gemessen, NICHT gebaut)
+
+Der 9C-Default `sozialversicherung` greift auch dort, wo der BGE-Band ihn
+widerlegt: **5 Einträge** liegen ausserhalb der Bände II/V, tragen weder ein
+Steuer-Signal noch einen SV-Erlass und landen trotzdem auf
+`sozialversicherung` — darunter **BGE 151 III 168** (Band III = das
+ZIVILRECHTS-Band, `normKeys` ZGB/OR, `legal_area` civil), ferner BGE 149 I 305
+(Kostendeckungsprinzip Gewässerschutz), 149 I 343, 150 I 144 und bger
+9C_409/2025. Das ist dieselbe Fehlerklasse wie F1/F3 (Abteilungs-Default schlägt
+amtlichen Band), nur für die Bände III/IV/I. Der deterministische Wurzel-Fix
+liegt bereit und braucht keine neue Regel: `dritteOerSachgebiet` müsste den
+bereits deklarierten Band-Vorrang (`bgeRoemischSachgebiet`: III → privat, IV →
+straf) auch für diese Bände auswerten, statt nur für II und V. Bewusst NICHT in
+dieser Runde gebaut — der Auftrag umfasste G1–G4, und die Klasse braucht ihre
+eigene Messung und Rot-Probe. **Als nächster Schritt vorzumerken.**
+
 ## Quirks (Q-J3, nach Q1/Q4-Muster)
 
 - **Q-J3-1 · Offline-Signalquelle beim Re-Map (präzisiert):** Vom aza-Urteil ist
@@ -88,6 +150,40 @@ Roh-StG-Signal. Kommentar-Beleg auf Art. 30/31 BgerR korrigiert (Steuern seit
   0/6341 Einträge tragen BGFA UND einen Steuer-Key (Messung Gegenprüfung); belegt
   nur durch den synthetischen Unit-Test. Bei Korpus-Wachstum am ersten echten
   Kollisionsfall prüfen.
+  **NACHTRAG 29.8.2026 (Gegenprüfung Runde 3):** Der erste echte Kollisionsfall
+  ist da, nur über den anderen Kanal — BGE 151 II 873 (2C_116/2023) trägt den
+  BGFA-Key UND das neue Roh-Signal `StAhiG|LAAF` (Anwaltsgeheimnis in der
+  internationalen Steueramtshilfe). Die Priorität hält: der Eintrag bleibt
+  `oeffentlich` (Berufsrecht), weil `normSignalSachgebiet` vor dem Roh-Signal
+  läuft. Runde 2 hatte diesen Eintrag als Steuerfall reklamiert; die Reklamation
+  ist BEWUSST NICHT umgesetzt — sie hätte eine dokumentierte, an derselben
+  Fundstelle begründete Vorrangregel still umgekehrt. Wer sie ändern will, ändert
+  die Priorität in `NORM_SIGNAL`, nicht den Einzelfall.
+- **Q-J3-10 · Der 9C-Guard ist am Bestand unfalsifizierbar (0 Fälle):** Die
+  Bedingung «Steuer-Signal gilt nur, wenn KEIN Sozialversicherungs-Erlass
+  mitzitiert ist» (`dritteOerSachgebiet`, Zweig ausserhalb Band II/V, Art.-23-
+  AHVV-Fälle) hat am Bestand **null** Auswertung: von 203 Einträgen mit
+  9C-Aktenzeichen liegen nur 12 ausserhalb der Bände II und V, und **0** davon
+  tragen gleichzeitig ein Steuer-Signal und einen SR-830–838-Erlass (Messung
+  29.8.2026). Der Guard ist also allein durch den synthetischen Unit-Test
+  belegt — dasselbe Muster wie Q-J3-6. **Bewusst behalten**, nicht nach §17
+  zurückgebaut: seine Grundlage (Art. 23 AHVV — die AHV-Beiträge
+  Selbstständigerwerbender werden aus der Steuermeldung abgeleitet, ein
+  AHV-Beitragsfall zitiert darum regelmässig das DBG) ist am Bestand an 16
+  Band-II-Einträgen mit Steuer- UND SV-Zitat sichtbar; nur trifft sie dort
+  bereits die Band-Regel. Wächst der bger-Bestand (Urteile ohne Sammlungs-Band),
+  wird der Guard scharf. Bei der nächsten Korpus-Erweiterung nachmessen.
+- **Q-J3-11 · Kausalabgaben mit Art. 127 BV bleiben `oeffentlich` (Rest von
+  Q-J3-5, verkleinert 29.8.2026):** Das neue BV-Abgabesignal deckt Art. 128–133
+  BV/Cst. (die Artikel, die je eine konkrete Bundesabgabe begründen). Art. 127
+  («Grundsätze der Besteuerung») und Art. 134 sind bewusst ausgenommen — sie
+  begründen keine Abgabe und werden in jedem Gebühren-/Kausalabgabefall
+  beliebigen Gegenstands zitiert. **Gemessene Folge:** BGE 147 I 16
+  (Erschliessungsgebühr), BGE 149 I 305 (Kostendeckungsprinzip Gewässerschutz)
+  und SG B 2023/225 (Notfalldienstersatzabgabe) bleiben ausserhalb von
+  «Steuern & Abgaben». Deterministisch ehrlich, fachlich diskutabel; eine
+  Erweiterung auf Art. 127 kostet nach Messung 4 Falschtreffer bei 0 zusätzlich
+  richtigen Treffern innerhalb der öör-Ketten.
 - **Q-J3-2 · `STG` ist totes Signal:** steht in `NORM_SIGNAL`, erzeugt aber nie
   einen Treffer, weil `STG` in `ABK_AUSSCHLUSS` liegt (föderal/kantonal mehrdeutig).
   Bewusst belassen (Dokumentation der Absicht), Wirkung null.
