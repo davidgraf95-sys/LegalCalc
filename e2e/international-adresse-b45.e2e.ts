@@ -99,6 +99,18 @@ test.describe('Befund 45 · die Alt-Adresse leitet dauerhaft weiter', () => {
   })
 })
 
+test.describe('Befund 45 · die Übersicht verlinkt die neue Adresse', () => {
+  test('die Säule ?ebene=international führt direkt auf /gesetze/international/…', async ({ page }) => {
+    await page.goto('/gesetze?ebene=international')
+    // Der Link muss die KANONISCHE Adresse tragen. Stünde hier noch die alte,
+    // wäre jeder Klick aus der Übersicht ein Umweg über die Weiterleitung —
+    // technisch funktionierend, aber genau der Zustand, den Befund 45 meint.
+    const link = page.locator(`a[href^="/gesetze/international/${VERTRAG}"]`).first()
+    await expect(link, 'Übersicht verlinkt den Staatsvertrag nicht kanonisch').toHaveCount(1)
+    await expect(page.locator(`a[href^="/gesetze/bund/${VERTRAG}"]`)).toHaveCount(0)
+  })
+})
+
 test.describe('Befund 45 · Gegenproben', () => {
   test('ein normaler Bundeserlass leitet NICHT weiter', async ({ page }) => {
     await page.goto('/gesetze/bund/OR')
