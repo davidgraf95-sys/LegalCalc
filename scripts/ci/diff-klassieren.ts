@@ -59,7 +59,7 @@ export function klassifiziereDateien(dateien: readonly string[]): DiffArt {
 /**
  * Bildet die VOLLE Drei-Klassen-Entscheidung nach (`doku`/`code-fern`/`code`)
  * für eine nicht-leere Dateiliste — Modell des PR-Zweigs in ci.yml (der
- * push-Zweig hat zusätzlich die `scripts/plan/inventar.ts`-Sonderregel für
+ * push-Zweig hatte bis 29.8.2026 eine `scripts/plan/inventar.ts`-Sonderregel für
  * `doku`, siehe Kopf-Kommentar; dort bleibt die bestehende Bash-Fallunter-
  * scheidung unverändert bestehen). Dient dem §6.7-Beweis der vier Testfälle
  * des Auftrags — ci.yml selbst ruft weiterhin nur `klassifiziereDateien` auf,
