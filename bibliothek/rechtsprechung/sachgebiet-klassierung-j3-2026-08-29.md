@@ -313,13 +313,51 @@ geschrieben, erscheint in keiner Facette und in keinem Zähler.
 
 ### Quirks der Trennung
 
-- **Q-TR-1 · CO2-Gesetz ist die eine offene Flanke.** `CO2_GESETZ` (SR 641.71)
-  steht als `oeffentlich`. Es war **nie** im Doppel-Topf, fällt aber unter die
-  SR-Gruppe 64 «Steuern» — das Tor `normtext-register.test.ts` führt es darum als
-  NAMENTLICHE Ausnahme (gefunden bei der Rot-Probe des Tors). Fedlex ordnet es
-  641 zu, weil es die CO2-Abgabe trägt; sein Gegenstand ist Klima- und Umweltrecht,
-  die Abgabe nur ein Instrument darin. Umklassierung wäre eine eigene fachliche
-  Frage → **wartet auf David.**
+- **Q-TR-1 · CO2-Gesetz ist die eine offene Flanke — auf BEIDEN Seiten.**
+
+  *Erlass-Seite.* `CO2_GESETZ` (SR 641.71) steht als `oeffentlich`. Es war
+  **nie** im Doppel-Topf, fällt aber unter die SR-Gruppe 64 «Steuern» — das Tor
+  `normtext-register.test.ts` führt es darum als NAMENTLICHE Ausnahme (gefunden
+  bei der Rot-Probe des Tors). Fedlex ordnet es 641 zu, weil es die CO2-Abgabe
+  trägt; sein Gegenstand ist Klima- und Umweltrecht, die Abgabe nur ein
+  Instrument darin.
+
+  *Entscheid-Seite (ergänzt 29.8.2026, Gegenprüfung F4).* BGE 150 II 390
+  (2C_58/2023) — Auslegung des Importeur-Begriffs nach Art. 10–13 CO2-Gesetz,
+  Zurechnung von CO2-Emissionswerten — steht als **`steuern`**. Derselbe
+  Regelungsgegenstand trägt also als Erlass `oeffentlich` und als Entscheid
+  `steuern`. **Die Asymmetrie ist real und wird hier benannt, nicht geglättet.**
+
+  **Die Ursache ist NICHT der Abgabecharakter der CO2-Sanktion** — das wäre die
+  naheliegende Erklärung und sie ist nachweislich falsch. Nachgemessen am
+  Snapshot: die Klassierung hängt allein am `normKeys`-Eintrag `MWSTG`, und das
+  MWSTG kommt in diesem Entscheid ausschliesslich als **beiläufige
+  Vergleichsnennung** vor — «Auch im Zollgesetz … oder Bundesgesetz … über die
+  Mehrwertsteuer (MWSTG; SR 641.20) wird der Begriff des Importeurs nicht
+  (allgemeingültig) definiert». In `zitierteNormen` (der Roh-Drittextraktion)
+  taucht das MWSTG überhaupt nicht auf; der Key stammt aus der
+  Fliesstext-Extraktion.
+
+  **Gewählte Linie: die Asymmetrie bleibt bestehen, deklariert.** Begründung —
+  gemessen, nicht gemutmasst: Von 103 Einträgen mit `sachgebiet = 'steuern'`
+  ruhen **11** allein auf einem Fliesstext-Key ohne Beleg in `zitierteNormen`
+  (bei allen elf ist die OCL-`statutes[]`-Liste auf 8 Einträge abgeschnitten —
+  die Fliesstext-Extraktion gleicht dort eine Lücke der Drittquelle aus, sie
+  erfindet nichts). **Zehn dieser elf sind echte Steuer- und Abgabefälle** (BGE
+  146 I 105 DBA CH-LU · 148 II 491 Zoll/Kabotage · 149 II 129 Zoll/
+  Ursprungserklärungen · 149 II 400 Art. 16 DBG · 151 II 884 Art. 38 f. StG ·
+  151 II 494 DBA CH-DK u. a.). Nur BGE 150 II 390 ist ein Fehltreffer. Die
+  Fliesstext-Extraktion abzuschalten oder auf `zitierteNormen`-Belege zu
+  verengen, kostete also zehn richtige Klassierungen, um eine falsche zu
+  beseitigen — ein schlechter Tausch. Eine Regel, die «einschlägig zitiert» von
+  «beiläufig erwähnt» unterscheidet, existiert deterministisch nicht.
+  Den einen Entscheid von Hand umzuhängen ist ebenfalls versperrt: das wäre
+  redaktionelle Einzelfall-Kuration (§2, per J3-Spec gesperrt).
+
+  **Offen für David (fachlich, beide Seiten zusammen):** Sollen CO2-Gesetz und
+  CO2-Rechtsprechung auf `steuern` (Lenkungsabgabe) oder auf `oeffentlich`
+  (Klimarecht) vereinheitlicht werden? Solange das nicht entschieden ist, ist
+  BGE 150 II 390 ein **benannter Fehltreffer** und keine stille Annahme.
 - **Q-TR-2 · Sozialhilfe läuft unter «Sozialversicherung» mit.** Die Abteilung 8C
   führt auch Sozialhilfe-Beschwerden; solche Entscheide tragen jetzt
   `sozialversicherung` (Beleg: BGE 146 I 1, Genfer Sozialhilfegesetz, aza
