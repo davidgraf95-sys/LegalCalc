@@ -107,8 +107,17 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
           </button>
         </div>
 
-        {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke. */}
-        <Link to="/" className={`lg:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
+        {/* Logo nur unterhalb lg — ab lg trägt die Seitenleiste die Marke.
+            ── C2 (Design-Review 29.8.2026) · UNTER 480 px TRÄGT DIE SCHUBLADE DIE MARKE
+            Gemessen @320 im warmen Zustand (Verlauf + ein offener Reiter): der
+            Streifen brauchte 332 px in einem 320-px-Fenster, «de ▾» hing über der
+            Kante. Acht Bedienelemente à 44 px passen dort nicht nebeneinander —
+            eines muss weichen, und es ist das, was einen benannten Ersatz EINEN
+            Tap entfernt hat: der ☰-Schalter steht in derselben Ecke, die
+            Schublade zeigt unter 480 px die Marke (`Sidebar.tsx`, spiegelbildlich
+            dieselbe Schwelle) und darunter «Start» als ersten Nav-Eintrag. Ab
+            480 px steht das Logo unverändert hier. */}
+        <Link to="/" className={`lg:hidden max-[480px]:hidden inline-flex items-center gap-2 no-underline shrink-0 min-h-11 px-1 ${weicht}`} aria-label="LexMetrik – Startseite">
           <LexMetrikSiegel size={30} />
           {/* Wortmarke ab sm — auf schmalen Schirmen trägt die Suche die Mitte. */}
           <LexMetrikWortmarke className="hidden sm:block text-h3" />
@@ -124,7 +133,15 @@ export function Topbar({ onMenu, seitenleisteEingeklappt, onSeitenleisteUmschalt
           {/* A5 (David 5.7.2026): kein eigener Palette-Knopf mehr — die
               HeaderSuche trägt den Norm-Sprung selbst; ⌘K/Ctrl-K und «/»
               fokussieren ihr Feld (Hinweis-kbd sitzt im Feld). */}
-          <VerlaufUebersicht />
+          {/* ── C2 · DER VERLAUF-TRIGGER WEICHT UNTER 480 px ────────────────
+              Zweite Hälfte derselben Rechnung wie beim Logo. Der Verlauf ist der
+              einzige Werkzeug-Knopf mit einem ZWEITEN, wortgleichen Zugang: das
+              Suchfeld öffnet leer den `SucheLeerzustand`, und der zeigt genau
+              diese Liste — aus DERSELBEN Quelle (`useZuletzt`, §5), nicht aus
+              einer Kopie. Reiter, Farbschema und Sprache haben das nicht und
+              bleiben darum stehen. Ab 480 px ist der Trigger unverändert da
+              (Gegenprobe im Tor). */}
+          <div className="max-[480px]:hidden"><VerlaufUebersicht /></div>
           <ReiterUebersicht />
           <ThemaUmschalter />
           <SprachUmschalter />

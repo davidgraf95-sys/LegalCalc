@@ -245,14 +245,19 @@ export function Sidebar({ onNavigate, markeZeigen = true }: { onNavigate?: () =>
   return (
     <nav aria-label="Hauptnavigation" className="flex flex-col gap-5 p-4 min-h-full">
       {/* Marke am Kopf der Seitenleiste (Prototyp V2). Auf Mobil trägt der
-          Top-Streifen das Logo (Schublade kann es ausblenden). */}
-      {markeZeigen && (
-        <Link to="/" onClick={onNavigate}
-          className="flex items-center gap-2.5 px-2.5 pt-1 pb-1 no-underline" aria-label="LexMetrik – Startseite">
-          <LexMetrikSiegel size={30} />
-          <LexMetrikWortmarke className="text-h3" />
-        </Link>
-      )}
+          Top-Streifen das Logo (Schublade kann es ausblenden).
+          ── C2 (29.8.2026) · UNTER 480 px TRÄGT SIE DIE SCHUBLADE ────────────
+          Dort hat der Streifen keinen Platz mehr für acht 44-px-Ziele und lässt
+          das Logo weg (Messreihe in `Topbar.tsx`). Die Marke fällt deswegen
+          nicht aus der App: die Schublade blendet sie unter DERSELBEN Schwelle
+          wieder ein — eine Zahl, zwei spiegelbildliche Klassen. Bewacht von
+          `e2e/topbar-kein-ueberlauf-320.e2e.ts` (Gegenprobe @480). */}
+      <Link to="/" onClick={onNavigate}
+        className={`${markeZeigen ? 'flex' : 'hidden max-[480px]:flex'} items-center gap-2.5 px-2.5 pt-1 pb-1 no-underline`}
+        aria-label="LexMetrik – Startseite">
+        <LexMetrikSiegel size={30} />
+        <LexMetrikWortmarke className="text-h3" />
+      </Link>
 
       {/* «Start» als Kopf-Eintrag, abgesetzt durch eine Haarlinie. Die Suche
           lebt seit der UI-Welle ausschliesslich im Header-Dropdown (§5). */}
