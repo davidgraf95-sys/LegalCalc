@@ -106,7 +106,7 @@ Gestrichen: `base` (16, im Leser ungenutzt), `body-l` (18 → geht in `leser-tex
 | Titelstufen | 20 / 25.6 / 32 | **20 / 24 / 32**, Overline in Kapitälchen | unverändert |
 | Absatzziffern | inline | **hängend**, `label-3` | inline, halbfett |
 | Fussnoten (Marke / Body) | 6× `text-[0.62em]` / 11 px, lh 1.2 | 0.72 em ohne Klammer / 12 px, lh 1.45 | 0.8 em in Klammern / 11 px, lh 1.3 |
-| Einzug je Stufe | 20 px, max 5 Stufen | unverändert | unverändert |
+| Einzug je Stufe | 20 px, max 5 Stufen | AUFGEHOBEN 29.8.2026 (§4b-C, eine Kante) | unverändert |
 | WCAG 1.4.8 | erfüllt | erfüllt (≤ 66 ch, lh 1.7) | erfüllt (76 ch, lh 1.55) |
 
 Empfehlung **V1** — verbindlich aber erst nach dem 18-Bilder-Bogen (StPO Art. 429 · OR Art. 336c × 3 Breiten × 3 Zustände): der Entscheid fällt am Bild, nicht am Text.

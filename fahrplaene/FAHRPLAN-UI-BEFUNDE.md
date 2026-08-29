@@ -391,7 +391,7 @@ reproduzieren (§0.1); nicht Reproduzierbares als «erledigt (überholt)» schli
 **12 Befunde** · Blocker 1 · Hoch 2 · Mittel 4 · Detail 5 · `W2·17-UI-BEFUNDE-B9`
 
 - [ ] **LM-122** · Blocker · Die H1 bricht mitten im Wort: «Geheimhaltungsvereinbarun / g (NDA)» — … [Verdacht → FAHRPLAN-GESETZES-UX.md Z.162-165 (Silbentrennungs-Fix, G1 ✅) + DESIGN-REGLEMENT-NORMTEXT.md Z.…]
-- [ ] **LM-123** · Hoch · Die Textspalte hat über die 1686 Artikel des OR sechs verschiedene … [Verdacht → DESIGN-REGLEMENT-NORMTEXT.md Z.174-183 (Einzug-Skala, Deckel 5 Stufen) + FAHRPLAN-GESETZES-UX.m…]
+- [x] **LM-123** · Hoch · Die Textspalte hat über die 1686 Artikel des OR sechs verschiedene … [Verdacht → DESIGN-REGLEMENT-NORMTEXT.md Z.174-183 (Einzug-Skala, Deckel 5 Stufen) + FAHRPLAN-GESETZES-UX.m…] **✅ behoben 29.8.2026 durch PR #570 (Staffelung aufgehoben — eine Textkante; der Verdachts-Zeiger auf die Einzug-Skala §4b ist mit deren Streichung gegenstandslos).**
 - [ ] **LM-124** · Hoch · Auf 140 % werden die Verfahrensphasen-Leiste («Materielle Fr…») und der Suchfeld-Platzhalter … [Verdacht → abnahme/responsive-audit/BERICHT.md Defekt D5 (A−/A+-Steller beschnitten, Such-Placeholder auf…]
 - [ ] **LM-125** · Mittel · Der Hinweis läuft über rund 1070 px bei 11 px Schriftgrösse … [Verdacht → DESIGN-REGLEMENT.md §B2b-Zeile der Audit-Tabelle («Lesespalte ✅ erfüllt, 38× max-w-reading») +…]
 - [ ] **LM-126** · Mittel · 19 verschiedene Schriftgrössen über 41 Seiten, darunter Paare wie 14 und … [Verdacht → DESIGN-REGLEMENT.md §B2-Zeile der Audit-Tabelle («🟡 teilweise … 22× text-[…rem] + 6× text-sm/ba…]
