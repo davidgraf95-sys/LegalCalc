@@ -792,7 +792,10 @@
   }
   .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte,
   .lc-leser[data-leser-v3="rahmen"] .max-w-normtext {
-    max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass));
+    /* Zweiter Fallback IM min(): wäre --leser-zeilenmass je undefiniert (Selektor-
+       Umhängung), würde sonst die GANZE Deklaration ungültig und max-width fiele
+       auf none — nicht auf 45rem (Bug-Check #570, Mitdenken 29.8.2026). */
+    max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen

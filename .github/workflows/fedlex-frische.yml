@@ -46,7 +46,9 @@ jobs:
   frische:
     name: Wiedervorlage-Refresh · Batch-Re-Pin
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 45 statt 30 seit 29.8.2026: der Tor-Schritt fährt jetzt die volle
+    # Tor-Menge (`npm run check` + `npm test`) statt acht handverlesener Tore.
+    timeout-minutes: 45
     env:
       # Zeitzone wie in ci.yml (dort mit derselben Begründung, Zeilen 79–83): die
       # Golden-Basis ist in Europe/Zurich erzeugt, GitHub-Runner laufen in UTC.
@@ -139,6 +141,18 @@ jobs:
           else
             echo "cache.sh re-gepinnt → Snapshots/Struktur/Register regenerieren."
             npm run normtext -- --datum=${{ steps.datum.outputs.iso }}
+            # gen:pdf-quellen VOR dem Register: register.json projiziert
+            # pdfUrl/pdfStand aus pdf-quellen.json (§5-Kaskade). Fehlte bis
+            # 29.8.2026 — der Re-Pin der RDV hob ihre Konsolidierung von
+            # 2025-11-01 auf 2026-08-20, das PDF-Sidecar blieb stehen und
+            # check:pdf-quellen wurde im PR #572 rot.
+            # `--nur=bund`, weil dieser Workflow ausschliesslich BUND-Pins hebt:
+            # eine Voll-Erhebung würde 1231 Kantons-Quellen neu befragen und
+            # deren unabhängige Quell-Drift in den Reparatur-PR ziehen (gemessen
+            # 29.8.2026: 13 BS-Erlasse verloren dabei ihren PDF-Link, weil die
+            # Kantons-Sammlung inzwischen eine neuere Fassung führt — ein echter,
+            # aber sachfremder Befund, der einen eigenen Schritt verdient).
+            npm run gen:pdf-quellen -- --nur=bund
             npm run normtext:register -- --datum=${{ steps.datum.outputs.iso }}
             npm run normtext:struktur -- --datum=${{ steps.datum.outputs.iso }}
             npm run gen:fedlex-wiedervorlage -- --datum=${{ steps.datum.outputs.iso }}
@@ -148,6 +162,12 @@ jobs:
             # landete mit Sidecar-Änderung ohne Shard-Nachzug, check:historie
             # rot erst in der Hand-Nacharbeit entdeckt (Nullprobe-Beleg dort).
             npm run gen:historie
+            # Ebenfalls seit 29.8.2026 (PR #572): beide leiten aus den oben neu
+            # erzeugten Artefakten ab und blieben darum stehen — RDV.json aus den
+            # Struktur-Sidecars (check:artikel-revisionen rot), der Startseiten-
+            # Zähler aus den Registern (check:zaehler rot).
+            npm run gen:artikel-revisionen
+            npm run gen:zaehler
             npm run datenhaltung:manifest
           fi
 
@@ -177,18 +197,52 @@ jobs:
       # wahr für die gefahrenen Tore und trotzdem irreführend (§8).
       # ci.yml fuhr das Tor (Zeile ~356) und wurde rot; der Schaden war da nur
       # nicht mehr abzuwenden, sondern bloss noch sichtbar.
-      - name: Offline-Tore vor dem PR (kein roter Auto-Merge-PR)
+      # ── 29.8.2026: HANDVERLESENE LISTE ABGESCHAFFT ──────────────────────────
+      # Bis hierher standen acht namentlich aufgezählte Tore. Die Liste war
+      # per Konstruktion unvollständig, und zwar wachsend: jedes neue `check:*`
+      # musste jemand von Hand nachtragen. Am 29.8.2026 kostete genau das drei
+      # Regressionen in EINEM Auto-Merge-PR (#572) — `check:pdf-quellen`
+      # (RDV-PDF-Konsolidierung nicht nachgezogen), `check:artikel-revisionen`
+      # (RDV.json veraltet) und `check:zaehler` (Startseiten-Zähler veraltet)
+      # waren rot, standen aber nicht auf der Liste. Der Lauf meldete «Offline-
+      # Tore grün» und eröffnete den PR. Die Behauptung war wahr für die
+      # gefahrenen Tore und trotzdem irreführend (§8) — dieselbe Fehlerklasse,
+      # die der Kommentar oben schon einmal für `check:golden-normtext`
+      # beschreibt. Zweimal dieselbe Ursache, zweimal ein Nachtrag: der
+      # Nachtrag war nie der Fix (§17).
+      #
+      # `npm run check` fährt stattdessen die GANZE Tor-Menge aus
+      # `check:seriell` (heute 44, parallel über scripts/check-parallel.ts).
+      # Damit deckt dieser Schritt jedes künftige Tor automatisch mit ab; die
+      # Liste kann nicht mehr veralten, weil es keine mehr gibt.
+      #
+      # WARUM `npm run check` UND NICHT `npm run gate`: gate fährt zusätzlich
+      # tsc/vitest/lint. Dieser Workflow ändert ausschliesslich Daten-Artefakte,
+      # nie Quellcode — tsc und lint hätten hier nichts zu prüfen. `npm test`
+      # steht trotzdem dabei, weil etliche Tests gegen die committeten
+      # Projektionen laufen und ein Daten-Diff sie sehr wohl brechen kann.
+      #
+      # `check:gegenpruefung` ist in `check:seriell` enthalten und wäre hier
+      # ein Problem — es liest den Working Tree, der in diesem Schritt absichtlich
+      # schmutzig ist. Es schützt sich selbst: unter GITHUB_ACTIONS protokolliert
+      # es SKIP und endet grün (scripts/gegenpruefung/kern.ts, CI-Selbstschutz).
+      # Der Arbiter für den committeten Bereich ist `check:merge-schutz` in
+      # ci.yml, das der PR unten ohnehin durchläuft.
+      #
+      # `golden:vergleich` bleibt explizit: es steht NICHT in `check:seriell`
+      # (es ist ein eigener Gate-Schritt) und ist der Engine-Golden-Beweis.
+      #
+      # LAUFZEIT: der `tore`-Job in ci.yml fährt dieselbe Tor-Menge nach blossem
+      # `npm ci` (ohne Build, ohne DB) und hält den 30-Minuten-Rahmen; hier kommt
+      # sie zu den Netz-Schritten oben hinzu. timeout-minutes ist darum von 30
+      # auf 45 gehoben.
+      - name: Offline-Tore vor dem PR (VOLLE Tor-Menge, keine Auswahl)
         if: steps.diff.outputs.geaendert == '1'
         run: |
           set -euo pipefail
-          npm run check:normtext
-          npm run check:golden-normtext
-          npm run check:struktur-konsistenz
-          npm run check:verklebung
+          npm run check
+          npm test
           npm run golden:vergleich
-          npm run check:verfall
-          npm run check:paritaet
-          npm run check:historie
 
       - name: Reparatur-PR eröffnen + Auto-Merge (David-Rahmen 16.7.2026)
         if: steps.diff.outputs.geaendert == '1'

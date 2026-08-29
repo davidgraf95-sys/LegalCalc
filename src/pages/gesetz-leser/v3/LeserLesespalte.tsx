@@ -134,7 +134,7 @@ export function LeserLesespalte({ m }: {
   };
 
   return (
-    // ── Ä2 · SATZSPIEGEL V3 = 40 rem (Entscheid 16.8.2026, Design-Grundlage
+    // ── Ä2 · SATZSPIEGEL V3 (historisch 40 rem; seit 21.8. LESEMASS_MAX 45 rem, seit 29.8. zusätzlich 1C-Zeichen-Deckel — massgeblich index.css --leser-zeilenmass) (Entscheid 16.8.2026, Design-Grundlage
     // Kap. 3) ──────────────────────────────────────────────────────────────
     // Bis hierher stand `max-w-normtext` (42 rem), byte-gleich aus der
     // Ist-Hülle. Gemessen blieben davon in V3 aber nur 556–616 px @1280 übrig,

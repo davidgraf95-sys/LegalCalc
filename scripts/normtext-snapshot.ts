@@ -697,7 +697,7 @@ async function erzeugeHtmSnapshots(
     inventar.map((g) =>
       limit(async (): Promise<{ ok: true; ergebnis: Awaited<ReturnType<typeof holeHtm>> } | { ok: false; fehler: string }> => {
         try {
-          return { ok: true, ergebnis: await holeHtm(g.quelleUrl, g.profil) };
+          return { ok: true, ergebnis: await holeHtm(g.quelleUrl, g.profil, abgerufen) };
         } catch (e) {
           return { ok: false, fehler: e instanceof Error ? e.message : String(e) };
         }
@@ -927,7 +927,7 @@ async function erzeugePdfSnapshots(
     alleGruppen.map((g) =>
       pdfLimit(async () => {
         try {
-          pdfAbrufe.set(g, { ok: true, ergebnis: await holePdf(g.quelleUrl, PDF_PROFILE[g.profil]) });
+          pdfAbrufe.set(g, { ok: true, ergebnis: await holePdf(g.quelleUrl, PDF_PROFILE[g.profil], abgerufen) });
         } catch (e) {
           pdfAbrufe.set(g, { ok: false, fehler: e instanceof Error ? e.message : String(e) });
         }
