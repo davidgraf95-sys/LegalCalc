@@ -5,11 +5,11 @@ import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS, parseRoadmap } from './par
 import { resolve } from './aufloesen';
 import { obersterMarkerId } from './marker';
 
-// `groesse` bewusst NICHT setzbar (Gegenprüfungs-Befund 14.8.2026): seit der
-// Streichung der Vokabelprüfung (check.ts Regel 12) würde plan:set einen
-// Tippfehler (`groesse=XL`) ungeprüft schreiben und das Lagebild still
-// verändern — das Feld wird von Hand gepflegt wie zuvor.
-const FELDER = new Set(['id', 'status', 'blocker', 'dep', 'kollision', 'worktree', '26x', 'fahrplan', 'slot']);
+// `feld` IST setzbar (anders als das gestrichene `groesse`): es steuert die
+// Lane-Bildung und die Kollisionswarnung, also muss es aus dem Werkzeug heraus
+// korrigierbar sein. Ein Tippfehler bleibt trotzdem nicht still — check.ts
+// Regel 14 prüft das Vokabular und nennt die sieben zulässigen Werte.
+const FELDER = new Set(['id', 'status', 'blocker', 'dep', 'feld', 'fahrplan']);
 // Marke, die ein Statuswechsel setzt, WENN die bestehende nicht schon passt.
 //
 // `parked: '[d]'`/`blocked: '[d]'` waren am 31.7.2026 kurzzeitig hier (Fund
@@ -33,7 +33,7 @@ export function setField(md: string, id: string, feld: string, wert: string): st
   const indent = zeilen[idx].match(/^([ \t]*(?:>[ \t]*)*)/)![1];
   const normalisiert = serializeEtikett(parseEtikett(zeilen[idx]), indent);
   let ersetzt = normalisiert.replace(new RegExp(`(\\b${feld}): .*?(?= ·| -->)`), (_m, g1) => `${g1}: ${wert}`);
-  // Fehlt ein OPTIONALES Feld (`fahrplan`, `slot`, `groesse`), trifft
+  // Fehlt ein OPTIONALES Feld (`feld`, `fahrplan`), trifft
   // die Regex nichts — bis 31.7.2026 blieb die Zeile dann unverändert, und die CLI
   // meldete trotzdem «gesetzt: …». Ein Werkzeug, das seinen Nicht-Erfolg als Erfolg
   // meldet, ist dieselbe Fehlerklasse wie die Funde dieser Runde. Darum anhängen:

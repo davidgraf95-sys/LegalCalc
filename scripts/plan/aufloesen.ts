@@ -12,58 +12,49 @@ export interface Buckets {
   blockiert: { id: string; blocker: string }[];
   geparkt: string[];
   inArbeit: string[];
-  wartet26xSlot: string[];
-  slot26xBelegtVon: string | null;
-  /** ready-Einheiten aus dem Querschnitt-Band: laufen begleitend, konkurrieren
-   *  nie um den «obersten offenen Schritt» (ihre eigene Abschnitts-Überschrift
-   *  sagt «kein Reihenfolge-Slot» — bis 24.7.2026 gewann trotzdem ein
-   *  Querschnitt-Schritt die oberste Position, gegen zwei David-Dekrete). */
-  begleitend: string[];
+  /** ready-Schritte, deren `feld` gerade von einem `wip`-Schritt belegt ist —
+   *  die Kollisionswarnung von plan:next (Steuerungs-Diät 29.8.2026: früher
+   *  aus `kollision:`-Globs gegen den 26×-Slot, jetzt aus dem Baufeld). */
+  feldBelegt: { id: string; feld: string; durch: string }[];
 }
 
-/** Präfix-Test statt Gleichheit: parse.ts schneidet den «— …»-Tail der Überschrift ab,
- *  aber Klammer-Zusätze wie «(läuft begleitend …)» bleiben Teil des Sektions-Strings. */
-const QUERSCHNITT_PRAEFIX = 'Querschnitt-Band';
-
-function kollBasis(p: string): string { return p.replace(/[*?{[].*$/, ''); }
-function pfadUeberlappt(x: string, y: string): boolean {
-  const a = kollBasis(x), b = kollBasis(y);
-  if (a === '' || b === '' || a === b) return true;
-  const [k, l] = a.length <= b.length ? [a, b] : [b, a];
-  return l.startsWith(k) && (k.endsWith('/') || l[k.length] === '/');
-}
-// Exportiert für scripts/plan/bildDaten.ts (Verknüpfungs-Anzeige «kann nicht
-// parallel laufen mit», Auftrag David 14.8.2026) — DIESELBE Kollisions-Regel
-// wie die Lane-Bildung hier, kein zweiter Nachbau im Bild-Generator (§5).
-export function kollidiert(a: string[], b: string[]): boolean {
-  if (a.length === 0 || b.length === 0) return true;
-  for (const x of a) for (const y of b) if (pfadUeberlappt(x, y)) return true;
-  return false;
+/**
+ * Kollidieren zwei Schritte?
+ *
+ * Ja, wenn sie **dasselbe Baufeld** tragen — und konservativ auch dann, wenn bei
+ * einem das Feld FEHLT: ein undeklarierter Schritt kann überall liegen, also gilt
+ * er als «kollidiert mit allem» und bekommt eine eigene Lane. Das ist wörtlich
+ * dieselbe konservative Regel wie zuvor bei leerer `kollision:`-Liste; nur die
+ * Datenquelle ist von einer Pfadliste auf ein Wort geschrumpft.
+ */
+export function kollidiert(a: string | null, b: string | null): boolean {
+  if (a === null || b === null) return true;
+  return a === b;
 }
 
 export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
   // Dokumentreihenfolge = Bau-Reihenfolge. Vorher wurde lexikografisch nach ID
   // sortiert; damit waren alle ready-Einheiten gleichrangig und die Frage nach
   // dem «obersten offenen Schritt» (Ausführungs-Protokoll) nicht beantwortbar.
+  //
+  // Der frühere Querschnitt-Filter («Querschnitt-Band»-Sektion läuft begleitend,
+  // konkurriert nie um den obersten Platz) ist mit dem Plan-Neuschnitt vom
+  // 29.8.2026 entfallen: die ROADMAP gliedert nicht mehr nach Auftrags-Herkunft,
+  // sondern nach den sieben Baufeldern, und eine «Querschnitt»-Sektion gibt es
+  // nicht mehr. Sein Anlass (24.7.2026: ein Querschnitt-Schritt gewann den
+  // obersten Platz gegen zwei David-Dekrete) wird seither doppelt gedeckt — von
+  // der `@queue` als SSoT der Reihenfolge (deren Rang hier VOR der pos-Ordnung
+  // greift) und von check.ts Regel 8.4, die die Prosa gegen diese Ausgabe hält.
+  // Dazu kommt der Schnitt selbst: `betrieb` steht als letzte Sektion im
+  // Dokument, also gewinnt auch bei LEERER Queue ein Produkt-Schritt.
   const sortiert = [...einheiten].sort((a, b) => a.pos - b.pos);
   const done = new Set(sortiert.filter((e) => e.etikett.status === 'done').map((e) => e.id));
-  const slot = sortiert.find((e) => e.etikett.asset26x && e.etikett.status === 'wip');
-  const slot26xBelegtVon = slot ? slot.id : null;
-  // Der ausdrücklich etikettierte Slot-Inhaber (@meta `slot: inhaber`, von check.ts Regel 5b
-  // auf höchstens EINEN erzwungen) hat Vorrang vor «erster ready-26×-Schritt in Dokument-
-  // reihenfolge». Ohne diese Zeile meldete next.ts den Inhaber als «wartet auf 26×-Slot» —
-  // also wartend auf den Slot, den er selbst hält — und liess statt seiner den erstbesten
-  // anderen 26×-Schritt zu (Befund 20.7.2026 bei der Slot-Übergabe W2·6-DATA → W3·12).
-  const inhaber26x = sortiert.find((e) => e.etikett.slot === 'inhaber')?.id ?? null;
 
   const readyNow: string[] = [];
   const wartetDep: { id: string; offen: string[] }[] = [];
   const blockiert: { id: string; blocker: string }[] = [];
   const geparkt: string[] = [];
   const inArbeit: string[] = [];
-  const wartet26xSlot: string[] = [];
-  const begleitend: string[] = [];
-  let ready26xAdmitted = false;
 
   for (const e of sortiert) {
     const t = e.etikett;
@@ -74,17 +65,6 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
     // status === 'ready'
     const offen = t.dep.filter((d) => !done.has(d));
     if (offen.length) { wartetDep.push({ id: e.id, offen }); continue; }
-    // Querschnitt-Filter erst NACH dep: ein Querschnitt-Schritt mit offener
-    // Voraussetzung gehört in wartetDep, nicht still in «begleitend»
-    // (Verify-Befund 24.7.2026 — «begleitend» heisst «jetzt mitlaufbar»).
-    // AUSNAHME (Entscheid David 8.8.2026, «Prozess geht grundsätzlich vor»):
-    // Ein ausdrücklich in die @queue gestellter Querschnitt-Schritt steigt in
-    // die Hauptreihenfolge auf — die @queue ist SSoT der Bau-Reihenfolge, und
-    // ohne diese Ausnahme könnte sie Prozess-Schritten keinen Rang geben.
-    if (e.sektion.startsWith(QUERSCHNITT_PRAEFIX) && !queue.includes(e.id)) { begleitend.push(e.id); continue; }
-    if (t.asset26x && inhaber26x && e.id !== inhaber26x) { wartet26xSlot.push(e.id); continue; }
-    if (t.asset26x && !inhaber26x && (slot26xBelegtVon || ready26xAdmitted)) { wartet26xSlot.push(e.id); continue; }
-    if (t.asset26x) ready26xAdmitted = true;
     readyNow.push(e.id);
   }
 
@@ -95,18 +75,32 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
     readyNow.sort((a, b) => (qrang.get(a) ?? Infinity) - (qrang.get(b) ?? Infinity));
   }
 
-  // Lanes: greedy lexikografisch. Konservativ: leere kollision = undeklariert =
-  // kollidiert mit allem (eigene Lane); Globs/Verzeichnis-Präfixe zählen als Überlappung.
-  const kollOf = new Map(sortiert.map((e) => [e.id, e.etikett.kollision]));
+  // Lanes: greedy in readyNow-Reihenfolge. Ein Schritt steigt in die erste Lane,
+  // in der niemand sein Baufeld hält; ein Schritt OHNE Feld bekommt immer eine
+  // eigene (konservativ, s. `kollidiert`).
+  const feldOf = new Map(sortiert.map((e) => [e.id, e.etikett.feld]));
   const lanes: string[][] = [];
   for (const id of readyNow) {
-    const meins = kollOf.get(id)!;
+    const meins = feldOf.get(id) ?? null;
     let platziert = false;
     for (const lane of lanes) {
-      if (!lane.some((other) => kollidiert(meins, kollOf.get(other)!))) { lane.push(id); platziert = true; break; }
+      if (!lane.some((other) => kollidiert(meins, feldOf.get(other) ?? null))) { lane.push(id); platziert = true; break; }
     }
     if (!platziert) lanes.push([id]);
   }
-  return { readyNow, lanes, wartetDep, blockiert, geparkt, inArbeit, wartet26xSlot, slot26xBelegtVon, begleitend };
-}
 
+  // Kollisionswarnung: ein baubarer Schritt, dessen Feld gerade ein `wip`-Schritt
+  // hält. Das ist die Nachfolge der 26×-Slot-Sperre — nur greift sie jetzt für
+  // JEDE Fläche statt nur für Datenassets, und sie SPERRT nicht, sondern warnt:
+  // wer trotzdem baut, tut es in einem eigenen Worktree (§12). Eine harte Sperre
+  // wäre hier falsch, weil ein Feld sieben statt hunderter Flächen bündelt.
+  const feldBelegt: { id: string; feld: string; durch: string }[] = [];
+  for (const id of readyNow) {
+    const meins = feldOf.get(id) ?? null;
+    if (meins === null) continue;
+    const durch = inArbeit.find((w) => feldOf.get(w) === meins);
+    if (durch) feldBelegt.push({ id, feld: meins, durch });
+  }
+
+  return { readyNow, lanes, wartetDep, blockiert, geparkt, inArbeit, feldBelegt };
+}

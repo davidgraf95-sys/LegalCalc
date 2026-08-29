@@ -44,10 +44,11 @@ import {
 // druckte den ganzen Bericht in die plan:next-Ausgabe (s. Kopf von retro17Kern.ts).
 import { MIN_SNAPSHOTS, befunde } from './retro17Kern';
 
-/** Ein `wip`-Schritt mit den von ihm belegten Flächen (`kollision:`-Globs). */
+/** Ein `wip`-Schritt mit dem von ihm belegten Baufeld (`feld:`). */
 export interface WipFlaeche {
   id: string;
-  kollision: string[];
+  /** `null` = Schritt trägt kein `feld:` — dann gilt konservativ die GESAMTE Fläche. */
+  feld: string | null;
 }
 
 /** Ein Bau-Platz aus `git worktree list --porcelain`. */
@@ -140,7 +141,7 @@ export function parseWorktrees(porcelain: string): BauPlatz[] {
 export function wipFlaechen(einheiten: Einheit[], inArbeit: string[]): WipFlaeche[] {
   return inArbeit.map((id) => ({
     id,
-    kollision: einheiten.find((e) => e.id === id)?.etikett.kollision ?? [],
+    feld: einheiten.find((e) => e.id === id)?.etikett.feld ?? null,
   }));
 }
 
@@ -249,7 +250,7 @@ export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
   } else {
     z.push('🔨 belegte Flächen (wip):');
     for (const w of roh.wip) {
-      const flaechen = w.kollision.length ? w.kollision.join(', ') : 'keine kollision: deklariert → gilt als GESAMTE Fläche';
+      const flaechen = w.feld ?? 'kein feld: deklariert → gilt als GESAMTE Fläche';
       z.push(`   ${w.id} → ${flaechen}`);
     }
   }
