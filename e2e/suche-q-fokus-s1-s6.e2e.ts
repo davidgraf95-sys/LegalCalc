@@ -11,6 +11,7 @@
 //
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { kopfSucheOeffnen } from './helpers/kopfSuche'
 
 // Der Artikel-Volltext-Index (~4 MB) lädt einmal; unter Runner-Last reicht das
 // 30-s-Standardbudget nicht (Muster norm-sprung.e2e.ts). INFRASTRUKTUR, keine
@@ -102,17 +103,62 @@ test.describe('S1 · Query-Durchreichung ?q=', () => {
   })
 })
 
+// ── §6.3-DEKLARATION (29.8.2026, Entscheid David C1/B10/L3 + C2) ─────────────
+// Der Design-Review hat den Streifen unter 480 px entlastet: die globale Suche
+// ist dort im Ruhezustand eine 44-px-Lupe (das Feld war gemessen 28 px breit),
+// und Logo wie Verlauf-Trigger weichen, weil sie einen benannten Zweitzugang
+// EINEN Tap entfernt haben (Schublade bzw. Such-Leerzustand). Damit zerfällt der
+// frühere eine Mobil-Bereich in ZWEI Bänder, und die S6-Zusagen verteilen sich
+// entlang der Schwelle — keine wird schwächer, jede steht künftig dort, wo sie
+// überhaupt messbar ist:
+//
+//   < 480 px  «Lupe → Feld» ist der Weg. Feldschrift und Query-Lesbarkeit
+//             gelten unverändert und werden hier @390 weiter geprüft (echte
+//             Telefonbreite) — nur eben am GEÖFFNETEN Feld, dem einzigen
+//             Zustand, in dem dort überhaupt getippt wird.
+//   480–639   Logo und Werkzeuge stehen im Streifen; nur DORT ist «Fokus
+//             blendet sie aus, ✕ holt sie zurück» eine prüfbare Aussage. Der
+//             Fall zieht darum in den eigenen describe unten um — wörtlich
+//             unverändert, nur mit anderer Breite.
+//   Die Entsprechung unter 480 px («Lupe → Feld über die volle Streifenbreite,
+//   ✕ zurück, Fokus auf ‹Navigation öffnen›») ist lückenlos gedeckt von
+//   `topbar-kein-ueberlauf-320.e2e.ts` @320 — kein Prüfpunkt geht verloren,
+//   und die Doppelung wird bewusst nicht angelegt (§17-Rückbau).
 test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
   test.use({ viewport: { width: 390, height: 844 } })
 
+  // ROT ZU BEKOMMEN: in `HeaderSuche.tsx` das `text-base` der Feld-Klasse
+  // streichen ⇒ unter sm greift `text-body-s` (14 px) und der Fall reisst.
   test('Feldschrift ≥ 16 px (keine iOS-Fokus-Zoom-Falle)', async ({ page }) => {
     await page.goto('/')
-    const feld = sucheFeld(page)
+    // Gemessen wird der Zustand, in dem der Nutzer @390 wirklich tippt: nach dem
+    // Lupen-Tap. Der Ruhezustand trägt dort kein Feld mehr (C1/B10/L3).
+    const feld = await kopfSucheOeffnen(page)
     const px = await feld.evaluate((el) => parseFloat(getComputedStyle(el).fontSize))
     // iOS Safari zoomt beim Fokus auf jedes Feld unter 16 px; der Nutzer muss
     // danach von Hand herauszoomen. 14 px (text-body-s) war genau dieser Fall.
     expect(px).toBeGreaterThanOrEqual(16)
   })
+
+  test('getippte Query bleibt im Feld sichtbar (nicht abgeschnitten)', async ({ page }) => {
+    await page.goto('/')
+    const feld = await kopfSucheOeffnen(page)
+    await feld.fill('arbeitsvertrag')
+    // scrollWidth > clientWidth hiesse: der Anfang der Query ist aus dem Feld
+    // gescrollt — genau der S6-Prüfpunkt «getippte Query voll lesbar».
+    const passt = await feld.evaluate((el: HTMLInputElement) => el.scrollWidth <= el.clientWidth + 1)
+    expect(passt).toBe(true)
+  })
+})
+
+// Zweites Band derselben S6-Zusage (Deklaration oben). WARUM 500 UND NICHT 480:
+// `viewport` setzt die FENSTER-Breite, die Media-Query misst die Layout-Breite
+// ohne die klassische Scrollleiste — bei 480 sind das 465 px, die Schwelle
+// greift also noch (gemessen 29.8.2026; dieselbe Rechnung steht im Tor
+// `topbar-kein-ueberlauf-320.e2e.ts`). 500 liegt mit 485 px sicher darüber und
+// bleibt trotzdem im Mobil-Fokusmodus (`istMobil` = unter sm/640 px).
+test.describe('S6 · Fokusmodus im Band 480–639 px (dort trägt der Streifen das Logo)', () => {
+  test.use({ viewport: { width: 500, height: 844 } })
 
   test('Fokus blendet Logo und Werkzeuge aus, ✕ holt sie zurück', async ({ page }) => {
     await page.goto('/')
@@ -139,17 +185,6 @@ test.describe('S6 · Mobiler Such-Fokusmodus @390', () => {
     // Fokus kehrt gezielt in den Streifen zurück, nicht auf <body>
     // (Gegenprüfungs-Befund 7.8.2026, Tastatur-/Screenreader-Position).
     await expect(page.getByRole('button', { name: 'Navigation öffnen' })).toBeFocused()
-  })
-
-  test('getippte Query bleibt im Feld sichtbar (nicht abgeschnitten)', async ({ page }) => {
-    await page.goto('/')
-    const feld = sucheFeld(page)
-    await feld.click()
-    await feld.fill('arbeitsvertrag')
-    // scrollWidth > clientWidth hiesse: der Anfang der Query ist aus dem Feld
-    // gescrollt — genau der S6-Prüfpunkt «getippte Query voll lesbar».
-    const passt = await feld.evaluate((el: HTMLInputElement) => el.scrollWidth <= el.clientWidth + 1)
-    expect(passt).toBe(true)
   })
 })
 
