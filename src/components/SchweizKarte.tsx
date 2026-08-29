@@ -1,82 +1,146 @@
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 import { KANTONE_KARTE } from '../data/kantoneKarte';
+import { STUFE_WORT, type ErfassungsStufe } from '../lib/normtext/erfassungsgrad';
 
-// Soft, gut unterscheidbare Füllfarbe je Kanton: Goldwinkel-Streuung über den
-// Farbkreis → benachbarte Kantone bekommen verschiedene Farbtöne. Gedämpft
-// (Pastell), damit es zum Papier-Look passt; Hover/aktiv vertiefen den Ton.
-function farbe(i: number, zustand: 'basis' | 'hover' | 'aktiv'): string {
-  const h = Math.round((i * 137.508) % 360);
-  // Lightness aus Token (--karte-l-*): im Dunkelmodus gedämpft, sonst glühen
-  // die Pastelle grell. Farbwinkel/Sättigung bleiben hier (reine Geometrie, §3).
-  if (zustand === 'aktiv') return `hsl(${h} 58% var(--karte-l-aktiv))`;
-  if (zustand === 'hover') return `hsl(${h} 50% var(--karte-l-hover))`;
-  return `hsl(${h} 38% var(--karte-l-basis))`;
+/** Was die Karte über einen Kanton weiss. `null` = keine erfassten Erlasse. */
+export interface KartenGrad {
+  stufe: ErfassungsStufe;
+  /** Fertiger Klartext für Bildunterschrift, Tooltip und aria-label (z. B. «3 Erlasse · Auswahl»). */
+  text: string;
 }
 
-// Interaktive Schweiz-Karte: jeder Kanton ist ein klickbarer, farblich
-// unterscheidbarer Pfad. Hover/Fokus heben hervor UND zeigen den Kantonsnamen
-// in der Bildunterschrift; der aktive Kanton ist kräftig markiert. Kantone ohne
-// Erlasse sind gedämpft und nicht wählbar. Reine Darstellung (§3).
-export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer, className }: {
+// ── Füllung = Bedeutung (Entscheid David 29.8.2026 «2B», Befund F1) ──────────
+// Vorher streute `farbe(i)` einen Goldwinkel über den Farbkreis: 26 Pastelltöne,
+// die NICHTS kodierten und keine Legende hatten. Jetzt trägt die Füllung genau
+// eine Aussage — den Erfassungsgrad des Kantons (SSoT lib/normtext/
+// erfassungsgrad.ts, §5: dieselbe Quelle wie Kachel-Badge, Sidebar-Einstufung
+// und Schnellwechsel-Pill). Die Farbwerte liegen als Tokens in index.css
+// (§13/B3 — keine Ad-hoc-Farben hier); diese Tabelle ist die EINE Stelle, die
+// Stufe auf Token abbildet.
+const FUELLUNG: Readonly<Record<ErfassungsStufe, string>> = Object.freeze({
+  vollstaendig: 'var(--karte-voll)',
+  auswahl: 'var(--karte-auswahl)',
+  duenn: 'var(--karte-duenn)',
+});
+
+// Schraffur für Kantone ohne erfasste Erlasse. §11.6.8 «nie nur Farbe»: die drei
+// Erfassungs-Stufen trennt die Luminanz, die vierte (neutrale) Stufe trennt
+// zusätzlich eine TEXTUR — sie bleibt damit auch dann als «leer» erkennbar, wenn
+// Farbe und Helligkeit nicht gelesen werden können.
+const SCHRAFFUR_ID = 'karte-leer-schraffur';
+
+// Strichstärken im viewBox-Raum (1052×744; die Karte rendert rund 640 px breit,
+// ein viewBox-Punkt ist also etwa 0.6 CSS-px).
+const KANTE = 1;
+const RING_INNEN = { stark: 3, weich: 2 } as const;
+const RING_GEHAEUSE = { stark: 6, weich: 4.5 } as const;
+
+/**
+ * Welche Kantone einen Markierungs-Ring bekommen — die tragende Entscheidung
+ * aus Fehlerbuch-Befund 12, als reine Funktion herausgezogen, damit sie prüfbar
+ * ist (§6.7: ein Fix, der nicht rot gezeigt werden kann, ist keiner).
+ *
+ * ALT war `gezeigt = hover ?? aktiv`: EIN Ring, und Hover VERDRÄNGTE die
+ * Auswahl. Wer über einen Nachbarn fuhr, verlor die Auswahl-Markierung unter der
+ * Maus. NEU sind es zwei unabhängige Ringe; `hover === aktiv` zeichnet nur den
+ * starken, damit derselbe Kanton nicht doppelt umrandet wird.
+ */
+export function markierungen(aktiv: string | null | undefined, hover: string | null): {
+  aktiv: string | null; hover: string | null;
+} {
+  return { aktiv: aktiv ?? null, hover: hover && hover !== aktiv ? hover : null };
+}
+
+/**
+ * Markierungs-Ring über einem Kanton: dunkles Gehäuse (--karte-kante) UNTER dem
+ * Messing-Ring (--karte-marke). Das Gehäuse ist der Grund, warum die Markierung
+ * in BEIDEN Themes eine ≥3:1-Luminanzkante gegen jede mögliche Füllung hat — ein
+ * Messing-Ring allein schafft das im Dunkelmodus gegen die kräftigen Stufen nicht
+ * (gemessen 1.31:1 gegen «vollständig»). `fill="none"`: der Ring zeichnet nur die
+ * Kontur und überschreibt die bedeutungstragende Füllung NICHT.
+ */
+function Ring({ d, stark }: { d: string; stark: boolean }) {
+  const s = stark ? 'stark' : 'weich';
+  return (
+    <g aria-hidden pointerEvents="none">
+      <path d={d} fill="none" stroke="var(--karte-kante)" strokeWidth={RING_GEHAEUSE[s]} strokeLinejoin="round" />
+      <path d={d} fill="none" stroke="var(--karte-marke)" strokeWidth={RING_INNEN[s]} strokeLinejoin="round" />
+    </g>
+  );
+}
+
+/** Ein Legenden-Eintrag: Farbfeld + Wort. Das Wort ist Text, nie nur die Farbe. */
+function LegendeFeld({ fuellung, schraffiert, wort }: { fuellung: string; schraffiert?: boolean; wort: string }) {
+  return (
+    <li className="flex items-center gap-1.5">
+      <span aria-hidden className="h-3 w-3 shrink-0 rounded-[2px] border"
+        style={{
+          borderColor: 'var(--karte-kante)',
+          background: schraffiert
+            ? `repeating-linear-gradient(45deg, ${fuellung} 0 2px, var(--karte-kante) 2px 3px)`
+            : fuellung,
+        }} />
+      {wort}
+    </li>
+  );
+}
+
+/**
+ * Interaktive Schweiz-Karte: jeder Kanton ist ein klickbarer Pfad, seine FÜLLUNG
+ * kodiert den Erfassungsgrad (Legende unter der Karte). Hover/Fokus und Auswahl
+ * markieren über einen RING, nicht über die Füllung — sonst überschriebe die
+ * Bedienung die Aussage. Reine Darstellung (§3): die Stufe kommt fertig von
+ * aussen, die Karte leitet nichts ab.
+ */
+export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, className }: {
   aktiv?: string | null;
   onWaehle: (kanton: string) => void;
   nameFuer?: (kanton: string) => string;
   verfuegbar?: (kanton: string) => boolean;
-  /** Optionaler Zusatz in der Bildunterschrift des gezeigten Kantons (IA-2:
-   *  Erfassungsgrad = Zahl + Zustands-Wort). Nur gerendert, wenn er einen Knoten
-   *  liefert — die Karte bleibt sonst generisch (§3). */
-  zusatzFuer?: (kanton: string) => ReactNode;
+  /** Erfassungsgrad je Kanton — `null`/fehlend = keine erfassten Erlasse (neutral + schraffiert). */
+  gradFuer?: (kanton: string) => KartenGrad | null;
   className?: string;
 }) {
   const [hover, setHover] = useState<string | null>(null);
-  const codes = Object.keys(KANTONE_KARTE.paths);
-  const idx = (k: string) => codes.indexOf(k);
   const name = (k: string) => (nameFuer ? nameFuer(k) : k);
-  // Cowork-Befund 40 (18.8.2026): die Liste wurde FRÜHER hier nach
-  // aktiv/hover sortiert (Kommentar unten war «Aktiven/gehoverten Kanton
-  // zuletzt zeichnen»), damit sein Rand nicht von Nachbarn überdeckt wird.
-  // Das reordnete aber die INTERAKTIVEN <path>-Elemente noch VOR dem Klick —
-  // schon `onMouseEnter` (das jede reale Zeigergeste vor dem Klick auslöst)
-  // löste den Re-Render/Reorder aus. Trifft der Mausklick dann denselben
-  // Bildschirmpunkt, kann `mousedown`/`mouseup` durch die geänderte
-  // Maler-Reihenfolge auf verschiedene Elemente fallen — der Browser liefert
-  // dann GAR KEIN `click` an den Pfad (Ziel-Divergenz), und erst der ZWEITE
-  // Klick (Reorder bereits stabil) traf. Reproduziert 18.8.2026 (echtes
-  // Hover-dann-Klick-Gesten-Muster via Playwright: 1. Klick wirkungslos, 2.
-  // Klick setzt `kt=`; ein Klick OHNE vorherige Zeigerbewegung traf sofort).
-  // Fix: fixe Grund-Reihenfolge (keine Sortierung mehr) — der Hervorhebungs-
-  // Rand kommt stattdessen über einen SEPARATEN, nicht-interaktiven Overlay-
-  // Pfad ganz am Ende (unten), der nur zeichnet, nie einen Klick fängt.
+  const grad = (k: string) => gradFuer?.(k) ?? null;
+  // Vollständige Beschriftung eines Kantons — EINE Quelle für aria-label,
+  // <title>-Tooltip und Bildunterschrift (§5). Damit trägt jeder Kanton seine
+  // Zahl und sein Zustands-Wort auch dort, wo Farbe nichts sagen kann.
+  const beschriftung = (k: string) => {
+    const g = grad(k);
+    return g ? `${name(k)} — ${g.text}` : `${name(k)} — keine Erlasse`;
+  };
+  // Cowork-Befund 40 (18.8.2026): die Liste wurde FRÜHER hier nach aktiv/hover
+  // sortiert (Kommentar war «Aktiven/gehoverten Kanton zuletzt zeichnen»), damit
+  // sein Rand nicht von Nachbarn überdeckt wird. Das reordnete aber die
+  // INTERAKTIVEN <path>-Elemente noch VOR dem Klick — schon `onMouseEnter` (das
+  // jede reale Zeigergeste vor dem Klick auslöst) löste den Re-Render/Reorder
+  // aus. Trifft der Mausklick dann denselben Bildschirmpunkt, kann
+  // `mousedown`/`mouseup` durch die geänderte Maler-Reihenfolge auf verschiedene
+  // Elemente fallen — der Browser liefert dann GAR KEIN `click` an den Pfad
+  // (Ziel-Divergenz), und erst der ZWEITE Klick (Reorder bereits stabil) traf.
+  // Reproduziert 18.8.2026 (echtes Hover-dann-Klick-Gesten-Muster via Playwright:
+  // 1. Klick wirkungslos, 2. Klick setzt `kt=`; ein Klick OHNE vorherige
+  // Zeigerbewegung traf sofort). Fix: fixe Grund-Reihenfolge (keine Sortierung
+  // mehr) — die Hervorhebung kommt über SEPARATE, nicht-interaktive Ring-Pfade
+  // ganz am Ende (unten), die nur zeichnen, nie einen Klick fangen.
   const eintraege = Object.entries(KANTONE_KARTE.paths);
-  // LATENTER BEFUND, HEUTE FOLGENLOS (Fehlerbuch-Befund 12, Prüfung 29.8.2026) —
-  // BEWUSST NICHT GEFIXT, siehe unten.
-  //
-  // `hover ?? aktiv` heisst: es gibt genau EINEN Overlay-Pfad, und Hover
-  // verdrängt den aktiven Kanton daraus. Fährt der Zeiger über einen NACHBARN,
-  // verliert der aktive Kanton seinen kräftigen `brass-700`-Rand (Z. 106 f.) —
-  // die Auswahl-Markierung flackert unter der Maus weg und kehrt erst beim
-  // Verlassen zurück.
-  //
-  // Warum das heute niemandem auffällt: `aktiv` wird von KEINEM Aufrufer
-  // übergeben. Der einzige Produktions-Aufrufer ist
-  // `pages/gesetze-teile/KantonAuswahl.tsx` (Z. 142 ff.), und der reicht nur
-  // `onWaehle`/`nameFuer`/`verfuegbar`/`zusatzFuer` durch — die Karte wird
-  // ausgetauscht, sobald ein Kanton gewählt ist, es gibt also nie gleichzeitig
-  // einen aktiven Kanton UND eine hoverbare Karte. `aktiv` ist damit toter,
-  // aber scharfer Code: Wer die Karte im Detail-Zustand stehen lässt (genau das
-  // fordert Fehlerbuch-Befund 41) und dann `aktiv` durchreicht, erbt den Fehler
-  // sofort.
-  //
-  // Kein Verhaltens-Fix HIER: Die richtige Auflösung ist ein zweiter,
-  // dauerhafter Overlay-Pfad für `aktiv` unter dem Hover-Overlay — das ist eine
-  // Änderung an der Zeichen-/Farbschicht der Karte und gehört ins separate
-  // Kantonskarten-Paket (F1/F2), nicht in einen UI-Fix-Batch. Diese Notiz steht
-  // hier, damit der Befund am Fundort wartet und nicht im Fehlerbuch verhungert
-  // (§17: dieselbe Störung darf keine zweite Diagnose kosten).
+  // Fehlerbuch-Befund 12 (Prüfung 29.8.2026) — BEHOBEN 29.8.2026:
+  // Früher stand hier `const gezeigt = hover ?? aktiv` und speiste EINEN
+  // Overlay-Pfad. Hover verdrängte damit den aktiven Kanton aus dem Overlay: Wer
+  // über einen NACHBARN fuhr, verlor die Auswahl-Markierung unter der Maus und
+  // bekam sie erst beim Verlassen zurück. Folgenlos war das nur, solange KEIN
+  // Aufrufer `aktiv` übergab — also genau so lange, bis jemand die Karte im
+  // Detail-Zustand stehen lässt. Jetzt zeichnen ZWEI unabhängige Ringe: der
+  // aktive Kanton behält seinen (kräftigen) Ring immer, der gehoverte bekommt
+  // zusätzlich einen weichen. `aktiv` ist damit kein scharfer toter Code mehr (§17).
+  const ringe = markierungen(aktiv, hover);
+  const aktivPfad = ringe.aktiv ? KANTONE_KARTE.paths[ringe.aktiv] : undefined;
+  const hoverPfad = ringe.hover ? KANTONE_KARTE.paths[ringe.hover] : undefined;
+  // Die Bildunterschrift folgt weiterhin dem Zeiger und fällt auf die Auswahl
+  // zurück — dort ist die Verdrängung richtig, es kann nur EIN Text stehen.
   const gezeigt = hover ?? aktiv ?? null;
-  const gezeigtPfad = gezeigt ? KANTONE_KARTE.paths[gezeigt] : undefined;
-  const gezeigtIst = gezeigt !== null && aktiv === gezeigt;
-  const gezeigtWaehlbar = gezeigt !== null && (verfuegbar ? verfuegbar(gezeigt) : true);
   return (
     <div className={className ?? 'w-full max-w-[40rem] mx-auto'}>
       {/* Bildunterschrift: zeigt, was unter dem Zeiger/Fokus liegt. */}
@@ -85,9 +149,10 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer
           <>
             <span className="text-body-s font-semibold text-ink-900">{name(gezeigt)}</span>
             <span aria-hidden className="num text-xs text-ink-500">{gezeigt}</span>
-            {verfuegbar && !verfuegbar(gezeigt)
-              ? <span className="text-xs text-ink-500">— keine Erlasse</span>
-              : zusatzFuer?.(gezeigt)}
+            {/* Wörter stehen in der Fliesstext-Stimme, nicht in der Mono-Stimme
+                (Zwei-Stimmen-Regel, Review-Befund T6): `num` trägt oben das
+                Kürzel, hier laufen «3 Erlasse · dünn» als Text. */}
+            <span className="text-xs text-ink-500">{grad(gezeigt)?.text ?? '— keine Erlasse'}</span>
           </>
         ) : (
           <span className="text-xs text-ink-500">Kanton auf der Karte wählen</span>
@@ -95,16 +160,19 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer
       </div>
       <svg viewBox={KANTONE_KARTE.viewBox} role="group" aria-label="Karte der Schweizer Kantone — Kanton wählen"
         className="w-full h-auto">
+        <defs>
+          <pattern id={SCHRAFFUR_ID} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="8" height="8" fill="var(--karte-leer)" />
+            <line x1="0" y1="0" x2="0" y2="8" stroke="var(--karte-kante)" strokeWidth="2" />
+          </pattern>
+        </defs>
         {eintraege.map(([k, d]) => {
           const ist = aktiv === k;
           const waehlbar = verfuegbar ? verfuegbar(k) : true;
-          const ueber = hover === k;
-          // Nicht-wählbare Kantone: sichtbares Linien-Token statt --paper-sunken
-          // (das mit dem Hintergrund verschmolz) — als gedämpfte Landmasse erkennbar.
-          const fill = !waehlbar ? 'var(--line-strong)'
-            : ist ? farbe(idx(k), 'aktiv')
-            : ueber ? farbe(idx(k), 'hover')
-            : farbe(idx(k), 'basis');
+          const g = grad(k);
+          // Ohne Erfassungsgrad (kein Erlass — oder im aktiven Filter keiner
+          // übrig) neutral UND schraffiert; sonst die Stufe als Füllung.
+          const fill = g ? FUELLUNG[g.stufe] : `url(#${SCHRAFFUR_ID})`;
           return (
             <path key={k} d={d}
               onClick={waehlbar ? () => onWaehle(k) : undefined}
@@ -112,29 +180,33 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, zusatzFuer
               onFocus={() => setHover(k)} onBlur={() => setHover((h) => (h === k ? null : h))}
               onKeyDown={waehlbar ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onWaehle(k); } } : undefined}
               tabIndex={waehlbar ? 0 : -1} role="button" aria-pressed={ist}
-              aria-label={waehlbar ? name(k) : `${name(k)} — keine Erlasse`}
-              style={{ fill, stroke: ist ? 'var(--brass-700)' : 'var(--paper)', strokeWidth: ist ? 1.6 : 0.8, opacity: waehlbar ? 1 : 0.8 }}
-              className={`transition-[fill] ${waehlbar ? 'cursor-pointer' : 'cursor-default'}`}>
-              <title>{name(k)}</title>
+              aria-label={waehlbar ? beschriftung(k) : `${name(k)} — keine Erlasse`}
+              style={{ fill, stroke: 'var(--karte-kante)', strokeWidth: KANTE }}
+              className={waehlbar ? 'cursor-pointer' : 'cursor-default'}>
+              {/* Tooltip trägt Zahl + Zustands-Wort — die Aussage der Füllung
+                  steht damit auch als Text bereit (§11.6.8). */}
+              <title>{beschriftung(k)}</title>
             </path>
           );
         })}
-        {/* Nicht-interaktiver Overlay-Pfad: zeichnet den gerade hervorgehobenen
-            Kanton (Hover/aktiv) EIN zweites Mal obenauf, damit sein Rand nicht
-            von Nachbarn überdeckt wird — ohne dafür die interaktiven Pfade
-            oben umzusortieren (Befund 40). `pointerEvents="none"`: fängt
-            selbst nie einen Klick, auch nicht bei überlappenden Rand-Pixeln. */}
-        {gezeigtPfad && (
-          <path d={gezeigtPfad} aria-hidden pointerEvents="none"
-            style={{
-              fill: !gezeigtWaehlbar ? 'var(--line-strong)' : farbe(idx(gezeigt as string), gezeigtIst ? 'aktiv' : 'hover'),
-              stroke: gezeigtIst ? 'var(--brass-700)' : 'var(--paper)',
-              strokeWidth: gezeigtIst ? 1.6 : 0.8,
-              opacity: gezeigtWaehlbar ? 1 : 0.8,
-            }}
-            className="transition-[fill]" />
-        )}
+        {/* Nicht-interaktive Ring-Pfade: zeichnen die Markierung EIN zweites Mal
+            obenauf, damit sie nicht von Nachbarn überdeckt wird — ohne dafür die
+            interaktiven Pfade oben umzusortieren (Befund 40). `pointerEvents=
+            "none"`: fangen selbst nie einen Klick, auch nicht bei überlappenden
+            Rand-Pixeln. Zwei statt einem: siehe Befund 12 oben. */}
+        {aktivPfad && <Ring d={aktivPfad} stark />}
+        {hoverPfad && <Ring d={hoverPfad} stark={false} />}
       </svg>
+      {/* Legende (Entscheid David 29.8.2026 «2B»): ohne sie wäre die Farbe eine
+          unbeantwortete Frage — genau der Vorwurf aus Befund F1/49. Wort UND
+          Farbfeld, in der Reihenfolge der Stufen (dicht → dünn → leer). */}
+      <ul className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-ink-500">
+        <li className="lc-overline">Erfassungsgrad</li>
+        <LegendeFeld fuellung="var(--karte-voll)" wort={STUFE_WORT.vollstaendig} />
+        <LegendeFeld fuellung="var(--karte-auswahl)" wort={STUFE_WORT.auswahl} />
+        <LegendeFeld fuellung="var(--karte-duenn)" wort={STUFE_WORT.duenn} />
+        <LegendeFeld fuellung="var(--karte-leer)" schraffiert wort="keine Erlasse" />
+      </ul>
     </div>
   );
 }

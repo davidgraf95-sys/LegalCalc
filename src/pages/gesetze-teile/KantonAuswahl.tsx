@@ -143,17 +143,19 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle }: {
             onWaehle={onWaehle}
             nameFuer={name}
             verfuegbar={(k) => alleKantone.includes(k)}
-            zusatzFuer={(k) => {
-              // Erfassungsgrad in der Karten-Bildunterschrift (§11.2): Zahl + Wort
-              // (Text, nicht nur Farbe, §11.6.8). Nur für erfasste Kantone.
+            gradFuer={(k) => {
+              // Erfassungsgrad für Füllung, Legende, Tooltip UND Bildunterschrift
+              // der Karte (§11.2) — EINE Ableitung aus der SSoT erfassungsgrad.ts
+              // (§5, dieselbe wie Kachel-Badge und Schnellwechsel-Pill). Der Text
+              // trägt Zahl + Zustands-Wort, damit die Aussage nie nur an der Farbe
+              // hängt (§11.6.8). Kein Eintrag ⇒ keine erfassten Erlasse.
               const g = proGruppe.get(k);
               if (!g) return null;
-              return (
-                <>
-                  <span className="num text-xs text-ink-500">{g.erlasse.length}</span>
-                  <span className="text-xs text-ink-500">{g.erlasse.length === 1 ? 'Erlass' : 'Erlasse'} · {STUFE_WORT[erfassungsgrad(k, g.erlasse.length).stufe]}</span>
-                </>
-              );
+              const n = g.erlasse.length;
+              return {
+                stufe: erfassungsgrad(k, n).stufe,
+                text: `${n} ${n === 1 ? 'Erlass' : 'Erlasse'} · ${STUFE_WORT[erfassungsgrad(k, n).stufe]}`,
+              };
             }}
           />
         </div>
