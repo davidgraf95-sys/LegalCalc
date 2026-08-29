@@ -53,7 +53,7 @@ describe('check:testtreue — §6.3 (Tests bleiben bei Refactorings unangetastet
   });
 
   it('klassifiziert Test-Dateien wie §6.3 sie meint', () => {
-    expect(istTestDatei('src/tests/plan-groesse.test.ts')).toBe(true);
+    expect(istTestDatei('src/tests/plan-check.test.ts')).toBe(true);
     expect(istTestDatei('e2e/verzahnung.e2e.ts')).toBe(true);
     expect(istTestDatei('src/lib/foo.test.tsx')).toBe(true);
     expect(istTestDatei('src/lib/verjaehrung/engine.ts')).toBe(false);

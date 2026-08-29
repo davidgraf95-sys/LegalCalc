@@ -5,12 +5,14 @@
 // Kommando-Runner injiziert, `wasGeradePassiert`/`flaechenKlartext` sind rein.
 // Sonst prüfte der Test die Maschine, auf der er läuft, statt den Code.
 import { bauPlaetze, davidFragen, letzteCommits, schrittInfoAusRoadmap, type SchrittInfo } from '../../scripts/plan/bildDaten';
-import type { Etikett } from '../../scripts/plan/etikett';
+import { FELD_WERTE, type Etikett } from '../../scripts/plan/etikett';
 import type { Einheit } from '../../scripts/plan/parse';
 import {
   BEREICH_ERKLAERUNG,
+  FELD_PFADE,
   UEBRIGE_TECHNIK,
   WIRKUNGSBEREICHE,
+  feldPfade,
   flaechenKlartext,
   schrittLabel,
   wasGeradePassiert,
@@ -142,13 +144,13 @@ describe('wasGeradePassiert — Formatierung', () => {
     const html = wasGeradePassiert(
       daten({
         imBau: [
-          { titel: 'Lagebild-Einstieg in Laiensprache', id: 'QS-PLAN-BILD-LAGE', flaechen: ['scripts/plan'] },
-          { titel: 'Token-Verbrauch minimieren', id: 'QS-TOK', flaechen: [] },
+          { titel: 'Lagebild-Einstieg in Laiensprache', id: 'QS-PLAN-BILD-LAGE', feld: 'betrieb' },
+          { titel: 'Token-Verbrauch minimieren', id: 'QS-TOK', feld: null },
         ],
       }),
     );
     expect(html).toContain('<b>Lagebild-Einstieg in Laiensprache</b>');
-    expect(html).toContain('Betrifft: Werkzeuge der Bau-Planung');
+    expect(html).toContain('Betrifft: die Prüfstrasse (automatische Kontrollen) · Werkzeuge der Bau-Planung · Arbeitsregeln der KI-Sessions');
     expect(html).toContain('Betrifft: das ganze Projekt — für dieses Arbeitspaket ist kein Bereich eingegrenzt.');
   });
 
@@ -179,7 +181,7 @@ describe('wasGeradePassiert — Formatierung', () => {
   });
 
   it('David-Blocker mit Titel und Blocker-Name; leer → ehrlicher Satz', () => {
-    const html = wasGeradePassiert(daten({ wartetAufDavid: [{ titel: 'Datenhaltung / VPS-Gate', id: 'QS-DATA', blocker: 'vps-bestellung-david', flaechen: [] }] }));
+    const html = wasGeradePassiert(daten({ wartetAufDavid: [{ titel: 'Datenhaltung / VPS-Gate', id: 'QS-DATA', blocker: 'vps-bestellung-david', feld: null }] }));
     expect(html).toContain('<b>Datenhaltung / VPS-Gate</b>');
     expect(html).toContain('wartet auf deine Entscheidung: vps-bestellung-david');
     expect(wasGeradePassiert(daten())).toContain('Nichts — im Moment hält kein Arbeitspaket auf deine Entscheidung.');
@@ -206,7 +208,7 @@ describe('wasGeradePassiert — Formatierung', () => {
 
   it('zeigt Titel zuerst, Kürzel in Klammern dahinter — nie ID-first', () => {
     const html = wasGeradePassiert(
-      daten({ imBau: [{ titel: 'Lagebild-Einstieg in Laiensprache', id: 'QS-PLAN-BILD-LAGE', flaechen: [] }] }),
+      daten({ imBau: [{ titel: 'Lagebild-Einstieg in Laiensprache', id: 'QS-PLAN-BILD-LAGE', feld: null }] }),
     );
     expect(html).toContain('<b>Lagebild-Einstieg in Laiensprache</b> <span class="id">(QS-PLAN-BILD-LAGE)</span>');
     expect(html.indexOf('Lagebild-Einstieg')).toBeLessThan(html.indexOf('QS-PLAN-BILD-LAGE'));
@@ -215,8 +217,8 @@ describe('wasGeradePassiert — Formatierung', () => {
   it('setzt Wirkungsbereich-Badges an «Gerade im Bau» und «Wartet auf David»', () => {
     const html = wasGeradePassiert(
       daten({
-        imBau: [{ titel: 'A', id: 'QS-A', flaechen: ['src/pages/**'] }],
-        wartetAufDavid: [{ titel: 'B', id: 'QS-B', blocker: 'entscheid-david', flaechen: ['.github'] }],
+        imBau: [{ titel: 'A', id: 'QS-A', feld: 'design' }],
+        wartetAufDavid: [{ titel: 'B', id: 'QS-B', blocker: 'entscheid-david', feld: 'betrieb' }],
       }),
     );
     // Farbcodierung je Bereich seit 8.8.2026 (Auftrag David «visuell klarer»).
@@ -227,7 +229,7 @@ describe('wasGeradePassiert — Formatierung', () => {
   it('escapt Fremdtext aus Titel und Betreff (HTML-Injektion)', () => {
     const html = wasGeradePassiert(
       daten({
-        imBau: [{ titel: '<script>alert(1)</script>', id: 'QS-X', flaechen: [] }],
+        imBau: [{ titel: '<script>alert(1)</script>', id: 'QS-X', feld: null }],
         gelandet: [{ datum: '01.01.2026', betreff: 'fix: A & B <b>' }],
       }),
     );
@@ -237,10 +239,10 @@ describe('wasGeradePassiert — Formatierung', () => {
 
   it('bleibt bei gleichen Daten byte-gleich (Determinismus, §2)', () => {
     const d = daten({
-      imBau: [{ titel: 'A', id: 'QS-A', flaechen: ['src/lib/**'] }],
+      imBau: [{ titel: 'A', id: 'QS-A', feld: 'werkzeuge' }],
       bauplaetze: 2,
       gelandet: [{ datum: '05.08.2026', betreff: 'B' }],
-      wartetAufDavid: [{ titel: 'C', id: 'QS-C', blocker: 'entscheid-david', flaechen: ['.github'] }],
+      wartetAufDavid: [{ titel: 'C', id: 'QS-C', blocker: 'entscheid-david', feld: 'betrieb' }],
     });
     expect(wasGeradePassiert(d)).toBe(wasGeradePassiert(d));
   });
@@ -250,7 +252,7 @@ describe('wasGeradePassiert — Formatierung', () => {
   });
 });
 
-describe('wirkungsbereiche — Kategorien aus den kollision:-Globs', () => {
+describe('wirkungsbereiche — Kategorien aus den Pfad-Ankern eines Baufelds', () => {
   it('je Kategorie ein belegter Fall', () => {
     expect(wirkungsbereiche(['src/pages/**'])).toEqual(['Benutzeroberfläche']);
     expect(wirkungsbereiche(['src/lib/verjaehrung'])).toEqual(['Rechtslogik & Berechnungen']);
@@ -285,8 +287,24 @@ describe('wirkungsbereiche — Kategorien aus den kollision:-Globs', () => {
     expect(wirkungsbereiche(['irgendwas/neues', 'src/pages'])).toEqual(['Benutzeroberfläche', UEBRIGE_TECHNIK]);
   });
 
-  it('ohne Globs bleibt die Liste leer — «nichts deklariert» ≠ «nicht zuordenbar»', () => {
+  it('ohne Pfade bleibt die Liste leer — «nichts deklariert» ≠ «nicht zuordenbar»', () => {
     expect(wirkungsbereiche([])).toEqual([]);
+    expect(wirkungsbereiche(feldPfade(null))).toEqual([]);
+    expect(wirkungsbereiche(feldPfade('lesser'))).toEqual([]);
+  });
+
+  // Steuerungs-Diät 29.8.2026: die sieben Baufelder ersetzen die je Schritt
+  // gepflegten `kollision:`-Globlisten. Jedes Feld MUSS Pfad-Anker tragen —
+  // sonst fiele es still in «Ohne deklariertes Baufeld», obwohl es deklariert ist.
+  it('jedes der sieben Baufelder löst auf mindestens einen Wirkungsbereich auf', () => {
+    for (const feld of FELD_WERTE) {
+      expect(feldPfade(feld).length).toBeGreaterThan(0);
+      expect(wirkungsbereiche(feldPfade(feld)).length).toBeGreaterThan(0);
+    }
+  });
+
+  it('FELD_PFADE deckt genau das Vokabular ab — kein Feld ohne Tabelle, keine Tabelle ohne Feld', () => {
+    expect(Object.keys(FELD_PFADE).sort()).toEqual([...FELD_WERTE].sort());
   });
 
   it('dieselbe Kategorie doppelt ergibt EINEN Eintrag', () => {
@@ -337,7 +355,7 @@ describe('davidFragen — @david-fragen-Block statt hartkodierter Liste (§5, 8.
 describe('schrittInfoAusRoadmap — Klartext-Titel aus der ROADMAP-Zeile', () => {
   const MD = [
     '- [ ] **`QS-BEISPIEL` · Ein sprechender Titel für Laien** *(Anlass: Test)* — Prosa dazu.',
-    '  <!-- @meta id: QS-BEISPIEL · status: ready · blocker: null · dep: [] · kollision: [scripts/plan] · worktree: ja · 26x: nein -->',
+    '  <!-- @meta id: QS-BEISPIEL · status: ready · blocker: null · dep: [] · feld: betrieb -->',
   ].join('\n');
 
   it('nimmt den Fettdruck-Titel und streift die vorangestellte ID ab', () => {
@@ -347,7 +365,7 @@ describe('schrittInfoAusRoadmap — Klartext-Titel aus der ROADMAP-Zeile', () =>
   it('Titel ohne ID-Präfix bleibt unverändert', () => {
     const md = [
       '- **Geräte-Last / Performance** *(QS-PERF)*.',
-      '  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n');
     expect(schrittInfoAusRoadmap(md).get('QS-PERF')?.titel).toBe('Geräte-Last / Performance');
   });
@@ -410,10 +428,7 @@ function einheit(p: Partial<Etikett> = {}): Einheit {
       status: 'ready',
       blocker: null,
       dep: [],
-      kollision: ['scripts/plan/**'],
-      worktree: true,
-      asset26x: false,
-      groesse: null,
+      feld: 'betrieb',
       fahrplan: 'fahrplaene/FAHRPLAN-X.md',
       ...p,
     },
@@ -501,7 +516,7 @@ describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)',
   const dach: SchrittInfo = { ...SCHRITT, checkliste: { offen: 3, gesamt: 5, offenTexte: ['A', 'B', 'C'] } };
 
   it('nennt offene Positionen, die Sortenrein-Regel und ersetzt den L-Schneide-Rat', () => {
-    const p = bauPrompt(einheit({ groesse: 'L' }), dach);
+    const p = bauPrompt(einheit(), dach);
     expect(p).toContain('Dach-Schritt mit Checkliste: 3 von 5 Positionen offen');
     expect(p).toContain('SORTENREIN');
     expect(p).not.toContain('in sessionfüllende Teilschritte schneiden');
@@ -513,7 +528,7 @@ describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)',
 
   it('ohne offene Positionen bleibt der Prompt der Normalfall', () => {
     const leer: SchrittInfo = { ...SCHRITT, checkliste: { offen: 0, gesamt: 5, offenTexte: [] } };
-    const p = bauPrompt(einheit({ groesse: 'L' }), leer);
+    const p = bauPrompt(einheit(), leer);
     expect(p).not.toContain('Dach-Schritt mit Checkliste:');
   });
 });
@@ -521,13 +536,13 @@ describe('bauPrompt — Dach-Schritte mit Checkliste (Entstückelung 8.8.2026)',
 describe('schrittInfoAusRoadmap — Nachblock und Checkliste (Entstückelung 8.8.2026)', () => {
   const MD_DACH = [
     '- [ ] **QS-DACH · Ein Dach mit Positionen** *(Zusatz)*',
-    '  <!-- @meta id: QS-DACH · status: ready · blocker: null · dep: [] · kollision: [src/x] · worktree: nein · 26x: nein · groesse: L -->',
+    '  <!-- @meta id: QS-DACH · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     '  Beschreibung NACH dem Etikett — sie gehört in den Wortlaut.',
     '  - [ ] **P1 · Erste Position** — offen.',
     '  - [x] **P2 · Zweite Position** — erledigt.',
     '  - [ ] **P3 · Dritte Position** — offen.',
     '- [ ] **QS-NAECHSTER · Nächste Einheit**',
-    '  <!-- @meta id: QS-NAECHSTER · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+    '  <!-- @meta id: QS-NAECHSTER · status: ready · blocker: null · dep: [] · feld: betrieb -->',
   ].join('\n');
 
   it('zählt offene und gesamte Positionen und stoppt an der nächsten Einheit', () => {

@@ -21,7 +21,7 @@ let posZaehler = 0;
 function einheit(id: string, p: Partial<Einheit['etikett']> = {}): Einheit {
   return {
     id, checkbox: null, sektion: 'Die geordnete Abarbeitung', pos: posZaehler++,
-    etikett: { id, status: 'ready', blocker: null, dep: [], kollision: [], worktree: false, asset26x: false, groesse: null, fahrplan: null, ...p },
+    etikett: { id, status: 'ready', blocker: null, dep: [], feld: null, fahrplan: null, ...p },
   };
 }
 
@@ -87,11 +87,11 @@ describe('parseWorktrees', () => {
 });
 
 describe('wipFlaechen', () => {
-  it('reichert die wip-IDs des Resolvers mit ihren kollision:-Globs an', () => {
-    const e = [einheit('QS-PLAN-REVIEW', { status: 'wip', kollision: ['scripts/plan/**'] }), einheit('QS-CODE', { status: 'wip' })];
+  it('reichert die wip-IDs des Resolvers mit ihrem Baufeld an', () => {
+    const e = [einheit('QS-PLAN-REVIEW', { status: 'wip', feld: 'betrieb' }), einheit('QS-CODE', { status: 'wip' })];
     expect(wipFlaechen(e, ['QS-PLAN-REVIEW', 'QS-CODE'])).toEqual([
-      { id: 'QS-PLAN-REVIEW', kollision: ['scripts/plan/**'] },
-      { id: 'QS-CODE', kollision: [] },
+      { id: 'QS-PLAN-REVIEW', feld: 'betrieb' },
+      { id: 'QS-CODE', feld: null },
     ]);
   });
 });
@@ -138,7 +138,7 @@ describe('sammleLage', () => {
 describe('lageZeilen — Formatierung', () => {
   it('vollständige Lage mit PRs', () => {
     const roh = rohStandard({
-      wip: [{ id: 'QS-PLAN-REVIEW', kollision: ['scripts/plan/**', 'ROADMAP.md'] }, { id: 'QS-CODE', kollision: [] }],
+      wip: [{ id: 'QS-PLAN-REVIEW', feld: 'betrieb' }, { id: 'QS-CODE', feld: null }],
       worktrees: parseWorktrees(PORCELAIN),
       branches: BRANCHES.split('\n'),
       prs: [{ number: 445, headRefName: 'feat/qs-ci-vercel-ignore', titel: 'Ignored Build Step' }],
@@ -148,8 +148,8 @@ describe('lageZeilen — Formatierung', () => {
       '',
       '── Lage: was gerade im Bau ist (Sichtbarkeit für Parallel-Sessions) ──',
       '🔨 belegte Flächen (wip):',
-      '   QS-PLAN-REVIEW → scripts/plan/**, ROADMAP.md',
-      '   QS-CODE → keine kollision: deklariert → gilt als GESAMTE Fläche',
+      '   QS-PLAN-REVIEW → betrieb',
+      '   QS-CODE → kein feld: deklariert → gilt als GESAMTE Fläche',
       '🌳 Worktrees: agent-abc [feat/qs-plan-review-lage] → QS-PLAN-REVIEW · agent-def [detached] → ohne Schritt-Bezug',
       '🌿 weitere Branches (ohne Worktree): chore/aufraeumen → ohne Schritt-Bezug · feat/qs-code-turso-fts → QS-CODE-TURSO',
       '🔀 offene PRs:',
@@ -196,7 +196,7 @@ describe('lageZeilen — Formatierung', () => {
 // QS-TOK/QS-TOK-AUFRAEUMEN fertig, landete die PRs und endete, ohne die wip-Marke
 // freizugeben — das Lagebild zeigte stundenlang «im Bau», was frei war.
 describe('staleWip — wip ohne Bau-Spur', () => {
-  const wip = (...ids: string[]) => ids.map((id) => ({ id, kollision: [] }));
+  const wip = (...ids: string[]) => ids.map((id) => ({ id, feld: null }));
 
   it('wip MIT Branch-Spur → keine Warnung', () => {
     const roh = rohStandard({ wip: wip('QS-CODE-TURSO'), worktrees: [], branches: ['main', 'feat/qs-code-turso-fts'] });
@@ -269,12 +269,12 @@ describe('staleWip — wip ohne Bau-Spur', () => {
 
 describe('lageBlock — Verdrahtung wie in der CLI', () => {
   it('führt Einheiten, Resolver-wip und Erhebung zusammen', () => {
-    const e = [einheit('QS-PLAN-REVIEW', { status: 'wip', kollision: ['scripts/plan/**'] }), einheit('QS-CODE')];
+    const e = [einheit('QS-PLAN-REVIEW', { status: 'wip', feld: 'betrieb' }), einheit('QS-CODE')];
     const zeilen = lageBlock(e, ['QS-PLAN-REVIEW'], {
       prs: false,
       laufe: runner({ 'git worktree': PORCELAIN, 'git branch': BRANCHES }),
     });
-    expect(zeilen).toContain('   QS-PLAN-REVIEW → scripts/plan/**');
+    expect(zeilen).toContain('   QS-PLAN-REVIEW → betrieb');
     expect(zeilen).toContain('🌳 Worktrees: agent-abc [feat/qs-plan-review-lage] → QS-PLAN-REVIEW · agent-def [detached] → ohne Schritt-Bezug');
   });
 

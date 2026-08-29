@@ -52,7 +52,7 @@ import {
   checklisteText,
   esc,
   fussnote,
-  groesseBadge,
+  feldPfade,
   kacheln,
   rahmen,
   schrittLabel,
@@ -141,9 +141,9 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
       ]
     : [];
   // Grössen-Zeile ENTFERNT 15.8.2026 (Entscheid David, Chat «das mit der
-  // grösse soll weg»): die Schätzung lebt weiter im @meta (`groesse:`) und
-  // auf der Lagebild-Seite; der Grössen-Check in Station A (Skill
-  // `bauschritt`) liest sie dort — der Prompt trägt sie nicht mehr.
+  // grösse soll weg»). Mit der Steuerungs-Diät vom 29.8.2026 ist auch das
+  // @meta-Feld `groesse:` selbst weg — es hatte nach dem Prompt-Ausbau keinen
+  // Auswerter mehr ausser dem Lagebild-Badge.
   const zeilen = [
     // Erste Zeile = Skill-Auslöser: der Zyklus (Einstieg, Prüfung, Landung,
     // Aufräumen) steht im Skill `bauschritt`, nicht im Prompt. So bleibt der
@@ -169,9 +169,7 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
     //    für Sub-Agenten seit 4.8. eingebaut in jede lex-Definition und vom
     //    Hook dispatch-schutz.py ERZWUNGEN — die Prompt-Kopie war dritter
     //    Träger derselben Klausel (§5).
-    e.etikett.worktree
-      ? `Worktree: JA (§12) · Kollisionsflächen: ${e.etikett.kollision.join(', ') || '—'}.`
-      : `Worktree: nein — Haupt-Checkout, Commits nur mit explizitem Pathspec (§12).`,
+    `Baufeld: ${e.etikett.feld ?? '— (keines deklariert; gilt als GESAMTE Fläche)'} · Worktree bei Parallel-Session (§12), sonst Haupt-Checkout mit explizitem Pathspec.`,
     ...depZeile,
     fp
       ? info?.par
@@ -221,14 +219,17 @@ export function lagebildSeite(o: SeitenOpts): string {
   const schritte = schrittInfoAusRoadmap(md);
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
-  // Verknüpfungen (dep, Kollisions-Fläche, gleicher Fahrplan) — EINMAL für alle
+  // Verknüpfungen (dep, gleiches Baufeld, gleicher Fahrplan) — EINMAL für alle
   // offenen Schritte berechnet, dann an jeder Anzeigestelle nur nachgeschlagen
   // (Auftrag David 14.8.2026, Ziel 2).
   const verkn = verknuepfungenAusEinheiten(einheiten);
   const verknZeile = (v: Verknuepfung | undefined) => (v ? verknuepfungenZeile(v, t) : '');
 
   const offen = einheiten.filter((e) => e.etikett.status !== 'done');
-  const baubar = new Set([...b.readyNow, ...b.begleitend]);
+  // `begleitend` ist mit dem Plan-Neuschnitt 29.8.2026 entfallen (kein
+  // «Querschnitt-Band» mehr — die ROADMAP gliedert nach Baufeldern). Die früher
+  // dort geführten Schritte stehen jetzt regulär in `readyNow`.
+  const baubar = new Set(b.readyNow);
   const prs = offenePrs();
   const { worktrees, altBranches } = worktreesUndBranches();
   const web = repoWebUrl();
@@ -251,10 +252,10 @@ export function lagebildSeite(o: SeitenOpts): string {
   // Gliederung nach Wirkungsbereich — DERSELBEN Ableitung wie die Badges
   // (`wirkungsbereiche()`, §5), keine zweite Taxonomie. Ein Schritt mit
   // mehreren Flächen zählt bei seinem HAUPT-Bereich (erste Fläche der
-  // Ableitungs-Reihenfolge); Schritte OHNE `kollision:` bilden einen eigenen,
+  // Ableitungs-Reihenfolge); Schritte OHNE `feld:` bilden einen eigenen,
   // ehrlichen Eimer (§8) statt still in «Übrige Technik» zu fallen.
-  const OHNE_FLAECHE = 'Ohne deklarierte Fläche';
-  const bereichVon = (e: Einheit): string => wirkungsbereiche(e.etikett.kollision)[0] ?? OHNE_FLAECHE;
+  const OHNE_FLAECHE = 'Ohne deklariertes Baufeld';
+  const bereichVon = (e: Einheit): string => wirkungsbereiche(feldPfade(e.etikett.feld))[0] ?? OHNE_FLAECHE;
   const nachBereich = new Map<string, Einheit[]>();
   for (const e of offen) {
     const bz = bereichVon(e);
@@ -262,7 +263,7 @@ export function lagebildSeite(o: SeitenOpts): string {
     nachBereich.get(bz)!.push(e);
   }
   const bereichsErklaerung = new Map<string, string>(BEREICH_ERKLAERUNG);
-  bereichsErklaerung.set(OHNE_FLAECHE, 'Schritte ohne kollision:-Angabe im Etikett — Fläche deklarieren, dann ordnen sie sich mechanisch ein.');
+  bereichsErklaerung.set(OHNE_FLAECHE, 'Schritte ohne feld:-Angabe im Etikett — Baufeld setzen, dann ordnen sie sich mechanisch ein (check:plan meldet sie ohnehin rot).');
 
   const statusPunkt = (s: string) => (s === 'done' ? 'done' : s === 'wip' ? 'wip' : s === 'blocked' ? 'block' : 'ready');
 
@@ -282,7 +283,7 @@ export function lagebildSeite(o: SeitenOpts): string {
   const imBau: string[] = [];
   for (const id of b.inArbeit) {
     const pr = prs?.find((p) => p.roadmapId === id);
-    imBau.push(`<li><span class="s wip"></span><div>${schrittLabel(t(id), id)}${bereichsBadges(byId.get(id)?.etikett.kollision ?? [])}<br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
+    imBau.push(`<li><span class="s wip"></span><div>${schrittLabel(t(id), id)}${bereichsBadges(byId.get(id)?.etikett.feld ?? null)}<br><span class="sub">${pr ? `${prLink(pr.number, `PR #${pr.number}`)} · ${esc(pr.checks)}` : 'im Bau (wip) — noch kein offener PR'}</span></div></li>`);
   }
   const fremdePrs = (prs ?? []).filter((p) => !b.inArbeit.includes(p.roadmapId ?? ''));
   for (const p of fremdePrs) {
@@ -299,10 +300,10 @@ export function lagebildSeite(o: SeitenOpts): string {
     .join('\n');
 
   // Parallel-Start-Empfehlung: Lane 1 des Resolvers = untereinander
-  // kollisionsfreie ready-Schritte; @queue-Rang steht darin vorn.
+  // Schritte verschiedener Baufelder; @queue-Rang steht darin vorn.
   const laneEmpfehlung = (b.lanes[0] ?? []).filter((id) => prompts[id]).slice(0, 4);
   const laneHtml = laneEmpfehlung
-    .map((id) => `<li>${schrittLabel(t(id), id)}${groesseBadge(byId.get(id)?.etikett.groesse ?? null)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
+    .map((id) => `<li>${schrittLabel(t(id), id)} <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button></li>`)
     .join('\n');
 
   const schrittZeile = (e: Einheit) => {
@@ -319,7 +320,7 @@ export function lagebildSeite(o: SeitenOpts): string {
     const chkTxt = checklisteText(chk);
     const chkText = chkTxt ? ` <span class="sub">Checkliste: ${esc(chkTxt)}</span>` : '';
     const fpName = e.etikett.fahrplan ? baustellenInfo(e.etikett.fahrplan).name : null;
-    return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${groesseBadge(e.etikett.groesse)}${chkText}${knopf}${fpName ? `<br><span class="sub">Baustelle: ${esc(fpName)}</span>` : ''}${verknZeile(verkn.get(e.id))}</div></li>`;
+    return `<li><span class="s ${statusPunkt(e.etikett.status)}"></span><div>${schrittLabel(t(e.id), e.id, false)}${chkText}${knopf}${fpName ? `<br><span class="sub">Baustelle: ${esc(fpName)}</span>` : ''}${verknZeile(verkn.get(e.id))}</div></li>`;
   };
   const statusRang = (e: Einheit) => (e.etikett.status === 'wip' ? 0 : baubar.has(e.id) ? 1 : e.etikett.status === 'parked' ? 2 : e.etikett.status === 'blocked' ? 3 : 2);
   // Innerhalb eines Bereichs zählt die QUEUE-Reihenfolge (readyNow-Rang), nicht
@@ -344,17 +345,17 @@ export function lagebildSeite(o: SeitenOpts): string {
           : blockiert
             ? '<span class="chip block">teils blockiert</span>'
             : '';
-      // Kopf-Knopf nie auf einen S-Schritt (Auftrag David 8.8.2026, «Prompts
-      // entfernen, die ich nicht verwenden soll»): S trägt keine eigene Session
-      // — ein prominenter Start-Knopf dafür wäre eine Falle. Sein Prompt bleibt
-      // in der Einzelschritt-Liste (fürs bewusste Bündeln).
-      const naechster = es.find((e) => baubar.has(e.id) && e.etikett.groesse !== 'S');
-      const nurKlein = !naechster && es.some((e) => baubar.has(e.id));
+      // Kopf-Knopf = erster baubarer Schritt des Bereichs. Der frühere
+      // S-Ausschluss («Kopf-Knopf nie auf einen S-Schritt», David 8.8.2026) ist
+      // mit dem Feld `groesse` entfallen (Steuerungs-Diät 29.8.2026): ohne
+      // Schätzfeld gibt es keine S-Schritte mehr zu meiden. Das Bündeln kleiner
+      // Punkte steuert seither die Checkliste des Dach-Schritts.
+      const naechster = es.find((e) => baubar.has(e.id));
       return `<div class="card bz ${bereichKlasse(bz)}">
   <div class="kopf"><h3>${esc(bz)}</h3>${chip}</div>
   <p class="zweck">${esc(bereichsErklaerung.get(bz) ?? '')}</p>
   <span class="fortschritt">${es.length} Schritt${es.length === 1 ? '' : 'e'} offen · ${sofort} sofort baubar${wip ? ` · ${wip} im Bau` : ''}${blockiert ? ` · ${blockiert} blockiert` : ''}</span>
-  ${naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(naechster.id))}${groesseBadge(naechster.etikett.groesse)} <button class="kopier" data-id="${esc(naechster.id)}">Bau-Prompt kopieren</button></p>` : nurKlein ? `<p class="next sub">Nur Klein-Schritte (Grösse S) übrig — allein keine Session wert; zum Bündeln stehen ihre Prompts in der Einzelschritt-Liste.</p>` : ''}
+  ${naechster ? `<p class="next"><b>Nächster Schritt:</b> ${esc(t(naechster.id))} <button class="kopier" data-id="${esc(naechster.id)}">Bau-Prompt kopieren</button></p>` : ''}
   <details><summary>Einzelschritte (${es.length})</summary><ul>${es.map(schrittZeile).join('\n')}</ul></details>
 </div>`;
     })
@@ -365,7 +366,7 @@ export function lagebildSeite(o: SeitenOpts): string {
       const e = byId.get(id);
       const st = e?.etikett.status ?? '?';
       const zusatz = st === 'wip' ? ' <span class="chip wip">im Bau</span>' : baubar.has(id) ? ` <button class="kopier" data-id="${esc(id)}">Bau-Prompt kopieren</button>` : '';
-      return `<li>${schrittLabel(t(id), id)}${groesseBadge(e?.etikett.groesse ?? null)}${bereichsBadges(e?.etikett.kollision ?? [])}${zusatz}</li>`;
+      return `<li>${schrittLabel(t(id), id)}${bereichsBadges(e?.etikett.feld ?? null)}${zusatz}</li>`;
     })
     .join('\n');
 
@@ -379,12 +380,12 @@ export function lagebildSeite(o: SeitenOpts): string {
   const empfohlenChk = empfohlen ? checklisteText(schritte.get(empfohlen)?.checkliste) : null;
   const empfohlenZiel = empfohlen ? schritte.get(empfohlen)?.prosa : undefined;
   const empfohlenHtml = empfohlen
-    ? `<div class="empfehlung"><p class="lage" style="margin-top:0"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${groesseBadge(byId.get(empfohlen)?.etikett.groesse ?? null)}${bereichsBadges(byId.get(empfohlen)?.etikett.kollision ?? [])}</p>
+    ? `<div class="empfehlung"><p class="lage" style="margin-top:0"><b>Empfohlener nächster Bau:</b> ${schrittLabel(t(empfohlen), empfohlen)}${bereichsBadges(byId.get(empfohlen)?.etikett.feld ?? null)}</p>
   ${empfohlenChk ? `<p class="sub">Checkliste: ${esc(empfohlenChk)}</p>` : ''}
   ${empfohlenZiel ? `<p class="zweck">${esc(ersterSatz(empfohlenZiel))}</p>` : ''}
   ${verknZeile(verkn.get(empfohlen))}
   ${prompts[empfohlen] ? `<p style="margin:.5rem 0 0"><button class="kopier" data-id="${esc(empfohlen)}">Bau-Prompt kopieren</button></p>` : ''}
-  <p class="sub" style="margin-top:.5rem">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span> — Prozess-Schritte stehen seit 8.8.2026 vorn (Entscheid David). Die Grösse ist eine Schätzung und kein Tor (Massstab David 15.8.2026): <b>S</b> trägt nie allein eine Session (gebündelt nehmen), <b>M</b> ist ein Session-<i>Teil</i> — eine Session mit Unteragenten landet mehrere davon —, <b>L</b> wird nur bei echtem Serialisierungs- oder Risiko-Zwang geschnitten; beim Dach-Schritt gibt die Checkliste die Auswahl vor.</p></div>`
+  <p class="sub" style="margin-top:.5rem">Dasselbe Ergebnis wie <span class="id">npm run plan:next</span> — die Reihenfolge steuert die <span class="id">@queue</span> in ROADMAP.md. Zwei Schritte desselben <b>Baufelds</b> laufen nie parallel; beim Dach-Schritt gibt die Checkliste die Auswahl vor.</p></div>`
     : '<p class="lage"><b>Empfohlener nächster Bau:</b> keiner — kein Schritt ist gerade baubar.</p>';
 
   // «Weitere sinnvolle nächste Schritte» — bis zu vier Kandidaten NACH dem
@@ -400,7 +401,7 @@ export function lagebildSeite(o: SeitenOpts): string {
       const chkTxt = checklisteText(info?.checkliste);
       const ziel = info?.prosa ? ersterSatz(info.prosa) : '';
       return `<div class="card">
-  <p style="margin:0">${schrittLabel(t(id), id)}${groesseBadge(e?.etikett.groesse ?? null)}${bereichsBadges(e?.etikett.kollision ?? [])}</p>
+  <p style="margin:0">${schrittLabel(t(id), id)}${bereichsBadges(e?.etikett.feld ?? null)}</p>
   ${chkTxt ? `<span class="fortschritt">Checkliste: ${esc(chkTxt)}</span>` : ''}
   ${ziel ? `<p class="zweck">${esc(ziel)}</p>` : ''}
   ${verknZeile(verkn.get(id))}
@@ -430,7 +431,7 @@ export function lagebildSeite(o: SeitenOpts): string {
     ...b.blockiert.map((x) => {
       const tage = blockerSeitTagen(x.blocker);
       const seit = tage !== null && tage > 0 ? ` <span class="quelle">— wartet seit ${tage} Tag${tage === 1 ? '' : 'en'}</span>` : '';
-      return `<li>${schrittLabel(t(x.id), x.id)}${bereichsBadges(byId.get(x.id)?.etikett.kollision ?? [])} — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
+      return `<li>${schrittLabel(t(x.id), x.id)}${bereichsBadges(byId.get(x.id)?.etikett.feld ?? null)} — wartet auf: <b>${esc(x.blocker)}</b>${seit}</li>`;
     }),
     ...davidFragen(md).map((f) => `<li>${esc(f.frage)} <span class="quelle">(${esc(f.quelle)})</span></li>`),
   ].join('\n');
@@ -494,12 +495,12 @@ export function lagebildSeite(o: SeitenOpts): string {
   // Die kuratierten DAVID_FRAGEN bleiben bewusst draussen: sie tragen keinen
   // Schritt-Titel und stehen vollständig in der Sektion `#david` darunter.
   const jetzt = wasGeradePassiert({
-    imBau: b.inArbeit.map((id) => ({ titel: t(id), id, flaechen: byId.get(id)?.etikett.kollision ?? [] })),
+    imBau: b.inArbeit.map((id) => ({ titel: t(id), id, feld: byId.get(id)?.etikett.feld ?? null })),
     bauplaetze: bauPlaetze(),
     gelandet: letzteCommits(5),
     wartetAufDavid: b.blockiert
       .filter((x) => x.blocker.toLowerCase().includes('david'))
-      .map((x) => ({ titel: t(x.id), id: x.id, blocker: x.blocker, flaechen: byId.get(x.id)?.etikett.kollision ?? [] })),
+      .map((x) => ({ titel: t(x.id), id: x.id, blocker: x.blocker, feld: byId.get(x.id)?.etikett.feld ?? null })),
     weitereBlockierte: b.blockiert.filter((x) => !x.blocker.toLowerCase().includes('david')).length,
     methodeDatei: seitenDatei(o.indexPfad, 'methode'),
     stand: o.stand,

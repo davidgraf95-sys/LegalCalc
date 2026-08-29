@@ -125,6 +125,28 @@ describe('befunde — «nie rot»', () => {
     const z = dickeReihe({ torRot: { seitLetztem: aggregat({}), kumuliert: wenig } });
     expect(befunde(z, '').filter((x) => x.art === 'nie-rot')).toHaveLength(0);
   });
+
+  // Steuerungs-Diät 29.8.2026: Die Regel erzeugte je Tor einen eigenen Block —
+  // im Bestand ~30 wortgleiche Blöcke, die sich nur im Namen und in zwei Zahlen
+  // unterschieden. Jetzt EINE Sammelzeile; ohne dieses Tor fiele ein Rückfall
+  // auf die alte Form nicht auf (§6.7).
+  it('viele Kandidaten ergeben EINEN Befund, nicht einen je Tor', () => {
+    const viele = aggregat(Object.fromEntries(
+      ['check:a', 'check:b', 'check:c', 'check:d'].map((t) => [t, { gesamt: NIE_ROT_MINDEST_LAEUFE, rot: 0 }]),
+    ));
+    const f = befunde(dickeReihe({ torRot: { seitLetztem: aggregat({}), kumuliert: viele } }), '');
+    const nr = f.filter((x) => x.art === 'nie-rot');
+    expect(nr).toHaveLength(1);
+    expect(nr[0].titel).toBe('4 Tore auf Wirksamkeit prüfen — nie rot über die ganze Messreihe');
+    // Alle Namen stehen im Anlass, alphabetisch — die Information geht nicht verloren.
+    for (const t of ['check:a', 'check:b', 'check:c', 'check:d']) expect(nr[0].anlass).toContain(t);
+    expect(nr[0].anlass.indexOf('check:a')).toBeLessThan(nr[0].anlass.indexOf('check:d'));
+  });
+
+  it('ein einzelner Kandidat behält den Tor-Namen im Titel', () => {
+    const f = befunde(dickeReihe({ torRot: { seitLetztem: aggregat({}), kumuliert: kum } }), '');
+    expect(f.find((x) => x.art === 'nie-rot')!.titel).toContain('check:still');
+  });
 });
 
 describe('befunde — CI-Quoten', () => {

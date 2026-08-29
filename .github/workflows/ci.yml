@@ -60,7 +60,8 @@
 #   (a) Der Filter deckt den teuren Fall NICHT ab. 158 Commits waren rein .md
 #       (kein Lauf, gut), aber 42 weitere waren «.md + AUSSCHLIESSLICH
 #       scripts/plan/inventar.ts» — die Plan-Buchhaltung verlangt diesen
-#       Zweitschritt bei jeder Rotation (Skill `bauschritt`/`aufraeumen.md`).
+#       Zweitschritt bei jeder Rotation (Inventar-Mechanik seit dem
+#       Plan-Neuschnitt 29.8.2026 gelöscht; Messung bleibt als Beleg).
 #       Eine einzige TypeScript-Zeile Inventarpflege zog also 42-mal das volle
 #       Programm (~15 min) nach sich: rund 10 Stunden CI in 30 Tagen.
 #   (b) Der Filter war zugleich ein Loch. Für die 158 reinen .md-Pushes lief
@@ -215,12 +216,10 @@ jobs:
               echo "Dateizahl ${anzahl} (leer oder an der API-Kappungsgrenze 300) — volles Programm."
               exit 0
             fi
-            # Doku-Menge: alle .md PLUS die Plan-Inventarliste. Sie ist reine
-            # Buchhaltung (eine ID-Liste), wird ausschliesslich von check:plan
-            # gelesen — und check:plan läuft im Doku-Pfad ECHT, ein Syntaxfehler
-            # darin fällt also weiterhin auf. Der Zweitschritt bei jeder
-            # Rotation ist damit nicht länger ein Volllauf-Auslöser.
-            if grep -qvE '(\.md|^scripts/plan/inventar\.ts)$' push-dateien.txt; then
+            # Doku-Menge: alle .md. (Die frühere inventar.ts-Ausnahme ist mit
+            # der Löschung von scripts/plan/inventar.ts obsolet — Plan-Neuschnitt
+            # 29.8.2026; die Messung dazu steht historisch im Kopf, lit. a.)
+            if grep -qvE '\.md$' push-dateien.txt; then
               # Nicht rein Doku — app-ferne Zusatz-Klasse prüfen (CODE_FERN_RE,
               # Kopf dieses Schritts) statt sofort das volle Programm.
               if grep -qvE "$CODE_FERN_RE" push-dateien.txt; then

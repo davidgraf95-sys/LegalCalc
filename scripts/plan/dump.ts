@@ -29,11 +29,8 @@ export function dumpZeile(e: Einheit): string {
     `status=${t.status}`,
     `blocker=${t.blocker ?? '—'}`,
     `dep=[${t.dep.join(', ')}]`,
-    `kollision=[${t.kollision.join(', ')}]`,
-    `worktree=${t.worktree ? 'ja' : 'nein'}`,
-    `26x=${t.asset26x ? 'ja' : 'nein'}`,
+    `feld=${t.feld ?? '—'}`,
     `fahrplan=${t.fahrplan ?? '—'}`,
-    `slot=${t.slot ?? '—'}`,
   ];
   return felder.join(' · ');
 }
