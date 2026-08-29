@@ -3,6 +3,7 @@ import { Link, useLocation, type Location } from 'react-router-dom';
 import {
   NAVIGATION, NAVIGATION_META, alleNavLinks, type NavKnoten, type NavGruppe, type NavLink as NavLinkT,
 } from '../../lib/navigation';
+import { STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import { LexMetrikSiegel, LexMetrikWortmarke } from './Logo';
 
 // Alle Nav-Ziele inkl. #Anker (statisch) — zum Erkennen, ob ein aktiver Hash
@@ -81,7 +82,21 @@ function Blatt({ k, loc, onNavigate, klein }: {
           aria-hidden: der volle Accessible Name (Name + Zahl + Zustands-Wort)
           liegt auf dem Link (k.ariaLabel, O4-Muster — nie nur die Zahl). */}
       {k.zahl != null && (
-        <span aria-hidden className="num text-micro ml-auto pl-1.5 shrink-0">{k.zahl}</span>
+        <span aria-hidden className="ml-auto flex items-baseline gap-1.5 pl-1.5 shrink-0">
+          {/* Zustands-Wort SICHTBAR, nicht nur im Accessible Name (Fehlerbuch-
+              Befund 44, auf Prod reproduziert 29.8.2026): «Basel-Stadt 859» und
+              «Aargau 4» standen ohne Einordnung untereinander, die 4 las sich wie
+              die Grösse des Kantons statt wie die Grösse UNSERER Erfassung (§8).
+              Wort + Zahl, nie Farbe allein (§11.6.8) — dieselbe Paarung, die
+              Kachel, Karten-Bildunterschrift und Kantons-Kopf schon zeigen.
+              Gedämpfter als die Zahl (`text-ink-500`), damit die Leiste scannbar
+              bleibt: die Zahl trägt, das Wort ordnet ein. Heute treten nur
+              «Auswahl» und «dünn» auf — «vollständig» setzt einen
+              Enumerations-Beleg voraus, und ENUMERATIONS_BELEGE ist leer (§8:
+              wir behaupten keine Vollständigkeit, die wir nicht belegt haben). */}
+          {k.stufe && <span className="text-micro text-ink-500">{STUFE_WORT[k.stufe]}</span>}
+          <span className="num text-micro">{k.zahl}</span>
+        </span>
       )}
     </Link>
   );
