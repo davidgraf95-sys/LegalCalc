@@ -63,13 +63,6 @@ Leser-CLS-Wurzel §2-N · BS-Fassungs-Drift (13 Erlasse) · ⌘K-Diagnose (Fehle
 **Wartet auf David:** CO2/verified (§7) · Verlauf 6–12 <480 px · Erfassungsgrad-4.-Stufe ·
 Retry-Politik · Frische-Auto-Merge-Politik (Verdikt-Pflicht vs. Rahmen 16.7.).
 
-## Session 21.8.2026 — Cowork-Befunde abgearbeitet, J3-Rechtsgebiete, Lesemass, §7b, H5-Abriss — sieben Landungen (PR #554–#560, W2·5m-LESER-V3 + W2·10-UI-NAV)
-
-- **Orchestrierte Session (Auftrag David: nur orchestrieren, tokensparend, «bau bis alles gelandet ist»).** Sieben PRs seriell gelandet, alle live verifiziert: **#554** 13 Cowork-Befunde (18.8.) + Scroll-Blur (§9-Gegenprüfung fing zwei Suchfilter-Blocker: Umlaut-Haystack, Synonym-Recall) · **#555** J3 Gesetzesübersicht nach Rechtsgebieten inkl. Befunde 18/19 (W2·10-UI-NAV → done) · **#556** Blur dezenter · **#557** Kopf-Reservierung überlebt Zurück aus Entscheid/Material (Befund David, Rot-Beweis (k)) · **#558** §7b-Testdeckung + Panel-Variante C (David-Wahl aus drei Screenshot-Varianten) + Escape-Fix · **#559** Lesespalte dynamisch breiter (LESEMASS_MAX 45rem, Satzspiegel-Entscheid David; CI fing Blatt-Spur-Regression, gefixt) · **#560** **H5: alte Hülle + Flag gelöscht, ~4'900 Zeilen, volle Batterie 676/676** — Abnahme per Repo-weitem Altlast-Grep (bestanden; Nachlese-Commit führte 10 Fahrplan-/Kommentar-Altverweise nach).
-- **Triage-Disziplin:** 53 externe Befunde → 24 gebaut, 13 als Ä129–Ä141 + W2·18-Zeilen abgelegt, 2 nicht bestätigt (Messwerte im Triage-Protokoll FAHRPLAN-LESER-V3), Korpus-Verdikte 36/42 (SPARQL-Pfad-Lücke, Struktur-Extraktor Nicht-LexWork) dokumentiert.
-- **§17-Lehren verankert:** Webseiten-Prüfregel (.claude/rules + Dispatch-Vorlage) · Nullproben-Beleg-Pflicht (auftrag-Skill; Anlass: falsche Agenten-Nullprobe bei echter Regression) · Browser-Pane-nicht-worktree-isoliert als Wurzel-Fix-Schritt · Flake-Klasse um 4 Mitglieder ergänzt · FlexSearch-suggest-Sweep als Prüf-Zeile.
-- **Wartet auf David:** nichts Blockierendes. Offen als nächster Schritt: Design-Qualitäts-Pass (W2·11-DESIGN-Position, Spec in der Session-Plan-Datei); Alt-Fragen Ä64/Ä33/Ä34/Siglen unverändert.
-
 ## Session 7.–8.8.2026 (Nacht) — W2·10-UI-NAV -S/-V/-O/-J gelandet + QS-GP-BEREICH + 3 Sicherheits-Patches (#463–#467)
 
 **Fable-Orchestrator, entschleunigter Zyklus je Einheit: Opus-Bau → adversariale Gegenprüfung (anderes Modell, read-only) → Auflagen-Fix → nächste; adversarialer Schlussdurchgang vor der Landung; serielle Landekette #464→#463→#465→#466→#467, alle gemergt.**
