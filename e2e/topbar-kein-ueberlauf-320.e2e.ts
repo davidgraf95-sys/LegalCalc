@@ -95,6 +95,30 @@ test.describe('C2 — die Topbar bleibt @320 im Fenster', () => {
     })
   }
 
+  // ── C2 · DER ERSATZ FÜR DAS LOGO IST DA, NICHT BLOSS BEHAUPTET ────────────
+  // Der Streifen darf das Logo unter 480 px nur weglassen, WEIL die Schublade es
+  // dort trägt. Ohne diesen Fall stünde das Argument allein im Kommentar, und
+  // eine spätere Änderung an `markeZeigen` würde die Marke auf schmalen Schirmen
+  // stillschweigend ganz verlieren (§6.7).
+  // ROT ZU BEKOMMEN: in `components/layout/Sidebar.tsx` den Klassenausdruck
+  // `markeZeigen ? 'flex' : 'hidden max-[480px]:flex'` wieder auf ein
+  // `{markeZeigen && …}` zurücknehmen ⇒ @320 findet der Fall 0 sichtbare Marken.
+  // Gemessen 29.8.2026 (Schublade offen): sichtbar 1 @320, 1 @375, 0 @500.
+  test('@320 trägt die Schublade die Marke, die der Streifen weglässt', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 800 })
+    await page.goto('/gesetze')
+    await expect(page.locator('header.sticky')).toBeVisible({ timeout: 20_000 })
+    // Vorbedingung: der Streifen hat sie hier wirklich NICHT.
+    await expect(page.locator('header.sticky a[aria-label="LexMetrik – Startseite"]')).toBeHidden()
+
+    await page.locator('header.sticky button[aria-label="Navigation öffnen"]').click()
+    const schublade = page.locator('#seitenleisten-schublade')
+    await expect(schublade).toBeVisible({ timeout: 10_000 })
+    await expect(schublade.locator('a[aria-label="LexMetrik – Startseite"]')).toBeVisible()
+    // Und der Weg zur Startseite steht dort ohnehin als beschrifteter Eintrag.
+    await expect(schublade.locator('a[href="/"]').first()).toBeAttached()
+  })
+
   // ── C1/B10/L3 · DIE LUPE IST DIE SUCHE, NICHT IHR PLATZHALTER ─────────────
   // BEFUND, gemessen 29.8.2026 warm: das Suchfeld war @320 UND @375 genau 28 px
   // breit — ein leerer Rahmen. Es reicht nicht, dass dort jetzt ein Knopf steht;
