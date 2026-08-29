@@ -94,8 +94,13 @@ function Blatt({ k, loc, onNavigate, klein }: {
               «Auswahl» und «dünn» auf — «vollständig» setzt einen
               Enumerations-Beleg voraus, und ENUMERATIONS_BELEGE ist leer (§8:
               wir behaupten keine Vollständigkeit, die wir nicht belegt haben). */}
-          {k.stufe && <span className="text-micro text-ink-500">{STUFE_WORT[k.stufe]}</span>}
-          <span className="num text-micro">{k.zahl}</span>
+          {/* ink-600 statt -500: auf der aktiven brass-Zeile misst axe für
+              11-px-Text sonst 4.36:1 < 4.5 (CI-Fund 29.8.2026, Shard 1/7). */}
+          {k.stufe && <span className="text-micro text-ink-600">{STUFE_WORT[k.stufe]}</span>}
+          {/* aria-hidden auch am Badge selbst: der IA-7-Wächter prüft das
+              Attribut an span.num (Eigenschaft identisch — der Wrapper trägt es
+              schon; CI-Fund 29.8.2026, Shard 7). */}
+          <span aria-hidden className="num text-micro">{k.zahl}</span>
         </span>
       )}
     </Link>
