@@ -240,35 +240,38 @@ function schreibeDetail(ziel: string, html: string): void {
  * Redirect-Stub für eine umgezogene Alt-Adresse (Befund 45, Entscheid David
  * 29.8.2026 «ja, mit Weiterleitungen»).
  *
- * Warum eine eigene, minimale Seite statt des normalen Templates: dieses
- * Dokument soll NICHT indexiert werden und keinen zweiten Volltext derselben
- * Norm tragen (§5 — sonst stünde derselbe Gesetzestext unter zwei URLs). Es
- * trägt genau vier Dinge: `canonical` auf die neue Adresse (die Kanonik, die
- * Crawler lesen), `robots noindex,follow` (der Link zählt, die Seite nicht),
- * ein `meta refresh` (der Sprung ohne JavaScript) und einen sichtbaren Link
- * (der Sprung ohne alles). Der Client-Redirect in GesetzLeser übernimmt für
- * interne Navigationen, die den Server nie fragen — und er ist es auch, der
- * den `#art-…`-Anker mitnimmt, den ein Server-Redirect ohnehin nie sieht.
+ * WARUM KEIN `meta refresh` — gemessen, nicht überlegt. Die erste Fassung war
+ * genau das: ein minimales Dokument mit `<meta http-equiv="refresh">`. Der
+ * e2e-Wächter `international-adresse-b45.e2e.ts` wies sie zurück, weil der
+ * Fragment-Teil dabei VERLOREN geht: `…/bund/CISG#art-35` landete auf
+ * `…/international/CISG` — ohne Artikel, also am Erlass-Anfang. Der Browser
+ * hängt den ursprünglichen Hash nur dann an, wenn er einer echten HTTP-Location
+ * folgt; einem `meta refresh` auf eine hash-lose URL folgt er wörtlich. Genau
+ * solche Deep-Links stehen in versendeten Rechtsschriften (§1).
+ *
+ * Der Stub ist deshalb die normale App-Hülle: sie bootet, und der
+ * Client-Redirect (`gesetz-leser/adressUmzug.ts`) springt MIT Anker und Query.
+ * Was den Stub von einer echten Seite unterscheidet, sind drei Dinge — er trägt
+ * `canonical` auf die NEUE Adresse, `robots noindex,follow` (der Link zählt,
+ * die Seite nicht) und statt des Volltexts nur einen sichtbaren Link. Kein
+ * zweiter Gesetzestext unter einer zweiten URL (§5), und ohne JavaScript bleibt
+ * die Seite trotzdem benutzbar.
  */
 function umzugsStub(altPfad: string, canonical: string, titel: string): string {
-  return [
-    '<!doctype html>',
-    '<html lang="de">',
-    '<head>',
-    '<meta charset="utf-8" />',
-    '<meta name="viewport" content="width=device-width, initial-scale=1" />',
-    `<title>${esc(titel)}</title>`,
-    `<link rel="canonical" href="${esc(canonical)}" />`,
-    '<meta name="robots" content="noindex, follow" />',
-    `<meta http-equiv="refresh" content="0; url=${esc(canonical)}" />`,
-    '</head>',
-    '<body>',
-    `<p>Diese Adresse (<code>${esc(altPfad)}</code>) ist umgezogen.`,
-    ` <a href="${esc(canonical)}">Weiter zur geltenden Adresse</a>.</p>`,
-    '</body>',
-    '</html>',
-    '',
-  ].join('\n');
+  const hinweis =
+    `<p>Diese Adresse (<code>${esc(altPfad)}</code>) ist umgezogen.` +
+    ` <a href="${esc(canonical)}">Weiter zur geltenden Adresse</a>.</p>`;
+  const html = rendereTemplate(
+    {
+      titel,
+      beschreibung: 'Diese Adresse ist umgezogen — weiter zur geltenden Adresse des Erlasses.',
+      canonical,
+    },
+    null,
+    hinweis,
+    altPfad,
+  );
+  return html.replace('</head>', '    <meta name="robots" content="noindex, follow" />\n  </head>');
 }
 
 const gesetzeUrls: string[] = [];
