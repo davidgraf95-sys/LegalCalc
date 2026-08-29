@@ -297,7 +297,18 @@ export function Gesetze() {
       )}
 
       {!erlasse && !fehler && (
-        <div className="py-12 text-center space-y-3">
+        /* Lade-CLS der Übersicht (W2·15-CLS, §15.2): DERSELBE Höhen-Token
+           `inhalt-region` wie am geladenen Inhalt unten — der Platzhalter ist
+           die PRERENDERTE Fassung dieser Fläche (dist/gesetze.html trägt genau
+           diesen Zweig), und ohne Reservierung sass der Footer beim ersten Paint
+           im Fold und wurde zweimal verschoben: Route-Fallback (min-h-screen)
+           → Spinner riss ihn hoch (Shift 0.1242), Manifest-Einwuchs schob ihn
+           auf 8420 px (Shift 0.3143) — zusammen CLS 0.4387 @8×, Nullprobe
+           29.8.2026 auf main 7ab30ea9e. Mit der Reservierung beginnt der Footer
+           von Anfang an UNTERHALB des Folds und bewegt sich nur noch dort.
+           Reine Platz-Reservierung: kein Zustand entfernt, kein Inhalt gekürzt
+           (§15: Layout ändert das WO, nie das WAS). */
+        <div className="min-h-inhalt-region py-12 text-center space-y-3">
           <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
           {/* Eigener Lade-Text: NICHT «Wird geladen» — dieser Wortlaut ist dem
               Suspense-Fallback-Drift-Tor in scripts/prerender.ts vorbehalten. */}
