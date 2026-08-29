@@ -83,14 +83,15 @@ ist der Merge-Zeitstempel auf origin/main.
 
 ## Station W — Weiterbau (David 8.8.2026)
 
-Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen: (a) nächste
-offene Position derselben Dach-Checkliste; (b) sonst oberster `ready`-Schritt
+Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
+(a) nächste offene Position derselben Dach-Checkliste; (b) oberster `ready`-Schritt
 **gleicher Risikoklasse** und möglichst gleichen `feld:`-Werts (`plan:next` +
 Kollisionsprüfung); (c) nichts Sinnvolles mehr ⇒ Station E.
 
 Je Weiterbau voller Zyklus im Kleinen (`status=wip`, volle Sorgfalt, eigener
-Commit mit eigenem Roadmap-Trailer). **NIE sortenrein-widrig auf Risikopfade
-wechseln**; Schluss **spätestens bevor der Kontext zur Neige geht**.
+Commit mit eigenem Roadmap-Trailer).
+**NIE sortenrein-widrig auf Risikopfade wechseln**; Schluss
+**spätestens bevor der Kontext zur Neige geht** — lieber sauber landen.
 
 ## Station E — Abschluss (4 Punkte)
 
