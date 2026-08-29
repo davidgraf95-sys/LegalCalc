@@ -4,6 +4,7 @@ import { filtern } from '../../lib/normtext/browse';
 import { istLesbar } from '../../lib/normtext/browse-typen';
 import type { BrowseManifest } from '../../lib/normtext/browse-typen';
 import { erlassVorschlaege } from './helpers';
+import { erlassPfad } from '../../lib/normtext/erlassAdresse';
 
 // ─── W2·10-UI-NAV/N0b: hilfreiche Fehlseite für einen unbekannten Erlass-Key ───
 //
@@ -30,7 +31,7 @@ export function GesetzFehlSeite({ schluessel, manifest }: {
     return filtern(erlasse.filter(istLesbar), filter).slice(0, 12);
   }, [erlasse, filter]);
 
-  const pfad = (e: { ebene: string; key: string }) => `/gesetze/${e.ebene}/${encodeURIComponent(e.key)}`;
+  const pfad = erlassPfad;
 
   return (
     <div className="space-y-5">

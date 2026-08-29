@@ -4,13 +4,15 @@
 // Die Rechtsgebiets-Sicht hat ZWEI Ebenen (§4.4/K8):
 //
 //  1. Auto-Grundgerüst — die einwertige Achse `rechtsgebiet` (register.ts,
-//     GEBIETE: privat/straf/prozess/schkg/öffentlich/sozial-abgaben/international).
+//     GEBIETE: privat/straf/prozess/schkg/öffentlich/steuern/sozialversicherung/
+//     international; die letzten beiden seit der W2-TRENNUNG 29.8.2026).
 //     Sie deckt das GANZE Korpus grob ab, ohne fachliches Urteil — sie steht
 //     schon im Register und wird in der Sicht nur gruppiert (kein Code hier).
 //
 //  2. Querschnitts-Delta — DIESE Datei. Ein KURATIERTES, mehrwertiges Overlay von
 //     6–8 kanzleirelevanten Praxisfeldern, die QUER durch die Grundgerüst-Gebiete
-//     schneiden (Arbeit zieht OR-Privatrecht UND ArG/AVIG/BVG aus «sozial-abgaben»
+//     schneiden (Arbeit zieht OR-Privatrecht, ArG aus «Öffentliches Recht» und
+//     AVIG/BVG aus «Sozialversicherung»
 //     zusammen; Sachenrecht ZGB-Privatrecht UND BewG/RPG aus «öffentlich»). Nur
 //     für die Querschnitts-Erlasse, mit Norm-Verankerung wo eng (OR Art. 319–362).
 //
@@ -208,7 +210,7 @@ export const RECHTSGEBIET_THEMEN: readonly RechtsgebietThema[] = [
     label: 'Steuern & Abgaben',
     kurz: 'Direkte Steuern von Bund und Kantonen sowie die wichtigsten Verkehrs- und Verbrauchssteuern.',
     reihenfolge: 8,
-    gebiet: 'sozial-abgaben',
+    gebiet: 'steuern',
     beleg: 'Direkte Bundessteuer DBG (SR 642.11); Harmonisierung StHG (SR 642.14); Mehrwertsteuer MWSTG (SR 641.20) mit MWSTV; Verrechnungssteuer VStG (SR 642.21); Stempelabgaben StG (SR 641.10).',
     status: 'entwurf',
     mitglieder: [

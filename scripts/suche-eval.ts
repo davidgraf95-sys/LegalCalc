@@ -44,6 +44,7 @@ import { baueIndex } from './such-index-generieren';
 import { baueSuchFn } from '../src/lib/suche/artikelVolltext';
 import { baueNormIndex, parseNormQuery, type NormErlass } from '../src/lib/suche/normQuery';
 import { baueBgeIndex, parseBgeSprung } from '../src/lib/suche/bgeQuery';
+import { erlassPfadVonKey } from '../src/lib/normtext/erlassAdresse';
 import {
   sprungGruppe, bgeSprungGruppe, gesetzGruppe, artikelGruppe, entscheidGruppe,
   type SuchGruppe, type SuchTreffer,
@@ -80,25 +81,32 @@ function ladeGold(): GoldSet {
 //            (artikelVolltext.treffer + normQuery.bauHref bilden beide diese Form)
 //   entscheid 'bge_147_III_121' → /rechtsprechung/bge_147_III_121
 //   erlass   'OR' → /gesetze/bund/OR
+//
+// Die Ebene stand hier fest verdrahtet, unter derselben SSoT-Behauptung — mit
+// dem Umzug der Staatsverträge (Befund 45) wurde sie falsch: die Produktion
+// bildet `/gesetze/international/CISG`, dieser Kanal hätte weiter `bund`
+// gemessen und den Treffer stumm verworfen. Heute enthält das Gold-Set keinen
+// der 37 Schlüssel — die Messung wäre also erst beim nächsten Gold-Eintrag
+// falsch geworden, und niemand hätte es gemerkt (Gegenprüfung 29.8.2026,
+// Mangel 5). Jetzt fragt auch dieser Kanal die eine Ableitung.
 function zielHref(p: GoldPaar): string {
   if (p.zielTyp === 'artikel') {
     const [key, anker] = p.zielId.split('#');
     const token = anker.replace(/^art_/, '');
-    return `/gesetze/bund/${encodeURIComponent(key)}#art-${token}`;
+    return `${erlassPfadVonKey(key)}#art-${token}`;
   }
   if (p.zielTyp === 'entscheid') {
     return `/rechtsprechung/${encodeURIComponent(p.zielId)}`;
   }
-  // erlass — die Gold-Erlasse sind alle Bund (register.json).
-  return `/gesetze/bund/${encodeURIComponent(p.zielId)}`;
+  return erlassPfadVonKey(p.zielId);
 }
 
 // Kandidaten-Prädikat je Inhaltstyp: welche Treffer-Hrefs bilden den Kanal, in
 // dem der Rang gemessen wird (Artikel-Deep-Links ≠ Erlass-Links ≠ Entscheide).
 function istKandidat(typ: ZielTyp, href: string): boolean {
-  if (typ === 'artikel') return /^\/gesetze\/(?:bund|kanton)\/[^#]+#art-/.test(href);
+  if (typ === 'artikel') return /^\/gesetze\/(?:bund|kanton|international)\/[^#]+#art-/.test(href);
   if (typ === 'entscheid') return href.startsWith('/rechtsprechung/');
-  return /^\/gesetze\/(?:bund|kanton)\/[^#?]+$/.test(href); // erlass = ohne #-Anker
+  return /^\/gesetze\/(?:bund|kanton|international)\/[^#?]+$/.test(href); // erlass = ohne #-Anker
 }
 
 // ── Produkt-Suche assemblieren (identische Reihenfolge wie useUniversalSuche) ──

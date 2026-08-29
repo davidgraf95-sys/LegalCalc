@@ -8,7 +8,7 @@ import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { InternRefs } from '../../../components/NormText';
 import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
 import { strukturTiefe } from '../strukturTiefe';
-import { pfadZu } from '../helpers';
+import { basisAdresse, pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
 import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
@@ -186,9 +186,9 @@ export interface LeserV3Umgebung {
   istXl: boolean;
 }
 
-export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schluessel: string }):
+export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: string; schluessel: string }):
 { modell: LeserV3Modell; umgebung: LeserV3Umgebung } {
-  const basisPfad = `/gesetze/${ebene}/${encodeURIComponent(schluessel)}`;
+  const basisPfad = basisAdresse(routenSegment, schluessel);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -215,7 +215,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
   useLeserDaten({
-    ebene, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
+    ebene: routenSegment, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
     setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setErlass, setEintraege, setFehler,
   });
 
@@ -353,7 +353,7 @@ export function useLeserV3Modell({ ebene, schluessel }: { ebene: string; schlues
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
 
   useLeserSprungSpy({
-    ebene, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
+    ebene: routenSegment, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
     paneLocationHash: location.hash, paneLocationSearch: location.search, basisPfad,
     offen, sucheDebounced, aktivIds, tocBaum,
     gliederungsKnoten: gliederung.knoten, umhaengPraefix: gliederung.umhaengPraefix,

@@ -70,10 +70,16 @@ const leiste = (page: Page) => page.locator('[data-v3-aside]')
 // APP-Regler; der Rückweg dieser Spec bediente dann einen anderen Steller als der
 // Hinweg und schrieb den Fehlschlag dem falschen zu (gefunden 16.8.2026, als der
 // Hinweg zum ersten Mal überhaupt bis zum Rückweg durchlief).
-// H2b: der Leser-Regler heisst jetzt «Gesetzestext vergrössern/verkleinern»,
-// seine Gruppe «Grösse des Gesetzestexts» — beide Namen kommen im Dokument je
-// genau einmal vor (gemessen 17.8.2026: `[role=group][aria-label=
-// "Schriftgrösse"]` bleibt bei 1, auch mit offenem Panel; vorher 2).
+// H2b: der Leser-Regler heisst «Gesetzestext vergrössern/verkleinern» — beide
+// Namen kommen im Dokument je genau einmal vor (gemessen 17.8.2026:
+// `[role=group][aria-label="Schriftgrösse"]` bleibt bei 1, auch mit offenem
+// Panel; vorher 2).
+// NACHGEFÜHRT 29.8.2026 (Entscheid David 5B, Design-Review C4): die
+// GRUPPEN-Namen heissen seither «Grösse nur des Gesetzestexts» (Leser) und
+// «Schriftgrösse der ganzen Seite» (Topbar), und beide Regler tragen ihren
+// Scope zusätzlich SICHTBAR («Nur Gesetzestext» / «Ganze Seite»). Die
+// KNOPF-Namen, an denen diese Spec hängt, sind unverändert — die Zusicherung
+// hier ist dieselbe geblieben (§6.3), nur ihr Umfeld ist eindeutiger geworden.
 // DER PANEL-SCOPE BLEIBT: er sagt zusätzlich aus, dass der Regler DORT steht
 // (Ä9: «im Leser nur EIN Regler, und zwar im Ansicht-Menü»). Ein eindeutiger Name
 // allein bewiese den Ort nicht — der Test ist damit schärfer, nicht lockerer.

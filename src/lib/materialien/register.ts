@@ -113,31 +113,31 @@ const ESTV_VZ_HINWEIS = 'Verlinkt das amtliche ESTV-Verzeichnis; der Direkt-PDF-
 export const MATERIAL_REGISTER: ReadonlyArray<MaterialRegistereintrag> = [
   // ── ESTV — Steuern (Verwaltungsverordnungen, faktischer Praxisstandard) ────
   liveLink('ESTV-KS-DBG-5A', 'ESTV', 'kreisschreiben', 'Umstrukturierungen', {
-    nummer: 'Nr. 5a', rechtsgebiet: 'sozial-abgaben', quelleUrl: ESTV_KS_DBST,
+    nummer: 'Nr. 5a', rechtsgebiet: 'steuern', quelleUrl: ESTV_KS_DBST,
     stand: '2022-02-01', rang: 1, normKeys: ['DBG', 'FUSG'], hinweis: ESTV_VZ_HINWEIS,
   }),
   liveLink('ESTV-KS-DBG-37', 'ESTV', 'kreisschreiben', 'Mitarbeiterbeteiligungen', {
-    nummer: 'Nr. 37', rechtsgebiet: 'sozial-abgaben', quelleUrl: ESTV_KS_DBST,
+    nummer: 'Nr. 37', rechtsgebiet: 'steuern', quelleUrl: ESTV_KS_DBST,
     stand: '2020-10-30', rang: 2, normKeys: ['DBG', 'OR'], hinweis: ESTV_VZ_HINWEIS,
   }),
   liveLink('ESTV-KS-DBG-6A', 'ESTV', 'kreisschreiben', 'Verdecktes Eigenkapital (Art. 65 DBG)', {
-    nummer: 'Nr. 6a', rechtsgebiet: 'sozial-abgaben', quelleUrl: ESTV_KS_DBST,
+    nummer: 'Nr. 6a', rechtsgebiet: 'steuern', quelleUrl: ESTV_KS_DBST,
     stand: '2024-10-10', rang: 3, normKeys: ['DBG'], hinweis: ESTV_VZ_HINWEIS,
     // M5-Nachtrag (§2.4/§7): Artikel aus amtlichem Titel; DBG ohne Revisions-Cutoff
     // → artikelscharf zulässig. Art. 65 DBG gegen public/normtext/bund/DBG.json verifiziert.
     artikelBezuege: [{ erlass: 'DBG', artikel: '65' }],
   }),
   liveLink('ESTV-KS-DBG-32A', 'ESTV', 'kreisschreiben', 'Sanierung von Kapitalgesellschaften und Genossenschaften', {
-    nummer: 'Nr. 32a', rechtsgebiet: 'sozial-abgaben', quelleUrl: ESTV_KS_DBST,
+    nummer: 'Nr. 32a', rechtsgebiet: 'steuern', quelleUrl: ESTV_KS_DBST,
     stand: '2025-01-20', rang: 4, normKeys: ['DBG', 'FUSG'], hinweis: ESTV_VZ_HINWEIS,
   }),
   liveLink('ESTV-RS-VSTG-218', 'ESTV', 'rundschreiben', 'Zinssätze 2026 für Vorschüsse/Darlehen in Schweizer Franken (Safe-Haven)', {
-    nummer: 'Nr. 218', rechtsgebiet: 'sozial-abgaben', quelleUrl: ESTV_RS_VSTG,
+    nummer: 'Nr. 218', rechtsgebiet: 'steuern', quelleUrl: ESTV_RS_VSTG,
     stand: '2026-01-29', rang: 5, normKeys: ['VSTG', 'DBG'],
     hinweis: 'Jährlich neu publizierte Mindestzinssätze; verlinkt das amtliche Rundschreiben-Verzeichnis der ESTV.',
   }),
   liveLink('ESTV-MWST-INFO-09', 'ESTV', 'mwst-info', 'MWST-Info 09 — Vorsteuerabzug und Vorsteuerkorrekturen', {
-    nummer: 'MWST-Info 09', rechtsgebiet: 'sozial-abgaben', quelleUrl: ESTV_MWST,
+    nummer: 'MWST-Info 09', rechtsgebiet: 'steuern', quelleUrl: ESTV_MWST,
     stand: '2025-10-31', rang: 6, normKeys: ['MWSTG'],
     hinweis: 'Webbasierte MWST-Publikation (laufend versioniert); verlinkt das amtliche MWST-Portal der ESTV.',
   }),
@@ -212,16 +212,16 @@ export const MATERIAL_REGISTER: ReadonlyArray<MaterialRegistereintrag> = [
 
   // ── BSV — Sozialversicherung (verbindliche Vollzugsweisungen AHV/IV/EO) ─────
   liveLink('BSV-WML', 'BSV', 'wegleitung', 'Wegleitung über den massgebenden Lohn in der AHV, IV und EO (WML)', {
-    nummer: '318.102.02', rechtsgebiet: 'sozial-abgaben', quelleUrl: 'https://sozialversicherungen.admin.ch/de/d/6944',
+    nummer: '318.102.02', rechtsgebiet: 'sozialversicherung', quelleUrl: 'https://sozialversicherungen.admin.ch/de/d/6944',
     stand: '2026-05-21', rang: 1, normKeys: ['AHVG', 'AHVV'],
     hinweis: 'Verbindliche Vollzugsweisung an die Ausgleichskassen; FR/IT vorhanden.',
   }),
   liveLink('BSV-WSN', 'BSV', 'wegleitung', 'Wegleitung über die Beiträge der Selbständigerwerbenden und Nichterwerbstätigen (WSN)', {
-    nummer: '318.102.03', rechtsgebiet: 'sozial-abgaben', quelleUrl: 'https://sozialversicherungen.admin.ch/de/d/6954',
+    nummer: '318.102.03', rechtsgebiet: 'sozialversicherung', quelleUrl: 'https://sozialversicherungen.admin.ch/de/d/6954',
     stand: '2025-11-12', rang: 2, normKeys: ['AHVG', 'AHVV'],
   }),
   liveLink('BSV-WVP', 'BSV', 'wegleitung', 'Wegleitung über die Versicherungspflicht in der AHV/IV (WVP)', {
-    rechtsgebiet: 'sozial-abgaben', quelleUrl: 'https://sozialversicherungen.admin.ch/de/d/6957',
+    rechtsgebiet: 'sozialversicherung', quelleUrl: 'https://sozialversicherungen.admin.ch/de/d/6957',
     stand: '2026-01-01', rang: 3, normKeys: ['AHVG'],
   }),
 

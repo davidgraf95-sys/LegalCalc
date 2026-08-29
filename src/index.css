@@ -730,9 +730,69 @@
      ihren Ist-Werten (40rem bzw. 42rem). ID-Selektor (`#lc-lesespalte`) und
      die zusätzliche Attribut-Bedingung sind beide für sich schon spezifischer
      als die einfachen Tailwind-Utility-Klassen, kein `!important` nötig. */
+  /* ── ZEILENMASS-DECKEL AM TEXTKÖRPER (Entscheid David 29.8.2026, Variante
+        1C — gebündelt mit der Aufhebung der Tiefen-Staffelung) ──────────────
+     `--leser-lesemass-max` (45rem) ist ein PIXEL-Deckel: er begrenzt, wie breit
+     die Spalte werden darf, sagt aber nichts darüber, wie viele ZEICHEN in eine
+     Zeile geraten. Solange die Staffelung den Text je nach Gliederungstiefe
+     verengte, fiel das nicht auf — der Deckel griff nur an den flachsten
+     Stellen. Mit EINER Kante (29.8.2026) läuft jeder Erlass an denselben
+     Deckel, und das Zeilenmass steigt sichtbar (gemessen @1440, Methode
+     `e2e/leser-lesemass.e2e.ts`: OR 68→73 · ZGB 64→70 · StGB 69→73 ·
+     StPO 68→69 · VMWG 74→74 · BS-640.100 56→61 ch).
+     Darum ein zweiter Deckel, der in ZEICHEN rechnet statt in Pixeln — der
+     schmalere der beiden gewinnt (`min()`):
+
+     · `--leser-zeichen` = 68 — das Zielmass, in der Einheit, in der alle
+       bisherigen Entscheide dieses Lesers stehen (Zeichen je Zeile nach der
+       Methode des Tors: Textlänge / Zeilenkästen des längsten mehrzeiligen
+       Absatzes). Die WCAG-Decke SC 1.4.8 (≤ 80 ch) bleibt unberührt darüber
+       stehen; 68 ist die HAUSzahl darunter, keine Ersetzung.
+     · `--leser-zeichenbreite` = 0.4805 — die mittlere Breite EINES Zeichens
+       deutscher Normtext-Prosa in der Lese-Serife, als Vielfaches der
+       Schriftgrösse. Ch-basiert hergeleitet, nicht geschätzt: 1 CSS-`ch`
+       (Breite der Ziffer «0») misst in dieser Serife 8.633 px bei 17 px
+       Schriftgrösse = 0.5078 em; das mittlere Prosa-Zeichen ist 5.4 % schmaler
+       (8.169 px = 0.4805 em, gemessen am DICHTESTEN Absatz der Stichprobe,
+       VMWG — Schlechtfall, nicht Mittelwert). 68 Zeichen entsprechen damit
+       64 CSS-`ch`. Die CSS-Einheit `ch` steht hier NICHT direkt, weil sie sich
+       auf die Schrift DES ELEMENTS bezieht: `#lc-lesespalte` trägt die
+       UI-Grotesk, nicht die Lese-Serife (und muss den Deckel trotzdem tragen,
+       sonst bekäme die Kopfzeile «Art. N · Zitat/Link» einen anderen rechten
+       Rand als der Fliesstext — der A37-Fehler). Ihr die Serife zu vererben
+       hiesse, die Schrift von 26 029 Nachfahren zu ändern (gemessen 29.8.2026).
+     · `--leser-rinne` = 2.25rem — die amtstreue Absatznummer-Rinne (`pl-9`
+       in `ArtikelBody`) liegt INNERHALB dieser Breite und trägt keinen
+       Fliesstext; sie wird darum aufgeschlagen, nicht mitgezählt.
+
+     SKALIERT MIT JEDER SCHRIFTSTUFE, weil der Deckel an `--lm-leser-schrift`
+     hängt (dem Regler-Token zwei Regeln oberhalb). GEMESSEN am Preview-Stand
+     (OR @1440, Lese-Zelle 640 px):
+       normal     17.00 px → Deckel 591 px → 67 ch   (Zeichen-Deckel bindet)
+       mittel     18.36 px → Deckel 636 px → 67 ch   (Zeichen-Deckel bindet)
+       gross      20.06 px → 640 px (Zelle) → 62 ch  (bindet nicht mehr)
+       sehr-gross 22.10 px → 640 px (Zelle) → 55 ch
+     Das Zeilenmass bleibt über die beiden unteren Stufen KONSTANT bei 67
+     Zeichen — genau das, was ein Pixel-Deckel nicht kann — und fällt darüber
+     von selbst darunter, weil die grössere Schrift weniger Zeichen in dieselbe
+     Zelle bringt. Der Deckel bindet also genau dort, wo er gebraucht wird;
+     darüber übernimmt der andere Arm von `min()` (der Pixel-Deckel bzw., wenn
+     die Grid-Zelle schmaler ist, diese).
+     WÄCHTER (§6.7): `e2e/leser-lesemass.e2e.ts`, Block «T-1C · Zeilenmass-
+     Deckel» — ≤ 70 ch an sechs Erlassen und EINE Textkante. Rot zu bekommen,
+     indem `--leser-zeichen` hochgesetzt oder die `min()`-Klammer entfernt
+     wird. */
+  .lc-leser[data-leser-v3="rahmen"] {
+    --leser-zeichen: 68;
+    --leser-zeichenbreite: 0.4805;
+    --leser-rinne: 2.25rem;
+    --leser-zeilenmass: calc(
+      var(--leser-zeichen) * var(--leser-zeichenbreite) * var(--lm-leser-schrift, 1.0625rem)
+      + var(--leser-rinne));
+  }
   .lc-leser[data-leser-v3="rahmen"] #lc-lesespalte,
   .lc-leser[data-leser-v3="rahmen"] .max-w-normtext {
-    max-width: var(--leser-lesemass-max, 45rem);
+    max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass));
   }
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen

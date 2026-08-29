@@ -2,7 +2,10 @@ import { describe, it, expect } from 'vitest';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { FEDLEX } from '../lib/fedlex';
-import { ERLASS_REGISTER, GEBIETE, type Grundart, type Rechtsgebiet } from '../lib/normtext/register';
+import {
+  ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, gebieteFuerFilter,
+  type Grundart, type Rechtsgebiet,
+} from '../lib/normtext/register';
 import { GRUNDART_SEED } from '../lib/normtext/grundart.generated';
 import {
   baueBrowseManifest, identitaetAusErlass, istKuerzelFragment, spracheAusStamm,
@@ -333,5 +336,68 @@ describe('Hilfsfunktionen — Identität aus Snapshot ableiten', () => {
     expect(spracheAusStamm('FR-130.11-fr')).toBe('fr');
     expect(spracheAusStamm('TI-ti-125101')).toBe('de');
     expect(spracheAusStamm('BE-161.12')).toBe('de');
+  });
+});
+
+// ─── W2-TRENNUNG: Doppel-Topf zerlegt (29.8.2026, Entscheid David «ja trennen») ──
+//
+// Die frühere Achse 'sozial-abgaben' («Steuern, Sozialversicherung & Abgaben»)
+// bündelte zwei Rechtsgebiete. Diese Tore halten die Zerlegung fest UND sind
+// rot-fähig (§6.7): setzt jemand den Alt-Wert an einem Erlass, an einer Achse
+// oder im Alias wieder ein, bricht hier etwas.
+describe('Rechtsgebiets-Achsen nach der Trennung (W2-TRENNUNG 29.8.2026)', () => {
+  it('GEBIETE führt beide Nachfolger und den Alt-Wert nicht mehr', () => {
+    const ids = GEBIETE.map((g) => g.id as string);
+    expect(ids).toContain('steuern');
+    expect(ids).toContain('sozialversicherung');
+    expect(ids).not.toContain('sozial-abgaben');
+    // Labels sind das, was der Nutzer liest — sie unterscheiden die zwei Hälften.
+    expect(GEBIET_LABEL.steuern).toBe('Steuern & Abgaben');
+    expect(GEBIET_LABEL.sozialversicherung).toBe('Sozialversicherung');
+  });
+
+  it('kein Erlass trägt mehr den abgelösten Wert', () => {
+    const alt = ERLASS_REGISTER.filter((e) => (e.rechtsgebiet as string) === 'sozial-abgaben');
+    expect(alt.map((e) => e.key)).toEqual([]);
+  });
+
+  it('die Zuordnung der 45 Erlasse folgt der amtlichen SR-Systematik, nicht dem Gefühl', () => {
+    // Amtliche Grundlage (Fedlex-Rechtstaxonomie, SPARQL-Abruf 29.8.2026,
+    // https://fedlex.data.admin.ch/sparqlendpoint): SR-Gruppe 64 = «Steuern»,
+    // 83 = «Sozialversicherung», 82 = «Arbeit» (822 Arbeitnehmerschutz, 823
+    // Arbeitsmarkt und Arbeitsbeschaffung — beides Verwaltungsrecht, keine
+    // Sozialversicherung). Kein Erlass darf gegen seine SR-Gruppe stehen.
+    // EINE benannte Ausnahme, gefunden bei der Rot-Probe dieses Tors (29.8.2026)
+    // und BEWUSST nicht mitgezogen: Das CO2-Gesetz stand schon vor der Trennung
+    // als 'oeffentlich' — es war nie im Doppel-Topf. Fedlex führt es unter SR
+    // 641.71, weil es die CO2-Abgabe trägt; sein Gegenstand ist aber Klima- und
+    // Umweltrecht, die Abgabe nur ein Instrument darin. Es umzuhängen wäre eine
+    // eigene fachliche Umklassierung ausserhalb dieses Auftrags (§14/§7) — sie
+    // wartet auf Davids Entscheid. Bis dahin steht sie hier NAMENTLICH, damit
+    // das Tor scharf bleibt: jede WEITERE Abweichung bricht.
+    const BENANNTE_AUSNAHMEN = new Set(['CO2_GESETZ']);
+    const verstoesse = ERLASS_REGISTER
+      .filter((e) => e.ebene === 'bund' && e.sr && !BENANNTE_AUSNAHMEN.has(e.key))
+      .map((e) => ({ key: e.key, sr: e.sr as string, geb: e.rechtsgebiet as string }))
+      .filter(({ sr, geb }) => (
+        (/^64/.test(sr) && geb !== 'steuern')
+        || (/^83/.test(sr) && geb !== 'sozialversicherung')
+        || (/^82/.test(sr) && geb === 'sozialversicherung')
+      ))
+      .map(({ key, sr, geb }) => `${key} (SR ${sr}) steht als ${geb}`);
+    expect(verstoesse).toEqual([]);
+  });
+
+  it('Alt-URLs bleiben lesbar: der abgelöste Wert meint die Vereinigung', () => {
+    // Eine gespeicherte Facetten-URL `?rg=sozial-abgaben` darf nicht ins Leere
+    // laufen (§8) — sie filtert auf beide Nachfolger, die Treffermenge ist die
+    // von vor der Trennung.
+    expect(gebieteFuerFilter('sozial-abgaben')).toEqual(['steuern', 'sozialversicherung']);
+    // Gültige Werte sind unverändert einelementig — kein verändertes Verhalten.
+    expect(gebieteFuerFilter('privat')).toEqual(['privat']);
+    expect(gebieteFuerFilter('steuern')).toEqual(['steuern']);
+    // Unbekanntes bleibt unbekannt: ein Tippfehler filtert auf null Treffer,
+    // statt still das ganze Korpus zu öffnen.
+    expect(gebieteFuerFilter('quatsch')).toEqual(['quatsch']);
   });
 });

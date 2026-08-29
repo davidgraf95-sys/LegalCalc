@@ -277,7 +277,7 @@ describe('NormText — N2b ausgeschriebenes Fremdgesetz-Routing (AIG Art. 5)', (
   it('Negativ: unbekanntes Klammer-Kürzel «(Code civil)» → KEIN Fremdgesetz-Routing', () => {
     // «Code civil» ∉ FEDLEX → N2b feuert NICHT (kein Fedlex-Deep-Link auf ein
     // falsches Gesetz). tokenMap ohne «14» → auch kein Self-Link: reiner Text (§1).
-    const internY: InternRefs = { tokenMap: new Map(), basisPfad: '/gesetze/bund/LUGUE', springeZu: () => {} };
+    const internY: InternRefs = { tokenMap: new Map(), basisPfad: '/gesetze/international/LUGUE', springeZu: () => {} };
     const out = ssr(<NormText text="Artikel 14 und 15 des Zivilgesetzbuches (Code civil) gilt" intern={internY} />);
     expect(out).not.toContain('#art_'); // kein Fedlex-Deep-Link (Kürzel ∉ FEDLEX)
     expect(out).not.toContain('<a'); // keinerlei Link

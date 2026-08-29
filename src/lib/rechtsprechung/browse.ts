@@ -6,7 +6,7 @@
 
 import type { EntscheidManifest, BrowseEntscheid, RichterRegister } from './register';
 import type { EntscheidSnapshot, EntscheidSnapshotDatei, Gerichtstyp } from './typen';
-import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, type Rechtsgebiet } from '../normtext/register';
+import { ERLASS_REGISTER, GEBIETE, GEBIET_LABEL, gebieteFuerFilter, type Rechtsgebiet } from '../normtext/register';
 
 // ── Manifest (einmal, gecacht als laufende Promise) ──────────────────────────
 let manifestPromise: Promise<EntscheidManifest | null> | null = null;
@@ -287,7 +287,13 @@ export function themaText(e: BrowseEntscheid): string {
 export function filterEntscheide(liste: BrowseEntscheid[], f: EntscheidFilterWerte): BrowseEntscheid[] {
   const q = (f.q ?? '').trim().toLowerCase();
   return liste.filter((e) => {
-    if (f.sachgebiet && e.sachgebiet !== f.sachgebiet) return false;
+    // W2-TRENNUNG (29.8.2026): Der Filterwert kann ein ABGELÖSTES Gebiet sein —
+    // eine Alt-URL `?rg=sozial-abgaben` aus Lesezeichen/Index. `gebieteFuerFilter`
+    // löst ihn in seine Nachfolger auf (register.ts, ALT_GEBIET_ALIAS); die
+    // Trefferliste bleibt dann exakt die von vor der Trennung. Für jeden
+    // GÜLTIGEN Wert ist das die einelementige Menge, also unverändertes
+    // Verhalten (Golden byte-gleich, §6).
+    if (f.sachgebiet && !gebieteFuerFilter(f.sachgebiet).includes(e.sachgebiet)) return false;
     if (f.gericht && e.gericht !== f.gericht) return false;
     if (f.gerichtstyp && e.gerichtstyp !== f.gerichtstyp) return false;
     if (f.kanton && e.kanton !== f.kanton) return false;

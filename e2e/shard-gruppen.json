@@ -27,7 +27,8 @@
    "normrevision-badge.e2e.ts",
    "rechtsprechung-richter.e2e.ts",
    "verzahnung.e2e.ts",
-   "leser-v3-blatt.e2e.ts"
+   "leser-v3-blatt.e2e.ts",
+   "international-adresse-b45.e2e.ts"
   ],
   "3": [
    "a31a-fussnote-inline.e2e.ts",
@@ -96,7 +97,8 @@
    "leser-v3-kopf-buendig.e2e.ts",
    "leser-v3-prerender-bezuege.e2e.ts",
    "leser-kein-seitenueberlauf.e2e.ts",
-   "leser-v3-panel-bezuege-wirkung.e2e.ts"
+   "leser-v3-panel-bezuege-wirkung.e2e.ts",
+   "topbar-kein-ueberlauf-320.e2e.ts"
   ],
   "7": [
    "schnellrechner-kalender.e2e.ts",

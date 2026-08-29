@@ -47,6 +47,7 @@ import { dekodiereEntities } from '../normtext/html-entities.ts';
 import { normalisiereZitat } from '../datenhaltung/normalisiere-zitat.ts';
 import { datumslabelNachIso, istDeutschesDatumslabel } from './datum-de.ts';
 import type { SoftLawDok, NormRefKante, AdapterErgebnis } from './adapter-typen.ts';
+import { BEHOERDE_RECHTSGEBIET } from './adapter-typen.ts';
 import type { DoktypId } from '../../src/lib/materialien/typen.ts';
 
 export const EDOEB_USER_AGENT = 'LexMetrik-Materialien/1.0 (+https://lexmetrik.vercel.app)';
@@ -215,7 +216,7 @@ export function baueDokUndKanten(roh: RohEdoebDok, def: EdoebHubDef, abgerufen: 
     doktyp,
     titel: roh.titel,
     nummer: null,
-    rechtsgebiet: 'oeffentlich',
+    rechtsgebiet: BEHOERDE_RECHTSGEBIET.EDOEB,
     sprache: 'de',
     rang: dokRang(stand),
     normKeys: [def.erlassKey],

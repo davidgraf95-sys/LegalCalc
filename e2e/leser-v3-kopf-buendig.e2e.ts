@@ -160,10 +160,10 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
   test('(d) das Erlass-Kürzel im Kopf ist nie angeschnitten (LugÜ · StPO · ZH-211.11)', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     for (const [pfad, kuerzel, breite] of [
-      ['/gesetze/bund/LUGUE?leser=v3', 'LugÜ', 1440],
+      ['/gesetze/international/LUGUE?leser=v3', 'LugÜ', 1440],
       ['/gesetze/bund/STPO?leser=v3', 'StPO', 1440],
       ['/gesetze/kanton/ZH-211.11?leser=v3', null, 1440],
-      ['/gesetze/bund/LUGUE?leser=v3', 'LugÜ', 390],
+      ['/gesetze/international/LUGUE?leser=v3', 'LugÜ', 390],
     ] as const) {
       await page.setViewportSize({ width: breite, height: 900 })
       await page.goto(pfad)

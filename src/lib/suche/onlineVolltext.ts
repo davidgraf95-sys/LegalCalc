@@ -1,4 +1,5 @@
 import type { SuchGruppe, SuchTreffer } from '../universalSuche';
+import { erlassPfadVonKey } from '../normtext/erlassAdresse';
 
 // ─── Online-Volltextsuche (QS-DATA E2, W2·6-DATA) ────────────────────────────
 //
@@ -87,7 +88,7 @@ export function zuruecksetzenOnlineSperre(): void {
  * URL-kodiert (identisch zum bestehenden Helfer), der Routen-Key schon.
  */
 export function artikelTrefferHref(f: Fundstelle): string {
-  return `/gesetze/bund/${encodeURIComponent(f.erlass ?? '')}#art-${f.artikel ?? ''}`;
+  return `${erlassPfadVonKey(f.erlass ?? '')}#art-${f.artikel ?? ''}`;
 }
 
 /** Interne Entscheid-Route — mirror von universalSuche.entscheidGruppe: `/rechtsprechung/<key>`.

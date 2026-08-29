@@ -82,7 +82,7 @@ test('KANTON §-Label: Body zeigt «§», Kopf zählt «Paragraphen», Anker ble
 
 // ── ⑧ LIVE_VERWEIS: ehrliche Verweiskarte statt Fehlerseite (DSGVO) ────────────
 test('LIVE_VERWEIS: Verweiskarte mit amtlichem Live-Link + ehrlichem Hinweis, keine Fehlerseite (DSGVO)', async ({ page }) => {
-  await warteVerweiskarte(page, '/gesetze/bund/DSGVO');
+  await warteVerweiskarte(page, '/gesetze/international/DSGVO');
   // Ehrlicher §8-Hinweis + prominenter amtlicher Link; KEINE «nicht verfügbar»-Fehlerseite.
   await expect(page.getByText(/nicht als In-App-Volltext gehostet/i)).toBeVisible();
   await expect(page.getByRole('link', { name: /Amtliche Fassung öffnen/i })).toBeVisible();

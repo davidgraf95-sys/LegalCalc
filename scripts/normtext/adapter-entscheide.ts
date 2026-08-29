@@ -19,11 +19,12 @@ import { normalisiereErwaegung } from './erwaegung-normalisieren';
 // hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
-  statutesZuNormKeys, legalAreaZuSachgebiet, abteilungZuSachgebiet, gerichtstypFuerCourt,
-  zweierLegalAreaSignal, zweierRohSteuerSignal,
-  gerichtAnzeigename, kantonalSachgebiet, fmtDatumDe,
-  istMehrdeutigeOerAbteilung, normSignalSachgebiet, normKeysVonSnapshot,
+  statutesZuNormKeys, gerichtstypFuerCourt,
+  gerichtAnzeigename, fmtDatumDe, normKeysVonSnapshot,
 } from './entscheide-mapping';
+import {
+  sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet,
+} from './sachgebiet-klassierung';
 
 const API = 'https://mcp.opencaselaw.ch/api';
 
@@ -381,27 +382,17 @@ export function mappeEntscheidOCL(
   const docket = String(det.docket_number ?? det.decision_id)
     .replace(/^(\d[A-Z])\s+(?=\d)/, '$1_')
     .replace(/^(?:BGE|ATF|DTF)\s+/i, '');
-  const sachgebiet: Rechtsgebiet =
-    opts.sachgebietHint
-    // C2-1/J3: Für die mehrdeutige II. öffentlich-rechtliche Abteilung (2A/2C/
-    // 2D) entscheidet die Signal-Kette NUR noch die Steuer/Abgabe-Frage:
-    // Norm-Signal (AIG→öffentlich, DBG/StHG→sozial-abgaben, BGFA→öffentlich),
-    // dann Roh-«StG/Steuergesetz» (kantonale Steuergesetze ohne Register-Key),
-    // dann legal_area GEFILTERT auf 'sozial-abgaben' (Gegenprüfung 29.8.2026,
-    // F1: ungefiltertes 'civil' kippte 2D-Beschaffungsfälle nach «privat»).
-    // Kein Treffer → Abteilungs-Default 'oeffentlich' (Art. 30/31 BgerR).
-    ?? (istMehrdeutigeOerAbteilung(docket)
-        ? (normSignalSachgebiet(signalKeys)
-          // Array-Guard wie an der zitierteNormen-Stelle unten: OCL-Felder können
-          // als JSON-String ankommen — ein for…of über den String iteriert
-          // Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
-          ?? zweierRohSteuerSignal(Array.isArray(det.statutes) ? det.statutes : [])
-          ?? zweierLegalAreaSignal(det.legal_area))
-        : null)
-    ?? abteilungZuSachgebiet(docket)        // BGer-Abteilung (z.B. 5A→privat) ist präziser …
-    ?? kantonalSachgebiet(docket)           // … kantonale Aktenzeichen-Präfixe …
-    ?? legalAreaZuSachgebiet(det.legal_area) // … als die grobe OCL legal_area (erst Fallback).
-    ?? 'oeffentlich';
+  // Die Signal-Kette selbst steht in sachgebiet-klassierung.ts (§6.6-Auszug
+  // 29.8.2026) — hier wird nur eingesammelt, was sie braucht.
+  const sachgebiet: Rechtsgebiet = sachgebietFuerEntscheid({
+    hint: opts.sachgebietHint ?? null,
+    docket,
+    normKeys: signalKeys,
+    // Array-Guard: OCL-Felder können als JSON-String ankommen — ein for…of über
+    // den String iteriert Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
+    zitierteNormen: Array.isArray(det.statutes) ? det.statutes : [],
+    legalArea: det.legal_area,
+  });
   const gerichtName = gerichtAnzeigename(court, canton, det.court_name as string | undefined);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
@@ -652,17 +643,10 @@ export function azaAusBgeKopf(fullText: string | undefined): string | null {
   return k ? k[1].replace(/\s+/, '_') : null;
 }
 
-/** BGE-Band (römisch) → Sachgebiet: I/II öffentl., III Zivil→privat, IV straf, V Sozialvers. */
-export function bgeRoemischSachgebiet(docket: string): Rechtsgebiet | null {
-  const m = /\b(IV|III|II|I|V)\b/.exec(String(docket));
-  switch (m?.[1]) {
-    case 'I': case 'II': return 'oeffentlich';
-    case 'III': return 'privat';
-    case 'IV': return 'straf';
-    case 'V': return 'sozial-abgaben';
-    default: return null;
-  }
-}
+// `bgeRoemischSachgebiet` steht seit dem §6.6-Auszug vom 29.8.2026 in
+// sachgebiet-klassierung.ts; hier nur weitergereicht, damit bestehende
+// Importe aus diesem Modul gültig bleiben (§6).
+export { bgeRoemischSachgebiet };
 
 /**
  * Holt einen amtlichen Leitentscheid (BGE) und reichert ihn mit dem vollständigen
@@ -736,8 +720,25 @@ export async function holeBgeLeitentscheid(
     }
   }
 
+  // Sachgebiet des Leitentscheids: Band-Vorrang und Band-II-Veto stehen in
+  // sachgebiet-klassierung.ts (F1/F3 der Gegenprüfung vom 29.8.2026).
   const roemHint = bgeRoemischSachgebiet(String(det.docket_number ?? ''));
-  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: azaSnap?.sachgebiet ?? roemHint ?? undefined });
+  const bgeHint = bgeSachgebietHint({
+    fundstelle: String(det.docket_number ?? det.bge_reference ?? ''),
+    azaAz,
+    azaSachgebiet: azaSnap?.sachgebiet ?? null,
+    // Normen BEIDER Seiten: Sammlungs-Auszug + unterliegendes Urteil.
+    normKeys: new Set<string>([
+      ...statutesZuNormKeys(Array.isArray(det.statutes) ? det.statutes : []),
+      ...(azaSnap?.normKeys ?? []),
+    ]),
+    zitierteNormen: [
+      ...(Array.isArray(det.statutes) ? det.statutes.map(String) : []),
+      ...(azaSnap?.zitierteNormen ?? []),
+    ],
+    legalArea: det.legal_area,
+  });
+  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeHint ?? roemHint ?? undefined });
   if (!basis) return null;
   basis.gerichtName = 'Bundesgericht';
 

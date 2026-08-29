@@ -7,6 +7,7 @@ import { GRUNDART_SEED } from '../../lib/normtext/grundart.generated';
 import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../lib/normtext/systematik';
 import { norm } from '../../lib/suche/normQuery';
 import { datumCh } from '../../lib/normtext/erlassKopfText';
+import { erlassPfadRoh, erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // M11 (§5 Verzahnung): Reverse-Resolver SR-Nummer → interner Erlass, ABGELEITET
 // aus dem Register (keine Handtabelle, §3/§5 eine Quelle). Nur Bund-Erlasse, die
@@ -313,6 +314,26 @@ export function margLabel(label: string): ReactNode {
   return label;
 }
 
+/** Basis-Adresse der Lesesicht, die gerade eine Route vollzieht.
+ *
+ *  Dünn, aber nicht überflüssig: sie hält die EINE Adress-Formel
+ *  (lib/normtext/erlassAdresse.ts) auch in `v3/leserV3Modell.ts` verfügbar, OHNE
+ *  dort eine Importzeile zu kosten — das v3/-Fundament steht per Auflage bei 420
+ *  Zeilen (`leser-v3-fundament.test.ts`), und der Adapter ist bis auf die letzte
+ *  Zeile ausgereizt. Die Alternative wäre eine zweite Formel im Adapter gewesen;
+ *  genau aus solchen Zweitformeln entstand Befund 45.
+ *
+ *  Der Parameter heisst `routenSegment`, nicht `ebene` — dieselbe Namenstrennung
+ *  wie in `erlassPfadRoh`, und die Sonde in `erlass-adresse.test.ts` bewacht
+ *  auch DIESE Fassade (Gegenprüfung 29.8.2026, zweiter Durchgang: sie war neu
+ *  in diesem Zweig und vom Tor nirgends genannt — `basisAdresse(e.ebene, e.key)`
+ *  wäre Befund 45 wörtlich gewesen und stumm durchgelaufen).
+ *
+ *  Nach dem Umzugs-Sprung in `GesetzLeser` ist das Segment immer das kanonische. */
+export function basisAdresse(routenSegment: string, schluessel: string): string {
+  return erlassPfadRoh(routenSegment, schluessel);
+}
+
 // Pfad (Sektions-ids Wurzel→Treffer) zur ersten Sektion, die das Prädikat erfüllt.
 export function pfadZu(sektionen: Sektion[], treffer: (s: Sektion) => boolean): string[] | null {
   for (const s of sektionen) {
@@ -443,7 +464,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
     // durch die SR-Label-Auflösung unten (unverändert, golden-stabil).
     if (link.intern) {
       return (
-        <Link key={i} to={`/gesetze/${link.intern.ebene}/${encodeURIComponent(link.intern.key)}`}
+        <Link key={i} to={erlassPfadVonKey(link.intern.key, link.intern.ebene)}
           title="Intern öffnen"
           className="text-brass-700 hover:underline decoration-dotted underline-offset-2">{richText(t, `fn${i}`)}</Link>
       );
@@ -469,7 +490,7 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
         ? `Intern öffnen · zitierter Fedlex-Stand ${standM[3]}.${standM[2]}.${standM[1]}`
         : 'Intern öffnen';
       return (
-        <Link key={i} to={`/gesetze/${intern.ebene}/${encodeURIComponent(intern.key)}`}
+        <Link key={i} to={erlassPfadVonKey(intern.key, intern.ebene)}
           title={titel}
           className="text-brass-700 hover:underline decoration-dotted underline-offset-2">{kinder}</Link>
       );

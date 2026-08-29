@@ -99,9 +99,9 @@ describe('themaText / synthThema / istSynth', () => {
     expect(regesteLeitsatz(rk)).toBe(rk);
   });
   it('baut ohne Regeste eine Synth-Zeile aus Gebiet + Gericht + Normen', () => {
-    const e = be({ sachgebiet: 'sozial-abgaben', gerichtName: 'Kantonsgericht GR', normKeys: ['ATSG', 'BGG'] });
+    const e = be({ sachgebiet: 'sozialversicherung', gerichtName: 'Kantonsgericht GR', normKeys: ['ATSG', 'BGG'] });
     expect(istSynth(e)).toBe(true);
-    expect(synthThema(e)).toBe('Steuern, Sozialversicherung & Abgaben — Kantonsgericht GR · angewandt: ATSG, BGG');
+    expect(synthThema(e)).toBe('Sozialversicherung — Kantonsgericht GR · angewandt: ATSG, BGG');
   });
   it('fällt ohne Normen auf Gebiet + Gericht + Jahr zurück (kein gefakter Text)', () => {
     const e = be({ sachgebiet: 'privat', gerichtName: 'Obergericht ZH', normKeys: [], datum: '2024-06-30' });
@@ -193,12 +193,12 @@ describe('gruppiereNachInstanz (A3-Regel 5)', () => {
 describe('zaehleSachgebiete', () => {
   it('zählt in GEBIETE-Reihenfolge, nur belegte Gebiete', () => {
     const z = zaehleSachgebiete([
-      be({ sachgebiet: 'sozial-abgaben' }),
+      be({ sachgebiet: 'sozialversicherung' }),
       be({ sachgebiet: 'privat' }),
-      be({ sachgebiet: 'sozial-abgaben' }),
+      be({ sachgebiet: 'sozialversicherung' }),
     ]);
-    expect(z.map((g) => g.sachgebiet)).toEqual(['privat', 'sozial-abgaben']);
-    expect(z.find((g) => g.sachgebiet === 'sozial-abgaben')?.count).toBe(2);
+    expect(z.map((g) => g.sachgebiet)).toEqual(['privat', 'sozialversicherung']);
+    expect(z.find((g) => g.sachgebiet === 'sozialversicherung')?.count).toBe(2);
   });
 });
 
@@ -218,7 +218,7 @@ describe('filterEntscheide', () => {
   const liste = [
     be({ key: 'p1', sachgebiet: 'privat', kanton: 'CH', normKeys: ['OR', 'ZGB'], regesteKurz: 'Mietzins', leitcharakter: 'leitentscheid', datum: '2025-03-01' }),
     be({ key: 'o1', sachgebiet: 'oeffentlich', kanton: 'ZH', normKeys: ['BV'], gerichtName: 'Obergericht ZH', datum: '2024-01-01' }),
-    be({ key: 's1', sachgebiet: 'sozial-abgaben', kanton: 'CH', normKeys: ['ATSG'], regesteKurz: 'Invalidenrente', datum: '2026-02-02' }),
+    be({ key: 's1', sachgebiet: 'sozialversicherung', kanton: 'CH', normKeys: ['ATSG'], regesteKurz: 'Invalidenrente', datum: '2026-02-02' }),
   ];
   it('filtert nach Sachgebiet', () => {
     expect(filterEntscheide(liste, { sachgebiet: 'privat' }).map((e) => e.key)).toEqual(['p1']);
