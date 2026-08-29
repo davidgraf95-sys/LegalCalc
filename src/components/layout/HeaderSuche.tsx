@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUniversalSuche } from '../suche/useUniversalSuche';
 import { SuchResultate } from '../suche/SuchResultate';
@@ -111,6 +111,29 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   useEffect(() => () => onFokusModus?.(false), [onFokusModus]);
   const aktivId = (zeigtPanel || zeigtLeer) && aktivPos >= 0 ? aktivListe[aktivPos].oid : undefined;
 
+  // ── C1/B10/L3 (Design-Review 29.8.2026) · DER FOKUS-WUNSCH ÜBERLEBT EIN RENDER
+  // Unter 480 px steht das Feld im Ruhezustand nicht im Bild (Lupen-Modus, s.
+  // unten) — `focus()` auf ein `display:none`-Element verpufft still. Der Wunsch
+  // wird darum gemerkt und eingelöst, sobald das Feld sichtbar IST. Über 480 px
+  // ist das Feld immer sichtbar, der Zweig wird nie betreten, das Verhalten
+  // (⌘K/«/»/CTA) ist unverändert.
+  const fokusWunschFeld = useRef(false);
+  const fokussiere = useCallback(() => {
+    // UI-NAV O1: immer öffnen — leer erscheint der Verlauf-/Einstieg-Leerzustand.
+    setOffen(true);
+    const el = feld.current;
+    if (el && el.offsetParent !== null) { el.focus(); el.select(); }
+    else fokusWunschFeld.current = true;
+  }, []);
+  useEffect(() => {
+    if (!fokusWunschFeld.current) return;
+    const el = feld.current;
+    if (!el || el.offsetParent === null) return;
+    fokusWunschFeld.current = false;
+    el.focus();
+    el.select();
+  });
+
   // Globale Fokus-Shortcuts: «/» UND ⌘K/Ctrl-K fokussieren das Feld (A5 — die
   // frühere Palette ist entfallen, der Shortcut bleibt nützlich). In Eingabe-
   // feldern greift «/» nicht (normales Zeichen), ⌘K/Ctrl-K schon (globaler
@@ -119,14 +142,6 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   // direkt vom DOM-Element gelesen (kein stale-closure über `wert`), das Panel
   // öffnet nur bei bereits vorhandenem Text (leeres Feld bleibt ruhig).
   useEffect(() => {
-    const fokussiere = () => {
-      const el = feld.current;
-      if (!el) return;
-      el.focus();
-      el.select();
-      // UI-NAV O1: immer öffnen — leer erscheint der Verlauf-/Einstieg-Leerzustand.
-      setOffen(true);
-    };
     const handler = (e: KeyboardEvent) => {
       // VORRANGREGEL (Bug-Check B1 zu Leser V3, 16.8.2026): Wer denselben
       // Tastendruck in der CAPTURE-Phase schon beansprucht hat, gewinnt. Der
@@ -154,7 +169,7 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
       window.removeEventListener('keydown', handler);
       window.removeEventListener('lm:suche-fokus', fokussiere);
     };
-  }, []);
+  }, [fokussiere]);
 
   // Klick ausserhalb / Escape schliesst das Dropdown (Klick auf einen Treffer
   // navigiert via Link und ruft onAuswahl, das hier ebenfalls schliesst).
@@ -230,7 +245,9 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         // text-base (16 px) UNTER sm: alles darunter löst in iOS Safari beim
         // Fokus einen Seiten-Zoom aus, aus dem der Nutzer von Hand wieder
         // herausfinden muss (S6). Ab sm bleibt die kompakte Streifen-Grösse.
-        className={`lc-input h-11 py-0 text-base sm:text-body-s w-full lg:pr-14 ${breit ? 'pr-11' : 'pr-3'}`}
+        // C1/B10/L3: unter 480 px weicht das FELD im Ruhezustand der Lupe (s.
+        // unten) — geöffnet (`breit`) steht es dort über die volle Streifenbreite.
+        className={`lc-input h-11 py-0 text-base sm:text-body-s w-full lg:pr-14 ${breit ? 'pr-11' : 'pr-3 max-[480px]:hidden'}`}
         aria-label="LexMetrik durchsuchen oder zur Norm springen"
         aria-keyshortcuts="/ Meta+K Control+K"
         autoComplete="off"
@@ -245,6 +262,40 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
         aria-activedescendant={aktivId}
         aria-autocomplete="list"
       />
+      {/* ── C1/B10/L3 (Design-Review 29.8.2026) · UNTER 480 px EINE LUPE ───────
+          BEFUND, gemessen 29.8.2026 (Chromium, `vite preview`, warmer Zustand):
+          das Feld war @320 und @375 genau 28 px breit — ein leerer Rahmen ohne
+          Lupe, ohne Platzhalter, ohne erkennbaren Zweck. Es ist `flex-1 min-w-0`
+          und gibt allen anderen Streifen-Elementen nach, bis nichts mehr da ist.
+          Der Review las das als Leser-Eigenheit; nachgemessen tritt es auf JEDER
+          Route auf, sobald Verlauf und ein Reiter existieren (Messreihe im
+          Commit zu C2).
+          DIE ENTSCHEIDUNG: unter 480 px ist ein 28-px-Feld keine kleine Suche,
+          sondern gar keine. Dort steht ein 44-px-Ziel mit Lupe; ein Tap darauf
+          schaltet in den Fokusmodus, den es seit S6 ohnehin gibt — Feld über die
+          volle Streifenbreite, Nachbarn weichen, ✕ zurück. Kein zweites Overlay,
+          kein zweiter Zustand: derselbe `offen`-Zustand, dieselbe Trefferfläche.
+          Ab 480 px ist alles unverändert (Gegenprobe im Tor
+          `e2e/topbar-kein-ueberlauf-320.e2e.ts`).
+          Warum ein Knopf und keine reine `min-width` am Feld: 44 px Mindestbreite
+          hätten das Feld nur wieder zum leeren Rahmen gemacht, in dem nichts
+          lesbar ist — die Untergrenze löst die Sichtbarkeit, nicht die
+          Benutzbarkeit (§8: nichts anbieten, was in dieser Grösse nicht trägt). */}
+      {!breit && (
+        <button
+          type="button"
+          data-suche-lupe
+          onClick={fokussiere}
+          aria-label="LexMetrik durchsuchen oder zur Norm springen"
+          aria-keyshortcuts="/ Meta+K Control+K"
+          className="hidden max-[480px]:inline-flex shrink-0 min-h-11 min-w-11 items-center justify-center rounded-lg border border-line bg-surface text-ink-600 transition-colors hover:text-ink-900"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.8" />
+            <line x1="15.8" y1="15.8" x2="20" y2="20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        </button>
+      )}
       {/* Dezenter Shortcut-Hinweis (⌘K/Ctrl-K fokussiert das Feld). Nur Desktop,
           nicht interaktiv (pointer-events-none) — die Bedienung ist das Feld
           selbst, mobil reicht es ohne Hinweis (A5). */}

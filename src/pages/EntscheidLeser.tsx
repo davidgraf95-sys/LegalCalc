@@ -771,11 +771,32 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
             {/* shrink-0: die Schlusszeile ist ein flex-wrap-Streifen; ohne dies
                 staucht der Flex die overflow-hidden-Gruppe bei 390 unter ihre
                 Inhaltsbreite und beschnitt «A− A+» (Responsive-Audit D5). */}
-            <span className="inline-flex shrink-0 items-stretch rounded border border-line overflow-hidden" role="group" aria-label="Schriftgrösse">
-              <button type="button" onClick={() => setFs(fsIdx - 1)} disabled={fsIdx === 0}
-                className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40" title="Schrift kleiner">A−</button>
-              <button type="button" onClick={() => setFs(fsIdx + 1)} disabled={fsIdx === FS_STUFEN.length - 1}
-                className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40 border-l border-line" title="Schrift grösser">A+</button>
+            {/* ── ENTSCHEID DAVID 5B (29.8.2026) · NACHZUG IM ENTSCHEID-LESER ──
+                C4 war im Gesetzes-Leser und in der Topbar ausgerollt, hier nicht:
+                ab lg steht der globale App-Regler («Ganze Seite A− 100 % A+»,
+                `layout/Topbar.tsx`) gleichzeitig im Bild, und diese Gruppe hiess
+                bloss «Schriftgrösse» — zwei sichtbar gleiche A−/A+, einer mit
+                Scope, einer ohne. Das ist derselbe Befund, den 5B im Gesetzes-
+                Leser behoben hat, eine Route weiter (Fehlerbuch-18: «Kern: Scope
+                nur im aria-label»).
+                Darum hier dieselbe Behandlung wie dort: der Scope steht SICHTBAR
+                davor, in derselben Anordnung (Wort links, Steller rechts), und
+                das «Nur» trägt die Abgrenzung. Der Zwilling im Lesemodus-Overlay
+                (weiter unten) bekommt nur den Namen, nicht das Wort — dort ist
+                der globale Regler weder sichtbar noch im a11y-Baum (`aria-modal`
+                deckt ihn zu), es gibt also keinen Zwilling zu unterscheiden. */}
+            <span className="inline-flex shrink-0 items-center gap-1.5" role="group" aria-label="Grösse nur des Entscheidtexts">
+              <span aria-hidden className="select-none whitespace-nowrap text-micro text-ink-500">Nur Entscheidtext</span>
+              <span className="inline-flex items-stretch rounded border border-line overflow-hidden">
+                <button type="button" onClick={() => setFs(fsIdx - 1)} disabled={fsIdx === 0}
+                  aria-label="Entscheidtext verkleinern"
+                  title="Entscheidtext verkleinern — die Anwendung bleibt gleich gross"
+                  className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40">A−</button>
+                <button type="button" onClick={() => setFs(fsIdx + 1)} disabled={fsIdx === FS_STUFEN.length - 1}
+                  aria-label="Entscheidtext vergrössern"
+                  title="Entscheidtext vergrössern — die Anwendung bleibt gleich gross"
+                  className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40 border-l border-line">A+</button>
+              </span>
             </span>
             <button type="button" onClick={kopiereZitat}
               className="lc-chip hover:text-brass-700 hover:border-brass-400"
@@ -1018,11 +1039,20 @@ function LesemodusOverlay({ snap, abschnitte, regesteText, massgeblicheUrl, mass
       <div className="sticky top-0 z-10 flex items-center gap-3 border-b border-line bg-paper/95 px-5 py-2.5 backdrop-blur-sm">
         <span className="num text-body-s font-medium text-ink-700">{snap.bgeReferenz ?? snap.zitierung}</span>
         <span className="ml-auto inline-flex items-center gap-2">
-          <span className="inline-flex items-stretch overflow-hidden rounded border border-line" role="group" aria-label="Schriftgrösse">
+          {/* 5B-Nachzug (29.8.2026), abgestufte Fassung: Gruppen-Name und
+              Knopf-Namen sagen den Scope, das SICHTBARE Wort entfällt. Begründung
+              oben bei der Schlusszeile — dieses Overlay ist `aria-modal`, der
+              globale App-Regler ist darunter weder sichtbar noch für den
+              Screenreader da. Ein Scope-Wort löste hier also keine Verwechslung
+              auf, es kostete nur Platz in einer Kopfzeile, die @390 ohnehin knapp
+              ist (Zitierung + Steller + «✕ schliessen»). */}
+          <span className="inline-flex items-stretch overflow-hidden rounded border border-line" role="group" aria-label="Grösse nur des Entscheidtexts">
             <button type="button" onClick={() => setFs(fsIdx - 1)} disabled={fsIdx === 0}
-              className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40" title="Schrift kleiner">A−</button>
+              aria-label="Entscheidtext verkleinern"
+              className="min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40" title="Entscheidtext verkleinern">A−</button>
             <button type="button" onClick={() => setFs(fsIdx + 1)} disabled={fsIdx === FS_STUFEN.length - 1}
-              className="border-l border-line min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40" title="Schrift grösser">A+</button>
+              aria-label="Entscheidtext vergrössern"
+              className="border-l border-line min-h-6 px-2 py-1 text-ink-600 hover:bg-paper-sunken disabled:opacity-40" title="Entscheidtext vergrössern">A+</button>
           </span>
           <button ref={schliessRef} type="button" onClick={onClose}
             className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400" title="Lesemodus schliessen (Esc)">
