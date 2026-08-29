@@ -205,7 +205,9 @@ export function titelOhneKlammerSuffix(titel: string): string {
  * zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)» —, stand im Reiter
  * «EMRK (EMRK) — LexMetrik»: dasselbe Wort zweimal, die Klammer ohne jeden
  * Informationswert. Sie entfällt dann, statt sich zu wiederholen. Es ist dieselbe
- * Regel, die `titelRedundant` in `parts/ErlassLeserKopf.tsx` auf die H1 anwendet
+ * Regel ANALOG zu `titelRedundant` in `parts/ErlassLeserKopf.tsx` (H1) — nicht
+ * identisch: hier zählt der Klammerinhalt, dort der Titel ohne Suffix (EMRK/IPRG
+ * treffen nur hier)
  * (case- und trim-unempfindlich) — der Reiter war der einzige Ausspielungsort
  * ohne sie. Nicht-redundante Titel bleiben Zeichen für Zeichen die von vorher.
  *

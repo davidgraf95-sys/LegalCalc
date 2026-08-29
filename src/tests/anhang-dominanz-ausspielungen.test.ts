@@ -21,8 +21,10 @@ const SG_3849 = { artikelAnzahl: 607, anhangArtikel: 590 };
 
 describe('Ruhezeile folgt derselben Anhang-Dominanz-Regel wie der Kopf (§5)', () => {
   it('SG-3849: 590/607 im Anhang ⇒ «Einträge», nicht «Artikel»', () => {
-    expect(ruheZeile({ ebene: 'kanton', sr: 'sGS 371.1' }, 607, 'Artikel', SG_3849))
-      .toBe('sGS 371.1 · 607 Einträge');
+    // sr:null wie im echten Register (SG-3849 trägt keine sr — §7: keine
+    // erfundene amtliche Nummer im Fixture; Bug-Check #566 B5).
+    expect(ruheZeile({ ebene: 'kanton', sr: null }, 607, 'Artikel', SG_3849))
+      .toBe('607 Einträge');
   });
 
   it('dasselbe Wort, das der Erlass-Kopf über zaehlWort wählt — kein zweiter Entscheid', () => {
