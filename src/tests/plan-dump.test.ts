@@ -16,14 +16,14 @@ const MD = [
   '-->',
   '- [ ] **A · X**',
   '  Prosa dazwischen.',
-  '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [src/x.ts] · worktree: ja · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-X.md -->',
+  '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-X.md -->',
 ].join('\n');
 
 describe('plan:dump', () => {
   it('führt jedes Feld der Einheit — inkl. checkbox, pos, sektion', () => {
     const zeile = dump(MD).split('\n')[0];
     for (const feld of ['id=', 'pos=', 'checkbox=', 'sektion=', 'status=',
-      'blocker=', 'dep=', 'kollision=', 'worktree=', '26x=', 'fahrplan=', 'slot=']) {
+      'blocker=', 'dep=', 'feld=', 'fahrplan=']) {
       expect(zeile).toContain(feld);
     }
     expect(zeile).toContain('checkbox=[ ]');

@@ -5,36 +5,31 @@ const OK = `## Die geordnete Abarbeitung
 wbqdyap3x: I2 offen
 -->
 - [x] **1 · A**
-  <!-- @meta id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W1·1 · status: done · blocker: null · dep: [] · feld: betrieb -->
 - [ ] **4 · D**
-  <!-- @meta id: W1·4 · status: blocked · blocker: wbqdyap3x · dep: [] · kollision: [] · worktree: nein · 26x: nein -->
+  <!-- @meta id: W1·4 · status: blocked · blocker: wbqdyap3x · dep: [] · feld: betrieb -->
 
 Siehe FAHRPLAN-PLAN-STEUERUNG.md.
 `;
-const inv = ['W1·1', 'W1·4'];
 const existiert = () => true;
 
 describe('pruefe', () => {
   it('sauberer Plan → keine Probleme', () => {
-    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
+    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert)).toEqual([]);
   });
 
   it('done mit [ ]-Checkbox → Problem', () => {
     const bad = OK.replace('- [x] **1 · A**', '- [ ] **1 · A**');
-    expect(pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv).some((p) => p.id === 'W1·1')).toBe(true);
+    expect(pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert).some((p) => p.id === 'W1·1')).toBe(true);
   });
 
   it('blocker nicht im Register → Problem', () => {
     const bad = OK.replace('blocker: wbqdyap3x', 'blocker: xxxxx');
-    expect(pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv).some((p) => p.id === 'W1·4')).toBe(true);
-  });
-
-  it('Inventar-ID ohne @meta → Problem', () => {
-    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, ['W1·1', 'W1·4', 'W2·6']).some((p) => p.id === 'W2·6')).toBe(true);
+    expect(pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert).some((p) => p.id === 'W1·4')).toBe(true);
   });
 
   it('nicht verlinkte FAHRPLAN-Datei → Problem', () => {
-    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md', 'FAHRPLAN-GEISTER.md'], existiert, inv).some((p) => /GEISTER/.test(p.meldung))).toBe(true);
+    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md', 'FAHRPLAN-GEISTER.md'], existiert).some((p) => /GEISTER/.test(p.meldung))).toBe(true);
   });
 
   // Regel (4c), Befund 20.7.2026: W2·6a-MAT stand auf done und hing an
@@ -44,7 +39,7 @@ describe('pruefe', () => {
     const bad = OK.replace(
       'id: W1·1 · status: done · blocker: null · dep: []',
       'id: W1·1 · status: done · blocker: null · dep: [W1·4]');
-    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv);
+    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert);
     expect(p.some((x) => x.id === 'W1·1' && /dep "W1·4" ist blocked/.test(x.meldung))).toBe(true);
   });
 
@@ -53,12 +48,29 @@ describe('pruefe', () => {
       'id: W1·4 · status: blocked · blocker: wbqdyap3x · dep: []',
       'id: W1·4 · status: done · blocker: null · dep: [W1·1]')
       .replace('- [ ] **4 · D**', '- [x] **4 · D**');
-    expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
+    expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert)).toEqual([]);
   });
 
-  it('kollision-Pfad existiert nicht → Problem', () => {
-    const bad = OK.replace('kollision: [] · worktree: nein · 26x: nein -->\n- [ ] **4 · D**', 'kollision: [src/fehlt.ts] · worktree: nein · 26x: nein -->\n- [ ] **4 · D**');
-    expect(pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], (p) => p !== 'src/fehlt.ts', inv).some((p) => /fehlt\.ts/.test(p.meldung))).toBe(true);
+  // Regel 14 (Steuerungs-Diät 29.8.2026) — tritt an die Stelle der alten Regel 6
+  // (Existenz jedes `kollision:`-Pfads). Beide Richtungen, weil ein falsch
+  // geschriebener Wert schlimmer ist als ein fehlender: er sähe wie eine
+  // Zuordnung aus und bildete still eine achte, private Fläche.
+  it('@meta ohne feld: → Problem', () => {
+    const bad = OK.replace(' · feld: betrieb -->\n- [ ] **4 · D**', ' -->\n- [ ] **4 · D**');
+    expect(pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert).some((p) => p.id === 'W1·1' && /ohne feld/.test(p.meldung))).toBe(true);
+  });
+
+  it('feld: ausserhalb des Vokabulars → Problem, mit der Wertliste in der Meldung', () => {
+    const bad = OK.replace('feld: betrieb -->\n- [ ] **4 · D**', 'feld: lesser -->\n- [ ] **4 · D**');
+    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert);
+    expect(p.some((x) => x.id === 'W1·1' && /kein Baufeld/.test(x.meldung) && /rechtsprechung/.test(x.meldung))).toBe(true);
+  });
+
+  it('alle sieben Baufelder sind zulässig (Gegenprobe)', () => {
+    for (const feld of ['leser', 'korpus', 'rechtsprechung', 'suche', 'design', 'werkzeuge', 'betrieb']) {
+      const gut = OK.replace('feld: betrieb -->\n- [ ] **4 · D**', `feld: ${feld} -->\n- [ ] **4 · D**`);
+      expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert)).toEqual([]);
+    }
   });
 });
 
@@ -67,80 +79,54 @@ describe('pruefe — Lücken-Abdeckung (Task-5-Review)', () => {
   const plan = (units: string) =>
     `## Die geordnete Abarbeitung\n${REG}\n${units}\n\nSiehe FAHRPLAN-PLAN-STEUERUNG.md.\n`;
   const unit = (cb: string, meta: string) => `- ${cb} **x**\n  <!-- @meta ${meta} -->`;
-  const ok = (md: string, inv: string[]) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, inv);
+  const ok = (md: string) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
 
-  it('verwaistes @meta (id nicht im Inventar) → Problem', () => {
-    const md = plan(unit('[ ]', 'id: W9·9 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, []).some((p) => p.id === 'W9·9')).toBe(true);
-  });
+  // Die Inventar-Regeln («Inventar-ID ohne @meta», «verwaistes @meta») sind mit
+  // der Steuerungs-Diät vom 29.8.2026 gestrichen (Doppelbuchführung; Begründung
+  // im Kommentar an Regel 1 in check.ts). Was von Regel 1 bleibt, ist die
+  // Dubletten-Prüfung darunter.
   it('doppelte id → Problem', () => {
-    const u = 'id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein';
+    const u = 'id: A · status: ready · blocker: null · dep: [] · feld: betrieb';
     const md = plan(`${unit('[ ]', u)}\n${unit('[ ]', u)}`);
-    expect(ok(md, ['A']).some((p) => /mehrfach/.test(p.meldung))).toBe(true);
+    expect(ok(md).some((p) => /mehrfach/.test(p.meldung))).toBe(true);
   });
   it('Zyklus A→B→A → Problem', () => {
     const md = plan(
-      `${unit('[ ]', 'id: A · status: ready · blocker: null · dep: [B] · kollision: [] · worktree: nein · 26x: nein')}\n` +
-      `${unit('[ ]', 'id: B · status: ready · blocker: null · dep: [A] · kollision: [] · worktree: nein · 26x: nein')}`,
+      `${unit('[ ]', 'id: A · status: ready · blocker: null · dep: [B] · feld: betrieb')}\n` +
+      `${unit('[ ]', 'id: B · status: ready · blocker: null · dep: [A] · feld: betrieb')}`,
     );
-    expect(ok(md, ['A', 'B']).some((p) => /Zyklus/.test(p.meldung))).toBe(true);
+    expect(ok(md).some((p) => /Zyklus/.test(p.meldung))).toBe(true);
   });
   it('dep auf nicht existierende id → Problem', () => {
-    const md = plan(unit('[ ]', 'id: A · status: ready · blocker: null · dep: [ZZ] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, ['A']).some((p) => /ZZ/.test(p.meldung))).toBe(true);
+    const md = plan(unit('[ ]', 'id: A · status: ready · blocker: null · dep: [ZZ] · feld: betrieb'));
+    expect(ok(md).some((p) => /ZZ/.test(p.meldung))).toBe(true);
   });
   it('Checkbox [~] mit status done → Problem', () => {
-    const md = plan(unit('[~]', 'id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
+    const md = plan(unit('[~]', 'id: A · status: done · blocker: null · dep: [] · feld: betrieb'));
+    expect(ok(md).some((p) => p.id === 'A')).toBe(true);
   });
   it('Checkbox [D] (geparkt) mit status parked → kein Coupling-Problem', () => {
-    const md = plan(unit('[D]', 'id: A · status: parked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, ['A'])).toEqual([]);
+    const md = plan(unit('[D]', 'id: A · status: parked · blocker: b1 · dep: [] · feld: betrieb'));
+    expect(ok(md)).toEqual([]);
   });
   it('Checkbox [D] (geparkt) mit status done → Problem', () => {
-    const md = plan(unit('[D]', 'id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
+    const md = plan(unit('[D]', 'id: A · status: done · blocker: null · dep: [] · feld: betrieb'));
+    expect(ok(md).some((p) => p.id === 'A')).toBe(true);
   });
   it('status ready mit blocker → Problem', () => {
-    const md = plan(unit('[ ]', 'id: A · status: ready · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
+    const md = plan(unit('[ ]', 'id: A · status: ready · blocker: b1 · dep: [] · feld: betrieb'));
+    expect(ok(md).some((p) => p.id === 'A')).toBe(true);
   });
   it('status blocked ohne blocker → Problem', () => {
-    const md = plan(unit('[ ]', 'id: A · status: blocked · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A')).toBe(true);
+    const md = plan(unit('[ ]', 'id: A · status: blocked · blocker: null · dep: [] · feld: betrieb'));
+    expect(ok(md).some((p) => p.id === 'A')).toBe(true);
   });
-  it('zwei 26x auf wip → Problem', () => {
-    const md = plan(
-      `${unit('[~]', 'id: A · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: ja')}\n` +
-      `${unit('[~]', 'id: B · status: wip · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: ja')}`,
-    );
-    expect(ok(md, ['A', 'B']).some((p) => /wip/.test(p.meldung))).toBe(true);
-  });
-
-  // Regel (5c): `slot: inhaber` verträgt sich nicht mit einem Status, der den
-  // 26×-Slot nie zurückgibt. Genau diese Kombination hält über next.ts jeden
-  // anderen 26×-Schritt an, ohne dass noch jemand am Slot arbeitet.
-  const slotUnit = (cb: string, status: string, blocker: string) =>
-    unit(cb, `id: A · status: ${status} · blocker: ${blocker} · dep: [] · kollision: [] · worktree: nein · 26x: ja · slot: inhaber`);
-
-  it('slot: inhaber mit status done → Problem', () => {
-    const md = plan(slotUnit('[x]', 'done', 'null'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A' && /nie zurück/.test(p.meldung))).toBe(true);
-  });
-  it('slot: inhaber mit status parked → Problem (gibt den Slot ebenso wenig zurück)', () => {
-    const md = plan(slotUnit('[d]', 'parked', 'b1'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A' && /nie zurück/.test(p.meldung))).toBe(true);
-  });
-  it('slot: inhaber mit status blocked → Problem', () => {
-    const md = plan(slotUnit('[ ]', 'blocked', 'b1'));
-    expect(ok(md, ['A']).some((p) => p.id === 'A' && /nie zurück/.test(p.meldung))).toBe(true);
-  });
-  it('slot: inhaber mit status ready → kein Problem (Inhaber wartet auf seinen Bau)', () => {
-    expect(ok(plan(slotUnit('[ ]', 'ready', 'null')), ['A'])).toEqual([]);
-  });
-  it('slot: inhaber mit status wip → kein Problem (Inhaber baut)', () => {
-    expect(ok(plan(slotUnit('[~]', 'wip', 'null')), ['A'])).toEqual([]);
-  });
+  // Die 26×-Slot-Regeln 5/5b/5c (höchstens ein 26× auf wip · höchstens ein
+  // `slot: inhaber` · der Inhaber muss den Slot zurückgeben können) sind mit der
+  // Steuerungs-Diät vom 29.8.2026 gestrichen, zusammen mit den Feldern `26x` und
+  // `slot`. Die Reihenfolge, die sie erzwangen, steht jetzt als `dep` am Schritt
+  // (Regeln 4/4b/4c prüfen sie), gleichzeitige Arbeit auf derselben Fläche meldet
+  // die Feld-Warnung von plan:next (src/tests/plan-next.test.ts).
 });
 
 // Regel 8 (@queue-Integrität, Einbau 24.7.2026): die Queue ist die EINE
@@ -156,49 +142,48 @@ describe('pruefe — Regel 8 @queue-Integrität', () => {
     // Tests bleibt unverändert — nur das Fixture hatte den Zustand mitkodiert,
     // den die neue Regel gerade als Fehler ausweist.
     const baubar = mitQueue('W1·4').replace('status: blocked · blocker: wbqdyap3x', 'status: ready · blocker: null');
-    expect(pruefe(baubar, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4'])).toEqual([]);
+    expect(pruefe(baubar, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true)).toEqual([]);
   });
   it('8.1: Queue-ID ohne @meta → Problem', () => {
-    const p = pruefe(mitQueue('GEIST'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    const p = pruefe(mitQueue('GEIST'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
     expect(p.some((x) => x.id === 'GEIST' && /kein @meta/.test(x.meldung))).toBe(true);
   });
   it('8.2: Dublette in der Queue → Problem', () => {
-    const p = pruefe(mitQueue('W1·4, W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    const p = pruefe(mitQueue('W1·4, W1·4'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
     expect(p.some((x) => x.id === 'W1·4' && /mehrfach/.test(x.meldung))).toBe(true);
   });
   it('8.3: done-ID in der Queue → Problem (Stale-Guard)', () => {
-    const p = pruefe(mitQueue('W1·1'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    const p = pruefe(mitQueue('W1·1'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
     expect(p.some((x) => x.id === 'W1·1' && /veraltete Steuerung/.test(x.meldung))).toBe(true);
   });
   // 8.4 prüft gegen die TATSÄCHLICHE plan:next-Ausgabe (resolve().readyNow[0]),
   // nicht bloss gegen queue[0] — Härtung nach adversarialem Verify-Befund 24.7.2026.
-  const READY = `- [ ] **5 · E**\n  <!-- @meta id: W1·5 · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->\n`;
-  const invR = ['W1·1', 'W1·4', 'W1·5'];
+  const READY = `- [ ] **5 · E**\n  <!-- @meta id: W1·5 · status: ready · blocker: null · dep: [] · feld: betrieb -->\n`;
 
   it('8.4: Prosa-«OBERSTER» widerspricht der plan:next-Ausgabe → Problem', () => {
     const md = mitQueue('W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·1` zuerst.\n' + READY);
-    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR);
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
     expect(p.some((x) => x.id === 'W1·1' && /Prosa behauptet oberster/.test(x.meldung))).toBe(true);
   });
   it('8.4: Prosa-«OBERSTER» ohne @queue → Problem', () => {
     const md = OK + '\n> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.\n';
-    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W1·1', 'W1·4']);
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
     expect(p.some((x) => x.id === null && /keine @queue/.test(x.meldung))).toBe(true);
   });
   it('8.4: Prosa-«OBERSTER» == plan:next-Ausgabe → kein Problem', () => {
     const md = mitQueue('W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·5` zuerst.\n' + READY);
-    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR)).toEqual([]);
+    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true)).toEqual([]);
   });
   it('8.4: Queue-Kopf nicht baubar (blocked) → Prosa==queue[0] genügt NICHT (Drift-Szenario)', () => {
     // W1·4 ist blocked und Queue-Kopf; plan:next liefert W1·5. Die alte queue[0]-Prüfung
     // wäre hier grün geblieben — genau die Drift, die der Guard schliessen soll.
     const md = mitQueue('W1·4, W1·5', '> **⬆ OBERSTER OFFENER SCHRITT:** `W1·4` zuerst.\n' + READY);
-    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR);
+    const p = pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
     expect(p.some((x) => x.id === 'W1·4' && /plan:next liefert "W1·5"/.test(x.meldung))).toBe(true);
   });
   it('8.4: Backtick-Fragment VOR dem Marker bindet nicht (Marker-verankerte ID)', () => {
     const md = mitQueue('W1·5', '> Datei `foo.ts` gefixt. **⬆ OBERSTER OFFENER SCHRITT:** `W1·5` zuerst.\n' + READY);
-    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, invR)).toEqual([]);
+    expect(pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true)).toEqual([]);
   });
 });
 
@@ -227,27 +212,30 @@ describe('fahrplanScan — Ordner-Scan des Link-Tors (AP-8)', () => {
 
   it('NEGATIV-TEST: unverlinkte Datei aus dem fahrplaene-Scan → Tor meldet Problem', () => {
     const gescannt = fahrplanScan('fahrplaene', () => ['FAHRPLAN-PLAN-STEUERUNG.md', 'FAHRPLAN-ZZZZ-PROBE.md'], () => true);
-    const p = pruefe(OK, gescannt, existiert, inv);
+    const p = pruefe(OK, gescannt, existiert);
     expect(p.map((x) => x.meldung)).toContain('FAHRPLAN-ZZZZ-PROBE.md ist nicht aus ROADMAP.md verlinkt');
   });
 
   it('verlinkte Datei aus dem fahrplaene-Scan → kein Problem (Gegenprobe)', () => {
     const gescannt = fahrplanScan('fahrplaene', () => ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
-    expect(pruefe(OK, gescannt, existiert, inv)).toEqual([]);
+    expect(pruefe(OK, gescannt, existiert)).toEqual([]);
   });
 });
 
-// Verify-Befund 24.7.2026: Querschnitt-Filter darf of/dep-Signale nicht schlucken.
-describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
-  it('Querschnitt-ready mit offener dep landet in wartetDep, nicht still in begleitend', async () => {
+// Verify-Befund 24.7.2026, umformuliert nach dem Plan-Neuschnitt 29.8.2026: der
+// Querschnitt-Filter (und mit ihm der `begleitend`-Eimer) ist entfallen — die
+// ROADMAP gliedert nach Baufeldern. Was bleibt, ist die Aussage dahinter: ein
+// offener dep darf nie still verschluckt werden, egal in welcher Sektion.
+describe('resolve-Kopplung — offene Voraussetzung, unabhängig von der Sektion', () => {
+  it('ready mit offener dep landet in wartetDep, nie in readyNow', async () => {
     const { resolve } = await import('../../scripts/plan/next');
     const qs = {
-      id: 'QS-X', checkbox: null, sektion: 'Querschnitt-Band (läuft begleitend', pos: 0,
-      etikett: { id: 'QS-X', status: 'ready' as const, blocker: null, dep: ['FEHLT'], kollision: [], worktree: false, asset26x: false, groesse: null, fahrplan: null },
+      id: 'QS-X', checkbox: null, sektion: 'Betrieb & Prüfstrasse', pos: 0,
+      etikett: { id: 'QS-X', status: 'ready' as const, blocker: null, dep: ['FEHLT'], feld: 'betrieb', fahrplan: null },
     };
     const b = resolve([qs]);
     expect(b.wartetDep).toEqual([{ id: 'QS-X', offen: ['FEHLT'] }]);
-    expect(b.begleitend).toEqual([]);
+    expect(b.readyNow).toEqual([]);
   });
 });
 
@@ -259,29 +247,29 @@ describe('resolve-Kopplung — Querschnitt mit offener Voraussetzung', () => {
 // seither tragen es alle. Damit ist eine neue Fehlerklasse entstanden (falsches oder
 // fehlendes Präfix), die das Tor NICHT sehen konnte: Regel 7 prüft nur die
 // Gegenrichtung (jede Datei in fahrplaene/ muss als Basename irgendwo im
-// ROADMAP-Volltext vorkommen), die einzige Existenzprüfung galt `kollision`.
+// ROADMAP-Volltext vorkommen).
 // Mutations-Beweis gegen die echte ROADMAP vor dem Fix: `fahrplan:` auf einen
 // erfundenen Pfad gesetzt → pruefe() lieferte []. §6.7: erst rot zeigen.
 describe('Regel 9 — fahrplan:-Pfad muss existieren', () => {
   const MIT_FAHRPLAN = OK.replace(
-    'id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein',
-    'id: W1·1 · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md',
+    'id: W1·1 · status: done · blocker: null · dep: [] · feld: betrieb',
+    'id: W1·1 · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md',
   );
 
   it('NEGATIV: fahrplan: zeigt auf eine nicht existierende Datei → Problem', () => {
     const nur = (p: string) => p === 'fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md';
     const bad = MIT_FAHRPLAN.replace('fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md', 'fahrplaene/FAHRPLAN-GIBTSNICHT.md');
-    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur, inv);
+    const p = pruefe(bad, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur);
     expect(p.map((x) => x.meldung)).toContain('fahrplan "fahrplaene/FAHRPLAN-GIBTSNICHT.md" existiert nicht');
   });
 
   it('GEGENPROBE: existierender fahrplan:-Pfad → kein Problem', () => {
     const nur = (p: string) => p === 'fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md';
-    expect(pruefe(MIT_FAHRPLAN, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur, inv)).toEqual([]);
+    expect(pruefe(MIT_FAHRPLAN, ['FAHRPLAN-PLAN-STEUERUNG.md'], nur)).toEqual([]);
   });
 
   it('ohne fahrplan:-Feld wird nichts geprüft (kein Fehlalarm)', () => {
-    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => false, inv).filter((p) => /^fahrplan /.test(p.meldung))).toEqual([]);
+    expect(pruefe(OK, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => false).filter((p) => /^fahrplan /.test(p.meldung))).toEqual([]);
   });
 });
 
@@ -301,24 +289,24 @@ describe('Regel 9 — fahrplan:-Pfad muss existieren', () => {
 describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
   const plan10 = (units: string) =>
     `## Die geordnete Abarbeitung\n<!-- @blockers\nb1: grund\n-->\n${units}\n\nSiehe FAHRPLAN-PLAN-STEUERUNG.md.\n`;
-  const lauf = (md: string, inv: string[]) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, inv);
+  const lauf = (md: string) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true);
 
   it('NEGATIV: Checkbox-Bullet, dazwischen eine checkbox-lose Unter-Bullet, dann @meta → Problem', () => {
     const md = plan10([
       '- [ ] **B20 · Prüf-Batch**',
       '  - Unter-Bullet ohne Checkbox kappt die Bindung.',
-      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+    expect(lauf(md).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
   });
 
   it('NEGATIV: Checkbox-Bullet, dazwischen ein fremder Kommentar, dann @meta → Problem', () => {
     const md = plan10([
       '- [ ] **B20 · Prüf-Batch**',
       '  <!-- Notiz, die die Rückwärts-Bindung kappt -->',
-      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+    expect(lauf(md).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
   });
 
   // Ehrliche Grenze der Regel (§8): Eine doppelte Leerzeile trennt Blöcke in
@@ -331,9 +319,9 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
       '- [ ] **B20 · Prüf-Batch**',
       '',
       '',
-      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   it('GEGENPROBE: B20-Layout (Bullet, Prosa, @meta) → kein Problem', () => {
@@ -341,9 +329,9 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
       '- [ ] **B20 · Prüf-Batch**',
       '  Prosa-Zeile eins.',
       '  Prosa-Zeile zwei.',
-      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   // Fund R3-1/R3-9 (Endprüfung Runde 3, 31.7.2026, KRITISCH). Die erste Fassung
@@ -364,11 +352,11 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
       '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
       '  B1–B6 + B7 komplett (PRs #401–#406).',
       '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
-      '    <!-- @meta id: B · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '    <!-- @meta id: B · status: done · blocker: null · dep: [] · feld: betrieb -->',
       '  Detail: Chronik.',
-      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A', 'B']).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
+    expect(lauf(md).some((p) => p.id === 'A' && /nicht an die Checkbox/.test(p.meldung))).toBe(true);
   });
 
   // Gegenprobe zum vorigen Fall: das Dach-@meta unmittelbar unter seiner Bullet —
@@ -378,13 +366,13 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
   it('GEGENPROBE: Dach-@meta unmittelbar unter der Dach-Bullet → kein Problem', () => {
     const md = plan10([
       '- [x] **7-BEZUG · Bezüge am Artikel — Facetten-Fundament alle Instanzen** — ✅ **done 28.7.2026**,',
-      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: done · blocker: null · dep: [] · feld: betrieb -->',
       '  B1–B6 + B7 komplett (PRs #401–#406).',
       '  - [x] **B7 · Voll-Auflistung + Eidg.-Facette** — ✅ **done 29.7.2026**',
-      '    <!-- @meta id: B · status: done · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '    <!-- @meta id: B · status: done · blocker: null · dep: [] · feld: betrieb -->',
       '  Detail: Chronik.',
     ].join('\n'));
-    expect(lauf(md, ['A', 'B'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   // Fund R3-7: `bindeCheckbox` prüfte die Kommentar-Grenze VOR dem Bullet-Test.
@@ -396,18 +384,18 @@ describe('Regel 10 — Checkbox-Bullet ohne gebundenes @meta', () => {
   it('GEGENPROBE: Bullet mit «-->» im eigenen Titel bindet ihre Checkbox → kein Problem', () => {
     const md = plan10([
       '- [ ] **A · Migration (Pfeil: alt --> neu)**',
-      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: ready · blocker: null · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   it('GEGENPROBE: checkbox-lose Querschnitt-Bullet unter fremder Checkbox-Liste → kein Problem', () => {
     const md = plan10([
       '  - [ ] **fremde Checkbox der Nachbarliste**',
       '- **Datenhaltung / Single-Source-DB** *(QS-DATA)*.',
-      '  <!-- @meta id: A · status: blocked · blocker: b1 · dep: [] · kollision: [] · worktree: nein · 26x: nein -->',
+      '  <!-- @meta id: A · status: blocked · blocker: b1 · dep: [] · feld: betrieb -->',
     ].join('\n'));
-    expect(lauf(md, ['A'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 });
 
@@ -419,13 +407,13 @@ describe('Regel 8.3 — Stale-Guard deckt auch blocked', () => {
   const MIT_QUEUE = `## Die geordnete Abarbeitung\n<!-- @queue: W1·4 -->\n` + OK.replace('## Die geordnete Abarbeitung\n', '');
 
   it('NEGATIV: blockierter Schritt am Queue-Kopf → Problem', () => {
-    const p = pruefe(MIT_QUEUE, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv);
+    const p = pruefe(MIT_QUEUE, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert);
     expect(p.map((x) => x.meldung)).toContain('@queue-ID "W1·4" ist blocked — veraltete Steuerung, aus @queue entfernen');
   });
 
   it('GEGENPROBE: ready-Schritt in der Queue → kein Problem', () => {
     const gut = MIT_QUEUE.replace('status: blocked · blocker: wbqdyap3x', 'status: ready · blocker: null');
-    expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert, inv)).toEqual([]);
+    expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert)).toEqual([]);
   });
 });
 

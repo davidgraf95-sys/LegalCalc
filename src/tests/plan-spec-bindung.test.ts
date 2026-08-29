@@ -51,7 +51,7 @@ const ZIEL_PFAD = 'fahrplaene/FAHRPLAN-ZIEL.md';
 const leser = (p: string): string | null => (p === ZIEL_PFAD ? ZIEL : null);
 
 const META = (id: string) =>
-  `<!-- @meta id: ${id} · status: ready · blocker: null · dep: [] · kollision: [] · worktree: nein · 26x: nein -->`;
+  `<!-- @meta id: ${id} · status: ready · blocker: null · dep: [] · feld: betrieb -->`;
 
 /** ROADMAP-Fixture: eine Einheit, deren Prosa den Verweis trägt. */
 const plan = (verweis: string, id = 'W9·1-ALPHA') =>
@@ -67,27 +67,28 @@ const plan = (verweis: string, id = 'W9·1-ALPHA') =>
     '',
   ].join('\n');
 
-const lauf = (md: string, ids: string[]) =>
-  pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ids, leser);
+// Der frühere zweite Parameter (Inventar-IDs) ist mit der Steuerungs-Diät vom
+// 29.8.2026 entfallen — check.ts Regel 1 prüft keine Inventar-Abdeckung mehr.
+const lauf = (md: string) => pruefe(md, ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, leser);
 
 /** Markdown-Link auf den Ziel-Fahrplan mit dem gegebenen Anker. */
 const verweis = (anker: string) => `[FAHRPLAN-ZIEL.md](${ZIEL_PFAD}) ${anker}.`;
 
 describe('Regel 11 — Stufe (a): Anker-Auflösung', () => {
   it('NEGATIV: toter §-Anker → Problem (der W2·5k-LINIEN-KONZEPT-Fall §L-3/A28)', () => {
-    const p = lauf(plan(verweis('§9')), ['W9·1-ALPHA']);
+    const p = lauf(plan(verweis('§9')));
     expect(p.map((x) => x.meldung)).toContain(
       `Spec-Anker §9 (Z.5) löst in "${ZIEL_PFAD}" nicht auf — keine Überschrift trägt ihn`,
     );
   });
 
   it('NEGATIV: Anker mit Schrägstrich bleibt EIN Anker (§L-3/A28 wird nicht zerlegt)', () => {
-    const p = lauf(plan(verweis('§L-3/A28')), ['W9·1-ALPHA']);
+    const p = lauf(plan(verweis('§L-3/A28')));
     expect(p.some((x) => /Spec-Anker §L-3\/A28 .* nicht auf/.test(x.meldung))).toBe(true);
   });
 
   it('NEGATIV: Verbund-Anker «§9/§2» — der tote Teil wird einzeln benannt', () => {
-    const p = lauf(plan(verweis('§9/§2')), ['W9·1-ALPHA']);
+    const p = lauf(plan(verweis('§9/§2')));
     expect(p.map((x) => x.meldung)).toContain(
       `Spec-Anker §9 (aus "§9/§2") (Z.5) löst in "${ZIEL_PFAD}" nicht auf — keine Überschrift trägt ihn`,
     );
@@ -95,21 +96,21 @@ describe('Regel 11 — Stufe (a): Anker-Auflösung', () => {
 
   it('NEGATIV: Ziel-Datei nicht lesbar → Problem', () => {
     const md = plan('[FAHRPLAN-WEG.md](fahrplaene/FAHRPLAN-WEG.md) §1.');
-    expect(lauf(md, ['W9·1-ALPHA']).some((x) => /Datei nicht lesbar/.test(x.meldung))).toBe(true);
+    expect(lauf(md).some((x) => /Datei nicht lesbar/.test(x.meldung))).toBe(true);
   });
 
   it('GEGENPROBE: Verbund-Anker «§1/§2» — beide lösen auf, §2 bindet die ID → kein Problem', () => {
-    expect(lauf(plan(verweis('§1/§2')), ['W9·1-ALPHA'])).toEqual([]);
+    expect(lauf(plan(verweis('§1/§2')))).toEqual([]);
   });
 });
 
 describe('Regel 11 — Stufe (b): ID-Bindung', () => {
   it('POSITIV: Anker löst auf und der § nennt die Schritt-ID → kein Problem', () => {
-    expect(lauf(plan(verweis('§2')), ['W9·1-ALPHA'])).toEqual([]);
+    expect(lauf(plan(verweis('§2')))).toEqual([]);
   });
 
   it('NEGATIV: Anker löst auf, der § nennt die ID aber nicht (Sammel-§) → Problem', () => {
-    const p = lauf(plan(verweis('§1')), ['W9·1-ALPHA']);
+    const p = lauf(plan(verweis('§1')));
     expect(p.map((x) => x.meldung)).toContain(
       `Spec-§ "${ZIEL_PFAD} §1" (Z.5) nennt "W9·1-ALPHA" nicht — der Anker löst auf, trifft aber die falsche Spec`,
     );
@@ -121,17 +122,17 @@ describe('Regel 11 — Stufe (b): ID-Bindung', () => {
   // meldete GRÜN — die Regel wäre für genau die Fehlerklasse blind, für die sie
   // gebaut ist. Darum muss der Anker am ANFANG des Überschriftstexts stehen.
   it('NEGATIV: § im Titel einer Nachzug-Überschrift bindet nicht (der QS-KORPUS-BMV-Fall)', () => {
-    const p = lauf(plan(verweis('§1'), 'W9·2-BETA'), ['W9·2-BETA']);
+    const p = lauf(plan(verweis('§1'), 'W9·2-BETA'));
     expect(p.some((x) => x.id === 'W9·2-BETA' && /nennt "W9·2-BETA" nicht/.test(x.meldung))).toBe(true);
   });
 
   it('NEGATIV: § nennt nur die Teilschritt-ID `…-K1` → Wortgrenze hält, Problem bleibt', () => {
-    const p = lauf(plan(verweis('§4')), ['W9·1-ALPHA']);
+    const p = lauf(plan(verweis('§4')));
     expect(p.some((x) => /nennt "W9·1-ALPHA" nicht/.test(x.meldung))).toBe(true);
   });
 
   it('GEGENPROBE: die ID steht in einem UNTERabschnitt des §, der § bindet trotzdem', () => {
-    expect(lauf(plan(verweis('§2'), 'W9·3-GAMMA'), ['W9·3-GAMMA'])).toEqual([]);
+    expect(lauf(plan(verweis('§2'), 'W9·3-GAMMA'))).toEqual([]);
   });
 });
 
@@ -157,17 +158,17 @@ describe('Regel 11 — Bau-Spec-Zeiger vs. Kontext-Verweis', () => {
     ].join('\n');
 
   it('Kontext-Verweis auf einen § ohne die Schritt-ID → kein Problem (Stufe b greift nicht)', () => {
-    expect(lauf(zweiVerweise('§1'), ['W9·1-ALPHA'])).toEqual([]);
+    expect(lauf(zweiVerweise('§1'))).toEqual([]);
   });
 
   it('NEGATIV: toter Kontext-Verweis → Problem (Stufe a gilt uneingeschränkt)', () => {
-    const p = lauf(zweiVerweise('§9'), ['W9·1-ALPHA']);
+    const p = lauf(zweiVerweise('§9'));
     expect(p.some((x) => /Spec-Anker §9 .* nicht auf/.test(x.meldung))).toBe(true);
   });
 
   it('NEGATIV: der ERSTE Verweis bleibt ID-pflichtig, auch wenn ein zweiter folgt', () => {
     const md = zweiVerweise('§2').replace(`**Detail:** ${verweis('§2')}`, `**Detail:** ${verweis('§1')}`);
-    expect(lauf(md, ['W9·1-ALPHA']).some((x) => /nennt "W9·1-ALPHA" nicht/.test(x.meldung))).toBe(true);
+    expect(lauf(md).some((x) => /nennt "W9·1-ALPHA" nicht/.test(x.meldung))).toBe(true);
   });
 });
 
@@ -186,7 +187,7 @@ describe('Regel 11 — Allowlist', () => {
   });
 
   it('allowlisteter Verweis → kein Problem', () => {
-    const p = pruefe(mitArchiv('§P3', 'W3-AUSBAU'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W3-AUSBAU'], archivLeser);
+    const p = pruefe(mitArchiv('§P3', 'W3-AUSBAU'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, archivLeser);
     expect(p).toEqual([]);
   });
 
@@ -195,12 +196,12 @@ describe('Regel 11 — Allowlist', () => {
   // Ausnahme, die jeden künftigen Anker desselben Schritts mit deckt, wäre ein
   // Tor, das an dieser Stelle nicht mehr scheitern kann (§6.7).
   it('NEGATIV: derselbe Schritt mit ANDEREM Anker fällt aus der Ausnahme (fail-closed)', () => {
-    const p = pruefe(mitArchiv('§P9', 'W3-AUSBAU'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W3-AUSBAU'], archivLeser);
+    const p = pruefe(mitArchiv('§P9', 'W3-AUSBAU'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, archivLeser);
     expect(p.some((x) => x.id === 'W3-AUSBAU' && /§P9 .* nicht auf/.test(x.meldung))).toBe(true);
   });
 
   it('NEGATIV: ein anderer Schritt erbt die Ausnahme nicht', () => {
-    const p = pruefe(mitArchiv('§P3', 'W9·1-ALPHA'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, ['W9·1-ALPHA'], archivLeser);
+    const p = pruefe(mitArchiv('§P3', 'W9·1-ALPHA'), ['FAHRPLAN-PLAN-STEUERUNG.md'], () => true, archivLeser);
     expect(p.some((x) => x.id === 'W9·1-ALPHA' && /§P3 .* nicht auf/.test(x.meldung))).toBe(true);
   });
 });
@@ -222,7 +223,7 @@ describe('Regel 11 — Zuordnung Verweis → Schritt', () => {
     ].join('\n');
     const v = sammleVerweise(md);
     expect(v.map((x) => `${x.id} ${x.anker}`)).toEqual(['W9·1-ALPHA §2', 'W9·2-BETA §3']);
-    expect(lauf(md, ['W9·1-ALPHA', 'W9·2-BETA'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   // Ehrliche Grenze (§8): ein freistehender §-Verweis nennt keine Datei. Welche
@@ -230,7 +231,7 @@ describe('Regel 11 — Zuordnung Verweis → Schritt', () => {
   it('GRENZE: §-Nennung ohne Datei-Verweis wird nicht erfasst', () => {
     const md = plan('siehe §STRANG B (B-3) im Fahrplan');
     expect(sammleVerweise(md)).toEqual([]);
-    expect(lauf(md, ['W9·1-ALPHA'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   it('GRENZE: Datei-Verweis ohne §-Anker wird nicht erfasst', () => {
@@ -244,7 +245,7 @@ describe('Regel 11 — Zuordnung Verweis → Schritt', () => {
   it('Verweis unter einer eigenen Überschrift gehört keinem Schritt mehr', () => {
     const md = plan(verweis('§2')) + `\n## Herkunft\n\nAnhang: [FAHRPLAN-ZIEL.md](${ZIEL_PFAD}) §9.\n`;
     expect(sammleVerweise(md).map((x) => x.id)).toEqual(['W9·1-ALPHA']);
-    expect(lauf(md, ['W9·1-ALPHA'])).toEqual([]);
+    expect(lauf(md)).toEqual([]);
   });
 
   // Ehrliche Grenze (§8): ohne Überschrift, gleichrangige Bullet oder doppelte
