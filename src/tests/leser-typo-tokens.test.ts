@@ -52,7 +52,14 @@ describe('S2 · Leser-Typografie-Tokens', () => {
     const erwartet: Array<[string, string, string]> = [
       ['leser-text', '1.0625rem', '1.55'],   // Fliesstext 17 px
       ['leser-rand', '0.8125rem', '1.35'],   // Marginalie/Randtitel 13 px, Sans
-      ['leser-fn', '0.6875rem', '1.3'],      // Fussnoten-Apparat 11 px
+      // Fussnoten-Apparat 11 px. ZEILENHÖHE 1.3 → 1.45 NACHGEFÜHRT (T3,
+      // Design-Qualitäts-Pass 29.8.2026): deklarierte fachliche Änderung
+      // (§6.3), kein aufgeweichter Wächter — die Prüfung bleibt exakt gleich
+      // streng und bindet weiterhin an EINEN festgelegten Wert; nur der Wert
+      // selbst ist entschieden worden. Herleitung samt Messung steht am Token
+      // in `tailwind.config.js`. Die GRÖSSE (0.6875 rem, Entscheid David
+      // 17.8.2026 am Bildbogen) ist unverändert gebunden.
+      ['leser-fn', '0.6875rem', '1.45'],
     ];
     for (const [name, groesse, lh] of erwartet) {
       const treffer = new RegExp(`'${name}':\\s*\\['([0-9.]+rem)',\\s*\\{\\s*lineHeight:\\s*'([0-9.]+)'`).exec(cfg);
@@ -124,9 +131,21 @@ describe('S2 · Leser-Typografie-Tokens', () => {
     const css = lies('../index.css');
     const defs = [...css.matchAll(/--hochgestellt\s*:\s*([^;]+);/g)].map((m) => m[1].trim());
     expect(defs, 'Fussnotenmarke ist nicht genau einmal definiert (§5)').toHaveLength(1);
-    // em-relativ, nicht rem/px: die Marke muss dem Fliesstext UND dem
-    // Schriftgrössen-Regler folgen. Ein rem-Wert entkoppelte sie von beidem.
-    expect(defs[0], 'Fussnotenmarke muss em-relativ sein, sonst folgt sie dem Regler nicht')
-      .toMatch(/em$/);
+    // em-relativ, nicht rein absolut: die Marke muss dem Fliesstext UND dem
+    // Schriftgrössen-Regler folgen. Ein reiner px/rem-Wert entkoppelte sie.
+    //
+    // T5 (29.8.2026) NACHGEFÜHRT: der Wert ist seither `max(.72em,.6875rem)` —
+    // em-Anteil führend, darunter ein Lesbarkeits-Boden (Herleitung am Token in
+    // `index.css`). Die frühere Fassung prüfte `/em$/`; das band nicht die
+    // Eigenschaft, sondern die SCHREIBWEISE (und «.6875rem» endet ebenfalls auf
+    // «em» — der Wächter hätte einen reinen rem-Wert durchgelassen, solange er
+    // am Ende steht). Die Prüfung ist damit nicht gelockert, sondern schärfer:
+    // ein em-Term MUSS vorkommen, und ein rein absoluter Wert fällt jetzt
+    // wirklich durch. Rot gesehen: `--hochgestellt:.6875rem;` scheitert an der
+    // ersten Zusicherung, `--hochgestellt:12px;` an beiden.
+    expect(defs[0], 'Fussnotenmarke braucht einen em-relativen Anteil, sonst folgt sie dem Regler nicht')
+      .toMatch(/[0-9]em\b/);
+    expect(defs[0], 'Fussnotenmarke darf nicht rein absolut (px/rem) gesetzt sein')
+      .not.toMatch(/^[0-9.]+(px|rem)$/);
   });
 });
