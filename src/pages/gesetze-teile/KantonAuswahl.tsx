@@ -43,11 +43,13 @@ function KantonKachel({ g, name, onWaehle }: { g: KantonGruppe; name: string; on
 // sichtbar, §4.3.3) + Sortierung Alphabet/Erlass-Zahl/Region auf dem 26er-Raster
 // (§4.3.2). Reine Darstellung (§3), CLS-neutral (Umschalten tauscht Sichten, kein
 // asynchron einwachsender Block).
-export function KantonAuswahl({ gruppen, alleKantone, onWaehle }: {
+export function KantonAuswahl({ gruppen, alleKantone, onWaehle, ansicht, onAnsicht }: {
   gruppen: KantonGruppe[]; alleKantone: string[]; onWaehle: (k: string) => void;
+  /** Karte/Liste — der Zustand liegt beim Aufrufer, damit er die Kantons-Wahl
+   *  überlebt (die Übersicht unmountet dabei; Fehlerbuch-Befund 41). */
+  ansicht: 'karte' | 'liste'; onAnsicht: (a: 'karte' | 'liste') => void;
 }) {
   const pk = usePaneKlasse();
-  const [ansicht, setAnsicht] = useState<'karte' | 'liste'>('karte');
   // Y-B (David 16.7.2026): Default-Sortierung des 26er-Rasters = «Erlass-Zahl»
   // (Inhalt zuerst); Alphabet ist der Umschalter. A15-neutral (reine Anzeige, §3),
   // client-only — Prerender/Golden unberührt.
@@ -117,7 +119,7 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle }: {
         {/* §4.3.3 — Karte default sichtbar, gleichwertiger Einstieg neben dem Raster. */}
         <div role="group" aria-label="Ansicht" className="inline-flex rounded-md border border-line bg-paper-sunken/50 p-0.5 text-body-s">
           {(['karte', 'liste'] as const).map((a) => (
-            <button key={a} type="button" onClick={() => setAnsicht(a)} aria-pressed={ansicht === a}
+            <button key={a} type="button" onClick={() => onAnsicht(a)} aria-pressed={ansicht === a}
               className={`rounded px-3 py-1 font-medium transition-colors ${ansicht === a ? 'bg-paper text-ink-900 shadow-sm' : 'text-ink-500 hover:text-ink-800'}`}>
               {a === 'karte' ? 'Karte' : 'Liste'}
             </button>
