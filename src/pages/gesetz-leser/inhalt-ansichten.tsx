@@ -10,6 +10,7 @@ import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { ErlassUebersicht } from './parts/ErlassUebersicht';
 import { GesetzFehlSeite } from './FehlSeite';
 import { ebeneAngabe } from './v3/erlassAnsicht';
+import { routenEbene } from '../../lib/normtext/erlassAdresse';
 
 // ═══ ABSCHNITT · Nicht-Volltext-Leseansichten (§6.6-Split, W2·12-HYGIENE/B24) ═══
 // Reine Präsentationskomponenten (Props rein, §3) — aus GesetzLeserInhalt
@@ -62,7 +63,12 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           da am eingebetteten PDF Fussnoten/Verweise wirkungslos wären
           (keine toten Steuerelemente, §13 F4). */}
       <ErlassLeserKopf erlass={erlass} artikelAnzahl={null} currency={currency?.[erlass.key]}
-        overline={`${erlass.ebene === 'bund' ? 'Staatsvertrag' : `Kanton ${erlass.kanton}`} · amtliches PDF`}
+        // «Staatsvertrag» hing hier an `ebene === 'bund'` — heute folgenlos, weil
+        // beide pdf-embed-Erlasse (EMRK, NYUE) Staatsverträge SIND, aber die
+        // Auskunft kam aus der falschen Frage: ein bundesrechtliches PDF ohne
+        // Staatsvertrags-Charakter hätte sich hier zu einem gemacht (§8). Jetzt
+        // aus derselben Ableitung wie Brotkrume und Adresse (Befund 45).
+        overline={`${routenEbene(erlass) === 'international' ? 'Staatsvertrag' : ebeneAngabe(erlass).label} · amtliches PDF`}
         hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
         aktionen={
           <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
