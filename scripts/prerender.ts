@@ -23,6 +23,7 @@ import {
   entscheidHatVolltext,
   entscheidVolltextHtml,
   erlassAltDetailPfad,
+  erlassDetailPfad,
   erlassHatVolltext,
   erlassVolltextHtml,
   esc,
@@ -290,14 +291,14 @@ for (const e of snapshotErlasse) {
       continue;
     }
     if (!e.datei) {
-      console.warn(`SKIP  /gesetze/${e.ebene}/${e.key}: status snapshot ohne datei`);
+      console.warn(`SKIP  ${erlassDetailPfad(e)}: status snapshot ohne datei`);
       erlassUebersprungen++;
       continue;
     }
     const datei = JSON.parse(readFileSync(join(PUBLIC, 'normtext', e.datei), 'utf8')) as NormSnapshotDatei;
     if (!erlassHatVolltext(datei)) {
       // header-only «Volltext» wäre irreführend (§8) und thin content (W1.5) → nicht indexieren
-      console.warn(`SKIP  /gesetze/${e.ebene}/${e.key}: kein Artikel-Volltext`);
+      console.warn(`SKIP  ${erlassDetailPfad(e)}: kein Artikel-Volltext`);
       erlassUebersprungen++;
       continue;
     }
@@ -320,7 +321,7 @@ for (const e of snapshotErlasse) {
     }
   } catch (err) {
     detailFehler++;
-    console.error(`FEHLER  /gesetze/${e.ebene}/${e.key}:`, err);
+    console.error(`FEHLER  ${erlassDetailPfad(e)}:`, err);
   }
 }
 console.log(`OK  ${gesetzeUrls.length} Erlass-Detailseiten (${erlassUebersprungen} übersprungen)`);

@@ -30,12 +30,13 @@ import type { BrowseErlass } from './browse-typen';
 /** Ebene, wie sie in der ADRESSE steht — nicht die Daten-Ebene des Registers. */
 export type RoutenEbene = 'bund' | 'kanton' | 'international';
 
-/** Die drei Routen-Ebenen, die `/gesetze/:ebene[/:key]` kennt. */
-export const ROUTEN_EBENEN: readonly RoutenEbene[] = ['bund', 'kanton', 'international'];
-
-export function istRoutenEbene(x: string): x is RoutenEbene {
-  return (ROUTEN_EBENEN as readonly string[]).includes(x);
-}
+// GESTRICHEN (Gegenprüfung 29.8.2026, Mangel 6): hier standen `ROUTEN_EBENEN`
+// und `istRoutenEbene` — beide ohne einen einzigen Aufrufer, während
+// `RouteSwitch.tsx:88` die Liste von Hand führt. Ein Modul, das «EINE Ableitung»
+// verspricht und die Hilfsmittel dafür ungenutzt mitliefert, ist keine Quelle,
+// sondern Beiwerk (§17 Rückbau). Die Liste in RouteSwitch bleibt, wo sie ist:
+// sie beantwortet eine ROUTEN-Frage («kenne ich dieses Segment?») und darf den
+// Start-Bundle nicht um das Register vergrössern.
 
 /**
  * Routen-Ebene eines Erlasses. «International» (Staatsvertrag) schlägt die
@@ -93,18 +94,67 @@ export function erlassAltPfad(e: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | '
 // für einen Staatsvertrag doppelt falsch, denn die Adresse war weder kanonisch
 // noch als Alt-Form gedacht. Das Register beantwortet die Frage synchron und
 // deterministisch (§2), also fragen sie es jetzt.
-const INTERNATIONAL_KEYS: ReadonlySet<string> = new Set(
-  ERLASS_REGISTER.filter((e) => e.rechtsgebiet === 'international').map((e) => e.key),
+const EBENE_JE_KEY: ReadonlyMap<string, RoutenEbene> = new Map(
+  ERLASS_REGISTER.map((e) => [e.key, routenEbene(e)] as const),
 );
 
-/** Routen-Ebene allein aus dem Schlüssel. `datenEbene` ist die Ebene, die der
- *  Aufrufer ohne Register annehmen würde (fast immer 'bund') — sie gilt, wenn
- *  der Key kein Staatsvertrag ist oder gar nicht im Register steht. */
-export function routenEbeneVonKey(key: string, datenEbene = 'bund'): string {
-  return INTERNATIONAL_KEYS.has(key) ? 'international' : datenEbene;
+/**
+ * Routen-Ebene allein aus dem Schlüssel.
+ *
+ * DAS REGISTER ENTSCHEIDET, nicht der Aufrufer. `fallback` gilt NUR für
+ * Schlüssel, die das Register nicht kennt — dort gibt es nichts zu entscheiden,
+ * und eine ehrliche Fehlseite ist besser als ein geratener Sprung.
+ *
+ * Dass hier das Register gewinnt und nicht die übergebene Ebene, ist ein
+ * Nachzug aus der Gegenprüfung (29.8.2026, Mangel 1): vorher war der Parameter
+ * der Fallback FÜR ALLE Keys, und damit lieferte `/gesetze/international/OR`
+ * eine vollständige, funktionierende OR-Seite — mit der Brotkrume «Bund». Also
+ * exakt Befund 45, nur spiegelverkehrt: eine zweite Adresse, deren URL der
+ * angezeigten Ebene widerspricht (§5/§8). Registerautoritativ gibt es je Erlass
+ * genau EINE Adresse, und jede andere leitet dorthin.
+ */
+export function routenEbeneVonKey(key: string, fallback = 'bund'): string {
+  return EBENE_JE_KEY.get(key) ?? fallback;
 }
 
 /** Adresse allein aus dem Schlüssel — siehe `routenEbeneVonKey`. */
-export function erlassPfadVonKey(key: string, datenEbene = 'bund'): string {
-  return erlassPfadRoh(routenEbeneVonKey(key, datenEbene), key);
+export function erlassPfadVonKey(key: string, fallback = 'bund'): string {
+  return erlassPfadRoh(routenEbeneVonKey(key, fallback), key);
+}
+
+// ─── Gespeicherte Adressen nachziehen ───────────────────────────────────────
+//
+// Nachzug aus der Gegenprüfung (29.8.2026, Mängel 2 und 3): Reiter
+// (`lib/tabs`) und Split-Panes (`layout/usePaneLayout`) speichern PFADE. Ein
+// vor dem Umzug gemerkter Reiter, ein versendeter Alt-Link, ein geteilter
+// `?p=`-Layout-Link — sie alle tragen die Alt-Adresse in den gespeicherten
+// Zustand. Der Client-Sprung im Leser kommt dafür zu spät: der Reiter ist
+// bereits geschrieben, wenn der Leser überhaupt rendert, und es entstand ein
+// toter Zweitreiter neben dem echten.
+//
+// Darum kanonisiert JEDE Stelle, die einen Pfad SPEICHERT, ihn vorher hier.
+// Damit bleibt die Weiterleitung, was der Entscheid wollte — eine Brücke für
+// Alt-Bestand — statt zum Dauerzustand zu werden.
+
+/** Zerlegt `/gesetze/<ebene>/<key>` (Rest = Query/Anker); null, wenn der Pfad
+ *  keine Erlass-Adresse ist. */
+function zerlegeErlassPfad(pfad: string): { ebene: string; key: string; rest: string } | null {
+  const m = /^\/gesetze\/([^/?#]+)\/([^?#]+)(.*)$/.exec(pfad);
+  if (!m) return null;
+  let key: string;
+  try { key = decodeURIComponent(m[2]); } catch { return null; }
+  return { ebene: m[1], key, rest: m[3] };
+}
+
+/**
+ * Kanonische Form einer Erlass-Adresse; alles andere bleibt unverändert.
+ * Query und Anker überleben — der Instanz-Diskriminator `?r=<n>` gehört zur
+ * Reiter-Identität, und `#art-…` ist die Fundstelle.
+ */
+export function kanonisierePfad(pfad: string): string {
+  const t = zerlegeErlassPfad(pfad);
+  if (!t) return pfad;
+  const kanonisch = routenEbeneVonKey(t.key, t.ebene);
+  if (kanonisch === t.ebene) return pfad;
+  return erlassPfadRoh(kanonisch, t.key) + t.rest;
 }

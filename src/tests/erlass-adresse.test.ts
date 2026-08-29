@@ -25,6 +25,7 @@ import {
   erlassPfad,
   erlassPfadVonKey,
   routenEbene,
+  kanonisierePfad,
   routenEbeneVonKey,
 } from '../lib/normtext/erlassAdresse';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
@@ -45,7 +46,7 @@ function dateien(ordner: string, treffer: string[] = []): string[] {
   for (const n of readdirSync(ordner)) {
     const p = join(ordner, n);
     if (statSync(p).isDirectory()) {
-      if (n === 'tests' || n === 'fixtures') continue;
+      if (n === 'tests' || n === 'fixtures' || n === 'node_modules') continue;
       dateien(p, treffer);
     } else if (/\.tsx?$/.test(n)) {
       treffer.push(p);
@@ -55,20 +56,72 @@ function dateien(ordner: string, treffer: string[] = []): string[] {
 }
 
 // Die eine erlaubte Stelle. Alles andere ruft sie.
-const QUELLE = 'lib/normtext/erlassAdresse.ts';
+const QUELLE = 'src/lib/normtext/erlassAdresse.ts';
+
+// ── Die verbotenen Formen ───────────────────────────────────────────────────
+//
+// GESCHÄRFT NACH DER GEGENPRÜFUNG (29.8.2026, Mangel 4). Die erste Fassung sah
+// nur `src/` und verlangte ein Anführungszeichen unmittelbar vor dem Pfad. Sie
+// liess damit drei reale Rückfälle durch, darunter den, der zählt:
+//
+//     erlassPfadRoh(e.ebene, e.key)     ← Befund 45, exakt reproduziert
+//
+// Diese Zeile ruft brav die eine Quelle und verdrahtet trotzdem die DATEN-Ebene
+// in die Adresse — die Sonde muss also nicht nur fragen, WER den Pfad baut,
+// sondern WOMIT. Ebenfalls ergänzt: String-Verkettung und Pfade mit einem
+// Präfix davor (`${SITE_URL}/gesetze/bund/${…}`).
+//
+// NICHT verboten ist eine VOLLSTÄNDIG feste Adresse wie `/gesetze/bund/OR`:
+// die steht in Messskripten (`perf/lighthouse-budget.ts`, `messung-cwv.ts`) als
+// fester Messpunkt, nicht als Ableitung. Verboten ist erst der Moment, in dem
+// ein Schlüssel oder eine Ebene VARIABEL in den Pfad wandert.
+const VERBOTEN: { name: string; re: RegExp }[] = [
+  { name: 'Template mit variabler Ebene', re: /`[^`]*\/gesetze\/\$\{/ },
+  { name: 'Template mit variablem Schlüssel', re: /`[^`]*\/gesetze\/(bund|kanton|international)\/\$\{/ },
+  { name: 'String-Verkettung', re: /['"]\/gesetze\/?['"]\s*\+/ },
+  { name: 'Daten-Ebene in die Adresse gereicht', re: /erlassPfadRoh\(\s*[A-Za-z_$][\w$.]*\.ebene\b/ },
+];
 
 describe('§5 — die Erlass-Adresse hat EINE Quelle', () => {
-  it('kein zweiter Pfad-Formatierer im Produktivcode', () => {
-    // Ein Template-Literal `/gesetze/${…}` oder ein festes `/gesetze/bund/`
-    // im Code (nicht im Kommentar) ist ein selbstgebauter Erlass-Pfad.
-    const muster = /`\/gesetze\/\$\{|['"`]\/gesetze\/(bund|kanton|international)\//;
+  it('kein zweiter Pfad-Formatierer in src/ und scripts/', () => {
+    const wurzeln = [SRC, join(SRC, '..', 'scripts')];
     const sünder: string[] = [];
-    for (const p of dateien(SRC)) {
-      const rel = relative(SRC, p).replaceAll('\\', '/');
-      if (rel === QUELLE) continue;
-      if (muster.test(ohneKommentare(readFileSync(p, 'utf8')))) sünder.push(rel);
+    for (const wurzel of wurzeln) {
+      for (const p of dateien(wurzel)) {
+        const rel = relative(join(SRC, '..'), p).replaceAll('\\', '/');
+        if (rel === QUELLE) continue;
+        const code = ohneKommentare(readFileSync(p, 'utf8'));
+        for (const { name, re } of VERBOTEN) if (re.test(code)) sünder.push(`${rel} — ${name}`);
+      }
     }
     expect(sünder, `bauen die Erlass-Adresse selbst statt über ${QUELLE}`).toEqual([]);
+  });
+
+  it('die Sonde fängt jede der belegten Rückfall-Formen (Selbsttest)', () => {
+    // Ohne diesen Fall wäre die Sonde eine Behauptung: sie kann grün sein, WEIL
+    // sie nichts sieht. Hier steht, was sie sehen MUSS — die vier Formen, die
+    // die Gegenprüfung als real durchgelassen belegt hat.
+    const rückfälle = [
+      'const a = `/gesetze/${e.ebene}/${e.key}`;',
+      'const b = `/gesetze/bund/${key}`;',
+      "const c = '/gesetze/' + e.ebene + '/' + encodeURIComponent(e.key);",
+      'const d = `${SITE_URL}/gesetze/bund/${e.key}`;',
+      'const f = erlassPfadRoh(e.ebene, e.key);',
+    ];
+    for (const zeile of rückfälle) {
+      expect(VERBOTEN.some(({ re }) => re.test(zeile)), `nicht gefangen: ${zeile}`).toBe(true);
+    }
+    // Gegenprobe: das Erlaubte darf NICHT anschlagen, sonst ist die Sonde ein
+    // Hindernis statt eines Wächters.
+    const erlaubt = [
+      "{ pfad: '/gesetze/bund/OR', label: 'fester Messpunkt' },",
+      'const g = erlassPfad(e);',
+      'const h = erlassPfadVonKey(e.key, e.ebene);',
+      'const i = erlassPfadRoh(routenEbene, schluessel);',
+    ];
+    for (const zeile of erlaubt) {
+      expect(VERBOTEN.some(({ re }) => re.test(zeile)), `falsch gefangen: ${zeile}`).toBe(false);
+    }
   });
 });
 
@@ -117,6 +170,56 @@ describe('Routen-Ebene und Daten-Ebene', () => {
   it('routenEbeneVonKey belässt unbekannte Schlüssel bei der übergebenen Ebene', () => {
     expect(routenEbeneVonKey('GIBTSNICHT', 'bund')).toBe('bund');
     expect(routenEbeneVonKey('GIBTSNICHT', 'kanton')).toBe('kanton');
+  });
+
+  it('das REGISTER entscheidet, nicht der Aufrufer (Gegenprüfung, Mangel 1)', () => {
+    // Vorher war der zweite Parameter der Fallback für ALLE Keys — damit gab es
+    // für jeden Bundeserlass eine zweite, voll funktionierende Adresse unter
+    // /gesetze/international/, deren Brotkrume «Bund» sagte. Befund 45 im
+    // Spiegelbild. Ein bekannter Schlüssel hat genau EINE Adresse.
+    expect(routenEbeneVonKey('OR', 'international')).toBe('bund');
+    expect(routenEbeneVonKey('OR', 'kanton')).toBe('bund');
+    expect(routenEbeneVonKey('CISG', 'bund')).toBe('international');
+    expect(routenEbeneVonKey('CISG', 'kanton')).toBe('international');
+  });
+
+  it('jeder Register-Erlass hat GENAU EINE Adresse — jede andere Ebene leitet', () => {
+    for (const e of ERLASS_REGISTER) {
+      for (const falsch of ['bund', 'kanton', 'international']) {
+        if (falsch === routenEbene(e)) continue;
+        expect(umzugsZiel(falsch, e.key), `${falsch}/${e.key} bleibt als Zweitadresse stehen`)
+          .toBe(erlassPfad(e));
+      }
+    }
+  });
+});
+
+// ── Gespeicherte Adressen (Reiter, Panes) ───────────────────────────────────
+
+describe('kanonisierePfad — gespeicherte Alt-Adressen ziehen nach', () => {
+  it('zieht die Erlass-Adresse nach und lässt Query und Anker stehen', () => {
+    expect(kanonisierePfad('/gesetze/bund/CISG')).toBe('/gesetze/international/CISG');
+    expect(kanonisierePfad('/gesetze/bund/CISG#art-35')).toBe('/gesetze/international/CISG#art-35');
+    expect(kanonisierePfad('/gesetze/bund/CISG?r=2#art-35')).toBe('/gesetze/international/CISG?r=2#art-35');
+  });
+
+  it('lässt kanonische und fremde Pfade unverändert (byte-gleich)', () => {
+    for (const p of [
+      '/gesetze/international/CISG',
+      '/gesetze/bund/OR#art-257_d',
+      '/gesetze/kanton/BS-BeE%20786.100',
+      '/rechtsprechung/bge-150-III-1',
+      '/rechner/verjaehrung',
+      '/',
+      '',
+    ]) {
+      expect(kanonisierePfad(p), `unnötig verändert: ${p}`).toBe(p);
+    }
+  });
+
+  it('ist idempotent — zweimal angewandt ändert nichts mehr', () => {
+    const einmal = kanonisierePfad('/gesetze/bund/CISG#art-35');
+    expect(kanonisierePfad(einmal)).toBe(einmal);
   });
 });
 

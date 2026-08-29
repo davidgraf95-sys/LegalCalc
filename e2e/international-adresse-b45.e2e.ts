@@ -111,6 +111,41 @@ test.describe('Befund 45 · die Übersicht verlinkt die neue Adresse', () => {
   })
 })
 
+// ─── Nachzüge aus der adversarialen Gegenprüfung (29.8.2026) ────────────────
+//
+// Drei Mängel, die der Bau selbst erzeugt hatte. Sie stehen hier und nicht nur
+// im Unit-Tor, weil alle drei erst im laufenden Browser sichtbar werden: der
+// erste als gerenderte Seite, die beiden anderen als GESPEICHERTER Zustand im
+// localStorage — die Ebene, auf der eine Weiterleitung zum Dauerzustand wird.
+
+test.describe('Befund 45 · Nachzüge der Gegenprüfung', () => {
+  test('(M1) die Ebene ist nicht frei wählbar — /gesetze/international/OR leitet zurück', async ({ page }) => {
+    // Vorher: 200 mit vollständiger OR-Seite (1686 Artikel) und Brotkrume
+    // «Bund» — Befund 45 spiegelverkehrt, eine zweite Adresse je Bundeserlass.
+    await page.goto('/gesetze/international/OR')
+    await expect(page).toHaveURL(/\/gesetze\/bund\/OR$/)
+  })
+
+  test('(M2) eine Alt-Adresse erzeugt GENAU EINEN Reiter', async ({ page }) => {
+    // Vorher: der Reiter-Tracker lief vor dem Umzugs-Sprung und merkte beide
+    // Adressen — ein toter Zweitreiter je Bestandsnutzer und je versendetem Link.
+    await page.goto(ALT)
+    await expect(page).toHaveURL(new RegExp(`${NEU}$`))
+    const roh = await page.evaluate(() => window.localStorage.getItem('lexmetrik-tabs'))
+    const pfade = (JSON.parse(roh ?? '[]') as { path: string }[]).map((t) => t.path)
+    expect(pfade, 'Alt-Adresse hinterlässt einen zweiten, toten Reiter').toEqual([NEU])
+  })
+
+  test('(M3) ein geteiltes Pane wird kanonisch gespeichert', async ({ page }) => {
+    // Vorher: das Pane rendert richtig, aber `lexmetrik-panes` behielt die
+    // Alt-Adresse dauerhaft — die Brücke wäre zum Dauerzustand geworden.
+    await page.goto(`/gesetze/bund/OR?p=${ALT}`)
+    await page.waitForTimeout(1200)
+    const roh = await page.evaluate(() => window.localStorage.getItem('lexmetrik-panes'))
+    expect(JSON.parse(roh ?? '[]'), 'Pane speichert die Alt-Adresse weiter').toEqual([NEU])
+  })
+})
+
 test.describe('Befund 45 · Gegenproben', () => {
   test('ein normaler Bundeserlass leitet NICHT weiter', async ({ page }) => {
     await page.goto('/gesetze/bund/OR')
