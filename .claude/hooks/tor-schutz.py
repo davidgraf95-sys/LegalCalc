@@ -82,28 +82,39 @@ TOR_MUSTER = re.compile(
     # Tor bleibt Tor, egal ob via npm-Alias oder Skript-Pfad aufgerufen.
     r"|bibliothek-check\.sh|scripts/check-[a-z-]+\.(?:ts|sh)|struktur-rotieren\.py --check"
 )
-# §17-Nachtrag 7.8.2026 (QS-SELBSTOPT, Ent-Regulierung; Freigabe David im Chat):
-# der Hook blockierte Tor-Namen, die nur als SUCHMUSTER vorkamen —
-# `grep -n "npm run check" f | head` ist kein Tor-Lauf (Fehlalarm zweifach belegt,
-# u. a. am Prüfskript des Befunds selbst). Bei grep/rg/ag werden darum die
-# zitierten Argumente vor der Prüfung entfernt; Pipes und Tor-Kommandos
-# AUSSERHALB der Quotes bleiben voll erfasst (beidseitig getestet).
-GREP_KOPF = re.compile(r"^\s*(?:[A-Za-z_]\w*=\S+\s+)*(?:grep|egrep|fgrep|rg|ag|ack)\b")
+# §17-Nachtrag 29.8.2026 (Steuerungs-Diät, Auftrag David): Regel 1 greift nur
+# noch, wenn das Tor-Kommando SELBST ausgefuehrt wird. Bisher genuegte das
+# blosse VORKOMMEN des Namens im Segment — rein lesende Aufrufe wurden geblockt
+# (drei reproduzierte Fehlalarme 29.8.2026: `grep -n "check:plan"
+# scripts/check-tor-paritaet.ts | head`, dieselbe Zeile unquoted,
+# `wc -l scripts/check-plan.ts | tail`). Massstab ist jetzt die KOMMANDO-
+# POSITION: vor dem Tor-Treffer duerfen nur Umgebungs-Zuweisungen, Starter
+# (bash/npx/node/python3/time/…) und ein direkt anhaengender Pfad stehen. Die
+# Quote-Ausnahme fuer grep/rg (7.8.2026) ist damit abgeloest und entfaellt —
+# `rg 'npm run lint' f | head` faellt schon ueber die Kommando-Position durch,
+# `grep "x" f | npm run lint | tail` blockiert weiter (beides getestet).
+STARTER = re.compile(
+    r"^(?:[A-Za-z_]\w*=\S+|sudo|env|time|command|nice|xargs"
+    r"|bash|sh|zsh|npx|node|python3?|vite-node|tsx|ts-node)$"
+)
+PFAD_ENDE = re.compile(r"(?:\./)?(?:[\w.-]+/)+$")
 
 
-def ohne_suchmuster(seg: str) -> str:
-    """Bei grep/rg/ag die ZITIERTEN Argumente entfernen: dort steht ein
-    Suchmuster, kein ausgefuehrtes Kommando. Pipes ausserhalb der Quotes
-    bleiben stehen — `grep "x" f | npm run lint | tail` blockiert weiter."""
-    return re.sub(r"'[^']*'|\"[^\"]*\"", " ", seg) if GREP_KOPF.match(seg) else seg
+def ist_tor_lauf(stufe: str) -> bool:
+    """Wird in dieser Pipeline-Stufe ein Tor als KOMMANDO ausgefuehrt?"""
+    m = TOR_MUSTER.search(stufe)
+    if not m:
+        return False
+    kopf = PFAD_ENDE.sub("", stufe[: m.start()])
+    return all(STARTER.match(t) for t in kopf.split())
 
 
-# je Segment (getrennt durch && ; oder Zeilenende) prüfen, ob nach einem
-# Tor-Kommando noch eine Pipe folgt; '||' fängt auch das Schlucken via '|| true'
+# je Segment (getrennt durch && ; oder Zeilenende): schluckt eine Pipe bzw.
+# ein '||' den Exit-Code eines Tores? Nur Stufen VOR der letzten sind relevant —
+# dort geht der Exit-Code verloren ('|| true' zerfaellt ebenfalls hier).
 for seg in re.split(r"&&|;|\n", cmd):
-    seg = ohne_suchmuster(seg)
-    m = TOR_MUSTER.search(seg)
-    if m and "|" in seg[m.end():]:
+    stufen = seg.split("|")
+    if any(ist_tor_lauf(s) for s in stufen[:-1]):
         probleme.append(
             "BLOCKIERT (§6/§9): Tor-Kommando durch Pipe/|| gejagt — der "
             "Exit-Code wird verschluckt (Lektion vom 6./7.6.: 8 Lint-Fehler "
