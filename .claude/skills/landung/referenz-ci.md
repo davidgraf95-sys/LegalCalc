@@ -124,3 +124,85 @@ Block per Ziff. 6 in die Chronik). Realfall 5.8.2026: `QS-TOK`/
 `QS-TOK-AUFRAEUMEN` blieben nach Session-Ende stundenlang `wip`, das Lagebild
 zeigte falschen Bau — seither warnt `plan:next` bei wip ohne Bau-Spur, aber die
 Warnung ist das Netz, nicht der Prozess.
+
+---
+
+## Umzug 31.8.2026 (Landung-Diät, QS-EFFIZIENZ) — Wortlaute aus SKILL.md
+
+### §Auslieferung — Wer ausliefert: seit 17.8.2026 die CI, nicht mehr Vercel selbst
+
+Vercel-Git-Deploys sind abgeschaltet (`vercel.json` → `git.deploymentEnabled:
+false`; Entscheid David «Weg b»). Ausgeliefert wird im Job **«Deploy (Prod,
+Vercel CLI)»** in `ci.yml`: ausgelöst vom `push` auf `main`, mit
+`needs: [diff, tore, bau, e2e]` — Prod bekommt also nur, was die Tore
+freigegeben haben. Anlass: Vercel legte bei JEDEM Push auf JEDEN Branch ein
+Deployment an (auch das sofort «Canceled by Ignored Build Step»); am 16.8.2026
+riss das die Free-Grenze von 100/Tag und blockierte Prod 24 h. Folgen für die
+Landung: Push kostet keinen Deploy mehr (die §0-Sparregel «nur bei
+Meilensteinen pushen» bleibt gute Sitte, ihr Vorfallsgrund ist entfallen) ·
+kein Vercel-Check am PR (ohne Git-Deploy kein Vercel-Commit-Status; auch kein
+Required Check mehr, Branch-Schutz-Edit 15.8.2026 — ein fehlender
+Vercel-Kontext ist der Normalfall, kein Verdacht) · Deploy-Rot ist ein
+CI-Job-Rot (steht im Actions-Lauf des Merge-Commits, nicht im
+Vercel-Dashboard) · Handdeploy bleibt verboten (racender Doppel-Deploy; wenn
+lokal HEAD ≠ origin/main, geht ein ANDERER Commit live als der gemergte).
+
+### Anker-Konkordanz «§12.x» (Audit-Befund 7.8.2026, QS-AUDIT-VERWEISE)
+
+«CLAUDE.md §12.2» = Ziff. 2 der §12-Grundregeln (Pathspec-Commits, kein
+stash/amend), «§12.3» = Ziff. 3 (Deploy nur aus sauberem HEAD-Worktree).
+Fahrpläne nummerieren ihre eigenen Abschnitte dateiintern ebenfalls «§12.x» —
+solche Verweise sind dateigebunden, nie Reglement-Anker.
+
+### Realfall #445 (5.8.2026) — scharfer Auto-Merge ist keine Landung
+
+16 h scharf, grün, kein Merge: bei `mergeStateStatus: BEHIND` feuert
+Auto-Merge NIE von selbst. Darum nach jeder main-Landung die verbleibenden
+Auto-Merge-PRs per `gh pr view <n> --json mergeStateStatus` prüfen und bei
+BEHIND `gh pr update-branch` fahren.
+
+### Realfälle zu Schritt 6 (CI-Grün)
+
+`cancelled`/`skipped` zählen als ROT: Realfall 20.7.2026, fünf stumme
+`turso-sync`-Abbrüche — GitHub färbt cancelled GRAU, der Suchindex veraltete
+unbemerkt. FEHLENDE Checks zählen als PENDING, nie als grün: Realfall
+4./5.8.2026 — nach einem Push fehlte die Kern-Batterie im Lauf, beinahe
+ungeprüft gemerged. Ein Vercel-Rot mit echtem Build-Fehler bleibt Rot; an
+landeintensiven Tagen die Kette seriell und ohne überflüssige Zwischen-Pushes
+fahren (jedes `update-branch` frisst einen App-Deploy — Ära vor dem
+17.8.2026; seither kostet es nur CI-Minuten).
+
+### Realfall 15.8.2026 zu Schritt 7 (Verwaltung bündeln)
+
+~15 Verwaltungs-Pushes (Doku/Plan/Buchung/wip-Marker direkt auf main) rissen
+das Vercel-Tageslimit, sechs fertige PRs standen stundenlang: jeder
+main-Push kostete damals einen Deploy UND warf jeden offenen Auto-Merge-PR
+auf BEHIND (= je ein weiterer Deploy pro Nachzug). Daraus die Regel
+«Feature einzeln landen, Verwaltung bündeln» und der Hook-Block für direkte
+main-Pushes; der Ausnahmefall «Hand-Buchung nach stiller Auto-Buchung»
+gehört ebenfalls in den nächsten Sammel-Push, nicht sofort auf main.
+
+### Realfall 15./16.8.2026 zu Schritt 7b (Ketten-Wächter, F2h)
+
+Der Landeketten-Wächter mergte Risikopfad-PRs nur bei `mergeStateStatus:
+CLEAN`; nach Davids Branch-Schutz-Edit standen sie auf `UNSTABLE`
+(nicht-required Vercel-Kontext rot, alle 11 Required grün) — 7 h kein Merge
+(17:24→00:33), zwei weitere PRs `DIRTY` (Konflikt), ebenfalls stumm. Erst
+Davids Nachfrage brachte es ans Licht.
+
+### Historie zu Schritt 9 (Trailer im PR-Body)
+
+Vereinfachung 15.8.2026 (§5): vorher Commit-Trailer UND PR-Body — heute 2×
+still verloren, 3× nachgebessert. Der Standard-Squash-Text verliert
+Commit-Trailer ohnehin (PR #491); seither liest `plan-buchung.yml` den Block
+aus dem PR-Body und macht einen halben Block laut rot.
+
+### Realfälle zur Nachkontrolle 1 (Deploy-Zuordnung)
+
+Realfall 15./16.8.2026: 7 Merges #519–#530 waren auf main, aber nie live
+(`git rev-parse --verify` schlug bei fehlendem Objekt fehl) — den Fall fängt
+seither der Deploy-Job selbst (Live-Kennungs-Probe, 3 Versuche à 20 s),
+zusätzlich der Wächter `pruefeBuildStand` im Prod-Smoke (#531). Historisch:
+bis 17.8.2026 baute Vercel per Git-Integration; ein «Canceled by Ignored
+Build Step» auf einem Code-Commit war dort ROT. Diese Deploy-Art gibt es
+nicht mehr.
