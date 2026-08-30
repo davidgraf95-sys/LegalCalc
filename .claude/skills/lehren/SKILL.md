@@ -1,6 +1,6 @@
 ---
 name: lehren
-description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält zudem das Register der belegten Fehlerklassen F1–F9 samt Mechanismus und die Regel, in welcher FORM eine neue Lehre abzulegen ist.
+description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleiben soll — Trigger «das ist schon wieder passiert», «warum haben wir das nicht gemerkt», «Lehre festhalten», «Postmortem», «das darf nicht nochmal passieren» — oder wenn beim Bau ein wiederkehrendes Fehlermuster auffällt. AUCH verwenden bei §17-Prozessarbeit — ein CI-/Merge-/Doku-/Werkzeug-Prozess soll an der Wurzel behoben, verschlankt, gelöscht oder automatisiert werden: dafür die Fünf-Schritte-Reihenfolge hier. Enthält das F1–F9-Register und die Formregel für neue Lehren.
 ---
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
@@ -77,6 +77,30 @@ David-Rahmen 16.7.) wartet auf David.
    Schaden). Eine Klasse ohne Vorfall ist eine Vermutung, keine Lehre.
 5. **Zweimal aufgetreten trotz Gegenmittel** ⇒ das Gegenmittel greift nicht;
    Form eskalieren (Prosa → Dispatch → Tor).
+
+## §17-Gegengewicht — Rückbau gehört dazu (Auftrag David 13.8.2026)
+
+*Wortlaut wörtlich aus CLAUDE.md §17 hierher verschoben (Token-Diät 30.8.2026 —
+CLAUDE.md lädt bei jedem Dispatch, diese Sätze braucht nur, wer §17-Arbeit tut;
+in CLAUDE.md steht die Kurzform mit Zeiger. Einzige Anpassung am Wortlaut:
+«, Inventar» in Satz 4 gestrichen — den Inventar-Mechanismus gibt es seit dem
+Plan-Neuschnitt 29.8.2026 nicht mehr).*
+
+Die §17-Regel erzeugt nur Zuwachs; nichts verlangte je das Entfernen, und so
+wuchs die Steuerung schneller als das Produkt. Vier Sätze, die in derselben
+Session mitlaufen: (1) Wer etwas hinzufügt, ersetzt zuerst die Stelle, die
+dieselbe Sorge schon trägt — oder sagt im Anlass-Satz, dass es keine gibt.
+(2) Was nicht scheitern kann, wird **gestrichen statt bewacht** (Präzedenz:
+`seq-hart`, drei Vorkommen, null Auswertung) — das gilt ausdrücklich auch für
+den TESTAPPARAT (Auftrag David 14.8.2026): Tests und Tore, die weder
+Rechtslogik noch Rechtsdaten decken und nachweislich nie etwas gefangen haben,
+unterliegen demselben Rückbau (Beweis nach Streich-Massstab,
+`bauschritt`/aufraeumen.md); Prüftiefe auf Rechtslogik/Rechtsdaten ist davon
+ausgenommen und bleibt. (3) Eine Regel ohne datierten Anlass ist
+Rückbau-Kandidat (Chesterton). (4) Der Plan bildet **Kapazität ab, nicht
+Absicht**: was den Deckel sprengt, verliert sein Etikett und lebt als
+Ideen-Liste ohne `@meta` und Tor weiter. Bei Konflikt gewinnt der Rückbau —
+ausser die Stelle hat einen datierten Vorfall verhindert. §1 bleibt unberührt.
 
 ## §17-Prozessarbeit: die Fünf-Schritte-Reihenfolge
 

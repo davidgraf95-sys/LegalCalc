@@ -1,6 +1,6 @@
 ---
 name: gegenpruefung
-description: Use when the LexMetrik gate `check:gegenpruefung` is red, or before committing changes to risk paths (Extraktion/Rechnen/Norm-Tarif). Trigger-Beispiele (nicht abschliessend): src/lib/vorlagen, src/lib/tarif, src/data/tarif, src/lib/fristenspiegel, src/lib/normtext, scripts/normtext, public/normtext (*.json), scripts/fedlex-*, scripts/datenhaltung, daten/, scripts/materialien, scripts/verzahnung, src/lib/verzahnung/revisionen-extrakt.ts, plus Rechen-Engines (verjaehrung/streitwert/schkg/beurkundung/gruendung/bger). Massgeblich: istRisikoPfad() in scripts/gegenpruefung/kern.ts.
+description: Use when the LexMetrik gate `check:gegenpruefung` is red, or before committing changes to risk paths (Extraktion/Rechnen/Norm-Tarif). Trigger-Beispiele: src/lib/vorlagen, src/lib/tarif, src/lib/normtext, scripts/normtext, scripts/fedlex-*, daten/, scripts/materialien und die Rechen-Engines. Massgeblich (abschliessend): istRisikoPfad() in scripts/gegenpruefung/kern.ts.
 ---
 
 # Gegenprüfung — adversariales Protokoll (QS-GP)

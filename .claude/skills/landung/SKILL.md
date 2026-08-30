@@ -1,6 +1,6 @@
 ---
 name: landung
-description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «landen», «Landung», «PR mergen», «einsammeln», «rebasen auf main», «Merge-Kette abarbeiten», «Push», «Deploy», «Live-Gang», «bring das auf Prod», «Release-Stand prüfen». Kodifiziert §12 (serielle Landung, Merge-Treiber) UND §9 (Merge nach main IST der Deploy — seit 17.8.2026 liefert der CI-Job «Deploy (Prod, Vercel CLI)» aus, Vercel-Git-Deploys sind aus); der frühere Skill deploy-check ist hier aufgegangen (QS-SKILL-DIAET 8.8.2026).
+description: Verwenden, wenn ein fertiger Stand nach main soll — Trigger «landen», «Landung», «PR mergen», «einsammeln», «rebasen auf main», «Merge-Kette abarbeiten», «Push», «Deploy», «Live-Gang», «bring das auf Prod», «Release-Stand prüfen». Kodifiziert §12 (serielle Landung, Merge-Treiber) UND §9 (Merge nach main IST der Deploy, ausgeliefert vom CI-Job «Deploy (Prod, Vercel CLI)»).
 ---
 
 # Landung nach main = Deploy (§12 + §9, «Weg 1»)
