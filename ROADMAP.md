@@ -119,6 +119,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   geschnitten sind (Kontaktbogen H4 §7a: «Passende Werkzeuge» und `kontextSoftLaw` gehören nicht in
   «Materialien»). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
   - [ ] «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen (`bezugAuswahl.ts`/`bezuegeLaden.ts`) — Code-Zusage ohne Deckung ist keine Option (§5/§8). §13.
+  - [x] **Ankunfts-Sprung `?norm=` nutzt beide Fundstellen-Regeln** *(Auftrag David 30.8.2026)* — `ankunftsAnker` (`src/pages/entscheidLeserRegeln.ts`): Fedlex-Fundstelle, sonst erste wörtliche Nennung; e2e-Deckung des SPLIT-Wegs neu (`e2e/split-erwaegungssprung.e2e.ts`). Gemessen über alle 75 365 Kanten: 46.6 % → 48.8 % (Bund 54.3 → 55.3 %, **Kanton 0.0 → 9.1 %**).
+  - [ ] **Kantonaler Zitat-Resolver** — 9 674 kantonale Kanten haben weiterhin kein Sprungziel: `fedlexLinkFuerArtikel`/`normVerweiseImText` kennen nur Bundesrecht, und die wörtliche Regel greift nur, wo der Entscheid exakt `§ N <Kürzel>` schreibt. Nötig wäre eine Kürzel-/Alias-Tabelle je kantonalem Erlass **mit Kanton-Scoping** (ein «StG» in BS ist nicht das «StG» in ZH — ohne Scoping entstünde ein stumm falscher Sprung, §1). Risiko-Pfad Extraktion ⇒ eigener Schritt mit Gegenprüfung, nicht als UI-Nebenprodukt.
 
 ---
 
