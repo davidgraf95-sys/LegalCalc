@@ -113,6 +113,13 @@ export function agentDatei(klasse: string, md: string): string {
     // JEDE Klasse und steht darum EINMAL hier statt sechsmal in den Rollen.
     'TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben. Richtgrösse der Rückgabe: ≤ ~300 Wörter Prosa; Messreihen, Belege und Rot-Beweis-Auszüge zählen nicht dagegen und werden NIE gekürzt.',
     '',
+    // F5-Eskalation 31.8.2026 (3. Wartetod-Vorfall trotz §0.4: Agent stoppte
+    // «wartend» auf seinen eigenen Hintergrund-Crawl — gestoppte Agenten
+    // empfangen nichts; der Orchestrator musste ihn wecken). Regel 5 des
+    // Skills lehren: Gegenmittel eskalieren statt Regel danebenlegen — von
+    // Prosa in die Definition, die JEDER Agent liest.
+    'KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand «wartet auf …» — ein gestoppter Agent empfängt keine Ereignisse, ein laufender Hintergrund-Prozess ohne dich ist verlorene Arbeit. Entweder du pollst das Ergebnis im selben Turn zu Ende, oder du gibst einen WIP-committeten Zwischenstand mit klarem Wiederaufnahme-Punkt zurück und erklärst den Auftrag insoweit als offen.',
+    '',
     // Variante nach Klasse (§0a): read-only-Klassen tragen nur die Punkte 1–3.
     // Die Zuordnung steht EINMAL in dispatch.ts (VARIANTE) und gilt für den
     // Freitext-Weg `npm run dispatch` und die Agent-Typen gleichermassen.

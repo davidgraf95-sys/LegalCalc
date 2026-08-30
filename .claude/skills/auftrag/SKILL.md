@@ -167,7 +167,18 @@ nicht-riskanter Bau darf **mittel** · Mechanik **klein** · Synthese mind.
 **Sparsamkeit** (David 8.8.2026): erst EIN Recherche-Agent, bei Lücken
 nachfassen statt parallel doppeln; Prüfaufwand skaliert mit Risiko × Umfang.
 Folge-Slices derselben Fläche: bestehenden Agenten fortsetzen statt neu
-spawnen — nie für die Gegenprüfung, nie über Klassen-Grenzen.
+spawnen — nie für die Gegenprüfung, nie über Klassen-Grenzen, und nicht
+mehr, wenn der Agent schon schwer beladen ist (Richtwert ~300k Token: ab da
+liefert Fortsetzen sichtbar weniger, Beleg 16.8. H2-Agent ~470k).
+
+**Dispatch-Ökonomie (Messung 30./31.8.2026, 8 Dispatches):** Jeder Agent
+kostet ~20–50k Token Grundrauschen (Definition, Einlesen, Orientierung),
+bevor er baut. Daraus: (a) **Spec als Datei-Zeiger** — lange Ziel-Specs in
+eine Datei schreiben (Scratchpad oder Fahrplan-§) und dem Agenten den Pfad
+geben, statt sie in den Prompt zu kopieren (wiederverwendbar für WP-Serien,
+spart Orchestrator-Output); der Prompt selbst trägt nur Rolle, Whitelist,
+TABU, Rückgabe-Schema. (b) Die «< ~30 Min selbst»-Regel oben ist damit auch
+eine Token-Regel, nicht nur eine Zeit-Regel.
 
 ## 7 · Vertrauensgrenze — wörtlich in jeden Sub-Agenten-Auftrag
 
