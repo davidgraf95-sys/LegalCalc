@@ -1,4 +1,5 @@
 import { useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { kopfGlypheKlassen, kopfGriffKlassen } from './kopfStufen';
@@ -194,6 +195,53 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           ? <span aria-hidden className={kopfGlypheKlassen(true)}>···</span>
           : <><span aria-hidden>◧</span><span>Ansicht</span><span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span></>}
       </button>
+
+      {/* ── B7-N1 · LM-010/LM-015 · SCRIM (Entscheid David 8.8.2026) ──────────
+          Der Befund: «Die Menüfenster haben keine abdunkelnde Fläche dahinter …
+          Gesetzestext und Menüinhalt laufen ineinander.» Er trifft für diese
+          Fläche zu — und er benennt eine Lücke zwischen Verhalten und Bild:
+          `usePopoverAutoZu` fährt hier den Modus `popover`, und der trägt die
+          FOKUS-FALLE (`useDialogFokus`). Das Menü ist also längst modal; nur
+          sagte es das nicht. Der Scrim ist hier darum keine Verzierung, sondern
+          die sichtbare Hälfte einer Zusage, die die Bedienung schon gibt.
+
+          KEIN WIDERSPRUCH ZU Ä52. Dort ist dem Rechtsprechungs-Panel auf D der
+          Scrim ABGENOMMEN worden, weil `kopfStufen.panelForm` für `'rechts'`
+          «der Lesetext bleibt links sichtbar und LESBAR; das Panel ist Beiwerk»
+          verspricht — die Modi `beiwerk`/`spalte` fangen den Fokus bewusst
+          NICHT. Hier ist es genau umgekehrt. Die eine Regel, die beide Fälle
+          trägt: DER SCRIM FOLGT DER FOKUS-FALLE, nicht der Fläche
+          (`OHNE_FALLE` in `usePopoverAutoZu`).
+
+          `black`, nicht `ink-900` — Präzedenz `components/layout/Shell.tsx`
+          (Schubladen-Scrim, dort schon begründet): `--ink-900` flippt mit dem
+          Thema und ist im Dunkelmodus `#E9E7E2`; ein `bg-ink-900/30` HELLT dort
+          auf, statt abzudunkeln. 30 % ist der Wert des modalen Leser-Blatts
+          (`LeserPanelZone`), nicht die 50 % der Vollflächen-Schublade: dieses
+          Menü misst 240 × 199 px und ist kein Vollbild (Minimalismus-Vorgabe
+          David 28.7.2026, «Optik des Gesetzes nicht überladen»).
+
+          UNTER dem klebenden Kopf (`z-[16]` gegen dessen `z-[17]`) und darum
+          per Portal am `<body>`, nicht im Kopf-Teilbaum: so tritt der Lesetext
+          zurück, während Öffner UND Menü scharf stehen — das ist zugleich der
+          «sichtbare Bezug zum auslösenden Knopf», den LM-015 zusätzlich
+          verlangt. Läge der Scrim im Kopf-Teilbaum, dimmte er den Trigger mit.
+
+          A11Y: `aria-hidden`, kein Tab-Stopp, keine Rolle (Muster Shell) — der
+          Weg hinaus bleibt Escape, Aussenklick und der Öffner selbst. Der
+          Klick-Handler ist trotzdem eigens verdrahtet: `usePopoverAutoZu` prüft
+          den Aussenklick gegen `wrapRef`, und diese Fläche liegt im Portal
+          ausserhalb davon — die Zusage «Klick auf die Abdunklung schliesst»
+          soll nicht davon abhängen, wo der Knoten hängt. */}
+      {offen && createPortal(
+        <div
+          data-v3-ansicht-scrim
+          className="fixed inset-0 z-[16] bg-black/30"
+          onClick={() => setOffen(false)}
+          aria-hidden
+        />,
+        document.body,
+      )}
 
       {offen && (
         <div
