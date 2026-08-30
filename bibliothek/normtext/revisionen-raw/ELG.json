@@ -613,6 +613,38 @@
         "type": "literal",
         "value": "Legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (LPC) (Riforma delle PC)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "831.30"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/434"
+      },
+      "dateForce": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2025-06-20"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Loi fédérale sur les prestations complémentaires à l’AVS et à l’AI (Loi sur les prestations complémentaires, LPC)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (LPC)"
+      }
     }
   ],
   "aStaende": [
@@ -633,6 +665,8 @@
     "2024-01-01",
     "2025-01-01",
     "2026-01-01",
+    "2027-01-01",
+    "2028-01-01",
     "2029-01-01"
   ]
 }

@@ -1,9 +1,22 @@
 {
   "erlassKey": "SSV",
   "sr": "741.21",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/438",
+      "dateDocument": "2026-08-12",
+      "roFundstelle": "AS 2026 438",
+      "titelDe": "Signalisationsverordnung (SSV)",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR)",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/438/de",
+      "sha": "50cff585a139e6040e2fabc8a337184521b177e18e70780c4641a1c2c8ea8f5d"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-07-01",
@@ -323,5 +336,5 @@
       "sha": "66a0e32b92bb25bf085f8e97a6e7fb772a50ee6be74399a8f3590045ecd5d31f"
     }
   ],
-  "sha": "998fec368b4d9551e0cfeca78b0263e5b9ab12f8f28e13b1eeeaf3999b62fac7"
+  "sha": "80db35e95d176d30779697ef714795a255dc1ed55a22ac17113bffa14376f596"
 }

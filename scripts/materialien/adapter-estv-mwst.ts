@@ -165,12 +165,23 @@ export function parseTocBaum(html: string): TocBaum {
 /**
  * Normalisiert das ToC-XHTML für den Drift-Hash: JSF-ViewState-Werte genullt (volatil je
  * Request — zwei normalisierte Fetches sind live byte-gleich, 4.7.2026). Rein.
+ *
+ * `main-active` ergänzt 30.8.2026 (§17-Wurzel-Fix QS-MONITOR-ROT, PR #581): die
+ * JSF-Navigation markiert je nach Sitzung/Abrufweg ein anderes `<li
+ * role="presentation">` mit `class="main-active"` — der Diff zwischen «Drift»
+ * und «kein Drift» derselben Seite war genau diese eine Zeile (sechs Tor-Läufe,
+ * jedes Mal eine andere Rotmenge; INFO-12 in 20 Einzelabrufen 20/20 stabil).
+ * Ein sitzungsabhängiger Navigations-Zustand ist kein Inhalt; ihn mitzuhashen
+ * macht das Drift-Tor flaky, ohne je echte Drift zu fangen. Bewusst ENG: nur
+ * das Attribut `class="main-active"` auf `<li>` — Inhaltsklassen bleiben im Hash.
  */
 export function normalisiereToc(html: string): string {
-  return html.replace(
-    /(name="javax\.faces\.ViewState"[^>]*value=")[^"]*(")/g,
-    '$1$2',
-  );
+  return html
+    .replace(
+      /(name="javax\.faces\.ViewState"[^>]*value=")[^"]*(")/g,
+      '$1$2',
+    )
+    .replace(/(<li\b[^>]*?)\s*class="main-active"/g, '$1');
 }
 
 /** Drift-Token einer Publikation = sha256/16 über das normalisierte komplette ToC-XHTML (§3 Q1). */

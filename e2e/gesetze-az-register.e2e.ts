@@ -110,6 +110,62 @@ test.describe('IA-3 · A–Z-Register — Budget-Walk + Einsortierung', () => {
     await expect(page.getByRole('button', { name: /Direkt zum Artikel springen/ })).toBeVisible()
   })
 
+  // LM-162 (B6-N1, Sichtprüfung 29.7.2026): «Der Kasten wächst mit seinem
+  // Inhalt.» Der frühere `h-96`-Entscheid liess bei acht Titeln unter «M»
+  // 138 px leeren Rahmen stehen — eine Fläche, die mehr behauptet, als da ist
+  // (§8). Gemessen wird beides: die kleine Klasse hat keinen Leerrand mehr, die
+  // grosse bleibt bei 384 px gedeckelt (sonst zöge «V» mit 589 Titeln den Footer
+  // ins Nirgendwo und die Scroll-Region verlöre ihren Sinn).
+  test('LM-162: Kasten wächst mit dem Inhalt — kleine Klasse ohne Leerrand, grosse bei 384 px gedeckelt', async ({ page }) => {
+    await page.goto('/gesetze')
+    const box = page.getByRole('region', { name: 'Register-Liste' })
+    // `scrollHeight` taugt NICHT als Inhaltsmass: es ist nie kleiner als
+    // `clientHeight`, meldete bei der alten Fixhöhe also auch für acht Titel
+    // «voll» — genau der Leerraum, den LM-162 beschreibt, wäre unsichtbar
+    // geblieben (im Rot-Beweis 30.8.2026 lief die Zeile deshalb zunächst grün).
+    // Gemessen wird darum die Höhe des LISTEN-Elements plus das Innenmass
+    // (p-2 = 8 px oben/unten) gegen die Innenhöhe des Rahmens.
+    const mass = () => box.evaluate((el) => {
+      const kind = el.firstElementChild as HTMLElement | null
+      const p = getComputedStyle(el)
+      return {
+        aussen: el.getBoundingClientRect().height,
+        innen: el.clientHeight,
+        inhalt: (kind?.getBoundingClientRect().height ?? 0)
+          + parseFloat(p.paddingTop) + parseFloat(p.paddingBottom),
+      }
+    })
+
+    // Kleinste NICHT leere Klasse aus den aria-labels der Leiste ziehen (keine
+    // Buchstaben-Konstante: der Korpus wächst, «M» von 2026 ist keine Invariante).
+    const klein = await leiste(page).evaluate((nav) => {
+      let best: { k: string; n: number } | null = null
+      for (const b of nav.querySelectorAll('button')) {
+        const m = /^(\S+) — (\d+) /.exec(b.getAttribute('aria-label') ?? '')
+        if (!m) continue
+        const n = Number(m[2])
+        if (n > 0 && (!best || n < best.n)) best = { k: m[1], n }
+      }
+      return best
+    })
+    expect(klein, 'keine nicht-leere Buchstaben-Klasse gefunden').not.toBeNull()
+    await leiste(page).getByRole('button', { name: new RegExp(`^${klein!.k} — `) }).click()
+    await expect(page.getByText(new RegExp(`Titel unter «${klein!.k}»`))).toBeVisible()
+
+    const k = await mass()
+    expect(k.aussen, `kleine Klasse «${klein!.k}» (${klein!.n} Titel) füllt weiter die alte Fixhöhe`).toBeLessThan(384)
+    // Kein Leerrand: Innenhöhe = Inhaltshöhe (Toleranz 2 px für Subpixel).
+    expect(Math.abs(k.innen - k.inhalt),
+      `Leerraum im Kasten: ${k.inhalt} px Inhalt in ${k.innen} px Innenhöhe`).toBeLessThanOrEqual(2)
+
+    // Grösste Klasse: Deckel hält, Inhalt scrollt.
+    await leiste(page).getByRole('button', { name: /^V — / }).click()
+    await expect(page.getByText(/Titel unter «V»/)).toBeVisible()
+    const v = await mass()
+    expect(v.aussen, 'Deckel max-h-96 (384 px) verletzt').toBe(384)
+    expect(v.inhalt, 'grosse Klasse scrollt nicht mehr').toBeGreaterThan(v.innen)
+  })
+
   test('Register nur auf dem Landeplatz — Säulen-Sichten bleiben unverändert (G4)', async ({ page }) => {
     await page.goto('/gesetze?ebene=bund')
     // Bund-Säule gewählt → kein Register-Block (der Landeplatz trägt ihn).
