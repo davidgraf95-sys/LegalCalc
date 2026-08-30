@@ -897,6 +897,38 @@
         "type": "literal",
         "value": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG). Correzione"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "834.1"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      },
+      "dateForce": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-07-01"
+      },
+      "dateDoc": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2025-12-19"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Angleichung der EO-Leistungen)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Harmonisation des prestations dans le régime des APG)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Armonizzazione delle prestazioni nell’ordinamento delle IPG)"
+      }
     }
   ],
   "aStaende": [
@@ -945,6 +977,7 @@
     "2024-07-01",
     "2025-01-01",
     "2025-01-28",
-    "2026-06-01"
+    "2026-06-01",
+    "2027-07-01"
   ]
 }

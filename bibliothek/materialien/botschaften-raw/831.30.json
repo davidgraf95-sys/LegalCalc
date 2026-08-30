@@ -6,6 +6,45 @@
     },
     "botschaft": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2024/2448"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/7024/0144"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2026/434"
+    },
+    "dateDoc": {
+      "type": "typed-literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-09-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "24.070"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (Leistungen für Hilfe und Betreuung zu Hause)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la modification de la loi sur les prestations complémentaires à l’AVS et à l’AI (Prestations d’aide et d’assistance à domicile)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (Prestazioni di aiuto e assistenza a domicilio)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "botschaft": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2000/99"
     },
     "proj": {
