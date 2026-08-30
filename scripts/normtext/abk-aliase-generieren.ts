@@ -733,7 +733,7 @@ async function verlustGegenprobe(
   return { bestaetigt, aufgetaucht };
 }
 
-async function pruefeDrift(hauptlauf: AliasZeile[], srAnzahl: number, srMitAlias: number): Promise<never> {
+async function pruefeDrift(hauptlauf: AliasZeile[], srAnzahl: number): Promise<never> {
   // Null-Resultat: das ist ein Endpoint-Befund, keine Rechtsänderung. Ohne diesen
   // Riegel meldete das Tor 597 «weggefallene» Kürzel und behauptete damit etwas
   // über das Recht, was in Wahrheit eine Aussage über die Leitung ist (§8).
@@ -788,6 +788,9 @@ async function pruefeDrift(hauptlauf: AliasZeile[], srAnzahl: number, srMitAlias
     );
   }
 
+  // SR-Zahl aus `live` gezählt, nicht aus dem Hauptlauf: sonst zeigte die Zeile
+  // 199/230 neben 597 Zeilen, sobald eine SR per Einzelabfrage dazukam.
+  const srMitAlias = new Set(live.map((z) => z.sr)).size;
   console.log(`\n  Live:     ${live.length} Zeilen (${srMitAlias}/${srAnzahl} SR mit Alias)`);
   console.log(`  Artefakt: ${bestand.length} Zeilen (${ZIEL})`);
 
@@ -948,7 +951,7 @@ export async function main(): Promise<void> {
   // Schreib-Lauf schreiben würde. Jede frühere Verzweigung hätte einen zweiten,
   // nur ähnlichen Pfad geschaffen — und ein Prüfer, der etwas anderes berechnet
   // als der Generator, prüft den Generator nicht (§5/§6.7).
-  if (NUR_PRUEFEN) await pruefeDrift(zeilen, srs.length, jeSrSprache.size);
+  if (NUR_PRUEFEN) await pruefeDrift(zeilen, srs.length);
 
   // ── Regressions-Tor: weniger Zeilen als committet ⇒ Abbruch (§6.7) ──────────
   const alt = bestandZeilen();

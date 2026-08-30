@@ -150,7 +150,11 @@ function antwortAuf(q: string): SparqlBinding[] {
   return q.includes('COUNT(*)') ? [{ n: { value: String(zeilen.length) } }] : zeilen;
 }
 
-class Beendet extends Error { constructor(public code: number) { super(`exit ${code}`); } }
+class Beendet extends Error {
+  readonly code: number;
+
+  constructor(code: number) { super(`exit ${code}`); this.code = code; }
+}
 
 const argvVorher = process.argv;
 process.argv = ['node', 'abk-aliase-generieren.ts', '--check'];
