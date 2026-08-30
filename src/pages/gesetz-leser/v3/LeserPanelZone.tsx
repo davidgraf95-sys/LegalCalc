@@ -265,9 +265,19 @@ export function LeserPanelZone({
         <>
           {/* Der Scrim gehört zum MODALEN Blatt. Auf D gibt es keinen — dort ist
               das Panel Beiwerk, und ein Scrim hätte den Lesetext, den es
-              erläutert, hinter einer Scheibe gezeigt (Ä52). */}
+              erläutert, hinter einer Scheibe gezeigt (Ä52).
+
+              B7-N1 (30.8.2026): `bg-ink-900/30` → `bg-black/30`. `--ink-900`
+              flippt mit dem Thema (`src/index.css`: hell `#201E16`, dunkel
+              `#E9E7E2`) — im Dunkelmodus legte dieser «Scrim» also einen
+              HELLEN Schleier über den Lesetext und hellte auf, statt
+              abzudunkeln. `components/layout/Shell.tsx` hat für den
+              Schubladen-Scrim genau das schon notiert («bg-ink-900 wäre im
+              Dunkelmodus hell»); hier stand der Fehler noch. Deckkraft
+              unverändert 30 % — reine Farbkorrektur, keine Ton-Änderung. */}
           {modal && (
-            <div className={imPaneBlatt ? 'pointer-events-auto absolute inset-0 z-40 bg-ink-900/30' : 'fixed inset-0 z-40 bg-ink-900/30'}
+            <div data-v3-panel-scrim
+              className={imPaneBlatt ? 'pointer-events-auto absolute inset-0 z-40 bg-black/30' : 'fixed inset-0 z-40 bg-black/30'}
               onClick={schliesse} aria-hidden />
           )}
           <div

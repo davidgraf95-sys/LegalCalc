@@ -19,21 +19,41 @@
 // Anfangsbuchstaben, nicht das Kürzel» (§11.3 H1-Budget, weiterhin 2 Klicks).
 //
 // Perf (§15/R-PERF-5): Lazy-je-Buchstabe — es rendert IMMER nur die gewählte
-// Buchstaben-Klasse (grösste: V mit ~589 Titeln), nie alle 1469. CLS 0 durch
-// RESERVIERTEN Platz (§15.2, CI-Befund PR #347): die Ergebnisliste lebt in einem
-// Scroll-Container mit KONSTANTER Höhe — Klassen-Wechsel ändern nur den
-// Inhalt, nie die Aussengeometrie (Footer/Umfeld stehen still, egal wie spät der
-// Commit auf langsamer Hardware landet; die 500-ms-Input-Gnade trägt dort nicht).
+// Buchstaben-Klasse (grösste: V mit ~589 Titeln), nie alle 1469.
+//
+// ── CLS-ENTSCHEID, LM-162 (B6-N1, 30.8.2026): `h-96` → `max-h-96` ──────────
+// Der frühere Entscheid war «KONSTANTE Höhe in JEDEM Zustand» (§15.2, CI-Befund
+// PR #347). Er ist mit LM-162 (Sichtprüfung 29.7.2026) ausdrücklich GEÄNDERT,
+// nicht still gekippt: bei acht Titeln unter «M» standen 138 px leerer Rahmen,
+// und der Kasten behauptete damit eine Menge, die er nicht hat (§8).
+//
+// DER ENTSCHEID TRÄGT WEITER, WO ER TRUG, und fällt, wo er nur noch Weissraum
+// kostete. Was PR #347 wirklich rot machte, waren INPUT-FREIE Shifts: (a) die
+// asynchron korrigierten content-visibility-Platzhalter der Zeilen und (b)
+// LI-Knoten, die React über den Klassen-Wechsel hinweg wiederverwendete und die
+// dann IM Scroll-Container wanderten. Beide Gegenmittel bleiben unverändert
+// bestehen (kein content-visibility; `key` am <ul> erzwingt frische Knoten).
+// Die AUSSENhöhe des Kastens ändert sich dagegen ausschliesslich auf einen
+// Buchstaben-Klick — dieselbe Kategorie, die dieser Kopf für die erste Montage
+// der Box schon seit Befund 19 (18.8.2026) als unschädlich führt. Zwei Klicks
+// derselben Leiste dürfen nicht verschieden bewertet werden.
+//
+// GEMESSEN, nicht behauptet (§6.7): `e2e/gesetze-az-register.e2e.ts` fährt unter
+// CPU-Drossel 6× V (589 Titel) → G und danach einen Innen-Scroll und verlangt
+// CLS === 0 auf input-freie Shifts; `e2e/gesetze-footer-cls.e2e.ts` deckt den
+// Footer derselben Seite. Beide bleiben grün. Zusätzlich prüft die Spec jetzt
+// die Aussage des Befundes selbst: kleine Klasse ⇒ Kasten < 384 px und ohne
+// Leerrand, grosse Klasse ⇒ bei 384 px gedeckelt und scrollbar.
+//
 // BEWUSST kein content-visibility auf den Zeilen: dessen Platzhalter-Schätzung
 // (contain-intrinsic-size) wurde asynchron auf die echte Zeilenhöhe korrigiert —
 // genau die input-freien LI-Shifts, die das CLS-Tor in CI rot machten (Quellen-
 // Attribution 25.7.2026: prev 44px → cur 29/50px). Ein einziger synchroner
-// Layout-Pass je Commit ist hier billiger und shift-frei. Die h-96-Scroll-Box
-// wird ERST montiert, sobald ein Buchstabe gewählt ist (Befund 19, 18.8.2026:
-// leerer Startzustand belegte einen halben Bildschirm) — dieser Wechsel ist
-// IMMER klick-/input-getrieben (nie async) und verletzt die CLS-Invariante
-// darum nicht (die gilt für Wechsel ZWISCHEN Klassen, nicht für die erste,
-// nutzerausgelöste Öffnung).
+// Layout-Pass je Commit ist hier billiger und shift-frei. Die Scroll-Box wird
+// ERST montiert, sobald ein Buchstabe gewählt ist (Befund 19, 18.8.2026: leerer
+// Startzustand belegte einen halben Bildschirm) — dieser Wechsel ist IMMER
+// klick-/input-getrieben (nie async) und verletzt die CLS-Invariante darum
+// nicht; seit LM-162 gilt dieselbe Begründung für den Wechsel ZWISCHEN Klassen.
 //
 // Mobil kollabiert (§3.1 «keine Wucherung», §11.5-DoD): auf schmalen Viewports
 // startet die Sektion zugeklappt (Disclosure-Button, aria-expanded).
@@ -175,13 +195,15 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                 </span>
               </p>
               {/* Scrollbare Region: tastatur-erreichbar (tabIndex, axe
-                  scrollable-region-focusable) und benannt. Die Höhe ist ein
-                  Skalen-Wert (h-96) und bleibt in JEDEM Zustand gleich. */}
+                  scrollable-region-focusable) und benannt.
+                  LM-162 (B6-N1, 30.8.2026): `h-96` → `max-h-96` — der Kasten
+                  wächst mit seinem Inhalt und DECKELT erst bei 384 px (dann
+                  scrollt er). Herleitung im Datei-Kopf. */}
               <div
                 role="region"
                 aria-label="Register-Liste"
                 tabIndex={0}
-                className="h-96 overflow-y-auto overscroll-contain rounded border border-line/70 p-2"
+                className="max-h-96 overflow-y-auto overscroll-contain rounded border border-line/70 p-2"
               >
                 {liste.length > 0 ? (
                   <ul
