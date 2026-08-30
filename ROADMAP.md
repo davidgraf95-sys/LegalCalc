@@ -303,7 +303,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   <!-- @meta id: W2·17-UI-BEFUNDE · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil; alles reine Darstellungsschicht, Blocker zuerst.
   **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §24.
-  - [ ] **B6-N1 · LM-162: Ergebniskasten wächst mit dem Inhalt** — Entscheid David 8.8.2026; CLS-Budget trotzdem halten. §7.
+  - [x] **B6-N1 · LM-162: Ergebniskasten wächst mit dem Inhalt** — Entscheid David 8.8.2026; CLS-Budget trotzdem halten. §7.
   - [ ] **B6-N2 · LM-164: «nicht erfasst» wird ausgewiesen** — Entscheid David 8.8.2026; Beschriftung ehrlich (§8), beide Themes. §7.
   - [ ] **B7-N1 · Scrim hinter Overlays (LM-010/LM-015)** — Entscheid David 8.8.2026; dezent, Token-Rolle, a11y-fest. §8.
   - [ ] **B8 · Menüinhalt, Zustandsanzeige, Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9.
