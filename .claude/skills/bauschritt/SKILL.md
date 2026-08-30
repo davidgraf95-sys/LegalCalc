@@ -1,6 +1,6 @@
 ---
 name: bauschritt
-description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadmap-Schritt — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», Bau-Auftrag aus plan-bild.html. Kodifiziert Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss sowie, via aufraeumen.md, das Steuer-Doku-Aufräumen («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken»); Nachfolger von aufraeumen (QS-SKILL-DIAET 8.8.2026).
+description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadmap-Schritt — Trigger «Baue den LexMetrik-ROADMAP-Schritt …», «bau das», «nimm den nächsten Schritt», Bau-Auftrag aus plan-bild.html. Kodifiziert Einstieg → Bau → Prüfung → Landung → Weiterbau → Abschluss sowie, via aufraeumen.md, das Steuer-Doku-Aufräumen («räum die Roadmap auf», «Ceiling gerissen», «struktur-rotieren.py --check rot», «ROADMAP zu gross», «Chronik-Überführung», «Fahrplan archivieren», «Steuer-Doku verschlanken»).
 ---
 
 # Bauschritt — Standard-Lebenszyklus einer Bau-Session

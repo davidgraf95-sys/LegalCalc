@@ -119,6 +119,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   geschnitten sind (Kontaktbogen H4 §7a: «Passende Werkzeuge» und `kontextSoftLaw` gehören nicht in
   «Materialien»). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
   - [ ] «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen (`bezugAuswahl.ts`/`bezuegeLaden.ts`) — Code-Zusage ohne Deckung ist keine Option (§5/§8). §13.
+  - [x] **Ankunfts-Sprung `?norm=` nutzt beide Fundstellen-Regeln** *(Auftrag David 30.8.2026)* — `ankunftsAnker` (`src/pages/entscheidLeserRegeln.ts`): Fedlex-Fundstelle, sonst erste wörtliche Nennung; e2e-Deckung des SPLIT-Wegs neu (`e2e/split-erwaegungssprung.e2e.ts`). Gemessen über alle 75 365 Kanten: 46.6 % → 48.8 % (Bund 54.3 → 55.3 %, **Kanton 0.0 → 9.1 %**).
+  - [ ] **Kantonaler Zitat-Resolver** — 9 674 kantonale Kanten haben weiterhin kein Sprungziel: `fedlexLinkFuerArtikel`/`normVerweiseImText` kennen nur Bundesrecht, und die wörtliche Regel greift nur, wo der Entscheid exakt `§ N <Kürzel>` schreibt. Nötig wäre eine Kürzel-/Alias-Tabelle je kantonalem Erlass **mit Kanton-Scoping** (ein «StG» in BS ist nicht das «StG» in ZH — ohne Scoping entstünde ein stumm falscher Sprung, §1). Risiko-Pfad Extraktion ⇒ eigener Schritt mit Gegenprüfung, nicht als UI-Nebenprodukt.
 
 ---
 
@@ -140,8 +142,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   <!-- @meta id: W2·5l-NORMTEXT-B2 · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md -->
   **Golden-Re-Bless erwartet** (additiv). Tragende Falle: Token-Kollision `disp_u1`/`art_1` — ohne
   eigenen id-Raum stiller Daten-Verlust.
-  **Detail:** [FAHRPLAN-NORMTEXT-DARSTELLUNG.md](fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md), Abschnitte
-  M13 und M14 + Resume-Hinweis *(die Datei gliedert ohne §-Sigel — Regel 11 kann hier nicht binden)*.
+  **Detail:** [FAHRPLAN-NORMTEXT-DARSTELLUNG.md](fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md) §M13/§M14
+  (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
 - [ ] **Kantonale Gesetze — Daten & Extraktion** *(`W2·13-KANTONE-DATEN`, Aufteilung 8.8.2026, sortenrein)*
   <!-- @meta id: W2·13-KANTONE-DATEN · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -200,6 +202,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Dach für die offenen Reparaturen an Normtext- und Rechtsprechungs-Korpus; je Zeile eine
   sortenreine Bau-Einheit. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §1.
   - [ ] **`adapter-lexwork.ts:778` Fetch-Ergebnis unvalidiert** — Shape vor Verwendung prüfen.
+  - [ ] **Bezüge-Kanten mit Phantom-Zitaten** *(Befund Split-Bau 30.8.2026, PR #582)* — 18 854 von
+    75 365 Artikel↔Entscheid-Kanten nennen den Artikel im Entscheid-Snapshot gar nicht; Stichprobe
+    `bge_148_V_265` trägt `«Art. 4 BGE»` in `zitierteNormen` (Extraktions-Artefakt). Wurzel im
+    Bezüge-/Zitat-Generator suchen (Risikopfad, Gegenprüfung), nie in den Daten flicken.
   - [ ] **Geltende BMV in den Korpus aufnehmen** — Totalrevision `cc/2025/408` (gleiche SR 412.103.1) fehlt; Nutzer finden nur den historischen Text.
   - [ ] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — 23 amtliche Sektionen liegen ausserhalb `div#annex`; golden-Diff erwartet (neue amtliche Substanz).
   - [ ] **Entscheid-Datumsfehler bereinigen** — `bge_151_II_475` trägt 1999 statt 2025; Register-Sweep nach weiteren Band/Jahr-Diskrepanzen.
@@ -437,8 +443,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   <!-- @meta id: SEO-A11Y · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md -->
   A11y zahlt auf Bedienbarkeit ein → begleitendes Tor (Tabellen-Semantik, Tastatur-e2e, hreflang).
   Reines SEO bleibt geparkt.
-  **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md), Abschnitte 4
-  (SEO) und 5 (A11y) *(die Datei gliedert ohne §-Sigel — Regel 11 kann hier nicht binden)*.
+  **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §4/§5
+  (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
 - [ ] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`)*
   <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
