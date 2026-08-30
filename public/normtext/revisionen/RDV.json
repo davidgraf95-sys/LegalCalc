@@ -1,9 +1,21 @@
 {
   "erlassKey": "RDV",
   "sr": "143.5",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-08-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/423",
+      "dateDocument": "2026-08-19",
+      "roFundstelle": "AS 2026 423",
+      "titelDe": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)",
+      "titelFr": "Ordonnance sur l’établissement de documents de voyage pour étrangers (ODV)",
+      "titelIt": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/423/de",
+      "sha": "0ca4de825f75ac5c9b31acaca79d4b29172f4e80f3ca26d41d5aadfd2b2d603c"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-11-01",
@@ -239,5 +251,5 @@
       "sha": "6a43e408a4019ad3fa664bb9e3d525a2aec31600f2ee3e16cc5c29370d1c4a8d"
     }
   ],
-  "sha": "feb1413d913fdfb76ab3211bc1abef8ad362661c6a7a8fcea940d828d18efd02"
+  "sha": "a902deb1618e2af2b0a1c535e52e328f0dfca42aa6fb8d2fdf72c74d8a1a2f48"
 }

@@ -25,10 +25,14 @@ Verweise in Code-Kommentaren per grep auffindbar bleiben). Wissens-Quellen
 (PDF/DOCX, gitignored) in `bibliothek/quellen/` (`SICHTUNG.md`).
 
 **Pflegeregel Session-Karten (Token-Disziplin 11.6.2026; mechanisiert 10.7.2026,
-QS-TOK/T1):** Dieses Dokument wird in jeder Session und jedem Subagenten gelesen —
-Karten abgeschlossener Sessions (älter als ~2 Arbeitstage) wandern darum BYTE-GENAU
-nach `archiv/STRUKTUR-SESSIONKARTEN.md` (neue Blöcke oben anhängen); hier bleibt der
-Verweis-Abschnitt. Neue Karten werden am Anker `<!-- KARTEN -->
+QS-TOK/T1):** Dieses Dokument ist Nachschlagewerk, keine Pflichtlektüre (T19;
+die frühere Kopfzeile «wird in jeder Session gelesen» war seit der Entkopplung
+falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
+~2 Arbeitstage) wandern BYTE-GENAU nach `archiv/STRUKTUR-SESSIONKARTEN.md`
+(neue Blöcke oben anhängen); hier bleibt der Verweis-Abschnitt. Neue Karten
+werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
+
+<!-- KARTEN -->
 
 ## Session 29.8.2026 (Abend) — Steuerungs-Diät: Plan-Neuschnitt + Ritual-Diät (#577, #576, #578; §17-Lehre)
 

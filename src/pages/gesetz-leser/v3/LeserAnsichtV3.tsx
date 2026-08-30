@@ -3,6 +3,7 @@ import { useLeserSchriftskala as useSchriftskala } from '../leserSchrift';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { kopfGlypheKlassen, kopfGriffKlassen } from './kopfStufen';
 import { setzeOption, useLeserOptionen, type OptFeld } from '../leserOptionen';
+import { LeserScrim } from './LeserScrim';
 
 // ─── «Ansicht ▾» der V3-Kopfzeile (FAHRPLAN-LESER-V3 Kap. 4a/4f, H1) ─────────
 //
@@ -194,6 +195,12 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
           ? <span aria-hidden className={kopfGlypheKlassen(true)}>···</span>
           : <><span aria-hidden>◧</span><span>Ansicht</span><span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span></>}
       </button>
+
+      {/* B7-N1 · LM-015: die abdunkelnde Fläche hinter diesem Menü. Regel,
+          Farbwahl, Stapelordnung und a11y stehen im Kopf von `./LeserScrim`
+          — kurz: der Scrim folgt der FOKUS-FALLE (Modus `popover` fängt sie),
+          nicht der Fläche; Ä52 bleibt davon unberührt. */}
+      {offen && <LeserScrim onSchliessen={() => setOffen(false)} />}
 
       {offen && (
         <div

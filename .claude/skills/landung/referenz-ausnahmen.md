@@ -33,3 +33,11 @@ Arbeitsverzeichnis.
 | «Der /tmp-Worktree schützt vor dem Hochladen von untracked Ballast.» | Der Git-Deploy baut nur Committetes — untracked erreicht Vercel gar nicht. Die echte Gefahr ist versehentliches Committen (Schritt 0.3). |
 | «Nur ein flakiger Test rot / fast grün — mergen und nachbessern.» | Bewusste Grenze (Schritt 7): nichts mergen, was Tore rot lässt oder nicht doppelt verifiziert ist. |
 
+
+## Buchstabe = Geist — Umgehungs-Aufzählung (Umzug 31.8.2026 aus SKILL.md)
+
+Ein zweiter Prod-Deploy-Pfad, der «technisch kein `vercel --prod` ist»
+(z. B. `vercel deploy --prebuilt`, `vercel promote` bzw. der Dashboard-Klick
+«Promote to Production» auf einem Preview-Deploy, das Vercel-MCP-Tool
+`deploy_to_vercel`, ein Redeploy-Klick im Dashboard), ist derselbe verbotene
+racende Doppel-Deploy. Den Buchstaben umgehen heisst den Geist verletzen.
