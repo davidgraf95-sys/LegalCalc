@@ -3,8 +3,9 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseHTML } from 'linkedom';
 import {
-  nennungsAnker, sammleNennungen, zaehleNennungen, zitatMuster,
+  ankunftsAnker, nennungsAnker, sammleNennungen, zaehleNennungen, zitatMuster,
 } from '../pages/entscheidLeserRegeln';
+import { ersteFundstelle } from '../lib/rechtsprechung/abschnitte';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 
 // ─── W2·17-UI-BEFUNDE-B2 / Los E — LM-208: Herkunft und Fundstelle ──────────
@@ -159,5 +160,50 @@ describe('Verdrahtung im Leser (LM-208)', () => {
 
   it('bietet den Sprung zur nächsten Fundstelle über nennungsAnker an', () => {
     expect(traegt(/nennungsAnker\(/), 'kein Fundstellen-Sprung').toBe(true);
+  });
+});
+
+// ─── Ankunfts-Sprung: EINE Wahrheit statt zwei (Auftrag David 30.8.2026) ─────
+//
+// BEFUND. Der Leser kannte zwei Fundstellen-Regeln und benutzte für die ANKUNFT
+// nur die Fedlex-URL-Regel (`ersteFundstelle`), während die Herkunfts-Zeile die
+// Ziele der WÖRTLICHEN Regel (`nennungsAnker`) bereits als «↓ Fundstelle 1/n»
+// anbot. Wo nur die zweite etwas fand, sagte die Seite dem Nutzer, wo die
+// Fundstelle steht — und ging trotzdem nicht hin («ich lande am Anfang»).
+// Kantonales Recht traf das IMMER: Fedlex kennt nur Bundesrecht, die Quote lag
+// dort gemessen bei 0.0 % (75 365 Kanten, s. Herleitung an `ankunftsAnker`).
+describe('ankunftsAnker — Fedlex zuerst, wörtliche Nennung als Fallback', () => {
+  it('Bestand unverändert: wo ersteFundstelle greift, gewinnt sie (§6)', () => {
+    const snap = ladeSnapshot('bund/bge/151_III_377.json');
+    expect(ersteFundstelle(snap.abschnitte, 'Art. 684 ZGB')).toBe('e-2-3-1');
+    expect(ankunftsAnker(snap.abschnitte, 'Art. 684 ZGB', ersteFundstelle)).toBe('e-2-3-1');
+    // …und zwar auch dort, wo die wörtliche Regel ein ANDERES Ziel wählte:
+    // «Art. 684 ZGB» steht wörtlich erst in E. 2.4, die Fedlex-Regel findet über
+    // die i.V.m.-Kette schon E. 2.3.1. Der Fallback darf das nicht umlenken.
+    expect(nennungsAnker(snap.abschnitte, 'Art. 684 ZGB')[0]).toBe('e-2-4');
+  });
+
+  it('BUNDESRECHT ausserhalb des Fedlex-Verzeichnisses: AsylG landet jetzt', () => {
+    const snap = ladeSnapshot('bund/bge/148_IV_281.json');
+    // Rot-Beweis (§6.7): die bisherige Regel allein findet hier nichts.
+    expect(ersteFundstelle(snap.abschnitte, 'Art. 1 AsylG')).toBeNull();
+    expect(ankunftsAnker(snap.abschnitte, 'Art. 1 AsylG', ersteFundstelle)).toBe('e-1-4-2');
+  });
+
+  it('KANTONALES RECHT: § 4 BüRG landet auf der zitierenden Erwägung', () => {
+    const snap = ladeSnapshot('kanton/BS/bs_appellationsgericht/VD.2021.223.json');
+    // Rot-Beweis: Fedlex kennt kantonales Recht nicht — vorher IMMER Seitenanfang.
+    expect(ersteFundstelle(snap.abschnitte, '§ 4 BüRG')).toBeNull();
+    expect(ankunftsAnker(snap.abschnitte, '§ 4 BüRG', ersteFundstelle)).toBe('e-2-3-3');
+  });
+
+  it('keine der beiden Regeln findet etwas ⇒ null (ehrlicher Seitenanfang, §8)', () => {
+    const snap = ladeSnapshot('kanton/BS/bs_sozialversicherungsgericht/UV.2023.8.json');
+    // Der reproduzierte «ff.»-Fall: raten ist verboten, also bleibt es bei null.
+    expect(ankunftsAnker(snap.abschnitte, 'Art. 367 OR', ersteFundstelle)).toBeNull();
+  });
+
+  it('der Leser benutzt ankunftsAnker für den ?norm=-Sprung (Verdrahtung)', () => {
+    expect(/ankunftsAnker\(/.test(readFileSync('src/pages/EntscheidLeser.tsx', 'utf8'))).toBe(true);
   });
 });

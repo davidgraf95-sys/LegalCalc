@@ -19,7 +19,7 @@ import { normalisiereRegeste, type BrowseEntscheid, type RichterRef } from '../l
 import { besetzungsTeile } from '../lib/rechtsprechung/besetzung-verlinkung';
 import { GEBIET_LABEL } from '../lib/normtext/register';
 import {
-  ENTSCHEID_HIGHLIGHT_INSTANZ,
+  ENTSCHEID_HIGHLIGHT_INSTANZ, ankunftsAnker,
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
   trefferInErwaegungen, urlMitHash, urlMitLese, zaehleNennungen, zaehleTreffer,
 } from './entscheidLeserRegeln';
@@ -443,7 +443,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     const abschnitte = bodyTab === 'auszug' && (snap.auszugAbschnitte?.length ?? 0) > 0
       ? snap.auszugAbschnitte!
       : snap.abschnitte;
-    const anker = ersteFundstelle(abschnitte, normParam);
+    // EINE Ankunfts-Wahrheit (§5): Fedlex-Fundstelle, sonst die erste wörtliche
+    // Nennung — genau die Ziele, die die Herkunfts-Zeile unten schon als
+    // «↓ Fundstelle 1/n» anbietet. Herleitung und Messung: `ankunftsAnker`.
+    const anker = ankunftsAnker(abschnitte, normParam, ersteFundstelle);
     if (!anker) { normGesprungen.current = merkKey; return; } // ehrlicher Seitenanfang
     let frames = 0;
     let raf = requestAnimationFrame(function versuche() {
