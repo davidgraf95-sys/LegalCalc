@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-29",
+  "erzeugt": "2026-08-30",
   "materialien": [
     {
       "key": "ESTV-KS-DBG-5A",
@@ -6967,6 +6967,34 @@
       "sha": "cd8c6d1da61437580356abfb17f6783027c033becfa5c89fa056800948109f90"
     },
     {
+      "key": "BOTSCHAFT-2025-1528",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über den Erwerbsersatz (Angleichung der EO-Leistungen)",
+      "nummer": "25.039",
+      "rechtsgebiet": "sozialversicherung",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2025/1528/de",
+      "stand": "2025-04-16",
+      "rang": 79749584,
+      "normKeys": [
+        "EOG"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+      "titelFr": "Message concernant la modification de la loi fédérale sur les allocations pour perte de gain (Harmonisation des prestations dans le régime des APG)",
+      "titelIt": "Messaggio concernente la modifica della legge sulle indennità di perdita di guadagno (Armonizzazione delle prestazioni nell’ordinamento delle IPG)",
+      "projEli": "https://fedlex.data.admin.ch/eli/dl/proj/7024/0194",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2026/433"
+      ],
+      "botschaftDate": "2025-04-16",
+      "sha": "405845bd170980f9636170207e24b959e349c410e1e7505aec29c0c95149f3e3"
+    },
+    {
       "key": "BOTSCHAFT-2025-1478",
       "behoerde": "BR",
       "behoerdeName": "Bundesrat (Botschaften)",
@@ -7107,6 +7135,34 @@
       ],
       "botschaftDate": "2024-10-16",
       "sha": "fe5d97cffdfbfe5b077c0163c11ba09c4594d7d3a43c12592e14b06c0105926c"
+    },
+    {
+      "key": "BOTSCHAFT-2024-2448",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (Leistungen für Hilfe und Betreuung zu Hause)",
+      "nummer": "24.070",
+      "rechtsgebiet": "sozialversicherung",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2024/2448/de",
+      "stand": "2024-09-13",
+      "rang": 79759087,
+      "normKeys": [
+        "ELG"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+      "titelFr": "Message relatif à la modification de la loi sur les prestations complémentaires à l’AVS et à l’AI (Prestations d’aide et d’assistance à domicile)",
+      "titelIt": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (Prestazioni di aiuto e assistenza a domicilio)",
+      "projEli": "https://fedlex.data.admin.ch/eli/dl/proj/7024/0144",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2026/434"
+      ],
+      "botschaftDate": "2024-09-13",
+      "sha": "8d58358431028832140a9a46a24eb47861664317422d36f610101c3029c12cee"
     },
     {
       "key": "BOTSCHAFT-2024-2479",

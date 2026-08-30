@@ -1,9 +1,16 @@
 {
   "erlassKey": "OR",
   "sr": "220",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-07-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/220",
+      "sha": "799f99bac8df60e928002da6f3af8229537aa6db0d2fe276ca12dcfc21f05607"
+    },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2026-10-01",
@@ -573,5 +580,5 @@
       "sha": "13052e9f0b3ae33e38b144b1192f130fa732645edfc44db5b4211c5e75acebd2"
     }
   ],
-  "sha": "73abcec21f69f6692341355e7bf972eb8876d8ca24aca3d974000cd1c464ec2a"
+  "sha": "c4d49c971f31ff9959868645bdcb5c944e5ebf4dda7cbccd1bed0c1b637c78ef"
 }
