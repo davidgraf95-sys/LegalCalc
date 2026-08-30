@@ -94,8 +94,8 @@ export const OEFFNER_SELEKTOR = '[data-v3-panel-oeffner]';
  * `0` heisst «geladen, dieser Artikel führt keine Entscheide» und ergibt
  * ebenfalls KEINEN Zähler: ein «0 Entscheide →» ist genau der leere Zähler, den
  * die Erlass-Neutralitäts-Regel verbietet (Kantonserlasse ohne Bezüge).
- * Der Öffner bleibt in beiden Fällen da — er führt zu drei Reitern, nicht nur
- * zu den Entscheiden.
+ * Der Öffner bleibt in beiden Fällen da — er führt zu allen Reitern der Leiste
+ * (seit W2·7-VZUI vier), nicht nur zu den Entscheiden.
  */
 export function oeffnerLabel(anzahl: number | null): string {
   if (anzahl === null || anzahl <= 0) return 'Rechtsprechung';

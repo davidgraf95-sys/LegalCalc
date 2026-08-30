@@ -150,7 +150,13 @@ export function LeserPanel({
           334, gebaut und verworfen). Eine Leiste, die ihr viertes Fach
           verschluckt, ist die Falle; eine, die waagrecht scrollt, ist die
           kleinste ehrliche Antwort. `shrink-0` an den Reitern, sonst quetscht
-          Flexbox sie in die vorhandene Breite statt zu scrollen. */}
+          Flexbox sie in die vorhandene Breite statt zu scrollen.
+
+          DER VIERTE IST SEIT 31.8.2026 DA — «Anwendung», nicht «Zitat-Export»
+          (W2·7-VZUI). Die Vorsorge hat getragen: nachgemessen @1440 `scrollWidth`
+          385 gegen `clientWidth` 350, also 35 px Scrollweg und kein
+          abgeschnittenes Fach; @390 passt die Leiste ganz (388/388). Herleitung
+          samt Etiketten-Wahl im Kopf von `PanelAnwendung.tsx`. */}
       <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
         className="flex shrink-0 gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {
