@@ -13,7 +13,8 @@ aussagen bleiben `TODO(David)`-Gerüst bis zur Abnahme-Welle.
 
 > Read-only erstellt. Andere Agenten arbeiten parallel im Repo `/Users/david/Developer/LexMetrik` — dieser Fahrplan ändert nichts, er ist Ablage-Dokument. Empfohlener Ablageort: neuer `FAHRPLAN-SEO-A11Y-GOVERNANCE.md` (dockt thematisch an `FAHRPLAN-LERNPHASE-2026.md` Strang B = Verifikations-/Infrastruktur an). Überschneidet sich nur mit `FAHRPLAN-RECHTSPRECHUNG.md` (W1.1 revidiert dessen Annahme „nicht prerenderbar" — siehe §9), dupliziert sonst keinen der 24 Root-Fahrpläne.
 
-## 4. SEO-Strang (Detail)
+## §4 · SEO-Strang (Detail)
+*(Bau-Spec des ROADMAP-Schritts `SEO-A11Y`, zusammen mit §5; §-Sigel nachgezogen 30.8.2026.)*
 
 **Verifizierter IST-Stand (read-only):** `src/lib/seo.ts` → `SITE_URL = 'https://lexmetrik.vercel.app'`, `metaFuerPfad()` gibt für alle Detailpfade `null`, `jsonLdFuerPfad()` nur WebSite/Organization (`/`) + WebApplication (Karten), Kommentar Z.~132 „KEINE FAQPage: keine FAQ-Inhalte". `scripts/prerender.ts` → hartes Tor `ERWARTETE_ROUTEN = 56`, Sitemap bewusst ohne lastmod, `app.html` mit `robots: noindex`. `vercel.json` → `cleanUrls:true`, `trailingSlash:false`, Rewrite `/(.*) → /app`, CSP `script-src 'self'` (JSON-LD muss `ld+json` bleiben); `Cache-Control` existiert **nur** unter `/assets/(.*)`, **nicht** unter `/normtext/*` (dort nur X-Frame-Options/CSP) und gar kein Block für `/rechtsprechung/*`. **Mengen verifiziert in den Registern:** 1460 Erlasse total → 1449 `snapshot` (218 bund + 1231 kantonal), 9 `nur-live-link`, 2 `pdf-embed`; 370 Entscheide total, alle `bestand:snapshot` (340 `bger` + 30 kantonale Gerichte). **= 1819 indexierbare Detail-URLs.** Register-Felder reichen für Legislation-JSON-LD + Meta **vollständig aus** (`key, ebene, kanton, kuerzel, titel, sr, rechtsgebiet, status, stand, quelleUrl, fassungsToken, artikelAnzahl` bzw. `gericht, gerichtName, nummer, bgeReferenz, datum, zitierung, sachgebiet, normKeys, bestand, quelleUrl`) — **Strukturwerte nichts zu erfinden; kuratierte Texte/Geltungsaussagen = `TODO(David)`.**
 
@@ -28,7 +29,8 @@ aussagen bleiben `TODO(David)`-Gerüst bis zur Abnahme-Welle.
 
 **Erfolgsmessung (autonom prüfbar):** `dist/sitemap-gesetze.xml`-`<loc>`-Count == Anzahl `status:snapshot`-Erlasse (1449); `curl` einer Detail-URL zeigt befülltes `#root` + korrekte `<title>` **ohne** `robots:noindex`; Google **Rich Results Test** je Reader-Typ fehlerfrei; `npm run gate` grün; nach Deploy via **der in W1.12 eingerichteten GSC-Property** Indexabdeckung-Sprung (56 → >1000). Ohne W1.12 ist die GSC-Messung nicht durchführbar.
 
-## 5. A11y-Strang (Detail)
+## §5 · A11y-Strang (Detail)
+*(Teil der Bau-Spec von `SEO-A11Y`.)*
 
 **Leitprinzip:** Der gesamte A11y-Strang (Welle 1+2) ist Darstellungs-/Test-Layer, braucht **keine** juristische Fachzeit → Strang B der `FAHRPLAN-LERNPHASE-2026.md`. Verifikation läuft über das **vorhandene** Playwright-Setup (`@axe-core/playwright` ist bereits Dependency) — kein neues Tooling, kein MCP-Screenshot (Memory-Regel „Werkzeuge zuerst prüfen"). Einzige David-Berührung: bewusste Marken-/Design-Entscheide (W3.5/W3.6) und der fr/it-Inhaltsentscheid (W3.7); die reine `lang`-Mechanik (W2.4) ist autonom.
 
