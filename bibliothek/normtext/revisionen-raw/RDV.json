@@ -1,6 +1,6 @@
 {
   "sr": "143.5",
-  "korpusStand": "2025-11-01",
+  "korpusStand": "2026-08-20",
   "bBindings": [
     {
       "sr": {
@@ -1877,6 +1877,38 @@
         "type": "literal",
         "value": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "143.5"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/423"
+      },
+      "dateForce": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-08-20"
+      },
+      "dateDoc": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-08-19"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance sur l’établissement de documents de voyage pour étrangers (ODV)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)"
+      }
     }
   ],
   "aStaende": [
@@ -1892,6 +1924,7 @@
     "2023-02-01",
     "2023-09-01",
     "2023-10-15",
-    "2025-11-01"
+    "2025-11-01",
+    "2026-08-20"
   ]
 }

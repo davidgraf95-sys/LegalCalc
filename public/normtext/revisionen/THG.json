@@ -1,7 +1,7 @@
 {
   "erlassKey": "THG",
   "sr": "946.51",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -23,11 +23,11 @@
       "dateDocument": "2009-06-12",
       "roFundstelle": "AS 2010 2617",
       "titelDe": "Bundesgesetz über die technischen Handelshemmnisse (THG)",
-      "titelFr": "Loi fédérale sur les entraves techniques au commerce&#61482; (LETC)",
+      "titelFr": "Loi fédérale sur les entraves techniques au commerce (LETC)",
       "titelIt": "Legge federale sugli ostacoli tecnici al commercio (LOTC)",
       "botschaftKey": "BOTSCHAFT-2008-1231",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/349/de",
-      "sha": "4037b67996a8d081f258bd066d3eee98edfa0361d6be8e9a169d86f186a02018"
+      "sha": "c2c300fcb3381fbdba987c79d100ac2b8bd72e17ef8c68c4bb2849ce76d452d6"
     },
     {
       "art": "sammelerlass-marker",
@@ -61,5 +61,5 @@
       "sha": "929bc494447599b6f8119bda91dd7c3949ce92ebd9c73a04a8ed6f59bb22f85a"
     }
   ],
-  "sha": "db37f949d42d50778978dbb11b1a935290a40b04523e4ba02d2570751028dbcc"
+  "sha": "90abe8f2e4aaa3992afa586e6fe0d8d7d15b3b11b2ad26d02da2aa258727b50c"
 }

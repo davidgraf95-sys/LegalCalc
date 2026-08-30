@@ -1,9 +1,23 @@
 {
   "erlassKey": "EOG",
   "sr": "834.1",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/433",
+      "dateDocument": "2025-12-19",
+      "roFundstelle": "AS 2026 433",
+      "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Angleichung der EO-Leistungen)",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Harmonisation des prestations dans le régime des APG)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Armonizzazione delle prestazioni nell’ordinamento delle IPG)",
+      "botschaftKey": "BOTSCHAFT-2025-1528",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/433/de",
+      "sha": "bba41d4d924443585733ac7837c132050ea39fde6e2dcd9cff56ef24ac349c4c"
+    },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2026-06-01",
@@ -254,5 +268,5 @@
       "sha": "208ca5dd5a457a2cfe07a3862be62e0b33ac94363f21530b45fc909895d0f616"
     }
   ],
-  "sha": "625c8b153266258bba3a3d422d6abc349fa47dcf8371c79daca9d70f22ec25d3"
+  "sha": "059b622032448b2ce270f2c151c83aa2a41605c033828630125fe9db967bf967"
 }
