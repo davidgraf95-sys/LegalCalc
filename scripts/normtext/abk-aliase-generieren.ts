@@ -78,6 +78,20 @@
  *     könnte. Die REIHENFOLGE ist ebenfalls kein Wirkmittel: dieselbe Wertemenge
  *     kappt vorwärts wie rückwärts identisch (7/7, X beide Male weg).
  *
+ *     URTEILSMITTEL EINZELABFRAGE (Nachtrag 31.8.2026). Anlass: `check:fedlex-abk-netz`
+ *     rot in zwei Monitor-Läufen (33339658668, 33340145194) — SR 812.121.1 lieferte im
+ *     Hauptlauf deterministisch KEINE Zeile ⇒ Regel-(4)-Pfad ⇒ «kein Urteil», Exit 1.
+ *     Handprüfung am Endpoint (Einzelabfrage ohne Datums-FILTER): geltender Abstract
+ *     cc/2011/362, Kürzel de `BetmKV` · fr/it `OCStup` — das Artefakt ist korrekt,
+ *     gekappt hat die veränderte VALUES-Zusammensetzung nach dem Register-Zuwachs
+ *     (Staatsverträge, #571). Weil die Messung oben zeigt, dass erst der Datums-FILTER
+ *     die Zeilen wegnimmt (`{0.142.30}`: +dateEntryInForce 25 → +FILTER 0), gibt es
+ *     jetzt ein letztes Prüfmittel: EINE Abfrage nur dieser SR, ohne Datums-FILTER,
+ *     Currency-Fenster clientseitig (`imCurrencyFenster` in ./abk-einzelurteil.ts).
+ *     KEINE Lockerung — COUNT-Tor und Konflikt-Riegel identisch, Vergleich über den
+ *     NORMALEN Pfad, und liefert die Einzelabfrage nichts, bleibt es bei «kein
+ *     Urteil» und Exit 1 (fail-closed).
+ *
  *     Konsequenz für den Bau: ein Verlust-Befund darf NIE aus EINER Abfrage-
  *     Zusammensetzung geschlossen werden. `batchListe()` hält Batches bei ≥ 3 SR
  *     (billiger Gürtel, keine Garantie); tragend ist die Verlust-Gegenprobe, die
@@ -135,7 +149,12 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register';
 import { sparqlSelect, type SparqlBinding } from '../fedlex-sparql';
+import {
+  einzelUrteilFuerGekappte, RANG, SPRACHE, type AliasZeile,
+} from './abk-einzelurteil';
 import { vergleiche } from './vergleich';
+
+export type { AliasZeile };
 
 /**
  * Ziel-Artefakt, aufgelöst RELATIV ZU DIESER DATEI — nicht zum cwd (Härtung
@@ -164,10 +183,6 @@ const VERSUCHE = 5;
 /** Datentyp-IRI der SR-Nummer. OHNE ihn treffen auch `id`/`id-amt` (Regel 1). */
 const NOTATION_TYP = 'https://fedlex.data.admin.ch/vocabulary/notation-type/id-systematique';
 
-const SPRACHE: Record<string, 'de' | 'fr' | 'it'> = { DEU: 'de', FRA: 'fr', ITA: 'it' };
-
-export interface AliasZeile { sr: string; sprache: 'de' | 'fr' | 'it'; abk: string }
-
 // ── Argumente ───────────────────────────────────────────────────────────────
 /** `--check`: nicht schreiben, sondern gegen die Amtsquelle vergleichen (Drift-Tor). */
 const NUR_PRUEFEN = process.argv.includes('--check');
@@ -176,7 +191,8 @@ const STICHTAG = datumArg
   ? datumArg.slice('--datum='.length)
   // Prüf-Modus ohne --datum: heute (UTC). Begründung (c) im Datei-Kopf.
   : (NUR_PRUEFEN ? new Date().toISOString().slice(0, 10) : '');
-if (!/^\d{4}-\d{2}-\d{2}$/.test(STICHTAG)) {
+function pruefeStichtag(): void {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(STICHTAG)) return;
   console.error('--datum=YYYY-MM-DD ist Pflicht (§2: reproduzierbarer Stand, kein Date.now()).');
   process.exit(1);
 }
@@ -213,14 +229,19 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>`;
  * anderes als sie absichern soll (§6.7, dieselbe Falle wie eine zweite
  * Zerlegung im Tor).
  */
-function rumpf(srs: string[]): string {
+function rumpf(srs: string[], fenster: 'sparql' | 'clientseitig' = 'sparql'): string {
   const vals = srs.map((s) => `"${s}"^^<${NOTATION_TYP}>`).join(' ');
+  const datum = fenster === 'sparql'
+    ? `?cc jolux:dateEntryInForce ?von .
+  FILTER(?von <= "${STICHTAG}"^^xsd:date)
+  FILTER NOT EXISTS { ?cc jolux:dateNoLongerInForce ?bis . FILTER(?bis <= "${STICHTAG}"^^xsd:date) }`
+    : `OPTIONAL { ?cc jolux:dateEntryInForce ?von }
+  OPTIONAL { ?cc jolux:dateNoLongerInForce ?bis }`;
   return `{
   VALUES ?sr { ${vals} }
   ?e skos:notation ?sr .
-  ?cc a jolux:ConsolidationAbstract ; jolux:classifiedByTaxonomyEntry ?e ; jolux:dateEntryInForce ?von .
-  FILTER(?von <= "${STICHTAG}"^^xsd:date)
-  FILTER NOT EXISTS { ?cc jolux:dateNoLongerInForce ?bis . FILTER(?bis <= "${STICHTAG}"^^xsd:date) }
+  ?cc a jolux:ConsolidationAbstract ; jolux:classifiedByTaxonomyEntry ?e .
+  ${datum}
   ?cc jolux:isRealizedBy ?ex .
   ?ex jolux:language ?lu ; jolux:titleShort ?roh .
   BIND(REPLACE(REPLACE(str(?roh), "^\\\\s+", ""), "\\\\s+$", "") AS ?abk)
@@ -231,13 +252,21 @@ function rumpf(srs: string[]): string {
 }
 
 const PROJEKTION = 'SELECT DISTINCT ?sr ?sprache ?abk ?cc WHERE';
+/** Einzelabfrage: dieselbe Projektion plus die beiden ungefilterten Datums-Variablen. */
+const EINZEL_PROJEKTION = 'SELECT DISTINCT ?sr ?sprache ?abk ?cc ?von ?bis WHERE';
 
-function zeilenAbfrage(srs: string[]): string {
-  return `${PREFIXE}\n${PROJEKTION} ${rumpf(srs)} ORDER BY ?sr ?sprache ?abk`;
-}
-
-function zaehlAbfrage(srs: string[]): string {
-  return `${PREFIXE}\nSELECT (COUNT(*) AS ?n) WHERE { ${PROJEKTION} ${rumpf(srs)} }`;
+/**
+ * Zeilen- UND Zählabfrage aus EINEM Rumpf (Regel 4: eine COUNT-Abfrage über eine
+ * andere Projektion zählt etwas anderes, als sie absichern soll). `einzel` schaltet
+ * BEIDE zugleich um — Prüfling und Referenz können nicht auseinanderlaufen.
+ */
+function abfragen(srs: string[], einzel: boolean): { zeilen: string; zaehl: string } {
+  const p = einzel ? EINZEL_PROJEKTION : PROJEKTION;
+  const r = rumpf(srs, einzel ? 'clientseitig' : 'sparql');
+  return {
+    zeilen: `${PREFIXE}\n${p} ${r} ORDER BY ?sr ?sprache ?abk`,
+    zaehl: `${PREFIXE}\nSELECT (COUNT(*) AS ?n) WHERE { ${p} ${r} }`,
+  };
 }
 
 /** Untergrenze für jede Abfrage-Zusammensetzung (Gürtel, keine Garantie — Regel 5). */
@@ -292,16 +321,19 @@ function batchListe(srs: string[]): string[][] {
  * prüft nichts (§6.7). Darum je Anlauf ein FRISCHES Paar (COUNT + Zeilen); nur
  * ein Paar aus demselben Anlauf zählt als Übereinstimmung.
  */
-async function batchMitZaehltor(srs: string[], nr: number | string): Promise<SparqlBinding[]> {
+async function batchMitZaehltor(
+  srs: string[], nr: number | string, einzel = false,
+): Promise<SparqlBinding[]> {
   const gesehen: string[] = [];
   for (let versuch = 1; versuch <= VERSUCHE; versuch += 1) {
-    const zaehl = await sparqlSelect(zaehlAbfrage(srs));
+    const q = abfragen(srs, einzel);
+    const zaehl = await sparqlSelect(q.zaehl);
     const soll = Number(zaehl[0]?.n?.value ?? 'NaN');
     if (!Number.isFinite(soll)) {
       console.error(`Batch ${nr}: COUNT-Abfrage lieferte keinen Wert — Abbruch.`);
       process.exit(1);
     }
-    const zeilen = await sparqlSelect(zeilenAbfrage(srs));
+    const zeilen = await sparqlSelect(q.zeilen);
     if (zeilen.length === soll) {
       const hinweis = versuch > 1 ? ` (nach ${versuch} Anläufen)` : '';
       console.log(`  Batch ${nr}: ${srs.length} SR → ${zeilen.length}/${soll} Zeilen${hinweis}`);
@@ -402,6 +434,46 @@ function bestandLesen(): AliasZeile[] {
   }
   return zeilen;
 }
+
+/**
+ * Netzfehler sind ein EIGENER, ehrlicher Fehlerpfad — nie grün und nie stumm
+ * (§8). Ohne diesen Riegel entschied die Laufzeit, was ein nicht erreichbarer
+ * Endpoint bedeutet; ein Prüf-Modus, der bei DNS-Fehler oder HTTP 500 mit
+ * unklarem Stack endet, wird im Cron-Log leicht als «rot wegen Infrastruktur,
+ * schon gut» weggelesen. Darum wird hier ausgesprochen, was der Lauf NICHT
+ * aussagt: er ist keine Entlastung des Artefakts.
+ */
+function netzAbbruch(e: unknown): never {
+  console.error(
+    `\nNETZFEHLER gegen die Amtsquelle: ${e instanceof Error ? e.message : String(e)}\n`
+    + '  → Der Lauf hat NICHTS festgestellt: kein Drift-Freispruch und '
+    + `${NUR_PRUEFEN ? 'keine Abnahme' : 'kein geschriebenes Artefakt'}. `
+    + 'Ein unerreichbarer Endpoint darf nie grün werden (§6.7/§8) — später erneut fahren.',
+  );
+  process.exit(1);
+}
+
+// ── Einzelurteil gegen die Kappung (Regel 5, Nachtrag 31.8.2026) ────────────
+//
+// Die Rechenlogik (Currency-Fenster, Fensterung der Bindings, Anläufe) steht in
+// scripts/normtext/abk-einzelurteil.ts — netzfrei und darum unter Unit-Test. HIER
+// bleibt nur die I/O-Strecke: dieselbe `batchMitZaehltor`-Kette wie der Hauptlauf
+// (COUNT-Tor, Regel 4), nur mit `einzel = true`, und derselbe Netzfehler-Riegel.
+
+/** Adapter Modul → Endpoint: EINE SR, ohne Datums-FILTER, mit COUNT-Zähltor. */
+const holeEinzel = async (sr: string, etikett: string): Promise<SparqlBinding[]> => {
+  try {
+    return await batchMitZaehltor([sr], etikett, true);
+  } catch (e) {
+    netzAbbruch(e);
+  }
+};
+
+/** Konflikt-Abbruch des Urteilsmittels — zwei Kürzel werden nie getiebreakt (§8). */
+const einzelKonflikt = (meldung: string): never => {
+  console.error(`\n${meldung}`);
+  process.exit(1);
+};
 
 // ── Drift-Vergleich (nur --check) ───────────────────────────────────────────
 
@@ -661,11 +733,11 @@ async function verlustGegenprobe(
   return { bestaetigt, aufgetaucht };
 }
 
-async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: number): Promise<never> {
+async function pruefeDrift(hauptlauf: AliasZeile[], srAnzahl: number, srMitAlias: number): Promise<never> {
   // Null-Resultat: das ist ein Endpoint-Befund, keine Rechtsänderung. Ohne diesen
   // Riegel meldete das Tor 597 «weggefallene» Kürzel und behauptete damit etwas
   // über das Recht, was in Wahrheit eine Aussage über die Leitung ist (§8).
-  if (live.length === 0) {
+  if (hauptlauf.length === 0) {
     console.error(
       '\nENDPOINT LIEFERTE 0 ZEILEN bei nicht-leerem Register — das ist ein Quellen-, kein '
       + 'Rechts-Befund. Kein Drift-Urteil (§8): Abfrage/Endpoint prüfen und erneut fahren.',
@@ -673,9 +745,15 @@ async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: num
     process.exit(1);
   }
 
+  // Prüfling ZUERST lesen (billig, und ein fehlendes Artefakt soll vor dem Netz
+  // scheitern), dann die im Hauptlauf gekappten SR einzeln nachurteilen — erst
+  // danach beginnt der gewöhnliche Vergleich, auf EINEM Zeilenbestand.
+  const bestand = bestandLesen();
+  const live = [...hauptlauf,
+    ...await einzelUrteilFuerGekappte(hauptlauf, bestand, STICHTAG, holeEinzel, einzelKonflikt)];
+
   divergenzHinweis(live);
 
-  const bestand = bestandLesen();
   const tripel = (z: AliasZeile): string => `${z.sr}|${z.sprache}|${z.abk}`;
   const paar = (z: AliasZeile): string => `${z.sr}|${z.sprache}`;
 
@@ -783,144 +861,137 @@ async function pruefeDrift(live: AliasZeile[], srAnzahl: number, srMitAlias: num
 
 // ── Hauptlauf ───────────────────────────────────────────────────────────────
 
-const srs = srListe();
-const modus = NUR_PRUEFEN ? 'check:fedlex-abk-netz (Drift-Prüfung, schreibt nicht)' : 'gen:abk-aliase';
-console.log(`\n── ${modus} — Stand ${STICHTAG}, ${srs.length} SR-Nummern aus dem Register ──`);
-
 /**
- * Netzfehler sind ein EIGENER, ehrlicher Fehlerpfad — nie grün und nie stumm
- * (§8). Ohne diesen Riegel entschied die Laufzeit, was ein nicht erreichbarer
- * Endpoint bedeutet; ein Prüf-Modus, der bei DNS-Fehler oder HTTP 500 mit
- * unklarem Stack endet, wird im Cron-Log leicht als «rot wegen Infrastruktur,
- * schon gut» weggelesen. Darum wird hier ausgesprochen, was der Lauf NICHT
- * aussagt: er ist keine Entlastung des Artefakts.
+ * Der ganze Lauf in EINER Funktion — damit der Unit-Test dieses Skript importieren
+ * kann, ohne dass es dabei losläuft (Muster wie `scripts/check-schlankheit.ts`).
+ * `process.argv[1]` taugt als Weiche nicht: unter `vite-node` zeigt es auf den
+ * vite-node-Bin, nicht auf dieses Skript — darum die von Vitest selbst gesetzte
+ * Umgebungsvariable. Im CLI-Betrieb ist das Verhalten unverändert.
  */
-function netzAbbruch(e: unknown): never {
-  console.error(
-    `\nNETZFEHLER gegen die Amtsquelle: ${e instanceof Error ? e.message : String(e)}\n`
-    + '  → Der Lauf hat NICHTS festgestellt: kein Drift-Freispruch und '
-    + `${NUR_PRUEFEN ? 'keine Abnahme' : 'kein geschriebenes Artefakt'}. `
-    + 'Ein unerreichbarer Endpoint darf nie grün werden (§6.7/§8) — später erneut fahren.',
-  );
-  process.exit(1);
-}
+export async function main(): Promise<void> {
+  pruefeStichtag();
+  const srs = srListe();
+  const modus = NUR_PRUEFEN ? 'check:fedlex-abk-netz (Drift-Prüfung, schreibt nicht)' : 'gen:abk-aliase';
+  console.log(`\n── ${modus} — Stand ${STICHTAG}, ${srs.length} SR-Nummern aus dem Register ──`);
 
-const roh: SparqlBinding[] = [];
-try {
-  const batches = batchListe(srs);
-  for (let i = 0; i < batches.length; i += 1) {
-    roh.push(...await batchMitZaehltor(batches[i], i + 1));
+  const roh: SparqlBinding[] = [];
+  try {
+    const batches = batchListe(srs);
+    for (let i = 0; i < batches.length; i += 1) {
+      roh.push(...await batchMitZaehltor(batches[i], i + 1));
+    }
+  } catch (e) {
+    netzAbbruch(e);
   }
-} catch (e) {
-  netzAbbruch(e);
-}
 
-// ── Filter + Konflikt-Prüfung ───────────────────────────────────────────────
-// Der innere Schlüssel ist die Sprache, nicht irgendein String: er stammt
-// ausnahmslos aus SPRACHE[] (Zeile 167) und wird bei Zeile 865 als
-// AliasZeile.sprache weitergereicht. Als `string` deklariert, war der Übergang
-// dorthin ungeprüft (QS-TYP-LUECKE 15.8.2026) — Typ-Enge, kein Verhalten.
-const jeSrSprache = new Map<string, Map<'de' | 'fr' | 'it', Set<string>>>();   // sr → sprache → {abk}
-const ccVon = new Map<string, Set<string>>();                       // "sr|sprache|abk" → {cc}
-let verworfenLeer = 0;
+  // ── Filter + Konflikt-Prüfung ───────────────────────────────────────────────
+  // Der innere Schlüssel ist die Sprache, nicht irgendein String: er stammt
+  // ausnahmslos aus SPRACHE[] (Zeile 167) und wird bei Zeile 865 als
+  // AliasZeile.sprache weitergereicht. Als `string` deklariert, war der Übergang
+  // dorthin ungeprüft (QS-TYP-LUECKE 15.8.2026) — Typ-Enge, kein Verhalten.
+  const jeSrSprache = new Map<string, Map<'de' | 'fr' | 'it', Set<string>>>();   // sr → sprache → {abk}
+  const ccVon = new Map<string, Set<string>>();                       // "sr|sprache|abk" → {cc}
+  let verworfenLeer = 0;
 
-for (const b of roh) {
-  const sr = b.sr?.value ?? '';
-  const sp = SPRACHE[b.sprache?.value ?? ''];
-  const abk = (b.abk?.value ?? '').trim();          // Trim ein zweites Mal (Regel 3)
-  if (!sr || !sp) continue;
-  if (abk === '') { verworfenLeer += 1; continue; }
-  let proSprache = jeSrSprache.get(sr);
-  if (!proSprache) { proSprache = new Map(); jeSrSprache.set(sr, proSprache); }
-  let menge = proSprache.get(sp);
-  if (!menge) { menge = new Set(); proSprache.set(sp, menge); }
-  menge.add(abk);
-  const schl = `${sr}|${sp}|${abk}`;
-  const ccs = ccVon.get(schl) ?? new Set<string>();
-  ccs.add(b.cc?.value ?? '');
-  ccVon.set(schl, ccs);
-}
-
-const konflikte: string[] = [];
-for (const [sr, proSprache] of jeSrSprache) {
-  for (const [sp, menge] of proSprache) {
-    if (menge.size <= 1) continue;
-    const detail = [...menge].sort(vergleiche)
-      .map((a) => `${a} [${[...(ccVon.get(`${sr}|${sp}|${a}`) ?? [])].sort(vergleiche).join(', ')}]`)
-      .join(' vs. ');
-    konflikte.push(`SR ${sr} / ${sp}: ${detail}`);
+  for (const b of roh) {
+    const sr = b.sr?.value ?? '';
+    const sp = SPRACHE[b.sprache?.value ?? ''];
+    const abk = (b.abk?.value ?? '').trim();          // Trim ein zweites Mal (Regel 3)
+    if (!sr || !sp) continue;
+    if (abk === '') { verworfenLeer += 1; continue; }
+    let proSprache = jeSrSprache.get(sr);
+    if (!proSprache) { proSprache = new Map(); jeSrSprache.set(sr, proSprache); }
+    let menge = proSprache.get(sp);
+    if (!menge) { menge = new Set(); proSprache.set(sp, menge); }
+    menge.add(abk);
+    const schl = `${sr}|${sp}|${abk}`;
+    const ccs = ccVon.get(schl) ?? new Set<string>();
+    ccs.add(b.cc?.value ?? '');
+    ccVon.set(schl, ccs);
   }
-}
-if (konflikte.length > 0) {
-  console.error(
-    `\n${konflikte.length} Konflikt(e) je (sr, sprache) — zwei amtliche Kürzel trotz `
-    + 'Currency-Fenster. NICHT automatisch entschieden (§8); Ursache prüfen '
-    + '(Schatten-Abstract? Erlass-Ablösung am Stichtag?):',
-  );
-  for (const k of konflikte.sort(vergleiche)) console.error(`  • ${k}`);
-  process.exit(1);
-}
 
-// ── Zeilen bauen, deterministisch sortiert (sr, sprache, abk) ───────────────
-const RANG: Record<'de' | 'fr' | 'it', number> = { de: 0, fr: 1, it: 2 };
-const zeilen: AliasZeile[] = [];
-for (const [sr, proSprache] of jeSrSprache) {
-  for (const [sprache, menge] of proSprache) {
-    for (const abk of menge) zeilen.push({ sr, sprache, abk });
+  const konflikte: string[] = [];
+  for (const [sr, proSprache] of jeSrSprache) {
+    for (const [sp, menge] of proSprache) {
+      if (menge.size <= 1) continue;
+      const detail = [...menge].sort(vergleiche)
+        .map((a) => `${a} [${[...(ccVon.get(`${sr}|${sp}|${a}`) ?? [])].sort(vergleiche).join(', ')}]`)
+        .join(' vs. ');
+      konflikte.push(`SR ${sr} / ${sp}: ${detail}`);
+    }
   }
+  if (konflikte.length > 0) {
+    console.error(
+      `\n${konflikte.length} Konflikt(e) je (sr, sprache) — zwei amtliche Kürzel trotz `
+      + 'Currency-Fenster. NICHT automatisch entschieden (§8); Ursache prüfen '
+      + '(Schatten-Abstract? Erlass-Ablösung am Stichtag?):',
+    );
+    for (const k of konflikte.sort(vergleiche)) console.error(`  • ${k}`);
+    process.exit(1);
+  }
+
+  // ── Zeilen bauen, deterministisch sortiert (sr, sprache, abk) ───────────────
+  const zeilen: AliasZeile[] = [];
+  for (const [sr, proSprache] of jeSrSprache) {
+    for (const [sprache, menge] of proSprache) {
+      for (const abk of menge) zeilen.push({ sr, sprache, abk });
+    }
+  }
+  zeilen.sort((a, b) => vergleiche(a.sr, b.sr)
+    || RANG[a.sprache] - RANG[b.sprache]
+    || vergleiche(a.abk, b.abk));
+
+  // ── Prüf-Modus: vergleichen statt schreiben; endet in pruefeDrift ───────────
+  //
+  // Der Prüf-Modus verzweigt ERST HIER, nach Abfrage, COUNT-Tor, Trim/Leerstring-
+  // Verwurf und Konflikt-Prüfung: er sieht damit genau dieselben Zeilen, die ein
+  // Schreib-Lauf schreiben würde. Jede frühere Verzweigung hätte einen zweiten,
+  // nur ähnlichen Pfad geschaffen — und ein Prüfer, der etwas anderes berechnet
+  // als der Generator, prüft den Generator nicht (§5/§6.7).
+  if (NUR_PRUEFEN) await pruefeDrift(zeilen, srs.length, jeSrSprache.size);
+
+  // ── Regressions-Tor: weniger Zeilen als committet ⇒ Abbruch (§6.7) ──────────
+  const alt = bestandZeilen();
+  if (alt > 0 && zeilen.length < alt) {
+    console.error(
+      `\nREGRESSION: ${zeilen.length} Zeilen neu gegen ${alt} committete. Ein Lauf, der `
+      + 'Bestand verliert, wird nicht geschrieben — Endpoint-Ausfall oder Register-Änderung '
+      + `prüfen (${ZIEL}).`,
+    );
+    process.exit(1);
+  }
+
+  // ── Schreiben ───────────────────────────────────────────────────────────────
+  const proSprache = { de: 0, fr: 0, it: 0 };
+  for (const z of zeilen) proSprache[z.sprache] += 1;
+  const ohneAlias = srs.filter((sr) => !jeSrSprache.has(sr));
+
+  const kopf = `// AUTO-GENERIERT von scripts/normtext/abk-aliase-generieren.ts — NICHT von Hand editieren.
+  // Amtliche Kurzbezeichnungen (DE/FR/IT) der Bund-Erlasse des ERLASS_REGISTER.
+  // Quelle: Fedlex-SPARQL, jolux:titleShort am sprachlichen Ausdruck des geltenden
+  // Konsolidierungs-Abstracts (Currency-Fenster gegen Schatten-Abstracts), §7.
+  // Stand: ${STICHTAG} — Abdeckung ${jeSrSprache.size}/${srs.length} SR (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it}).
+  // Regenerieren: npm run gen:abk-aliase -- --datum=$(date +%F)
+  // Wirkung: scripts/normtext/entscheide-mapping.ts löst jede Zeile über sr → Register-key
+  // auf und nimmt die Abkürzung als zusätzlichen Kandidaten in die normKeys-Tabelle;
+  // Abdeckung und Kollisionen misst das Tor check:normkeys.
+  // NICHT aus src/ importieren (Bundle §15) — reine Build-Zeit-Quelle der Pipeline.
+
+  export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: 'de' | 'fr' | 'it'; abk: string }> = [
+  `;
+  const leib = zeilen
+    .map((z) => `  { sr: ${JSON.stringify(z.sr)}, sprache: '${z.sprache}', abk: ${JSON.stringify(z.abk)} },`)
+    .join('\n');
+  writeFileSync(ZIEL, `${kopf}${leib}\n];\n`, 'utf8');
+
+  console.log(`\n  Zeilen:      ${zeilen.length} (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it})`);
+  console.log(`  SR mit Alias: ${jeSrSprache.size}/${srs.length}`);
+  if (verworfenLeer > 0) console.log(`  verworfen (leeres titleShort): ${verworfenLeer}`);
+  if (ohneAlias.length > 0) {
+    console.log(`  OHNE Alias (${ohneAlias.length}) — kein titleShort in der geltenden Fassung:`);
+    console.log(`    ${ohneAlias.join(', ')}`);
+  }
+  console.log(`  geschrieben: ${ZIEL}${alt > 0 ? ` (vorher ${alt} Zeilen)` : ''}\n`);
 }
-zeilen.sort((a, b) => vergleiche(a.sr, b.sr)
-  || RANG[a.sprache] - RANG[b.sprache]
-  || vergleiche(a.abk, b.abk));
 
-// ── Prüf-Modus: vergleichen statt schreiben; endet in pruefeDrift ───────────
-//
-// Der Prüf-Modus verzweigt ERST HIER, nach Abfrage, COUNT-Tor, Trim/Leerstring-
-// Verwurf und Konflikt-Prüfung: er sieht damit genau dieselben Zeilen, die ein
-// Schreib-Lauf schreiben würde. Jede frühere Verzweigung hätte einen zweiten,
-// nur ähnlichen Pfad geschaffen — und ein Prüfer, der etwas anderes berechnet
-// als der Generator, prüft den Generator nicht (§5/§6.7).
-if (NUR_PRUEFEN) await pruefeDrift(zeilen, srs.length, jeSrSprache.size);
-
-// ── Regressions-Tor: weniger Zeilen als committet ⇒ Abbruch (§6.7) ──────────
-const alt = bestandZeilen();
-if (alt > 0 && zeilen.length < alt) {
-  console.error(
-    `\nREGRESSION: ${zeilen.length} Zeilen neu gegen ${alt} committete. Ein Lauf, der `
-    + 'Bestand verliert, wird nicht geschrieben — Endpoint-Ausfall oder Register-Änderung '
-    + `prüfen (${ZIEL}).`,
-  );
-  process.exit(1);
-}
-
-// ── Schreiben ───────────────────────────────────────────────────────────────
-const proSprache = { de: 0, fr: 0, it: 0 };
-for (const z of zeilen) proSprache[z.sprache] += 1;
-const ohneAlias = srs.filter((sr) => !jeSrSprache.has(sr));
-
-const kopf = `// AUTO-GENERIERT von scripts/normtext/abk-aliase-generieren.ts — NICHT von Hand editieren.
-// Amtliche Kurzbezeichnungen (DE/FR/IT) der Bund-Erlasse des ERLASS_REGISTER.
-// Quelle: Fedlex-SPARQL, jolux:titleShort am sprachlichen Ausdruck des geltenden
-// Konsolidierungs-Abstracts (Currency-Fenster gegen Schatten-Abstracts), §7.
-// Stand: ${STICHTAG} — Abdeckung ${jeSrSprache.size}/${srs.length} SR (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it}).
-// Regenerieren: npm run gen:abk-aliase -- --datum=$(date +%F)
-// Wirkung: scripts/normtext/entscheide-mapping.ts löst jede Zeile über sr → Register-key
-// auf und nimmt die Abkürzung als zusätzlichen Kandidaten in die normKeys-Tabelle;
-// Abdeckung und Kollisionen misst das Tor check:normkeys.
-// NICHT aus src/ importieren (Bundle §15) — reine Build-Zeit-Quelle der Pipeline.
-
-export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: 'de' | 'fr' | 'it'; abk: string }> = [
-`;
-const leib = zeilen
-  .map((z) => `  { sr: ${JSON.stringify(z.sr)}, sprache: '${z.sprache}', abk: ${JSON.stringify(z.abk)} },`)
-  .join('\n');
-writeFileSync(ZIEL, `${kopf}${leib}\n];\n`, 'utf8');
-
-console.log(`\n  Zeilen:      ${zeilen.length} (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it})`);
-console.log(`  SR mit Alias: ${jeSrSprache.size}/${srs.length}`);
-if (verworfenLeer > 0) console.log(`  verworfen (leeres titleShort): ${verworfenLeer}`);
-if (ohneAlias.length > 0) {
-  console.log(`  OHNE Alias (${ohneAlias.length}) — kein titleShort in der geltenden Fassung:`);
-  console.log(`    ${ohneAlias.join(', ')}`);
-}
-console.log(`  geschrieben: ${ZIEL}${alt > 0 ? ` (vorher ${alt} Zeilen)` : ''}\n`);
+if (!process.env.VITEST) await main();
