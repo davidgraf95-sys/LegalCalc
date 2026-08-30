@@ -155,3 +155,36 @@ export async function einzelUrteilFuerGekappte(
   }
   return gewonnen;
 }
+
+/** Datenzeilen-Kontrakt des Artefakts — bestandLesen() (Generator) und die
+ *  Tests filtern exakt auf dieses Präfix; der Schreibpfad-Test bindet beide
+ *  Seiten aneinander (Gegenprüfungs-Befund 1, PR #588). Rein, argv-frei. */
+export const DATENZEILE_PRAEFIX = '  { sr: ';
+export function artefaktLeib(zeilen: ReadonlyArray<AliasZeile>): string {
+  const leib = zeilen
+    .map((z) => `${DATENZEILE_PRAEFIX}${JSON.stringify(z.sr)}, sprache: '${z.sprache}', abk: ${JSON.stringify(z.abk)} },`)
+    .join('\n');
+  return `${leib}\n];\n`;
+}
+
+/** Artefakt-Kopf — Literal bewusst AN SPALTE 0 (Gegenprüfungs-Befund 1, PR
+ *  #588: eine Miteinrückung des Template-Literals hätte die erste Datenzeile
+ *  für bestandLesen() unsichtbar gemacht). Rein, argv-frei, testgebunden. */
+export function artefaktKopf(
+  stichtag: string, abdeckung: number, gesamt: number,
+  proSprache: { de: number; fr: number; it: number },
+): string {
+  return `// AUTO-GENERIERT von scripts/normtext/abk-aliase-generieren.ts — NICHT von Hand editieren.
+// Amtliche Kurzbezeichnungen (DE/FR/IT) der Bund-Erlasse des ERLASS_REGISTER.
+// Quelle: Fedlex-SPARQL, jolux:titleShort am sprachlichen Ausdruck des geltenden
+// Konsolidierungs-Abstracts (Currency-Fenster gegen Schatten-Abstracts), §7.
+// Stand: ${stichtag} — Abdeckung ${abdeckung}/${gesamt} SR (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it}).
+// Regenerieren: npm run gen:abk-aliase -- --datum=$(date +%F)
+// Wirkung: scripts/normtext/entscheide-mapping.ts löst jede Zeile über sr → Register-key
+// auf und nimmt die Abkürzung als zusätzlichen Kandidaten in die normKeys-Tabelle;
+// Abdeckung und Kollisionen misst das Tor check:normkeys.
+// NICHT aus src/ importieren (Bundle §15) — reine Build-Zeit-Quelle der Pipeline.
+
+export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: 'de' | 'fr' | 'it'; abk: string }> = [
+`;
+}

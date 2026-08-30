@@ -16,6 +16,7 @@
  *      als Unit-Test existiert, bewiese nicht, dass es im Tor verdrahtet ist.
  */
 
+import { artefaktKopf, artefaktLeib, DATENZEILE_PRAEFIX } from '../../scripts/normtext/abk-einzelurteil';
 import { readFileSync } from 'node:fs';
 import { describe, it, expect, vi, beforeEach, afterAll } from 'vitest';
 import type { SparqlBinding } from '../../scripts/fedlex-sparql.ts';
@@ -230,5 +231,34 @@ describe('check:fedlex-abk-netz — Einzelurteil im echten Prüf-Lauf', () => {
     expect(text).toContain('DRIFT gegen die amtliche Quelle');
     expect(text).toContain(`SR ${GEKAPPT} / de: Artefakt 'BetmKV' → Fedlex 'BetmKV-NEU'`);
     expect(code).toBe(1);
+  });
+});
+
+// ── Schreibpfad-Wächter (Gegenprüfungs-Befund 1, PR #588) ────────────────────
+// Der Bau hatte das kopf-Template-Literal miteingerückt; Template-Literale
+// konservieren führenden Whitespace, und bestandLesen() hätte die erste
+// Datenzeile still verloren. Dieser Test bindet Schreib- und Lesepfad an
+// denselben Kontrakt (DATENZEILE_PRAEFIX) — er war gegen den Defekt-Stand rot.
+describe('Schreibpfad: Artefakt-Zeilen tragen exakt den Lese-Kontrakt', () => {
+  const zeilen = [
+    { sr: '812.121.1', sprache: 'de' as const, abk: 'BetmKV' },
+    { sr: '812.121.1', sprache: 'fr' as const, abk: 'OCStup' },
+  ];
+  it('jede Datenzeile beginnt mit dem Präfix (Spalte 0 + genau 2 Spaces)', () => {
+    const daten = artefaktLeib(zeilen).split('\n').filter((z) => z.includes('sr:'));
+    expect(daten).toHaveLength(2);
+    for (const z of daten) expect(z.startsWith(DATENZEILE_PRAEFIX)).toBe(true);
+    expect(daten[0]).toBe(`${DATENZEILE_PRAEFIX}"812.121.1", sprache: 'de', abk: "BetmKV" },`);
+  });
+  it('Leib endet mit schliessender Klammer auf Spalte 0', () => {
+    expect(artefaktLeib(zeilen).endsWith('\n];\n')).toBe(true);
+  });
+  it('Kopf: jede Zeile beginnt auf Spalte 0, Naht Kopf+Leib erzeugt exakt den Lese-Kontrakt', () => {
+    const kopf = artefaktKopf('2026-08-30', 200, 230, { de: 199, fr: 199, it: 199 });
+    for (const z of kopf.split('\n')) expect(/^[ \t]/.test(z)).toBe(false);
+    const naht = (kopf + artefaktLeib(zeilen)).split('\n');
+    const erste = naht[naht.indexOf('export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: \'de\' | \'fr\' | \'it\'; abk: string }> = [') + 1];
+    expect(erste.startsWith(DATENZEILE_PRAEFIX)).toBe(true);
+    expect(erste.startsWith('   ')).toBe(false);
   });
 });

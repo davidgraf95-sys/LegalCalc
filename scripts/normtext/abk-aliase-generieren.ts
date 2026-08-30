@@ -151,6 +151,7 @@ import { ERLASS_REGISTER } from '../../src/lib/normtext/register';
 import { sparqlSelect, type SparqlBinding } from '../fedlex-sparql';
 import {
   einzelUrteilFuerGekappte, RANG, SPRACHE, type AliasZeile,
+  DATENZEILE_PRAEFIX, artefaktKopf, artefaktLeib,
 } from './abk-einzelurteil';
 import { vergleiche } from './vergleich';
 
@@ -415,7 +416,7 @@ function bestandLesen(): AliasZeile[] {
     process.exit(1);
   }
   const inhalt = readFileSync(ZIEL, 'utf8');
-  const kandidaten = inhalt.split('\n').filter((z) => z.startsWith('  { sr: '));
+  const kandidaten = inhalt.split('\n').filter((z) => z.startsWith(DATENZEILE_PRAEFIX));
   const zeilen: AliasZeile[] = [];
   for (const z of kandidaten) {
     const m = ZEILEN_MUSTER.exec(z);
@@ -969,23 +970,18 @@ export async function main(): Promise<void> {
   for (const z of zeilen) proSprache[z.sprache] += 1;
   const ohneAlias = srs.filter((sr) => !jeSrSprache.has(sr));
 
-  const kopf = `// AUTO-GENERIERT von scripts/normtext/abk-aliase-generieren.ts — NICHT von Hand editieren.
-  // Amtliche Kurzbezeichnungen (DE/FR/IT) der Bund-Erlasse des ERLASS_REGISTER.
-  // Quelle: Fedlex-SPARQL, jolux:titleShort am sprachlichen Ausdruck des geltenden
-  // Konsolidierungs-Abstracts (Currency-Fenster gegen Schatten-Abstracts), §7.
-  // Stand: ${STICHTAG} — Abdeckung ${jeSrSprache.size}/${srs.length} SR (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it}).
-  // Regenerieren: npm run gen:abk-aliase -- --datum=$(date +%F)
-  // Wirkung: scripts/normtext/entscheide-mapping.ts löst jede Zeile über sr → Register-key
-  // auf und nimmt die Abkürzung als zusätzlichen Kandidaten in die normKeys-Tabelle;
-  // Abdeckung und Kollisionen misst das Tor check:normkeys.
-  // NICHT aus src/ importieren (Bundle §15) — reine Build-Zeit-Quelle der Pipeline.
-
-  export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: 'de' | 'fr' | 'it'; abk: string }> = [
-  `;
-  const leib = zeilen
-    .map((z) => `  { sr: ${JSON.stringify(z.sr)}, sprache: '${z.sprache}', abk: ${JSON.stringify(z.abk)} },`)
-    .join('\n');
-  writeFileSync(ZIEL, `${kopf}${leib}\n];\n`, 'utf8');
+  // Template-Literal AN SPALTE 0 — Gegenprüfungs-Befund 1 (PR #588, 31.8.2026):
+  // beim Einrücken in main() wanderten die Literal-Folgezeilen auf Spalte 2,
+  // und Template-Literale konservieren führenden Whitespace. Der Schreib-Lauf
+  // hätte die erste Datenzeile mit 4 Spaces erzeugt — bestandLesen() filtert
+  // exakt auf '  { sr: ' und hätte sie STILL verloren. Darum steht das Literal
+  // bewusst unabhängig von der umgebenden Einrückung; Wächter: der
+  // Schreibpfad-Test in src/tests/abk-einzelurteil.test.ts.
+  writeFileSync(
+    ZIEL,
+    artefaktKopf(STICHTAG, jeSrSprache.size, srs.length, proSprache) + artefaktLeib(zeilen),
+    'utf8',
+  );
 
   console.log(`\n  Zeilen:      ${zeilen.length} (de ${proSprache.de} · fr ${proSprache.fr} · it ${proSprache.it})`);
   console.log(`  SR mit Alias: ${jeSrSprache.size}/${srs.length}`);
