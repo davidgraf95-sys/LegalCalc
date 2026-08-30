@@ -200,6 +200,26 @@ jobs:
               echo "Kein Vorgänger-Commit (BEFORE='${BEFORE:-}') — volles Programm."
               exit 0
             fi
+            # ── Basis = LIVE ausgelieferter Stand, nicht der Push-Vorgänger ──
+            # Wurzel-Fix 30.8.2026 (Vorfall Prod-Smoke 29./30.8., Issue #579):
+            # der CI-Lauf eines gemergten Code-PRs wurde in der WARTESCHLANGE
+            # vom nächsten Doku-Push verdrängt (GitHub ersetzt wartende Läufe
+            # derselben Concurrency-Gruppe); der Doku-Lauf klassierte nur
+            # SEINEN Diff (BEFORE...AFTER) und übersprang Bau + Deploy — der
+            # Code-Commit blieb ~21 h unausgeliefert, bis der Smoke Alarm
+            # schlug. Die Klassierungs-Basis ist darum der Stand, der WIRKLICH
+            # live ist (<meta name="lexmetrik-build"> der Startseite — dieselbe
+            # Quelle wie pruefeBuildStand in scripts/betrieb/prod-smoke.ts).
+            # Nicht lesbar/leer ⇒ Rückfall auf BEFORE (Warnzeile); jeder
+            # Compare-Fehler auf der Live-Basis fällt wie bisher auf `code`
+            # (§6.7-Fehlerseite = Volllauf inkl. Deploy).
+            LIVE=$(curl -fsS --max-time 15 https://lexmetrik.vercel.app/ | grep -oE 'name="lexmetrik-build" content="[0-9a-f]{40}"' | grep -oE '[0-9a-f]{40}' | head -1 || true)
+            if [ -n "$LIVE" ] && [ "$LIVE" != "$BEFORE" ]; then
+              echo "Diff-Basis = Live-Build ${LIVE} (statt BEFORE ${BEFORE}) — ungelieferte Commits zählen mit."
+              BEFORE="$LIVE"
+            elif [ -z "$LIVE" ]; then
+              echo "::warning::Live-Build-Kennung nicht lesbar — Rückfall auf BEFORE ${BEFORE}."
+            fi
             # KEIN --paginate: die Compare-API paginiert die COMMITS, nicht die
             # Dateien — mit --paginate käme dieselbe Dateiliste je Seite erneut
             # und blähte die Zählung auf (falsch-`code` wäre harmlos, eine
