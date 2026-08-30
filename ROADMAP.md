@@ -112,8 +112,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — EINE Einheit, golden-neutral, harte Binnenfolge F41 vor F40. §1-A.
   - [ ] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — **erst messen**, nichts «fixen» vor dem Profil. §1-A.
 
-- [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
-  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+- [~] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
+  <!-- @meta id: W2·7-VZUI · status: wip · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, ohne neue Rechtsregel (§3). Offen: V2 (E3-Serving)
   und V3 (E6a) — an den Datenstrang gekoppelt. **Fertig, wenn** die Panel-Reiter fachlich sauber
   geschnitten sind (Kontaktbogen H4 §7a: «Passende Werkzeuge» und `kontextSoftLaw` gehören nicht in
