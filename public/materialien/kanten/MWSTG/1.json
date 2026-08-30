@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-15",
+  "erzeugt": "2026-08-30",
   "erlass": "MWSTG",
   "kanten": [
     {
@@ -4149,10 +4149,6 @@
       "stand": "2025-03-17",
       "fundstellen": [
         {
-          "z": "Teil A · Ziff. 5",
-          "url": "&componentId=1045417"
-        },
-        {
           "z": "Teil B · Ziff. 13.6",
           "url": "&componentId=1045583"
         },
@@ -4163,6 +4159,19 @@
         {
           "z": "Teil B · Ziff. 14",
           "url": "&componentId=1045619"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-12",
+      "artikel": "20",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 5",
+          "url": "&componentId=1045417"
         }
       ]
     },
@@ -5030,18 +5039,6 @@
       "dok": "ESTV-MWST-BRANCHEN-INFO-14",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
-      "stand": "2022-09-28",
-      "fundstellen": [
-        {
-          "z": "Ziff. 5.13",
-          "url": "&componentId=1694202"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-BRANCHEN-INFO-14",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
       "stand": "2024-04-29",
       "fundstellen": [
         {
@@ -5213,6 +5210,19 @@
         {
           "z": "Ziff. 5.2.1.4",
           "url": "&componentId=1062273"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-14",
+      "artikel": "21",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Ziff. 5.13",
+          "url": "&componentId=1694202"
         }
       ]
     },
@@ -7800,10 +7810,6 @@
           "url": "&componentId=1004916"
         },
         {
-          "z": "F.2.3.2 Vorsteuerkorrektur aufgrund von der Steuer ausgenommenen Leistungen",
-          "url": "&componentId=1004951"
-        },
-        {
           "z": "F.2.3.3 Vorsteuerkorrektur aufgrund von Einnahmen aus hoheitlicher Tätigkeit",
           "url": "&componentId=1004956"
         },
@@ -8497,6 +8503,19 @@
     },
     {
       "dok": "ESTV-MWST-BRANCHEN-INFO-19",
+      "artikel": "21",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "F.2.3.2 Vorsteuerkorrektur aufgrund von der Steuer ausgenommenen Leistungen",
+          "url": "&componentId=1004951"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-19",
       "artikel": "22",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
@@ -8529,10 +8548,6 @@
         {
           "z": "F.1.3 Vorsteuerausschluss",
           "url": "&componentId=1004916"
-        },
-        {
-          "z": "F.2.3.2 Vorsteuerkorrektur aufgrund von der Steuer ausgenommenen Leistungen",
-          "url": "&componentId=1004951"
         }
       ]
     },
@@ -8546,6 +8561,19 @@
         {
           "z": "C.4 Von der Steuer ausgenommene Leistungen im Sinne von Artikel 21 Absatz 2 Zif…",
           "url": "&componentId=1268675"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-19",
+      "artikel": "22",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "F.2.3.2 Vorsteuerkorrektur aufgrund von der Steuer ausgenommenen Leistungen",
+          "url": "&componentId=1004951"
         }
       ]
     },
@@ -8645,6 +8673,19 @@
         {
           "z": "H.8.6 Gratis- und Vorzugsenergie",
           "url": "&componentId=1017681"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-19",
+      "artikel": "29",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "F.2.3.2 Vorsteuerkorrektur aufgrund von der Steuer ausgenommenen Leistungen",
+          "url": "&componentId=1004951"
         }
       ]
     },
@@ -9452,10 +9493,6 @@
           "url": "&componentId=1716031"
         },
         {
-          "z": "Ziff. 1.8",
-          "url": "&componentId=1000686"
-        },
-        {
           "z": "Ziff. 1.9",
           "url": "&componentId=1000691"
         },
@@ -9518,10 +9555,6 @@
         {
           "z": "Ziff. 21",
           "url": "&componentId=1004036"
-        },
-        {
-          "z": "Ziff. 4.3",
-          "url": "&componentId=1002932"
         },
         {
           "z": "Ziff. 5.2",
@@ -9644,16 +9677,25 @@
           "url": "&componentId=1002957"
         },
         {
-          "z": "Ziff. 6.1",
-          "url": "&componentId=1002191"
-        },
-        {
           "z": "Ziff. 6.2",
           "url": "&componentId=1002196"
         },
         {
           "z": "Ziff. 7.3.1",
           "url": "&componentId=1002912"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-21",
+      "artikel": "21",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-21",
+      "fundstellen": [
+        {
+          "z": "Ziff. 6.1",
+          "url": "&componentId=1002191"
         }
       ]
     },
@@ -9698,6 +9740,19 @@
     },
     {
       "dok": "ESTV-MWST-BRANCHEN-INFO-21",
+      "artikel": "25",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-21",
+      "fundstellen": [
+        {
+          "z": "Ziff. 4.3",
+          "url": "&componentId=1002932"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-21",
       "artikel": "28",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
@@ -9706,6 +9761,19 @@
         {
           "z": "Ziff. 1.10",
           "url": "&componentId=1000696"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-BRANCHEN-INFO-21",
+      "artikel": "3",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-21",
+      "fundstellen": [
+        {
+          "z": "Ziff. 1.8",
+          "url": "&componentId=1000686"
         }
       ]
     },
@@ -13274,79 +13342,6 @@
         {
           "z": "Teil A · Ziff. 2",
           "url": "&componentId=1010274"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-02",
-      "artikel": "12",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
-      "stand": "2026-05-11",
-      "fundstellen": [
-        {
-          "z": "Teil A · Ziff. 1",
-          "url": "&componentId=1010249"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-02",
-      "artikel": "13",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
-      "stand": "2025-12-05",
-      "fundstellen": [
-        {
-          "z": "Teil A · Ziff. 1.2",
-          "url": "&componentId=1010269"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-02",
-      "artikel": "14",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
-      "stand": "2017-12-29",
-      "fundstellen": [
-        {
-          "z": "Teil A · Ziff. 6",
-          "url": "&componentId=1010329"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-02",
-      "artikel": "14",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
-      "stand": "2023-04-06",
-      "fundstellen": [
-        {
-          "z": "Teil A · Ziff. 6.1",
-          "url": "&componentId=1010334"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-02",
-      "artikel": "14",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
-      "stand": "2023-06-27",
-      "fundstellen": [
-        {
-          "z": "Teil A · Ziff. 5.2",
-          "url": "&componentId=1269051"
-        },
-        {
-          "z": "Teil A · Ziff. 5.2.1",
-          "url": "&componentId=1269056"
-        },
-        {
-          "z": "Teil A · Ziff. 5.2.1.1",
-          "url": "&componentId=1010309"
         }
       ]
     }
