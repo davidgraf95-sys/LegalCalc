@@ -135,6 +135,64 @@ export function nennungsAnker(abschnitte: EntscheidAbschnitt[], zitat: string): 
   return ziele;
 }
 
+/**
+ * Ziel des ANKUNFTS-Sprungs bei `?norm=` — der Anker, auf dem der Entscheid
+ * aufgeht, wenn man ihn aus dem Gesetz heraus anklickt (Einzelansicht wie
+ * Split-Ansicht, derselbe Weg). `null` = keine Fundstelle ⇒ ehrlicher
+ * Seitenanfang (§8), nie ein geratener Anker.
+ *
+ * ── DER BEFUND, DER DIESE FUNKTION NÖTIG MACHT (Auftrag David 30.8.2026) ────
+ *
+ * Der Leser kannte bisher ZWEI Fundstellen-Wahrheiten und benutzte für die
+ * Ankunft nur die eine:
+ *
+ *   (1) `ersteFundstelle` (lib/rechtsprechung/abschnitte) — Vergleich über die
+ *       aufgelöste FEDLEX-URL. Sie ist die breitere Regel, wo sie greift:
+ *       «Art. 367 Abs. 2 OR» im Text zählt als Fundstelle zu «Art. 367 OR»,
+ *       weil Absatz-Feinheiten die URL nicht ändern. Sie kann aber nur, was
+ *       `fedlexLinkFuerArtikel` auflöst — also NUR Bundesrecht, und dort nur
+ *       die im Fedlex-Verzeichnis geführten Kürzel.
+ *   (2) `nennungsAnker` (oben) — wörtliche Nennung mit Wortgrenzen. Enger bei
+ *       Absatz-/ff.-Varianten, dafür quellenunabhängig: sie trägt kantonales
+ *       Recht und Bundes-Kürzel ausserhalb des Fedlex-Verzeichnisses.
+ *
+ * Die Herkunfts-Zeile des Lesers BOT die Ziele aus (2) bereits als Knopf
+ * «↓ Fundstelle 1/n» an — die Ankunft benutzte aber ausschliesslich (1). Wo (1)
+ * nichts fand und (2) etwas, sagte die Seite dem Nutzer also, wo die Fundstelle
+ * steht, und ging trotzdem nicht hin. Genau das ist der gemeldete Eindruck
+ * «ich lande am Dokumentanfang».
+ *
+ * GEMESSEN (30.8.2026, alle 75 365 Artikel↔Entscheid-Kanten der committeten
+ * Projektionen `public/rechtsprechung/bezuege/**`, Zitat gebaut wie die UI es
+ * baut — `${labelMitBereich(artikelLabel, token)} ${erlass.kuerzel}`):
+ *
+ *   nur (1), heute          46.6 %   (Bund 54.3 % · Kanton   0.0 %)
+ *   (1) dann (2), neu       48.8 %   (Bund 55.3 % · Kanton   9.1 %)
+ *
+ * Die Reihenfolge ist nicht beliebig: (1) ZUERST hält den Bestand
+ * verhaltensneutral (§6) — in 1 779 Kanten hätte (2) einen ANDEREN Anker
+ * gewählt als (1), und keine davon ändert sich, weil (2) nur einspringt, wo (1)
+ * `null` liefert. Der Zugewinn (1 637 Kanten) ist ausschliesslich Zuwachs, nie
+ * Umleitung.
+ *
+ * WAS SIE AUSDRÜCKLICH NICHT TUT (§1/§2, Grenze des Auftrags): sie rät nicht.
+ * Für kantonales Recht bleiben 9 674 Kanten ohne Ziel, weil es keinen
+ * kantonalen Zitat-Resolver gibt (Fedlex kennt nur Bundesrecht) — dort steht
+ * weiterhin der ehrliche Seitenanfang plus die Herkunfts-Zeile «im Text nicht
+ * wörtlich genannt». Das ist ein eigener Bau-Schritt auf dem Risiko-Pfad
+ * Extraktion, kein Nebenprodukt einer UI-Änderung.
+ */
+export function ankunftsAnker(
+  abschnitte: EntscheidAbschnitt[],
+  zitat: string,
+  /** `ersteFundstelle` wird injiziert, damit diese Datei ihre Richtung der
+   *  Abhängigkeit behält (Regeln → lib, nicht lib → Regeln) und der Test beide
+   *  Zweige einzeln zeigen kann (§6.7). */
+  fedlexFundstelle: (a: EntscheidAbschnitt[], z: string) => string | null,
+): string | null {
+  return fedlexFundstelle(abschnitte, zitat) ?? nennungsAnker(abschnitte, zitat)[0] ?? null;
+}
+
 // ── V5 · «Im Entscheid suchen» — dieselbe Substring-Regel wie im Gesetz ──────
 //
 // Pendant zur In-Gesetz-Suche (A35). Die Treffer-Semantik kommt aus DERSELBEN
