@@ -157,12 +157,38 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
         </div>
       )}
 
-      {/* §8: was der Grundzustand kostet und was das Zuschalten bedeutet, steht
-          da — nicht als Kleingedrucktes anderswo. */}
+      {/* §8: was der Grundzustand zeigt und was das Zuschalten bedeutet, steht
+          da — nicht als Kleingedrucktes anderswo.
+
+          ── W2·7-VZUI (31.8.2026): DIESER TEXT BESCHRIEB EINE OBERFLÄCHE, DIE ES
+          NICHT MEHR GIBT ──────────────────────────────────────────────────────
+          Bis hierher stand hier «Jede zugeschaltete Instanz steht am Artikel als
+          eigene Linie … gezeigt werden fünf, ein Klick lädt die nächsten fünf»
+          bzw. «Weitere Instanzen laden zusätzliche Daten nach». Beides war am
+          Ist-Stand falsch, in drei Punkten, jeder einzeln nachgemessen:
+
+           (1) AM ARTIKEL STEHT NICHTS. Die `BezuegeZeile` am Artikelfuss ist mit
+               H3 aus der Lesespalte verschwunden — `LeserLesespalte.tsx:84–88`
+               reicht `bezuege` nicht mehr durch («POS. 12 · KEIN `bezuege` MEHR
+               AM ARTIKEL»), und seit dem H4-Flip ist die V3-Hülle die einzige
+               (`GesetzLeser.tsx:83` mountet ausschliesslich `LeserRahmenV3`).
+               Die Entscheide stehen im PANEL, nach Instanz gruppiert.
+           (2) ES GIBT KEINE FÜNFERPORTION MEHR. `PanelEntscheide.tsx:214–218`
+               listet je Gruppe vollständig; die Kappung war eine Folge der
+               festen Zeilenhöhe am Artikelfuss und ist mit ihr weggefallen.
+           (3) ZUSCHALTEN LÄDT NICHTS NACH. Wer diese Steuerung sieht, hat das
+               Panel offen — und damit ist der Bezugs-Shard bereits geholt
+               (`panelModell.usePanelBezuege`, Gate `jeGeoeffnet`). Das Umschalten
+               filtert die vorhandenen Kanten, es kostet kein Byte.
+
+          Ein Hinweistext, der dem Nutzer eine Ladefolge und einen Anzeigeort
+          verspricht, die es beide nicht gibt, ist genau die Unehrlichkeit, gegen
+          die §8 steht. Was der Text NICHT tut: eine Zahl nennen, die wir nicht
+          haben — die Zahl am Schalter bleibt unverändert die des Erlasses. */}
       <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
         {erweitert
-          ? 'Jede zugeschaltete Instanz steht am Artikel als eigene Linie — nie unter die Leitentscheide gemischt, chronologisch vom neusten zum ältesten; gezeigt werden fünf, ein Klick lädt die nächsten fünf. Die Zahl am Schalter nennt die verschiedenen Entscheide dieser Instanz im ganzen Erlass; ein Entscheid kann an mehreren Artikeln stehen.'
-          : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen laden zusätzliche Daten nach; die Zahl am Schalter sagt vorher, wie viele verschiedene Entscheide dieser Erlass davon führt.'}
+          ? 'Jede zugeschaltete Instanz steht in der Liste als eigene Gruppe — nie unter die Leitentscheide gemischt, chronologisch vom neusten zum ältesten und ohne Kappung. Die Zahl am Schalter nennt die verschiedenen Entscheide dieser Instanz im ganzen Erlass; ein Entscheid kann an mehreren Artikeln stehen.'
+          : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen sind bereits geladen und lassen sich ohne Wartezeit zuschalten; die Zahl am Schalter sagt vorher, wie viele verschiedene Entscheide dieser Erlass davon führt.'}
       </p>
 
       {/* LM-050-Nachzug (W2·17-UI-BEFUNDE-B1, David-Entscheid 2.8.2026 «mach es

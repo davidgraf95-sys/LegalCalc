@@ -82,14 +82,20 @@ export interface ArtikelBezuege {
 /**
  * Bezüge des aktuellen Erlasses bereitstellen.
  *
- * Rückgabe:
- *  · `erweitert` — ist die Facetten-Wahl vom Grundzustand abgewichen? Der Reader
- *    entscheidet daran, ob er den SCHLANKEN Leitfall-Shard lädt (false) oder
- *    diesen hier (true). Der Wert ist auch dann true, wenn der Shard noch lädt
- *    oder 404 war — sonst flackerte die Darstellung zwischen beiden Formen hin
- *    und her, sobald der Fetch etwas später zurückkommt.
- *  · `bezuegeFuer(artikel)` — die gefilterten Kanten eines Artikels, oder
- *    `undefined`, solange nichts geladen ist bzw. der Erlass keinen Shard hat.
+ * Rückgabe: siehe die Feld-Kommentare am Rückgabetyp direkt darunter. Der
+ * wichtigste ist `bezuegeFuer(artikel)` — die gefilterten Kanten eines Artikels,
+ * oder `undefined`, solange nichts geladen ist bzw. der Erlass keinen Shard hat.
+ *
+ * ── EIN FELD `erweitert` GIBT ES NICHT (W2·7-VZUI, 31.8.2026) ──────────────
+ * Hier stand bis 31.8.2026 ein JSDoc-Absatz über ein Rückgabe-Feld `erweitert`,
+ * «an dem der Reader entscheidet, ob er den schlanken Leitfall-Shard lädt oder
+ * diesen hier». Das Feld hat diese Hook nie geführt (der Typ darunter ist
+ * vollständig: `aktiv`, `geladen`, `bezuegeFuer`, `kantoneVerfuegbar`,
+ * `klassenImErlass`, `histogramm`, `bereich`), und die beschriebene Weiche
+ * existiert nicht — der schlanke Shard wird im Gesetz-Leser gar nicht mehr
+ * geholt. Der Absatz ist darum gestrichen, nicht korrigiert: er dokumentierte
+ * kein Verhalten, sondern eine Absicht (Herleitung im Kopf von
+ * `bezugAuswahl.ts`).
  *
  * Das Ergebnis ist an den Erlass-Key gebunden (wie beim Leitfall-Shard): ein
  * Pane-/Erlass-Wechsel liefert nie fremde Kanten.
@@ -152,10 +158,20 @@ export function useBezuege(erlassKey: string | undefined): {
     if (!erlassKey) return;
     let lebt = true;
     const abbrechen = beiLeerlauf(() => {
-      // Grundzustand ⇒ GAR NICHT laden. Das ist der Kern der §15-Zusage: wer die
-      // Facetten nie anfasst, zahlt für sie auch nichts.
+      // ALLE FACETTEN AUS ⇒ GAR NICHT LADEN — nicht «Grundzustand ⇒ gar nicht
+      // laden», wie hier bis 31.8.2026 stand. Der Grundzustand ist `{bge}` und
+      // hat damit die Länge 1; die Bedingung darunter greift erst, wenn der
+      // Nutzer die letzte Instanz abwählt. Der falsche Satz war die
+      // Kommentar-Hälfte derselben zweiten Wahrheit, die der Kopf von
+      // `bezugAuswahl.ts` aufräumt.
       //
-      // Gefragt wird der MODULWERT, nicht der gerenderte `erweitert`: während der
+      // DIE §15-ZUSAGE HÄNGT NICHT AN DIESER ZEILE, sondern am Panel-Gate
+      // (`usePanelBezuege`): ohne Nutzer-Geste kommt hier gar kein `erlassKey`
+      // an, und der Effekt läuft oben in die frühe Rückgabe. Diese Bedingung ist
+      // die zweite, engere Sperre: wer im offenen Panel ALLES abwählt, löst auch
+      // dann keinen Fetch aus, wenn er den Erlass wechselt.
+      //
+      // Gefragt wird der MODULWERT, nicht der gerenderte Zustand: während der
       // Hydration liefert der Store noch den Default (Begründung an
       // `holeBezugKlassen`). Der Effekt läuft trotzdem auf `erweitert` als
       // Abhängigkeit — er soll ja erneut anlaufen, wenn der Nutzer umschaltet.
