@@ -167,8 +167,13 @@ describe('trefferZahl — «lädt noch» ist nicht «leer»', () => {
 });
 
 describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
-  it('genau drei, in der Reihenfolge der Fragen am Artikel', () => {
-    expect(PANEL_REITER.map((r) => r.id)).toEqual(['entscheide', 'aenderungen', 'materialien']);
+  // W2·7-VZUI (31.8.2026): der vierte Reiter «Anwendung» ist dazugekommen — die
+  // Behörden-Ressourcen und die Werkzeuge hatten seit H3 keinen Ort mehr
+  // (Herleitung im Kopf von `PanelAnwendung.tsx`). Er steht HINTEN: die Reihe
+  // bleibt damit die Frage-Chronologie, und der Pfeiltasten-Weg der drei
+  // bestehenden Reiter ist unverändert.
+  it('genau vier, in der Reihenfolge der Fragen am Artikel', () => {
+    expect(PANEL_REITER.map((r) => r.id)).toEqual(['entscheide', 'aenderungen', 'materialien', 'anwendung']);
   });
 
   it('jeder Reiter trägt Label UND erklärenden Titel (kein nackter Kurzname)', () => {
@@ -176,6 +181,16 @@ describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
       expect(r.label.length, r.id).toBeGreaterThan(2);
       expect(reiterTitel(r.id, 'Artikel').length, r.id).toBeGreaterThan(10);
     }
+  });
+
+  // §5: `reiterTitel` fällt am Ende in einen `return` ohne Bedingung. Ein fünfter
+  // Reiter, dessen Titel jemand zu ergänzen vergisst, bekäme damit STILL den
+  // Anwendungs-Titel. Der Test hält die Zuordnung Reiter → Titel darum einzeln
+  // fest, statt nur ihre Länge zu prüfen.
+  it('jeder Reiter hat SEINEN eigenen Titel (kein still geerbter Default)', () => {
+    const titel = PANEL_REITER.map((r) => reiterTitel(r.id, 'Artikel'));
+    expect(new Set(titel).size, titel.join(' | ')).toBe(PANEL_REITER.length);
+    expect(reiterTitel('anwendung', 'Artikel')).toBe('Behörden-Ressourcen und Werkzeuge zu diesem Erlass');
   });
 
   // C1 (H3-Nachzug): der Titel des Entscheid-Reiters trug «zu diesem Artikel» als

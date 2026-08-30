@@ -6,7 +6,8 @@ import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
 import { PanelAenderungen } from './PanelAenderungen';
 import { PanelMaterialien } from './PanelMaterialien';
-import { useArtikelRevisionShard, useMaterialien, useRevisionen } from './panelKontextLaden';
+import { PanelAnwendung } from './PanelAnwendung';
+import { useArtikelRevisionShard, useMaterialien, useRevisionen, useSoftLaw } from './panelKontextLaden';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 
@@ -144,6 +145,9 @@ export function LeserPanelZone({
   // andere Quelle (Herleitung in `panelKontextLaden.ts`).
   const artikelRevisionen = useArtikelRevisionShard(erlassKey, zustand.jeGeoeffnet);
   const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
+  // W2·7-VZUI: vierte Quelle, gleiches Gate. Die Werkzeuge des Reiters kommen
+  // synchron aus der Karten-Tabelle und brauchen keine Hook.
+  const softLaw = useSoftLaw(erlassKey, zustand.jeGeoeffnet);
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
   //
@@ -206,6 +210,7 @@ export function LeserPanelZone({
     ),
     aenderungen: <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} />,
     materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} />,
+    anwendung: <PanelAnwendung softLaw={softLaw} erlassKey={erlassKey ?? ''} />,
   } as const;
 
   // ── Die Fläche ────────────────────────────────────────────────────────────

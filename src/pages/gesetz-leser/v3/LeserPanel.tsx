@@ -2,17 +2,19 @@ import { useRef, type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 
-// ─── Das Panel selbst: EIN Ort, DREI Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
+// ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
 //
 // WAS DAS ERSETZT: das `KontextPanel` (765 Z.) mit sechs bedingten Sektionen, die
 // je nach Datenlage erschienen und verschwanden — Pos. 17 «Kontext-Panel
-// überladen». Drei benannte Reiter sind vorhersagbar: der Nutzer weiss, WO er
+// überladen». Benannte Reiter sind vorhersagbar: der Nutzer weiss, WO er
 // nachsieht, bevor er weiss, ob dort etwas steht.
 //
 // Diese Datei ist nur die HÜLLE: Kopf, Reiter-Leiste, Scroller, Fuss. Was in
 // einem Reiter steht, wissen `PanelEntscheide` / `PanelAenderungen` /
-// `PanelMaterialien` — und nur die. Wer einen vierten Reiter braucht, ergänzt
-// `PANEL_REITER` und übergibt einen weiteren Eintrag in `inhalt`.
+// `PanelMaterialien` / `PanelAnwendung` — und nur die. Wer einen weiteren Reiter
+// braucht, ergänzt `PANEL_REITER` und übergibt einen weiteren Eintrag in
+// `inhalt`. H3 baute drei; der vierte («Anwendung») kam mit W2·7-VZUI dazu und
+// hat genau diesen Weg genommen — die Hülle blieb dabei unverändert.
 //
 // ── ECHTE REITER, ALSO ECHTE PFEILTASTEN (W3C ARIA APG «Tabs») ──────────────
 // Anders als bei den Dropdowns des Lesers (dort «ehrliche Disclosure», KEIN
