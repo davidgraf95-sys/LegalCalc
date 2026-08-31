@@ -6,7 +6,7 @@ import { erfassungsgrad, STUFE_WORT } from '../../../lib/normtext/erfassungsgrad
 import { zaehlWort } from '../../../lib/normtext/erlassKopfText';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
-import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../benennung';
+import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../../../lib/benennung';
 import { formatiereDatum, kopfOverline, verifiziertesSachgebiet } from '../helpers';
 import {
   teilerfassung, nurErlassdatum, erlassOrgan, istDatumsToken,

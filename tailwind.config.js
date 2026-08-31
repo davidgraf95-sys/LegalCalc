@@ -161,6 +161,14 @@ export default {
         'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
       },
       borderRadius: {
+        // DEFAULT (= die nackte Klasse `rounded`) liegt seit 31.8.2026 auf
+        // demselben Token wie `rounded-sm` statt auf Tailwinds eigenem Default.
+        // Beide Werte sind HEUTE 4 px — die Angleichung ist visuell wirkungslos
+        // und rein latent. Sie schliesst aber die `rounded`-Fundstellen an die
+        // Haus-Radius-Skala an: ohne sie liefe eine künftige Rekalibrierung von
+        // --radius-sm an genau diesen Stellen still vorbei und die Kanten der
+        // Seite würden zweierlei (§5, Design-Konsistenz E-Mitgedacht a).
+        DEFAULT: 'var(--radius-sm)',
         sm: 'var(--radius-sm)', md: 'var(--radius-md)', lg: 'var(--radius-lg)',
         xl: 'var(--radius-xl)', '2xl': 'var(--radius-2xl)',
       },

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { BrowseMaterial } from '../../lib/materialien/typen';
+import { StandChip } from '../ui/StandChip';
 
 // ─── Material-Karte in der Übersicht /materialien ───────────────────────────
 //
@@ -10,18 +11,16 @@ import type { BrowseMaterial } from '../../lib/materialien/typen';
 // KEIN gespeicherter Dokumentinhalt (§7/§8), massgeblich bleibt die amtliche
 // Quelle.
 
-function StandChip({ stand }: { stand: string }) {
-  const m = stand.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  const anzeige = m ? `${m[3]}.${m[2]}.${m[1]}` : stand;
-  return <span className="lc-chip whitespace-nowrap">Stand <span className="num ml-1">{anzeige}</span></span>;
-}
+// Der Stand-Chip stand hier und in `normtext/ErlassKarte.tsx` zeichengleich als
+// lokale Kopie (Design-Konsistenz, C-Begleitbefund «Stand-Chip-Dedupe»,
+// 31.8.2026) — jetzt EIN Baustein: `ui/StandChip.tsx`.
 
 export function MaterialKarte({ m }: { m: BrowseMaterial }) {
   const overline = m.nummer ? `${m.doktypLabel} · ${m.nummer}` : m.doktypLabel;
   return (
     <Link
       to={`/materialien/${encodeURIComponent(m.key)}`}
-      className="lc-card group block p-4 no-underline transition-colors hover:border-brass-400"
+      className="lc-card group block p-4 no-underline"
     >
       <div className="flex items-baseline justify-between gap-3">
         <span className="lc-overline">{overline}</span>

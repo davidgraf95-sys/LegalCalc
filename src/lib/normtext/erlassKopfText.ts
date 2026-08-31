@@ -31,6 +31,18 @@
 // was trotzdem fehlt. §7/§8 bleiben gewahrt: «(maschinell)» bleibt tragend,
 // kein «gegengeprüft/verifiziert»-Wortfeld, und massgeblich ist stets die
 // amtliche Fassung.
+//
+// ─── B-6-Anbindung (Design-Konsistenz, 31.8.2026) ────────────────────────────
+// Der Vorbehalts-Halbsatz «massgeblich ist die amtliche Fassung» stand hier als
+// Literal — einer von mehreren Streuorten in zwei Substantiv-Varianten
+// (Herleitung und korrigierte Zählung: `lib/benennung.ts`, Gegenprüfung
+// 31.8.2026 N1). Seit B-6 hat er EINE Heimat; hier steht nur noch der Bezug. Die ERZEUGTEN Sätze
+// sind byte-gleich zum Stand davor — die Zusicherung darüber steht als
+// Wortlaut-Sonde in `src/tests/leser-benennung.test.ts`.
+// Kein Rechenpfad berührt (§2/§3): eine Zeichenkette wechselt den Ort, nicht
+// den Wert.
+
+import { MASSGEBLICH_HALBSATZ } from '../benennung';
 
 /** ISO-Datum `YYYY-MM-DD` → Schweizer Anzeigeform `TT.MM.JJJJ`; sonst unverändert. */
 export function datumCh(iso: string): string {
@@ -107,7 +119,7 @@ export function naechsteFassungSatz(abIso: string): string {
 export function nichtKonsolidiertSatz(seitIso: string | null): string {
   const seit = seitIso ? ` seit ${datumCh(seitIso)}` : '';
   return `Fedlex hat eine${seit} geltende Änderung noch nicht in den Text eingearbeitet`
-    + ' — massgeblich ist die amtliche Fassung.';
+    + ` — ${MASSGEBLICH_HALBSATZ}.`;
 }
 
 /**

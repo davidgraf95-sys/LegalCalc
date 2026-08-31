@@ -10,16 +10,30 @@
 
 export type TabItem<T extends string> = { code: T; label: React.ReactNode };
 
-/** Grösse: `m` = h-9/text-body-s/px-3 (Tabs); `s` = h-8/text-xs/px-2.5 (Filter-Toggle). */
-type TabGroesse = 's' | 'm';
+/**
+ * Grösse: `m` = h-9/text-body-s/px-3 (Tabs); `s` = h-8/text-xs/px-2.5
+ * (Filter-Toggle); `zweizeilig` = Titel + Unterzeile in EINEM Knopf.
+ *
+ * `zweizeilig` ist der additive Nachzug der Design-Konsistenz-Runde 1 (E-2,
+ * 31.8.2026): der Arbeitsrechts-Rechner trug eine wortgleiche Kopie dieser
+ * Segmented-Control (eigene Zustands-Klassen `bg-surface-raised text-brass-700
+ * shadow-sm border border-line`), weil seine Reiter zwei Zeilen tragen
+ * («A – Lohnfortzahlung» / «Art. 324a OR») und die feste Höhe `h-9` die zweite
+ * Zeile geklemmt hätte. Statt die Kopie anzugleichen bekommt der EINE Baustein
+ * die fehlende Variante (§5/§10): keine feste Höhe, sondern `min-h-11` (44 px,
+ * WCAG 2.5.5 AAA — dasselbe Mass wie `Topbar`/`lc-*`) plus eigenes
+ * Vertikal-Padding, damit die Höhe dem Inhalt folgt statt ihn zu schneiden.
+ */
+type TabGroesse = 's' | 'm' | 'zweizeilig';
 
 const KNOPF: Record<TabGroesse, string> = {
   m: 'px-3 rounded-md text-body-s font-medium transition-all',
   s: 'px-2.5 rounded-md text-xs font-medium transition-all',
+  zweizeilig: 'px-4 py-2 rounded-md text-body-s font-medium transition-all',
 };
 // Mobile grössere Trefferfläche (Redesign E7: h-11 = 44px erreicht auf Touch
 // die AAA-Empfehlung), ab sm zurück auf die kompakte Desktop-Höhe.
-const HOEHE: Record<TabGroesse, string> = { m: 'h-11 sm:h-9', s: 'h-10 sm:h-8' };
+const HOEHE: Record<TabGroesse, string> = { m: 'h-11 sm:h-9', s: 'h-10 sm:h-8', zweizeilig: 'min-h-11' };
 
 const AKTIV = 'bg-surface-raised text-brass-700 shadow-sm border border-line';
 const INAKTIV = 'text-ink-600 hover:text-ink-900';
@@ -45,7 +59,13 @@ export function Tabs<T extends string>({
   return (
     <>
     <div
-      role={mode === 'tab' ? 'tablist' : undefined}
+      // `pressed` bekommt `role="group"` (E-2, 31.8.2026): ohne Rolle ist das
+      // `aria-label` an einem generischen <div> für Hilfsmittel unsichtbar —
+      // die Gruppe hiess dort also gar nicht «Verfahrensphase»/«Mangeltyp».
+      // Die abgelöste Kopie in `GewaehrleistungForm` hatte role=group korrekt
+      // gesetzt; der geteilte Baustein darf beim Zusammenziehen nichts
+      // verlieren (§5/§10). Rein semantisch, keine Optik-Änderung.
+      role={mode === 'tab' ? 'tablist' : 'group'}
       aria-label={ariaLabel}
       className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-1 p-0.5 bg-surface border border-line rounded-lg w-fit max-w-full overflow-x-auto`}
     >

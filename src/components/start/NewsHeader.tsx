@@ -173,8 +173,11 @@ export function NewsHeader() {
             <p className="num mb-1.5 text-xs text-ink-500">{deDatum(g.datum)}</p>
             <div className="flex gap-3">
               {g.eintraege.map(({ e, gebiet, normen }) => (
+                /* C-3 (31.8.2026): Lift + Schlagschatten entfallen — der
+                   Karten-Hover läuft hausweit als EINE Regel an `.lc-card`
+                   über die Farbstufe (index.css, §G-j). */
                 <Link key={e.key} to={`/rechtsprechung/${encodeURIComponent(e.key)}`}
-                  className="group flex h-full w-[clamp(12rem,72vw,18rem)] shrink-0 snap-start flex-col gap-1 lc-card p-3.5 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none hover:shadow-lg hover:-translate-y-0.5">
+                  className="group flex h-full w-[clamp(12rem,72vw,18rem)] shrink-0 snap-start flex-col gap-1 lc-card p-3.5 bg-surface no-underline">
                   {/* J4 · Rechtsgebiet-Badge statt der «Bundesgericht»-Fusszeile.
                       Es ist das DETERMINISTISCH im Korpus erfasste `sachgebiet`
                       (dasselbe Feld, das Liste, Karte und Sachgebiets-Rail

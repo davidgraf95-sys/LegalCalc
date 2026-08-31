@@ -7,6 +7,8 @@ import { EntscheidZeile } from '../components/rechtsprechung/EntscheidZeile';
 import { EntscheidFilter } from '../components/rechtsprechung/EntscheidFilter';
 import { SachgebietKacheln } from '../components/rechtsprechung/SachgebietKacheln';
 import { LiveSuche } from '../components/rechtsprechung/LiveSuche';
+import { Leerzustand } from '../components/ui/Leerzustand';
+import { GruppenKopf } from '../components/ui/GruppenKopf';
 import {
   ladeEntscheidManifest, ladeRichterRegister, filterEntscheide, sortiere, gruppiereNachLeit,
   gruppiereNachInstanz, zaehleSachgebiete, normLabel,
@@ -60,6 +62,7 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   liste: BrowseEntscheid[]; dichte: Dichte; onNorm: (k: string) => void;
   speicherKey: string; mitSprungleiste?: boolean;
 }) {
+  const pk = usePaneKlasse();
   // Fenster aus der Sitzung wiederherstellen — LAZY, also schon im ersten Render
   // (J1-Prüfpunkt: nach «zurück» muss das Dokument sofort wieder so hoch sein,
   // sonst greift die zentrale Scroll-Wiederherstellung in App.tsx ins Leere).
@@ -166,7 +169,18 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
       <div>
         {sprungleiste}
         {frueherKnopf}
-        <div ref={behaelterRef} className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+        {/* C-1 (Design-Konsistenz, 31.8.2026): das Raster hing als einzige
+            Karten-Fläche der App noch am VIEWPORT (`xl:grid-cols-2`) statt an
+            der eigenen Breite. Im Split-View war der Effekt sichtbar falsch
+            herum: eine schmale Pane auf einem breiten Bildschirm bekam zwei
+            Spalten, eine breite Pane auf einem schmalen Gerät keine. `pk()`
+            wählt zwischen Viewport- und Container-Query-Stufen (48:1 die
+            hausweite Form). Die Spaltenzahl bleibt bewusst bei ZWEI: die
+            Entscheid-Karte trägt Regeste und Norm-Chips und ist breiter als
+            die Erlass-Karte des dreispaltigen `Gitter`-Rezepts — dieselbe
+            Klassenkette wäre eine Gleichsetzung zweier verschiedener Inhalte
+            (§1), darum bleiben die beiden Raster getrennt. */}
+        <div ref={behaelterRef} className={pk('grid grid-cols-1 gap-3 xl:grid-cols-2', 'grid grid-cols-1 gap-3 @3xl/pane:grid-cols-2')}>
           {sichtbar.map((e) => <EntscheidKarte key={e.key} e={e} onNorm={onNorm} />)}
         </div>
         {mehrKnopf}
@@ -192,10 +206,7 @@ function Sektion({ titel, liste, dichte, onNorm, speicherKey }: {
   if (!liste.length) return null;
   return (
     <section className="space-y-3">
-      <h2 className="lc-overline text-brass-700 flex items-center gap-3">
-        {titel}<span className="num text-ink-500">{liste.length}</span>
-        <span aria-hidden className="h-px flex-1 bg-line" />
-      </h2>
+      <GruppenKopf stufe={2} titel={titel} zahl={liste.length} />
       <Liste liste={liste} dichte={dichte} onNorm={onNorm} speicherKey={speicherKey} />
     </section>
   );
@@ -405,7 +416,15 @@ export function Rechtsprechung() {
             </div>
 
             {gefiltert.length === 0 ? (
-              <div className="lc-notice">Kein Entscheid gefunden. Filter anpassen oder zurücksetzen.</div>
+              /* W2·19-DESIGN-KONSISTENZ · D-7: EIN Leerzustands-Baustein statt
+                 dreier Bauformen. Vorher eine `lc-notice`-Box mit dem Satz
+                 «… Filter anpassen oder zurücksetzen.» — der Ausweg stand als
+                 Prosa da, aber es gab nichts zu drücken (C1: keine Sackgasse).
+                 Jetzt Aussagesatz + echter Knopf; die Sachgebiets-Achse (Rail/
+                 URL) bleibt dabei erhalten, exakt wie beim «zurücksetzen» der
+                 Filterleiste (§5: EINE Rücksetz-Semantik, nicht zwei). */
+              <Leerzustand art="filter" text="Kein Entscheid gefunden."
+                weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => onFilter({ sachgebiet: werte.sachgebiet ?? null }) }} />
             ) : alsSektionen ? (
               <div className="space-y-8">
                 <Sektion titel="Amtliche Leitentscheide (BGE)" liste={gruppen.leitentscheide} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey('leit')} />
@@ -421,11 +440,8 @@ export function Rechtsprechung() {
                     Label «amtlich») — falsch ist nur die Zugehörigkeit zur BGE-Sammlung. */}
                 {gruppen.weitere.length > 0 && (
                   <div className="space-y-6">
-                    <h2 className="lc-overline flex items-center gap-3">
-                      Weitere Entscheide — nicht in der amtlichen Sammlung (BGE)
-                      <span className="num text-ink-500">{gruppen.weitere.length}</span>
-                      <span aria-hidden className="h-px flex-1 bg-line" />
-                    </h2>
+                    <GruppenKopf stufe={2} zahl={gruppen.weitere.length}
+                      titel="Weitere Entscheide — nicht in der amtlichen Sammlung (BGE)" />
                     {gruppiereNachInstanz(gruppen.weitere).map((g) => (
                       <Sektion key={g.typ} titel={g.label} liste={g.liste} dichte={dichte} onNorm={waehleNorm} speicherKey={deckelKey(`instanz:${g.typ}`)} />
                     ))}

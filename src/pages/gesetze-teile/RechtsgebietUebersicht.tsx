@@ -23,6 +23,7 @@ import { gruppiereNachRechtsgebiet } from './rechtsgebiet-gruppierung';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { ErlassZeile } from '../../components/normtext/ErlassKarte';
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
+import { GruppenKopf } from '../../components/ui/GruppenKopf';
 
 export function RechtsgebietUebersicht({ erlasse }: { erlasse: BrowseErlass[] }) {
   const pk = usePaneKlasse();
@@ -45,11 +46,7 @@ export function RechtsgebietUebersicht({ erlasse }: { erlasse: BrowseErlass[] })
       <div className="space-y-6">
         {gruppen.map((g) => (
           <div key={g.gebiet} className="space-y-2">
-            <div className="flex items-baseline gap-3">
-              <h3 className="lc-overline text-brass-700">{g.label}</h3>
-              <span aria-hidden className="flex-1 h-px bg-line" />
-              <span className="num text-body-s text-ink-500">{g.erlasse.length}</span>
-            </div>
+            <GruppenKopf titel={g.label} zahl={g.erlasse.length} />
             {/* L6 (Design-Qualitäts-Pass 29.8.2026) · ZEILEN-GAP. Das Raster
                 setzte nur `gap-x-5`; `row-gap` blieb damit auf `normal` = 0 und
                 die Zeilen stiessen aneinander — gemessen @1440 Zeilenoberkanten

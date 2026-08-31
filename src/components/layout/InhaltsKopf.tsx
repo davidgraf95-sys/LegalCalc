@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import type { KopfDaten } from './InhaltsKopfKontext';
 import { RuecksprungChip } from './RuecksprungChip';
 import { DeepLinkSkeleton } from './DeepLinkSkeleton';
+import { OrtsAngabe, StandAngabe } from './OrtsAngabe';
 
 // ─── Inhalts-Kopf (Einzelansicht «analog Split-View», ohne Verschiebe-Optionen) ─
 //
@@ -34,6 +34,11 @@ import { DeepLinkSkeleton } from './DeepLinkSkeleton';
 //     Gesetzes-Übersicht — dasselbe Ziel, das die Sektions-Krume «Gesetze»
 //     ansteuert), und nur die Blatt-Krume + der Artikel bleiben ausgeschrieben.
 //     Gekürzt wird als EINE Einheit, nie Zeichen für Zeichen je Krume.
+//     ── ERGÄNZT 31.8.2026 (A-4): Befund und Antwort gelten unverändert;
+//        gewandert ist nur die MESSGRÖSSE. Damals «unterhalb sm» (Viewport),
+//        seit A-4 «unterhalb 28 rem Ort-Zone» (`@md/ort`, Container-Query in
+//        `./OrtsAngabe`) — dieselbe Regel gilt seither auch im Split-View, wo
+//        der Viewport die falsche Zahl war.
 //
 //  ③ VIER ANATOMIEN → EINE. Die Griffe (☰, Suche, Rechtsprechung ▾, Ansicht ▾,
 //     ✕) trugen bordierte Knöpfe, `lc-chip` mit Messing-Tick, `lc-input` und
@@ -51,18 +56,14 @@ import { DeepLinkSkeleton } from './DeepLinkSkeleton';
 //    `InhaltsKopfKontext.ts` und am `if` unten). Alles darüber gilt unverändert
 //    für jede Seite, die das Feld nicht meldet.
 
-/** Artikel-Etikett ohne die Wiederholung des Erlass-Kürzels, das direkt davor
- *  in der Brotkrume steht («Art. 212 ZGB» → «Art. 212», wenn die Blatt-Krume
- *  «ZGB» heisst). Reine Anzeige-Ableitung: der Melde-Vertrag (`KopfDaten.artikel`)
- *  bleibt das volle Zitat, das der Split-View-Kopf (PaneKopf) unverändert
- *  ausgibt — dort steht das Kürzel nicht daneben. Greift nur bei exaktem
- *  Suffix-Treffer mit Wortgrenze; sonst bleibt das Etikett unangetastet. */
-function kuerzeArtikel(artikel: string | null | undefined, blatt: string | undefined): string | null {
-  if (!artikel) return null;
-  if (!blatt) return artikel;
-  const suffix = ` ${blatt}`;
-  return artikel.endsWith(suffix) ? artikel.slice(0, -suffix.length) : artikel;
-}
+// ── A-4 (31.8.2026): Krumen-Kette, Rücksprung, Artikel-Etikett und die
+//    Overflow-Regel dieser Leiste stehen nicht mehr hier, sondern in
+//    `./OrtsAngabe` — demselben Baustein, den seither auch der `PaneKopf`
+//    konsumiert (§5/§10). Die Herleitungen ② «schmale Breiten» und die
+//    Trenner-Messung C5 sind wörtlich mitgewandert; NEU ist allein, dass die
+//    Kaskade die ZONE misst statt den Viewport (Herleitung dort). `kuerzeArtikel`
+//    lebt ebenfalls dort und ist von hier verschwunden — es war die Ableitung
+//    dieser Anzeige, nicht dieser Datei.
 
 export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
   daten: KopfDaten;
@@ -70,14 +71,6 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
   breiteKlasse: string;
   onSchliessen: () => void;
 }) {
-  const letzter = daten.breadcrumb.length - 1;
-  const blatt = daten.breadcrumb[letzter];
-  // Rücksprung-Ziel für schmale Breiten: die NÄCHSTGELEGENE klickbare Krume
-  // oberhalb des Blatts. Bei Gesetzen ist das die Ebene-Krume («Bund» →
-  // /gesetze, «Kanton BS» → /gesetze?ebene=kanton&kt=BS) — also dieselbe
-  // Übersicht, auf die auch die Sektions-Krume führt: kein Ziel geht verloren.
-  const eltern = daten.breadcrumb.slice(0, letzter).reverse().find((b) => b.to);
-  const artikelKurz = kuerzeArtikel(daten.artikel, blatt?.label);
   // ── A-2 (David 17.8.2026) · EINE KOPFZEILE, NICHT ZWEI ────────────────────
   // Trägt die Inhaltsseite ihre Kopfzeile selbst (`kopfzeileSelbst`, Herleitung
   // im Vertrag), zeigt diese Leiste NICHTS mehr — keine Krume, keinen Stand,
@@ -136,70 +129,11 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
       {/* `relative`: Anker für das mobile Overlay-Suchfeld (A35, sucheSlot) — es legt
           sich `absolute` über die Zeile, ohne etwas zu verschieben (§15.2). */}
       <div className={`${breiteKlasse} relative mx-auto flex h-9 items-center gap-1.5 px-5 sm:gap-2 sm:px-6 md:gap-3`}>
-        {/* ① ORT: Krumen und Artikel als EINE Angabe. `min-w-0` + `overflow-hidden`
-            machen sie zur einzigen schrumpfenden Zone der Leiste — die Griffe
-            rechts behalten damit in jeder Breite ihre Plätze (keine
-            Umbruch-Wanderung, CLS 0 beim Einlaufen des Live-Artikels). */}
-        <nav aria-label="Brotkrümel" className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden whitespace-nowrap text-xs text-ink-500">
-          {/* ② Unter sm: EIN Rücksprung statt vier zerhackter Krumen. */}
-          {eltern?.to && (
-            <Link to={eltern.to} aria-label={`Zurück zu ${eltern.label}`} title={`Zurück zu ${eltern.label}`}
-              className="shrink-0 no-underline hover:text-brass-700 sm:hidden">‹</Link>
-          )}
-          {daten.breadcrumb.map((b, i) => (
-            <span key={`${i}-${b.label}`}
-              // Unter sm bleibt nur die Blatt-Krume — und auch die nur, solange
-              // KEIN Artikel läuft: sobald einer läuft, trägt sein volles Zitat
-              // («Art. 212 ZGB») das Kürzel bereits mit sich. Zwei Angaben
-              // desselben Erlasses auf 360 px wären die teuerste Dopplung der
-              // Leiste.
-              className={`min-w-0 items-center gap-1 ${
-                i < letzter || daten.artikel ? 'hidden sm:inline-flex' : 'inline-flex'
-              }`}>
-              {/* C5 (Design-Qualitäts-Pass 29.8.2026) · KRUMEN-TRENNER ink-300 →
-                  ink-400, gemeinsame Herleitung für alle fünf Trenner-Stellen
-                  (hier, PaneKopf, LeserKopf ›/‹, GliederungSheet). Gemessen
-                  gegen `--paper`: ink-300 hell 2.28:1 / dunkel 2.34:1 — der
-                  Trenner trägt die Gliederung der Ortsangabe und verschwand.
-                  ink-400 misst hell 3.30 / dunkel 3.65 (auf `--well` 3.13 /
-                  3.83) und hält die F2-Schwelle 3:1 in BEIDEN Themes.
-                  Bewusst NICHT ink-500 wie die Klapp-Dreiecke: die Krumen-Links
-                  selbst laufen auf ink-500 (PaneKopf.tsx) — ein gleich starker
-                  Trenner nähme ihnen die Hierarchie. Der Trenner ist Struktur,
-                  kein Bedienelement (aria-hidden). */}
-              {i > 0 && <span aria-hidden className="hidden text-ink-400 sm:inline">›</span>}
-              {b.to
-                ? <Link to={b.to} className="truncate no-underline hover:text-brass-700">{b.label}</Link>
-                : <span className={`truncate ${i === letzter ? 'font-medium text-ink-800' : ''}`}>{b.label}</span>}
-            </span>
-          ))}
-          {/* Live-Artikel als feinste Stufe derselben Ortsangabe — Mono/Micro,
-              damit er die Krumen nicht überstimmt (ruhigere Typo-Hierarchie).
-              Zwei Fassungen desselben Werts (§5: eine Quelle, zwei Zuschnitte —
-              nur je eine ist gerendert, die andere ist `display:none`):
-               · ab sm ohne das Kürzel, das die Krume daneben schon nennt, und
-                 `shrink-0` — beim Engerwerden gibt die Krume nach, nicht die
-                 genauere Angabe (gleiche Setzung wie im PaneKopf);
-               · unter sm als VOLLES Zitat und truncatend: dort steht keine
-                 Krume mehr daneben, und wenn der Platz nicht reicht, soll die
-                 Erlass-Abkürzung am Ende abgeschnitten werden — nie die
-                 Artikelnummer am Anfang. */}
-          {/* `data-ort-artikel` (Ä1, LESER-V3 H2b): die ORTSANGABE dieser Leiste,
-              adressierbar gemacht. Der Ästhetik-Review H1 meldete, sie nenne im
-              Split einen anderen Artikel als die Lesespalte — ein §7-Fehler, wenn
-              er zutrifft. Prüfbar war das nicht: die Angabe hing an einer
-              Utility-Klasse (`.num`), und die erste Mono-Zahl des Dokuments ist
-              woanders (SR-Nummer). Die Marke ist der Testanker für
-              `e2e/leser-v3-ortsangabe.e2e.ts`; sie ändert nichts an der Anzeige. */}
-          {daten.artikel && (
-            <>
-              <span data-ort-artikel className="num min-w-0 truncate text-micro font-medium text-ink-700 sm:hidden">{daten.artikel}</span>
-              <span data-ort-artikel className="num hidden shrink-0 text-micro font-medium text-ink-700 sm:inline">
-                <span aria-hidden className="mr-1 text-ink-300">·</span>{artikelKurz}
-              </span>
-            </>
-          )}
-        </nav>
+        {/* ① ORT: Krumen und Artikel als EINE Angabe — seit A-4 (31.8.2026)
+            aus dem geteilten Baustein `./OrtsAngabe`, den auch der `PaneKopf`
+            konsumiert. `mitLink`, weil in der Einzelansicht der globale Router
+            zuständig ist (im Pane ist es der Pane-eigene Navigator). */}
+        <OrtsAngabe breadcrumb={daten.breadcrumb} artikel={daten.artikel} mitLink navLabel="Brotkrümel" />
         {/* ③ GRIFF-RIEGEL: drei Gruppen (finden · wählen · Blatt), innen gap-1,
             zwischen den Gruppen gap-3 — Nähe trägt die Gruppierung, nicht Linien
             (Reglement F1). */}
@@ -217,7 +151,7 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
               ausgeschrieben stehen — B6 setzt ihn nur leiser (Micro statt xs),
               versteckt ihn nicht. `ink-600` statt `ink-500`, weil 11-px-Text
               ≥ 4.5:1 tragen muss (F2). */}
-          {daten.stand && <span className="shrink-0 whitespace-nowrap text-micro text-ink-600">Stand <span className="num">{daten.stand}</span></span>}
+          {daten.stand && <StandAngabe stand={daten.stand} />}
           <button type="button" onClick={onSchliessen}
             aria-label="Schliessen (zur Startseite)" title="Schliessen (zur Startseite)"
             className="lc-leiste-griff">

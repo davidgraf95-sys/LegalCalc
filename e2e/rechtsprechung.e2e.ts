@@ -63,7 +63,13 @@ test.describe('Reader (über Klick aus der Übersicht)', () => {
     await expect(page.getByText('Erwägungen', { exact: false }).first()).toBeVisible()
     // Provenienz-Fuss: Live-Link auf die amtliche Fassung (kommt im Reader
     // mehrfach vor — Kopf-Link + Hinweis im Body, daher .first()).
-    await expect(page.getByText('massgebliche Fassung', { exact: false }).first()).toBeVisible()
+    // NACHGEZOGEN 31.8.2026 (W2·19-DESIGN-KONSISTENZ · B2/BAU-4, Befund B-1):
+    // der Link hiess hier «↗ massgebliche Fassung» (Pfeil vorne, klein
+    // beginnend) und heisst seit dem Zug auf den geteilten `ui/QuellLink`
+    // kanonisch «Amtliche Fassung ↗» (Benennungs-Glossar Ä110). Die Zusicherung
+    // selbst — «der Live-Link auf die amtliche Fassung ist sichtbar» — ist
+    // unverändert; nur ihr Suchwort folgt dem Kanon.
+    await expect(page.getByText('Amtliche Fassung', { exact: false }).first()).toBeVisible()
     await page.screenshot({ path: 'e2e-shots/rechtsprechung-reader.png', fullPage: true })
     expect(fehler).toEqual([])
   })

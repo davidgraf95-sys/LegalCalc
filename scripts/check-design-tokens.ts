@@ -69,6 +69,29 @@ const DEFAULT_PALETTE = 'red|green|blue|yellow|orange|purple|pink|gray|grey|zinc
 const DEFAULT_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-(?:${DEFAULT_PALETTE})-[0-9]+(?:/[0-9.]+)?\\b`, 'g');
 // ── Verbot: Arbitrary-Color Hex/rgb/hsl in Komponenten (§13 Pkt.1). var(--…) bleibt erlaubt (Token-Escape). ──
 const ARBITRARY_FARB_RE = new RegExp(`\\b(?:${PRAEFIX})-\\[(?:#|rgb|hsl)[^\\]]*\\]`, 'g');
+// ── Verbot: eigene FARBE am Fokusring (E-1, Design-Konsistenz 31.8.2026) ────
+// Der Fokusring hat GENAU EINE Rolle: `--focus` (src/index.css) — hell
+// brass-700, dunkel brass-500, und die globale Regel `:focus-visible { outline:
+// 2px solid var(--focus); outline-offset: 2px }` (index.css) trägt sie an JEDEM
+// fokussierbaren Element. Gefunden wurden trotzdem 9 Komponenten, die daneben
+// eine eigene Kette `focus-visible:outline focus-visible:outline-2
+// focus-visible:outline-brass-600` setzten: dieselbe Zusage, zweiter Wert
+// (§5) — im Dunkelmodus sichtbar falsch, weil brass-600 dort NICHT der
+// Fokuston ist. Die bestehenden Tore griffen knapp daneben: `brass-600` steht
+// in der Config (FARB_RE grün) und ist keine Default-Palette-Farbe
+// (DEFAULT_FARB_RE grün). Darum diese Schranke (§17-Nachzug).
+// ERLAUBT bleibt alles, was NICHT die Farbe setzt: `focus-visible:outline-none`
+// (dokumentierte Eigenring-Fälle), Breiten (`outline-2`) und vor allem der
+// Offset (`focus-visible:-outline-offset-2`) — Scroll-Container und Krümel in
+// schmalen Kopfzeilen brauchen den Ring innenliegend, sonst clippt er.
+// Fasst `focus:` und `focus-visible:` sowie `outline-`/`ring-` (inkl.
+// `ring-offset-`-Farbe) und arbitrary `[…]`-Werte ausser `var(--focus)`.
+const FOKUS_FAMILIEN = [...Object.keys(farben), ...DEFAULT_PALETTE.split('|')]
+  .filter((f) => f !== 'focus')                       // die Rolle selbst bleibt erlaubt
+  .join('|');
+const FOKUS_FARB_RE = new RegExp(
+  `\\bfocus(?:-visible)?:-?(?:outline|ring|ring-offset)-(?:${FOKUS_FAMILIEN})(?:-[a-z0-9.]+)?(?:/[0-9.]+)?\\b`, 'g');
+const FOKUS_ARB_RE = /\bfocus(?:-visible)?:-?(?:outline|ring|ring-offset)-\[(?!var\(--focus\))[^\]]+\]/g;
 // ── Verbot: lc-overline mit ink-Dimm-Override (D-1.2, Befund 18 / E1-Schranke) ──
 // lc-overline ist auf ink-600 kalibriert (≥4.5:1 auch auf getönten Flächen);
 // text-ink-500/400/300 daneben degradiert die 11px-Overline unter AA (gemessen
@@ -128,6 +151,12 @@ for (const datei of dateien(WURZEL)) {
     ARBITRARY_FARB_RE.lastIndex = 0;
     while ((am = ARBITRARY_FARB_RE.exec(zeile)) !== null)
       fehler.push(`${datei}:${i + 1} — Arbitrary-Farbe «${am[0]}» (Hex/rgb/hsl in Komponente verboten, §13 Pkt.1). Wert als CSS-Variable führen und …-[var(--…)] nutzen.`);
+    for (const re of [FOKUS_FARB_RE, FOKUS_ARB_RE]) {
+      let fm: RegExpExecArray | null;
+      re.lastIndex = 0;
+      while ((fm = re.exec(zeile)) !== null)
+        fehler.push(`${datei}:${i + 1} — eigene Fokusring-Farbe «${fm[0]}» (E-1, §13 F3). Der Ring hat EINE Rolle (--focus) und kommt aus der globalen «:focus-visible»-Regel in src/index.css: Farb- und Breiten-Utilities ersatzlos streichen, nur einen wirklich nötigen Offset (focus-visible:-outline-offset-2) behalten.`);
+    }
     if (OVERLINE_DIM_RE.test(zeile))
       fehler.push(`${datei}:${i + 1} — lc-overline mit text-ink-500/400/300 gedimmt (AA-Fail bei 11px, D-1.2/E1). Override strippen — lc-overline trägt die kalibrierte ink-600-Basis.`);
     let wm: RegExpExecArray | null;
@@ -177,6 +206,67 @@ if (alphaFunde.size > 0) {
     }
     if (mit === rumpf.get(opak(klasse)))
       fehler.push(`${wo} — Deckkraft-Klasse «${klasse}» erzeugt zwar eine Regel, aber denselben Wert wie «${opak(klasse)}» — der /-Modifier bleibt wirkungslos (D0/F7).`);
+  }
+}
+
+// ── Prüfung 4: `theme-color` ist eine Projektion von --paper (E-3) ───────────
+// Die Browser-Chrome-Farbe steht an ZWEI Stellen als Literal: statisch in
+// `index.html` (die beiden media-Tags decken den Moment vor dem JS ab) und
+// dynamisch in `src/components/thema.ts` (das media-lose Tag, das die Wahl
+// gegen die Systemvorgabe abbildet). Beide MÜSSEN die Seitenfläche `--paper`
+// aus `src/index.css` treffen — sonst sitzt neben der Papierfläche ein
+// andersfarbiger Browser-Rahmen. Genau das war der Ist-Stand: hell stand
+// überall `#F7F4EC`, `--paper` ist aber `#FCFAF6` (ΔE 2.23, sichtbarer
+// Kantensprung auf iOS/Android).
+// WARUM WÄCHTER STATT GENERATOR: `index.html` wird vor jedem JS geparst, kann
+// also keine TS-Konstante konsumieren — das Literal MUSS dort stehen. Ein
+// Generator schriebe es hinein und bräuchte dafür ein zweites Werkzeug plus
+// npm-Skript; der Wächter macht dieselbe Zusage («eine Quelle, alles andere
+// ist Projektion») ohne neue Erzeugungs-Maschinerie (§17-Gegengewicht).
+{
+  const css = readFileSync('src/index.css', 'utf8');
+  /** Inhalt von `<selektor> { … }` (Klammer-Zählung, Idiom aus check-farbwelt.ts). */
+  const block = (selektor: string): string => {
+    const start = css.indexOf(selektor);
+    if (start < 0) throw new Error(`check-design-tokens: Selektor «${selektor}» fehlt in src/index.css.`);
+    let i = css.indexOf('{', start);
+    const von = i + 1;
+    for (let tiefe = 0; i < css.length; i++) {
+      if (css[i] === '{') tiefe++;
+      else if (css[i] === '}' && --tiefe === 0) return css.slice(von, i);
+    }
+    throw new Error(`check-design-tokens: Block «${selektor}» nicht geschlossen.`);
+  };
+  const paper = (selektor: string): string => {
+    const t = /--paper\s*:\s*([^;]+);/.exec(block(selektor));
+    if (!t) throw new Error(`check-design-tokens: «--paper» fehlt im Block «${selektor}».`);
+    return t[1].trim().toUpperCase();
+  };
+  const SOLL = { hell: paper('  :root {'), dunkel: paper('  html.dark {') };
+
+  const html = readFileSync('index.html', 'utf8');
+  const metaRe = /<meta\s+name="theme-color"\s+content="([^"]+)"\s+media="\(prefers-color-scheme:\s*(light|dark)\)"/g;
+  const gefunden = new Set<string>();
+  let mm: RegExpExecArray | null;
+  while ((mm = metaRe.exec(html)) !== null) {
+    const rolle = mm[2] === 'light' ? 'hell' : 'dunkel';
+    gefunden.add(rolle);
+    if (mm[1].toUpperCase() !== SOLL[rolle])
+      fehler.push(`index.html — theme-color (${mm[2]}) «${mm[1]}» ≠ --paper ${rolle} «${SOLL[rolle]}» aus src/index.css (E-3). Die Chrome-Farbe ist eine Projektion der Seitenfläche, nie ein eigener Wert (§5).`);
+  }
+  for (const rolle of ['hell', 'dunkel'] as const)
+    if (!gefunden.has(rolle))
+      fehler.push(`index.html — theme-color-Tag für «${rolle}» fehlt (E-3). Beide media-Varianten decken den Moment vor dem JS ab.`);
+
+  const thema = readFileSync('src/components/thema.ts', 'utf8');
+  const tm = /m\.content\s*=\s*dunkel\s*\?\s*'(#[0-9A-Fa-f]{3,8})'\s*:\s*'(#[0-9A-Fa-f]{3,8})'/.exec(thema);
+  if (!tm)
+    fehler.push('src/components/thema.ts — die theme-color-Zuweisung («m.content = dunkel ? … : …») ist nicht mehr auffindbar (E-3). Wächter und Fundstelle zusammen nachziehen, nicht den Wächter blenden.');
+  else {
+    if (tm[1].toUpperCase() !== SOLL.dunkel)
+      fehler.push(`src/components/thema.ts — theme-color dunkel «${tm[1]}» ≠ --paper dunkel «${SOLL.dunkel}» aus src/index.css (E-3).`);
+    if (tm[2].toUpperCase() !== SOLL.hell)
+      fehler.push(`src/components/thema.ts — theme-color hell «${tm[2]}» ≠ --paper hell «${SOLL.hell}» aus src/index.css (E-3).`);
   }
 }
 

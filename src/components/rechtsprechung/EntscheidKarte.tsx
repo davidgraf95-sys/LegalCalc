@@ -29,8 +29,13 @@ export function EntscheidKarte({ e, onNorm }: {
   const ziel = verweis
     ? `/rechtsprechung/${encodeURIComponent(verweis.zielKey)}?ansicht=voll`
     : `/rechtsprechung/${encodeURIComponent(e.key)}`;
+  // `data-aktiv`: die Hover-Grammatik der Karten liegt seit C-3 (31.8.2026) als
+  // EINE Regel in `index.css` und greift am ELEMENT (`a`/`button`). Diese Karte
+  // ist klickbar, aber ein <div> — der Stretched-Link liegt innen, damit die
+  // Norm-Chips seine Geschwister bleiben. Das Attribut ist die eine erklärte
+  // Ausnahme, kein zweiter Hover-Weg.
   return (
-    <div className="lc-card group flex h-full flex-col p-4 transition-colors hover:border-brass-400">
+    <div data-aktiv className="lc-card group flex h-full flex-col p-4">
       {/* Lese-Bereich (klickbar). flex-1 schiebt den Fuss auf gleiche Höhe.
           Stretched-Link: der Link deckt die ganze Lesefläche per ::after ab, die
           Norm-Chips liegen als GESCHWISTER darüber (relative) — so ist der

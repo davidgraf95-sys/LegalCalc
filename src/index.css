@@ -1040,6 +1040,26 @@
   }
 
   .lc-card { @apply bg-surface border border-line rounded-lg shadow-md; }
+  /* EINE Karten-Hover-Grammatik (Design-Konsistenz C-3, 31.8.2026).
+     GEMESSEN waren drei: (a) Farbstufe `hover:border-brass-400` (Erlass-,
+     Material-, Entscheid-Karte), (b) Lift + Schlagschatten
+     `hover:shadow-lg hover:-translate-y-0.5` (Katalog-Listenzeile,
+     Katalog-Fristen-Hauptkarte, NewsHeader-Karussell), (c) Linien-Verstärkung +
+     Schatten `hover:border-line-strong hover:shadow-md` (RubrikKacheln).
+     KANON ist (a): DESIGN-REGLEMENT §G-j — Interaktions-Zustände laufen über
+     EINE Regel, «eine Flexoki-Stufe tiefer», also über die WÄRME, nicht über
+     Höhe. (b) und (c) sind zudem Elevations-Aussagen: sie behaupten, die Karte
+     hebe sich aus der Fläche — eine zweite, konkurrierende Semantik neben
+     `--surface`/`shadow-md` (§13 Ä110-Familie, «Linien unter der Tinte,
+     Textur-NEIN», §G-f).
+     Getragen wird die Regel vom ELEMENT, nicht von einer Zusatzklasse: nur
+     eine Karte, die selbst Link/Knopf ist, reagiert. Karten, die bloss Links
+     ENTHALTEN (Themen-Panels, Systematik-Kategorien), bleiben still.
+     `[data-aktiv]` ist die eine erklärte Ausnahme für die Stretched-Link-Karte
+     (`EntscheidKarte`: klickbare Fläche, aber ein <div>, weil die Norm-Chips
+     als Geschwister über dem Link liegen müssen). */
+  :is(a, button, [role='button'], [data-aktiv]).lc-card { @apply transition-colors; }
+  :is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }
   /* Ergebnis-Kachel (Hauptwerte in Ergebnisblöcken) — eine Anatomie überall */
   .lc-tile { @apply bg-surface-raised border border-line rounded-xl p-4; }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×

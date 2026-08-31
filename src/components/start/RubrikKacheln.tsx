@@ -62,10 +62,17 @@ export function RubrikKacheln() {
         {rubriken.map((a) => {
           const r = RUBRIK[a.ziel!];
           return (
+            /* C-3 (31.8.2026): der Hover trug `hover:border-line-strong
+               hover:shadow-md` — Linien-Verstärkung PLUS Elevation, die dritte
+               der drei gemessenen Karten-Hover-Grammatiken. Kanon ist die
+               Farbstufe (DESIGN-REGLEMENT §G-j: Interaktions-Zustände laufen
+               über die Wärme, eine Flexoki-Stufe tiefer), wie sie `.lc-card`
+               seit C-3 zentral trägt. Diese Kachel ist `lc-tile` und darum
+               nicht von jener Regel erfasst — die Anatomie bleibt unangetastet
+               (C-5 ist Runde 2), nur die Hover-Kette folgt dem Kanon. */
             <Link key={a.ziel} to={a.ziel!}
               className="group lc-tile p-5 no-underline flex flex-row sm:flex-col items-start gap-3
-                         transition-[border-color,box-shadow] duration-fast hover:border-line-strong hover:shadow-md
-                         focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:outline-offset-2">
+                         transition-colors duration-fast hover:border-brass-400">
               <span className="shrink-0 text-brass-600" aria-hidden>
                 <Icon name={r.icon} className="w-5 h-5" />
               </span>

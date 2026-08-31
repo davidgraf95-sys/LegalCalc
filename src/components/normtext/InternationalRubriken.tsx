@@ -1,4 +1,5 @@
 import { ErlassKarte } from './ErlassKarte';
+import { GruppenKopf } from '../ui/GruppenKopf';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
 import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken';
 
@@ -42,11 +43,10 @@ export function InternationalRubriken({ erlasse }: { erlasse: BrowseErlass[] }) 
       {gruppen.map((g) => (
         <section key={g.id} id={g.id} className="space-y-3 scroll-mt-24">
           <div className="space-y-1.5">
-            <div className="flex items-center gap-3">
-              <h2 className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{g.titel}</h2>
-              <span aria-hidden className="flex-1 h-px bg-line" />
-              <span className="num text-body-s text-ink-500">{g.items.length}</span>
-            </div>
+            {/* C-6 (31.8.2026): zweiter Sans-H3-Ausreisser unter sonst
+                Overline-gesetzten Gruppenköpfen — angeglichen (§G-e). Der
+                erklärende Lede-Satz steht unverändert darunter. */}
+            <GruppenKopf stufe={2} titel={g.titel} zahl={g.items.length} />
             <p className="text-body-s text-ink-500 max-w-reading">{g.lede}</p>
           </div>
           <Gitter erlasse={g.items} />
@@ -54,10 +54,7 @@ export function InternationalRubriken({ erlasse }: { erlasse: BrowseErlass[] }) 
       ))}
       {weitere.length > 0 && (
         <section className="space-y-3">
-          <div className="flex items-center gap-3">
-            <h2 className="font-sans font-medium text-ink-700 text-body-l">Weitere</h2>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-          </div>
+          <GruppenKopf stufe={2} titel="Weitere" />
           <Gitter erlasse={weitere} />
         </section>
       )}

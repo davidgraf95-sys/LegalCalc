@@ -8,6 +8,7 @@ import { FRISTEN_HAUPTEINSTIEGE, FRISTEN_PROZESSUAL, FRISTEN_MATERIELL, fristenE
 import { ZUSTAENDIGKEIT_FELDER, ZUSTAENDIGKEIT_FELD_IDS } from '../lib/zustaendigkeitKategorie';
 import { kartePasst, LEERER_FILTER } from '../lib/katalogSuche';
 import { sansAmp } from './typografie';
+import { GruppenKopf } from './ui/GruppenKopf';
 
 // Register-Bausteine der Rubrik-Übersichten (Auftrag David 10.6.2026, Struktur;
 // UI-Welle: neuer Ort /rechner + /vorlagen). Eine Oberkategorie wird als
@@ -50,9 +51,14 @@ function ListenZeile({ k, subLabel, subWrap = false, zeigeGeplant }: { k: Calcul
       </span>
     </>
   );
-  const klasse = 'lc-card text-left px-4 py-3 flex items-center justify-between gap-3 min-w-0 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none';
+  // C-3 (31.8.2026): der Lift (`hover:shadow-lg hover:-translate-y-0.5`) ist
+  // entfallen — Karten-Hover läuft hausweit über die Farbstufe, als EINE Regel
+  // an `.lc-card` (index.css). Damit fällt auch der eigene Transition-Ausdruck
+  // samt `motion-reduce`-Rücknahme weg: ohne Transform bleibt nur der
+  // Farbübergang, den die Regel selbst mitbringt.
+  const klasse = 'lc-card text-left px-4 py-3 flex items-center justify-between gap-3 min-w-0 bg-surface no-underline';
   return aktiv ? (
-    <Link to={k.href!} className={`${klasse} hover:shadow-lg hover:-translate-y-0.5`}>{inhalt}</Link>
+    <Link to={k.href!} className={klasse}>{inhalt}</Link>
   ) : (
     <div className={klasse}>{inhalt}</div>
   );
@@ -70,7 +76,7 @@ function ListenZeile({ k, subLabel, subWrap = false, zeigeGeplant }: { k: Calcul
 function FristenHauptKarte({ k, untertitel }: { k: CalculatorCard; untertitel: string }) {
   return (
     <Link to={k.href!}
-      className="lc-card p-5 sm:p-6 flex flex-col gap-2 min-w-0 bg-surface no-underline transition-[transform,box-shadow,color] motion-reduce:transition-none motion-reduce:transform-none hover:shadow-lg hover:-translate-y-0.5 group">
+      className="lc-card p-5 sm:p-6 flex flex-col gap-2 min-w-0 bg-surface no-underline group">
       <span className="flex items-baseline gap-3">
         <span className="font-sans font-semibold text-ink-900 text-h3 leading-snug group-hover:text-brass-700 transition-colors">{sansAmp(k.title)}</span>
         <span aria-hidden className="ml-auto text-brass-700 leading-none">→</span>
@@ -101,10 +107,7 @@ function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
   const rubrik = (titel: string, lede: string, zeilen: ReturnType<typeof zeilenFuer>, extra: CalculatorCard[] = []) => (
     (zeilen.length > 0 || extra.length > 0) && (
       <div className="space-y-2">
-        <div className="flex items-center gap-3">
-          <h3 className="lc-overline text-brass-700">{titel}</h3>
-          <span aria-hidden className="flex-1 h-px bg-line" />
-        </div>
+        <GruppenKopf titel={titel} />
         <p className="text-body-s text-ink-500 max-w-reading">{lede}</p>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
           {zeilen.map((r) => <ListenZeile key={r.id} k={r.k} subLabel={r.warum ?? r.k.rechtsgebiet} subWrap />)}
@@ -120,10 +123,7 @@ function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
           vorhanden sind — bei aktivem Übersichts-Filter sonst leerer Kopf. */}
       {haupt.length > 0 && (
         <div className="space-y-2">
-          <div className="flex items-center gap-3">
-            <h3 className="lc-overline text-brass-700">Fristen berechnen</h3>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-          </div>
+          <GruppenKopf titel="Fristen berechnen" />
           <div className="grid grid-cols-1 gap-3">
             {haupt.map((h) => <FristenHauptKarte key={h.id} k={h.k} untertitel={h.untertitel} />)}
           </div>
@@ -160,10 +160,7 @@ function ZustaendigkeitRegister({ karten }: { karten: CalculatorCard[] }) {
           (bei aktivem Übersichts-Filter sonst leerer Kopf). */}
       {felder.length > 0 && (
         <div className="space-y-2">
-          <div className="flex items-center gap-3">
-            <h3 className="lc-overline text-brass-700">Rechtswege</h3>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-          </div>
+          <GruppenKopf titel="Rechtswege" />
           <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
             {felder.map((f) => <ListenZeile key={f.id} k={f.k} subLabel={f.untertitel} zeigeGeplant />)}
           </div>
@@ -171,10 +168,8 @@ function ZustaendigkeitRegister({ karten }: { karten: CalculatorCard[] }) {
       )}
       {weitere.length > 0 && (
         <div className="space-y-2">
-          <div className="flex items-center gap-3">
-            <h3 className="lc-overline">Weitere Werkzeuge <span className="num">({weitere.length})</span></h3>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-          </div>
+          {/* C-7 (31.8.2026): «(n)» → nackte Zahl (Kanon 12:6:4:2). */}
+          <GruppenKopf titel="Weitere Werkzeuge" zahl={weitere.length} />
           <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
             {weitere.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
           </div>
@@ -206,10 +201,7 @@ function GebuehrenRegister({ karten, sortiert }: {
         if (xs.length === 0) return null;
         return (
           <div key={r.id} className="space-y-2">
-            <div className="flex items-center gap-3">
-              <h3 className="lc-overline text-brass-700">{r.titel} <span className="num text-ink-500">({xs.length})</span></h3>
-              <span aria-hidden className="flex-1 h-px bg-line" />
-            </div>
+            <GruppenKopf titel={r.titel} zahl={xs.length} />
             <p className="text-body-s text-ink-500 max-w-reading">{r.lede}</p>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
               {xs.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
@@ -253,11 +245,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
         /* id-Anker «vorlage-<id>»: Sprungziel der Seitenleisten-Vorlagen-
            Untergruppen (navigation.ts → ScrollZuHash). */
         <div key={s.id} id={`vorlage-${s.id}`} className="space-y-2 scroll-mt-24">
-          <div className="flex items-center gap-3">
-            <h3 className="lc-overline text-brass-700">{s.title}
-              <span className="num text-ink-500"> ({verf.length})</span></h3>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-          </div>
+          <GruppenKopf titel={s.title} zahl={verf.length} />
           <p className="text-body-s text-ink-500 max-w-reading">{s.lede}</p>
           {s.art === 'eingabe' ? (
             /* Behördeneingaben: drei Unterrubriken, flach (ohne Einrück-Borte). */
@@ -286,7 +274,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
                         <summary className="cursor-pointer list-none select-none">
                           <h4 className="lc-overline inline">
                             <span aria-hidden className="inline-block mr-1.5 transition-transform group-open:rotate-90">▸</span>
-                            {r.titel} <span className="num text-ink-500">({rVerf.length})</span>
+                            {r.titel} <span className="num text-ink-500">{rVerf.length}</span>
                           </h4>
                         </summary>
                         {zeilen(rVerf)}
@@ -375,6 +363,15 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
               ← Alle Kategorien
             </button>
           )}
+          {/* C-7-AUSNAHME, bewusst NICHT auf `GruppenKopf`/nackte Zahl gezogen
+              (31.8.2026): Dies ist der SEKTIONS-Kopf einer Kategorie, kein
+              Gruppenkopf — die Sektion darunter enthält neben den `verfuegbar`-
+              Zeilen zusätzlich den «In Vorbereitung»-Block. Eine nackte Zahl
+              würde hier also nicht die Einträge der Sektion zählen, sondern
+              eine falsche Aussage über deren Umfang machen. «verfügbar» ist an
+              dieser Stelle ein Ehrlichkeitswort (§8), keine Schreibvariante des
+              Zählers — es bleibt. Ebenso die Sans-Stimme: ein Kategorie-Kopf
+              ist die Seiten-Überschrift, kein Struktur-Etikett (§G-e). */}
           <div className="flex items-baseline gap-4">
             <h2 id={`register-titel-${kat.id}`} className="whitespace-nowrap">
               <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
@@ -432,10 +429,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
         <>
           {alltag.length > 0 && (
             <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <h3 className="lc-overline text-brass-700">Alltag</h3>
-                <span aria-hidden className="flex-1 h-px bg-line" />
-              </div>
+              <GruppenKopf titel="Alltag" />
               <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
                 {alltag.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
               </div>
@@ -443,10 +437,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
           )}
           {weitere.length > 0 && (
             <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <h3 className="lc-overline">{alltag.length > 0 ? 'Weitere Werkzeuge' : 'Werkzeuge'} <span className="num">({weitere.length})</span></h3>
-                <span aria-hidden className="flex-1 h-px bg-line" />
-              </div>
+              <GruppenKopf titel={alltag.length > 0 ? 'Weitere Werkzeuge' : 'Werkzeuge'} zahl={weitere.length} />
               <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
                 {weitere.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
               </div>

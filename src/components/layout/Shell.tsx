@@ -411,8 +411,11 @@ export function Shell({ children }: { children: ReactNode }) {
                   <PaneProvider value={multipane ? { imPane: true, rolle: 'primaer', wurzel: primaerWurzel, overlayWurzel: primaerOverlay } : KEIN_PANE}>
                     <main ref={primaerWurzel} id="inhalt" tabIndex={-1} aria-label="Hauptinhalt"
                       data-pane={multipane ? 'primaer' : undefined}
+                      // Ring/Farbe aus der globalen `:focus-visible`-Regel
+                      // (index.css, Rolle --focus); lokal bleibt NUR der negative
+                      // Offset (Scroll-Container, Herleitung in Pane.tsx).
                       className={multipane
-                        ? '@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:-outline-offset-2'
+                        ? '@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:-outline-offset-2'
                         : 'flex-1 w-full focus:outline-none'}>
                       <div className={multipane
                         ? 'mx-auto w-full max-w-content px-5 sm:px-6 py-6'
