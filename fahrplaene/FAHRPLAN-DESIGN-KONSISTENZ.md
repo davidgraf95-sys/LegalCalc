@@ -41,7 +41,7 @@ Screenshots im Session-Scratchpad `design-r1/`. Kurzregister (Umsetzungs-Zuordnu
 
 | Nr | Befund (Kurz) | Kanon-Quelle | Welle |
 |---|---|---|---|
-| B-1/B-2/B-6 | Amtliche-Fassung-Link 4 Formen · Banner bricht Ä110 · «Fassung» vs «Quelle» 10:5 | Glossar Ä110 / Zählung | **B1·BAU-1** |
+| B-1/B-2/B-6 | Amtliche-Fassung-Link 4 Formen · Banner bricht Ä110 · «Fassung» vs «Quelle» (Zählung 10:5 falsifiziert, Gegenprüfung N1 — Entscheid trägt über Präzision) | Glossar Ä110 / Zählung | **B1·BAU-1** |
 | B-3 | Datum Mono vs Proportional; 5 byte-gleiche TT.MM.JJJJ-Formatierer | Grundlage «Mono nur SR/Az» | **B1·BAU-1** (+B2 EntscheidLeser) |
 | A-3 | Material-Pane heisst «Material öffnen» | §8 | **B1·BAU-1** |
 | E-1…E-4 | 9 Fokusringe an `--focus` vorbei · 2 Tabs-Kopien · theme-color-Drift ΔE 2.23 · Roh-Übergang | F3/F7/F8, D-1.7 | **B1·BAU-2** |

@@ -70,10 +70,11 @@ export const NEUER_TAB = '(neuer Tab)';
 // BEFUND (Finder-Welle B, Runde 1): derselbe Vorbehalt stand in zwei
 // Substantiven da — «amtliche FASSUNG» neben «amtliche QUELLE», teils im
 // selben Kopf (`ErlassLeserKopf` sagte im Aufhebungs-Banner «Quelle», im
-// Link darüber «Fassung»). KORREKTUR (Gegenprüfung 31.8.2026, N1): die
-// ursprüngliche «10:5»-Mehrheits-Zählung war auf die Leser-Kopf-Flächen
-// beschränkt und site-weit FALSCH (dort 16:14 für «Quelle») — das
-// Mehrheits-Argument trägt den Entscheid nicht. Tragend ist das
+// Link darüber «Fassung»). KORREKTUR (Gegenprüfung 31.8.2026, N1 + Delta):
+// die ursprüngliche «10:5»-Zählung ist NICHT REKONSTRUIERBAR (site-weit war
+// es 16:14 für «Quelle», in den Kopf-Flächen 1:3 für «Quelle» — keine
+// bekannte Fläche ergibt 10:5); das Mehrheits-Argument trägt den Entscheid
+// in keiner Lesart. Tragend ist das
 // Präzisions-Argument: massgeblich ist nicht die Website und nicht «eine
 // Quelle», sondern der amtlich publizierte Text in seiner Fassung.
 // GELTUNGSBEREICH heute: die im Wächter (`leser-benennung.test.ts`,
