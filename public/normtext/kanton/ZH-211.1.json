@@ -19,15 +19,15 @@
             },
             {
               "marke": "b",
-              "text": "enthält die zur Ausführung der Schweizerischen Zivilprozessordnung (ZPO) vom 19. Dezember 2008, der Schweizerischen Strafprozessordnung (StPO) vom 5. Oktober 2007und der Schweizerischen Jugendstrafprozessordnung (JSt PO) vom 20. März 2009 notwendigen Verfahrensvorschriften,"
+              "text": "enthält die zur Ausführung der Schweizerischen Zivilprozessordnung (ZPO) vom 19. Dezember 2008, der Schweizerischen Strafprozessordnung (StPO) vom 5. Oktober 2007 und der Schweizerischen Jugendstrafprozessordnung (JStPO) vom 20. März 2009 notwendigen Verfahrensvorschriften,"
             },
             {
               "marke": "c",
-              "text": "bestimmt die zuständigen Gerichte in besonderen Verfahren gestützt auf das ZGBund regelt das von diesen anzuwendende Verfahren,"
+              "text": "bestimmt die zuständigen Gerichte in besonderen Verfahren gestützt auf das ZGB und regelt das von diesen anzuwendende Verfahren,"
             },
             {
               "marke": "d",
-              "text": "regelt die Zuständigkeit der Gerichte für Anordnungen der freiwilligen Gerichtsbarkeit (Art. 1 Bst.b ZPO),"
+              "text": "regelt die Zuständigkeit der Gerichte für Anordnungen der freiwilligen Gerichtsbarkeit (Art. 1 Bst. b ZPO),"
             },
             {
               "marke": "e",
@@ -40,11 +40,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "51b57c034e3b0e58036ea1d5641bdd83ed118384e7cfe6815c4aa1aee64039c1"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "33bd438b51bef6c09762ebf060693018e084b94f71394aeecb36260a4149de4e"
     },
     {
       "id": "kanton/ZH/211.1/art_2",
@@ -56,14 +56,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die ZPO, die StPO, die JSt PO und dieses Gesetz finden unter Vorbehalt besonderer Bestimmungen auch auf das Zivil- und Strafrecht des Kantons sowie auf das Übertretungsstrafrecht der Gemeinden Anwendung. 2. Teil: Gerichte 1. Abschnitt: Allgemeine Bestimmungen"
+          "text": "Die ZPO, die StPO, die JStPO und dieses Gesetz finden unter Vorbehalt besonderer Bestimmungen auch auf das Zivil- und Strafrecht des Kantons sowie auf das Übertretungsstrafrecht der Gemeinden Anwendung. 2. Teil: Gerichte 1. Abschnitt: Allgemeine Bestimmungen"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "e6d9e09bec8b16d5af50c4f253c50273152090759b60a3b30f7385483e062ec7"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "1b6e672dcdcd24a5151281d7dfe3421f47b965409b595756392df690125ecc69"
     },
     {
       "id": "kanton/ZH/211.1/art_3",
@@ -96,10 +96,10 @@
           "text": "Die Gerichte entscheiden über weitere Angelegenheiten, soweit dieses oder ein anderes Gesetz es bestimmt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "7884b02980c565ef82a1c7e16a8755757bb3597a37754cafbafe45c49a94bcd6"
     },
     {
@@ -115,10 +115,10 @@
           "text": "Der Sitz der Bezirksgerichte befindet sich am Bezirkshauptort. Das Obergericht hat seinen Sitz in Zürich."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "aacd4e6277f9e0974fe1be0824e1ec2fe0abf77de7e08d02ec6d7824e253ed10"
     },
     {
@@ -131,14 +131,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Gesetz über die politischen Rechte vom 1.September 2003 (GPR)regelt das Wahlverfahren, die Wählbarkeit, den Amtszwang und die Amtsdauer der Richterinnen und Richter, soweit dieses Gesetz nichts anderes bestimmt."
+          "text": "Das Gesetz über die politischen Rechte vom 1. September 2003 (GPR) regelt das Wahlverfahren, die Wählbarkeit, den Amtszwang und die Amtsdauer der Richterinnen und Richter, soweit dieses Gesetz nichts anderes bestimmt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "eda6267c0b2b78f3f6d8e43c847b2141fe854fd1fb040de7ab59df42fc371f64"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "17bdff1b3849035b9d790a7ef3717282929e3d511d0ed0dd8bb5176ef6be688a"
     },
     {
       "id": "kanton/ZH/211.1/art_6",
@@ -171,10 +171,10 @@
           "text": "Die voll- und teilamtlichen Mitglieder des Obergerichts dürfen nur mit Bewilligung des Kantonsrates der Verwaltung oder Geschäftsführung einer Handelsgesellschaft oder einer Genossenschaft, die wirtschaftliche Zwecke verfolgt, angehören."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "0ac5602a7113c37dcb1fb4407c0d3d1912f6d94c035fc7fcbba58cd36a759d54"
     },
     {
@@ -220,10 +220,10 @@
           "text": "Jedes Gericht erstellt ein Register über die Angaben gemäss Abs. 1 und macht es in elektronischer Form öffentlich zugänglich. Es wacht über die Einhaltung der Offenlegungspflichten. 2. Abschnitt: Die Bezirksgerichte"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d194c2f9f6bcd28788e99ee35c6b920bbf7ad2ba14bc173be078ac6768f9b411"
     },
     {
@@ -240,7 +240,7 @@
         },
         {
           "absatz": "2",
-          "text": "Wählbar als Mitglied ist, wer ein juristisches Studium gemäss Art. 7 Abs.1 Bst.a des Bundesgesetzes über die Freizügigkeit der Anwältinnen und Anwälte vom 23. Juni 2000 (BGFA)abgeschlossen hat."
+          "text": "Wählbar als Mitglied ist, wer ein juristisches Studium gemäss Art. 7 Abs. 1 Bst. a des Bundesgesetzes über die Freizügigkeit der Anwältinnen und Anwälte vom 23. Juni 2000 (BGFA) abgeschlossen hat."
         },
         {
           "absatz": "3",
@@ -255,11 +255,11 @@
           "text": "Die Bezirksgerichte können den Beschäftigungsgrad einzelner Mitglieder mit deren Einverständnis im Rahmen der gesamten Stellenprozente verändern. Mit dem Ausscheiden eines betroffenen Mitglieds oder mit dem Ablauf der Amtsdauer erlischt die Veränderung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "ae249ca7b70124f6cf98297fbbf129d9016bca48bc164a630204850a50beebe4"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "0b32e88d33bf1355f765cb4f1fbb93357c692c6782c0d615e8713d592a4d09bf"
     },
     {
       "id": "kanton/ZH/211.1/art_9",
@@ -278,10 +278,10 @@
           "text": "Das Bezirksgericht wählt nach seiner Gesamterneuerung für den Rest des Kalenderjahres und je am Jahresende für das folgende Jahr aus seinen Mitgliedern in geheimer Wahl die Vizepräsidentinnen und -präsidenten sowie die Einzelrichterinnen und -richter."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d7715534ca1ccd290cad0ea9259908403f489c88da77eab088bdf3e86da2aed7"
     },
     {
@@ -311,10 +311,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "9c536fda8872547ad0f2c407d09cd42efcbe4dbbe1df0f6d78b0152122555513"
     },
     {
@@ -331,14 +331,14 @@
         },
         {
           "absatz": "2",
-          "text": "Als Ersatzmitglied kann ernannt werden, wer in der Schweiz politischen Wohnsitz gemäss Art. 3 des Bundesgesetzes über die politischen Rechte vom 17.Dezember 1976hat und ein juristisches Studium gemäss Art. 7 Abs. 1 Bst.a BGFAabgeschlossen hat."
+          "text": "Als Ersatzmitglied kann ernannt werden, wer in der Schweiz politischen Wohnsitz gemäss Art. 3 des Bundesgesetzes über die politischen Rechte vom 17. Dezember 1976 hat und ein juristisches Studium gemäss Art. 7 Abs. 1 Bst. a BGFA abgeschlossen hat."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "8b11f212f70eac796575abcb4bea51b1e979cd2b5c0ef228cf1a50531a50672f"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "a94fc709cc6bb1dea80a503e03f8cea843b87b48891da1b1f6accd02372d8043"
     },
     {
       "id": "kanton/ZH/211.1/art_12",
@@ -380,14 +380,14 @@
         },
         {
           "absatz": "5",
-          "text": "Das weitere Verfahren richtet sich nach §§53 ff. GPR."
+          "text": "Das weitere Verfahren richtet sich nach §§ 53 ff. GPR."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "b4b89c0f019d55517ba18d67de7cda02263dec411a39b49f7053ba89b422f53b"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "992e185df1f43997ce88d1f7bcaea13790828bf4c645e1ba0f08875feb1934c5"
     },
     {
       "id": "kanton/ZH/211.1/art_13",
@@ -415,14 +415,14 @@
         },
         {
           "absatz": "5",
-          "text": "Das weitere Verfahren richtet sich nach §§53 ff. GPR."
+          "text": "Das weitere Verfahren richtet sich nach §§ 53 ff. GPR."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "0a03c77396984a675aad6a1d91e4a635d64cf00e0e1c5657c37eb852ff239630"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "c1169898dbc925b9cce6ef76837149d51d3d4974b38e82001c14c1adbb704b05"
     },
     {
       "id": "kanton/ZH/211.1/art_14",
@@ -437,10 +437,10 @@
           "text": "Das Bezirksgericht entscheidet in Dreierbesetzung (Kollegialgericht). Vorbehalten sind die dem Einzelgericht zugewiesenen Geschäfte."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ab5552e9c451be5ccc237c7e7efdb624ece72644890c910f3845c7d8dba87670"
     },
     {
@@ -460,10 +460,10 @@
           "text": "Die Beisitzenden werden unter Berücksichtigung ihrer Sachkunde beigezogen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "66e7ab65cfd2fb0302bd45632c2f13744306a0691997fb5f68fd5df7d155d1d0"
     },
     {
@@ -487,10 +487,10 @@
           "text": "Bei Streitigkeiten aus landwirtschaftlicher Pacht werden je eine Beisitzende oder ein Beisitzender aus der Gruppe der Verpachtenden und der Pachtenden beigezogen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "471cb68d020e15e2256943b03c799c4440358f8b4d8861e925cc650f9a64367b"
     },
     {
@@ -510,10 +510,10 @@
           "text": "Das Obergericht bestimmt die Zahl dieser Stellen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "af6a70a27df96186efd29fbb3380b041d1e181237a5c00ff582cf820222727a6"
     },
     {
@@ -533,10 +533,10 @@
           "text": "Die Geschäftsordnungen sind dem Obergericht zur Genehmigung vorzulegen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "f563d9d20f82a3aff77cabaef04cc576b21c26e446b8427ee20bdf1d1fa9b15a"
     },
     {
@@ -552,10 +552,10 @@
           "text": "Das Bezirksgericht entscheidet erstinstanzlich Streitigkeiten, für die das ordentliche Verfahren gilt, sofern nicht ein anderes Gericht zuständig ist."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b13e7a3b33abaf70c52ee98a8d1263cf3ad5712b8d2a44d8656a7b6db3f10f8f"
     },
     {
@@ -584,11 +584,11 @@
             },
             {
               "marke": "d",
-              "text": "Klagen von Organisationen gemäss Art.7 des Gleichstellungsgesetzes vom 24. März 1995,"
+              "text": "Klagen von Organisationen gemäss Art. 7 des Gleichstellungsgesetzes vom 24. März 1995,"
             },
             {
               "marke": "e",
-              "text": "Streitigkeiten nach dem Mitwirkungsgesetz vom 17.Dezember 1993(Art. 243 Abs. 2 Bst.e ZPO)."
+              "text": "Streitigkeiten nach dem Mitwirkungsgesetz vom 17. Dezember 1993 (Art. 243 Abs. 2 Bst. e ZPO)."
             }
           ]
         },
@@ -597,11 +597,11 @@
           "text": "Ist für eine Streitigkeit auch ein anderes Gericht zuständig, können die Parteien schriftlich dessen Zuständigkeit vereinbaren. Der Ausschluss des Arbeitsgerichts darf nicht im Voraus vereinbart werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "0014b6c5ac5a1796cc8e69126cbb83cb01f25dd42be12c6a8ea78f734960c2d4"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "cb388342aae06d60828ef564924636f9ae68ea9ef3a48c674a410cdd5555bd25"
     },
     {
       "id": "kanton/ZH/211.1/art_21",
@@ -617,7 +617,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "aus Miet- (Art.253a OR) und aus Pachtverhältnissen (Art.276 OR) für Wohn- und Geschäftsräume,"
+              "text": "aus Miet- (Art. 253 a OR) und aus Pachtverhältnissen (Art. 276 OR) für Wohn- und Geschäftsräume,"
             },
             {
               "marke": "b",
@@ -630,11 +630,11 @@
           "text": "Ist für eine Streitigkeit auch ein anderes Gericht zuständig, können die Parteien schriftlich dessen Zuständigkeit vereinbaren. Der Ausschluss des Mietgerichts darf nicht im Voraus vereinbart werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "d98e8196f7538f8738e7c45428a2360133683a61653d575649b7f0936f502e4c"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "33c54bd6a4ee7310e0c01ecb9fb456595279c00ad97b2a4794f57b17e756c5c9"
     },
     {
       "id": "kanton/ZH/211.1/art_22",
@@ -649,10 +649,10 @@
           "text": "Das Bezirksgericht beurteilt erstinstanzlich alle Straftaten, die nicht in die Zuständigkeit eines anderen Gerichts fallen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "1c241d92c09de0d658b57d21337f32e22f762f7a15bf3acbe7a49c8d7a5591d9"
     },
     {
@@ -665,14 +665,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Bezirksgericht entscheidet als Jugendgericht gemäss JSt PO."
+          "text": "Das Bezirksgericht entscheidet als Jugendgericht gemäss JStPO."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "73657794185dfcab3de3b7e6562de0098c7c0206b8e271d788b6c06e8617467f"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "23567c8a7090f157bd849af07f81f4cf52d71dcd02c4e868e083010c0d7dd1f8"
     },
     {
       "id": "kanton/ZH/211.1/art_24",
@@ -692,11 +692,11 @@
             },
             {
               "marke": "b",
-              "text": "Klagen aus dem Sch KGgemäss Art. 198 Bst.e Ziff. 2–8 ZPO,"
+              "text": "Klagen aus dem SchKG gemäss Art. 198 Bst. e Ziff. 2–8 ZPO,"
             },
             {
               "marke": "c",
-              "text": "Angelegenheiten und Streitigkeiten im summarischen Verfahren (2. Teil, 5. Titel ZPO, Art.248ff. ZPO), die keiner anderen Instanz zugewiesen sind,"
+              "text": "Angelegenheiten und Streitigkeiten im summarischen Verfahren (2. Teil, 5. Titel ZPO, Art. 248 ff. ZPO), die keiner anderen Instanz zugewiesen sind,"
             },
             {
               "marke": "d",
@@ -709,11 +709,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "30e2a76d94b219144c7fb2fe225418e2b1a6418ab331d1631ea3f5680d52c025"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "b4076097fc3f724cffbeedf7aae177c526b43d03014930eba33c2f3aba33b1a5"
     },
     {
       "id": "kanton/ZH/211.1/art_25",
@@ -725,14 +725,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Präsidentin oder der Präsident des Arbeitsgerichts entscheidet als Einzelgericht Streitigkeiten gemäss §20 bis zu einem Streitwert von Fr. 30000. Sie oder er ist berechtigt und bei Streitwerten von mindestens Fr. 15000 auf Verlangen einer Partei verpflichtet, die Streitigkeit dem Kollegialgericht zu unterbreiten."
+          "text": "Die Präsidentin oder der Präsident des Arbeitsgerichts entscheidet als Einzelgericht Streitigkeiten gemäss § 20 bis zu einem Streitwert von Fr. 30 000. Sie oder er ist berechtigt und bei Streitwerten von mindestens Fr. 15 000 auf Verlangen einer Partei verpflichtet, die Streitigkeit dem Kollegialgericht zu unterbreiten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "e0e664e2038275f6aa0e1688813ad108255f8ad2d760631aa325db54db8b9666"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "f24414cb7e6f480a39dadb72e2e17052c7b72d2f5d1a463c6b2c09a5cc9a13a7"
     },
     {
       "id": "kanton/ZH/211.1/art_26",
@@ -744,14 +744,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Präsidentin oder der Präsident des Mietgerichts entscheidet als Einzelgericht Streitigkeiten gemäss §21 bis zu einem Streitwert von Fr. 30000. Sie oder er ist berechtigt und bei Streitwerten von mindestens Fr. 15000 auf Verlangen einer Partei verpflichtet, die Streitigkeit dem Kollegialgericht zu unterbreiten."
+          "text": "Die Präsidentin oder der Präsident des Mietgerichts entscheidet als Einzelgericht Streitigkeiten gemäss § 21 bis zu einem Streitwert von Fr. 30 000. Sie oder er ist berechtigt und bei Streitwerten von mindestens Fr. 15 000 auf Verlangen einer Partei verpflichtet, die Streitigkeit dem Kollegialgericht zu unterbreiten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "5aedaaf7a83d7994c78ca5b91702deb55adb3e42fad3cf4a43b5d9eff491d3a0"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "bb9d37b2cf9a7610a7b05a0634ef4de87fe1cadd56c12bf708ae63e40a168cb9"
     },
     {
       "id": "kanton/ZH/211.1/art_27",
@@ -771,7 +771,7 @@
             },
             {
               "marke": "b",
-              "text": "Verbrechen und Vergehen, ausser die Staatsanwaltschaft beantragt: 1.eine Freiheitsstrafe von mehr als einem Jahr, 2.eine Verwahrung nach Art. 64 St GB, 3.eine Behandlung von psychischen Störungen nach Art.59 St GB, 4.eine Massnahme für junge Erwachsene nach Art. 61 St GB, 5.einen Freiheitsentzug von mehr als einem Jahr bei gleichzeitig zu widerrufenden bedingten Sanktionen oder 6.eine Landesverweisung von mehr als zehn Jahren,"
+              "text": "Verbrechen und Vergehen, ausser die Staatsanwaltschaft beantragt: 1. eine Freiheitsstrafe von mehr als einem Jahr, 2. eine Verwahrung nach Art. 64 StGB, 3. eine Behandlung von psychischen Störungen nach Art. 59 StGB, 4. eine Massnahme für junge Erwachsene nach Art. 61 StGB, 5. einen Freiheitsentzug von mehr als einem Jahr bei gleichzeitig zu widerrufenden bedingten Sanktionen oder 6. eine Landesverweisung von mehr als zehn Jahren,"
             },
             {
               "marke": "c",
@@ -784,11 +784,11 @@
           "text": "Hält das Einzelgericht eine Strafe oder Massnahme für angezeigt, welche die Staatsanwaltschaft bei ihm nicht hätte beantragen können, so überweist es die Akten entsprechend Art. 334 StPO dem Kollegialgericht. Eine Rückweisung findet nicht statt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "35e6294fbfccd7bfb573c54599e6e293779bbbe50bb07b04da8ba69c03736086"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "e0f83be07c6a7edf0326e842f4acd015e3629b966f894c3346fbfcfbe63b96a5"
     },
     {
       "id": "kanton/ZH/211.1/art_28",
@@ -803,10 +803,10 @@
           "text": "Die Präsidentin oder der Präsident des Jugendgerichts beurteilt als Einzelgericht Einsprachen gegen Strafbefehle, die Übertretungen zum Gegenstand haben."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "3b347e236aeae4957d47b790d3d585c2c877ed21bf8e45b4ae207958abdc9409"
     },
     {
@@ -819,7 +819,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das Einzelgericht eines Bezirksgerichts im örtlichen Zuständigkeitsbereich der Staatsanwaltschaft, der Jugendanwaltschaft oder der Übertretungsstrafbehörde ist Zwangsmassnahmengericht gemäss StPO und JSt PO",
+          "text": "Das Einzelgericht eines Bezirksgerichts im örtlichen Zuständigkeitsbereich der Staatsanwaltschaft, der Jugendanwaltschaft oder der Übertretungsstrafbehörde ist Zwangsmassnahmengericht gemäss StPO und JStPO",
           "items": [
             {
               "marke": "a",
@@ -827,7 +827,7 @@
             },
             {
               "marke": "b",
-              "text": "im Anwendungsbereich 1.der stationären Begutachtung (Art. 186 StPO), 2.des Verkehrs zwischen Verteidigung und inhaftierter Person (Art. 235 Abs. 4 StPO), 3.der Entsiegelung im Vorverfahren und im Verfahren vor dem erstinstanzlichen Gericht (Art. 248a Abs. 1 Bst. a StPO), 4.der Friedensbürgschaft (Art. 373 StPO), 5.der gerichtlichen Genehmigung von internationalen Rechtshilfeersuchen um Zwangsmassnahmen im Ausland (Art. 55a StPO)."
+              "text": "im Anwendungsbereich 1. der stationären Begutachtung (Art. 186 StPO), 2. des Verkehrs zwischen Verteidigung und inhaftierter Person (Art. 235 Abs. 4 StPO), 3. der Entsiegelung im Vorverfahren und im Verfahren vor dem erstinstanzlichen Gericht (Art. 248 a Abs. 1 Bst. a StPO), 4. der Friedensbürgschaft (Art. 373 StPO), 5. der gerichtlichen Genehmigung von internationalen Rechtshilfeersuchen um Zwangsmassnahmen im Ausland (Art. 55 a StPO)."
             }
           ]
         },
@@ -840,11 +840,11 @@
           "text": "Das Obergericht regelt den Einsatz in einer Verordnung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "0288c5d7e57d07b3671aeaf1aef88cbc77961171a9c64b06c174a4792f554875"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "50d7130a4a4055ae98969a21cbf2d7a8f0a7498e578f434224f39d25a437d7ff"
     },
     {
       "id": "kanton/ZH/211.1/art_30",
@@ -856,14 +856,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Einzelgericht entscheidet gemäss §62 des Einführungsgesetzes zum Kindes- und Erwachsenenschutzrecht vom 25. Juni 2012 (EG KESR)über Beschwerden betreffend fürsorgerische Unterbringung (Art. 426 ff. ZGB)."
+          "text": "Das Einzelgericht entscheidet gemäss § 62 des Einführungsgesetzes zum Kindes- und Erwachsenenschutzrecht vom 25. Juni 2012 (EG KESR) über Beschwerden betreffend fürsorgerische Unterbringung (Art. 426 ff. ZGB)."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "5b682eadb7b478202426761e0a00606edc01b73dc4d244cb12402feb5636b0c6"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "67aee30f1909e7b8c5fdfc742e64c77d8ac348692412bff793f728e8edfe0b51"
     },
     {
       "id": "kanton/ZH/211.1/art_31",
@@ -883,14 +883,14 @@
         },
         {
           "absatz": "3",
-          "text": "Die interkantonale Rechtshilfe in Strafsachen richtet sich nach §150 dieses Gesetzes und nach Art. 43 ff. StPO, die internationale Rechtshilfe nach §29 Abs. 1 lit. b Ziff. 5 dieses Gesetzes, Art. 54 ff. StPO und dem Bundesgesetz vom 20. März 1981 über internationale Rechtshilfe in Strafsachen."
+          "text": "Die interkantonale Rechtshilfe in Strafsachen richtet sich nach § 150 dieses Gesetzes und nach Art. 43 ff. StPO, die internationale Rechtshilfe nach § 29 Abs. 1 lit. b Ziff. 5 dieses Gesetzes, Art. 54 ff. StPO und dem Bundesgesetz vom 20. März 1981 über internationale Rechtshilfe in Strafsachen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "d4a5490c3840cb3c6a4c8e2145d43d45b72ea87c8729963a4789c7871bcec9d4"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "2158e52659a5c88d4d7b4d4371ccb994ac1f4253758a00939cff92835e3a239e"
     },
     {
       "id": "kanton/ZH/211.1/art_32",
@@ -902,14 +902,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Dem Einzelgericht obliegen die Amtshilfe gemäss Art.183 Abs.2, Art.184 Abs.2 und Art.185 des Bundesgesetzes vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG)sowie die Unterstützung des Schiedsgerichts bei den Verfahrenshandlungen (Art. 356 Abs. 2 Bst.c ZPO)."
+          "text": "Dem Einzelgericht obliegen die Amtshilfe gemäss Art. 183 Abs. 2, Art. 184 Abs. 2 und Art. 185 des Bundesgesetzes vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG) sowie die Unterstützung des Schiedsgerichts bei den Verfahrenshandlungen (Art. 356 Abs. 2 Bst. c ZPO)."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "1f25bfeded1ed4bd6c564f678e177347db6609defa4693a254ea9edd0fd9db7e"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "7a3c7934fd70210d853e8a334dd769b0ee9da3625f7e8eb01ce7296f8b0ba291"
     },
     {
       "id": "kanton/ZH/211.1/art_33",
@@ -921,7 +921,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das Einzelgericht ist Haftrichterin oder -richter gemäss Gewaltschutzgesetz vom 19. Juni 2006und gemäss Polizeigesetz vom 23. April 2007."
+          "text": "Das Einzelgericht ist Haftrichterin oder -richter gemäss Gewaltschutzgesetz vom 19. Juni 2006 und gemäss Polizeigesetz vom 23. April 2007."
         },
         {
           "absatz": "2",
@@ -941,16 +941,16 @@
             },
             {
               "marke": "c",
-              "text": "ist zuständig für die Verlängerung der Löschungsfrist in Fällen erheblicher Wiederholungsgefahr gemäss Art. 13 Abs. 1 lit. b der Interkantonalen Vereinbarung über die computergestützte Zusammenarbeit der Kantone bei der Aufklärung von Gewaltdelikten vom 2. April 2009 (Vi CLAS-Konkordat). 3. Abschnitt: Das Obergericht"
+              "text": "ist zuständig für die Verlängerung der Löschungsfrist in Fällen erheblicher Wiederholungsgefahr gemäss Art. 13 Abs. 1 lit. b der Interkantonalen Vereinbarung über die computergestützte Zusammenarbeit der Kantone bei der Aufklärung von Gewaltdelikten vom 2. April 2009 (ViCLAS-Konkordat). 3. Abschnitt: Das Obergericht"
             }
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "863040a19f60d3c4b7edd88ad45c179a86563036c008d0d8db81c49596f7e190"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "87ae8b285f51d1c2dd89922a146eb2a7db36271da44312adfa4d0951a7834a99"
     },
     {
       "id": "kanton/ZH/211.1/art_34",
@@ -966,7 +966,7 @@
         },
         {
           "absatz": "2",
-          "text": "Wählbar als Mitglied ist, wer ein juristisches Studium gemäss Art. 7 Abs. 1 Bst. a BGFAabgeschlossen hat."
+          "text": "Wählbar als Mitglied ist, wer ein juristisches Studium gemäss Art. 7 Abs. 1 Bst. a BGFA abgeschlossen hat."
         },
         {
           "absatz": "3",
@@ -981,11 +981,11 @@
           "text": "Das Obergericht kann den Beschäftigungsgrad einzelner Mitglieder mit deren Einverständnis im Rahmen der gesamten Stellenprozente verändern. Mit dem Ausscheiden eines betroffenen Mitglieds oder mit dem Ablauf der Amtsdauer erlischt die Veränderung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "e9b6fa5913a162a680750bd5799d74e9c80490bf529e676102cde0ae7d89a32f"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "35ceb46234011b29cdd8409a6b593897e241502b3954219407c8fb0b35bd9235"
     },
     {
       "id": "kanton/ZH/211.1/art_35",
@@ -1000,10 +1000,10 @@
           "text": "Der Kantonsrat legt die Zahl der Ersatzmitglieder fest. Für die Wahl der Hälfte der Ersatzmitglieder steht dem Obergericht ein Vorschlagsrecht zu."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "cd8466584efaa0f07a7d9af51a32912d05d9379d1207ebb62e70e76a0cf28987"
     },
     {
@@ -1027,10 +1027,10 @@
           "text": "..."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "e2c10e606550adaea92077ce107859da95c1025b7d68116cff2afa234ef5a7bd"
     },
     {
@@ -1046,10 +1046,10 @@
           "text": "Die Plenarversammlung wählt nach der Gesamterneuerung für den Rest des Kalenderjahres und je am Jahresende für das folgende Jahr eines seiner Mitglieder als Präsidentin oder Präsidenten sowie die erforderlichen Vizepräsidentinnen und -präsidenten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "2ba7189daceb48e827c53dbcad1bfe0defca0d82a2c1382fb0432297a9c00fbf"
     },
     {
@@ -1066,7 +1066,7 @@
         },
         {
           "absatz": "2",
-          "text": "Das Obergericht bestimmt zu den Zeitpunkten gemäss §37",
+          "text": "Das Obergericht bestimmt zu den Zeitpunkten gemäss § 37",
           "items": [
             {
               "marke": "a",
@@ -1078,16 +1078,16 @@
             },
             {
               "marke": "c",
-              "text": "ein Mitglied, das die Aufgaben gemäss §47 (Zwangsmassnahmengericht) erfüllt, und dessen Stellvertretung."
+              "text": "ein Mitglied, das die Aufgaben gemäss § 47 (Zwangsmassnahmengericht) erfüllt, und dessen Stellvertretung."
             }
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "8877c6b8b6ce286ea5a235b0a3d497a070f7606b9eb18ac0b35175af458a7d65"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "7f583f56dd37762928f7ae51aa3814842deafb8d2dfa6f4010365bc89b88493f"
     },
     {
       "id": "kanton/ZH/211.1/art_39",
@@ -1103,14 +1103,14 @@
         },
         {
           "absatz": "2",
-          "text": "Das Handelsgericht wird, unter Vorbehalt von §45, für die Behandlung der einzelnen Rechtsstreitigkeiten mit zwei Mitgliedern des Obergerichts und mit drei Handelsrichterinnen oder -richtern besetzt, die unter Berücksichtigung ihrer Sachkunde bezeichnet werden."
+          "text": "Das Handelsgericht wird, unter Vorbehalt von § 45, für die Behandlung der einzelnen Rechtsstreitigkeiten mit zwei Mitgliedern des Obergerichts und mit drei Handelsrichterinnen oder -richtern besetzt, die unter Berücksichtigung ihrer Sachkunde bezeichnet werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "103b4cdeab48308f5d019b5bf109df63233d3d5d2bd3c14d13be29910049d0f1"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "083b2708b08a990843c3903d43eb06b2c1f39d098e80e5a01686d2111785fbb0"
     },
     {
       "id": "kanton/ZH/211.1/art_40",
@@ -1125,10 +1125,10 @@
           "text": "Der Kantonsrat regelt die Entlöhnung der Mitglieder und die Entschädigung der Ersatzmitglieder des Obergerichts."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "8df8aeb2f88c908dea6b04d0cf03df2413363d72b36ad9662be1ee060d10ae87"
     },
     {
@@ -1144,10 +1144,10 @@
           "text": "Das Obergericht stellt die Generalsekretärin oder den Generalsekretär, die stellvertretenden Generalsekretärinnen oder -sekretäre, die Leitenden und die übrigen Gerichtsschreiberinnen oder -schreiber sowie das administrative Personal an."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d4a7af85c7bdd784f6e9fa30b9071e08b02448e19877d5fd31ce8c58e62270d4"
     },
     {
@@ -1167,10 +1167,10 @@
           "text": "Geschäfte der Justizverwaltung können ständigen Kommissionen, einzelnen Mitgliedern oder Angestellten zur Erledigung übertragen werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "38a0936c7ff30b94502ce77ddfa460d0edd6c5892a0efe601a6cf523c0ec7f6b"
     },
     {
@@ -1187,7 +1187,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Streitigkeiten gemäss Art. 5 Abs. 1 Bst.f ZPO,"
+              "text": "Streitigkeiten gemäss Art. 5 Abs. 1 Bst. f ZPO,"
             },
             {
               "marke": "b",
@@ -1200,11 +1200,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "25c168ef3c3d19198e63eb8329b0a7f22e5035ac2b659dd8261cafe1625bd92b"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "ef55776c314e26cb1daf6c30236ea12b599cf11d6fc47f8073b775ac4e171a90"
     },
     {
       "id": "kanton/ZH/211.1/art_44",
@@ -1220,20 +1220,20 @@
           "items": [
             {
               "marke": "a",
-              "text": "Art.5 Abs. 1 Bst.a–e und h ZPO,"
+              "text": "Art. 5 Abs. 1 Bst. a–e und h ZPO,"
             },
             {
               "marke": "b",
-              "text": "Art.6 Abs.2, 3 und 4 Bst.b ZPO, deren Streitwert mindestens Fr. 30000 beträgt."
+              "text": "Art. 6 Abs. 2, 3 und 4 Bst. b ZPO, deren Streitwert mindestens Fr. 30 000 beträgt."
             }
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "3961cf9c28cbde51860a99d6467238c5e3c934d3d2458a671a6425188074c891"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "e99775083d02362f26d27e63380f266056682ea725188ba54ed598b49bb1cc96"
     },
     {
       "id": "kanton/ZH/211.1/art_45",
@@ -1249,7 +1249,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Streitigkeiten gemäss Art. 5 Abs. 1 Bst.g ZPO,"
+              "text": "Streitigkeiten gemäss Art. 5 Abs. 1 Bst. g ZPO,"
             },
             {
               "marke": "b",
@@ -1257,7 +1257,7 @@
             },
             {
               "marke": "c",
-              "text": "Streitigkeiten gemäss Art. 250 Bst.c ZPO, deren Streitwert mindestens Fr. 30000 beträgt,"
+              "text": "Streitigkeiten gemäss Art. 250 Bst. c ZPO, deren Streitwert mindestens Fr. 30 000 beträgt,"
             },
             {
               "marke": "d",
@@ -1266,11 +1266,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "70265a1384a115b3651fed76d7608b902bb8f9a8b2e608d14933245612190263"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "a48dc948678d6a4baab150d40a30555e680f4d661e3b3d7799519bce9bfd8196"
     },
     {
       "id": "kanton/ZH/211.1/art_46",
@@ -1282,14 +1282,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Obergericht ist das zuständige Gericht gemäss Art. 356 Abs. 1 und Abs. 2 Bst.a und b ZPO."
+          "text": "Das Obergericht ist das zuständige Gericht gemäss Art. 356 Abs. 1 und Abs. 2 Bst. a und b ZPO."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "130058a460df7e270010232ea524ae668fa35d229c758e7a3832cccaadc3e26c"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "13fdda80cc785bfaa696ee59daf00b8df747f4e994187b33bc94e0ce78128345"
     },
     {
       "id": "kanton/ZH/211.1/art_47",
@@ -1305,11 +1305,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "ist unter Vorbehalt der Zuständigkeit von §§29 und 33 Zwangsmassnahmengericht gemäss StPO, JSt PO, Polizeiorganisationsgesetz vom 29. November 2004und Polizeigesetz,"
+              "text": "ist unter Vorbehalt der Zuständigkeit von §§ 29 und 33 Zwangsmassnahmengericht gemäss StPO, JStPO, Polizeiorganisationsgesetz vom 29. November 2004 und Polizeigesetz,"
             },
             {
               "marke": "b",
-              "text": "entscheidet ausserhalb von Strafverfahren über die invasive Probenahme und die Analyse der Probe zur Erstellung eines DNA- Profils gemäss Art. 7 Abs. 3 Bst.b* des DNA-Profil-Gesetzes vom 20.Juni 2003,"
+              "text": "entscheidet ausserhalb von Strafverfahren über die invasive Probenahme und die Analyse der Probe zur Erstellung eines DNA- Profils gemäss Art. 7 Abs. 3 Bst. b* des DNA-Profil-Gesetzes vom 20. Juni 2003,"
             },
             {
               "marke": "c",
@@ -1318,11 +1318,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "808a18229a852a2c8f00df15da480a174d991eaa0d51812456c3daa5e0ee23b4"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "bbb2fcf39a99655aef692ec964e40f7a12bf1a89830f6bad35f5be8f2eb91c5a"
     },
     {
       "id": "kanton/ZH/211.1/art_48",
@@ -1337,10 +1337,10 @@
           "text": "Das Obergericht ist Berufungs- und Beschwerdeinstanz gemäss ZPO."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d636632c13ad324783ed202358edc51cd2925d9c164365481d8887eecbbe6f6e"
     },
     {
@@ -1353,14 +1353,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Obergericht ist Berufungsgericht und Beschwerdeinstanz gemäss StPO und JSt PO."
+          "text": "Das Obergericht ist Berufungsgericht und Beschwerdeinstanz gemäss StPO und JStPO."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "f71c727b5fcbd1f4bf1aefbbffc6caa14e86cf79509975693aefb8263c9aec17"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "a170883f94899f38cdcd61fac7db1910b2380f2252133518992c4572fa74b69e"
     },
     {
       "id": "kanton/ZH/211.1/art_50",
@@ -1376,24 +1376,24 @@
           "items": [
             {
               "marke": "a",
-              "text": "Entscheide des Einzelgerichts gemäss §30 (fürsorgerische Unterbringung),"
+              "text": "Entscheide des Einzelgerichts gemäss § 30 (fürsorgerische Unterbringung),"
             },
             {
               "marke": "b",
-              "text": "Entscheide des Bezirksrates als Beschwerdeinstanz gegen Entscheide der Kindes- und Erwachsenenschutzbehörde (KESB; §63 EG KESR),"
+              "text": "Entscheide des Bezirksrates als Beschwerdeinstanz gegen Entscheide der Kindes- und Erwachsenenschutzbehörde (KESB; § 63 EG KESR),"
             },
             {
               "marke": "c",
-              "text": "Entscheide der zuständigen Direktion des Regierungsrates über Namensänderungen (§45 EG zum ZGB)."
+              "text": "Entscheide der zuständigen Direktion des Regierungsrates über Namensänderungen (§ 45 EG zum ZGB)."
             }
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "2210dc2af3fffa9b9b43f675a764149556690c3950dbfa04ac4dd5465e9d5e82"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "6db7c377962881179e12aff17edfb5620973d2fa8a112d82ee479261bda6633b"
     },
     {
       "id": "kanton/ZH/211.1/art_51",
@@ -1409,18 +1409,18 @@
         },
         {
           "absatz": "2",
-          "text": "Entscheide gemäss §47 lit.b können beim Obergericht mit Beschwerde nach den Bestimmungen des VRGangefochten werden."
+          "text": "Entscheide gemäss § 47 lit. b können beim Obergericht mit Beschwerde nach den Bestimmungen des VRG angefochten werden."
         },
         {
           "absatz": "3",
-          "text": "Das Obergericht ist Beschwerdeinstanz gemäss Art.37 Abs.3 BÜPF. Auf das Verfahren finden die Bestimmungen des VRGergänzend Anwendung. 3. Teil: Schlichtungsbehörden 1. Abschnitt: Allgemeine Bestimmung"
+          "text": "Das Obergericht ist Beschwerdeinstanz gemäss Art. 37 Abs. 3 BÜPF. Auf das Verfahren finden die Bestimmungen des VRG ergänzend Anwendung. 3. Teil: Schlichtungsbehörden 1. Abschnitt: Allgemeine Bestimmung"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "484a37d95a11dad5e6f9ffe7140f0a1d82d03139cdbd5d811059e78adfb2b5d8"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "0b80cb71aec9ba2ce6f18d8aa6a7ec3277920686bfd80788e4e1d225128257d4"
     },
     {
       "id": "kanton/ZH/211.1/art_52",
@@ -1449,10 +1449,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ae08249327a8c176b2e5d735c862a4b9ce4873471ae94654d6966ae78b43556c"
     },
     {
@@ -1469,14 +1469,14 @@
         },
         {
           "absatz": "2",
-          "text": "Besteht das Gemeindegebiet aus mehreren Kreisen gemäss §3 Abs. 4 des Gemeindegesetzes vom 20. April 2015, bilden diese Friedensrichterkreise. Die Gemeinden können in der Gemeindeordnung mehrere Friedensrichterkreise zusammenschliessen."
+          "text": "Besteht das Gemeindegebiet aus mehreren Kreisen gemäss § 3 Abs. 4 des Gemeindegesetzes vom 20. April 2015, bilden diese Friedensrichterkreise. Die Gemeinden können in der Gemeindeordnung mehrere Friedensrichterkreise zusammenschliessen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "57646ca503cdd1d4f884d099cd4a9480c7e4c8b3d099a966a75a45f6d1f76a1f"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "af014ff2a9b597a657d48f0414317a893cac4a661ac43954e3af23ddc8640c27"
     },
     {
       "id": "kanton/ZH/211.1/art_53_a",
@@ -1503,10 +1503,10 @@
           "text": "Schliessen sich die Gemeinden zu einem Zweckverband zusammen, holt der Regierungsrat vor der Genehmigung einen Bericht des Obergerichts ein."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "5414c45994ed5a48ae4d4b969a2976806553e2824c6de735c5bec8e7a21e89dc"
     },
     {
@@ -1522,10 +1522,10 @@
           "text": "Das GPR regelt das Wahlverfahren, die Wählbarkeit, den Amtszwang und die Amtsdauer der Friedensrichterinnen und -richter, soweit dieses Gesetz nichts anderes bestimmt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "7d35c9e2d24da930fedb9b3919a355a5ee4a5665861ee260fa7703915153640f"
     },
     {
@@ -1545,10 +1545,10 @@
           "text": "Ausnahmsweise kann das Bezirksgericht aus den stimmberechtigten Kantonseinwohnerinnen und -einwohnern für eine bestimmte Zeit eine ausserordentliche Stellvertretung bestellen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "5b725280e88536f5b5341ce156c5d6e9852a3f2b552e240c30a8348e09a2a235"
     },
     {
@@ -1564,10 +1564,10 @@
           "text": "Die Gemeinden entlöhnen die Friedensrichterinnen und -richter und vergüten ihnen die Auslagen für Räumlichkeiten, Büromaterialien und dergleichen. Die Einnahmen der Friedensrichterinnen und -richter fallen in die Gemeindekasse."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "106491568742837617219e2bdf31218eaadac75b7fdd5827662bf9a60b7b2c88"
     },
     {
@@ -1583,10 +1583,10 @@
           "text": "Die Friedensrichterin oder der Friedensrichter ist Schlichtungsbehörde gemäss ZPO, soweit nichts anderes bestimmt ist. 3. Abschnitt: Paritätische Schlichtungsbehörde für Streitigkeiten nach dem Gleichstellungsgesetz"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "9afe1d199f7873541ce42faf4ddece5774b6e91860b213b10592f3fc0f52feb9"
     },
     {
@@ -1602,10 +1602,10 @@
           "text": "Im Kanton besteht eine Paritätische Schlichtungsbehörde für Streitigkeiten nach dem Gleichstellungsgesetz vom 24. März 1995."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "fba38994ad05aadaff464051ca199276c0c4441d00280de2d450eda43acfd86a"
     },
     {
@@ -1625,10 +1625,10 @@
           "text": "Das Obergericht wählt auf die Amtsdauer seiner Mitglieder die Mitglieder der Schlichtungsbehörde. Die privaten und öffentlichen Arbeitgebenden und die Verbände unterbreiten dem Obergericht Wahlvorschläge. Sie achten dabei auf eine gleichmässige Vertretung von Frauen und Männern."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "788024bed4142e21938ae8926c681a1e075bf4758df224582772690731bdcec5"
     },
     {
@@ -1648,10 +1648,10 @@
           "text": "Die oder der Vorsitzende führt die Schlichtungsbehörde."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "7eb26e571e1cd48e82c4e1a9ed3cb64e22467c29e014325f348f9d6de85a93b4"
     },
     {
@@ -1667,10 +1667,10 @@
           "text": "Die Schlichtungsbehörde wird für jede Verhandlung mit der oder dem Vorsitzenden oder der Stellvertretung sowie je einem Mitglied aus Kreisen der Arbeitgebenden und der Arbeitnehmenden besetzt. Beide Geschlechter sind vertreten. Bei der Besetzung ist der rechtlichen Natur des Arbeitsverhältnisses Rechnung zu tragen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "6e901f37e93b34d11866ee4208e31228ad4520fce0d293a3b77996ba02259d1a"
     },
     {
@@ -1686,10 +1686,10 @@
           "text": "Die Schlichtungsbehörde ist zuständig für Streitigkeiten nach dem Gleichstellungsgesetz vom 24. März 1995. 4. Abschnitt: Paritätische Schlichtungsbehörden in Miet- und Pachtsachen"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "bb3399cebab59738c929a44bbe17e3ad0de11cb8bc9fbf90774d281593e9b597"
     },
     {
@@ -1705,10 +1705,10 @@
           "text": "Jeder Bezirk hat eine Paritätische Schlichtungsbehörde in Miet- und Pachtsachen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "01b28954a5991a109a387e92ebfb80226fc4ab09e205c5714dfddfa075e54a44"
     },
     {
@@ -1742,10 +1742,10 @@
           "text": "Das Amt eines Mitglieds der Schlichtungsbehörde ist unvereinbar mit demjenigen eines Mitglieds des Mietgerichts."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "2802971c6dc0b17c3fcfc6353e1bfb7716443288237fb14a1e9d35b97b38efe8"
     },
     {
@@ -1765,10 +1765,10 @@
           "text": "Das Bezirksgericht regelt die Geschäftsführung der Schlichtungsbehörde."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "fe1d667b5af33ad5ace212a57de1578ea8874b9cfb309cee9c5c2449ceb5860d"
     },
     {
@@ -1785,14 +1785,14 @@
         },
         {
           "absatz": "2",
-          "text": "Sie behandelt Gesuche um Hinterlegung von Miet- und Pachtzinsen gestützt auf Art.259g und 288 OR. Hinterlegungsstelle ist die Kasse des Bezirksgerichts. 4. Teil: Justizverwaltung sowie Aufsicht über Gerichte, Schlichtungsbehörden und weitere Behörden 1. Abschnitt: Justizverwaltung"
+          "text": "Sie behandelt Gesuche um Hinterlegung von Miet- und Pachtzinsen gestützt auf Art. 259 g und 288 OR. Hinterlegungsstelle ist die Kasse des Bezirksgerichts. 4. Teil: Justizverwaltung sowie Aufsicht über Gerichte, Schlichtungsbehörden und weitere Behörden 1. Abschnitt: Justizverwaltung"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "b2e3471e0804356bef4c1939b64c8a19a7ec4c91523d97c008e64e76416b15c0"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "c69b718b61dd61a18a90fd6208e4b4f1bffdbe85f9941fa8bc447997ad3c1ffb"
     },
     {
       "id": "kanton/ZH/211.1/art_67",
@@ -1807,10 +1807,10 @@
           "text": "Soweit gesetzlich nichts anderes vorgesehen ist, richtet sich das Verfahren für Wahlen und Abstimmungen bei Geschäften der Justizverwaltung nach den entsprechenden Bestimmungen für die Gemeindebehörden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "51779bc08f19c717c3346cc093ea9c443b121f2abe0947425e82fab82c1efa1d"
     },
     {
@@ -1830,10 +1830,10 @@
           "text": "Sie arbeiten bei der Planung, dem Bau und dem Unterhalt von Liegenschaften mit der für das Bauwesen zuständigen Direktion zusammen. Die obersten kantonalen Gerichte und der Regierungsrat regeln die Einzelheiten durch eine gemeinsame Verordnung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "7311fd30851ecffa871343f7942ab6a0028b47e871b97e4e1a0210d4d0508754"
     },
     {
@@ -1859,10 +1859,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "97a507f8161a5d86a8a890519981e3404a0364ae9e8df78bc0ff97c67a02dbd7"
     },
     {
@@ -1912,10 +1912,10 @@
           "text": "Wahlen und Beschlüsse des Plenarausschusses bedürfen der Zustimmung von mindestens neun seiner Mitglieder."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ac11e85b826fb6430bee0e72aca00c5d0e248eebead6d059172270c14a46971f"
     },
     {
@@ -1947,10 +1947,10 @@
           "text": "Die Präsidentin oder der Präsident versammelt die Kommission, so oft die Geschäfte es erfordern und wenn ein anderes Mitglied es verlangt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "1ec75ea184df86fc84c74d5b01eacf293562fbac65fd9d4b3eae31cd002f772a"
     },
     {
@@ -1966,10 +1966,10 @@
           "text": "Die gerichtsübergreifenden Justizverwaltungsorgane sind für die Justizverwaltung aller Gerichte des Kantons und der ihnen unterstellten Behörden und Amtsstellen zuständig, soweit dieses oder ein anderes Gesetz es vorsieht."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "3d985d7e2c2cf1eaaf3031b264d877f87375443e86789c042279bf552cef473b"
     },
     {
@@ -1986,7 +1986,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "gemäss §56 Abs. 3 des Personalgesetzes vom 27. September 1998,"
+              "text": "gemäss § 56 Abs. 3 des Personalgesetzes vom 27. September 1998,"
             },
             {
               "marke": "b",
@@ -2004,14 +2004,14 @@
         },
         {
           "absatz": "2",
-          "text": "Der Plenarausschuss und der Regierungsrat können über das Dolmetscherwesen eine Verordnungerlassen."
+          "text": "Der Plenarausschuss und der Regierungsrat können über das Dolmetscherwesen eine Verordnung erlassen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "e56df571817bd9acdabb6254f68c65950b139c5333afa94e7e84b83ec9b79b12"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "f9535c237cb2099772e6ab967954fb5ec185b89303bb5c2064472640688b2269"
     },
     {
       "id": "kanton/ZH/211.1/art_74",
@@ -2034,10 +2034,10 @@
           "text": "Sie kann bei Einstimmigkeit zu Geschäften, namentlich zu Gesetzesentwürfen, die für die kantonale Justiz als Ganzes bedeutsam sind, Stellung nehmen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "465a67a2ecc0086c9209631fa03936fabf82af40a02835100f6793def8edda50"
     },
     {
@@ -2050,7 +2050,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Gerichte sind dem Gesetz über Controlling und Rechnungslegung (CRG) vom 9. Januar 2006und den Ausführungserlassen des Regierungsrates zu diesem Gesetz unterstellt."
+          "text": "Die Gerichte sind dem Gesetz über Controlling und Rechnungslegung (CRG) vom 9. Januar 2006 und den Ausführungserlassen des Regierungsrates zu diesem Gesetz unterstellt."
         },
         {
           "absatz": "2",
@@ -2058,14 +2058,14 @@
         },
         {
           "absatz": "3",
-          "text": "Sie sind bezüglich Ausgabenkompetenzen dem Regierungsrat gleichgestellt. §§19–25 CRGgelten sinngemäss."
+          "text": "Sie sind bezüglich Ausgabenkompetenzen dem Regierungsrat gleichgestellt. §§ 19–25 CRG gelten sinngemäss."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "71b6dbe87d67849b80b37cf25f6add0f2f442d3e3a94202a60a9760bfc5c848f"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "f421eefdb93f0ee6e3c90cc744ad437ec706a36de02475401e4b1545a797b3e2"
     },
     {
       "id": "kanton/ZH/211.1/art_76",
@@ -2084,10 +2084,10 @@
           "text": "Es erlässt die dazu erforderlichen Verordnungen und Anweisungen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ea4d8741200d4eba449691fd80352314428981e169aa5a74a40442d20e0b7cda"
     },
     {
@@ -2107,10 +2107,10 @@
           "text": "Sie oder er überwacht die Pflichterfüllung der Mitglieder des Gerichts und der Gerichtskanzlei und sorgt für beförderliche Erledigung der Geschäfte."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d826f9bca5f3f281bc51ba888c30949cf871cb467ed35d392d081ac6f8fb7dec"
     },
     {
@@ -2126,10 +2126,10 @@
           "text": "Die Generalsekretärin oder der Generalsekretär des Obergerichts sowie die Leitenden Gerichtsschreiberinnen oder -schreiber sind Stabsstellen des jeweiligen Gerichts. Sie leiten die juristische und die administrative Kanzlei. 2. Abschnitt: Aufsicht"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "5c3e181e2514c0656757c88f225fedd775eea9309584ff9e9d9573ac86b109e8"
     },
     {
@@ -2163,10 +2163,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "c205ffac6df481d53a6185deac9be0b52df4b17c515bbe04298e16e6f5a1d5c4"
     },
     {
@@ -2204,10 +2204,10 @@
           "text": "Die Paritätische Schlichtungsbehörde für Streitigkeiten nach dem Gleichstellungsgesetz erstattet dem Obergericht jährlich Bericht über ihre Tätigkeit."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "7d9ed88aeeb7e212443da2272ca820f6aa9649f6732993eadce8661f8afd120d"
     },
     {
@@ -2249,10 +2249,10 @@
           "text": "Sie erstatten dem Obergericht jährlich Bericht über ihre Tätigkeit und diejenige der Behörden und Ämter gemäss Abs. 1 lit. a–c."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "e6ba555afe9bb625f2b4d5972750106f990d11a58212cfc573b33ec7640240ad"
     },
     {
@@ -2272,10 +2272,10 @@
           "text": "Die Aufsichtsbehörde verfügt die notwendigen Massnahmen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "c4dc6832b6b39b768faf757fd7166e226b0441c7fee10620138aab23e5ff258c"
     },
     {
@@ -2299,10 +2299,10 @@
           "text": "Die Aufsichtsbehörde untersucht den Sachverhalt von Amtes wegen. Die Vorschriften der Zivilprozessordnung, insbesondere über das Beweisverfahren, sind sinngemäss anwendbar."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "36ea1dea7c42e35a1191c87ae53021d123ca05c2bc978de1b2594a70e9b854db"
     },
     {
@@ -2315,14 +2315,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Gegen Beschwerdeentscheide der Bezirksgerichte kann innert zehn Tagen seit der Mitteilung Aufsichtsbeschwerde beim Obergericht erhoben werden. Art.319ff. ZPO sind sinngemäss anwendbar."
+          "text": "Gegen Beschwerdeentscheide der Bezirksgerichte kann innert zehn Tagen seit der Mitteilung Aufsichtsbeschwerde beim Obergericht erhoben werden. Art. 319 ff. ZPO sind sinngemäss anwendbar."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "8524dcc5bf1b242cc5f44155dc171e95bbec2a7547b3fd823f4b1263f2f99fe7"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "6bf4b873ab7ccafeecfff105fe168058f60604897e095a7045d44ff7f22a0d92"
     },
     {
       "id": "kanton/ZH/211.1/art_85",
@@ -2334,14 +2334,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die §§83 und 84 sind auf Beschwerdeverfahren anwendbar, die auf anderen kantonalen oder auf eidgenössischen Erlassen beruhen, soweit diese eine Aufsicht durch richterliche Behörden vorsehen und nicht eigene Verfahrensvorschriften enthalten. 5. Teil: Strafverfolgungsbehörden 1. Abschnitt: Allgemeine Bestimmungen"
+          "text": "Die §§ 83 und 84 sind auf Beschwerdeverfahren anwendbar, die auf anderen kantonalen oder auf eidgenössischen Erlassen beruhen, soweit diese eine Aufsicht durch richterliche Behörden vorsehen und nicht eigene Verfahrensvorschriften enthalten. 5. Teil: Strafverfolgungsbehörden 1. Abschnitt: Allgemeine Bestimmungen"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "550f2de0c5eba890eada202ac4c896277a1987d8990a0818b6fb73599ad527fd"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "7628bb9c8cdc494d1a2cd32734ef5abcfc7b6487dab9449bec9edb7b96e5f80c"
     },
     {
       "id": "kanton/ZH/211.1/art_86",
@@ -2361,28 +2361,28 @@
             },
             {
               "marke": "b",
-              "text": "im Verfahren gegen Erwachsene: 1.die Statthalterämter und die vom Regierungsrat bezeichneten Gemeinden, 2.die Staatsanwaltschaften, 3.die Oberstaatsanwaltschaft,"
+              "text": "im Verfahren gegen Erwachsene: 1. die Statthalterämter und die vom Regierungsrat bezeichneten Gemeinden, 2. die Staatsanwaltschaften, 3. die Oberstaatsanwaltschaft,"
             },
             {
               "marke": "c",
-              "text": "im Verfahren gegen Jugendliche: 1.die Jugendanwaltschaften, 2.die Oberjugendanwaltschaft."
+              "text": "im Verfahren gegen Jugendliche: 1. die Jugendanwaltschaften, 2. die Oberjugendanwaltschaft."
             }
           ]
         },
         {
           "absatz": "2",
-          "text": "Im Ordnungsbussenverfahren richtet sich die Zuständigkeit nach den §§170ff."
+          "text": "Im Ordnungsbussenverfahren richtet sich die Zuständigkeit nach den §§ 170 ff."
         },
         {
           "absatz": "3",
           "text": "Der Regierungsrat regelt ergänzend zu den Bestimmungen dieses Gesetzes die Organisation und Geschäftsführung der Staatsanwaltschaften, der Oberstaatsanwaltschaft, der Jugendanwaltschaften und der Oberjugendanwaltschaft."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "e274565d53e4e6bfe31a23e7b0a4e6eaee4102b84f089e07c12b9c0971d038dc"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "87bcb5b478b8b4df5ed60a409624010218d5461b40a85e86795fae598bb4f180"
     },
     {
       "id": "kanton/ZH/211.1/art_87",
@@ -2397,10 +2397,10 @@
           "text": "Der Kanton kann die Staatsanwältinnen und -anwälte sowie die Oberstaatsanwältinnen und -anwälte mit seiner Vertretung in Zivilund Verwaltungssachen beauftragen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "518527ffca60534e8711743e01e067688bae0141119e2dc854a8ad1f624803cc"
     },
     {
@@ -2416,10 +2416,10 @@
           "text": "Oberstaatsanwältinnen und -anwälten, Oberjugendanwältinnen und -anwälten, Staatsanwältinnen und -anwälten sowie Jugendanwältinnen und -anwälten ist die berufsmässige Vertretung von Parteien vor Strafverfolgungsbehörden und Gerichten untersagt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "6c36489f0f52eed1b697e481b4fc58e548831c84d8ce67a23a11ef393bf337ab"
     },
     {
@@ -2432,18 +2432,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Für die Offenlegung von Interessenbindungen gilt §7 sinngemäss für Oberstaatsanwältinnen und -anwälte, Staatsanwältinnen und -anwälte, Oberjugendanwältinnen und -anwälte sowie Jugendanwältinnen und -anwälte."
+          "text": "Für die Offenlegung von Interessenbindungen gilt § 7 sinngemäss für Oberstaatsanwältinnen und -anwälte, Staatsanwältinnen und -anwälte, Oberjugendanwältinnen und -anwälte sowie Jugendanwältinnen und -anwälte."
         },
         {
           "absatz": "2",
           "text": "Die Oberstaatsanwaltschaft erstellt das Register für sich und die Staatsanwaltschaften, die Oberjugendanwaltschaft für sich und die Jugendanwaltschaften. Sie wachen über die Einhaltung der Offenlegungspflichten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "c8c6dc51e75108121a29f4f93333933b72dbd302a53b3d75e26e51e74e7a4984"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "4dcecce9c37e9ce80e5b786d648fa68ee5ced03cdd602305d579306a32afd64a"
     },
     {
       "id": "kanton/ZH/211.1/art_88_b",
@@ -2467,7 +2467,7 @@
             },
             {
               "marke": "b",
-              "text": "Sie nimmt Datenschutz-Folgenabschätzungen gemäss §10 Abs. 1 des Gesetzes über die Information und den Datenschutz vom 12. Februar 2007vor."
+              "text": "Sie nimmt Datenschutz-Folgenabschätzungen gemäss § 10 Abs. 1 des Gesetzes über die Information und den Datenschutz vom 12. Februar 2007 vor."
             },
             {
               "marke": "c",
@@ -2476,11 +2476,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "0f4853cb28302490c70b1f718a328da2b65c813a201e0c3e618c85989b138ddf"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "0a277126f94af69683d35d3b8acebcae4248b4d499bea7ad7ebee762b85e6935"
     },
     {
       "id": "kanton/ZH/211.1/art_89",
@@ -2503,10 +2503,10 @@
           "text": "Die Strafbefugnis der Gemeinde beträgt höchstens Fr. 500 Busse. Die anzuordnende Ersatzfreiheitsstrafe darf zehn Tage nicht übersteigen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "2d8469f914cc387d8d462768446fd081753cd00dc3d0a67d8e46e8249bbb08d3"
     },
     {
@@ -2522,10 +2522,10 @@
           "text": "Die Staatsanwaltschaft kann die Akten einer Strafuntersuchung, die wegen eines Verbrechens oder Vergehens eingeleitet wurde, an die zuständige Übertretungsstrafbehörde überweisen, wenn nur eine Übertretung vorliegt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "0af4b29edad59f2086cf7f370afcdd83e4f052de60e388e4650b174873ee4ebf"
     },
     {
@@ -2541,10 +2541,10 @@
           "text": "Die Übertretungsstrafbehörde, die im betreffenden Fall entschieden hat, kann vor den kantonalen Instanzen Rechtsmittel erheben."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "bcef8166292ecaeb3e89841d4aeda174ccbcfed4dfc72494793c24eafa15bef4"
     },
     {
@@ -2560,10 +2560,10 @@
           "text": "Bussen, die von einer Gemeindebehörde ausgefällt und eingetrieben werden, fallen dieser zu."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "33758e037b68fadc69f36e2651de2f112645568505dbf68a4fa21faf129bc78a"
     },
     {
@@ -2593,10 +2593,10 @@
           "text": "Der Regierungsrat legt den Amtskreis der Allgemeinen Staatsanwaltschaften und die Zuständigkeit der Besonderen Staatsanwaltschaften fest und bestimmt die Sitze."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d6e224fbcd08b4560b14892b8d13726ef0ff24ee0873124c7bb9ce1f08c8397b"
     },
     {
@@ -2627,14 +2627,14 @@
         },
         {
           "absatz": "3",
-          "text": "Das Gesetz über die politischen Rechteregelt das Wahlverfahren, die Wählbarkeit, den Amtszwang und die Amtsdauer der ordentlichen Staatsanwältinnen und -anwälte."
+          "text": "Das Gesetz über die politischen Rechte regelt das Wahlverfahren, die Wählbarkeit, den Amtszwang und die Amtsdauer der ordentlichen Staatsanwältinnen und -anwälte."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "156fa565b2809719165477b09815698f660149fd257952fdcd1f1b5c080cac51"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "d5c8677ef9196123e3f5058eed09b4e2627f38739a6d22cf86637972925f5b31"
     },
     {
       "id": "kanton/ZH/211.1/art_95",
@@ -2649,10 +2649,10 @@
           "text": "Der Regierungsrat kann ausserordentliche Staatsanwältinnen und -anwälte und die für das Justizwesen zuständige Direktion stellvertretende Staatsanwältinnen und -anwälte ernennen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "5def567b9ae955afbbf84142986fb4296c15c033c93958c048b150a10dea6bf0"
     },
     {
@@ -2668,10 +2668,10 @@
           "text": "Der Regierungsrat ernennt aus dem Kreis der ordentlichen und ausserordentlichen Staatsanwältinnen und -anwälte die Leitenden Staatsanwältinnen und -anwälte."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "1514e3f8c8dd1a623f1f66cd8738eb33e7c1cb6ca0356858a19888c10ad3922f"
     },
     {
@@ -2691,10 +2691,10 @@
           "text": "Das Wahlfähigkeitszeugnis darf im Zeitpunkt einer erstmaligen Bewerbung nicht älter als acht Jahre sein. Bei Wiederbewerbungen ist ein neues Wahlfähigkeitszeugnis notwendig, wenn die Aufgabe der Tätigkeit länger als acht Jahre zurückliegt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "01b0d7324807fc59086abe77c1b352de4bcb5325bbe8baebe90b99d83ad5e875"
     },
     {
@@ -2711,7 +2711,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "ein juristisches Studium gemäss Art. 7 Abs. 1 Bst.a BGFAabgeschlossen haben,"
+              "text": "ein juristisches Studium gemäss Art. 7 Abs. 1 Bst. a BGFA abgeschlossen haben,"
             },
             {
               "marke": "b",
@@ -2733,14 +2733,14 @@
         },
         {
           "absatz": "4",
-          "text": "Die für das Justizwesen zuständige Direktion entzieht einer Staatsanwältin oder einem Staatsanwalt das Wahlfähigkeitszeugnis vorübergehend oder dauernd, wenn diese oder dieser gestützt auf §§19 oder 22 des Personalgesetzesentlassen wird. Eine Wiedererteilung ist möglich."
+          "text": "Die für das Justizwesen zuständige Direktion entzieht einer Staatsanwältin oder einem Staatsanwalt das Wahlfähigkeitszeugnis vorübergehend oder dauernd, wenn diese oder dieser gestützt auf §§ 19 oder 22 des Personalgesetzes entlassen wird. Eine Wiedererteilung ist möglich."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "9535d371a2964cbd93947ccd8082074495293f930e6932445a430e8946e0e741"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "0813e3e44d90709e978243aff4ee7d62476930b531f2e6ab0500448b3613d4b6"
     },
     {
       "id": "kanton/ZH/211.1/art_99",
@@ -2759,10 +2759,10 @@
           "text": "Die Gebühr kann bei besonders hohem Aufwand bis auf das Doppelte erhöht und bei geringem Aufwand bis auf einen Fünftel herabgesetzt werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "50811fb1dd4109e9a3f1fe63a02f146c1c7afb1f5cff7c093eab269a3bcc0186"
     },
     {
@@ -2788,10 +2788,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "535e75f51747a0d07041bbb6932f3d11c0e49d0f64fb613cb9aba509003f4cab"
     },
     {
@@ -2807,10 +2807,10 @@
           "text": "Die Oberstaatsanwaltschaft kann Mitarbeitende der Staatsanwaltschaft als Assistenzstaatsanwältinnen oder -anwälte ernennen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "c19dd5a0ba0fc97cd4dc30e92dcb6889a0b3d3a1db9928fbb208f133788ef77a"
     },
     {
@@ -2848,10 +2848,10 @@
           "text": "Den Assistenzstaatsanwältinnen und -anwälten ist zusätzlich zu den Aufgaben gemäss Abs. 2 die Befugnis zum Erlass von Strafbefehlen entzogen, sofern eine vollziehbare Freiheitsstrafe anzuordnen ist."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "903566323d1850f79e1238da289039b59f09d7fe1929412c45a05cb17df442d8"
     },
     {
@@ -2886,14 +2886,14 @@
         },
         {
           "absatz": "3",
-          "text": "Sie oder er kann die Befugnis gemäss Abs.2 lit.c im Einzelfall Staatsanwältinnen oder -anwälten ihrer oder seiner Amtsstelle übertragen, denen die Oberstaatsanwaltschaft allgemein die Befähigung dazu zuerkannt hat."
+          "text": "Sie oder er kann die Befugnis gemäss Abs. 2 lit. c im Einzelfall Staatsanwältinnen oder -anwälten ihrer oder seiner Amtsstelle übertragen, denen die Oberstaatsanwaltschaft allgemein die Befähigung dazu zuerkannt hat."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "3b6a76a3592b93ddc7f8225479c47e8e00a7b5d5d33cc1d9c82000ceb9c3fb36"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "32da7c1e8a0065341604fba017578877f43f42c8ef544c32f9331addc710e92e"
     },
     {
       "id": "kanton/ZH/211.1/art_104",
@@ -2908,10 +2908,10 @@
           "text": "Die Oberstaatsanwaltschaft besteht aus einer vom Regierungsrat zu bestimmenden Zahl von Oberstaatsanwältinnen und -anwälten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "6078121e645d4b86fa923632a07c41667d8b5c8bb7db65391d16210276eeaaf2"
     },
     {
@@ -2931,10 +2931,10 @@
           "text": "Der Regierungsrat kann ausserordentliche Oberstaatsanwältinnen und -anwälte einsetzen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "250dad898e7a192995d4417ec318fd7ebd59bc18b5a793b3533cea2e2027765f"
     },
     {
@@ -2954,10 +2954,10 @@
           "text": "Die Leitende Oberstaatsanwältin oder der Leitende Oberstaatsanwalt besorgt die Geschäftsleitung. Sie oder er vertritt die Oberstaatsanwaltschaft als oberste Strafverfolgungsbehörde nach aussen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b3fe68c760c69dbde6dd9c8001108f123a26e315dad8c4aeca5d6e5b06e3db28"
     },
     {
@@ -2984,14 +2984,14 @@
         },
         {
           "absatz": "2",
-          "text": "Sie kann die Aufgaben gemäss Abs. 1 lit. a einer Leitenden Staatsanwältin oder einem Leitenden Staatsanwalt übertragen. Die Aufgaben gemäss Abs.1 lit.b kann sie im Einzelfall einer Staatsanwältin oder einem Staatsanwalt übertragen. 3. Abschnitt: Verfahren gegen Jugendliche"
+          "text": "Sie kann die Aufgaben gemäss Abs. 1 lit. a einer Leitenden Staatsanwältin oder einem Leitenden Staatsanwalt übertragen. Die Aufgaben gemäss Abs. 1 lit. b kann sie im Einzelfall einer Staatsanwältin oder einem Staatsanwalt übertragen. 3. Abschnitt: Verfahren gegen Jugendliche"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "38554d4ddfa992f430a447584d8fc3eecca7b0a00ade67874fca45a26a5f2f78"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "ef95d95e3b9b6b86e40310f861102a03891e2329e3a5af4126054e3cb57c0690"
     },
     {
       "id": "kanton/ZH/211.1/art_108",
@@ -3006,10 +3006,10 @@
           "text": "Der Regierungsrat legt den Amtskreis der Jugendanwaltschaften fest und bestimmt ihre Sitze."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "e307b3ba86aa208fc9fa39bc5408d267d0944c8262b0046a28d69e5d0d6b4614"
     },
     {
@@ -3039,10 +3039,10 @@
           "text": "Die Oberjugendanwaltschaft ernennt die stellvertretenden Jugendanwältinnen und -anwälte."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "5a6a2ef05e020ed7260255e397340aec3bb8332109d5ff88796dd75b81ba1284"
     },
     {
@@ -3055,11 +3055,11 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Jugendanwältinnen und -anwälte üben die durch die JSt PO und Art.3 Abs.2 des Jugendstrafgesetzes (JSt G)der Untersuchungsbehörde übertragenen Aufgaben aus."
+          "text": "Die Jugendanwältinnen und -anwälte üben die durch die JStPO und Art. 3 Abs. 2 des Jugendstrafgesetzes (JStG) der Untersuchungsbehörde übertragenen Aufgaben aus."
         },
         {
           "absatz": "2",
-          "text": "Führt die Jugendanwältin oder der Jugendanwalt ein Verfahren gemäss Art. 3 Abs. 2 JSt G, richten sich die Kompetenzen nach Art. 352 StPO."
+          "text": "Führt die Jugendanwältin oder der Jugendanwalt ein Verfahren gemäss Art. 3 Abs. 2 JStG, richten sich die Kompetenzen nach Art. 352 StPO."
         },
         {
           "absatz": "3",
@@ -3075,16 +3075,16 @@
             },
             {
               "marke": "c",
-              "text": "Strafbefehle erlassen, sofern anzuordnen ist: 1.eine persönliche Leistung von mehr als einem Monat, 2.eine vollziehbare Freiheitsstrafe oder 3.eine Schutzmassnahme."
+              "text": "Strafbefehle erlassen, sofern anzuordnen ist: 1. eine persönliche Leistung von mehr als einem Monat, 2. eine vollziehbare Freiheitsstrafe oder 3. eine Schutzmassnahme."
             }
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "251f66dc9942515af705cad4f774b60545a2db1ed058727ad5fe226b63d944b3"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "2a79dc93d280deef13492bdeb91405671f1c25e55f6a72bf5481b966987c22c1"
     },
     {
       "id": "kanton/ZH/211.1/art_111",
@@ -3099,10 +3099,10 @@
           "text": "Die Leitende Jugendanwältin oder der Leitende Jugendanwalt leitet neben der Tätigkeit als Jugendanwältin oder Jugendanwalt ihre oder seine Jugendanwaltschaft."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "abd56022d6e06fd48063407bf9853fb92b140644df214ab92d45c3b479a41beb"
     },
     {
@@ -3118,10 +3118,10 @@
           "text": "Die Oberjugendanwaltschaft besteht aus einer vom Regierungsrat zu bestimmenden Zahl von Oberjugendanwältinnen und -anwälten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "6647353d563a8a7cac6b71f26eb339a4f64524d439e4b855acf0b6a7b708aaa9"
     },
     {
@@ -3137,10 +3137,10 @@
           "text": "Der Regierungsrat ernennt die Oberjugendanwältinnen und -anwälte sowie die Leitende Oberjugendanwältin oder den Leitenden Oberjugendanwalt. Er kann ausserordentliche Oberjugendanwältinnen und -anwälte einsetzen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "4fc6968c4cbd4cf058b79e3faf64c996325c0d75f3f55d43f85cdbad0c85290c"
     },
     {
@@ -3186,10 +3186,10 @@
           "text": "Die Oberjugendanwaltschaft kann die Befugnisse gemäss Abs. 3 lit. b–d an Leitende Jugendanwältinnen oder -anwälte übertragen. 4. Abschnitt: Aufsicht"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "0c4bb8359a24e04e8ae2a19ffe5f1b6ff28199216e6051cba339ae9c406ab68a"
     },
     {
@@ -3213,10 +3213,10 @@
           "text": "Der Regierungsrat und die Direktion können der Oberstaatsanwaltschaft und der Oberjugendanwaltschaft die Weisung erteilen, eine Strafverfolgung an die Hand zu nehmen, nicht aber sie zu unterlassen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "4deb606b210c769fb933887fa706cd1cba90863a8ac2572d03ae42010819dc00"
     },
     {
@@ -3240,10 +3240,10 @@
           "text": "Die Jugendanwältinnen und -anwälte stehen unter der Aufsicht der Oberjugendanwaltschaft. 6. Teil: Verfahrensbestimmungen 1. Abschnitt: Gemeinsame Bestimmungen"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d0a40d3705dfba3a6987a6960031905c06020bf9f10b10947c4c852ad944d925"
     },
     {
@@ -3269,10 +3269,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "85d699744dbe20c6ce98e4763735e9b08dd1af86990de191967ce8003e1b64b3"
     },
     {
@@ -3285,7 +3285,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Strafverfolgungsbehörden gemäss §86 Abs. 1 lit. b und c, die Strafgerichte und das Einzelgericht in Geschäften gemäss §137 können in hängigen Verfahren Daten über das steuerbare Einkommen und Vermögen durch direkten elektronischen Zugriff von den Gemeindesteuerämtern erheben."
+          "text": "Die Strafverfolgungsbehörden gemäss § 86 Abs. 1 lit. b und c, die Strafgerichte und das Einzelgericht in Geschäften gemäss § 137 können in hängigen Verfahren Daten über das steuerbare Einkommen und Vermögen durch direkten elektronischen Zugriff von den Gemeindesteuerämtern erheben."
         },
         {
           "absatz": "2",
@@ -3293,14 +3293,14 @@
         },
         {
           "absatz": "3",
-          "text": "Sie schützt den Zugriff und sorgt für dessen Protokollierung. §§119 und 120."
+          "text": "Sie schützt den Zugriff und sorgt für dessen Protokollierung. §§ 119 und 120."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "f2f728f51824f32c818f06559c151e95d484cf7f854c79f892c6fc1deb1f0690"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "99effc0e47b4f56a588f6bd490c139ae35cdc993fb5b66b398b660b5245cbf11"
     },
     {
       "id": "kanton/ZH/211.1/art_121",
@@ -3319,10 +3319,10 @@
           "text": "Die Zustellung durch Veröffentlichung erfolgt im Amtsblatt des Kantons Zürich."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "4273d5610208ccb4d587577aaedf28e03470c50de35f4e10a17c7e89ef1f5cd5"
     },
     {
@@ -3335,14 +3335,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Als Feiertage gelten Neujahrstag, Berchtoldstag (2. Januar), Karfreitag, Ostermontag, 1.Mai, Auffahrtstag, Pfingstmontag, 1. August, Weihnachtstag und Stephanstag (26. Dezember)."
+          "text": "Als Feiertage gelten Neujahrstag, Berchtoldstag (2. Januar), Karfreitag, Ostermontag, 1. Mai, Auffahrtstag, Pfingstmontag, 1. August, Weihnachtstag und Stephanstag (26. Dezember)."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "39ae02528241709fb57886a7cd1952fc0b233dc63aeab74be5a457ef08700192"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "5743e3afaf0b1226ba810411396428b24efdf038e9424c86d46953fd95fc811a"
     },
     {
       "id": "kanton/ZH/211.1/art_123",
@@ -3379,10 +3379,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b7abc515c2ae9caed99436e6681fb17a8cf5ad82dee4a389e75ebc08d041f184"
     },
     {
@@ -3398,10 +3398,10 @@
           "text": "Entscheidet das Gericht nicht einstimmig, können die Minderheit sowie die Gerichtsschreiberin oder der Gerichtsschreiber ihre abweichende Meinung mit Begründung ins Protokoll aufnehmen lassen. Diese wird den Parteien mitgeteilt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "14a2141649b972c85d5f5aaf29802bffeea8970ee451ee241b72e22c50679786"
     },
     {
@@ -3417,10 +3417,10 @@
           "text": "Die Medien sind verpflichtet, eine vom Gericht angeordnete und formulierte Berichtigung zu ihrer Gerichtsberichterstattung zu veröffentlichen. 2. Abschnitt: Zivilverfahren"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ada570341d1146350913ed4aeddaa3a0b7d5fb99c760d9da47e1fd23415d6796"
     },
     {
@@ -3436,10 +3436,10 @@
           "text": "Weist das kantonale Recht eine Aufgabe einem Zivilgericht zu, richtet sich das Verfahren unter Vorbehalt einer abweichenden Regelung nach der ZPO und den für den Zivilprozess geltenden Bestimmungen dieses Gesetzes."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "21418c1691ba9d3c9e5b5f96fbc72d42b5b8bee442e33460a5fc3f8c52fc1d1b"
     },
     {
@@ -3459,10 +3459,10 @@
           "text": "Die beklagte Partei muss die Einrede der fehlenden sachlichen Zuständigkeit spätestens mit der Klageantwort erheben. Das Gericht entscheidet nach Anhörung der Gegenpartei sofort über seine Zuständigkeit."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "acfe4ac6a8f5d884162bbdeba5d89ee478cceb7cc39c422f40ab709b36e48572"
     },
     {
@@ -3500,10 +3500,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "3511756f4410ae979e083397829f3427236894fa31e2b2e4a7cb6a5d8f56069c"
     },
     {
@@ -3519,10 +3519,10 @@
           "text": "Das Einzelgericht des in der Hauptsache örtlich zuständigen Bezirksgerichts entscheidet über Gesuche um unentgeltliche Rechtspflege vor Einreichung der Klage beim Gericht."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ad6a99f85d8becfd984b07d9f729ed2e26da84b3391743b39f93a5e859ad96c1"
     },
     {
@@ -3542,10 +3542,10 @@
           "text": "Der Regierungsrat kann in einer Verordnung die Voraussetzungen für eine unentgeltliche Mediation in Familienrechtssachen festlegen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b0ee4f5c410dbf8f4a7376d03da334d06cb52de8d9ae0890f31445ee94f3cb60"
     },
     {
@@ -3569,10 +3569,10 @@
           "text": "Das Obergericht regelt das Weitere in einer Verordnung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "65b0134dae4a18eaaece51f306cc71e35017c6210ccc94c1af6104254c2ff868"
     },
     {
@@ -3616,10 +3616,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "6151e999590a4237842a3509606aee562c032c51b6ba38960310e4a148a85706"
     },
     {
@@ -3635,10 +3635,10 @@
           "text": "Bild- und Tonaufnahmen innerhalb von Gerichtsgebäuden sowie Aufnahmen von Verfahrenshandlungen ausserhalb von Gerichtsgebäuden sind nicht gestattet."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ed063c99492a0be8cf79754f4068be6a0a6e5ba6039e414639dc715f6acd548b"
     },
     {
@@ -3662,10 +3662,10 @@
           "text": "Auf den Beizug einer Gerichtsschreiberin oder eines Gerichtsschreibers kann verzichtet werden, wenn eine Mitwirkung für die Protokollführung nicht erforderlich ist."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "dee04fd05cb3d8b7d1ad01de9929eb986188506d05296e2acdc416030c9a2d33"
     },
     {
@@ -3678,7 +3678,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Urteilsberatungen gemäss Art.54 Abs.2 ZPO sind nicht öffentlich."
+          "text": "Die Urteilsberatungen gemäss Art. 54 Abs. 2 ZPO sind nicht öffentlich."
         },
         {
           "absatz": "2",
@@ -3703,11 +3703,11 @@
           "text": "Jedes Mitglied des Gerichts ist zur Stimmabgabe verpflichtet."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "1c14b49cd000f38dbfc4b82d3f0f93bf12351cce5040e32f2b61d5b133a5b6bc"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "44a6c041274c4441e5e10174d4f58ad6901908aa3ba6edd36323303d98587110"
     },
     {
       "id": "kanton/ZH/211.1/art_135",
@@ -3726,10 +3726,10 @@
           "text": "Die übrigen Entscheide fällt eine Kollegialbehörde durch Beschluss, eine Einzelperson durch Verfügung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "db74281ab6b4990e39b5525896fd2bfa34d9bb8e8b2a6e4f2f3d22dc4733efc3"
     },
     {
@@ -3745,10 +3745,10 @@
           "text": "Endentscheide in der Sache unterzeichnen im ordentlichen und vereinfachten Verfahren ein Mitglied des Gerichts und die Gerichtsschreiberin oder der Gerichtsschreiber. Andere Entscheide unterzeichnet ein Mitglied des Gerichts oder die Gerichtsschreiberin oder der Gerichtsschreiber."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "da42c4d550f68a6c107ff613b94d6d401243ef8c248da57a67bf65803fce5e5d"
     },
     {
@@ -3764,10 +3764,10 @@
           "text": "Die Gerichte melden Regelungen betreffend die elterliche Sorge über minderjährige Personen unentgeltlich der Gemeinde, in der diese Personen als niedergelassen gemeldet sind. Die Meldung umfasst Namen und Adressen der sorgeberechtigten Personen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "3c4bf09dcb6e137f74c9b063465bc30eb41dbb434d5311d9526d4ccdd2afc8a4"
     },
     {
@@ -3780,7 +3780,7 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Einzelgericht gemäss §24 ist die zuständige Behörde für",
+          "text": "Das Einzelgericht gemäss § 24 ist die zuständige Behörde für",
           "items": [
             {
               "marke": "a",
@@ -3788,7 +3788,7 @@
             },
             {
               "marke": "b",
-              "text": "Massregeln zur Sicherung des Erbganges (Art. 551 ZGB), soweit dies nicht Sache der KESB ist (§125 Abs. 2 EG ZGB), sowie die Anordnung von Erbschaftsverwaltung und Erbenaufruf (Art. 554 und 555 ZGB),"
+              "text": "Massregeln zur Sicherung des Erbganges (Art. 551 ZGB), soweit dies nicht Sache der KESB ist (§ 125 Abs. 2 EG ZGB), sowie die Anordnung von Erbschaftsverwaltung und Erbenaufruf (Art. 554 und 555 ZGB),"
             },
             {
               "marke": "c",
@@ -3804,7 +3804,7 @@
             },
             {
               "marke": "f",
-              "text": "die Anordnung des öffentlichen Inventars (Art.580, 585 Abs.2 und 587 ZGB) sowie des Rechnungsrufs, wenn die Erbschaft an das Gemeinwesen fällt (Art. 592 ZGB),"
+              "text": "die Anordnung des öffentlichen Inventars (Art. 580, 585 Abs. 2 und 587 ZGB) sowie des Rechnungsrufs, wenn die Erbschaft an das Gemeinwesen fällt (Art. 592 ZGB),"
             },
             {
               "marke": "g",
@@ -3812,7 +3812,7 @@
             },
             {
               "marke": "h",
-              "text": "die Bestellung einer Vertretung für die Erbengemeinschaft (Art.602 Abs. 3 ZGB),"
+              "text": "die Bestellung einer Vertretung für die Erbengemeinschaft (Art. 602 Abs. 3 ZGB),"
             },
             {
               "marke": "i",
@@ -3828,16 +3828,16 @@
             },
             {
               "marke": "l",
-              "text": "Streitigkeiten gemäss §271 EG ZGB."
+              "text": "Streitigkeiten gemäss § 271 EG ZGB."
             }
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "d5b6c4de1488bb48072871a6868ccc7c8d6fb4f49c29e96b8646a3d0de5b3380"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "182753230e5f0adb4ac1035f4743185e09e9744e766dc604a0e990acfea1c820"
     },
     {
       "id": "kanton/ZH/211.1/art_138",
@@ -3849,18 +3849,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das Einzelgericht beauftragt die Notarin oder den Notar mit der Durchführung der Anordnungen gemäss §137 lit. a, b und f–j, soweit diese nicht der Willensvollstreckerin oder dem Willensvollstrecker obliegen (Art. 554 ZGB)."
+          "text": "Das Einzelgericht beauftragt die Notarin oder den Notar mit der Durchführung der Anordnungen gemäss § 137 lit. a, b und f–j, soweit diese nicht der Willensvollstreckerin oder dem Willensvollstrecker obliegen (Art. 554 ZGB)."
         },
         {
           "absatz": "2",
           "text": "Mit der Erbschaftsverwaltung, der amtlichen Liquidation und der Vertretung der Erbengemeinschaft kann es auch andere geeignete Personen betrauen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "a726be969eee6ffe3d65b1232c24700655070dffa7fdb35a86410098d5d6f904"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "eadc77edfec1abac54dbdb552260a18a7ee03cdaa545230420d9ec3a5c08dd73"
     },
     {
       "id": "kanton/ZH/211.1/art_139",
@@ -3879,10 +3879,10 @@
           "text": "Es beurteilt Beschwerden und Anzeigen gegen die Willensvollstreckerinnen und Willensvollstrecker."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "0d39f48b74a4ca6e29f934a0afeb3ad23dbc3d27c58c90e916d21c9662b01f15"
     },
     {
@@ -3895,7 +3895,7 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Einzelgericht gemäss §24 ist die zuständige Behörde für",
+          "text": "Das Einzelgericht gemäss § 24 ist die zuständige Behörde für",
           "items": [
             {
               "marke": "a",
@@ -3920,11 +3920,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "61a873f90cf4c8545663658df0140e7df5980e2703227a77b2f142b55fdb9e06"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "6b8a6f8ac11f5447c9d52f873f795931a3af67386c504f4db1dd835b3ceb64c7"
     },
     {
       "id": "kanton/ZH/211.1/art_141",
@@ -3936,18 +3936,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das Einzelgericht gemäss §24 bewilligt die Hinterlegung von Geld, Wertpapieren und anderen beweglichen Sachen, wenn hinreichende Gründe glaubhaft gemacht werden."
+          "text": "Das Einzelgericht gemäss § 24 bewilligt die Hinterlegung von Geld, Wertpapieren und anderen beweglichen Sachen, wenn hinreichende Gründe glaubhaft gemacht werden."
         },
         {
           "absatz": "2",
           "text": "Es erlässt die für die Herausgabe erforderlichen Verfügungen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "19751b1c4dad81e59c05d19502165fb069d78e80aa570463d93f3949bb4c678b"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "357dcd9e59ff3ed933c5214dddcaaecf92517026fa7738d139a8a0dc34689da2"
     },
     {
       "id": "kanton/ZH/211.1/art_142",
@@ -3959,14 +3959,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Einzelgericht gemäss §24 nimmt vor Rechtshängigkeit vorsorglich Beweise ab (Art. 158 ZPO)."
+          "text": "Das Einzelgericht gemäss § 24 nimmt vor Rechtshängigkeit vorsorglich Beweise ab (Art. 158 ZPO)."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "eeae72808204f7eac32f1c1b9e3d111ca88c069852139ac36a65d2928c77f894"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "8c95669052fd76d407aa58269ecf101d64d5b82cc57bb9f81d7ba03ff3e8ad0d"
     },
     {
       "id": "kanton/ZH/211.1/art_142_a",
@@ -3978,14 +3978,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Auf die Verfahren gemäss §§137, 139, 140 und 141 ist das summarische Verfahren anwendbar."
+          "text": "Auf die Verfahren gemäss §§ 137, 139, 140 und 141 ist das summarische Verfahren anwendbar."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "b6e721750a7b17eef24795628eb4586876bc38c154465abc6e929372d56b7adb"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "fed898fbdd77683ac950006597e1786bff3e89f52eacd7fef86e2548bfabe5d1"
     },
     {
       "id": "kanton/ZH/211.1/art_143",
@@ -4001,14 +4001,14 @@
         },
         {
           "absatz": "2",
-          "text": "Der Gemeindeammann zieht die an der Sache Beteiligten wenn möglich zur Aufnahme des Befundes bei und wahrt ihr rechtliches Gehör gemäss Art.53 ZPO. Er erstellt ein Protokoll gemäss Art.182 ZPO."
+          "text": "Der Gemeindeammann zieht die an der Sache Beteiligten wenn möglich zur Aufnahme des Befundes bei und wahrt ihr rechtliches Gehör gemäss Art. 53 ZPO. Er erstellt ein Protokoll gemäss Art. 182 ZPO."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "00c90f5d213f2270d903d28cd95f94b93f404303ce4eac84fded4139dc9c1c3c"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "ae4623853e9d090c82e8afedbaacb9656923bc16629859d3c7d3b2a4f15751ad"
     },
     {
       "id": "kanton/ZH/211.1/art_144",
@@ -4027,10 +4027,10 @@
           "text": "Zuständig ist der Gemeindeammann am Wohn- oder Aufenthaltsort derjenigen Person, der die Erklärung zugestellt werden soll."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "381056215bdb20d7858f5446c3a701b952fe2b9180b7ae02c37d8f55747eecf8"
     },
     {
@@ -4054,10 +4054,10 @@
           "text": "Die gesuchstellende Person kann gegen doppelte Gebühr verlangen, dass die Zustellung schon am nächsten Arbeitstag erfolgt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "17a3b01ab121c9dd32ffce63f36a2f1aa4a116e64e9e69477e9aec4cded18031"
     },
     {
@@ -4073,10 +4073,10 @@
           "text": "Die Annahme einer amtlich zugestellten Erklärung darf nicht verweigert werden. Der Empfängerin oder dem Empfänger steht es frei, der gesuchstellenden Person auf demselben Weg eine Gegenerklärung zukommen zu lassen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "cc6027488d110c6dc1f0a0ce1789b1876579680a7016807a198777a5f8fc97de"
     },
     {
@@ -4097,7 +4097,7 @@
             },
             {
               "marke": "b",
-              "text": "der Vollstreckung von Anordnungen gemäss Art. 343 Abs. 1 Bst.d und e ZPO."
+              "text": "der Vollstreckung von Anordnungen gemäss Art. 343 Abs. 1 Bst. d und e ZPO."
             }
           ]
         },
@@ -4106,11 +4106,11 @@
           "text": "Er kann den Vollzug von einem Kostenvorschuss abhängig machen und nötigenfalls die Hilfe der Polizei beanspruchen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "47f26536300b172abed21696f9d46ab8817d5f68d678915d079c714a43a9d316"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "42ec2c04a524989658862ca4e6259d985e09511d6fb72c68b69b6e418f132877"
     },
     {
       "id": "kanton/ZH/211.1/art_147_a",
@@ -4125,10 +4125,10 @@
           "text": "Die Aufgaben des Gemeindeammanns werden von der Betreibungsbeamtin oder vom Betreibungsbeamten erfüllt. 3. Abschnitt: Strafverfahren"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "cc84f1136ddfd8c975d2c4c3d13fe6a35bd1b2be04972ddd03d25727c72d946e"
     },
     {
@@ -4141,14 +4141,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Obergericht entscheidet über die Ermächtigung zur Strafverfolgung von Beamten gemäss Art.110 Abs.3 St GB wegen im Amt begangener Verbrechen oder Vergehen. Vorbehalten bleibt die Zuständigkeit des Kantonsrates."
+          "text": "Das Obergericht entscheidet über die Ermächtigung zur Strafverfolgung von Beamten gemäss Art. 110 Abs. 3 StGB wegen im Amt begangener Verbrechen oder Vergehen. Vorbehalten bleibt die Zuständigkeit des Kantonsrates."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "792b615e17ceb2b9aac27f459fcc78f0dfb53d8b5144a2d71eea63159b07fb34"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "dc7c8ca9abc03eab88a8cb839fdca3d31ae2b1fde154d417da13fd1b7edd91a0"
     },
     {
       "id": "kanton/ZH/211.1/art_149",
@@ -4174,14 +4174,14 @@
         },
         {
           "absatz": "2",
-          "text": "Streitigkeiten über die Trennung von Verfahren gemäss Art.11 JSt PO entscheidet das Obergericht als Beschwerdeinstanz."
+          "text": "Streitigkeiten über die Trennung von Verfahren gemäss Art. 11 JStPO entscheidet das Obergericht als Beschwerdeinstanz."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "5ae17c9bfd6d92fc05d3ffe09e6a18750595d501190b3d03ef672dcf7e3d45c1"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "d32c2dd901151638f25b62e002b7bc7b0c81808a17d675bd6daa6044fe352b02"
     },
     {
       "id": "kanton/ZH/211.1/art_150",
@@ -4213,16 +4213,20 @@
             },
             {
               "marke": "d",
-              "text": "im Gerichtsverfahren vom Bezirksgericht als Einzelgericht gemäss"
+              "text": "im Gerichtsverfahren vom Bezirksgericht als Einzelgericht gemäss § 31."
             }
           ]
+        },
+        {
+          "absatz": "3",
+          "text": "Benachrichtigungen gemäss Art. 52 Abs. 2 StPO und Gesuche gemäss Art. 53 StPO erfolgen an die Oberstaatsanwaltschaft, in Jugendstrafverfahren an die Oberjugendanwaltschaft."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "de1b1da7f64f180b0bcd96cbb2079cfc9fe1a1a9471f4af43b3be16a3a94e205"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "1bdcc8ccbdeca9f7a30c571c4a65f44d89c8c38734d90c463aba2e77cbc74107"
     },
     {
       "id": "kanton/ZH/211.1/art_151",
@@ -4234,18 +4238,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Strafbehörden dürfen andere Behörden über von ihnen geführte Verfahren informieren, wenn die Voraussetzungen von §17 des Gesetzes über die Information und den Datenschutz vom 12. Februar 2007erfüllt sind."
+          "text": "Strafbehörden dürfen andere Behörden über von ihnen geführte Verfahren informieren, wenn die Voraussetzungen von § 17 des Gesetzes über die Information und den Datenschutz vom 12. Februar 2007 erfüllt sind."
         },
         {
           "absatz": "2",
           "text": "Mitteilungsrechte und -pflichten nach besonderen Bestimmungen bleiben vorbehalten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "3725fc868b7e66bf8f9f3a33d6b1bd1816c232c282c31fc5aad787f3688f6397"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "26a31cadddeb573bfe59afec13ac8678fe15b93b34c429bb4a9105eb0cd6f816"
     },
     {
       "id": "kanton/ZH/211.1/art_151_a",
@@ -4278,10 +4282,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b03c4934d26b4cd692cfd52a389d16c356b0376656d67af2e6a51edb40ab38d0"
     },
     {
@@ -4312,14 +4316,14 @@
         },
         {
           "absatz": "3",
-          "text": "Er regelt die Einzelheiten des Zugriffs auf die Daten, erlässt Datensicherheitsvorschriften und regelt die Zugriffsrechte. Für Amtsstellen gemäss §151 a Abs. 2 lit. b und c beschränkt sie den Zugriff auf Findmittel."
+          "text": "Er regelt die Einzelheiten des Zugriffs auf die Daten, erlässt Datensicherheitsvorschriften und regelt die Zugriffsrechte. Für Amtsstellen gemäss § 151 a Abs. 2 lit. b und c beschränkt sie den Zugriff auf Findmittel."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "05f2dd6077b438acaf10465678b706db2d664db131296317dcf0e9315c1dc2cc"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "79991f1eec217d10077063ad5c70e6668236f77c599273f13a2aeaf9c71d80f8"
     },
     {
       "id": "kanton/ZH/211.1/art_151_c",
@@ -4338,10 +4342,10 @@
           "text": "Der Regierungsrat beschränkt durch Verordnung die Zugriffsrechte auf die Akten für die Zeit nach Ablauf von zehn Jahren."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "e53558435f004f4c4012229765f437d0ae922d7b8ac53b4b81a733fb976f16dd"
     },
     {
@@ -4381,10 +4385,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b80e42f91344eb553c4a3519382902624d280bc58730d98009dbb5b6ff67881b"
     },
     {
@@ -4400,10 +4404,10 @@
           "text": "Die Statthalterämter und die Polizeien sowie die Übertretungsstrafbehörden der Gemeinden und die Polizeien gewähren sich gegenseitig direkten elektronischen Zugriff auf Daten, einschliesslich Personendaten und besonderer Personendaten, von hängigen und abgeschlossenen Verfahren. Der Zugriff der berechtigten Amtsstelle ist auf die für ihre Aufgabenerfüllung notwendigen Daten beschränkt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "98eac8ec484292f6a9239587f4384275620eb7f9f131e7cd0f1acd3437c660eb"
     },
     {
@@ -4429,10 +4433,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "a1f7b738a00c8b89278dcdbe290732a0e132023399c5019c11e96ad486baf76e"
     },
     {
@@ -4448,10 +4452,10 @@
           "text": "Die Protokollführung erfolgt bei den Strafbehörden unter Beizug einer Protokollführerin oder eines Protokollführers. Bei der Polizei, bei den Staatsanwaltschaften und Jugendanwaltschaften sowie bei den Übertretungsstrafbehörden kann die oder der Einvernehmende das Protokoll selbst führen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b00341a36ad1de58e09828628dda477f4ff501acd091a3da62de19d4736f1433"
     },
     {
@@ -4467,10 +4471,10 @@
           "text": "Behörden und Amtsstellen, die in Wahrung der ihrem Schutz anvertrauten Interessen Strafanzeige erstattet haben, können gegen Nichtanhandnahme- und Einstellungsverfügungen Beschwerde erheben."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "ecf49ef55e04d7484d9d9ade926330bc33992ff1dae91d680be6f5d1e8f36cc1"
     },
     {
@@ -4514,10 +4518,10 @@
           "text": "In den Fällen von Abs. 2 ist die Bestellung der Oberstaatsanwaltschaft, im Jugendstrafverfahren der Oberjugendanwaltschaft zur Genehmigung zu unterbreiten."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "98f2d6a2b67640b8918576b46c1c19198c123a7366d24cf4402117a2bb62d218"
     },
     {
@@ -4530,7 +4534,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Eine Stelle der für das Justizwesen zuständigen Direktion führt die Mediationsverfahren nach Art.17 JSt PO durch. Ausnahmsweise kann die Jugendanwaltschaft oder das Gericht eine andere geeignete Organisation oder Person mit der Durchführung einer Mediation beauftragen."
+          "text": "Eine Stelle der für das Justizwesen zuständigen Direktion führt die Mediationsverfahren nach Art. 17 JStPO durch. Ausnahmsweise kann die Jugendanwaltschaft oder das Gericht eine andere geeignete Organisation oder Person mit der Durchführung einer Mediation beauftragen."
         },
         {
           "absatz": "2",
@@ -4541,11 +4545,11 @@
           "text": "Der Regierungsrat regelt das Verfahren."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "fc6de3e2d88888ecd01172681b68ce39fb3c7f3bef65b934379d0bc1305687e4"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "f6542d69a72540931d6474d8774594eaf8963286ed9cc49d24f0546706daa083"
     },
     {
       "id": "kanton/ZH/211.1/art_157",
@@ -4578,10 +4582,10 @@
           "text": "Die Oberstaatsanwaltschaft, im Jugendstrafverfahren die Oberjugendanwaltschaft, bezeichnen im Einvernehmen mit den Polizeikommandos diejenigen Mitarbeitenden der Polizei, die Zeuginnen und Zeugen einvernehmen können."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "b15ff2b3c7737ebf5c49b3cf541b75989e3032b4396ba5d67bc259023c9fe609"
     },
     {
@@ -4601,10 +4605,10 @@
           "text": "Das Obergericht und der Regierungsrat regeln die Einzelheiten durch eine gemeinsame Verordnung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "bc55b13e843d2850eeb53030803a3c36c8885e2483fed78bca2fbb6e0d8b3a17"
     },
     {
@@ -4621,14 +4625,14 @@
         },
         {
           "absatz": "2",
-          "text": "Gefährdete Personen können insbesondere mit einer Legende gemäss Art.288 Abs.1 StPO und den dafür notwendigen Urkunden ausgestattet werden. Art. 289 StPO findet sinngemäss Anwendung."
+          "text": "Gefährdete Personen können insbesondere mit einer Legende gemäss Art. 288 Abs. 1 StPO und den dafür notwendigen Urkunden ausgestattet werden. Art. 289 StPO findet sinngemäss Anwendung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "cee1932b9b8f0b1f204919f5aedba2e095d1cf46e6ad40bccb544b761f96338d"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "cf2ee564c545d07645cc9b9a9ab56c21c97b75f580f08c68e7a064b9fdbc513e"
     },
     {
       "id": "kanton/ZH/211.1/art_159",
@@ -4643,10 +4647,10 @@
           "text": "Die für die Anordnung von Zwangsmassnahmen zuständigen Strafbehörden können Mitarbeitende ihrer Amtsstelle mit dem Erlass von Vorladungen beauftragen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "896f5cc4bc022570a3d10a37e7f95f99390ce85a7cf4028905e33e70f1936a12"
     },
     {
@@ -4662,10 +4666,10 @@
           "text": "Die Polizei kann Belohnungen für die Mithilfe der Öffentlichkeit bei der Fahndung aussetzen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "6ec0727fa5ebe0fd97672f6bbb54b86795ba55b367acd5b16c6ad64030ada891"
     },
     {
@@ -4695,10 +4699,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "13cdc46872f8e783c7deacc3090c16d438a32658cc4924b53a5a2cb3fa8d2636"
     },
     {
@@ -4714,10 +4718,10 @@
           "text": "Soll eine gemäss Art. 217 Abs. 3 StPO vorläufig festgenommene Person länger als drei Stunden festgehalten werden, ist dies von einer Polizeioffizierin oder einem Polizeioffizier anzuordnen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "7c266cc9db9d064016ed349c112d397690b7a9d0b67516f974cab21e6b8170aa"
     },
     {
@@ -4733,10 +4737,10 @@
           "text": "Der Regierungsrat erlässt die näheren Bestimmungen über den Vollzug der Untersuchungs- und Sicherheitshaft. Das Disziplinarrecht des Strafvollzugs ist sinngemäss anwendbar."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "0d1a135b34423d0cdbd3f662b0b06df928d1c81e780bbe06b7daaa5e13aad623"
     },
     {
@@ -4752,10 +4756,10 @@
           "text": "Findet eine Hausdurchsuchung in Abwesenheit der Inhaberin oder des Inhabers der zu durchsuchenden Räume statt, kann der Gemeindeammann als geeignete Person im Sinne von Art. 245 Abs. 2 StPO beigezogen werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "642aa32c373715e7a7a3fe9eae9a29ba0f08931e476bd336bfb41d49f6ea6f2f"
     },
     {
@@ -4768,14 +4772,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Aussonderung gemäss Art.271 Abs.1 StPO erfolgt unter der Leitung des Mitglieds des Obergerichts, das die Aufgaben gemäss §47 erfüllt."
+          "text": "Die Aussonderung gemäss Art. 271 Abs. 1 StPO erfolgt unter der Leitung des Mitglieds des Obergerichts, das die Aufgaben gemäss § 47 erfüllt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "3c236d96269b12117733abd7e97f74667cd7f4b5cb2f8fafe00ccb89128d3713"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "ff143a7146570ccdb2bc21d0cac5a873767c29bc60e726b3033c8c2d101479cf"
     },
     {
       "id": "kanton/ZH/211.1/art_166",
@@ -4790,10 +4794,10 @@
           "text": "Der Regierungsrat regelt die personalrechtliche Stellung der verdeckten Ermittlerinnen und Ermittler in einer Verordnung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "57da4aa236cae8daae899320df9336b65c9a01fb1ad044949fe3d3a30c833559"
     },
     {
@@ -4813,10 +4817,10 @@
           "text": "Vorbehalten bleiben Anzeigepflichten und -rechte sowie Befreiungen von der Anzeigepflicht für Behörden, Angestellte und Private gemäss anderen Erlassen des Bundes und des Kantons."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "f431084c85edc2eb7a19242c3f720bb49436d2f98600002b2730951164ca66bd"
     },
     {
@@ -4829,7 +4833,7 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Bei Vernachlässigung von Unterhaltspflichten können gemäss Art. 217 Abs. 2 St GB Strafantrag stellen:",
+          "text": "Bei Vernachlässigung von Unterhaltspflichten können gemäss Art. 217 Abs. 2 StGB Strafantrag stellen:",
           "items": [
             {
               "marke": "a",
@@ -4850,11 +4854,11 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "c0a1ee8ae8006a72b7fcb73745847c4c9e40524b415a26824737e4b9fd8dd091"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "791b6c89a4eb92c422dec9c725836d25adbcbf226f5f0f91114b67bff877deda"
     },
     {
       "id": "kanton/ZH/211.1/art_169",
@@ -4866,14 +4870,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Staatsanwältinnen und -anwälte sowie Jugendanwältinnen und -anwälte, die gemäss Art.231 Abs.2 StPO die Fortsetzung der Sicherheitshaft beantragen, sind zur Berufungsanmeldung gemäss Art.399 Abs. 1 StPO berechtigt. 4. Abschnitt: Ordnungsbussenverfahren"
+          "text": "Staatsanwältinnen und -anwälte sowie Jugendanwältinnen und -anwälte, die gemäss Art. 231 Abs. 2 StPO die Fortsetzung der Sicherheitshaft beantragen, sind zur Berufungsanmeldung gemäss Art. 399 Abs. 1 StPO berechtigt. 4. Abschnitt: Ordnungsbussenverfahren"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "fbe6604b34b4a8fe4c88bfa4651c08481e7a81b7c8771af88b20059fdd6ceb0b"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "a1b81954200c846ea8f34c2ed36715cf700325379f6b23e9eac4b10b4e641079"
     },
     {
       "id": "kanton/ZH/211.1/art_170",
@@ -4888,10 +4892,10 @@
           "text": "Der Regierungsrat übt die Befugnisse aus, welche die Bundesgesetzgebung bei durch Ordnungsbussen zu ahndenden Delikten den Kantonen zuweist."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "658cc998604efdf2dea4f35a9986de3f8b39c517099695b6cde105c77511776b"
     },
     {
@@ -4911,10 +4915,10 @@
           "text": "Die Vorschriften des Ordnungsbussengesetzes vom 18. März 2016 finden im kantonalrechtlichen Ordnungsbussenverfahren sinngemäss Anwendung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "bf0816c1d04d723b100858e30df435e67a668dbd22ab55d31f0a878d21a70bd8"
     },
     {
@@ -4931,18 +4935,18 @@
         },
         {
           "absatz": "2",
-          "text": "Er kann Gemeinden ohne eigenes Polizeikorps zur Erhebung von Ordnungsbussen betreffend ruhenden Verkehr im Bereich des Strassenverkehrsgesetzes vom 19. Dezember 1958auf ihrem Gebiet ermächtigen."
+          "text": "Er kann Gemeinden ohne eigenes Polizeikorps zur Erhebung von Ordnungsbussen betreffend ruhenden Verkehr im Bereich des Strassenverkehrsgesetzes vom 19. Dezember 1958 auf ihrem Gebiet ermächtigen."
         },
         {
           "absatz": "3",
           "text": "Er regelt die Anforderungen an die für die Erhebung von Ordnungsbussen zuständigen Organe und dazu ermächtigten Gemeinden sowie die Zulässigkeit der Beauftragung von Dritten. Er kann eine Bewilligungspflicht vorsehen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "d78c401b908cf6b11c9d831ad19b71d3d5e2e0e5c338410f421c9035ad7aea65"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "c0a1d2baa953dd9d5d4bf1eaa08c18a0586afef7ea72ea0a7c386592dab80c7e"
     },
     {
       "id": "kanton/ZH/211.1/art_173",
@@ -4954,14 +4958,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Ordnungsbussen fallen demjenigen Gemeinwesen zu, dessen Organ sie erhoben hat. Wird das ordentliche Strafverfahren"
+          "text": "Die Ordnungsbussen fallen demjenigen Gemeinwesen zu, dessen Organ sie erhoben hat. Wird das ordentliche Strafverfahren durchgeführt, gilt § 92."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "11ccabbb9af599281066ac4c220620617dbeba2c83eb8a5689ad39491070c4b9"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "24c3f7a4445aa5267778f4bcbd18af9f68df757e9432336171b8f0f94b8afbe8"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_174",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "174",
+      "artikelLabel": "§ 174",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/211.1/art_175",
@@ -4973,18 +4996,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Für gemeinderechtliche Übertretungen gelten §§171 f. sinngemäss. An die Stelle des Regierungsrates tritt der Gemeindevorstand. Die Ordnungsbussen fallen den Gemeinden zu."
+          "text": "Für gemeinderechtliche Übertretungen gelten §§ 171 f. sinngemäss. An die Stelle des Regierungsrates tritt der Gemeindevorstand. Die Ordnungsbussen fallen den Gemeinden zu."
         },
         {
           "absatz": "2",
-          "text": "Von den Gemeindevorständenaufgestellte Bussenlisten werden durch das Statthalteramt auf ihre Recht- und Zweckmässigkeit überprüft und genehmigt."
+          "text": "Von den Gemeindevorständen aufgestellte Bussenlisten werden durch das Statthalteramt auf ihre Recht- und Zweckmässigkeit überprüft und genehmigt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "bd05192e4226f64cbd6b73886722e5e676f4b80b43298bceba22b95c18a1e3a0"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "ccebc5b3a03506ee3aaafab066febddcbf66d66130d33c513c69f2e9d2d0cc89"
     },
     {
       "id": "kanton/ZH/211.1/art_175_a",
@@ -4999,10 +5022,10 @@
           "text": "Organe des Kantons und der Gemeinden können der Kantonspolizei gegen Verrechnung der Kosten die Abwicklung des Ordnungsbussenverfahrens übertragen. 5. Abschnitt: Besondere Verfahren gestützt auf das ZGB"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "0b792e8ed8098d70486fb5b58421e954a3cdeebfc370d78e39ed2ac57155282e"
     },
     {
@@ -5019,14 +5042,14 @@
         },
         {
           "absatz": "2",
-          "text": "Das Verfahren richtet sich nach den Bestimmungen der ZPO und den für den Zivilprozess geltenden Verfahrensbestimmungen dieses Gesetzes. §§177–198. 7. Teil: Verfahrenskosten, Rechnungswesen"
+          "text": "Das Verfahren richtet sich nach den Bestimmungen der ZPO und den für den Zivilprozess geltenden Verfahrensbestimmungen dieses Gesetzes. §§ 177–198. 7. Teil: Verfahrenskosten, Rechnungswesen"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "0a06af4a4b585d51460ec94b908a0bd34cc66ef8c3b495dd57083cd8dcd85c7c"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "879c76fb15df4225b65812a8af8e10879b7a8a7096896c210c8edb757874aa8d"
     },
     {
       "id": "kanton/ZH/211.1/art_199",
@@ -5063,10 +5086,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "d25f5a243056093b65c57629327903589e61c9c0991fc3c082ec25964eb9a63c"
     },
     {
@@ -5092,10 +5115,10 @@
           ]
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "e321eca5019c3d43d8523c6559164204dee3ecd7958b6b9d0252a4328e24b29b"
     },
     {
@@ -5131,10 +5154,10 @@
           "text": "Die obersten kantonalen Gerichte und der Regierungsrat können durch gemeinsame Verordnung das Rechnungswesen von Gerichten und Verwaltungsstellen ganz oder teilweise zusammenfassen. 8. Teil: Begnadigung"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "601a2f350e734abf0af538079c87148e1881a9160651eb946e2edb30f546b916"
     },
     {
@@ -5150,10 +5173,10 @@
           "text": "Das Begnadigungsgesuch ist beim Regierungsrat einzureichen. Es hemmt die Vollstreckung des Urteils nicht."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "a02f0e78803a4f9c48dc58d1c699814349ba47a6badfd71f3e3775b00f421c97"
     },
     {
@@ -5173,10 +5196,10 @@
           "text": "Er hört die Oberstaatsanwaltschaft an. Er kann eine Vernehmlassung des erkennenden Gerichts und weiterer Stellen einholen."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "f66a81a0725c4abe97ef923b83fefdf38be252f1bc81e8fb3bb866f273ea6936"
     },
     {
@@ -5200,10 +5223,10 @@
           "text": "Entscheide über Begnadigungsgesuche werden nicht begründet."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "3320d2371708e6d49036ef2bd3ddae72ee64259aa65fd2985e646aabaeb37f9a"
     },
     {
@@ -5219,10 +5242,10 @@
           "text": "Eine Begnadigung hat keinen Einfluss auf die zivilrechtlichen Folgen der Straftat. 9. Teil: Übergangsbestimmungen"
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "a2c76a0e9e8d4fb152798a18c1f9a11126a381db846a5498f7834ffa0e712723"
     },
     {
@@ -5238,10 +5261,10 @@
           "text": "Zivilverfahren, die bei Inkrafttreten dieses Gesetzes erstinstanzlich rechtshängig sind, werden vom bisher sachlich zuständigen Gericht fortgeführt."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "64e0b43d816699d1c3f50d6df3f98c1d73acc66b27d37e5b5fc7dcc3f2654f10"
     },
     {
@@ -5254,7 +5277,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Für die Beurteilung von Streitigkeiten gemäss §20 sind bis zur Wahl der Beisitzenden zuständig:",
+          "text": "Für die Beurteilung von Streitigkeiten gemäss § 20 sind bis zur Wahl der Beisitzenden zuständig:",
           "items": [
             {
               "marke": "a",
@@ -5271,11 +5294,11 @@
           "text": "Die Wahl der Beisitzenden für den Rest der laufenden Amtsdauer erfolgt so bald als möglich. Am Bezirksgericht Zürich amten die gewählten Arbeitsrichterinnen und Arbeitsrichter für den Rest der laufenden Amtsdauer."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "5224677240f9174141424f750fe80424e5a5f159a397f49c6a675c49eff50173"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "8ea4ec18957ce76deac004f247699636a57db57624afef15728bbbeab02298e8"
     },
     {
       "id": "kanton/ZH/211.1/art_208",
@@ -5290,10 +5313,10 @@
           "text": "Die bei Inkrafttreten dieses Gesetzes gültigen Wahlfähigkeitszeugnisse für Staatsanwältinnen und Staatsanwälte sind jenen gleichgestellt, die aufgrund dieses Gesetzes erteilt werden."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "722d11a63b4891fcd068dc8e96636af31eb3433ff464d175bdc9de1a0b0aa300"
     },
     {
@@ -5306,14 +5329,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Nach Inkrafttreten dieses Gesetzes bleiben die Gemeinden ohne Erteilung einer Bewilligung gemäss §89 Abs.2 während eines Jahres für die Verfolgung und Beurteilung von Übertretungen zuständig."
+          "text": "Nach Inkrafttreten dieses Gesetzes bleiben die Gemeinden ohne Erteilung einer Bewilligung gemäss § 89 Abs. 2 während eines Jahres für die Verfolgung und Beurteilung von Übertretungen zuständig."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "370967ec4bd3b4c3e4b7f74ef46b3587ff8040b0a04fffa367c8ad39eb0c9fee"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "2daaf8e5a088801a73543e282c390717f420c01bc1dba95a3273311b86055c2d"
     },
     {
       "id": "kanton/ZH/211.1/art_210",
@@ -5328,10 +5351,10 @@
           "text": "Die Bestimmungen über das Geschworenengericht, seine Mitglieder und sein Personal, insbesondere über Wahl, Organisation und Entlöhnung, bleiben bis zur Erledigung sämtlicher Verfahren durch das Gericht anwendbar."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "sha": "975f788a915e4489efa15da519cd30c725cabdea4a97b2fb600ceef045b745e5"
     },
     {
@@ -5348,7 +5371,7 @@
         },
         {
           "absatz": "2",
-          "text": "Gerichtsleitung und Administration bleiben längstens bis zum 31.Dezember 2012 im Amt, um die zur Auflösung des Gerichts noch notwendigen administrativen Arbeiten zu erledigen. Sie werden dafür nach Aufwand entschädigt."
+          "text": "Gerichtsleitung und Administration bleiben längstens bis zum 31. Dezember 2012 im Amt, um die zur Auflösung des Gerichts noch notwendigen administrativen Arbeiten zu erledigen. Sie werden dafür nach Aufwand entschädigt."
         },
         {
           "absatz": "3",
@@ -5359,11 +5382,11 @@
           "text": "Die Geschäftsleitung des Kantonsrates legt die Abfindungen für die Mitglieder und Ersatzmitglieder des Kassationsgerichts fest."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "ae5fc315803a37d48ef76d8fcef0d5f44c6a8947bd60a71c161c0860db0b30a7"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "22c3094bdaf8720bd1b58a01f98ce0026ca0b128c4fac4fc5d3e69b34f483b7a"
     },
     {
       "id": "kanton/ZH/211.1/art_212",
@@ -5403,14 +5426,14 @@
         },
         {
           "absatz": "3",
-          "text": "Das Obergericht entscheidet in Fünferbesetzung. Übergangsbestimmung zur Änderung vom 30. November 2015 (OS 71, 439) Wer im Zeitpunkt des Inkrafttretens der Änderung vom 30. November 2015 als Mitglied eines Bezirksgerichts gewählt ist, kann wiedergewählt werden, auch wenn diese Person die Voraussetzung gemäss §8 Abs. 2 nicht erfüllt. Übergangsbestimmung zur Änderung vom 12. Mai 2025(OS 80, 289) Hat der Regierungsrat mehrere Kreise einer Gemeinde zu einem Friedensrichterkreis zusammengeschlossen, bleibt dieser bis zur nächsten Änderung der Gemeindeordnung bestehen. Die Gemeinde legt die Friedensrichterkreise mit der nächsten Änderung der Gemeindeordnung indieser fest."
+          "text": "Das Obergericht entscheidet in Fünferbesetzung."
         }
       ],
-      "stand": "2011-01-01",
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
-      "sha": "04d0f64fefdaf34429ef5ba1caffdf4f0b850e62be1554661e3629a6b2ea8651"
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "sha": "7bc432fcb200b1f1f9ea0175d3b6303ac6ad7178676cb464635d05bb61109889"
     }
   ]
 }

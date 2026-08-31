@@ -14,10 +14,10 @@
           "text": "Diese Verordnung regelt die vom Sozialversicherungsgericht festzusetzenden Gebühren, Kosten und Entschädigungen."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "a82af31af71ac93be4d0c00dee1eec1bb8131bd82a9750efaf577613c79fef86"
     },
     {
@@ -41,10 +41,10 @@
           "text": "Sie deckt auch die Kosten für Vorladungen, für die Telekommunikation und für das Schreiben und die Zustellung des Entscheids ab."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "7505083e1abcdd0c6bc8347efc38a243103b059fcbbc6f7f7e33868d280fd145"
     },
     {
@@ -78,10 +78,10 @@
           "text": "Verzichten die Parteien auf die schriftliche Begründung des Entscheids, wird die Gerichtsgebühr halbiert. Mindestgebühren des Bundesrechts bleiben vorbehalten."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "88bac5fb23f5d8367f42fe11047b357343938bd061ff9a1ba20fc00cafb8e66a"
     },
     {
@@ -112,22 +112,18 @@
         },
         {
           "absatz": "2",
-          "text": "Die Entschädigung von Zeuginnen und Zeugen, Auskunftspersonen und Sachverständigen richtet sich nach der Entschädigungsver-"
+          "text": "Die Entschädigung von Zeuginnen und Zeugen, Auskunftspersonen und Sachverständigen richtet sich nach der Entschädigungsverordnung der obersten kantonalen Gerichte vom 11. Juni 2002."
         },
         {
           "absatz": "3",
-          "text": "ordnung der obersten kantonalen Gerichte vom 11. Juni 2002. Die Entschädigung der Übersetzerinnen und Übersetzer richtet sich nach der Sprachdienstleistungsverordnung vom 19. Dezember 2018 /"
-        },
-        {
-          "absatz": "4",
-          "text": "7. Januar 2019."
+          "text": "Die Entschädigung der Übersetzerinnen und Übersetzer richtet sich nach der Sprachdienstleistungsverordnung vom 19. Dezember 2018 / 7. Januar 2019."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
-      "sha": "eae4f1a3c101a863c07a84ccd531a95c161a1fee5944030f60afe7a733b4fa87"
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
+      "sha": "871ce5fa35182b8e027076eb6867ddc858cc27ce3f9093481a429249841a4f27"
     },
     {
       "id": "kanton/ZH/212.812/art_5",
@@ -150,10 +146,10 @@
           "text": "Für andere Tätigkeiten des Gerichts ausserhalb hängiger Verfahren kann es die ihm entstandenen Kosten in Rechnung stellen."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "8aa070c78e867623b79b12a0685308316cafa31c9dbe1cbf49f8730d2019483c"
     },
     {
@@ -177,10 +173,10 @@
           "text": "Die obsiegende Partei kann zur Zahlung einer Entschädigung an die unterliegende Partei verpflichtet werden, wenn sich diese wegen rechtswidrigen Verhaltens der obsiegenden zur Prozessführung veranlasst sah."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "df97aee78f80a89708c476f466173b010908614a6d50bd73827e76fd566b70ce"
     },
     {
@@ -200,10 +196,10 @@
           "text": "Wird eine Parteientschädigung beansprucht, reicht die Partei dem Gericht vor dem Endentscheid eine detaillierte Zusammenstellung über ihren Zeitaufwand und ihre Barauslagen ein. Im Unterlassungsfall setzt das Gericht die Entschädigung nach Ermessen fest."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "a95d4873f369af1b22c33fd69cbb178c1f067e8bf953867c2d433af46322639a"
     },
     {
@@ -216,14 +212,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Entschädigung der unentgeltlichen Rechtsvertretung rich-"
+          "text": "Die Entschädigung der unentgeltlichen Rechtsvertretung richtet sich nach § 7."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
-      "sha": "10eefe930d30a0e25b5fc1543261fbab633c1ddd3f42428aa4a0f5362bd93132"
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
+      "sha": "9f34be501c026c31293e6ac7b6c0e74a264fca9b33313675229d45f65cc447ed"
     },
     {
       "id": "kanton/ZH/212.812/art_9",
@@ -242,10 +238,10 @@
           "text": "Sie kann diese Aufgabe der Gerichtskasse des Obergerichts übertragen."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "338e39e6e5139e2cc342dfaeefa501f4841970cc1c7bfd9ab2daa242ca013116"
     },
     {
@@ -261,10 +257,10 @@
           "text": "Die Verordnung über die Gebühren, Kosten und Entschädigungen vor dem Sozialversicherungsgericht vom 26. Oktober 2004 wird aufgehoben."
         }
       ],
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "sha": "9f6804a92418511d83c51b0f66ccad26f424d41c4e084bb69951f5213867c158"
     }
   ]

@@ -29458,10 +29458,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-215.1.json",
-      "artikelAnzahl": 48,
-      "stand": "2005-01-01",
+      "artikelAnzahl": 49,
+      "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_1-2003_11_17-2005_01_01-071.html",
-      "fassungsToken": "28896b5c4bc3e9678adac2aaba49ad313b289782e9a54a9b8dc05e1358d61711",
+      "fassungsToken": "e8a933643b24352c7ca5388eb6c3fc962b8cac2eb794d11bcc75722493edf765",
       "pdfPfad": null
     },
     {
@@ -29476,10 +29476,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-232.3.json",
-      "artikelAnzahl": 86,
-      "stand": "2013-01-01",
+      "artikelAnzahl": 87,
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-232_3-2012_06_25-2013_01_01-115.html",
-      "fassungsToken": "d1c8ffbd8509e1ee730b9f68709351b9ee9ea39e76492761a1a508e69efe1036",
+      "fassungsToken": "313e5d2b081ce56d7d837e6619f34df0314bfe9d2212e79f92dcb5c183df3b02",
       "pdfPfad": null
     },
     {
@@ -29494,10 +29494,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-230.json",
-      "artikelAnzahl": 150,
-      "stand": "1912-01-01",
+      "artikelAnzahl": 172,
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "pdfPfad": null
     },
     {
@@ -29515,7 +29515,7 @@
       "artikelAnzahl": 23,
       "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_11-2010_09_08-2011_01_01-087.html",
-      "fassungsToken": "9ef690d8464d7cf227c747df48cb097439cca50ff2778e5d9d5e8097bba0971f",
+      "fassungsToken": "555ca9c72333a0273b5ac6a4992c5176851604d85d7bf6dcb23fbb1aec497c7d",
       "pdfPfad": null
     },
     {
@@ -29530,10 +29530,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-131.1.json",
-      "artikelAnzahl": 181,
-      "stand": "2018-01-01",
+      "artikelAnzahl": 182,
+      "stand": "2026-04-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-131_1-2015_04_20-2018_01_01-132.html",
-      "fassungsToken": "75dd0fd33dd69a14541206ea4eea9bc035edcf284d1206f313d0f969412423da",
+      "fassungsToken": "3552773c163f6051cd836db5b2e263e117c4028b70ce1a89309160e017746cf7",
       "pdfPfad": null
     },
     {
@@ -29548,10 +29548,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-211.1.json",
-      "artikelAnzahl": 201,
-      "stand": "2011-01-01",
+      "artikelAnzahl": 202,
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
-      "fassungsToken": "ac6e31107fd31ab895a2e61382a3e8bb6d9fd610842aeb0d07be800d83439f58",
+      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
       "pdfPfad": null
     },
     {
@@ -29567,9 +29567,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-170.4.json",
       "artikelAnzahl": 50,
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "pdfPfad": null
     },
     {
@@ -29587,7 +29587,7 @@
       "artikelAnzahl": 42,
       "stand": "2021-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_15-2021_07_12-2021_11_01-115.html",
-      "fassungsToken": "f40e44b39f3d62d78fca5ab0a6cbcd0f3671a7e61514011cf5655a6073aea9bb",
+      "fassungsToken": "fd18e1589c53b75b52b9c4b1308b0bce850859ae6965663663b984188c70c625",
       "pdfPfad": null
     },
     {
@@ -29603,9 +29603,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-171.1.json",
       "artikelAnzahl": 150,
-      "stand": "2020-05-01",
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-171_1-2019_03_25-2020_05_01-133.html",
-      "fassungsToken": "4866b3875e3b0dc9f3c4be6817039545f653cabed673c73ab009fdad3dc6f270",
+      "fassungsToken": "58b96b2ec5019bf720de3c4236c9496db7d9939eb698438c1137f8dc7d4d94d0",
       "pdfPfad": null
     },
     {
@@ -29621,9 +29621,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-243.json",
       "artikelAnzahl": 150,
-      "stand": "2009-07-01",
+      "stand": "2024-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-243-2009_03_09-2009_07_01-123.html",
-      "fassungsToken": "31e0892f17fd507897636fd020245c36cdab0a75e863fbfb8a2e295680844d46",
+      "fassungsToken": "2c7e023a2122186b6a370254f5ae05e1f97d39bd27e9977c31781c0c9c23fb59",
       "pdfPfad": null
     },
     {
@@ -29639,9 +29639,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-242.json",
       "artikelAnzahl": 40,
-      "stand": "1989-01-01",
+      "stand": "2017-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-242-1985_06_09-1989_01_01-095.html",
-      "fassungsToken": "bcfef1f30d2992178671e803b3555e3bf8954d64eb261dcfe8bb2f2979037bd9",
+      "fassungsToken": "eb92ea1db81f841458319b59f7488b0e659e4cb4d61131a2d9014627ed8e8fc1",
       "pdfPfad": null
     },
     {
@@ -29657,9 +29657,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-177.10.json",
       "artikelAnzahl": 68,
-      "stand": "1999-07-01",
+      "stand": "2024-08-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-177_10-1998_09_27-1999_07_01-126.html",
-      "fassungsToken": "cd16bdaa00ba07e6153c9a671572e98b4c8079fe4fd8f182d00f11812d5f6415",
+      "fassungsToken": "38a4f6b937a667b50f5d7cc71147b5f938423844f28193daddc7c736dc862c9c",
       "pdfPfad": null
     },
     {
@@ -29674,10 +29674,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-700.1.json",
-      "artikelAnzahl": 368,
-      "stand": "1976-04-01",
+      "artikelAnzahl": 378,
+      "stand": "2026-08-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-700_1-1975_09_07-1976_04_01-134.html",
-      "fassungsToken": "b3e9070799b1a95ac926d59c14d93971abce3d24d5121ebaea00caba5fe0586f",
+      "fassungsToken": "e842d8b7053015bbeb80e7d964b3c5fc55887518322b014b211eb9164cd33779",
       "pdfPfad": null
     },
     {
@@ -29692,10 +29692,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-550.1.json",
-      "artikelAnzahl": 82,
-      "stand": "2009-07-01",
+      "artikelAnzahl": 84,
+      "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-550_1-2007_04_23-2009_07_01-131.html",
-      "fassungsToken": "4d682b58f068e5984831cb8dba11ee89e45203032b78baf93c886a79260d2c4f",
+      "fassungsToken": "8ec246646a4dd6ff7caa8d4af73a13092730fd6a8108d8664e1a829c6b388eab",
       "pdfPfad": null
     },
     {
@@ -29710,10 +29710,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-851.1.json",
-      "artikelAnzahl": 72,
-      "stand": "1982-01-01",
+      "artikelAnzahl": 73,
+      "stand": "2024-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-851_1-1981_06_14-1982_01_01-123.html",
-      "fassungsToken": "34b95345007e992e82af934f2f4ba959e359834401582a17251e524157a61783",
+      "fassungsToken": "d8af4d6d6180997f6a2f48918dbb3c849dd95ebce74f8ac0bc503a6a49425298",
       "pdfPfad": null
     },
     {
@@ -29728,10 +29728,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-631.1.json",
-      "artikelAnzahl": 313,
-      "stand": "1999-01-01",
+      "artikelAnzahl": 319,
+      "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
-      "fassungsToken": "057baf0e28b8f104f952e27bb5eed7739a01466c72d3c06855531cb5a61bc656",
+      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
       "pdfPfad": null
     },
     {
@@ -29746,10 +29746,28 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-331.json",
-      "artikelAnzahl": 54,
-      "stand": "2007-01-01",
+      "artikelAnzahl": 57,
+      "stand": "2020-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-331-2006_06_19-2007_01_01-109.html",
-      "fassungsToken": "4d9ec3ca7373a91157607ccc93578de84ed354ca278a5bfefc7b8623bfba5ec3",
+      "fassungsToken": "47ddf8ebbf894f3ccd7481d463639b11a5ba835fcf7bd8e66b5c20f84b895d3f",
+      "pdfPfad": null
+    },
+    {
+      "key": "ZH-101",
+      "ebene": "kanton",
+      "kanton": "ZH",
+      "kuerzel": "Verfassung des Kantons Zürich",
+      "titel": "Verfassung des Kantons Zürich (LS 101)",
+      "sr": "LS 101",
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "rang": 0,
+      "status": "snapshot",
+      "datei": "kanton/ZH-101.json",
+      "artikelAnzahl": 147,
+      "stand": "2024-07-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-101-2005_02_27-2006_01_01-129.html",
+      "fassungsToken": "fe3f57d24e3d3f66301a6d1429bc9eed378cd9f9059cf803509870952e002285",
       "pdfPfad": null
     },
     {
@@ -29765,9 +29783,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-215.3.json",
       "artikelAnzahl": 25,
-      "stand": "2011-01-01",
+      "stand": "2015-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-215_3-2010_09_08-2011_01_01-087.html",
-      "fassungsToken": "201ccf609f3265820030e01ca6a2e8336e2f14ede61d51e13653de0d68059238",
+      "fassungsToken": "a01edfea17fec465ac420fe0ead0023369617062bf4db5985356772ab4a1dc8b",
       "pdfPfad": null
     },
     {
@@ -29783,9 +29801,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-281.1.json",
       "artikelAnzahl": 46,
-      "stand": "2010-07-01",
+      "stand": "2011-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-281_1-2010_05_12-2010_07_01-071.html",
-      "fassungsToken": "7eeabec5fe30a5e4d76efe633f36fe1ca2cd463584e385c5721ed75cfdde2d30",
+      "fassungsToken": "7f6a82e0610d8c0c2abb9f9472101212846cb8b8a6e4da5dd1521af105fbd7e8",
       "pdfPfad": null
     },
     {
@@ -29801,9 +29819,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-323.1.json",
       "artikelAnzahl": 14,
-      "stand": "2011-01-01",
+      "stand": "2018-11-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-323_1-2010_11_24-2011_01_01-103.html",
-      "fassungsToken": "1f9a4562648ec813e813fff35790a1692dbdf933d31dacdda7f419e90c9aaab7",
+      "fassungsToken": "05be5189fd2a6344d332f0425dec94a5505c9caf9db9eb758dd0ade8b152cbf0",
       "pdfPfad": null
     },
     {
@@ -29819,9 +29837,9 @@
       "status": "snapshot",
       "datei": "kanton/ZH-212.812.json",
       "artikelAnzahl": 10,
-      "stand": "2011-07-01",
+      "stand": "2022-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-212_812-2011_04_12-2011_07_01-115.html",
-      "fassungsToken": "4d48bc9cb031b299686d724353b9dd5961ae7e4b747b88646353c307a03ca6da",
+      "fassungsToken": "bb61217645b6a14fb49b782893d1050d8cf2c1d7c4fa99b474d25a2d6c613113",
       "pdfPfad": null
     },
     {
@@ -29836,10 +29854,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-631.11.json",
-      "artikelAnzahl": 77,
-      "stand": "1999-01-01",
+      "artikelAnzahl": 79,
+      "stand": "2020-02-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_11-1998_04_01-1999_01_01-108.html",
-      "fassungsToken": "3274b6a46e35f6ae369b8519bbb8ff0e39d3acf3a1bf7c599004590d50a5ee38",
+      "fassungsToken": "374f3c205bb984b3ed89449474d7bb4eee44a23d0159f5708f62d0277a20ff0c",
       "pdfPfad": null
     },
     {
@@ -29854,10 +29872,10 @@
       "rang": 0,
       "status": "snapshot",
       "datei": "kanton/ZH-175.2.json",
-      "artikelAnzahl": 121,
-      "stand": "1960-05-01",
+      "artikelAnzahl": 126,
+      "stand": "2026-07-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-175_2-1959_05_24-1960_05_01-133.html",
-      "fassungsToken": "7d55abdc75343be4d35e9dd77c8a74f6ea9ceaf0d021d4d82b06b1b865479b5d",
+      "fassungsToken": "04c6f32a59147119098644b4295549c1542c7b75ec2b23bfafe6261e3e9eb0c9",
       "pdfPfad": null
     }
   ]

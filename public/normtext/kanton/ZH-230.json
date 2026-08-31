@@ -14,10 +14,10 @@
           "text": "Die Betreibungsbeamten führen die Protokolle für die Viehverpfändung (Art. 885 ZGB) und für den Eigentumsvorbehalt (Art. 715 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "cf343910938d9697a64dc0b9565ce8948fdb0eb0e09d30cfc695d8607ed31d17"
     },
     {
@@ -38,14 +38,14 @@
         },
         {
           "absatz": "3",
-          "text": "Der Regierungsrat kann ein Sonderzivilstandsamt für das ganze Kantonsgebiet gemäss Art.2 der eidgenössischen Zivilstandsverordnung vom 28. April 2004einrichten."
+          "text": "Der Regierungsrat kann ein Sonderzivilstandsamt für das ganze Kantonsgebiet gemäss Art. 2 der eidgenössischen Zivilstandsverordnung vom 28. April 2004 einrichten."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "aa6febb8c1e446abaf101bde685a57ebabfe0017b3f0410dab0dbfcf06c15a19"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "3a36310f6f5101321233bb830391778d80192715259cfadd18674b09e67fc138"
     },
     {
       "id": "kanton/ZH/230/art_27",
@@ -57,14 +57,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Jeder Zivilstandskreis hat einen Zivilstandsbeamten und mindestens einen Stellvertreter, die vom Gemeindevorstandernannt werden. Die vom Regierungsrat bezeichnete Direktion kann einem Zivilstandskreis bewilligen, mehrere Zivilstandsbeamte mit gegenseitiger Stellvertretung zu ernennen."
+          "text": "Jeder Zivilstandskreis hat einen Zivilstandsbeamten und mindestens einen Stellvertreter, die vom Gemeindevorstand ernannt werden. Die vom Regierungsrat bezeichnete Direktion kann einem Zivilstandskreis bewilligen, mehrere Zivilstandsbeamte mit gegenseitiger Stellvertretung zu ernennen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "f63eea1012b151f52c759e8f548510b973c59144e084211e45325a8fd23487ed"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "b295faf37d30eeb868dd82ced571b0d6fadf5f9c111793c2d895e02f711855d7"
+    },
+    {
+      "id": "kanton/ZH/230/art_28",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "28",
+      "artikelLabel": "§ 28",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_29",
@@ -79,11 +98,30 @@
           "text": "Die Zivilstandsbeamten werden von den Gemeinden entschädigt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "50762ef757fc0188a651bd87d45d2218e78db1893857bc971255d14c6d06fa41"
+    },
+    {
+      "id": "kanton/ZH/230/art_30",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "30",
+      "artikelLabel": "§ 30",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_31",
@@ -112,10 +150,10 @@
           "text": "Die Direktion prüft die Amtstätigkeit der Zivilstandsämter regelmässig."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "bc2481ef5d61f6dfd4ef03ac2dbb9a2536b2553e6247ce5c2dcbd0bb70e88b4c"
     },
     {
@@ -128,14 +166,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Der Regierungsrat erlässt zur Regelung des Zivilstandswesens die nötigen Ausführungsbestimmungen (Art. 49 Abs. 2 und 103 ZGB). II. Gemeindevorstand"
+          "text": "Der Regierungsrat erlässt zur Regelung des Zivilstandswesens die nötigen Ausführungsbestimmungen (Art. 49 Abs. 2 und 103 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "5e1739e90bee5797feb6016bd5d00d37f557985178e498d0e0eb5e7015eb7bbb"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "391ff5de4412719b720e4af798612f8587a386edfe5b300a3e0208ceb8981465"
     },
     {
       "id": "kanton/ZH/230/art_33",
@@ -147,14 +185,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Der Präsident des Gemeindevorstandsoder die durch Gemeindebeschluss bezeichnete Amtsstelle ist die zuständige Behörde für die Entgegennahme von Fundanzeigen und Genehmigung der Versteigerung gefundener Sachen (Art. 720 und 721 ZGB)."
+          "text": "Der Präsident des Gemeindevorstands oder die durch Gemeindebeschluss bezeichnete Amtsstelle ist die zuständige Behörde für die Entgegennahme von Fundanzeigen und Genehmigung der Versteigerung gefundener Sachen (Art. 720 und 721 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "41d7714b7caa295dad9f0bfd03e8f0f6676534d896745983a04e5103087bc75a"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "d7022456077ce368eb359457b6f4a79e991eba76fa30e820a88a0ffe9f2a8621"
     },
     {
       "id": "kanton/ZH/230/art_34",
@@ -166,18 +204,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Der Gemeindevorstandist die zuständige Behörde: 1. 2. 3. 4. 5.für die Anfechtung des Kindesverhältnisses (Art. 259 Abs. 2 Ziff. 3, Art. 260 a Abs. 1 und Art. 269 a Abs. 1 ZGB), 6.für Begehren von Amtes wegen um Verschollenerklärung (Art. 550 ZGB), 7.für das Begehren um Vollziehung einer vom Schenkgeber im Interesse der Gemeinde gemachten Auflage (Art. 246 Abs. 2 OR). 8."
+          "text": "Der Gemeindevorstand ist die zuständige Behörde: 1. 2. 3. 4. 5. für die Anfechtung des Kindesverhältnisses (Art. 259 Abs. 2 Ziff. 3, Art. 260 a Abs. 1 und Art. 269 a Abs. 1 ZGB), 6. für Begehren von Amtes wegen um Verschollenerklärung (Art. 550 ZGB), 7. für das Begehren um Vollziehung einer vom Schenkgeber im Interesse der Gemeinde gemachten Auflage (Art. 246 Abs. 2 OR). 8."
         },
         {
           "absatz": "2",
-          "text": "Der Gemeindevorstandist die zuständige Behörde, gegen welche sich im Falle von Art. 261 Abs. 2 a. E. ZGBdie Vaterschaftsklage zu richten hat."
+          "text": "Der Gemeindevorstand ist die zuständige Behörde, gegen welche sich im Falle von Art. 261 Abs. 2 a. E. ZGB die Vaterschaftsklage zu richten hat."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "cee56766ce8e9d925ac57a0e3fa1b470b8468e2032eb18c380a3e928211ef11a"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "cd4093639fd705ced42601b3500ebf4b5ea85e4e66ed921b96316884ce0b4063"
     },
     {
       "id": "kanton/ZH/230/art_35",
@@ -189,14 +227,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Im Fall von §34 Ziff. 5 ist sowohl der Gemeindevorstand des Wohnsitzes als auch der Gemeindevorstanddes Heimatortes zuständig."
+          "text": "Im Fall von § 34 Ziff. 5 ist sowohl der Gemeindevorstand des Wohnsitzes als auch der Gemeindevorstand des Heimatortes zuständig."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "e92a24c17b229d388bb529cc83819601daecacde9552fa3a5562d296d4b7add2"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "9f73b29df625d8bf1c9ad727106c83d527220ef01d1253f1d85aa14b91b3d5c2"
     },
     {
       "id": "kanton/ZH/230/art_36",
@@ -208,14 +246,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "III. Bezirksrat"
+          "text": "Aufgehoben"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "70b0846d967cbae96ad4601a27af8ffcef47656f70b84ed91d71b68cff97c9c1"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/230/art_37",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "37",
+      "artikelLabel": "§ 37",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_38",
@@ -227,14 +284,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Der Bezirksrat ist zuständig für das Begehren um Vollziehung einer vom Schenkgeber im Interesse des Bezirkes oder mehrerer Gemeinden desselben gemachten Auflage (Art. 246 Abs. 2 OR). §§39–40a. §40 b."
+          "text": "Der Bezirksrat ist zuständig für das Begehren um Vollziehung einer vom Schenkgeber im Interesse des Bezirkes oder mehrerer Gemeinden desselben gemachten Auflage (Art. 246 Abs. 2 OR). §§ 39–40 a."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "3e01220f92f568981d2421f00d74ad1361304ff40a5b5d68b2c1124eb5ee526e"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "b4aff394e11e07014f53264cc747df1ac7e6b7291d0fc7b6378776e5e9f4cfe6"
+    },
+    {
+      "id": "kanton/ZH/230/art_40_b",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "40_b",
+      "artikelLabel": "§ 40b",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_41",
@@ -246,14 +322,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "IV. Handelsregisteramt"
+          "text": "Aufgehoben"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "469cda1bbe417031e0cdcdfd55e8034802606ac36662350a5336174be09905d5"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_42",
@@ -265,7 +341,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das Handelsregisteramt führt das Handelsregister und das Verzeichnis der Beibehaltungs- und Unterstellungserklärungen (Art.9 e und 10 b Schlusstitel ZGB)."
+          "text": "Das Handelsregisteramt führt das Handelsregister und das Verzeichnis der Beibehaltungs- und Unterstellungserklärungen (Art. 9 e und 10 b Schlusstitel ZGB)."
         },
         {
           "absatz": "2",
@@ -276,11 +352,11 @@
           "text": "Aufsichtsbehörde ist die zuständige Direktion des Regierungsrates."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "0ea3e38196d0452ee57e1468db6b1de3b973f18f5713d44613112c807db5aa1a"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "da64937ef0110b677993664cb303fca2b78de62be4bb4295d7a6ac73cd7d1e01"
     },
     {
       "id": "kanton/ZH/230/art_42_a",
@@ -292,22 +368,22 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Polizei ist die zuständige Stelle im Sinne von Art.28 b Abs. 4 ZGB."
+          "text": "Die Polizei ist die zuständige Stelle im Sinne von Art. 28 b Abs. 4 ZGB."
         },
         {
           "absatz": "2",
-          "text": "Liegt ein Fall von häuslicher Gewalt oder Stalking im Sinne von §2 des Gewaltschutzgesetzes vom 19. Juni 2006 (GSG)vor, richtet sich das Verfahren nach diesem Gesetz."
+          "text": "Liegt ein Fall von häuslicher Gewalt oder Stalking im Sinne von § 2 des Gewaltschutzgesetzes vom 19. Juni 2006 (GSG) vor, richtet sich das Verfahren nach diesem Gesetz."
         },
         {
           "absatz": "3",
-          "text": "In den übrigen Fällen sind die §§3 Abs. 3, 4, 5 und 7 Abs. 1 GSG sinngemäss anwendbar. VI. Staatsanwaltschaft"
+          "text": "In den übrigen Fällen sind die §§ 3 Abs. 3, 4, 5 und 7 Abs. 1 GSG sinngemäss anwendbar."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "f85e98343604a154e6ad32cfb8556253f0a1db0fbd03cee875efe0f75e6e5022"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "d69854ccf661c7a9e4cd6e8801ada3dad86a6e9f9f626ad5d9c9b65351150fb0"
     },
     {
       "id": "kanton/ZH/230/art_43",
@@ -319,14 +395,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Oberstaatsanwaltschaft ist die zuständige Behörde: 1.für Klagen auf Auflösung eines Vereins wegen widerrechtlicher oder unsittlicher Zwecke (Art. 78 ZGB), 2.für Klagen auf Ungültigerklärung der Ehe (Art. 106 Abs. 1 ZGB) und auf Ungültigerklärung der eingetragenen Partnerschaft (Art. 9 des Partnerschaftsgesetzes vom 18. Juni 2004 [Part G]). VII. Regierungsrat"
+          "text": "Die Oberstaatsanwaltschaft ist die zuständige Behörde: 1. für Klagen auf Auflösung eines Vereins wegen widerrechtlicher oder unsittlicher Zwecke (Art. 78 ZGB), 2. für Klagen auf Ungültigerklärung der Ehe (Art. 106 Abs. 1 ZGB) und auf Ungültigerklärung der eingetragenen Partnerschaft (Art. 9 des Partnerschaftsgesetzes vom 18. Juni 2004 [PartG])."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "86a11029104680738a053dab20421f60d869607e95f88232b14faeee4ed6e4e9"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "005dbbcdf5d91c0e79e82db900f3bbc8cff457c434e3521cfda5eb284ff675dd"
     },
     {
       "id": "kanton/ZH/230/art_44",
@@ -338,18 +414,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Der Regierungsrat ist zuständig: 1.–3. 4.fürdie Ermächtigungzum Geschäftsbetriebim Sinnevon Art.885 ZGB(Viehverpfändung), 5.für die Bewilligung zum Betrieb des Pfandleihgewerbes (Art. 907 ZGB), 6. 7.für das Begehren um Vollziehung einer vom Schenkgeber im Interesse des Kantons oder mehrerer Bezirke gemachten Auflage (Art. 246 Abs. 2 OR), 8."
+          "text": "Der Regierungsrat ist zuständig: 1.–3. 4. für die Ermächtigung zum Geschäftsbetrieb im Sinne von Art. 885 ZGB (Viehverpfändung), 5. für die Bewilligung zum Betrieb des Pfandleihgewerbes (Art. 907 ZGB), 6. 7. für das Begehren um Vollziehung einer vom Schenkgeber im Interesse des Kantons oder mehrerer Bezirke gemachten Auflage (Art. 246 Abs. 2 OR), 8."
         },
         {
           "absatz": "2",
-          "text": "Die vom Regierungsrat bezeichnete Direktion ist zuständig: 9.für die Aufsicht über die Kindes- und Erwachsenenschutzbehörde (KESB) gemäss Art. 441 ZGB, 10. 11. 12.–14. 15.für zivilstandsrechtliche Angelegenheiten, einschliesslich Namensänderungen und durch das Zivilrecht bedingte Bürgerrechtssachen, soweit nichts anderes bestimmt ist, 16.für die Überwachung der Auslosung und Tilgung von Anleihenstiteln (Art. 882 ZGB), 17.für die Bewilligung zur Ausgabe von Warenpapieren durch Lagerhalter (Art. 482 und 1153–1155 OR)."
+          "text": "Die vom Regierungsrat bezeichnete Direktion ist zuständig: 9. für die Aufsicht über die Kindes- und Erwachsenenschutzbehörde (KESB) gemäss Art. 441 ZGB, 10. 11. 12.–14. 15. für zivilstandsrechtliche Angelegenheiten, einschliesslich Namensänderungen und durch das Zivilrecht bedingte Bürgerrechtssachen, soweit nichts anderes bestimmt ist, 16. für die Überwachung der Auslosung und Tilgung von Anleihenstiteln (Art. 882 ZGB), 17. für die Bewilligung zur Ausgabe von Warenpapieren durch Lagerhalter (Art. 482 und 1153–1155 OR)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "2f143dae673a0e0ac7d84462249cf439938217950db934f1444ba9b8ca2d7d4b"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "b1e8098c481f47e612858e197dab6b71ef59321e4517796d0ba537e18ccadf0a"
     },
     {
       "id": "kanton/ZH/230/art_45",
@@ -360,19 +436,15 @@
       "artikelLabel": "§ 45",
       "bloecke": [
         {
-          "absatz": "1",
-          "text": "Entscheide der zuständigen Direktion betreffend Namensänderung (§44 Ziff.15) können beim Obergericht angefochten wer-"
-        },
-        {
-          "absatz": "2",
-          "text": "den (§§50 und 176 GOG). §§45a und 46."
+          "absatz": null,
+          "text": "Entscheide der zuständigen Direktion betreffend Namensänderung (§ 44 Ziff. 15) können beim Obergericht angefochten werden (§§ 50 und 176 GOG). §§ 45 a und 46."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "8a43bad7dff7bd63e54f3042b7bdac69c0e3e18cb5905d9beae94b381330b07f"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fbd4b12c097f0baf12fe1718d4a456c70bec03d02048a00d7a3b49bdbe3980a3"
     },
     {
       "id": "kanton/ZH/230/art_47",
@@ -391,10 +463,10 @@
           "text": "Vorbehalten bleiben gesetzliche Bestimmungen für einzelne Fälle sowie die vom Zivilgesetzbuch vorgeschriebenen Veröffentlichungen im Schweizerischen Handelsamtsblatt. Zweiter Titel: Kantonales Zivilrecht Erster Abschnitt: Personenrecht Personen"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "b9adbf542a0ad08c4fadd5f3b0184538d78e39f7b17f0b3b77cc2eb5d3d63989"
     },
     {
@@ -407,7 +479,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die für den Justizvollzug zuständige Direktion vollzieht die gerichtlich angeordnete elektronische Überwachung zum Schutz gewaltbetroffener Personen (Art. 28c Abs. 1 ZGBund Art. 343 Abs. 1 Schweizerische Zivilprozessordnung vom 19. Dezember 2008)."
+          "text": "Die für den Justizvollzug zuständige Direktion vollzieht die gerichtlich angeordnete elektronische Überwachung zum Schutz gewaltbetroffener Personen (Art. 28 c Abs. 1 ZGB und Art. 343 Abs. 1 Schweizerische Zivilprozessordnung vom 19. Dezember 2008)."
         },
         {
           "absatz": "2",
@@ -415,18 +487,18 @@
         },
         {
           "absatz": "3",
-          "text": "Zuständiges Gericht für die Verlängerung der elektronischen Überwachung ist das Einzelgericht gemäss §24 lit. e GOG."
+          "text": "Zuständiges Gericht für die Verlängerung der elektronischen Überwachung ist das Einzelgericht gemäss § 24 lit. e GOG."
         },
         {
           "absatz": "4",
           "text": "Der Regierungsrat regelt die Einzelheiten in einer Verordnung."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "10594cd9d8b8035525309ecbed683de66bb7c2e851435bd06031ce524e021c75"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "82374b3f190d2a1e3698210f29f8a56bb9e9f24879bfc842eedb161e64381f0e"
     },
     {
       "id": "kanton/ZH/230/art_49",
@@ -442,14 +514,14 @@
         },
         {
           "absatz": "2",
-          "text": "Die Art. 53–58 und 64–79 ZGBfinden entsprechende Anwendung, soweit sich nicht aus dem Bestehen von Teilrechten (Gerechtsamen) der Genossenschafter oder aus den besonderen Gesetzen oder den folgenden Bestimmungen Abweichungen ergeben."
+          "text": "Die Art. 53–58 und 64–79 ZGB finden entsprechende Anwendung, soweit sich nicht aus dem Bestehen von Teilrechten (Gerechtsamen) der Genossenschafter oder aus den besonderen Gesetzen oder den folgenden Bestimmungen Abweichungen ergeben."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "a3aa200c3dada4fa5da2531b0494c5b71c6d7a73d419a91d37db6161bc8c8cbe"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fc570dc7ec21f39cd85ffe0ead7628ad5b3a2a55964a42bcc8b123e5ee98a371"
     },
     {
       "id": "kanton/ZH/230/art_50",
@@ -468,10 +540,10 @@
           "text": "Bei Wahlen und Beschlüssen entscheidet die Mehrheit der in der Versammlung vertretenen Teilrechte."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "28d938365d21bd1e5d711a7af97664956bea298d0fd8854f5e8a6ca34f268c28"
     },
     {
@@ -487,10 +559,10 @@
           "text": "Vertretung in der Versammlung ist zulässig. Der Vertreter muss handlungsfähig sein. Nicht erforderlich ist, dass er Mitglied der Korporation sei."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "e7d6771fa53adf0b32ca9613f20a1217bdc6b2a3c2e60f3d7d115d2d99eb8f00"
     },
     {
@@ -506,10 +578,10 @@
           "text": "Jedem vollen Teilrecht steht eine ganze Stimme zu. Bruchteile eines Teilrechtes haben ein ihrem Bruchteil entsprechendes Stimmrecht."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "716eaf14e5ff6ee3b07c9075c408e768659184733995b53e3910cc90518365c9"
     },
     {
@@ -525,10 +597,10 @@
           "text": "Niemand darf bei einer Abstimmung in der Versammlung der Mitglieder mehr als einen Drittel sämtlicher Teilrechte vertreten."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "b2299a49b9855e25e5997c4ca012189721cc86b0e1931a51c4b5b605501f5015"
     },
     {
@@ -549,18 +621,18 @@
         },
         {
           "absatz": "3",
-          "text": "Die näheren Vorschriftenerlässt das Obergericht."
+          "text": "Die näheren Vorschriften erlässt das Obergericht."
         },
         {
           "absatz": "4",
           "text": "Die Gebühren für den Verkehr mit Teilrechten richten sich nach dem Notariatsgesetz."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "5c5274d004a9e15422eb26fc27bc3ac374fe3cb899a6d5bb00b9b6dd21a8493f"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "3995d66c5fc97ea7a0bf3a92cd9222f79230a20cc4099ca182914bc3eaaf3481"
     },
     {
       "id": "kanton/ZH/230/art_55",
@@ -575,10 +647,10 @@
           "text": "Sofern nichts anderes bestimmt ist, richtet sich die Beitragspflicht nach Zahl und Grösse der Teilrechte, welche dem einzelnen Mitglied zustehen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "00b67bcbbac5f6f91a8fe1b41dd676016ef4a58c015023a6645bc47a1cafdf91"
     },
     {
@@ -594,10 +666,10 @@
           "text": "Bei der Auflösung wird das Vermögen der Korporation an die Mitglieder verteilt nach Massgabe ihrer Teilrechte. Zweiter Abschnitt: Familienrecht"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "d0d0712e9d38256c91bc0cb4d4552a29582d232594e4c6be1c7495ed40f78039"
     },
     {
@@ -614,18 +686,14 @@
         },
         {
           "absatz": "2",
-          "text": "Das Adoptionsgesuch ist der KESB am Wohnsitz der Adoptiveltern einzureichen. Im Übrigen richtet sich das Verfahren nach dem Einführungsgesetz zum Kindes- und Erwachsenenschutzrecht vom"
-        },
-        {
-          "absatz": "3",
-          "text": "25.Juni 2012 (EG KESR)."
+          "text": "Das Adoptionsgesuch ist der KESB am Wohnsitz der Adoptiveltern einzureichen. Im Übrigen richtet sich das Verfahren nach dem Einführungsgesetz zum Kindes- und Erwachsenenschutzrecht vom 25. Juni 2012 (EG KESR)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "50ad51cb2ef0152714e2f11981cfc86b555987a7e9176848cd3914ee5ae590c6"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "78ed295e0fa2a58a3a2f88f57837102aa1d25511d91db8b3ecaff740c3b8e913"
     },
     {
       "id": "kanton/ZH/230/art_56_b",
@@ -637,14 +705,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Zivilstandsämter melden die zusammen mit der Anerkennung abgegebene Erklärung über die gemeinsame elterliche Sorge unentgeltlich der Gemeinde, in der diese Personen als niedergelassen gemeldet sind. Die Meldung umfasst Namen und Adressen der sorgeberechtigten Personen. bis"
+          "text": "Die Zivilstandsämter melden die zusammen mit der Anerkennung abgegebene Erklärung über die gemeinsame elterliche Sorge unentgeltlich der Gemeinde, in der diese Personen als niedergelassen gemeldet sind. Die Meldung umfasst Namen und Adressen der sorgeberechtigten Personen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "f99f5966ec9a04fdeebb13d778b681c9dee0c926669b5496933d5ea55fcd50c8"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "88d819a6eb95a1c75a965784b458a00cbc87985e0f04aae919977b2e40cbf702"
     },
     {
       "id": "kanton/ZH/230/art_57",
@@ -656,7 +724,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die für die Wohnsitzgemeinde der unterhaltsberechtigten Person zuständige Jugendhilfestelle ist zuständig für die Inkassohilfe gemäss Art. 131 Abs. 1 ZGB. Sie wendet dabei sinngemäss die Gesetzgebungzur Inkassohilfe in der ambulanten Kinder- und Jugendhilfe an."
+          "text": "Die für die Wohnsitzgemeinde der unterhaltsberechtigten Person zuständige Jugendhilfestelle ist zuständig für die Inkassohilfe gemäss Art. 131 Abs. 1 ZGB. Sie wendet dabei sinngemäss die Gesetzgebung zur Inkassohilfe in der ambulanten Kinder- und Jugendhilfe an."
         },
         {
           "absatz": "2",
@@ -664,14 +732,33 @@
         },
         {
           "absatz": "3",
-          "text": "Abs. 1 und 2 gelten sinngemäss für die Inkassohilfe im Zusammenhang mit der eingetragenen Partnerschaft (Art.13 und 34 Abs.4 Part G). §§58–63."
+          "text": "Abs. 1 und 2 gelten sinngemäss für die Inkassohilfe im Zusammenhang mit der eingetragenen Partnerschaft (Art. 13 und 34 Abs. 4 PartG). §§ 58–63."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "e1c8768116a7da62ac6037ab6a212044d2108b60bbda2e93544f9492a7dc2faf"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "7c23c261fbed3b355c88d01c29498c3c76465a7894feeda7aa21d7499f4219e2"
+    },
+    {
+      "id": "kanton/ZH/230/art_64",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "64",
+      "artikelLabel": "§ 64",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_65",
@@ -683,14 +770,52 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "§§66–69."
+          "text": "§§ 66–69."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "2098ca549d0a88a454838afb40337531d85d11f9d95aaadb815b19471d9a9098"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "8abd8e71520d068cb6fe81f51bc56df1f42651f3e2cb98c877712ba630478796"
+    },
+    {
+      "id": "kanton/ZH/230/art_70",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "70",
+      "artikelLabel": "§ 70",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/230/art_71",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "71",
+      "artikelLabel": "§ 71",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_72",
@@ -702,14 +827,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "§§73–75. §§76–81."
+          "text": "§§ 73–75. §§ 76–81."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "cfd0ba770c49191f8152eb6c9ad6bdaf61afd7fe44adf665ae65595b07a65d0a"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "454d08ee40cad76c44d30fb4a5c762662bee5ecdbf073a55288820b613b311e3"
     },
     {
       "id": "kanton/ZH/230/art_82",
@@ -721,14 +846,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "§§83 und 84. §§85–87. §§88 und 89. §§90 und 91. §§92–101. §§102–107. §§108–116."
+          "text": "§§ 83 und 84. §§ 85–87. §§ 88 und 89. §§ 90 und 91. §§ 92–101. §§ 102–107. §§ 108–116."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "b3c50c36609b67942be994ba8efad6db562c5a82bf3638ecfacde9b4471bad45"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "9dd294adc1bda54726d0ed2012dc9b31af829c328f90db6b943fd8f9d686af35"
     },
     {
       "id": "kanton/ZH/230/art_117",
@@ -740,14 +865,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "§§117 a–117m."
+          "text": "§§ 117 a–117 m."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "00619ee3e54eaa0d054eeeac8887892e5a704c575e12cc91aa4d52520db27836"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "a018f38f1fc1b3ca734324d772389731202dd234e34fd779f8bf5502af3fecbb"
     },
     {
       "id": "kanton/ZH/230/art_118",
@@ -766,10 +891,10 @@
           "text": "Vorbehalten bleibt die nachherige Ausmittlung des dem Kinde angeborenen Gemeindebürgerrechts."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "01af2d3919e163943f791ddbd1239c9da57cfe47ab39f23c9751415e1bc12aff"
     },
     {
@@ -785,10 +910,10 @@
           "text": "Der Staat bezahlt der Gemeinde, welche vier Jahre lang ein Findelkind versorgt hat, ohne dass dessen Herkunft entdeckt wurde, einen einmaligen Betrag von Fr. 800."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "8c757d378b7cf67c3ebef2802f75a2c199630e0cbceecb0fa77502d866589cb3"
     },
     {
@@ -804,11 +929,30 @@
           "text": "Wird ein Ehegatte, der in Gütergemeinschaft lebt, für eine Eigenschuld betrieben und ist sein Anteil am Gesamtgut gepfändet worden, teilt dies der Betreibungsbeamte der unteren Aufsichtsbehörde in Betreibungssachen mit."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "f52a2b7c76d8f1fe77f60b72bf511c1848db7befd5140cdf34f2a0637a3a9459"
+    },
+    {
+      "id": "kanton/ZH/230/art_121",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "121",
+      "artikelLabel": "§ 121",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_122",
@@ -836,24 +980,24 @@
             },
             {
               "marke": "d",
-              "text": "urteilsunfähige Personen,deren Vorsorgebeauftragtergemäss Art. 360 Abs. 1 ZGB, Beauftragter gemäss Art. 370 Abs. 2 ZGB oder gesetzlicher Vertreter gemäss Art. 374 oder 378 ZGBer ist."
+              "text": "urteilsunfähige Personen, deren Vorsorgebeauftragter gemäss Art. 360 Abs. 1 ZGB, Beauftragter gemäss Art. 370 Abs. 2 ZGB oder gesetzlicher Vertreter gemäss Art. 374 oder 378 ZGB er ist."
             }
           ]
         },
         {
           "absatz": "2",
-          "text": "Bestehen Ansprüche gemäss Abs.1, macht der Konkurs- oder Betreibungsbeamte der zuständigen KESB Anzeige."
+          "text": "Bestehen Ansprüche gemäss Abs. 1, macht der Konkurs- oder Betreibungsbeamte der zuständigen KESB Anzeige."
         },
         {
           "absatz": "3",
           "text": "Die KESB trifft die erforderlichen Massnahmen (Art. 318 Abs. 3, 324, 325 und 423 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "598399a816a330e1acea7b6487b2b3d9efc1297153e31ce3422fc8fb561d593b"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "90a33e11a615efa0059dd7b2562de29611638b20bd59269f34d67ced93653cfe"
     },
     {
       "id": "kanton/ZH/230/art_123",
@@ -868,10 +1012,10 @@
           "text": "Dritter Abschnitt: Erbrecht"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "14f9d2807c76a444d1cd92aa42916f5110e9c83eb5e67c191836b3448c86dc64"
     },
     {
@@ -884,14 +1028,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Fällt eine Erbschaft aufgrund des Art. 466 ZGBan den Staat, so hat er, wenn der Verstorbene Bürger einer Gemeinde des Kantons Zürich war, die Hälfte des Liquidationsergebnisses an diese Gemeinde abzugeben. bis A."
+          "text": "Fällt eine Erbschaft aufgrund des Art. 466 ZGB an den Staat, so hat er, wenn der Verstorbene Bürger einer Gemeinde des Kantons Zürich war, die Hälfte des Liquidationsergebnisses an diese Gemeinde abzugeben. Abis."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "a3d6f469c9bbf1a1c449313b18629cb16e792083bc13285234550b1cc7758b82"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "cbfc94cae2d92b1dcba3ad91b398f1be21a96f9f6f661b66da7c4076cf360270"
+    },
+    {
+      "id": "kanton/ZH/230/art_124_a",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "124_a",
+      "artikelLabel": "§ 124a",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_125",
@@ -903,22 +1066,22 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Zuständigkeit für die Anordnung von Massregeln zur Sicherung des Erbganges (Art. 551 ZGB) richtet sich nach §137"
+          "text": "Die Zuständigkeit für die Anordnung von Massregeln zur Sicherung des Erbganges (Art. 551 ZGB) richtet sich nach § 137 lit. b GOG."
         },
         {
           "absatz": "2",
-          "text": "lit. b GOG. Die KESB ordnet die Aufnahme eines Inventars in den Fällen von Art. 553 Abs. 1 Ziff. 1, 2 und 4 ZGBan. Sie kann die Aufnahme eines Inventars in weiteren Fällen anordnen, insbesondere wenn es für die Führung einer Beistandschaft mit Vermögensverwaltung erforderlich ist."
+          "text": "Die KESB ordnet die Aufnahme eines Inventars in den Fällen von Art. 553 Abs. 1 Ziff. 1, 2 und 4 ZGB an. Sie kann die Aufnahme eines Inventars in weiteren Fällen anordnen, insbesondere wenn es für die Führung einer Beistandschaft mit Vermögensverwaltung erforderlich ist."
         },
         {
           "absatz": "3",
           "text": "In schwierigen Fällen kann sie die Aufnahme des Inventars beim Einzelgericht beantragen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "50553a747b4ffa2a964d8b6af26b599243b06fd07b148ff728674371853f0888"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "74412887c5430d3fc3111fe2b71d8472078fd3be83451ad9d1cbe045203cafbb"
     },
     {
       "id": "kanton/ZH/230/art_126",
@@ -934,18 +1097,14 @@
         },
         {
           "absatz": "2",
-          "text": "Im Übrigen richtet sich die Inventaraufnahme nach §17 EG"
-        },
-        {
-          "absatz": "3",
-          "text": "KESR."
+          "text": "Im Übrigen richtet sich die Inventaraufnahme nach § 17 EG KESR."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "c27d011ccac81deb8f553e98dca4564bf60774fb21f6c42d57137cff9fbb319a"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "7a67008bb68c325d14448726e1ae0571d446c30ac791b17536f525f19e79caa0"
     },
     {
       "id": "kanton/ZH/230/art_127",
@@ -960,10 +1119,10 @@
           "text": "Die KESB oder der Beistand der betroffenen Person beantragt dem Einzelgericht andere zur Sicherung des Erbganges nötige Massnahmen gemäss Art. 551 ZGB."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "cd997aa6d89540cf34f7cd22a8ae3ab1effa2109072872bec74fd35981b0e3c6"
     },
     {
@@ -980,7 +1139,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "in Betracht zu ziehen ist, dass 1.ein volljähriger Erbe unter umfassende Beistandschaft zu stellen oder seine Handlungsfähigkeit mit Bezug auf die Vermögensverwaltung einzuschränken ist oder 2.ein minderjähriger Erbe unter Vormundschaft zu stellen ist,"
+              "text": "in Betracht zu ziehen ist, dass 1. ein volljähriger Erbe unter umfassende Beistandschaft zu stellen oder seine Handlungsfähigkeit mit Bezug auf die Vermögensverwaltung einzuschränken ist oder 2. ein minderjähriger Erbe unter Vormundschaft zu stellen ist,"
             },
             {
               "marke": "b",
@@ -997,11 +1156,30 @@
           "text": "Ist der Nachlass unbedeutend, wird auf die Siegelung verzichtet."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "452d560938a63c76f75676b327eee1bf55df54dcd85836d3e562e10b79ce3e76"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "ea0222df44176ed8ddbe1088d83efc65ded3c6168fa9b4f2288394b02e22563a"
+    },
+    {
+      "id": "kanton/ZH/230/art_129",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "129",
+      "artikelLabel": "§ 129",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_130",
@@ -1016,10 +1194,10 @@
           "text": "Der Rechnungsruf ist im Amtsblatt zu veröffentlichen und am Wohnsitz und in der Heimatgemeinde des Erblassers öffentlich bekannt zu machen; der Notar kann, wenn erforderlich, die Veröffentlichung auch in andern Blättern anordnen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "617e56289510e5da4c538d686a73167f6bd5c02fdcf73715c7600e16f141377e"
     },
     {
@@ -1032,18 +1210,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Der Notar übergibt das Inventar mit einem Schluss-"
+          "text": "Der Notar übergibt das Inventar mit einem Schlussbericht dem Einzelgericht gemäss § 137 lit. b und e GOG."
         },
         {
           "absatz": "2",
-          "text": "bericht dem Einzelgericht gemäss §137 lit. b und e GOG. Das Einzelgericht trifft die weiteren vom Gesetz vorgesehenen Verfügungen (Art. 587 ZGB)."
+          "text": "Das Einzelgericht trifft die weiteren vom Gesetz vorgesehenen Verfügungen (Art. 587 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "3b248f6d2e9f511d310a36581c2dd44c59efb33fd113755641659530b323c5cd"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "bbf10d7ce4feafb28de385ce8bf73aea41552af481a8cf5ec6d0afb7d881941f"
     },
     {
       "id": "kanton/ZH/230/art_132",
@@ -1054,19 +1232,15 @@
       "artikelLabel": "§ 132",
       "bloecke": [
         {
-          "absatz": "1",
-          "text": "Fällt eine Erbschaft an das Gemeinwesen, so beauftragt"
-        },
-        {
-          "absatz": "2",
-          "text": "das Einzelgericht gemäss §137 lit.e GOGden Notar mit der Vornahme eines Rechnungsrufes und trifft die weiter erforderlichen Anordnungen (Art. 592 ZGB)."
+          "absatz": null,
+          "text": "Fällt eine Erbschaft an das Gemeinwesen, so beauftragt das Einzelgericht gemäss § 137 lit. e GOG den Notar mit der Vornahme eines Rechnungsrufes und trifft die weiter erforderlichen Anordnungen (Art. 592 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "3a1674045a47a49d33708e0afc039a323b670bbef602cac78dee7e5a921d051c"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "029d380255dee1b12150b187f1229c62ab07cdfa797dcfbff73ee7599cb9b92c"
     },
     {
       "id": "kanton/ZH/230/art_133",
@@ -1093,10 +1267,10 @@
           "text": "Auf Gärten, Pünten und Bauplätzen findet diese Bestimmung keine Anwendung."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "3963b85b7d2abb5a136c5abcf3cff0b505ccb81a0c7903cb1c56dd84b72cd4c3"
     },
     {
@@ -1112,10 +1286,10 @@
           "text": "Sind ausnahmsweise Gründe für weitere Teilung landwirtschaftlichen Bodens vorhanden, so kann der Richter sie ungeachtet der Einsprachen einzelner Erben anordnen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "f034b132e4193dd60009a06780954663b033bcc31ec60588107b5a146b44c921"
     },
     {
@@ -1127,19 +1301,15 @@
       "artikelLabel": "§ 134a",
       "bloecke": [
         {
-          "absatz": "1",
-          "text": "Die Bestellung von Sachverständigen für die Feststellung des Anrechnungswertes von Grundstücken nach Art.618 ZGB"
-        },
-        {
-          "absatz": "2",
-          "text": "erfolgt durch das Einzelgericht gemäss §137 lit. k GOG. Vierter Abschnitt: Sachenrecht"
+          "absatz": null,
+          "text": "Die Bestellung von Sachverständigen für die Feststellung des Anrechnungswertes von Grundstücken nach Art. 618 ZGB erfolgt durch das Einzelgericht gemäss § 137 lit. k GOG. Vierter Abschnitt: Sachenrecht"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "1f28f983584544edc1fc71e56ec46af32f70ac4d3226b38bc1cfce590ef413fc"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "b3f1e734ecc6fa26fb43345f785dbf30b24fa96d13d11be073833ea45833af24"
     },
     {
       "id": "kanton/ZH/230/art_135",
@@ -1154,10 +1324,10 @@
           "text": "Bestandteil einer unbeweglichen Sache ist alles, was zu ihrem Bestand gehört und ohne ihre Zerstörung, Beschädigung oder Veränderung nicht abgetrennt werden kann (Art. 642 ZGB). Nach Ortsgebrauch sind namentlich Bestandteile: die im Boden stehenden Mauern und Einfriedigungen, alles, was in einem Gebäude niet- und nagelfest ist, die in die Wand eingelassenen Schränke, Spiegel, Bilder, die in den Boden eingebauten oder mit einer Feuermauer in feste Verbindung gebrachten Öfen oder Herde, die mit dem Gebäude baulich verbundenen Einrichtungen, wie Triebwerke (Wasserräder, Turbinen, Transmissionen, Dampfmaschinen), Aufzüge, elektrische Leitungen, Kessel, Ventilatoren, Röhrenleitungen, Hammer, Trottwerke und dergleichen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "bf4384ea25ccf238b03b010c8a85179d41c8d32096c317d490f933d73d073023"
     },
     {
@@ -1170,14 +1340,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Zugehör von Liegenschaften sind unter den Voraussetzungen des Art. 644 ZGBnach Ortsgebrauch: die zu einem Gebäude oder eine Einfriedigung gehörenden Schlüssel, Vorfenster, Fensterladen, bewegliche Öfen und Herde, soweit nicht in den Boden eingebaute oder mit einer Feuermauer in feste Verbindung gebrachte Öfen und Herde vorhanden sind, Badeeinrichtungen, Badewannen, Waschherde und Waschtröge, die auf dem Rebland vorhandenen Rebstickel; die Stützpfähle für Pflanzen und dergleichen, Fasslager, Gestelle und dergleichen, Löschgerätschaften, der auf einem landwirtschaftlichen Gute erzeugte und daselbst vorhandene Dünger, bei einer zum Betrieb eines Gewerbes oder einer Fabrik dienenden Liegenschaft (Fabrik, Mühle, Säge, Stampfe, Trotte, Käserei, Werkstatt usw.) die eigens für dieselbe konstruierten oder ihrer besonderen Einrichtung angepassten oder sonst zur dauernden Benutzung für dieselbe bestimmten Vorrichtungen, wie Spinnstühle, nebst Spindeln und Spulen, mechanische Webstühle, Strickmaschinen, Mahlgänge und dergleichen, sowie die dazu gehörenden Gerätschaften und Werkzeuge."
+          "text": "Zugehör von Liegenschaften sind unter den Voraussetzungen des Art. 644 ZGB nach Ortsgebrauch: die zu einem Gebäude oder eine Einfriedigung gehörenden Schlüssel, Vorfenster, Fensterladen, bewegliche Öfen und Herde, soweit nicht in den Boden eingebaute oder mit einer Feuermauer in feste Verbindung gebrachte Öfen und Herde vorhanden sind, Badeeinrichtungen, Badewannen, Waschherde und Waschtröge, die auf dem Rebland vorhandenen Rebstickel; die Stützpfähle für Pflanzen und dergleichen, Fasslager, Gestelle und dergleichen, Löschgerätschaften, der auf einem landwirtschaftlichen Gute erzeugte und daselbst vorhandene Dünger, bei einer zum Betrieb eines Gewerbes oder einer Fabrik dienenden Liegenschaft (Fabrik, Mühle, Säge, Stampfe, Trotte, Käserei, Werkstatt usw.) die eigens für dieselbe konstruierten oder ihrer besonderen Einrichtung angepassten oder sonst zur dauernden Benutzung für dieselbe bestimmten Vorrichtungen, wie Spinnstühle, nebst Spindeln und Spulen, mechanische Webstühle, Strickmaschinen, Mahlgänge und dergleichen, sowie die dazu gehörenden Gerätschaften und Werkzeuge."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "05f21f9a61788ed0637a6855c99c3e6bd9053ab613f94f27c68b4630f9ad97f3"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "65d33ecd525579fa7766424733742b55579f1d73608e90520782d56308193b4a"
     },
     {
       "id": "kanton/ZH/230/art_137",
@@ -1189,14 +1359,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "bis §§137–144. §§145–147. §§148–150. §§151–167."
+          "text": "§§ 137bis–144. §§ 145–147. §§ 148–150. §§ 151–167."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "0192c3beb981ee6b402aa6fb3f96956a86d767fd9520ac7b5c783d5cdd5b5c28"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fc50bd99c0db7f5ab596059cc131b417a447ac9a613a943d3b31bebe4e200987"
     },
     {
       "id": "kanton/ZH/230/art_168",
@@ -1208,14 +1378,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Wird jemand dadurch, dass ein Grundeigentümer sein Eigentumsrecht überschreitet (Art.679 und 684 ZGB), geschädigt oder mit Schaden bedroht, so kann er zunächst den Schutz der Polizeibehörde anrufen. II. Pflanzen von Sträuchern und Bäumen"
+          "text": "Wird jemand dadurch, dass ein Grundeigentümer sein Eigentumsrecht überschreitet (Art. 679 und 684 ZGB), geschädigt oder mit Schaden bedroht, so kann er zunächst den Schutz der Polizeibehörde anrufen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "26be57b5e0ed1579c7e1b0487150b7b76918594b3dc105efffc263d381fcf7eb"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "5e40c9cb111b21aa8e5080838deb6db28226a8ef1b03e0e37d0354364afa2a5d"
     },
     {
       "id": "kanton/ZH/230/art_169",
@@ -1230,10 +1400,10 @@
           "text": "Sträucher dürfen gegen den Willen des Nachbarn nicht näher als 50 cm, gemessen ab der Stockmitte, an die nachbarliche Grenze gepflanzt werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "c08fcbbd43aecb242c41a8046404b662790026357c4e79683908f1786646f50e"
     },
     {
@@ -1250,14 +1420,14 @@
         },
         {
           "absatz": "2",
-          "text": "Baumschulpflanzungen dürfen nicht näher als 1 m an die nachbarliche Grenze gesetzt werden. Die in §173 festgesetzte Verjährung läuft nicht, solange die Baumschule besteht."
+          "text": "Baumschulpflanzungen dürfen nicht näher als 1 m an die nachbarliche Grenze gesetzt werden. Die in § 173 festgesetzte Verjährung läuft nicht, solange die Baumschule besteht."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "58d92a011e459022c6f338cf4a4ee01972881c4abb055acd703a4ec6daab729d"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffddbaa5098d2a3f72d95327fba6a69b0aac6004fd717c0890af671bcf43e80"
     },
     {
       "id": "kanton/ZH/230/art_171",
@@ -1272,10 +1442,10 @@
           "text": "Besteht das angrenzende Land aus Waldboden, dürfen Sträucher und Bäume nicht näher als 50 cm an der Grenze stehen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "e30c460f29753c9989811ae75996555e6a544984a78ebe4a6ee730e9f9b6a572"
     },
     {
@@ -1299,10 +1469,10 @@
           "text": "Wird Kulturland in Wald umgewandelt, so ist von benachbartem Kulturland ein Abstand von 8 m, von einer Bauzone ein Abstand von 15 m zu beachten."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "9be748db9dfac9077cb375aa03528b5952400ea53868a1dedebbc3403cf18486"
     },
     {
@@ -1328,10 +1498,10 @@
           ]
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "7ca37b441a7eda8111abb151b546a3a99948ab734c766057e699f469690b689a"
     },
     {
@@ -1348,14 +1518,33 @@
         },
         {
           "absatz": "2",
-          "text": "Ist die Einhaltung des ordentlichen Abstandes nicht möglich, können Bäume nach dem Abgang innerhalb von zwei Jahren an gleicher Stelle ersetzt werden. Als Ersatz ist ein Baum derselben oder einer geringeren Wuchshöhe zulässig. bis"
+          "text": "Ist die Einhaltung des ordentlichen Abstandes nicht möglich, können Bäume nach dem Abgang innerhalb von zwei Jahren an gleicher Stelle ersetzt werden. Als Ersatz ist ein Baum derselben oder einer geringeren Wuchshöhe zulässig."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "94a59289f4c096265c5a512a26eae7bfbabd0e524107983c00ed743924dcd455"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "44cd88bc7b42588e6cd7467e1f8dcf9c7c8a8deb41d0f62c9eb982914e7d73cc"
+    },
+    {
+      "id": "kanton/ZH/230/art_174_bis",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "174_bis",
+      "artikelLabel": "§ 174bis",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_175",
@@ -1367,14 +1556,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Soweit übungsgemäss das Tretrecht besteht, ist der Pflüger bei Bestellung der Felder berechtigt, auf das nicht bepflanzte oder nicht mit hohem Gras bewachsene Land eines andern 3,5 m weit hinauszufahren. IV. Reckweg"
+          "text": "Soweit übungsgemäss das Tretrecht besteht, ist der Pflüger bei Bestellung der Felder berechtigt, auf das nicht bepflanzte oder nicht mit hohem Gras bewachsene Land eines andern 3,5 m weit hinauszufahren."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "3942ddc8a90a895db687478a412221cbd3e222cfe8cc41cccd63f544dada144a"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "56b0ac8ee126086e9efba261bcab2b3cec5d997cef96e86425a438df391e212c"
     },
     {
       "id": "kanton/ZH/230/art_176",
@@ -1389,10 +1578,10 @@
           "text": "Die Ufereigentümer an einem Fluss haben den Schifffahrern zu gestatten, sich der vorhandenen Reckwege zu bedienen sowie wenn nötig am Ufer zu landen, die Schiffe vorübergehend daran zu befestigen und die Ladung eine Zeitlang auszusetzen. Der Schaden ist zu ersetzen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "c03e8654eaa5cdbe6e9616326d5548e9eb8838763520baec11d91a188d5dd400"
     },
     {
@@ -1405,18 +1594,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Grünhecken bis zu einer Höhe von 2m dürfen gegen den Willen des Nachbarn nicht näher als 50 cm, gemessen ab der Stockmitte, von der nachbarlichen Grenze gepflanzt werden."
+          "text": "Grünhecken bis zu einer Höhe von 2 m dürfen gegen den Willen des Nachbarn nicht näher als 50 cm, gemessen ab der Stockmitte, von der nachbarlichen Grenze gepflanzt werden."
         },
         {
           "absatz": "2",
           "text": "Grünhecken, die eine Höhe von 2 m überschreiten, sind gegen den Willen des Nachbarn nur zulässig, wenn der Abstand von der nachbarlichen Grenze um die Hälfte der Höhe, die 2 m übersteigt, vergrössert wird."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "b848427dde823e55af0161301da02cede5f4b03de65c02990c6e8f2818834fb8"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "451599f897446581740d109200af2d346730318303603eec569b3e6988d561c2"
     },
     {
       "id": "kanton/ZH/230/art_178",
@@ -1431,10 +1620,10 @@
           "text": "Andere Einfriedigungen, wie sogenannte tote Hecken, Holzwände oder Mauern, welche die Höhe von 150 cm nicht übersteigen, darf der Eigentümer an der Grenze anbringen und daran auch Spaliere ziehen. Wenn die Einfriedigungen aber jene Höhe überschreiten, so kann der Nachbar begehren, dass sie je um die Hälfte der Höhe über 150 cm von der Grenze entfernt werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "bee92100c93ba101b5e3232b1dd9070f60a08b9c4810418b0e20d6d3f4c954d5"
     },
     {
@@ -1447,14 +1636,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Für das Schneiden der Grünhecken, das Zurückschneiden von Sträuchern und Bäumen und die Reparatur von Grenzmauern darf der Eigentümer soweit nötig den Boden des Nachbarn betreten. Er informiert den Nachbarn vorgängig und ist ihm für Schaden ersatzpflichtig. VI. Weitere Beschränkungen"
+          "text": "Für das Schneiden der Grünhecken, das Zurückschneiden von Sträuchern und Bäumen und die Reparatur von Grenzmauern darf der Eigentümer soweit nötig den Boden des Nachbarn betreten. Er informiert den Nachbarn vorgängig und ist ihm für Schaden ersatzpflichtig."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "5c09669143e634a6a9a521e997b5f10db0850cf42598a2dea5972b9e1a81db00"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "15f8027fa2fc281bc171cf4ed201ce1df7ae18735eda57d59a0c830679e4511e"
     },
     {
       "id": "kanton/ZH/230/art_180",
@@ -1466,14 +1655,52 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Es bleiben vorbehalten die Bestimmungen über die Flurund Feldwege, das Planungs- und Baugesetz, das Strassengesetz, das Wassergesetz, das Forstgesetzund die Bestimmungen zur Förderung der Landwirtschaft."
+          "text": "Es bleiben vorbehalten die Bestimmungen über die Flurund Feldwege, das Planungs- und Baugesetz, das Strassengesetz, das Wassergesetz, das Forstgesetz und die Bestimmungen zur Förderung der Landwirtschaft."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "b85973c1023d0298180e9cf60bb68f813665af64136178639fa096d9a218e8c0"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "56c6426bec1ac5836634f75b8529410db1b470798b126c4b527e464674f3f812"
+    },
+    {
+      "id": "kanton/ZH/230/art_181",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "181",
+      "artikelLabel": "§ 181",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/230/art_182",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "182",
+      "artikelLabel": "§ 182",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_183",
@@ -1485,14 +1712,99 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "VII. Enteignungsähnliche Beschränkungen bis"
+          "text": "Aufgehoben"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "8ddd4083fde39e54882a549cf8a49426403f0b12049e6b7fd3f9bd6f023861d1"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/230/art_183_bis",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "183_bis",
+      "artikelLabel": "§ 183bis",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Wirkt eine auf dem Grundeigentum lastende öffentlichrechtliche Eigentumsbeschränkung ähnlich einer Enteignung, so ist der Betroffene berechtigt, vom Gemeinwesen, das die Eigentumsbeschränkung erlassen hat, angemessene Entschädigung zu verlangen."
+        },
+        {
+          "absatz": "2",
+          "text": "Hat das entschädigungspflichtige Gemeinwesen die Eigentumsbeschränkung im Interesse einer anderen öffentlichrechtlichen Körperschaft angeordnet, so bleibt ihm das Rückgriffsrecht gewahrt."
+        },
+        {
+          "absatz": "3",
+          "text": "Für die Entschädigungspflicht und die Bemessung der Entschädigung sind die Verhältnisse bei Inkrafttreten der Eigentumsbeschränkung massgebend. Die Entschädigung wird zum jeweiligen Zinsfuss der Zürcher Kantonalbank für bestehende erste Hypotheken auf Wohnliegenschaften von dem Zeitpunkt an verzinst, in dem der Berechtigte sie geltend macht."
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "1463ac2f7b63ac64f6628aa3476e0e0d890c9947a4bac3366d77ed35796160e9"
+    },
+    {
+      "id": "kanton/ZH/230/art_183_quater",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "183_quater",
+      "artikelLabel": "§ 183quater",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Entschädigungen können vom Gemeinwesen innert fünf Jahren nach ihrer Ausrichtung ganz oder teilweise zurückverlangt werden, wenn die Eigentumsbeschränkung nachträglich wesentlich gemildert oder beseitigt wird. Bei Handänderungen geht die Rückerstattungspflicht auf den neuen Eigentümer über."
+        },
+        {
+          "absatz": "2",
+          "text": "Bei der Festsetzung des Zeitpunktes der Rückerstattung ist auf die Verhältnisse des Betroffenen Rücksicht zu nehmen. Wo Gründe der Billigkeit es rechtfertigen, ist die Rückerstattung bis spätestens auf den Zeitpunkt der Realisierung des erwirkten Vorteils durch Veräusserung oder Überbauung zu verschieben."
+        },
+        {
+          "absatz": "3",
+          "text": "Das Gemeinwesen hat die Pflicht zur Rückerstattung der Entschädigung im Grundbuch anmerken zu lassen."
+        },
+        {
+          "absatz": "4",
+          "text": "Bei Streitigkeiten über die Rückerstattung oder die Herabsetzung finden ebenfalls die §§ 32 ff. des Gesetzes über die Abtretung von Privatrechten Anwendung."
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "dc5ec83e6b07d578c5f90d1f9f507d2a57110c884ac4cfae8005c039b227fd5a"
+    },
+    {
+      "id": "kanton/ZH/230/art_183_ter",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "183_ter",
+      "artikelLabel": "§ 183ter",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Betroffene hat seine Ansprüche innert zehn Jahren seit dem Inkrafttreten der Eigentumsbeschränkung dem Gemeinwesen schriftlich anzumelden."
+        },
+        {
+          "absatz": "2",
+          "text": "Werden die Ansprüche ganz oder teilweise bestritten, so hat das Gemeinwesen das in den §§ 32 ff. des Gesetzes über die Abtretung von Privatrechten vorgesehene Verfahren einzuleiten."
+        },
+        {
+          "absatz": "3",
+          "text": "Das Gemeinwesen ist jederzeit berechtigt, das Nichtbestehen einer Entschädigungspflicht oder die Höhe der Entschädigung von sich aus feststellen zu lassen."
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "bfbe4738fafb575c71ab2adb9b1801810966d42c76891862b238b41de136d77b"
     },
     {
       "id": "kanton/ZH/230/art_184",
@@ -1507,10 +1819,10 @@
           "text": "In dem Fusswegrecht ist das Recht enthalten, über das dienende Grundstück beziehungsweise den dafür angewiesenen Fussweg zu gehen, nicht aber auch das Recht zu reiten, zu fahren oder Vieh zu treiben. Indessen ist, wenn nicht aus den Umständen auf ein ausgedehntes Recht geschlossen werden muss, der belastete Eigentümer nicht verpflichtet, im Interesse des Fusswegberechtigten, welcher hohe Lasten tragen will, die Bäume längs des Fussweges höher als zwei Meter aufzustücken."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "b3574f2657b462b338ad3a9f679c833c1947f08901fe34d2811a87e695a3ded9"
     },
     {
@@ -1526,10 +1838,10 @@
           "text": "Gebahnter Wege durch offenes Feld und Wald darf jeder Fussgänger sich bedienen, wenn kein besonderes Verbot im Wege steht."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "3ffcb07bb1b883cf623bb2a4bb0bc516e68313256a73a9ec3441a27505fbb6a3"
     },
     {
@@ -1545,10 +1857,10 @@
           "text": "Wer ein Fahrwegrecht hat, darf auch über den Weg reiten und festgehaltenes (gefangenes) Vieh darüber führen, aber aus dem Fahrwegrecht folgt nicht das Recht, schwere Lasten zu schleifen oder freigelassenes Vieh darüber zu treiben."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "cb8e587e3040fbb2b3d53b45824d83359ef4d6234a07e6fd693578627600d073"
     },
     {
@@ -1564,10 +1876,10 @@
           "text": "Der Winterweg (Fahrweg zur Winterzeit) ist, wenn nicht besondere Verträge etwas Abweichendes festsetzen, in der Zeitfrist von Martini bis Mitte März und nur, wenn der Boden mit Schnee bedeckt oder gefroren ist, auszuüben. Ausnahmsweise darf, wenn sich in milden Wintern bis Mitte Februar dazu keine Gelegenheit bietet, von da an auch über offenen (apern) Boden mit Wagen gefahren werden, insofern kein anderer Weg ohne namhafte Erschwerung benutzt werden kann."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "805ecb19f72627b675af55c99565fc82a94d5e8c92cf0342ab0349b2e6f1bf92"
     },
     {
@@ -1583,10 +1895,10 @@
           "text": "Die Breite der Wege und das Mass des freien Luftraumes über denselben werden durch die Landessitte und das Bedürfnis bestimmt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "231948187ff3f9254b6ae12e94b47c4697e82d1646dc7340fc7d5397a6697b7b"
     },
     {
@@ -1602,10 +1914,10 @@
           "text": "Das Weiderecht ist von seiten des belasteten Grundeigentümers jederzeit ablösbar gegen volle Entschädigung des Berechtigten, sei es durch Bezahlung oder einstweilige Versicherung und Verzinsung einer dem schatzungsmässigen Werte des Rechts entsprechenden Geldsumme, sei es durch eigentümliche Überlassung eines entsprechenden Teils des pflichtigen Grundstückes an den Berechtigten."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "8d23bac6a12b85f1b02d1dacad478fb62214ed67dbf31855b03018d90c5dd0ef"
     },
     {
@@ -1621,10 +1933,10 @@
           "text": "Erstreckt sich das Weiderecht über mehrere verbundene Grundstücke, die verschiedenen Eigentümern zugehören, so ist ein einzelner Grundeigentümer gegen den Willen der Mehrheit und unter der Voraussetzung zur Ablösung berechtigt, dass er selber durch Umzäunung für den nötigen Abschluss seines Grundstückes gegen das weidende Vieh sorgt. Beschliesst aber die Mehrheit der betreffenden Grundeigentümer die Ablösung, so hat sich die Minderheit derselben ebenfalls zu unterziehen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "99870e118cae30cfb962793de6b25d6b0c6bbaa3b07be7813193b8e98f5134ed"
     },
     {
@@ -1641,14 +1953,14 @@
         },
         {
           "absatz": "2",
-          "text": "Die forstgesetzlichen Bestimmungenbleiben vorbehalten."
+          "text": "Die forstgesetzlichen Bestimmungen bleiben vorbehalten."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "90c5f6c4e7f5930b8baae3439035d0ffef76ef849d2904d444ad88a6c40e5f7e"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "53d99beb345fcef4298bfc2b694f16c02763dc84e6a6a19b28aac8d301f39dd2"
     },
     {
       "id": "kanton/ZH/230/art_192",
@@ -1663,10 +1975,10 @@
           "text": "Insofern die Weid- oder Holzungsrechte aus der ursprünglichen Gemeindeverbindung hervorgegangen sind und einer Genossenschaft von Gerechtigkeitsbesitzern zustehen, während der Boden der ursprünglich gemeinen Weide oder Waldung einer Gemeinde zugehört, so ist sowohl die Gemeinde als die Genossenschaft der Gerechtigkeitsbesitzer berechtigt, eine Auseinandersetzung ihrer verschiedenen Ansprüche durch Teilung des Bodens zu fordern. Ist die Realteilung wegen forstgesetzlicher Bestimmungen nicht zulässig, so hat eine Ablösung durch Geldentschädigung stattzufinden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "1d1eff01b6934f6f4ac588a87804a4050397f2b71379ea18aaedc5b817b6538c"
     },
     {
@@ -1682,10 +1994,10 @@
           "text": "Bei solchen Auseinandersetzungen ist der Wert des Eigentums, abgesehen von den damit dem Eigentümer vorbehaltenen Nutzungen, je nach der grösseren oder geringeren Bedeutung der darin liegenden Rechte und der Beschränkung des Gerechtigkeitsbesitzes zu einem Sechstel bis zu einem Achtel des gesamten Grundstückes anzuschlagen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "0a64c885067593098229e35506bde33edef40777bf7e0fa33442324a107ed204"
     },
     {
@@ -1702,40 +2014,40 @@
           "items": [
             {
               "marke": "a",
-              "text": "zugunsten der Gebäudeversicherungsanstalt für die Versicherungsprämien (§46 Abs.3 des Gesetzes über die Gebäudeversicherung),"
+              "text": "zugunsten der Gebäudeversicherungsanstalt für die Versicherungsprämien (§ 46 Abs. 3 des Gesetzes über die Gebäudeversicherung),"
             },
             {
               "marke": "b",
-              "text": "für Forderungen der Gemeinde aus den im Interesse der Feuerpolizei getroffenen baulichen Massnahmen gemäss §4 Abs. 2 des genannten Gesetzes,"
+              "text": "für Forderungen der Gemeinde aus den im Interesse der Feuerpolizei getroffenen baulichen Massnahmen gemäss § 4 Abs. 2 des genannten Gesetzes,"
             },
             {
               "marke": "c",
-              "text": "zugunsten des Staates oder der Gemeinden gemäss §118 des Wassergesetzes vom 12. Dezember 2022 (Ws G), d."
+              "text": "zugunsten des Staates oder der Gemeinden gemäss § 118 des Wassergesetzes vom 12. Dezember 2022 (WsG), d."
             },
             {
               "marke": "e",
-              "text": "zugunsten der Gemeinden für die Grundsteuern (§208 Steuergesetz),"
+              "text": "zugunsten der Gemeinden für die Grundsteuern (§ 208 Steuergesetz),"
             },
             {
               "marke": "f",
-              "text": "zugunsten des Staates, der Gemeinden und der Werkträger Beiträge und Anschlussgebühren für öffentliche Unternehmungen und Erschliessungsanlagen, für Beiträge an die Kosten der Erstellung von Privatstrassen und für Ersatzabgaben aus der Befreiung von der Pflicht zur Erstellung von Fahrzeugabstellplätzen (§246 Planungsund Baugesetz),"
+              "text": "zugunsten des Staates, der Gemeinden und der Werkträger Beiträge und Anschlussgebühren für öffentliche Unternehmungen und Erschliessungsanlagen, für Beiträge an die Kosten der Erstellung von Privatstrassen und für Ersatzabgaben aus der Befreiung von der Pflicht zur Erstellung von Fahrzeugabstellplätzen (§ 246 Planungsund Baugesetz),"
             },
             {
               "marke": "g",
-              "text": "zugunsten der öffentlichrechtlichen Genossenschaften und der vertraglich zusammengeschlossenen Grundeigentümer, welche gemeinschaftlich eine Verbesserungsmassnahme im Sinne der §§45 bis 140 des Landwirtschaftsgesetzesdurchführen oder ein geschaffenes Werk unterhalten oder betreiben, für die Ansprüche gegen die Beteiligten,"
+              "text": "zugunsten der öffentlichrechtlichen Genossenschaften und der vertraglich zusammengeschlossenen Grundeigentümer, welche gemeinschaftlich eine Verbesserungsmassnahme im Sinne der §§ 45 bis 140 des Landwirtschaftsgesetzes durchführen oder ein geschaffenes Werk unterhalten oder betreiben, für die Ansprüche gegen die Beteiligten,"
             },
             {
               "marke": "h",
-              "text": "zugunsten des Kantons und der Gemeinden für den Mehrwertausgleich (§§9 und 24 Mehrwertausgleichsgesetz)."
+              "text": "zugunsten des Kantons und der Gemeinden für den Mehrwertausgleich (§§ 9 und 24 Mehrwertausgleichsgesetz)."
             }
           ]
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "a183bcbe6ce62f2b9c65870b76ad51c10fecb15e0d7bfbea62c0eebb08ef6933"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "1c266acbb9c6fe60833c65f36fb8da675fd10cf19358a02d7e80cefff281a230"
     },
     {
       "id": "kanton/ZH/230/art_195",
@@ -1747,14 +2059,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die gesetzlichen Pfandrechte bedürfen zu ihrer Entstehung keiner Eintragung. Die in §194 lit.c und f genannten erlöschen jedoch, wenn sie nicht innerhalb von sechs Monaten nach der Fälligkeit der Forderung eingetragen werden, diejenigen nach §194 lit.e, wenn sie nicht eingetragen werden innerhalb von drei Jahren nach der Handänderungoderbeieinersolchen,diekeine Eintragungim Grundbuch voraussetzt, seit der Wahrnehmung durch die für die Einschätzung zuständige Steuerbehörde. Die Pfandrechte gemäss §194 lit.g erlöschen, wenn sie nicht innerhalb von zwei Jahren nach der Fälligkeit des Anspruchs eingetragen werden."
+          "text": "Die gesetzlichen Pfandrechte bedürfen zu ihrer Entstehung keiner Eintragung. Die in § 194 lit. c und f genannten erlöschen jedoch, wenn sie nicht innerhalb von sechs Monaten nach der Fälligkeit der Forderung eingetragen werden, diejenigen nach § 194 lit. e, wenn sie nicht eingetragen werden innerhalb von drei Jahren nach der Handänderung oder bei einer solchen, die keine Eintragung im Grundbuch voraussetzt, seit der Wahrnehmung durch die für die Einschätzung zuständige Steuerbehörde. Die Pfandrechte gemäss § 194 lit. g erlöschen, wenn sie nicht innerhalb von zwei Jahren nach der Fälligkeit des Anspruchs eingetragen werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "b22cceddc795a8be2f03f826a1c22242d43f5e09f094b36e820c08321ff9877b"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "79f85f28f5a10e5722b071d41a1c0ce6c6742bcbe274ed9851dc5a8358fc35e2"
     },
     {
       "id": "kanton/ZH/230/art_196",
@@ -1766,14 +2078,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Wirksamkeit der gesetzlichen Pfandrechte richtet sich nach dem Zeitpunkt der Entstehung der Forderung. Sie gehen allen übrigen Pfandrechten vor. Ihre eigene Rangordnung bestimmt sich"
+          "text": "Die Wirksamkeit der gesetzlichen Pfandrechte richtet sich nach dem Zeitpunkt der Entstehung der Forderung. Sie gehen allen übrigen Pfandrechten vor. Ihre eigene Rangordnung bestimmt sich nach der Reihenfolge ihrer Aufzählung in § 194. Die in § 194 lit. f genannten Pfandrechte stehen untereinander im gleichen Rang."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "e753ba0b48737512e05a7493a103241b5fee32d729d6b9232aee4bc958a9214b"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "596e7941487926907fbcdc8ba03b211e1c0c6af7ea7b2fcaa99d2033f93956f0"
     },
     {
       "id": "kanton/ZH/230/art_197",
@@ -1797,16 +2109,16 @@
             },
             {
               "marke": "e",
-              "text": "der Staat für Staatsbeiträge an Investitionen, soweit nicht von Gesetzes wegen Pfandrechte gemäss §194 lit.c und f bestehen und die Staatsbeiträge nicht Gemeinden oder Gemeindeverbindungen ausgerichtet werden."
+              "text": "der Staat für Staatsbeiträge an Investitionen, soweit nicht von Gesetzes wegen Pfandrechte gemäss § 194 lit. c und f bestehen und die Staatsbeiträge nicht Gemeinden oder Gemeindeverbindungen ausgerichtet werden."
             }
           ]
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "71add3e7c04ed3ea940ac8b1e52adfa0cab3fa1579d744aba6d2bb6f0e0beb63"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "142bde037cddfde18f36fe83c645eaa52c7acdaabfb6ee0b4246384c23e5ba2a"
     },
     {
       "id": "kanton/ZH/230/art_198",
@@ -1821,10 +2133,10 @@
           "text": "Auf Grundstücke, die zur Erfüllung der gemäss der Gesetzgebung unerlässlichen öffentlichen Aufgaben der Gemeinde bestimmt sind, darf ohne Zustimmung des Regierungsrates ein Grundpfand nicht errichtet werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "49e1a5a610be753c33321b0cac6622d3e55ffbe1e0d40f397a5072e7f57a5086"
     },
     {
@@ -1840,10 +2152,10 @@
           "text": "Will der Eigentümer eines durch Brand zerstörten oder beschädigten Gebäudes dasselbe nicht wiederherstellen, so sind die Pfandgläubiger verpflichtet, die Versicherungssumme anzunehmen und an ihren Forderungen abschreiben zu lassen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "c1fb2ba98ea08b4d082b65c2630caeb65fc5b552c276c7624d591857d1cf0c95"
     },
     {
@@ -1859,10 +2171,10 @@
           "text": "Als übliche Zinstage gelten der erste Mai und der erste November (Art. 844 Abs. 1 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "23e2c7e43ad13237bf5d9763d3d659b8171ff5ff8722f4d06da8abfc7367651d"
     },
     {
@@ -1878,10 +2190,10 @@
           "text": "Die Kündbarkeit der Schuldbriefe kann nicht weiter beschränkt werden als so, dass der Schuldner nicht vor Ablauf von sechs Jahren, der Gläubiger nicht vor Ablauf von 24 Jahren auf die gesetzlich zulässige Zeit künden darf (Art. 844 Abs. 2 ZGB). und -vermittler"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "2b9ae875da6d36fecfbb91d00ac56c4125cb7600c5caa9c1468f037ed343d604"
     },
     {
@@ -1898,14 +2210,14 @@
         },
         {
           "absatz": "2",
-          "text": "Der Regierungsrat ist ermächtigt, solche Bewilligungen inskünftig nur noch an öffentliche Anstalten des Kantons oder der Gemeinden sowie an gemeinnützige Unternehmungen zu erteilen (Art.907 ZGB)."
+          "text": "Der Regierungsrat ist ermächtigt, solche Bewilligungen inskünftig nur noch an öffentliche Anstalten des Kantons oder der Gemeinden sowie an gemeinnützige Unternehmungen zu erteilen (Art. 907 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "fafe38a17aee165735e7285b9a6521517106281bc5744f54d10bb92f8d2d7a9f"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "9952c4592af0ffe66e711dbe44ffc16f91d3256416095248aec7ef4123b503da"
     },
     {
       "id": "kanton/ZH/230/art_203",
@@ -1924,10 +2236,10 @@
           "text": "Der Zins darf nicht vorausgenommen werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "10a74cf77cc9e0fea1626e29642bc203878a057cbcd6a73a41b0d5677fed6850"
     },
     {
@@ -1947,10 +2259,10 @@
           "text": "Die Ausbedingung jeder weiteren Vergütung für das Darlehen oder für die Aufbewahrung und Erhaltung des Pfandes ist nichtig."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "36f9689418df90f27e85732dff84ef7ffb311c13f1922565c9f1edcc480e51de"
     },
     {
@@ -1970,10 +2282,10 @@
           "text": "Der Verpfänder ist berechtigt, das Pfand jederzeit durch Zahlung des Darlehens und der Zinsen einzulösen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "7f07521abdfa8848153e1ed157fca2d7ac0c428b344823661b6046b12debf652"
     },
     {
@@ -1989,10 +2301,10 @@
           "text": "Der Pfandleiher hat die bei ihm hinterlegten Pfänder gegen Feuergefahr zu versichern."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "5b91a0944c496422c5d243f9aa435977eaa31c4df767fd71082ca3f23472f09d"
     },
     {
@@ -2008,10 +2320,10 @@
           "text": "Der Verkauf der Pfandgegenstände erfolgt ohne vorgängige Betreibung durch das Betreibungsamt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "993f07439d88e2d49beb19932d8feb3fec0a4052a3b7b173c4d90c2952105db1"
     },
     {
@@ -2027,10 +2339,10 @@
           "text": "Gold- und Silbersachen dürfen nicht unter dem Metallwert, der durch Schätzung festzustellen und im Gantprotokoll vorzumerken ist, versteigert werden. Für die Richtigkeit der Schätzung haftet die Gantbeamtung, welche ihrerseits das Gutachten Sachverständiger einzuholen berechtigt ist. Wenn auf der Gant weniger als der Metallwert geboten wird, so soll dieser von der Gantbeamtung durch freihändigen Verkauf erzielt werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "1a26a15ed400dc9d2adae01ca87bdf2b79ae8cfc7edac707f94e77219a69b182"
     },
     {
@@ -2050,10 +2362,10 @@
           "text": "Der Verkauf ist auf Verlangen des Verpfänders einzustellen, sobald ein Betrag erlöst ist, welcher hinreicht, die Forderung des Pfandleihers an Kapital, Zins und Kosten zu decken."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "43e4e682cc8ec279001a0f02d69ddc4e4c13a0b1291f8ef675aef155cd53e8f0"
     },
     {
@@ -2069,11 +2381,30 @@
           "text": "Ist der Anspruch des Verpfänders auf den Überschuss des Pfanderlöses durch Verjährung erloschen, so fällt der hinterlegte Betrag in das Armengut der Gemeinde."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "5156a21a64a9f51da3ef068790010f81f9246f9b50a0ea9e7a4618e2f1f929a4"
+    },
+    {
+      "id": "kanton/ZH/230/art_211",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "211",
+      "artikelLabel": "§ 211",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_212",
@@ -2089,14 +2420,14 @@
         },
         {
           "absatz": "2",
-          "text": "Die Verordnungregelt die Einzelheiten über die Geschäftsführung und deren Kontrolle."
+          "text": "Die Verordnung regelt die Einzelheiten über die Geschäftsführung und deren Kontrolle."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "6a78d81f2aadbe856139831c7aabd0589292b1f9c6899ff6450f173989ccc0ba"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "f0df78c5397a53446fcb142b83d315658b2183ba017e673ee8cb1e439da091f4"
     },
     {
       "id": "kanton/ZH/230/art_213",
@@ -2108,14 +2439,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Sind die für die Erteilung der Bewilligung als Pfandleiher notwendigen Voraussetzungen nicht mehr vorhanden oder wird den §§204 bis 211 dieses Gesetzes oder den gestützt darauf erlassenen Verordnungen wiederholt oder in grober Weise zuwidergehandelt, kann die Bewilligung entzogen werden."
+          "text": "Sind die für die Erteilung der Bewilligung als Pfandleiher notwendigen Voraussetzungen nicht mehr vorhanden oder wird den §§ 204 bis 211 dieses Gesetzes oder den gestützt darauf erlassenen Verordnungen wiederholt oder in grober Weise zuwidergehandelt, kann die Bewilligung entzogen werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "668d6efa6271d24ae72646f779e3eeeef66911209cee45f48f829fc1e23217d5"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "cc175ec850f2e7c5c171ba7d131da0710234849cbc2f7ceaab951cccd39401b5"
     },
     {
       "id": "kanton/ZH/230/art_214",
@@ -2127,14 +2458,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Konsumkreditgeber und Konsumkreditvermittler benötigen eine Bewilligung der zuständigen Direktion des Regierungsrates, soweit das Bundesgesetz über den Konsumkreditsie der Bewilligungspflicht unterstellt."
+          "text": "Konsumkreditgeber und Konsumkreditvermittler benötigen eine Bewilligung der zuständigen Direktion des Regierungsrates, soweit das Bundesgesetz über den Konsumkredit sie der Bewilligungspflicht unterstellt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "0b5a12b0fa5885327b98c4e2c92fd38c4ad9b31daeddb0a6c063203f90807386"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "a68862cc682dcec5c108f3b872737f6295571e9d5b95d95cb04e802f584a76c1"
     },
     {
       "id": "kanton/ZH/230/art_215",
@@ -2153,10 +2484,10 @@
           "text": "Diese Kreditgeschäfte dürfen nicht vom Eingehen weiterer Verpflichtungen wie der Übernahme von Geschäftsanteilen, Obligationen oder Waren oder der Entrichtung von Jahresbeiträgen abhängig gemacht werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "87c21d4f5776b2b907b974ee87d1a3ad9d40b3a9d6558046643f142f47a8cc8e"
     },
     {
@@ -2169,18 +2500,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Wer als Bewilligungspflichtiger das Gewerbe des Pfandleihers, Kreditgebers oder Kreditvermittlers ohne Bewilligung ausübt, oder wer als Pfandleiher die Vorschriften über die Geschäftsführung verletzt, wird mit Busse von 200 bis 100000 Franken bestraft. Die Strafverfolgung ist Sache der Statthalterämter."
+          "text": "Wer als Bewilligungspflichtiger das Gewerbe des Pfandleihers, Kreditgebers oder Kreditvermittlers ohne Bewilligung ausübt, oder wer als Pfandleiher die Vorschriften über die Geschäftsführung verletzt, wird mit Busse von 200 bis 100 000 Franken bestraft. Die Strafverfolgung ist Sache der Statthalterämter."
         },
         {
           "absatz": "2",
           "text": "Gesellschaften haften solidarisch für Bussen und Kosten, die den an ihrer Geschäftsführung beteiligten Personen auferlegt werden."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "485c654bc0cf7712006dc0f2d9d1dd2651df9da6610ce8a09771eb82aff756a1"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "eacfbf5d5de179526e224a60f08ad49c3188ccabc975d207812442d62d2555d5"
     },
     {
       "id": "kanton/ZH/230/art_217",
@@ -2195,10 +2526,10 @@
           "text": "Die Anlage des Grundbuches erfolgt nach politischen Gemeinden. Das Obergericht kann für einzelne Gemeinden andere Vorschriften aufstellen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "2169c2234c3a3028a78bee20cf4ec5c69a9c47add8774e825d743d7cb60b03a8"
     },
     {
@@ -2211,14 +2542,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die neben den Vorschriften des Bundes für die Grundbuchführung, insbesondere mit Rücksicht auf die bisherigen Einrichtungen und nach Massgabe des Bedürfnisses weiter erforderlichen Vorschriften werden durch eine Verordnung des Obergerichtesfestgestellt."
+          "text": "Die neben den Vorschriften des Bundes für die Grundbuchführung, insbesondere mit Rücksicht auf die bisherigen Einrichtungen und nach Massgabe des Bedürfnisses weiter erforderlichen Vorschriften werden durch eine Verordnung des Obergerichtes festgestellt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "60da8cfb048a26b23f9d84ec04c84de411322ea6ab73c976bd45becf2bf6c82d"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "b164ec74b519c440b9582ac2baea1b3a129e7828cc0e5f2ab0361b37f5b825b5"
     },
     {
       "id": "kanton/ZH/230/art_219",
@@ -2233,10 +2564,10 @@
           "text": "Durch Beschluss des Kantonsrates kann angeordnet werden, dass an Stelle der Belege für die Grundbucheintragung ein Urkundenprotokoll treten soll, dessen Einschreibungen die öffentliche Beurkundung herstellen (Art. 948 ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "324b7b5b85afa3b111c9bff8ca6bae7abaf10312813d2f648060c686f8917dd8"
     },
     {
@@ -2256,10 +2587,10 @@
           "text": "Das Obergericht erlässt die näheren Vorschriften über die Art der Ausstellung, Prüfung und Unterzeichnung der Pfandtitel. Es kann für die Kontrolle weitere Bestimmungen aufstellen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "0d2145a39476bbf4483f40718a31f05693619cdaf52aa487d4569f995bfe6fbd"
     },
     {
@@ -2275,10 +2606,10 @@
           "text": "Die Einteilung des Kantons in Grundbuchkreise, die Organisation der Grundbuchämter und die Gebühren richten sich nach dem Notariatsgesetz."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "fdbd04c964a46051e2ae22ba1089ded5e3b5f053820d7d2a6a73a3ed472346e4"
     },
     {
@@ -2294,10 +2625,10 @@
           "text": "Fünfter Abschnitt: Obligationenrecht"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "5225c9cec8d8af95094eb3c986b56b14da112462973eafac9e09d71475ce8614"
     },
     {
@@ -2310,14 +2641,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Freiwillige öffentliche Versteigerungen bedürfen der Mitwirkung des Gemeindeammanns. Ausgenommen sind die Versteigerungen von Staatsbehörden und die Versteigerungen von Gemeinden und öffentlichrechtlichen Korporationen über den Ertrag der Gemeinde- oder Korporationsgüter, die Jahresnutzungen, die Verpachtung der gemeinsamen Grundstücke und über das Halten von Zuchttieren. §§224–229."
+          "text": "Freiwillige öffentliche Versteigerungen bedürfen der Mitwirkung des Gemeindeammanns. Ausgenommen sind die Versteigerungen von Staatsbehörden und die Versteigerungen von Gemeinden und öffentlichrechtlichen Korporationen über den Ertrag der Gemeinde- oder Korporationsgüter, die Jahresnutzungen, die Verpachtung der gemeinsamen Grundstücke und über das Halten von Zuchttieren. §§ 224–229."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "933dcdae3bf02ef1058d8319e674b27b4519396a566fdc13eed3a76e8bc78e3e"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "6249efc40b1aad06f9b78bc759842457fd6edb95c3385ca6c2baf6187e3dd88c"
     },
     {
       "id": "kanton/ZH/230/art_229_a",
@@ -2336,10 +2667,10 @@
           "text": "Eine Sicherheitsleistung darf 50% des mutmasslichen Mäklerlohnes nicht übersteigen und ist bei Zustandekommen eines Mietvertrages an den Mäklerlohn anzurechnen. Kommt innert sechs Monaten nach Abschluss des Mäklervertrages kein Mietvertrag zustande, ist die Sicherheitsleistung dem Mietinteressenten zurückzuerstatten."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "35ec441facb473055a7d70931560230bb922f1021d387d5f210c95695ce767c7"
     },
     {
@@ -2352,18 +2683,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Beträgt der Leerwohnungsbestand im Kanton höchstens 1,5%, sind Vermieterinnen und Vermieter von Wohnräumen verpflichtet, beim Abschluss eines Mietvertrages das in Art.270 Abs.2 ORvorgesehene Formular zu verwenden."
+          "text": "Beträgt der Leerwohnungsbestand im Kanton höchstens 1,5%, sind Vermieterinnen und Vermieter von Wohnräumen verpflichtet, beim Abschluss eines Mietvertrages das in Art. 270 Abs. 2 OR vorgesehene Formular zu verwenden."
         },
         {
           "absatz": "2",
-          "text": "Das kantonale statistische Amt ermittelt jeweils per 1.Juni den Leerwohnungsbestand im Kanton. Liegt der Leerwohnungsbestand gegenüber dem Vorjahr neu unter dem Wert von 1,5%, ordnet der Regierungsrat die Pflicht zur Verwendung des Formulars an. Liegt er neu über dem Wert von 1,5%, hebt der Regierungsrat diese Pflicht wieder auf. Eine entsprechende Änderung der Formularpflicht gilt ab 1. November des betreffenden Jahres."
+          "text": "Das kantonale statistische Amt ermittelt jeweils per 1. Juni den Leerwohnungsbestand im Kanton. Liegt der Leerwohnungsbestand gegenüber dem Vorjahr neu unter dem Wert von 1,5%, ordnet der Regierungsrat die Pflicht zur Verwendung des Formulars an. Liegt er neu über dem Wert von 1,5%, hebt der Regierungsrat diese Pflicht wieder auf. Eine entsprechende Änderung der Formularpflicht gilt ab 1. November des betreffenden Jahres."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "b9ce695d3297bdf88540a1919da3c6434e56faaa7eeeff9fedb34e7220cb23f4"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "139f5444c635daa145bb5c13b7c9ea1cb62790968fdf52ad9efbc8301be9d2ff"
     },
     {
       "id": "kanton/ZH/230/art_229_c",
@@ -2378,10 +2709,10 @@
           "text": "Die vom Regierungsrat bezeichnete Direktion erteilt die Bewilligung zur Ehe- und Partnerschaftsvermittlung und übt die Aufsicht aus (Art. 406 c Abs. 1 OR)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "26aaa68bb45b165d7830b24600ec8b586ed697457718caea87b5aee88296e7db"
     },
     {
@@ -2397,10 +2728,10 @@
           "text": "Wer ein rechtliches Interesse an der Vorzeigung einer beweglichen Sache hat und das Vorhandensein dieses Interesses bescheinigt, darf vom Inhaber fordern, dass er sie zur Einsichtnahme vorlege."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "aa73dc90d0743d5ab88f5fd040dae4099457b05416fa077c3ab8ea2986a61fa1"
     },
     {
@@ -2416,10 +2747,10 @@
           "text": "Die Einsicht gerichtlicher oder notarialischer Akten und Protokolle oder anderer öffentlicher Urkunden ist Privatpersonen gestattet, sofern ein rechtliches Interesse an der Einsichtnahme bescheinigt wird."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "dbf5a8e89b97aaae1ccd227348176c0c17e251d548b1e9fb773f14a60ef12f5d"
     },
     {
@@ -2435,10 +2766,10 @@
           "text": "Die Einsichtnahme in eine Privaturkunde kann von jedermann, der nach dem Inhalt der Urkunde als Beteiligter erscheint, insoweit verlangt werden, als ein rechtliches Interesse an der Einsichtnahme bescheinigt wird. Insbesondere gilt dies für: das Testament mit Bezug auf alle darin bedachten Personen und die gesetzlichen Erben, die über ein Rechtsgeschäft vorhandenen Urkunden, Korrespondenzen, Empfangsscheine, Quittungen für die Vertragsparteien, die Rechnungen samt den Belegen im Verhältnis des Rechnungsstellers und Rechnungsnehmers, die Zinsbücher der Gläubiger für die Schuldner, die Bücher der Börsenagenten und Sensale für die Personen, deren Geschäfte sie vermitteln, die Geschäftsbücher der Gewerbetreibenden und Handwerker für ihre Kunden und Angestellten, Arbeiter und Gesellen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "3757a127d919585e66ddd3f27267b2dc99395858e0f2a58e1b708f3f86e39a83"
     },
     {
@@ -2454,10 +2785,10 @@
           "text": "Gefahr und Kosten der Vorlegung trägt der Gesuchsteller."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "a251e254d6b3d1749a72fea0f2f4a754204f53124404dd8c53b491367d4d13f7"
     },
     {
@@ -2473,10 +2804,10 @@
           "text": "Der Editionspflichtige haftet für allen Schaden, wenn er die Vorlegung ohne zureichenden Grund verweigert oder auf arglistige Weise verunmöglicht."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "789d6061eef9c80f0311e84006a520bc004916514b7e7da4b9b4980c1f72d4e4"
     },
     {
@@ -2489,14 +2820,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Vorbehalten bleiben die besonderen Bestimmungen über die Öffentlichkeit der im Schweizerischen Zivilgesetzbuchvorgesehenen Register und über die Vorlegung der Geschäftsbücher von Kaufleuten. bis quater §§235–235."
+          "text": "Vorbehalten bleiben die besonderen Bestimmungen über die Öffentlichkeit der im Schweizerischen Zivilgesetzbuch vorgesehenen Register und über die Vorlegung der Geschäftsbücher von Kaufleuten. §§ 235bis–235quater."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "85afc7acf2694890082f92b5f39c573162ecb519e390530cc823c77b50c366bc"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "ad707ae997c8ea230200d32b052bf7c8556ad1b176e6fcc9805e4faace68e492"
     },
     {
       "id": "kanton/ZH/230/art_235_a",
@@ -2511,10 +2842,10 @@
           "text": "Sechster Abschnitt: Beurkundung und Beglaubigung"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "568cded495d49a8b7e6e1402b252d869a1c946ddf8e2eefc64b3b130e46a8ff6"
     },
     {
@@ -2530,10 +2861,10 @@
           "text": "Die öffentliche Beurkundung von Willenserklärungen und die Errichtung öffentlicher Urkunden über Tatbestände und Vorgänge sowie über rechtliche Verhältnisse erfolgen durch den Notar."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "9180c2d42d3937034c8cfb191f03319d4472023209441f54e508323e141a680b"
     },
     {
@@ -2549,10 +2880,10 @@
           "text": "Wer eine öffentliche Urkunde errichtet, darf davon elektronische Ausfertigungen erstellen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "d76abfe58f55e6dc3c790b236af2184c10d1fba2fcc0240c738cb77b0c90a5db"
     },
     {
@@ -2572,10 +2903,10 @@
           "text": "Für die Beurkundung von Rechtsgeschäften über dingliche oder vormerkbare persönliche Rechte an Grundstücken ist nur der Notar des Kreises zuständig, in welchem das Grundstück oder ein Teil davon liegt. Die Beurkundung von Rechtsgeschäften über mehrere, in verschiedenen Kreisen gelegene Grundstücke kann von jedem Notar vorgenommen werden, in dessen Kreis ein Grundstück oder ein Teil eines Grundstücks liegt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "f8f8c2b4c5346d448a368f896dec2f391ecf8c5beaa3b97f3d8cec314a356c9f"
     },
     {
@@ -2591,10 +2922,10 @@
           "text": "Der Notar ist für die Richtigkeit der von ihm bezeugten Tatsachen und für die Beobachtung der vorgeschriebenen Formen verantwortlich."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "92184a6b363ea99b4e1a91655be7f907bfddfd7f4af500741f16cd5ac4d7272a"
     },
     {
@@ -2618,10 +2949,10 @@
           "text": "Der Notar vergewissert sich, dass der Inhalt der von den Parteien vorgelegten oder für sie von ihm aufgesetzten Urkunde dem wirklichen Parteiwillen entspricht, und er sorgt dafür, dass die Urkunde diesen klar und vollständig zum Ausdruck bringt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "0ec6b7a3013984ed0cec98a115efc9f4212478b9a243e8b6c044fdf9dd05a3d0"
     },
     {
@@ -2641,10 +2972,10 @@
           "text": "Sodann vollzieht der Notar die Beurkundung, indem er auf der Urkunde erklärt, diese enthalte den ihm mitgeteilten Parteiwillen, sei von den Parteien zur Kenntnis genommen, von ihnen genehmigt und unterzeichnet worden. Er siegelt und unterzeichnet die Urkunde unter Angabe von Ort und Zeit der Beurkundung."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "09902f315b99e10bec3743adc8c8d5915556d0b297f9a2d2ec4200faf209e7bb"
     },
     {
@@ -2657,14 +2988,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Beurkundungshandlungen gemäss §240 haben im Beisein aller beteiligten Personen in der Regel im Amtslokal des Notars zu geschehen und sind ohne wesentliche Unterbrechung zu Ende zu führen."
+          "text": "Beurkundungshandlungen gemäss § 240 haben im Beisein aller beteiligten Personen in der Regel im Amtslokal des Notars zu geschehen und sind ohne wesentliche Unterbrechung zu Ende zu führen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "ad1f02f3843de2bca080cb0487152091ee96ed846bb2f200b5b80a6c4c13f4b1"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "357c46e55754f7cc96a88ace0b22f111fdd5045fb86fe5aae6f1f87ed3f551e2"
     },
     {
       "id": "kanton/ZH/230/art_242",
@@ -2683,10 +3014,10 @@
           "text": "Der Übersetzer hat die Urkunde ebenfalls zu unterzeichnen und zu bezeugen, dass die Übersetzung gewissenhaft erfolgt sei."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "8250a736a81901ae1680565e0addb1ccbefc7ee8d29272265c7f03531e340d4a"
     },
     {
@@ -2702,11 +3033,30 @@
           "text": "Die schriftliche Form genügt für den Vertrag, der zwischen dem Enteigner und dem Enteigneten nach erfolgter Planauflage über die Abtretung oder Belastung von Grundeigentum abgeschlossen wird."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "74b08da45d94eb2e89819ba748c443ace6784ae124cb3a878f15a6925a2432a1"
+    },
+    {
+      "id": "kanton/ZH/230/art_244",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "244",
+      "artikelLabel": "§ 244",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_245",
@@ -2718,14 +3068,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das Obergericht erlässt durch Verordnungnähere Bestimmungen über das Beurkundungsverfahren, insbesondere bei Parteien, die nicht unterzeichnen können, sowie über die Form der Beurkundung und die Aufbewahrung der Urkunden. Es kann für bestimmte Beurkundungsgeschäfte abweichende Vorschriften aufstellen."
+          "text": "Das Obergericht erlässt durch Verordnung nähere Bestimmungen über das Beurkundungsverfahren, insbesondere bei Parteien, die nicht unterzeichnen können, sowie über die Form der Beurkundung und die Aufbewahrung der Urkunden. Es kann für bestimmte Beurkundungsgeschäfte abweichende Vorschriften aufstellen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "6738f4ff98106787aab8b2ffe9deddfafb1e487f6b308b4306381a4f8037465b"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "941d3db35d2f948f5725f5420a9353007bb661176491aedd02fe94ca6582e102"
     },
     {
       "id": "kanton/ZH/230/art_246",
@@ -2737,7 +3087,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Jeder Gemeindeammannund jeder Notar des Kantons ist zur Vornahme von Beglaubigungen ermächtigt."
+          "text": "Jeder Gemeindeammann und jeder Notar des Kantons ist zur Vornahme von Beglaubigungen ermächtigt."
         },
         {
           "absatz": "2",
@@ -2745,14 +3095,14 @@
         },
         {
           "absatz": "3",
-          "text": "Auf Verlangen beglaubigt die vom Regierungsrat bezeichnete Stelle die Unterschriften der in Abs.1 und 2 aufgeführten Personen und bezeugt deren Befugnis, Beglaubigungen vorzunehmen."
+          "text": "Auf Verlangen beglaubigt die vom Regierungsrat bezeichnete Stelle die Unterschriften der in Abs. 1 und 2 aufgeführten Personen und bezeugt deren Befugnis, Beglaubigungen vorzunehmen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "bcb1b7a89dad15a88bba13f1f1e291ac7151ba12f397ab7aea44afc9dc9a43cb"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "db8ba921457a646e4a9c2307844f82bb0cac7d6ffaf3ce5a929e451322e540a8"
     },
     {
       "id": "kanton/ZH/230/art_247",
@@ -2779,10 +3129,10 @@
           "text": "Die Beglaubigung bezeichnet die Art, wie die Unterschrift vollzogen wurde, sowie die Art der Feststellung der Identität des Unterzeichners oder des Bevollmächtigten. Sie ist zu datieren, zu unterzeichnen und mit Siegel oder Stempel zu versehen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "bd4d86f2ec9390a56f5e39beee3cde2cad207b7a1bc601383b372ec41ecaf9dc"
     },
     {
@@ -2795,18 +3145,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Zur Ausstellung der beglaubigten Abschrift einer Urkunde oder zur Beglaubigung einer vorgelegten Abschrift oder Kopie ist erforderlich, 1.dass sich der Beamte von der Echtheit des ihm vorgelegten Originals überzeugt hat; ist das nicht möglich, so ist dieser Umstand in der Beglaubigung ausdrücklich zu erwähnen, 2.dass die Abschrift oder Kopie mit dem Original verglichen wurde."
+          "text": "Zur Ausstellung der beglaubigten Abschrift einer Urkunde oder zur Beglaubigung einer vorgelegten Abschrift oder Kopie ist erforderlich, 1. dass sich der Beamte von der Echtheit des ihm vorgelegten Originals überzeugt hat; ist das nicht möglich, so ist dieser Umstand in der Beglaubigung ausdrücklich zu erwähnen, 2. dass die Abschrift oder Kopie mit dem Original verglichen wurde."
         },
         {
           "absatz": "2",
           "text": "Finden sich im Original Streichungen, Einschaltungen und dergleichen, so werden diese Umstände in der Abschrift vermerkt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "ba43c9f30f521579326113b84e371ed49576103d063f38fbae52b66691aea4d5"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "5358b33c8f20a4de38a34c8a5dd1c0bd51d891a8c5b99ae7c451b42dcc0eb78b"
     },
     {
       "id": "kanton/ZH/230/art_249",
@@ -2825,10 +3175,10 @@
           "text": "Insbesondere werden bei Rechnungsauszügen aus Geschäftsbüchern der Name und die Beschaffenheit des Buchs sowie die Seitenzahl oder die Kontonummer angegeben."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "1f00f7f2440ef5615698e5609fd45fde6af7d47e5987f7149d19858b9e02f13a"
     },
     {
@@ -2844,10 +3194,10 @@
           "text": "Die Sicherung des Datums einer Privaturkunde erfolgt durch eine vom Beamten auf die Urkunde zu setzende Bescheinigung, wann und durch wen die Urkunde vorgelegt wurde."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "6e76dbcca5ba3e3ef89d8e76758f877e4d5d8dd5335f0e74de80d079256a14ec"
     },
     {
@@ -2863,10 +3213,10 @@
           "text": "Wer zur Vornahme von Beglaubigungen ermächtigt ist, darf die Übereinstimmung einer von ihm erstellten elektronischen Abschrift mit dem Originaldokument auf Papier sowie die Echtheit von Unterschriften elektronisch beglaubigen. Dritter Titel: Übergangs- und Schlussbestimmungen"
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "12d501ad8ab133594bb9098c457828a9bf9a96017b34db46d140136b2c27c6e8"
     },
     {
@@ -2879,14 +3229,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Erklärungen über die Beibehaltung des bisherigen ordentlichen Güterstandes sowie über die Unterstellung unter den neuen ordentlichen Güterstand können beim Handelsregisteramt abgegeben werden (Art. 9 e und 10 b Schlusstitel ZGB). II. Persönliches Eherecht"
+          "text": "Erklärungen über die Beibehaltung des bisherigen ordentlichen Güterstandes sowie über die Unterstellung unter den neuen ordentlichen Güterstand können beim Handelsregisteramt abgegeben werden (Art. 9 e und 10 b Schlusstitel ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "c9a7760effca33d412379de1f487363ddcc7940705c0550d4f404da8dbed5965"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "8faab524202ad89d2e7b34501239d36f9c4a46a42e3ef5a91c92ada4f0bb9846"
     },
     {
       "id": "kanton/ZH/230/art_252",
@@ -2898,14 +3248,33 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "III. Eltern- und Kindesrecht §§253–255. IV. Vormundschaftsrecht"
+          "text": "§§ 253–255."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "d365a05b56565bbd3f87c120d0e190bc580de4b49c7a3c872b9172ce474c0127"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "68e1dd358f3ee9ef11a1e501a067dda157b0f16d1195e4284c9fb552c01cdeaa"
+    },
+    {
+      "id": "kanton/ZH/230/art_256",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "256",
+      "artikelLabel": "§ 256",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_257",
@@ -2920,11 +3289,30 @@
           "text": "Vormundschaften über Personen, deren Aufenthalt unbekannt ist, werden als Beistandschaften fortgeführt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "972e5930c0cae45063f7d7c3cceaa0af8d8e1f34b158238d7bcd2873cd6b921b"
+    },
+    {
+      "id": "kanton/ZH/230/art_258",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "258",
+      "artikelLabel": "§ 258",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_259",
@@ -2943,10 +3331,10 @@
           "text": "Der Grundpfandverschreibung des neuen Rechts werden die Versicherungsbriefe gleichgestellt (Kreditversicherungsbriefe, Weibergutsversicherungsbriefe, Bürgschaftsversicherungsbriefe und dergleichen)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "d79f4fcf2801928da7096a813a1dd8f030a7030d6f55469169a9de43a363d60d"
     },
     {
@@ -2966,10 +3354,10 @@
           "text": "Bei den vor dem Jahre 1601 errichteten Gülten ist in Berücksichtigung der damaligen Veränderung des Münzfusses und des Herkommens ein Zuschlag von 20% des Ablösungskapitals hinzuzurechnen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "44469816ea5b3af87312791780e9633a25c66a26e7f8ec98a274fb6f02f97bce"
     },
     {
@@ -2989,10 +3377,10 @@
           "text": "Sind mehrere Eigentümer, welche nicht Schuldner sind, für die nämliche Schuld vorhanden, so entscheidet über das Verhältnis ihrer Beteiligung bei der Übernahme beziehungsweise Bezahlung der Schuld der Wert ihrer Grundstücke zur Zeit der Geschreiung."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "208a14778cc98c684a9a0e8e296d3a2c0161f27bcd403e901aaa355afef839ac"
     },
     {
@@ -3005,14 +3393,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Ist der Erlös aus dem Grundstück eines Geschreiten ganz oder teilweise zur Befriedigung des Gläubigers verwendet worden, so hat der Geschreite das Rückgriffsrecht gegen den eigentlichen Schuldner, nicht aber gegen die Mitgeschreiten. §§263–265. VI. Einführung des Grundbuches"
+          "text": "Ist der Erlös aus dem Grundstück eines Geschreiten ganz oder teilweise zur Befriedigung des Gläubigers verwendet worden, so hat der Geschreite das Rückgriffsrecht gegen den eigentlichen Schuldner, nicht aber gegen die Mitgeschreiten. §§ 263–265."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "19d006e9929619fa61b151cb6ac3902aba667db650571f665c0165b05d72ec59"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "dc887d3f24fd6a1db453a9d88b566f9da6a6411250a94dfc959f9877d3829256"
     },
     {
       "id": "kanton/ZH/230/art_266",
@@ -3024,22 +3412,22 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das Grundbuch wird aufgrund einer amtlichen Vermessung eingeführt. Ausnahmsweise kann das Obergericht da, wo ein Vermessungswerk noch nicht besteht, die Anlegung des Grundbuches gestützt auf Liegenschaftsverzeichnisse bewilligen (Art.40 Schlusstitel ZGB)."
+          "text": "Das Grundbuch wird aufgrund einer amtlichen Vermessung eingeführt. Ausnahmsweise kann das Obergericht da, wo ein Vermessungswerk noch nicht besteht, die Anlegung des Grundbuches gestützt auf Liegenschaftsverzeichnisse bewilligen (Art. 40 Schlusstitel ZGB)."
         },
         {
           "absatz": "2",
-          "text": "Der Zeitpunkt der Einführung für die einzelnen Gemeinden oder Gemeindeteile (§217) wird durch das Obergericht bestimmt; es entscheidet über den Umfang der Bereinigung der bestehenden dinglichen Rechte (Art. 43 Schlusstitel ZGB) und trifft die erforderlichen Anordnungen."
+          "text": "Der Zeitpunkt der Einführung für die einzelnen Gemeinden oder Gemeindeteile (§ 217) wird durch das Obergericht bestimmt; es entscheidet über den Umfang der Bereinigung der bestehenden dinglichen Rechte (Art. 43 Schlusstitel ZGB) und trifft die erforderlichen Anordnungen."
         },
         {
           "absatz": "3",
           "text": "..."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "bfb5ecc2bf6800e685d283a1b82d57c48138dd6edd9d9af4dbf85dee389e692f"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "732c447c56e34c8b0405be49ae20753d373644378f9923eb5b1100d46a706e9a"
     },
     {
       "id": "kanton/ZH/230/art_267",
@@ -3054,10 +3442,10 @@
           "text": "Zur Bereinigung der Pfandbelastungen kann vor der Anlegung des Grundbuches die Ablösung aller ältern Pfandrechte, unter Beobachtung der gesetzlichen Aufkündigungsfristen und Termine, angeordnet werden, auch wenn nach dem Inhalt der Pfandtitel die Aufkündigung nicht zulässig wäre."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "aa3ef3c52e0b0f90a5f6a6ee72cddcf5a832c9b0eb4fde1c77b53c6f0099eb2c"
     },
     {
@@ -3073,10 +3461,10 @@
           "text": "Aufprotokollierte Schuldbriefe sind bei der Anlegung des Grundbuches als Grundpfandverschreibung zu behandeln, sofern nicht der Gläubiger die nachträgliche Ausstellung von Pfandtiteln verlangt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "8eb3c80865bc70b4a0ef0add97e8eb88d01eae28db890297aec8934d3926b500"
     },
     {
@@ -3089,7 +3477,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Pfandrechte, welche auf mehreren, verschiedenen Eigentümern gehörenden Grundstücken haften, sind bei der Anlegung des Grundbuches entweder abzulösen, oder es ist die Pfandhaft nach Massgabe der Vorschriften der Art.798 Abs.2 und 3 und 833 Abs.2 ZGBauf die mehreren Grundstücke zu verteilen."
+          "text": "Pfandrechte, welche auf mehreren, verschiedenen Eigentümern gehörenden Grundstücken haften, sind bei der Anlegung des Grundbuches entweder abzulösen, oder es ist die Pfandhaft nach Massgabe der Vorschriften der Art. 798 Abs. 2 und 3 und 833 Abs. 2 ZGB auf die mehreren Grundstücke zu verteilen."
         },
         {
           "absatz": "2",
@@ -3100,11 +3488,11 @@
           "text": "Pfandrechte, welche auf Teilen eines Grundstückes haften, sind entweder abzulösen oder auf das ganze Grundstück auszudehnen."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "31e4a440030ec0280ca0ac0b1342cfdd8303427a6425065b22a149563bb4e889"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "ca38de9549a3867baeb266622c00f26f19a6c6c2c44849baf30f63bd7981151c"
     },
     {
       "id": "kanton/ZH/230/art_270",
@@ -3116,14 +3504,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Ist die Anlegung des Grundbuches für einen Grundbuchkreis vollendet, so wird dies nach Anweisung des Obergerichtes öffentlich bekannt gemacht. Damit ist die Anzeige zu verbinden, dass alle nicht eingetragenen dinglichen Rechte erlöschen, sofern sie nicht binnen zwei Jahren zur Eintragung gelangen (Art.44 Abs.2 Schlusstitel ZGB)."
+          "text": "Ist die Anlegung des Grundbuches für einen Grundbuchkreis vollendet, so wird dies nach Anweisung des Obergerichtes öffentlich bekannt gemacht. Damit ist die Anzeige zu verbinden, dass alle nicht eingetragenen dinglichen Rechte erlöschen, sofern sie nicht binnen zwei Jahren zur Eintragung gelangen (Art. 44 Abs. 2 Schlusstitel ZGB)."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "1b1ec3140bdb442cd3040b7a5849d7e067f634daf3469f47cb3ce68a703dbea6"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "37aa06e5c80872ffbf6fbd38b903f2b0c79527fa22d0cfb4d90bd34cebb6291c"
     },
     {
       "id": "kanton/ZH/230/art_271",
@@ -3142,11 +3530,30 @@
           "text": "Das Gericht teilt den rechtskräftigen Entscheid dem Grundbuchverwalter mit."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
       "sha": "6be9a8cf4f2cdbf4c131070b1b85377d9cc16fec240fced812a77583b74f9150"
+    },
+    {
+      "id": "kanton/ZH/230/art_272",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "272",
+      "artikelLabel": "§ 272",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_273",
@@ -3158,14 +3565,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die nähern Vorschriften über die Einführung des Grundbuches, insbesondere auch über die Eintragung der Flurwege, werden, soweit deren Erlass Sache des Kantons ist, durch eine Verordnung des Obergerichtsfestgestellt."
+          "text": "Die nähern Vorschriften über die Einführung des Grundbuches, insbesondere auch über die Eintragung der Flurwege, werden, soweit deren Erlass Sache des Kantons ist, durch eine Verordnung des Obergerichts festgestellt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "a25e04665e0bc1f10c1fa57dc38e4ec1e813fe97a29a7eb10eb150e029ac3b6f"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "d991c7dfd5bdffc10422521f5606fd87686374fe07f6fa2bf5c30ee273dbb823"
     },
     {
       "id": "kanton/ZH/230/art_274",
@@ -3177,7 +3584,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Bis zu dem Zeitpunkt, in welchem das Grundbuch angelegt ist (§270), kommt in Bezug auf Entstehung, Übertragung, Umänderung und Untergang der dinglichen Rechte der Eintragung in das bisherige Grundprotokoll die Grundbuchwirkung des neuen Rechtes zu, mit Ausnahme der Grundbuchwirkung zugunsten des gutgläubigen Dritten (Art. 48 Schlusstitel ZGB)."
+          "text": "Bis zu dem Zeitpunkt, in welchem das Grundbuch angelegt ist (§ 270), kommt in Bezug auf Entstehung, Übertragung, Umänderung und Untergang der dinglichen Rechte der Eintragung in das bisherige Grundprotokoll die Grundbuchwirkung des neuen Rechtes zu, mit Ausnahme der Grundbuchwirkung zugunsten des gutgläubigen Dritten (Art. 48 Schlusstitel ZGB)."
         },
         {
           "absatz": "2",
@@ -3185,14 +3592,14 @@
         },
         {
           "absatz": "3",
-          "text": "Das Obergericht kann weitere Einrichtungen bezeichnen oder schaffen, denen an Stelle oder neben dem bisherigen Grundprotokoll die in Art. 48 Abs. 2 Schlusstitel ZGBvorgesehene Wirkung zukommen soll. VII. Schlussbestimmungen"
+          "text": "Das Obergericht kann weitere Einrichtungen bezeichnen oder schaffen, denen an Stelle oder neben dem bisherigen Grundprotokoll die in Art. 48 Abs. 2 Schlusstitel ZGB vorgesehene Wirkung zukommen soll."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "e270251139eda9cc053b137224ca771ed0692f4e29876ad5eeb392ad5b17b323"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fe20018281a9d5a78936fbb79ca8a494b314377f2664701358c2cdf8973d0480"
     },
     {
       "id": "kanton/ZH/230/art_275",
@@ -3204,14 +3611,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Für diejenigen zivilrechtlichen Verhältnisse, deren Ordnung dem kantonalen Recht überlassen ist, gilt das Schweizerische Zivilgesetzbuchals ergänzendes Recht."
+          "text": "Für diejenigen zivilrechtlichen Verhältnisse, deren Ordnung dem kantonalen Recht überlassen ist, gilt das Schweizerische Zivilgesetzbuch als ergänzendes Recht."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "ce4990af3768d96c13c84715c54364a60a16e268b0d0f6e8dc018b08810dd9fe"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "3748186f8c7ec7f1da43fa2f0f1652208acca03c73124d9962c222f1a62e4e5a"
     },
     {
       "id": "kanton/ZH/230/art_276",
@@ -3223,11 +3630,11 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Das bisherige kantonale Privatrecht ist aufgehoben, es sei denn, dass sich aus dem Zivilgesetzbuchoder dem Einführungsgesetz der Fortbestand desselben ergibt."
+          "text": "Das bisherige kantonale Privatrecht ist aufgehoben, es sei denn, dass sich aus dem Zivilgesetzbuch oder dem Einführungsgesetz der Fortbestand desselben ergibt."
         },
         {
           "absatz": "2",
-          "text": "Das kantonale öffentliche Recht bleibt bestehen, soweit sich nicht aus dem Zivilgesetzbuchoder dem Einführungsgesetz Abänderungen ergeben."
+          "text": "Das kantonale öffentliche Recht bleibt bestehen, soweit sich nicht aus dem Zivilgesetzbuch oder dem Einführungsgesetz Abänderungen ergeben."
         },
         {
           "absatz": "3",
@@ -3239,7 +3646,7 @@
             },
             {
               "marke": "b",
-              "text": "vom Gesetz betreffend die Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs vom 5. Juli 1891 §§19–36, 38, 40– 65 sowie das Gesetz vom 27. November 1904 betreffend Abänderung des §45 des genannten Gesetzes,"
+              "text": "vom Gesetz betreffend die Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs vom 5. Juli 1891 §§ 19–36, 38, 40– 65 sowie das Gesetz vom 27. November 1904 betreffend Abänderung des § 45 des genannten Gesetzes,"
             },
             {
               "marke": "c",
@@ -3247,7 +3654,7 @@
             },
             {
               "marke": "d",
-              "text": "§5 des Gesetzes betreffend die Streitigkeiten im Verwaltungsfach vom 23. Juni 1831,"
+              "text": "§ 5 des Gesetzes betreffend die Streitigkeiten im Verwaltungsfach vom 23. Juni 1831,"
             },
             {
               "marke": "e",
@@ -3260,11 +3667,30 @@
           ]
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "1c18066e89ab67dfc1c99cc0d3264aed746d6c4e4a983e2b8dcd12adbaff854b"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "74582d11ce49941019ac60ea6ecf7da5f790d369bb21c274e85f9b398694b5da"
+    },
+    {
+      "id": "kanton/ZH/230/art_277",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Einführungsgesetz zum Schweizerischen Zivilgesetzbuch (EG ZGB) (LS 230)",
+      "artikel": "277",
+      "artikelLabel": "§ 277",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-06-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/230/art_278",
@@ -3276,14 +3702,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Dieses Gesetz tritt gleichzeitig mit dem Schweizerischen Zivilgesetzbuch(1.Januar 1912) in Kraft, soweit sich nicht aus seinem Inhalt die frühere Anwendung ergibt. Übergangsbestimmung zur Änderung vom 25. Juni 2012 (OS 67, 443,466) Sind in der Schirmlade einer Vormundschaftsbehörde Wertpapiere hinterlegt, die der Sicherstellung des Vermögens einer Ehefrau gestützt auf Art. 205 Abs. 2 ZGB in der Fassung vom 10. Dezember 1907 dienen, fordert die KESB die Ehefrau unter Fristansetzung auf, eine Stelle zu bezeichnen, bei der die Wertpapiere hinterlegt werden können. Unterlässt die Ehefrau die Bezeichnung einer Hinterlegungsstelle, übergibt die KESB die Wertpapiere einer Filiale der Zürcher Kantonalbank zur Aufbewahrung auf Kosten der Ehefrau."
+          "text": "Dieses Gesetz tritt gleichzeitig mit dem Schweizerischen Zivilgesetzbuch (1. Januar 1912) in Kraft, soweit sich nicht aus seinem Inhalt die frühere Anwendung ergibt."
         }
       ],
-      "stand": "1912-01-01",
+      "stand": "2026-06-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-230-1911_04_02-1912_01_01-133.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "34f89c30cbd8d8a2735373577c2eb0a5c7d56b25a7f9fa9c0559712615a150b1",
-      "sha": "227f01f657ee95567bf5ec62ed40327ea3c655aff16348ab2f581cd62a2ee296"
+      "fassungsToken": "6f06ec2fb5a6c2858a145826e4d22d89cf19dde4131ecc0632164b5513b01f31",
+      "sha": "ea03567ed079575c6ea35a039057ff8ae6a7e4b2eda4a819aef77c1a202094fc"
     }
   ]
 }

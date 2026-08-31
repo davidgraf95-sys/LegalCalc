@@ -28,10 +28,10 @@
           ]
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "8f8261b7ae5f10b7bdca1f5de1e8cd8dc1b146830d5bea357eb6da478336eda1"
     },
     {
@@ -47,10 +47,10 @@
           "text": "Dieses Gesetz gilt für die öffentlichen Organe."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "c53a9c0ece10f0fc8889b55ac2f1bb015786a0478bd7d64637330b1ca4cd3492"
     },
     {
@@ -67,14 +67,14 @@
         },
         {
           "absatz": "2",
-          "text": "Soweit der Kantonsrat diesem Gesetz untersteht, stehen der oder dem Beauftragten für den Datenschutz die Befugnisse gemäss §10 Abs. 2, §12a Abs. 1 und 2, §34 lit. c, d und f sowie §§35–36a nicht zu."
+          "text": "Soweit der Kantonsrat diesem Gesetz untersteht, stehen der oder dem Beauftragten für den Datenschutz die Befugnisse gemäss § 10 Abs. 2, § 12 a Abs. 1 und 2, § 34 lit. c, d und f sowie §§ 35–36 a nicht zu."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "9e1aaa046de402bfbfefe334662ccf0ecce0f3b7a483c50f762a647fba2f414d"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "20ee1e8e1d82a72143b90189e309961b449cef39a371caff8a136979e48b3b1d"
     },
     {
       "id": "kanton/ZH/170.4/art_2_b",
@@ -86,7 +86,7 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Bei Gerichtsverfahren sowie Verfahren von Strafverfolgungsbehörden gemäss §86 Abs.1 lit.b und c des Gesetzes über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess vom 10. Mai 2010richten sich die Rechte der betroffenen Personen und die Einsichtsrechte Dritter nach den spezialgesetzlichen Bestimmungen."
+          "text": "Bei Gerichtsverfahren sowie Verfahren von Strafverfolgungsbehörden gemäss § 86 Abs. 1 lit. b und c des Gesetzes über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess vom 10. Mai 2010 richten sich die Rechte der betroffenen Personen und die Einsichtsrechte Dritter nach den spezialgesetzlichen Bestimmungen."
         },
         {
           "absatz": "2",
@@ -94,14 +94,14 @@
         },
         {
           "absatz": "3",
-          "text": "Soweit die Gerichte diesem Gesetz unterstehen, stehen der oder dem Beauftragten für den Datenschutz die Befugnisse gemäss §10 Abs. 2, §12a Abs. 1 und 2, §34 lit. c, d und f sowie §§35–36a nicht zu."
+          "text": "Soweit die Gerichte diesem Gesetz unterstehen, stehen der oder dem Beauftragten für den Datenschutz die Befugnisse gemäss § 10 Abs. 2, § 12 a Abs. 1 und 2, § 34 lit. c, d und f sowie §§ 35–36 a nicht zu."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "686ff9f6a1180aebb3db38c99b4f72aff189f85a11a0b4237f15150b71d1cc6a"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "fad38f5ec0cb102c04ea6204716a4bf73ae4eaea5b50af7039c0afca8ccc83dd"
     },
     {
       "id": "kanton/ZH/170.4/art_2_c",
@@ -117,14 +117,14 @@
         },
         {
           "absatz": "2",
-          "text": "Für das Bearbeiten von Personendaten ist das Bundesgesetz über den Datenschutzsinngemäss anwendbar. Die Aufsicht wird von der oder dem Beauftragten für den Datenschutz gemäss §§30 ff. ausgeübt."
+          "text": "Für das Bearbeiten von Personendaten ist das Bundesgesetz über den Datenschutz sinngemäss anwendbar. Die Aufsicht wird von der oder dem Beauftragten für den Datenschutz gemäss §§ 30 ff. ausgeübt."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "26e7a97897967b8b5958f6b561c16a8577c52e6ab9f5c0aa6934c6dc17fe270e"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "eb21a945ebaf8f52c2202912458217e884413142e26bc0f9d1b5bbb079e1b73c"
     },
     {
       "id": "kanton/ZH/170.4/art_3",
@@ -166,7 +166,7 @@
           "items": [
             {
               "marke": "a",
-              "text": "Informationen, bei denen wegen ihrer Bedeutung, der Art ihrer Bearbeitung oder der Möglichkeit ihrer Verknüpfung mit anderen Informationen die besondere Gefahr einer Persönlichkeitsverletzung besteht, wie Informationen über 1.die religiösen, weltanschaulichen, politischen oder gewerkschaftlichen Ansichten oder Tätigkeiten, 2.die Gesundheit, die Intimsphäre, die ethnische Herkunft sowie genetische und biometrische Daten, 3.Massnahmen der sozialen Hilfe, 4.administrative oder strafrechtliche Verfolgungen oder Sanktionen."
+              "text": "Informationen, bei denen wegen ihrer Bedeutung, der Art ihrer Bearbeitung oder der Möglichkeit ihrer Verknüpfung mit anderen Informationen die besondere Gefahr einer Persönlichkeitsverletzung besteht, wie Informationen über 1. die religiösen, weltanschaulichen, politischen oder gewerkschaftlichen Ansichten oder Tätigkeiten, 2. die Gesundheit, die Intimsphäre, die ethnische Herkunft sowie genetische und biometrische Daten, 3. Massnahmen der sozialen Hilfe, 4. administrative oder strafrechtliche Verfolgungen oder Sanktionen."
             },
             {
               "marke": "b",
@@ -184,14 +184,14 @@
         },
         {
           "absatz": "6",
-          "text": "Bekanntgeben ist das Zugänglichmachen von Informationen wie das Einsichtgewähren, Weitergeben oder Veröffentlichen. II. Grundsätze im Umgang mit Informationen 1. Im Allgemeinen"
+          "text": "Bekanntgeben ist das Zugänglichmachen von Informationen wie das Einsichtgewähren, Weitergeben oder Veröffentlichen. 1. Im Allgemeinen"
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "6d94c24a3918921e537cce86439e6f5834389b51e511c0c8e21211b76030ab3a"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "27c8a677613a3454dceb0b12250dc3807d372bf36467e15b90508f7acfa2cdf5"
     },
     {
       "id": "kanton/ZH/170.4/art_4",
@@ -206,10 +206,10 @@
           "text": "Das öffentliche Organ gestaltet den Umgang mit Informationen so, dass es rasch, umfassend und sachlich informieren kann."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "84aed44a993508dc86df59b4cc765d335b868e700cf3184172ec3b3209e83e2c"
     },
     {
@@ -237,10 +237,10 @@
           "text": "Für die kantonale Verwaltung regelt der Regierungsrat das Nähere in einer Verordnung."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "aad48ff8dfe97cb6cff6d487422dcdc3bc44a36c1789c2b567d0cf970976538f"
     },
     {
@@ -260,10 +260,10 @@
           "text": "Es bleibt für den Umgang mit Informationen nach diesem Gesetz verantwortlich."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "93fe129ac27998e57d01616aa52773009f80bf2e822f21940a26a3ee9be0e6f1"
     },
     {
@@ -309,10 +309,10 @@
           "text": "Die zu treffenden Massnahmen richten sich nach der Art der Information, nach Art und Zweck der Verwendung und nach dem jeweiligen Stand der Technik. 2. Besondere Grundsätze im Umgang mit Personendaten"
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "bbc03cf6790f0a6c5a18debcfcecab39dc69a3b19db2081bc8fc686dcb2cd75e"
     },
     {
@@ -332,10 +332,10 @@
           "text": "Das Bearbeiten besonderer Personendaten bedarf einer hinreichend bestimmten Regelung in einem formellen Gesetz."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "1e9461cb3d0b8ae1b9dd48dab5ff442e95c58a83388869e02443d9e11f85ca35"
     },
     {
@@ -355,10 +355,10 @@
           "text": "Zu einem nicht personenbezogenen Zweck darf das öffentliche Organ Personendaten bearbeiten, wenn sie anonymisiert werden und aus den Auswertungen keine Rückschlüsse auf betroffene Personen möglich sind."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "a77db3beae8e3abe51340eaa7380e9fffdc467a1730bc30a46a5d6d0729cec6f"
     },
     {
@@ -378,10 +378,10 @@
           "text": "Es unterbreitet eine beabsichtigte Bearbeitung von Personendaten mit besonderen Risiken für die Grundrechte der betroffenen Personen vorab der oder dem Beauftragten für den Datenschutz zur Prüfung (Vorabkontrolle)."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "75324379936a56754659296dfaceaf16941fadb30ca959e9c9a4f299a4247394"
     },
     {
@@ -401,10 +401,10 @@
           "text": "Es löscht, anonymisiert oder pseudonymisiert solche Personendaten, sobald und soweit dies möglich ist."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "1fb79658f8ce96aa731205a306bc1730b1cda6d031d0639cd6434736aef33af6"
     },
     {
@@ -460,15 +460,19 @@
             {
               "marke": "c",
               "text": "wenn die Information nicht möglich ist oder einen unverhältnismässigen Aufwand erfordern würde,"
+            },
+            {
+              "marke": "d",
+              "text": "in den Fällen gemäss § 23."
             }
           ]
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "c68e492ee95fb5c0f54aa6df30f32d8a80d5a864f3b46c1a7707f4895ee290f4"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "d690d3a05b58635b48eff70e3a9cf0e428ddbc270d096bdcc12c93374223f1b0"
     },
     {
       "id": "kanton/ZH/170.4/art_12_a",
@@ -491,10 +495,10 @@
           "text": "Es kann die Information der betroffenen Person ganz oder teilweise einschränken, wenn ein überwiegendes öffentliches oder privates Interesse entgegensteht."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "0a864a889ab4955e0438d865490ea9f9ce3546c151895f1a33fb65cc3a7f2cd1"
     },
     {
@@ -515,14 +519,14 @@
         },
         {
           "absatz": "3",
-          "text": "Der Regierungsrat regelt das Nähere in einer Verordnung. III. Bekanntgabe von Informationen"
+          "text": "Der Regierungsrat regelt das Nähere in einer Verordnung."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "8ef8d7149b59588ad976a601f03d1582be1cebae7d7b87cf249faa3d429b96f7"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "364cea3d74ccfba2853c168a778d7d671797a0397ce2e002fce666f2c88a5c17"
     },
     {
       "id": "kanton/ZH/170.4/art_14",
@@ -549,10 +553,10 @@
           "text": "Es macht ein Verzeichnis seiner Informationsbestände und deren Zwecke öffentlich zugänglich. Es kennzeichnet Informationsbestände, die Personendaten enthalten."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "c0727a53bc4406a4a3b194706102ee31818813e6525d6129e74a34c903fe865b"
     },
     {
@@ -572,10 +576,10 @@
           "text": "Es kann die Akkreditierung von Medienschaffenden vorsehen."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "0ef5d2f5688198c1cd16af71b169665dc6a9949071124f4aa9b0415dc825ee47"
     },
     {
@@ -609,10 +613,10 @@
           "text": "Einem anderen öffentlichen Organ sowie den Organen anderer Kantone oder des Bundes gibt es im Einzelfall Personendaten ausserdem bekannt, wenn das Organ, das Personendaten verlangt, diese zur Erfüllung seiner gesetzlichen Aufgaben benötigt."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "e20ea696610e1348eb3a93a7ec35ad6e411f95d868aa79093c88eed81f955af1"
     },
     {
@@ -646,10 +650,10 @@
           "text": "Einem anderen öffentlichen Organ sowie den Organen anderer Kantone oder des Bundes gibt es im Einzelfall besondere Personendaten ausserdem bekannt, wenn das Organ, das besondere Personendaten verlangt, diese zur Erfüllung seiner gesetzlichen Aufgaben benötigt."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "2c49992e2db014343d2f6eec8820e8969675d24761d40dccb21a05f5fcd3b1a9"
     },
     {
@@ -669,10 +673,10 @@
           "text": "Die Empfängerin oder der Empfänger hat nachzuweisen, dass die Personendaten anonymisiert werden, aus den Auswertungen keine Rückschlüsse auf betroffene Personen möglich sind und die ursprünglichen Personendaten nach der Auswertung vernichtet werden."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "1da1a9ec812dc79817d33272ea55801e691e85ae9a02b55158fd653b8697dbaf"
     },
     {
@@ -697,16 +701,16 @@
             },
             {
               "marke": "c",
-              "text": "vom öffentlichen Organ angemessene vertragliche Sicherheitsvorkehrungen getroffen werden. IV. Informationszugangsrecht und weitere Rechtsansprüche"
+              "text": "vom öffentlichen Organ angemessene vertragliche Sicherheitsvorkehrungen getroffen werden."
             }
           ]
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "d627db07f5ca6063e4dadd615f6d9cfedb4edd8a332c0c379e0708c0819220d9"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "13f6204e1dfdf0d647842051eeaa7220e05c37f951cb365990b341a804830378"
     },
     {
       "id": "kanton/ZH/170.4/art_20",
@@ -729,10 +733,10 @@
           "text": "In nicht rechtskräftig abgeschlossenen Verwaltungs- und Verwaltungsjustizverfahren richtet sich das Recht auf Zugang zu Information nach dem massgeblichen Verfahrensrecht."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "de5ea7330f642cf3fb22e22cad27af0e0175c29f9d4a5b14c248976275eae216"
     },
     {
@@ -770,10 +774,10 @@
           "text": "Wird die Berichtigung oder Vernichtung von Personendaten verlangt und kann weder deren Richtigkeit noch Unrichtigkeit festgestellt werden, bringt das öffentliche Organ den Vermerk an, dass die Personendaten bestritten sind. Es schränkt die Bearbeitung ein."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "9795d4a6d4335a992cf8996edd3bc8893b01cacdec91f374b67c04282b2c2bad"
     },
     {
@@ -793,10 +797,10 @@
           "text": "Das öffentliche Organ gibt Personendaten trotz Sperrung bekannt, wenn die gesuchstellende Person nachweist, dass die Sperrung sie an der Verfolgung eigener Rechte gegenüber der betroffenen Person hindert."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "86b5ab834046c150597dd6c2b784e19df375df995243dc5016ebfbda8223e2af"
     },
     {
@@ -839,14 +843,14 @@
         },
         {
           "absatz": "3",
-          "text": "Ein privates Interesse liegt insbesondere vor, wenn durch die Bekanntgabe der Information die Privatsphäre Dritter beeinträchtigt wird. VI. Verfahren auf Zugang zu Information"
+          "text": "Ein privates Interesse liegt insbesondere vor, wenn durch die Bekanntgabe der Information die Privatsphäre Dritter beeinträchtigt wird."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "71f68139383a1221aa0cba7a92284d3298aa6c0958eb6a48fc2a234a158ad1d8"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "4ca870b69380a046fe7dc3d3bbcb34a72f571d9e425889e9967a9208709863d7"
     },
     {
       "id": "kanton/ZH/170.4/art_24",
@@ -858,18 +862,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Wer Zugang zu Informationen gemäss §20 Abs. 1 will, stellt ein schriftliches Gesuch."
+          "text": "Wer Zugang zu Informationen gemäss § 20 Abs. 1 will, stellt ein schriftliches Gesuch."
         },
         {
           "absatz": "2",
           "text": "Auf mündliche Anfragen hin kann das öffentliche Organ mündlich Auskunft erteilen."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "0e27a2c87272b1a2d76f9ca394d8736b412148682b7949e9ff8b32b3ade31280"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "c2b737f713ef4fd66d094cb411de3ece00d36ec0015f986fdb8101c416726c3b"
     },
     {
       "id": "kanton/ZH/170.4/art_25",
@@ -888,10 +892,10 @@
           "text": "Verursacht die Bearbeitung des Gesuchs dem öffentlichen Organ einen unverhältnismässigen Aufwand, kann es den Zugang zur Information vom Nachweis eines schutzwürdigen Interesses der gesuchstellenden Person abhängig machen."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "1e30cfe3f62fc782a07dd22eac9b34e12d1ba9211a49e88540ba08760c30ef09"
     },
     {
@@ -911,10 +915,10 @@
           "text": "Betrifft das Gesuch besondere Personendaten, lehnt das öffentliche Organ das Gesuch ab, wenn die betroffenen Dritten dem Zugang nicht ausdrücklich zustimmen."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "1a5d1993bfd6fb908c12e9ff6853fedf30ce4afaee40e9da6f434ac60af4a75a"
     },
     {
@@ -934,10 +938,10 @@
           "text": "Will es entgegen dem Willen Dritter Informationszugang gewähren, so teilt es dies den betroffenen Dritten mittels Verfügung mit."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "d178fd61a07a9f5945615df664f379768d93e673f8f1bcffc3f7e3fc12d95329"
     },
     {
@@ -957,10 +961,10 @@
           "text": "Kann das öffentliche Organ diese Frist nicht einhalten, teilt es vor deren Ablauf der gesuchstellenden Person unter Angabe der Gründe mit, wann der Entscheid über das Gesuch vorliegen wird."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "73330f152d094a17c121958bd8edc5ff944375244244c93eee0632a93f3e8fc4"
     },
     {
@@ -981,14 +985,14 @@
         },
         {
           "absatz": "3",
-          "text": "Eignen sich Informationen für eine gewerbliche Nutzung, kann ein Entgelt erhoben werden, das sich nach dem Markt richtet. VII. Beauftragte oder Beauftragter für Datenschutz"
+          "text": "Eignen sich Informationen für eine gewerbliche Nutzung, kann ein Entgelt erhoben werden, das sich nach dem Markt richtet."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "2d2090895c64ffb6dda24cca6c614e46868b44622ff1403a5e5f2d32172866a3"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "1eb32d0723e2d9e03cd00880da70b5fed22d9faaea4108c3fbdfb3e83448b187"
     },
     {
       "id": "kanton/ZH/170.4/art_30",
@@ -1015,10 +1019,10 @@
           "text": "Der Kantonsrat kann die Beauftragte oder den Beauftragten für den Datenschutz bei schwerwiegenden Amtspflichtverletzungen oder bei fachlichem Ungenügen auf Antrag seiner Geschäftsleitung vor Ablauf der Amtsdauer abwählen. Für diesen Beschluss ist eine Mehrheit von zwei Dritteln der Mitglieder des Kantonsrates erforderlich."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "9e2635e4d7055c717745af40e8817d0bdbdd4b73409fe12513e22d2b6e68051a"
     },
     {
@@ -1042,10 +1046,10 @@
           "text": "..."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "e406d309506ed0ff90b65d4f61428326bcdd3cde45e97ddff1b5257a6602badd"
     },
     {
@@ -1058,22 +1062,22 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die oder der Beauftragte ist dem Gesetz über Controlling und Rechnungslegung (CRG)und den Ausführungserlassen des Regierungsrates zu diesem Gesetz unterstellt."
+          "text": "Die oder der Beauftragte ist dem Gesetz über Controlling und Rechnungslegung (CRG) und den Ausführungserlassen des Regierungsrates zu diesem Gesetz unterstellt."
         },
         {
           "absatz": "2",
-          "text": "Sie oder er ist bezüglich Ausgabenkompetenzen dem Regierungsrat gleichgestellt. §§19–25 CRGgelten sinngemäss."
+          "text": "Sie oder er ist bezüglich Ausgabenkompetenzen dem Regierungsrat gleichgestellt. §§ 19–25 CRG gelten sinngemäss."
         },
         {
           "absatz": "3",
           "text": "Die oder der Beauftragte führt eine eigene Rechnung. Sie oder er unterbreitet dem Kantonsrat jährlich eine Übersicht über die Entwicklung der Leistungen und Finanzen, einen Budgetentwurf sowie die Rechnung."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "0d0431af380592c25c25c6f779b9270ee2f95b3d9d6427c4568d1237f9a12e79"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "d2722948f3e862206de13721c844b8316e0b74de2a66606413c54c7fa06f2303"
     },
     {
       "id": "kanton/ZH/170.4/art_33",
@@ -1085,18 +1089,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die Gemeinden und die Organisationen gemäss §3 können eigene Beauftragte bestellen. Der Regierungsrat kann Gemeinden mit mindestens 50 000 Einwohnerinnen und Einwohnern dazu verpflichten."
+          "text": "Die Gemeinden und die Organisationen gemäss § 3 können eigene Beauftragte bestellen. Der Regierungsrat kann Gemeinden mit mindestens 50 000 Einwohnerinnen und Einwohnern dazu verpflichten."
         },
         {
           "absatz": "2",
-          "text": "Die Gemeinden und die Organisationen gemäss §3 regeln Wahl und Organisation selbstständig. Sie stellen sicher, dass die Beauftragten über die notwendigen fachlichen Voraussetzungen verfügen und in der Ausübung ihrer Aufgaben und Befugnisse unabhängig sind. Die oder der kantonale Beauftragte übt die Oberaufsicht aus."
+          "text": "Die Gemeinden und die Organisationen gemäss § 3 regeln Wahl und Organisation selbstständig. Sie stellen sicher, dass die Beauftragten über die notwendigen fachlichen Voraussetzungen verfügen und in der Ausübung ihrer Aufgaben und Befugnisse unabhängig sind. Die oder der kantonale Beauftragte übt die Oberaufsicht aus."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "d6de11fd5c333de5b2892928fa039ea663a24432b131ab9a68f146d19c314d18"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "3ed9707a56e5d9b4bef8e8630ad0b9c4367e533e4753b1a721789410e692c816"
     },
     {
       "id": "kanton/ZH/170.4/art_34",
@@ -1141,10 +1145,10 @@
           ]
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "ae190ebd6bab04937e2a889aeebf0e4b82d5ac20784e51ff387e0307b58f98fc"
     },
     {
@@ -1157,18 +1161,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Die oder der Beauftragte kann bei öffentlichen Organen und bei beauftragten Dritten gemäss §6 ungeachtet einer allfälligen Geheimhaltungspflicht Auskunft über das Bearbeiten von Daten einholen, Einsicht in die Daten nehmen und sich Bearbeitungen vorführen lassen, soweit es für ihre oder seine Tätigkeit notwendig ist."
+          "text": "Die oder der Beauftragte kann bei öffentlichen Organen und bei beauftragten Dritten gemäss § 6 ungeachtet einer allfälligen Geheimhaltungspflicht Auskunft über das Bearbeiten von Daten einholen, Einsicht in die Daten nehmen und sich Bearbeitungen vorführen lassen, soweit es für ihre oder seine Tätigkeit notwendig ist."
         },
         {
           "absatz": "2",
           "text": "Die öffentlichen Organe und die beauftragten Dritten wirken an der Feststellung des Sachverhaltes mit."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "7dc0a50a59c22640b783a52d21f3ecf8e5b56f51b434c2f1ede2d177b3c078f4"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "2814ee75728a807539a5dcdbee8db5e2be0a8a28eaba2dc1b5056b1b2b3335bb"
     },
     {
       "id": "kanton/ZH/170.4/art_36",
@@ -1187,10 +1191,10 @@
           "text": "Folgt das öffentliche Organ einer Empfehlung nicht, teilt es dies der oder dem Beauftragten für den Datenschutz unter Angabe der Gründe mit."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "8acced3f92a0b377ea788e3b62c2a879a82893c9d20003d30bf0223ae62fc109"
     },
     {
@@ -1210,10 +1214,10 @@
           "text": "Das betroffene öffentliche Organ kann Verfügungen des oder der Beauftragten mit Beschwerde beim Verwaltungsgericht anfechten. Parteien sind die oder der Beauftragte und das betroffene öffentliche Organ."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "edfbfda5dc5659950169b74ccc876368fe87505ce8dbd7ff06f0d738806ccc21"
     },
     {
@@ -1226,14 +1230,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die oder der Beauftragte arbeitet zur Erfüllung der Kontrollaufgabe gemäss §35 mit den Organen der anderen Kantone, des Bundes und des Auslandes, welche die gleichen Aufgaben erfüllen, zusammen."
+          "text": "Die oder der Beauftragte arbeitet zur Erfüllung der Kontrollaufgabe gemäss § 35 mit den Organen der anderen Kantone, des Bundes und des Auslandes, welche die gleichen Aufgaben erfüllen, zusammen."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "c14484db1aea64705407213230d8efaf3ab32031ee27839aaa318fffe584fb41"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "3163c757e321b80ac15329bfcb64020aacc78741b8342f8293410bc91a7998ef"
     },
     {
       "id": "kanton/ZH/170.4/art_38",
@@ -1248,10 +1252,10 @@
           "text": "Die oder der Beauftragte sowie die Mitarbeitenden sind in Bezug auf Informationen, die sie bei ihrer Tätigkeit zur Kenntnis nehmen, zur gleichen Verschwiegenheit verpflichtet wie das bearbeitende öffentliche Organ."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "847270566cda5ae470fb9b415ea0fbc5db3a514827241180c2f6da5a417b1307"
     },
     {
@@ -1267,10 +1271,10 @@
           "text": "Die oder der Beauftragte berichtet dem Wahlorgan periodisch über Umfang und Schwerpunkte der Tätigkeiten, über wichtige Feststellungen und Beurteilungen sowie über die Wirkung des Gesetzes. Der Bericht wird veröffentlicht."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "ea35f9185ad369cbffb3594ad9ad17e0edb1e42ec4a3de027e22425d38848023"
     },
     {
@@ -1283,22 +1287,22 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Gegen Anordnungen der oder des Beauftragten in personalrechtlichen oder administrativen Belangen kann bei der Verwaltungsdelegationder Geschäftsleitung des Kantonsrates Rekurs erhoben werden."
+          "text": "Gegen Anordnungen der oder des Beauftragten in personalrechtlichen oder administrativen Belangen kann bei der Verwaltungsdelegation der Geschäftsleitung des Kantonsrates Rekurs erhoben werden."
         },
         {
           "absatz": "2",
-          "text": "Die Schweigepflicht gemäss §38 gilt auch für die Rechtsmittelinstanzen."
+          "text": "Die Schweigepflicht gemäss § 38 gilt auch für die Rechtsmittelinstanzen."
         },
         {
           "absatz": "3",
-          "text": "Im Übrigen richtet sich der Rechtsschutz nach dem Verwaltungsrechtspflegegesetz vom 24. Mai 1959. VIII. Strafbestimmungen"
+          "text": "Im Übrigen richtet sich der Rechtsschutz nach dem Verwaltungsrechtspflegegesetz vom 24. Mai 1959."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "4d4f7085b831ef4b8aa036c2fcf5b434c1af427472e70ad02f65af4ee8412098"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "8965b13d2ed55dfa53a616d67911c5969b7ff57b103950114e0a4a715b45c02c"
     },
     {
       "id": "kanton/ZH/170.4/art_40",
@@ -1310,18 +1314,18 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Wer als beauftragte Person gemäss §6 ohne ausdrückliche Ermächtigung des auftraggebenden öffentlichen Organs Personendaten für sich oder andere verwendet oder anderen bekannt gibt, wird mit Busse bestraft."
+          "text": "Wer als beauftragte Person gemäss § 6 ohne ausdrückliche Ermächtigung des auftraggebenden öffentlichen Organs Personendaten für sich oder andere verwendet oder anderen bekannt gibt, wird mit Busse bestraft."
         },
         {
           "absatz": "2",
-          "text": "Die Untersuchung und Beurteilung von Widerhandlungen obliegt den Statthalterämtern. IX. Schluss- und Übergangsbestimmungen"
+          "text": "Die Untersuchung und Beurteilung von Widerhandlungen obliegt den Statthalterämtern."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "3631e83b258528bda818cf381400d94cd4b15e2a21d7b256a33bb2f78cf8af81"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "00a9b76eda40b08fbe0b38e0a5c65ea8ce1d3686cebd9cfdfafc73c8e613509c"
     },
     {
       "id": "kanton/ZH/170.4/art_41",
@@ -1333,14 +1337,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Informationsbestände mit besonderen Personendaten, die bei Inkrafttreten dieses Gesetzes bestehen, darf das öffentliche Organ während fünf Jahren nach Inkrafttreten dieses Gesetzes bearbeiten oder bekannt geben, ohne dass die Voraussetzungen von §8 Abs. 2 bzw. §17 Abs. 1 lit. a erfüllt sind."
+          "text": "Informationsbestände mit besonderen Personendaten, die bei Inkrafttreten dieses Gesetzes bestehen, darf das öffentliche Organ während fünf Jahren nach Inkrafttreten dieses Gesetzes bearbeiten oder bekannt geben, ohne dass die Voraussetzungen von § 8 Abs. 2 bzw. § 17 Abs. 1 lit. a erfüllt sind."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "61dec3d4e10a12bafbf48af6cbb2f09e645a223a7c0bf9e2155a46fdce6c2bf9"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "0611ef64ce0d9f8dbc66b6d581c8cb7220975b25baf20f5092481c53abc4b68a"
     },
     {
       "id": "kanton/ZH/170.4/art_42",
@@ -1356,11 +1360,11 @@
           "items": [
             {
               "marke": "a",
-              "text": "Gesetz über die Auslagerung von Informatikdienstleistungen: §3 Abs. 1 und 2,"
+              "text": "Gesetz über die Auslagerung von Informatikdienstleistungen: § 3 Abs. 1 und 2,"
             },
             {
               "marke": "b",
-              "text": "Steuergesetz: §122 Abs. 2."
+              "text": "Steuergesetz: § 122 Abs. 2."
             }
           ]
         },
@@ -1370,20 +1374,20 @@
           "items": [
             {
               "marke": "a",
-              "text": "Gesetz über die Auslagerung von Informatikdienstleistungen: §3 Abs. 1,"
+              "text": "Gesetz über die Auslagerung von Informatikdienstleistungen: § 3 Abs. 1,"
             },
             {
               "marke": "b",
-              "text": "Finanzkontrollgesetz: §25 Abs. 2."
+              "text": "Finanzkontrollgesetz: § 25 Abs. 2."
             }
           ]
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "85c416ff19e9e6d4456e636211949da98e6ad554021c94981197a3f7c21ab957"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "c28e9b07fca2a6c31d279ad5ef324f98582564e4c8564ee10fb9c77272fa1f71"
     },
     {
       "id": "kanton/ZH/170.4/art_43",
@@ -1398,10 +1402,10 @@
           "text": "Mit Inkrafttreten dieses Gesetzes wird das Datenschutzgesetz vom 6. Juni 1993 aufgehoben."
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
       "sha": "25eab7083131974d6be703f9c3edfb928c2b46b676a02d29c19c3344a9344c97"
     },
     {
@@ -1418,68 +1422,44 @@
           "items": [
             {
               "marke": "a",
-              "text": "Gesetz über das Gemeindewesen (Gemeindegesetz)vom 6.Juni 1926: . . ."
+              "text": "Gesetz über das Gemeindewesen (Gemeindegesetz) vom 6. Juni 1926: . . ."
             },
             {
               "marke": "b",
-              "text": "Gesetz über die Organisation und die Geschäftsordnung des Kantonsrates (Kantonsratsgesetz)vom 5. April 1981: . . ."
+              "text": "Gesetz über die Organisation und die Geschäftsordnung des Kantonsrates (Kantonsratsgesetz) vom 5. April 1981: . . ."
             },
             {
               "marke": "c",
-              "text": "Gesetz über den Rechtsschutz in Verwaltungssachen (Verwaltungsrechtspflegegesetz)vom 24. Mai 1959: . . ."
+              "text": "Gesetz über den Rechtsschutz in Verwaltungssachen (Verwaltungsrechtspflegegesetz) vom 24. Mai 1959: . . ."
             },
             {
               "marke": "d",
-              "text": "Gesetz über das Arbeitsverhältnis des Staatspersonals (Personalgesetz)vom 27. September 1998: . . ."
+              "text": "Gesetz über das Arbeitsverhältnis des Staatspersonals (Personalgesetz) vom 27. September 1998: . . ."
             },
             {
               "marke": "e",
-              "text": "Gesetz über die Versicherungskasse für das Staatspersonalvom 6.Juni 1993: . . ."
+              "text": "Gesetz über die Versicherungskasse für das Staatspersonal vom 6. Juni 1993: . . ."
             },
             {
               "marke": "f",
-              "text": "Archivgesetzvom 24. September 1995: . . ."
+              "text": "Archivgesetz vom 24. September 1995: . . ."
             },
             {
               "marke": "g",
-              "text": "Gesetz über den öffentlichen Personenverkehrvom 6. März 1988:..."
+              "text": "Gesetz über den öffentlichen Personenverkehr vom 6. März 1988:..."
             },
             {
               "marke": "h",
-              "text": "Gesetz über Controlling und Rechnungslegung (CRG)vom 9. Januar 2006: . . . Übergangsbestimmung zur Änderung vom 12. Dezember 2022 (OS 79, 157) Tritt die Änderung während der laufenden Amtsdauer der oder des Beauftragten für den Datenschutz in Kraft, bleibt bis zum Ende der laufenden Amtsdauer das bisherige Recht anwendbar."
+              "text": "Gesetz über Controlling und Rechnungslegung (CRG) vom 9. Januar 2006: . . ."
             }
           ]
-        },
-        {
-          "absatz": "4",
-          "text": "§§ 30–33 in Kraft seit 1. Juni 2007 (OS 62, 136)."
-        },
-        {
-          "absatz": "11",
-          "text": "Obsolet."
-        },
-        {
-          "absatz": "18",
-          "text": "Text siehe OS 62, 121."
-        },
-        {
-          "absatz": "19",
-          "text": "schutz vom 12. Februar 2007 (OS 62, 135;ABl 2005, 1283). In Kraft seit 1.Oktober 2008 (OS 63, 317)."
-        },
-        {
-          "absatz": "20",
-          "text": "rensrechts vom 22. März 2010 (OS 65, 390;ABl 2009, 801). In Kraft seit 1. Juli 2010."
-        },
-        {
-          "absatz": "22",
-          "text": "und des kantonalen Prozessrechts in Zivil- und Strafsachen an die neuen Prozessgesetze des Bundes vom 10. Mai 2010 (OS 65, 520, 570;ABl 2009, 1489;"
         }
       ],
-      "stand": "2008-10-01",
+      "stand": "2024-05-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-170_4-2007_02_12-2008_10_01-125.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "b0da3ce079a38d449ac5de5a9cea5f378264478cf32389f0c0a70d4794d4dc73",
-      "sha": "2e692b2e2bc5b9e093fb6ea45dba90143188d7de9a6ff52f95d47f65a72e20b6"
+      "fassungsToken": "3ca963b2cd073014cf6bd2ac2f97f9995982787a61f5d1f461c72d54145cd7af",
+      "sha": "2c5d0976e3310db2d4dd4f3b48c830a52aa61cd81683cce482e8aafc02792156"
     }
   ]
 }
