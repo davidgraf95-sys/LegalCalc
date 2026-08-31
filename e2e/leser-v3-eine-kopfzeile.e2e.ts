@@ -114,7 +114,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
   test('(a)+(b)+(c) Einzelansicht @1440: eine Leiste, volle Krume, kein zweiter Stand', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await page.waitForTimeout(600)
@@ -174,7 +174,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
   test('(b2) Handy @390: dasselbe, mit dem Zuschnitt «mini»', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await page.waitForTimeout(600)
@@ -276,7 +276,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
   test('(f) erlass-neutral: Kanton BS zeigt «Gesetze › Kanton BS › …»', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/kanton/BS-640.100?leser=v3')
+    await page.goto('/gesetze/kanton/BS-640.100')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(600)
 
@@ -333,7 +333,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
         }
       }).observe({ type: 'layout-shift', buffered: true })
     })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await page.waitForTimeout(3000)
 
@@ -397,7 +397,7 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
     test.slow() // drei Leser-Ladevorgänge in einer Sitzung
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
     // Client-seitiger Wechsel in einen ZWEITEN Erlass über die Fuss-Navigation
@@ -479,9 +479,9 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
   // eine Sonde auf `kopfzeileSelbst` bliebe grün, wenn die Leiste aus einem
   // anderen Grund verschwände.
   for (const [name, pfad] of [
-    ['pdf-embed (EMRK)', '/gesetze/international/EMRK?leser=v3'],
-    ['nur-live-link (DSGVO)', '/gesetze/international/DSGVO?leser=v3'],
-    ['Fehlseite', '/gesetze/bund/GIBTSNICHT?leser=v3'],
+    ['pdf-embed (EMRK)', '/gesetze/international/EMRK'],
+    ['nur-live-link (DSGVO)', '/gesetze/international/DSGVO'],
+    ['Fehlseite', '/gesetze/bund/GIBTSNICHT'],
   ] as const) {
     test(`(i) V1 · ${name}: App-Krume und ✕ sind da`, async ({ page }) => {
       const fehler = fehlerSammeln(page)

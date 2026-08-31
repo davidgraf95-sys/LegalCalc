@@ -43,7 +43,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test('(a) Instanz-, Kanton- und Zeit-Facette stehen im Panel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+    await panelAuf(page, '/gesetze/bund/STPO')
 
     const filter = page.locator('[data-v3-panel] [data-v3-panel-filter]')
     await expect(filter).toBeVisible()
@@ -79,7 +79,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test('(b) vier Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+    await panelAuf(page, '/gesetze/bund/STPO')
 
     const reiter = page.locator('[data-v3-panel] [role="tab"]')
     await expect(reiter).toHaveCount(4)
@@ -106,7 +106,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test('(c) «Sachgebiet» ist vorgesehen, aber ohne Daten NICHT im DOM', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+    await panelAuf(page, '/gesetze/bund/STPO')
     // Positiv-Sonde daneben: die Filterzeile IST da (sonst prüfte die Abwesenheit
     // unten nur, dass das Panel leer ist).
     await expect(page.locator('[data-v3-panel] [data-v3-panel-filter]')).toBeVisible()
@@ -128,7 +128,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     const fehler = fehlerSammeln(page)
     for (const [breite, hoehe] of [[1440, 900], [390, 844]] as const) {
       await page.setViewportSize({ width: breite, height: hoehe })
-      await panelAuf(page, '/gesetze/bund/STPO?leser=v3')
+      await panelAuf(page, '/gesetze/bund/STPO')
       // Auf den nachgeladenen Inhalt warten: eine leere Fläche zu scannen wäre
       // ein grüner Befund über nichts (§6.7).
       await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first()).toBeVisible({ timeout: 20_000 })
@@ -152,7 +152,7 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   test(`(d) Kantonserlass ohne Bezüge (${erlass}): kein leerer Zähler, kein leeres Element`, async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await panelAuf(page, `/gesetze/kanton/${erlass}?leser=v3`)
+    await panelAuf(page, `/gesetze/kanton/${erlass}`)
 
     // Der Öffner trägt keine Zahl — weder eine 0 noch eine erfundene.
     const oeffner = page.locator('[data-v3-panel-zaehler], [data-v3-panel-lasche]').first()

@@ -83,7 +83,7 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
   test('(b) Handy @390: das Feld steht im klebenden Kopf-Block, nicht im Blatt', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
     const feld = page.locator('[data-v3-suchsprung] input')
@@ -119,7 +119,7 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
   test('(c) Desktop @1440 mit eingeklappter Gliederung: das Feld bleibt da', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
 
     // Mit Spalte: das Feld gehört in deren klebenden Sockel (Kap. 4b).
@@ -165,7 +165,7 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
   test('(e) die ausgelegte Höhe der Such-Zone deckt ihr Markup — ohne Luft', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-such-zone]')).toBeVisible({ timeout: 20_000 })
 
     const mass = async () => page.evaluate(() => {

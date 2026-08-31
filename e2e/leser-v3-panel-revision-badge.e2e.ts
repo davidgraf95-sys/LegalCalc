@@ -22,7 +22,7 @@ function fehlerSammeln(page: Page): string[] {
 test.describe('V3-Panel · Normrevisions-Badge am Entscheid-Chip (AIG)', () => {
   test('(a) Entscheid VOR der Revision → ↻-Badge mit Revisionsdatum + AS-Fundstelle', async ({ page }) => {
     const fehler = fehlerSammeln(page)
-    await page.goto('/gesetze/bund/AIG?leser=v3#art-5')
+    await page.goto('/gesetze/bund/AIG#art-5')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
     const panel = page.locator('[data-v3-panel]')
@@ -40,7 +40,7 @@ test.describe('V3-Panel · Normrevisions-Badge am Entscheid-Chip (AIG)', () => {
 
   test('(b) Entscheid NACH der Revision → kein Badge (gleich, UI-still)', async ({ page }) => {
     const fehler = fehlerSammeln(page)
-    await page.goto('/gesetze/bund/AIG?leser=v3#art-34')
+    await page.goto('/gesetze/bund/AIG#art-34')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
     const panel = page.locator('[data-v3-panel]')

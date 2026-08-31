@@ -100,7 +100,7 @@ async function wurzelGroesse(page: Page): Promise<number> {
 async function oeffneStPO(page: Page): Promise<string[]> {
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v3')
+  await page.goto('/gesetze/bund/STPO')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   // Das Optionsmenü steht im Ist-Stand offen; sollte es zugeklappt starten,

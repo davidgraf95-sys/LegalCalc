@@ -93,7 +93,7 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
   test('(a) Einzelansicht @1440: im Ruhezustand UND gescrollt keine Leerzone', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
@@ -115,7 +115,7 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
   test('(b) Handy @390: dieselbe Bündigkeit bei kleinerer Wrapper-Polsterung', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 
@@ -160,10 +160,10 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
   test('(d) das Erlass-Kürzel im Kopf ist nie angeschnitten (LugÜ · StPO · ZH-211.11)', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     for (const [pfad, kuerzel, breite] of [
-      ['/gesetze/international/LUGUE?leser=v3', 'LugÜ', 1440],
-      ['/gesetze/bund/STPO?leser=v3', 'StPO', 1440],
-      ['/gesetze/kanton/ZH-211.11?leser=v3', null, 1440],
-      ['/gesetze/international/LUGUE?leser=v3', 'LugÜ', 390],
+      ['/gesetze/international/LUGUE', 'LugÜ', 1440],
+      ['/gesetze/bund/STPO', 'StPO', 1440],
+      ['/gesetze/kanton/ZH-211.11', null, 1440],
+      ['/gesetze/international/LUGUE', 'LugÜ', 390],
     ] as const) {
       await page.setViewportSize({ width: breite, height: 900 })
       await page.goto(pfad)
@@ -212,7 +212,7 @@ test.describe('Ä1 — der V3-Kopf sitzt bündig an der Leiste über ihm', () =>
   test('(e) V6 · Gliederung umschalten schiebt den gelesenen Artikel nicht unter den Kopf', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+    await page.goto('/gesetze/bund/STPO#art-429')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-429')).toBeAttached({ timeout: 20_000 })
     await page.waitForTimeout(1200) // der Anker-Sprung hat zwei Nachläufe

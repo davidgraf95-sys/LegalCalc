@@ -52,7 +52,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
   test('(a) D @1440 StPO: Öffner führt ins Panel, und der Zähler bekommt seine Zahl', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
 
     // Im Lesekörper steht KEINE Bezüge-Zeile mehr (Pos. 12) — sie ist der Grund,
@@ -84,7 +84,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
   test('(b) F8: «Rechtsprechung im Text» aus ⇒ Zähler weg, Menü-Weg bleibt', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     // Er ist DA, bevor geschaltet wird — sonst prüfte der Fall unten nichts.
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
@@ -110,7 +110,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     await page.setViewportSize({ width: 1440, height: 900 })
     // Das zweite Pane entsteht über die Bedienung, nicht über die Adresse — genau
     // wie in `leser-kopf-paritaet` (ein `?r=`-Parameter erzeugt keines).
-    await page.goto('/gesetze/bund/AIG?leser=v3')
+    await page.goto('/gesetze/bund/AIG')
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
     const art5 = page.locator('#art-5')
     await expect(art5).toBeAttached({ timeout: 20_000 })
@@ -160,7 +160,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     // Artikel, und der Panel-Kopf sagt, welcher es ist.
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await expect(page.locator('[data-v3-kopf-artikel]')).toHaveCount(0)
 
@@ -176,7 +176,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
   test('(d) F8-Kehrseite: mit ausgeschaltetem Schalter öffnet «r» das Panel weiterhin', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await page.evaluate(() => {
       localStorage.setItem('lm.leser.optionen', JSON.stringify({

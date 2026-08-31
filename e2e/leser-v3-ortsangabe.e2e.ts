@@ -85,7 +85,7 @@ test.describe('Ä1 — die V3-Kopfzeile nennt den Ort, an dem der Leser wirklich
     test.slow() // grosser Erlass, damit der Spy mehrere Artikelgrenzen sieht
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 

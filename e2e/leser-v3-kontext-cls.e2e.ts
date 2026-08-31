@@ -107,7 +107,7 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
   test('(a) D @1440: Öffnen und Schliessen lassen y und Breite unverändert', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     // Erst nach Ruhe messen: der Erlass-Kopf und die Gliederung wachsen beim
@@ -144,7 +144,7 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
   test('(b) H @390: das Blatt liegt über dem Text und bewegt ihn nicht', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await page.waitForTimeout(600)

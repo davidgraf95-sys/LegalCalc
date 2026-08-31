@@ -42,7 +42,7 @@ const feld = (page: Page) => page.locator('[data-v3-suchsprung] input').first()
 async function oeffne(page: Page, pfad: string): Promise<string[]> {
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto(`${pfad}?leser=v3`)
+  await page.goto(pfad)
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   await expect(feld(page)).toBeVisible({ timeout: 20_000 })
@@ -133,7 +133,7 @@ test.describe('H2b — Suchfeld und Trefferliste sagen, was sie wissen', () => {
   test('Ä10 + Ä5 · das Gliederungs-Blatt sagt «Gliederung» genau einmal', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-gliederung-auf]').first().click()
     await expect(page.locator('[data-gliederung-sheet]')).toBeVisible({ timeout: 15_000 })

@@ -31,7 +31,7 @@ test('W-1 — nach 600 px Scroll in der Trefferliste bleibt das Suchfeld sichtba
   test.slow() // grosser Erlass (StPO, 480 Art.), damit die Liste überhaupt scrollt
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v3')
+  await page.goto('/gesetze/bund/STPO')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 

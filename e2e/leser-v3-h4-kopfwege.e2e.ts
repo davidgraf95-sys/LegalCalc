@@ -65,7 +65,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     test(`(a) NM-2 · ${tag} @${w}: die Kopfzeile trägt einen tapbaren Panel-Öffner`, async ({ page }) => {
       const fehler = fehlerSammeln(page)
       await page.setViewportSize({ width: w, height: h })
-      await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+      await page.goto('/gesetze/bund/STPO#art-429')
       await warteLeser(page)
       await expect(page.locator('#art-429')).toBeAttached({ timeout: 20_000 })
 
@@ -94,7 +94,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     // ≤ 2 reine Icons»). Der neue Zähler-Chip darf den Deckel nicht sprengen —
     // gemessen: Ort · ⚖ N · ☰ · ··· .
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     const m = await page.evaluate(() => {
       const zeile = document.querySelector('[data-v3-kopf]')!.firstElementChild!
@@ -118,7 +118,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     // darf diese Regel nicht aushebeln — er hängt an derselben einen Stelle
     // (`panelModell.oeffnerSichtbar`).
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await expect(page.locator('[data-v3-panel-zaehler]')).toHaveCount(1)
 
@@ -169,7 +169,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
   test('(c) Ä79 · @1440 eingeklappt: ein ☰ für die Gliederung, und es ist die Schiene', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await page.waitForTimeout(400)
 
@@ -212,7 +212,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
   test('(d) Ä87 · @1440 mit offenem Blatt steht genau EIN ✕ — das des Blatts', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+    await page.goto('/gesetze/bund/STPO#art-429')
     await warteLeser(page)
     await page.waitForTimeout(400)
     // Ruhezustand: gar kein ✕ — der Rücksprung steht als Wort in der Ort-Zone.
@@ -239,7 +239,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     const gesichter = new Map<number, string>()
     for (const [w, h] of [[390, 844], [720, 900], [900, 900], [1024, 800], [1440, 900]] as const) {
       await page.setViewportSize({ width: w, height: h })
-      await page.goto('/gesetze/bund/STPO?leser=v3')
+      await page.goto('/gesetze/bund/STPO')
       await warteLeser(page)
       await page.waitForTimeout(300)
       const m = await page.evaluate(() => {
@@ -269,7 +269,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
 
   test('(f) Ä90 · @390 tragen alle Kopf-Griffe EINE Bauform und ein 32-px-Ziel', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3#art-429')
+    await page.goto('/gesetze/bund/STPO#art-429')
     await warteLeser(page)
     await page.waitForTimeout(400)
     const griffe = await page.evaluate(() => [...document.querySelectorAll(
@@ -295,7 +295,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
   test('(g) Ä92 · ein Öffner je Breite: Chip ODER Menü-Eintrag, nie beide', async ({ page }) => {
     for (const [w, h] of [[390, 844], [1440, 900]] as const) {
       await page.setViewportSize({ width: w, height: h })
-      await page.goto('/gesetze/bund/STPO?leser=v3')
+      await page.goto('/gesetze/bund/STPO')
       await warteLeser(page)
       await page.waitForTimeout(300)
       // Mit Zähler: der Menü-Eintrag fehlt — auch bei AUFGEZOGENEM Menü, denn
@@ -324,7 +324,7 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
     // Die Gegenprobe: der Kopf-☰ wird nicht generell gestrichen, sondern nur
     // dort, wo die Schiene dieselbe Handlung sichtbar trägt.
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await expect(page.locator('[data-v3-gliederung-schiene]')).toHaveCount(0)
     await expect(page.locator('[data-v3-gliederung-auf]')).toBeVisible()

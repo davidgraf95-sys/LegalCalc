@@ -39,7 +39,7 @@ function fehlerSammeln(page: Page): string[] {
 async function oeffneBGFA(page: Page): Promise<string[]> {
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/BGFA?leser=v3')
+  await page.goto('/gesetze/bund/BGFA')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
@@ -107,7 +107,7 @@ test.describe('Kap. 4b — feste Reihenfolge der Seitenleiste', () => {
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/OR?leser=v3')
+    await page.goto('/gesetze/bund/OR')
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
 
@@ -130,7 +130,7 @@ test.describe('Kap. 4b — feste Reihenfolge der Seitenleiste', () => {
     test.slow() // schwerer Erlass (OR) nötig, damit der Baum überhaupt zu startet
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/OR?leser=v3')
+    await page.goto('/gesetze/bund/OR')
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
     const alleKnopf = page.locator('[data-v3-alle]')

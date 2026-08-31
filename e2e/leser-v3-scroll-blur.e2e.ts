@@ -12,7 +12,7 @@ import { test, expect } from '@playwright/test'
 test.describe('Scroll-Blur an der Lesespalte (V3)', () => {
   test('obere/untere Verlaufskante: sticky, korrekt verankert, Gradient auf `paper`, kein Layout-Einfluss', async ({ page }) => {
     test.slow() // volle Leser-Instanz am schweren Erlass OR, 1686 Artikel (Muster leser-v3-eine-kopfzeile.e2e.ts)
-    await page.goto('/gesetze/bund/OR?leser=v3')
+    await page.goto('/gesetze/bund/OR')
     const spalte = page.locator('#lc-lesespalte')
     await expect(spalte).toBeVisible({ timeout: 20_000 })
     // Anker VOR jedem evaluate: der Leser ist erst fertig gemountet, wenn der

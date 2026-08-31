@@ -24,7 +24,7 @@ test.describe('V3-Panel · Kurztext-Popover am Entscheid-Chip', () => {
     const fehler = fehlerSammeln(page)
     // ≥ lg, damit «Daneben öffnen» überhaupt angeboten wird (Pane-Gating).
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/OR?leser=v3#art-41')
+    await page.goto('/gesetze/bund/OR#art-41')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
 

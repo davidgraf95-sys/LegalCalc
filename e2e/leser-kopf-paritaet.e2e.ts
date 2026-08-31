@@ -47,7 +47,7 @@ test('H1 — beide Split-View-Panes tragen denselben V3-Kopf (Kürzel, Ansicht-�
   await page.setViewportSize({ width: 1440, height: 900 })
 
   // Hauptfenster: AIG in V3, an Art. 5 (derselbe Anker-Pfad wie A16).
-  await page.goto('/gesetze/bund/AIG?leser=v3')
+  await page.goto('/gesetze/bund/AIG')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   const art5 = page.locator('#art-5')
   await expect(art5).toBeAttached({ timeout: 20_000 })
