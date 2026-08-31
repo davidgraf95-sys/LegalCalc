@@ -81,7 +81,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE`** — W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·6b-MAT-FINMA`** — `W2·13-KANTONE` seit 31.8.2026 im Bau
+> (wip, Worktree lexmetrik-kantone); W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
 > (Risikopfad, eigene Session). Fokus-Dekret 24.7.2026 (David): die Gesetzesdarstellung steht im
 > Vordergrund — Gesetzes-Schritte prioritär, daneben `W2·6b-MAT-FINMA` (Bewerbungs-Kontext FINMA).
 > Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
@@ -101,8 +102,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **S2 · Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
 
-- [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
-  <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+- [~] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`)*
+  <!-- @meta id: W2·13-KANTONE · status: wip · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   Hier die NICHT-Risiko-Einheiten (reine Darstellung/Suche/Anzeige); Extraktion & Daten liegen in
   `W2·13-KANTONE-DATEN`. **Fertig, wenn** K-1 bis K-11 abgehakt sind.
   **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
