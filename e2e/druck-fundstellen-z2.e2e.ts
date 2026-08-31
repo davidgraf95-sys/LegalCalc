@@ -132,7 +132,7 @@ test.describe('Z2 · Druck der Fundstelle', () => {
   test('V3: Split-View-Ausdruck bleibt nicht auf eine Seite zugeschnitten', async ({ page }) => {
     test.slow() // schwere Split-View-Interaktion (Panes + idle-Shards + Scroll)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/ZGB?leser=v3#art-684')
+    await page.goto('/gesetze/bund/ZGB#art-684')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
     // Referenz: derselbe Erlass OHNE Split — so hoch druckt er wirklich.

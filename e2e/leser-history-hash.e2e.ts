@@ -13,14 +13,8 @@
 // oben — SYNCHRON vor dem ersten Paint, ohne Zwischenzustand «neues (kurzes)
 // Dokument + alte/geklemmte Scrollposition» (Prod-Messung: Ankunft bei y=2'520
 // auf 3'249 px Dokumenthöhe, +15 ms Zwischenzustand belegt).
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 // ── LM-199: Zurück auf einen Eintrag MIT stehendem #hash ⇒ Anker gewinnt ─────
 test.describe('LM-199 — Zurück mit stehendem #hash: Leseposition, nicht Einstiegs-Anker', () => {

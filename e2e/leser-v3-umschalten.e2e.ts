@@ -8,15 +8,9 @@
 // fällt der Rückweg selbst; es gibt nichts mehr, wohin man umschalten
 // könnte. Verbleiben (a3) und (b2), umbenannt — sie prüften schon vorher
 // ausschliesslich V3-eigenes Verhalten, ohne je nach V1 zu wechseln.
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('Ansicht-Menü — D1/B3', () => {
   // ── D1 (S1-Rest, gebaut im H3-Nachzug 17.8.2026) ──────────────────────────

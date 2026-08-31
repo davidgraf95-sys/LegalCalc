@@ -24,13 +24,7 @@
 // Prop `suchZone={suchZone}` am `<LeserKopf>` entfernen — dann fällt Fall (a) auf
 // 0 Felder zurück (der Vorzustand), (b) und (c) verlieren ihr Feld ebenfalls.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Zu welchem Pane gehört jedes gefundene Suchfeld? Über die Vorfahrenkette, weil
  *  das Feld im Kopf-Block liegt und ein Blatt per Portal auch AUSSERHALB von
@@ -83,7 +77,7 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
   test('(b) Handy @390: das Feld steht im klebenden Kopf-Block, nicht im Blatt', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
 
     const feld = page.locator('[data-v3-suchsprung] input')
@@ -119,7 +113,7 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
   test('(c) Desktop @1440 mit eingeklappter Gliederung: das Feld bleibt da', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
 
     // Mit Spalte: das Feld gehört in deren klebenden Sockel (Kap. 4b).
@@ -165,7 +159,7 @@ test.describe('Ä19 — das Such-/Sprungfeld ist in jeder Breite erreichbar', ()
   test('(e) die ausgelegte Höhe der Such-Zone deckt ihr Markup — ohne Luft', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/BGFA?leser=v3')
+    await page.goto('/gesetze/bund/BGFA')
     await expect(page.locator('[data-v3-such-zone]')).toBeVisible({ timeout: 20_000 })
 
     const mass = async () => page.evaluate(() => {

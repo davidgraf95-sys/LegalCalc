@@ -24,21 +24,15 @@
 //      1fr` stellen ⇒ die Werte stehen nicht mehr auf einer Kante.
 // Alle fünf so gemessen (17.8.2026, chromium, Projekt `leser-v3`).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Die fünf Erlassarten der Neutralitätsprobe (Fahrplan Kap. 7). */
 const ERLASSE = [
-  { name: 'StPO (Bund, mit Warnung)', pfad: '/gesetze/bund/STPO?leser=v3' },
-  { name: 'VMWG (Verordnung)', pfad: '/gesetze/bund/VMWG?leser=v3' },
-  { name: 'LugÜ (Staatsvertrag)', pfad: '/gesetze/international/LUGUE?leser=v3' },
-  { name: 'BS-640.100 (Kanton, §)', pfad: '/gesetze/kanton/BS-640.100?leser=v3' },
-  { name: 'ZH-211.11 (Kanton, §)', pfad: '/gesetze/kanton/ZH-211.11?leser=v3' },
+  { name: 'StPO (Bund, mit Warnung)', pfad: '/gesetze/bund/STPO' },
+  { name: 'VMWG (Verordnung)', pfad: '/gesetze/bund/VMWG' },
+  { name: 'LugÜ (Staatsvertrag)', pfad: '/gesetze/international/LUGUE' },
+  { name: 'BS-640.100 (Kanton, §)', pfad: '/gesetze/kanton/BS-640.100' },
+  { name: 'ZH-211.11 (Kanton, §)', pfad: '/gesetze/kanton/ZH-211.11' },
 ]
 
 async function boxOeffnen(page: Page, pfad: string): Promise<void> {
@@ -118,7 +112,7 @@ test.describe('Ä70/Ä72 — eine Stimme, eine Klappe, eine Warnung', () => {
   test('StPO: EINE Schriftfamilie in der Box, EINE Klappe, die Warnung genau einmal', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await boxOeffnen(page, '/gesetze/bund/STPO?leser=v3')
+    await boxOeffnen(page, '/gesetze/bund/STPO')
 
     const befund = await page.evaluate(() => {
       const box = document.querySelector('[data-v3-uebersicht]') as HTMLElement
@@ -193,7 +187,7 @@ test.describe('Ä74 — der Stand steht nicht zweimal untereinander', () => {
     // «(Stand am …)», die Kantone «(Stand …)»; 1182 von 1420 Sidecars.
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await boxOeffnen(page, '/gesetze/kanton/BS-640.100?leser=v3')
+    await boxOeffnen(page, '/gesetze/kanton/BS-640.100')
 
     const datum = await page.evaluate(() => {
       const z = document.querySelector('[data-v3-uebersicht-zeile-id="datum"] dd')
@@ -210,7 +204,7 @@ test.describe('Ä10-Erbe — im Handy-Blatt kein Überlauf', () => {
   test('StPO @390: die Box im Gliederungs-Blatt bleibt in ihrer Breite', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     // Das GLIEDERUNGS-Blatt; im TREFFER-Blatt ist die Box per Ä32/B11-Weiche
     // bewusst abwesend (e2e/leser-v3-blatt (d)).
@@ -275,7 +269,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
   test('(a) @1440 mit EINGEKLAPPTER Gliederung: Panel-Öffner + Klappe im Panel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-uebersicht]')).toBeVisible({ timeout: 20_000 })
 
     // VORBEDINGUNG — der Zustand, in dem der Befund entstand. Kein Bedienschritt
@@ -316,7 +310,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     test(`(b) @${breite}: ☰ + ▸ — zwei Schritte bis zum Wert «Stand»`, async ({ page }) => {
       const fehler = fehlerSammeln(page)
       await page.setViewportSize({ width: breite, height: 844 })
-      await page.goto('/gesetze/bund/STPO?leser=v3')
+      await page.goto('/gesetze/bund/STPO')
       await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
       // Ohne Spalte startet die Seite ohne Steckbrief — die Vorbedingung des Falls.
       await expect(page.locator('[data-v3-uebersicht]')).toHaveCount(0)
@@ -336,7 +330,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
   test('(c) keine Doppelanzeige: steht die Box in der Leiste, schweigt das Panel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-uebersicht]')).toBeVisible({ timeout: 20_000 })
 
     await page.locator('[data-v3-panel-zaehler]').first().click()
@@ -390,7 +384,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
   // `LeserPanel` zu geben.
   test('(c2) Ä89 · @1440: die Steckbrief-Zeile liegt über der Reiter-Leiste und ausserhalb der Tafel', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-uebersicht]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-gliederung-zu]').click()
     await page.locator('[data-v3-panel-zaehler]').first().click()
@@ -444,7 +438,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
   // in die Warn-Zelle setzen ⇒ Seite 2, Box-Fach 1 in den Lagen (2) und (3).
   test('(c3) @390: Warnung genau einmal — mit Panel, mit Blatt, mit beidem', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(400)
 
@@ -494,7 +488,7 @@ test.describe('Steckbrief — auf jeder Breite in höchstens zwei Schritten', ()
     const fehler = fehlerSammeln(page)
     for (const [w, h] of [[1440, 900], [390, 844]] as const) {
       await page.setViewportSize({ width: w, height: h })
-      await boxOeffnenIrgendwo(page, '/gesetze/kanton/BS-640.100?leser=v3', w)
+      await boxOeffnenIrgendwo(page, '/gesetze/kanton/BS-640.100', w)
       const zeilen = await page.evaluate(() => [...document.querySelectorAll('[data-v3-uebersicht-liste] > div')]
         .map((d) => ({
           id: d.getAttribute('data-v3-uebersicht-zeile-id'),
@@ -537,7 +531,7 @@ test.describe('a11y — die Klappe hat einen Namen und sagt ihren Zustand', () =
   test('StPO: `summary` trägt einen Namen, `details` meldet auf/zu', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-uebersicht]')).toBeVisible({ timeout: 20_000 })
 
     const zeile = page.locator('[data-v3-uebersicht-zeile]').first()

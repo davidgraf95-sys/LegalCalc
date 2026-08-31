@@ -11,7 +11,8 @@
 //     Sidebar, NICHT bei blossem Korpus-Wachstum (keine zweite Zähl-Wahrheit §5).
 //   – Mobil 390: dieselben Badges in der Off-Canvas-Schublade (§3.1).
 // Läuft gegen `vite preview` (dist).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { STARTSEITE_ZAEHLER } from '../src/data/startseiteZaehler.generated'
 import { erfassungsgrad, STUFE_WORT } from '../src/lib/normtext/erfassungsgrad'
 
@@ -22,13 +23,6 @@ function erwarteterName(kt: string, name: string): { label: string; n: number } 
   const wort = STUFE_WORT[erfassungsgrad(kt, n).stufe]
   const mengen = n === 0 ? 'keine Erlasse' : `${n} ${n === 1 ? 'Erlass' : 'Erlasse'}`
   return { label: `${name} — ${mengen}, ${wort}`, n }
-}
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
 }
 
 test.describe('IA-7 · Erlass-Zahl-Badges an den Sidebar-Kantonslinks', () => {

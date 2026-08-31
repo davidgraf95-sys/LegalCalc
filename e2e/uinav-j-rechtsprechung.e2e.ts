@@ -17,13 +17,7 @@
 // `goBack()` darauf. Adress-Asserts bleiben query-tolerant: die Übersicht
 // spiegelt ihren Filterzustand per replaceState in die Query.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Übersicht öffnen und warten, bis das Manifest da ist (Zeilen gerendert). */
 async function uebersicht(page: Page, query = '') {

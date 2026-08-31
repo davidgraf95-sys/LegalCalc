@@ -18,6 +18,7 @@
 // src/tests/international-redirect.test.ts ab (Konfig-Tor), prod deckt
 // scripts/betrieb/prod-smoke.ts ab (308 gegen die Live-Domain).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const SITE_URL = 'https://lexmetrik.vercel.app'
 const SAEULE_PFAD = '/gesetze'
@@ -25,13 +26,6 @@ const SAEULE_QUERY = 'ebene=international'
 
 // Die 5 Anker — Wortlaut-identisch zu src/lib/navigation.ts (Spec §11.4 Ziff. 3).
 const ANKER = ['menschenrechte', 'privat-zivil', 'rechtshilfe', 'schweiz-eu', 'eu-verordnungen']
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 /** Prüft: URL steht auf der Säule, mit erwartetem Hash. */
 async function erwarteSaeule(page: Page, hash: string) {

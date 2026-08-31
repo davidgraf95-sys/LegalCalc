@@ -10,15 +10,9 @@
 //   Klick-Ruhe — ein TOC-Eintrag lässt sich anklicken und springt sauber ans Ziel.
 //   A9-DoD — Lese-Scroll unter 4× CPU-Drossel: CLS 0, keine Konsolenfehler.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen, clsHoehenSamplerVorabInstallieren } from './helpers/cls'
 import { CONTAINER_LOKAL_READER_SCHWER } from './helpers/budgets'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 // TOC-Scrollposition dieses (Primär-)Panes.
 async function tocScrollTop(page: Page): Promise<number> {

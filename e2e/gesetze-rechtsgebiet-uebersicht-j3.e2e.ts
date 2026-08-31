@@ -12,14 +12,8 @@
 //     serious-Verstösse aus der neuen Sektion.
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import AxeBuilder from '@axe-core/playwright'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 const sektion = (page: Page) => page.getByRole('region', { name: 'Gesetze nach Rechtsgebiet' })
 

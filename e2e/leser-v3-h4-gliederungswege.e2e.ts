@@ -38,7 +38,7 @@ test.describe('H4-Nachzug — die Gliederung führt dorthin, wo sie hinzeigt', (
     // VMWG: kleiner Erlass, dessen Gliederung ARTIKEL-Einträge direkt zeigt —
     // genau die Zeilen, an denen der Befund hängt (die StPO zeigt auf oberster
     // Ebene nur Titel, der Fall wäre dort nicht reproduzierbar).
-    await page.goto('/gesetze/bund/VMWG?leser=v3')
+    await page.goto('/gesetze/bund/VMWG')
     await warteLeser(page)
     await page.waitForTimeout(400)
 
@@ -61,7 +61,7 @@ test.describe('H4-Nachzug — die Gliederung führt dorthin, wo sie hinzeigt', (
 
   test('(b) B1-Gegenprobe · @390: die Sektions-Zeile schliesst es weiterhin', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await page.waitForTimeout(400)
     await page.locator('[data-v3-gliederung-auf]').click()
@@ -76,7 +76,7 @@ test.describe('H4-Nachzug — die Gliederung führt dorthin, wo sie hinzeigt', (
 
   test('(c) B7 · «t» setzt den Fokus in den GLIEDERUNGSBAUM, nicht in den Steckbrief', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await warteLeser(page)
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(400)
