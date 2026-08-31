@@ -155,3 +155,34 @@ describe('D-8 — der Filterzähler ist eine Zählung, kein Status', () => {
     expect(quelle).toContain('<span className="num tabular-nums text-ink-600">{anzahl}</span>');
   });
 });
+
+describe('D-5 — «geplant» trägt EINE Marke (Entscheid David 31.8.2026: Umriss slate)', () => {
+  const DATEIEN = [
+    'src/components/Katalog.tssx'.replace('tssx','tsx'),
+    'src/components/forms/ZustaendigkeitForm.tsx',
+    'src/components/forms/VorlagenSprung.tsx',
+    'src/components/forms/ZustErgebnisEinleitung.tsx',
+    'src/components/SprachUmschalter.tsx',
+  ];
+  it('kein Vorbereitungs-/Bearbeitungs-Status mehr in soft- oder warn-Ton', () => {
+    const suender: string[] = [];
+    for (const d of DATEIEN) {
+      const q = readFileSync(d, 'utf8');
+      // JSX-Zeilen mit Status-Wortlaut UND Alt-Ton — Kommentare zählen nicht
+      for (const zeile of q.split('\n')) {
+        const t = zeile.trim();
+        if (t.startsWith('//') || t.startsWith('*') || t.startsWith('/*')) continue;
+        if (/(Vorbereitung|Bearbeitung)/.test(t) && /lc-badge-(soft|warn)/.test(t)) suender.push(d);
+      }
+    }
+    expect(suender, 'Status «geplant» in Alt-Ton statt lc-badge-geplant').toEqual([]);
+  });
+  it('die Marke ist genau einmal definiert (index.css) und kanonisch beschriftet', () => {
+    const css = readFileSync('src/index.css', 'utf8');
+    expect(css.match(/\.lc-badge-geplant\s*\{/g)?.length).toBe(1);
+    for (const d of DATEIEN) {
+      const q = readFileSync(d, 'utf8');
+      if (q.includes('lc-badge-geplant')) expect(q).toContain('In Vorbereitung');
+    }
+  });
+});

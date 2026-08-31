@@ -50,7 +50,7 @@ function ListenZeile({ k, subLabel, zeigeGeplant }: { k: CalculatorCard; subLabe
             <span className="lc-badge-entwurf" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
           )}
           {zeigeGeplant && k.status === 'geplant' && (
-            <span className="lc-badge lc-badge-soft">In Vorbereitung</span>
+            <span className="lc-badge-geplant">In Vorbereitung</span>
           )}
         </>
       ) : undefined}

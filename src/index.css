@@ -1580,6 +1580,18 @@
     @apply lc-badge bg-transparent text-warn-700;
     border: 1px solid color-mix(in oklab, var(--warn-500) var(--status-outline), transparent);
   }
+  /* «geplant» (Status-Modell §8) — Entscheid David 31.8.2026 (W2·19/D-5,
+     wörtlich «bau deinen vorschlag (umriss grau)»): Umriss-Form wie
+     lc-badge-entwurf, aber in der neutralen slate-Rolle. Beide Alt-Töne
+     (soft-Füllung, warn-Umriss) waren vom Farb-Wörterbuch ausgeschlossen
+     (DESIGN-REGLEMENT-NORMTEXT §Farb-Wörterbuch: slate ≠ «in Vorbereitung»,
+     warn = echter Sach-/Fassungsvorbehalt). Kanonischer Wortlaut:
+     «In Vorbereitung» — Wächter: design-konsistenz-chips-marken. */
+  .lc-badge-geplant {
+    @apply lc-badge bg-transparent;
+    color: var(--slate-700);
+    border: 1px solid color-mix(in oklab, var(--slate-500) var(--status-outline), transparent);
+  }
   .lc-badge-danger { @apply bg-danger-bg text-danger-700; }
   .lc-badge-soft { background: var(--slate-bg); color: var(--slate-700); border: 1px solid color-mix(in oklab, var(--slate-500) var(--status-border-soft), transparent); }
 
