@@ -551,9 +551,18 @@ identisch.
   die vorhandenen Dateien und vergleicht nur deren Pfade). Fläche
   `scripts/datenhaltung/**` = fremder Strang, als ROADMAP-Zeile hinterlegt.
 - Silbentrennungs-Fehler bei ECHTEN Bindestrich-Ellipsen: «Grenz- und
-  Gebäudeabstände» wird zu «Grenzund» (ZH-700.1 § 260 u. a.). Der Zeilen-Joiner
-  kann die Ellipse nicht von der Silbentrennung unterscheiden — braucht die
-  Wortliste oder den Tag-Leser (R1).
+  Gebäudeabstände» wird zu «Grenzund». Der Zeilen-Joiner kann die Ellipse
+  nicht von der Silbentrennung unterscheiden — braucht die Wortliste oder den
+  Tag-Leser (R1). **Vollinventar (GP4, B2 — die Abhak-Liste für R1, 12
+  Stellen):** 131.1 § 141 · 211.1 § 87 · 631.1 §§ 27, 31, 72a, 88, 162a, 235,
+  237 · 700.1 §§ 50, 260 (×2).
+- GP4-Restrisiko-Notiz (7c): der Zeichen-Deckungsgrad ist eine **90 %-
+  UNTERGRENZE** je §-Region — ein Textverlust unter einem Zehntel der
+  Bestimmung bleibt 7c unsichtbar und wird nur gefangen, wenn er eine Zahl
+  (7b), ein lit. (2), einen Absatz-Marker (5) oder seit Runde 4 einen
+  Einheiten-Exponenten (9) trägt. Bewusst so belassen (Schwelle am geheilten
+  Bestand: min 95.9 %); die Lücke schliesst erst der zeichen-vollständige
+  Tag-Leser-Kreuzvergleich (R1, Phase II).
 - Die sieben Zahlenfolge-Ausnahmen könnten entfallen, sobald die Zweitlesung die
   verschachtelten Ziffern-Aufzählungen nicht mehr für Überschriften hält.
 
