@@ -257,6 +257,58 @@ allein dieser §.*
 
 ---
 
+## §5-R6 · Legaldefinitionen — gebaut 31.8.2026 (Phase III, kanton-generisch)
+
+*Eigener Unterabschnitt statt Einbau in §5.2, weil §4/§5 gleichzeitig vom
+ZH-Strang bearbeitet werden (§0 Kollisionsregel — lieber ein anhängender
+Abschnitt als ein Merge-Konflikt in fremder Bau-Fläche).*
+
+**Stand: gebaut, Gegenprüfung offen.** Alles `status: 'entwurf'` — was als
+Legaldefinition GILT, ist juristisches Urteil (§7/§8, Abnahme bei David).
+
+**Muster-Katalog empirisch erhoben** über den GESAMTEN Korpus (56 113 Artikel,
+1 458 Snapshots), je Kandidat Trefferzahl + deterministische Präzisions-Stichprobe
+(n = 20, bei kleiner Population Vollerhebung). Aufgenommen nur ≥ ~90 %:
+`als-gilt` 1 459 (40/40) · `legende-einleitung` 342 (20/20) · `kurzform` 76 (20/20) ·
+`guillemets` 71 (75/75) · `im-sinne` 43 (20/20) · `legende-marginalie` 20 (22/22) ·
+`unter-versteht` 13 (13/13) · `bedeutet-begriff` 11 (12/12).
+**Verworfen und dokumentiert** (Wortlaut im Kopf von
+`scripts/normtext/definitionen-logik.ts`): «gilt als» nicht invertiert 675 (20 %) ·
+«bezeichnet» 804 (0 %) · «im Sinne dieses/dieser» roh 181 (45 %) ·
+«bedeutet» freistehend 145 (30 %) · Begriffs-Marginalie + «X ist/sind» 51 (86 %,
+unter der Schwelle) · «Unter X ist/sind» ohne «zu verstehen» 39 (25 %).
+Fremdsprachen nur GEZÄHLT, nicht aufgenommen: fr «est/sont réputé» 4,
+fr «au sens de la présente» 4, it 0 — zu dünn für eine tragfähige Stichprobe.
+
+**Ergebnis:** 2 035 Einträge, Bund 1 217 · Kanton 818 über 15 Kantone
+(AI 27 · AR 155 · BE 2 · BL 23 · BS 448 · GR 5 · LU 4 · NW 24 · OW 30 · SG 35 ·
+SH 1 · SO 33 · SZ 2 · TG 27 · VS 2). `public/normtext/definitionen.json`,
+1,29 MB roh / **167 KB gzip**. Suchindex bewusst NICHT beladen — das ist R11.
+
+**Kanton-Generik (§5.1 Ziff. 1):** keine Kantonsliste, kein Sonderpfad; der
+Generator läuft über jedes Verzeichnis-JSON mit `eintraege`-Array, das Tor
+ebenso. Ein neuer Kanton wird ohne Codeänderung mitgenommen. Die 11 Kantone
+ohne Treffer sind erklärt, nicht übergangen: 6 sind fr/it (FR GE JU NE TI VD —
+die Regeln sind DE-only), 5 deutschsprachige (AG GL UR ZG ZH) tragen 39–198
+Artikel reiner Gebühren-/Tarif-Erlasse ohne Definitionsform.
+
+**Neues Dauer-Tor `check:definitionen`** (§5.1 Ziff. 3), in `check:seriell` UND
+in `ci.yml` verdrahtet: Determinismus · Byte-Gleichheit mit dem Generator ·
+Norm-Existenz · wörtliche Zitat-Treue · Begriff-im-Zitat · Status `entwurf`.
+Jede der sechs Prüfungen einmal ROT gezeigt (Mutations-Kopie, O2/§6.7).
+
+**Was das Tor beim ersten Lauf gefunden hat — und was das für andere Runden
+heisst:** Die erste Fassung ankerte Fundstellen auf `lit.<marke>`. Das Tor
+wurde daran rot (11 Einträge, HMG/DSG). Die lit.-Marke ist im Korpus **nicht
+eindeutig**: HMG Art. 4 Abs. 1 trägt sechs Punkte mit der Marke `a`, korpusweit
+haben **623 Blöcke doppelte Item-Marken** (mehrheitlich Spiegelstriche `–`).
+Anker ist jetzt der Item-INDEX. **Jede Runde, die auf Aufzählungspunkte
+verweist (R2 Tabellen, R3 Fussnoten, R5 Verweise), muss denselben Anker
+verwenden** — die Marke ist ein Anzeigefeld, nie ein Schlüssel.
+
+**Offen, bewusst nicht in dieser Runde:** fr/it-Regeln (eigene Stichprobe
+nötig) · UI-Anbindung (Begriffs-Hervorhebung im Leser, FAHRPLAN-LESER-V3
+nach H5) · Such-Anbindung (R11) · fachliche Abnahme David.
 
 ---
 
