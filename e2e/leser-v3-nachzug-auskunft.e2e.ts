@@ -21,13 +21,7 @@
 //  Ä31 Das Suchfeld trug im Fokus outline 2 px brass + border 1 px brass +
 //      offset 1 px = wieder zwei Ringe (Ä14 war nur «teilweise» erledigt).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const APP_LEISTE = '[data-app-seitenleiste]'
 

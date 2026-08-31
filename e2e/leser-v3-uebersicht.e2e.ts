@@ -24,13 +24,7 @@
 //      1fr` stellen ⇒ die Werte stehen nicht mehr auf einer Kante.
 // Alle fünf so gemessen (17.8.2026, chromium, Projekt `leser-v3`).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Die fünf Erlassarten der Neutralitätsprobe (Fahrplan Kap. 7). */
 const ERLASSE = [

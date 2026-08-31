@@ -15,14 +15,8 @@
 // sabotieren → `npm run build` → Fall laufen lassen → zurücksetzen → `npm run
 // build`. Sabotagen in `e2e/**` (Schwellen, Assertions) wirken sofort.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 async function warteLeser(page: Page): Promise<void> {
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })

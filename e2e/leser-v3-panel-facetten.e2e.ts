@@ -20,15 +20,9 @@
 // `v3/PanelEntscheide.tsx` verschwinden; (b), wenn der `taste`-Handler in
 // `v3/LeserPanel.tsx` abgeklemmt wird.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import AxeBuilder from '@axe-core/playwright'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 async function panelAuf(page: Page, pfad: string): Promise<void> {
   await page.goto(pfad)

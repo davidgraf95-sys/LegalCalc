@@ -19,14 +19,8 @@
 //
 // Läuft gegen `vite preview` (dist). Reine UI-Einheit (golden-neutral).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 // Split-View aus dem V3-Panel heraus öffnen: ⧉ am ersten Panel-Eintrag.
 async function oeffnePanelEintragDaneben(page: Page): Promise<void> {

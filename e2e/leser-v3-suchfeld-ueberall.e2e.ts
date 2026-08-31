@@ -24,13 +24,7 @@
 // Prop `suchZone={suchZone}` am `<LeserKopf>` entfernen — dann fällt Fall (a) auf
 // 0 Felder zurück (der Vorzustand), (b) und (c) verlieren ihr Feld ebenfalls.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Zu welchem Pane gehört jedes gefundene Suchfeld? Über die Vorfahrenkette, weil
  *  das Feld im Kopf-Block liegt und ein Blatt per Portal auch AUSSERHALB von

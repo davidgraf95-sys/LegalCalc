@@ -10,13 +10,7 @@
 // unter CPU-Drossel 6× mit CLS === 0 (input-freie Shifts, wie §11.6.5).
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const feld = (page: Page) => page.getByRole('searchbox', { name: 'Gesetze durchsuchen (Kürzel, Titel, SR-Nr.)' })
 

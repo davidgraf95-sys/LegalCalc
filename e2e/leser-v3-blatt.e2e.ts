@@ -21,13 +21,7 @@
 //  B11 Der ✕ des Blatts hiess immer «Gliederung schliessen» — auch wenn über ihm
 //      «Treffer» stand.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Suche starten und das Treffer-Blatt öffnen (@390, Feld im klebenden Kopf). */
 async function trefferBlattOeffnen(page: Page, begriff: string): Promise<void> {

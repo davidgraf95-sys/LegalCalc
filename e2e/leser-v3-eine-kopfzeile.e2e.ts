@@ -45,13 +45,7 @@
 //  · in `src/components/layout/PaneKopf.tsx` `nurSteuerung` ignorieren ⇒ (d)
 //    findet die Ortsangabe wieder in der Pane-Titelleiste.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Chrome-Höhen und Leisten-Inventar der Einzelansicht. */
 async function chrome(page: Page) {

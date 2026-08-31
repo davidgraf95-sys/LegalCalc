@@ -4,13 +4,7 @@
 // zugänglich; der Deep-Link ?q= ist stabil/teilbar; die Inhaltstyp-Facette
 // filtert; das Dropdown verlinkt «alle N →» hierher. Läuft gegen `vite preview`.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const sucheFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
 

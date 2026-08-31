@@ -41,14 +41,8 @@
 // Textblocks: die ist input-ausgelöst, also kein CLS, und die Fahrplan-Zusage
 // lautet «kein Sprung», nicht «keine Bewegung».
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 /** Geometrie des Lesekörpers: Breite der Spalte + y der ersten fünf Artikel. */
 async function geometrie(page: Page): Promise<{ breite: number; ys: number[] }> {

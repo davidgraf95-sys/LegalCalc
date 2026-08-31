@@ -18,14 +18,8 @@
 // ROT ZU BEKOMMEN (§6.7): in `LeserSeitenleiste.tsx` den `ref={zoneARef}` an
 // `[data-toc-zone-a]` entfernen — die Marke bleibt ungesetzt, der Rückfall 0px
 // greift, und der Treffertest findet die Facetten-Leiste statt des Feldes.
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test('W-1 — nach 600 px Scroll in der Trefferliste bleibt das Suchfeld sichtbar und fokussierbar', async ({ page }) => {
   test.slow() // grosser Erlass (StPO, 480 Art.), damit die Liste überhaupt scrollt

@@ -16,13 +16,7 @@
 // Ein Anker-Vergleich («noch bei Art. 429») liesse eine Verschiebung um eine
 // halbe Bildschirmhöhe durchgehen.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const suchFeld = (page: Page) => page.locator('[data-v3-suchsprung] input')
 

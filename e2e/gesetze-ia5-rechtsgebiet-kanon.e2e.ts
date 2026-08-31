@@ -6,14 +6,8 @@
 // Säule) normalisiert — client-seitig, kein Router-Redirect (Leitplanke E.4).
 // Die Erreichbarkeits-Pins selbst leben UNANGEPASST in
 // gesetze-uebersicht-u.e2e.ts:112 und gesetze-rechtsgebiet-g6.e2e.ts:62.
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test.describe('IA-5 — ?ansicht=rechtsgebiet → kanonisch ?gliederung=rechtsgebiet', () => {
   test('Alt-URL löst auf UND wird kanonisch normalisiert (Umschalter zeigt die Wahl)', async ({ page }) => {

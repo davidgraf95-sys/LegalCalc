@@ -3,14 +3,8 @@
 // A2 Scrollbalken-Proportionalität · A16 Zurück landet exakt am Ausgangsort
 // (anker-basiert) · A17 Split-View öffnet an der Fundstelle. Läuft gegen `vite
 // preview` (dist). A9-DoD: eine Interaktion unter CPU-Throttle mit CLS-Beobachter.
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 // ── A2: Scrollbalken-Proportionalität an einem langen Erlass (OR) ─────────────
 test.describe('A2 — Scrollbalken-Proportionalität (langer Erlass)', () => {

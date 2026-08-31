@@ -4,16 +4,10 @@
 //  · Teil 2a: Deep-Link #e-2-4 scrollt nach on-demand-Laden zur Erwägung.
 //  · Teil 2b: «Art. 679 ZGB»-Chip springt zur Immissions-Passage E. 2.3.1.
 // Läuft gegen `vite preview` (dist).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const FALL = '/rechtsprechung/bge_151_III_377'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('Verweis-Präzision — BGE 151 III 377', () => {
   test('Teil 1: i.V.m.-Ketten-Glied «Art. 679» ist verlinkt (Bug behoben)', async ({ page }) => {

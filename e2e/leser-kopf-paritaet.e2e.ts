@@ -32,14 +32,8 @@
 // Mal dasselbe Zeichen; das Ziel `/gesetze` und die pane-lokale Auflösung sind
 // dieselben. Dass je Pane genau EIN ✕ übrig ist, misst
 // `leser-v3-h4-kopfwege` (b).
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test('H1 — beide Split-View-Panes tragen denselben V3-Kopf (Kürzel, Ansicht-Öffner, Rücksprung)', async ({ page }) => {
   test.slow() // schwere Split-View-Interaktion (Präzedenz A17/FL-1)

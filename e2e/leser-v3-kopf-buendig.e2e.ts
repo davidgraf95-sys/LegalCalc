@@ -35,13 +35,7 @@
 // (c) bleibt Zeichen für Zeichen: im Pane bleibt die Titelleiste (sie trägt die
 // Fenster-Steuerung) und damit der alte Bezugspunkt.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Lücke zwischen der Unterkante der Leiste ÜBER dem Kopf und dessen Oberkante.
  *  Seit A-2 ist das in der Einzelansicht die Topbar (`header.sticky`), im Pane

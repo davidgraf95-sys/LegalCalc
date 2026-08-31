@@ -1,5 +1,6 @@
 // @shard-gruppe: 2
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
+import { fehlerSammeln } from './helpers/fehlerSammeln';
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER } from './helpers/budgets';
 import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
@@ -14,14 +15,6 @@ import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftu
 // Drossel, Reaktions-Budget, Latte und Container-Deckel kommen aus
 // `./helpers/budgets` — dort steht auch die Kalibrierungs-Empirie, die bis zum
 // 14.8.2026 hier lag und in drei weiteren Specs als blosser Verweis stand (§5).
-
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = [];
-  page.on('console', (m) => { if (m.type() === 'error') fehler.push(m.text()); });
-  page.on('pageerror', (e) => fehler.push(String(e)));
-  return fehler;
-}
 
 test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle, CLS 0', async ({ page }) => {
   test.setTimeout(CONTAINER_BUDGET_CI ?? CONTAINER_LOKAL_READER);

@@ -34,14 +34,8 @@
 //    (a); fällt die Portal-Rolle `data-v3-pane`, fällt (c); fällt der `r`-Zweig in
 //    `parts/LeserTastatur.tsx`, fällt (d).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 async function warteLeser(page: Page): Promise<void> {
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })

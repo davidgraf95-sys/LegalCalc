@@ -32,14 +32,8 @@
 // Nach dem Fix (Band = reiner Vorfilter über den ganzen Root, Auswertung pro
 // Scroll-Frame gegen die frisch gemessene Linie) je 0/n.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 interface Probe {
   y: number; bezug: number; soll: string | null; ist: string | null; ueber: number | null; kandidaten: number

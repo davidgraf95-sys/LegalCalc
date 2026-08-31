@@ -38,14 +38,8 @@
 // `aktArtikel={m.aktArtikel}` durch einen festen Wert ersetzen (z. B.
 // `aktArtikel={'Art. 1'}`) — dann nennt der Kopf nach dem Scrollen eine
 // Bestimmung, die nicht mehr im Bild steht, und (2) fällt in beiden Fällen.
-import { test, expect, type Page, type Locator } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { test, expect, type Locator } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /**
  * Die Ortsangabe einer Lesefläche und die Bestimmungen, die dort GERADE

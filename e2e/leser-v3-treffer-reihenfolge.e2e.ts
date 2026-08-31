@@ -11,13 +11,7 @@
 // sichtbar durchmischt hätte, und mit «Entschädigung» ein Begriff, der über den
 // ganzen Erlass verstreut vorkommt.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const suchFeld = (page: Page) => page.locator('[data-v3-suchsprung] input')
 

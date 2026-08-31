@@ -56,6 +56,7 @@
 // beiden Hüllen — `inhalt-volltext.tsx`, die V1-Fassung, ist mit H5,
 // 21.8.2026, gelöscht).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Elemente, die über die Fensterbreite ragen UND von niemandem geklippt werden. */
 async function ueberlaeufer(page: Page): Promise<{ ueberlauf: number; quellen: string[] }> {
@@ -126,13 +127,6 @@ test.describe('B6 — die Seite läuft nicht quer', () => {
 // Abnahme-Mass: `scrollWidth <= clientWidth` am Scroller-Container — die
 // harte, messbare Fassung von «nicht scrollbar» (ein Scrollbalken selbst ist
 // browserabhängig sichtbar/unsichtbar, `scrollWidth` ist es nicht).
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 async function keinHorizontalerOverflow(page: Page, selektor: string): Promise<void> {
   const diff = await page.locator(selektor).evaluate((el) => el.scrollWidth - el.clientWidth)
