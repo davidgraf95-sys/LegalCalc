@@ -52,6 +52,12 @@ export const RECHTSPRECHUNG_MANIFESTE = [
   // dem Laufzeitpfad (rechtsprechungFuerErlass), ist also gerade nicht die Datei,
   // die man ungedeckt lassen will.
   'public/rechtsprechung/norm-index-erlasse.json',
+  // normkeys-kanton.json (kantonale Zitat-Brücke, N0a) — dieselbe Lektion zum
+  // dritten Mal: eine NEUE committete Datei unter public/rechtsprechung/, die
+  // hier fehlt, liefe still an check:paritaet/check:datenhaltung vorbei. Sie
+  // stammt vom selben Schreiber wie register.json (entscheide-schreiben.ts) und
+  // ist reiner Dokument-Byte-Roundtrip.
+  'public/rechtsprechung/normkeys-kanton.json',
 ];
 // Schaufenster-Shards (Weiche B, §11.2): je Erlass eine committete Projektion des
 // norm-index (nur Erlasse mit Artikel-Treffern). Variable Datei-Menge → über den
