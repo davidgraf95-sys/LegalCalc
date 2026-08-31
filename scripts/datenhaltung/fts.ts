@@ -60,6 +60,31 @@ export function ddlFtsArtikel(name: string): string {
   return `CREATE VIRTUAL TABLE ${name} USING fts5(${FTS_ARTIKEL_SPALTEN.join(', ')}, content='', tokenize='${TOKENIZER}')`;
 }
 
+/** Spalten von `fts_entscheide_schaufenster` in Index-Reihenfolge — standalone
+ *  (Text physisch gespeichert, damit die native `snippet()` verfügbar ist).
+ *  `id`/`quelle_url` sind UNINDEXED: sie werden zurückgegeben, nicht durchsucht. */
+export const FTS_ENTSCHEIDE_SPALTEN = [
+  'id UNINDEXED',
+  'titel',
+  'regeste',
+  'text',
+  'quelle_url UNINDEXED',
+] as const;
+
+/**
+ * DDL von `fts_entscheide_schaufenster` — EINE Quelle für lokal und remote (§5).
+ *
+ * Bis zum 31.8.2026 stand diese Spaltenliste ZWEIMAL wörtlich im Repo: hier für die
+ * lokale Tabelle und ein zweites Mal von Hand in turso-sync.ts für die Replika. Genau
+ * davor warnt der Kommentar an der Sync-Stelle für `fts_artikel` — «eine Abweichung in
+ * Zahl oder Reihenfolge der Spalten liesse den Shadow-Transport NICHT scheitern, sondern
+ * legte die Gewichte auf das falsche Feld» —, nur war die Warnung für die Entscheide
+ * selbst nie eingelöst (Gegenprüfungs-Befund F1, Umfeld). Jetzt ist sie es.
+ */
+export function ddlFtsEntscheide(name: string): string {
+  return `CREATE VIRTUAL TABLE ${name} USING fts5(${FTS_ENTSCHEIDE_SPALTEN.join(', ')}, tokenize='${TOKENIZER}')`;
+}
+
 interface StrukturDatei {
   artikel?: Record<string, StrukturArtikel>;
 }
@@ -168,9 +193,7 @@ export function baueFtsArtikel(db: DatabaseSync): FtsArtikelBericht {
  * @returns Zeilenzahl (== Anzahl `eintrag`-Zeilen der rechtsprechung.db).
  */
 export function baueFtsEntscheideSchaufenster(db: DatabaseSync): number {
-  db.exec(
-    `CREATE VIRTUAL TABLE fts_entscheide_schaufenster USING fts5(id UNINDEXED, titel, regeste, text, quelle_url UNINDEXED, tokenize='${TOKENIZER}');`,
-  );
+  db.exec(ddlFtsEntscheide('fts_entscheide_schaufenster') + ';');
   const rows = db.prepare('SELECT blob FROM eintrag ORDER BY pfad, idx').all() as Array<{ blob: string }>;
   const ins = db.prepare(
     'INSERT INTO fts_entscheide_schaufenster(id, titel, regeste, text, quelle_url) VALUES (?, ?, ?, ?, ?)',
