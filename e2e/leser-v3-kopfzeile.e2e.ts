@@ -109,8 +109,13 @@ async function standStellen(page: Page, datum: string): Promise<{ text: string; 
     for (const el of document.querySelectorAll('body *')) {
       if (!(el.textContent ?? '').includes(d)) continue
       if ([...el.children].some((k) => (k.textContent ?? '').includes(d))) continue
+      // R3-α (31.8.2026, deklariert): das Datum steckt seit dem <Datum>-
+      // Baustein in einem eigenen tabular-nums-Span — das TIEFSTE Element
+      // trägt das Wort «Stand» nicht mehr. Der Text wird darum aus dem
+      // Eltern-Element gelesen (die Zeile), die Chrome-Zuordnung bleibt am
+      // Fundelement. Sichtbar ist die Zeile unverändert (Zusicherung :184).
       raus.push({
-        text: (el.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 60),
+        text: ((el.parentElement?.textContent ?? el.textContent) ?? '').replace(/\s+/g, ' ').trim().slice(0, 80),
         klebt: !!el.closest('[data-inhalt-kopf], [data-v3-kopf]'),
       })
     }
