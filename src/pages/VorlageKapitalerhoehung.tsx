@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
 import { Link } from 'react-router-dom';
-import { ErgebnisSprung, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
+import { ErgebnisSprung, Field, GruppenTitel, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { NormChip } from '../components/vorlagen/NormChip';
@@ -207,35 +207,39 @@ export function VorlageKapitalerhoehung() {
         {/* Zeichner */}
         <div className="space-y-2">
           <p className="text-body-s font-medium text-ink-900"><NormText text={`Zeichner:innen (Zeichnungsschein je Person, Art. 652 OR)`} /></p>
-          {zeichner.map((z) => (
-            <div key={z.key} className={pk('grid grid-cols-1 sm:grid-cols-[2fr_3fr_1fr_auto_auto] gap-2 items-end', 'grid grid-cols-1 @5xl/pane:grid-cols-[2fr_3fr_1fr_auto_auto] gap-2 items-end')}>
-              <Field label="Name">
-                <input className={inputCls} value={z.name}
-                  onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, name: e.target.value } : x))} />
-              </Field>
-              <Field label="Angaben (Wohnort/Sitz)">
-                <input className={inputCls} value={z.angaben}
-                  onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, angaben: e.target.value } : x))} />
-              </Field>
-              <Field label="Stück">
-                <input className={inputCls} inputMode="numeric" value={z.anzahl}
-                  onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, anzahl: e.target.value } : x))} />
-              </Field>
-              {!ag && (
-                <label className="flex items-center gap-1.5 text-body-s text-ink-700 pb-2">
-                  <input type="checkbox" checked={z.bereitsBeteiligt}
-                    onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, bereitsBeteiligt: e.target.checked } : x))} />
-                  bereits Gesellschafter:in
-                </label>
-              )}
-              <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-                onClick={() => setZeichner((alt) => alt.filter((x) => x.key !== z.key))}>✕</button>
-            </div>
-          ))}
-          <button type="button" className="lc-btn-outline lc-btn-sm"
-            onClick={() => setZeichner((alt) => [...alt, { key: neuerKey(), name: '', angaben: '', anzahl: '', bereitsBeteiligt: true }])}>
-            + Zeichner:in hinzufügen
-          </button>
+          {/* R2-F/F1-9: «✕» im `lc-btn-ghost lc-btn-sm` und «+ … hinzufügen»
+              wichen dem geteilten ListenEditor. */}
+          <ListenEditor
+            element="Zeichner:in"
+            eintraege={zeichner}
+            className="space-y-2"
+            schluessel={(z) => z.key}
+            onHinzufuegen={() => setZeichner((alt) => [...alt, { key: neuerKey(), name: '', angaben: '', anzahl: '', bereitsBeteiligt: true }])}
+            onEntfernen={(i) => setZeichner((alt) => alt.filter((_, j) => j !== i))}
+            kinder={(z) => (
+              <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_3fr_1fr_auto] gap-2 items-end', 'grid grid-cols-1 @5xl/pane:grid-cols-[2fr_3fr_1fr_auto] gap-2 items-end')}>
+                <Field label="Name">
+                  <input className={inputCls} value={z.name}
+                    onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, name: e.target.value } : x))} />
+                </Field>
+                <Field label="Angaben (Wohnort/Sitz)">
+                  <input className={inputCls} value={z.angaben}
+                    onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, angaben: e.target.value } : x))} />
+                </Field>
+                <Field label="Stück">
+                  <input className={inputCls} inputMode="numeric" value={z.anzahl}
+                    onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, anzahl: e.target.value } : x))} />
+                </Field>
+                {!ag && (
+                  <label className="flex items-center gap-1.5 text-body-s text-ink-700 pb-2">
+                    <input type="checkbox" checked={z.bereitsBeteiligt}
+                      onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, bereitsBeteiligt: e.target.checked } : x))} />
+                    bereits Gesellschafter:in
+                  </label>
+                )}
+              </div>
+            )}
+          />
         </div>
 
         {/* GmbH: statutarische Klauseln für den 777a-Hinweis an neue Zeichner */}

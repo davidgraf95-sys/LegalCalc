@@ -1,4 +1,4 @@
-import { Field, inputCls } from '../vorlagen/ui';
+import { Field, inputCls, ListenEditor } from '../vorlagen/ui';
 import { NormText } from '../NormText';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
@@ -181,38 +181,42 @@ export function KombinierteAnsicht() {
 
       {/* Sperrereignisse */}
       <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <h4 className="text-body-s font-semibold text-ink-700"><NormText text={`Sperrereignisse (Art. 336c OR)`} /></h4>
-          <button type="button" onClick={addEreignis} className="lc-btn-outline lc-btn-sm">+ Ereignis</button>
-        </div>
-        {(form.sperrereignisse ?? []).map((e, i) => (
-          <div key={i} className={pk('lc-panel p-3 grid grid-cols-1 sm:grid-cols-4 gap-3 items-end', 'lc-panel p-3 grid grid-cols-1 @3xl/pane:grid-cols-4 gap-3 items-end')}>
-            <div className="space-y-1">
-              <label className="text-xs font-medium text-ink-600">Typ</label>
-              <select value={e.typ} onChange={(ev) => updateEreignis(i, 'typ', ev.target.value)} className={inputCls + ' text-xs'}>
-                {TYPEN.map((t) => <option key={t.code} value={t.code}>{t.label}</option>)}
-              </select>
-            </div>
-            <div className="space-y-1">
+        <h4 className="text-body-s font-semibold text-ink-700"><NormText text={`Sperrereignisse (Art. 336c OR)`} /></h4>
+        {/* R2-F/F1-9: nur der Repeater-Container wandert auf den geteilten
+            ListenEditor — die Hinweisbox weiter unten ist bereits
+            `lc-notice-danger` und bleibt unberührt. Die vier rohen `<label>`
+            sind `Field` gewichen; damit trägt «Niederkunft» sein «optional» in
+            der Prop (F1-6-Rest: der R2-E-Wächter liest nur `<Field label=…>`
+            und sah diese Stelle deshalb nicht). */}
+        <ListenEditor
+          element="Ereignis"
+          eintraege={form.sperrereignisse ?? []}
+          onHinzufuegen={addEreignis}
+          onEntfernen={removeEreignis}
+          kinder={(e, i) => (
+            <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3 items-end', 'grid grid-cols-1 @3xl/pane:grid-cols-3 gap-3 items-end')}>
+              <Field label="Typ">
+                <select value={e.typ} onChange={(ev) => updateEreignis(i, 'typ', ev.target.value)} className={inputCls + ' text-xs'}>
+                  {TYPEN.map((t) => <option key={t.code} value={t.code}>{t.label}</option>)}
+                </select>
+              </Field>
               {/* B5-Fix 10.6.2026 (SHK-Abgleich): Die 6-Monats-Kappung des
                   Art. 329i OR läuft ab Beginn der RAHMENFRIST, nicht zwingend
                   ab Urlaubsbeginn — das Eingabefeld muss das verlangen. */}
-              <label className="text-xs font-medium text-ink-600">{e.typ === 'betreuungsurlaub' ? 'Von (Beginn der Rahmenfrist)' : 'Von'}</label>
-              <DatumsFeld value={e.von} onChange={(v) => updateEreignis(i, 'von', v)} className={inputCls + ' text-xs'} />
+              <Field label={e.typ === 'betreuungsurlaub' ? 'Von (Beginn der Rahmenfrist)' : 'Von'}>
+                <DatumsFeld value={e.von} onChange={(v) => updateEreignis(i, 'von', v)} className={inputCls + ' text-xs'} />
+              </Field>
+              <Field label="Bis">
+                <DatumsFeld value={e.bis} onChange={(v) => updateEreignis(i, 'bis', v)} className={inputCls + ' text-xs'} />
+              </Field>
+              {MIT_NIEDERKUNFT.includes(e.typ) && (
+                <Field label="Niederkunft" optional>
+                  <DatumsFeld value={e.niederkunft ?? ''} onChange={(v) => updateEreignis(i, 'niederkunft', v)} className={inputCls + ' text-xs'} />
+                </Field>
+              )}
             </div>
-            <div className="space-y-1">
-              <label className="text-xs font-medium text-ink-600">Bis</label>
-              <DatumsFeld value={e.bis} onChange={(v) => updateEreignis(i, 'bis', v)} className={inputCls + ' text-xs'} />
-            </div>
-            {MIT_NIEDERKUNFT.includes(e.typ) && (
-              <div className="space-y-1">
-                <label className="text-xs font-medium text-ink-600">Niederkunft (optional)</label>
-                <DatumsFeld value={e.niederkunft ?? ''} onChange={(v) => updateEreignis(i, 'niederkunft', v)} className={inputCls + ' text-xs'} />
-              </div>
-            )}
-            <button type="button" onClick={() => removeEreignis(i)} className="text-body-s text-danger-700 hover:underline self-end pb-2">Entfernen</button>
-          </div>
-        ))}
+          )}
+        />
       </div>
 
       <ErgebnisBlock>

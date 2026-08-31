@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../NormText';
 import { BetragsFeld } from '../BetragsFeld';
 import { DatumsFeld } from '../DatumsFeld';
-import { Field, inputCls } from './ui';
+import { Field, inputCls, ListenEditor } from './ui';
 import { MappenAnsicht, MappenGates, NotariatsHinweis } from './Dokumentmappe';
 import type { PdfBanner } from '../../lib/vorlagen/banner';
 import type { GmbhGruendungEingaben } from '../../lib/gruendungsunterlagen';
@@ -149,100 +149,112 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
       {/* Gründer */}
       <div className="space-y-2">
         <p className="text-body-s font-medium text-ink-900"><NormText text={`Gründer:innen und Zeichnung (Art. 777a OR)`} /></p>
-        {gruender.map((g) => (
-          <div key={g.key} className={pk('grid grid-cols-1 sm:grid-cols-[2fr_3fr_1fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_3fr_1fr_auto] gap-2 items-end')}>
-            <Field label="Name">
-              <input className={inputCls} value={g.name}
-                onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, name: e.target.value } : x))} />
-            </Field>
-            <Field label="Angaben (z. B. «von Basel, in Zürich, Musterweg 1»)">
-              <input className={inputCls} value={g.angaben}
-                onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, angaben: e.target.value } : x))} />
-            </Field>
-            <Field label="Anteile">
-              <input className={inputCls} inputMode="numeric" value={g.anzahl}
-                onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, anzahl: e.target.value } : x))} />
-            </Field>
-            <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-              onClick={() => setGruender((alt) => alt.filter((x) => x.key !== g.key))}>✕</button>
-          </div>
-        ))}
-        <button type="button" className="lc-btn-outline lc-btn-sm"
-          onClick={() => setGruender((alt) => [...alt, { key: neuerKey(), name: '', angaben: '', anzahl: '' }])}>
-          + Gründer:in hinzufügen
-        </button>
+        {/* R2-F/F1-9: die drei Repeater dieser Mappe trugen ein «✕» im
+            `lc-btn-ghost lc-btn-sm` als Entfernen (vierte Grid-Spalte) und
+            «+ … hinzufügen» als Beschriftung. Kanon ist der ListenEditor:
+            lc-panel je Zeile, «entfernen» als Text-Link mit Nummer im
+            aria-label, «+ <Element>». Die stabilen `key` bleiben — sie sind
+            der React-Schlüssel UND die Identität beim Entfernen. */}
+        <ListenEditor
+          element="Gründer:in"
+          eintraege={gruender}
+          className="space-y-2"
+          schluessel={(g) => g.key}
+          onHinzufuegen={() => setGruender((alt) => [...alt, { key: neuerKey(), name: '', angaben: '', anzahl: '' }])}
+          onEntfernen={(i) => setGruender((alt) => alt.filter((_, j) => j !== i))}
+          kinder={(g) => (
+            <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_3fr_1fr] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_3fr_1fr] gap-2 items-end')}>
+              <Field label="Name">
+                <input className={inputCls} value={g.name}
+                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, name: e.target.value } : x))} />
+              </Field>
+              <Field label="Angaben (z. B. «von Basel, in Zürich, Musterweg 1»)">
+                <input className={inputCls} value={g.angaben}
+                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, angaben: e.target.value } : x))} />
+              </Field>
+              <Field label="Anteile">
+                <input className={inputCls} inputMode="numeric" value={g.anzahl}
+                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, anzahl: e.target.value } : x))} />
+              </Field>
+            </div>
+          )}
+        />
       </div>
 
       {/* Geschäftsführung */}
       <div className="space-y-2">
         <p className="text-body-s font-medium text-ink-900"><NormText text={`Geschäftsführung (Art. 809 OR; nur natürliche Personen)`} /></p>
-        {gfs.map((g) => (
-          <div key={g.key} className={pk('grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_2fr_1fr_auto_auto] gap-2 items-end', 'grid grid-cols-1 @5xl/pane:grid-cols-[2fr_1fr_1fr_2fr_1fr_auto_auto] gap-2 items-end')}>
-            <Field label="Name">
-              <input className={inputCls} value={g.name}
-                onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, name: e.target.value } : x))} />
-            </Field>
-            <Field label="Heimatort / Staat">
-              <input className={inputCls} value={g.herkunft}
-                onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, herkunft: e.target.value } : x))} />
-            </Field>
-            <Field label="Wohnort">
-              <input className={inputCls} value={g.wohnort}
-                onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, wohnort: e.target.value } : x))} />
-            </Field>
-            <Field label="Adresse (für die Wahlannahme)">
-              <input className={inputCls} value={g.adresse}
-                onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, adresse: e.target.value } : x))} />
-            </Field>
-            <Field label="Zeichnung">
-              <select className={inputCls} value={g.zeichnungsArt}
-                onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, zeichnungsArt: e.target.value as GmbhZeichnungsArt } : x))}>
-                {ZEICHNUNGS_OPTIONEN.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
-              </select>
-            </Field>
-            <label className="flex items-center gap-1.5 text-body-s text-ink-700 pb-2">
-              <input type="checkbox" checked={g.vorsitz}
-                onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, vorsitz: e.target.checked } : x))} />
-              Vorsitz
-            </label>
-            <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-              onClick={() => setGfs((alt) => alt.filter((x) => x.key !== g.key))}>✕</button>
-          </div>
-        ))}
-        <button type="button" className="lc-btn-outline lc-btn-sm"
-          onClick={() => setGfs((alt) => [...alt, { key: neuerKey(), name: '', herkunft: '', wohnort: '', adresse: '', vorsitz: alt.length === 0, zeichnungsArt: 'einzelunterschrift' }])}>
-          + Geschäftsführer:in hinzufügen
-        </button>
+        <ListenEditor
+          element="Geschäftsführer:in"
+          eintraege={gfs}
+          className="space-y-2"
+          schluessel={(g) => g.key}
+          onHinzufuegen={() => setGfs((alt) => [...alt, { key: neuerKey(), name: '', herkunft: '', wohnort: '', adresse: '', vorsitz: alt.length === 0, zeichnungsArt: 'einzelunterschrift' }])}
+          onEntfernen={(i) => setGfs((alt) => alt.filter((_, j) => j !== i))}
+          kinder={(g) => (
+            <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_2fr_1fr_auto] gap-2 items-end', 'grid grid-cols-1 @5xl/pane:grid-cols-[2fr_1fr_1fr_2fr_1fr_auto] gap-2 items-end')}>
+              <Field label="Name">
+                <input className={inputCls} value={g.name}
+                  onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, name: e.target.value } : x))} />
+              </Field>
+              <Field label="Heimatort / Staat">
+                <input className={inputCls} value={g.herkunft}
+                  onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, herkunft: e.target.value } : x))} />
+              </Field>
+              <Field label="Wohnort">
+                <input className={inputCls} value={g.wohnort}
+                  onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, wohnort: e.target.value } : x))} />
+              </Field>
+              <Field label="Adresse (für die Wahlannahme)">
+                <input className={inputCls} value={g.adresse}
+                  onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, adresse: e.target.value } : x))} />
+              </Field>
+              <Field label="Zeichnung">
+                <select className={inputCls} value={g.zeichnungsArt}
+                  onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, zeichnungsArt: e.target.value as GmbhZeichnungsArt } : x))}>
+                  {ZEICHNUNGS_OPTIONEN.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
+                </select>
+              </Field>
+              <label className="flex items-center gap-1.5 text-body-s text-ink-700 pb-2">
+                <input type="checkbox" checked={g.vorsitz}
+                  onChange={(e) => setGfs((alt) => alt.map((x) => x.key === g.key ? { ...x, vorsitz: e.target.checked } : x))} />
+                Vorsitz
+              </label>
+            </div>
+          )}
+        />
       </div>
 
       {/* Weitere Vertretungsberechtigte (nur bei lit.-f-Weiche) */}
       {weichen.weitereVertretungsberechtigte && (
         <div className="space-y-2">
           <p className="text-body-s font-medium text-ink-900"><NormText text={`Weitere Vertretungsberechtigte (Art. 71 Abs. 1 lit. f HRegV)`} /></p>
-          {vertretungen.map((v) => (
-            <div key={v.key} className={pk('grid grid-cols-1 sm:grid-cols-[2fr_2fr_2fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_2fr_2fr_auto] gap-2 items-end')}>
-              <Field label="Name">
-                <input className={inputCls} value={v.name}
-                  onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, name: e.target.value } : x))} />
-              </Field>
-              <Field label="Funktion (z. B. Direktorin, Prokurist)">
-                <input className={inputCls} value={v.funktion}
-                  onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, funktion: e.target.value } : x))} />
-              </Field>
-              <Field label="Zeichnung">
-                <select className={inputCls} value={v.zeichnungsArt}
-                  onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, zeichnungsArt: e.target.value as GmbhZeichnungsArt } : x))}>
-                  {ZEICHNUNGS_OPTIONEN.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
-                </select>
-              </Field>
-              <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-                onClick={() => setVertretungen((alt) => alt.filter((x) => x.key !== v.key))}>✕</button>
-            </div>
-          ))}
-          <button type="button" className="lc-btn-outline lc-btn-sm"
-            onClick={() => setVertretungen((alt) => [...alt, { key: neuerKey(), name: '', funktion: '', zeichnungsArt: 'einzelunterschrift' }])}>
-            + Person hinzufügen
-          </button>
+          <ListenEditor
+            element="Person"
+            eintraege={vertretungen}
+            className="space-y-2"
+            schluessel={(v) => v.key}
+            onHinzufuegen={() => setVertretungen((alt) => [...alt, { key: neuerKey(), name: '', funktion: '', zeichnungsArt: 'einzelunterschrift' }])}
+            onEntfernen={(i) => setVertretungen((alt) => alt.filter((_, j) => j !== i))}
+            kinder={(v) => (
+              <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_2fr_2fr] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_2fr_2fr] gap-2 items-end')}>
+                <Field label="Name">
+                  <input className={inputCls} value={v.name}
+                    onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, name: e.target.value } : x))} />
+                </Field>
+                <Field label="Funktion (z. B. Direktorin, Prokurist)">
+                  <input className={inputCls} value={v.funktion}
+                    onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, funktion: e.target.value } : x))} />
+                </Field>
+                <Field label="Zeichnung">
+                  <select className={inputCls} value={v.zeichnungsArt}
+                    onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, zeichnungsArt: e.target.value as GmbhZeichnungsArt } : x))}>
+                    {ZEICHNUNGS_OPTIONEN.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
+                  </select>
+                </Field>
+              </div>
+            )}
+          />
         </div>
       )}
 

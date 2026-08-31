@@ -10,7 +10,7 @@ import {
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
-import { Checkbox, Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
+import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor, NormLink } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { useWizardState } from '../components/vorlagen/useWizardState';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
@@ -307,22 +307,30 @@ export function VorlageMietvertrag() {
             )}
             {a.mietzinsModell === 'staffel' && (
               <div className="space-y-2">
-                {(a.staffeln ?? []).map((s, i) => (
-                  <div key={i} className={pk('grid grid-cols-1 sm:grid-cols-[1fr_10rem_auto] gap-2 items-end', 'grid grid-cols-1 @xl/pane:grid-cols-[1fr_10rem_auto] gap-2 items-end')}>
-                    <Field label={i === 0 ? 'Erhöhung ab' : ''}>
-                      <DatumsFeld value={s.ab} onChange={(v) => setStaffel(i, { ab: v })} className={inputCls} />
-                    </Field>
-                    <Field label={i === 0 ? 'Betrag (CHF/Monat)' : ''}>
-                      <BetragsFeld className={inputCls + ' num'} value={s.erhoehungCHF} onChange={(v) => setStaffel(i, { erhoehungCHF: v } )} placeholder="z. B. 50" />
-                    </Field>
-                    <button type="button" onClick={() => set('staffeln', (a.staffeln ?? []).filter((_, j) => j !== i))}
-                      className="text-body-s text-danger-700 hover:underline pb-2.5">entfernen</button>
-                  </div>
-                ))}
-                {(a.staffeln?.length ?? 0) < 5 && (
-                  <button type="button" onClick={() => set('staffeln', [...(a.staffeln ?? []), { ab: '', erhoehungCHF: '' }])}
-                    className="lc-btn-outline lc-btn-sm">+ Staffel</button>
-                )}
+                {/* R2-F/F1-9: Behälter kommt neu vom ListenEditor; die
+                    Höchstzahl 5 steuert `hoechstens` (bisher eine Bedingung
+                    um den Knopf herum — gleiche Wirkung, eine Stelle). Die
+                    Feld-Labels standen nur an der ERSTEN Zeile und fehlten
+                    darunter; jede Zeile trägt sie jetzt, weil der Panel-Kanon
+                    die Zeilen sichtbar trennt. */}
+                <ListenEditor
+                  element="Staffel"
+                  eintraege={a.staffeln ?? []}
+                  className="space-y-2"
+                  hoechstens={5}
+                  onHinzufuegen={() => set('staffeln', [...(a.staffeln ?? []), { ab: '', erhoehungCHF: '' }])}
+                  onEntfernen={(i) => set('staffeln', (a.staffeln ?? []).filter((_, j) => j !== i))}
+                  kinder={(s, i) => (
+                    <div className={pk('grid grid-cols-1 sm:grid-cols-[1fr_10rem] gap-2 items-end', 'grid grid-cols-1 @xl/pane:grid-cols-[1fr_10rem] gap-2 items-end')}>
+                      <Field label="Erhöhung ab">
+                        <DatumsFeld value={s.ab} onChange={(v) => setStaffel(i, { ab: v })} className={inputCls} />
+                      </Field>
+                      <Field label="Betrag (CHF/Monat)">
+                        <BetragsFeld className={inputCls + ' num'} value={s.erhoehungCHF} onChange={(v) => setStaffel(i, { erhoehungCHF: v } )} placeholder="z. B. 50" />
+                      </Field>
+                    </div>
+                  )}
+                />
                 <p className="text-xs text-ink-500">Höchstens eine Erhöhung pro Jahr; Beträge in Franken (<NormLink artikel="Art. 269c OR" />).</p>
               </div>
             )}

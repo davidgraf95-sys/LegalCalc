@@ -1110,6 +1110,14 @@
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
   .lc-akzent-brass { border-top: 3px solid var(--brass-line); }
+  /* Danger-Variante derselben Oberkante (Design-Konsistenz R2-F/F1-5,
+     31.8.2026). Sie markiert nicht «massgeblich», sondern «Sperre/kein
+     statthaftes Rechtsmittel» — gemessen waren dafür drei handgebaute
+     `border-t-[3px] border-t-danger-line` (KuendigungSperrForm,
+     StrafZustaendigkeitTeil, VorlageKuendigungArbeitgeber). Die Farbe trägt
+     die Bedeutung, die Anatomie ist dieselbe wie bei Messing; `--danger-line`
+     hält den Kontrast im Dunkelmodus (index.css:461). */
+  .lc-akzent-danger { border-top: 3px solid var(--danger-line); }
 
   /* FristenKalender (Überarbeitung 7.6.2026, Auftrag David) — zwei Rezepte:
 

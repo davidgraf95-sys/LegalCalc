@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { BeruehrtRahmen, Checkbox, ErgebnisPlatzhalter, FehlerBox, Field, GruppenTitel, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, Checkbox, ErgebnisPlatzhalter, FehlerBox, Field, inputCls, ListenEditor } from '../vorlagen/ui';
 import { zahlBeliebig as zahl } from './eingabe';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
@@ -138,19 +138,22 @@ export function StreitwertForm() {
     <div className="space-y-6">
       <PflichtDisclaimer kurz="Streitwert nach Rechtsbegehren (Art. 91 ff. ZPO); Ermessens-Konstellationen setzt das Gericht fest." text={SW_DISCLAIMER} />
 
-      {/* Begehren-Editor */}
+      {/* Begehren-Editor — R2-F/F1-9: der handgebaute Behälter (`border
+          border-line rounded-md`), die eigene Entfernen-Optik (`text-ink-500
+          hover:text-danger-700`, gross geschrieben) und «+ Begehren
+          hinzufügen» sind dem geteilten ListenEditor gewichen. Die Kappung bei
+          10 Begehren war bisher ein stiller No-Op des Knopfs — neu blendet sie
+          ihn aus (§8: ein Knopf, der nichts bewirkt, ist keine Ehrlichkeit). */}
       <div className="space-y-4">
-        {begehren.map((b, i) => (
-          <div key={i} className="border border-line rounded-md p-4 space-y-4">
-            <div className="flex items-center justify-between gap-3">
-              <GruppenTitel>Begehren {i + 1}</GruppenTitel>
-              {begehren.length > 1 && (
-                <button type="button" className="text-body-s text-ink-500 hover:text-danger-700"
-                  onClick={() => setBegehren((alt) => alt.filter((_, j) => j !== i))}>
-                  Entfernen
-                </button>
-              )}
-            </div>
+        <ListenEditor
+          element="Begehren"
+          eintraege={begehren}
+          mindestens={1}
+          hoechstens={10}
+          className="space-y-4"
+          onHinzufuegen={() => setBegehren((alt) => [...alt, LEERES_BEGEHREN])}
+          onEntfernen={(i) => setBegehren((alt) => alt.filter((_, j) => j !== i))}
+          kinder={(b, i) => (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Art des Begehrens">
                 <select value={b.typ} onChange={(e) => setFeld(i, { typ: e.target.value as BegehrenTyp })} className={inputCls}>
@@ -198,18 +201,12 @@ export function StreitwertForm() {
                 </p>
               )}
             </div>
-          </div>
-        ))}
-        <div className="flex flex-wrap items-center gap-4">
-          <button type="button" className="lc-btn-outline lc-btn-sm"
-            onClick={() => setBegehren((alt) => (alt.length < 10 ? [...alt, LEERES_BEGEHREN] : alt))}>
-            + Begehren hinzufügen
-          </button>
-          {begehren.length > 1 && (
-            <Checkbox checked={ausschliessend} onChange={setAusschliessend}
-              label="die Begehren schliessen sich gegenseitig aus (kein Zusammenrechnen, Art. 93 ZPO)" />
           )}
-        </div>
+        />
+        {begehren.length > 1 && (
+          <Checkbox checked={ausschliessend} onChange={setAusschliessend}
+            label="die Begehren schliessen sich gegenseitig aus (kein Zusammenrechnen, Art. 93 ZPO)" />
+        )}
       </div>
 
       {/* Widerklage */}

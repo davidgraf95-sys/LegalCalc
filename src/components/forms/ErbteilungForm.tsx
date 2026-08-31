@@ -1,4 +1,4 @@
-import { BeruehrtRahmen, Checkbox, EckdatenKachel, FehlerBox, Field, GruppenTitel, inputCls } from '../vorlagen/ui';
+import { BeruehrtRahmen, Checkbox, EckdatenKachel, FehlerBox, Field, GruppenTitel, inputCls, ListenEditor } from '../vorlagen/ui';
 import { NormText } from '../NormText';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { useState } from 'react';
@@ -209,22 +209,29 @@ export function ErbteilungForm() {
             <input type="number" inputMode="decimal" min={0} step={1} value={kinderLebend} onChange={(e) => setKinderLebend(Number(e.target.value))} className={inputCls + ' w-28'} />
           </Field>
           <Field label="Vorverstorbene Kinder mit Nachkommen (Stämme)" hint="Deren Nachkommen treten nach Stämmen ein (Art. 457 Abs. 3)">
-            <div className="space-y-2">
-              {staemme.map((s, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span className="text-body-s text-ink-500 w-20">Stamm {i + 1}:</span>
-                  <input type="number" inputMode="decimal" min={0} step={1} value={s.enkel}
-                    onChange={(e) => setStaemme((arr) => arr.map((x, j) => (j === i ? { enkel: Number(e.target.value) } : x)))}
-                    className={inputCls + ' w-24'} />
-                  <span className="text-body-s text-ink-500">Nachkommen</span>
-                  <button type="button" onClick={() => setStaemme((arr) => arr.filter((_, j) => j !== i))}
-                    className="text-body-s text-danger-700 hover:underline">Entfernen</button>
-                </div>
-              ))}
-              <button type="button" onClick={() => setStaemme((arr) => [...arr, { enkel: 1 }])}
-                className="lc-btn-outline lc-btn-sm">
-                + Stamm hinzufügen
-              </button>
+            {/* Der Wrapper-<div> bleibt: `Field` verknüpft nur ein natives
+                Einzel-Control, hier steht eine ganze Liste darin. */}
+            <div>
+              {/* R2-F/F1-9: Repeater auf den geteilten ListenEditor. Die
+                  Stamm-Nummer trägt jetzt die Kopfzeile des Eintrags statt
+                  eines Inline-«Stamm N:»; das Zahlenfeld behält sie als
+                  aria-label, damit die Zuordnung vorgelesen bleibt. */}
+              <ListenEditor
+                element="Stamm"
+                eintraege={staemme}
+                className="space-y-2"
+                onHinzufuegen={() => setStaemme((arr) => [...arr, { enkel: 1 }])}
+                onEntfernen={(i) => setStaemme((arr) => arr.filter((_, j) => j !== i))}
+                kinder={(s, i) => (
+                  <div className="flex items-center gap-2">
+                    <input type="number" inputMode="decimal" min={0} step={1} value={s.enkel}
+                      aria-label={`Nachkommen Stamm ${i + 1}`}
+                      onChange={(e) => setStaemme((arr) => arr.map((x, j) => (j === i ? { enkel: Number(e.target.value) } : x)))}
+                      className={inputCls + ' w-24'} />
+                    <span className="text-body-s text-ink-500">Nachkommen</span>
+                  </div>
+                )}
+              />
             </div>
           </Field>
         </div>

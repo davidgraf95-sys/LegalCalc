@@ -1,4 +1,4 @@
-import { Field, inputCls } from '../../components/vorlagen/ui';
+import { Field, inputCls, ListenEditor } from '../../components/vorlagen/ui';
 import { BetragsFeld } from '../../components/BetragsFeld';
 import { DatumsFeld } from '../../components/DatumsFeld';
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
@@ -311,9 +311,25 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
             nach dem Eintrag sofort frei verfügbar (bei Grundstücken: bedingungsloser
             Grundbuch-Anspruch) und durch Übertragung auf Dritte verwertbar.
           </p>
-          {sacheinlagen.map((s) => (
-            <div key={s.key} className="rounded-md border border-line p-3 space-y-2">
-              <div className={pk('grid grid-cols-1 sm:grid-cols-[1fr_2fr_2fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[1fr_2fr_2fr_auto] gap-2 items-end')}>
+          {/* R2-F/F1-9: die drei Repeater dieses Schritts trugen einen
+              handgebauten `rounded-md border border-line p-3` als Behälter,
+              «✕» im `lc-btn-ghost lc-btn-sm` als Entfernen und
+              «+ … hinzufügen» als Knopf. Alle drei Formen kommen neu aus dem
+              geteilten ListenEditor (lc-panel · «entfernen» · «+ <Element>»). */}
+          <ListenEditor
+            element="Sacheinlage"
+            eintraege={sacheinlagen}
+            className="space-y-2"
+            schluessel={(s) => s.key}
+            onHinzufuegen={() => setSacheinlagen((alt) => [...alt, {
+              key: neuerKey(), typ: 'sachgesamtheit', bezeichnung: '', belegDatum: '', wertChf: '',
+              grundstueck: false, einlegerName: '', aktienAnzahl: '', gutschriftChf: '', zustand: '',
+              imHrEingetragen: false, cheNr: '', aktivenChf: '', passivenChf: '', rueckwirkungDatum: '',
+            }])}
+            onEntfernen={(i) => setSacheinlagen((alt) => alt.filter((_, j) => j !== i))}
+            kinder={(s) => (
+            <div className="space-y-2">
+              <div className={pk('grid grid-cols-1 sm:grid-cols-[1fr_2fr_2fr] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[1fr_2fr_2fr] gap-2 items-end')}>
                 <Field label="Art der Einlage">
                   <select className={inputCls} value={s.typ}
                     onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, typ: e.target.value as AgSacheinlageZeile['typ'] } : x))}>
@@ -329,8 +345,6 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
                   <input className={inputCls} value={s.einlegerName}
                     onChange={(e) => setSacheinlagen((alt) => alt.map((x) => x.key === s.key ? { ...x, einlegerName: e.target.value } : x))} />
                 </Field>
-                <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Sacheinlage entfernen"
-                  onClick={() => setSacheinlagen((alt) => alt.filter((x) => x.key !== s.key))}>✕</button>
               </div>
               <div className={pk('grid grid-cols-1 sm:grid-cols-4 gap-2 items-end', 'grid grid-cols-1 @3xl/pane:grid-cols-4 gap-2 items-end')}>
                 <Field label={`Bewertung (${wc})`}>
@@ -387,15 +401,8 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
                 </Field>
               </div>
             </div>
-          ))}
-          <button type="button" className="lc-btn-outline lc-btn-sm"
-            onClick={() => setSacheinlagen((alt) => [...alt, {
-              key: neuerKey(), typ: 'sachgesamtheit', bezeichnung: '', belegDatum: '', wertChf: '',
-              grundstueck: false, einlegerName: '', aktienAnzahl: '', gutschriftChf: '', zustand: '',
-              imHrEingetragen: false, cheNr: '', aktivenChf: '', passivenChf: '', rueckwirkungDatum: '',
-            }])}>
-            + Sacheinlage hinzufügen
-          </button>
+            )}
+          />
         </div>
       )}
 
@@ -403,34 +410,36 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
       {(einlageArt === 'verrechnung' || einlageArt === 'gemischt') && (
         <div className="space-y-2">
           <p className="text-body-s font-medium text-ink-900"><NormText text={`Verrechnungsliberierung (Art. 634a OR)`} /></p>
-          {verrechnungen.map((v) => (
-            <div key={v.key} className="rounded-md border border-line p-3 space-y-2">
-              <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_1fr_1fr_auto] gap-2 items-end')}>
-                <Field label="Gläubiger:in (Name)">
-                  <input className={inputCls} value={v.glaeubigerName}
-                    onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, glaeubigerName: e.target.value } : x))} />
+          <ListenEditor
+            element="Verrechnung"
+            eintraege={verrechnungen}
+            className="space-y-2"
+            schluessel={(v) => v.key}
+            onHinzufuegen={() => setVerrechnungen((alt) => [...alt, { key: neuerKey(), glaeubigerName: '', forderungChf: '', aktienAnzahl: '', begruendungTxt: '' }])}
+            onEntfernen={(i) => setVerrechnungen((alt) => alt.filter((_, j) => j !== i))}
+            kinder={(v) => (
+              <div className="space-y-2">
+                <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_1fr_1fr] gap-2 items-end')}>
+                  <Field label="Gläubiger:in (Name)">
+                    <input className={inputCls} value={v.glaeubigerName}
+                      onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, glaeubigerName: e.target.value } : x))} />
+                  </Field>
+                  <Field label={`Forderung (${wc})`}>
+                    <BetragsFeld className={inputCls} value={v.forderungChf}
+                      onChange={(w) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, forderungChf: w } : x))} />
+                  </Field>
+                  <Field label="Aktien">
+                    <input className={inputCls} inputMode="numeric" value={v.aktienAnzahl}
+                      onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, aktienAnzahl: e.target.value } : x))} />
+                  </Field>
+                </div>
+                <Field label="Bestand und Verrechenbarkeit der Forderung (für den Gründungsbericht, Art. 635 Ziff. 2 OR)">
+                  <textarea className={inputCls} rows={2} value={v.begruendungTxt}
+                    onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, begruendungTxt: e.target.value } : x))} />
                 </Field>
-                <Field label={`Forderung (${wc})`}>
-                  <BetragsFeld className={inputCls} value={v.forderungChf}
-                    onChange={(w) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, forderungChf: w } : x))} />
-                </Field>
-                <Field label="Aktien">
-                  <input className={inputCls} inputMode="numeric" value={v.aktienAnzahl}
-                    onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, aktienAnzahl: e.target.value } : x))} />
-                </Field>
-                <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-                  onClick={() => setVerrechnungen((alt) => alt.filter((x) => x.key !== v.key))}>✕</button>
               </div>
-              <Field label="Bestand und Verrechenbarkeit der Forderung (für den Gründungsbericht, Art. 635 Ziff. 2 OR)">
-                <textarea className={inputCls} rows={2} value={v.begruendungTxt}
-                  onChange={(e) => setVerrechnungen((alt) => alt.map((x) => x.key === v.key ? { ...x, begruendungTxt: e.target.value } : x))} />
-              </Field>
-            </div>
-          ))}
-          <button type="button" className="lc-btn-outline lc-btn-sm"
-            onClick={() => setVerrechnungen((alt) => [...alt, { key: neuerKey(), glaeubigerName: '', forderungChf: '', aktienAnzahl: '', begruendungTxt: '' }])}>
-            + Verrechnung hinzufügen
-          </button>
+            )}
+          />
         </div>
       )}
 
@@ -438,34 +447,36 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
       {besondereVorteile && (
         <div className="space-y-2">
           <p className="text-body-s font-medium text-ink-900"><NormText text={`Besondere Vorteile (Art. 636 OR)`} /></p>
-          {vorteile.map((v) => (
-            <div key={v.key} className="rounded-md border border-line p-3 space-y-2">
-              <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_1fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_1fr_auto] gap-2 items-end')}>
-                <Field label="Begünstigte:r (Name)">
-                  <input className={inputCls} value={v.beguenstigter}
-                    onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, beguenstigter: e.target.value } : x))} />
+          <ListenEditor
+            element="Vorteil"
+            eintraege={vorteile}
+            className="space-y-2"
+            schluessel={(v) => v.key}
+            onHinzufuegen={() => setVorteile((alt) => [...alt, { key: neuerKey(), beguenstigter: '', inhalt: '', wertChf: '', begruendungTxt: '' }])}
+            onEntfernen={(i) => setVorteile((alt) => alt.filter((_, j) => j !== i))}
+            kinder={(v) => (
+              <div className="space-y-2">
+                <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_1fr] gap-2 items-end')}>
+                  <Field label="Begünstigte:r (Name)">
+                    <input className={inputCls} value={v.beguenstigter}
+                      onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, beguenstigter: e.target.value } : x))} />
+                  </Field>
+                  <Field label={`Wert (${wc})`}>
+                    <BetragsFeld className={inputCls} value={v.wertChf}
+                      onChange={(w) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, wertChf: w } : x))} />
+                  </Field>
+                </div>
+                <Field label="Inhalt des Vorteils (Statuten-Pflichtinhalt, Art. 636 OR)">
+                  <textarea className={inputCls} rows={2} value={v.inhalt}
+                    onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, inhalt: e.target.value } : x))} />
                 </Field>
-                <Field label={`Wert (${wc})`}>
-                  <BetragsFeld className={inputCls} value={v.wertChf}
-                    onChange={(w) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, wertChf: w } : x))} />
+                <Field label="Begründung und Angemessenheit (für den Gründungsbericht, Art. 635 Ziff. 3 OR)">
+                  <textarea className={inputCls} rows={2} value={v.begruendungTxt}
+                    onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, begruendungTxt: e.target.value } : x))} />
                 </Field>
-                <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-                  onClick={() => setVorteile((alt) => alt.filter((x) => x.key !== v.key))}>✕</button>
               </div>
-              <Field label="Inhalt des Vorteils (Statuten-Pflichtinhalt, Art. 636 OR)">
-                <textarea className={inputCls} rows={2} value={v.inhalt}
-                  onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, inhalt: e.target.value } : x))} />
-              </Field>
-              <Field label="Begründung und Angemessenheit (für den Gründungsbericht, Art. 635 Ziff. 3 OR)">
-                <textarea className={inputCls} rows={2} value={v.begruendungTxt}
-                  onChange={(e) => setVorteile((alt) => alt.map((x) => x.key === v.key ? { ...x, begruendungTxt: e.target.value } : x))} />
-              </Field>
-            </div>
-          ))}
-          <button type="button" className="lc-btn-outline lc-btn-sm"
-            onClick={() => setVorteile((alt) => [...alt, { key: neuerKey(), beguenstigter: '', inhalt: '', wertChf: '', begruendungTxt: '' }])}>
-            + Vorteil hinzufügen
-          </button>
+            )}
+          />
         </div>
       )}
 
@@ -490,49 +501,62 @@ export function SchrittPersonen({ ctx }: { ctx: AgSchrittCtx }) {
       {/* Gründer */}
       <div className="space-y-2">
         <p className="text-body-s font-medium text-ink-900">Gründer:innen und Zeichnung (Art. 629/630 OR)</p>
-        {gruender.map((g) => (
-          <div key={g.key} className="rounded-md border border-line p-3 space-y-2">
-            <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}>
-              <Field label="Name">
-                <input className={inputCls} value={g.name}
-                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, name: e.target.value } : x))} />
-              </Field>
-              <Field label="Angaben (z. B. «von Basel, in Zürich, Musterweg 1»)">
-                <input className={inputCls} value={g.angaben}
-                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, angaben: e.target.value } : x))} />
-              </Field>
+        {/* R2-F/F1-9: handgebauter `rounded-md border border-line`-Behälter,
+            «✕»-Entfernen und «+ … hinzufügen» wichen dem ListenEditor. Der
+            Übernahme-Knopf «→ als VR-Mitglied übernehmen» bleibt im Eintrag —
+            er ist eine Fach-Handlung, keine Listen-Mechanik. */}
+        <ListenEditor
+          element="Gründer:in"
+          eintraege={gruender}
+          className="space-y-2"
+          schluessel={(g) => g.key}
+          onHinzufuegen={() => setGruender((alt) => [...alt, { key: neuerKey(), name: '', angaben: '', anzahl: '', liberierung: '' }])}
+          onEntfernen={(i) => setGruender((alt) => alt.filter((_, j) => j !== i))}
+          kinder={(g) => (
+            <div className="space-y-2">
+              <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-2')}>
+                <Field label="Name">
+                  <input className={inputCls} value={g.name}
+                    onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, name: e.target.value } : x))} />
+                </Field>
+                <Field label="Angaben (z. B. «von Basel, in Zürich, Musterweg 1»)">
+                  <input className={inputCls} value={g.angaben}
+                    onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, angaben: e.target.value } : x))} />
+                </Field>
+              </div>
+              <div className={pk('grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[1fr_1fr_auto] gap-2 items-end')}>
+                <Field label="Gezeichnete Aktien">
+                  <input className={inputCls} inputMode="numeric" value={g.anzahl}
+                    onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, anzahl: e.target.value } : x))} />
+                </Field>
+                <Field label="Liberierung in % (leer = globaler Wert)">
+                  <input className={inputCls} inputMode="numeric" value={g.liberierung ?? ''}
+                    onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, liberierung: e.target.value } : x))} />
+                </Field>
+                <button type="button" className="lc-btn-outline lc-btn-sm"
+                  title="Übernimmt den Namen in den Verwaltungsrat (Heimatort/Wohnort dort ergänzen)."
+                  disabled={!g.name.trim() || vr.some((v) => v.name.trim() === g.name.trim())}
+                  onClick={() => setVr((alt) => [...alt, { key: neuerKey(), name: g.name.trim(), herkunft: '', wohnort: '', adresse: '', praesident: alt.length === 0, zeichnungsArt: 'einzelunterschrift' }])}>
+                  → als VR-Mitglied übernehmen
+                </button>
+              </div>
             </div>
-            <div className={pk('grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[1fr_1fr_auto_auto] gap-2 items-end')}>
-              <Field label="Gezeichnete Aktien">
-                <input className={inputCls} inputMode="numeric" value={g.anzahl}
-                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, anzahl: e.target.value } : x))} />
-              </Field>
-              <Field label="Liberierung in % (leer = globaler Wert)">
-                <input className={inputCls} inputMode="numeric" value={g.liberierung ?? ''}
-                  onChange={(e) => setGruender((alt) => alt.map((x) => x.key === g.key ? { ...x, liberierung: e.target.value } : x))} />
-              </Field>
-              <button type="button" className="lc-btn-outline lc-btn-sm"
-                title="Übernimmt den Namen in den Verwaltungsrat (Heimatort/Wohnort dort ergänzen)."
-                disabled={!g.name.trim() || vr.some((v) => v.name.trim() === g.name.trim())}
-                onClick={() => setVr((alt) => [...alt, { key: neuerKey(), name: g.name.trim(), herkunft: '', wohnort: '', adresse: '', praesident: alt.length === 0, zeichnungsArt: 'einzelunterschrift' }])}>
-                → als VR-Mitglied übernehmen
-              </button>
-              <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-                onClick={() => setGruender((alt) => alt.filter((x) => x.key !== g.key))}>✕</button>
-            </div>
-          </div>
-        ))}
-        <button type="button" className="lc-btn-outline lc-btn-sm"
-          onClick={() => setGruender((alt) => [...alt, { key: neuerKey(), name: '', angaben: '', anzahl: '', liberierung: '' }])}>
-          + Gründer:in hinzufügen
-        </button>
+          )}
+        />
       </div>
 
       {/* Verwaltungsrat */}
       <div className="space-y-2">
         <p className="text-body-s font-medium text-ink-900">Verwaltungsrat (Art. 707 ff. OR)</p>
-        {vr.map((v) => (
-          <div key={v.key} className="rounded-md border border-line p-3 space-y-2">
+        <ListenEditor
+          element="VR-Mitglied"
+          eintraege={vr}
+          className="space-y-2"
+          schluessel={(v) => v.key}
+          onHinzufuegen={() => setVr((alt) => [...alt, { key: neuerKey(), name: '', herkunft: '', wohnort: '', adresse: '', praesident: alt.length === 0, zeichnungsArt: 'einzelunterschrift' }])}
+          onEntfernen={(i) => setVr((alt) => alt.filter((_, j) => j !== i))}
+          kinder={(v) => (
+          <div className="space-y-2">
             <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-2', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-2')}>
               <Field label="Name">
                 <input className={inputCls} value={v.name}
@@ -571,15 +595,10 @@ export function SchrittPersonen({ ctx }: { ctx: AgSchrittCtx }) {
                   onChange={(e) => setVr((alt) => alt.map((x) => x.key === v.key ? { ...x, annahmeInUrkunde: e.target.checked } : x))} />
                 Annahme in der Urkunde
               </label>
-              <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-                onClick={() => setVr((alt) => alt.filter((x) => x.key !== v.key))}>✕</button>
             </div>
           </div>
-        ))}
-        <button type="button" className="lc-btn-outline lc-btn-sm"
-          onClick={() => setVr((alt) => [...alt, { key: neuerKey(), name: '', herkunft: '', wohnort: '', adresse: '', praesident: alt.length === 0, zeichnungsArt: 'einzelunterschrift' }])}>
-          + VR-Mitglied hinzufügen
-        </button>
+          )}
+        />
         <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
           <Field label="Protokollführung (leer = Präsident:in)">
             <input className={inputCls} value={protokollfuehrer} onChange={(e) => setProtokollfuehrer(e.target.value)} />
@@ -596,30 +615,32 @@ export function SchrittPersonen({ ctx }: { ctx: AgSchrittCtx }) {
       {/* Weitere Zeichnungsberechtigte */}
       <div className="space-y-2">
         <p className="text-body-s font-medium text-ink-900">Weitere Zeichnungsberechtigte (optional, ins VR-Protokoll)</p>
-        {vertretungen.map((v) => (
-          <div key={v.key} className={pk('grid grid-cols-1 sm:grid-cols-[2fr_2fr_2fr_auto] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_2fr_2fr_auto] gap-2 items-end')}>
-            <Field label="Name">
-              <input className={inputCls} value={v.name}
-                onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, name: e.target.value } : x))} />
-            </Field>
-            <Field label="Funktion">
-              <input className={inputCls} value={v.funktion}
-                onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, funktion: e.target.value } : x))} />
-            </Field>
-            <Field label="Zeichnung">
-              <select className={inputCls} value={v.zeichnungsArt}
-                onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, zeichnungsArt: e.target.value as AgVertretungsZeichnungsArt } : x))}>
-                {VERTRETUNGS_ZEICHNUNGS_OPTIONEN.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
-              </select>
-            </Field>
-            <button type="button" className="lc-btn-ghost lc-btn-sm" aria-label="Zeile entfernen"
-              onClick={() => setVertretungen((alt) => alt.filter((x) => x.key !== v.key))}>✕</button>
-          </div>
-        ))}
-        <button type="button" className="lc-btn-outline lc-btn-sm"
-          onClick={() => setVertretungen((alt) => [...alt, { key: neuerKey(), name: '', funktion: '', zeichnungsArt: 'kollektivzuzweien' }])}>
-          + Person hinzufügen
-        </button>
+        <ListenEditor
+          element="Person"
+          eintraege={vertretungen}
+          className="space-y-2"
+          schluessel={(v) => v.key}
+          onHinzufuegen={() => setVertretungen((alt) => [...alt, { key: neuerKey(), name: '', funktion: '', zeichnungsArt: 'kollektivzuzweien' }])}
+          onEntfernen={(i) => setVertretungen((alt) => alt.filter((_, j) => j !== i))}
+          kinder={(v) => (
+            <div className={pk('grid grid-cols-1 sm:grid-cols-[2fr_2fr_2fr] gap-2 items-end', 'grid grid-cols-1 @4xl/pane:grid-cols-[2fr_2fr_2fr] gap-2 items-end')}>
+              <Field label="Name">
+                <input className={inputCls} value={v.name}
+                  onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, name: e.target.value } : x))} />
+              </Field>
+              <Field label="Funktion">
+                <input className={inputCls} value={v.funktion}
+                  onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, funktion: e.target.value } : x))} />
+              </Field>
+              <Field label="Zeichnung">
+                <select className={inputCls} value={v.zeichnungsArt}
+                  onChange={(e) => setVertretungen((alt) => alt.map((x) => x.key === v.key ? { ...x, zeichnungsArt: e.target.value as AgVertretungsZeichnungsArt } : x))}>
+                  {VERTRETUNGS_ZEICHNUNGS_OPTIONEN.map((o) => <option key={o.id} value={o.id}>{o.label}</option>)}
+                </select>
+              </Field>
+            </div>
+          )}
+        />
       </div>
 
       {!optingOut && (

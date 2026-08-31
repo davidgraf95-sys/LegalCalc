@@ -30,6 +30,11 @@ const R2E_FLAECHEN = [
   'src/components/forms/KuendigungSperrForm.tsx',
   'src/components/forms/LohnfortzahlungForm.tsx',
   'src/components/vorlagen/GmbhDokumentmappe.tsx',
+  // R2-F (31.8.2026): Die GmbH-Gründungs-SEITE fehlte in dieser Liste — nur
+  // ihre Dokumentmappe stand drin. Genau dort überlebte «(CHF, optional)» im
+  // Label samt rohem CHF-Input. Aufgenommen, damit der Wächter die Fläche
+  // künftig mitliest (die Liste darf wachsen).
+  'src/pages/VorlageGmbhGruendung.tsx',
   'src/pages/VorlageKapitalerhoehung.tsx',
   'src/pages/VorlageMahnung.tsx',
   'src/pages/VorlageWerkvertrag.tsx',
