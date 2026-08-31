@@ -80,8 +80,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·6b-MAT-FINMA`** — `W2·13-KANTONE` seit 31.8.2026 im Bau
-> (wip, Worktree lexmetrik-kantone); W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·6b-MAT-FINMA`** — `W2·13-KANTONE` komplett gelandet
+> 31.8.2026 (PR #595, K-1–K-11 done); W2·10-UI-NAV komplett gelandet 29.8.2026 (Chronik)
 > (Risikopfad, eigene Session). Fokus-Dekret 24.7.2026 (David): die Gesetzesdarstellung steht im
 > Vordergrund — Gesetzes-Schritte prioritär, daneben `W2·6b-MAT-FINMA` (Bewerbungs-Kontext FINMA).
 > Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
