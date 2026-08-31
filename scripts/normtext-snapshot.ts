@@ -825,6 +825,8 @@ async function erzeugeZhPdfSnapshots(
   const flipDb = erstelleFlipDb();
 
   const cov: HtmCoverage = { totalSnapshots: 0, reportZeilen: [], tokenFehlt: [], fetchFehler: [] };
+  // §8-Auslassungen je Erlass (Bug B-6, Gegenprüfung Runde 2, 31.8.2026).
+  const luecken: Record<string, { quelleUrl: string; erlass: string; hinweise: string[] }> = {};
 
   const limit = pLimit(FETCH_CONCURRENCY);
   const abrufe = await Promise.all(
@@ -891,10 +893,76 @@ async function erzeugeZhPdfSnapshots(
     const projJson = flipKantonErlass(flipDb, { key: `${g.kanton}-${safe}`, kanton: g.kanton }, snapshotListe);
     writeFileSync(ausgabePfad, projJson, 'utf8');
     cov.totalSnapshots += snapshotListe.length;
-    cov.reportZeilen.push(`  ${g.kanton}-${safe.padEnd(16)} ${snapshotListe.length} Snapshots → ${ausgabePfad}`);
+    if (ergebnis.hinweise.length > 0) {
+      luecken[`${g.kanton}-${safe}`] = {
+        quelleUrl: g.quelleUrl,
+        erlass,
+        hinweise: [...ergebnis.hinweise].sort(),
+      };
+    }
+    cov.reportZeilen.push(
+      `  ${g.kanton}-${safe.padEnd(16)} ${snapshotListe.length} Snapshots → ${ausgabePfad}` +
+        (ergebnis.hinweise.length > 0 ? ` · ${ergebnis.hinweise.length} §8-Hinweis(e)` : ''),
+    );
   }
 
+  schreibeLueckenIndex(abgerufen, luecken, kantonFilter);
   return cov;
+}
+
+/**
+ * §8-LÜCKEN-INDEX (Bug B-6, Gegenprüfung Runde 2, 31.8.2026).
+ *
+ * Der ZH-Import lässt Erlassteile bewusst weg — Übergangs-/Schlussbestimmungen
+ * und, bei ZH-700.1, den Anhang mit den Altfassungen einzelner §§ (dort 486 von
+ * 4327 Textzeilen = 11 %). Beide führen eine zweite, mit dem Haupttext
+ * kollidierende §-Zählung; sie wegzulassen ist richtig, sie zu VERSCHWEIGEN
+ * nicht (§8: offenlegen statt wegglätten). Bis hierher stand die Auslassung nur
+ * in einem Code-Kommentar — im Artefakt war der Erlass scheinbar vollständig.
+ *
+ * Eigene Datei statt eines Feldes im Erlass-Snapshot: die Snapshot-JSON sind
+ * byte-genaue Projektionen aus `daten/lexmetrik.db` (§5, check:paritaet). Ein
+ * neues Erlass-Feld verlangte eine Schema-Änderung in scripts/datenhaltung/**,
+ * an der parallel gebaut wird. Der Index ist die additive, kollisionsfreie
+ * Form; die Überführung in die DB-Projektion ist Nachzug-Stoff, sobald der
+ * Datenhaltungs-Umbau gelandet ist.
+ *
+ * Deterministisch: Erlass-Keys und Hinweise sortiert (§2).
+ */
+function schreibeLueckenIndex(
+  abgerufen: string,
+  luecken: Record<string, { quelleUrl: string; erlass: string; hinweise: string[] }>,
+  kantonFilter?: Set<string>,
+): void {
+  const pfad = 'public/normtext/kanton-luecken.json';
+  // Teil-Läufe (--nur=zh deckt nur ZH ab) dürfen fremde Kantone nicht löschen:
+  // bestehende Einträge ausserhalb des Filters bleiben stehen.
+  let bestand: Record<string, { quelleUrl: string; erlass: string; hinweise: string[] }> = {};
+  if (existsSync(pfad)) {
+    const alt = JSON.parse(readFileSync(pfad, 'utf8')) as {
+      erlasse?: Record<string, { quelleUrl: string; erlass: string; hinweise: string[] }>;
+    };
+    bestand = alt.erlasse ?? {};
+  }
+  const behalten = Object.fromEntries(
+    Object.entries(bestand).filter(([key]) => {
+      const kanton = key.split('-')[0];
+      // Alles, was dieser Lauf abgedeckt hat, wird ersetzt; der Rest bleibt.
+      if (kantonFilter && !kantonFilter.has(kanton)) return true;
+      return kanton !== 'ZH';
+    }),
+  );
+  const zusammen = { ...behalten, ...luecken };
+  const sortiert: typeof zusammen = {};
+  for (const k of Object.keys(zusammen).sort()) sortiert[k] = zusammen[k];
+  writeFileSync(
+    pfad,
+    JSON.stringify({ erzeugt: abgerufen, erlasse: sortiert }, null, 2) + '\n',
+    'utf8',
+  );
+  console.log(
+    `  §8-Lücken-Index → ${pfad} (${Object.keys(sortiert).length} Erlass(e) mit Auslassung)`,
+  );
 }
 
 // pdfLawIdSafe liegt zentral in ./normtext/lawid-safe.ts (§5, C1-1) — importiert oben.

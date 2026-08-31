@@ -111,6 +111,14 @@ export interface ZhErgebnis {
   artikel: Record<string, ZhArtikel>; // token → Artikel
   /** Einheitliches Label je token: «§ N» (ZH ist ein «§»-Erlass). */
   labels: Record<string, string>;
+  /**
+   * §8-Auslassungen dieses Erlasses in Klartext (Bug B-6, Gegenprüfung Runde 2):
+   * bewusst nicht erfasste Erlassteile (Übergangs-/Schlussapparat, Anhang mit
+   * Altfassungen) und nicht lückenlos expandierbare Sammel-Aufhebungsbereiche.
+   * Der Generator schreibt sie nach `public/normtext/kanton-luecken.json`, damit
+   * die Auslassung im Artefakt sichtbar ist statt nur im Code-Kommentar.
+   */
+  hinweise: string[];
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1455,7 +1463,8 @@ export async function holeZhPdf(
   // Zählweise («§ N.» oder «Art. N») einmal je Erlass aus der Textbasis erheben
   // und für Parser UND Label verwenden (E2-H1) — nie erraten, nie verdrahten.
   const marker = erkenneZhMarker(textbasis);
-  const artikel = extrahiereAlleZhParagraphen(textbasis, marker);
+  const hinweise: string[] = [];
+  const artikel = extrahiereAlleZhParagraphen(textbasis, marker, hinweise);
 
   // Anhang-Tarif SPALTENBEWUSST erfassen (Auftrag David 17.6.2026): der ZH-
   // NotGebV-Anhang ist eine 4-Spalten-Tabelle (Ziffer | Beschreibung | Ansatz |
@@ -1534,5 +1543,5 @@ export async function holeZhPdf(
       labels[token] = `${marke}${token.replace(/_/g, '')}`;
     }
   }
-  return { meta: { titel, stand, quelleHash }, artikel, labels };
+  return { meta: { titel, stand, quelleHash }, artikel, labels, hinweise };
 }
