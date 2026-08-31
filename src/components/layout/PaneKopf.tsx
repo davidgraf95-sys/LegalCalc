@@ -98,7 +98,11 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
                 {i > 0 && <span aria-hidden className="shrink-0 text-ink-400">›</span>}
                 {b.to && onBreadcrumb ? (
                   <button type="button" onClick={() => onBreadcrumb(b.to!)}
-                    className="truncate text-ink-500 no-underline hover:text-brass-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:-outline-offset-2 rounded-sm">{b.label}</button>
+                    /* Ring/Farbe kommen aus der globalen `:focus-visible`-Regel
+                       (index.css, Rolle --focus); NUR der Offset ist lokal:
+                       negativ, weil der Krümel in der schmalen Kopfzeile sitzt
+                       und ein aussenliegender Ring dort geclippt würde. */
+                    className="truncate text-ink-500 no-underline hover:text-brass-700 hover:underline focus-visible:-outline-offset-2 rounded-sm">{b.label}</button>
                 ) : (
                   <span className={`truncate ${i === breadcrumb.length - 1 ? 'font-medium text-ink-800' : 'text-ink-500'}`}>{b.label}</span>
                 )}

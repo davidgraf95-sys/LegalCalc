@@ -119,7 +119,11 @@ export function SekundaerPane(props: SekundaerPaneProps) {
         />
         <div className="relative flex-1 min-h-0">
           <section ref={wurzel} aria-label={label} tabIndex={-1} data-pane="sekundaer"
-            className="@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:-outline-offset-2">
+            /* Ring/Farbe aus der globalen `:focus-visible`-Regel (index.css,
+               Rolle --focus); lokal bleibt NUR der negative Offset — die
+               Pane-Fläche ist ein Scroll-Container, ein aussenliegender Ring
+               läge ausserhalb ihrer Kante und würde geclippt. */
+            className="@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:-outline-offset-2">
             <div className="mx-auto w-full max-w-content px-5 sm:px-6 py-6">
               <UNSAFE_NavigationContext.Provider value={navKontext}>
                 <InhaltsKopfMeldeProvider value={setKopf}>

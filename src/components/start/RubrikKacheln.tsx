@@ -64,8 +64,7 @@ export function RubrikKacheln() {
           return (
             <Link key={a.ziel} to={a.ziel!}
               className="group lc-tile p-5 no-underline flex flex-row sm:flex-col items-start gap-3
-                         transition-[border-color,box-shadow] duration-fast hover:border-line-strong hover:shadow-md
-                         focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:outline-offset-2">
+                         transition-[border-color,box-shadow] duration-fast hover:border-line-strong hover:shadow-md">
               <span className="shrink-0 text-brass-600" aria-hidden>
                 <Icon name={r.icon} className="w-5 h-5" />
               </span>
