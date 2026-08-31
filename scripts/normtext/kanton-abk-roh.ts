@@ -48,7 +48,7 @@
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { identitaetAusErlass, istKuerzelFragment } from './browse-manifest.ts';
+import { identitaetAusErlass, istKuerzelFragment } from './erlass-identitaet.ts';
 import { erlassBezeichnung } from './erlass-bezeichnung.ts';
 import { vergleiche } from './vergleich';
 

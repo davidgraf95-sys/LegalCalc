@@ -12,7 +12,7 @@
  * 'kein-amtliches-kuerzel') statt als zurückgeratener Titel.
  */
 
-import { istKuerzelFragment } from './browse-manifest.ts';
+import { istKuerzelFragment } from './erlass-identitaet.ts';
 
 /** Warum ein Kandidat KEIN Alias wurde — für Statistik und Tests. */
 export type AusschlussGrund =
