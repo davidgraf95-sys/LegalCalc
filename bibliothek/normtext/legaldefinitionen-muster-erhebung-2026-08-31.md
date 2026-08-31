@@ -302,3 +302,18 @@ per Anbau repariert, 0 Rest-Doppelpunkt-Köpfe, 0 sonstige Zitat-Änderungen
 Mutations-Rot je Prüfung (D: gestohlene Fortsetzungszeile → «keine
 byte-gleiche Kopf+Fortsetzung-Kette», F: nackter Kopf). Messbedingung:
 offline, liegender Korpus 29.8.2026, kalt, Einzel-Session R6.3.
+
+### Stichprobe R6.3 gegen die Amtsquellen (1.9.2026)
+
+Deterministische Ziehung: jeder 33. der 341 mehrzeiligen (angebauten)
+Einträge, n = 11 (8 Bund · 3 Kanton). Identitätsprüfung je Zitat-ZEILE
+(49 Zeilen gesamt) gegen die amtliche Quelle — Bund: gepinnte kanonische
+Fedlex-Filestore-Manifestation (fedlex-cache.sh-Pins), Kanton: LexWork-API
+`/api/de/texts_of_law/{id}` (`selected_version.xhtml_tol`), version_uid
+jeweils == Snapshot-`fassungsToken` (keine Drift). **Trefferquote 11/11**
+(AHVG 5 · BEWG 10 · ChemV 2 · FIDLEV 96 · GwV-FINMA 13 · MepV 3 · OR 734a ·
+VMWG 6c · AR 526.21 Art. 31 · BS 419.700 §4 · SG 811.1 Art. 83bis).
+Messbedingung: live-Fetch 1.9.2026, Vergleich nach Tag-/Fussnoten-Strip +
+Entity-Dekodierung, leerzeichenfrei (Fedlex-Inline-`<i>` erzeugt sonst
+Kunst-Leerzeichen — zwei Probe-Iterationen waren Messartefakte der Probe,
+nie der Daten; dokumentiert im R6.3-Bericht).
