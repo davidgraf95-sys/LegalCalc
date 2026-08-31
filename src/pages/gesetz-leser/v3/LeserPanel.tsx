@@ -157,8 +157,15 @@ export function LeserPanel({
           385 gegen `clientWidth` 350, also 35 px Scrollweg und kein
           abgeschnittenes Fach; @390 passt die Leiste ganz (388/388). Herleitung
           samt Etiketten-Wahl im Kopf von `PanelAnwendung.tsx`. */}
+      {/* ── LM-063-Klasse, hier nachgemessen (B8, 31.8.2026) ──────────────────
+          Die Vorsorge oben stimmt, die Ehrlichkeit fehlte: 35 px Scrollweg
+          ohne Scrollbalken (`scrollbar-width:none`) heisst, dass «Anwendung»
+          rechts angeschnitten steht und NICHTS das sagt — derselbe Defekt, den
+          LM-063 an den Rechner-Phasenleisten meldet, nur eine Etage tiefer.
+          `lc-scrollrand-x` ist dieselbe geteilte Affordanz wie dort (§5); der
+          Deckel-Ton folgt der Panel-Fläche, nicht dem Seitengrund. */}
       <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
-        className="flex shrink-0 gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
+        className="lc-scrollrand-x lc-scrollrand-grund-raised flex shrink-0 gap-1 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {
           const aktiv = r.id === reiter;
           return (

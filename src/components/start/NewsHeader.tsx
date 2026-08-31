@@ -157,7 +157,11 @@ export function NewsHeader() {
       </div>
       {/* Block-Scrollcontainer (klippt zuverlässig) + w-max-Flex innen — so
           verbreitert der Streifen die Seite nicht (Mobil-Overflow-Tor 390px). */}
-      <div ref={streifenRef} className="overflow-x-auto pb-1.5">
+      {/* LM-061 (Entscheid David 31.8.2026, revidiert D11): die angeschnittene
+          Karte allein trägt ~2'600 px verborgenen Inhalt nicht — die
+          Scrollstand-Affordanz aus B8 zeigt je Seite nur dann
+          «mehr», wenn dort wirklich Karten liegen. */}
+      <div ref={streifenRef} className="lc-scrollrand-x overflow-x-auto pb-1.5">
       {/* J4 · Datum-Dedupe: gruppiert nach Entscheiddatum. Das Datum steht EINMAL
           als Gruppen-Überschrift über seinen Karten, statt auf jeder Karte
           derselben Sitzung zu wiederholen. Jede Karte bleibt damit unter einem

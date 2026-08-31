@@ -106,7 +106,30 @@ export function LeserSeitenleiste({
           die aktive Baumzeile mitzuführen (P9b/A33) und um den
           Nutzer-Interaktions-Guard anzuhängen. Ohne die Marke lief beides in V3
           ins Leere — die Gliederung wäre beim Lesen still stehen geblieben. */}
-      <div data-toc data-v3-leiste-scroller className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
+      {/* ── LM-064 (B8, 31.8.2026) · DER SCHNITT IST JETZT ANGEKÜNDIGT ────────
+          BEFUND, am gebauten Stand reproduziert @1440 auf `/gesetze/bund/OR`:
+          dieser Scroller zeigt 728 px von 1'061 px Inhalt und schneidet dabei
+          GENAU EINE Baumzeile am unteren Rand mitten durch — bei
+          `border-bottom: 0px` und `mask-image: none`, hell wie dunkel. Ohne
+          jedes Zeichen liest sich der Schnitt als Darstellungsfehler, nicht als
+          «hier geht es weiter» (Befund-Wortlaut: «im Dunkelmodus wirkt der
+          Schnitt wie ein Darstellungsfehler»).
+          `lc-scrollrand-y` ist dieselbe geteilte Affordanz wie an den
+          waagrechten Leisten (§5, Herleitung im Regel-Block `lc-scrollrand` in
+          index.css) — der untere Schatten steht genau dann, wenn unter der
+          Kante wirklich noch Baum liegt, und weicht am Ende der Strecke.
+          OBERE KANTE: dort deckt der klebende Sockel (Zone A, `bg-paper`) den
+          Schatten ohnehin ab — Hintergrund liegt hinter dem Inhalt. Das ist
+          erwünscht und kein Sonderfall: an der oberen Kante sagt schon der
+          Sockel, dass man mitten im Baum steht.
+          NICHT GEBAUT und bewusst nicht: «schneidet keine Zeile an». Ein frei
+          scrollender Kasten kann an keiner Halteposition zeilenrein enden;
+          erzwungen würde das ein `scroll-snap`, das dem Scroll-Spy und dem
+          `scrollIntoView` der Gliederung (`tocAutoZuklappen`) in die Quere
+          käme. Der Anschnitt bleibt — er ist ab jetzt nur nicht mehr stumm.
+          Der im Befund zusätzlich genannte WAAGRECHTE Balken ist überholt:
+          gemessen `overflow-x: hidden`, `scrollWidth === clientWidth === 288`. */}
+      <div data-toc data-v3-leiste-scroller className="lc-scrollrand-y min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain pr-2 [scrollbar-width:thin]">
         {uebersicht && (
           <div data-v3-leiste-uebersicht className="mb-3">{uebersicht}</div>
         )}
