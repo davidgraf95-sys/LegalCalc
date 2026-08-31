@@ -56,7 +56,7 @@ Laufdatum) je Bund-Volltext-Erlass geerntet — Fedlex führt künftige Fassunge
 bereits im Triplestore. Jede Zeile ist eine angekündigte künftige Fassung; am
 genannten Tag `scripts/fedlex-cache.sh` neu pinnen + §7-Verifikation. Massgeblich
 bleibt stets die amtliche Quelle. NICHT von Hand editieren — Block wird von
-`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-08-29.
+`npm run gen:fedlex-wiedervorlage` regeneriert. Stand des Laufs: 2026-08-31.
 
 | Erlass (künftige Fassung) | Fundstelle | Aktuell gepinnt | Rhythmus | Nächste Prüfung |
 |---|---|---|---|---|
