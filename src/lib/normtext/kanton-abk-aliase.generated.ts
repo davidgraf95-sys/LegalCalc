@@ -1,8 +1,8 @@
 // AUTO-GENERIERT von scripts/normtext/kanton-abk-aliase-generieren.ts — NICHT von Hand editieren.
 // Amtlich belegte Kürzel der Kanton-Erlasse (abbreviation-Feld der kantonalen
 // Erlasssammlungs-APIs, projiziert über public/normtext/register.json).
-// Ausschluss-Regeln R1–R5 + Klammer-Verzicht: Kopf des Generators (§7, nie erfinden).
-// 572 Aliase über 20 Kantone · ausgeschlossen: kleinwoerter 9 · titel-kopie 49 · zu-lang 601.
+// Ausschluss-Regeln R1–R7 + Klammer-Verzicht: Kopf des Generators (§7, nie erfinden).
+// 569 Aliase über 19 Kantone · ausgeschlossen: kantonskuerzel 1 · klammer 2 · kleinwoerter 9 · titel-kopie 49 · zu-lang 601.
 // Kürzel ist ALIAS, nie Schlüssel: dasselbe abk darf auf mehrere Erlasse zeigen
 // (kantonsübergreifend wie innerhalb eines Kantons); Bund↔Kanton-Kollisionen sind
 // legitim und im Report bibliothek/register/kanton-abk-kollisionen-*.md dokumentiert.
@@ -203,7 +203,6 @@ export const KANTON_ABK_ALIASE: ReadonlyArray<{ abk: string; kanton: string; key
   { abk: "Gebäudeversicherungsgesetz", kanton: "BS", key: "BS-695.100" },
   { abk: "GebührD", kanton: "AG", key: "AG-662.110" },
   { abk: "Gebührenordnung", kanton: "AR", key: "AR-233.3" },
-  { abk: "Gebührenordnung (GebO)", kanton: "SZ", key: "SZ-173.111" },
   { abk: "Gebührentarif zum EG SVG", kanton: "AR", key: "AR-761.32" },
   { abk: "Gebührenverordnung", kanton: "BS", key: "BS-453.500" },
   { abk: "Gebührenverordnung AWA", kanton: "BS", key: "BS-810.140" },
@@ -211,7 +210,6 @@ export const KANTON_ABK_ALIASE: ReadonlyArray<{ abk: string; kanton: string; key
   { abk: "Gebührenverordnung Sanität", kanton: "BS", key: "BS-339.220" },
   { abk: "Gemeindegesetz", kanton: "AR", key: "AR-151.11" },
   { abk: "Gemeindegesetz", kanton: "BS", key: "BS-170.100" },
-  { abk: "Gerichtskostenverordnung (GKV)", kanton: "SG", key: "SG-2808" },
   { abk: "GesG", kanton: "BS", key: "BS-300.100" },
   { abk: "Gesetz über Freizeitgärten", kanton: "BS", key: "BS-911.900" },
   { abk: "Gesundheitsgesetz", kanton: "AR", key: "AR-811.1" },
@@ -466,7 +464,6 @@ export const KANTON_ABK_ALIASE: ReadonlyArray<{ abk: string; kanton: string; key
   { abk: "TBG", kanton: "BS", key: "BS-815.100" },
   { abk: "TBV", kanton: "BS", key: "BS-815.120" },
   { abk: "TFV", kanton: "BS", key: "BS-412.600" },
-  { abk: "TG", kanton: "AR", key: "AR-955.21" },
   { abk: "TGV", kanton: "AR", key: "AR-925.32" },
   { abk: "TPV", kanton: "BS", key: "BS-562.530" },
   { abk: "TV", kanton: "AR", key: "AR-955.213" },

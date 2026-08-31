@@ -12,15 +12,24 @@
  * generieren.ts (Feld `kz` je Kanton-Eintrag) und scripts/datenhaltung/fts.ts
  * (FTS-Spalte `kuerzel`).
  *
- * QUELLE (§7, amtlich belegt): das `kuerzel`-Feld der Kanton-Einträge in
- * public/normtext/register.json. Es ist die deterministische Projektion des
- * `abbreviation`-Felds der kantonalen Erlasssammlungs-APIs (LexWork u. a.):
- * adapter-lexwork.ts übernimmt `tol.abbreviation` wörtlich, normtext-snapshot.ts
- * komponiert daraus `Titel, Kürzel (Nr)`, browse-manifest.ts →
- * identitaetAusErlass() löst den String wieder auf. KEIN Wert dieses Artefakts
- * wird erfunden oder umgeformt — die Regeln unten entscheiden nur, OB ein Wert
- * als Such-Alias taugt, nie WIE er lautet (einzige Ausnahme: der dokumentierte
- * Semikolon-Split R2, der einen TEIL des amtlichen Werts wählt).
+ * QUELLE (§7): das `kuerzel`-Feld der Kanton-Einträge in
+ * public/normtext/register.json. Für die API-Pipeline ist es die deterministische
+ * Projektion des `abbreviation`-Felds der kantonalen Erlasssammlungs-APIs
+ * (LexWork u. a.): adapter-lexwork.ts übernimmt `tol.abbreviation` wörtlich,
+ * normtext-snapshot.ts komponiert daraus `Titel, Kürzel (Nr)`, browse-manifest.ts
+ * → identitaetAusErlass() löst den String wieder auf. ABER (GP-Befund F1/F2,
+ * 31.8.2026): Einträge der PDF-Pipeline tragen stattdessen den REPO-KURATIERTEN
+ * Zitat-Namen (src/data/tarif/*-erlassName, Handpflege) — dort ist das Feld
+ * KEIN amtlich belegtes Kürzel (Beleg: SG-2808 «Gerichtskostenverordnung (GKV)»,
+ * amtlich abbreviation="" laut gesetzessammlung.sg.ch/api/de/texts_of_law/941.12;
+ * SZ-173.111 «Gebührenordnung (GebO)», SRSZ-173.111-PDF ohne Kürzel «GebO»).
+ * Regel R6 filtert diese Herkunft über ihre offline entscheidbare Spur (Klammer
+ * im Wert) fail-closed heraus. KEIN Wert dieses Artefakts wird erfunden oder
+ * umgeformt — die Regeln unten entscheiden nur, OB ein Wert als Such-Alias
+ * taugt, nie WIE er lautet (einzige Ausnahme: der dokumentierte Semikolon-Split
+ * R2, der einen TEIL des amtlichen Werts wählt). PRÜFBAR: kein Alias trägt eine
+ * Klammer, jeder Alias steht wörtlich im Register-kuerzel seines Keys
+ * (src/tests/kanton-abk-aliase.test.ts, Artefakt-Invarianten).
  *
  * WARUM NICHT DERSELBE GENERATOR WIE DER BUND (Querschnitt-Frage des Auftrags,
  * geprüft und verneint): abk-aliase-generieren.ts ist eine NETZ-Pipeline gegen
@@ -62,6 +71,27 @@
  *
  * R5 ZU KURZ (< 2 Zeichen). Leer/Einzelzeichen ist kein zitierfähiges Kürzel.
  *
+ * R6 KLAMMER (R8.2, GP-Befund F1/F2 31.8.2026 — 2 Einträge, Stand 31.8.2026).
+ *    Ein Wert mit «(» oder «)» ist kein zitierfähiges Kürzel, sondern ein
+ *    Titel mit Klammer-Zusatz — und die Klammer ist zugleich die offline
+ *    entscheidbare Spur der PDF-Pipeline-Herkunft (handgepflegter Zitat-Name
+ *    statt API-abbreviation, s. QUELLE oben): fail-closed raus. Trifft heute
+ *    exakt SG-2808 und SZ-173.111; die belegten Aliase bleiben (Test).
+ *
+ * R7 KANTONSKÜRZEL (R8.2, GP-Befund F5 31.8.2026 — 1 Eintrag, Stand 31.8.2026).
+ *    Ein Alias, der (case-insensitiv, geschlossene 26er-Liste) EXAKT einem
+ *    Kantonskürzel entspricht, wird ausgeschlossen. Beleg: AR-955.21 trägt
+ *    amtlich das Kürzel «TG» (Tourismusgesetz AR) — amtlich belegt, aber als
+ *    SUCH-Alias irreführend: die Query «TG» meint die Kantonsabkürzung Thurgau,
+ *    und die Edge-Einwort-Stufung (suche-kern.ts hauptSpalten) höbe die
+ *    AR-Tourismus-Artikel auf Stufe 0. Der Erlass bleibt über seine Titelwörter
+ *    auffindbar; nur der Kürzel-Boost entfällt.
+ *
+ * R6/R7 laufen bewusst NACH R1–R5: ihre Statistik zählt damit exakt die
+ * Kandidaten, die sonst ALIAS GEWORDEN wären (prüfbare «trifft exakt N»-
+ * Aussage im Test) — die Ausschlussmenge selbst ist von der Reihenfolge
+ * unabhängig.
+ *
  * KEINE KLAMMER-AKRONYM-EXTRAKTION (Gefahren-Klasse 1, «Bundes-Kürzel-Leck»).
  * Ein Klammer-Akronym am Ende eines titelartigen Werts bezeichnet oft das
  * REFERENZIERTE Bundesrecht, nicht den kantonalen Erlass: AR-760.12
@@ -89,10 +119,12 @@
  *
  * Aufruf:
  *   npm run gen:kanton-abk-aliase                 schreibt das Artefakt
- *   npm run check:kanton-abk-aliase               Drift-Tor (vergleicht, schreibt nie)
+ *   npm run check:kanton-abk-aliase               Drift-Tor: Artefakt UND jüngster
+ *                                                 Kollisionsreport byte-gleich zur
+ *                                                 frischen Ableitung (schreibt nie)
  *   … gen … -- --report --datum=YYYY-MM-DD        zusätzlich Kollisionsreport
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { vergleiche } from './vergleich';
@@ -109,10 +141,14 @@ export interface KantonAliasZeile {
 }
 
 /** Warum ein Kandidat KEIN Alias wurde — für Statistik und Tests. */
-export type AusschlussGrund = 'titel-kopie' | 'zu-lang' | 'kleinwoerter' | 'zu-kurz';
+export type AusschlussGrund = 'titel-kopie' | 'zu-lang' | 'kleinwoerter' | 'zu-kurz' | 'klammer' | 'kantonskuerzel';
 
 /** R3-Grenze: längstes echtes Mehrwort-Kürzel des Bestands ist 26 Zeichen. */
 export const MAX_LAENGE = 30;
+
+/** R7: die 26 Kantonskürzel (geschlossene Liste; Kopie-Disziplin wie
+ *  src/lib/permalink.ts — der Test hält eine GEGENkopie, kein Selbstbeweis). */
+export const KANTONSKUERZEL = new Set(['AG', 'AI', 'AR', 'BE', 'BL', 'BS', 'FR', 'GE', 'GL', 'GR', 'JU', 'LU', 'NE', 'NW', 'OW', 'SG', 'SH', 'SO', 'SZ', 'TG', 'TI', 'UR', 'VD', 'VS', 'ZG', 'ZH']);
 
 const KLEINWORT = /^[a-zäöüéèàçâêîôû]/;
 
@@ -138,6 +174,9 @@ export function aliasAusKandidat(
   const kleine = wert.split(/\s+/).filter((w) => KLEINWORT.test(w));
   if (kleine.length >= 2) return { abk: null, grund: 'kleinwoerter' };
   if (wert.length < 2) return { abk: null, grund: 'zu-kurz' };
+  // R6/R7 zuletzt (Statistik = artefakt-relevante Ausschlüsse, s. Kopf):
+  if (wert.includes('(') || wert.includes(')')) return { abk: null, grund: 'klammer' };
+  if (KANTONSKUERZEL.has(wert.toUpperCase())) return { abk: null, grund: 'kantonskuerzel' };
   return { abk: wert };
 }
 
@@ -203,7 +242,7 @@ function artefakt(zeilen: KantonAliasZeile[], ausgeschlossen: Map<AusschlussGrun
   const kopf = `// AUTO-GENERIERT von scripts/normtext/kanton-abk-aliase-generieren.ts — NICHT von Hand editieren.
 // Amtlich belegte Kürzel der Kanton-Erlasse (abbreviation-Feld der kantonalen
 // Erlasssammlungs-APIs, projiziert über public/normtext/register.json).
-// Ausschluss-Regeln R1–R5 + Klammer-Verzicht: Kopf des Generators (§7, nie erfinden).
+// Ausschluss-Regeln R1–R7 + Klammer-Verzicht: Kopf des Generators (§7, nie erfinden).
 // ${zeilen.length} Aliase über ${kantone.size} Kantone · ausgeschlossen: ${statistik || 'keine'}.
 // Kürzel ist ALIAS, nie Schlüssel: dasselbe abk darf auf mehrere Erlasse zeigen
 // (kantonsübergreifend wie innerhalb eines Kantons); Bund↔Kanton-Kollisionen sind
@@ -267,12 +306,17 @@ async function bundKuerzelRaum(erlasse: RegisterErlass[]): Promise<Map<string, s
   return raum;
 }
 
-function schreibeReport(
+const REPORT_DIR = 'bibliothek/register';
+const REPORT_RE = /^kanton-abk-kollisionen-(\d{4}-\d{2}-\d{2})\.md$/;
+
+/** Der Report-INHALT — EINE Quelle für gen --report UND das --check-Tor (§5/§6.7):
+ *  ein von Hand editierter oder veralteter Report läuft im Drift-Tor rot auf,
+ *  statt unbewacht zu driften (GP-Befund F6, 31.8.2026). */
+export function reportInhalt(
   datum: string,
   zeilen: KantonAliasZeile[],
   kollisionen: Array<{ abk: string; bund: string[]; kantonKeys: string[] }>,
 ): string {
-  const pfad = resolve(WURZEL, `bibliothek/register/kanton-abk-kollisionen-${datum}.md`);
   const mehrfach = new Map<string, KantonAliasZeile[]>();
   for (const z of zeilen) mehrfach.set(z.abk, [...(mehrfach.get(z.abk) ?? []), z]);
   const kollintern = [...mehrfach.entries()].filter(([, v]) => v.length > 1)
@@ -299,13 +343,51 @@ ${kollisionen.map((k) => `| ${k.abk} | ${k.bund.join(' · ')} | ${k.kantonKeys.j
 |---|---|
 ${kollintern.map(([abk, v]) => `| ${abk} | ${v.map((z) => z.key).join(' · ')} |`).join('\n')}
 `;
-  writeFileSync(pfad, md, 'utf8');
+  return md;
+}
+
+function schreibeReport(
+  datum: string,
+  zeilen: KantonAliasZeile[],
+  kollisionen: Array<{ abk: string; bund: string[]; kantonKeys: string[] }>,
+): string {
+  const pfad = resolve(WURZEL, `${REPORT_DIR}/kanton-abk-kollisionen-${datum}.md`);
+  writeFileSync(pfad, reportInhalt(datum, zeilen, kollisionen), 'utf8');
   return pfad;
+}
+
+/** F6-Tor: der JÜNGSTE committete Report muss byte-gleich der frischen Ableitung
+ *  sein (Datum aus dem Dateinamen — Belege altern nicht, sie werden ersetzt oder
+ *  laufen rot). Fehlt jeder Report, ist das Artefakt unbelegt dokumentiert → rot. */
+async function pruefeReportDrift(zeilen: KantonAliasZeile[], erlasse: RegisterErlass[]): Promise<void> {
+  const dateien = readdirSync(resolve(WURZEL, REPORT_DIR))
+    .filter((n) => REPORT_RE.test(n))
+    .sort();
+  if (dateien.length === 0) {
+    console.error(
+      `check:kanton-abk-aliase: KEIN Kollisionsreport unter ${REPORT_DIR}/kanton-abk-kollisionen-*.md — `
+      + '`npm run gen:kanton-abk-aliase -- --report --datum=YYYY-MM-DD` fahren (§6.7: unbewachte Doku zählt nicht).',
+    );
+    process.exit(1);
+  }
+  const juengste = dateien[dateien.length - 1];
+  const datum = REPORT_RE.exec(juengste)![1];
+  const pfad = resolve(WURZEL, REPORT_DIR, juengste);
+  const soll = reportInhalt(datum, zeilen, bundKollisionen(zeilen, await bundKuerzelRaum(erlasse)));
+  if (readFileSync(pfad, 'utf8') !== soll) {
+    console.error(
+      `check:kanton-abk-aliase: Kollisionsreport ${juengste} DRIFTET gegenüber der frischen Ableitung `
+      + '(von Hand editiert oder veraltet) — `npm run gen:kanton-abk-aliase -- --report --datum='
+      + `${datum}\` ausführen und den Diff bewusst abnehmen.`,
+    );
+    process.exit(1);
+  }
+  console.log(`check:kanton-abk-aliase: Kollisionsreport ${juengste} synchron (generierte Quelle, F6-Tor).`);
 }
 
 // ── Drift-Tor (--check): Artefakt gegen frische Ableitung, byte-genau ────────
 
-function pruefeDrift(neu: string): never {
+function pruefeDrift(neu: string): void {
   if (!existsSync(ZIEL)) {
     console.error(`PRÜFUNG UNMÖGLICH: ${ZIEL} fehlt — erst \`npm run gen:kanton-abk-aliase\` fahren.`);
     process.exit(1);
@@ -324,7 +406,6 @@ function pruefeDrift(neu: string): never {
     process.exit(1);
   }
   console.log(`check:kanton-abk-aliase: Artefakt synchron mit dem Register (${n} Aliase).`);
-  process.exit(0);
 }
 
 export async function main(): Promise<void> {
@@ -346,7 +427,11 @@ export async function main(): Promise<void> {
   }
 
   const inhalt = artefakt(zeilen, ausgeschlossen);
-  if (nurPruefen) pruefeDrift(inhalt);
+  if (nurPruefen) {
+    pruefeDrift(inhalt);
+    await pruefeReportDrift(zeilen, erlasse); // F6-Tor: Report ist Teil des Artefakts
+    process.exit(0);
+  }
 
   writeFileSync(ZIEL, inhalt, 'utf8');
   const stat = [...ausgeschlossen.entries()].map(([g, n]) => `${g} ${n}`).join(' · ');

@@ -125,6 +125,58 @@ describe('Gefahren-Klasse 2: «Die Bürgschaft» (Bundes-Titel-Fragment)', () =>
   });
 });
 
+// R8.2 (Fix-Runde 31.8.2026, GP-Befunde F1/F2/F5): die 26 Kantonskürzel —
+// bewusst lokale Kopie (wie src/lib/permalink.ts), damit der Test die
+// Generator-Konstante GEGENprüft statt sie zu importieren (kein Selbstbeweis).
+const KANTONSKUERZEL_26 = new Set(['AG', 'AI', 'AR', 'BE', 'BL', 'BS', 'FR', 'GE', 'GL', 'GR', 'JU', 'LU', 'NE', 'NW', 'OW', 'SG', 'SH', 'SO', 'SZ', 'TG', 'TI', 'UR', 'VD', 'VS', 'ZG', 'ZH']);
+
+describe('R6 Klammer (GP F1/F2): handgepflegte Zitat-Namen sind kein amtliches Kürzel', () => {
+  it('F1/F2-Fixtures: «Gerichtskostenverordnung (GKV)» und «Gebührenordnung (GebO)» → raus', () => {
+    // Wörtliche Register-Werte (Stand 31.8.2026) als Fixture — Herkunft
+    // src/data/tarif/*-erlassName (PDF-Pipeline), amtlich abbreviation leer
+    // (gesetzessammlung.sg.ch API 941.12) bzw. kein Kürzel (SRSZ-173.111-PDF).
+    expect(aliasAusKandidat('Gerichtskostenverordnung (GKV)', 'Gerichtskostenverordnung (GKV) (sGS 941.12)'))
+      .toEqual({ abk: null, grund: 'klammer' });
+    expect(aliasAusKandidat('Gebührenordnung (GebO)', 'Gebührenordnung (GebO) (SRSZ 173.111)'))
+      .toEqual({ abk: null, grund: 'klammer' });
+  });
+
+  it('die echten Register-Einträge SG-2808/SZ-173.111 fallen unter R6', () => {
+    for (const key of ['SG-2808', 'SZ-173.111']) {
+      const e = kantonErlasse.find((x) => x.key === key);
+      if (!e) continue; // Registerbestand kann wandern; der Fixture-Kern oben bleibt
+      expect(aliasAusKandidat(e.kuerzel, e.titel)).toEqual({ abk: null, grund: 'klammer' });
+    }
+  });
+
+  it('R6 trifft heute EXAKT die zwei belegten Fälle — kein belegtes Alias fällt mit (Stand 31.8.2026)', () => {
+    const { zeilen, ausgeschlossen } = baueAliase(ERLASSE);
+    expect(ausgeschlossen.get('klammer')).toBe(2);
+    expect(zeilen.some((z) => z.abk.includes('(') || z.abk.includes(')'))).toBe(false);
+    expect(zeilen.find((z) => z.key === 'SG-2808')).toBeUndefined();
+    expect(zeilen.find((z) => z.key === 'SZ-173.111')).toBeUndefined();
+  });
+});
+
+describe('R7 Kantonskürzel (GP F5): Alias == Kantonskürzel kapert die Kantonssuche', () => {
+  it('«TG» (AR-955.21, amtlich belegt) wird als Such-Alias ausgeschlossen', () => {
+    expect(aliasAusKandidat('TG', 'Tourismusgesetz (bGS 955.21)'))
+      .toEqual({ abk: null, grund: 'kantonskuerzel' });
+    // Nachbarn bleiben drin (kein Übergriff der geschlossenen 26er-Liste):
+    expect(aliasAusKandidat('TV', 'Tourismusverordnung (bGS 955.213)')).toEqual({ abk: 'TV' });
+    expect(aliasAusKandidat('AnwT', 'Anwaltstarif')).toEqual({ abk: 'AnwT' });
+  });
+
+  it('R7 trifft heute EXAKT einen Eintrag; kein Alias entspricht einem der 26 Kürzel', () => {
+    const { zeilen, ausgeschlossen } = baueAliase(ERLASSE);
+    expect(ausgeschlossen.get('kantonskuerzel')).toBe(1);
+    expect(zeilen.find((z) => z.key === 'AR-955.21')).toBeUndefined();
+    for (const z of zeilen) {
+      expect(KANTONSKUERZEL_26.has(z.abk.toUpperCase()), `${z.key}: «${z.abk}» ist ein Kantonskürzel`).toBe(false);
+    }
+  });
+});
+
 describe('Artefakt-Invarianten (Drift + Determinismus)', () => {
   it('Artefakt == frische Ableitung aus register.json (Drift-Tor in-process)', () => {
     const { zeilen } = baueAliase(ERLASSE);
