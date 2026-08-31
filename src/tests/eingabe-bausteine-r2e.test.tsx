@@ -17,78 +17,86 @@ import { renderToString } from 'react-dom/server';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { Field, KopierButton } from '../components/vorlagen/ui';
+import { alleQuellen, alleTsx, liesOhneKommentare, pruefeAusnahmen, rel } from './appDateien';
 
-// Die Flächen des Pakets R2-E. Die Liste darf SCHRUMPFEN (eine Fläche fällt
-// weg) und WACHSEN (eine neue Rechner-/Vorlagen-Fläche kommt dazu) — sie darf
-// nur nie eine Fläche verlieren, weil dort wieder ein rohes Feld steht.
-const R2E_FLAECHEN = [
-  'src/components/forms/EinfacheFristForm.tsx',
-  'src/components/forms/KombinierteAnsicht.tsx',
-  'src/components/forms/ZpoFristenForm.tsx',
-  'src/components/forms/MietrechtForm.tsx',
-  'src/components/forms/GewaehrleistungForm.tsx',
-  'src/components/forms/KuendigungSperrForm.tsx',
-  'src/components/forms/LohnfortzahlungForm.tsx',
-  'src/components/vorlagen/GmbhDokumentmappe.tsx',
-  // R2-F (31.8.2026): Die GmbH-Gründungs-SEITE fehlte in dieser Liste — nur
-  // ihre Dokumentmappe stand drin. Genau dort überlebte «(CHF, optional)» im
-  // Label samt rohem CHF-Input. Aufgenommen, damit der Wächter die Fläche
-  // künftig mitliest (die Liste darf wachsen).
-  'src/pages/VorlageGmbhGruendung.tsx',
-  'src/pages/VorlageKapitalerhoehung.tsx',
-  'src/pages/VorlageMahnung.tsx',
-  'src/pages/VorlageWerkvertrag.tsx',
-  'src/pages/VorlageAuftrag.tsx',
-  'src/pages/VorlageNda.tsx',
-  'src/pages/VorlageKonkubinat.tsx',
-  'src/pages/VorlageForderungsabtretung.tsx',
-  'src/pages/VorlageVerjaehrungsverzicht.tsx',
-  'src/pages/VorlageEheschutzgesuch.tsx',
-  'src/pages/VorlageScheidungsklage.tsx',
-  'src/pages/VorlageMietvertrag.tsx',
-  'src/pages/vorlage-ag-gruendung/schritte-eingabe.tsx',
-] as const;
+// ─── R3-α-WURZEL (31.8.2026, §17/§6.7) ──────────────────────────────────────
+//
+// Hier stand `R2E_FLAECHEN` — eine Liste von 22 Dateien mit der ausdrücklichen
+// Erlaubnis zu wachsen. Genau das ist die Bauart, die B3 als Vakuum-Lücke
+// ausgewiesen hat: eine Liste, die wachsen DARF, wächst nur, wenn jemand
+// hinschaut. Gemessen am 31.8.2026 stand ausserhalb der Liste ein «(CHF,
+// optional)» im Label (`ErbteilungForm`) und zwei rohe `type="date"`
+// (`EntscheidFilter`, `BezugZeitWahl`) — der Wächter war grün.
+//
+// Die Sonden fegen jetzt die App. Ausgenommen bleibt nur, was seine Begründung
+// AM FUNDORT trägt; `pruefeAusnahmen` liest sie dort wörtlich nach.
 
 const quelle = (p: string) => readFileSync(p, 'utf8');
 
-// Kommentare fliegen raus, bevor gesucht wird: sie zitieren `type="date"` und
-// «(optional)» legitim als Beleg (dieselbe Vorsichtsmassnahme wie in
-// tap-ziel-token.test.ts).
-const ohneKommentare = (s: string) =>
-  s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+describe('R2-E/F1-1 — kein natives type="date" in der App (App-weit)', () => {
+  /**
+   * Die zwei Filter-Flächen, die nativ bleiben. Der Unterschied ist nicht
+   * Geschmack, sondern der Grund des Wächters: F1-1 schützt Felder, die ein
+   * FRISTAUSLÖSENDES Ereignis tragen (dort ist MM/DD/YYYY ein Rechtsfehler).
+   * Ein Korpus-/Zeitachsen-FILTER trägt keinen Wert in eine Engine; er blendet
+   * eine Liste ein und aus, und das Haus-Feld brächte in die 28-px-Filterzeile
+   * ein Kalender-Popover samt `pr-11`-Reserve mit.
+   */
+  const AUSNAHMEN = [
+    { datei: 'components/rechtsprechung/EntscheidFilter.tsx', begruendung: 'R2-E/F1-1-AUSNAHME (R3-α, 31.8.2026): Filter, kein fristauslösendes Feld' },
+    { datei: 'components/verzahnung/BezugZeitWahl.tsx', begruendung: 'R2-E/F1-1-AUSNAHME (R3-α, 31.8.2026): Filter, kein fristauslösendes Feld' },
+  ] as const;
 
-describe('R2-E/F1-1 — kein natives type="date" auf den Rechner-/Vorlagen-Flächen', () => {
-  it.each(R2E_FLAECHEN)('%s benutzt DatumsFeld statt <input type="date">', (pfad) => {
-    const treffer = [...ohneKommentare(quelle(pfad)).matchAll(/type=["']date["']/g)];
-    expect(
-      treffer.length,
-      `${pfad}: <input type="date"> rendert in der Browser-Locale (US: MM/DD/YYYY) — `
-      + 'stattdessen <DatumsFeld value={iso} onChange={…} /> (Wert bleibt ISO)',
-    ).toBe(0);
+  it('jede Ausnahme trägt ihre Begründung am Fundort', () => {
+    expect(() => pruefeAusnahmen(AUSNAHMEN)).not.toThrow();
   });
-});
 
-describe('R2-E/F1-6 — «optional» steht in der Prop, nicht im Label-Text', () => {
-  it.each(R2E_FLAECHEN)('%s trägt kein «(optional)» im Field-Label', (pfad) => {
-    const labels = [...ohneKommentare(quelle(pfad)).matchAll(/<Field\s+label=(\{`[^`]*`\}|"[^"]*")/g)]
-      .map((m) => m[1])
-      .filter((l) => /optional/i.test(l));
+  it('sonst benutzt jede Fläche DatumsFeld statt <input type="date">', () => {
+    const erlaubt = pruefeAusnahmen(AUSNAHMEN);
+    const funde = alleTsx()
+      .filter((d) => !erlaubt.has(rel(d)))
+      .filter((d) => /type=["']date["']/.test(liesOhneKommentare(d)))
+      .map(rel);
     expect(
-      labels,
-      `${pfad}: «optional» gehört in die Field-Prop (rendert « · optional»), nicht in den Label-Text`,
+      funde,
+      '<input type="date"> rendert in der Browser-Locale (US: MM/DD/YYYY) — '
+      + 'stattdessen <DatumsFeld value={iso} onChange={…} /> (Wert bleibt ISO)',
     ).toEqual([]);
   });
 });
 
-describe('R2-E/F1-10 — «Kopiert ✓» rendert nur der geteilte KopierButton', () => {
-  // Ausnahme mit Ablaufdatum: die Kontakt-Seite trägt noch ihre eigene
-  // Kopier-Mechanik. Sie liegt ausserhalb der R2-E-Whitelist; die Zeile ist
-  // hier notiert, damit sie sichtbar bleibt statt still zu überleben.
-  const NOCH_EIGEN = ['src/pages/Kontakt.tsx'];
+describe('R2-E/F1-6 — «optional» steht in der Prop, nicht im Label-Text (App-weit)', () => {
+  it('kein «(optional)» in einem Field-Label', () => {
+    const funde: string[] = [];
+    for (const d of alleTsx()) {
+      const labels = [...liesOhneKommentare(d).matchAll(/<Field\s+label=(\{`[^`]*`\}|"[^"]*")/g)]
+        .map((m) => m[1])
+        .filter((l) => /optional/i.test(l));
+      for (const l of labels) funde.push(`${rel(d)} · ${l}`);
+    }
+    expect(
+      funde,
+      '«optional» gehört in die Field-Prop (rendert « · optional»), nicht in den Label-Text',
+    ).toEqual([]);
+  });
 
-  it('kein zweiter Renderer der Erfolgs-Beschriftung', () => {
-    const roh = rendernDeDateien();
-    const fremde = roh.filter((p) => p !== 'src/components/vorlagen/ui.tsx' && !NOCH_EIGEN.includes(p));
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die Vorher-Form', () => {
+    const vorher = '<Field label="Nachlass (CHF, optional)"';
+    expect(/<Field\s+label=("[^"]*")/.exec(vorher)![1]).toMatch(/optional/i);
+  });
+});
+
+describe('R2-E/F1-10 — «Kopiert ✓» rendert nur der geteilte KopierButton (App-weit)', () => {
+  // KEINE Ausnahme mehr (R3-α, 31.8.2026): die frühere Liste `NOCH_EIGEN`
+  // führte `src/pages/Kontakt.tsx` «mit Ablaufdatum». Ein Ablaufdatum, das
+  // niemand einlöst, ist eine Dauerausnahme — die Fläche ist statt dessen
+  // EINGEZOGEN (KopierButton mit `className="lc-btn-outline"`, Beschriftung
+  // und Quittung unverändert). §17-Gegengewicht: einziehen schlägt bewachen.
+  it('kein zweiter Renderer der Erfolgs-Beschriftung (App-weit, ausnahmslos)', () => {
+    const fremde = alleQuellen()
+      .filter((d) => rel(d) !== 'components/vorlagen/ui.tsx')
+      .filter((d) => liesOhneKommentare(d).includes('Kopiert ✓'))
+      .map(rel);
     expect(
       fremde,
       'Erfolgs-Beschriftung «Kopiert ✓» nur im KopierButton (src/components/vorlagen/ui.tsx)',
@@ -96,21 +104,46 @@ describe('R2-E/F1-10 — «Kopiert ✓» rendert nur der geteilte KopierButton',
   });
 });
 
-/** Dateien, die die Erfolgs-Beschriftung wirklich RENDERN (Kommentare zählen
- *  nicht — mehrere Dateien erklären das Häkchen im Fliesstext). */
-function rendernDeDateien(): string[] {
-  const kandidaten = [
-    'src/components/vorlagen/ui.tsx',
-    'src/components/vorlagen/Dokumentmappe.tsx',
-    'src/components/vorlagen/wizard.tsx',
-    'src/components/vorlagen/useWizardState.ts',
-    'src/components/ErgebnisAnzeige.tsx',
-    'src/components/BegruendungAbsatz.tsx',
-    'src/components/useKopieren.ts',
-    'src/pages/Kontakt.tsx',
-  ];
-  return kandidaten.filter((p) => ohneKommentare(quelle(p)).includes('Kopiert ✓'));
-}
+// ─── R3-α/B3-9 · EINE Kopier-Verweildauer ───────────────────────────────────
+//
+// GEMESSEN (Finder-Bericht B3, 31.8.2026): dieselbe Rückmeldung — «Kopiert ✓»,
+// dann zurück in den Ruhezustand — lief mit DREI Verweildauern: 1500 ms
+// (GerichtszitatForm, Dokumentmappe, ArtikelLeser), 1600 ms (useKopieren,
+// LinkTeilenButton), 2000 ms (useWizardState, Kontakt, EntscheidLeser). Die
+// Zahl ist eine Design-Entscheidung («wie lange bleibt eine Quittung stehen»)
+// und stand achtmal da. Kanon ist die Zahl des geteilten Hooks (1600 ms); sie
+// liegt seit R3-α als `KOPIER_DAUER_MS` genau einmal in `useKopieren.ts`.
+describe('R3-α/B3-9 — die Kopier-Quittung steht überall gleich lang', () => {
+  it('kein Rücksetz-Timer einer Kopier-Quittung trägt eine eigene Zahl', () => {
+    const funde: string[] = [];
+    for (const d of alleQuellen()) {
+      if (rel(d) === 'components/useKopieren.ts') continue; // die eine Definition
+      for (const m of liesOhneKommentare(d).matchAll(/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/g)) {
+        if (!/KOPIER_DAUER_MS/.test(m[1])) funde.push(`${rel(d)} · ${m[1].trim()}`);
+      }
+    }
+    expect(funde, 'Verweildauer als eigene Zahl statt KOPIER_DAUER_MS (useKopieren.ts)').toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die drei Vorher-Formen', () => {
+    for (const vorher of [
+      'setTimeout(() => setKopiert(false), 1500);',
+      'kopierTimer.current = setTimeout(() => setKopiert(false), 2000);',
+      'window.setTimeout(() => setKopiert(\'\'), 1500);',
+    ]) {
+      const m = [...vorher.matchAll(/setKopiert\([^)]*\)\s*,\s*([^)]+)\)/g)];
+      expect(m.length, vorher).toBe(1);
+      expect(/KOPIER_DAUER_MS/.test(m[0][1]), vorher).toBe(false);
+    }
+  });
+
+  it('die Zahl ist genau einmal definiert', () => {
+    const definitionen = alleQuellen()
+      .filter((d) => /export const KOPIER_DAUER_MS/.test(quelle(d)))
+      .map(rel);
+    expect(definitionen).toEqual(['components/useKopieren.ts']);
+  });
+});
 
 describe('R2-E — der Wert-Vertrag der Bausteine bleibt unverändert', () => {
   it('DatumsFeld: ISO rein, TT.MM.JJJJ auf dem Schirm (F1-1)', () => {

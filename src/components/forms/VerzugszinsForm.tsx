@@ -18,6 +18,7 @@ import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { VerzugszinsTimeline } from '../VerzugszinsTimeline';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { datumOderStrich } from '../ui/datumText';
 
 const VERZUGSZINS_DISCLAIMER =
   'Automatisierte Orientierungsberechnung des Verzugszinses nach Art. 104 OR – keine Rechtsberatung. ' +
@@ -127,7 +128,6 @@ export function VerzugszinsForm() {
   };
   const inputNum = 'lc-input num';
 
-  const fmtISO = (s: string) => (s ? s.split('-').reverse().join('.') : '–');
   // FAHRPLAN-PRAXIS 1.2: Mandats-Referenz für den PDF-Kopf (optional).
   const [aktenzeichen, setAktenzeichen] = useState('');
   const pdfConfig: PdfDocConfig = {
@@ -146,7 +146,7 @@ export function VerzugszinsForm() {
       hauptlabel: 'Verzugszins (gesamt)',
       hauptwert: `CHF ${ergebnis.zinsTotalCHF}`,
       nebenwerte: [{ label: 'Total inkl. Kapital', wert: `CHF ${ergebnis.totalOffenCHF}` }],
-      kontext: `${form.zinssatzProzent ?? 5} % auf CHF ${form.kapital} für ${ergebnis.tageTotal} Tage (${fmtISO(ergebnis.ersterZinstag)} – ${fmtISO(ergebnis.stichtag)})`,
+      kontext: `${form.zinssatzProzent ?? 5} % auf CHF ${form.kapital} für ${ergebnis.tageTotal} Tage (${datumOderStrich(ergebnis.ersterZinstag)} – ${datumOderStrich(ergebnis.stichtag)})`,
     } : undefined,
     sections: ergebnis ? [{ titel: 'Verzugszins (Art. 104 OR)', ergebnis }] : [],
     disclaimer: VERZUGSZINS_DISCLAIMER,

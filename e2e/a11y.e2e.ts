@@ -417,6 +417,14 @@ const TAP_FLAECHEN = [
   '.lc-chip-zeile a',
   '.lc-chip-zeile button',
   '.lc-chip-zeile [role="button"]',
+  // A3-5 (R3-α, 31.8.2026 — die Liste WÄCHST, wie oben vorgesehen): die
+  // Pillen-Variante von `ui/SelectionGrid`. Sie zeichnet bewusst kompakt
+  // (30 px) und hebt die TREFFERFLÄCHE über ein unsichtbares `::after` auf
+  // `--tap-ziel-komfort` — dieselbe Lösung wie `.lc-chip`. Aufgenommen, weil
+  // genau diese Bauart nur dann verlässlich ist, wenn sie gemessen wird:
+  // `StreitwertForm` trug die Pille vorher von Hand mit `py-0.5` (18 px) und
+  // stand damit unter WCAG 2.5.8, ohne dass eine Sonde es sah.
+  '[data-selection-pille]',
 ].join(', ')
 
 // Sub-Pixel-Toleranz: getBoundingClientRect liefert je nach Zoom/Rundung 23.99

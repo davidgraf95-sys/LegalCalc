@@ -6,6 +6,7 @@ import { trenneAenderungshistorie, labelMitBereich, artikelGanzAufgehoben } from
 import type { Fussnote } from '../../../lib/normtext/browse';
 import { NORM_IM_TEXT, fedlexLinkFuerArtikel } from '../../../lib/fedlex';
 import { NEUER_TAB } from '../../../lib/benennung';
+import { KOPIER_DAUER_MS } from '../../../components/useKopieren';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { MehrKante } from '../../../components/verzahnung/MehrKante';
@@ -341,7 +342,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
         })
       : permalink;
     void navigator.clipboard?.writeText(text).then(() => {
-      setKopiert(was); window.setTimeout(() => setKopiert(''), 1500);
+      setKopiert(was); window.setTimeout(() => setKopiert(''), KOPIER_DAUER_MS);
     });
     // ── LM-202 (W2·10-UI-NAV-URL, David-Entscheid 3.8.2026) ──────────────────
     // «Die URL ändert sich NUR bei explizitem Klick auf einen Artikel-Anker bzw.

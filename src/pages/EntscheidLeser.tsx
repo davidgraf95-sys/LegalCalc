@@ -9,6 +9,7 @@ import { ErwaegungsRail } from '../components/rechtsprechung/ErwaegungsRail';
 import { StatusBadge } from '../components/verzahnung/StatusBadge';
 import { entscheidDatum } from '../lib/verzahnung/artikel-revisionen';
 import { zitatMitAusweis, heuteIso } from '../lib/format';
+import { KOPIER_DAUER_MS } from '../components/useKopieren';
 import { ZitierteNormenGruppe, ZitiertGruppe } from '../components/rechtsprechung/EntscheidVerzahnung';
 import { NormText } from '../components/NormText';
 import { KontextPanel } from '../components/kontext/KontextPanel';
@@ -579,7 +580,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     if (typeof navigator === 'undefined' || !navigator.clipboard) return;
     const url = typeof location !== 'undefined' ? `${location.origin}${location.pathname}` : '';
     navigator.clipboard.writeText(url ? zitatMitAusweis(snap.zitierung, { abruf: heuteIso(new Date()), permalink: url }) : snap.zitierung)
-      .then(() => { setKopiert(true); setTimeout(() => setKopiert(false), 2000); })
+      .then(() => { setKopiert(true); setTimeout(() => setKopiert(false), KOPIER_DAUER_MS); })
       .catch(() => { /* Clipboard nicht verfügbar */ });
   };
 

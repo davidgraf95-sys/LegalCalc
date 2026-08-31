@@ -1,4 +1,5 @@
 import type { ReactNode, RefObject } from 'react';
+import { SchliessKnopf } from './SchliessKnopf';
 
 // ═══ Der EINE Rahmen eines von unten angeschlagenen Blatts (F2-2) ════════════
 //
@@ -81,10 +82,10 @@ export function SheetRahmen({
         <div aria-hidden className="mx-auto mt-2 h-1 w-10 rounded-full bg-line" />
         <div className="flex items-center justify-between px-4 py-1.5">
           <p className="lc-overline">{titel}</p>
-          <button type="button" onClick={onSchliessen} aria-label={`${titel} schliessen`}
-            className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-md text-ink-500 hover:text-brass-700">
-            <span aria-hidden className="text-base leading-none">✕</span>
-          </button>
+          {/* A3-1 (R3-β): EIN Schliess-✕ der App; die 44-px-Box bleibt die des
+              Blatts (Finger-Zone, s. Dateikopf). */}
+          <SchliessKnopf name={`${titel} schliessen`} onClick={onSchliessen}
+            klasse="-mr-2 h-11 w-11" />
         </div>
       </div>
       {zwischenZonen}

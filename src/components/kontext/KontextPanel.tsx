@@ -14,6 +14,7 @@ import { datumCh } from '../../lib/normtext/erlassKopfText';
 import { AbrufFehler } from '../ui/AbrufFehler';
 import { Datum } from '../ui/Datum';
 import { GruppenKopf } from '../ui/GruppenKopf';
+import { Leerzustand } from '../ui/Leerzustand';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneSteuerung } from '../layout/usePaneLayout';
 import { KantenChip } from '../verzahnung/KantenChip';
@@ -373,9 +374,8 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
       {gruppenVerdeckt ? (
         <p className="text-body-s text-ink-500">Kontext wird geladen …</p>
       ) : istLeer ? (
-        <p className="text-body-s text-ink-500">
-          Noch keine Querverweise zu Entscheiden, Materialien oder Werkzeugen erfasst.
-        </p>
+        <Leerzustand art="bestand"
+          text="Noch keine Querverweise zu Entscheiden, Materialien oder Werkzeugen erfasst." />
       ) : (
         <div className="space-y-5">
           {/* Reader-eigene Gruppen zuerst (V1.3: Entscheid-Richtungen am Fuss). */}

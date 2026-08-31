@@ -6,6 +6,7 @@ import { bundSnapshotRef } from '../../lib/normtext/bundRef';
 import { ladeSnapshot } from '../../lib/normtext/laden';
 import { ladeStruktur } from '../../lib/normtext/browse';
 import { artikelSachtitel } from '../../lib/normtext/darstellung';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { naechsterFokus } from '../../lib/normtext/fokus';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { NormPopover } from '../NormPopover';
@@ -478,8 +479,11 @@ export function NormPopoverHuelle({ zustand, url, artikel, alsDialog = true, onC
           <p className="lc-overline text-brass-700">Norm-Vorschau</p>
           <h2 className="text-body-l font-semibold text-ink-900 truncate">{artikel}</h2>
         </div>
-        <button ref={schliessRef} type="button" onClick={onClose} aria-label="Schliessen"
-          className="lc-btn-ghost lc-btn-sm shrink-0 px-2">✕</button>
+        {/* A3-1 (R3-β): EIN Schliess-✕ der App. Diese Fundstelle war die
+            zeichengleiche Kopie der `NormPopover`-Fassung (dieselbe Kopfzeile,
+            derselbe Knopf) — sie mitzuziehen war Pflicht, nicht Kür (§5). */}
+        <SchliessKnopf ref={schliessRef} name="Norm-Vorschau schliessen"
+          onClick={onClose} klasse="-mr-1" />
       </div>
       <div className="px-5 py-4">
         <p className="text-body-s text-ink-700">

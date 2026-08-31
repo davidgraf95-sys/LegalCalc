@@ -182,7 +182,7 @@ export function ErbteilungForm() {
             {ZIVILSTAENDE.map((z) => <option key={z.code} value={z.code}>{z.label}</option>)}
           </select>
         </Field>
-        <Field label="Nachlass (CHF, optional)"
+        <Field label="Nachlass (CHF)" optional
           hint={gueterrechtAn
             ? 'Wird unten güterrechtlich hergeleitet – Direkteingabe ist deaktiviert'
             : 'Leer = nur Quoten; mit Betrag werden Erb- und Pflichtteile in CHF ausgewiesen'}>

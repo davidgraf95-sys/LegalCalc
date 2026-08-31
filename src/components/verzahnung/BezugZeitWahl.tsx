@@ -254,9 +254,16 @@ export function BezugZeitWahl({ bereich, histogramm, onBereich }: {
   );
 }
 
-/** Ein Datumsfeld mit vorangestelltem Label. Nativ `type="date"` — es bringt
- *  Tastatur-Eingabe, Landes-Format und Kalender mit; ein nachgebautes Feld
- *  brächte dieselbe Funktion mit eigenen Fehlern. */
+/** Ein Datumsfeld mit vorangestelltem Label. Nativ `type="date"`.
+ *
+ *  R2-E/F1-1-AUSNAHME (R3-α, 31.8.2026): Filter, kein fristauslösendes Feld.
+ *  Der frühere Satz hier («es bringt Tastatur-Eingabe, LANDES-FORMAT und
+ *  Kalender mit») ist von F1-1 widerlegt und bleibt als Beleg stehen (§2b):
+ *  gemessen rendert `type="date"` in der Locale des BROWSERS, auf einem
+ *  us-englischen Profil also MM/DD/YYYY. Tragend ist er hier trotzdem nicht:
+ *  die beiden Felder grenzen eine BEZUGS-Liste zeitlich ein — kein Wert läuft
+ *  in eine Frist- oder Verjährungsrechnung, und die Zeile ist mit `text-xs`
+ *  und `py-0.5` zu schmal für das Kalender-Popover des Haus-Felds. */
 function DatumsFeld({ label, wert, titel, onWert }: {
   label: string;
   wert: string;

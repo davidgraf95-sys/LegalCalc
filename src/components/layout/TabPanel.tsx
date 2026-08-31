@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { ordneTabsUm, tabSchluessel, type TabEintrag } from '../../lib/tabs';
 import { erlassVonPfad, verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import {
@@ -139,11 +140,17 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
             <span aria-hidden className="text-body-s leading-none">⧉</span>
           </button>
         )}
-        <button type="button" onClick={() => onSchliessen(t.path)}
-          aria-label={`Reiter «${name}» schliessen`}
-          className="inline-flex items-center justify-center w-7 h-7 mr-0.5 shrink-0 rounded text-ink-500 hover:text-danger-700 transition-colors">
-          <span aria-hidden className="text-body-s leading-none">✕</span>
-        </button>
+        {/* A3-1 (R3-β): EIN Schliess-✕ der App. Der danger-Hover ist keine
+            Farbwahl mehr, sondern eine DEKLARIERTE Aussage über die Handlung
+            (`ton="destruktiv"`): der Klick wirft den Reiter samt Verlauf weg.
+            Die Box (w-7 h-7) bleibt die der Reiter-Zeile — 44 px hätten dort
+            keinen Platz; die Trefferfläche holt der Baustein per `::after`. */}
+        <SchliessKnopf name={`Reiter «${name}» schliessen`} ton="destruktiv"
+          /* `komfort={false}`: 44 px lägen hier über dem ⧉-Nachbarn und über den
+             Reiter-Zeilen darüber/darunter — die Fläche nähme denen die Klicks.
+             Die Zeile hält die AA-Untergrenze (24 px) aus der Grundklasse. */
+          komfort={false}
+          onClick={() => onSchliessen(t.path)} klasse="w-7 h-7 mr-0.5" />
       </li>
     );
   };

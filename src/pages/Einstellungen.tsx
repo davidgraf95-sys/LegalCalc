@@ -7,6 +7,7 @@ import { useEinstellungen, setzeEinstellung } from '../lib/einstellungen';
 import { DETAILGRAD_OPTIONEN } from '../lib/vorlagen/detailgrad';
 import { speichereThema, wendeThemaAn, systemThema, useThemaWahl, type ThemaWahl } from '../components/thema';
 import { useAusgabeStil, setAusgabeStil } from '../components/vorlagen/ausgabeStil';
+import { SelectionGrid } from '../components/ui/SelectionGrid';
 
 // ─── Rubrik «Einstellungen» (Auftrag David) ─────────────────────────────────
 //
@@ -20,20 +21,14 @@ function Segment<T extends string>({ wert, optionen, onWahl, label }: {
   wert: T; optionen: { id: T; label: string; sub?: string }[]; onWahl: (id: T) => void; label: string;
 }) {
   return (
-    <div role="group" aria-label={label} className="flex flex-wrap gap-2">
-      {optionen.map((o) => {
-        const aktiv = o.id === wert;
-        return (
-          <button key={o.id} type="button" aria-pressed={aktiv} onClick={() => onWahl(o.id)}
-            className={`rounded-lg border px-3.5 py-2 text-left transition-colors ${
-              aktiv ? 'border-brass-500 bg-brass-100/60 text-brass-800' : 'border-line bg-surface text-ink-700 hover:border-brass-300 hover:text-ink-900'
-            }`}>
-            <span className="block text-body-s font-medium">{o.label}</span>
-            {o.sub && <span className="block text-xs text-ink-500">{o.sub}</span>}
-          </button>
-        );
-      })}
-    </div>
+    /* B3-4 (R3-α, 31.8.2026): eigene Kachel-Anatomie (px-3.5 py-2, aktive
+       Tinte brass-800 statt ink-900, Unterzeile ink-500) → der EINE Baustein.
+       Die Wahl selbst ist unverändert; nur die Kachel wird nicht mehr hier
+       gezeichnet (§5/§10). */
+    <SelectionGrid
+      className="flex flex-wrap gap-2" gruppenLabel={label}
+      items={optionen.map((o) => ({ code: o.id, label: o.label, sub: o.sub }))}
+      value={wert} onSelect={onWahl} />
   );
 }
 

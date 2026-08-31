@@ -4,6 +4,7 @@ import { NormText } from '../NormText';
 import { usePaneKontext } from '../layout/PaneKontext';
 import { useKopieren } from '../useKopieren';
 import { NormChip } from './NormChip';
+import { GruppenKopf } from '../ui/GruppenKopf';
 
 // Geteilte UI-Bausteine der Vorlagen-Wizards (Testament, Patientenverfügung, …).
 
@@ -163,14 +164,16 @@ export function ListenEditor<T>({
 /** Sektions-Kopf innerhalb eines Wizard-Schritts (Redesign, Entscheid David):
  *  Overline (Messing) + Haarlinie — gleiche Anatomie wie die Abschnitts-Köpfe
  *  der Rechner/des Katalogs, damit lange Schritte in lesbare Sektionen
- *  zerfallen. Ersetzt das zuvor leise <p className="lc-overline">-Muster. */
+ *  zerfallen. Ersetzt das zuvor leise <p className="lc-overline">-Muster.
+ *
+ *  B3-1 (R3-β, 31.8.2026): «gleiche Anatomie wie …» war bis hierher eine
+ *  zeichengleiche KOPIE der Anatomie von `ui/GruppenKopf` — ohne dessen
+ *  Zähler-Kanon und ohne die Wächter, die dort hängen. Jetzt ein dünner Aufruf
+ *  (§5/§10). Das `<p>` statt einer Überschrift bleibt: der Wizard-Schritt
+ *  trägt seine Überschrift schon, diese Sektionen sollen im Dokument-Outline
+ *  nichts eröffnen — genau dafür trägt der Baustein `als="p"`. */
 export function GruppenTitel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3">
-      <p className="lc-overline text-brass-700">{children}</p>
-      <span aria-hidden className="flex-1 h-px bg-line" />
-    </div>
-  );
+  return <GruppenKopf als="p" titel={children} />;
 }
 
 /** Dünner Wrapper auf NormChip — bewahrt das heutige NormLink-Markup

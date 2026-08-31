@@ -1,6 +1,7 @@
 import { useRef, type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
+import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
 
 // ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
 //
@@ -110,8 +111,10 @@ export function LeserPanel({
     // angeschlagene füllt die Breite und stösst an die Kante, wo die untere
     // Rundung unsichtbar bleibt. EINE Kantenregel für beide Gestalten statt zwei
     // Sonderfälle — die Gestalt entscheidet die Zone, nicht diese Datei (§3).
+    // A3-2 (R3-β): die übrige Kette (`--paper-raised` · Rahmen · shadow-lg) ist
+    // `.lc-schwebeflaeche` — nur der Radius weicht ab, aus dem Grund darüber.
     <div ref={panelRef} tabIndex={-1} id={panelId} data-v3-panel
-      className="flex min-h-0 flex-col overflow-hidden rounded-xl border border-line bg-paper-raised shadow-lg">
+      className="lc-schwebeflaeche flex min-h-0 flex-col overflow-hidden rounded-xl">
       {kopfExtra}
       {/* ── Kopf: WAS ist das, WORAUF bezieht es sich, WEG damit ─────────────── */}
       <div className="flex shrink-0 items-baseline justify-between gap-2 border-b border-line px-2.5 py-1.5">
@@ -124,12 +127,8 @@ export function LeserPanel({
             ? artikelLabel && <span className="num ml-1 font-normal normal-case text-ink-600">· {artikelLabel}</span>
             : <span className="ml-1 font-normal normal-case text-ink-600">· {erlassKuerzel}</span>}
         </p>
-        <button type="button" onClick={onSchliessen} data-v3-panel-zu
-          aria-label="Rechtsprechung und Kontext schliessen"
-          title="Rechtsprechung und Kontext schliessen"
-          className="-mr-1 shrink-0 rounded-md px-1.5 py-0.5 text-ink-500 hover:text-brass-700">
-          <span aria-hidden className="text-base leading-none">✕</span>
-        </button>
+        <SchliessKnopf name="Rechtsprechung und Kontext schliessen" onClick={onSchliessen}
+          data-v3-panel-zu klasse="-mr-1 px-1.5 py-0.5" />
       </div>
 
       {/* ── Ä89 · Steckbrief-Zeile ÜBER den Reitern ──────────────────────────

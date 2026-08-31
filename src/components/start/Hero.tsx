@@ -42,6 +42,13 @@ export function Hero() {
       <p suppressHydrationWarning className="lc-overline lc-overline-soft text-ink-600">
         {heuteLang(jetzt)}
       </p>
+      {/* A-1-AUSNAHME (R3-α, 31.8.2026): kein `SeitenTitel`.
+          Der Baustein trägt die SEITEN-Titelgrösse (`text-h2 sm:text-h1`). Der
+          Hero ist die eine Fläche, die eine Stufe DARÜBER liegt
+          (`text-h1 sm:text-display`) — das ist die Startseiten-Anmutung, nicht
+          eine zweite Titel-Anatomie. Er erscheint zudem nie in einem Pane
+          (Startseite ist immer die Vollansicht), womit die Pane-Kaskade, die
+          `SeitenTitel` mitbringt, hier keinen Fall hat. */}
       <h1 className="mt-2 font-display font-semibold text-ink-900 text-h1 sm:text-display leading-tight">
         {HERO_TITEL}
       </h1>

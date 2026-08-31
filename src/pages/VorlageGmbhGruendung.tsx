@@ -15,6 +15,7 @@ import { PflichtDisclaimer } from '../components/PflichtDisclaimer';
 import { useLocale, fedlexLokalisiert } from '../components/locale';
 import { karte } from '../lib/startseiteConfig';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
+import { SeitenTitel } from '../components/ui/SeitenTitel';
 
 // ─── Maske: GmbH-Gründung — Checkliste + Dokumentmappe (Plan 9b, 7.6.2026) ───
 // Checkliste: deterministische Unterlagenliste (lib/gruendungsunterlagen.ts).
@@ -97,7 +98,11 @@ export function VorlageGmbhGruendung() {
       </Link>
       <div className="space-y-3">
         <GruppenTitel>Gesellschaftsrecht · Checkliste</GruppenTitel>
-        <h1 className="text-h1 font-display font-semibold text-ink-900">GmbH-Gründungsunterlagen</h1>
+        {/* A-1/B3-6 (R3-α, 31.8.2026): war eine handgebaute H1 mit fester
+            `text-h1`. Sie ging am A-1-Wächter vorbei, weil der nur die
+            Kaskade `text-h2 …` kannte — und sie mass im Split-View den
+            Viewport statt der Pane-Breite. */}
+        <SeitenTitel>GmbH-Gründungsunterlagen</SeitenTitel>
         <p className="text-body-l text-ink-600 max-w-reading">
           Checkliste UND Dokumentmappe: Die Checkliste leitet die registerrechtlich verlangten
           Belege (abschliessend in Art. 71/72 HRegV, Art. 776–777c OR) aus Ihrer
