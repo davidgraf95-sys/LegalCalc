@@ -86,6 +86,24 @@ describe('ToC-Drift-Arbiter (§3 Q1): ViewState-Normalisierung', () => {
     const c = TOC_HTML.replace('1268985', '1399999');
     expect(tocDriftToken(TOC_HTML)).not.toBe(tocDriftToken(c));
   });
+  // §17-Wurzel-Fix 30.8.2026 (QS-MONITOR-ROT): die JSF-Navigation markiert je
+  // Sitzung ein anderes <li role="presentation"> mit class="main-active" — vor
+  // dem Fix kippte genau diese eine Zeile den Token (flaky Tor, 6 Läufe, 6
+  // Rotmengen). Rot-Beweis: mit der alten Normalisierung schlug dieser Test fehl.
+  it('sitzungsabhängiges main-active auf <li> ⇒ gleicher Token', () => {
+    // Live-Diff-Beleg 30.8.2026: dieselbe Seite kommt mal mit, mal ohne die
+    // Navigations-Markierung — das Nav-<li> steht auf der Seite VOR dem Baum.
+    const nav = (klasse: string) => `<ul><li role="presentation"${klasse}><a href="#">01 MWST</a></li></ul>`;
+    const ohne = nav('') + TOC_HTML;
+    const mit = nav(' class="main-active"') + TOC_HTML;
+    expect(mit).not.toBe(ohne);
+    expect(tocDriftToken(mit)).toBe(tocDriftToken(ohne));
+  });
+  it('main-active-Strip fasst keine Inhaltsklassen an', () => {
+    const nav = (klasse: string) => `<ul><li role="presentation"${klasse}><a href="#">01 MWST</a></li></ul>`;
+    expect(tocDriftToken(nav(' class="andere-klasse"') + TOC_HTML))
+      .not.toBe(tocDriftToken(nav('') + TOC_HTML));
+  });
 });
 
 // ── Ziffer-Seite (cipherDisplay, live-Struktur) ───────────────────────────────

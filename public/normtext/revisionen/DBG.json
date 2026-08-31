@@ -1,7 +1,7 @@
 {
   "erlassKey": "DBG",
   "sr": "642.11",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -16,6 +16,13 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/213/de",
       "sha": "7aa8bcc3dbad8a178f8edc5751881aab9943b130de0863fa5bcda3f66e31ec43"
+    },
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-01-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
+      "sha": "570162bf6b0e21b2c68f562ae4eba4c5ea3480b9c894d9d21b6360db39964646"
     },
     {
       "art": "sammelerlass-marker",
@@ -561,5 +568,5 @@
       "sha": "74a5495e38eb632fb30ba6da63289274d420124c5da6b68290cb16603989a9db"
     }
   ],
-  "sha": "dc276d7d18f18978ac25c3d292c944392566733c80fdaa2c8360e0abafba1313"
+  "sha": "02573a728ed68d03bb7c60f24ff3cb1a4712e74761209cf81d6c4f13e7ab2cbd"
 }

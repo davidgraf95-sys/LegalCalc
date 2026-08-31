@@ -1,7 +1,7 @@
 {
   "erlassKey": "ELG",
   "sr": "831.30",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -10,6 +10,27 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.30",
       "sha": "d8becd9e4b317a2908b984864d0e685beb1033b8b73c92cac2aeec4130bc9165"
+    },
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2028-01-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.30",
+      "sha": "f278ce220251a70e0fb1a836b438e58b9ed0e4c5da2b0bf2cd438bb202d7dd06"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/434",
+      "dateDocument": "2025-06-20",
+      "roFundstelle": "AS 2026 434",
+      "titelDe": "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG)",
+      "titelFr": "Loi fédérale sur les prestations complémentaires à l’AVS et à l’AI (Loi sur les prestations complémentaires, LPC)",
+      "titelIt": "Legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (LPC)",
+      "botschaftKey": "BOTSCHAFT-2024-2448",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/434/de",
+      "sha": "29d8e2222348bc5ed9fc96d566ad53c20334493c5c06ff5529fbd60b4972a8b3"
     },
     {
       "art": "sammelerlass-marker",
@@ -165,5 +186,5 @@
       "sha": "1ec623b9c28354e4facb3b50d90060bd4413a8fc934a1c90be21cc64b63643e5"
     }
   ],
-  "sha": "b4e8d78066be239ce8e75e3e4d5d9c4143be5db7d3a7503e2db1eb3d7336a230"
+  "sha": "26d1cd02d7077ff74502a3cef06ff90dd98e63404f93ca2613c60b757e3120be"
 }

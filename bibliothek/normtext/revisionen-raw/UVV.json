@@ -2249,6 +2249,38 @@
         "type": "literal",
         "value": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "832.202"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/432"
+      },
+      "dateForce": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-08-26"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung über die Unfallversicherung (UVV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance sur l’assurance-accidents (OLAA)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)"
+      }
     }
   ],
   "aStaende": [
@@ -2289,6 +2321,7 @@
     "2024-01-01",
     "2024-07-01",
     "2025-06-01",
-    "2026-01-01"
+    "2026-01-01",
+    "2027-01-01"
   ]
 }

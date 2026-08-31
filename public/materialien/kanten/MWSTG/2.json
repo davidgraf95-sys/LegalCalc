@@ -1,7 +1,80 @@
 {
-  "erzeugt": "2026-08-15",
+  "erzeugt": "2026-08-30",
   "erlass": "MWSTG",
   "kanten": [
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "12",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-05-11",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 1",
+          "url": "&componentId=1010249"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "13",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2025-12-05",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 1.2",
+          "url": "&componentId=1010269"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "14",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2017-12-29",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 6",
+          "url": "&componentId=1010329"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "14",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2023-04-06",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 6.1",
+          "url": "&componentId=1010334"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-02",
+      "artikel": "14",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2023-06-27",
+      "fundstellen": [
+        {
+          "z": "Teil A · Ziff. 5.2",
+          "url": "&componentId=1269051"
+        },
+        {
+          "z": "Teil A · Ziff. 5.2.1",
+          "url": "&componentId=1269056"
+        },
+        {
+          "z": "Teil A · Ziff. 5.2.1.1",
+          "url": "&componentId=1010309"
+        }
+      ]
+    },
     {
       "dok": "ESTV-MWST-INFO-02",
       "artikel": "14",
@@ -778,18 +851,6 @@
       "dok": "ESTV-MWST-INFO-04",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
-      "stand": "2023-03-29",
-      "fundstellen": [
-        {
-          "z": "Ziff. 2.7.2.2",
-          "url": "&componentId=1003095"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-04",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
       "stand": "2023-05-10",
       "fundstellen": [
         {
@@ -955,6 +1016,19 @@
         {
           "z": "Ziff. 6.25",
           "url": "&componentId=1003866"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-04",
+      "artikel": "15",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Ziff. 2.7.2.2",
+          "url": "&componentId=1003095"
         }
       ]
     },
@@ -1318,6 +1392,19 @@
     },
     {
       "dok": "ESTV-MWST-INFO-04",
+      "artikel": "21",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Ziff. 2.7.2.2",
+          "url": "&componentId=1003095"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-04",
       "artikel": "22",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
@@ -1578,19 +1665,6 @@
       "artikel": "28",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
-      "stand": "2023-03-29",
-      "fundstellen": [
-        {
-          "z": "Ziff. 2.7.2.2",
-          "url": "&componentId=1003095"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-04",
-      "artikel": "28",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
       "stand": "2024-02-14",
       "fundstellen": [
         {
@@ -1626,6 +1700,19 @@
         {
           "z": "Ziff. 2.7.2.3",
           "url": "&componentId=1003120"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-04",
+      "artikel": "28",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Ziff. 2.7.2.2",
+          "url": "&componentId=1003095"
         }
       ]
     },
@@ -1922,19 +2009,6 @@
       "artikel": "41",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
-      "stand": "2023-03-29",
-      "fundstellen": [
-        {
-          "z": "Ziff. 2.7.2.2",
-          "url": "&componentId=1003095"
-        }
-      ]
-    },
-    {
-      "dok": "ESTV-MWST-INFO-04",
-      "artikel": "41",
-      "quelle": "amtlich",
-      "konfidenz": "regex-hoch",
       "stand": "2025-03-17",
       "fundstellen": [
         {
@@ -1953,6 +2027,19 @@
         {
           "z": "Ziff. 2.7.2.3",
           "url": "&componentId=1003120"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-04",
+      "artikel": "41",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Ziff. 2.7.2.2",
+          "url": "&componentId=1003095"
         }
       ]
     },
@@ -5757,14 +5844,6 @@
         {
           "z": "Ziff. 2.3",
           "url": "&componentId=1001370"
-        },
-        {
-          "z": "Ziff. 4",
-          "url": "&componentId=1001435"
-        },
-        {
-          "z": "Ziff. 4.1",
-          "url": "&componentId=1001450"
         }
       ]
     },
@@ -5827,7 +5906,7 @@
       "artikel": "28",
       "quelle": "amtlich",
       "konfidenz": "regex-hoch",
-      "stand": "2018-05-03",
+      "stand": "2026-08-27",
       "fundstellen": [
         {
           "z": "Ziff. 4",
@@ -5883,6 +5962,23 @@
         {
           "z": "Einleitende Erläuterungen zur vorliegenden MWST-Info",
           "url": "&componentId=1001264"
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-14",
+      "artikel": "45",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-27",
+      "fundstellen": [
+        {
+          "z": "Ziff. 4",
+          "url": "&componentId=1001435"
+        },
+        {
+          "z": "Ziff. 4.1",
+          "url": "&componentId=1001450"
         }
       ]
     },
@@ -6374,7 +6470,16 @@
         {
           "z": "Ziff. 2.1.2",
           "url": "&componentId=1789447"
-        },
+        }
+      ]
+    },
+    {
+      "dok": "ESTV-MWST-INFO-15",
+      "artikel": "87",
+      "quelle": "amtlich",
+      "konfidenz": "regex-hoch",
+      "stand": "2026-08-18",
+      "fundstellen": [
         {
           "z": "Ziff. 2.1.4",
           "url": "&componentId=1789460"

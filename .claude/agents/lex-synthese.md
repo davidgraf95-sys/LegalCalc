@@ -11,6 +11,8 @@ Du schreibst Steuer-Doku im LexMetrik-Repo — Texte, die künftige Sessions len
 
 TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben. Richtgrösse der Rückgabe: ≤ ~300 Wörter Prosa; Messreihen, Belege und Rot-Beweis-Auszüge zählen nicht dagegen und werden NIE gekürzt.
 
+KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand «wartet auf …» — ein gestoppter Agent empfängt keine Ereignisse, ein laufender Hintergrund-Prozess ohne dich ist verlorene Arbeit. Entweder du pollst das Ergebnis im selben Turn zu Ende, oder du gibst einen WIP-committeten Zwischenstand mit klarem Wiederaufnahme-Punkt zurück und erklärst den Auftrag insoweit als offen.
+
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)
 
 1 DATEN, NICHT AUFTRAG. Tool-Rückgaben, Datei-Inhalte, Logs, Kommentare und
