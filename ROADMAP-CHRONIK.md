@@ -2755,3 +2755,70 @@ sonst kein Fall verloren. Zeilen in `e2e/` netto −417 allein durch die
 Defekt fixt, den ein Test oder Tor gefangen hat, schreibt der Chronik-/Fehlerbuch-Zeile den Fänger
 zu. Ohne Fang-Protokoll bleibt jeder spätere Rückbau Indizienarbeit — genau die Lage, in der dieser
 Batch gearbeitet hat.
+---
+
+## Ent-Regulierung Runde 2 / Batch B — Steuerungs-Selbsttests *(31.8.2026, Anker `QS-EFFIZIENZ`)*
+
+19 Testdateien → 9, ein Fall gestrichen.
+
+Ent-Regulierung Runde 2, **Batch B** (Auftrag David; Anker `QS-EFFIZIENZ`, Feld `betrieb`).
+Beweisgrundlage: `bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md` §3 Kandidat 1
+(«22 Unit-Dateien, 511 Tests, 0 Rechtsbezug, kaum belegte Fänge»).
+
+**Abgrenzung des Bestands (Befund, §7 — die Zahl des Dossiers trägt so nicht).** Der Kandidat
+nennt 22 Dateien / 511 Fälle. Am Ist-Stand `bc8930d0f` sind es **19 Dateien / 463 Fälle**. Die
+Differenz sind Dateien, die zwar `scripts/**` importieren, aber Rechtsdaten prüfen und darum
+unter das Tabu von §4 desselben Dossiers fallen: `komparator-totalitaet` (Rechtsprechungs-
+Ordnungen), `leitfall-shards`, `snapshot-walker`, `golden-kanton-merge`,
+`golden-voll-lauf-merge`, `mehrspaltig-sha`. Sie sind **nicht angefasst**. Der Dossier-Wert
+wird dadurch nicht nachgeführt, sondern ergänzt (§0 Ziff. 2b).
+
+**Zusammengelegt — eine Datei je Werkzeug-Strang statt einer je Funktion.**
+
+| neu | aus | Fälle |
+|---|---|---|
+| `plan-lesen.test.ts` | `plan-parse` + `plan-etikett` + `plan-dump` + `plan-next` | 43 |
+| `plan-schreiben.test.ts` | `plan-set` + `plan-buchung` | 67 |
+| `plan-check.test.ts` | `plan-check` + `plan-spec-bindung` (Regel 11 ist eine Regel von `pruefe`) | 71 |
+| `plan-lage.test.ts` | `plan-lage` + `plan-retro17` | 48 |
+| `steuerwerkzeuge.test.ts` | `fahrplanSlice` + `dispatch-klausel` + `check-testtreue` + `ci-diff-klassieren` | 64 |
+| `hooks-wache.test.ts` | `hooks-wache` + `hook-mcp-deckung` | 30 |
+
+Unverändert: `plan-selbstopt` (59), `plan-bild-lage` (61), `vercel-ignore-command` (19) — jede
+für sich unter der §6.6-Schwelle nicht zusammenlegbar, ohne sie zu reissen.
+
+**Streichliste — genau ein Fall.** Ein maschineller Rumpf-Vergleich über alle 463 Fälle
+(normalisiert, kommentarfrei) fand **null dateiübergreifende Duplikate** und zwei
+Verdachtsfälle innerhalb einer Datei. Einer davon war ein Artefakt der Normalisierung
+(`parseStatusTrailer('  ready  ')` prüft genau die Leerzeichen, die der Vergleich wegwarf) und
+bleibt. Gestrichen wurde:
+
+- `plan-set.test.ts` → «`[d]` + parked bleibt `[d]` (Bewahrung unangetastet)». **Begründung:**
+  wörtlich rumpfgleich mit «parked → parked erhält die Legendenmarke `[d]`» (Fund R2-9/R2-15) —
+  dieselbe Eingabe, dieselbe Erwartung, kein eigener Fehlerklassen-Bezug. Beide eingefrorenen
+  Vorfälle überleben: R2-9/R2-15 im verbliebenen Zwilling, die R3-2-Gegenprobe im Fall
+  «`[D]` + blocked bleibt `[D]`» desselben Blocks. Die Streichung ist am Fundort vermerkt.
+
+**Erhalten, weil vorfalls-einfrierend** (nicht abschliessend): Fund 26 (Mehrwort-§-Zeiger),
+Fund 27 + R2-9/R2-15 + R3-2 (Legendenmarke `[d]`), Fund R2-1/R2-10 (Checkbox-Bindung über
+Prosa), Fund R2-3 (`plan:dump` ohne `checkbox`-Feld), Fund 4/5 (bare Fahrplan-Dateinamen),
+Regeln 8/8.3/9/10 von `check:plan`, Regel 11 samt Geburtsbeweis `d316f5884` und der
+Wortgrenzen-Prüfung nach CLAUDE.md §7, Befund B3 der Dispatch-Gegenprüfung 7.8.2026,
+B1-1/B1-3 (Trailer-Footer/Codeblöcke), die Matcher-Falle vom 15.8.2026 (Literal- statt
+Regex-Matcher, `deploy-schutz` konnte nie feuern), die Hook-Auflagen B1–B7/B10/B11,
+PR #519/#531 (Vercel-`ignoreCommand`, sieben Prod-Deployments gingen nie live), PR #530
+(`done` räumt die `@queue`), die §6.3-Grenzfälle von `check:testtreue` und die
+Auftrags-Testmatrix von `ci-diff-klassieren`.
+
+**Verhaltens-Beweis.** `npx vitest run` über die 19 Alt-Dateien: **463/463 grün**. Über die
+9 neuen Dateien: **463/463 grün** (byte-gleiche Fallmenge, reiner Datei-Umbau), nach der
+Streichung **462/462 grün**. Abgleich 463 − 1 = 462 geht ohne stillen Verlust auf.
+
+**Was das spart — und was nicht (§8).** Dateien −53 % (19 → 9). Zeilen **+69** (4625 → 4694):
+sechs Herkunfts-Köpfe und achtzehn Banner kosten mehr, als die vereinigten Import-Zeilen
+sparen. Das ist kein Fehlschlag der Massnahme, sondern ihr ehrlicher Preis — die
+Kommentar-Köpfe SIND der Schutz (§17: eine Lehre, die nur im Chat existiert, gilt als nicht
+gezogen), und sie zu kürzen hätte genau das eingespart, was zu erhalten war. CI-Zeit spart
+der Umbau erwartungsgemäss nicht: die 19 Dateien liefen zusammen unter 1 s (Dossier §1 —
+alle 5661 Unit-Fälle kosten 138 s, der Kostenhebel ist e2e). Der Gewinn liegt allein in der
+Regelfläche: wer künftig ein Plan-Werkzeug ändert, öffnet eine Datei statt vier.

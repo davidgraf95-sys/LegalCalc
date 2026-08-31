@@ -183,14 +183,17 @@ describe('setField — Entparken (Fund 27)', () => {
 
   // Gegenprobe zur Rücknahme: das BEWAHREN bleibt unangetastet — es hängt an der
   // CHECKBOX_STATUS-Abfrage, die `[d]`/`[D]` für parked und blocked duldet.
+  //
+  // GESTRICHEN 31.8.2026 (Ent-Regulierung Runde 2, Batch B): der zweite Fall
+  // dieser Gegenprobe, «[d] + parked bleibt [d]», war mit dem Fall
+  // «parked → parked erhält die Legendenmarke [d]» (oben, Fund R2-9/R2-15)
+  // WÖRTLICH rumpfgleich — dieselbe Eingabe `geparkt('[d]')`/`parked`, dieselbe
+  // Erwartung. Er war das einzige echte Duplikat unter 463 Steuerungs-Fällen.
+  // Beide Vorfälle bleiben eingefroren: R2-9/R2-15 durch den Fall oben, die
+  // R3-2-Gegenprobe durch den `[D]`-Fall hier.
   it('[D] + blocked bleibt [D] (Bewahrung unangetastet)', () => {
     const out = setField(geparkt('[D]'), 'W2·5j', 'status', 'blocked');
     expect(out.split('\n')[0]).toBe('- [D] **5j-TABELLEN · X**');
-  });
-
-  it('[d] + parked bleibt [d] (Bewahrung unangetastet)', () => {
-    const out = setField(geparkt('[d]'), 'W2·5j', 'status', 'parked');
-    expect(out.split('\n')[0]).toBe('- [d] **5j-TABELLEN · X**');
   });
 
   // Gegenprobe: passt die vorhandene Marke NICHT zum neuen Status, wird sie
