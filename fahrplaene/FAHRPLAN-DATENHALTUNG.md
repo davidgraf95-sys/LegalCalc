@@ -150,6 +150,100 @@ turso-sync → check:turso-frische in Reihenfolge, bricht beim ersten Fehlschlag
 überspringt die Turso-Hälfte ohne Token **laut und namentlich**. Seit K1/K2 ist
 eine veraltete Replika keine Verzögerung mehr, sondern eine falsche Auskunft.
 
+**K6 Fix-Runde nach der Gegenprüfung (31.8.2026).** Fünf Vollständigkeits-Befunde,
+alle an der Wurzel behoben, jeder mit Rot-Beweis.
+
+**F1 (HOCH) — die Landung hätte die Live-Suche gebrochen.** `api/suche.ts` schickt
+seit K2 spalten-gefilterte MATCH-Ausdrücke; gegen die alte Ein-Spalten-Replika
+antwortet SQLite `no such column: marginalie`, die Funktion macht daraus **502 auf
+jede Artikel-Query**. Kein Riegel griff: `turso-sync.yml` triggerte nur auf
+`public/normtext/**`, `public/rechtsprechung/**`, `daten-manifest.json` — dieser Diff
+berührt keines davon —, und `check-turso-frische.ts` verglich nur Zeilenzahlen,
+rowid-Spannweite und `manifest_sha`, also lauter Grössen, die eine reine FORM-Änderung
+unverändert lässt. Zwei unabhängige Wurzel-Fixe: (a) `paths` um
+`scripts/datenhaltung/**`, `scripts/suche-felder.ts`, `api/suche.ts` und die
+Workflow-Datei erweitert; (b) neue Dimension 0 im Frische-Wächter — DDL-Vergleich
+gegen `ddlFtsArtikel()`/`ddlFtsEntscheide()`, normalisiert nur um Namens-Quotes und
+Whitespace (nach `ALTER TABLE … RENAME TO` schreibt SQLite den Namen gequotet zurück;
+ein roher Vergleich wäre dauerhaft rot und damit wertlos). Mitgenommen: die
+Entscheide-DDL stand zweimal von Hand im Repo, jetzt eine Quelle.
+
+**Deploy/Sync-Fenster — gemessen, nicht geschätzt.** Beide Workflows hängen am selben
+`push` auf `main`; keiner wartet auf den anderen. Auf der realen Zeitachse
+(CI-Lauf 33411008213 vom 31.8.2026, dazu die letzten vier Push-Syncs):
+
+| | Dauer ab Push |
+|---|---|
+| Turso-Sync komplett (Build → Sync → Frische → Live-Probe) | 5,3 – 6,6 min |
+| Prod-Deploy live (`deploy` braucht `diff · tore · bau · e2e`) | **14,8 min** |
+
+Im Normalfall ist die Replika also **rund acht Minuten vor** der neuen Edge-Funktion
+umgestellt, und diese Reihenfolge ist ungefährlich: die HEUTE auf `main` laufende
+Abfrage nutzt weder Spaltenfilter noch bm25-Gewichte (`MATCH ?`, `bm25(fts_artikel)`)
+und läuft gegen den neuen Sechs-Spalten-Index anstandslos — lokal gegen
+`daten/normtext.db` verifiziert («OR 319» 4 · «Verjährung» 259 · «Miete» 165 Treffer,
+kein Fehler). **Das ist aber ein Rennen, keine Zusicherung**, und drei Wege öffnen das
+Fenster doch:
+1. ein langsamer Sync (vor dem Index-Transfer waren es 32,8 min; `timeout-minutes: 90`),
+2. ein durch `concurrency: turso-sync` hinter einem Vorlauf wartender Sync,
+3. **fehlendes `TURSO_AUTH_TOKEN`** — dann überspringt der Sync-Job ehrlich und endet
+   mit 0, während der Deploy trotzdem ausliefert. Das Fenster wäre dann nicht Minuten
+   lang, sondern offen bis zum nächsten Sync von Hand.
+
+**Billigster Riegel (Vorschlag, NICHT gebaut — Entscheid liegt beim Orchestrator/David):**
+vor dem Merge den Workflow «Turso-Serving-Sync» per `workflow_dispatch` auf dem Branch
+`feat/qs-basis-suche-edge` fahren. Er baut das Sechs-Spalten-Artefakt aus den
+committeten JSONs und stellt es live; die alte Edge-Funktion arbeitet währenddessen
+weiter (s. o.), und `check:turso-frische` bleibt grün, weil dieser Branch
+`daten-manifest.json` nicht anfasst (verifiziert: `git diff main...HEAD` zeigt die
+Datei nicht). Danach ist das Fenster null statt bloss klein — Kosten: ein Klick, kein
+Code. Die Alternative, den Deploy im Workflow auf den Sync warten zu lassen, koppelt
+zwei bisher unabhängige Pipelines und gehört in einen eigenen Schritt.
+
+**F2 (MITTEL) — Paritäts-Behauptung war überzeichnet.** Der Spaltenfilter verlangte
+ALLE Terme in derselben Spaltengruppe, `artikelRanking` nur EINEN. Gemessen:
+«Verjährung Fristen» → OR 127 auf Rang 8 statt 1; «Verjährung Forderung» → Top-3 ohne
+Grundartikel. Behoben durch OR-Verknüpfung; **recall-neutral**, weil die
+Stufen-Ausdrücke nur LEFT-JOIN-Mengen speisen (über die volle Pagination gegengeprüft:
+23/23 und 20/20 Treffer, Mengen elementweise identisch). **Präfix bleibt eine bewusste
+Abweichung:** der Client findet «Verjähr», der DB-Weg nicht. Angleichen ist keine
+Rang-, sondern eine Recall- und Latenz-Änderung auf jeder Query — lokal, warm, n=3
+Median: «Eigentum» 15,6 → 107,1 ms bei 658 → 1502 Treffern (6,9x). Eigener
+Roadmap-Punkt; bis dahin als Test mit ehrlicher Erwartung festgehalten. Die
+«gleichwertig»-Sätze an drei Stellen sind entsprechend zurückgenommen — Davids
+K3-Scharfschaltungs-Entscheid bleibt unberührt, nur seine Grundlage darf nicht zu
+stark klingen (§8).
+
+**F3 (NIEDRIG) — der behauptete Byte-Beweis existierte nicht.** Der K3-Kommentar
+verwies auf `src/tests/suchIndex.test.ts`; dort stand nichts dergleichen, und die
+K3-Tests lagen anderswo. Jetzt echter Beweis in `src/tests/suche/ebenenWahl.test.ts`.
+Referenz ist bewusst **nicht** das ausgelieferte `public/such-index/artikel.json` —
+der Ordner ist gitignored und entsteht erst in `npm run build`; der CI-Job `tore` baut
+nicht, der Test wäre dort ENOENT-rot gelaufen (lokal reproduziert). Verglichen wird
+gegen die Montage aus `baueEbenenIndex` je Ebene, also den Code-Weg vor dem Schalter
+(sha256 `c2a98aea…`, derselbe Wert wie im gebauten Artefakt).
+
+**F4 (NIEDRIG) — K5 hatte keinen Test**, weil die Logik keinen Angriffspunkt hatte
+(Rumpf-Code mit direktem `npm run` und `process.exit`). Naht `fuehreKette(...)`
+eingezogen, Ablauf unverändert; 8 hermetische Tests plus ein Subprozess-Test gegen
+einen `npm`-Stub im `PATH`, der das eine belegt, was eine Attrappe nicht kann: dass
+der echte Aufrufweg den Exit-Code durchreicht.
+
+**F5 (INFO) — der Transport-Test führte vier Zweitkopien** (Spaltenliste, Tokenizer,
+Entscheide-DDL, bm25-Gewichte) und war damit für genau die Drift blind, die er
+bewachen sollte. Alles kommt jetzt aus der Produktionsquelle; **neu** ist der Riegel,
+der ganz fehlte: gleich viele bm25-Gewichte wie FTS-Spalten, Stufen-Spalten sind echte
+Index-Spalten, und die Gewichte fallen in der dokumentierten Rangfolge
+t > m > n > g > tb > f.
+
+**Nebenbefund, bewusst NICHT gefixt — Umlaut-Faltung.** «Verjaehrung» (ae) findet
+nichts, «Verjahrung» (a) findet alle 259 Treffer: `remove_diacritics 2` faltet ä→a,
+aber niemand faltet ae→ä. Das betrifft **beide** Wege gleich — der Client normalisiert
+mit NFKD und strippt Diakritika, also genauso —, ist somit kein Edge-Paritätsdefekt,
+sondern eine gemeinsame Recall-Lücke. Ein Fix müsste beide Indizes gemeinsam ändern
+und braucht linguistische Sorgfalt (eine naive ae→ä-Faltung trifft «Aeroplan»,
+«Israel», «Praesidium» sehr unterschiedlich). Eigener Roadmap-Punkt.
+
 **Nicht berührt:** die Heiss/Kalt-Grenze (Archiv-§12.2) bleibt unverändert
 David-Gate; es wurde kein echter Turso-Lauf gefahren (Env fehlt lokal).
 
