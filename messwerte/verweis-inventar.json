@@ -2,8 +2,8 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "0a112160cf9d7ae88c693b4e38ef9d57da0017b2ba2fbfd90f87f94ae7539511",
-    "guards": 15
+    "normTextSha256": "a4216aa35cb40b2ebd75a38d23c9127ab7127bdb4e50df1c609f5093b02e89b2",
+    "guards": 18
   },
   "korpus": {
     "erlasse": 1458,
@@ -12,16 +12,16 @@
   },
   "gesamt": {
     "stellen": 34058,
-    "self": 20157,
-    "fremd": 4155,
-    "text": 9746,
-    "selbstmarker": 733
+    "self": 20209,
+    "fremd": 4149,
+    "text": 9700,
+    "selbstmarker": 939
   },
   "klassen": [
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",
-      "stellen": 2198,
+      "stellen": 2192,
       "erlasse": 294,
       "selbstmarker": 0,
       "was": "Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)"
@@ -35,6 +35,14 @@
       "was": "Ketten-Glied, Kürzel aus dem Anker-Ende propagiert (i.V.m.)"
     },
     {
+      "klasse": "anker-self",
+      "entscheid": "SELF",
+      "stellen": 6,
+      "erlasse": 3,
+      "selbstmarker": 0,
+      "was": "Voll zitierter Anker auf den GELESENEN Erlass → Sprung statt Fedlex-Chip (V-2 Ziel 3)"
+    },
+    {
       "klasse": "art-chapeau-fremd",
       "entscheid": "FREMD",
       "stellen": 72,
@@ -45,17 +53,17 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 1299,
-      "erlasse": 379,
-      "selbstmarker": 28,
+      "stellen": 1271,
+      "erlasse": 377,
+      "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 496,
+      "stellen": 495,
       "erlasse": 176,
-      "selbstmarker": 1,
+      "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
@@ -63,13 +71,13 @@
       "entscheid": "TEXT",
       "stellen": 1237,
       "erlasse": 251,
-      "selbstmarker": 3,
+      "selbstmarker": 4,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 693,
+      "stellen": 692,
       "erlasse": 174,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
@@ -85,9 +93,9 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 13414,
-      "erlasse": 459,
-      "selbstmarker": 460,
+      "stellen": 13444,
+      "erlasse": 460,
+      "selbstmarker": 617,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },
     {
@@ -117,17 +125,17 @@
     {
       "klasse": "paragraf-fremd-grosswort",
       "entscheid": "TEXT",
-      "stellen": 737,
-      "erlasse": 176,
+      "stellen": 724,
+      "erlasse": 174,
       "selbstmarker": 0,
       "was": "«§ N <Grosswort>» — Fremd-Indiz, kein Link"
     },
     {
       "klasse": "paragraf-fremd-name",
       "entscheid": "TEXT",
-      "stellen": 919,
-      "erlasse": 303,
-      "selbstmarker": 3,
+      "stellen": 916,
+      "erlasse": 302,
+      "selbstmarker": 0,
       "was": "«§ N des/der/über/vom …» — Fremd-Indiz, kein Link"
     },
     {
@@ -141,9 +149,9 @@
     {
       "klasse": "paragraf-self",
       "entscheid": "SELF",
-      "stellen": 3267,
+      "stellen": 3283,
       "erlasse": 464,
-      "selbstmarker": 238,
+      "selbstmarker": 318,
       "was": "«§ N» → Sprung im eigenen Erlass (F40)"
     },
     {
@@ -202,6 +210,11 @@
       "bestimmung": "11"
     },
     {
+      "erlass": "ZGB",
+      "fundstelle": "bund/ZGB/disp_u1_art_13_d",
+      "bestimmung": "8a"
+    },
+    {
       "erlass": "AI-640.000",
       "fundstelle": "kanton/AI/640.000/art_146",
       "bestimmung": "90a"
@@ -213,9 +226,9 @@
     }
   ],
   "zeitKanten": {
-    "stellen": 25,
-    "erlasse": 13,
-    "uebergangsTitel": 17,
-    "altrechtBlock": 9
+    "stellen": 29,
+    "erlasse": 15,
+    "uebergangsTitel": 20,
+    "altrechtBlock": 11
   }
 }

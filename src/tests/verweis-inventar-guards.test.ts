@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { G, suchtext, waechterGuards } from '../../scripts/verweis-inventar-transkription';
 
 // ─── Wächter: Transkription des V-1-Tors ↔ Produktions-Quelltext ────────────
 //
@@ -22,22 +23,18 @@ import { createHash } from 'node:crypto';
 // Literal-Vergleich strukturell NICHT sehen kann — eine geänderte
 // Entscheid-REIHENFOLGE in `restMitIntern` bei unveränderten Regex-Literalen.
 
-const TOR = 'scripts/check-verweis-inventar.ts';
+const TOR = 'scripts/verweis-inventar-transkription.ts';
 const ARTEFAKT = 'messwerte/verweis-inventar.json';
 const QUELLEN: Record<string, string> = {
   'NormText.tsx': 'src/components/NormText.tsx',
   'ArtikelBody.tsx': 'src/components/normtext/ArtikelBody.tsx',
 };
 
-/** Guard-Tabelle des Tors: (Name, Quelldatei, transkribiertes Literal). */
+/** Guard-Tabelle der Transkription: (Name, Quelldatei, transkribiertes Literal).
+ *  Direkt importiert — das Modul ist frei von Import-Seiteneffekten (der
+ *  Korpus-Lauf liegt im Tor). Der frühere Quelltext-Scraper ist damit weg. */
 function guards(): { name: string; datei: string; literal: string }[] {
-  const quelle = readFileSync(TOR, 'utf8');
-  const treffer = [
-    ...quelle.matchAll(
-      /(\w+): \{\s*\n\s*zweck: '[^']*',\s*\n\s*datei: '([^']+)',\s*\n\s*literal: String\.raw`([^`]*)`,/g,
-    ),
-  ];
-  return treffer.map((m) => ({ name: m[1], datei: m[2], literal: m[3] }));
+  return Object.entries(G).map(([name, g]) => ({ name, datei: g.datei, literal: g.literal }));
 }
 
 describe('V-1 · Verweis-Inventar-Tor: Guard-Transkription', () => {
@@ -55,21 +52,22 @@ describe('V-1 · Verweis-Inventar-Tor: Guard-Transkription', () => {
     // Verglichen wird das MUSTER, nicht die Schreibweise des Literals: ein
     // verhaltensneutraler Umbau («const X = String.raw`…`; new RegExp(X, 'g')»)
     // darf keinen Fehlalarm auslösen, jede Musteränderung dagegen schon.
-    // Begründung im Tor bei `suchtext()`.
-    const muster = (literal: string) => {
-      const m = /^\/(.*)\/([a-z]*)$/s.exec(literal);
-      return m ? m[1] : literal;
-    };
+    // Begründung bei `suchtext()`.
     const abweichungen: string[] = [];
-    for (const g of guards()) {
+    for (const [name, g] of Object.entries(G)) {
       const pfad = QUELLEN[g.datei];
       expect(pfad, `Unbekannte Quelldatei «${g.datei}» in ${TOR}`).toBeTruthy();
-      const gesucht = g.literal.startsWith("'") ? g.literal : muster(g.literal);
-      if (!readFileSync(pfad, 'utf8').includes(gesucht)) {
-        abweichungen.push(`${g.name} fehlt in ${pfad}: ${gesucht}`);
+      if (!readFileSync(pfad, 'utf8').includes(suchtext(g))) {
+        abweichungen.push(`${name} fehlt in ${pfad}: ${suchtext(g)}`);
       }
     }
     expect(abweichungen).toEqual([]);
+  });
+
+  it('deckt sich mit dem Wächter, den das Tor selbst fährt', () => {
+    // Zwei Wege, ein Ergebnis: findet der Test etwas, das der Tor-Wächter
+    // durchlässt (oder umgekehrt), ist einer von beiden kaputt.
+    expect(waechterGuards()).toEqual([]);
   });
 
   it('deckt die Guards ab, die über Link/kein-Link entscheiden', () => {
