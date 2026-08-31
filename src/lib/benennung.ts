@@ -67,14 +67,19 @@ export const NEUER_TAB = '(neuer Tab)';
 
 // ═══ B-6 (31.8.2026) · EIN NAME FÜR DAS MASSGEBLICHE ════════════════════════
 //
-// GEMESSEN (Finder-Welle B, Runde 1): derselbe Vorbehalt stand site-weit in
-// zwei Substantiven da — «massgeblich ist die amtliche FASSUNG» (10 Stellen)
-// neben «massgeblich ist die amtliche QUELLE» (5 Stellen), teils im selben
-// Kopf (`ErlassLeserKopf` sagte im Aufhebungs-Banner «Quelle», im Link
-// darüber «Fassung»). Das Reglement schweigt zum Substantiv; nach §2 des
-// Fahrplans gewinnt darum die verbreitetere Form — «Fassung», 10:5. Sie ist
-// zudem die genauere: massgeblich ist nicht die Website, sondern der Text in
-// seiner geltenden Fassung.
+// BEFUND (Finder-Welle B, Runde 1): derselbe Vorbehalt stand in zwei
+// Substantiven da — «amtliche FASSUNG» neben «amtliche QUELLE», teils im
+// selben Kopf (`ErlassLeserKopf` sagte im Aufhebungs-Banner «Quelle», im
+// Link darüber «Fassung»). KORREKTUR (Gegenprüfung 31.8.2026, N1): die
+// ursprüngliche «10:5»-Mehrheits-Zählung war auf die Leser-Kopf-Flächen
+// beschränkt und site-weit FALSCH (dort 16:14 für «Quelle») — das
+// Mehrheits-Argument trägt den Entscheid nicht. Tragend ist das
+// Präzisions-Argument: massgeblich ist nicht die Website und nicht «eine
+// Quelle», sondern der amtlich publizierte Text in seiner Fassung.
+// GELTUNGSBEREICH heute: die im Wächter (`leser-benennung.test.ts`,
+// APP_DATEIEN) genannten Flächen; ~11 sichtbare «Quelle»-Stellen ausserhalb
+// (EntscheidLeser, seo-detail, KontextPanel …) wandern wellenweise nach —
+// Register: FAHRPLAN-DESIGN-KONSISTENZ §3.
 //
 // EINE Wahrheit ist das NOMEN, nicht der Satz: die Stellen brauchen zwei
 // Grammatiken (Halbsatz nach Gedankenstrich bzw. eigener Satz), und ein

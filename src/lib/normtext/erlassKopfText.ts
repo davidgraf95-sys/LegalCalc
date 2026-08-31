@@ -34,9 +34,9 @@
 //
 // ─── B-6-Anbindung (Design-Konsistenz, 31.8.2026) ────────────────────────────
 // Der Vorbehalts-Halbsatz «massgeblich ist die amtliche Fassung» stand hier als
-// Literal — und site-weit an 14 weiteren Stellen, davon 5 mit dem Substantiv
-// «Quelle» statt «Fassung». Seit B-6 hat er EINE Heimat (`lib/benennung.ts`,
-// Herleitung dort); hier steht nur noch der Bezug darauf. Die ERZEUGTEN Sätze
+// Literal — einer von mehreren Streuorten in zwei Substantiv-Varianten
+// (Herleitung und korrigierte Zählung: `lib/benennung.ts`, Gegenprüfung
+// 31.8.2026 N1). Seit B-6 hat er EINE Heimat; hier steht nur noch der Bezug. Die ERZEUGTEN Sätze
 // sind byte-gleich zum Stand davor — die Zusicherung darüber steht als
 // Wortlaut-Sonde in `src/tests/leser-benennung.test.ts`.
 // Kein Rechenpfad berührt (§2/§3): eine Zeichenkette wechselt den Ort, nicht
