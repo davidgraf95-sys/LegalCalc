@@ -212,3 +212,93 @@ als-gilt 1 459 → 1 380 · legende-einleitung 342 → 350. Rot-Beweise: die
 Belegfall-Tests waren vor dem Fix rot (40/47), je Guard einzeln per Mutation
 rot gezeigt; Tor-Prüfung D am mutierten Kopf-Zitat rot (Meldung «keine
 byte-gleiche Kopf+Unterpunkte-Kette»).
+
+---
+
+## §R6.3 · GP Runde 2 (31.8.2026, WIDERLEGT) — Definiens-Anbau + Guard-Morphologie
+
+### Korrektur zu B4, datiert (Beleg-Regel: ergänzen, nie nachführen)
+
+Die Aussage oben «Vollerhebung: genau 8 Fälle im Korpus» (B4) war
+**prädikats-, nicht phänomenbezogen**: erhoben wurde die Population des
+`rest.length<5`-Prädikats, nicht das Phänomen «Zitat ohne Definiens».
+Die phänomenbezogene Vollerhebung am Artefakt (Lauf 31.8.2026,
+`zitat.endsWith(':')` ohne Anbau) ergibt **339** Einträge: 306 als-gilt ·
+18 legende-einleitung · 9 im-sinne · 3 guillemets · 3 kurzform. Die
+GP-Zählung (323 = 304 + 18 + 1) war ihrerseits eine Untermessung —
+Nachmessung offengelegt (§7). Die alte Zahl bleibt oben stehen; der
+Zeichenzähler ist seit R6.3 gestrichen (`legendeBegriff` liefert nur noch
+den Begriff, das Phänomen «Kopf-Satz endet auf ':'» entscheidet).
+
+### F1 · Fix-Mechanik und Verwerf-Klassen
+
+Zitat = Kopf-Satz + angekündigte Aufzählung, je wörtlich, U+000A-verbunden
+(Blocktext-Kopf: alle Items des Blocks; Item-Kopf: direkt folgende tiefere
+Items). Tor-Prüfung D rekonstruiert byte-genau, neue Tor-Prüfung F
+(«Definiens vorhanden»: Zitat endet nicht auf ':' ODER trägt angehängte
+Zeilen) war am Ist-Stand rot (339) und ist nach dem Fix grün. 333 Einträge
+repariert; **5 verworfen** (Kopf ohne Fortsetzung an der Fundstelle):
+
+- Definiens in Folgeblock/Tabelle: BOEB Anh. 3 («nachfolgend aufgeführte
+  Leistungen» in eigenem Tabellenblock) · GR 310.250 Art. 3 II (Ansätze-
+  Tabelle im Folgeblock).
+- Flach-Extraktion (Unterpunkte auf GLEICHER Tiefe, nicht deterministisch
+  zuordenbar): BS 685.360 §7 («Gebäudewert») · BS 910.500 §2 lit. b
+  («Technische Vorschriften») · SZ 82040 §4 (verklebter Marginalien-Begriff).
+- ERV 4 II lit. d («…einzig erfolgt durch:») ist KEIN eigener Kopf-Fall:
+  der Punkt reist als Item samt t1-Kindern im Block-Zitat von
+  «Als Instrumente mit Beteiligungscharakter gelten …» mit.
+
+ZITAT_MAX 2000 → 4000: längstes legitimes Zitat nach Anbau 2 605 Zeichen
+(MWSTG 8), zweitlängstes 2 207 (MWSTV 48a) — die Reissleine hätte beide
+still gefressen (§6.7; Generator meldet die Maximallänge je Lauf).
+
+### F2 · Rollennomen morphologisch (zweistufig)
+
+Erstwort ± eine Flexionsendung (-e/-en/-n) gegen zwei geschlossene Listen:
+**Suffix-Stämme** (Komposita/Plural gehen mit raus): Grundlage, Richtgrösse,
+Obergrenze, Nachweis, Basis, Stichtag, Zeitpunkt, Einreichungsdatum.
+**Exakt-Stämme**: Beginn, Ende, Ausnahme, **Periode (neu)**. Raus damit:
+Zahlungsnachweise (EOV 21/35k/35s) · Berechnungsbasis (BS 164.250) ·
+Stichtage (BS 424.510, BS 460.210) · KVV 96 II «Als Periode für die
+Feststellung …» — **Gleichbehandlungs-Beleg KVV 96**: Abs. 3 «Als Zeitpunkt
+der Inanspruchnahme …» war seit R6.2 draussen (Stamm Zeitpunkt), Abs. 2
+blieb drin; seit R6.3 beide draussen.
+**Grenzfall-Messung, warum «-ende» NIE Suffix ist:** naives Suffix-Matching
+über alle Stämme träfe 60 Einträge, darunter echte Kern-Definitionen
+(«nahestehende Personen» SchKG 286/288, «marktbeherrschende Unternehmen»
+KG 4, «erschwerende Umstände» MWSTG 97, «ozonschichtabbauende Stoffe»
+CHEMRRV, «Studierende» AR 411.5/BS 442.300) — der Stamm «Ende» kollidiert
+morphologisch mit attributivem Partizip I. Die Termini-Komposita
+Steuerperiode (×22) / Abrechnungsperiode / Kontrollperiode / Baubeginn /
+Abbruchbeginn bleiben DRIN (R6.2-Entscheid oben, unverändert).
+
+### F3 · Finites Verb im Begriff (geschlossene Liste)
+
+Begriff mit finitem Verb = Satzfragment, kein Terminus. Vollerhebung am
+Artefakt: **3 Treffer** (GP erwartete 1 — Abweichung offengelegt):
+BS 427.950 §16 «Leistungsnachweise können auch solche» (der GP-Belegfall) ·
+AVIV 8 «Berufe, in denen … üblich sind» (Relativsatz-Begriff, dokumentierter
+Mit-Ausschluss: 76-Zeichen-Relativsatz ist kein Registerbegriff, GP-Vorgabe
+«im Zweifel raus») · KVV 96 II (geht bereits über F2 raus).
+
+### F4 · Partizip-I-Erweiterungsfiktion — ABWEICHUNG von der GP-Signatur
+
+GP verlangte: Partizip-I-Einzelwort ohne Substantiv → pauschal raus.
+Vollerhebung: **5 Treffer, davon 4 echte Definitionen** («rechtsetzend»
+ParlG 22 IV, «vermögend» FIDLEG 5, «krebserzeugend» LRV Anh. 1,
+«grenzüberschreitend» VEVA 3) — der Pauschal-Guard hätte 20 % Präzision
+und läge unter jedem Katalog-Massstab (§1). Implementiert ist G-P1:
+Partizip-I-Einzelwort **nur** in der Erweiterungsfiktion «gilt/gelten
+auch» → raus; einziger Treffer StPO 428 «Als unterliegend gilt auch die
+Partei …». Abweichung offengelegt (§7); Verdikt der GP Runde 3 offen.
+
+### Bilanz Artefakt R6.2 → R6.3
+
+1 964 → **1 949** (−15: 5 F1-verworfen · 7 F2 · 2 F3 · 1 F4), 333 Einträge
+per Anbau repariert, 0 Rest-Doppelpunkt-Köpfe, 0 sonstige Zitat-Änderungen
+(Diff-Vollerhebung alt↔neu). Rot-Beweise: Tor-Prüfung F am Ist-Stand rot
+(339/1964); Belegfall-Tests 9 rot / 52 grün vor dem Fix, 61/61 danach;
+Mutations-Rot je Prüfung (D: gestohlene Fortsetzungszeile → «keine
+byte-gleiche Kopf+Fortsetzung-Kette», F: nackter Kopf). Messbedingung:
+offline, liegender Korpus 29.8.2026, kalt, Einzel-Session R6.3.
