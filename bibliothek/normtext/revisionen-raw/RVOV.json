@@ -4481,6 +4481,38 @@
         "type": "literal",
         "value": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "172.010.1"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/420"
+      },
+      "dateForce": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-10-01"
+      },
+      "dateDoc": {
+        "type": "typed-literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-08-12"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)"
+      }
     }
   ],
   "aStaende": [
@@ -4566,6 +4598,7 @@
     "2025-07-01",
     "2026-01-01",
     "2026-03-01",
+    "2026-10-01",
     "2027-01-01"
   ]
 }

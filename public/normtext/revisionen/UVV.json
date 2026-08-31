@@ -1,9 +1,22 @@
 {
   "erlassKey": "UVV",
   "sr": "832.202",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/432",
+      "dateDocument": "2026-08-26",
+      "roFundstelle": "AS 2026 432",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV)",
+      "titelFr": "Ordonnance sur l’assurance-accidents (OLAA)",
+      "titelIt": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/432/de",
+      "sha": "25bf8e36222703b8b494adcb7569f430f7bcc4c41ea289a19a0b52c515e5b642"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
@@ -317,5 +330,5 @@
       "sha": "6d149082eeb1eb724bc1bd510e5a786f698b4f95db541f6fa84ca2e08acfab5f"
     }
   ],
-  "sha": "402ce6acf28d52f111530f6dadcee09b7d0cf0d181d6e82da61668efc24e54cd"
+  "sha": "149dae85880097cd85700fd047c3dfa735cbeb3714ab79a5ba9e371b0166cbaa"
 }

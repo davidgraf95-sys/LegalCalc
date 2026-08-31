@@ -1,7 +1,7 @@
 {
   "erlassKey": "AHVG",
   "sr": "831.10",
-  "abgerufen": "2026-08-14",
+  "abgerufen": "2026-08-30",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -17,6 +17,13 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.10",
       "sha": "efd4217553cf84351e1a88277f1384b219772fe27b40dd5ec4602c7debea5264"
+    },
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-01-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.10",
+      "sha": "bb2c9ee499a259fcb3a6fe82d651e8a341cb2a61b16b010fe586a2b5f9ec4cbd"
     },
     {
       "art": "aenderung",
@@ -362,5 +369,5 @@
       "sha": "cdf7e2d94d3d71ca886c9569cafbffdf6dfab2bfe903bc909737e3317538c15f"
     }
   ],
-  "sha": "f2dc04db184559059558078b81b840394b890350661c986060c88e5dc8acbcdd"
+  "sha": "9cf775dc43e765049ad5537c71f331331c368e889ece4bf1c6338d7188fb3da1"
 }

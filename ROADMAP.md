@@ -112,14 +112,18 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — EINE Einheit, golden-neutral, harte Binnenfolge F41 vor F40. §1-A.
   - [ ] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — **erst messen**, nichts «fixen» vor dem Profil. §1-A.
 
-- [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
-  <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+- [~] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
+  <!-- @meta id: W2·7-VZUI · status: wip · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, ohne neue Rechtsregel (§3). Offen: V2 (E3-Serving)
   und V3 (E6a) — an den Datenstrang gekoppelt. **Fertig, wenn** die Panel-Reiter fachlich sauber
-  geschnitten sind (Kontaktbogen H4 §7a: «Passende Werkzeuge» und `kontextSoftLaw` gehören nicht in
-  «Materialien»). **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
-  - [ ] «Grundzustand ohne Zusatz-Fetch» wiederherstellen ODER Doku ehrlich machen (`bezugAuswahl.ts`/`bezuegeLaden.ts`) — Code-Zusage ohne Deckung ist keine Option (§5/§8). §13.
+  geschnitten sind («Passende Werkzeuge» und `kontextSoftLaw` gehören nicht in «Materialien»)
+  — ✅ **erfüllt 31.8.2026** mit dem vierten Reiter «Anwendung» (s. Checkliste). *(Quell-Zeiger
+  berichtigt 31.8.2026: die Zeile nannte «Kontaktbogen H4 §7a»; dort steht die Vollzugs-Tabelle der
+  B-Spec-Umhängung. Der Wortlaut steht in `archiv/fahrplaene/FAHRPLAN-LESER-V3.md` C6/W2·7-VZUI-Restzeilen.)*
+  **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
+  - [x] **«Grundzustand ohne Zusatz-Fetch» ehrlich gemacht** *(31.8.2026; §13-Weg 2, Weg 1 gegenstandslos)* — nachgemessen: das §15-Versprechen ist am Ist-Stand **strenger** eingelöst als der Kommentar behauptete, nur an anderer Stelle. Die Ladeweiche ist das Panel-Gate (`usePanelBezuege`/`jeGeoeffnet`), nicht `istErweitert` (deren einziger Konsument ist der Hinweistext in `BezugFacettenWahl.tsx:106`); der schlanke `norm-index`-Shard wird im Gesetz-Leser seit H3/H4 gar nicht mehr geholt — der §13-Befund «beide Shards unterwegs» ist mit der V3-Hülle entfallen. Korrigiert: vier falsche Zusagen, darunter **ein sichtbarer Nutzertext** («steht am Artikel als eigene Linie … gezeigt werden fünf, ein Klick lädt die nächsten fünf» / «Weitere Instanzen laden zusätzliche Daten nach» — es gibt weder Artikel-Linie noch Fünferportion noch Nachladen). Tor statt Prosa: `e2e/leser-v3-prerender-bezuege.e2e.ts` bewacht jetzt **beide** Shard-Familien (rot gesehen 31.8.).
   - [x] **Ankunfts-Sprung `?norm=` nutzt beide Fundstellen-Regeln** *(Auftrag David 30.8.2026)* — `ankunftsAnker` (`src/pages/entscheidLeserRegeln.ts`): Fedlex-Fundstelle, sonst erste wörtliche Nennung; e2e-Deckung des SPLIT-Wegs neu (`e2e/split-erwaegungssprung.e2e.ts`). Gemessen über alle 75 365 Kanten: 46.6 % → 48.8 % (Bund 54.3 → 55.3 %, **Kanton 0.0 → 9.1 %**).
+  - [x] **Panel-Reiter fachlich sauber geschnitten — vierter Reiter «Anwendung»** *(31.8.2026)* — die Behörden-Ressourcen (`kontextSoftLaw`) und die «Passenden Werkzeuge» hatten seit H3 keinen Ort mehr: sie gehören nicht in «Materialien» (dort steht die Entstehung), waren im V3-Panel aber ersatzlos entfallen. Neu `v3/PanelAnwendung.tsx` mit zwei Abschnitten (Behörden-Praxis · Werkzeuge) hinter demselben Panel-Gate wie die anderen Reiter. Bestand gemessen statt geraten: ARG = beide Abschnitte · DBG = nur Behörden-Praxis (Werkzeug-Karten geplant ⇒ §8-ausgeblendet) · OR = 15 artikelscharfe Gruppen, kein Kanten-Shard. Reiter-Leiste @1440 nachgemessen: 385 px in 350 px ⇒ 35 px Scrollweg (der Fall, für den H4-II sie scrollbar gemacht hat); @390 passt sie ganz. e2e `leser-v3-panel-anwendung.e2e.ts` (5 Fälle, 4× rot gesehen).
   - [ ] **Kantonaler Zitat-Resolver** — 9 674 kantonale Kanten haben weiterhin kein Sprungziel: `fedlexLinkFuerArtikel`/`normVerweiseImText` kennen nur Bundesrecht, und die wörtliche Regel greift nur, wo der Entscheid exakt `§ N <Kürzel>` schreibt. Nötig wäre eine Kürzel-/Alias-Tabelle je kantonalem Erlass **mit Kanton-Scoping** (ein «StG» in BS ist nicht das «StG» in ZH — ohne Scoping entstünde ein stumm falscher Sprung, §1). Risiko-Pfad Extraktion ⇒ eigener Schritt mit Gegenprüfung, nicht als UI-Nebenprodukt.
 
 ---
@@ -202,6 +206,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Dach für die offenen Reparaturen an Normtext- und Rechtsprechungs-Korpus; je Zeile eine
   sortenreine Bau-Einheit. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §1.
   - [ ] **`adapter-lexwork.ts:778` Fetch-Ergebnis unvalidiert** — Shape vor Verwendung prüfen.
+  - [ ] **Bezüge-Kanten mit Phantom-Zitaten** *(Befund Split-Bau 30.8.2026, PR #582)* — 18 854 von
+    75 365 Artikel↔Entscheid-Kanten nennen den Artikel im Entscheid-Snapshot gar nicht; Stichprobe
+    `bge_148_V_265` trägt `«Art. 4 BGE»` in `zitierteNormen` (Extraktions-Artefakt). Wurzel im
+    Bezüge-/Zitat-Generator suchen (Risikopfad, Gegenprüfung), nie in den Daten flicken.
   - [ ] **Geltende BMV in den Korpus aufnehmen** — Totalrevision `cc/2025/408` (gleiche SR 412.103.1) fehlt; Nutzer finden nur den historischen Text.
   - [ ] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — 23 amtliche Sektionen liegen ausserhalb `div#annex`; golden-Diff erwartet (neue amtliche Substanz).
   - [ ] **Entscheid-Datumsfehler bereinigen** — `bge_151_II_475` trägt 1999 statt 2025; Register-Sweep nach weiteren Band/Jahr-Diskrepanzen.
@@ -299,14 +307,14 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann Rest (D-8.2)** — ~50 Fundstellen; **Pilot zuerst**, nicht flip-reversibel, **nach D8a**.
   - [ ] **DESIGN-D8c · Motiv-Katalog (D-8.3)** — `scale-rule`-Motiv an 2–3 Sektions-Orten; **nach D8b**.
 
-- [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
-  <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
+- [~] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
+  <!-- @meta id: W2·17-UI-BEFUNDE · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil; alles reine Darstellungsschicht, Blocker zuerst.
   **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §24.
-  - [ ] **B6-N1 · LM-162: Ergebniskasten wächst mit dem Inhalt** — Entscheid David 8.8.2026; CLS-Budget trotzdem halten. §7.
-  - [ ] **B6-N2 · LM-164: «nicht erfasst» wird ausgewiesen** — Entscheid David 8.8.2026; Beschriftung ehrlich (§8), beide Themes. §7.
-  - [ ] **B7-N1 · Scrim hinter Overlays (LM-010/LM-015)** — Entscheid David 8.8.2026; dezent, Token-Rolle, a11y-fest. §8.
-  - [ ] **B8 · Menüinhalt, Zustandsanzeige, Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9.
+  - [x] **B6-N1 · LM-162: Ergebniskasten wächst mit dem Inhalt** — Entscheid David 8.8.2026; CLS-Budget trotzdem halten. §7.
+  - [x] **B6-N2 · LM-164: «nicht erfasst» wird ausgewiesen** — **erledigt (überholt)** 30.8.2026: am gebauten Stand nicht mehr reproduzierbar (V1-Hülle gelöscht, kein Artikel trägt eine Rechtsprechungs-Zeile), §8-Substanz im V3-Reiter «Entscheide» bereits gebaut (drei Zustände, drei Sätze). Rest-Punkt am Panel-Öffner wartet auf David. §7.
+  - [x] **B7-N1 · Scrim hinter Overlays (LM-010/LM-015)** — gebaut 30.8.2026 am «Ansicht ▾»-Menü (Regel: der Scrim folgt der Fokus-Falle, Ä52 bleibt); LM-010 erledigt (überholt) — das Rechtsprechungs-Panel ist seit Ä60 eine Spur neben dem Text, kein Overlay. Dunkelmodus-Fehler des Blatt-Scrims mitbehoben. §8.
+  - [ ] **B8 · Menüinhalt, Zustandsanzeige, Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9. · **Blocker LM-061 vorgemessen 30.8.2026, wartet auf David:** News-Reihe verbirgt 2'588 px ohne Affordanz — der Bau würde den Entscheid D11 («angeschnittene Karte IST die Affordanz») revidieren. Messung + Bauform-Vorschlag im Fahrplan.
   - [ ] **B9 · Textsatz und Umbruch (K-12)** — 12 Befunde (Blocker 1 · Hoch 2). §10.
   - [ ] **B10 · Aktions-Anker, Symbolknöpfe, Trefferflächen (K-09b)** — 7 Befunde (Blocker 1 · Hoch 1). §11.
   - [ ] **B11 · Karten (K-04)** — 13 Befunde. §12. · **B12 · Eingabe-/Auswahlfelder (K-08a)** — 11 Befunde. §13.
