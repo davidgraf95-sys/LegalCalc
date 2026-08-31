@@ -361,3 +361,19 @@ ROADMAP-Bindung mehr. Titel:
 - §1-C · §14-Intake 20.7.2026 (David) — K-15 und K-16
 - §1-D · §14-Intake 21.7.2026 (David) — K-17
 - §3-N · ROADMAP-Spec `W2·13-KANTONE-DRIFT` — Nachzug (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+### §5-R8 · Stand 1.9.2026 — GEPARKT, Wiederaufnahme = Gegenprüfung Runde 3
+
+R8.3 (Wurzel-Fix F8) ist gebaut: Rohfeld-Sidecar kanton-abk-roh.json
+(api|rueckrechnung, lügt nie) · Generator liest NUR abkRoh · 569→526
+Aliase (−43 api-belegt leere, 1 Korrektur NoVo→NotV) · Live-Wächter
+check:kanton-abk-netz (n=20 rotierend) im Cron · 47/48 Tore grün.
+Deklarierte §7-Abweichung: 248 gezielte API-Abrufe statt strikter
+Offline-Regel (hätte TZV/ABRG/«EG zum KVG» fälschlich geleert); GP-F8-
+Zählung 142 war Überzählung (114 amtlich belegte Kurztitel). NÄCHSTER
+SCHRITT vor Landung: GP Runde 3 (Modell ≠ Fable) — Prüfschwerpunkte:
+die 43 Entfernten + NotV-Korrektur gegen die API, Rückrechnungs-Beweise
+(355/730/49/96/1), Live-Wächter-Stub-Rot, Sidecar-Herkunfts-Ehrlichkeit;
+danach Quittung --bereich=<merge-base>..HEAD + Landung mit Turso-Sync-
+Pflicht (FTS-Schema). Offen dokumentiert: G2-Voll-Neuzug 983, 730
+«(Nr)»-Titel-Anzeige (eigener Schritt), VITEST-Muster-Falle (§17-Kandidat).
