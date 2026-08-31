@@ -82,8 +82,12 @@ export function nachRelevanz(erlasse: readonly BrowseErlass[]): BrowseErlass[] {
 // `gebührenverordnung|gebührengesetz|…` vorbeiliefen.
 //
 // ADDITIV, NICHT UMGEBAUT: kein Bestandsmuster ist verändert; die Ausdrücke hier
-// treten mit `||` daneben. Ein Erlass, der vorher eine Kategorie hatte, behält
-// sie — die Erweiterung kann nur Erlasse HINZU-nehmen, nie umsortieren.
+// treten mit `||` daneben. Im heutigen Bestand sortiert die Erweiterung nichts
+// um (Vorher/Nachher-Lauf über alle 1469 Keys, 31.8.2026: 38 Änderungen,
+// ausnahmslos «keine»→Kategorie). Als INVARIANTE trägt «nie umsortieren» aber
+// nicht: kantonKernRang nimmt den ersten Treffer, und ein Titel, der ein
+// Bestandsmuster einer späteren UND ein neues Muster einer früheren Kategorie
+// trifft, würde wechseln (Gegenprüfung 31.8.2026, Befund 3 — heute 0 Fälle).
 //
 // ZWEI ENTSCHEIDUNGEN, DIE BEGRÜNDUNG BRAUCHEN:
 //
@@ -99,16 +103,30 @@ export function nachRelevanz(erlasse: readonly BrowseErlass[]): BrowseErlass[] {
 //    A14 ausdrücklich «Gebührentarife» als Kernklasse.
 //
 // NICHT AUFGENOMMEN, UND DAS IST ABSICHT (§8): «droits de mutation» / «droits
-// d'enregistrement» / «registre foncier». Ihre deutschen Gegenstücke
-// (Handänderungssteuer, Grundbuchverordnung) tragen ebenfalls keine
-// Kern-Kategorie — was im Deutschen durchfällt, darf im Französischen nicht
-// bevorzugt werden. Ob diese Klasse insgesamt dazugehört, ist eine fachliche
-// Frage an David, keine Spracherweiterung.
+// d'enregistrement» / «registre foncier». KORREKTUR (Gegenprüfung 31.8.2026,
+// Befund 1): die frühere Begründung «ihre deutschen Gegenstücke tragen ebenfalls
+// keine Kern-Kategorie» ist empirisch falsch — BE-215.326.2 heisst
+// «Handänderungssteuergesetz» und trifft als EIN Wort das Bestandsmuster
+// /steuergesetz/ (Rang 3), während «Gesetz über die Handänderungssteuer»
+// (LU-645, BS-650.100 …) und die romanischen Formen durchfallen. Die
+// Ungleichbehandlung ist eine Alt-Asymmetrie des Titel-Ratens, kein Grund, die
+// romanische Seite zusätzlich zu heben. Ob die Klasse insgesamt Kern ist, bleibt
+// eine fachliche Frage an David; Wurzel-Fix (Kern-Kategorie als deklariertes
+// Registerfeld statt Titel-Muster) ist als ROADMAP-Posten verbucht.
 //
-// Die Muster laufen gegen Titel UND Kürzel, weil in den lateinischen Kantonen
-// und im Aargau das Kürzel oft die Sache trägt («Anwaltstarif», «LTar», «LTG»)
-// und der Titel die Erlassform («Dekret über die Entschädigung der Anwälte»).
-// Wächter: `src/tests/relevanz.test.ts` (echte Manifest-Titel als Fixtures).
+// Die NEUEN Muster laufen gegen Titel UND Kürzel, weil in den lateinischen
+// Kantonen und im Aargau das Kürzel oft die Sache trägt («Anwaltstarif», «LTar»,
+// «LTG») und der Titel die Erlassform («Dekret über die Entschädigung der
+// Anwälte»). Die BESTANDSMUSTER prüfen weiterhin nur den Titel — sie auch aufs
+// Kürzel zu heben, träfe 15 weitere (deutsche) Erlasse und ist damit keine
+// Spracherweiterung mehr, sondern eine eigene fachliche Änderung (Gegenprüfung
+// 31.8.2026, Befund 2; im ROADMAP-Wurzel-Fix-Posten mitverbucht).
+// Drei Ausdrücke sind Vorrat OHNE Bestandsanker (0 Treffer bei 1469 Keys am
+// 31.8.2026): «legge tributaria», «abgabengesetz», «organizzazione giudiziaria»
+// — fachlich erwartbare Formen für den kommenden Vollkorpus-Ausbau (K-G5),
+// nicht am heutigen Korpus gemessen.
+// Wächter: `src/tests/relevanz.test.ts` (echte Manifest-Titel als Fixtures;
+// die Vorrats-Ausdrücke mit als solchen markierten synthetischen Titeln).
 const KERN_TARIF_LATIN = /([ée]molument|tarif des (frais|d[ée]pens|honoraires|notaires)|tariffa|legge tributaria)/i;
 const KERN_TARIF_DE = /(geb[üu]hrendekret|anwaltstarif|notariatstarif|tarif der kosten|entsch[äa]digung der anw[äa]lte|grundbuchabgaben|abgabengesetz)/i;
 /** Gerichts-/Justizorganisation, wo sie «Reglement» heisst bzw. romanisch benannt ist. */

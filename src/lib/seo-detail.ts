@@ -283,9 +283,13 @@ export function erlassVolltextHtml(
   // dieselbe Funktion, die der interaktive Erlass-Kopf aufruft (§5). Bis dahin
   // waren es zwei handgeschriebene Strings, die im Datumsformat bereits
   // auseinandergelaufen waren (hier ISO, dort TT.MM.JJJJ).
+  // `!e.aufgehoben` spiegelt das `lebt`-Gate des interaktiven Kopfs (§5):
+  // am aufgehobenen Erlass ist die Aufhebung DIE Aussage, nicht die Nicht-
+  // Prüfung (Gegenprüfung 31.8.2026, Befund 5 — sonst divergiert die No-JS-
+  // Seite beim ersten aufgehobenen Kantonserlass).
   const geprueft = currency?.geprueftAm
     ? ` · ${esc(standausweisSatz(currency.geprueftAm))}`
-    : e.ebene === 'kanton'
+    : e.ebene === 'kanton' && !e.aufgehoben
       ? ` · ${esc(GELTUNG_UNGEPRUEFT_SATZ)}`
       : '';
   const kuenftig = currency?.naechsteFassungAb ? ` · ${esc(naechsteFassungSatz(currency.naechsteFassungAb))}` : '';

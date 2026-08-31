@@ -121,6 +121,13 @@ describe('erlassVolltextHtml() — §5-Gleichlauf mit dem interaktiven Kopf (K-2
     );
     expect(erlassVolltextHtml(or, orDatei)).not.toContain('Geltung ungeprüft');
   });
+  it('aufgehobener Kantonserlass trägt KEINE Ungeprüft-Zeile (lebt-Gate wie im interaktiven Kopf)', () => {
+    const html = erlassVolltextHtml(
+      { ...kanton, aufgehoben: { seit: '2020-01-01', quelleUrl: kanton.quelleUrl } as never },
+      datei,
+    );
+    expect(html).not.toContain('Geltung ungeprüft');
+  });
   it('leerer stand wird «Stand unbekannt» statt «Stand » (K-2d)', () => {
     const html = erlassVolltextHtml({ ...kanton, stand: '' }, datei);
     expect(html).toContain('Stand unbekannt');

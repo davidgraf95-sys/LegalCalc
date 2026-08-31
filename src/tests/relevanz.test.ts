@@ -78,7 +78,9 @@ describe('relevanz — Kanton Kern-Kategorien (A14, dokumentiert-deterministisch
 // `gebührenverordnung|gebührengesetz|…` vorbeiliefen.
 //
 // Die Titel unten sind WÖRTLICH aus dem committeten Manifest (§7: keine
-// erfundenen Fälle). Die Kategorie-Zuordnung folgt der Sache, nicht der Sprache:
+// erfundenen Fälle) — MIT EINER MARKIERTEN AUSNAHME: «Legge tributaria» ist
+// ein synthetischer Vorrats-Fall (0 Bestandstreffer am 31.8.2026, erwartete
+// Form für den Vollkorpus-Ausbau K-G5; Gegenprüfung 31.8., Befund 4). Die Kategorie-Zuordnung folgt der Sache, nicht der Sprache:
 // «émolument», «tariffa», «tarif des frais» und der Anwalts-/Notariatstarif sind
 // Gebühren- bzw. Kostenrecht.
 describe('relevanz — Kanton Kern-Kategorien fr/it + Aargauer Dekrete (F5/K-1f)', () => {
@@ -97,7 +99,7 @@ describe('relevanz — Kanton Kern-Kategorien fr/it + Aargauer Dekrete (F5/K-1f)
     ['TI', 'Legge sulla tariffa giudiziaria (LTG) (RL 178.200)', 'x'],
     ['TI', 'Tariffa dell’Ordine degli avvocati (onorari) (RL 178.310)', 'x'],
     ['TI', 'Legge sulle tasse e gli emolumenti del registro fondiario (LTORF) (RL 216.200)', 'x'],
-    ['TI', 'Legge tributaria', 'LT'],
+    ['TI', 'Legge tributaria', 'LT'], // synthetischer Vorrats-Fall, s. Kopfkommentar
     ['VD', 'Tarif des dépens en matière civile (TDC) (BLV 270.11.6)', 'x'],
     ['VD', 'Tarif des notaires (TNo) (BLV 178.11.2)', 'x'],
     ['VS', 'Loi fixant le tarif des frais et dépens devant les autorités judiciaires ou administratives', 'LTar'],
