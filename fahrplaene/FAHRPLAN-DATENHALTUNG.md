@@ -270,3 +270,11 @@ ROADMAP-Bindung mehr. Titel:
 - 11. Darstellung (drei Reader + EIN Kontext-Layer)
 - 12. Datenhaltungs-Optimierung + Heiss/Kalt-Grenze (§14-Intake David 20.7.2026)
 - §15 · ROADMAP-Spec-Nachzug `W2·6-DATA` (wörtlich verschoben 4.8.2026, ROADMAP-Diät Welle 3)
+
+> **Landungs-Lehre 31.8.2026 (CI-Rot PR #604, §17):** Der `Gegenpruefung:`-Trailer
+> wird via `git log --format=%(trailers:…)` gelesen — git erkennt NUR den letzten
+> Absatz als Trailer-Block. Eine Leerzeile zwischen `Gegenpruefung:` und
+> `Co-Authored-By:` macht das Verdikt unsichtbar → Merge-Schutz rot. Formregel:
+> Roadmap/Gegenpruefung/Co-Authored-By in EINEM Schlussblock ohne Leerzeilen;
+> vor jedem PR lokal `npm run check:merge-schutz` fahren (kostet Sekunden,
+> spart den CI-Lauf).
