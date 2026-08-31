@@ -264,12 +264,18 @@ export function istParagrafDesigniert(basisPfad: string): boolean {
 }
 
 // ─── Token-Auflösung für bare Artikelverweise im Wortlaut ────────────────────
-export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate }: {
+export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel }: {
   eintraege: NormSnapshot[] | null;
   basisPfad: string;
   springeZuArtikel: (token: string) => void;
   istSekundaer: boolean;
   navigate: NavigateFunction;
+  /** V-2 (W2·20): Register-Kürzel des gelesenen Erlasses, für die
+   *  Selbstmarker-Weiche in NormText. Kommt aus dem Register-Manifest, das der
+   *  Leser ohnehin geladen hat — kantonal ist es NICHT aus `basisPfad`
+   *  ableitbar (der trägt die Systematik-Nummer «BS-410.700», das Kürzel ist
+   *  «SLV»). Ungesetzt ⇒ die Weiche ruht (byte-identisches Rendering). */
+  erlassKuerzel?: string;
 }) {
   // Token-Auflösung für bare Artikelverweise (normalisiert «6a» → Token «6_a»).
   return useMemo<InternRefs | undefined>(() => {
@@ -293,6 +299,10 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
     // F41/F40: §-Designation einmal je Erlass bestimmen und mitgeben — NormText
     // fragt das Register nicht selbst (Schichtentrennung §3: die Komponente
     // bekommt die Weiche als Wert, nicht die Nachschlage-Fähigkeit).
-    return { tokenMap, basisPfad, springeZu: springeZuRef, paragrafDesigniert: istParagrafDesigniert(basisPfad) };
-  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate]);
+    return {
+      tokenMap, basisPfad, springeZu: springeZuRef,
+      paragrafDesigniert: istParagrafDesigniert(basisPfad),
+      eigenesKuerzel: erlassKuerzel,
+    };
+  }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel]);
 }

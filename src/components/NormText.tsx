@@ -1,7 +1,8 @@
 import { Fragment } from 'react';
 import {
   normVerweiseImText, fremdgesetzNachArtikel, fremdRoutingFormB,
-  artikelnPluralVerweise,
+  artikelnPluralVerweise, erkenneFedlexGesetz,
+  type NormVerweisSpan,
 } from '../lib/fedlex';
 import { NormChip } from './vorlagen/NormChip';
 import { RechtsprechungText } from './RechtsprechungLink';
@@ -122,8 +123,21 @@ export interface InternRefs {
    *  Ungesetzt (Bund, Art.-designierte Kantone, Fremdgesetz-Chapeau) ⇒ beides
    *  aus, Rendering byte-identisch zum Stand davor. */
   paragrafDesigniert?: boolean;
+  /** V-2 (W2·20-VERWEIS-SCHAERFE): das REGISTER-Kürzel des gelesenen Erlasses
+   *  («SLV», «Personalgesetz», «ChemV»). Der Lese-Basispfad trägt den Register-
+   *  SCHLÜSSEL, und der ist kantonal die Systematik-Nummer («BS-410.700») — das
+   *  Kürzel steht nur im Register-Manifest und wird darum als WERT übergeben
+   *  (§3: die Komponente bekommt die Weiche, nicht die Nachschlage-Fähigkeit;
+   *  dieselbe Bauart wie `paragrafDesigniert`). Ungesetzt ⇒ Ziel 2 der
+   *  Selbstmarker-Weiche ruht, Rendering byte-identisch zum Stand davor. */
+  eigenesKuerzel?: string;
 }
 const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+// Kürzel-Kanon für IDENTITÄTS-Vergleiche (nur A–Z0–9): der Register-Schlüssel
+// trägt «_» (FINFRAV_FINMA), der FEDLEX-Key «-» (FinfraV-FINMA). Stand seit N2
+// im Rumpf von `restMitIntern`; seit V-2 brauchen ihn auch die Span-Weiche in
+// `NormText` und `nenntEigenesKuerzel` — EINE Definition, nicht drei (§5).
+const kuerzelKanon = (s: string) => s.toUpperCase().replace(/[^A-Z0-9]/g, '');
 // «Art. N» / «Artikel N» (+ Buchstabe UND/ODER lat. Suffix als SEPARATE Gruppen,
 // damit «329gbis»/«10bis» VOLLSTÄNDIG erfasst werden — nicht «329g»/«10b»; analog
 // fedlex.ts). `(?![0-9a-z])` verhindert das `\d+`/Suffix-Backtracking, das sonst
@@ -181,6 +195,75 @@ const PARAGRAF_ANHANG = new RegExp(
 const PARAGRAF_FREMD_GROSS = /^\s+[A-ZÄÖÜ]/;
 const PARAGRAF_FREMD_NAME = /^\s+(?:des|der|über|vom)\b/;
 
+// ─── V-2 · SELBSTMARKER-WEICHE VOR DEN FREMD-GUARDS (W2·20-VERWEIS-SCHAERFE) ─
+//
+// Alle Guards oben sind Fremd-VERMUTUNGEN: ein «des …» am Zitat, ein Grosswort,
+// zwei Grossbuchstaben. Sie sind richtig kalibriert, aber sie treffen auch
+// Verweise, die den eigenen Erlass AUSDRÜCKLICH benennen — und ein
+// ausdrückliches Signal im Wortlaut schlägt jede Vermutung (§1: kein Link ist
+// besser als ein falscher, aber ein benannter Selbstverweis ist kein Raten).
+//
+// HARTE GRENZE: nur EXPLIZITE Signale, nichts Heuristisches. Zwei gibt es:
+//
+//  (1) Die Selbst-WENDUNG. «des vorliegenden Gesetzes», «der vorliegenden
+//      Verordnung», «dieses Vertrages» … Gemessen 31.8.2026 über alle 1 458
+//      Snapshots (132 616 Blöcke): «des vorliegenden Gesetzes» 37 ·
+//      «der vorliegenden Verordnung» 7 · «des vorliegenden Vertrages/Vertrags» 2
+//      — «vorstehenden»/«nachstehenden» kommen NULL Mal vor und stehen darum
+//      nicht im Muster (in einem Änderungserlass wären sie ohnehin mehrdeutig).
+//      Kein bestimmtes Substantiv verlangt: «vorliegend»/«dieser» + gross
+//      beginnendes Wort IST das Signal (Gesetz, Verordnung, Vertrag, Erlass,
+//      Reglement, Dekret, Statut). Eine Nomen-Liste wäre eine zweite Wahrheit,
+//      die beim nächsten Korpus-Nachzug still danebenläge (§5).
+//      Die «dieses/dieser …»-Familie ist mitgeschrieben, weil sie dasselbe sagt;
+//      sie fiel bisher nur deshalb nicht in den des/der-Guard, weil das Zitat
+//      nicht mit «des»/«der» weitergeht (528 der 548 verweis-tragenden
+//      Selbstmarker-Stellen sind darum schon heute verlinkt). Ihr einziger
+//      MESSBARER Zugewinn ist der F41-Fall unten.
+//  (2) Das EIGENE Kürzel. Steht am Zitat exakt das Register-Kürzel des
+//      gelesenen Erlasses, ist der Verweis ein Selbstverweis — 13 gemessene
+//      Stellen in zwei Erlassen (BS-162.100 «§ 19 Personalgesetz»,
+//      BS-410.700 «§ 41 SLV»), alle nachgeprüft. Verglichen wird EXAKT mit
+//      Wortgrenze, nie unscharf (§7). Restrisiko, bewusst getragen und im
+//      Korpus heute nicht belegt: ein gleichnamiger Erlass eines ANDEREN
+//      Kantons («§ 5 Personalgesetz des Kantons Zürich») würde mitgefangen —
+//      13/13 gemessene Stellen sind eigenbezüglich.
+//
+// Das Signal gehört zum ZITAT, nicht zum Satz: der Passus («Abs. 2»,
+// «Ziff. 3 lit. a») und Aufzählungsglieder («§ 19 bis 21») werden zuerst
+// überlesen (`PARAGRAF_ANHANG`, dieselbe Definition wie im §-Pfad). Genau daran
+// hing der Zwilling des Messberichts: AHVG Art. 9 «Artikel 8 des vorliegenden
+// Gesetzes» fiel in den des/der-Guard, AIG Art. 80a «Artikel 66 Absatz 1 des
+// vorliegenden Gesetzes» nicht — dieselbe Wendung, zwei Ergebnisse, allein
+// wegen des Passus dazwischen.
+const SELBST_MARKER = /^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+[A-ZÄÖÜ]/;
+/** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
+function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
+  const k = (kuerzel ?? '').trim();
+  if (!k) return false;
+  const ohneRaum = rest.replace(/^\s+/, '');
+  if (ohneRaum.length === rest.length) return false; // kein Trenner ⇒ kein eigenes Wort
+  if (!ohneRaum.startsWith(k)) return false;
+  const nach = ohneRaum.slice(k.length);
+  // Wortgrenze — und der BINDESTRICH zählt dazu. Die Schwester-Erlasse der
+  // Finanzmarktaufsicht hängen ihn an ein sonst identisches Kürzel: «KKV-FINMA»
+  // beginnt mit «KKV». Ohne diese Zeile bekam «Artikel 112 Absatz 1 KKV-FINMA»
+  // in der KKV einen Self-Sprung auf KKV Art. 112 — ein anderer Erlass, ein
+  // falscher Link (gemessen im SSR-Vorher/Nachher-Lauf 31.8.2026, KKV
+  // Art. 126zocties; §1). Der Punkt bleibt erlaubt, sonst zerfiele «§ 41 SLV.»
+  // am Satzende.
+  return nach === '' || !/[\p{L}\p{N}-]/u.test(nach[0]);
+}
+/** Explizites Selbst-Signal am Zitat (Wendung ODER eigenes Kürzel)?
+ *  Im Fremdgesetz-Chapeau (M6-D) IMMER falsch: dort meint «dieses Gesetzes»
+ *  den Erlass des Chapeaus, nicht den gelesenen — und ein Self-Sprung wäre
+ *  genau der plausibel-falsche Link, den §1 verbietet. */
+function selbstSignalAmZitat(rest: string, intern: InternRefs): boolean {
+  if (intern.fremdKuerzel) return false;
+  const nachPassus = rest.replace(PARAGRAF_ANHANG, '');
+  return SELBST_MARKER.test(nachPassus) || nenntEigenesKuerzel(nachPassus, intern.eigenesKuerzel);
+}
+
 function restMitIntern(s: string, key: string, intern?: InternRefs): React.ReactNode {
   if (!intern || !s) return s ? <RechtsprechungText key={key} text={s} /> : null;
   // N2 (Bündel N): Kürzel DIESES Erlasses (aus dem Lese-Basispfad, «…/bund/AHVV»
@@ -190,7 +273,6 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // der FEDLEX-Key «-» (FinfraV-FINMA) — ohne Normalisierung würde ein Gesetz mit
   // getrenntem Kürzel den eigenen Self-Verweis fälschlich unterdrücken (QS-GP-Fund
   // 1.7.: FinfraV-FINMA art_50a, betrifft alle 6 getrennt-benannten Kind-Erlasse).
-  const kuerzelKanon = (s: string) => s.toUpperCase().replace(/[^A-Z0-9]/g, '');
   const eigenesKuerzel = kuerzelKanon(intern.basisPfad.split('/').pop() ?? '');
   // A10 (Plural-Linker, David 5.7.2026): «in den Artikeln 31 …, 35 … und 45 …» —
   // jedes Glied EINZELN verlinken. Die Regionen werden VOR dem Singular-Lauf
@@ -258,7 +340,11 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
       // Erst den Rest DESSELBEN Zitats überlesen (Passus, Aufzählung), dann das
       // Fremd-Signal prüfen ⇒ bei Treffer reiner Text (§1: kein geratener Link).
       const rest = s.slice(end).replace(PARAGRAF_ANHANG, '');
-      if (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest)) continue;
+      // V-2: ein AUSDRÜCKLICHES Selbst-Signal («§ 59 Abs. 2 des vorliegenden
+      // Gesetzes», «§ 19 Personalgesetz» im Personalgesetz) steht VOR beiden
+      // Fremd-Guards — sonst fängt der Grosswort-Guard das eigene Kürzel.
+      if (!selbstSignalAmZitat(s.slice(end), intern)
+        && (PARAGRAF_FREMD_GROSS.test(rest) || PARAGRAF_FREMD_NAME.test(rest))) continue;
       const token = intern.tokenMap.get(normRef(m[1]));
       if (!token) continue; // keine solche Bestimmung in diesem Erlass → Text (§8)
       linkSpans.push({
@@ -332,7 +418,12 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // fälschlich unterdrückt statt geroutet). Fedlex-Kürzel-Fälle fängt zusätzlich
     // die N2-Prüfung unten; dieser Check deckt auch Nicht-FEDLEX-Namen («der
     // Verordnung») ab, die tokenMap sonst fälschlich self-verlinken würde.
-    if (/^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
+    // V-2 (W2·20): ausdrückliches Selbst-Signal am Zitat? Dann greift KEINE der
+    // vier Fremd-Vermutungen unten (des/der, N2, M12, F41) — Herleitung und
+    // Messung bei `SELBST_MARKER`. Der Fremdgesetz-Chapeau-Pfad (M6-D) bleibt
+    // unberührt: `selbstSignalAmZitat` ist dort per Definition falsch.
+    const selbst = selbstSignalAmZitat(rest, intern);
+    if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),
     // zeigt «Artikel N» auf JENES Gesetz; der interne Self-Link wäre falsch (§1) →
@@ -340,7 +431,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // alte Sofort-Kürzel-Regel unten (die auch Nicht-FEDLEX-Kürzel fängt), fängt
     // aber die ausgeschriebene Passus-Form. (Aktives Routing der bare-Kürzel-Form
     // bleibt bewusst zurückgestellt — der Kontrakt hier ist Unterdrückung.)
-    const fremd = fremdgesetzNachArtikel(rest);
+    const fremd = selbst ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== eigenesKuerzel) continue;
     // M12 (§1/§6): Folgt dem bare «Art./Artikel N» ein Gesetzes-KÜRZEL (≥2 Gross-
     // buchstaben, z.B. «Artikel 64 BGG», «Art. 5 VwVG»), ist es ein Verweis auf
@@ -352,7 +443,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Link UNTERDRÜCKT (lieber kein Link als ein plausibel-falscher, §1/§6,
     // David-Entscheid 28.6.). «Absatz/Buchstabe/Ziffer» (EIN Grossbuchstabe)
     // bleiben unberührt → echte Self-Verweise («Artikel 6 Absatz 2») weiter verlinkt.
-    if (/^\s+(?:[A-ZÄÖÜ]{2,}|[A-ZÄÖÜ][a-zäöü]*[A-ZÄÖÜ]\w*)/.test(rest)) continue;
+    if (!selbst && /^\s+(?:[A-ZÄÖÜ]{2,}|[A-ZÄÖÜ][a-zäöü]*[A-ZÄÖÜ]\w*)/.test(rest)) continue;
     // M6-D: Fremdgesetz-Chapeau → bare «Art. N» zeigt aufs Zielgesetz (nicht Self).
     // NormChip trägt die Auflösung (Korpus-Popover / Fedlex-Fallback / Text bei
     // unbekanntem Ziel) — dieselbe Kette wie ein voll zitierter Fremdverweis (§5).
@@ -365,7 +456,15 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // F41: §-designierter Erlass ⇒ kein bare-«Art. N»-Self-Sprung. Steht NACH
     // allen Fremd-Weichen, damit ein echtes Fremd-Routing (N2b, Chapeau) davon
     // unberührt bleibt — gesperrt ist nur der Sprung auf den EIGENEN Erlass.
-    if (paragrafErlass) continue;
+    // V-2: das ausdrückliche Selbst-Signal schlägt auch F41. F41 stützt sich auf
+    // die Drafting-Konvention («in einem §-Erlass meint ‹Art. N› ein anderes
+    // Gesetz») — ein Indiz, wie der Kommentar dort selbst sagt. Nennt der
+    // Wortlaut den eigenen Erlass, ist das Indiz widerlegt. Gemessen 31.8.2026:
+    // GENAU EINE Stelle im ganzen Korpus (BS-833.100 § 6 «erlässt gemäss Art. 12
+    // dieses Vertrages Personalvorschriften» — der Erlass IST ein Vertrag, zählt
+    // mit «§» und zitiert seine eigene Bestimmung als «Art. 12»; § 12 trägt
+    // genau die Personalvorschrift). Ohne Token bleibt es auch hier Text.
+    if (paragrafErlass && !selbst) continue;
     const token = intern.tokenMap.get(normRef(m[1]));
     if (!token) continue; // kein Artikel dieses Erlasses → als Text belassen
     if (start > last) out.push(<RechtsprechungText key={`${key}-r${last}`} text={s.slice(last, start)} />);
@@ -382,6 +481,43 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // key-tragendes Fragment: restMitIntern-Ergebnisse landen in NormTexts `teile`-
   // Array (siehe unten); ein bare <>…</> dort löst die React-key-Warnung aus.
   return <Fragment key={key}>{out}</Fragment>;
+}
+
+// ─── V-2 Ziel 3 · Voll zitierter Verweis auf den GELESENEN Erlass ────────────
+//
+// «Art. 65 Abs. 5 SSV» im Anhang 3 der SSV ist kein Fremdverweis. Der Erkenner
+// (`normVerweiseImText`) sieht nur ein aufgelöstes FEDLEX-Kürzel und übergibt
+// es an NormChip — der führt aus dem Leser hinaus nach Fedlex, obwohl der
+// Nutzer bereits in der geltenden Fassung genau dieses Erlasses steht. Gemessen
+// 31.8.2026: 6 Stellen, alle in Anhängen (VZV Anhang 4 × 4, SSV Anhang 3,
+// VVEA Anhang 2), alle mit vorhandenem Ziel-Token.
+//
+// Bedingungen, alle vier nötig (§1/§8): Lesesicht (`intern`), kein
+// Fremdgesetz-Chapeau, das erkannte Kürzel IST das eigene (kanonisierter
+// Identitäts-Vergleich, Register-Schlüssel oder Register-Kürzel), und der
+// Artikel existiert im gelesenen Erlass. Sonst bleibt der Fremd-Chip stehen —
+// der Absprung nach Fedlex ist der schlechtere, aber nie der falsche Weg.
+// Der angezeigte Text ist unverändert `s.anzeige` (zeichenidentisch, §1).
+function selbstSpanSprung(s: NormVerweisSpan, key: string, intern?: InternRefs): React.ReactNode {
+  if (!intern || intern.fremdKuerzel) return null;
+  const gesetz = erkenneFedlexGesetz(s.artikel);
+  if (!gesetz) return null;
+  const kanon = kuerzelKanon(gesetz);
+  const eigen = [intern.basisPfad.split('/').pop() ?? '', intern.eigenesKuerzel ?? ''].map(kuerzelKanon);
+  if (!eigen.includes(kanon)) return null;
+  // Nummern-Entnahme über DENSELBEN Erkenner wie der Fliesstext-Lauf (§5, keine
+  // zweite Zitierform-Wahrheit). `matchAll` arbeitet auf einem Klon und rührt
+  // den `lastIndex` von ART_INTERN nicht an — `exec` täte es und liesse den
+  // nächsten Aufruf mitten im Muster beginnen.
+  const m = s.artikel.matchAll(ART_INTERN).next().value;
+  if (!m) return null;
+  const token = intern.tokenMap.get(normRef(m[1]));
+  if (!token) return null;
+  return (
+    <a key={key} href={`${intern.basisPfad}#art-${token}`}
+      onClick={(e) => { e.preventDefault(); intern.springeZu(token); }}
+      className={INLINE_CLASS}>{s.anzeige}</a>
+  );
 }
 
 /** Fliesstext mit verlinkten Norm- UND Rechtsprechungs-Verweisen — Text bleibt
@@ -403,8 +539,11 @@ export function NormText({ text, intern }: { text: string; intern?: InternRefs }
     // Anker: anzeige === artikel → `anzeige` weglassen (SSR-byte-identisch zum
     // früheren <NormChip artikel={roh}>). Propagiertes Glied: Anzeige = reiner
     // Glied-Text (zeichenidentisch, §1), Auflösung über das synthetisierte Ziel.
+    // V-2 Ziel 3: nennt der Verweis den GELESENEN Erlass, bleibt der Sprung im
+    // Leser (Herleitung an `selbstSpanSprung`); sonst unverändert der Chip.
     teile.push(
-      <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
+      selbstSpanSprung(s, `${s.start}-${s.artikel}`, intern)
+      ?? <NormChip key={`${s.start}-${s.artikel}`} artikel={s.artikel}
         anzeige={s.propagiert ? s.anzeige : undefined} linkClass={INLINE_CLASS} zielIntern={false} />,
     );
     zuletzt = s.end;

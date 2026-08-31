@@ -350,7 +350,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     scrollBeiSuchwechsel: false,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
-  const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate });
+  const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel: erlass?.kuerzel }); // V-2
 
   useLeserSprungSpy({
     ebene: routenSegment, schluessel, eintraege, sektionen, ohneGliederung, istSekundaer, imPane, wurzel,
