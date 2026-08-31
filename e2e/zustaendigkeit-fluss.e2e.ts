@@ -4,14 +4,8 @@
 // spätere verhaltensneutrale Datei-Schlankheit (JSX-Extraktion) eine kaputte
 // Extraktion in einem Schritt- oder Ergebnis-Render. (plz-wahl.e2e.ts deckt den
 // Ort-Schritt mit PLZ-Kacheln bereits ab.)
-import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (m) => { if (m.type() === 'error') fehler.push(`console.error: ${m.text()}`) })
-  return fehler
-}
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 test.describe('Zuständigkeit — Zivil-Fluss + SchKG', () => {
   test('Zivil (Geldforderung): durch die Schritte bis zum Behörden-Ergebnis', async ({ page }) => {

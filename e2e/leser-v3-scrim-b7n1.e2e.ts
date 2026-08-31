@@ -26,16 +26,10 @@
 // der seine Farbe mit dem Thema wechselt, ist per Definition falsch.
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const SCRIM_FARBE = 'rgba(0, 0, 0, 0.3)'
 const PFAD = '/gesetze/bund/OR'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 const ansichtOeffner = (page: Page) => page.locator('[data-v3-ansicht]')
 const ansichtPanel = (page: Page) => page.locator('[data-v3-ansicht-panel]')

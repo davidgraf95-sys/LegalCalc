@@ -17,13 +17,7 @@
 // verbleibende Buchstaben-Navigation.
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const leiste = (page: Page) =>
   page.getByRole('navigation', { name: 'Erlasse nach Anfangsbuchstaben' })

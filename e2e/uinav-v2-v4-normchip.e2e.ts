@@ -10,18 +10,12 @@
 // Tor-Griff ist `[data-norm-vorschau]` — EIN Selektor für beide Ausprägungen,
 // damit die Fälle nicht an der role kleben (die ist genau der Unterschied, den
 // B2 prüft: Klick ⇒ `dialog`, Hover ⇒ `group`).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const SEITE = '/vorlagen/mahnung'
 const CHIP = 'a[href="/gesetze/bund/OR#art-102"]'
 const VORSCHAU = '[data-norm-vorschau]'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 test.describe('V2/V4 — Norm-Chip: Hover-Vorschau und interner href', () => {
   test('(a) V4: der Kopf-Chip trägt den internen Reader-Pfad, kein target=_blank', async ({ page }) => {

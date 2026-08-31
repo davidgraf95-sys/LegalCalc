@@ -21,7 +21,7 @@ import { test, expect, type Page } from '@playwright/test'
 // (der Rahmen kann nicht mehr wachsen ⇒ (a) rot, weil die Spur den Text unter
 // das Lesemass drückt). Beide Beweise sind am 18.8.2026 gefahren worden.
 
-const ERLASS = '/gesetze/bund/STPO?leser=v3'
+const ERLASS = '/gesetze/bund/STPO'
 
 async function leserLaden(page: Page, breite: number): Promise<void> {
   await page.setViewportSize({ width: breite, height: 900 })

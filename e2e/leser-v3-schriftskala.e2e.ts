@@ -42,6 +42,7 @@
 //     diese Werte zu `SCHRIFT_REM` und zu `tailwind.config.js` passen, bewacht
 //     `src/tests/leser-schriftskala.test.ts` — hier zählt die gerenderte Wirkung.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /**
  * Die vier Stufen in gerechneten Pixeln bei 16-px-Wurzel (S2 · A-1):
@@ -49,13 +50,6 @@ import { test, expect, type Page } from '@playwright/test'
  * Produkt der Grundlagen-FAKTOREN, nicht handgesetzte Rundwerte.
  */
 const STUFEN_PX = [17, 18.36, 20.06, 22.1] as const
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 /** Der Normtext selbst — der Fliesstext-Container von Art. 1, nicht die
  *  Überschrift und nicht der Fussnoten-Apparat. */
@@ -100,7 +94,7 @@ async function wurzelGroesse(page: Page): Promise<number> {
 async function oeffneStPO(page: Page): Promise<string[]> {
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v3')
+  await page.goto('/gesetze/bund/STPO')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   // Das Optionsmenü steht im Ist-Stand offen; sollte es zugeklappt starten,

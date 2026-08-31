@@ -41,14 +41,8 @@
 // Textblocks: die ist input-ausgelöst, also kein CLS, und die Fahrplan-Zusage
 // lautet «kein Sprung», nicht «keine Bewegung».
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 /** Geometrie des Lesekörpers: Breite der Spalte + y der ersten fünf Artikel. */
 async function geometrie(page: Page): Promise<{ breite: number; ys: number[] }> {
@@ -107,7 +101,7 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
   test('(a) D @1440: Öffnen und Schliessen lassen y und Breite unverändert', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     // Erst nach Ruhe messen: der Erlass-Kopf und die Gliederung wachsen beim
@@ -144,7 +138,7 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
   test('(b) H @390: das Blatt liegt über dem Text und bewegt ihn nicht', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     await page.waitForTimeout(600)

@@ -15,6 +15,7 @@
 // §11.6.3 Sackgassen-Beweis · §11.6.8 a11y (Text-Wort, nicht nur Farbe) ·
 // §11.6.9 Mobil @390 (kollabiert, keine Wucherung). Läuft gegen `vite preview`.
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 // CI-Härtung 19.7.2026 (BEFUND 3a): die IA-1-Walks laden EINMAL den ~4-MB-Artikel-
 // Index und warten per 20-s-Latch auf den «Sprung»-Treffer (sprungWalk). Auf dem
@@ -24,13 +25,6 @@ import { test, expect, type Page } from '@playwright/test'
 // KEIN Assertion-Change (§6.3): der Interaktions-Beweis (Enter → URL, Budget-Zählung)
 // bleibt unberührt; der Timeout greift nur bei Überschreitung und bremst grüne Läufe nicht.
 test.describe.configure({ timeout: 90_000 })
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 const sucheFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
 const listbox = (page: Page) => page.getByRole('listbox', { name: 'Suchtreffer' })

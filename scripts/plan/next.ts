@@ -11,7 +11,12 @@ if (!process.env.VITEST) {
   const b = resolve(einheiten, queue);
   const z = (s: string) => console.log(s);
   z(`▶ OBERSTER offener Schritt: ${b.readyNow[0] ?? '—'}`);
-  z(`▶ JETZT baubar (ready-now): ${b.readyNow.join(', ') || '—'}`);
+  // Token-Diät 31.8.2026 (QS-EFFIZIENZ): die volle ready-now-Aufzählung stand
+  // doppelt da — jede ID steht bereits in den Lanes (gruppiert nach Feld, also
+  // nützlicher). Diese Ausgabe liest JEDE Session und jeder Station-A-Agent;
+  // der Zähler ersetzt die Liste (~-0.5 KB je Aufruf), plan:dump bleibt die
+  // Vollform für Maschinenleser.
+  z(`▶ JETZT baubar: ${b.readyNow.length} Schritte — nach Feld gebündelt in den Lanes (Vollliste: plan:dump):`);
   z(`  Parallel-Lanes: ${b.lanes.map((l) => `[${l.join(' + ')}]`).join('  ') || '—'}`);
   if (b.wartetDep.length) z(`⏳ wartet auf dep: ${b.wartetDep.map((x) => `${x.id}→${x.offen.join(',')}`).join(' · ')}`);
   if (b.blockiert.length) z(`⛔ blockiert: ${b.blockiert.map((x) => `${x.id}(${x.blocker})`).join(', ')}`);

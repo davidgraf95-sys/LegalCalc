@@ -26,7 +26,7 @@
 import { test, expect, type Page } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
 
-const STPO = '/gesetze/bund/STPO?leser=v3#art-5'
+const STPO = '/gesetze/bund/STPO#art-5'
 
 async function panelMitFilterOeffnen(page: Page): Promise<void> {
   await page.goto(STPO)

@@ -24,14 +24,8 @@ import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // LM-202-Beobachtung «die Adresse steht auf #art-257_d, die Breadcrumb auf
 // Art. 400».
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 // Boot-Budget des Lesers. 20 s reichen für MWSTG, aber NICHT für das OR unter
 // Parallel-Last: im gemeinsamen Lauf mit den fünf Nachbar-Specs (5 Worker

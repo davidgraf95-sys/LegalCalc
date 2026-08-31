@@ -3,13 +3,7 @@
 // Sortierung (Alphabet/Erlass-Zahl/Region), Roh-Code→Klartext, Mobil-Vollnamen.
 // Reine Darstellung (§3); läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 async function keinOverflow(page: Page) {
   const b = await page.evaluate(() => ({

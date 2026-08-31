@@ -38,7 +38,7 @@ import { test, expect, type Page } from '@playwright/test'
 const BEGRIFF = 'Entschädigung'
 
 async function warteLeser(page: Page): Promise<void> {
-  await page.goto('/gesetze/bund/STPO?leser=v3')
+  await page.goto('/gesetze/bund/STPO')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('StPO', { timeout: 30000 })
   await expect(page.locator('[data-v3-suchsprung] input').first()).toBeVisible({ timeout: 20000 })
   await page.evaluate(() => document.fonts?.ready)

@@ -16,13 +16,7 @@
 // Ein Anker-Vergleich («noch bei Art. 429») liesse eine Verschiebung um eine
 // halbe Bildschirmhöhe durchgehen.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const suchFeld = (page: Page) => page.locator('[data-v3-suchsprung] input')
 
@@ -32,7 +26,7 @@ const scrollY = (page: Page) => page.evaluate(() => Math.round(window.scrollY))
 async function oeffneUndScrolle(page: Page): Promise<{ fehler: string[]; y: number }> {
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v3')
+  await page.goto('/gesetze/bund/STPO')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   await expect(suchFeld(page)).toBeVisible({ timeout: 20_000 })
@@ -92,7 +86,7 @@ test.describe('H2 / Pos. 14 — Suche verlassen bewegt den Lesetext um 0 px', ()
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(suchFeld(page)).toBeVisible({ timeout: 20_000 })
 
     await expect(page.locator('[data-v3-such-leeren]')).toHaveCount(0)
@@ -127,7 +121,7 @@ test.describe('A2 / Pos. 14 — im Blatt schliesst Esc den Dialog, ohne zu sprin
     test.slow()
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 780 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
 

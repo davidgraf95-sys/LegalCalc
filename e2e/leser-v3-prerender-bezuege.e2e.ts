@@ -81,7 +81,7 @@ test.describe('H3 — Prerender bleibt unberührt, das Nachladen bleibt im Brows
   test('(b) Bezugs-Shard: null Anfragen beim Seitenaufruf, genau eine nach dem Öffnen', async ({ page }) => {
     const anfragen = bezugAnfragen(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
     // Der Lader läuft im Leerlauf (`beiLeerlauf`) — es wird also bewusst gewartet,

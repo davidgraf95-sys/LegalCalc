@@ -11,20 +11,14 @@
 // sichtbar durchmischt hätte, und mit «Entschädigung» ein Begriff, der über den
 // ganzen Erlass verstreut vorkommt.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const suchFeld = (page: Page) => page.locator('[data-v3-suchsprung] input')
 
 async function oeffneStPO(page: Page): Promise<string[]> {
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/STPO?leser=v3')
+  await page.goto('/gesetze/bund/STPO')
   await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
   await expect(suchFeld(page)).toBeVisible({ timeout: 20_000 })
