@@ -90,7 +90,9 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
   // («Fussnoten (N)») und dem Zähler-Badge daneben. Menü öffnen und darauf zugreifen.
   await ansichtOeffnen(page);
   const gruppe = page.locator(ANSICHT_PANEL).first();
-  const fn = gruppe.getByRole('switch', { name: /^Fussnoten \(\d+\)$/ }); // Zähler im Namen
+  // LM-025 (B8, 31.8.2026): der Accessible Name erklärt die Zahl jetzt —
+  // «Fussnoten (932 im Erlass)» statt der unerklärten «(932)».
+  const fn = gruppe.getByRole('switch', { name: /^Fussnoten \(\d+ im Erlass\)$/ });
   await expect(fn).toBeVisible({ timeout: 15000 });
   await expect(fn).toHaveAttribute('aria-checked', 'true'); // Default: Fussnoten an
 
