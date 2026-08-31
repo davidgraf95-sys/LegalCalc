@@ -41,6 +41,47 @@ const ZIEL = resolve(wurzel, 'public/such-index/artikel.json');
 export const EBENEN = ['bund', 'kanton'] as const;
 export type Ebene = (typeof EBENEN)[number];
 
+/**
+ * EBENEN-WAHL über `SUCHE_INDEX_EBENEN` — VORBEREITET, NICHT SCHARF
+ * (QS-BASIS (d) K3, 31.8.2026).
+ *
+ * Default ist UNVERÄNDERT «alle Ebenen»: ohne gesetzte Variable ist dieser Schalter
+ * wirkungslos und `artikel.json` byte-gleich wie zuvor (bewiesen in
+ * src/tests/suchIndex.test.ts). Gesetzt (z. B. `SUCHE_INDEX_EBENEN=bund`) schreibt
+ * der Generator einen Index OHNE die weggelassenen Ebenen.
+ *
+ * WOZU. Der Kanton-Anteil am ausgelieferten Suchindex sind 4.26 MiB gzip = 45.2 %
+ * (Messung K0, bibliothek/register/suche-edge-nullprobe-2026-08-31.md). Seit K1/K2
+ * findet und rangiert der Edge-Weg kantonale Artikel gleichwertig — der statische
+ * Kanton-Anteil wäre also technisch entbehrlich.
+ *
+ * WARUM TROTZDEM AUS. Ihn abzuschalten heisst, dass kantonale Treffer NUR noch
+ * online kommen. Fällt die Edge-Suche aus (Timeout, 5-min-Sperre in
+ * onlineVolltext.ts, fehlende Turso-Env), sucht die Seite dann in einem Korpus
+ * ohne Kantone. Ob das Produkt das anbieten darf und wie es die Lücke ausweist,
+ * ist ein §8-Entscheid über die eigene Vollständigkeit — kein technischer. Er
+ * gehört zusammen mit der Heiss/Kalt-Grenze (Fahrplan §12.2) zu David.
+ * Restliste für die Scharfschaltung: Bericht dieses Schritts, «K3-Scharfschaltung».
+ */
+export function gewaehlteEbenen(roh = process.env.SUCHE_INDEX_EBENEN): readonly Ebene[] {
+  const wunsch = (roh ?? '').trim();
+  if (!wunsch) return EBENEN;
+  const genannt = new Set(wunsch.split(/[,\s]+/).filter(Boolean));
+  const unbekannt = [...genannt].filter((e) => !(EBENEN as readonly string[]).includes(e));
+  if (unbekannt.length > 0) {
+    // Ein Tippfehler darf NICHT still einen halben Index erzeugen — genau der
+    // Fehlmodus aus PR #313 (halber Index, nie rot geworden).
+    throw new Error(
+      `SUCHE_INDEX_EBENEN: unbekannte Ebene(n) «${unbekannt.join(', ')}» — erlaubt: ${EBENEN.join(', ')}.`,
+    );
+  }
+  // Reihenfolge bleibt die von EBENEN (§2 stabile Eintrags-Reihenfolge), nicht die
+  // Nenn-Reihenfolge der Variable.
+  const gewaehlt = EBENEN.filter((e) => genannt.has(e));
+  if (gewaehlt.length === 0) throw new Error('SUCHE_INDEX_EBENEN: keine gültige Ebene genannt.');
+  return gewaehlt;
+}
+
 // `quelle` trägt bei kantonalen Snapshots das Kantonskürzel («AG», «BS»); Bund
 // führt das Feld nicht. Es ist die Grundlage der ehrlichen Herkunfts-Anzeige.
 interface Eintrag { id: string; erlass: string; artikel: string; artikelLabel: string; grundlage?: string; quelle?: string; bloecke?: Block[] }
@@ -156,16 +197,20 @@ export interface Suchindex {
   uebersprungen: Uebersprungen[];
 }
 
-/** Gesamt-Index über alle Ebenen, in EBENEN-Reihenfolge (Bund vor Kanton). */
-export function baueIndex(): Suchindex {
+/** Gesamt-Index über die gewählten Ebenen, in EBENEN-Reihenfolge (Bund vor Kanton).
+ *  Ohne gesetztes `SUCHE_INDEX_EBENEN` sind das ALLE Ebenen — unverändertes Verhalten. */
+export function baueIndex(ebenen: readonly Ebene[] = gewaehlteEbenen()): Suchindex {
   const eintraege: IndexEintrag[] = [];
   const uebersprungen: Uebersprungen[] = [];
-  for (const ebene of EBENEN) {
+  for (const ebene of ebenen) {
     const teil = baueEbenenIndex(ebene);
     eintraege.push(...teil.eintraege);
     uebersprungen.push(...teil.uebersprungen);
   }
-  return { erzeugt: 'generiert', ebenen: EBENEN, eintraege, uebersprungen };
+  // `ebenen` im Artefakt sind die TATSÄCHLICH indexierten — der Client liest daraus,
+  // welche Ebenen er erwarten darf. Eine weggelassene Ebene ist damit im Artefakt
+  // sichtbar und nicht bloss durch Abwesenheit von Einträgen zu erraten (§8).
+  return { erzeugt: 'generiert', ebenen, eintraege, uebersprungen };
 }
 
 // CLI-Logik NICHT unter vitest ausführen — der Test importiert baueIndex
@@ -178,7 +223,19 @@ if (!process.env.VITEST) {
   // Je-Ebene-Zählung für die Ausgabe: der Bericht muss zeigen, dass BEIDE Ebenen
   // im Index sind — eine blosse Gesamtzahl verstiege sich zur Aussage «viel» und
   // verschwiege eine leer gelaufene Ebene (§8).
-  const jeEbene = EBENEN.map((eb) => `${eb} ${index.eintraege.filter((e) => e.eb === eb).length}`).join(' · ');
+  // Bewusst über ALLE EBENEN, nicht nur über die gewählten: eine weggelassene Ebene
+  // erscheint so als «kanton 0 (WEGGELASSEN)» statt gar nicht — Abwesenheit muss
+  // sichtbar sein, nicht erschliessbar (§8).
+  const jeEbene = EBENEN.map((eb) => {
+    const n = index.eintraege.filter((e) => e.eb === eb).length;
+    return index.ebenen.includes(eb) ? `${eb} ${n}` : `${eb} 0 (WEGGELASSEN)`;
+  }).join(' · ');
+  if (index.ebenen.length < EBENEN.length) {
+    console.log(
+      `gen:suchindex: SUCHE_INDEX_EBENEN ist gesetzt — Index trägt NUR ${index.ebenen.join(', ')}. ` +
+        'Die weggelassenen Ebenen müssen am Edge abgedeckt und in der Oberfläche als fehlend ausgewiesen sein (§8).',
+    );
+  }
   if (istCheck) {
     let alt = '';
     try { alt = readFileSync(ZIEL, 'utf8'); } catch {
