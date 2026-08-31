@@ -108,11 +108,11 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Hier die NICHT-Risiko-Einheiten (reine Darstellung/Suche/Anzeige); Extraktion & Daten liegen in
   `W2·13-KANTONE-DATEN`. **Fertig, wenn** K-1 bis K-11 abgehakt sind.
   **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
-  - [ ] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5)* — reine Display-Schicht. §1-A.
-  - [ ] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest)* — Currency-Chip, Kanton-Hinweis, «Stand unbekannt». §1-A.
-  - [ ] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36)* — Edge-DTO um `ebene`/`kanton`. §1-A.
-  - [ ] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — EINE Einheit, golden-neutral, harte Binnenfolge F41 vor F40. §1-A.
-  - [ ] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — **erst messen**, nichts «fixen» vor dem Profil. §1-A.
+  - [x] **K-1 · Reader-Treue P0** *(F24/F25/F28/F33/F29-Display/F5)* — ✅ 31.8.2026: F24 dokumentlinear (4 Erlasse inkl. Bund/KKV), F25 pathname-Decode (3 GL-Schlüssel geheilt), F5 fr/it (+38 Erlasse); F28/F33 waren seit 18.8. gebaut, F29 gegenstandslos (0 `*`-Vorkommen). §1-A + Ist-Stand-Block Fahrplan §2.
+  - [x] **K-2 · §8-Ehrlichkeit UI** *(F26-UI/F37/F44/F27-Rest)* — ✅ 31.8.2026: «Geltung ungeprüft» (interaktiv + prerendert, lebt-Gate), «Stand unbekannt», Kanton-Leerzustände der Panels, Systematik-Hinweis; F44 war seit K-2c gebaut. §1-A.
+  - [x] **K-3 · Suche: Kanton-Treffer auf die richtige Ebene** *(F35/F36)* — ✅ 31.8.2026: Edge-DTO additiv um ebene/kanton, Href + Kanton-Marke, Ebenen-Routing via Kantonskürzel-Regel (heilt auch chipZiel & Co.); Betriebs-Vorbehalt: Live-Turso braucht Spalten aus PR #313 (nach Merge geprüft). §1-A.
+  - [x] **K-5 · NormText-Verweise Kanton** *(F41 → F40 → F42)* — ✅ 31.8.2026: F41 (199 falsche Self-Links gesperrt, 0 nachher), F40 (3267 §-Links in 464 Erlassen), Bund byte-unverändert; F42 entfällt nach Messung (<1 % Ertrag, Falschlink-Risiko). §1-A.
+  - [x] **K-11 · Kanton-Reader-Performance profilieren** *(F32)* — ✅ 31.8.2026 NUR gemessen: 50-s-Symptom nicht reproduzierbar, Blocker beziffert (753-KB-Register je Leserseite u. a.), Wächter-Route im Lighthouse-Tor, Dossier `bibliothek/seo/kanton-reader-profil-2026-08-31.md`; Fixes = eigener Schritt mit §15-Bewertung. §1-A.
   - [ ] **des/der-Guard Bund passus-tolerant** *(K-5-Ausläufer, Messung 31.8.2026)* — hätte 371 Self-Links in 226 **Bundes**-Erlassen entfernt ⇒ fachliche Änderung mit eigenem Schritt (§6.3), nicht golden-neutral; Caveat: die «über»-Alternative erzeugt echte Self-Verweise (VTS art_222j), 7 von 8 Stichproben der Kandidaten waren falsch.
   - [ ] **«§ N» in Fremdgesetz-Chapeau-Items verlinken** *(K-5-Lücke, 31.8.2026)* — `ArtikelBody` baut `fremdIntern` ohne `paragrafDesigniert`; dort bleibt «§ N» unverlinkt (konservativ, §1-konform — Nachzug klein).
 
