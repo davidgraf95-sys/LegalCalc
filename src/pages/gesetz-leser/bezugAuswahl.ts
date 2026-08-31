@@ -9,17 +9,39 @@
 // Zustand — der Zustand lebt im Leser-Options-Store (`leserOptionen.ts`).
 //
 // ── WARUM DER DEFAULT NUR `bge` KENNT (§8, konservativ) ─────────────────────
-// Der heutige Reader zeigt am Artikel die BGE-Leitfälle aus dem schlanken
-// `norm-index/<Erlass>.json`. Der Bezugs-Shard ist dessen OBERMENGE (siehe
-// Abgrenzungs-Kommentar in `bezuege.ts`) und mit 717 KB am grössten Erlass
-// deutlich schwerer. Ein Default, der ihn mitlädt, machte JEDEN Leser teurer,
-// um eine Kante zu zeigen, nach der niemand gefragt hat. Darum:
-//   · Grundzustand = genau `{bge}` ⇒ heutiger Pfad, heutiger Shard, heutige
-//     Darstellung — byte-gleich, kein zusätzlicher Fetch (§6, §15).
-//   · Sobald der Nutzer eine weitere Klasse zuschaltet, tritt der Bezugs-Shard
-//     AN DIE STELLE des schlanken (nie zusätzlich, §5) und die Zeile rendert
-//     nach Status-Klassen gruppiert.
-// `istErweitert` ist die eine Stelle, die diese Weiche stellt.
+// Der Bezugs-Shard ist die OBERMENGE des schlanken `norm-index/<Erlass>.json`
+// (siehe Abgrenzungs-Kommentar in `bezuege.ts`) und mit 717 KB am grössten
+// Erlass deutlich schwerer. Ein Default, der ALLE Instanzen einschaltet, machte
+// die erste Ansicht des Panels teurer und lauter, um Kanten zu zeigen, nach
+// denen niemand gefragt hat. Der Grundzustand ist darum genau `{bge}`, und alles
+// Weitere ist zuschaltbar (§9/B4 «Default konservativ»).
+//
+// ── WO DIE LADEWEICHE WIRKLICH STEHT (W2·7-VZUI, nachgemessen 31.8.2026) ────
+// Bis hierher behauptete dieser Kopf: «Grundzustand ⇒ heutiger Shard, heutige
+// Darstellung — byte-gleich, kein zusätzlicher Fetch», und: «`istErweitert` ist
+// die eine Stelle, die diese Weiche stellt». Beides trifft am Ist-Stand NICHT
+// zu, und die Zusage war damit eine zweite Wahrheit (§5) an einer §15-Stelle:
+//
+//   · `istErweitert` stellt KEINE Ladeweiche. Ihr einziger Konsument ist
+//     `BezugFacettenWahl.tsx:106` — sie wählt dort den Hinweistext unter den
+//     Schaltern, sonst nichts. Der Lader (`bezuegeLaden.ts`) fragt sie nie.
+//   · Die Weiche ist das PANEL-GATE: `panelModell.usePanelBezuege` reicht den
+//     Erlass-Key erst durch, nachdem das Panel einmal offen war (`jeGeoeffnet`).
+//     Vor der Nutzer-Geste geht kein Byte über die Leitung — auch nicht im
+//     Grundzustand `{bge}`, in dem der alte Kommentar den Shard für «heutigen
+//     Pfad» hielt.
+//   · Der SCHLANKE Shard wird im Gesetz-Leser überhaupt nicht mehr geholt: die
+//     Lesespalte reicht seit H3 weder `bezuege` noch `leitfaelle` an den Kern
+//     (`v3/LeserLesespalte.tsx:64–88`), und die V3-Hülle ist seit dem H4-Flip
+//     die einzige (`GesetzLeser.tsx:83`). Der «Ersetzungs»-Satz beschrieb eine
+//     Umschaltung zwischen zwei Shards, von denen nur noch einer geladen wird.
+//
+// Das §15-Versprechen ist damit STRENGER eingelöst als der alte Kommentar
+// behauptete — nur an einer anderen Stelle. Beweis nicht in Prosa, sondern als
+// Tor: `e2e/leser-v3-prerender-bezuege.e2e.ts` (b) misst am laufenden Leser,
+// dass beim Seitenaufruf WEDER `rechtsprechung/bezuege/` NOCH
+// `rechtsprechung/norm-index` angefragt wird und erst das Öffnen genau einen
+// Fetch auslöst.
 //
 // ── WARUM ES KEINEN EIGENEN «EBENE»-SCHALTER GIBT (§5) ──────────────────────
 // `BezugsFacetten.ebene` ist aus `status` ableitbar: bge/bger/eidg sind
@@ -82,12 +104,24 @@ export const KLASSE_SCHALTER: Readonly<Record<BezugStatus, string>> = {
 };
 
 /**
- * Ist die Auswahl vom Grundzustand abgewichen? Nur dann tritt der (deutlich
- * grössere) Bezugs-Shard an die Stelle des schlanken Leitfall-Shards.
+ * Ist die Auswahl vom Grundzustand abgewichen? «Abgewichen» heisst: die Menge
+ * ist nicht GENAU `{bge}`. Auch das ABWÄHLEN von `bge` zählt dazu — wer nur
+ * kantonale Entscheide sehen will, ist so weit vom Grundzustand entfernt wie
+ * wer alles sehen will. Rein (§2).
  *
- * «Abgewichen» heisst: die Menge ist nicht GENAU `{bge}`. Auch das ABWÄHLEN
- * von `bge` zählt dazu — wer nur kantonale Entscheide sehen will, braucht den
- * Bezugs-Shard genauso wie wer alles sehen will. Rein (§2).
+ * ── WAS SIE NICHT (MEHR) TUT: LADEN ENTSCHEIDEN ────────────────────────────
+ * Die frühere Zusage «nur dann tritt der grössere Bezugs-Shard an die Stelle des
+ * schlanken» ist gestrichen, nicht umformuliert: sie beschrieb eine Weiche, die
+ * hier nie stand (Herleitung im Dateikopf). Einziger Konsument ist der
+ * Hinweistext unter den Instanz-Schaltern (`BezugFacettenWahl.tsx:106`) — er
+ * sagt im Grundzustand etwas anderes als in der erweiterten Wahl.
+ *
+ * BEHALTEN STATT GESTRICHEN (§17-Rückbau-Prüfung 31.8.2026): eine Funktion mit
+ * genau einem Konsumenten ist ein Streich-Kandidat. Sie bleibt, weil der
+ * Unterschied «Grundzustand ↔ abgewichen» eine echte Aussage über die Auswahl
+ * ist, die der Text braucht, und weil sie als reine Funktion getestet ist
+ * (`src/tests/bezug-auswahl.test.ts`), während die Inline-Bedingung im JSX es
+ * nicht wäre.
  */
 export function istErweitert(klassen: readonly BezugStatus[]): boolean {
   return !(klassen.length === 1 && klassen[0] === 'bge');

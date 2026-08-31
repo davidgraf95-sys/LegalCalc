@@ -19,6 +19,12 @@ import type { Geladen, MaterialStand } from './panelKontextLaden';
 // Sache — sie in diesen Reiter zu kippen wäre die Rückkehr zu den sechs
 // bedingten Sektionen, die Kap. 4d gerade auflöst. Offener Punkt im
 // Vollzugsvermerk, nicht stillschweigend weggelassen.
+//
+// ── DER OFFENE PUNKT IST GESCHLOSSEN (W2·7-VZUI, 31.8.2026) ─────────────────
+// Der Absatz oben bleibt wörtlich stehen — er war und ist richtig: hier gehören
+// die beiden nicht hin. Was fehlte, war ihr eigener Ort, und den gibt es jetzt:
+// Reiter «Anwendung» (`PanelAnwendung.tsx`, vierter Eintrag in `PANEL_REITER`).
+// Wer erwägt, hier eine dritte Sektion aufzumachen, liest zuerst den Kopf dort.
 
 export function PanelMaterialien({ stand, quelleUrl }: {
   stand: Geladen<MaterialStand>;
