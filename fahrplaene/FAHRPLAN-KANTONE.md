@@ -142,6 +142,34 @@
     Detail: diese Datei §1-D/K-18.
   Trailer `Roadmap: W2·13-KANTONE`.
 
+> **Ist-Stand-Messung 31.8.2026 (lebendige Spec, Anlass: Bau-Session W2·13-KANTONE; Erhebung
+> read-only am Stand `337d2c9ef`).** Die §1-A-Specs (12.7., archiviert) sind an mehreren Stellen
+> vom Ist-Code überholt — massgeblich für den Bau ist dieser Block:
+> - **Bereits gebaut:** K-1c «SR»-Label (Ä75 18.8.2026, Weiche `src/pages/gesetz-leser/helpers.tsx`
+>   `kennungEtikett`) · K-1d Titel-Dopplung Kopf-Teil (`ErlassLeserKopf.tsx`, `titelRedundant`) ·
+>   K-2c Abdeckungs-Kontextzeile (`src/pages/Gesetze.tsx`, Kommentar nennt K-2c).
+> - **Gegenstandslos:** K-1e Fussnoten-Stern-Strip — 0 `*`-Vorkommen in 23 370 Marginalien +
+>   17 670 Titeln (A42-Generatorfix verwirft `<strong>*</strong>` quellseitig); kein Display-Code
+>   bauen (§17-Gegengewicht: was nicht scheitern kann, wird gestrichen statt bewacht).
+> - **Zahlen überholt:** F24 betrifft nach der Regenerierung vom 27.7. noch **3** Erlasse
+>   (BS-569.500 · GR-310.250 · ZG-641.1), nicht 404; Beleg AG-291.150 trägt heute durchgehend
+>   `gliederung`. F26-Prämisse falsifiziert: `currency.json` hat 0 kantonale Einträge — der Chip
+>   behauptet keine Geltung mehr; offen ist nur die fehlende zweite Stufe («Geltung ungeprüft»).
+> - **Anker-Umzüge:** `inhalt-volltext.tsx`-Zweig → `v3/LeserLesespalte.tsx` (Block-vor-Sektionen);
+>   `GesetzLeser.tsx:6` → `src/pages/GesetzLeser.tsx:56`; `relevanz.ts` →
+>   `src/lib/normtext/relevanz.ts`; `suche-kern.ts` → `scripts/datenhaltung/suche-kern.ts`;
+>   statischer Suchpfad `artikelVolltext.ts` ist bereits ebenen-bewusst, nur der Online-Pfad
+>   (`onlineVolltext.ts`) nicht.
+> - **K-11-Profil (31.8.2026, Dossier `bibliothek/seo/kanton-reader-profil-2026-08-31.md`):** das
+>   50-s-Symptom der Spec war ohne Messbedingung notiert und liess sich nicht reproduzieren
+>   (Maximum 21.6 s bei 6×-CPU + langsamem 3G; Streuung n=12: 8.7 %). Gemessene Blocker:
+>   `/rechtsprechung/register.json` (753 KB gzip) lädt auf jeder Leserseite (−16–19 % First-Article
+>   im A/B) · serielle Kette Register→Snapshot · Drei-Wellen-Chunk-Kaskade. Fixes = eigener
+>   Schritt mit §15-Logikverlust-Bewertung, nicht Teil von W2·13-KANTONE.
+> - **Prozess:** `src/lib/normtext/**` zählt mechanisch als Risikopfad (`istRisikoPfad`) — auch
+>   Display-nahe Edits dort (relevanz.ts, erlassKopfText.ts) brauchen die Gegenprüfung. Der
+>   K-3-Deploy-Vorbehalt («§9-Ja») vom 12.7. ist durch Davids Blanko-Go 24.7. entsperrt.
+
 ### Teilschritt-Spezifikation W2·13-KANTONE (verschoben 31.7.2026)
 
 *Aus `ROADMAP.md` hierher verschoben (QS-TOK-Nachdiät, 31.7.2026, Nachhalte-Konvention*

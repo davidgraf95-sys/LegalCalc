@@ -3,6 +3,8 @@ import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { MaterialKarte } from '../components/materialien/MaterialKarte';
+import { Leerzustand } from '../components/ui/Leerzustand';
+import { GruppenKopf } from '../components/ui/GruppenKopf';
 import {
   ladeMaterialManifest, gruppiereNachBehoerde, filtere, vorhandeneDoktypen,
   type MaterialFilterWerte,
@@ -125,17 +127,28 @@ export function Materialien() {
           </div>
 
           {gruppen.length === 0 ? (
-            <p className="text-body-s text-ink-500">Kein Material gefunden. Filter zurücksetzen?</p>
+            /* W2·19-DESIGN-KONSISTENZ · D-7: hier stand «Kein Material gefunden.
+               Filter zurücksetzen?» — eine FRAGE an den Nutzer, die keine Antwort
+               entgegennahm. Der Leerzustand berichtet einen Zustand (Aussagesatz);
+               die Handlungsmöglichkeit steht als Bedienelement daneben, nicht als
+               rhetorische Frage im Satz (§8). Der Weiterweg räumt alle drei
+               Achsen dieser Rubrik ab — Behörde, Dokumenttyp, lokales Suchfeld —
+               weil jede von ihnen allein den Leerlauf verursacht haben kann. */
+            <Leerzustand art="filter" text="Kein Material gefunden."
+              weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setBehoerde(''); setDoktyp(''); setSuche(''); } }} />
           ) : (
             <div className="space-y-10">
               {gruppen.map((g) => (
                 <section key={g.behoerde} id={`b-${g.behoerde}`} className="space-y-3 scroll-mt-24">
                   <div className="space-y-1.5">
-                    <div className="flex items-center gap-3">
-                      <h2 className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{g.kuerzel}</h2>
-                      <span aria-hidden className="flex-1 h-px bg-line" />
-                      <span className="num text-body-s text-ink-500">{g.materialien.length}</span>
-                    </div>
+                    {/* C-6 (31.8.2026): der Behörden-Gruppenkopf war einer von
+                        zwei Sans-H3-Ausreissern unter sonst durchgehend
+                        Overline-gesetzten Gruppenköpfen. Overline ist Kanon
+                        (DESIGN-REGLEMENT §G-e i. d. F. 29.8.2026: kleine
+                        Struktur-Etiketten beschriften eine Region). Die
+                        Angleichung ist sichtbar und gewollt — der ausgeschriebene
+                        Behördenname bleibt als Lede darunter stehen. */}
+                    <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
                     <p className="text-body-s text-ink-500 max-w-reading">{g.name}</p>
                   </div>
                   <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3')}>

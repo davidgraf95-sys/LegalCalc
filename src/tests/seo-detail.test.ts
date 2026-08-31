@@ -66,6 +66,11 @@ describe('metaFuerErlass()', () => {
     expect(m.beschreibung).toContain('Stand');
     expect(m.beschreibung.length).toBeGreaterThan(50);
   });
+  it('leerer stand → «Stand unbekannt» statt «Stand ,» in der Beschreibung (§9-Bug-Check Fund 1)', () => {
+    const m = metaFuerErlass({ ...or, stand: '' });
+    expect(m.beschreibung).toContain('Stand unbekannt,');
+    expect(m.beschreibung).not.toContain('Stand ,');
+  });
 });
 
 describe('jsonLdFuerErlass()', () => {
@@ -103,6 +108,43 @@ describe('erlassVolltextHtml()', () => {
     // Beginn des echten Textes muss (escaped) im HTML stehen
     const probe = ersterText!.slice(0, 24).replace(/&/g, '&amp;').replace(/</g, '&lt;');
     expect(html).toContain(probe);
+  });
+});
+
+describe('erlassVolltextHtml() — §5-Gleichlauf mit dem interaktiven Kopf (K-2)', () => {
+  const kanton = erlasse.find((e) => e.ebene === 'kanton' && e.datei && e.stand)!;
+  const datei: NormSnapshotDatei = JSON.parse(
+    readFileSync(join(PUB, 'normtext', kanton.datei!), 'utf8'),
+  );
+  it('Kantonserlass ohne Currency-Beleg trägt «Geltung ungeprüft» auch prerendert', () => {
+    const html = erlassVolltextHtml(kanton, datei);
+    expect(html).toContain('Geltung ungeprüft');
+  });
+  it('Bund ohne Beleg bleibt unverändert (keine Ungeprüft-Zeile)', () => {
+    const orDatei: NormSnapshotDatei = JSON.parse(
+      readFileSync(join(PUB, 'normtext', or.datei!), 'utf8'),
+    );
+    expect(erlassVolltextHtml(or, orDatei)).not.toContain('Geltung ungeprüft');
+  });
+  it('aufgehobener Kantonserlass trägt KEINE Ungeprüft-Zeile (lebt-Gate wie im interaktiven Kopf)', () => {
+    const html = erlassVolltextHtml(
+      { ...kanton, aufgehoben: { seit: '2020-01-01', quelleUrl: kanton.quelleUrl } as never },
+      datei,
+    );
+    expect(html).not.toContain('Geltung ungeprüft');
+  });
+  it('aufgehobener Erlass trägt auch KEINEN Standausweis-Satz (lebt-Gate beider Zweige)', () => {
+    const html = erlassVolltextHtml(
+      { ...kanton, aufgehoben: { seit: '2020-01-01', quelleUrl: kanton.quelleUrl } as never },
+      datei,
+      { geprueftAm: '2026-08-01' },
+    );
+    expect(html).not.toContain('geprüft am');
+  });
+  it('leerer stand wird «Stand unbekannt» statt «Stand » (K-2d)', () => {
+    const html = erlassVolltextHtml({ ...kanton, stand: '' }, datei);
+    expect(html).toContain('Stand unbekannt');
+    expect(html).not.toContain('Stand  ·');
   });
 });
 

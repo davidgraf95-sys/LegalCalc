@@ -45,7 +45,7 @@ export function Begriff({ schluessel, children, ariaLabel, className = '' }: {
         aria-describedby={offen ? id : undefined}
         aria-expanded={offen}
         onClick={() => setOffen((v) => !v)}
-        className={`cursor-help underline decoration-dotted decoration-ink-300 underline-offset-2 hover:decoration-brass-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brass-600 ${className}`}
+        className={`cursor-help underline decoration-dotted decoration-ink-300 underline-offset-2 hover:decoration-brass-500 ${className}`}
       >
         {children ?? eintrag.begriff}
       </button>

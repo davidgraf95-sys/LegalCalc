@@ -1,6 +1,7 @@
 // H-10 (§6.6 billig, B27): reiner Move aus Gesetze.tsx — Props/Verhalten unverändert.
 import { useMemo, useState } from 'react';
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
+import { GruppenKopf } from '../../components/ui/GruppenKopf';
 import { type KantonGruppe } from '../../lib/normtext/browse';
 import { GROSSREGIONEN } from '../../data/grossregionen';
 // Kanton-Vollnamen: EINE Quelle (§5) — dieselbe Tabelle wie die Tarif-Domäne.
@@ -165,11 +166,7 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle, ansicht, onAnsic
         <div className="space-y-5">
           {nachRegion.map((r) => (
             <section key={r.id} className="space-y-2.5">
-              <div className="flex items-center gap-3">
-                <h3 className="lc-overline text-brass-700">{r.name}</h3>
-                <span className="num text-xs text-ink-500">{r.eintraege.length}</span>
-                <span aria-hidden className="flex-1 h-px bg-line" />
-              </div>
+              <GruppenKopf titel={r.name} zahl={r.eintraege.length} />
               <div className={rasterKlasse}>{r.eintraege.map(kachel)}</div>
             </section>
           ))}

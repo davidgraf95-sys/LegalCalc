@@ -24,6 +24,18 @@ export interface Fundstelle {
   erlass?: string;
   artikel?: string;
   quelleUrl: string;
+  /**
+   * Daten-Ebene des Erlasses ('bund' | 'kanton') — W2·13-KANTONE K-3 / F35.
+   * ADDITIV und OPTIONAL: eine Antwort ohne dieses Feld (Alt-Client, gecachte
+   * Alt-Antwort, Aufrufer ohne die neuen Spalten) bleibt gültig; der Client
+   * fällt dann auf sein bisheriges Verhalten zurück, statt eine Ebene zu raten.
+   * Es ist die DATEN-Ebene, nicht das Routen-Segment: was in der Adresse steht,
+   * entscheidet clientseitig das Erlass-Register (erlassAdresse.ts) — ein
+   * Staatsvertrag trägt hier 'bund' und wohnt trotzdem unter /gesetze/international/.
+   */
+  ebene?: string;
+  /** Kantonskürzel («AG») bei ebene === 'kanton'; bei Bund gar nicht gesetzt. */
+  kanton?: string;
 }
 export interface ArtikelTreffer {
   id: string;
@@ -127,7 +139,7 @@ export function baueSnippet(text: string, query: string): string {
 export const SQL_ARTIKEL_COUNT = 'SELECT count(*) AS n FROM fts_artikel WHERE fts_artikel MATCH ?';
 export const SQL_ARTIKEL_TREFFER = `SELECT a.erlass_key AS erlass_key, a.art_id AS art_id, a.artikel AS artikel,
        a.artikel_label AS artikel_label, a.quelle_url AS quelle_url, a.bloecke_json AS bloecke_json,
-       e.abkuerzung AS abkuerzung
+       e.abkuerzung AS abkuerzung, e.ebene AS ebene, e.kanton AS kanton
 FROM fts_artikel
 JOIN artikel a ON a.rowid = fts_artikel.rowid
 JOIN erlasse e ON e.key = a.erlass_key
@@ -153,13 +165,27 @@ export interface ArtikelRohzeile {
   quelle_url: string;
   bloecke_json: string;
   abkuerzung: string;
+  /** 'bund' | 'kanton' (F35) — optional, damit ein Aufrufer ohne die neuen
+   *  Spalten weiterhin typkonform ist. */
+  ebene?: string | null;
+  /** Kantonskürzel; bei Bundeserlassen NULL (Spalte `erlasse.kanton`). */
+  kanton?: string | null;
 }
 export function formeArtikelTreffer(r: ArtikelRohzeile, query: string): ArtikelTreffer {
   return {
     id: `art:${r.erlass_key}:${r.art_id}`,
     titel: `${r.artikel_label} ${r.abkuerzung}`.trim(),
     snippet: baueSnippet(bloeckeText(r.bloecke_json), query),
-    fundstelle: { erlass: r.erlass_key, artikel: r.artikel, quelleUrl: r.quelle_url },
+    fundstelle: {
+      erlass: r.erlass_key,
+      artikel: r.artikel,
+      quelleUrl: r.quelle_url,
+      // Leere Werte werden WEGGELASSEN, nicht als '' gesendet (F35): ein leeres
+      // Feld im Draht liesse sich vom «kenne ich nicht» nicht unterscheiden —
+      // und genau daran hängt clientseitig der Alt-Verhaltens-Fallback (§8).
+      ...(r.ebene ? { ebene: r.ebene } : {}),
+      ...(r.kanton ? { kanton: r.kanton } : {}),
+    },
   };
 }
 

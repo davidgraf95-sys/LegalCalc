@@ -24,6 +24,8 @@ import { KantonWappen } from '../components/KantonWappen';
 import { StufeBadge, ErfassungsgradLegende } from '../components/normtext/Erfassungsgrad';
 import { erfassungsgrad, STUFE_WORT } from '../lib/normtext/erfassungsgrad';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
+import { Leerzustand } from '../components/ui/Leerzustand';
+import { GruppenKopf } from '../components/ui/GruppenKopf';
 // H-10 (§6.6 billig, B27): BundSystematik/KantonSystematik/KantonAuswahl
 // (+Kachel) als reiner Move nach gesetze-teile/ — Props/Verhalten unverändert.
 import { Gitter } from './gesetze-teile/geteilt';
@@ -440,19 +442,24 @@ export function Gesetze() {
                 <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{suche.trim()}»</p>
                 {bund.length > 0 && (
                   <section className="space-y-3">
-                    <h2 className="lc-overline">Bund <span className="text-ink-500">· {bund.length}</span></h2>
+                    {/* C-7 (31.8.2026): hier stand «Bund · 12» — der
+                        Mittelpunkt ist ein Trennzeichen ohne Aussage, die Zahl
+                        steht ohnehin allein in ihrem Slot. Nackte Zahl ist der
+                        hausweite Kanon (Zählung 12:6:4:2), und der Kopf trägt
+                        jetzt auch die Haarlinie der übrigen Gruppenköpfe. */}
+                    <GruppenKopf stufe={2} titel="Bund" zahl={bund.length} />
                     <Gitter erlasse={bund} />
                   </section>
                 )}
                 {gruppiereNachKanton(kant).map((g) => (
                   <section key={g.kanton} className="space-y-3">
-                    <h2 className="lc-overline">Kanton {g.kanton} <span className="text-ink-500">· {g.erlasse.length}</span></h2>
+                    <GruppenKopf stufe={2} titel={`Kanton ${g.kanton}`} zahl={g.erlasse.length} />
                     <Gitter erlasse={g.erlasse} />
                   </section>
                 ))}
                 {intl.length > 0 && (
                   <section className="space-y-3">
-                    <h2 className="lc-overline">International <span className="text-ink-500">· {intl.length}</span></h2>
+                    <GruppenKopf stufe={2} titel="International" zahl={intl.length} />
                     <Gitter erlasse={intl} />
                   </section>
                 )}
@@ -469,7 +476,15 @@ export function Gesetze() {
                         <Link to="/abdeckung" className="text-brass-700 no-underline hover:text-brass-600">Was ist durchsuchbar</Link>
                       </p>
                     </div>
-                  ) : <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>
+                  ) : (
+                    /* W2·19-DESIGN-KONSISTENZ · D-7: Suchlauf ins Leere ⇒
+                       `art="filter"` MIT Weiterweg. Der Ausweg existiert hier
+                       wirklich — das Suchfeld ist die einzige Achse dieses
+                       Zweigs (`treffer = dedupErlasse(filtern(basis, suche))`),
+                       und `setSuche('')` führt zurück auf die volle Sammlung. */
+                    <Leerzustand art="filter" text="Kein Erlass gefunden."
+                      weiterweg={{ text: 'Suche zurücksetzen', onKlick: () => setSuche('') }} />
+                  )
                 )}
               </div>
             );
@@ -482,7 +497,18 @@ export function Gesetze() {
           <div role="tabpanel" id={`ebene-panel-${ebene}`} aria-labelledby={`ebene-tab-${ebene}`}>
           {ebene === 'bund' && (
             gefiltert.length === 0
-              ? <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>
+              /* W2·19-DESIGN-KONSISTENZ · D-7: dieser Zweig läuft NUR bei leerem
+                 Suchfeld (`!suche.trim()` weiter oben) — `gefiltert` ist dann der
+                 ungefilterte Bundesbestand. Leer heisst hier also: es ist nichts
+                 da (Ladefehler/leeres Manifest), nicht «etwas ist verdeckt». Kein
+                 Weiterweg, weil es keinen gibt: ein «zurücksetzen»-Knopf ohne
+                 etwas zum Zurücksetzen wäre eine Fehlversprechung (§8) — die
+                 `art="bestand"`-Variante lässt ihn darum ausdrücklich weg
+                 («sonst ohne — nicht erfinden»). Der WORTLAUT bleibt unangetastet
+                 «Kein Erlass gefunden.»: die Zweiteilung gefunden/erfasst ist
+                 bedeutungstragend und wurde in Runde 1 ausdrücklich NICHT als
+                 Befund geführt — sie hier nachzuziehen wäre ein eigener Schritt. */
+              ? <Leerzustand art="bestand" text="Kein Erlass gefunden." />
               : (
                 <div className="space-y-4">
                   {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen). */}
@@ -618,7 +644,10 @@ export function Gesetze() {
                   onAnsicht={setKantonsAnsicht}
                 />
               )}
-              {kantGefiltert.length === 0 && <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>}
+              {/* D-7, wie oben: leeres Suchfeld ⇒ `kantGefiltert` ist der volle
+                  kantonale Bestand; leer heisst «nichts da», nicht «verdeckt».
+                  Kein Weiterweg, weil keiner existiert. */}
+              {kantGefiltert.length === 0 && <Leerzustand art="bestand" text="Kein Erlass gefunden." />}
             </div>
           )}
           </div>

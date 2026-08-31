@@ -8,6 +8,8 @@ import { usePaneSteuerung } from './layout/usePaneLayout';
 import { ArtikelBody } from './normtext/ArtikelBody';
 import { VerweisKontext } from './kontext/VerweisKontext';
 import { erlassPfadVonKey } from '../lib/normtext/erlassAdresse';
+import { Datum } from './ui/Datum';
+import { QuellLink } from './ui/QuellLink';
 
 // Norm-Vorschau-Popover (§7 Zitat-Ausnahme): zeigt den Volltext des zitierten
 // Artikels aus einem Snapshot, die zitierte Stelle hervorgehoben, mit Stand +
@@ -22,10 +24,11 @@ import { erlassPfadVonKey } from '../lib/normtext/erlassAdresse';
 
 // Datum IMMER als DD.MM.YYYY anzeigen (Design-Regel David 17.6.2026). Snapshots
 // speichern ISO 'YYYY-MM-DD'; nicht-ISO-Werte (Altbestand) unverändert lassen.
-function formatiereDatum(iso: string): string {
-  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
-}
+// B-3 (31.8.2026): der lokale Formatierer stand hier als einer von FÜNF
+// byte-gleichen (dieselbe Regex, dieselbe Rückgabe) und war zusätzlich mit der
+// Mono-Auszeichnung `.num` verklebt, die nach der Design-Grundlage Kap. 2.1
+// SR-Nummern und Aktenzeichen vorbehalten ist. Beides ist gelöscht: Format UND
+// Auszeichnung kommen aus dem geteilten `ui/Datum` (§5).
 
 export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onClose }: {
   snapshot: NormSnapshot;
@@ -156,16 +159,12 @@ export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onC
         <div className="flex flex-wrap items-center justify-between gap-2">
           <span className="text-xs text-ink-500">
             {snapshot.ebene === 'bund' ? 'Fassung vom: ' : 'In Kraft seit: '}
-            <span className="num">{formatiereDatum(snapshot.stand)}</span>
+            <Datum iso={snapshot.stand} />
           </span>
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="lc-chip no-underline hover:text-brass-700"
-          >
-            ↗ geltende Fassung
-          </a>
+          {/* B-1: hier stand «↗ geltende Fassung» — Pfeil vorne, klein
+              beginnend, drittes Wort für dasselbe Ziel. Kanon Ä110 über den
+              geteilten Baustein; die Chip-Grammatik des Fusses bleibt. */}
+          <QuellLink href={liveUrl} className="lc-chip no-underline hover:text-brass-700" />
         </div>
         {/* Brücke in die Lesesicht (Rubrik V): voller Erlass im Gesetzes-Reader,
             an der zitierten Stelle. Interner Pfad → normale Navigation. Daneben

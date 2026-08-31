@@ -51,7 +51,16 @@ export function LeserLeseZeile({
       className={bild.spalten
         ? // gap-5 statt gap-8 (Auftrag David 29.8.2026: «weniger Abstand Gesetz ↔
           // Gliederung») — muss mit SPUR_ABSTAND in rahmenSpalten.ts übereinstimmen.
-          'grid gap-5 motion-safe:transition-[grid-template-columns] motion-safe:duration-200 motion-safe:ease-out'
+          //
+          // E-4 (Design-Konsistenz 31.8.2026): `duration-200 ease-out` waren die
+          // letzten rohen Motion-Werte der Darstellungsschicht — 200 ms lag
+          // neben der Haus-Stufe `--dur-slow` (220 ms), und `ease-out` neben der
+          // EINEN Kurve `--ease`. Beide Token kommen aus src/index.css
+          // (D-1.7 Motion-Dedup, tailwind.config transitionDuration/
+          // transitionTimingFunction). `ease-out` fällt ERSATZLOS weg: die
+          // `transition-[…]`-Utility setzt bereits die Default-Kurve, und die
+          // ist in der Config auf `var(--ease)` gelegt.
+          'grid gap-5 motion-safe:transition-[grid-template-columns] motion-safe:duration-slow'
         : ''}
       style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
       {bild.schiene && (

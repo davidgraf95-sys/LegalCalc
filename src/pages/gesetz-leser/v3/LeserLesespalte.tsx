@@ -133,6 +133,61 @@ export function LeserLesespalte({ m }: {
     );
   };
 
+  // ── F24 · DIE SPALTE LÄUFT DOKUMENTLINEAR (K-1a, W2·13-KANTONE, 31.8.2026) ─
+  //
+  // BIS HIERHER standen zwei Blöcke untereinander: erst ALLE Artikel aus
+  // `ohneGliederung` (`<div className="space-y-5 mb-6">`), dann alle Sektionen.
+  // Das stimmt genau so lange, wie die freien Artikel ein VORSPANN sind — und
+  // das sind sie nicht immer. `baueGliederungsbaum` legt einen Artikel in
+  // `ohneGliederung`, sobald er weder eine amtliche Gliederung noch eine
+  // GETEILTE Randtitel-Stufe trägt; eine fehlende oder nur EINTEILIGE Marginalie
+  // genügt. Solche Artikel stehen im Erlass mitten zwischen den Stufen — im
+  // Markup sprangen sie an den Anfang. GEMESSEN 31.8.2026 am committeten Korpus
+  // trifft das noch VIER Erlasse: BS-569.500 (§§ 3, 5, 7–9 vor §§ 1, 2, 4, 6,
+  // 10), GR-310.250, ZG-641.1 und bund/KKV (Art. 126z Ziff. 2, Position 181
+  // von 211, stand zuoberst — §9-Bug-Check 31.8. hat die Zählung unabhängig
+  // re-deriviert; Testfall KKV in leser-lesereihenfolge-k1a).
+  //
+  // Das ist keine Kosmetik, sondern eine Falschaussage über den Erlass (§8): der
+  // Leser liest eine Reihenfolge, die die amtliche Quelle nicht kennt.
+  //
+  // DERSELBE FIX, DEN DAS TOC-MODELL SEIT B2 (9.8.2026) HAT. `gliederungsModell`
+  // ordnet dieselbe Klasse dort als Vorspann/Mittelgruppe/Nachspann
+  // dokumentlinear ein — die Gliederungsleiste zeigte die Artikel also längst an
+  // der richtigen Stelle, während die Lesespalte sie vorne stapelte: zwei
+  // Aussagen über dieselbe Reihenfolge (§5). Massgeblich ist hier wie dort
+  // allein die Dokumentposition (`artIndex` für Artikel, `sekPos` für Sektionen
+  // = Index ihres ersten Artikels). Nichts wird geraten und nichts einer Sektion
+  // zugeschlagen, zu der der Artikel amtlich nicht gehört.
+  //
+  // MARKUP-TREUE (die PX-Grenze oben): aufeinanderfolgende freie Artikel bleiben
+  // EIN Block mit unverändertem `space-y-5 mb-6`. Liegen alle freien Artikel vor
+  // dem Baum — der Regelfall, insbesondere jeder Erlass ganz ohne Sektionen —,
+  // entsteht exakt dieselbe Elementfolge wie vorher; Keys erscheinen nicht im
+  // Markup. Nur die drei betroffenen Erlasse ändern sich, und genau dort ist die
+  // Änderung der Zweck. Wächter: `src/tests/leser-lesereihenfolge-k1a.test.tsx`.
+  const dokumentLinear = (): ReactNode[] => {
+    const posten = [
+      ...sektionen.map((s) => ({ pos: m.sekPos.get(s.id) ?? Infinity, sek: s, frei: null as (typeof eintraege)[number] | null })),
+      ...ohneGliederung.map((e) => ({ pos: m.artIndex.get(e.artikel) ?? 0, sek: null as Sektion | null, frei: e })),
+    ].sort((a, b) => a.pos - b.pos);
+
+    const bloecke: ReactNode[] = [];
+    let lauf: typeof ohneGliederung = [];
+    const spuele = () => {
+      if (lauf.length === 0) return;
+      bloecke.push(<div key={`frei-${lauf[0].artikel}`} className="space-y-5 mb-6">{lauf.map(artikel)}</div>);
+      lauf = [];
+    };
+    for (const p of posten) {
+      if (p.frei) { lauf.push(p.frei); continue; }
+      spuele();
+      bloecke.push(renderSektion(p.sek as Sektion, true));
+    }
+    spuele();
+    return bloecke;
+  };
+
   return (
     // ── Ä2 · SATZSPIEGEL V3 (historisch 40 rem; seit 21.8. LESEMASS_MAX 45 rem, seit 29.8. zusätzlich 1C-Zeichen-Deckel — massgeblich index.css --leser-zeilenmass) (Entscheid 16.8.2026, Design-Grundlage
     // Kap. 3) ──────────────────────────────────────────────────────────────
@@ -150,10 +205,7 @@ export function LeserLesespalte({ m }: {
     // Vergleichsziel, gibt es nicht mehr.
     <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading">
       <div className="space-y-2">
-        {ohneGliederung.length > 0 && (
-          <div className="space-y-5 mb-6">{ohneGliederung.map(artikel)}</div>
-        )}
-        {sektionen.map((s) => renderSektion(s, true))}
+        {dokumentLinear()}
       </div>
 
       {/* ── B9 (Klick-Test) → B6 (H4-Nachzug 18.8.2026) · DIE SEITE LÄUFT QUER ─

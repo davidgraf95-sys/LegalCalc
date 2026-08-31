@@ -78,9 +78,21 @@ function WerkzeugChip({ w }: { w: Werkzeug }) {
   );
 }
 
-export function PanelAnwendung({ softLaw, erlassKey }: {
+// ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WARUM DER KANTON HIER LEER IST ─────
+// Dieselbe Quelle wie bei den Materialien, dieselbe Messung: die neun
+// hinterlegten Behörden sind ausnahmslos eidgenössisch, kein kantonaler
+// Erlass-Key trägt eine Kante. Der Zusatz nennt darum NUR die
+// Behörden-Ressourcen — über die Werkzeuge sagt er nichts, denn die kommen aus
+// der Karten-Tabelle und sind an keine Ebene gebunden (dieser Zweig läuft
+// ohnehin nur, wenn es auch keine gibt).
+const KANTON_ABDECKUNG = 'Behörden-Ressourcen sind bisher nur zu Bundeserlassen erfasst.';
+
+export function PanelAnwendung({ softLaw, erlassKey, ebene }: {
   softLaw: Geladen<MaterialBezug[]>;
   erlassKey: string;
+  /** Ebene des Erlasses — durchgereicht aus dem Modell (§5, s. `PanelEntscheide`).
+   *  Steuert allein den Leerzustands-Zusatz; `undefined` = keine Aussage. */
+  ebene?: 'bund' | 'kanton';
 }) {
   // Beide Werkzeug-Quellen sind SYNCHRON (statische Karten-Tabelle, kein Fetch) —
   // sie haben darum keinen Ladezustand und dürfen bereits stehen, während die
@@ -101,6 +113,9 @@ export function PanelAnwendung({ softLaw, erlassKey }: {
     return (
       <p data-v3-panel-reiter-inhalt="anwendung" className="px-2.5 py-3 text-body-s text-ink-500">
         Zu diesem Erlass sind weder Behörden-Ressourcen noch Werkzeuge erfasst.
+        {ebene === 'kanton' && (
+          <span data-v3-panel-abdeckung="kanton" className="block text-ink-400">{KANTON_ABDECKUNG}</span>
+        )}
       </p>
     );
   }

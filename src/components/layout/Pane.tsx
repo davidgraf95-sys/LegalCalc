@@ -1,9 +1,9 @@
-import { Suspense, useCallback, useContext, useEffect, useMemo, useRef, useState, type CSSProperties, type DragEvent } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState, type CSSProperties, type DragEvent } from 'react';
 import { createPath, parsePath, UNSAFE_NavigationContext, type Location, type To } from 'react-router-dom';
-import { ErrorBoundary } from '../ErrorBoundary';
 import { RouteSwitch } from '../../RouteSwitch';
 import { PaneProvider } from './PaneKontext';
 import { PaneKopf } from './PaneKopf';
+import { RouteHuelle } from './RouteHuelle';
 import { InhaltsKopfMeldeProvider, type KopfDaten } from './InhaltsKopfKontext';
 
 // ─── Sekundäres Split-View-Pane («Browser-Fenster»-Modell) ──────────────────
@@ -24,14 +24,11 @@ function toStr(to: To): string {
   return typeof to === 'string' ? to : createPath(to);
 }
 
-function Laden() {
-  return (
-    <div className="py-16 text-center space-y-3">
-      <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-      <p className="text-body-s text-ink-500">Wird geladen …</p>
-    </div>
-  );
-}
+// A-6 (31.8.2026): der frühere lokale `Laden()`-Platzhalter ist ersatzlos weg —
+// er war die dritte Kopie des Ladezustands und trug als einzige KEINE
+// Höhenreservierung. Fade, Fallback und Fehler-Reset kommen jetzt aus
+// `./RouteHuelle` (Herleitung dort), also aus derselben Quelle wie im
+// Hauptfenster (§5/§10).
 
 export interface SekundaerPaneProps {
   pfad: string;
@@ -119,15 +116,21 @@ export function SekundaerPane(props: SekundaerPaneProps) {
         />
         <div className="relative flex-1 min-h-0">
           <section ref={wurzel} aria-label={label} tabIndex={-1} data-pane="sekundaer"
-            className="@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:outline focus-visible:outline-2 focus-visible:outline-brass-600 focus-visible:-outline-offset-2">
+            /* Ring/Farbe aus der globalen `:focus-visible`-Regel (index.css,
+               Rolle --focus); lokal bleibt NUR der negative Offset — die
+               Pane-Fläche ist ein Scroll-Container, ein aussenliegender Ring
+               läge ausserhalb ihrer Kante und würde geclippt. */
+            className="@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:-outline-offset-2">
             <div className="mx-auto w-full max-w-content px-5 sm:px-6 py-6">
               <UNSAFE_NavigationContext.Provider value={navKontext}>
                 <InhaltsKopfMeldeProvider value={setKopf}>
-                  <ErrorBoundary>
-                    <Suspense fallback={<Laden />}>
-                      <RouteSwitch location={loc} />
-                    </Suspense>
-                  </ErrorBoundary>
+                  {/* A-6: dieselbe Routen-Hülle wie im Hauptfenster. Schlüssel ist
+                      der PFAD der Pane-Location ohne Query — der Such-Parameter
+                      einer Katalog-Seite darf im Pane so wenig remounten wie
+                      dort (`App.tsx`). */}
+                  <RouteHuelle schluessel={parsePath(loc).pathname ?? loc}>
+                    <RouteSwitch location={loc} />
+                  </RouteHuelle>
                 </InhaltsKopfMeldeProvider>
               </UNSAFE_NavigationContext.Provider>
             </div>

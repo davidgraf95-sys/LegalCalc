@@ -23,6 +23,7 @@ import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } fr
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
+import { Tabs, type TabItem } from '../ui/Tabs';
 
 const GW_DISCLAIMER =
   'Automatisierte Orientierungsberechnung zu Gewährleistung und Mängelrüge (Art. 197 ff., 219/219a, 367 ff. OR; ' +
@@ -31,6 +32,12 @@ const GW_DISCLAIMER =
   '(Eviktion), SIA-118-Detailregelungen sowie die AT-Verjährungsmechanik (Stillstand/Unterbrechung/Verzicht – dafür der ' +
   'Verjährungsrechner). Umstritten bzw. offen: Beginn bei sukzessiver Ablieferung, Abgrenzung Werkvertrag/Kauf, Reichweite ' +
   'der «Integration» in ein Bauwerk. Der konkrete Fall ist fachlich zu prüfen.';
+
+// E-2: Beschriftungen der Mangeltyp-Wahl (Segmented-Control `ui/Tabs`).
+const MANGEL_TYPEN: readonly TabItem<GwMangelTyp>[] = [
+  { code: 'offen', label: 'offen erkennbar' },
+  { code: 'versteckt', label: 'versteckt' },
+];
 
 const TYPEN: { code: GwVertragstyp; label: string }[] = [
   { code: 'fahrniskauf', label: 'Fahrniskauf (Art. 197 ff. OR)' },
@@ -193,17 +200,12 @@ export function GewaehrleistungForm() {
       {/* Mangel */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Art des Mangels">
-          <div className="flex gap-1 p-1 bg-surface rounded-xl w-fit" role="group" aria-label="Mangeltyp">
-            {([['offen', 'offen erkennbar'], ['versteckt', 'versteckt']] as const).map(([code, label]) => (
-              <button key={code} type="button" onClick={() => setMangelTyp(code)}
-                aria-pressed={mangelTyp === code}
-                className={`px-3.5 py-2 rounded-lg text-body-s font-medium transition-all ${
-                  mangelTyp === code ? 'bg-surface-raised text-brass-700 shadow-sm border border-line' : 'text-ink-600 hover:text-ink-900'
-                }`}>
-                {label}
-              </button>
-            ))}
-          </div>
+          {/* E-2 (Design-Konsistenz 31.8.2026): war eine wortgleiche Kopie der
+              Segmented-Control aus `ui/Tabs` (dieselben Zustands-Klassen).
+              Jetzt der geteilte Baustein in derselben Semantik wie zuvor
+              (aria-pressed + role=group, §5/§10). */}
+          <Tabs items={MANGEL_TYPEN} value={mangelTyp} onChange={setMangelTyp}
+            mode="pressed" ariaLabel="Mangeltyp" />
         </Field>
         {mangelTyp === 'versteckt' && (
           <Field label="Entdeckung des Mangels" hint="dies a quo der Rügefrist bei versteckten Mängeln">

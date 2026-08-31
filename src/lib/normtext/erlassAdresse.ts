@@ -24,6 +24,7 @@
 // ERLASS-PFAD BAUT, RUFT `erlassPfad()`. Ein zweiter Pfad-Formatierer ist ein
 // §5-Verstoss und wird vom Tor `src/tests/erlass-adresse.test.ts` gemeldet.
 
+import { KANTONE } from '../kantone';
 import { ERLASS_REGISTER } from './register';
 import type { BrowseErlass } from './browse-typen';
 
@@ -127,12 +128,37 @@ const EBENE_JE_KEY: ReadonlyMap<string, RoutenEbene> = new Map(
  * exakt Befund 45, nur spiegelverkehrt: eine zweite Adresse, deren URL der
  * angezeigten Ebene widerspricht (§5/§8). Registerautoritativ gilt das für
  * jeden BUNDES-Erlass (ERLASS_REGISTER, 238 Keys): genau EINE Adresse, jede
- * andere leitet dorthin. Kantons-Keys (1231) fallen auf das URL-Segment
- * zurück — /gesetze/<beliebig>/AG-291.150 rendert (VORBESTEHENDE Klasse,
- * Gegenprüfung 29.8.2026 Befund 1; Wurzel-Posten: FAHRPLAN-UI-NAVIGATION §7).
+ * andere leitet dorthin.
+ *
+ * K-3 (W2·13-KANTONE, 31.8.2026) SCHLIESST DIE ANDERE HÄLFTE. Bis hierher
+ * fielen die 1231 Kantons-Keys auf das URL-Segment zurück — `/gesetze/bund/
+ * ZH-211.1` rendete eine vollständige Kantonsseite mit der Brotkrume «Kanton
+ * Zürich» (dokumentierte Lücke, Gegenprüfung 29.8.2026 Befund 1; Wurzel-Posten
+ * FAHRPLAN-UI-NAVIGATION §7). Sie sind bewusst NICHT ins Register gewandert:
+ * das trägt den Bund, und ein Client-Index über 1231 kantonale Schlüssel gehört
+ * nicht in den Start-Bundle.
+ *
+ * Stattdessen die Regel, die die Schlüssel ohnehin tragen: ein kantonaler
+ * Schlüssel beginnt mit dem Kantonskürzel («ZH-211.1», «BS-RiE 911.900»), ein
+ * Bundes- oder Staatsvertrags-Schlüssel nie. Das ist KEINE Heuristik, sondern
+ * bewacht (§2/§7): `src/tests/leser-ebenen-redirect-k3.test.ts` prüft gegen den
+ * committeten Bestand, dass alle 1231 kantonalen Schlüssel dem Muster folgen
+ * und KEINER der 238 Bundes-Schlüssel es trifft. Käme je ein Gegenbeispiel,
+ * wird das Tor rot, statt dass hier still falsch geleitet wird.
+ *
+ * REIHENFOLGE IST TEIL DER REGEL: das Register entscheidet zuerst, die
+ * Präfix-Regel greift nur für Schlüssel, die es nicht kennt. Und die 26 Kürzel
+ * sind die bestehende Kantonsliste (`lib/kantone`, BV Art. 1) — keine zweite
+ * Wahrheit. Ein Schlüssel, der weder im Register steht noch ein Kantonskürzel
+ * trägt, bleibt beim übergebenen Segment: dort gibt es nichts zu entscheiden,
+ * und eine ehrliche Fehlseite ist besser als ein geratener Sprung (§8).
  */
+const KANTON_PRAEFIX = new RegExp(`^(${KANTONE.join('|')})-`);
+
 export function routenEbeneVonKey(key: string, fallback = 'bund'): string {
-  return EBENE_JE_KEY.get(key) ?? fallback;
+  const ausRegister = EBENE_JE_KEY.get(key);
+  if (ausRegister) return ausRegister;
+  return KANTON_PRAEFIX.test(key) ? 'kanton' : fallback;
 }
 
 /** Adresse allein aus dem Schlüssel — siehe `routenEbeneVonKey`. */
@@ -155,8 +181,20 @@ export function erlassPfadVonKey(key: string, fallback = 'bund'): string {
 // Alt-Bestand — statt zum Dauerzustand zu werden.
 
 /** Zerlegt `/gesetze/<ebene>/<key>` (Rest = Query/Anker); null, wenn der Pfad
- *  keine Erlass-Adresse ist. */
-function zerlegeErlassPfad(pfad: string): { ebene: string; key: string; rest: string } | null {
+ *  keine Erlass-Adresse ist.
+ *
+ *  EXPORTIERT seit F25 (K-1b, 31.8.2026) — ohne neue Logik, nur die Sichtbarkeit
+ *  geändert. Der Leser-Einsprung (`pages/GesetzLeser.tsx`) leitet Ebene und
+ *  Schlüssel jetzt hierüber aus `location.pathname` ab, statt sie aus
+ *  `useParams()` zu nehmen: `react-router` v7 dekodiert Routen-Parameter selbst
+ *  UND ersetzt danach jedes verbliebene `%2F` durch `/` (`matchPathImpl`,
+ *  node_modules/react-router/…/chunk-*.mjs). Für die drei Glarner Schlüssel mit
+ *  `%` in der Kanonik (`GL-III%20B%2F3%2F2` u. a.) zerstört das den Schlüssel —
+ *  über `useParams()` sind sie prinzipiell unerreichbar, gleich was die
+ *  Komponente danach tut. Der rohe Pfad trägt sie unversehrt. Damit gibt es für
+ *  «Pfad → {Ebene, Schlüssel}» weiterhin GENAU EINE Ableitung (§5), und sie ist
+ *  dieselbe, die `kanonisierePfad` für gespeicherte Adressen anwendet. */
+export function zerlegeErlassPfad(pfad: string): { ebene: string; key: string; rest: string } | null {
   const m = /^\/gesetze\/([^/?#]+)\/([^?#]+)(.*)$/.exec(pfad);
   if (!m) return null;
   let key: string;

@@ -9,6 +9,7 @@ import { artikelSachtitel } from '../../lib/normtext/darstellung';
 import { naechsterFokus } from '../../lib/normtext/fokus';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { NormPopover } from '../NormPopover';
+import { QuellLink } from '../ui/QuellLink';
 import { readerHrefFuerRef } from './chipZiel';
 import { HOVER_OEFFNEN_MS, HOVER_SCHLIESSEN_MS, istHoverZeiger } from '../hoverVorschau';
 
@@ -479,9 +480,13 @@ export function NormPopoverHuelle({ zustand, url, artikel, alsDialog = true, onC
           {zustand === 'laedt' ? 'Volltext wird geladen …' : 'Volltext nicht verfügbar.'}
         </p>
       </div>
+      {/* B-1 (31.8.2026): hier stand «↗ geltende Fassung auf Fedlex» — die
+          vierte Schreibweise desselben Ziels. Kanon Ä110 über den geteilten
+          `QuellLink`; «auf Fedlex» fällt weg, weil der Zusatz nur die Quelle
+          wiederholt, die dieser Fallback-Popover ohnehin ist (Ä121 gilt der
+          Panel-LISTE, wo mehrere Sammlungen nebeneinander stehen). */}
       <div className="border-t border-line px-5 py-3">
-        <a href={url} target="_blank" rel="noopener noreferrer"
-          className="lc-chip no-underline hover:text-brass-700">↗ geltende Fassung auf Fedlex</a>
+        <QuellLink href={url} className="lc-chip no-underline hover:text-brass-700" />
       </div>
     </div>
   );

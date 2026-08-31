@@ -2,8 +2,12 @@ import { type ReactNode } from 'react';
 import type { CurrencyEintrag } from '../../../lib/normtext/browse';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
+  GELTUNG_UNGEPRUEFT_SATZ, STAND_UNBEKANNT,
   datumCh, naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
+import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
+import { QuellLink } from '../../../components/ui/QuellLink';
+import { SeitenTitel } from '../../../components/ui/SeitenTitel';
 import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
@@ -150,8 +154,30 @@ export function ErlassLeserKopf({
   // Gegenprüfungs-Hash angefasst — dieselbe Falle, die S3 bei `ANHANG_DOMINANZ`
   // schon notiert hat). Die SR-Nummer in der Fakten-Zeile darüber behält `.num`:
   // sie IST der Fall, für den die Mono-Stimme reserviert ist.
+  // ── K-2a/F26 (W2·13-KANTONE, 31.8.2026) · ZWEITE STUFE DES STANDAUSWEISES ──
+  // Die erste Stufe (`standausweisSatz`) braucht einen Currency-Beleg. Den hat
+  // GEMESSEN kein einziger der 1231 kantonalen Erlasse (currency.json: 224
+  // Einträge, davon 0 kantonale) — der Kantons-Kopf trug damit überhaupt keinen
+  // Geltungs-Status, und das Schweigen las sich wie eine Unbedenklichkeits-
+  // Bescheinigung. Die zweite Stufe sagt stattdessen, was zutrifft (§8).
+  //
+  // WARUM AN DER EBENE UND NICHT NUR AM FEHLENDEN BELEG: ein Bundeserlass ohne
+  // Currency-Eintrag ist ein LÜCKENFALL im Sidecar (die Prüfung läuft für ihn,
+  // ihr Ergebnis fehlt bloss gerade) — dort wäre «Geltung ungeprüft» eine
+  // Aussage über unsere Pipeline, nicht über den Erlass. Beim Kanton ist die
+  // Nicht-Prüfung der DAUERZUSTAND, solange es keinen kantonalen Currency-Lauf
+  // gibt. Die Weiche hält damit das Bund-Verhalten Zeichen für Zeichen fest
+  // (Beweis: `kanton-ehrlichkeit-k2`, «Bund-Verhalten byte-identisch»).
+  //
+  // `lebt` schliesst den aufgehobenen Erlass aus — dort ist die Aufhebung DIE
+  // Aussage, genau wie beim Standausweis eine Zeile darüber.
+  const geltungUngeprueft = lebt && erlass.ebene === 'kanton' && !currency?.geprueftAm;
+
   const stand = [
-    erlass.stand ? <>Stand {datumCh(erlass.stand)}</> : null,
+    // K-2d/F27-Rest: leerer `stand` (VD-vd-106879, VD-vd-128150) liess das
+    // Segment bis 31.8.2026 STILL weg. Eine verschwiegene Lücke ist die
+    // unehrlichere Form als eine benannte (§8) — der Kopf sagt sie jetzt.
+    erlass.stand ? <>Stand {datumCh(erlass.stand)}</> : <>{STAND_UNBEKANNT}</>,
     // K-1: Ur-Inkrafttreten (Fedlex `dateEntryInForce`, build-time projiziert ⇒
     // CLS 0). Distinkt vom «Stand» (Konsolidierung) — nur Bund; Kanton trägt es
     // nicht (§8). «vom …» wird NICHT gedoppelt (steht im Ingress).
@@ -160,6 +186,10 @@ export function ErlassLeserKopf({
     // Client-Datums-Logik). Wortlaut aus `erlassKopfText` — derselbe String
     // steht im prerenderten SEO-Kopf (§5, `seo-detail.ts`).
     currency?.geprueftAm && lebt ? standausweisSatz(currency.geprueftAm) : null,
+    // Zweite Stufe — steht an DERSELBEN Stelle wie der Standausweis, weil sie
+    // dieselbe Frage beantwortet («wie belastbar ist dieser Stand?»). Beide
+    // zugleich kann es nicht geben: die Weiche oben verlangt `!geprueftAm`.
+    geltungUngeprueft ? GELTUNG_UNGEPRUEFT_SATZ : null,
     currency?.naechsteFassungAb
       ? <span className="text-warn-700">{naechsteFassungSatz(currency.naechsteFassungAb)}</span>
       : null,
@@ -188,7 +218,12 @@ export function ErlassLeserKopf({
           Spalte — und bricht dann ohne Trennstrich, statt die Zeile zu sprengen.
           Zwei Regeln, zwei Aufgaben: keine Kosmetik-Trennung, aber auch kein
           Überlauf. */}
-      <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] min-h-titel-2z">
+      {/* A-1 (31.8.2026): die GRÖSSEN-Kaskade kommt aus dem EINEN Titel-Baustein
+          (`components/ui/SeitenTitel`) und misst im Split-View die Pane-Breite
+          statt des Viewports (Herleitung dort). Stimme, Umbruch-Regel und
+          Höhen-Reservierung bleiben Aussagen DIESES Kopfes — sie stehen darum
+          weiterhin hier, samt ihren Messungen oben. */}
+      <SeitenTitel stimme="serif" className="[overflow-wrap:anywhere] min-h-titel-2z">
         {/* Ä-(d): die Kennung als eigene, nicht umbrechende Marke VOR dem Titel.
             Kein zweites Element neben der H1 und kein `aria-label`-Ersatz — sie
             ist Teil desselben Namens und bleibt darum in der Überschrift; nur
@@ -202,7 +237,7 @@ export function ErlassLeserKopf({
           </>
         )}
         {titelZeile}
-      </h1>
+      </SeitenTitel>
 
       {fakten.length > 0 && (
         <p className="text-xs text-ink-500">
@@ -269,10 +304,15 @@ export function ErlassLeserKopf({
           die Aussage der Stand-Zeile darüber und ist am aufgehobenen Erlass
           gerade falsch (dieser Zweig läuft dort ohnehin nicht — `lebt`).
           Alle Beschriftungen der Zeile beginnen jetzt gross; das ist die eine
-          Schreibung, die Ä110 verlangt. */}
+          Schreibung, die Ä110 verlangt.
+          B-1 (31.8.2026): der Wortlaut ist nicht mehr Literal, sondern kommt aus
+          dem geteilten `QuellLink` — dasselbe Ziel hiess an vier Stellen
+          viererlei, obwohl Ä110 seit dem 18.8. feststand. `.lc-chip` bleibt: die
+          Zeile neutralisiert die Chip-Anatomie selbst (index.css,
+          `.lc-kopf-aktionen`), der Slot-Vertrag ist unverändert. */}
       <div className="lc-kopf-aktionen flex flex-wrap items-center gap-x-5 gap-y-0.5 text-xs">
         {erlass.quelleUrl && lebt && (
-          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip">Amtliche Fassung ↗</a>
+          <QuellLink href={erlass.quelleUrl} className="lc-chip" />
         )}
         {aktionen}
       </div>
@@ -286,23 +326,28 @@ export function ErlassLeserKopf({
           <p>
             <strong className="font-semibold">Aufgehoben per {datumCh(erlass.aufgehoben.seit)}.</strong>{' '}
             Dieser Erlass ist nicht mehr in Kraft. Der Text bleibt als historische Fassung
-            (Stand {datumCh(erlass.stand)}) abrufbar — massgeblich ist die amtliche Quelle.
+            (Stand {datumCh(erlass.stand)}) abrufbar — {MASSGEBLICH_HALBSATZ}.
           </p>
+          {/* ── B-1/B-2 (31.8.2026) · DAS BANNER BRACH Ä110 ────────────────────
+              GEMESSEN: beide Links dieses Banners trugen den Pfeil VORNE und
+              begannen klein («↗ amtliche (aufgehobene) Fassung») — drei Zeilen
+              unter dem Kopf-Link, der seit Ä110 «Amtliche Fassung ↗» heisst.
+              Die Aussage «derselbe Link auf die aufgehobene Konsolidierung»
+              steht jetzt im Baustein (`variante`), nicht in einem zweiten,
+              handgeschriebenen Wortlaut. Der Nachfolge-Erlass ist KEIN
+              «amtliche Fassung»-Link und behält darum seinen eigenen Namen —
+              aber dieselbe Anatomie (Pfeil hinten, gross beginnend). */}
           <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
             {erlass.aufgehoben.nachfolger && (
-              <a
+              <QuellLink
                 href={`https://www.fedlex.admin.ch/eli/${erlass.aufgehoben.nachfolger.eli}/de`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="underline hover:no-underline"
               >
-                ↗ Nachfolge-Erlass: SR <span className="num">{erlass.aufgehoben.nachfolger.sr}</span> (in Kraft seit {datumCh(erlass.aufgehoben.seit)})
-              </a>
+                Nachfolge-Erlass: SR <span className="num">{erlass.aufgehoben.nachfolger.sr}</span> (in Kraft seit {datumCh(erlass.aufgehoben.seit)})
+              </QuellLink>
             )}
             {erlass.quelleUrl && (
-              <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
-                ↗ amtliche (aufgehobene) Fassung
-              </a>
+              <QuellLink href={erlass.quelleUrl} variante="aufgehoben" className="underline hover:no-underline" />
             )}
           </p>
         </div>
