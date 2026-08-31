@@ -47,12 +47,13 @@ export type Ebene = (typeof EBENEN)[number];
  *
  * Default ist UNVERÄNDERT «alle Ebenen»: ohne gesetzte Variable ist dieser Schalter
  * wirkungslos und `artikel.json` byte-gleich wie zuvor. Bewiesen — nicht behauptet —
- * in `src/tests/suche/ebenenWahl.test.ts`, Abschnitt «F3 Byte-Beweis»: der
- * Default-Lauf wird gegen den sha256 des ausgelieferten `public/such-index/artikel.json`
- * gehalten, und ein zweiter Test zeigt, dass der Schalter bei AN nur FILTERT (die
- * Bund-Einträge des gefilterten Laufs sind byte- und reihenfolgegleich mit denen des
- * vollen). Gesetzt (z. B. `SUCHE_INDEX_EBENEN=bund`) schreibt der Generator einen
- * Index OHNE die weggelassenen Ebenen.
+ * in `src/tests/suche/ebenenWahl.test.ts`, Abschnitt «F3 Byte-Beweis»: der sha256 des
+ * Default-Laufs wird gegen die Montage aus `baueEbenenIndex` je Ebene gehalten, also
+ * gegen genau den Code-Weg, den es VOR dem Schalter gab; ein zweiter Test zeigt, dass
+ * der Schalter bei AN nur FILTERT (die Bund-Einträge des gefilterten Laufs sind byte-
+ * und reihenfolgegleich mit denen des vollen); ein dritter hält §2 fest.
+ * Gesetzt (z. B. `SUCHE_INDEX_EBENEN=bund`) schreibt der Generator einen Index OHNE
+ * die weggelassenen Ebenen.
  *
  * (Bis zum 31.8.2026 verwies dieser Absatz auf einen Byte-Beweis in
  * `src/tests/suchIndex.test.ts` — den es dort nie gab; auch die K3-Tests standen

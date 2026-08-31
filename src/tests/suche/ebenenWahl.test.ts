@@ -15,9 +15,8 @@
 //             ist vom «es gibt keine kantonale Bestimmung» nicht zu unterscheiden.
 import { describe, it, expect } from 'vitest';
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import * as flex from 'flexsearch';
-import { EBENEN, baueIndex, gewaehlteEbenen } from '../../../scripts/such-index-generieren';
+import { EBENEN, baueEbenenIndex, baueIndex, gewaehlteEbenen } from '../../../scripts/such-index-generieren';
 import { baueSucher } from '../../lib/suche/artikelVolltext';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -47,19 +46,38 @@ describe('K3 Ebenen-Wahl: Default AUS ist wirkungslos', () => {
 //
 // Die Tests darüber prüfen nur, welche EBENEN-LISTE herauskommt. Das ist die Absicht,
 // nicht die Wirkung. Hier steht die Wirkung: der VOLLE Index, byte-für-byte.
-describe('F3 Byte-Beweis: Flag AUS lässt artikel.json unverändert', () => {
+describe('F3 Byte-Beweis: Flag AUS lässt den Index unverändert', () => {
   // ~0,5 s für den vollen Index über alle 54 446 Artikel (gemessen 31.8.2026) —
   // billig genug, um bei jedem Lauf mitzufahren, statt nur behauptet zu werden.
   const voll = JSON.stringify(baueIndex());
   const sha = (s: string) => createHash('sha256').update(s).digest('hex');
 
-  it('Default-Lauf ist byte-gleich mit dem ausgelieferten public/such-index/artikel.json', () => {
-    // DAS ist die Referenz, um die es geht: das committete Artefakt, das der Nutzer
-    // wirklich lädt. Ein Vergleich `baueIndex()` gegen `baueIndex(EBENEN)` wäre
-    // zirkulär — beide Seiten gingen durch denselben Schalter.
-    const datei = readFileSync('public/such-index/artikel.json', 'utf8');
-    expect(sha(voll), `sha256 Lauf ${sha(voll).slice(0, 16)}… vs. Datei ${sha(datei).slice(0, 16)}…`).toBe(sha(datei));
-    expect(voll.length).toBe(datei.length);
+  it('Default-Lauf ist byte-gleich mit der Montage OHNE Schalter', () => {
+    // DIE REFERENZ, und warum ausgerechnet diese:
+    //
+    // · NICHT `baueIndex(EBENEN)` — das wäre zirkulär, beide Seiten gingen durch
+    //   denselben Schalter und dieselbe Montage.
+    // · NICHT das ausgelieferte `public/such-index/artikel.json` — verlockend, aber
+    //   falsch: der Ordner steht in .gitignore und die Datei entsteht erst in
+    //   `npm run build` (gen:suchindex). Der CI-Job `tore` baut nicht (kein
+    //   `needs: bau`); der Test wäre dort mit ENOENT rot gelaufen — lokal am
+    //   31.8.2026 durch Wegnehmen der Datei reproduziert. Ein Tor, das von einem
+    //   ungebauten Artefakt abhängt, prüft nicht die Sache, sondern die Umgebung.
+    // · SONDERN die Montage aus `baueEbenenIndex` je Ebene — genau der Code-Weg, den
+    //   es vor dem Schalter gab. Der Schalter sitzt in `gewaehlteEbenen()` und im
+    //   Default-Parameter von `baueIndex`; diese Referenz fragt ihn nicht.
+    const teile = EBENEN.map((eb) => baueEbenenIndex(eb));
+    const ohneSchalter = JSON.stringify({
+      erzeugt: 'generiert',
+      ebenen: EBENEN,
+      eintraege: teile.flatMap((t) => t.eintraege),
+      uebersprungen: teile.flatMap((t) => t.uebersprungen),
+    });
+    expect(
+      sha(voll),
+      `sha256 Default ${sha(voll).slice(0, 16)}… vs. ohne Schalter ${sha(ohneSchalter).slice(0, 16)}…`,
+    ).toBe(sha(ohneSchalter));
+    expect(voll.length).toBe(ohneSchalter.length);
   });
 
   it('der Schalter FILTERT nur — er verändert keinen einzigen Eintrag', () => {
