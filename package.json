@@ -54,6 +54,7 @@
     "check:rss-oc": "vite-node scripts/fedlex-rss-oc-pruefen.ts",
     "check:frit-drift": "vite-node scripts/fedlex-frit-drift.ts",
     "check:vollstaendigkeit": "vite-node scripts/normtext/check-vollstaendigkeit.ts",
+    "check:zh-vollstaendigkeit": "vite-node scripts/normtext/check-zh-vollstaendigkeit.ts",
     "check:struktur-konsistenz": "vite-node scripts/normtext/check-struktur-konsistenz.ts",
     "check:golden-normtext": "vite-node scripts/check-golden-normtext.ts",
     "check:verklebung": "vite-node scripts/normtext/check-verklebung.ts",
