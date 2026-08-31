@@ -257,6 +257,51 @@ allein dieser §.*
 
 ---
 
+## §4 · ZH-Tranche: Inventar → Kern-Erlasse → Ausbau (Auftrag David 31.8.2026, lebendige Spec)
+
+**Anlass:** Auftrag David 31.8.2026 «Zürcher Gesetze inventarisieren und in LexMetrik
+einbauen», zwingend gestuft (Messen vor Handeln). Grundlage: Dossier
+[`bibliothek/recherche/zh-quellinventar-2026-08-31.md`](../bibliothek/recherche/zh-quellinventar-2026-08-31.md)
+(944 in-Kraft-Erlasse, Formate, Fallen) + interner Pipeline-Befund (HEAD `cec6cdbfb`).
+
+**Stufe 1 — Inventar: erledigt 31.8.2026.** Kernbefunde: Bestand **944** (amtlicher
+JSON-Endpunkt `lawcollectionsearch…zhweb-zhlex-ls.zhweb-cache.json`, ordner-weise
+`fileNumber=1…14`, Kappungs-Flag geprüft); Volltext **nur PDF** (kein XML/DOCX/HTML —
+Formatleiter-Abstieg beweisgeführt, `adapter-zh-pdf.ts` bleibt der Weg); Systematik
+Ebene 1 = **14 Ordner** browserlos aus server-gerendertem HTML; Drift-Token =
+**PDF-ETag/Last-Modified** auf notes.zh.ch (Registry-`Last-Modified` ist Abrufzeit,
+unbrauchbar); lexfind für ZH obsolet (und dessen API-Vertrag ohnehin gebrochen —
+eigener ROADMAP-Punkt).
+
+**Stufe 2 — Kern-Tranche (Bauschritt, kein Datenlauf):**
+
+1. **ZH-4a · Deklarative ZH-Quellenliste** (~20 Kern-Erlasse aus Dossier §6:
+   KV 101 · GOG 211.1 · AnwG 215.1 · NotG 242 · StG 631.1 · VRG 175.2 · GG 131.1 ·
+   EG ZGB 230 · PolG 550.1 · PBG 700.1 … je LS-Nr + Registry-URL + erwartetes Kürzel),
+   eingehängt in `sammleZhPdfInventar()` (`inventar-kanton.ts:340`) **UND**
+   `check-drift.ts:321` — NIE über `src/data/tarif/*.ts` (reisst `lexmetrik-golden.json`).
+   Damit schliesst sich die §7-d-Lücke (Erlasse ohne Tarif-Zitat waren driftblind).
+2. **ZH-4b · `holeZhPdf`-Retry (§17-Wurzelfix):** nacktes `fetch` ×3/Erlass →
+   `fetchMitWiederholung` (`netz-retry.ts`), Tranchen-Rate ≤ ~1 req/s gegen notes.zh.ch
+   (BS-Sonderfall-Regel G2: ein Kanton, aber Massenzugriff). Fetch-Fehler dürfen nie
+   still verschluckt werden (Lauf bricht sichtbar ab oder listet Fehl-Erlasse).
+3. **ZH-4c · Systematik ZH Ebene 1** (K-13-Anteil): die 14 Ordner (Nummernband→Thema,
+   Dossier §3) als ZH-Eintrag in `kanton-systematik.json` — Quelle server-gerendertes
+   HTML der Suchseite; Zuordnung Erlass→Ordner deterministisch über das Nummernband.
+4. **Beweise (G5):** je Snapshot Norm + amtliche Quell-URL + Stand + `fassungsToken`
+   (quelleHash; §7-Zitat-Ausnahme alle vier Merkmale) · `lexmetrik-golden.json`
+   byte-gleich · `normtext-snapshot.json` rein additiv (Alt-Keys unverändert, git-diff) ·
+   pdfplumber-Gegenprobe an ≥2 neuen PDFs (G3) · Identitätsbeleg n ≥ 10 gegen die
+   Amtsquelle im PR-Body (landung 6b) · Gegenprüfung Pflicht, Auto-Merge gesperrt.
+5. **Bekannte Fallen** (Dossier §5/§7): HTTP 204 leer bei 0 Treffern · 150er-Kappung ·
+   AEM-Komponenten-ID zur Laufzeit auflösen · `istZh21111`-Hardcode + `'4' in artikel`-
+   Staffel-Heuristik je neuem Erlass prüfen · Spiegelrand-Layout-Annahmen empirisch
+   verifizieren (VRG 1959 und PBG 1975 sind alte Sätze!).
+
+**Stufe 3 — Ausbau in Tranchen** (Richtung 944, Katalog-Generator über den
+JSON-Endpunkt): erst nach gelandeter Stufe 2 und sauberer Stichproben-Abnahme;
+G2-Slot-Regel beachten (kein faktischer Vollkorpuslauf als Tranchen-Schlupfloch —
+Freigabe je Tranche beim Orchestrator/David).
 
 ---
 
