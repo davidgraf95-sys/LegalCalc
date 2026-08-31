@@ -304,6 +304,10 @@ function selbsttest(): void {
     tokenMap: new Map([['65', '65']]),
     eigenesKuerzel: 'SSV', registerKuerzel: 'SSV', paragrafDesigniert: false,
   };
+  // V-6: Item unter einem Fremdgesetz-Chapeau (M6-D) — wie `berechne()` ihn baut.
+  const chapeau: Ctx = {
+    tokenMap: new Map(), eigenesKuerzel: '', paragrafDesigniert: false, fremdKuerzel: 'AHVG',
+  };
   const proben: [string, Ctx | null, string, boolean][] = [
     // Text, Kontext, erwartete Klasse der ERSTEN Stelle, erwarteter Selbstmarker
     ['Massgeblich ist Art. 336c OR für diesen Fall.', artErlass, 'anker-fedlex', false],
@@ -341,6 +345,23 @@ function selbsttest(): void {
     ['Es gilt § 19 Personalgesetz sinngemäss.', parMitKarte, 'paragraf-self', true],
     // OHNE Karte (Bund, Kanton ohne Register-Treffer) bleibt alles wie vorher.
     ['Gesuche nach § 6 IRG sind einzureichen.', parErlass, 'paragraf-fremd-grosswort', false],
+    // ── V-6-Weiche (M12 sieht auch HINTER den Passus) ───────────────────────
+    // Kernfall (Produktions-Beleg OR Art. 973g «(Art. 895–898 ZGB)»): der
+    // Aufzählungs-Schwanz trägt kein führendes Leerzeichen, der Guard sah das
+    // Kürzel darum bis V-6 nicht — Ergebnis war ein Self-Link auf einen
+    // ZGB-Artikel im OR.
+    ['Es gilt Art. 5–7 ZGB sinngemäss.', artErlass, 'art-m12-kuerzel', false],
+    // ODER, nicht Ersetzung: hier bricht der Passus-Überleser hinter dem «a» ab
+    // («–e» ist kein Zahlenglied), und der Rest «–e ZGB» trägt kein führendes
+    // Leerzeichen. Nur weil der ROHE Rest weiter geprüft wird, greift N2 —
+    // eine Ersetzung machte daraus einen falschen Self-Link (150 Stellen).
+    ['Es gilt Art. 5 Buchstaben a–e ZGB sinngemäss.', artErlass, 'art-n2-fremdkuerzel', false],
+    // Abgrenzung: das Passus-Wort selbst ist nie ein Kürzel (EIN Grossbuchstabe).
+    ['Es gilt Art. 5 Absatz 2 sinngemäss.', artErlass, 'art-self', false],
+    // Im Fremdgesetz-Chapeau ruht die Erweiterung: das genannte Kürzel IST das
+    // Chapeau-Ziel (IVG Art. 66 «die Ausgleichskassen (Art. 53–70 AHVG)»), und
+    // der Guard würde einen RICHTIGEN Fremd-Link unterdrücken.
+    ['die Ausgleichskassen (Art. 53–70 AHVG);', chapeau, 'art-chapeau-fremd', false],
     // Ziel 3, voll zitierter Anker auf den gelesenen Erlass.
     ['Vorbehalten bleibt Art. 65 SSV.', ssv, 'anker-self', false],
     // … derselbe Anker in einem ANDEREN Erlass bleibt der Fedlex-Chip.

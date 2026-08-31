@@ -94,16 +94,25 @@ describe('V-2 Ziel 1 — «des vorliegenden Gesetzes» ist ein Selbst-Signal (Ar
     expect(nurText(out)).toBe(text);
   });
 
-  it('AIG Art. 80a Abs. 6: der Nebenbefund «Artikel 17 Absatz 3 AsylG» bleibt, wie er war', () => {
-    // EHRLICHKEITS-SONDE, nicht V-2: dieselbe Stelle erzeugt heute einen
-    // Self-Link auf AIG art-17, obwohl «AsylG» gemeint ist. Grund ist die
-    // Lücke zwischen N2 und M12 — `fremdgesetzNachArtikel(' Absatz 3 AsylG')`
-    // liefert null (AsylG steht nicht in der FEDLEX-Tabelle), und M12 prüft nur
-    // DIREKT hinter der Nummer. V-2 rührt daran nichts an; der Test friert den
-    // Ist-Zustand ein, damit die Lücke sichtbar bleibt und ihr späterer Fix
-    // (V-3/Kürzel-Resolver) genau hier rot wird.
-    const text = snapshotText('bund/AIG', '80_a', 'des vorliegenden Gesetzes');
-    expect(ssr(<NormText text={text} intern={refs('bund/AIG')} />)).toContain('/gesetze/bund/AIG#art-17"');
+  it('AIG Art. 80a Abs. 6: der Nebenbefund «Artikel 17 Absatz 3 AsylG» ist mit V-6 geschlossen', () => {
+    // DEKLARIERTE FACHLICHE KORREKTUR (§6.3), 31.8.2026 — kein Refactoring.
+    //
+    // Bis V-6 stand hier eine EHRLICHKEITS-SONDE: der Test verlangte den
+    // falschen Self-Link auf AIG art-17 und fror damit den Ist-Zustand ein,
+    // «damit die Lücke sichtbar bleibt und ihr späterer Fix genau hier rot
+    // wird». Genau das ist eingetreten. V-6 hat die Ursache behoben — der
+    // M12-Guard prüft jetzt auch den Rest NACH dem Passus, sieht das «AsylG»
+    // hinter «Absatz 3» und unterdrückt den Sprung (§1: kein Link ist besser
+    // als ein falscher). Die Sonde wird darum nicht «nachgeführt», sondern
+    // durch die Zusicherung ersetzt, die sie herbeigeführt hat.
+    //
+    // Der ausführliche Beweis samt Messung steht in
+    // `src/tests/normText-passus-guards.test.tsx`; hier bleibt die Zeile
+    // stehen, weil der Nebenbefund an DIESER Stelle entdeckt wurde und der
+    // V-2-Selbstmarker derselben Stelle davon unberührt bleiben muss.
+    const out = ssr(<NormText text={snapshotText('bund/AIG', '80_a', 'des vorliegenden Gesetzes')} intern={refs('bund/AIG')} />);
+    expect(out).not.toContain('/gesetze/bund/AIG#art-17"');
+    expect(out).toContain('/gesetze/bund/AIG#art-66"');
   });
 
   it('AIG Art. 31 Abs. 3: Selbst-Sprung auf Art. 68, StGB/MStG bleiben fremd', () => {

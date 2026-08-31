@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "efcf1ed2577d5d9c47c45e9b0d8d7a3e7e09e3df1c3451a5add68cae0695ad84",
+    "normTextSha256": "0b9377cf311d685676a681dfa4a72c06c2ee25565600770a8823d5d18c90c1b5",
     "guards": 23
   },
   "korpus": {
@@ -12,9 +12,9 @@
   },
   "gesamt": {
     "stellen": 34058,
-    "self": 20198,
+    "self": 19752,
     "fremd": 4709,
-    "text": 9151,
+    "text": 9597,
     "selbstmarker": 927
   },
   "klassen": [
@@ -61,24 +61,24 @@
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 495,
-      "erlasse": 176,
+      "stellen": 350,
+      "erlasse": 153,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
     },
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 1236,
-      "erlasse": 251,
+      "stellen": 978,
+      "erlasse": 217,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 692,
-      "erlasse": 174,
+      "stellen": 1541,
+      "erlasse": 273,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
     },
@@ -93,8 +93,8 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 13433,
-      "erlasse": 460,
+      "stellen": 12987,
+      "erlasse": 452,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },

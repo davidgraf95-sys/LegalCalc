@@ -256,6 +256,11 @@ function selbstSignalAmZitat(rest: string, ctx: Ctx): boolean {
 const KANTON_KUERZEL_TOKEN = re(G.KANTON_KUERZEL_TOKEN.literal);
 const KANTON_KUERZEL_INTERPUNKTION = re(G.KANTON_KUERZEL_INTERPUNKTION.literal);
 
+/** Transkription von `kuerzelAmZitat` (NormText.tsx, V-6). */
+function kuerzelAmZitat(rest: string): string {
+  const m = KANTON_KUERZEL_TOKEN.exec(rest);
+  return m ? kuerzelKanon(m[1].replace(KANTON_KUERZEL_INTERPUNKTION, '')) : '';
+}
 /** Transkription von `kantonZielAmZitat` (NormText.tsx, V-3). */
 function kantonZielAmZitat(rest: string, ctx: Ctx): string | null {
   const karte = ctx.kantonKuerzel;
@@ -426,12 +431,22 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     // V-2: ausdrückliches Selbst-Signal → keine der vier Fremd-Vermutungen
     // (des/der, N2, M12, F41) greift. Reihenfolge exakt wie im Original.
     const sm = selbstSignalAmZitat(rest, ctx);
+    // V-6: Rest ohne Passus-/Aufzählungsglieder; im Chapeau ruht die Erweiterung.
+    const nachPassus = ctx.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Reihenfolge exakt wie Original).
     if (!sm && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) { out.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && DES_DER_GUARD.test(rest)) { out.push(stelle('art-desder-guard', m[1], ctx, sm)); continue; }
     const fremd = sm ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== ctx.eigenesKuerzel) { out.push(stelle('art-n2-fremdkuerzel', m[1], ctx, sm)); continue; }
-    if (!sm && M12.test(rest)) { out.push(stelle('art-m12-kuerzel', m[1], ctx, sm)); continue; }
+    // V-6: der M12-Guard greift auf dem ROHEN Rest ODER auf dem Rest nach dem
+    // Passus, in beiden Zweigen nur bei einem FREMDEN Kürzel (Produktion prüft
+    // das in zwei aufeinanderfolgenden Zeilen; der Entscheid ist in beiden
+    // derselbe und wird darum hier zusammen gezählt). Herleitung und Messung
+    // stehen am Guard in NormText.tsx.
+    if (!sm && ((kuerzelAmZitat(rest) !== ctx.eigenesKuerzel && M12.test(rest))
+      || (kuerzelAmZitat(nachPassus) !== ctx.eigenesKuerzel && M12.test(nachPassus)))) {
+      out.push(stelle('art-m12-kuerzel', m[1], ctx, sm)); continue;
+    }
     if (ctx.fremdKuerzel) {
       out.push(stelle('art-chapeau-fremd', m[1], ctx, sm));
       last = start + m[0].length;

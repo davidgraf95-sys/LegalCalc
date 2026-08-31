@@ -368,6 +368,13 @@ const KANTON_KUERZEL_TOKEN = /^\s+(\S+)/;
 // Der BINDESTRICH steht bewusst NICHT hier: «§ 6 SoHaG-Anhang» ist ein anderer
 // Erlass als SoHaG — dieselbe Wortgrenzen-Lehre wie KKV vs. KKV-FINMA (V-2).
 const KANTON_KUERZEL_INTERPUNKTION = /[.,;:)\]]+$/;
+/** V-6: kanonisiertes Kürzel-Wort direkt am Zitat (ohne Satzzeichen) — für den
+ *  Identitäts-Vergleich des M12-Guards. Dieselbe Wort- und Interpunktions-
+ *  Definition wie `kantonZielAmZitat` (§5, eine Definition statt zweier). */
+function kuerzelAmZitat(rest: string): string {
+  const m = KANTON_KUERZEL_TOKEN.exec(rest);
+  return m ? kuerzelKanon(m[1].replace(KANTON_KUERZEL_INTERPUNKTION, '')) : '';
+}
 /** Lese-Adresse des Erlasses, dessen Kürzel direkt am Zitat steht — sonst null. */
 function kantonZielAmZitat(rest: string, intern: InternRefs): string | null {
   const karte = intern.kantonKuerzel;
@@ -556,8 +563,23 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Messung bei `SELBST_MARKER`. Der Fremdgesetz-Chapeau-Pfad (M6-D) bleibt
     // unberührt: `selbstSignalAmZitat` ist dort per Definition falsch.
     const selbst = selbstSignalAmZitat(rest, intern);
+    // V-6 (W2·20): Rest DESSELBEN Zitats ohne Passus- und Aufzählungsglieder —
+    // dieselbe Definition, die `selbstSignalAmZitat` schon nutzt (§5). Bis V-6
+    // sah der M12-Guard nur den ROHEN Rest, die Selbstmarker-Weiche den Rest
+    // nach dem Passus: dieselbe Stelle, zwei Rest-Definitionen. Herleitung und
+    // Messung am M12-Guard unten. Im Fremdgesetz-Chapeau ruht die Erweiterung
+    // (dort IST das genannte Kürzel das Ziel — 7 gemessene Stellen).
+    const nachPassus = intern.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Herleitung an GLIEDERUNGS_GENITIV).
     if (!selbst && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) continue;
+    // Der des/der-Guard bleibt bewusst am ROHEN Rest (V-6): «des/der/über» ist
+    // ein WEICHES Signal, und hinter einem Passus steht dort oft gewöhnliche
+    // Prosa. Gemessen 31.8.2026 über alle 1458 Snapshots: der Umbau verschöbe
+    // 812 weitere Self-Stellen, davon rund ein Fünftel ECHTE Selbstverweise
+    // («Artikel 5 Absatz 1 über ein Projekt» UVPV 6a, «Art. 111 Abs. 1 der
+    // Quellensteuer unterliegen» NW-521.1 118, «Artikel 109 Absatz 1bis über
+    // die Tagfahrlichter» VTS 222m). Kein Link ist besser als ein falscher —
+    // ein RICHTIGER Link ist aber besser als keiner (§1/§8).
     if (!selbst && /^\s+(?:des|der|über|vom)\b/.test(rest)) continue;
     // N2 (Form A, ABGEKÜRZTE Kürzel-Form): Nennt der Verweis ein ANDERES
     // Bundesgesetz («Artikel 1a Absatz 1 Buchstabe c AHVG» in der AHVV → AHVG),
@@ -578,7 +600,38 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Link UNTERDRÜCKT (lieber kein Link als ein plausibel-falscher, §1/§6,
     // David-Entscheid 28.6.). «Absatz/Buchstabe/Ziffer» (EIN Grossbuchstabe)
     // bleiben unberührt → echte Self-Verweise («Artikel 6 Absatz 2») weiter verlinkt.
-    if (!selbst && /^\s+(?:[A-ZÄÖÜ]{2,}|[A-ZÄÖÜ][a-zäöü]*[A-ZÄÖÜ]\w*)/.test(rest)) continue;
+    //
+    // V-6 (W2·20, Befund V-3/V-4 31.8.2026): geprüft wird der rohe Rest ODER
+    // der Rest NACH dem Passus. Bis hierher sah der Guard nur den rohen Rest —
+    // ein Passus- oder Aufzählungsglied zwischen Nummer und Kürzel machte ihn
+    // blind: OR Art. 973g «(Art. 895–898 ZGB)» bekam einen Self-Link auf
+    // /gesetze/bund/OR#art-895, einen ZGB-Artikel im OR (§1). Gemessen
+    // 31.8.2026 über alle 1458 Snapshots (Blöcke + Items): 446 Stellen in 121
+    // Erlassen wechseln SELF → TEXT; die systematische Stichprobe (27) nennt
+    // ausnahmslos ein Fremdgesetz (IVV, AsylG, ZGB, StHG, JStG, BetmG, GwG,
+    // FinfraG, EU-MDR …), kein echter Self-Verweis geht verloren.
+    //
+    // ODER, nicht Ersetzung — und das ist gemessen, nicht vorsichtshalber: der
+    // Passus-Überleser bricht bei «Buchstaben a–e AHVG» hinter dem «a» ab
+    // («–e» ist kein Zahlenglied), und der Rest «–e AHVG» trägt kein führendes
+    // Leerzeichen, das dieser Guard und N2 verlangen. Eine reine Ersetzung
+    // hätte daraus 150 NEUE falsche Self-Links gemacht (AHVV, AVIV, BPV, ELV,
+    // FINIV, KVV, MWSTV …). Die ODER-Form kann nie weniger unterdrücken als
+    // vorher. N2 (oben) bleibt am rohen Rest: der Umbau dort ändert
+    // nachweislich KEINEN Entscheid, er verschöbe nur Klassen-Etiketten.
+    //
+    // AUSNAHME (V-6): steht dort das Kürzel des GELESENEN Erlasses («Artikel 5
+    // Absatz 2 AHVG» im AHVG), ist der Verweis ein Selbstverweis, kein
+    // Fremdsignal — dieselbe Identitäts-Regel wie in der N2-Zeile darüber (§5).
+    // Sie war nötig, seit der Guard hinter den Passus blickt: ohne sie fielen
+    // die Kontrakte von `normText.test.tsx` (AHVG, FinfraV-FINMA). Im Korpus
+    // ändert sie NICHTS (gemessen 31.8.2026: dieselben 849 Klassen-Wechsel mit
+    // und ohne) — dort deckt der voll zitierte Anker (V-2 Ziel 3) diese Form
+    // ab; sie hält den Guard bloss widerspruchsfrei zu N2.
+    if (!selbst && kuerzelAmZitat(rest) !== eigenesKuerzel
+      && /^\s+(?:[A-ZÄÖÜ]{2,}|[A-ZÄÖÜ][a-zäöü]*[A-ZÄÖÜ]\w*)/.test(rest)) continue;
+    if (!selbst && kuerzelAmZitat(nachPassus) !== eigenesKuerzel
+      && /^\s+(?:[A-ZÄÖÜ]{2,}|[A-ZÄÖÜ][a-zäöü]*[A-ZÄÖÜ]\w*)/.test(nachPassus)) continue;
     // M6-D: Fremdgesetz-Chapeau → bare «Art. N» zeigt aufs Zielgesetz (nicht Self).
     // NormChip trägt die Auflösung (Korpus-Popover / Fedlex-Fallback / Text bei
     // unbekanntem Ziel) — dieselbe Kette wie ein voll zitierter Fremdverweis (§5).
