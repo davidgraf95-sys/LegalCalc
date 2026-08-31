@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
+import { nichtKonsolidiertSatz } from '../lib/normtext/erlassKopfText';
+import {
+  AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN, MASSGEBLICH_HALBSATZ, MASSGEBLICH_SATZ,
+} from '../lib/benennung';
 
 // ═══ BENENNUNGS-GLOSSAR DES LESERS — der Wächter (Ä97–Ä122, 18.8.2026) ══════
 //
@@ -267,5 +271,205 @@ describe('Ä117: der Leser führt genau EIN Gedankenstrich-Zeichen', () => {
     // Ohne sie wäre das Verbot oben auch dann grün, wenn gar kein
     // Gedankenstrich mehr gesetzt würde.
     expect(FLAECHE).toContain('—');
+  });
+});
+
+// ═══ DIE APP-FLÄCHE (W2·19-DESIGN-KONSISTENZ, Befunde B-1/B-2/B-3/B-6/A-3) ══
+//
+// GELTUNGSBEREICH-ERWEITERUNG, 31.8.2026. Der Kopf dieser Datei sagt seit dem
+// 18.8.: «Wer den Bereich später ausweitet, ändert die Liste hier — und sieht
+// sofort, wie viel noch offen ist.» Genau das passiert hier — und zwar, weil die
+// dort als «eigene Entscheidung über die ganze Anwendung» zurückgestellte Hälfte
+// von Ä110 inzwischen ENTSCHIEDEN ist:
+//
+// GEMESSEN (Design-Konsistenz, Finder-Welle B, Runde 1): derselbe Link auf die
+// massgebliche amtliche Quelle trug ausserhalb der V3-Fläche vier Wortlaute und
+// vier Optiken («Zur amtlichen Fassung ↗» als schwarzer Primärknopf ·
+// «↗ geltende Fassung» · «↗ geltende Fassung auf Fedlex» · im Aufhebungs-Banner
+// «↗ amtliche (aufgehobene) Fassung»), das Datum lief in zwei Anmutungen aus
+// FÜNF byte-gleichen Formatierern, und der Vorbehalt stand in zwei Substantiven
+// («Fassung» 10 : «Quelle» 5).
+//
+// WARUM DIE SONDEN HIER UND NICHT IN EINER EIGENEN DATEI: es ist dieselbe
+// Sache (ein Ziel, ein Name) und dieselbe Technik (Quelltext-Scan ohne
+// Kommentare). Zwei Wächter für ein Glossar wären genau die Streuung, gegen
+// die dieser Wächter gebaut ist.
+//
+// Die V3-Fläche oben bleibt unberührt: sie hat ihre eigene Dateiliste, und die
+// Kanon-Wörter stehen dort weiterhin als Literal (`parts/ArtikelLeser.tsx`,
+// `parts/SektionKopf.tsx`) — der Baustein hat sie nicht verschluckt.
+
+const APP_DATEIEN = [
+  'components/ui/QuellLink.tsx',
+  'components/ui/Datum.tsx',
+  'components/NormPopover.tsx',
+  'components/vorlagen/NormChip.tsx',
+  'components/rechtsprechung/format.ts',
+  'pages/MaterialLeser.tsx',
+  'pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
+  'pages/gesetz-leser/parts/AmtlichesPdf.tsx',
+];
+
+const LIES_APP = (rel: string) => readFileSync(`src/${rel}`, 'utf8');
+const APP_FLAECHE = APP_DATEIEN.map((d) => ohneKommentare(LIES_APP(d))).join('\n');
+
+describe('Positiv-Sonde: die App-Fläche existiert und trägt den geteilten Baustein', () => {
+  it('alle gelisteten Dateien sind lesbar und der gefilterte Text ist substanziell', () => {
+    expect(APP_DATEIEN.length).toBe(8);
+    expect(APP_FLAECHE.length).toBeGreaterThan(10_000);
+    // Eine Beschriftung, die es garantiert gibt: ohne sie hätte der Filter zu
+    // viel entfernt und jede Verbots-Sonde wäre grundlos grün.
+    expect(APP_FLAECHE).toContain('Norm-Vorschau');
+  });
+
+  it('der Kanon-Wortlaut steht im Baustein — und wird dort gebaut, nicht kopiert', () => {
+    const baustein = ohneKommentare(LIES_APP('components/ui/QuellLink.tsx'));
+    expect(baustein).toContain('AMTLICHE_FASSUNG');
+    expect(baustein).toContain('AMTLICHE_FASSUNG_AUFGEHOBEN');
+    expect(baustein).toContain('↗');
+    // Die Wörter selbst bleiben in der EINEN Wortquelle (§5) — der Baustein
+    // darf sie nicht noch einmal ausschreiben.
+    expect(baustein).not.toContain(`'${AMTLICHE_FASSUNG}'`);
+    expect(baustein).not.toContain(`'${AMTLICHE_FASSUNG_AUFGEHOBEN}'`);
+  });
+});
+
+describe('B-1/B-2: EIN Name und EINE Anatomie für den amtlichen Quell-Link', () => {
+  const VERWORFEN: { wort: RegExp; statt: string }[] = [
+    { wort: /↗\s*geltende Fassung/, statt: '«Amtliche Fassung ↗» (Pfeil hinten)' },
+    { wort: /geltende Fassung\s*↗/, statt: '«Amtliche Fassung ↗» (kein «geltende»)' },
+    { wort: /Zur amtlichen Fassung/, statt: '«Amtliche Fassung ↗»' },
+    { wort: /↗\s*amtliche \(aufgehobene\) Fassung/, statt: '«Amtliche (aufgehobene) Fassung ↗»' },
+    { wort: /↗\s*Nachfolge-Erlass/, statt: '«Nachfolge-Erlass: … ↗» (Pfeil hinten)' },
+  ];
+
+  for (const v of VERWORFEN) {
+    it(`«${v.wort.source}» kommt in der App-Fläche nicht mehr vor`, () => {
+      const treffer = APP_DATEIEN.filter((d) => trefferIn(ohneKommentare(LIES_APP(d)), v.wort));
+      expect(treffer,
+        `Verworfener Wortlaut in ${treffer.join(', ')} — der Kanon (Ä110) sagt: ${v.statt}. ` +
+        'Steht er in einer Herleitung, gehört er in einen Kommentar (die zählen hier nicht).',
+      ).toEqual([]);
+    });
+  }
+
+  it('die vier Konsumenten ziehen den Link aus dem Baustein, statt ihn zu bauen', () => {
+    for (const d of [
+      'pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
+      'pages/MaterialLeser.tsx',
+      'components/NormPopover.tsx',
+      'components/vorlagen/NormChip.tsx',
+    ]) {
+      expect(ohneKommentare(LIES_APP(d)), `${d} führt den Quell-Link nicht über QuellLink`)
+        .toContain('QuellLink');
+    }
+  });
+
+  it('der Quell-Link im MaterialLeser ist kein Primärknopf mehr (ruhiger Textlink)', () => {
+    // GEMESSEN: `lc-btn-primary` war die lauteste Form der Seite und stand auf
+    // einem Link, der aus der Seite HINAUS zu einer Auskunft führt.
+    expect(ohneKommentare(LIES_APP('pages/MaterialLeser.tsx'))).not.toContain('lc-btn-primary');
+  });
+});
+
+describe('B-3: EIN Datums-Formatierer, EINE Anmutung', () => {
+  it('keine zweite ISO-Datums-Regex in der App-Fläche', () => {
+    // Die eine Quelle ist `datumCh` in `lib/normtext/erlassKopfText.ts`; jede
+    // weitere Stelle mit derselben Regex ist eine Kopie, die auseinanderlaufen
+    // kann (fünf gab es, alle byte-gleich).
+    const treffer = APP_DATEIEN.filter((d) => /\(\\d\{4\}\)-\(\\d\{2\}\)-\(\\d\{2\}\)/.test(ohneKommentare(LIES_APP(d))));
+    expect(treffer,
+      `Eigener Datums-Formatierer in ${treffer.join(', ')} — Format UND Auszeichnung ` +
+      'kommen aus `components/ui/Datum.tsx` (§5).',
+    ).toEqual([]);
+  });
+
+  it('Positiv-Sonde: die eine Quelle trägt die Regex wirklich', () => {
+    // Ohne sie wäre das Verbot oben auch dann grün, wenn gar kein Formatierer
+    // mehr existierte.
+    expect(readFileSync('src/lib/normtext/erlassKopfText.ts', 'utf8'))
+      .toContain('/^(\\d{4})-(\\d{2})-(\\d{2})$/');
+  });
+
+  it('Materialien- und Norm-Vorschau-Datum laufen über den geteilten Baustein', () => {
+    for (const d of ['pages/MaterialLeser.tsx', 'components/NormPopover.tsx']) {
+      expect(ohneKommentare(LIES_APP(d)), `${d} zeichnet sein Datum nicht über <Datum> aus`)
+        .toContain('<Datum iso=');
+    }
+  });
+
+  it('die Mono-Stimme bleibt SR-Nummer und Aktenzeichen vorbehalten', () => {
+    // Design-Grundlage Kap. 2.1. Im MaterialLeser umklammerte `.num` ein DATUM.
+    expect(ohneKommentare(LIES_APP('pages/MaterialLeser.tsx'))).not.toContain('className="num"');
+    // Gegenprobe: im Erlass-Kopf steht `.num` weiterhin — dort trägt es die
+    // SR-Nummer, also genau den Fall, für den die Mono-Stimme reserviert ist.
+    expect(ohneKommentare(LIES_APP('pages/gesetz-leser/parts/ErlassLeserKopf.tsx')))
+      .toContain('className="num"');
+  });
+});
+
+describe('B-6: EIN Substantiv für das Massgebliche — «Fassung», nicht «Quelle»', () => {
+  it('keine «amtliche Quelle» mehr in der App-Fläche', () => {
+    const treffer = APP_DATEIEN.filter((d) => ohneKommentare(LIES_APP(d)).includes('amtliche Quelle'));
+    expect(treffer,
+      `«amtliche Quelle» in ${treffer.join(', ')} — der Kanon (B-6, Zählung 10:5) sagt ` +
+      '«die amtliche Fassung», aus `lib/benennung.ts`.',
+    ).toEqual([]);
+  });
+
+  it('die drei Träger ziehen den Vorbehalt aus der Wortquelle', () => {
+    expect(ohneKommentare(LIES_APP('pages/gesetz-leser/parts/ErlassLeserKopf.tsx'))).toContain('MASSGEBLICH_HALBSATZ');
+    expect(ohneKommentare(LIES_APP('pages/gesetz-leser/parts/AmtlichesPdf.tsx'))).toContain('MASSGEBLICH_HALBSATZ');
+    expect(ohneKommentare(LIES_APP('pages/MaterialLeser.tsx'))).toContain('MASSGEBLICH_SATZ');
+  });
+
+  it('§8: der Nachdruck «stets» überlebt die Vereinheitlichung', () => {
+    // Ein Vereinheitlichen darf einen Ehrlichkeits-Satz nie abschwächen.
+    expect(MASSGEBLICH_SATZ).toBe('Massgeblich ist stets die amtliche Fassung.');
+    expect(MASSGEBLICH_HALBSATZ).toBe('massgeblich ist die amtliche Fassung');
+  });
+
+  it('der Risikopfad-Satz bleibt byte-gleich zum Stand vor der Anbindung', () => {
+    // `erlassKopfText.nichtKonsolidiertSatz` hat den Halbsatz seit B-6 nicht
+    // mehr als Literal. Die ERZEUGTE Zeichenkette muss dieselbe bleiben —
+    // derselbe String steht im prerenderten SEO-Kopf (§5, `lib/seo-detail.ts`).
+    expect(nichtKonsolidiertSatz('2025-07-01')).toBe(
+      'Fedlex hat eine seit 01.07.2025 geltende Änderung noch nicht in den Text eingearbeitet'
+      + ' — massgeblich ist die amtliche Fassung.',
+    );
+    expect(nichtKonsolidiertSatz(null)).toBe(
+      'Fedlex hat eine geltende Änderung noch nicht in den Text eingearbeitet'
+      + ' — massgeblich ist die amtliche Fassung.',
+    );
+  });
+});
+
+describe('A-3: das Material-Pane meldet seinen Dokumentnamen', () => {
+  const MATERIAL = () => ohneKommentare(LIES_APP('pages/MaterialLeser.tsx'));
+
+  it('kein imPane-Guard vor der Kopf-Meldung', () => {
+    // GEMESSEN: mit `if (imPane) return;` hiess das Pane «Material öffnen»
+    // (Verlauf-Fallback) statt «Materialien › WML». Die Melde-Kette ist
+    // pane-lokal (`components/layout/Pane.tsx` legt einen eigenen
+    // `InhaltsKopfMeldeProvider` um seinen RouteSwitch) — der Guard schützte
+    // vor nichts und kostete den Namen.
+    expect(MATERIAL()).not.toMatch(/if\s*\(\s*imPane\s*\)/);
+    expect(MATERIAL(), 'die Prop trägt ohne den Guard keine Aussage mehr (§17 Rückbau)')
+      .not.toContain('usePaneKontext');
+  });
+
+  it('Positiv-Sonde: die Meldung selbst steht noch da', () => {
+    // Ohne sie wäre das Verbot oben auch dann grün, wenn die ganze Melde-Kette
+    // verschwände — dann hiesse das Pane wieder «Material öffnen».
+    expect(MATERIAL()).toContain('meldeKopf({ breadcrumb:');
+    expect(MATERIAL()).toContain("label: 'Materialien'");
+  });
+
+  it('die pane-lokale Melde-Kette existiert wirklich (Grund des Rückbaus)', () => {
+    // Der Guard war mit der Sorge begründet, die Meldung könnte den Kopf der
+    // HAUPTfläche überschreiben. Diese Sonde hält fest, warum sie es nicht
+    // kann — bricht der eigene Provider im Pane weg, wird der Rückbau falsch.
+    expect(readFileSync('src/components/layout/Pane.tsx', 'utf8'))
+      .toContain('<InhaltsKopfMeldeProvider value={setKopf}>');
   });
 });

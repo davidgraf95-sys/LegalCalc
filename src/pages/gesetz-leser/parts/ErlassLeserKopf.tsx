@@ -4,6 +4,8 @@ import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
   datumCh, naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
+import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
+import { QuellLink } from '../../../components/ui/QuellLink';
 import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
@@ -269,10 +271,15 @@ export function ErlassLeserKopf({
           die Aussage der Stand-Zeile darüber und ist am aufgehobenen Erlass
           gerade falsch (dieser Zweig läuft dort ohnehin nicht — `lebt`).
           Alle Beschriftungen der Zeile beginnen jetzt gross; das ist die eine
-          Schreibung, die Ä110 verlangt. */}
+          Schreibung, die Ä110 verlangt.
+          B-1 (31.8.2026): der Wortlaut ist nicht mehr Literal, sondern kommt aus
+          dem geteilten `QuellLink` — dasselbe Ziel hiess an vier Stellen
+          viererlei, obwohl Ä110 seit dem 18.8. feststand. `.lc-chip` bleibt: die
+          Zeile neutralisiert die Chip-Anatomie selbst (index.css,
+          `.lc-kopf-aktionen`), der Slot-Vertrag ist unverändert. */}
       <div className="lc-kopf-aktionen flex flex-wrap items-center gap-x-5 gap-y-0.5 text-xs">
         {erlass.quelleUrl && lebt && (
-          <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="lc-chip">Amtliche Fassung ↗</a>
+          <QuellLink href={erlass.quelleUrl} className="lc-chip" />
         )}
         {aktionen}
       </div>
@@ -286,23 +293,28 @@ export function ErlassLeserKopf({
           <p>
             <strong className="font-semibold">Aufgehoben per {datumCh(erlass.aufgehoben.seit)}.</strong>{' '}
             Dieser Erlass ist nicht mehr in Kraft. Der Text bleibt als historische Fassung
-            (Stand {datumCh(erlass.stand)}) abrufbar — massgeblich ist die amtliche Quelle.
+            (Stand {datumCh(erlass.stand)}) abrufbar — {MASSGEBLICH_HALBSATZ}.
           </p>
+          {/* ── B-1/B-2 (31.8.2026) · DAS BANNER BRACH Ä110 ────────────────────
+              GEMESSEN: beide Links dieses Banners trugen den Pfeil VORNE und
+              begannen klein («↗ amtliche (aufgehobene) Fassung») — drei Zeilen
+              unter dem Kopf-Link, der seit Ä110 «Amtliche Fassung ↗» heisst.
+              Die Aussage «derselbe Link auf die aufgehobene Konsolidierung»
+              steht jetzt im Baustein (`variante`), nicht in einem zweiten,
+              handgeschriebenen Wortlaut. Der Nachfolge-Erlass ist KEIN
+              «amtliche Fassung»-Link und behält darum seinen eigenen Namen —
+              aber dieselbe Anatomie (Pfeil hinten, gross beginnend). */}
           <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
             {erlass.aufgehoben.nachfolger && (
-              <a
+              <QuellLink
                 href={`https://www.fedlex.admin.ch/eli/${erlass.aufgehoben.nachfolger.eli}/de`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="underline hover:no-underline"
               >
-                ↗ Nachfolge-Erlass: SR <span className="num">{erlass.aufgehoben.nachfolger.sr}</span> (in Kraft seit {datumCh(erlass.aufgehoben.seit)})
-              </a>
+                Nachfolge-Erlass: SR <span className="num">{erlass.aufgehoben.nachfolger.sr}</span> (in Kraft seit {datumCh(erlass.aufgehoben.seit)})
+              </QuellLink>
             )}
             {erlass.quelleUrl && (
-              <a href={erlass.quelleUrl} target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
-                ↗ amtliche (aufgehobene) Fassung
-              </a>
+              <QuellLink href={erlass.quelleUrl} variante="aufgehoben" className="underline hover:no-underline" />
             )}
           </p>
         </div>

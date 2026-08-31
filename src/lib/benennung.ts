@@ -27,6 +27,23 @@
 // Beschriftungen mehrerer V3-Bauteile an einem Ort. §17-Rückbau bleibt
 // offen — zu prüfen, ob die Datei aufzulösen ist (Wörter an ihre einzigen
 // Verwender zurückverschieben) oder als geteilte Quelle sinnvoll bleibt.
+//
+// ─── HOCHZUG 31.8.2026 (W2·19-DESIGN-KONSISTENZ, Befunde B-1/B-2/B-6) ────────
+// Die 21.8. offen gelassene §17-Frage ist damit BEANTWORTET, und zwar gegen den
+// Rückbau: die Datei bleibt als geteilte Quelle — aber nicht mehr unter
+// `src/pages/gesetz-leser/`. Zwei Gründe, beide gemessen:
+//   · REICHWEITE. Dieselben Wörter führen seit B-1 auch `pages/MaterialLeser`
+//     (Materialien), `components/vorlagen/NormChip` und `components/NormPopover`
+//     (Vorlagen/Verweise) sowie der neue geteilte Baustein
+//     `components/ui/QuellLink`. Eine Heimat unter `pages/gesetz-leser/` hätte
+//     drei fremde Domänen an einen Seitenordner gebunden und den Geltungsbereich
+//     der Wörter falsch etikettiert.
+//   · LIB BRAUCHT SIE SELBST. `MASSGEBLICH_HALBSATZ` (B-6) steht auch in
+//     `lib/normtext/erlassKopfText.ts` — die Bibliotheks-Schicht darf nicht auf
+//     die Seiten-Schicht zeigen (§3). Genau diese Herleitung steht schon im Kopf
+//     von `erlassKopfText.ts`; hier gilt sie unverändert.
+// Die Mechanik ist unverändert: dieselben Zeichenketten, dieselben Verwender,
+// nur der Ort und die drei B-6-Konstanten sind neu.
 
 /** Ä110 · der Live-Link auf die amtliche Fassung — Pfeil «↗» steht HINTEN. */
 export const AMTLICHE_FASSUNG = 'Amtliche Fassung';
@@ -47,3 +64,31 @@ export const AMTLICHE_FASSUNG_AUFGEHOBEN = 'Amtliche (aufgehobene) Fassung';
  * was `target="_blank"` in jedem heutigen Browser tut.
  */
 export const NEUER_TAB = '(neuer Tab)';
+
+// ═══ B-6 (31.8.2026) · EIN NAME FÜR DAS MASSGEBLICHE ════════════════════════
+//
+// GEMESSEN (Finder-Welle B, Runde 1): derselbe Vorbehalt stand site-weit in
+// zwei Substantiven da — «massgeblich ist die amtliche FASSUNG» (10 Stellen)
+// neben «massgeblich ist die amtliche QUELLE» (5 Stellen), teils im selben
+// Kopf (`ErlassLeserKopf` sagte im Aufhebungs-Banner «Quelle», im Link
+// darüber «Fassung»). Das Reglement schweigt zum Substantiv; nach §2 des
+// Fahrplans gewinnt darum die verbreitetere Form — «Fassung», 10:5. Sie ist
+// zudem die genauere: massgeblich ist nicht die Website, sondern der Text in
+// seiner geltenden Fassung.
+//
+// EINE Wahrheit ist das NOMEN, nicht der Satz: die Stellen brauchen zwei
+// Grammatiken (Halbsatz nach Gedankenstrich bzw. eigener Satz), und ein
+// zweites Literal für den Satz wäre wieder eine zweite Wahrheit (§5). Darum
+// wird der Satz aus dem Nomen GEBAUT.
+//
+// §8: «stets» im Satzform-Fall bleibt erhalten — es ist Nachdruck, keine
+// Floskel; ein Vereinheitlichen darf einen Ehrlichkeits-Satz nie abschwächen.
+
+/** Das Bezugsobjekt des Vorbehalts — das eine Wort (B-6). */
+export const AMTLICHE_FASSUNG_NOMEN = 'die amtliche Fassung';
+
+/** Halbsatz nach Gedankenstrich: «… — massgeblich ist die amtliche Fassung». */
+export const MASSGEBLICH_HALBSATZ = `massgeblich ist ${AMTLICHE_FASSUNG_NOMEN}`;
+
+/** Eigenständiger Satz: «Massgeblich ist stets die amtliche Fassung.» */
+export const MASSGEBLICH_SATZ = `Massgeblich ist stets ${AMTLICHE_FASSUNG_NOMEN}.`;

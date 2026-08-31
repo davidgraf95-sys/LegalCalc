@@ -1,6 +1,6 @@
 import { FnRef } from '../../../components/normtext/ArtikelBody';
 import type { Sektion } from '../../../lib/normtext/browse';
-import { NEUER_TAB } from '../benennung';
+import { NEUER_TAB } from '../../../lib/benennung';
 import { romanFrei, margLabel } from '../helpers';
 
 // Gliederungs-Überschrift im Fliesstext: klappbar (Fedlex-analog), volle

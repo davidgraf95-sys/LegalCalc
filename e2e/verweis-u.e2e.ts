@@ -142,7 +142,7 @@ test.describe('A7 — strukturiertes Verweis-Popover (Wortlaut → Entscheide �
     await expect(dialog).toBeVisible({ timeout: 10_000 });
     // (1) Artikel-Wortlaut + Provenienz-Fuss (§7 a–d).
     await expect(dialog.getByText('Norm-Vorschau')).toBeVisible();
-    await expect(dialog.getByRole('link', { name: /geltende Fassung/ })).toBeVisible();
+    await expect(dialog.getByRole('link', { name: /Amtliche Fassung/ })).toBeVisible();
     // (3) klar abgetrennte Materialien-Gruppe (lazy) mit Behörden-Kürzel + Stand (A13).
     const matGruppe = dialog.getByRole('heading', { name: /Amtliche Materialien/ });
     await expect(matGruppe).toBeVisible({ timeout: 10_000 });
