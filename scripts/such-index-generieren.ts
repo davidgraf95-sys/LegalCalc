@@ -32,6 +32,12 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { artikelText, baueRecallFelder, type Block, type StrukturArtikel } from './suche-felder';
+import { KANTON_ABK_ALIASE } from '../src/lib/normtext/kanton-abk-aliase.generated';
+
+// R8 (31.8.2026): amtlich belegtes Kanton-Kürzel je Erlass-Key — die EINE
+// Alias-Quelle der Kanton-Ebene (§5, Generator: scripts/normtext/
+// kanton-abk-aliase-generieren.ts). Je Key höchstens ein Alias (dort bewacht).
+const KANTON_KZ = new Map(KANTON_ABK_ALIASE.map((z) => [z.key, z.abk]));
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const NORMTEXT = resolve(wurzel, 'public/normtext');
@@ -141,7 +147,13 @@ interface StrukturDatei { artikel?: Record<string, StrukturArtikel> }
 // topischer Boost — eine Fussnoten-/Tabellen-Nennung widmet den Artikel dem Thema
 // nicht) und tragen die von der Korpus-Suche bisher übersehenen Werte, die NUR in
 // Tabellen oder Fussnoten stehen. Feld-Gewichtung: t > m > n > g > tb > f.
-interface IndexEintrag { k: string; ku: string; eb: Ebene; kt: string; a: string; l: string; m: string; n: string; g: string; t: string; tb: string; f: string }
+// kz=amtliches Kanton-Kürzel des Erlasses («GOG», «EG zum ZGB») aus dem
+// R8-Alias-Artefakt — '' bei Bund (dort IST ku bereits das Kürzel) und bei
+// Kanton-Erlassen ohne belegtes Kürzel. KEIN eigenes Recall-Feld: das Kürzel
+// steckt per Konstruktion wörtlich im ku-String (Test kanton-abk-aliase);
+// kz trägt allein den KÜRZEL-TREFFER der Rangschicht (artikelRanking.ts:
+// Query == Kürzel ⇒ der Erlass ist der Query gewidmet, Stufe 0).
+interface IndexEintrag { k: string; ku: string; kz: string; eb: Ebene; kt: string; a: string; l: string; m: string; n: string; g: string; t: string; tb: string; f: string }
 
 /** Warum eine Datei keinen (oder keinen vollständigen) Beitrag zum Index leistet.
  *  Wird mitgeschrieben statt verschluckt — ein Erlass, der aus dem Index fällt,
@@ -198,7 +210,8 @@ export function baueEbenenIndex(ebene: Ebene): EbenenIndex {
       // Eintrag OHNE Kanton wäre eine stille Herkunfts-Lüge; das Tor
       // src/tests/suchIndex.test.ts lässt genau das rot auflaufen.
       const kt = ebene === 'kanton' ? (e.quelle ?? '').trim() : '';
-      eintraege.push({ k: key, ku: e.erlass, eb: ebene, kt, a: e.artikel, l: e.artikelLabel, m, n, g, t, tb, f });
+      const kz = ebene === 'kanton' ? (KANTON_KZ.get(key) ?? '') : '';
+      eintraege.push({ k: key, ku: e.erlass, kz, eb: ebene, kt, a: e.artikel, l: e.artikelLabel, m, n, g, t, tb, f });
     }
     // Erlass-Datei, die KEINEN einzigen indexierbaren Artikel beigetragen hat.
     if (eintraege.length === vorher) {

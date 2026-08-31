@@ -24,8 +24,12 @@
 // ohnehin rendert. Recall liefert FlexSearch; hier wird nur RE-RANGIERT.
 
 import { normalisiereBegriff, expandiereSuchbegriff } from './vokabular';
+import { norm } from './normQuery';
 
-export interface RankEintrag { k: string; ku: string; a: string; l: string; m: string; n: string; g: string; t: string; eb: 'bund' | 'kanton' }
+// kz: amtliches Kanton-Kürzel des Erlasses aus dem R8-Alias-Artefakt (Feld im
+// Suchindex, s. scripts/such-index-generieren.ts) — optional, '' bei Bund und
+// bei Kanton-Erlassen ohne belegtes Kürzel.
+export interface RankEintrag { k: string; ku: string; kz?: string; a: string; l: string; m: string; n: string; g: string; t: string; eb: 'bund' | 'kanton' }
 
 // ── Ebenen-Rang (W2·5) — PROVISORISCHE ANZEIGE-ORDNUNG, KEIN ENTSCHIED ───────
 //
@@ -118,16 +122,42 @@ export function sucherTerme(q: string): { orig: string[]; syn: string[] } {
   return { orig, syn };
 }
 
-interface Bewertung<T> { e: T; stufe: number; kern: number; ebene: number; num: number; suf: string; idx: number }
+interface Bewertung<T> { e: T; stufe: number; kuerzel: number; kern: number; ebene: number; num: number; suf: string; idx: number }
 
-function bewerte<T extends RankEintrag>(e: T, orig: string[], idx: number): Bewertung<T> {
+/**
+ * KÜRZEL-TREFFER (R8, 31.8.2026): Die GANZE Query ist — normalisiert wie in
+ * normQuery.norm() («gog» = «GOG», «eg zum zgb» = «EGZUMZGB») — exakt das
+ * amtliche Kürzel dieses Erlasses. Dann ist der Erlass der Query GEWIDMET
+ * (Stufe 0), symmetrisch für beide Ebenen: Bund über das Anzeige-Kürzel `ku`
+ * («StGB»), Kanton über das R8-Alias-Feld `kz` («GOG», Artefakt kanton-abk-
+ * aliase.generated). OHNE diese Stufe blieben die 100 GOG-Artikel unsichtbar
+ * hinter fremden Reglementen, deren MARGINALIEN «GOG» zitieren (Nullprobe
+ * 31.8.2026: Query «GOG» → Top 8 ausschliesslich BS-154.110/150/250, kein
+ * einziger Artikel des GOG selbst). Kollisionsfall («StG» Bund + 6 Kantone):
+ * ALLE Ebenen erreichen Stufe 0, die Ordnung darunter (Bund vor Kanton, dann
+ * Key/Artikelnummer) bleibt die bestehende — Kürzel ist Alias, nie Schlüssel.
+ * Kanton-ku ist bewusst KEIN Träger: es ist dort der volle Erlass-String,
+ * eine Query kann ihn als Kürzel nie meinen.
+ */
+function kuerzelNorm(e: RankEintrag): string {
+  return norm(e.eb === 'kanton' ? (e.kz ?? '') : e.ku);
+}
+
+function bewerte<T extends RankEintrag>(e: T, orig: string[], idx: number, queryNorm: string): Bewertung<T> {
   // NUR die kurzen Struktur-Felder tokenisieren (m/n/g) — nie den Volltext e.t
   // (Perf-Kontrakt A9, siehe Kopfkommentar). Topische Treffer NUR aus der
   // getippten Query; Synonyme tragen allein den Recall (artikelVolltext.ts).
   const mTok = tokens(e.m); // primäre Marginalie (Hauptthema)
   const nTok = tokens(e.n); // nachrangige Marginalie
   const gTok = tokens(e.g); // Gliederungs-Titel
-  let haupt = false; // Stufe 0: primäre Marginalie oder Gliederung
+  // Stufe 0 auch bei exaktem Kürzel-Treffer (R8, s. kuerzelNorm oben). Der
+  // Kürzel-Treffer ordnet INNERHALB der topischen Stufen zusätzlich VOR den
+  // Marginalien-/Gliederungs-Treffern (`kuerzel` unten): wer «StG» tippt, meint
+  // den Erlass dieses Kürzels — nicht die zahlreichen Artikel, deren Randtitel
+  // «StGB…» als Präfix von «StG» treffen. Ohne den Unterschlüssel begrub genau
+  // dieses Präfix-Rauschen die Kürzel-Ziele (Messung 31.8.2026, Query «StG»).
+  const kuerzelExakt = queryNorm !== '' && queryNorm === kuerzelNorm(e);
+  let haupt = kuerzelExakt;
   let neben = false; // Stufe 1: nur nachrangige Marginalie
   for (const term of orig) {
     if (trifft(mTok, term) || trifft(gTok, term)) haupt = true;
@@ -137,6 +167,7 @@ function bewerte<T extends RankEintrag>(e: T, orig: string[], idx: number): Bewe
   const stufe = haupt ? 0 : neben ? 1 : 2;
   return {
     e, stufe,
+    kuerzel: kuerzelExakt ? 0 : 1,
     kern: KERN_RANG.has(e.k) ? KERN_RANG.get(e.k)! : KERN_NICHT,
     ebene: EBENEN_RANG[e.eb] ?? EBENEN_RANG.kanton,
     num, suf, idx,
@@ -153,11 +184,15 @@ export function rangiere<T extends RankEintrag>(kandidaten: T[], q: string, limi
   const { orig } = sucherTerme(q);
   if (orig.length === 0) return kandidaten.slice(0, limit);
 
-  const bewertet = kandidaten.map((e, i) => bewerte(e, orig, i));
+  const queryNorm = norm(q);
+  const bewertet = kandidaten.map((e, i) => bewerte(e, orig, i, queryNorm));
 
   bewertet.sort((x, y) => {
     if (x.stufe !== y.stufe) return x.stufe - y.stufe; // Hauptthema → Nebenerwähnung → Text
     if (x.stufe < 2) {
+      // R8: exakter Kürzel-Treffer VOR Marginalien-/Gliederungs-Treffern
+      // (Begründung in bewerte(); für Nicht-Kürzel-Queries überall 1 → neutral).
+      if (x.kuerzel !== y.kuerzel) return x.kuerzel - y.kuerzel;
       // Topische Stufen: Kernerlass ↑, dann Artikelnummer ↑ (definitorischer
       // Eröffnungsartikel des getroffenen Abschnitts zuerst → «253 ff.»/«492 ff.»).
       if (x.kern !== y.kern) return x.kern - y.kern;
