@@ -74,7 +74,6 @@
    "uinav-j-rechtsprechung.e2e.ts",
    "hist-ansicht-w25i.e2e.ts",
    "leitfaelle-chips.e2e.ts",
-   "leser-gliederung-kein-overflow.e2e.ts",
    "leser-optionen.e2e.ts",
    "leser-ruecksprung-r5-r7.e2e.ts",
    "leser-v3-umschalten.e2e.ts",
@@ -85,7 +84,8 @@
    "leser-v3-nachzug-auskunft.e2e.ts",
    "leser-v3-kontext-cls.e2e.ts",
    "leser-v3-panel-nachzug.e2e.ts",
-   "leser-v3-scrim-b7n1.e2e.ts"
+   "leser-v3-scrim-b7n1.e2e.ts",
+   "leser-kein-ueberlauf.e2e.ts"
   ],
   "6": [
    "fremdgesetz-verweis-aig.e2e.ts",
@@ -98,7 +98,6 @@
    "verlauf-o1.e2e.ts",
    "leser-v3-kopf-buendig.e2e.ts",
    "leser-v3-prerender-bezuege.e2e.ts",
-   "leser-kein-seitenueberlauf.e2e.ts",
    "leser-v3-panel-bezuege-wirkung.e2e.ts",
    "topbar-kein-ueberlauf-320.e2e.ts",
    "leser-v3-panel-anwendung.e2e.ts"
