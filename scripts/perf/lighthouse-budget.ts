@@ -27,6 +27,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
+import { erlassPfadVonKey } from '../../src/lib/normtext/erlassAdresse';
 
 const requireCJS = createRequire(import.meta.url);
 
@@ -168,7 +169,9 @@ const KALIBRIER_MAX = 20_000;
 // (§6.7) — der kantonale Korpus wird in `W2·13-KANTONE-DATEN` neu erzeugt, und
 // eine 404-/Fehlseite hat ein makelloses CLS. Darum die Sonde.
 const KANTON_LESER_SCHLUESSEL = 'SO-614.11';
-const KANTON_LESER_PFAD = `/gesetze/kanton/${KANTON_LESER_SCHLUESSEL}`;
+// Adresse über den EINEN Formatierer (§5-Tor `erlass-adresse.test.ts`) —
+// die Ebene liefert die Kantonskürzel-Regel aus `routenEbeneVonKey`.
+const KANTON_LESER_PFAD = erlassPfadVonKey(KANTON_LESER_SCHLUESSEL);
 
 // `null` heisst: **gemessen und gedruckt, aber NICHT assertiert** — für eine
 // Route, die (noch) keine Runner-Kalibrierung hat. Ein aus der Luft gegriffener
