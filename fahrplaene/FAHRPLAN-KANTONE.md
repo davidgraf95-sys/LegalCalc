@@ -266,10 +266,11 @@ allein dieser §.*
 Artikel ihres Erlasses in der Volltext-Suche auffindbar — Client UND Edge.
 Kein Zitat-Resolver, keine UI-Änderung, keine neuen Quellen.
 
-- **Alias-Artefakt:** `src/lib/normtext/kanton-abk-aliase.generated.ts` (572 Aliase
-  aus 1231 Kanton-Erlassen; Generator `scripts/normtext/kanton-abk-aliase-generieren.ts`,
-  Drift-Tor `npm run check:kanton-abk-aliase`). Quelle: abbreviation-Feld des
-  Registers (`public/normtext/register.json`), Ausschluss-Regeln R1–R5 im
+- **Alias-Artefakt:** `src/lib/normtext/kanton-abk-aliase.generated.ts` (569 Aliase
+  aus 1231 Kanton-Erlassen — beim Bau 31.8. zunächst 572, seit Fix-Runde R8.2
+  gleichentags 569, s. u.; Generator `scripts/normtext/kanton-abk-aliase-generieren.ts`,
+  Drift-Tor `npm run check:kanton-abk-aliase`). Quelle: kuerzel-Feld des
+  Registers (`public/normtext/register.json`), Ausschluss-Regeln R1–R7 im
   Generator-Kopf. Zwei dokumentierte Gefahren-Klassen, je fail-closed + Test:
   (1) Bundes-Kürzel-Leck über Klammer-Akronyme (AR-760.12 «(AKV)» = Bundesrecht ⇒
   KEINE Klammer-Extraktion), (2) «Die Bürgschaft» (AR-222.31, Bundes-Titel-Fragment).
@@ -282,6 +283,28 @@ Kein Zitat-Resolver, keine UI-Änderung, keine neuen Quellen.
   über `ku`). **Edge:** 7. FTS-Spalte `kuerzel` (Gewicht 6) + Einwort-Stufung
   `hauptSpalten()`; Restlücken (Mehrwort-Kürzel, Präfixe) in `suche-kern.ts`
   «GILT NICHT» dokumentiert.
+- **Fix-Runde R8.2** *(31.8.2026, nach Gegenprüfungs-Verdikt WIDERLEGT, 7 Befunde)*:
+  - **R6 Klammer** (F1/F2): «Gerichtskostenverordnung (GKV)»→SG-2808 und
+    «Gebührenordnung (GebO)»→SZ-173.111 stammten aus handgepflegten
+    `src/data/tarif/*`-Zitat-Namen (PDF-Pipeline), amtlich ohne Kürzel-Beleg
+    (SG-API abbreviation leer; SRSZ-173.111-PDF ohne «GebO»; GP-Belege
+    31.8.2026) — Werte mit Klammer fliegen fail-closed raus (trifft exakt 2,
+    Test beweist; `src/data/tarif/**` unangetastet).
+  - **R7 Kantonskürzel** (F5): Alias exakt == einem der 26 Kantonskürzel wird
+    ausgeschlossen — «TG» (AR-955.21, amtlich belegt) kaperte sonst die
+    Kantonsabkürzung Thurgau in der Einwort-Stufe (trifft exakt 1, Test).
+  - **F6:** `--check` bewacht jetzt auch den jüngsten Kollisionsreport
+    byte-gleich (eine generierte Quelle `reportInhalt`; Mutationsprobe rot).
+  - **F3/F4:** Ebenen-Trennungs- und Paritäts-Doku in `suche-kern.ts`
+    präzisiert (Query-Richtung Token-Match KVG/ZGB; dritter GILT-NICHT-Punkt:
+    exakter Kürzel-Unterschlüssel nur im Client, «ZGB»-Messung).
+  - **Bilanz:** 572 → 569 Aliase (−GKV, −GebO, −TG).
+- **bm25-Nebenwirkung, gemessen und akzeptiert** (F7, GP-Messung 31.8.2026):
+  Die zusätzliche `kuerzel`-Spalte verändert die Doklängen-Normalisierung von
+  bm25 — in 4 von 60 Mess-Queries tauschen benachbarte Treffer im Rangbereich
+  11–20 die Plätze. Bewusst akzeptiert, kein Fix: die Streuung liegt in der
+  Natur jeder Spalten-Erweiterung; die gemessenen Verschiebungen blieben
+  Nachbar-Tausche ausserhalb der Top-10.
 - **Nach der Landung PFLICHT:** `npm run datenhaltung:turso-sync` — die
   Schema-Änderung kippt den Frische-Wächter Dimension 0 bis zum Sync (gewollt).
 - Offen (Folge-Schritte, NICHT R8): kantonaler Zitat-Resolver (ROADMAP,

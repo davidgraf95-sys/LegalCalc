@@ -27,10 +27,19 @@ export const MAX_LIMIT = 50;
 // Spalten trägt deren bm25-Gewichte und die Turso-Replika-DDL — Anhängen ändert
 // keine bestehende Zuordnung. Inhalt je Zeile: das Erlass-Kürzel ihres Erlasses
 // (Bund: erlasse.abkuerzung, z. B. «OR»; Kanton: das amtlich belegte Alias aus
-// src/lib/normtext/kanton-abk-aliase.generated.ts, '' ohne Beleg). Zeilen-skopiert
-// kann ein Kanton-Alias nie einen Bund-Erlass treffen und umgekehrt — die
-// Ebenen-Trennung ist konstruktiv (Kollisionen wie «StG» treffen beide Ebenen je
-// über die EIGENE Zeile; Report bibliothek/register/kanton-abk-kollisionen-*.md).
+// src/lib/normtext/kanton-abk-aliase.generated.ts, '' ohne Beleg).
+//
+// EBENEN-TRENNUNG, präzise (GP-Befund F3, 31.8.2026): Die SPEICHERUNG ist
+// zeilen-skopiert — jede Zeile trägt nur das Kürzel IHRES Erlasses, ein
+// Kanton-Alias steht nie in einer Bund-Zeile und umgekehrt (Kollisionen wie
+// «StG» treffen beide Ebenen je über die EIGENE Zeile; Report
+// bibliothek/register/kanton-abk-kollisionen-*.md). In QUERY-Richtung trennt
+// FTS5 aber nach TOKEN, nicht nach Wert: ein Bund-Kürzel als Token eines
+// MEHRWORT-Aliases hebt auch dessen Kanton-Zeilen (gemessen 31.8.2026, GP:
+// «ZGB» trifft neben dem Bundes-ZGB die «EG zum ZGB»-/«GebT ZGB»-Zeilen,
+// «KVG» die «V zum KVG»-Zeilen). Das ist gewollter Recall — wer «ZGB» tippt,
+// dem sind die kantonalen Einführungserlasse nahe —, und die Ordnung innerhalb
+// der Stufe (Kernerlass, dann Bund vor Kanton) hält die Bund-Artikel vorn.
 export const FTS_ARTIKEL_SPALTEN = ['text', 'marginalie', 'marginalie_n', 'gliederung', 'tabelle', 'fussnote', 'kuerzel'] as const;
 
 /** Stufe 0 «Hauptthema»: primäre Marginalie ODER Gliederungs-Titel — der Artikel ist
@@ -54,7 +63,9 @@ export const FTS_SPALTEN_NEBEN = ['marginalie_n'] as const;
  * Stufe 0 — die Stufenordnung (Kernerlass, dann Artikelnummer AUFSTEIGEND)
  * zeigte dann Art. 1 OR statt Art. 253 OR zuoberst. Ehrliche Restlücke zum
  * Client: mehrwortige Kürzel («EG zum ZGB») erreichen dort Stufe 0, hier nicht
- * — derselben Natur wie die dokumentierte Präfix-Nichtparität (s. «GILT NICHT»).
+ * — derselben Natur wie die dokumentierte Präfix-Nichtparität; die DRITTE
+ * Restlücke (kein exakter Kürzel-Unterschlüssel innerhalb Stufe 0, GP-Befund
+ * F4) steht mit Messung im «GILT NICHT»-Block unten.
  */
 export function hauptSpalten(query: string): readonly string[] {
   const terme = query.match(/[\p{L}\p{N}]+/gu) ?? [];
@@ -326,6 +337,19 @@ const BM25 = `bm25(fts_artikel, ${BM25_GEWICHTE.join(', ')})`;
 //          Treffermenge UND Latenz jeder Query verschiebt, gehört in einen eigenen Schritt
 //          mit eigener Messung und eigener Gegenprüfung — nicht in eine Fix-Runde.
 //          Roadmap-Punkt: QS-BASIS «Präfix-Parität des Edge-Weges».
+//   GILT NICHT · EXAKTER KÜRZEL-UNTERSCHLÜSSEL (GP-Befund F4, «ZGB»-Messung
+//          31.8.2026). Der Client (artikelRanking.ts) kennt innerhalb der Stufe 0
+//          einen Unterschlüssel «GANZE Query == Kürzel zuerst» (Feld `kuerzel` der
+//          Bewertung) — exakte Kürzel-Ziele stehen dort VOR Marginalien-/Gliederungs-
+//          Treffern. Der Edge-Weg hat diesen Unterschlüssel NICHT: die Einwort-Stufung
+//          (hauptSpalten) hebt Kürzel-Spaltentreffer zwar auf Stufe 0, ordnet
+//          innerhalb der Stufe aber nur nach Kernerlass/Ebene/Artikelnummer. Zwei
+//          gemessene Folgen bei «ZGB»: (a) am Edge erreichen via Token-Match auch
+//          die Mehrwort-Alias-Zeilen («EG zum ZGB», «GebT ZGB») Stufe 0, beim Client
+//          nur exakte Kürzel-Gleichheit; (b) die Feinordnung innerhalb Stufe 0 weicht
+//          ab, wo der Client-Unterschlüssel griffe. Die Ebenen-Ordnung (Bund vor
+//          Kanton) hält das Bundes-ZGB in beiden Wegen vorn — die Lücke ist derselben
+//          Natur wie die Präfix-Nichtparität oben und wandert mit deren Roadmap-Punkt.
 //   GILT NICHT · Synonym-Expansion. Der Client zieht über `vokabular.expandiereSuchbegriff`
 //          zusätzliche Recall-Terme; der DB-Weg sucht nur die getippten. Das war schon vor
 //          diesem Schritt so und ist hier nur der Vollständigkeit halber benannt.
