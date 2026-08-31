@@ -232,13 +232,20 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
   // Pseudo-Absätze (¶11–¶23) mit OS-Zitaten im letzten §, korpusweit 43 Blöcke
   // in 15 Erlassen (Gegenprüfung 31.8.2026).
   //
-  // Geometrisch statt lexikalisch: Der Apparat wird von seinen Fussnoten-
-  // ZIFFERN eingeleitet, die in einer eigenen, kleineren Schriftgrösse gesetzt
-  // sind (h ≤ 5.2 gegen h = 5.70 der Body-Hochstellungen — die Höhenklassen
-  // berühren sich im ganzen Bestand nicht). Alles auf oder unterhalb der
-  // OBERSTEN solchen Ziffer gehört zum Apparat. Der Apparat steht immer unter
-  // dem Body, nie darüber; Tarif-Tabellen (h 7.50/7.98) liegen oberhalb und
-  // bleiben unberührt.
+  // Geometrisch statt lexikalisch: Eine Fussnoten-DEFINITION besteht aus einer
+  // kleinen hochgestellten Ziffer und — auf derselben Höhe — Text in
+  // FUSSNOTEN-Grundschrift (h ≈ 7.98) statt Body-Grundschrift (h ≈ 9.18). Der
+  // Apparat beginnt bei der obersten solchen Zeile; alles darunter fällt weg.
+  // Er steht immer unter dem Body, nie darüber, und Tarif-Tabellen tragen keine
+  // führende Hochzahl — sie bleiben unberührt.
+  //
+  // NICHT an der Ziffernhöhe allein: die beiden Höhenklassen berühren sich doch.
+  // Gemessen: Fussnoten-Ziffern 4.32/4.62/4.92, Body-Hochstellungen 5.70 — aber
+  // ZH-211.1 S. 24 setzt die Absatzzahl von § 105 Abs. 2 mit h = 5.04. Eine
+  // Schwelle bei 5.2 hätte dort ab halber Seite gekappt und § 105 Abs. 2 samt
+  // § 106 verschluckt (in dieser Fix-Runde erzeugt und vom neuen Tor
+  // check:zh-vollstaendigkeit gefangen, 31.8.2026). Massgeblich ist darum die
+  // Grundschrift der zugehörigen TEXTzeile, nicht die Ziffer.
   //
   // WICHTIG — erst NACH dem Marginalien-Filter: auch eine Randnote trägt
   // Fussnoten-Verweise in Apparat-Schriftgrösse (ZH-175.2 S. 1: «Grundsatz⁵²»
@@ -259,15 +266,10 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
     st.h <= 7.7 && (st.x < bodyMinX - 3 || st.x > bodyMinX + 250);
 
   const inhaltStuecke = stuecke.filter((st) => !istMarginalie(st));
-  const apparatYs = inhaltStuecke
-    .filter((s) => s.h <= APPARAT_ZIFFER_MAX_H)
-    .map((s) => s.y);
-  const apparatY = apparatYs.length > 0 ? Math.max(...apparatYs) : -Infinity;
 
   // Nach y gruppieren (eine Textzeile). y auf ganze Punkte runden.
   const nachY = new Map<number, PdfStueck[]>();
   for (const st of inhaltStuecke) {
-    if (st.y <= apparatY + 0.01) continue; // Fussnoten-Apparat
     const key = Math.round(st.y);
     let liste = nachY.get(key);
     if (!liste) {
@@ -278,7 +280,27 @@ export function montiereZhSeite(stuecke: PdfStueck[]): ZhTextZeile[] {
   }
 
   // Zeilen von oben nach unten (y absteigend), je Zeile nach x sortiert.
-  const yKeys = [...nachY.keys()].sort((a, b) => b - a);
+  let yKeys = [...nachY.keys()].sort((a, b) => b - a);
+
+  // Apparat-Kante: oberste Gruppe, die NUR aus kleinen Hochzahlen besteht und
+  // deren Trägerzeile in Fussnoten-Grundschrift gesetzt ist (h ≤ 8.5).
+  const nurKleineHochzahlen = (g: PdfStueck[]): boolean =>
+    g.length > 0 &&
+    g.every((s) => s.h <= APPARAT_ZIFFER_MAX_H && /^[\s,\d]+$/.test(s.s));
+  let apparatKante = -Infinity;
+  for (let i = 0; i < yKeys.length - 1; i++) {
+    if (!nurKleineHochzahlen(nachY.get(yKeys[i])!)) continue;
+    const traeger = nachY.get(yKeys[i + 1])!;
+    if (yKeys[i] - yKeys[i + 1] > HOCH_TRAEGER_ABSTAND) continue;
+    if (traeger.every((s) => s.h <= 8.5)) {
+      apparatKante = yKeys[i];
+      break;
+    }
+  }
+  if (apparatKante > -Infinity) {
+    for (const key of yKeys) if (key <= apparatKante) nachY.delete(key);
+    yKeys = yKeys.filter((k) => k > apparatKante);
+  }
   for (const key of yKeys) nachY.get(key)!.sort((a, b) => a.x - b.x);
 
   // ── HOCHSTELLUNGEN IHRER TRÄGERZEILE ZUORDNEN (Bugs B-2/B-4 + lat. Suffix)

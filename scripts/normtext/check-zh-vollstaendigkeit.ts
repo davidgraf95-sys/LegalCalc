@@ -45,10 +45,7 @@
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import {
-  leseAttachmentUrl,
-  loeseRedirect,
-} from './adapter-zh-pdf.ts';
+import { leseAttachmentUrl, loeseRedirect } from './adapter-zh-pdf.ts';
 import { fetchMitWiederholung } from './netz-retry.ts';
 
 const SNAPSHOT_DIR = 'public/normtext/kanton';
@@ -58,130 +55,20 @@ const ABSTAND_MS = 1100;
 /**
  * Mindest-Deckung der lit.-Positionen (Snapshot / Zweitlesung).
  *
- * Warum nicht 100 %: die Zweitlesung zählt ZEILEN, die mit «x. » beginnen. Das
- * ist eine Über-Abschätzung — eine umbrochene Fliesstext-Zeile kann zufällig so
- * anfangen, und eine Aufzählung, die der Adapter (korrekt) als Fortsetzung des
- * Absatzes führt, zählt hier trotzdem. Umgekehrt darf der Snapshot nie
- * WESENTLICH weniger tragen: der Befund vom 31.8.2026 (B-1) unterstellte einen
- * flächendeckenden lit.-Verlust, und genau das muss dieses Tor sehen.
+ * Warum nicht 100 %: die Zweitlesung zählt ZEILEN, die mit «x. » beginnen — eine
+ * Über-Abschätzung. Eine umbrochene Fliesstext-Zeile kann zufällig so anfangen,
+ * und eine Aufzählung, die der Adapter (korrekt) als Fortsetzung des laufenden
+ * Absatzes führt, zählt hier trotzdem.
  *
- * Gemessene Deckung nach dem Fix über alle 24 ZH-Erlasse: siehe Lauf-Ausgabe;
- * die Schwelle liegt mit Abstand unter dem schlechtesten gemessenen Wert und
- * mit Abstand über dem, was ein echter Verlust erzeugen würde (bei B-1 wäre die
- * Deckung nahe 0 gewesen).
+ * Gemessen am geheilten Korpus (alle 24 ZH-Erlasse, 31.8.2026): 23 Erlasse
+ * exakt 100 %, der schlechteste (ZH-631.1) 99.7 % — eine einzige Position von
+ * 296. Die Schwelle 95 % liegt klar unter dem gemessenen Minimum und weit über
+ * dem, was ein echter Verlust erzeugt: der Verdacht B-1 der Gegenprüfung
+ * («lit. fehlen flächendeckend») hätte eine Deckung nahe 0 bedeutet.
  */
-const LIT_DECKUNG = 0.9;
+const LIT_DECKUNG = 0.95;
 
-// ── Zweitlesung: PDF-Textlayer → Zeilen ──────────────────────────────────────
-
-interface Stueck {
-  x: number;
-  y: number;
-  h: number;
-  s: string;
-}
-
-/** Grobe y-Toleranz (pt): alles innerhalb davon ist EINE Zeile. Hochstellungen
- *  (2.76 pt über der Grundlinie) fallen damit in ihre Zeile, ohne dass das Tor
- *  etwas über Hochstellungen wissen müsste. Der Zeilenabstand ist ≈10.2 pt. */
-const ZEILE_TOLERANZ = 4;
-
-/** Fussnoten-Apparat: seine Ziffern sind kleiner gesetzt als jede
- *  Body-Hochstellung (gemessen 4.32/4.62/4.92/5.04 gegen 5.70). */
-const APPARAT_H = 5.2;
-
-const KOPF_PARAGRAF =
-  /^§\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?\s*\./;
-const KOPF_ARTIKEL =
-  /^Art\.\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?(?=\s|$)/;
-const LIT_ZEILE = /^[a-z]\.\s/;
-const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
-const ANHANG_TITEL = /^Anhang(?:\s*\d*)?(?::|$)/;
-
-interface Zweitlesung {
-  /** Kopf-Token in Reihenfolge des Auftretens, dedupliziert. */
-  koepfe: string[];
-  /** Zahl der Zeilen, die mit einer lit.-Marke beginnen. */
-  litZeilen: number;
-  /** Zahl der hochgestellten reinen Ziffern links vom Zeilentext. */
-  absatzKandidaten: number;
-}
-
-function token(m: RegExpMatchArray): string {
-  return [m[1], m[2], m[3]].filter(Boolean).map((t) => t.toLowerCase()).join('_');
-}
-
-async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
-  const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
-  const doc = await pdfjs.getDocument({ data: bytes, useSystemFonts: true }).promise;
-
-  const koepfe: string[] = [];
-  const gesehen = new Set<string>();
-  let litZeilen = 0;
-  let absatzKandidaten = 0;
-  let imSchluss = false;
-
-  for (let p = 1; p <= doc.numPages && !imSchluss; p++) {
-    const inhalt = await (await doc.getPage(p)).getTextContent();
-    const roh: Stueck[] = [];
-    for (const it of inhalt.items) {
-      const item = it as { str: string; transform: number[]; height?: number };
-      if (!item.str || !item.str.replace(/\s/g, '')) continue;
-      const y = item.transform[5];
-      const h = item.height ?? 9;
-      if (y < 60 || y > 530 || h >= 11) continue;
-      roh.push({ x: item.transform[4], y, h, s: item.str });
-    }
-    const bodyX = roh.filter((s) => s.h >= 8.7).map((s) => s.x);
-    if (bodyX.length === 0) continue;
-    const links = Math.min(...bodyX);
-    // Body-Spalte: die Randnoten liegen im Aussenrand, links davon oder weit
-    // rechts. Ohne diesen Schnitt zählte das Tor Randnoten wie «b. Ausserhalb
-    // hängiger Verfahren» als lit.-Positionen mit.
-    const spalte = roh.filter((s) => s.x >= links - 6 && s.x <= links + 260);
-    // Fussnoten-Apparat am Seitenfuss abschneiden.
-    const apparat = spalte.filter((s) => s.h <= APPARAT_H).map((s) => s.y);
-    const kante = apparat.length > 0 ? Math.max(...apparat) : -Infinity;
-    const inhaltStuecke = spalte.filter((s) => s.y > kante);
-
-    // Zeilen bilden: y-Cluster mit Toleranz, absteigend.
-    const sortiert = [...inhaltStuecke].sort((a, b) => b.y - a.y);
-    const zeilen: Stueck[][] = [];
-    for (const st of sortiert) {
-      const letzte = zeilen[zeilen.length - 1];
-      if (letzte && letzte[0].y - st.y <= ZEILE_TOLERANZ) letzte.push(st);
-      else zeilen.push([st]);
-    }
-
-    for (const zeile of zeilen) {
-      zeile.sort((a, b) => a.x - b.x);
-      const body = zeile.filter((s) => s.h >= 8.7);
-      if (body.length === 0) continue; // Tabellen-/Kleinsatz-Zeile
-      const text = zeile.map((s) => s.s).join(' ').replace(/\s+/g, ' ').trim();
-      if (SCHLUSSAPPARAT.test(text) || ANHANG_TITEL.test(text)) {
-        imSchluss = true;
-        break;
-      }
-      const par = text.match(KOPF_PARAGRAF);
-      const art = par ? null : text.match(KOPF_ARTIKEL);
-      const treffer = par ?? art;
-      if (treffer) {
-        const t = token(treffer);
-        if (!gesehen.has(t)) {
-          gesehen.add(t);
-          koepfe.push(t);
-        }
-        continue;
-      }
-      if (LIT_ZEILE.test(text)) litZeilen++;
-      const ersteBodyX = body[0].x;
-      absatzKandidaten += zeile.filter(
-        (s) => s.h < 7 && s.h > APPARAT_H && /^\d+$/.test(s.s.trim()) && s.x < ersteBodyX,
-      ).length;
-    }
-  }
-  return { koepfe, litZeilen, absatzKandidaten };
-}
+import { leseZweit } from './zh-zweitlesung.ts';
 
 // ── Snapshot-Seite ───────────────────────────────────────────────────────────
 

@@ -16,6 +16,7 @@ import {
 import {
   ZH_212812_SEITE2,
   ZH_1752_SEITE1,
+  ZH_2111_SEITE24,
 } from './fixtures/zh-pdf-seiten-stuecke.ts';
 
 const textbasis = (stuecke: typeof ZH_212812_SEITE2): string =>
@@ -76,6 +77,21 @@ describe('B-6 — Fussnoten-Apparat-Kante liegt hinter dem Marginalien-Filter', 
     // Marginalien selbst sind kein Normtext.
     expect(t).not.toContain('Grundsatz');
     expect(t).not.toContain('Beschleunigungsgebot');
+  });
+});
+
+describe('B-6 — Apparat-Kante trennt nicht nach Ziffernhöhe allein', () => {
+  it('ZH-211.1 Seite 24: Absatzzahl mit h = 5.04 kappt die Seite nicht', () => {
+    const alle = extrahiereAlleZhParagraphen(textbasis(ZH_2111_SEITE24));
+    // Die Absatzzahl von § 105 Abs. 2 (y 170.36) ist mit h = 5.04 gesetzt und
+    // liegt damit in der Höhenklasse der Fussnoten-Ziffern. Eine Kante allein
+    // aus der Ziffernhöhe hätte ab dort alles verworfen.
+    expect(alle['105']!.bloecke.map((b) => b.absatz)).toEqual(['1', '2']);
+    expect(alle['105']!.bloecke[1].text).toBe(
+      'Der Regierungsrat kann ausserordentliche Oberstaatsanwältinnen und -anwälte einsetzen.',
+    );
+    expect(alle['106']).toBeDefined();
+    expect(alle['106']!.bloecke.map((b) => b.absatz)).toEqual(['1', '2']);
   });
 });
 
