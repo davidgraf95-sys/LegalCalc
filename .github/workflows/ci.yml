@@ -466,6 +466,12 @@ jobs:
       - name: Bezugs-Schicht (Facetten · Projektion · Grundgesamtheit)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:bezuege
+      # R6 Legaldefinitionen: beweist Norm-Existenz, woertliche Zitat-Treue,
+      # Begriff-im-Zitat, Status "entwurf" und Byte-Gleichheit des Artefakts mit
+      # einem frischen Generator-Lauf (also keine zweite Wahrheit, §5).
+      - name: Legaldefinitionen (Referenz · Zitat-Treue · Determinismus)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:definitionen
       # Selbstschutz der Tor-Landschaft: meldet neue Tore ohne CI-Lauf.
       # Lief selbst nur lokal — der Melder war damit so unsichtbar wie der
       # Defekt, den er meldet (F2b rekursiv).

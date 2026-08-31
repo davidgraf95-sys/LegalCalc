@@ -30,6 +30,11 @@ export const NORMTEXT_SEITENDATEIEN = [
   'public/normtext/kanton-systematik.json',
   'public/normtext/pdf-index.json',
   'public/normtext/currency.json', // P1-d Currency-Sidecar (byte-genaue Paritäts-Klasse)
+  // R6 Legaldefinitionen (FAHRPLAN-KANTONE §5, Phase III): deterministische
+  // Projektion aus den Snapshots. NEUE committete Datei unter public/normtext/
+  // → MUSS eine Paritäts-Klasse haben, sonst liefe sie still an check:paritaet
+  // vorbei (Regel 2 oben — dieselbe Lektion wie bei richter.json).
+  'public/normtext/definitionen.json',
 ];
 export const NORMTEXT_STRUKTUR_DIR = 'public/normtext/struktur'; // rekursiv: bund/ + kanton/
 // Paket 5 (W2·6-REV): Revisions-Timeline-Sidecars je Erlass. Neue public/normtext/**-
