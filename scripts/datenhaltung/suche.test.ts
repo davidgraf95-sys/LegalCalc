@@ -87,6 +87,27 @@ describe('sucheArtikel', () => {
     }
   });
 
+  it('F35: jeder Treffer trägt die Ebene, kantonale zusätzlich ihr Kürzel', () => {
+    // EMPIRISCH gegen den echten Korpus (§7): dass `e.ebene`/`e.kanton` in der
+    // Fundstelle stehen, beweist der Unit-Test suche-kern.test.ts an einer
+    // Hand-Zeile — hier steht der Beweis, dass die Spalten aus dem WIRKLICHEN
+    // Schema kommen und für kantonales Recht wirklich 'kanton' + Kürzel liefern.
+    // Ohne diesen Fall wäre F35 an der Netzgrenze eine Behauptung.
+    const alle = sucheArtikel(dbN, 'recht', { limit: MAX_LIMIT }).treffer;
+    expect(alle.length).toBeGreaterThan(0);
+    for (const t of alle) expect(['bund', 'kanton']).toContain(t.fundstelle.ebene);
+
+    const kantonal = ['regierungsrat', 'grossratsbeschluss', 'anwaltstarif', 'kantonsrat']
+      .flatMap((q) => sucheArtikel(dbN, q, { limit: MAX_LIMIT }).treffer)
+      .filter((t) => t.fundstelle.ebene === 'kanton');
+    expect(kantonal.length, 'kein kantonaler Treffer — der Prüfsatz misst nichts').toBeGreaterThan(0);
+    for (const t of kantonal) expect(t.fundstelle.kanton).toMatch(/^[A-Z]{2}$/);
+    // Bundeserlasse tragen KEIN Kanton-Kürzel (kein leeres Feld im Draht).
+    for (const t of alle.filter((x) => x.fundstelle.ebene === 'bund')) {
+      expect('kanton' in t.fundstelle).toBe(false);
+    }
+  });
+
   it('Pagination by design: Limit hart auf MAX_LIMIT geklemmt', () => {
     const a = sucheArtikel(dbN, 'recht', { limit: 1000 });
     expect(a.treffer.length).toBeLessThanOrEqual(MAX_LIMIT);
