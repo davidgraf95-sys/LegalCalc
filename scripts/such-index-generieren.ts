@@ -21,9 +21,17 @@
 // Datei landet mit Grund in `uebersprungen` (im Artefakt UND in der CLI-Ausgabe),
 // und das Tor src/tests/suchIndex.test.ts hält jeden Erlass fest, der Volltext
 // führt, aber nicht im Index steht.
+//
+// FELD-EXTRAKTION LIEGT NICHT MEHR HIER (QS-BASIS (d) K1, 31.8.2026). Die
+// Extraktoren (Artikeltext · Tabellen-Tier · Fussnoten · Marginalien-/Gliederungs-
+// Labels) sind nach scripts/suche-felder.ts gewandert, weil der DB-/Edge-Index
+// (scripts/datenhaltung/fts.ts) DIESELBEN Felder braucht. Sie hier zu belassen und
+// dort nachzubauen hätte zwei Wahrheiten für denselben Fachinhalt erzeugt (§5) —
+// und genau daran hing die gemessene Recall-Lücke des Edge-Weges.
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { artikelText, baueRecallFelder, type Block, type StrukturArtikel } from './suche-felder';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const NORMTEXT = resolve(wurzel, 'public/normtext');
@@ -33,81 +41,9 @@ const ZIEL = resolve(wurzel, 'public/such-index/artikel.json');
 export const EBENEN = ['bund', 'kanton'] as const;
 export type Ebene = (typeof EBENEN)[number];
 
-// Bild/Kachel: `alt` ist der einzige durchsuchbare Text (SSV-Signalnamen wie
-// «Rechtskurve», «Engpass»). Der generische Fallback «Amtliche Abbildung» (271×
-// im Bund) trägt keinen Inhalt und wird verworfen (§8: kein Suchrauschen).
-interface Bild { alt?: string; formel?: boolean }
-interface Kachel { bild?: Bild; nummer?: string; name?: string }
-interface Mehrspaltig { spalten?: { titel?: string }[]; zeilen?: (string | number)[][] }
-interface Block {
-  absatz?: string; text?: string; items?: { marke?: string; text?: string }[];
-  mehrspaltig?: Mehrspaltig; tabelle?: Record<string, unknown>[];
-  bild?: Bild; bildKacheln?: Kachel[];
-}
 // `quelle` trägt bei kantonalen Snapshots das Kantonskürzel («AG», «BS»); Bund
 // führt das Feld nicht. Es ist die Grundlage der ehrlichen Herkunfts-Anzeige.
 interface Eintrag { id: string; erlass: string; artikel: string; artikelLabel: string; grundlage?: string; quelle?: string; bloecke?: Block[] }
-
-/** Durchsuchbarer Plaintext eines Artikels (Absätze + Aufzählungen, Whitespace normalisiert). */
-function artikelText(bloecke: Block[]): string {
-  const teile: string[] = [];
-  for (const b of bloecke) {
-    if (b.text) teile.push(b.text);
-    for (const it of b.items ?? []) if (it.text) teile.push(it.text);
-  }
-  return teile.join(' ').replace(/\s+/g, ' ').trim();
-}
-
-const GENERISCHES_ALT = /^amtliche abbildung$/i;
-
-/** Nicht-generischer Alt-Text eines Bildes (SSV-Signalname o. Ä.), sonst ''. */
-function bildAlt(b?: Bild): string {
-  const alt = (b?.alt ?? '').trim();
-  return alt && !GENERISCHES_ALT.test(alt) ? alt : '';
-}
-
-/** Tabellen-/Struktur-Tier eines Artikels: Tabellenzellen (mehrspaltig-Spalten-
- *  titel + Zeilen, Füllpunkt-`tabelle`), Bild-Alt-Texte (SSV-Signalnamen; ohne
- *  den generischen «Amtliche Abbildung»-Platzhalter) und Kachel-Beschriftungen.
- *  Ein Rang UNTER Marginalie/Gliederung, ÜBER Fussnote (Feld-Gewichtung S4). */
-function tabellenText(bloecke: Block[]): string {
-  const teile: string[] = [];
-  for (const b of bloecke) {
-    if (b.mehrspaltig) {
-      for (const s of b.mehrspaltig.spalten ?? []) if (s.titel) teile.push(s.titel);
-      for (const z of b.mehrspaltig.zeilen ?? []) for (const c of z) if (c != null && c !== '') teile.push(String(c));
-    }
-    // Füllpunkt-Tabelle (`tabelle`): Array von Zeilen-Objekten mit freien String-
-    // Feldern (Kanton-Gebührentarife: {beschreibung, betrag}). Bund führt aktuell
-    // keine — verhaltensneutral hier, aber der Extraktor bleibt vollständig.
-    for (const zeile of b.tabelle ?? []) {
-      for (const v of Object.values(zeile)) if (typeof v === 'string' && v.trim()) teile.push(v);
-    }
-    const alt = bildAlt(b.bild);
-    if (alt) teile.push(alt);
-    for (const k of b.bildKacheln ?? []) {
-      if (k.name) teile.push(k.name);
-      const ka = bildAlt(k.bild);
-      if (ka) teile.push(ka);
-    }
-  }
-  return teile.join(' ').replace(/\s+/g, ' ').trim();
-}
-
-/** Fussnoten-Body eines Artikels als durchsuchbarer Plaintext (Änderungs-/
- *  Quellenhinweise, AS-/BBl-Referenzen). Fedlex-Hervorhebungen <b>/<i> und alle
- *  übrigen Tags fallen; niedrigster Recall-Tier (Feld-Gewichtung S4). */
-function fussnotenText(fussnoten: { text?: string }[]): string {
-  const teile: string[] = [];
-  for (const fn of fussnoten) {
-    // Tags raus, Fedlex-Entities dekodieren; die \s+-Normalisierung unten
-    // fasst nbsp (von \s erfasst) mit ein.
-    const t = (fn.text ?? '').replace(/<[^>]+>/g, ' ')
-      .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-    if (t.trim()) teile.push(t);
-  }
-  return teile.join(' ').replace(/\s+/g, ' ').trim();
-}
 
 // ── Sachüberschrift (Marginalie + Gliederung) je Artikel (UI-NAV S4) ─────────
 //
@@ -119,28 +55,7 @@ function fussnotenText(fussnoten: { text?: string }[]): string {
 // Alltags-Query «Miete» über die Gliederung «Achter Titel: Die Miete» direkt die
 // mietrechtlichen Artikel (OR 253 ff.), die im Artikeltext das Wort «Miete» selbst
 // nie führen (FlexSearch-forward: «miete» ist kein Präfix von «mietvertrag»).
-interface StrukturArtikel { marginalie?: string[]; gliederung?: { ebene?: number; label?: string }[]; fussnoten?: { text?: string }[] }
 interface StrukturDatei { artikel?: Record<string, StrukturArtikel> }
-
-/** Enumerator-Präfix eines Randtitels entfernen («G. Verjährung» → «Verjährung»,
- *  «1. Zehn Jahre» → «Zehn Jahre», «a. Grundsatz» → «Grundsatz»). Deterministisch;
- *  reine Text-Säuberung, damit die Buchstaben-/Ziffern-Zähler nicht als Suchrauschen
- *  in den Index geraten. */
-function ohneEnumerator(s: string): string {
-  return s.replace(/^\s*(?:[0-9]+|[IVXLCDMivxlcdm]+|[A-Za-z])[.)]\s+/, '').trim();
-}
-
-/** Labels entdoppeln + säubern (Enumerator weg, Whitespace normalisiert), in
- *  stabiler Reihenfolge zu einem Text joinen. */
-function labelText(rohe: (string | undefined)[]): string {
-  const teile: string[] = [];
-  const sehen = new Set<string>();
-  for (const roh of rohe) {
-    const s = ohneEnumerator((roh ?? '').replace(/\s+/g, ' ').trim());
-    if (s && !sehen.has(s.toLowerCase())) { sehen.add(s.toLowerCase()); teile.push(s); }
-  }
-  return teile.join(' · ');
-}
 
 // Kompaktes Schema (kurze Keys → kleinere Datei): k=ROUTEN-Key (Dateiname-Stamm
 // = ERLASS_REGISTER.key, für /gesetze/<eb>/<k>), ku=Anzeige-Kürzel (z. B. «StGB»;
@@ -215,17 +130,9 @@ export function baueEbenenIndex(ebene: Ebene): EbenenIndex {
       if (!e.bloecke || e.bloecke.length === 0) { ohneText++; continue; }
       const t = artikelText(e.bloecke);
       if (!t) { ohneText++; continue; }
-      const sa = struktur.artikel?.[e.artikel];
-      const marg = sa?.marginalie ?? [];
-      const m = labelText(marg.slice(0, 1)); // primäre (oberste) Marginalie = Hauptthema
-      const n = labelText(marg.slice(1)); // nachrangige Randtitel-Stufen
-      const g = labelText((sa?.gliederung ?? []).map((x) => x.label));
-      // Tabellen-Tier: Zellen/Bild-Alt aus den Blöcken + `grundlage` (Delegations-
-      // norm-Template, «(Art. 1 ArG)»). Fussnoten-Tier: aus dem Struktur-Sidecar.
-      const tbTeile = tabellenText(e.bloecke);
-      const grundlage = (e.grundlage ?? '').replace(/\s+/g, ' ').trim();
-      const tb = [tbTeile, grundlage].filter(Boolean).join(' ');
-      const f = fussnotenText(sa?.fussnoten ?? []);
+      // Die fünf Recall-Felder kommen aus der GETEILTEN Extraktion (§5) — dieselbe
+      // Funktion speist den DB-/Edge-Index in scripts/datenhaltung/fts.ts.
+      const { m, n, g, tb, f } = baueRecallFelder(e.bloecke, struktur.artikel?.[e.artikel], e.grundlage);
       // kt aus dem Snapshot-Feld `quelle` (Kanton) — bei Bund leer. Ein kantonaler
       // Eintrag OHNE Kanton wäre eine stille Herkunfts-Lüge; das Tor
       // src/tests/suchIndex.test.ts lässt genau das rot auflaufen.

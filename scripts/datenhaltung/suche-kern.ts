@@ -67,6 +67,14 @@ export interface SucheAntwort<T> {
  * Zellen (`tabelle` beschreibung/betrag sowie `mehrspaltig` spalten[].titel + zeilen)
  * und Bild-Metadaten — der Volltext bleibt im prerenderten DOM durchsuchbar (§15);
  * eine Recall-Erweiterung wäre ein bewusster Folge-Schritt für BEIDE Indizes gemeinsam.
+ *
+ * NACHTRAG 31.8.2026 (QS-BASIS (d) K1) — dieser Folge-Schritt ist getan, und zwar
+ * genau so, wie der Satz oben ihn verlangt: für beide Indizes gemeinsam. Diese
+ * Funktion bleibt UNVERÄNDERT der reine Artikeltext (Feld `t`/`text`); die Tabellen-,
+ * Marginalien-, Gliederungs- und Fussnoten-Tier sind eigene FTS-Spalten geworden
+ * (fts.ts → FTS_ARTIKEL_SPALTEN), gespeist aus der geteilten Extraktion in
+ * scripts/suche-felder.ts. Der obige Satz beschreibt also weiterhin korrekt, was
+ * `bloeckeText` tut — er ist nicht überholt, sondern eingelöst.
  */
 interface Block {
   text?: string;
@@ -136,6 +144,34 @@ export function baueSnippet(text: string, query: string): string {
 }
 
 // ── SQL-Konstanten (geteilt — §5, EINE Query-Logik) ──────────────────────────────
+
+/**
+ * bm25-Feldgewichte für `fts_artikel`, in der Spaltenreihenfolge
+ * text · marginalie · marginalie_n · gliederung · tabelle · fussnote
+ * (FTS_ARTIKEL_SPALTEN in fts.ts — die Reihenfolge ist tragend).
+ *
+ * WARUM ÜBERHAUPT GEWICHTE (QS-BASIS (d) K1/K2, 31.8.2026): Seit K1 indexiert
+ * `fts_artikel` sechs Felder statt einem. Ohne Gewichte behandelt bm25 alle gleich —
+ * eine Nennung im Fussnoten-Body zählte dann so viel wie der Randtitel, und die
+ * Trefferliste würde durch Änderungshinweise und Gebührentabellen verwässert. Die
+ * Rangfolge t > m > n > g > tb > f ist NICHT neu erfunden, sondern die bereits im
+ * statischen Index geltende Feld-Gewichtung (such-index-generieren.ts, Feld-Doku S4;
+ * dort umgesetzt in src/lib/suche/artikelRanking.ts).
+ *
+ * FACHLICHE BEGRÜNDUNG der Abstufung: trifft die Query die primäre Marginalie oder
+ * den Gliederungs-Titel, ist der Artikel dem Thema GEWIDMET (OR 127 «Verjährung»,
+ * OR 253 unter «Achter Titel: Die Miete»); trifft sie nur eine nachrangige
+ * Marginalie, NENNT er es bloss. Tabellen- und Fussnoten-Tier sind RECALL-only —
+ * sie sollen den Artikel auffindbar machen, ihn aber nicht nach oben tragen (eine
+ * AS-Fundstelle in einer Fussnote widmet keinen Artikel einem Thema).
+ *
+ * Höhere Zahl = stärkeres Gewicht (bm25() in SQLite gibt negative Werte zurück und
+ * wird darum AUFSTEIGEND sortiert; die Gewichte selbst sind positiv).
+ */
+export const BM25_GEWICHTE = [10, 8, 4, 5, 1, 0.5] as const;
+
+const BM25 = `bm25(fts_artikel, ${BM25_GEWICHTE.join(', ')})`;
+
 export const SQL_ARTIKEL_COUNT = 'SELECT count(*) AS n FROM fts_artikel WHERE fts_artikel MATCH ?';
 export const SQL_ARTIKEL_TREFFER = `SELECT a.erlass_key AS erlass_key, a.art_id AS art_id, a.artikel AS artikel,
        a.artikel_label AS artikel_label, a.quelle_url AS quelle_url, a.bloecke_json AS bloecke_json,
@@ -144,7 +180,7 @@ FROM fts_artikel
 JOIN artikel a ON a.rowid = fts_artikel.rowid
 JOIN erlasse e ON e.key = a.erlass_key
 WHERE fts_artikel MATCH ?
-ORDER BY bm25(fts_artikel), a.rowid
+ORDER BY ${BM25}, a.rowid
 LIMIT ? OFFSET ?`;
 
 export const SQL_ENTSCHEIDE_COUNT =

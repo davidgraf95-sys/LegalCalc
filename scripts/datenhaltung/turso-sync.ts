@@ -91,7 +91,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { DatabaseSync } from 'node:sqlite';
 import { manifestDb } from './manifest';
-import { TOKENIZER } from './fts';
+import { TOKENIZER, ddlFtsArtikel } from './fts';
 import { leseFtsSchatten, ftsDokumente } from './turso-fts-index';
 import {
   zeilenBytes,
@@ -590,15 +590,24 @@ async function main(): Promise<void> {
   ]);
   }
 
-  // 3) FTS artikel: remote CONTENTLESS (content=''), rowid == artikel.rowid. Übertragen wird
+  // 3) FTS artikel: CONTENTLESS (content=''), rowid == artikel.rowid. Übertragen wird
   //    der FERTIGE lokale Index (fts.ts/baueFtsArtikel hat ihn beim `datenhaltung:build`
   //    gebaut) — es geht weder eine zweite Textkopie über den Draht noch tokenisiert die
-  //    Gegenseite noch einmal. Lokal liegt `fts_artikel` als external-content-Tabelle über
-  //    `artikel`, das Ziel ist contentless; die Index-Shadowtabellen beider Bauarten sind
-  //    byte-gleich (empirisch, festgehalten in turso-fts-index.test.ts).
-  await pipeline(url, token, [
-    { sql: `CREATE VIRTUAL TABLE fts_artikel_neu USING fts5(text, content='', tokenize='${TOKENIZER}')` },
-  ]);
+  //    Gegenseite noch einmal.
+  //
+  //    SECHS SPALTEN seit QS-BASIS (d) K1 (31.8.2026): text · marginalie · marginalie_n ·
+  //    gliederung · tabelle · fussnote. Die DDL kommt aus `ddlFtsArtikel()` in fts.ts —
+  //    DERSELBEN Funktion, die die lokale Tabelle anlegt (§5). Hier eine zweite
+  //    Spaltenliste von Hand zu führen wäre die klassische stille Falle: eine Abweichung
+  //    in Zahl oder Reihenfolge der Spalten liesse den Shadow-Transport NICHT scheitern,
+  //    sondern legte die bm25-Gewichte auf das falsche Feld.
+  //
+  //    Lokal ist die Tabelle seit K1 ebenfalls contentless (vorher: external content über
+  //    `artikel` — eine Deklaration, die eine dort nie existierende Spalte `text`
+  //    behauptete). Die frühere Bauart-Divergenz lokal/remote entfällt damit; die
+  //    Byte-Gleichheit beider Bauarten bleibt in turso-fts-index.test.ts dokumentiert,
+  //    wird vom Produktionspfad aber nicht mehr vorausgesetzt.
+  await pipeline(url, token, [{ sql: ddlFtsArtikel('fts_artikel_neu') }]);
   const nFtsArtikel = await ladeFtsIndex(url, token, normtext, 'fts_artikel', 'fts_artikel_neu', false);
 
   // 4) FTS Schaufenster-Entscheide: standalone (Text physisch gespeichert, native snippet()).

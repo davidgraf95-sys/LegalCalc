@@ -150,11 +150,63 @@ describe('FTS5-Shadow-Transport (turso-sync überträgt den fertigen Index statt
     expect(() => kopie.exec("INSERT INTO f(f) VALUES('integrity-check')")).toThrow();
   });
 
+  it('sechsspaltiger contentless Index überträgt sich verhaltensgleich (fts_artikel seit K1)', () => {
+    // Die REALE heutige Form von `fts_artikel` (QS-BASIS (d) K1, 31.8.2026): sechs
+    // Spalten, contentless, rowid == artikel.rowid. Der Shadow-Transport war bis dahin
+    // nur für EINE Spalte belegt — und die Spaltenzahl geht in die `_docsize`-Kodierung
+    // ein. Ohne diesen Fall wäre die tragende Annahme des Syncs für die Form, die er
+    // heute wirklich überträgt, ungeprüft.
+    //
+    // Geprüft wird nicht nur «findet etwas», sondern die bm25-RANGFOLGE UNTER
+    // FELDGEWICHTEN: genau daran hängt seit K1 die Trefferqualität, und genau das
+    // würde eine verschobene Spaltenzuordnung still verfälschen.
+    const spalten = ['text', 'marginalie', 'marginalie_n', 'gliederung', 'tabelle', 'fussnote'];
+    const ddl = `CREATE VIRTUAL TABLE f USING fts5(${spalten.join(', ')}, content='', tokenize='${TOKENIZER}')`;
+    const original = new DatabaseSync(':memory:');
+    original.exec(ddl);
+    const ins = original.prepare(
+      `INSERT INTO f(rowid, ${spalten.join(', ')}) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    );
+    for (let i = 1; i <= 400; i++) {
+      ins.run(
+        i * 3,
+        `Artikeltext ${i} ${`fuell${i % 31} `.repeat(20)}`,
+        i % 5 === 0 ? 'Verjährung' : `Randtitel ${i}`,
+        i % 7 === 0 ? 'Bei Bürgschaft' : '',
+        i % 3 === 0 ? 'Achter Titel: Die Miete' : `Titel ${i % 11}`,
+        i % 4 === 0 ? 'Gebühr 120 Franken' : '',
+        i % 6 === 0 ? 'AS 1990 802; BBl 1985 I 1389' : '',
+      );
+    }
+
+    const kopie = ueberSchatten(original, false, ddl);
+    const rang = (db: DatabaseSync, wort: string) =>
+      JSON.stringify(
+        db
+          .prepare(
+            `SELECT rowid FROM f WHERE f MATCH '"${wort}"'
+             ORDER BY bm25(f, 10, 8, 4, 5, 1, 0.5), rowid LIMIT 15`,
+          )
+          .all(),
+      );
+    for (const wort of ['verjahrung', 'miete', 'burgschaft', 'gebuhr', 'bbl', 'artikeltext']) {
+      expect(rang(kopie, wort), `Rangfolge für «${wort}»`).toBe(rang(original, wort));
+    }
+    // Der Test wäre wertlos, wenn die Proben nichts fänden (§6.7).
+    expect(rang(original, 'verjahrung')).not.toBe('[]');
+    expect(rang(original, 'miete')).not.toBe('[]');
+    expect(() => kopie.exec("INSERT INTO f(f) VALUES('integrity-check')")).not.toThrow();
+  });
+
   it('contentless und external content tragen BYTE-GLEICHE Index-Shadowtabellen', () => {
-    // Trägt die Annahme, mit der `fts_artikel` übertragen wird: lokal liegt er als
-    // external-content-Tabelle über `artikel`, remote als contentless. Kippt diese
-    // Gleichheit in einer künftigen SQLite-Fassung, zeigt die Suche systematisch falsche
-    // Artikel — und keine Zeilenzahl würde es merken.
+    // Trug bis 31.8.2026 die Annahme, mit der `fts_artikel` übertragen wurde: lokal
+    // external content über `artikel`, remote contentless. NACHTRAG QS-BASIS (d) K1:
+    // `fts_artikel` liegt seit dem 31.8.2026 auf BEIDEN Seiten contentless — der
+    // Produktionspfad setzt diese Gleichheit also nicht mehr voraus. Der Fall bleibt
+    // trotzdem stehen: er ist die einzige Stelle, an der die Gleichheit der beiden
+    // FTS5-Bauarten überhaupt belegt ist, und `fts_entscheide_schaufenster` sowie jede
+    // künftige external-content-Tabelle stützen sich weiterhin darauf. Kippt sie in
+    // einer künftigen SQLite-Fassung, will man es hier erfahren und nicht im Betrieb.
     const text = (i: number) => `Verjährung Beschwerde Kündigung Nr ${i} ${`wort${i % 37} `.repeat(20)}`;
 
     const contentless = new DatabaseSync(':memory:');
