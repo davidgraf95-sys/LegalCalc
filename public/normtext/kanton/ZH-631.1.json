@@ -31,7 +31,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "404bb76bdcca2665808ec2060c11fb3858de712ec9d1ba8dec1accc89c6687a0"
     },
     {
@@ -52,14 +52,14 @@
         },
         {
           "absatz": "3",
-          "text": "Der Steuerfuss gilt gleichmässig für alle Steuerarten. Zweiter Abschnitt: Besteuerung der natürlichen Personen"
+          "text": "Der Steuerfuss gilt gleichmässig für alle Steuerarten."
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "c40b1062bae4a8bcfe6095620b2d7dcbed5fd79a11ff5852794c18083138d538"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "b54a21c53aa6a3c73157dc718ee0196c0cf383855bc1758e4e6f77bc45f39521"
     },
     {
       "id": "kanton/ZH/631.1/art_3",
@@ -85,7 +85,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "783c4e8ba857545cb777bd2f650aa7a72f033fe58c206959e235478f800dc5c8"
     },
     {
@@ -152,7 +152,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "e309ea58dc972f88036b09bc473e3f0459cf7ed465afee93355faba446b60c97"
     },
     {
@@ -179,7 +179,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ab484c8189085b1280e93f24a8053d3b711e981463c968fa969fa8c9e701589a"
     },
     {
@@ -202,7 +202,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "336e3b08a7463a24128d9e68290f1c1a7e05e897802112f00df77253424cdbc2"
     },
     {
@@ -215,7 +215,15 @@
       "bloecke": [
         {
           "absatz": "1",
-          "text": "Einkommen und Vermögen der Ehegatten, die in rechtlich und tatsächlich ungetrennter Ehe leben, werden ohne Rücksicht auf den Güterstand zusammengerechnet. 1bis Einkommen und Vermögen von Personen, die in rechtlich und tatsächlich ungetrennter eingetragener Partnerschaft leben, werden zusammengerechnet. 1ter Die Stellung eingetragener Partnerinnen und Partner entspricht in diesem Gesetz derjenigen von Ehegatten. Dies gilt auch bezüglich der Unterhaltsbeiträge während des Bestehens der eingetragenen Partnerschaft sowie bezüglich der Unterhaltsbeiträge und der vermögensrechtlichen Auseinandersetzung bei Getrenntleben und Auflösung einer eingetragenen Partnerschaft."
+          "text": "Einkommen und Vermögen der Ehegatten, die in rechtlich und tatsächlich ungetrennter Ehe leben, werden ohne Rücksicht auf den Güterstand zusammengerechnet."
+        },
+        {
+          "absatz": "1bis",
+          "text": "Einkommen und Vermögen von Personen, die in rechtlich und tatsächlich ungetrennter eingetragener Partnerschaft leben, werden zusammengerechnet."
+        },
+        {
+          "absatz": "1ter",
+          "text": "Die Stellung eingetragener Partnerinnen und Partner entspricht in diesem Gesetz derjenigen von Ehegatten. Dies gilt auch bezüglich der Unterhaltsbeiträge während des Bestehens der eingetragenen Partnerschaft sowie bezüglich der Unterhaltsbeiträge und der vermögensrechtlichen Auseinandersetzung bei Getrenntleben und Auflösung einer eingetragenen Partnerschaft."
         },
         {
           "absatz": "2",
@@ -229,8 +237,8 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "9e28d76fe99a68f402c458370c5b87c9571038982d32250e2dcc91cfec04ee36"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "0a9a55631798a190d609743a39e0d22b57468d25f0b2ece263b039804d3a67cc"
     },
     {
       "id": "kanton/ZH/631.1/art_8",
@@ -252,7 +260,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a3707f1492d6df38c2d47e725ea4c90688aba74b3166234bdd7fd1f39ea29c7c"
     },
     {
@@ -275,7 +283,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "071a073c6155ba9cb589da5e81b76a584929db9e320dfd3865993691282e3e76"
     },
     {
@@ -294,7 +302,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5f04eae2cdf72117dd0818fb6d5bc5e6d7caf6bff3a53a3a7cfa4e0ac0f8a1e7"
     },
     {
@@ -321,7 +329,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0a18eb86679d3e0b9a8207f03968a46c67c93ce14851d27296e0931be4bf52c1"
     },
     {
@@ -348,7 +356,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "89c0dfbcbcf471601f99b160d6dc7bc8aa70f15d429c9d6b9b868eaf042fcb45"
     },
     {
@@ -393,7 +401,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "cadb00cfb28ca78ffd73772b50db34c08dc2a040df2a8a90724d4f6e60c194a2"
     },
     {
@@ -412,7 +420,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -435,7 +443,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "401e082680a49ac55047cee73f05f551835642201a75c2d49b7fea51af3776b2"
     },
     {
@@ -454,7 +462,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "843add310df11bda5fcc685e0ec2cb08f26197a0cf41f9fbd5c8001cd200392b"
     },
     {
@@ -481,7 +489,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7b7140a3e5a47a7175ede79d0e7b80b4f4903f7101b46728871b7c8d849272e3"
     },
     {
@@ -508,7 +516,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "bd3b9b397fa5e8d8b05927bfb0e9ac7c4d378e22beb051ede27c874932f63dc7"
     },
     {
@@ -541,7 +549,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "dd103376fc3f69350a9287683a89239fe00c29d13633797f287a94fb9ac4738d"
     },
     {
@@ -568,7 +576,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fb827c8dcc871ac435420039744ed521a89ab8e40be45477a446169765cb9555"
     },
     {
@@ -587,7 +595,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b5487cbf09e6e8e2168f3ef95de39a7ceb8dd41f9bdc0f3ab746552022ffd332"
     },
     {
@@ -606,7 +614,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "06db3bc21b27e19a48fffb63e396fa62a921754cea403bedd14cb91ae06ee9ea"
     },
     {
@@ -641,7 +649,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "99d4cc77136d710444a5cf71208c7aaf414030b490a34e69a577852f2bb16445"
     },
     {
@@ -664,7 +672,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2c337ce62a45fdee34d3fde9b01f83ca49edb702b384d819fa5a46d1d8fbef0e"
     },
     {
@@ -687,7 +695,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "d534980fb4ee299f6b4e12d83d98401269aed95f7b5c8f725f38fcc28d1a87e3"
     },
     {
@@ -724,7 +732,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "da75091b320802290b1cec483207c1b6e7c0ebd8aad3d4a428e93f6362f8ab9e"
     },
     {
@@ -743,7 +751,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7c358ae3df8420de20203ff6653fab2dfeac0b9bb03a96786f713527fdaef64b"
     },
     {
@@ -834,7 +842,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "66c252deddaf933c17b1581e78793f054016d552c24fa6538a90472d0b72cade"
     },
     {
@@ -867,7 +875,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "76693f403a802e0e5a14a4705a1bfd88241c76bc590d7e32af255e0fd694f506"
     },
     {
@@ -926,7 +934,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7d67a5251a52d44cf8577afcb16c34c93e2f9367a12d8230131391810e2ae4fc"
     },
     {
@@ -957,7 +965,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "546ae82651c60bbe77c7bb06831eec9ceb177ba20010146a876dbec3daca5925"
     },
     {
@@ -998,7 +1006,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b529973e95d8e9b526b26cfa402c92a4bd9154098b4cde82e67584e7b5a96d1e"
     },
     {
@@ -1075,7 +1083,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "61faeb893f3cc06f04581ec92f020c0e328a8e182e0e2635551eeba190b7c6aa"
     },
     {
@@ -1094,7 +1102,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "98711a994728382721b0b7f9fae0e4d830b13f1146f106baef9b43d274577b9d"
     },
     {
@@ -1131,7 +1139,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "712a347307d1e7104e8ca6ca4c98c750437b10f1296453b97c23797b99e6eb37"
     },
     {
@@ -1224,7 +1232,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "70cd48e8ae0a761d7e847463e3578c6d2be4ceeac40b749dffab1dd383d496c4"
     },
     {
@@ -1251,7 +1259,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "87cbd2336456dd5596c262ebc6600347407ac938a9fd97a897689ae3c4b700a3"
     },
     {
@@ -1274,7 +1282,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5cad8e1f66e8798832f9e3a4f2601ef010e6fa0cc73b1b98ec4bbfc015d0546a"
     },
     {
@@ -1291,7 +1299,11 @@
         },
         {
           "absatz": "2",
-          "text": "Bei Liegenschaften im Privatvermögen können die Unterhaltskosten, die Kosten der Instandstellung von neu erworbenen Liegenschaften, die Versicherungsprämien und die Kosten der Verwaltung durch Dritte abgezogen werden. Den Unterhaltskosten sind Investitionen, die dem Energiesparen und dem Umweltschutz dienen, und die Rückbaukosten im Hinblick auf den Ersatzneubau gleichgestellt, soweit sie bei der direkten Bundessteuer abzugsfähig sind. 2bis Investitionen und Rückbaukosten im Hinblick auf einen Ersatzneubau nach Abs. 2 zweiter Satz sind in den zwei nachfolgenden Steuerperioden abziehbar, soweit sie in der laufenden Steuerperiode, in der die Aufwendungen angefallen sind, steuerlich nicht vollständig berücksichtigt werden können."
+          "text": "Bei Liegenschaften im Privatvermögen können die Unterhaltskosten, die Kosten der Instandstellung von neu erworbenen Liegenschaften, die Versicherungsprämien und die Kosten der Verwaltung durch Dritte abgezogen werden. Den Unterhaltskosten sind Investitionen, die dem Energiesparen und dem Umweltschutz dienen, und die Rückbaukosten im Hinblick auf den Ersatzneubau gleichgestellt, soweit sie bei der direkten Bundessteuer abzugsfähig sind."
+        },
+        {
+          "absatz": "2bis",
+          "text": "Investitionen und Rückbaukosten im Hinblick auf einen Ersatzneubau nach Abs. 2 zweiter Satz sind in den zwei nachfolgenden Steuerperioden abziehbar, soweit sie in der laufenden Steuerperiode, in der die Aufwendungen angefallen sind, steuerlich nicht vollständig berücksichtigt werden können."
         },
         {
           "absatz": "3",
@@ -1309,8 +1321,8 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "134c9e906326658924f15a43bea8963ce949c6d6fb80b8f3251f178d66a4171a"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "213c5c06f9e8ef6b0885a1c4aa44ad11cb4aa04dadf71ea321ad713789558d73"
     },
     {
       "id": "kanton/ZH/631.1/art_31",
@@ -1382,7 +1394,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "76113de6152e10d151567a9ee87f9d8aeff03f45bdee5df5a7a8db66a190dde8"
     },
     {
@@ -1411,7 +1423,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "4de85aa7568986831cb34ad444de13988ecff3af180d899c31257def581a3667"
     },
     {
@@ -1452,7 +1464,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "cd502ae3232af6bf52e33f2c377ae21554408322533b208ae18cd9f1e3966130"
     },
     {
@@ -1489,7 +1501,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "93e80d452394b441bdb314e5c0eea92570735d2594f92e78c5b048ee11317e87"
     },
     {
@@ -1506,7 +1518,11 @@
         },
         {
           "absatz": "2",
-          "text": "Für Ehegatten, die in rechtlich und tatsächlich ungetrennter Ehe leben, sowie für verwitwete, gerichtlich oder tatsächlich getrennt lebende, geschiedene und ledige Steuerpflichtige, die mit Kindern im Sinn von § 34 Abs. 1 lit. a zusammenleben, beträgt die Einkommenssteuer (Verheiratetentarif): 0% für die ersten Fr. 14 100 2% für die weiteren Fr. 6 400 3% für die weiteren Fr. 8 100 4% für die weiteren Fr. 9 800 5% für die weiteren Fr. 11 200 6% für die weiteren Fr. 14 500 7% für die weiteren Fr. 32 200 8% für die weiteren Fr. 32 400 9% für die weiteren Fr. 48 500 10% für die weiteren Fr. 57 900 11% für die weiteren Fr. 62 900 12% für die weiteren Fr. 72 600 13% für Einkommensteile über Fr. 370 600 2bis Bei nicht gemeinsam besteuerten Eltern, die mit Kindern unter gemeinsamer elterlicher Sorge zusammenleben und denen der Kinderabzug je zur Hälfte zusteht, hat derjenige Elternteil Anspruch auf den Verheiratetentarif, der aus seinen versteuerten Einkünften den Unterhalt des Kindes zur Hauptsache bestreitet."
+          "text": "Für Ehegatten, die in rechtlich und tatsächlich ungetrennter Ehe leben, sowie für verwitwete, gerichtlich oder tatsächlich getrennt lebende, geschiedene und ledige Steuerpflichtige, die mit Kindern im Sinn von § 34 Abs. 1 lit. a zusammenleben, beträgt die Einkommenssteuer (Verheiratetentarif): 0% für die ersten Fr. 14 100 2% für die weiteren Fr. 6 400 3% für die weiteren Fr. 8 100 4% für die weiteren Fr. 9 800 5% für die weiteren Fr. 11 200 6% für die weiteren Fr. 14 500 7% für die weiteren Fr. 32 200 8% für die weiteren Fr. 32 400 9% für die weiteren Fr. 48 500 10% für die weiteren Fr. 57 900 11% für die weiteren Fr. 62 900 12% für die weiteren Fr. 72 600 13% für Einkommensteile über Fr. 370 600"
+        },
+        {
+          "absatz": "2bis",
+          "text": "Bei nicht gemeinsam besteuerten Eltern, die mit Kindern unter gemeinsamer elterlicher Sorge zusammenleben und denen der Kinderabzug je zur Hälfte zusteht, hat derjenige Elternteil Anspruch auf den Verheiratetentarif, der aus seinen versteuerten Einkünften den Unterhalt des Kindes zur Hauptsache bestreitet."
         },
         {
           "absatz": "3",
@@ -1520,8 +1536,8 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "796f3a1b9d082907f8c29de4cb90bfb0baf326738467355e6480617b513acea0"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "c9e2832c7d990f03048c885e0bf2d1a72675d4e1c910396bf652b5a050b9e15d"
     },
     {
       "id": "kanton/ZH/631.1/art_36",
@@ -1539,7 +1555,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a0d56912abe2554e93ef6703b165819e930cf79298e0c2ed730a06c30f289087"
     },
     {
@@ -1562,7 +1578,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7151c8c35343b3437b2a9abaaaff5686a9245b5668a54f79c45685b1b14a3854"
     },
     {
@@ -1589,7 +1605,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "74c37e39be17663916c1ee6ed751f3ea3e269ed6f646ce0fa499cdc7ac706957"
     },
     {
@@ -1612,7 +1628,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f04448af79df480ae85c6bb529f5a5a0d28c17b13dfb6bd26c8eacf722fb447a"
     },
     {
@@ -1643,7 +1659,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "62d41fffc1de510fcd2e26f2822906aa96c83dde8885457161599f09d12384dd"
     },
     {
@@ -1674,7 +1690,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "49b04f81464144b370a0bbcac4f2d403f1acb8d5bbda09aafd5fa897ece80d20"
     },
     {
@@ -1697,7 +1713,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f271132678c854ec2b54fada6a59fdcd3ea9226c6b5b04aea20fef35b570fd13"
     },
     {
@@ -1716,7 +1732,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "4da543e507930219d073fe75ecb9623754b14f49c0fb191777de4ef3dc7d7fb6"
     },
     {
@@ -1735,7 +1751,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "bbb65687abadc89301f6ea58c8f58317abdb561728189e42b8f2c806d83653dd"
     },
     {
@@ -1772,7 +1788,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "492901e66e33b238fb14bac2132a1c0c5f75187caf1634d287bf6ec193434df9"
     },
     {
@@ -1799,7 +1815,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2f19bc7f7bd17a02122e53152a01f8ebd1a24dd6275569eed0d0d7c23bbfbed6"
     },
     {
@@ -1818,7 +1834,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "4705ce1cdd71cd4868c5296c19f23fc75c45fe367cf92533c3fa4424291e1c38"
     },
     {
@@ -1837,7 +1853,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7e53f7196f0de4cad44c1beba32aeacc7eb4f94accd72654dc2535da424c105d"
     },
     {
@@ -1856,7 +1872,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1ba79181fe8982f4bff27b3a135aa948649f383db026f09a433fe8292e0276bc"
     },
     {
@@ -1873,7 +1889,11 @@
         },
         {
           "absatz": "2",
-          "text": "Für Ehegatten, die in rechtlich und tatsächlich ungetrennter Ehe leben, sowie für verwitwete, gerichtlich oder tatsächlich getrennt lebende, geschiedene und ledige Steuerpflichtige, die mit Kindern im Sinn von § 34 Abs. 1 lit. a zusammenleben, beträgt die Vermögenssteuer (Verheiratetentarif): 0‰ für die ersten Fr. 161 000 ½‰ für die weiteren Fr. 242 000 1‰ für die weiteren Fr. 402 000 1½‰ für die weiteren Fr. 646 000 2‰ für die weiteren Fr. 967 000 2½‰ für die weiteren Fr. 967 000 3‰ für Vermögensteile über Fr. 3 385 000 2bis Bei nicht gemeinsam besteuerten Eltern, die mit Kindern unter gemeinsamer elterlicher Sorge zusammenleben und denen der Kinderabzug je zur Hälfte zusteht, hat derjenige Elternteil Anspruch auf den Verheiratetentarif, der den Unterhalt des Kindes aus seinen versteuerten Einkünften zur Hauptsache bestreitet."
+          "text": "Für Ehegatten, die in rechtlich und tatsächlich ungetrennter Ehe leben, sowie für verwitwete, gerichtlich oder tatsächlich getrennt lebende, geschiedene und ledige Steuerpflichtige, die mit Kindern im Sinn von § 34 Abs. 1 lit. a zusammenleben, beträgt die Vermögenssteuer (Verheiratetentarif): 0‰ für die ersten Fr. 161 000 ½‰ für die weiteren Fr. 242 000 1‰ für die weiteren Fr. 402 000 1½‰ für die weiteren Fr. 646 000 2‰ für die weiteren Fr. 967 000 2½‰ für die weiteren Fr. 967 000 3‰ für Vermögensteile über Fr. 3 385 000"
+        },
+        {
+          "absatz": "2bis",
+          "text": "Bei nicht gemeinsam besteuerten Eltern, die mit Kindern unter gemeinsamer elterlicher Sorge zusammenleben und denen der Kinderabzug je zur Hälfte zusteht, hat derjenige Elternteil Anspruch auf den Verheiratetentarif, der den Unterhalt des Kindes aus seinen versteuerten Einkünften zur Hauptsache bestreitet."
         },
         {
           "absatz": "3",
@@ -1883,8 +1903,8 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "04eb7ec9211f33498a25af58318a7f94bb3cc53cc81a4d2302f7cf5d1417ffcd"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "8edcf9bbe523ac782f07f248047e38aa91d7510dd749197dc0cc77343d61bcc5"
     },
     {
       "id": "kanton/ZH/631.1/art_48",
@@ -1906,7 +1926,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "44ef99b3d8a4704158cc6daaf64b9df75b37a5a5d65e3a37530a35b2f4aab5a4"
     },
     {
@@ -1937,7 +1957,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2e92affad425ae607df5b8dbc659768b633801e5764d11171c0a6b157ae051e3"
     },
     {
@@ -1964,7 +1984,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ed900aad978270bae38ba8c7c2a0bc63bd7f3adee1120aee1b90da5c369b6dfa"
     },
     {
@@ -1995,7 +2015,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "edf23b2cbfd78864ef87e05e90db40eb42e8cbd7ae3429996456ed79f99c507e"
     },
     {
@@ -2026,7 +2046,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "83a7c7c3749676f84cb5213de368afff724f4d10e7be7341d04032768f30ca0e"
     },
     {
@@ -2039,14 +2059,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Anwendbar sind die am Ende der Steuerperiode geltenden Steuerfüsse. Dritter Abschnitt: Besteuerung der juristischen Personen"
+          "text": "Anwendbar sind die am Ende der Steuerperiode geltenden Steuerfüsse."
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "64c217e05b9d7a2d1e76b87e6718b5ad41c4ff1650ef814417b16c13be34f0af"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "11e165d5b8e64d301ecae9e8490f6c53119a366beeb0cc608584024a90533380"
     },
     {
       "id": "kanton/ZH/631.1/art_54",
@@ -2082,7 +2102,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "af19b81589bf5ca83c5f51606662cc2830824dfbc411d7e93c38f69ad1c84d1c"
     },
     {
@@ -2101,7 +2121,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c98e0f3d71b4f14698027360648030a51c8fa4cba5d5da8a7cd485c2ec7a2e2c"
     },
     {
@@ -2152,7 +2172,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "6a9aaa0da55cb72241753d4abf270f659c32fd2dd74d4d7f818a9ad7dbfed08c"
     },
     {
@@ -2183,7 +2203,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c95dc2249fefc8bd75730565cb0c7f09975a7e456f7c2cac4f4f938957d8faa2"
     },
     {
@@ -2202,7 +2222,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -2233,7 +2253,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0ab27ade7586630a30a71ca6400efe6b5908078d49fa373a281558829adffbf3"
     },
     {
@@ -2274,7 +2294,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "9a19bb0a2bba893e2dcf801aa610626536ae6ad71aba0005df76430fb92462ee"
     },
     {
@@ -2343,7 +2363,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "bf782c2bde309275cf1ce72c9f7ee1191e78f31b600e1c902e0249fb8b13646a"
     },
     {
@@ -2362,7 +2382,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f798f9c0968c4884d6e6896cc9083e312ac1ba867264e24953bb4d511a446d1a"
     },
     {
@@ -2381,7 +2401,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "474e8bf31d01c791b2e39cbe40c067258b485f9c25d0b7f265d1c1f838c34b04"
     },
     {
@@ -2430,7 +2450,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a338977e2e8a846dadd11397f98e2d2abc2bcd25794f3ae2ffd7b862ea66da94"
     },
     {
@@ -2493,7 +2513,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1e223407c37872931d1123ee552e1c533c3f82b77ac1681a5ae5dc7302ffdfa0"
     },
     {
@@ -2542,7 +2562,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "cc5e497666148e8b4d348a41700404eaef5a4f03e4cbb9279edb2cf872c78c1e"
     },
     {
@@ -2573,7 +2593,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "94acc9e6602a6950eea295269128add993bc71dbfd9864144f238e0cd3a3f91a"
     },
     {
@@ -2596,7 +2616,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1af309815be8cd1fe0295830c19f47f5077d13481b8cc852af7b81c586f82ddd"
     },
     {
@@ -2681,7 +2701,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0e830d1010f77eab0fa45926c77801f37a438bcb84cd0a6e2291787fe8efd35b"
     },
     {
@@ -2722,7 +2742,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f1fc2e6452898657b9e9e9ffc1e28810763d89f035d338c91c69e7d3e08a9818"
     },
     {
@@ -2783,7 +2803,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3363c1ec01eede7fb704a8c3631fc95bf5c275b5eefa7327926e130220bf5490"
     },
     {
@@ -2806,7 +2826,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "d84a47cd1050cb12d68a44a4f12a85c6111c888b2037d44e48796294abd9b88c"
     },
     {
@@ -2839,7 +2859,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a8ac0ade54a6e4f3814acdcec7a218eb0c20ccce6369f9c8331352d0c29cba79"
     },
     {
@@ -2892,7 +2912,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "530c8be6fb5f04e96cad372fee3145bcfad5caa28703b4795d41c6d424e10095"
     },
     {
@@ -2923,7 +2943,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5f29b79a605d4f32a225594b031c0db9680b2586a4d24491fe6aca5d0719edf0"
     },
     {
@@ -2950,7 +2970,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "08882aaf8753e49decffa9c4783f9f63b73b8dbc174ef71e435bc8db161abd66"
     },
     {
@@ -2969,7 +2989,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3adf97bc8fa376dd3f5f63029902d5caf78242adf55f4ca92b52a54d0ced310c"
     },
     {
@@ -2992,7 +3012,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b42b26a95c1bf76f34e8613c88891d4b1948d3e7ea1ba6f00cf7aae8558161d0"
     },
     {
@@ -3011,7 +3031,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "06573be298eafe038f299206fac86db88c640731d630e787f592aedb39f15dc9"
     },
     {
@@ -3056,7 +3076,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "6fbcf0a697cb6a376c0b3c9a86ecf538be5f7be3f9cadb0b3ee2d108794b8c4b"
     },
     {
@@ -3091,14 +3111,71 @@
         },
         {
           "absatz": "4",
-          "text": "Transaktionen, die im Konzern eine ungerechtfertigte Steuerersparnis bewirken, führen zu einer Berichtigung des steuerbaren Reingewinns oder zu einer Kürzung der Ermässigung. Eine ungerechtfertigte Steuerersparnis liegt vor, wenn Kapitalgewinne und Kapitalverluste oder Abschreibungen auf Beteiligungen in kausalem Zusammenhang stehen. §§ 73–75."
+          "text": "Transaktionen, die im Konzern eine ungerechtfertigte Steuerersparnis bewirken, führen zu einer Berichtigung des steuerbaren Reingewinns oder zu einer Kürzung der Ermässigung. Eine ungerechtfertigte Steuerersparnis liegt vor, wenn Kapitalgewinne und Kapitalverluste oder Abschreibungen auf Beteiligungen in kausalem Zusammenhang stehen."
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "72a44edfb7d84fe389066568834e397096e595a44edc6109c5d3d7f1681b50eb"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "0e8e13f3c81e39acd3ca6b3a4b0254eb649ff399a499b61a851db93c047d01ad"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_73",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "73",
+      "artikelLabel": "§ 73",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_74",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "74",
+      "artikelLabel": "§ 74",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_75",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "75",
+      "artikelLabel": "§ 75",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/631.1/art_76",
@@ -3120,7 +3197,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c3142357b90f66f02fbf271efa7b8ce5ac98ed44d638c0de618575f86107003a"
     },
     {
@@ -3139,7 +3216,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f83eceb16fb2e0530a71c5ab85d56e9389556d140f8a2a2f5799d769cca2398d"
     },
     {
@@ -3158,7 +3235,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "35c0f954ef2141f059330b1ae7db0f045418dfa2109eaec97f6a24a08a6efdd3"
     },
     {
@@ -3181,7 +3258,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3c2197c0c894c455cc5aff72624c053f33eab6dd951dc51fd87cef1c1593d4c8"
     },
     {
@@ -3200,7 +3277,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2b43a9dd8b7e5fcdeae0fe0c3f9a352f7803ecefe47231dfde3d554a51e053ca"
     },
     {
@@ -3237,7 +3314,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ef45bc4b7928473ebad664a13f5215bc7bfee5e623b8942a6c8e7e0d879b7ecd"
     },
     {
@@ -3256,7 +3333,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "45ddb37c4638546df950478986d597ca74dcdc694aa882ca432219e8191f4756"
     },
     {
@@ -3279,7 +3356,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "518e0a617e50f9d074a22bbd4af31e01b7d123a9f3aeb50910ce84b41b10620f"
     },
     {
@@ -3306,7 +3383,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "232000052dfb10d38ec148334040a719264e28d433266892da4aa63b7955d0dc"
     },
     {
@@ -3333,7 +3410,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b94c03f529bc2c7bf831d61a63c124e0f90fb843e224ff214ef491ff202fd5f7"
     },
     {
@@ -3360,7 +3437,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "830add1f2e9e4abacc2af4d62031519427fd76dab81a61c01338de9889a51224"
     },
     {
@@ -3373,14 +3450,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Anwendbar sind die am Ende der Steuerperiode geltenden Tarife und Steuerfüsse. Vierter Abschnitt: Quellensteuern für natürliche und juristische Personen Aufenthalt im Kanton"
+          "text": "Anwendbar sind die am Ende der Steuerperiode geltenden Tarife und Steuerfüsse. Personen Aufenthalt im Kanton"
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "3a3bcb7a574c18df5432ace420a0a1b07de36b06844551381515199cd1a78f8a"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "ce1a776af6d0b970e215d5a80ec23c4fd371586e23675578d3650a444b75ea67"
     },
     {
       "id": "kanton/ZH/631.1/art_87",
@@ -3402,7 +3479,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "111a0cc1a7492ee67bea3d5de0775da9ce07f80ea81e9df1cb36d868c45d913d"
     },
     {
@@ -3439,7 +3516,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1d7e331630361f3eaac64b445b1cbb8e2dfe43546cd058ed38cc0adf190195c2"
     },
     {
@@ -3470,7 +3547,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "003ddde3711ed62da7dc80ce4a809ac8c392c5058d79cfe0741b9b8e80dc6554"
     },
     {
@@ -3497,7 +3574,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7d9c5678fc348bfdbd52ebb3cc634aa78253fa6c24c39da7b4f813884bbae4eb"
     },
     {
@@ -3516,7 +3593,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -3561,7 +3638,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "40c10a0d5ab7cfa6d175d56d520472575e0180ec350426c71dc4819deb50708f"
     },
     {
@@ -3606,7 +3683,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c0da864e0ef19e37b8b4456e05b6ca067544857015a0801d27b779eb3179ca92"
     },
     {
@@ -3641,7 +3718,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "8d645eb56688e2ba02fbf910d8f448198d4222dd2bfeb300c862ccbd11728caf"
     },
     {
@@ -3664,7 +3741,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "32248a43e25d1cd180ce406f0e1492d8a5e7929f81f307083c573ed0bf0e5608"
     },
     {
@@ -3709,7 +3786,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "25d3d2efa8e75950bd9ab63467ea7a64459b3ecd70469ad664edcf573f5d8945"
     },
     {
@@ -3736,7 +3813,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "148f437ae63703b2ef346b95735f57d2ffbf6befa1c9aaeb31fd8017de946d06"
     },
     {
@@ -3763,7 +3840,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ddae944166c326e1dd50335e64f78477624afad5645b9aac40b7cf95b276ca29"
     },
     {
@@ -3786,7 +3863,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a9e2eebba4bfb3bde72c7137ba67f288dd275167c1f9b912f90ddc9152732ba3"
     },
     {
@@ -3809,7 +3886,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1125c9db77c2742e14393f2ce1d61a0df77dc458be1af576801b30e9d80647f4"
     },
     {
@@ -3832,7 +3909,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ac0dd3f0857335790b634a8f373b35b00906ca355dd61473ac698c847d1864ce"
     },
     {
@@ -3851,7 +3928,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "71630161063dd76a6936dbfdd0e23194cd1765ef41478ebcd4917e7cc7c4d1b0"
     },
     {
@@ -3888,7 +3965,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "32377be3a41c151982dee3783e2675ed2117d92b1280b9c09d2a67d7e57c7a6a"
     },
     {
@@ -3911,7 +3988,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "411052dae046e7fe3ba57554da81cf25ed02741d21571222455d2a7d10c2d546"
     },
     {
@@ -3930,7 +4007,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "9abc6b755a65a59d53d6d76d9bf20a6efcbe1e7e8bd3a0574bda859dd6d9c283"
     },
     {
@@ -3979,7 +4056,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2a6486a65c33ac370f0e6479d3476253978bb51636d12908cc382810ae7cf5b0"
     },
     {
@@ -4002,7 +4079,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f9ed6a9b5384b81cf314a7fb98de8369d2e702b924e29982b82466edaf9e0535"
     },
     {
@@ -4047,7 +4124,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "406c6e77e95d559e4acc2f18e3183e636f7488f4ca7e1a5a93b9820270ec37a2"
     },
     {
@@ -4060,14 +4137,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Fünfter Abschnitt: Verfahrensrecht"
+          "text": "Aufgehoben"
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "c05da705d59fe21afddbaa29567f7904985344988ec7690cf07fb16fc27a6f15"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/631.1/art_106",
@@ -4093,7 +4170,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b5a9221c101337b64f380bbfc88ebd1a9ccd088b0739710961d75339333932e0"
     },
     {
@@ -4116,7 +4193,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ceaa175269e8b7f5f9f9e7a9343b5de35137a5e31e97ee88f7d4f55a23c4a829"
     },
     {
@@ -4143,7 +4220,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1acf74f63b6f657e51b171188fb18a3d8d08a10bbd9bec0a82c25002cb81510a"
     },
     {
@@ -4184,7 +4261,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b08f283f4e2d82a664541cab6e4a3d0d0c4aff981750246a64297c5eaf72f7a2"
     },
     {
@@ -4225,7 +4302,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "02c92d2db6b20a0f3218ec9457ac33ec760fde08fa0425bc4b645832dd73c71b"
     },
     {
@@ -4248,7 +4325,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "64328ec878005bbb684ff4d0c407413076336a79d7395a051feae6b39fe6fc8c"
     },
     {
@@ -4305,7 +4382,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "db1f35bf719d7c7c0d8cc3a79fc33db69bf0038de011fad2614b65063cad61a5"
     },
     {
@@ -4342,7 +4419,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b0732b52f2c624498f1f10d517869dbaa2f5be8e0f19576966eba131ac48413f"
     },
     {
@@ -4361,7 +4438,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "e2e0747f085a9881b6fe0e15e25cf283f9317cc5c45c62f42b84d61e8aace209"
     },
     {
@@ -4388,7 +4465,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "6c3119ef3829835fd1681336f39e76f32631a686e97a29af77e22316b772e5b3"
     },
     {
@@ -4407,7 +4484,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "704a18a475c004043b0b8d9c88717a26b324fc88127828eb2a75234077bd56db"
     },
     {
@@ -4442,7 +4519,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0ab75c18ede177ff95920a9e024a2e44c832a8204734dd3b4144633e06e1bd2b"
     },
     {
@@ -4465,7 +4542,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "eec153fcddc1a47251936f73934d075453ca5c24904e414e4d2c6e37947988d6"
     },
     {
@@ -4506,7 +4583,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3fb135d1b8cf58abd9ce6557a716cde925405f489a9a5ddef58d96fa890b46eb"
     },
     {
@@ -4525,7 +4602,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a259dfd4135bdf8472409e52fc7b1c9b0574e5c7b7b915848cbdec87551dc33b"
     },
     {
@@ -4548,7 +4625,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "491658c8f42ca34d176c1398068288addd205d05b1e3fa2d343de3badea6aea3"
     },
     {
@@ -4571,7 +4648,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "52c0061da7a59b49486a059e2edf0157d07b6f0ec858ef18c25fed13d6a80bc5"
     },
     {
@@ -4600,7 +4677,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "87aec1a230b4cc638d6d5f53b43eab529e928a803feb3fa6472fc95178405390"
     },
     {
@@ -4623,7 +4700,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a8d75445eabc552a2b53f8717ff88bb7999086225fca981e81a292ba26354eaf"
     },
     {
@@ -4672,7 +4749,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c1a3c80fd5c7f263a716df3404f3459ab5be2cf791e65814964a90aea1ea86f6"
     },
     {
@@ -4695,7 +4772,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "da8c077b580cc832137e2adc50a8a9d374b5882fa1a2dec9a7cfe5f3b64c204c"
     },
     {
@@ -4718,7 +4795,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "cee58bea77ae436f031a4c49299394cae79f24c081471d11ca8365115201754d"
     },
     {
@@ -4753,7 +4830,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "684b80766ca1844eb0471be6da7f2e7e7f3713882b9dc725ca5a747a74635448"
     },
     {
@@ -4784,7 +4861,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "da1069d5ce002cdd83506bee9bad919790bc244483e565f8fd5b9d2e67241ca9"
     },
     {
@@ -4811,7 +4888,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a6e0e028e82c0122033a0b9f99b844b88ed5fb6948f94983b8f61cfa3ac98624"
     },
     {
@@ -4830,7 +4907,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fe9a1b03282a074c6ddbb62934644c91e3c67094f79adc3c18623c17f2e4009b"
     },
     {
@@ -4861,7 +4938,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "10646974ff959d8f190e52725fb978138bda3726db2d85c302b5afc54a3a20a8"
     },
     {
@@ -4888,7 +4965,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "bd022df92f448927440c5338e52dc9f4bebd208290a4b2d4963b646970eeda7d"
     },
     {
@@ -4911,7 +4988,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "08422bcefe928ebcddb48fc8005c6f992ae35f9154ea7f876a3e48a7e4148f1a"
     },
     {
@@ -4934,7 +5011,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "94f143d962a9e50378538ff8671b56039cb6ac13409a4fb6db6016b4afbfd7e1"
     },
     {
@@ -4997,7 +5074,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2d31c18c73e0931772ae2153670890a0c4bd8a99cf818b309a3a9c83e30e1dc1"
     },
     {
@@ -5024,7 +5101,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a3b56453d5c7c53c738082fcf0632527204ef0740e2346cefe3baa2e10e224cf"
     },
     {
@@ -5047,7 +5124,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5899a7b1f5c17af0a2a480e1e7c2ddb7d8b63cda7c3bb699abf0a5b660afdd8b"
     },
     {
@@ -5070,7 +5147,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ed0a3b24a13dbf5d3c45ffcac9e590e9b11a42b207a52beacd6c4ffa1bc8b624"
     },
     {
@@ -5121,7 +5198,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a6f7af3341287124ef28023e5eb62c1fa47d0a7767b9fc2daf8cc3680ecd1b5e"
     },
     {
@@ -5152,7 +5229,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "06900bea59a46f3ef193f65a4d94796a7a24a1e4d65f29e90db393ca97f0d278"
     },
     {
@@ -5209,7 +5286,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3568b1e6cc7dd948d99ebbd9e3cd8ccd680b1960d354f08ab1974d109fbe6e4c"
     },
     {
@@ -5228,7 +5305,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "55ffb4a4b84e1b9bee119556a3d258efd40128443b6a4845a2f8365b50a498b2"
     },
     {
@@ -5247,7 +5324,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ea61e9b659f52b44e35249fa6c6f9513bf07fdb5adea7eee49621791cd8a8876"
     },
     {
@@ -5270,7 +5347,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "32a52cac57aaabe0f2b58ecb79f99a9490f20b69704fed185d9469101e758495"
     },
     {
@@ -5293,7 +5370,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b3cf067a61d9b18d825828b7dff382b1cc18de30ac4abe1b58f400e8e8537fd9"
     },
     {
@@ -5316,7 +5393,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "14c683c56a2d64777ac5ebce5b17e80432df2192276fc3787cc90d6a52fffc62"
     },
     {
@@ -5343,7 +5420,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b0571f12f607675176ac91eeb1d2ffb66fbac4a9855aae57017bf8637fcbdd11"
     },
     {
@@ -5366,7 +5443,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "87ac66aae7697588de5d3bdd8f6513d934abbfebd5884a040b9e538f22f6c852"
     },
     {
@@ -5385,7 +5462,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ec459eaa306e30f841f7161bb2218a7e30f36acb1daae93419e5f7d333be59ac"
     },
     {
@@ -5412,7 +5489,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ab69b9759f92f99eb3f4c0ed4271c58142415958fb32123c759999f132bd1094"
     },
     {
@@ -5449,7 +5526,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "d31d426c2a6f7f3da0978bf8b3387c4cdbea4b2d1ffe532d75b2d976e0cec2d9"
     },
     {
@@ -5476,7 +5553,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "51665f3c00bcf18707ce4d9640e7426afd36a71234125efd4a5a05923f010527"
     },
     {
@@ -5495,7 +5572,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "d085ebc463562a5701b1217f6f9bdaeb15949c1b77e0b9628cd3fbd10b5682a9"
     },
     {
@@ -5526,7 +5603,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "289fdcd1a721f09ec00aec5d4ed5175bf47cd25a470664e10ab9fe9ffe4cc144"
     },
     {
@@ -5553,7 +5630,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "78bc547562320eb82727d083c52b0f4f4f1741e9d4373290c8465c459cc217ab"
     },
     {
@@ -5580,7 +5657,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a6ee84f765d29ab3d7501e7895fcaa93103d32fe0ee808089982c15f5c097884"
     },
     {
@@ -5599,7 +5676,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "316aaf41dc5a80914c4be218eac00e97c29025d1ecf786ed4a47dc46834ed37a"
     },
     {
@@ -5626,7 +5703,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "eeaf429141aa182ec8d2bc80031199d433e3c3bc02ab043dc8f7e5610b4cdb4e"
     },
     {
@@ -5649,7 +5726,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "75cdf578d90c30966be4919532bbaecbc95e90d0fc8445b7a21fb069a0be8b1d"
     },
     {
@@ -5676,7 +5753,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fde35bab884c9303919291df423c08ef7ffdf491d4f2cc586acb3fb366cf2537"
     },
     {
@@ -5695,7 +5772,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c4982b96dc82797cb77e44a2e64d88281c3e916581943bcfb684d77f4e65952b"
     },
     {
@@ -5726,7 +5803,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0ff9de828096e01e16da8599ea876ec0a2cb2655d75c10898ad4c501b737fefe"
     },
     {
@@ -5749,7 +5826,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c581eb745b7d36933ed0d6560e22a5711ae42dbc5ae9edf8341b6bcdd1000c05"
     },
     {
@@ -5786,7 +5863,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0b8ed3e6674efc86aef944e768671a0f2ced39dd770596cd45b7836a65a3584a"
     },
     {
@@ -5805,7 +5882,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "660628eaa0b12d4b70f160993ef3435f1d2b6d4f724df59731399c0a3e94d8de"
     },
     {
@@ -5842,7 +5919,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "96717d3c4c8a7686dbfbcfbbccb1aca9fba2cc75faf7cec904630d2bbcd08e72"
     },
     {
@@ -5873,7 +5950,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "61e2f785a912882b383d39636e0f29f47bd5f33c74b2f1ce6bc40a196f8ce51c"
     },
     {
@@ -5896,7 +5973,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "718f5f4d8be3f0a9580e9a917e24827797563f03b098552325102fcfd1e67c9e"
     },
     {
@@ -5919,7 +5996,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "dc40bfcaffef149b79574560584c6aff633c8a909cc341d160fa1a23c9ee4a4f"
     },
     {
@@ -5942,7 +6019,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "6d464238b37904420b582dfac568c690b084a7d79e9746464b69e0eaadc15691"
     },
     {
@@ -5969,7 +6046,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "991bbbaae7ba45f2fea335b28d6f365d5c6b30f35aedce58179ebd923aade5c7"
     },
     {
@@ -6014,7 +6091,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "99398ad7d911fc5ba1e190550c40bf0e4e2b2ec81dd9b0fd49e3f563a4669b93"
     },
     {
@@ -6037,7 +6114,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "312739951dcfa2252244935cdf979c0d6d586f0901ccd2c25973d6eba14aa8e0"
     },
     {
@@ -6060,7 +6137,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c063b5a7f5db2af6e11941c45d06e9758639861572daa814fd1e0955315009c7"
     },
     {
@@ -6083,7 +6160,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ba44a4ec23ee9676aed46b2bf057e916b6631aa9e3dec45f64707f30a4b3aca3"
     },
     {
@@ -6128,7 +6205,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c7108455ad1064eb0f0e52b6ccd1d5310afe9f8f89d10367b3e79b764e408b2c"
     },
     {
@@ -6155,7 +6232,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "94da9a5ab73c06076926a7eac2a4d3dedb5fde4d4d5b0b8d96d5030ee4cbb8d1"
     },
     {
@@ -6174,7 +6251,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a73c5b21d1ee1aaf25b34a580a5b577980ca1206cdfca7b9e4d0bc1cee245e13"
     },
     {
@@ -6197,7 +6274,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b1c89d9a35a9a09799bb4a2dff4f035b159d5aad69905ff1d37ba1de2bf758cd"
     },
     {
@@ -6220,7 +6297,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "afbddc37817fd135378ef0c040230082dc9f4a406cecf318c479a015ed3e9dce"
     },
     {
@@ -6243,7 +6320,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "9bfe7669a9c5db34de0997918ad32dd4604d8b376c3f6f5b5e19f416e3befc02"
     },
     {
@@ -6256,14 +6333,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Das kantonale Steueramt veröffentlicht ein Verzeichnis der wegen Verfolgung von öffentlichen oder gemeinnützigen Zwecken steuerbefreiten juristischen Personen (§ 61 lit. g). Die betroffene juristische Person kann ihren Eintrag durch schriftliche Mitteilung an das kantonale Steueramt sperren lassen. Sechster Abschnitt: Steuerbezug und Steuererlass"
+          "text": "Das kantonale Steueramt veröffentlicht ein Verzeichnis der wegen Verfolgung von öffentlichen oder gemeinnützigen Zwecken steuerbefreiten juristischen Personen (§ 61 lit. g). Die betroffene juristische Person kann ihren Eintrag durch schriftliche Mitteilung an das kantonale Steueramt sperren lassen."
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "fee4df7888518c71f60c76116e2cf4583e9da6a069f5c9e351df5122a03feda9"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "438e6fa5c0cf77265fdbbbdb105359f78b3b8a64b9a4272a561cb5060487735d"
     },
     {
       "id": "kanton/ZH/631.1/art_172",
@@ -6281,7 +6358,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a540f1af685488b3394e6df61f74c406868cf24e9a8f09d2cbd9c150a009e22b"
     },
     {
@@ -6308,7 +6385,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "84250074616758326de95d8c91f8284e60fe8590bff70e838618234be265aba6"
     },
     {
@@ -6341,7 +6418,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "38d6a00ad618008ac219b6a644bb6891cb63c9efe014f23975a10b1239419e18"
     },
     {
@@ -6368,7 +6445,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a66e8bd7950e5f0a684cd1b4a1338421476155e67a3763c1484963931be0c0ad"
     },
     {
@@ -6387,7 +6464,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "00846eaabd0a2b6d92b9f0e3d8a116fe1d05ff54e69acfa6d30a715f95fcd3cd"
     },
     {
@@ -6410,7 +6487,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "6b97035a42237c64c7e2dc5ee0fb99ef79e54e9d1266781ff42b6319000e6183"
     },
     {
@@ -6433,7 +6510,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "8d82b37f1bf147e68c89b3efc23262d9ab1f614631a55958cec6cc39830ad1d3"
     },
     {
@@ -6456,7 +6533,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "aea47f1249a7d180a0f9d86e176f525c53b9312b5834c20c0e41ff722427ec5e"
     },
     {
@@ -6493,7 +6570,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "8b98cfea48031fa584c4a88ee076d2df8e97946206d676dd32036b77e010a5ad"
     },
     {
@@ -6524,7 +6601,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2618c9189c289808b11025ae2aacf7f45da05b604abf5bf04c25887ec182e60d"
     },
     {
@@ -6547,7 +6624,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a812a66b9813f81e153e50c0ba94d7737f9e955b4478a1c141482649975bb5c7"
     },
     {
@@ -6566,7 +6643,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b1a04029c12eb0a2f2dabe5c210c4fc9bf5ad5629b89b437d2251562f41fa6b7"
     },
     {
@@ -6593,7 +6670,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "48b47f062ccc7373eae1c6709c965c413688ee90f07a8b186e9d7f44b590dce1"
     },
     {
@@ -6616,7 +6693,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "48d57126d3567646f5bbd6901cfeb699b3cd8d54af0bf3816c1fb5ed33b3bcde"
     },
     {
@@ -6629,14 +6706,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Zweiter Teil: Gemeindesteuern Erster Abschnitt: Allgemeine Gemeindesteuern"
+          "text": "Aufgehoben"
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "1adf042841fac7442a3900d4b5f21293463ebdbd38fb5774b53911e8ef028b09"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/631.1/art_187",
@@ -6672,7 +6749,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ad08ae948724f960c1db1cbf0fd167dc96672a45bfcc9c2354e9997c30dab9e8"
     },
     {
@@ -6691,7 +6768,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "12055ced013713965ef641f5dc2666d7e70e1338bda41b3bf96ffc0a87445db5"
     },
     {
@@ -6714,7 +6791,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "26ad2550333a62f457ede8c4c483e18fa6c12aac4a1814ae1ab2415882f80aab"
     },
     {
@@ -6737,7 +6814,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "274491793368f23a841028916f2c11995de26fd36811a54bf25010285d32febb"
     },
     {
@@ -6760,7 +6837,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "d85f05720c3e3ff066e236f4ba3dcd7e38e094058f551d548d246d6ae6f19a39"
     },
     {
@@ -6783,7 +6860,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ad772627de647c15fe9542524f90811c1afd39a47a53cd09b521991f3ad33128"
     },
     {
@@ -6802,7 +6879,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2fcf59c92facc2e4baf5038d97e971c8226a832f34efc3c6cedbcc7f46d9a8b8"
     },
     {
@@ -6825,7 +6902,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c490188b284f49d2bf88f59dc40947504d31bf793f9c5195ecb8c5cce1b6df64"
     },
     {
@@ -6844,7 +6921,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c8c30ddf50da6a3b63dc4ce1587dccabd15592273d408114cd4eae1ee0a983d6"
     },
     {
@@ -6863,7 +6940,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5232d8caf19d58d0e0c70234f3a5445a5be7d8cd0e527c333da6d841130e9f31"
     },
     {
@@ -6886,7 +6963,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "dfd679c59c04c157cb5366ca0b7ffe8f115ce2c31fc07337f411e5ef05e6162a"
     },
     {
@@ -6905,7 +6982,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b907d9b062cf7a001216726c655c5edff8aaf3bde6febb729a0bfd5d8647b200"
     },
     {
@@ -6932,7 +7009,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "299e608da267f6e0bdce23c22f6e671a6886eb974aaf41085938ffda0efdef56"
     },
     {
@@ -6951,7 +7028,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "729411120a525d8d2cb79531cd6e8710bcaf89e8512b414acc795d875c281512"
     },
     {
@@ -6974,7 +7051,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b94b8f0183b9c3ee8f68715beeb7c82730dc09e43e005197b97fbc51262f9e8e"
     },
     {
@@ -6997,7 +7074,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "0df80692de90c0c04edc51f816d5029f9dd5f47b51557baa50b5064336e2a7d1"
     },
     {
@@ -7024,7 +7101,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f4d9713779a8c850aee8fbd7d179e4af01d89d0da8c3fa815b243a5702a036ba"
     },
     {
@@ -7041,14 +7118,14 @@
         },
         {
           "absatz": "2",
-          "text": "Ihr Entscheid kann gemäss den Bestimmungen weitergezogen werden, die für Entscheide über Gemeindesteuern gelten. Zweiter Abschnitt: Grundsteuern"
+          "text": "Ihr Entscheid kann gemäss den Bestimmungen weitergezogen werden, die für Entscheide über Gemeindesteuern gelten."
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "72c6bcc3b043c10ec683a1f20597f16da8180d8c1ef24a62ebacc6cf29b96c35"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "c3f890bebd615b96c7dbb0321fc111417f3370333a4d29a9b24ad77b5936a245"
     },
     {
       "id": "kanton/ZH/631.1/art_205",
@@ -7066,7 +7143,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "e8e74c7bdcb7b3499eeaecf26e704c31e7673951118000ade38b4ff97aa1bdb8"
     },
     {
@@ -7085,7 +7162,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "90300f44a326f405a86a24a2f9bd8c5c46ec74c50c8e184514ba59798642718e"
     },
     {
@@ -7126,7 +7203,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f9ff4a4e14a10b3446dd1eab4a75fd1d2d2088221affc87e78c2d94052203440"
     },
     {
@@ -7145,7 +7222,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "020e3aafa2c6f48cb07a6c00eae797c30767c4d48d2eae646f9bc7f5059080a7"
     },
     {
@@ -7168,7 +7245,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "34743a1c89fbaa78b5b813e597e6ae06bd2cda9795ddd7df631760236e7fd9f0"
     },
     {
@@ -7191,7 +7268,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "cd3e47c18256e82eb53d3e5c6e6d2ac132dccf1cfce21afc00f0d991635afb61"
     },
     {
@@ -7210,7 +7287,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1c0c4a326b61bb47f4ff12cc723e8ed9b6d3dd0318d1e3c8841d048ebdec0b51"
     },
     {
@@ -7229,7 +7306,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ca7a30247433f6b4d789c0583bc223af00b4db186833bcb0148ba74dace4e103"
     },
     {
@@ -7248,7 +7325,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1465d8a86f182daf4a15567c7c7ef911d9b8fdb68cdb4bd8822f742618a03d28"
     },
     {
@@ -7267,7 +7344,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "e83d39297c80a7d8247214d2b669284a3d099dd78079ca4672b85a3367eee2d4"
     },
     {
@@ -7290,7 +7367,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b2beba210cd5c03c7756de0296c520ca80210db9d98b4ff4c077bcabd8014543"
     },
     {
@@ -7361,7 +7438,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c8e746f00ba6f4de47207e0ae7952b55f3abd924f71d49313570e30bacd07156"
     },
     {
@@ -7380,7 +7457,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "41ea5c3d97cd531f3da95a834d9fc9fa4c8fd7f884627366694a685cd4b74636"
     },
     {
@@ -7417,7 +7494,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "418a48fd5e44bcf9e02e38e9170a9d74c10ab4ff2e1de5a10c2006087e85dc5e"
     },
     {
@@ -7452,7 +7529,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "af1bf93732c7dba253b435a4df37883ba98eac79b8e9ed97045e0df01e0ba9e4"
     },
     {
@@ -7479,7 +7556,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "125e11d3f18801e77daed696aea5a57e86f26dce255cf94cfd2fd6c331399106"
     },
     {
@@ -7532,7 +7609,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "02d42b6056639a563e3ca270e601070ae9cf4506ffe88327aaad68c119250c45"
     },
     {
@@ -7551,7 +7628,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "97657c851e464dc821dc0d6d6e2fe9e72f47f59dcf1a08b5011bfb2775ca223b"
     },
     {
@@ -7570,7 +7647,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3282f09036f1d87e6e153c0d4415257f4aaf45fe40cbeb740db4dd22c6c307aa"
     },
     {
@@ -7597,7 +7674,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "71625db9e87fc0ba87fa5c9332744bf7ae81988d02344f36f55e219715b21e1a"
     },
     {
@@ -7628,7 +7705,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "af97452361bce0bfc991cdbf8de24fbf24731c773abf6c558c284951e701c17c"
     },
     {
@@ -7663,7 +7740,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "00a938b598d1f47839495cb891ed5a0ec5876bd8e3f9a4ba9c240dcc1623e29b"
     },
     {
@@ -7682,7 +7759,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f6e1f026d4efe3b13ec0dd5b44ac64c5bf839d4a4cc186b10e12da2c23f37624"
     },
     {
@@ -7695,14 +7772,147 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "§§ 227–233. Dritter Teil: Steuerstrafrecht"
+          "text": "Aufgehoben"
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "b5ffe87adf5638b6ed6ff7fa1352a5077b0683ed051e2715a41f9f5d3e9cb3fd"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_227",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "227",
+      "artikelLabel": "§ 227",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_228",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "228",
+      "artikelLabel": "§ 228",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_229",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "229",
+      "artikelLabel": "§ 229",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_230",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "230",
+      "artikelLabel": "§ 230",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_231",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "231",
+      "artikelLabel": "§ 231",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_232",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "232",
+      "artikelLabel": "§ 232",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/631.1/art_233",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Steuergesetz (StG) (LS 631.1)",
+      "artikel": "233",
+      "artikelLabel": "§ 233",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-03-26",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/631.1/art_234",
@@ -7720,7 +7930,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5533bacac8d71f4182899304e4f38e355f71958e946de234127cb8ff79bf1fd9"
     },
     {
@@ -7765,7 +7975,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fa2434007a416eff63d042e5b9adf490243c9c64216b9d826987195d333029cb"
     },
     {
@@ -7788,7 +7998,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "7fdfa20092c48e20412588ee0f93c1a3e8b9240dcb14c409f00fd5d82e52f38c"
     },
     {
@@ -7829,7 +8039,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "9cca09f57f31308e323b176affbeacece78153f1a9c31cdf0bb1204d30626678"
     },
     {
@@ -7880,7 +8090,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2e63b262dfeb37e55d903981661cd0fd7e57ce3d065b782baeea5df690ac13d6"
     },
     {
@@ -7899,7 +8109,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -7922,7 +8132,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "3464f23725da3efd92579864391647de07852996a21e10f0ecdc8e3a7d0bea0a"
     },
     {
@@ -7953,7 +8163,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "9a622d3d82b0b9c0c1460c0130f5ecc71c70484c1beb0aa707cfed42dfcd9e1d"
     },
     {
@@ -8020,7 +8230,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "982df43784b4ee8b32769ed2a326d1f335cda55b5b4104f11136cbaa0114d6a9"
     },
     {
@@ -8057,7 +8267,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "597ebf2b88e1f135e315fb21957578b2299a0fb772b2085c939a245452241c11"
     },
     {
@@ -8080,7 +8290,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "542d8ed4f022672357626844ae709156a4a619d1f6b881bb6a117a5b15fd7c73"
     },
     {
@@ -8103,7 +8313,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b947599606604f26e8d0ba91474ebc1496fb6a58a676212dfa53886c28ef0050"
     },
     {
@@ -8130,7 +8340,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "662cd51ebcaaf151f979582cc4184dc69e9000c18794009abc000f00760ea1a6"
     },
     {
@@ -8149,7 +8359,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "59580f31509349187296498f4161f9152af236aaa3df310b367130d537c22bb0"
     },
     {
@@ -8168,7 +8378,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "38c27ed4480f3ef86a1122c37f12aeea08b69d3f7f556863dc37368425a45ad3"
     },
     {
@@ -8195,7 +8405,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "4f79ffcffc857fd5dd1f599e09e197afbe03326e39d8edfbf799137eaae9f56b"
     },
     {
@@ -8222,7 +8432,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "cad91d31b5a98a5e00375affade706558fb34aba31e527552b15e90be789ea27"
     },
     {
@@ -8245,7 +8455,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "119694bedc088d6cf03125e8a725c14b487f29c7ed0b990fb31160bbb2d658be"
     },
     {
@@ -8268,7 +8478,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a8c9d8b6644d2fe7e1377ba9340d3ea2b970d5279994403ca85319343f840dd5"
     },
     {
@@ -8303,7 +8513,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f49a60295ad68551225f3e4f61b58daab34b87cef847fefcc86408ddd07ef239"
     },
     {
@@ -8338,7 +8548,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b42d86f6b2aed0f708edd6e1627593d12457e0ad908fd9569aee79154549898f"
     },
     {
@@ -8371,7 +8581,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f7feeea49252e95b9210e1f6131aaf9b3a2639bd44c5f33dc6978cd4fe688225"
     },
     {
@@ -8394,7 +8604,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "9dbddcb4cec3dfeb6543e652281bb2f21b4890f7e0a3eb6e0b705babd2f919dc"
     },
     {
@@ -8425,7 +8635,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a24def986a1f03adcec640f4314e8348a80670ace2ce15e770c5a144f2b5c2f5"
     },
     {
@@ -8452,7 +8662,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "48bc28ad339b64b674659b240630f6e578834b05c441235633598adaec22974f"
     },
     {
@@ -8471,7 +8681,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "a37496f0504e3f856fb7d281678c194a7f9f4489b4e351dfd631be628771d2d0"
     },
     {
@@ -8490,7 +8700,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "46a35a722a9d69a139ddbdf9fdd717474a1493e6790a1d6ba3e95c14a8734130"
     },
     {
@@ -8509,7 +8719,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "949174eb5bb4348542d571d781a32f530debb843609d1fac8ff3329e1b71a1ee"
     },
     {
@@ -8536,7 +8746,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "381981de121a22139d850e5c97d4f74ea0a081990effc1b348afdceb2c149a9d"
     },
     {
@@ -8563,7 +8773,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f4ded18d35e0b802d0fedfc7a1099a6dea94dc239bcef9af32561d4dc5abc774"
     },
     {
@@ -8590,7 +8800,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "c5607229ec5df6d63d5b705846bdce59290625a6b884edfe4cf240aece6945b5"
     },
     {
@@ -8613,7 +8823,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ed5bcb11dc7096f442971f1f5de6339801b98a19cc0ac4e4b89e154aa25286da"
     },
     {
@@ -8630,14 +8840,14 @@
         },
         {
           "absatz": "2",
-          "text": "Die Verjährung tritt nicht mehr ein, wenn vor Ablauf der Verjährungsfrist ein erstinstanzliches Urteil ergangen ist. Vierter Teil: Schlussbestimmungen"
+          "text": "Die Verjährung tritt nicht mehr ein, wenn vor Ablauf der Verjährungsfrist ein erstinstanzliches Urteil ergangen ist."
         }
       ],
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
-      "sha": "11d02b6d33bfb85bfc6e023235186910cbf7a23b8ee5a7a4f4a3387ec3146cac"
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
+      "sha": "267794fa42342fcc1eb958c72d048c7a254b6b8d8675e19703deeb0855a4f9c8"
     },
     {
       "id": "kanton/ZH/631.1/art_265",
@@ -8655,7 +8865,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "d6b29335166cd230cfef9a6b3357796e44429c0901af375a00a8d239a560b0e4"
     },
     {
@@ -8674,7 +8884,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "2402d3404d58975783dbc8666250cf9795e56c49e6f5c7315d9d158717dc63fd"
     },
     {
@@ -8693,7 +8903,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "aea60ecf337af9c527b7db674f615e540a071f4380613b32e6a1e016c8fa41cd"
     },
     {
@@ -8712,7 +8922,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fc798c92991abebbfe98600b6d667fe21941cb1b38915e33897d1b43d74be70c"
     },
     {
@@ -8739,7 +8949,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5ab6a2ef132f85a504ea3594083368bf9928e6f119fc80c8f95bee0a4feab764"
     },
     {
@@ -8762,7 +8972,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "31abdecb60cff8339ddcc7f9c9ea2c372d2d04edba9bbeb032a043661026c3fa"
     },
     {
@@ -8781,7 +8991,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "21064b6d3be96ad7dde1732d73fa83a0ad4d83af383d8985c21bb9c9d07c198b"
     },
     {
@@ -8800,7 +9010,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "80806a26165444001d1f4ea1d1e58073875718aefc68623ec4dad7a6f23f9aa1"
     },
     {
@@ -8819,7 +9029,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b423622a266b357b7371e1ea30d3f51622e8f44a7ac611fddec236eef83053c2"
     },
     {
@@ -8842,7 +9052,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ea1692067e7cb0e77b83f8040725045fe88da612e6263ba25caa782e72ba3f0b"
     },
     {
@@ -8869,7 +9079,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "ac2f72a3f0cad8474c89b83251f356645dad9d45ada47cf2be277c6bcd5ddf7b"
     },
     {
@@ -8892,7 +9102,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "b92832fe0cce22f4e4978bc54eeb9bd161fa43433d970cf055538ce6d8b84a1d"
     },
     {
@@ -8915,7 +9125,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "1d7ace188b3a76d517af96fa0dbae5081b202dca11ed6519a6c8b84c2849bd27"
     },
     {
@@ -8946,7 +9156,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "5648b4f82f33fe86ffa325a43317e1d919b390f3ff0d5df6fd10a37d5f8af801"
     },
     {
@@ -8965,7 +9175,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -8992,7 +9202,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "f55e51b6287e8586aefed92b91cc9d1d4e1e7641e21d077b83e673c499258997"
     },
     {
@@ -9011,7 +9221,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "79c083f48e60db598b068578c80b948aca1d222daf6674cb2a1fbc8fd93a5dba"
     },
     {
@@ -9030,7 +9240,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -9049,7 +9259,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "92a8322f49c60ef30c63808a6cae86c37934f7a4c1efc2e6fc552894a518113c"
     },
     {
@@ -9080,7 +9290,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "aaea07a4f32a152a2bd470570abd2f47ae2dd25c61189e11e0ff53457bd12656"
     },
     {
@@ -9099,7 +9309,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -9118,7 +9328,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "fc4e798195570f5b896875825148d0adbd92eee5ea76ca8ce19a33aacd0a23ac"
     },
     {
@@ -9137,7 +9347,7 @@
       "stand": "2026-03-26",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-631_1-1997_06_08-1999_01_01-132.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "cf9ffde6dc493da7afa138aa2cfc2ba1ecaaddb2a6e297cba57558c2b86a8921",
+      "fassungsToken": "ca2f80efbefaa05c6ce2b3dcc3cebfb7b4cfd0dfbc146f94c11fb295897a77c7",
       "sha": "71373380dae3e83fee5e8ed5d88d4458cc080bf0986934323a7a24d004231d9c"
     }
   ]

@@ -43,7 +43,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "33bd438b51bef6c09762ebf060693018e084b94f71394aeecb36260a4149de4e"
     },
     {
@@ -56,14 +56,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die ZPO, die StPO, die JStPO und dieses Gesetz finden unter Vorbehalt besonderer Bestimmungen auch auf das Zivil- und Strafrecht des Kantons sowie auf das Übertretungsstrafrecht der Gemeinden Anwendung. 2. Teil: Gerichte 1. Abschnitt: Allgemeine Bestimmungen"
+          "text": "Die ZPO, die StPO, die JStPO und dieses Gesetz finden unter Vorbehalt besonderer Bestimmungen auch auf das Zivil- und Strafrecht des Kantons sowie auf das Übertretungsstrafrecht der Gemeinden Anwendung."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "1b6e672dcdcd24a5151281d7dfe3421f47b965409b595756392df690125ecc69"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "f75266bb9e47b90b678898c639de6ebd4003e1ac1d8dafdf109c9eb2942307e3"
     },
     {
       "id": "kanton/ZH/211.1/art_3",
@@ -99,7 +99,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7884b02980c565ef82a1c7e16a8755757bb3597a37754cafbafe45c49a94bcd6"
     },
     {
@@ -118,7 +118,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "aacd4e6277f9e0974fe1be0824e1ec2fe0abf77de7e08d02ec6d7824e253ed10"
     },
     {
@@ -137,7 +137,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "17bdff1b3849035b9d790a7ef3717282929e3d511d0ed0dd8bb5176ef6be688a"
     },
     {
@@ -174,7 +174,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "0ac5602a7113c37dcb1fb4407c0d3d1912f6d94c035fc7fcbba58cd36a759d54"
     },
     {
@@ -217,14 +217,14 @@
         },
         {
           "absatz": "3",
-          "text": "Jedes Gericht erstellt ein Register über die Angaben gemäss Abs. 1 und macht es in elektronischer Form öffentlich zugänglich. Es wacht über die Einhaltung der Offenlegungspflichten. 2. Abschnitt: Die Bezirksgerichte"
+          "text": "Jedes Gericht erstellt ein Register über die Angaben gemäss Abs. 1 und macht es in elektronischer Form öffentlich zugänglich. Es wacht über die Einhaltung der Offenlegungspflichten."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "d194c2f9f6bcd28788e99ee35c6b920bbf7ad2ba14bc173be078ac6768f9b411"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "dc38e376b1a4f0f98656d3b672ccdef533d320727867a0f028e26f35a9d85cb5"
     },
     {
       "id": "kanton/ZH/211.1/art_8",
@@ -258,7 +258,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "0b32e88d33bf1355f765cb4f1fbb93357c692c6782c0d615e8713d592a4d09bf"
     },
     {
@@ -281,7 +281,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d7715534ca1ccd290cad0ea9259908403f489c88da77eab088bdf3e86da2aed7"
     },
     {
@@ -314,7 +314,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "9c536fda8872547ad0f2c407d09cd42efcbe4dbbe1df0f6d78b0152122555513"
     },
     {
@@ -337,7 +337,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "a94fc709cc6bb1dea80a503e03f8cea843b87b48891da1b1f6accd02372d8043"
     },
     {
@@ -386,7 +386,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "992e185df1f43997ce88d1f7bcaea13790828bf4c645e1ba0f08875feb1934c5"
     },
     {
@@ -421,7 +421,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "c1169898dbc925b9cce6ef76837149d51d3d4974b38e82001c14c1adbb704b05"
     },
     {
@@ -440,7 +440,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ab5552e9c451be5ccc237c7e7efdb624ece72644890c910f3845c7d8dba87670"
     },
     {
@@ -463,7 +463,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "66e7ab65cfd2fb0302bd45632c2f13744306a0691997fb5f68fd5df7d155d1d0"
     },
     {
@@ -490,7 +490,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "471cb68d020e15e2256943b03c799c4440358f8b4d8861e925cc650f9a64367b"
     },
     {
@@ -513,7 +513,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "af6a70a27df96186efd29fbb3380b041d1e181237a5c00ff582cf820222727a6"
     },
     {
@@ -536,7 +536,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f563d9d20f82a3aff77cabaef04cc576b21c26e446b8427ee20bdf1d1fa9b15a"
     },
     {
@@ -555,7 +555,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b13e7a3b33abaf70c52ee98a8d1263cf3ad5712b8d2a44d8656a7b6db3f10f8f"
     },
     {
@@ -600,7 +600,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "cb388342aae06d60828ef564924636f9ae68ea9ef3a48c674a410cdd5555bd25"
     },
     {
@@ -633,7 +633,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "33c54bd6a4ee7310e0c01ecb9fb456595279c00ad97b2a4794f57b17e756c5c9"
     },
     {
@@ -652,7 +652,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "1c241d92c09de0d658b57d21337f32e22f762f7a15bf3acbe7a49c8d7a5591d9"
     },
     {
@@ -671,7 +671,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "23567c8a7090f157bd849af07f81f4cf52d71dcd02c4e868e083010c0d7dd1f8"
     },
     {
@@ -712,7 +712,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b4076097fc3f724cffbeedf7aae177c526b43d03014930eba33c2f3aba33b1a5"
     },
     {
@@ -731,7 +731,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f24414cb7e6f480a39dadb72e2e17052c7b72d2f5d1a463c6b2c09a5cc9a13a7"
     },
     {
@@ -750,7 +750,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "bb9d37b2cf9a7610a7b05a0634ef4de87fe1cadd56c12bf708ae63e40a168cb9"
     },
     {
@@ -787,7 +787,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e0f83be07c6a7edf0326e842f4acd015e3629b966f894c3346fbfcfbe63b96a5"
     },
     {
@@ -806,7 +806,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "3b347e236aeae4957d47b790d3d585c2c877ed21bf8e45b4ae207958abdc9409"
     },
     {
@@ -843,7 +843,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "50d7130a4a4055ae98969a21cbf2d7a8f0a7498e578f434224f39d25a437d7ff"
     },
     {
@@ -862,7 +862,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "67aee30f1909e7b8c5fdfc742e64c77d8ac348692412bff793f728e8edfe0b51"
     },
     {
@@ -889,7 +889,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "2158e52659a5c88d4d7b4d4371ccb994ac1f4253758a00939cff92835e3a239e"
     },
     {
@@ -908,7 +908,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7a3c7934fd70210d853e8a334dd769b0ee9da3625f7e8eb01ce7296f8b0ba291"
     },
     {
@@ -941,7 +941,7 @@
             },
             {
               "marke": "c",
-              "text": "ist zuständig für die Verlängerung der Löschungsfrist in Fällen erheblicher Wiederholungsgefahr gemäss Art. 13 Abs. 1 lit. b der Interkantonalen Vereinbarung über die computergestützte Zusammenarbeit der Kantone bei der Aufklärung von Gewaltdelikten vom 2. April 2009 (ViCLAS-Konkordat). 3. Abschnitt: Das Obergericht"
+              "text": "ist zuständig für die Verlängerung der Löschungsfrist in Fällen erheblicher Wiederholungsgefahr gemäss Art. 13 Abs. 1 lit. b der Interkantonalen Vereinbarung über die computergestützte Zusammenarbeit der Kantone bei der Aufklärung von Gewaltdelikten vom 2. April 2009 (ViCLAS-Konkordat)."
             }
           ]
         }
@@ -949,8 +949,8 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "87ae8b285f51d1c2dd89922a146eb2a7db36271da44312adfa4d0951a7834a99"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "867f475cf287f08573650243d9f771a66ee83fdf0d7fbe5082a8b720bff7e389"
     },
     {
       "id": "kanton/ZH/211.1/art_34",
@@ -984,7 +984,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "35ceb46234011b29cdd8409a6b593897e241502b3954219407c8fb0b35bd9235"
     },
     {
@@ -1003,7 +1003,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "cd8466584efaa0f07a7d9af51a32912d05d9379d1207ebb62e70e76a0cf28987"
     },
     {
@@ -1030,7 +1030,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e2c10e606550adaea92077ce107859da95c1025b7d68116cff2afa234ef5a7bd"
     },
     {
@@ -1049,7 +1049,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "2ba7189daceb48e827c53dbcad1bfe0defca0d82a2c1382fb0432297a9c00fbf"
     },
     {
@@ -1086,7 +1086,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7f583f56dd37762928f7ae51aa3814842deafb8d2dfa6f4010365bc89b88493f"
     },
     {
@@ -1109,7 +1109,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "083b2708b08a990843c3903d43eb06b2c1f39d098e80e5a01686d2111785fbb0"
     },
     {
@@ -1128,7 +1128,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "8df8aeb2f88c908dea6b04d0cf03df2413363d72b36ad9662be1ee060d10ae87"
     },
     {
@@ -1147,7 +1147,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d4a7af85c7bdd784f6e9fa30b9071e08b02448e19877d5fd31ce8c58e62270d4"
     },
     {
@@ -1170,7 +1170,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "38a0936c7ff30b94502ce77ddfa460d0edd6c5892a0efe601a6cf523c0ec7f6b"
     },
     {
@@ -1203,7 +1203,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ef55776c314e26cb1daf6c30236ea12b599cf11d6fc47f8073b775ac4e171a90"
     },
     {
@@ -1232,7 +1232,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e99775083d02362f26d27e63380f266056682ea725188ba54ed598b49bb1cc96"
     },
     {
@@ -1269,7 +1269,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "a48dc948678d6a4baab150d40a30555e680f4d661e3b3d7799519bce9bfd8196"
     },
     {
@@ -1288,7 +1288,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "13fdda80cc785bfaa696ee59daf00b8df747f4e994187b33bc94e0ce78128345"
     },
     {
@@ -1321,7 +1321,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "bbb2fcf39a99655aef692ec964e40f7a12bf1a89830f6bad35f5be8f2eb91c5a"
     },
     {
@@ -1340,7 +1340,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d636632c13ad324783ed202358edc51cd2925d9c164365481d8887eecbbe6f6e"
     },
     {
@@ -1359,7 +1359,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "a170883f94899f38cdcd61fac7db1910b2380f2252133518992c4572fa74b69e"
     },
     {
@@ -1392,7 +1392,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6db7c377962881179e12aff17edfb5620973d2fa8a112d82ee479261bda6633b"
     },
     {
@@ -1413,14 +1413,14 @@
         },
         {
           "absatz": "3",
-          "text": "Das Obergericht ist Beschwerdeinstanz gemäss Art. 37 Abs. 3 BÜPF. Auf das Verfahren finden die Bestimmungen des VRG ergänzend Anwendung. 3. Teil: Schlichtungsbehörden 1. Abschnitt: Allgemeine Bestimmung"
+          "text": "Das Obergericht ist Beschwerdeinstanz gemäss Art. 37 Abs. 3 BÜPF. Auf das Verfahren finden die Bestimmungen des VRG ergänzend Anwendung."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "0b80cb71aec9ba2ce6f18d8aa6a7ec3277920686bfd80788e4e1d225128257d4"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "ef7f28b358e03cac3b01065dc34444b62735785470d49103eea96781700f143c"
     },
     {
       "id": "kanton/ZH/211.1/art_52",
@@ -1444,7 +1444,7 @@
             },
             {
               "marke": "c",
-              "text": "die Paritätischen Schlichtungsbehörden in Miet- und Pachtsachen. 2. Abschnitt: Friedensrichterinnen und Friedensrichter"
+              "text": "die Paritätischen Schlichtungsbehörden in Miet- und Pachtsachen."
             }
           ]
         }
@@ -1452,8 +1452,8 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "ae08249327a8c176b2e5d735c862a4b9ce4873471ae94654d6966ae78b43556c"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "064d5a38ba9de6d9340b20e3f3b81f17c01cd320503b6ee85e9b6dfbc420ff5a"
     },
     {
       "id": "kanton/ZH/211.1/art_53",
@@ -1475,7 +1475,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "af014ff2a9b597a657d48f0414317a893cac4a661ac43954e3af23ddc8640c27"
     },
     {
@@ -1506,7 +1506,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "5414c45994ed5a48ae4d4b969a2976806553e2824c6de735c5bec8e7a21e89dc"
     },
     {
@@ -1525,7 +1525,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7d35c9e2d24da930fedb9b3919a355a5ee4a5665861ee260fa7703915153640f"
     },
     {
@@ -1548,7 +1548,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "5b725280e88536f5b5341ce156c5d6e9852a3f2b552e240c30a8348e09a2a235"
     },
     {
@@ -1567,7 +1567,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "106491568742837617219e2bdf31218eaadac75b7fdd5827662bf9a60b7b2c88"
     },
     {
@@ -1580,14 +1580,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Friedensrichterin oder der Friedensrichter ist Schlichtungsbehörde gemäss ZPO, soweit nichts anderes bestimmt ist. 3. Abschnitt: Paritätische Schlichtungsbehörde für Streitigkeiten nach dem Gleichstellungsgesetz"
+          "text": "Die Friedensrichterin oder der Friedensrichter ist Schlichtungsbehörde gemäss ZPO, soweit nichts anderes bestimmt ist. nach dem Gleichstellungsgesetz"
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "9afe1d199f7873541ce42faf4ddece5774b6e91860b213b10592f3fc0f52feb9"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "9dbe71338a52744b0eb6527c554ef747cfa4f99a3de26a0720ef9edb79a28d80"
     },
     {
       "id": "kanton/ZH/211.1/art_58",
@@ -1605,7 +1605,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "fba38994ad05aadaff464051ca199276c0c4441d00280de2d450eda43acfd86a"
     },
     {
@@ -1628,7 +1628,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "788024bed4142e21938ae8926c681a1e075bf4758df224582772690731bdcec5"
     },
     {
@@ -1651,7 +1651,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7eb26e571e1cd48e82c4e1a9ed3cb64e22467c29e014325f348f9d6de85a93b4"
     },
     {
@@ -1670,7 +1670,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6e901f37e93b34d11866ee4208e31228ad4520fce0d293a3b77996ba02259d1a"
     },
     {
@@ -1683,14 +1683,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Schlichtungsbehörde ist zuständig für Streitigkeiten nach dem Gleichstellungsgesetz vom 24. März 1995. 4. Abschnitt: Paritätische Schlichtungsbehörden in Miet- und Pachtsachen"
+          "text": "Die Schlichtungsbehörde ist zuständig für Streitigkeiten nach dem Gleichstellungsgesetz vom 24. März 1995. sachen"
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "bb3399cebab59738c929a44bbe17e3ad0de11cb8bc9fbf90774d281593e9b597"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "d57704ee602be5c2fb8ec2ea198e7f6ab8fa12cd063003f65d6bc0b232a23d53"
     },
     {
       "id": "kanton/ZH/211.1/art_63",
@@ -1708,7 +1708,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "01b28954a5991a109a387e92ebfb80226fc4ab09e205c5714dfddfa075e54a44"
     },
     {
@@ -1745,7 +1745,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "2802971c6dc0b17c3fcfc6353e1bfb7716443288237fb14a1e9d35b97b38efe8"
     },
     {
@@ -1768,7 +1768,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "fe1d667b5af33ad5ace212a57de1578ea8874b9cfb309cee9c5c2449ceb5860d"
     },
     {
@@ -1785,14 +1785,14 @@
         },
         {
           "absatz": "2",
-          "text": "Sie behandelt Gesuche um Hinterlegung von Miet- und Pachtzinsen gestützt auf Art. 259 g und 288 OR. Hinterlegungsstelle ist die Kasse des Bezirksgerichts. 4. Teil: Justizverwaltung sowie Aufsicht über Gerichte, Schlichtungsbehörden und weitere Behörden 1. Abschnitt: Justizverwaltung"
+          "text": "Sie behandelt Gesuche um Hinterlegung von Miet- und Pachtzinsen gestützt auf Art. 259 g und 288 OR. Hinterlegungsstelle ist die Kasse des Bezirksgerichts. Schlichtungsbehörden und weitere Behörden"
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "c69b718b61dd61a18a90fd6208e4b4f1bffdbe85f9941fa8bc447997ad3c1ffb"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "afc7bf2c92e93da6ebed53d0376b6814714949a896dccd21564b5f117266392e"
     },
     {
       "id": "kanton/ZH/211.1/art_67",
@@ -1810,7 +1810,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "51779bc08f19c717c3346cc093ea9c443b121f2abe0947425e82fab82c1efa1d"
     },
     {
@@ -1833,7 +1833,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7311fd30851ecffa871343f7942ab6a0028b47e871b97e4e1a0210d4d0508754"
     },
     {
@@ -1862,7 +1862,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "97a507f8161a5d86a8a890519981e3404a0364ae9e8df78bc0ff97c67a02dbd7"
     },
     {
@@ -1915,7 +1915,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ac11e85b826fb6430bee0e72aca00c5d0e248eebead6d059172270c14a46971f"
     },
     {
@@ -1950,7 +1950,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "1ec75ea184df86fc84c74d5b01eacf293562fbac65fd9d4b3eae31cd002f772a"
     },
     {
@@ -1969,7 +1969,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "3d985d7e2c2cf1eaaf3031b264d877f87375443e86789c042279bf552cef473b"
     },
     {
@@ -2010,7 +2010,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f9535c237cb2099772e6ab967954fb5ec185b89303bb5c2064472640688b2269"
     },
     {
@@ -2037,7 +2037,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "465a67a2ecc0086c9209631fa03936fabf82af40a02835100f6793def8edda50"
     },
     {
@@ -2064,7 +2064,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f421eefdb93f0ee6e3c90cc744ad437ec706a36de02475401e4b1545a797b3e2"
     },
     {
@@ -2087,7 +2087,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ea4d8741200d4eba449691fd80352314428981e169aa5a74a40442d20e0b7cda"
     },
     {
@@ -2110,7 +2110,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d826f9bca5f3f281bc51ba888c30949cf871cb467ed35d392d081ac6f8fb7dec"
     },
     {
@@ -2123,14 +2123,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Generalsekretärin oder der Generalsekretär des Obergerichts sowie die Leitenden Gerichtsschreiberinnen oder -schreiber sind Stabsstellen des jeweiligen Gerichts. Sie leiten die juristische und die administrative Kanzlei. 2. Abschnitt: Aufsicht"
+          "text": "Die Generalsekretärin oder der Generalsekretär des Obergerichts sowie die Leitenden Gerichtsschreiberinnen oder -schreiber sind Stabsstellen des jeweiligen Gerichts. Sie leiten die juristische und die administrative Kanzlei."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "5c3e181e2514c0656757c88f225fedd775eea9309584ff9e9d9573ac86b109e8"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "787c318184d7acd315dc0a4e49e0cdb7a3637da3c6bb8c78246bd75932cdfc85"
     },
     {
       "id": "kanton/ZH/211.1/art_79",
@@ -2166,7 +2166,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "c205ffac6df481d53a6185deac9be0b52df4b17c515bbe04298e16e6f5a1d5c4"
     },
     {
@@ -2207,7 +2207,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7d9ed88aeeb7e212443da2272ca820f6aa9649f6732993eadce8661f8afd120d"
     },
     {
@@ -2252,7 +2252,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e6ba555afe9bb625f2b4d5972750106f990d11a58212cfc573b33ec7640240ad"
     },
     {
@@ -2275,7 +2275,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "c4dc6832b6b39b768faf757fd7166e226b0441c7fee10620138aab23e5ff258c"
     },
     {
@@ -2302,7 +2302,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "36ea1dea7c42e35a1191c87ae53021d123ca05c2bc978de1b2594a70e9b854db"
     },
     {
@@ -2321,7 +2321,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6bf4b873ab7ccafeecfff105fe168058f60604897e095a7045d44ff7f22a0d92"
     },
     {
@@ -2334,14 +2334,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die §§ 83 und 84 sind auf Beschwerdeverfahren anwendbar, die auf anderen kantonalen oder auf eidgenössischen Erlassen beruhen, soweit diese eine Aufsicht durch richterliche Behörden vorsehen und nicht eigene Verfahrensvorschriften enthalten. 5. Teil: Strafverfolgungsbehörden 1. Abschnitt: Allgemeine Bestimmungen"
+          "text": "Die §§ 83 und 84 sind auf Beschwerdeverfahren anwendbar, die auf anderen kantonalen oder auf eidgenössischen Erlassen beruhen, soweit diese eine Aufsicht durch richterliche Behörden vorsehen und nicht eigene Verfahrensvorschriften enthalten."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "7628bb9c8cdc494d1a2cd32734ef5abcfc7b6487dab9449bec9edb7b96e5f80c"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "87e869267411185fda9a2f63c0d9acfc401a1b8a8cc4bfc9ed1255da0e4c7dbd"
     },
     {
       "id": "kanton/ZH/211.1/art_86",
@@ -2381,7 +2381,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "87bcb5b478b8b4df5ed60a409624010218d5461b40a85e86795fae598bb4f180"
     },
     {
@@ -2400,7 +2400,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "518527ffca60534e8711743e01e067688bae0141119e2dc854a8ad1f624803cc"
     },
     {
@@ -2419,7 +2419,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6c36489f0f52eed1b697e481b4fc58e548831c84d8ce67a23a11ef393bf337ab"
     },
     {
@@ -2442,7 +2442,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "4dcecce9c37e9ce80e5b786d648fa68ee5ced03cdd602305d579306a32afd64a"
     },
     {
@@ -2471,7 +2471,7 @@
             },
             {
               "marke": "c",
-              "text": "Sie ist Ansprechperson der oder des Beauftragten für den Datenschutz und arbeitet mit dieser oder diesem zusammen. 2. Abschnitt: Verfahren gegen Erwachsene"
+              "text": "Sie ist Ansprechperson der oder des Beauftragten für den Datenschutz und arbeitet mit dieser oder diesem zusammen."
             }
           ]
         }
@@ -2479,8 +2479,8 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "0a277126f94af69683d35d3b8acebcae4248b4d499bea7ad7ebee762b85e6935"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "4722354b7d4f1b7b94b8bffdf67dc7ccf487b46115511b828c6313ea6ac3caf9"
     },
     {
       "id": "kanton/ZH/211.1/art_89",
@@ -2506,7 +2506,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "2d8469f914cc387d8d462768446fd081753cd00dc3d0a67d8e46e8249bbb08d3"
     },
     {
@@ -2525,7 +2525,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "0af4b29edad59f2086cf7f370afcdd83e4f052de60e388e4650b174873ee4ebf"
     },
     {
@@ -2544,7 +2544,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "bcef8166292ecaeb3e89841d4aeda174ccbcfed4dfc72494793c24eafa15bef4"
     },
     {
@@ -2563,7 +2563,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "33758e037b68fadc69f36e2651de2f112645568505dbf68a4fa21faf129bc78a"
     },
     {
@@ -2596,7 +2596,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d6e224fbcd08b4560b14892b8d13726ef0ff24ee0873124c7bb9ce1f08c8397b"
     },
     {
@@ -2633,7 +2633,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d5c8677ef9196123e3f5058eed09b4e2627f38739a6d22cf86637972925f5b31"
     },
     {
@@ -2652,7 +2652,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "5def567b9ae955afbbf84142986fb4296c15c033c93958c048b150a10dea6bf0"
     },
     {
@@ -2671,7 +2671,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "1514e3f8c8dd1a623f1f66cd8738eb33e7c1cb6ca0356858a19888c10ad3922f"
     },
     {
@@ -2694,7 +2694,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "01b0d7324807fc59086abe77c1b352de4bcb5325bbe8baebe90b99d83ad5e875"
     },
     {
@@ -2739,7 +2739,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "0813e3e44d90709e978243aff4ee7d62476930b531f2e6ab0500448b3613d4b6"
     },
     {
@@ -2762,7 +2762,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "50811fb1dd4109e9a3f1fe63a02f146c1c7afb1f5cff7c093eab269a3bcc0186"
     },
     {
@@ -2791,7 +2791,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "535e75f51747a0d07041bbb6932f3d11c0e49d0f64fb613cb9aba509003f4cab"
     },
     {
@@ -2810,7 +2810,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "c19dd5a0ba0fc97cd4dc30e92dcb6889a0b3d3a1db9928fbb208f133788ef77a"
     },
     {
@@ -2851,7 +2851,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "903566323d1850f79e1238da289039b59f09d7fe1929412c45a05cb17df442d8"
     },
     {
@@ -2892,7 +2892,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "32da7c1e8a0065341604fba017578877f43f42c8ef544c32f9331addc710e92e"
     },
     {
@@ -2911,7 +2911,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6078121e645d4b86fa923632a07c41667d8b5c8bb7db65391d16210276eeaaf2"
     },
     {
@@ -2934,7 +2934,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "250dad898e7a192995d4417ec318fd7ebd59bc18b5a793b3533cea2e2027765f"
     },
     {
@@ -2957,7 +2957,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b3fe68c760c69dbde6dd9c8001108f123a26e315dad8c4aeca5d6e5b06e3db28"
     },
     {
@@ -2984,14 +2984,14 @@
         },
         {
           "absatz": "2",
-          "text": "Sie kann die Aufgaben gemäss Abs. 1 lit. a einer Leitenden Staatsanwältin oder einem Leitenden Staatsanwalt übertragen. Die Aufgaben gemäss Abs. 1 lit. b kann sie im Einzelfall einer Staatsanwältin oder einem Staatsanwalt übertragen. 3. Abschnitt: Verfahren gegen Jugendliche"
+          "text": "Sie kann die Aufgaben gemäss Abs. 1 lit. a einer Leitenden Staatsanwältin oder einem Leitenden Staatsanwalt übertragen. Die Aufgaben gemäss Abs. 1 lit. b kann sie im Einzelfall einer Staatsanwältin oder einem Staatsanwalt übertragen."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "ef95d95e3b9b6b86e40310f861102a03891e2329e3a5af4126054e3cb57c0690"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "c36734d3c3112da59beda3edc8a6c6aae62669b0a9c456f0a6ea39f66dd6db01"
     },
     {
       "id": "kanton/ZH/211.1/art_108",
@@ -3009,7 +3009,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e307b3ba86aa208fc9fa39bc5408d267d0944c8262b0046a28d69e5d0d6b4614"
     },
     {
@@ -3042,7 +3042,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "5a6a2ef05e020ed7260255e397340aec3bb8332109d5ff88796dd75b81ba1284"
     },
     {
@@ -3083,7 +3083,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "2a79dc93d280deef13492bdeb91405671f1c25e55f6a72bf5481b966987c22c1"
     },
     {
@@ -3102,7 +3102,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "abd56022d6e06fd48063407bf9853fb92b140644df214ab92d45c3b479a41beb"
     },
     {
@@ -3121,7 +3121,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6647353d563a8a7cac6b71f26eb339a4f64524d439e4b855acf0b6a7b708aaa9"
     },
     {
@@ -3140,7 +3140,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "4fc6968c4cbd4cf058b79e3faf64c996325c0d75f3f55d43f85cdbad0c85290c"
     },
     {
@@ -3183,14 +3183,14 @@
         },
         {
           "absatz": "4",
-          "text": "Die Oberjugendanwaltschaft kann die Befugnisse gemäss Abs. 3 lit. b–d an Leitende Jugendanwältinnen oder -anwälte übertragen. 4. Abschnitt: Aufsicht"
+          "text": "Die Oberjugendanwaltschaft kann die Befugnisse gemäss Abs. 3 lit. b–d an Leitende Jugendanwältinnen oder -anwälte übertragen."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "0c4bb8359a24e04e8ae2a19ffe5f1b6ff28199216e6051cba339ae9c406ab68a"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "c865fcc24c42b41b88c581f1aabd2d6bd1d518207e735eddbd59b7923c67e777"
     },
     {
       "id": "kanton/ZH/211.1/art_115",
@@ -3216,7 +3216,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "4deb606b210c769fb933887fa706cd1cba90863a8ac2572d03ae42010819dc00"
     },
     {
@@ -3237,14 +3237,14 @@
         },
         {
           "absatz": "3",
-          "text": "Die Jugendanwältinnen und -anwälte stehen unter der Aufsicht der Oberjugendanwaltschaft. 6. Teil: Verfahrensbestimmungen 1. Abschnitt: Gemeinsame Bestimmungen"
+          "text": "Die Jugendanwältinnen und -anwälte stehen unter der Aufsicht der Oberjugendanwaltschaft."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "d0a40d3705dfba3a6987a6960031905c06020bf9f10b10947c4c852ad944d925"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "e28aadd3d90543627878f25c51b9fac3bdaa4bc97e66bf61c10553d127e68838"
     },
     {
       "id": "kanton/ZH/211.1/art_117",
@@ -3272,7 +3272,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "85d699744dbe20c6ce98e4763735e9b08dd1af86990de191967ce8003e1b64b3"
     },
     {
@@ -3293,14 +3293,52 @@
         },
         {
           "absatz": "3",
-          "text": "Sie schützt den Zugriff und sorgt für dessen Protokollierung. §§ 119 und 120."
+          "text": "Sie schützt den Zugriff und sorgt für dessen Protokollierung."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "99effc0e47b4f56a588f6bd490c139ae35cdc993fb5b66b398b660b5245cbf11"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "a1e35f619c6d4c831a4c55bfab6a2e969912d4448d626fa94aada06a432d0e1b"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_119",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "119",
+      "artikelLabel": "§ 119",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_120",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "120",
+      "artikelLabel": "§ 120",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/211.1/art_121",
@@ -3322,7 +3360,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "4273d5610208ccb4d587577aaedf28e03470c50de35f4e10a17c7e89ef1f5cd5"
     },
     {
@@ -3341,7 +3379,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "5743e3afaf0b1226ba810411396428b24efdf038e9424c86d46953fd95fc811a"
     },
     {
@@ -3382,7 +3420,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b7abc515c2ae9caed99436e6681fb17a8cf5ad82dee4a389e75ebc08d041f184"
     },
     {
@@ -3401,7 +3439,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "14a2141649b972c85d5f5aaf29802bffeea8970ee451ee241b72e22c50679786"
     },
     {
@@ -3414,14 +3452,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Medien sind verpflichtet, eine vom Gericht angeordnete und formulierte Berichtigung zu ihrer Gerichtsberichterstattung zu veröffentlichen. 2. Abschnitt: Zivilverfahren"
+          "text": "Die Medien sind verpflichtet, eine vom Gericht angeordnete und formulierte Berichtigung zu ihrer Gerichtsberichterstattung zu veröffentlichen."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "ada570341d1146350913ed4aeddaa3a0b7d5fb99c760d9da47e1fd23415d6796"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "2d8a3c72948cad2dc10c23589049626a99f7abdffadf6d8b03e5f2fe764652da"
     },
     {
       "id": "kanton/ZH/211.1/art_125_a",
@@ -3439,7 +3477,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "21418c1691ba9d3c9e5b5f96fbc72d42b5b8bee442e33460a5fc3f8c52fc1d1b"
     },
     {
@@ -3462,7 +3500,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "acfe4ac6a8f5d884162bbdeba5d89ee478cceb7cc39c422f40ab709b36e48572"
     },
     {
@@ -3503,7 +3541,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "3511756f4410ae979e083397829f3427236894fa31e2b2e4a7cb6a5d8f56069c"
     },
     {
@@ -3522,7 +3560,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ad6a99f85d8becfd984b07d9f729ed2e26da84b3391743b39f93a5e859ad96c1"
     },
     {
@@ -3545,7 +3583,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b0ee4f5c410dbf8f4a7376d03da334d06cb52de8d9ae0890f31445ee94f3cb60"
     },
     {
@@ -3572,7 +3610,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "65b0134dae4a18eaaece51f306cc71e35017c6210ccc94c1af6104254c2ff868"
     },
     {
@@ -3619,7 +3657,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6151e999590a4237842a3509606aee562c032c51b6ba38960310e4a148a85706"
     },
     {
@@ -3638,7 +3676,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ed063c99492a0be8cf79754f4068be6a0a6e5ba6039e414639dc715f6acd548b"
     },
     {
@@ -3665,7 +3703,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "dee04fd05cb3d8b7d1ad01de9929eb986188506d05296e2acdc416030c9a2d33"
     },
     {
@@ -3706,7 +3744,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "44a6c041274c4441e5e10174d4f58ad6901908aa3ba6edd36323303d98587110"
     },
     {
@@ -3729,7 +3767,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "db74281ab6b4990e39b5525896fd2bfa34d9bb8e8b2a6e4f2f3d22dc4733efc3"
     },
     {
@@ -3748,7 +3786,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "da42c4d550f68a6c107ff613b94d6d401243ef8c248da57a67bf65803fce5e5d"
     },
     {
@@ -3767,7 +3805,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "3c4bf09dcb6e137f74c9b063465bc30eb41dbb434d5311d9526d4ccdd2afc8a4"
     },
     {
@@ -3836,7 +3874,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "182753230e5f0adb4ac1035f4743185e09e9744e766dc604a0e990acfea1c820"
     },
     {
@@ -3859,7 +3897,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "eadc77edfec1abac54dbdb552260a18a7ee03cdaa545230420d9ec3a5c08dd73"
     },
     {
@@ -3882,7 +3920,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "0d39f48b74a4ca6e29f934a0afeb3ad23dbc3d27c58c90e916d21c9662b01f15"
     },
     {
@@ -3923,7 +3961,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6b8a6f8ac11f5447c9d52f873f795931a3af67386c504f4db1dd835b3ceb64c7"
     },
     {
@@ -3946,7 +3984,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "357dcd9e59ff3ed933c5214dddcaaecf92517026fa7738d139a8a0dc34689da2"
     },
     {
@@ -3965,7 +4003,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "8c95669052fd76d407aa58269ecf101d64d5b82cc57bb9f81d7ba03ff3e8ad0d"
     },
     {
@@ -3984,7 +4022,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "fed898fbdd77683ac950006597e1786bff3e89f52eacd7fef86e2548bfabe5d1"
     },
     {
@@ -4007,7 +4045,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ae4623853e9d090c82e8afedbaacb9656923bc16629859d3c7d3b2a4f15751ad"
     },
     {
@@ -4030,7 +4068,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "381056215bdb20d7858f5446c3a701b952fe2b9180b7ae02c37d8f55747eecf8"
     },
     {
@@ -4057,7 +4095,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "17a3b01ab121c9dd32ffce63f36a2f1aa4a116e64e9e69477e9aec4cded18031"
     },
     {
@@ -4076,7 +4114,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "cc6027488d110c6dc1f0a0ce1789b1876579680a7016807a198777a5f8fc97de"
     },
     {
@@ -4109,7 +4147,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "42ec2c04a524989658862ca4e6259d985e09511d6fb72c68b69b6e418f132877"
     },
     {
@@ -4122,14 +4160,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Die Aufgaben des Gemeindeammanns werden von der Betreibungsbeamtin oder vom Betreibungsbeamten erfüllt. 3. Abschnitt: Strafverfahren"
+          "text": "Die Aufgaben des Gemeindeammanns werden von der Betreibungsbeamtin oder vom Betreibungsbeamten erfüllt."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "cc84f1136ddfd8c975d2c4c3d13fe6a35bd1b2be04972ddd03d25727c72d946e"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "1e262dc63c516c0e2397411bdaa818d3e329c512d557563ba1a9234bd602d6e6"
     },
     {
       "id": "kanton/ZH/211.1/art_148",
@@ -4147,7 +4185,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "dc7c8ca9abc03eab88a8cb839fdca3d31ae2b1fde154d417da13fd1b7edd91a0"
     },
     {
@@ -4180,7 +4218,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d32c2dd901151638f25b62e002b7bc7b0c81808a17d675bd6daa6044fe352b02"
     },
     {
@@ -4225,7 +4263,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "1bdcc8ccbdeca9f7a30c571c4a65f44d89c8c38734d90c463aba2e77cbc74107"
     },
     {
@@ -4248,7 +4286,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "26a31cadddeb573bfe59afec13ac8678fe15b93b34c429bb4a9105eb0cd6f816"
     },
     {
@@ -4285,7 +4323,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b03c4934d26b4cd692cfd52a389d16c356b0376656d67af2e6a51edb40ab38d0"
     },
     {
@@ -4322,7 +4360,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "79991f1eec217d10077063ad5c70e6668236f77c599273f13a2aeaf9c71d80f8"
     },
     {
@@ -4345,7 +4383,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e53558435f004f4c4012229765f437d0ae922d7b8ac53b4b81a733fb976f16dd"
     },
     {
@@ -4388,7 +4426,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b80e42f91344eb553c4a3519382902624d280bc58730d98009dbb5b6ff67881b"
     },
     {
@@ -4407,7 +4445,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "98eac8ec484292f6a9239587f4384275620eb7f9f131e7cd0f1acd3437c660eb"
     },
     {
@@ -4436,7 +4474,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "a1f7b738a00c8b89278dcdbe290732a0e132023399c5019c11e96ad486baf76e"
     },
     {
@@ -4455,7 +4493,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b00341a36ad1de58e09828628dda477f4ff501acd091a3da62de19d4736f1433"
     },
     {
@@ -4474,7 +4512,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ecf49ef55e04d7484d9d9ade926330bc33992ff1dae91d680be6f5d1e8f36cc1"
     },
     {
@@ -4521,7 +4559,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "98f2d6a2b67640b8918576b46c1c19198c123a7366d24cf4402117a2bb62d218"
     },
     {
@@ -4548,7 +4586,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f6542d69a72540931d6474d8774594eaf8963286ed9cc49d24f0546706daa083"
     },
     {
@@ -4585,7 +4623,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "b15ff2b3c7737ebf5c49b3cf541b75989e3032b4396ba5d67bc259023c9fe609"
     },
     {
@@ -4608,7 +4646,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "bc55b13e843d2850eeb53030803a3c36c8885e2483fed78bca2fbb6e0d8b3a17"
     },
     {
@@ -4631,7 +4669,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "cf2ee564c545d07645cc9b9a9ab56c21c97b75f580f08c68e7a064b9fdbc513e"
     },
     {
@@ -4650,7 +4688,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "896f5cc4bc022570a3d10a37e7f95f99390ce85a7cf4028905e33e70f1936a12"
     },
     {
@@ -4669,7 +4707,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "6ec0727fa5ebe0fd97672f6bbb54b86795ba55b367acd5b16c6ad64030ada891"
     },
     {
@@ -4702,7 +4740,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "13cdc46872f8e783c7deacc3090c16d438a32658cc4924b53a5a2cb3fa8d2636"
     },
     {
@@ -4721,7 +4759,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7c266cc9db9d064016ed349c112d397690b7a9d0b67516f974cab21e6b8170aa"
     },
     {
@@ -4740,7 +4778,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "0d1a135b34423d0cdbd3f662b0b06df928d1c81e780bbe06b7daaa5e13aad623"
     },
     {
@@ -4759,7 +4797,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "642aa32c373715e7a7a3fe9eae9a29ba0f08931e476bd336bfb41d49f6ea6f2f"
     },
     {
@@ -4778,7 +4816,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ff143a7146570ccdb2bc21d0cac5a873767c29bc60e726b3033c8c2d101479cf"
     },
     {
@@ -4797,7 +4835,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "57da4aa236cae8daae899320df9336b65c9a01fb1ad044949fe3d3a30c833559"
     },
     {
@@ -4820,7 +4858,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f431084c85edc2eb7a19242c3f720bb49436d2f98600002b2730951164ca66bd"
     },
     {
@@ -4857,7 +4895,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "791b6c89a4eb92c422dec9c725836d25adbcbf226f5f0f91114b67bff877deda"
     },
     {
@@ -4870,14 +4908,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Staatsanwältinnen und -anwälte sowie Jugendanwältinnen und -anwälte, die gemäss Art. 231 Abs. 2 StPO die Fortsetzung der Sicherheitshaft beantragen, sind zur Berufungsanmeldung gemäss Art. 399 Abs. 1 StPO berechtigt. 4. Abschnitt: Ordnungsbussenverfahren"
+          "text": "Staatsanwältinnen und -anwälte sowie Jugendanwältinnen und -anwälte, die gemäss Art. 231 Abs. 2 StPO die Fortsetzung der Sicherheitshaft beantragen, sind zur Berufungsanmeldung gemäss Art. 399 Abs. 1 StPO berechtigt."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "a1b81954200c846ea8f34c2ed36715cf700325379f6b23e9eac4b10b4e641079"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "cb02d95d09285146cf820f8206bcff932eed5f64547f67cdbb2d002faf570b41"
     },
     {
       "id": "kanton/ZH/211.1/art_170",
@@ -4895,7 +4933,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "658cc998604efdf2dea4f35a9986de3f8b39c517099695b6cde105c77511776b"
     },
     {
@@ -4918,7 +4956,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "bf0816c1d04d723b100858e30df435e67a668dbd22ab55d31f0a878d21a70bd8"
     },
     {
@@ -4945,7 +4983,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "c0a1d2baa953dd9d5d4bf1eaa08c18a0586afef7ea72ea0a7c386592dab80c7e"
     },
     {
@@ -4964,7 +5002,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "24c3f7a4445aa5267778f4bcbd18af9f68df757e9432336171b8f0f94b8afbe8"
     },
     {
@@ -4983,7 +5021,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
@@ -5006,7 +5044,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "ccebc5b3a03506ee3aaafab066febddcbf66d66130d33c513c69f2e9d2d0cc89"
     },
     {
@@ -5019,14 +5057,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Organe des Kantons und der Gemeinden können der Kantonspolizei gegen Verrechnung der Kosten die Abwicklung des Ordnungsbussenverfahrens übertragen. 5. Abschnitt: Besondere Verfahren gestützt auf das ZGB"
+          "text": "Organe des Kantons und der Gemeinden können der Kantonspolizei gegen Verrechnung der Kosten die Abwicklung des Ordnungsbussenverfahrens übertragen."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "0b792e8ed8098d70486fb5b58421e954a3cdeebfc370d78e39ed2ac57155282e"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "15aa83ff4f24307f9a2eba68927fe97540059e43b5c6940b20900bdda939330c"
     },
     {
       "id": "kanton/ZH/211.1/art_176",
@@ -5042,14 +5080,432 @@
         },
         {
           "absatz": "2",
-          "text": "Das Verfahren richtet sich nach den Bestimmungen der ZPO und den für den Zivilprozess geltenden Verfahrensbestimmungen dieses Gesetzes. §§ 177–198. 7. Teil: Verfahrenskosten, Rechnungswesen"
+          "text": "Das Verfahren richtet sich nach den Bestimmungen der ZPO und den für den Zivilprozess geltenden Verfahrensbestimmungen dieses Gesetzes."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "879c76fb15df4225b65812a8af8e10879b7a8a7096896c210c8edb757874aa8d"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "4ceda1320402384b16713cb8055723bd8c1c275075cce1031c70c67aefd54094"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_177",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "177",
+      "artikelLabel": "§ 177",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_178",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "178",
+      "artikelLabel": "§ 178",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_179",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "179",
+      "artikelLabel": "§ 179",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_180",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "180",
+      "artikelLabel": "§ 180",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_181",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "181",
+      "artikelLabel": "§ 181",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_182",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "182",
+      "artikelLabel": "§ 182",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_183",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "183",
+      "artikelLabel": "§ 183",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_184",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "184",
+      "artikelLabel": "§ 184",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_185",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "185",
+      "artikelLabel": "§ 185",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_186",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "186",
+      "artikelLabel": "§ 186",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_187",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "187",
+      "artikelLabel": "§ 187",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_188",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "188",
+      "artikelLabel": "§ 188",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_189",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "189",
+      "artikelLabel": "§ 189",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_190",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "190",
+      "artikelLabel": "§ 190",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_191",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "191",
+      "artikelLabel": "§ 191",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_192",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "192",
+      "artikelLabel": "§ 192",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_193",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "193",
+      "artikelLabel": "§ 193",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_194",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "194",
+      "artikelLabel": "§ 194",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_195",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "195",
+      "artikelLabel": "§ 195",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_196",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "196",
+      "artikelLabel": "§ 196",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_197",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "197",
+      "artikelLabel": "§ 197",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
+    },
+    {
+      "id": "kanton/ZH/211.1/art_198",
+      "ebene": "kanton",
+      "quelle": "ZH",
+      "erlass": "Gesetz über die Gerichts- und Behördenorganisation im Zivil- und Strafprozess (GOG) (LS 211.1)",
+      "artikel": "198",
+      "artikelLabel": "§ 198",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Aufgehoben"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
+      "abgerufen": "2026-08-31",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "fffd896179b5a05de5123ab834ecf45024e7a99fc81a9e6dc269c8d0b54294f4"
     },
     {
       "id": "kanton/ZH/211.1/art_199",
@@ -5089,7 +5545,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "d25f5a243056093b65c57629327903589e61c9c0991fc3c082ec25964eb9a63c"
     },
     {
@@ -5118,7 +5574,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "e321eca5019c3d43d8523c6559164204dee3ecd7958b6b9d0252a4328e24b29b"
     },
     {
@@ -5151,14 +5607,14 @@
         },
         {
           "absatz": "6",
-          "text": "Die obersten kantonalen Gerichte und der Regierungsrat können durch gemeinsame Verordnung das Rechnungswesen von Gerichten und Verwaltungsstellen ganz oder teilweise zusammenfassen. 8. Teil: Begnadigung"
+          "text": "Die obersten kantonalen Gerichte und der Regierungsrat können durch gemeinsame Verordnung das Rechnungswesen von Gerichten und Verwaltungsstellen ganz oder teilweise zusammenfassen."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "601a2f350e734abf0af538079c87148e1881a9160651eb946e2edb30f546b916"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "6ce74789c7047270fa34717b95e307a15bc60e70d961175873dbc12c4ec1695e"
     },
     {
       "id": "kanton/ZH/211.1/art_202",
@@ -5176,7 +5632,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "a02f0e78803a4f9c48dc58d1c699814349ba47a6badfd71f3e3775b00f421c97"
     },
     {
@@ -5199,7 +5655,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "f66a81a0725c4abe97ef923b83fefdf38be252f1bc81e8fb3bb866f273ea6936"
     },
     {
@@ -5226,7 +5682,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "3320d2371708e6d49036ef2bd3ddae72ee64259aa65fd2985e646aabaeb37f9a"
     },
     {
@@ -5239,14 +5695,14 @@
       "bloecke": [
         {
           "absatz": null,
-          "text": "Eine Begnadigung hat keinen Einfluss auf die zivilrechtlichen Folgen der Straftat. 9. Teil: Übergangsbestimmungen"
+          "text": "Eine Begnadigung hat keinen Einfluss auf die zivilrechtlichen Folgen der Straftat."
         }
       ],
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
-      "sha": "a2c76a0e9e8d4fb152798a18c1f9a11126a381db846a5498f7834ffa0e712723"
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
+      "sha": "beb0aa7a22c7552d456ee285498efb6b88eff8b249efefdaef641d56e7dfc85d"
     },
     {
       "id": "kanton/ZH/211.1/art_206",
@@ -5264,7 +5720,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "64e0b43d816699d1c3f50d6df3f98c1d73acc66b27d37e5b5fc7dcc3f2654f10"
     },
     {
@@ -5297,7 +5753,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "8ea4ec18957ce76deac004f247699636a57db57624afef15728bbbeab02298e8"
     },
     {
@@ -5316,7 +5772,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "722d11a63b4891fcd068dc8e96636af31eb3433ff464d175bdc9de1a0b0aa300"
     },
     {
@@ -5335,7 +5791,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "2daaf8e5a088801a73543e282c390717f420c01bc1dba95a3273311b86055c2d"
     },
     {
@@ -5354,7 +5810,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "975f788a915e4489efa15da519cd30c725cabdea4a97b2fb600ceef045b745e5"
     },
     {
@@ -5385,7 +5841,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "22c3094bdaf8720bd1b58a01f98ce0026ca0b128c4fac4fc5d3e69b34f483b7a"
     },
     {
@@ -5432,7 +5888,7 @@
       "stand": "2026-01-01",
       "quelleUrl": "https://www.zh.ch/de/politik-staat/gesetze-beschluesse/gesetzessammlung/zhlex-ls/erlass-211_1-2010_05_10-2011_01_01-131.html",
       "abgerufen": "2026-08-31",
-      "fassungsToken": "8ed007afc3d536b92eb2e8609b5aaa5854a595efd2321b44d108978c33c55f9d",
+      "fassungsToken": "cb08f0b09f75aaa69c4063f132728cd45eac8b27f2fb2f3f631a4a220c85f9ff",
       "sha": "7bc432fcb200b1f1f9ea0175d3b6303ac6ad7178676cb464635d05bb61109889"
     }
   ]
