@@ -112,6 +112,7 @@
     "check:pdf-quellen-netz": "vite-node scripts/normtext/check-pdf-quellen.ts -- --netz",
     "report:tot": "knip --no-exit-code",
     "check:ui-normzitate": "vite-node scripts/check-ui-normzitate.ts",
+    "check:verweis-inventar": "vite-node scripts/check-verweis-inventar.ts",
     "check:perf-budget": "vite-node scripts/check-perf-budget.ts",
     "check:perf-lighthouse": "vite-node scripts/perf/lighthouse-budget.ts",
     "gen:font-fallbacks": "vite-node scripts/gen-font-fallbacks.ts",
