@@ -15,6 +15,7 @@ import {
   FTS_ARTIKEL_SPALTEN,
   FTS_SPALTEN_HAUPT,
   FTS_SPALTEN_NEBEN,
+  hauptSpalten,
   SQL_ARTIKEL_TREFFER,
   type ArtikelRohzeile,
 } from './suche-kern';
@@ -128,6 +129,36 @@ describe('FTS_ARTIKEL_SPALTEN und BM25_GEWICHTE: eine Zahl je Spalte', () => {
     expect(g).toBeGreaterThan(n);
     expect(n).toBeGreaterThan(tb);
     expect(tb).toBeGreaterThan(f);
+  });
+
+  it('R8: kuerzel steht am ENDE der Spaltenliste und wiegt zwischen g und m', () => {
+    // Die Position der ersten sechs Spalten trägt Gewichte UND Replika-DDL —
+    // kuerzel darf nur ANGEHÄNGT sein, nie eingeschoben (suche-kern.ts, Kopf).
+    expect(FTS_ARTIKEL_SPALTEN[FTS_ARTIKEL_SPALTEN.length - 1]).toBe('kuerzel');
+    const spalten = FTS_ARTIKEL_SPALTEN as readonly string[];
+    const ku = BM25_GEWICHTE[spalten.indexOf('kuerzel')];
+    const m = BM25_GEWICHTE[spalten.indexOf('marginalie')];
+    const g = BM25_GEWICHTE[spalten.indexOf('gliederung')];
+    expect(ku).toBeGreaterThan(g); // identifiziert den Erlass stärker als der Titel-Pfad
+    expect(ku).toBeLessThan(m);    // widmet den einzelnen Artikel aber keinem Thema
+  });
+});
+
+// ─── R8: hauptSpalten — Einwort-Kürzel-Stufe, Mehrwort bleibt ohne kuerzel ────────────
+describe('hauptSpalten: kuerzel zählt NUR bei Einwort-Queries als Hauptthema', () => {
+  it('Einwort-Query nimmt kuerzel in die Haupt-Spalten auf', () => {
+    expect(hauptSpalten('GOG')).toEqual(['marginalie', 'gliederung', 'kuerzel']);
+  });
+
+  it('Mehrwort-Query lässt kuerzel draussen (OR-Semantik hübe sonst «OR 253» auf Art. 1)', () => {
+    expect(hauptSpalten('OR 253')).toEqual([...FTS_SPALTEN_HAUPT]);
+    expect(hauptSpalten('Verjährung Fristen')).toEqual([...FTS_SPALTEN_HAUPT]);
+  });
+
+  it('zusammen mit baueFtsSpaltenMatch entsteht der gültige Spaltenfilter', () => {
+    expect(baueFtsSpaltenMatch('GOG', hauptSpalten('GOG'))).toBe(
+      '{marginalie gliederung kuerzel} : "GOG"',
+    );
   });
 });
 

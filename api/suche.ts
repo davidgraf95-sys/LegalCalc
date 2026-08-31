@@ -17,7 +17,7 @@
 import {
   baueFtsMatch,
   baueFtsSpaltenMatch,
-  FTS_SPALTEN_HAUPT,
+  hauptSpalten,
   FTS_SPALTEN_NEBEN,
   klemmeFenster,
   naechsterOffset,
@@ -103,7 +103,9 @@ async function sucheArtikelEdge(
   // MATCH-Ausdrücke über dieselben Terme. Sie ordnen den Artikel, der dem Thema
   // GEWIDMET ist, vor den blossen Texttreffer. bm25 allein legte OR 253 bei «Miete»
   // auf Rang 128 von 165 — ausserhalb jedes Fensters, das die Antwort je zurückgibt.
-  const haupt = baueFtsSpaltenMatch(query, FTS_SPALTEN_HAUPT) ?? match;
+  // R8: bei Einwort-Queries zählt auch die kuerzel-Spalte als Hauptthema
+  // (hauptSpalten in suche-kern.ts — Spiegel der Client-Kürzel-Stufe).
+  const haupt = baueFtsSpaltenMatch(query, hauptSpalten(query)) ?? match;
   const neben = baueFtsSpaltenMatch(query, FTS_SPALTEN_NEBEN) ?? match;
   const [countRows, treffRows] = await tursoAbfrage(url, token, [
     { sql: SQL_ARTIKEL_COUNT, args: [match] },

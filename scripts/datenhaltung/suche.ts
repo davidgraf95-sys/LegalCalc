@@ -17,7 +17,7 @@ import {
   klemmeFenster,
   baueFtsMatch,
   baueFtsSpaltenMatch,
-  FTS_SPALTEN_HAUPT,
+  hauptSpalten,
   FTS_SPALTEN_NEBEN,
   naechsterOffset,
   formeArtikelTreffer,
@@ -43,7 +43,9 @@ export function sucheArtikel(db: DatabaseSync, query: string, opt?: SucheOptione
   if (!match) return { treffer: [], gesamt: 0, naechsteSeite: null };
   // Die Stufen-Ausdrücke zerlegen dieselben Terme wie `match` und können darum nur
   // dann null sein, wenn `match` es auch wäre. Der Fallback hält die Abfrage gültig.
-  const haupt = baueFtsSpaltenMatch(query, FTS_SPALTEN_HAUPT) ?? match;
+  // R8: bei Einwort-Queries zählt auch die kuerzel-Spalte als Hauptthema
+  // (hauptSpalten in suche-kern.ts — Spiegel der Client-Kürzel-Stufe).
+  const haupt = baueFtsSpaltenMatch(query, hauptSpalten(query)) ?? match;
   const neben = baueFtsSpaltenMatch(query, FTS_SPALTEN_NEBEN) ?? match;
   const gesamt = (db.prepare(SQL_ARTIKEL_COUNT).get(match) as { n: number }).n;
   const rows = db

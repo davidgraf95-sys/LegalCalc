@@ -23,7 +23,15 @@ export const MAX_LIMIT = 50;
  * (BM25_GEWICHTE) und muss lokal wie auf Turso identisch deklariert werden. Eine
  * Verschiebung gewichtet still das falsche Feld.
  */
-export const FTS_ARTIKEL_SPALTEN = ['text', 'marginalie', 'marginalie_n', 'gliederung', 'tabelle', 'fussnote'] as const;
+// `kuerzel` (R8, 31.8.2026) steht bewusst am ENDE: die Position der ersten sechs
+// Spalten trägt deren bm25-Gewichte und die Turso-Replika-DDL — Anhängen ändert
+// keine bestehende Zuordnung. Inhalt je Zeile: das Erlass-Kürzel ihres Erlasses
+// (Bund: erlasse.abkuerzung, z. B. «OR»; Kanton: das amtlich belegte Alias aus
+// src/lib/normtext/kanton-abk-aliase.generated.ts, '' ohne Beleg). Zeilen-skopiert
+// kann ein Kanton-Alias nie einen Bund-Erlass treffen und umgekehrt — die
+// Ebenen-Trennung ist konstruktiv (Kollisionen wie «StG» treffen beide Ebenen je
+// über die EIGENE Zeile; Report bibliothek/register/kanton-abk-kollisionen-*.md).
+export const FTS_ARTIKEL_SPALTEN = ['text', 'marginalie', 'marginalie_n', 'gliederung', 'tabelle', 'fussnote', 'kuerzel'] as const;
 
 /** Stufe 0 «Hauptthema»: primäre Marginalie ODER Gliederungs-Titel — der Artikel ist
  *  dem Thema GEWIDMET (OR 127 «Verjährung», OR 253 unter «Achter Titel: Die Miete»). */
@@ -32,6 +40,26 @@ export const FTS_SPALTEN_HAUPT = ['marginalie', 'gliederung'] as const;
 /** Stufe 1 «Nebenerwähnung»: nur eine nachrangige Marginalie — der Artikel NENNT das
  *  Thema, ist ihm aber nicht gewidmet (OR 121 «Verrechnung … Bei Bürgschaft»). */
 export const FTS_SPALTEN_NEBEN = ['marginalie_n'] as const;
+
+/**
+ * Haupt-Stufen-Spalten JE QUERY (R8, 31.8.2026): bei einer EINWORT-Query zählt
+ * auch ein Treffer in der `kuerzel`-Spalte als Hauptthema — wer «GOG» tippt,
+ * meint den Erlass dieses Kürzels; seine Artikel gehören auf Stufe 0, nicht
+ * hinter die Reglemente, deren Marginalien «GOG» zitieren (Spiegel der
+ * Client-Regel in src/lib/suche/artikelRanking.ts, kuerzelNorm — dort ist der
+ * Träger «die GANZE Query ist das Kürzel», was bei einem Wort identisch ist).
+ *
+ * MEHRWORT-Queries lassen `kuerzel` bewusst draussen: `baueFtsSpaltenMatch`
+ * verknüpft die Terme mit OR, und «OR 253» hübe sonst JEDEN OR-Artikel auf
+ * Stufe 0 — die Stufenordnung (Kernerlass, dann Artikelnummer AUFSTEIGEND)
+ * zeigte dann Art. 1 OR statt Art. 253 OR zuoberst. Ehrliche Restlücke zum
+ * Client: mehrwortige Kürzel («EG zum ZGB») erreichen dort Stufe 0, hier nicht
+ * — derselben Natur wie die dokumentierte Präfix-Nichtparität (s. «GILT NICHT»).
+ */
+export function hauptSpalten(query: string): readonly string[] {
+  const terme = query.match(/[\p{L}\p{N}]+/gu) ?? [];
+  return terme.length === 1 ? [...FTS_SPALTEN_HAUPT, 'kuerzel'] : FTS_SPALTEN_HAUPT;
+}
 
 export interface SucheOptionen {
   limit?: number;
@@ -227,7 +255,12 @@ export function baueSnippet(text: string, query: string): string {
  * Höhere Zahl = stärkeres Gewicht (bm25() in SQLite gibt negative Werte zurück und
  * wird darum AUFSTEIGEND sortiert; die Gewichte selbst sind positiv).
  */
-export const BM25_GEWICHTE = [10, 8, 4, 5, 1, 0.5] as const;
+// `kuerzel` = 6 (R8): ein Kürzel-Spaltentreffer identifiziert den ERLASS des
+// Artikels («GOG» → die 100 GOG-Zeilen), widmet den einzelnen Artikel aber
+// keinem Thema — darum über dem Gliederungs-Titel (5), unter der primären
+// Marginalie (8). Er wirkt in Stufe 2 (bm25) UND über die Einwort-Stufung
+// (hauptSpalten unten).
+export const BM25_GEWICHTE = [10, 8, 4, 5, 1, 0.5, 6] as const;
 
 const BM25 = `bm25(fts_artikel, ${BM25_GEWICHTE.join(', ')})`;
 

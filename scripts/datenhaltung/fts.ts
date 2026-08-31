@@ -35,6 +35,15 @@
 import type { DatabaseSync } from 'node:sqlite';
 import { bloeckeText, FTS_ARTIKEL_SPALTEN } from './suche-kern';
 import { baueRecallFelder, type Block, type StrukturArtikel } from '../suche-felder';
+import { KANTON_ABK_ALIASE } from '../../src/lib/normtext/kanton-abk-aliase.generated';
+
+// R8 (31.8.2026): amtlich belegtes Kanton-Kürzel je Erlass-Key für die
+// `kuerzel`-FTS-Spalte — dieselbe Alias-Quelle wie der statische Index (§5,
+// Generator scripts/normtext/kanton-abk-aliase-generieren.ts). Bund-Zeilen
+// tragen stattdessen erlasse.abkuerzung (dort IST das Feld das Kürzel);
+// Kanton-erlasse.abkuerzung ist der VOLLE Erlass-String und würde Titelwörter
+// in eine gewichtete Suchspalte kippen — darum nie direkt.
+const KANTON_KZ = new Map(KANTON_ABK_ALIASE.map((z) => [z.key, z.abk]));
 
 // Vercel-Fix 3.7.2026: `bloeckeText` (+ Doku) ist in das IMPORT-FREIE ./suche-kern.ts
 // gewandert — api/suche.ts braucht es (Snippet-Bau) und darf keine node:sqlite-Kette
@@ -149,7 +158,8 @@ export function baueFtsArtikel(db: DatabaseSync): FtsArtikelBericht {
   const rows = db
     .prepare(
       `SELECT a.rowid AS rowid, a.erlass_key AS erlass_key, a.artikel AS artikel,
-              a.grundlage AS grundlage, a.bloecke_json AS bloecke_json, e.ebene AS ebene
+              a.grundlage AS grundlage, a.bloecke_json AS bloecke_json, e.ebene AS ebene,
+              e.abkuerzung AS abkuerzung
        FROM artikel a LEFT JOIN erlasse e ON e.key = a.erlass_key
        ORDER BY a.rowid`,
     )
@@ -160,10 +170,14 @@ export function baueFtsArtikel(db: DatabaseSync): FtsArtikelBericht {
     grundlage: string | null;
     bloecke_json: string;
     ebene: string | null;
+    abkuerzung: string | null;
   }>;
 
+  // Platzhalter aus der Spaltenliste abgeleitet (§5) — eine neue Spalte kann die
+  // VALUES-Zahl nicht mehr still hinter sich lassen (vorher hart «?, ?, …»).
+  const platzhalter = FTS_ARTIKEL_SPALTEN.map(() => '?').join(', ');
   const ins = db.prepare(
-    `INSERT INTO fts_artikel(rowid, ${FTS_ARTIKEL_SPALTEN.join(', ')}) VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    `INSERT INTO fts_artikel(rowid, ${FTS_ARTIKEL_SPALTEN.join(', ')}) VALUES (?, ${platzhalter})`,
   );
   let ohneStruktur = 0;
   for (const r of rows) {
@@ -171,7 +185,12 @@ export function baueFtsArtikel(db: DatabaseSync): FtsArtikelBericht {
     if (!sa) ohneStruktur++;
     const bloecke = JSON.parse(r.bloecke_json) as Block[];
     const f = baueRecallFelder(bloecke, sa, r.grundlage);
-    ins.run(r.rowid, bloeckeText(r.bloecke_json), f.m, f.n, f.g, f.tb, f.f);
+    // kuerzel-Spalte (R8): Bund = erlasse.abkuerzung («OR»), Kanton = belegtes
+    // Alias oder '' — zeilen-skopiert, s. Kommentar an KANTON_KZ oben.
+    const kuerzel = r.ebene === 'kanton'
+      ? (KANTON_KZ.get(r.erlass_key) ?? '')
+      : (r.abkuerzung ?? '');
+    ins.run(r.rowid, bloeckeText(r.bloecke_json), f.m, f.n, f.g, f.tb, f.f, kuerzel);
   }
   return { zeilen: rows.length, ohneStruktur };
 }

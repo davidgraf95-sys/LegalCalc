@@ -201,6 +201,72 @@ describe('K1 Recall-Parität: Recall-Felder im Edge-Index', () => {
   });
 });
 
+describe('R8 Kürzel-Aliase am Edge (FTS-Spalte kuerzel)', () => {
+  // Die vier R8-Tore am DB-Weg — Spiegel der Client-Tore in
+  // src/tests/suche/kuerzelAliase.test.ts. Nullprobe 31.8.2026 (vor dem Bau):
+  // «GOG» gesamt=54, KEIN Artikel des GOG selbst; K0-Queries «Miete»/
+  // «Verjährung»/«Eigentum» sind nach dem Bau Top-5- und gesamt-identisch
+  // (Messreihe im R8-Bericht) — die kuerzel-Spalte berührt topische Queries nicht.
+  it('«GOG» → Artikel des BS-Gerichtsorganisationsgesetzes zuoberst (Stufe 0 via Einwort-Kürzel)', () => {
+    const a = sucheArtikel(dbN, 'GOG', { limit: 10 });
+    expect(a.treffer[0].id).toBe('art:BS-154.100:154.100/art_1');
+    const eigene = a.treffer.filter((t) => t.id.startsWith('art:BS-154.100:'));
+    expect(eigene.length).toBeGreaterThanOrEqual(5);
+    // Herkunft ehrlich (F35): kantonaler Treffer trägt ebene + kanton.
+    expect(a.treffer[0].fundstelle.ebene).toBe('kanton');
+    expect(a.treffer[0].fundstelle.kanton).toBe('BS');
+  });
+
+  it('Kollisionsfall «StG»: Bundes-StG UND kantonale Steuergesetze in der Treffermenge', () => {
+    const keys = new Set<string>();
+    for (let off = 0; off < 500 && keys.size < 400; off += MAX_LIMIT) {
+      const a = sucheArtikel(dbN, 'StG', { limit: MAX_LIMIT, offset: off });
+      for (const t of a.treffer) keys.add(t.id.split(':')[1]);
+      if (a.naechsteSeite === null) break;
+    }
+    expect(keys.has('STG'), 'Bundes-StG fehlt').toBe(true);
+    expect(
+      ['AI-640.000', 'BS-640.100', 'NW-521.1', 'OW-641.4', 'SG-811.1', 'TG-640.1'].some((k) => keys.has(k)),
+      'kein kantonales StG in der Treffermenge',
+    ).toBe(true);
+  });
+
+  it('Ebenen-Trennung: die kuerzel-Spalte einer Ebene trifft nie die andere', () => {
+    // Reiner Spalten-MATCH (ohne Text-Recall): «GOG» steht NUR in Kanton-Zeilen,
+    // «StGB» NUR in Bund-Zeilen — zeilen-skopiert kann nichts lecken.
+    const ebenen = (kuerzel: string): string[] => {
+      const rows = dbN
+        .prepare(
+          `SELECT DISTINCT e.ebene AS ebene FROM fts_artikel f
+           JOIN artikel a ON a.rowid = f.rowid JOIN erlasse e ON e.key = a.erlass_key
+           WHERE fts_artikel MATCH ?`,
+        )
+        .all(`{kuerzel} : "${kuerzel}"`) as Array<{ ebene: string }>;
+      return rows.map((r) => r.ebene).sort();
+    };
+    expect(ebenen('GOG')).toEqual(['kanton']);
+    expect(ebenen('StGB')).toEqual(['bund']);
+    // Kollisionsfall: «StG» trifft in der Spalte BEIDE Ebenen — je die eigene Zeile.
+    expect(ebenen('StG')).toEqual(['bund', 'kanton']);
+  });
+
+  it('Negativfälle der Gefahren-Klassen: «AKV» und «Bürgschaft» stehen in keiner kuerzel-Zelle', () => {
+    const n = (kuerzel: string): number =>
+      (dbN.prepare('SELECT count(*) AS n FROM fts_artikel WHERE fts_artikel MATCH ?')
+        .get(`{kuerzel} : "${kuerzel}"`) as { n: number }).n;
+    expect(n('AKV')).toBe(0);        // Gefahren-Klasse 1 (AR-760.12, Bundes-Kürzel)
+    expect(n('Bürgschaft')).toBe(0); // Gefahren-Klasse 2 (AR-222.31, Bundes-Titel-Fragment)
+  });
+
+  it('topische Query bleibt von der kuerzel-Spalte unberührt (K0-Anker «Miete»)', () => {
+    const a = sucheArtikel(dbN, 'Miete', { limit: 5 });
+    expect(a.treffer.map((t) => t.id)).toEqual([
+      'art:OR:art_253', 'art:OR:art_253_a', 'art:OR:art_253_b', 'art:OR:art_254', 'art:OR:art_255',
+    ]);
+    expect(a.gesamt).toBe(165);
+  });
+});
+
 describe('sucheEntscheide', () => {
   it('findet Schaufenster-Entscheide diakritik-insensitiv (rechtsoffnung → Rechtsöffnung)', () => {
     const a = sucheEntscheide(dbR, 'rechtsoffnung');
