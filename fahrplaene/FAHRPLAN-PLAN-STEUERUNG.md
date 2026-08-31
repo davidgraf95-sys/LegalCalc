@@ -324,6 +324,18 @@ Mindestdatenlage ≥ 5 Snapshots (Schritt `QS-AUTOPILOT-STUFE1`, Blocker
 Stufe 3 (autonomer Bau) sind ausdrücklich NICHT freigegeben — je eigener künftiger
 David-Entscheid.
 
+**Gebaut 31.8.2026** (`QS-AUTOPILOT-STUFE1`): Die Mindestdatenlage war mit 14 Snapshots
+erfüllt (Selbstauskunft von `retro:17`, Beleg in `ROADMAP-CHRONIK.md`), der Blocker
+`zeitreihe-5-snapshots` entfiel. Träger ist `.github/workflows/autopilot.yml` — montags
+07:29 UTC plus `workflow_dispatch`: er fährt `retro:17`, zählt die `ENTWURF_MARKE` im
+Ergebnis und eröffnet nur bei ≥ 1 Marke einen `--draft`-PR mit dem Entwurf als Datei
+unter `messwerte/autopilot/`. Keine Marke ⇒ kein PR, grüner Lauf, `::notice::`-Zeile.
+Bewusst nicht darin: kein Merge, kein Auto-Merge, kein Schreibzugriff auf `ROADMAP.md`
+oder `main`, kein `selbstopt:erheben` (Erheben wäre ein Schreibzugriff auf `main` und
+ist für Stufe 1 nicht nötig — Folge, ehrlich benannt: die Frische der Vorschläge hängt
+weiterhin an den Sessions). Höchstens EIN offener Entwurfs-PR gleichzeitig
+(Flut-Sperre), sonst ergäben 52 Läufe im Jahr 52 offene PRs.
+
 
 
 

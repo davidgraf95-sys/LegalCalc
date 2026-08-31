@@ -2666,3 +2666,18 @@ maschinelles Tor.* Glieder-Aufzählung und Code-Bestands-Inventar (kontext.ts/Ko
 Kein Inhalt wurde gekürzt, zusammengefasst oder «nachgeführt». Datierte Mess- und
 Reproduktionsangaben stehen in den Zieldateien wörtlich wie zuvor (§0 Ziff. 2b: Belege altern
 nicht). Was hier als «gestrichen» geführt ist, steht in diesem Abschnitt vollständig im Wortlaut.
+
+---
+
+## 31.8.2026 — Blocker `zeitreihe-5-snapshots` erfüllt, nicht gestrichen
+
+Der Blocker band `QS-AUTOPILOT-STUFE1` (David-Freigabe 7.8.2026, «stufe 1 ja») an die
+Mindestdatenlage «≥ 5 Snapshots in `messwerte/selbstopt-zeitreihe.json`». Die Bedingung ist
+**erfüllt**: `npm run retro:17` meldet am 31.8.2026 selbst *«Quellen: messwerte/selbstopt-zeitreihe.json
+(14 Snapshots) · ROADMAP-CHRONIK.md · Letzte Erhebung: 2026-08-29»* — 14 statt der geforderten 5,
+also auch über der Schwelle `MIN_SNAPSHOTS = 5`, ab der die Regel «nie rot» überhaupt auswertet.
+
+Der Registereintrag wird darum aus `@blockers` entfernt und `QS-AUTOPILOT-STUFE1` von
+`blocked` auf `wip` gesetzt. Das ist **kein Wegfall der Bedingung** (§0 Ziff. 2b — Belege altern
+nicht): die Bedingung galt und gilt, sie ist bloss eingetreten. Wer die Zeitreihe künftig
+zurücksetzt, hat wieder einen Blocker, nicht eine erledigte Frage.
