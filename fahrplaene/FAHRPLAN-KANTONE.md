@@ -298,6 +298,37 @@ eigener ROADMAP-Punkt).
    Staffel-Heuristik je neuem Erlass prüfen · Spiegelrand-Layout-Annahmen empirisch
    verifizieren (VRG 1959 und PBG 1975 sind alte Sätze!).
 
+**Stufe 2 — Ergebnis 31.8.2026 (lebendige Spec fortgeschrieben, nicht rückwirkend korrigiert):**
+
+- **Gebaut:** ZH-4b (Retry + serielle ~1-req/s-Drossel in `holeZhPdf`, Fehl-Erlass
+  bricht den Lauf sichtbar ab — Rot-Beweis mit einem nicht existierenden
+  Listen-Eintrag: Exit 1) · ZH-4a (`scripts/normtext/zh-quellen.ts` +
+  Auflöse-Werkzeug `zh-quellen-aufloesen.ts`; Vereinigung mit der Tarif-Ableitung
+  in `sammleZhPdfInventar()`, `check-drift.ts` liest dieselbe Funktion) · ZH-4c
+  (`scripts/normtext/zh-systematik.ts` → ZH-Zweig in `kanton-systematik-run.ts`).
+- **Bilanz:** 20 Kern-Erlasse importiert, 23 ZH-Erlasse gesamt, 2371 Snapshots.
+  `check:normtext-netz` prüft jetzt **23** statt 3 ZH-Gruppen → die §7-d-Lücke ist
+  messbar geschlossen.
+- **Zurückgestellt (Qualitäts-Triage §1):** **LS 101 KV** — zählt in «Art. N»,
+  der ZH-Adapter kennt nur «§ N.» → 0 Paragraphen. **LS 131.11 VGG** — der
+  Anhang-Zweig zerlegt den Kontenrahmen in 397 Pseudo-Paragraphen
+  («Anhang Ziff. 3637.24 Beihilfen»). Beides braucht einen Adapter-Schritt.
+- **Auftragskorrektur (§7):** LS 323.1 heisst amtlich **GebV StrV** (Dossier §6
+  führte «GebV Strafverfolgung», eine Sachbezeichnung).
+- **Neuer Befund ZH-4d (offen, blockiert Stufe 3 nicht):** Der §-Segmentierer
+  hängt Gliederungs-Überschriften zwischen zwei §§ («4. Abschnitt: Medien») an
+  den letzten Block des VORANGEHENDEN § — 129 Blöcke in 16 der 20 Erlasse. Kein
+  Textverlust, aber falsche Zuordnung. In den drei Bestands-Erlassen (kurze
+  Gebührenverordnungen ohne Zwischentitel) trat das nie auf — darum bis jetzt
+  unentdeckt. Zweitbefund: der Loseblatt-Änderungsapparat am Erlass-Ende landet
+  im letzten § (10 von 2173 Artikeln). Drittbefund: Gebührentabellen in 323.1 /
+  212.812 bleiben Fliesstext (der `mehrspaltig`-Zweig ist auf ZH-211.11/215.3
+  §3/§4 verdrahtet) — Werte vollständig, Struktur flach.
+- **Fremdbefund (nicht mitgenommen):** ein frischer `kanton-systematik-run.ts`
+  zeigt Upstream-Drift bei **AG** (Knoten 401 entfallen) und **BS** (731, 788,
+  RiE#731 neu). Der Commit hält den Diff bewusst ZH-only; die Drift gehört in
+  einen eigenen Schritt.
+
 **Stufe 3 — Ausbau in Tranchen** (Richtung 944, Katalog-Generator über den
 JSON-Endpunkt): erst nach gelandeter Stufe 2 und sauberer Stichproben-Abnahme;
 G2-Slot-Regel beachten (kein faktischer Vollkorpuslauf als Tranchen-Schlupfloch —
