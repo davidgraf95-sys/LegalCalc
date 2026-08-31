@@ -10,6 +10,17 @@
  * sichtbar, statt erst im Lauf als 404 aufzuschlagen. Mit Argumenten löst es
  * beliebige LS-Ordnungsnummern auf und druckt fertige `ZH_QUELLEN`-Einträge.
  *
+ * VERDRAHTUNG (Befund B3, Fix-Runde 4, 31.8.2026): Der Prüfmodus läuft als
+ * ZH-Teil von `check:normtext-netz` (package.json) und damit über `check:netz`
+ * im wöchentlichen Cron `.github/workflows/normen-monitor.yml`. WARUM: die
+ * Drift-Prüfung der Snapshots hasht die versionsGEPINNTE Registry-URL — eine
+ * alte Registry-Seite liefert aber auf ewig HTTP 200 mit dem alten PDF
+ * (empirisch belegt an 211.1 Suppl. 129), ein NEUER Nachtrag bliebe dem
+ * Drift-Tor also unsichtbar. Erst der Vergleich gegen die amtliche SUCHE
+ * (geltende Fassung) macht den überholten Pin rot. Rot-Beweis 31.8.2026:
+ * 211.1-Pin künstlich auf die historische …-129.html zurückgesetzt → FEHLER
+ * «URL ist …-131.html», Exit 1; am echten Stand grün.
+ *
  * §5: DIESES Werkzeug erzeugt die Einträge in `zh-quellen.ts` — die Liste wird
  * nie von Hand geraten. §2: keine Rechenlogik, reines Erhebungs-/Prüfwerkzeug.
  *

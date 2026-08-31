@@ -78,7 +78,7 @@
     "check:revisionen": "vite-node scripts/normtext/check-revisionen.ts",
     "check:revisionen-netz": "vite-node scripts/normtext/check-revisionen.ts -- --netz",
     "materialien:vernehmlassungen": "vite-node scripts/materialien/vernehmlassungen-generieren-run.ts --",
-    "check:normtext-netz": "vite-node scripts/normtext/check-drift.ts -- --netz",
+    "check:normtext-netz": "vite-node scripts/normtext/check-drift.ts -- --netz && vite-node scripts/normtext/zh-quellen-aufloesen.ts",
     "entscheide": "vite-node scripts/normtext-entscheide.ts --",
     "entscheide:seed": "vite-node scripts/normtext/seed-aus-cache.ts --",
     "entscheide:regeste-refresh": "vite-node scripts/normtext-entscheide.ts -- --regeste-refresh",
