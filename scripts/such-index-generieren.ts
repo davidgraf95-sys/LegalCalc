@@ -52,8 +52,18 @@ export type Ebene = (typeof EBENEN)[number];
  *
  * WOZU. Der Kanton-Anteil am ausgelieferten Suchindex sind 4.26 MiB gzip = 45.2 %
  * (Messung K0, bibliothek/register/suche-edge-nullprobe-2026-08-31.md). Seit K1/K2
- * findet und rangiert der Edge-Weg kantonale Artikel gleichwertig — der statische
- * Kanton-Anteil wäre also technisch entbehrlich.
+ * findet und rangiert der Edge-Weg kantonale Artikel in denselben topischen Stufen wie
+ * der statische — der statische Kanton-Anteil wäre also WEITGEHEND entbehrlich.
+ *
+ * «Weitgehend», nicht «gleichwertig» (Korrektur nach Gegenprüfungs-Befund F2,
+ * 31.8.2026). Der Satz stand hier vorher als Vollparität, und die besteht nicht: der
+ * DB-Weg kennt KEINE Präfix-Treffer («Verjähr» → Client findet, DB 0) und KEINE
+ * Synonym-Expansion. Beides ist benannt, gemessen und begründet in
+ * scripts/datenhaltung/suche-kern.ts, Abschnitt «WO DIE PARITÄT GILT — UND WO NICHT».
+ * Für die Scharfschaltung ist das nicht nebensächlich: käme der Kanton nur noch vom
+ * Edge, verlöre eine kantonale Präfix-Query ihre Treffer GANZ, statt sie bloss aus
+ * einem Fallback zu holen. Der Entscheid selbst bleibt unverändert bei David — aber er
+ * darf nicht auf einer überzeichneten Grundlage getroffen werden (§8).
  *
  * WARUM TROTZDEM AUS. Ihn abzuschalten heisst, dass kantonale Treffer NUR noch
  * online kommen. Fällt die Edge-Suche aus (Timeout, 5-min-Sperre in

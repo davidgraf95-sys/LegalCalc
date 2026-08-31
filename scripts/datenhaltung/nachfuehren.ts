@@ -12,9 +12,13 @@
 // Nutzer sieht dann einen Erlass, den die Suche nicht kennt — und nichts wird rot.
 //
 // SEIT K1/K2 WIEGT DAS SCHWERER. Vorher war der Edge-Weg ein Zusatz zum statischen
-// Index; seit der Recall- und Ranking-Parität ist er der gleichwertige Weg für die
-// 30 709 kantonalen Artikel. Eine veraltete Replika ist damit keine Verzögerung
-// mehr, sondern eine falsche Auskunft.
+// Index; seit der Recall- und Ranking-Parität ist er für die 30 709 kantonalen
+// Artikel ein VOLLWERTIGER zweiter Weg. Eine veraltete Replika ist damit keine
+// Verzögerung mehr, sondern eine falsche Auskunft.
+// (Bewusst nicht «gleichwertig»: die Präfix- und Synonym-Grenzen des DB-Weges stehen
+// in suche-kern.ts, «WO DIE PARITÄT GILT — UND WO NICHT». Für die Sorge DIESES
+// Scripts ändert das nichts — ein veralteter Korpus ist eine falsche Auskunft,
+// unabhängig davon, wie gut der Weg sonst ist.)
 //
 // EHRLICHES ÜBERSPRINGEN (§8). Ohne Turso-Token laufen die Schritte 1+2 normal, 3+4
 // werden ÜBERSPRUNGEN — aber laut und mit Nennung dessen, was offen bleibt. Das

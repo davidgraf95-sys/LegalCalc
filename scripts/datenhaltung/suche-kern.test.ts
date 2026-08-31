@@ -8,7 +8,14 @@
 // ein Beweis, der 95 s wartet, wird im Alltag nicht gefahren. Hier laufen darum
 // nur die importfreien Bausteine gegen handgeschriebene Roh-Zeilen.
 import { describe, expect, it } from 'vitest';
-import { formeArtikelTreffer, SQL_ARTIKEL_TREFFER, type ArtikelRohzeile } from './suche-kern';
+import {
+  baueFtsSpaltenMatch,
+  formeArtikelTreffer,
+  FTS_SPALTEN_HAUPT,
+  FTS_SPALTEN_NEBEN,
+  SQL_ARTIKEL_TREFFER,
+  type ArtikelRohzeile,
+} from './suche-kern';
 
 const BLOECKE = JSON.stringify([{ text: 'Der Anwalt hat Anspruch auf ein Honorar.' }]);
 
@@ -87,5 +94,47 @@ describe('SQL_ARTIKEL_TREFFER liefert die Spalten, aus denen die Fundstelle geba
     // sehr wohl — der Alias muss exakt so heissen.
     expect(SQL_ARTIKEL_TREFFER).toMatch(/\be\.ebene\s+AS\s+ebene\b/);
     expect(SQL_ARTIKEL_TREFFER).toMatch(/\be\.kanton\s+AS\s+kanton\b/);
+  });
+});
+
+// ─── F2 (Gegenprüfung 31.8.2026): die SEMANTIK des Spaltenfilters ────────────────────
+// Die Wirkung dieser Ausdrücke auf die Rangfolge prüft suche-rang.test.ts gegen die
+// echte DB (Budget 95 s). Hier steht die FORM — importfrei, in Millisekunden, und damit
+// der Ort, an dem ein versehentlicher Rückfall auf das implizite AND sofort auffällt.
+describe('baueFtsSpaltenMatch: EIN Term genügt (OR), nicht ALLE (implizites AND)', () => {
+  it('mehrere Terme werden mit OR verknüpft', () => {
+    expect(baueFtsSpaltenMatch('Verjährung Fristen', FTS_SPALTEN_HAUPT)).toBe(
+      '{marginalie gliederung} : "Verjährung" OR {marginalie gliederung} : "Fristen"',
+    );
+  });
+
+  it('ein einzelner Term bleibt unverändert (kein Streu-OR)', () => {
+    expect(baueFtsSpaltenMatch('Miete', FTS_SPALTEN_HAUPT)).toBe('{marginalie gliederung} : "Miete"');
+    expect(baueFtsSpaltenMatch('Miete', FTS_SPALTEN_NEBEN)).toBe('{marginalie_n} : "Miete"');
+  });
+
+  it('KEIN implizites AND mehr — die alte Form würde OR 127 auf Rang 8 legen', () => {
+    // Identitäts-Prüfung statt Substring: gesucht ist die Trennung ZWISCHEN zwei
+    // Spaltenfiltern. Stünde dort wieder nur ein Leerzeichen, wäre die AND-Semantik
+    // zurück, und suche-rang.test.ts liefe (langsam) rot — hier fällt es sofort auf.
+    const m = baueFtsSpaltenMatch('Verjährung Fristen', FTS_SPALTEN_HAUPT)!;
+    expect(m).toMatch(/"\s+OR\s+\{/);
+    expect(m).not.toMatch(/"\s+\{/);
+  });
+
+  it('Terme bleiben gequotet — Syntax und Injektion neutralisiert', () => {
+    // Der Spaltenfilter ist der einzige Ort, an dem Nutzereingabe und feste
+    // Spaltennamen in EINEN FTS5-Ausdruck geraten. Die Quotes tragen die Grenze.
+    const m = baueFtsSpaltenMatch('foo" OR bar: NEAR', FTS_SPALTEN_HAUPT)!;
+    expect(m).toBe(
+      '{marginalie gliederung} : "foo" OR {marginalie gliederung} : "OR" OR ' +
+        '{marginalie gliederung} : "bar" OR {marginalie gliederung} : "NEAR"',
+    );
+  });
+
+  it('leere Query oder leere Spaltenliste → null (Aufrufer fällt auf `match` zurück)', () => {
+    expect(baueFtsSpaltenMatch('', FTS_SPALTEN_HAUPT)).toBeNull();
+    expect(baueFtsSpaltenMatch('§ —', FTS_SPALTEN_HAUPT)).toBeNull();
+    expect(baueFtsSpaltenMatch('Miete', [])).toBeNull();
   });
 });

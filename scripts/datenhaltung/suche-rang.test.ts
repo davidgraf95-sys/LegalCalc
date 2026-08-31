@@ -109,6 +109,71 @@ describe('K2 Ranking-Parität: S4-Testset gegen den Edge-/DB-Weg', () => {
   });
 });
 
+// ─── F2 (Gegenprüfung 31.8.2026): Mehrwort und Präfix — die zwei Stellen, an denen
+//     die Parität nicht von selbst gilt. Beide waren ungetestet, und die eine davon
+//     war schlicht falsch.
+describe('F2 Mehrwort-Queries: EIN Term im Feld genügt für die topische Stufe', () => {
+  // Der Client (artikelRanking.bewerte) prüft je Term und setzt Stufe 0, sobald
+  // IRGENDEINER die primäre Marginalie oder die Gliederung trifft. Der SQL-Spaltenfilter
+  // verlangte dagegen ALLE Terme in derselben Spaltengruppe — bei einer Query, deren
+  // zweites Wort in keinem Randtitel steht, fiel der Kernartikel damit aus der topischen
+  // Stufe heraus und landete hinter beliebigen Texttreffern.
+  it('«Verjährung Fristen» hebt OR 127 nach vorn (AND-Semantik gab Rang 8)', () => {
+    const r = rang('Verjährung Fristen', 'OR', 'art_127');
+    expect(r, 'OR 127 gar nicht im Fenster').toBeGreaterThanOrEqual(0);
+    expect(r, `OR 127 auf Rang ${r + 1} — mit AND-Semantik war es Rang 8`).toBeLessThan(2);
+  });
+
+  it('«Verjährung Forderung»: ein Verjährungs-Grundartikel steht ganz vorn', () => {
+    // Gemessen mit AND-Semantik: IPRG 148 · OR 130 · OR 140 · OR 591 · OR 137 — lauter
+    // Nebenbestimmungen, kein Grundartikel. Mit OR: OR 60 · 67 · 130 · 134 · 135.
+    //
+    // Geprüft wird bewusst auf die GRUNDARTIKEL (OR 60 unerlaubte Handlung, OR 127
+    // allgemeine Frist), nicht bloss auf «viele OR-Treffer»: die AND-Liste bestand
+    // ebenfalls überwiegend aus OR-Artikeln und hätte eine solche Zählung anstandslos
+    // passiert — ein Test, der den Fehler nicht sieht, ist keiner (§6.7).
+    const top = sucheArtikel(db, 'Verjährung Forderung', { limit: 3 }).treffer.map((t) => t.id);
+    expect(top.some((id) => id === 'art:OR:art_60' || id === 'art:OR:art_127'), `Top-3: ${top.join(', ')}`).toBe(true);
+  });
+
+  it('Mehrwort-Stufung ändert die Treffermenge NICHT (Recall-Neutralität)', () => {
+    // Der Kern der Begründung: `haupt`/`neben` sind LEFT-JOIN-Mengen und gehen nicht in
+    // die Treffermenge ein. Eine Verbreiterung der Stufen-Ausdrücke darf darum weder
+    // einen Treffer hinzufügen noch einen verlieren — sonst wäre aus einer Rang-Korrektur
+    // stillschweigend eine Recall-Änderung geworden.
+    for (const q of ['Verjährung Fristen', 'Miete Kündigung']) {
+      const gesamt = sucheArtikel(db, q, { limit: 1 }).gesamt;
+      const gesehen = new Set<string>();
+      for (let off = 0; off < gesamt; off += MAX_LIMIT) {
+        for (const t of sucheArtikel(db, q, { limit: MAX_LIMIT, offset: off }).treffer) gesehen.add(t.id);
+      }
+      expect(gesehen.size, `«${q}»: Pagination deckt nicht alle ${gesamt} Treffer`).toBe(gesamt);
+    }
+  });
+});
+
+describe('F2 Präfix-Queries: DOKUMENTIERTE Abweichung vom Client, kein Versehen', () => {
+  it('«Verjähr» findet am DB-Weg NICHTS — der Client fände über den Präfix', () => {
+    // EHRLICHE ERWARTUNG (§8): dieser Test hält die HEUTIGE, bewusst gewählte Semantik
+    // fest, nicht einen Wunschzustand. Der Client sucht mit FlexSearch
+    // `tokenize: 'forward'` und findet «Verjähr»; der DB-Weg sucht mit gequoteten
+    // Volltokens und findet nichts. Der Grund gegen eine sofortige Angleichung steht am
+    // Kopf von suche-kern.ts («WO DIE PARITÄT GILT — UND WO NICHT»): Präfix ist eine
+    // Recall- UND Latenz-Änderung auf JEDER Query (lokal gemessen «Eigentum»
+    // 15,6 → 107,1 ms bei 658 → 1502 Treffern) und gehört in einen eigenen Schritt.
+    //
+    // Wird dieser Test eines Tages rot, ist das kein Defekt, sondern das Signal, dass
+    // jemand die Präfix-Semantik eingeführt hat — dann gehört hier die neue Erwartung hin
+    // UND der Absatz in suche-kern.ts umgeschrieben.
+    expect(sucheArtikel(db, 'Verjähr', { limit: 5 }).gesamt).toBe(0);
+  });
+
+  it('das Volltoken «Verjährung» findet dagegen sehr wohl', () => {
+    // Gegenstück: die 0 oben ist die Präfix-Grenze, kein toter Index.
+    expect(sucheArtikel(db, 'Verjährung', { limit: 5 }).gesamt).toBeGreaterThan(100);
+  });
+});
+
 describe('K2 Spiegel-Pflicht: die zwei Rang-Implementierungen dürfen nicht auseinanderlaufen', () => {
   it('KERNERLASSE in suche-kern.ts == KERNERLASSE in artikelRanking.ts', async () => {
     // Die Rang-Politik steht an zwei Stellen (SQL für den Edge-Weg, TypeScript für den

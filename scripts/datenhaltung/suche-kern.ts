@@ -139,14 +139,36 @@ export function baueFtsMatch(query: string): string | null {
  * `{sp1 sp2} : term`). Trägt die TOPISCHE STUFUNG des Edge-Rankings (K2).
  *
  * Die Spaltennamen werden NICHT aus Nutzereingabe gebildet, sondern kommen aus der
- * festen Liste in fts.ts; die Terme bleiben wie in `baueFtsMatch` gequotet, also
- * syntax- und injektionsneutral.
+ * festen Liste oben (FTS_SPALTEN_HAUPT/-NEBEN); die Terme bleiben wie in `baueFtsMatch`
+ * gequotet, also syntax- und injektionsneutral.
+ *
+ * ── EIN Term genügt (OR), nicht ALLE (implizites AND) ───────────────────────────────
+ * Die Terme werden mit `OR` verknüpft. Das ist keine Geschmacksfrage, sondern die
+ * Bedingung dafür, dass die Stufung dasselbe BEDEUTET wie im Client:
+ * `artikelRanking.bewerte()` setzt Stufe 0, sobald IRGENDEIN getippter Term die primäre
+ * Marginalie oder die Gliederung trifft — es prüft je Term und merkt sich das Ergebnis,
+ * es verlangt nicht alle Terme im selben Feld.
+ *
+ * Bis zum 31.8.2026 stand hier das implizite AND von FTS5, und das kippte mehrwortige
+ * Alltags-Queries (gemessen gegen daten/normtext.db, Gegenprüfungs-Befund F2):
+ *   «Verjährung Fristen»   → OR 127 auf Rang 8 (AND) statt Rang 1 (OR)
+ *   «Verjährung Forderung» → Top-5 ohne einen einzigen Verjährungs-Grundartikel (AND);
+ *                            mit OR: 60 · 67 · 130 · 134 · 135
+ * Der Client lieferte in denselben Fällen Rang 1. Die behauptete Ranking-Parität bestand
+ * also für Einwort-Queries und nur für sie.
+ *
+ * RECALL-NEUTRAL, konstruktiv und gemessen: dieser Ausdruck geht NICHT in die
+ * Treffermenge ein. Die bestimmt allein `baueFtsMatch` im `treffer`-CTE; `haupt` und
+ * `neben` sind LEFT-JOIN-Mengen, die nur die Sortierstufe setzen (SQL_ARTIKEL_TREFFER).
+ * Eine Verbreiterung kann darum keinen Treffer hinzufügen und keinen verlieren.
+ * Gegenprobe über die volle Pagination: «Verjährung Fristen» 23 Treffer vorher wie
+ * nachher, «Miete Kündigung» 20 vorher wie nachher, die Mengen elementweise identisch.
  */
 export function baueFtsSpaltenMatch(query: string, spalten: readonly string[]): string | null {
   const terme = query.match(/[\p{L}\p{N}]+/gu) ?? [];
   if (terme.length === 0 || spalten.length === 0) return null;
   const praefix = `{${spalten.join(' ')}} : `;
-  return terme.map((t) => praefix + '"' + t + '"').join(' ');
+  return terme.map((t) => praefix + '"' + t + '"').join(' OR ');
 }
 
 /** Nächster Seiten-Offset oder null. */
@@ -241,6 +263,37 @@ const BM25 = `bm25(fts_artikel, ${BM25_GEWICHTE.join(', ')})`;
 // «Edge-Ranking gegen dasselbe S4-Testset» und der Konstanten-Abgleich stehen in
 // scripts/datenhaltung/suche-rang.test.ts. Wer KERNERLASSE hier oder dort ändert,
 // läuft dort rot.
+//
+// ── WO DIE PARITÄT GILT — UND WO NICHT (ehrlich, 31.8.2026) ──────────────────────
+// Nachtrag nach Gegenprüfungs-Befund F2. Die ursprüngliche Fassung dieses Blocks las
+// sich, als sei der Edge-Weg dem Client-Weg rundum gleichwertig. Das war überzeichnet.
+// Die Bilanz nach dem Fix, gemessen gegen daten/normtext.db:
+//
+//   GILT · Stufenmodell (Hauptthema / Nebenerwähnung / Texttreffer) — identisch.
+//   GILT · Stufen-Auslösung bei mehreren Termen: EIN Term im Feld genügt beidseits.
+//          Bis zum 31.8. verlangte der SQL-Spaltenfilter ALLE Terme in derselben
+//          Spaltengruppe («Verjährung Fristen» → OR 127 auf Rang 8 statt 1); behoben
+//          in `baueFtsSpaltenMatch` (dort die Messreihe).
+//   GILT · Ordnung innerhalb der topischen Stufen: Kernerlass, Ebene, Artikelnummer.
+//
+//   GILT NICHT · PRÄFIX-TREFFER. Der Client sucht mit FlexSearch `tokenize: 'forward'`,
+//          also ist ein Token über jeden seiner Präfixe auffindbar; `artikelRanking.trifft()`
+//          prüft entsprechend mit `startsWith`. Der DB-Weg sucht mit gequoteten,
+//          VOLLSTÄNDIGEN Tokens. Folge, gemessen: «Verjähr» → Client findet, DB 0 Treffer.
+//          Das ist eine BEWUSSTE Abweichung, kein Versehen. FTS5 könnte es (`"Verjähr"*`),
+//          aber es ist keine Rang-, sondern eine RECALL-Änderung auf jeder Query, und sie
+//          ist teuer: lokal, warm, n=3 Median über daten/normtext.db
+//            «Verjährung»  4,5 ms /  259 Treffer  →  präfix  8,2 ms /  299
+//            «Miete»       3,1 ms /  165          →  präfix  9,6 ms /  309
+//            «Eigentum»   15,6 ms /  658          →  präfix 107,1 ms / 1502   (6,9x)
+//            «Kündigung»   8,3 ms /  376          →  präfix 20,0 ms /  519
+//          Über den Turso-HTTP-Weg kommt das ungemessen obendrauf. Eine Änderung, die
+//          Treffermenge UND Latenz jeder Query verschiebt, gehört in einen eigenen Schritt
+//          mit eigener Messung und eigener Gegenprüfung — nicht in eine Fix-Runde.
+//          Roadmap-Punkt: QS-BASIS «Präfix-Parität des Edge-Weges».
+//   GILT NICHT · Synonym-Expansion. Der Client zieht über `vokabular.expandiereSuchbegriff`
+//          zusätzliche Recall-Terme; der DB-Weg sucht nur die getippten. Das war schon vor
+//          diesem Schritt so und ist hier nur der Vollständigkeit halber benannt.
 
 /** Kern-Kodifikationen in Rang-Reihenfolge — SPIEGEL von KERNERLASSE in
  *  src/lib/suche/artikelRanking.ts (dort begründet: die im juristischen Alltag am
