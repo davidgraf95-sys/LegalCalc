@@ -234,7 +234,11 @@ export function FnRef({ artikel, nr, klasse, kl }: {
       {auf && html && pos && typeof document !== 'undefined' && createPortal(
         <span ref={popRef} role="note" dangerouslySetInnerHTML={{ __html: html }}
           style={{ top: pos.top, left: pos.left }}
-          className="fixed z-30 block w-72 max-w-[78vw] cursor-auto rounded-md border border-line bg-paper p-2 text-left text-xs font-normal not-italic leading-normal text-ink-500 shadow-lg [&_a]:text-brass-700 [&_a]:underline" />,
+          /* A3-2 (R3-β): Anatomie aus `.lc-schwebeflaeche` (Fläche · Rahmen ·
+             Radius · Schatten). FIX dabei zweierlei: `--paper` statt der
+             Ebene darüber (`--paper-raised`) und `rounded-md` als einziger
+             Ausreisser unter acht Schwebeflächen. */
+          className="lc-schwebeflaeche fixed z-30 block w-72 max-w-[78vw] cursor-auto p-2 text-left text-xs font-normal not-italic leading-normal text-ink-500 [&_a]:text-brass-700 [&_a]:underline" />,
         document.body,
       )}
     </span>

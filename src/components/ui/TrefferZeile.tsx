@@ -43,14 +43,23 @@ import type { ReactNode } from 'react';
  *  gleiche sein, sonst greift der Titel-Hover nicht. */
 export const TREFFER_ZEILE_RAHMEN = 'group/treffer flex items-center gap-3 min-w-0';
 
-export function TrefferZeile({ titel, untertitel, marke, pfeil = '→', streifen }: {
+export function TrefferZeile({ titel, untertitel, meta, marke, pfeil = '→', streifen }: {
   titel: ReactNode;
   /** Zweite Zeile (Sub-Label, Rechtsgebiet, Snippet) — höchstens zwei Zeilen. */
   untertitel?: ReactNode;
+  /** A3-3 (R3-β, 31.8.2026) · dritte Zeile: die HERKUNFT des Treffers (Gericht/
+   *  Kanton · Datum · Aktenzeichen). Additiv aufgenommen für die Live-Suche
+   *  (entscheidsuche.ch), deren Zeile diese Angaben führt — ein Entscheid ohne
+   *  seine Fundstelle ist keine Fundstelle (§8). Der Slot bringt seine Anatomie
+   *  mit (Micro-Grad, umbrechende Reihe), damit sie nicht wieder je Fläche
+   *  entsteht; der Aufrufer gibt nur die Glieder. */
+  meta?: ReactNode;
   /** Badges/Status-Marken vor dem Pfeil (0…n). */
   marke?: ReactNode;
-  /** `↵` = «Enter springt» (Norm-Sprung der Suche); `null` = nicht anklickbar. */
-  pfeil?: '→' | '↵' | null;
+  /** `↵` = «Enter springt» (Norm-Sprung der Suche); `↗` = führt aus der App
+   *  hinaus (amtliche Fremdquelle, dieselbe Glyphe wie an den Quell-Links);
+   *  `null` = nicht anklickbar. */
+  pfeil?: '→' | '↵' | '↗' | null;
   /** Zeile in einem Streifen fester Höhe (Such-Panel): Titel ab `sm` gekappt. */
   streifen?: boolean;
 }) {
@@ -67,6 +76,9 @@ export function TrefferZeile({ titel, untertitel, marke, pfeil = '→', streifen
           streifen ? ' max-sm:line-clamp-2 sm:truncate' : ''}`}>{titel}</span>
         {untertitel !== undefined && untertitel !== null && untertitel !== '' && (
           <span className="block line-clamp-2 text-body-s leading-snug text-ink-500">{untertitel}</span>
+        )}
+        {meta && (
+          <span className="mt-1 flex flex-wrap items-center gap-x-2 text-micro text-ink-500">{meta}</span>
         )}
       </span>
       {marke && <span className="flex items-center gap-2 shrink-0">{marke}</span>}

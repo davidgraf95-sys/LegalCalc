@@ -6,6 +6,7 @@ import { SucheLeerzustand } from '../suche/SucheLeerzustand';
 import { leerOptionen } from '../suche/SucheLeerzustandKontext';
 import { aktivePosition, flacheTreffer, naechsterKey, vorigerKey, gewaehlterHref } from '../suche/trefferAuswahl';
 import { useZuletzt } from './useZuletzt';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 
 // ─── Globale Suche im Top-Streifen (UI-Welle: Dropdown überall) ─────────────
 //
@@ -304,9 +305,8 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
           (Panel zu, Feld unfokussiert), aber mit dem Finger erreichbar. Nur im
           Fokusmodus im DOM, damit er ausserhalb keine Tab-Station belegt. */}
       {breit && (
-        <button
-          type="button"
-          aria-label="Suche schliessen"
+        <SchliessKnopf
+          name="Suche schliessen"
           onClick={() => {
             setOffen(false);
             feld.current?.blur();
@@ -319,11 +319,12 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
             onFokusZurueck?.();
           }}
           // 44 px wie alle übrigen Bedienelemente dieser Zone (min-h-11/min-w-11);
-          // 36 px lagen unter dem Komfortmuster des Streifens.
-          className="absolute right-1 top-1/2 flex min-h-11 min-w-11 -translate-y-1/2 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-ink-900"
-        >
-          <span aria-hidden className="text-base leading-none">✕</span>
-        </button>
+          // 36 px lagen unter dem Komfortmuster des Streifens. Die SICHTBARE Box
+          // bleibt damit, wo sie war — A3-1 (R3-β) vereinheitlicht Glyph, Ton
+          // und Trefferfläche, nicht die Box der Zeile. Der Hover wird warm
+          // (brass-700) statt dunkel (ink-900): §G-j, eine Flexoki-Stufe.
+          klasse="absolute right-1 top-1/2 min-h-11 min-w-11 -translate-y-1/2"
+        />
       )}
       {(zeigtPanel || zeigtLeer) && (
         // Im Header intern scrollbar (David 28.6.): die geöffnete Trefferfläche

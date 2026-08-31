@@ -1,4 +1,5 @@
 import { AbrufFehler } from '../../../components/ui/AbrufFehler';
+import { GruppenKopf } from '../../../components/ui/GruppenKopf';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { VERNEHMLASSUNG_STATUS_LABEL } from '../../../lib/materialien/vernehmlassungen';
 import type { Geladen, MaterialStand } from './panelKontextLaden';
@@ -77,9 +78,9 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
     <div data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-1">
       {hatBotschaften && (
         <section data-v3-panel-material="botschaften" className="pt-1">
-          <p className="lc-overline">Entstehung
-            <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{botschaften?.length}</span>
-          </p>
+          {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs (`ui/GruppenKopf`)
+              — bis hierher sechsmal in den Panels handgezeichnet. */}
+          <GruppenKopf als="p" dicht titel="Entstehung" zahl={botschaften?.length} />
           <ul className="mt-0.5">
             {botschaften?.map((b) => (
               <li key={b.key} className="border-t border-line/60 py-1.5 first:border-t-0">
@@ -111,9 +112,7 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
       )}
       {hatVernehmlassungen && (
         <section data-v3-panel-material="vernehmlassungen" className="pt-2">
-          <p className="lc-overline">In Arbeit
-            <span className="num tabular-nums ml-1 font-normal normal-case text-ink-500">{vernehmlassungen?.length}</span>
-          </p>
+          <GruppenKopf als="p" dicht titel="In Arbeit" zahl={vernehmlassungen?.length} />
           <ul className="mt-0.5">
             {vernehmlassungen?.map((v) => (
               <li key={v.key} className="border-t border-line/60 py-1.5 first:border-t-0">

@@ -2,6 +2,7 @@ import { Fragment, useCallback, useEffect, useRef, useState, type KeyboardEvent 
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Topbar } from './Topbar';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
 import { useLocale } from '../locale';
@@ -493,9 +494,10 @@ export function Shell({ children }: { children: ReactNode }) {
             className="fixed top-0 left-0 z-40 h-full w-4/5 max-w-xs bg-paper-raised border-r border-line shadow-lg overflow-y-auto focus:outline-none [&_nav_a]:py-3 [&_nav_summary]:py-3">
             <div className="flex items-center justify-between px-4 py-3 border-b border-line sticky top-0 bg-paper-raised">
               <span className="lc-overline">Navigation</span>
-              <button type="button" className="lc-btn lc-btn-ghost lc-btn-sm" aria-label="Navigation schliessen" onClick={() => setSchubladeOffen(false)}>
-                <span aria-hidden className="text-base leading-none">✕</span>
-              </button>
+              {/* A3-1 (R3-β): EIN Schliess-✕ der App (`lc-btn-ghost` fällt weg,
+                  s. Baustein); fingertauglich bleibt es, weil der Baustein die
+                  Trefferfläche per `::after` auf `--tap-ziel-komfort` hebt. */}
+              <SchliessKnopf name="Navigation schliessen" onClick={() => setSchubladeOffen(false)} />
             </div>
             {/* Schublade trägt eigenen Kopf + der mobile Top-Streifen das Logo
                 → Marke in der Schublade ausblenden. */}

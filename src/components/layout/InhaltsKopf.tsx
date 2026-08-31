@@ -2,6 +2,7 @@ import type { KopfDaten } from './InhaltsKopfKontext';
 import { RuecksprungChip } from './RuecksprungChip';
 import { DeepLinkSkeleton } from './DeepLinkSkeleton';
 import { OrtsAngabe, StandAngabe } from './OrtsAngabe';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
 
 // ─── Inhalts-Kopf (Einzelansicht «analog Split-View», ohne Verschiebe-Optionen) ─
 //
@@ -152,11 +153,19 @@ export function InhaltsKopf({ daten, breiteKlasse, onSchliessen }: {
               versteckt ihn nicht. `ink-600` statt `ink-500`, weil 11-px-Text
               ≥ 4.5:1 tragen muss (F2). */}
           {daten.stand && <StandAngabe stand={daten.stand} />}
-          <button type="button" onClick={onSchliessen}
-            aria-label="Schliessen (zur Startseite)" title="Schliessen (zur Startseite)"
-            className="lc-leiste-griff">
-            <span aria-hidden className="text-base leading-none">✕</span>
-          </button>
+          {/* A3-1 (R3-β): EIN Schliess-✕ der App — hier mit `ton="geerbt"`,
+              weil die Farbe aus `lc-leiste-griff` kommt: B6 (28.7.2026) hält
+              für ALLE Bedien-Elemente dieser Leiste EINE Anatomie fest, und
+              eine datierte Entscheidung mit Vorfall wird nicht von einem
+              späteren Sweep überschrieben. Neu ist auch hier die
+              Komfort-Trefferfläche des Bausteins. */}
+          <SchliessKnopf name="Schliessen (zur Startseite)" onClick={onSchliessen}
+            ton="geerbt" klasse="lc-leiste-griff"
+            /* `komfort={false}`: die Leiste steht dicht (Suche · Menüs · Stand ·
+               ✕) — 44 px lägen über der Stand-Angabe und dem Menü-Paar links
+               davon. B6 gibt der Leiste ihr Mass, hier gilt es auch für die
+               Fläche. */
+            komfort={false} />
         </div>
       </div>
       {/* W2·10-UI-NAV/R5 + R7: die beiden Sprung-Rückmeldungen der Einzelansicht.

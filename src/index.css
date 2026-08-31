@@ -1654,6 +1654,44 @@
      senkrecht beschriftete Öffner, wenn die Gliederung eingeklappt ist. Bis zum
      Nachzug stand die Wertekette als 13 Utilities im JSX — Design-Werte gehören
      zu den anderen `lc-leiste-*`-Klassen (§13), nicht in eine Layout-Datei. */
+  /* ─── Schliess-✕ (A3-1, R3-β 31.8.2026) ──────────────────────────────────
+     Anatomie des EINEN Schliess-Knopfes (`components/ui/SchliessKnopf.tsx`,
+     dort die Messreihe der sieben Fundstellen und die Kanon-Wahl). Hier steht
+     nur, was CSS besser kann als ein Klassen-String: die TREFFERFLÄCHE.
+
+     Gemessen waren sichtbare Boxen von 24 px (Leisten-Griff im Inhaltskopf)
+     bis 44 px; drei der sieben lagen unter dem AAA-Komfortmass (WCAG 2.5.5).
+     Die Boxen anzugleichen ginge nicht ohne Schaden — 44 px sprengen die
+     Reiter-Zeile. Also wächst die FLÄCHE, nicht die Optik: ein zentriertes,
+     unsichtbares `::after` hebt die Untergrenze auf `--tap-ziel-komfort`,
+     ohne einen Pixel am Bild zu ändern (`width/height: 100%` hält es an
+     grösseren Knöpfen deckungsgleich mit der sichtbaren Box).
+
+     Der Wert kommt aus dem Token, nie als Zahl (F9, tap-ziel-token.test.ts) —
+     und als KLASSE statt als `after:min-w-[…]`-Utility, aus demselben Grund
+     wie bei `.lc-leiste-griff-komfort`: der Wert bleibt bei seinem Token, und
+     die Wächter finden die Flächen an einem stabilen Selektor.
+
+     WARUM ZWEI KLASSEN (und nicht eine): die vergrösserte Fläche liegt als
+     positioniertes Pseudo-Element ÜBER allem, was sie überlappt — sie nimmt
+     dem Nachbarn also dessen Klicks. Wo das ✕ frei steht (Schubladen-Kopf,
+     Popover-Kopf, Panel-Kopf: links davon nur Text), ist das folgenlos und
+     der Zugewinn echt. In einer DICHTEN Griff-Zeile (Reiter-Liste ⧉ ✕,
+     Inhaltskopf-Leiste) läge sie über den unmittelbaren Nachbarknöpfen bzw.
+     über den Zeilen darüber und darunter — dort wäre die Komfort-Fläche ein
+     Bedienfehler, kein Gewinn. Darum trägt sie der Aufrufer bewusst (Prop
+     `komfort`, Default an; die zwei Ausnahmen sind am Fundort begründet und
+     im Wächter aufgeführt). WCAG 2.5.8 (AA, 24 px) hält die Grundklasse in
+     jedem Fall. */
+  .lc-schliessknopf {
+    @apply relative inline-flex shrink-0 items-center justify-center rounded-md transition-colors;
+    min-height: var(--tap-ziel); min-width: var(--tap-ziel);
+  }
+  .lc-schliessknopf-komfort::after {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    min-width: var(--tap-ziel-komfort); min-height: var(--tap-ziel-komfort);
+  }
   .lc-leiste-schiene {
     @apply flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors;
   }
@@ -1730,6 +1768,33 @@
      Schatten — dritte Stufe neben lc-card/lc-tile (FAHRPLAN-DESIGN 2.3).
      Padding bewusst beim Verwender (p-3 dichte Zeilen, p-4 Gruppen). */
   .lc-panel { @apply bg-surface border border-line rounded-lg; }
+
+  /* ─── Schwebefläche (A3-2, R3-β 31.8.2026) ────────────────────────────────
+     Die EINE Anatomie für alles, was ÜBER dem Inhalt steht und dorthin
+     zurückverschwindet: Menüs, Auswahl-Blätter, Übersichten, Vorschau-Karten.
+     GEMESSEN waren acht Fundstellen mit derselben Wertekette und drei
+     Abweichungen:
+       bg-paper-raised · border-line · rounded-lg · shadow-lg   5×
+         SprachUmschalter · DatumsFeld · VerlaufUebersicht ·
+         ReiterUebersicht · LeserAnsichtV3 («Ansicht ▾»)
+       dieselbe Kette auf `--paper` statt `--paper-raised`      2×  ← Fehler
+         LeserTrefferBlatt · ArtikelBody-Popover (dieses zudem `rounded-md`)
+       dieselbe Kette in `rounded-xl`                           1×
+         LeserPanel — begründete Abweichung, s. dort (die Zone gibt dem Blatt
+         eine Polsterung; der Radius gehört zur Gestalt der ZONE)
+     `bg-surface-raised` und `bg-paper-raised` sind dabei WERTIDENTISCH
+     (`--surface-raised: var(--paper-raised)`, oben) — die Kette war also
+     dieselbe, nur unter zwei Namen.
+
+     Der Grund für die beiden `--paper`-Fundstellen ist der Fehler selbst:
+     eine schwebende Fläche in der Grundfarbe der Seite hat keine eigene
+     Höhe — der Schatten behauptet eine Ebene, die Fläche dementiert sie.
+     `--paper-raised` ist die eine Stufe darüber (Token-Herleitung oben).
+
+     Position, z-Index und Breite bleiben beim Aufrufer: WO die Fläche liegt,
+     entscheidet ihr Anker, nicht ihre Anatomie (dieselbe Trennung wie beim
+     `.lc-scrim`). */
+  .lc-schwebeflaeche { @apply bg-paper-raised border border-line rounded-lg shadow-lg; }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets
