@@ -6,6 +6,7 @@ import { zahl } from '../lib/vorlagen/datum';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
@@ -112,12 +113,12 @@ function eingabeInhalt({ a, set }: SeiteCtx<AfAntworten>, schritt: number) {
         </Field>
         {a.verguetung === 'pauschal' && (
           <Field label="Pauschalhonorar (CHF)">
-            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.pauschalCHF} onChange={(e) => set('pauschalCHF', e.target.value)} placeholder="z. B. 5000.00" />
+            <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.pauschalCHF} onChange={(v) => set('pauschalCHF', v)} placeholder="z. B. 5'000.00" />
           </Field>
         )}
         {a.verguetung === 'aufwand' && (
           <Field label="Stundenansatz (CHF)">
-            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.stundensatzCHF} onChange={(e) => set('stundensatzCHF', e.target.value)} placeholder="z. B. 250.00" />
+            <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.stundensatzCHF} onChange={(v) => set('stundensatzCHF', v)} placeholder="z. B. 250.00" />
           </Field>
         )}
         <Checkbox

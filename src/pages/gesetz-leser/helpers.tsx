@@ -8,6 +8,7 @@ import { sachgruppe, topTitel, subTitel, type KantonSystematik } from '../../lib
 import { norm } from '../../lib/suche/normQuery';
 import { datumCh } from '../../lib/normtext/erlassKopfText';
 import { erlassPfadRoh, erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
+import type { OverlineGlied } from '../../components/layout/LeserKopfGeruest';
 
 // M11 (§5 Verzahnung): Reverse-Resolver SR-Nummer → interner Erlass, ABGELEITET
 // aus dem Register (keine Handtabelle, §3/§5 eine Quelle). Nur Bund-Erlasse, die
@@ -236,31 +237,75 @@ export function tabTitel(kuerzel: string, titel: string): string {
 //     das amtliche Sachgebiet bleibt als « · Gebiet»-Zusatz (N13).
 //   • Kanton → «Kanton XX · Gesetz|Verordnung» (⑥); wo erlassTyp neutral ist
 //     (sonstiges), das amtliche Sachgebiet als Zusatz behalten (N13).
-export function kopfOverline(
+//
+// ─── B-7 (W2·19-DESIGN-KONSISTENZ, Runde 2, 31.8.2026) · DIE ORDNUNG ─────────
+//
+// BEFUND: die Overline beantwortet an jedem Leser dieselbe Frage («woher kommt
+// das Dokument?»), und der Erlass-Kopf beantwortete sie ärmer als der
+// Entscheid-Leser. Der Kanton-Zweig VERWARF sein Sachgebiet, sobald eine Art
+// bekannt war (`const zusatz = typ ?? overlineGebiet` — das eine `??`, das die
+// zweite Auskunft wegwirft statt sie danebenzustellen). GEMESSEN heisst das:
+// an einem kantonalen Gesetz mit verifiziertem Sachgebiet stand «Kanton BS ·
+// Gesetz», das Sachgebiet blieb ungenannt — obwohl es erhoben, verifiziert und
+// eine Zeile weiter (Erlass-Übersicht) sichtbar ist.
+//
+// Die Ordnung ist jetzt ebenen-neutral und dreigliedrig — Herkunft/Ebene ·
+// Art/Abteilung · Sachgebiet (Definition und Ton: `layout/LeserKopfGeruest`,
+// `KopfOverline`) —, und ein unbekanntes Glied entfällt ERSATZLOS (§8), statt
+// ein bekanntes zu verdrängen.
+//
+// ZWEI AUSSPIELUNGEN, EINE REGEL (§5): `kopfGlieder` ist die Wahrheit,
+// `kopfOverline` fügt sie für die Aufrufer, die eine Zeichenkette brauchen
+// (Erlass-Übersicht, Art-Zeile). Beide Bund-Ausspielungen bleiben Zeichen für
+// Zeichen wie bisher; einzig der Kanton gewinnt sein drittes Glied.
+//
+// INTERNATIONAL trägt bewusst NUR das erste Glied: sein Sachgebiet heisst
+// «International / Staatsverträge» (`GEBIET_LABEL`) und wiederholte damit die
+// Herkunft. Ein Glied, das nichts hinzufügt, ist keine Auskunft (§8).
+export function kopfGlieder(
   erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet'>,
   erlassTyp: ErlassTyp | undefined,
   overlineGebiet: string | null,
-): string {
+): OverlineGlied[] {
+  const sachgebiet: OverlineGlied[] = overlineGebiet
+    ? [{ text: overlineGebiet, rolle: 'sachgebiet' }]
+    : [];
   if (erlass.rechtsgebiet === 'international') {
-    if (erlassTyp === 'staatsvertrag') return 'Staatsvertrag';
-    return overlineGebiet ?? 'Staatsvertrag';
+    if (erlassTyp === 'staatsvertrag') return [{ text: 'Staatsvertrag', rolle: 'herkunft' }];
+    return [{ text: overlineGebiet ?? 'Staatsvertrag', rolle: 'herkunft' }];
   }
   if (erlass.ebene === 'bund') {
+    // «Bundesgesetz»/«Verordnung» IST hier die Herkunfts-Angabe: der amtliche
+    // Erlassname nennt Ebene und Art in EINEM Wort. Ihn in «Bund · Gesetz» zu
+    // zerlegen, wäre keine Vereinheitlichung, sondern ein neuer, unamtlicher
+    // Begriff (§1 vor Symmetrie).
     const typ =
       erlassTyp === 'verfassung' ? 'Bundesverfassung'
       : erlassTyp === 'verordnung' ? 'Verordnung'
       : erlassTyp === 'staatsvertrag' ? 'Staatsvertrag'
       : 'Bundesgesetz';
-    return overlineGebiet ? `${typ} · ${overlineGebiet}` : typ;
+    return [{ text: typ, rolle: 'herkunft' }, ...sachgebiet];
   }
-  const basis = `Kanton ${erlass.kanton}`;
   const typ =
     erlassTyp === 'gesetz' ? 'Gesetz'
     : erlassTyp === 'verordnung' ? 'Verordnung'
     : erlassTyp === 'verfassung' ? 'Verfassung'
     : null;
-  const zusatz = typ ?? overlineGebiet;
-  return zusatz ? `${basis} · ${zusatz}` : basis;
+  return [
+    { text: `Kanton ${erlass.kanton}`, rolle: 'herkunft' },
+    ...(typ ? [{ text: typ, rolle: 'art' } as OverlineGlied] : []),
+    ...sachgebiet,
+  ];
+}
+
+/** Dieselbe Ordnung als Zeichenkette — für Aufrufer ohne Darstellungs-Kontext
+ *  (Art-Zeile der Erlass-Übersicht). Nie ein zweiter Regelsatz (§5). */
+export function kopfOverline(
+  erlass: Pick<BrowseErlass, 'ebene' | 'kanton' | 'rechtsgebiet'>,
+  erlassTyp: ErlassTyp | undefined,
+  overlineGebiet: string | null,
+): string {
+  return kopfGlieder(erlass, erlassTyp, overlineGebiet).map((g) => g.text).join(' · ');
 }
 
 // W2·19-GLIEDERUNG/S8: `passtAufSuche` ist hier ENTFALLEN. Sie war die

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { NAVIGATION } from '../../lib/navigation';
 import { Icon } from '../Icon';
+import { RubrikKachel } from '../ui/RubrikKachel';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { GesetzeChips } from './GesetzeChips';
 
@@ -22,32 +22,36 @@ const z = STARTSEITE_ZAEHLER;
 const nf = (n: number) => n.toLocaleString('de-CH');
 
 // Anzeige je Rubrik, verschlüsselt über das Navigations-Ziel (die EINE Ordnung).
-const RUBRIK: Record<string, { icon: string; nutzen: string; zaehler?: string }> = {
+// C-5 (31.8.2026): der Zähler steht nicht mehr als eine Zeichenkette in der
+// Fusszeile, sondern als Zahl + Einheit im Kanon-Kopf der Kachel
+// (`ui/RubrikKachel`). Der WORTLAUT ist unverändert — er wandert nur in die
+// Einheit: «227 Erlasse im Volltext» liest sich weiterhin als ein Satz.
+const RUBRIK: Record<string, { icon: string; nutzen: string; zahl?: string; einheit?: string }> = {
   '/gesetze': {
     icon: 'scale',
     nutzen: 'Bundes- und Kantonserlasse im Volltext, geltende Fassung mit Stand und Link zur amtlichen Quelle.',
-    zaehler: `${nf(z.gesetzeVolltext)} Erlasse im Volltext`,
+    zahl: nf(z.gesetzeVolltext), einheit: 'Erlasse im Volltext',
   },
   '/rechtsprechung': {
     icon: 'court',
     nutzen: 'Bundesgerichts- und weitere Gerichtsentscheide, nach Sachgebiet erschlossen und mit den Normen verzahnt.',
-    zaehler: `${nf(z.rechtsprechungVolltext)} Entscheide im Volltext`,
+    zahl: nf(z.rechtsprechungVolltext), einheit: 'Entscheide im Volltext',
   },
   '/materialien': {
     icon: 'clipboard',
     nutzen: 'Kreisschreiben, Leitfäden und Wegleitungen der Bundesbehörden, je mit Link zur amtlichen Fassung.',
     // Zähler «erfasste» (§8, nie «Volltext» — alle sind nur-live-link/Verweis; E6a·M5, §0/B10a).
-    zaehler: `${nf(z.materialien)} amtliche Materialien erfasst`,
+    zahl: nf(z.materialien), einheit: 'amtliche Materialien erfasst',
   },
   '/rechner': {
     icon: 'calculator',
     nutzen: 'Fristen, Kosten und Zuständigkeiten nach festen Regeln, mit offengelegtem Rechenweg.',
-    zaehler: `${nf(z.rechner)} Rechner`,
+    zahl: nf(z.rechner), einheit: 'Rechner',
   },
   '/vorlagen': {
     icon: 'document',
     nutzen: 'Verträge und Eingaben aus Bausteinen mit Normbezug, als Word und PDF.',
-    zaehler: `${nf(z.vorlagen)} Vorlagen`,
+    zahl: nf(z.vorlagen), einheit: 'Vorlagen',
   },
 };
 
@@ -62,28 +66,14 @@ export function RubrikKacheln() {
         {rubriken.map((a) => {
           const r = RUBRIK[a.ziel!];
           return (
-            /* C-3 (31.8.2026): der Hover trug `hover:border-line-strong
-               hover:shadow-md` — Linien-Verstärkung PLUS Elevation, die dritte
-               der drei gemessenen Karten-Hover-Grammatiken. Kanon ist die
-               Farbstufe (DESIGN-REGLEMENT §G-j: Interaktions-Zustände laufen
-               über die Wärme, eine Flexoki-Stufe tiefer), wie sie `.lc-card`
-               seit C-3 zentral trägt. Diese Kachel ist `lc-tile` und darum
-               nicht von jener Regel erfasst — die Anatomie bleibt unangetastet
-               (C-5 ist Runde 2), nur die Hover-Kette folgt dem Kanon. */
-            <Link key={a.ziel} to={a.ziel!}
-              className="group lc-tile p-5 no-underline flex flex-row sm:flex-col items-start gap-3
-                         transition-colors duration-fast hover:border-brass-400">
-              <span className="shrink-0 text-brass-600" aria-hidden>
-                <Icon name={r.icon} className="w-5 h-5" />
-              </span>
-              <span className="min-w-0 space-y-1">
-                <span className="block text-h3 font-display font-semibold text-ink-900 group-hover:text-brass-800 transition-colors">
-                  {a.titel}
-                </span>
-                <span className="block text-body-s text-ink-700 leading-snug">{r.nutzen}</span>
-                {r.zaehler && <span className="block text-micro num text-ink-500">{r.zaehler}</span>}
-              </span>
-            </Link>
+            /* C-5 (31.8.2026): Anatomie und Hover-Kette liegen jetzt in
+               `ui/RubrikKachel` — dieselbe Kachel wie der /gesetze-Einstieg.
+               Die C-3-Herleitung (Hover über die Farbstufe, §G-j, zentral an
+               `.lc-card`) gilt dort weiter; sie greift hier nun automatisch,
+               weil die Kachel `lc-card` ist und nicht mehr `lc-tile`. */
+            <RubrikKachel key={a.ziel} ziel={a.ziel!} titel={a.titel}
+              icon={<Icon name={r.icon} className="w-5 h-5" />}
+              zahl={r.zahl} einheit={r.einheit} nutzen={r.nutzen} />
           );
         })}
       </div>

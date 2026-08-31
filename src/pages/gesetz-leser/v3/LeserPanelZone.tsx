@@ -300,10 +300,14 @@ export function LeserPanelZone({
               abzudunkeln. `components/layout/Shell.tsx` hat für den
               Schubladen-Scrim genau das schon notiert («bg-ink-900 wäre im
               Dunkelmodus hell»); hier stand der Fehler noch. Deckkraft
-              unverändert 30 % — reine Farbkorrektur, keine Ton-Änderung. */}
+              unverändert 30 % — reine Farbkorrektur, keine Ton-Änderung.
+
+              F2-1 (31.8.2026): derselbe Wert, jetzt aus `.lc-scrim`
+              (src/index.css) statt als Utility-Kette — die Zahl der ROLLE
+              «angeschlagenes Blatt» steht seither an genau einer Stelle. */}
           {modal && (
             <div data-v3-panel-scrim
-              className={imPaneBlatt ? 'pointer-events-auto absolute inset-0 z-40 bg-black/30' : 'fixed inset-0 z-40 bg-black/30'}
+              className={imPaneBlatt ? 'lc-scrim pointer-events-auto absolute inset-0 z-40' : 'lc-scrim fixed inset-0 z-40'}
               onClick={schliesse} aria-hidden />
           )}
           <div

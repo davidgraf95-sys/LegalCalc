@@ -7,6 +7,7 @@ import {
   type Phase,
 } from '../lib/gruendungsunterlagen';
 import { ErgebnisSprung, Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { NormChip } from '../components/vorlagen/NormChip';
 import { NormText } from '../components/NormText';
 import { GmbhDokumentmappe } from '../components/vorlagen/GmbhDokumentmappe';
@@ -134,8 +135,13 @@ export function VorlageGmbhGruendung() {
               <option value="rs">Revisionsstelle bestellt</option>
             </select>
           </Field>
-          <Field label="Leistungen der Gesellschafter (CHF, optional)">
-            <input className={inputCls} inputMode="numeric" placeholder="z. B. 20000" value={leistungen} onChange={(e) => setLeistungen(e.target.value)} />
+          {/* R2-F (Rest aus R2-E): «optional» gehört in die Prop (rendert
+              « · optional»), und CHF-Beträge tragen das Haus-BetragsFeld mit
+              Tausender-Apostroph. Der Wert-Vertrag bleibt: das Feld gibt den
+              bereinigten Rohwert zurück, und die Auswertung oben streift
+              Apostrophe ohnehin ab. */}
+          <Field label="Leistungen der Gesellschafter (CHF)" optional>
+            <BetragsFeld className={inputCls} placeholder="z. B. 20'000" value={leistungen} onChange={setLeistungen} />
           </Field>
         </div>
         <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-body-s text-ink-700', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-6 gap-y-2 text-body-s text-ink-700')}>

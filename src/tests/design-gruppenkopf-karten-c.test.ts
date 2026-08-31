@@ -67,6 +67,13 @@ describe('C-2/C-6/C-7 · Gruppenköpfe laufen über EINEN Baustein', () => {
     'components/normtext/GesetzeGliederung.tsx',
     'components/normtext/RechtsgebietSicht.tsx',
     'components/Katalog.tsx',
+    // R2-A-NACHZUG (31.8.2026): die drei Flächen, die das Rezept nach B2/BAU-5
+    // noch selbst zeichneten — Panel-Kopf, Erlass-Übersicht, Startseiten-
+    // Sektionslabel. Alle drei liefen mit `items-baseline` bzw. ohne
+    // `text-brass-700` und waren damit genau die Streuung, die C-2 abbaut.
+    'components/kontext/KontextPanel.tsx',
+    'pages/gesetz-leser/parts/ErlassUebersicht.tsx',
+    'pages/Startseite.tsx',
   ];
 
   it('keine der migrierten Flächen zeichnet das Rezept noch selbst', () => {

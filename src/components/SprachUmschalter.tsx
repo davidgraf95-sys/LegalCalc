@@ -53,7 +53,7 @@ export function SprachUmschalter() {
                   <span className="num uppercase text-xs mr-2">{l.code}</span>{l.label}
                 </span>
                 {l.inBearbeitung
-                  ? <span className="lc-badge lc-badge-soft shrink-0">in Bearbeitung</span>
+                  ? <span className="lc-badge-geplant shrink-0">In Vorbereitung</span>
                   : aktiv && <span aria-hidden className="text-brass-700">✓</span>}
               </button>
             );

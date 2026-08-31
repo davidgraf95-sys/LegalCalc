@@ -10,6 +10,8 @@ import { KANTONE } from '../../lib/kantone';
 import { stillstandsperioden } from '../../data/zpoFeiertage';
 import type { Kanton } from '../../types/legal';
 import { ErgebnisBlock } from '../ErgebnisBlock';
+import { DatumsFeld } from '../DatumsFeld';
+import { ErgebnisPlatzhalter, FehlerBox, Field } from '../vorlagen/ui';
 import { IcsExportButton } from '../IcsExportButton';
 import type { FristMarkierung } from '../start/FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -178,42 +180,48 @@ export function EinfacheFristForm({ minimal = false, onErgebnis }: {
       {/* items-end: bei verschieden hohen Labels (z.B. zweizeilig) bleiben die
           Eingabefelder auf gleicher Höhe (Auftrag David). */}
       <div className={`grid grid-cols-2 ${minimal ? '' : pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
-        <label className="block space-y-1">
-          <span className="lc-overline block">Datum (Ereignis)</span>
-          <input type="date" value={start} onChange={(e) => setStart(e.target.value)}
-            className={inputCls + ' w-full'} />
-        </label>
-        <label className="block space-y-1">
-          <span className="lc-overline block">Frist</span>
+        {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in allen übrigen Rechner-
+            Formularen (ZPO, SchKG, Gewährleistung …) statt der hauseigenen
+            `<label><span class="lc-overline">`-Kopie — Label und Control sind
+            damit auch programmatisch verknüpft (htmlFor bzw. aria-labelledby
+            beim zusammengesetzten DatumsFeld). */}
+        <Field label="Datum (Ereignis)">
+          {/* R2-E/F1-1: kein natives `type="date"` mehr. Der Browser rendert es
+              in SEINER Locale — auf einem us-englischen Profil also MM/DD/YYYY,
+              und genau dieses Feld trägt das fristauslösende Ereignis. Das
+              Haus-DatumsFeld schreibt TT.MM.JJJJ fest; der Wert bleibt ISO
+              (yyyy-MM-dd), die Engines sehen also unverändert dasselbe. */}
+          <DatumsFeld value={start} onChange={setStart} className={inputCls + ' w-full'} />
+        </Field>
+        <Field label="Frist">
           <input type="number" min={1} step={1} value={Number.isNaN(laenge) ? '' : laenge}
             onChange={(e) => setLaenge(parseInt(e.target.value, 10))}
             className={inputCls + ' w-full'} />
-        </label>
-        <label className="block space-y-1">
-          <span className="lc-overline block">Einheit</span>
+        </Field>
+        <Field label="Einheit">
           <select value={einheitEffektiv} onChange={(e) => setEinheit(e.target.value as Einheit)}
             className={inputCls + ' w-full'}>
             {einheiten.map((e) => <option key={e.code} value={e.code}>{e.label}</option>)}
           </select>
-        </label>
-        <label className="block space-y-1">
-          <span className="lc-overline block">Kanton (Feiertage)</span>
+        </Field>
+        <Field label="Kanton (Feiertage)">
           <select value={kanton} onChange={(e) => setKanton(e.target.value as Kanton)}
             className={inputCls + ' w-full'}>
             {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
-        </label>
+        </Field>
       </div>
 
       {minimal ? (
         // Startseite-Schnellrechner: kompakte Verfahrens-/Ferien-Wahl als
         // Dropdown, ohne die Erläuterungstexte (Auftrag David: möglichst wenig).
-        <label className="block space-y-1 max-w-xs">
-          <span className="lc-overline block">Ferien / Stillstand</span>
-          <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
-            {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
-          </select>
-        </label>
+        <div className="max-w-xs">
+          <Field label="Ferien / Stillstand">
+            <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+              {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
+            </select>
+          </Field>
+        </div>
       ) : (
         <fieldset className="space-y-1.5">
           <legend className="lc-overline">Ferien / Stillstand</legend>
@@ -241,9 +249,15 @@ export function EinfacheFristForm({ minimal = false, onErgebnis }: {
       )}
 
       {!gueltig ? (
-        <p className="text-body-s text-ink-500">Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort.</p>
+        /* R2-E/F1-3: der Leerzustand des Ergebnisplatzes ist der geteilte
+           `ErgebnisPlatzhalter` (R13) statt eines losen Satzes — er reserviert
+           die Fläche (CLS) und sagt an, WAS erscheint. Der Satz selbst ist
+           wörtlich unverändert. */
+        <ErgebnisPlatzhalter was="Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort." />
       ) : fehler !== '' ? (
-        <p className="text-body-s text-danger-700">{fehler}</p>
+        /* R2-E/F1-4: Eingabefehler in der geteilten `FehlerBox` (R8) — sie
+           trägt role="alert", der lose Absatz tat es nicht. Wortlaut unverändert. */
+        <FehlerBox fehler={[fehler]} />
       ) : (
         /* R12-Schnellrechner: derselbe Ergebnis-Rahmen, aber ohne Sprungmarke
            (steht im ersten Viewport; im Tagerechner lebt darunter ein zweiter
