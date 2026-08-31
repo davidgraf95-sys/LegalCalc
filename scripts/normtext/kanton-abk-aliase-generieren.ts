@@ -26,8 +26,8 @@
  * «Schulgesetz», AR-421.10 «Archivgesetz», alle amtlich abbreviation='').
  * KEIN Wert dieses Artefakts wird erfunden oder umgeformt — die Regeln unten
  * entscheiden nur, OB ein Wert als Such-Alias taugt, nie WIE er lautet
- * (einzige artefakt-seitige Umformung: der dokumentierte Semikolon-Split R2,
- * der einen TEIL des amtlichen Werts wählt; upstream existiert daneben der
+ * (einzige artefakt-seitige Umformung: der dokumentierte Separator-Split R2
+ * (Semikolon/Komma), der einen TEIL des amtlichen Werts wählt; upstream existiert daneben der
  * Last-Comma-Split von identitaetAusErlass — er speist seit R8.3 nur noch die
  * ANZEIGE-Felder kuerzel/titel, nie mehr dieses Artefakt). PRÜFBAR: kein Alias
  * trägt eine Klammer, jeder Alias steht wörtlich im Register-abkRoh seines
@@ -77,7 +77,11 @@
  *    Start-up-Bürgschaftsverordnung 2»); seine Wörter stehen ohnehin im
  *    indexierten Titel — als Alias fügte er nichts hinzu und kippte Titelwörter
  *    in ein gewichtetes Suchfeld. Grenze empirisch: das längste echte
- *    Mehrwort-Kürzel des Bestands ist «Abfallvereinbarung BS - BL» (26).
+ *    Mehrwort-Kürzel des Bestands ist «Abfallvereinbarung BS - BL» (26);
+ *    seit der Rohfeld-Quelle (R8.3, 1.9.2026) liegen die längsten Mehrwort-
+ *    Aliase mit «COVID-19 Bürgschaftsverordnung» und «Richtlinien
+ *    Mietzinsgestaltung» (je 30) exakt an der Grenze — amtliche Kurztitel-
+ *    Werte des abbreviation-Felds, kein Grenz-Anlass (F10-Beleg nachgeführt).
  *
  * R4 KLEINWÖRTER (≥ 2 kleingeschriebene Wörter). Titelsyntax («Dekret über den
  *    Notariatstarif», «Gesetz über das Gastgewerbe») statt Kürzel. EIN

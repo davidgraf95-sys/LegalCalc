@@ -23,7 +23,11 @@ export type AusschlussGrund =
   | 'klammer'
   | 'kantonskuerzel';
 
-/** R3-Grenze: längstes echtes Mehrwort-Kürzel des Bestands, s. Generator-Kopf. */
+/** R3-Grenze. Beleg-Stand R8.3 (1.9.2026, Rohfeld-Quelle): die längsten
+ *  Mehrwort-Aliase des Bestands sind «COVID-19 Bürgschaftsverordnung» und
+ *  «Richtlinien Mietzinsgestaltung» (je 30 — exakt an der Grenze); das
+ *  längste klassische Mehrwort-Kürzel bleibt «Abfallvereinbarung BS - BL»
+ *  (26). Details: Generator-Kopf R3. */
 export const MAX_LAENGE = 30;
 
 /** R7: die 26 Kantonskürzel (geschlossene Liste; Kopie-Disziplin wie

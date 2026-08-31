@@ -545,12 +545,14 @@ jobs:
       - name: Normtext-Korpus (Drift/Coverage · Struktur-Konsistenz · Verklebung · Stand-Zukunft)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:normtext && npm run check:struktur-konsistenz && npm run check:verklebung && npm run check:stand-zukunft
-      # R8 (31.8.2026): Kanton-Kürzel-Alias-Artefakt synchron mit register.json —
-      # byte-Vergleich gegen frische Ableitung (Generator-Kopf mit Regeln R1–R5:
-      # scripts/normtext/kanton-abk-aliase-generieren.ts). Offline, <1 s.
-      - name: Kanton-Kürzel-Aliase (Artefakt-Drift)
+      # R8 (31.8.2026, R8.3 1.9.2026): Rohfeld-Sidecar kanton-abk-roh.json
+      # (Deckung 1:1, Rückrechnungs-Beweise, api-Provenienz) und Kanton-Kürzel-
+      # Alias-Artefakt synchron mit register.json — byte-Vergleich gegen frische
+      # Ableitung (Regeln R2–R7; R1 gestorben mit dem F8-Wurzel-Fix, Köpfe:
+      # kanton-abk-roh.ts / kanton-abk-aliase-generieren.ts). Offline, <2 s.
+      - name: Kanton-Kürzel Rohfeld + Aliase (Artefakt-Drift)
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:kanton-abk-aliase
+        run: npm run check:kanton-abk-roh && npm run check:kanton-abk-aliase
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM

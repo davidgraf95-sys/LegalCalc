@@ -266,12 +266,13 @@ allein dieser §.*
 Artikel ihres Erlasses in der Volltext-Suche auffindbar — Client UND Edge.
 Kein Zitat-Resolver, keine UI-Änderung, keine neuen Quellen.
 
-- **Alias-Artefakt:** `src/lib/normtext/kanton-abk-aliase.generated.ts` (569 Aliase
-  aus 1231 Kanton-Erlassen — beim Bau 31.8. zunächst 572, seit Fix-Runde R8.2
-  gleichentags 569, s. u.; Generator `scripts/normtext/kanton-abk-aliase-generieren.ts`,
-  Drift-Tor `npm run check:kanton-abk-aliase`). Quelle: kuerzel-Feld des
-  Registers (`public/normtext/register.json`), Ausschluss-Regeln R1–R7 im
-  Generator-Kopf. Zwei dokumentierte Gefahren-Klassen, je fail-closed + Test:
+- **Alias-Artefakt:** `src/lib/normtext/kanton-abk-aliase.generated.ts` (aus
+  1231 Kanton-Erlassen — beim Bau 31.8. zunächst 572, seit Fix-Runde R8.2
+  gleichentags 569, seit R8.3 (1.9.2026) 526, s. u.; Generator
+  `scripts/normtext/kanton-abk-aliase-generieren.ts`, Drift-Tor
+  `npm run check:kanton-abk-aliase`). Quelle: bis R8.2 das kuerzel-Feld des
+  Registers (`public/normtext/register.json`), seit R8.3 das ROHE Feld
+  `abkRoh` (s. Fix-Runde unten); Ausschluss-Regeln R2–R7 im Generator-Kopf. Zwei dokumentierte Gefahren-Klassen, je fail-closed + Test:
   (1) Bundes-Kürzel-Leck über Klammer-Akronyme (AR-760.12 «(AKV)» = Bundesrecht ⇒
   KEINE Klammer-Extraktion), (2) «Die Bürgschaft» (AR-222.31, Bundes-Titel-Fragment).
 - **Ebenen-Trennung:** Artefakt trägt nur Kanton-Keys (Riegel); FTS-Spalte
@@ -305,6 +306,38 @@ Kein Zitat-Resolver, keine UI-Änderung, keine neuen Quellen.
   11–20 die Plätze. Bewusst akzeptiert, kein Fix: die Streuung liegt in der
   Natur jeder Spalten-Erweiterung; die gemessenen Verschiebungen blieben
   Nachbar-Tausche ausserhalb der Top-10.
+- **Fix-Runde R8.3 — WURZEL-Fix F8** *(1.9.2026, GP2-Befund MITTEL-HOCH)*:
+  - **F8-Wurzel:** R1 hatte eine Lücke (No-Comma-Zweig von `identitaetAusErlass`
+    liefert kuerzel=Titel bei leerem abbreviation). Statt Flicken: das ROHE
+    `abbreviation`-Feld als eigenes Registerfeld — Sidecar
+    `public/normtext/kanton-abk-roh.json` ({abk, herkunft api|rueckrechnung,
+    stand[, quelleUrl]}, darf leer sein, lügt nie), Projektion `abkRoh` in
+    register.json (additiv, Anzeige-Felder kuerzel/titel unverändert), Alias-
+    Generator liest NUR noch abkRoh. R1 gestorben (Rückbau); R2 um die live
+    belegte Komma-Konvention erweitert («Gerichtsorganisationsgesetz, GOG»,
+    fragment-bewacht). Offline-Rückrechnung mit zwei eingebauten Beweisen
+    (Round-Trip byte-gleich, Eindeutigkeit; fail-closed leer): split 355 ·
+    no-comma 730 · fragment 49 · mehrdeutig 96 · kein-roundtrip 1. Für die
+    offline unentscheidbare Klasse 248 GEZIELTE API-Abrufe (1.9.2026):
+    205 mit amtlichem Kürzel, 43 amtlich leer — bewusste, offengelegte
+    Abweichung von der strikten Offline-Vorgabe des Auftrags, weil sonst die
+    belegten echten Allein-Kürzel (TZV/ABRG/«EG zum KVG», alle titel-präfix-
+    förmig) mit den Titel-Kopien gefallen wären.
+  - **Bilanz:** 569 → 526 Aliase (−43 live-belegte F8-Titel-Aliase mit
+    abbreviation='', u. a. BS-291.100 Advokaturgesetz, BS-410.100 Schulgesetz,
+    AR-421.10 Archivgesetz, SH-211.433; ±1 Korrektur BS-292.110 NoVo→NotV,
+    live «Notariatsverordnung, NotV»). Echte bleiben: EG zum KVG, TZV, ABRG,
+    GebT ZGB, GOG, BeFiG. 8 F8-Fixtures im Test (nie wieder Alias).
+  - **Tore:** `check:kanton-abk-roh` (Deckung 1:1, Rückrechnungs-Drift,
+    api-Provenienz; seriell + CI-PR-Pfad) und Live-Sample-Wächter
+    `check:kanton-abk-netz` (n=20 deterministisch rotierend über die 603
+    Einträge MIT Behauptung, byte-genauer Identitätsvergleich, im
+    check:netz-Set/normen-monitor; Rot-Beweis per Stub).
+  - [ ] **G2-NACHZUG (offen, Netz):** voller Roh-Neuzug des abbreviation-Felds
+    für ALLE 1231 Kanton-Erlasse (heute 248 api-belegt, 983 rueckrechnung bzw.
+    offline unbelegt-leer) — beim nächsten Kanton-Snapshot-Vollauf läuft er
+    über den R8.3-Haken in `normtext-snapshot.ts` automatisch mit; bis dahin
+    prüft der rotierende Netz-Wächter nur Einträge mit Behauptung.
 - **Nach der Landung PFLICHT:** `npm run datenhaltung:turso-sync` — die
   Schema-Änderung kippt den Frische-Wächter Dimension 0 bis zum Sync (gewollt).
 - Offen (Folge-Schritte, NICHT R8): kantonaler Zitat-Resolver (ROADMAP,
