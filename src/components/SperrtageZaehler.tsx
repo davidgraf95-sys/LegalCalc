@@ -1,6 +1,7 @@
 import type { SperrfristenErgebnis } from '../lib/sperrfristen';
 import { NormText } from './NormText';
 import { GruppenKopf } from './ui/GruppenKopf';
+import { datumOderStrich } from './ui/datumText';
 
 // Sperrtage-Zähler (Art. 336c Abs. 1 OR): je Ereignis beanspruchte Tage;
 // bei Krankheit/Unfall zusätzlich Kontingent (30/90/180 je Dienstjahr) und
@@ -18,7 +19,6 @@ const TYP_LABEL: Record<string, string> = {
   urlaub_tod_mutter: 'Urlaub nach Tod der Mutter (lit. cquinquies)',
 };
 
-const fmtISO = (s: string) => (s ? s.split('-').reverse().join('.') : '–');
 
 export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<SperrfristenErgebnis['sperrtage']> }) {
   if (sperrtage.length === 0) return null;
@@ -52,7 +52,7 @@ export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<Sperrfr
                 <p className="text-body-s text-ink-700">
                   <span className="num text-ink-500 mr-1.5">{z.ereignis}.</span>
                   {label}
-                  <span className="text-ink-500"> · {fmtISO(z.vonISO)} – {fmtISO(z.bisISO)}</span>
+                  <span className="text-ink-500"> · {datumOderStrich(z.vonISO)} – {datumOderStrich(z.bisISO)}</span>
                 </p>
                 {z.rueckfall ? (
                   <p className="text-body-s text-ink-500">Rückfall – kein neues Kontingent</p>
