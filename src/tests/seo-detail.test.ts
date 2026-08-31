@@ -128,6 +128,14 @@ describe('erlassVolltextHtml() — §5-Gleichlauf mit dem interaktiven Kopf (K-2
     );
     expect(html).not.toContain('Geltung ungeprüft');
   });
+  it('aufgehobener Erlass trägt auch KEINEN Standausweis-Satz (lebt-Gate beider Zweige)', () => {
+    const html = erlassVolltextHtml(
+      { ...kanton, aufgehoben: { seit: '2020-01-01', quelleUrl: kanton.quelleUrl } as never },
+      datei,
+      { geprueftAm: '2026-08-01' },
+    );
+    expect(html).not.toContain('geprüft am');
+  });
   it('leerer stand wird «Stand unbekannt» statt «Stand » (K-2d)', () => {
     const html = erlassVolltextHtml({ ...kanton, stand: '' }, datei);
     expect(html).toContain('Stand unbekannt');

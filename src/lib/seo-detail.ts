@@ -287,11 +287,12 @@ export function erlassVolltextHtml(
   // am aufgehobenen Erlass ist die Aufhebung DIE Aussage, nicht die Nicht-
   // Prüfung (Gegenprüfung 31.8.2026, Befund 5 — sonst divergiert die No-JS-
   // Seite beim ersten aufgehobenen Kantonserlass).
-  const geprueft = currency?.geprueftAm
-    ? ` · ${esc(standausweisSatz(currency.geprueftAm))}`
-    : e.ebene === 'kanton' && !e.aufgehoben
-      ? ` · ${esc(GELTUNG_UNGEPRUEFT_SATZ)}`
-      : '';
+  const geprueft =
+    currency?.geprueftAm && !e.aufgehoben
+      ? ` · ${esc(standausweisSatz(currency.geprueftAm))}`
+      : e.ebene === 'kanton' && !e.aufgehoben
+        ? ` · ${esc(GELTUNG_UNGEPRUEFT_SATZ)}`
+        : '';
   const kuenftig = currency?.naechsteFassungAb ? ` · ${esc(naechsteFassungSatz(currency.naechsteFassungAb))}` : '';
   const standSegment = e.stand ? `Stand ${esc(e.stand)}` : esc(STAND_UNBEKANNT);
   const kopf =
