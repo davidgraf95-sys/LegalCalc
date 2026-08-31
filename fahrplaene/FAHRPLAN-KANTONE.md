@@ -446,6 +446,117 @@ Schlussbestimmungen** und des **PBG-Anhangs** ist seit Runde 2 im Artefakt
 ausgewiesen (`public/normtext/kanton-luecken.json`) — die Aufnahme als eigener
 Eintragstyp bleibt ZH-4d.
 
+### §4-R3 · Fix-Runde 3 (31.8.2026) — nach der DRITTEN Gegenprüfung (zwei Linsen)
+
+Beide Linsen der dritten Gegenprüfung — Extraktion (GP3a/GP3b) und Tor-Härte
+(Zweitlinse, elf Mutationen) — lauteten «noch nicht bestanden». Der gebündelte
+Restkatalog ist gebaut; die Befundnummern sind wieder eine EIGENE Zählung.
+
+**A · Extraktion**
+
+| Befund | Wurzel (gemessen, nicht vermutet) | erledigt |
+|---|---|---|
+| **A1** arabisch nummerierte Gliederungstitel (28 gemeldete Lecks in 6 Erlassen) | Die Wurzel ist die **Schrift**, nicht die Position. Gemessen an allen 24 PDF: 504 Zeilen der Form «N. Text», davon **34 in reiner Titel-Schrift** (ausnahmslos Überschriften), **470 mit mindestens einem Body-Schrift-Fragment** (ausnahmslos Aufzählungen/Fliesstext). Der EINZUG trennt die Klassen NICHT — beide stehen teils bei dx = 0, teils bei dx = 14.2 (dem Kopf-Einzug). Gegenprobe: alle **524** Zeilen, die die bereits bewährten Muster `GLIEDERUNG`/`GLIEDERUNG_ZAEHLEND` treffen, stehen ebenfalls in Titel-Schrift — **0 Ausreisser**; das Kriterium reproduziert den verifizierten Bestand exakt und erweitert ihn nur. | ja — `TITEL_MARKER` trägt die typografische Tatsache durch die Serialisierung, `GLIEDERUNG_ARABISCH` entscheidet NUR zusammen mit ihm; mehrzeilige Titel über eine auf 2 Fortsetzungszeilen **gedeckelte** Kette (der Deckel schützt die vollständig in Titel-Schrift gesetzte Tarif-Tabelle ZH-211.11 § 4). **33 Leck-Blöcke → 0**, 0 Einträge entfallen |
+| **A2** ZH-243: «(vgl. Ziff. …)» steht in keinem PDF (32 Blöcke) | Der Adapter synthetisierte den Verweis als Fliesstext; dabei kollabierten ZWEI Quell-Spalten («Grundbuchgebühren siehe Ziff.:», S. 5–7 · «Beurkundungsgebühren siehe Ziff.:», S. 8–14) auf denselben Wortlaut | ja — eigenes Blockfeld `verweis {etikett, ziffern}`, Etikett am Spaltenkopf **gelesen**; 32 → 0 Synthesen, 15 × Grundbuch / 17 × Beurkundung unterscheidbar |
+| **A2b** zwei weitere Synthesen geprüft | «Zuschlag» als Spaltentitel (ZH-211.11 § 4, ZH-215.3 § 4): im PDF steht dort **kein** Kopf — die Zuschlagsformel läuft ohne Überschrift neben der Grundgebühr | ja — Titel jetzt leer wie die Quelle. «Aufgehoben» bleibt als **deklarierte Haus-Konvention**, im Code benannt |
+| **A3** Aufzählungen ohne `items` | Der Block-Sammler kannte nur die BUCHSTABEN-Marke; Ziffern-Aufzählungen flossen als Prosa durch («… zuständige Behörde: 1. 2. 3. 4. 5. für die …») | ja — Ziffern-Marke mit drei Wächtern (Sequenz · Datums-Ausschluss · Titel-Schrift); aufgehobene Ziffern als Platzhalter statt Prosa; Aufzählungen laufen über die Absatzgrenze (ZH-230 § 44: Abs. 1 Ziff. 1–8, Abs. 2 Ziff. 9–17) |
+| **A4** Lücken-Index unvollständig | `schnitt` merkte sich nur den ERSTEN Schnitt je Erlass | ja — alle Schnitte, gleichartige zusammengefasst; ZH-700.1 deklariert jetzt Übergangsapparat (110 Zeilen) **und** Anhang (381). Korpusweit geprüft: die unnummerierten Schlussbestimmungen (ZH-215.3 nach § 25, ZH-101 nach Art. 145, ZH-700.1) tragen alle eine «Übergangsbestimmung …»-Überschrift und waren bereits deklariert. **Ehrlichkeits-Korrektur:** ZH-243 wies seinen Anhang als Lücke aus, obwohl er erfasst IST (132 Ziffern) |
+| **A5** Doku-Ehrlichkeit | «7 von 24» war eine Fehlzählung derselben Session | ja — gemessen weichen **11 von 24** Fussband-Marken vom Publikationsdatum ab (URL-Datum: 22 von 24); Modulkopf sagt jetzt, dass `stand` das Registry-Publikationsdatum ist; Sammelkopf-Zählweise erklärt (41 Köpfe = Einzug UND Gestalt · 42 Zeilen blosser Gestalt · 38 = Stand vor dem Suffix-Nachzug) |
+
+**Zwei echte Defekte, die erst der neue lit.-Wächter zutage förderte:** die
+NACKTE, aufgehobene lit.-Marke («e.» allein, ZH-631.1 § 23; «d.», ZH-230 § 194)
+klebte am Vorgänger-item — und die Zweitlesung zählte sie nicht mit. Beides
+behoben; Konvention wie bei den Ziffern und beim nackten §-Kopf.
+
+**B · Tor-Härtung 2 — elf Mutationen, alle einmal ROT gezeigt**
+
+Sandbox-Kopie über `ZH_SNAPSHOT_DIR` (nie im Arbeitsbaum, nie `git checkout`
+auf Artefakte — Skill-Regel):
+
+| Mutation | vorher | jetzt gefangen von |
+|---|---|---|
+| **M6b** Wertetausch «1 050» ↔ «3 150» in ZH-211.11 § 4 | grün (Multimenge unverändert) | 7b Zahlenfolge, «§ 4 bei ‹14›, Stelle 19 von 60» |
+| **M6c** 14 % → 8 % | grün (8 kommt anderswo vor) | 7b |
+| **M6d** Staffelgrenze ersetzt | grün | 7b |
+| **M3** Absatz gelöscht (ZH-631.1 § 7) | grün | 7c Zeichen-Deckung 81 % + Suffix-Absatz |
+| **M11** `bloecke: []` | grün | 7c 0 % + lit.-Deckung + 7b |
+| **M12** Kappung ohne Trennstrich | grün | 7c 67 % + 7b |
+| **M8a** ein lit. gelöscht | grün (99 % ≥ 95 %) | 2 lit. EXAKT je § «§23 5/6» + 7c |
+| **M9b** U+2011 | grün | 3 Trennstrich-Varianten |
+| **M9c** Kappung nach Ziffer | grün | 3 + 7b |
+| **M13** 40 Anhang-Tarif-Ziffern gelöscht | grün (118 von 150 unbewacht) | 8 Anhang-Ziffern beidseitig |
+| **M14** erfundener «§ 77 b» in einer Sammel-Spanne | grün (Spannen-Nachsicht) | 1 Kopf-Menge; Nachsicht nur noch für den Platzhalter |
+
+**Schwellen, am geheilten Bestand erhoben:** Zeichen-Deckung je § —
+2441 Regionen, min 95.9 % · p01 98.3 % · p05 99.0 % · Median 100.0 %; Schranke
+**90 %**, also vier Punkte unter dem Tiefstwert. lit.-Deckung je § — **0
+Abweichungen in 2656 §§**, darum EXAKT und **ohne eine einzige Ausnahme**.
+Zahlenfolge — **7 deklarierte Ausnahmen** mit exaktem Delta (kein Polster), alle
+aus der bewussten Konservativität der Zweitlesung, keine aus einem
+Snapshot-Mangel.
+
+**Die Zweitlesung selbst war mitschuldig** (jeder Punkt gemessen und behoben):
+Body-Spalte 18 pt zu schmal (schnitt jedes Zeilenende ab) · Hochstellungen
+zählten als Regions-Zahlen · Art.- und §-Zählweise brauchen GETRENNTE Bücher (in
+einem «§»-Erlass riss jede Zeile «Art. 260 a Abs. 1 …» eine Schein-Region auf) ·
+keine Wiedereröffnung eines Kopfs (ZH-211.1 § 150 hing an § 31) · Tarif-Zeilen im
+Kleinsatz gehörten in die Messung.
+
+**Dritte geteilte Modellentscheidung, offen deklariert** (§6.7 lit. d): «eine
+Überschrift steht in der Titel-Schrift». Die Regionen prüfen damit NICHT mehr
+unabhängig, ob Überschrift und Aufzählung richtig getrennt wurden — das leisten
+Prüfung 6 und die beidseitigen Unit-Tests am Adapter. Für den ZWECK der Regionen
+(einen Wert an seinen § binden) ist die Teilung folgenlos: eine falsch
+ausgelassene Überschrift fehlt BEIDEN Seiten gleich.
+
+**C · Roh-PDF-Cache (O1) und Drift auf die Quelle (§7 d)**
+
+- `daten/pdf-cache-zh/` (gitignored, Schlüssel sha256(RegistryUrl), Sidecar mit
+  ETag/Last-Modified/Abrufdatum/Byte-sha256), drei Modi `auto`/`netz`/`offline`;
+  `npm run zh:cache` füllt ihn (24 × 3 = 72 Requests, ~75 s). Regeneration und
+  Tor laufen seither OHNE Netz.
+- **`fassungsToken` = sha256 der ROHEN PDF-Bytes.** Vorher hashte er die
+  Extraktion und war damit blind für jede Quell-Änderung in einem verworfenen
+  Teil (ZH-700.1: 14 % der Textzeilen). `meta.extraktHash` bleibt als zweite
+  Stufe daneben (nicht im Snapshot gespeichert — die Schema-Erweiterung liegt im
+  fremden Datenhaltungs-Strang). **Deklarierter Token-Reset aller 24**, je Erlass
+  alt→neu im Commit-Body; `check:normtext-netz` danach Drift 0.
+
+**Verdrahtung (B7):** `--artefakt` (ohne PDF) in `scripts/gate.sh` UND `ci.yml`;
+der volle Offline-Teil in `gate.sh`, sobald der Cache da ist — fehlt er, wird das
+Überspringen LAUT gesagt (beide Zweige einmal gezeigt: mutierter Snapshot →
+`ROT zh-artefakt` + `ROT zh-vollstaendigkeit` + `GATE ROT`; entfernter Cache →
+`-- zh-vollstaendigkeit ÜBERSPRUNGEN`).
+
+**Bilanz Fix-Runde 3:** 24 Erlasse, **2788 → 2788 Einträge** (die Zahl bleibt —
+diese Runde hat nichts hinzugefügt, sondern Fremdmaterial entfernt und Struktur
+gehoben): 99 sha-Einträge geändert, davon ZH-243 32 · ZH-700.1 15 · ZH-211.1 7 ·
+ZH-215.1 7 · ZH-230 6 · ZH-175.2 5 · ZH-242 5 · ZH-281.1 5 · ZH-131.1 4 ·
+ZH-631.1 4 · ZH-170.4 2 · ZH-323.1 2 · ZH-101/211.11/215.3/331/851.1 je 1.
+**0 Nicht-ZH-Einträge berührt**, `golden/lexmetrik-golden.json` byte-gleich,
+`src/data/tarif/**` unberührt. `check:zh-vollstaendigkeit --offline` 24/24 grün
+mit allen zehn Prüfungen; `check:normtext-netz` ZH-Drift 0.
+
+**Rückbau/Schlankheit:** `adapter-zh-pdf.ts` stand mit 1918 Zeilen 35 % über
+seiner §6.6-Baseline; die Geometrie-Schicht ist als
+`scripts/normtext/zh-seitenmontage.ts` (544 Z.) herausgelöst, der Adapter steht
+wieder bei 1372. Verhaltensneutralität bewiesen: frische Extraktion aller 24
+gegen die committeten Snapshots, 0 Zeichen Differenz, Wort-Multimengen je §
+identisch.
+
+**Offen nach Runde 3 (bewusst nicht gebaut):**
+- Das Feld `verweis` ist im Artefakt, die **UI zeigt es noch nicht** (Design-
+  Fläche `src/components/**` ist TABU für diesen Strang) — Nachzug.
+- `check:paritaet` ist gegen Datei-LÖSCHUNG blind (am Code belegt: es ingestiert
+  die vorhandenen Dateien und vergleicht nur deren Pfade). Fläche
+  `scripts/datenhaltung/**` = fremder Strang, als ROADMAP-Zeile hinterlegt.
+- Silbentrennungs-Fehler bei ECHTEN Bindestrich-Ellipsen: «Grenz- und
+  Gebäudeabstände» wird zu «Grenzund» (ZH-700.1 § 260 u. a.). Der Zeilen-Joiner
+  kann die Ellipse nicht von der Silbentrennung unterscheiden — braucht die
+  Wortliste oder den Tag-Leser (R1).
+- Die sieben Zahlenfolge-Ausnahmen könnten entfallen, sobald die Zweitlesung die
+  verschachtelten Ziffern-Aufzählungen nicht mehr für Überschriften hält.
+
 **Stufe 3 — Ausbau in Tranchen** (Richtung 944, Katalog-Generator über den
 JSON-Endpunkt): erst nach gelandeter Stufe 2 und sauberer Stichproben-Abnahme;
 G2-Slot-Regel beachten (kein faktischer Vollkorpuslauf als Tranchen-Schlupfloch —
@@ -576,6 +687,15 @@ vollständig). Darauf, je EIGENE Runde mit eigener Gegenprüfung:
 Gemessene Reibung: 3 Gegenprüfungs-Zyklen bis Konvergenz; jede Prüf-Runde
 lud dieselben PDFs neu; ein GP-Fehlalarm (lit./items) kostete eine volle
 Runde. Daraus, priorisiert:
+
+*(Stand 31.8.2026 nach Fix-Runde 3: **O1 gebaut** — `daten/pdf-cache-zh/` +
+`npm run zh:cache`, Regeneration und Tor laufen offline; **O2 gefahren** — das
+volle Wächter-Set plus elf Mutationsproben liefen VOR der Rückgabe, jede Probe
+in einer Kopien-Sandbox; **O3 angewandt** — der Schema-Steckbrief des Dispatches
+hat in dieser Runde 0 Fehlalarme der Klasse «im falschen Feld gezählt» erzeugt.
+**O4 offen** (`gate:zh`-Bündel — Teil-Ersatz: die zwei ZH-Schritte hängen jetzt
+IN `gate.sh`, ein Agent braucht dafür kein eigenes Kommando mehr). O5/O6
+unverändert.)*
 
 - **O1 · Roh-PDF-Cache (grösster Hebel):** Skill-Prinzip «store raw as
   golden» für ZH einlösen — Runner legt jedes amtliche PDF unter
