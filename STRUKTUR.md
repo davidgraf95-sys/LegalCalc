@@ -44,8 +44,20 @@ gelöscht — ein Messweg; tor-schutz Regel 1 auf Kommando-Position, 12/12 Fäll
 Verweise = **Selbsttest neues Ritual: ~9 min Wandzeit inkl. CI, Ritual-Anteil 2 Befehle + 1 Commit.**
 **§17-Lehre (im Repo verankert, ROADMAP-Kopf + PR-Bodies):** Die 44 Produkt-Tore laufen in 14 s und
 bleiben; der Kostentreiber war die Steuerung selbst (42 % Steuerungs-Commits, Deckel-Tretmühle bei
-1 Byte Luft). Offen: Spec-Bindung W2·5l-NORMTEXT-B2/SEO-A11Y (§-Nachzug, Checkliste), Worktrees
-lexmetrik-wt-frische/-trennung fremder Sessions stehen noch.
+1 Byte Luft).
+
+**Nachtschicht 30./31.8. (Fortsetzung, gleiche Session):** #579 Prod-Smoke geheilt + CI-Diff-Basis
+= Live-Build (#580, Wurzel-Fix) · **Normen-Monitor nach ≥5 Wochen GRÜN** — zwei Wurzel-Fixes:
+ESTV-ToC-Flake `main-active` (#581, GP bestanden, Re-Baseline 48 Token amtlich belegt) + abk-Tor
+Einzel-SR-Urteilsmittel gegen Fedlex-Endpoint-Kappung (#588, GP fand Schreibpfad-Defekt → behoben,
+Byte-Beweis) · Produkt: Split-Klick springt zur zitierenden Erwägung (#582, Kanton 0→9 %),
+UI-Befunde B6/B7 (#584, 2 Befunde als überholt gemessen), W2·7-VZUI DoD erfüllt — 4. Panel-Reiter
+«Anwendung» + §8-Ehrlichkeit (#587) · Token-Diät: CLAUDE.md-Gegengewicht-Umzug + Descriptions
+(#583), Landung-Skill 337→209 Z. (#585), Dispatch-Ökonomie: Spec-Zeiger, Beladungs-Grenze,
+F5-Eskalation in Agent-Defs nach 3. Wartetod (#586) · Spec-Bindung §-Nachzug + Smoke-Fix (#580) ·
+Aufgeräumt: verwaiste Worktrees/Branches, STRUKTUR-Kopf-Falschaussage, Dependabot-Serie gelandet.
+Offen gebucht: Phantom-Zitat-Kanten (QS-KORPUS) · LM-165 Deep-Link-Scroll · suche-seite-Flake
+(Diagnose, F3-Bedingungen) · kantonaler Zitat-Resolver (Risikopfad) · Materialien-Befunde (a)–(h).
 
 ## Session 28./29.8.2026 (Nacht+Tag) — UI-Grossoffensive «Ordnung & Sauberkeit»: 8 Landungen (#564–#571, #573), Design-Pass, 10 David-Entscheide, Rechtsgebiets-Trennung
 
