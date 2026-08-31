@@ -106,6 +106,28 @@ describe('erlassVolltextHtml()', () => {
   });
 });
 
+describe('erlassVolltextHtml() — §5-Gleichlauf mit dem interaktiven Kopf (K-2)', () => {
+  const kanton = erlasse.find((e) => e.ebene === 'kanton' && e.datei && e.stand)!;
+  const datei: NormSnapshotDatei = JSON.parse(
+    readFileSync(join(PUB, 'normtext', kanton.datei!), 'utf8'),
+  );
+  it('Kantonserlass ohne Currency-Beleg trägt «Geltung ungeprüft» auch prerendert', () => {
+    const html = erlassVolltextHtml(kanton, datei);
+    expect(html).toContain('Geltung ungeprüft');
+  });
+  it('Bund ohne Beleg bleibt unverändert (keine Ungeprüft-Zeile)', () => {
+    const orDatei: NormSnapshotDatei = JSON.parse(
+      readFileSync(join(PUB, 'normtext', or.datei!), 'utf8'),
+    );
+    expect(erlassVolltextHtml(or, orDatei)).not.toContain('Geltung ungeprüft');
+  });
+  it('leerer stand wird «Stand unbekannt» statt «Stand » (K-2d)', () => {
+    const html = erlassVolltextHtml({ ...kanton, stand: '' }, datei);
+    expect(html).toContain('Stand unbekannt');
+    expect(html).not.toContain('Stand  ·');
+  });
+});
+
 describe('Substanz-Prädikate (kein header-only «Volltext», §8)', () => {
   it('erlassHatVolltext: true bei echtem Snapshot, false bei leer', () => {
     const datei = JSON.parse(readFileSync(join(PUB, 'normtext', or.datei!), 'utf8'));

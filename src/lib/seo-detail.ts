@@ -18,7 +18,12 @@
 // (snapshot ≠ in Kraft — TODO(David), Welle ab 1.12.2026).
 
 import { SITE_URL, type RouteMetadaten } from './seo';
-import { naechsteFassungSatz, standausweisSatz } from './normtext/erlassKopfText';
+import {
+  GELTUNG_UNGEPRUEFT_SATZ,
+  naechsteFassungSatz,
+  STAND_UNBEKANNT,
+  standausweisSatz,
+} from './normtext/erlassKopfText';
 import { GEBIET_LABEL } from './normtext/register';
 import { erlassAltPfad, erlassPfad } from './normtext/erlassAdresse';
 import { ABSCHNITT_TITEL } from './rechtsprechung/abschnitte';
@@ -278,13 +283,18 @@ export function erlassVolltextHtml(
   // dieselbe Funktion, die der interaktive Erlass-Kopf aufruft (§5). Bis dahin
   // waren es zwei handgeschriebene Strings, die im Datumsformat bereits
   // auseinandergelaufen waren (hier ISO, dort TT.MM.JJJJ).
-  const geprueft = currency?.geprueftAm ? ` · ${esc(standausweisSatz(currency.geprueftAm))}` : '';
+  const geprueft = currency?.geprueftAm
+    ? ` · ${esc(standausweisSatz(currency.geprueftAm))}`
+    : e.ebene === 'kanton'
+      ? ` · ${esc(GELTUNG_UNGEPRUEFT_SATZ)}`
+      : '';
   const kuenftig = currency?.naechsteFassungAb ? ` · ${esc(naechsteFassungSatz(currency.naechsteFassungAb))}` : '';
+  const standSegment = e.stand ? `Stand ${esc(e.stand)}` : esc(STAND_UNBEKANNT);
   const kopf =
     `<header><nav aria-label="Brotkrumen"><a href="/gesetze">Gesetze</a> › ` +
     `<a href="/gesetze">${esc(gebietLabel(e.rechtsgebiet))}</a> › ${esc(e.kuerzel)}</nav>` +
     `<h1>${esc(e.kuerzel)} — ${esc(e.titel)}</h1>` +
-    `<p>${esc(e.kuerzel)}${srZeile} · Stand ${esc(e.stand)} · ` +
+    `<p>${esc(e.kuerzel)}${srZeile} · ${standSegment} · ` +
     `<a href="${esc(e.quelleUrl)}" rel="nofollow noopener" target="_blank">amtliche Fassung (geltend)</a>` +
     `${geprueft}${kuenftig}</p>` +
     `</header>`;
