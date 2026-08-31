@@ -6,31 +6,31 @@
     "guards": 23
   },
   "korpus": {
-    "erlasse": 1458,
-    "eintraege": 56113,
-    "texte": 202882
+    "erlasse": 1479,
+    "eintraege": 58703,
+    "texte": 210120
   },
   "gesamt": {
-    "stellen": 34058,
-    "self": 19752,
-    "fremd": 4709,
-    "text": 9597,
+    "stellen": 34439,
+    "self": 19824,
+    "fremd": 4900,
+    "text": 9715,
     "selbstmarker": 927
   },
   "klassen": [
     {
       "klasse": "anker-fedlex",
       "entscheid": "FREMD",
-      "stellen": 2192,
-      "erlasse": 294,
+      "stellen": 2372,
+      "erlasse": 307,
       "selbstmarker": 0,
       "was": "Voll zitierter Bund-Anker «Art. N GESETZ» (NORM_IM_TEXT)"
     },
     {
       "klasse": "anker-kette",
       "entscheid": "FREMD",
-      "stellen": 56,
-      "erlasse": 27,
+      "stellen": 60,
+      "erlasse": 29,
       "selbstmarker": 0,
       "was": "Ketten-Glied, Kürzel aus dem Anker-Ende propagiert (i.V.m.)"
     },
@@ -53,15 +53,15 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 1271,
-      "erlasse": 377,
+      "stellen": 1281,
+      "erlasse": 383,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
     {
       "klasse": "art-f41",
       "entscheid": "TEXT",
-      "stellen": 350,
+      "stellen": 351,
       "erlasse": 153,
       "selbstmarker": 0,
       "was": "bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)"
@@ -69,32 +69,32 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 978,
-      "erlasse": 217,
+      "stellen": 1018,
+      "erlasse": 226,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
     {
       "klasse": "art-m12-kuerzel",
       "entscheid": "TEXT",
-      "stellen": 1541,
-      "erlasse": 273,
+      "stellen": 1572,
+      "erlasse": 285,
       "selbstmarker": 0,
       "was": "«Art. N KÜRZEL» (unbekanntes Kürzel) — Self unterdrückt (M12)"
     },
     {
       "klasse": "art-n2-fremdkuerzel",
       "entscheid": "TEXT",
-      "stellen": 3324,
-      "erlasse": 218,
+      "stellen": 3360,
+      "erlasse": 226,
       "selbstmarker": 0,
       "was": "«Art. N … FEDLEX-Kürzel» (N2 Form A) — Self unterdrückt"
     },
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12987,
-      "erlasse": 452,
+      "stellen": 13053,
+      "erlasse": 466,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
     },
@@ -117,8 +117,8 @@
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 665,
-      "erlasse": 219,
+      "stellen": 672,
+      "erlasse": 223,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)»"
     },
@@ -165,7 +165,7 @@
     {
       "klasse": "paragraf-self",
       "entscheid": "SELF",
-      "stellen": 3283,
+      "stellen": 3289,
       "erlasse": 464,
       "selbstmarker": 318,
       "was": "«§ N» → Sprung im eigenen Erlass (F40)"

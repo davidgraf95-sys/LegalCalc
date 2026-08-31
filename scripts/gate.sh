@@ -88,6 +88,23 @@ run "golden:vergleich"  npm run golden:vergleich
 if [ "$mode" = "voll" ]; then
   run "lint"   npm run lint
   run "check"  npm run check
+  # ── ZH-Vollständigkeit (ZH-Fix-Runde 3, B7) ────────────────────────────────
+  # Das Tor hält die ZH-Snapshots gegen das amtliche PDF. Zwei Teile:
+  #  · ARTEFAKT — braucht kein PDF (Trennstrich-Enden, Gliederungstitel im
+  #    Normtext). Läuft immer, auch in CI (ci.yml).
+  #  · OFFLINE — die vollen zehn Prüfungen gegen den Roh-PDF-Cache
+  #    `daten/pdf-cache-zh/`. Der Cache ist gitignored (er ist eine
+  #    wiederherstellbare Kopie der amtlichen Quelle, kein Artefakt), also kann
+  #    CI ihn nicht haben. Lokal ist er nach `npm run zh:cache` da.
+  # Fehlt der Cache, wird der Offline-Teil ÜBERSPRUNGEN und das laut gesagt —
+  # ein stilles Weglassen wäre ein Tor, das nicht scheitern kann (§6.7).
+  run "zh-artefakt" npx vite-node scripts/normtext/check-zh-vollstaendigkeit.ts -- --artefakt
+  if [ -d daten/pdf-cache-zh ] && [ -n "$(ls -A daten/pdf-cache-zh 2>/dev/null)" ]; then
+    run "zh-vollstaendigkeit" npx vite-node scripts/normtext/check-zh-vollstaendigkeit.ts -- --offline
+  else
+    printf '  --   %s\n' "zh-vollstaendigkeit ÜBERSPRUNGEN: Roh-PDF-Cache leer — 'npm run zh:cache' füllt ihn"
+    ereignis "gate:zh-vollstaendigkeit-uebersprungen" true
+  fi
 fi
 
 if [ "$fail" -ne 0 ]; then

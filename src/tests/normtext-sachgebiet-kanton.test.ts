@@ -58,9 +58,13 @@ describe('sachgebietKantonFuer — kantonale Systematik-Einordnung', () => {
   });
 
   it('gibt kein Feld zurück, wo für den Kanton kein Baum erhoben ist', () => {
-    // ZH ist am 31.8.2026 NICHT in kanton-systematik.json.
-    expect(BAEUME.ZH).toBeUndefined();
-    expect(sachgebietKantonFuer(BAEUME.ZH, 'ZH', 'ZH-211.11')).toBeUndefined();
+    // Beispiel-Kanton ohne erhobenen Baum. Fachliche Aenderung 1.9.2026
+    // (deklariert, §6.3): urspruenglich stand hier ZH — die ZH-Kern-Tranche
+    // liefert den ZH-Baum (zh-systematik.ts), womit die Test-Praemisse
+    // falsifiziert war. GE hat weiterhin keinen Baum (K-13 offen); die
+    // Aussage des Tests («kein Baum ⇒ kein Feld») bleibt unveraendert.
+    expect(BAEUME.GE).toBeUndefined();
+    expect(sachgebietKantonFuer(BAEUME.GE, 'GE', 'GE-rsg_e1_05p10')).toBeUndefined();
   });
 
   it('weist Luzern ab, dessen Index Ordinalzahlen statt Systematik-Nummern führt', () => {

@@ -54,6 +54,7 @@
     "check:rss-oc": "vite-node scripts/fedlex-rss-oc-pruefen.ts",
     "check:frit-drift": "vite-node scripts/fedlex-frit-drift.ts",
     "check:vollstaendigkeit": "vite-node scripts/normtext/check-vollstaendigkeit.ts",
+    "check:zh-vollstaendigkeit": "vite-node scripts/normtext/check-zh-vollstaendigkeit.ts",
     "check:struktur-konsistenz": "vite-node scripts/normtext/check-struktur-konsistenz.ts",
     "check:golden-normtext": "vite-node scripts/check-golden-normtext.ts",
     "check:verklebung": "vite-node scripts/normtext/check-verklebung.ts",
@@ -78,7 +79,7 @@
     "check:revisionen": "vite-node scripts/normtext/check-revisionen.ts",
     "check:revisionen-netz": "vite-node scripts/normtext/check-revisionen.ts -- --netz",
     "materialien:vernehmlassungen": "vite-node scripts/materialien/vernehmlassungen-generieren-run.ts --",
-    "check:normtext-netz": "vite-node scripts/normtext/check-drift.ts -- --netz",
+    "check:normtext-netz": "vite-node scripts/normtext/check-drift.ts -- --netz && vite-node scripts/normtext/zh-quellen-aufloesen.ts",
     "entscheide": "vite-node scripts/normtext-entscheide.ts --",
     "entscheide:seed": "vite-node scripts/normtext/seed-aus-cache.ts --",
     "entscheide:regeste-refresh": "vite-node scripts/normtext-entscheide.ts -- --regeste-refresh",
@@ -165,7 +166,8 @@
     "check:testtreue": "vite-node scripts/check-testtreue.ts",
     "dispatch": "vite-node scripts/dispatch-cli.ts --",
     "dispatch:agents": "vite-node scripts/dispatch-agents-cli.ts",
-    "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts"
+    "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts",
+    "zh:cache": "vite-node scripts/normtext/zh-cache-fuellen.ts --"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",

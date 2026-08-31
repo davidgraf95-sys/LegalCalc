@@ -29,6 +29,7 @@ import * as modifikatoren from '../../src/data/tarif/modifikatoren.ts';
 import * as bundesgericht from '../../src/data/tarif/bundesgericht.ts';
 import * as nichtVermoegensrechtlich from '../../src/data/tarif/nicht-vermoegensrechtlich.ts';
 import { parsePassus } from '../../src/lib/normtext/passus.ts';
+import { ZH_QUELLEN } from './zh-quellen.ts';
 
 /** Roh-Tarif-Eintrag, wie er in den Daten steht (nur die hier relevanten Felder). */
 interface TarifEintrag {
@@ -336,6 +337,22 @@ export function sammleHtmInventar(): HtmInventarGruppe[] {
  * löst parsePassus auch «Anhang Ziff. N.N.N» (NotGebV) auf einen gepunkteten Token
  * auf → diese Einträge sind jetzt HIER (nicht mehr Fallback) und werden über den
  * zhlex-PDF-Anhang-Segmentierer (segmentiereAnhangZiffern) als Volltext erschlossen.
+ *
+ * ZH-4a (31.8.2026): Die Menge ist seither die VEREINIGUNG aus (a) der
+ * Tarif-Ableitung und (b) der deklarativen Quellenliste `ZH_QUELLEN`
+ * (`zh-quellen.ts`), dedupliziert über die Registry-URL. Vorher war ein
+ * ZH-Erlass ohne Tarif-Zitat für Generator UND Drift-Prüfung nicht existent
+ * (§7-d-Lücke, Dossier §7). Listen-Erlasse tragen keine zitierten §-Tokens —
+ * `artikel: []` ist für sie der Normalfall und KEIN Mangel: der Generator
+ * extrahiert ohnehin alle Paragraphen (Vollabdeckung §7-1); `artikel` steuert
+ * nur die §8-Sichtbarkeit «zitierter Token fehlt im Erlass».
+ *
+ * DEDUPE-REGEL (§6-Verhaltensneutralität): Bei gleicher Registry-URL gewinnt
+ * die TARIF-Ableitung die Kopf-Daten (`erlassName`/`erlassNr`) — sie speisen
+ * `erlassBezeichnung()` und damit das `erlass`-Feld jedes Snapshots. Würde die
+ * Liste sie überschreiben, änderten sich die drei Bestands-Snapshots
+ * (ZH-211.11/215.3/243) byte-weise ohne fachlichen Grund. Die Liste ergänzt
+ * darum nur, was die Tarif-Ableitung nicht kennt.
  */
 export function sammleZhPdfInventar(): ZhPdfInventarGruppe[] {
   const eintraege = alleTarifEintraege();
@@ -368,7 +385,25 @@ export function sammleZhPdfInventar(): ZhPdfInventarGruppe[] {
     }
   }
 
-  return [...gruppen.values()].filter((g) => g.artikel.length > 0);
+  // Tarif-Gruppen ohne parsebaren Token fallen wie bisher weg (Fallback-Route);
+  // erst DANACH kommt die deklarative Liste dazu, damit ein Listen-Erlass nicht
+  // an diesem Filter scheitert (er hat naturgemäss keine zitierten Tokens).
+  const vereinigt = [...gruppen.values()].filter((g) => g.artikel.length > 0);
+  const bekannt = new Set(vereinigt.map((g) => g.quelleUrl));
+  for (const q of ZH_QUELLEN) {
+    if (bekannt.has(q.registryUrl)) continue;
+    vereinigt.push({
+      kanton: 'ZH',
+      quelleUrl: q.registryUrl,
+      erlassName: q.titel,
+      // «LS 131.1» — dieselbe Schreibweise wie die Tarif-Zitate (Bestand:
+      // «Notariatsgebührenverordnung (NotGebV) (LS 243)»), damit der Korpus
+      // eine Erlass-Bezeichnung führt und nicht zwei.
+      erlassNr: `LS ${q.nr}`,
+      artikel: [],
+    });
+  }
+  return vereinigt;
 }
 
 /**

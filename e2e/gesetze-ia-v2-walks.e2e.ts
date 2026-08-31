@@ -197,8 +197,12 @@ test.describe('IA-2 · Erfassungsgrad — Task-Walks (§11.3/§11.6)', () => {
     await main.getByRole('button', { name: 'Zürich', exact: true }).press('Enter'); interaktionen++
 
     // Ehrliche Antwort: Erfassungs-Kopf mit Zahl + Zustands-Wort + Weiterweg.
+    // Fachliche Aenderung 1.9.2026 (§6.3, deklariert): ZH traegt seit der
+    // Kern-Tranche 24 Erlasse — die dokumentierte Schwelle (§11.2, n>=20)
+    // stuft ZH von «duenn» auf «Auswahl». Die AUSSAGE des Walks (Zahl +
+    // Zustands-Wort + Weiterweg in <=2 Interaktionen) ist unveraendert.
     await expect(main.getByText(/Erlasse erfasst/)).toBeVisible()
-    await expect(main.getByText('dünn').first()).toBeVisible()
+    await expect(main.getByText('Auswahl').first()).toBeVisible()
     await expect(main.getByRole('link', { name: /lexfind/ }).first()).toBeVisible()
     expect(interaktionen, 'Budget §11.3 Zeile 4/11').toBeLessThanOrEqual(2)
     expect(fehler).toEqual([])
