@@ -470,11 +470,18 @@ nachrangig («token spahren egal»). Stadt-Zürich-Volltexte bleiben AUS
 
 ### 5.1 Querschnitt-Regeln (gelten für jede Runde)
 
-1. **Kanton-generisch bauen:** je Runde (a) Datenmodell + Tor für alle 26
-   Kantone definieren, (b) ZH als Erstbefüllung, (c) Befüll-Weg je übriger
-   Quell-Familie (LexWork-XHTML · SIL · TI · BS-API · zhlex-PDF) dokumentieren
-   und mitbefüllen, wo die Quelle es ohne Neubau hergibt. Generischer CODE
-   sofort — MASSEN-Regenerationen ≥ ~3 Kantone bleiben gegatete Tranchen (G2).
+1. **Kanton-generisch bauen — «gilt für alle» als Default (verschärft,
+   David 31.8.2026 zweite Weisung):** Was für alle Kantone sinnvoll ist,
+   wird so gebaut, dass es für alle Kantone GILT — nicht nur dokumentiert.
+   Konkret, je Runde: (a) Datenmodell/Schema-Felder existieren für alle 26;
+   (b) TORE laufen korpusweit über alle vorhandenen Kanton-Snapshots (nicht
+   nur ZH — ein Gliederungs-Leck-Wächter z. B. prüft AR/BS/… sofort mit);
+   (c) alles OFFLINE Befüllbare (aus bereits liegenden Snapshots, Sidecars,
+   DB, LexWork-Strukturdaten) wird sofort für ALLE Kantone befüllt — offline
+   heisst kein Massen-Fetch, also kein G2-Fall; (d) nur was einen NEUEN
+   Massen-ABRUF braucht, bleibt gegatete Tranche (G2) mit dokumentiertem
+   Befüll-Weg je Quell-Familie (LexWork-XHTML · SIL · TI · BS-API ·
+   zhlex-PDF). ZH ist Pilot für die PDF-Familie, nie die Grenze des Baus.
 2. **Prüf-Schleife je Runde und je Tranche:** Bau (Opus/high, frischer Kontext)
    → adversariale Gegenprüfung (frischer Kontext, unabhängige Dritt-Lesung,
    Blind-Werte vor Vergleich) → Fix-Runde → erneute Gegenprüfung, bis
