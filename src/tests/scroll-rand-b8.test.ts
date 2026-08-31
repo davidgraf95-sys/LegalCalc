@@ -99,6 +99,11 @@ describe('B8 · geteilte Scroll-Affordanz (LM-063/LM-064)', () => {
     ['src/components/rechtsprechung/SachgebietKacheln.tsx', 'lc-scrollrand-x'],
     ['src/pages/gesetz-leser/v3/LeserPanel.tsx', 'lc-scrollrand-x'],
     ['src/pages/gesetz-leser/v3/LeserSeitenleiste.tsx', 'lc-scrollrand-y'],
+    // LM-061 (Entscheid David 31.8.2026, revidiert D11): beide Startseiten-
+    // Streifen tragen die Scrollstand-Affordanz statt der angeschnittenen
+    // Karte als einziger Auskunft über ~2'600 px verborgenen Inhalt.
+    ['src/components/start/NewsHeader.tsx', 'lc-scrollrand-x'],
+    ['src/components/start/ZuletztVerwendet.tsx', 'lc-scrollrand-x'],
   ];
   for (const [datei, klasse] of ANKER) {
     it(`${datei} nutzt ${klasse}`, () => {
