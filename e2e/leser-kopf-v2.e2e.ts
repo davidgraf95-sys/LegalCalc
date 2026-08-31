@@ -2,6 +2,14 @@
 import { test, expect, type Page } from '@playwright/test';
 import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME } from './helpers/leserBeschriftung';
 
+// ⚠ DER DATEINAME MEINT NICHT DEN LESER V2 (Vermerk 31.8.2026, Runde 2 / Batch A).
+// «V2» ist hier die FAHRPLAN-Etappe GESETZESDARSTELLUNG-V2, nicht die alte
+// Leser-Hülle. Alle vier Fälle unten prüfen den heute ausgelieferten V3-Stand —
+// B-1 greift ausdrücklich `[data-v3-panel]`-Selektoren. Der Ent-Regulierungs-
+// Auftrag vom 31.8.2026 führte diese Datei als «V2-Erbe, streichen»; die
+// Ist-Prüfung am Code hat das WIDERLEGT, sie bleibt vollständig erhalten.
+// Beleg: bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md §7 Ziff. 2.
+//
 // FAHRPLAN-GESETZESDARSTELLUNG-V2 — koordinierter Kopf-PR (A22/A23, David 10.7.2026):
 //   · K-1  «in Kraft seit …» in der Meta-Zeile (Ur-Inkrafttreten, Fedlex
 //          dateEntryInForce, build-time projiziert ⇒ CLS 0); nur Bund.
