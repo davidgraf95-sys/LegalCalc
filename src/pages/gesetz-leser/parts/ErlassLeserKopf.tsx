@@ -7,6 +7,7 @@ import {
 } from '../../../lib/normtext/erlassKopfText';
 import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
 import { QuellLink } from '../../../components/ui/QuellLink';
+import { SeitenTitel } from '../../../components/ui/SeitenTitel';
 import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
@@ -217,7 +218,12 @@ export function ErlassLeserKopf({
           Spalte — und bricht dann ohne Trennstrich, statt die Zeile zu sprengen.
           Zwei Regeln, zwei Aufgaben: keine Kosmetik-Trennung, aber auch kein
           Überlauf. */}
-      <h1 className="font-serif text-h2 sm:text-h1 font-semibold text-ink-900 [overflow-wrap:anywhere] min-h-titel-2z">
+      {/* A-1 (31.8.2026): die GRÖSSEN-Kaskade kommt aus dem EINEN Titel-Baustein
+          (`components/ui/SeitenTitel`) und misst im Split-View die Pane-Breite
+          statt des Viewports (Herleitung dort). Stimme, Umbruch-Regel und
+          Höhen-Reservierung bleiben Aussagen DIESES Kopfes — sie stehen darum
+          weiterhin hier, samt ihren Messungen oben. */}
+      <SeitenTitel stimme="serif" className="[overflow-wrap:anywhere] min-h-titel-2z">
         {/* Ä-(d): die Kennung als eigene, nicht umbrechende Marke VOR dem Titel.
             Kein zweites Element neben der H1 und kein `aria-label`-Ersatz — sie
             ist Teil desselben Namens und bleibt darum in der Überschrift; nur
@@ -231,7 +237,7 @@ export function ErlassLeserKopf({
           </>
         )}
         {titelZeile}
-      </h1>
+      </SeitenTitel>
 
       {fakten.length > 0 && (
         <p className="text-xs text-ink-500">

@@ -69,4 +69,4 @@ mitgefixt) · SachgebietKacheln lg: (ohne Sichtschaden, Runde 2 prüfen).
 **Nebenfunde für andere Stränge (nach Landung PR #595 in den Plan buchen):** BMV
 «Nachfolge-Erlass = gleiche SR» (§7-Datenfrage Korpus) · Zählparität 1'458/201+1'231/227
 (§8, Cowork-32-Familie) · toter `uebersichtsZeile`-Code mit hartem «SR» (Rückbau) ·
-`PaneKopf.stand` unerreichbar (Rückbau §6.7).
+~~`PaneKopf.stand` unerreichbar~~ — FALSIFIZIERT durch BAU-6 (31.8.): erreichbar auf 11 pdf-embed/nur-live-link-Erlassen (EMRK, DSGVO …), dort einzige Stand-Angabe des Panes; bleibt, neu bewacht (`ortsAngabe.test.tsx`).

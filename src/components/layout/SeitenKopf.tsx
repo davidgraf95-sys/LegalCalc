@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { SeitenTitel } from '../ui/SeitenTitel';
 
 // Gemeinsamer Kopf der statischen/Sekundärseiten (Redesign E10): Overline +
 // Ablesekante (scale-rule = Marken-Signet) + responsive H1, optional Intro und
@@ -16,7 +17,10 @@ export function SeitenKopf({ overline, titel, intro, children }: {
     <div className="space-y-2">
       <p className="lc-overline">{overline}</p>
       <div className="scale-rule max-w-[280px]" aria-hidden />
-      <h1 className="text-h2 sm:text-h1 font-display font-semibold text-ink-900">{titel}</h1>
+      {/* A-1: die H1 kommt aus dem EINEN Titel-Baustein (`ui/SeitenTitel`) —
+          ausserhalb eines Panes zeichengleich zum Vorzustand, im Pane
+          container-basiert skaliert. */}
+      <SeitenTitel>{titel}</SeitenTitel>
       {/* T1/L5 (Design-Qualitäts-Pass 29.8.2026, W2·11-DESIGN): der Lead lief bis
           hierher OHNE Lesespalte über die volle Inhaltsbreite. Gemessen @1440
           (Methode `e2e/leser-lesemass.e2e.ts`: Textlänge / Zeilenkästen):

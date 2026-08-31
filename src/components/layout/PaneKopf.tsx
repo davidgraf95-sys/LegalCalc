@@ -1,4 +1,5 @@
 import type { DragEvent, ReactNode } from 'react';
+import { OrtsAngabe, StandAngabe } from './OrtsAngabe';
 
 // ─── Pane-Kopf (Split-View «Fensterkopf», Auftrag David) ────────────────────
 //
@@ -17,7 +18,31 @@ import type { DragEvent, ReactNode } from 'react';
 export interface PaneKopfProps {
   icon?: ReactNode;
   label: string;
-  /** In-Kraft-/Konsolidierungs-Stand, nur wenn auflösbar (§8 — kein erfundener Stand). */
+  /**
+   * In-Kraft-/Konsolidierungs-Stand, nur wenn auflösbar (§8 — kein erfundener Stand).
+   *
+   * ── §7-ABWEICHUNG VOM BAU-PAKET A-4 (31.8.2026), offengelegt ──────────────
+   * Das Paket verlangte die STREICHUNG dieser Prop als unerreichbar (§6.7).
+   * Nachgerechnet statt geglaubt — die Behauptung ist falsifiziert:
+   *   (a) `stand` ist genau dann gesetzt, wenn `Shell.titelVon()` einen Erlass
+   *       auflöst; `lib/verlaufLabel.erlassVonPfad` gibt nur auf GESETZ-Pfaden
+   *       etwas zurück.
+   *   (b) Der Gesetz-Leser meldet `kopfzeileSelbst` NICHT unbedingt: auf drei
+   *       Wegen nimmt `pages/gesetz-leser/v3/useKopfAnspruch.ts` (Z. 51) die
+   *       Meldung zurück, wenn der Rahmen eine BLEIBENDE Ansicht ohne Kopfzeile
+   *       rendert — Fehlseite · `pdf-embed` · `nur-live-link`
+   *       (`pages/gesetz-leser/inhalt-ansichten.FruehAnsicht`).
+   *   (c) Dann ist `kopfDaten === null`, also `nurSteuerung === undefined`,
+   *       also `zeigeIdentitaet === true` — und der Stand steht.
+   *   (d) Betroffener Bestand, gezählt am `public/normtext/register.json`
+   *       (31.8.2026): 11 Erlasse mit `status` ∈ {pdf-embed, nur-live-link},
+   *       davon 11 MIT `stand` — u. a. `bund/EMRK` (2022-09-16),
+   *       `bund/DSGVO` (2016-04-27), `bund/NYUE` (2026-05-06).
+   * Auf genau diesen Seiten ist diese Zeile die EINZIGE Stand-Angabe des Panes;
+   * streichen hiesse einen Rechtswert entfernen (§8, D1). Die Prop bleibt und
+   * ist seit 31.8.2026 bewacht: `src/tests/ortsAngabe.test.tsx` fährt die Kette
+   * (a)–(d) nach und wird rot, sobald sie fällt.
+   */
   stand?: string | null;
   /** F: Breadcrumb «Gesetze › Bund › OR» statt blossem Label (Parität zur Einzelansicht). */
   breadcrumb?: { label: string; to?: string }[];
@@ -85,38 +110,28 @@ export function PaneKopf({ icon, label, stand, breadcrumb, onBreadcrumb, artikel
           >⠿</span>
         )}
         {zeigeIdentitaet && icon && <span className="shrink-0">{icon}</span>}
-        {!zeigeIdentitaet ? null : breadcrumb && breadcrumb.length > 0 ? (
-          // Breadcrumb (Parität zur Einzelansicht). KEIN <nav>-Landmark (sonst
-          // gleichnamige Landmark-Flut bei mehreren Panes). Krümel mit `to` sind
-          // PANE-LOKAL klickbar (David 1.7.2026): <button> → onBreadcrumb (Pane-
-          // Navigator bzw. Haupt-Router), nie ein globaler <Link>. Ohne Callback
-          // (SSR/Prerender) rein statisch. Plus laufender Artikel + Stand (rechts).
-          <span className="flex min-w-0 items-center gap-1 text-body-s">
-            {breadcrumb.map((b, i) => (
-              <span key={`${i}-${b.label}`} className="inline-flex min-w-0 items-center gap-1">
-                {/* C5 (29.8.2026): Trenner ink-300 → ink-400, Herleitung in `InhaltsKopf.tsx`. */}
-                {i > 0 && <span aria-hidden className="shrink-0 text-ink-400">›</span>}
-                {b.to && onBreadcrumb ? (
-                  <button type="button" onClick={() => onBreadcrumb(b.to!)}
-                    /* Ring/Farbe kommen aus der globalen `:focus-visible`-Regel
-                       (index.css, Rolle --focus); NUR der Offset ist lokal:
-                       negativ, weil der Krümel in der schmalen Kopfzeile sitzt
-                       und ein aussenliegender Ring dort geclippt würde. */
-                    className="truncate text-ink-500 no-underline hover:text-brass-700 hover:underline focus-visible:-outline-offset-2 rounded-sm">{b.label}</button>
-                ) : (
-                  <span className={`truncate ${i === breadcrumb.length - 1 ? 'font-medium text-ink-800' : 'text-ink-500'}`}>{b.label}</span>
-                )}
-              </span>
-            ))}
-          </span>
-        ) : (
-          <span className="truncate text-body-s font-medium text-ink-800">{label}</span>
+        {/* ── A-4 (31.8.2026) · DIE ORTSANGABE IST DIESELBE WIE IN DER
+            EINZELANSICHT ────────────────────────────────────────────────────
+            Bis hierher baute diese Leiste ihre Krumen-Kette selbst nach — in
+            `text-body-s` statt `text-xs`, ohne Landmark, mit dem vollen
+            Artikel-Zitat neben der Krume, die sein Kürzel schon nennt, und vor
+            allem OHNE jede Overflow-Regel: jede Krume truncatete für sich, also
+            genau das «( ) )»-Bild, das der `InhaltsKopf` unter ② längst behoben
+            hatte. Beides zieht jetzt auf `./OrtsAngabe` (§5/§10); die Kaskade
+            dort misst die ZONE und wirkt darum im schmalen Pane wie auf dem
+            Telefon. `aufKrume` hält die Navigation pane-lokal (David 1.7.2026),
+            der Landmark-Name nennt das Fenster, damit mehrere Panes
+            unterscheidbare Landmarks tragen. */}
+        {zeigeIdentitaet && (
+          <OrtsAngabe breadcrumb={breadcrumb} blattLabel={label} artikel={artikel}
+            aufKrume={onBreadcrumb} navLabel={`Brotkrümel «${label}»`} />
         )}
-        {/* `data-ort-artikel` (Ä1, LESER-V3 H2b): Testanker der Ortsangabe —
-            Herleitung in `InhaltsKopf.tsx` und `e2e/leser-v3-ortsangabe.e2e.ts`.
-            Reine Kennzeichnung, keine Anzeige-Änderung. */}
-        {zeigeIdentitaet && artikel && <span data-ort-artikel className="num shrink-0 text-micro font-medium text-ink-700">· {artikel}</span>}
-        {zeigeIdentitaet && stand && <span className="num shrink-0 text-micro text-ink-500">· Stand {stand}</span>}
+        {/* D1/§7: der Stand ist ein Rechtswert — EINE Anatomie mit der
+            Einzelansicht (`./OrtsAngabe`, dort auch die F2-Herleitung für
+            ink-600, die diese Leiste bis 31.8.2026 auf ink-500 unterlief). Der
+            Platz ist pane-eigen: hier steht kein Griff-Riegel, in den die Angabe
+            gehörte, darum sitzt sie hinter der Ortsangabe (Trenner «·»). */}
+        {zeigeIdentitaet && stand && <StandAngabe stand={stand} trenner />}
         {rolle === 'primaer' && <span className="sr-only">(aktuelle Adresse)</span>}
       </div>
       {/* Rechts: Steuerung. */}

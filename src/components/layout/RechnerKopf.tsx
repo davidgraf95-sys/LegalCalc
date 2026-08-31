@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import type { Calculator } from '../../lib/calculators';
 import { sansAmp } from '../typografie';
 import { NormChip } from '../vorlagen/NormChip';
+import { SeitenTitel } from '../ui/SeitenTitel';
 
 // Gemeinsamer Rechner-Kopf (Vorlage Abschnitt 4): Zurück-Pfeil, Breadcrumb,
 // Overline, H1, Einleitung, Chips.
@@ -42,7 +43,9 @@ export function RechnerKopf({ calc, titelOverride, kategorieOverride, kurzbeschr
         </span>
       </nav>
       <p className="lc-overline">{kategorie}</p>
-      <h1 className="text-h2 sm:text-h1 font-display font-semibold text-ink-900">{sansAmp(titel)}</h1>
+      {/* A-1: EIN Titel-Baustein (`ui/SeitenTitel`) — im Pane skaliert er an der
+          Pane-Breite statt am Viewport. */}
+      <SeitenTitel>{sansAmp(titel)}</SeitenTitel>
       <p className="text-body-l text-ink-600 max-w-reading">{kurzbeschrieb}</p>
       {/* lc-chip-zeile (LM-044/N1): die Norm-Chips sind <a> und tragen damit die
           Link-Unterstreichung als Form-Merkmal — ein Normverweis sieht anders aus
