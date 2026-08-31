@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { EntscheidBody } from '../components/rechtsprechung/EntscheidBody';
 import RegesteBlock from '../components/rechtsprechung/RegesteBlock';
@@ -31,7 +31,10 @@ import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 // dazu die Satz-Konstante aus `lib/benennung` (B-6).
 import { SeitenTitel } from '../components/ui/SeitenTitel';
 import { FehlSeite } from '../components/ui/FehlSeite';
-import { AMTLICHE_FASSUNG, MASSGEBLICH_SATZ } from '../lib/benennung';
+import { AMTLICHE_FASSUNG, MASSGEBLICH_HALBSATZ, MASSGEBLICH_SATZ } from '../lib/benennung';
+// B-4 (Runde 2, 31.8.2026): die Bänder-Ordnung des Leser-Kopfs — hier löst sie
+// die letzte Misch-Zeile der drei Leser ab (Herleitung im Baustein).
+import { KopfOverline, LeserKopfGeruest } from '../components/layout/LeserKopfGeruest';
 // §6.6-Split vom 31.8.2026 (Anlass: `check:schlankheit` ROT bei 1380 Z.). Die
 // Kopf-Teile stehen in BEIDEN Ansichten dieses Lesers, die Lese-Schriftgrösse
 // bedient beide Steller-Paare, und das Overlay ist die zweite Ansicht selbst —
@@ -596,136 +599,170 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       <style>{`.rsp-anker [id],#kontext-titel{scroll-margin-top:var(--rsp-stick,7rem)}`}</style>
       {/* Breadcrumb trägt der Kopf (Inhalts-Kopf in der Einzelansicht, PaneKopf im
           Split-View) — kein Inline-Dup mehr (Parität zum Gesetz-Leser). */}
-      <header className="space-y-2.5 border-b border-line pb-5">
-        {/* 1 Identität (stets): Gericht · Abteilung · Sachgebiet */}
-        <p className="lc-overline">
-          {snap.gerichtName}
-          {snap.abteilung && <span className="text-ink-500"> · {snap.abteilung}</span>}
-          {/* J3 (§8): Sachgebiet ist maschinell zugeordnet — der title sagt es an
-              Ort und Stelle; das Badge dazu trägt der Kopf bereits (V1.2, unten). */}
-          <span className="text-brass-700" title={snap.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}> · {GEBIET_LABEL[snap.sachgebiet]}</span>
-        </p>
-        {/* 2 Zitierung = Identitäts-Anker (stets, prominent). LM-019 (§8 B7): bei
-            offenem Lesemodus blendet NUR der `<article>`-Body aus (weiter unten,
-            `{!lese && …}`) — dieser Kopf inkl. H1 blieb bisher im DOM, während das
-            Overlay (LesemodusOverlay, `createPortal`) DENSELBEN Titel als EIGENES
-            H1 zeigt: zwei H1 mit identischem Text gleichzeitig im Dokument (axe/
-            WCAG 1.3.1, Doppel-Landmarke). `hidden` (display:none) nimmt dieses H1
-            aus dem Accessibility-Baum, solange das Overlay-H1 die Rolle trägt —
-            visuell ohnehin unter dem opaken Vollbild-Overlay verdeckt. */}
-        {/* A-1-Nachzug (BAU-4): die H1 kommt aus dem EINEN Titel-Baustein. Die
-            Mono-Stimme (`num`) BLEIBT — sie ist hier keine Datums-, sondern die
-            Zitierung selbst, und genau darauf ist die Mono-Stimme begrenzt
-            (Design-Grundlage Kap. 2.1: SR-Nr./Aktenzeichen). Ausserhalb eines
-            Panes ist die Klassenzeile zeichengleich zum Vorzustand (Prerender
-            der 5'093 Entscheid-Seiten unberührt); im Pane misst die Kaskade
-            neu die Pane- statt die Fensterbreite. */}
-        <SeitenTitel className={`num${lese ? ' hidden' : ''}`}>{snap.zitierung}</SeitenTitel>
-
-        {/* 3 Abgeleitete Sachgebiets-Leitzeile — nur wenn weder ein Rubrum-Gegenstand
-            noch die Regeste-Box das Thema trägt (kopf.ts entscheidet, §3/§5). Nüchtern +
-            ehrlicher Marker, dass sie aus der Struktur abgeleitet ist (§8). */}
-        {kopf.leitzeile && (
-          <div className="space-y-0.5">
-            <p className="text-body-s leading-snug text-ink-700">{kopf.leitzeile}</p>
-            <p className="text-micro italic text-ink-500">{SYNTH_MARKER[snap.sprache]}</p>
-          </div>
-        )}
-
-        {/* 3b LM-208 · Herkunfts-Hinweis: wer über einen Norm-Chip hierher kam, sah
-            bisher nirgends, über welche Norm — und musste die Stelle in einem
-            24'000-Zeichen-Urteil selbst suchen. Chip-Grammatik der Metazeile
-            (<span> flach, <button> gerahmt); die Norm selbst über NormText, damit
-            der Rückweg ein lebender Link ist (§13-D1). Der A17-Seitenanfang bleibt
-            unangetastet — hier kommt nur eine Zeile hinzu, kein Sprungverhalten. */}
-        {herkunft && normParam && (
-          <div className="lc-chip-zeile flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-xs text-ink-500">
-            <span>Aufgerufen über <NormText text={normParam} /></span>
-            {herkunft.ziele.length > 0 ? (
-              <button type="button" onClick={springeZuFundstelle}
-                className="lc-chip hover:text-brass-700 hover:border-brass-400"
-                title="Zur nächsten wörtlichen Nennung in den Erwägungen springen">
-                {/* Abstand als Klasse, nicht als Leerzeichen: `.lc-chip` ist ein
-                    Flex-Container, dort fallen reine Whitespace-Knoten zwischen
-                    zwei Flex-Items weg (Screenshot-Befund «Fundstelle1/2»). */}
-                ↓ Fundstelle
-                <span className="num ml-1">{(fundIdx % herkunft.ziele.length) + 1}/{herkunft.ziele.length}</span>
-              </button>
-            ) : herkunft.gesamt > 0 ? (
-              // Genannt, aber ausserhalb der Erwägungen (Sachverhalt/Dispositiv):
-              // markiert ja, anspringbarer Anker nein — ehrlich benannt (§8).
-              <span title="Die Nennung liegt ausserhalb der Erwägungen und ist im Text markiert">
-                im Text markiert, kein Erwägungs-Anker
-              </span>
-            ) : (
-              // Der reproduzierte Fall: der Entscheid schreibt «Art. 367 ff. OR».
-              // Das «ff.» aufzulösen wäre geraten (§1/§8) — also ehrlich sagen,
-              // dass die Norm nicht wörtlich in dieser Form im Text steht.
-              <span title="Der Entscheid nennt diese Norm nicht in exakt dieser Form (z. B. nur als «… ff.» oder mit Absatz-Angabe)">
-                im Text nicht wörtlich genannt
-              </span>
-            )}
-          </div>
-        )}
-
-        {/* 4 Rubrum-Zeilen IM Kopf (Art. 112 BGG): nur befüllte Felder, feste Reihenfolge
-            Gegenstand→Parteien→Vorinstanz→Besetzung, per Haarlinie abgesetzt (kein Kasten).
-            Nur in der Voll-Ansicht — der amtliche BGE-Auszug trägt kein Rubrum. */}
-        {zeigeRubrum && (
-          // A-2: das Rubrum bricht in EINE Spalte um, sobald neben 7 rem
-          // Etikett keine lesbare Wertspalte mehr bleibt. Das war eine
-          // Fensterfrage (`sm:`) und ist eine Platzfrage: in einer schmalen
-          // Pane standen «Vorinstanz» und ein langer Gerichtsname
-          // nebeneinander in je ~120 px.
-          <dl className={pk(
-            'mt-1 grid grid-cols-1 sm:grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-1.5 border-t border-line/60 pt-3 text-body-s',
-            'mt-1 grid grid-cols-1 @xl/pane:grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-1.5 border-t border-line/60 pt-3 text-body-s',
-          )}>
-            {kopf.rubrumZeilen.map((z) => (
-              <div key={z.label} className="contents">
-                <dt className="lc-overline pt-0.5">{kopfLabel[z.label]}</dt>
-                <dd className={z.label === 'gegenstand' ? 'text-ink-800' : 'text-ink-700'}>
-                  {z.label === 'besetzung'
-                    ? <BesetzungWert freitext={z.wert} gericht={snap.gericht} refs={eintrag?.richter} />
-                    : z.wert}
-                </dd>
+      {/* ── B-4 (Design-Konsistenz Runde 2, 31.8.2026) · DIE BÄNDER-ORDNUNG ───
+          Dieser Kopf war die letzte MISCH-ZEILE der drei Leser: in EINEM Streifen
+          standen Fakten (Urteilsdatum, BGE-Referenz, Parallelnummer), drei
+          §8-Badges und vier Aktionen (Quell-Link, Schriftgrösse, Zitat kopieren,
+          Lesemodus) nebeneinander — genau die Vermengung, die Ä6 im Erlass-Kopf
+          schon 2026 aufgelöst hatte («neun gleich aussehende Chips, darunter
+          drei grundverschiedene Dinge»). Er trennt jetzt nach ROLLE, mit dem
+          geteilten Gerüst `layout/LeserKopfGeruest` (§5/§10):
+            Overline · Titel · Fakten · Stand+Ehrlichkeit · Aktionen.
+          Die Aktionen verlieren dabei ihr `ml-auto` (sie standen rechtsbündig am
+          Ende der Misch-Zeile) und stehen wie im Erlass-Kopf links im eigenen
+          Band; ihre Chip-Anatomie neutralisiert `.lc-kopf-aktionen`, das
+          44-px-Tap-Ziel bleibt (F2b). Kein Knopf, kein Wort und keine Reihenfolge
+          innerhalb der Bänder ändert sich. */}
+      <LeserKopfGeruest
+        // 1 Identität: Gericht · Abteilung · Sachgebiet.
+        // B-7 (31.8.2026): dieselbe dreigliedrige Ordnung, die jetzt auch der
+        // Erlass-Kopf trägt — hier war sie zu Hause, dort fehlte sie
+        // (Definition und Ton: `layout/LeserKopfGeruest`, `KopfOverline`).
+        // J3 (§8): Sachgebiet ist maschinell zugeordnet — der title sagt es an
+        // Ort und Stelle; das Badge dazu trägt der Kopf bereits (V1.2, unten).
+        overline={<KopfOverline glieder={[
+          { text: snap.gerichtName, rolle: 'herkunft' },
+          snap.abteilung ? { text: snap.abteilung, rolle: 'art' } : null,
+          {
+            text: GEBIET_LABEL[snap.sachgebiet], rolle: 'sachgebiet',
+            title: snap.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined,
+          },
+        ]} />}
+        /* 2 Zitierung = Identitäts-Anker (stets, prominent). LM-019 (§8 B7): bei
+           offenem Lesemodus blendet NUR der `<article>`-Body aus (weiter unten,
+           `{!lese && …}`) — dieser Kopf inkl. H1 blieb bisher im DOM, während das
+           Overlay (LesemodusOverlay, `createPortal`) DENSELBEN Titel als EIGENES
+           H1 zeigt: zwei H1 mit identischem Text gleichzeitig im Dokument (axe/
+           WCAG 1.3.1, Doppel-Landmarke). `hidden` (display:none) nimmt dieses H1
+           aus dem Accessibility-Baum, solange das Overlay-H1 die Rolle trägt —
+           visuell ohnehin unter dem opaken Vollbild-Overlay verdeckt.
+           A-1-Nachzug (BAU-4): die H1 kommt aus dem EINEN Titel-Baustein. Die
+           Mono-Stimme (`num`) BLEIBT — sie ist hier keine Datums-, sondern die
+           Zitierung selbst, und genau darauf ist die Mono-Stimme begrenzt
+           (Design-Grundlage Kap. 2.1: SR-Nr./Aktenzeichen). Ausserhalb eines
+           Panes ist die Klassenzeile zeichengleich zum Vorzustand (Prerender
+           der 5'093 Entscheid-Seiten unberührt); im Pane misst die Kaskade
+           neu die Pane- statt die Fensterbreite. */
+        titel={<SeitenTitel className={`num${lese ? ' hidden' : ''}`}>{snap.zitierung}</SeitenTitel>}
+        nachTitel={
+          <>
+            {/* 3 Abgeleitete Sachgebiets-Leitzeile — nur wenn weder ein Rubrum-Gegenstand
+                noch die Regeste-Box das Thema trägt (kopf.ts entscheidet, §3/§5). Nüchtern +
+                ehrlicher Marker, dass sie aus der Struktur abgeleitet ist (§8). */}
+            {kopf.leitzeile && (
+              <div className="space-y-0.5">
+                <p className="text-body-s leading-snug text-ink-700">{kopf.leitzeile}</p>
+                <p className="text-micro italic text-ink-500">{SYNTH_MARKER[snap.sprache]}</p>
               </div>
-            ))}
-          </dl>
-        )}
+            )}
 
-        {/* 5 Meta + Badges + Lese-Steuerung — gedämpfte Schlusszeile.
-            lc-chip-zeile (LM-047): Chip-Grammatik wie im Erlasskopf (LM-045) —
-            <a> unterstrichen, <button> gerahmt, <span> flach; die gewollte
-            Badge↔Chip-Trennung (VZUI §1.2/§1.3) bleibt unberührt. */}
-        <div className="lc-chip-zeile flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
-          <DatumMeta snap={snap} />
-          {/* B-5 (31.8.2026): der Referenz-Chip steht nur noch, wenn die H1
-              darüber die Referenz NICHT schon wörtlich trägt — am heutigen
-              Korpus also nie (1259/1259 gemessen), an einem künftigen
-              «BGer …» MIT Sammlungsreferenz sehr wohl. Die Entscheidung liegt
-              in `referenzImTitel` (rein, wortgrenzen-genau, dort begründet). */}
-          {snap.bgeReferenz && !referenzImTitel(snap.zitierung, snap.bgeReferenz) && (
-            <>
-              <span className="text-ink-300" aria-hidden>·</span>
-              <span className="num">{snap.bgeReferenz}</span>
-            </>
-          )}
-          {/* BS §7.2: parallele Zweit-Geschäftsnummer desselben Verfahrens
-              («ZB.2023.4 (AG.2023.…)») — Identität, keine zweite Zitierung. */}
-          {snap.nummerSekundaer && (
-            <>
-              <span className="text-ink-300" aria-hidden>·</span>
-              <span className="num" title="Parallele Geschäftsnummer desselben Verfahrens">({snap.nummerSekundaer})</span>
-            </>
-          )}
-          {/* V1.2 (W2·7-VZUI): geteiltes StatusBadge-Vokabular — aria-label
-              textgleich zu Suche/Panel/Leitfall-Zeile; hier interaktiv (Begriff-
-              Tooltip, fokussier- und touch-bedienbar, Magic Moment 4). */}
-          {snap.leitcharakter === 'leitentscheid' && <StatusBadge praedikat="leitentscheid" interaktiv />}
-          <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(snap.sprache)}>{snap.sprache}</span>
-          {snap.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
-          <span className="ml-auto inline-flex flex-wrap items-center justify-end gap-2 gap-y-1.5">
+            {/* 3b LM-208 · Herkunfts-Hinweis: wer über einen Norm-Chip hierher kam, sah
+                bisher nirgends, über welche Norm — und musste die Stelle in einem
+                24'000-Zeichen-Urteil selbst suchen. Chip-Grammatik der Metazeile
+                (<span> flach, <button> gerahmt); die Norm selbst über NormText, damit
+                der Rückweg ein lebender Link ist (§13-D1). Der A17-Seitenanfang bleibt
+                unangetastet — hier kommt nur eine Zeile hinzu, kein Sprungverhalten. */}
+            {herkunft && normParam && (
+              <div className="lc-chip-zeile flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-xs text-ink-500">
+                <span>Aufgerufen über <NormText text={normParam} /></span>
+                {herkunft.ziele.length > 0 ? (
+                  <button type="button" onClick={springeZuFundstelle}
+                    className="lc-chip hover:text-brass-700 hover:border-brass-400"
+                    title="Zur nächsten wörtlichen Nennung in den Erwägungen springen">
+                    {/* Abstand als Klasse, nicht als Leerzeichen: `.lc-chip` ist ein
+                        Flex-Container, dort fallen reine Whitespace-Knoten zwischen
+                        zwei Flex-Items weg (Screenshot-Befund «Fundstelle1/2»). */}
+                    ↓ Fundstelle
+                    <span className="num ml-1">{(fundIdx % herkunft.ziele.length) + 1}/{herkunft.ziele.length}</span>
+                  </button>
+                ) : herkunft.gesamt > 0 ? (
+                  // Genannt, aber ausserhalb der Erwägungen (Sachverhalt/Dispositiv):
+                  // markiert ja, anspringbarer Anker nein — ehrlich benannt (§8).
+                  <span title="Die Nennung liegt ausserhalb der Erwägungen und ist im Text markiert">
+                    im Text markiert, kein Erwägungs-Anker
+                  </span>
+                ) : (
+                  // Der reproduzierte Fall: der Entscheid schreibt «Art. 367 ff. OR».
+                  // Das «ff.» aufzulösen wäre geraten (§1/§8) — also ehrlich sagen,
+                  // dass die Norm nicht wörtlich in dieser Form im Text steht.
+                  <span title="Der Entscheid nennt diese Norm nicht in exakt dieser Form (z. B. nur als «… ff.» oder mit Absatz-Angabe)">
+                    im Text nicht wörtlich genannt
+                  </span>
+                )}
+              </div>
+            )}
+
+            {/* 4 Rubrum-Zeilen IM Kopf (Art. 112 BGG): nur befüllte Felder, feste Reihenfolge
+                Gegenstand→Parteien→Vorinstanz→Besetzung, per Haarlinie abgesetzt (kein Kasten).
+                Nur in der Voll-Ansicht — der amtliche BGE-Auszug trägt kein Rubrum. */}
+            {zeigeRubrum && (
+              // A-2: das Rubrum bricht in EINE Spalte um, sobald neben 7 rem
+              // Etikett keine lesbare Wertspalte mehr bleibt. Das war eine
+              // Fensterfrage (`sm:`) und ist eine Platzfrage: in einer schmalen
+              // Pane standen «Vorinstanz» und ein langer Gerichtsname
+              // nebeneinander in je ~120 px.
+              <dl className={pk(
+                'mt-1 grid grid-cols-1 sm:grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-1.5 border-t border-line/60 pt-3 text-body-s',
+                'mt-1 grid grid-cols-1 @xl/pane:grid-cols-[7rem_minmax(0,1fr)] gap-x-4 gap-y-1.5 border-t border-line/60 pt-3 text-body-s',
+              )}>
+                {kopf.rubrumZeilen.map((z) => (
+                  <div key={z.label} className="contents">
+                    <dt className="lc-overline pt-0.5">{kopfLabel[z.label]}</dt>
+                    <dd className={z.label === 'gegenstand' ? 'text-ink-800' : 'text-ink-700'}>
+                      {z.label === 'besetzung'
+                        ? <BesetzungWert freitext={z.wert} gericht={snap.gericht} refs={eintrag?.richter} />
+                        : z.wert}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </>
+        }
+        /* 5a Fakten — die nüchternen Identitäts-Angaben, «·»-gefügt vom Gerüst.
+           B-5 (31.8.2026): der Referenz-Chip steht nur noch, wenn die H1 darüber
+           die Referenz NICHT schon wörtlich trägt — am heutigen Korpus also nie
+           (1259/1259 gemessen), an einem künftigen «BGer …» MIT Sammlungsreferenz
+           sehr wohl. Die Entscheidung liegt in `referenzImTitel` (rein,
+           wortgrenzen-genau, dort begründet).
+           BS §7.2: die parallele Zweit-Geschäftsnummer desselben Verfahrens
+           («ZB.2023.4 (AG.2023.…)») ist Identität, keine zweite Zitierung. */
+        fakten={[
+          <DatumMeta snap={snap} />,
+          snap.bgeReferenz && !referenzImTitel(snap.zitierung, snap.bgeReferenz)
+            ? <span className="num">{snap.bgeReferenz}</span> : null,
+          snap.nummerSekundaer
+            ? <span className="num" title="Parallele Geschäftsnummer desselben Verfahrens">({snap.nummerSekundaer})</span>
+            : null,
+        ].filter(Boolean) as ReactNode[]}
+        /* 5b Stand + Ehrlichkeit — dieselbe Zelle wie der Standausweis des
+           Erlass-Kopfs, weil sie dieselbe Frage beantwortet: wie belastbar ist,
+           was hier steht?
+           V1.2 (W2·7-VZUI): geteiltes StatusBadge-Vokabular — aria-label
+           textgleich zu Suche/Panel/Leitfall-Zeile; das Leitentscheid-Badge ist
+           hier interaktiv (Begriff-Tooltip, fokussier- und touch-bedienbar,
+           Magic Moment 4).
+           ── §8-EHRLICHKEIT VOR DEM LESEN (B-4, 31.8.2026) ────────────────────
+           Der Vorbehalt «massgeblich ist die amtliche Fassung» stand in diesem
+           Leser als EINZIGEM nur im Provenienz-Fuss — also erst, nachdem man ein
+           24'000-Zeichen-Urteil gelesen hat. Im Erlass-Kopf steht derselbe
+           Vorbehalt seit S3 in dieser Zelle, VOR dem Lesen («Kopie vom … —
+           massgeblich ist die amtliche Fassung»). PROMOTION, kein Neubau: der
+           Satzbaustein ist derselbe (`lib/benennung`, §5), der Fuss behält seinen
+           vollen Absatz unverändert — ein Ehrlichkeits-Satz wird nie leiser,
+           wenn er zusätzlich früher steht (§8). */
+        ehrlichkeit={
+          <div className="space-y-1 text-xs text-ink-500">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+              {snap.leitcharakter === 'leitentscheid' && <StatusBadge praedikat="leitentscheid" interaktiv />}
+              <span className="lc-badge lc-badge-soft uppercase" title={spracheBadgeTitel(snap.sprache)}>{snap.sprache}</span>
+              {snap.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
+            </div>
+            <p className="leading-snug">Wiedergabe des amtlichen Urteilstexts — {MASSGEBLICH_HALBSATZ}</p>
+          </div>
+        }
+        aktionen={
+          <>
             {/* Amtliche Quelle direkt oben erreichbar (§8) — folgt der Ansicht
                 (Voll → Urteil/aza, Auszug → BGE-Sammlung).
                 ── B-1-NACHZUG (31.8.2026) · EIN NAME, EINE FORM ──────────────
@@ -742,7 +779,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
             <MassgeblicheFassung url={massgeblicheUrl} titel={massgeblichTitel} fehlt={massgeblichFehlt}
               className="lc-chip hover:text-brass-700 hover:border-brass-400" />
             {/* R17: Lese-Schriftgrösse */}
-            {/* shrink-0: die Schlusszeile ist ein flex-wrap-Streifen; ohne dies
+            {/* shrink-0: das Aktionen-Band ist ein flex-wrap-Streifen; ohne dies
                 staucht der Flex die overflow-hidden-Gruppe bei 390 unter ihre
                 Inhaltsbreite und beschnitt «A− A+» (Responsive-Audit D5). */}
             {/* ── ENTSCHEID DAVID 5B (29.8.2026) · NACHZUG IM ENTSCHEID-LESER ──
@@ -782,9 +819,9 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               title="Ablenkungsfreier Lesemodus">
               ▭ Lesemodus
             </button>
-          </span>
-        </div>
-      </header>
+          </>
+        }
+      />
 
       {/* Gemeinsamer sticky Kopf-Block (§13-Bug-Fix: EIN sticky-Element statt zweier
           sich überlagernder). Oben — beim BGE mit Volltext — der Fassungs-Umschalter
@@ -1029,3 +1066,4 @@ export function EntscheidLeser() {
   const leseParam = sp.get(LESE_PARAM);
   return <EntscheidLeserInhalt key={schluessel} schluessel={schluessel} ansichtParam={ansichtParam} normParam={normParam} leseParam={leseParam} />;
 }
+

@@ -476,7 +476,7 @@ function StrafRechtsmittelTeil() {
 
       <ErgebnisBlock>
 
-        <div className={`lc-card p-5 space-y-3 ${r.statthaft === 'keines' ? 'border-t-[3px] border-t-danger-line' : ''}`}>
+        <div className={`lc-card p-5 space-y-3 ${r.statthaft === 'keines' ? 'lc-akzent-danger' : ''}`}>
           <GruppenTitel>Statthaftes Rechtsmittel</GruppenTitel>
           <p className="text-body-s text-ink-900">{r.text}</p>
           {r.statthaft !== 'keines' && (

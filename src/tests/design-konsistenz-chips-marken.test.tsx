@@ -51,11 +51,37 @@ describe('D-1 — /suche-Facetten tragen die Chip-Familie, die Kopie ist gelösc
     expect(quelle).not.toContain('rounded-full border');
   });
 
+  // RUNDE 2 (31.8.2026, deklarierte Test-Nachführung): B1/D-1 hatte die OPTIK
+  // der Achse vereinheitlicht, die ANATOMIE stand danach immer noch zweimal —
+  // in `Suche.tsx` und als lokale `FacettenGruppe` in `EntscheidFilter.tsx`.
+  // Beide sind jetzt auf `components/ui/FacettenGruppe` gezogen. Der Chip-Kanon
+  // wird darum AM BAUSTEIN geprüft (dort steht er) und an beiden Flächen, dass
+  // sie ihn konsumieren statt ihn nachzubauen. Die Zusicherung wird damit
+  // stärker, nicht schwächer: sie deckt jetzt BEIDE Achsen.
+  const baustein = lies('../components/ui/FacettenGruppe.tsx');
+  const entscheidFilter = lies('../components/rechtsprechung/EntscheidFilter.tsx');
+
   it('die Facetten-Reihe ist eine lc-chip-zeile mit lc-chip/lc-chip-selected', () => {
-    expect(quelle).toContain('lc-chip-zeile');
-    expect(quelle).toContain('lc-chip-selected');
+    expect(baustein).toContain('lc-chip-zeile');
+    expect(baustein).toContain('lc-chip-selected');
     // aria bleibt der Auswahl-Träger (das ✓ lebt im ::before, s. index.css).
-    expect(quelle).toContain('aria-pressed');
+    expect(baustein).toContain('aria-pressed');
+  });
+
+  it('beide Flächen konsumieren den EINEN Baustein und zeichnen keine Chips mehr selbst', () => {
+    for (const [name, q] of [['Suche', quelle], ['EntscheidFilter', entscheidFilter]] as const) {
+      expect(q, `${name}: konsumiert FacettenGruppe`).toContain('<FacettenGruppe');
+      expect(q, `${name}: importiert den Baustein`).toMatch(/import \{ FacettenGruppe \} from '[^']*ui\/FacettenGruppe'/);
+      // `lies()` hat die Kommentare entfernt — was hier noch das AUSWAHL-Signal
+      // der Achse setzt, ist eine echte Klassenkette und damit eine neue Kopie.
+      expect(q, `${name}: kein eigenes Auswahl-Signal`).not.toContain('lc-chip-selected');
+    }
+    // /suche baut überhaupt keinen Chip mehr von Hand; EntscheidFilter trägt
+    // weiterhin `.lc-chip` an den ENTFERNBAREN Aktiv-Filtern — eine andere Sache
+    // als die Facetten-Achse (LM-044/N1, dieselbe Grammatik, anderer Zweck).
+    expect(quelle).not.toContain('lc-chip');
+    // Die lokale Definition ist gelöscht, nicht bloss ungenutzt.
+    expect(entscheidFilter).not.toMatch(/^function FacettenGruppe\(/m);
   });
 
   it('das ✓-Präfix, das die Kopie nicht hatte, kommt jetzt aus dem Kanon', () => {
@@ -127,5 +153,36 @@ describe('D-8 — der Filterzähler ist eine Zählung, kein Status', () => {
 
   it('Kanon der Zählung: nackte Zahl in der num-Stimme', () => {
     expect(quelle).toContain('<span className="num tabular-nums text-ink-600">{anzahl}</span>');
+  });
+});
+
+describe('D-5 — «geplant» trägt EINE Marke (Entscheid David 31.8.2026: Umriss slate)', () => {
+  const DATEIEN = [
+    'src/components/Katalog.tssx'.replace('tssx','tsx'),
+    'src/components/forms/ZustaendigkeitForm.tsx',
+    'src/components/forms/VorlagenSprung.tsx',
+    'src/components/forms/ZustErgebnisEinleitung.tsx',
+    'src/components/SprachUmschalter.tsx',
+  ];
+  it('kein Vorbereitungs-/Bearbeitungs-Status mehr in soft- oder warn-Ton', () => {
+    const suender: string[] = [];
+    for (const d of DATEIEN) {
+      const q = readFileSync(d, 'utf8');
+      // JSX-Zeilen mit Status-Wortlaut UND Alt-Ton — Kommentare zählen nicht
+      for (const zeile of q.split('\n')) {
+        const t = zeile.trim();
+        if (t.startsWith('//') || t.startsWith('*') || t.startsWith('/*')) continue;
+        if (/(Vorbereitung|Bearbeitung)/.test(t) && /lc-badge-(soft|warn)/.test(t)) suender.push(d);
+      }
+    }
+    expect(suender, 'Status «geplant» in Alt-Ton statt lc-badge-geplant').toEqual([]);
+  });
+  it('die Marke ist genau einmal definiert (index.css) und kanonisch beschriftet', () => {
+    const css = readFileSync('src/index.css', 'utf8');
+    expect(css.match(/\.lc-badge-geplant\s*\{/g)?.length).toBe(1);
+    for (const d of DATEIEN) {
+      const q = readFileSync(d, 'utf8');
+      if (q.includes('lc-badge-geplant')) expect(q).toContain('In Vorbereitung');
+    }
   });
 });

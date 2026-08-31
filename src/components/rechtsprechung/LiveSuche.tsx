@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import {
   sucheLive, LIVE_QUELLE, type LiveTreffer, type LiveSortierung, type LiveSuchErgebnis,
 } from '../../lib/rechtsprechung/livesuche';
-import { formatiereDatum, kantonLabel } from './format';
+import { kantonLabel } from './format';
+import { Datum } from '../ui/Datum';
 
 // Opt-in Live-Volltextsuche über den GESAMTEN Schweizer Korpus (entscheidsuche.ch),
 // weit über die kuratierte LexMetrik-Auswahl hinaus. DISCOVERY, keine Engine (§2):
@@ -18,7 +19,11 @@ function TrefferZeile({ t }: { t: LiveTreffer }) {
         {t.thema && <div className="mt-0.5 truncate text-xs text-ink-500">{t.thema}</div>}
         <div className="mt-1 flex flex-wrap items-center gap-x-2 text-micro text-ink-500">
           <span>{kantonLabel(t.kanton)}</span>
-          {t.datum && <><span aria-hidden>·</span><span className="num">{formatiereDatum(t.datum)}</span></>}
+          {/* B-3-NACHZUG (R2-A, 31.8.2026): das Datum stand in der MONO-Stimme
+              (`.num`) — die bleibt SR-Nummer und Aktenzeichen vorbehalten
+              (Design-Grundlage Kap. 2.1). Format und Auszeichnung kommen jetzt
+              aus dem einen Baustein; das Aktenzeichen daneben behält `.num`. */}
+          {t.datum && <><span aria-hidden>·</span><Datum iso={t.datum} /></>}
           {t.aktenzeichen && <><span aria-hidden>·</span><span className="num">{t.aktenzeichen}</span></>}
         </div>
       </div>

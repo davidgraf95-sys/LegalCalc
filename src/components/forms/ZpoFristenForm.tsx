@@ -259,7 +259,7 @@ export function ZpoFristenForm() {
           </select>
         </Field>
 
-        <Field label="Zustellart (optional)" hint="Art. 142 Abs. 1bis ZPO">
+        <Field label="Zustellart" optional hint="Art. 142 Abs. 1bis ZPO">
           <select value={form.zustellart} onChange={(e) => set('zustellart', e.target.value as ZpoZustellart)} className={inputCls}>
             <option value="empfangsbestaetigung">Gegen Empfangsbestätigung (eingeschrieben/GU)</option>
             <option value="gewoehnliche_post">Gewöhnliche Post (A-/B-Post)</option>
@@ -304,7 +304,7 @@ export function ZpoFristenForm() {
               </div>
             )}
 
-            <Field label="Zustellfiktion-Helfer (Art. 138 Abs. 3 lit. a, optional)" hint="Datum des erfolglosen Zustellversuchs → fingiertes Zustelldatum (+7 Tage)">
+            <Field label="Zustellfiktion-Helfer (Art. 138 Abs. 3 lit. a)" optional hint="Datum des erfolglosen Zustellversuchs → fingiertes Zustelldatum (+7 Tage)">
               <div className="flex gap-2 items-center">
                 <DatumsFeld value={fiktionDatum} onChange={(v) => setFiktionDatum(v)} className={inputCls} />
                 <button type="button" disabled={!fiktionDatum}

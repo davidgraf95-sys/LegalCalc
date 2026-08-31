@@ -26,6 +26,8 @@ import { erfassungsgrad, STUFE_WORT } from '../lib/normtext/erfassungsgrad';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
+import { RubrikKachel } from '../components/ui/RubrikKachel';
+import { AMTLICHE_FASSUNG_NOMEN } from '../lib/benennung';
 // H-10 (§6.6 billig, B27): BundSystematik/KantonSystematik/KantonAuswahl
 // (+Kachel) als reiner Move nach gesetze-teile/ — Props/Verhalten unverändert.
 import { Gitter } from './gesetze-teile/geteilt';
@@ -131,23 +133,15 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
       </button>
 
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @2xl/pane:grid-cols-3 gap-3')}>
+        {/* C-5 (31.8.2026): diese Kachel-Anatomie IST der Kanon — sie liegt seit
+            Runde 2 in `ui/RubrikKachel` und trägt dort auch die Startseiten-
+            Landkarte. Das eigene `hover:border-brass-400` ist entfallen: die
+            zentrale `.lc-card`-Regel (C-3) deckt es bereits. */}
         {kacheln.map((k) => (
-          <button
-            type="button"
-            key={k.id}
-            onClick={() => onWahl(k.id)}
-            className="lc-card group flex flex-col gap-1.5 p-5 text-left transition-colors hover:border-brass-400"
-          >
-            <span className="flex items-baseline gap-2">
-              <span className="num font-display text-h1 leading-none text-brass-700">{k.zahl}</span>
-              <span className="lc-overline">{k.einheit}</span>
-            </span>
-            <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight group-hover:text-brass-700 transition-colors">{k.titel}</span>
-            <span className="text-body-s text-ink-500">{k.sub}</span>
-            {/* IA-2 (§11.1): Erfassungsgrad-Kurzlegende auf der Kantone-Kachel. */}
-            {k.legende && <ErfassungsgradLegende className="mt-0.5" />}
-            <span aria-hidden className="mt-1 text-body-s font-medium text-brass-700">Öffnen →</span>
-          </button>
+          <RubrikKachel key={k.id} onWahl={() => onWahl(k.id)}
+            zahl={k.zahl} einheit={k.einheit} titel={k.titel} nutzen={k.sub}
+            /* IA-2 (§11.1): Erfassungsgrad-Kurzlegende auf der Kantone-Kachel. */
+            extra={k.legende ? <ErfassungsgradLegende className="mt-0.5" /> : undefined} />
         ))}
       </div>
     </div>
@@ -297,7 +291,9 @@ export function Gesetze() {
       <SeitenKopf
         overline="Rechtssammlung Schweiz"
         titel="Schweizer Gesetzessammlung"
-        intro="Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link — sowie die für die Schweiz massgeblichen Staatsverträge und EU-Verordnungen (International). Massgeblich bleibt stets die amtliche Quelle."
+        // B-6-Nachzug (R2-A, 31.8.2026): «geltende Fassung» und «amtliche
+        // Quelle» standen in EINEM Satz — das Nomen kommt aus der Wortquelle.
+        intro={`Volltext der in LexMetrik verwendeten Bundesgesetze und kantonalen Erlasse — geltende Fassung, mit Stand und amtlichem Live-Link — sowie die für die Schweiz massgeblichen Staatsverträge und EU-Verordnungen (International). Massgeblich bleibt stets ${AMTLICHE_FASSUNG_NOMEN}.`}
       />
 
       {/* B2 (Bug-Check #565): auch der Fehlerpfad reserviert die Inhaltshöhe —
@@ -530,7 +526,9 @@ export function Gesetze() {
           {!suche.trim() && ebene === 'international' && (
             <div className="space-y-4">
               <p className="text-body-s text-ink-500 max-w-reading">
-                Für die Schweiz massgebliche Staatsverträge und internationales Recht — je mit Live-Link zur amtlichen Fassung (Fedlex SR 0.* bzw. EUR-Lex). Einzelne Erlasse (z. B. EMRK) werden als amtliches PDF in-app angezeigt; massgeblich bleibt stets die amtliche Quelle.
+                {/* B-6-Nachzug (R2-A): «amtliche Fassung» im Link-Satz, «amtliche
+                    Quelle» im Vorbehalt desselben Absatzes — ein Nomen genügt. */}
+                Für die Schweiz massgebliche Staatsverträge und internationales Recht — je mit Live-Link zur amtlichen Fassung (Fedlex SR 0.* bzw. EUR-Lex). Einzelne Erlasse (z. B. EMRK) werden als amtliches PDF in-app angezeigt; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
               </p>
               {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen). */}
               <div className="flex justify-end">

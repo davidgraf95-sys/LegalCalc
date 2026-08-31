@@ -5,6 +5,7 @@ import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { MaterialKarte } from '../components/materialien/MaterialKarte';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
+import { AMTLICHE_FASSUNG_NOMEN } from '../lib/benennung';
 import {
   ladeMaterialManifest, gruppiereNachBehoerde, filtere, vorhandeneDoktypen,
   type MaterialFilterWerte,
@@ -18,7 +19,8 @@ import type { BrowseMaterial, BehoerdeId, DoktypId } from '../lib/materialien/ty
 // FINMA-Rundschreiben, IGE-Richtlinien). Das sind KEINE Gesetze und keine
 // Gerichtsentscheide, sondern faktisch praxisleitendes «Soft-Law». Jede Karte
 // führt auf eine In-App-Detailseite mit Metadaten + Live-Link; massgeblich bleibt
-// stets die amtliche Quelle (§7/§8). Reine Darstellung (§3); maschinell kuratiert,
+// stets die amtliche Fassung (§7/§8, B-6-Nachzug R2-A 31.8.2026). Reine
+// Darstellung (§3); maschinell kuratiert,
 // fachlich noch nicht durch David geprüft (Abnahme-Zeitsperre).
 
 export function Materialien() {
@@ -58,7 +60,11 @@ export function Materialien() {
       <SeitenKopf
         overline="Amtliche Ressourcen"
         titel="Materialien"
-        intro="Praxisleitende Publikationen der Bundesbehörden — Kreisschreiben, Wegleitungen, Leitfäden, Rundschreiben und Praxismitteilungen. Das ist faktisches «Soft-Law», kein Gesetzesrang: jeder Eintrag führt mit Live-Link zur amtlichen Fassung. Diese Rubrik führt keine eigenen Volltexte; massgeblich ist stets die amtliche Quelle."
+        // B-6-Nachzug (R2-A, 31.8.2026): derselbe Absatz sagte erst «amtliche
+        // Fassung» (Link) und dann «amtliche Quelle» (Vorbehalt). Der Satz
+        // steht hier im Nachsatz nach Semikolon, also klein — darum wird er aus
+        // dem NOMEN gebaut (§5: eine Wahrheit ist das Nomen, nicht der Satz).
+        intro={`Praxisleitende Publikationen der Bundesbehörden — Kreisschreiben, Wegleitungen, Leitfäden, Rundschreiben und Praxismitteilungen. Das ist faktisches «Soft-Law», kein Gesetzesrang: jeder Eintrag führt mit Live-Link zur amtlichen Fassung. Diese Rubrik führt keine eigenen Volltexte; massgeblich ist stets ${AMTLICHE_FASSUNG_NOMEN}.`}
       />
 
       {fehler && (

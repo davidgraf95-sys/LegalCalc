@@ -5,6 +5,7 @@ import {
 import { zahl } from '../lib/vorlagen/datum';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
+import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
 
@@ -112,9 +113,9 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
           label={<><span><strong>Konventionalstrafe</strong> vereinbaren <span className="text-ink-500"><NormText text={`(verfällt auch ohne Schaden; übermässige setzt der Richter herab, Art. 163 Abs. 3 OR)`} /></span></span></>} />
         {a.konventionalstrafe && (
           <Field label="Konventionalstrafe je Verletzung (CHF)">
-            <input className={inputCls + ' sm:max-w-[12rem]'} inputMode="decimal" value={a.strafeCHF}
+            <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.strafeCHF}
               aria-invalid={zahl(a.strafeCHF) === null}
-              onChange={(e) => set('strafeCHF', e.target.value)} placeholder="z. B. 20000.00" />
+              onChange={(v) => set('strafeCHF', v)} placeholder="z. B. 20'000.00" />
           </Field>
         )}
       </div>

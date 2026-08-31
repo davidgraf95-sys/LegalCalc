@@ -436,7 +436,13 @@ export function NormPopoverOverlay({ children, onClose, triggerRef, modal = true
     <div
       // Verankert: transparenter Klick-Fänger (kein Dim, Popover-Charakter).
       // Zentriert (Altpfad): gedimmter, mittig gestellter Modal-Backdrop.
-      className={verankert ? 'fixed inset-0 z-50' : 'fixed inset-0 z-50 flex items-center justify-center bg-ink-900/40 p-4'}
+      //
+      // F2-1 (31.8.2026): das Dim war `bg-ink-900/40`. `--ink-900` flippt mit dem
+      // Thema (dunkel `#E9E7E2`) — im Dunkelmodus hellte dieser «Scrim» auf,
+      // statt abzudunkeln (Messung/Herleitung: `pages/gesetz-leser/v3/LeserScrim.tsx`,
+      // B7-N1). `.lc-scrim-dialog` ist die Rolle «zentrierter modaler Dialog»
+      // (src/index.css): schwarz statt Tinte, Deckung unverändert 40 %.
+      className={verankert ? 'fixed inset-0 z-50' : 'lc-scrim-dialog fixed inset-0 z-50 flex items-center justify-center p-4'}
       onClick={onClose}
     >
       {/* Klicks im Dialog dürfen nicht zum Backdrop durchschlagen. */}
