@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { KOPIER_DAUER_MS } from '../useKopieren';
 
 // ─── Geteilter Zustands-Rahmen der Vorlagen-Wizards ─────────────────────────
 //
@@ -67,7 +68,7 @@ export function useWizardState<T extends object>(opts: {
       () => {
         setKopiert(true);
         if (kopierTimer.current) clearTimeout(kopierTimer.current);
-        kopierTimer.current = setTimeout(() => setKopiert(false), 2000);
+        kopierTimer.current = setTimeout(() => setKopiert(false), KOPIER_DAUER_MS);
       },
       () => {},
     );

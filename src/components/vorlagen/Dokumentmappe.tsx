@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { VorschauPanel, ExportLeiste } from './wizard';
 import { ErgebnisPlatzhalter } from './ui';
+import { KOPIER_DAUER_MS } from '../useKopieren';
 import { NormText } from '../NormText';
 import { BANNER_MAPPE_FERTIG, type PdfBanner } from '../../lib/vorlagen/banner';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
@@ -123,7 +124,7 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
       () => {
         setKopiert(true);
         if (kopierTimer.current) clearTimeout(kopierTimer.current);
-        kopierTimer.current = setTimeout(() => setKopiert(false), 1500);
+        kopierTimer.current = setTimeout(() => setKopiert(false), KOPIER_DAUER_MS);
       },
       () => {},
     );

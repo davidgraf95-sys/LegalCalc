@@ -23,6 +23,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { PanelSachgebiet } from '../pages/gesetz-leser/v3/PanelSachgebiet';
+import { alleTsx, liesOhneKommentare, ohneKommentare, rel } from './appDateien';
 
 const rohLies = (p: string) => readFileSync(new URL(p, import.meta.url), 'utf8');
 const CSS = rohLies('../index.css');
@@ -157,32 +158,59 @@ describe('D-8 — der Filterzähler ist eine Zählung, kein Status', () => {
 });
 
 describe('D-5 — «geplant» trägt EINE Marke (Entscheid David 31.8.2026: Umriss slate)', () => {
-  const DATEIEN = [
-    'src/components/Katalog.tssx'.replace('tssx','tsx'),
-    'src/components/forms/ZustaendigkeitForm.tsx',
-    'src/components/forms/VorlagenSprung.tsx',
-    'src/components/forms/ZustErgebnisEinleitung.tsx',
-    'src/components/SprachUmschalter.tsx',
-  ];
-  it('kein Vorbereitungs-/Bearbeitungs-Status mehr in soft- oder warn-Ton', () => {
+  // R3-α-WURZEL (31.8.2026, §17/§6.7): hier stand eine Liste von fünf Dateien.
+  // Sie hat die fünf bewacht und die App nicht — genau die Bauart, die B3-8
+  // durchgelassen hat (`RechnerStub` trug «In Vorbereitung» ohne die Marke).
+  // Der Sweep geht über alle `.tsx`; die Liste ist gestrichen, nicht ergänzt.
+  it('kein Vorbereitungs-/Bearbeitungs-Status mehr in soft- oder warn-Ton (App-weit)', () => {
     const suender: string[] = [];
-    for (const d of DATEIEN) {
-      const q = readFileSync(d, 'utf8');
-      // JSX-Zeilen mit Status-Wortlaut UND Alt-Ton — Kommentare zählen nicht
-      for (const zeile of q.split('\n')) {
-        const t = zeile.trim();
-        if (t.startsWith('//') || t.startsWith('*') || t.startsWith('/*')) continue;
-        if (/(Vorbereitung|Bearbeitung)/.test(t) && /lc-badge-(soft|warn)/.test(t)) suender.push(d);
+    for (const d of alleTsx()) {
+      // Kommentare zählen nicht: sie benennen den Alt-Ton legitim als Beleg (§2b).
+      for (const zeile of liesOhneKommentare(d).split('\n')) {
+        if (/(Vorbereitung|Bearbeitung)/.test(zeile) && /lc-badge-(soft|warn)/.test(zeile)) suender.push(rel(d));
       }
     }
     expect(suender, 'Status «geplant» in Alt-Ton statt lc-badge-geplant').toEqual([]);
   });
-  it('die Marke ist genau einmal definiert (index.css) und kanonisch beschriftet', () => {
+
+  it('die Marke ist genau einmal definiert (index.css) und App-weit kanonisch beschriftet', () => {
     const css = readFileSync('src/index.css', 'utf8');
     expect(css.match(/\.lc-badge-geplant\s*\{/g)?.length).toBe(1);
-    for (const d of DATEIEN) {
-      const q = readFileSync(d, 'utf8');
-      if (q.includes('lc-badge-geplant')) expect(q).toContain('In Vorbereitung');
-    }
+    const falschBeschriftet = alleTsx()
+      .filter((d) => { const q = liesOhneKommentare(d); return q.includes('lc-badge-geplant') && !q.includes('In Vorbereitung'); })
+      .map(rel);
+    expect(falschBeschriftet, 'lc-badge-geplant ohne den Kanon-Wortlaut «In Vorbereitung»').toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Sweep sieht die Marke überhaupt', () => {
+    expect(alleTsx().filter((d) => liesOhneKommentare(d).includes('lc-badge-geplant')).length)
+      .toBeGreaterThanOrEqual(3);
+  });
+});
+
+// ─── R3-α · D-1/D-2 App-weit: die Chip-Anatomie liegt genau einmal ──────────
+//
+// Die D-1/D-2-Sonden oben prüfen VIER namentlich genannte Dateien. Das war der
+// Stand nach dem Bau; als Wächter deckt es die App nicht. Diese Sonde stellt
+// die Regel App-weit: das AUSWAHL-SIGNAL der Chip-Familie (`lc-chip-selected`)
+// darf nur dort stehen, wo die Familie zu Hause ist.
+describe('D-1/D-2 (App-weit) — `lc-chip-selected` steht nur an den Chip-Bausteinen', () => {
+  /** Die Flächen, die die Chip-Familie definieren bzw. sie als GANZE tragen. */
+  const HEIMAT = [
+    'components/ui/FacettenGruppe.tsx',
+    'components/verzahnung/BezugFacettenWahl.tsx',
+    'pages/gesetz-leser/v3/PanelSachgebiet.tsx',
+  ];
+
+  it('keine weitere Fläche setzt das Auswahl-Signal selbst', () => {
+    const funde = alleTsx()
+      .filter((d) => !HEIMAT.includes(rel(d)))
+      .filter((d) => liesOhneKommentare(d).includes('lc-chip-selected'))
+      .map(rel);
+    expect(funde, 'eigene Chip-Auswahl statt FacettenGruppe/lc-chip-Familie').toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die gelöschte Kopie', () => {
+    expect(ohneKommentare(`const AKTIV = 'lc-chip lc-chip-selected';`)).toContain('lc-chip-selected');
   });
 });

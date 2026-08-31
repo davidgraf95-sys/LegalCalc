@@ -64,6 +64,7 @@ import { Link } from 'react-router-dom';
 import { istLesbar, type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { AZ_KLASSEN, gruppiereAZ, ebeneLabel } from './az-register';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
+import { Leerzustand } from '../../components/ui/Leerzustand';
 
 function AzZeile({ e }: { e: BrowseErlass }) {
   const basePath = erlassPfad(e);
@@ -219,7 +220,7 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                     {liste.map((e) => <li key={e.key}><AzZeile e={e} /></li>)}
                   </ul>
                 ) : (
-                  <p className="px-2 py-1 text-body-s text-ink-500">Kein Titel im Register gefunden.</p>
+                  <div className="px-2 py-1"><Leerzustand art="bestand" text="Kein Titel im Register gefunden." /></div>
                 )}
               </div>
             </div>

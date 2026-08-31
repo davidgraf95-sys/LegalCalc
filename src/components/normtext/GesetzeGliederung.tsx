@@ -18,6 +18,7 @@ import { GLIEDERUNGEN, type Gliederung } from '../../lib/normtext/gliederung';
 import { ErlassKarte, SysZeile } from './ErlassKarte';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { GruppenKopf } from '../ui/GruppenKopf';
+import { Leerzustand } from '../ui/Leerzustand';
 
 // ── Der gemeinsame Umschalter (ein Interaktions-Vokabular, A15/A4) ────────────
 
@@ -52,7 +53,7 @@ function RelevanzHinweis({ children }: { children: React.ReactNode }) {
 export function RelevanzGitter({ erlasse }: { erlasse: BrowseErlass[] }) {
   const pk = usePaneKlasse();
   const sortiert = nachRelevanz(erlasse);
-  if (sortiert.length === 0) return <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>;
+  if (sortiert.length === 0) return <Leerzustand art="bestand" text="Kein Erlass gefunden." />;
   return (
     <div className="space-y-4">
       <RelevanzHinweis>
@@ -74,7 +75,7 @@ export function KantonRelevanzListe({ erlasse, sys }: {
 }) {
   const pk = usePaneKlasse();
   const sortiert = nachKantonRelevanz(erlasse, sys);
-  if (sortiert.length === 0) return <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>;
+  if (sortiert.length === 0) return <Leerzustand art="bestand" text="Kein Erlass gefunden." />;
   return (
     <div className="space-y-4">
       <RelevanzHinweis>
@@ -107,7 +108,7 @@ export function KantonGebietGruppen({ erlasse }: { erlasse: BrowseErlass[] }) {
   const gruppen = GEBIETE
     .map((g) => ({ ...g, items: (proGebiet.get(g.id) ?? []).sort((a, b) => a.titel.localeCompare(b.titel, 'de')) }))
     .filter((g) => g.items.length > 0);
-  if (gruppen.length === 0) return <p className="text-body-s text-ink-500">Kein Erlass gefunden.</p>;
+  if (gruppen.length === 0) return <Leerzustand art="bestand" text="Kein Erlass gefunden." />;
   return (
     <div className="space-y-6">
       <RelevanzHinweis>
@@ -149,7 +150,7 @@ export function IntlRechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) 
     .filter((k) => k.items.length > 0);
   const gitter = pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3');
   if (gruppen.length === 0 && euRecht.length === 0) {
-    return <p className="text-body-s text-ink-500">Kein Eintrag gefunden.</p>;
+    return <Leerzustand art="bestand" text="Kein Eintrag gefunden." />;
   }
   return (
     <div className="space-y-10">

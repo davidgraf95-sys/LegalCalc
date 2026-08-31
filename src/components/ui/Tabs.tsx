@@ -8,7 +8,23 @@
 // (`mode`: ARIA-Tabs `role=tab/aria-selected` vs. Toggle-Buttons
 // `aria-pressed`). Keine Logik, kein Zustand — reiner gesteuerter View.
 
-export type TabItem<T extends string> = { code: T; label: React.ReactNode };
+export type TabItem<T extends string> = {
+  code: T;
+  label: React.ReactNode;
+  /**
+   * `id`/`aria-controls` des Reiters (E-2-Nachzug, R3-α 31.8.2026 — additiv).
+   *
+   * Die `Gesetze`-Ebenenwahl war die dritte Kopie dieser Segmented-Control und
+   * blieb es bis hierher NUR wegen dieser beiden Attribute: sie verknüpft
+   * Reiter und Panel ausdrücklich (`ebene-tab-…` ↔ `ebene-panel-…`). Das ist
+   * eine Zusage, die der Baustein können muss — nicht ein Grund für eine
+   * eigene Leiste (§5/§10). Ohne Angabe verhält er sich exakt wie bisher.
+   */
+  id?: string;
+  ariaControls?: string;
+  /** Zusatzauskunft am Reiter (`title`) — nie einzige Trägerin einer Tatsache. */
+  titel?: string;
+};
 
 /**
  * Grösse: `m` = h-9/text-body-s/px-3 (Tabs); `s` = h-8/text-xs/px-2.5
@@ -103,6 +119,9 @@ export function Tabs<T extends string>({
           <button
             key={it.code}
             type="button"
+            id={it.id}
+            aria-controls={it.ariaControls}
+            title={it.titel}
             role={mode === 'tab' ? 'tab' : undefined}
             aria-selected={mode === 'tab' ? aktiv : undefined}
             aria-pressed={mode === 'pressed' ? aktiv : undefined}

@@ -8,6 +8,7 @@ import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { SelectionGrid } from '../components/ui/SelectionGrid';
 
 // ─── Vorlagen-Wizard: Konkubinatsvertrag ────────────────────────────────────
 // P1-Vorlage der Wettbewerbsanalyse 12.6.2026 (FAHRPLAN-VORLAGEN-AUSBAU V3).
@@ -70,15 +71,12 @@ function eingabeInhalt({ a, set }: SeiteCtx<KkAntworten>, schritt: number) {
           </Field>
         )}
         <Field label="Kosten des Zusammenlebens">
-          <div className="grid grid-cols-3 gap-2">
-            {KOSTEN_OPTIONEN.map((k) => (
-              <button key={k.id} type="button"
-                onClick={() => set('kostenschluessel', k.id)}
-                className={`rounded-lg border px-3 py-2 text-body-s ${a.kostenschluessel === k.id ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
-                {k.label}
-              </button>
-            ))}
-          </div>
+{/* B3-4/A3-5 (R3-α, 31.8.2026): handgezeichnete Auswahl-Reihe ohne
+              `aria-pressed` — Kopie gelöscht (§5/§10), Optik aus dem Baustein. */}
+          <SelectionGrid
+            className="grid grid-cols-3 gap-2" gruppenLabel="Kosten des Zusammenlebens"
+            items={KOSTEN_OPTIONEN.map((k) => ({ code: k.id, label: k.label }))}
+            value={a.kostenschluessel} onSelect={(v) => set('kostenschluessel', v)} />
         </Field>
         {a.kostenschluessel === 'fix' && (
           <div className="grid grid-cols-2 gap-3">

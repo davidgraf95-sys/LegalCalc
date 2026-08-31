@@ -33,3 +33,4 @@ export function Datum({ iso, className }: {
 }) {
   return <span className={className ? `tabular-nums ${className}` : 'tabular-nums'}>{datumCh(iso)}</span>;
 }
+

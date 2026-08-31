@@ -10,6 +10,7 @@ import { kartePasst, LEERER_FILTER } from '../lib/katalogSuche';
 import { sansAmp } from './typografie';
 import { GruppenKopf } from './ui/GruppenKopf';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from './ui/TrefferZeile';
+import { Leerzustand } from './ui/Leerzustand';
 
 // Register-Bausteine der Rubrik-Übersichten (Auftrag David 10.6.2026, Struktur;
 // UI-Welle: neuer Ort /rechner + /vorlagen). Eine Oberkategorie wird als
@@ -412,11 +413,13 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
       )}
 
       {filterAktiv && gefiltert.filter(istVorlage).length === 0 && geplant.length === 0 ? (
-        <p className="text-body-s text-ink-500 py-6">
-          Keine Vorlage in dieser Auswahl.{' '}
-          <button type="button" onClick={() => setzeFilter(new Set(), false)}
-            className="font-medium text-brass-700 hover:text-brass-600">Filter zurücksetzen</button>
-        </p>
+        <div className="py-6">
+          {/* D-7 (R3-α, 31.8.2026): war ein handgezeichneter Absatz mit
+              eigenem Knopf — Form und Wortlaut sind unverändert, die
+              Anatomie kommt jetzt aus dem EINEN Baustein (§5/§10). */}
+          <Leerzustand art="filter" text="Keine Vorlage in dieser Auswahl."
+            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => setzeFilter(new Set(), false) }} />
+        </div>
       ) : kat.id === 'fristen' ? (
         /* FE-1 (FAHRPLAN-FRISTEN-EINHEIT): EIN Einstieg + Regime-Abzweigungen
            statt der Alltag/Weitere-Mischliste. */

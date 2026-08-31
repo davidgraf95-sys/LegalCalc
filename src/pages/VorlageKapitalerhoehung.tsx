@@ -22,6 +22,7 @@ import { PflichtDisclaimer } from '../components/PflichtDisclaimer';
 import { useLocale, fedlexLokalisiert } from '../components/locale';
 import { karte } from '../lib/startseiteConfig';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
+import { SeitenTitel } from '../components/ui/SeitenTitel';
 
 // ─── Maske: Kapitalerhöhung AG/GmbH (Plan 9c, Auftrag David 7.6.2026) ────────
 // Rechtslogik in lib/vorlagen/kapitalerhoehung.ts (§3); Wortlaut-Grundlage
@@ -109,7 +110,11 @@ export function VorlageKapitalerhoehung() {
       </Link>
       <div className="space-y-3">
         <GruppenTitel>Gesellschaftsrecht · Dokumentmappe</GruppenTitel>
-        <h1 className="text-h1 font-display font-semibold text-ink-900">Kapitalerhöhung (AG / GmbH)</h1>
+        {/* A-1/B3-6 (R3-α, 31.8.2026): war eine handgebaute H1 mit fester
+            `text-h1`. Sie ging am A-1-Wächter vorbei, weil der nur die
+            Kaskade `text-h2 …` kannte — und sie mass im Split-View den
+            Viewport statt der Pane-Breite. */}
+        <SeitenTitel>Kapitalerhöhung (AG / GmbH)</SeitenTitel>
         <p className="text-body-l text-ink-600 max-w-reading">
           Ordentliche Kapitalerhöhung gegen Bareinlage: Erhöhungsbeschluss und Feststellungs-Urkunde
           mit Statutenänderung entstehen als ENTWURF für die Urkundsperson (öffentliche Beurkundung

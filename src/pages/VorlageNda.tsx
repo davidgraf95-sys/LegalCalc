@@ -8,6 +8,7 @@ import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { SelectionGrid } from '../components/ui/SelectionGrid';
 
 // ─── Vorlagen-Wizard: Geheimhaltungsvereinbarung (NDA) ──────────────────────
 // P1-Vorlage der Wettbewerbsanalyse 12.6.2026 (FAHRPLAN-VORLAGEN-AUSBAU V3).
@@ -38,30 +39,18 @@ function eingabeInhalt({ a, set }: SeiteCtx<NdaAntworten>, schritt: number) {
     case 'parteien': return (
       <div className="space-y-4">
         <Field label="Richtung der Geheimhaltung">
-          <div className="grid grid-cols-2 gap-2">
-            <button type="button" onClick={() => set('gegenseitig', true)}
-              className={`rounded-lg border px-3 py-2 text-left text-body-s ${a.gegenseitig ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
-              <span className="font-medium block">Gegenseitig</span>
-              {/* LM-176 (Fahrplan B5, §6): text-ink-500 auf getönter bg-brass-100
-                  (gewählter Zustand) lag bei 4.37:1 — knapp unter WCAG AA
-                  (gemessen, computed styles). ink-600 hebt auf 6.3:1, ohne
-                  den Präzedenzfall (Auftrag David 25.6.2026, .lc-fineprint
-                  ink-500→ink-600) zu verlassen; im unmarkierten (weissen)
-                  Zustand bleibt der Kontrast ebenfalls unverändert gut. */}
-              <span className="text-ink-600 text-xs">beide Parteien verpflichtet</span>
-            </button>
-            <button type="button" onClick={() => set('gegenseitig', false)}
-              className={`rounded-lg border px-3 py-2 text-left text-body-s ${!a.gegenseitig ? 'border-brass-500 bg-brass-100 text-ink-900' : 'border-line text-ink-700'}`}>
-              <span className="font-medium block">Einseitig</span>
-              {/* LM-176 (Fahrplan B5, §6): text-ink-500 auf getönter bg-brass-100
-                  (gewählter Zustand) lag bei 4.37:1 — knapp unter WCAG AA
-                  (gemessen, computed styles). ink-600 hebt auf 6.3:1, ohne
-                  den Präzedenzfall (Auftrag David 25.6.2026, .lc-fineprint
-                  ink-500→ink-600) zu verlassen; im unmarkierten (weissen)
-                  Zustand bleibt der Kontrast ebenfalls unverändert gut. */}
-              <span className="text-ink-600 text-xs">nur Partei B verpflichtet</span>
-            </button>
-          </div>
+          {/* B3-4/A3-5 (R3-α, 31.8.2026): zwei handgezeichnete Kacheln ohne
+              `aria-pressed` — ein Boolean, als Auswahl von zweien dargestellt.
+              Er läuft jetzt über den EINEN Baustein; die LM-176-Messung
+              (Unterzeile ink-600 auf getönter Fläche) steht dort. */}
+          <SelectionGrid
+            className="grid grid-cols-2 gap-2" gruppenLabel="Richtung der Geheimhaltung"
+            items={[
+              { code: 'gegenseitig', label: 'Gegenseitig', sub: 'beide Parteien verpflichtet' },
+              { code: 'einseitig', label: 'Einseitig', sub: 'nur Partei B verpflichtet' },
+            ] as const}
+            value={a.gegenseitig ? 'gegenseitig' : 'einseitig'}
+            onSelect={(c) => set('gegenseitig', c === 'gegenseitig')} />
         </Field>
         <Field label={labelA(a)}>
           <input className={inputCls} value={a.parteiAName} onChange={(e) => set('parteiAName', e.target.value)} placeholder="Firma / Vorname Name" />

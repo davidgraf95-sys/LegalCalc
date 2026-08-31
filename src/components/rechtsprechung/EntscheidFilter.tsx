@@ -233,6 +233,14 @@ export function EntscheidFilter({
               </select>
             </label>
           )}
+          {/* R2-E/F1-1-AUSNAHME (R3-α, 31.8.2026): Filter, kein fristauslösendes Feld.
+              F1-1 verbietet `type="date"` dort, wo der Wert ein fristauslösendes
+              Ereignis trägt — auf einem us-englischen Profil steht dann MM/DD/YYYY
+              an einem Datum, an dem eine Frist hängt. Diese zwei Felder grenzen
+              eine TREFFERLISTE ein: kein Wert erreicht eine Engine, ein Vertippen
+              zeigt eine andere Liste und sonst nichts. Dazu passt das Haus-
+              `DatumsFeld` hier nicht: es bringt Kalender-Popover und `pr-11`-
+              Reserve mit, die Filterzeile ist `h-9 py-0`. */}
           <label className="flex flex-col gap-1 text-xs text-ink-500">
             <span>Urteil ab</span>
             <input type="date" lang="de-CH" className="lc-input h-9 py-0 text-body-s"

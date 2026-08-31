@@ -7,6 +7,7 @@ import { SchkgFristenForm } from '../components/forms/SchkgFristenForm';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { Tabs } from '../components/ui/Tabs';
 import { Card } from '../components/ui/Card';
+import { Leerzustand } from '../components/ui/Leerzustand';
 import { getCalculator } from '../lib/calculators';
 import { presetSuche, type PresetIndexEintrag } from '../lib/presetIndex';
 import { Link } from 'react-router-dom';
@@ -127,10 +128,13 @@ export function RechnerTagerechner() {
             className="lc-input max-w-xl" />
           {presetQuery.trim() !== '' && (
             treffer.length === 0 && abzweigungen.length === 0 ? (
-              <p className="text-body-s text-ink-500 max-w-reading">
-                Kein Preset gefunden – Frist manuell eingeben oder die Spezialrechner
-                der Fristen-Kategorie prüfen (Verjährung, Arbeits-/Mietkündigung, …).
-              </p>
+              <div className="max-w-reading">
+                {/* D-7 (R3-α, 31.8.2026): Wortlaut UNVERÄNDERT (§8) — er nennt
+                    die beiden Auswege selbst; nur die Anatomie kommt jetzt aus
+                    dem Baustein. */}
+                <Leerzustand art="bestand"
+                  text="Kein Preset gefunden – Frist manuell eingeben oder die Spezialrechner der Fristen-Kategorie prüfen (Verjährung, Arbeits-/Mietkündigung, …)." />
+              </div>
             ) : (
               <div className="space-y-2 max-w-xl">
                 {treffer.length > 0 && (

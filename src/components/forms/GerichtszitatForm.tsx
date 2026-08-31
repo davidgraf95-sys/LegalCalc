@@ -4,7 +4,7 @@ import {
   type GerichtszitatInput, type BgeTeil,
 } from '../../lib/gerichtszitat';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
-import { ErgebnisPlatzhalter, Field, inputCls, FehlerBox } from '../vorlagen/ui';
+import { ErgebnisPlatzhalter, Field, inputCls, FehlerBox, KopierButton } from '../vorlagen/ui';
 import { SelectionGrid } from '../ui/SelectionGrid';
 import { DatumsFeld } from '../DatumsFeld';
 import { NormText } from '../NormText';
@@ -23,23 +23,13 @@ const TYPEN: { code: Typ; label: string; sub: string }[] = [
   { code: 'bger', label: 'BGer (Geschäftsnummer)', sub: 'Nicht publiziert: Nummer · Datum' },
 ];
 
-function KopierKnopf({ text }: { text: string }) {
-  const [kopiert, setKopiert] = useState(false);
-  return (
-    <button
-      type="button"
-      className="lc-btn-outline lc-btn-sm"
-      onClick={() => {
-        void navigator.clipboard?.writeText(text).then(() => {
-          setKopiert(true);
-          setTimeout(() => setKopiert(false), 1500);
-        });
-      }}
-    >
-      {kopiert ? 'Kopiert' : 'Kopieren'}
-    </button>
-  );
-}
+// R3-α/B3-9 (31.8.2026): hier stand ein lokaler `KopierKnopf` — dieselbe
+// Handlung wie der geteilte `KopierButton`, aber mit eigener Mechanik
+// (1500 ms statt des Kanons), ohne das Kanon-Häkchen («Kopiert» statt
+// «Kopiert ✓») und ohne den Gegenstand im Namen («Kopieren» liess offen, WAS
+// in der Zwischenablage landet). Die Kopie ist gelöscht, nicht angeglichen
+// (§5/§10); die Optik `lc-btn-outline lc-btn-sm` ist der Default des Bausteins
+// und damit unverändert.
 
 export function GerichtszitatForm() {
   const [typ, setTyp] = useState<Typ>('bge');
@@ -117,7 +107,7 @@ export function GerichtszitatForm() {
           <p className="lc-overline text-brass-700">Fundstelle</p>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-body font-medium text-ink-900 num">{ergebnis.zitat}</p>
-            <KopierKnopf text={ergebnis.zitat} />
+            <KopierButton text={ergebnis.zitat} gegenstand="Fundstelle" />
           </div>
           {ergebnis.langform && (
             <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-line">
@@ -125,7 +115,7 @@ export function GerichtszitatForm() {
                 <p className="lc-overline">Langform</p>
                 <p className="text-body-s text-ink-700 num">{ergebnis.langform}</p>
               </div>
-              <KopierKnopf text={ergebnis.langform} />
+              <KopierButton text={ergebnis.langform} gegenstand="Langform" />
             </div>
           )}
           {ergebnis.hinweise.map((h, i) => (

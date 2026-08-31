@@ -241,6 +241,47 @@ if (alphaFunde.size > 0) {
   }
 }
 
+// ── Prüfung 3b: `sage` ist die Materialien-Kennfarbe, nicht die ok-Rolle ─────
+//
+// GEMESSEN (Design-Konsistenz R3-α/A3-6, 31.8.2026): neun Flächen färbten einen
+// ZUSTAND («Frist endet» · «Gültig» · «nicht verjährt» · «zustimmen» · «Summe
+// stimmt») mit `sage-*` ein — der WERKSTOFF-Kennfarbe der Materialien. Die
+// Zustands-Rolle `--ok-*` existiert seit F1 (§4b-B-i) und ist wertidentisch;
+// genau deshalb fiel die Vermischung nie auf, und genau deshalb ist sie
+// gefährlich: verschiebt sich eines der beiden Konzepte, verschieben sich
+// stillschweigend beide (Befunde 7+37). `FristenKalender` mischte sogar BEIDE
+// Familien in EINER Zelle (Füllung sage, Ring `--ok-solid`).
+//
+// REGEL: `sage-*`-Utilities und `var(--sage-*)` sind ausserhalb von
+// `src/index.css` (wo die Rolle definiert wird) nur mit einer Begründung AM
+// FUNDORT zulässig. Der Wächter zitiert sie wörtlich — verschwindet sie, fällt
+// die Ausnahme mit ihr.
+{
+  /** Fundort-Ausnahmen: Datei → Satz, der dort stehen MUSS. */
+  const SAGE_AUSNAHMEN: Record<string, string> = {
+    // Bandfarben eines Diagramms, keine Status-Aussage: die sechs Werte sind
+    // eine KATEGORIALE Reihe (Zinssatz-Abschnitte), in der sage neben brass,
+    // slate und warn nur eine unterscheidbare Fläche ist.
+    'src/components/VerzugszinsTimeline.tsx': 'A3-6-AUSNAHME (R3-α, 31.8.2026): kategoriale Bandfarbe, kein Zustand',
+  };
+  const SAGE_RE = /(?:^|[\s"'`:])(?:bg|text|border|ring|fill|stroke|from|via|to|divide|outline|decoration|shadow|accent|caret)-sage-[a-z0-9]+|var\(--sage-[a-z0-9-]+\)/;
+  for (const datei of dateien(WURZEL)) {
+    const roh = readFileSync(datei, 'utf8');
+    const begruendung = SAGE_AUSNAHMEN[datei];
+    if (begruendung !== undefined) {
+      if (!roh.includes(begruendung))
+        fehler.push(`${datei} — A3-6-Ausnahme ohne Begründung am Fundort: der Satz «${begruendung}» steht dort nicht (mehr). Entweder die Begründung zurückschreiben oder die Fläche auf die ok-Rolle ziehen.`);
+      continue;
+    }
+    roh.split('\n').forEach((zeile, i) => {
+      if (KOMMENTAR_ZEILE_RE.test(zeile)) return;   // Belege dürfen sage nennen (§2b)
+      const sm = SAGE_RE.exec(zeile);
+      if (sm)
+        fehler.push(`${datei}:${i + 1} — «${sm[0].trim()}» färbt einen Zustand mit der Materialien-Kennfarbe «sage» (A3-6, §4b-B-i). Die Zustands-Rolle nutzen: bg-ok-solid / bg-ok-bg / text-ok-text / border-ok-line bzw. var(--ok-solid) — wertidentisch, aber semantisch getrennt.`);
+    });
+  }
+}
+
 // ── Prüfung 4: `theme-color` ist eine Projektion von --paper (E-3) ───────────
 // Die Browser-Chrome-Farbe steht an ZWEI Stellen als Literal: statisch in
 // `index.html` (die beiden media-Tags decken den Moment vor dem JS ab) und

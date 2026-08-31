@@ -51,6 +51,7 @@ import { loeseFilterScope, scopeLabel, scopeBasis } from './gesetze-teile/filter
 // (A15-Mechanik) — parse-seitig sofort wirksam, die URL wird per Effect auf die
 // kanonische Form gebracht (kein Router-Redirect, Leitplanke E.4).
 import { istRechtsgebietAlias, normalisiereAnsicht } from './gesetze-teile/ansicht-alias';
+import { Tabs } from '../components/ui/Tabs';
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
@@ -60,41 +61,21 @@ function Segment({ aktiv, onWahl }: { aktiv: Ebene; onWahl: (e: Ebene) => void }
     { id: 'kanton', label: 'Kantone' },
     { id: 'international', label: 'International' },
   ];
-  // APG-Tabs-Muster (analog src/components/ui/Tabs.tsx, §10): roving tabindex
-  // (genau ein tabbarer Tab) + Pfeiltasten/Home/End — sonst trägt role=tab das
-  // ARIA-Versprechen ohne das erwartete Tastaturverhalten.
-  const aufTaste = (e: React.KeyboardEvent<HTMLButtonElement>, i: number) => {
-    let ziel: number;
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') ziel = (i + 1) % opt.length;
-    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') ziel = (i - 1 + opt.length) % opt.length;
-    else if (e.key === 'Home') ziel = 0;
-    else if (e.key === 'End') ziel = opt.length - 1;
-    else return;
-    e.preventDefault();
-    onWahl(opt[ziel].id);
-    (e.currentTarget.parentElement?.children[ziel] as HTMLElement | undefined)?.focus();
-  };
+  // E-2-NACHZUG (R3-α, 31.8.2026): hier stand die dritte Kopie der
+  // Segmented-Control — inklusive einer WORTGLEICHEN zweiten Umsetzung des
+  // APG-Tastaturmusters (roving tabindex + Pfeiltasten/Home/End), die der
+  // Kommentar sogar als «analog src/components/ui/Tabs.tsx» auswies. Genau
+  // dieses «analog» ist der Befund: dieselbe Zusage, zweimal gepflegt. Der
+  // einzige echte Unterschied — `id`/`aria-controls` je Reiter, mit denen
+  // diese Leiste ihre Panels benennt — ist jetzt ein Feld des Bausteins
+  // (§5/§10: erst den Rahmen, dann die Fläche darauf).
   return (
-    <div role="tablist" aria-label="Ebene" className="inline-flex rounded-md border border-line bg-paper-sunken/50 p-0.5">
-      {opt.map((o, i) => (
-        <button
-          key={o.id}
-          type="button"
-          role="tab"
-          id={`ebene-tab-${o.id}`}
-          aria-controls={`ebene-panel-${o.id}`}
-          aria-selected={aktiv === o.id}
-          tabIndex={aktiv === o.id ? 0 : -1}
-          onKeyDown={(e) => aufTaste(e, i)}
-          onClick={() => onWahl(o.id)}
-          className={`rounded px-4 py-1.5 text-body-s font-medium transition-colors ${
-            aktiv === o.id ? 'bg-paper text-ink-900 shadow-sm' : 'text-ink-500 hover:text-ink-800'
-          }`}
-        >
-          {o.label}
-        </button>
-      ))}
-    </div>
+    <Tabs
+      items={opt.map((o) => ({
+        code: o.id, label: o.label,
+        id: `ebene-tab-${o.id}`, ariaControls: `ebene-panel-${o.id}`,
+      }))}
+      value={aktiv} onChange={onWahl} ariaLabel="Ebene" />
   );
 }
 

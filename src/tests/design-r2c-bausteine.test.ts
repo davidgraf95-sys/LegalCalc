@@ -191,7 +191,13 @@ describe('D-3 · Auswahl-Pillen laufen über SelectionGrid', () => {
     expect(pv).toMatch(/code: 'ablehnen',[^\n]*ton: 'ablehnung'/);
     expect(pv).toMatch(/code: 'nur_befristet',[^\n]*ton: 'vorbehalt'/);
     const baustein = lies('components/ui/SelectionGrid.tsx');
-    expect(baustein).toContain('bg-sage-bg border-sage-line text-sage-700');
+    // A3-6-NACHFÜHRUNG (R3-α, 31.8.2026) — DEKLARIERTE fachliche Änderung, kein
+    // Refactoring-Nachziehen (§6.3): der Zustimmungs-Ton stand in der
+    // MATERIALIEN-Kennfarbe `sage`. Er ist auf die Zustands-Rolle `--ok-*`
+    // gezogen (wertidentisch, §4b-B-i) — das Signal ist unverändert, seine
+    // Herkunft ist es nicht mehr. Die Zusicherung dieses Falls («die drei
+    // Bedeutungs-Töne überleben») bleibt Wort für Wort dieselbe.
+    expect(baustein).toContain('bg-ok-bg border-ok-line text-ok-text');
     expect(baustein).toContain('bg-danger-bg border-danger-line text-danger-700');
     expect(baustein).toContain('bg-warn-bg border-warn-500 text-warn-700');
   });

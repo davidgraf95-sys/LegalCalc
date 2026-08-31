@@ -13,6 +13,7 @@ import { permalinkKodieren, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { berechneStreitwert, streitwertGrenzwerte, type Begehren, type BegehrenTyp, type WiederkehrDauer, type StreitwertErgebnis, type StreitwertGebiet } from '../../lib/streitwert';
+import { SelectionGrid } from '../ui/SelectionGrid';
 
 // ─── Streitwert-Form (Art. 91–94a ZPO) — Quick-Win B.9 ──────────────────────
 // Reine Darstellung (§3): Begehren-Editor + Weichen; gerechnet wird in
@@ -248,15 +249,19 @@ export function StreitwertForm() {
               <p className="lc-overline">Grenzwert-Abgleich</p>
               <div className="flex items-center gap-2 text-xs">
                 <span className="text-ink-500">Gebiet (für BGG):</span>
-                {([['uebrige', 'übrige'], ['miete_arbeit', 'Miete/Arbeit']] as const).map(([code, label]) => (
-                  <button
-                    key={code}
-                    type="button"
-                    aria-pressed={gebiet === code}
-                    onClick={() => setGebiet(code)}
-                    className={`rounded-sm border px-2 py-0.5 transition-colors ${gebiet === code ? 'border-brass-500 bg-brass-100/60 text-ink-900' : 'border-line text-ink-600 hover:bg-brass-100/30'}`}
-                  >{label}</button>
-                ))}
+                {/* B3-4/A3-5 (R3-α, 31.8.2026): eigene Pillen-Anatomie
+                    (`rounded-sm px-2 py-0.5` = 18 px hoch, unter WCAG 2.5.8)
+                    → die Pillen-Variante des EINEN Bausteins, die ihre
+                    Trefferfläche über ein unsichtbares `::after` auf
+                    `--tap-ziel-komfort` hebt, ohne breiter zu zeichnen. */}
+                <SelectionGrid
+                  className="flex items-center gap-2" gruppenLabel="Gebiet (für BGG)"
+                  variant="pille"
+                  items={[
+                    { code: 'uebrige', label: 'übrige' },
+                    { code: 'miete_arbeit', label: 'Miete/Arbeit' },
+                  ] as const}
+                  value={gebiet} onSelect={setGebiet} />
               </div>
             </div>
             {streitwertGrenzwerte(ergebnis.streitwertVerfahrenCHF, gebiet).map((g) => (

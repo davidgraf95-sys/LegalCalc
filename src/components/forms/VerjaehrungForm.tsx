@@ -23,6 +23,7 @@ import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { datumOderStrich } from '../ui/datumText';
 
 const VERJ_DISCLAIMER =
   'Automatisierte Orientierungsberechnung der Verjährung (Art. 60, 67, 127 ff. OR, Stand Revision 1.1.2020) – ' +
@@ -60,7 +61,6 @@ const STILLSTAND_GRUENDE = [
 ];
 
 
-const fmtISO = (s?: string) => (s ? s.split('-').reverse().join('.') : '–');
 
 // Eckdaten-Karte für eine Verjährungsfrist; die massgebliche (= frühere)
 // Frist erhält Goldrand und Badge.
@@ -157,13 +157,13 @@ export function VerjaehrungForm() {
 
   const eingaben: Record<string, string> = {
     'Anspruchstyp': R.label,
-    [beginnLabel]: fmtISO(beginnRelativ),
-    ...(hatAbsolut && beginnAbsolut ? { [absolutLabel]: fmtISO(beginnAbsolut) } : {}),
-    'Stichtag': fmtISO(stichtag),
+    [beginnLabel]: datumOderStrich(beginnRelativ),
+    ...(hatAbsolut && beginnAbsolut ? { [absolutLabel]: datumOderStrich(beginnAbsolut) } : {}),
+    'Stichtag': datumOderStrich(stichtag),
     'Kanton (Feiertage, Erfüllungsort)': kanton,
-    ...(stillstaende.length ? { 'Stillstand (Art. 134 OR)': stillstaende.map((s) => `${fmtISO(s.von)}–${fmtISO(s.bis)}`).join('; ') } : {}),
-    ...(unterbrechungen.length ? { 'Unterbrechungen (Art. 135 OR)': unterbrechungen.map((u) => `${U_TYPEN.find((t) => t.code === u.typ)?.label} am ${fmtISO(u.datum)}`).join('; ') } : {}),
-    ...(verzichtAn && verzichtDatum ? { 'Einredeverzicht (Art. 141 OR)': `vom ${fmtISO(verzichtDatum)}` } : {}),
+    ...(stillstaende.length ? { 'Stillstand (Art. 134 OR)': stillstaende.map((s) => `${datumOderStrich(s.von)}–${datumOderStrich(s.bis)}`).join('; ') } : {}),
+    ...(unterbrechungen.length ? { 'Unterbrechungen (Art. 135 OR)': unterbrechungen.map((u) => `${U_TYPEN.find((t) => t.code === u.typ)?.label} am ${datumOderStrich(u.datum)}`).join('; ') } : {}),
+    ...(verzichtAn && verzichtDatum ? { 'Einredeverzicht (Art. 141 OR)': `vom ${datumOderStrich(verzichtDatum)}` } : {}),
   };
 
   // FAHRPLAN-PRAXIS 1.2: Mandats-Referenz für den PDF-Kopf (optional).
@@ -298,32 +298,32 @@ export function VerjaehrungForm() {
             <FristKarte
               label={hatAbsolut ? `Relative Frist – ${REGIME[regime].relativJahre} Jahre` : `Frist – ${REGIME[regime].relativJahre} Jahre`}
               sub={`ab ${beginnLabel}`}
-              wert={ergebnis.relativEndeISO ? fmtISO(ergebnis.relativEndeISO) : 'steht still (Art. 138 Abs. 1)'}
+              wert={ergebnis.relativEndeISO ? datumOderStrich(ergebnis.relativEndeISO) : 'steht still (Art. 138 Abs. 1)'}
               massgeblich={hatAbsolut && ergebnis.massgeblicheFrist === 'relativ'}
             />
             {hatAbsolut && (
               <FristKarte
                 label={`Absolute Frist – ${REGIME[regime].absolutJahre} Jahre`}
                 sub={`ab ${absolutLabel}`}
-                wert={ergebnis.absolutEndeISO ? fmtISO(ergebnis.absolutEndeISO) : '–'}
+                wert={ergebnis.absolutEndeISO ? datumOderStrich(ergebnis.absolutEndeISO) : '–'}
                 massgeblich={ergebnis.massgeblicheFrist === 'absolut'}
               />
             )}
             <EckdatenKachel akzent num label="Verjährungseintritt"
-              wert={ergebnis.verjaehrungISO ? `${fmtISO(ergebnis.verjaehrungISO)} · 24.00 Uhr` : 'noch offen'} />
+              wert={ergebnis.verjaehrungISO ? `${datumOderStrich(ergebnis.verjaehrungISO)} · 24.00 Uhr` : 'noch offen'} />
             <div className="lc-tile">
-              <p className="text-xs text-ink-500 mb-1">Am Stichtag ({fmtISO(stichtag)})</p>
+              <p className="text-xs text-ink-500 mb-1">Am Stichtag ({datumOderStrich(stichtag)})</p>
               <p className="text-body-l font-semibold">
                 {ergebnis.status !== 'ok'
                   ? <span className="text-ink-500">Eingaben unvollständig</span>
                   : ergebnis.verjaehrtAmStichtag
                     ? <span className="text-danger-700"><NormText text={`verjährt (Einrede, Art. 142 OR)`} /></span>
-                    : <span className="text-sage-700">nicht verjährt</span>}
+                    : <span className="text-ok-text">nicht verjährt</span>}
               </p>
             </div>
           </div>
           {ergebnis.verzichtBisISO && (
-            <p className="text-body-s text-ink-500 num">Einredeverzicht wirkt bis {fmtISO(ergebnis.verzichtBisISO)} (Art. 141 OR).</p>
+            <p className="text-body-s text-ink-500 num">Einredeverzicht wirkt bis {datumOderStrich(ergebnis.verzichtBisISO)} (Art. 141 OR).</p>
           )}
 
           <ErgebnisAnzeige titel="Verjährung (Art. 60, 67, 127 ff. OR)" ergebnis={ergebnis} />

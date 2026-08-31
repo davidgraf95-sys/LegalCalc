@@ -333,7 +333,7 @@ export function ZpoFristenForm() {
             ))}
           </div>
           {ergebnis.erstrecktBis && (
-            <div className="rounded-lg border border-line bg-sage-bg p-3 text-body-s text-sage-700">
+            <div className="rounded-lg border border-line bg-ok-bg p-3 text-body-s text-ok-text">
               Nach Erstreckung: <strong>{ergebnis.erstrecktBis}</strong> (24.00 Uhr).
             </div>
           )}
