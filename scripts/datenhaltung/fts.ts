@@ -33,13 +33,13 @@
 // beweist Determinismus über die QUELL-Tabellen; der FTS-Index ist eine reine Ableitung
 // daraus (rebuildbar) und wird aus dem Manifest ausgeklammert (manifest.ts → tabellen()).
 import type { DatabaseSync } from 'node:sqlite';
-import { bloeckeText } from './suche-kern';
+import { bloeckeText, FTS_ARTIKEL_SPALTEN } from './suche-kern';
 import { baueRecallFelder, type Block, type StrukturArtikel } from '../suche-felder';
 
 // Vercel-Fix 3.7.2026: `bloeckeText` (+ Doku) ist in das IMPORT-FREIE ./suche-kern.ts
 // gewandert — api/suche.ts braucht es (Snippet-Bau) und darf keine node:sqlite-Kette
 // ziehen (Vercels Function-Compile). Re-Export für bestehende Konsumenten:
-export { bloeckeText };
+export { bloeckeText, FTS_ARTIKEL_SPALTEN };
 
 /** Tokenizer-Spezifikation (§3, nicht verhandelbar): diakritik-insensitiv DE/FR/IT. */
 export const TOKENIZER = 'unicode61 remove_diacritics 2';
@@ -54,13 +54,8 @@ export function abschnitteText(abschnitte: Abschnitt[] | undefined): string {
   return teile.join(' ').replace(/\s+/g, ' ').trim();
 }
 
-/** Spalten von `fts_artikel`, in Index-Reihenfolge. Die Reihenfolge ist TRAGEND:
- *  sie bestimmt die bm25-Gewichtungs-Position in suche-kern.ts (BM25_GEWICHTE) und
- *  muss auf der Turso-Seite identisch deklariert werden (turso-sync.ts). Eine
- *  Verschiebung hier ohne dort gewichtet stillschweigend das falsche Feld. */
-export const FTS_ARTIKEL_SPALTEN = ['text', 'marginalie', 'marginalie_n', 'gliederung', 'tabelle', 'fussnote'] as const;
-
-/** DDL von `fts_artikel` — EINE Quelle für lokal und remote (§5). */
+/** DDL von `fts_artikel` — EINE Quelle für lokal und remote (§5). Die Spaltenliste
+ *  kommt aus suche-kern.ts, weil nur sie von BEIDEN Ausführungswegen erreichbar ist. */
 export function ddlFtsArtikel(name: string): string {
   return `CREATE VIRTUAL TABLE ${name} USING fts5(${FTS_ARTIKEL_SPALTEN.join(', ')}, content='', tokenize='${TOKENIZER}')`;
 }
