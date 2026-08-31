@@ -112,11 +112,21 @@ describe('onlineVolltext: URL-Bildung (aus bestehenden Helfern abgeleitet)', () 
     ).toBe('/gesetze/kanton/AG-291.150#art-1');
   });
 
-  it('DTO OHNE Ebene (gecachte Alt-Antwort) → Alt-Verhalten, kein Crash', () => {
+  it('DTO OHNE Ebene (gecachte Alt-Antwort) → kein Crash, richtige Ebene', () => {
     expect(artikelTrefferHref({ erlass: 'OR', artikel: '330_a', quelleUrl: 'x' })).toBe('/gesetze/bund/OR#art-330_a');
-    // Unbekannter Schlüssel ohne Ebene: weiterhin der Bund-Fallback (wie bisher).
+    // NACHGEZOGEN (W2·13-KANTONE K-3 Ebenen-Redirect, 31.8.2026): hier stand
+    // «weiterhin der Bund-Fallback (wie bisher)» — das galt, solange
+    // `routenEbeneVonKey` kantonale Schlüssel nicht kannte. Sie erkennt sie
+    // jetzt am Kantons-Präfix (erlassAdresse.ts, über den ganzen Bestand
+    // bewacht), also greift der Bund-Fallback auch OHNE DTO-Ebene nicht mehr:
+    // die gecachte Alt-Antwort landet ebenfalls auf der richtigen Ebene. 'bund'
+    // bleibt Fallback nur für Schlüssel, die weder im Register stehen noch ein
+    // Kantonskürzel tragen (unten geprüft).
     expect(artikelTrefferHref({ erlass: 'AG-291.150', artikel: '1', quelleUrl: 'x' })).toBe(
-      '/gesetze/bund/AG-291.150#art-1',
+      '/gesetze/kanton/AG-291.150#art-1',
+    );
+    expect(artikelTrefferHref({ erlass: 'GIBTSNICHT', artikel: '1', quelleUrl: 'x' })).toBe(
+      '/gesetze/bund/GIBTSNICHT#art-1',
     );
   });
 
