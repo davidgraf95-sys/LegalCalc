@@ -49,6 +49,36 @@ const LIT_ZEILE = /^[a-z]\.\s/;
 const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
 const ANHANG_TITEL = /^Anhang(?:\s*\d*)?(?::|$)/;
 
+/**
+ * §§-SAMMELZEILE (Härtung nach Befund B-4, Gegenprüfung Runde 2, 31.8.2026).
+ *
+ * `KOPF_PARAGRAF` verlangt ein einzelnes «§» und sah die Sammel-Aufhebungsköpfe
+ * darum nie — genau die blinde Stelle, die der Produktions-Adapter hatte. Die
+ * Mengengleichheit (Prüfung 1) war deshalb TRÜGERISCH grün: was beide Seiten
+ * nicht lesen, fehlt beiden Seiten gleich.
+ *
+ * Bewusst NUR die Textgestalt, ohne den Kopf-Einzug, den der Adapter benutzt
+ * (§6.7 lit. d — sonst wäre die Prüfung ein Spiegel des Geprüften). Die
+ * Zeile muss mit «§§» beginnen, eine reine Nennungsliste tragen und mit dem
+ * Punkt ENDEN; damit fallen Querverweise im Satz («… nach §§ 88–90. Davon
+ * ausgenommen …», «§§ 156–159 GG,») heraus, ohne Geometrie zu bemühen. Der
+ * verbleibende Unterschied zum Adapter (ZH-331 § 17 «Vorbehalten bleiben
+ * §§ 23–23 b und 35 b.») ist harmlos: das Tor verlangt nur, dass die genannten
+ * §§ im Snapshot VORKOMMEN — dort stehen sie als echte Artikel.
+ */
+const SAMMEL_ZEILE_ZWEIT =
+  /^§§\s*\d+\s*[a-z]?\s*(?:bis|ter|quater|quinquies)?(?:\s*[–—−-]\s*|\s*,\s*|\s+und\s+)[\d\sa-z–—−,.]*\.$/;
+
+/** Hochgestellte Absatznummer — inkl. lat. Suffix (Befund B-1: das alte Muster
+ *  /^\d+$/ kannte ihn nicht, also konnte das Tor den Verlust nicht sehen). */
+const ABSATZ_HOCHZAHL_ZWEIT = /^\d+(?:bis|ter|quater|quinquies)?$/;
+
+/** Gliederungs-Überschrift der zählenden Form (Befund B-3). Unabhängig vom
+ *  Adapter formuliert: hier reicht das Vorkommen IRGENDWO im Snapshot-Text als
+ *  Verdacht, dort entscheidet der Zeilenanfang. */
+export const GLIEDERUNG_IM_TEXT =
+  /(?:^|\s)(?:\d+|[IVXLC]+|(?:Ers|Zwei|Drit|Vier|Fünf|Sechs|Sieb|Sieben|Ach|Neun|Zehn|Elf|Zwölf)ter)\.?\s+(?:Kapitel|Abschnitt|Unterabschnitt|Teil|Titel|Abteilung):/;
+
 export interface Zweitlesung {
   /** Kopf-Token in Reihenfolge des Auftretens, dedupliziert. */
   koepfe: string[];
@@ -56,10 +86,71 @@ export interface Zweitlesung {
   litZeilen: number;
   /** Zahl der hochgestellten reinen Ziffern links vom Zeilentext. */
   absatzKandidaten: number;
+  /** §-Tokens, die eine §§-Sammelzeile nennt (Bereiche aus reinen Zahlen
+   *  ausgezählt, gemischte Grenzen nur mit ihren Endpunkten). */
+  sammelTokens: string[];
+  /** Zahlen-SPANNEN der genannten Bereiche («§§ 74–80 d.» → {von:74,bis:80}).
+   *  Das Tor akzeptiert jeden Snapshot-Eintrag, dessen Nummer darin liegt: die
+   *  Zweitlesung zählt bewusst konservativ aus (sie rät keine Zwischenstufen),
+   *  der Adapter darf mehr auffüllen — nur NICHTS ausserhalb. */
+  sammelSpannen: Array<{ von: number; bis: number }>;
+  /** Absatz-Hochzahlen MIT lat. Suffix, je §-Token («7» → ['1bis','1ter']). */
+  suffixAbsaetze: Record<string, string[]>;
+  /** Alle Ziffernfolgen des ganzen Dokuments (Werte-Wächter, Prüfung 7).
+   *  Bewusst OHNE Schlussapparat-/Fussnoten-Schnitt: das ist die Obermenge,
+   *  gegen die der Snapshot ⊆ sein muss. */
+  zahlen: Set<string>;
 }
 
 function token(m: RegExpMatchArray): string {
   return [m[1], m[2], m[3]].filter(Boolean).map((t) => t.toLowerCase()).join('_');
+}
+
+/**
+ * §§ einer Sammelzeile auszählen — UNABHÄNGIG von `expandiereSammelbereich`
+ * nachgebaut (§6.7 lit. d) und bewusst konservativer: nur reine Zahlenspannen
+ * werden aufgefüllt, jede andere Grenze zählt nur mit sich selbst. Das Tor
+ * verlangt damit nie mehr, als der Kopf ohne Raten hergibt.
+ */
+export function sammelTokensAus(zeile: string): {
+  tokens: string[];
+  spannen: Array<{ von: number; bis: number }>;
+} {
+  const liste = zeile.replace(/^§§\s*/, '').replace(/\s*\.$/, '');
+  const raus: string[] = [];
+  const spannen: Array<{ von: number; bis: number }> = [];
+  const nimm = (t: string): void => {
+    if (t && !raus.includes(t)) raus.push(t);
+  };
+  const lies = (roh: string): { zahl: number; rest: string } | null => {
+    const m = roh.trim().match(/^(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?$/);
+    if (!m) return null;
+    return {
+      zahl: Number(m[1]),
+      rest: [m[1], m[2], m[3]].filter(Boolean).join('_'),
+    };
+  };
+  for (const teil of liste.split(/\s*,\s*|\s+und\s+/)) {
+    const grenzen = teil.trim().split(/\s*[–—−-]\s*/);
+    if (grenzen.length === 1) {
+      const g = lies(grenzen[0]);
+      if (g) nimm(g.rest);
+      continue;
+    }
+    const von = lies(grenzen[0]);
+    const bis = lies(grenzen[grenzen.length - 1]);
+    if (!von || !bis) continue;
+    nimm(von.rest);
+    nimm(bis.rest);
+    if (bis.zahl >= von.zahl && bis.zahl - von.zahl <= 100) {
+      spannen.push({ von: von.zahl, bis: bis.zahl });
+    }
+    const reinZahlig = von.rest === String(von.zahl) && bis.rest === String(bis.zahl);
+    if (reinZahlig && bis.zahl > von.zahl && bis.zahl - von.zahl <= 100) {
+      for (let n = von.zahl; n <= bis.zahl; n++) nimm(String(n));
+    }
+  }
+  return { tokens: raus, spannen };
 }
 
 /**
@@ -75,6 +166,23 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
   let litZeilen = 0;
   let absatzKandidaten = 0;
   let imSchluss = false;
+  const sammelTokens: string[] = [];
+  const sammelSpannen: Array<{ von: number; bis: number }> = [];
+  const suffixAbsaetze: Record<string, string[]> = {};
+  const zahlen = new Set<string>();
+  // Laufender Kopf, um Suffix-Absaetze ihrem § zuzuordnen.
+  let laufenderKopf: string | null = null;
+
+  // Werte-Waechter (Pruefung 7): ALLE Ziffernfolgen des Dokuments, ohne jeden
+  // Schnitt — die Obermenge, gegen die der Snapshot Teilmenge sein muss.
+  for (let p = 1; p <= doc.numPages; p++) {
+    const inhalt = await (await doc.getPage(p)).getTextContent();
+    for (const it of inhalt.items) {
+      const item = it as { str: string };
+      if (!item.str) continue;
+      for (const z of item.str.match(/\d+/g) ?? []) zahlen.add(z);
+    }
+  }
 
   for (let p = 1; p <= doc.numPages && !imSchluss; p++) {
     const inhalt = await (await doc.getPage(p)).getTextContent();
@@ -131,24 +239,55 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
         imSchluss = true;
         break;
       }
+      // §§-Sammelzeile (Härtung B-4): die §§, die sie nennt, MÜSSEN im
+      // Snapshot vorkommen — als Platzhalter oder als echter Artikel.
+      // Die amtliche Fussnoten-Ziffer hängt hinter dem Schlusspunkt in derselben
+      // y-Zeile («§§ 45–47. 51») und wird davor abgestreift; ohne das griffe die
+      // Gestalt-Prüfung bei keinem Kopf mit Änderungs-Fussnote.
+      const ohneFussnote = text.replace(/\s*\d+(?:\s*,\s*\d+)*$/, '');
+      if (SAMMEL_ZEILE_ZWEIT.test(ohneFussnote)) {
+        const aus = sammelTokensAus(ohneFussnote);
+        for (const t of aus.tokens) {
+          if (!sammelTokens.includes(t)) sammelTokens.push(t);
+        }
+        sammelSpannen.push(...aus.spannen);
+        continue;
+      }
       // Beide Zählweisen sammeln und erst am Ende entscheiden (s. unten) —
       // ein «§»-Erlass enthält umbrochene Zeilen, die mit «Art. 957 Abs. 2
       // ZGB» beginnen, und ein «Art.»-Erlass umgekehrt.
       const par = text.match(KOPF_PARAGRAF);
       if (par) {
         parKoepfe.push(token(par));
+        laufenderKopf = token(par);
         continue;
       }
       const art = text.match(KOPF_ARTIKEL);
       if (art) {
         artKoepfe.push(token(art));
+        laufenderKopf = token(art);
         continue;
       }
       if (LIT_ZEILE.test(text)) litZeilen++;
       const ersteBodyX = body[0].x;
-      absatzKandidaten += zeile.filter(
-        (s) => s.h < 7 && s.h > APPARAT_H && /^\d+$/.test(s.s.trim()) && s.x < ersteBodyX,
-      ).length;
+      const hochzahlen = zeile.filter(
+        (s) =>
+          s.h < 7 &&
+          s.h > APPARAT_H &&
+          ABSATZ_HOCHZAHL_ZWEIT.test(s.s.trim()) &&
+          s.x < ersteBodyX,
+      );
+      absatzKandidaten += hochzahlen.length;
+      // Suffix-Absätze je § festhalten (Härtung B-4 lit. b): sie waren dem Tor
+      // bisher unsichtbar, weil das Muster nur nackte Ziffern kannte.
+      if (laufenderKopf !== null) {
+        for (const s of hochzahlen) {
+          const nr = s.s.trim();
+          if (/^\d+$/.test(nr)) continue;
+          const liste = (suffixAbsaetze[laufenderKopf] ??= []);
+          if (!liste.includes(nr)) liste.push(nr);
+        }
+      }
     }
   }
   // Zählweise je Erlass: die Marke mit den mehr Treffern gewinnt. Bei
@@ -161,6 +300,6 @@ export async function leseZweit(bytes: Uint8Array): Promise<Zweitlesung> {
     gesehen.add(t);
     koepfe.push(t);
   }
-  return { koepfe, litZeilen, absatzKandidaten };
+  return { koepfe, litZeilen, absatzKandidaten, sammelTokens, sammelSpannen, suffixAbsaetze, zahlen };
 }
 
