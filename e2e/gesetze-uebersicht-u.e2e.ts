@@ -110,9 +110,12 @@ test.describe('U-UEBERSICHT — URL-Kompatibilität (bestehende Deep-Links)', ()
     await expect(page.getByRole('heading', { name: 'Grundgerüst nach Rechtsgebiet' })).toBeVisible()
   })
 
-  test('?ebene=kanton&kt=ZH bleibt Default Systematisch (Nicht systematisiert)', async ({ page }) => {
+  test('?ebene=kanton&kt=ZH bleibt Default Systematisch (amtliche Ordner)', async ({ page }) => {
+    // Fachliche Aenderung 1.9.2026 (§6.3, deklariert): ZH traegt seit der
+    // Kern-Tranche den amtlichen Systematik-Baum — der Deep-Link zeigt
+    // weiterhin die systematische Default-Ansicht, jetzt mit Ordner-Namen.
     await page.goto('/gesetze?ebene=kanton&kt=ZH')
-    await expect(page.getByText('Nicht systematisiert').first()).toBeVisible()
+    await expect(page.getByText(/Gerichtsorganisation - Zivilrecht/).first()).toBeVisible()
   })
 
   test('?ebene=bund bleibt Default Systematisch (Alle aufklappen)', async ({ page }) => {
