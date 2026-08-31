@@ -464,8 +464,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   oder Prüfung.
   **Detail:** [FAHRPLAN-OPTIMIERUNG-2026-07.md](fahrplaene/FAHRPLAN-OPTIMIERUNG-2026-07.md) §1.
 
-- [~] **Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(`QS-AUTOPILOT-STUFE1`)*
-  <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
+- [x] **Vorschlags-Autopilot (Entwurfs-PRs aus der Messreihe)** *(`QS-AUTOPILOT-STUFE1`)*
+  <!-- @meta id: QS-AUTOPILOT-STUFE1 · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md -->
   David: «stufe 1 ja», gebunden an ≥ 5 Snapshots; Stufe 2/3 NICHT freigegeben. Cron fährt `retro:17`,
   eröffnet Entwurfs-PR, kein Auto-Merge.
   **Detail:** [FAHRPLAN-PLAN-STEUERUNG.md](fahrplaene/FAHRPLAN-PLAN-STEUERUNG.md) § «Selbstoptimierender Bau».
