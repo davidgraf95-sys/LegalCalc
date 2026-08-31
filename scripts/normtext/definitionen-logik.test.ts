@@ -167,3 +167,117 @@ describe('B4 — Regression gegen public/normtext/definitionen.json', () => {
     expect(e?.zitat).toContain('\n');
   });
 });
+
+// ═══ R6.3 · Belegfall-Tests zu den GP-Befunden Runde 2 vom 31.8.2026 ═════════
+// Sätze wörtlich aus dem Korpus (§7). Rot-Beweis: vor dem R6.3-Fix rot,
+// Lauf dokumentiert im R6.3-Bericht.
+
+// ─── F1 — Doppelpunkt-Kopf erhält die Aufzählung als Definiens ───────────────
+
+/** Minimal-Fixture nach dem Muster AIG Art. 42 Abs. 2 (Blocktext-Kopf + Items). */
+const F1_FIXTURE: NormSnapshot = {
+  id: 'bund/TESTG/art_2',
+  ebene: 'bund',
+  quelle: 'TESTG',
+  erlass: 'TESTG',
+  artikel: '2',
+  artikelLabel: 'Art. 2',
+  stand: '2026-01-01',
+  quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/0000/de',
+  abgerufen: '2026-08-31',
+  bloecke: [{
+    absatz: '2',
+    text: 'Als Familienangehörige gelten:',
+    items: [
+      { marke: 'a', text: 'der Ehegatte und die Verwandten in absteigender Linie, die jünger als 21 Jahre alt sind;' },
+      { marke: 'b', text: 'die eigenen Verwandten und die Verwandten des Ehegatten in aufsteigender Linie, denen Unterhalt gewährt wird.' },
+    ],
+  }],
+} as unknown as NormSnapshot;
+
+describe('F1 — als-gilt-Kopf auf «:» trägt die Block-Aufzählung als Definiens (GP R2)', () => {
+  it('baut das Zitat als Kopf + Items, U+000A-verbunden', () => {
+    const eintraege = definitionenAusEintrag(F1_FIXTURE, 'bund/TESTG');
+    expect(eintraege).toHaveLength(1);
+    expect(eintraege[0].begriff).toBe('Familienangehörige');
+    expect(eintraege[0].zitat).toBe(
+      'Als Familienangehörige gelten:\n'
+      + 'der Ehegatte und die Verwandten in absteigender Linie, die jünger als 21 Jahre alt sind;\n'
+      + 'die eigenen Verwandten und die Verwandten des Ehegatten in aufsteigender Linie, denen Unterhalt gewährt wird.',
+    );
+  });
+
+  it('verwirft den Doppelpunkt-Kopf OHNE Aufzählung am Block (BOEB-Anh.-3-Klasse)', () => {
+    const ohneItems = {
+      ...F1_FIXTURE,
+      bloecke: [{
+        absatz: null,
+        text: 'Als Dienstleistungen im Staatsvertragsbereich gelten die nachfolgend aufgeführten Leistungen:',
+        items: [],
+      }],
+    } as unknown as NormSnapshot;
+    expect(definitionenAusEintrag(ohneItems, 'bund/TESTG')).toEqual([]);
+  });
+});
+
+// ─── F2 — Rollennomen: Plural, Komposita und der Stamm «Periode» ─────────────
+
+const F2_ROLLEN: Array<[string, string]> = [
+  ['kanton/BS/424.510/art_3 (Stichtage, Plural)', 'Als Stichtage für die Rechnungstellung gelten der 31. August und der 31. Januar.'],
+  ['bund/EOV/art_21 (Zahlungsnachweise, Kompositum+Plural)', 'Als Zahlungsnachweise gelten die kasseninternen Belege, Verrechnungsausweise der Postfinance oder Belastungsanzeigen der Bank.'],
+  ['kanton/BS/164.250/art_8 (Berechnungsbasis, Kompositum)', 'Als Berechnungsbasis gilt der Ferienlohn gemäss § 21a Lohngesetz im Zeitpunkt der Fälligkeit des Dienstaltersgeschenks.'],
+  ['bund/KVV/art_96 Abs. 2 (Periode — Gleichbehandlung mit Abs. 3 «Zeitpunkt»)', 'Als Periode für die Feststellung, ob Leistungen in Anspruch genommen worden sind, gilt das Kalenderjahr.'],
+];
+
+describe('F2 — Rollennomen morphologisch (GP R2 31.8.2026)', () => {
+  it.each(F2_ROLLEN)('%s liefert keinen als-gilt-Eintrag', (_id, satz) => {
+    const t = regelnAufSatz(satz);
+    expect(t?.muster === 'als-gilt' ? t : null).toBeNull();
+  });
+
+  it('Gegenprobe KVV 96 Abs. 3: «Zeitpunkt» bleibt draussen (bestehende Regel)', () => {
+    expect(regelnAufSatz('Als Zeitpunkt der Inanspruchnahme einer Leistung gilt das Behandlungsdatum.')).toBeNull();
+  });
+
+  it('Gegenprobe: lexikalisierte Komposita der Exakt-Stämme bleiben Begriffe', () => {
+    // Dokumentierter R6.2-Entscheid (Bibliothek §GP-Korrektur): Steuerperiode,
+    // Baubeginn sind eigenständige Termini — die Stämme «Periode»/«Beginn»
+    // wirken darum nur exakt, nie als Suffix.
+    expect(regelnAufSatz('Als Steuerperiode gilt das Kalenderjahr.')?.begriff).toBe('Steuerperiode');
+    expect(regelnAufSatz('Als Baubeginn gilt der Abbruchbeginn.')?.begriff).toBe('Baubeginn');
+  });
+});
+
+// ─── F3 — Begriff mit finitem Verb ist ein Satzfragment, kein Terminus ───────
+
+describe('F3 — Fragment-Begriff mit finitem Verb (GP R2 31.8.2026)', () => {
+  it('BS 427.950 §16 Abs. 4 («können») liefert keinen Eintrag', () => {
+    expect(regelnAufSatz('Als Leistungsnachweise können auch solche gelten, die ausserhalb des Bildungsgangs erworben wurden und von der Bildungsgangleitung anerkannt werden.')).toBeNull();
+  });
+
+  it('AVIV 8 («sind» im Relativsatz) geht dokumentiert mit raus', () => {
+    expect(regelnAufSatz('Als Berufe, in denen häufig wechselnde oder befristete Anstellungen üblich sind, gelten insbesondere:')).toBeNull();
+  });
+});
+
+// ─── F4 — Partizip-I-Restfiktion «gilt auch» ─────────────────────────────────
+
+describe('F4 — Partizip-I-Erweiterungsfiktion (GP R2 31.8.2026)', () => {
+  it('StPO 428 «Als unterliegend gilt auch …» liefert keinen Eintrag', () => {
+    expect(regelnAufSatz('Als unterliegend gilt auch die Partei, auf deren Rechtsmittel nicht eingetreten wird oder die das Rechtsmittel zurückzieht.')).toBeNull();
+  });
+
+  it.each([
+    ['bund/PARLG/art_22', 'rechtsetzend', 'Als rechtsetzend gelten Bestimmungen, die in unmittelbar verbindlicher und generell-abstrakter Weise Pflichten auferlegen, Rechte verleihen oder Zuständigkeiten festlegen.'],
+    ['bund/FIDLEG/art_5', 'vermögend', 'Als vermögend im Sinne von Absatz 1 gilt, wer glaubhaft erklärt, dass sie oder er:'],
+  ])('Gegenprobe %s: echte Adjektiv-Definition «%s» bleibt', (_id, begriff, satz) => {
+    const t = regelnAufSatz(satz);
+    expect(t?.muster).toBe('als-gilt');
+    expect(t?.begriff).toBe(begriff);
+  });
+
+  it('Gegenprobe SchKG 286: «gelten auch» mit Substantiv-Begriff bleibt', () => {
+    const t = regelnAufSatz('Als nahestehende Personen gelten auch Gesellschaften eines Konzerns.');
+    expect(t?.begriff).toBe('nahestehende Personen');
+  });
+});

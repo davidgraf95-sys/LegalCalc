@@ -18,6 +18,11 @@
 //   (E) STATUS — jeder Eintrag trägt `status: 'entwurf'`. Was als
 //       Legaldefinition GILT, ist juristisches Urteil; das Tor lässt keinen
 //       gehobenen Status durch (§7/§8: Abnahme nur über den Skill `abnahme`).
+//   (F) DEFINIENS VORHANDEN (R6.3, GP R2 31.8.2026) — kein Zitat endet als
+//       nackter Doppelpunkt-Kopf: es endet nicht auf «:» ODER trägt die
+//       Aufzählung als angehängte Zeilen (U+000A). Rot-Beweis am Ist-Stand
+//       vor dem R6.3-Fix: 339 Einträge (306 als-gilt · 18 legende-einleitung ·
+//       9 im-sinne · 3 guillemets · 3 kurzform), Lauf 31.8.2026.
 //
 // Aufruf:  npm run check:definitionen
 
@@ -128,7 +133,7 @@ if (existsSync(ZIEL)) {
   const eintraege = Array.isArray(datei.eintraege) ? datei.eintraege : [];
   if (eintraege.length === 0) melde('(C) Artefakt enthält keine Einträge.');
 
-  let cFehler = 0, dFehler = 0, eFehler = 0;
+  let cFehler = 0, dFehler = 0, eFehler = 0, fFehler = 0;
   const zeige = (n: number, s: string): void => { if (n < 5) melde(`      ${s}`); };
   const gesehen = new Set<string>();
 
@@ -187,6 +192,12 @@ if (existsSync(ZIEL)) {
     if (!e.begriff || !e.zitat.includes(e.begriff)) {
       zeige(dFehler++, `(D) ${wo}: Begriff kommt im Zitat nicht vor.`); return;
     }
+    // (F) Definiens vorhanden: ein Zitat, das auf «:» endet, ist ein blosser
+    // Kopf — die angekündigte Aufzählung MUSS als U+000A-Zeilen angehängt sein.
+    if (e.zitat.endsWith(':') && !e.zitat.includes('\n')) {
+      zeige(fFehler++, `(F) ${wo}: Zitat endet auf «:» ohne angehängte Unterpunkte — kein Definiens.\n          Zitat: ${JSON.stringify(e.zitat.slice(-100))}`);
+      return;
+    }
     // Provenienz (§7): Stand + Link müssen die des Artikels sein.
     if (e.stand !== snap.stand || e.quelleUrl !== snap.quelleUrl) {
       zeige(cFehler++, `(C) ${wo}: stand/quelleUrl weichen vom Snapshot ab.`); return;
@@ -200,6 +211,7 @@ if (existsSync(ZIEL)) {
   if (cFehler) melde(`(C) Norm-Existenz: ${cFehler} von ${eintraege.length} Einträgen zeigen ins Leere.`);
   if (dFehler) melde(`(D) Zitat-Treue: ${dFehler} von ${eintraege.length} Einträgen nicht wörtlich belegt.`);
   if (eFehler) melde(`(E) Status: ${eFehler} von ${eintraege.length} Einträgen nicht "entwurf".`);
+  if (fFehler) melde(`(F) Definiens vorhanden: ${fFehler} von ${eintraege.length} Zitaten enden als nackter Doppelpunkt-Kopf.`);
 
   if (fehler.length === 0) {
     const proMuster = Object.entries(datei.proMuster ?? {}).map(([k, v]) => `${k} ${v}`).join(' · ');
