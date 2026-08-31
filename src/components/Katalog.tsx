@@ -9,6 +9,7 @@ import { ZUSTAENDIGKEIT_FELDER, ZUSTAENDIGKEIT_FELD_IDS } from '../lib/zustaendi
 import { kartePasst, LEERER_FILTER } from '../lib/katalogSuche';
 import { sansAmp } from './typografie';
 import { GruppenKopf } from './ui/GruppenKopf';
+import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from './ui/TrefferZeile';
 
 // Register-Bausteine der Rubrik-Übersichten (Auftrag David 10.6.2026, Struktur;
 // UI-Welle: neuer Ort /rechner + /vorlagen). Eine Oberkategorie wird als
@@ -30,33 +31,37 @@ import { GruppenKopf } from './ui/GruppenKopf';
 
 // Geteilte Listen-Zeile (Redesign #1): EIN Karten-Zeilen-Muster für Werkzeuge
 // und Fristen-Regime (vorher WerkzeugZeile + FristenRegimeZeile, fast wortgleich).
-//  subWrap  – Sub-Label umbrechen statt abschneiden (Fristen-WARUM-Satz)
 //  zeigeGeplant – «In Vorbereitung»-Badge mitzeigen (sonst nur Entwurf)
-function ListenZeile({ k, subLabel, subWrap = false, zeigeGeplant }: { k: CalculatorCard; subLabel?: string; subWrap?: boolean; zeigeGeplant?: boolean }) {
+// C-4 (31.8.2026): die Zeilen-ANATOMIE (Titel/Untertitel/Marke/Pfeil) liegt seit
+// Runde 2 in `ui/TrefferZeile` — dieselbe wie im Such-Panel. Hier bleibt nur der
+// BEHÄLTER (Karte) und die Statuslogik. Der frühere Schalter `subWrap` ist
+// entfallen: der Baustein kappt das Sub-Label nie mehr hart, er lässt zwei
+// Zeilen zu (§8, Herleitung im Baustein).
+function ListenZeile({ k, subLabel, zeigeGeplant }: { k: CalculatorCard; subLabel?: string; zeigeGeplant?: boolean }) {
   const aktiv = istAktiv(k.status) && !!k.href;
   const inhalt = (
-    <>
-      <span className="min-w-0">
-        <span className="block font-sans font-medium text-ink-900 text-body-s leading-snug">{sansAmp(k.title)}</span>
-        {subLabel && <span className={`block text-xs text-ink-500 leading-snug${subWrap ? '' : ' truncate'}`}>{sansAmp(subLabel)}</span>}
-      </span>
-      <span className="flex items-center gap-2 shrink-0">
-        {k.status === 'entwurf' && (
-          <span className="lc-badge-entwurf" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
-        )}
-        {zeigeGeplant && k.status === 'geplant' && (
-          <span className="lc-badge lc-badge-soft">In Vorbereitung</span>
-        )}
-        {aktiv && <span aria-hidden className="text-brass-700 leading-none">→</span>}
-      </span>
-    </>
+    <TrefferZeile
+      titel={sansAmp(k.title)}
+      untertitel={subLabel ? sansAmp(subLabel) : undefined}
+      pfeil={aktiv ? '→' : null}
+      marke={(k.status === 'entwurf' || (zeigeGeplant && k.status === 'geplant')) ? (
+        <>
+          {k.status === 'entwurf' && (
+            <span className="lc-badge-entwurf" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
+          )}
+          {zeigeGeplant && k.status === 'geplant' && (
+            <span className="lc-badge lc-badge-soft">In Vorbereitung</span>
+          )}
+        </>
+      ) : undefined}
+    />
   );
   // C-3 (31.8.2026): der Lift (`hover:shadow-lg hover:-translate-y-0.5`) ist
   // entfallen — Karten-Hover läuft hausweit über die Farbstufe, als EINE Regel
   // an `.lc-card` (index.css). Damit fällt auch der eigene Transition-Ausdruck
   // samt `motion-reduce`-Rücknahme weg: ohne Transform bleibt nur der
   // Farbübergang, den die Regel selbst mitbringt.
-  const klasse = 'lc-card text-left px-4 py-3 flex items-center justify-between gap-3 min-w-0 bg-surface no-underline';
+  const klasse = `lc-card text-left px-4 py-3 bg-surface no-underline ${TREFFER_ZEILE_RAHMEN}`;
   return aktiv ? (
     <Link to={k.href!} className={klasse}>{inhalt}</Link>
   ) : (
@@ -110,8 +115,8 @@ function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
         <GruppenKopf titel={titel} />
         <p className="text-body-s text-ink-500 max-w-reading">{lede}</p>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
-          {zeilen.map((r) => <ListenZeile key={r.id} k={r.k} subLabel={r.warum ?? r.k.rechtsgebiet} subWrap />)}
-          {extra.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} subWrap />)}
+          {zeilen.map((r) => <ListenZeile key={r.id} k={r.k} subLabel={r.warum ?? r.k.rechtsgebiet} />)}
+          {extra.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
         </div>
       </div>
     )

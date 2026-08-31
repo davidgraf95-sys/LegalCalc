@@ -6,6 +6,7 @@ import { BesetzungWert, DatumMeta, MassgeblicheFassung } from './EntscheidKopfTe
 import { FS_STUFEN } from './leseGroesse';
 import { SeitenTitel } from '../ui/SeitenTitel';
 import { paneKlasse } from '../layout/PaneKontext';
+import { useDialogFokus } from '../layout/useDialogFokus';
 import { GEBIET_LABEL } from '../../lib/normtext/register';
 import { referenzImTitel } from '../../pages/entscheidLeserRegeln';
 import { MASSGEBLICH_SATZ } from '../../lib/benennung';
@@ -84,31 +85,22 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
   // Body-Sperre): das Portal-Ziel IST die Lage. Ein zweites `imPane` aus dem
   // Kontext wäre eine zweite Quelle für dieselbe Aussage (§5).
   const imPane = ziel != null;
+  // Runde-2-Nachzug (31.8.2026, §5): Escape, Fokus-Falle und Fokus-Rückgabe
+  // liefen hier als HANDGESCHRIEBENE Kopie — die zehnte Dialog-Fläche des Hauses
+  // und die einzige, die `useDialogFokus` nicht benutzte. Der Kommentar oben
+  // sagte bereits «wie der V3-Drawer, der `useDialogFokus` unverändert benutzt»;
+  // jetzt stimmt das auch für den Code. Die Kopie war zudem schwächer: sie sammelte
+  // nur `a[href], button:not([disabled])` und liess unsichtbare Kandidaten mitzählen.
+  // Der Anfangsfokus bleibt «✕ schliessen» (`startFokus`) — die Schriftgrössen-
+  // Knöpfe stehen im DOM davor, wären also die Vorgabe-Landung des Hooks.
+  useDialogFokus(true, dialogRef, onClose, schliessRef);
   useEffect(() => {
-    const vorigerFokus = document.activeElement as HTMLElement | null;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { onClose(); return; }
-      // Fokus-Falle: Tab bleibt im Dialog (a11y, aria-modal).
-      if (e.key === 'Tab' && dialogRef.current) {
-        const f = dialogRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
-        if (f.length === 0) return;
-        const erst = f[0], letzt = f[f.length - 1];
-        if (e.shiftKey && document.activeElement === erst) { e.preventDefault(); letzt.focus(); }
-        else if (!e.shiftKey && document.activeElement === letzt) { e.preventDefault(); erst.focus(); }
-      }
-    };
-    document.addEventListener('keydown', onKey);
     // A-5 Ziff. 2: die Body-Sperre gilt nur dem VOLLBILD-Dialog. Aus einem Pane
     // heraus fror sie eine Fläche ein, die gar nicht verdeckt ist.
     const vorher = document.body.style.overflow;
     if (!imPane) document.body.style.overflow = 'hidden';
-    schliessRef.current?.focus();
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      if (!imPane) document.body.style.overflow = vorher;
-      vorigerFokus?.focus?.();   // Fokus zum Auslöser zurück
-    };
-  }, [onClose, imPane]);
+    return () => { if (!imPane) document.body.style.overflow = vorher; };
+  }, [imPane]);
 
   // Portal-Ziel (A-5): im Pane dessen Overlay-Schicht, sonst wie bisher
   // `<body>` — dort fängt ein `@container/pane`-Vorfahr sonst das

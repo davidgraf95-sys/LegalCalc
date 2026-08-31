@@ -345,20 +345,24 @@ export function VorlageSchlichtungsgesuchBs() {
         <div className="space-y-5">
           {verm ? (
             <>
-              <div className="flex flex-wrap gap-1.5" role="group" aria-label="Pfad">
-                {([['beziffert', 'Bezifferte Forderung'], ['unbeziffert', 'Unbeziffert (Art. 85 ZPO)']] as const).map(([code, label]) => (
-                  <button key={code} type="button" aria-pressed={(code === 'unbeziffert') === !!a.unbeziffert}
-                    onClick={() => {
-                      if (code === 'unbeziffert') { set('unbeziffert', a.unbeziffert ?? { mindestbetrag: '', grund: '' }); set('geld', undefined); }
-                      else { set('unbeziffert', undefined); set('geld', a.geld ?? { betrag: '' }); }
-                    }}
-                    className={`px-3 py-1.5 rounded-full text-body-s font-medium border transition-colors ${
-                      ((code === 'unbeziffert') === !!a.unbeziffert) ? 'bg-ink-900 border-ink-900 text-paper' : 'bg-surface border-line text-ink-600 hover:border-brass-400'
-                    }`}>
-                    {label}
-                  </button>
-                ))}
-              </div>
+              {/* D-3 (31.8.2026): Pillen-Reihe über den geteilten Baustein
+                  (`ui/SelectionGrid`, variant «pille»). Der aktive Pfad ist eine
+                  ABLEITUNG aus `a.unbeziffert` — der Baustein vergleicht `value`
+                  mit dem Code; die Umschalt-Logik bleibt unverändert hier. */}
+              <SelectionGrid
+                variant="pille"
+                gruppenLabel="Pfad"
+                className="flex flex-wrap gap-1.5"
+                items={[
+                  { code: 'beziffert', label: 'Bezifferte Forderung' },
+                  { code: 'unbeziffert', label: 'Unbeziffert (Art. 85 ZPO)' },
+                ] as const}
+                value={a.unbeziffert ? 'unbeziffert' : 'beziffert'}
+                onSelect={(code) => {
+                  if (code === 'unbeziffert') { set('unbeziffert', a.unbeziffert ?? { mindestbetrag: '', grund: '' }); set('geld', undefined); }
+                  else { set('unbeziffert', undefined); set('geld', a.geld ?? { betrag: '' }); }
+                }}
+              />
               {!a.unbeziffert ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Field label="Forderungsbetrag (CHF)" hint="zu beziffern (Art. 84 Abs. 2 ZPO) – z. B. 3000">

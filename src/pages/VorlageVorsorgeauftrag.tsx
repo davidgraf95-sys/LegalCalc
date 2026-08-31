@@ -386,22 +386,23 @@ export function VorlageVorsorgeauftrag() {
           </Field>
           <div className="space-y-2">
             <GruppenTitel><NormText text={`Entschädigung (Art. 366 ZGB)`} /></GruppenTitel>
-            <div className="flex flex-wrap gap-1.5" role="group" aria-label="Entschädigung">
-              {([
-                ['keine_angabe', 'keine Regelung (KESB legt fest)'],
-                ['unentgeltlich', 'unentgeltlich (Spesen ersetzt)'],
-                ['pauschale', 'Pauschale pro Jahr'],
-                ['nach_aufwand', 'nach Aufwand (CHF/Std.)'],
-              ] as const).map(([code, label]) => (
-                <button key={code} type="button" aria-pressed={a.entschaedigung === code}
-                  onClick={() => set('entschaedigung', code)}
-                  className={`px-3 py-1.5 rounded-full text-body-s font-medium border transition-colors ${
-                    a.entschaedigung === code ? 'bg-ink-900 border-ink-900 text-paper' : 'bg-surface border-line text-ink-600 hover:border-brass-400'
-                  }`}>
-                  {label}
-                </button>
-              ))}
-            </div>
+            {/* D-3 (31.8.2026): Pillen-Reihe über den geteilten Baustein
+                (`ui/SelectionGrid`, variant «pille») — die invertierte
+                ink-900-Füllung als Auswahl-Signal ist entfallen, es gilt der
+                Kanon `border-brass-500 bg-brass-100/60`. */}
+            <SelectionGrid
+              variant="pille"
+              gruppenLabel="Entschädigung"
+              className="flex flex-wrap gap-1.5"
+              items={[
+                { code: 'keine_angabe', label: 'keine Regelung (KESB legt fest)' },
+                { code: 'unentgeltlich', label: 'unentgeltlich (Spesen ersetzt)' },
+                { code: 'pauschale', label: 'Pauschale pro Jahr' },
+                { code: 'nach_aufwand', label: 'nach Aufwand (CHF/Std.)' },
+              ] as const}
+              value={a.entschaedigung ?? ''}
+              onSelect={(code) => set('entschaedigung', code)}
+            />
             {(a.entschaedigung === 'pauschale' || a.entschaedigung === 'nach_aufwand') && (
               <Field label={a.entschaedigung === 'pauschale' ? 'Betrag (CHF pro Jahr)' : 'Ansatz (CHF pro Stunde)'}>
                 <input type="number" min={0} className={inputCls + ' w-40'} value={a.entschaedigungBetrag ?? ''}

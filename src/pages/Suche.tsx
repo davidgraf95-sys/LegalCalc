@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useUniversalSuche } from '../components/suche/useUniversalSuche';
 import { SuchResultate } from '../components/suche/SuchResultate';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { FacettenGruppe } from '../components/ui/FacettenGruppe';
 import type { GruppenId } from '../lib/universalSuche';
 
 // ─── /suche — Volltext-Ergebnisseite (UI-NAV S5) ────────────────────────────
@@ -107,34 +108,31 @@ export function Suche() {
 
         {/* Inhaltstyp-Facette — nur wenn es etwas zu filtern gibt.
 
-            W2·19-DESIGN-KONSISTENZ · D-1: dieselbe Facetten-Bedienung trug hier
-            eine EIGENE Optik (Pillen `rounded-full border`, Sans, Farbnuance als
-            einziges Auswahl-Signal), während /rechtsprechung dieselbe Sache mit
-            der Chip-Familie `.lc-chip` zeigt. Diese Reihe ist jetzt auf den
-            Kanon gezogen — die lokale `FacetChip`-Kopie ist gelöscht, nicht
-            angeglichen (§5/§10). Damit erbt sie zwei Dinge, die die Kopie nicht
-            hatte: das ✓-Präfix des `.lc-chip-selected` (LM-040 · F4 «selected»:
-            die Auswahl ist ohne Farbvergleich erkennbar, F2 «Farbe nie allein»)
-            und die Chip-Grammatik der `.lc-chip-zeile` (LM-044/N1: <button> =
-            geschlossener Hairline-Rahmen = drückbare Form).
-            Die Optik ändert sich sichtbar — das IST der Kanon (index.css:1229ff). */}
+            W2·19-DESIGN-KONSISTENZ · D-1 (Welle B1): dieselbe Facetten-Bedienung
+            trug hier eine EIGENE Optik (Pillen `rounded-full border`, Sans,
+            Farbnuance als einziges Auswahl-Signal), während /rechtsprechung
+            dieselbe Sache mit der Chip-Familie `.lc-chip` zeigt. Diese Reihe ist
+            auf den Kanon gezogen — die lokale `FacetChip`-Kopie ist gelöscht,
+            nicht angeglichen (§5/§10). Damit erbt sie zwei Dinge, die die Kopie
+            nicht hatte: das ✓-Präfix des `.lc-chip-selected` (LM-040 · F4
+            «selected»: die Auswahl ist ohne Farbvergleich erkennbar, F2 «Farbe
+            nie allein») und die Chip-Grammatik der `.lc-chip-zeile` (LM-044/N1).
+
+            Runde 2: auch die ANATOMIE der Achse (Gruppen-Rolle · Etikett · Chip
+            mit Zahl · a11y-Name «<Achse>: <Wert> (<n>)») liegt jetzt in EINEM
+            Baustein, `ui/FacettenGruppe`, den /rechtsprechung mitträgt. Die
+            zugänglichen Namen bleiben identisch; sichtbar dazu kommt das
+            Achsen-Etikett «INHALTSTYP» vor den Chips. */}
         {q !== '' && facetten.length > 1 && (
-          <div className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5" role="group" aria-label="Nach Inhaltstyp filtern">
-            {[{ id: 'alle' as const, titel: 'Alle', n: facetten.reduce((s, f) => s + f.n, 0) },
-              ...facetten.map((f) => ({ id: f.id, titel: f.titel, n: f.n }))].map((o) => {
-              const aktiv = aktiverTyp === o.id;
-              return (
-                <button key={o.id} type="button" aria-pressed={aktiv} onClick={() => setTyp(o.id)}
-                  aria-label={`Inhaltstyp: ${o.titel} (${o.n})`}
-                  className={`lc-chip ${aktiv ? 'lc-chip-selected' : ''}`}>
-                  {/* LM-051: der Trenner steht als eigener Textknoten zwischen
-                      Label und Zahl — sonst liest/kopiert man «Gesetzestext34».
-                      ink-600 statt ink-500: 12px-Ziffer auf --well ≥4.5:1 (R4). */}
-                  {o.titel}{' '}<span className={`num ml-1.5 ${aktiv ? '' : 'text-ink-600'}`}>{o.n}</span>
-                </button>
-              );
-            })}
-          </div>
+          <FacettenGruppe label="Inhaltstyp" gruppenLabel="Nach Inhaltstyp filtern"
+            optionen={[
+              { id: 'alle' as const, titel: 'Alle', n: facetten.reduce((s, f) => s + f.n, 0) },
+              ...facetten,
+            ].map((o) => ({
+              id: o.id, text: o.titel, n: o.n,
+              aktiv: aktiverTyp === o.id,
+              waehle: () => setTyp(o.id),
+            }))} />
         )}
       </div>
 
