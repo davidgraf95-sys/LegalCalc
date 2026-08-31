@@ -108,13 +108,40 @@ interface PdfStueck {
   w: number;
 }
 
-// Schwelle (pt) für eine Spaltengrenze zwischen zwei Fragmenten derselben
-// Textzeile. Empirisch an ZH-Tarif-PDFs (Probe 20.6.2026): normale Marke→Text-
-// Lücken liegen bei 2–15 pt, echte Tabellenspalten (Wert-/Verweis-Spalte,
-// Randtitel→Body) bei ≥21 pt. 18 pt trennt beides sauber. Eingefügt wird NUR ein
-// Leerzeichen an der Spaltengrenze — kein Zeichen geändert/entfernt/umgestellt
-// (Wortlaut unangetastet, §1; konsistent mit entglueZhTarif).
-const SPALTEN_LUECKE_PT = 18;
+// ── Geometrie-Schwellen (empirisch erhoben, Fix-Runde 31.8.2026) ─────────────
+// Messgrundlage: Roh-Stücke aller 24 ZH-PDF (pdfjs, y∈[60,530], h<11), Lücke =
+// x(nächstes) − (x+width)(voriges) innerhalb EINER Textzeile.
+//
+// WORT_LUECKE_PT — ab wann eine Fragment-Lücke ein echtes Leerzeichen ist.
+// Gemessene Verteilung (Body-Schrift h≈9.18, nach Hochstellungs-Zuordnung):
+//   −0.7 … +0.4  Silbentrennstrich, direkt anschliessende Interpunktion  (kein Space)
+//    1.3 … 20    jede Lücke ist ein echtes Leerzeichen («Art.»|«1», «§»|«73»,
+//                «400»|«000» = schmaler Tausenderabstand, lit.-Marke|Text,
+//                Blocksatz-Spatien, Tabellenspalten)
+// Zwischen 0.4 und 1.3 liegt im ganzen Bestand KEIN Body-Fragmentpaar → 0.8 pt
+// trennt beide Klassen mit Sicherheitsabstand nach beiden Seiten.
+//
+// VORHER (Bug B-4, Gegenprüfung 31.8.2026): nur Lücken > 18 pt bekamen ein
+// Leerzeichen. Alles darunter klebte zusammen — «§34», «Abs.1», «Art.68»,
+// «ZPOvor», und über die entfernte Fussnoten-Hochzahl hinweg «BGFAnicht»,
+// «Kantonsverfassungund». Eingefügt wird weiterhin NUR Whitespace, nie ein
+// Zeichen geändert/entfernt/umgestellt (§1).
+const WORT_LUECKE_PT = 0.8;
+
+/** Grenzhöhe (pt): darunter ist ein Stück hochgestellt (Absatzzahl, Fussnoten-
+ *  Verweis, lat. Suffix «bis»/«ter»). Body ist h≈9.18, Hochstellung h≈5.70. */
+const HOCH_MAX_H = 7.0;
+
+/** Grenzhöhe (pt) der Fussnoten-DEFINITIONS-Ziffer am Seitenfuss. Gemessene
+ *  Höhen im Gesamtbestand: 4.32/4.62/4.92/5.04 (Fussnoten-Apparat, Grundschrift
+ *  7.98) gegen 5.70 (Body-Hochstellung, Grundschrift 9.18) — die beiden Klassen
+ *  berühren sich nicht; 5.2 pt trennt sie. */
+const APPARAT_ZIFFER_MAX_H = 5.2;
+
+/** Maximaler y-Abstand (pt) zwischen einer Hochstellung und ihrer Trägerzeile.
+ *  Gemessen: durchgängig 2.76 pt (Hochstellung liegt über der Grundlinie);
+ *  der Zeilenabstand beträgt ≈10.2 pt, eine Verwechslung ist ausgeschlossen. */
+const HOCH_TRAEGER_ABSTAND = 5;
 
 /** Eine zusammengefügte Textzeile (eine y-Position einer Seite). */
 export interface ZhTextZeile {
@@ -142,7 +169,6 @@ export interface ZhExtrakt {
  */
 export async function extrahiereZhTextZeilen(
   bytes: Uint8Array,
-  spaltenLuecke = false,
 ): Promise<ZhExtrakt> {
   // pdfjs legacy/node-Build: NUR hier (scripts/) importiert — kein src/-Import,
   // damit der Client-Bundle unberührt bleibt.
@@ -180,6 +206,29 @@ export async function extrahiereZhTextZeilen(
     }
     if (stuecke.length === 0) continue;
 
+    // ── FUSSNOTEN-APPARAT am Seitenfuss abschneiden (Bug B-6, 31.8.2026) ─────
+    // Der Loseblatt-Änderungsapparat («Fassung gemäss G vom …», «Text siehe
+    // OS 48, 204.», «Vgl. auch Art. 6–9 …») steht als geschlossener Block am
+    // unteren Seitenrand und ist KEIN Normtext. Die frühere Erkennung lief über
+    // eine Liste von Eröffnungs-Wendungen und liess jede Fortsetzungszeile und
+    // jede unbekannte Wendung durch — bei ZH-851.1 § 55 landeten so 13
+    // Pseudo-Absätze (¶11–¶23) mit OS-Zitaten im letzten §, korpusweit 43 Blöcke
+    // in 15 Erlassen (Gegenprüfung 31.8.2026).
+    //
+    // Geometrisch statt lexikalisch: Der Apparat wird von seinen Fussnoten-
+    // ZIFFERN eingeleitet, die in einer eigenen, kleineren Schriftgrösse gesetzt
+    // sind (h ≤ 5.2 gegen h = 5.70 der Body-Hochstellungen — die Höhenklassen
+    // berühren sich im ganzen Bestand nicht). Alles auf oder unterhalb der
+    // OBERSTEN solchen Ziffer gehört zum Apparat. Der Apparat steht immer unter
+    // dem Body, nie darüber; Tarif-Tabellen (h 7.50/7.98) liegen oberhalb und
+    // bleiben unberührt.
+    //
+    // WICHTIG — erst NACH dem Marginalien-Filter: auch eine Randnote trägt
+    // Fussnoten-Verweise in Apparat-Schriftgrösse (ZH-175.2 S. 1: «Grundsatz⁵²»
+    // bei y=442). Vor dem Filter gemessen, hätte diese Randnoten-Ziffer die
+    // Schnittkante auf halbe Seitenhöhe gehoben und den halben Erlass gekappt
+    // (in dieser Fix-Runde selbst erzeugt und gemessen, 31.8.2026).
+
     // Body-Spalte dieser Seite aus den Body-Stücken (h≈9.2) bestimmen.
     const bodyXs = stuecke.filter((s) => s.h >= 8.7).map((s) => s.x);
     if (bodyXs.length === 0) continue;
@@ -192,10 +241,16 @@ export async function extrahiereZhTextZeilen(
     const istMarginalie = (st: PdfStueck): boolean =>
       st.h <= 7.7 && (st.x < bodyMinX - 3 || st.x > bodyMinX + 250);
 
+    const inhaltStuecke = stuecke.filter((st) => !istMarginalie(st));
+    const apparatYs = inhaltStuecke
+      .filter((s) => s.h <= APPARAT_ZIFFER_MAX_H)
+      .map((s) => s.y);
+    const apparatY = apparatYs.length > 0 ? Math.max(...apparatYs) : -Infinity;
+
     // Nach y gruppieren (eine Textzeile). y auf ganze Punkte runden.
     const nachY = new Map<number, PdfStueck[]>();
-    for (const st of stuecke) {
-      if (istMarginalie(st)) continue;
+    for (const st of inhaltStuecke) {
+      if (st.y <= apparatY + 0.01) continue; // Fussnoten-Apparat
       const key = Math.round(st.y);
       let liste = nachY.get(key);
       if (!liste) {
@@ -207,29 +262,115 @@ export async function extrahiereZhTextZeilen(
 
     // Zeilen von oben nach unten (y absteigend), je Zeile nach x sortiert.
     const yKeys = [...nachY.keys()].sort((a, b) => b - a);
+    for (const key of yKeys) nachY.get(key)!.sort((a, b) => a.x - b.x);
+
+    // ── HOCHSTELLUNGEN IHRER TRÄGERZEILE ZUORDNEN (Bugs B-2/B-4 + lat. Suffix)
+    // pdfjs liefert eine Hochstellung mit EIGENER Grundlinie (2.76 pt über der
+    // Trägerzeile) — sie landet darum in einer eigenen y-Gruppe und wirkte
+    // bisher wie eine eigene Textzeile. Drei Folgen, alle am Bestand belegt:
+    //   B-2  Ein Fussnoten-Verweis am Zeilenende («… 11. Juni 2002³.») stand als
+    //        einziges Stück seiner Gruppe an Position 0 und wurde als
+    //        ABSATZNUMMER gelesen. Bei ZH-212.812 § 4 riss das den Absatz 2
+    //        mitten im Wort auf («Entschädigungsver-» | «ordnung …») und
+    //        erfand die Absätze 3 und 4.
+    //   B-4  Über die entfernte Hochstellung hinweg fehlte die x-Lücke, aus der
+    //        das Leerzeichen abgeleitet wird → «Kantonsverfassungund», «BGFAnicht».
+    //   NEU  Der lateinische Suffix eines Paragraphen ist ebenfalls hochgestellt
+    //        («§ 183^bis»). Er stand auf eigener Zeile, der Kopf las sich als
+    //        blosses «§ 183» und kollidierte mit dem echten § 183 → §§ 174bis,
+    //        183bis, 183ter, 183quater gingen im EG ZGB vollständig verloren
+    //        (Fund dieser Fix-Runde, 31.8.2026 — in der Gegenprüfung nicht
+    //        aufgeführt).
+    //
+    // Regel (rein geometrisch, §1/§2): Trägerzeile einer Hochstellung ist die
+    // nächste Body-Zeile darunter (Δy ≤ 5 pt). Liegt die Hochstellung LINKS vom
+    // Textbeginn dieser Zeile, ist sie deren Absatznummer und bleibt — wie
+    // bisher — als eigene Marker-Zeile stehen (die «¹»-Recovery in
+    // extrahiereAlleZhParagraphen hängt daran). Andernfalls gehört sie mitten in
+    // die Trägerzeile und wird dort eingereiht: Fussnoten-Ziffern fallen dann
+    // an ihrer richtigen Stelle weg (statt eine Absatznummer zu erfinden), lat.
+    // Suffixe fügen sich in den §-Kopf ein, und die Wort-Lücke stimmt wieder.
+    //
+    // Textbeginn = x des ersten Body-Stücks, wobei ein vorangehender Marken-
+    // kopf («§»/«§§»/«Art.» + Nummer) übersprungen wird: die Absatznummer des
+    // ersten Absatzes steht ZWISCHEN Kopf und Text («§ 5.  ¹Die Gebühr …»).
+    const MARKE_STUECK = /^(?:§+|Art\.)$/;
+    const MARKE_NUMMER = /^\d+[a-z]?(?:bis|ter|quater|quinquies)?\.?$/;
+    const textBeginnX = (gruppe: PdfStueck[]): number => {
+      const body = gruppe.filter((s) => s.h >= HOCH_MAX_H);
+      let i = 0;
+      if (i < body.length && MARKE_STUECK.test(body[i].s.trim())) {
+        i++;
+        if (i < body.length && MARKE_NUMMER.test(body[i].s.trim())) i++;
+        // Der Schlusspunkt des Kopfs kann ein eigenes Fragment sein, wenn
+        // zwischen Nummer und Punkt ein hochgestellter Suffix steht
+        // («§ | 183 | ᵇⁱˢ | .», ZH-230). Er gehört noch zum Kopf.
+        if (i < body.length && body[i].s.trim() === '.') i++;
+      }
+      return i < body.length ? body[i].x : Number.POSITIVE_INFINITY;
+    };
+    const hatBody = (gruppe: PdfStueck[]): boolean =>
+      gruppe.some((s) => s.h >= HOCH_MAX_H);
+
+    for (const key of yKeys) {
+      const gruppe = nachY.get(key)!;
+      if (hatBody(gruppe)) continue; // reine Body-Zeile: nichts zuzuordnen
+      // Trägerzeile: die NÄCHSTE Zeile darunter, sofern Δy ≤ 5 pt und Body.
+      const unten = yKeys.find((k) => k < key);
+      if (unten === undefined || key - unten > HOCH_TRAEGER_ABSTAND) continue;
+      const traeger = nachY.get(unten)!;
+      if (!hatBody(traeger)) continue;
+      const grenze = textBeginnX(traeger);
+      for (let i = gruppe.length - 1; i >= 0; i--) {
+        // Nur eine reine ZIFFER kann eine Absatznummer sein. Ein hochgestellter
+        // lat. Suffix («bis»/«ter»/«quater») gehört IMMER in die Trägerzeile —
+        // sonst zerfällt «§ 183ᵇⁱˢ.» in einen falschen Kopf «§ 183» und eine
+        // Geisterzeile «bis» (ZH-230: §§ 174bis/183bis/183ter/183quater).
+        const istZiffer = /^\s*\d+\s*$/.test(gruppe[i].s);
+        if (istZiffer && gruppe[i].x < grenze) continue; // führend = Absatznummer
+        traeger.push(gruppe[i]);
+        gruppe.splice(i, 1);
+      }
+      traeger.sort((a, b) => a.x - b.x);
+    }
+
     for (const yKey of yKeys) {
-      const stueckeDerZeile = nachY.get(yKey)!.sort((a, b) => a.x - b.x);
+      const stueckeDerZeile = nachY.get(yKey)!;
+      if (stueckeDerZeile.length === 0) continue;
 
       let absatz: string | null = null;
       let text = '';
-      let vorEndeX: number | null = null; // rechter Rand des letzten übernommenen Fragments
+      // Rechter Rand des zuletzt GESEHENEN Fragments — auch eines verworfenen
+      // (Fussnoten-Hochzahl). Nur so bleibt die Wort-Lücke über die entfernte
+      // Hochzahl hinweg messbar (B-4).
+      let vorEndeX: number | null = null;
       for (let k = 0; k < stueckeDerZeile.length; k++) {
         const st = stueckeDerZeile[k];
-        const istHoch = st.h < 7.0;
+        const istHoch = st.h < HOCH_MAX_H;
         if (istHoch) {
           // Führende Hochzahl am Zeilenanfang = Absatznummer.
           if (k === 0 && /^\s*\d+\s*$/.test(st.s)) {
             absatz = st.s.trim();
+            vorEndeX = st.x + st.w;
             continue;
           }
-          // Sonstige Hochzahl (Fussnoten-Verweis, auch «1, 2») → verwerfen.
-          if (/^[\s,\d]+$/.test(st.s)) continue;
+          // Sonstige Hochzahl (Fussnoten-Verweis, auch «1, 2») → verwerfen,
+          // ihre Breite aber als Lücke stehen lassen.
+          if (/^[\s,\d]+$/.test(st.s)) {
+            vorEndeX = st.x + st.w;
+            continue;
+          }
         }
-        // Spaltengrenze: liegt das nächste Fragment deutlich rechts vom Ende des
-        // vorigen (Wert-/Verweis-Spalte einer Tabelle, Randtitel→Body), fehlt das
-        // Spalten-Whitespace in der PDF-Extraktion → ein Leerzeichen einfügen.
-        // Nur Whitespace, kein Zeichen geändert (§1).
-        if (spaltenLuecke && vorEndeX !== null && st.x - vorEndeX > SPALTEN_LUECKE_PT) {
+        // Wort-Lücke: liegt das nächste Fragment messbar rechts vom Ende des
+        // vorigen, stand dort im Satz ein Leerzeichen (Schwelle WORT_LUECKE_PT,
+        // empirisch am Gesamtbestand belegt). Nur Whitespace, kein Zeichen
+        // geändert (§1).
+        // Vor anschliessender Interpunktion steht im deutschen Satz nie ein
+        // Leerzeichen. Die Lücke stammt dort aus der entfernten Hochzahl, deren
+        // von pdfjs gemeldete Breite die tatsächliche Laufweite leicht
+        // unterschätzt («… Art. 12 BV¹² .» statt «… Art. 12 BV.»).
+        const schliessend = /^[.,;:!?)\]]/.test(st.s);
+        if (!schliessend && vorEndeX !== null && st.x - vorEndeX >= WORT_LUECKE_PT) {
           text += ' ';
         }
         text += st.s;
@@ -296,10 +437,41 @@ export function serialisiereZhZeilen(zeilen: ZhTextZeile[]): string {
 // Reiner Parser: extrahierte Textbasis → §-Artikel
 // ─────────────────────────────────────────────────────────────────────────────
 
-/** §-Kopf am Zeilenanfang: «§ 4.» / «§ 4a.» / «§ 12.» (mit Punkt). Der Marker
- *  kann an einem Marginalie-Rest kleben — wir suchen ihn an beliebiger Stelle,
- *  akzeptieren aber als Artikelgrenze nur, wenn er den Zeilenanfang dominiert. */
-const PARAGRAF_KOPF = /§\s*(\d+[a-z]?(?:bis|ter|quater|quinquies)?)\s*\./;
+/**
+ * §-Kopf — NUR am Zeilenanfang (Bug B-3, Gegenprüfung 31.8.2026).
+ *
+ * Vorher war das Muster UNVERANKERT und traf jeden Quer­verweis mitten im Satz
+ * («… richtet sich nach § 7.», «Vorbehalten bleibt § 181.»). Der laufende § galt
+ * damit als beendet, `speichere()` verwarf den bereits gesehenen Token («erster
+ * Treffer gewinnt») und der Rest der Bestimmung fiel ersatzlos weg — messbar an
+ * 26 Stellen im ZH-Bestand, u. a. ZH-212.812 § 8 («… rich-» statt «… richtet
+ * sich nach § 7.») und ZH-215.3 § 11 Abs. 3/4.
+ *
+ * Der Kopf steht in den ZH-PDF ausnahmslos am Zeilenanfang (gemessen: 2334 von
+ * 2360 Treffern; die restlichen 26 sind genau die Querverweise). Ein voran-
+ * gestellter Absatzmarker «¶N» ist zugelassen, weil serialisiereZhZeilen() ihn
+ * dort einfügt.
+ *
+ * Getrennte Gruppen für Zahl · Buchstaben-Suffix · lat. Suffix: die Zürcher
+ * Loseblattsammlung SETZT den Buchstaben-Suffix mit Leerzeichen («§ 4 a.»,
+ * «§§ 64 a und 64 b» — am Druckbild verifiziert 31.8.2026), der lateinische
+ * Suffix dagegen hochgestellt und ohne Abstand («§ 183bis.»).
+ *
+ * «§§ …» (Bereichs-/Sammelüberschrift wie «§§ 137bis–144.») ist KEIN Kopf.
+ */
+const PARAGRAF_KOPF =
+  /^(?:¶\d+(?:bis|ter|quater|quinquies)?\s+)?§(?!§)\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?\s*\./;
+
+/**
+ * Artikel-Kopf am Zeilenanfang: «Art. 1 Der Kanton …» (E2-H1, 31.8.2026).
+ * Die Kantonsverfassung (LS 101) zählt in Artikeln, nicht in Paragraphen — der
+ * Adapter kannte nur den §-Marker und lieferte darum 0 Artikel für die KV.
+ * Kein Punkt nach der Nummer (anders als beim §-Kopf); die Abgrenzung gegen
+ * einen Quer­verweis leistet die Zeilenanker-Disziplin plus die Marker-Wahl je
+ * Erlass (siehe erkenneMarker) — in einem «§»-Erlass feuert dieses Muster nie.
+ */
+const ARTIKEL_KOPF =
+  /^(?:¶\d+(?:bis|ter|quater|quinquies)?\s+)?Art\.\s*(\d+)\s*([a-z])?\s*(bis|ter|quater|quinquies)?(?=\s|$)/;
 
 /** lit.-Marke am Zeilenanfang: «a. …» / «a.…» (ZH nutzt lit. mit Punkt; in der
  *  PDF-Extraktion steht oft KEIN Leerzeichen zwischen «a.» und dem Punkttext,
@@ -310,21 +482,40 @@ const LIT_MARKE = /^([a-z])\.\s*(\S.*)$/;
 
 /** Gliederungs-/Abschnitts-Überschrift (NICHT Normtext): «A. Allgemein»,
  *  «B. Schlichtungsverfahren», «C. Zivilprozess» — Grossbuchstabe + Punkt +
- *  Titel, ohne § und ohne Absatztext. Wird zwischen Artikeln verworfen. */
-const GLIEDERUNG = /^[A-Z]\.\s+[A-ZÄÖÜ]/;
+ *  Titel, ohne § und ohne Absatztext. Wird zwischen Artikeln verworfen.
+ *  Der lat. Suffix («Abis. Eherecht», ZH-230) gehört dazu: er ist hochgestellt
+ *  gesetzt und wird seit der Hochstellungs-Zuordnung an den Buchstaben gefügt. */
+const GLIEDERUNG =
+  /^(?:[A-Z](?:bis|ter|quater|quinquies)?|[IVXL]+)\.\s+[A-ZÄÖÜ]/;
+
+/**
+ * Grenze zum Erlass-Schluss­apparat (Bug B-6, zweiter Teil, 31.8.2026).
+ *
+ * Nach dem letzten § folgen in den ZH-PDF die Übergangs-/Schlussbestimmungen
+ * der Änderungserlasse und — bei ZH-700.1 — ein Anhang, der ältere Fassungen
+ * einzelner §§ nachdruckt. Beide führen eigene, bei 1 neu beginnende §-Zählungen
+ * und kollidieren dadurch mit dem Haupttext (ZH-700.1: 34 doppelte §-Nummern,
+ * ZH-631.1: 4). Bisher fielen sie über «erster Treffer gewinnt» still weg — und
+ * der Übergangs-Text hing als Pseudo-Absatz am letzten § (ZH-851.1 § 55).
+ *
+ * Ab dieser Grenze wird nichts mehr aufgenommen. Die Übergangsbestimmungen sind
+ * damit im Snapshot NICHT enthalten (§8: ausgewiesene Lücke statt falscher
+ * Zuordnung); ihre Aufnahme als eigener Eintragstyp ist ZH-4d-Stoff.
+ */
+const SCHLUSSAPPARAT = /^(?:Übergangs|Schluss)bestimmung(?:en)?\b/;
 
 /** Absatz-Marker «¶N» am Zeilenanfang (von serialisiereZhZeilen gesetzt; der
  *  Resttext ist optional — die Absatznummer steht oft auf der eigenen Zeile). */
 const ABSATZ_MARKER = /^¶(\d+(?:bis|ter)?)\s*(.*)$/;
 
-const TOKEN_SUFFIX = /^(\d+)([a-z])?(bis|ter|quater|quinquies)?$/i;
-/** «4»→'4', «4a»→'4_a', «12»→'12' (kongruent parsePassus/HTM-Adapter). */
-function normalisiereToken(roh: string): string {
-  return roh
-    .toLowerCase()
-    .replace(TOKEN_SUFFIX, (_, n, b, suf) =>
-      [n, b, suf].filter(Boolean).join('_'),
-    );
+/** Token aus den drei Kopf-Gruppen (Zahl · Buchstabe · lat. Suffix):
+ *  «§ 4 a.»→'4_a', «§ 183bis.»→'183_bis', «Art. 12»→'12'
+ *  (kongruent parsePassus/HTM-Adapter). */
+function normalisiereZhKopf(kopf: RegExpMatchArray): string {
+  return [kopf[1], kopf[2], kopf[3]]
+    .filter(Boolean)
+    .map((t) => t.toLowerCase())
+    .join('_');
 }
 
 /**
@@ -568,27 +759,75 @@ export function extrahiereZhParagraphen(
   return alle[token] ?? null;
 }
 
+/** Zählweise eines Erlasses: «§ N.» (Regelfall) oder «Art. N» (Kantons-
+ *  verfassung LS 101). Wird je Dokument aus der Textbasis erhoben, nie geraten. */
+export type ZhMarker = 'paragraf' | 'artikel';
+
+/**
+ * Bestimmt die Zählweise eines Erlasses aus seiner Textbasis (E2-H1).
+ * Massstab ist die MENGE der zeilenanfangs-verankerten Köpfe: ein «§»-Erlass
+ * enthält vereinzelt Zeilen, die mit einem «Art. …»-Quer­verweis auf Bundesrecht
+ * beginnen (1–5 im Bestand), aber Dutzende bis Hunderte §-Köpfe; die
+ * Kantonsverfassung enthält 147 «Art.»-Köpfe und keinen einzigen §-Kopf.
+ * Gleichstand (auch 0:0) → 'paragraf' (unveränderter Bestandsweg).
+ */
+export function erkenneZhMarker(text: string): ZhMarker {
+  let par = 0;
+  let art = 0;
+  for (const zeile of text.split('\n')) {
+    if (PARAGRAF_KOPF.test(zeile)) par++;
+    else if (ARTIKEL_KOPF.test(zeile)) art++;
+  }
+  return art > par ? 'artikel' : 'paragraf';
+}
+
 /** Wie extrahiereZhParagraphen, aber ALLE Artikel (token → Artikel). Kern für
  *  holeZhPdf (Vollabdeckung §7) und den quelleHash. */
 export function extrahiereAlleZhParagraphen(
   text: string,
+  marker: ZhMarker = erkenneZhMarker(text),
 ): Record<string, ZhArtikel> {
   const zeilen = text.split('\n');
   const artikel: Record<string, ZhArtikel> = {};
+  const KOPF_MUSTER = marker === 'artikel' ? ARTIKEL_KOPF : PARAGRAF_KOPF;
 
   let aktivToken: string | null = null;
   let aktivZeilen: string[] = [];
+  // Ab dem Schluss­apparat (Übergangs-/Schlussbestimmungen, Anhang) wird nichts
+  // mehr aufgenommen — dort beginnt eine zweite, kollidierende §-Zählung.
+  let imSchlussapparat = false;
 
   const speichere = (): void => {
     if (aktivToken === null) return;
+    const token = aktivToken;
+    if (token in artikel) return; // Wiedereröffnung ausgeschlossen (s.u.)
     const bloecke = baueBloecke(aktivZeilen);
-    if (bloecke.length > 0 && !(aktivToken in artikel)) {
-      artikel[aktivToken] = { bloecke };
+    if (bloecke.length > 0) {
+      artikel[token] = { bloecke };
+      return;
     }
+    // AUFGEHOBENE BESTIMMUNG (Bug B-5, 31.8.2026): Die Zürcher Sammlung druckt
+    // eine aufgehobene Bestimmung als nackten Kopf OHNE jeden Text; die
+    // zugehörige amtliche Fussnote lautet «Aufgehoben durch …» (verifiziert am
+    // Druckbild: ZH-230 § 28 → Fussnote 50, ZH-175.2 § 18 → Fussnote 32).
+    // Bisher fiel der Kopf mangels Blöcken ersatzlos weg — 53 eIds im ZH-Korpus,
+    // und die Nummerierung wirkte lückenhaft. Jetzt bleibt der Token mit dem
+    // Platzhalter «Aufgehoben» erhalten (gleiche Schreibweise wie im Bund-Korpus
+    // aus Fedlex). Der Platzhalter wird NUR gesetzt, wenn die ganze §-Region
+    // keine einzige Textzeile trug — nie über vorhandenen Text hinweg.
+    artikel[token] = { bloecke: [{ absatz: null, text: 'Aufgehoben' }] };
   };
 
   for (const rohZeile of zeilen) {
     const zeile = rohZeile.replace(/\s+$/g, '');
+    if (SCHLUSSAPPARAT.test(zeile.trim())) {
+      speichere();
+      aktivToken = null;
+      aktivZeilen = [];
+      imSchlussapparat = true;
+      continue;
+    }
+    if (imSchlussapparat) continue;
     // ANHANG-GRENZE (Bug 22.6.2026): der «Anhang: Gebührentarif» (ZH-243) ist
     // eine eigene Tarif-TABELLE und wird SPALTENBEWUSST über
     // extrahiereZhAnhangSpalten erfasst — NICHT vom generischen §-Parser. Da auf
@@ -596,14 +835,21 @@ export function extrahiereAlleZhParagraphen(
     // der Parser sonst den GANZEN Anhang an § 17 hängen (3740-Zeichen-Blob).
     // Beim «Anhang»-Titel wird der laufende § abgeschlossen und die Akkumulation
     // gestoppt (Rest der Textbasis = Tabelle, gehört nicht in einen §).
-    if (/^Anhang(:|\b)/.test(zeile.trim())) {
+    // ANHANG-TITEL — nur die echte Anhang-Überschrift, nicht jedes Wort
+    // «Anhang» am Zeilenanfang. Zulässig: «Anhang», «Anhang 1», «Anhang:
+    // Gebührentarif (§ 1)». NICHT: «Anhang I zum Abkommen …», «Anhang K Anlage
+    // 1 …» (umbrochene Fliesstext-Zeile in ZH-851.1 § 5e lit. c — sie kappte
+    // mit der alten Fassung `^Anhang(:|\b)` den halben Erlass; in dieser
+    // Fix-Runde selbst erzeugt und gemessen, 31.8.2026).
+    if (/^Anhang(?:\s*\d*)?(?::|$)/.test(zeile.trim())) {
       speichere();
       aktivToken = null;
       aktivZeilen = [];
+      imSchlussapparat = true;
       continue;
     }
-    // §-Kopf? (kann an Marginalie-Rest kleben; wir prüfen auf den Marker.)
-    const kopf = zeile.match(PARAGRAF_KOPF);
+    // Kopf am Zeilenanfang? (Marker-Muster je Erlass, s. erkenneZhMarker.)
+    const kopf = zeile.match(KOPF_MUSTER);
     if (kopf) {
       // VERLORENE «¹»-Recovery (Bug 22.6.2026): die hochgestellte Absatznummer
       // «1» des ERSTEN Absatzes steht in den ZH-PDF auf einer EIGENEN Zeile
@@ -615,12 +861,28 @@ export function extrahiereAlleZhParagraphen(
       // kann nie das LETZTE des vorigen § sein — sein Absatztext stünde sonst
       // zwischen ihm und dem §-Kopf, nicht danach.) §1: nur Zuordnung der
       // bereits extrahierten Nummer korrigiert, kein Zeichen erfunden.
-      let verirrterMarker: string | null = null;
+      //
+      // KEINE WIEDERERÖFFNUNG (Bug B-3, zweiter Teil): Ein bereits gespeicherter
+      // Token darf nie ein zweites Mal einen Artikel eröffnen. Vorher verwarf
+      // `speichere()` den zweiten Treffer still und beendete trotzdem den
+      // laufenden §; damit ging Normtext verloren, ohne dass irgendetwas rot
+      // wurde. Jetzt gilt die Zeile in diesem Fall als gewöhnlicher Text und
+      // fliesst in den laufenden § — kein Zeichen geht verloren.
+      const kandidat = normalisiereZhKopf(kopf);
+      if (kandidat in artikel) {
+        if (aktivToken !== null) aktivZeilen.push(zeile.trim());
+        continue;
+      }
+      // Ein Absatzmarker, der auf der Kopfzeile selbst steht, gehört zum ersten
+      // Absatz des NEUEN § und darf beim Abschneiden des Kopfs nicht verloren
+      // gehen (Regelfall ist die eigene Marker-Zeile, s. Recovery unten).
+      const kopfMarker = kopf[0].match(/^¶(\d+(?:bis|ter|quater|quinquies)?)/);
+      let verirrterMarker: string | null = kopfMarker ? `¶${kopfMarker[1]}` : null;
       while (aktivZeilen.length > 0 && aktivZeilen[aktivZeilen.length - 1] === '') {
         aktivZeilen.pop();
       }
       const letzte = aktivZeilen[aktivZeilen.length - 1];
-      if (letzte !== undefined) {
+      if (letzte !== undefined && verirrterMarker === null) {
         const m = letzte.match(ABSATZ_MARKER);
         if (m && m[2].trim() === '') {
           verirrterMarker = `¶${m[1]}`;
@@ -630,7 +892,7 @@ export function extrahiereAlleZhParagraphen(
       // Alles vor dem § ist Marginalie-Rest/Müll → verwerfen; alles nach «§ N.»
       // ist der Beginn des ersten Absatzes.
       speichere();
-      aktivToken = normalisiereToken(kopf[1]);
+      aktivToken = kandidat;
       aktivZeilen = [];
       // Den verirrten Erst-Absatz-Marker dem neuen § voranstellen, BEVOR der
       // Resttext der Kopfzeile als (markerlose) Folgezeile dazukommt — so wird
@@ -1389,7 +1651,7 @@ export async function holeZhPdf(
   // Spalten-Lücken-Erkennung AKTIV (Probe ZH-243 20.6.2026 validiert: nur
   // Leerzeichen an Spaltengrenzen, Wortlaut beweisbar identisch). Materialisiert
   // sich erst beim nächsten `npm run normtext` (Rollout) in die ZH-Snapshots.
-  const { zeilen, randText } = await extrahiereZhTextZeilen(bytes.slice(), true);
+  const { zeilen, randText } = await extrahiereZhTextZeilen(bytes.slice());
   const textbasis = serialisiereZhZeilen(zeilen);
   const artikel = extrahiereAlleZhParagraphen(textbasis);
 
