@@ -39,8 +39,6 @@ function hatToken(): boolean {
   return existsSync(TOKEN_DATEI) && readFileSync(TOKEN_DATEI, 'utf8').trim().length > 0;
 }
 
-const nurPruefen = process.argv.includes('--pruefen');
-
 interface Schritt {
   name: string;
   skript: string;
@@ -50,13 +48,14 @@ interface Schritt {
   braucht: 'token' | null;
 }
 
-const KETTE: Schritt[] = [
+export const KETTE: Schritt[] = [
   { name: 'DB-Artefakte bauen', skript: 'datenhaltung:build', schreibt: true, braucht: null },
   { name: 'Manifest mitziehen', skript: 'datenhaltung:manifest', schreibt: true, braucht: null },
   { name: 'HOT-Replika nachziehen', skript: 'datenhaltung:turso-sync', schreibt: true, braucht: 'token' },
   { name: 'Frische der Replika prüfen', skript: 'check:turso-frische', schreibt: false, braucht: 'token' },
 ];
 
+/** Ruft ein package.json-Skript auf und gibt dessen Exit-Code zurück. */
 function lauf(skript: string): number {
   // `npm run` statt direktem vite-node: die Skript-Definition bleibt an EINER Stelle
   // (package.json), sonst driften Aufrufweg und Kette auseinander (§5).
@@ -64,59 +63,107 @@ function lauf(skript: string): number {
   return r.status ?? 1;
 }
 
-const token = hatToken();
-const uebersprungen: string[] = [];
-
-console.log(
-  `datenhaltung:nachfuehren — ${KETTE.length}er-Kette${nurPruefen ? ' (NUR PRÜFEN)' : ''}, ` +
-    `Turso-Token ${token ? 'vorhanden' : 'FEHLT'}.`,
-);
-
-for (const [i, s] of KETTE.entries()) {
-  const nr = `[${i + 1}/${KETTE.length}]`;
-  if (s.braucht === 'token' && !token) {
-    uebersprungen.push(`${s.skript} (${s.name})`);
-    console.log(`${nr} ${s.name} — ÜBERSPRUNGEN (kein TURSO_AUTH_TOKEN).`);
-    continue;
-  }
-  if (nurPruefen && s.schreibt) {
-    uebersprungen.push(`${s.skript} (${s.name}, schreibend)`);
-    console.log(`${nr} ${s.name} — ÜBERSPRUNGEN (--pruefen).`);
-    continue;
-  }
-  console.log(`${nr} ${s.name} — npm run ${s.skript}`);
-  const code = lauf(s.skript);
-  if (code !== 0) {
-    // ABBRUCH statt Weiterlaufen: ein Sync auf eine halb gebaute DB stellt einen
-    // falschen Index live. Die Kette ist eine Reihenfolge, keine Wunschliste.
-    console.error(
-      `\ndatenhaltung:nachfuehren ROT: «${s.skript}» endete mit ${code}. ` +
-        'Kette abgebrochen — die folgenden Schritte liefen NICHT.',
-    );
-    process.exit(code);
-  }
+export interface KettenLage {
+  token: boolean;
+  nurPruefen: boolean;
+  /** Ausführer eines Schritts — injizierbar, damit die Kette ohne echte Läufe prüfbar ist. */
+  fuehreAus?: (skript: string) => number;
+  log?: (zeile: string) => void;
+  melde?: (zeile: string) => void;
 }
 
-if (uebersprungen.length === 0) {
-  console.log('\ndatenhaltung:nachfuehren grün: Kette vollständig durchlaufen, Replika geprüft.');
-  process.exit(0);
+export interface KettenErgebnis {
+  /** Exit-Code, den der CLI-Aufruf setzt: 0 oder der Code des gescheiterten Schritts. */
+  code: number;
+  /** Skript-Namen in AUSFÜHRUNGS-Reihenfolge — inklusive des gescheiterten. */
+  gelaufen: string[];
+  /** Wortlaut der übersprungenen Schritte (geht in die Schluss-Meldung). */
+  uebersprungen: string[];
 }
 
-// Der Kern von K5: was NICHT lief, steht am Ende ausgeschrieben — mit dem Befehl,
-// der es nachholt. Eine Kette, die stillschweigend die Hälfte auslässt, wäre
-// schlimmer als gar keine: sie erzeugt das Gefühl, fertig zu sein.
-console.log('\ndatenhaltung:nachfuehren: Kette TEILWEISE gelaufen. Offen geblieben:');
-for (const u of uebersprungen) console.log(`  · ${u}`);
-if (!token) {
-  console.log(
-    '\nDie HOT-Replika ist damit NICHT nachgezogen. Solange das offen ist, kann die\n' +
-      'Edge-Suche einen älteren Korpus liefern als die ausgelieferten Seiten — seit der\n' +
-      'Recall-/Ranking-Parität (QS-BASIS (d) K1/K2) betrifft das die kantonalen Artikel\n' +
-      'in vollem Umfang.\n\n' +
-      'Nachholen auf einer Maschine MIT Token:\n' +
-      `  export TURSO_AUTH_TOKEN=…   (oder ${TOKEN_DATEI} anlegen)\n` +
-      '  npm run datenhaltung:nachfuehren\n' +
-      'Oder den Workflow «Turso-Serving-Sync» per workflow_dispatch anstossen.',
+/**
+ * Die Kette selbst — rein bis auf die injizierten Ausgaben (§2).
+ *
+ * WARUM DIESE NAHT EXISTIERT (Gegenprüfungs-Befund F4, 31.8.2026). K5 war ohne
+ * jeden Test gelandet, und zwar nicht aus Nachlässigkeit, sondern weil die Logik
+ * keinen Angriffspunkt hatte: sie stand als Rumpf-Code im Modul und rief `npm run`
+ * und `process.exit` direkt auf. Genau die zwei Eigenschaften, an denen alles hängt —
+ * dass ein Fehlschlag DURCHSCHLÄGT und dass die Folgeschritte dann NICHT mehr laufen —
+ * waren damit nur durch einen echten, zerstörenden Lauf zu beobachten. Ein Verhalten,
+ * das man nur kaputt beobachten kann, wird nie beobachtet.
+ *
+ * Die Naht ändert am Ablauf nichts: derselbe Text, dieselbe Reihenfolge, derselbe
+ * Exit-Code. Sie macht ihn bloss aufrufbar (Tests in nachfuehren.test.ts).
+ */
+export function fuehreKette(lage: KettenLage): KettenErgebnis {
+  const { token, nurPruefen } = lage;
+  const fuehreAus = lage.fuehreAus ?? lauf;
+  const log = lage.log ?? ((z: string) => console.log(z));
+  const melde = lage.melde ?? ((z: string) => console.error(z));
+
+  const gelaufen: string[] = [];
+  const uebersprungen: string[] = [];
+
+  log(
+    `datenhaltung:nachfuehren — ${KETTE.length}er-Kette${nurPruefen ? ' (NUR PRÜFEN)' : ''}, ` +
+      `Turso-Token ${token ? 'vorhanden' : 'FEHLT'}.`,
   );
+
+  for (const [i, s] of KETTE.entries()) {
+    const nr = `[${i + 1}/${KETTE.length}]`;
+    if (s.braucht === 'token' && !token) {
+      uebersprungen.push(`${s.skript} (${s.name})`);
+      log(`${nr} ${s.name} — ÜBERSPRUNGEN (kein TURSO_AUTH_TOKEN).`);
+      continue;
+    }
+    if (nurPruefen && s.schreibt) {
+      uebersprungen.push(`${s.skript} (${s.name}, schreibend)`);
+      log(`${nr} ${s.name} — ÜBERSPRUNGEN (--pruefen).`);
+      continue;
+    }
+    log(`${nr} ${s.name} — npm run ${s.skript}`);
+    gelaufen.push(s.skript);
+    const code = fuehreAus(s.skript);
+    if (code !== 0) {
+      // ABBRUCH statt Weiterlaufen: ein Sync auf eine halb gebaute DB stellt einen
+      // falschen Index live. Die Kette ist eine Reihenfolge, keine Wunschliste.
+      melde(
+        `\ndatenhaltung:nachfuehren ROT: «${s.skript}» endete mit ${code}. ` +
+          'Kette abgebrochen — die folgenden Schritte liefen NICHT.',
+      );
+      return { code, gelaufen, uebersprungen };
+    }
+  }
+
+  if (uebersprungen.length === 0) {
+    log('\ndatenhaltung:nachfuehren grün: Kette vollständig durchlaufen, Replika geprüft.');
+    return { code: 0, gelaufen, uebersprungen };
+  }
+
+  // Der Kern von K5: was NICHT lief, steht am Ende ausgeschrieben — mit dem Befehl,
+  // der es nachholt. Eine Kette, die stillschweigend die Hälfte auslässt, wäre
+  // schlimmer als gar keine: sie erzeugt das Gefühl, fertig zu sein.
+  log('\ndatenhaltung:nachfuehren: Kette TEILWEISE gelaufen. Offen geblieben:');
+  for (const u of uebersprungen) log(`  · ${u}`);
+  if (!token) {
+    log(
+      '\nDie HOT-Replika ist damit NICHT nachgezogen. Solange das offen ist, kann die\n' +
+        'Edge-Suche einen älteren Korpus liefern als die ausgelieferten Seiten — seit der\n' +
+        'Recall-/Ranking-Parität (QS-BASIS (d) K1/K2) betrifft das die kantonalen Artikel\n' +
+        'in vollem Umfang.\n\n' +
+        'Nachholen auf einer Maschine MIT Token:\n' +
+        `  export TURSO_AUTH_TOKEN=…   (oder ${TOKEN_DATEI} anlegen)\n` +
+        '  npm run datenhaltung:nachfuehren\n' +
+        'Oder den Workflow «Turso-Serving-Sync» per workflow_dispatch anstossen.',
+    );
+  }
+  return { code: 0, gelaufen, uebersprungen };
 }
-process.exit(0);
+
+// CLI-Teil NICHT unter vitest ausführen — der Test importiert `fuehreKette` und darf
+// die Kette nicht als Seiteneffekt starten (dieselbe Klemme wie in
+// such-index-generieren.ts; vite-node setzt VITEST nicht, der CLI-Weg läuft normal).
+if (!process.env.VITEST) {
+  const { code } = fuehreKette({ token: hatToken(), nurPruefen: process.argv.includes('--pruefen') });
+  process.exit(code);
+}
