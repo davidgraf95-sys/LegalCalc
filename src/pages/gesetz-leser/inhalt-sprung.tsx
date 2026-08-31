@@ -7,7 +7,7 @@ import type { NavigateFunction } from 'react-router-dom';
 import type { InternRefs } from '../../components/NormText';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import { pfadZu } from './helpers';
+import { grundartMeta, pfadZu } from './helpers';
 import { istHashVerbraucht } from './scrollAnker';
 import { paneRoot } from './berechnungen';
 import { loeseSpyNachlauf } from './inhalt-hooks';
@@ -230,6 +230,35 @@ export function useSektionSprung(opts: {
   return springeZuSektion;
 }
 
+// ─── §-Designation des gelesenen Erlasses (F41/F40, W2·13-KANTONE) ───────────
+/**
+ * Zählt der gelesene Erlass seine Bestimmungen mit «§»?
+ *
+ * Die Weiche gibt es bereits: `bestimmungsEtikett: 'paragraf'` im
+ * Grundart-Register (SSoT, §5) — sie wird hier ABGEFRAGT, nicht neu erfunden
+ * und nicht aus dem Wortlaut geraten (§2). Zugang ist `grundartMeta`, dieselbe
+ * Ableitung, die `v3/erlassAnsicht.bestimmungsWort` benutzt.
+ *
+ * Der Schlüssel steckt im Lese-Basispfad: `erlassPfad()` baut ihn als
+ * `/gesetze/<routenEbene>/<encodeURIComponent(key)>` — das letzte Segment
+ * dekodiert ist genau der Register-Key («BS-427.800», «OR»). Bewusst KEIN
+ * zweiter Erlass-Parameter durch die Hook-Kette: `basisPfad` ist die Angabe,
+ * die `useInternRefs` ohnehin führt, und ein zweiter Weg zum selben Schlüssel
+ * wäre die Stelle, an der die beiden auseinanderlaufen.
+ *
+ * Rein und deterministisch (§2); ein unbekannter Key liefert `false` (Bund und
+ * alles Unklassierte bleiben damit unverändert — kein Rückfall auf «§»).
+ */
+export function istParagrafDesigniert(basisPfad: string): boolean {
+  const letztes = basisPfad.split('/').pop() ?? '';
+  // Defektes %-Escape ⇒ roh weiterverwenden: `decodeURIComponent` WIRFT dann,
+  // und ein geworfener Fehler im Lese-Pfad wäre eine leere Seite statt eines
+  // fehlenden Links.
+  let key: string;
+  try { key = decodeURIComponent(letztes); } catch { key = letztes; }
+  return grundartMeta(key).bestimmungsEtikett === 'paragraf';
+}
+
 // ─── Token-Auflösung für bare Artikelverweise im Wortlaut ────────────────────
 export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate }: {
   eintraege: NormSnapshot[] | null;
@@ -257,6 +286,9 @@ export function useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekun
       if (istSekundaer) { springeZuArtikel(t); return; }
       navigate(`${basisPfad}${window.location.search}#art-${t}`);
     };
-    return { tokenMap, basisPfad, springeZu: springeZuRef };
+    // F41/F40: §-Designation einmal je Erlass bestimmen und mitgeben — NormText
+    // fragt das Register nicht selbst (Schichtentrennung §3: die Komponente
+    // bekommt die Weiche als Wert, nicht die Nachschlage-Fähigkeit).
+    return { tokenMap, basisPfad, springeZu: springeZuRef, paragrafDesigniert: istParagrafDesigniert(basisPfad) };
   }, [eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate]);
 }
