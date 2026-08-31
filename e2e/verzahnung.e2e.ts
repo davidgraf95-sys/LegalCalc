@@ -3,15 +3,9 @@
 // FAHRPLAN-VERZAHNUNG-UI §4 + die Zusatzaufträge David 3.7.2026 (Fundstellen-
 // Landung je Linkquelle, Popover-Verankerung am Link) + a11y-Stichprobe auf den
 // neuen Flächen. Läuft gegen `vite preview` (dist).
-import { test, expect, type Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import AxeBuilder from '@axe-core/playwright'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 // ── MM1 GELÖSCHT 21.8.2026 (H5) ─────────────────────────────────────────────
 // «DBG-Fuss trägt ≥2 Kontextgruppen mit Overline + Zähler + Hinweis; CLS ≈ 0»

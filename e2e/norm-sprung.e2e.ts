@@ -7,6 +7,7 @@
 // gruppierte Universal-Suche. ⌘K/Ctrl-K fokussiert das Feld (kein Overlay).
 // Läuft gegen `vite preview` (dist).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
 import { kopfSucheOeffnen } from './helpers/kopfSuche'
 
@@ -17,13 +18,6 @@ import { kopfSucheOeffnen } from './helpers/kopfSuche'
 // eigenes test.slow(). INFRASTRUKTUR (Zeitbudget), KEIN Assertion-Change (§6.3):
 // Sprung-/CLS-Assertions unberührt, Timeout greift nur bei Überschreitung.
 test.describe.configure({ timeout: 60_000 })
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 // Die eine, überall sichtbare Kopf-Suchleiste (ARIA-Combobox).
 const sucheFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })

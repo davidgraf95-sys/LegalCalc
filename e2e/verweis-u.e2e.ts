@@ -1,5 +1,6 @@
 // @shard-gruppe: 4
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
+import { fehlerSammeln } from './helpers/fehlerSammeln';
 import { DROSSEL } from './helpers/budgets';
 
 // ─── W2·5d U-VERWEIS (A7 + A10 + A11 + A13) — Browser-Beweise ────────────────
@@ -13,13 +14,6 @@ import { DROSSEL } from './helpers/budgets';
 
 // ELI-Diskriminator der BV (aus src/lib/fedlex.ts FEDLEX): SR 101.
 const BV_ELI = '1999/404';
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = [];
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`));
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`); });
-  return fehler;
-}
 
 test.describe('A10 — Plural-Linker «in den Artikeln …» (MWSTG Art. 5)', () => {
   test('MWSTG Art. 5: GENAU 5 interne Sprung-Links (31/35/37/38/45), bounded', async ({ page }) => {

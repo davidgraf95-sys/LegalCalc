@@ -21,13 +21,7 @@
 //  B11 Der ✕ des Blatts hiess immer «Gliederung schliessen» — auch wenn über ihm
 //      «Treffer» stand.
 import { test, expect, type Page } from '@playwright/test'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 /** Suche starten und das Treffer-Blatt öffnen (@390, Feld im klebenden Kopf). */
 async function trefferBlattOeffnen(page: Page, begriff: string): Promise<void> {
@@ -46,7 +40,7 @@ test.describe('A2 — bei offenem Blatt bleibt die Bedienung im Blatt', () => {
   test('(a) ⌘K fokussiert das Feld IM Blatt, und Tippen ist sichtbar', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await trefferBlattOeffnen(page, 'Kosten')
 
     await page.keyboard.press('Control+k')
@@ -83,7 +77,7 @@ test.describe('A2 — bei offenem Blatt bleibt die Bedienung im Blatt', () => {
   test('(b) Esc schliesst das Blatt und behält den Suchbegriff', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await trefferBlattOeffnen(page, 'Kosten')
     await page.keyboard.press('Control+k')
     await expect(page.locator('[data-gliederung-sheet] [data-v3-suchsprung] input')).toBeFocused()
@@ -159,7 +153,7 @@ test.describe('Ä32/B11 — das Blatt zeigt und benennt, was es zeigt', () => {
   test('(d) im TREFFER-Blatt: kein «Sie sind hier», keine Übersicht, richtiger Name', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await trefferBlattOeffnen(page, 'Kosten')
 
     const blatt = page.locator('[data-gliederung-sheet]')
@@ -185,7 +179,7 @@ test.describe('Ä32/B11 — das Blatt zeigt und benennt, was es zeigt', () => {
   test('(e) im GLIEDERUNGS-Blatt bleibt alles, was dort hingehört', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-gliederung-auf]').first().click()
     const blatt = page.locator('[data-gliederung-sheet]')
@@ -239,7 +233,7 @@ test.describe('Ä94/Ä96 — die Werkzeugzeile trägt etwas, der Randtitel bleib
   test('(f) @390: keine leere Kopfzeile über der Trefferliste, kein Stummel', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await trefferBlattOeffnen(page, 'Entschädigung')
 
     const blatt = page.locator('[data-gliederung-sheet]')
@@ -268,7 +262,7 @@ test.describe('Ä94/Ä96 — die Werkzeugzeile trägt etwas, der Randtitel bleib
   test('(g) @1440: kein Randtitel wird angeschnitten, jeder Schnipsel ist einzeilig', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto('/gesetze/bund/STPO?leser=v3')
+    await page.goto('/gesetze/bund/STPO')
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-such-zone] input, [data-v3-leiste-feld] input').first().fill('Kosten')
     await expect(page.locator('[data-treffer-liste]')).toBeVisible({ timeout: 15_000 })

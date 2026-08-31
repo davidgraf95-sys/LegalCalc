@@ -13,7 +13,7 @@ import { test, expect } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
 
 test('V3-Panel: ZGB Art. 684 → BGE 151 III 377 landet auf der Erwägung', async ({ page }) => {
-  await page.goto('/gesetze/bund/ZGB?leser=v3#art-684')
+  await page.goto('/gesetze/bund/ZGB#art-684')
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
   await panelAufziehen(page)
   const panel = page.locator('[data-v3-panel]')

@@ -19,14 +19,8 @@
 //
 // Läuft gegen `vite preview` (dist). Reine UI-Einheit (golden-neutral).
 import { test, expect, type Page } from '@playwright/test'
+import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
-
-function fehlerSammeln(page: Page): string[] {
-  const fehler: string[] = []
-  page.on('pageerror', (e) => fehler.push(`pageerror: ${e.message}`))
-  page.on('console', (msg) => { if (msg.type() === 'error') fehler.push(`console.error: ${msg.text()}`) })
-  return fehler
-}
 
 // Split-View aus dem V3-Panel heraus öffnen: ⧉ am ersten Panel-Eintrag.
 async function oeffnePanelEintragDaneben(page: Page): Promise<void> {
@@ -43,7 +37,7 @@ test('V3/A34/Bug1 (≥lg): Split-View öffnen erhält die Leseposition, springt 
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
   // Früher Artikel als aktiver `#art-`-Hash (Deep-Link springt dorthin) …
-  await page.goto('/gesetze/bund/ZGB?leser=v3#art-1')
+  await page.goto('/gesetze/bund/ZGB#art-1')
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
   await expect(page.locator('#art-1')).toBeAttached()
   // … dann weit nach unten zu Art. 684 lesen (Hash bleibt #art-1).
@@ -77,7 +71,7 @@ test('V3/A34/Bug2 (≥lg): «Ansicht»-Menü im Split-View bleibt beim Scrollen 
   test.slow() // schwere Split-View-Interaktion (Panes + Menü-Toggle) — 3× Budget gegen CI-CPU-Starvation
   const fehler = fehlerSammeln(page)
   await page.setViewportSize({ width: 1440, height: 900 })
-  await page.goto('/gesetze/bund/ZGB?leser=v3#art-684')
+  await page.goto('/gesetze/bund/ZGB#art-684')
   await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
   await oeffnePanelEintragDaneben(page)
   // Das Panel-Blatt ist im Pane MODAL (LeserPanelZone) und bliebe sonst mit
