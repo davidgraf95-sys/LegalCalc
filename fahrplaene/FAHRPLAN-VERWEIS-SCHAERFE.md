@@ -35,6 +35,12 @@ Leitplanke überall: **kein Link ist besser als ein falscher Link** (§1); nur v
   Der Grundsatz-Entscheid «korpus-interne Bundes-Fremdziele intern statt Fedlex-extern
   adressieren» hängt an 16 Wächter-Zusicherungen (`NormChip.tsx:76-88`) und ist HIER NICHT
   enthalten — eigener Folge-Schritt nach V-1-Baseline.
+- **V-7 · Erlassnamen-Positivliste (Ausbaustufe, offen)** — zwei gemessene Restklassen
+  brauchen denselben Unterbau: (a) des/der-Guard-Stellen (812; ~20 % echte Self-Links in der
+  V-6-Stichprobe — NIE über eine weichere Guard-Regel lösen), (b) ausgeschriebene
+  Fremdgesetz-Namen mit EINEM Grossbuchstaben (78 Bund-Stellen, Mehrheit echt
+  selbstbezüglich). Auflösung nur über eine kuratierte Namen→Erlass-Liste (Vorbild
+  GENITIV_GESETZ), nie heuristisch (§1).
 - **V-5 · Zeit-Kante (Übergangs-/Altrecht-Selbstverweise)** *(offen, Konzept nötig)* —
   93 + 72 Stellen meinen eine Vorfassung; Sprung in die geltende Fassung ist ohne Hinweis
   irreführend (§8). Nicht bauen ohne Konzept (hängt an W2·5g-ZEIT); nur im V-1-Report
