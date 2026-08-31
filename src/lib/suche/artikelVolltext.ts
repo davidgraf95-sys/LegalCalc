@@ -244,10 +244,15 @@ export function baueSucher(eintraege: IndexEintrag[], FlexSearch: FlexLike): Suc
   const gehoertZu = (e: IndexEintrag, eb: Ebene) =>
     e.eb === eb || (eb === 'bund' && e.eb !== 'kanton');
 
-  const fuegeEin = (doc: DocLike, eb: Ebene, von: number, bis: number) => {
+  /** @returns Zahl der eingefügten Einträge. Trägt die EBENEN-EHRLICHKEIT (§8, s.
+   *  `ergaenze`): eine Ebene, für die der Index nichts liefert, darf nicht als
+   *  bereit gelten — sonst meldete `fehlendeEbenen` sie als vorhanden. */
+  const fuegeEin = (doc: DocLike, eb: Ebene, von: number, bis: number): number => {
+    let anzahl = 0;
     for (let i = von; i < bis; i++) {
       const e = eintraege[i];
       if (!gehoertZu(e, eb)) continue;
+      anzahl++;
       doc.add({
         id: i,
         // Kürzel UND Routen-Key mitindexieren (z. B. «StGB» und «STGB», «ArGV 1»/«ARGV_1»).
@@ -260,6 +265,7 @@ export function baueSucher(eintraege: IndexEintrag[], FlexSearch: FlexLike): Suc
         f: (e.f ?? '').toLowerCase(),
       });
     }
+    return anzahl;
   };
 
   /** Neuen Ebenen-Index anlegen und in EBENEN_REIHE-Ordnung einhängen (Bund vor
@@ -329,15 +335,26 @@ export function baueSucher(eintraege: IndexEintrag[], FlexSearch: FlexLike): Suc
   };
 
   return {
+    // EBENE OHNE EINTRÄGE WIRD NICHT EINGEHÄNGT (K3-Vorbereitung, 31.8.2026).
+    //
+    // Heute verhaltensneutral: der ausgelieferte Index trägt beide Ebenen, die
+    // Zählung ist immer > 0, es ändert sich nichts. Die Regel greift erst, wenn
+    // der Generator eine Ebene weglässt (SUCHE_INDEX_EBENEN, s.
+    // scripts/such-index-generieren.ts) — dann MUSS `fehlendeEbenen` diese Ebene
+    // melden, damit die Oberfläche sie als fehlend ausweist statt Vollständigkeit
+    // zu behaupten (§8). Ohne diese Zeile hinge ein leerer Ebenen-Index im
+    // `indizes`-Array, `bereiteEbenen()` meldete ihn als bereit, `fehlendeEbenen`
+    // bliebe leer — und die Suche verschwiege 29 055 kantonale Artikel lautlos.
     ergaenze(eb) {
       const doc = neuesDoc();
-      fuegeEin(doc, eb, 0, eintraege.length);
+      if (fuegeEin(doc, eb, 0, eintraege.length) === 0) return;
       haengeEin(eb, doc);
     },
     async ergaenzeGestaffelt(eb) {
       const doc = neuesDoc();
+      let anzahl = 0;
       for (let von = 0; von < eintraege.length; von += HAEPPCHEN) {
-        fuegeEin(doc, eb, von, Math.min(von + HAEPPCHEN, eintraege.length));
+        anzahl += fuegeEin(doc, eb, von, Math.min(von + HAEPPCHEN, eintraege.length));
         // Kontrolle zurück an den Browser: Eingabe und Scrollen bleiben während
         // des Nachladens bedienbar. Erst NACH dem letzten Häppchen einhängen —
         // ein halb gefüllter Index würde sonst unvollständige Treffer liefern
@@ -345,6 +362,7 @@ export function baueSucher(eintraege: IndexEintrag[], FlexSearch: FlexLike): Suc
         // vermeiden soll (§8).
         await new Promise((r) => setTimeout(r, 0));
       }
+      if (anzahl === 0) return; // s. `ergaenze` — leere Ebene bleibt «fehlend»
       haengeEin(eb, doc);
     },
     bereiteEbenen: () => indizes.map((i) => i.eb),

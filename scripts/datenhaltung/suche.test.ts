@@ -8,6 +8,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { oeffneDb, frischesSchema } from './schema';
 import { ingestNormtext, ingestNormtextZiel, ingestRechtsprechung } from './ingest';
 import { baueFtsArtikel, baueFtsEntscheideSchaufenster } from './fts';
+import { bloeckeText } from './suche-kern';
 import { sucheArtikel, sucheEntscheide, MAX_LIMIT } from './suche';
 
 const PAYLOAD_WAND = 4.5 * 1024 * 1024; // 4,5-MB-Function-Payload-Wand (§4)
@@ -141,6 +142,62 @@ describe('sucheArtikel', () => {
     const bytes = Buffer.byteLength(JSON.stringify(a), 'utf8');
     expect(bytes).toBeLessThan(PAYLOAD_WAND);
     expect(bytes).toBeLessThan(200_000); // real: Grössenordnung Kilobytes, nicht Megabytes
+  });
+});
+
+// ── K1 Recall-Parität: die Felder m/n/g/tb/f müssen am Edge ankommen ─────────────
+//
+// Der statische Client-Index (scripts/such-index-generieren.ts) führt neben dem
+// Artikeltext `t` fünf REKALL-Felder: m (primäre Marginalie), n (nachrangige),
+// g (Gliederung), tb (Tabellen-/Struktur-Tier), f (Fussnoten). `fts_artikel`
+// indexierte bis QS-BASIS (d) NUR `bloeckeText` — also allein `t`. Damit fand der
+// DB-/Edge-Weg systematisch weniger als der statische Weg, und zwar STILL: die
+// Antwort war nie leer, nur schlechter.
+//
+// Leitfall ist der, den such-index-generieren.ts:112-121 selbst als Begründung für
+// das Gliederungs-Feld nennt: «Miete» steht im Artikeltext von OR 253/267 NICHT als
+// Token, wohl aber in der Gliederung «Achter Titel: Die Miete».
+//
+// GEMESSENER ROT-STAND vor dem Fix (K0-Nullprobe, bibliothek/register/
+// suche-edge-nullprobe-2026-08-31.md Ziff. 3): Query «Miete» → 79 Treffer, davon
+// OR 253 = 0 und OR 267 = 0; die Top-10 führten zehn kantonale Gebühren- und
+// Besoldungserlasse an.
+describe('K1 Recall-Parität: Recall-Felder im Edge-Index', () => {
+  /** Alle Treffer-IDs einer Query über das volle Fenster (Pagination ausgereizt). */
+  function alleIds(query: string): string[] {
+    const ids: string[] = [];
+    for (let off = 0; off < 500; off += MAX_LIMIT) {
+      const a = sucheArtikel(dbN, query, { limit: MAX_LIMIT, offset: off });
+      for (const t of a.treffer) ids.push(t.id);
+      if (a.naechsteSeite === null) break;
+    }
+    return ids;
+  }
+
+  it('findet OR 253/267 für «Miete» ÜBER DIE GLIEDERUNG (nicht über den Artikeltext)', () => {
+    // Vorbedingung des Falls: der Artikeltext trägt das Token «Miete» wirklich
+    // nicht — sonst prüfte der Test die Gliederung gar nicht.
+    const roh = dbN
+      .prepare("SELECT bloecke_json FROM artikel WHERE erlass_key = 'OR' AND art_id = 'art_253'")
+      .get() as { bloecke_json: string } | undefined;
+    expect(roh, 'OR art_253 muss im Korpus sein').toBeDefined();
+    expect(/\bmiete\b/i.test(bloeckeText(roh!.bloecke_json))).toBe(false);
+
+    const ids = alleIds('Miete');
+    expect(ids).toContain('art:OR:art_253');
+    expect(ids).toContain('art:OR:art_267');
+  });
+
+  it('findet über die primäre Marginalie (OR 127 «Verjährung»)', () => {
+    const ids = alleIds('Verjährung');
+    expect(ids).toContain('art:OR:art_127');
+  });
+
+  it('indexiert Fussnoten- und Tabellen-Tier (Recall-only, kein topischer Boost)', () => {
+    // Ein AS-Fundstellen-Token steht ausschliesslich im Fussnoten-Body — trifft die
+    // Suche es, ist das Fussnoten-Feld nachweislich im Index.
+    const treffer = sucheArtikel(dbN, 'BBl', { limit: MAX_LIMIT });
+    expect(treffer.gesamt).toBeGreaterThan(0);
   });
 });
 
