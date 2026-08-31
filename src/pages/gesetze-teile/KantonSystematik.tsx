@@ -1,6 +1,7 @@
 // H-10 (§6.6 billig, B27): reiner Move aus Gesetze.tsx — Props/Verhalten unverändert.
 import { useMemo, useState } from 'react';
 import { usePaneKlasse } from '../../components/layout/PaneKontext';
+import { GruppenKopf } from '../../components/ui/GruppenKopf';
 import { SysZeile } from '../../components/normtext/ErlassKarte';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import {
@@ -133,19 +134,15 @@ export function KantonSystematik({ erlasse, sys }: { erlasse: BrowseErlass[]; sy
           <div className="space-y-4">
             {g.untergruppen.map((u) => (
               <section key={u.sub || '_'} className="space-y-1.5">
+                {/* C-7 (31.8.2026): der Zähler stand als «· 12» hier; nackte
+                    Zahl ist Kanon. Anatomie und Haarlinie liegen jetzt im
+                    geteilten `GruppenKopf` — mitgezogen ist dorthin auch der
+                    DESIGN-D0-Befund (unsuffixiertes `bg-line`, weil Tailwinds
+                    Deckkraft-Suffix auf dem color-mix-Token `--line` keine
+                    CSS-Regel erzeugt). */}
                 {u.titel && (
-                  <div className="flex items-baseline gap-2">
-                    <span aria-hidden className="num text-xs text-brass-700 shrink-0">{u.sub}</span>
-                    <h4 className="lc-overline text-brass-700">{u.titel}</h4>
-                    <span className="text-ink-500 text-xs">· {u.items.length}</span>
-                    {/* DESIGN-D0 (Wurzel-Fix W2·11-DESIGN, hier symptomatisch
-                        gelöst, Fund Fahrplan B5): `bg-line/70` erzeugt keine
-                        CSS-Regel (Tailwind-Deckkraft-Suffix trägt nicht auf
-                        `--line`, bereits ein color-mix-Halbtransparenzwert).
-                        Auf das unsuffixierte `bg-line` angeglichen wie ~20
-                        gleichartige Trenner der App. */}
-                    <span aria-hidden className="flex-1 h-px bg-line" />
-                  </div>
+                  <GruppenKopf stufe={4} titel={u.titel} zahl={u.items.length}
+                    marke={<span aria-hidden className="num text-xs text-brass-700 shrink-0">{u.sub}</span>} />
                 )}
                 <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
                   {u.items.map((e) => <SysZeile key={e.key} e={e} />)}

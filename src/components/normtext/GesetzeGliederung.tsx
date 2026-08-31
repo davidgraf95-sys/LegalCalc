@@ -17,6 +17,7 @@ import {
 import { GLIEDERUNGEN, type Gliederung } from '../../lib/normtext/gliederung';
 import { ErlassKarte, SysZeile } from './ErlassKarte';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { GruppenKopf } from '../ui/GruppenKopf';
 
 // ── Der gemeinsame Umschalter (ein Interaktions-Vokabular, A15/A4) ────────────
 
@@ -115,18 +116,11 @@ export function KantonGebietGruppen({ erlasse }: { erlasse: BrowseErlass[] }) {
       </RelevanzHinweis>
       {gruppen.map((g) => (
         <section key={g.id} className="space-y-2.5">
-          <div className="flex items-baseline gap-3">
-            <h3 className="lc-overline text-brass-700">{g.label}</h3>
-            <span className="num text-xs text-ink-500">{g.items.length}</span>
-            {/* DESIGN-D0 (Wurzel-Fix W2·11-DESIGN, hier symptomatisch gelöst,
-                Fund Fahrplan B5): `bg-line/70` erzeugt keine CSS-Regel —
-                Tailwinds Deckkraft-Suffix trägt nicht auf `--line`
-                (bereits ein color-mix-Halbtransparenz-Wert). Alle ~20
-                gleichartigen Trenner der App (Katalog.tsx,
-                RechtsgebietSicht.tsx u. a.) nutzen darum das
-                unsuffixierte `bg-line` — hier angeglichen. */}
-            <span aria-hidden className="flex-1 h-px bg-line" />
-          </div>
+          {/* C-2 (31.8.2026): Anatomie und Haarlinie liegen jetzt im
+              geteilten `GruppenKopf` — mitsamt dem DESIGN-D0-Befund
+              (unsuffixiertes `bg-line`, weil Tailwinds Deckkraft-Suffix auf
+              dem color-mix-Token `--line` keine CSS-Regel erzeugt). */}
+          <GruppenKopf titel={g.label} zahl={g.items.length} />
           <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
             {g.items.map((e) => <SysZeile key={e.key} e={e} />)}
           </div>
@@ -165,22 +159,14 @@ export function IntlRechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) 
       </RelevanzHinweis>
       {gruppen.map((g) => (
         <section key={g.ziffer} className="space-y-3">
-          <div className="flex items-center gap-3">
-            <span aria-hidden className="num font-display text-h3 leading-none text-brass-700">0.{g.ziffer}</span>
-            <h2 className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{g.label}</h2>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-            <span className="num text-body-s text-ink-500">{g.items.length}</span>
-          </div>
+          <GruppenKopf stufe={2} titel={g.label} zahl={g.items.length}
+            marke={<span aria-hidden className="num font-display text-h3 leading-none text-brass-700">0.{g.ziffer}</span>} />
           <div className={gitter}>{g.items.map((e) => <ErlassKarte key={e.key} e={e} />)}</div>
         </section>
       ))}
       {euRecht.length > 0 && (
         <section className="space-y-3">
-          <div className="flex items-center gap-3">
-            <h2 className="font-sans font-medium text-ink-700 text-body-l">EU-Recht (EUR-Lex)</h2>
-            <span aria-hidden className="flex-1 h-px bg-line" />
-            <span className="num text-body-s text-ink-500">{euRecht.length}</span>
-          </div>
+          <GruppenKopf stufe={2} titel="EU-Recht (EUR-Lex)" zahl={euRecht.length} />
           <div className={gitter}>{euRecht.map((e) => <ErlassKarte key={e.key} e={e} />)}</div>
         </section>
       )}

@@ -25,6 +25,7 @@ import { StufeBadge, ErfassungsgradLegende } from '../components/normtext/Erfass
 import { erfassungsgrad, STUFE_WORT } from '../lib/normtext/erfassungsgrad';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { Leerzustand } from '../components/ui/Leerzustand';
+import { GruppenKopf } from '../components/ui/GruppenKopf';
 // H-10 (§6.6 billig, B27): BundSystematik/KantonSystematik/KantonAuswahl
 // (+Kachel) als reiner Move nach gesetze-teile/ — Props/Verhalten unverändert.
 import { Gitter } from './gesetze-teile/geteilt';
@@ -441,19 +442,24 @@ export function Gesetze() {
                 <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{suche.trim()}»</p>
                 {bund.length > 0 && (
                   <section className="space-y-3">
-                    <h2 className="lc-overline">Bund <span className="text-ink-500">· {bund.length}</span></h2>
+                    {/* C-7 (31.8.2026): hier stand «Bund · 12» — der
+                        Mittelpunkt ist ein Trennzeichen ohne Aussage, die Zahl
+                        steht ohnehin allein in ihrem Slot. Nackte Zahl ist der
+                        hausweite Kanon (Zählung 12:6:4:2), und der Kopf trägt
+                        jetzt auch die Haarlinie der übrigen Gruppenköpfe. */}
+                    <GruppenKopf stufe={2} titel="Bund" zahl={bund.length} />
                     <Gitter erlasse={bund} />
                   </section>
                 )}
                 {gruppiereNachKanton(kant).map((g) => (
                   <section key={g.kanton} className="space-y-3">
-                    <h2 className="lc-overline">Kanton {g.kanton} <span className="text-ink-500">· {g.erlasse.length}</span></h2>
+                    <GruppenKopf stufe={2} titel={`Kanton ${g.kanton}`} zahl={g.erlasse.length} />
                     <Gitter erlasse={g.erlasse} />
                   </section>
                 ))}
                 {intl.length > 0 && (
                   <section className="space-y-3">
-                    <h2 className="lc-overline">International <span className="text-ink-500">· {intl.length}</span></h2>
+                    <GruppenKopf stufe={2} titel="International" zahl={intl.length} />
                     <Gitter erlasse={intl} />
                   </section>
                 )}

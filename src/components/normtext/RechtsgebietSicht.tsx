@@ -9,6 +9,7 @@ import {
 import { getCalculator } from '../../lib/calculators';
 import { ErlassZeile } from './ErlassKarte';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { GruppenKopf } from '../ui/GruppenKopf';
 import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
 // ─── Rechtsgebiets-Sicht (zweite Gliederung, «Gerüst» — G6/§4.4) ─────────────
@@ -181,20 +182,14 @@ export function RechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) {
       </div>
 
       <section className="space-y-3">
-        <div className="flex items-baseline gap-3">
-          <h2 className="lc-overline text-brass-700">Querschnitts-Themen</h2>
-          <span aria-hidden className="flex-1 h-px bg-line" />
-        </div>
+        <GruppenKopf stufe={2} titel="Querschnitts-Themen" />
         <div className={pk('grid grid-cols-1 lg:grid-cols-2 gap-4', 'grid grid-cols-1 @3xl/pane:grid-cols-2 gap-4')}>
           {themen.map((t) => <ThemaKarte key={t.id} t={t} proKey={proKey} />)}
         </div>
       </section>
 
       <section className="space-y-3">
-        <div className="flex items-baseline gap-3">
-          <h2 className="lc-overline text-brass-700">Grundgerüst nach Rechtsgebiet</h2>
-          <span aria-hidden className="flex-1 h-px bg-line" />
-        </div>
+        <GruppenKopf stufe={2} titel="Grundgerüst nach Rechtsgebiet" />
         <p className="text-body-s text-ink-500 max-w-reading">
           Das ganze Bundesrecht nach seiner Sach-Achse — <span className="num">{kategorisiert}</span> von{' '}
           <span className="num">{gesamt}</span> Erlassen sind zusätzlich einem Querschnitts-Thema
