@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import type { CurrencyEintrag } from '../../../lib/normtext/browse';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
+  GELTUNG_UNGEPRUEFT_SATZ, STAND_UNBEKANNT,
   datumCh, naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
 import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
@@ -150,8 +151,30 @@ export function ErlassLeserKopf({
   // Gegenprüfungs-Hash angefasst — dieselbe Falle, die S3 bei `ANHANG_DOMINANZ`
   // schon notiert hat). Die SR-Nummer in der Fakten-Zeile darüber behält `.num`:
   // sie IST der Fall, für den die Mono-Stimme reserviert ist.
+  // ── K-2a/F26 (W2·13-KANTONE, 31.8.2026) · ZWEITE STUFE DES STANDAUSWEISES ──
+  // Die erste Stufe (`standausweisSatz`) braucht einen Currency-Beleg. Den hat
+  // GEMESSEN kein einziger der 1231 kantonalen Erlasse (currency.json: 224
+  // Einträge, davon 0 kantonale) — der Kantons-Kopf trug damit überhaupt keinen
+  // Geltungs-Status, und das Schweigen las sich wie eine Unbedenklichkeits-
+  // Bescheinigung. Die zweite Stufe sagt stattdessen, was zutrifft (§8).
+  //
+  // WARUM AN DER EBENE UND NICHT NUR AM FEHLENDEN BELEG: ein Bundeserlass ohne
+  // Currency-Eintrag ist ein LÜCKENFALL im Sidecar (die Prüfung läuft für ihn,
+  // ihr Ergebnis fehlt bloss gerade) — dort wäre «Geltung ungeprüft» eine
+  // Aussage über unsere Pipeline, nicht über den Erlass. Beim Kanton ist die
+  // Nicht-Prüfung der DAUERZUSTAND, solange es keinen kantonalen Currency-Lauf
+  // gibt. Die Weiche hält damit das Bund-Verhalten Zeichen für Zeichen fest
+  // (Beweis: `kanton-ehrlichkeit-k2`, «Bund-Verhalten byte-identisch»).
+  //
+  // `lebt` schliesst den aufgehobenen Erlass aus — dort ist die Aufhebung DIE
+  // Aussage, genau wie beim Standausweis eine Zeile darüber.
+  const geltungUngeprueft = lebt && erlass.ebene === 'kanton' && !currency?.geprueftAm;
+
   const stand = [
-    erlass.stand ? <>Stand {datumCh(erlass.stand)}</> : null,
+    // K-2d/F27-Rest: leerer `stand` (VD-vd-106879, VD-vd-128150) liess das
+    // Segment bis 31.8.2026 STILL weg. Eine verschwiegene Lücke ist die
+    // unehrlichere Form als eine benannte (§8) — der Kopf sagt sie jetzt.
+    erlass.stand ? <>Stand {datumCh(erlass.stand)}</> : <>{STAND_UNBEKANNT}</>,
     // K-1: Ur-Inkrafttreten (Fedlex `dateEntryInForce`, build-time projiziert ⇒
     // CLS 0). Distinkt vom «Stand» (Konsolidierung) — nur Bund; Kanton trägt es
     // nicht (§8). «vom …» wird NICHT gedoppelt (steht im Ingress).
@@ -160,6 +183,10 @@ export function ErlassLeserKopf({
     // Client-Datums-Logik). Wortlaut aus `erlassKopfText` — derselbe String
     // steht im prerenderten SEO-Kopf (§5, `seo-detail.ts`).
     currency?.geprueftAm && lebt ? standausweisSatz(currency.geprueftAm) : null,
+    // Zweite Stufe — steht an DERSELBEN Stelle wie der Standausweis, weil sie
+    // dieselbe Frage beantwortet («wie belastbar ist dieser Stand?»). Beide
+    // zugleich kann es nicht geben: die Weiche oben verlangt `!geprueftAm`.
+    geltungUngeprueft ? GELTUNG_UNGEPRUEFT_SATZ : null,
     currency?.naechsteFassungAb
       ? <span className="text-warn-700">{naechsteFassungSatz(currency.naechsteFassungAb)}</span>
       : null,

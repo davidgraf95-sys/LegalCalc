@@ -139,10 +139,37 @@ function revidiertFuer(b: Bezug, artikel: string | null, shard: RevisionShard | 
   return eingestuft === 'revidiert' ? (rev ?? null) : null;
 }
 
+// ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · DIE ABDECKUNG GEHÖRT IN DEN SATZ ───
+//
+// «Zu § 5 ist kein Entscheid der eingeschalteten Instanzen erfasst» ist eine
+// Aussage über den ERLASS. Beim Kantonserlass war sie irreführend, weil die
+// wahre Ursache meist die Abdeckung ist: GEMESSEN am 31.8.2026 haben 147 von
+// 1231 kantonalen Erlassen überhaupt einen Bezugs-Shard — und alle 147 gehören
+// zu EINEM Kanton (BS).
+//
+// WARUM DER SATZ NICHT «für kantonale Erlasse noch nicht erfasst» LAUTET
+// (Abweichung vom Spec-Wortlaut, §7 — der Auftrag nannte diese Formulierung,
+// die Messung widerlegt sie): für die 147 BS-Erlasse wäre sie schlicht falsch,
+// dort IST verknüpft, und ein leerer Paragraph heisst dann wirklich «kein
+// Entscheid». Trennen kann das Panel die beiden Lagen heute nicht — `geladen`
+// ist nach einem 404 ebenfalls `true` (s. Prop-Kommentar) —, also behauptet der
+// Satz auch nicht, welche vorliegt. Er sagt, was in BEIDEN Lagen wahr ist: die
+// Verknüpfung ist erst teilweise aufgebaut, das Fehlen ist darum kein Beleg.
+// Ein trennschärferer Satz braucht zuerst ein «hat dieser Erlass einen Shard?»
+// im Modell — Datenarbeit, nicht Wortwahl.
+const KANTON_ABDECKUNG = 'Kantonale Erlasse sind erst teilweise verknüpft — das Fehlen'
+  + ' belegt nicht, dass es keinen Entscheid gibt.';
+
 export function PanelEntscheide({
   kanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, bestimmungsWort, klassen, kantone, kantoneVerfuegbar,
-  klassenImErlass, histogramm, bereich, onKlassen, onKantone, onBereich,
+  klassenImErlass, histogramm, bereich, onKlassen, onKantone, onBereich, ebene,
 }: {
+  /** Ebene des gelesenen Erlasses — DURCHGEREICHT aus dem Modell
+   *  (`leserV3Modell` → `LeserRahmenV3` → `LeserPanelZone`), nicht hier neu
+   *  geladen: sie steht im Erlass-Datensatz, den die Hülle ohnehin hält (§5).
+   *  Steuert ausschliesslich den Leerzustands-Satz (K-2b); `undefined` =
+   *  keine Aussage, also der unveränderte Bund-Wortlaut. */
+  ebene?: 'bund' | 'kanton';
   /** Kanten des GELESENEN Artikels nach Facetten-Filter; `undefined` = keine. */
   kanten?: readonly Bezug[];
   /** Artikel-Token des Panels (§7b: Grundlage der ↻-Klassifikation, s. o.). */
@@ -197,6 +224,11 @@ export function PanelEntscheide({
           {artikelLabel
             ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
             : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
+          {/* K-2b: der Zusatz TRITT HINZU, er ersetzt die Bestandsaussage
+              nicht — beide sind wahr, und die zweite erklärt die erste. */}
+          {ebene === 'kanton' && (
+            <span data-v3-panel-abdeckung="kanton" className="block text-ink-400">{KANTON_ABDECKUNG}</span>
+          )}
         </p>
       ) : (
         <div className="px-2.5 py-1">
