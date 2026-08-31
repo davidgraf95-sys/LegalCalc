@@ -5200,6 +5200,484 @@
       "ausfaelle": [
         "playwright-report.json (CI-Artefakt, lokal nicht vorhanden)"
       ]
+    },
+    {
+      "erhobenAm": "2026-08-31T09:42:28.879Z",
+      "headCommit": "ff7176e38a5c2ecc35e553bbe38f5763e4cf50be",
+      "torRot": {
+        "seitLetztem": {
+          "gesamt": 338,
+          "rot": 0,
+          "je": {
+            "check:artikel-revisionen": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:besetzung": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:bezuege": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:bibliothek": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:bilder": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:bs-entscheide": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:datenhaltung": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:design-tokens": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:dispatch-klausel": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:dossiers": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:e2e-shards": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:entscheide": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:farbwelt": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:gegenpruefung": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:golden-normtext": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:grundart": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:historie": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:invarianten": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:linien-kanon": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:materialien": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:normkeys": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:normtext": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:p-klassen": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:paritaet": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:pdf": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:pdf-quellen": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:plan": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:revisionen": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:schlankheit": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:seo-index": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:smoke": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:stand-zukunft": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:steuerdeckel": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:struktur-konsistenz": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:sweep": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:tabellen": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:tor-paritaet": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:ui-normzitate": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:verfall": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:verfall-ui": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:verklebung": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:vollstaendigkeit": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:zaehler": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:zyklen": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "gate:check": {
+              "gesamt": 6,
+              "rot": 0
+            },
+            "gate:golden:vergleich": {
+              "gesamt": 6,
+              "rot": 0
+            },
+            "gate:lint": {
+              "gesamt": 6,
+              "rot": 0
+            },
+            "gate:tsc -b": {
+              "gesamt": 6,
+              "rot": 0
+            },
+            "gate:vitest": {
+              "gesamt": 6,
+              "rot": 0
+            }
+          }
+        },
+        "kumuliert": {
+          "gesamt": 3303,
+          "rot": 33,
+          "je": {
+            "check:artikel-revisionen": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:besetzung": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:bezuege": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:bibliothek": {
+              "gesamt": 69,
+              "rot": 3
+            },
+            "check:bilder": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:bs-entscheide": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:datenhaltung": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:design-tokens": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:dispatch-klausel": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:dossiers": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:e2e-shards": {
+              "gesamt": 69,
+              "rot": 2
+            },
+            "check:entscheide": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:farbwelt": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:gegenpruefung": {
+              "gesamt": 69,
+              "rot": 4
+            },
+            "check:golden-normtext": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:grundart": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:historie": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:invarianten": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:inventur": {
+              "gesamt": 16,
+              "rot": 0
+            },
+            "check:linien-kanon": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:materialien": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:normkeys": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:normtext": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:p-klassen": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:paritaet": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:pdf": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:pdf-quellen": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:plan": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:revisionen": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:schlankheit": {
+              "gesamt": 69,
+              "rot": 2
+            },
+            "check:seo-index": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:smoke": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:stand-zukunft": {
+              "gesamt": 7,
+              "rot": 0
+            },
+            "check:steuerdeckel": {
+              "gesamt": 23,
+              "rot": 2
+            },
+            "check:struktur-konsistenz": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:sweep": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:tabellen": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:tor-paritaet": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:ui-normzitate": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:verfall": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:verfall-ui": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:verklebung": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:vollstaendigkeit": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:zaehler": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "check:zyklen": {
+              "gesamt": 69,
+              "rot": 0
+            },
+            "gate:check": {
+              "gesamt": 61,
+              "rot": 10
+            },
+            "gate:golden:vergleich": {
+              "gesamt": 79,
+              "rot": 0
+            },
+            "gate:lint": {
+              "gesamt": 61,
+              "rot": 6
+            },
+            "gate:tsc -b": {
+              "gesamt": 79,
+              "rot": 0
+            },
+            "gate:vitest": {
+              "gesamt": 79,
+              "rot": 4
+            }
+          }
+        }
+      },
+      "ci": {
+        "laeufe": 49,
+        "verdikte": 42,
+        "failureRate": 0.0952,
+        "cancelledRate": 0.1429,
+        "rerunRate": 0.0204,
+        "je": {
+          "cancelled": 7,
+          "failure": 4,
+          "success": 38
+        }
+      },
+      "rework": {
+        "alle": {
+          "fensterTage": 14,
+          "nachfassStunden": 48,
+          "commits": 71,
+          "reworkCommits": 63,
+          "anteil": 0.8873
+        },
+        "handschrift": {
+          "fensterTage": 14,
+          "nachfassStunden": 48,
+          "commits": 39,
+          "reworkCommits": 29,
+          "anteil": 0.7436
+        }
+      },
+      "flaky": null,
+      "tokens": {
+        "gesamt": 351518989,
+        "jeTyp": {
+          "cacheCreation": 5623266,
+          "cacheRead": 344992994,
+          "input": 25748,
+          "output": 876981
+        },
+        "kostenUsd": 356.2686,
+        "metriken": [
+          "claude_code_cost_usage_total",
+          "claude_code_token_usage_total"
+        ]
+      },
+      "fKlassen": {
+        "F1": 0,
+        "F2a": 0,
+        "F2b": 0,
+        "F2c": 0,
+        "F2d": 0,
+        "F2e": 1,
+        "F2f": 1,
+        "F2g": 1,
+        "F2h": 1,
+        "F3": 1,
+        "F4": 0,
+        "F5": 1,
+        "F6": 1,
+        "F7": 1,
+        "F8": 1,
+        "F9": 2
+      },
+      "ausfaelle": [
+        "playwright-report.json (CI-Artefakt, lokal nicht vorhanden)"
+      ]
     }
   ]
 }
