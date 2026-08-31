@@ -86,6 +86,12 @@ geroutet wird: eine Fehlroute riskiert verifizierte Kantons-Snapshots (vgl.
 - **Jeder Rechtswert mit Norm + Link + Stand** (§13 D1, verzahnt mit §7).
 - **Nur amtliche / URG-freie Quellen** (Art. 5 URG, S3): Fedlex (Bund), kantonale
   Erlasssammlungen via API, amtliche Gerichts-/Behördenseiten — keine Kommentare.
+- **Mutationsproben auf generierten Artefakten erst NACH dem Commit der
+  Regeneration fahren — und nie mit `git checkout <datei>` zurücksetzen**
+  (das stellt den ALTEN committeten Stand her und vernichtet die uncommittete
+  Regeneration; Beleg 31.8.2026, ZH-Fix-Runde 2: kostete einen vollen
+  zweiten Generatorlauf). Rücksetzen der Probe = Regenerat aus Sicherungs-
+  kopie zurückkopieren oder neu generieren.
 
 ## §7 · Quell-Wahl und Build-Regeln Norm-Snapshots (wohnen hier)
 

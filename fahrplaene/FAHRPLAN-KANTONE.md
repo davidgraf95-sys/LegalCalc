@@ -453,6 +453,127 @@ Freigabe je Tranche beim Orchestrator/David).
 
 ---
 
+## §5 · ZH-Programm: 13 Runden + Tranchen + Speicher-Umbau (Aufträge David 31.8.2026, lebendige Spec)
+
+**Anlass:** Serie von David-Aufträgen 31.8.2026 nachmittags (Chat, je «mache
+danach/am schluss auch noch runde für …») unter dem stehenden **Dauer-Baumandat**
+(«bau bis ich stop sage. verbessere kontinuierlich») und dem Tranche-Muster
+(«mehr zh gesetze live … und dann diese intensiv prüfen und befunde verbessern»).
+Dazu drei Querschnitt-Entscheide Davids gleichentags: **Suchindex-Speicherlimite
+aufgehoben** («speicherlimite aufgehoben» — betrifft NUR das Suchindex-Budget,
+NICHT den 780-KB-Deckel des Rechtsprechungs-Registers) · **K3-Scharfschaltung
+freigegeben** «sobald geprüft und verifiziert» · **Kanton-Generik** («wenn du
+etwas für andere kantone brauchen kannst achte darauf, dass es bei allen
+implementiert wird») · Token-Sparsamkeit für dieses Programm ausdrücklich
+nachrangig («token spahren egal»). Stadt-Zürich-Volltexte bleiben AUS
+(robots.txt-Hürde, Dossier `stadt-zuerich-amtliche-sammlung-2026-08-31.md`).
+
+### 5.1 Querschnitt-Regeln (gelten für jede Runde)
+
+1. **Kanton-generisch bauen:** je Runde (a) Datenmodell + Tor für alle 26
+   Kantone definieren, (b) ZH als Erstbefüllung, (c) Befüll-Weg je übriger
+   Quell-Familie (LexWork-XHTML · SIL · TI · BS-API · zhlex-PDF) dokumentieren
+   und mitbefüllen, wo die Quelle es ohne Neubau hergibt. Generischer CODE
+   sofort — MASSEN-Regenerationen ≥ ~3 Kantone bleiben gegatete Tranchen (G2).
+2. **Prüf-Schleife je Runde und je Tranche:** Bau (Opus/high, frischer Kontext)
+   → adversariale Gegenprüfung (frischer Kontext, unabhängige Dritt-Lesung,
+   Blind-Werte vor Vergleich) → Fix-Runde → erneute Gegenprüfung, bis
+   `bestanden`; Tore, die die Runde einführt, zeigen jede Prüfung einmal ROT.
+3. **Jede Runde erweitert das Dauer-Tor-Netz** (`check:zh-vollstaendigkeit`
+   ist das Muster): die Fehlerklasse der Runde wird maschinell bewacht, nicht
+   nur einmalig behoben.
+4. **Fachliche Abnahme bleibt bei David** (§7/§8): Status-Hebungen nie
+   automatisch; Runden liefern «entwurf»-Qualität mit Beweispaket.
+5. **Landungen seriell** (§12); ZH-Korpus-Strang und Datenhaltungs-Strang
+   landen abwechselnd, nie gleichzeitig auf dieselben Artefakte.
+
+### 5.2 Phasenplan (Abhängigkeiten, nicht blosse Bestell-Reihenfolge)
+
+**Phase 0 — läuft:** Kern-Tranche (24 Erlasse) durch Gegenprüfungs-Schleife
+bringen und landen · Speicher-Umbau K0–K5 gegenprüfen und landen (Flag AUS) ·
+danach K3-Scharfschaltung (Bedingungen: Gegenprüfung bestanden + gelandet,
+Turso-Sync mit Recall-Feldern gefahren, Produktions-Probe grün — Live-Probe
+31.8. positiv; + Budget-Zeile deklariert senken + UI-Abdeckungszeile, sobald
+Design-TABU-Fläche frei).
+
+**Phase I — Masse mit Schleife:** Tranche A (155: Ordner 3+10+4 komplett;
+Vorprüfungen GO 31.8., Grössen 10,3 MB, Fallen im Skill verankert) →
+intensive Prüfrunde (mehrere unabhängige Prüf-Agenten + Messbank + Tore) →
+Befunde fixen → Tranche B (236 + die 5 Ordner-1-Auffüller) → Schleife →
+Tranche C (Rest auf 944) → Schleife. Tranchen B/C erst nach gelandetem K3
+(Suchindex-Entlastung) ODER mit deklarierter Budget-Anhebung (Entscheid
+David «Speicherlimite aufgehoben» deckt das).
+
+**Phase II — Extraktions-Tiefe (Tag-Leser-Familie):** Fundament =
+Tag-Leser-Modul (Vorbau läuft, `scratchpad/tagleser/`, E1-Beweis: Rollen
+Marginalie/Haupttext/Fussnote deterministisch, 119/119 Seiten zeichen-
+vollständig). Darauf, je EIGENE Runde mit eigener Gegenprüfung:
+- **R1 Gliederung:** Randtitel/Marginalien als Sachtitel (483 verworfen),
+  Kapitel-/Abschnitts-Struktur als eigene Blöcke, die 129 Überschriften-
+  Fehlzuordnungen, römische Ebenen. Kreuzvergleich Tag-Weg ↔ Positions-Weg
+  als neues Dauer-Tor.
+- **R2 Tabellen:** `mehrspaltig`-Pfad generalisieren (heute auf 211.11/215.3
+  §3/§4 verdrahtet), Fliesstext-Tarife 323.1/212.812 strukturieren,
+  243-Anhang-Spalten-Inkonsistenz; Werte-Wächter beidseitig (Zahlen-
+  Multimenge je §-Region — offener Rest der Fix-Runde 2).
+- **R3 Fussnoten:** Apparat als eigene Schicht (Marker · Text · Anker
+  getrennt; Rolle `Fussnote` aus dem Tag-Baum); trägt OS-Fundstellen und
+  «Aufgehoben durch …»-Belege.
+- **R4 Anhänge:** Anhänge + Übergangs-/Schlussbestimmungen als eigene
+  Einträge (heute §8-Lücken-Index `kanton-luecken.json`, 15 Erlasse;
+  Vorbild anhang_*-Tokens der NotGebV 243); löst die drei nicht lückenlos
+  ableitbaren Sammel-Bereiche auf; danach VGG 131.11 nachziehen.
+
+**Phase III — Semantik-Schichten (kanton-generisch):**
+- **R5 Verweise/Querverweise:** interne §-Verweise + externe (SR/LS) als
+  Anker; Vorbild `bezuege-bauen.ts`; VOR Start Kollisionsprüfung
+  Verweis-Baufeld (31.8. durch Parallel-Session belegt).
+- **R6 Legaldefinitionen:** NUR regelbasierte Muster («gilt als», «im Sinne
+  dieses Gesetzes», Begriffs-Marginalien); Status entwurf bis Abnahme.
+- **R8 Abkürzungen:** amtliche Kürzel als Such-Aliase (Klammerzusatz +
+  Kurztitel-Feld; nie erfinden — B-9-Lektion; Kollisionen FKG/EKZ/SDK;
+  Kürzel nie als Schlüssel); Vorbild `abk-aliase-generieren.ts`.
+- **R9 Sachgebiete/Systematik:** Feingliederung unter den 14 Ordnern
+  (Jahresregister-PDF als Kandidat-Quelle, Dossier §8), Sachgebiet als
+  deklariertes Registerfeld statt Titel-Raten (löst den ROADMAP-Punkt
+  «Kern-Kategorie als Registerfeld»), «Bereich N»-Fallback ersetzen (K-13).
+
+**Phase IV — Zeit-Schichten:**
+- **R7 Inkrafttreten/Übergangsrecht:** je Erlass maschinenlesbar «in Kraft
+  seit», Fassungsregister, geltendes Übergangsrecht (aus R4-Erfassung +
+  R3-Apparat); ZH-Pendant zu gen:historie/gen:inkrafttreten (heute
+  Bund-only).
+- **R12 Änderungshistorie/Versionen:** Volltext-Historie + Wort-Diff
+  zwischen Fassungen — zhlex liefert ALLE Vorfassungen als PDF (ø 4,2,
+  max 48; Stadt-AS analog); natürlicher POC für W2·5g-ZEIT
+  (Blocker zeit-historik-poc), was der Bund mangels Alt-Volltext nicht kann.
+
+**Phase V — Ernte:**
+- **R13 Rechtsprechungs-Brücke:** (a) LS-Zitate in Entscheiden → kantonale
+  normKeys (löst K-14 ein; Prämisse «normKeys Bund-only» vorher nachmessen;
+  braucht R5+R8); (b) ZH-Urteils-Korpus = EIGENE gegatete Einheit
+  (Rechtsprechungs-Register-Deckel 780 KB NICHT aufgehoben; VPS-Gate;
+  Quell-Menü ZH-Gerichte empirisch erheben).
+- **R10 Mehrsprachigkeit:** ZH ist einsprachig (944/944 deutsch) —
+  Runde wirkt korpusweit: sprache-Ehrlichkeit (37 fr/it als 'de'
+  deklariert — bestehender ROADMAP-Punkt), Parallel-Fassungs-Verknüpfung
+  BE/FR/VS (Muster FR-130.11-de/-fr), UI-Sprachausweis. KEINE eigenen/
+  KI-Übersetzungen (§2/§7).
+- **R11 Suchoptimierung (Abschluss):** erntet alle Schichten als Suchfelder;
+  Umlaut-Faltung (Befund «Verjaehrung»), Mehrwort-ANY/Präfix am Edge,
+  Alias-Treffer («GOG»→211.1), Ranking-Entdopplung; jede Änderung gegen
+  die eingefrorene K0-Nullprobe + eval:suche bewiesen.
+
+### 5.3 Offene David-Punkte (nicht blockierend gesammelt)
+
+- Fachliche Abnahme: Re-Bless 211.11/215.3/243 + Stichproben-Abnahme
+  Kern-Tranche (Skill `abnahme`).
+- R13(b) ZH-Urteils-Korpus: Register-Deckel/Projektion + VPS.
+- Stadt-ZH-Volltexte: nur nach Stadtkanzlei-Anfrage.
+- «Handänderungs-/Grundbuchabgaben = Kernklasse?» (bestehender Punkt).
+
+---
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 9 Abschnitt(e) dieser Datei sind wörtlich nach
