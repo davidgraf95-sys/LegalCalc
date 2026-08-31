@@ -26,9 +26,24 @@ export const SAMMEL_MARKER = '⟦SAMMEL⟧';
 
 /**
  * Sammel-Aufhebungskopf: «§§» + reine Nennungsliste von §-Nummern + Schlusspunkt,
- * NICHTS sonst. Belegte Formen im Bestand (38 Vorkommen, 9 Erlasse): «§§ N–M.»,
- * «§§ N und M.», «§§ N−M.» (U+2212, ZH-700.1!), «§§ N a–N m.», «§§ Nbis–M.»,
+ * NICHTS sonst. Belegte Formen im Bestand: «§§ N–M.», «§§ N und M.»,
+ * «§§ N−M.» (U+2212, ZH-700.1!), «§§ N a–N m.», «§§ Nbis–M.»,
  * «§§ Nbis–Nquater.», «§§ N–M a.», «§§ N a und M.».
+ *
+ * ZÄHLWEISE — beide Zahlen sind richtig, sie zählen Verschiedenes
+ * (Klarstellung Fix-Runde 3; der Commit-Body der Runde 2 nannte «38», die
+ * Gegenprüfung zählte «41», und beide Angaben blieben unerklärt nebeneinander):
+ *   · **41 Sammelköpfe in 7 Erlassen** — Zeilen, die BEIDE Bedingungen
+ *     erfüllen (Kopf-Einzug UND Textgestalt) und darum expandiert werden.
+ *     Verteilung: ZH-230 25 · ZH-700.1 7 · ZH-175.2 3 · ZH-211.1 2 ·
+ *     ZH-631.1 2 · ZH-177.10 1 · ZH-631.11 1.
+ *   · **42 Zeilen der blossen Textgestalt** (ohne Einzugsprüfung) — die eine
+ *     überzählige ist genau das Satzende «Vorbehalten bleiben §§ 23–23 b und
+ *     35 b.» (ZH-331 § 17), das der Einzug korrekt aussortiert.
+ *   · **38** war die Zahl der Köpfe VOR dem Nachzug der Suffix-Formen (die
+ *     drei «§§ Nbis–…»-Köpfe in ZH-230 kamen erst mit der lat.-Suffix-Zuordnung
+ *     dazu) — sie beschreibt einen früheren Stand, nicht den heutigen.
+ * Gemessen offline aus dem Roh-PDF-Cache über alle 24 ZH-PDF.
  *
  * Die Textform allein reicht NICHT: «§§ 23–23 b und 35 b.» (ZH-331) hat exakt
  * dieselbe Gestalt, ist aber das Ende eines Satzes («Vorbehalten bleiben …»).

@@ -163,7 +163,8 @@
     "check:testtreue": "vite-node scripts/check-testtreue.ts",
     "dispatch": "vite-node scripts/dispatch-cli.ts --",
     "dispatch:agents": "vite-node scripts/dispatch-agents-cli.ts",
-    "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts"
+    "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts",
+    "zh:cache": "vite-node scripts/normtext/zh-cache-fuellen.ts --"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",

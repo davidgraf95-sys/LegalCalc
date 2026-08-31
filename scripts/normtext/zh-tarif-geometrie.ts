@@ -91,7 +91,8 @@ export function teileAmSpaltenrand<T extends { x: number; s: string; w?: number 
  * einer §-Region. Unterstützt zwei Tabellenformen, automatisch erkannt am Kopf:
  *
  * 3-Spalten-Form (ZH-215.3 § 4, ZH-211.11 § 4, h≈7.50 pt):
- *   Kopf «Streitwert | Grundgebühr» → kopf: ['Streitwert','Grundgebühr','Zuschlag']
+ *   Kopf «Streitwert | Grundgebühr» → kopf: ['Streitwert','Grundgebühr',''] (die
+ *   dritte Spalte trägt im PDF KEINEN Kopf — s. Titel-Kommentar unten)
  *   threshold1 = x von «Grundgebühr» (≈169 pt); threshold2 = threshold1+47 (≈216 pt).
  *   «zuzügl.»-Token in col2 wird an den Anfang von col3 verschoben (deterministisch).
  *
@@ -297,8 +298,18 @@ export function extrahiereZhStreitwertStaffel(
   const einheit = tabStuecke.some((s2) => s2.s.includes('(in Franken)'))
     ? ' (in Franken)'
     : '';
+  // SPALTENTITEL — nur, was das PDF trägt (A2, Fix-Runde 3).
+  // Die Kopfzeile lautet in ZH-211.11 § 4 und ZH-215.3 § 4 wörtlich
+  // «Streitwert | Grundgebühr» plus die Einheitenzeile «(in Franken)». Eine
+  // DRITTE Spaltenüberschrift gibt es dort NICHT: die Zuschlagsformel («zuzügl.
+  // 20% des Fr. 1 000 übersteigenden Streitwertes») steht im Druckbild ohne
+  // eigenen Kopf rechts neben der Grundgebühr. Der frühere Titel «Zuschlag» war
+  // darum ein Haus-Etikett im Gewand eines Zitats (§7/§8) — er ist jetzt leer,
+  // genau wie die Quelle. Die Spalte selbst bleibt: sie trägt echte Daten, und
+  // `check:tabellen` beanstandet eine Leerspalte nur, wenn AUCH die Zellen leer
+  // sind.
   const titel = dreiSpalten
-    ? ['Streitwert', 'Grundgebühr', 'Zuschlag']
+    ? ['Streitwert', 'Grundgebühr', '']
     : ['Streitwert', 'Gebühr'];
   return {
     kopf: titel.map((t, i) => (i < 2 ? `${t}${einheit}` : t)),
@@ -401,7 +412,19 @@ function leseVortext(
  */
 export function extrahiereZhNotariatsTarif(
   stuecke: Array<{ x: number; y: number; h: number; s: string; p: number }>,
-): { kopf: string[]; zeilen: string[][] } | null {
+): {
+  kopf: string[];
+  zeilen: string[][];
+  /** Quellgetreues Etikett der VERWEIS-Spalte je Tarif-Ziffer (A2, Fix-Runde 3).
+   *
+   *  Der ZH-NotGebV-Anhang trägt ZWEI verschiedene Verweis-Spalten, je nach
+   *  Abschnitt: «Grundbuchgebühren siehe Ziff.:» (S. 5–7) und
+   *  «Beurkundungsgebühren siehe Ziff.:» (S. 8–14). Beide auf ein einziges
+   *  «(vgl. Ziff. …)» abzubilden, wirft die Unterscheidung weg — der Leser
+   *  erfährt nicht mehr, WELCHE Gebühr gemeint ist. Das Etikett wird darum am
+   *  Spaltenkopf der jeweiligen Seite GELESEN, nie gesetzt. */
+  verweisEtiketten: Record<string, string>;
+} | null {
   if (stuecke.length === 0) return null;
 
   // Nur Body-/Tarif-Schrift (h≈9.18). Köpfe (h≈8.2) + Fussnoten (h≈8.0) raus.
@@ -468,7 +491,13 @@ export function extrahiereZhNotariatsTarif(
     }
   }
 
-  type E = { token: string; lines: Array<{ main: string; ref: string }> };
+  // Verweis-Spaltenköpfe je Seite (A2): die Schwelle ist dieselbe wie in
+  // baueZeile (descX + 195), damit Kopf und Zellen aus DERSELBEN Spalte kommen.
+  const verweisSchwelle = new Map<number, number>();
+  for (const [p, dX] of descX) verweisSchwelle.set(p, dX + 195);
+  const verweisKopfJeSeite = leseVerweisKoepfe(stuecke, verweisSchwelle);
+
+  type E = { token: string; lines: Array<{ main: string; ref: string }>; seiten: Set<number> };
   const eintraege: E[] = [];
   let cur: E | null = null;
 
@@ -499,9 +528,10 @@ export function extrahiereZhNotariatsTarif(
       // Erster Treffer eines Tokens gewinnt (defensiv gegen Wiederholungen).
       if (eintraege.some((e) => e.token === m[1])) {
         cur = eintraege.find((e) => e.token === m[1])!;
+        cur.seiten.add(r.p);
         continue;
       }
-      cur = { token: m[1], lines: [] };
+      cur = { token: m[1], lines: [], seiten: new Set([r.p]) };
       eintraege.push(cur);
       const ln = baueZeile(r.ss.slice(1), dX);
       const main = `${m[2] ? `${m[2]} ` : ''}${ln.main}`.replace(/\s+/g, ' ').trim();
@@ -509,6 +539,7 @@ export function extrahiereZhNotariatsTarif(
       continue;
     }
     if (!cur) continue; // vor dem ersten Ziffer-Kopf (Abschnitts-Titel «A.») → ignorieren
+    cur.seiten.add(r.p);
     // Fortsetzungszeile: alles ab der Beschreibungsspalte (Abschnitts-Letter
     // «A./B./C.» und nackte Top-Level-Zahlen in der Ziffer-Spalte überspringen).
     const body = r.ss.filter((s) => s.x >= dX - 3);
@@ -522,6 +553,7 @@ export function extrahiereZhNotariatsTarif(
   // Zeilen je Eintrag zusammenfügen: Silbentrennung an Zeilengrenzen (nicht vor
   // Konjunktionen); Verweise gesammelt als «(vgl. Ziff. …)»-Suffix.
   const zeilen: string[][] = [];
+  const verweisEtiketten: Record<string, string> = {};
   for (const e of eintraege) {
     let desc = '';
     for (const ln of e.lines) {
@@ -543,9 +575,63 @@ export function extrahiereZhNotariatsTarif(
       .trim();
     if (!desc && !refs) continue;
     zeilen.push([e.token, desc, refs]);
+    if (refs) {
+      // Etikett von der Seite, auf der die Verweis-ZELLE steht (nicht von der
+      // Kopfzeile des Eintrags): ein Eintrag kann über einen Seitenumbruch
+      // laufen, und der Abschnittswechsel Grundbuch → Beurkundung fällt mit
+      // einem Seitenumbruch zusammen.
+      const seiteMitRef = e.lines.findIndex((l) => l.ref !== '');
+      const kandidaten = [...e.seiten].sort((a, b) => a - b);
+      const etikett =
+        kandidaten.map((p) => verweisKopfJeSeite.get(p)).find((v) => v !== undefined) ??
+        undefined;
+      if (etikett !== undefined && seiteMitRef >= 0) verweisEtiketten[e.token] = etikett;
+    }
   }
 
   if (zeilen.length === 0) return null;
-  return { kopf: ['Ziffer', 'Beschreibung', 'siehe Ziff.'], zeilen };
+  return { kopf: ['Ziffer', 'Beschreibung', 'siehe Ziff.'], zeilen, verweisEtiketten };
+}
+
+/**
+ * Liest die Kopfzeile der VERWEIS-Spalte je Seite aus den Kleinsatz-Stücken
+ * (h ≈ 8.16; Body ist 9.18) rechts der Verweis-Schwelle.
+ *
+ * Gemessen an ZH-243 (31.8.2026): der Kopf steht dreizeilig, silbengetrennt —
+ * «Grundbuch-» / «gebühren» / «siehe Ziff.:» bzw. «Beurkun-» / «dungs-» /
+ * «gebühren» / «siehe Ziff.:». Die Zeilen werden von oben nach unten
+ * zusammengefügt und der Trennstrich am Zeilenende getilgt.
+ *
+ * Liefert für Seiten ohne solchen Kopf keinen Eintrag — dann trägt die Zeile
+ * kein Etikett und der Verweis erscheint ohne Spaltennamen (§8: lieber kein
+ * Etikett als ein geratenes).
+ */
+function leseVerweisKoepfe(
+  stuecke: Array<{ x: number; y: number; h: number; s: string; p: number }>,
+  schwelleJeSeite: Map<number, number>,
+): Map<number, string> {
+  const jeSeite = new Map<number, Array<{ y: number; x: number; s: string }>>();
+  for (const st of stuecke) {
+    if (st.h >= 8.7 || st.h < 7.9) continue; // nur der Spaltenkopf-Kleinsatz
+    const grenze = schwelleJeSeite.get(st.p);
+    if (grenze === undefined || st.x < grenze) continue;
+    let l = jeSeite.get(st.p);
+    if (!l) { l = []; jeSeite.set(st.p, l); }
+    l.push({ y: st.y, x: st.x, s: st.s });
+  }
+  const raus = new Map<number, string>();
+  for (const [p, teile] of jeSeite) {
+    teile.sort((a, b) => b.y - a.y || a.x - b.x);
+    let t = '';
+    for (const teil of teile) {
+      const w = teil.s.trim();
+      if (!w) continue;
+      if (t.endsWith('-')) t = t.slice(0, -1) + w;
+      else t = t ? `${t} ${w}` : w;
+    }
+    t = t.replace(/\s+/g, ' ').trim();
+    if (/siehe Ziff/i.test(t)) raus.set(p, t);
+  }
+  return raus;
 }
 

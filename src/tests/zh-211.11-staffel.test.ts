@@ -107,9 +107,13 @@ describe('ZH-211.11 § 4 — 3-Spalten-Tabelle (Streitwert | Grundgebühr | Zusc
     expect(r).not.toBeNull();
   });
 
-  it('kopf = [Streitwert, Grundgebühr, Zuschlag] (3-Spalten-Form)', () => {
+  // A2 (Fix-Runde 3): Die dritte Spalte trägt im amtlichen PDF KEINEN Kopf —
+  // die Zuschlagsformel steht ohne Überschrift rechts neben der Grundgebühr.
+  // Der frühere Titel «Zuschlag» war ein Haus-Etikett im Gewand eines Zitats
+  // (§7/§8) und ist jetzt leer. Fachliche Änderung, kein Refactoring.
+  it('kopf = [Streitwert, Grundgebühr, «»] — dritte Spalte ohne Quell-Titel', () => {
     const r = extrahiereZhStreitwertStaffel(PAR4)!;
-    expect(r.kopf).toEqual(['Streitwert (in Franken)', 'Grundgebühr (in Franken)', 'Zuschlag']);
+    expect(r.kopf).toEqual(['Streitwert (in Franken)', 'Grundgebühr (in Franken)', '']);
   });
 
   it('liefert ≥ 8 Datenzeilen (§ 4 Abs. 1 hat 9 Staffelzeilen)', () => {

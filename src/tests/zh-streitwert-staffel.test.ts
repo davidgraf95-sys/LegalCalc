@@ -42,9 +42,11 @@ describe('extrahiereZhStreitwertStaffel — echte Fixture ZH-215.3 § 4', () => 
     expect(ergebnis).not.toBeNull();
   });
 
-  it('kopf = [Streitwert, Grundgebühr, Zuschlag]', () => {
+  // A2 (Fix-Runde 3): dritte Spalte ohne Quell-Titel — s. Begründung im
+  // Schwester-Test zu ZH-211.11 § 4 und im Kommentar in zh-tarif-geometrie.ts.
+  it('kopf = [Streitwert, Grundgebühr, «»] — dritte Spalte ohne Quell-Titel', () => {
     ergebnis = extrahiereZhStreitwertStaffel(STUECKE)!;
-    expect(ergebnis.kopf).toEqual(['Streitwert (in Franken)', 'Grundgebühr (in Franken)', 'Zuschlag']);
+    expect(ergebnis.kopf).toEqual(['Streitwert (in Franken)', 'Grundgebühr (in Franken)', '']);
   });
 
   it('liefert ≥10 Zeilen (Abs. 1 hat 12 Staffelzeilen)', () => {
