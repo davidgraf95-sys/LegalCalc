@@ -18,6 +18,7 @@
 // (snapshot ≠ in Kraft — TODO(David), Welle ab 1.12.2026).
 
 import { SITE_URL, type RouteMetadaten } from './seo';
+import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_NOMEN, MASSGEBLICH_SATZ } from './benennung';
 import {
   GELTUNG_UNGEPRUEFT_SATZ,
   naechsteFassungSatz,
@@ -107,7 +108,10 @@ export function metaFuerErlass(e: BrowseErlass): RouteMetadaten {
       // Gleiche Weiche wie im Volltext-Kopf: leerer `stand` (VD-vd-106879,
       // VD-vd-128150) hiesse sonst «Stand ,» in der indexierten Beschreibung.
       `${e.stand ? `Stand ${e.stand}` : STAND_UNBEKANNT}, mit Live-Link zur amtlichen Fassung. ` +
-      `Massgeblich ist die amtliche Quelle; keine Rechtsberatung.`,
+      // B-6-Nachzug (R2-A, 31.8.2026): dasselbe Nomen wie im interaktiven Kopf.
+      // Der SATZ wird gebaut, nicht kopiert — hier trägt er einen Anhang
+      // («; keine Rechtsberatung»), für den `MASSGEBLICH_SATZ` nicht passt.
+      `Massgeblich ist ${AMTLICHE_FASSUNG_NOMEN}; keine Rechtsberatung.`,
     canonical: SITE_URL + pfad,
   };
 }
@@ -234,8 +238,11 @@ export function materialDetailHtml(m: BrowseMaterial): string {
     `<p>${esc(m.behoerdeKuerzel)} · ${esc(m.doktypLabel)}${nr}</p>` +
     `<h1>${esc(m.titel)}</h1>` +
     `<p>${esc(m.behoerdeName)} · Stand ${esc(m.stand)} · ${esc(inSprache(m.sprache))}</p>` +
-    `<p>Amtliche Ressource (Soft-Law, kein Gesetzesrang). Massgeblich ist die amtliche Quelle.</p>` +
-    `<p><a href="${esc(m.quelleUrl)}" rel="noopener noreferrer">Zur amtlichen Fassung</a></p>` +
+    // B-6/B-1-Nachzug (R2-A): dasselbe Nomen und derselbe Link-Name wie in der
+    // React-Fläche (`MaterialLeser` → `ui/QuellLink`). Der Pfeil steht hinten
+    // (Ä110); «Zur amtlichen Fassung» ist der verworfene Wortlaut.
+    `<p>Amtliche Ressource (Soft-Law, kein Gesetzesrang). ${MASSGEBLICH_SATZ}</p>` +
+    `<p><a href="${esc(m.quelleUrl)}" rel="noopener noreferrer">${AMTLICHE_FASSUNG} ↗</a></p>` +
     `</article>`
   );
 }

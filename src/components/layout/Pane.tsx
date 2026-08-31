@@ -121,7 +121,26 @@ export function SekundaerPane(props: SekundaerPaneProps) {
                Pane-Fläche ist ein Scroll-Container, ein aussenliegender Ring
                läge ausserhalb ihrer Kante und würde geclippt. */
             className="@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:-outline-offset-2">
-            <div className="mx-auto w-full max-w-content px-5 sm:px-6 py-6">
+            {/* A-2-WURZEL (R2-A, 31.8.2026): die Polsterung dieses Wrappers
+                hing am VIEWPORT (`sm:px-6`), obwohl sie im Pane sitzt — ein
+                schmales Pane auf einem breiten Bildschirm bekam die weite
+                Polsterung, ein breites Pane auf einem schmalen Gerät die enge.
+                Genau daraus sind die zwei deklarierten `sm:`-Ausnahmen im
+                EntscheidLeser entstanden (die klebende Leiste muss bündig an
+                dieselbe Kante). Jetzt Container-Query auf `@container/pane`
+                (das Elternteil `<section>` oben).
+                SCHWELLE `@xl/pane` (36 rem) IST NICHT FREI GEWÄHLT: sie ist die
+                Haus-Abbildung von `sm:` (gesetzt von `ui/SeitenTitel` in A-1,
+                festgeschrieben in der A-2-Paritätssonde `PAAR` in
+                `src/tests/entscheid-leser-b2.test.tsx`). Genau diese Zahl muss
+                es sein, weil die klebende Leiste des EntscheidLesers mit
+                `-mx-…/px-…` an DIESE Kante bündig zieht: eine andere Schwelle
+                hier hiesse zwei Massstäbe für eine Kante — der Fehler, den die
+                dortige Ausnahme-Begründung ausdrücklich vermeiden will.
+                Ausserhalb eines Panes rendert dieser Wrapper nie — darum kein
+                `pk()`, das hier ohnehin den Eltern-Kontext läse
+                (`imPane: false`). */}
+            <div className="mx-auto w-full max-w-content px-5 @xl/pane:px-6 py-6">
               <UNSAFE_NavigationContext.Provider value={navKontext}>
                 <InhaltsKopfMeldeProvider value={setKopf}>
                   {/* A-6: dieselbe Routen-Hülle wie im Hauptfenster. Schlüssel ist

@@ -8,6 +8,7 @@ import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { GliederungsKennzahlen } from '../gliederungsModell';
 import { AMTLICHE_FASSUNG, AMTLICHE_FASSUNG_AUFGEHOBEN } from '../../../lib/benennung';
 import { formatiereDatum, kopfOverline, verifiziertesSachgebiet } from '../helpers';
+import { GruppenKopf } from '../../../components/ui/GruppenKopf';
 import {
   teilerfassung, nurErlassdatum, erlassOrgan, istDatumsToken,
 } from '../erlassUebersichtDaten';
@@ -138,10 +139,10 @@ export function ErlassUebersicht({
 
   return (
     <section data-erlass-uebersicht aria-labelledby="erlass-uebersicht-titel" className="space-y-2">
-      <div className="flex items-baseline gap-3">
-        <h2 id="erlass-uebersicht-titel" className="lc-overline text-brass-700">Erlass-Übersicht</h2>
-        <span aria-hidden className="h-px flex-1 bg-line" />
-      </div>
+      {/* C-2/C-6/C-7-NACHZUG (R2-A, 31.8.2026): selbstgezeichnetes
+          Gruppenkopf-Rezept → geteilter Baustein (§5/§10). Kein Zähler: die
+          Übersicht ist keine Menge. `items-baseline` → `items-center`. */}
+      <GruppenKopf stufe={2} id="erlass-uebersicht-titel" titel="Erlass-Übersicht" />
 
       {/* Konsolidierungs-Zeile. §15.2: sie steht IMMER und hat eine feste
           Zwei-Zeilen-Höhe (`min-h-uebersicht-hinweis` + `line-clamp-2`,

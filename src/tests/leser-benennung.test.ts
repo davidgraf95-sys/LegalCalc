@@ -308,14 +308,55 @@ const APP_DATEIEN = [
   'pages/MaterialLeser.tsx',
   'pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
   'pages/gesetz-leser/parts/AmtlichesPdf.tsx',
+  // ── R2-A-NACHZUG (31.8.2026): die sechs Flächen aus dem N2-Nachtrag ────────
+  // (FAHRPLAN-DESIGN-KONSISTENZ §3), die B-6 nachgezogen haben und danach KEIN
+  // «amtliche Quelle» mehr führen. Sie stehen hier, weil der Geltungsbereich
+  // eines Wort-Wächters die Liste IST: was nicht in ihr steht, ist nicht
+  // bewacht — und genau daran ist die Streuung nach Ä110 gewachsen.
+  'lib/seo-detail.ts',
+  'lib/verzahnung/glossar.ts',
+  'components/verzahnung/statusRezept.ts',
+  'pages/gesetz-leser/parts/ArtikelHistorie.tsx',
+  'pages/Gesetze.tsx',
+  'pages/Materialien.tsx',
 ];
+
+// ═══ DIE ZWEI-BEGRIFFE-REGEL (R2-A, 31.8.2026) ══════════════════════════════
+//
+// B-6 sagt: EIN Nomen für das Massgebliche — «die amtliche Fassung». Beim
+// Nachziehen der elf Rest-Stellen (N2-Nachtrag) hat sich gezeigt, dass «Quelle»
+// nicht überall dasselbe Ding benennt. Die Prüffrage, an der die zwei Begriffe
+// AUSEINANDERGEHALTEN werden — und die jede neue Stelle zu beantworten hat:
+//
+//   Steht statt des Wortes «der amtlich publizierte TEXT»?
+//       → «die amtliche FASSUNG», aus `lib/benennung` (Nomen bzw. Satz).
+//         Das ist der Vorbehalt: was gilt, wenn unsere Wiedergabe abweicht.
+//   Muss man «FEDLEX» / «die Amtliche Sammlung» einsetzen, damit der Satz
+//   stimmt?
+//       → «die amtliche QUELLE» bzw. «die amtliche SAMMLUNG» BLEIBT. Das ist
+//         kein zweites Wort für dasselbe, sondern ein anderes Ding: die
+//         Publikationsstelle, auf die der Link zeigt.
+//
+// GEMESSEN am Bestand 31.8.2026 gibt es genau eine Fläche, die beide Fälle
+// nebeneinander führt — das Kontext-Panel: sein Vorbehalt zu maschinell
+// zugeordneten Botschaften/Vernehmlassungen meint den TEXT (nachgezogen), seine
+// Fehler-Zeile «Amtliche Quelle: Fedlex ↗» und «Vollständige Liste über die
+// amtliche Quelle (Fedlex)» meinen die PLATTFORM (unverändert). Darum steht sie
+// nicht in `APP_DATEIEN` (dort gilt das pauschale Verbot), sondern hier — mit
+// einem engeren Verbot und einer Positiv-Sonde auf die erlaubte Verwendung.
+// Ohne diese Positiv-Sonde wäre die Ausnahme unsichtbar: wer sie eines Tages
+// wegräumt, merkt es an keinem Wächter.
+const ZWEI_BEGRIFFE_DATEIEN = ['components/kontext/KontextPanel.tsx'];
+
+/** Der VORBEHALTSSATZ mit dem falschen Nomen — «massgeblich … die amtliche Quelle». */
+const VORBEHALT_MIT_QUELLE = /[Mm]assgeblich (?:ist|bleibt)(?: stets)? die amtliche Quelle/;
 
 const LIES_APP = (rel: string) => readFileSync(`src/${rel}`, 'utf8');
 const APP_FLAECHE = APP_DATEIEN.map((d) => ohneKommentare(LIES_APP(d))).join('\n');
 
 describe('Positiv-Sonde: die App-Fläche existiert und trägt den geteilten Baustein', () => {
   it('alle gelisteten Dateien sind lesbar und der gefilterte Text ist substanziell', () => {
-    expect(APP_DATEIEN.length).toBe(8);
+    expect(APP_DATEIEN.length).toBe(14);
     expect(APP_FLAECHE.length).toBeGreaterThan(10_000);
     // Eine Beschriftung, die es garantiert gibt: ohne sie hätte der Filter zu
     // viel entfernt und jede Verbots-Sonde wäre grundlos grün.
@@ -412,9 +453,22 @@ describe('B-6: EIN Substantiv für das Massgebliche — «Fassung», nicht «Que
   it('keine «amtliche Quelle» mehr in der App-Fläche', () => {
     const treffer = APP_DATEIEN.filter((d) => ohneKommentare(LIES_APP(d)).includes('amtliche Quelle'));
     expect(treffer,
-      `«amtliche Quelle» in ${treffer.join(', ')} — der Kanon (B-6, Zählung 10:5) sagt ` +
-      '«die amtliche Fassung», aus `lib/benennung.ts`.',
+      `«amtliche Quelle» in ${treffer.join(', ')} — der Kanon (B-6) sagt «die amtliche ` +
+      'Fassung», aus `lib/benennung.ts`. Tragend ist NICHT eine Mehrheitszählung ' +
+      '(die gemeldete «10:5» ist nicht rekonstruierbar und gilt als falsifiziert, ' +
+      'Gegenprüfung N1), sondern die Präzision: massgeblich ist nicht «eine Quelle», ' +
+      'sondern der amtlich publizierte Text in seiner Fassung. Meint die Stelle die ' +
+      'PLATTFORM (Fedlex) statt des Textes, gehört sie nicht in diese Liste — dann ' +
+      'gilt die Zwei-Begriffe-Regel (s. `ZWEI_BEGRIFFE_DATEIEN`).',
     ).toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: das Verbot findet den Vorher-Wortlaut', () => {
+    // Ohne sie wäre der Fall auch dann grün, wenn `ohneKommentare` zu viel
+    // entfernte (§6.7 b: ein Wächter, der nichts finden KANN, ist wertlos).
+    const vorher = "erklaerung: 'Das Datum, ab dem die gezeigte Fassung einer Bestimmung"
+      + " gilt. Massgeblich ist stets die amtliche Quelle.',";
+    expect(ohneKommentare(vorher).includes('amtliche Quelle')).toBe(true);
   });
 
   it('die drei Träger ziehen den Vorbehalt aus der Wortquelle', () => {
@@ -441,6 +495,51 @@ describe('B-6: EIN Substantiv für das Massgebliche — «Fassung», nicht «Que
       'Fedlex hat eine geltende Änderung noch nicht in den Text eingearbeitet'
       + ' — massgeblich ist die amtliche Fassung.',
     );
+  });
+});
+
+describe('B-6 · Zwei-Begriffe-Regel: «Quelle» bleibt der PLATTFORM vorbehalten', () => {
+  it('kein Vorbehaltssatz führt dort noch «die amtliche Quelle»', () => {
+    const treffer = ZWEI_BEGRIFFE_DATEIEN
+      .filter((d) => VORBEHALT_MIT_QUELLE.test(ohneKommentare(LIES_APP(d))));
+    expect(treffer,
+      `Vorbehaltssatz mit «Quelle» in ${treffer.join(', ')} — der Vorbehalt meint den `
+      + 'amtlich publizierten TEXT und heisst darum «die amtliche Fassung» '
+      + '(`AMTLICHE_FASSUNG_NOMEN`). «Quelle» bleibt nur, wo die Plattform gemeint ist.',
+    ).toEqual([]);
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet beide Vorher-Wortlaute', () => {
+    // Wortlaut aus KontextPanel.tsx vor dem Fix (Stand 31.8.2026, Z. 383/509).
+    expect(VORBEHALT_MIT_QUELLE.test(
+      'fachlich nicht geprüft; massgeblich bleibt die amtliche Quelle.')).toBe(true);
+    expect(VORBEHALT_MIT_QUELLE.test(
+      'Massgeblich ist stets die amtliche Quelle.')).toBe(true);
+    // Gegenprobe: die ERLAUBTE Verwendung darf der Ausdruck NICHT fangen.
+    expect(VORBEHALT_MIT_QUELLE.test(
+      'Vollständige Liste über die amtliche Quelle (Fedlex).')).toBe(false);
+  });
+
+  it('POSITIV-SONDE: die erlaubte Verwendung steht wirklich noch da', () => {
+    // Die Ausnahme muss sichtbar bleiben — sonst ist das engere Verbot oben nur
+    // ein pauschales Verbot mit mehr Zeichen.
+    const panel = ohneKommentare(LIES_APP('components/kontext/KontextPanel.tsx'));
+    expect(panel, 'die Plattform-Verwendung «Amtliche Quelle: … (Fedlex)» ist weg — '
+      + 'dann gehört die Datei in `APP_DATEIEN` und die Ausnahme in den Rückbau')
+      .toContain('amtliche Quelle');
+  });
+
+  it('und der Vorbehalt läuft dort über die Wortquelle, nicht über ein Literal', () => {
+    expect(ohneKommentare(LIES_APP('components/kontext/KontextPanel.tsx')))
+      .toContain('AMTLICHE_FASSUNG_NOMEN');
+  });
+
+  it('«Amtliche Sammlung» bleibt als eigener Fachbegriff (AS/RO) unangetastet', () => {
+    // Sie benennt ein anderes Ding als die Fassung eines Erlasses: die
+    // Publikationsreihe, in der die Änderungserlasse stehen. Ein Vereinheitlichen
+    // auf «Fassung» wäre hier keine Vereinheitlichung, sondern ein Sachfehler.
+    expect(ohneKommentare(LIES_APP('components/kontext/KontextPanel.tsx')))
+      .toContain('amtliche Sammlung');
   });
 });
 
