@@ -109,22 +109,25 @@ function quelltext(
 }
 
 /**
- * R6.2/B4 — Legende-Kopf mit Unterliste: Kopf-Item-Text + die direkt folgenden
- * Unterpunkt-Texte (tiefe > 0, bis zum nächsten tiefe-0-Item), mit U+000A
- * verbunden. UNABHÄNGIG aus der Quelle rekonstruiert (nicht aus dem
- * Generator-Ergebnis) — Prüfung D vergleicht byte-genau, das ist STRENGER als
- * Substring: jede veränderte oder fehlende Zeile macht das Tor rot.
- * Ohne Unterpunkte null (dann gibt es keinen legitimen Kopf-Eintrag).
+ * R6.2/B4, verallgemeinert R6.3/F1 — die Fortsetzung eines Doppelpunkt-Kopfes:
+ * beim Blocktext-Kopf ALLE Items des Blocks, beim Item-Kopf die direkt
+ * folgenden TIEFEREN Items (bis zum nächsten Item derselben/höheren Ebene).
+ * UNABHÄNGIG aus der Quelle rekonstruiert (nicht aus dem Generator-Ergebnis) —
+ * Prüfung D vergleicht byte-genau, das ist STRENGER als Substring: jede
+ * veränderte, fehlende oder überzählige Zeile macht das Tor rot.
  */
-function kopfMitUnterpunkten(snap: NormSnapshot, block: number, item: number): string | null {
+function fortsetzungAusQuelle(
+  snap: NormSnapshot, block: number, stelle: string, item: number | null,
+): string[] {
   const items = snap.bloecke?.[block]?.items ?? [];
-  const kopf = items[item];
-  if (!kopf?.text) return null;
-  const teile = [kopf.text];
-  for (let j = item + 1; j < items.length && (items[j].tiefe ?? 0) > 0; j++) {
-    if (items[j].text) teile.push(items[j].text);
+  if (stelle === 'text') return items.filter((it) => it.text).map((it) => it.text);
+  if (stelle !== 'item' || item === null) return [];
+  const t0 = items[item]?.tiefe ?? 0;
+  const out: string[] = [];
+  for (let j = item + 1; j < items.length && (items[j].tiefe ?? 0) > t0; j++) {
+    if (items[j].text) out.push(items[j].text);
   }
-  return teile.length > 1 ? teile.join('\n') : null;
+  return out;
 }
 
 // ─── (C) Norm-Existenz · (D) Zitat-Treue · (E) Status ────────────────────────
@@ -179,13 +182,24 @@ if (existsSync(ZIEL)) {
       zeige(dFehler++, `(D) ${wo}: Zitat ${e.zitat.length} > ZITAT_MAX ${ZITAT_MAX}.`); return;
     }
     if (!quelle.includes(e.zitat)) {
-      // R6.2/B4: Kopf-Einträge zitieren Kopf + Unterpunkte ('\n'-verbunden) —
-      // byte-genaue Rekonstruktion aus der Quelle statt Substring.
-      const kopfKette = e.norm.stelle === 'item' && e.norm.item !== null && e.norm.item !== undefined
-        ? kopfMitUnterpunkten(snap, e.norm.block, e.norm.item)
-        : null;
-      if (kopfKette === null || kopfKette !== e.zitat) {
-        zeige(dFehler++, `(D) ${wo}: Zitat ist KEIN wörtlicher Substring der Quelle (und keine byte-gleiche Kopf+Unterpunkte-Kette).\n          Zitat : ${JSON.stringify(e.zitat.slice(0, 100))}\n          Quelle: ${JSON.stringify(quelle.slice(0, 100))}`);
+      // R6.2/B4, verallgemeinert R6.3/F1: Kopf-Einträge zitieren Kopf +
+      // Fortsetzung ('\n'-verbunden) — byte-genaue Rekonstruktion aus der
+      // Quelle statt Substring: die Kopfzeile muss auf «:» enden UND das
+      // wörtliche Ende der Quellzeichenkette sein, die Folgezeilen müssen
+      // byte-gleich der unabhängig rekonstruierten Fortsetzung sein.
+      const nl = e.zitat.indexOf('\n');
+      let kopfOk = false;
+      if (nl > 0) {
+        const kopfZeile = e.zitat.slice(0, nl);
+        const rest = e.zitat.slice(nl + 1);
+        const fortsetzung = fortsetzungAusQuelle(snap, e.norm.block, e.norm.stelle, e.norm.item ?? null);
+        kopfOk = kopfZeile.endsWith(':')
+          && quelle.trimEnd().endsWith(kopfZeile)
+          && fortsetzung.length > 0
+          && rest === fortsetzung.join('\n');
+      }
+      if (!kopfOk) {
+        zeige(dFehler++, `(D) ${wo}: Zitat ist KEIN wörtlicher Substring der Quelle (und keine byte-gleiche Kopf+Fortsetzung-Kette).\n          Zitat : ${JSON.stringify(e.zitat.slice(0, 100))}\n          Quelle: ${JSON.stringify(quelle.slice(0, 100))}`);
         return;
       }
     }

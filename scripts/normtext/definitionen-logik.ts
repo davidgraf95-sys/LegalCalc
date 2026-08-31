@@ -28,6 +28,14 @@
 //       (G-N/G-P/G-A/G-R, unten) diese Klassen; Neu-Messung n≥100 nach dem
 //       Fix in bibliothek/normtext/legaldefinitionen-muster-erhebung-
 //       2026-08-31.md §GP-Korrektur (Zahlen dort, datiert).
+//       ERGÄNZT R6.3 (GP Runde 2, 31.8.2026): 339 Zitate endeten als nackter
+//       Doppelpunkt-Kopf ohne Definiens (306 als-gilt · 18 legende-einleitung ·
+//       9 im-sinne · 3 guillemets · 3 kurzform) — seit R6.3 wird die vom Kopf
+//       angekündigte Aufzählung wörtlich als Zitat-Zeilen angebaut (Mechanik
+//       bei `definitionenAusEintrag`; Tor-Prüfungen D+F beweisen es). Guards
+//       erweitert: Rollennomen-Morphologie (G-R, zweistufig), finite Verben im
+//       Begriff (begriffNormalisieren) und Partizip-I-Erweiterungsfiktion
+//       «gilt auch» (G-P1).
 //   legende-einleitung  Lead-in + «X:»  344   20 Blöcke     20/20  100 %
 //   legende-marginalie  Marginalie+«X:»  22   Vollerhebung  22/22  100 %
 //                                                    (nach Erstwort-Filter)
@@ -117,11 +125,14 @@ const SATZANFANG = /[A-ZÄÖÜÉÈÀ«"„(§–]/;
  * gegen Extraktions-Unfälle: ein Block, dessen Satzgrenzen die Quelle nicht
  * hergibt, soll keine Bildschirmseite ins Artefakt schreiben. Sie ist HEUTE
  * inert — längstes Zitat im Bestand 689 Zeichen (Lauf 31.8.2026); seit den
- * R6.2-Kopf+Unterlisten-Zitaten 1003 Zeichen (FIDLEG 3) — und darum
- * meldet der Generator bei jedem Lauf die maximale Zitatlänge: die Schranke
- * darf nicht still zu greifen beginnen (§6.7).
+ * R6.2-Kopf+Unterlisten-Zitaten 1003 Zeichen (FIDLEG 3); seit dem R6.3-Anbau
+ * der Doppelpunkt-Kopf-Aufzählungen 2605 Zeichen (MWSTG 8, gemessen
+ * 31.8.2026 — darum von 2000 auf 4000 gehoben, sonst hätte die Reissleine
+ * still zwei echte Einträge gefressen). Der Generator meldet bei jedem Lauf
+ * die maximale Zitatlänge: die Schranke darf nicht still zu greifen beginnen
+ * (§6.7).
  */
-export const ZITAT_MAX = 2000;
+export const ZITAT_MAX = 4000;
 
 export interface Satz {
   /** Offset des ersten Zeichens im Quelltext (verbatim-Anker). */
@@ -198,6 +209,24 @@ const QUALIFIKATOR = [
 /** Artikel/Determinative, die einer Dativ-Konstruktion vorangehen («Unter dem Ehegatten»). */
 const DATIV_ARTIKEL = ['der ', 'dem ', 'den ', 'die ', 'das ', 'einem ', 'einer ', 'eine ', 'ein '];
 
+/**
+ * R6.3 (GP R2/F3): ein Begriff, der ein finites Verb trägt, ist ein
+ * Satzfragment, kein Terminus — die als-gilt-Inversion mit Modalverb fängt
+ * das Prädikat mit («Als Leistungsnachweise können auch solche gelten …»,
+ * BS 427.950 §16). Geschlossene Liste. Vollerhebung am Artefakt 31.8.2026:
+ * 3 Treffer — BS 427.950 §16 (kann), AVIV 8 (sind im Relativsatz-Begriff),
+ * KVV 96 II (sind; geht zusätzlich über G-R «Periode» raus). Der
+ * Relativsatz-Begriff AVIV 8 («Berufe, in denen … üblich sind») geht
+ * dokumentiert mit raus (GP-Vorgabe «im Zweifel raus»; ein 76-Zeichen-
+ * Relativsatz ist kein Registerbegriff). GP R2 erwartete 1 Treffer —
+ * Vollerhebung ergab 3; Abweichung offengelegt (§7).
+ */
+const FINITE_VERBEN = new Set([
+  'kann', 'können', 'darf', 'dürfen', 'muss', 'müssen', 'soll', 'sollen',
+  'will', 'wollen', 'ist', 'sind', 'wird', 'werden', 'hat', 'haben',
+  'gilt', 'gelten', 'bleibt', 'bleiben',
+]);
+
 function trimRand(s: string): string {
   return s.replace(/^[\s]+/, '').replace(/[\s,;:]+$/, '');
 }
@@ -246,6 +275,9 @@ export function begriffNormalisieren(roh: string, opt: BegriffOptionen = {}): st
   const erst = /^[\p{L}]+/u.exec(b)?.[0];
   if (!erst) return null;
   if (STOPP_ERSTWORT.has(erst.toLowerCase())) return null;
+  // R6.3 (GP R2/F3): finites Verb im Begriff → Satzfragment, kein Eintrag.
+  const tokens = b.split(/\s+/).map((w) => w.replace(/^[«"„(]+|[»"“),.;:]+$/gu, ''));
+  if (tokens.some((w) => FINITE_VERBEN.has(w.toLowerCase()))) return null;
   return b;
 }
 
@@ -329,29 +361,51 @@ export function istPartizip2(wort: string): boolean {
 
 /**
  * B2 — funktionale Rollennomen: «Als Grundlage/Stichtag/… gilt X» weist X eine
- * ROLLE zu, statt einen Begriff zu bestimmen. Geschlossene Erstwort-Liste,
- * Vollerhebung 31.8.2026 über alle 1 459 als-gilt-Treffer (Trefferzahl je
- * Wort in Klammern). Grenzfall-Entscheid dokumentiert: «Beginn/Ende der
- * Steuerpflicht» (DBG 61a/61b, StHG 24c/24d + Kantone) ist eine
- * Ereignis-Aufzählung, kein Begriff → raus (GP-Vorgabe: im Zweifel raus).
- * Lexikalisierte Komposita («Baubeginn», «Verkehrswert», «Steuerperiode»)
- * bleiben bewusst DRIN — sie sind eigenständige Termini.
+ * ROLLE zu, statt einen Begriff zu bestimmen. Grenzfall-Entscheid dokumentiert:
+ * «Beginn/Ende der Steuerpflicht» (DBG 61a/61b, StHG 24c/24d + Kantone) ist
+ * eine Ereignis-Aufzählung, kein Begriff → raus (GP-Vorgabe: im Zweifel raus).
+ *
+ * R6.3 (GP R2/F2) — die Regel ist MORPHOLOGISCH, zweistufig, geschlossen:
+ * das Erstwort wird um höchstens EINE Flexionsendung (-e/-en/-n) gekürzt und
+ * dann gegen zwei Stammlisten geprüft.
+ *
+ *   SUFFIX-Stämme (Komposita und Plural gehen MIT raus — Vollerhebung
+ *   31.8.2026 am Artefakt: nur Rollen-Komposita betroffen):
+ *     Grundlage (UVV 22; subsumiert Bemessungsgrundlage OW 641.4 und
+ *     Berechnungsgrundlage RVOV 8q/BS 953.800) · Richtgrösse (BBG 59) ·
+ *     Obergrenze (AVO 93) · Nachweis (AHVV 73, VZV 76, AR 525.11; +
+ *     Zahlungsnachweise EOV 21/35k/35s, Leistungsnachweise BS 427.950) ·
+ *     Basis (NBV 17, AR 142.211; + Berechnungsbasis BS 164.250) · Stichtag
+ *     (AR 415.211, BS 411.500 ×2; + Stichtage BS 424.510, BS 460.210) ·
+ *     Zeitpunkt (KVV 96 III, AR 711.1, BS 640.100) · Einreichungsdatum (×3).
+ *
+ *   EXAKT-Stämme (nur das nackte Wort ± Flexion — ihre Komposita sind
+ *   lexikalisierte Termini bzw. morphologisch mehrdeutig, dokumentierter
+ *   R6.2-Entscheid bleibt): Beginn (13; «Baubeginn/Abbruchbeginn» sind
+ *   Begriffe, BS 724.115/730.115) · Ende (11; NIE als Suffix — «-ende»
+ *   kollidiert mit attributivem Partizip I: «nahestehende Personen» SchKG
+ *   286/288, «marktbeherrschende Unternehmen» KG 4, «erschwerende Umstände»
+ *   MWSTG 97 sind echte Definitionen, Messung 31.8.2026: naives Suffix
+ *   träfe 60 statt 8) · Ausnahme (BS 427.150) · Periode (NEU R6.3: KVV 96 II
+ *   «Als Periode für die Feststellung …» — Gleichbehandlung mit KVV 96 III
+ *   «Zeitpunkt», GP R2/F2; «Steuerperiode/Abrechnungsperiode/Kontrollperiode»
+ *   bleiben als Termini DRIN).
  */
-const ROLLENNOMEN = new Set([
-  'Grundlage',              // 4 — «Als Grundlage für die Bemessung … gilt» (UVV 22)
-  'Richtgrösse',            // 1 — BBG 59
-  'Obergrenze',             // 1 — AVO 93
-  'Nachweis',               // 3 — AHVV 73, VZV 76, AR 525.11
-  'Basis',                  // 2 — NBV 17, AR 142.211
-  'Stichtag',               // 3 — AR 415.211, BS 411.500 ×2
-  'Beginn',                 // 13 — «Beginn der Steuerpflicht»
-  'Ende',                   // 11 — «Ende der Steuerpflicht»
-  'Ausnahme',               // 1 — BS 427.150
-  'Bemessungsgrundlage',    // 1 — OW 641.4
-  'Berechnungsgrundlage',   // 2 — RVOV 8q, BS 953.800
-  'Zeitpunkt',              // 3 — KVV 96, AR 711.1, BS 640.100
-  'Einreichungsdatum',      // 3 — Datums-Rolle wie Stichtag/Zeitpunkt
-]);
+const ROLLENNOMEN_SUFFIX = [
+  'grundlage', 'richtgrösse', 'obergrenze', 'nachweis', 'basis', 'stichtag',
+  'zeitpunkt', 'einreichungsdatum',
+];
+const ROLLENNOMEN_EXAKT = new Set(['beginn', 'ende', 'ausnahme', 'periode']);
+
+/** G-R: Erstwort (± eine Flexionsendung) ist Rollennomen-Stamm oder endet auf einen Suffix-Stamm. */
+export function istRollennomen(erst: string): boolean {
+  const w = erst.toLowerCase();
+  const kandidaten = [w];
+  for (const fl of ['e', 'en', 'n']) {
+    if (w.endsWith(fl) && w.length - fl.length >= 4) kandidaten.push(w.slice(0, w.length - fl.length));
+  }
+  return kandidaten.some((k) => ROLLENNOMEN_EXAKT.has(k) || ROLLENNOMEN_SUFFIX.some((s) => k.endsWith(s)));
+}
 
 /** Erstes Wort des normalisierten Begriffs (für G-N/G-P/G-A/G-R). */
 function erstwort(begriff: string): string {
@@ -370,10 +424,27 @@ export function istAlsGiltFiktion(begriff: string, segment: string): boolean {
   const worte = begriff.split(/[\s-]+/).filter((w) => w.length > 0);
   const ohneGrosswort = !worte.some((w) => /^[\p{Lu}]/u.test(w));
   if (ohneGrosswort && worte.some(istPartizip2)) return true;             // G-P
+  // G-P1 (R6.3, GP R2/F4): prädikatives Partizip-I-Einzelwort in der
+  // ERWEITERUNGS-Fiktion «gilt/gelten auch» («Als unterliegend gilt auch die
+  // Partei, …» StPO 428). NUR mit «auch»: die formgleichen Adjektiv-
+  // Definitionen ohne «auch» sind am Korpus überwiegend ECHT (Vollerhebung
+  // 31.8.2026: 5 Partizip-I-Einzelwörter, davon 4 echte Definitionen —
+  // «rechtsetzend» ParlG 22, «vermögend» FIDLEG 5, «krebserzeugend» LRV
+  // Anh. 1, «grenzüberschreitend» VEVA 3; einzige Fiktion ist StPO 428).
+  // GP R2 verlangte den Pauschal-Ausschluss — der hätte 4/5 echte
+  // Definitionen gekostet (20 % Präzision, unter jedem Katalog-Massstab);
+  // abweichend umgesetzt und offengelegt (§7).
+  if (ohneGrosswort && worte.length === 1 && istPartizip1(worte[0])
+    && /\b(?:gilt|gelten) auch\b/.test(segment)) return true;             // G-P1
   if (istPartizip2(erst) && /\b(?:gilt|gelten) nur\b/.test(segment)) return true; // G-A(i)
   if (segment.includes('in der Fassung vom')) return true;                // G-A(ii)
-  if (ROLLENNOMEN.has(erst)) return true;                                 // G-R
+  if (istRollennomen(erst)) return true;                                  // G-R
   return false;
+}
+
+/** Partizip I: kleingeschriebenes Wort auf «-end» ± Flexionsendung. */
+export function istPartizip1(wort: string): boolean {
+  return /^[a-zäöü][a-zäöüéè-]*end(?:e|em|en|er|es)?$/.test(wort);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -489,22 +560,23 @@ function segmentAnfaenge(satz: string): number[] {
 }
 
 /**
- * Legende-Item «Begriff: Definiens» → { begriff, kopfOhneDefiniens }, sonst
- * null. `kopfOhneDefiniens` markiert einen Legende-KOPF, dessen Definiens
- * nicht im Item selbst steht, sondern in seinen Unterpunkten («besonders
- * schützenswerte Personendaten:» DSG 5 lit. c — R6.2/B4: die erste Fassung
- * warf diese Köpfe weg, 8 echte Definitionen fehlten). Der Aufrufer nimmt
- * den Kopf nur, wenn tatsächlich Unterpunkte folgen (sonst ist es ein
- * definiensloser Gliederungskopf und entfällt wie bisher).
+ * Legende-Item «Begriff: Definiens» → Begriff, sonst null.
+ *
+ * R6.3 (GP R2/F1): der frühere `rest.length < 5`-Zeichenzähler
+ * (`kopfOhneDefiniens`) ist GESTRICHEN — er war ein Prädikat über die
+ * Zeichenzahl hinter dem ersten Doppelpunkt und hat das Phänomen «Definiens
+ * fehlt» verfehlt (die «Vollerhebung: genau 8» in der Bibliothek war
+ * prädikats-, nicht phänomenbezogen; korrigiert dort, datiert). Ob ein
+ * Definiens fehlt, entscheidet seither das Phänomen selbst: der Kopf-SATZ
+ * endet auf «:» — geprüft vom Aufrufer (`definitionenAusEintrag`), der dann
+ * die Unterpunkte anbaut oder den Kopf verwirft.
  */
-export function legendeBegriff(itemText: string): { begriff: string; kopfOhneDefiniens: boolean } | null {
+export function legendeBegriff(itemText: string): string | null {
   const i = itemText.indexOf(':');
   if (i < 2) return null;
   const kopf = itemText.slice(0, i);
   if (kopf.includes('.') || kopf.length > 90) return null;
-  const rest = itemText.slice(i + 1).trim();
-  const begriff = begriffNormalisieren(kopf);
-  return begriff ? { begriff, kopfOhneDefiniens: rest.length < 5 } : null;
+  return begriffNormalisieren(kopf);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -581,13 +653,24 @@ export interface Fundstelle {
  * Generators — daher deterministisch ohne nachträgliche Sortierung.
  */
 /**
- * Texte der direkt auf ein tiefe-0-Item folgenden Unterpunkte (tiefe > 0),
- * bis zum nächsten tiefe-0-Item. R6.2/B4: das Definiens eines Legende-Kopfes.
+ * Die Fortsetzung eines Doppelpunkt-Kopfes an seiner Fundstelle — die vom
+ * Kopf angekündigte Aufzählung, wörtlich (R6.2/B4, verallgemeinert R6.3/F1):
+ *   · Blocktext-Kopf (stelle 'text'): ALLE Items des Blocks in Quell-
+ *     Reihenfolge (samt tieferen Ebenen — sie gehören zur Aufzählung);
+ *   · Item-Kopf (stelle 'item'): die direkt folgenden TIEFEREN Items, bis
+ *     zum nächsten Item derselben oder einer höheren Ebene.
  */
-export function unterpunktTexte(snap: NormSnapshot, block: number, item: number): string[] {
-  const items = snap.bloecke?.[block]?.items ?? [];
+export function fortsetzungsTexte(
+  snap: NormSnapshot, block: number, stelle: 'text' | 'item', item: number | null,
+): string[] {
+  const b = snap.bloecke?.[block];
+  if (!b) return [];
+  const items = b.items ?? [];
+  if (stelle === 'text') return items.filter((it) => it.text).map((it) => it.text);
+  if (item === null) return [];
+  const t0 = items[item]?.tiefe ?? 0;
   const out: string[] = [];
-  for (let j = item + 1; j < items.length && (items[j].tiefe ?? 0) > 0; j++) {
+  for (let j = item + 1; j < items.length && (items[j].tiefe ?? 0) > t0; j++) {
     if (items[j].text) out.push(items[j].text);
   }
   return out;
@@ -652,28 +735,23 @@ export function definitionenAusEintrag(snap: NormSnapshot, snapshotKey: string):
       const kopf = legendeBegriff(f.text);
       if (kopf) {
         const muster: MusterId = f.legendeBlock ? 'legende-einleitung' : 'legende-marginalie';
-        if (!kopf.kopfOhneDefiniens) {
-          const s = saetze(f.text)[0];
-          const zitat = f.text.slice(s.start, s.ende).trim();
-          if (zitat.includes(kopf.begriff) && zitat.length <= ZITAT_MAX) {
-            out.push(basis(kopf.begriff, f, zitat, muster));
-            continue;
-          }
-        } else if (f.item !== null) {
-          // R6.2/B4: Legende-Kopf, dessen Definiens in den Unterpunkten steht
-          // (DSG 5 lit. c, MWSTG 3 …). Zitat = Kopf-Text + direkt folgende
-          // Unterpunkt-Texte, je WÖRTLICH, mit U+000A verbunden — das Tor
-          // rekonstruiert dieselbe Kette byte-genau aus der Quelle (Prüfung D).
-          // Ohne Unterpunkte bleibt der Kopf draussen (definiensloser
-          // Gliederungskopf, Verhalten wie vor R6.2).
-          const kinder = unterpunktTexte(snap, f.block, f.item);
-          if (kinder.length > 0) {
-            const zitat = [f.text, ...kinder].join('\n');
-            if (zitat.includes(kopf.begriff) && zitat.length <= ZITAT_MAX) {
-              out.push(basis(kopf.begriff, f, zitat, muster));
-              continue;
-            }
-          }
+        const s = saetze(f.text)[0];
+        let zitat = f.text.slice(s.start, s.ende).trim();
+        if (zitat.endsWith(':') && f.item !== null) {
+          // R6.2/B4, verallgemeinert R6.3 (GP R2/F1): endet der Kopf-Satz auf
+          // «:», steht das Definiens in den direkt folgenden tieferen Items
+          // (DSG 5 lit. c, ERV 4 lit. g «qualifiziertes Zinsinstrument» …).
+          // Zitat = Kopf + Unterpunkte, je WÖRTLICH, mit U+000A verbunden —
+          // das Tor rekonstruiert dieselbe Kette byte-genau aus der Quelle
+          // (Prüfung D). Ohne Unterpunkte bleibt der Kopf draussen
+          // (definiensloser Gliederungskopf bzw. Flach-Extraktion,
+          // BS 910.500 §2 lit. b — Klasse dokumentiert, Bibliothek §R6.3).
+          const kinder = fortsetzungsTexte(snap, f.block, 'item', f.item);
+          zitat = kinder.length > 0 ? [zitat, ...kinder].join('\n') : '';
+        }
+        if (zitat && zitat.includes(kopf) && zitat.length <= ZITAT_MAX) {
+          out.push(basis(kopf, f, zitat, muster));
+          continue;
         }
       }
     }
@@ -682,7 +760,22 @@ export function definitionenAusEintrag(snap: NormSnapshot, snapshotKey: string):
       const satz = f.text.slice(s.start, s.ende);
       const t = regelnAufSatz(satz);
       if (!t) continue;
-      const zitat = satz.slice(t.ab).trim();
+      let zitat = satz.slice(t.ab).trim();
+      if (zitat.endsWith(':')) {
+        // R6.3 (GP R2/F1): «:» ist nie Satzgrenze — ein Doppelpunkt-Ende
+        // heisst, der Satz läuft bis ans Fundstellen-Ende und die
+        // angekündigte Aufzählung sind die Items der Fundstelle («Als
+        // Familienangehörige gelten:» AIG 42 II). Zitat = Kopf + Items,
+        // wörtlich, U+000A-verbunden. Trägt die Fundstelle keine
+        // Fortsetzung (Definiens in Folgeblock/Tabelle: BOEB Anh. 3,
+        // GR 310.250 Art. 3 II; Flach-Extraktion: BS 685.360 §7,
+        // SZ 82040 §4), entfällt der Eintrag — §7: lieber keine Zeile
+        // als ein Kopf ohne Definiens. Klassen dokumentiert (Bibliothek
+        // §R6.3).
+        const kinder = fortsetzungsTexte(snap, f.block, f.stelle, f.item);
+        if (kinder.length === 0) continue;
+        zitat = [zitat, ...kinder].join('\n');
+      }
       if (!zitat.includes(t.begriff)) continue;
       if (zitat.length > ZITAT_MAX) continue;
       out.push(basis(t.begriff, f, zitat, t.muster));
