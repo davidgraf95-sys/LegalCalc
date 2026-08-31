@@ -4,11 +4,11 @@
   "als-gilt": 1459,
   "bedeutet-begriff": 11,
   "guillemets": 71,
-  "im-sinne": 45,
+  "im-sinne": 43,
   "kurzform": 76,
   "legende-einleitung": 342,
   "legende-marginalie": 20,
-  "unter-versteht": 11
+  "unter-versteht": 13
  },
  "proEbene": {
   "bund": 1217,
@@ -772,7 +772,7 @@
    "status": "entwurf"
   },
   {
-   "begriff": "der Beglaubigung",
+   "begriff": "Beglaubigung",
    "ebene": "bund",
    "erlass": "APOSTILLE",
    "norm": {
@@ -787,7 +787,7 @@
     "marke": null
    },
    "zitat": "Unter der Beglaubigung im Sinne dieses Übereinkommens ist nur die Formalität zu verstehen, durch welche die diplomatischen oder konsularischen Vertreter des Landes, in dessen Hoheitsgebiet die Urkunde vorgelegt werden soll, die Echtheit der Unterschrift, die Eigenschaft, in welcher der Unterzeichner der Urkunde gehandelt hat, und gegebenenfalls die Echtheit des Siegels oder Stempels, mit dem die Urkunde versehen ist, bestätigen.",
-   "muster": "im-sinne",
+   "muster": "unter-versteht",
    "stand": "2024-09-04",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1973/348_347_349/de#art_2",
    "status": "entwurf"
@@ -15235,7 +15235,7 @@
     "marke": null
    },
    "zitat": "Unter «Entscheidung» im Sinne dieses Übereinkommens ist jede Entscheidung zu verstehen, die von einem Gericht eines durch dieses Übereinkommen gebundenen Staates erlassen worden ist, ohne Rücksicht auf ihre Bezeichnung wie Urteil, Beschluss, Zahlungsbefehl oder Vollstreckungsbescheid, einschliesslich des Kostenfestsetzungsbeschlusses eines Gerichtsbediensteten.",
-   "muster": "im-sinne",
+   "muster": "unter-versteht",
    "stand": "2016-04-08",
    "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2010/801/de#art_32",
    "status": "entwurf"

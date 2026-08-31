@@ -309,15 +309,19 @@ export function regelnAufSatz(satz: string): SatzTreffer | null {
       const b = begriffNormalisieren(a.groups.b, { qualifikator: true });
       if (b) return { muster: 'als-gilt', begriff: b, ab };
     }
-    const s = RX_IM_SINNE.exec(seg);
-    if (s?.groups?.b) {
-      const b = begriffNormalisieren(s.groups.b, { qualifikator: true, praefixe: ['Als ', 'Unter ', 'Nicht als '] });
-      if (b) return { muster: 'im-sinne', begriff: b, ab };
-    }
+    // `unter-versteht` VOR `im-sinne`: «Unter der Beglaubigung im Sinne dieses
+    // Übereinkommens ist … zu verstehen» erfüllt beide Formen. Die
+    // Unter-Regel schneidet zusätzlich den Dativ-Artikel ab und liefert
+    // «Beglaubigung» statt «der Beglaubigung» (Stichprobenbefund 31.8.2026).
     const u = RX_UNTER.exec(seg);
     if (u?.groups?.b) {
       const b = begriffNormalisieren(u.groups.b, { qualifikator: true, praefixe: DATIV_ARTIKEL });
       if (b) return { muster: 'unter-versteht', begriff: b, ab };
+    }
+    const s = RX_IM_SINNE.exec(seg);
+    if (s?.groups?.b) {
+      const b = begriffNormalisieren(s.groups.b, { qualifikator: true, praefixe: ['Als ', 'Unter ', 'Nicht als '] });
+      if (b) return { muster: 'im-sinne', begriff: b, ab };
     }
   }
   const k = RX_KURZFORM.exec(satz);
